@@ -1,0 +1,259 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>AtlasAchievement - Console Atlas</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            atlas: {
+              300: '#7dd3fc',
+              400: '#38bdf8',
+              500: '#0ea5e9',
+              600: '#0284c7',
+              900: '#08111f'
+            }
+          }
+        }
+      }
+    }
+  </script>
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="/css/styles.css">
+</head>
+<body class="atlas-body min-h-screen" data-page="admin">
+  <div class="atlas-bg-orb atlas-bg-orb--one"></div>
+  <div class="atlas-bg-orb atlas-bg-orb--two"></div>
+
+  <header class="sticky top-0 z-40 atlas-topbar">
+    <div class="max-w-[1320px] mx-auto px-4 lg:px-6 h-[88px] flex items-center justify-between gap-4">
+      <a href="/" class="flex items-center gap-4">
+        <div class="w-12 h-12 rounded-2xl atlas-logo-mark flex items-center justify-center"><span class="text-white text-2xl font-black">A</span></div>
+        <div>
+          <div class="text-[20px] font-extrabold leading-none">AtlasAchievement</div>
+          <div class="text-[11px] uppercase tracking-[0.28em] text-white/40 mt-1">Console Atlas</div>
+        </div>
+      </a>
+      <div class="flex items-center gap-3">
+        <a href="/" class="atlas-btn atlas-btn-secondary">Voltar ao site</a>
+        <button id="adminAccessBtn" class="atlas-btn atlas-btn-secondary">Entrar</button>
+        <button id="adminLogoutBtn" class="hidden atlas-btn atlas-btn-primary">Sair</button>
+      </div>
+    </div>
+  </header>
+
+  <main class="max-w-[1320px] mx-auto px-4 lg:px-6 py-6">
+    <section id="view-admin" class="space-y-6">
+      <div class="grid xl:grid-cols-[1.1fr_.9fr] gap-6">
+        <section class="atlas-panel p-7 md:p-8">
+          <div class="atlas-eyebrow">Painel administrativo</div>
+          <h1 class="text-[38px] md:text-[56px] leading-none font-extrabold tracking-tight">Console redesenhado</h1>
+          <p class="mt-4 text-white/62 max-w-2xl text-lg">Um admin mais alinhado com a nova estética do site: mais limpo, mais editorial e mais premium.</p>
+          <div id="adminSummaryCards" class="grid md:grid-cols-2 gap-4 mt-8"></div>
+        </section>
+        <section class="atlas-panel p-7 md:p-8">
+          <div class="atlas-eyebrow">Ações rápidas</div>
+          <h2 class="text-[28px] font-bold tracking-tight">Gerencie seu catálogo</h2>
+          <div class="grid sm:grid-cols-2 gap-4 mt-6">
+            <button id="newGameBtn" class="atlas-quick-action"><i class="fas fa-plus"></i><span>Novo jogo</span></button>
+            <button id="togglePasswordPanelBtn" type="button" class="atlas-quick-action"><i class="fas fa-key"></i><span>Trocar senha</span></button>
+            <a href="/catalogo" class="atlas-quick-action"><i class="fas fa-house"></i><span>Ver catálogo</span></a>
+            <button id="adminRefreshBtn" type="button" class="atlas-quick-action"><i class="fas fa-rotate-right"></i><span>Atualizar lista</span></button>
+          </div>
+          <div id="adminStatus" class="mt-5 text-sm text-white/55"></div>
+        </section>
+      </div>
+
+      
+
+      <section id="adminPasswordPanel" class="hidden atlas-panel p-6 lg:p-8">
+        <div class="flex items-center justify-between gap-4 mb-5">
+          <div>
+            <div class="atlas-eyebrow">Segurança</div>
+            <h2 class="text-[28px] md:text-[36px] leading-none font-extrabold tracking-tight mt-1">Trocar senha do administrador</h2>
+          </div>
+          <button id="closePasswordPanelBtn" type="button" class="atlas-btn atlas-btn-secondary">Fechar</button>
+        </div>
+        <form id="passwordForm" class="grid lg:grid-cols-[1fr_1fr_auto] gap-4 items-end">
+          <div>
+            <label class="atlas-label">Senha atual</label>
+            <input id="currentPassword" type="password" class="atlas-input" required>
+          </div>
+          <div>
+            <label class="atlas-label">Nova senha</label>
+            <input id="nextPassword" type="password" class="atlas-input" minlength="8" required>
+          </div>
+          <button id="changePasswordBtn" type="submit" class="atlas-btn atlas-btn-primary h-[54px]">Atualizar senha</button>
+        </form>
+        <p class="text-sm text-white/45 mt-3">Use pelo menos 8 caracteres. A troca exige a senha atual para confirmar a operação.</p>
+      </section>
+
+      <section id="adminPreviewPanel" class="hidden atlas-panel p-6 lg:p-8">
+        <div class="flex items-center justify-between gap-4 mb-5">
+          <div>
+            <div class="atlas-eyebrow">Pré-visualização</div>
+            <h2 class="text-[28px] md:text-[36px] leading-none font-extrabold tracking-tight mt-1">Revise antes de salvar</h2>
+          </div>
+          <div class="flex items-center gap-3">
+            <button id="previewOpenPublicBtn" type="button" class="atlas-btn atlas-btn-secondary hidden">Abrir página</button>
+            <button id="closePreviewPanelBtn" type="button" class="atlas-btn atlas-btn-secondary">Fechar</button>
+          </div>
+        </div>
+        <div id="adminPreviewContent"></div>
+      </section>
+
+      <section id="adminGameFormPanel" class="hidden atlas-panel p-6 lg:p-8">
+        <div class="flex items-center justify-between gap-4 mb-5">
+          <div>
+            <div class="atlas-eyebrow">Cadastro</div>
+            <h2 id="gameFormTitle" class="text-[30px] md:text-[40px] leading-none font-extrabold tracking-tight mt-1">Adicionar novo jogo</h2>
+          </div>
+          <button id="cancelGameFormBtn" type="button" class="atlas-btn atlas-btn-secondary">Fechar</button>
+        </div>
+
+        <form id="gameForm" class="space-y-6">
+          <input id="gameId" type="hidden">
+          <div class="grid lg:grid-cols-2 gap-5">
+            <div class="space-y-4">
+              <div>
+                <label class="atlas-label">Nome do jogo</label>
+                <input id="gameName" type="text" class="atlas-input" required>
+              </div>
+              <div class="grid grid-cols-2 gap-4">
+                <div>
+                  <label class="atlas-label">Dificuldade</label>
+                  <input id="gameDifficulty" type="number" min="1" max="10" class="atlas-input" required>
+                </div>
+                <div>
+                  <label class="atlas-label">Tempo</label>
+                  <input id="gameTime" type="text" class="atlas-input" placeholder="Ex.: 35h" required>
+                </div>
+              </div>
+              <div>
+                <label class="atlas-label">Perdíveis</label>
+                <textarea id="gameMissable" class="atlas-input min-h-[120px]" required></textarea>
+              </div>
+              <div>
+                <label class="atlas-label">Roadmap</label>
+                <textarea id="gameRoadmap" class="atlas-input min-h-[180px]" placeholder="Uma etapa por linha" required></textarea>
+              </div>
+            </div>
+
+            <div class="space-y-4">
+              <div>
+                <label class="atlas-label">URL da capa</label>
+                <input id="gameImage" type="text" class="atlas-input" placeholder="https://...">
+              </div>
+              <div class="grid md:grid-cols-[1fr_auto_auto] gap-3 items-end">
+                <div>
+                  <label class="atlas-label">Upload da capa</label>
+                  <input id="gameImageFile" type="file" accept="image/*" class="atlas-input file:mr-4 file:border-0 file:bg-atlas-500 file:px-3 file:py-2 file:rounded-xl file:text-white">
+                </div>
+                <button id="uploadCoverBtn" type="button" class="atlas-btn atlas-btn-primary h-[54px]">Enviar capa</button>
+                <button id="clearImageBtn" type="button" class="atlas-btn atlas-btn-secondary h-[54px] hidden">Limpar</button>
+              </div>
+              <div id="imageUploadStatus" class="text-sm text-white/45 hidden"></div>
+              <div class="atlas-panel p-4 rounded-[24px] min-h-[220px] flex items-center justify-center bg-white/[0.02]">
+                <div id="gameImagePreviewEmpty" class="text-white/35 text-center">Nenhuma capa selecionada</div>
+                <div id="gameImagePreview" class="hidden w-full">
+                  <img id="gameImagePreviewImg" class="w-full h-[240px] rounded-[18px] object-cover hidden" alt="Preview">
+                </div>
+              </div>
+
+              <div class="atlas-panel p-4 rounded-[24px] bg-white/[0.02]">
+                <div class="flex items-center justify-between gap-4 mb-3 flex-wrap">
+                  <div>
+                    <div class="atlas-label">Texto bruto para converter</div>
+                    <div class="text-sm text-white/35">Formato: Nome: descrição</div>
+                  </div>
+                  <div class="flex gap-2">
+                    <button id="parseTrophiesBtn" type="button" class="atlas-btn atlas-btn-primary">Converter</button>
+                    <button id="clearParsedTextBtn" type="button" class="atlas-btn atlas-btn-secondary">Limpar</button>
+                  </div>
+                </div>
+                <textarea id="rawTrophiesInput" class="atlas-input min-h-[180px]"></textarea>
+              </div>
+            </div>
+          </div>
+
+          <div id="trophiesContainer" class="space-y-4"></div>
+          <div class="flex flex-wrap gap-3">
+            <button id="addTrophyBtn" type="button" class="atlas-btn atlas-btn-secondary">Adicionar troféu</button>
+            <button id="previewGameBtn" type="button" class="atlas-btn atlas-btn-secondary">Pré-visualizar</button>
+            <button id="gameSubmitBtn" type="submit" class="atlas-btn atlas-btn-primary">Salvar jogo</button>
+          </div>
+          <div id="adminFormFeedback" class="text-sm text-white/55"></div>
+        </form>
+      </section>
+
+      <section class="space-y-4">
+        <div class="atlas-section-head">
+          <div>
+            <div class="atlas-eyebrow">Catálogo</div>
+            <h2 class="text-[34px] md:text-[44px] leading-none font-extrabold tracking-tight">Jogos cadastrados</h2>
+          </div>
+        </div>
+        <div class="atlas-panel p-5 md:p-6 space-y-4">
+          <div class="grid md:grid-cols-2 gap-3">
+            <label>
+              <span class="sr-only">Buscar no admin</span>
+              <input id="adminSearch" type="search" placeholder="Buscar jogo cadastrado" class="atlas-input min-h-[46px] h-[46px] py-3">
+            </label>
+            <label>
+              <span class="sr-only">Ordenar no admin</span>
+              <select id="adminSort" class="atlas-input min-h-[46px] h-[46px] py-3 pr-10">
+                <option value="updated-desc">Atualizados recentemente</option>
+                <option value="created-desc">Adicionados recentemente</option>
+                <option value="difficulty-desc">Maior dificuldade</option>
+                <option value="name-asc">Nome A–Z</option>
+              </select>
+            </label>
+          </div>
+          <div id="adminResultsSummary" class="text-sm text-white/55"></div>
+          <div id="adminGamesList" class="space-y-4"></div>
+          <div id="adminPagination" class="flex flex-wrap items-center gap-3"></div>
+        </div>
+      </section>
+    </section>
+  </main>
+
+  <div id="adminModal" class="hidden fixed inset-0 bg-black/80 backdrop-blur-md z-[100] p-4">
+    <div class="max-w-md mx-auto mt-24 atlas-panel p-6 rounded-[28px]">
+      <div class="flex items-center justify-between gap-4 mb-4">
+        <div>
+          <h3 class="text-xl font-bold">Entrar no Console Atlas</h3>
+          <p class="text-sm text-white/45 mt-1">Faça login para acessar o painel administrativo.</p>
+        </div>
+        <button id="closeAdminModalBtn" class="text-white/45 hover:text-white">Fechar</button>
+      </div>
+      <form id="adminLoginForm" class="space-y-4">
+        <input id="adminUsername" type="text" placeholder="Usuário" class="atlas-input" required>
+        <input id="adminPassword" type="password" placeholder="Senha" class="atlas-input" required>
+        <button class="w-full atlas-btn atlas-btn-primary h-[54px]">Entrar</button>
+      </form>
+    </div>
+  </div>
+
+  <div class="admin-quality-tools">
+  <h3>Ferramentas de edição</h3>
+  <p>Rascunho automático, preview de slug e confirmação reforçada para exclusão.</p>
+  <button type="button" id="restoreDraftBtn">Restaurar rascunho</button>
+  <button type="button" id="clearDraftBtn">Limpar rascunho</button>
+</div>
+
+  <div id="toast" class="toast"></div>
+  <script src="/js/api.js"></script>
+  <script src="/js/storage.js"></script>
+  <script src="/js/ui.js"></script>
+  <script src="/js/app.js"></script>
+</body>
+</html>
+
+
