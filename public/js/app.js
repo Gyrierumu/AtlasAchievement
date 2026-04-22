@@ -6,7 +6,7 @@
     activeFilter: 'all',
     guideSearch: '',
     librarySearch: '',
-    librarySort: 'continue',
+    librarySort: 'recent',
     catalogSearch: '',
     catalogSort: 'updated-desc',
     catalogFacet: 'all',
@@ -18,11 +18,88 @@
     adminGamesResponse: { items: [], pagination: { page: 1, totalPages: 1, total: 0 } },
     library: StorageService.getLibrary(),
     session: { authenticated: false },
-    adminSummary: { totalGames: 0, totalTrophies: 0 }
+    adminSummary: { totalGames: 0, totalTrophies: 0 },
+    initialState: window.__INITIAL_STATE__ || null,
+    searchSuggestions: [],
+    activeSuggestionIndex: -1
   };
 
   function getGameSlug(game) {
     return game?.slug || slugify(game?.name || '');
+  }
+
+
+  function normalizeSearchText(value) {
+    return String(value || '')
+      .normalize('NFD')
+      .replace(/[̀-ͯ]/g, '')
+      .toLowerCase()
+      .replace(/[^a-z0-9]+/g, ' ')
+      .trim();
+  }
+
+  function scoreSearchMatch(game, query) {
+    const normalizedQuery = normalizeSearchText(query);
+    if (!normalizedQuery) return -1;
+    const queryTerms = normalizedQuery.split(/\s+/).filter(Boolean);
+    const normalizedName = normalizeSearchText(game?.name || '');
+    const normalizedSlug = normalizeSearchText(game?.slug || '');
+    const haystack = `${normalizedName} ${normalizedSlug}`.trim();
+
+    if (!haystack) return -1;
+
+    let score = 0;
+
+    if (normalizedName === normalizedQuery) score += 1200;
+    if (normalizedSlug === normalizedQuery) score += 1100;
+    if (normalizedName.startsWith(normalizedQuery)) score += 800;
+    if (normalizedSlug.startsWith(normalizedQuery)) score += 700;
+    if (normalizedName.includes(normalizedQuery)) score += 450;
+    if (normalizedSlug.includes(normalizedQuery)) score += 350;
+
+    const joinedInitials = normalizedName.split(/\s+/).map(part => part[0] || '').join('');
+    if (joinedInitials && joinedInitials.startsWith(normalizedQuery.replace(/\s+/g, ''))) score += 220;
+
+    const matchedTerms = queryTerms.filter(term => haystack.includes(term));
+    if (!matchedTerms.length) return -1;
+    score += matchedTerms.length * 100;
+
+    if (queryTerms.every(term => normalizedName.includes(term))) score += 220;
+    if (queryTerms.every(term => haystack.includes(term))) score += 120;
+
+    score -= Math.max(normalizedName.length - normalizedQuery.length, 0) * 0.35;
+
+    return score;
+  }
+
+  function rankGamesByQuery(games, query, limit = 8) {
+    const deduped = new Map();
+    games.forEach(game => {
+      const key = getGameSlug(game) || game?.name;
+      if (key && !deduped.has(key)) deduped.set(key, game);
+    });
+
+    return Array.from(deduped.values())
+      .map(game => ({ game, score: scoreSearchMatch(game, query) }))
+      .filter(entry => entry.score >= 0)
+      .sort((a, b) => b.score - a.score || String(a.game.name || '').localeCompare(String(b.game.name || ''), 'pt-BR'))
+      .slice(0, limit)
+      .map(entry => entry.game);
+  }
+
+  function setSearchSuggestions(games = []) {
+    state.searchSuggestions = Array.isArray(games) ? games : [];
+    state.activeSuggestionIndex = state.searchSuggestions.length ? 0 : -1;
+    UI.renderSuggestions(state.searchSuggestions, { activeIndex: state.activeSuggestionIndex });
+  }
+
+  function syncSuggestionHighlight() {
+    UI.renderSuggestions(state.searchSuggestions, { activeIndex: state.activeSuggestionIndex });
+  }
+
+  function getBestSuggestion(query = '') {
+    const ranked = rankGamesByQuery(state.searchSuggestions.length ? state.searchSuggestions : state.availableGames, query, 1);
+    return ranked[0] || null;
   }
 
   const catalogFacetPathMap = {
@@ -83,9 +160,75 @@
     UI.renderLibrary(state.library, { search: state.librarySearch, sort: state.librarySort });
   }
 
-  function normalizeLibraryEntry(game) {
+  function buildLibraryStatus(progress = 0) {
+    if (progress >= 100) return 'completed';
+    if (progress > 0) return 'in-progress';
+    return 'saved';
+  }
+
+  function normalizeLibraryEntry(game, options = {}) {
     const key = getLibraryKey(game);
-    return { ...game, slug: getGameSlug(game), completed: state.library[key]?.completed || [] };
+    const existing = state.library[key] || {};
+    const completed = Array.isArray(options.completed)
+      ? options.completed
+      : Array.isArray(existing.completed)
+        ? existing.completed
+        : [];
+    const trophies = Array.isArray(game?.trophies) ? game.trophies : Array.isArray(existing.trophies) ? existing.trophies : [];
+    const total = trophies.length;
+    const done = completed.length;
+    const progress = total ? Math.round((done / total) * 100) : 0;
+    const now = new Date().toISOString();
+    return {
+      ...existing,
+      ...game,
+      slug: getGameSlug(game),
+      completed,
+      savedAt: existing.savedAt || options.savedAt || now,
+      lastOpenedAt: options.lastOpenedAt || existing.lastOpenedAt || now,
+      lastActivityAt: options.lastActivityAt || existing.lastActivityAt || now,
+      progress,
+      status: options.status || buildLibraryStatus(progress)
+    };
+  }
+
+  function upsertLibraryEntry(game, options = {}) {
+    const key = getLibraryKey(game);
+    const entry = normalizeLibraryEntry(game, options);
+    state.library[key] = entry;
+    persistLibrary();
+    return entry;
+  }
+
+  function removeCurrentGameFromLibrary() {
+    if (!state.currentGame) return;
+    const key = getLibraryKey(state.currentGame);
+    if (!state.library[key]) return;
+    delete state.library[key];
+    persistLibrary();
+    if (state.currentGame) {
+      UI.renderGuide(state.currentGame, { completedTrophies: [], isSaved: false, libraryEntry: null });
+      UI.applyTrophyFilter(state.activeFilter, state.guideSearch);
+    }
+    UI.showToast('Jogo removido da biblioteca.', 'success');
+  }
+
+  function saveCurrentGameToLibrary() {
+    if (!state.currentGame) return;
+    const existing = state.library[getLibraryKey(state.currentGame)];
+    upsertLibraryEntry(state.currentGame, {
+      savedAt: existing?.savedAt,
+      lastOpenedAt: new Date().toISOString(),
+      lastActivityAt: existing?.lastActivityAt || new Date().toISOString(),
+      status: buildLibraryStatus(existing?.progress || 0)
+    });
+    renderCurrentGuide({ skipHistory: true });
+    UI.showToast(existing ? 'Biblioteca atualizada.' : 'Jogo salvo na biblioteca.', 'success');
+  }
+
+  function isCurrentGameSaved() {
+    if (!state.currentGame) return false;
+    return Boolean(state.library[getLibraryKey(state.currentGame)]);
   }
 
   async function loadGames() {
@@ -98,13 +241,15 @@
   async function fetchSearchSuggestions(query) {
     const normalized = query.trim();
     if (!normalized) return [];
+
+    const localMatches = rankGamesByQuery(state.availableGames, normalized, 8);
+
     try {
-      const response = await ApiService.getGames({ q: normalized, page: 1, limit: 8, sort: 'name-asc' });
-      return response.items || [];
+      const response = await ApiService.getGames({ q: normalized, page: 1, limit: 20, sort: 'name-asc' });
+      const remoteMatches = response.items || [];
+      return rankGamesByQuery([...localMatches, ...remoteMatches], normalized, 8);
     } catch (error) {
-      return state.availableGames
-        .filter(game => game.name.toLowerCase().includes(normalized.toLowerCase()))
-        .slice(0, 8);
+      return localMatches;
     }
   }
 
@@ -146,14 +291,38 @@
   }
 
   async function searchGames(query) {
-    const normalized = query.trim().toLowerCase();
+    const normalized = query.trim();
     if (!normalized) {
+      state.searchSuggestions = [];
+      state.activeSuggestionIndex = -1;
       UI.hideSuggestions();
       UI.setSearchFeedback('Digite um nome para ver sugestões e abrir a página do jogo.');
       return;
     }
-    const filtered = await fetchSearchSuggestions(query);
-    UI.renderSuggestions(filtered);
+    const filtered = await fetchSearchSuggestions(normalized);
+    setSearchSuggestions(filtered);
+  }
+
+
+  async function openBestSearchResult(rawQuery, options = {}) {
+    const query = String(rawQuery || '').trim();
+    if (!query) {
+      UI.setSearchFeedback('Digite o nome de um jogo para continuar.', 'error');
+      return UI.showToast('Digite o nome de um jogo.', 'error');
+    }
+
+    const chosen = state.searchSuggestions[state.activeSuggestionIndex] || getBestSuggestion(query);
+    if (!chosen) {
+      UI.setSearchFeedback('Nenhum jogo próximo foi encontrado. Tente outro termo.', 'error');
+      return UI.showToast('Nenhum jogo correspondente encontrado.', 'error');
+    }
+
+    const input = UI.qs('#gameInput');
+    if (input) input.value = chosen.name;
+    UI.hideSuggestions();
+    state.searchSuggestions = [];
+    state.activeSuggestionIndex = -1;
+    return loadGuideBySlug(getGameSlug(chosen), options);
   }
 
   async function loadGuideBySlug(slug, options = {}) {
@@ -163,10 +332,18 @@
       navigate('guide', { ...options, game: { slug: slugValue } });
       UI.setLoading(true);
       UI.setGuideEmptyState(false);
-      const guide = await ApiService.getGameBySlug(slugValue);
+      const initialGuide = state.initialState?.page === 'guide'
+        && state.initialState?.game
+        && getGameSlug(state.initialState.game) === slugValue
+        ? state.initialState.game
+        : null;
+      const guide = initialGuide || await ApiService.getGameBySlug(slugValue);
+      state.initialState = null;
       state.currentGame = guide;
-      state.library[getLibraryKey(guide)] = normalizeLibraryEntry(guide);
-      persistLibrary();
+      const existing = state.library[getLibraryKey(guide)];
+      if (existing) {
+        upsertLibraryEntry(guide, { lastOpenedAt: new Date().toISOString() });
+      }
       UI.setSearchFeedback(`Página de ${guide.name} aberta.`, 'success');
       renderCurrentGuide(options);
     } catch (error) {
@@ -190,8 +367,10 @@
       UI.setGuideEmptyState(false);
       const guide = await ApiService.getGameByName(gameName);
       state.currentGame = guide;
-      state.library[getLibraryKey(guide)] = normalizeLibraryEntry(guide);
-      persistLibrary();
+      const existing = state.library[getLibraryKey(guide)];
+      if (existing) {
+        upsertLibraryEntry(guide, { lastOpenedAt: new Date().toISOString() });
+      }
       UI.setSearchFeedback(`Página de ${guide.name} aberta.`, 'success');
       renderCurrentGuide(options);
     } catch (error) {
@@ -206,9 +385,8 @@
   function renderCurrentGuide(options = {}) {
     if (!state.currentGame) return;
     const libraryKey = getLibraryKey(state.currentGame);
-    const libraryEntry = state.library[libraryKey] || normalizeLibraryEntry(state.currentGame);
-    state.library[libraryKey] = libraryEntry;
-    UI.renderGuide(state.currentGame, { completedTrophies: libraryEntry.completed });
+    const libraryEntry = state.library[libraryKey] || normalizeLibraryEntry(state.currentGame, { completed: [] });
+    UI.renderGuide(state.currentGame, { completedTrophies: libraryEntry.completed, isSaved: Boolean(state.library[libraryKey]), libraryEntry });
     UI.setPageMeta(state.currentGame);
     navigate('guide', { ...options, game: state.currentGame, skipHistory: options.skipHistory });
     UI.clearTrophySearch();
@@ -219,10 +397,16 @@
 
   function toggleTrophy(trophyId) {
     if (!state.currentGame) return;
-    const entry = state.library[getLibraryKey(state.currentGame)];
-    const index = entry.completed.indexOf(trophyId);
-    if (index >= 0) entry.completed.splice(index, 1); else entry.completed.push(trophyId);
-    persistLibrary();
+    const key = getLibraryKey(state.currentGame);
+    const currentEntry = state.library[key] || normalizeLibraryEntry(state.currentGame, { completed: [] });
+    const completed = Array.isArray(currentEntry.completed) ? [...currentEntry.completed] : [];
+    const index = completed.indexOf(trophyId);
+    if (index >= 0) completed.splice(index, 1); else completed.push(trophyId);
+    upsertLibraryEntry(state.currentGame, {
+      completed,
+      lastActivityAt: new Date().toISOString(),
+      lastOpenedAt: new Date().toISOString()
+    });
     renderCurrentGuide();
   }
 
@@ -230,6 +414,7 @@
     const entry = state.library[key];
     if (!entry) return;
     state.currentGame = entry;
+    upsertLibraryEntry(entry, { lastOpenedAt: new Date().toISOString() });
     renderCurrentGuide();
   }
 
@@ -541,11 +726,51 @@
     UI.qs('#adminModal')?.addEventListener('click', event => { if (event.target.id === 'adminModal') UI.closeAdminModal(); });
     UI.qs('#adminLoginForm')?.addEventListener('submit', handleAdminLogin);
 
-    UI.qs('#btnLoad')?.addEventListener('click', event => { event.preventDefault(); loadGuideByName(UI.qs('#gameInput').value); });
+    UI.qs('#btnLoad')?.addEventListener('click', event => { event.preventDefault(); openBestSearchResult(UI.qs('#gameInput').value); });
     UI.qs('#gameInput')?.addEventListener('input', event => searchGames(event.target.value));
-    UI.qs('#gameInput')?.addEventListener('keydown', event => { if (event.key === 'Enter') { event.preventDefault(); loadGuideByName(event.target.value); } });
-    UI.qs('#suggestions')?.addEventListener('click', event => { const button = event.target.closest('[data-suggestion]'); if (!button) return; UI.qs('#gameInput').value = button.dataset.suggestion; UI.hideSuggestions(); loadGuideByName(button.dataset.suggestion); });
-    document.addEventListener('click', event => { const input = UI.qs('#gameInput'); const suggestions = UI.qs('#suggestions'); if (input && suggestions && !input.contains(event.target) && !suggestions.contains(event.target)) UI.hideSuggestions(); });
+    UI.qs('#gameInput')?.addEventListener('keydown', event => {
+      if (event.key === 'Enter') {
+        event.preventDefault();
+        openBestSearchResult(event.target.value);
+        return;
+      }
+      if (!state.searchSuggestions.length) return;
+      if (event.key === 'ArrowDown') {
+        event.preventDefault();
+        state.activeSuggestionIndex = (state.activeSuggestionIndex + 1) % state.searchSuggestions.length;
+        syncSuggestionHighlight();
+      }
+      if (event.key === 'ArrowUp') {
+        event.preventDefault();
+        state.activeSuggestionIndex = (state.activeSuggestionIndex - 1 + state.searchSuggestions.length) % state.searchSuggestions.length;
+        syncSuggestionHighlight();
+      }
+      if (event.key === 'Escape') {
+        UI.hideSuggestions();
+      }
+    });
+    UI.qs('#suggestions')?.addEventListener('mousemove', event => {
+      const button = event.target.closest('[data-suggestion-index]');
+      if (!button) return;
+      const nextIndex = Number(button.dataset.suggestionIndex);
+      if (Number.isInteger(nextIndex) && nextIndex !== state.activeSuggestionIndex) {
+        state.activeSuggestionIndex = nextIndex;
+        syncSuggestionHighlight();
+      }
+    });
+    UI.qs('#suggestions')?.addEventListener('click', event => {
+      const button = event.target.closest('[data-suggestion]');
+      if (!button) return;
+      const nextIndex = Number(button.dataset.suggestionIndex);
+      if (Number.isInteger(nextIndex)) state.activeSuggestionIndex = nextIndex;
+      UI.qs('#gameInput').value = button.dataset.suggestion;
+      openBestSearchResult(button.dataset.suggestion);
+    });
+    document.addEventListener('click', event => {
+      const input = UI.qs('#gameInput');
+      const suggestions = UI.qs('#suggestions');
+      if (input && suggestions && !input.contains(event.target) && !suggestions.contains(event.target)) UI.hideSuggestions();
+    });
 
     UI.qs('#newGameBtn')?.addEventListener('click', () => { UI.resetGameForm(); UI.setAdminFormFeedback('Preencha os campos e use pré-visualizar para revisar antes de salvar.', 'info'); UI.toggleGameForm(true); });
     UI.qs('#previewGameBtn')?.addEventListener('click', openFormPreview);
@@ -637,7 +862,7 @@
         if (name) return loadFromLibrary(name);
       }
       const card = event.target.closest('[data-library-game]');
-      if (card) loadFromLibrary(card.dataset.libraryGame);
+      if (card && !event.target.closest('[data-delete-game], [data-toggle-save-game]')) loadFromLibrary(card.dataset.libraryGame);
     });
 
     UI.qs('#librarySearch')?.addEventListener('input', event => {
@@ -646,8 +871,17 @@
     });
 
     UI.qs('#librarySort')?.addEventListener('change', event => {
-      state.librarySort = event.target.value || 'continue';
+      state.librarySort = event.target.value || 'recent';
       UI.renderLibrary(state.library, { search: state.librarySearch, sort: state.librarySort });
+    });
+
+
+    document.addEventListener('click', event => {
+      const saveButton = event.target.closest('[data-toggle-save-game]');
+      if (saveButton) {
+        if (isCurrentGameSaved()) removeCurrentGameFromLibrary();
+        else saveCurrentGameToLibrary();
+      }
     });
 
     UI.qs('#catalogSearch')?.addEventListener('input', async event => {

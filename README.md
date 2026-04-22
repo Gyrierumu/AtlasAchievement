@@ -27,6 +27,8 @@ Login padrão:
 PORT=3000
 NODE_ENV=development
 SESSION_SECRET=sua-chave-forte
+SESSION_MAX_AGE_HOURS=8
+SESSION_CLEANUP_INTERVAL_MINUTES=30
 ADMIN_USERNAME=admin
 ADMIN_PASSWORD=admin123
 DATABASE_PATH=./database.sqlite
@@ -73,8 +75,9 @@ O arquivo `render.yaml` já está pronto.
 
 ## Observações de produção
 
-- `express-session` com MemoryStore serve para projeto pequeno e MVP
-- para produção mais forte, o próximo passo é usar store de sessão persistente
+- sessões agora usam store persistente em SQLite por padrão
+- reinícios do processo não derrubam imediatamente as sessões do admin
+- limpeza de sessões expiradas é automática e configurável
 - se usar frontend e backend em domínios diferentes, ajuste CORS e cookies
 
 ## Estrutura principal

@@ -100,11 +100,11 @@
 
             <div class="mt-8 atlas-search-wrap max-w-[760px]">
               <div class="relative">
-                <input id="gameInput" type="text" placeholder="Digite o nome do jogo" class="w-full atlas-search-input pr-20 outline-none">
+                <input id="gameInput" type="text" placeholder="Digite o nome do jogo" class="w-full atlas-search-input pr-20 outline-none" autocomplete="off" role="combobox" aria-autocomplete="list" aria-expanded="false" aria-controls="suggestions">
                 <button id="btnLoad" class="atlas-search-btn" aria-label="Buscar jogo">
                   <i class="fas fa-arrow-up-right-from-square"></i>
                 </button>
-                <div id="suggestions" class="absolute top-full left-0 right-0 atlas-suggestion-panel mt-3 hidden z-20 max-h-72 overflow-y-auto"></div>
+                <div id="suggestions" class="absolute top-full left-0 right-0 atlas-suggestion-panel mt-3 hidden z-20 max-h-72 overflow-y-auto" role="listbox" aria-label="Sugestões de jogos"></div>
               </div>
               <div class="mt-4 flex flex-wrap gap-2 text-sm text-white/45">
                 <span class="atlas-chip">Elden Ring</span>
@@ -118,7 +118,7 @@
             <div class="mt-10 grid sm:grid-cols-3 gap-4 max-w-[760px]">
               <div class="atlas-metric-card"><strong>1. Busque</strong><span>Digite o nome do jogo</span></div>
               <div class="atlas-metric-card"><strong>2. Abra o guia</strong><span>Veja roadmap, troféus e perdíveis</span></div>
-              <div class="atlas-metric-card"><strong>3. Salve o progresso</strong><span>Marque concluídos na biblioteca</span></div>
+              <div class="atlas-metric-card"><strong>3. Salve na biblioteca</strong><span>Escolha os jogos que quer acompanhar</span></div>
             </div>
           </div>
 
@@ -137,7 +137,7 @@
                 <div class="atlas-route-item"><span>01</span><p>Busque um jogo pelo nome.</p></div>
                 <div class="atlas-route-item"><span>02</span><p>Abra a página para ver dificuldade, tempo e troféus.</p></div>
                 <div class="atlas-route-item"><span>03</span><p>Use filtros para revisar concluídos e pendentes.</p></div>
-                <div class="atlas-route-item"><span>04</span><p>Salve o jogo na biblioteca para continuar depois.</p></div>
+                <div class="atlas-route-item"><span>04</span><p>Salve manualmente o jogo na biblioteca para continuar depois.</p></div>
               </div>
             </div>
 
@@ -236,7 +236,7 @@
 
     </section>
 
-    <section id="view-catalog" class="hidden space-y-5 pt-2">
+    <section id="view-catalog" class="__CATALOG_VIEW_CLASS__ space-y-5 pt-2">
       <div class="atlas-section-head atlas-section-head--library">
         <div>
           <div class="atlas-eyebrow">Catálogo navegável</div>
@@ -309,7 +309,7 @@
             <label class="block sm:col-span-2">
               <span class="sr-only">Ordenar biblioteca</span>
               <select id="librarySort" class="atlas-input min-h-[46px] h-[46px] py-3 pr-10">
-                <option value="continue">Continuar agora</option>
+                <option value="recent">Atividade recente</option>
                 <option value="progress-desc">Maior progresso</option>
                 <option value="remaining-asc">Mais perto de 100%</option>
                 <option value="difficulty-desc">Maior dificuldade</option>
@@ -325,13 +325,13 @@
       <div id="libraryList" class="grid md:grid-cols-2 xl:grid-cols-3 gap-6"></div>
     </section>
 
-    <section id="view-guide" class="hidden pt-2 space-y-5">
-      <div id="guideHeader"></div>
+    <section id="view-guide" class="__GUIDE_VIEW_CLASS__ pt-2 space-y-5" data-ssr-game="__HAS_SSR_GAME__">
+      <div id="guideHeader">__SSR_GUIDE_HEADER__</div>
       <div id="loading" class="flex flex-col items-center space-y-4 py-20 hidden">
         <div class="loading-spinner"></div>
         <p class="text-atlas-300 animate-pulse font-medium text-center">Carregando guia, troféus e progresso...</p>
       </div>
-      <div id="guideContent" class="hidden grid grid-cols-1 xl:grid-cols-[360px_minmax(0,1fr)] gap-6">
+      <div id="guideContent" class="__GUIDE_CONTENT_CLASS__ grid grid-cols-1 xl:grid-cols-[360px_minmax(0,1fr)] gap-6">
         <aside id="sidebarInfo" class="space-y-6"></aside>
         <div class="space-y-5">
           <div class="atlas-panel p-4 md:p-5 space-y-4">
@@ -363,7 +363,7 @@
             <div id="guideResults" class="text-sm text-white/45">0 troféu(s) visível(is)</div>
             <div id="guideEmptyState" class="hidden atlas-inline-empty">Nenhum troféu corresponde ao filtro atual. Limpe a busca ou troque o filtro.</div>
           </div>
-          <div id="trophyList" class="space-y-4 max-h-[1100px] overflow-y-auto pr-2 atlas-y-scroll"></div>
+          <div id="trophyList" class="space-y-4 max-h-[1100px] overflow-y-auto pr-2 atlas-y-scroll">__SSR_TROPHY_LIST__</div>
         </div>
       </div>
     </section>
@@ -396,6 +396,7 @@
   </div>
 
   <div id="toast" class="toast" role="status" aria-live="polite" aria-atomic="true"></div>
+  __INITIAL_STATE_SCRIPT__
   <script src="/js/api.js"></script>
   <script src="/js/storage.js"></script>
   <script src="/js/ui.js"></script>

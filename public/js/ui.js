@@ -45,28 +45,60 @@ const UI = (() => {
     feedback.className = `mt-3 text-sm ${type === 'error' ? 'text-rose-300' : type === 'success' ? 'text-emerald-300' : 'text-white/50'}`;
   }
 
-  function renderSuggestions(games) {
+  function renderSuggestions(games, options = {}) {
     const suggestionsDiv = qs('#suggestions');
     if (!suggestionsDiv) return;
+    const activeIndex = Number.isInteger(options.activeIndex) ? options.activeIndex : -1;
+
     if (!games.length) {
       suggestionsDiv.innerHTML = '';
       suggestionsDiv.classList.add('hidden');
+      suggestionsDiv.setAttribute('aria-expanded', 'false');
+      qs('#gameInput')?.setAttribute('aria-expanded', 'false');
       setSearchFeedback('Nenhum jogo encontrado com esse nome. Tente outro termo.', 'error');
       return;
     }
-    setSearchFeedback(`${games.length} sugestão(ões) encontrada(s).`, 'default');
-    suggestionsDiv.innerHTML = games.map(game => `
-      <button type="button" class="w-full p-3 hover:bg-slate-700 text-left flex items-center justify-between gap-3" data-suggestion="${escapeHtml(game.name)}">
-        <span>${escapeHtml(game.name)}</span>
-        <span class="text-xs text-slate-400">${game.difficulty}/10</span>
-      </button>
-    `).join('');
+
+    setSearchFeedback(`Abrindo o resultado mais próximo ao pressionar Enter. ${games.length} sugestão(ões) encontrada(s).`, 'default');
+    suggestionsDiv.innerHTML = games.map((game, index) => {
+      const isActive = index === activeIndex;
+      const imageMarkup = game.image
+        ? `<img src="${escapeAttribute(game.image)}" alt="" class="h-14 w-10 rounded-lg object-cover border border-white/10 bg-white/5 shrink-0" loading="lazy">`
+        : `<div class="h-14 w-10 rounded-lg border border-white/10 bg-white/5 shrink-0"></div>`;
+      const meta = [`Dificuldade ${escapeHtml(game.difficulty || '?')}/10`, escapeHtml(game.time || 'Tempo não informado')].join(' • ');
+      return `
+        <button
+          type="button"
+          class="atlas-suggestion-item ${isActive ? 'is-active' : ''}"
+          data-suggestion="${escapeAttribute(game.name)}"
+          data-suggestion-index="${index}"
+          data-suggestion-slug="${escapeAttribute(game.slug || '')}"
+          role="option"
+          aria-selected="${isActive ? 'true' : 'false'}"
+        >
+          <span class="flex items-center gap-3">
+            ${imageMarkup}
+            <span class="min-w-0">
+              <span class="block font-semibold text-white truncate">${escapeHtml(game.name)}</span>
+              <span class="mt-1 block text-xs text-slate-400 truncate">${meta}</span>
+            </span>
+          </span>
+          <span class="text-[11px] uppercase tracking-[0.18em] text-sky-200/80">Abrir</span>
+        </button>
+      `;
+    }).join('');
     suggestionsDiv.classList.remove('hidden');
+    suggestionsDiv.setAttribute('aria-expanded', 'true');
+    qs('#gameInput')?.setAttribute('aria-expanded', 'true');
   }
 
   function hideSuggestions() {
     const suggestions = qs('#suggestions');
-    if (suggestions) suggestions.classList.add('hidden');
+    if (suggestions) {
+      suggestions.classList.add('hidden');
+      suggestions.setAttribute('aria-expanded', 'false');
+      qs('#gameInput')?.setAttribute('aria-expanded', 'false');
+    }
   }
 
   function setGuideEmptyState(visible, message = 'Nenhum troféu corresponde ao filtro atual. Limpe a busca ou troque o filtro.') {
@@ -250,7 +282,7 @@ const UI = (() => {
         resumeTarget.innerHTML = `
           <div class="atlas-feature-panel">
             <i class="fas fa-bookmark"></i>
-            <div><strong>Nenhum jogo salvo ainda</strong><span>Busque um jogo, abra a página e ele será salvo na biblioteca.</span></div>
+            <div><strong>Nenhum jogo salvo ainda</strong><span>Salve manualmente seus jogos favoritos e continue de onde parou.</span></div>
           </div>`;
       } else {
         resumeTarget.innerHTML = libraryGames.slice(0, 3).map(game => {
@@ -362,6 +394,25 @@ const UI = (() => {
 
 
 
+  function formatRelativeDate(value) {
+    if (!value) return 'Agora';
+    const date = new Date(value);
+    if (Number.isNaN(date.getTime())) return 'Agora';
+    const diffMs = Date.now() - date.getTime();
+    const diffHours = Math.max(Math.round(diffMs / 36e5), 0);
+    if (diffHours < 1) return 'Agora';
+    if (diffHours < 24) return `${diffHours}h atrás`;
+    const diffDays = Math.round(diffHours / 24);
+    if (diffDays < 7) return `${diffDays}d atrás`;
+    return date.toLocaleDateString('pt-BR');
+  }
+
+  function getLibraryStatusLabel(status, progress) {
+    if (status === 'completed' || progress >= 100) return '100% concluído';
+    if (status === 'in-progress' || progress > 0) return 'Em andamento';
+    return 'Salvo para depois';
+  }
+
   function renderLibrary(library = {}, options = {}) {
     const target = qs('#libraryGrid') || qs('#libraryList') || qs('#libraryContent');
     const summary = qs('#librarySummary');
@@ -379,14 +430,28 @@ const UI = (() => {
       const done = completed.length;
       const progress = total ? Math.round((done / total) * 100) : 0;
       const missables = trophies.filter(t => t && (t.is_missable || t.is_spoiler)).length;
-      return { ...game, total, done, progress, remaining: Math.max(total - done, 0), missables };
+      const status = game.status || (progress >= 100 ? 'completed' : progress > 0 ? 'in-progress' : 'saved');
+      return {
+        ...game,
+        total,
+        done,
+        progress,
+        status,
+        statusLabel: getLibraryStatusLabel(status, progress),
+        remaining: Math.max(total - done, 0),
+        missables,
+        savedAt: game.savedAt || game.lastOpenedAt || game.lastActivityAt || null,
+        lastOpenedAt: game.lastOpenedAt || game.lastActivityAt || game.savedAt || null,
+        lastActivityAt: game.lastActivityAt || game.lastOpenedAt || game.savedAt || null
+      };
     }).filter(game => !search || String(game.name || '').toLowerCase().includes(search));
 
     const sorted = items.sort((a, b) => {
-      if (sort === 'name' || sort === 'name-asc') return String(a.name || '').localeCompare(String(b.name || ''));
+      if (sort === 'name' || sort === 'name-asc') return String(a.name || '').localeCompare(String(b.name || ''), 'pt-BR');
       if (sort === 'difficulty' || sort === 'difficulty-desc') return Number(b.difficulty || 0) - Number(a.difficulty || 0);
       if (sort === 'near-100' || sort === 'remaining-asc') return a.remaining - b.remaining || b.progress - a.progress;
-      if (sort === 'progress' || sort === 'progress-desc' || sort === 'continue') return b.progress - a.progress || a.remaining - b.remaining;
+      if (sort === 'progress' || sort === 'progress-desc') return b.progress - a.progress || a.remaining - b.remaining;
+      if (sort === 'recent' || sort === 'continue') return new Date(b.lastActivityAt || b.lastOpenedAt || b.savedAt || 0) - new Date(a.lastActivityAt || a.lastOpenedAt || a.savedAt || 0);
       return b.progress - a.progress || a.remaining - b.remaining;
     });
 
@@ -394,7 +459,9 @@ const UI = (() => {
       if (!sorted.length) {
         summary.textContent = search ? 'Nenhum jogo salvo corresponde à busca.' : 'Sua biblioteca está vazia.';
       } else {
-        summary.textContent = `${sorted.length} jogo(s) salvo(s) na biblioteca.`;
+        const inProgress = sorted.filter(game => game.progress > 0 && game.progress < 100).length;
+        const completedGames = sorted.filter(game => game.progress >= 100).length;
+        summary.textContent = `${sorted.length} jogo(s) salvo(s) • ${inProgress} em andamento • ${completedGames} concluído(s).`;
       }
     }
 
@@ -404,11 +471,11 @@ const UI = (() => {
       } else {
         const mostAdvanced = [...sorted].sort((a, b) => b.progress - a.progress || a.remaining - b.remaining)[0];
         const closest = [...sorted].sort((a, b) => a.remaining - b.remaining || b.progress - a.progress)[0];
-        const justStarted = [...sorted].sort((a, b) => a.done - b.done || a.remaining - b.remaining)[0];
+        const recentlyActive = [...sorted].sort((a, b) => new Date(b.lastActivityAt || b.lastOpenedAt || b.savedAt || 0) - new Date(a.lastActivityAt || a.lastOpenedAt || a.savedAt || 0))[0];
         const cards = [
           { label: 'Mais avançado', game: mostAdvanced, value: `${mostAdvanced.progress}%`, hint: `${mostAdvanced.done}/${mostAdvanced.total} concluídos` },
           { label: 'Mais perto de 100%', game: closest, value: `${closest.remaining}`, hint: 'troféu(s) restante(s)' },
-          { label: 'Melhor para retomar', game: justStarted, value: `${justStarted.done}`, hint: 'já concluído(s)' }
+          { label: 'Atividade recente', game: recentlyActive, value: `${formatRelativeDate(recentlyActive.lastActivityAt || recentlyActive.lastOpenedAt || recentlyActive.savedAt)}`, hint: 'última atualização' }
         ];
         focus.innerHTML = cards.map(item => `
           <article class="atlas-panel atlas-library-focus p-5 rounded-[24px] bg-white/[0.03] border border-white/10">
@@ -439,12 +506,13 @@ const UI = (() => {
             <div class="min-w-0 flex-1 space-y-2">
               <h3 class="text-lg font-semibold text-white">${escapeHtml(game.name || 'Sem nome')}</h3>
               <div class="flex flex-wrap gap-2 text-xs text-white/65">
-                <span class="atlas-tag">${escapeHtml(game.platform || 'Plataforma')}</span>
+                <span class="atlas-tag">${escapeHtml(game.statusLabel)}</span>
                 <span class="atlas-tag">Dificuldade ${escapeHtml(game.difficulty || '-')}</span>
                 <span class="atlas-tag">${game.done}/${game.total} concluídos</span>
                 ${game.missables ? `<span class="atlas-tag">Perdíveis: ${game.missables}</span>` : ''}
               </div>
               <p class="text-sm text-white/60">Progresso: ${game.progress}% · Restam ${game.remaining} troféu(s)</p>
+              <p class="text-xs text-white/42">Última atividade: ${escapeHtml(formatRelativeDate(game.lastActivityAt || game.lastOpenedAt || game.savedAt))}</p>
             </div>
           </div>
           <div class="h-2 rounded-full bg-white/10 overflow-hidden">
@@ -798,25 +866,87 @@ const UI = (() => {
   function escapeHtml(value) { return String(value).replaceAll('&', '&amp;').replaceAll('<', '&lt;').replaceAll('>', '&gt;').replaceAll('"', '&quot;').replaceAll("'", '&#39;'); }
   function escapeAttribute(value) { return escapeHtml(value); }
 
+  function getDifficultyProfileLabel(difficulty) {
+    const value = Number(difficulty || 0);
+    if (value >= 9) return 'Brutal';
+    if (value >= 7) return 'Exigente';
+    if (value >= 4) return 'Intermediária';
+    if (value >= 1) return 'Acessível';
+    return 'Não avaliada';
+  }
+
+  function getTrophyBreakdown(trophies = []) {
+    return ['Platina', 'Ouro', 'Prata', 'Bronze'].map(type => ({
+      type,
+      count: trophies.filter(trophy => String(trophy?.type || '').toLowerCase() === type.toLowerCase()).length
+    }));
+  }
+
+  function buildGuideViewModel(game, completedSource = [], options = {}) {
+    const trophies = Array.isArray(game?.trophies) ? game.trophies : [];
+    const roadmap = Array.isArray(game?.roadmap) ? game.roadmap : [];
+    const completedIds = new Set(Array.isArray(completedSource) ? completedSource : []);
+    const completed = trophies.filter(trophy => completedIds.has(trophy.id)).length;
+    const total = trophies.length;
+    const progress = total ? Math.round((completed / total) * 100) : 0;
+    const pending = Math.max(total - completed, 0);
+    const missables = trophies.filter(trophy => trophy && (trophy.is_missable || trophy.is_spoiler)).length;
+    const spoilerCount = trophies.filter(trophy => trophy?.is_spoiler).length;
+    const breakdown = getTrophyBreakdown(trophies);
+    const breakdownText = breakdown.filter(item => item.count > 0).map(item => `${item.count} ${item.type}`).join(' • ') || 'Sem troféus detalhados';
+    const quickNotes = [
+      game?.missable ? game.missable : 'Revise os alertas editoriais antes de iniciar a campanha.',
+      roadmap.length ? `Siga ${roadmap.length} etapa(s) do roadmap para evitar retrabalho e organizar a platina.` : 'Monte uma ordem de execução antes de sair marcando troféus soltos.',
+      spoilerCount ? `${spoilerCount} troféu(s) têm spoiler e pedem leitura com cautela.` : 'Os troféus visíveis podem ser revisados sem grandes spoilers.'
+    ].filter(Boolean);
+    const prepChecklist = [
+      missables ? `Leia com atenção o bloco de perdíveis: há ${missables} alerta(s) que pedem atenção antes de avançar.` : 'Não há alerta forte de perdível marcado neste guia, então você pode seguir com mais liberdade.',
+      total ? `A lista tem ${total} troféu(s), com distribuição ${breakdownText}.` : 'Ainda não há troféus cadastrados para este jogo.',
+      roadmap.length ? `O roadmap já está quebrado em ${roadmap.length} etapa(s), útil para sessões curtas.` : 'O guia ainda precisa de um roadmap mais detalhado para orientar melhor a ordem da platina.'
+    ];
+    const spotlightTrophies = trophies
+      .filter(trophy => trophy?.is_spoiler || /perd|miss|colet|online|grind|dific/i.test(`${trophy?.name || ''} ${trophy?.description || ''} ${trophy?.tip || ''}`))
+      .slice(0, 3)
+      .map(trophy => ({
+        name: trophy?.name || 'Troféu',
+        label: trophy?.is_spoiler ? 'Spoiler / atenção' : (trophy?.type || 'Troféu'),
+        text: trophy?.tip || trophy?.description || 'Revise este troféu antes de começar.'
+      }));
+
+    return {
+      trophies,
+      roadmap,
+      completedIds,
+      completed,
+      total,
+      progress,
+      pending,
+      missables,
+      spoilerCount,
+      breakdownText,
+      quickNotes,
+      prepChecklist,
+      spotlightTrophies,
+      difficultyLabel: getDifficultyProfileLabel(game?.difficulty),
+      image: game?.image || 'https://via.placeholder.com/900x520?text=Sem+Capa',
+      isSaved: Boolean(options?.isSaved),
+      libraryEntry: options?.libraryEntry || null
+    };
+  }
+
 
   function renderGuide(game, state = {}) {
     const headerEl = qs('#guideHeader');
     const sidebarEl = qs('#sidebarInfo');
     const trophiesEl = qs('#trophyList') || qs('#trophiesList') || qs('#guideTrophies');
+    const isSaved = Boolean(state?.isSaved);
+    const libraryEntry = state?.libraryEntry || null;
     const completedSource = Array.isArray(state)
       ? state
       : Array.isArray(state?.completedTrophies)
         ? state.completedTrophies
         : (Array.isArray(game?.completed) ? game.completed : []);
-
-    const trophies = Array.isArray(game?.trophies) ? game.trophies : [];
-    const roadmap = Array.isArray(game?.roadmap) ? game.roadmap : [];
-    const completedIds = new Set(completedSource);
-    const completed = trophies.filter(t => completedIds.has(t.id)).length;
-    const total = trophies.length;
-    const progress = total ? Math.round((completed / total) * 100) : 0;
-    const missables = trophies.filter(t => t && (t.is_missable || t.is_spoiler)).length;
-    const image = game?.image || 'https://via.placeholder.com/900x520?text=Sem+Capa';
+    const viewModel = buildGuideViewModel(game, completedSource, { isSaved, libraryEntry });
 
     if (headerEl) {
       headerEl.innerHTML = `
@@ -824,18 +954,28 @@ const UI = (() => {
           <div class="flex flex-col xl:flex-row xl:items-start xl:justify-between gap-5">
             <div class="flex gap-4 items-start min-w-0">
               <div class="atlas-guide-cover shrink-0">
-                <img src="${escapeAttribute(image)}" alt="${escapeAttribute(game?.name || 'Jogo')}" class="w-full h-full object-cover">
+                <img src="${escapeAttribute(viewModel.image)}" alt="${escapeAttribute(game?.name || 'Jogo')}" class="w-full h-full object-cover">
               </div>
               <div class="min-w-0">
                 <div class="atlas-eyebrow">Guia do jogo</div>
                 <h1 class="text-3xl md:text-4xl font-extrabold tracking-tight mt-2 break-words">${escapeHtml(game?.name || 'Guia')}</h1>
-                <p class="text-white/58 mt-3 max-w-3xl">Dificuldade ${escapeHtml(String(game?.difficulty || '-'))}/10 • ${escapeHtml(game?.time || 'Tempo não informado')} • ${total} troféu(s)</p>
-                <p class="text-white/50 mt-3 max-w-3xl">${escapeHtml(game?.missable || 'Sem alerta editorial de perdíveis informado.')}</p>
+                <p class="text-white/58 mt-3 max-w-3xl">Dificuldade ${escapeHtml(String(game?.difficulty || '-'))}/10 • ${escapeHtml(game?.time || 'Tempo não informado')} • ${viewModel.total} troféu(s)</p>
+                <div class="flex flex-wrap gap-2 mt-4">
+                  <span class="atlas-tag">Perfil ${escapeHtml(viewModel.difficultyLabel)}</span>
+                  <span class="atlas-tag">${escapeHtml(game?.time || 'Tempo não informado')}</span>
+                  <span class="atlas-tag">${viewModel.missables ? `${viewModel.missables} alerta(s)` : 'Sem alerta crítico marcado'}</span>
+                  <span class="atlas-tag">${escapeHtml(viewModel.breakdownText)}</span>
+                </div>
+                <p class="text-white/50 mt-4 max-w-3xl">${escapeHtml(game?.missable || 'Sem alerta editorial de perdíveis informado.')}</p>
               </div>
             </div>
             <div class="flex flex-wrap gap-3 xl:justify-end">
+              <button type="button" class="atlas-btn ${isSaved ? 'atlas-btn-secondary' : 'atlas-btn-primary'}" data-toggle-save-game="true">${isSaved ? 'Remover da biblioteca' : 'Salvar na biblioteca'}</button>
               <button type="button" class="atlas-btn atlas-btn-secondary" data-copy-game-link="${escapeAttribute(game?.slug || '')}">Copiar link</button>
             </div>
+          </div>
+          <div class="grid lg:grid-cols-3 gap-3 mt-5">
+            ${viewModel.quickNotes.map((note, index) => `<article class="glass-morphism rounded-[18px] p-4 border border-white/10"><div class="text-[11px] uppercase tracking-[0.18em] text-white/40">Leitura ${index + 1}</div><p class="text-sm text-white/78 mt-2">${escapeHtml(note)}</p></article>`).join('')}
           </div>
         </section>`;
     }
@@ -843,25 +983,38 @@ const UI = (() => {
     if (sidebarEl) {
       sidebarEl.innerHTML = `
         <section class="atlas-panel p-5 rounded-[24px] bg-white/[0.03] border border-white/10 space-y-4">
-          <div class="atlas-eyebrow">Resumo</div>
+          <div class="flex items-center justify-between gap-3 flex-wrap">
+            <div class="atlas-eyebrow">Resumo</div>
+            <div class="text-xs text-white/45">${escapeHtml(isSaved ? `Na biblioteca • ${getLibraryStatusLabel(libraryEntry?.status, viewModel.progress)}` : 'Ainda não salvo')}</div>
+          </div>
           <div class="atlas-guide-summary-grid">
-            <article class="glass-morphism atlas-stat-mini p-4 rounded-[18px]"><div class="text-xs uppercase tracking-wide text-white/45">Progresso</div><div class="text-3xl font-extrabold mt-2">${progress}%</div></article>
-            <article class="glass-morphism atlas-stat-mini p-4 rounded-[18px]"><div class="text-xs uppercase tracking-wide text-white/45">Concluídos</div><div class="text-3xl font-extrabold mt-2">${completed}/${total}</div></article>
-            <article class="glass-morphism atlas-stat-mini p-4 rounded-[18px]"><div class="text-xs uppercase tracking-wide text-white/45">Pendentes</div><div class="text-3xl font-extrabold mt-2">${Math.max(total - completed, 0)}</div></article>
-            <article class="glass-morphism atlas-stat-mini p-4 rounded-[18px]"><div class="text-xs uppercase tracking-wide text-white/45">Perdíveis</div><div class="text-3xl font-extrabold mt-2">${missables}</div></article>
+            <article class="glass-morphism atlas-stat-mini p-4 rounded-[18px]"><div class="text-xs uppercase tracking-wide text-white/45">Progresso</div><div class="text-3xl font-extrabold mt-2">${viewModel.progress}%</div></article>
+            <article class="glass-morphism atlas-stat-mini p-4 rounded-[18px]"><div class="text-xs uppercase tracking-wide text-white/45">Concluídos</div><div class="text-3xl font-extrabold mt-2">${viewModel.completed}/${viewModel.total}</div></article>
+            <article class="glass-morphism atlas-stat-mini p-4 rounded-[18px]"><div class="text-xs uppercase tracking-wide text-white/45">Pendentes</div><div class="text-3xl font-extrabold mt-2">${viewModel.pending}</div></article>
+            <article class="glass-morphism atlas-stat-mini p-4 rounded-[18px]"><div class="text-xs uppercase tracking-wide text-white/45">Spoilers</div><div class="text-3xl font-extrabold mt-2">${viewModel.spoilerCount}</div></article>
           </div>
         </section>
         <section class="atlas-panel p-5 rounded-[24px] bg-white/[0.03] border border-white/10 space-y-4">
+          <div class="atlas-eyebrow">Antes de começar</div>
+          <ul class="space-y-3 text-sm text-white/72">
+            ${viewModel.prepChecklist.map(item => `<li class="flex items-start gap-3"><span class="atlas-tag mt-0.5">•</span><span>${escapeHtml(item)}</span></li>`).join('')}
+          </ul>
+        </section>
+        <section class="atlas-panel p-5 rounded-[24px] bg-white/[0.03] border border-white/10 space-y-4">
           <div class="atlas-eyebrow">Roadmap</div>
-          ${roadmap.length ? `<ol class="space-y-3 text-white/72">${roadmap.map((step, index) => `<li class="flex items-start gap-3"><span class="atlas-tag mt-0.5">${index + 1}</span><span>${escapeHtml(typeof step === 'string' ? step : (step?.title || step?.description || 'Etapa'))}</span></li>`).join('')}</ol>` : '<div class="text-white/45">Sem roadmap cadastrado.</div>'}
+          ${viewModel.roadmap.length ? `<ol class="space-y-3 text-white/72">${viewModel.roadmap.map((step, index) => `<li class="flex items-start gap-3"><span class="atlas-tag mt-0.5">${index + 1}</span><span>${escapeHtml(typeof step === 'string' ? step : (step?.title || step?.description || 'Etapa'))}</span></li>`).join('')}</ol>` : '<div class="text-white/45">Sem roadmap cadastrado.</div>'}
+        </section>
+        <section class="atlas-panel p-5 rounded-[24px] bg-white/[0.03] border border-white/10 space-y-4">
+          <div class="atlas-eyebrow">Destaques da lista</div>
+          ${viewModel.spotlightTrophies.length ? `<div class="space-y-3">${viewModel.spotlightTrophies.map(item => `<article class="glass-morphism rounded-[18px] p-4 border border-white/10"><div class="text-[11px] uppercase tracking-[0.18em] text-white/40">${escapeHtml(item.label)}</div><h3 class="text-sm font-semibold text-white mt-2">${escapeHtml(item.name)}</h3><p class="text-sm text-white/68 mt-2">${escapeHtml(item.text)}</p></article>`).join('')}</div>` : '<div class="text-white/45">Nenhum troféu de atenção especial detectado automaticamente.</div>'}
         </section>
       `;
     }
 
     if (trophiesEl) {
-      trophiesEl.innerHTML = trophies.length
-        ? trophies.map(trophy => {
-            const done = completedIds.has(trophy.id);
+      trophiesEl.innerHTML = viewModel.trophies.length
+        ? viewModel.trophies.map(trophy => {
+            const done = viewModel.completedIds.has(trophy.id);
             const description = trophy.description || '';
             const tip = trophy.tip || '';
             const search = `${trophy.name || ''} ${description} ${tip}`.trim().toLowerCase();
@@ -891,8 +1044,8 @@ const UI = (() => {
 
     const progressLabel = qs('#progressPercent');
     const counterLabel = qs('#guideCounter');
-    if (progressLabel) progressLabel.textContent = `${progress}%`;
-    if (counterLabel) counterLabel.textContent = `${completed}/${total} concluídos`;
+    if (progressLabel) progressLabel.textContent = `${viewModel.progress}%`;
+    if (counterLabel) counterLabel.textContent = `${viewModel.completed}/${viewModel.total} concluídos`;
   }
 
 

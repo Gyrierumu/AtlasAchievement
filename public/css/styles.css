@@ -385,13 +385,20 @@ select:focus {
 .atlas-suggestion-item {
   width: 100%;
   text-align: left;
-  padding: 16px 18px;
+  padding: 14px 18px;
   color: rgba(255,255,255,.78);
   background: transparent;
   border: 0;
   border-bottom: 1px solid rgba(255,255,255,.05);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+  transition: background .2s ease, color .2s ease, border-color .2s ease;
 }
-.atlas-suggestion-item:hover { background: rgba(56, 189, 248, .10); color: white; }
+.atlas-suggestion-item:hover,
+.atlas-suggestion-item.is-active { background: rgba(56, 189, 248, .10); color: white; }
+.atlas-suggestion-item.is-active { border-color: rgba(125, 211, 252, .22); }
 
 .atlas-label {
   display: inline-block;

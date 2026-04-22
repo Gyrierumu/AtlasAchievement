@@ -24,7 +24,9 @@ const config = {
   loginRateLimitMaxAttempts: Number(process.env.LOGIN_RATE_LIMIT_MAX_ATTEMPTS || 8),
   loginBlockDurationMs: Number(process.env.LOGIN_BLOCK_DURATION_MS || 15 * 60 * 1000),
   appUrl: (process.env.APP_URL || '').trim(),
-  corsAllowedOrigins: (process.env.CORS_ALLOWED_ORIGINS || '').split(',').map(value => value.trim()).filter(Boolean)
+  corsAllowedOrigins: (process.env.CORS_ALLOWED_ORIGINS || '').split(',').map(value => value.trim()).filter(Boolean),
+  sessionMaxAgeHours: Number(process.env.SESSION_MAX_AGE_HOURS || 8),
+  sessionCleanupIntervalMinutes: Number(process.env.SESSION_CLEANUP_INTERVAL_MINUTES || 30)
 };
 
 function assertRuntimeConfig() {
@@ -52,6 +54,10 @@ function getStartupWarnings() {
 
   if (config.loginRateLimitMaxAttempts < 3) {
     warnings.push('LOGIN_RATE_LIMIT_MAX_ATTEMPTS muito baixo pode bloquear testes locais com facilidade.');
+  }
+
+  if (config.sessionMaxAgeHours < 1) {
+    warnings.push('SESSION_MAX_AGE_HOURS muito baixo pode gerar expiração rápida demais para o admin.');
   }
 
   return warnings;
