@@ -433,7 +433,7 @@ const UI = (() => {
       const image = escapeAttribute(game.image || 'https://via.placeholder.com/640x360?text=Sem+Capa');
       const slug = escapeAttribute(game.slug || '');
       return `
-        <article class="atlas-panel rounded-[24px] p-5 bg-white/[0.03] border border-white/10 space-y-4" data-library-game="${escapeAttribute(game.name || '')}">
+        <article class="atlas-panel rounded-[24px] p-5 bg-white/[0.03] border border-white/10 space-y-4" data-library-game="${escapeAttribute(game.slug || game.name || '')}">
           <div class="flex gap-4">
             <img src="${image}" alt="${escapeAttribute(game.name || 'Jogo')}" class="w-24 h-24 rounded-2xl object-cover bg-white/5">
             <div class="min-w-0 flex-1 space-y-2">
@@ -452,7 +452,7 @@ const UI = (() => {
           </div>
           <div class="flex flex-wrap gap-3">
             <button type="button" class="atlas-btn atlas-btn-primary" data-open-game="${escapeAttribute(game.name || '')}" data-open-slug="${slug}">Abrir guia</button>
-            <button type="button" class="atlas-btn atlas-btn-secondary" data-delete-game="${escapeAttribute(game.name || '')}">Remover</button>
+            <button type="button" class="atlas-btn atlas-btn-secondary" data-delete-game="${escapeAttribute(game.slug || game.name || '')}">Remover</button>
           </div>
         </article>
       `;

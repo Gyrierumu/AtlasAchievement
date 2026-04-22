@@ -1,19 +1,41 @@
 const ApiService = (() => {
+  let csrfToken = null;
+
+  function setCsrfToken(token) {
+    csrfToken = token || null;
+  }
+
   async function request(url, options = {}) {
     const hasBody = options.body instanceof FormData;
+    const method = String(options.method || 'GET').toUpperCase();
+    const headers = hasBody
+      ? { ...(options.headers || {}) }
+      : {
+          'Content-Type': 'application/json',
+          ...(options.headers || {})
+        };
+
+    if (!['GET', 'HEAD', 'OPTIONS'].includes(method) && csrfToken) {
+      headers['X-CSRF-Token'] = csrfToken;
+    }
+
     const response = await fetch(url, {
       credentials: 'include',
-      headers: hasBody
-        ? (options.headers || {})
-        : {
-            'Content-Type': 'application/json',
-            ...(options.headers || {})
-          },
+      headers,
       ...options
     });
 
+    const responseCsrfToken = response.headers.get('x-csrf-token');
+    if (responseCsrfToken) {
+      setCsrfToken(responseCsrfToken);
+    }
+
     const isJson = response.headers.get('content-type')?.includes('application/json');
     const payload = isJson ? await response.json() : null;
+
+    if (payload?.csrfToken) {
+      setCsrfToken(payload.csrfToken);
+    }
 
     if (!response.ok) {
       const message = payload?.error?.message || payload?.message || payload?.error || 'Erro inesperado.';
@@ -28,6 +50,7 @@ const ApiService = (() => {
   }
 
   return {
+    setCsrfToken,
     getGames(params = {}) {
       const searchParams = new URLSearchParams();
       Object.entries(params).forEach(([key, value]) => {

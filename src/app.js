@@ -1,9 +1,11 @@
 const fs = require('fs');
 const express = require('express');
-const cors = require('cors');
 const session = require('express-session');
 const path = require('path');
 const requestContext = require('./middleware/requestContext');
+const securityHeaders = require('./middleware/securityHeaders');
+const { issueCsrfToken, requireCsrf } = require('./middleware/csrfProtection');
+const { escapeXml } = require('./utils/xml');
 const env = require('./config/env');
 const authRoutes = require('./routes/auth.routes');
 const gamesRoutes = require('./routes/games.routes');
@@ -151,8 +153,34 @@ if (env.isProduction) {
   app.set('trust proxy', 1);
 }
 
+const allowedOrigins = new Set(env.corsAllowedOrigins);
+if (env.appUrl) {
+  allowedOrigins.add(env.appUrl);
+}
+
 app.use(requestContext);
-app.use(cors({ origin: true, credentials: true }));
+app.use(securityHeaders);
+app.use((req, res, next) => {
+  const origin = req.get('origin');
+  if (!origin) return next();
+
+  if (allowedOrigins.size === 0) {
+    return next();
+  }
+
+  if (allowedOrigins.has(origin)) {
+    res.setHeader('Access-Control-Allow-Origin', origin);
+    res.setHeader('Access-Control-Allow-Credentials', 'true');
+    res.setHeader('Access-Control-Allow-Headers', 'Content-Type, X-CSRF-Token, X-Requested-With');
+    res.setHeader('Access-Control-Allow-Methods', 'GET,HEAD,OPTIONS,POST,PUT,DELETE');
+    res.setHeader('Vary', 'Origin');
+    if (req.method === 'OPTIONS') return res.sendStatus(204);
+    return next();
+  }
+
+  if (req.method === 'OPTIONS') return res.sendStatus(403);
+  return next();
+});
 app.use(express.json({ limit: '1mb' }));
 app.use(session({
   name: 'mtg.sid',
@@ -161,13 +189,24 @@ app.use(session({
   saveUninitialized: false,
   cookie: {
     httpOnly: true,
-    sameSite: env.isProduction ? 'none' : 'lax',
+    sameSite: 'lax',
     secure: env.isProduction,
     maxAge: 1000 * 60 * 60 * 8
   }
 }));
 
-app.use('/uploads', express.static(env.uploadDir));
+app.use(issueCsrfToken);
+app.use('/uploads', express.static(env.uploadDir, {
+  fallthrough: false,
+  etag: true,
+  maxAge: env.isProduction ? '30d' : 0,
+  setHeaders: res => {
+    res.setHeader('X-Content-Type-Options', 'nosniff');
+    if (env.isProduction) {
+      res.setHeader('Cache-Control', 'public, max-age=2592000, immutable');
+    }
+  }
+}));
 app.use(express.static(path.join(__dirname, '../public'), { index: false }));
 
 app.get('/api/health', (req, res) => {
@@ -177,10 +216,35 @@ app.get('/api/health', (req, res) => {
   });
 });
 
+app.get('/robots.txt', (req, res) => {
+  const origin = `${req.protocol}://${req.get('host')}`;
+  res.type('text/plain').send(`User-agent: *\nAllow: /\nDisallow: /admin\nSitemap: ${origin}/sitemap.xml\n`);
+});
+
+app.get('/sitemap.xml', async (req, res, next) => {
+  try {
+    const origin = `${req.protocol}://${req.get('host')}`;
+    const response = await gamesService.listGames({ page: 1, limit: 100, sort: 'updated-desc' });
+    const urls = [
+      { loc: `${origin}/`, lastmod: new Date().toISOString() },
+      { loc: `${origin}/catalogo`, lastmod: new Date().toISOString() },
+      ...response.items.map(game => ({
+        loc: `${origin}/jogo/${game.slug}`,
+        lastmod: game.updated_at || game.created_at || new Date().toISOString()
+      }))
+    ];
+
+    res.type('application/xml');
+    res.send(`<?xml version="1.0" encoding="UTF-8"?>\n<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">\n${urls.map(item => `  <url><loc>${escapeXml(item.loc)}</loc><lastmod>${escapeXml(new Date(item.lastmod).toISOString())}</lastmod></url>`).join('\n')}\n</urlset>`);
+  } catch (error) {
+    next(error);
+  }
+});
+
 app.use('/api/auth/login', loginRateLimit);
 app.use('/api/auth', authRoutes);
-app.use('/api/uploads', uploadsRoutes);
-app.use('/api/games', gamesRoutes);
+app.use('/api/uploads', requireCsrf, uploadsRoutes);
+app.use('/api/games', requireCsrf, gamesRoutes);
 
 app.get('/admin', (req, res) => {
   res.sendFile(path.join(__dirname, '../public/admin.html'));

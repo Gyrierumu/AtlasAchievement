@@ -1,11 +1,13 @@
 const adminService = require('../services/admin.service');
 const AppError = require('../utils/AppError');
 const { clearLoginRateLimit } = require('../middleware/loginRateLimit');
+const { ensureCsrfToken } = require('../middleware/csrfProtection');
 
 function getSessionStatus(req, res) {
   res.json({
     authenticated: Boolean(req.session?.admin),
-    username: req.session?.admin?.username || null
+    username: req.session?.admin?.username || null,
+    csrfToken: ensureCsrfToken(req)
   });
 }
 
@@ -28,10 +30,13 @@ async function login(req, res, next) {
     req.session.admin = { id: admin.id, username: admin.username };
     clearLoginRateLimit(req);
 
+    const csrfToken = ensureCsrfToken(req);
+
     res.json({
       message: 'Login realizado com sucesso.',
       authenticated: true,
-      username: admin.username
+      username: admin.username,
+      csrfToken
     });
   });
 }
@@ -44,7 +49,7 @@ function logout(req, res, next) {
 
   req.session.destroy(error => {
     if (error) return next(error);
-    res.clearCookie('mtg.sid');
+    res.clearCookie('mtg.sid', { httpOnly: true, sameSite: 'lax', secure: req.secure });
     res.json({ message: 'Logout realizado com sucesso.', authenticated: false });
   });
 }

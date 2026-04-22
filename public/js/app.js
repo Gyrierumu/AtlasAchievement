@@ -72,6 +72,10 @@
     if (view === 'catalog') UI.renderCatalog(state.catalogResponse, { search: state.catalogSearch, sort: state.catalogSort, facet: options.facet || state.catalogFacet });
   }
 
+  function getLibraryKey(game) {
+    return StorageService.normalizeKey(game);
+  }
+
   function persistLibrary() {
     StorageService.saveLibrary(state.library);
     UI.updateLibraryBadge(state.library);
@@ -80,11 +84,12 @@
   }
 
   function normalizeLibraryEntry(game) {
-    return { ...game, completed: state.library[game.name]?.completed || [] };
+    const key = getLibraryKey(game);
+    return { ...game, slug: getGameSlug(game), completed: state.library[key]?.completed || [] };
   }
 
   async function loadGames() {
-    const response = await ApiService.getGames({ page: 1, limit: 500, sort: 'updated-desc' });
+    const response = await ApiService.getGames({ page: 1, limit: 120, sort: 'updated-desc' });
     state.availableGames = response.items || [];
     UI.renderHomeOverview(state.availableGames, state.library);
     return state.availableGames;
@@ -160,7 +165,7 @@
       UI.setGuideEmptyState(false);
       const guide = await ApiService.getGameBySlug(slugValue);
       state.currentGame = guide;
-      state.library[guide.name] = normalizeLibraryEntry(guide);
+      state.library[getLibraryKey(guide)] = normalizeLibraryEntry(guide);
       persistLibrary();
       UI.setSearchFeedback(`Página de ${guide.name} aberta.`, 'success');
       renderCurrentGuide(options);
@@ -185,7 +190,7 @@
       UI.setGuideEmptyState(false);
       const guide = await ApiService.getGameByName(gameName);
       state.currentGame = guide;
-      state.library[guide.name] = normalizeLibraryEntry(guide);
+      state.library[getLibraryKey(guide)] = normalizeLibraryEntry(guide);
       persistLibrary();
       UI.setSearchFeedback(`Página de ${guide.name} aberta.`, 'success');
       renderCurrentGuide(options);
@@ -200,8 +205,9 @@
 
   function renderCurrentGuide(options = {}) {
     if (!state.currentGame) return;
-    const libraryEntry = state.library[state.currentGame.name] || normalizeLibraryEntry(state.currentGame);
-    state.library[state.currentGame.name] = libraryEntry;
+    const libraryKey = getLibraryKey(state.currentGame);
+    const libraryEntry = state.library[libraryKey] || normalizeLibraryEntry(state.currentGame);
+    state.library[libraryKey] = libraryEntry;
     UI.renderGuide(state.currentGame, { completedTrophies: libraryEntry.completed });
     UI.setPageMeta(state.currentGame);
     navigate('guide', { ...options, game: state.currentGame, skipHistory: options.skipHistory });
@@ -213,22 +219,22 @@
 
   function toggleTrophy(trophyId) {
     if (!state.currentGame) return;
-    const entry = state.library[state.currentGame.name];
+    const entry = state.library[getLibraryKey(state.currentGame)];
     const index = entry.completed.indexOf(trophyId);
     if (index >= 0) entry.completed.splice(index, 1); else entry.completed.push(trophyId);
     persistLibrary();
     renderCurrentGuide();
   }
 
-  function loadFromLibrary(name) {
-    const entry = state.library[name];
+  function loadFromLibrary(key) {
+    const entry = state.library[key];
     if (!entry) return;
     state.currentGame = entry;
     renderCurrentGuide();
   }
 
-  function deleteFromLibrary(name) {
-    delete state.library[name];
+  function deleteFromLibrary(key) {
+    delete state.library[key];
     persistLibrary();
     UI.renderLibrary(state.library, { search: state.librarySearch, sort: state.librarySort });
     UI.showToast('Jogo removido da biblioteca.', 'success');
@@ -421,7 +427,7 @@
     if (!window.confirm(`Excluir o jogo "${name}"? Essa ação não pode ser desfeita.`)) return;
     try {
       const response = await ApiService.deleteGame(id);
-      delete state.library[name];
+      delete state.library[getLibraryKey({ name })];
       persistLibrary();
       await Promise.all([loadGames(), loadAdminSummary(), loadAdminGames()]);
       UI.renderAdminSummary(state.adminSummary);

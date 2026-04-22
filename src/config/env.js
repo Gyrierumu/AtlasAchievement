@@ -22,7 +22,9 @@ const config = {
   maxUploadSizeBytes: Number(process.env.MAX_UPLOAD_SIZE_BYTES || 5 * 1024 * 1024),
   loginRateLimitWindowMs: Number(process.env.LOGIN_RATE_LIMIT_WINDOW_MS || 15 * 60 * 1000),
   loginRateLimitMaxAttempts: Number(process.env.LOGIN_RATE_LIMIT_MAX_ATTEMPTS || 8),
-  loginBlockDurationMs: Number(process.env.LOGIN_BLOCK_DURATION_MS || 15 * 60 * 1000)
+  loginBlockDurationMs: Number(process.env.LOGIN_BLOCK_DURATION_MS || 15 * 60 * 1000),
+  appUrl: (process.env.APP_URL || '').trim(),
+  corsAllowedOrigins: (process.env.CORS_ALLOWED_ORIGINS || '').split(',').map(value => value.trim()).filter(Boolean)
 };
 
 function assertRuntimeConfig() {

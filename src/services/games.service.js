@@ -31,33 +31,43 @@ function normalizeGame(row, roadmapRows, trophyRows) {
   };
 }
 
-function buildListBaseQuery({ search = '', facet = 'all' } = {}) {
+
+function buildListFilters({ search = '', facet = 'all' } = {}) {
   const where = [];
   const params = [];
 
   if (search) {
-    where.push('(lower(g.name) LIKE ? OR lower(g.slug) LIKE ?)');
+    where.push('(lower(name) LIKE ? OR lower(slug) LIKE ?)');
     params.push(`%${search.toLowerCase()}%`, `%${search.toLowerCase()}%`);
   }
 
   switch (facet) {
     case 'difficulty-low':
-      where.push('g.difficulty BETWEEN 1 AND 3');
+      where.push('difficulty BETWEEN 1 AND 3');
       break;
     case 'difficulty-mid':
-      where.push('g.difficulty BETWEEN 4 AND 6');
+      where.push('difficulty BETWEEN 4 AND 6');
       break;
     case 'difficulty-high':
-      where.push('g.difficulty BETWEEN 7 AND 10');
+      where.push('difficulty BETWEEN 7 AND 10');
       break;
     case 'time-short':
-      where.push("g.time_bucket = 'short'");
+      where.push("time_bucket = 'short'");
       break;
     case 'time-medium':
-      where.push("g.time_bucket = 'medium'");
+      where.push("time_bucket = 'medium'");
       break;
     case 'time-long':
-      where.push("g.time_bucket = 'long'");
+      where.push("time_bucket = 'long'");
+      break;
+    case 'trophies-small':
+      where.push('trophy_count > 0 AND trophy_count <= 30');
+      break;
+    case 'trophies-medium':
+      where.push('trophy_count > 30 AND trophy_count <= 60');
+      break;
+    case 'trophies-large':
+      where.push('trophy_count > 60');
       break;
     default:
       break;
@@ -108,19 +118,18 @@ function matchesFacet(game, facet = 'all') {
   }
 }
 
-function sortGameRows(rows, sort = 'name-asc') {
-  const sorters = {
-    'updated-desc': (a, b) => String(b.updated_at || '').localeCompare(String(a.updated_at || '')),
-    'created-desc': (a, b) => String(b.created_at || '').localeCompare(String(a.created_at || '')),
-    'difficulty-desc': (a, b) => Number(b.difficulty || 0) - Number(a.difficulty || 0),
-    'time-asc': (a, b) => Number(a.time_sort_hours || Number.MAX_SAFE_INTEGER) - Number(b.time_sort_hours || Number.MAX_SAFE_INTEGER),
-    'trophies-desc': (a, b) => Number(b.trophy_count || 0) - Number(a.trophy_count || 0),
-    'name-asc': (a, b) => a.name.localeCompare(b.name, 'pt-BR')
+function getListOrderBy(sort = 'name-asc') {
+  const sorts = {
+    'updated-desc': 'updated_at DESC, name COLLATE NOCASE ASC',
+    'created-desc': 'created_at DESC, name COLLATE NOCASE ASC',
+    'difficulty-desc': 'difficulty DESC, name COLLATE NOCASE ASC',
+    'time-asc': 'CASE WHEN time_sort_hours IS NULL THEN 1 ELSE 0 END ASC, time_sort_hours ASC, name COLLATE NOCASE ASC',
+    'trophies-desc': 'trophy_count DESC, name COLLATE NOCASE ASC',
+    'name-asc': 'name COLLATE NOCASE ASC'
   };
 
-  return [...rows].sort(sorters[sort] || sorters['name-asc']);
+  return sorts[sort] || sorts['name-asc'];
 }
-
 async function reserveUniqueSlug(baseName, excludeGameId = null) {
   const normalizedBase = slugifyGameName(baseName) || 'jogo';
   let sequence = 0;
@@ -143,40 +152,57 @@ async function reserveUniqueSlug(baseName, excludeGameId = null) {
 
 async function listGames(options = {}) {
   const { search = '', facet = 'all', sort = 'name-asc', page = 1, limit = 500 } = options;
-  const { whereSql, params } = buildListBaseQuery({ search, facet });
+  const safeLimit = Math.min(Math.max(Number(limit) || 24, 1), 100);
+  const requestedPage = Math.max(Number(page) || 1, 1);
+  const { whereSql, params } = buildListFilters({ search, facet });
+  const orderBy = getListOrderBy(sort);
 
-  const rows = await all(
-    `SELECT g.id,
-            g.name,
-            g.slug,
-            g.difficulty,
-            g.time,
-            g.time_min_hours,
-            g.time_max_hours,
-            g.time_sort_hours,
-            g.time_bucket,
-            g.missable,
-            g.image,
-            g.created_at,
-            g.updated_at,
-            COUNT(DISTINCT t.id) AS trophy_count,
-            COUNT(DISTINCT r.id) AS roadmap_count
-     FROM games g
-     LEFT JOIN trophies t ON t.game_id = g.id
-     LEFT JOIN roadmaps r ON r.game_id = g.id
-     ${whereSql}
-     GROUP BY g.id, g.name, g.slug, g.difficulty, g.time, g.time_min_hours, g.time_max_hours, g.time_sort_hours, g.time_bucket, g.missable, g.image, g.created_at, g.updated_at`,
+  const baseCte = `WITH game_stats AS (
+    SELECT g.id,
+           g.name,
+           g.slug,
+           g.difficulty,
+           g.time,
+           g.time_min_hours,
+           g.time_max_hours,
+           g.time_sort_hours,
+           g.time_bucket,
+           g.missable,
+           g.image,
+           g.created_at,
+           g.updated_at,
+           COUNT(DISTINCT t.id) AS trophy_count,
+           COUNT(DISTINCT r.id) AS roadmap_count
+    FROM games g
+    LEFT JOIN trophies t ON t.game_id = g.id
+    LEFT JOIN roadmaps r ON r.game_id = g.id
+    GROUP BY g.id, g.name, g.slug, g.difficulty, g.time, g.time_min_hours, g.time_max_hours, g.time_sort_hours, g.time_bucket, g.missable, g.image, g.created_at, g.updated_at
+  )`;
+
+  const totalRow = await get(
+    `${baseCte}
+     SELECT COUNT(*) AS total
+     FROM game_stats
+     ${whereSql}`,
     params
   );
 
-  const normalizedRows = rows.map(normalizeListRow).filter(row => matchesFacet(row, facet));
-  const sortedRows = sortGameRows(normalizedRows, sort);
-  const safeLimit = Math.min(Math.max(Number(limit) || 24, 1), 100);
-  const safePage = Math.max(Number(page) || 1, 1);
-  const total = sortedRows.length;
+  const total = Number(totalRow?.total || 0);
   const totalPages = Math.max(Math.ceil(total / safeLimit), 1);
-  const start = (safePage - 1) * safeLimit;
-  const items = sortedRows.slice(start, start + safeLimit);
+  const safePage = total > 0 ? Math.min(requestedPage, totalPages) : 1;
+  const offset = (safePage - 1) * safeLimit;
+
+  const rows = await all(
+    `${baseCte}
+     SELECT *
+     FROM game_stats
+     ${whereSql}
+     ORDER BY ${orderBy}
+     LIMIT ? OFFSET ?`,
+    [...params, safeLimit, offset]
+  );
+
+  const items = rows.map(normalizeListRow);
 
   return {
     items,

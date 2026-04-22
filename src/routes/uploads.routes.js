@@ -6,6 +6,7 @@ const env = require('../config/env');
 const requireAdmin = require('../middleware/requireAdmin');
 const asyncHandler = require('../middleware/asyncHandler');
 const uploadsController = require('../controllers/uploads.controller');
+const { finalizeUploadedImage, ALLOWED_IMAGE_TYPES } = require('../services/file.service');
 const AppError = require('../utils/AppError');
 
 const router = express.Router();
@@ -21,7 +22,7 @@ const storage = multer.diskStorage({
   }
 });
 
-const allowedMimeTypes = new Set(['image/jpeg', 'image/png', 'image/webp', 'image/gif']);
+const allowedMimeTypes = new Set([...ALLOWED_IMAGE_TYPES.values()].map(type => type.mime));
 
 const upload = multer({
   storage,
@@ -47,6 +48,14 @@ router.post(
       return next(error);
     });
   },
+  asyncHandler(async (req, _res, next) => {
+    if (!req.file) {
+      return next();
+    }
+
+    await finalizeUploadedImage(req.file);
+    return next();
+  }),
   asyncHandler(uploadsController.uploadCover)
 );
 
