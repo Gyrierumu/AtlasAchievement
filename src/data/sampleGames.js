@@ -491,5 +491,429 @@ module.exports = [
         "is_spoiler": false
       }
     ]
+  },
+  {
+    "name": "Nioh 3",
+    "difficulty": 5,
+    "time": "40-60 horas",
+    "missable": "Não há troféus perdíveis confirmados. Tudo pode ser limpo depois da história em free roam ou via Battle Scroll, incluindo missões, coletáveis e chefes opcionais.",
+    "image": "/og-default.svg",
+    "roadmap": [
+      "Avance pela história principal sem pressa e explore bem cada região para subir o nível de exploração.",
+      "Complete Myths, capture bases inimigas e purifique Lesser Crucibles enquanto coleta Kodama, Chijiko, Scampuss, hot springs e Jizo.",
+      "No Eternal Rift, use a ferreira para forjar, fazer Soul Match e remodelar equipamentos assim que os recursos forem liberados.",
+      "Deixe para o fim a limpeza de troféus específicos como Dung Ball Roller, veteranos de Yagyu/Hanzo e chefes opcionais de Kunimatsu.",
+      "Se faltar algo, use o Battle Scroll nos santuários para repetir missões e completar qualquer troféu restante."
+    ],
+    "trophies": [
+      {
+        "id": "nioh3_platinum",
+        "name": "You Are Nioh",
+        "type": "Platina",
+        "description": "Obtenha todos os troféus.",
+        "tip": "A platina sai ao completar todo o conteúdo base, sem DLC.",
+        "is_spoiler": false
+      },
+      {
+        "id": "nioh3_answering_people",
+        "name": "Answering to the People",
+        "type": "Ouro",
+        "description": "Complete todos os Myths.",
+        "tip": "Há 39 Myths no jogo. Faça também os dois ocultos no pós-jogo.",
+        "is_spoiler": false
+      },
+      {
+        "id": "nioh3_budding_talent",
+        "name": "Budding Talent",
+        "type": "Bronze",
+        "description": "Alcance o nível 10.",
+        "tip": "Sai naturalmente bem cedo na campanha.",
+        "is_spoiler": false
+      },
+      {
+        "id": "nioh3_grizzled_veteran",
+        "name": "Grizzled Veteran",
+        "type": "Bronze",
+        "description": "Alcance o nível 100.",
+        "tip": "Normalmente vem sem grind antes do fim da história.",
+        "is_spoiler": false
+      },
+      {
+        "id": "nioh3_wanderer_time",
+        "name": "Wanderer in Time",
+        "type": "Bronze",
+        "description": "Viaje no tempo pela primeira vez.",
+        "tip": "Troféu automático de história.",
+        "is_spoiler": true
+      },
+      {
+        "id": "nioh3_guiding_mirror",
+        "name": "Guiding Mirror",
+        "type": "Bronze",
+        "description": "Receba o Guiding Mirror de Ii Naotora.",
+        "tip": "Automático logo após o primeiro Crucible.",
+        "is_spoiler": true
+      },
+      {
+        "id": "nioh3_old_tiger",
+        "name": "The Old Tiger Departs",
+        "type": "Bronze",
+        "description": "Destrua o Crucinite abrigado no espírito guardião de Takeda Shingen.",
+        "tip": "Automático no fim da região Warring States.",
+        "is_spoiler": true
+      },
+      {
+        "id": "nioh3_unbreakable_cause",
+        "name": "Unbreakable Cause",
+        "type": "Bronze",
+        "description": "Destrua o Crucinite abrigado no espírito guardião de Minamoto no Yoritomo.",
+        "tip": "Automático ao concluir a região Heian.",
+        "is_spoiler": true
+      },
+      {
+        "id": "nioh3_queens_eyes",
+        "name": "The Queen's Eyes Open",
+        "type": "Bronze",
+        "description": "Destrua o Crucinite abrigado no espírito guardião de Himiko.",
+        "tip": "Automático na região Antiquity.",
+        "is_spoiler": true
+      },
+      {
+        "id": "nioh3_what_must",
+        "name": "What Must Be Done",
+        "type": "Bronze",
+        "description": "Destrua o Crucinite abrigado no espírito guardião de Tokugawa Yoshinobu.",
+        "tip": "Automático em Bakumatsu.",
+        "is_spoiler": true
+      },
+      {
+        "id": "nioh3_delusion",
+        "name": "Delusion Destroyed",
+        "type": "Bronze",
+        "description": "Destrua o Crucinite abrigado em Hiruko.",
+        "tip": "Troféu do chefe final.",
+        "is_spoiler": true
+      },
+      {
+        "id": "nioh3_as_shogun",
+        "name": "As Shogun",
+        "type": "Ouro",
+        "description": "Seja apontado como o terceiro xogum do xogunato Edo.",
+        "tip": "Automático ao terminar a história principal.",
+        "is_spoiler": true
+      },
+      {
+        "id": "nioh3_crucible_arts",
+        "name": "Crucible Arts Adopter",
+        "type": "Bronze",
+        "description": "Aprenda uma Martial Art de uma arma de Crucible pela primeira vez.",
+        "tip": "Use uma Crucible Weapon até encher a familiaridade.",
+        "is_spoiler": false
+      },
+      {
+        "id": "nioh3_arts_proficiency",
+        "name": "Arts Proficiency",
+        "type": "Bronze",
+        "description": "Derrote 10 inimigos com Strong Attack ou Martial Art aprimorada por Arts Proficiency.",
+        "tip": "Enfraqueça inimigos e finalize com o ataque pesado brilhando em Samurai Style.",
+        "is_spoiler": false
+      },
+      {
+        "id": "nioh3_ninjutsu",
+        "name": "Ninjutsu",
+        "type": "Bronze",
+        "description": "Derrote 10 inimigos com Ninjutsu.",
+        "tip": "Troque para Ninja Style e finalize inimigos com shuriken ou bombas.",
+        "is_spoiler": false
+      },
+      {
+        "id": "nioh3_burst_break",
+        "name": "Burst Break",
+        "type": "Bronze",
+        "description": "Ative Burst Break com sucesso 10 vezes.",
+        "tip": "Use o contra-ataque em golpes com brilho vermelho.",
+        "is_spoiler": false
+      },
+      {
+        "id": "nioh3_guardian_aid",
+        "name": "Guardian Spirit's Aid",
+        "type": "Bronze",
+        "description": "Ative um Guardian Spirit Skill Burst Break com sucesso pela primeira vez.",
+        "tip": "Libera pela história; faça um counter vermelho com a skill do espírito guardião.",
+        "is_spoiler": false
+      },
+      {
+        "id": "nioh3_yokai_manipulator",
+        "name": "Yokai Manipulator",
+        "type": "Bronze",
+        "description": "Use um Summoning Seal para invocar um yokai pela primeira vez.",
+        "tip": "Purifique um Soul Core, equipe-o e use o atalho de invocação.",
+        "is_spoiler": false
+      },
+      {
+        "id": "nioh3_devotee",
+        "name": "Devotee",
+        "type": "Prata",
+        "description": "Desbloqueie todos os santuários nomeados e estátuas de Bodhisattva.",
+        "tip": "Limpeza de coletáveis; acompanhe pelo mapa e pelo Exploration Level.",
+        "is_spoiler": false
+      },
+      {
+        "id": "nioh3_explorer",
+        "name": "Explorer",
+        "type": "Bronze",
+        "description": "Eleve o Exploration Level para 4 em qualquer área.",
+        "tip": "Bases, Lesser Crucibles e Myths sobem muito o nível de exploração.",
+        "is_spoiler": false
+      },
+      {
+        "id": "nioh3_masterful_pupil",
+        "name": "Masterful Pupil",
+        "type": "Bronze",
+        "description": "Derrote um master pela primeira vez.",
+        "tip": "Sai ao derrotar qualquer mestre opcional do mapa.",
+        "is_spoiler": false
+      },
+      {
+        "id": "nioh3_god_among_men",
+        "name": "A God Among Men",
+        "type": "Prata",
+        "description": "Derrote todos os masters.",
+        "tip": "São 13 masters espalhados pelas regiões.",
+        "is_spoiler": false
+      },
+      {
+        "id": "nioh3_armors_value",
+        "name": "Armor's Real Value",
+        "type": "Bronze",
+        "description": "Ative todos os bônus de conjunto de um equipment set.",
+        "tip": "Equipe um set completo com o mesmo bônus verde.",
+        "is_spoiler": false
+      },
+      {
+        "id": "nioh3_latest_masterpiece",
+        "name": "Latest Masterpiece",
+        "type": "Bronze",
+        "description": "Forje um item pela primeira vez.",
+        "tip": "Use a opção Forge na ferreira do Eternal Rift.",
+        "is_spoiler": false
+      },
+      {
+        "id": "nioh3_match_made",
+        "name": "Match Made in Heaven",
+        "type": "Bronze",
+        "description": "Faça um Soul Match pela primeira vez.",
+        "tip": "Sacrifique equipamentos para gerar material e use Soul Match na ferreira.",
+        "is_spoiler": false
+      },
+      {
+        "id": "nioh3_remodeler",
+        "name": "Remodeler",
+        "type": "Bronze",
+        "description": "Remodele uma peça de equipamento pela primeira vez.",
+        "tip": "A opção Remodel fica na ferreira após liberar o recurso.",
+        "is_spoiler": false
+      },
+      {
+        "id": "nioh3_keen_eyed",
+        "name": "Keen-Eyed",
+        "type": "Bronze",
+        "description": "Acaricie um Chijiko pela primeira vez.",
+        "tip": "Derrube o Chijiko com arma de longo alcance e interaja com ele.",
+        "is_spoiler": false
+      },
+      {
+        "id": "nioh3_eagle_eyed",
+        "name": "Eagle-Eyed",
+        "type": "Prata",
+        "description": "Acaricie todos os Chijiko.",
+        "tip": "Existem 43 no total; todos contam para a limpeza.",
+        "is_spoiler": false
+      },
+      {
+        "id": "nioh3_unimpeded",
+        "name": "Unimpeded",
+        "type": "Bronze",
+        "description": "Use todos os métodos de travessia de Spirit Veins.",
+        "tip": "Os espíritos guardiões necessários liberam pela história.",
+        "is_spoiler": false
+      },
+      {
+        "id": "nioh3_teamwork",
+        "name": "Teamwork",
+        "type": "Bronze",
+        "description": "Complete três missões em Expeditions ou com aliados NPC. (Inclui Acolytes.)",
+        "tip": "Vale co-op, NPCs ou acólitos de Blue Graves.",
+        "is_spoiler": false
+      },
+      {
+        "id": "nioh3_scampuss_best_friend",
+        "name": "A Scampuss's Best Friend",
+        "type": "Bronze",
+        "description": "Troque um furball com um Scampuss no Eternal Rift pela primeira vez.",
+        "tip": "Colete um Furball seguindo um Scampuss e entregue ao Great Scampuss no hub.",
+        "is_spoiler": false
+      },
+      {
+        "id": "nioh3_spa_healer",
+        "name": "Spa Healer",
+        "type": "Bronze",
+        "description": "Banhe-se na primeira hot spring.",
+        "tip": "Sai naturalmente ao explorar.",
+        "is_spoiler": false
+      },
+      {
+        "id": "nioh3_spa_lover",
+        "name": "Spa Lover",
+        "type": "Prata",
+        "description": "Banhe-se em todas as hot springs.",
+        "tip": "Limpe todas durante a exploração ou pelo Battle Scroll.",
+        "is_spoiler": false
+      },
+      {
+        "id": "nioh3_kodama_leader",
+        "name": "Kodama Leader",
+        "type": "Prata",
+        "description": "Guie todos os Kodama para casa.",
+        "tip": "São 92 Kodama; nada é perdível.",
+        "is_spoiler": false
+      },
+      {
+        "id": "nioh3_six_jizo",
+        "name": "Visiting the Six Jizo",
+        "type": "Prata",
+        "description": "Reze em todos os Six Jizo.",
+        "tip": "Conteúdo de limpeza de coletáveis.",
+        "is_spoiler": false
+      },
+      {
+        "id": "nioh3_scampuss_enthusiast",
+        "name": "Scampuss Enthusiast",
+        "type": "Prata",
+        "description": "Acaricie todos os Scampusses.",
+        "tip": "Existem 16 no total.",
+        "is_spoiler": false
+      },
+      {
+        "id": "nioh3_soul_core_owner",
+        "name": "Soul Core Owner",
+        "type": "Bronze",
+        "description": "Purifique um Soul Core pela primeira vez.",
+        "tip": "Pegue um Soul Core e alcance um shrine sem morrer.",
+        "is_spoiler": false
+      },
+      {
+        "id": "nioh3_base_captured",
+        "name": "Base Captured",
+        "type": "Bronze",
+        "description": "Capture uma base inimiga pela primeira vez.",
+        "tip": "Sai naturalmente durante a exploração.",
+        "is_spoiler": false
+      },
+      {
+        "id": "nioh3_total_control",
+        "name": "Total Control",
+        "type": "Prata",
+        "description": "Capture todas as bases inimigas.",
+        "tip": "São 26 bases no total.",
+        "is_spoiler": false
+      },
+      {
+        "id": "nioh3_lesser_cleanser",
+        "name": "Lesser Crucible Cleanser",
+        "type": "Bronze",
+        "description": "Purifique um Lesser Crucible pela primeira vez.",
+        "tip": "Automático bem cedo no jogo.",
+        "is_spoiler": false
+      },
+      {
+        "id": "nioh3_lesser_eradicator",
+        "name": "Lesser Crucible Eradicator",
+        "type": "Prata",
+        "description": "Purifique todos os Lesser Crucibles.",
+        "tip": "São 23 no total.",
+        "is_spoiler": false
+      },
+      {
+        "id": "nioh3_kunimatsu_pride",
+        "name": "Kunimatsu's Pride",
+        "type": "Bronze",
+        "description": "Derrote o Demônio do Orgulho e vislumbre as emoções de Kunimatsu.",
+        "tip": "Chefe opcional marcado com baú dourado no mapa.",
+        "is_spoiler": true
+      },
+      {
+        "id": "nioh3_kunimatsu_envy",
+        "name": "Kunimatsu's Envy",
+        "type": "Bronze",
+        "description": "Derrote o Demônio da Inveja e vislumbre as emoções de Kunimatsu.",
+        "tip": "Chefe opcional de região avançada.",
+        "is_spoiler": true
+      },
+      {
+        "id": "nioh3_kunimatsu_obsession",
+        "name": "Kunimatsu's Obsession",
+        "type": "Bronze",
+        "description": "Derrote o Demônio da Obsessão e vislumbre as emoções de Kunimatsu.",
+        "tip": "Chefe opcional em Bakumatsu.",
+        "is_spoiler": true
+      },
+      {
+        "id": "nioh3_senji_toyo",
+        "name": "Senji Toyo",
+        "type": "Bronze",
+        "description": "Recupere a memória da ferreira.",
+        "tip": "Complete o Myth Memories in the Blade.",
+        "is_spoiler": true
+      },
+      {
+        "id": "nioh3_ruckus_sanctuary",
+        "name": "Ruckus in the Sanctuary",
+        "type": "Bronze",
+        "description": "Em \"Black Feather Sanctuary\", afugente todos os corvos de Matsuo-taisha Shrine e derrote Otoroshi.",
+        "tip": "Atire nos três corvos antes de eles fugirem e termine a missão.",
+        "is_spoiler": true
+      },
+      {
+        "id": "nioh3_pain_pain",
+        "name": "Pain, Pain, Go Away",
+        "type": "Bronze",
+        "description": "Em \"A Sinister End\", repele todos os ataques de Murakumo.",
+        "tip": "Atire no pássaro em cada aparição durante a missão final.",
+        "is_spoiler": true
+      },
+      {
+        "id": "nioh3_distant_memories",
+        "name": "Distant Memories",
+        "type": "Bronze",
+        "description": "Banhe-se com Himiko em \"Dark Roots\" e depois relembre o incidente de Naotora em \"Apparition of Ryotan Temple\".",
+        "tip": "É feito em duas missões diferentes, ambas repetíveis via Battle Scroll.",
+        "is_spoiler": true
+      },
+      {
+        "id": "nioh3_like_minded",
+        "name": "Like-Minded Friends",
+        "type": "Bronze",
+        "description": "Em \"Seeking Rare Yokai\", satisfaça Toriyama Sekien com uma pintura de Kusanagi.",
+        "tip": "Sai ao concluir esse Myth oculto do fim do jogo.",
+        "is_spoiler": true
+      },
+      {
+        "id": "nioh3_dung_ball",
+        "name": "Dung Ball Roller",
+        "type": "Prata",
+        "description": "Ajude Tatsumaro, o amante de esterco, a se conectar com Takechiyo.",
+        "tip": "Após Putrid Paradise, entregue 30 Dung Balls ao NPC no Eternal Rift.",
+        "is_spoiler": true
+      },
+      {
+        "id": "nioh3_nothing_left",
+        "name": "Nothing Left to Learn",
+        "type": "Bronze",
+        "description": "Complete as veteran missions com Yagyu Munenori e Hattori Hanzo.",
+        "tip": "Faça também as versões Novice e Adept antes da Veteran.",
+        "is_spoiler": true
+      }
+    ]
   }
 ];
