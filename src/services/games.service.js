@@ -120,6 +120,24 @@ function matchesFacet(game, facet = 'all') {
 
 function getListOrderBy(sort = 'name-asc') {
   const sorts = {
+    'recommended-desc': `
+      CASE WHEN roadmap_count > 0 THEN 0 ELSE 1 END ASC,
+      CASE
+        WHEN difficulty IS NULL THEN 2
+        WHEN difficulty <= 3 THEN 0
+        WHEN difficulty <= 6 THEN 1
+        ELSE 2
+      END ASC,
+      CASE
+        WHEN time_sort_hours IS NULL THEN 2
+        WHEN time_sort_hours <= 15 THEN 0
+        WHEN time_sort_hours <= 40 THEN 1
+        ELSE 2
+      END ASC,
+      trophy_count DESC,
+      updated_at DESC,
+      name COLLATE NOCASE ASC
+    `,
     'updated-desc': 'updated_at DESC, name COLLATE NOCASE ASC',
     'created-desc': 'created_at DESC, name COLLATE NOCASE ASC',
     'difficulty-desc': 'difficulty DESC, name COLLATE NOCASE ASC',

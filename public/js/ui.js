@@ -231,11 +231,59 @@ const UI = (() => {
     const updatedTarget = qs('#updatedGamesOverview');
     const linksTarget = qs('#browseLinks');
     const resumeTarget = qs('#libraryResume');
+    const featuredTarget = qs('#featuredNowOverview');
+    const trustTarget = qs('#editorialTrustOverview');
+    const intentTarget = qs('#intentOverview');
+    const collectionRoutesTarget = qs('#collectionRoutesOverview');
+    const totalGamesTarget = qs('#homeStatGames');
+    const totalTrophiesTarget = qs('#homeStatTrophies');
+    const recentTargetStat = qs('#homeStatRecent');
 
     const getTotal = game => Number(game.trophy_count || game.trophies?.length || 0);
     const byRecent = [...games].sort((a, b) => String(b.created_at || '').localeCompare(String(a.created_at || '')));
     const byUpdated = [...games].sort((a, b) => String(b.updated_at || '').localeCompare(String(a.updated_at || '')));
     const mostRelevant = [...games].sort((a, b) => getTotal(b) - getTotal(a)).slice(0, 4);
+    const totalTrophies = games.reduce((sum, game) => sum + getTotal(game), 0);
+    const recentCount = byRecent.slice(0, 3).length;
+    const totalRoadmapSteps = games.reduce((sum, game) => sum + Number(game.roadmap_count || game.roadmap?.length || 0), 0);
+    const guidesWithRoadmap = games.filter(game => Number(game.roadmap_count || game.roadmap?.length || 0) > 0).length;
+    const spoilerTracked = games.filter(game => Array.isArray(game.trophies) && game.trophies.some(trophy => trophy?.is_spoiler)).length;
+    const longGuides = games.filter(game => getTotal(game) >= 25).length;
+
+
+    if (trustTarget) {
+      trustTarget.innerHTML = [
+        {
+          icon: 'fa-list-check',
+          title: `${guidesWithRoadmap} ${guidesWithRoadmap === 1 ? 'guia com roadmap' : 'guias com roadmap'}`,
+          text: totalRoadmapSteps ? `${totalRoadmapSteps} etapa(s) editoriais distribuídas no catálogo atual.` : 'Os próximos jogos publicados devem ganhar roadmap para ficar mais confiáveis.'
+        },
+        {
+          icon: 'fa-eye-slash',
+          title: `${spoilerTracked} ${spoilerTracked === 1 ? 'guia com spoiler sinalizado' : 'guias com spoilers sinalizados'}`,
+          text: spoilerTracked ? 'Os jogos com spoiler marcado podem ser consultados com mais cautela antes de avançar.' : 'Ainda faltam marcações explícitas de spoiler no catálogo atual.'
+        },
+        {
+          icon: 'fa-trophy',
+          title: `${longGuides} ${longGuides === 1 ? 'lista mais densa' : 'listas mais densas'}`,
+          text: longGuides ? 'Esses jogos já têm volume suficiente para demonstrar profundidade de checklist e descoberta.' : 'O catálogo ainda precisa de listas mais longas para aumentar o valor percebido.'
+        },
+        {
+          icon: 'fa-clock-rotate-left',
+          title: `${recentCount} ${recentCount === 1 ? 'guia recente em destaque' : 'guias recentes em destaque'}`,
+          text: recentCount ? 'A home já puxa os jogos mais novos para ajudar quem chega a encontrar algo útil rápido.' : 'Ainda faltam guias recentes suficientes para sustentar descoberta contínua.'
+        }
+      ].map(item => `
+        <article class="atlas-kpi-card">
+          <i class="fas ${item.icon}"></i>
+          <strong>${escapeHtml(item.title)}</strong>
+          <span>${escapeHtml(item.text)}</span>
+        </article>`).join('');
+    }
+
+    if (totalGamesTarget) totalGamesTarget.textContent = `${games.length} ${games.length === 1 ? 'jogo' : 'jogos'}`;
+    if (totalTrophiesTarget) totalTrophiesTarget.textContent = `${totalTrophies} ${totalTrophies === 1 ? 'troféu' : 'troféus'}`;
+    if (recentTargetStat) recentTargetStat.textContent = `${recentCount} ${recentCount === 1 ? 'guia recente' : 'guias recentes'}`;
 
     if (gamesTarget) {
       if (!games.length) {
@@ -281,21 +329,123 @@ const UI = (() => {
         target.innerHTML = `<div class="atlas-inline-empty">${emptyMessage}</div>`;
         return;
       }
-      target.innerHTML = items.slice(0, 5).map(game => `
+      target.innerHTML = items.slice(0, 5).map(game => {
+        const updatedLabel = game.updated_at ? formatRelativeDate(game.updated_at) : 'agora';
+        return `
         <a href="/jogo/${escapeAttribute(game.slug)}" class="atlas-feature-panel justify-between gap-4" data-home-game="${escapeAttribute(game.name)}">
           <div>
             <strong>${escapeHtml(game.name)}</strong>
             <span>${getTotal(game)} troféus • Roadmap ${game.roadmap_count || 0} etapa(s)</span>
+            <span class="text-white/40">Última revisão ${escapeHtml(updatedLabel)}</span>
           </div>
           <span class="atlas-tag shrink-0">${label}</span>
-        </a>`).join('');
+        </a>`;
+      }).join('');
     };
+
+
+    if (featuredTarget) {
+      if (!games.length) {
+        featuredTarget.innerHTML = '<div class="sm:col-span-2 atlas-feature-panel"><i class="fas fa-compass"></i><div><strong>Catálogo em expansão</strong><span>Assim que mais guias forem publicados, esta área passa a sugerir os melhores primeiros cliques.</span></div></div>';
+      } else {
+        featuredTarget.innerHTML = mostRelevant.map(game => {
+          const roadmapCount = Number(game.roadmap_count || game.roadmap?.length || 0);
+          const updatedLabel = game.updated_at ? formatRelativeDate(game.updated_at) : 'sem revisão recente';
+          return `
+          <a href="/jogo/${escapeAttribute(game.slug)}" class="atlas-feature-panel" data-home-game="${escapeAttribute(game.name)}">
+            <i class="fas fa-trophy"></i>
+            <div>
+              <strong>${escapeHtml(game.name)}</strong>
+              <span>${getTotal(game)} troféus • dificuldade ${escapeHtml(String(game.difficulty || '-'))}/10 • ${roadmapCount} etapa(s)</span>
+              <span class="text-white/40">Revisado ${escapeHtml(updatedLabel)}</span>
+            </div>
+          </a>`;
+        }).join('');
+      }
+    }
+
+    if (intentTarget) {
+      const intentConfigs = [
+        {
+          facet: 'time-short',
+          icon: 'fa-bolt',
+          tag: 'Entrada rápida',
+          title: 'Quero algo curto',
+          description: 'Veja jogos com tempo menor para terminar uma platina sem arrastar por semanas.',
+          metric: `${games.filter(game => getTimeValue(game) <= 15).length} opção(ões) no catálogo atual`
+        },
+        {
+          facet: 'difficulty-low',
+          icon: 'fa-seedling',
+          tag: 'Baixo atrito',
+          title: 'Quero algo mais fácil',
+          description: 'Filtre jogos de dificuldade mais baixa para começar sem tanta pressão.',
+          metric: `${games.filter(game => Number(game.difficulty || 0) <= 3).length} opção(ões) acessíveis agora`
+        },
+        {
+          facet: 'time-medium',
+          icon: 'fa-layer-group',
+          tag: 'Projeto médio',
+          title: 'Quero um projeto equilibrado',
+          description: 'Entre em jogos de 16 a 40 horas para algo mais completo sem virar maratona infinita.',
+          metric: `${games.filter(game => { const value = getTimeValue(game); return value > 15 && value <= 40; }).length} opção(ões) intermediárias`
+        },
+        {
+          facet: 'trophies-large',
+          icon: 'fa-list-check',
+          tag: 'Checklist denso',
+          title: 'Quero um guia mais encorpado',
+          description: 'Encontre listas maiores para quem prefere acompanhar progresso com mais profundidade.',
+          metric: `${games.filter(game => getTotal(game) > 60).length} lista(s) mais densas`
+        }
+      ];
+
+      intentTarget.innerHTML = intentConfigs.map(item => `
+        <button type="button" class="atlas-intent-card" data-home-facet="${item.facet}">
+          <div class="atlas-intent-card__head">
+            <span class="atlas-tag">${item.tag}</span>
+            <i class="fas ${item.icon}"></i>
+          </div>
+          <strong>${item.title}</strong>
+          <p>${item.description}</p>
+          <span class="atlas-intent-card__meta">${item.metric}</span>
+        </button>`).join('');
+    }
+
+
+    if (collectionRoutesTarget) {
+      const collectionCards = [
+        { facet: 'difficulty-low', icon: 'fa-seedling', tag: 'Começo simples', title: 'Jogos de dificuldade baixa', text: 'Uma porta de entrada melhor para primeiras platinas e sessões com menos atrito.', metric: `${games.filter(game => Number(game.difficulty || 0) <= 3).length} jogo(s) nesta faixa` },
+        { facet: 'time-short', icon: 'fa-bolt', tag: 'Rápidos de validar', title: 'Jogos até 15 horas', text: 'Boa faixa para retorno rápido e menos risco de se perder em projetos longos.', metric: `${games.filter(game => getTimeValue(game) <= 15).length} jogo(s) curtos agora` },
+        { facet: 'time-medium', icon: 'fa-layer-group', tag: 'Projetos médios', title: 'Jogos de 16 a 40 horas', text: 'Faixa equilibrada para manter tração sem virar maratona infinita.', metric: `${games.filter(game => { const v = getTimeValue(game); return v > 15 && v <= 40; }).length} jogo(s) intermediários` },
+        { facet: 'difficulty-high', icon: 'fa-mountain', tag: 'Desafio real', title: 'Jogos de dificuldade alta', text: 'Coleção pensada para quem quer projetos exigentes e mais seletivos na escolha.', metric: `${games.filter(game => Number(game.difficulty || 0) >= 7).length} jogo(s) exigentes` },
+        { facet: 'trophies-large', icon: 'fa-list-check', tag: 'Checklist denso', title: 'Jogos com mais de 60 troféus', text: 'As listas mais encorpadas do catálogo para quem gosta de profundidade e acompanhamento.', metric: `${games.filter(game => getTotal(game) > 60).length} lista(s) densas` },
+        { facet: 'trophies-small', icon: 'fa-feather-pointed', tag: 'Lista leve', title: 'Jogos com até 30 troféus', text: 'Boa faixa para checklists menores e navegação mais leve.', metric: `${games.filter(game => getTotal(game) > 0 && getTotal(game) <= 30).length} lista(s) enxutas` }
+      ];
+
+      collectionRoutesTarget.innerHTML = collectionCards.map(item => `
+        <a href="${escapeAttribute(catalogFacetMeta[item.facet].path)}" class="atlas-intent-card atlas-intent-card--link" data-home-facet="${item.facet}">
+          <div class="atlas-intent-card__head">
+            <span class="atlas-tag">${escapeHtml(item.tag)}</span>
+            <i class="fas ${item.icon}"></i>
+          </div>
+          <strong>${escapeHtml(item.title)}</strong>
+          <p>${escapeHtml(item.text)}</p>
+          <span class="atlas-intent-card__meta">${escapeHtml(item.metric)}</span>
+        </a>`).join('');
+    }
 
     renderCompactList(recentTarget, byRecent, 'Nenhum jogo recente disponível.', 'Novo');
     renderCompactList(updatedTarget, byUpdated, 'Nenhuma atualização recente disponível.', 'Atualizado');
 
     if (resumeTarget) {
-      const libraryGames = Object.values(library).sort((a, b) => (b.completed?.length || 0) - (a.completed?.length || 0));
+      const libraryGames = Object.values(library)
+        .map(game => ({
+          ...game,
+          ...getLibraryMeta(game),
+          completed: Array.isArray(game.completed) ? game.completed : []
+        }))
+        .sort((a, b) => b.momentumScore - a.momentumScore || b.percent - a.percent || a.remaining - b.remaining);
       if (!libraryGames.length) {
         resumeTarget.innerHTML = `
           <div class="atlas-feature-panel">
@@ -304,15 +454,16 @@ const UI = (() => {
           </div>`;
       } else {
         resumeTarget.innerHTML = libraryGames.slice(0, 3).map(game => {
-          const total = getTotal(game);
-          const completed = game.completed?.length || 0;
-          const percent = total ? Math.round((completed / total) * 100) : 0;
           return `
-            <button type="button" class="w-full atlas-feature-panel text-left" data-home-game="${escapeAttribute(game.name)}">
+            <button type="button" class="w-full atlas-feature-panel text-left atlas-feature-panel--stack" data-home-game="${escapeAttribute(game.name)}">
               <i class="fas fa-play-circle"></i>
               <div>
-                <strong>${escapeHtml(game.name)}</strong>
-                <span>${completed}/${total} troféus concluídos • ${percent}% completo</span>
+                <div class="flex flex-wrap items-center gap-2">
+                  <strong>${escapeHtml(game.name)}</strong>
+                  <span class="atlas-tag atlas-tag--${escapeAttribute(game.momentumTone)}">${escapeHtml(game.momentumLabel)}</span>
+                </div>
+                <span>${game.completedCount}/${game.total} troféus concluídos • ${game.percent}% completo • faltam ${game.remaining}</span>
+                <span class="text-white/45">${escapeHtml(game.progressState.title)} — ${escapeHtml(game.nextActionModel.cta)}</span>
               </div>
             </button>`;
         }).join('');
@@ -325,61 +476,131 @@ const UI = (() => {
       path: '/catalogo',
       title: 'Catálogo de jogos | AtlasAchievement',
       description: 'Navegue pelo catálogo de jogos com dificuldade, tempo estimado, troféus e atalhos por faixa de desafio e duração.',
-      name: 'Catálogo de jogos'
+      name: 'Catálogo de jogos',
+      heroTitle: 'Navegue sem depender da busca',
+      heroDescription: 'Veja todos os jogos em uma lista filtrável com dificuldade, tempo estimado, troféus e acesso direto à página de guia.',
+      collectionTitle: 'Catálogo completo',
+      collectionDescription: 'Use a visão geral para comparar jogos por dificuldade, tempo e densidade de checklist antes de decidir onde investir seu tempo.',
+      reason: 'Boa para quem ainda não sabe o que jogar e quer sentir o tamanho real do catálogo.',
+      checklist: 'Ordene por recomendação, abra um destaque e valide roadmap, perdíveis e esforço total.',
+      related: ['difficulty-low', 'time-short', 'trophies-large']
     },
     'difficulty-low': {
       path: '/catalogo/dificuldade-baixa',
       title: 'Jogos de dificuldade baixa | AtlasAchievement',
       description: 'Veja jogos com dificuldade de 1 a 3 para começar listas de troféus e concluir mais rápido.',
-      name: 'Jogos de dificuldade baixa'
+      name: 'Jogos de dificuldade baixa',
+      heroTitle: 'Coleção para começar com menos atrito',
+      heroDescription: 'Abra jogos de dificuldade baixa quando quiser uma platina mais viável, com menos risco de travar logo no começo.',
+      collectionTitle: 'Jogos de dificuldade baixa',
+      collectionDescription: 'Esta faixa funciona bem para primeiras platinas, descansos entre projetos maiores e sessões em que você quer avançar sem pressão excessiva.',
+      reason: 'Filtra jogos que tendem a exigir menos execução avançada e deixam a leitura do guia mais direta.',
+      checklist: 'Confira se o jogo também é curto e se já possui roadmap suficiente para virar uma entrada segura.',
+      related: ['time-short', 'difficulty-mid', 'trophies-small']
     },
     'difficulty-mid': {
       path: '/catalogo/dificuldade-media',
       title: 'Jogos de dificuldade média | AtlasAchievement',
       description: 'Explore jogos com dificuldade de 4 a 6 e escolha projetos intermediários para continuar.',
-      name: 'Jogos de dificuldade média'
+      name: 'Jogos de dificuldade média',
+      heroTitle: 'Projetos intermediários para continuar em bom ritmo',
+      heroDescription: 'Use esta coleção quando quiser algo mais substancial do que uma platina fácil, mas sem cair direto em maratonas brutais.',
+      collectionTitle: 'Jogos de dificuldade média',
+      collectionDescription: 'Boa faixa para quem já está confortável com checklists, mas ainda quer equilíbrio entre progresso consistente e desafio moderado.',
+      reason: 'Ajuda a separar jogos que já pedem mais atenção sem virar projetos excessivamente punitivos.',
+      checklist: 'Abra a página e valide se o tempo total e o roadmap combinam com a sua disponibilidade atual.',
+      related: ['difficulty-low', 'time-medium', 'trophies-medium']
     },
     'difficulty-high': {
       path: '/catalogo/dificuldade-alta',
       title: 'Jogos de dificuldade alta | AtlasAchievement',
       description: 'Encontre jogos com dificuldade de 7 a 10 para quem busca listas mais exigentes.',
-      name: 'Jogos de dificuldade alta'
+      name: 'Jogos de dificuldade alta',
+      heroTitle: 'Listas exigentes para quem quer desafio real',
+      heroDescription: 'Entre nesta faixa quando quiser projetos mais duros, que pedem leitura cuidadosa e mais comprometimento de execução.',
+      collectionTitle: 'Jogos de dificuldade alta',
+      collectionDescription: 'Ideal para usuários que já sabem onde estão entrando e querem separar jogos realmente exigentes do restante do catálogo.',
+      reason: 'Concentra projetos que costumam exigir mais habilidade, persistência e leitura disciplinada do guia.',
+      checklist: 'Antes de começar, confirme tempo total, troféus sensíveis e se há roadmap suficiente para não desperdiçar horas.',
+      related: ['time-long', 'trophies-large', 'difficulty-mid']
     },
     'time-short': {
       path: '/catalogo/ate-15-horas',
       title: 'Jogos até 15 horas | AtlasAchievement',
       description: 'Veja jogos com tempo estimado mais curto para concluir troféus em até 15 horas.',
-      name: 'Jogos até 15 horas'
+      name: 'Jogos até 15 horas',
+      heroTitle: 'Coleção de entrada rápida',
+      heroDescription: 'Veja projetos mais curtos para fechar uma platina sem transformar o jogo em compromisso de várias semanas.',
+      collectionTitle: 'Jogos até 15 horas',
+      collectionDescription: 'Ótima faixa para fins de semana, descanso entre listas grandes e usuários que querem retorno rápido por hora investida.',
+      reason: 'Reduz o risco de escolher algo que parece simples, mas vira uma maratona maior do que o esperado.',
+      checklist: 'Cheque a dificuldade real e se existe algum perdível escondido antes de assumir que o jogo é só rápido.',
+      related: ['difficulty-low', 'time-medium', 'trophies-small']
     },
     'time-medium': {
       path: '/catalogo/16-a-40-horas',
       title: 'Jogos de 16 a 40 horas | AtlasAchievement',
       description: 'Encontre jogos com tempo estimado de 16 a 40 horas para projetos de médio prazo.',
-      name: 'Jogos de 16 a 40 horas'
+      name: 'Jogos de 16 a 40 horas',
+      heroTitle: 'Projetos médios para manter tração',
+      heroDescription: 'Abra esta faixa quando quiser algo mais completo, mas ainda compatível com uma rotina normal de sessões.',
+      collectionTitle: 'Jogos de 16 a 40 horas',
+      collectionDescription: 'Aqui ficam projetos equilibrados para quem quer uma trilha mais longa, sem cair nos extremos do catálogo.',
+      reason: 'Ajuda a encontrar jogos que rendem progresso contínuo e ainda cabem melhor no calendário.',
+      checklist: 'Compare dificuldade, roadmap e tamanho da lista para decidir qual deles encaixa melhor no seu momento.',
+      related: ['difficulty-mid', 'time-short', 'time-long']
     },
     'time-long': {
       path: '/catalogo/mais-de-40-horas',
       title: 'Jogos com mais de 40 horas | AtlasAchievement',
       description: 'Navegue por jogos longos e maratonas com listas de troféus acima de 40 horas.',
-      name: 'Jogos com mais de 40 horas'
+      name: 'Jogos com mais de 40 horas',
+      heroTitle: 'Maratonas para abrir com plena consciência',
+      heroDescription: 'Veja projetos longos quando estiver procurando uma trilha mais extensa e quiser validar melhor o custo total de tempo.',
+      collectionTitle: 'Jogos com mais de 40 horas',
+      collectionDescription: 'Esta coleção serve para separar maratonas que pedem planejamento real, disciplina de checklist e expectativa ajustada desde o começo.',
+      reason: 'Evita entrar em jogos longos sem antes comparar esforço, densidade da lista e necessidade de revisão contínua.',
+      checklist: 'Abra a página e confirme quantas etapas existem no roadmap e quais troféus podem gerar retrabalho tardio.',
+      related: ['difficulty-high', 'time-medium', 'trophies-large']
     },
     'trophies-small': {
       path: '/catalogo/ate-30-trofeus',
       title: 'Jogos com até 30 troféus | AtlasAchievement',
       description: 'Abra listas menores, com até 30 troféus, para organizar checklists mais curtos.',
-      name: 'Jogos com até 30 troféus'
+      name: 'Jogos com até 30 troféus',
+      heroTitle: 'Checklists menores para seguir com leveza',
+      heroDescription: 'Explore listas curtas quando quiser menos itens para controlar e uma leitura mais rápida da página do jogo.',
+      collectionTitle: 'Jogos com até 30 troféus',
+      collectionDescription: 'Boa faixa para quem gosta de checklists enxutos e quer sentir progresso sem navegar por listas muito extensas.',
+      reason: 'Ajuda a filtrar jogos com menos volume estrutural de troféus, úteis para sessões mais leves.',
+      checklist: 'Mesmo com lista pequena, confirme se há roadmap e troféus sensíveis antes de começar despreocupado.',
+      related: ['time-short', 'difficulty-low', 'trophies-medium']
     },
     'trophies-medium': {
       path: '/catalogo/31-a-60-trofeus',
       title: 'Jogos com 31 a 60 troféus | AtlasAchievement',
       description: 'Explore jogos com listas intermediárias de 31 a 60 troféus.',
-      name: 'Jogos com 31 a 60 troféus'
+      name: 'Jogos com 31 a 60 troféus',
+      heroTitle: 'Volume intermediário de checklist',
+      heroDescription: 'Use esta coleção quando quiser listas mais completas, mas ainda legíveis em um fluxo normal de acompanhamento.',
+      collectionTitle: 'Jogos com 31 a 60 troféus',
+      collectionDescription: 'Aqui ficam jogos com densidade intermediária de troféus, bons para usuários que gostam de progresso granular sem excesso.',
+      reason: 'Separa projetos com mais profundidade de checklist, mas ainda sem o peso de listas muito grandes.',
+      checklist: 'Compare o número de etapas do roadmap e o tempo estimado para evitar escolher só pelo tamanho da lista.',
+      related: ['difficulty-mid', 'time-medium', 'trophies-large']
     },
     'trophies-large': {
       path: '/catalogo/mais-de-60-trofeus',
       title: 'Jogos com mais de 60 troféus | AtlasAchievement',
       description: 'Veja jogos com listas longas, acima de 60 troféus, para acompanhar por etapas.',
-      name: 'Jogos com mais de 60 troféus'
+      name: 'Jogos com mais de 60 troféus',
+      heroTitle: 'Listas densas para quem gosta de profundidade',
+      heroDescription: 'Abra esta faixa quando quiser jogos com muitos troféus e sensação forte de progresso ao longo de várias sessões.',
+      collectionTitle: 'Jogos com mais de 60 troféus',
+      collectionDescription: 'Essa coleção funciona como vitrine das listas mais densas do catálogo, boas para quem valoriza acompanhamento detalhado.',
+      reason: 'Ajuda a encontrar jogos em que o checklist é parte central da experiência, não só um complemento.',
+      checklist: 'Antes de entrar, valide tempo total, risco de retrabalho e se o roadmap já está forte o suficiente para sustentar a maratona.',
+      related: ['time-long', 'difficulty-high', 'trophies-medium']
     }
   };
 
@@ -391,6 +612,187 @@ const UI = (() => {
     return Math.max(...values);
   }
 
+  function deriveNextAction(game = {}, completedIds = []) {
+    const trophies = Array.isArray(game.trophies) ? game.trophies : [];
+    const completedSet = new Set(Array.isArray(completedIds) ? completedIds : []);
+    const total = trophies.length;
+    const completedCount = completedSet.size;
+    const remaining = Math.max(total - completedCount, 0);
+    const started = completedCount > 0;
+    const pendingTrophies = trophies.filter(trophy => trophy && !completedSet.has(trophy.id));
+    const firstPending = pendingTrophies[0] || null;
+    const missablePending = pendingTrophies.find(trophy => trophy && trophy.is_missable);
+    const spoilerPending = pendingTrophies.find(trophy => trophy && trophy.is_spoiler);
+    const roadmapCount = Array.isArray(game.roadmap) ? game.roadmap.length : Number(game.roadmap_count || 0);
+
+    if (!total) {
+      return {
+        kind: 'overview',
+        title: 'Revisar a estrutura do guia',
+        detail: 'Este jogo ainda precisa de checklist mais completo antes de virar rotina na biblioteca.',
+        cta: 'Ver resumo',
+        focus: 'header',
+        trophyId: '',
+        trophyName: ''
+      };
+    }
+
+    if (remaining === 0) {
+      return {
+        kind: 'review',
+        title: 'Confirmar o fechamento da platina',
+        detail: 'Checklist concluído. Vale revisar a página e garantir que nada importante ficou sem validação final.',
+        cta: 'Revisar 100%',
+        focus: 'trophies',
+        trophyId: '',
+        trophyName: ''
+      };
+    }
+
+    if (!started && roadmapCount > 0) {
+      return {
+        kind: 'roadmap',
+        title: 'Começar pelo roadmap',
+        detail: `Use as ${roadmapCount} etapa(s) do roadmap para iniciar sem retrabalho e evitar ordem errada logo no começo.`,
+        cta: 'Abrir roadmap',
+        focus: 'roadmap',
+        trophyId: firstPending?.id || '',
+        trophyName: firstPending?.name || ''
+      };
+    }
+
+    if (!started && firstPending) {
+      return {
+        kind: 'first-trophy',
+        title: 'Marcar o primeiro troféu',
+        detail: `Abra a lista e use ${firstPending.name} como ponto de partida para tirar o jogo do zero.`,
+        cta: 'Ir ao primeiro troféu',
+        focus: 'first-pending',
+        trophyId: firstPending?.id || '',
+        trophyName: firstPending.name || ''
+      };
+    }
+
+    if (missablePending) {
+      return {
+        kind: 'missable',
+        title: 'Revisar pendências sensíveis',
+        detail: `Ainda existe pelo menos um objetivo crítico pendente. Priorize ${missablePending.name} antes de avançar sem checagem.`,
+        cta: 'Ver pendência crítica',
+        focus: 'first-pending',
+        trophyId: missablePending?.id || '',
+        trophyName: missablePending.name || ''
+      };
+    }
+
+    if (spoilerPending) {
+      return {
+        kind: 'spoiler',
+        title: 'Retomar a lista principal',
+        detail: `Continue pelo próximo objetivo pendente, começando por ${spoilerPending.name}, com cuidado para não abrir spoiler antes da hora.`,
+        cta: 'Continuar checklist',
+        focus: 'first-pending',
+        trophyId: spoilerPending?.id || '',
+        trophyName: spoilerPending.name || ''
+      };
+    }
+
+    return {
+      kind: 'continue',
+      title: 'Continuar os troféus pendentes',
+      detail: firstPending
+        ? `O próximo bom passo é voltar na lista e avançar em ${firstPending.name} para empurrar o progresso.`
+        : 'Volte para a lista principal e conclua os troféus restantes em sequência.',
+      cta: 'Continuar checklist',
+      focus: 'first-pending',
+      trophyId: firstPending?.id || '',
+      trophyName: firstPending?.name || ''
+    };
+  }
+
+  function getMomentumLabel(score = 0) {
+    if (score >= 120) return 'Vale abrir hoje';
+    if (score >= 95) return 'Quase fechando';
+    if (score >= 72) return 'Bom momento';
+    return 'Retomar sem pressa';
+  }
+
+  function getMomentumTone(score = 0) {
+    if (score >= 120) return 'hot';
+    if (score >= 95) return 'close';
+    if (score >= 72) return 'warm';
+    return 'soft';
+  }
+
+  function computeMomentumScore(game = {}) {
+    const total = Array.isArray(game.trophies) ? game.trophies.length : Number(game.trophy_count || 0);
+    const completed = Array.isArray(game.completed) ? game.completed.length : 0;
+    const progress = total ? Math.round((completed / total) * 100) : 0;
+    const remaining = Math.max(total - completed, 0);
+    const roadmapCount = Array.isArray(game.roadmap) ? game.roadmap.length : Number(game.roadmap_count || 0);
+    const updatedAt = game.lastActivityAt || game.lastOpenedAt || game.updated_at || game.savedAt || null;
+    const ageHours = updatedAt ? Math.max((Date.now() - new Date(updatedAt).getTime()) / 36e5, 0) : 999;
+
+    let score = 12;
+    if (progress > 0 && progress < 100) score += 30;
+    if (progress >= 70 && progress < 100) score += 24;
+    if (progress >= 85 && progress < 100) score += 30;
+    if (remaining > 0 && remaining <= 3) score += 30;
+    else if (remaining > 0 && remaining <= 8) score += 18;
+    if (roadmapCount > 0) score += 10;
+    if (ageHours <= 24) score += 18;
+    else if (ageHours <= 72) score += 12;
+    else if (ageHours <= 168) score += 6;
+    if (!progress && total > 0 && roadmapCount > 0) score += 8;
+    if (progress >= 100) score = 22;
+    return score;
+  }
+
+  function getProgressState(game = {}) {
+    const total = Number(game.total || game.trophies?.length || 0);
+    const done = Number(game.done || game.completed?.length || 0);
+    const remaining = Math.max(Number(game.remaining ?? (total - done)), 0);
+    const progress = total ? Math.round((done / total) * 100) : Number(game.progress || 0);
+
+    if (total && remaining === 0) {
+      return {
+        title: 'Checklist fechado',
+        detail: 'Tudo marcado. Só vale abrir para revisão final, conferência ou para compartilhar o link.',
+        accent: 'completed'
+      };
+    }
+
+    if (total && remaining <= 3 && progress >= 80) {
+      return {
+        title: 'Falta muito pouco',
+        detail: `${remaining} troféu(s) restante(s). Este é o candidato mais forte para fechar hoje.`,
+        accent: 'close'
+      };
+    }
+
+    if (progress >= 45) {
+      return {
+        title: 'Projeto bem encaminhado',
+        detail: `Você já passou da metade útil do guia. Bom momento para continuar sem perder contexto.`,
+        accent: 'warm'
+      };
+    }
+
+    if (progress > 0) {
+      return {
+        title: 'Já saiu do zero',
+        detail: 'Retomar agora custa menos do que começar outro jogo do zero.',
+        accent: 'soft'
+      };
+    }
+
+    return {
+      title: 'Pronto para começar',
+      detail: 'Abra o roadmap antes da primeira sessão para entrar com direção.',
+      accent: 'soft'
+    };
+  }
+
   function getLibraryMeta(game) {
     const total = game.trophies?.length || 0;
     const completed = game.completed || [];
@@ -398,16 +800,23 @@ const UI = (() => {
     const remaining = Math.max(total - completedCount, 0);
     const percent = total ? Math.round((completedCount / total) * 100) : 0;
     const started = completedCount > 0;
-    const nextAction = total === 0
-      ? 'Abra este jogo para revisar a lista.'
-      : remaining === 0
-        ? 'Revisar checklist concluído e confirmar 100%.'
-        : !started
-          ? 'Começar roadmap e marcar o primeiro troféu.'
-          : game.missable
-            ? 'Retomar checklist e revisar troféus perdíveis.'
-            : 'Retomar checklist e concluir os troféus pendentes.';
-    return { total, completedCount, remaining, percent, started, nextAction, timeValue: parseTimeValue(game.time), missable: Boolean(game.missable) };
+    const nextActionModel = deriveNextAction(game, completed);
+    const momentumScore = computeMomentumScore({ ...game, total, done: completedCount, remaining, progress: percent });
+    return {
+      total,
+      completedCount,
+      remaining,
+      percent,
+      started,
+      nextAction: nextActionModel.detail,
+      nextActionModel,
+      timeValue: parseTimeValue(game.time),
+      missable: Boolean(game.missable),
+      momentumScore,
+      momentumLabel: getMomentumLabel(momentumScore),
+      momentumTone: getMomentumTone(momentumScore),
+      progressState: getProgressState({ ...game, total, done: completedCount, remaining, progress: percent })
+    };
   }
 
 
@@ -449,6 +858,7 @@ const UI = (() => {
       const progress = total ? Math.round((done / total) * 100) : 0;
       const missables = trophies.filter(t => t && (t.is_missable || t.is_spoiler)).length;
       const status = game.status || (progress >= 100 ? 'completed' : progress > 0 ? 'in-progress' : 'saved');
+      const meta = getLibraryMeta({ ...game, trophies, completed });
       return {
         ...game,
         total,
@@ -460,7 +870,12 @@ const UI = (() => {
         missables,
         savedAt: game.savedAt || game.lastOpenedAt || game.lastActivityAt || null,
         lastOpenedAt: game.lastOpenedAt || game.lastActivityAt || game.savedAt || null,
-        lastActivityAt: game.lastActivityAt || game.lastOpenedAt || game.savedAt || null
+        lastActivityAt: game.lastActivityAt || game.lastOpenedAt || game.savedAt || null,
+        momentumScore: meta.momentumScore,
+        momentumLabel: meta.momentumLabel,
+        momentumTone: meta.momentumTone,
+        progressState: meta.progressState,
+        nextActionModel: meta.nextActionModel
       };
     }).filter(game => !search || String(game.name || '').toLowerCase().includes(search));
 
@@ -468,6 +883,7 @@ const UI = (() => {
       if (sort === 'name' || sort === 'name-asc') return String(a.name || '').localeCompare(String(b.name || ''), 'pt-BR');
       if (sort === 'difficulty' || sort === 'difficulty-desc') return Number(b.difficulty || 0) - Number(a.difficulty || 0);
       if (sort === 'near-100' || sort === 'remaining-asc') return a.remaining - b.remaining || b.progress - a.progress;
+      if (sort === 'best-next' || sort === 'today') return b.momentumScore - a.momentumScore || a.remaining - b.remaining || b.progress - a.progress;
       if (sort === 'progress' || sort === 'progress-desc') return b.progress - a.progress || a.remaining - b.remaining;
       if (sort === 'recent' || sort === 'continue') return new Date(b.lastActivityAt || b.lastOpenedAt || b.savedAt || 0) - new Date(a.lastActivityAt || a.lastOpenedAt || a.savedAt || 0);
       return b.progress - a.progress || a.remaining - b.remaining;
@@ -487,13 +903,13 @@ const UI = (() => {
       if (!sorted.length) {
         focus.innerHTML = '';
       } else {
-        const mostAdvanced = [...sorted].sort((a, b) => b.progress - a.progress || a.remaining - b.remaining)[0];
+        const bestToday = [...sorted].sort((a, b) => b.momentumScore - a.momentumScore || a.remaining - b.remaining || b.progress - a.progress)[0];
         const closest = [...sorted].sort((a, b) => a.remaining - b.remaining || b.progress - a.progress)[0];
         const recentlyActive = [...sorted].sort((a, b) => new Date(b.lastActivityAt || b.lastOpenedAt || b.savedAt || 0) - new Date(a.lastActivityAt || a.lastOpenedAt || a.savedAt || 0))[0];
         const cards = [
-          { label: 'Mais avançado', game: mostAdvanced, value: `${mostAdvanced.progress}%`, hint: `${mostAdvanced.done}/${mostAdvanced.total} concluídos` },
-          { label: 'Mais perto de 100%', game: closest, value: `${closest.remaining}`, hint: 'troféu(s) restante(s)' },
-          { label: 'Atividade recente', game: recentlyActive, value: `${formatRelativeDate(recentlyActive.lastActivityAt || recentlyActive.lastOpenedAt || recentlyActive.savedAt)}`, hint: 'última atualização' }
+          { label: 'Abrir hoje', game: bestToday, value: bestToday.momentumLabel, hint: bestToday.progressState.detail },
+          { label: 'Mais perto de 100%', game: closest, value: `${closest.remaining}`, hint: `${closest.progress}% completo • ${closest.nextActionModel.cta}` },
+          { label: 'Última sessão', game: recentlyActive, value: `${formatRelativeDate(recentlyActive.lastActivityAt || recentlyActive.lastOpenedAt || recentlyActive.savedAt)}`, hint: recentlyActive.nextActionModel.title }
         ];
         focus.innerHTML = cards.map(item => `
           <article class="atlas-panel atlas-library-focus p-5 rounded-[24px] bg-white/[0.03] border border-white/10">
@@ -517,14 +933,16 @@ const UI = (() => {
     target.innerHTML = sorted.map(game => {
       const image = getGameImageSrc(game.image);
       const slug = escapeAttribute(game.slug || '');
+      const nextActionModel = game.nextActionModel || deriveNextAction(game, game.completed || []);
       return `
-        <article class="atlas-panel rounded-[24px] p-5 bg-white/[0.03] border border-white/10 space-y-4" data-library-game="${escapeAttribute(game.slug || game.name || '')}">
+        <article class="atlas-panel rounded-[24px] p-5 bg-white/[0.03] border border-white/10 space-y-4 atlas-library-card atlas-library-card--${escapeAttribute(game.momentumTone || 'soft')}" data-library-game="${escapeAttribute(game.slug || game.name || '')}">
           <div class="flex gap-4">
             ${buildImageAttrs(image, game.name || 'Jogo', 'w-24 h-24 rounded-2xl object-cover bg-white/5', { width: 96, height: 96, sizes: '96px' })}
             <div class="min-w-0 flex-1 space-y-2">
               <h3 class="text-lg font-semibold text-white">${escapeHtml(game.name || 'Sem nome')}</h3>
               <div class="flex flex-wrap gap-2 text-xs text-white/65">
                 <span class="atlas-tag">${escapeHtml(game.statusLabel)}</span>
+                <span class="atlas-tag atlas-tag--${escapeAttribute(game.momentumTone || 'soft')}">${escapeHtml(game.momentumLabel || 'Retomar')}</span>
                 <span class="atlas-tag">Dificuldade ${escapeHtml(game.difficulty || '-')}</span>
                 <span class="atlas-tag">${game.done}/${game.total} concluídos</span>
                 ${game.missables ? `<span class="atlas-tag">Perdíveis: ${game.missables}</span>` : ''}
@@ -533,11 +951,20 @@ const UI = (() => {
               <p class="text-xs text-white/42">Última atividade: ${escapeHtml(formatRelativeDate(game.lastActivityAt || game.lastOpenedAt || game.savedAt))}</p>
             </div>
           </div>
+          <div class="glass-morphism rounded-[18px] p-4 border border-white/10 atlas-next-action-box">
+            <div class="flex flex-wrap items-center justify-between gap-2">
+              <div class="text-[11px] uppercase tracking-[0.18em] text-white/40">Próxima ação</div>
+              <span class="atlas-tag atlas-tag--${escapeAttribute(game.progressState?.accent || 'soft')}">${escapeHtml(game.progressState?.title || 'Retomar')}</span>
+            </div>
+            <strong class="block text-white mt-2">${escapeHtml(nextActionModel.title)}</strong>
+            <p class="text-sm text-white/68 mt-2">${escapeHtml(nextActionModel.detail)}</p>
+            <p class="text-xs text-white/48 mt-3">${escapeHtml(game.progressState?.detail || '')}</p>
+          </div>
           <div class="h-2 rounded-full bg-white/10 overflow-hidden">
             <div class="h-full bg-cyan-400" style="width:${game.progress}%"></div>
           </div>
           <div class="flex flex-wrap gap-3">
-            <button type="button" class="atlas-btn atlas-btn-primary" data-open-game="${escapeAttribute(game.name || '')}" data-open-slug="${slug}">Abrir guia</button>
+            <button type="button" class="atlas-btn atlas-btn-primary" data-open-game="${escapeAttribute(game.name || '')}" data-open-slug="${slug}">${escapeHtml(nextActionModel.cta)}</button>
             <button type="button" class="atlas-btn atlas-btn-secondary" data-delete-game="${escapeAttribute(game.slug || game.name || '')}">Remover</button>
           </div>
         </article>
@@ -545,6 +972,38 @@ const UI = (() => {
     }).join('');
   }
 
+
+  function getRelatedCatalogFacets(facet = 'all') {
+    const meta = catalogFacetMeta[facet] || catalogFacetMeta.all;
+    return (meta.related || []).map(id => ({ id, ...(catalogFacetMeta[id] || {}) })).filter(item => item.id && item.path);
+  }
+
+  function updateCatalogCollectionIntro(facet = 'all', total = 0) {
+    const meta = catalogFacetMeta[facet] || catalogFacetMeta.all;
+    const titleTarget = qs('#catalogTitle');
+    const heroTitleTarget = qs('#catalogHeroTitle');
+    const heroDescriptionTarget = qs('#catalogHeroDescription');
+    const collectionTitleTarget = qs('#catalogCollectionTitle');
+    const collectionDescriptionTarget = qs('#catalogCollectionDescription');
+    const reasonTarget = qs('#catalogCollectionReason');
+    const checklistTarget = qs('#catalogCollectionChecklist');
+    const relatedTarget = qs('#catalogRelatedCollections');
+
+    if (titleTarget) titleTarget.textContent = meta.name || 'Catálogo de jogos';
+    if (heroTitleTarget) heroTitleTarget.textContent = meta.heroTitle || 'Navegue sem depender da busca';
+    if (heroDescriptionTarget) heroDescriptionTarget.textContent = `${meta.heroDescription || meta.description}${typeof total === 'number' ? ` ${total} jogo(s) visível(is) nesta faixa agora.` : ''}`.trim();
+    if (collectionTitleTarget) collectionTitleTarget.textContent = meta.collectionTitle || meta.name || 'Coleção aberta';
+    if (collectionDescriptionTarget) collectionDescriptionTarget.textContent = meta.collectionDescription || meta.description || '';
+    if (reasonTarget) reasonTarget.textContent = meta.reason || 'Use esta visão para comparar esforço, tempo e densidade do guia antes de escolher um jogo.';
+    if (checklistTarget) checklistTarget.textContent = meta.checklist || 'Abra a página do jogo para confirmar perdíveis, roadmap e se a lista combina com o seu momento.';
+
+    if (relatedTarget) {
+      const related = getRelatedCatalogFacets(facet);
+      relatedTarget.innerHTML = related.length
+        ? related.map(item => `<a href="${escapeAttribute(item.path)}" class="atlas-pill" data-catalog-facet="${escapeAttribute(item.id)}">${escapeHtml(item.name || item.collectionTitle || item.title || item.id)}</a>`).join('')
+        : '<span class="text-sm text-white/45">As próximas coleções relacionadas aparecerão aqui conforme o catálogo crescer.</span>';
+    }
+  }
 
   function renderCatalog(response = {}, options = {}) {
     const list = qs('#catalogList');
@@ -556,8 +1015,35 @@ const UI = (() => {
     const pagination = response.pagination || {};
     const search = String(options.search || '').trim();
     const facet = options.facet || 'all';
+    const sort = options.sort || 'recommended-desc';
     const getTotal = game => Number(game.trophy_count || game.trophies?.length || 0);
     const getTimeValue = game => parseTimeValue(game.time || '');
+    const formatUpdatedLabel = value => value ? new Date(value).toLocaleDateString('pt-BR') : 'Sem data';
+    const getPaceLabel = value => value <= 15 ? 'Curto para fechar' : value <= 40 ? 'Projeto médio' : 'Maratona longa';
+    const getStrengthLabel = game => {
+      const total = getTotal(game);
+      const timeValue = getTimeValue(game);
+      const roadmapCount = Number(game.roadmap_count || 0);
+      const difficulty = Number(game.difficulty || 0);
+      if (roadmapCount > 0 && difficulty > 0 && difficulty <= 3 && timeValue <= 15) return 'Melhor para começar';
+      if (roadmapCount > 0 && timeValue <= 15) return 'Curto e direto';
+      if (roadmapCount > 0 && difficulty <= 3) return 'Baixo atrito';
+      if (total > 60) return 'Checklist denso';
+      if (roadmapCount >= 3) return 'Guia encorpado';
+      if (roadmapCount > 0) return 'Bom ponto de entrada';
+      return 'Guia em crescimento';
+    };
+    const getAssistiveText = game => {
+      const total = getTotal(game);
+      const timeValue = getTimeValue(game);
+      const roadmapCount = Number(game.roadmap_count || 0);
+      const difficulty = Number(game.difficulty || 0);
+      if (roadmapCount > 0 && difficulty <= 3 && timeValue <= 15) return 'Ótimo para primeira platina ou para descansar entre projetos maiores.';
+      if (roadmapCount > 0 && timeValue <= 15) return 'Boa escolha para avançar rápido sem virar compromisso longo.';
+      if (roadmapCount >= 3 && total >= 40) return 'Mais contexto editorial para quem quer abrir a página já com direção.';
+      if (difficulty >= 7) return 'Melhor para quem quer desafio e já sabe onde está entrando.';
+      return 'Vale abrir a página e validar roadmap, tempo e perdíveis antes de investir horas.';
+    };
 
     const facetConfigs = [
       { id: 'all', title: 'Todos os jogos', description: 'Ver o catálogo completo.', match: () => true },
@@ -573,6 +1059,8 @@ const UI = (() => {
     ];
 
     const activeFacet = facetConfigs.find(item => item.id === facet) || facetConfigs[0];
+    const recommended = items.slice(0, 3);
+    updateCatalogCollectionIntro(facet, Number(pagination.total || items.length || 0));
 
     if (segments) {
       const segmentCards = facetConfigs.filter(item => item.id !== 'all').map(config => `
@@ -587,12 +1075,22 @@ const UI = (() => {
             <p>${escapeHtml(config.description)}</p>
           </article>`);
 
+      const featuredStrip = recommended.length ? `
+        <article class="atlas-clear-filter atlas-clear-filter--feature is-active" aria-label="Sugestões para começar">
+          <i class="fas fa-wand-magic-sparkles"></i>
+          <div>
+            <strong>${sort === 'recommended-desc' ? 'Comece por estes jogos primeiro' : 'Sugestões rápidas da coleção atual'}</strong>
+            <span>${recommended.map(game => escapeHtml(game.name)).join(' • ')} • ${Number(pagination.total || items.length || 0)} jogo(s) nesta faixa</span>
+          </div>
+        </article>` : '';
+
       segments.innerHTML = `
+        ${featuredStrip}
         <button type="button" class="atlas-clear-filter ${activeFacet.id === 'all' ? 'is-active' : ''}" data-catalog-facet="all">
           <i class="fas fa-layer-group"></i>
           <div>
-            <strong>${activeFacet.id === 'all' ? 'Catálogo completo ativo' : 'Limpar filtro por faixa'}</strong>
-            <span>${activeFacet.id === 'all' ? 'Você está vendo todos os jogos disponíveis.' : 'Voltar para a lista completa do catálogo.'}</span>
+            <strong>${activeFacet.id === 'all' ? 'Catálogo completo ativo' : 'Voltar para todas as faixas'}</strong>
+            <span>${activeFacet.id === 'all' ? 'Você está vendo todos os jogos disponíveis.' : 'Remover a faixa atual e voltar para a visão completa do catálogo.'}</span>
           </div>
         </button>
         ${segmentCards.join('')}`;
@@ -600,9 +1098,10 @@ const UI = (() => {
 
     if (summary) {
       const facetLabel = activeFacet.id === 'all' ? 'sem filtro de faixa' : activeFacet.title.toLowerCase();
+      const sortLabel = sort === 'recommended-desc' ? 'ordenados para ajudar você a começar mais rápido' : 'ordenados conforme o critério selecionado';
       summary.textContent = search
-        ? `${pagination.total || 0} jogo(s) encontrados para “${search}”, com ${facetLabel}.`
-        : `${pagination.total || 0} jogo(s) no catálogo, com ${facetLabel}.`;
+        ? `${pagination.total || 0} jogo(s) encontrados para “${search}”, com ${facetLabel} e ${sortLabel}.`
+        : `${pagination.total || 0} jogo(s) no catálogo, com ${facetLabel} e ${sortLabel}.`;
     }
 
     if (!items.length) {
@@ -614,26 +1113,40 @@ const UI = (() => {
       return;
     }
 
-    list.innerHTML = items.map(game => {
+    list.innerHTML = items.map((game, index) => {
       const total = getTotal(game);
-      const updated = game.updated_at ? new Date(game.updated_at).toLocaleDateString('pt-BR') : 'Sem data';
+      const updated = formatUpdatedLabel(game.updated_at);
       const timeValue = getTimeValue(game);
-      const paceLabel = timeValue <= 15 ? 'Curto' : timeValue <= 40 ? 'Médio' : 'Longo';
+      const paceLabel = getPaceLabel(timeValue);
+      const roadmapCount = Number(game.roadmap_count || 0);
+      const trustLabel = roadmapCount >= 3 ? 'Guia encorpado' : roadmapCount > 0 ? 'Guia em crescimento' : 'Precisa aprofundar';
+      const strengthLabel = getStrengthLabel(game);
+      const assistiveText = getAssistiveText(game);
+      const spotlight = sort === 'recommended-desc' && index < 3 ? `<span class="atlas-catalog-spotlight"><i class="fas fa-star"></i> Destaque ${index + 1}</span>` : '';
       return `
         <a href="/jogo/${escapeAttribute(game.slug)}" class="atlas-catalog-card" data-home-game="${escapeAttribute(game.name)}">
           ${buildImageAttrs(game.image, game.name, 'atlas-catalog-card__image', { width: 900, height: 520, sizes: '(min-width: 1280px) 33vw, (min-width: 768px) 50vw, 100vw' })}
           <div class="atlas-catalog-card__body">
-            <div class="flex items-start justify-between gap-3">
+            <div class="atlas-catalog-badges">
+              <span class="atlas-tag">Página do jogo</span>
+              <span class="atlas-tag atlas-tag--accent">${escapeHtml(strengthLabel)}</span>
+              ${spotlight}
+            </div>
+            <div class="flex items-start justify-between gap-3 mt-3">
               <div>
-                <div class="atlas-tag">Página do jogo</div>
                 <h3>${escapeHtml(game.name)}</h3>
+                <p class="atlas-catalog-lead">${escapeHtml(assistiveText)}</p>
               </div>
               <span class="atlas-tag atlas-tag--ghost">${escapeHtml(String(game.difficulty))}/10</span>
             </div>
-            <p>${total} troféus • ${escapeHtml(game.time || 'Tempo não informado')} • ${game.roadmap_count || 0} etapa(s) no roadmap</p>
+            <p>${total} troféus • ${escapeHtml(game.time || 'Tempo não informado')} • ${roadmapCount} etapa(s) no roadmap</p>
             <div class="atlas-catalog-meta">
-              <span><i class="fas fa-gauge-high"></i> Ritmo ${paceLabel}</span>
+              <span><i class="fas fa-gauge-high"></i> ${paceLabel}</span>
               <span><i class="fas fa-rotate"></i> Atualizado em ${updated}</span>
+            </div>
+            <div class="atlas-catalog-meta">
+              <span><i class="fas fa-shield-halved"></i> ${trustLabel}</span>
+              <span><i class="fas fa-arrow-right"></i> Abrir guia e validar perdíveis</span>
             </div>
           </div>
         </a>`;
@@ -665,7 +1178,14 @@ const UI = (() => {
       '@type': 'CollectionPage',
       name: meta.name,
       url: `${window.location.origin}${meta.path}`,
-      description: meta.description
+      description: meta.description,
+      breadcrumb: {
+        '@type': 'BreadcrumbList',
+        itemListElement: [
+          { '@type': 'ListItem', position: 1, name: 'Catálogo', item: `${window.location.origin}/catalogo` },
+          { '@type': 'ListItem', position: 2, name: meta.name, item: `${window.location.origin}${meta.path}` }
+        ]
+      }
     });
   }
 
@@ -876,7 +1396,7 @@ const UI = (() => {
     const authenticated = Boolean(session?.authenticated);
     ['#adminLogoutBtn', '#adminStatus', '#adminPanelLink'].forEach(sel => setClass(sel, 'hidden', !authenticated));
     setClass('#adminAccessBtn', 'hidden', authenticated);
-    const status = qs('#adminStatus'); if (status) status.textContent = authenticated ? `Administrador: ${session.username}` : '';
+    const status = qs('#adminStatus'); if (status) status.textContent = authenticated ? `Modo editor: ${session.username}` : '';
     if (!authenticated) { toggleGameForm(false); togglePasswordPanel(false); togglePreviewPanel(false); }
   }
 
@@ -931,6 +1451,7 @@ const UI = (() => {
         label: trophy?.is_spoiler ? 'Spoiler / atenção' : (trophy?.type || 'Troféu'),
         text: trophy?.tip || trophy?.description || 'Revise este troféu antes de começar.'
       }));
+    const nextActionModel = deriveNextAction(game, completedSource);
 
     return {
       trophies,
@@ -946,6 +1467,8 @@ const UI = (() => {
       quickNotes,
       prepChecklist,
       spotlightTrophies,
+      nextActionModel,
+      decisionModel: buildGuideDecisionModel(game, trophies, roadmap),
       difficultyLabel: getDifficultyProfileLabel(game?.difficulty),
       image: getGameImageSrc(game?.image),
       isSaved: Boolean(options?.isSaved),
@@ -954,18 +1477,58 @@ const UI = (() => {
   }
 
 
+  function renderGuideRelatedCards(relatedGames = []) {
+    if (!Array.isArray(relatedGames) || !relatedGames.length) {
+      return '<div class="atlas-inline-empty md:col-span-2">Conforme o catálogo crescer, os jogos parecidos e a próxima trilha aparecem aqui.</div>';
+    }
+
+    return relatedGames.map((item, index) => {
+      const game = item?.game || item;
+      const reason = item?.reason || 'Boa continuação para manter o ritmo de platina.';
+      const badge = item?.badge || `Sugestão ${index + 1}`;
+      const trophyCount = Number(game?.trophy_count || game?.trophies?.length || 0);
+      const roadmapCount = Number(game?.roadmap_count || game?.roadmap?.length || 0);
+      const image = getGameImageSrc(game?.image);
+      return `
+        <a href="/jogo/${escapeAttribute(game?.slug || '')}" class="atlas-catalog-card" data-home-game="${escapeAttribute(game?.name || '')}">
+          ${buildImageAttrs(image, game?.name || 'Jogo', 'atlas-catalog-card__image', { width: 900, height: 520, sizes: '(min-width: 1280px) 33vw, (min-width: 768px) 50vw, 100vw' })}
+          <div class="atlas-catalog-card__body">
+            <div class="atlas-catalog-badges">
+              <span class="atlas-tag">Jogo parecido</span>
+              <span class="atlas-tag atlas-tag--accent">${escapeHtml(badge)}</span>
+            </div>
+            <div class="flex items-start justify-between gap-3 mt-3">
+              <div>
+                <h3>${escapeHtml(game?.name || 'Jogo')}</h3>
+                <p class="atlas-catalog-lead">${escapeHtml(reason)}</p>
+              </div>
+              <span class="atlas-tag atlas-tag--ghost">${escapeHtml(String(game?.difficulty || '-'))}/10</span>
+            </div>
+            <p>${trophyCount} troféus • ${escapeHtml(game?.time || 'Tempo não informado')} • ${roadmapCount} etapa(s) no roadmap</p>
+            <div class="atlas-catalog-meta">
+              <span><i class="fas fa-arrow-trend-up"></i> Mantém a mesma pegada</span>
+              <span><i class="fas fa-arrow-right"></i> Abrir próximo guia</span>
+            </div>
+          </div>
+        </a>`;
+    }).join('');
+  }
+
   function renderGuide(game, state = {}) {
     const headerEl = qs('#guideHeader');
     const sidebarEl = qs('#sidebarInfo');
     const trophiesEl = qs('#trophyList') || qs('#trophiesList') || qs('#guideTrophies');
+    const relatedEl = qs('#guideRelatedOverview');
     const isSaved = Boolean(state?.isSaved);
     const libraryEntry = state?.libraryEntry || null;
+    const relatedGames = Array.isArray(state?.relatedGames) ? state.relatedGames : [];
     const completedSource = Array.isArray(state)
       ? state
       : Array.isArray(state?.completedTrophies)
         ? state.completedTrophies
         : (Array.isArray(game?.completed) ? game.completed : []);
     const viewModel = buildGuideViewModel(game, completedSource, { isSaved, libraryEntry });
+    const guideMeta = getLibraryMeta({ ...game, completed: completedSource, trophies: viewModel.trophies });
 
     if (headerEl) {
       headerEl.innerHTML = `
@@ -1042,6 +1605,25 @@ const UI = (() => {
             <article class="glass-morphism atlas-stat-mini p-4 rounded-[18px]"><div class="text-xs uppercase tracking-wide text-white/45">Pendentes</div><div class="text-3xl font-extrabold mt-2">${viewModel.pending}</div></article>
             <article class="glass-morphism atlas-stat-mini p-4 rounded-[18px]"><div class="text-xs uppercase tracking-wide text-white/45">Spoilers</div><div class="text-3xl font-extrabold mt-2">${viewModel.spoilerCount}</div></article>
           </div>
+          <div class="glass-morphism rounded-[18px] p-4 border border-white/10 atlas-next-action-box">
+            <div class="flex flex-wrap items-center justify-between gap-2">
+              <div class="text-[11px] uppercase tracking-[0.18em] text-white/40">Janela de progresso</div>
+              <span class="atlas-tag atlas-tag--${escapeAttribute(guideMeta.progressState.accent)}">${escapeHtml(guideMeta.momentumLabel)}</span>
+            </div>
+            <strong class="block text-white mt-2">${escapeHtml(guideMeta.progressState.title)}</strong>
+            <p class="text-sm text-white/72 mt-2">${escapeHtml(guideMeta.progressState.detail)}</p>
+          </div>
+        </section>
+        <section class="atlas-panel p-5 rounded-[24px] bg-white/[0.03] border border-white/10 space-y-4">
+          <div class="atlas-eyebrow">Sua próxima ação</div>
+          <div class="glass-morphism rounded-[18px] p-4 border border-white/10">
+            <strong class="block text-white">${escapeHtml(viewModel.nextActionModel.title)}</strong>
+            <p class="text-sm text-white/72 mt-2">${escapeHtml(viewModel.nextActionModel.detail)}</p>
+            <div class="flex flex-wrap gap-2 mt-4">
+              <button type="button" class="atlas-btn atlas-btn-primary" data-guide-action="${escapeAttribute(viewModel.nextActionModel.focus)}">${escapeHtml(viewModel.nextActionModel.cta)}</button>
+              <button type="button" class="atlas-btn atlas-btn-secondary" data-guide-action="trophies">Ver checklist</button>
+            </div>
+          </div>
         </section>
         <section class="atlas-panel p-5 rounded-[24px] bg-white/[0.03] border border-white/10 space-y-4">
           <div class="atlas-eyebrow">Antes de começar</div>
@@ -1049,7 +1631,7 @@ const UI = (() => {
             ${viewModel.prepChecklist.map(item => `<li class="flex items-start gap-3"><span class="atlas-tag mt-0.5">•</span><span>${escapeHtml(item)}</span></li>`).join('')}
           </ul>
         </section>
-        <section class="atlas-panel p-5 rounded-[24px] bg-white/[0.03] border border-white/10 space-y-4">
+        <section id="guideRoadmapPanel" class="atlas-panel p-5 rounded-[24px] bg-white/[0.03] border border-white/10 space-y-4">
           <div class="atlas-eyebrow">Roadmap</div>
           ${viewModel.roadmap.length ? `<ol class="space-y-3 text-white/72">${viewModel.roadmap.map((step, index) => `<li class="flex items-start gap-3"><span class="atlas-tag mt-0.5">${index + 1}</span><span>${escapeHtml(typeof step === 'string' ? step : (step?.title || step?.description || 'Etapa'))}</span></li>`).join('')}</ol>` : '<div class="text-white/45">Sem roadmap cadastrado.</div>'}
         </section>
@@ -1073,6 +1655,15 @@ const UI = (() => {
 
 
         <section class="atlas-panel p-5 rounded-[24px] bg-white/[0.03] border border-white/10 space-y-4">
+          <div class="atlas-eyebrow">Depois deste guia</div>
+          <div class="space-y-3 text-sm text-white/72">
+            <article class="glass-morphism rounded-[18px] p-4 border border-white/10"><strong class="text-white block">Qual é o próximo bom clique?</strong><p class="mt-2">Se este jogo te agradar, o próximo passo ideal é abrir um guia com ritmo parecido de dificuldade e duração para manter consistência, não só novidade.</p></article>
+            <article class="glass-morphism rounded-[18px] p-4 border border-white/10"><strong class="text-white block">Como usar as recomendações</strong><p class="mt-2">As sugestões abaixo priorizam jogos com tempo, densidade de checklist e dificuldade semelhantes para você não quebrar o ritmo da biblioteca.</p></article>
+          </div>
+        </section>
+
+
+        <section class="atlas-panel p-5 rounded-[24px] bg-white/[0.03] border border-white/10 space-y-4">
           <div class="atlas-eyebrow">Destaques da lista</div>
           ${viewModel.spotlightTrophies.length ? `<div class="space-y-3">${viewModel.spotlightTrophies.map(item => `<article class="glass-morphism rounded-[18px] p-4 border border-white/10"><div class="text-[11px] uppercase tracking-[0.18em] text-white/40">${escapeHtml(item.label)}</div><h3 class="text-sm font-semibold text-white mt-2">${escapeHtml(item.name)}</h3><p class="text-sm text-white/68 mt-2">${escapeHtml(item.text)}</p></article>`).join('')}</div>` : '<div class="text-white/45">Nenhum troféu de atenção especial detectado automaticamente.</div>'}
         </section>
@@ -1089,7 +1680,7 @@ const UI = (() => {
             const spoilerClasses = trophy.is_spoiler ? 'spoiler-blur' : '';
             const spoilerText = trophy.is_spoiler ? '<span class="spoiler-hint">Conteúdo oculto até você revelar.</span>' : '';
             return `
-              <article class="trophy-card atlas-panel rounded-[24px] p-5 bg-white/[0.03] border border-white/10 ${done ? 'completed' : ''}" data-trophy-id="${escapeAttribute(trophy.id || '')}" data-type="${escapeAttribute(trophy.type || 'Bronze')}" data-status="${done ? 'completed' : 'pending'}" data-search="${escapeAttribute(search)}">
+              <article class="trophy-card atlas-panel rounded-[24px] p-5 bg-white/[0.03] border border-white/10 ${done ? 'completed' : ''}" data-trophy-id="${escapeAttribute(trophy.id || '')}" data-type="${escapeAttribute(trophy.type || 'Bronze')}" data-status="${done ? 'completed' : 'pending'}" data-search="${escapeAttribute(search)}" ${!done && trophy.id === viewModel.nextActionModel.trophyId ? 'data-next-focus="true"' : ''}>
                 <div class="flex flex-col md:flex-row md:items-start md:justify-between gap-4">
                   <div class="min-w-0 flex-1">
                     <div class="flex flex-wrap items-center gap-2 mb-3">
@@ -1110,6 +1701,10 @@ const UI = (() => {
             `;
           }).join('')
         : '<div class="text-white/60">Nenhum troféu cadastrado.</div>';
+    }
+
+    if (relatedEl) {
+      relatedEl.innerHTML = renderGuideRelatedCards(relatedGames);
     }
 
     const progressLabel = qs('#progressPercent');

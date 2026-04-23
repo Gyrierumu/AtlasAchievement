@@ -137,6 +137,85 @@ function getTrophyBreakdown(trophies = []) {
   }));
 }
 
+
+function buildGuideDecisionModel(game, trophies = [], roadmap = []) {
+  const difficulty = Number(game?.difficulty || 0);
+  const total = Array.isArray(trophies) ? trophies.length : 0;
+  const missables = trophies.filter(trophy => trophy && (trophy.is_missable || trophy.is_spoiler)).length;
+  const roadmapCount = Array.isArray(roadmap) ? roadmap.length : 0;
+
+  let fitLabel = 'Projeto enxuto';
+  let fitDetail = 'Boa opção para abrir sem precisar estudar demais antes de começar.';
+  if (difficulty >= 8 || total >= 45 || roadmapCount >= 6) {
+    fitLabel = 'Compromisso alto';
+    fitDetail = 'Pede mais foco, ritmo e sessões mais bem planejadas.';
+  } else if (difficulty >= 5 || total >= 28 || roadmapCount >= 4) {
+    fitLabel = 'Compromisso médio';
+    fitDetail = 'Ainda é amigável, mas vale entrar já com rota definida.';
+  }
+
+  let riskLabel = 'Risco controlado';
+  let riskDetail = 'Nada indica armadilha grande logo de início.';
+  if (missables >= 4) {
+    riskLabel = 'Risco alto de retrabalho';
+    riskDetail = 'Há alertas suficientes para justificar leitura do guia antes de qualquer sessão.';
+  } else if (missables >= 1) {
+    riskLabel = 'Algum risco de retrabalho';
+    riskDetail = 'Convém revisar perdíveis e ordem de execução antes da primeira run.';
+  }
+
+  let paceLabel = 'Vale abrir hoje';
+  let paceDetail = 'Você consegue validar rápido se o projeto combina com o seu momento.';
+  if (difficulty >= 8 || total >= 45) {
+    paceLabel = 'Melhor abrir com tempo';
+    paceDetail = 'Ideal para quando você puder jogar com mais continuidade e atenção.';
+  } else if (difficulty >= 5 || total >= 28 || roadmapCount >= 4) {
+    paceLabel = 'Pede preparação';
+    paceDetail = 'Ainda vale abrir hoje, mas com espaço para revisar o roadmap e as pendências.';
+  }
+
+  let verdict = 'Vale abrir agora';
+  let verdictDetail = 'O custo de entrada parece bom para decidir rápido se esta platina entra na sua rotação.';
+  if (difficulty >= 8 && missables >= 3) {
+    verdict = 'Abra só se quiser compromisso alto';
+    verdictDetail = 'O projeto parece mais exigente e funciona melhor quando você quer investir várias sessões com disciplina.';
+  } else if (difficulty >= 6 || missables >= 3 || total >= 38) {
+    verdict = 'Vale abrir com o guia do lado';
+    verdictDetail = 'Há valor claro aqui, mas a chance de perder tempo sobe bastante se você entrar sem rota definida.';
+  }
+
+  return {
+    fitLabel,
+    fitDetail,
+    riskLabel,
+    riskDetail,
+    paceLabel,
+    paceDetail,
+    verdict,
+    verdictDetail,
+    chips: [
+      difficulty >= 8 ? 'Exigência alta' : (difficulty >= 5 ? 'Esforço moderado' : 'Entrada amigável'),
+      missables ? `${missables} alerta(s) de atenção` : 'Sem alerta crítico forte',
+      roadmapCount ? `${roadmapCount} etapa(s) para orientar` : 'Roadmap ainda enxuto'
+    ]
+  };
+}
+
+function getDecisionToneClass(label = '') {
+  const value = String(label || '').toLowerCase();
+  if (value.includes('alto') || value.includes('compromisso alto')) return 'atlas-tag--hot';
+  if (value.includes('algum') || value.includes('moderado') || value.includes('preparação')) return 'atlas-tag--warm';
+  if (value.includes('controlado') || value.includes('amigável') || value.includes('entrar hoje')) return 'atlas-tag--close';
+  return 'atlas-tag--soft';
+}
+
+function formatDisplayDate(value) {
+  if (!value) return 'Sem data';
+  const date = new Date(value);
+  if (Number.isNaN(date.getTime())) return 'Sem data';
+  return date.toLocaleDateString('pt-BR');
+}
+
 function buildGuideViewModel(game, completedSource = [], options = {}) {
   const trophies = Array.isArray(game?.trophies) ? game.trophies : [];
   const roadmap = Array.isArray(game?.roadmap) ? game.roadmap : [];
@@ -184,6 +263,7 @@ function buildGuideViewModel(game, completedSource = [], options = {}) {
     quickNotes,
     prepChecklist,
     spotlightTrophies,
+    decisionModel: buildGuideDecisionModel(game, trophies, roadmap),
     image: game?.image || '/og-default.svg',
     isSaved: Boolean(options?.isSaved),
     libraryEntry: options?.libraryEntry || null
@@ -205,8 +285,29 @@ function renderGuideHeaderHtml(game, viewModel, options = {}) {
             <div class="flex flex-wrap gap-2 mt-4">
               <span class="atlas-tag">Perfil ${escapeHtml(viewModel.difficultyLabel)}</span>
               <span class="atlas-tag">${escapeHtml(game?.time || 'Tempo não informado')}</span>
-              <span class="atlas-tag">${viewModel.missables ? `${viewModel.missables} alerta(s)` : 'Sem alerta crítico marcado'}</span>
+              <span class="atlas-tag ${getDecisionToneClass(viewModel.decisionModel.fitLabel)}">${escapeHtml(viewModel.decisionModel.fitLabel)}</span>
+              <span class="atlas-tag ${getDecisionToneClass(viewModel.decisionModel.riskLabel)}">${escapeHtml(viewModel.decisionModel.riskLabel)}</span>
               <span class="atlas-tag">${escapeHtml(viewModel.breakdownText)}</span>
+            </div>
+            <section class="atlas-decision-panel mt-5">
+              <div class="atlas-decision-panel__header">
+                <div>
+                  <div class="atlas-eyebrow">Decisão rápida</div>
+                  <h2 class="text-2xl md:text-3xl font-extrabold mt-2">${escapeHtml(viewModel.decisionModel.verdict)}</h2>
+                </div>
+                <span class="atlas-tag ${getDecisionToneClass(viewModel.decisionModel.paceLabel)}">${escapeHtml(viewModel.decisionModel.paceLabel)}</span>
+              </div>
+              <p class="text-white/74 mt-3 max-w-3xl">${escapeHtml(viewModel.decisionModel.verdictDetail)}</p>
+              <div class="atlas-decision-grid mt-4">
+                <article class="glass-morphism rounded-[18px] p-4 border border-white/10"><div class="text-[11px] uppercase tracking-[0.18em] text-white/40">Esforço</div><strong class="block mt-2 text-white">${escapeHtml(viewModel.decisionModel.fitLabel)}</strong><p class="text-sm text-white/72 mt-2">${escapeHtml(viewModel.decisionModel.fitDetail)}</p></article>
+                <article class="glass-morphism rounded-[18px] p-4 border border-white/10"><div class="text-[11px] uppercase tracking-[0.18em] text-white/40">Risco</div><strong class="block mt-2 text-white">${escapeHtml(viewModel.decisionModel.riskLabel)}</strong><p class="text-sm text-white/72 mt-2">${escapeHtml(viewModel.decisionModel.riskDetail)}</p></article>
+                <article class="glass-morphism rounded-[18px] p-4 border border-white/10"><div class="text-[11px] uppercase tracking-[0.18em] text-white/40">Quando vale abrir</div><strong class="block mt-2 text-white">${escapeHtml(viewModel.decisionModel.paceLabel)}</strong><p class="text-sm text-white/72 mt-2">${escapeHtml(viewModel.decisionModel.paceDetail)}</p></article>
+              </div>
+            </section>
+            <div class="grid sm:grid-cols-3 gap-3 mt-4 max-w-4xl">
+              <article class="glass-morphism rounded-[18px] p-4 border border-white/10"><div class="text-[11px] uppercase tracking-[0.18em] text-white/40">Última revisão</div><p class="text-sm text-white/78 mt-2">${escapeHtml(formatDisplayDate(game?.updated_at || game?.created_at))}</p></article>
+              <article class="glass-morphism rounded-[18px] p-4 border border-white/10"><div class="text-[11px] uppercase tracking-[0.18em] text-white/40">Densidade do guia</div><p class="text-sm text-white/78 mt-2">${viewModel.roadmap.length ? `${viewModel.roadmap.length} etapa(s) no roadmap` : 'Roadmap ainda enxuto'}</p></article>
+              <article class="glass-morphism rounded-[18px] p-4 border border-white/10"><div class="text-[11px] uppercase tracking-[0.18em] text-white/40">Leitura inicial</div><p class="text-sm text-white/78 mt-2">${viewModel.missables ? 'Revise os alertas antes da primeira run.' : 'Guia sem alerta crítico marcado até agora.'}</p></article>
             </div>
             <p class="text-white/50 mt-4 max-w-3xl">${escapeHtml(game?.missable || 'Sem alerta editorial de perdíveis informado.')}</p>
           </div>
@@ -231,6 +332,28 @@ function renderGuideSidebarHtml(game, viewModel) {
         <article class="glass-morphism atlas-stat-mini p-4 rounded-[18px]"><div class="text-xs uppercase tracking-wide text-white/45">Concluídos</div><div class="text-3xl font-extrabold mt-2">${viewModel.completed}/${viewModel.total}</div></article>
         <article class="glass-morphism atlas-stat-mini p-4 rounded-[18px]"><div class="text-xs uppercase tracking-wide text-white/45">Pendentes</div><div class="text-3xl font-extrabold mt-2">${viewModel.pending}</div></article>
         <article class="glass-morphism atlas-stat-mini p-4 rounded-[18px]"><div class="text-xs uppercase tracking-wide text-white/45">Spoilers</div><div class="text-3xl font-extrabold mt-2">${viewModel.spoilerCount}</div></article>
+      </div>
+    </section>
+    <section class="atlas-panel p-5 rounded-[24px] bg-white/[0.03] border border-white/10 space-y-4">
+      <div class="atlas-eyebrow">Leitura de decisão</div>
+      <article class="glass-morphism rounded-[18px] p-4 border border-white/10 atlas-next-action-box">
+        <div class="flex items-start justify-between gap-3">
+          <div>
+            <div class="text-[11px] uppercase tracking-[0.18em] text-white/40">Vale meu tempo?</div>
+            <strong class="block text-white mt-2">${escapeHtml(viewModel.decisionModel.verdict)}</strong>
+          </div>
+          <span class="atlas-tag ${getDecisionToneClass(viewModel.decisionModel.fitLabel)}">${escapeHtml(viewModel.decisionModel.fitLabel)}</span>
+        </div>
+        <p class="text-sm text-white/72 mt-3">${escapeHtml(viewModel.decisionModel.verdictDetail)}</p>
+        <div class="flex flex-wrap gap-2 mt-4">${viewModel.decisionModel.chips.map(chip => `<span class="atlas-tag atlas-tag--soft">${escapeHtml(chip)}</span>`).join('')}</div>
+      </article>
+    </section>
+    <section class="atlas-panel p-5 rounded-[24px] bg-white/[0.03] border border-white/10 space-y-4">
+      <div class="atlas-eyebrow">Confiança editorial</div>
+      <div class="space-y-3 text-sm text-white/72">
+        <article class="glass-morphism rounded-[18px] p-4 border border-white/10"><div class="text-[11px] uppercase tracking-[0.18em] text-white/40">Atualização</div><p class="mt-2">Página revisada em ${escapeHtml(formatDisplayDate(game?.updated_at || game?.created_at))}.</p></article>
+        <article class="glass-morphism rounded-[18px] p-4 border border-white/10"><div class="text-[11px] uppercase tracking-[0.18em] text-white/40">Cobertura</div><p class="mt-2">${viewModel.total} troféu(s) mapeado(s) e ${viewModel.roadmap.length} etapa(s) no roadmap.</p></article>
+        <article class="glass-morphism rounded-[18px] p-4 border border-white/10"><div class="text-[11px] uppercase tracking-[0.18em] text-white/40">Leitura recomendada</div><p class="mt-2">${viewModel.missables ? 'Abra os alertas de perdível antes da primeira run.' : 'Você pode começar pelo roadmap e revisar a lista depois.'}</p></article>
       </div>
     </section>
     <section class="atlas-panel p-5 rounded-[24px] bg-white/[0.03] border border-white/10 space-y-4">
@@ -432,9 +555,15 @@ app.get('/sitemap.xml', async (req, res, next) => {
   try {
     const origin = `${req.protocol}://${req.get('host')}`;
     const response = await gamesService.listGames({ page: 1, limit: 100, sort: 'updated-desc' });
+    const facetUrls = Object.keys(catalogFacetPageMap).map(facetSlug => ({
+      loc: `${origin}/catalogo/${facetSlug}`,
+      lastmod: new Date().toISOString()
+    }));
+
     const urls = [
       { loc: `${origin}/`, lastmod: new Date().toISOString() },
       { loc: `${origin}/catalogo`, lastmod: new Date().toISOString() },
+      ...facetUrls,
       ...response.items.map(game => ({
         loc: `${origin}/jogo/${game.slug}`,
         lastmod: game.updated_at || game.created_at || new Date().toISOString()

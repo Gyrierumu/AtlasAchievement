@@ -8,7 +8,7 @@
     librarySearch: '',
     librarySort: 'recent',
     catalogSearch: '',
-    catalogSort: 'updated-desc',
+    catalogSort: 'recommended-desc',
     catalogFacet: 'all',
     catalogPage: 1,
     catalogResponse: { items: [], pagination: { page: 1, totalPages: 1, total: 0 } },
@@ -382,11 +382,62 @@
     }
   }
 
+  function getGameTimeValue(game = {}) {
+    const value = String(game?.time || '').toLowerCase();
+    const numbers = value.match(/\d+/g);
+    if (!numbers?.length) return Number.MAX_SAFE_INTEGER;
+    const numeric = numbers.map(Number).filter(Number.isFinite);
+    return numeric.length ? Math.max(...numeric) : Number.MAX_SAFE_INTEGER;
+  }
+
+  function buildRelatedGames(currentGame, pool = [], limit = 4) {
+    if (!currentGame) return [];
+    const currentSlug = getGameSlug(currentGame);
+    const currentTrophies = Number(currentGame.trophy_count || currentGame.trophies?.length || 0);
+    const currentDifficulty = Number(currentGame.difficulty || 0);
+    const currentTime = getGameTimeValue(currentGame);
+
+    const candidates = (Array.isArray(pool) ? pool : [])
+      .filter(game => game && getGameSlug(game) !== currentSlug)
+      .map(game => {
+        const trophyCount = Number(game.trophy_count || game.trophies?.length || 0);
+        const difficulty = Number(game.difficulty || 0);
+        const timeValue = getGameTimeValue(game);
+        const roadmapCount = Number(game.roadmap_count || game.roadmap?.length || 0);
+        const diffGap = Math.abs(difficulty - currentDifficulty);
+        const timeGap = Math.abs((Number.isFinite(timeValue) ? timeValue : 999) - (Number.isFinite(currentTime) ? currentTime : 999));
+        const trophyGap = Math.abs(trophyCount - currentTrophies);
+        let score = 100;
+        score -= diffGap * 12;
+        score -= Math.min(timeGap, 120) * 0.8;
+        score -= Math.min(trophyGap, 80) * 0.45;
+        if (roadmapCount > 0) score += 12;
+        if (difficulty <= currentDifficulty + 1) score += 6;
+        let badge = 'Ritmo parecido';
+        let reason = 'Mantém dificuldade, checklist e tempo em uma faixa parecida para continuar sem mudar demais o ritmo.';
+        if (diffGap <= 1 && timeGap <= 10) {
+          badge = 'Continuação natural';
+          reason = 'Muito próximo em dificuldade e duração. Boa sequência para manter o mesmo tipo de projeto.';
+        } else if (difficulty < currentDifficulty && timeValue <= currentTime) {
+          badge = 'Descanso entre projetos';
+          reason = 'Mais leve para alternar depois de um guia exigente sem perder o hábito de fechar troféus.';
+        } else if (trophyCount > currentTrophies) {
+          badge = 'Próximo passo mais denso';
+          reason = 'Boa escolha para subir um pouco a densidade do checklist depois deste jogo.';
+        }
+        return { game, score, badge, reason };
+      })
+      .sort((a, b) => b.score - a.score || String(a.game.name || '').localeCompare(String(b.game.name || ''), 'pt-BR'));
+
+    return candidates.slice(0, limit);
+  }
+
   function renderCurrentGuide(options = {}) {
     if (!state.currentGame) return;
     const libraryKey = getLibraryKey(state.currentGame);
     const libraryEntry = state.library[libraryKey] || normalizeLibraryEntry(state.currentGame, { completed: [] });
-    UI.renderGuide(state.currentGame, { completedTrophies: libraryEntry.completed, isSaved: Boolean(state.library[libraryKey]), libraryEntry });
+    const relatedGames = buildRelatedGames(state.currentGame, state.availableGames, 4);
+    UI.renderGuide(state.currentGame, { completedTrophies: libraryEntry.completed, isSaved: Boolean(state.library[libraryKey]), libraryEntry, relatedGames });
     UI.setPageMeta(state.currentGame);
     navigate('guide', { ...options, game: state.currentGame, skipHistory: options.skipHistory });
     UI.clearTrophySearch();
@@ -416,6 +467,23 @@
     state.currentGame = entry;
     upsertLibraryEntry(entry, { lastOpenedAt: new Date().toISOString() });
     renderCurrentGuide();
+  }
+
+  function focusGuideAction(action = 'trophies') {
+    const map = {
+      header: '#guideHeader',
+      roadmap: '#guideRoadmapPanel',
+      trophies: '#trophyList',
+      'first-pending': '[data-next-focus="true"]'
+    };
+    const selector = map[action] || map.trophies;
+    const element = document.querySelector(selector) || document.querySelector('#trophyList');
+    if (!element) return;
+    element.scrollIntoView({ behavior: 'smooth', block: 'start' });
+    if (selector === '[data-next-focus="true"]') {
+      element.classList.add('ring-2', 'ring-atlas-300');
+      window.setTimeout(() => element.classList.remove('ring-2', 'ring-atlas-300'), 1800);
+    }
   }
 
   function deleteFromLibrary(key) {
@@ -702,6 +770,24 @@
         return;
       }
 
+      const scrollTrigger = event.target.closest('[data-scroll-target]');
+      if (scrollTrigger) {
+        event.preventDefault();
+        const target = document.querySelector(scrollTrigger.dataset.scrollTarget || '');
+        target?.scrollIntoView({ behavior: 'smooth', block: 'start' });
+        return;
+      }
+
+      const facetTrigger = event.target.closest('[data-home-facet]');
+      if (facetTrigger) {
+        event.preventDefault();
+        state.catalogFacet = facetTrigger.dataset.homeFacet || 'all';
+        state.catalogPage = 1;
+        await loadCatalogPage({ page: 1, facet: state.catalogFacet });
+        navigate('catalog', { facet: state.catalogFacet });
+        return;
+      }
+
       const trigger = event.target.closest('[data-home-game]');
       if (trigger) {
         event.preventDefault();
@@ -850,6 +936,13 @@
       }
     });
 
+    UI.qs('#sidebarInfo')?.addEventListener('click', event => {
+      const actionButton = event.target.closest('[data-guide-action]');
+      if (!actionButton) return;
+      event.preventDefault();
+      focusGuideAction(actionButton.dataset.guideAction || 'trophies');
+    });
+
     window.addEventListener('popstate', async () => {
       if (page !== 'public') return;
       const path = window.location.pathname;
@@ -910,6 +1003,14 @@
       }
     });
 
+    UI.qs('#view-guide')?.addEventListener('click', async event => {
+      const relatedLink = event.target.closest('[data-home-game]');
+      if (relatedLink) {
+        event.preventDefault();
+        await loadGuideByName(relatedLink.dataset.homeGame);
+      }
+    });
+
     UI.qs('#catalogSearch')?.addEventListener('input', async event => {
       state.catalogSearch = event.target.value || '';
       state.catalogPage = 1;
@@ -917,7 +1018,7 @@
     });
 
     UI.qs('#catalogSort')?.addEventListener('change', async event => {
-      state.catalogSort = event.target.value || 'updated-desc';
+      state.catalogSort = event.target.value || 'recommended-desc';
       state.catalogPage = 1;
       await loadCatalogPage({ page: 1 });
     });

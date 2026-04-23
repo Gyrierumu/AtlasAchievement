@@ -1,7 +1,7 @@
 const AppError = require('../utils/AppError');
 
 const ALLOWED_TROPHY_TYPES = ['Platina', 'Ouro', 'Prata', 'Bronze'];
-const ALLOWED_SORTS = ['updated-desc', 'created-desc', 'difficulty-desc', 'time-asc', 'trophies-desc', 'name-asc'];
+const ALLOWED_SORTS = ['recommended-desc', 'updated-desc', 'created-desc', 'difficulty-desc', 'time-asc', 'trophies-desc', 'name-asc'];
 const ALLOWED_FACETS = [
   'all',
   'difficulty-low',
