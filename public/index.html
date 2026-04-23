@@ -41,9 +41,6 @@
     }
   </script>
   <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="/css/styles.css">
   <link rel="manifest" href="/site.webmanifest">
 </head>
@@ -346,24 +343,24 @@
               </div>
             </div>
             <div class="grid xl:grid-cols-[minmax(0,1fr)_280px] gap-4 items-start">
-              <div class="flex items-center gap-2 overflow-x-auto atlas-x-scroll pb-1">
-                <button class="filter-btn atlas-pill atlas-pill-active" data-filter="all">Todos</button>
-                <button class="filter-btn atlas-pill" data-filter="Platina">Platina</button>
-                <button class="filter-btn atlas-pill" data-filter="Ouro">Ouro</button>
-                <button class="filter-btn atlas-pill" data-filter="Prata">Prata</button>
-                <button class="filter-btn atlas-pill" data-filter="Bronze">Bronze</button>
-                <button class="filter-btn atlas-pill" data-filter="completed">Concluídos</button>
-                <button class="filter-btn atlas-pill" data-filter="pending">Pendentes</button>
+              <div class="flex items-center gap-2 overflow-x-auto atlas-x-scroll pb-1" role="toolbar" aria-label="Filtrar lista de troféus">
+                <button class="filter-btn atlas-pill atlas-pill-active" data-filter="all" aria-pressed="true">Todos</button>
+                <button class="filter-btn atlas-pill" data-filter="Platina" aria-pressed="false">Platina</button>
+                <button class="filter-btn atlas-pill" data-filter="Ouro" aria-pressed="false">Ouro</button>
+                <button class="filter-btn atlas-pill" data-filter="Prata" aria-pressed="false">Prata</button>
+                <button class="filter-btn atlas-pill" data-filter="Bronze" aria-pressed="false">Bronze</button>
+                <button class="filter-btn atlas-pill" data-filter="completed" aria-pressed="false">Concluídos</button>
+                <button class="filter-btn atlas-pill" data-filter="pending" aria-pressed="false">Pendentes</button>
               </div>
               <label class="block">
                 <span class="sr-only">Buscar troféu</span>
                 <input id="trophySearch" type="search" placeholder="Buscar troféu ou descrição" class="atlas-input min-h-[46px] h-[46px] py-3">
               </label>
             </div>
-            <div id="guideResults" class="text-sm text-white/45">0 troféu(s) visível(is)</div>
+            <div id="guideResults" class="text-sm text-white/60" aria-live="polite">0 troféu(s) visível(is)</div>
             <div id="guideEmptyState" class="hidden atlas-inline-empty">Nenhum troféu corresponde ao filtro atual. Limpe a busca ou troque o filtro.</div>
           </div>
-          <div id="trophyList" class="space-y-4 max-h-[1100px] overflow-y-auto pr-2 atlas-y-scroll">__SSR_TROPHY_LIST__</div>
+          <div id="trophyList" class="space-y-4 pr-2" aria-live="polite">__SSR_TROPHY_LIST__</div>
         </div>
       </div>
     </section>
@@ -397,9 +394,9 @@
 
   <div id="toast" class="toast" role="status" aria-live="polite" aria-atomic="true"></div>
   __INITIAL_STATE_SCRIPT__
-  <script src="/js/api.js"></script>
-  <script src="/js/storage.js"></script>
-  <script src="/js/ui.js"></script>
-  <script src="/js/app.js"></script>
+  <script src="/js/api.js" defer></script>
+  <script src="/js/storage.js" defer></script>
+  <script src="/js/ui.js" defer></script>
+  <script src="/js/app.js" defer></script>
 </body>
 </html>

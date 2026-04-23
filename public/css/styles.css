@@ -22,7 +22,7 @@ body {
     radial-gradient(circle at top left, rgba(14, 165, 233, .12), transparent 28%),
     radial-gradient(circle at right 20%, rgba(59, 130, 246, .10), transparent 22%),
     linear-gradient(180deg, #040713 0%, #070d1d 48%, #030611 100%);
-  font-family: 'Inter', system-ui, sans-serif;
+  font-family: Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
   overflow-x: hidden;
 }
 
@@ -93,6 +93,19 @@ img { display: block; max-width: 100%; }
   transition: .22s ease;
 }
 .atlas-btn:hover { transform: translateY(-1px); }
+.atlas-btn:focus-visible,
+.filter-btn:focus-visible,
+.atlas-pill:focus-visible,
+#trophyList .trophy-card:focus-within {
+  outline: 2px solid rgba(125, 211, 252, .9);
+  outline-offset: 3px;
+}
+.atlas-btn-compact {
+  min-height: 38px;
+  height: 38px;
+  padding-inline: 12px;
+  font-size: .84rem;
+}
 .atlas-btn-primary {
   color: white;
   background: linear-gradient(135deg, var(--accent), var(--accent-2));
@@ -427,14 +440,29 @@ select:focus {
 .atlas-quick-action:hover { transform: translateY(-2px); border-color: rgba(56, 189, 248, .35); }
 .atlas-quick-action i { font-size: 22px; color: var(--accent); }
 
+.trophy-card {
+  border-left: 3px solid transparent;
+}
+.trophy-card p {
+  line-height: 1.65;
+}
 .trophy-card.completed {
   border-left-color: var(--success) !important;
   box-shadow: inset 0 0 0 1px rgba(34, 197, 94, .14);
 }
 .spoiler-blur {
   filter: blur(7px);
-  cursor: pointer;
   user-select: none;
+}
+.spoiler-hint {
+  display: inline-flex;
+  margin-right: 8px;
+  padding: 4px 8px;
+  border-radius: 999px;
+  background: rgba(244, 114, 182, .12);
+  color: rgba(251, 207, 232, .95);
+  font-size: .72rem;
+  font-weight: 700;
 }
 .spoiler-unveiled { filter: none; }
 
@@ -1003,6 +1031,9 @@ select:focus {
 
   #trophyList {
     gap: 14px;
+    max-height: none;
+    overflow: visible;
+    padding-right: 0;
   }
 
   #trophyList .trophy-card {
@@ -1251,4 +1282,44 @@ select:focus {
     margin-right: 0;
     margin-bottom: 8px;
   }
+}
+
+
+/* Performance-oriented rendering tweaks */
+main > section > section:not(:first-child),
+#catalogList,
+#adminGamesList,
+#libraryList,
+#trophyList {
+  content-visibility: auto;
+  contain-intrinsic-size: 1px 900px;
+}
+
+img {
+  height: auto;
+}
+
+.atlas-guide-cover img,
+.atlas-catalog-card__image,
+.atlas-guide-preview img {
+  aspect-ratio: 16 / 9;
+}
+
+@media (max-width: 768px) {
+  .atlas-bg-orb {
+    filter: blur(56px);
+    opacity: .16;
+  }
+
+  .atlas-hero-shell,
+  .atlas-dashboard-card,
+  .atlas-panel {
+    backdrop-filter: blur(12px);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html { scroll-behavior: auto; }
+  .atlas-bg-orb { display: none; }
+  .atlas-btn:hover { transform: none; }
 }

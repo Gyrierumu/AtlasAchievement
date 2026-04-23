@@ -7,8 +7,8 @@ function securityHeaders(req, res, next) {
     "form-action 'self'",
     "connect-src 'self'",
     "img-src 'self' data: https:",
-    "font-src 'self' https://fonts.gstatic.com https://cdnjs.cloudflare.com data:",
-    "style-src 'self' 'unsafe-inline' https://fonts.googleapis.com https://cdnjs.cloudflare.com",
+    "font-src 'self' https://cdnjs.cloudflare.com data:",
+    "style-src 'self' 'unsafe-inline' https://cdnjs.cloudflare.com",
     "script-src 'self' 'unsafe-inline' https://cdn.tailwindcss.com",
     "script-src-attr 'self' 'unsafe-inline'",
     "upgrade-insecure-requests"

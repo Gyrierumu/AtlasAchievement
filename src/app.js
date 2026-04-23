@@ -98,6 +98,7 @@ function renderTrophyCardHtml(trophy, completedIds = new Set()) {
   const tip = trophy.tip || '';
   const search = `${trophy.name || ''} ${description} ${tip}`.trim().toLowerCase();
   const spoilerClasses = trophy.is_spoiler ? 'spoiler-blur' : '';
+  const spoilerText = trophy.is_spoiler ? '<span class="spoiler-hint">Conteúdo oculto até você revelar.</span>' : '';
 
   return `
     <article class="trophy-card atlas-panel rounded-[24px] p-5 bg-white/[0.03] border border-white/10 ${done ? 'completed' : ''}" data-trophy-id="${escapeHtml(trophy.id || '')}" data-type="${escapeHtml(trophy.type || 'Bronze')}" data-status="${done ? 'completed' : 'pending'}" data-search="${escapeHtml(search)}">
@@ -109,11 +110,12 @@ function renderTrophyCardHtml(trophy, completedIds = new Set()) {
             ${done ? '<span class="atlas-tag">Concluído</span>' : '<span class="atlas-tag">Pendente</span>'}
           </div>
           <h4 class="text-xl font-bold text-white">${escapeHtml(trophy.name || 'Troféu')}</h4>
-          <p class="text-sm text-white/65 mt-2 ${spoilerClasses}" ${trophy.is_spoiler ? 'data-spoiler="true"' : ''}>${escapeHtml(description || 'Sem descrição.')}</p>
-          ${tip ? `<div class="atlas-tip-box mt-4"><div class="text-xs uppercase tracking-wide text-cyan-200/75">Dica</div><p class="text-sm text-cyan-50/85 mt-2 ${spoilerClasses}" ${trophy.is_spoiler ? 'data-spoiler="true"' : ''}>${escapeHtml(tip)}</p></div>` : ''}
+          ${trophy.is_spoiler ? '<button type="button" class="atlas-btn atlas-btn-secondary atlas-btn-compact mt-3" data-spoiler-toggle="true" aria-expanded="false">Revelar spoiler</button>' : ''}
+          <p class="text-sm text-white/80 mt-2 ${spoilerClasses}" ${trophy.is_spoiler ? 'data-spoiler="true" aria-hidden="true"' : ''}>${spoilerText}${escapeHtml(description || 'Sem descrição.')}</p>
+          ${tip ? `<div class="atlas-tip-box mt-4"><div class="text-xs uppercase tracking-wide text-cyan-200/85">Dica</div><p class="text-sm text-cyan-50/92 mt-2 ${spoilerClasses}" ${trophy.is_spoiler ? 'data-spoiler="true" aria-hidden="true"' : ''}>${trophy.is_spoiler ? '<span class="spoiler-hint">Dica oculta até você revelar.</span>' : ''}${escapeHtml(tip)}</p></div>` : ''}
         </div>
-        <div class="md:w-auto shrink-0">
-          <button type="button" class="atlas-btn ${done ? 'atlas-btn-secondary' : 'atlas-btn-primary'}" data-trophy-toggle="${escapeHtml(trophy.id || '')}">${done ? 'Desmarcar' : 'Marcar como concluído'}</button>
+        <div class="md:w-auto shrink-0 self-start">
+          <button type="button" class="atlas-btn ${done ? 'atlas-btn-secondary' : 'atlas-btn-primary'}" data-trophy-toggle="${escapeHtml(trophy.id || '')}" aria-pressed="${done ? 'true' : 'false'}">${done ? 'Desmarcar' : 'Marcar como concluído'}</button>
         </div>
       </div>
     </article>`;
@@ -182,7 +184,7 @@ function buildGuideViewModel(game, completedSource = [], options = {}) {
     quickNotes,
     prepChecklist,
     spotlightTrophies,
-    image: game?.image || 'https://via.placeholder.com/900x520?text=Sem+Capa',
+    image: game?.image || '/og-default.svg',
     isSaved: Boolean(options?.isSaved),
     libraryEntry: options?.libraryEntry || null
   };
@@ -194,7 +196,7 @@ function renderGuideHeaderHtml(game, viewModel, options = {}) {
       <div class="flex flex-col xl:flex-row xl:items-start xl:justify-between gap-5">
         <div class="flex gap-4 items-start min-w-0">
           <div class="atlas-guide-cover shrink-0">
-            <img src="${escapeHtml(viewModel.image)}" alt="${escapeHtml(game?.name || 'Jogo')}" class="w-full h-full object-cover">
+            <img src="${escapeHtml(viewModel.image)}" alt="${escapeHtml(game?.name || 'Jogo')}" class="w-full h-full object-cover" loading="eager" decoding="sync" fetchpriority="high" width="900" height="520" sizes="(min-width: 1280px) 240px, 160px">
           </div>
           <div class="min-w-0">
             <div class="atlas-eyebrow">Guia do jogo</div>

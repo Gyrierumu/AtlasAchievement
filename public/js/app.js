@@ -801,13 +801,39 @@
       removeButton.closest('.trophy-input').remove();
     });
 
-    UI.qsa('.filter-btn').forEach(button => button.addEventListener('click', () => { state.activeFilter = button.dataset.filter; UI.applyTrophyFilter(state.activeFilter, state.guideSearch); }));
+    UI.qsa('.filter-btn').forEach((button, index, buttons) => {
+      button.addEventListener('click', () => {
+        state.activeFilter = button.dataset.filter;
+        UI.applyTrophyFilter(state.activeFilter, state.guideSearch);
+      });
+      button.addEventListener('keydown', event => {
+        if (!['ArrowRight', 'ArrowLeft'].includes(event.key)) return;
+        event.preventDefault();
+        const nextIndex = event.key === 'ArrowRight'
+          ? (index + 1) % buttons.length
+          : (index - 1 + buttons.length) % buttons.length;
+        buttons[nextIndex].focus();
+      });
+    });
     UI.bindGuideSearch(event => { state.guideSearch = event.target.value || ''; UI.applyTrophyFilter(state.activeFilter, state.guideSearch); });
     UI.qs('#trophyList')?.addEventListener('click', event => {
       const toggleButton = event.target.closest('[data-trophy-toggle]');
       if (toggleButton) return toggleTrophy(toggleButton.dataset.trophyToggle);
-      const spoiler = event.target.closest('[data-spoiler]');
-      if (spoiler) { spoiler.classList.remove('spoiler-blur'); spoiler.classList.add('spoiler-unveiled'); }
+      const spoilerToggle = event.target.closest('[data-spoiler-toggle]');
+      if (spoilerToggle) {
+        const card = spoilerToggle.closest('.trophy-card');
+        if (!card) return;
+        const hiddenParts = card.querySelectorAll('[data-spoiler]');
+        hiddenParts.forEach(spoiler => {
+          spoiler.classList.remove('spoiler-blur');
+          spoiler.classList.add('spoiler-unveiled');
+          spoiler.setAttribute('aria-hidden', 'false');
+        });
+        spoilerToggle.setAttribute('aria-expanded', 'true');
+        spoilerToggle.textContent = 'Spoiler revelado';
+        spoilerToggle.disabled = true;
+        return;
+      }
     });
     UI.qs('#guideHeader')?.addEventListener('click', async event => {
       const copyButton = event.target.closest('[data-copy-game-link]');

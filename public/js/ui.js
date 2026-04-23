@@ -6,6 +6,24 @@ const UI = (() => {
   function has(selector) { return Boolean(qs(selector)); }
   function setClass(selector, className, force) { const el = qs(selector); if (el) el.classList.toggle(className, force); }
 
+
+
+  const FALLBACK_GAME_IMAGE = '/og-default.svg';
+
+  function getGameImageSrc(value) {
+    return value || FALLBACK_GAME_IMAGE;
+  }
+
+  function buildImageAttrs(src, alt, className, options = {}) {
+    const loading = options.loading || 'lazy';
+    const decoding = options.decoding || 'async';
+    const fetchpriority = options.fetchpriority ? ` fetchpriority="${escapeAttribute(options.fetchpriority)}"` : '';
+    const sizes = options.sizes ? ` sizes="${escapeAttribute(options.sizes)}"` : '';
+    const width = options.width ? ` width="${escapeAttribute(String(options.width))}"` : '';
+    const height = options.height ? ` height="${escapeAttribute(String(options.height))}"` : '';
+    return `<img src="${escapeAttribute(getGameImageSrc(src))}" alt="${escapeAttribute(alt || '')}" class="${className}" loading="${escapeAttribute(loading)}" decoding="${escapeAttribute(decoding)}"${fetchpriority}${sizes}${width}${height}>`;
+  }
+
   function showToast(message, type = 'success') {
     const toast = qs('#toast');
     if (!toast) return;
@@ -63,7 +81,7 @@ const UI = (() => {
     suggestionsDiv.innerHTML = games.map((game, index) => {
       const isActive = index === activeIndex;
       const imageMarkup = game.image
-        ? `<img src="${escapeAttribute(game.image)}" alt="" class="h-14 w-10 rounded-lg object-cover border border-white/10 bg-white/5 shrink-0" loading="lazy">`
+        ? buildImageAttrs(game.image, '', 'h-14 w-10 rounded-lg object-cover border border-white/10 bg-white/5 shrink-0', { width: 40, height: 56, sizes: '40px' })
         : `<div class="h-14 w-10 rounded-lg border border-white/10 bg-white/5 shrink-0"></div>`;
       const meta = [`Dificuldade ${escapeHtml(game.difficulty || '?')}/10`, escapeHtml(game.time || 'Tempo não informado')].join(' • ');
       return `
@@ -139,11 +157,11 @@ const UI = (() => {
     const roadmap = Array.isArray(game.roadmap) ? game.roadmap : [];
     const trophies = Array.isArray(game.trophies) ? game.trophies : [];
     const spoilerCount = trophies.filter(item => item.is_spoiler).length;
-    const image = game.image || 'https://via.placeholder.com/900x520?text=Sem+Capa';
+    const image = getGameImageSrc(game.image);
     target.innerHTML = `
       <div class="grid xl:grid-cols-[320px_1fr] gap-6">
         <div class="atlas-panel p-4 rounded-[24px] bg-white/[0.02]">
-          <img src="${escapeAttribute(image)}" alt="${escapeAttribute(game.name || 'Sem nome')}" class="w-full h-[240px] rounded-[18px] object-cover">
+          ${buildImageAttrs(image, game.name || 'Sem nome', 'w-full h-[240px] rounded-[18px] object-cover', { width: 900, height: 520, sizes: '(min-width: 1280px) 320px, 100vw' })}
         </div>
         <div class="space-y-4">
           <div class="atlas-panel p-5 rounded-[24px] bg-white/[0.02]">
@@ -229,7 +247,7 @@ const UI = (() => {
           const percent = total ? Math.round((completed.length / total) * 100) : 0;
           return `
             <a href="/jogo/${escapeAttribute(game.slug)}" class="atlas-guide-preview block" data-home-game="${escapeAttribute(game.name)}">
-              <img src="${escapeAttribute(game.image || 'https://via.placeholder.com/900x520?text=Sem+Capa')}" alt="${escapeAttribute(game.name)}">
+              ${buildImageAttrs(game.image, game.name, '', { width: 900, height: 520, fetchpriority: 'high', loading: 'eager', decoding: 'sync', sizes: '(min-width: 1280px) 50vw, 100vw' })}
               <div class="atlas-guide-preview__body">
                 <span class="atlas-tag">Página do jogo</span>
                 <h3>${escapeHtml(game.name)}</h3>
@@ -497,12 +515,12 @@ const UI = (() => {
     }
 
     target.innerHTML = sorted.map(game => {
-      const image = escapeAttribute(game.image || 'https://via.placeholder.com/640x360?text=Sem+Capa');
+      const image = getGameImageSrc(game.image);
       const slug = escapeAttribute(game.slug || '');
       return `
         <article class="atlas-panel rounded-[24px] p-5 bg-white/[0.03] border border-white/10 space-y-4" data-library-game="${escapeAttribute(game.slug || game.name || '')}">
           <div class="flex gap-4">
-            <img src="${image}" alt="${escapeAttribute(game.name || 'Jogo')}" class="w-24 h-24 rounded-2xl object-cover bg-white/5">
+            ${buildImageAttrs(image, game.name || 'Jogo', 'w-24 h-24 rounded-2xl object-cover bg-white/5', { width: 96, height: 96, sizes: '96px' })}
             <div class="min-w-0 flex-1 space-y-2">
               <h3 class="text-lg font-semibold text-white">${escapeHtml(game.name || 'Sem nome')}</h3>
               <div class="flex flex-wrap gap-2 text-xs text-white/65">
@@ -603,7 +621,7 @@ const UI = (() => {
       const paceLabel = timeValue <= 15 ? 'Curto' : timeValue <= 40 ? 'Médio' : 'Longo';
       return `
         <a href="/jogo/${escapeAttribute(game.slug)}" class="atlas-catalog-card" data-home-game="${escapeAttribute(game.name)}">
-          <img src="${escapeAttribute(game.image || 'https://via.placeholder.com/900x520?text=Sem+Capa')}" alt="${escapeAttribute(game.name)}" class="atlas-catalog-card__image">
+          ${buildImageAttrs(game.image, game.name, 'atlas-catalog-card__image', { width: 900, height: 520, sizes: '(min-width: 1280px) 33vw, (min-width: 768px) 50vw, 100vw' })}
           <div class="atlas-catalog-card__body">
             <div class="flex items-start justify-between gap-3">
               <div>
@@ -666,6 +684,7 @@ const UI = (() => {
     qsa('.filter-btn').forEach(button => {
       const active = button.dataset.filter === filter;
       button.classList.toggle('atlas-pill-active', active);
+      button.setAttribute('aria-pressed', active ? 'true' : 'false');
     });
     const results = qs('#guideResults');
     if (results) results.textContent = `${visibleCount} troféu(s) visível(is)`;
@@ -787,7 +806,7 @@ const UI = (() => {
     }
     target.innerHTML = items.map(game => `
       <div class="glass-morphism p-5 rounded-[20px] flex flex-col md:flex-row md:items-center md:justify-between gap-4">
-        <div class="flex gap-4 items-center"><div class="w-20 h-20 rounded-[20px] overflow-hidden bg-slate-900 shrink-0"><img src="${escapeAttribute(game.image || 'https://via.placeholder.com/160x160?text=Sem+Capa')}" alt="${escapeAttribute(game.name)}" class="w-full h-full object-cover"></div><div><div class="flex items-center gap-3 flex-wrap"><h3 class="text-lg font-bold">${escapeHtml(game.name)}</h3><span class="text-xs px-2 py-1 rounded-full bg-[#111922] text-slate-300">${game.difficulty}/10</span></div><div class="text-sm text-slate-400 mt-2">${escapeHtml(game.time)}</div></div></div>
+        <div class="flex gap-4 items-center"><div class="w-20 h-20 rounded-[20px] overflow-hidden bg-slate-900 shrink-0">${buildImageAttrs(game.image, game.name, 'w-full h-full object-cover', { width: 160, height: 160, sizes: '80px' })}</div><div><div class="flex items-center gap-3 flex-wrap"><h3 class="text-lg font-bold">${escapeHtml(game.name)}</h3><span class="text-xs px-2 py-1 rounded-full bg-[#111922] text-slate-300">${game.difficulty}/10</span></div><div class="text-sm text-slate-400 mt-2">${escapeHtml(game.time)}</div></div></div>
         <div class="flex gap-2 flex-wrap"><button type="button" class="px-4 py-2 rounded-xl bg-[#111922] hover:bg-slate-700" data-admin-edit="${game.id}">Editar</button><button type="button" class="px-4 py-2 rounded-xl bg-[#111922] hover:bg-slate-700" data-admin-preview="${game.id}">Prévia</button><button type="button" class="px-4 py-2 rounded-xl bg-atlas-600 hover:bg-atlas-500" data-admin-duplicate="${game.id}">Duplicar</button><button type="button" class="px-4 py-2 rounded-xl bg-rose-600 hover:bg-rose-500" data-admin-delete="${game.id}" data-admin-name="${escapeHtml(game.name)}">Excluir</button></div>
       </div>`).join('');
     renderPagination('#adminPagination', pagination, { mode: 'admin', itemLabel: 'jogos' });
@@ -928,7 +947,7 @@ const UI = (() => {
       prepChecklist,
       spotlightTrophies,
       difficultyLabel: getDifficultyProfileLabel(game?.difficulty),
-      image: game?.image || 'https://via.placeholder.com/900x520?text=Sem+Capa',
+      image: getGameImageSrc(game?.image),
       isSaved: Boolean(options?.isSaved),
       libraryEntry: options?.libraryEntry || null
     };
@@ -954,7 +973,7 @@ const UI = (() => {
           <div class="flex flex-col xl:flex-row xl:items-start xl:justify-between gap-5">
             <div class="flex gap-4 items-start min-w-0">
               <div class="atlas-guide-cover shrink-0">
-                <img src="${escapeAttribute(viewModel.image)}" alt="${escapeAttribute(game?.name || 'Jogo')}" class="w-full h-full object-cover">
+                ${buildImageAttrs(viewModel.image, game?.name || 'Jogo', 'w-full h-full object-cover', { width: 900, height: 520, fetchpriority: 'high', loading: 'eager', decoding: 'sync', sizes: '(min-width: 1280px) 240px, 160px' })}
               </div>
               <div class="min-w-0">
                 <div class="atlas-eyebrow">Guia do jogo</div>
@@ -1019,6 +1038,7 @@ const UI = (() => {
             const tip = trophy.tip || '';
             const search = `${trophy.name || ''} ${description} ${tip}`.trim().toLowerCase();
             const spoilerClasses = trophy.is_spoiler ? 'spoiler-blur' : '';
+            const spoilerText = trophy.is_spoiler ? '<span class="spoiler-hint">Conteúdo oculto até você revelar.</span>' : '';
             return `
               <article class="trophy-card atlas-panel rounded-[24px] p-5 bg-white/[0.03] border border-white/10 ${done ? 'completed' : ''}" data-trophy-id="${escapeAttribute(trophy.id || '')}" data-type="${escapeAttribute(trophy.type || 'Bronze')}" data-status="${done ? 'completed' : 'pending'}" data-search="${escapeAttribute(search)}">
                 <div class="flex flex-col md:flex-row md:items-start md:justify-between gap-4">
@@ -1029,11 +1049,12 @@ const UI = (() => {
                       ${done ? '<span class="atlas-tag">Concluído</span>' : '<span class="atlas-tag">Pendente</span>'}
                     </div>
                     <h4 class="text-xl font-bold text-white">${escapeHtml(trophy.name || 'Troféu')}</h4>
-                    <p class="text-sm text-white/65 mt-2 ${spoilerClasses}" ${trophy.is_spoiler ? 'data-spoiler="true"' : ''}>${escapeHtml(description || 'Sem descrição.')}</p>
-                    ${tip ? `<div class="atlas-tip-box mt-4"><div class="text-xs uppercase tracking-wide text-cyan-200/75">Dica</div><p class="text-sm text-cyan-50/85 mt-2 ${spoilerClasses}" ${trophy.is_spoiler ? 'data-spoiler="true"' : ''}>${escapeHtml(tip)}</p></div>` : ''}
+                    ${trophy.is_spoiler ? '<button type="button" class="atlas-btn atlas-btn-secondary atlas-btn-compact mt-3" data-spoiler-toggle="true" aria-expanded="false">Revelar spoiler</button>' : ''}
+                    <p class="text-sm text-white/80 mt-2 ${spoilerClasses}" ${trophy.is_spoiler ? 'data-spoiler="true" aria-hidden="true"' : ''}>${spoilerText}${escapeHtml(description || 'Sem descrição.')}</p>
+                    ${tip ? `<div class="atlas-tip-box mt-4"><div class="text-xs uppercase tracking-wide text-cyan-200/85">Dica</div><p class="text-sm text-cyan-50/92 mt-2 ${spoilerClasses}" ${trophy.is_spoiler ? 'data-spoiler="true" aria-hidden="true"' : ''}>${trophy.is_spoiler ? '<span class="spoiler-hint">Dica oculta até você revelar.</span>' : ''}${escapeHtml(tip)}</p></div>` : ''}
                   </div>
-                  <div class="md:w-auto shrink-0">
-                    <button type="button" class="atlas-btn ${done ? 'atlas-btn-secondary' : 'atlas-btn-primary'}" data-trophy-toggle="${escapeAttribute(trophy.id || '')}">${done ? 'Desmarcar' : 'Marcar como concluído'}</button>
+                  <div class="md:w-auto shrink-0 self-start">
+                    <button type="button" class="atlas-btn ${done ? 'atlas-btn-secondary' : 'atlas-btn-primary'}" data-trophy-toggle="${escapeAttribute(trophy.id || '')}" aria-pressed="${done ? 'true' : 'false'}">${done ? 'Desmarcar' : 'Marcar como concluído'}</button>
                   </div>
                 </div>
               </article>
