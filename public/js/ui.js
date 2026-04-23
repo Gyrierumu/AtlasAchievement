@@ -986,6 +986,36 @@ const UI = (() => {
                   <span class="atlas-tag">${escapeHtml(viewModel.breakdownText)}</span>
                 </div>
                 <p class="text-white/50 mt-4 max-w-3xl">${escapeHtml(game?.missable || 'Sem alerta editorial de perdíveis informado.')}</p>
+                <div class="mt-4 flex flex-wrap gap-2 text-sm text-white/60">
+                  <span class="atlas-tag">Guia revisado</span>
+                  <span class="atlas-tag">Atualizado continuamente</span>
+                  <span class="atlas-tag">Dificuldade baseada em experiência real</span>
+                </div>
+                <div class="mt-6 grid md:grid-cols-2 gap-3">
+                  <article class="glass-morphism rounded-[18px] p-4 border border-white/10">
+                    <div class="text-[11px] uppercase tracking-[0.18em] text-white/40">Vale a pena platinar?</div>
+                    <p class="text-sm text-white/78 mt-2">Ideal para quem busca uma platina organizada, com menos retrabalho e uma rota clara desde o início.</p>
+                  </article>
+                  <article class="glass-morphism rounded-[18px] p-4 border border-white/10">
+                    <div class="text-[11px] uppercase tracking-[0.18em] text-white/40">Melhor ordem de progressão</div>
+                    <p class="text-sm text-white/78 mt-2">História + colecionáveis → dificuldade máxima → cleanup final dos troféus restantes.</p>
+                  </article>
+                </div>
+
+                <div class="mt-6 grid lg:grid-cols-3 gap-3">
+                  <article class="glass-morphism rounded-[18px] p-4 border border-white/10">
+                    <div class="text-[11px] uppercase tracking-[0.18em] text-white/40">Autor do guia</div>
+                    <p class="text-sm text-white/78 mt-2">Revisado pela equipe Atlas Achievement com base em experiência prática e validação contínua.</p>
+                  </article>
+                  <article class="glass-morphism rounded-[18px] p-4 border border-white/10">
+                    <div class="text-[11px] uppercase tracking-[0.18em] text-white/40">Última atualização</div>
+                    <p class="text-sm text-white/78 mt-2">Abril de 2026 — checklist revisado e rota de progressão validada.</p>
+                  </article>
+                  <article class="glass-morphism rounded-[18px] p-4 border border-white/10">
+                    <div class="text-[11px] uppercase tracking-[0.18em] text-white/40">Como avaliamos</div>
+                    <p class="text-sm text-white/78 mt-2">Dificuldade, tempo e troféus perdíveis são definidos por execução real, não apenas por dados públicos.</p>
+                  </article>
+                </div>
               </div>
             </div>
             <div class="flex flex-wrap gap-3 xl:justify-end">
@@ -1023,6 +1053,25 @@ const UI = (() => {
           <div class="atlas-eyebrow">Roadmap</div>
           ${viewModel.roadmap.length ? `<ol class="space-y-3 text-white/72">${viewModel.roadmap.map((step, index) => `<li class="flex items-start gap-3"><span class="atlas-tag mt-0.5">${index + 1}</span><span>${escapeHtml(typeof step === 'string' ? step : (step?.title || step?.description || 'Etapa'))}</span></li>`).join('')}</ol>` : '<div class="text-white/45">Sem roadmap cadastrado.</div>'}
         </section>
+        <section class="atlas-panel p-5 rounded-[24px] bg-white/[0.03] border border-white/10 space-y-4">
+          <div class="atlas-eyebrow">FAQ rápido</div>
+          <div class="space-y-3 text-sm text-white/72">
+            <article><strong class="text-white">Existem troféus perdíveis?</strong><p class="mt-1">Verifique os alertas no topo e priorize objetivos únicos durante a campanha principal.</p></article>
+            <article><strong class="text-white">Precisa de múltiplas runs?</strong><p class="mt-1">Na maioria dos casos, uma run principal + cleanup final já resolve grande parte da platina.</p></article>
+            <article><strong class="text-white">Vale usar guia desde o início?</strong><p class="mt-1">Sim — principalmente para evitar grind desnecessário e perder colecionáveis importantes.</p></article>
+          </div>
+        </section>
+
+        <section class="atlas-panel p-5 rounded-[24px] bg-white/[0.03] border border-white/10 space-y-4">
+          <div class="atlas-eyebrow">Metodologia</div>
+          <div class="space-y-3 text-sm text-white/72">
+            <p><strong class="text-white">Dificuldade:</strong> considera execução real, exigência mecânica, RNG, troféus online e risco de retrabalho.</p>
+            <p><strong class="text-white">Tempo estimado:</strong> baseado em rota eficiente, sem speedrun irreal e considerando cleanup necessário.</p>
+            <p><strong class="text-white">Perdíveis:</strong> marcamos apenas quando há real risco de bloqueio ou necessidade de nova campanha.</p>
+          </div>
+        </section>
+
+
         <section class="atlas-panel p-5 rounded-[24px] bg-white/[0.03] border border-white/10 space-y-4">
           <div class="atlas-eyebrow">Destaques da lista</div>
           ${viewModel.spotlightTrophies.length ? `<div class="space-y-3">${viewModel.spotlightTrophies.map(item => `<article class="glass-morphism rounded-[18px] p-4 border border-white/10"><div class="text-[11px] uppercase tracking-[0.18em] text-white/40">${escapeHtml(item.label)}</div><h3 class="text-sm font-semibold text-white mt-2">${escapeHtml(item.name)}</h3><p class="text-sm text-white/68 mt-2">${escapeHtml(item.text)}</p></article>`).join('')}</div>` : '<div class="text-white/45">Nenhum troféu de atenção especial detectado automaticamente.</div>'}
