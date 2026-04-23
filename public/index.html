@@ -46,7 +46,7 @@
       <div class="flex items-center gap-2 md:gap-3">
         <a href="/admin" id="adminPanelLink" class="hidden atlas-btn atlas-btn-secondary">Console</a>
         <div id="adminStatus" class="hidden text-xs text-white/40"></div>
-        <button id="adminAccessBtn" class="atlas-text-action" title="Acesso do editor">Editor</button>
+        <button id="adminAccessBtn" class="hidden atlas-text-action" title="Acesso do editor">Editor</button>
         <button id="adminLogoutBtn" class="hidden atlas-btn atlas-btn-primary">Sair</button>
       </div>
     </div>
@@ -64,17 +64,17 @@
       <section class="atlas-hero-shell atlas-panel overflow-hidden">
         <div class="grid xl:grid-cols-[1.08fr_.92fr] gap-0 min-h-[520px]">
           <div class="p-7 md:p-10 xl:p-14 flex flex-col justify-center relative z-10">
-            <div class="atlas-eyebrow mb-5">Escolha melhor sua próxima platina em menos tempo</div>
+            <div class="atlas-eyebrow mb-5">Decida em menos de 30 segundos se vale começar essa platina</div>
             <h1 class="text-[40px] md:text-[56px] xl:text-[72px] leading-[0.94] font-black tracking-[-0.04em] max-w-[760px]">
-              Descubra rápido se um jogo é <span class="text-atlas-400">curto, viável</span> e seguro antes de investir horas nele.
+              Veja <span class="text-atlas-400">tempo, dificuldade, perdíveis e rota ideal</span> antes de investir dezenas de horas no jogo errado.
             </h1>
             <p class="mt-6 text-white/65 text-[18px] md:text-[20px] max-w-[680px] leading-relaxed">
-              Abra um guia, veja tempo real, dificuldade, roadmap, troféus perdíveis e checklist em um só fluxo para começar sem retrabalho.
+              Cada página reúne o que mais pesa na decisão: tempo realista, risco de retrabalho, ordem de runs, checklist e revisão editorial em um fluxo só.
             </p>
 
             <div class="mt-8 atlas-search-wrap max-w-[760px]">
               <div class="relative">
-                <input id="gameInput" type="text" placeholder="Encontrar minha próxima platina" class="w-full atlas-search-input pr-20 outline-none" autocomplete="off" role="combobox" aria-autocomplete="list" aria-expanded="false" aria-controls="suggestions">
+                <input id="gameInput" type="text" placeholder="Busque um jogo e valide rápido se a platina vale seu tempo" class="w-full atlas-search-input pr-20 outline-none" autocomplete="off" role="combobox" aria-autocomplete="list" aria-expanded="false" aria-controls="suggestions">
                 <button id="btnLoad" class="atlas-search-btn" aria-label="Abrir o jogo certo">
                   <i class="fas fa-arrow-up-right-from-square"></i>
                 </button>
@@ -91,25 +91,25 @@
                 <button type="button" class="atlas-intent-inline" data-home-facet="difficulty-low"><i class="fas fa-seedling"></i> Quero algo mais fácil</button>
                 <button type="button" class="atlas-intent-inline" data-home-facet="time-medium"><i class="fas fa-layer-group"></i> Quero um projeto médio</button>
               </div>
-              <div id="searchFeedback" class="mt-3 text-sm text-white/50" aria-live="polite">Digite um nome para ver sugestões e abrir a página do jogo.</div>
+              <div id="searchFeedback" class="mt-3 text-sm text-white/50" aria-live="polite">Busque um jogo para comparar esforço, risco e clareza do guia antes de abrir a página.</div>
             </div>
 
             <div class="mt-6 flex flex-wrap gap-3 max-w-[760px]">
-              <button type="button" data-view-link="catalog" class="atlas-btn atlas-btn-primary"><i class="fas fa-compass"></i> Explorar catálogo</button>
-              <button type="button" data-scroll-target="#recentGamesOverview" class="atlas-btn atlas-btn-secondary"><i class="fas fa-bolt"></i> Ver jogos recentes</button>
+              <button type="button" data-view-link="catalog" class="atlas-btn atlas-btn-primary"><i class="fas fa-compass"></i> Encontrar uma platina melhor</button>
+              <button type="button" data-scroll-target="#gamesOverview" class="atlas-btn atlas-btn-secondary"><i class="fas fa-bolt"></i> Ver escolhas para abrir agora</button>
             </div>
 
             <div class="mt-8 flex flex-wrap gap-3 max-w-[760px] text-sm">
-              <span class="atlas-chip">Platinas rápidas</span>
-              <span class="atlas-chip">Sem troféus online</span>
-              <span class="atlas-chip">Jogos fáceis</span>
-              <span class="atlas-chip">Até 20 horas</span>
+              <span class="atlas-chip">Tempo estimado visível</span>
+              <span class="atlas-chip">Perdíveis destacados</span>
+              <span class="atlas-chip">Roadmap por etapas</span>
+              <span class="atlas-chip">Checklist com progresso salvo</span>
             </div>
 
             <div class="mt-10 grid sm:grid-cols-3 gap-4 max-w-[760px]">
-              <div class="atlas-metric-card"><strong id="homeStatGames">0 jogos</strong><span>No catálogo para abrir agora</span></div>
-              <div class="atlas-metric-card"><strong id="homeStatTrophies">0 troféus</strong><span>Mapeados nas páginas disponíveis</span></div>
-              <div class="atlas-metric-card"><strong id="homeStatRecent">0 atualizações</strong><span>Guias recentes para começar hoje</span></div>
+              <div class="atlas-metric-card"><strong id="homeStatGames">0 jogos</strong><span>Com página própria para decidir antes de começar</span></div>
+              <div class="atlas-metric-card"><strong id="homeStatTrophies">0 troféus</strong><span>Já organizados em listas com checklist</span></div>
+              <div class="atlas-metric-card"><strong id="homeStatRecent">0 revisões</strong><span>Guias recentes ou atualizados para abrir com mais confiança</span></div>
             </div>
           </div>
 
@@ -117,26 +117,26 @@
             <div class="atlas-dashboard-card atlas-dashboard-card--primary">
               <div class="flex items-center justify-between gap-3 mb-6">
                 <div>
-                  <div class="text-xs uppercase tracking-[0.24em] text-atlas-300/80">Antes de começar</div>
-                  <h2 class="text-2xl font-extrabold mt-2">Tudo o que você precisa validar</h2>
+                  <div class="text-xs uppercase tracking-[0.24em] text-atlas-300/80">Prova do que você encontra em cada guia</div>
+                  <h2 class="text-2xl font-extrabold mt-2">Decisão rápida, não só lista de troféus</h2>
                 </div>
                 <div class="w-12 h-12 rounded-2xl bg-atlas-500/20 border border-atlas-300/20 flex items-center justify-center text-atlas-300">
                   <i class="fas fa-route"></i>
                 </div>
               </div>
               <div class="space-y-4 text-sm text-white/70">
-                <div class="atlas-route-item"><span>01</span><p>Dificuldade, tempo estimado e risco de perdíveis no primeiro olhar.</p></div>
-                <div class="atlas-route-item"><span>02</span><p>Ordem de runs e roadmap editorial para reduzir grind desnecessário.</p></div>
-                <div class="atlas-route-item"><span>03</span><p>Troféus organizados por tipo e checklist para acompanhar o progresso.</p></div>
-                <div class="atlas-route-item"><span>04</span><p>Páginas individuais por jogo com navegação direta e biblioteca salva.</p></div>
+                <div class="atlas-route-item"><span>01</span><p>Tempo estimado, dificuldade e risco de perdíveis antes do clique completo.</p></div>
+                <div class="atlas-route-item"><span>02</span><p>Roadmap em etapas para evitar começar uma run no escuro.</p></div>
+                <div class="atlas-route-item"><span>03</span><p>Checklist salvo para continuar exatamente do ponto em que você parou.</p></div>
+                <div class="atlas-route-item"><span>04</span><p>Data de revisão e sinais editoriais para passar mais confiança logo no topo.</p></div>
               </div>
             </div>
 
             <div class="atlas-dashboard-card atlas-dashboard-card--secondary">
               <div class="flex items-center justify-between gap-4">
                 <div>
-                  <div class="text-sm text-white/45">Guia de entrada</div>
-                  <h3 class="text-xl font-bold mt-1">Escolha um guia para abrir agora</h3>
+                  <div class="text-sm text-white/45">Escolhas prioritárias</div>
+                  <h3 class="text-xl font-bold mt-1">Abra um guia já forte para decidir rápido</h3>
                 </div>
                 <div class="atlas-badge">Disponível</div>
               </div>
@@ -158,7 +158,7 @@
         <div id="intentOverview" class="grid lg:grid-cols-4 md:grid-cols-2 gap-4"></div>
       </section>
 
-      <section class="atlas-panel p-6 md:p-8">
+      <section class="atlas-panel p-6 md:p-8 hidden">
         <div class="flex items-end justify-between gap-4 mb-6 flex-wrap">
           <div>
             <div class="atlas-eyebrow">Coleções prontas</div>
@@ -170,7 +170,7 @@
         <div id="collectionRoutesOverview" class="grid lg:grid-cols-3 md:grid-cols-2 gap-4"></div>
       </section>
 
-      <section class="grid lg:grid-cols-[1fr_1fr] gap-6">
+      <section class="grid lg:grid-cols-[1fr_1fr] gap-6 hidden">
         <div class="atlas-panel p-6 md:p-8">
           <div class="flex items-end justify-between gap-4 mb-6">
             <div>
@@ -199,7 +199,7 @@
       </section>
 
 
-      <section class="grid xl:grid-cols-[1.08fr_.92fr] gap-6">
+      <section class="grid xl:grid-cols-[1.08fr_.92fr] gap-6 hidden">
         <div class="atlas-panel p-6 md:p-8">
           <div class="flex items-end justify-between gap-4 mb-6">
             <div>
@@ -230,8 +230,8 @@
           <div>
             <div class="flex items-end justify-between gap-4 mb-4 px-1">
               <div>
-                <div class="atlas-eyebrow">Guias prontos</div>
-                <h2 class="text-[30px] md:text-[42px] font-extrabold tracking-tight">Abra um jogo já pronto para consulta</h2>
+                <div class="atlas-eyebrow">Escolhas para abrir agora</div>
+                <h2 class="text-[30px] md:text-[42px] font-extrabold tracking-tight">Comece por guias que já explicam esforço, risco e rota</h2>
               </div>
             </div>
             <div id="gamesOverview" class="grid md:grid-cols-2 xl:grid-cols-2 gap-5 atlas-static-grid"></div>
@@ -239,8 +239,8 @@
 
           <div class="atlas-panel p-6 md:p-8">
             <div class="atlas-eyebrow">Atalhos úteis</div>
-            <h2 class="text-[28px] md:text-[36px] font-extrabold tracking-tight mt-2">Entre por jogos que já valem o clique</h2>
-            <p class="text-white/58 mt-3">Use estes atalhos para ir direto aos guias disponíveis e descobrir opções parecidas com menos fricção.</p>
+            <h2 class="text-[28px] md:text-[36px] font-extrabold tracking-tight mt-2">Vá direto para páginas que já ajudam na decisão</h2>
+            <p class="text-white/58 mt-3">Use estes atalhos para abrir guias com menos fricção e comparar rapidamente o próximo projeto.</p>
             <div id="browseLinks" class="mt-6 grid sm:grid-cols-2 gap-3"></div>
             <div class="mt-5">
               <button type="button" data-view-link="catalog" class="atlas-btn atlas-btn-primary"><i class="fas fa-table-cells-large"></i> Abrir catálogo completo</button>
@@ -252,7 +252,7 @@
           <div class="atlas-panel p-6 md:p-8">
             <div class="flex items-end justify-between gap-4 mb-4">
               <div>
-                <div class="atlas-eyebrow">Entraram no catálogo</div>
+                <div class="atlas-eyebrow">Novos no catálogo</div>
                 <h2 class="text-[28px] md:text-[36px] font-extrabold tracking-tight">Veja os guias mais novos</h2>
               </div>
             </div>
@@ -262,8 +262,8 @@
           <div class="atlas-panel p-6 md:p-8">
             <div class="flex items-end justify-between gap-4 mb-4">
               <div>
-                <div class="atlas-eyebrow">Revisados por último</div>
-                <h2 class="text-[28px] md:text-[36px] font-extrabold tracking-tight">Veja o que acabou de ser revisado</h2>
+                <div class="atlas-eyebrow">Revisados recentemente</div>
+                <h2 class="text-[28px] md:text-[36px] font-extrabold tracking-tight">Veja o que recebeu revisão editorial por último</h2>
               </div>
             </div>
             <div id="updatedGamesOverview" class="grid gap-4"></div>
@@ -456,6 +456,10 @@
       <div class="atlas-footer-item"><i class="fas fa-book"></i><div><strong>Ler guias</strong><span>Abra rota, alertas e checklist no mesmo fluxo.</span></div></div>
       <div class="atlas-footer-item"><i class="fas fa-display"></i><div><strong>Usar biblioteca</strong><span>Salve jogos e volte ao próximo passo certo.</span></div></div>
       <div class="atlas-footer-item"><i class="fas fa-trophy"></i><div><strong>Acompanhar 100%</strong><span>Marque troféus e veja o que falta sem se perder.</span></div></div>
+          <div class="md:col-span-4 pt-2 border-t border-white/8 flex items-center justify-between gap-3 flex-wrap">
+        <span class="text-white/40">AtlasAchievement prioriza decisão rápida, contexto editorial e checklist contínuo.</span>
+        <button id="adminAccessBtnFooter" class="atlas-text-action text-sm" title="Acesso do editor">Acesso editorial</button>
+      </div>
     </div>
   </footer>
 

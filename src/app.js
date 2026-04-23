@@ -387,6 +387,82 @@ function buildEditorialSignals(game, viewModel) {
   };
 }
 
+
+function buildCriticalTrophyAlerts(game = {}, trophies = []) {
+    const ranked = trophies
+      .filter(Boolean)
+      .map(trophy => {
+        const bag = `${trophy?.name || ''} ${trophy?.description || ''} ${trophy?.tip || ''}`.toLowerCase();
+        let score = 0;
+        if (trophy?.is_missable) score += 5;
+        if (trophy?.is_spoiler) score += 2;
+        if (/online|multiplayer|coop/.test(bag)) score += 4;
+        if (/grind|farm|rank|xp|nível|level/.test(bag)) score += 3;
+        if (/colet|colecion|miss|perd|chapter|cap[ií]tulo/.test(bag)) score += 3;
+        if (/difficulty|dificuldade|hard|survival/.test(bag)) score += 2;
+        return {
+          name: trophy?.name || 'Troféu',
+          label: trophy?.is_missable ? 'Perdível' : (trophy?.is_spoiler ? 'Spoiler / atenção' : (trophy?.type || 'Troféu')),
+          reason: trophy?.tip || trophy?.description || 'Requer leitura antes da run.',
+          score
+        };
+      })
+      .filter(item => item.score > 0)
+      .sort((a, b) => b.score - a.score)
+      .slice(0, 5);
+
+    if (ranked.length) return ranked;
+
+    return [{
+      name: 'Sem alerta crítico explícito',
+      label: 'Baixo risco aparente',
+      reason: game?.missable || 'O cadastro atual não marca troféus realmente bloqueadores, então o risco maior tende a estar na gestão do tempo e do cleanup.'
+    }];
+  }
+
+function buildExecutionProfile(game = {}, trophies = [], roadmap = []) {
+    const timeValue = getTimeValue(game);
+    const difficulty = Number(game?.difficulty || 0);
+    const onlineCount = trophies.filter(trophy => /online|multiplayer|coop/i.test(`${trophy?.name || ''} ${trophy?.description || ''} ${trophy?.tip || ''}`)).length;
+    const grindCount = trophies.filter(trophy => /grind|farm|rank|xp|nível|level/i.test(`${trophy?.name || ''} ${trophy?.description || ''} ${trophy?.tip || ''}`)).length;
+    const missableCount = trophies.filter(trophy => trophy?.is_missable).length;
+
+    let timeBand = 'Projeto curto';
+    let timeDetail = 'Bom para fechar em poucas sessões e manter sensação de avanço rápido.';
+    if (timeValue > 15 && timeValue <= 35) {
+      timeBand = 'Projeto médio';
+      timeDetail = 'Pede organização mínima para não transformar a reta final em cleanup desordenado.';
+    } else if (timeValue > 35) {
+      timeBand = 'Projeto longo';
+      timeDetail = 'Vale entrar com rota definida, checkpoints claros e expectativa de constância por vários dias.';
+    }
+
+    let difficultyBand = 'Entrada tranquila';
+    let difficultyDetail = 'A dificuldade declarada sugere execução mais estável e menor chance de travar por mecânica pura.';
+    if (difficulty >= 5 && difficulty <= 7) {
+      difficultyBand = 'Exigência moderada';
+      difficultyDetail = 'Há chance real de trechos que cobram consistência, leitura prévia e alguma disciplina de checklist.';
+    } else if (difficulty > 7) {
+      difficultyBand = 'Execução exigente';
+      difficultyDetail = 'Este é o tipo de guia em que ordem, treino e preparação editorial economizam mais horas.';
+    }
+
+    const friction = [];
+    if (missableCount) friction.push(`${missableCount} perdível(is) marcado(s)`);
+    if (onlineCount) friction.push(`${onlineCount} objetivo(s) com online/co-op`);
+    if (grindCount) friction.push(`${grindCount} ponto(s) com cara de grind`);
+    if (roadmap.length >= 4) friction.push(`${roadmap.length} etapas no roadmap`);
+    if (!friction.length) friction.push('sem gargalo crítico explícito no cadastro atual');
+
+    return {
+      timeBand,
+      timeDetail,
+      difficultyBand,
+      difficultyDetail,
+      frictionLine: friction.join(' • ')
+    };
+  }
+
 function buildGuideViewModel(game, completedSource = [], options = {}) {
   const trophies = Array.isArray(game?.trophies) ? game.trophies : [];
   const roadmap = Array.isArray(game?.roadmap) ? game.roadmap : [];
@@ -409,6 +485,8 @@ function buildGuideViewModel(game, completedSource = [], options = {}) {
     total ? `A lista tem ${total} troféu(s), com distribuição ${breakdownText}.` : 'Ainda não há troféus cadastrados para este jogo.',
     roadmap.length ? `O roadmap já está quebrado em ${roadmap.length} etapa(s), útil para sessões curtas.` : 'O guia ainda precisa de um roadmap mais detalhado para orientar melhor a ordem da platina.'
   ];
+  const criticalAlerts = buildCriticalTrophyAlerts(game, trophies);
+  const executionProfile = buildExecutionProfile(game, trophies, roadmap);
   const spotlightTrophies = trophies
     .filter(trophy => trophy?.is_spoiler || /perd|miss|colet|online|grind|dific/i.test(`${trophy?.name || ''} ${trophy?.description || ''} ${trophy?.tip || ''}`))
     .slice(0, 3)
@@ -433,6 +511,8 @@ function buildGuideViewModel(game, completedSource = [], options = {}) {
     difficultyLabel: getDifficultyProfileLabel(game?.difficulty),
     quickNotes,
     prepChecklist,
+    criticalAlerts,
+    executionProfile,
     spotlightTrophies,
     decisionModel: buildGuideDecisionModel(game, trophies, roadmap),
     image: game?.image || '/og-default.svg',
@@ -451,9 +531,9 @@ function renderGuideHeaderHtml(game, viewModel, options = {}) {
             <img src="${escapeHtml(viewModel.image)}" alt="${escapeHtml(game?.name || 'Jogo')}" class="w-full h-full object-cover" loading="eager" decoding="sync" fetchpriority="high" width="900" height="520" sizes="(min-width: 1280px) 240px, 160px">
           </div>
           <div class="min-w-0">
-            <div class="atlas-eyebrow">Guia do jogo</div>
+            <div class="atlas-eyebrow">Guia revisado para decidir antes de começar</div>
             <h1 class="text-3xl md:text-4xl font-extrabold tracking-tight mt-2 break-words">${escapeHtml(game?.name || 'Guia')}</h1>
-            <p class="text-white/58 mt-3 max-w-3xl">Dificuldade ${escapeHtml(String(game?.difficulty || '-'))}/10 • ${escapeHtml(game?.time || 'Tempo não informado')} • ${viewModel.total} troféu(s)</p>
+            <p class="text-white/58 mt-3 max-w-3xl">Dificuldade ${escapeHtml(String(game?.difficulty || '-'))}/10 • ${escapeHtml(game?.time || 'Tempo não informado')} • ${viewModel.total} troféu(s) • revisão ${escapeHtml(viewModel.editorial.reviewedAt)}</p>
             <div class="flex flex-wrap gap-2 mt-4">
               <span class="atlas-tag">Perfil ${escapeHtml(viewModel.difficultyLabel)}</span>
               <span class="atlas-tag">${escapeHtml(game?.time || 'Tempo não informado')}</span>
@@ -477,15 +557,15 @@ function renderGuideHeaderHtml(game, viewModel, options = {}) {
               </div>
             </section>
             <div class="grid sm:grid-cols-3 gap-3 mt-4 max-w-4xl">
-              <article class="glass-morphism rounded-[18px] p-4 border border-white/10"><div class="text-[11px] uppercase tracking-[0.18em] text-white/40">Revisão editorial</div><p class="text-sm text-white/78 mt-2">${escapeHtml(viewModel.editorial.reviewedAt)} • ${escapeHtml(viewModel.editorial.reviewer)}</p></article>
-              <article class="glass-morphism rounded-[18px] p-4 border border-white/10"><div class="text-[11px] uppercase tracking-[0.18em] text-white/40">Cobertura do guia</div><p class="text-sm text-white/78 mt-2">${escapeHtml(viewModel.editorial.coverageLabel)} • ${escapeHtml(viewModel.editorial.scopeSummary)}</p></article>
-              <article class="glass-morphism rounded-[18px] p-4 border border-white/10"><div class="text-[11px] uppercase tracking-[0.18em] text-white/40">Entrada recomendada</div><p class="text-sm text-white/78 mt-2">${escapeHtml(viewModel.editorial.readinessLabel)} • ${escapeHtml(viewModel.editorial.readinessDetail)}</p></article>
+              <article class="glass-morphism rounded-[18px] p-4 border border-white/10"><div class="text-[11px] uppercase tracking-[0.18em] text-white/40">Última revisão</div><p class="text-sm text-white/78 mt-2">${escapeHtml(viewModel.editorial.reviewedAt)} • ${escapeHtml(viewModel.editorial.reviewer)}</p></article>
+              <article class="glass-morphism rounded-[18px] p-4 border border-white/10"><div class="text-[11px] uppercase tracking-[0.18em] text-white/40">Status do guia</div><p class="text-sm text-white/78 mt-2">${escapeHtml(viewModel.editorial.coverageLabel)} • ${escapeHtml(viewModel.editorial.scopeSummary)}</p></article>
+              <article class="glass-morphism rounded-[18px] p-4 border border-white/10"><div class="text-[11px] uppercase tracking-[0.18em] text-white/40">Vale abrir agora?</div><p class="text-sm text-white/78 mt-2">${escapeHtml(viewModel.editorial.readinessLabel)} • ${escapeHtml(viewModel.editorial.readinessDetail)}</p></article>
             </div>
             <div class="atlas-decision-panel mt-4">
               <div class="atlas-decision-panel__header">
                 <div>
-                  <div class="atlas-eyebrow">Escopo editorial</div>
-                  <h2 class="text-xl md:text-2xl font-extrabold mt-2">O que este guia já cobre antes do clique completo</h2>
+                  <div class="atlas-eyebrow">O que este guia já valida para você</div>
+                  <h2 class="text-xl md:text-2xl font-extrabold mt-2">O que já está claro antes de você investir horas</h2>
                 </div>
                 <span class="atlas-tag atlas-tag--soft">${escapeHtml(viewModel.editorial.coverageLabel)}</span>
               </div>
@@ -561,6 +641,16 @@ function renderGuideSidebarHtml(game, viewModel) {
     <section class="atlas-panel p-5 rounded-[24px] bg-white/[0.03] border border-white/10 space-y-4">
       <div class="atlas-eyebrow">Roadmap</div>
       ${viewModel.roadmap.length ? `<ol class="space-y-3 text-white/72">${viewModel.roadmap.map((step, index) => `<li class="flex items-start gap-3"><span class="atlas-tag mt-0.5">${index + 1}</span><span>${escapeHtml(typeof step === 'string' ? step : (step?.title || step?.description || 'Etapa'))}</span></li>`).join('')}</ol>` : '<div class="text-white/45">Sem roadmap cadastrado.</div>'}
+    </section>
+    <section class="atlas-panel p-5 rounded-[24px] bg-white/[0.03] border border-white/10 space-y-4">
+      <div class="atlas-eyebrow">Pontos críticos</div>
+      <div class="space-y-3">${viewModel.criticalAlerts.map(item => `<article class="glass-morphism rounded-[18px] p-4 border border-white/10"><div class="flex flex-wrap items-center gap-2 justify-between"><strong class="text-white">${escapeHtml(item.name)}</strong><span class="atlas-tag atlas-tag--warning">${escapeHtml(item.label)}</span></div><p class="text-sm text-white/72 mt-3">${escapeHtml(item.reason)}</p></article>`).join('')}</div>
+    </section>
+    <section class="atlas-panel p-5 rounded-[24px] bg-white/[0.03] border border-white/10 space-y-4">
+      <div class="atlas-eyebrow">Tempo e dificuldade</div>
+      <article class="glass-morphism rounded-[18px] p-4 border border-white/10"><strong class="text-white block">${escapeHtml(viewModel.executionProfile.timeBand)}</strong><p class="text-sm text-white/72 mt-2">${escapeHtml(viewModel.executionProfile.timeDetail)}</p></article>
+      <article class="glass-morphism rounded-[18px] p-4 border border-white/10"><strong class="text-white block">${escapeHtml(viewModel.executionProfile.difficultyBand)}</strong><p class="text-sm text-white/72 mt-2">${escapeHtml(viewModel.executionProfile.difficultyDetail)}</p></article>
+      <article class="glass-morphism rounded-[18px] p-4 border border-white/10"><div class="text-[11px] uppercase tracking-[0.18em] text-white/40">O que mais pesa aqui</div><p class="text-sm text-white/72 mt-2">${escapeHtml(viewModel.executionProfile.frictionLine)}</p></article>
     </section>
     <section class="atlas-panel p-5 rounded-[24px] bg-white/[0.03] border border-white/10 space-y-4">
       <div class="atlas-eyebrow">Destaques da lista</div>

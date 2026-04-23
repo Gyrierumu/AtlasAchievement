@@ -1395,7 +1395,8 @@ const UI = (() => {
   function setAdminState(session) {
     const authenticated = Boolean(session?.authenticated);
     ['#adminLogoutBtn', '#adminStatus', '#adminPanelLink'].forEach(sel => setClass(sel, 'hidden', !authenticated));
-    setClass('#adminAccessBtn', 'hidden', authenticated);
+    setClass('#adminAccessBtn', 'hidden', true);
+    setClass('#adminAccessBtnFooter', 'hidden', authenticated);
     const status = qs('#adminStatus'); if (status) status.textContent = authenticated ? `Modo editor: ${session.username}` : '';
     if (!authenticated) { toggleGameForm(false); togglePasswordPanel(false); togglePreviewPanel(false); }
   }
@@ -1476,6 +1477,174 @@ const UI = (() => {
     };
   }
 
+
+  function buildPrepCards(game = {}, viewModel = {}) {
+    const trophies = Array.isArray(viewModel.trophies) ? viewModel.trophies : [];
+    const roadmapCount = Array.isArray(viewModel.roadmap) ? viewModel.roadmap.length : 0;
+    const missableCount = trophies.filter(trophy => trophy && trophy.is_missable).length;
+    const spoilerCount = trophies.filter(trophy => trophy && trophy.is_spoiler).length;
+    const hasLongList = trophies.length >= 45;
+    const timeLabel = game?.time || 'Tempo não informado';
+    return [
+      {
+        tag: 'Leitura inicial',
+        title: 'Valide o custo real antes da primeira sessão',
+        text: `Este guia projeta ${timeLabel} e dificuldade ${String(game?.difficulty || '-')}/10. Abra com expectativa alinhada para não começar um projeto maior do que parece.`
+      },
+      {
+        tag: 'Risco de retrabalho',
+        title: missableCount ? `${missableCount} ponto(s) sensível(is) merecem atenção` : 'Sem perdíveis críticos explícitos',
+        text: missableCount
+          ? 'Há objetivos marcados como perdíveis. Leia o alerta editorial e passe pelo roadmap antes de jogar no improviso.'
+          : 'Nada no cadastro atual indica bloqueio crítico, mas ainda vale verificar troféus únicos e escolhas de campanha.'
+      },
+      {
+        tag: 'Estratégia',
+        title: roadmapCount ? `Roadmap com ${roadmapCount} etapa(s) para guiar a ordem ideal` : 'Ainda sem roadmap editorial completo',
+        text: roadmapCount
+          ? 'Use a sequência proposta para evitar cleanup torto, runs fora de ordem e perda de contexto entre sessões.'
+          : 'Nesta página, use primeiro os troféus destacados e a leitura de preparação até o roadmap ficar mais forte.'
+      },
+      {
+        tag: 'Nível de atenção',
+        title: spoilerCount ? `${spoilerCount} alerta(s) de spoiler ou contexto sensível` : (hasLongList ? 'Lista longa pede disciplina de checklist' : 'Página pronta para leitura rápida'),
+        text: spoilerCount
+          ? 'Revele o conteúdo com cuidado e só quando isso fizer sentido para a sua run atual.'
+          : (hasLongList
+            ? 'Como a lista é mais densa, o ideal é marcar progresso com frequência para não perder tração.'
+            : 'A estrutura atual favorece leitura rápida antes de decidir se vale colocar o jogo na biblioteca.')
+      }
+    ];
+  }
+
+  function buildRoadmapStages(viewModel = {}) {
+    const steps = Array.isArray(viewModel.roadmap) ? viewModel.roadmap : [];
+    return steps.map((step, index) => {
+      const raw = typeof step === 'string'
+        ? step
+        : (step?.title || step?.description || step?.name || 'Etapa');
+      const clean = String(raw || 'Etapa').trim();
+      const title = clean.length > 72 ? `${clean.slice(0, 69).trimEnd()}...` : clean;
+      let cue = 'Use esta etapa como bloco principal antes de avançar para a próxima.';
+      if (index === 0) cue = 'Comece por aqui para alinhar rota, risco e ritmo antes de investir várias horas.';
+      else if (index === steps.length - 1) cue = 'Feche por aqui com cleanup, revisão final e validação do que ficou pendente.';
+      else if (/online|multiplayer|coop/i.test(clean)) cue = 'Planeje essa parte cedo para não depender de fila, parceiro ou janela ruim depois.';
+      else if (/cleanup|colet|colecion|farm|grind/i.test(clean)) cue = 'Entre nesta etapa quando a campanha principal já estiver estabilizada e o checklist fizer mais sentido.';
+      else if (/run|campanha|hist[oó]ria|new game|ng\+?/i.test(clean)) cue = 'Trate esta etapa como o eixo da run principal e evite desviar sem necessidade.';
+      return { number: index + 1, title, detail: clean, cue };
+    });
+  }
+
+  function buildContextualFaq(game = {}, viewModel = {}) {
+    const trophies = Array.isArray(viewModel.trophies) ? viewModel.trophies : [];
+    const missableCount = trophies.filter(trophy => trophy && trophy.is_missable).length;
+    const spoilerCount = trophies.filter(trophy => trophy && trophy.is_spoiler).length;
+    const roadmapCount = Array.isArray(viewModel.roadmap) ? viewModel.roadmap.length : 0;
+    const hasDenseList = trophies.length >= 45;
+    return [
+      {
+        question: 'É seguro começar sem ler tudo?',
+        answer: roadmapCount
+          ? `Leia pelo menos o bloco “Antes de começar” e as ${roadmapCount} etapa(s) do roadmap. Isso já reduz boa parte do risco de ordem errada.`
+          : 'Leia primeiro os alertas editoriais, os destaques da lista e o resumo de risco. O restante pode ser consultado durante a run.'
+      },
+      {
+        question: 'Onde está o maior risco de retrabalho?',
+        answer: missableCount
+          ? `Nos ${missableCount} troféu(s) sinalizado(s) como perdíveis. Eles merecem conferência antes de avançar cegamente na campanha.`
+          : 'O cadastro atual não mostra perdíveis críticos claros, então o maior risco tende a ser tempo mal distribuído, cleanup torto ou farming deixado para tarde.'
+      },
+      {
+        question: 'Preciso usar o checklist desde o começo?',
+        answer: hasDenseList
+          ? 'Sim. Como a lista é mais extensa, marcar progresso cedo evita perder contexto e transforma sessões longas em avanço visível.'
+          : 'Vale a pena pelo menos para objetivos únicos, troféus sensíveis e para saber exatamente onde você parou.'
+      },
+      {
+        question: 'Tem algo que pede leitura com mais cautela?',
+        answer: spoilerCount
+          ? `Sim. Há ${spoilerCount} alerta(s) de spoiler ou conteúdo sensível. Revele apenas quando isso não atrapalhar sua experiência.`
+          : 'Nada muito sensível aparece no cadastro atual, então a leitura pode ser mais direta sem tanta preocupação com spoiler.'
+      }
+    ];
+  }
+
+
+  function buildCriticalTrophyAlerts(game = {}, trophies = []) {
+    const ranked = trophies
+      .filter(Boolean)
+      .map(trophy => {
+        const bag = `${trophy?.name || ''} ${trophy?.description || ''} ${trophy?.tip || ''}`.toLowerCase();
+        let score = 0;
+        if (trophy?.is_missable) score += 5;
+        if (trophy?.is_spoiler) score += 2;
+        if (/online|multiplayer|coop/.test(bag)) score += 4;
+        if (/grind|farm|rank|xp|nível|level/.test(bag)) score += 3;
+        if (/colet|colecion|miss|perd|chapter|cap[ií]tulo/.test(bag)) score += 3;
+        if (/difficulty|dificuldade|hard|survival/.test(bag)) score += 2;
+        return {
+          name: trophy?.name || 'Troféu',
+          label: trophy?.is_missable ? 'Perdível' : (trophy?.is_spoiler ? 'Spoiler / atenção' : (trophy?.type || 'Troféu')),
+          reason: trophy?.tip || trophy?.description || 'Requer leitura antes da run.',
+          score
+        };
+      })
+      .filter(item => item.score > 0)
+      .sort((a, b) => b.score - a.score)
+      .slice(0, 5);
+
+    if (ranked.length) return ranked;
+
+    return [{
+      name: 'Sem alerta crítico explícito',
+      label: 'Baixo risco aparente',
+      reason: game?.missable || 'O cadastro atual não marca troféus realmente bloqueadores, então o risco maior tende a estar na gestão do tempo e do cleanup.'
+    }];
+  }
+
+  function buildExecutionProfile(game = {}, trophies = [], roadmap = []) {
+    const timeValue = getTimeValue(game);
+    const difficulty = Number(game?.difficulty || 0);
+    const onlineCount = trophies.filter(trophy => /online|multiplayer|coop/i.test(`${trophy?.name || ''} ${trophy?.description || ''} ${trophy?.tip || ''}`)).length;
+    const grindCount = trophies.filter(trophy => /grind|farm|rank|xp|nível|level/i.test(`${trophy?.name || ''} ${trophy?.description || ''} ${trophy?.tip || ''}`)).length;
+    const missableCount = trophies.filter(trophy => trophy?.is_missable).length;
+
+    let timeBand = 'Projeto curto';
+    let timeDetail = 'Bom para fechar em poucas sessões e manter sensação de avanço rápido.';
+    if (timeValue > 15 && timeValue <= 35) {
+      timeBand = 'Projeto médio';
+      timeDetail = 'Pede organização mínima para não transformar a reta final em cleanup desordenado.';
+    } else if (timeValue > 35) {
+      timeBand = 'Projeto longo';
+      timeDetail = 'Vale entrar com rota definida, checkpoints claros e expectativa de constância por vários dias.';
+    }
+
+    let difficultyBand = 'Entrada tranquila';
+    let difficultyDetail = 'A dificuldade declarada sugere execução mais estável e menor chance de travar por mecânica pura.';
+    if (difficulty >= 5 && difficulty <= 7) {
+      difficultyBand = 'Exigência moderada';
+      difficultyDetail = 'Há chance real de trechos que cobram consistência, leitura prévia e alguma disciplina de checklist.';
+    } else if (difficulty > 7) {
+      difficultyBand = 'Execução exigente';
+      difficultyDetail = 'Este é o tipo de guia em que ordem, treino e preparação editorial economizam mais horas.';
+    }
+
+    const friction = [];
+    if (missableCount) friction.push(`${missableCount} perdível(is) marcado(s)`);
+    if (onlineCount) friction.push(`${onlineCount} objetivo(s) com online/co-op`);
+    if (grindCount) friction.push(`${grindCount} ponto(s) com cara de grind`);
+    if (roadmap.length >= 4) friction.push(`${roadmap.length} etapas no roadmap`);
+    if (!friction.length) friction.push('sem gargalo crítico explícito no cadastro atual');
+
+    return {
+      timeBand,
+      timeDetail,
+      difficultyBand,
+      difficultyDetail,
+      frictionLine: friction.join(' • ')
+    };
+  }
+
   function buildGuideViewModel(game, completedSource = [], options = {}) {
     const trophies = Array.isArray(game?.trophies) ? game.trophies : [];
     const roadmap = Array.isArray(game?.roadmap) ? game.roadmap : [];
@@ -1498,6 +1667,11 @@ const UI = (() => {
       total ? `A lista tem ${total} troféu(s), com distribuição ${breakdownText}.` : 'Ainda não há troféus cadastrados para este jogo.',
       roadmap.length ? `O roadmap já está quebrado em ${roadmap.length} etapa(s), útil para sessões curtas.` : 'O guia ainda precisa de um roadmap mais detalhado para orientar melhor a ordem da platina.'
     ];
+    const prepCards = buildPrepCards(game, { trophies, roadmap });
+    const roadmapStages = buildRoadmapStages({ roadmap });
+    const contextualFaq = buildContextualFaq(game, { trophies, roadmap });
+    const criticalAlerts = buildCriticalTrophyAlerts(game, trophies);
+    const executionProfile = buildExecutionProfile(game, trophies, roadmap);
     const spotlightTrophies = trophies
       .filter(trophy => trophy?.is_spoiler || /perd|miss|colet|online|grind|dific/i.test(`${trophy?.name || ''} ${trophy?.description || ''} ${trophy?.tip || ''}`))
       .slice(0, 3)
@@ -1521,6 +1695,11 @@ const UI = (() => {
       breakdownText,
       quickNotes,
       prepChecklist,
+      prepCards,
+      roadmapStages,
+      contextualFaq,
+      criticalAlerts,
+      executionProfile,
       spotlightTrophies,
       nextActionModel,
       decisionModel: buildGuideDecisionModel(game, trophies, roadmap),
@@ -1595,9 +1774,9 @@ const UI = (() => {
                 ${buildImageAttrs(viewModel.image, game?.name || 'Jogo', 'w-full h-full object-cover', { width: 900, height: 520, fetchpriority: 'high', loading: 'eager', decoding: 'sync', sizes: '(min-width: 1280px) 240px, 160px' })}
               </div>
               <div class="min-w-0">
-                <div class="atlas-eyebrow">Guia do jogo</div>
+                <div class="atlas-eyebrow">Guia revisado para decidir antes de começar</div>
                 <h1 class="text-3xl md:text-4xl font-extrabold tracking-tight mt-2 break-words">${escapeHtml(game?.name || 'Guia')}</h1>
-                <p class="text-white/58 mt-3 max-w-3xl">Dificuldade ${escapeHtml(String(game?.difficulty || '-'))}/10 • ${escapeHtml(game?.time || 'Tempo não informado')} • ${viewModel.total} troféu(s)</p>
+                <p class="text-white/58 mt-3 max-w-3xl">Dificuldade ${escapeHtml(String(game?.difficulty || '-'))}/10 • ${escapeHtml(game?.time || 'Tempo não informado')} • ${viewModel.total} troféu(s) • revisão ${escapeHtml(viewModel.editorial.reviewedAt)}</p>
                 <div class="flex flex-wrap gap-2 mt-4">
                   <span class="atlas-tag">Perfil ${escapeHtml(viewModel.difficultyLabel)}</span>
                   <span class="atlas-tag">${escapeHtml(game?.time || 'Tempo não informado')}</span>
@@ -1621,15 +1800,15 @@ const UI = (() => {
                   </div>
                 </section>
                 <div class="grid sm:grid-cols-3 gap-3 mt-4 max-w-4xl">
-                  <article class="glass-morphism rounded-[18px] p-4 border border-white/10"><div class="text-[11px] uppercase tracking-[0.18em] text-white/40">Revisão editorial</div><p class="text-sm text-white/78 mt-2">${escapeHtml(viewModel.editorial.reviewedAt)} • ${escapeHtml(viewModel.editorial.reviewer)}</p></article>
-                  <article class="glass-morphism rounded-[18px] p-4 border border-white/10"><div class="text-[11px] uppercase tracking-[0.18em] text-white/40">Cobertura do guia</div><p class="text-sm text-white/78 mt-2">${escapeHtml(viewModel.editorial.coverageLabel)} • ${escapeHtml(viewModel.editorial.scopeSummary)}</p></article>
-                  <article class="glass-morphism rounded-[18px] p-4 border border-white/10"><div class="text-[11px] uppercase tracking-[0.18em] text-white/40">Entrada recomendada</div><p class="text-sm text-white/78 mt-2">${escapeHtml(viewModel.editorial.readinessLabel)} • ${escapeHtml(viewModel.editorial.readinessDetail)}</p></article>
+                  <article class="glass-morphism rounded-[18px] p-4 border border-white/10"><div class="text-[11px] uppercase tracking-[0.18em] text-white/40">Última revisão</div><p class="text-sm text-white/78 mt-2">${escapeHtml(viewModel.editorial.reviewedAt)} • ${escapeHtml(viewModel.editorial.reviewer)}</p></article>
+                  <article class="glass-morphism rounded-[18px] p-4 border border-white/10"><div class="text-[11px] uppercase tracking-[0.18em] text-white/40">Status do guia</div><p class="text-sm text-white/78 mt-2">${escapeHtml(viewModel.editorial.coverageLabel)} • ${escapeHtml(viewModel.editorial.scopeSummary)}</p></article>
+                  <article class="glass-morphism rounded-[18px] p-4 border border-white/10"><div class="text-[11px] uppercase tracking-[0.18em] text-white/40">Vale abrir agora?</div><p class="text-sm text-white/78 mt-2">${escapeHtml(viewModel.editorial.readinessLabel)} • ${escapeHtml(viewModel.editorial.readinessDetail)}</p></article>
                 </div>
                 <div class="atlas-decision-panel mt-4">
                   <div class="atlas-decision-panel__header">
                     <div>
-                      <div class="atlas-eyebrow">Escopo editorial</div>
-                      <h2 class="text-xl md:text-2xl font-extrabold mt-2">O que este guia já cobre antes do clique completo</h2>
+                      <div class="atlas-eyebrow">O que este guia já valida para você</div>
+                      <h2 class="text-xl md:text-2xl font-extrabold mt-2">O que já está claro antes de você investir horas</h2>
                     </div>
                     <span class="atlas-tag atlas-tag--soft">${escapeHtml(viewModel.editorial.coverageLabel)}</span>
                   </div>
@@ -1706,20 +1885,43 @@ const UI = (() => {
         </section>
         <section class="atlas-panel p-5 rounded-[24px] bg-white/[0.03] border border-white/10 space-y-4">
           <div class="atlas-eyebrow">Antes de começar</div>
+          <p class="text-sm text-white/60">Use esta leitura para entender risco, esforço e a melhor forma de entrar no guia sem desperdiçar tempo.</p>
+          <div class="atlas-prep-grid">
+            ${viewModel.prepCards.map(card => `<article class="glass-morphism rounded-[18px] p-4 border border-white/10 atlas-prep-card"><div class="text-[11px] uppercase tracking-[0.18em] text-white/40">${escapeHtml(card.tag)}</div><strong class="block text-white mt-2">${escapeHtml(card.title)}</strong><p class="text-sm text-white/72 mt-2">${escapeHtml(card.text)}</p></article>`).join('')}
+          </div>
           <ul class="space-y-3 text-sm text-white/72">
             ${viewModel.prepChecklist.map(item => `<li class="flex items-start gap-3"><span class="atlas-tag mt-0.5">•</span><span>${escapeHtml(item)}</span></li>`).join('')}
           </ul>
         </section>
         <section id="guideRoadmapPanel" class="atlas-panel p-5 rounded-[24px] bg-white/[0.03] border border-white/10 space-y-4">
-          <div class="atlas-eyebrow">Roadmap</div>
-          ${viewModel.roadmap.length ? `<ol class="space-y-3 text-white/72">${viewModel.roadmap.map((step, index) => `<li class="flex items-start gap-3"><span class="atlas-tag mt-0.5">${index + 1}</span><span>${escapeHtml(typeof step === 'string' ? step : (step?.title || step?.description || 'Etapa'))}</span></li>`).join('')}</ol>` : '<div class="text-white/45">Sem roadmap cadastrado.</div>'}
+          <div class="flex items-center justify-between gap-3 flex-wrap">
+            <div>
+              <div class="atlas-eyebrow">Roadmap</div>
+              <p class="text-sm text-white/60 mt-3">Sequência editorial para entrar, avançar e fechar a platina com menos retrabalho.</p>
+            </div>
+            <span class="atlas-tag atlas-tag--soft">${escapeHtml(String(viewModel.roadmap.length || 0))} etapa(s)</span>
+          </div>
+          ${viewModel.roadmapStages.length ? `<div class="atlas-roadmap-stack">${viewModel.roadmapStages.map(stage => `<article class="glass-morphism rounded-[18px] p-4 border border-white/10 atlas-roadmap-stage"><div class="atlas-roadmap-stage__head"><span class="atlas-tag">${stage.number}</span><strong class="text-white">${escapeHtml(stage.title)}</strong></div><p class="text-sm text-white/72 mt-3">${escapeHtml(stage.detail)}</p><p class="text-xs text-white/48 mt-3">${escapeHtml(stage.cue)}</p></article>`).join('')}</div>` : '<div class="text-white/45">Sem roadmap cadastrado.</div>'}
         </section>
         <section class="atlas-panel p-5 rounded-[24px] bg-white/[0.03] border border-white/10 space-y-4">
-          <div class="atlas-eyebrow">FAQ rápido</div>
+          <div class="atlas-eyebrow">Pontos críticos antes da primeira run</div>
+          <p class="text-sm text-white/60">Estes são os trechos com maior chance de gerar retrabalho, cleanup torto ou perda de ritmo se você entrar no improviso.</p>
+          <div class="space-y-3">
+            ${viewModel.criticalAlerts.map(item => `<article class="glass-morphism rounded-[18px] p-4 border border-white/10"><div class="flex flex-wrap items-center gap-2 justify-between"><strong class="text-white">${escapeHtml(item.name)}</strong><span class="atlas-tag atlas-tag--warning">${escapeHtml(item.label)}</span></div><p class="text-sm text-white/72 mt-3">${escapeHtml(item.reason)}</p></article>`).join('')}
+          </div>
+        </section>
+        <section class="atlas-panel p-5 rounded-[24px] bg-white/[0.03] border border-white/10 space-y-4">
+          <div class="atlas-eyebrow">Como ler tempo e dificuldade deste guia</div>
+          <div class="grid md:grid-cols-2 gap-3">
+            <article class="glass-morphism rounded-[18px] p-4 border border-white/10"><div class="text-[11px] uppercase tracking-[0.18em] text-white/40">Tempo estimado</div><strong class="block text-white mt-2">${escapeHtml(viewModel.executionProfile.timeBand)}</strong><p class="text-sm text-white/72 mt-2">${escapeHtml(viewModel.executionProfile.timeDetail)}</p></article>
+            <article class="glass-morphism rounded-[18px] p-4 border border-white/10"><div class="text-[11px] uppercase tracking-[0.18em] text-white/40">Dificuldade real</div><strong class="block text-white mt-2">${escapeHtml(viewModel.executionProfile.difficultyBand)}</strong><p class="text-sm text-white/72 mt-2">${escapeHtml(viewModel.executionProfile.difficultyDetail)}</p></article>
+          </div>
+          <article class="glass-morphism rounded-[18px] p-4 border border-white/10"><div class="text-[11px] uppercase tracking-[0.18em] text-white/40">O que mais pesa aqui</div><p class="text-sm text-white/72 mt-2">${escapeHtml(viewModel.executionProfile.frictionLine)}</p></article>
+        </section>
+        <section class="atlas-panel p-5 rounded-[24px] bg-white/[0.03] border border-white/10 space-y-4">
+          <div class="atlas-eyebrow">Perguntas que importam antes da run</div>
           <div class="space-y-3 text-sm text-white/72">
-            <article><strong class="text-white">Existem troféus perdíveis?</strong><p class="mt-1">Verifique os alertas no topo e priorize objetivos únicos durante a campanha principal.</p></article>
-            <article><strong class="text-white">Precisa de múltiplas runs?</strong><p class="mt-1">Na maioria dos casos, uma run principal + cleanup final já resolve grande parte da platina.</p></article>
-            <article><strong class="text-white">Vale usar guia desde o início?</strong><p class="mt-1">Sim — principalmente para evitar grind desnecessário e perder colecionáveis importantes.</p></article>
+            ${viewModel.contextualFaq.map(item => `<article class="glass-morphism rounded-[18px] p-4 border border-white/10 atlas-faq-item"><strong class="text-white block">${escapeHtml(item.question)}</strong><p class="mt-2">${escapeHtml(item.answer)}</p></article>`).join('')}
           </div>
         </section>
 

@@ -1570,3 +1570,37 @@ img {
 
 .atlas-panel-soft{background:rgba(255,255,255,.025);border:1px solid rgba(255,255,255,.08);}
 .atlas-intent-card--link{text-decoration:none;display:block;}
+
+
+.atlas-prep-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 12px;
+}
+
+.atlas-prep-card,
+.atlas-roadmap-stage,
+.atlas-faq-item {
+  min-height: 100%;
+}
+
+.atlas-roadmap-stack {
+  display: grid;
+  gap: 12px;
+}
+
+.atlas-roadmap-stage__head {
+  display: flex;
+  align-items: flex-start;
+  gap: 12px;
+}
+
+.atlas-roadmap-stage__head .atlas-tag {
+  flex-shrink: 0;
+}
+
+@media (max-width: 900px) {
+  .atlas-prep-grid {
+    grid-template-columns: 1fr;
+  }
+}

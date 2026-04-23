@@ -807,6 +807,7 @@
     });
 
     UI.qs('#adminAccessBtn')?.addEventListener('click', () => page === 'public' ? UI.openAdminModal() : openAdminPanel());
+    UI.qs('#adminAccessBtnFooter')?.addEventListener('click', () => UI.openAdminModal());
     UI.qs('#adminLogoutBtn')?.addEventListener('click', handleAdminLogout);
     UI.qs('#closeAdminModalBtn')?.addEventListener('click', UI.closeAdminModal);
     UI.qs('#adminModal')?.addEventListener('click', event => { if (event.target.id === 'adminModal') UI.closeAdminModal(); });
