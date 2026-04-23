@@ -1,0 +1,9 @@
+{
+  "name": "AtlasAchievement",
+  "short_name": "Atlas",
+  "start_url": "/",
+  "display": "standalone",
+  "background_color": "#08111f",
+  "theme_color": "#0ea5e9",
+  "icons": []
+}

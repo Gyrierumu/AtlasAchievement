@@ -1,0 +1,486 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>__PAGE_TITLE__</title>
+  <meta name="description" content="__PAGE_DESCRIPTION__">
+  <link rel="canonical" href="__PAGE_CANONICAL__">
+  <meta property="og:title" content="__PAGE_TITLE__">
+  <meta property="og:description" content="__PAGE_DESCRIPTION__">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="__PAGE_CANONICAL__">
+  <meta property="og:image" content="__PAGE_OG_IMAGE__">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="__PAGE_TITLE__">
+  <meta name="twitter:description" content="__PAGE_DESCRIPTION__">
+  <meta name="twitter:image" content="__PAGE_OG_IMAGE__">
+  <script type="application/ld+json" id="gameStructuredData">__PAGE_JSON_LD__</script>
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+  <link rel="stylesheet" href="/css/utilities.css">
+  <link rel="stylesheet" href="/css/styles.css">
+  <link rel="manifest" href="/site.webmanifest">
+</head>
+<body class="atlas-body min-h-screen pb-10" data-page="public">
+  <div class="atlas-bg-orb atlas-bg-orb--one"></div>
+  <div class="atlas-bg-orb atlas-bg-orb--two"></div>
+
+  <header class="sticky top-0 z-50 atlas-topbar">
+    <div class="max-w-[1320px] mx-auto px-4 lg:px-6 h-[88px] flex items-center justify-between gap-4">
+      <button data-view-link="home" class="flex items-center gap-4 text-left shrink-0">
+        <div class="w-12 h-12 rounded-2xl atlas-logo-mark flex items-center justify-center shadow-atlas">
+          <span class="text-white text-2xl font-black">A</span>
+        </div>
+        <div>
+          <div class="text-[16px] md:text-[20px] font-extrabold leading-none tracking-tight">AtlasAchievement</div>
+          <div class="text-[10px] md:text-[11px] uppercase tracking-[0.3em] text-white/40 mt-1">Troféus, conquistas e guias</div>
+        </div>
+      </button>
+
+      <nav class="hidden xl:flex items-center gap-3 atlas-nav-shell">
+        <button type="button" data-view-link="home" class="atlas-nav-link is-active">Início</button>
+        <button type="button" data-view-link="library" class="atlas-nav-link flex items-center gap-2">Biblioteca <span id="libraryBadge" class="bg-atlas-500 text-white text-[10px] px-1.5 py-0.5 rounded-full hidden">0</span></button>
+        <button type="button" data-view-link="catalog" class="atlas-nav-link">Explorar</button>
+      </nav>
+
+      <div class="flex items-center gap-2 md:gap-3">
+        <a href="/admin" id="adminPanelLink" class="hidden atlas-btn atlas-btn-secondary">Console</a>
+        <div id="adminStatus" class="hidden text-xs text-white/40"></div>
+        <button id="adminAccessBtn" class="atlas-text-action" title="Acesso do editor">Editor</button>
+        <button id="adminLogoutBtn" class="hidden atlas-btn atlas-btn-primary">Sair</button>
+      </div>
+    </div>
+    <div class="xl:hidden px-4 lg:px-6 pb-4">
+      <nav class="atlas-nav-shell atlas-mobile-nav">
+        <button type="button" data-view-link="home" class="atlas-nav-link is-active">Início</button>
+        <button type="button" data-view-link="library" class="atlas-nav-link flex items-center gap-2 justify-center">Biblioteca <span class="bg-atlas-500 text-white text-[10px] px-1.5 py-0.5 rounded-full hidden" data-mobile-library-badge>0</span></button>
+        <button type="button" data-view-link="catalog" class="atlas-nav-link">Explorar</button>
+      </nav>
+    </div>
+  </header>
+
+  <main class="max-w-[1320px] mx-auto px-4 lg:px-6 pt-6 space-y-6">
+    <section id="view-home" class="space-y-6">
+      <section class="atlas-hero-shell atlas-panel overflow-hidden">
+        <div class="grid xl:grid-cols-[1.08fr_.92fr] gap-0 min-h-[520px]">
+          <div class="p-7 md:p-10 xl:p-14 flex flex-col justify-center relative z-10">
+            <div class="atlas-eyebrow mb-5">Escolha melhor sua próxima platina em menos tempo</div>
+            <h1 class="text-[40px] md:text-[56px] xl:text-[72px] leading-[0.94] font-black tracking-[-0.04em] max-w-[760px]">
+              Descubra rápido se um jogo é <span class="text-atlas-400">curto, viável</span> e seguro antes de investir horas nele.
+            </h1>
+            <p class="mt-6 text-white/65 text-[18px] md:text-[20px] max-w-[680px] leading-relaxed">
+              Abra um guia, veja tempo real, dificuldade, roadmap, troféus perdíveis e checklist em um só fluxo para começar sem retrabalho.
+            </p>
+
+            <div class="mt-8 atlas-search-wrap max-w-[760px]">
+              <div class="relative">
+                <input id="gameInput" type="text" placeholder="Encontrar minha próxima platina" class="w-full atlas-search-input pr-20 outline-none" autocomplete="off" role="combobox" aria-autocomplete="list" aria-expanded="false" aria-controls="suggestions">
+                <button id="btnLoad" class="atlas-search-btn" aria-label="Abrir o jogo certo">
+                  <i class="fas fa-arrow-up-right-from-square"></i>
+                </button>
+                <div id="suggestions" class="absolute top-full left-0 right-0 atlas-suggestion-panel mt-3 hidden z-20 max-h-72 overflow-y-auto" role="listbox" aria-label="Sugestões de jogos"></div>
+              </div>
+              <div class="mt-4 flex flex-wrap gap-2 text-sm text-white/45">
+                <span class="atlas-chip">Elden Ring</span>
+                <span class="atlas-chip">Resident Evil 4</span>
+                <span class="atlas-chip">God of War Ragnarök</span>
+                <span class="atlas-chip">Hollow Knight</span>
+              </div>
+              <div class="mt-5 flex flex-wrap gap-3 max-w-[760px]">
+                <button type="button" class="atlas-intent-inline" data-home-facet="time-short"><i class="fas fa-bolt"></i> Quero algo curto</button>
+                <button type="button" class="atlas-intent-inline" data-home-facet="difficulty-low"><i class="fas fa-seedling"></i> Quero algo mais fácil</button>
+                <button type="button" class="atlas-intent-inline" data-home-facet="time-medium"><i class="fas fa-layer-group"></i> Quero um projeto médio</button>
+              </div>
+              <div id="searchFeedback" class="mt-3 text-sm text-white/50" aria-live="polite">Digite um nome para ver sugestões e abrir a página do jogo.</div>
+            </div>
+
+            <div class="mt-6 flex flex-wrap gap-3 max-w-[760px]">
+              <button type="button" data-view-link="catalog" class="atlas-btn atlas-btn-primary"><i class="fas fa-compass"></i> Explorar catálogo</button>
+              <button type="button" data-scroll-target="#recentGamesOverview" class="atlas-btn atlas-btn-secondary"><i class="fas fa-bolt"></i> Ver jogos recentes</button>
+            </div>
+
+            <div class="mt-8 flex flex-wrap gap-3 max-w-[760px] text-sm">
+              <span class="atlas-chip">Platinas rápidas</span>
+              <span class="atlas-chip">Sem troféus online</span>
+              <span class="atlas-chip">Jogos fáceis</span>
+              <span class="atlas-chip">Até 20 horas</span>
+            </div>
+
+            <div class="mt-10 grid sm:grid-cols-3 gap-4 max-w-[760px]">
+              <div class="atlas-metric-card"><strong id="homeStatGames">0 jogos</strong><span>No catálogo para abrir agora</span></div>
+              <div class="atlas-metric-card"><strong id="homeStatTrophies">0 troféus</strong><span>Mapeados nas páginas disponíveis</span></div>
+              <div class="atlas-metric-card"><strong id="homeStatRecent">0 atualizações</strong><span>Guias recentes para começar hoje</span></div>
+            </div>
+          </div>
+
+          <div class="relative min-h-[360px] xl:min-h-full atlas-hero-visual">
+            <div class="atlas-dashboard-card atlas-dashboard-card--primary">
+              <div class="flex items-center justify-between gap-3 mb-6">
+                <div>
+                  <div class="text-xs uppercase tracking-[0.24em] text-atlas-300/80">Antes de começar</div>
+                  <h2 class="text-2xl font-extrabold mt-2">Tudo o que você precisa validar</h2>
+                </div>
+                <div class="w-12 h-12 rounded-2xl bg-atlas-500/20 border border-atlas-300/20 flex items-center justify-center text-atlas-300">
+                  <i class="fas fa-route"></i>
+                </div>
+              </div>
+              <div class="space-y-4 text-sm text-white/70">
+                <div class="atlas-route-item"><span>01</span><p>Dificuldade, tempo estimado e risco de perdíveis no primeiro olhar.</p></div>
+                <div class="atlas-route-item"><span>02</span><p>Ordem de runs e roadmap editorial para reduzir grind desnecessário.</p></div>
+                <div class="atlas-route-item"><span>03</span><p>Troféus organizados por tipo e checklist para acompanhar o progresso.</p></div>
+                <div class="atlas-route-item"><span>04</span><p>Páginas individuais por jogo com navegação direta e biblioteca salva.</p></div>
+              </div>
+            </div>
+
+            <div class="atlas-dashboard-card atlas-dashboard-card--secondary">
+              <div class="flex items-center justify-between gap-4">
+                <div>
+                  <div class="text-sm text-white/45">Guia de entrada</div>
+                  <h3 class="text-xl font-bold mt-1">Escolha um guia para abrir agora</h3>
+                </div>
+                <div class="atlas-badge">Disponível</div>
+              </div>
+              <div id="featuredNowOverview" class="mt-5 grid sm:grid-cols-2 gap-3 text-sm"></div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section class="atlas-panel p-6 md:p-8">
+        <div class="flex items-end justify-between gap-4 mb-6 flex-wrap">
+          <div>
+            <div class="atlas-eyebrow">Entre por intenção</div>
+            <h2 class="text-[30px] md:text-[42px] font-extrabold tracking-tight">Não sabe por onde começar? Entre pelo tipo de projeto</h2>
+            <p class="text-white/58 mt-3 max-w-3xl">Em vez de decidir jogo por jogo, comece por uma faixa que combine com seu momento e entre no catálogo já filtrado.</p>
+          </div>
+          <button type="button" data-view-link="catalog" class="atlas-btn atlas-btn-secondary"><i class="fas fa-compass"></i> Ver todas as faixas</button>
+        </div>
+        <div id="intentOverview" class="grid lg:grid-cols-4 md:grid-cols-2 gap-4"></div>
+      </section>
+
+      <section class="atlas-panel p-6 md:p-8">
+        <div class="flex items-end justify-between gap-4 mb-6 flex-wrap">
+          <div>
+            <div class="atlas-eyebrow">Coleções prontas</div>
+            <h2 class="text-[30px] md:text-[42px] font-extrabold tracking-tight">Abra o catálogo por faixas que fazem mais sentido agora</h2>
+            <p class="text-white/58 mt-3 max-w-3xl">Essas coleções agrupam jogos por esforço, tempo e densidade para você clicar com mais segurança.</p>
+          </div>
+          <a href="/catalogo" class="atlas-btn atlas-btn-secondary"><i class="fas fa-layer-group"></i> Abrir coleções</a>
+        </div>
+        <div id="collectionRoutesOverview" class="grid lg:grid-cols-3 md:grid-cols-2 gap-4"></div>
+      </section>
+
+      <section class="grid lg:grid-cols-[1fr_1fr] gap-6">
+        <div class="atlas-panel p-6 md:p-8">
+          <div class="flex items-end justify-between gap-4 mb-6">
+            <div>
+              <div class="atlas-eyebrow">Como usar o Atlas</div>
+              <h2 class="text-[30px] md:text-[42px] font-extrabold tracking-tight">Escolha melhor antes de investir horas</h2>
+            </div>
+          </div>
+          <div class="grid sm:grid-cols-2 gap-4">
+            <div class="atlas-kpi-card"><i class="fas fa-magnifying-glass"></i><strong>Abrir o jogo certo</strong><span>Encontre um título e valide rápido se o projeto encaixa no seu momento.</span></div>
+            <div class="atlas-kpi-card"><i class="fas fa-book-open"></i><strong>Ler a rota ideal</strong><span>Veja a ordem sugerida, a primeira run e o que muda seu plano.</span></div>
+            <div class="atlas-kpi-card"><i class="fas fa-triangle-exclamation"></i><strong>Evitar retrabalho</strong><span>Veja perdíveis, spoilers e pontos críticos antes da campanha avançar.</span></div>
+            <div class="atlas-kpi-card"><i class="fas fa-check-double"></i><strong>Continuar depois</strong><span>Salve o jogo, retome do ponto certo e volte com direção.</span></div>
+          </div>
+        </div>
+
+        <div class="atlas-panel p-6 md:p-8">
+          <div class="flex items-end justify-between gap-4 mb-6">
+            <div>
+              <div class="atlas-eyebrow">Sua atividade</div>
+              <h2 class="text-[30px] md:text-[42px] font-extrabold tracking-tight">Retome de onde parou</h2>
+            </div>
+            <button type="button" data-view-link="library" class="text-atlas-300 hover:text-white font-semibold transition">Ver biblioteca</button>
+          </div>
+          <div id="libraryResume" class="space-y-4"></div>
+        </div>
+      </section>
+
+
+      <section class="grid xl:grid-cols-[1.08fr_.92fr] gap-6">
+        <div class="atlas-panel p-6 md:p-8">
+          <div class="flex items-end justify-between gap-4 mb-6">
+            <div>
+              <div class="atlas-eyebrow">Sinais de confiança</div>
+              <h2 class="text-[30px] md:text-[42px] font-extrabold tracking-tight">Veja por que o guia passa confiança logo de início</h2>
+            </div>
+          </div>
+          <div class="grid sm:grid-cols-3 gap-4">
+            <div class="atlas-kpi-card"><i class="fas fa-route"></i><strong>Roadmap por etapas</strong><span>Veja ordem de runs e preparação antes de sair marcando troféus aleatórios.</span></div>
+            <div class="atlas-kpi-card"><i class="fas fa-shield-halved"></i><strong>Alertas visíveis</strong><span>Perdíveis, spoiler e pontos críticos aparecem cedo para evitar retrabalho.</span></div>
+            <div class="atlas-kpi-card"><i class="fas fa-rotate"></i><strong>Conteúdo revisado</strong><span>As páginas exibem data de atualização e densidade do guia para passar mais confiança.</span></div>
+          </div>
+        </div>
+
+        <div class="atlas-panel p-6 md:p-8">
+          <div class="flex items-end justify-between gap-4 mb-6">
+            <div>
+              <div class="atlas-eyebrow">Resumo rápido</div>
+              <h2 class="text-[30px] md:text-[42px] font-extrabold tracking-tight">Resumo editorial do catálogo atual</h2>
+            </div>
+          </div>
+          <div id="editorialTrustOverview" class="grid sm:grid-cols-2 gap-4"></div>
+        </div>
+      </section>
+
+      <section class="space-y-6">
+        <div class="grid xl:grid-cols-[1.15fr_.85fr] gap-6">
+          <div>
+            <div class="flex items-end justify-between gap-4 mb-4 px-1">
+              <div>
+                <div class="atlas-eyebrow">Guias prontos</div>
+                <h2 class="text-[30px] md:text-[42px] font-extrabold tracking-tight">Abra um jogo já pronto para consulta</h2>
+              </div>
+            </div>
+            <div id="gamesOverview" class="grid md:grid-cols-2 xl:grid-cols-2 gap-5 atlas-static-grid"></div>
+          </div>
+
+          <div class="atlas-panel p-6 md:p-8">
+            <div class="atlas-eyebrow">Atalhos úteis</div>
+            <h2 class="text-[28px] md:text-[36px] font-extrabold tracking-tight mt-2">Entre por jogos que já valem o clique</h2>
+            <p class="text-white/58 mt-3">Use estes atalhos para ir direto aos guias disponíveis e descobrir opções parecidas com menos fricção.</p>
+            <div id="browseLinks" class="mt-6 grid sm:grid-cols-2 gap-3"></div>
+            <div class="mt-5">
+              <button type="button" data-view-link="catalog" class="atlas-btn atlas-btn-primary"><i class="fas fa-table-cells-large"></i> Abrir catálogo completo</button>
+            </div>
+          </div>
+        </div>
+
+        <div class="grid xl:grid-cols-2 gap-6">
+          <div class="atlas-panel p-6 md:p-8">
+            <div class="flex items-end justify-between gap-4 mb-4">
+              <div>
+                <div class="atlas-eyebrow">Entraram no catálogo</div>
+                <h2 class="text-[28px] md:text-[36px] font-extrabold tracking-tight">Veja os guias mais novos</h2>
+              </div>
+            </div>
+            <div id="recentGamesOverview" class="grid gap-4"></div>
+          </div>
+
+          <div class="atlas-panel p-6 md:p-8">
+            <div class="flex items-end justify-between gap-4 mb-4">
+              <div>
+                <div class="atlas-eyebrow">Revisados por último</div>
+                <h2 class="text-[28px] md:text-[36px] font-extrabold tracking-tight">Veja o que acabou de ser revisado</h2>
+              </div>
+            </div>
+            <div id="updatedGamesOverview" class="grid gap-4"></div>
+          </div>
+        </div>
+      </section>
+
+    </section>
+
+    <section id="view-catalog" class="__CATALOG_VIEW_CLASS__ space-y-5 pt-2">
+      <div class="atlas-section-head atlas-section-head--library">
+        <div>
+          <div class="atlas-eyebrow">Catálogo</div>
+          <h2 id="catalogTitle" class="text-[36px] md:text-[52px] leading-none font-extrabold tracking-tight">__CATALOG_TITLE__</h2>
+        </div>
+        <p id="catalogSummary" class="text-[15px] text-white/55 max-w-xl">__CATALOG_SUMMARY__</p>
+      </div>
+
+      <div class="atlas-panel p-5 md:p-6 space-y-5">
+        <div class="grid xl:grid-cols-[minmax(0,1fr)_340px] gap-4 items-start">
+          <div>
+            <div class="atlas-eyebrow">Descoberta por catálogo</div>
+            <h3 id="catalogHeroTitle" class="text-2xl md:text-3xl font-extrabold tracking-tight mt-2">__CATALOG_HERO_TITLE__</h3>
+            <p id="catalogHeroDescription" class="text-white/58 mt-2 max-w-2xl">__CATALOG_HERO_DESCRIPTION__</p>
+          </div>
+          <div class="grid sm:grid-cols-2 gap-3">
+            <label class="block sm:col-span-2">
+              <span class="sr-only">Buscar no catálogo</span>
+              <input id="catalogSearch" type="search" placeholder="Abrir o jogo certo no catálogo" class="atlas-input min-h-[46px] h-[46px] py-3">
+            </label>
+            <label class="block sm:col-span-2">
+              <span class="sr-only">Ordenar catálogo</span>
+              <select id="catalogSort" class="atlas-input min-h-[46px] h-[46px] py-3 pr-10">
+                <option value="recommended-desc">Melhores para começar</option>
+                <option value="updated-desc">Revisados por último</option>
+                <option value="created-desc">Entraram no catálogo</option>
+                <option value="difficulty-desc">Maior dificuldade</option>
+                <option value="time-asc">Menor tempo</option>
+                <option value="trophies-desc">Mais troféus</option>
+                <option value="name-asc">Nome A–Z</option>
+              </select>
+            </label>
+          </div>
+        </div>
+
+        <div class="space-y-5">
+          <div>
+            <div class="atlas-eyebrow">Explorar por faixa</div>
+            <h4 class="text-xl font-extrabold mt-2">Atalhos rápidos dentro do catálogo</h4>
+            <p class="text-white/55 mt-2 max-w-3xl">Use as faixas abaixo para abrir grupos de jogos por dificuldade, tempo estimado e tamanho da lista de troféus.</p>
+          </div>
+          <div id="catalogSegments" class="grid lg:grid-cols-3 gap-4"></div>
+        </div>
+
+        <section class="atlas-panel atlas-panel-soft p-5 md:p-6 space-y-4">
+          <div class="grid xl:grid-cols-[1.05fr_.95fr] gap-4">
+            <div>
+              <div class="atlas-eyebrow">Leitura da faixa</div>
+              <h4 id="catalogCollectionTitle" class="text-2xl font-extrabold tracking-tight mt-2">__CATALOG_COLLECTION_TITLE__</h4>
+              <p id="catalogCollectionDescription" class="text-white/60 mt-3 max-w-3xl">__CATALOG_COLLECTION_DESCRIPTION__</p>
+            </div>
+            <div class="grid sm:grid-cols-2 gap-3">
+              <article class="glass-morphism rounded-[18px] p-4 border border-white/10">
+                <div class="text-[11px] uppercase tracking-[0.18em] text-white/40">Por que abrir esta faixa</div>
+                <p id="catalogCollectionReason" class="text-sm text-white/78 mt-2">__CATALOG_COLLECTION_REASON__</p>
+              </article>
+              <article class="glass-morphism rounded-[18px] p-4 border border-white/10">
+                <div class="text-[11px] uppercase tracking-[0.18em] text-white/40">O que validar</div>
+                <p id="catalogCollectionChecklist" class="text-sm text-white/78 mt-2">__CATALOG_COLLECTION_CHECKLIST__</p>
+              </article>
+            </div>
+          </div>
+          <div>
+            <div class="text-[11px] uppercase tracking-[0.18em] text-white/40 mb-3">Coleções relacionadas</div>
+            <div id="catalogRelatedCollections" class="flex flex-wrap gap-3">__CATALOG_RELATED_LINKS__</div>
+          </div>
+        </section>
+
+        <section class="atlas-panel atlas-panel-soft p-5 md:p-6 space-y-4 border border-white/10">
+          <div>
+            <div class="atlas-eyebrow">Contexto editorial da coleção</div>
+            <h4 class="text-2xl font-extrabold tracking-tight mt-2">__CATALOG_SEO_INTRO_TITLE__</h4>
+            <p class="text-white/65 mt-3 max-w-4xl">__CATALOG_SEO_INTRO_BODY__</p>
+          </div>
+        </section>
+
+        <div id="catalogList" class="grid md:grid-cols-2 xl:grid-cols-3 gap-5">__CATALOG_SSR_LIST__</div>
+        <div id="catalogPagination" class="flex flex-wrap items-center gap-3"></div>
+      </div>
+    </section>
+
+    <section id="view-library" class="hidden space-y-5 pt-2">
+      <div class="atlas-section-head atlas-section-head--library">
+        <div>
+          <div class="atlas-eyebrow">Biblioteca</div>
+          <h2 class="text-[36px] md:text-[52px] leading-none font-extrabold tracking-tight">Minha Biblioteca</h2>
+        </div>
+        <p id="librarySummary" class="text-[15px] text-white/55 max-w-xl"></p>
+      </div>
+
+      <div class="atlas-panel p-5 md:p-6 space-y-5">
+        <div class="grid xl:grid-cols-[minmax(0,1fr)_340px] gap-4 items-start">
+          <div>
+            <div class="atlas-eyebrow">Continuar</div>
+            <h3 class="text-2xl md:text-3xl font-extrabold tracking-tight mt-2">Retome o guia certo primeiro</h3>
+            <p class="text-white/58 mt-2 max-w-2xl">Veja qual guia vale abrir hoje, o que está perto de 100% e qual é o próximo passo em cada jogo salvo.</p>
+          </div>
+          <div class="grid sm:grid-cols-2 gap-3">
+            <label class="block sm:col-span-2">
+              <span class="sr-only">Buscar na biblioteca</span>
+              <input id="librarySearch" type="search" placeholder="Abrir o jogo certo salvo" class="atlas-input min-h-[46px] h-[46px] py-3">
+            </label>
+            <label class="block sm:col-span-2">
+              <span class="sr-only">Ordenar biblioteca</span>
+              <select id="librarySort" class="atlas-input min-h-[46px] h-[46px] py-3 pr-10">
+                <option value="recent">Atividade recente</option>
+                <option value="best-next">Melhor para abrir hoje</option>
+                <option value="progress-desc">Maior progresso</option>
+                <option value="remaining-asc">Mais perto de 100%</option>
+                <option value="difficulty-desc">Maior dificuldade</option>
+                <option value="name-asc">Nome A–Z</option>
+              </select>
+            </label>
+          </div>
+        </div>
+
+        <div id="libraryFocus" class="grid lg:grid-cols-3 gap-4"></div>
+      </div>
+
+      <div id="libraryList" class="grid md:grid-cols-2 xl:grid-cols-3 gap-6"></div>
+    </section>
+
+    <section id="view-guide" class="__GUIDE_VIEW_CLASS__ pt-2 space-y-5" data-ssr-game="__HAS_SSR_GAME__">
+      <div id="guideHeader">__SSR_GUIDE_HEADER__</div>
+      <div id="loading" class="flex flex-col items-center space-y-4 py-20 hidden">
+        <div class="loading-spinner"></div>
+        <p class="text-atlas-300 animate-pulse font-medium text-center">Carregando guia, troféus e progresso...</p>
+      </div>
+      <div id="guideContent" class="__GUIDE_CONTENT_CLASS__ grid grid-cols-1 xl:grid-cols-[360px_minmax(0,1fr)] gap-6">
+        <aside id="sidebarInfo" class="space-y-6"></aside>
+        <div class="space-y-5">
+          <div class="atlas-panel p-4 md:p-5 space-y-4">
+            <div class="flex flex-col lg:flex-row lg:items-center lg:justify-between gap-4">
+              <div>
+                <div class="atlas-eyebrow">Lista de troféus</div>
+                <h2 class="text-2xl md:text-3xl font-extrabold tracking-tight mt-2">Filtre e avance no checklist</h2>
+              </div>
+              <div class="text-right text-sm text-white/55 font-medium">
+                <div>Progresso: <span id="progressPercent" class="text-atlas-300">0%</span></div>
+                <div id="guideCounter" class="mt-1">0/0 concluídos</div>
+              </div>
+            </div>
+            <div class="grid xl:grid-cols-[minmax(0,1fr)_280px] gap-4 items-start">
+              <div class="flex items-center gap-2 overflow-x-auto atlas-x-scroll pb-1" role="toolbar" aria-label="Filtrar lista de troféus">
+                <button class="filter-btn atlas-pill atlas-pill-active" data-filter="all" aria-pressed="true">Todos</button>
+                <button class="filter-btn atlas-pill" data-filter="Platina" aria-pressed="false">Platina</button>
+                <button class="filter-btn atlas-pill" data-filter="Ouro" aria-pressed="false">Ouro</button>
+                <button class="filter-btn atlas-pill" data-filter="Prata" aria-pressed="false">Prata</button>
+                <button class="filter-btn atlas-pill" data-filter="Bronze" aria-pressed="false">Bronze</button>
+                <button class="filter-btn atlas-pill" data-filter="completed" aria-pressed="false">Concluídos</button>
+                <button class="filter-btn atlas-pill" data-filter="pending" aria-pressed="false">Pendentes</button>
+              </div>
+              <label class="block">
+                <span class="sr-only">Buscar troféu</span>
+                <input id="trophySearch" type="search" placeholder="Buscar troféu ou descrição" class="atlas-input min-h-[46px] h-[46px] py-3">
+              </label>
+            </div>
+            <div id="guideResults" class="text-sm text-white/60" aria-live="polite">0 troféu(s) visível(is)</div>
+            <div id="guideEmptyState" class="hidden atlas-inline-empty">Nenhum troféu corresponde ao filtro atual. Limpe a busca ou troque o filtro.</div>
+          </div>
+          <div id="trophyList" class="space-y-4 pr-2" aria-live="polite">__SSR_TROPHY_LIST__</div>
+          <section class="atlas-panel p-5 md:p-6 space-y-5">
+            <div class="flex flex-col md:flex-row md:items-end md:justify-between gap-4">
+              <div>
+                <div class="atlas-eyebrow">Próximo passo</div>
+                <h2 class="text-2xl md:text-3xl font-extrabold tracking-tight mt-2">Continue por um guia parecido depois deste</h2>
+                <p class="text-white/58 mt-2 max-w-3xl">Quando terminar ou quiser alternar de projeto, use estes jogos parecidos para manter o mesmo ritmo de progresso.</p>
+              </div>
+            </div>
+            <div id="guideRelatedOverview" class="grid md:grid-cols-2 gap-4"></div>
+          </section>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="max-w-[1320px] mx-auto px-4 lg:px-6 mt-10">
+    <div class="atlas-panel px-6 py-6 grid md:grid-cols-4 gap-4 text-white/58 text-sm">
+      <div class="atlas-footer-item"><i class="fa-regular fa-eye-slash"></i><div><strong>Ver sem spoiler</strong><span>Consulte objetivos sem abrir detalhes desnecessários logo de cara.</span></div></div>
+      <div class="atlas-footer-item"><i class="fas fa-book"></i><div><strong>Ler guias</strong><span>Abra rota, alertas e checklist no mesmo fluxo.</span></div></div>
+      <div class="atlas-footer-item"><i class="fas fa-display"></i><div><strong>Usar biblioteca</strong><span>Salve jogos e volte ao próximo passo certo.</span></div></div>
+      <div class="atlas-footer-item"><i class="fas fa-trophy"></i><div><strong>Acompanhar 100%</strong><span>Marque troféus e veja o que falta sem se perder.</span></div></div>
+    </div>
+  </footer>
+
+  <div id="adminModal" class="hidden fixed inset-0 bg-black/80 backdrop-blur-md z-[100] p-4">
+    <div class="max-w-md mx-auto mt-24 atlas-panel p-6 rounded-[28px]">
+      <div class="flex items-center justify-between gap-4 mb-4">
+        <div>
+          <h3 class="text-xl font-bold">Entrar no painel</h3>
+          <p class="text-sm text-white/45 mt-1">Faça login para gerenciar jogos, troféus e guias.</p>
+        </div>
+        <button id="closeAdminModalBtn" class="text-white/45 hover:text-white">Fechar</button>
+      </div>
+      <form id="adminLoginForm" class="space-y-4">
+        <input id="adminUsername" type="text" placeholder="Usuário" class="atlas-input" required>
+        <input id="adminPassword" type="password" placeholder="Senha" class="atlas-input" required>
+        <button class="w-full atlas-btn atlas-btn-primary h-[54px]">Entrar</button>
+      </form>
+    </div>
+  </div>
+
+  <div id="toast" class="toast" role="status" aria-live="polite" aria-atomic="true"></div>
+  __INITIAL_STATE_SCRIPT__
+  <script src="/js/api.js" defer></script>
+  <script src="/js/storage.js" defer></script>
+  <script src="/js/ui.js" defer></script>
+  <script src="/js/app.js" defer></script>
+</body>
+</html>
