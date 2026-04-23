@@ -58,6 +58,15 @@ async function ensureGameColumns() {
   }
 }
 
+async function ensureTrophyColumns() {
+  const columns = await all('PRAGMA table_info(trophies)');
+  const columnNames = new Set(columns.map(column => column.name));
+
+  if (!columnNames.has('is_missable')) {
+    await exec('ALTER TABLE trophies ADD COLUMN is_missable INTEGER NOT NULL DEFAULT 0');
+  }
+}
+
 async function migrate() {
   await exec(`
     PRAGMA foreign_keys = ON;
@@ -141,6 +150,7 @@ async function migrate() {
   `);
 
   await ensureGameColumns();
+  await ensureTrophyColumns();
 }
 
 module.exports = migrate;

@@ -2,6 +2,7 @@ const adminService = require('../services/admin.service');
 const AppError = require('../utils/AppError');
 const { clearLoginRateLimit } = require('../middleware/loginRateLimit');
 const { ensureCsrfToken } = require('../middleware/csrfProtection');
+const env = require('../config/env');
 
 function getSessionStatus(req, res) {
   res.json({
@@ -49,7 +50,7 @@ function logout(req, res, next) {
 
   req.session.destroy(error => {
     if (error) return next(error);
-    res.clearCookie('mtg.sid', { httpOnly: true, sameSite: 'lax', secure: req.secure });
+    res.clearCookie('mtg.sid', { httpOnly: true, sameSite: 'lax', secure: env.isProduction });
     res.json({ message: 'Logout realizado com sucesso.', authenticated: false });
   });
 }

@@ -17,6 +17,7 @@ const SqliteSessionStore = require('./services/sqliteSessionStore');
 const AppError = require('./utils/AppError');
 
 const app = express();
+app.set('trust proxy', 1);
 const publicIndexPath = path.join(__dirname, '../public/index.html');
 const publicIndexTemplate = fs.readFileSync(publicIndexPath, 'utf8');
 const catalogFacetPageMap = {
@@ -193,7 +194,12 @@ function escapeHtml(value = '') {
 
 
 function safeJsonForHtml(value) {
-  return JSON.stringify(value).replace(/<\/script/gi, '<\\/script');
+  return JSON.stringify(value)
+    .replace(/<\/script/gi, '<\\/script')
+    .replace(/</g, '\u003c')
+    .replace(/>/g, '\u003e')
+    .replace(/\u2028/g, '\\u2028')
+    .replace(/\u2029/g, '\\u2029');
 }
 
 function resolveMetaImage(origin, imagePath) {
@@ -1020,7 +1026,17 @@ app.get('/robots.txt', (req, res) => {
 app.get('/sitemap.xml', async (req, res, next) => {
   try {
     const origin = `${req.protocol}://${req.get('host')}`;
-    const response = await gamesService.listGames({ page: 1, limit: 100, sort: 'updated-desc' });
+    const allGames = [];
+    let page = 1;
+    let totalPages = 1;
+
+    do {
+      const response = await gamesService.listGames({ page, limit: 100, sort: 'updated-desc' });
+      allGames.push(...(response.items || []));
+      totalPages = Number(response.pagination?.totalPages || 1);
+      page += 1;
+    } while (page <= totalPages);
+
     const facetUrls = Object.entries(catalogFacetPageMap)
       .filter(([facetSlug]) => facetSlug !== 'all')
       .map(([, facet]) => ({
@@ -1032,7 +1048,7 @@ app.get('/sitemap.xml', async (req, res, next) => {
       { loc: `${origin}/`, lastmod: new Date().toISOString() },
       { loc: `${origin}/catalogo`, lastmod: new Date().toISOString() },
       ...facetUrls,
-      ...response.items.map(game => ({
+      ...allGames.map(game => ({
         loc: `${origin}/jogo/${game.slug}`,
         lastmod: game.updated_at || game.created_at || new Date().toISOString()
       }))
@@ -1063,12 +1079,17 @@ app.get('/catalogo', async (req, res, next) => {
   }
 });
 
-app.get('/catalogo/:facetSlug', (req, res, next) => {
+app.get('/catalogo/:facetSlug', async (req, res, next) => {
   const { facetSlug } = req.params;
   if (!catalogFacetPageMap[facetSlug]) {
     return next();
   }
-  return res.send(buildCatalogPageHtml(req, facetSlug));
+
+  try {
+    return res.send(await buildCatalogPageHtml(req, facetSlug));
+  } catch (error) {
+    return next(error);
+  }
 });
 
 app.get('/jogo/:slug', async (req, res, next) => {
@@ -1083,6 +1104,10 @@ app.get('/jogo/:slug', async (req, res, next) => {
   } catch (error) {
     next(error);
   }
+});
+
+app.get('/biblioteca', (req, res) => {
+  res.send(buildDefaultPageHtml(req));
 });
 
 app.get('/', (req, res) => {

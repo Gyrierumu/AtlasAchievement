@@ -667,9 +667,9 @@ const UI = (() => {
   function parseTimeValue(value = '') {
     const normalized = String(value).toLowerCase();
     const numbers = normalized.match(/\d+/g);
-    if (!numbers) return Number.MAX_SAFE_INTEGER;
-    const values = numbers.map(Number);
-    return Math.max(...values);
+    if (!numbers) return null;
+    const values = numbers.map(Number).filter(Number.isFinite);
+    return values.length ? Math.max(...values) : null;
   }
 
   function deriveNextAction(game = {}, completedIds = []) {
@@ -912,7 +912,8 @@ const UI = (() => {
 
     const items = Object.values(library || {}).map(game => {
       const trophies = Array.isArray(game.trophies) ? game.trophies : [];
-      const completed = Array.isArray(game.completed) ? game.completed : [];
+      const validTrophyIds = new Set(trophies.map(trophy => trophy?.id).filter(Boolean));
+      const completed = [...new Set((Array.isArray(game.completed) ? game.completed : []).filter(id => !validTrophyIds.size || validTrophyIds.has(id)))];
       const total = trophies.length;
       const done = completed.length;
       const progress = total ? Math.round((done / total) * 100) : 0;
@@ -1079,7 +1080,10 @@ const UI = (() => {
     const getTotal = game => Number(game.trophy_count || game.trophies?.length || 0);
     const getTimeValue = game => parseTimeValue(game.time || '');
     const formatUpdatedLabel = value => value ? new Date(value).toLocaleDateString('pt-BR') : 'Sem data';
-    const getPaceLabel = value => value <= 15 ? 'Curto para fechar' : value <= 40 ? 'Projeto médio' : 'Maratona longa';
+    const getPaceLabel = value => {
+      if (!Number.isFinite(value)) return 'Tempo não informado';
+      return value <= 15 ? 'Curto para fechar' : value <= 40 ? 'Projeto médio' : 'Maratona longa';
+    };
     const getStrengthLabel = game => {
       const total = getTotal(game);
       const timeValue = getTimeValue(game);
@@ -1305,6 +1309,7 @@ const UI = (() => {
         </select>
         <textarea placeholder="Descrição" class="p-2 rounded bg-slate-700 border border-slate-600 w-full" required>${escapeHtml(values.description || '')}</textarea>
         <textarea placeholder="Dica" class="p-2 rounded bg-slate-700 border border-slate-600 w-full" required>${escapeHtml(values.tip || '')}</textarea>
+        <label class="flex items-center text-sm"><input type="checkbox" class="mr-2" ${values.is_missable ? 'checked' : ''}> Troféu perdível</label>
         <label class="flex items-center text-sm"><input type="checkbox" class="mr-2" ${values.is_spoiler ? 'checked' : ''}> Contém spoiler</label>
       </div>`;
   }
@@ -2135,3 +2140,4 @@ const UI = (() => {
 
   return { qs, qsa, has, showToast, setLoading, updateLibraryBadge, showView, setSearchFeedback, renderSuggestions, hideSuggestions, renderHomeOverview, renderCatalog, renderLibrary, renderGuide, updateProgress, setGuideQuickDockState, applyTrophyFilter, setGuideEmptyState, clearTrophySearch, bindGuideSearch, getTrophySearchValue, resetGameForm, appendTrophyInput, replaceTrophyInputs, fillGameForm, toggleGameForm, togglePasswordPanel, togglePreviewPanel, setAdminFormFeedback, renderAdminPreview, renderAdminSummary, renderAdminGames, renderPagination, setPageMeta, setCatalogMeta, setAdminState, openAdminModal, closeAdminModal, setImagePreview, setUploadState };
 })();
+window.UI = UI;

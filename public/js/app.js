@@ -182,11 +182,15 @@
   function normalizeLibraryEntry(game, options = {}) {
     const key = getLibraryKey(game);
     const existing = state.library[key] || {};
-    const completed = Array.isArray(options.completed)
+    const trophyIds = new Set((Array.isArray(game?.trophies) ? game.trophies : Array.isArray(existing.trophies) ? existing.trophies : [])
+      .map(trophy => trophy?.id)
+      .filter(Boolean));
+    const rawCompleted = Array.isArray(options.completed)
       ? options.completed
       : Array.isArray(existing.completed)
         ? existing.completed
         : [];
+    const completed = [...new Set(rawCompleted.filter(id => !trophyIds.size || trophyIds.has(id)))];
     const trophies = Array.isArray(game?.trophies) ? game.trophies : Array.isArray(existing.trophies) ? existing.trophies : [];
     const total = trophies.length;
     const done = completed.length;
@@ -211,6 +215,61 @@
     state.library[key] = entry;
     persistLibrary();
     return entry;
+  }
+
+  function findLibraryEntryByGameIdentity(game = {}) {
+    const targetId = game?.id != null ? String(game.id) : '';
+    const targetName = String(game?.name || '').trim().toLowerCase();
+    return Object.entries(state.library || {}).find(([, entry]) => {
+      const sameId = targetId && String(entry?.id || '') === targetId;
+      const sameName = targetName && String(entry?.name || '').trim().toLowerCase() === targetName;
+      return sameId || sameName;
+    }) || null;
+  }
+
+  function resolveLibraryKey(rawKey = '') {
+    const directKey = String(rawKey || '').trim();
+    if (!directKey) return '';
+    if (state.library[directKey]) return directKey;
+
+    const normalizedKey = StorageService.normalizeKey({ slug: directKey, name: directKey });
+    if (normalizedKey && state.library[normalizedKey]) return normalizedKey;
+
+    const lowerValue = directKey.toLowerCase();
+    const match = Object.entries(state.library || {}).find(([key, entry]) => {
+      const sameKey = key.toLowerCase() === lowerValue;
+      const sameSlug = String(entry?.slug || '').trim().toLowerCase() === lowerValue;
+      const sameName = String(entry?.name || '').trim().toLowerCase() === lowerValue;
+      return sameKey || sameSlug || sameName;
+    });
+
+    return match ? match[0] : normalizedKey;
+  }
+
+  function syncLibraryIdentityForGame(game) {
+    if (!game) return null;
+    const currentKey = getLibraryKey(game);
+    if (state.library[currentKey]) return state.library[currentKey];
+
+    const match = findLibraryEntryByGameIdentity(game);
+    if (!match) return null;
+
+    const [legacyKey, legacyEntry] = match;
+    if (legacyKey !== currentKey) {
+      delete state.library[legacyKey];
+    }
+
+    const syncedEntry = normalizeLibraryEntry({ ...legacyEntry, ...game }, {
+      completed: Array.isArray(legacyEntry?.completed) ? legacyEntry.completed : [],
+      savedAt: legacyEntry?.savedAt,
+      lastOpenedAt: legacyEntry?.lastOpenedAt,
+      lastActivityAt: legacyEntry?.lastActivityAt,
+      status: legacyEntry?.status
+    });
+
+    state.library[currentKey] = syncedEntry;
+    persistLibrary();
+    return syncedEntry;
   }
 
   function removeCurrentGameFromLibrary() {
@@ -245,8 +304,18 @@
   }
 
   async function loadGames() {
-    const response = await ApiService.getGames({ page: 1, limit: 120, sort: 'updated-desc' });
-    state.availableGames = response.items || [];
+    let pageNumber = 1;
+    let totalPages = 1;
+    const allItems = [];
+
+    do {
+      const response = await ApiService.getGames({ page: pageNumber, limit: 100, sort: 'updated-desc' });
+      allItems.push(...(response.items || []));
+      totalPages = Number(response.pagination?.totalPages || 1);
+      pageNumber += 1;
+    } while (pageNumber <= totalPages);
+
+    state.availableGames = allItems;
     UI.renderHomeOverview(state.availableGames, state.library);
     return state.availableGames;
   }
@@ -324,18 +393,28 @@
       return UI.showToast('Digite o nome de um jogo.', 'error');
     }
 
-    const chosen = state.searchSuggestions[state.activeSuggestionIndex] || getBestSuggestion(query);
-    if (!chosen) {
+    const normalizedQuery = normalizeSearchText(query);
+    let currentSuggestion = state.searchSuggestions[state.activeSuggestionIndex] || getBestSuggestion(query);
+    const suggestionMatchesQuery = currentSuggestion
+      && scoreSearchMatch(currentSuggestion, normalizedQuery) >= 0;
+
+    if (!suggestionMatchesQuery) {
+      const refreshedSuggestions = await fetchSearchSuggestions(query);
+      setSearchSuggestions(refreshedSuggestions);
+      currentSuggestion = refreshedSuggestions[0] || null;
+    }
+
+    if (!currentSuggestion) {
       UI.setSearchFeedback('Nenhum jogo próximo foi encontrado. Tente outro termo.', 'error');
       return UI.showToast('Nenhum jogo correspondente encontrado.', 'error');
     }
 
     const input = UI.qs('#gameInput');
-    if (input) input.value = chosen.name;
+    if (input) input.value = currentSuggestion.name;
     UI.hideSuggestions();
     state.searchSuggestions = [];
     state.activeSuggestionIndex = -1;
-    return loadGuideBySlug(getGameSlug(chosen), options);
+    return loadGuideBySlug(getGameSlug(currentSuggestion), options);
   }
 
   async function loadGuideBySlug(slug, options = {}) {
@@ -353,9 +432,15 @@
       const guide = initialGuide || await ApiService.getGameBySlug(slugValue);
       state.initialState = null;
       state.currentGame = guide;
-      const existing = state.library[getLibraryKey(guide)];
+      const existing = syncLibraryIdentityForGame(guide) || state.library[getLibraryKey(guide)];
       if (existing) {
-        upsertLibraryEntry(guide, { lastOpenedAt: new Date().toISOString() });
+        upsertLibraryEntry(guide, {
+          completed: Array.isArray(existing.completed) ? existing.completed : [],
+          savedAt: existing.savedAt,
+          lastActivityAt: existing.lastActivityAt,
+          lastOpenedAt: new Date().toISOString(),
+          status: existing.status
+        });
       }
       UI.setSearchFeedback(`Página de ${guide.name} aberta.`, 'success');
       renderCurrentGuide(options);
@@ -380,9 +465,15 @@
       UI.setGuideEmptyState(false);
       const guide = await ApiService.getGameByName(gameName);
       state.currentGame = guide;
-      const existing = state.library[getLibraryKey(guide)];
+      const existing = syncLibraryIdentityForGame(guide) || state.library[getLibraryKey(guide)];
       if (existing) {
-        upsertLibraryEntry(guide, { lastOpenedAt: new Date().toISOString() });
+        upsertLibraryEntry(guide, {
+          completed: Array.isArray(existing.completed) ? existing.completed : [],
+          savedAt: existing.savedAt,
+          lastActivityAt: existing.lastActivityAt,
+          lastOpenedAt: new Date().toISOString(),
+          status: existing.status
+        });
       }
       UI.setSearchFeedback(`Página de ${guide.name} aberta.`, 'success');
       renderCurrentGuide(options);
@@ -474,9 +565,15 @@
     renderCurrentGuide();
   }
 
-  function loadFromLibrary(key) {
-    const entry = state.library[key];
+  async function loadFromLibrary(key) {
+    const resolvedKey = resolveLibraryKey(key);
+    const entry = state.library[resolvedKey];
     if (!entry) return;
+    if (entry.slug) {
+      try {
+        return await loadGuideBySlug(entry.slug);
+      } catch (_error) {}
+    }
     state.currentGame = entry;
     upsertLibraryEntry(entry, { lastOpenedAt: new Date().toISOString() });
     renderCurrentGuide();
@@ -519,7 +616,9 @@
   }
 
   function deleteFromLibrary(key) {
-    delete state.library[key];
+    const resolvedKey = resolveLibraryKey(key);
+    if (!resolvedKey || !state.library[resolvedKey]) return;
+    delete state.library[resolvedKey];
     persistLibrary();
     UI.renderLibrary(state.library, { search: state.librarySearch, sort: state.librarySort });
     UI.showToast('Jogo removido da biblioteca.', 'success');
@@ -581,12 +680,15 @@
 
       const spoiler = /hist[oó]ria|ep[ií]logo|chefe final|final verdadeiro|miss[aã]o principal/i.test(sectionName) || /ep[ií]logo|chefe final|final verdadeiro|miss[aã]o principal/i.test(description);
 
+      const missable = /perd[ií]vel|missable|n[aã]o perca|sem voltar|irrevers[ií]vel/i.test(sectionName) || /perd[ií]vel|missable|n[aã]o perca|sem voltar|irrevers[ií]vel/i.test(description);
+
       trophies.push({
         id: uniqueId,
         name,
         type,
         description,
         tip: `Objetivo: ${description}`,
+        is_missable: missable,
         is_spoiler: spoiler
       });
     }
@@ -603,7 +705,8 @@
         type: fields[2].value,
         description: fields[3].value.trim(),
         tip: fields[4].value.trim(),
-        is_spoiler: fields[5].checked
+        is_missable: fields[5].checked,
+        is_spoiler: fields[6].checked
       };
     });
     return {
@@ -708,12 +811,27 @@
     } catch (error) { UI.showToast(error.message, 'error'); }
   }
 
+  function removeLibraryEntriesByGameIdentity({ id, name } = {}) {
+    const libraryEntries = Object.entries(state.library || {});
+    let removed = false;
+
+    libraryEntries.forEach(([key, entry]) => {
+      const sameId = id && String(entry?.id || '') === String(id);
+      const sameName = name && String(entry?.name || '').toLowerCase() === String(name).toLowerCase();
+      if (sameId || sameName) {
+        delete state.library[key];
+        removed = true;
+      }
+    });
+
+    if (removed) persistLibrary();
+  }
+
   async function handleDeleteGame(id, name) {
     if (!window.confirm(`Excluir o jogo "${name}"? Essa ação não pode ser desfeita.`)) return;
     try {
       const response = await ApiService.deleteGame(id);
-      delete state.library[getLibraryKey({ name })];
-      persistLibrary();
+      removeLibraryEntriesByGameIdentity({ id, name });
       await Promise.all([loadGames(), loadAdminSummary(), loadAdminGames()]);
       UI.renderAdminSummary(state.adminSummary);
       UI.showToast(response.message, 'success');
@@ -1153,40 +1271,90 @@
 (function(){
  const form=document.getElementById('gameForm');
  if(!form) return;
- const KEY='admin_game_draft_v1';
+ const KEY='admin_game_draft_v2';
+ const LEGACY_KEY='admin_game_draft_v1';
  const restore=document.getElementById('restoreDraftBtn');
  const clear=document.getElementById('clearDraftBtn');
 
  function syncAdminDraftUI(){
    const imageInput = document.getElementById('gameImage');
-   if (imageInput && typeof UI !== 'undefined' && typeof UI.setImagePreview === 'function') {
-     UI.setImagePreview(imageInput.value || '');
+   if (imageInput && window.UI && typeof window.UI.setImagePreview === 'function') {
+     window.UI.setImagePreview(imageInput.value || '');
    }
    if (typeof window.openFormPreview === 'function') {
      try { window.openFormPreview(); } catch (e) {}
    }
  }
 
+ function collectDraftPayload(){
+   const trophies = Array.from(form.querySelectorAll('#trophiesContainer .trophy-input')).map(block => {
+     const fields = block.querySelectorAll('input,textarea,select');
+     return {
+       id: fields[0]?.value?.trim() || '',
+       name: fields[1]?.value?.trim() || '',
+       type: fields[2]?.value || 'Bronze',
+       description: fields[3]?.value?.trim() || '',
+       tip: fields[4]?.value?.trim() || '',
+       is_missable: Boolean(fields[5]?.checked),
+       is_spoiler: Boolean(fields[6]?.checked)
+     };
+   }).filter(item => item.id || item.name || item.description || item.tip);
+
+   return {
+     version: 2,
+     fields: {
+       gameId: document.getElementById('gameId')?.value || '',
+       gameName: document.getElementById('gameName')?.value || '',
+       gameDifficulty: document.getElementById('gameDifficulty')?.value || '',
+       gameTime: document.getElementById('gameTime')?.value || '',
+       gameImage: document.getElementById('gameImage')?.value || '',
+       gameMissable: document.getElementById('gameMissable')?.value || '',
+       gameRoadmap: document.getElementById('gameRoadmap')?.value || '',
+       rawTrophiesInput: document.getElementById('rawTrophiesInput')?.value || ''
+     },
+     trophies
+   };
+ }
+
  function save(){
-   const data={};
-   form.querySelectorAll('input,textarea,select').forEach(el=>{
-     if (el.type === 'file') return;
-     const k=el.name||el.id;
-     if(k) data[k]=el.value;
+   try {
+     localStorage.setItem(KEY, JSON.stringify(collectDraftPayload()));
+   } catch (error) {
+     console.warn('Não foi possível salvar o rascunho automático.', error);
+   }
+ }
+
+ function applyStructuredDraft(data){
+   const fields = data?.fields || {};
+   Object.entries(fields).forEach(([id, value]) => {
+     const field = document.getElementById(id);
+     if (!field || field.type === 'file') return;
+     field.value = value ?? '';
    });
-   localStorage.setItem(KEY, JSON.stringify(data));
+
+   if (window.UI && typeof window.UI.replaceTrophyInputs === 'function') {
+     const trophies = Array.isArray(data?.trophies) && data.trophies.length ? data.trophies : [{}];
+     window.UI.replaceTrophyInputs(trophies);
+   }
+ }
+
+ function applyLegacyDraft(data){
+   form.querySelectorAll('input,textarea,select').forEach(el => {
+     if (el.type === 'file') return;
+     const k = el.name || el.id;
+     if (!(k && data[k] !== undefined)) return;
+     if (el.type === 'checkbox') el.checked = Boolean(data[k]);
+     else el.value = data[k];
+   });
  }
 
  function restoreDraft(){
-   const raw=localStorage.getItem(KEY);
+   const raw=localStorage.getItem(KEY) || localStorage.getItem(LEGACY_KEY);
    if(!raw) return;
    try{
      const data=JSON.parse(raw);
-     form.querySelectorAll('input,textarea,select').forEach(el=>{
-       if (el.type === 'file') return;
-       const k=el.name||el.id;
-       if(k && data[k]!==undefined) el.value=data[k];
-     });
+     if (data?.version === 2) applyStructuredDraft(data);
+     else applyLegacyDraft(data);
      syncAdminDraftUI();
      alert('Rascunho restaurado');
    }catch(e){
@@ -1196,6 +1364,7 @@
 
  function clearDraft(){
    localStorage.removeItem(KEY);
+   localStorage.removeItem(LEGACY_KEY);
    alert('Rascunho removido');
  }
 

@@ -48,6 +48,7 @@ function normalizeGamePayload(payload = {}) {
           type: sanitizeString(trophy?.type, 20),
           description: sanitizeString(trophy?.description, 500),
           tip: sanitizeString(trophy?.tip, 1000),
+          is_missable: Boolean(trophy?.is_missable),
           is_spoiler: Boolean(trophy?.is_spoiler)
         }))
       : []

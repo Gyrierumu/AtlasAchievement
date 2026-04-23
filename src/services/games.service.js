@@ -1,6 +1,6 @@
 const { all, get, run, exec } = require('../db/db');
 const AppError = require('../utils/AppError');
-const { removeManagedUpload } = require('./file.service');
+const { removeManagedUpload, isManagedUpload } = require('./file.service');
 const { slugifyGameName, buildSlugVariant } = require('../utils/slug');
 const { parseTimeValue, formatTimeMetadata } = require('../utils/time');
 
@@ -20,6 +20,7 @@ function normalizeGame(row, roadmapRows, trophyRows) {
       type: item.type,
       description: item.description,
       tip: item.tip,
+      is_missable: Boolean(item.is_missable),
       is_spoiler: Boolean(item.is_spoiler)
     })),
     created_at: row.created_at,
@@ -254,7 +255,7 @@ async function getGameById(id) {
   );
 
   const trophyRows = await all(
-    `SELECT trophy_code, name, type, description, tip, is_spoiler
+    `SELECT trophy_code, name, type, description, tip, is_missable, is_spoiler
      FROM trophies
      WHERE game_id = ?
      ORDER BY CASE type
@@ -324,8 +325,8 @@ async function insertGameData(gameId, payload) {
 
   for (const trophy of payload.trophies) {
     await run(
-      `INSERT INTO trophies (game_id, trophy_code, name, type, description, tip, is_spoiler)
-       VALUES (?, ?, ?, ?, ?, ?, ?)`,
+      `INSERT INTO trophies (game_id, trophy_code, name, type, description, tip, is_missable, is_spoiler)
+       VALUES (?, ?, ?, ?, ?, ?, ?, ?)`,
       [
         gameId,
         trophy.id.trim(),
@@ -333,9 +334,30 @@ async function insertGameData(gameId, payload) {
         trophy.type,
         trophy.description.trim(),
         trophy.tip.trim(),
+        trophy.is_missable ? 1 : 0,
         trophy.is_spoiler ? 1 : 0
       ]
     );
+  }
+}
+
+
+async function countGamesUsingImage(imageUrl, excludeGameId = null) {
+  if (!imageUrl) return 0;
+
+  const row = excludeGameId
+    ? await get('SELECT COUNT(*) AS total FROM games WHERE image = ? AND id != ?', [imageUrl, excludeGameId])
+    : await get('SELECT COUNT(*) AS total FROM games WHERE image = ?', [imageUrl]);
+
+  return Number(row?.total || 0);
+}
+
+async function removeManagedUploadIfUnused(imageUrl, excludeGameId = null) {
+  if (!isManagedUpload(imageUrl)) return;
+
+  const usageCount = await countGamesUsingImage(imageUrl, excludeGameId);
+  if (usageCount === 0) {
+    removeManagedUpload(imageUrl);
   }
 }
 
@@ -361,7 +383,7 @@ async function createGame(payload) {
     await exec('COMMIT');
   } catch (error) {
     await exec('ROLLBACK').catch(() => {});
-    removeManagedUpload(payload.image);
+    await removeManagedUploadIfUnused(payload.image);
     throw error;
   }
 
@@ -405,12 +427,15 @@ async function updateGame(id, payload) {
 
     await exec('COMMIT');
   } catch (error) {
-    await exec('ROLLBACK');
+    await exec('ROLLBACK').catch(() => {});
+    if (payload.image && payload.image !== existing.image) {
+      await removeManagedUploadIfUnused(payload.image, id);
+    }
     throw error;
   }
 
   if (existing.image && existing.image !== payload.image) {
-    removeManagedUpload(existing.image);
+    await removeManagedUploadIfUnused(existing.image, id);
   }
 
   return getGameById(id);
@@ -423,7 +448,7 @@ async function deleteGame(id) {
   }
 
   await run('DELETE FROM games WHERE id = ?', [id]);
-  removeManagedUpload(existing.image);
+  await removeManagedUploadIfUnused(existing.image);
 
   return { message: 'Jogo removido com sucesso.' };
 }

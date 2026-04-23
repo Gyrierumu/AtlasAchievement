@@ -20,9 +20,9 @@ const ApiService = (() => {
     }
 
     const response = await fetch(url, {
+      ...options,
       credentials: 'include',
-      headers,
-      ...options
+      headers
     });
 
     const responseCsrfToken = response.headers.get('x-csrf-token');
