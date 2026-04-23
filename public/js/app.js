@@ -87,6 +87,14 @@
       .map(entry => entry.game);
   }
 
+  function debounce(fn, delay = 180) {
+    let timeoutId = null;
+    return (...args) => {
+      if (timeoutId) window.clearTimeout(timeoutId);
+      timeoutId = window.setTimeout(() => fn(...args), delay);
+    };
+  }
+
   function setSearchSuggestions(games = []) {
     state.searchSuggestions = Array.isArray(games) ? games : [];
     state.activeSuggestionIndex = state.searchSuggestions.length ? 0 : -1;
@@ -96,6 +104,10 @@
   function syncSuggestionHighlight() {
     UI.renderSuggestions(state.searchSuggestions, { activeIndex: state.activeSuggestionIndex });
   }
+
+  const debouncedSearchGames = debounce(query => {
+    searchGames(query);
+  }, 160);
 
   function getBestSuggestion(query = '') {
     const ranked = rankGamesByQuery(state.searchSuggestions.length ? state.searchSuggestions : state.availableGames, query, 1);
@@ -147,6 +159,7 @@
     if (view === 'catalog') UI.setCatalogMeta(options.facet || state.catalogFacet || 'all');
     if (view === 'library') UI.renderLibrary(state.library, { search: state.librarySearch, sort: state.librarySort });
     if (view === 'catalog') UI.renderCatalog(state.catalogResponse, { search: state.catalogSearch, sort: state.catalogSort, facet: options.facet || state.catalogFacet });
+    syncGuideQuickDock();
   }
 
   function getLibraryKey(game) {
@@ -486,6 +499,25 @@
     }
   }
 
+  function syncGuideQuickDock() {
+    const shouldShow = page === 'public' && Boolean(state.currentGame) && !UI.qs('#view-guide')?.classList.contains('hidden');
+    UI.setGuideQuickDockState({ visible: shouldShow });
+  }
+
+  function handleGuideQuickDockClick(event) {
+    const actionButton = event.target.closest('[data-guide-action]');
+    if (actionButton) {
+      event.preventDefault();
+      focusGuideAction(actionButton.dataset.guideAction || 'trophies');
+      return;
+    }
+    const topButton = event.target.closest('[data-scroll-top]');
+    if (topButton) {
+      event.preventDefault();
+      window.scrollTo({ top: 0, behavior: 'smooth' });
+    }
+  }
+
   function deleteFromLibrary(key) {
     delete state.library[key];
     persistLibrary();
@@ -801,7 +833,7 @@
         const value = chip.textContent.trim();
         if (!value || !UI.qs('#gameInput')) return;
         UI.qs('#gameInput').value = value;
-        searchGames(value);
+        debouncedSearchGames(value);
         await loadGuideByName(value);
       }
     });
@@ -814,7 +846,7 @@
     UI.qs('#adminLoginForm')?.addEventListener('submit', handleAdminLogin);
 
     UI.qs('#btnLoad')?.addEventListener('click', event => { event.preventDefault(); openBestSearchResult(UI.qs('#gameInput').value); });
-    UI.qs('#gameInput')?.addEventListener('input', event => searchGames(event.target.value));
+    UI.qs('#gameInput')?.addEventListener('input', event => debouncedSearchGames(event.target.value));
     UI.qs('#gameInput')?.addEventListener('keydown', event => {
       if (event.key === 'Enter') {
         event.preventDefault();
@@ -944,9 +976,12 @@
       focusGuideAction(actionButton.dataset.guideAction || 'trophies');
     });
 
+    UI.qs('#guideQuickDock')?.addEventListener('click', handleGuideQuickDockClick);
+
     window.addEventListener('popstate', async () => {
       if (page !== 'public') return;
       const path = window.location.pathname;
+      syncGuideQuickDock();
       if (path.startsWith('/jogo/')) {
         const slug = decodeURIComponent(path.split('/jogo/')[1] || '');
         await loadGuideBySlug(slug, { skipHistory: true });
@@ -1086,6 +1121,7 @@
       UI.updateLibraryBadge(state.library);
       UI.resetGameForm();
       bindEvents();
+      syncGuideQuickDock();
       await Promise.all([loadGames(), syncSession()]);
       await loadCatalogPage({ page: 1 });
       if (page === 'admin') {

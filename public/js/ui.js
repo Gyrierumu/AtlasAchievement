@@ -1,12 +1,38 @@
 const UI = (() => {
   const toastTimer = { id: null };
+  const modalState = { lastFocused: null };
 
   function qs(selector) { return document.querySelector(selector); }
   function qsa(selector) { return Array.from(document.querySelectorAll(selector)); }
   function has(selector) { return Boolean(qs(selector)); }
   function setClass(selector, className, force) { const el = qs(selector); if (el) el.classList.toggle(className, force); }
 
+  function getFocusableElements(container) {
+    return Array.from(container?.querySelectorAll('button, [href], input, select, textarea, [tabindex]:not([tabindex="-1"])') || [])
+      .filter(element => !element.hasAttribute('disabled') && element.getAttribute('aria-hidden') !== 'true');
+  }
 
+  function handleAdminModalKeydown(event) {
+    const modal = qs('#adminModal');
+    if (!modal || modal.classList.contains('hidden')) return;
+    if (event.key === 'Escape') {
+      event.preventDefault();
+      closeAdminModal();
+      return;
+    }
+    if (event.key !== 'Tab') return;
+    const focusable = getFocusableElements(modal);
+    if (!focusable.length) return;
+    const first = focusable[0];
+    const last = focusable[focusable.length - 1];
+    if (event.shiftKey && document.activeElement === first) {
+      event.preventDefault();
+      last.focus();
+    } else if (!event.shiftKey && document.activeElement === last) {
+      event.preventDefault();
+      first.focus();
+    }
+  }
 
   const FALLBACK_GAME_IMAGE = '/og-default.svg';
 
@@ -604,6 +630,40 @@ const UI = (() => {
     }
   };
 
+  function buildBreadcrumbsHtml(items = []) {
+    return `
+      <nav class="atlas-breadcrumbs" aria-label="Breadcrumb">
+        ${items.map((item, index) => {
+          const isLast = index === items.length - 1;
+          const label = escapeHtml(item?.label || 'Item');
+          if (isLast || !item?.href) return `<span class="atlas-breadcrumbs__item" aria-current="page">${label}</span>`;
+          return `<a href="${escapeAttribute(item.href)}" class="atlas-breadcrumbs__item">${label}</a>`;
+        }).join('<span class="atlas-breadcrumbs__sep" aria-hidden="true">/</span>')}
+      </nav>`;
+  }
+
+  function classifyGameCollections(game = {}, trophies = []) {
+    const difficulty = Number(game?.difficulty || 0);
+    const timeValue = getTimeValue(game);
+    const trophyCount = Array.isArray(trophies) ? trophies.length : Number(game?.trophy_count || 0);
+    const missableText = String(game?.missable || '').toLowerCase();
+    const roadmapCount = Array.isArray(game?.roadmap) ? game.roadmap.length : Number(game?.roadmap_count || 0);
+    const missableCount = (Array.isArray(trophies) ? trophies : []).filter(trophy => trophy?.is_missable || trophy?.is_spoiler).length;
+    const facetIds = [];
+    if (difficulty > 0) facetIds.push(difficulty <= 3 ? 'difficulty-low' : difficulty <= 6 ? 'difficulty-mid' : 'difficulty-high');
+    if (Number.isFinite(timeValue) && timeValue !== Number.MAX_SAFE_INTEGER) facetIds.push(timeValue <= 15 ? 'time-short' : timeValue <= 40 ? 'time-medium' : 'time-long');
+    if (trophyCount > 0) facetIds.push(trophyCount <= 30 ? 'trophies-small' : trophyCount <= 60 ? 'trophies-medium' : 'trophies-large');
+    const badges = [];
+    if (difficulty > 0 && difficulty <= 3) badges.push({ label: 'Bom para iniciantes', tone: 'close' });
+    if (Number.isFinite(timeValue) && timeValue <= 15) badges.push({ label: 'Platina rápida', tone: 'soft' });
+    if (missableCount === 0 && !/perd[ií]vel|missable/.test(missableText)) badges.push({ label: 'Baixo risco de perdível', tone: 'close' });
+    if (missableCount >= 2 || /perd[ií]vel|missable/.test(missableText)) badges.push({ label: 'Exige atenção cedo', tone: 'warm' });
+    if (roadmapCount >= 4) badges.push({ label: 'Pede roadmap', tone: 'accent' });
+    if (Number.isFinite(timeValue) && timeValue > 40) badges.push({ label: 'Projeto longo', tone: 'hot' });
+    const collectionLinks = [...new Set(facetIds)].map(id => ({ id, ...(catalogFacetMeta[id] || {}) })).filter(item => item.id && item.path).slice(0,3).map(item => ({ id: item.id, label: item.name, path: item.path, reason: item.reason || item.collectionDescription || 'Abra esta coleção para comparar jogos parecidos antes de escolher o próximo projeto.' }));
+    return { collectionLinks, badges: badges.slice(0, 4) };
+  }
+
   function parseTimeValue(value = '') {
     const normalized = String(value).toLowerCase();
     const numbers = normalized.match(/\d+/g);
@@ -1172,20 +1232,24 @@ const UI = (() => {
     if (twitterTitle) twitterTitle.setAttribute('content', meta.title);
     const twitterDescription = qs('meta[name="twitter:description"]');
     if (twitterDescription) twitterDescription.setAttribute('content', meta.description);
+    const breadcrumbsTarget = qs('#catalogBreadcrumbs');
+    if (breadcrumbsTarget) breadcrumbsTarget.innerHTML = buildBreadcrumbsHtml([{ label: 'Início', href: '/' }, { label: 'Catálogo', href: '/catalogo' }, { label: meta.name }]);
     const jsonLd = qs('#gameStructuredData');
     if (jsonLd) jsonLd.textContent = JSON.stringify({
       '@context': 'https://schema.org',
-      '@type': 'CollectionPage',
-      name: meta.name,
-      url: `${window.location.origin}${meta.path}`,
-      description: meta.description,
-      breadcrumb: {
+      '@graph': [{
+        '@type': 'CollectionPage',
+        name: meta.name,
+        url: `${window.location.origin}${meta.path}`,
+        description: meta.description
+      }, {
         '@type': 'BreadcrumbList',
         itemListElement: [
-          { '@type': 'ListItem', position: 1, name: 'Catálogo', item: `${window.location.origin}/catalogo` },
-          { '@type': 'ListItem', position: 2, name: meta.name, item: `${window.location.origin}${meta.path}` }
+          { '@type': 'ListItem', position: 1, name: 'Início', item: `${window.location.origin}/` },
+          { '@type': 'ListItem', position: 2, name: 'Catálogo', item: `${window.location.origin}/catalogo` },
+          { '@type': 'ListItem', position: 3, name: meta.name, item: `${window.location.origin}${meta.path}` }
         ]
-      }
+      }]
     });
   }
 
@@ -1347,7 +1411,7 @@ const UI = (() => {
         ? game.image
         : `${window.location.origin}${game.image}`;
     const structuredData = game
-      ? { '@context': 'https://schema.org', '@type': 'VideoGame', name: game.name, image, description, url: canonical }
+      ? { '@context': 'https://schema.org', '@graph': [{ '@type': 'VideoGame', name: game.name, image, description, url: canonical }, { '@type': 'BreadcrumbList', itemListElement: [{ '@type': 'ListItem', position: 1, name: 'Início', item: `${window.location.origin}/` }, { '@type': 'ListItem', position: 2, name: 'Catálogo', item: `${window.location.origin}/catalogo` }, { '@type': 'ListItem', position: 3, name: game.name, item: canonical }] }] }
       : { '@context': 'https://schema.org', '@type': 'WebSite', name: 'AtlasAchievement', description, url: canonical };
 
     document.title = title;
@@ -1382,6 +1446,8 @@ const UI = (() => {
     ensureMeta('meta[name="twitter:description"]', 'content', description);
     ensureMeta('meta[name="twitter:image"]', 'content', image);
 
+    const guideBreadcrumbs = qs('#guideBreadcrumbs');
+    if (guideBreadcrumbs) guideBreadcrumbs.innerHTML = game ? buildBreadcrumbsHtml([{ label: 'Início', href: '/' }, { label: 'Catálogo', href: '/catalogo' }, { label: game.name }]) : '';
     let jsonLd = document.getElementById('gameStructuredData');
     if (!jsonLd) {
       jsonLd = document.createElement('script');
@@ -1401,8 +1467,26 @@ const UI = (() => {
     if (!authenticated) { toggleGameForm(false); togglePasswordPanel(false); togglePreviewPanel(false); }
   }
 
-  function openAdminModal() { const modal = qs('#adminModal'); if (modal) modal.classList.remove('hidden'); if (qs('#adminUsername')) qs('#adminUsername').focus(); }
-  function closeAdminModal() { const modal = qs('#adminModal'); if (modal) modal.classList.add('hidden'); if (qs('#adminLoginForm')) qs('#adminLoginForm').reset(); }
+  function openAdminModal() {
+    const modal = qs('#adminModal');
+    if (!modal) return;
+    modalState.lastFocused = document.activeElement instanceof HTMLElement ? document.activeElement : null;
+    modal.classList.remove('hidden');
+    modal.setAttribute('aria-hidden', 'false');
+    document.body.classList.add('modal-open');
+    document.addEventListener('keydown', handleAdminModalKeydown);
+    if (qs('#adminUsername')) qs('#adminUsername').focus();
+  }
+  function closeAdminModal() {
+    const modal = qs('#adminModal');
+    if (!modal) return;
+    modal.classList.add('hidden');
+    modal.setAttribute('aria-hidden', 'true');
+    document.body.classList.remove('modal-open');
+    document.removeEventListener('keydown', handleAdminModalKeydown);
+    if (qs('#adminLoginForm')) qs('#adminLoginForm').reset();
+    if (modalState.lastFocused?.focus) modalState.lastFocused.focus();
+  }
   function escapeHtml(value) { return String(value).replaceAll('&', '&amp;').replaceAll('<', '&lt;').replaceAll('>', '&gt;').replaceAll('"', '&quot;').replaceAll("'", '&#39;'); }
   function escapeAttribute(value) { return escapeHtml(value); }
 
@@ -1707,7 +1791,8 @@ const UI = (() => {
       image: getGameImageSrc(game?.image),
       editorial: buildEditorialSignals(game, { trophies, roadmap, total, missables }),
       isSaved: Boolean(options?.isSaved),
-      libraryEntry: options?.libraryEntry || null
+      libraryEntry: options?.libraryEntry || null,
+      collectionModel: classifyGameCollections(game, trophies)
     };
   }
 
@@ -1765,6 +1850,11 @@ const UI = (() => {
     const viewModel = buildGuideViewModel(game, completedSource, { isSaved, libraryEntry });
     const guideMeta = getLibraryMeta({ ...game, completed: completedSource, trophies: viewModel.trophies });
 
+    const collectionLinksEl = qs('#guideCollectionLinks');
+    if (collectionLinksEl) {
+      collectionLinksEl.innerHTML = viewModel.collectionModel.collectionLinks.map(item => `<a href="${escapeAttribute(item.path)}" class="glass-morphism rounded-[18px] p-4 border border-white/10 atlas-related-collection"><div class="text-[11px] uppercase tracking-[0.18em] text-white/40">Coleção relacionada</div><strong class="block text-white mt-2">${escapeHtml(item.label)}</strong><p class="text-sm text-white/72 mt-2">${escapeHtml(item.reason)}</p></a>`).join('');
+    }
+
     if (headerEl) {
       headerEl.innerHTML = `
         <section class="atlas-panel p-5 md:p-6 bg-white/[0.03] border border-white/10">
@@ -1774,7 +1864,7 @@ const UI = (() => {
                 ${buildImageAttrs(viewModel.image, game?.name || 'Jogo', 'w-full h-full object-cover', { width: 900, height: 520, fetchpriority: 'high', loading: 'eager', decoding: 'sync', sizes: '(min-width: 1280px) 240px, 160px' })}
               </div>
               <div class="min-w-0">
-                <div class="atlas-eyebrow">Guia revisado para decidir antes de começar</div>
+                ${buildBreadcrumbsHtml([{ label: 'Início', href: '/' }, { label: 'Catálogo', href: '/catalogo' }, { label: game?.name || 'Guia' }])}<div class="atlas-eyebrow mt-4">Guia revisado para decidir antes de começar</div>
                 <h1 class="text-3xl md:text-4xl font-extrabold tracking-tight mt-2 break-words">${escapeHtml(game?.name || 'Guia')}</h1>
                 <p class="text-white/58 mt-3 max-w-3xl">Dificuldade ${escapeHtml(String(game?.difficulty || '-'))}/10 • ${escapeHtml(game?.time || 'Tempo não informado')} • ${viewModel.total} troféu(s) • revisão ${escapeHtml(viewModel.editorial.reviewedAt)}</p>
                 <div class="flex flex-wrap gap-2 mt-4">
@@ -1783,6 +1873,7 @@ const UI = (() => {
                   <span class="atlas-tag ${getDecisionToneClass(viewModel.decisionModel.fitLabel)}">${escapeHtml(viewModel.decisionModel.fitLabel)}</span>
                   <span class="atlas-tag ${getDecisionToneClass(viewModel.decisionModel.riskLabel)}">${escapeHtml(viewModel.decisionModel.riskLabel)}</span>
                   <span class="atlas-tag">${escapeHtml(viewModel.breakdownText)}</span>
+                  ${viewModel.collectionModel.badges.map(badge => `<span class="atlas-tag atlas-tag--${escapeAttribute(badge.tone)}">${escapeHtml(badge.label)}</span>`).join('')}
                 </div>
                 <section class="atlas-decision-panel mt-5">
                   <div class="atlas-decision-panel__header">
@@ -1820,6 +1911,7 @@ const UI = (() => {
                   </div>
                 </div>
                 <p class="text-white/50 mt-4 max-w-3xl">${escapeHtml(game?.missable || 'Sem alerta editorial de perdíveis informado.')}</p>
+                ${viewModel.collectionModel.collectionLinks.length ? `<section class="atlas-decision-panel mt-4"><div class="atlas-decision-panel__header"><div><div class="atlas-eyebrow">Compare este jogo com faixas parecidas</div><h2 class="text-xl md:text-2xl font-extrabold mt-2">Rotas internas para decidir o próximo clique</h2></div><span class="atlas-tag atlas-tag--soft">Coleções</span></div><p class="text-white/74 mt-3 max-w-3xl">Abra coleções parecidas com o perfil deste jogo para comparar esforço, duração e densidade de checklist sem depender só da busca.</p><div class="grid md:grid-cols-3 gap-3 mt-4">${viewModel.collectionModel.collectionLinks.map(item => `<a href="${escapeAttribute(item.path)}" class="glass-morphism rounded-[18px] p-4 border border-white/10 atlas-related-collection"><div class="text-[11px] uppercase tracking-[0.18em] text-white/40">Coleção relacionada</div><strong class="block text-white mt-2">${escapeHtml(item.label)}</strong><p class="text-sm text-white/72 mt-2">${escapeHtml(item.reason)}</p></a>`).join('')}</div></section>` : ''}
               </div>
             </div>
             <div class="flex flex-wrap gap-3 xl:justify-end">
@@ -2023,14 +2115,23 @@ const UI = (() => {
       qs('#remainingCount') ||
       qs('[data-guide-remaining-count]');
 
+    const quickDockProgress = qs('#guideQuickDockProgress');
+
     if (progressBar) progressBar.style.width = `${progress}%`;
     if (progressLabel) progressLabel.textContent = `${progress}%`;
     if (completedLabel) completedLabel.textContent = String(completed);
     if (remainingLabel) remainingLabel.textContent = String(Math.max(total - completed, 0));
+    if (quickDockProgress) quickDockProgress.textContent = `${progress}%`;
 
     return { total, completed, progress };
   }
 
+  function setGuideQuickDockState({ visible = false } = {}) {
+    const dock = qs('#guideQuickDock');
+    if (!dock) return;
+    dock.classList.toggle('hidden', !visible);
+  }
 
-  return { qs, qsa, has, showToast, setLoading, updateLibraryBadge, showView, setSearchFeedback, renderSuggestions, hideSuggestions, renderHomeOverview, renderCatalog, renderLibrary, renderGuide, updateProgress, applyTrophyFilter, setGuideEmptyState, clearTrophySearch, bindGuideSearch, getTrophySearchValue, resetGameForm, appendTrophyInput, replaceTrophyInputs, fillGameForm, toggleGameForm, togglePasswordPanel, togglePreviewPanel, setAdminFormFeedback, renderAdminPreview, renderAdminSummary, renderAdminGames, renderPagination, setPageMeta, setCatalogMeta, setAdminState, openAdminModal, closeAdminModal, setImagePreview, setUploadState };
+
+  return { qs, qsa, has, showToast, setLoading, updateLibraryBadge, showView, setSearchFeedback, renderSuggestions, hideSuggestions, renderHomeOverview, renderCatalog, renderLibrary, renderGuide, updateProgress, setGuideQuickDockState, applyTrophyFilter, setGuideEmptyState, clearTrophySearch, bindGuideSearch, getTrophySearchValue, resetGameForm, appendTrophyInput, replaceTrophyInputs, fillGameForm, toggleGameForm, togglePasswordPanel, togglePreviewPanel, setAdminFormFeedback, renderAdminPreview, renderAdminSummary, renderAdminGames, renderPagination, setPageMeta, setCatalogMeta, setAdminState, openAdminModal, closeAdminModal, setImagePreview, setUploadState };
 })();

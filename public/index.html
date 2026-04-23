@@ -22,6 +22,7 @@
   <link rel="manifest" href="/site.webmanifest">
 </head>
 <body class="atlas-body min-h-screen pb-10" data-page="public">
+  <a href="#mainContent" class="atlas-skip-link">Pular para o conteúdo principal</a>
   <div class="atlas-bg-orb atlas-bg-orb--one"></div>
   <div class="atlas-bg-orb atlas-bg-orb--two"></div>
 
@@ -59,7 +60,7 @@
     </div>
   </header>
 
-  <main class="max-w-[1320px] mx-auto px-4 lg:px-6 pt-6 space-y-6">
+  <main id="mainContent" tabindex="-1" class="max-w-[1320px] mx-auto px-4 lg:px-6 pt-6 space-y-6">
     <section id="view-home" class="space-y-6">
       <section class="atlas-hero-shell atlas-panel overflow-hidden">
         <div class="grid xl:grid-cols-[1.08fr_.92fr] gap-0 min-h-[520px]">
@@ -74,7 +75,7 @@
 
             <div class="mt-8 atlas-search-wrap max-w-[760px]">
               <div class="relative">
-                <input id="gameInput" type="text" placeholder="Busque um jogo e valide rápido se a platina vale seu tempo" class="w-full atlas-search-input pr-20 outline-none" autocomplete="off" role="combobox" aria-autocomplete="list" aria-expanded="false" aria-controls="suggestions">
+                <input id="gameInput" type="text" placeholder="Busque um jogo e valide rápido se a platina vale seu tempo" class="w-full atlas-search-input pr-20 outline-none" autocomplete="off" role="combobox" aria-autocomplete="list" aria-expanded="false" aria-controls="suggestions" aria-describedby="searchFeedback">
                 <button id="btnLoad" class="atlas-search-btn" aria-label="Abrir o jogo certo">
                   <i class="fas fa-arrow-up-right-from-square"></i>
                 </button>
@@ -276,7 +277,7 @@
     <section id="view-catalog" class="__CATALOG_VIEW_CLASS__ space-y-5 pt-2">
       <div class="atlas-section-head atlas-section-head--library">
         <div>
-          <div class="atlas-eyebrow">Catálogo</div>
+          <div id="catalogBreadcrumbs">__CATALOG_BREADCRUMBS__</div><div class="atlas-eyebrow mt-3">Catálogo</div>
           <h2 id="catalogTitle" class="text-[36px] md:text-[52px] leading-none font-extrabold tracking-tight">__CATALOG_TITLE__</h2>
         </div>
         <p id="catalogSummary" class="text-[15px] text-white/55 max-w-xl">__CATALOG_SUMMARY__</p>
@@ -397,6 +398,7 @@
     </section>
 
     <section id="view-guide" class="__GUIDE_VIEW_CLASS__ pt-2 space-y-5" data-ssr-game="__HAS_SSR_GAME__">
+      <div id="guideBreadcrumbs">__GUIDE_BREADCRUMBS__</div>
       <div id="guideHeader">__SSR_GUIDE_HEADER__</div>
       <div id="loading" class="flex flex-col items-center space-y-4 py-20 hidden">
         <div class="loading-spinner"></div>
@@ -443,6 +445,7 @@
                 <p class="text-white/58 mt-2 max-w-3xl">Quando terminar ou quiser alternar de projeto, use estes jogos parecidos para manter o mesmo ritmo de progresso.</p>
               </div>
             </div>
+            <div id="guideCollectionLinks" class="grid md:grid-cols-3 gap-4">__GUIDE_COLLECTION_LINKS__</div>
             <div id="guideRelatedOverview" class="grid md:grid-cols-2 gap-4"></div>
           </section>
         </div>
@@ -463,12 +466,12 @@
     </div>
   </footer>
 
-  <div id="adminModal" class="hidden fixed inset-0 bg-black/80 backdrop-blur-md z-[100] p-4">
+  <div id="adminModal" class="hidden fixed inset-0 bg-black/80 backdrop-blur-md z-[100] p-4" role="dialog" aria-modal="true" aria-labelledby="adminModalTitle" aria-describedby="adminModalDescription" aria-hidden="true">
     <div class="max-w-md mx-auto mt-24 atlas-panel p-6 rounded-[28px]">
       <div class="flex items-center justify-between gap-4 mb-4">
         <div>
-          <h3 class="text-xl font-bold">Entrar no painel</h3>
-          <p class="text-sm text-white/45 mt-1">Faça login para gerenciar jogos, troféus e guias.</p>
+          <h3 id="adminModalTitle" class="text-xl font-bold">Entrar no painel</h3>
+          <p id="adminModalDescription" class="text-sm text-white/45 mt-1">Faça login para gerenciar jogos, troféus e guias.</p>
         </div>
         <button id="closeAdminModalBtn" class="text-white/45 hover:text-white">Fechar</button>
       </div>
@@ -480,6 +483,20 @@
     </div>
   </div>
 
+
+
+  <div id="guideQuickDock" class="atlas-quick-dock hidden" aria-label="Atalhos do guia">
+    <div class="atlas-quick-dock__progress">
+      <span class="atlas-quick-dock__label">Guia atual</span>
+      <strong id="guideQuickDockProgress">0%</strong>
+    </div>
+    <div class="atlas-quick-dock__actions">
+      <button type="button" class="atlas-quick-dock__btn" data-guide-action="roadmap">Roadmap</button>
+      <button type="button" class="atlas-quick-dock__btn" data-guide-action="first-pending">Próximo troféu</button>
+      <button type="button" class="atlas-quick-dock__btn" data-guide-action="trophies">Checklist</button>
+      <button type="button" class="atlas-quick-dock__btn atlas-quick-dock__btn--top" data-scroll-top="true">Topo</button>
+    </div>
+  </div>
   <div id="toast" class="toast" role="status" aria-live="polite" aria-atomic="true"></div>
   __INITIAL_STATE_SCRIPT__
   <script src="/js/api.js" defer></script>

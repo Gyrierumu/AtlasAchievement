@@ -518,7 +518,8 @@ function buildGuideViewModel(game, completedSource = [], options = {}) {
     image: game?.image || '/og-default.svg',
     editorial: buildEditorialSignals(game, { trophies, roadmap, total, missables }),
     isSaved: Boolean(options?.isSaved),
-    libraryEntry: options?.libraryEntry || null
+    libraryEntry: options?.libraryEntry || null,
+    collectionModel: classifyGameCollections(game, trophies)
   };
 }
 
@@ -531,7 +532,7 @@ function renderGuideHeaderHtml(game, viewModel, options = {}) {
             <img src="${escapeHtml(viewModel.image)}" alt="${escapeHtml(game?.name || 'Jogo')}" class="w-full h-full object-cover" loading="eager" decoding="sync" fetchpriority="high" width="900" height="520" sizes="(min-width: 1280px) 240px, 160px">
           </div>
           <div class="min-w-0">
-            <div class="atlas-eyebrow">Guia revisado para decidir antes de começar</div>
+            __GUIDE_BREADCRUMBS__<div class="atlas-eyebrow mt-4">Guia revisado para decidir antes de começar</div>
             <h1 class="text-3xl md:text-4xl font-extrabold tracking-tight mt-2 break-words">${escapeHtml(game?.name || 'Guia')}</h1>
             <p class="text-white/58 mt-3 max-w-3xl">Dificuldade ${escapeHtml(String(game?.difficulty || '-'))}/10 • ${escapeHtml(game?.time || 'Tempo não informado')} • ${viewModel.total} troféu(s) • revisão ${escapeHtml(viewModel.editorial.reviewedAt)}</p>
             <div class="flex flex-wrap gap-2 mt-4">
@@ -540,6 +541,7 @@ function renderGuideHeaderHtml(game, viewModel, options = {}) {
               <span class="atlas-tag ${getDecisionToneClass(viewModel.decisionModel.fitLabel)}">${escapeHtml(viewModel.decisionModel.fitLabel)}</span>
               <span class="atlas-tag ${getDecisionToneClass(viewModel.decisionModel.riskLabel)}">${escapeHtml(viewModel.decisionModel.riskLabel)}</span>
               <span class="atlas-tag">${escapeHtml(viewModel.breakdownText)}</span>
+              ${viewModel.collectionModel.badges.map(badge => `<span class="atlas-tag atlas-tag--${escapeHtml(badge.tone)}">${escapeHtml(badge.label)}</span>`).join('')}
             </div>
             <section class="atlas-decision-panel mt-5">
               <div class="atlas-decision-panel__header">
@@ -577,6 +579,7 @@ function renderGuideHeaderHtml(game, viewModel, options = {}) {
               </div>
             </div>
             <p class="text-white/50 mt-4 max-w-3xl">${escapeHtml(game?.missable || 'Sem alerta editorial de perdíveis informado.')}</p>
+            ${viewModel.collectionModel.collectionLinks.length ? `<section class="atlas-decision-panel mt-4"><div class="atlas-decision-panel__header"><div><div class="atlas-eyebrow">Compare este jogo com faixas parecidas</div><h2 class="text-xl md:text-2xl font-extrabold mt-2">Rotas internas para decidir o próximo clique</h2></div><span class="atlas-tag atlas-tag--soft">SEO + navegação</span></div><p class="text-white/74 mt-3 max-w-3xl">Abra coleções parecidas com o perfil deste jogo para comparar esforço, duração e densidade de checklist sem depender só da busca.</p><div class="grid md:grid-cols-3 gap-3 mt-4">${viewModel.collectionModel.collectionLinks.map(item => `<a href="${escapeHtml(item.path)}" class="glass-morphism rounded-[18px] p-4 border border-white/10 atlas-related-collection"><div class="text-[11px] uppercase tracking-[0.18em] text-white/40">Coleção relacionada</div><strong class="block text-white mt-2">${escapeHtml(item.label)}</strong><p class="text-sm text-white/72 mt-2">${escapeHtml(item.reason)}</p></a>`).join('')}</div></section>` : ''}
           </div>
         </div>
         <div class="flex flex-wrap gap-3 xl:justify-end">
@@ -675,6 +678,9 @@ function applyTemplateDefaults(template) {
     .replace(/__CATALOG_VIEW_CLASS__/g, 'hidden')
     .replace(/__GUIDE_VIEW_CLASS__/g, 'hidden')
     .replace(/__GUIDE_CONTENT_CLASS__/g, 'hidden')
+    .replace(/__CATALOG_BREADCRUMBS__/g, '')
+    .replace(/__GUIDE_BREADCRUMBS__/g, '')
+    .replace(/__GUIDE_COLLECTION_LINKS__/g, '')
     .replace(/__HAS_SSR_GAME__/g, 'false')
     .replace(/__SSR_GUIDE_HEADER__/g, '')
     .replace(/__SSR_GUIDE_SIDEBAR__/g, '')
@@ -700,14 +706,24 @@ function buildGamePageHtml(game, req) {
   const title = `${game.name} | Troféus, roadmap e guia | AtlasAchievement`;
   const description = `${game.name}: dificuldade ${game.difficulty}/10, tempo ${game.time}, ${game.trophies.length} troféus e guia com roadmap e alertas de perdíveis.`;
   const image = resolveMetaImage(origin, game.image);
+  const guideCollections = classifyGameCollections(game, game.trophies || []);
   const structuredData = safeJsonForHtml({
     '@context': 'https://schema.org',
-    '@type': 'VideoGame',
-    name: game.name,
-    image,
-    description,
-    genre: 'Achievement tracking',
-    url: canonicalUrl
+    '@graph': [{
+      '@type': 'VideoGame',
+      name: game.name,
+      image,
+      description,
+      genre: 'Achievement tracking',
+      url: canonicalUrl
+    }, {
+      '@type': 'BreadcrumbList',
+      itemListElement: [
+        { '@type': 'ListItem', position: 1, name: 'Início', item: `${origin}/` },
+        { '@type': 'ListItem', position: 2, name: 'Catálogo', item: `${origin}/catalogo` },
+        { '@type': 'ListItem', position: 3, name: game.name, item: canonicalUrl }
+      ]
+    }]
   });
   const ssrMarkup = buildSsrGuideMarkup(game);
 
@@ -719,6 +735,8 @@ function buildGamePageHtml(game, req) {
     .replace(/__PAGE_JSON_LD__/g, structuredData)
     .replace(/__HOME_VIEW_CLASS__/g, 'hidden')
     .replace(/__GUIDE_VIEW_CLASS__/g, '')
+    .replace(/__GUIDE_BREADCRUMBS__/g, buildBreadcrumbsHtml([{ label: 'Início', href: '/' }, { label: 'Catálogo', href: '/catalogo' }, { label: game.name }]))
+    .replace(/__GUIDE_COLLECTION_LINKS__/g, guideCollections.collectionLinks.map(item => `<a href="${escapeHtml(item.path)}" class="glass-morphism rounded-[18px] p-4 border border-white/10 atlas-related-collection"><div class="text-[11px] uppercase tracking-[0.18em] text-white/40">Coleção relacionada</div><strong class="block text-white mt-2">${escapeHtml(item.label)}</strong><p class="text-sm text-white/72 mt-2">${escapeHtml(item.reason)}</p></a>`).join(''))
     .replace(/__GUIDE_CONTENT_CLASS__/g, '')
     .replace(/__HAS_SSR_GAME__/g, 'true')
     .replace(/__SSR_GUIDE_HEADER__/g, ssrMarkup.header)
@@ -793,22 +811,81 @@ function renderCatalogRelatedLinks(facetConfig) {
 function buildCatalogStructuredData(origin, canonicalUrl, facetConfig, items = []) {
   return {
     '@context': 'https://schema.org',
-    '@type': 'CollectionPage',
-    name: facetConfig?.name || 'Catálogo de jogos',
-    url: canonicalUrl,
-    description: facetConfig?.description || 'Coleção de jogos com guias, troféus, tempo estimado e filtros por intenção.',
-    mainEntity: {
-      '@type': 'ItemList',
-      itemListOrder: 'https://schema.org/ItemListOrderAscending',
-      numberOfItems: items.length,
-      itemListElement: items.map((game, index) => ({
-        '@type': 'ListItem',
-        position: index + 1,
-        url: `${origin}/jogo/${game.slug || ''}`,
-        name: game.name || 'Jogo'
-      }))
-    }
+    '@graph': [{
+      '@type': 'CollectionPage',
+      name: facetConfig?.name || 'Catálogo de jogos',
+      url: canonicalUrl,
+      description: facetConfig?.description || 'Coleção de jogos com guias, troféus, tempo estimado e filtros por intenção.',
+      mainEntity: {
+        '@type': 'ItemList',
+        itemListOrder: 'https://schema.org/ItemListOrderAscending',
+        numberOfItems: items.length,
+        itemListElement: items.map((game, index) => ({
+          '@type': 'ListItem',
+          position: index + 1,
+          url: `${origin}/jogo/${game.slug || ''}`,
+          name: game.name || 'Jogo'
+        }))
+      }
+    }, {
+      '@type': 'BreadcrumbList',
+      itemListElement: [
+        { '@type': 'ListItem', position: 1, name: 'Início', item: `${origin}/` },
+        { '@type': 'ListItem', position: 2, name: 'Catálogo', item: `${origin}/catalogo` },
+        { '@type': 'ListItem', position: 3, name: facetConfig?.name || 'Catálogo de jogos', item: canonicalUrl }
+      ]
+    }]
   };
+}
+
+
+function buildBreadcrumbsHtml(items = []) {
+  return `
+    <nav class="atlas-breadcrumbs" aria-label="Breadcrumb">
+      ${items.map((item, index) => {
+        const isLast = index === items.length - 1;
+        const label = escapeHtml(item?.label || 'Item');
+        if (isLast || !item?.href) {
+          return `<span class="atlas-breadcrumbs__item" aria-current="page">${label}</span>`;
+        }
+        return `<a href="${escapeHtml(item.href)}" class="atlas-breadcrumbs__item">${label}</a>`;
+      }).join('<span class="atlas-breadcrumbs__sep" aria-hidden="true">/</span>')}
+    </nav>`;
+}
+
+function classifyGameCollections(game = {}, trophies = []) {
+  const difficulty = Number(game?.difficulty || 0);
+  const timeValue = getTimeValue(game);
+  const trophyCount = Array.isArray(trophies) ? trophies.length : Number(game?.trophy_count || 0);
+  const missableText = String(game?.missable || '').toLowerCase();
+  const roadmapCount = Array.isArray(game?.roadmap) ? game.roadmap.length : Number(game?.roadmap_count || 0);
+  const missableCount = (Array.isArray(trophies) ? trophies : []).filter(trophy => trophy?.is_missable || trophy?.is_spoiler).length;
+
+  const facetIds = [];
+  if (difficulty > 0) facetIds.push(difficulty <= 3 ? 'difficulty-low' : difficulty <= 6 ? 'difficulty-mid' : 'difficulty-high');
+  if (Number.isFinite(timeValue) && timeValue !== Number.MAX_SAFE_INTEGER) facetIds.push(timeValue <= 15 ? 'time-short' : timeValue <= 40 ? 'time-medium' : 'time-long');
+  if (trophyCount > 0) facetIds.push(trophyCount <= 30 ? 'trophies-small' : trophyCount <= 60 ? 'trophies-medium' : 'trophies-large');
+
+  const badges = [];
+  if (difficulty > 0 && difficulty <= 3) badges.push({ label: 'Bom para iniciantes', tone: 'close' });
+  if (Number.isFinite(timeValue) && timeValue <= 15) badges.push({ label: 'Platina rápida', tone: 'soft' });
+  if (missableCount === 0 && !/perd[ií]vel|missable/.test(missableText)) badges.push({ label: 'Baixo risco de perdível', tone: 'close' });
+  if (missableCount >= 2 || /perd[ií]vel|missable/.test(missableText)) badges.push({ label: 'Exige atenção cedo', tone: 'warm' });
+  if (roadmapCount >= 4) badges.push({ label: 'Pede roadmap', tone: 'accent' });
+  if (Number.isFinite(timeValue) && timeValue > 40) badges.push({ label: 'Projeto longo', tone: 'hot' });
+
+  const collectionLinks = [...new Set(facetIds)]
+    .map(id => ({ id, ...(catalogFacetPageMap[id] || {}) }))
+    .filter(item => item.id && item.path)
+    .slice(0, 3)
+    .map(item => ({
+      id: item.id,
+      label: item.name,
+      path: item.path,
+      reason: item.reason || item.collectionDescription || 'Abra esta coleção para comparar jogos parecidos antes de escolher o próximo projeto.'
+    }));
+
+  return { collectionLinks, badges: badges.slice(0, 4) };
 }
 
 async function buildCatalogPageHtml(req, facetSlug = null) {
@@ -832,6 +909,7 @@ async function buildCatalogPageHtml(req, facetSlug = null) {
     .replace(/__HOME_VIEW_CLASS__/g, 'hidden')
     .replace(/__CATALOG_VIEW_CLASS__/g, '')
     .replace(/__CATALOG_TITLE__/g, escapeHtml(facetConfig?.name || 'Catálogo de jogos'))
+    .replace(/__CATALOG_BREADCRUMBS__/g, buildBreadcrumbsHtml([{ label: 'Início', href: '/' }, { label: 'Catálogo', href: '/catalogo' }, { label: facetConfig?.name || 'Catálogo de jogos' }]))
     .replace(/__CATALOG_SUMMARY__/g, escapeHtml(`${total} jogo(s) encontrados nesta visão editorial do catálogo.`))
     .replace(/__CATALOG_HERO_TITLE__/g, escapeHtml(facetConfig?.heroTitle || 'Navegue sem depender da busca'))
     .replace(/__CATALOG_HERO_DESCRIPTION__/g, escapeHtml(facetConfig?.heroDescription || 'Veja todos os jogos em uma lista filtrável com dificuldade, tempo estimado, troféus e acesso direto à página de guia.'))
@@ -914,7 +992,16 @@ app.use('/uploads', express.static(env.uploadDir, {
     }
   }
 }));
-app.use(express.static(path.join(__dirname, '../public'), { index: false }));
+app.use(express.static(path.join(__dirname, '../public'), {
+  index: false,
+  etag: true,
+  maxAge: env.isProduction ? '7d' : 0,
+  setHeaders: (res, filePath) => {
+    if (env.isProduction && /\.(?:css|js|svg|png|jpg|jpeg|webp|woff2?)$/i.test(filePath)) {
+      res.setHeader('Cache-Control', 'public, max-age=604800, stale-while-revalidate=86400');
+    }
+  }
+}));
 
 app.get('/api/health', (req, res) => {
   res.json({
