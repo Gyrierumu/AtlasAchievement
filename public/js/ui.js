@@ -1188,7 +1188,7 @@ const UI = (() => {
       const assistiveText = getAssistiveText(game);
       const spotlight = sort === 'recommended-desc' && index < 3 ? `<span class="atlas-catalog-spotlight"><i class="fas fa-star"></i> Destaque ${index + 1}</span>` : '';
       return `
-        <a href="/jogo/${escapeAttribute(game.slug)}" class="atlas-catalog-card" data-home-game="${escapeAttribute(game.name)}">
+        <a href="/jogo/${escapeAttribute(game.slug)}" class="atlas-catalog-card" data-home-game="${escapeAttribute(game.name)}" data-game-slug="${escapeAttribute(game.slug)}">
           ${buildImageAttrs(game.image, game.name, 'atlas-catalog-card__image', { width: 900, height: 520, sizes: '(min-width: 1280px) 33vw, (min-width: 768px) 50vw, 100vw' })}
           <div class="atlas-catalog-card__body">
             <div class="atlas-catalog-badges">
@@ -1815,7 +1815,7 @@ const UI = (() => {
       const roadmapCount = Number(game?.roadmap_count || game?.roadmap?.length || 0);
       const image = getGameImageSrc(game?.image);
       return `
-        <a href="/jogo/${escapeAttribute(game?.slug || '')}" class="atlas-catalog-card" data-home-game="${escapeAttribute(game?.name || '')}">
+        <a href="/jogo/${escapeAttribute(game?.slug || '')}" class="atlas-catalog-card" data-home-game="${escapeAttribute(game?.name || '')}" data-game-slug="${escapeAttribute(game?.slug || '')}">
           ${buildImageAttrs(image, game?.name || 'Jogo', 'atlas-catalog-card__image', { width: 900, height: 520, sizes: '(min-width: 1280px) 33vw, (min-width: 768px) 50vw, 100vw' })}
           <div class="atlas-catalog-card__body">
             <div class="atlas-catalog-badges">

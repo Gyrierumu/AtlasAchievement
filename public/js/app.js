@@ -1201,10 +1201,13 @@
         return;
       }
 
-      const gameLink = event.target.closest('[data-home-game]');
+      const gameLink = event.target.closest('.atlas-catalog-card');
       if (gameLink) {
         event.preventDefault();
-        loadGuideByName(gameLink.dataset.homeGame);
+        const slug = gameLink.dataset.gameSlug || decodeURIComponent(((gameLink.getAttribute('href') || '').split('/jogo/')[1] || '').trim());
+        if (slug) {
+          await loadGuideBySlug(slug);
+        }
       }
     });
 
