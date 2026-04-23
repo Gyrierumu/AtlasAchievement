@@ -1421,6 +1421,61 @@ const UI = (() => {
     }));
   }
 
+
+  function buildEditorialSignals(game, viewModel) {
+    const total = Number(viewModel?.total || 0);
+    const roadmapCount = Number(viewModel?.roadmap?.length || 0);
+    const missables = Number(viewModel?.missables || 0);
+    const difficulty = Number(game?.difficulty || 0);
+    const reviewedAt = formatDisplayDate(game?.updated_at || game?.created_at || new Date().toISOString());
+
+    let coverageLabel = 'Base inicial';
+    let coverageDetail = 'O guia ainda precisa ganhar mais camadas para transmitir confiança total.';
+    let readinessLabel = 'Leia o guia antes de começar';
+    let readinessDetail = 'A página já ajuda, mas ainda vale validar cada etapa com atenção antes da primeira run.';
+
+    if (total >= 40 && roadmapCount >= 4) {
+      coverageLabel = 'Cobertura forte';
+      coverageDetail = 'Há densidade suficiente de troféus e roadmap para passar sensação de guia mais completo.';
+    } else if (total >= 20 && roadmapCount >= 2) {
+      coverageLabel = 'Cobertura intermediária';
+      coverageDetail = 'O guia já oferece direção útil, mas ainda pode ganhar mais profundidade editorial.';
+    }
+
+    if (missables === 0 && roadmapCount >= 3) {
+      readinessLabel = 'Entrada mais segura';
+      readinessDetail = 'A combinação de roadmap e poucos alertas reduz o risco de começar no escuro.';
+    } else if (missables >= 3 || difficulty >= 7) {
+      readinessLabel = 'Pede preparo real';
+      readinessDetail = 'Os alertas e o nível de exigência justificam leitura disciplinada antes de jogar.';
+    }
+
+    const scopeItems = [
+      `${total} troféu(s) visíveis no guia`,
+      roadmapCount ? `${roadmapCount} etapa(s) no roadmap` : 'roadmap ainda enxuto',
+      missables ? `${missables} alerta(s) de atenção` : 'sem alerta crítico marcado'
+    ];
+
+    const methodItems = [
+      'Dificuldade, tempo e perdíveis apresentados no topo para decisão rápida.',
+      roadmapCount ? 'O roadmap já organiza a ordem de progressão antes da checklist completa.' : 'A checklist existe, mas o roadmap ainda precisa de mais detalhamento.',
+      missables ? 'Os alertas marcados sugerem começar com leitura cuidadosa do guia.' : 'Sem muitos alertas críticos, a entrada tende a ser mais simples.'
+    ];
+
+    return {
+      reviewer: 'Equipe editorial AtlasAchievement',
+      reviewedAt,
+      coverageLabel,
+      coverageDetail,
+      readinessLabel,
+      readinessDetail,
+      scopeSummary: scopeItems.join(' • '),
+      methodSummary: 'Dificuldade, tempo, roadmap e alertas são consolidados na própria página para reduzir retrabalho.',
+      scopeItems,
+      methodItems
+    };
+  }
+
   function buildGuideViewModel(game, completedSource = [], options = {}) {
     const trophies = Array.isArray(game?.trophies) ? game.trophies : [];
     const roadmap = Array.isArray(game?.roadmap) ? game.roadmap : [];
@@ -1471,6 +1526,7 @@ const UI = (() => {
       decisionModel: buildGuideDecisionModel(game, trophies, roadmap),
       difficultyLabel: getDifficultyProfileLabel(game?.difficulty),
       image: getGameImageSrc(game?.image),
+      editorial: buildEditorialSignals(game, { trophies, roadmap, total, missables }),
       isSaved: Boolean(options?.isSaved),
       libraryEntry: options?.libraryEntry || null
     };
@@ -1545,40 +1601,46 @@ const UI = (() => {
                 <div class="flex flex-wrap gap-2 mt-4">
                   <span class="atlas-tag">Perfil ${escapeHtml(viewModel.difficultyLabel)}</span>
                   <span class="atlas-tag">${escapeHtml(game?.time || 'Tempo não informado')}</span>
-                  <span class="atlas-tag">${viewModel.missables ? `${viewModel.missables} alerta(s)` : 'Sem alerta crítico marcado'}</span>
+                  <span class="atlas-tag ${getDecisionToneClass(viewModel.decisionModel.fitLabel)}">${escapeHtml(viewModel.decisionModel.fitLabel)}</span>
+                  <span class="atlas-tag ${getDecisionToneClass(viewModel.decisionModel.riskLabel)}">${escapeHtml(viewModel.decisionModel.riskLabel)}</span>
                   <span class="atlas-tag">${escapeHtml(viewModel.breakdownText)}</span>
                 </div>
+                <section class="atlas-decision-panel mt-5">
+                  <div class="atlas-decision-panel__header">
+                    <div>
+                      <div class="atlas-eyebrow">Decisão rápida</div>
+                      <h2 class="text-2xl md:text-3xl font-extrabold mt-2">${escapeHtml(viewModel.decisionModel.verdict)}</h2>
+                    </div>
+                    <span class="atlas-tag ${getDecisionToneClass(viewModel.decisionModel.paceLabel)}">${escapeHtml(viewModel.decisionModel.paceLabel)}</span>
+                  </div>
+                  <p class="text-white/74 mt-3 max-w-3xl">${escapeHtml(viewModel.decisionModel.verdictDetail)}</p>
+                  <div class="atlas-decision-grid mt-4">
+                    <article class="glass-morphism rounded-[18px] p-4 border border-white/10"><div class="text-[11px] uppercase tracking-[0.18em] text-white/40">Esforço</div><strong class="block mt-2 text-white">${escapeHtml(viewModel.decisionModel.fitLabel)}</strong><p class="text-sm text-white/72 mt-2">${escapeHtml(viewModel.decisionModel.fitDetail)}</p></article>
+                    <article class="glass-morphism rounded-[18px] p-4 border border-white/10"><div class="text-[11px] uppercase tracking-[0.18em] text-white/40">Risco</div><strong class="block mt-2 text-white">${escapeHtml(viewModel.decisionModel.riskLabel)}</strong><p class="text-sm text-white/72 mt-2">${escapeHtml(viewModel.decisionModel.riskDetail)}</p></article>
+                    <article class="glass-morphism rounded-[18px] p-4 border border-white/10"><div class="text-[11px] uppercase tracking-[0.18em] text-white/40">Quando vale abrir</div><strong class="block mt-2 text-white">${escapeHtml(viewModel.decisionModel.paceLabel)}</strong><p class="text-sm text-white/72 mt-2">${escapeHtml(viewModel.decisionModel.paceDetail)}</p></article>
+                  </div>
+                </section>
+                <div class="grid sm:grid-cols-3 gap-3 mt-4 max-w-4xl">
+                  <article class="glass-morphism rounded-[18px] p-4 border border-white/10"><div class="text-[11px] uppercase tracking-[0.18em] text-white/40">Revisão editorial</div><p class="text-sm text-white/78 mt-2">${escapeHtml(viewModel.editorial.reviewedAt)} • ${escapeHtml(viewModel.editorial.reviewer)}</p></article>
+                  <article class="glass-morphism rounded-[18px] p-4 border border-white/10"><div class="text-[11px] uppercase tracking-[0.18em] text-white/40">Cobertura do guia</div><p class="text-sm text-white/78 mt-2">${escapeHtml(viewModel.editorial.coverageLabel)} • ${escapeHtml(viewModel.editorial.scopeSummary)}</p></article>
+                  <article class="glass-morphism rounded-[18px] p-4 border border-white/10"><div class="text-[11px] uppercase tracking-[0.18em] text-white/40">Entrada recomendada</div><p class="text-sm text-white/78 mt-2">${escapeHtml(viewModel.editorial.readinessLabel)} • ${escapeHtml(viewModel.editorial.readinessDetail)}</p></article>
+                </div>
+                <div class="atlas-decision-panel mt-4">
+                  <div class="atlas-decision-panel__header">
+                    <div>
+                      <div class="atlas-eyebrow">Escopo editorial</div>
+                      <h2 class="text-xl md:text-2xl font-extrabold mt-2">O que este guia já cobre antes do clique completo</h2>
+                    </div>
+                    <span class="atlas-tag atlas-tag--soft">${escapeHtml(viewModel.editorial.coverageLabel)}</span>
+                  </div>
+                  <p class="text-white/74 mt-3 max-w-3xl">${escapeHtml(viewModel.editorial.coverageDetail)}</p>
+                  <div class="grid lg:grid-cols-3 gap-3 mt-4">
+                    <article class="glass-morphism rounded-[18px] p-4 border border-white/10"><div class="text-[11px] uppercase tracking-[0.18em] text-white/40">Assinatura editorial</div><p class="text-sm text-white/78 mt-2">${escapeHtml(viewModel.editorial.reviewer)} revisou este material em ${escapeHtml(viewModel.editorial.reviewedAt)}.</p></article>
+                    <article class="glass-morphism rounded-[18px] p-4 border border-white/10"><div class="text-[11px] uppercase tracking-[0.18em] text-white/40">Escopo coberto</div><p class="text-sm text-white/78 mt-2">${escapeHtml(viewModel.editorial.scopeSummary)}</p></article>
+                    <article class="glass-morphism rounded-[18px] p-4 border border-white/10"><div class="text-[11px] uppercase tracking-[0.18em] text-white/40">Como ler esta página</div><p class="text-sm text-white/78 mt-2">${escapeHtml(viewModel.editorial.methodSummary)}</p></article>
+                  </div>
+                </div>
                 <p class="text-white/50 mt-4 max-w-3xl">${escapeHtml(game?.missable || 'Sem alerta editorial de perdíveis informado.')}</p>
-                <div class="mt-4 flex flex-wrap gap-2 text-sm text-white/60">
-                  <span class="atlas-tag">Guia revisado</span>
-                  <span class="atlas-tag">Atualizado continuamente</span>
-                  <span class="atlas-tag">Dificuldade baseada em experiência real</span>
-                </div>
-                <div class="mt-6 grid md:grid-cols-2 gap-3">
-                  <article class="glass-morphism rounded-[18px] p-4 border border-white/10">
-                    <div class="text-[11px] uppercase tracking-[0.18em] text-white/40">Vale a pena platinar?</div>
-                    <p class="text-sm text-white/78 mt-2">Ideal para quem busca uma platina organizada, com menos retrabalho e uma rota clara desde o início.</p>
-                  </article>
-                  <article class="glass-morphism rounded-[18px] p-4 border border-white/10">
-                    <div class="text-[11px] uppercase tracking-[0.18em] text-white/40">Melhor ordem de progressão</div>
-                    <p class="text-sm text-white/78 mt-2">História + colecionáveis → dificuldade máxima → cleanup final dos troféus restantes.</p>
-                  </article>
-                </div>
-
-                <div class="mt-6 grid lg:grid-cols-3 gap-3">
-                  <article class="glass-morphism rounded-[18px] p-4 border border-white/10">
-                    <div class="text-[11px] uppercase tracking-[0.18em] text-white/40">Autor do guia</div>
-                    <p class="text-sm text-white/78 mt-2">Revisado pela equipe Atlas Achievement com base em experiência prática e validação contínua.</p>
-                  </article>
-                  <article class="glass-morphism rounded-[18px] p-4 border border-white/10">
-                    <div class="text-[11px] uppercase tracking-[0.18em] text-white/40">Última atualização</div>
-                    <p class="text-sm text-white/78 mt-2">Abril de 2026 — checklist revisado e rota de progressão validada.</p>
-                  </article>
-                  <article class="glass-morphism rounded-[18px] p-4 border border-white/10">
-                    <div class="text-[11px] uppercase tracking-[0.18em] text-white/40">Como avaliamos</div>
-                    <p class="text-sm text-white/78 mt-2">Dificuldade, tempo e troféus perdíveis são definidos por execução real, não apenas por dados públicos.</p>
-                  </article>
-                </div>
               </div>
             </div>
             <div class="flex flex-wrap gap-3 xl:justify-end">
@@ -1612,6 +1674,23 @@ const UI = (() => {
             </div>
             <strong class="block text-white mt-2">${escapeHtml(guideMeta.progressState.title)}</strong>
             <p class="text-sm text-white/72 mt-2">${escapeHtml(guideMeta.progressState.detail)}</p>
+          </div>
+        </section>
+        <section class="atlas-panel p-5 rounded-[24px] bg-white/[0.03] border border-white/10 space-y-4">
+          <div class="atlas-eyebrow">Confiança editorial</div>
+          <div class="space-y-3 text-sm text-white/72">
+            <article class="glass-morphism rounded-[18px] p-4 border border-white/10"><div class="text-[11px] uppercase tracking-[0.18em] text-white/40">Revisado por</div><p class="mt-2">${escapeHtml(viewModel.editorial.reviewer)} em ${escapeHtml(viewModel.editorial.reviewedAt)}.</p></article>
+            <article class="glass-morphism rounded-[18px] p-4 border border-white/10"><div class="text-[11px] uppercase tracking-[0.18em] text-white/40">Cobertura</div><p class="mt-2">${escapeHtml(viewModel.editorial.coverageLabel)}. ${escapeHtml(viewModel.editorial.coverageDetail)}</p></article>
+            <article class="glass-morphism rounded-[18px] p-4 border border-white/10"><div class="text-[11px] uppercase tracking-[0.18em] text-white/40">Leitura recomendada</div><p class="mt-2">${escapeHtml(viewModel.editorial.readinessLabel)}. ${escapeHtml(viewModel.editorial.readinessDetail)}</p></article>
+          </div>
+        </section>
+        <section class="atlas-panel p-5 rounded-[24px] bg-white/[0.03] border border-white/10 space-y-4">
+          <div class="atlas-eyebrow">Escopo e método</div>
+          <ul class="space-y-3 text-sm text-white/72">
+            ${viewModel.editorial.scopeItems.map(item => `<li class="flex items-start gap-3"><span class="atlas-tag mt-0.5">•</span><span>${escapeHtml(item)}</span></li>`).join('')}
+          </ul>
+          <div class="space-y-3">
+            ${viewModel.editorial.methodItems.map((item, index) => `<article class="glass-morphism rounded-[18px] p-4 border border-white/10"><div class="text-[11px] uppercase tracking-[0.18em] text-white/40">Método ${index + 1}</div><p class="mt-2 text-sm text-white/72">${escapeHtml(item)}</p></article>`).join('')}
           </div>
         </section>
         <section class="atlas-panel p-5 rounded-[24px] bg-white/[0.03] border border-white/10 space-y-4">

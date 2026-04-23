@@ -16,31 +16,8 @@
   <meta name="twitter:description" content="__PAGE_DESCRIPTION__">
   <meta name="twitter:image" content="__PAGE_OG_IMAGE__">
   <script type="application/ld+json" id="gameStructuredData">__PAGE_JSON_LD__</script>
-  <script src="https://cdn.tailwindcss.com"></script>
-  <script>
-    tailwind.config = {
-      theme: {
-        extend: {
-          colors: {
-            atlas: {
-              50: '#eff6ff',
-              100: '#dbeafe',
-              300: '#7dd3fc',
-              400: '#38bdf8',
-              500: '#0ea5e9',
-              600: '#0284c7',
-              700: '#0369a1',
-              900: '#08111f'
-            }
-          },
-          boxShadow: {
-            atlas: '0 30px 80px rgba(2, 8, 23, .45)'
-          }
-        }
-      }
-    }
-  </script>
   <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+  <link rel="stylesheet" href="/css/utilities.css">
   <link rel="stylesheet" href="/css/styles.css">
   <link rel="manifest" href="/site.webmanifest">
 </head>
@@ -300,17 +277,17 @@
       <div class="atlas-section-head atlas-section-head--library">
         <div>
           <div class="atlas-eyebrow">Catálogo</div>
-          <h2 id="catalogTitle" class="text-[36px] md:text-[52px] leading-none font-extrabold tracking-tight">Todos os jogos</h2>
+          <h2 id="catalogTitle" class="text-[36px] md:text-[52px] leading-none font-extrabold tracking-tight">__CATALOG_TITLE__</h2>
         </div>
-        <p id="catalogSummary" class="text-[15px] text-white/55 max-w-xl"></p>
+        <p id="catalogSummary" class="text-[15px] text-white/55 max-w-xl">__CATALOG_SUMMARY__</p>
       </div>
 
       <div class="atlas-panel p-5 md:p-6 space-y-5">
         <div class="grid xl:grid-cols-[minmax(0,1fr)_340px] gap-4 items-start">
           <div>
             <div class="atlas-eyebrow">Descoberta por catálogo</div>
-            <h3 id="catalogHeroTitle" class="text-2xl md:text-3xl font-extrabold tracking-tight mt-2">Navegue sem depender da busca</h3>
-            <p id="catalogHeroDescription" class="text-white/58 mt-2 max-w-2xl">Veja todos os jogos em uma lista filtrável com dificuldade, tempo estimado, troféus e acesso direto à página de guia.</p>
+            <h3 id="catalogHeroTitle" class="text-2xl md:text-3xl font-extrabold tracking-tight mt-2">__CATALOG_HERO_TITLE__</h3>
+            <p id="catalogHeroDescription" class="text-white/58 mt-2 max-w-2xl">__CATALOG_HERO_DESCRIPTION__</p>
           </div>
           <div class="grid sm:grid-cols-2 gap-3">
             <label class="block sm:col-span-2">
@@ -345,27 +322,35 @@
           <div class="grid xl:grid-cols-[1.05fr_.95fr] gap-4">
             <div>
               <div class="atlas-eyebrow">Leitura da faixa</div>
-              <h4 id="catalogCollectionTitle" class="text-2xl font-extrabold tracking-tight mt-2">Coleção aberta</h4>
-              <p id="catalogCollectionDescription" class="text-white/60 mt-3 max-w-3xl">Escolha uma faixa para entender melhor em que tipo de projeto você está entrando e clicar com mais segurança.</p>
+              <h4 id="catalogCollectionTitle" class="text-2xl font-extrabold tracking-tight mt-2">__CATALOG_COLLECTION_TITLE__</h4>
+              <p id="catalogCollectionDescription" class="text-white/60 mt-3 max-w-3xl">__CATALOG_COLLECTION_DESCRIPTION__</p>
             </div>
             <div class="grid sm:grid-cols-2 gap-3">
               <article class="glass-morphism rounded-[18px] p-4 border border-white/10">
                 <div class="text-[11px] uppercase tracking-[0.18em] text-white/40">Por que abrir esta faixa</div>
-                <p id="catalogCollectionReason" class="text-sm text-white/78 mt-2">Use esta visão para comparar esforço, tempo e densidade do guia antes de escolher um jogo.</p>
+                <p id="catalogCollectionReason" class="text-sm text-white/78 mt-2">__CATALOG_COLLECTION_REASON__</p>
               </article>
               <article class="glass-morphism rounded-[18px] p-4 border border-white/10">
                 <div class="text-[11px] uppercase tracking-[0.18em] text-white/40">O que validar</div>
-                <p id="catalogCollectionChecklist" class="text-sm text-white/78 mt-2">Abra a página do jogo para confirmar perdíveis, roadmap e se a lista combina com o seu momento.</p>
+                <p id="catalogCollectionChecklist" class="text-sm text-white/78 mt-2">__CATALOG_COLLECTION_CHECKLIST__</p>
               </article>
             </div>
           </div>
           <div>
             <div class="text-[11px] uppercase tracking-[0.18em] text-white/40 mb-3">Coleções relacionadas</div>
-            <div id="catalogRelatedCollections" class="flex flex-wrap gap-3"></div>
+            <div id="catalogRelatedCollections" class="flex flex-wrap gap-3">__CATALOG_RELATED_LINKS__</div>
           </div>
         </section>
 
-        <div id="catalogList" class="grid md:grid-cols-2 xl:grid-cols-3 gap-5"></div>
+        <section class="atlas-panel atlas-panel-soft p-5 md:p-6 space-y-4 border border-white/10">
+          <div>
+            <div class="atlas-eyebrow">Contexto editorial da coleção</div>
+            <h4 class="text-2xl font-extrabold tracking-tight mt-2">__CATALOG_SEO_INTRO_TITLE__</h4>
+            <p class="text-white/65 mt-3 max-w-4xl">__CATALOG_SEO_INTRO_BODY__</p>
+          </div>
+        </section>
+
+        <div id="catalogList" class="grid md:grid-cols-2 xl:grid-cols-3 gap-5">__CATALOG_SSR_LIST__</div>
         <div id="catalogPagination" class="flex flex-wrap items-center gap-3"></div>
       </div>
     </section>

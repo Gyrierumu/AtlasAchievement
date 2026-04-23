@@ -14,55 +14,171 @@ const errorHandler = require('./middleware/errorHandler');
 const gamesService = require('./services/games.service');
 const { loginRateLimit, registerFailedLoginAttempt, clearLoginRateLimit } = require('./middleware/loginRateLimit');
 const SqliteSessionStore = require('./services/sqliteSessionStore');
+const AppError = require('./utils/AppError');
 
 const app = express();
 const publicIndexPath = path.join(__dirname, '../public/index.html');
 const publicIndexTemplate = fs.readFileSync(publicIndexPath, 'utf8');
 const catalogFacetPageMap = {
+  all: {
+    serviceFacet: 'all',
+    path: '/catalogo',
+    title: 'Catálogo de jogos | AtlasAchievement',
+    description: 'Navegue pelo catálogo de jogos com dificuldade, tempo estimado, troféus e atalhos por faixa de desafio e duração.',
+    name: 'Catálogo de jogos',
+    heroTitle: 'Navegue sem depender da busca',
+    heroDescription: 'Veja todos os jogos em uma lista filtrável com dificuldade, tempo estimado, troféus e acesso direto à página de guia.',
+    collectionTitle: 'Catálogo completo',
+    collectionDescription: 'Use a visão geral para comparar jogos por dificuldade, tempo e densidade de checklist antes de decidir onde investir seu tempo.',
+    reason: 'Boa para quem ainda não sabe o que jogar e quer sentir o tamanho real do catálogo.',
+    checklist: 'Ordene por recomendação, abra um destaque e valide roadmap, perdíveis e esforço total.',
+    introTitle: 'Pontos de entrada para escolher melhor',
+    introBody: 'Este catálogo foi pensado para reduzir a dúvida antes de abrir um guia. Em vez de depender só da busca, você pode comparar esforço, duração e densidade da lista ainda na página de coleção, o que ajuda o Google a entender melhor o acervo e ajuda o jogador a decidir com menos fricção.',
+    related: ['dificuldade-baixa', 'ate-15-horas', 'mais-de-60-trofeus']
+  },
   'dificuldade-baixa': {
+    serviceFacet: 'difficulty-low',
+    path: '/catalogo/dificuldade-baixa',
     title: 'Jogos de dificuldade baixa | AtlasAchievement',
     description: 'Veja jogos com dificuldade de 1 a 3 para começar listas de troféus e concluir mais rápido.',
-    name: 'Jogos de dificuldade baixa'
+    name: 'Jogos de dificuldade baixa',
+    heroTitle: 'Coleção para começar com menos atrito',
+    heroDescription: 'Abra jogos de dificuldade baixa quando quiser uma platina mais viável, com menos risco de travar logo no começo.',
+    collectionTitle: 'Jogos de dificuldade baixa',
+    collectionDescription: 'Esta faixa funciona bem para primeiras platinas, descansos entre projetos maiores e sessões em que você quer avançar sem pressão excessiva.',
+    reason: 'Filtra jogos que tendem a exigir menos execução avançada e deixam a leitura do guia mais direta.',
+    checklist: 'Confira se o jogo também é curto e se já possui roadmap suficiente para virar uma entrada segura.',
+    introTitle: 'Quando esta coleção faz sentido',
+    introBody: 'Jogos de dificuldade baixa costumam funcionar melhor como porta de entrada para primeiras platinas ou como respiro entre projetos mais pesados. A página precisa mostrar isso com clareza para ranquear melhor e para converter visitas em cliques úteis.',
+    related: ['ate-15-horas', 'dificuldade-media', 'ate-30-trofeus']
   },
   'dificuldade-media': {
+    serviceFacet: 'difficulty-mid',
+    path: '/catalogo/dificuldade-media',
     title: 'Jogos de dificuldade média | AtlasAchievement',
     description: 'Explore jogos com dificuldade de 4 a 6 e escolha projetos intermediários para continuar.',
-    name: 'Jogos de dificuldade média'
+    name: 'Jogos de dificuldade média',
+    heroTitle: 'Projetos intermediários para continuar em bom ritmo',
+    heroDescription: 'Use esta coleção quando quiser algo mais substancial do que uma platina fácil, mas sem cair direto em maratonas brutais.',
+    collectionTitle: 'Jogos de dificuldade média',
+    collectionDescription: 'Boa faixa para quem já está confortável com checklists, mas ainda quer equilíbrio entre progresso consistente e desafio moderado.',
+    reason: 'Ajuda a separar jogos que já pedem mais atenção sem virar projetos excessivamente punitivos.',
+    checklist: 'Abra a página e valide se o tempo total e o roadmap combinam com a sua disponibilidade atual.',
+    introTitle: 'O que caracteriza uma dificuldade média',
+    introBody: 'Aqui entram projetos que já pedem mais atenção, mas ainda mantêm um custo de entrada administrável. Isso ajuda a responder buscas de intenção intermediária e melhora a leitura editorial da coleção.',
+    related: ['dificuldade-baixa', '16-a-40-horas', '31-a-60-trofeus']
   },
   'dificuldade-alta': {
+    serviceFacet: 'difficulty-high',
+    path: '/catalogo/dificuldade-alta',
     title: 'Jogos de dificuldade alta | AtlasAchievement',
     description: 'Encontre jogos com dificuldade de 7 a 10 para quem busca listas mais exigentes.',
-    name: 'Jogos de dificuldade alta'
+    name: 'Jogos de dificuldade alta',
+    heroTitle: 'Listas exigentes para quem quer desafio real',
+    heroDescription: 'Entre nesta faixa quando quiser projetos mais duros, que pedem leitura cuidadosa e mais comprometimento de execução.',
+    collectionTitle: 'Jogos de dificuldade alta',
+    collectionDescription: 'Ideal para usuários que já sabem onde estão entrando e querem separar jogos realmente exigentes do restante do catálogo.',
+    reason: 'Concentra projetos que costumam exigir mais habilidade, persistência e leitura disciplinada do guia.',
+    checklist: 'Antes de começar, confirme tempo total, troféus sensíveis e se há roadmap suficiente para não desperdiçar horas.',
+    introTitle: 'Antes de abrir uma lista exigente',
+    introBody: 'Coleções de dificuldade alta precisam explicar risco, compromisso e densidade do guia. Isso melhora a utilidade para o leitor e dá mais contexto semântico para buscas ligadas a desafios e platinas difíceis.',
+    related: ['mais-de-40-horas', 'mais-de-60-trofeus', 'dificuldade-media']
   },
   'ate-15-horas': {
+    serviceFacet: 'time-short',
+    path: '/catalogo/ate-15-horas',
     title: 'Jogos até 15 horas | AtlasAchievement',
     description: 'Veja jogos com tempo estimado mais curto para concluir troféus em até 15 horas.',
-    name: 'Jogos até 15 horas'
+    name: 'Jogos até 15 horas',
+    heroTitle: 'Coleção de entrada rápida',
+    heroDescription: 'Veja projetos mais curtos para fechar uma platina sem transformar o jogo em compromisso de várias semanas.',
+    collectionTitle: 'Jogos até 15 horas',
+    collectionDescription: 'Ótima faixa para fins de semana, descanso entre listas grandes e usuários que querem retorno rápido por hora investida.',
+    reason: 'Reduz o risco de escolher algo que parece simples, mas vira uma maratona maior do que o esperado.',
+    checklist: 'Cheque a dificuldade real e se existe algum perdível escondido antes de assumir que o jogo é só rápido.',
+    introTitle: 'Para quem quer retorno rápido',
+    introBody: 'Páginas focadas em jogos curtos respondem bem a buscas de alta intenção, especialmente quando a lista já nasce com texto explicativo e cards em HTML no servidor.',
+    related: ['dificuldade-baixa', '16-a-40-horas', 'ate-30-trofeus']
   },
   '16-a-40-horas': {
+    serviceFacet: 'time-medium',
+    path: '/catalogo/16-a-40-horas',
     title: 'Jogos de 16 a 40 horas | AtlasAchievement',
     description: 'Encontre jogos com tempo estimado de 16 a 40 horas para projetos de médio prazo.',
-    name: 'Jogos de 16 a 40 horas'
+    name: 'Jogos de 16 a 40 horas',
+    heroTitle: 'Projetos médios para manter tração',
+    heroDescription: 'Abra esta faixa quando quiser algo mais completo, mas ainda compatível com uma rotina normal de sessões.',
+    collectionTitle: 'Jogos de 16 a 40 horas',
+    collectionDescription: 'Aqui ficam projetos equilibrados para quem quer uma trilha mais longa, sem cair nos extremos do catálogo.',
+    reason: 'Ajuda a encontrar jogos que rendem progresso contínuo e ainda cabem melhor no calendário.',
+    checklist: 'Compare dificuldade, roadmap e tamanho da lista para decidir qual deles encaixa melhor no seu momento.',
+    introTitle: 'Faixa intermediária de tempo',
+    introBody: 'Coleções de médio prazo ajudam a capturar usuários que querem profundidade sem assumir uma maratona longa. Esse texto reforça intenção de busca e melhora contexto da página.',
+    related: ['dificuldade-media', 'ate-15-horas', 'mais-de-40-horas']
   },
   'mais-de-40-horas': {
+    serviceFacet: 'time-long',
+    path: '/catalogo/mais-de-40-horas',
     title: 'Jogos com mais de 40 horas | AtlasAchievement',
     description: 'Navegue por jogos longos e maratonas com listas de troféus acima de 40 horas.',
-    name: 'Jogos com mais de 40 horas'
+    name: 'Jogos com mais de 40 horas',
+    heroTitle: 'Maratonas para abrir com plena consciência',
+    heroDescription: 'Veja projetos longos quando estiver procurando uma trilha mais extensa e quiser validar melhor o custo total de tempo.',
+    collectionTitle: 'Jogos com mais de 40 horas',
+    collectionDescription: 'Esta coleção serve para separar maratonas que pedem planejamento real, disciplina de checklist e expectativa ajustada desde o começo.',
+    reason: 'Evita entrar em jogos longos sem antes comparar esforço, densidade da lista e necessidade de revisão contínua.',
+    checklist: 'Abra a página e confirme quantas etapas existem no roadmap e quais troféus podem gerar retrabalho tardio.',
+    introTitle: 'Quando vale abrir uma maratona',
+    introBody: 'Projetos longos precisam de explicação editorial ainda mais forte, porque a intenção do usuário costuma ser comparar custo de tempo, não só clicar no primeiro resultado.',
+    related: ['dificuldade-alta', '16-a-40-horas', 'mais-de-60-trofeus']
   },
   'ate-30-trofeus': {
+    serviceFacet: 'trophies-small',
+    path: '/catalogo/ate-30-trofeus',
     title: 'Jogos com até 30 troféus | AtlasAchievement',
     description: 'Abra listas menores, com até 30 troféus, para organizar checklists mais curtos.',
-    name: 'Jogos com até 30 troféus'
+    name: 'Jogos com até 30 troféus',
+    heroTitle: 'Checklists menores para seguir com leveza',
+    heroDescription: 'Explore listas curtas quando quiser menos itens para controlar e uma leitura mais rápida da página do jogo.',
+    collectionTitle: 'Jogos com até 30 troféus',
+    collectionDescription: 'Boa faixa para quem gosta de checklists enxutos e quer sentir progresso sem navegar por listas muito extensas.',
+    reason: 'Ajuda a filtrar jogos com menos volume estrutural de troféus, úteis para sessões mais leves.',
+    checklist: 'Mesmo com lista pequena, confirme se há roadmap e troféus sensíveis antes de começar despreocupado.',
+    introTitle: 'Menos itens para acompanhar',
+    introBody: 'Listas menores costumam ter apelo forte para jogadores que querem gestão simples de progresso. A coleção ganha força quando essa promessa fica clara já no HTML.',
+    related: ['ate-15-horas', 'dificuldade-baixa', '31-a-60-trofeus']
   },
   '31-a-60-trofeus': {
+    serviceFacet: 'trophies-medium',
+    path: '/catalogo/31-a-60-trofeus',
     title: 'Jogos com 31 a 60 troféus | AtlasAchievement',
     description: 'Explore jogos com listas intermediárias de 31 a 60 troféus.',
-    name: 'Jogos com 31 a 60 troféus'
+    name: 'Jogos com 31 a 60 troféus',
+    heroTitle: 'Volume intermediário de checklist',
+    heroDescription: 'Use esta coleção quando quiser listas mais completas, mas ainda legíveis em um fluxo normal de acompanhamento.',
+    collectionTitle: 'Jogos com 31 a 60 troféus',
+    collectionDescription: 'Aqui ficam jogos com densidade intermediária de troféus, bons para usuários que gostam de progresso granular sem excesso.',
+    reason: 'Separa projetos com mais profundidade de checklist, mas ainda sem o peso de listas muito grandes.',
+    checklist: 'Compare o número de etapas do roadmap e o tempo estimado para evitar escolher só pelo tamanho da lista.',
+    introTitle: 'Equilíbrio entre densidade e leitura',
+    introBody: 'Coleções de volume intermediário ajudam a explicar a diferença entre listas leves e maratonas densas. Isso fortalece intenção de busca e arquitetura de informação.',
+    related: ['dificuldade-media', '16-a-40-horas', 'mais-de-60-trofeus']
   },
   'mais-de-60-trofeus': {
+    serviceFacet: 'trophies-large',
+    path: '/catalogo/mais-de-60-trofeus',
     title: 'Jogos com mais de 60 troféus | AtlasAchievement',
     description: 'Veja jogos com listas longas, acima de 60 troféus, para acompanhar por etapas.',
-    name: 'Jogos com mais de 60 troféus'
+    name: 'Jogos com mais de 60 troféus',
+    heroTitle: 'Listas densas para quem gosta de profundidade',
+    heroDescription: 'Abra esta faixa quando quiser jogos com muitos troféus e sensação forte de progresso ao longo de várias sessões.',
+    collectionTitle: 'Jogos com mais de 60 troféus',
+    collectionDescription: 'Essa coleção funciona como vitrine das listas mais densas do catálogo, boas para quem valoriza acompanhamento detalhado.',
+    reason: 'Ajuda a encontrar jogos em que o checklist é parte central da experiência, não só um complemento.',
+    checklist: 'Antes de entrar, valide tempo total, risco de retrabalho e se o roadmap já está forte o suficiente para sustentar a maratona.',
+    introTitle: 'Quando a densidade da lista importa',
+    introBody: 'Listas muito grandes exigem páginas de coleção com mais contexto e mais sinais de qualidade. Isso melhora SEO e prepara melhor o clique para a página do jogo.',
+    related: ['mais-de-40-horas', 'dificuldade-alta', '31-a-60-trofeus']
   }
 };
 
@@ -216,6 +332,61 @@ function formatDisplayDate(value) {
   return date.toLocaleDateString('pt-BR');
 }
 
+
+function buildEditorialSignals(game, viewModel) {
+  const total = Number(viewModel?.total || 0);
+  const roadmapCount = Number(viewModel?.roadmap?.length || 0);
+  const missables = Number(viewModel?.missables || 0);
+  const difficulty = Number(game?.difficulty || 0);
+  const reviewedAt = formatDisplayDate(game?.updated_at || game?.created_at);
+
+  let coverageLabel = 'Base inicial';
+  let coverageDetail = 'O guia ainda precisa ganhar mais camadas para transmitir confiança total.';
+  let readinessLabel = 'Leia o guia antes de começar';
+  let readinessDetail = 'A página já ajuda, mas ainda vale validar cada etapa com atenção antes da primeira run.';
+
+  if (total >= 40 && roadmapCount >= 4) {
+    coverageLabel = 'Cobertura forte';
+    coverageDetail = 'Há densidade suficiente de troféus e roadmap para passar sensação de guia mais completo.';
+  } else if (total >= 20 && roadmapCount >= 2) {
+    coverageLabel = 'Cobertura intermediária';
+    coverageDetail = 'O guia já oferece direção útil, mas ainda pode ganhar mais profundidade editorial.';
+  }
+
+  if (missables === 0 && roadmapCount >= 3) {
+    readinessLabel = 'Entrada mais segura';
+    readinessDetail = 'A combinação de roadmap e poucos alertas reduz o risco de começar no escuro.';
+  } else if (missables >= 3 || difficulty >= 7) {
+    readinessLabel = 'Pede preparo real';
+    readinessDetail = 'Os alertas e o nível de exigência justificam leitura disciplinada antes de jogar.';
+  }
+
+  const scopeItems = [
+    `${total} troféu(s) visíveis no guia`,
+    roadmapCount ? `${roadmapCount} etapa(s) no roadmap` : 'roadmap ainda enxuto',
+    missables ? `${missables} alerta(s) de atenção` : 'sem alerta crítico marcado'
+  ];
+
+  const methodItems = [
+    'Dificuldade, tempo e perdíveis apresentados no topo para decisão rápida.',
+    roadmapCount ? 'O roadmap já organiza a ordem de progressão antes da checklist completa.' : 'A checklist existe, mas o roadmap ainda precisa de mais detalhamento.',
+    missables ? 'Os alertas marcados sugerem começar com leitura cuidadosa do guia.' : 'Sem muitos alertas críticos, a entrada tende a ser mais simples.'
+  ];
+
+  return {
+    reviewer: 'Equipe editorial AtlasAchievement',
+    reviewedAt,
+    coverageLabel,
+    coverageDetail,
+    readinessLabel,
+    readinessDetail,
+    scopeSummary: scopeItems.join(' • '),
+    methodSummary: 'Dificuldade, tempo, roadmap e alertas são consolidados na própria página para reduzir retrabalho.',
+    scopeItems,
+    methodItems
+  };
+}
+
 function buildGuideViewModel(game, completedSource = [], options = {}) {
   const trophies = Array.isArray(game?.trophies) ? game.trophies : [];
   const roadmap = Array.isArray(game?.roadmap) ? game.roadmap : [];
@@ -265,6 +436,7 @@ function buildGuideViewModel(game, completedSource = [], options = {}) {
     spotlightTrophies,
     decisionModel: buildGuideDecisionModel(game, trophies, roadmap),
     image: game?.image || '/og-default.svg',
+    editorial: buildEditorialSignals(game, { trophies, roadmap, total, missables }),
     isSaved: Boolean(options?.isSaved),
     libraryEntry: options?.libraryEntry || null
   };
@@ -305,9 +477,24 @@ function renderGuideHeaderHtml(game, viewModel, options = {}) {
               </div>
             </section>
             <div class="grid sm:grid-cols-3 gap-3 mt-4 max-w-4xl">
-              <article class="glass-morphism rounded-[18px] p-4 border border-white/10"><div class="text-[11px] uppercase tracking-[0.18em] text-white/40">Última revisão</div><p class="text-sm text-white/78 mt-2">${escapeHtml(formatDisplayDate(game?.updated_at || game?.created_at))}</p></article>
-              <article class="glass-morphism rounded-[18px] p-4 border border-white/10"><div class="text-[11px] uppercase tracking-[0.18em] text-white/40">Densidade do guia</div><p class="text-sm text-white/78 mt-2">${viewModel.roadmap.length ? `${viewModel.roadmap.length} etapa(s) no roadmap` : 'Roadmap ainda enxuto'}</p></article>
-              <article class="glass-morphism rounded-[18px] p-4 border border-white/10"><div class="text-[11px] uppercase tracking-[0.18em] text-white/40">Leitura inicial</div><p class="text-sm text-white/78 mt-2">${viewModel.missables ? 'Revise os alertas antes da primeira run.' : 'Guia sem alerta crítico marcado até agora.'}</p></article>
+              <article class="glass-morphism rounded-[18px] p-4 border border-white/10"><div class="text-[11px] uppercase tracking-[0.18em] text-white/40">Revisão editorial</div><p class="text-sm text-white/78 mt-2">${escapeHtml(viewModel.editorial.reviewedAt)} • ${escapeHtml(viewModel.editorial.reviewer)}</p></article>
+              <article class="glass-morphism rounded-[18px] p-4 border border-white/10"><div class="text-[11px] uppercase tracking-[0.18em] text-white/40">Cobertura do guia</div><p class="text-sm text-white/78 mt-2">${escapeHtml(viewModel.editorial.coverageLabel)} • ${escapeHtml(viewModel.editorial.scopeSummary)}</p></article>
+              <article class="glass-morphism rounded-[18px] p-4 border border-white/10"><div class="text-[11px] uppercase tracking-[0.18em] text-white/40">Entrada recomendada</div><p class="text-sm text-white/78 mt-2">${escapeHtml(viewModel.editorial.readinessLabel)} • ${escapeHtml(viewModel.editorial.readinessDetail)}</p></article>
+            </div>
+            <div class="atlas-decision-panel mt-4">
+              <div class="atlas-decision-panel__header">
+                <div>
+                  <div class="atlas-eyebrow">Escopo editorial</div>
+                  <h2 class="text-xl md:text-2xl font-extrabold mt-2">O que este guia já cobre antes do clique completo</h2>
+                </div>
+                <span class="atlas-tag atlas-tag--soft">${escapeHtml(viewModel.editorial.coverageLabel)}</span>
+              </div>
+              <p class="text-white/74 mt-3 max-w-3xl">${escapeHtml(viewModel.editorial.coverageDetail)}</p>
+              <div class="grid lg:grid-cols-3 gap-3 mt-4">
+                <article class="glass-morphism rounded-[18px] p-4 border border-white/10"><div class="text-[11px] uppercase tracking-[0.18em] text-white/40">Assinatura editorial</div><p class="text-sm text-white/78 mt-2">${escapeHtml(viewModel.editorial.reviewer)} revisou este material em ${escapeHtml(viewModel.editorial.reviewedAt)}.</p></article>
+                <article class="glass-morphism rounded-[18px] p-4 border border-white/10"><div class="text-[11px] uppercase tracking-[0.18em] text-white/40">Escopo coberto</div><p class="text-sm text-white/78 mt-2">${escapeHtml(viewModel.editorial.scopeSummary)}</p></article>
+                <article class="glass-morphism rounded-[18px] p-4 border border-white/10"><div class="text-[11px] uppercase tracking-[0.18em] text-white/40">Como ler esta página</div><p class="text-sm text-white/78 mt-2">${escapeHtml(viewModel.editorial.methodSummary)}</p></article>
+              </div>
             </div>
             <p class="text-white/50 mt-4 max-w-3xl">${escapeHtml(game?.missable || 'Sem alerta editorial de perdíveis informado.')}</p>
           </div>
@@ -351,9 +538,18 @@ function renderGuideSidebarHtml(game, viewModel) {
     <section class="atlas-panel p-5 rounded-[24px] bg-white/[0.03] border border-white/10 space-y-4">
       <div class="atlas-eyebrow">Confiança editorial</div>
       <div class="space-y-3 text-sm text-white/72">
-        <article class="glass-morphism rounded-[18px] p-4 border border-white/10"><div class="text-[11px] uppercase tracking-[0.18em] text-white/40">Atualização</div><p class="mt-2">Página revisada em ${escapeHtml(formatDisplayDate(game?.updated_at || game?.created_at))}.</p></article>
-        <article class="glass-morphism rounded-[18px] p-4 border border-white/10"><div class="text-[11px] uppercase tracking-[0.18em] text-white/40">Cobertura</div><p class="mt-2">${viewModel.total} troféu(s) mapeado(s) e ${viewModel.roadmap.length} etapa(s) no roadmap.</p></article>
-        <article class="glass-morphism rounded-[18px] p-4 border border-white/10"><div class="text-[11px] uppercase tracking-[0.18em] text-white/40">Leitura recomendada</div><p class="mt-2">${viewModel.missables ? 'Abra os alertas de perdível antes da primeira run.' : 'Você pode começar pelo roadmap e revisar a lista depois.'}</p></article>
+        <article class="glass-morphism rounded-[18px] p-4 border border-white/10"><div class="text-[11px] uppercase tracking-[0.18em] text-white/40">Revisado por</div><p class="mt-2">${escapeHtml(viewModel.editorial.reviewer)} em ${escapeHtml(viewModel.editorial.reviewedAt)}.</p></article>
+        <article class="glass-morphism rounded-[18px] p-4 border border-white/10"><div class="text-[11px] uppercase tracking-[0.18em] text-white/40">Cobertura</div><p class="mt-2">${escapeHtml(viewModel.editorial.coverageLabel)}. ${escapeHtml(viewModel.editorial.coverageDetail)}</p></article>
+        <article class="glass-morphism rounded-[18px] p-4 border border-white/10"><div class="text-[11px] uppercase tracking-[0.18em] text-white/40">Leitura recomendada</div><p class="mt-2">${escapeHtml(viewModel.editorial.readinessLabel)}. ${escapeHtml(viewModel.editorial.readinessDetail)}</p></article>
+      </div>
+    </section>
+    <section class="atlas-panel p-5 rounded-[24px] bg-white/[0.03] border border-white/10 space-y-4">
+      <div class="atlas-eyebrow">Escopo e método</div>
+      <ul class="space-y-3 text-sm text-white/72">
+        ${viewModel.editorial.scopeItems.map(item => `<li class="flex items-start gap-3"><span class="atlas-tag mt-0.5">•</span><span>${escapeHtml(item)}</span></li>`).join('')}
+      </ul>
+      <div class="space-y-3">
+        ${viewModel.editorial.methodItems.map((item, index) => `<article class="glass-morphism rounded-[18px] p-4 border border-white/10"><div class="text-[11px] uppercase tracking-[0.18em] text-white/40">Método ${index + 1}</div><p class="mt-2 text-sm text-white/72">${escapeHtml(item)}</p></article>`).join('')}
       </div>
     </section>
     <section class="atlas-panel p-5 rounded-[24px] bg-white/[0.03] border border-white/10 space-y-4">
@@ -393,6 +589,18 @@ function applyTemplateDefaults(template) {
     .replace(/__SSR_GUIDE_HEADER__/g, '')
     .replace(/__SSR_GUIDE_SIDEBAR__/g, '')
     .replace(/__SSR_TROPHY_LIST__/g, '')
+    .replace(/__CATALOG_TITLE__/g, 'Todos os jogos')
+    .replace(/__CATALOG_SUMMARY__/g, '')
+    .replace(/__CATALOG_HERO_TITLE__/g, 'Navegue sem depender da busca')
+    .replace(/__CATALOG_HERO_DESCRIPTION__/g, 'Veja todos os jogos em uma lista filtrável com dificuldade, tempo estimado, troféus e acesso direto à página de guia.')
+    .replace(/__CATALOG_COLLECTION_TITLE__/g, 'Coleção aberta')
+    .replace(/__CATALOG_COLLECTION_DESCRIPTION__/g, 'Escolha uma faixa para entender melhor em que tipo de projeto você está entrando e clicar com mais segurança.')
+    .replace(/__CATALOG_COLLECTION_REASON__/g, 'Use esta visão para comparar esforço, tempo e densidade do guia antes de escolher um jogo.')
+    .replace(/__CATALOG_COLLECTION_CHECKLIST__/g, 'Abra a página do jogo para confirmar perdíveis, roadmap e se a lista combina com o seu momento.')
+    .replace(/__CATALOG_SEO_INTRO_TITLE__/g, 'Pontos de entrada para escolher melhor')
+    .replace(/__CATALOG_SEO_INTRO_BODY__/g, 'Esta coleção ajuda a comparar jogos de forma mais útil antes do clique, com contexto editorial e links internos claros.')
+    .replace(/__CATALOG_RELATED_LINKS__/g, '')
+    .replace(/__CATALOG_SSR_LIST__/g, '')
     .replace(/__INITIAL_STATE_SCRIPT__/g, '<script>window.__INITIAL_STATE__ = null;</script>');
 }
 
@@ -445,26 +653,107 @@ function buildDefaultPageHtml(req) {
     }));
 }
 
-function buildCatalogPageHtml(req, facetSlug = null) {
+function renderCatalogSeoCards(items = []) {
+  if (!items.length) {
+    return `
+      <article class="atlas-panel atlas-panel-soft p-5 md:p-6 border border-white/10">
+        <h3 class="text-xl font-extrabold tracking-tight">Nenhum jogo nesta faixa ainda</h3>
+        <p class="text-white/65 mt-3">Quando novos guias forem adicionados, esta coleção vai mostrar cards com dificuldade, tempo estimado, troféus e acesso direto para a página do jogo.</p>
+      </article>`;
+  }
+
+  return items.map(game => {
+    const name = escapeHtml(game.name || 'Jogo');
+    const slug = escapeHtml(game.slug || '');
+    const difficulty = escapeHtml(String(game.difficulty ?? '—'));
+    const time = escapeHtml(game.time || 'Tempo não informado');
+    const trophyCount = Number(game.trophy_count || 0);
+    const roadmapCount = Number(game.roadmap_count || 0);
+    const missableText = game.missable ? escapeHtml(game.missable) : 'Abra o guia para validar perdíveis, roadmap e pontos de atenção.';
+    return `
+      <article class="atlas-panel atlas-panel-soft p-5 md:p-6 space-y-4 border border-white/10" itemscope itemtype="https://schema.org/VideoGame">
+        <div class="flex items-start justify-between gap-3">
+          <div>
+            <div class="atlas-eyebrow">Guia do catálogo</div>
+            <h3 class="text-2xl font-extrabold tracking-tight mt-2" itemprop="name">${name}</h3>
+          </div>
+          <span class="atlas-tag">${difficulty}/10</span>
+        </div>
+        <p class="text-white/65" itemprop="description">${missableText}</p>
+        <div class="flex flex-wrap gap-2 text-sm text-white/72">
+          <span class="atlas-chip">Tempo: ${time}</span>
+          <span class="atlas-chip">Troféus: ${trophyCount}</span>
+          <span class="atlas-chip">Roadmap: ${roadmapCount}</span>
+        </div>
+        <a href="/jogo/${slug}" class="atlas-btn atlas-btn-secondary inline-flex" itemprop="url">Abrir página do jogo</a>
+      </article>`;
+  }).join('');
+}
+
+function renderCatalogRelatedLinks(facetConfig) {
+  const related = Array.isArray(facetConfig?.related) ? facetConfig.related : [];
+  if (!related.length) return '';
+  return related
+    .map(slug => catalogFacetPageMap[slug])
+    .filter(Boolean)
+    .map(item => `<a href="${escapeHtml(item.path)}" class="atlas-chip">${escapeHtml(item.name)}</a>`)
+    .join('');
+}
+
+function buildCatalogStructuredData(origin, canonicalUrl, facetConfig, items = []) {
+  return {
+    '@context': 'https://schema.org',
+    '@type': 'CollectionPage',
+    name: facetConfig?.name || 'Catálogo de jogos',
+    url: canonicalUrl,
+    description: facetConfig?.description || 'Coleção de jogos com guias, troféus, tempo estimado e filtros por intenção.',
+    mainEntity: {
+      '@type': 'ItemList',
+      itemListOrder: 'https://schema.org/ItemListOrderAscending',
+      numberOfItems: items.length,
+      itemListElement: items.map((game, index) => ({
+        '@type': 'ListItem',
+        position: index + 1,
+        url: `${origin}/jogo/${game.slug || ''}`,
+        name: game.name || 'Jogo'
+      }))
+    }
+  };
+}
+
+async function buildCatalogPageHtml(req, facetSlug = null) {
   const origin = `${req.protocol}://${req.get('host')}`;
-  const facetConfig = facetSlug ? catalogFacetPageMap[facetSlug] : null;
-  const canonicalPath = facetConfig ? `/catalogo/${facetSlug}` : '/catalogo';
+  const facetConfig = facetSlug ? catalogFacetPageMap[facetSlug] : catalogFacetPageMap.all;
+  const canonicalPath = facetConfig?.path || '/catalogo';
   const canonicalUrl = `${origin}${canonicalPath}`;
   const title = facetConfig?.title || 'Catálogo de jogos | Troféus e guias | AtlasAchievement';
   const description = facetConfig?.description || 'Navegue pelo catálogo de jogos com troféus, dificuldade, tempo estimado e acesso direto às páginas de guia.';
+  const catalogResponse = await gamesService.listGames({ facet: facetConfig?.serviceFacet || 'all', sort: 'recommended-desc', page: 1, limit: 24 });
+  const items = Array.isArray(catalogResponse?.items) ? catalogResponse.items : [];
+  const total = Number(catalogResponse?.pagination?.total || items.length || 0);
+  const structuredData = buildCatalogStructuredData(origin, canonicalUrl, facetConfig, items);
 
   return applyTemplateDefaults(publicIndexTemplate)
     .replace(/__PAGE_TITLE__/g, escapeHtml(title))
     .replace(/__PAGE_DESCRIPTION__/g, escapeHtml(description))
     .replace(/__PAGE_CANONICAL__/g, escapeHtml(canonicalUrl))
     .replace(/__PAGE_OG_IMAGE__/g, `${origin}/og-default.svg`)
-    .replace(/__PAGE_JSON_LD__/g, safeJsonForHtml({
-      '@context': 'https://schema.org',
-      '@type': 'CollectionPage',
-      name: facetConfig?.name || 'Catálogo de jogos',
-      url: canonicalUrl,
-      description
-    }));
+    .replace(/__PAGE_JSON_LD__/g, safeJsonForHtml(structuredData))
+    .replace(/__HOME_VIEW_CLASS__/g, 'hidden')
+    .replace(/__CATALOG_VIEW_CLASS__/g, '')
+    .replace(/__CATALOG_TITLE__/g, escapeHtml(facetConfig?.name || 'Catálogo de jogos'))
+    .replace(/__CATALOG_SUMMARY__/g, escapeHtml(`${total} jogo(s) encontrados nesta visão editorial do catálogo.`))
+    .replace(/__CATALOG_HERO_TITLE__/g, escapeHtml(facetConfig?.heroTitle || 'Navegue sem depender da busca'))
+    .replace(/__CATALOG_HERO_DESCRIPTION__/g, escapeHtml(facetConfig?.heroDescription || 'Veja todos os jogos em uma lista filtrável com dificuldade, tempo estimado, troféus e acesso direto à página de guia.'))
+    .replace(/__CATALOG_COLLECTION_TITLE__/g, escapeHtml(facetConfig?.collectionTitle || 'Coleção aberta'))
+    .replace(/__CATALOG_COLLECTION_DESCRIPTION__/g, escapeHtml(facetConfig?.collectionDescription || 'Escolha uma faixa para entender melhor em que tipo de projeto você está entrando e clicar com mais segurança.'))
+    .replace(/__CATALOG_COLLECTION_REASON__/g, escapeHtml(facetConfig?.reason || 'Use esta visão para comparar esforço, tempo e densidade do guia antes de escolher um jogo.'))
+    .replace(/__CATALOG_COLLECTION_CHECKLIST__/g, escapeHtml(facetConfig?.checklist || 'Abra a página do jogo para confirmar perdíveis, roadmap e se a lista combina com o seu momento.'))
+    .replace(/__CATALOG_SEO_INTRO_TITLE__/g, escapeHtml(facetConfig?.introTitle || 'Pontos de entrada para escolher melhor'))
+    .replace(/__CATALOG_SEO_INTRO_BODY__/g, escapeHtml(facetConfig?.introBody || 'Esta coleção ajuda a comparar jogos de forma mais útil antes do clique, com contexto editorial e links internos claros.'))
+    .replace(/__CATALOG_RELATED_LINKS__/g, renderCatalogRelatedLinks(facetConfig))
+    .replace(/__CATALOG_SSR_LIST__/g, renderCatalogSeoCards(items))
+    .replace(/__INITIAL_STATE_SCRIPT__/g, buildInitialStateScript({ page: 'catalog', facet: facetConfig?.serviceFacet || 'all', catalog: catalogResponse }));
 }
 
 fs.mkdirSync(env.uploadDir, { recursive: true });
@@ -555,10 +844,12 @@ app.get('/sitemap.xml', async (req, res, next) => {
   try {
     const origin = `${req.protocol}://${req.get('host')}`;
     const response = await gamesService.listGames({ page: 1, limit: 100, sort: 'updated-desc' });
-    const facetUrls = Object.keys(catalogFacetPageMap).map(facetSlug => ({
-      loc: `${origin}/catalogo/${facetSlug}`,
-      lastmod: new Date().toISOString()
-    }));
+    const facetUrls = Object.entries(catalogFacetPageMap)
+      .filter(([facetSlug]) => facetSlug !== 'all')
+      .map(([, facet]) => ({
+        loc: `${origin}${facet.path}`,
+        lastmod: new Date().toISOString()
+      }));
 
     const urls = [
       { loc: `${origin}/`, lastmod: new Date().toISOString() },
@@ -583,11 +874,16 @@ app.use('/api/uploads', requireCsrf, uploadsRoutes);
 app.use('/api/games', requireCsrf, gamesRoutes);
 
 app.get('/admin', (req, res) => {
+  res.setHeader('X-Robots-Tag', 'noindex, nofollow');
   res.sendFile(path.join(__dirname, '../public/admin.html'));
 });
 
-app.get('/catalogo', (req, res) => {
-  res.send(buildCatalogPageHtml(req));
+app.get('/catalogo', async (req, res, next) => {
+  try {
+    res.send(await buildCatalogPageHtml(req));
+  } catch (error) {
+    next(error);
+  }
 });
 
 app.get('/catalogo/:facetSlug', (req, res, next) => {
@@ -612,8 +908,12 @@ app.get('/jogo/:slug', async (req, res, next) => {
   }
 });
 
-app.get('*', (req, res) => {
+app.get('/', (req, res) => {
   res.send(buildDefaultPageHtml(req));
+});
+
+app.get('*', (req, res, next) => {
+  next(new AppError('A página que você tentou abrir não existe ou foi movida.', 404, null, 'PAGE_NOT_FOUND'));
 });
 
 app.use((error, req, res, next) => {

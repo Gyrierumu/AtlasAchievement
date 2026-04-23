@@ -9,7 +9,7 @@ function securityHeaders(req, res, next) {
     "img-src 'self' data: https:",
     "font-src 'self' https://cdnjs.cloudflare.com data:",
     "style-src 'self' 'unsafe-inline' https://cdnjs.cloudflare.com",
-    "script-src 'self' 'unsafe-inline' https://cdn.tailwindcss.com",
+    "script-src 'self' 'unsafe-inline'",
     "script-src-attr 'self' 'unsafe-inline'",
     "upgrade-insecure-requests"
   ].join('; ');
