@@ -1,0 +1,353 @@
+{
+  "name": "Resident Evil 2 Remake",
+  "difficulty": 6,
+  "time": "25-35 horas",
+  "missable": "A platina é mais limpa em múltiplas runs. Há troféus de rank S, runs sem cura, sem baú, poucos passos e objetivos específicos em trechos de Leon, Claire, Ada e Sherry.",
+  "image": "https://cdn.cloudflare.steamstatic.com/steam/apps/883710/header.jpg",
+  "roadmap": [
+    "1ª run com Leon A ou Claire A: jogue no seu ritmo, aprenda a rota da delegacia, pegue upgrades e familiarize-se com cofres, Mr. Raccoons e arquivos.",
+    "2ª run com o outro personagem: avance a história paralela, conclua o true ending e limpe boa parte dos colecionáveis que faltarem.",
+    "Separe runs de rank S para Leon e Claire no Standard, priorizando rota curta, poucos desvios e recarga manual de save após mortes.",
+    "Faça as campanhas no Hardcore quando já tiver domínio da rota; a Samurai Edge infinita e a faca indestrutível ajudam bastante.",
+    "Deixe os desafios de restrição para runs dedicadas: sem cura, sem abrir o baú e com 14.000 passos ou menos.",
+    "No fim, limpe troféus pontuais como Ada sem atirar, fuga da Sherry em 60 segundos, chefes com limite de tempo e o modo The 4th Survivor."
+  ],
+  "trophies": [
+    {
+      "id": "re2r_platinum",
+      "name": "Raccoon City Native",
+      "type": "Platina",
+      "description": "Obtenha todos os outros troféus.",
+      "tip": "A platina pede domínio das rotas, múltiplas campanhas e algumas runs específicas de desafio.",
+      "is_spoiler": false
+    },
+    {
+      "id": "re2r_welcome_dead",
+      "name": "Welcome to the City of the Dead",
+      "type": "Bronze",
+      "description": "Chegue à delegacia.",
+      "tip": "Troféu automático no início da campanha.",
+      "is_spoiler": true
+    },
+    {
+      "id": "re2r_path_goddess",
+      "name": "Path to the Goddess",
+      "type": "Bronze",
+      "description": "Resolva o enigma da Estátua da Deusa.",
+      "tip": "Sai naturalmente ao abrir caminho para o subterrâneo da delegacia.",
+      "is_spoiler": true
+    },
+    {
+      "id": "re2r_never_ending_rain",
+      "name": "Never-Ending Rain",
+      "type": "Bronze",
+      "description": "Escape da delegacia.",
+      "tip": "Troféu automático de história.",
+      "is_spoiler": true
+    },
+    {
+      "id": "re2r_hack_complete",
+      "name": "Hack Complete",
+      "type": "Bronze",
+      "description": "Complete a seção da Ada.",
+      "tip": "Disponível apenas nas campanhas do Leon.",
+      "is_spoiler": true
+    },
+    {
+      "id": "re2r_hide_seek",
+      "name": "Hide and Seek",
+      "type": "Bronze",
+      "description": "Complete a seção da Sherry.",
+      "tip": "Disponível apenas nas campanhas da Claire.",
+      "is_spoiler": true
+    },
+    {
+      "id": "re2r_need_shower",
+      "name": "A Great Need for a Shower",
+      "type": "Bronze",
+      "description": "Escape dos esgotos.",
+      "tip": "Troféu automático de história.",
+      "is_spoiler": true
+    },
+    {
+      "id": "re2r_hero_emerges",
+      "name": "A Hero Emerges",
+      "type": "Prata",
+      "description": "Complete a história do Leon.",
+      "tip": "Vale tanto na 1ª quanto na 2ª jornada.",
+      "is_spoiler": true
+    },
+    {
+      "id": "re2r_heroine_emerges",
+      "name": "A Heroine Emerges",
+      "type": "Prata",
+      "description": "Complete a história da Claire.",
+      "tip": "Vale tanto na 1ª quanto na 2ª jornada.",
+      "is_spoiler": true
+    },
+    {
+      "id": "re2r_broken_umbrella",
+      "name": "Broken Umbrella",
+      "type": "Prata",
+      "description": "Complete qualquer campanha na 2ª jornada.",
+      "tip": "Sai ao concluir um cenário B com Leon ou Claire.",
+      "is_spoiler": true
+    },
+    {
+      "id": "re2r_basics_survival",
+      "name": "The Basics of Survival",
+      "type": "Bronze",
+      "description": "Combine dois itens.",
+      "tip": "Combine duas ervas ou qualquer combinação compatível logo no começo.",
+      "is_spoiler": false
+    },
+    {
+      "id": "re2r_hip_squares",
+      "name": "Hip to Add Squares",
+      "type": "Bronze",
+      "description": "Aumente o espaço do inventário.",
+      "tip": "Basta pegar uma pochete.",
+      "is_spoiler": false
+    },
+    {
+      "id": "re2r_customizer",
+      "name": "Customizer",
+      "type": "Bronze",
+      "description": "Customize uma arma.",
+      "tip": "Instale qualquer upgrade encontrado durante a campanha.",
+      "is_spoiler": false
+    },
+    {
+      "id": "re2r_no_stinkin_gun",
+      "name": "Don't Need No Stinkin' Gun",
+      "type": "Bronze",
+      "description": "Derrote um inimigo com a faca.",
+      "tip": "Faça em um zumbi caído para reduzir risco.",
+      "is_spoiler": false
+    },
+    {
+      "id": "re2r_eat_this",
+      "name": "Eat This!",
+      "type": "Bronze",
+      "description": "Contra-ataque com uma arma secundária.",
+      "tip": "Use faca, granada ou flash ao ser agarrado.",
+      "is_spoiler": false
+    },
+    {
+      "id": "re2r_hold_em",
+      "name": "That'll Hold 'Em",
+      "type": "Bronze",
+      "description": "Use tábuas de madeira para vedar uma janela.",
+      "tip": "A delegacia oferece várias oportunidades no começo do jogo.",
+      "is_spoiler": false
+    },
+    {
+      "id": "re2r_vermin_extermination",
+      "name": "Vermin Extermination",
+      "type": "Bronze",
+      "description": "Destrua um Mr. Raccoon.",
+      "tip": "Basta quebrar qualquer um dos bonecos colecionáveis.",
+      "is_spoiler": false
+    },
+    {
+      "id": "re2r_vault_mind",
+      "name": "A Vault-like Mind",
+      "type": "Bronze",
+      "description": "Abra um cofre portátil.",
+      "tip": "Resolva o minigame de botões em qualquer portable safe.",
+      "is_spoiler": false
+    },
+    {
+      "id": "re2r_first_breakin",
+      "name": "First Break-In",
+      "type": "Bronze",
+      "description": "Abra um cofre mecânico.",
+      "tip": "Qualquer cofre de combinação conta.",
+      "is_spoiler": false
+    },
+    {
+      "id": "re2r_bon_appetit",
+      "name": "Bon Appétit",
+      "type": "Bronze",
+      "description": "Atire em uma granada que esteja na boca de um inimigo.",
+      "tip": "Use uma granada defensiva num zumbi e atire logo em seguida.",
+      "is_spoiler": false
+    },
+    {
+      "id": "re2r_zombie_roundup",
+      "name": "Zombie Roundup",
+      "type": "Bronze",
+      "description": "Mate 3 inimigos de uma vez com uma sub-weapon.",
+      "tip": "Junte três zumbis e use uma granada comum.",
+      "is_spoiler": false
+    },
+    {
+      "id": "re2r_skeet",
+      "name": "Like Skeet Shooting",
+      "type": "Bronze",
+      "description": "Atire em um cão zumbi ou Licker enquanto ele estiver no ar.",
+      "tip": "Espere o salto antes de disparar.",
+      "is_spoiler": false
+    },
+    {
+      "id": "re2r_heads_ringin",
+      "name": "Keep Their Heads Ringin'",
+      "type": "Bronze",
+      "description": "Atordoe um Licker com uma granada de luz.",
+      "tip": "Encontre um Licker em corredor aberto e arremesse uma flash.",
+      "is_spoiler": false
+    },
+    {
+      "id": "re2r_hats_off",
+      "name": "Hats Off!",
+      "type": "Bronze",
+      "description": "Derrube o chapéu do Tyrant.",
+      "tip": "Atire na cabeça do Mr. X quando ele aparecer na delegacia.",
+      "is_spoiler": false
+    },
+    {
+      "id": "re2r_gotcha",
+      "name": "Gotcha!",
+      "type": "Prata",
+      "description": "Derrote a forma 2 do G usando o guindaste apenas uma vez.",
+      "tip": "Cause muito dano antes de ativar o guindaste e mantenha um save antes da luta.",
+      "is_spoiler": true
+    },
+    {
+      "id": "re2r_treasure_hunter",
+      "name": "Treasure Hunter",
+      "type": "Bronze",
+      "description": "Use os dois rolos de filme escondidos para encontrar dois itens.",
+      "tip": "Revele os filmes no laboratório fotográfico e pegue as recompensas.",
+      "is_spoiler": false
+    },
+    {
+      "id": "re2r_waist_space",
+      "name": "A Waist of Space",
+      "type": "Bronze",
+      "description": "Maximize o espaço do inventário.",
+      "tip": "Pegue todas as pochetes do jogo.",
+      "is_spoiler": false
+    },
+    {
+      "id": "re2r_super_spy",
+      "name": "One Slick Super-spy",
+      "type": "Bronze",
+      "description": "Complete a seção da Ada usando apenas o EMF Visualizer.",
+      "tip": "Não dê nenhum tiro com a pistola da Ada.",
+      "is_spoiler": true
+    },
+    {
+      "id": "re2r_young_escapee",
+      "name": "Young Escapee",
+      "type": "Bronze",
+      "description": "Escape do quarto da Sherry em 60 segundos.",
+      "tip": "Decore o puzzle do bloco e salve antes da cena.",
+      "is_spoiler": true
+    },
+    {
+      "id": "re2r_time_spare",
+      "name": "With Time to Spare",
+      "type": "Bronze",
+      "description": "Derrote a forma 4 do G com 4 minutos ou mais restantes.",
+      "tip": "Guarde munição pesada para a reta final do laboratório.",
+      "is_spoiler": true
+    },
+    {
+      "id": "re2r_blink_eye",
+      "name": "In the Blink of an Eye",
+      "type": "Bronze",
+      "description": "Derrote o Super Tyrant com 5 minutos ou mais restantes.",
+      "tip": "Use todo o dano pesado disponível na luta final do Leon.",
+      "is_spoiler": true
+    },
+    {
+      "id": "re2r_lore_explorer",
+      "name": "Lore Explorer",
+      "type": "Bronze",
+      "description": "Leia todos os arquivos.",
+      "tip": "Será preciso passar por múltiplos cenários para fechar os 58 arquivos.",
+      "is_spoiler": false
+    },
+    {
+      "id": "re2r_complete_vermin",
+      "name": "Complete Vermin Extermination",
+      "type": "Prata",
+      "description": "Destrua todos os Mr. Raccoons.",
+      "tip": "São 15 no total, espalhados entre diferentes campanhas.",
+      "is_spoiler": false
+    },
+    {
+      "id": "re2r_master_unlocking",
+      "name": "Master of Unlocking",
+      "type": "Prata",
+      "description": "Abra todos os cofres e fechaduras do jogo.",
+      "tip": "Limpe cofres, cadeados e portable safes usando uma checklist.",
+      "is_spoiler": false
+    },
+    {
+      "id": "re2r_leon_s",
+      "name": "Leon \"S.\" Kennedy",
+      "type": "Ouro",
+      "description": "Consiga rank S com Leon no Standard ou Hardcore.",
+      "tip": "O rank depende basicamente do tempo; recarregue o save ao morrer.",
+      "is_spoiler": true
+    },
+    {
+      "id": "re2r_scarlet_hero",
+      "name": "Sizzling Scarlet Hero",
+      "type": "Ouro",
+      "description": "Consiga rank S com Claire no Standard ou Hardcore.",
+      "tip": "Use rota curta e evite desvios que não rendam itens essenciais.",
+      "is_spoiler": true
+    },
+    {
+      "id": "re2r_hardcore_rookie",
+      "name": "Hardcore Rookie",
+      "type": "Ouro",
+      "description": "Complete a história do Leon no Hardcore.",
+      "tip": "Deixe para depois de dominar a rota e liberar armas ou itens de apoio úteis.",
+      "is_spoiler": true
+    },
+    {
+      "id": "re2r_hardcore_college",
+      "name": "Hardcore College Student",
+      "type": "Ouro",
+      "description": "Complete a história da Claire no Hardcore.",
+      "tip": "Mesma lógica do troféu do Leon: faça quando a rota já estiver segura.",
+      "is_spoiler": true
+    },
+    {
+      "id": "re2r_frugalist",
+      "name": "Frugalist",
+      "type": "Prata",
+      "description": "Complete o jogo sem usar nenhum item de recuperação.",
+      "tip": "Faça numa run dedicada e evite riscos desnecessários.",
+      "is_spoiler": false
+    },
+    {
+      "id": "re2r_minimalist",
+      "name": "Minimalist",
+      "type": "Prata",
+      "description": "Complete o jogo sem abrir o baú.",
+      "tip": "Planeje a run para carregar só o essencial e colete as pochetes.",
+      "is_spoiler": false
+    },
+    {
+      "id": "re2r_small_footprint",
+      "name": "A Small Carbon Footprint",
+      "type": "Prata",
+      "description": "Dê 14.000 passos ou menos em uma campanha.",
+      "tip": "Use uma rota enxuta e evite backtracking; essa run combina bem com speedrun.",
+      "is_spoiler": false
+    },
+    {
+      "id": "re2r_grim_reaper",
+      "name": "Grim Reaper",
+      "type": "Bronze",
+      "description": "Complete o modo extra The 4th Survivor.",
+      "tip": "Memorize a rota, use itens de defesa com disciplina e evite combates inúteis.",
+      "is_spoiler": true
+    }
+  ]
+}

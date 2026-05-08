@@ -1,0 +1,1730 @@
+/* Responsive */
+@media (max-width: 768px) {
+  .atlas-panel,
+  .glass-morphism { border-radius: 24px; }
+  .atlas-search-input { min-height: 64px; font-size: 1rem; }
+  .atlas-btn { padding-inline: 14px; }
+  .atlas-footer-item { align-items: flex-start; }
+}
+
+@media (max-width: 768px) {
+  .atlas-topbar .h-\[88px\] { height: 48px !important; min-height: 48px; padding-top: 0; padding-bottom: 0; }
+  .atlas-home-hero { min-height: 0; }
+  .atlas-search-wrap { padding: 8px; border-radius: 22px; }
+  .atlas-search-control { grid-template-columns: minmax(0, 1fr); }
+  .atlas-search-btn { width: 100%; min-width: 0; height: 54px; }
+  .atlas-metric-card strong { font-size: 18px; }
+  .atlas-checklist-list { max-height: none !important; overflow: visible !important; padding-right: 0 !important; }
+}
+
+@media (max-width: 900px) {
+  .atlas-catalog-controls,
+  .atlas-catalog-editorial,
+  .atlas-catalog-editorial__notes {
+    grid-template-columns: minmax(0, 1fr);
+  }
+}
+
+@media (max-width: 640px) {
+  .atlas-catalog-chip-row {
+    flex-wrap: nowrap;
+    margin-inline: 0;
+    padding-inline: 0;
+    padding-bottom: 3px;
+    overflow-x: auto;
+    scrollbar-width: none;
+  }
+
+  .atlas-catalog-chip-row::-webkit-scrollbar {
+    display: none;
+  }
+
+  .atlas-collection-chip {
+    flex: 0 0 auto;
+    min-height: 34px;
+    padding-inline: 10px;
+  }
+
+  .atlas-catalog-understanding__summary {
+    padding: 10px 0;
+  }
+
+  .atlas-catalog-understanding__content {
+    padding: 10px 0 0;
+  }
+}
+
+@media (max-width: 1024px) {
+  .atlas-topbar {
+    position: sticky;
+  }
+
+  #guideContent {
+    gap: 18px;
+  }
+
+  #guideHeader .atlas-panel,
+  #sidebarInfo > section,
+  #view-guide .atlas-panel,
+  #view-library .atlas-panel,
+  #view-catalog .atlas-panel,
+  #view-admin .atlas-panel {
+    border-radius: 24px;
+  }
+}
+
+@media (max-width: 768px) {
+  html,
+  body {
+    overflow-x: hidden;
+  }
+
+  body {
+    padding-bottom: 90px;
+  }
+
+  body:not(.atlas-guide-dock-active) {
+    padding-bottom: 0;
+  }
+
+  main,
+  footer,
+  header > div,
+  header > nav {
+    min-width: 0;
+  }
+
+  .atlas-topbar {
+    background: rgba(3, 6, 17, .86);
+    backdrop-filter: blur(14px);
+  }
+
+  .atlas-topbar__row {
+    height: 48px !important;
+    min-height: 48px;
+    align-items: center;
+    flex-wrap: nowrap;
+    gap: 8px;
+  }
+
+  .atlas-brand {
+    gap: 8px;
+    min-width: 0;
+    flex: 1 1 auto;
+  }
+
+  .atlas-brand__tagline {
+    display: none;
+  }
+
+  .atlas-brand__name {
+    max-width: min(48vw, 220px);
+    overflow: hidden;
+    text-overflow: ellipsis;
+    font-size: .9rem !important;
+    line-height: 1;
+  }
+
+  .atlas-topbar .atlas-logo-mark {
+    width: 30px;
+    height: 30px;
+    border-radius: 10px;
+  }
+
+  .atlas-logo-letter {
+    font-size: 1rem !important;
+  }
+
+  .atlas-header-actions {
+    justify-content: flex-end;
+    gap: 6px;
+  }
+
+  .atlas-header-actions .atlas-btn,
+  .atlas-header-actions .atlas-text-action {
+    min-height: 30px;
+    height: 30px;
+    padding-inline: 9px;
+    border-radius: 10px;
+    font-size: .74rem;
+    white-space: nowrap;
+  }
+
+  .atlas-header-actions #adminStatus {
+    max-width: 120px;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    text-align: right;
+    font-size: .7rem;
+  }
+
+  .atlas-mobile-nav-wrap {
+    padding: 0 14px 5px;
+    margin-top: -2px;
+    max-width: 100vw;
+    overflow: hidden;
+  }
+
+  .atlas-mobile-nav {
+    width: calc(100vw - 28px) !important;
+    max-width: calc(100vw - 28px);
+    margin-inline: auto;
+    padding: 0;
+    border: 0;
+    border-top: 1px solid rgba(255,255,255,.055);
+    border-radius: 0;
+    background: transparent;
+  }
+
+  .atlas-mobile-nav .atlas-nav-link {
+    height: 28px;
+    justify-content: center;
+    min-width: 0;
+    width: 100%;
+    padding-inline: 6px;
+    border-radius: 0;
+    font-size: .76rem;
+    font-weight: 760;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+  }
+
+  .atlas-mobile-nav .atlas-nav-link:hover,
+  .atlas-mobile-nav .atlas-nav-link.is-active {
+    background: transparent !important;
+  }
+
+  .atlas-mobile-nav .atlas-nav-link::after {
+    left: 28%;
+    right: 28%;
+    bottom: 0;
+    height: 2px;
+  }
+
+  .atlas-main-shell {
+    padding-top: 10px !important;
+  }
+
+  .atlas-admin-main {
+    padding-top: 10px !important;
+    padding-bottom: 24px !important;
+  }
+
+  #view-guide,
+  #guideHeader,
+  #guideVerdictPanel,
+  #guideRoadmapPanel,
+  #guideEditorialNotesPanel,
+  #guideContent,
+  #trophySearch {
+    scroll-margin-top: 84px;
+  }
+
+  .atlas-home-hero__content,
+  .atlas-panel.p-6,
+  .atlas-panel.p-7,
+  .atlas-panel.p-8,
+  .atlas-panel.p-5,
+  .atlas-panel.p-4 {
+    padding: 20px;
+  }
+
+  h1.text-\[40px\],
+  h2.text-\[36px\],
+  h2.text-\[34px\],
+  h2.text-\[30px\],
+  h2.text-\[28px\] {
+    word-break: break-word;
+  }
+
+  .atlas-guide-cover {
+    width: 84px;
+    height: 84px;
+  }
+
+  .atlas-guide-cover--hero {
+    width: 132px;
+    height: 176px;
+  }
+
+  .atlas-library-focus,
+  .atlas-segment-card,
+  .catalog-card {
+    min-height: 0;
+  }
+
+  .atlas-card {
+    border-radius: 18px;
+  }
+
+  .atlas-card__body,
+  .catalog-card__body {
+    padding: 1rem;
+  }
+
+  .atlas-footer-item,
+  .atlas-clear-filter {
+    gap: 12px;
+  }
+
+  .atlas-footer-item strong,
+  .atlas-clear-filter strong {
+    line-height: 1.25;
+  }
+
+  #guideHeader .flex.gap-4.items-start.min-w-0 {
+    align-items: flex-start;
+  }
+
+  #guideHeader .atlas-btn,
+  #adminPreviewPanel .atlas-btn,
+  #adminGameFormPanel .atlas-btn,
+  #adminPasswordPanel .atlas-btn,
+  #adminGamesList .atlas-btn {
+    width: 100%;
+  }
+
+  .atlas-guide-shell > aside,
+  .atlas-guide-shell > div {
+    min-width: 0;
+  }
+
+  .atlas-checklist-toolbar .filter-btn {
+    flex: 0 0 auto;
+  }
+
+  #guideResults {
+    line-height: 1.4;
+  }
+
+  .atlas-checklist-list {
+    gap: 14px;
+    max-height: none;
+    overflow: visible;
+    padding-right: 0;
+  }
+
+  .atlas-checklist-list .trophy-card {
+    padding: 15px;
+    border-radius: 18px;
+  }
+
+  .atlas-checklist-list .trophy-card h4 {
+    font-size: 1.03rem;
+    line-height: 1.24;
+  }
+
+  .atlas-checklist-list .atlas-trophy-card__title-translation {
+    font-size: .8rem;
+    line-height: 1.22;
+  }
+
+  .atlas-checklist-list .trophy-card .atlas-btn {
+    width: 100%;
+    min-height: 44px;
+  }
+
+  #catalogPagination,
+  #adminPagination {
+    justify-content: center;
+  }
+
+  #catalogPagination .atlas-btn,
+  #adminPagination .atlas-btn,
+  #catalogPagination .atlas-pill,
+  #adminPagination .atlas-pill {
+    min-height: 42px;
+  }
+}
+
+@media (max-width: 640px) {
+  .atlas-topbar .h-\[88px\] {
+    height: 44px !important;
+    min-height: 44px;
+    padding-top: 0;
+    padding-bottom: 0;
+  }
+
+  .atlas-topbar .text-\[16px\].md\:text-\[20px\],
+  .atlas-topbar .text-\[20px\] {
+    font-size: .86rem;
+  }
+
+  .atlas-topbar .text-\[10px\].md\:text-\[11px\],
+  .atlas-topbar .text-\[11px\] {
+    display: none;
+  }
+
+  .atlas-topbar .atlas-logo-mark {
+    width: 28px;
+    height: 28px;
+    border-radius: 10px;
+  }
+
+  .atlas-mobile-nav-wrap {
+    padding-inline: 12px;
+    padding-bottom: 4px;
+  }
+
+  .atlas-mobile-nav {
+    width: calc(100vw - 24px) !important;
+    max-width: calc(100vw - 24px);
+  }
+
+  .atlas-mobile-nav .atlas-nav-link {
+    height: 27px;
+    font-size: .74rem;
+    gap: 4px;
+    letter-spacing: 0;
+  }
+
+  main.max-w-\[1320px\],
+  footer.max-w-\[1320px\] {
+    padding-left: 14px;
+    padding-right: 14px;
+  }
+
+  .atlas-eyebrow {
+    gap: 8px;
+    font-size: 10px;
+    letter-spacing: .2em;
+  }
+
+  .atlas-eyebrow::before {
+    width: 18px;
+  }
+
+  .atlas-hero-kicker {
+    letter-spacing: .14em;
+    font-size: 10px;
+  }
+
+  .atlas-hero-kicker__medal {
+    width: 28px;
+    height: 28px;
+  }
+
+  .atlas-search-input {
+    min-height: 60px;
+    padding-left: 16px;
+    padding-right: 16px;
+    font-size: .98rem;
+  }
+
+  .atlas-search-btn {
+    height: 52px;
+    border-radius: 16px;
+  }
+
+  .atlas-home-metrics {
+    grid-template-columns: minmax(0, 1fr);
+  }
+
+  .atlas-home-proof {
+    gap: 6px;
+    font-size: .88rem;
+  }
+
+  .atlas-home-section__head {
+    align-items: flex-start;
+  }
+
+  .atlas-featured-game {
+    grid-template-columns: minmax(0, 1fr);
+    padding: 14px;
+    border-radius: 20px;
+  }
+
+  .atlas-featured-game__cover {
+    width: min(138px, 48vw);
+    min-height: 0;
+    justify-self: center;
+    border-radius: 16px;
+  }
+
+  .atlas-featured-game__body {
+    align-items: stretch;
+  }
+
+  .atlas-featured-game h3,
+  .atlas-featured-game p {
+    max-width: 100%;
+  }
+
+  .atlas-home-cta-row .atlas-btn,
+  .atlas-featured-game__cta,
+  .atlas-editorial-update__link {
+    width: 100%;
+  }
+
+  .atlas-editorial-update {
+    grid-template-columns: minmax(0, 1fr);
+    gap: 8px;
+  }
+
+  .atlas-metric-card,
+  .atlas-footer-item,
+  .atlas-library-focus,
+  .atlas-segment-card,
+  .atlas-clear-filter {
+    border-radius: 20px;
+  }
+
+  .atlas-footer-item,
+  .atlas-segment-card,
+  .atlas-clear-filter {
+    padding: 16px;
+  }
+
+  .catalog-card .atlas-btn,
+  .atlas-quick-action {
+    width: 100%;
+  }
+
+  .library-shelf__grid {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 8px;
+  }
+
+  .library-shelf__tabs {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  .library-game__poster {
+    border-radius: 7px;
+    box-shadow: 0 8px 18px rgba(0,0,0,.2);
+  }
+
+  .library-game__caption {
+    padding: 28px 8px 15px;
+  }
+
+  .library-game__title {
+    font-size: 11px;
+  }
+
+  .library-game__state {
+    display: inline-flex;
+    font-size: 8px;
+  }
+
+  .library-game__details-toggle {
+    width: 26px;
+    height: 26px;
+  }
+
+  .library-game__overlay {
+    padding: 38px 8px 8px;
+    gap: 7px;
+  }
+
+  .library-game__meta {
+    gap: 5px;
+  }
+
+  .library-game__meta dt {
+    font-size: 8px;
+  }
+
+  .library-game__meta dd,
+  .library-game__overlay-head span,
+  .library-game__next {
+    font-size: 10px;
+  }
+
+  .library-game__action {
+    min-height: 34px;
+    font-size: 10px;
+  }
+
+  .atlas-quick-action {
+    min-height: 96px;
+    padding: 18px;
+  }
+
+  .atlas-responsive-grid {
+    grid-template-columns: minmax(0, 1fr);
+  }
+
+  #view-admin .grid.grid-cols-2,
+  #adminPreviewContent .grid.grid-cols-2 {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  #guideHeader h1,
+  #view-home h1,
+  #view-library h2,
+  #view-catalog h2,
+  #view-admin h1,
+  #view-admin h2 {
+    font-size: clamp(1.65rem, 7.4vw, 2.2rem) !important;
+    line-height: 1.06;
+  }
+
+  #homeHeroHeading {
+    font-size: clamp(1.75rem, 7.2vw, 2.08rem) !important;
+    line-height: 1.06 !important;
+  }
+
+  #guideHeader .atlas-guide-hero h1 {
+    font-size: clamp(1.65rem, 7.4vw, 2.05rem) !important;
+    line-height: 1.06 !important;
+  }
+
+  #view-home p.text-\[18px\].md\:text-\[20px\] {
+    font-size: 1rem;
+    line-height: 1.55;
+  }
+
+  #guideHeader p,
+  #sidebarInfo,
+  #view-guide .text-sm,
+  #view-library p,
+  #view-catalog p,
+  #view-admin p {
+    word-break: break-word;
+  }
+
+  #guideHeader .flex.flex-wrap.gap-3.xl\:justify-end,
+  #adminPreviewPanel .flex.items-center.gap-3,
+  #adminGameFormPanel .flex.flex-wrap.gap-3 {
+    width: 100%;
+  }
+
+  #guideHeader .atlas-btn,
+  #adminPreviewPanel .atlas-btn,
+  #adminGameFormPanel .atlas-btn,
+  #adminPasswordPanel .atlas-btn,
+  #adminGamesList .atlas-btn,
+  #adminGameFormPanel #uploadCoverBtn,
+  #adminGameFormPanel #clearImageBtn {
+    flex: 1 1 100%;
+  }
+
+  #adminGameFormPanel .grid.grid-cols-2,
+  #view-admin .grid.grid-cols-2 {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  #adminGameFormPanel input[type="file"] {
+    padding-block: 10px;
+  }
+
+  #adminGamesList article,
+  #adminGamesList .atlas-panel {
+    overflow: hidden;
+  }
+
+  #adminModal {
+    padding: 12px;
+  }
+
+  #adminModal:not(.hidden) {
+    display: flex;
+    align-items: flex-start;
+    justify-content: center;
+    overflow-y: auto;
+    background: rgba(2, 6, 23, .88);
+  }
+
+  #adminModal > .atlas-panel {
+    width: min(100%, 28rem);
+    max-height: calc(100dvh - 24px);
+    margin: 12px auto;
+    overflow-y: auto;
+    padding: 20px;
+    border-radius: 22px !important;
+    background:
+      linear-gradient(180deg, rgba(12, 20, 38, .98), rgba(4, 9, 20, .99));
+    border-color: rgba(125, 211, 252, .18);
+    box-shadow: 0 22px 52px rgba(0, 0, 0, .42);
+  }
+
+  #adminModal > .atlas-panel::before {
+    opacity: .18;
+  }
+
+  #adminModal > .atlas-panel > div:first-child {
+    align-items: flex-start;
+    gap: 12px;
+  }
+
+  #closeAdminModalBtn {
+    flex: 0 0 auto;
+    min-height: 36px;
+    padding: 0 10px;
+    border-radius: 10px;
+    border: 1px solid rgba(255,255,255,.10);
+    background: rgba(255,255,255,.045);
+    color: rgba(248,250,252,.78);
+  }
+
+  .toast {
+    right: 12px;
+    left: 12px;
+    bottom: 12px;
+    max-width: none;
+  }
+}
+
+@media (max-width: 420px) {
+  .atlas-mobile-nav .atlas-nav-link {
+    height: 26px;
+    font-size: .7rem;
+    padding-inline: 4px;
+  }
+
+  #guideHeader .atlas-guide-cover {
+    width: 72px;
+    height: 72px;
+  }
+
+  .atlas-checklist-list .trophy-card {
+    padding: 14px;
+  }
+
+  #view-admin .atlas-quick-action,
+  #view-home .atlas-quick-action {
+    min-height: 88px;
+  }
+
+  .atlas-search-wrap .atlas-chip {
+    max-width: 100%;
+    white-space: normal;
+    text-align: center;
+  }
+
+  #view-admin .grid.grid-cols-2,
+  #adminPreviewContent .grid.grid-cols-2,
+  #adminGameFormPanel .grid.grid-cols-2 {
+    grid-template-columns: minmax(0, 1fr);
+  }
+
+  .atlas-home-hero__content {
+    padding: 18px;
+  }
+
+  .atlas-search-wrap--home {
+    margin-inline: -2px;
+  }
+}
+
+@media (max-width: 768px) {
+  .library-toolbar__controls {
+    grid-template-columns: minmax(0, 1fr);
+  }
+
+  .library-secondary-grid {
+    grid-template-columns: minmax(0, 1fr);
+  }
+
+  .library-focus-card {
+    grid-template-columns: minmax(0, 1fr);
+    align-items: stretch;
+  }
+
+  .library-focus-card .atlas-btn {
+    width: 100%;
+  }
+
+  .library-rec-card {
+    grid-template-columns: 44px minmax(0, 1fr);
+  }
+
+  .library-rec-card .atlas-btn {
+    grid-column: 2;
+    width: 100%;
+  }
+
+  .atlas-bg-orb {
+    filter: blur(28px);
+    opacity: .10;
+  }
+
+  .atlas-bg-orb--one {
+    width: 240px;
+    height: 240px;
+  }
+
+  .atlas-bg-orb--two {
+    width: 280px;
+    height: 280px;
+    right: -120px;
+  }
+
+  .atlas-topbar {
+    backdrop-filter: blur(8px);
+  }
+
+  .atlas-panel,
+  .glass-morphism,
+  .atlas-card,
+  .atlas-admin-hero,
+  .atlas-admin-quick-panel,
+  .atlas-editorial-band,
+  .atlas-roadmap-panel,
+  .atlas-editorial-notes,
+  .atlas-trophy-card {
+    box-shadow: 0 6px 16px rgba(2, 6, 23, .10);
+  }
+
+  .atlas-panel--primary,
+  .atlas-home-hero {
+    box-shadow: 0 12px 28px rgba(2, 6, 23, .22);
+  }
+
+  .atlas-panel:not(.atlas-panel--primary)::before,
+  .glass-morphism::before,
+  .atlas-admin-hero::before,
+  .atlas-admin-quick-panel::before,
+  .atlas-admin-editor-panel::before {
+    opacity: 0;
+  }
+
+  .atlas-panel--primary::before {
+    opacity: .36;
+    background: linear-gradient(135deg, rgba(125, 211, 252, .06), transparent 46%);
+  }
+
+  .glass-morphism,
+  .admin-editor-actionbar,
+  .atlas-quick-dock {
+    backdrop-filter: none;
+  }
+
+  .atlas-home-hero::after,
+  .atlas-featured-game::before {
+    opacity: .07;
+  }
+
+  .atlas-search-wrap--home,
+  .atlas-search-btn,
+  .atlas-btn-primary,
+  .atlas-home-hero .atlas-btn-primary,
+  .atlas-suggestion-panel,
+  .toast,
+  .atlas-guide-cover--hero,
+  .atlas-featured-game__cover {
+    box-shadow: 0 8px 18px rgba(2, 6, 23, .18);
+  }
+
+  .atlas-card:hover,
+  .atlas-card--minimal:hover,
+  .atlas-related-collection:hover,
+  .atlas-btn:hover,
+  .atlas-quick-action:hover,
+  .atlas-intent-card:hover,
+  .atlas-collection-chip:hover,
+  .atlas-segment-card:hover,
+  .atlas-guide-nav__link:hover,
+  .atlas-quick-dock__btn:hover {
+    transform: none;
+  }
+
+  .atlas-card,
+  .atlas-btn,
+  .atlas-quick-action,
+  .atlas-intent-card,
+  .atlas-collection-chip,
+  .atlas-segment-card,
+  .atlas-guide-nav__link,
+  .atlas-quick-dock__btn {
+    transition-property: color, background, border-color, opacity;
+  }
+
+  .atlas-checklist-list .atlas-trophy-card,
+  .atlas-render-list .atlas-card,
+  #adminGamesList .glass-morphism {
+    box-shadow: none;
+  }
+
+  .atlas-risk-chip--risk,
+  .atlas-risk-chip--spoiler,
+  .atlas-risk-chip--warning {
+    box-shadow: inset 2px 0 0 currentColor;
+  }
+
+  .trophy-card.completed,
+  .atlas-trophy-card.completed {
+    box-shadow: inset 2px 0 0 var(--success);
+  }
+
+  .atlas-trophy-card[data-risks~="missable"] {
+    box-shadow: inset 2px 0 0 var(--risk-danger);
+  }
+
+  .spoiler-blur {
+    filter: blur(5px);
+  }
+
+  #view-guide .atlas-guide-hero {
+    overflow: visible;
+  }
+
+  #view-guide .atlas-guide-hero__body,
+  #view-guide .atlas-guide-hero__kicker,
+  #view-guide .atlas-guide-hero__facts,
+  #view-guide .atlas-guide-hero__actions {
+    min-width: 0;
+  }
+
+  #view-guide .atlas-guide-hero__kicker > span:first-child {
+    display: none;
+  }
+
+  #view-guide .atlas-guide-hero__kicker .atlas-badge {
+    max-width: 100%;
+    white-space: normal;
+    line-height: 1.15;
+    text-align: center;
+  }
+
+  #view-guide .atlas-guide-hero__actions .atlas-btn {
+    flex: 1 1 100%;
+    width: 100%;
+    white-space: normal;
+  }
+
+  .atlas-trophy-risk-list,
+  .atlas-card__badges,
+  .atlas-roadmap-step__meta,
+  .atlas-card__meta {
+    min-width: 0;
+  }
+
+  .atlas-risk-chip,
+  .atlas-badge,
+  .atlas-tag {
+    max-width: 100%;
+    white-space: normal;
+    line-height: 1.2;
+    text-align: center;
+  }
+
+  .backdrop-blur-md {
+    backdrop-filter: none;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html { scroll-behavior: auto; }
+  *,
+  *::before,
+  *::after {
+    animation-duration: .01ms !important;
+    animation-iteration-count: 1 !important;
+    scroll-behavior: auto !important;
+    transition-duration: .01ms !important;
+  }
+  .atlas-bg-orb { display: none; }
+  .atlas-btn:hover,
+  .atlas-card:hover,
+  .catalog-card:hover,
+  .atlas-quick-action:hover,
+  .atlas-intent-card:hover,
+  .atlas-collection-chip:hover,
+  .atlas-segment-card:hover,
+  .atlas-guide-nav__link:hover,
+  .atlas-quick-dock__btn:hover {
+    transform: none;
+  }
+}
+
+@media (max-width: 768px) {
+  .atlas-home-hero h1 {
+    font-size: clamp(2.2rem, 9vw, 3.4rem);
+    line-height: 0.98;
+  }
+
+  .atlas-panel {
+    border-radius: 24px;
+  }
+
+  #view-guide .atlas-panel,
+  #view-home .atlas-panel {
+    padding-left: 1rem;
+    padding-right: 1rem;
+  }
+
+  .atlas-metric-card span {
+    line-height: 1.45;
+  }
+
+  .atlas-auth-header--guest {
+    gap: 0.35rem;
+  }
+
+  .atlas-auth-header--guest .atlas-btn {
+    display: none;
+  }
+
+  .atlas-user-menu__name {
+    display: none;
+  }
+
+  .atlas-profile-identity {
+    align-items: flex-start;
+    flex-direction: column;
+  }
+
+  .atlas-profile-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .atlas-profile-stats {
+    grid-template-columns: 1fr;
+  }
+
+}
+
+@media (min-width: 430px) and (max-width: 768px) {
+  .library-shelf__grid {
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+  }
+}
+
+@media (max-width: 420px) {
+  .atlas-guide-cover--hero {
+    width: 108px;
+  height: 162px;
+  }
+}
+
+@media (max-width: 699px) {
+  #catalogList.catalog-grid {
+    grid-template-columns: minmax(0, 1fr);
+  }
+}
+
+@media (min-width: 700px) {
+  #catalogList.catalog-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
+
+@media (min-width: 1024px) {
+  #catalogList.catalog-grid {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+  }
+}
+
+@media (min-width: 1180px) {
+  #catalogList.catalog-grid {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+  }
+}
+
+@media (max-width: 900px) {
+  .atlas-catalog-editorial {
+    grid-template-columns: minmax(0, 1fr);
+  }
+}
+
+@media (max-width: 768px) {
+  :root {
+    --atlas-sticky-offset: 116px;
+  }
+
+  #view-catalog h1,
+  #view-catalog h2,
+  #view-library h1 {
+    max-width: 100%;
+    font-size: clamp(1.7rem, 6.5vw, 2.1rem) !important;
+    line-height: 1.04;
+  }
+
+  #view-catalog .catalog-card__body {
+    padding: 10px 11px 11px;
+  }
+
+  #catalogPagination .atlas-btn,
+  #catalogPagination .atlas-pill {
+    min-height: 32px;
+    height: 32px;
+  }
+}
+
+@media (max-width: 640px) {
+  :root {
+    --atlas-sticky-offset: 108px;
+  }
+
+  .atlas-catalog-controls {
+    grid-template-columns: minmax(0, 1fr);
+  }
+
+  .atlas-catalog-listbar {
+    align-items: flex-start;
+    flex-direction: column;
+    gap: 5px;
+  }
+
+  .atlas-catalog-verification {
+    white-space: normal;
+    line-height: 1.25;
+    padding-top: 5px;
+    padding-bottom: 5px;
+  }
+
+  .atlas-collection-chip {
+    min-height: 30px;
+    padding-inline: 9px;
+  }
+
+  .catalog-card__media {
+    height: 150px;
+  }
+
+  .atlas-catalog-editorial__notes {
+    grid-template-columns: minmax(0, 1fr);
+  }
+}
+
+/* Mobile polish: keep navigation, chips, pagination and empty states visibly complete at 390px. */
+@media (max-width: 768px) {
+  .atlas-mobile-nav-wrap {
+    overflow: visible;
+  }
+
+  .atlas-mobile-nav {
+    min-height: 34px;
+    align-items: stretch;
+  }
+
+  .atlas-mobile-nav .atlas-nav-link {
+    height: auto;
+    min-height: 32px;
+    padding: 5px 4px;
+    line-height: 1.05;
+    white-space: normal;
+  }
+
+  .atlas-catalog-chip-row {
+    flex-wrap: wrap;
+    overflow-x: visible;
+    gap: 7px;
+    padding: 1px 0 2px;
+  }
+
+  .atlas-collection-chip,
+  .atlas-related-pill,
+  .atlas-card__badges .atlas-badge,
+  .catalog-card .atlas-meta-signal {
+    min-width: 0;
+    max-width: 100%;
+    white-space: normal;
+    line-height: 1.15;
+    text-align: center;
+  }
+
+  .atlas-collection-chip {
+    flex: 1 1 calc(50% - 7px);
+    min-height: 36px;
+    padding: 6px 9px;
+  }
+
+  .atlas-collection-chip small {
+    flex: 0 0 auto;
+  }
+
+  #catalogIntentBar,
+  #catalogRelatedCollections {
+    min-width: 0;
+  }
+
+  #catalogRelatedCollections {
+    gap: 7px;
+  }
+
+  .atlas-related-pill {
+    flex: 1 1 calc(50% - 7px);
+    justify-content: center;
+    min-height: 34px;
+    padding-block: 5px;
+  }
+
+  #view-guide .atlas-guide-nav,
+  .atlas-guide-nav {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    grid-auto-flow: row;
+    grid-auto-columns: unset;
+    gap: 8px;
+    margin-inline: 0;
+    padding: 0;
+    overflow-x: visible;
+  }
+
+  #view-guide .atlas-guide-nav__link,
+  .atlas-guide-nav__link {
+    min-width: 0;
+    width: 100%;
+    min-height: 42px;
+    padding: 7px 8px;
+    white-space: normal;
+    line-height: 1.12;
+  }
+
+  #catalogPagination {
+    justify-content: stretch;
+    gap: 7px;
+  }
+
+  #catalogPagination .atlas-pagination-summary {
+    flex: 1 1 100%;
+    margin: 0;
+    text-align: center;
+    line-height: 1.25;
+  }
+
+  #catalogPagination .atlas-btn {
+    flex: 1 1 calc(50% - 7px);
+  }
+
+  #catalogPagination .atlas-pill {
+    flex: 1 1 38px;
+  }
+
+  .atlas-inline-empty,
+  .library-shelf__empty,
+  .catalog-grid > .atlas-panel {
+    min-width: 0;
+    padding: 18px 14px;
+    line-height: 1.45;
+    overflow-wrap: anywhere;
+    text-align: center;
+  }
+
+  .library-shelf__empty {
+    min-height: 150px;
+  }
+}
+
+@media (max-width: 420px) {
+  #view-catalog h1,
+  #view-catalog h2,
+  #view-library h1 {
+    font-size: clamp(1.55rem, 6.4vw, 1.75rem) !important;
+    line-height: 1.06;
+  }
+
+  .atlas-collection-chip,
+  .atlas-related-pill {
+    flex-basis: 100%;
+  }
+
+  .atlas-mobile-nav .atlas-nav-link {
+    min-height: 34px;
+    font-size: .72rem;
+  }
+
+  #view-guide .atlas-guide-nav,
+  .atlas-guide-nav {
+    grid-template-columns: minmax(0, 1fr);
+  }
+}
+
+/* Platinum-run mobile comfort: tighter first viewport, easier filters and safer dock at 390px. */
+@media (max-width: 768px) {
+  .atlas-topbar__row {
+    height: 46px !important;
+    min-height: 46px;
+  }
+
+  .atlas-brand {
+    min-height: 42px;
+  }
+
+  .atlas-header-actions .atlas-text-action,
+  .atlas-header-actions .atlas-btn {
+    min-height: 36px;
+    height: 36px;
+  }
+
+  .atlas-mobile-nav {
+    min-height: 36px;
+  }
+
+  .atlas-mobile-nav .atlas-nav-link {
+    min-height: 36px;
+    padding-block: 7px;
+  }
+
+  #view-guide {
+    gap: 10px;
+  }
+
+  #view-guide .atlas-guide-hero {
+    padding: 12px !important;
+  }
+
+  #view-guide .atlas-guide-hero__layout {
+    position: relative;
+    display: block;
+    min-width: 0;
+  }
+
+  #view-guide .atlas-guide-cover--hero {
+    position: absolute;
+    top: 0;
+    right: 0;
+    width: 68px;
+    height: 92px;
+    border-radius: 12px;
+    box-shadow: 0 8px 18px rgba(2, 6, 23, .20);
+  }
+
+  #view-guide .atlas-guide-hero__body {
+    min-width: 0;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+  }
+
+  #view-guide .atlas-guide-hero__kicker {
+    min-height: 24px;
+    padding-right: 78px;
+  }
+
+  #view-guide .atlas-guide-hero h1 {
+    min-height: 64px;
+    margin-top: 4px;
+    padding-right: 78px;
+    font-size: clamp(1.55rem, 7.2vw, 1.9rem) !important;
+    line-height: 1.04 !important;
+  }
+
+  #view-guide .atlas-guide-hero__subtitle {
+    margin-top: 5px;
+    font-size: .84rem;
+    line-height: 1.22;
+  }
+
+  #view-guide .atlas-guide-hero__summary {
+    margin-top: 6px;
+    font-size: .8rem;
+    line-height: 1.34;
+    display: -webkit-box;
+    -webkit-line-clamp: 3;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+  }
+
+  #view-guide .atlas-guide-start-card {
+    gap: 7px;
+    margin-top: 9px;
+    padding: 9px 10px;
+    border-radius: 12px;
+  }
+
+  #view-guide .atlas-guide-start-card strong {
+    margin-top: 2px;
+    font-size: .98rem;
+  }
+
+  #view-guide .atlas-guide-start-card p {
+    margin-top: 3px;
+    font-size: .78rem;
+    line-height: 1.32;
+  }
+
+  #view-guide .atlas-guide-start-card .atlas-btn,
+  #view-guide .atlas-guide-hero__actions .atlas-btn {
+    min-height: 40px;
+    height: auto;
+    border-radius: 12px;
+    font-size: .82rem;
+  }
+
+  #view-guide .atlas-guide-hero__actions {
+    order: 5;
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 7px;
+    margin-top: 9px;
+  }
+
+  #view-guide .atlas-guide-hero__actions .atlas-btn:first-child {
+    grid-column: 1 / -1;
+  }
+
+  #view-guide .atlas-guide-hero__facts {
+    order: 6;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 6px;
+    margin-top: 9px;
+  }
+
+  #view-guide .atlas-guide-hero__facts span,
+  #view-guide .atlas-guide-hero__facts .atlas-meta-signal {
+    min-height: 44px;
+    padding: 6px 7px;
+    border-radius: 10px;
+    column-gap: 7px;
+  }
+
+  #view-guide .atlas-guide-hero__facts small {
+    font-size: 8px;
+    letter-spacing: .08em;
+  }
+
+  #view-guide .atlas-guide-hero__facts strong {
+    font-size: .76rem;
+    line-height: 1.12;
+  }
+
+  #view-guide .atlas-editorial-band,
+  #view-guide .atlas-roadmap-panel,
+  #view-guide .atlas-editorial-notes {
+    padding: 12px !important;
+  }
+
+  #view-guide .atlas-editorial-band__intro h2,
+  #view-guide .atlas-section-head h2 {
+    font-size: clamp(1.15rem, 5.5vw, 1.45rem) !important;
+    line-height: 1.08;
+  }
+
+  #view-guide .atlas-editorial-band__intro p,
+  #view-guide .atlas-section-head p {
+    font-size: .82rem;
+    line-height: 1.36;
+  }
+
+  #view-guide .atlas-guide-before-grid {
+    gap: 8px;
+    margin-top: 10px;
+  }
+
+  #view-guide .atlas-guide-before-card {
+    grid-template-columns: 28px minmax(0, 1fr);
+    gap: 8px;
+    padding: 9px;
+    border-radius: 12px;
+  }
+
+  #view-guide .atlas-guide-before-card i {
+    width: 28px;
+    height: 28px;
+    border-radius: 10px;
+  }
+
+  #view-guide .atlas-guide-before-card strong {
+    font-size: .88rem;
+  }
+
+  #view-guide .atlas-guide-before-card p {
+    font-size: .76rem;
+    line-height: 1.32;
+  }
+
+  #view-guide .atlas-roadmap-timeline {
+    margin-top: 10px;
+  }
+
+  #view-guide .atlas-roadmap-step {
+    grid-template-columns: 28px minmax(0, 1fr);
+    gap: 8px;
+    padding-bottom: 9px;
+  }
+
+  #view-guide .atlas-roadmap-step__marker {
+    width: 28px;
+    height: 28px;
+    border-radius: 10px;
+    font-size: .76rem;
+  }
+
+  #view-guide .atlas-roadmap-step:not(:last-child)::after {
+    left: 13px;
+    top: 30px;
+  }
+
+  #view-guide .atlas-roadmap-step__body {
+    padding: 9px 10px;
+    border-radius: 11px;
+  }
+
+  #view-guide .atlas-roadmap-step__head {
+    gap: 3px;
+  }
+
+  #view-guide .atlas-roadmap-step__head h3 {
+    font-size: .92rem;
+    line-height: 1.16;
+  }
+
+  #view-guide .atlas-roadmap-step__category {
+    min-height: 26px;
+    margin-top: 2px;
+    padding: 4px 8px;
+    font-size: .68rem;
+  }
+
+  #view-guide .atlas-roadmap-step__body > p {
+    font-size: .8rem;
+    line-height: 1.34;
+  }
+
+  #view-guide .atlas-roadmap-step__meta {
+    gap: 5px;
+    margin-top: 7px;
+  }
+
+  #view-guide .atlas-roadmap-step__meta span {
+    padding: 5px 7px;
+    font-size: .7rem;
+    line-height: 1.25;
+  }
+
+  #guideChecklistPanel {
+    padding: 10px !important;
+  }
+
+  #guideChecklistPanel .atlas-checklist-head,
+  #guideChecklistPanel .atlas-checklist-head__aside {
+    gap: 7px;
+  }
+
+  #guideChecklistPanel .atlas-checklist-title h2 {
+    font-size: clamp(1.12rem, 5vw, 1.35rem) !important;
+  }
+
+  #guideChecklistPanel .atlas-checklist-progress {
+    min-width: 0;
+    font-size: .74rem;
+  }
+
+  #guideChecklistPanel .atlas-density-option {
+    min-height: 36px;
+    font-size: .7rem;
+  }
+
+  #guideChecklistPanel .atlas-checklist-toolbar {
+    gap: 7px;
+  }
+
+  #guideChecklistPanel .atlas-checklist-search .atlas-input {
+    min-height: 40px;
+    height: 40px;
+    font-size: .86rem;
+  }
+
+  #guideChecklistPanel .atlas-filter-primary {
+    display: grid;
+    grid-template-columns: minmax(0, 1fr);
+    gap: 6px;
+  }
+
+  #guideChecklistPanel .atlas-filter-group {
+    padding: 5px;
+  }
+
+  #guideChecklistPanel .atlas-filter-group > div {
+    gap: 5px;
+  }
+
+  #guideChecklistPanel .atlas-filter-primary .atlas-filter-group:first-child > div {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+  }
+
+  #guideChecklistPanel .atlas-filter-primary .atlas-filter-group:nth-child(2) > div {
+    display: flex;
+    flex-wrap: nowrap;
+    overflow-x: auto;
+    padding-bottom: 2px;
+    scrollbar-width: none;
+  }
+
+  #guideChecklistPanel .atlas-filter-primary .atlas-filter-group:nth-child(2) > div::-webkit-scrollbar {
+    display: none;
+  }
+
+  #guideChecklistPanel .atlas-filter-group .atlas-pill {
+    min-width: 0;
+    min-height: 38px;
+    padding-inline: 9px;
+    font-size: .72rem;
+  }
+
+  #guideChecklistPanel .atlas-filter-primary .atlas-filter-group:nth-child(2) .atlas-pill {
+    flex: 0 0 auto;
+    width: auto;
+    min-width: 96px;
+    max-width: 136px;
+    white-space: nowrap;
+  }
+
+  #guideChecklistPanel .atlas-filter-more summary {
+    min-height: 38px;
+    font-size: .78rem;
+  }
+
+  #guideChecklistPanel .atlas-filter-more__content {
+    padding-bottom: 8px;
+  }
+
+  #guideResults {
+    font-size: .78rem !important;
+  }
+
+  .atlas-checklist-list[data-checklist-density="compact"] {
+    gap: 7px;
+  }
+
+  .atlas-checklist-list[data-checklist-density="compact"] .atlas-trophy-card {
+    padding: 9px 10px;
+  }
+
+  .atlas-checklist-list[data-checklist-density="compact"] .atlas-trophy-card h4 {
+    font-size: .98rem;
+    line-height: 1.18;
+  }
+
+  .atlas-checklist-list[data-checklist-density="compact"] .atlas-trophy-card__title-translation {
+    font-size: .73rem;
+  }
+
+  .atlas-checklist-list[data-checklist-density="compact"] .atlas-trophy-description {
+    font-size: .82rem;
+    line-height: 1.34;
+  }
+
+  .atlas-checklist-list[data-checklist-density="compact"] .atlas-trophy-toggle {
+    min-height: 44px;
+    height: 44px;
+    font-size: .78rem;
+  }
+
+  body.atlas-guide-dock-active {
+    padding-bottom: 88px;
+  }
+
+  body.atlas-guide-dock-active.atlas-guide-dock-collapsed {
+    padding-bottom: 58px;
+  }
+
+  .atlas-quick-dock.is-collapsed {
+    left: auto;
+    right: 10px;
+    width: min(218px, calc(100vw - 20px));
+    padding: 5px;
+    border-radius: 999px;
+  }
+
+  .atlas-quick-dock.is-collapsed .atlas-quick-dock__toggle {
+    min-height: 38px;
+    border-radius: 999px;
+  }
+
+  .atlas-quick-dock.is-collapsed .atlas-quick-dock__toggle-label {
+    font-size: .76rem;
+  }
+
+  .atlas-home-hero {
+    min-height: 0;
+  }
+
+  .atlas-home-hero__content {
+    padding: 16px !important;
+  }
+
+  #homeHeroHeading {
+    font-size: clamp(1.55rem, 7vw, 1.95rem) !important;
+    line-height: 1.05 !important;
+  }
+
+  .atlas-home-hero__content > p {
+    margin-top: 10px;
+    font-size: .94rem;
+    line-height: 1.42;
+  }
+
+  .atlas-search-wrap--home {
+    margin-top: 14px !important;
+    padding: 7px;
+    border-radius: 18px;
+  }
+
+  .atlas-search-input {
+    min-height: 48px;
+    padding-block: 12px;
+    border-radius: 15px;
+  }
+
+  .atlas-search-btn {
+    height: 46px;
+    min-height: 46px;
+    border-radius: 14px;
+  }
+
+  .atlas-home-cta-row .atlas-btn {
+    min-height: 42px;
+  }
+
+  .atlas-home-proof {
+    margin-top: 12px !important;
+    font-size: .8rem;
+    line-height: 1.35;
+  }
+
+  .catalog-card__media {
+    height: 128px;
+  }
+
+  .catalog-card__body {
+    gap: 9px;
+  }
+
+  .catalog-card__title {
+    font-size: 1rem;
+  }
+
+  .catalog-card__signal {
+    white-space: normal;
+    line-height: 1.14;
+  }
+
+  .catalog-card .atlas-btn {
+    min-height: 40px;
+    height: 40px;
+  }
+
+  #catalogPagination .atlas-btn,
+  #catalogPagination .atlas-pill {
+    min-height: 38px;
+    height: 38px;
+  }
+}
+
+@media (max-width: 420px) {
+  #view-guide .atlas-guide-cover--hero {
+    width: 64px;
+    height: 86px;
+  }
+
+  #view-guide .atlas-guide-hero__kicker,
+  #view-guide .atlas-guide-hero h1 {
+    padding-right: 74px;
+  }
+
+  #view-guide .atlas-guide-hero h1 {
+    min-height: 60px;
+  }
+
+  #view-guide .atlas-guide-hero__facts strong {
+    font-size: .72rem;
+  }
+
+  #guideChecklistPanel .atlas-filter-primary .atlas-filter-group:nth-child(2) .atlas-pill {
+    min-width: 92px;
+    max-width: 128px;
+  }
+
+  .atlas-home-cta-row {
+    gap: 8px;
+  }
+}

@@ -1,0 +1,14 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="630" viewBox="0 0 1200 630" role="img" aria-label="AtlasAchievement">
+  <defs>
+    <linearGradient id="bg" x1="0" x2="1" y1="0" y2="1">
+      <stop offset="0%" stop-color="#08111f"/>
+      <stop offset="100%" stop-color="#12233f"/>
+    </linearGradient>
+  </defs>
+  <rect width="1200" height="630" fill="url(#bg)"/>
+  <g fill="#dbeafe">
+    <text x="80" y="250" font-family="Arial, Helvetica, sans-serif" font-size="74" font-weight="700">AtlasAchievement</text>
+    <text x="80" y="330" font-family="Arial, Helvetica, sans-serif" font-size="34">Troféus, guias e progresso de jogos</text>
+    <text x="80" y="390" font-family="Arial, Helvetica, sans-serif" font-size="28" fill="#93c5fd">Busque jogos, abra guias e acompanhe a conclusão.</text>
+  </g>
+</svg>

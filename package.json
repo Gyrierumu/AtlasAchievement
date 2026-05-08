@@ -1,0 +1,26 @@
+{
+  "name": "master-trophy-guide-pro",
+  "version": "4.0.0",
+  "description": "Master Trophy Guide com Express, SQLite, autenticação admin, painel administrativo e upload de capas",
+  "main": "server.js",
+  "scripts": {
+    "start": "node server.js",
+    "dev": "node server.js",
+    "db:setup": "node scripts/setup-database.js",
+    "release:check": "node scripts/check-release.js",
+    "test": "node scripts/regression-smoke.js",
+    "check:runtime": "node -e \"const major=Number(process.versions.node.split('.')[0]); if(major!==20){console.warn('Aviso: recomendado Node 20.x; atual = '+process.versions.node)}\""
+  },
+  "dependencies": {
+    "bcrypt": "^5.1.1",
+    "cors": "^2.8.5",
+    "express": "^4.21.2",
+    "express-session": "^1.18.1",
+    "multer": "^1.4.5-lts.2",
+    "sqlite3": "^5.1.7"
+  },
+  "engines": {
+    "node": "20.x",
+    "npm": ">=10"
+  }
+}

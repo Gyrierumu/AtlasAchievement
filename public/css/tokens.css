@@ -1,0 +1,30 @@
+/* Tokens */
+:root {
+  --bg: #050816;
+  --bg-soft: rgba(10, 16, 35, .72);
+  --panel: rgba(9, 15, 31, .78);
+  --panel-2: rgba(14, 23, 43, .88);
+  --line: rgba(148, 163, 184, .14);
+  --line-strong: rgba(125, 211, 252, .18);
+  --text: #eef6ff;
+  --muted: rgba(226, 232, 240, .64);
+  --accent: #38bdf8;
+  --accent-2: #0ea5e9;
+  --success: #22c55e;
+  --danger: #fb7185;
+  --time-accent: #38bdf8;
+  --risk-danger: #fb7185;
+  --risk-warning: #f59e0b;
+  --risk-spoiler: #a78bfa;
+  --status-complete: #22c55e;
+  --status-partial: #94a3b8;
+  --status-unverified: #fbbf24;
+  --difficulty-low: #34d399;
+  --difficulty-medium: #f59e0b;
+  --difficulty-high: #fb7185;
+  --platinum-accent: #f8e7b0;
+  --trophy-platinum: #dbeafe;
+  --trophy-gold: #facc15;
+  --trophy-silver: #cbd5e1;
+  --trophy-bronze: #c08457;
+}

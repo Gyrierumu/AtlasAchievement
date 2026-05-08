@@ -1,0 +1,663 @@
+.atlas-admin-score-shell {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  gap: 6px;
+}
+
+.atlas-admin-score-label {
+  color: rgba(255,255,255,.45);
+  font-size: 12px;
+  text-transform: uppercase;
+  letter-spacing: .12em;
+}
+
+/* Admin */
+body[data-page="admin"] {
+  background:
+    linear-gradient(180deg, #050814 0%, #070b16 54%, #050710 100%);
+}
+
+body[data-page="admin"] .atlas-bg-orb {
+  display: none;
+}
+
+body[data-page="admin"].atlas-admin-shell-locked #view-admin {
+  display: none;
+}
+
+.atlas-admin-overview {
+  align-items: stretch;
+}
+
+.atlas-admin-hero,
+.atlas-admin-quick-panel {
+  border-radius: 16px;
+}
+
+.atlas-admin-hero::before,
+.atlas-admin-quick-panel::before {
+  opacity: .28;
+}
+
+#adminGamesList > .glass-morphism {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) auto;
+  align-items: center;
+  gap: 18px;
+  min-width: 0;
+  padding: 16px;
+  overflow: hidden;
+}
+
+#adminGamesList > .glass-morphism > .flex:first-child {
+  display: grid;
+  grid-template-columns: 88px minmax(0, 1fr);
+  align-items: center;
+  gap: 14px;
+  min-width: 0;
+}
+
+#adminGamesList > .glass-morphism > .flex:first-child > div:first-child {
+  width: 88px;
+  height: 132px;
+}
+
+#adminGamesList > .glass-morphism img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+#adminGamesList > .glass-morphism > .flex:last-child {
+  display: flex;
+  justify-content: flex-end;
+  gap: 8px;
+  min-width: 0;
+}
+
+#adminGamesList [data-admin-edit],
+#adminGamesList [data-admin-preview],
+#adminGamesList [data-admin-duplicate],
+#adminGamesList [data-admin-delete] {
+  min-height: 38px;
+  border: 1px solid rgba(255,255,255,.12);
+  color: rgba(248, 250, 252, .92);
+  font-weight: 800;
+}
+
+#adminGamesList [data-admin-edit],
+#adminGamesList [data-admin-preview] {
+  background: rgba(15, 23, 42, .86);
+}
+
+#adminGamesList [data-admin-duplicate] {
+  background: rgb(2, 132, 199);
+}
+
+#adminGamesList [data-admin-delete] {
+  background: rgb(225, 29, 72);
+}
+
+#adminGamesList [data-admin-edit]:hover,
+#adminGamesList [data-admin-preview]:hover {
+  background: rgba(30, 41, 59, .95);
+}
+
+#view-admin .atlas-quick-action {
+  min-height: 76px;
+  border-radius: 10px;
+  flex-direction: row;
+  align-items: center;
+  justify-content: flex-start;
+  padding: 14px 16px;
+  gap: 10px;
+}
+
+#view-admin .atlas-quick-action i {
+  width: 24px;
+  text-align: center;
+  font-size: 18px;
+}
+
+.atlas-admin-editor-panel {
+  border-radius: 16px;
+  overflow: visible;
+}
+
+.atlas-admin-editor-panel::before {
+  opacity: .14;
+}
+
+.admin-editor-header {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 18px;
+  padding: 22px 24px;
+  border-bottom: 1px solid rgba(255,255,255,.08);
+}
+
+.admin-editor-subtitle {
+  margin: 10px 0 0;
+  max-width: 720px;
+  color: rgba(226, 232, 240, .62);
+  line-height: 1.55;
+}
+
+.admin-editor-form {
+  position: relative;
+}
+
+.admin-editor-layout {
+  display: grid;
+  grid-template-columns: 210px minmax(0, 1fr) 340px;
+  gap: 0;
+  align-items: start;
+}
+
+.admin-editor-sidebar {
+  position: sticky;
+  top: 104px;
+  max-height: calc(100vh - 132px);
+  overflow: auto;
+  padding: 18px;
+}
+
+.admin-section-link {
+  display: block;
+  padding: 12px 10px;
+  border-left: 2px solid rgba(255,255,255,.08);
+  color: rgba(226, 232, 240, .72);
+  transition: border-color .18s ease, background .18s ease, color .18s ease;
+}
+
+.admin-section-link:hover,
+.admin-section-link:focus-visible {
+  color: #fff;
+  border-color: rgba(56, 189, 248, .72);
+  background: rgba(56, 189, 248, .08);
+  outline: 0;
+}
+
+.admin-section-link span,
+.admin-section-link small {
+  display: block;
+}
+
+.admin-section-link span {
+  font-weight: 850;
+}
+
+.admin-section-link small {
+  margin-top: 3px;
+  color: rgba(226, 232, 240, .42);
+  font-size: .76rem;
+}
+
+.admin-editor-workspace {
+  max-height: calc(100vh - 214px);
+  overflow: auto;
+  border-inline: 1px solid rgba(255,255,255,.075);
+  scroll-behavior: smooth;
+}
+
+.admin-editor-section {
+  padding: 26px 24px 30px;
+  border-bottom: 1px solid rgba(255,255,255,.075);
+  scroll-margin-top: 18px;
+}
+
+.admin-editor-section:last-child {
+  border-bottom: 0;
+}
+
+.admin-section-heading,
+.admin-section-toolbar,
+.admin-converter__head,
+.admin-quality-panel__head,
+.admin-editor-actionbar,
+.admin-draft-tools {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 16px;
+}
+
+.admin-section-heading {
+  margin-bottom: 20px;
+}
+
+.admin-section-index {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 34px;
+  height: 34px;
+  flex: 0 0 auto;
+  border-radius: 8px;
+  background: rgba(56, 189, 248, .12);
+  color: rgba(186, 230, 253, .95);
+  font-size: .78rem;
+  font-weight: 900;
+}
+
+.admin-section-heading h3,
+.admin-section-toolbar h4,
+.admin-quality-panel h3,
+.admin-draft-tools h3 {
+  margin: 0;
+  color: #fff;
+  font-size: 1.1rem;
+  font-weight: 850;
+  line-height: 1.25;
+}
+
+.admin-section-heading p,
+.admin-section-toolbar p,
+.admin-quality-panel p,
+.admin-draft-tools p,
+.admin-field-help {
+  margin: 5px 0 0;
+  color: rgba(226, 232, 240, .54);
+  font-size: .86rem;
+  line-height: 1.48;
+}
+
+.admin-field-grid {
+  display: grid;
+  gap: 14px;
+  margin-top: 14px;
+}
+
+.admin-field-grid--two {
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+}
+
+.admin-field-grid--three {
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+}
+
+.admin-field--wide {
+  grid-column: 1 / -1;
+}
+
+.admin-field {
+  min-width: 0;
+}
+
+.admin-label-row {
+  display: flex;
+  align-items: baseline;
+  justify-content: space-between;
+  gap: 12px;
+}
+
+.admin-label-row .atlas-label {
+  margin-bottom: 10px;
+}
+
+.admin-label-row span {
+  flex: 0 0 auto;
+  color: rgba(226, 232, 240, .42);
+  font-size: .76rem;
+  font-weight: 700;
+}
+
+#adminGameFormPanel .atlas-input {
+  min-height: 48px;
+  border-radius: 8px;
+  padding: 12px 14px;
+  background: rgba(255,255,255,.035);
+}
+
+.admin-textarea {
+  min-height: 126px;
+  resize: vertical;
+  line-height: 1.55;
+}
+
+.admin-textarea--large {
+  min-height: 190px;
+}
+
+.admin-upload-row {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) auto auto;
+  align-items: end;
+  gap: 12px;
+  margin-top: 14px;
+}
+
+.admin-cover-preview,
+.admin-converter,
+.admin-review-note,
+.admin-checkbox-field {
+  border: 1px solid rgba(255,255,255,.08);
+  border-radius: 8px;
+  background: rgba(255,255,255,.026);
+}
+
+.admin-cover-preview {
+  min-height: 220px;
+  margin-top: 14px;
+  padding: 12px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.admin-converter,
+.admin-review-note {
+  padding: 14px;
+}
+
+.admin-converter__actions,
+.admin-draft-tools__actions,
+.admin-editor-actionbar__actions {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  flex-wrap: wrap;
+}
+
+.admin-section-toolbar {
+  margin: 18px 0 12px;
+  padding-top: 16px;
+  border-top: 1px solid rgba(255,255,255,.075);
+}
+
+.admin-trophies-list {
+  display: grid;
+  gap: 12px;
+}
+
+.trophy-input {
+  border: 1px solid rgba(255,255,255,.08);
+  border-radius: 8px;
+  background: rgba(6, 11, 23, .66);
+  padding: 14px;
+}
+
+.trophy-input input,
+.trophy-input textarea,
+.trophy-input select {
+  border-radius: 8px !important;
+}
+
+.trophy-input > .atlas-input,
+.trophy-input > .atlas-label {
+  margin-top: 10px;
+}
+
+.trophy-input > .atlas-input:first-of-type {
+  margin-top: 0;
+}
+
+.trophy-input > label {
+  margin-top: 10px;
+  color: rgba(226, 232, 240, .72);
+}
+
+.admin-checkbox-field {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  min-height: 76px;
+  padding: 14px;
+  color: rgba(226, 232, 240, .78);
+}
+
+.admin-checkbox-field input {
+  width: 20px;
+  height: 20px;
+  flex: 0 0 auto;
+  accent-color: var(--accent);
+}
+
+.admin-checkbox-field strong,
+.admin-checkbox-field small {
+  display: block;
+}
+
+.admin-checkbox-field small {
+  margin-top: 4px;
+  color: rgba(226, 232, 240, .48);
+}
+
+.admin-review-note {
+  margin-top: 16px;
+}
+
+.admin-review-note strong {
+  color: #fff;
+}
+
+.admin-editor-inspector {
+  position: sticky;
+  top: 104px;
+  max-height: calc(100vh - 132px);
+  overflow: auto;
+  padding: 18px;
+}
+
+.admin-quality-panel {
+  display: grid;
+  gap: 14px;
+}
+
+.admin-quality-panel__head {
+  padding-bottom: 12px;
+  border-bottom: 1px solid rgba(255,255,255,.075);
+}
+
+.admin-quality-meta,
+.admin-quality-list {
+  display: grid;
+  gap: 10px;
+}
+
+.admin-quality-list {
+  max-height: 420px;
+  overflow: auto;
+  padding-right: 3px;
+}
+
+.admin-quality-meta .glass-morphism,
+.admin-quality-list > div {
+  border-radius: 8px !important;
+}
+
+.admin-draft-tools {
+  margin-top: 18px;
+  padding-top: 16px;
+  border-top: 1px solid rgba(255,255,255,.075);
+}
+
+.admin-editor-actionbar {
+  position: sticky;
+  bottom: 0;
+  z-index: 25;
+  align-items: center;
+  padding: 14px 18px;
+  border-top: 1px solid rgba(255,255,255,.10);
+  border-radius: 0 0 16px 16px;
+  background: rgba(5, 9, 20, .96);
+  backdrop-filter: blur(14px);
+  box-shadow: 0 -18px 42px rgba(2, 6, 23, .34);
+}
+
+.admin-editor-actionbar strong {
+  display: block;
+  color: #fff;
+  font-size: .94rem;
+}
+
+.admin-editor-actionbar .atlas-btn {
+  min-width: 148px;
+}
+
+@media (max-width: 900px) {
+
+  .atlas-admin-score-shell {
+    align-items: flex-start;
+  }
+
+  #adminGamesList > .glass-morphism {
+    grid-template-columns: minmax(0, 1fr);
+  }
+
+  #adminGamesList > .glass-morphism > .flex:last-child {
+    justify-content: flex-start;
+  }
+
+}
+
+@media (max-width: 640px) {
+  #adminGamesList > .glass-morphism {
+    padding: 14px;
+  }
+
+  #adminGamesList > .glass-morphism > .flex:first-child {
+    grid-template-columns: 76px minmax(0, 1fr);
+    align-items: start;
+  }
+
+  #adminGamesList > .glass-morphism > .flex:first-child > div:first-child {
+    width: 76px;
+    height: 114px;
+  }
+
+  #adminGamesList > .glass-morphism > .flex:last-child {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    width: 100%;
+  }
+
+  #adminGamesList [data-admin-edit],
+  #adminGamesList [data-admin-preview],
+  #adminGamesList [data-admin-duplicate],
+  #adminGamesList [data-admin-delete] {
+    width: 100%;
+    padding: 9px 10px;
+  }
+}
+
+@media (max-width: 1180px) {
+  .admin-editor-layout {
+    grid-template-columns: 190px minmax(0, 1fr);
+  }
+
+  .admin-editor-inspector {
+    grid-column: 1 / -1;
+    position: static;
+    max-height: none;
+    border-top: 1px solid rgba(255,255,255,.075);
+  }
+
+  .admin-quality-list {
+    max-height: 320px;
+  }
+}
+
+@media (max-width: 820px) {
+  .admin-editor-header,
+  .admin-editor-layout,
+  .admin-editor-actionbar,
+  .admin-draft-tools {
+    display: block;
+  }
+
+  .admin-editor-header {
+    padding: 18px;
+  }
+
+  .admin-editor-header #cancelGameFormBtn {
+    width: 100%;
+    margin-top: 14px;
+  }
+
+  .admin-editor-sidebar {
+    position: sticky;
+    top: 46px;
+    z-index: 18;
+    display: flex;
+    gap: 8px;
+    max-height: none;
+    overflow-x: auto;
+    padding: 10px 14px;
+    border-bottom: 1px solid rgba(255,255,255,.075);
+    background: rgba(5, 9, 20, .96);
+  }
+
+  .admin-section-link {
+    flex: 0 0 auto;
+    min-width: 148px;
+    border-left: 0;
+    border-bottom: 2px solid rgba(255,255,255,.08);
+    border-radius: 8px;
+    background: rgba(255,255,255,.026);
+  }
+
+  .admin-editor-workspace {
+    max-height: none;
+    overflow: visible;
+    border-inline: 0;
+  }
+
+  .admin-editor-section {
+    padding: 22px 18px;
+  }
+
+  .admin-field-grid--two,
+  .admin-field-grid--three,
+  .admin-upload-row {
+    grid-template-columns: minmax(0, 1fr);
+  }
+
+  .admin-converter__head,
+  .admin-section-toolbar,
+  .admin-quality-panel__head {
+    display: block;
+  }
+
+  .admin-converter__actions,
+  .admin-draft-tools__actions,
+  .admin-editor-actionbar__actions {
+    margin-top: 12px;
+  }
+
+  .admin-editor-inspector {
+    padding: 18px;
+  }
+
+  .admin-editor-actionbar {
+    padding: 12px 14px calc(12px + env(safe-area-inset-bottom));
+    border-radius: 0;
+  }
+
+  .admin-editor-actionbar .atlas-btn {
+    min-width: 0;
+  }
+}
+
+@media (max-width: 520px) {
+  .admin-section-heading {
+    display: block;
+  }
+
+  .admin-section-index {
+    margin-bottom: 10px;
+  }
+
+  .admin-label-row {
+    align-items: flex-start;
+    flex-direction: column;
+    gap: 0;
+  }
+
+  .admin-label-row span {
+    margin-top: -6px;
+    margin-bottom: 8px;
+  }
+}

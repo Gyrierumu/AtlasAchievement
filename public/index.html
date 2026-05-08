@@ -1,0 +1,553 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>__PAGE_TITLE__</title>
+  <meta name="description" content="__PAGE_DESCRIPTION__">
+  __ROBOTS_META__
+  <link rel="canonical" href="__PAGE_CANONICAL__">
+  <meta property="og:title" content="__PAGE_TITLE__">
+  <meta property="og:description" content="__PAGE_DESCRIPTION__">
+  <meta property="og:type" content="__PAGE_OG_TYPE__">
+  <meta property="og:site_name" content="AtlasAchievement">
+  <meta property="og:url" content="__PAGE_CANONICAL__">
+  <meta property="og:image" content="__PAGE_OG_IMAGE__">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="__PAGE_TITLE__">
+  <meta name="twitter:description" content="__PAGE_DESCRIPTION__">
+  <meta name="twitter:image" content="__PAGE_OG_IMAGE__">
+  <script type="application/ld+json" id="gameStructuredData">__PAGE_JSON_LD__</script>
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+  <link rel="stylesheet" href="/css/utilities.css">
+  <link rel="stylesheet" href="/css/tokens.css">
+  <link rel="stylesheet" href="/css/base.css">
+  <link rel="stylesheet" href="/css/layout.css">
+  <link rel="stylesheet" href="/css/components.css">
+  <link rel="stylesheet" href="/css/home.css">
+  <link rel="stylesheet" href="/css/catalog.css">
+  <link rel="stylesheet" href="/css/guide.css">
+  <link rel="stylesheet" href="/css/checklist.css">
+  <link rel="stylesheet" href="/css/admin.css">
+  <link rel="stylesheet" href="/css/responsive.css">
+  <link rel="icon" href="/favicon.svg" type="image/svg+xml">
+  <link rel="apple-touch-icon" href="/apple-touch-icon.png">
+  <link rel="manifest" href="/site.webmanifest">
+</head>
+<body class="atlas-body min-h-screen pb-10" data-page="public">
+  <a href="#mainContent" class="atlas-skip-link">Pular para o conteúdo principal</a>
+  <div class="atlas-bg-orb atlas-bg-orb--one"></div>
+  <div class="atlas-bg-orb atlas-bg-orb--two"></div>
+
+  <header class="sticky top-0 z-50 atlas-topbar">
+    <div class="atlas-topbar__row max-w-[1320px] mx-auto px-4 lg:px-6 h-[88px] flex items-center justify-between gap-4">
+      <button data-view-link="home" class="atlas-brand flex items-center gap-4 text-left shrink-0">
+        <div class="w-12 h-12 rounded-2xl atlas-logo-mark flex items-center justify-center shadow-atlas">
+          <span class="atlas-logo-letter text-white text-2xl font-black">A</span>
+        </div>
+        <div class="atlas-brand__copy">
+          <div class="atlas-brand__name text-[16px] md:text-[20px] font-extrabold leading-none tracking-tight">AtlasAchievement</div>
+          <div class="atlas-brand__tagline text-[10px] md:text-[11px] uppercase tracking-[0.3em] text-white/40 mt-1">Troféus, conquistas e guias</div>
+        </div>
+      </button>
+
+      <nav class="hidden xl:flex items-center gap-3 atlas-nav-shell atlas-nav-shell--desktop">
+        <button type="button" data-view-link="home" class="atlas-nav-link is-active">Início</button>
+        <button type="button" data-view-link="catalog" class="atlas-nav-link">Explorar</button>
+        <button type="button" data-view-link="library" class="atlas-nav-link flex items-center gap-2">Biblioteca <span id="libraryBadge" class="bg-atlas-500 text-white text-[10px] px-1.5 py-0.5 rounded-full hidden">0</span></button>
+      </nav>
+
+      <div class="atlas-header-actions flex items-center gap-2 md:gap-3">
+        <div id="publicAuthGuest" class="atlas-auth-header atlas-auth-header--guest">
+          <button type="button" class="atlas-text-action" data-auth-open="login">Entrar</button>
+          <button type="button" class="atlas-btn atlas-btn-secondary atlas-btn-compact" data-auth-open="register">Criar conta</button>
+        </div>
+        <details id="publicUserMenu" class="atlas-user-menu hidden">
+          <summary>
+            <span id="publicUserAvatar" class="atlas-user-menu__avatar"></span>
+            <span id="publicUserName" class="atlas-user-menu__name">Perfil</span>
+            <i class="fas fa-chevron-down" aria-hidden="true"></i>
+          </summary>
+          <div class="atlas-user-menu__panel auth-menu user-menu">
+            <button type="button" class="auth-menu__item user-menu__item" data-user-profile><i class="fas fa-user"></i> Meu perfil</button>
+            <button type="button" class="auth-menu__item auth-menu__item--danger user-menu__item user-menu__item--danger" data-user-logout><i class="fas fa-right-from-bracket"></i> Sair</button>
+          </div>
+        </details>
+        <a href="/admin" id="adminPanelLink" class="hidden atlas-btn atlas-btn-secondary">Console</a>
+        <div id="adminStatus" class="hidden text-xs text-white/40"></div>
+        <button id="adminAccessBtn" class="hidden atlas-text-action" title="Acesso do editor">Editor</button>
+        <button id="adminLogoutBtn" class="hidden atlas-btn atlas-btn-primary">Sair</button>
+      </div>
+    </div>
+    <div class="atlas-mobile-nav-wrap xl:hidden px-4 lg:px-6 pb-4">
+      <nav class="atlas-nav-shell atlas-mobile-nav">
+        <button type="button" data-view-link="home" class="atlas-nav-link is-active">Início</button>
+        <button type="button" data-view-link="catalog" class="atlas-nav-link">Explorar</button>
+        <button type="button" data-view-link="library" class="atlas-nav-link flex items-center gap-2 justify-center">Biblioteca <span class="bg-atlas-500 text-white text-[10px] px-1.5 py-0.5 rounded-full hidden" data-mobile-library-badge>0</span></button>
+      </nav>
+    </div>
+  </header>
+
+  <main id="mainContent" tabindex="-1" class="atlas-main-shell max-w-[1320px] mx-auto px-4 lg:px-6 pt-6 space-y-6">
+    <section id="view-home" class="atlas-view-shell __HOME_VIEW_CLASS__ space-y-4">
+      <section class="atlas-home-hero atlas-panel atlas-panel--primary overflow-hidden">
+        <div class="atlas-home-hero__content">
+          <div class="atlas-hero-kicker mb-4"><span class="atlas-hero-kicker__medal"><i class="fas fa-trophy"></i></span><span>Próxima platina</span></div>
+          <__HOME_HERO_HEADING_TAG__ id="homeHeroHeading" class="text-[38px] md:text-[52px] xl:text-[64px] leading-[0.97] font-black tracking-tight max-w-[840px]">
+            Escolha sua próxima platina com roadmap, checklist e progresso salvo.
+          </__HOME_HERO_HEADING_TAG__>
+          <p class="mt-3 text-white/68 text-[17px] md:text-[18px] max-w-[680px] leading-relaxed">
+            Abra guias de troféus com rota clara, alertas de perdíveis, requisitos online/coop e filtros para decidir o próximo 100%.
+          </p>
+
+          <div class="mt-5 atlas-search-wrap atlas-search-wrap--home">
+            <div class="relative atlas-search-control">
+              <input id="gameInput" type="text" placeholder="Digite um jogo para decidir a próxima platina" class="w-full atlas-search-input outline-none" autocomplete="off" role="combobox" aria-autocomplete="list" aria-expanded="false" aria-controls="suggestions" aria-describedby="searchFeedback">
+              <button id="btnLoad" class="atlas-search-btn" aria-label="Buscar guia do jogo">
+                <i class="fas fa-magnifying-glass"></i>
+                <span>Buscar guia</span>
+              </button>
+              <div id="suggestions" class="absolute top-full left-0 right-0 atlas-suggestion-panel mt-3 hidden z-20 max-h-72 overflow-y-auto" role="listbox" aria-label="Sugestões de jogos"></div>
+            </div>
+            <div id="searchFeedback" class="mt-3 text-sm text-white/50" aria-live="polite">Compare antes de começar: tempo, dificuldade, perdíveis e roadmap.</div>
+          </div>
+
+          <div class="mt-4 flex flex-wrap gap-3 max-w-[780px] atlas-home-cta-row">
+            <button type="button" data-view-link="catalog" class="atlas-btn atlas-btn-primary"><i class="fas fa-scale-balanced"></i> Explorar guias</button>
+            <button type="button" data-scroll-target="#homeRecentGuides" class="atlas-btn atlas-btn-secondary"><i class="fas fa-clock-rotate-left"></i> Ver destaques</button>
+          </div>
+
+          <p id="homeCatalogProofText" class="mt-6 atlas-home-proof" aria-label="Resumo do catálogo">__HOME_CATALOG_PROOF__</p>
+        </div>
+      </section>
+
+      <section class="atlas-home-section atlas-home-section--moment" aria-labelledby="homeMomentTitle">
+        <div class="atlas-home-section__head">
+          <div>
+            <h2 id="homeMomentTitle" class="text-[28px] md:text-[34px] font-extrabold tracking-tight">Escolha pelo seu momento</h2>
+            <p class="text-white/58 mt-3 max-w-3xl">Entre pelo tipo de compromisso que combina com sua sessão de agora.</p>
+          </div>
+          <button type="button" data-view-link="catalog" class="atlas-btn atlas-btn-secondary"><i class="fas fa-compass"></i> Ver todas as faixas</button>
+        </div>
+        <div id="intentOverview" class="atlas-region grid lg:grid-cols-4 md:grid-cols-2 gap-4">__HOME_INTENT_CARDS__</div>
+      </section>
+
+      <section class="atlas-home-section atlas-home-featured-section" data-home-featured-section aria-labelledby="homeFeaturedTitle">
+        <div class="atlas-home-section__head atlas-home-section__head--compact">
+          <div>
+            <span class="atlas-section-kicker">Recomendação editorial</span>
+            <h2 id="homeFeaturedTitle" class="text-[28px] md:text-[34px] font-extrabold tracking-tight mt-2">Melhor primeiro clique agora</h2>
+          </div>
+        </div>
+        <div id="featuredNowOverview" class="atlas-region">__HOME_FEATURED_NOW__</div>
+      </section>
+
+      <section id="homeRecentGuides" class="atlas-home-section atlas-home-section--feeds">
+        <div class="atlas-home-feed-grid">
+          <section class="atlas-home-feed atlas-home-feed--discovery" aria-labelledby="homeDiscoveryTitle">
+            <div class="atlas-home-feed__head">
+              <div>
+                <span class="atlas-section-kicker">Destaques reais</span>
+                <h2 id="homeDiscoveryTitle" class="text-[24px] md:text-[30px] font-extrabold tracking-tight mt-2">Guias para escolher a próxima platina</h2>
+                <p class="text-white/55 mt-2 max-w-2xl">Jogos reais do catálogo para comparar platinas curtas, longas, difíceis, online, coop e com roadmap forte.</p>
+              </div>
+            </div>
+            <div id="recentGamesOverview" class="atlas-region atlas-discovery-grid">__HOME_RECENT_GUIDES__</div>
+          </section>
+
+          <section class="atlas-home-feed atlas-home-feed--history" aria-labelledby="homeHistoryTitle">
+            <div class="atlas-home-feed__head">
+              <div>
+                <span class="atlas-section-kicker">Histórico editorial</span>
+                <h2 id="homeHistoryTitle" class="text-[26px] md:text-[32px] font-extrabold tracking-tight mt-3">Últimas revisões</h2>
+                <p class="text-white/55 mt-2 max-w-xl">O que recebeu ajuste recente de rota, risco ou leitura editorial.</p>
+              </div>
+            </div>
+            <div id="updatedGamesOverview" class="atlas-region atlas-editorial-timeline">__HOME_UPDATED_GUIDES__</div>
+          </section>
+        </div>
+      </section>
+
+    </section>
+
+    <section id="view-catalog" class="atlas-view-shell __CATALOG_VIEW_CLASS__ space-y-3 pt-1">
+      <div class="atlas-section-head atlas-section-head--catalog atlas-catalog-head">
+        <div>
+          <div id="catalogBreadcrumbs">__CATALOG_BREADCRUMBS__</div><div class="atlas-eyebrow atlas-catalog-eyebrow mt-3">Catálogo</div>
+          <__CATALOG_HEADING_TAG__ id="catalogTitle" class="text-[36px] md:text-[52px] leading-none font-extrabold tracking-tight">__CATALOG_TITLE__</__CATALOG_HEADING_TAG__>
+        </div>
+      </div>
+
+      <div class="atlas-panel atlas-panel--plain atlas-catalog-shell p-3 md:p-4 space-y-2">
+        <div class="atlas-catalog-controls">
+          <label class="block">
+            <span class="sr-only">Buscar no catálogo</span>
+            <input id="catalogSearch" type="search" placeholder="Buscar jogo no catálogo" class="atlas-input min-h-[46px] h-[46px] py-3">
+          </label>
+          <label class="block">
+            <span class="sr-only">Ordenar catálogo</span>
+            <select id="catalogSort" class="atlas-input min-h-[46px] h-[46px] py-3 pr-10">
+              <option value="recommended-desc">Melhores para começar</option>
+              <option value="updated-desc">Revisados por último</option>
+              <option value="created-desc">Entraram no catálogo</option>
+              <option value="time-asc">Menor tempo</option>
+              <option value="time-desc">Maior tempo</option>
+              <option value="difficulty-asc">Menor dificuldade</option>
+              <option value="difficulty-desc">Maior dificuldade</option>
+              <option value="trophies-asc">Menos troféus</option>
+              <option value="trophies-desc">Mais troféus</option>
+              <option value="name-asc">Nome A–Z</option>
+            </select>
+          </label>
+        </div>
+
+        <div id="catalogSegments" class="atlas-region atlas-catalog-chip-row" aria-label="Filtros principais de coleção"></div>
+        <div id="catalogIntentBar" class="hidden" aria-hidden="true"></div>
+        <div id="catalogCompareTray" class="atlas-region hidden" aria-hidden="true"></div>
+
+        <div class="atlas-catalog-listbar">
+          <p id="catalogSummary" class="atlas-catalog-listbar__summary">__CATALOG_SUMMARY__</p>
+          <div id="catalogVerificationNotice" class="atlas-catalog-verification" aria-live="polite">__CATALOG_VERIFICATION_NOTICE__</div>
+        </div>
+
+        <div id="catalogList" class="atlas-region atlas-render-list catalog-grid">__CATALOG_SSR_LIST__</div>
+        <div id="catalogPagination" class="flex flex-wrap items-center gap-3">__CATALOG_SSR_PAGINATION__</div>
+
+        <details class="atlas-catalog-understanding">
+          <summary class="atlas-catalog-understanding__summary">
+            <span>
+              <span class="atlas-section-kicker">Entenda esta coleção</span>
+              <strong>Leitura, contexto e coleções relacionadas</strong>
+            </span>
+            <i class="fas fa-chevron-down" aria-hidden="true"></i>
+          </summary>
+          <div class="atlas-catalog-understanding__content">
+            <section class="atlas-catalog-editorial">
+              <div>
+                <span class="atlas-section-kicker">Leitura da faixa</span>
+                <h4 id="catalogCollectionTitle" class="atlas-catalog-editorial__title text-2xl font-extrabold tracking-tight mt-2">__CATALOG_COLLECTION_TITLE__</h4>
+                <p id="catalogCollectionDescription" class="text-white/60 mt-3 max-w-3xl">__CATALOG_COLLECTION_DESCRIPTION__</p>
+              </div>
+              <div class="atlas-catalog-editorial__notes">
+                <article>
+                  <div class="text-[11px] uppercase tracking-[0.18em] text-white/40">Por que abrir esta faixa</div>
+                  <p id="catalogCollectionReason" class="text-sm text-white/78 mt-2">__CATALOG_COLLECTION_REASON__</p>
+                </article>
+                <article>
+                  <div class="text-[11px] uppercase tracking-[0.18em] text-white/40">O que validar</div>
+                  <p id="catalogCollectionChecklist" class="text-sm text-white/78 mt-2">__CATALOG_COLLECTION_CHECKLIST__</p>
+                </article>
+              </div>
+            </section>
+
+            <section class="atlas-catalog-editorial atlas-catalog-editorial--seo">
+              <div>
+                <span class="atlas-section-kicker">Contexto editorial da coleção</span>
+                <h4 id="catalogSeoIntroTitle" class="atlas-catalog-editorial__title text-2xl font-extrabold tracking-tight mt-2">__CATALOG_SEO_INTRO_TITLE__</h4>
+                <p id="catalogSeoIntroBody" class="text-white/65 mt-3 max-w-4xl">__CATALOG_SEO_INTRO_BODY__</p>
+              </div>
+            </section>
+
+            <section class="atlas-catalog-editorial atlas-catalog-editorial--related">
+              <div>
+                <div class="text-[11px] uppercase tracking-[0.18em] text-white/40 mb-3">Coleções relacionadas</div>
+                <div id="catalogRelatedCollections" class="flex flex-wrap gap-2">__CATALOG_RELATED_LINKS__</div>
+              </div>
+            </section>
+          </div>
+        </details>
+      </div>
+    </section>
+
+    <section id="view-library" class="atlas-view-shell hidden space-y-4 pt-2">
+      <div class="atlas-section-head atlas-section-head--library">
+        <div>
+          <div class="atlas-eyebrow">Biblioteca</div>
+          <__LIBRARY_HEADING_TAG__ class="text-[36px] md:text-[52px] leading-none font-extrabold tracking-tight">Minha Biblioteca</__LIBRARY_HEADING_TAG__>
+        </div>
+        <div class="atlas-library-head-copy">
+          <p id="librarySummary" class="text-[15px] text-white/55 max-w-xl"></p>
+          <p id="librarySyncStatus" class="atlas-sync-status">Salvo neste navegador</p>
+        </div>
+      </div>
+
+      <div class="library-toolbar atlas-panel atlas-panel--support">
+        <div class="library-toolbar__content">
+          <div>
+            <p class="text-white/58 mt-2 max-w-2xl">Veja qual guia vale abrir hoje, o que está perto de 100% e qual é o próximo passo em cada jogo salvo.</p>
+          </div>
+          <div class="library-toolbar__controls">
+            <label class="library-toolbar__search">
+              <span class="sr-only">Buscar na biblioteca</span>
+              <input id="librarySearch" type="search" placeholder="Buscar jogo salvo" class="atlas-input min-h-[46px] h-[46px] py-3">
+            </label>
+            <label class="library-toolbar__sort">
+              <span class="sr-only">Ordenar biblioteca</span>
+              <select id="librarySort" class="atlas-input min-h-[46px] h-[46px] py-3 pr-10">
+                <option value="recent">Atividade recente</option>
+                <option value="best-next">Melhor para abrir hoje</option>
+                <option value="progress-desc">Maior progresso</option>
+                <option value="remaining-asc">Mais perto de 100%</option>
+                <option value="difficulty-desc">Maior dificuldade</option>
+                <option value="name-asc">Nome A–Z</option>
+              </select>
+            </label>
+            <div id="libraryStatusTabs" class="library-shelf__tabs" aria-label="Filtrar biblioteca por status"></div>
+          </div>
+        </div>
+      </div>
+
+      <div class="library-shelf">
+        <div id="libraryList" class="library-shelf__grid"></div>
+      </div>
+
+      <div id="libraryFocus" class="atlas-region library-focus-strip"></div>
+      <div id="librarySuggestions" class="library-secondary-grid"></div>
+    </section>
+
+    <section id="view-guide" class="atlas-view-shell __GUIDE_VIEW_CLASS__ pt-2 space-y-5" data-ssr-game="__HAS_SSR_GAME__">
+      <div id="guideBreadcrumbs">__GUIDE_BREADCRUMBS__</div>
+      <div id="guideHeader" class="atlas-region">__SSR_GUIDE_HEADER__</div>
+      <div id="loading" class="flex flex-col items-center space-y-4 py-20 hidden">
+        <div class="loading-spinner"></div>
+        <p class="text-atlas-300 animate-pulse font-medium text-center">Carregando guia, troféus e progresso...</p>
+      </div>
+      <div id="guideDecisionStack" class="atlas-region atlas-view-shell __GUIDE_CONTENT_CLASS__ space-y-5">__SSR_GUIDE_DECISION_STACK__</div>
+      <div id="guideContent" class="atlas-guide-shell atlas-guide-flow atlas-region atlas-view-shell __GUIDE_CONTENT_CLASS__ space-y-5">
+          <div id="guideRoadmapSlot">__SSR_GUIDE_ROADMAP__</div>
+          <aside id="sidebarInfo" class="atlas-region">__SSR_GUIDE_SIDEBAR__</aside>
+          <section id="guideChecklistPanel" class="atlas-panel atlas-panel--section p-4 md:p-5 space-y-4">
+            <div class="atlas-checklist-head">
+              <div class="atlas-checklist-title">
+                <div class="atlas-eyebrow">Checklist completo</div>
+                <h2 class="text-2xl md:text-3xl font-extrabold tracking-tight mt-2">Lista completa de troféus</h2>
+              </div>
+              <div class="atlas-checklist-head__aside">
+                <div class="atlas-checklist-progress text-sm text-white/55 font-medium">
+                  <div>Progresso: <span id="progressPercent" class="text-atlas-300">0%</span></div>
+                  <div id="guideCounter" class="mt-1">0/0 concluídos</div>
+                </div>
+                <div class="atlas-density-toggle" role="group" aria-label="Densidade do checklist">
+                  <button type="button" class="atlas-density-option" data-checklist-density="comfortable" aria-pressed="false">Modo confortável</button>
+                  <button type="button" class="atlas-density-option is-active" data-checklist-density="compact" aria-pressed="true">Modo compacto</button>
+                </div>
+              </div>
+            </div>
+            <div class="atlas-checklist-toolbar">
+              <label class="atlas-checklist-search">
+                <span class="sr-only">Buscar troféu</span>
+                <input id="trophySearch" type="search" placeholder="Buscar troféu ou descrição" class="atlas-input">
+              </label>
+                <div class="atlas-filter-primary" role="toolbar" aria-label="Filtros principais da lista de troféus">
+                  <fieldset class="atlas-filter-group">
+                    <legend>Status</legend>
+                    <div>
+                      <button type="button" class="filter-btn atlas-pill atlas-pill-active" data-filter="all" aria-pressed="true">Todos</button>
+                      <button type="button" class="filter-btn atlas-pill" data-filter="pending" aria-pressed="false">Pendentes</button>
+                      <button type="button" class="filter-btn atlas-pill" data-filter="completed" aria-pressed="false">Concluídos</button>
+                    </div>
+                  </fieldset>
+                  <fieldset class="atlas-filter-group">
+                    <legend>Risco</legend>
+                    <div>
+                      <button type="button" class="filter-btn atlas-pill" data-filter="missable" aria-pressed="false">Perdíveis</button>
+                      <button type="button" class="filter-btn atlas-pill" data-filter="online" aria-pressed="false">Online</button>
+                      <button type="button" class="filter-btn atlas-pill" data-filter="coop" aria-pressed="false">Coop</button>
+                      <button type="button" class="filter-btn atlas-pill" data-filter="grind" aria-pressed="false">Grind</button>
+                      <button type="button" class="filter-btn atlas-pill" data-filter="collectible" aria-pressed="false">Coletáveis</button>
+                      <button type="button" class="filter-btn atlas-pill" data-filter="difficulty" aria-pressed="false">Dificuldade</button>
+                      <button type="button" class="filter-btn atlas-pill" data-filter="cleanup" aria-pressed="false">Cleanup</button>
+                    </div>
+                  </fieldset>
+              </div>
+              <details class="atlas-filter-more atlas-filter-secondary">
+                <summary>Filtros secundários</summary>
+                <div class="atlas-filter-more__content">
+                  <fieldset class="atlas-filter-group">
+                    <legend>Tipo</legend>
+                    <div>
+                      <button type="button" class="filter-btn atlas-pill" data-filter="Platina" aria-pressed="false">Platina</button>
+                      <button type="button" class="filter-btn atlas-pill" data-filter="Ouro" aria-pressed="false">Ouro</button>
+                      <button type="button" class="filter-btn atlas-pill" data-filter="Prata" aria-pressed="false">Prata</button>
+                      <button type="button" class="filter-btn atlas-pill" data-filter="Bronze" aria-pressed="false">Bronze</button>
+                    </div>
+                  </fieldset>
+                    <fieldset class="atlas-filter-group atlas-filter-group--quiet">
+                      <legend>Outros</legend>
+                      <div>
+                        <button type="button" class="filter-btn atlas-pill" data-filter="story" aria-pressed="false">História</button>
+                        <button type="button" class="filter-btn atlas-pill" data-filter="spoiler" aria-pressed="false">Spoiler</button>
+                      </div>
+                    </fieldset>
+                </div>
+              </details>
+            </div>
+            <div id="guideResults" class="text-sm text-white/60" aria-live="polite">0 troféu(s) visível(is)</div>
+            <div id="guideEmptyState" class="hidden atlas-inline-empty">Nenhum troféu corresponde ao filtro atual. Limpe a busca ou troque o filtro.</div>
+          </section>
+          <div id="trophyList" class="atlas-checklist-list atlas-render-list is-compact space-y-4 pr-2" data-checklist-density="compact" aria-live="polite">__SSR_TROPHY_LIST__</div>
+          <div id="guideEditorialNotes">__SSR_GUIDE_EDITORIAL_NOTES__</div>
+          <section id="guideRelatedPanel" class="atlas-panel atlas-panel--support p-5 md:p-6 space-y-5">
+            <div class="flex flex-col md:flex-row md:items-end md:justify-between gap-4">
+              <div>
+                <span class="atlas-section-kicker">Recomendações relacionadas</span>
+                <h2 class="text-xl md:text-2xl font-extrabold tracking-tight mt-2">Continue por um guia parecido depois deste</h2>
+                <p class="text-white/58 mt-2 max-w-3xl">Quando terminar ou quiser alternar de projeto, use estes jogos parecidos para manter o mesmo ritmo de progresso.</p>
+              </div>
+            </div>
+            <div id="guideCollectionLinks" class="grid md:grid-cols-3 gap-4">__GUIDE_COLLECTION_LINKS__</div>
+            <div id="guideRelatedOverview" class="grid md:grid-cols-2 gap-4">__GUIDE_RELATED_OVERVIEW__</div>
+          </section>
+      </div>
+    </section>
+
+    <section id="view-profile" class="atlas-view-shell hidden space-y-5 pt-2">
+      <div id="profileContent" class="atlas-profile-shell">
+        <section class="atlas-profile-empty atlas-panel atlas-panel--support">
+          <span class="atlas-section-kicker">Conta Atlas</span>
+          <__PROFILE_HEADING_TAG__>Carregando perfil</__PROFILE_HEADING_TAG__>
+          <p>Verificando sua sessão.</p>
+        </section>
+      </div>
+    </section>
+  </main>
+
+  <footer class="max-w-[1320px] mx-auto px-4 lg:px-6 mt-10">
+    <div class="atlas-panel atlas-panel--flat px-6 py-6 grid md:grid-cols-4 gap-4 text-white/58 text-sm">
+      <div class="atlas-footer-item"><i class="fa-regular fa-eye-slash"></i><div><strong>Ver sem spoiler</strong><span>Consulte objetivos sem abrir detalhes desnecessários logo de cara.</span></div></div>
+      <div class="atlas-footer-item"><i class="fas fa-book"></i><div><strong>Ler guias</strong><span>Abra rota, alertas e checklist no mesmo fluxo.</span></div></div>
+      <div class="atlas-footer-item"><i class="fas fa-display"></i><div><strong>Usar biblioteca</strong><span>Salve jogos e volte ao próximo passo certo.</span></div></div>
+      <div class="atlas-footer-item"><i class="fas fa-trophy"></i><div><strong>Acompanhar 100%</strong><span>Marque troféus e veja o que falta sem se perder.</span></div></div>
+          <div class="md:col-span-4 pt-2 border-t border-white/8 flex items-center justify-between gap-3 flex-wrap">
+        <span class="text-white/40">AtlasAchievement prioriza decisão rápida, contexto editorial e checklist contínuo.</span>
+        <button id="adminAccessBtnFooter" class="atlas-text-action text-sm" title="Acesso do editor">Acesso editorial</button>
+      </div>
+    </div>
+  </footer>
+
+  <div id="userAuthModal" class="hidden fixed inset-0 bg-black/80 backdrop-blur-md z-[100] p-4" role="dialog" aria-modal="true" aria-labelledby="userAuthModalTitle" aria-hidden="true">
+    <div class="max-w-md mx-auto mt-16 atlas-panel p-6 rounded-[28px] atlas-auth-modal auth-modal">
+      <div class="flex items-start justify-between gap-4 mb-4">
+        <div>
+          <h3 id="userAuthModalTitle" class="text-xl font-bold">Conta Atlas</h3>
+          <p class="text-sm text-white/45 mt-1">Entre para salvar biblioteca e checklist na sua conta.</p>
+        </div>
+        <button type="button" class="atlas-text-action auth-modal__close" data-auth-close>Fechar</button>
+      </div>
+      <div class="atlas-auth-tabs auth-modal__tabs" role="tablist" aria-label="Acesso de usuário">
+        <button type="button" class="auth-modal__tab is-active" data-auth-mode="login" role="tab" aria-selected="true">Entrar</button>
+        <button type="button" class="auth-modal__tab" data-auth-mode="register" role="tab" aria-selected="false">Criar conta</button>
+      </div>
+      <p id="userAuthFeedback" class="atlas-auth-feedback" hidden></p>
+      <form id="userLoginForm" class="space-y-4" data-auth-panel="login">
+        <label class="atlas-auth-field">Email ou username<input id="loginIdentifier" type="text" class="atlas-input" autocomplete="username" required></label>
+        <label class="atlas-auth-field">Senha<input id="loginPassword" type="password" class="atlas-input" autocomplete="current-password" required></label>
+        <button class="w-full atlas-btn atlas-btn-primary auth-modal__submit h-[54px]" type="submit">Entrar</button>
+      </form>
+      <form id="userRegisterForm" class="space-y-4 hidden" data-auth-panel="register">
+        <label class="atlas-auth-field">Username<input id="registerUsername" type="text" class="atlas-input" autocomplete="username" minlength="3" maxlength="30" required></label>
+        <label class="atlas-auth-field">Email<input id="registerEmail" type="email" class="atlas-input" autocomplete="email" required></label>
+        <label class="atlas-auth-field">Nome exibido<input id="registerDisplayName" type="text" class="atlas-input" autocomplete="name" maxlength="60"></label>
+        <label class="atlas-auth-field">Senha<input id="registerPassword" type="password" class="atlas-input" autocomplete="new-password" minlength="8" required></label>
+        <button class="w-full atlas-btn atlas-btn-primary auth-modal__submit h-[54px]" type="submit">Criar conta</button>
+      </form>
+    </div>
+  </div>
+
+  <div id="libraryImportModal" class="hidden fixed inset-0 bg-black/80 backdrop-blur-md z-[100] p-4" role="dialog" aria-modal="true" aria-labelledby="libraryImportTitle" aria-hidden="true">
+    <div class="max-w-md mx-auto mt-20 atlas-panel p-6 rounded-[28px] atlas-auth-modal atlas-import-modal auth-modal">
+      <div class="mb-5">
+        <span class="atlas-section-kicker">Sincronização</span>
+        <h3 id="libraryImportTitle" class="text-xl font-bold mt-2">Encontramos progresso salvo neste navegador</h3>
+        <p class="text-sm text-white/55 mt-2">Você pode importar sua biblioteca local para a conta. Troféus concluídos em qualquer lado serão mantidos, e o status mais avançado vence.</p>
+        <p id="libraryImportCount" class="atlas-sync-status mt-3">Jogos salvos neste navegador</p>
+      </div>
+      <div class="atlas-auth-inline-actions atlas-import-actions">
+        <button type="button" class="atlas-btn atlas-btn-primary auth-modal__submit" data-import-local><i class="fas fa-cloud-arrow-up"></i> Importar</button>
+        <button type="button" class="atlas-btn atlas-btn-secondary auth-modal__secondary" data-import-keep-local>Manter local</button>
+        <button type="button" class="atlas-text-action auth-modal__text" data-import-ignore>Ignorar</button>
+      </div>
+    </div>
+  </div>
+
+  <div id="adminModal" class="hidden fixed inset-0 bg-black/80 backdrop-blur-md z-[100] p-4" role="dialog" aria-modal="true" aria-labelledby="adminModalTitle" aria-describedby="adminModalDescription" aria-hidden="true">
+    <div class="max-w-md mx-auto mt-24 atlas-panel p-6 rounded-[28px]">
+      <div class="flex items-center justify-between gap-4 mb-4">
+        <div>
+          <h3 id="adminModalTitle" class="text-xl font-bold">Entrar no painel</h3>
+          <p id="adminModalDescription" class="text-sm text-white/45 mt-1">Faça login para gerenciar jogos, troféus e guias.</p>
+        </div>
+        <button id="closeAdminModalBtn" class="text-white/45 hover:text-white">Fechar</button>
+      </div>
+      <form id="adminLoginForm" class="space-y-4" autocomplete="on">
+        <input id="adminUsername" type="text" placeholder="Usuário" class="atlas-input" autocomplete="username" required>
+        <input id="adminPassword" type="password" placeholder="Senha" class="atlas-input" autocomplete="current-password" required>
+        <button class="w-full atlas-btn atlas-btn-primary h-[54px]">Entrar</button>
+      </form>
+    </div>
+  </div>
+
+
+
+  <nav id="guideQuickDock" class="atlas-quick-dock hidden" aria-label="Navegação rápida do guia">
+    <button type="button" class="atlas-quick-dock__toggle" data-quick-dock-toggle="true" aria-expanded="false" aria-controls="guideQuickDockActions" aria-label="Mostrar ou recolher atalhos do guia">
+      <span class="atlas-quick-dock__toggle-copy">
+        <span class="atlas-quick-dock__toggle-label">Atalhos</span>
+        <strong class="atlas-quick-dock__mobile-progress" data-quick-dock-progress aria-label="Progresso atual">0%</strong>
+      </span>
+      <i class="fas fa-chevron-up" aria-hidden="true"></i>
+    </button>
+    <div class="atlas-quick-dock__progress">
+      <span class="atlas-quick-dock__label">Progresso do guia</span>
+      <strong id="guideQuickDockProgress" data-quick-dock-progress aria-label="Progresso atual">0%</strong>
+      <button type="button" class="atlas-quick-dock__close" data-quick-dock-close="true" aria-label="Fechar atalhos do guia"><i class="fas fa-xmark" aria-hidden="true"></i></button>
+    </div>
+    <div id="guideQuickDockActions" class="atlas-quick-dock__actions">
+      <button type="button" class="atlas-quick-dock__btn" data-guide-action="trophies" aria-label="Ir para o checklist"><i class="fas fa-list-check" aria-hidden="true"></i><span>Checklist</span></button>
+      <button type="button" class="atlas-quick-dock__btn" data-guide-action="roadmap" aria-label="Ir para o roadmap"><i class="fas fa-route" aria-hidden="true"></i><span>Roadmap</span></button>
+      <button type="button" class="atlas-quick-dock__btn" data-guide-action="search" aria-label="Buscar troféu no checklist"><i class="fas fa-magnifying-glass" aria-hidden="true"></i><span>Busca</span></button>
+      <button type="button" class="atlas-quick-dock__btn atlas-quick-dock__btn--desktop" data-guide-action="first-pending" aria-label="Ir para o próximo troféu pendente"><i class="fas fa-location-arrow" aria-hidden="true"></i><span>Próximo</span></button>
+      <button type="button" class="atlas-quick-dock__btn atlas-quick-dock__btn--top" data-scroll-top="true" aria-label="Voltar ao topo"><i class="fas fa-arrow-up" aria-hidden="true"></i><span>Topo</span></button>
+    </div>
+  </nav>
+  <div id="toast" class="toast" role="status" aria-live="polite" aria-atomic="true"></div>
+  __INITIAL_STATE_SCRIPT__
+  <!-- Front-end core: API and local persistence. Keep these before UI/app modules. -->
+  <script src="/js/api.js" defer></script>
+  <script src="/js/storage.js" defer></script>
+
+  <!-- UI foundations and renderers: build window.UI while preserving compatibility. -->
+  <script src="/js/ui-shared.js" defer></script>
+  <script src="/js/ui-formatters.js" defer></script>
+  <script src="/shared/editorialModel.js" defer></script>
+  <script src="/shared/guideViewModel.js" defer></script>
+  <script src="/shared/cardModel.js" defer></script>
+  <script src="/shared/catalogModel.js" defer></script>
+  <script src="/js/ui-decision-models.js" defer></script>
+  <script src="/js/ui-home.js" defer></script>
+  <script src="/js/ui-catalog.js" defer></script>
+  <script src="/js/ui-guide.js" defer></script>
+  <script src="/js/ui-library.js" defer></script>
+  <script src="/js/ui.js" defer></script>
+
+  <!-- Controllers and bindings: depend on core + window.UI. -->
+  <script src="/js/app-search.js" defer></script>
+  <script src="/js/app-catalog.js" defer></script>
+  <script src="/js/app-library.js" defer></script>
+  <script src="/js/guide-presenter.js" defer></script>
+  <script src="/js/app-pagination.js" defer></script>
+  <script src="/js/app-view-bindings.js" defer></script>
+  <script src="/js/app-search-view.js" defer></script>
+  <script src="/js/app-guide-view.js" defer></script>
+  <script src="/js/app-public-nav.js" defer></script>
+  <script src="/js/app-library-controller.js" defer></script>
+  <script src="/js/app-guide-controller.js" defer></script>
+  <script src="/js/app-user-auth.js" defer></script>
+
+  <!-- Bootstrap: creates context, selects public/admin initializer, then starts. -->
+  <script src="/js/app-context.js" defer></script>
+  <script src="/js/app-public-init.js" defer></script>
+  <script src="/js/app-public-admin-loader.js" defer></script>
+  <script src="/js/app.js" defer></script>
+</body>
+</html>

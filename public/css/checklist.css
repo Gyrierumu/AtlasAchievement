@@ -1,0 +1,1219 @@
+.trophy-card {
+  border-left: 3px solid transparent;
+}
+.trophy-card p {
+  line-height: 1.65;
+}
+.trophy-card.completed {
+  border-left-color: var(--success) !important;
+  box-shadow: inset 0 0 0 1px rgba(34, 197, 94, .14);
+}
+.spoiler-blur {
+  filter: blur(7px);
+  user-select: none;
+}
+.spoiler-hint {
+  display: inline-flex;
+  margin-right: 8px;
+  padding: 4px 8px;
+  border-radius: 999px;
+  background: rgba(244, 114, 182, .12);
+  color: rgba(251, 207, 232, .95);
+  font-size: .72rem;
+  font-weight: 700;
+}
+.spoiler-unveiled { filter: none; }
+
+/* Checklist */
+.atlas-checklist-toolbar {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) minmax(260px, 320px);
+  gap: 14px;
+  align-items: start;
+}
+
+.atlas-filter-desktop {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: flex-start;
+  gap: 10px;
+  min-width: 0;
+}
+
+.atlas-filter-mobile {
+  display: none;
+}
+
+.atlas-filter-group {
+  min-width: 0;
+  margin: 0;
+  padding: 8px;
+  border: 1px solid rgba(255,255,255,.08);
+  border-radius: 16px;
+  background: rgba(255,255,255,.028);
+}
+
+.atlas-filter-group--quiet {
+  opacity: .82;
+}
+
+.atlas-filter-group legend {
+  padding: 0 5px;
+  color: rgba(255,255,255,.48);
+  font-size: 10px;
+  font-weight: 850;
+  letter-spacing: .13em;
+  line-height: 1;
+  text-transform: uppercase;
+}
+
+.atlas-filter-group > div {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px;
+}
+
+.atlas-filter-group .atlas-pill {
+  min-height: 34px;
+  padding: 0 10px;
+  border-color: transparent;
+  background: rgba(255,255,255,.045);
+  color: rgba(255,255,255,.68);
+  font-size: .82rem;
+  line-height: 1;
+}
+
+.atlas-filter-group .atlas-pill[data-count]::after {
+  content: attr(data-count);
+  min-width: 18px;
+  height: 18px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  margin-left: 7px;
+  padding: 0 5px;
+  border-radius: 999px;
+  color: rgba(255,255,255,.64);
+  background: rgba(255,255,255,.07);
+  font-size: .68rem;
+  font-weight: 850;
+}
+
+.atlas-filter-group .atlas-pill-active,
+.atlas-filter-group .atlas-pill:hover {
+  border-color: color-mix(in srgb, var(--filter-color, var(--status-partial)) 34%, transparent);
+  background: color-mix(in srgb, var(--filter-color, var(--status-partial)) 13%, transparent);
+  color: color-mix(in srgb, var(--filter-color, var(--status-partial)) 72%, white);
+}
+
+.atlas-filter-group [data-filter="completed"] { --filter-color: var(--status-complete); }
+.atlas-filter-group [data-filter="pending"] { --filter-color: var(--status-partial); }
+.atlas-filter-group [data-filter="Platina"] { --filter-color: var(--trophy-platinum); }
+.atlas-filter-group [data-filter="Ouro"] { --filter-color: var(--trophy-gold); }
+.atlas-filter-group [data-filter="Prata"] { --filter-color: var(--trophy-silver); }
+.atlas-filter-group [data-filter="Bronze"] { --filter-color: var(--trophy-bronze); }
+.atlas-filter-group [data-filter="difficulty"] { --filter-color: var(--difficulty-medium); }
+.atlas-filter-group [data-filter="online"],
+.atlas-filter-group [data-filter="coop"] { --filter-color: var(--risk-warning); }
+.atlas-filter-group [data-filter="collectible"] { --filter-color: var(--status-partial); }
+.atlas-filter-group [data-filter="story"] { --filter-color: var(--status-complete); }
+
+.atlas-filter-group [data-filter="missable"].atlas-pill-active,
+.atlas-filter-group [data-filter="missable"]:hover {
+  border-color: color-mix(in srgb, var(--risk-danger) 38%, transparent);
+  background: color-mix(in srgb, var(--risk-danger) 15%, transparent);
+  color: #ffe3ea;
+}
+
+.atlas-filter-group [data-filter="spoiler"].atlas-pill-active,
+.atlas-filter-group [data-filter="spoiler"]:hover {
+  border-color: color-mix(in srgb, var(--risk-spoiler) 38%, transparent);
+  background: color-mix(in srgb, var(--risk-spoiler) 15%, transparent);
+  color: #eee7ff;
+}
+
+.atlas-filter-group [data-filter="grind"].atlas-pill-active,
+.atlas-filter-group [data-filter="cleanup"].atlas-pill-active,
+.atlas-filter-group [data-filter="online"].atlas-pill-active,
+.atlas-filter-group [data-filter="coop"].atlas-pill-active,
+.atlas-filter-group [data-filter="grind"]:hover,
+.atlas-filter-group [data-filter="cleanup"]:hover,
+.atlas-filter-group [data-filter="online"]:hover,
+.atlas-filter-group [data-filter="coop"]:hover {
+  border-color: color-mix(in srgb, var(--risk-warning) 34%, transparent);
+  background: color-mix(in srgb, var(--risk-warning) 12%, transparent);
+  color: #fff1c7;
+}
+
+.atlas-filter-more {
+  overflow: hidden;
+  border: 1px solid rgba(255,255,255,.08);
+  border-radius: 18px;
+  background: rgba(255,255,255,.028);
+}
+
+.atlas-filter-more summary {
+  min-height: 42px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+  padding: 0 12px;
+  color: rgba(255,255,255,.9);
+  font-weight: 800;
+  cursor: pointer;
+  list-style: none;
+}
+
+.atlas-filter-more summary::-webkit-details-marker {
+  display: none;
+}
+
+.atlas-filter-more summary::after {
+  content: '+';
+  width: 24px;
+  height: 24px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 999px;
+  background: rgba(255,255,255,.07);
+  color: rgba(255,255,255,.76);
+}
+
+.atlas-filter-more[open] summary::after {
+  content: '-';
+}
+
+.atlas-filter-more__content {
+  display: grid;
+  gap: 10px;
+  padding: 0 10px 10px;
+}
+
+.atlas-trophy-card {
+  padding: 16px;
+  border-radius: 18px;
+  border-color: rgba(255,255,255,.075);
+  border-left-color: rgba(148, 163, 184, .36);
+  background:
+    linear-gradient(180deg, rgba(15, 23, 42, .58), rgba(7, 12, 25, .72));
+  box-shadow: none;
+}
+
+.atlas-trophy-card > * {
+  position: relative;
+}
+
+.atlas-trophy-card.completed {
+  border-color: rgba(34, 197, 94, .18);
+  border-left-color: var(--success) !important;
+  background:
+    linear-gradient(180deg, rgba(20, 83, 45, .16), rgba(7, 12, 25, .82));
+  box-shadow: inset 0 0 0 1px rgba(34, 197, 94, .08);
+}
+
+.atlas-trophy-card[data-risks~="missable"] {
+  border-left-color: var(--risk-danger);
+  box-shadow: inset 3px 0 0 color-mix(in srgb, var(--risk-danger) 24%, transparent);
+}
+
+.atlas-trophy-card[data-risks~="spoiler"] {
+  border-left-color: var(--risk-spoiler);
+}
+
+.atlas-trophy-card[data-risks~="online"],
+.atlas-trophy-card[data-risks~="coop"],
+.atlas-trophy-card[data-risks~="grind"],
+.atlas-trophy-card[data-risks~="difficulty"] {
+  border-left-color: var(--risk-warning);
+}
+
+.atlas-trophy-card[data-risks~="online"],
+.atlas-trophy-card[data-risks~="coop"] {
+  background:
+    linear-gradient(180deg, rgba(120, 113, 108, .11), rgba(7, 12, 25, .74));
+}
+
+.atlas-trophy-card[data-risks~="collectible"] {
+  border-left-color: var(--status-partial);
+}
+
+.atlas-trophy-card[data-risks~="cleanup"] {
+  border-left-color: rgba(148, 163, 184, .58);
+}
+
+.atlas-trophy-card[data-risks~="missable"][data-risks~="spoiler"] {
+  border-left-color: var(--risk-danger);
+}
+
+.atlas-trophy-card__layout {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) auto;
+  gap: 14px;
+  align-items: start;
+}
+
+.atlas-trophy-card__main {
+  min-width: 0;
+}
+
+.atlas-trophy-card__headline {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 12px;
+  min-width: 0;
+}
+
+.atlas-trophy-card__title {
+  min-width: 0;
+}
+
+.atlas-trophy-card__headline h4 {
+  min-width: 0;
+}
+
+.atlas-trophy-card__title-translation {
+  margin-top: 3px;
+  color: rgba(255,255,255,.62);
+  font-size: .84rem;
+  font-weight: 650;
+  line-height: 1.25;
+}
+
+.atlas-trophy-card__meta,
+.atlas-trophy-risk-list {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 7px;
+}
+
+.atlas-trophy-card__meta {
+  flex: 0 0 auto;
+  justify-content: flex-end;
+}
+
+.atlas-trophy-type,
+.atlas-trophy-state {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  min-height: 24px;
+  padding: 0 7px;
+  border-radius: 999px;
+  border: 1px solid rgba(255,255,255,.07);
+  background: rgba(255,255,255,.035);
+  color: rgba(255,255,255,.56);
+  font-size: .68rem;
+  font-weight: 850;
+  letter-spacing: .11em;
+  text-transform: uppercase;
+}
+
+.atlas-trophy-type {
+  border-color: transparent;
+  background: rgba(255,255,255,.018);
+  color: rgba(255,255,255,.42);
+}
+
+.atlas-trophy-state::before {
+  content: '';
+  width: 6px;
+  height: 6px;
+  border-radius: 999px;
+  background: rgba(148, 163, 184, .78);
+}
+
+.atlas-trophy-state--done {
+  color: rgba(219, 255, 232, .86);
+  border-color: color-mix(in srgb, var(--status-complete) 26%, transparent);
+  background: color-mix(in srgb, var(--status-complete) 12%, transparent);
+}
+
+.atlas-trophy-state--done::before {
+  background: var(--status-complete);
+}
+
+.atlas-trophy-card h4 {
+  margin: 0;
+  color: #fff;
+  font-size: 1.14rem;
+  font-weight: 850;
+  line-height: 1.28;
+}
+
+.atlas-trophy-card.completed h4 {
+  color: #ecfdf5;
+}
+
+.atlas-trophy-risk-list {
+  margin-top: 8px;
+}
+
+.atlas-risk-chip {
+  min-height: 28px;
+  display: inline-flex;
+  align-items: center;
+  padding: 0 9px;
+  border: 1px solid rgba(255,255,255,.10);
+  border-radius: 999px;
+  background: rgba(255,255,255,.045);
+  color: rgba(255,255,255,.78);
+  font-size: .75rem;
+  font-weight: 850;
+}
+
+.atlas-risk-chip--risk {
+  border-color: color-mix(in srgb, var(--risk-danger) 62%, transparent);
+  background: color-mix(in srgb, var(--risk-danger) 24%, transparent);
+  color: #fff1f4;
+  box-shadow: 0 0 0 1px color-mix(in srgb, var(--risk-danger) 18%, transparent);
+}
+
+.atlas-risk-chip--spoiler {
+  border-color: color-mix(in srgb, var(--risk-spoiler) 58%, transparent);
+  background: color-mix(in srgb, var(--risk-spoiler) 23%, transparent);
+  color: #f5f0ff;
+  box-shadow: 0 0 0 1px color-mix(in srgb, var(--risk-spoiler) 14%, transparent);
+}
+
+.atlas-risk-chip--warning {
+  border-color: color-mix(in srgb, var(--risk-warning) 42%, transparent);
+  background: color-mix(in srgb, var(--risk-warning) 17%, transparent);
+  color: #fff0c7;
+  box-shadow: 0 0 0 1px color-mix(in srgb, var(--risk-warning) 9%, transparent);
+}
+
+.atlas-risk-chip--hot {
+  border-color: color-mix(in srgb, var(--risk-danger) 38%, transparent);
+  background: color-mix(in srgb, var(--risk-danger) 14%, transparent);
+  color: #ffe3ea;
+}
+
+.atlas-risk-chip--warm {
+  border-color: color-mix(in srgb, var(--risk-warning) 34%, transparent);
+  background: color-mix(in srgb, var(--risk-warning) 13%, transparent);
+  color: #fff1c7;
+}
+
+.atlas-risk-chip--close {
+  border-color: color-mix(in srgb, var(--difficulty-low) 34%, transparent);
+  background: color-mix(in srgb, var(--difficulty-low) 13%, transparent);
+  color: #dcffed;
+}
+
+.atlas-risk-chip--accent {
+  border-color: color-mix(in srgb, var(--platinum-accent) 34%, transparent);
+  background: color-mix(in srgb, var(--platinum-accent) 13%, transparent);
+  color: #fff4cf;
+}
+
+.atlas-risk-chip--neutral {
+  border-color: color-mix(in srgb, var(--status-partial) 24%, transparent);
+  background: color-mix(in srgb, var(--status-partial) 10%, transparent);
+  color: #d5dde8;
+}
+
+.atlas-risk-chip--soft,
+.atlas-risk-chip--partial {
+  border-color: color-mix(in srgb, var(--status-partial) 24%, transparent);
+  background: color-mix(in srgb, var(--status-partial) 10%, transparent);
+  color: #d5dde8;
+}
+
+.atlas-trophy-card[data-type="Platina"] .atlas-trophy-type,
+.atlas-trophy-card[data-type="Platinum"] .atlas-trophy-type {
+  border-color: color-mix(in srgb, var(--trophy-platinum) 28%, transparent);
+  background: color-mix(in srgb, var(--trophy-platinum) 9%, transparent);
+  color: #eaf4ff;
+}
+
+.atlas-trophy-card[data-type="Ouro"] .atlas-trophy-type,
+.atlas-trophy-card[data-type="Gold"] .atlas-trophy-type {
+  border-color: color-mix(in srgb, var(--trophy-gold) 32%, transparent);
+  background: color-mix(in srgb, var(--trophy-gold) 11%, transparent);
+  color: #fff2b8;
+}
+
+.atlas-trophy-card[data-type="Prata"] .atlas-trophy-type,
+.atlas-trophy-card[data-type="Silver"] .atlas-trophy-type {
+  border-color: color-mix(in srgb, var(--trophy-silver) 26%, transparent);
+  background: color-mix(in srgb, var(--trophy-silver) 8%, transparent);
+  color: #e2e8f0;
+}
+
+.atlas-trophy-card[data-type="Bronze"] .atlas-trophy-type {
+  border-color: color-mix(in srgb, var(--trophy-bronze) 36%, transparent);
+  background: color-mix(in srgb, var(--trophy-bronze) 13%, transparent);
+  color: #ffd8ba;
+}
+
+.atlas-spoiler-btn {
+  margin-top: 12px;
+}
+
+.atlas-trophy-description {
+  max-width: 76ch;
+  margin-top: 10px;
+  color: rgba(226, 232, 240, .78);
+  font-size: .95rem;
+  line-height: 1.58;
+}
+
+.atlas-trophy-card.completed .atlas-trophy-description,
+.atlas-trophy-card.completed .atlas-trophy-tip p {
+  color: rgba(226, 232, 240, .84);
+}
+
+.atlas-trophy-tip {
+  margin-top: 12px;
+}
+
+.atlas-tip-label {
+  color: color-mix(in srgb, var(--platinum-accent) 72%, white);
+  font-size: .72rem;
+  font-weight: 850;
+  letter-spacing: .12em;
+  text-transform: uppercase;
+}
+
+.atlas-trophy-tip p {
+  color: rgba(226, 232, 240, .78);
+}
+
+.atlas-trophy-card__actions {
+  display: flex;
+  justify-content: flex-end;
+  align-self: center;
+}
+
+.atlas-trophy-toggle {
+  min-width: 132px;
+  min-height: 44px;
+  gap: 8px;
+  border-radius: 14px;
+  padding-inline: 14px;
+  white-space: nowrap;
+  touch-action: manipulation;
+}
+
+.atlas-trophy-toggle i {
+  width: 16px;
+  text-align: center;
+}
+
+.atlas-trophy-card.completed .atlas-trophy-toggle {
+  border-color: color-mix(in srgb, var(--success) 28%, transparent);
+  background: color-mix(in srgb, var(--success) 10%, transparent);
+  color: #dcfce7;
+  box-shadow: none;
+}
+
+#guideEmptyState {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+  padding: 12px;
+  border-radius: 14px;
+  border: 1px dashed rgba(148, 163, 184, .24);
+}
+
+#guideEmptyState.hidden {
+  display: none;
+}
+
+.atlas-guide-empty__copy {
+  min-width: 0;
+  display: grid;
+  gap: 3px;
+}
+
+.atlas-guide-empty__copy strong {
+  color: rgba(255,255,255,.88);
+  font-size: .9rem;
+}
+
+.atlas-guide-empty__copy span {
+  color: rgba(255,255,255,.56);
+  font-size: .82rem;
+}
+
+.atlas-checklist-head {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 16px;
+}
+
+.atlas-checklist-title {
+  min-width: 0;
+}
+
+.atlas-checklist-head__aside {
+  display: grid;
+  justify-items: end;
+  gap: 10px;
+  min-width: min(100%, 360px);
+}
+
+.atlas-checklist-progress {
+  text-align: right;
+}
+
+.atlas-density-toggle {
+  display: inline-grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 4px;
+  padding: 4px;
+  border: 1px solid rgba(255,255,255,.085);
+  border-radius: 14px;
+  background: rgba(255,255,255,.032);
+}
+
+.atlas-density-option {
+  min-height: 34px;
+  padding: 0 10px;
+  border: 1px solid transparent;
+  border-radius: 10px;
+  color: rgba(255,255,255,.64);
+  background: transparent;
+  font-size: .78rem;
+  font-weight: 850;
+  line-height: 1.1;
+  transition: border-color .2s ease, background .2s ease, color .2s ease;
+}
+
+.atlas-density-option:hover,
+.atlas-density-option.is-active {
+  border-color: rgba(94, 234, 212, .26);
+  color: #effffb;
+  background: rgba(20, 184, 166, .14);
+}
+
+.atlas-checklist-toolbar {
+  grid-template-columns: minmax(220px, 320px) minmax(0, 1fr);
+  align-items: start;
+}
+
+.atlas-checklist-search .atlas-input {
+  min-height: 42px;
+  height: 42px;
+  padding: 0 14px;
+  border-radius: 14px;
+  font-size: .92rem;
+}
+
+.atlas-filter-primary {
+  min-width: 0;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: flex-start;
+  gap: 10px;
+}
+
+.atlas-filter-secondary {
+  grid-column: 2 / -1;
+}
+
+.atlas-filter-secondary .atlas-filter-more__content {
+  grid-template-columns: repeat(2, minmax(0, max-content));
+  align-items: start;
+}
+
+.atlas-trophy-details-toggle {
+  display: none;
+  gap: 8px;
+  margin-top: 10px;
+}
+
+.atlas-trophy-details-toggle i {
+  font-size: .78rem;
+  transition: transform .2s ease;
+}
+
+.atlas-trophy-card.is-details-open .atlas-trophy-details-toggle i {
+  transform: rotate(180deg);
+}
+
+.atlas-checklist-list[data-checklist-density="compact"] {
+  gap: 7px;
+}
+
+.atlas-checklist-list[data-checklist-density="compact"] .atlas-trophy-card {
+  padding: 9px 11px;
+  border-radius: 13px;
+}
+
+.atlas-checklist-list[data-checklist-density="compact"] .atlas-trophy-card__layout {
+  grid-template-columns: minmax(0, 1fr) auto;
+  gap: 8px;
+  align-items: center;
+}
+
+.atlas-checklist-list[data-checklist-density="compact"] .atlas-trophy-card__headline {
+  gap: 8px;
+}
+
+.atlas-checklist-list[data-checklist-density="compact"] .atlas-trophy-card__meta,
+.atlas-checklist-list[data-checklist-density="compact"] .atlas-trophy-risk-list {
+  gap: 5px;
+}
+
+.atlas-checklist-list[data-checklist-density="compact"] .atlas-trophy-card h4 {
+  font-size: 1.01rem;
+  line-height: 1.18;
+}
+
+.atlas-checklist-list[data-checklist-density="compact"] .atlas-trophy-card__title-translation {
+  margin-top: 1px;
+  font-size: .76rem;
+  line-height: 1.18;
+}
+
+.atlas-checklist-list[data-checklist-density="compact"] .atlas-trophy-type,
+.atlas-checklist-list[data-checklist-density="compact"] .atlas-trophy-state {
+  min-height: 19px;
+  padding-inline: 6px;
+  font-size: .6rem;
+  letter-spacing: .08em;
+}
+
+.atlas-checklist-list[data-checklist-density="compact"] .atlas-trophy-type {
+  padding-inline: 0;
+  border-color: transparent !important;
+  background: transparent !important;
+  color: rgba(255,255,255,.36) !important;
+}
+
+.atlas-checklist-list[data-checklist-density="compact"] .atlas-trophy-risk-list {
+  margin-top: 5px;
+}
+
+.atlas-checklist-list[data-checklist-density="compact"] .atlas-risk-chip {
+  min-height: 22px;
+  padding-inline: 7px;
+  font-size: .66rem;
+  line-height: 1;
+}
+
+.atlas-checklist-list[data-checklist-density="compact"] .atlas-risk-chip--risk,
+.atlas-checklist-list[data-checklist-density="compact"] .atlas-risk-chip--spoiler,
+.atlas-checklist-list[data-checklist-density="compact"] .atlas-risk-chip--warning {
+  min-height: 24px;
+  font-size: .68rem;
+}
+
+.atlas-checklist-list[data-checklist-density="compact"] .atlas-spoiler-btn {
+  height: 30px;
+  min-height: 30px;
+  margin-top: 6px;
+  border-radius: 10px;
+}
+
+.atlas-checklist-list[data-checklist-density="compact"] .atlas-trophy-description {
+  max-width: none;
+  margin-top: 5px;
+  font-size: .82rem;
+  line-height: 1.34;
+}
+
+.atlas-checklist-list[data-checklist-density="compact"] .trophy-card.has-details-toggle:not(.is-details-open) .atlas-trophy-description {
+  display: -webkit-box;
+  -webkit-line-clamp: 1;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+}
+
+.atlas-checklist-list[data-checklist-density="compact"] .atlas-trophy-tip {
+  margin-top: 7px;
+}
+
+.atlas-checklist-list[data-checklist-density="compact"] .atlas-tip-box {
+  padding: 9px;
+  border-radius: 11px;
+}
+
+.atlas-checklist-list[data-checklist-density="compact"] .trophy-card.has-details-toggle:not(.is-details-open) .atlas-trophy-tip {
+  display: none;
+}
+
+.atlas-checklist-list[data-checklist-density="compact"] .trophy-card.is-details-open .atlas-trophy-description {
+  display: block;
+  overflow: visible;
+}
+
+.atlas-checklist-list[data-checklist-density="compact"] .atlas-trophy-details-toggle {
+  display: inline-flex;
+  height: 30px;
+  min-height: 30px;
+  margin-top: 6px;
+  padding-inline: 9px;
+  border-radius: 10px;
+  font-size: .74rem;
+}
+
+.atlas-checklist-list[data-checklist-density="compact"] .atlas-trophy-toggle {
+  min-width: 112px;
+  height: 40px;
+  min-height: 40px;
+  padding-inline: 11px;
+  border-radius: 12px;
+  font-size: .78rem;
+}
+
+@media (max-width: 980px) {
+  .atlas-checklist-toolbar {
+    grid-template-columns: minmax(0, 1fr);
+  }
+
+  .atlas-filter-secondary {
+    grid-column: auto;
+  }
+
+  .atlas-filter-secondary .atlas-filter-more__content {
+    grid-template-columns: 1fr;
+  }
+}
+
+@media (max-width: 1100px) {
+  .atlas-verdict-strip,
+  .atlas-editorial-notes__grid {
+    grid-template-columns: 1fr;
+  }
+  .atlas-guide-sidebar-card {
+    position: static;
+  }
+}
+
+@media (max-width: 768px) {
+  .atlas-guide-hero__layout {
+    grid-template-columns: 1fr;
+  }
+  .atlas-guide-cover--hero {
+    width: 132px;
+    height: 176px;
+  }
+  .atlas-guide-hero h1 {
+    max-width: 100%;
+    overflow-wrap: break-word;
+    font-size: 2rem;
+    line-height: 1.05;
+  }
+  .atlas-guide-hero__body > p {
+    max-width: 100%;
+    overflow-wrap: break-word;
+  }
+  .atlas-editorial-band__intro h2 {
+    font-size: 1.55rem;
+  }
+  .atlas-guide-nav {
+    grid-template-columns: none;
+    grid-auto-flow: column;
+    grid-auto-columns: max-content;
+    margin-inline: -4px;
+    padding: 0 4px 3px;
+    overflow-x: auto;
+    scrollbar-width: none;
+  }
+  .atlas-guide-nav::-webkit-scrollbar {
+    display: none;
+  }
+  .atlas-guide-nav__link {
+    min-width: 132px;
+    min-height: 44px;
+    padding-inline: 12px;
+  }
+  .atlas-guide-hero__facts span {
+    min-width: min(100%, 150px);
+    flex: 1 1 150px;
+  }
+  .atlas-roadmap-step {
+    grid-template-columns: 36px minmax(0, 1fr);
+    gap: 10px;
+  }
+  .atlas-roadmap-step__marker {
+    width: 36px;
+    height: 36px;
+  }
+  .atlas-roadmap-step:not(:last-child)::after {
+    left: 17px;
+    top: 36px;
+  }
+  .atlas-roadmap-step__meta span {
+    border-radius: 12px;
+  }
+  .atlas-critical-row {
+    grid-template-columns: 1fr;
+  }
+  .atlas-filter-desktop {
+    display: none;
+  }
+  .atlas-filter-mobile {
+    display: grid;
+    gap: 10px;
+  }
+  .atlas-checklist-head,
+  .atlas-checklist-head__aside {
+    display: grid;
+    justify-items: stretch;
+    gap: 10px;
+  }
+  .atlas-checklist-progress {
+    text-align: left;
+  }
+  .atlas-density-toggle {
+    width: 100%;
+    padding: 3px;
+    border-radius: 12px;
+  }
+  .atlas-density-option {
+    min-height: 38px;
+    padding-inline: 8px;
+    border-radius: 9px;
+    font-size: .76rem;
+  }
+  .atlas-checklist-search .atlas-input {
+    min-height: 36px;
+    height: 36px;
+    padding: 0 11px;
+    border-radius: 12px;
+    font-size: .86rem;
+  }
+  .atlas-checklist-search {
+    order: 3;
+  }
+  .atlas-filter-primary {
+    display: grid;
+    gap: 8px;
+    order: 1;
+  }
+  .atlas-filter-secondary {
+    order: 2;
+  }
+  .atlas-filter-more summary {
+    min-height: 38px;
+    padding-inline: 10px;
+    font-size: .9rem;
+  }
+  .atlas-filter-primary .atlas-filter-group:first-child > div {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+  }
+  .atlas-filter-primary .atlas-filter-group:nth-child(2) > div,
+  .atlas-filter-secondary .atlas-filter-group > div {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+  .atlas-filter-mobile .atlas-filter-group > div {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+  }
+  .atlas-filter-more__content .atlas-filter-group > div {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+  .atlas-filter-group .atlas-pill {
+    width: 100%;
+    min-height: 36px;
+    padding: 0 8px;
+    white-space: normal;
+    text-align: center;
+    line-height: 1.15;
+  }
+  .atlas-filter-group {
+    padding: 7px;
+    border-radius: 14px;
+  }
+  .atlas-filter-group legend {
+    font-size: 9px;
+  }
+  .atlas-trophy-card__layout {
+    grid-template-columns: minmax(0, 1fr);
+    gap: 10px;
+  }
+  .atlas-trophy-card__headline {
+    display: grid;
+    gap: 5px;
+  }
+  .atlas-trophy-card__actions,
+  .atlas-trophy-toggle {
+    width: 100%;
+  }
+  .atlas-trophy-toggle {
+    min-width: 0;
+    min-height: 48px;
+  }
+  .atlas-trophy-description {
+    font-size: .93rem;
+  }
+  .atlas-checklist-list[data-checklist-density="compact"] .atlas-trophy-card {
+    padding: 9px 10px;
+  }
+  .atlas-checklist-list[data-checklist-density="compact"] .atlas-trophy-toggle {
+    width: 100%;
+    min-height: 44px;
+  }
+}
+
+/* Compact guide checklist refinements */
+#guideChecklistPanel {
+  padding: 12px !important;
+}
+
+#guideChecklistPanel .atlas-checklist-head {
+  align-items: center;
+  gap: 10px;
+}
+
+#guideChecklistPanel .atlas-checklist-title h2 {
+  margin-top: 4px !important;
+  font-size: clamp(1.25rem, 2vw, 1.55rem);
+  line-height: 1.12;
+}
+
+#guideChecklistPanel .atlas-checklist-head__aside {
+  min-width: min(100%, 320px);
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  gap: 8px;
+}
+
+#guideChecklistPanel .atlas-checklist-progress {
+  min-width: 88px;
+  color: rgba(255,255,255,.5);
+  font-size: .78rem;
+  line-height: 1.25;
+}
+
+#guideChecklistPanel .atlas-density-toggle {
+  padding: 3px;
+  border-radius: 11px;
+}
+
+#guideChecklistPanel .atlas-density-option {
+  min-height: 28px;
+  padding: 0 8px;
+  border-radius: 8px;
+  font-size: .7rem;
+}
+
+#guideChecklistPanel .atlas-checklist-toolbar {
+  grid-template-columns: minmax(260px, 360px) minmax(0, 1fr);
+  gap: 9px;
+  align-items: start;
+}
+
+#guideChecklistPanel .atlas-checklist-search .atlas-input {
+  min-height: 34px;
+  height: 34px;
+  padding: 0 11px;
+  border-radius: 11px;
+  font-size: .84rem;
+}
+
+#guideChecklistPanel .atlas-filter-primary {
+  gap: 7px;
+}
+
+#guideChecklistPanel .atlas-filter-group {
+  padding: 5px;
+  border-radius: 12px;
+  background: rgba(255,255,255,.018);
+}
+
+#guideChecklistPanel .atlas-filter-group legend {
+  padding-inline: 4px;
+  font-size: 8.5px;
+  letter-spacing: .1em;
+}
+
+#guideChecklistPanel .atlas-filter-group > div {
+  gap: 4px;
+}
+
+#guideChecklistPanel .atlas-filter-group .atlas-pill {
+  min-height: 27px;
+  padding: 0 8px;
+  border-radius: 999px;
+  font-size: .7rem;
+}
+
+#guideChecklistPanel .atlas-filter-more {
+  border-radius: 12px;
+  background: rgba(255,255,255,.018);
+}
+
+#guideChecklistPanel .atlas-filter-more summary {
+  min-height: 30px;
+  padding: 0 9px;
+  color: rgba(255,255,255,.62);
+  font-size: .75rem;
+}
+
+#guideChecklistPanel .atlas-filter-more summary::after {
+  width: 20px;
+  height: 20px;
+}
+
+#guideChecklistPanel .atlas-filter-more__content {
+  gap: 7px;
+  padding: 0 7px 7px;
+}
+
+#guideResults {
+  margin-top: -2px;
+  font-size: .76rem !important;
+  color: rgba(255,255,255,.48) !important;
+}
+
+.atlas-checklist-list {
+  padding-right: 0 !important;
+}
+
+.atlas-checklist-list[data-checklist-density="compact"] {
+  gap: 6px;
+}
+
+.atlas-checklist-list[data-checklist-density="compact"] .atlas-trophy-card {
+  padding: 7px 9px;
+  border-radius: 11px;
+}
+
+.atlas-checklist-list[data-checklist-density="compact"] .atlas-trophy-card__layout {
+  gap: 7px;
+}
+
+.atlas-checklist-list[data-checklist-density="compact"] .atlas-trophy-card__headline {
+  align-items: center;
+}
+
+.atlas-checklist-list[data-checklist-density="compact"] .atlas-trophy-card h4 {
+  font-size: .95rem;
+  line-height: 1.16;
+}
+
+.atlas-checklist-list[data-checklist-density="compact"] .atlas-trophy-card__meta,
+.atlas-checklist-list[data-checklist-density="compact"] .atlas-trophy-risk-list {
+  gap: 4px;
+}
+
+.atlas-checklist-list[data-checklist-density="compact"] .atlas-trophy-type,
+.atlas-checklist-list[data-checklist-density="compact"] .atlas-trophy-state {
+  min-height: 18px;
+  padding-inline: 5px;
+  font-size: .56rem;
+}
+
+.atlas-checklist-list[data-checklist-density="compact"] .atlas-risk-chip {
+  min-height: 20px;
+  padding-inline: 6px;
+  font-size: .62rem;
+}
+
+.atlas-checklist-list[data-checklist-density="compact"] .atlas-risk-chip--risk,
+.atlas-checklist-list[data-checklist-density="compact"] .atlas-risk-chip--spoiler {
+  min-height: 22px;
+  font-size: .64rem;
+}
+
+.atlas-checklist-list[data-checklist-density="compact"] .atlas-trophy-description {
+  margin-top: 4px;
+  font-size: .78rem;
+  line-height: 1.3;
+}
+
+.atlas-checklist-list[data-checklist-density="compact"] .atlas-tip-box {
+  padding: 7px 8px;
+}
+
+.atlas-checklist-list[data-checklist-density="compact"] .atlas-trophy-details-toggle {
+  height: 27px;
+  min-height: 27px;
+  margin-top: 5px;
+  padding-inline: 8px;
+  border-radius: 9px;
+  font-size: .68rem;
+}
+
+.atlas-checklist-list[data-checklist-density="compact"] .atlas-trophy-toggle {
+  min-width: 92px;
+  height: 32px;
+  min-height: 32px;
+  padding-inline: 9px;
+  border-radius: 10px;
+  font-size: .72rem;
+}
+
+.atlas-checklist-list[data-checklist-density="compact"] .atlas-trophy-card.completed .atlas-trophy-toggle {
+  color: rgba(220,252,231,.76);
+  background: rgba(34,197,94,.07);
+}
+
+@media (max-width: 980px) {
+  #guideChecklistPanel .atlas-checklist-toolbar {
+    grid-template-columns: minmax(0, 1fr);
+  }
+
+  #guideChecklistPanel .atlas-filter-secondary {
+    grid-column: auto;
+  }
+}
+
+@media (max-width: 768px) {
+  #guideChecklistPanel .atlas-checklist-head,
+  #guideChecklistPanel .atlas-checklist-head__aside {
+    display: grid;
+    justify-items: stretch;
+    gap: 8px;
+  }
+
+  #guideChecklistPanel .atlas-checklist-progress {
+    text-align: left;
+  }
+
+  #guideChecklistPanel .atlas-filter-primary {
+    gap: 7px;
+  }
+
+  #guideChecklistPanel .atlas-filter-primary .atlas-filter-group:first-child > div,
+  #guideChecklistPanel .atlas-filter-primary .atlas-filter-group:nth-child(2) > div,
+  #guideChecklistPanel .atlas-filter-secondary .atlas-filter-group > div {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  #guideChecklistPanel .atlas-filter-group .atlas-pill {
+    min-height: 32px;
+    padding-inline: 7px;
+    font-size: .68rem;
+  }
+
+  #guideChecklistPanel .atlas-filter-group .atlas-pill[data-count]::after {
+    min-width: 16px;
+    height: 16px;
+    margin-left: 5px;
+    padding-inline: 4px;
+    font-size: .6rem;
+  }
+
+  .atlas-checklist-list[data-checklist-density="compact"] .atlas-trophy-card__layout {
+    grid-template-columns: minmax(0, 1fr);
+  }
+
+  .atlas-checklist-list[data-checklist-density="compact"] .atlas-trophy-toggle {
+    width: 100%;
+    min-height: 38px;
+  }
+
+  #guideEmptyState {
+    align-items: stretch;
+    flex-direction: column;
+  }
+
+  #guideEmptyState .atlas-btn {
+    width: 100%;
+    min-height: 40px;
+  }
+}

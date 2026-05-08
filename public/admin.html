@@ -1,0 +1,525 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>AtlasAchievement - Console Atlas</title>
+  <meta name="robots" content="noindex,nofollow">
+  <meta name="description" content="Console editorial privado do AtlasAchievement.">
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+  <link rel="stylesheet" href="/css/utilities.css">
+  <link rel="stylesheet" href="/css/tokens.css">
+  <link rel="stylesheet" href="/css/base.css">
+  <link rel="stylesheet" href="/css/layout.css">
+  <link rel="stylesheet" href="/css/components.css">
+  <link rel="stylesheet" href="/css/admin.css">
+  <link rel="stylesheet" href="/css/responsive.css">
+  <link rel="icon" href="/favicon.svg" type="image/svg+xml">
+  <link rel="apple-touch-icon" href="/apple-touch-icon.png">
+  <link rel="manifest" href="/site.webmanifest">
+</head>
+<body class="atlas-body min-h-screen atlas-admin-shell-locked" data-page="admin">
+  <div class="atlas-bg-orb atlas-bg-orb--one"></div>
+  <div class="atlas-bg-orb atlas-bg-orb--two"></div>
+
+  <header class="sticky top-0 z-40 atlas-topbar atlas-topbar--admin">
+    <div class="atlas-topbar__row max-w-[1320px] mx-auto px-4 lg:px-6 h-[88px] flex items-center justify-between gap-4">
+      <a href="/" class="atlas-brand flex items-center gap-4">
+        <div class="w-12 h-12 rounded-2xl atlas-logo-mark flex items-center justify-center"><span class="atlas-logo-letter text-white text-2xl font-black">A</span></div>
+        <div class="atlas-brand__copy">
+          <div class="atlas-brand__name text-[20px] font-extrabold leading-none">AtlasAchievement</div>
+          <div class="atlas-brand__tagline text-[11px] uppercase tracking-[0.28em] text-white/40 mt-1">Console Atlas</div>
+        </div>
+      </a>
+      <div class="atlas-header-actions atlas-header-actions--admin flex items-center gap-3">
+        <a href="/" class="atlas-btn atlas-btn-secondary"><i class="fas fa-arrow-left"></i><span>Site</span></a>
+        <button id="adminAccessBtn" class="atlas-btn atlas-btn-secondary">Entrar</button>
+        <button id="adminLogoutBtn" class="hidden atlas-btn atlas-btn-primary">Sair</button>
+      </div>
+    </div>
+  </header>
+
+  <main class="atlas-main-shell atlas-admin-main max-w-[1320px] mx-auto px-4 lg:px-6 py-6">
+    <section id="view-admin" class="atlas-view-shell space-y-6">
+      <div class="atlas-admin-overview grid xl:grid-cols-[1fr_.9fr] gap-4">
+        <section class="atlas-panel atlas-admin-hero p-5 md:p-6">
+          <div class="atlas-eyebrow">Painel administrativo</div>
+          <h1 class="text-[30px] md:text-[40px] leading-none font-extrabold tracking-tight">Console editorial</h1>
+          <p class="mt-3 text-white/62 max-w-2xl">Cadastre, revise e publique guias com os alertas importantes sempre à vista.</p>
+          <div id="adminSummaryCards" class="atlas-region atlas-responsive-grid grid md:grid-cols-2 gap-3 mt-5"></div>
+        </section>
+        <section class="atlas-panel atlas-admin-quick-panel p-5 md:p-6">
+          <div class="atlas-eyebrow">Ações rápidas</div>
+          <h2 class="text-[24px] font-bold tracking-tight">Fila editorial</h2>
+          <div class="grid sm:grid-cols-2 gap-3 mt-4">
+            <button id="newGameBtn" class="atlas-quick-action"><i class="fas fa-plus"></i><span>Novo jogo</span></button>
+            <button id="togglePasswordPanelBtn" type="button" class="atlas-quick-action"><i class="fas fa-key"></i><span>Trocar senha</span></button>
+            <a href="/catalogo" class="atlas-quick-action"><i class="fas fa-house"></i><span>Ver catálogo</span></a>
+            <button id="adminRefreshBtn" type="button" class="atlas-quick-action"><i class="fas fa-rotate-right"></i><span>Atualizar lista</span></button>
+          </div>
+          <div id="adminStatus" class="mt-5 text-sm text-white/55"></div>
+        </section>
+      </div>
+
+      
+
+      <section id="adminPasswordPanel" class="hidden atlas-panel p-6 lg:p-8">
+        <div class="flex items-center justify-between gap-4 mb-5">
+          <div>
+            <div class="atlas-eyebrow">Segurança</div>
+            <h2 class="text-[28px] md:text-[36px] leading-none font-extrabold tracking-tight mt-1">Trocar senha do administrador</h2>
+          </div>
+          <button id="closePasswordPanelBtn" type="button" class="atlas-btn atlas-btn-secondary">Fechar</button>
+        </div>
+        <form id="passwordForm" class="grid lg:grid-cols-[1fr_1fr_auto] gap-4 items-end">
+          <div>
+            <label class="atlas-label">Senha atual</label>
+            <input id="currentPassword" type="password" class="atlas-input" autocomplete="current-password" required>
+          </div>
+          <div>
+            <label class="atlas-label">Nova senha</label>
+            <input id="nextPassword" type="password" class="atlas-input" autocomplete="new-password" minlength="8" required>
+          </div>
+          <button id="changePasswordBtn" type="submit" class="atlas-btn atlas-btn-primary h-[54px]">Atualizar senha</button>
+        </form>
+        <p class="text-sm text-white/45 mt-3">Use pelo menos 8 caracteres. A troca exige a senha atual para confirmar a operação.</p>
+      </section>
+
+      <section id="adminPreviewPanel" class="hidden atlas-panel p-6 lg:p-8">
+        <div class="flex items-center justify-between gap-4 mb-5">
+          <div>
+            <div class="atlas-eyebrow">Pré-visualização</div>
+            <h2 class="text-[28px] md:text-[36px] leading-none font-extrabold tracking-tight mt-1">Revise antes de salvar</h2>
+          </div>
+          <div class="flex items-center gap-3">
+            <button id="previewOpenPublicBtn" type="button" class="atlas-btn atlas-btn-secondary hidden">Abrir página</button>
+            <button id="closePreviewPanelBtn" type="button" class="atlas-btn atlas-btn-secondary">Fechar</button>
+          </div>
+        </div>
+        <div id="adminPreviewContent" class="atlas-region"></div>
+      </section>
+
+      <section id="adminGameFormPanel" class="hidden atlas-panel atlas-admin-editor-panel">
+        <div class="admin-editor-header">
+          <div>
+            <div class="atlas-eyebrow">Cadastro</div>
+            <h2 id="gameFormTitle" class="text-[28px] md:text-[36px] leading-none font-extrabold tracking-tight mt-1">Adicionar novo jogo</h2>
+            <p class="admin-editor-subtitle">Preencha por etapa, revise alertas no painel lateral e salve sem perder o contexto.</p>
+          </div>
+          <button id="cancelGameFormBtn" type="button" class="atlas-btn atlas-btn-secondary"><i class="fas fa-xmark"></i><span>Fechar</span></button>
+        </div>
+
+        <form id="gameForm" class="admin-editor-form">
+          <input id="gameId" type="hidden">
+          <input id="gameCoverImage" type="hidden">
+          <input id="gameMissable" type="hidden">
+          <input id="gameRuns" type="hidden">
+          <input id="gameOnline" type="hidden">
+          <input id="gameGrind" type="hidden">
+          <input id="gameDlc" type="hidden">
+          <input id="gameIdealFor" type="hidden">
+          <input id="gameAvoidFor" type="hidden">
+          <input id="gameBestForWhen" type="hidden">
+
+          <div class="admin-editor-layout">
+            <aside class="admin-editor-sidebar" aria-label="Seções do cadastro">
+              <a class="admin-section-link" href="#adminSectionBasic"><span>Básico</span><small>Nome, tempo e capa</small></a>
+              <a class="admin-section-link" href="#adminSectionEditorial"><span>Editorial</span><small>Risco e contexto</small></a>
+              <a class="admin-section-link" href="#adminSectionRoadmap"><span>Roadmap</span><small>Rota de execução</small></a>
+              <a class="admin-section-link" href="#adminSectionTrophies"><span>Troféus</span><small>Lista e importação</small></a>
+              <a class="admin-section-link" href="#adminSectionPublishing"><span>SEO e publicação</span><small>Status e revisão</small></a>
+              <a class="admin-section-link" href="#adminSectionReview"><span>Revisão</span><small>Encaixe do guia</small></a>
+            </aside>
+
+            <div class="admin-editor-workspace">
+              <section id="adminSectionBasic" class="admin-editor-section">
+                <div class="admin-section-heading">
+                  <span class="admin-section-index">01</span>
+                  <div>
+                    <h3>Básico</h3>
+                    <p>Identificação do guia e sinais visuais usados no catálogo.</p>
+                  </div>
+                </div>
+                <div class="admin-field-grid admin-field-grid--two">
+                  <div class="admin-field admin-field--wide">
+                    <label class="atlas-label" for="gameName">Nome do jogo</label>
+                    <input id="gameName" type="text" class="atlas-input" autocomplete="off" required>
+                    <p class="admin-field-help">Use o nome público do jogo, sem subtítulo editorial.</p>
+                  </div>
+                  <div class="admin-field">
+                    <label class="atlas-label" for="gameDifficulty">Dificuldade</label>
+                    <input id="gameDifficulty" type="number" min="1" max="10" class="atlas-input" required>
+                    <p class="admin-field-help">Escala editorial de 1 a 10.</p>
+                  </div>
+                  <div class="admin-field">
+                    <label class="atlas-label" for="gameTime">Tempo estimado</label>
+                    <input id="gameTime" type="text" class="atlas-input" placeholder="Ex.: 35h" required>
+                    <p class="admin-field-help">Prefira horas legíveis: 8-10 horas, 35h, 120 horas.</p>
+                  </div>
+                  <div class="admin-field admin-field--wide">
+                    <label class="atlas-label" for="gameImage">URL da capa</label>
+                    <input id="gameImage" type="text" class="atlas-input" placeholder="https://...">
+                    <p class="admin-field-help">Capa usada no catálogo, prévia e compartilhamento.</p>
+                  </div>
+                </div>
+                <div class="admin-upload-row">
+                  <div class="admin-field">
+                    <label class="atlas-label" for="gameImageFile">Upload da capa</label>
+                    <input id="gameImageFile" type="file" accept="image/*" class="atlas-input file:mr-4 file:border-0 file:bg-atlas-500 file:px-3 file:py-2 file:rounded-xl file:text-white">
+                    <div id="imageUploadStatus" class="admin-field-help hidden"></div>
+                  </div>
+                  <button id="uploadCoverBtn" type="button" class="atlas-btn atlas-btn-primary h-[54px]"><i class="fas fa-upload"></i><span>Enviar capa</span></button>
+                  <button id="clearImageBtn" type="button" class="atlas-btn atlas-btn-secondary h-[54px] hidden"><i class="fas fa-eraser"></i><span>Limpar</span></button>
+                </div>
+                <div class="admin-cover-preview">
+                  <div id="gameImagePreviewEmpty" class="text-white/35 text-center">Nenhuma capa selecionada</div>
+                  <div id="gameImagePreview" class="hidden w-full">
+                    <img id="gameImagePreviewImg" class="w-full h-[240px] rounded-[14px] object-cover hidden" alt="Preview">
+                  </div>
+                </div>
+              </section>
+
+              <section id="adminSectionEditorial" class="admin-editor-section">
+                <div class="admin-section-heading">
+                  <span class="admin-section-index">02</span>
+                  <div>
+                    <h3>Editorial</h3>
+                    <p>Decisão editorial, esforço escondido e contexto para o jogador confiar no guia.</p>
+                  </div>
+                </div>
+                <div class="admin-field-grid admin-field-grid--two">
+                  <div class="admin-field">
+                    <div class="admin-label-row">
+                      <label class="atlas-label" for="gameRunsSummary">Resumo de runs</label>
+                      <span data-admin-count-for="gameRunsSummary">0 palavras</span>
+                    </div>
+                    <textarea id="gameRunsSummary" class="atlas-input admin-textarea" placeholder="Ex.: 1 run + cleanup / 2 runs / multi-run pesada"></textarea>
+                    <p class="admin-field-help">Diga quantas campanhas/runs o usuário deve esperar.</p>
+                  </div>
+                  <div class="admin-field">
+                    <div class="admin-label-row">
+                      <label class="atlas-label" for="gameMissableSummary">Resumo de perdíveis</label>
+                      <span data-admin-count-for="gameMissableSummary">0 palavras</span>
+                    </div>
+                    <textarea id="gameMissableSummary" class="atlas-input admin-textarea" placeholder="Explique risco, ponto sem retorno e se o cleanup resolve" required></textarea>
+                    <p class="admin-field-help">Deixe claro se existe ponto sem retorno, nova run ou baixo risco.</p>
+                  </div>
+                  <div class="admin-field">
+                    <label class="atlas-label" for="gameOnlineSummary">Online</label>
+                    <input id="gameOnlineSummary" type="text" class="atlas-input" placeholder="Ex.: obrigatório / opcional / sem online">
+                    <p class="admin-field-help">Registre dependência online antes da publicação.</p>
+                  </div>
+                  <div class="admin-field">
+                    <label class="atlas-label" for="gameGrindSummary">Grind</label>
+                    <input id="gameGrindSummary" type="text" class="atlas-input" placeholder="Ex.: leve / moderado / pesado">
+                    <p class="admin-field-help">Ajuda a calibrar a promessa de tempo.</p>
+                  </div>
+                  <div class="admin-field">
+                    <label class="atlas-label" for="gameDlcScope">Escopo de DLC</label>
+                    <input id="gameDlcScope" type="text" class="atlas-input" placeholder="Ex.: não conta / base game / DLC opcional">
+                    <p class="admin-field-help">Explique se o guia cobre lista base, DLC ou ambos.</p>
+                  </div>
+                </div>
+                <div class="admin-field-grid admin-field-grid--two">
+                  <div class="admin-field">
+                    <div class="admin-label-row">
+                      <label class="atlas-label" for="gameDifficultyReason">Por que essa dificuldade?</label>
+                      <span data-admin-count-for="gameDifficultyReason">0 palavras</span>
+                    </div>
+                    <textarea id="gameDifficultyReason" class="atlas-input admin-textarea" placeholder="Explique execução, skill checks, RNG ou punições reais"></textarea>
+                    <p class="admin-field-help">Transforme o número em justificativa revisável.</p>
+                  </div>
+                  <div class="admin-field">
+                    <div class="admin-label-row">
+                      <label class="atlas-label" for="gameTimeReason">Por que esse tempo?</label>
+                      <span data-admin-count-for="gameTimeReason">0 palavras</span>
+                    </div>
+                    <textarea id="gameTimeReason" class="atlas-input admin-textarea" placeholder="Explique campanha, cleanup, grind e variação esperada"></textarea>
+                    <p class="admin-field-help">Indique de onde vêm as horas estimadas.</p>
+                  </div>
+                  <div class="admin-field admin-field--wide">
+                    <div class="admin-label-row">
+                      <label class="atlas-label" for="gameBeforeYouStart">Antes de começar</label>
+                      <span data-admin-count-for="gameBeforeYouStart">0 palavras</span>
+                    </div>
+                    <textarea id="gameBeforeYouStart" class="atlas-input admin-textarea" placeholder="O que o jogador precisa saber antes da primeira sessão"></textarea>
+                    <p class="admin-field-help">Use para avisos que mudam a primeira decisão do jogador.</p>
+                  </div>
+                </div>
+              </section>
+
+              <section id="adminSectionRoadmap" class="admin-editor-section">
+                <div class="admin-section-heading">
+                  <span class="admin-section-index">03</span>
+                  <div>
+                    <h3>Roadmap</h3>
+                    <p>Roteiro de execução do guia, da primeira run ao cleanup.</p>
+                  </div>
+                </div>
+                <div class="admin-field">
+                  <div class="admin-label-row">
+                    <label class="atlas-label" for="gameRoadmap">Roadmap por etapas</label>
+                    <span data-admin-count-for="gameRoadmap" data-admin-count-mode="lines">0 etapas</span>
+                  </div>
+                  <textarea id="gameRoadmap" class="atlas-input admin-textarea admin-textarea--large" placeholder="Uma etapa por linha" required></textarea>
+                  <p class="admin-field-help">Cada linha vira uma etapa no guia público. Prefira ações claras e ordenadas.</p>
+                </div>
+                <div class="admin-field-grid admin-field-grid--two">
+                  <div class="admin-field">
+                    <div class="admin-label-row">
+                      <label class="atlas-label" for="gameFirstRunAdvice">Conselho para a primeira run</label>
+                      <span data-admin-count-for="gameFirstRunAdvice">0 palavras</span>
+                    </div>
+                    <textarea id="gameFirstRunAdvice" class="atlas-input admin-textarea" placeholder="Como jogar a primeira campanha sem criar retrabalho"></textarea>
+                    <p class="admin-field-help">Oriente o que fazer cedo e o que pode ficar para depois.</p>
+                  </div>
+                  <div class="admin-field">
+                    <div class="admin-label-row">
+                      <label class="atlas-label" for="gameCleanupAdvice">Conselho de cleanup</label>
+                      <span data-admin-count-for="gameCleanupAdvice">0 palavras</span>
+                    </div>
+                    <textarea id="gameCleanupAdvice" class="atlas-input admin-textarea" placeholder="Como fechar pendências, coletáveis, fases ou pós-game"></textarea>
+                    <p class="admin-field-help">Explique a reta final sem repetir o roadmap inteiro.</p>
+                  </div>
+                </div>
+              </section>
+
+              <section id="adminSectionTrophies" class="admin-editor-section">
+                <div class="admin-section-heading">
+                  <span class="admin-section-index">04</span>
+                  <div>
+                    <h3>Troféus</h3>
+                    <p>Importe a lista bruta ou edite cada troféu com risco e spoiler.</p>
+                  </div>
+                </div>
+                <div class="admin-converter">
+                  <div class="admin-converter__head">
+                    <div>
+                      <div class="admin-label-row">
+                        <label class="atlas-label" for="rawTrophiesInput">Texto bruto para converter</label>
+                        <span data-admin-count-for="rawTrophiesInput" data-admin-count-mode="lines">0 linhas</span>
+                      </div>
+                      <p class="admin-field-help">Formato esperado: Nome: descrição. Cabeçalhos como Bronze/Ouro ajudam a inferir o tipo.</p>
+                    </div>
+                    <div class="admin-converter__actions">
+                      <button id="parseTrophiesBtn" type="button" class="atlas-btn atlas-btn-primary"><i class="fas fa-wand-magic-sparkles"></i><span>Converter</span></button>
+                      <button id="clearParsedTextBtn" type="button" class="atlas-btn atlas-btn-secondary"><i class="fas fa-eraser"></i><span>Limpar</span></button>
+                    </div>
+                  </div>
+                  <textarea id="rawTrophiesInput" class="atlas-input admin-textarea admin-textarea--large"></textarea>
+                </div>
+                <div class="admin-section-toolbar">
+                  <div>
+                    <h4>Lista de troféus</h4>
+                    <p>Marque perdíveis e spoilers para alimentar os alertas editoriais.</p>
+                  </div>
+                  <button id="addTrophyBtn" type="button" class="atlas-btn atlas-btn-secondary"><i class="fas fa-plus"></i><span>Adicionar troféu</span></button>
+                </div>
+                <div id="trophiesContainer" class="admin-trophies-list"></div>
+              </section>
+
+              <section id="adminSectionPublishing" class="admin-editor-section">
+                <div class="admin-section-heading">
+                  <span class="admin-section-index">05</span>
+                  <div>
+                    <h3>SEO e publicação</h3>
+                    <p>Status público, cobertura editorial e sinais de verificação.</p>
+                  </div>
+                </div>
+                <div class="admin-field-grid admin-field-grid--three">
+                  <div class="admin-field">
+                    <label class="atlas-label" for="gameEditorialStatus">Status editorial</label>
+                    <select id="gameEditorialStatus" class="atlas-input">
+                      <option value="published">Publicado</option>
+                      <option value="review">Em revisão</option>
+                      <option value="draft">Rascunho</option>
+                    </select>
+                    <p class="admin-field-help">Rascunhos ficam fora do catálogo público.</p>
+                  </div>
+                  <div class="admin-field">
+                    <label class="atlas-label" for="gameCoverageLevel">Cobertura</label>
+                    <select id="gameCoverageLevel" class="atlas-input">
+                      <option value="partial">Base inicial</option>
+                      <option value="strong">Cobertura forte</option>
+                      <option value="complete">Guia completo</option>
+                    </select>
+                    <p class="admin-field-help">Evita que guia parcial pareça definitivo.</p>
+                  </div>
+                  <div class="admin-field">
+                    <label class="atlas-label" for="gameVerificationStatus">Verificação</label>
+                    <select id="gameVerificationStatus" class="atlas-input">
+                      <option value="unverified">Não verificado</option>
+                      <option value="review">Em verificação</option>
+                      <option value="verified">Verificado</option>
+                    </select>
+                    <p class="admin-field-help">Sinaliza confiança na página pública.</p>
+                  </div>
+                </div>
+                <div class="admin-field-grid admin-field-grid--two">
+                  <label class="admin-checkbox-field">
+                    <input id="gameIsVerified" type="checkbox">
+                    <span>
+                      <strong>Dados verificados manualmente</strong>
+                      <small>Use apenas quando a lista foi conferida fora do editor.</small>
+                    </span>
+                  </label>
+                  <div class="admin-field">
+                    <label class="atlas-label" for="gameVerificationNote">Nota de verificação</label>
+                    <input id="gameVerificationNote" type="text" maxlength="180" class="atlas-input" placeholder="Ex.: conferido contra lista PSN em abril/2026">
+                    <p class="admin-field-help">Máximo de 180 caracteres. Ajuda revisão futura.</p>
+                  </div>
+                </div>
+              </section>
+
+              <section id="adminSectionReview" class="admin-editor-section">
+                <div class="admin-section-heading">
+                  <span class="admin-section-index">06</span>
+                  <div>
+                    <h3>Revisão</h3>
+                    <p>Últimos campos de encaixe editorial antes de salvar ou publicar.</p>
+                  </div>
+                </div>
+                <div class="admin-field-grid admin-field-grid--two">
+                  <div class="admin-field">
+                    <div class="admin-label-row">
+                      <label class="atlas-label" for="gameBestFor">Melhor para</label>
+                      <span data-admin-count-for="gameBestFor">0 palavras</span>
+                    </div>
+                    <textarea id="gameBestFor" class="atlas-input admin-textarea" placeholder="Para quem esta platina faz mais sentido"></textarea>
+                    <p class="admin-field-help">Defina o perfil de jogador que deve abrir este guia.</p>
+                  </div>
+                  <div class="admin-field">
+                    <div class="admin-label-row">
+                      <label class="atlas-label" for="gameAvoidIf">Evite se</label>
+                      <span data-admin-count-for="gameAvoidIf">0 palavras</span>
+                    </div>
+                    <textarea id="gameAvoidIf" class="atlas-input admin-textarea" placeholder="Quando este projeto não é a melhor escolha"></textarea>
+                    <p class="admin-field-help">Ajuda a publicar com expectativa honesta.</p>
+                  </div>
+                </div>
+                <div class="admin-review-note">
+                  <strong>Checklist final</strong>
+                  <p>Revise o painel lateral, use a prévia quando necessário e mantenha o status como rascunho se o score ainda estiver frágil.</p>
+                </div>
+              </section>
+            </div>
+
+            <aside class="admin-editor-inspector" aria-label="Alertas editoriais">
+              <div id="adminQualityPanel" class="admin-quality-panel">
+                <div class="admin-quality-panel__head">
+                  <div>
+                    <div class="atlas-eyebrow">Qualidade editorial</div>
+                    <h3>Pronto para publicar?</h3>
+                    <p id="adminQualitySummary">Preencha o formulário para ver score, alertas e sinais de SEO.</p>
+                  </div>
+                  <div class="atlas-admin-score-shell">
+                    <div class="atlas-admin-score-label">Score editorial</div>
+                    <div id="adminQualityScore" class="text-4xl font-black mt-1">0</div>
+                    <div id="adminQualityBadge" class="atlas-tag atlas-tag--soft">Rascunho</div>
+                  </div>
+                </div>
+                <div id="adminQualityMeta" class="admin-quality-meta"></div>
+                <div id="adminQualityList" class="admin-quality-list"></div>
+              </div>
+
+              <div class="admin-draft-tools">
+                <div>
+                  <h3>Rascunho local</h3>
+                  <p>Recupere ou descarte o autosave deste navegador.</p>
+                </div>
+                <div class="admin-draft-tools__actions">
+                  <button type="button" id="restoreDraftBtn" class="atlas-btn atlas-btn-secondary"><i class="fas fa-clock-rotate-left"></i><span>Restaurar</span></button>
+                  <button type="button" id="clearDraftBtn" class="atlas-btn atlas-btn-secondary"><i class="fas fa-trash"></i><span>Limpar</span></button>
+                </div>
+              </div>
+            </aside>
+          </div>
+
+          <div class="admin-editor-actionbar">
+            <div>
+              <strong>Alterações do guia</strong>
+              <div id="adminFormFeedback" class="text-sm text-white/55"></div>
+            </div>
+            <div class="admin-editor-actionbar__actions">
+              <button id="previewGameBtn" type="button" class="atlas-btn atlas-btn-secondary"><i class="fas fa-eye"></i><span>Pré-visualizar</span></button>
+              <button id="gameSubmitBtn" type="submit" class="atlas-btn atlas-btn-primary"><i class="fas fa-floppy-disk"></i><span>Salvar jogo</span></button>
+            </div>
+          </div>
+        </form>
+      </section>
+
+      <section class="space-y-4">
+        <div class="atlas-section-head">
+          <div>
+            <div class="atlas-eyebrow">Catálogo</div>
+            <h2 class="text-[34px] md:text-[44px] leading-none font-extrabold tracking-tight">Jogos cadastrados</h2>
+          </div>
+        </div>
+        <div class="atlas-panel p-5 md:p-6 space-y-4">
+          <div class="grid md:grid-cols-2 gap-3">
+            <label>
+              <span class="sr-only">Buscar no admin</span>
+              <input id="adminSearch" type="search" placeholder="Buscar jogo cadastrado" class="atlas-input min-h-[46px] h-[46px] py-3">
+            </label>
+            <label>
+              <span class="sr-only">Ordenar no admin</span>
+              <select id="adminSort" class="atlas-input min-h-[46px] h-[46px] py-3 pr-10">
+                <option value="updated-desc">Atualizados recentemente</option>
+                <option value="created-desc">Adicionados recentemente</option>
+                <option value="difficulty-desc">Maior dificuldade</option>
+                <option value="name-asc">Nome A–Z</option>
+              </select>
+            </label>
+          </div>
+          <div id="adminResultsSummary" class="text-sm text-white/55"></div>
+          <div id="adminGamesList" class="atlas-region atlas-render-list space-y-4"></div>
+          <div id="adminPagination" class="flex flex-wrap items-center gap-3"></div>
+        </div>
+      </section>
+    </section>
+  </main>
+
+  <div id="adminModal" class="hidden fixed inset-0 bg-black/80 backdrop-blur-md z-[100] p-4">
+    <div class="max-w-md mx-auto mt-24 atlas-panel p-6 rounded-[28px]">
+      <div class="flex items-center justify-between gap-4 mb-4">
+        <div>
+          <h3 class="text-xl font-bold">Entrar no Console Atlas</h3>
+          <p class="text-sm text-white/45 mt-1">Faça login para acessar o painel administrativo.</p>
+        </div>
+        <button id="closeAdminModalBtn" class="text-white/45 hover:text-white">Fechar</button>
+      </div>
+      <form id="adminLoginForm" class="space-y-4" autocomplete="on">
+        <input id="adminUsername" type="text" placeholder="Usuário" class="atlas-input" autocomplete="username" required>
+        <input id="adminPassword" type="password" placeholder="Senha" class="atlas-input" autocomplete="current-password" required>
+        <button class="w-full atlas-btn atlas-btn-primary h-[54px]">Entrar</button>
+      </form>
+    </div>
+  </div>
+
+  <div id="toast" class="toast"></div>
+  <!-- Admin core: API and local persistence. -->
+  <script src="/js/api.js" defer></script>
+  <script src="/js/storage.js" defer></script>
+
+  <!-- Admin UI only: shared helpers, decision badges, admin renderers, window.UI. -->
+  <script src="/js/ui-shared.js" defer></script>
+  <script src="/js/ui-formatters.js" defer></script>
+  <script src="/shared/editorialModel.js" defer></script>
+  <script src="/shared/guideViewModel.js" defer></script>
+  <script src="/shared/cardModel.js" defer></script>
+  <script src="/shared/catalogModel.js" defer></script>
+  <script src="/js/ui-decision-models.js" defer></script>
+  <script src="/js/ui-admin-render.js" defer></script>
+  <script src="/js/ui.js" defer></script>
+
+  <!-- Admin controllers: no public home/catalog/guide renderers needed here. -->
+  <script src="/js/app-pagination.js" defer></script>
+  <script src="/js/app-admin.js" defer></script>
+  <script src="/js/app-admin-draft.js" defer></script>
+
+  <!-- Bootstrap: creates context, initializes admin, then starts. -->
+  <script src="/js/app-context.js" defer></script>
+  <script src="/js/app-admin-init.js" defer></script>
+  <script src="/js/app.js" defer></script>
+</body>
+</html>

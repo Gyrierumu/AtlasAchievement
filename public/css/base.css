@@ -1,0 +1,52 @@
+/* Base */
+* { box-sizing: border-box; }
+html {
+  scroll-behavior: smooth;
+  background: #030611;
+}
+body {
+  margin: 0;
+  color: var(--text);
+  background:
+    radial-gradient(circle at top left, rgba(14, 165, 233, .12), transparent 28%),
+    radial-gradient(circle at right 20%, rgba(59, 130, 246, .10), transparent 22%),
+    linear-gradient(180deg, #040713 0%, #070d1d 48%, #030611 100%);
+  font-family: Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+  overflow-x: hidden;
+}
+
+a { color: inherit; text-decoration: none; }
+button, input, textarea, select { font: inherit; }
+button { cursor: pointer; }
+img { display: block; max-width: 100%; }
+
+/* Mobile responsiveness improvements */
+.atlas-body {
+  -webkit-text-size-adjust: 100%;
+}
+
+img {
+  height: auto;
+}
+
+body.modal-open {
+  overflow: hidden;
+}
+
+.atlas-skip-link {
+  position: absolute;
+  left: 16px;
+  top: -64px;
+  z-index: 200;
+  padding: 12px 16px;
+  border-radius: 999px;
+  background: rgba(10, 14, 28, 0.96);
+  color: #fff;
+  border: 1px solid rgba(94, 234, 212, 0.45);
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.25);
+  transition: top 0.2s ease;
+}
+
+.atlas-skip-link:focus {
+  top: 16px;
+}
