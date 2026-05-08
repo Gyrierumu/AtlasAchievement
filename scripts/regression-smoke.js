@@ -131,6 +131,8 @@ function assertHtmlLoadsModules(relPath) {
     assert(html.includes('auth-modal__tab'), 'modal de auth precisa usar classe propria para tabs');
     assert(html.includes('auth-modal__submit'), 'modal de auth precisa usar classe propria para acoes principais');
     assert(html.includes('id="view-profile"'), 'public/index.html precisa expor a pagina/painel de perfil');
+    assert(html.includes('id="homeBetaNotice"'), 'home precisa expor aviso beta no template');
+    assert(html.includes('AtlasAchievement está em fase beta'), 'aviso beta precisa explicar a fase beta no template');
   }
 
   if (relPath === 'public/admin.html') {
@@ -7803,6 +7805,8 @@ async function assertBackendEditorialConsistency() {
     assert(!homeHtml.includes('__PAGE_'), 'SSR / nao deve vazar placeholders do template');
     assert(homeHtml.includes('roadmap, checklist e progresso salvo'), 'home deve explicar a proposta de platina no H1');
     assert(homeHtml.includes('Explorar guias'), 'home deve expor CTA principal para o catalogo');
+    assert(homeHtml.includes('id="homeBetaNotice"'), 'home deve renderizar aviso beta');
+    assert(homeHtml.includes('Estamos melhorando os guias continuamente'), 'aviso beta deve comunicar evolucao continua');
     assert(homeHtml.includes('atlas-home-image-shell'), 'home deve renderizar imagens com fallback visual');
     assert(homeHtml.includes('atlas-featured-game__cover atlas-home-image-shell'), 'destaque da home deve usar shell de imagem compacto');
     assert(!/>\s*0 op/i.test(homeHtml), 'home nao deve exibir cards de momento com zero opcoes');

@@ -101,6 +101,54 @@
   padding: 18px 0 0;
 }
 
+.atlas-home-beta-notice {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 12px 14px;
+  border: 1px solid rgba(125, 211, 252, .18);
+  border-left: 3px solid rgba(56, 189, 248, .78);
+  border-radius: 14px;
+  background:
+    linear-gradient(135deg, rgba(14, 165, 233, .10), transparent 58%),
+    rgba(8, 13, 29, .66);
+  color: rgba(226, 232, 240, .78);
+  box-shadow: inset 0 1px 0 rgba(255, 255, 255, .035);
+}
+
+.atlas-home-beta-notice__badge {
+  flex: 0 0 auto;
+  display: inline-flex;
+  align-items: center;
+  gap: 7px;
+  min-height: 30px;
+  padding: 0 10px;
+  border-radius: 999px;
+  color: rgba(224, 242, 254, .96);
+  background: rgba(14, 165, 233, .14);
+  border: 1px solid rgba(125, 211, 252, .22);
+  font-size: .76rem;
+  font-weight: 850;
+  letter-spacing: .08em;
+  text-transform: uppercase;
+}
+
+.atlas-home-beta-notice__badge i {
+  color: rgba(250, 204, 21, .9);
+}
+
+.atlas-home-beta-notice p {
+  margin: 0;
+  color: rgba(226, 232, 240, .72);
+  font-size: .92rem;
+  line-height: 1.45;
+}
+
+.atlas-home-beta-notice strong {
+  color: rgba(248, 250, 252, .94);
+  font-weight: 850;
+}
+
 .atlas-home-section__head {
   display: flex;
   align-items: flex-end;
@@ -163,6 +211,25 @@
   #homeDiscoveryTitle,
   #homeHistoryTitle {
     font-size: 1.875rem;
+  }
+}
+
+@media (max-width: 640px) {
+  .atlas-home-beta-notice {
+    align-items: flex-start;
+    gap: 9px;
+    padding: 10px 12px;
+  }
+
+  .atlas-home-beta-notice__badge {
+    min-height: 28px;
+    padding-inline: 9px;
+    font-size: .7rem;
+  }
+
+  .atlas-home-beta-notice p {
+    font-size: .86rem;
+    line-height: 1.38;
   }
 }
 
