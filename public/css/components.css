@@ -774,6 +774,146 @@ select:focus {
 .toast .success { border-color: rgba(34, 197, 94, .35); }
 .toast .error { border-color: rgba(251, 113, 133, .35); }
 
+.atlas-feedback-dialog {
+  width: min(720px, calc(100vw - 28px));
+  max-height: calc(100vh - 32px);
+  margin: 24px auto;
+  padding: 24px;
+  overflow: auto;
+}
+
+.atlas-feedback-dialog__head {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 16px;
+  margin-bottom: 18px;
+}
+
+.atlas-feedback-dialog__head h3 {
+  margin-top: 8px;
+  font-size: 1.55rem;
+  font-weight: 850;
+  letter-spacing: 0;
+}
+
+.atlas-feedback-dialog__head p {
+  margin-top: 8px;
+  color: rgba(255,255,255,.58);
+}
+
+.atlas-feedback-form,
+.atlas-feedback-form label {
+  display: grid;
+  gap: 8px;
+}
+
+.atlas-feedback-form label {
+  color: rgba(255,255,255,.82);
+  font-size: .92rem;
+  font-weight: 700;
+}
+
+.atlas-feedback-form label span {
+  color: rgba(255,255,255,.42);
+  font-size: .78rem;
+  font-weight: 600;
+}
+
+.atlas-feedback-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 12px;
+}
+
+.atlas-feedback-textarea {
+  min-height: 150px;
+  resize: vertical;
+}
+
+.atlas-feedback-counter {
+  justify-self: end;
+  margin-top: -4px;
+  color: rgba(255,255,255,.42);
+  font-size: .78rem;
+}
+
+.atlas-feedback-status {
+  padding: 12px 14px;
+  border-radius: 14px;
+  background: rgba(15,23,42,.65);
+  border: 1px solid rgba(255,255,255,.08);
+  color: rgba(255,255,255,.72);
+}
+
+.atlas-feedback-status[data-tone="error"] {
+  border-color: rgba(251,113,133,.35);
+  color: rgb(254,202,202);
+}
+
+.atlas-feedback-actions {
+  display: flex;
+  justify-content: flex-end;
+  gap: 10px;
+  flex-wrap: wrap;
+}
+
+.atlas-feedback-honeypot {
+  position: absolute;
+  left: -9999px;
+  width: 1px;
+  height: 1px;
+  overflow: hidden;
+}
+
+.admin-feedback-list {
+  display: grid;
+  gap: 12px;
+}
+
+.admin-feedback-card {
+  padding: 16px;
+  border-radius: 18px;
+  background: rgba(15,23,42,.62);
+  border: 1px solid rgba(255,255,255,.08);
+}
+
+.admin-feedback-card__head,
+.admin-feedback-card__meta {
+  display: flex;
+  justify-content: space-between;
+  gap: 12px;
+  flex-wrap: wrap;
+}
+
+.admin-feedback-card__head strong {
+  display: block;
+  margin-top: 8px;
+  color: white;
+}
+
+.admin-feedback-card__head time,
+.admin-feedback-card__meta {
+  color: rgba(255,255,255,.48);
+  font-size: .82rem;
+}
+
+.admin-feedback-card p {
+  margin-top: 12px;
+  color: rgba(255,255,255,.76);
+  white-space: pre-wrap;
+  overflow-wrap: anywhere;
+}
+
+.admin-feedback-card__meta {
+  justify-content: flex-start;
+  margin-top: 14px;
+}
+
+.admin-feedback-card__meta a {
+  color: rgb(125 211 252);
+}
+
 .atlas-section-head--library {
   align-items: start;
 }

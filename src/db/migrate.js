@@ -838,6 +838,18 @@ async function migrate(options = {}) {
       FOREIGN KEY (game_id) REFERENCES games(id) ON DELETE CASCADE
     );
 
+    CREATE TABLE IF NOT EXISTS feedbacks (
+      id INTEGER PRIMARY KEY AUTOINCREMENT,
+      type TEXT NOT NULL CHECK (type IN ('Erro em guia', 'Bug do site', 'Sugestão', 'Pedido de novo guia')),
+      related_game TEXT,
+      page_url TEXT,
+      message TEXT NOT NULL,
+      nickname TEXT,
+      email TEXT,
+      status TEXT NOT NULL DEFAULT 'new' CHECK (status IN ('new', 'reviewed', 'archived')),
+      created_at TEXT DEFAULT CURRENT_TIMESTAMP
+    );
+
     CREATE TABLE IF NOT EXISTS sessions (
       sid TEXT PRIMARY KEY,
       sess TEXT NOT NULL,
@@ -874,6 +886,8 @@ async function migrate(options = {}) {
     );
 
     CREATE INDEX IF NOT EXISTS idx_sessions_expires_at ON sessions(expires_at);
+    CREATE INDEX IF NOT EXISTS idx_feedbacks_created_at ON feedbacks(created_at);
+    CREATE INDEX IF NOT EXISTS idx_feedbacks_status ON feedbacks(status);
     CREATE INDEX IF NOT EXISTS idx_users_email ON users(email);
     CREATE INDEX IF NOT EXISTS idx_users_username ON users(username);
     CREATE INDEX IF NOT EXISTS idx_user_library_user ON user_library(user_id);

@@ -88,6 +88,17 @@ window.ApiService = (() => {
     getAdminSummary() {
       return request('/api/games/admin/summary');
     },
+    submitFeedback(payload) {
+      return request('/api/feedback', { method: 'POST', body: JSON.stringify(payload) });
+    },
+    getAdminFeedback(params = {}) {
+      const searchParams = new URLSearchParams();
+      Object.entries(params).forEach(([key, value]) => {
+        if (value !== undefined && value !== null && value !== '') searchParams.set(key, String(value));
+      });
+      const query = searchParams.toString();
+      return request(`/api/feedback/admin${query ? `?${query}` : ''}`);
+    },
     getSession() {
       return request('/api/auth/session');
     },

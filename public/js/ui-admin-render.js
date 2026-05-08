@@ -354,6 +354,59 @@ window.UIAdminRender = (() => {
     renderPagination('#adminPagination', pagination, { mode: 'admin', itemLabel: 'jogos' });
   }
 
+  function formatFeedbackDate(value = '') {
+    if (!value) return 'Data não informada';
+    try {
+      return new Intl.DateTimeFormat('pt-BR', { dateStyle: 'short', timeStyle: 'short' }).format(new Date(value));
+    } catch (_error) {
+      return value;
+    }
+  }
+
+  function renderAdminFeedback(response = {}) {
+    const target = qs('#adminFeedbackList');
+    const summary = qs('#adminFeedbackSummary');
+    const paginationTarget = qs('#adminFeedbackPagination');
+    if (!target) return;
+
+    const items = Array.isArray(response.items) ? response.items : [];
+    const pagination = response.pagination || {};
+    if (summary) summary.textContent = `${pagination.total || 0} feedback(s) recebido(s).`;
+
+    if (!items.length) {
+      target.innerHTML = '<div class="glass-morphism p-6 rounded-[20px] text-slate-400">Nenhum feedback enviado ainda.</div>';
+      if (paginationTarget) paginationTarget.innerHTML = '';
+      return;
+    }
+
+    target.innerHTML = items.map(item => `
+      <article class="admin-feedback-card">
+        <div class="admin-feedback-card__head">
+          <div>
+            <span class="atlas-tag atlas-tag--soft">${escapeHtml(item.type || 'Feedback')}</span>
+            <strong>${escapeHtml(item.related_game || 'Sem jogo relacionado')}</strong>
+          </div>
+          <time datetime="${escapeAttribute(item.created_at || '')}">${escapeHtml(formatFeedbackDate(item.created_at))}</time>
+        </div>
+        <p>${escapeHtml(item.message || '')}</p>
+        <div class="admin-feedback-card__meta">
+          ${item.page_url ? `<a href="${escapeAttribute(item.page_url)}" target="_blank" rel="noopener">Abrir página</a>` : '<span>Sem URL</span>'}
+          <span>${escapeHtml(item.nickname || 'Sem nome')}</span>
+          <span>${escapeHtml(item.email || 'Sem e-mail')}</span>
+        </div>
+      </article>
+    `).join('');
+
+    if (!paginationTarget) return;
+    const currentPage = Number(pagination.page || 1);
+    const totalPages = Number(pagination.totalPages || 1);
+    paginationTarget.innerHTML = `
+      <button type="button" class="atlas-btn atlas-btn-secondary atlas-btn-compact" data-feedback-page="${Math.max(currentPage - 1, 1)}" ${currentPage <= 1 ? 'disabled' : ''}>Anterior</button>
+      <span class="text-sm text-white/55">Página ${escapeHtml(String(currentPage))} de ${escapeHtml(String(totalPages))}</span>
+      <button type="button" class="atlas-btn atlas-btn-secondary atlas-btn-compact" data-feedback-page="${Math.min(currentPage + 1, totalPages)}" ${currentPage >= totalPages ? 'disabled' : ''}>Próxima</button>
+    `;
+  }
+
   function setAdminState(session) {
     const authenticated = Boolean(session?.authenticated);
     document.body?.classList.toggle('atlas-admin-shell-locked', !authenticated);
@@ -401,6 +454,7 @@ window.UIAdminRender = (() => {
     renderAdminSummary,
     renderAdminQuality,
     renderAdminGames,
+    renderAdminFeedback,
     setAdminState,
     openAdminModal,
     closeAdminModal

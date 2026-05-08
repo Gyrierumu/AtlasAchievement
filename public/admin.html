@@ -61,7 +61,18 @@
         </section>
       </div>
 
-      
+      <section id="adminFeedbackPanel" class="atlas-panel p-5 md:p-6 space-y-4">
+        <div class="atlas-section-head">
+          <div>
+            <div class="atlas-eyebrow">Feedbacks</div>
+            <h2 class="text-[28px] md:text-[36px] leading-none font-extrabold tracking-tight">Mensagens recebidas</h2>
+            <p id="adminFeedbackSummary" class="text-sm text-white/55 mt-2">Carregando feedbacks.</p>
+          </div>
+          <button id="adminFeedbackRefreshBtn" type="button" class="atlas-btn atlas-btn-secondary"><i class="fas fa-rotate-right"></i><span>Atualizar</span></button>
+        </div>
+        <div id="adminFeedbackList" class="admin-feedback-list"></div>
+        <div id="adminFeedbackPagination" class="flex flex-wrap items-center gap-3"></div>
+      </section>
 
       <section id="adminPasswordPanel" class="hidden atlas-panel p-6 lg:p-8">
         <div class="flex items-center justify-between gap-4 mb-5">

@@ -5,6 +5,18 @@
   .atlas-search-input { min-height: 64px; font-size: 1rem; }
   .atlas-btn { padding-inline: 14px; }
   .atlas-footer-item { align-items: flex-start; }
+  .atlas-feedback-dialog {
+    margin: 8px auto;
+    padding: 18px;
+  }
+  .atlas-feedback-dialog__head,
+  .atlas-feedback-actions {
+    align-items: stretch;
+    flex-direction: column;
+  }
+  .atlas-feedback-grid {
+    grid-template-columns: minmax(0, 1fr);
+  }
 }
 
 @media (max-width: 768px) {

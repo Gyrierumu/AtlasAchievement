@@ -406,6 +406,16 @@ window.AppAdmin = (() => {
       UI.renderAdminSummary(state.adminSummary);
     }
 
+    async function loadAdminFeedback() {
+      if (!state.session.authenticated) return;
+      state.adminFeedbackResponse = await ApiService.getAdminFeedback({
+        page: state.adminFeedbackPage || 1,
+        limit: 10
+      });
+      state.adminFeedbackPage = state.adminFeedbackResponse.pagination?.page || 1;
+      UI.renderAdminFeedback?.(state.adminFeedbackResponse);
+    }
+
     function openFormPreview() {
       const payload = buildPreviewPayload({ UI, state, collectGameFormPayload });
       UI.renderAdminQuality(createEditorialQualityModel(payload));
@@ -423,7 +433,7 @@ window.AppAdmin = (() => {
         UI.openAdminModal();
         return;
       }
-      await Promise.all([loadGames(), loadAdminSummary(), loadAdminGames()]);
+      await Promise.all([loadGames(), loadAdminSummary(), loadAdminGames(), loadAdminFeedback()]);
       UI.showView('admin');
       refreshEditorialQuality(UI, state, collectGameFormPayload);
       UI.updateAdminFieldMetrics?.();
@@ -587,6 +597,7 @@ window.AppAdmin = (() => {
           UI.togglePreviewPanel(false);
           UI.togglePasswordPanel(false);
           UI.renderAdminGames({ items: [], pagination: { page: 1, totalPages: 1, total: 0 } });
+          UI.renderAdminFeedback?.({ items: [], pagination: { page: 1, totalPages: 1, total: 0 } });
           UI.renderAdminSummary({ totalGames: 0, totalTrophies: 0 });
         } else {
           navigate('home');
@@ -620,8 +631,19 @@ window.AppAdmin = (() => {
       UI.qs('#closePasswordPanelBtn')?.addEventListener('click', () => UI.togglePasswordPanel(false));
       UI.qs('#passwordForm')?.addEventListener('submit', handlePasswordChange);
       UI.qs('#adminRefreshBtn')?.addEventListener('click', async () => {
-        await Promise.all([loadGames({ force: true }), loadAdminSummary(), loadAdminGames()]);
+        await Promise.all([loadGames({ force: true }), loadAdminSummary(), loadAdminGames(), loadAdminFeedback()]);
         UI.showToast('Catálogo administrativo atualizado.', 'success');
+      });
+      UI.qs('#adminFeedbackRefreshBtn')?.addEventListener('click', async () => {
+        state.adminFeedbackPage = 1;
+        await loadAdminFeedback();
+        UI.showToast('Feedbacks atualizados.', 'success');
+      });
+      UI.qs('#adminFeedbackPanel')?.addEventListener('click', async event => {
+        const pageButton = event.target.closest('[data-feedback-page]');
+        if (!pageButton) return;
+        state.adminFeedbackPage = Number(pageButton.dataset.feedbackPage || 1);
+        await loadAdminFeedback();
       });
       UI.qs('#cancelGameFormBtn')?.addEventListener('click', () => {
         UI.toggleGameForm(false);
@@ -696,6 +718,7 @@ window.AppAdmin = (() => {
     return {
       loadAdminGames,
       loadAdminSummary,
+      loadAdminFeedback,
       openFormPreview,
       openAdminPanel,
       bindAdminEvents

@@ -88,6 +88,7 @@ function assertHtmlLoadsModules(relPath) {
       '/js/app-library-controller.js',
       '/js/app-guide-controller.js',
       '/js/app-user-auth.js',
+      '/js/app-feedback.js',
       '/js/app-context.js',
       '/js/app-public-init.js',
       '/js/app-public-admin-loader.js',
@@ -126,6 +127,8 @@ function assertHtmlLoadsModules(relPath) {
     assert(html.includes('library-shelf__grid'), 'public/index.html precisa renderizar a biblioteca como estante');
     assert(html.includes('id="userAuthModal"'), 'public/index.html precisa expor modal de login/cadastro publico');
     assert(html.includes('id="libraryImportModal"'), 'public/index.html precisa expor modal de importacao da biblioteca local');
+    assert(html.includes('id="feedbackModal"'), 'public/index.html precisa expor modal publico de feedback');
+    assert(html.includes('data-feedback-open'), 'public/index.html precisa ter link/botao para enviar feedback');
     assert(html.includes('id="librarySyncStatus"'), 'public/index.html precisa indicar onde o progresso esta salvo');
     assert(html.includes('auth-menu__item'), 'menu de usuario precisa usar classe propria de item de autenticacao');
     assert(html.includes('auth-modal__tab'), 'modal de auth precisa usar classe propria para tabs');
@@ -142,6 +145,7 @@ function assertHtmlLoadsModules(relPath) {
     assert(html.includes('id="gameEditorialStatus"'), 'public/admin.html precisa editar status editorial');
     assert(html.includes('id="gameCoverageLevel"'), 'public/admin.html precisa editar nivel de cobertura');
     assert(html.includes('id="gameIsVerified"'), 'public/admin.html precisa editar verificacao manual');
+    assert(html.includes('id="adminFeedbackPanel"'), 'public/admin.html precisa listar feedbacks enviados');
   }
 }
 
@@ -230,6 +234,7 @@ function assertUIModules() {
     'renderAdminSummary',
     'renderAdminQuality',
     'renderAdminGames',
+    'renderAdminFeedback',
     'renderPagination',
     'setPageMeta',
     'setCatalogMeta',

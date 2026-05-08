@@ -18,6 +18,8 @@
   <meta name="twitter:description" content="__PAGE_DESCRIPTION__">
   <meta name="twitter:image" content="__PAGE_OG_IMAGE__">
   <script type="application/ld+json" id="gameStructuredData">__PAGE_JSON_LD__</script>
+  <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-1824866007142611"
+     crossorigin="anonymous"></script>
   <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
   <link rel="stylesheet" href="/css/utilities.css">
   <link rel="stylesheet" href="/css/tokens.css">
@@ -55,6 +57,7 @@
         <button type="button" data-view-link="home" class="atlas-nav-link is-active">Início</button>
         <button type="button" data-view-link="catalog" class="atlas-nav-link">Explorar</button>
         <button type="button" data-view-link="library" class="atlas-nav-link flex items-center gap-2">Biblioteca <span id="libraryBadge" class="bg-atlas-500 text-white text-[10px] px-1.5 py-0.5 rounded-full hidden">0</span></button>
+        <button type="button" data-feedback-open class="atlas-nav-link">Feedback</button>
       </nav>
 
       <div class="atlas-header-actions flex items-center gap-2 md:gap-3">
@@ -84,6 +87,7 @@
         <button type="button" data-view-link="home" class="atlas-nav-link is-active">Início</button>
         <button type="button" data-view-link="catalog" class="atlas-nav-link">Explorar</button>
         <button type="button" data-view-link="library" class="atlas-nav-link flex items-center gap-2 justify-center">Biblioteca <span class="bg-atlas-500 text-white text-[10px] px-1.5 py-0.5 rounded-full hidden" data-mobile-library-badge>0</span></button>
+        <button type="button" data-feedback-open class="atlas-nav-link">Feedback</button>
       </nav>
     </div>
   </header>
@@ -425,10 +429,63 @@
       <div class="atlas-footer-item"><i class="fas fa-trophy"></i><div><strong>Acompanhar 100%</strong><span>Marque troféus e veja o que falta sem se perder.</span></div></div>
           <div class="md:col-span-4 pt-2 border-t border-white/8 flex items-center justify-between gap-3 flex-wrap">
         <span class="text-white/40">AtlasAchievement prioriza decisão rápida, contexto editorial e checklist contínuo.</span>
-        <button id="adminAccessBtnFooter" class="atlas-text-action text-sm" title="Acesso do editor">Acesso editorial</button>
+        <div class="flex items-center gap-3 flex-wrap">
+          <button type="button" data-feedback-open class="atlas-text-action text-sm">Enviar feedback</button>
+          <button id="adminAccessBtnFooter" class="atlas-text-action text-sm" title="Acesso do editor">Acesso editorial</button>
+        </div>
       </div>
     </div>
   </footer>
+
+  <div id="feedbackModal" class="hidden fixed inset-0 bg-black/80 backdrop-blur-md z-[100] p-4 atlas-feedback-modal" role="dialog" aria-modal="true" aria-labelledby="feedbackModalTitle" aria-hidden="true">
+    <div class="atlas-feedback-dialog atlas-panel">
+      <div class="atlas-feedback-dialog__head">
+        <div>
+          <span class="atlas-section-kicker">Feedback</span>
+          <h3 id="feedbackModalTitle">Enviar feedback</h3>
+          <p>Conte o que precisa ser corrigido, sugerido ou criado no AtlasAchievement.</p>
+        </div>
+        <button type="button" class="atlas-text-action" data-feedback-close>Fechar</button>
+      </div>
+      <form id="feedbackForm" class="atlas-feedback-form" novalidate>
+        <input id="feedbackFormStartedAt" type="hidden">
+        <label class="atlas-feedback-honeypot" aria-hidden="true">Site<input id="feedbackWebsite" type="text" tabindex="-1" autocomplete="off"></label>
+        <div class="atlas-feedback-grid">
+          <label>Tipo do feedback
+            <select id="feedbackType" class="atlas-input" required>
+              <option>Erro em guia</option>
+              <option>Bug do site</option>
+              <option>Sugestão</option>
+              <option>Pedido de novo guia</option>
+            </select>
+          </label>
+          <label>Jogo relacionado <span>opcional</span>
+            <input id="feedbackRelatedGame" type="text" class="atlas-input" maxlength="120" autocomplete="off">
+          </label>
+        </div>
+        <label>URL da página <span>opcional</span>
+          <input id="feedbackPageUrl" type="url" class="atlas-input" maxlength="500" autocomplete="off">
+        </label>
+        <label>Mensagem
+          <textarea id="feedbackMessage" class="atlas-input atlas-feedback-textarea" maxlength="2000" required placeholder="Descreva o erro, bug, sugestão ou guia que você quer ver."></textarea>
+        </label>
+        <div class="atlas-feedback-counter" id="feedbackMessageCounter">0/2000</div>
+        <div class="atlas-feedback-grid">
+          <label>Nome/apelido <span>opcional</span>
+            <input id="feedbackNickname" type="text" class="atlas-input" maxlength="80" autocomplete="name">
+          </label>
+          <label>E-mail <span>opcional</span>
+            <input id="feedbackEmail" type="email" class="atlas-input" maxlength="120" autocomplete="email">
+          </label>
+        </div>
+        <p id="feedbackFormStatus" class="atlas-feedback-status" hidden></p>
+        <div class="atlas-feedback-actions">
+          <button type="button" class="atlas-btn atlas-btn-secondary" data-feedback-close>Cancelar</button>
+          <button id="feedbackSubmitBtn" type="submit" class="atlas-btn atlas-btn-primary"><i class="fas fa-paper-plane"></i> Enviar feedback</button>
+        </div>
+      </form>
+    </div>
+  </div>
 
   <div id="userAuthModal" class="hidden fixed inset-0 bg-black/80 backdrop-blur-md z-[100] p-4" role="dialog" aria-modal="true" aria-labelledby="userAuthModalTitle" aria-hidden="true">
     <div class="max-w-md mx-auto mt-16 atlas-panel p-6 rounded-[28px] atlas-auth-modal auth-modal">
@@ -548,6 +605,7 @@
   <script src="/js/app-library-controller.js" defer></script>
   <script src="/js/app-guide-controller.js" defer></script>
   <script src="/js/app-user-auth.js" defer></script>
+  <script src="/js/app-feedback.js" defer></script>
 
   <!-- Bootstrap: creates context, selects public/admin initializer, then starts. -->
   <script src="/js/app-context.js" defer></script>

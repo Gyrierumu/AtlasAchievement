@@ -10,6 +10,7 @@ const env = require('./config/env');
 const authRoutes = require('./routes/auth.routes');
 const meRoutes = require('./routes/me.routes');
 const gamesRoutes = require('./routes/games.routes');
+const feedbackRoutes = require('./routes/feedback.routes');
 const uploadsRoutes = require('./routes/uploads.routes');
 const errorHandler = require('./middleware/errorHandler');
 const gamesService = require('./services/games.service');
@@ -1623,6 +1624,7 @@ app.get('/sitemap.xml', async (req, res, next) => {
 app.use('/api/auth/login', loginRateLimit);
 app.use('/api/auth/register', registerRateLimit);
 app.use('/api/auth', authRoutes);
+app.use('/api/feedback', requireCsrf, feedbackRoutes);
 app.use('/api/me', requireCsrf, meRoutes);
 app.use('/api/uploads', requireCsrf, uploadsRoutes);
 app.use('/api/games', requireCsrf, gamesRoutes);

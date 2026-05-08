@@ -1,0 +1,124 @@
+window.AppFeedback = (() => {
+  const FEEDBACK_TYPES = ['Erro em guia', 'Bug do site', 'Sugestão', 'Pedido de novo guia'];
+  const MESSAGE_LIMIT = 2000;
+
+  function qs(selector) {
+    return document.querySelector(selector);
+  }
+
+  function setOpen(open) {
+    const modal = qs('#feedbackModal');
+    if (!modal) return;
+    modal.classList.toggle('hidden', !open);
+    modal.setAttribute('aria-hidden', open ? 'false' : 'true');
+    document.body?.classList.toggle('atlas-feedback-open', open);
+    if (open) {
+      prepareForm();
+      window.setTimeout(() => qs('#feedbackType')?.focus(), 0);
+    }
+  }
+
+  function inferRelatedGame() {
+    const title = qs('#guideHeader h1')?.textContent?.trim();
+    if (title) return title;
+    return '';
+  }
+
+  function prepareForm() {
+    const form = qs('#feedbackForm');
+    if (!form) return;
+    const pageUrl = qs('#feedbackPageUrl');
+    const relatedGame = qs('#feedbackRelatedGame');
+    const startedAt = qs('#feedbackFormStartedAt');
+    if (pageUrl) pageUrl.value = window.location.href;
+    if (relatedGame && !relatedGame.value.trim()) relatedGame.value = inferRelatedGame();
+    if (startedAt) startedAt.value = String(Date.now());
+    updateCounter();
+    setFeedbackMessage('');
+  }
+
+  function updateCounter() {
+    const message = qs('#feedbackMessage');
+    const counter = qs('#feedbackMessageCounter');
+    if (!message || !counter) return;
+    counter.textContent = `${message.value.length}/${MESSAGE_LIMIT}`;
+  }
+
+  function setFeedbackMessage(message = '', tone = 'info') {
+    const target = qs('#feedbackFormStatus');
+    if (!target) return;
+    target.textContent = message;
+    target.dataset.tone = tone;
+    target.hidden = !message;
+  }
+
+  function collectPayload() {
+    return {
+      type: qs('#feedbackType')?.value || FEEDBACK_TYPES[0],
+      relatedGame: qs('#feedbackRelatedGame')?.value?.trim() || '',
+      pageUrl: qs('#feedbackPageUrl')?.value?.trim() || window.location.href,
+      message: qs('#feedbackMessage')?.value?.trim() || '',
+      nickname: qs('#feedbackNickname')?.value?.trim() || '',
+      email: qs('#feedbackEmail')?.value?.trim() || '',
+      website: qs('#feedbackWebsite')?.value?.trim() || '',
+      formStartedAt: qs('#feedbackFormStartedAt')?.value || ''
+    };
+  }
+
+  async function handleSubmit(event) {
+    event.preventDefault();
+    const form = event.currentTarget;
+    const submitButton = qs('#feedbackSubmitBtn');
+    const payload = collectPayload();
+
+    if (!payload.message) {
+      setFeedbackMessage('Mensagem obrigatória.', 'error');
+      return;
+    }
+    if (payload.message.length > MESSAGE_LIMIT) {
+      setFeedbackMessage(`Mensagem muito longa. Use até ${MESSAGE_LIMIT} caracteres.`, 'error');
+      return;
+    }
+
+    try {
+      if (submitButton) submitButton.disabled = true;
+      setFeedbackMessage('Enviando feedback...', 'info');
+      const response = await window.ApiService.submitFeedback(payload);
+      form.reset();
+      setOpen(false);
+      window.UI?.showToast?.(response.message || 'Obrigado! Seu feedback foi enviado.', 'success');
+    } catch (error) {
+      setFeedbackMessage(error.message || 'Não foi possível enviar agora.', 'error');
+      window.UI?.showToast?.(error.message || 'Não foi possível enviar agora.', 'error');
+    } finally {
+      if (submitButton) submitButton.disabled = false;
+    }
+  }
+
+  function bind() {
+    document.addEventListener('click', event => {
+      if (event.target.closest('[data-feedback-open]')) {
+        setOpen(true);
+        return;
+      }
+      if (event.target.closest('[data-feedback-close]')) {
+        setOpen(false);
+        return;
+      }
+      if (event.target.id === 'feedbackModal') setOpen(false);
+    });
+    document.addEventListener('keydown', event => {
+      if (event.key === 'Escape' && !qs('#feedbackModal')?.classList.contains('hidden')) {
+        setOpen(false);
+      }
+    });
+    qs('#feedbackForm')?.addEventListener('submit', handleSubmit);
+    qs('#feedbackMessage')?.addEventListener('input', updateCounter);
+  }
+
+  return { bind, setOpen, collectPayload };
+})();
+
+document.addEventListener('DOMContentLoaded', () => {
+  window.AppFeedback?.bind?.();
+});
