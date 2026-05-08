@@ -442,32 +442,37 @@
       <div class="atlas-feedback-dialog__head">
         <div>
           <span class="atlas-section-kicker">Feedback</span>
-          <h3 id="feedbackModalTitle">Enviar feedback</h3>
-          <p>Conte o que precisa ser corrigido, sugerido ou criado no AtlasAchievement.</p>
+          <h3 id="feedbackModalTitle">Seu feedback ajuda a melhorar os guias para toda a comunidade 🙌</h3>
+          <p>Leva menos de um minuto e ajuda a priorizar correções, bugs e novos guias.</p>
         </div>
         <button type="button" class="atlas-text-action" data-feedback-close>Fechar</button>
       </div>
       <form id="feedbackForm" class="atlas-feedback-form" novalidate>
         <input id="feedbackFormStartedAt" type="hidden">
-        <label class="atlas-feedback-honeypot" aria-hidden="true">Site<input id="feedbackWebsite" type="text" tabindex="-1" autocomplete="off"></label>
+        <input id="feedbackWebsite" class="atlas-feedback-honeypot" type="text" tabindex="-1" autocomplete="off" aria-hidden="true">
+        <input id="feedbackType" type="hidden" value="Bug do site">
+        <fieldset class="atlas-feedback-type-group">
+          <legend>Tipo de feedback</legend>
+          <div class="atlas-feedback-type-options" role="group" aria-label="Tipo de feedback">
+            <button type="button" class="atlas-feedback-type is-active" data-feedback-type="Bug do site" aria-pressed="true"><span aria-hidden="true">🐛</span> Bug do site</button>
+            <button type="button" class="atlas-feedback-type" data-feedback-type="Erro em guia" aria-pressed="false"><span aria-hidden="true">❌</span> Erro no guia</button>
+            <button type="button" class="atlas-feedback-type" data-feedback-type="Sugestão" aria-pressed="false"><span aria-hidden="true">💡</span> Sugestão</button>
+            <button type="button" class="atlas-feedback-type" data-feedback-type="Pedido de novo guia" aria-pressed="false"><span aria-hidden="true">🎮</span> Pedido de novo guia</button>
+          </div>
+        </fieldset>
         <div class="atlas-feedback-grid">
-          <label>Tipo do feedback
-            <select id="feedbackType" class="atlas-input" required>
-              <option>Erro em guia</option>
-              <option>Bug do site</option>
-              <option>Sugestão</option>
-              <option>Pedido de novo guia</option>
-            </select>
-          </label>
           <label>Jogo relacionado <span>opcional</span>
             <input id="feedbackRelatedGame" type="text" class="atlas-input" maxlength="120" autocomplete="off">
           </label>
+          <label>Página do problema <span>opcional</span>
+            <input id="feedbackPageUrl" type="url" class="atlas-input" maxlength="500" autocomplete="off">
+          </label>
         </div>
-        <label>URL da página <span>opcional</span>
-          <input id="feedbackPageUrl" type="url" class="atlas-input" maxlength="500" autocomplete="off">
-        </label>
-        <label>Mensagem
-          <textarea id="feedbackMessage" class="atlas-input atlas-feedback-textarea" maxlength="2000" required placeholder="Descreva o erro, bug, sugestão ou guia que você quer ver."></textarea>
+        <label>Mensagem <span>mínimo de 10 caracteres</span>
+          <textarea id="feedbackMessage" class="atlas-input atlas-feedback-textarea" minlength="10" maxlength="2000" required placeholder="Descreva com o máximo de detalhe possível:
+• O que aconteceu
+• Onde aconteceu
+• Como reproduzir (se for bug)"></textarea>
         </label>
         <div class="atlas-feedback-counter" id="feedbackMessageCounter">0/2000</div>
         <div class="atlas-feedback-grid">
@@ -481,7 +486,7 @@
         <p id="feedbackFormStatus" class="atlas-feedback-status" hidden></p>
         <div class="atlas-feedback-actions">
           <button type="button" class="atlas-btn atlas-btn-secondary" data-feedback-close>Cancelar</button>
-          <button id="feedbackSubmitBtn" type="submit" class="atlas-btn atlas-btn-primary"><i class="fas fa-paper-plane"></i> Enviar feedback</button>
+          <button id="feedbackSubmitBtn" type="submit" class="atlas-btn atlas-btn-primary"><i class="fas fa-paper-plane"></i> Enviar feedback 🚀</button>
         </div>
       </form>
     </div>

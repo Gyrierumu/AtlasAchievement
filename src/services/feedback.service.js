@@ -72,8 +72,8 @@ function validateFeedbackPayload(payload = {}) {
   if (!FEEDBACK_TYPES.has(type)) {
     throw new AppError('Tipo de feedback inválido.', 400, null, 'FEEDBACK_INVALID_TYPE');
   }
-  if (message.length < 8) {
-    throw new AppError('Mensagem obrigatória. Descreva o feedback com pelo menos 8 caracteres.', 400, null, 'FEEDBACK_MESSAGE_REQUIRED');
+  if (message.length < 10) {
+    throw new AppError('Mensagem obrigatória. Descreva o feedback com pelo menos 10 caracteres.', 400, null, 'FEEDBACK_MESSAGE_REQUIRED');
   }
   if (String(payload.message || '').length > LIMITS.message) {
     throw new AppError(`Mensagem muito longa. Use até ${LIMITS.message} caracteres.`, 400, null, 'FEEDBACK_MESSAGE_TOO_LONG');

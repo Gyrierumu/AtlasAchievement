@@ -1,6 +1,7 @@
 window.AppFeedback = (() => {
   const FEEDBACK_TYPES = ['Erro em guia', 'Bug do site', 'Sugestão', 'Pedido de novo guia'];
   const MESSAGE_LIMIT = 2000;
+  const MESSAGE_MIN = 10;
 
   function qs(selector) {
     return document.querySelector(selector);
@@ -14,14 +15,24 @@ window.AppFeedback = (() => {
     document.body?.classList.toggle('atlas-feedback-open', open);
     if (open) {
       prepareForm();
-      window.setTimeout(() => qs('#feedbackType')?.focus(), 0);
+      window.setTimeout(() => qs('.atlas-feedback-type.is-active')?.focus(), 0);
     }
   }
 
   function inferRelatedGame() {
     const title = qs('#guideHeader h1')?.textContent?.trim();
-    if (title) return title;
-    return '';
+    return title || '';
+  }
+
+  function syncTypeButtons(type) {
+    const value = FEEDBACK_TYPES.includes(type) ? type : 'Bug do site';
+    const input = qs('#feedbackType');
+    if (input) input.value = value;
+    document.querySelectorAll('[data-feedback-type]').forEach(button => {
+      const active = button.dataset.feedbackType === value;
+      button.classList.toggle('is-active', active);
+      button.setAttribute('aria-pressed', active ? 'true' : 'false');
+    });
   }
 
   function prepareForm() {
@@ -33,6 +44,7 @@ window.AppFeedback = (() => {
     if (pageUrl) pageUrl.value = window.location.href;
     if (relatedGame && !relatedGame.value.trim()) relatedGame.value = inferRelatedGame();
     if (startedAt) startedAt.value = String(Date.now());
+    syncTypeButtons(qs('#feedbackType')?.value || 'Bug do site');
     updateCounter();
     setFeedbackMessage('');
   }
@@ -41,7 +53,9 @@ window.AppFeedback = (() => {
     const message = qs('#feedbackMessage');
     const counter = qs('#feedbackMessageCounter');
     if (!message || !counter) return;
+    const trimmedLength = message.value.trim().length;
     counter.textContent = `${message.value.length}/${MESSAGE_LIMIT}`;
+    counter.dataset.tone = trimmedLength >= MESSAGE_MIN || message.value.length === 0 ? 'neutral' : 'warn';
   }
 
   function setFeedbackMessage(message = '', tone = 'info') {
@@ -54,7 +68,7 @@ window.AppFeedback = (() => {
 
   function collectPayload() {
     return {
-      type: qs('#feedbackType')?.value || FEEDBACK_TYPES[0],
+      type: qs('#feedbackType')?.value || 'Bug do site',
       relatedGame: qs('#feedbackRelatedGame')?.value?.trim() || '',
       pageUrl: qs('#feedbackPageUrl')?.value?.trim() || window.location.href,
       message: qs('#feedbackMessage')?.value?.trim() || '',
@@ -72,11 +86,18 @@ window.AppFeedback = (() => {
     const payload = collectPayload();
 
     if (!payload.message) {
-      setFeedbackMessage('Mensagem obrigatória.', 'error');
+      setFeedbackMessage('Mensagem obrigatória. Conte rapidamente o que aconteceu.', 'error');
+      qs('#feedbackMessage')?.focus();
+      return;
+    }
+    if (payload.message.length < MESSAGE_MIN) {
+      setFeedbackMessage(`Escreva pelo menos ${MESSAGE_MIN} caracteres para o feedback ficar útil.`, 'error');
+      qs('#feedbackMessage')?.focus();
       return;
     }
     if (payload.message.length > MESSAGE_LIMIT) {
       setFeedbackMessage(`Mensagem muito longa. Use até ${MESSAGE_LIMIT} caracteres.`, 'error');
+      qs('#feedbackMessage')?.focus();
       return;
     }
 
@@ -85,8 +106,10 @@ window.AppFeedback = (() => {
       setFeedbackMessage('Enviando feedback...', 'info');
       const response = await window.ApiService.submitFeedback(payload);
       form.reset();
+      syncTypeButtons('Bug do site');
+      updateCounter();
       setOpen(false);
-      window.UI?.showToast?.(response.message || 'Obrigado! Seu feedback foi enviado.', 'success');
+      window.UI?.showToast?.(response.message || '✅ Feedback enviado! Obrigado por ajudar a melhorar o AtlasAchievement.', 'success');
     } catch (error) {
       setFeedbackMessage(error.message || 'Não foi possível enviar agora.', 'error');
       window.UI?.showToast?.(error.message || 'Não foi possível enviar agora.', 'error');
@@ -97,6 +120,11 @@ window.AppFeedback = (() => {
 
   function bind() {
     document.addEventListener('click', event => {
+      const typeButton = event.target.closest('[data-feedback-type]');
+      if (typeButton) {
+        syncTypeButtons(typeButton.dataset.feedbackType);
+        return;
+      }
       if (event.target.closest('[data-feedback-open]')) {
         setOpen(true);
         return;
@@ -116,7 +144,7 @@ window.AppFeedback = (() => {
     qs('#feedbackMessage')?.addEventListener('input', updateCounter);
   }
 
-  return { bind, setOpen, collectPayload };
+  return { bind, setOpen, collectPayload, syncTypeButtons };
 })();
 
 document.addEventListener('DOMContentLoaded', () => {

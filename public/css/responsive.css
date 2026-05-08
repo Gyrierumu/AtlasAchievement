@@ -8,14 +8,36 @@
   .atlas-feedback-dialog {
     margin: 8px auto;
     padding: 18px;
+    max-height: calc(100dvh - 16px);
   }
   .atlas-feedback-dialog__head,
   .atlas-feedback-actions {
     align-items: stretch;
     flex-direction: column;
   }
+  .atlas-feedback-dialog__head h3 {
+    font-size: 1.32rem;
+    line-height: 1.12;
+  }
+  .atlas-feedback-type-options,
   .atlas-feedback-grid {
     grid-template-columns: minmax(0, 1fr);
+  }
+  .atlas-feedback-type,
+  .atlas-feedback-dialog .atlas-input {
+    min-height: 52px;
+  }
+  .atlas-feedback-actions {
+    position: sticky;
+    bottom: -18px;
+    margin: 4px -18px -18px;
+    padding: 12px 18px 18px;
+    background: rgba(7,12,25,.96);
+    border-top: 1px solid rgba(255,255,255,.08);
+  }
+  #feedbackSubmitBtn {
+    width: 100%;
+    min-height: 56px;
   }
 }
 
