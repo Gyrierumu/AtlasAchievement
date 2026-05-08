@@ -1219,7 +1219,7 @@ const sampleGames = [
     "time_max_hours": 100,
     "time_sort_hours": 100,
     "time_bucket": "long",
-    "missable": "Não há troféus perdíveis. Tudo pode ser feito depois da primeira clear, repetindo runs e resolvendo profecias, vínculos, pesca, Heat e objetivos situacionais no seu ritmo.",
+    "missable": "Sem perdíveis. A platina de Hades permite voltar a qualquer objetivo por novas tentativas; se uma condição, diálogo, peixe ou profecia não aparecer agora, continue fazendo runs e retome depois.",
     "image": "https://cdn.cloudflare.steamstatic.com/steam/apps/1145360/header.jpg",
     "cover_image": "https://cdn.cloudflare.steamstatic.com/steam/apps/1145360/library_600x900.jpg",
     "editorial_status": "published",
@@ -1227,34 +1227,35 @@ const sampleGames = [
     "is_verified": false,
     "verification_status": "unverified",
     "verification_note": "Guia revisado com lista completa de troféus e dicas editoriais; manter como não verificado até checagem manual final.",
-    "runs_summary": "Roguelite de muitas tentativas: a platina combina clears, relacionamentos, profecias, Pact of Punishment, Keepsakes, Companions, pesca e limpeza de objetivos situacionais.",
-    "missable_summary": "Sem perdíveis. Após cada tentativa, fale com todos, presenteie personagens quando possível e acompanhe a Fatéd List para reduzir RNG no fim.",
-    "online_summary": "Sem troféus online.",
-    "grind_summary": "Grind moderado a alto de Nectar, Ambrosia, Titan Blood, Gemstones, Keepsakes, diálogos e profecias. God Mode pode reduzir bastante a pressão de combate.",
-    "dlc_scope": "Lista base de PlayStation, sem DLC obrigatoria.",
-    "difficulty_reason": "A dificuldade depende da consistência em runs, chefes finais, Heat 8/16 e desafios como Infernal Gaté sem dano. Com upgrades e God Mode, o jogo fica bem mais acessível.",
-    "time_reason": "A estimativa considera a primeira clear, 10 clears para a história principal, epílogo, profecias, vínculos, Companion set, Keepsakes em rank máximo e limpeza de Heat.",
-    "first_run_advice": "No inicio, jogue para aprender biomas, liberar armas, investir no Mirror of Night e falar com todos no House of Hades depois de cada tentativa.",
-    "cleanup_advice": "Depois da primeira clear, trabalhe por blocos: Heat e Skelly, profecias do Pact, aspectos de armas, relacionamentos, pesca, Charon, Thanatos/Hermes e epílogo.",
-    "before_you_start": "Compre a Fatéd List cedo, distribua Nectar para desbloquear Keepsakes, use o Mirror de forma consistente e não ignore diálogos entre runs.",
-    "best_for": "Excelente para quem gosta de progresso incremental, combate de ação e checklist longo que se resolve naturalmente em muitas tentativas.",
-    "avoid_if": "Evite se você quer uma platina curta, linear ou sem repetição de runs.",
+    "runs_summary": "Platina multi-run: você aprende o combate, desbloqueia armas e Mirror, conquista a primeira clear, faz 10 clears para a história principal e depois resolve relações, profecias, Heat e cleanup.",
+    "missable_summary": "Sem perdíveis. Fale com personagens após as runs, entregue Nectar/Ambrosia quando fizer sentido e use a Fated List para transformar objetivos soltos em checklist planejado.",
+    "online_summary": "Sem online e sem coop: a platina é totalmente single-player/offline, sem multiplayer, servidores, PS+ ou parceiro obrigatório.",
+    "grind_summary": "Grind relevante de recursos, afinidade, diálogos, Keepsakes rank 3, Companions, profecias, pesca e Pact of Punishment. RNG afeta encontros e diálogos, mas novas runs sempre preservam progresso.",
+    "dlc_scope": "Lista base de PlayStation. Não há DLC obrigatória para a platina.",
+    "difficulty_reason": "O desafio vem de consistência em combate, leitura de builds, primeira clear, Heat 8/16, Extreme Measures, Infernal Gate sem dano e objetivos com keepsakes. Mirror, armas evoluídas e God Mode tornam a execução bem mais controlável.",
+    "time_reason": "70 a 100 horas considera aprendizado inicial, primeira clear, 10 clears da história, epílogo, relações com personagens, Fated List, recursos raros, Keepsakes no rank máximo, Heat e cleanup situacional.",
+    "first_run_advice": "Nas primeiras runs, não tente resolver tudo. Aprenda biomas e chefes, desbloqueie armas, invista Darkness no Mirror, compre a Fated List cedo e converse com todos no House of Hades após cada tentativa.",
+    "cleanup_advice": "No fim, use a Fated List como painel de controle: feche profecias, relações, Companions, Keepsakes rank 3, pesca por região, Charon, Thanatos/Hermes, Bad Call, Skelly e Heat pendente.",
+    "before_you_start": "A platina não é linear: você não precisa fazer tudo em uma run. Relações com personagens são obrigatórias, a Fated List deve guiar o checklist, RNG pode alongar diálogos/encontros e God Mode é uma opção legítima para reduzir pressão.",
+    "best_for": "Excelente para quem gosta de progresso incremental, builds variadas, ação responsiva e uma platina longa em que quase toda tentativa avança algum sistema.",
+    "avoid_if": "Evite se você quer uma platina curta, linear, sem repetição de runs ou sem depender de diálogos, RNG e grind de recursos.",
     "roadmap": [
-      "Aprenda Tartarus, Asphodel e Elysium, invista no Mirror of Night e busque a primeira clear.",
-      "Desbloqueie todas as Infernal Arms e comece a usar Nectar para abrir os Keepsakes padrao.",
-      "Depois da primeira clear, use o Pact of Punishment para Heat, Skelly, Extreme Measures, Infernal Gatés e profecias.",
-      "Faça as 10 clears da história principal enquanto acumula Titan Blood, Diamonds, Ambrosia, Gemstones e diálogos.",
-      "Trabalhe relacionamentos e favores para Companions, profecias de personagens e o epílogo.",
-      "Complete objetivos de colecao: Keepsakes em rank máximo, aspectos de armas, boons, Daedalus Hammers, Codex e pesca.",
-      "Finalize a limpeza situacional: Charon, Well of Charon, Pierced Butterfly, Lambent Plume, Thanatos, Bad Call e Cerberus/Skelly."
+      "Primeiras runs: aprenda Tartarus, Asphodel, Elysium e chefes sem perseguir checklist agressivo. O objetivo é sobreviver mais longe, juntar Darkness/Keys/Gemstones e criar o hábito de falar com todos após cada tentativa.",
+      "Armas e Mirror: desbloqueie as seis Infernal Arms, compre talentos do Mirror of Night e entregue Nectar para abrir Keepsakes. Faça isso cedo porque armas, Mirror e keepsakes aceleram clears, profecias e relações.",
+      "Primeira clear: escolha a arma mais confortável, invista em Death Defiance e priorize boons defensivos/dano consistente. A primeira fuga libera o Pact of Punishment e transforma a platina em progressão de Heat, recursos e história.",
+      "10 clears da história principal: continue vencendo runs com armas variadas enquanto coleta Titan Blood, Diamonds, Ambrosia e diálogos. Essas clears empurram o final verdadeiro e abrem recursos essenciais para upgrades e contratos.",
+      "Relações e epílogo: entregue Nectar/Ambrosia, conclua favores de personagens e avance linhas como Nyx/Chaos, Orpheus/Eurydice, Achilles/Patroclus, Sisyphus e Olimpianos. Faça entre runs, porque diálogos dependem de aparição e sequência.",
+      "Pact of Punishment e Heat: depois de estabilizar clears, suba Heat com condições controláveis para Skelly, Extreme Measures, Harsh Conditions, Slashed Benefits e Infernal Gate sem dano. Não empilhe modificadores ruins antes de dominar a arma.",
+      "Grind final, profecias e cleanup: use a Fated List para fechar boons, Daedalus Hammers, aspectos, Codex, pesca por região, Keepsakes rank 3, Companions, Charon, Thanatos, Hermes, Bad Call, Cerberus e Skelly."
     ],
     "trophies": [
       {
         "id": "hades_platinum",
         "name": "God of Blood",
         "type": "Platina",
-        "description": "Earn all other Trophies.",
-        "tip": "Desbloqueia automaticamente quando todos os outros troféus da lista forem concluídos.",
+        "description": "Earn every other Trophy.",
+        "tip": "Surge automaticamente ao concluir o restante da lista. Não exige ação própria além de fechar os troféus pendentes.",
+        "is_missable": false,
         "is_spoiler": false
       },
       {
@@ -1262,7 +1263,7 @@ const sampleGames = [
         "name": "Escaped Tartarus",
         "type": "Bronze",
         "description": "Clear Tartarus.",
-        "tip": "Complete o primeiro bioma derrotando a Fury. Foque em aprender padroes e investir Darkness no Mirror.",
+        "tip": "Complete o primeiro bioma derrotando uma Fury. Foque em aprender padrões, sobreviver mais salas e investir Darkness no Mirror.",
         "is_spoiler": false
       },
       {
@@ -1278,7 +1279,7 @@ const sampleGames = [
         "name": "Escaped Elysium",
         "type": "Bronze",
         "description": "Clear Elysium.",
-        "tip": "Venca Theseus e Asterius. Elimine Asterius primeiro se a dupla ainda estiver te pressionando.",
+        "tip": "Vença Theseus e Asterius. Elimine Asterius primeiro se a dupla ainda estiver te pressionando.",
         "is_spoiler": false
       },
       {
@@ -1293,8 +1294,8 @@ const sampleGames = [
         "id": "hades_hold_the_onions",
         "name": "Hold the Onions",
         "type": "Bronze",
-        "description": "Clear an Infernal Gaté without taking damage.",
-        "tip": "Compre Gateways, Erebus no Contractor, entre em uma Infernal Gaté com Heat suficiente e complete a sala sem levar dano.",
+        "description": "Clear an Infernal Gate without taking damage.",
+        "tip": "Compre Gateways, Erebus no Contractor, entre em uma Infernal Gate com Heat suficiente e complete a sala sem levar dano. É desafio de execução para tentar em novas runs.",
         "is_spoiler": false
       },
       {
@@ -1307,7 +1308,7 @@ const sampleGames = [
       },
       {
         "id": "hades_weapon_of_faté",
-        "name": "Weapon of Faté",
+        "name": "Weapon of Fate",
         "type": "Bronze",
         "description": "Clear an escape attempt with a hidden Weapon Aspect.",
         "tip": "Revele um aspecto oculto por progresso e diálogos, equipe-o e conclua uma run com ele.",
@@ -1318,7 +1319,7 @@ const sampleGames = [
         "name": "To Charon's Credit",
         "type": "Prata",
         "description": "Earn a Loyalty Card.",
-        "tip": "Roube a sacola de obols na loja de Charon quando ela aparecer e venca a luta opcional contra ele.",
+        "tip": "Roube a sacola de obols na loja de Charon quando ela aparecer e vença a luta opcional contra ele. A aparição é RNG; tente novamente em outras runs.",
         "is_spoiler": false
       },
       {
@@ -1326,7 +1327,7 @@ const sampleGames = [
         "name": "The Useless Trinket",
         "type": "Bronze",
         "description": "Earn the first of Skelly's prizes.",
-        "tip": "Depois de liberar o Pact, complete uma run em Heat 8 ou mais e resgaté o primeiro prêmio de Skelly no pátio.",
+        "tip": "Depois de liberar o Pact, complete uma run em Heat 8 ou mais e resgate o primeiro prêmio de Skelly no pátio. Trate como desafio de dificuldade.",
         "is_spoiler": false
       },
       {
@@ -1334,7 +1335,7 @@ const sampleGames = [
         "name": "Skelly's Last Lamentations",
         "type": "Ouro",
         "description": "Earn the second of Skelly's prizes.",
-        "tip": "Complete uma run em Heat 16 ou mais. Deixe para quando tiver armas, Mirror e builds de seguranca bem dominados.",
+        "tip": "Complete uma run em Heat 16 ou mais. Deixe para quando tiver armas, Mirror e builds de segurança bem dominados; é um dos desafios de dificuldade da platina.",
         "is_spoiler": false
       },
       {
@@ -1342,7 +1343,7 @@ const sampleGames = [
         "name": "Something From Everyone",
         "type": "Bronze",
         "description": "Unlock each standard Keepsake.",
-        "tip": "De Nectar uma vez a todos os personagens que oferecem Keepsake. Consulte o Codex para ver quem ainda falta.",
+        "tip": "Dê Nectar uma vez a cada personagem que oferece Keepsake. Consulte o Codex para ver quem falta e faça isso aos poucos entre runs.",
         "is_spoiler": false
       },
       {
@@ -1358,7 +1359,7 @@ const sampleGames = [
         "name": "Rare Collectible",
         "type": "Bronze",
         "description": "Equip a Chthonic Companion.",
-        "tip": "Complete o favor de um personagem elegivel, entregue Ambrosia para receber o Companion e equipe-o antes de uma run.",
+        "tip": "Complete o favor de um personagem elegível, entregue Ambrosia para receber o Companion e equipe-o antes de uma run.",
         "is_spoiler": false
       },
       {
@@ -1390,7 +1391,7 @@ const sampleGames = [
         "name": "Blessed by the Gods",
         "type": "Bronze",
         "description": "Choose 100 different Olympian Boon effects.",
-        "tip": "Pegue boons diferentes ao longo das runs. Use Keepsakes dos deuses e a Fatéd List para cobrir lacunas.",
+        "tip": "Pegue boons diferentes ao longo das runs. Use Keepsakes dos deuses e a Fated List para cobrir lacunas; o RNG de oferta pode alongar o cleanup.",
         "is_spoiler": false
       },
       {
@@ -1398,7 +1399,7 @@ const sampleGames = [
         "name": "Thanks, But No Thanks",
         "type": "Bronze",
         "description": "Purge a Legendary Boon.",
-        "tip": "Quando conseguir um boon Legendary, procure um Pool of Purging e venda esse boon. Pode ser melhor deixar para uma run de limpeza.",
+        "tip": "Quando conseguir um boon Legendary, procure um Pool of Purging e venda esse boon. Depende de RNG, então deixe para uma run de cleanup se não aparecer naturalmente.",
         "is_spoiler": false
       },
       {
@@ -1406,7 +1407,7 @@ const sampleGames = [
         "name": "Tools of the Architect",
         "type": "Bronze",
         "description": "Choose 50 different Daedalus Hammer enchantments.",
-        "tip": "Use armas variadas e escolha encantamentos novos de Daedalus Hammer sempre que aparecerem.",
+        "tip": "Use armas variadas e escolha encantamentos novos de Daedalus Hammer sempre que aparecerem. A Fated List ajuda a rastrear o que falta.",
         "is_spoiler": false
       },
       {
@@ -1422,7 +1423,7 @@ const sampleGames = [
         "name": "Grown Close",
         "type": "Bronze",
         "description": "Forge a bond with any character.",
-        "tip": "Presenteie um personagem até completar o vinculo. Skelly, Dusa ou Thanatos costumam ser boas linhas para acompanhar.",
+        "tip": "Presenteie um personagem até completar o vínculo. Skelly, Dusa ou Thanatos costumam ser boas linhas para acompanhar.",
         "is_spoiler": false
       },
       {
@@ -1438,7 +1439,7 @@ const sampleGames = [
         "name": "Day-or-Night Trader",
         "type": "Bronze",
         "description": "Trade 20 times with the Wretched Broker.",
-        "tip": "Faça 20 trocas com o Broker. Use recursos excedentes, mas evite gastar matériais raros antes dos upgrades importantes.",
+        "tip": "Faça 20 trocas com o Broker. Use recursos excedentes, mas evite gastar materiais raros antes dos upgrades importantes.",
         "is_spoiler": false
       },
       {
@@ -1446,7 +1447,7 @@ const sampleGames = [
         "name": "Home Makeover",
         "type": "Bronze",
         "description": "Pay for 50 jobs from the House Contractor.",
-        "tip": "Compre 50 obras do Contractor. Melhorias baratas e cosméticos contam, então va comprando com Gemstones excedentes.",
+        "tip": "Compre 50 obras do Contractor. Melhorias baratas e cosméticos contam, então vá comprando com Gemstones excedentes.",
         "is_spoiler": false
       },
       {
@@ -1454,7 +1455,7 @@ const sampleGames = [
         "name": "Had to Happen",
         "type": "Bronze",
         "description": "Fulfill any 15 Prophecies.",
-        "tip": "Compre a Fatéd List e conclua 15 profecias. Misture objetivos simples de armas, boons, personagens e Pact.",
+        "tip": "Compre a Fated List cedo e conclua 15 profecias. Misture objetivos simples de armas, boons, personagens e Pact para reduzir grind no fim.",
         "is_spoiler": false
       },
       {
@@ -1494,7 +1495,7 @@ const sampleGames = [
         "name": "Chthonic Colleagues",
         "type": "Bronze",
         "description": "Fulfill the 'Chthonic Colleagues' Prophecy.",
-        "tip": "Conheca todos os deuses ctonicos listados na Fatéd List. Continue explorando rotas e falando com NPCs raros.",
+        "tip": "Conheça todos os deuses ctônicos listados na Fated List. Continue explorando rotas e falando com NPCs raros.",
         "is_spoiler": false
       },
       {
@@ -1502,7 +1503,7 @@ const sampleGames = [
         "name": "War-God's Bloodlust",
         "type": "Bronze",
         "description": "Fulfill the 'War-God's Bloodlust' Prophecy.",
-        "tip": "De Nectar a Ares, acumule mortes ao longo das runs e fale com ele novamente quando a meta da profecia for alcancada.",
+        "tip": "Dê Nectar a Ares, acumule mortes ao longo das runs e fale com ele novamente quando a meta da profecia for alcançada. É grind acumulativo.",
         "is_spoiler": false
       },
       {
@@ -1518,7 +1519,7 @@ const sampleGames = [
         "name": "Musician and Muse",
         "type": "Bronze",
         "description": "Fulfill the 'Musician and Muse' Prophecy.",
-        "tip": "Avance Orpheus e Eurydice com diálogos e Nectar, então compre o contrato deles quando aparecer.",
+        "tip": "Avance Orpheus e Eurydice com diálogos e Nectar, então compre o contrato deles quando aparecer. O ritmo depende de diálogos entre runs.",
         "is_spoiler": false
       },
       {
@@ -1526,7 +1527,7 @@ const sampleGames = [
         "name": "Divided by Death",
         "type": "Bronze",
         "description": "Fulfill the 'Divided by Death' Prophecy.",
-        "tip": "Aumente afinidade com Achilles e Patroclus, resolva pre-requisitos de contratos e compre a reuniao no Contractor.",
+        "tip": "Aumente afinidade com Achilles e Patroclus, resolva pré-requisitos de contratos e compre a reunião no Contractor.",
         "is_spoiler": false
       },
       {
@@ -1542,7 +1543,7 @@ const sampleGames = [
         "name": "Harsh Conditions",
         "type": "Prata",
         "description": "Fulfill the 'Harsh Conditions' Prophecy.",
-        "tip": "Use cada condicao do Pact of Punishment ao menos uma vez em clears. Faça em lotes para nao sobrecarregar a run.",
+        "tip": "Use cada condição do Pact of Punishment ao menos uma vez em clears. Faça em lotes para não sobrecarregar a run com dificuldade desnecessária.",
         "is_spoiler": false
       },
       {
@@ -1606,7 +1607,7 @@ const sampleGames = [
         "name": "Haste of Hermes",
         "type": "Bronze",
         "description": "Get 20% dodge chance with the Lambent Plume.",
-        "tip": "Equipe Lambent Plume e limpe encontros rapido. No rank 3, você precisa de menos salas perfeitas para chegar a 20%.",
+        "tip": "Equipe Lambent Plume e limpe encontros rápido. No rank 3, você precisa de menos salas perfeitas para chegar a 20%.",
         "is_spoiler": false
       },
       {
@@ -1614,23 +1615,23 @@ const sampleGames = [
         "name": "Death Dealer",
         "type": "Bronze",
         "description": "Beat Thanatos by 15 kills or more.",
-        "tip": "Quando Thanatos aparecer, foque inimigos frageis e dano em área para terminar o desafio com 15 abatés de vantagem.",
+        "tip": "Quando Thanatos aparecer, foque inimigos frágeis e dano em área para terminar o desafio com 15 abates de vantagem. A aparição dele depende de RNG.",
         "is_spoiler": false
       },
       {
         "id": "hades_friends_in_high_places",
         "name": "Friends in High Places",
         "type": "Bronze",
-        "description": "Use Greatér Call to invoke an Olympian's aid.",
-        "tip": "Pegue um boon de Call, encha a barra completa e use a Greatér Call em qualquer encontro.",
+        "description": "Use Greater Call to invoke an Olympian's aid.",
+        "tip": "Pegue um boon de Call, encha a barra completa e use a Greater Call em qualquer encontro.",
         "is_spoiler": false
       },
       {
         "id": "hades_bad_call",
         "name": "Bad Call",
         "type": "Bronze",
-        "description": "Use an Olympian's Greatér Call against them in a Trial.",
-        "tip": "Em uma Trial of the Gods, tenha a Call de um dos deuses, escolha o outro boon e use a Greatér Call contra o deus irritado.",
+        "description": "Use an Olympian's Greater Call against them in a Trial.",
+        "tip": "Em uma Trial of the Gods, tenha a Call de um dos deuses, escolha o outro boon e use a Greater Call contra o deus irritado. Depende de RNG de Trial e Call.",
         "is_spoiler": false
       },
       {
