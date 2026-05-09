@@ -104,6 +104,10 @@ window.UILibrary = (() => {
   function renderStatusTabs(items = [], activeFilter = 'all') {
     const tabs = qs('#libraryStatusTabs');
     if (!tabs) return;
+    if (!items.length) {
+      tabs.innerHTML = '';
+      return;
+    }
     tabs.innerHTML = STATUS_FILTERS.map(filter => {
       const count = items.filter(filter.matcher).length;
       const active = filter.id === activeFilter;
@@ -446,8 +450,10 @@ window.UILibrary = (() => {
     if (!hasSavedItems && !trimmedSearch) {
       return {
         title: 'Sua biblioteca ainda está vazia',
-        detail: 'Explore o catálogo, abra um guia e salve os jogos que você quer platinar para voltar ao próximo passo depois.',
-        action: '<a class="atlas-btn atlas-btn-primary atlas-btn-compact" href="/catalogo"><i class="fas fa-compass" aria-hidden="true"></i> Explorar catálogo</a>'
+        detail: 'Salve um guia para acompanhar checklist, progresso e sua próxima platina.',
+        helper: 'Abra qualquer guia e adicione à biblioteca para começar.',
+        action: '<a class="atlas-btn atlas-btn-primary" href="/catalogo">Explorar catálogo</a>',
+        premium: true
       };
     }
 
@@ -495,6 +501,7 @@ window.UILibrary = (() => {
   }
 
   function renderLibrary(library = {}, options = {}) {
+    const view = qs('#view-library');
     const target = qs('#libraryGrid') || qs('#libraryList') || qs('#libraryContent');
     const summary = qs('#librarySummary');
     const syncStatus = qs('#librarySyncStatus');
@@ -509,6 +516,13 @@ window.UILibrary = (() => {
     const libraryItems = buildLibraryItems(library, '', availableGames);
     const searchedItems = buildLibraryItems(library, search, availableGames);
     renderStatusTabs(searchedItems, statusFilter);
+    const hasSavedItems = libraryItems.length > 0;
+
+    if (view) {
+      view.classList.remove('is-library-loading');
+      view.classList.toggle('is-library-empty', !hasSavedItems);
+      view.classList.toggle('has-library-items', hasSavedItems);
+    }
 
     if (syncStatus) {
       syncStatus.textContent = options.storageLabel || 'Salvo neste navegador';
@@ -518,18 +532,8 @@ window.UILibrary = (() => {
     const sorted = sortLibraryItems(searchedItems.filter(activeFilter.matcher), sort);
 
     if (summary) {
-      if (!searchedItems.length) {
-        summary.textContent = search ? 'Nenhum jogo salvo corresponde à busca.' : 'Sua biblioteca está vazia.';
-      } else {
-        const inProgress = searchedItems.filter(game => game.progress > 0 && game.progress < 100).length;
-        const completedGames = searchedItems.filter(game => game.progress >= 100).length;
-        summary.textContent = `${searchedItems.length} jogo(s) salvo(s) • ${inProgress} em andamento • ${completedGames} concluído(s).`;
-      }
-    }
-
-    if (summary) {
       if (!libraryItems.length) {
-        summary.textContent = 'Sua biblioteca está vazia. Salve jogos pelo catálogo para montar seu backlog de platinas.';
+        summary.textContent = '';
       } else if (!searchedItems.length) {
         summary.textContent = 'Nenhum jogo salvo corresponde à busca.';
       } else {
@@ -562,9 +566,10 @@ window.UILibrary = (() => {
         activeFilter
       });
       target.innerHTML = `
-        <div class="library-shelf__empty">
+        <div class="library-shelf__empty${emptyState.premium ? ' library-shelf__empty--welcome' : ''}">
           <strong>${escapeHtml(emptyState.title || emptyTitle)}</strong>
           <span>${escapeHtml(emptyState.detail || emptyDetail)}</span>
+          ${emptyState.helper ? `<small>${escapeHtml(emptyState.helper)}</small>` : ''}
           ${emptyState.action || ''}
         </div>
       `;

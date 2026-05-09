@@ -88,6 +88,7 @@ function assertHtmlLoadsModules(relPath) {
       '/js/app-library-controller.js',
       '/js/app-guide-controller.js',
       '/js/app-user-auth.js',
+      '/js/app-analytics.js',
       '/js/app-feedback.js',
       '/js/app-context.js',
       '/js/app-public-init.js',
@@ -150,6 +151,37 @@ function assertHtmlLoadsModules(relPath) {
 }
 
 function assertUIModules() {
+  const appCode = read('src/app.js');
+  const envCode = read('src/config/env.js');
+  const renderConfig = read('render.yaml');
+  const envExample = read('.env.example');
+  const canonicalOrigin = 'https://atlasachievement.com.br';
+  assert(appCode.includes(`PRODUCTION_CANONICAL_ORIGIN = '${canonicalOrigin}'`), 'produção precisa ter fallback canonico do dominio oficial');
+  assert(appCode.includes('isLegacyRenderOrigin'), 'produção precisa ignorar host antigo do Render como origem canonica');
+  assert(envCode.includes('canonicalOrigin'), 'config de ambiente precisa expor CANONICAL_ORIGIN/PUBLIC_SITE_URL');
+  assert(/-\s*key:\s*APP_URL[\s\S]{0,80}value:\s*https:\/\/atlasachievement\.com\.br/.test(renderConfig), 'render.yaml precisa configurar APP_URL com dominio oficial');
+  assert(/-\s*key:\s*CANONICAL_ORIGIN[\s\S]{0,80}value:\s*https:\/\/atlasachievement\.com\.br/.test(renderConfig), 'render.yaml precisa configurar CANONICAL_ORIGIN com dominio oficial');
+  assert(envExample.includes(`APP_URL=${canonicalOrigin}`), '.env.example precisa configurar APP_URL com dominio oficial');
+  assert(envExample.includes(`CANONICAL_ORIGIN=${canonicalOrigin}`), '.env.example precisa configurar CANONICAL_ORIGIN com dominio oficial');
+  assert(envCode.includes('googleAnalyticsMeasurementId'), 'config de ambiente precisa expor GA_MEASUREMENT_ID configuravel');
+  assert(appCode.includes('__ANALYTICS_HEAD__'), 'template publico precisa receber analytics pelo servidor');
+  assert(appCode.includes('send_page_view: false'), 'GA4 precisa evitar page_view duplicado antes da navegação pública hidratar');
+  assert(/-\s*key:\s*GA_MEASUREMENT_ID[\s\S]{0,80}value:\s*G-QNPM6F50XY/.test(renderConfig), 'render.yaml precisa configurar o Measurement ID do GA4');
+  assert(envExample.includes('GA_MEASUREMENT_ID=G-QNPM6F50XY'), '.env.example precisa documentar o Measurement ID do GA4');
+  [renderConfig, envExample].forEach((configText, index) => {
+    const label = index === 0 ? 'render.yaml' : '.env.example';
+    assert(!configText.includes('master-trophy-guide.onrender.com'), `${label} nao deve expor dominio antigo do Render como URL publica`);
+  });
+  const securityHeadersCode = read('src/middleware/securityHeaders.js');
+  assert(securityHeadersCode.includes('https://www.googletagmanager.com'), 'CSP deve permitir script-src do Google Tag Manager');
+  assert(securityHeadersCode.includes('https://www.google-analytics.com'), 'CSP deve permitir connect-src do Google Analytics');
+  const analyticsCode = read('public/js/app-analytics.js');
+  assert(analyticsCode.includes('trackGuideView') && analyticsCode.includes('guide_view'), 'front precisa enviar evento guide_view sem dados sensiveis');
+  assert(analyticsCode.includes('trackFeedbackSubmit') && analyticsCode.includes('feedback_submit'), 'front precisa enviar evento feedback_submit sem mensagem ou contato');
+  assert(!analyticsCode.includes('email') && !analyticsCode.includes('nickname') && !analyticsCode.includes('message'), 'analytics nao deve referenciar dados pessoais ou texto do feedback');
+  const feedbackCode = read('public/js/app-feedback.js');
+  assert(feedbackCode.includes('trackFeedbackSubmit') && !feedbackCode.includes('message: payload.message'), 'feedback deve rastrear apenas tipo e slug, nunca a mensagem');
+
   const userAuthCode = read('public/js/app-user-auth.js');
   assert(
     userAuthCode.includes("event.target?.closest?.('form')") && userAuthCode.includes('form.reset?.()'),
@@ -315,8 +347,8 @@ function assertUIModules() {
   assert(responsiveCss.includes('Platinum-run mobile comfort'), 'responsive.css precisa manter ajustes mobile para uso durante platina');
   assert(/\.atlas-guide-hero__summary[\s\S]*?-webkit-line-clamp:\s*3/.test(responsiveCss), 'resumo do guia mobile precisa ser limitado para nao empurrar o conteudo util');
   assert(/#guideChecklistPanel\s+\.atlas-filter-primary[\s\S]*?grid-template-columns:\s*minmax\(0,\s*1fr\)/.test(responsiveCss), 'filtros do checklist precisam caber em uma coluna no mobile');
-  assert(/#guideChecklistPanel\s+\.atlas-filter-primary\s+\.atlas-filter-group:nth-child\(2\)\s*>\s*div[\s\S]*?overflow-x:\s*auto/.test(responsiveCss), 'filtros de risco do checklist precisam rolar horizontalmente no mobile');
-  assert(/#guideChecklistPanel\s+\.atlas-filter-primary\s+\.atlas-filter-group:nth-child\(2\)\s+\.atlas-pill[\s\S]*?width:\s*auto/.test(responsiveCss), 'chips de risco mobile nao devem ocupar a largura inteira');
+  assert(/#guideChecklistPanel\s+\.atlas-filter-primary\s+\.atlas-filter-group:nth-child\(2\)\s*>\s*div[\s\S]*?grid-template-columns:\s*repeat\(2,\s*minmax\(0,\s*1fr\)\)/.test(responsiveCss), 'filtros de risco do checklist precisam virar grade tocavel no mobile');
+  assert(/#guideChecklistPanel\s+\.atlas-filter-primary\s+\.atlas-filter-group:nth-child\(2\)\s+\.atlas-pill[\s\S]*?width:\s*100%/.test(responsiveCss), 'chips de risco mobile precisam ocupar a coluna inteira para toque confortavel');
   assert(/\.atlas-checklist-list\[data-checklist-density="compact"\]\s+\.atlas-trophy-card[\s\S]*?padding:\s*9px\s+10px/.test(responsiveCss), 'modo compacto mobile precisa reduzir o cansaco visual dos cards');
   assert(/\.atlas-roadmap-step__marker[\s\S]*?width:\s*28px/.test(responsiveCss), 'roadmap mobile precisa usar marcadores compactos');
   assert(/\.atlas-quick-dock\.is-collapsed[\s\S]*?width:\s*min\(218px/.test(responsiveCss), 'dock colapsado mobile nao deve ocupar a largura inteira');
@@ -7137,6 +7169,53 @@ async function assertAdminAuthStillWorks(baseUrl) {
   assert.strictEqual(adminLogout.response.status, 200, 'logout editorial legado deve continuar funcionando');
 }
 
+async function assertAdminVisualProtection(baseUrl) {
+  async function fetchAdminHtml(pathName, cookie = '') {
+    const response = await fetch(`${baseUrl}${pathName}`, {
+      headers: {
+        accept: 'text/html',
+        ...(cookie ? { cookie } : {})
+      }
+    });
+    assert.strictEqual(response.ok, true, `GET ${pathName} deveria retornar 2xx`);
+    return { response, html: await response.text() };
+  }
+
+  function assertLockedAdminHtml(html, label) {
+    assert(html.includes('id="adminLoginForm"'), `${label} deve renderizar somente o formulario de login`);
+    assert(html.includes('Console editorial bloqueado'), `${label} deve explicar que o admin esta bloqueado`);
+    ['id="view-admin"', 'id="adminFeedbackPanel"', 'id="gameForm"', 'id="newGameBtn"', 'id="adminGamesList"'].forEach(fragment => {
+      assert(!html.includes(fragment), `${label} nao deve expor markup ativo do console editorial: ${fragment}`);
+    });
+  }
+
+  const lockedAdmin = await fetchAdminHtml('/admin');
+  assertLockedAdminHtml(lockedAdmin.html, '/admin deslogado');
+  assert(lockedAdmin.response.headers.get('x-robots-tag')?.includes('noindex'), '/admin deslogado deve enviar X-Robots-Tag noindex');
+  assert(lockedAdmin.response.headers.get('cache-control')?.includes('no-store'), '/admin deslogado nao deve ser cacheado');
+
+  const lockedAdminHtml = await fetchAdminHtml('/admin.html');
+  assertLockedAdminHtml(lockedAdminHtml.html, '/admin.html deslogado');
+
+  const adminClient = createHttpClient(baseUrl);
+  const login = await adminClient.request('/api/auth/login', {
+    method: 'POST',
+    body: JSON.stringify({ username: 'admin', password: 'admin123' })
+  });
+  assert.strictEqual(login.response.status, 200, 'login admin deve permitir validar renderizacao autenticada');
+
+  const unlockedAdmin = await fetchAdminHtml('/admin', adminClient.cookie);
+  assert(unlockedAdmin.html.includes('id="view-admin"'), '/admin logado deve renderizar o painel editorial');
+  assert(unlockedAdmin.html.includes('id="adminFeedbackPanel"'), '/admin logado deve manter feedbacks no painel');
+  assert(unlockedAdmin.html.includes('id="gameForm"'), '/admin logado deve manter formulario editorial');
+
+  const logout = await adminClient.request('/api/auth/logout', { method: 'POST' });
+  assert.strictEqual(logout.response.status, 200, 'logout admin deve continuar funcionando para protecao visual');
+
+  const afterLogout = await fetchAdminHtml('/admin', adminClient.cookie);
+  assertLockedAdminHtml(afterLogout.html, '/admin depois do logout');
+}
+
 function listen(app) {
   return new Promise((resolve, reject) => {
     const server = app.listen(0, () => resolve(server));
@@ -7831,6 +7910,7 @@ async function assertBackendEditorialConsistency() {
     await assertPublicAuthFlow({ baseUrl, get });
     await assertUserSyncFlow({ baseUrl, get });
     await assertAdminAuthStillWorks(baseUrl);
+    await assertAdminVisualProtection(baseUrl);
 
     const gamesResponse = await httpGetJson(baseUrl, '/api/games?limit=100&sort=name-asc');
     const items = gamesResponse.items || [];

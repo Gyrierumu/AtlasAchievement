@@ -12,9 +12,23 @@ window.AppPublicNav = (() => {
     el.setAttribute(attr, value);
   }
 
+  function getPublicOrigin() {
+    const canonicalHref = document.head.querySelector('link[rel="canonical"]')?.getAttribute('href') || '';
+    try {
+      return new URL(canonicalHref).origin;
+    } catch (error) {
+      return window.location.origin;
+    }
+  }
+
+  function buildPublicUrl(path = '/') {
+    const pathPart = String(path || '/').startsWith('/') ? String(path || '/') : `/${path}`;
+    return `${getPublicOrigin()}${pathPart}`;
+  }
+
   function setStaticViewMeta({ title, description, path, robots = 'noindex,follow' }) {
     document.title = title;
-    const canonical = `${window.location.origin}${path}`;
+    const canonical = buildPublicUrl(path);
     let canonicalLink = document.head.querySelector('link[rel="canonical"]');
     if (!canonicalLink) {
       canonicalLink = document.createElement('link');
@@ -28,11 +42,11 @@ window.AppPublicNav = (() => {
     ensureMeta('meta[property="og:description"]', 'content', description);
     ensureMeta('meta[property="og:type"]', 'content', 'website');
     ensureMeta('meta[property="og:url"]', 'content', canonical);
-    ensureMeta('meta[property="og:image"]', 'content', `${window.location.origin}/og-default.svg`);
+    ensureMeta('meta[property="og:image"]', 'content', buildPublicUrl('/og-default.svg'));
     ensureMeta('meta[name="twitter:card"]', 'content', 'summary_large_image');
     ensureMeta('meta[name="twitter:title"]', 'content', title);
     ensureMeta('meta[name="twitter:description"]', 'content', description);
-    ensureMeta('meta[name="twitter:image"]', 'content', `${window.location.origin}/og-default.svg`);
+    ensureMeta('meta[name="twitter:image"]', 'content', buildPublicUrl('/og-default.svg'));
   }
 
   function setLibraryMeta() {
@@ -84,6 +98,7 @@ window.AppPublicNav = (() => {
         });
       }
       if (view === 'catalog') UI.renderCatalog(state.catalogResponse, { search: state.catalogSearch, sort: state.catalogSort, facet: options.facet || state.catalogFacet, compareSelection: state.catalogCompare, intent: state.catalogIntent, allGames: state.availableGames });
+      window.AtlasAnalytics?.trackPageView?.({ path, title: document.title });
       syncGuideQuickDock();
     };
   }

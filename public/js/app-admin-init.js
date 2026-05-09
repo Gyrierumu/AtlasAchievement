@@ -22,7 +22,7 @@ window.AppAdminInit = (() => {
     await syncSession();
     UI.showView('admin');
     if (state.session.authenticated) await openAdminPanel();
-    else UI.openAdminModal();
+    else window.location.replace('/admin');
     return true;
   }
 

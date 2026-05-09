@@ -20,6 +20,14 @@ services:
         value: /data/database.sqlite
       - key: UPLOAD_DIR
         value: /data/uploads
+      - key: APP_URL
+        value: https://atlasachievement.com.br
+      - key: CANONICAL_ORIGIN
+        value: https://atlasachievement.com.br
+      - key: CORS_ALLOWED_ORIGINS
+        value: https://atlasachievement.com.br
+      - key: GA_MEASUREMENT_ID
+        value: G-QNPM6F50XY
     disk:
       name: master-trophy-guide-data
       mountPath: /data

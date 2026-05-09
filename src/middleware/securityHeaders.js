@@ -5,11 +5,11 @@ function securityHeaders(req, res, next) {
     "object-src 'none'",
     "frame-ancestors 'none'",
     "form-action 'self'",
-    "connect-src 'self'",
+    "connect-src 'self' https://www.google-analytics.com https://*.google-analytics.com https://www.googletagmanager.com https://*.googletagmanager.com",
     "img-src 'self' data: https:",
     "font-src 'self' https://cdnjs.cloudflare.com data:",
     "style-src 'self' 'unsafe-inline' https://cdnjs.cloudflare.com",
-    "script-src 'self' 'unsafe-inline'",
+    "script-src 'self' 'unsafe-inline' https://www.googletagmanager.com https://*.googletagmanager.com",
     "script-src-attr 'self' 'unsafe-inline'",
     "upgrade-insecure-requests"
   ].join('; ');

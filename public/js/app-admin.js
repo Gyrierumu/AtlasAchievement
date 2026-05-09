@@ -430,6 +430,10 @@ window.AppAdmin = (() => {
 
     async function openAdminPanel() {
       if (!state.session.authenticated) {
+        if (page === 'admin') {
+          window.location.replace('/admin');
+          return;
+        }
         UI.openAdminModal();
         return;
       }
@@ -489,6 +493,10 @@ window.AppAdmin = (() => {
       } catch (error) {
         if (error.status === 401) {
           await syncSession();
+          if (page === 'admin') {
+            window.location.replace('/admin');
+            return;
+          }
           UI.openAdminModal();
         }
         UI.showToast(error.details?.join(' | ') || error.message, 'error');
@@ -593,12 +601,8 @@ window.AppAdmin = (() => {
         UI.setAdminState(response);
         UI.showToast(response.message, 'success');
         if (page === 'admin') {
-          UI.openAdminModal();
-          UI.togglePreviewPanel(false);
-          UI.togglePasswordPanel(false);
-          UI.renderAdminGames({ items: [], pagination: { page: 1, totalPages: 1, total: 0 } });
-          UI.renderAdminFeedback?.({ items: [], pagination: { page: 1, totalPages: 1, total: 0 } });
-          UI.renderAdminSummary({ totalGames: 0, totalTrophies: 0 });
+          window.location.replace('/admin');
+          return;
         } else {
           navigate('home');
         }

@@ -24,6 +24,12 @@ const config = {
   loginRateLimitMaxAttempts: Number(process.env.LOGIN_RATE_LIMIT_MAX_ATTEMPTS || 8),
   loginBlockDurationMs: Number(process.env.LOGIN_BLOCK_DURATION_MS || 15 * 60 * 1000),
   appUrl: (process.env.APP_URL || '').trim(),
+  canonicalOrigin: (process.env.CANONICAL_ORIGIN || process.env.PUBLIC_SITE_URL || '').trim(),
+  googleAnalyticsMeasurementId: (
+    process.env.GA_MEASUREMENT_ID
+    || process.env.GOOGLE_ANALYTICS_MEASUREMENT_ID
+    || (isProduction ? 'G-QNPM6F50XY' : '')
+  ).trim(),
   corsAllowedOrigins: (process.env.CORS_ALLOWED_ORIGINS || '').split(',').map(value => value.trim()).filter(Boolean),
   sessionMaxAgeHours: Number(process.env.SESSION_MAX_AGE_HOURS || 8),
   sessionCleanupIntervalMinutes: Number(process.env.SESSION_CLEANUP_INTERVAL_MINUTES || 30),

@@ -162,10 +162,21 @@ window.UIGuide = (() => {
     const normalizedQuery = normalizeGuideSearchValue(query).trim();
     let activeFilter = filter || 'all';
     let visibleCount = 0;
+    const cards = getTrophyCards();
+    if (!cards.length) {
+      const results = qs('#guideResults');
+      if (results) results.textContent = 'Checklist ainda não disponível para este guia.';
+      setGuideEmptyState(true, {
+        title: 'Checklist ainda não disponível para este guia.',
+        detail: 'Este guia ainda não possui troféus cadastrados.',
+        action: false
+      });
+      return { activeFilter: 'all', visibleCount: 0 };
+    }
     updateGuideFilterButtons(normalizedQuery);
     const activeButton = qsa('.filter-btn').find(button => button.dataset.filter === activeFilter);
     if (activeButton?.hidden) activeFilter = 'all';
-    getTrophyCards().forEach(card => {
+    cards.forEach(card => {
       const passesFilter = cardMatchesGuideFilter(card, activeFilter);
       const matchesSearch = !normalizedQuery || (card.dataset.search || '').includes(normalizedQuery);
       const visible = passesFilter && matchesSearch;
@@ -236,7 +247,7 @@ window.UIGuide = (() => {
 
   function buildGuideHeroStats(game = {}, viewModel = {}) {
     if (typeof buildGuideSummaryCards === 'function') {
-      const essentials = new Set(['Tempo estimado', 'Dificuldade', 'Trofeus', 'TrofÃ©us', 'Platina/100%']);
+      const essentials = new Set(['Tempo estimado', 'Dificuldade', 'Trofeus', 'Troféus', 'Platina/100%']);
       return buildGuideSummaryCards(game, viewModel).filter(item => essentials.has(item.label)).slice(0, 4);
     }
     if (typeof sharedEditorial.buildGuideHeroStats === 'function') {
@@ -284,7 +295,7 @@ window.UIGuide = (() => {
 
   function splitGuideRoadmapActions(value = '') {
     return String(value || '')
-      .split(/(?:[.;]\s+|\n+|,\s+(?=e |depois|entao|entÃ£o|antes|sem |com |use |faÃ§a |faca ))/i)
+      .split(/(?:[.;]\s+|\n+|,\s+(?=e |depois|entao|então|antes|sem |com |use |faça |faca ))/i)
       .map(item => item.trim().replace(/^[-•]\s*/, ''))
       .filter(item => item.length > 18)
       .map(item => item.length > 120 ? `${item.slice(0, 117).trim()}...` : item);
@@ -326,9 +337,9 @@ window.UIGuide = (() => {
       <section id="guidePlatinumSummaryPanel" class="atlas-panel atlas-panel--section atlas-platinum-summary p-5 md:p-6">
         <div class="atlas-section-head atlas-section-head--compact">
           <div>
-            <div class="atlas-eyebrow">Resumo rÃ¡pido da platina</div>
-            <h2 class="text-xl md:text-2xl font-extrabold tracking-tight mt-2">O que vocÃª precisa saber antes de jogar</h2>
-            <p class="text-white/58 mt-2 max-w-4xl">Tempo, dificuldade, escopo, online, coop e riscos ficam aqui para decisÃ£o rÃ¡pida antes do plano completo.</p>
+            <div class="atlas-eyebrow">Resumo rápido da platina</div>
+            <h2 class="text-xl md:text-2xl font-extrabold tracking-tight mt-2">O que você precisa saber antes de jogar</h2>
+            <p class="text-white/58 mt-2 max-w-4xl">Tempo, dificuldade, escopo, online, coop e riscos ficam aqui para decisão rápida antes do plano completo.</p>
           </div>
         </div>
         <div class="atlas-platinum-summary__grid" aria-label="Resumo essencial da platina">
@@ -807,7 +818,11 @@ window.UIGuide = (() => {
     const counterLabel = qs('#guideCounter');
     const quickDockProgressNodes = qsa('[data-quick-dock-progress]');
     if (progressLabel) progressLabel.textContent = `${viewModel.progress}%`;
-    if (counterLabel) counterLabel.textContent = `${viewModel.completed}/${viewModel.total} concluídos`;
+    if (counterLabel) {
+      counterLabel.textContent = viewModel.total > 0
+        ? `${viewModel.completed}/${viewModel.total} concluídos`
+        : 'Checklist ainda não disponível';
+    }
     quickDockProgressNodes.forEach(node => {
       node.textContent = `${viewModel.progress}%`;
       node.setAttribute('aria-label', `Progresso atual ${viewModel.progress}%`);

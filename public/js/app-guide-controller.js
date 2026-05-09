@@ -43,6 +43,9 @@ window.AppGuideController = (() => {
       UI.applyTrophyFilter(state.activeFilter, state.guideSearch);
       if (UI.has('#guideDecisionStack')) UI.qs('#guideDecisionStack').classList.remove('hidden');
       if (UI.has('#guideContent')) UI.qs('#guideContent').classList.remove('hidden');
+      if (!options.preserveChecklistState) {
+        window.AtlasAnalytics?.trackGuideView?.(state.currentGame);
+      }
     }
 
     async function loadGuideBySlug(slug, options = {}) {

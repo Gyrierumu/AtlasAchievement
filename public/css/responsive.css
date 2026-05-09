@@ -7,17 +7,25 @@
   .atlas-footer-item { align-items: flex-start; }
   .atlas-feedback-dialog {
     margin: 8px auto;
-    padding: 18px;
     max-height: calc(100dvh - 16px);
+    border-radius: 22px;
   }
-  .atlas-feedback-dialog__head,
-  .atlas-feedback-actions {
+  .atlas-feedback-dialog__head {
     align-items: stretch;
     flex-direction: column;
+    padding: 20px 18px 16px;
   }
   .atlas-feedback-dialog__head h3 {
-    font-size: 1.32rem;
+    font-size: 1.42rem;
     line-height: 1.12;
+  }
+  .atlas-feedback-form {
+    padding: 16px 14px 18px;
+    gap: 14px;
+  }
+  .atlas-feedback-block {
+    padding: 14px;
+    border-radius: 18px;
   }
   .atlas-feedback-type-options,
   .atlas-feedback-grid {
@@ -27,13 +35,22 @@
   .atlas-feedback-dialog .atlas-input {
     min-height: 52px;
   }
+  .atlas-feedback-dialog .atlas-feedback-textarea {
+    min-height: 132px;
+  }
   .atlas-feedback-actions {
-    position: sticky;
-    bottom: -18px;
-    margin: 4px -18px -18px;
-    padding: 12px 18px 18px;
-    background: rgba(7,12,25,.96);
-    border-top: 1px solid rgba(255,255,255,.08);
+    align-items: stretch;
+    flex-direction: column;
+    bottom: 0;
+    margin: 2px -14px -18px;
+    padding: 12px 14px 18px;
+  }
+  .atlas-feedback-actions p {
+    max-width: none;
+  }
+  .atlas-feedback-success-actions {
+    flex-direction: column;
+    align-items: stretch;
   }
   #feedbackSubmitBtn {
     width: 100%;
@@ -126,6 +143,17 @@
   header > div,
   header > nav {
     min-width: 0;
+  }
+
+  .atlas-breadcrumbs {
+    gap: 4px 7px;
+    line-height: 1.15;
+  }
+
+  .atlas-breadcrumbs__item {
+    min-height: 32px;
+    display: inline-flex;
+    align-items: center;
   }
 
   .atlas-topbar {
@@ -1234,6 +1262,18 @@
   .library-shelf__empty {
     min-height: 150px;
   }
+
+  .library-shelf__empty--welcome {
+    min-height: 280px;
+    padding: 32px 18px;
+    border-radius: 20px;
+  }
+
+  .library-shelf__empty--welcome .atlas-btn {
+    width: 100%;
+    max-width: 280px;
+    justify-content: center;
+  }
 }
 
 @media (max-width: 420px) {
@@ -1566,15 +1606,10 @@
   }
 
   #guideChecklistPanel .atlas-filter-primary .atlas-filter-group:nth-child(2) > div {
-    display: flex;
-    flex-wrap: nowrap;
-    overflow-x: auto;
-    padding-bottom: 2px;
-    scrollbar-width: none;
-  }
-
-  #guideChecklistPanel .atlas-filter-primary .atlas-filter-group:nth-child(2) > div::-webkit-scrollbar {
-    display: none;
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    overflow-x: visible;
+    padding-bottom: 0;
   }
 
   #guideChecklistPanel .atlas-filter-group .atlas-pill {
@@ -1585,11 +1620,11 @@
   }
 
   #guideChecklistPanel .atlas-filter-primary .atlas-filter-group:nth-child(2) .atlas-pill {
-    flex: 0 0 auto;
-    width: auto;
-    min-width: 96px;
-    max-width: 136px;
-    white-space: nowrap;
+    width: 100%;
+    min-width: 0;
+    max-width: none;
+    white-space: normal;
+    line-height: 1.12;
   }
 
   #guideChecklistPanel .atlas-filter-more summary {
@@ -1754,8 +1789,8 @@
   }
 
   #guideChecklistPanel .atlas-filter-primary .atlas-filter-group:nth-child(2) .atlas-pill {
-    min-width: 92px;
-    max-width: 128px;
+    min-width: 0;
+    max-width: none;
   }
 
   .atlas-home-cta-row {

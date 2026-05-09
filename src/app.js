@@ -29,6 +29,7 @@ const publicIndexPath = path.join(__dirname, '../public/index.html');
 const publicIndexTemplate = fs.readFileSync(publicIndexPath, 'utf8');
 const catalogFacetPageMap = sharedCatalogModel.catalogFacetPageMap;
 const PUBLIC_CATALOG_PAGE_SIZE = 24;
+const PRODUCTION_CANONICAL_ORIGIN = 'https://atlasachievement.com.br';
 
 const editorialCollectionPageMap = {
   'primeira-platina': {
@@ -120,9 +121,21 @@ function normalizeOrigin(value = '') {
   }
 }
 
+function isLegacyRenderOrigin(origin = '') {
+  try {
+    const { hostname } = new URL(origin);
+    return hostname === 'onrender.com' || hostname.endsWith('.onrender.com');
+  } catch (error) {
+    return /(^|\.)onrender\.com$/i.test(String(origin || '').replace(/^https?:\/\//i, '').split('/')[0]);
+  }
+}
+
 function getPublicOrigin(req) {
-  const configuredOrigin = normalizeOrigin(env.appUrl);
-  if (configuredOrigin) return configuredOrigin;
+  const configuredOrigin = normalizeOrigin(env.canonicalOrigin || env.appUrl);
+  if (configuredOrigin && !(env.isProduction && isLegacyRenderOrigin(configuredOrigin))) {
+    return configuredOrigin;
+  }
+  if (env.isProduction) return PRODUCTION_CANONICAL_ORIGIN;
   return normalizeOrigin(`${req.protocol}://${req.get('host')}`);
 }
 
@@ -141,6 +154,171 @@ function resolveMetaImage(origin, imagePath) {
 function buildInitialStateScript(payload = null) {
   if (!payload) return '<script>window.__INITIAL_STATE__ = null;</script>';
   return `<script>window.__INITIAL_STATE__ = ${safeJsonForHtml(payload)};</script>`;
+}
+
+function getGoogleAnalyticsMeasurementId() {
+  const measurementId = String(env.googleAnalyticsMeasurementId || '').trim();
+  return /^G-[A-Z0-9]+$/i.test(measurementId) ? measurementId.toUpperCase() : '';
+}
+
+function buildAnalyticsHeadHtml() {
+  if (!env.isProduction) return '';
+  const measurementId = getGoogleAnalyticsMeasurementId();
+  if (!measurementId) return '';
+
+  const escapedId = escapeHtml(measurementId);
+  const safeJsonId = safeJsonForHtml(measurementId);
+  return `<!-- Google tag (gtag.js) -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=${escapedId}"></script>
+  <script>
+    window.AtlasAnalyticsConfig = Object.freeze({ measurementId: ${safeJsonId} });
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', ${safeJsonId}, { send_page_view: false });
+  </script>`;
+}
+
+function buildAdminLoginPageHtml() {
+  return `<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>AtlasAchievement - Acesso editorial</title>
+  <meta name="robots" content="noindex,nofollow">
+  <meta name="description" content="Acesso privado ao console editorial do AtlasAchievement.">
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+  <link rel="stylesheet" href="/css/utilities.css">
+  <link rel="stylesheet" href="/css/tokens.css">
+  <link rel="stylesheet" href="/css/base.css">
+  <link rel="stylesheet" href="/css/layout.css">
+  <link rel="stylesheet" href="/css/components.css">
+  <link rel="stylesheet" href="/css/admin.css">
+  <link rel="stylesheet" href="/css/responsive.css">
+  <link rel="icon" href="/favicon.svg" type="image/svg+xml">
+  <link rel="apple-touch-icon" href="/apple-touch-icon.png">
+  <link rel="manifest" href="/site.webmanifest">
+  <style>
+    body[data-page="admin-login"] {
+      background: linear-gradient(180deg, #050814 0%, #070b16 54%, #050710 100%);
+    }
+
+    body[data-page="admin-login"] .atlas-bg-orb {
+      display: none;
+    }
+
+    .atlas-admin-login-main {
+      min-height: calc(100vh - 88px);
+      display: grid;
+      place-items: center;
+      padding: 32px 16px;
+    }
+
+    .atlas-admin-login-card {
+      width: min(100%, 460px);
+      border-radius: 18px;
+    }
+
+    .atlas-admin-login-card .atlas-input {
+      min-height: 52px;
+    }
+
+    .atlas-admin-login-feedback {
+      min-height: 22px;
+    }
+
+    @media (max-width: 640px) {
+      .atlas-admin-login-main {
+        align-items: start;
+        padding-top: 24px;
+      }
+    }
+  </style>
+</head>
+<body class="atlas-body min-h-screen" data-page="admin-login">
+  <header class="sticky top-0 z-40 atlas-topbar atlas-topbar--admin">
+    <div class="atlas-topbar__row max-w-[1320px] mx-auto px-4 lg:px-6 h-[88px] flex items-center justify-between gap-4">
+      <a href="/" class="atlas-brand flex items-center gap-4">
+        <div class="w-12 h-12 rounded-2xl atlas-logo-mark flex items-center justify-center"><span class="atlas-logo-letter text-white text-2xl font-black">A</span></div>
+        <div class="atlas-brand__copy">
+          <div class="atlas-brand__name text-[20px] font-extrabold leading-none">AtlasAchievement</div>
+          <div class="atlas-brand__tagline text-[11px] uppercase tracking-[0.28em] text-white/40 mt-1">Console Atlas</div>
+        </div>
+      </a>
+      <a href="/" class="atlas-btn atlas-btn-secondary"><i class="fas fa-arrow-left" aria-hidden="true"></i><span>Site</span></a>
+    </div>
+  </header>
+
+  <main class="atlas-admin-login-main">
+    <section class="atlas-panel atlas-admin-login-card p-6 md:p-8" aria-labelledby="adminLoginTitle">
+      <div class="atlas-eyebrow">Acesso restrito</div>
+      <h1 id="adminLoginTitle" class="text-[28px] md:text-[36px] leading-none font-extrabold tracking-tight mt-2">Console editorial bloqueado</h1>
+      <p class="mt-3 text-white/62">Entre com uma conta administradora para acessar guias, feedbacks e ferramentas editoriais.</p>
+
+      <form id="adminLoginForm" class="space-y-4 mt-6" autocomplete="on">
+        <label class="block">
+          <span class="atlas-label">Usuário</span>
+          <input id="adminUsername" name="username" type="text" class="atlas-input mt-2" autocomplete="username" required>
+        </label>
+        <label class="block">
+          <span class="atlas-label">Senha</span>
+          <input id="adminPassword" name="password" type="password" class="atlas-input mt-2" autocomplete="current-password" required>
+        </label>
+        <p id="adminLoginFeedback" class="atlas-admin-login-feedback text-sm text-rose-200" role="status" aria-live="polite"></p>
+        <button id="adminLoginSubmit" type="submit" class="w-full atlas-btn atlas-btn-primary h-[54px]">Entrar no admin</button>
+      </form>
+    </section>
+  </main>
+
+  <script>
+    (() => {
+      const form = document.getElementById('adminLoginForm');
+      const feedback = document.getElementById('adminLoginFeedback');
+      const submit = document.getElementById('adminLoginSubmit');
+
+      form?.addEventListener('submit', async event => {
+        event.preventDefault();
+        const username = document.getElementById('adminUsername')?.value.trim();
+        const password = document.getElementById('adminPassword')?.value || '';
+        feedback.textContent = '';
+        submit.disabled = true;
+        submit.textContent = 'Entrando...';
+
+        try {
+          const response = await fetch('/api/auth/login', {
+            method: 'POST',
+            credentials: 'include',
+            headers: { 'Content-Type': 'application/json' },
+            body: JSON.stringify({ username, password })
+          });
+          const payload = await response.json().catch(() => ({}));
+          if (!response.ok) {
+            throw new Error(payload?.error?.message || payload?.message || 'Não foi possível entrar agora.');
+          }
+          window.location.replace('/admin');
+        } catch (error) {
+          feedback.textContent = error.message || 'Não foi possível entrar agora.';
+          submit.disabled = false;
+          submit.textContent = 'Entrar no admin';
+        }
+      });
+    })();
+  </script>
+</body>
+</html>`;
+}
+
+function sendAdminPage(req, res) {
+  res.setHeader('X-Robots-Tag', 'noindex, nofollow');
+  res.setHeader('Cache-Control', 'no-store');
+
+  if (!req.session?.admin) {
+    res.type('html').send(buildAdminLoginPageHtml());
+    return;
+  }
+
+  res.sendFile(path.join(__dirname, '../public/admin.html'));
 }
 
 function buildGameSeoTitle(game = {}) {
@@ -610,7 +788,7 @@ function getGuideRoadmapCount(game = {}, viewModel = {}) {
 
 function buildGuideHeroStats(game = {}, viewModel = {}) {
   if (typeof sharedGuideViewModel.buildGuideSummaryCards === 'function') {
-    const essentials = new Set(['Tempo estimado', 'Dificuldade', 'Trofeus', 'TrofÃ©us', 'Platina/100%']);
+    const essentials = new Set(['Tempo estimado', 'Dificuldade', 'Trofeus', 'Troféus', 'Platina/100%']);
     return sharedGuideViewModel.buildGuideSummaryCards(game, viewModel).filter(item => essentials.has(item.label)).slice(0, 4);
   }
   return sharedEditorialModel.buildGuideHeroStats(game, viewModel);
@@ -942,10 +1120,14 @@ function buildSsrGuideMarkup(game, relatedGames = []) {
 
 function applyTemplateDefaults(template) {
   return template
+    .replace(/__ANALYTICS_HEAD__/g, buildAnalyticsHeadHtml())
     .replace(/__HOME_VIEW_CLASS__/g, '')
     .replace(/__CATALOG_VIEW_CLASS__/g, 'hidden')
     .replace(/__GUIDE_VIEW_CLASS__/g, 'hidden')
     .replace(/__GUIDE_CONTENT_CLASS__/g, 'hidden')
+    .replace(/__GUIDE_PROGRESS_INITIAL__/g, '...')
+    .replace(/__GUIDE_COUNTER_INITIAL__/g, 'Carregando checklist...')
+    .replace(/__GUIDE_RESULTS_INITIAL__/g, 'Carregando checklist...')
     .replace(/__HOME_HERO_HEADING_TAG__/g, 'h1')
     .replace(/__CATALOG_HEADING_TAG__/g, 'h2')
     .replace(/__LIBRARY_HEADING_TAG__/g, 'h2')
@@ -993,6 +1175,14 @@ async function buildGamePageHtml(game, req) {
   const relatedGames = buildRelatedGamesServer(game, relatedPool, 4);
   const ssrMarkup = buildSsrGuideMarkup(game, relatedGames);
   const viewModel = ssrMarkup.viewModel;
+  const ssrTotal = Number(viewModel?.total || 0);
+  const ssrProgressInitial = '0%';
+  const ssrCounterInitial = ssrTotal > 0
+    ? `0/${ssrTotal} concluídos`
+    : 'Checklist ainda não disponível';
+  const ssrResultsInitial = ssrTotal > 0
+    ? `${ssrTotal} troféu(s) visível(is)`
+    : 'Checklist ainda não disponível para este guia.';
   const statusBadge = viewModel.editorial?.statusBadge || getEditorialBadge(game);
   const title = buildGameSeoTitle(game);
   const description = buildGameSeoDescription(game);
@@ -1037,6 +1227,9 @@ async function buildGamePageHtml(game, req) {
     .replace(/__GUIDE_BREADCRUMBS__/g, buildBreadcrumbsHtml([{ label: 'Início', href: '/' }, { label: 'Catálogo', href: '/catalogo' }, { label: game.name }]))
     .replace(/__GUIDE_COLLECTION_LINKS__/g, guideCollections.collectionLinks.map(item => `<a href="${escapeHtml(item.path)}" class="atlas-card atlas-card--minimal atlas-related-collection"><div class="atlas-card__body"><strong class="atlas-card__title">${escapeHtml(item.label)}</strong><span class="atlas-card__reason">${escapeHtml(item.reason)}</span><span class="atlas-card__link">Abrir coleção</span></div></a>`).join(''))
     .replace(/__GUIDE_CONTENT_CLASS__/g, '')
+    .replace(/__GUIDE_PROGRESS_INITIAL__/g, escapeHtml(ssrProgressInitial))
+    .replace(/__GUIDE_COUNTER_INITIAL__/g, escapeHtml(ssrCounterInitial))
+    .replace(/__GUIDE_RESULTS_INITIAL__/g, escapeHtml(ssrResultsInitial))
     .replace(/__HAS_SSR_GAME__/g, 'true')
     .replace(/__SSR_GUIDE_HEADER__/g, ssrMarkup.header)
     .replace(/__SSR_GUIDE_DECISION_STACK__/g, ssrMarkup.decisionStack)
@@ -1470,6 +1663,9 @@ const allowedOrigins = new Set(env.corsAllowedOrigins);
 if (env.appUrl) {
   allowedOrigins.add(env.appUrl);
 }
+if (env.canonicalOrigin) {
+  allowedOrigins.add(env.canonicalOrigin);
+}
 
 app.use(requestContext);
 app.use(securityHeaders);
@@ -1539,6 +1735,7 @@ app.use('/shared', express.static(path.join(__dirname, 'shared'), {
     }
   }
 }));
+app.get(['/admin', '/admin.html'], sendAdminPage);
 app.use(express.static(path.join(__dirname, '../public'), {
   index: false,
   etag: true,
@@ -1628,11 +1825,6 @@ app.use('/api/feedback', requireCsrf, feedbackRoutes);
 app.use('/api/me', requireCsrf, meRoutes);
 app.use('/api/uploads', requireCsrf, uploadsRoutes);
 app.use('/api/games', requireCsrf, gamesRoutes);
-
-app.get('/admin', (req, res) => {
-  res.setHeader('X-Robots-Tag', 'noindex, nofollow');
-  res.sendFile(path.join(__dirname, '../public/admin.html'));
-});
 
 app.get('/catalogo', async (req, res, next) => {
   try {

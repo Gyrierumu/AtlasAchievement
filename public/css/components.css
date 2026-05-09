@@ -775,12 +775,17 @@ select:focus {
 .toast .error { border-color: rgba(251, 113, 133, .35); }
 
 .atlas-feedback-dialog {
-  width: min(720px, calc(100vw - 28px));
+  width: min(760px, calc(100vw - 28px));
   max-height: calc(100vh - 32px);
   margin: 24px auto;
-  padding: 24px;
+  padding: 0;
   overflow: auto;
   scroll-padding-bottom: 96px;
+  border-radius: 28px;
+  background:
+    linear-gradient(180deg, rgba(15,23,42,.98), rgba(7,12,25,.98)),
+    rgba(15,23,42,.96);
+  border: 1px solid rgba(255,255,255,.12);
 }
 
 .atlas-feedback-dialog__head {
@@ -788,21 +793,24 @@ select:focus {
   align-items: flex-start;
   justify-content: space-between;
   gap: 16px;
-  margin-bottom: 18px;
+  padding: 26px 28px 20px;
+  border-bottom: 1px solid rgba(255,255,255,.08);
 }
 
 .atlas-feedback-dialog__head h3 {
   margin-top: 8px;
-  max-width: 560px;
-  font-size: 1.72rem;
-  line-height: 1.05;
+  max-width: 620px;
+  font-size: clamp(1.55rem, 3vw, 2.15rem);
+  line-height: 1.08;
   font-weight: 850;
   letter-spacing: 0;
 }
 
 .atlas-feedback-dialog__head p {
-  margin-top: 8px;
-  color: rgba(255,255,255,.58);
+  max-width: 650px;
+  margin-top: 10px;
+  color: rgba(255,255,255,.64);
+  line-height: 1.5;
 }
 
 .atlas-feedback-form,
@@ -812,7 +820,8 @@ select:focus {
 }
 
 .atlas-feedback-form {
-  gap: 14px;
+  gap: 16px;
+  padding: 22px 28px 28px;
 }
 
 .atlas-feedback-form label {
@@ -825,6 +834,39 @@ select:focus {
   color: rgba(255,255,255,.42);
   font-size: .78rem;
   font-weight: 600;
+}
+
+.atlas-feedback-block {
+  display: grid;
+  gap: 14px;
+  padding: 18px;
+  border-radius: 20px;
+  background: rgba(15,23,42,.42);
+  border: 1px solid rgba(255,255,255,.08);
+}
+
+.atlas-feedback-block--primary {
+  background: linear-gradient(180deg, rgba(14,165,233,.1), rgba(15,23,42,.52));
+  border-color: rgba(125,211,252,.18);
+}
+
+.atlas-feedback-block__head {
+  display: grid;
+  gap: 4px;
+}
+
+.atlas-feedback-block__head h4 {
+  color: white;
+  font-size: 1rem;
+  font-weight: 850;
+}
+
+.atlas-feedback-block__head h4 span,
+.atlas-feedback-block__head p {
+  color: rgba(255,255,255,.52);
+  font-size: .86rem;
+  font-weight: 600;
+  line-height: 1.45;
 }
 
 .atlas-feedback-type-group {
@@ -848,15 +890,29 @@ select:focus {
 }
 
 .atlas-feedback-type {
-  min-height: 54px;
+  display: grid;
+  gap: 4px;
+  min-height: 68px;
   padding: 13px 14px;
   border-radius: 16px;
   color: rgba(255,255,255,.76);
-  background: rgba(15,23,42,.72);
+  background: rgba(7,12,25,.38);
   border: 1px solid rgba(255,255,255,.1);
-  font-weight: 800;
   text-align: left;
-  transition: border-color .18s ease, background .18s ease, transform .18s ease;
+  transition: border-color .18s ease, background .18s ease, box-shadow .18s ease;
+}
+
+.atlas-feedback-type strong {
+  color: rgba(255,255,255,.92);
+  font-size: .94rem;
+  line-height: 1.12;
+}
+
+.atlas-feedback-type small {
+  color: rgba(255,255,255,.5);
+  font-size: .75rem;
+  font-weight: 650;
+  line-height: 1.25;
 }
 
 .atlas-feedback-type:hover,
@@ -867,6 +923,7 @@ select:focus {
 
 .atlas-feedback-type:focus-visible,
 .atlas-feedback-actions .atlas-btn:focus-visible,
+.atlas-feedback-success-actions .atlas-btn:focus-visible,
 .atlas-feedback-dialog .atlas-input:focus-visible {
   outline: 2px solid rgba(125,211,252,.95);
   outline-offset: 3px;
@@ -879,25 +936,54 @@ select:focus {
   box-shadow: 0 0 0 1px rgba(125,211,252,.14), 0 14px 34px rgba(14,165,233,.12);
 }
 
-.atlas-feedback-type.is-active::after {
-  content: "Selecionado";
-  display: block;
-  margin-top: 3px;
-  color: rgba(186,230,253,.82);
-  font-size: .72rem;
-  font-weight: 700;
-}
-
 .atlas-feedback-grid {
   display: grid;
   grid-template-columns: repeat(2, minmax(0, 1fr));
-  gap: 12px;
+  gap: 14px;
+}
+
+.atlas-feedback-field {
+  display: grid;
+  gap: 8px;
+}
+
+.atlas-feedback-field small {
+  color: rgba(255,255,255,.43);
+  font-size: .78rem;
+  font-weight: 600;
+  line-height: 1.35;
 }
 
 .atlas-feedback-textarea {
-  min-height: 168px;
+  min-height: 150px;
   line-height: 1.45;
   resize: vertical;
+}
+
+.atlas-feedback-field--message .atlas-input {
+  border-color: rgba(125,211,252,.18);
+  background: rgba(7,12,25,.5);
+}
+
+.atlas-field-tag {
+  display: inline-flex;
+  align-items: center;
+  width: fit-content;
+  margin-left: 6px;
+  padding: 2px 7px;
+  border-radius: 999px;
+  color: rgba(186,230,253,.9) !important;
+  background: rgba(14,165,233,.12);
+  border: 1px solid rgba(125,211,252,.18);
+  font-size: .68rem !important;
+  text-transform: uppercase;
+  letter-spacing: .04em;
+}
+
+.atlas-field-tag--optional {
+  color: rgba(255,255,255,.58) !important;
+  background: rgba(255,255,255,.05);
+  border-color: rgba(255,255,255,.08);
 }
 
 .atlas-feedback-counter {
@@ -912,11 +998,12 @@ select:focus {
 }
 
 .atlas-feedback-status {
-  padding: 12px 14px;
-  border-radius: 14px;
+  padding: 14px 16px;
+  border-radius: 16px;
   background: rgba(15,23,42,.65);
   border: 1px solid rgba(255,255,255,.08);
   color: rgba(255,255,255,.72);
+  font-weight: 750;
 }
 
 .atlas-feedback-status[data-tone="error"] {
@@ -927,17 +1014,33 @@ select:focus {
 .atlas-feedback-status[data-tone="success"] {
   border-color: rgba(34,197,94,.38);
   color: rgb(187,247,208);
+  background: rgba(22,101,52,.18);
 }
 
-.atlas-feedback-actions {
+.atlas-feedback-success-actions {
   display: flex;
-  justify-content: flex-end;
+  align-items: center;
+  justify-content: flex-start;
   gap: 10px;
   flex-wrap: wrap;
 }
 
+.atlas-feedback-actions {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 16px;
+  position: sticky;
+  bottom: 0;
+  z-index: 2;
+  margin: 2px -28px -28px;
+  padding: 14px 28px 18px;
+  background: rgba(7,12,25,.96);
+  border-top: 1px solid rgba(255,255,255,.08);
+}
+
 .atlas-feedback-actions .atlas-btn {
-  min-height: 52px;
+  min-height: 54px;
 }
 
 #feedbackSubmitBtn {
@@ -945,12 +1048,26 @@ select:focus {
   justify-content: center;
 }
 
+.atlas-feedback-actions p {
+  max-width: 390px;
+  color: rgba(255,255,255,.46);
+  font-size: .84rem;
+  line-height: 1.4;
+}
+
+#feedbackSubmitBtn[disabled] {
+  cursor: wait;
+  opacity: .78;
+}
+
 .atlas-feedback-honeypot {
   position: absolute;
-  left: -9999px;
   width: 1px;
   height: 1px;
   overflow: hidden;
+  clip-path: inset(50%);
+  opacity: 0;
+  pointer-events: none;
 }
 
 .admin-feedback-list {
@@ -1088,6 +1205,65 @@ select:focus {
 
 .library-shelf__empty strong {
   color: rgba(255,255,255,.86);
+}
+
+.library-shelf__empty small {
+  max-width: 460px;
+  color: rgba(255,255,255,.42);
+  font-size: .88rem;
+  line-height: 1.45;
+}
+
+.library-shelf__empty--welcome {
+  min-height: 320px;
+  gap: 14px;
+  padding: 42px 24px;
+  border-style: solid;
+  border-color: rgba(125,211,252,.16);
+  border-radius: 24px;
+  background:
+    linear-gradient(180deg, rgba(14,165,233,.1), rgba(15,23,42,.42)),
+    rgba(255,255,255,.025);
+  box-shadow: inset 0 1px 0 rgba(255,255,255,.05);
+}
+
+.library-shelf__empty--welcome strong {
+  font-size: clamp(1.45rem, 3vw, 2rem);
+  line-height: 1.08;
+}
+
+.library-shelf__empty--welcome span {
+  max-width: 560px;
+  color: rgba(255,255,255,.68);
+  font-size: 1rem;
+  line-height: 1.55;
+}
+
+.library-shelf__empty--welcome .atlas-btn {
+  min-height: 50px;
+  margin-top: 4px;
+}
+
+.library-shelf__loading {
+  grid-column: 1 / -1;
+  min-height: 180px;
+  display: grid;
+  place-items: center;
+  padding: 28px 18px;
+  border-radius: 24px;
+  background: rgba(15,23,42,.34);
+  border: 1px solid rgba(255,255,255,.08);
+  color: rgba(255,255,255,.58);
+  font-weight: 700;
+}
+
+#view-library.is-library-loading .library-toolbar,
+#view-library.is-library-loading #libraryFocus,
+#view-library.is-library-loading #librarySuggestions,
+#view-library.is-library-empty .library-toolbar,
+#view-library.is-library-empty #libraryFocus,
+#view-library.is-library-empty #librarySuggestions {
+  display: none;
 }
 
 .library-game {

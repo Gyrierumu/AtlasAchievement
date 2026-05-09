@@ -18,6 +18,7 @@
   <meta name="twitter:description" content="__PAGE_DESCRIPTION__">
   <meta name="twitter:image" content="__PAGE_OG_IMAGE__">
   <script type="application/ld+json" id="gameStructuredData">__PAGE_JSON_LD__</script>
+  __ANALYTICS_HEAD__
   <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-1824866007142611"
      crossorigin="anonymous"></script>
   <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
@@ -268,7 +269,7 @@
       </div>
     </section>
 
-    <section id="view-library" class="atlas-view-shell hidden space-y-4 pt-2">
+    <section id="view-library" class="atlas-view-shell hidden space-y-4 pt-2 is-library-loading">
       <div class="atlas-section-head atlas-section-head--library">
         <div>
           <div class="atlas-eyebrow">Biblioteca</div>
@@ -307,7 +308,9 @@
       </div>
 
       <div class="library-shelf">
-        <div id="libraryList" class="library-shelf__grid"></div>
+        <div id="libraryList" class="library-shelf__grid">
+          <div class="library-shelf__loading" role="status">Carregando biblioteca...</div>
+        </div>
       </div>
 
       <div id="libraryFocus" class="atlas-region library-focus-strip"></div>
@@ -333,8 +336,8 @@
               </div>
               <div class="atlas-checklist-head__aside">
                 <div class="atlas-checklist-progress text-sm text-white/55 font-medium">
-                  <div>Progresso: <span id="progressPercent" class="text-atlas-300">0%</span></div>
-                  <div id="guideCounter" class="mt-1">0/0 concluídos</div>
+                  <div>Progresso: <span id="progressPercent" class="text-atlas-300">__GUIDE_PROGRESS_INITIAL__</span></div>
+                  <div id="guideCounter" class="mt-1">__GUIDE_COUNTER_INITIAL__</div>
                 </div>
                 <div class="atlas-density-toggle" role="group" aria-label="Densidade do checklist">
                   <button type="button" class="atlas-density-option" data-checklist-density="comfortable" aria-pressed="false">Modo confortável</button>
@@ -391,7 +394,7 @@
                 </div>
               </details>
             </div>
-            <div id="guideResults" class="text-sm text-white/60" aria-live="polite">0 troféu(s) visível(is)</div>
+            <div id="guideResults" class="text-sm text-white/60" aria-live="polite">__GUIDE_RESULTS_INITIAL__</div>
             <div id="guideEmptyState" class="hidden atlas-inline-empty">Nenhum troféu corresponde ao filtro atual. Limpe a busca ou troque o filtro.</div>
           </section>
           <div id="trophyList" class="atlas-checklist-list atlas-render-list is-compact space-y-4 pr-2" data-checklist-density="compact" aria-live="polite">__SSR_TROPHY_LIST__</div>
@@ -442,8 +445,8 @@
       <div class="atlas-feedback-dialog__head">
         <div>
           <span class="atlas-section-kicker">Feedback</span>
-          <h3 id="feedbackModalTitle">Seu feedback ajuda a melhorar os guias para toda a comunidade 🙌</h3>
-          <p>Leva menos de um minuto e ajuda a priorizar correções, bugs e novos guias.</p>
+          <h3 id="feedbackModalTitle">Encontrou um problema ou quer sugerir algo?</h3>
+          <p>Leva menos de 1 minuto. Você pode reportar bugs, erros em guias, sugerir melhorias ou pedir novos jogos.</p>
         </div>
         <button type="button" class="atlas-text-action" data-feedback-close>Fechar</button>
       </div>
@@ -451,47 +454,72 @@
         <input id="feedbackFormStartedAt" type="hidden">
         <input id="feedbackWebsite" class="atlas-feedback-honeypot" type="text" tabindex="-1" autocomplete="off" aria-hidden="true">
         <input id="feedbackType" type="hidden" value="Bug do site">
-        <fieldset class="atlas-feedback-type-group">
-          <legend>Tipo de feedback</legend>
-          <div class="atlas-feedback-type-options" role="group" aria-label="Tipo de feedback">
-            <button type="button" class="atlas-feedback-type is-active" data-feedback-type="Bug do site" aria-pressed="true"><span aria-hidden="true">🐛</span> Bug do site</button>
-            <button type="button" class="atlas-feedback-type" data-feedback-type="Erro em guia" aria-pressed="false"><span aria-hidden="true">❌</span> Erro no guia</button>
-            <button type="button" class="atlas-feedback-type" data-feedback-type="Sugestão" aria-pressed="false"><span aria-hidden="true">💡</span> Sugestão</button>
-            <button type="button" class="atlas-feedback-type" data-feedback-type="Pedido de novo guia" aria-pressed="false"><span aria-hidden="true">🎮</span> Pedido de novo guia</button>
+
+        <section class="atlas-feedback-block atlas-feedback-block--primary" aria-labelledby="feedbackMainBlockTitle">
+          <div class="atlas-feedback-block__head">
+            <h4 id="feedbackMainBlockTitle">Sobre o feedback</h4>
+            <p>Escolha o tipo e conte o essencial. Essa é a parte mais importante.</p>
           </div>
-        </fieldset>
-        <div class="atlas-feedback-grid">
-          <label>Jogo relacionado <span>opcional</span>
-            <input id="feedbackRelatedGame" type="text" class="atlas-input" maxlength="120" autocomplete="off">
+          <fieldset class="atlas-feedback-type-group">
+            <legend>Tipo de feedback</legend>
+            <div class="atlas-feedback-type-options" role="group" aria-label="Tipo de feedback">
+              <button type="button" class="atlas-feedback-type is-active" data-feedback-type="Bug do site" aria-pressed="true"><strong>Bug do site</strong><small>Algo quebrou ou não funciona</small></button>
+              <button type="button" class="atlas-feedback-type" data-feedback-type="Erro em guia" aria-pressed="false"><strong>Erro no guia</strong><small>Informação errada ou faltando</small></button>
+              <button type="button" class="atlas-feedback-type" data-feedback-type="Sugestão" aria-pressed="false"><strong>Sugestão</strong><small>Ideia para melhorar o Atlas</small></button>
+              <button type="button" class="atlas-feedback-type" data-feedback-type="Pedido de novo guia" aria-pressed="false"><strong>Pedido de novo guia</strong><small>Um jogo para entrar no catálogo</small></button>
+            </div>
+          </fieldset>
+          <label class="atlas-feedback-field atlas-feedback-field--message">Mensagem <span class="atlas-field-tag">obrigatório</span>
+            <textarea id="feedbackMessage" class="atlas-input atlas-feedback-textarea" minlength="10" maxlength="2000" required placeholder="Descreva o problema ou sugestão com clareza. Se puder, diga o que aconteceu e onde aconteceu."></textarea>
           </label>
-          <label>Página do problema <span>opcional</span>
-            <input id="feedbackPageUrl" type="url" class="atlas-input" maxlength="500" autocomplete="off">
-          </label>
-        </div>
-        <label>Mensagem <span>mínimo de 10 caracteres</span>
-          <textarea id="feedbackMessage" class="atlas-input atlas-feedback-textarea" minlength="10" maxlength="2000" required placeholder="Descreva com o máximo de detalhe possível:
-• O que aconteceu
-• Onde aconteceu
-• Como reproduzir (se for bug)"></textarea>
-        </label>
-        <div class="atlas-feedback-counter" id="feedbackMessageCounter">0/2000</div>
-        <div class="atlas-feedback-grid">
-          <label>Nome/apelido <span>opcional</span>
-            <input id="feedbackNickname" type="text" class="atlas-input" maxlength="80" autocomplete="name">
-          </label>
-          <label>E-mail <span>opcional</span>
-            <input id="feedbackEmail" type="email" class="atlas-input" maxlength="120" autocomplete="email">
-          </label>
-        </div>
+          <div class="atlas-feedback-counter" id="feedbackMessageCounter">0/2000</div>
+        </section>
+
+        <section class="atlas-feedback-block" aria-labelledby="feedbackContextBlockTitle">
+          <div class="atlas-feedback-block__head">
+            <h4 id="feedbackContextBlockTitle">Mais contexto</h4>
+            <p>Opcional, mas ajuda a encontrar o ponto exato mais rápido.</p>
+          </div>
+          <div class="atlas-feedback-grid">
+            <label class="atlas-feedback-field">Jogo relacionado <span class="atlas-field-tag atlas-field-tag--optional">opcional</span>
+              <input id="feedbackRelatedGame" type="text" class="atlas-input" maxlength="120" autocomplete="off" placeholder="Ex: Hades, Elden Ring">
+              <small>Informe o jogo se o feedback for sobre um guia específico.</small>
+            </label>
+            <label class="atlas-feedback-field">Página onde aconteceu <span class="atlas-field-tag atlas-field-tag--optional">opcional</span>
+              <input id="feedbackPageUrl" type="url" class="atlas-input" maxlength="500" autocomplete="off">
+              <small>Preenchida automaticamente quando possível.</small>
+            </label>
+          </div>
+        </section>
+
+        <section class="atlas-feedback-block" aria-labelledby="feedbackContactBlockTitle">
+          <div class="atlas-feedback-block__head">
+            <h4 id="feedbackContactBlockTitle">Contato <span>opcional</span></h4>
+            <p>Preencha apenas se quiser retorno da equipe.</p>
+          </div>
+          <div class="atlas-feedback-grid">
+            <label class="atlas-feedback-field">Nome ou apelido <span class="atlas-field-tag atlas-field-tag--optional">opcional</span>
+              <input id="feedbackNickname" type="text" class="atlas-input" maxlength="80" autocomplete="name" placeholder="Como podemos te chamar?">
+            </label>
+            <label class="atlas-feedback-field">E-mail <span class="atlas-field-tag atlas-field-tag--optional">opcional</span>
+              <input id="feedbackEmail" type="email" class="atlas-input" maxlength="120" autocomplete="email" placeholder="seu@email.com">
+              <small>Opcional. Preencha apenas se quiser que a equipe entre em contato.</small>
+            </label>
+          </div>
+        </section>
+
         <p id="feedbackFormStatus" class="atlas-feedback-status" hidden></p>
+        <div class="atlas-feedback-success-actions" id="feedbackSuccessActions" hidden>
+          <button type="button" class="atlas-btn atlas-btn-secondary" data-feedback-reset>Enviar outro feedback</button>
+          <button type="button" class="atlas-btn atlas-btn-secondary" data-feedback-close data-view-link="catalog">Voltar ao catálogo</button>
+        </div>
         <div class="atlas-feedback-actions">
-          <button type="button" class="atlas-btn atlas-btn-secondary" data-feedback-close>Cancelar</button>
-          <button id="feedbackSubmitBtn" type="submit" class="atlas-btn atlas-btn-primary"><i class="fas fa-paper-plane"></i> Enviar feedback 🚀</button>
+          <p>Os campos opcionais ajudam a entender e corrigir o problema mais rápido.</p>
+          <button id="feedbackSubmitBtn" type="submit" class="atlas-btn atlas-btn-primary">Enviar feedback</button>
         </div>
       </form>
     </div>
   </div>
-
   <div id="userAuthModal" class="hidden fixed inset-0 bg-black/80 backdrop-blur-md z-[100] p-4" role="dialog" aria-modal="true" aria-labelledby="userAuthModalTitle" aria-hidden="true">
     <div class="max-w-md mx-auto mt-16 atlas-panel p-6 rounded-[28px] atlas-auth-modal auth-modal">
       <div class="flex items-start justify-between gap-4 mb-4">
@@ -610,6 +638,7 @@
   <script src="/js/app-library-controller.js" defer></script>
   <script src="/js/app-guide-controller.js" defer></script>
   <script src="/js/app-user-auth.js" defer></script>
+  <script src="/js/app-analytics.js" defer></script>
   <script src="/js/app-feedback.js" defer></script>
 
   <!-- Bootstrap: creates context, selects public/admin initializer, then starts. -->

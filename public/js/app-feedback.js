@@ -15,7 +15,7 @@ window.AppFeedback = (() => {
     document.body?.classList.toggle('atlas-feedback-open', open);
     if (open) {
       prepareForm();
-      window.setTimeout(() => qs('.atlas-feedback-type.is-active')?.focus(), 0);
+      window.setTimeout(() => qs('#feedbackMessage')?.focus(), 0);
     }
   }
 
@@ -47,6 +47,8 @@ window.AppFeedback = (() => {
     syncTypeButtons(qs('#feedbackType')?.value || 'Bug do site');
     updateCounter();
     setFeedbackMessage('');
+    setSuccessActions(false);
+    setSubmitting(false);
   }
 
   function updateCounter() {
@@ -66,6 +68,18 @@ window.AppFeedback = (() => {
     target.hidden = !message;
   }
 
+  function setSuccessActions(visible) {
+    const actions = qs('#feedbackSuccessActions');
+    if (actions) actions.hidden = !visible;
+  }
+
+  function setSubmitting(submitting) {
+    const submitButton = qs('#feedbackSubmitBtn');
+    if (!submitButton) return;
+    submitButton.disabled = submitting;
+    submitButton.textContent = submitting ? 'Enviando...' : 'Enviar feedback';
+  }
+
   function collectPayload() {
     return {
       type: qs('#feedbackType')?.value || 'Bug do site',
@@ -79,14 +93,23 @@ window.AppFeedback = (() => {
     };
   }
 
+  function getFeedbackGameSlug(pageUrl = '') {
+    try {
+      const url = new URL(pageUrl || window.location.href, window.location.origin);
+      const match = url.pathname.match(/^\/jogo\/([^/]+)/);
+      return match ? decodeURIComponent(match[1]) : '';
+    } catch (error) {
+      return '';
+    }
+  }
+
   async function handleSubmit(event) {
     event.preventDefault();
     const form = event.currentTarget;
-    const submitButton = qs('#feedbackSubmitBtn');
     const payload = collectPayload();
 
     if (!payload.message) {
-      setFeedbackMessage('Mensagem obrigatória. Conte rapidamente o que aconteceu.', 'error');
+      setFeedbackMessage('Escreva uma mensagem antes de enviar.', 'error');
       qs('#feedbackMessage')?.focus();
       return;
     }
@@ -102,19 +125,26 @@ window.AppFeedback = (() => {
     }
 
     try {
-      if (submitButton) submitButton.disabled = true;
+      setSubmitting(true);
+      setSuccessActions(false);
       setFeedbackMessage('Enviando feedback...', 'info');
-      const response = await window.ApiService.submitFeedback(payload);
+      await window.ApiService.submitFeedback(payload);
+      window.AtlasAnalytics?.trackFeedbackSubmit?.({
+        feedbackType: payload.type,
+        gameSlug: getFeedbackGameSlug(payload.pageUrl)
+      });
       form.reset();
       syncTypeButtons('Bug do site');
-      updateCounter();
-      setOpen(false);
-      window.UI?.showToast?.(response.message || '✅ Feedback enviado! Obrigado por ajudar a melhorar o AtlasAchievement.', 'success');
+      prepareForm();
+      setFeedbackMessage('Feedback enviado com sucesso. Obrigado por ajudar a melhorar o AtlasAchievement.', 'success');
+      setSuccessActions(true);
+      window.UI?.showToast?.('Feedback enviado. Obrigado!', 'success');
     } catch (error) {
-      setFeedbackMessage(error.message || 'Não foi possível enviar agora.', 'error');
-      window.UI?.showToast?.(error.message || 'Não foi possível enviar agora.', 'error');
+      const message = error.message || 'Não foi possível enviar seu feedback agora. Tente novamente em instantes.';
+      setFeedbackMessage(message, 'error');
+      window.UI?.showToast?.(message, 'error');
     } finally {
-      if (submitButton) submitButton.disabled = false;
+      setSubmitting(false);
     }
   }
 
@@ -131,6 +161,13 @@ window.AppFeedback = (() => {
       }
       if (event.target.closest('[data-feedback-close]')) {
         setOpen(false);
+        return;
+      }
+      if (event.target.closest('[data-feedback-reset]')) {
+        qs('#feedbackForm')?.reset();
+        syncTypeButtons('Bug do site');
+        prepareForm();
+        qs('#feedbackMessage')?.focus();
         return;
       }
       if (event.target.id === 'feedbackModal') setOpen(false);

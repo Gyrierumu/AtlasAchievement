@@ -16,6 +16,15 @@ window.UICatalog = (() => {
     return window.UI?.renderPagination?.(...args);
   }
 
+  function getPublicOrigin() {
+    const canonicalHref = document.head.querySelector('link[rel="canonical"]')?.getAttribute('href') || '';
+    try {
+      return new URL(canonicalHref).origin;
+    } catch (error) {
+      return window.location.origin;
+    }
+  }
+
   function isUnverifiedBadge(statusBadge = {}) {
     return (statusBadge.badge || statusBadge.tone) === 'unverified'
       || /verifica/i.test(String(statusBadge.label || ''));
@@ -301,7 +310,8 @@ window.UICatalog = (() => {
   function setCatalogMeta(facet = 'all', options = {}) {
     const meta = catalogFacetMeta[facet] || catalogFacetMeta.all;
     const items = Array.isArray(options.items) ? options.items.filter(game => game?.slug && game?.name) : [];
-    const canonicalUrl = `${window.location.origin}${meta.path}`;
+    const publicOrigin = getPublicOrigin();
+    const canonicalUrl = `${publicOrigin}${meta.path}`;
     document.title = meta.title;
     const metaDescription = qs('meta[name="description"]');
     if (metaDescription) metaDescription.setAttribute('content', meta.description);
@@ -316,13 +326,13 @@ window.UICatalog = (() => {
     const ogUrl = qs('meta[property="og:url"]');
     if (ogUrl) ogUrl.setAttribute('content', canonicalUrl);
     const ogImage = qs('meta[property="og:image"]');
-    if (ogImage) ogImage.setAttribute('content', `${window.location.origin}/og-default.svg`);
+    if (ogImage) ogImage.setAttribute('content', `${publicOrigin}/og-default.svg`);
     const twitterTitle = qs('meta[name="twitter:title"]');
     if (twitterTitle) twitterTitle.setAttribute('content', meta.title);
     const twitterDescription = qs('meta[name="twitter:description"]');
     if (twitterDescription) twitterDescription.setAttribute('content', meta.description);
     const twitterImage = qs('meta[name="twitter:image"]');
-    if (twitterImage) twitterImage.setAttribute('content', `${window.location.origin}/og-default.svg`);
+    if (twitterImage) twitterImage.setAttribute('content', `${publicOrigin}/og-default.svg`);
     const breadcrumbsTarget = qs('#catalogBreadcrumbs');
     if (breadcrumbsTarget) breadcrumbsTarget.innerHTML = buildBreadcrumbsHtml([{ label: 'Início', href: '/' }, { label: 'Catálogo', href: '/catalogo' }, { label: meta.name }]);
     const jsonLd = qs('#gameStructuredData');
@@ -340,15 +350,15 @@ window.UICatalog = (() => {
           itemListElement: items.map((game, index) => ({
             '@type': 'ListItem',
             position: index + 1,
-            url: `${window.location.origin}/jogo/${game.slug}`,
+            url: `${publicOrigin}/jogo/${game.slug}`,
             name: game.name
           }))
         }
       }, {
         '@type': 'BreadcrumbList',
         itemListElement: [
-          { '@type': 'ListItem', position: 1, name: 'Início', item: `${window.location.origin}/` },
-          { '@type': 'ListItem', position: 2, name: 'Catálogo', item: `${window.location.origin}/catalogo` },
+          { '@type': 'ListItem', position: 1, name: 'Início', item: `${publicOrigin}/` },
+          { '@type': 'ListItem', position: 2, name: 'Catálogo', item: `${publicOrigin}/catalogo` },
           { '@type': 'ListItem', position: 3, name: meta.name, item: canonicalUrl }
         ]
       }]

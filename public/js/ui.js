@@ -115,12 +115,15 @@ window.UI = (() => {
     if (message && typeof message === 'object') {
       const title = escapeHtml(message.title || 'Nenhum troféu corresponde ao filtro atual.');
       const detail = escapeHtml(message.detail || 'Tente limpar filtros ou buscar por outro termo.');
+      const action = message.action === false
+        ? ''
+        : '<button type="button" class="atlas-btn atlas-btn-secondary atlas-btn-compact" data-guide-clear-filters="true">Limpar filtros</button>';
       empty.innerHTML = `
         <div class="atlas-guide-empty__copy">
           <strong>${title}</strong>
           <span>${detail}</span>
         </div>
-        <button type="button" class="atlas-btn atlas-btn-secondary atlas-btn-compact" data-guide-clear-filters="true">Limpar filtros</button>
+        ${action}
       `;
     } else {
       empty.innerHTML = `
@@ -185,6 +188,13 @@ window.UI = (() => {
   }
 
   function setPageMeta(game = null) {
+    const canonicalHref = document.head.querySelector('link[rel="canonical"]')?.getAttribute('href') || '';
+    let publicOrigin = window.location.origin;
+    try {
+      publicOrigin = new URL(canonicalHref).origin;
+    } catch (error) {
+      publicOrigin = window.location.origin;
+    }
     const statusBadge = game ? getEditorialBadge(game) : null;
     const title = game
       ? buildGameSeoTitle(game)
@@ -192,15 +202,15 @@ window.UI = (() => {
     const description = game
       ? buildGameSeoDescription(game)
       : 'Compare tempo, dificuldade, perdíveis, online e roadmaps de platina em guias de troféus com checklist e progresso salvo.';
-    const canonical = game?.slug ? `${window.location.origin}/jogo/${game.slug}` : `${window.location.origin}/`;
+    const canonical = game?.slug ? `${publicOrigin}/jogo/${game.slug}` : `${publicOrigin}/`;
     const image = !game?.image
-      ? `${window.location.origin}/og-default.svg`
+      ? `${publicOrigin}/og-default.svg`
       : /^https?:\/\//i.test(game.image)
         ? game.image
-        : `${window.location.origin}${game.image}`;
+        : `${publicOrigin}${game.image}`;
     const faqItems = game ? buildContextualFaq(game, { trophies: game.trophies || [], roadmap: game.roadmap || [] }) : [];
     const structuredData = game
-      ? { '@context': 'https://schema.org', '@graph': [{ '@type': 'VideoGame', name: game.name, image, description, url: canonical, additionalProperty: [{ '@type': 'PropertyValue', name: 'Status editorial', value: statusBadge?.label || 'Publicado' }, { '@type': 'PropertyValue', name: 'Cobertura', value: game.coverage_level || 'partial' }, { '@type': 'PropertyValue', name: 'Verificado manualmente', value: game.is_verified ? 'sim' : 'não' }] }, { '@type': 'BreadcrumbList', itemListElement: [{ '@type': 'ListItem', position: 1, name: 'Início', item: `${window.location.origin}/` }, { '@type': 'ListItem', position: 2, name: 'Catálogo', item: `${window.location.origin}/catalogo` }, { '@type': 'ListItem', position: 3, name: game.name, item: canonical }] }, ...(faqItems.length ? [{ '@type': 'FAQPage', url: canonical, mainEntity: faqItems.map(item => ({ '@type': 'Question', name: item.question, acceptedAnswer: { '@type': 'Answer', text: item.answer } })) }] : [])] }
+      ? { '@context': 'https://schema.org', '@graph': [{ '@type': 'VideoGame', name: game.name, image, description, url: canonical, additionalProperty: [{ '@type': 'PropertyValue', name: 'Status editorial', value: statusBadge?.label || 'Publicado' }, { '@type': 'PropertyValue', name: 'Cobertura', value: game.coverage_level || 'partial' }, { '@type': 'PropertyValue', name: 'Verificado manualmente', value: game.is_verified ? 'sim' : 'não' }] }, { '@type': 'BreadcrumbList', itemListElement: [{ '@type': 'ListItem', position: 1, name: 'Início', item: `${publicOrigin}/` }, { '@type': 'ListItem', position: 2, name: 'Catálogo', item: `${publicOrigin}/catalogo` }, { '@type': 'ListItem', position: 3, name: game.name, item: canonical }] }, ...(faqItems.length ? [{ '@type': 'FAQPage', url: canonical, mainEntity: faqItems.map(item => ({ '@type': 'Question', name: item.question, acceptedAnswer: { '@type': 'Answer', text: item.answer } })) }] : [])] }
       : { '@context': 'https://schema.org', '@type': 'WebSite', name: 'AtlasAchievement', description, url: canonical };
 
     document.title = title;
@@ -281,3 +291,4 @@ window.UI = (() => {
 if (typeof globalThis !== 'undefined') {
   globalThis.UI = window.UI;
 }
+
