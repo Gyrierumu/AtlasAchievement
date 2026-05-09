@@ -570,6 +570,216 @@
     ];
   }
 
+  function hasGuideReviewSignal(...values) {
+    const text = normalizeGuideSignalText(values.filter(Boolean).join(' '));
+    return /precisa (?:revisao|validar|validacao)|aguarda(?:ndo)? validacao|aguarda(?:ndo)? revisao|em revisao|informacao em revisao|nao confirmado|nao confirmad|incert|sujeit[oa] a revisao|dados atuais|validar manualmente/.test(text);
+  }
+
+  function hasGuideOnlineReviewSignal(value = '') {
+    const text = normalizeGuideSignalText(value);
+    return /nao ha trofeus? online obrigatorios nos dados atuais|(?:online|servidor|ps\+)[^.]{0,40}precisa (?:validar|revisao)|precisa (?:validar|revisao)[^.]{0,70}online|validar [^.]{0,60}online|online [^.]{0,40}validar/.test(text);
+  }
+
+  function buildQuickDecisionFact({ id, icon, label, value, detail, tone = 'atlas-meta-signal--partial' }) {
+    return {
+      id: id || '',
+      icon: icon || 'fa-circle-info',
+      label: label || 'Sinal',
+      value: value || 'Informação em revisão',
+      detail: compactGuideText(detail, '', 120),
+      tone
+    };
+  }
+
+  function buildGuideQuickDecisionModel(game = {}, viewModel = {}) {
+    const trophies = Array.isArray(viewModel.trophies) ? viewModel.trophies : (Array.isArray(game?.trophies) ? game.trophies : []);
+    const roadmap = Array.isArray(viewModel.roadmap) ? viewModel.roadmap : (Array.isArray(game?.roadmap) ? game.roadmap : []);
+    const inputs = getGuideVerdictInputs(game, { ...viewModel, trophies, roadmap });
+    const riskCounts = viewModel.riskCounts || getRiskCounts(trophies);
+    const network = getGuideNetworkRequirementModel(game, { ...viewModel, trophies, roadmap });
+    const dlcScope = buildGuideDlcScopeModel(game, inputs);
+    const statusBadge = viewModel.editorial?.statusBadge || getGuideEditorialStatusBadge(game, getEditorialBadge(game));
+    const nextAction = viewModel.nextActionModel || deriveNextAction({ ...game, trophies, roadmap }, []);
+    const beforeItems = Array.isArray(viewModel.beforeStartItems) && viewModel.beforeStartItems.length
+      ? viewModel.beforeStartItems
+      : buildGuideBeforeStartItems(game, { ...viewModel, trophies, roadmap, riskCounts });
+
+    const missableText = firstGuideText(inputs.missableSummary, game?.missable);
+    const missableCount = Number(inputs.missableCount || riskCounts.missable || 0);
+    const hasMissable = Boolean(missableCount || (!hasNegatedGuideRequirement(missableText) && hasMissableRiskText(missableText)));
+    const missableReview = !missableText || (!hasMissable && hasGuideReviewSignal(missableText));
+    const onlineReview = !inputs.online || (!network.hasOnline && hasGuideOnlineReviewSignal(inputs.online));
+    const combinedText = getGuideCombinedPlanningText(game, { ...viewModel, trophies, roadmap });
+    const coopReview = (!inputs.online && !combinedText) || (!network.hasCoop && /coop|co-op|2 jogadores|dois jogadores|segundo jogador/.test(normalizeGuideSignalText(combinedText)) && hasGuideReviewSignal(combinedText));
+    const dlcReview = !inputs.dlc || (!/complete|warning/.test(String(dlcScope.tone || '')) && hasGuideReviewSignal(inputs.dlc));
+
+    let dlcValue = dlcScope.value;
+    const normalizedDlc = normalizeGuideSignalText(inputs.dlc);
+    if (!inputs.dlc || dlcReview) dlcValue = 'Informação em revisão';
+    else if (/lista base|jogo base|base game|sem dlc|nao inclui|nao foram adicionados|nao foi misturado|dlc nao necessaria|nao e necessaria|fora do escopo|ficam fora|entrada separada/.test(normalizedDlc)) {
+      dlcValue = 'DLC não necessária para platina base';
+    }
+
+    const cards = [
+      buildQuickDecisionFact({
+        id: 'time',
+        icon: 'fa-clock',
+        label: 'Tempo estimado',
+        value: inputs.timeLabel || 'Informação em revisão',
+        detail: inputs.timeReason || 'Estimativa editorial cadastrada no guia.',
+        tone: 'atlas-meta-signal--time'
+      }),
+      buildQuickDecisionFact({
+        id: 'difficulty',
+        icon: 'fa-gauge-high',
+        label: 'Dificuldade',
+        value: inputs.difficulty ? `${inputs.difficulty}/10` : 'Informação em revisão',
+        detail: inputs.difficultyReason || 'Escala editorial do Atlas.',
+        tone: inputs.difficulty ? getDifficultyToneClass(inputs.difficulty) : 'atlas-meta-signal--partial'
+      }),
+      buildQuickDecisionFact({
+        id: 'missables',
+        icon: 'fa-triangle-exclamation',
+        label: 'Perdíveis',
+        value: missableReview ? 'Informação em revisão' : (hasMissable ? 'Tem perdíveis' : 'Sem perdíveis'),
+        detail: missableText || 'O guia ainda não informa perdíveis com segurança.',
+        tone: missableReview ? 'atlas-meta-signal--partial' : (hasMissable ? 'atlas-meta-signal--risk' : 'atlas-meta-signal--complete')
+      }),
+      buildQuickDecisionFact({
+        id: 'online',
+        icon: 'fa-wifi',
+        label: 'Online',
+        value: onlineReview ? 'Informação em revisão' : (network.hasOnline ? 'Online obrigatório' : 'Sem online obrigatório'),
+        detail: network.onlineDetail || inputs.online || 'O guia ainda não informa online com segurança.',
+        tone: onlineReview ? 'atlas-meta-signal--partial' : (network.hasOnline ? 'atlas-meta-signal--warning' : 'atlas-meta-signal--complete')
+      }),
+      buildQuickDecisionFact({
+        id: 'coop',
+        icon: 'fa-users',
+        label: 'Coop',
+        value: coopReview ? 'Informação em revisão' : (network.hasCoop ? 'Coop obrigatório' : 'Sem coop obrigatório'),
+        detail: network.coopDetail || inputs.online || 'O guia ainda não informa coop com segurança.',
+        tone: coopReview ? 'atlas-meta-signal--partial' : (network.hasCoop ? 'atlas-meta-signal--warning' : 'atlas-meta-signal--complete')
+      }),
+      buildQuickDecisionFact({
+        id: 'dlc',
+        icon: 'fa-layer-group',
+        label: 'DLC',
+        value: dlcValue,
+        detail: dlcScope.detail || 'Escopo de DLC ainda não informado.',
+        tone: dlcReview ? 'atlas-meta-signal--partial' : dlcScope.tone
+      }),
+      buildQuickDecisionFact({
+        id: 'editorial',
+        icon: 'fa-clipboard-check',
+        label: 'Status editorial',
+        value: statusBadge.label || 'Informação em revisão',
+        detail: statusBadge.detail || game?.verification_note || 'Status editorial do guia.',
+        tone: `atlas-meta-signal--${statusBadge.tone || statusBadge.badge || 'partial'}`
+      })
+    ];
+
+    const firstRoadmapStep = roadmap.map(getGuideRoadmapStepText).find(Boolean);
+    const firstActionDetail = firstGuideText(inputs.firstRunAdvice, nextAction.detail, firstRoadmapStep, 'Abra o roadmap antes da checklist para entender a ordem da platina.');
+    const primaryAlert = beforeItems.find(item => ['risk', 'warning'].includes(item?.tone)) || beforeItems[0] || null;
+    const reviewAlert = !inputs.isVerified ? {
+      title: 'Informação em revisão',
+      detail: game?.verification_note || 'Este guia ainda aguarda validação editorial final.',
+      tone: 'neutral',
+      icon: 'fa-clipboard-check',
+      label: 'Status'
+    } : null;
+    const alert = primaryAlert || reviewAlert || {
+      title: 'Sem alerta crítico no topo',
+      detail: 'Mesmo assim, leia o roadmap antes de marcar troféus soltos.',
+      tone: 'soft',
+      icon: 'fa-circle-check',
+      label: 'Atenção principal'
+    };
+
+    return {
+      cards,
+      firstAction: {
+        label: 'Primeiro passo recomendado',
+        title: nextAction.title || 'Comece pelo roadmap',
+        detail: compactGuideText(firstActionDetail, 'Abra o roadmap antes da checklist para entender a ordem da platina.', 180),
+        icon: nextAction.focus === 'trophies' ? 'fa-list-check' : 'fa-route',
+        focus: nextAction.focus || 'roadmap'
+      },
+      mainAlert: {
+        label: 'Atenção principal',
+        title: alert.title || 'Revise antes de começar',
+        detail: compactGuideText(alert.detail, 'Leia os alertas do guia antes da primeira sessão.', 180),
+        icon: alert.icon || 'fa-triangle-exclamation',
+        tone: alert.tone || 'neutral'
+      }
+    };
+  }
+
+  function getQuickDecisionCard(cards = [], id = '') {
+    return (Array.isArray(cards) ? cards : []).find(card => card?.id === id) || null;
+  }
+
+  function buildGuideShortcutModel(game = {}, viewModel = {}) {
+    const quickDecision = buildGuideQuickDecisionModel(game, viewModel);
+    const cards = quickDecision.cards || [];
+    const missables = getQuickDecisionCard(cards, 'missables');
+    const online = getQuickDecisionCard(cards, 'online');
+    const dlc = getQuickDecisionCard(cards, 'dlc');
+    const hasRoadmap = Array.isArray(viewModel.roadmap) ? viewModel.roadmap.length > 0 : Array.isArray(game?.roadmap) && game.roadmap.length > 0;
+    const hasTrophies = Array.isArray(viewModel.trophies) ? viewModel.trophies.length > 0 : Array.isArray(game?.trophies) && game.trophies.length > 0;
+    const hasRelated = true;
+    const hasMissables = /tem perdiv|perdivel|perdive/.test(normalizeGuideSignalText(missables?.value || '')) && !/sem perdiv|informacao em revisao/.test(normalizeGuideSignalText(missables?.value || ''));
+    const onlineValue = normalizeGuideSignalText(online?.value || '');
+    const hasOnline = /online obrigatorio|online\/multiplayer/.test(onlineValue) && !/sem online obrigatorio|informacao em revisao/.test(onlineValue);
+    const hasDlcInfo = Boolean(dlc?.detail || dlc?.value) && !/informacao em revisao|escopo nao informado/.test(normalizeGuideSignalText(dlc?.value || ''));
+
+    return [
+      { id: 'decision', label: 'Decisão rápida', action: 'quick', href: '#guidePlatinumSummaryPanel', icon: 'fa-bolt', show: true },
+      { id: 'roadmap', label: 'Roadmap', action: 'roadmap', href: '#guideRoadmapPanel', icon: 'fa-route', show: hasRoadmap },
+      { id: 'missables', label: 'Troféus perdíveis', action: 'missables', href: '#guideQuickCard-missables', icon: 'fa-triangle-exclamation', show: hasMissables },
+      { id: 'checklist', label: 'Checklist', action: 'trophies', href: '#guideChecklistPanel', icon: 'fa-list-check', show: hasTrophies },
+      { id: 'online', label: 'Troféus online', action: 'online', href: '#guideQuickCard-online', icon: 'fa-wifi', show: hasOnline },
+      { id: 'dlc', label: 'DLC', action: 'dlc', href: '#guideQuickCard-dlc', icon: 'fa-layer-group', show: hasDlcInfo },
+      { id: 'related', label: 'Jogos parecidos', action: 'related', href: '#guideRelatedPanel', icon: 'fa-gamepad', show: hasRelated }
+    ].filter(item => item.show);
+  }
+
+  function buildGuideStartContextModel(game = {}, viewModel = {}) {
+    const trophies = Array.isArray(viewModel.trophies) ? viewModel.trophies : (Array.isArray(game?.trophies) ? game.trophies : []);
+    const roadmap = Array.isArray(viewModel.roadmap) ? viewModel.roadmap : (Array.isArray(game?.roadmap) ? game.roadmap : []);
+    const inputs = getGuideVerdictInputs(game, { ...viewModel, trophies, roadmap });
+    const quickDecision = buildGuideQuickDecisionModel(game, { ...viewModel, trophies, roadmap });
+    const card = id => getQuickDecisionCard(quickDecision.cards, id);
+    const missables = card('missables');
+    const online = card('online');
+    const coop = card('coop');
+    const dlc = card('dlc');
+    const items = [
+      inputs.runs ? { icon: 'fa-rotate', label: 'Jogadas/campanhas', text: inputs.runs } : null,
+      inputs.firstRunAdvice ? { icon: 'fa-person-running', label: 'Como começar', text: inputs.firstRunAdvice } : null,
+      missables ? { icon: 'fa-triangle-exclamation', label: 'Perdíveis', text: `${missables.value}. ${missables.detail || ''}`.trim(), tone: /tem perdiv|informacao em revisao/.test(normalizeGuideSignalText(missables.value)) ? 'warning' : 'soft' } : null,
+      online ? { icon: 'fa-wifi', label: 'Online', text: `${online.value}. ${online.detail || ''}`.trim(), tone: /obrigatorio|informacao em revisao/.test(normalizeGuideSignalText(online.value)) ? 'warning' : 'soft' } : null,
+      coop ? { icon: 'fa-users', label: 'Coop', text: `${coop.value}. ${coop.detail || ''}`.trim(), tone: /obrigatorio|informacao em revisao/.test(normalizeGuideSignalText(coop.value)) ? 'warning' : 'soft' } : null,
+      dlc ? { icon: 'fa-layer-group', label: 'DLC', text: `${dlc.value}. ${dlc.detail || ''}`.trim(), tone: /necessaria|no escopo|informacao em revisao/.test(normalizeGuideSignalText(dlc.value)) ? 'warning' : 'soft' } : null,
+      quickDecision.mainAlert ? { icon: quickDecision.mainAlert.icon, label: 'Cuidado principal', text: `${quickDecision.mainAlert.title}. ${quickDecision.mainAlert.detail || ''}`.trim(), tone: quickDecision.mainAlert.tone || 'neutral' } : null
+    ].filter(item => item && item.text).slice(0, 6).map(item => ({
+      ...item,
+      text: compactGuideText(item.text, '', 180)
+    }));
+
+    return {
+      title: 'Antes de começar',
+      detail: 'Use esta seção para entender o plano geral antes de seguir o roadmap.',
+      items: items.length ? items : [{
+        icon: 'fa-circle-info',
+        label: 'Plano geral',
+        text: 'Leia a decisão rápida e confira os alertas antes de iniciar. Depois siga o roadmap em ordem e use o checklist para acompanhar os troféus.',
+        tone: 'neutral'
+      }]
+    };
+  }
+
   function buildGuideRiskAlerts(game = {}, viewModel = {}) {
     const trophies = Array.isArray(viewModel.trophies) ? viewModel.trophies : [];
     const inputs = getGuideVerdictInputs(game, viewModel);
@@ -1596,6 +1806,9 @@
     getGuideTrophyTags,
     getGuideTrophyDisplayTags,
     getGuideTrophySearchText,
+    buildGuideQuickDecisionModel,
+    buildGuideShortcutModel,
+    buildGuideStartContextModel,
     buildGuideSummaryCards,
     buildGuideRiskAlerts,
     buildGuideBeforeStartItems,

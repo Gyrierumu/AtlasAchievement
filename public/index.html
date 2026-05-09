@@ -406,9 +406,12 @@
                 <h2 class="text-xl md:text-2xl font-extrabold tracking-tight mt-2">Continue por um guia parecido depois deste</h2>
                 <p class="text-white/58 mt-2 max-w-3xl">Quando terminar ou quiser alternar de projeto, use estes jogos parecidos para manter o mesmo ritmo de progresso.</p>
               </div>
+              <button type="button" class="atlas-section-toggle" data-guide-section-toggle="guideRelatedBody" data-expanded-label="Ocultar sugestões" data-collapsed-label="Mostrar sugestões" aria-expanded="true" aria-controls="guideRelatedBody"><span data-toggle-label>Ocultar sugestões</span><i class="fas fa-chevron-up" aria-hidden="true"></i></button>
             </div>
-            <div id="guideCollectionLinks" class="grid md:grid-cols-3 gap-4">__GUIDE_COLLECTION_LINKS__</div>
-            <div id="guideRelatedOverview" class="grid md:grid-cols-2 gap-4">__GUIDE_RELATED_OVERVIEW__</div>
+            <div id="guideRelatedBody" class="atlas-related-panel__body" data-guide-section-content>
+              <div id="guideCollectionLinks" class="grid md:grid-cols-3 gap-4">__GUIDE_COLLECTION_LINKS__</div>
+              <div id="guideRelatedOverview" class="grid md:grid-cols-2 gap-4">__GUIDE_RELATED_OVERVIEW__</div>
+            </div>
           </section>
       </div>
     </section>

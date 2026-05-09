@@ -156,8 +156,12 @@ window.AppGuideController = (() => {
     function focusGuideAction(action = 'trophies') {
       const map = {
         header: '#guideHeader',
+        quick: '#guidePlatinumSummaryPanel',
         roadmap: '#guideRoadmapPanel',
+        missables: '#guideQuickCard-missables',
         trophies: '#guideChecklistPanel',
+        online: '#guideQuickCard-online',
+        dlc: '#guideQuickCard-dlc',
         search: '#trophySearch',
         risks: '#guideRiskSummaryPanel',
         related: '#guideRelatedPanel',
@@ -166,6 +170,26 @@ window.AppGuideController = (() => {
       const selector = map[action] || map.trophies;
       const element = document.querySelector(selector) || document.querySelector('#trophyList');
       if (!element) return;
+
+      const sectionBody = element.matches?.('[data-guide-section-content]')
+        ? element
+        : element.querySelector?.('[data-guide-section-content]') || element.closest?.('[data-guide-section-content]');
+      if (sectionBody?.classList.contains('is-collapsed')) {
+        const toggle = document.querySelector(`[data-guide-section-toggle="${sectionBody.id}"]`);
+        sectionBody.classList.remove('is-collapsed');
+        sectionBody.setAttribute('aria-hidden', 'false');
+        if (toggle) {
+          toggle.setAttribute('aria-expanded', 'true');
+          const label = toggle.querySelector('[data-toggle-label]');
+          if (label) label.textContent = toggle.dataset.expandedLabel || 'Ocultar detalhes';
+          const icon = toggle.querySelector('i');
+          if (icon) {
+            icon.classList.add('fa-chevron-up');
+            icon.classList.remove('fa-chevron-down');
+          }
+        }
+      }
+
       element.scrollIntoView({ behavior: 'smooth', block: 'start' });
       if (selector === '#trophySearch') {
         window.setTimeout(() => {

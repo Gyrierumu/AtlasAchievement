@@ -1,4 +1,34 @@
 window.AppGuideView = (() => {
+  function setGuideSectionExpanded(button, expanded) {
+    if (!button) return;
+    const contentId = button.dataset.guideSectionToggle || button.getAttribute('aria-controls');
+    const content = contentId ? document.getElementById(contentId) : null;
+    if (!content) return;
+
+    const isExpanded = Boolean(expanded);
+    content.classList.toggle('is-collapsed', !isExpanded);
+    content.setAttribute('aria-hidden', isExpanded ? 'false' : 'true');
+    button.setAttribute('aria-expanded', isExpanded ? 'true' : 'false');
+
+    const label = button.querySelector('[data-toggle-label]');
+    if (label) {
+      label.textContent = isExpanded
+        ? (button.dataset.expandedLabel || 'Ocultar detalhes')
+        : (button.dataset.collapsedLabel || 'Mostrar detalhes');
+    }
+
+    const icon = button.querySelector('i');
+    if (icon) {
+      icon.classList.toggle('fa-chevron-up', isExpanded);
+      icon.classList.toggle('fa-chevron-down', !isExpanded);
+    }
+  }
+
+  function toggleGuideSection(button) {
+    const expanded = button?.getAttribute('aria-expanded') !== 'true';
+    setGuideSectionExpanded(button, expanded);
+  }
+
   function bindGuideInteractions({ UI, state, toggleTrophy, focusGuideAction, handleGuideQuickDockClick }) {
     const getVisibleFilterButtons = () => UI.qsa('.filter-btn').filter(item => item.offsetParent !== null);
     state.checklistDensity = UI.applyChecklistDensity?.(state.checklistDensity || UI.getChecklistDensityPreference?.()) || 'comfortable';
@@ -75,6 +105,13 @@ window.AppGuideView = (() => {
     });
 
     UI.qs('#view-guide')?.addEventListener('click', async event => {
+      const sectionToggle = event.target.closest('[data-guide-section-toggle]');
+      if (sectionToggle) {
+        event.preventDefault();
+        toggleGuideSection(sectionToggle);
+        return;
+      }
+
       const clearFiltersButton = event.target.closest('[data-guide-clear-filters]');
       if (clearFiltersButton) {
         event.preventDefault();

@@ -16,11 +16,17 @@
 #view-guide,
 #guideHeader,
 #guideVerdictPanel,
+#guidePlatinumSummaryPanel,
+#guideShortcutPanel,
+#guideStartContextPanel,
 #guideChecklistPanel,
 #trophyList,
 #guideRoadmapPanel,
 #guideEditorialNotesPanel,
 #guideRelatedPanel,
+#guideQuickCard-missables,
+#guideQuickCard-online,
+#guideQuickCard-dlc,
 .atlas-roadmap-step,
 .atlas-trophy-card {
   scroll-margin-top: calc(var(--atlas-sticky-offset, 108px) + 12px);
@@ -1846,6 +1852,11 @@ body.atlas-guide-dock-active footer {
   border-color: rgba(255,255,255,.07);
 }
 
+.atlas-quick-decision .atlas-section-head h2,
+.atlas-quick-decision .atlas-section-head p {
+  overflow-wrap: anywhere;
+}
+
 .atlas-platinum-summary__grid {
   display: grid;
   grid-template-columns: repeat(4, minmax(0, 1fr));
@@ -1904,6 +1915,236 @@ body.atlas-guide-dock-active footer {
   -webkit-line-clamp: 2;
   -webkit-box-orient: vertical;
   overflow: hidden;
+}
+
+.atlas-quick-decision__actions {
+  display: grid;
+  grid-template-columns: minmax(0, 1.15fr) minmax(0, .85fr);
+  gap: 10px;
+  margin-top: 12px;
+}
+
+.atlas-quick-decision-callout {
+  --quick-decision-color: var(--status-partial);
+  min-width: 0;
+  display: grid;
+  grid-template-columns: 34px minmax(0, 1fr);
+  gap: 11px;
+  align-items: start;
+  padding: 13px;
+  border: 1px solid color-mix(in srgb, var(--quick-decision-color) 24%, transparent);
+  border-radius: 15px;
+  background:
+    linear-gradient(135deg, color-mix(in srgb, var(--quick-decision-color) 10%, transparent), transparent 66%),
+    rgba(7,13,26,.44);
+}
+
+.atlas-quick-decision-callout > i {
+  width: 34px;
+  height: 34px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 12px;
+  color: color-mix(in srgb, var(--quick-decision-color) 84%, white);
+  background: color-mix(in srgb, var(--quick-decision-color) 13%, transparent);
+}
+
+.atlas-quick-decision-callout span {
+  display: block;
+  color: rgba(255,255,255,.48);
+  font-size: 10px;
+  font-weight: 900;
+  letter-spacing: .12em;
+  text-transform: uppercase;
+}
+
+.atlas-quick-decision-callout strong {
+  display: block;
+  margin-top: 5px;
+  color: #fff;
+  font-size: 1rem;
+  line-height: 1.2;
+}
+
+.atlas-quick-decision-callout p {
+  margin-top: 5px;
+  color: rgba(226, 232, 240, .66);
+  font-size: .84rem;
+  line-height: 1.42;
+}
+
+.atlas-quick-decision-callout .atlas-btn {
+  margin-top: 10px;
+}
+
+.atlas-quick-decision-callout--action { --quick-decision-color: var(--platinum-accent); }
+.atlas-quick-decision-callout--risk { --quick-decision-color: var(--risk-danger); }
+.atlas-quick-decision-callout--warning { --quick-decision-color: var(--risk-warning); }
+.atlas-quick-decision-callout--neutral { --quick-decision-color: var(--status-partial); }
+.atlas-quick-decision-callout--soft { --quick-decision-color: var(--status-complete); }
+
+.atlas-guide-shortcuts {
+  display: grid;
+  gap: 12px;
+  padding: 14px 16px !important;
+  background:
+    linear-gradient(135deg, rgba(20,184,166,.08), transparent 58%),
+    rgba(255,255,255,.02);
+  border-color: rgba(255,255,255,.07);
+}
+
+.atlas-guide-shortcuts__head {
+  display: flex;
+  align-items: baseline;
+  justify-content: space-between;
+  gap: 12px;
+}
+
+.atlas-guide-shortcuts__head p {
+  color: rgba(226, 232, 240, .58);
+  font-size: .84rem;
+  line-height: 1.35;
+}
+
+.atlas-guide-shortcuts__chips {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+}
+
+.atlas-guide-shortcut,
+.atlas-section-toggle {
+  min-height: 42px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  border: 1px solid rgba(255,255,255,.10);
+  color: rgba(241, 245, 249, .84);
+  background: rgba(255,255,255,.045);
+  font-size: .88rem;
+  font-weight: 850;
+  line-height: 1;
+  transition: border-color .2s ease, background .2s ease, color .2s ease, transform .2s ease;
+}
+
+.atlas-guide-shortcut {
+  padding: 0 13px;
+  border-radius: 999px;
+  white-space: nowrap;
+}
+
+.atlas-guide-shortcut i {
+  color: rgba(94, 234, 212, .84);
+}
+
+.atlas-guide-shortcut:hover,
+.atlas-guide-shortcut:focus-visible,
+.atlas-section-toggle:hover,
+.atlas-section-toggle:focus-visible {
+  border-color: rgba(94, 234, 212, .32);
+  color: #f8fbff;
+  background: rgba(20,184,166,.12);
+  transform: translateY(-1px);
+  outline: none;
+}
+
+.atlas-section-toggle {
+  flex: 0 0 auto;
+  padding: 0 12px;
+  border-radius: 12px;
+}
+
+.atlas-section-toggle i {
+  color: rgba(94, 234, 212, .82);
+  font-size: .78rem;
+}
+
+[data-guide-section-content] {
+  transition: opacity .18s ease;
+}
+
+[data-guide-section-content].is-collapsed {
+  display: none;
+}
+
+.atlas-guide-start-context {
+  background:
+    linear-gradient(135deg, rgba(59,130,246,.06), transparent 52%),
+    rgba(255,255,255,.022);
+}
+
+.atlas-guide-start-context__grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 10px;
+  margin-top: 16px;
+}
+
+.atlas-guide-context-chip {
+  --context-color: var(--status-partial);
+  min-width: 0;
+  display: grid;
+  grid-template-columns: 32px minmax(0, 1fr);
+  gap: 10px;
+  padding: 12px;
+  border: 1px solid color-mix(in srgb, var(--context-color) 22%, transparent);
+  border-radius: 14px;
+  background:
+    linear-gradient(135deg, color-mix(in srgb, var(--context-color) 9%, transparent), transparent 68%),
+    rgba(255,255,255,.026);
+}
+
+.atlas-guide-context-chip i {
+  width: 32px;
+  height: 32px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 11px;
+  color: color-mix(in srgb, var(--context-color) 84%, white);
+  background: color-mix(in srgb, var(--context-color) 12%, transparent);
+}
+
+.atlas-guide-context-chip span {
+  display: block;
+  color: rgba(255,255,255,.48);
+  font-size: 10px;
+  font-weight: 900;
+  letter-spacing: .12em;
+  text-transform: uppercase;
+}
+
+.atlas-guide-context-chip p {
+  margin-top: 5px;
+  color: rgba(226, 232, 240, .68);
+  font-size: .84rem;
+  line-height: 1.42;
+}
+
+.atlas-guide-context-chip--warning,
+.atlas-guide-context-chip--risk {
+  --context-color: var(--risk-warning);
+}
+
+.atlas-guide-context-chip--soft {
+  --context-color: var(--status-complete);
+}
+
+.atlas-guide-context-chip--neutral {
+  --context-color: var(--status-partial);
+}
+
+.atlas-related-panel__body {
+  display: grid;
+  gap: 14px;
+}
+
+.atlas-related-suggestions__grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 12px;
 }
 
 .atlas-roadmap-step__actions {
@@ -1976,6 +2217,11 @@ body.atlas-guide-dock-active footer {
     grid-template-columns: repeat(2, minmax(0, 1fr));
   }
 
+  .atlas-guide-start-context__grid,
+  .atlas-related-suggestions__grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
   .atlas-guide-flow .atlas-guide-sidebar-card {
     grid-template-columns: minmax(0, 1fr);
   }
@@ -2026,6 +2272,42 @@ body.atlas-guide-dock-active footer {
     padding: 12px !important;
   }
 
+  .atlas-section-head--compact {
+    gap: 12px;
+  }
+
+  .atlas-section-toggle {
+    width: 100%;
+  }
+
+  .atlas-guide-shortcuts {
+    padding: 12px !important;
+    gap: 10px;
+  }
+
+  .atlas-guide-shortcuts__head {
+    display: grid;
+    gap: 4px;
+  }
+
+  .atlas-guide-shortcuts__chips {
+    flex-wrap: nowrap;
+    margin-inline: -4px;
+    padding: 0 4px 3px;
+    overflow-x: auto;
+    overscroll-behavior-inline: contain;
+    scrollbar-width: none;
+  }
+
+  .atlas-guide-shortcuts__chips::-webkit-scrollbar {
+    display: none;
+  }
+
+  .atlas-guide-shortcut {
+    min-height: 40px;
+    padding: 0 12px;
+  }
+
   .atlas-platinum-summary__grid {
     grid-template-columns: repeat(2, minmax(0, 1fr));
     gap: 7px;
@@ -2062,6 +2344,53 @@ body.atlas-guide-dock-active footer {
   .atlas-platinum-summary__card p {
     -webkit-line-clamp: 1;
     font-size: .7rem;
+  }
+
+  .atlas-quick-decision__actions {
+    grid-template-columns: minmax(0, 1fr);
+    gap: 8px;
+    margin-top: 10px;
+  }
+
+  .atlas-quick-decision-callout {
+    grid-template-columns: 30px minmax(0, 1fr);
+    gap: 9px;
+    padding: 10px;
+  }
+
+  .atlas-quick-decision-callout > i {
+    width: 30px;
+    height: 30px;
+    border-radius: 10px;
+  }
+
+  .atlas-quick-decision-callout strong {
+    font-size: .9rem;
+  }
+
+  .atlas-quick-decision-callout p {
+    font-size: .78rem;
+  }
+
+  .atlas-guide-start-context {
+    padding: 12px !important;
+  }
+
+  .atlas-guide-start-context__grid,
+  .atlas-related-suggestions__grid {
+    grid-template-columns: minmax(0, 1fr);
+    gap: 8px;
+  }
+
+  .atlas-guide-context-chip {
+    grid-template-columns: 28px minmax(0, 1fr);
+    padding: 10px;
+  }
+
+  .atlas-guide-context-chip i {
+    width: 28px;
+    height: 28px;
+    border-radius: 9px;
   }
 
   .atlas-guide-risk-summary {
