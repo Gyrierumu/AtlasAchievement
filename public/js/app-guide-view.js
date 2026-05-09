@@ -105,6 +105,18 @@ window.AppGuideView = (() => {
     });
 
     UI.qs('#view-guide')?.addEventListener('click', async event => {
+      const tabButton = event.target.closest('[data-guide-tab-target]');
+      if (tabButton) {
+        event.preventDefault();
+        state.activeGuideTab = tabButton.dataset.guideTabButton || tabButton.dataset.guideTabTarget || 'summary';
+        UI.activateGuideTab?.(state.activeGuideTab, { scroll: true });
+        if (state.activeGuideTab === 'trophies') {
+          state.activeFilter = 'all';
+          UI.applyTrophyFilter(state.activeFilter, state.guideSearch);
+        }
+        return;
+      }
+
       const sectionToggle = event.target.closest('[data-guide-section-toggle]');
       if (sectionToggle) {
         event.preventDefault();

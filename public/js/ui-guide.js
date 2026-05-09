@@ -250,6 +250,10 @@ window.UIGuide = (() => {
 
   function buildGuideHeroStats(game = {}, viewModel = {}) {
     if (typeof buildGuideSummaryCards === 'function') {
+      const cards = buildGuideSummaryCards(game, viewModel);
+      const compactLabels = new Set(['Tempo estimado', 'Dificuldade', 'Trofeus', 'Trof\u00e9us', 'Perdiveis', 'Perd\u00edveis', 'Online', 'Coop', 'DLC']);
+      const compactCards = cards.filter(item => compactLabels.has(item.label));
+      if (compactCards.length) return compactCards.slice(0, 7);
       const essentials = new Set(['Tempo estimado', 'Dificuldade', 'Trofeus', 'Troféus', 'Platina/100%']);
       return buildGuideSummaryCards(game, viewModel).filter(item => essentials.has(item.label)).slice(0, 4);
     }
@@ -341,6 +345,8 @@ window.UIGuide = (() => {
     const cards = quickDecision?.cards?.length
       ? quickDecision.cards
       : (typeof buildGuideSummaryCards === 'function' ? buildGuideSummaryCards(game, viewModel) : buildGuideHeroStats(game, viewModel));
+    const decisionCards = cards.filter(card => ['missables', 'online', 'coop', 'dlc'].includes(card?.id)).slice(0, 4);
+    const visibleCards = decisionCards.length ? decisionCards : cards.slice(0, 4);
     const firstAction = quickDecision?.firstAction || {
       label: 'Primeiro passo recomendado',
       title: viewModel.nextActionModel?.title || 'Comece pelo roadmap',
@@ -355,6 +361,16 @@ window.UIGuide = (() => {
       icon: 'fa-triangle-exclamation',
       tone: 'neutral'
     };
+    const showMainAlert = ['risk', 'warning'].includes(mainAlert.tone);
+    const mainAlertHtml = showMainAlert ? `
+          <article class="atlas-quick-decision-callout atlas-quick-decision-callout--${escapeAttribute(mainAlert.tone || 'neutral')}">
+            <i class="fas ${escapeAttribute(mainAlert.icon || 'fa-triangle-exclamation')}" aria-hidden="true"></i>
+            <div>
+              <span>${escapeHtml(mainAlert.label || 'Atencao principal')}</span>
+              <strong>${escapeHtml(mainAlert.title || 'Revise antes de comecar')}</strong>
+              <p>${escapeHtml(mainAlert.detail || '')}</p>
+            </div>
+          </article>` : '';
     return `
       <section id="guidePlatinumSummaryPanel" class="atlas-panel atlas-panel--section atlas-platinum-summary atlas-quick-decision p-5 md:p-6">
         <div class="atlas-section-head atlas-section-head--compact">
@@ -365,7 +381,7 @@ window.UIGuide = (() => {
           </div>
         </div>
         <div class="atlas-platinum-summary__grid" aria-label="Resumo essencial da platina">
-          ${cards.map(card => `<article id="guideQuickCard-${escapeAttribute(card.id || '')}" class="atlas-platinum-summary__card ${escapeAttribute(card.tone || '')}" title="${escapeAttribute(card.detail || '')}"><i class="fas ${escapeAttribute(card.icon || 'fa-circle-info')}" aria-hidden="true"></i><div><span>${escapeHtml(card.label)}</span><strong>${escapeHtml(card.value)}</strong><p>${escapeHtml(card.detail || '')}</p></div></article>`).join('')}
+          ${visibleCards.map(card => `<article id="guideQuickCard-${escapeAttribute(card.id || '')}" class="atlas-platinum-summary__card ${escapeAttribute(card.tone || '')}" title="${escapeAttribute(card.detail || '')}"><i class="fas ${escapeAttribute(card.icon || 'fa-circle-info')}" aria-hidden="true"></i><div><span>${escapeHtml(card.label)}</span><strong>${escapeHtml(card.value)}</strong><p>${escapeHtml(card.detail || '')}</p></div></article>`).join('')}
         </div>
         <div class="atlas-quick-decision__actions">
           <article class="atlas-quick-decision-callout atlas-quick-decision-callout--action">
@@ -502,7 +518,9 @@ window.UIGuide = (() => {
     const beforeItems = Array.isArray(viewModel.beforeStartItems) && viewModel.beforeStartItems.length
       ? viewModel.beforeStartItems
       : (typeof buildGuideBeforeStartItems === 'function' ? buildGuideBeforeStartItems(game, viewModel) : []);
-    const items = beforeItems.slice(0, 5);
+    const items = beforeItems
+      .filter(item => ['missable', 'online', 'coop', 'dlc'].includes(item?.id) && ['risk', 'warning'].includes(item?.tone))
+      .slice(0, 4);
     if (!items.length) return '';
     return `
       <section id="guideRiskSummaryPanel" class="atlas-panel atlas-panel--section atlas-guide-risk-summary p-5 md:p-6">
@@ -529,11 +547,47 @@ window.UIGuide = (() => {
       </section>`;
   }
 
+  function renderGuideLayerNav() {
+    const items = [
+      { id: 'summary', icon: 'fa-bolt', label: 'Resumo', panel: 'summary' },
+      { id: 'roadmap', icon: 'fa-route', label: 'Roadmap', panel: 'roadmap' },
+      { id: 'checklist', icon: 'fa-list-check', label: 'Checklist', panel: 'checklist' },
+      { id: 'trophies', icon: 'fa-trophy', label: 'Trofeus', panel: 'checklist' },
+      { id: 'details', icon: 'fa-circle-info', label: 'Detalhes', panel: 'details' }
+    ];
+    return `
+      <nav id="guideLayerNav" class="atlas-guide-layer-nav" aria-label="Secoes do guia">
+        ${items.map((item, index) => `
+          <button type="button" class="atlas-guide-layer-nav__button${index === 0 ? ' is-active' : ''}" data-guide-tab-button="${escapeAttribute(item.id)}" data-guide-tab-target="${escapeAttribute(item.panel)}" aria-pressed="${index === 0 ? 'true' : 'false'}">
+            <i class="fas ${escapeAttribute(item.icon)}" aria-hidden="true"></i>
+            <span>${escapeHtml(item.label)}</span>
+          </button>
+        `).join('')}
+      </nav>`;
+  }
+
+  function renderGuideSummaryPanel(game = {}, viewModel = {}) {
+    const nextAction = viewModel.nextActionModel || {};
+    return `
+      ${renderGuideStartContextPanel(game, viewModel)}
+      <section id="guideSummaryActions" class="atlas-panel atlas-panel--section atlas-guide-summary-actions p-5 md:p-6">
+        <div>
+          <div class="atlas-eyebrow">Plano rapido</div>
+          <h2 class="text-xl md:text-2xl font-extrabold tracking-tight mt-2">${escapeHtml(nextAction.title || 'Comece pelo plano certo')}</h2>
+          <p class="text-white/62 mt-2 max-w-3xl">${escapeHtml(nextAction.detail || 'Leia o resumo, abra o roadmap quando precisar da ordem completa e use a checklist para acompanhar progresso.')}</p>
+        </div>
+        <div class="atlas-guide-summary-actions__buttons">
+          <button type="button" class="atlas-btn atlas-btn-primary" data-guide-action="roadmap"><i class="fas fa-route" aria-hidden="true"></i> Abrir roadmap</button>
+          <button type="button" class="atlas-btn atlas-btn-secondary" data-guide-action="trophies"><i class="fas fa-list-check" aria-hidden="true"></i> Abrir checklist</button>
+        </div>
+      </section>`;
+  }
+
   function renderGuideDecisionStackV2(game = {}, viewModel = {}) {
     return `
       ${renderGuidePlatinumSummaryPanel(game, viewModel)}
-      ${renderGuideShortcuts(game, viewModel)}
-      ${renderGuideRiskAlertsPanelV2(game, viewModel)}`;
+      ${renderGuideRiskAlertsPanelV2(game, viewModel)}
+      ${renderGuideLayerNav()}`;
   }
 
   function renderGuideSidebarCompact(game = {}, viewModel = {}, context = {}) {
@@ -675,8 +729,8 @@ window.UIGuide = (() => {
             </div>
             <h1>${escapeHtml(buildGameGuideH1(game))}</h1>
             <p class="atlas-guide-hero__subtitle">${escapeHtml(scopeModel.subtitle || 'Guia de troféus e roadmap da platina')}</p>
-            <p class="atlas-guide-hero__summary">${escapeHtml(verdict.summary || viewModel.decisionModel.verdictDetail)}</p>
-            <div class="atlas-guide-start-card">
+            <p class="atlas-guide-hero__summary" hidden>${escapeHtml(verdict.summary || viewModel.decisionModel.verdictDetail)}</p>
+            <div class="atlas-guide-start-card" hidden>
               <div>
                 <span>Comece por aqui</span>
                 <strong>${escapeHtml(nextAction.title || 'Abrir roadmap')}</strong>
@@ -794,11 +848,36 @@ window.UIGuide = (() => {
     return `${compareHtml}${cardsHtml}`;
   }
 
+  function activateGuideTab(target = 'summary', options = {}) {
+    const requested = target || 'summary';
+    const panelTarget = requested === 'trophies' ? 'checklist' : requested;
+    const panels = qsa('[data-guide-tab-panel]');
+    if (!panels.length) return panelTarget;
+    panels.forEach(panel => {
+      const active = panel.dataset.guideTabPanel === panelTarget;
+      panel.hidden = !active;
+      panel.classList.toggle('hidden', !active);
+      panel.classList.toggle('is-active', active);
+    });
+    qsa('[data-guide-tab-button]').forEach(button => {
+      const selected = button.dataset.guideTabButton === requested
+        || (requested === panelTarget && button.dataset.guideTabTarget === panelTarget);
+      button.classList.toggle('is-active', selected);
+      button.setAttribute('aria-pressed', selected ? 'true' : 'false');
+    });
+    if (options.scroll) {
+      const element = qs(`#guideTab-${panelTarget}`) || qs('#guideContent');
+      element?.scrollIntoView({ behavior: 'smooth', block: 'start' });
+    }
+    return panelTarget;
+  }
+
   function renderGuide(game, state = {}) {
     const headerEl = qs('#guideHeader');
     const decisionEl = qs('#guideDecisionStack');
     const sidebarEl = qs('#sidebarInfo');
     const trophiesEl = qs('#trophyList') || qs('#trophiesList') || qs('#guideTrophies');
+    const summaryEl = qs('#guideSummarySlot');
     const roadmapEl = qs('#guideRoadmapSlot');
     const relatedEl = qs('#guideRelatedOverview');
     const editorialNotesEl = qs('#guideEditorialNotes');
@@ -828,6 +907,9 @@ window.UIGuide = (() => {
     }
     if (sidebarEl) {
       sidebarEl.innerHTML = renderGuideSidebarCompact(game, viewModel, { guideMeta, isSaved, libraryEntry, storageLabel });
+    }
+    if (summaryEl) {
+      summaryEl.innerHTML = renderGuideSummaryPanel(game, viewModel);
     }
     if (trophiesEl) {
       trophiesEl.innerHTML = viewModel.trophies.length
@@ -885,7 +967,7 @@ window.UIGuide = (() => {
     }
 
     if (roadmapEl) {
-      roadmapEl.innerHTML = `${renderGuideStartContextPanel(game, viewModel)}${renderGuideRoadmapPanel(viewModel)}`;
+      roadmapEl.innerHTML = renderGuideRoadmapPanel(viewModel);
     }
 
     if (editorialNotesEl) {
@@ -910,6 +992,7 @@ window.UIGuide = (() => {
       node.setAttribute('aria-label', `Progresso atual ${viewModel.progress}%`);
     });
     applyChecklistDensity();
+    activateGuideTab(state?.activeGuideTab || 'summary');
   }
 
 
@@ -995,6 +1078,7 @@ window.UIGuide = (() => {
     renderGuideRelatedCards,
     renderGuideComparisonOverview,
     renderGuideRelatedOverview,
+    activateGuideTab,
     renderGuide,
     updateProgress,
     setGuideQuickDockState

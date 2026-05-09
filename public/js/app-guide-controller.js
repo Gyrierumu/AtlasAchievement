@@ -31,7 +31,8 @@ window.AppGuideController = (() => {
         isSaved: renderModel.isSaved,
         libraryEntry: renderModel.libraryEntry,
         relatedGames: renderModel.relatedGames,
-        storageLabel: isAccountLibrary?.() ? 'Salvo na conta' : 'Salvo neste navegador'
+        storageLabel: isAccountLibrary?.() ? 'Salvo na conta' : 'Salvo neste navegador',
+        activeGuideTab: state.activeGuideTab || 'summary'
       });
       state.checklistDensity = UI.applyChecklistDensity?.(state.checklistDensity) || state.checklistDensity;
       UI.setPageMeta(state.currentGame);
@@ -39,6 +40,8 @@ window.AppGuideController = (() => {
       if (!options.preserveChecklistState) {
         UI.clearTrophySearch();
         state.guideSearch = '';
+        state.activeGuideTab = 'summary';
+        UI.activateGuideTab?.('summary', { scroll: false });
       }
       UI.applyTrophyFilter(state.activeFilter, state.guideSearch);
       if (UI.has('#guideDecisionStack')) UI.qs('#guideDecisionStack').classList.remove('hidden');
@@ -154,6 +157,24 @@ window.AppGuideController = (() => {
     }
 
     function focusGuideAction(action = 'trophies') {
+      const tabByAction = {
+        header: 'summary',
+        quick: 'summary',
+        roadmap: 'roadmap',
+        trophies: 'checklist',
+        checklist: 'checklist',
+        search: 'checklist',
+        'first-pending': 'checklist',
+        risks: 'summary',
+        missables: 'summary',
+        online: 'summary',
+        dlc: 'summary',
+        related: 'details',
+        details: 'details'
+      };
+      const nextTab = tabByAction[action] || 'checklist';
+      state.activeGuideTab = nextTab;
+      UI.activateGuideTab?.(nextTab, { scroll: false });
       const map = {
         header: '#guideHeader',
         quick: '#guidePlatinumSummaryPanel',
