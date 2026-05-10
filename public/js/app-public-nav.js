@@ -32,6 +32,15 @@ window.AppPublicNav = (() => {
     }
   };
 
+  function normalizePublicPath(pathname = '/') {
+    const path = String(pathname || '/').replace(/\/+$/, '') || '/';
+    return path;
+  }
+
+  function getOrganicSeoPage(pathname = '/') {
+    return organicSeoPages[normalizePublicPath(pathname)] || null;
+  }
+
   function ensureMeta(selector, attr, value) {
     let el = document.head.querySelector(selector);
     if (!el) {
@@ -99,12 +108,13 @@ window.AppPublicNav = (() => {
   }
 
   function setOrganicSeoMeta(pathname = '/') {
-    const page = organicSeoPages[pathname];
+    const normalizedPath = normalizePublicPath(pathname);
+    const page = organicSeoPages[normalizedPath];
     if (!page) return;
     setStaticViewMeta({
       title: page.title,
       description: page.description,
-      path: pathname,
+      path: normalizedPath,
       robots: 'index,follow'
     });
   }
@@ -178,9 +188,10 @@ window.AppPublicNav = (() => {
   async function handlePublicPath({ pathname, UI, state, navigate, loadGuideBySlug, loadCatalogPage, loadGames, syncCatalogRoute, syncGuideQuickDock }) {
     syncGuideQuickDock();
 
-    if (organicSeoPages[pathname]) {
-      UI?.showView?.(organicSeoPages[pathname].view);
-      state.activeView = organicSeoPages[pathname].view;
+    const organicSeoPage = getOrganicSeoPage(pathname);
+    if (organicSeoPage) {
+      UI?.showView?.(organicSeoPage.view);
+      state.activeView = organicSeoPage.view;
       setOrganicSeoMeta(pathname);
       return;
     }
