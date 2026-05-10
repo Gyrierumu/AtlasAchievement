@@ -22720,6 +22720,429 @@ const sampleGames = [
 ,
 
 {
+      "name": "Disney Epic Mickey: Rebrushed",
+      "slug": "disney-epic-mickey-rebrushed",
+      "primary_platform": "PlayStation",
+      "platforms": ["PS4", "PS5", "PC", "Xbox One", "Xbox Series X|S", "Nintendo Switch"],
+      "genre": "Plataforma 3D / Ação / Aventura",
+      "developer": "Purple Lamp",
+      "publisher": "THQ Nordic",
+      "release_date": "2024-09-24",
+      "language_notes": "A versão PC/Steam lista interface em português do Brasil; o guia de troféus prioriza a lista PlayStation.",
+      "mode": "single-player / offline",
+      "difficulty": 3,
+      "time": "8-12h",
+      "time_min_hours": 8,
+      "time_max_hours": 12,
+      "time_sort_hours": 12,
+      "time_bucket": "short",
+      "missable": "Possui troféus perdíveis por escolhas de tinta/thinner, chefes, animatronics, coletáveis, quests e ações específicas. Acompanhe o roadmap desde o início para reduzir retrabalho.",
+      "runs_summary": "2 jogadas recomendadas: uma focada em tinta/ações heroicas e outra focada em thinner/decisões opostas para cobrir finais, chefes e decisões conflitantes.",
+      "missable_summary": "Sim. Há troféus ligados a escolhas, ações específicas, coletáveis e rotas. É recomendado seguir o roadmap desde o início e não avançar pontos importantes sem conferir pendências.",
+      "online_summary": "Não. A platina é offline, single-player e não exige multiplayer.",
+      "grind_summary": "Sem grind técnico pesado; o peso está em planejamento, rotas tinta/thinner, coletáveis, film reels, pins/itens, quests e ações específicas durante a campanha.",
+      "dlc_scope": "Não há DLC necessária para a platina base. Costume Pack/cosmético não deve ser tratado como requisito de platina.",
+      "difficulty_reason": "3/10 inicial, em revisão: a dificuldade está mais em planejamento de escolhas, coletáveis e rotas do que em desafio técnico alto.",
+      "time_reason": "Estimativa editorial inicial de 8-12 horas, ainda em revisão, considerando duas jogadas planejadas e limpeza reduzida se o checklist for seguido desde o começo.",
+      "first_run_advice": "Antes de começar, leia os troféus de escolhas, chefes e coletáveis. Faça uma jogada focada em tinta/ajudar personagens e outra focada em thinner/decisões opostas para reduzir risco de perder troféus.",
+      "cleanup_advice": "Na limpeza, revise troféus restantes por tipo: coletáveis, film reels, Gremlins, animatronics, quests, chefes e ações de combate. Não assuma que tudo pode ser limpo livremente depois do final sem validar a pendência.",
+      "before_you_start": "Disney Epic Mickey: Rebrushed é offline e single-player; não há online nem coop obrigatório. A dificuldade está mais em planejamento do que habilidade. Escolhas com tinta e thinner podem afetar troféus, chefes, animatronics e finais; coletáveis e quests devem ser acompanhados durante a campanha.",
+      "best_for": "Ideal para quem quer uma platina curta/moderada, offline, sem coop, com foco em exploração, decisões de rota e checklist de coletáveis.",
+      "avoid_if": "Evite começar sem roadmap se você não quer repetir campanha por escolhas opostas ou por coletáveis/quests perdidos.",
+      "hasMissables": true,
+      "hasOnline": false,
+      "hasCoop": false,
+      "requiresOnline": false,
+      "requiresCoop": false,
+      "dlcRequiredForPlatinum": false,
+      "dlcNotes": "Costume Pack/cosmético não necessário para a platina base.",
+      "playthroughs": "2 jogadas recomendadas",
+      "platinumType": "offline",
+      "guideFocus": "planejamento, escolhas, coletáveis e rotas tinta/thinner",
+      "editorialStatus": "in_review",
+      "editorial_status": "review",
+      "coverage_level": "strong",
+      "is_verified": false,
+      "verification_status": "review",
+      "qualityWarnings": [
+            "Validar troféus perdíveis por escolhas de tinta/thinner e finais.",
+            "Validar ordem ideal de coletáveis e quests antes da publicação ampla."
+      ],
+      "lastReviewedAt": "2026-05-09",
+      "reviewedBy": "",
+      "verification_note": "Em revisão: validar troféus perdíveis por escolhas de tinta/thinner e finais. Validar ordem ideal de coletáveis, quests, Gremlins e animatronics antes da publicação ampla. A lista PlayStation atual possui 39 troféus; fontes públicas divergem em alguns nomes/descrições e a revisão editorial deve priorizar PSN.",
+      "seo": {
+            "title": "Disney Epic Mickey: Rebrushed: guia de platina, troféus e roadmap | AtlasAchievement",
+            "description": "Guia de platina de Disney Epic Mickey: Rebrushed em português, com tempo estimado, dificuldade, troféus perdíveis, roadmap, checklist e dicas para conquistar todos os troféus.",
+            "ogTitle": "Disney Epic Mickey: Rebrushed: guia de platina, troféus e roadmap | AtlasAchievement",
+            "ogDescription": "Guia de platina de Disney Epic Mickey: Rebrushed em português, com tempo estimado, dificuldade, troféus perdíveis, roadmap, checklist e dicas para conquistar todos os troféus."
+      },
+      "image": "https://cdn.cloudflare.steamstatic.com/steam/apps/1522160/header.jpg",
+      "cover_image": "https://cdn.cloudflare.steamstatic.com/steam/apps/1522160/library_600x900.jpg",
+      "roadmap": [
+            "Etapa 1 — Preparação antes da primeira jogada: leia alertas de perdíveis, entenda a diferença entre tinta e thinner, escolha qual rota fazer primeiro e acompanhe o checklist de coletáveis, Gremlins, animatronics, quests e film reels desde o início.",
+            "Etapa 2 — Primeira jogada focada em tinta / rota heroica: priorize ajudar personagens, reparar projetores/áreas, usar tinta em chefes e situações com variação, libertar Gremlins e concluir quests/coletáveis antes de avançar pontos importantes.",
+            "Etapa 3 — Segunda jogada focada em thinner / rota alternativa: faça escolhas opostas da primeira rota, use thinner em chefes e situações com variação, deixe animatronics desmontados quando o troféu pedir e busque os troféus que conflitam com a rota heroica.",
+            "Etapa 4 — Limpeza de coletáveis e troféus específicos: revise a lista restante, confira film reels, Gremlins, E-Tickets, coração, sketches, Beetleworx, corridas, telefone e ações de combate. Marque como perdível qualquer pendência que dependa de janela de campanha.",
+            "Etapa 5 — Platina: confirme todos os 39 troféus, valide se nenhum objetivo de rota ficou pendente e finalize a lista para desbloquear Mousetastic."
+      ],
+      "trophies": [
+            {
+                  "id": "disney_epic_mickey_rebrushed_mousetastic",
+                  "name": "Mousetastic",
+                  "type": "Platina",
+                  "description": "Collect all Trophies / Coletar todos os troféus",
+                  "tip": "Complete todos os outros 38 troféus da lista base PlayStation para liberar a platina.",
+                  "is_missable": false,
+                  "is_spoiler": false
+            },
+            {
+                  "id": "disney_epic_mickey_rebrushed_full_of_beans",
+                  "name": "Full of Beans",
+                  "type": "Bronze",
+                  "description": "Complete the first side-scrolling level",
+                  "tip": "Troféu de história inicial: avance pelo primeiro nível lateral e conclua a sequência.",
+                  "is_missable": false,
+                  "is_spoiler": false
+            },
+            {
+                  "id": "disney_epic_mickey_rebrushed_small_world",
+                  "name": "Small World",
+                  "type": "Prata",
+                  "description": "Paint or Thin the mad Clock Tower",
+                  "tip": "Chefe com decisão de tinta/thinner. Defina a rota da jogada antes do confronto e mantenha consistência com os troféus de rota.",
+                  "is_missable": true,
+                  "is_spoiler": true
+            },
+            {
+                  "id": "disney_epic_mickey_rebrushed_collector",
+                  "name": "Collector",
+                  "type": "Bronze",
+                  "description": "Repair the Mickeyjunk Mountain projector",
+                  "tip": "Avance pela campanha e repare o projetor de Mickeyjunk Mountain quando a área pedir.",
+                  "is_missable": false,
+                  "is_spoiler": true
+            },
+            {
+                  "id": "disney_epic_mickey_rebrushed_world_of_tomorrow",
+                  "name": "World of Tomorrow",
+                  "type": "Bronze",
+                  "description": "Repair the Tomorrow City Projector",
+                  "tip": "Troféu de progresso: repare o projetor de Tomorrow City antes de seguir para a próxima área.",
+                  "is_missable": false,
+                  "is_spoiler": true
+            },
+            {
+                  "id": "disney_epic_mickey_rebrushed_spin_to_win",
+                  "name": "Spin to Win!",
+                  "type": "Prata",
+                  "description": "Paint or Thin Petetronic",
+                  "tip": "Chefe com variação por tinta/thinner. Faça conforme a rota escolhida e registre a opção oposta para a segunda jogada.",
+                  "is_missable": true,
+                  "is_spoiler": true
+            },
+            {
+                  "id": "disney_epic_mickey_rebrushed_oh_the_cleverness_of_me",
+                  "name": "Oh, the cleverness of me!",
+                  "type": "Bronze",
+                  "description": "Repair the Pirates of the Wasteland projector",
+                  "tip": "Repare o projetor de Pirates of the Wasteland durante a campanha e confira pendências da área antes de avançar.",
+                  "is_missable": false,
+                  "is_spoiler": true
+            },
+            {
+                  "id": "disney_epic_mickey_rebrushed_tick_tock",
+                  "name": "Tick-Tock",
+                  "type": "Prata",
+                  "description": "Paint or Thin the animatronic Captain Hook",
+                  "tip": "Decisão de chefe ligada às rotas. Use tinta na jogada heroica e thinner na jogada alternativa, conforme seu planejamento.",
+                  "is_missable": true,
+                  "is_spoiler": true
+            },
+            {
+                  "id": "disney_epic_mickey_rebrushed_awaken_the_spirits",
+                  "name": "Awaken the Spirits",
+                  "type": "Bronze",
+                  "description": "Repair the Lonesome Manor projector",
+                  "tip": "Repare o projetor de Lonesome Manor e revise coletáveis/quests locais antes de mudar de região.",
+                  "is_missable": false,
+                  "is_spoiler": true
+            },
+            {
+                  "id": "disney_epic_mickey_rebrushed_caboom",
+                  "name": "Caboom!",
+                  "type": "Prata",
+                  "description": "Thwart the Mad Doctor's plans",
+                  "tip": "Conclua a sequência do Mad Doctor. Verifique rota e pendências de Lonesome Manor antes de finalizar a etapa.",
+                  "is_missable": true,
+                  "is_spoiler": true
+            },
+            {
+                  "id": "disney_epic_mickey_rebrushed_tentacular",
+                  "name": "Tentacular",
+                  "type": "Bronze",
+                  "description": "Defeat the Bloticles attacking each of the hubs",
+                  "tip": "Elimine os Bloticles nos hubs quando aparecerem e não deixe ataques de área sem resolver.",
+                  "is_missable": false,
+                  "is_spoiler": true
+            },
+            {
+                  "id": "disney_epic_mickey_rebrushed_shadow_of_the_blot",
+                  "name": "Shadow of the Blot",
+                  "type": "Ouro",
+                  "description": "Defeat the Shadow Blot atop Mickeyjunk Mountain",
+                  "tip": "Troféu de história avançada. Antes do confronto, confira escolhas, Gremlins e coletáveis que ainda possam depender do progresso.",
+                  "is_missable": false,
+                  "is_spoiler": true
+            },
+            {
+                  "id": "disney_epic_mickey_rebrushed_escape_wasteland",
+                  "name": "Escape Wasteland",
+                  "type": "Ouro",
+                  "description": "Escape the inside of the Blot and save Wasteland",
+                  "tip": "Conclua a reta final da campanha. Trate como ponto de fechamento e revise pendências antes de prosseguir.",
+                  "is_missable": false,
+                  "is_spoiler": true
+            },
+            {
+                  "id": "disney_epic_mickey_rebrushed_mickanically_gifted",
+                  "name": "Mickanically Gifted",
+                  "type": "Prata",
+                  "description": "Repair 3 rides in the Gremlin Village region",
+                  "tip": "No Gremlin Village, repare os três brinquedos/atrações antes de sair da região.",
+                  "is_missable": true,
+                  "is_spoiler": false
+            },
+            {
+                  "id": "disney_epic_mickey_rebrushed_photo_op",
+                  "name": "Photo Op",
+                  "type": "Bronze",
+                  "description": "Use Photo Mode and save a favourite photo",
+                  "tip": "Abra o Photo Mode em qualquer área segura, salve uma foto como favorita e confirme o desbloqueio.",
+                  "is_missable": false,
+                  "is_spoiler": false
+            },
+            {
+                  "id": "disney_epic_mickey_rebrushed_gawrsh",
+                  "name": "Gawrsh!",
+                  "type": "Bronze",
+                  "description": "Collect all part of Animatronic Goofy",
+                  "tip": "Acompanhe as partes do Goofy durante a campanha e priorize quests/recompensas que liberem peças de animatronic.",
+                  "is_missable": true,
+                  "is_spoiler": false
+            },
+            {
+                  "id": "disney_epic_mickey_rebrushed_oh_goody_goody",
+                  "name": "Oh, goody goody!",
+                  "type": "Bronze",
+                  "description": "Collect all parts of Animatronic Daisy",
+                  "tip": "Colete todas as partes da Daisy sem pular quests ou escolhas que possam travar peças.",
+                  "is_missable": true,
+                  "is_spoiler": false
+            },
+            {
+                  "id": "disney_epic_mickey_rebrushed_aw_phooey",
+                  "name": "Aw, phooey!",
+                  "type": "Bronze",
+                  "description": "Collect all parts of Animatronic Donald",
+                  "tip": "Monitore as partes do Donald no checklist e conclua objetivos relacionados antes de avançar a campanha.",
+                  "is_missable": true,
+                  "is_spoiler": false
+            },
+            {
+                  "id": "disney_epic_mickey_rebrushed_heavy_hitter",
+                  "name": "Heavy Hitter",
+                  "type": "Bronze",
+                  "description": "Unlock the Anvil Sketch",
+                  "tip": "Progrida até liberar o Anvil Sketch e use-o quando a campanha apresentar a habilidade.",
+                  "is_missable": false,
+                  "is_spoiler": false
+            },
+            {
+                  "id": "disney_epic_mickey_rebrushed_cartoon_chaos",
+                  "name": "Cartoon Chaos",
+                  "type": "Bronze",
+                  "description": "Unlock the TV Sketch",
+                  "tip": "Desbloqueie o TV Sketch durante a campanha; ele também ajuda em Square Eyes.",
+                  "is_missable": false,
+                  "is_spoiler": false
+            },
+            {
+                  "id": "disney_epic_mickey_rebrushed_time_is_an_illusion",
+                  "name": "Time is an Illusion",
+                  "type": "Bronze",
+                  "description": "Unlock the Watch Sketch",
+                  "tip": "Avance até receber o Watch Sketch e confirme o troféu ao desbloquear a habilidade.",
+                  "is_missable": false,
+                  "is_spoiler": false
+            },
+            {
+                  "id": "disney_epic_mickey_rebrushed_suit_up",
+                  "name": "Suit Up!",
+                  "type": "Bronze",
+                  "description": "Put on a costume for the first time",
+                  "tip": "Assim que tiver uma fantasia disponível, equipe-a no menu para desbloquear o troféu.",
+                  "is_missable": false,
+                  "is_spoiler": false
+            },
+            {
+                  "id": "disney_epic_mickey_rebrushed_street_cleaner",
+                  "name": "Street Cleaner",
+                  "type": "Bronze",
+                  "description": "Repaint all of Mean Street",
+                  "tip": "Pinte todos os pontos de Mean Street e faça uma volta final pela área antes de seguir.",
+                  "is_missable": true,
+                  "is_spoiler": false
+            },
+            {
+                  "id": "disney_epic_mickey_rebrushed_dial_tone",
+                  "name": "Dial Tone",
+                  "type": "Bronze",
+                  "description": "Dial the wrong number on a phone 3 times",
+                  "tip": "Quando encontrar um telefone utilizável, disque números errados três vezes antes de resolver o objetivo correto.",
+                  "is_missable": true,
+                  "is_spoiler": false
+            },
+            {
+                  "id": "disney_epic_mickey_rebrushed_eraser",
+                  "name": "Eraser",
+                  "type": "Prata",
+                  "description": "Thin 50 Enemies",
+                  "tip": "Na jogada de thinner, derrote inimigos com thinner até chegar a 50. Evite depender só do fim do jogo para acumular.",
+                  "is_missable": false,
+                  "is_spoiler": false
+            },
+            {
+                  "id": "disney_epic_mickey_rebrushed_painter",
+                  "name": "Painter",
+                  "type": "Prata",
+                  "description": "Paint (befriend) 50 Enemies",
+                  "tip": "Na jogada heroica, use tinta para fazer amizade com inimigos até chegar a 50.",
+                  "is_missable": false,
+                  "is_spoiler": false
+            },
+            {
+                  "id": "disney_epic_mickey_rebrushed_mickey_uncaged",
+                  "name": "Mickey Uncaged",
+                  "type": "Prata",
+                  "description": "Free 12 Gremlins from their cages",
+                  "tip": "Liberte Gremlins sempre que encontrar gaiolas. Não troque ajuda por recompensas sem checar se isso afeta o total.",
+                  "is_missable": true,
+                  "is_spoiler": false
+            },
+            {
+                  "id": "disney_epic_mickey_rebrushed_gilded",
+                  "name": "Gilded",
+                  "type": "Prata",
+                  "description": "Beat Gilda's best time in all of her races",
+                  "tip": "Complete todas as corridas da Gilda batendo o melhor tempo; deixe anotado quais áreas já foram concluídas.",
+                  "is_missable": true,
+                  "is_spoiler": false
+            },
+            {
+                  "id": "disney_epic_mickey_rebrushed_its_over_one_thousand",
+                  "name": "It's Over One Thousand!!!",
+                  "type": "Bronze",
+                  "description": "Collect 1001 E-Tickets",
+                  "tip": "Colete E-Tickets durante a campanha, explore áreas opcionais e evite gastar sem necessidade antes do troféu.",
+                  "is_missable": false,
+                  "is_spoiler": false
+            },
+            {
+                  "id": "disney_epic_mickey_rebrushed_fragile",
+                  "name": "Fragile",
+                  "type": "Bronze",
+                  "description": "Destroy 100 destructables",
+                  "tip": "Quebre objetos destrutíveis durante a exploração. O troféu vem naturalmente se você limpar cenários.",
+                  "is_missable": false,
+                  "is_spoiler": false
+            },
+            {
+                  "id": "disney_epic_mickey_rebrushed_battle_ready",
+                  "name": "Battle Ready",
+                  "type": "Bronze",
+                  "description": "Fully upgrade Mickey's heart containers",
+                  "tip": "Acompanhe upgrades de coração desde cedo; alguns dependem de exploração ou recompensas que podem exigir planejamento.",
+                  "is_missable": true,
+                  "is_spoiler": false
+            },
+            {
+                  "id": "disney_epic_mickey_rebrushed_clumsy_lifeguard",
+                  "name": "Clumsy Lifeguard",
+                  "type": "Bronze",
+                  "description": "Knock 10 enemies in to Thinner",
+                  "tip": "Em áreas com thinner e inimigos, empurre ou atraia 10 inimigos para cair no thinner antes de limpar a região.",
+                  "is_missable": true,
+                  "is_spoiler": false
+            },
+            {
+                  "id": "disney_epic_mickey_rebrushed_square_eyes",
+                  "name": "Square Eyes",
+                  "type": "Bronze",
+                  "description": "Use the TV Sketch to attract the attention of 5 Blotlings simultaneously",
+                  "tip": "Junte cinco Blotlings, use o TV Sketch e aguarde todos focarem nele ao mesmo tempo.",
+                  "is_missable": true,
+                  "is_spoiler": false
+            },
+            {
+                  "id": "disney_epic_mickey_rebrushed_moviegoer",
+                  "name": "Moviegoer",
+                  "type": "Bronze",
+                  "description": "Collect 36 Film Reels",
+                  "tip": "Colete film reels nos níveis laterais e registre cada um no checklist para não precisar procurar às cegas depois.",
+                  "is_missable": true,
+                  "is_spoiler": false
+            },
+            {
+                  "id": "disney_epic_mickey_rebrushed_faulty_machinery",
+                  "name": "Faulty Machinery",
+                  "type": "Prata",
+                  "description": "Defeat each kind of Beetleworx once",
+                  "tip": "Derrote ao menos um de cada tipo de Beetleworx conforme eles aparecem. Marque os tipos já enfrentados.",
+                  "is_missable": true,
+                  "is_spoiler": false
+            },
+            {
+                  "id": "disney_epic_mickey_rebrushed_feisty_friends",
+                  "name": "Feisty Friends",
+                  "type": "Bronze",
+                  "description": "Have a total of 5 Blotlings painted simultaneously",
+                  "tip": "Na rota de tinta, reúna Blotlings e pinte cinco para ficarem aliados ao mesmo tempo.",
+                  "is_missable": true,
+                  "is_spoiler": false
+            },
+            {
+                  "id": "disney_epic_mickey_rebrushed_get_off_me",
+                  "name": "Get Off Me!",
+                  "type": "Bronze",
+                  "description": "Knock back 3 enemies with one Spin Attack",
+                  "tip": "Agrupe três inimigos pequenos e use um Spin Attack no centro do grupo.",
+                  "is_missable": false,
+                  "is_spoiler": false
+            },
+            {
+                  "id": "disney_epic_mickey_rebrushed_an_epic_journey",
+                  "name": "An Epic Journey",
+                  "type": "Ouro",
+                  "description": "Use paint to defeat all the bosses and repair all Animatronics",
+                  "tip": "Dedique uma jogada à rota heroica: use tinta nos chefes e repare todos os animatronics ligados à lista.",
+                  "is_missable": true,
+                  "is_spoiler": true
+            },
+            {
+                  "id": "disney_epic_mickey_rebrushed_out_of_my_way",
+                  "name": "Out of my way",
+                  "type": "Ouro",
+                  "description": "Use thinner to defeat all the bosses and leave all Animatronics disassembled",
+                  "tip": "Dedique outra jogada à rota de thinner: derrote chefes com thinner e deixe os animatronics desmontados quando o objetivo pedir.",
+                  "is_missable": true,
+                  "is_spoiler": true
+            }
+      ]
+}
+,
+
+{
       "name": "Little Nightmares II",
       "slug": "little-nightmares-ii",
       "difficulty": 2,

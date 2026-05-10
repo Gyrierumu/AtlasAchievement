@@ -589,6 +589,7 @@ async function syncReviewedGuidesFromSeed() {
   await syncSeedGameFromSeed('it-takes-two', syncOptions);
   await syncSeedGameFromSeed('split-fiction', syncOptions);
   await syncSeedGameFromSeed('a-way-out', syncOptions);
+  await syncSeedGameFromSeed('disney-epic-mickey-rebrushed', syncOptions);
   await syncSeedGameFromSeed('little-nightmares-ii', syncOptions);
   await syncSeedGameFromSeed('reanimal', syncOptions);
   await syncSeedGameFromSeed('dead-cells', syncOptions);

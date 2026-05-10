@@ -9384,8 +9384,8 @@ async function assertBackendEditorialConsistency() {
     assert(itTakesTwoGuideHtml.includes('2 jogadores'), 'SSR de It Takes Two deve citar coop obrigatório com 2 jogadores');
     assert(itTakesTwoGuideHtml.includes('Chapter Select'), 'SSR de It Takes Two deve citar Chapter Select');
     assert(itTakesTwoGuideHtml.includes('25 minigames'), 'SSR de It Takes Two deve citar 25 minigames');
-    assert(itTakesTwoGuideHtml.includes('guideRiskSummaryPanel'), 'SSR de It Takes Two deve renderizar bloco Leia antes de comecar');
-    assert(itTakesTwoGuideHtml.includes('Ler alertas e roadmap'), 'CTA principal de It Takes Two deve priorizar alertas e roadmap');
+    assert(itTakesTwoGuideHtml.includes('Primeiro passo recomendado'), 'SSR de It Takes Two deve manter primeiro passo recomendado no topo');
+    assert(itTakesTwoGuideHtml.includes('data-guide-action="roadmap"'), 'CTA principal de It Takes Two deve abrir o roadmap direto');
 
     const priorityGuideHtml = {
       'clair-obscur-expedition-33': await httpGetHtml(baseUrl, '/jogo/clair-obscur-expedition-33'),
@@ -9396,7 +9396,7 @@ async function assertBackendEditorialConsistency() {
       'a-way-out': await httpGetHtml(baseUrl, '/jogo/a-way-out')
     };
     Object.entries(priorityGuideHtml).forEach(([slug, html]) => {
-      assert(html.includes('guideRiskSummaryPanel'), `${slug} deve renderizar bloco Leia antes de comecar antes da checklist`);
+      assert(html.includes('Primeiro passo recomendado'), `${slug} deve renderizar primeiro passo recomendado antes da checklist`);
       assert(html.includes('guideRoadmapPanel'), `${slug} deve renderizar roadmap no guia`);
       assert(html.includes('guideChecklistPanel'), `${slug} deve manter checklist no guia`);
     });
@@ -11481,7 +11481,7 @@ async function assertBackendEditorialConsistency() {
       astroBotGuideHtml.indexOf('atlas-guide-hero__actions') + 900
     );
     const astroBotSaveButtonCount = (astroBotGuideHtml.match(/data-toggle-save-game="true"/g) || []).length;
-    assert(astroBotHeroActions.includes('Ler plano da platina') || astroBotHeroActions.includes('Ir para checklist'), 'SSR de Astro Bot deve exibir CTA principal claro no topo do guia');
+    assert(astroBotHeroActions.includes('Roadmap') && astroBotHeroActions.includes('Checklist'), 'SSR de Astro Bot deve exibir CTAs diretos para roadmap e checklist no topo do guia');
     assert(astroBotHeroActions.includes('data-guide-action="trophies"') || astroBotHeroActions.includes('data-guide-action="roadmap"') || astroBotHeroActions.includes('data-guide-action="risks"'), 'CTA do topo do guia deve apontar para plano ou checklist');
     assert(astroBotGuideHtml.includes('Salvar na biblioteca') || astroBotGuideHtml.includes('Salvar guia'), 'guia deve manter acao de salvar sem duplicacao confusa no hero');
     assert(astroBotSaveButtonCount >= 1, 'guia deve manter pelo menos uma acao de biblioteca');
@@ -12444,7 +12444,7 @@ function assertPriorityGuideEditorialTrust() {
     }, `${slug} deve manter distribuicao por tipo`);
     assert.strictEqual(game.slug, slug, `${slug} deve manter slug funcional`);
     const labels = summaryLabels(game);
-    ['Tempo estimado', 'Dificuldade', 'Trofeus', 'Jogadas/runs', 'Perdiveis', 'Online', 'Coop', 'DLC', 'Chapter Select', 'Platina/100%'].forEach(label => {
+    ['Tempo estimado', 'Dificuldade', 'Troféus', 'Jogadas/runs', 'Perdíveis', 'Online', 'Coop', 'DLC', 'Chapter Select', 'Platina/100%'].forEach(label => {
       assert(labels.includes(label), `${slug} deve expor ${label} no resumo rapido da platina`);
     });
     assert(guideModel.buildGuideViewModel(game, []).beforeStartItems.length <= 5, `${slug} deve mostrar no maximo 5 alertas antes de comecar`);
@@ -12647,6 +12647,7 @@ async function main() {
   assertPriorityGuideEditorialTrust();
   await assertBackendEditorialConsistency();
   console.log('Regression smoke tests passed.');
+  process.exit(0);
 }
 
 main().catch(error => {

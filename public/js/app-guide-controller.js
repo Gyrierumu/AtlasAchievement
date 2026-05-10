@@ -184,7 +184,7 @@ window.AppGuideController = (() => {
         online: '#guideQuickCard-online',
         dlc: '#guideQuickCard-dlc',
         search: '#trophySearch',
-        risks: '#guideRiskSummaryPanel',
+        risks: '#guideHeader',
         related: '#guideRelatedPanel',
         'first-pending': '[data-next-focus="true"]'
       };

@@ -1820,7 +1820,7 @@ body.atlas-guide-dock-active footer {
   top: var(--atlas-sticky-offset, 88px);
   z-index: 24;
   display: grid;
-  grid-template-columns: repeat(5, minmax(0, 1fr));
+  grid-template-columns: repeat(4, minmax(0, 1fr));
   gap: 8px;
   padding: 8px;
   border: 1px solid rgba(255,255,255,.08);
@@ -2332,10 +2332,6 @@ body.atlas-guide-dock-active footer {
     padding: 0 8px;
     font-size: .8rem;
     white-space: normal;
-  }
-
-  .atlas-guide-layer-nav__button:last-child {
-    grid-column: 1 / -1;
   }
 
   .atlas-guide-summary-actions {

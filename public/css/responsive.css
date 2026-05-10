@@ -1413,19 +1413,15 @@
   }
 
   #view-guide .atlas-guide-hero__actions {
-    order: 5;
+    order: 6;
     display: grid;
     grid-template-columns: repeat(2, minmax(0, 1fr));
     gap: 7px;
     margin-top: 9px;
   }
 
-  #view-guide .atlas-guide-hero__actions .atlas-btn:first-child {
-    grid-column: 1 / -1;
-  }
-
   #view-guide .atlas-guide-hero__facts {
-    order: 6;
+    order: 5;
     grid-template-columns: repeat(2, minmax(0, 1fr));
     gap: 6px;
     margin-top: 9px;

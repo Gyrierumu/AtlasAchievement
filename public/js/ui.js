@@ -40,6 +40,14 @@ window.UI = (() => {
     });
   }
 
+  function resetPageScroll() {
+    try {
+      window.scrollTo({ top: 0, left: 0, behavior: 'instant' });
+    } catch (_error) {
+      window.scrollTo(0, 0);
+    }
+  }
+
   function setSearchFeedback(message = '', type = 'default') {
     const feedback = qs('#searchFeedback');
     if (!feedback) return;
@@ -270,6 +278,7 @@ window.UI = (() => {
     setLoading,
     updateLibraryBadge,
     showView,
+    resetPageScroll,
     setSearchFeedback,
     renderSuggestions,
     hideSuggestions,

@@ -65,9 +65,27 @@ window.AppPublicNav = (() => {
     });
   }
 
+  function useManualScrollRestoration() {
+    try {
+      if ('scrollRestoration' in window.history) {
+        window.history.scrollRestoration = 'manual';
+      }
+    } catch (_error) {}
+  }
+
+  function getVisibleViewId(UI) {
+    const current = UI.qsa('main > section').find(section => !section.classList.contains('hidden'));
+    return current?.id?.replace(/^view-/, '') || '';
+  }
+
   function createNavigate({ UI, page, state, getCatalogPath, getGameSlug, syncGuideQuickDock }) {
+    if (page === 'public') useManualScrollRestoration();
+
     return function navigate(view, options = {}) {
+      const previousView = state.activeView || getVisibleViewId(UI);
+      const currentPath = `${window.location.pathname}${window.location.search}`;
       UI.showView(view);
+      state.activeView = view;
 
       if (page !== 'public') return;
 
@@ -78,7 +96,6 @@ window.AppPublicNav = (() => {
       if (view === 'guide' && options.game) path = `/jogo/${getGameSlug(options.game)}`;
 
       if (!options.skipHistory) {
-        const currentPath = `${window.location.pathname}${window.location.search}`;
         if (currentPath !== path) {
           window.history.pushState({ view, slug: options.game ? getGameSlug(options.game) : null }, '', path);
         }
@@ -100,6 +117,17 @@ window.AppPublicNav = (() => {
       if (view === 'catalog') UI.renderCatalog(state.catalogResponse, { search: state.catalogSearch, sort: state.catalogSort, facet: options.facet || state.catalogFacet, compareSelection: state.catalogCompare, intent: state.catalogIntent, allGames: state.availableGames });
       window.AtlasAnalytics?.trackPageView?.({ path, title: document.title });
       syncGuideQuickDock();
+
+      const viewChanged = Boolean(previousView && previousView !== view);
+      const guideChanged = view === 'guide' && path.startsWith('/jogo/') && currentPath !== path;
+      const shouldResetScroll = !options.preserveScroll && (options.resetScroll || viewChanged || guideChanged);
+      if (shouldResetScroll) {
+        const schedule = window.requestAnimationFrame || (callback => window.setTimeout(callback, 0));
+        schedule(() => {
+          UI.resetPageScroll?.();
+          syncGuideQuickDock();
+        });
+      }
     };
   }
 
@@ -132,6 +160,8 @@ window.AppPublicNav = (() => {
   }
 
   function bindPublicNavigation({ UI, page, state, navigate, loadCatalogPage, loadGuideByName, loadGames, debouncedSearchGames, getCatalogFacetFromPath = () => 'all' }) {
+    useManualScrollRestoration();
+
     UI.qsa('[data-view-link]').forEach(button => button.addEventListener('click', async event => {
       event.preventDefault();
       const view = button.dataset.viewLink;
@@ -142,14 +172,14 @@ window.AppPublicNav = (() => {
         state.catalogPage = 1;
         await loadCatalogPage({ page: 1, facet: state.catalogFacet || getCatalogFacetFromPath(window.location.pathname) || 'all' });
       }
-      navigate(view);
+      navigate(view, { resetScroll: true });
     }));
 
     UI.qs('#view-home')?.addEventListener('click', async event => {
       const viewTrigger = event.target.closest('[data-view-link]');
       if (viewTrigger) {
         event.preventDefault();
-        navigate(viewTrigger.dataset.viewLink);
+        navigate(viewTrigger.dataset.viewLink, { resetScroll: true });
         return;
       }
 
@@ -191,6 +221,8 @@ window.AppPublicNav = (() => {
   }
 
   function bindPublicPopState({ page, onNavigate }) {
+    useManualScrollRestoration();
+
     window.addEventListener('popstate', async () => {
       if (page !== 'public') return;
       await onNavigate(window.location.pathname);

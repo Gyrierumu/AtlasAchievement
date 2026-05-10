@@ -363,7 +363,7 @@
     const collectibleSnippet = findGuidePlanningSnippet(
       [inputs.beforeYouStart, inputs.grind, inputs.missableSummary, inputs.cleanupAdvice, ...roadmapTexts],
       /colet|colecion|journal|journals|disco|discos|old key|mime|maelle|lost gestral|glitching remains|chapeu|hunter.?s journal|blueprints|runa|runas/,
-      'Marque coletaveis e acoes opcionais durante a campanha para nao transformar o cleanup em varredura cega.'
+      'Marque coletáveis e ações opcionais durante a campanha para não transformar o cleanup em varredura cega.'
     );
 
     const items = [
@@ -372,9 +372,9 @@
         show: hasMissable,
         priority: 100,
         icon: 'fa-triangle-exclamation',
-        label: 'Perdiveis',
-        title: hasMissable ? (missableCount ? formatGuideCount(missableCount, 'perdivel', 'perdiveis') : 'Atencao antes de avancar') : 'Sem perdivel permanente',
-        detail: compactGuideText(missableText, hasMissable ? 'Revise os alertas antes da primeira sessao.' : 'O guia nao marca perda permanente como bloqueio principal.', 150),
+        label: 'Perdíveis',
+        title: hasMissable ? (missableCount ? formatGuideCount(missableCount, 'perdível', 'perdíveis') : 'Atenção antes de avançar') : 'Sem perdível permanente',
+        detail: compactGuideText(missableText, hasMissable ? 'Revise os alertas antes da primeira sessão.' : 'O guia não marca perda permanente como bloqueio principal.', 150),
         tone: hasMissable ? 'risk' : 'soft'
       },
       {
@@ -433,7 +433,7 @@
         priority: 60,
         icon: 'fa-map-pin',
         label: 'Coletaveis',
-        title: 'Acompanhe itens e acoes opcionais',
+        title: 'Acompanhe itens e ações opcionais',
         detail: collectibleSnippet,
         tone: 'warning'
       },
@@ -535,9 +535,9 @@
     const cards = [
       { icon: 'fa-clock', label: 'Tempo estimado', value: inputs.timeLabel || 'Tempo nao informado', detail: compactGuideText(inputs.timeReason, 'Estimativa cadastrada no guia.', 96), tone: 'atlas-meta-signal--time' },
       { icon: 'fa-gauge-high', label: 'Dificuldade', value: `${inputs.difficulty || '-'}/10`, detail: compactGuideText(inputs.difficultyReason, 'Escala editorial do Atlas.', 96), tone: getDifficultyToneClass(inputs.difficulty) },
-      { icon: 'fa-trophy', label: 'Trofeus', value: `${total}`, detail: 'Total visivel no checklist.', tone: 'atlas-meta-signal--trophy' },
+      { icon: 'fa-trophy', label: 'Troféus', value: `${total}`, detail: 'Total visível no checklist.', tone: 'atlas-meta-signal--trophy' },
       { icon: 'fa-rotate', label: 'Jogadas/runs', value: inputs.runs || viewModel.snapshot?.runEstimate || getGuideRunEstimate(game, viewModel.roadmap || [], trophies), detail: compactGuideText(inputs.firstRunAdvice, 'Use o roadmap para organizar a rota.', 96), tone: 'atlas-meta-signal--partial' },
-      { icon: 'fa-triangle-exclamation', label: 'Perdiveis', value: missableCount ? formatGuideCount(missableCount, 'perdivel', 'perdiveis') : (hasMissableText ? 'Atencao' : 'Sem perdiveis'), detail: compactGuideText(inputs.missableSummary, hasMissableText ? 'Leia antes de avancar.' : 'Sem bloqueio critico marcado.', 96), tone: missableCount || hasMissableText ? 'atlas-meta-signal--risk' : 'atlas-meta-signal--complete' },
+      { icon: 'fa-triangle-exclamation', label: 'Perdíveis', value: missableCount ? formatGuideCount(missableCount, 'perdível', 'perdíveis') : (hasMissableText ? 'Atenção' : 'Sem perdíveis'), detail: compactGuideText(inputs.missableSummary, hasMissableText ? 'Leia antes de avançar.' : 'Sem bloqueio crítico marcado.', 96), tone: missableCount || hasMissableText ? 'atlas-meta-signal--risk' : 'atlas-meta-signal--complete' },
       { icon: 'fa-wifi', label: 'Online', value: network.onlineLabel, detail: compactGuideText(network.onlineDetail, '', 96), tone: `atlas-meta-signal--${network.onlineTone}` },
       { icon: 'fa-users', label: 'Coop', value: network.coopLabel, detail: compactGuideText(network.coopDetail, '', 96), tone: `atlas-meta-signal--${network.coopTone}` },
       { icon: 'fa-layer-group', label: 'DLC', value: dlcScope.value, detail: compactGuideText(dlcScope.detail, 'Escopo de DLC do guia.', 96), tone: dlcScope.tone },
