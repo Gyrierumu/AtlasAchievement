@@ -15,12 +15,45 @@ window.UIFormatters = (() => {
 
   function buildGameSeoTitle(game = {}) {
     const name = String(game?.name || 'Jogo').trim() || 'Jogo';
-    return `${name}: guia de trof\u00e9us, roadmap e tempo para platinar | AtlasAchievement`;
+    return `${name}: guia de platina, troféus e roadmap | AtlasAchievement`;
+  }
+
+  function normalizeSeoSignalText(value = '') {
+    return String(value || '').toLowerCase().normalize('NFD').replace(/[\u0300-\u036f]/g, '');
+  }
+
+  function hasUncertainEditorialText(value = '') {
+    return /precisa (?:revisao|validar|validacao)|aguarda(?:ndo)? validacao|aguarda(?:ndo)? revisao|em revisao|informacao em revisao|nao confirmado|nao confirmad|incert|sujeit[oa] a revisao|dados atuais|validar manualmente/.test(value);
   }
 
   function buildGameSeoDescription(game = {}) {
     const name = String(game?.name || 'este jogo').trim() || 'este jogo';
-    return `Veja dificuldade, tempo estimado, runs, trof\u00e9us perd\u00edveis, roadmap e checklist para platinar ${name} com menos retrabalho.`;
+    const parts = [];
+    const time = String(game?.time || '').trim();
+    const difficulty = Number(game?.difficulty || 0);
+    const onlineText = normalizeSeoSignalText(firstGuideText(game?.online_summary, game?.guide_online, game?.online));
+    const missableText = normalizeSeoSignalText(firstGuideText(game?.missable_summary, game?.missable));
+    const dlcText = normalizeSeoSignalText(firstGuideText(game?.dlc_scope, game?.guide_dlc, game?.dlc));
+    const hasOnline = /online\/multiplayer|trofeus? online confirmad|red dead online|sport mode|sos flare|guild cards?|daily challenge|servidor|server|ps\+/.test(onlineText)
+      && !/nao ha|sem online|nao exige online|online opcional|nao.*online obrigatorio|ps\+ nao/.test(onlineText);
+    const noOnline = /nao ha (?:trofeus )?(?:online|exigencia online)|sem online obrigatorio|nao exige online|sem trofeus online|nao ha multiplayer obrigatorio/.test(onlineText)
+      && !hasUncertainEditorialText(onlineText);
+    const hasCoop = /exige 2 jogadores|2 jogadores obrigatorios|dois jogadores obrigatorios|nao pode ser platinado solo|coop obrigatorio|co-op obrigatorio/.test(onlineText);
+    const missableCount = Number(game?.missable_count || 0);
+    const hasMissables = missableCount > 0 || (!/nao ha|sem perdiveis|nada .*perdivel|0 perdiveis/.test(missableText) && /perdivel|perdiveis|ponto sem retorno|bloque/.test(missableText));
+
+    if (time) parts.push(`tempo estimado de ${time}`);
+    if (difficulty > 0) parts.push(`dificuldade ${difficulty}/10`);
+    if (hasMissables) parts.push('alertas de troféus perdíveis');
+    if (hasCoop) parts.push('coop obrigatório');
+    else if (hasOnline) parts.push('requisitos online');
+    else if (noOnline) parts.push('sem online obrigatório');
+    if (/lista base|jogo base|base game|sem dlc|dlc nao necessaria|nao e necessaria|fora do escopo|nao inclui/.test(dlcText) && !hasUncertainEditorialText(dlcText)) {
+      parts.push('DLC fora da platina base');
+    }
+    parts.push('roadmap e checklist');
+
+    return `Guia de platina de ${name} em português, com ${parts.join(', ')}.`;
   }
 
   function buildGameGuideH1(game = {}) {

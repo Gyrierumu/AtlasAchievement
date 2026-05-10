@@ -354,7 +354,7 @@ window.UIGuide = (() => {
         <div class="atlas-section-head atlas-section-head--compact">
           <div>
             <div class="atlas-eyebrow">Roadmap da platina</div>
-            <h2 class="text-2xl md:text-3xl font-extrabold tracking-tight mt-2">Ordem recomendada para jogar</h2>
+            <h2 class="text-2xl md:text-3xl font-extrabold tracking-tight mt-2">Roadmap</h2>
             <p class="text-white/58 mt-2 max-w-4xl">Comece por estas etapas antes de mergulhar na lista completa. A ordem ajuda a reduzir retrabalho, evitar perdas e deixar o cleanup para o momento certo.</p>
           </div>
           <button type="button" class="atlas-section-toggle" data-guide-section-toggle="guideRoadmapBody" data-expanded-label="Ocultar roadmap" data-collapsed-label="Mostrar roadmap" aria-expanded="true" aria-controls="guideRoadmapBody"><span data-toggle-label>Ocultar roadmap</span><i class="fas fa-chevron-up" aria-hidden="true"></i></button>
@@ -571,7 +571,7 @@ window.UIGuide = (() => {
       <section id="guideSummaryActions" class="atlas-panel atlas-panel--section atlas-guide-summary-actions p-5 md:p-6">
         <div>
           <div class="atlas-eyebrow">Plano rapido</div>
-          <h2 class="text-xl md:text-2xl font-extrabold tracking-tight mt-2">${escapeHtml(nextAction.title || 'Comece pelo plano certo')}</h2>
+          <h2 class="text-xl md:text-2xl font-extrabold tracking-tight mt-2">Resumo da platina</h2>
           <p class="text-white/62 mt-2 max-w-3xl">${escapeHtml(nextAction.detail || 'Leia o resumo, abra o roadmap quando precisar da ordem completa e use a checklist para acompanhar progresso.')}</p>
         </div>
         <div class="atlas-guide-summary-actions__buttons">
@@ -626,7 +626,7 @@ window.UIGuide = (() => {
 
   function renderGuideEditorialNotes(game = {}, viewModel = {}) {
     const routeTrophies = Array.isArray(viewModel.routeChangingTrophies) ? viewModel.routeChangingTrophies.slice(0, 4) : [];
-    const faqItems = Array.isArray(viewModel.contextualFaq) ? viewModel.contextualFaq.slice(0, 3) : [];
+    const faqItems = Array.isArray(viewModel.contextualFaq) ? viewModel.contextualFaq.slice(0, 6) : [];
     const playerFit = viewModel.playerFit || buildGuidePlayerFit(game, viewModel);
     const methodItems = Array.isArray(viewModel.editorial?.methodItems) ? viewModel.editorial.methodItems : [];
     const statusBadge = viewModel.editorial?.statusBadge || getEditorialBadge(game);
@@ -635,8 +635,8 @@ window.UIGuide = (() => {
         <div class="atlas-section-head atlas-section-head--compact">
           <div>
             <span class="atlas-section-kicker">Notas editoriais</span>
-            <h2 class="text-xl md:text-2xl font-extrabold tracking-tight mt-2">Pontos críticos, confiança e FAQ</h2>
-            <p class="text-white/58 mt-2 max-w-4xl">Depois de consultar o checklist, use este bloco para tirar dúvidas e revisar riscos sem repetir o roadmap.</p>
+            <h2 class="text-xl md:text-2xl font-extrabold tracking-tight mt-2">Perguntas frequentes</h2>
+            <p class="text-white/58 mt-2 max-w-4xl">Respostas rápidas sobre perdíveis, online, coop, tempo, dificuldade e DLC usando os dados atuais do guia.</p>
           </div>
           <span class="atlas-tag atlas-tag--soft">${escapeHtml(statusBadge.label || 'Notas de apoio')}</span>
         </div>

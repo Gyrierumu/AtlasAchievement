@@ -1187,35 +1187,74 @@
   }
 
   function buildContextualFaq(game = {}, viewModel = {}) {
-    const trophies = Array.isArray(viewModel.trophies) ? viewModel.trophies : [];
-    const missableCount = trophies.filter(trophy => trophy && trophy.is_missable).length;
-    const spoilerCount = trophies.filter(trophy => trophy && trophy.is_spoiler).length;
-    const roadmapCount = Array.isArray(viewModel.roadmap) ? viewModel.roadmap.length : 0;
-    const hasDenseList = trophies.length >= 45;
+    const name = String(game?.name || 'este jogo').trim() || 'este jogo';
+    const trophies = Array.isArray(viewModel.trophies) ? viewModel.trophies : (Array.isArray(game?.trophies) ? game.trophies : []);
+    const roadmap = Array.isArray(viewModel.roadmap) ? viewModel.roadmap : (Array.isArray(game?.roadmap) ? game.roadmap : []);
+    const riskCounts = viewModel.riskCounts || getRiskCounts(trophies);
+    const inputs = getGuideVerdictInputs(game, { ...viewModel, trophies, roadmap });
+    const network = getGuideNetworkRequirementModel(game, { ...viewModel, trophies, roadmap });
+    const dlcScope = buildGuideDlcScopeModel(game, inputs);
+    const combinedText = getGuideCombinedPlanningText(game, { ...viewModel, trophies, roadmap });
+    const missableText = firstGuideText(inputs.missableSummary, game?.missable);
+    const missableCount = Number(inputs.missableCount || riskCounts.missable || trophies.filter(trophy => trophy?.is_missable).length || 0);
+    const hasMissable = Boolean(missableCount || (!hasNegatedGuideRequirement(missableText) && hasMissableRiskText(missableText)));
+    const missableReview = !missableText || (!hasMissable && hasGuideReviewSignal(missableText));
+    const onlineReview = !inputs.online || (!network.hasOnline && hasGuideOnlineReviewSignal(inputs.online));
+    const coopReview = (!inputs.online && !combinedText) || (!network.hasCoop && /coop|co-op|2 jogadores|dois jogadores|segundo jogador/.test(normalizeGuideSignalText(combinedText)) && hasGuideReviewSignal(combinedText));
+    const dlcReview = !inputs.dlc || (!/complete|warning/.test(String(dlcScope.tone || '')) && hasGuideReviewSignal(inputs.dlc));
+    const difficulty = Number(inputs.difficulty || 0);
+    const timeLabel = inputs.timeLabel && inputs.timeLabel !== 'Tempo não informado' ? inputs.timeLabel : '';
+    const dlcNormalized = normalizeGuideSignalText(firstGuideText(inputs.dlc, dlcScope.detail));
+    const dlcNotRequired = /lista base|jogo base|base game|sem dlc|nao inclui|nao foram adicionados|nao foi misturado|dlc nao necessaria|nao e necessaria|nao ha dlc|fora do escopo|fica fora|ficam fora|entrada separada/.test(dlcNormalized);
+    const dlcRequired = /necessaria|obrigatoria|dlc no escopo|expansao|expansoes/.test(dlcNormalized) && !dlcNotRequired;
+    const reviewAnswer = 'Essa informação ainda está em revisão editorial. Consulte os alertas do guia antes de começar.';
+
     return [
       {
-        question: 'É seguro começar sem ler tudo?',
-        answer: roadmapCount
-          ? `Leia pelo menos o bloco “Antes de começar” e as ${roadmapCount} etapa(s) do roadmap. Isso já reduz boa parte do risco de ordem errada.`
-          : 'Leia primeiro os alertas editoriais, os destaques da lista e o resumo de risco. O restante pode ser consultado durante a run.'
+        question: `${name} tem troféus perdíveis?`,
+        answer: missableReview
+          ? reviewAnswer
+          : hasMissable
+            ? 'Sim. O guia possui alertas para troféus perdíveis. É recomendado seguir o roadmap desde o início.'
+            : 'O guia não aponta troféus perdíveis obrigatórios nos dados atuais, mas ainda vale revisar os alertas antes de começar.'
       },
       {
-        question: 'Onde está o maior risco de retrabalho?',
-        answer: missableCount
-          ? `Nos ${missableCount} troféu(s) sinalizado(s) como perdíveis. Eles merecem conferência antes de avançar cegamente na campanha.`
-          : 'O cadastro atual não mostra perdíveis críticos claros, então o maior risco tende a ser tempo mal distribuído, cleanup torto ou farming deixado para tarde.'
+        question: `${name} precisa de online para platinar?`,
+        answer: onlineReview
+          ? reviewAnswer
+          : network.hasOnline
+            ? 'Sim. O guia indica requisito online ou multiplayer para a platina. Planeje essa etapa antes de deixar para o final.'
+            : 'Não. A platina não exige troféus online obrigatórios segundo os dados atuais do guia.'
       },
       {
-        question: 'Preciso usar o checklist desde o começo?',
-        answer: hasDenseList
-          ? 'Sim. Como a lista é mais extensa, marcar progresso cedo evita perder contexto e transforma sessões longas em avanço visível.'
-          : 'Vale a pena pelo menos para objetivos únicos, troféus sensíveis e para saber exatamente onde você parou.'
+        question: `Quanto tempo leva para platinar ${name}?`,
+        answer: timeLabel
+          ? `O tempo estimado para platinar ${name} é ${timeLabel}. Use o roadmap para distribuir campanha, cleanup e checklist.`
+          : reviewAnswer
       },
       {
-        question: 'Tem algo que pede leitura com mais cautela?',
-        answer: spoilerCount
-          ? `Sim. Há ${spoilerCount} alerta(s) de spoiler ou conteúdo sensível. Revele apenas quando isso não atrapalhar sua experiência.`
-          : 'Nada muito sensível aparece no cadastro atual, então a leitura pode ser mais direta sem tanta preocupação com spoiler.'
+        question: `Qual a dificuldade da platina de ${name}?`,
+        answer: difficulty > 0
+          ? `A dificuldade cadastrada para a platina é ${difficulty}/10. Leia os alertas para entender onde o desafio pode aumentar.`
+          : reviewAnswer
+      },
+      {
+        question: `${name} tem coop obrigatório?`,
+        answer: coopReview
+          ? reviewAnswer
+          : network.hasCoop
+            ? 'Sim. O guia indica coop obrigatório ou necessidade de outro jogador para a platina.'
+            : 'Não. O guia não aponta coop obrigatório para a platina.'
+      },
+      {
+        question: `A DLC é necessária para a platina de ${name}?`,
+        answer: dlcReview
+          ? reviewAnswer
+          : dlcRequired
+            ? 'Sim. O guia indica DLC ou conteúdo extra no escopo da platina. Confira o detalhe antes de começar.'
+            : dlcNotRequired
+              ? 'Não. A DLC não é necessária para a platina base.'
+              : 'O escopo de DLC está descrito no guia. Confira o detalhe antes de decidir quais listas extras seguir.'
       }
     ];
   }

@@ -404,14 +404,43 @@ function sendAdminPage(req, res) {
   res.sendFile(path.join(__dirname, '../public/admin.html'));
 }
 
+function firstSeoText(...values) {
+  return values.map(value => String(value || '').trim()).find(Boolean) || '';
+}
+
 function buildGameSeoTitle(game = {}) {
   const name = String(game?.name || 'Jogo').trim() || 'Jogo';
-  return `${name}: guia de trof\u00e9us, roadmap e tempo para platinar | AtlasAchievement`;
+  return `${name}: guia de platina, troféus e roadmap | AtlasAchievement`;
 }
 
 function buildGameSeoDescription(game = {}) {
   const name = String(game?.name || 'este jogo').trim() || 'este jogo';
-  return `Veja dificuldade, tempo estimado, runs, trof\u00e9us perd\u00edveis, roadmap e checklist para platinar ${name} com menos retrabalho.`;
+  const parts = [];
+  const time = String(game?.time || '').trim();
+  const difficulty = Number(game?.difficulty || 0);
+  const onlineText = normalizeSeoSignalText(firstSeoText(game?.online_summary, game?.guide_online, game?.online));
+  const missableText = normalizeSeoSignalText(firstSeoText(game?.missable_summary, game?.missable));
+  const dlcText = normalizeSeoSignalText(firstSeoText(game?.dlc_scope, game?.guide_dlc, game?.dlc));
+  const hasOnline = /online\/multiplayer|trofeus? online confirmad|red dead online|sport mode|sos flare|guild cards?|daily challenge|servidor|server|ps\+/.test(onlineText)
+    && !/nao ha|sem online|nao exige online|online opcional|nao.*online obrigatorio|ps\+ nao/.test(onlineText);
+  const noOnline = /nao ha (?:trofeus )?(?:online|exigencia online)|sem online obrigatorio|nao exige online|sem trofeus online|nao ha multiplayer obrigatorio/.test(onlineText)
+    && !hasUncertainEditorialText(onlineText);
+  const hasCoop = /exige 2 jogadores|2 jogadores obrigatorios|dois jogadores obrigatorios|nao pode ser platinado solo|coop obrigatorio|co-op obrigatorio/.test(onlineText);
+  const missableCount = Number(game?.missable_count || 0);
+  const hasMissables = missableCount > 0 || (!/nao ha|sem perdiveis|nada .*perdivel|0 perdiveis/.test(missableText) && /perdivel|perdiveis|ponto sem retorno|bloque/.test(missableText));
+
+  if (time) parts.push(`tempo estimado de ${time}`);
+  if (difficulty > 0) parts.push(`dificuldade ${difficulty}/10`);
+  if (hasMissables) parts.push('alertas de troféus perdíveis');
+  if (hasCoop) parts.push('coop obrigatório');
+  else if (hasOnline) parts.push('requisitos online');
+  else if (noOnline) parts.push('sem online obrigatório');
+  if (/lista base|jogo base|base game|sem dlc|dlc nao necessaria|nao e necessaria|fora do escopo|nao inclui/.test(dlcText) && !hasUncertainEditorialText(dlcText)) {
+    parts.push('DLC fora da platina base');
+  }
+  parts.push('roadmap e checklist');
+
+  return `Guia de platina de ${name} em português, com ${parts.join(', ')}.`;
 }
 
 function buildGameGuideH1(game = {}) {
@@ -823,7 +852,7 @@ function buildGuideFaqStructuredData(canonicalUrl, viewModel) {
 
 function renderGuideEditorialNotesHtml(game = {}, viewModel = {}) {
   const routeTrophies = Array.isArray(viewModel.routeChangingTrophies) ? viewModel.routeChangingTrophies.slice(0, 4) : [];
-  const faqItems = Array.isArray(viewModel.contextualFaq) ? viewModel.contextualFaq.slice(0, 3) : [];
+  const faqItems = Array.isArray(viewModel.contextualFaq) ? viewModel.contextualFaq.slice(0, 6) : [];
   const playerFit = viewModel.playerFit || buildGuidePlayerFit(game, viewModel);
   const methodItems = Array.isArray(viewModel.editorial?.methodItems) ? viewModel.editorial.methodItems : [];
   const statusBadge = viewModel.editorial?.statusBadge || getEditorialBadge(game);
@@ -832,8 +861,8 @@ function renderGuideEditorialNotesHtml(game = {}, viewModel = {}) {
       <div class="atlas-section-head atlas-section-head--compact">
         <div>
           <span class="atlas-section-kicker">Notas editoriais</span>
-          <h2 class="text-xl md:text-2xl font-extrabold tracking-tight mt-2">Pontos críticos, confiança e FAQ</h2>
-          <p class="text-white/58 mt-2 max-w-4xl">Depois de consultar o checklist, use este bloco para tirar dúvidas e revisar riscos sem repetir o roadmap.</p>
+          <h2 class="text-xl md:text-2xl font-extrabold tracking-tight mt-2">Perguntas frequentes</h2>
+          <p class="text-white/58 mt-2 max-w-4xl">Respostas rápidas sobre perdíveis, online, coop, tempo, dificuldade e DLC usando os dados atuais do guia.</p>
         </div>
         <span class="atlas-tag atlas-tag--soft">${escapeHtml(statusBadge.label || 'Notas de apoio')}</span>
       </div>
@@ -1149,7 +1178,7 @@ function renderGuideRoadmapPanelHtml(viewModel = {}) {
       <div class="atlas-section-head atlas-section-head--compact">
         <div>
           <div class="atlas-eyebrow">Roadmap da platina</div>
-          <h2 class="text-2xl md:text-3xl font-extrabold tracking-tight mt-2">Ordem recomendada para jogar</h2>
+          <h2 class="text-2xl md:text-3xl font-extrabold tracking-tight mt-2">Roadmap</h2>
           <p class="text-white/58 mt-2 max-w-4xl">Comece por estas etapas antes de mergulhar na lista completa. A ordem ajuda a reduzir retrabalho, evitar perdas e deixar o cleanup para o momento certo.</p>
         </div>
         <button type="button" class="atlas-section-toggle" data-guide-section-toggle="guideRoadmapBody" data-expanded-label="Ocultar roadmap" data-collapsed-label="Mostrar roadmap" aria-expanded="true" aria-controls="guideRoadmapBody"><span data-toggle-label>Ocultar roadmap</span><i class="fas fa-chevron-up" aria-hidden="true"></i></button>
@@ -1376,7 +1405,7 @@ function renderGuideSummaryPanelHtml(game = {}, viewModel = {}) {
     <section id="guideSummaryActions" class="atlas-panel atlas-panel--section atlas-guide-summary-actions p-5 md:p-6">
       <div>
         <div class="atlas-eyebrow">Plano rápido</div>
-        <h2 class="text-xl md:text-2xl font-extrabold tracking-tight mt-2">${escapeHtml(nextAction.title || 'Comece pelo plano certo')}</h2>
+        <h2 class="text-xl md:text-2xl font-extrabold tracking-tight mt-2">Resumo da platina</h2>
         <p class="text-white/62 mt-2 max-w-3xl">${escapeHtml(nextAction.detail || 'Leia o resumo, abra o roadmap quando precisar da ordem completa e use a checklist para acompanhar progresso.')}</p>
       </div>
       <div class="atlas-guide-summary-actions__buttons">
