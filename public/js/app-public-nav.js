@@ -1,4 +1,37 @@
 window.AppPublicNav = (() => {
+  const organicSeoPages = {
+    '/comece-aqui': {
+      view: 'seo-page',
+      title: 'Comece por aqui | AtlasAchievement',
+      description: 'Aprenda como começar a platinar jogos com guias em português, roadmap, checklist, troféus perdíveis, online obrigatório e recomendações para iniciantes.'
+    },
+    '/platinas-faceis': {
+      view: 'catalog',
+      title: 'Platinas fáceis | AtlasAchievement',
+      description: 'Lista de jogos com platinas fáceis em português, com tempo estimado, dificuldade, roadmap e checklist.'
+    },
+    '/platinas-curtas': {
+      view: 'catalog',
+      title: 'Platinas curtas | AtlasAchievement',
+      description: 'Encontre jogos curtos para platinar, com guias em português, tempo estimado, dificuldade e checklist.'
+    },
+    '/platinas-sem-online': {
+      view: 'catalog',
+      title: 'Platinas sem online | AtlasAchievement',
+      description: 'Veja jogos para platinar sem online obrigatório, com roadmap, checklist e informações de troféus em português.'
+    },
+    '/platinas-sem-perdiveis': {
+      view: 'catalog',
+      title: 'Platinas sem troféus perdíveis | AtlasAchievement',
+      description: 'Lista de jogos sem troféus perdíveis para platinar com menos risco, usando guias em português.'
+    },
+    '/platinas-para-iniciantes': {
+      view: 'catalog',
+      title: 'Platinas para iniciantes | AtlasAchievement',
+      description: 'Jogos recomendados para quem está começando a platinar, com guias em português, roadmap, checklist e dicas para evitar erros.'
+    }
+  };
+
   function ensureMeta(selector, attr, value) {
     let el = document.head.querySelector(selector);
     if (!el) {
@@ -62,6 +95,17 @@ window.AppPublicNav = (() => {
       title: 'Perfil - AtlasAchievement',
       description: 'Veja e edite seu perfil público no AtlasAchievement sem expor dados sensíveis no HTML inicial.',
       path: '/perfil'
+    });
+  }
+
+  function setOrganicSeoMeta(pathname = '/') {
+    const page = organicSeoPages[pathname];
+    if (!page) return;
+    setStaticViewMeta({
+      title: page.title,
+      description: page.description,
+      path: pathname,
+      robots: 'index,follow'
     });
   }
 
@@ -131,8 +175,15 @@ window.AppPublicNav = (() => {
     };
   }
 
-  async function handlePublicPath({ pathname, state, navigate, loadGuideBySlug, loadCatalogPage, loadGames, syncCatalogRoute, syncGuideQuickDock }) {
+  async function handlePublicPath({ pathname, UI, state, navigate, loadGuideBySlug, loadCatalogPage, loadGames, syncCatalogRoute, syncGuideQuickDock }) {
     syncGuideQuickDock();
+
+    if (organicSeoPages[pathname]) {
+      UI?.showView?.(organicSeoPages[pathname].view);
+      state.activeView = organicSeoPages[pathname].view;
+      setOrganicSeoMeta(pathname);
+      return;
+    }
 
     if (pathname.startsWith('/jogo/')) {
       const slug = decodeURIComponent(pathname.split('/jogo/')[1] || '');

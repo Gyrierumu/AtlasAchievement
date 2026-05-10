@@ -45,6 +45,14 @@ html {
   margin-bottom: 4px;
 }
 
+.atlas-catalog-hero-copy {
+  max-width: 760px;
+  margin-top: 10px;
+  color: rgba(226, 232, 240, .64);
+  font-size: 1rem;
+  line-height: 1.55;
+}
+
 .atlas-catalog-eyebrow {
   margin-top: 6px !important;
 }
@@ -57,6 +65,17 @@ html {
 .atlas-catalog-shell {
   border-radius: 18px;
   overflow: visible;
+}
+
+#view-catalog.atlas-seo-list .atlas-catalog-controls,
+#view-catalog.atlas-seo-list #catalogSegments,
+#view-catalog.atlas-seo-list #catalogIntentBar,
+#view-catalog.atlas-seo-list #catalogCompareTray {
+  display: none;
+}
+
+#view-catalog.atlas-seo-list .atlas-catalog-shell {
+  padding-top: 18px;
 }
 
 .atlas-catalog-controls {
@@ -566,6 +585,121 @@ html {
   box-shadow: 0 8px 20px rgba(14, 165, 233, .18);
 }
 
+.atlas-seo-list-note,
+.atlas-seo-final-cta,
+.atlas-start-here-hero,
+.atlas-start-here-block,
+.atlas-start-here-cta {
+  border-radius: 18px;
+}
+
+.atlas-seo-list-note {
+  grid-column: 1 / -1;
+  padding: 18px;
+  border: 1px solid rgba(125, 211, 252, .12);
+  background: rgba(14, 165, 233, .045);
+  color: rgba(226, 232, 240, .72);
+}
+
+.atlas-seo-final-cta {
+  margin-top: 8px;
+  padding: 18px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 14px;
+  border: 1px solid rgba(255,255,255,.075);
+  background: rgba(255,255,255,.025);
+}
+
+.atlas-seo-final-cta p {
+  margin: 0;
+  color: rgba(226, 232, 240, .62);
+}
+
+.atlas-start-here-hero {
+  padding: 26px;
+}
+
+.atlas-start-here-hero h1 {
+  margin: 0;
+  max-width: 820px;
+  color: var(--text-primary);
+  font-size: clamp(2.1rem, 5vw, 3.4rem);
+  font-weight: 900;
+  line-height: 1;
+  letter-spacing: 0;
+}
+
+.atlas-start-here-hero p {
+  max-width: 760px;
+  margin-top: 14px;
+  color: rgba(226, 232, 240, .68);
+  font-size: 1.04rem;
+  line-height: 1.6;
+}
+
+.atlas-start-here-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 16px;
+}
+
+.atlas-start-here-block {
+  padding: 20px;
+}
+
+.atlas-start-here-block h2 {
+  margin: 0;
+  color: rgba(248, 251, 255, .92);
+  font-size: 1.2rem;
+  font-weight: 850;
+  line-height: 1.2;
+  letter-spacing: 0;
+}
+
+.atlas-start-here-block p {
+  margin-top: 10px;
+  color: rgba(226, 232, 240, .64);
+  line-height: 1.55;
+}
+
+.atlas-start-here-steps {
+  display: grid;
+  gap: 10px;
+  margin: 14px 0 0;
+  padding: 0;
+  list-style: none;
+}
+
+.atlas-start-here-steps li {
+  display: grid;
+  grid-template-columns: 30px minmax(0, 1fr);
+  gap: 10px;
+  align-items: start;
+  color: rgba(226, 232, 240, .68);
+}
+
+.atlas-start-here-steps span {
+  width: 30px;
+  height: 30px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 999px;
+  background: rgba(14, 165, 233, .12);
+  color: rgba(186, 230, 253, .95);
+  font-weight: 850;
+}
+
+.atlas-start-here-cta {
+  padding: 20px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 14px;
+}
+
 @media (min-width: 1180px) {
   .catalog-card__media {
     height: 180px;
@@ -573,6 +707,16 @@ html {
 }
 
 @media (max-width: 720px) {
+  .atlas-seo-final-cta,
+  .atlas-start-here-cta {
+    align-items: stretch;
+    flex-direction: column;
+  }
+
+  .atlas-start-here-grid {
+    grid-template-columns: minmax(0, 1fr);
+  }
+
   .catalog-card__media {
     height: 150px;
   }

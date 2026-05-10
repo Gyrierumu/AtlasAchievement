@@ -46,7 +46,8 @@ window.AppPublicInit = (() => {
     bindUserAuthEvents();
     bindPublicPopState({
       page,
-      onNavigate: pathname => handlePublicPath({ pathname, state, navigate, loadGuideBySlug, loadCatalogPage, loadGames, syncCatalogRoute, syncGuideQuickDock })
+      UI,
+      onNavigate: pathname => handlePublicPath({ pathname, UI, state, navigate, loadGuideBySlug, loadCatalogPage, loadGames, syncCatalogRoute, syncGuideQuickDock })
     });
     bindGlobalSearch({ UI, state, debouncedSearchGames, openBestSearchResult, syncSuggestionHighlight });
     bindGuideInteractions({ UI, state, toggleTrophy, focusGuideAction, handleGuideQuickDockClick });
@@ -56,13 +57,14 @@ window.AppPublicInit = (() => {
   }
 
   async function init(context) {
-    const { page, bindCommonUi, syncSession, syncUserSession, handlePublicPath, state, navigate, loadGuideBySlug, loadCatalogPage, loadGames, syncCatalogRoute, syncGuideQuickDock } = context;
+    const { page, UI, bindCommonUi, syncSession, syncUserSession, handlePublicPath, state, navigate, loadGuideBySlug, loadCatalogPage, loadGames, syncCatalogRoute, syncGuideQuickDock } = context;
     if (page !== 'public') return false;
     bindCommonUi();
     bindPublicEvents(context);
     await Promise.all([syncSession(), syncUserSession()]);
     await handlePublicPath({
       pathname: window.location.pathname,
+      UI,
       state,
       navigate,
       loadGuideBySlug,

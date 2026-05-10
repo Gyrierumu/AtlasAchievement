@@ -91,6 +91,89 @@ const editorialCollectionPageMap = {
   }
 };
 
+const organicSeoListPageMap = {
+  '/platinas-faceis': {
+    path: '/platinas-faceis',
+    title: 'Platinas fáceis | AtlasAchievement',
+    description: 'Lista de jogos com platinas fáceis em português, com tempo estimado, dificuldade, roadmap e checklist.',
+    name: 'Platinas fáceis',
+    heroTitle: 'Platinas fáceis',
+    heroDescription: 'Jogos do catálogo com dificuldade baixa informada. A lista só usa dificuldade cadastrada, sem forçar jogos com dado ausente ou incerto.',
+    collectionTitle: 'Critério da lista',
+    collectionDescription: 'Entram jogos com dificuldade de 1 a 3/10 no cadastro atual. Quando a dificuldade não está informada, o jogo fica fora desta seleção.',
+    reason: 'Boa para encontrar uma platina mais acessível antes de abrir o guia completo.',
+    checklist: 'Mesmo em platinas fáceis, confirme tempo, online, perdíveis e roadmap antes de começar.',
+    introTitle: 'Como lemos platina fácil',
+    introBody: 'Aqui “fácil” significa dificuldade baixa cadastrada no guia, não promessa absoluta de platina automática. Use os cards para comparar tempo, dificuldade e riscos antes do clique.',
+    sort: compareOrganicByDifficultyThenTime,
+    matches: game => hasKnownDifficulty(game, 1, 3)
+  },
+  '/platinas-curtas': {
+    path: '/platinas-curtas',
+    title: 'Platinas curtas | AtlasAchievement',
+    description: 'Encontre jogos curtos para platinar, com guias em português, tempo estimado, dificuldade e checklist.',
+    name: 'Platinas curtas',
+    heroTitle: 'Platinas curtas',
+    heroDescription: 'Jogos com tempo estimado curto e confiável no catálogo. A seleção evita jogos cuja faixa máxima passa de 20 horas.',
+    collectionTitle: 'Critério da lista',
+    collectionDescription: 'Entram jogos com tempo máximo estimado até 20 horas. Quando o tempo está ausente, aberto ou acima desse limite, o jogo fica fora.',
+    reason: 'Boa para quem quer um projeto menor, de fim de semana ou entre listas longas.',
+    checklist: 'Platinas curtas ainda podem ter execução difícil ou troféu sensível; abra o guia para validar os detalhes.',
+    introTitle: 'Como lemos platina curta',
+    introBody: 'Esta página usa o tempo estimado estruturado do catálogo e considera a parte alta da faixa. Assim, um jogo de 20 a 30 horas não entra como curto só porque começa em 20.',
+    sort: compareOrganicByTimeThenDifficulty,
+    matches: game => hasReliableMaxTimeAtMost(game, 20)
+  },
+  '/platinas-sem-online': {
+    path: '/platinas-sem-online',
+    title: 'Platinas sem online | AtlasAchievement',
+    description: 'Veja jogos para platinar sem online obrigatório, com roadmap, checklist e informações de troféus em português.',
+    name: 'Platinas sem online',
+    heroTitle: 'Platinas sem online',
+    heroDescription: 'Jogos com informação explícita de que a platina não exige online obrigatório. Guias com texto incerto ficam fora por segurança.',
+    collectionTitle: 'Critério da lista',
+    collectionDescription: 'Entram apenas jogos cujo resumo editorial indica ausência de online obrigatório e não contém sinal de validação pendente sobre esse requisito.',
+    reason: 'Boa para evitar dependência de servidor, PS+, multiplayer online ou troféus online obrigatórios.',
+    checklist: 'Sem online não significa necessariamente solo: confira coop local, segundo jogador e outros requisitos no guia.',
+    introTitle: 'Sem online, com cautela editorial',
+    introBody: 'A lista é conservadora. Se o guia não diz claramente que não há online obrigatório, ou se o texto ainda pede validação, o jogo não entra nesta página.',
+    sort: compareOrganicByDifficultyThenTime,
+    matches: game => hasExplicitNoOnline(game)
+  },
+  '/platinas-sem-perdiveis': {
+    path: '/platinas-sem-perdiveis',
+    title: 'Platinas sem troféus perdíveis | AtlasAchievement',
+    description: 'Lista de jogos sem troféus perdíveis para platinar com menos risco, usando guias em português.',
+    name: 'Platinas sem troféus perdíveis',
+    heroTitle: 'Platinas sem troféus perdíveis',
+    heroDescription: 'Jogos com indicação explícita de ausência de troféus perdíveis definitivos. Seleção feita de forma conservadora.',
+    collectionTitle: 'Critério da lista',
+    collectionDescription: 'Entram jogos com zero troféus marcados como perdíveis e texto editorial claro indicando que não há perdíveis definitivos.',
+    reason: 'Boa para jogar com menos risco de bloquear a platina por uma decisão ou capítulo antigo.',
+    checklist: 'Mesmo sem perdíveis, ainda pode haver cleanup, coletáveis, grind ou troféus situacionais que merecem checklist.',
+    introTitle: 'Sem perdíveis não é sem atenção',
+    introBody: 'Esta lista não inventa segurança. Ela depende de marcação e texto existentes no guia, e deixa de fora jogos com confirmação incompleta ou ambígua.',
+    sort: compareOrganicByDifficultyThenTime,
+    matches: game => hasExplicitNoMissables(game)
+  },
+  '/platinas-para-iniciantes': {
+    path: '/platinas-para-iniciantes',
+    title: 'Platinas para iniciantes | AtlasAchievement',
+    description: 'Jogos recomendados para quem está começando a platinar, com guias em português, roadmap, checklist e dicas para evitar erros.',
+    name: 'Platinas para iniciantes',
+    heroTitle: 'Platinas para iniciantes',
+    heroDescription: 'Jogos mais amigáveis para quem está começando: dificuldade baixa, tempo controlado, sem online obrigatório explícito e roadmap claro.',
+    collectionTitle: 'Critério da lista',
+    collectionDescription: 'A seleção cruza dificuldade baixa, tempo até 30 horas, ausência explícita de online obrigatório, baixo risco de perdíveis e roadmap com etapas suficientes.',
+    reason: 'Boa para criar hábito de usar roadmap e checklist sem começar por uma lista longa ou punitiva demais.',
+    checklist: 'Leia o começo do guia antes de jogar, especialmente avisos sobre capítulo, coletáveis, coop e saves.',
+    introTitle: 'Como escolhemos boas primeiras platinas',
+    introBody: 'Para iniciantes, a melhor escolha não é só a mais fácil: é a que combina tempo viável, rota clara e baixo risco de erro irreversível.',
+    sort: compareOrganicBeginner,
+    matches: game => isBeginnerFriendlyGame(game)
+  }
+};
+
 function escapeHtml(value = '') {
   return String(value)
     .replace(/&/g, '&amp;')
@@ -609,6 +692,102 @@ async function listAllHomeGames() {
   } while (page <= totalPages);
 
   return items;
+}
+
+function normalizeSeoSignalText(value = '') {
+  return String(value || '')
+    .toLowerCase()
+    .normalize('NFD')
+    .replace(/[\u0300-\u036f]/g, '');
+}
+
+function getSeoGameText(game = {}, keys = []) {
+  return normalizeSeoSignalText(keys.map(key => game?.[key]).filter(Boolean).join(' '));
+}
+
+function hasUncertainEditorialText(text = '') {
+  return /precisa validar|revisao final|revisao editorial|dados atuais|ate o momento|confirmados?|sujeit[ao] a revisao|validacao pendente|sem nova validacao/.test(text);
+}
+
+function hasKnownDifficulty(game = {}, min = 1, max = 10) {
+  const difficulty = Number(game?.difficulty || 0);
+  return Number.isFinite(difficulty) && difficulty >= min && difficulty <= max;
+}
+
+function getReliableMaxTime(game = {}) {
+  const maxHours = Number(game?.time_max_hours);
+  if (Number.isFinite(maxHours) && maxHours > 0) return maxHours;
+  const minHours = Number(game?.time_min_hours);
+  const sortHours = Number(game?.time_sort_hours);
+  const timeText = String(game?.time || '');
+  if (Number.isFinite(minHours) && minHours > 0 && minHours === sortHours && !/[+–-]/.test(timeText)) return minHours;
+  return null;
+}
+
+function hasReliableMaxTimeAtMost(game = {}, max = 20) {
+  const maxHours = getReliableMaxTime(game);
+  return Number.isFinite(maxHours) && maxHours <= max;
+}
+
+function hasExplicitNoOnline(game = {}) {
+  const text = getSeoGameText(game, ['online_summary', 'guide_online', 'online']);
+  if (!text || hasUncertainEditorialText(text)) return false;
+  const explicitNoOnline = /sem online(?: obrigatorio)?|sem trofeus online|nao ha (?:trofeus )?(?:exigencia )?online|nao exige online|nao ha requisito online|nao ha multiplayer obrigatorio|nao ha trofeus exclusivamente online/.test(text);
+  if (!explicitNoOnline) return false;
+  return !(/(?<!nao )exige online/.test(text)
+    || /(trofeus online confirmados|exige ps\+|servidor obrigatorio|online\/multiplayer|pvp obrigatorio|daily challenge|depende de conexao|depende de rede)/.test(text));
+}
+
+function hasExplicitNoMissables(game = {}) {
+  const text = getSeoGameText(game, ['missable_summary', 'missable']);
+  if (!text || hasUncertainEditorialText(text)) return false;
+  if (Number(game?.missable_count || 0) > 0) return false;
+  return /sem (?:trofeus )?perdiveis|nao ha (?:trofeus )?perdiveis|0 perdiveis definitivos|sem perdivel permanente|sem perda permanente|nao ha perda permanente|nada e perdivel|nenhum trofeu .*perdivel/.test(text);
+}
+
+function hasCoopRequiredForSeo(game = {}) {
+  const text = getSeoGameText(game, ['online_summary', 'guide_online', 'online', 'before_you_start']);
+  return /exige 2 jogadores|2 jogadores do inicio ao fim|dois jogadores|nao e solo|nao pode ser platinado solo|coop obrigatorio|co-op obrigatorio|segundo jogador|dupla/.test(text);
+}
+
+function isBeginnerFriendlyGame(game = {}) {
+  return hasKnownDifficulty(game, 1, 3)
+    && hasReliableMaxTimeAtMost(game, 30)
+    && hasExplicitNoOnline(game)
+    && !hasCoopRequiredForSeo(game)
+    && Number(game?.missable_count || 0) <= 1
+    && Number(game?.roadmap_count || 0) >= 5;
+}
+
+function getOrganicSortTime(game = {}) {
+  const maxHours = getReliableMaxTime(game);
+  if (Number.isFinite(maxHours)) return maxHours;
+  const sortHours = Number(game?.time_sort_hours);
+  return Number.isFinite(sortHours) && sortHours > 0 ? sortHours : Number.MAX_SAFE_INTEGER;
+}
+
+function getOrganicVerifiedScore(game = {}) {
+  if (game?.is_verified || game?.verification_status === 'verified') return 0;
+  if (game?.verification_status === 'review' || game?.editorial_status === 'review' || game?.coverage_level === 'strong') return 1;
+  return 2;
+}
+
+function compareOrganicByDifficultyThenTime(a = {}, b = {}) {
+  return (Number(a?.difficulty || 99) - Number(b?.difficulty || 99))
+    || (getOrganicSortTime(a) - getOrganicSortTime(b))
+    || String(a?.name || '').localeCompare(String(b?.name || ''), 'pt-BR');
+}
+
+function compareOrganicByTimeThenDifficulty(a = {}, b = {}) {
+  return (getOrganicSortTime(a) - getOrganicSortTime(b))
+    || (Number(a?.difficulty || 99) - Number(b?.difficulty || 99))
+    || String(a?.name || '').localeCompare(String(b?.name || ''), 'pt-BR');
+}
+
+function compareOrganicBeginner(a = {}, b = {}) {
+  return (getOrganicVerifiedScore(a) - getOrganicVerifiedScore(b))
+    || (Number(a?.missable_count || 0) - Number(b?.missable_count || 0))
+    || compareOrganicByDifficultyThenTime(a, b);
 }
 
 
@@ -1270,6 +1449,9 @@ function applyTemplateDefaults(template) {
     .replace(/__CATALOG_VERIFICATION_NOTICE__/g, '')
     .replace(/__CATALOG_SSR_LIST__/g, '')
     .replace(/__CATALOG_SSR_PAGINATION__/g, '')
+    .replace(/__CATALOG_FINAL_CTA__/g, '')
+    .replace(/__SEO_VIEW_CLASS__/g, 'hidden')
+    .replace(/__SEO_PAGE_CONTENT__/g, '')
     .replace(/__HOME_CATALOG_PROOF__/g, formatHomeCatalogProof(0, 0, 0))
     .replace(/__HOME_INTENT_CARDS__/g, '')
     .replace(/__HOME_FEATURED_NOW__/g, '')
@@ -1443,6 +1625,162 @@ async function buildStaticPublicPageHtml(req, pageConfig = {}) {
   }
 
   return html;
+}
+
+function buildStartHereStructuredData(origin, canonicalUrl) {
+  return {
+    '@context': 'https://schema.org',
+    '@graph': [{
+      '@type': 'WebPage',
+      name: 'Comece sua jornada nas platinas',
+      url: canonicalUrl,
+      description: 'Aprenda como começar a platinar jogos com guias em português, roadmap, checklist, troféus perdíveis, online obrigatório e recomendações para iniciantes.'
+    }, {
+      '@type': 'FAQPage',
+      mainEntity: [
+        { '@type': 'Question', name: 'O que é platina?', acceptedAnswer: { '@type': 'Answer', text: 'Platina é o troféu de conclusão que normalmente aparece quando todos os troféus principais de um jogo no PlayStation foram conquistados.' } },
+        { '@type': 'Question', name: 'O que é roadmap?', acceptedAnswer: { '@type': 'Answer', text: 'Roadmap é a ordem recomendada para jogar, limpar objetivos e evitar retrabalho durante a busca pela platina.' } },
+        { '@type': 'Question', name: 'O que é troféu perdível?', acceptedAnswer: { '@type': 'Answer', text: 'É um troféu que pode ficar indisponível se você avançar uma história, perder uma janela ou tomar uma decisão sem planejamento.' } }
+      ]
+    }, {
+      '@type': 'BreadcrumbList',
+      itemListElement: [
+        { '@type': 'ListItem', position: 1, name: 'Início', item: `${origin}/` },
+        { '@type': 'ListItem', position: 2, name: 'Comece por aqui', item: canonicalUrl }
+      ]
+    }]
+  };
+}
+
+function renderStartHerePageContent() {
+  const blocks = [
+    ['O que é platina', 'No PlayStation, a platina costuma ser o troféu final de uma lista principal. Ela indica que você concluiu todos os troféus exigidos daquela lista base.'],
+    ['Como escolher sua primeira platina', 'Prefira um jogo que você realmente queira jogar, com dificuldade baixa, tempo estimado claro, pouco risco de perdíveis e um roadmap fácil de seguir.'],
+    ['O que é roadmap', 'Roadmap é a rota sugerida do guia: o que fazer primeiro, quando limpar coletáveis, quando cuidar de troféus sensíveis e quando partir para o cleanup.'],
+    ['O que é checklist', 'Checklist é a lista marcável de troféus. No AtlasAchievement, ele ajuda a acompanhar o que já foi feito e o que ainda falta no guia.'],
+    ['O que são troféus perdíveis', 'Perdíveis são troféus que podem exigir nova run, reload ou capítulo específico se você avançar sem cumprir uma condição. Sempre leia esses avisos antes de começar.'],
+    ['O que é troféu online', 'Troféu online depende de servidor, multiplayer, PSN, PS+ ou interação conectada. Quando for obrigatório, ele muda a logística da platina.'],
+    ['O que é coop obrigatório', 'Coop obrigatório significa que a platina precisa de outro jogador em algum momento. Pode ser local ou online, conforme o guia indicar.'],
+    ['O que é DLC', 'DLC é conteúdo extra. Alguns jogos têm listas separadas, mas a platina normalmente depende da lista base; confira o escopo do guia antes de assumir.']
+  ];
+
+  return `
+    <section class="atlas-panel atlas-panel--primary atlas-start-here-hero">
+      ${buildBreadcrumbsHtml([{ label: 'Início', href: '/' }, { label: 'Comece por aqui' }])}
+      <div class="atlas-eyebrow mt-4">Guia inicial</div>
+      <h1>Comece sua jornada nas platinas</h1>
+      <p>Entenda os termos mais importantes antes de escolher a primeira platina e use os guias do AtlasAchievement para comparar tempo, dificuldade, roadmap, checklist, online e perdíveis.</p>
+    </section>
+    <section class="atlas-start-here-grid" aria-label="Conceitos para começar a platinar">
+      ${blocks.map(([title, body]) => `
+        <article class="atlas-panel atlas-panel--support atlas-start-here-block">
+          <h2>${escapeHtml(title)}</h2>
+          <p>${escapeHtml(body)}</p>
+        </article>`).join('')}
+    </section>
+    <section class="atlas-panel atlas-panel--support atlas-start-here-block">
+      <h2>Como usar um guia do AtlasAchievement</h2>
+      <ol class="atlas-start-here-steps">
+        <li><span>1</span><p>Abra o resumo do jogo e compare dificuldade, tempo estimado, online, coop, DLC e perdíveis.</p></li>
+        <li><span>2</span><p>Leia o roadmap antes de jogar para entender a ordem ideal e os pontos de atenção.</p></li>
+        <li><span>3</span><p>Use o checklist para marcar troféus concluídos e evitar perder o controle do cleanup.</p></li>
+        <li><span>4</span><p>Quando houver alerta de perdível ou online, confirme o detalhe no guia antes de avançar.</p></li>
+      </ol>
+    </section>
+    <section class="atlas-panel atlas-panel--flat atlas-start-here-cta">
+      <div>
+        <span class="atlas-section-kicker">Próximo passo</span>
+        <p class="text-white/65 mt-2">Explore o catálogo completo e escolha um guia que combine com seu tempo e experiência.</p>
+      </div>
+      <a href="/catalogo" class="atlas-btn atlas-btn-primary"><i class="fas fa-compass"></i> Ver catálogo</a>
+    </section>`;
+}
+
+async function buildStartHerePageHtml(req) {
+  const origin = getPublicOrigin(req);
+  const canonicalUrl = buildPublicUrl(req, '/comece-aqui');
+  return applyTemplateDefaults(publicIndexTemplate
+    .replace(/__PAGE_TITLE__/g, 'Comece por aqui | AtlasAchievement')
+    .replace(/__PAGE_DESCRIPTION__/g, 'Aprenda como começar a platinar jogos com guias em português, roadmap, checklist, troféus perdíveis, online obrigatório e recomendações para iniciantes.')
+    .replace(/__ROBOTS_META__/g, '')
+    .replace(/__PAGE_OG_TYPE__/g, 'website')
+    .replace(/__PAGE_CANONICAL__/g, escapeHtml(canonicalUrl))
+    .replace(/__PAGE_OG_IMAGE__/g, `${origin}/og-default.svg`)
+    .replace(/__PAGE_JSON_LD__/g, safeJsonForHtml(buildStartHereStructuredData(origin, canonicalUrl)))
+    .replace(/__HOME_VIEW_CLASS__/g, 'hidden')
+    .replace(/__HOME_HERO_HEADING_TAG__/g, 'h2')
+    .replace(/__SEO_VIEW_CLASS__/g, '')
+    .replace(/__SEO_PAGE_CONTENT__/g, renderStartHerePageContent())
+    .replace(/__INITIAL_STATE_SCRIPT__/g, buildInitialStateScript({ page: 'seo', path: '/comece-aqui' })));
+}
+
+function renderOrganicListNotice(items = []) {
+  if (items.length >= 6) return '';
+  return '<div class="atlas-seo-list-note"><strong>Ainda estamos expandindo esta lista.</strong> Veja também o catálogo completo.</div>';
+}
+
+function renderOrganicListFinalCta() {
+  return `
+    <section class="atlas-seo-final-cta">
+      <p>Quer comparar com todos os jogos publicados, incluindo listas longas, online, coop e guias em revisão?</p>
+      <a href="/catalogo" class="atlas-btn atlas-btn-primary"><i class="fas fa-compass"></i> Ver catálogo completo</a>
+    </section>`;
+}
+
+async function buildOrganicListPageHtml(req, config) {
+  const origin = getPublicOrigin(req);
+  const canonicalUrl = buildPublicUrl(req, config.path);
+  const allItems = await listAllHomeGames();
+  const items = allItems
+    .filter(game => game?.slug && config.matches(game))
+    .sort(config.sort || compareOrganicByDifficultyThenTime);
+  const structuredData = buildCatalogStructuredData(origin, canonicalUrl, {
+    name: config.name,
+    description: config.description
+  }, items, items.length);
+
+  return applyTemplateDefaults(publicIndexTemplate
+    .replace(/__PAGE_TITLE__/g, escapeHtml(config.title))
+    .replace(/__PAGE_DESCRIPTION__/g, escapeHtml(config.description))
+    .replace(/__ROBOTS_META__/g, '')
+    .replace(/__PAGE_OG_TYPE__/g, 'website')
+    .replace(/__PAGE_CANONICAL__/g, escapeHtml(canonicalUrl))
+    .replace(/__PAGE_OG_IMAGE__/g, `${origin}/og-default.svg`)
+    .replace(/__PAGE_JSON_LD__/g, safeJsonForHtml(structuredData))
+    .replace(/__HOME_VIEW_CLASS__/g, 'hidden')
+    .replace(/__HOME_HERO_HEADING_TAG__/g, 'h2')
+    .replace(/__CATALOG_VIEW_CLASS__/g, 'atlas-seo-list')
+    .replace(/__CATALOG_HEADING_TAG__/g, 'h1')
+    .replace(/__CATALOG_TITLE__/g, escapeHtml(config.heroTitle))
+    .replace(/__CATALOG_BREADCRUMBS__/g, buildBreadcrumbsHtml([{ label: 'Início', href: '/' }, { label: config.name }]))
+    .replace(/__CATALOG_SUMMARY__/g, escapeHtml(`${formatCatalogCount(items.length)} nesta lista`))
+    .replace(/__CATALOG_HERO_DESCRIPTION__/g, escapeHtml(config.heroDescription))
+    .replace(/__CATALOG_COLLECTION_TITLE__/g, escapeHtml(config.collectionTitle))
+    .replace(/__CATALOG_COLLECTION_DESCRIPTION__/g, escapeHtml(config.collectionDescription))
+    .replace(/__CATALOG_COLLECTION_REASON__/g, escapeHtml(config.reason))
+    .replace(/__CATALOG_COLLECTION_CHECKLIST__/g, escapeHtml(config.checklist))
+    .replace(/__CATALOG_SEO_INTRO_TITLE__/g, escapeHtml(config.introTitle))
+    .replace(/__CATALOG_SEO_INTRO_BODY__/g, escapeHtml(config.introBody))
+    .replace(/__CATALOG_RELATED_LINKS__/g, [
+      ['Comece por aqui', '/comece-aqui'],
+      ['Catálogo completo', '/catalogo'],
+      ['Platinas fáceis', '/platinas-faceis'],
+      ['Platinas curtas', '/platinas-curtas'],
+      ['Sem online', '/platinas-sem-online'],
+      ['Sem perdíveis', '/platinas-sem-perdiveis']
+    ]
+      .filter(([, pathName]) => pathName !== config.path)
+      .map(([label, pathName]) => `<a href="${escapeHtml(pathName)}" class="atlas-related-pill"><span>${escapeHtml(label)}</span><small>SEO</small></a>`)
+      .join(''))
+    .replace(/__CATALOG_VERIFICATION_NOTICE__/g, renderCatalogVerificationNotice(items))
+    .replace(/__CATALOG_SSR_LIST__/g, `${renderOrganicListNotice(items)}${renderCatalogSeoCards(items)}`)
+    .replace(/__CATALOG_SSR_PAGINATION__/g, renderCatalogPaginationHtml({ total: items.length, totalPages: 1, page: 1 }))
+    .replace(/__CATALOG_FINAL_CTA__/g, renderOrganicListFinalCta())
+    .replace(/__INITIAL_STATE_SCRIPT__/g, buildInitialStateScript({
+      page: 'seo-list',
+      path: config.path,
+      catalog: { pagination: { total: items.length, totalPages: 1, page: 1 } }
+    })));
 }
 
 function getCatalogFacetCount(facetConfigOrId, facetCounts = {}) {
@@ -1926,12 +2264,17 @@ app.get('/sitemap.xml', async (req, res, next) => {
       }));
     const editorialUrls = Object.values(editorialCollectionPageMap)
       .map(item => ({ loc: buildPublicUrl(req, item.path), lastmod: new Date().toISOString() }));
+    const organicSeoUrls = [
+      '/comece-aqui',
+      ...Object.values(organicSeoListPageMap).map(item => item.path)
+    ].map(pathName => ({ loc: buildPublicUrl(req, pathName), lastmod: new Date().toISOString() }));
 
     const urls = [
       { loc: buildPublicUrl(req, '/'), lastmod: new Date().toISOString() },
       { loc: buildPublicUrl(req, '/catalogo'), lastmod: new Date().toISOString() },
       ...facetUrls,
       ...editorialUrls,
+      ...organicSeoUrls,
       ...allGames.map(game => ({
         loc: buildPublicUrl(req, `/jogo/${game.slug}`),
         lastmod: game.updated_at || game.created_at || new Date().toISOString()
@@ -1953,6 +2296,24 @@ app.use('/api/feedback', requireCsrf, feedbackRoutes);
 app.use('/api/me', requireCsrf, meRoutes);
 app.use('/api/uploads', requireCsrf, uploadsRoutes);
 app.use('/api/games', requireCsrf, gamesRoutes);
+
+app.get('/comece-aqui', async (req, res, next) => {
+  try {
+    res.send(await buildStartHerePageHtml(req));
+  } catch (error) {
+    next(error);
+  }
+});
+
+Object.values(organicSeoListPageMap).forEach(config => {
+  app.get(config.path, async (req, res, next) => {
+    try {
+      res.send(await buildOrganicListPageHtml(req, config));
+    } catch (error) {
+      next(error);
+    }
+  });
+});
 
 app.get('/catalogo', async (req, res, next) => {
   try {
