@@ -52,7 +52,7 @@
   const GUIDE_TROPHY_TAG_PRIORITY = ['missable', 'online', 'coop', 'difficulty', 'grind', 'collectible', 'spoiler', 'cleanup', 'story', 'run'];
 
   function getGuideTrophySignalText(trophy = {}) {
-    return `${trophy?.name || ''} ${trophy?.name_pt || ''} ${trophy?.description || ''} ${trophy?.tip || ''}`;
+    return `${trophy?.trophyNameOriginal || trophy?.name || ''} ${trophy?.trophyNamePtBr || trophy?.name_pt || ''} ${trophy?.description || ''} ${trophy?.tip || ''}`;
   }
 
   function getGuideTrophyGameSignalText(game = {}) {
@@ -170,11 +170,11 @@
       tags.push({ id: 'story', label: 'História', tone: 'partial' });
       ids.add('story');
     }
-    if (!ids.has('difficulty') && /dificuldade|difficulty|hard|boss stem cell|stem cells|bsc|sem dano|no damage|flawless|professional|challenge rift|cursed sword|equipamento inicial|starter sword|sem usar|without/.test(normalized)) {
+    if (!ids.has('difficulty') && /dificuldade|difficulty|hard|boss stem cell|stem cells|bsc|sem dano|no damage|flawless|professional|challenge rift|cursed sword|equipamento inicial|starter sword|sem usar|without|valquir|valkyr/.test(normalized)) {
       tags.push({ id: 'difficulty', label: 'Dificuldade', tone: 'warning' });
       ids.add('difficulty');
     }
-    if (!ids.has('grind') && /grind|farm|rng|rank|hunter rank|boss stem cell|stem cells|bsc|level|nivel|xp|coroa|coroas|crown|crowns|100 quests|100 elites|500|50 tempered|50 elder|100,000|1,000,000|blueprints?/.test(normalized)) {
+    if (!ids.has('grind') && /grind|farm|rng|\brank\b|hunter rank|boss stem cell|stem cells|bsc|\blevel\b|\bnivel\b|\bxp\b|coroa|coroas|crown|crowns|100 quests|100 elites|500|50 tempered|50 elder|100,000|1,000,000|blueprints?/.test(normalized)) {
       tags.push({ id: 'grind', label: 'Grind', tone: 'warning' });
     }
     return sortGuideTrophyTags(tags);
@@ -193,6 +193,8 @@
     return normalizeGuideSignalText([
       trophy?.name,
       trophy?.name_pt,
+      trophy?.trophyNameOriginal,
+      trophy?.trophyNamePtBr,
       trophy?.description,
       trophy?.tip,
       trophy?.type,
@@ -1131,18 +1133,22 @@
     if (/coop|co-op|2 jogadores|dois jogadores|dupla|segundo jogador|cody|may/.test(normalized) && !/sos|guild card/.test(normalized)) return index === 0 ? 'Comece a campanha em coop' : 'Coordene a etapa com a dupla';
     if (/prisao|fazenda|parque de trailers|galpao|hospital|the dip|in sync|all the ways out|piano|banjo|baseball|fliperama|moto|helicoptero|balanco|cata-vento/.test(normalized)) return 'Revise eventos opcionais por capítulo';
 
+    if (/lake of nine|veithurgard|drag|wayward spirits|brok|sindri/.test(normalized)) return 'Limpe regiões e favores';
+    if (/checklist/.test(normalized) && /odin|ravens|corvo|corvos|colet|artefatos|shrines|nornir/.test(normalized)) return 'Marque coletáveis no checklist';
+    if (/valquir|valkyrie queen|valkyries/.test(normalized)) return 'Feche valquírias no pós-game';
+    if (/muspelheim|niflheim|mist echoes|trials/.test(normalized) && /build|equip|upgrade|fortaleca|fortaleça|recursos/.test(normalized)) return 'Prepare Muspelheim e Niflheim';
     if (/limpeza final/.test(normalized)) return 'Feche cleanup e pendências finais';
     if (/comece pela campanha|campanha principal/.test(normalized)) return 'Avance campanha e capture cedo';
     if (/primeiras runs|rune|runes|blueprint|collector/.test(normalized)) return 'Aprenda runs e libere runas';
     if (/historia/.test(normalized) && /new game\+|ng\+/.test(normalized)) return 'Termine história antes do NG+';
     if (/prologo/.test(normalized) && /old key|mime|lumiere|maelle/.test(normalized)) return 'Garanta prólogo, Old Key e Mime';
     if (/maelle|relac/.test(normalized)) return 'Trave relações e Maelle';
-    if (/new game\+|ng\+|coletaveis|relacoes/.test(normalized)) return 'Limpe pendências antes do NG+';
+    if (/new game\+|ng\+|relacoes/.test(normalized)) return 'Limpe pendências antes do NG+';
     if (/boss stem cell|stem cells|bsc/.test(normalized)) return 'Progrida Boss Stem Cells';
     if (/hand of the king|throne room/.test(normalized)) return 'Derrote Hand of the King';
     if (/hunter rank|rank 100|temperad|elder dragon/.test(normalized)) return 'Entre no endgame e HR 100';
-    if (/sos|guild card/.test(normalized)) return 'Resolva online e Guild Cards cedo';
-    if (/online|multiplayer/.test(normalized)) return 'Resolva requisitos online cedo';
+    if (/\bsos\b|guild card/.test(normalized)) return 'Resolva online e Guild Cards cedo';
+    if (!/nao exige online|nao ha exigencia online|sem online/.test(normalized) && /online|multiplayer/.test(normalized)) return 'Resolva requisitos online cedo';
     if (/coop|co-op/.test(normalized)) return 'Coordene a etapa em coop';
     if (/vida endemica|petricanths|crake|hercudrome/.test(normalized)) return 'Capture vida endêmica rara';
     if (/journals|journal|discos|lost gestral|nevron|paint cages/.test(normalized)) return 'Complete coletáveis antes do endgame';
@@ -1153,13 +1159,13 @@
     if (/coroa|coroas|crown|crowns/.test(normalized)) return 'Farme coroas miniatura e gigantes';
     if (/vida endemica|petricanths|crake|hercudrome/.test(normalized)) return 'Capture vida endêmica rara';
     if (/hunter rank|rank 100|temperad|elder dragon/.test(normalized)) return 'Entre no endgame e HR 100';
-    if (/sos|guild card/.test(normalized)) return 'Resolva online e Guild Cards cedo';
-    if (/online|multiplayer/.test(normalized)) return 'Resolva requisitos online cedo';
+    if (/\bsos\b|guild card/.test(normalized)) return 'Resolva online e Guild Cards cedo';
+    if (!/nao exige online|nao ha exigencia online|sem online/.test(normalized) && /online|multiplayer/.test(normalized)) return 'Resolva requisitos online cedo';
     if (/coop|co-op/.test(normalized)) return 'Coordene a etapa em coop';
     if (/journals|journal|discos|lost gestral|nevron|paint cages/.test(normalized)) return 'Complete coletáveis antes do endgame';
     if (/chefes sem dano|sem dano|flawless|boss|chefe/.test(normalized)) return 'Treine chefes sem dano';
     if (/desafio|challenge|cursed sword|equipamento inicial/.test(normalized)) return 'Resolva desafios opcionais';
-    if (/farm|grind|rng|rank|xp|nivel|level/.test(normalized)) return 'Planeje o grind principal';
+    if (/farm|grind|rng|\brank\b|\bxp\b|\bnivel\b|\blevel\b/.test(normalized)) return 'Planeje o grind principal';
     if (/run|campanha|historia|new game|ng\+?/.test(normalized)) return index === 0 ? 'Avance a campanha principal' : 'Planeje a próxima run';
     if (/final|platina|100%|cem por cento/.test(normalized) || index === total - 1) return 'Fechamento e revisão final';
     if (index === 0) return 'Comece pela rota segura';
@@ -1479,7 +1485,7 @@
     const total = trophies.length;
     const missableCount = trophies.filter(trophy => trophy?.is_missable).length;
     const onlineCount = trophies.filter(trophy => /online|multiplayer|coop/i.test(`${trophy?.name || ''} ${trophy?.description || ''} ${trophy?.tip || ''}`)).length;
-    const grindCount = trophies.filter(trophy => /grind|farm|rank|xp|nível|level/i.test(`${trophy?.name || ''} ${trophy?.description || ''} ${trophy?.tip || ''}`)).length;
+    const grindCount = trophies.filter(trophy => /grind|farm|\brank\b|\bxp\b|\bnível\b|\blevel\b/i.test(`${trophy?.name || ''} ${trophy?.description || ''} ${trophy?.tip || ''}`)).length;
     const spoilerCount = trophies.filter(trophy => trophy?.is_spoiler).length;
     const confidence = getGuideConfidenceModel(game, trophies, roadmap, total, missableCount + spoilerCount);
     return {
@@ -1552,9 +1558,10 @@
       openTone = 'atlas-tag--warning';
     }
 
+    const hasMissableRisk = !hasNegatedGuideRequirement(inputs.missableSummary) && hasMissableRiskText(inputs.missableSummary);
     let riskValue = 'Baixo retrabalho aparente';
     if (inputs.missableCount) riskValue = `${inputs.missableCount} perdível(is)`;
-    else if (inputs.missableSummary) riskValue = 'Risco descrito pelo editor';
+    else if (hasMissableRisk) riskValue = 'Risco descrito pelo editor';
     else if (inputs.spoilerCount) riskValue = `${inputs.spoilerCount} spoiler(s) sensível(is)`;
     else if (inputs.difficulty >= 7) riskValue = `Dificuldade ${inputs.difficulty}/10`;
     else if (!inputs.isVerified) riskValue = 'Revisão pendente';
@@ -1695,7 +1702,7 @@
         if (trophy?.is_missable) score += 5;
         if (trophy?.is_spoiler) score += 2;
         if (/online|multiplayer|coop/.test(bag)) score += 4;
-        if (/grind|farm|rank|xp|nível|level/.test(bag)) score += 3;
+        if (/grind|farm|\brank\b|\bxp\b|\bnível\b|\blevel\b/.test(bag)) score += 3;
         if (/colet|colecion|miss|perd|chapter|cap[ií]tulo/.test(bag)) score += 3;
         if (/difficulty|dificuldade|hard|survival/.test(bag)) score += 2;
         return {
@@ -1723,7 +1730,7 @@
     const hasTimeValue = hasKnownTimeValue(timeValue);
     const difficulty = Number(game?.difficulty || 0);
     const onlineCount = trophies.filter(trophy => /online|multiplayer|coop/i.test(`${trophy?.name || ''} ${trophy?.description || ''} ${trophy?.tip || ''}`)).length;
-    const grindCount = trophies.filter(trophy => /grind|farm|rank|xp|nível|level/i.test(`${trophy?.name || ''} ${trophy?.description || ''} ${trophy?.tip || ''}`)).length;
+    const grindCount = trophies.filter(trophy => /grind|farm|\brank\b|\bxp\b|\bnível\b|\blevel\b/i.test(`${trophy?.name || ''} ${trophy?.description || ''} ${trophy?.tip || ''}`)).length;
     const missableCount = trophies.filter(trophy => trophy?.is_missable).length;
 
     let timeBand = 'Tempo não informado';
@@ -1768,7 +1775,7 @@
     const progress = total ? Math.round((completed / total) * 100) : 0;
     const pending = Math.max(total - completed, 0);
     const missableCount = trophies.filter(trophy => trophy && trophy.is_missable).length;
-    const missables = trophies.filter(trophy => trophy && (trophy.is_missable || trophy.is_spoiler)).length;
+    const attentionCount = trophies.filter(trophy => trophy && (trophy.is_missable || trophy.is_spoiler)).length;
     const spoilerCount = trophies.filter(trophy => trophy?.is_spoiler).length;
     const riskCounts = getRiskCounts(trophies);
     const breakdown = getTrophyBreakdown(trophies);
@@ -1779,14 +1786,14 @@
       spoilerCount ? `${spoilerCount} troféu(s) têm spoiler e pedem leitura com cautela.` : 'Os troféus visíveis podem ser revisados sem grandes spoilers.'
     ].filter(Boolean);
     const prepChecklist = [
-      missables ? `Leia com atenção o bloco de perdíveis: há ${missables} alerta(s) que pedem atenção antes de avançar.` : 'Não há alerta forte de perdível marcado neste guia, então você pode seguir com mais liberdade.',
+      missableCount ? `Leia com atenção o bloco de perdíveis: há ${missableCount} alerta(s) que pede(m) atenção antes de avançar.` : 'Não há alerta forte de perdível marcado neste guia; spoilers continuam sinalizados apenas para leitura cuidadosa.',
       total ? `A lista tem ${total} troféu(s), com distribuição ${breakdownText}.` : 'Ainda não há troféus cadastrados para este jogo.',
       roadmap.length ? `O roadmap já está quebrado em ${roadmap.length} etapa(s), útil para sessões curtas.` : 'O guia ainda precisa de um roadmap mais detalhado para orientar melhor a ordem da platina.'
     ];
     const collectionClassifier = typeof options.classifyGameCollections === 'function' ? options.classifyGameCollections : () => ({ collectionLinks: [], badges: [] });
     const imageResolver = typeof options.resolveImage === 'function' ? options.resolveImage : value => value || '/og-default.svg';
     const guideCover = buildGuideCoverModel(game, imageResolver);
-    const editorialSignals = buildEditorialSignals(game, { trophies, roadmap, total, missables });
+    const editorialSignals = buildEditorialSignals(game, { trophies, roadmap, total, missables: missableCount });
     const scopeModel = buildGuideScopeModel(game, { trophies, roadmap, total });
     const viewModel = {
       trophies,
@@ -1796,8 +1803,9 @@
       total,
       progress,
       pending,
-      missables,
+      missables: missableCount,
       missableCount,
+      attentionCount,
       spoilerCount,
       riskCounts,
       breakdown,

@@ -8475,9 +8475,9 @@ const sampleGames = [
     "dlc_scope": "Guia focado na lista base da platina; não há DLC obrigatória para a platina base.",
     "difficulty_reason": "A dificuldade vem mais dos combates opcionais, valquírias e completude do mapa do que de runs múltiplas ou troféus de dificuldade.",
     "time_reason": "A faixa de 30-40 horas considera história, exploração, coletáveis, favores, upgrades, valquírias e cleanup em free-roam.",
-    "first_run_advice": "Jogue a história naturalmente, explore quando quiser e não se preocupe com perdíveis.",
-    "cleanup_advice": "Após a história, use o free-roam para limpar reinos, coletáveis, favores, upgrades, Muspelheim, Niflheim e valquírias.",
-    "before_you_start": "Nada é perdível e não há online obrigatório; aproveite a campanha e deixe coletáveis pesados para o cleanup.",
+    "first_run_advice": "Jogue a história naturalmente e abra baús/coletáveis quando estiverem no caminho, mas não interrompa a campanha para limpar tudo. Nada da lista base é perdível; use o checklist para marcar corvos, Nornir Chests, artefatos, shrines e favores por região conforme explorar.",
+    "cleanup_advice": "Após a história, use o free-roam e o mapa por região para limpar coletáveis, favores, dragões, upgrades, Muspelheim, Niflheim e valquírias. Deixe farm de Mist Echoes, trials finais e Valkyrie Queen para quando Kratos estiver bem equipado.",
+    "before_you_start": "Nada é perdível e não há online obrigatório. A atenção real é organizar coletáveis por região, acompanhar os 51 Odin’s Ravens no checklist e guardar chefes opcionais/reinos de desafio para o pós-game.",
     "best_for": "Ideal para quem quer uma platina narrativa, acessível e com bastante exploração de mundo semiaberto.",
     "avoid_if": "Evite se você não gosta de coletáveis, limpeza de mapa ou chefes opcionais exigentes.",
     "editorial_status": "published",
@@ -8488,12 +8488,12 @@ const sampleGames = [
     "image": "https://cdn.cloudflare.steamstatic.com/steam/apps/1593500/header.jpg",
     "cover_image": "https://cdn.cloudflare.steamstatic.com/steam/apps/1593500/library_600x900.jpg",
     "roadmap": [
-      "Etapa 1: jogue a história naturalmente, aprendendo combate, Atreus, Runic Attacks, equipamentos e exploração sem se preocupar com perdíveis.",
-      "Etapa 2: libere reinos, favores e atividades secundárias conforme a campanha abrir novas rotas, incluindo Brok, Sindri, wayward spirits, dragões e Lake of Nine.",
-      "Etapa 3: limpe coletáveis por região, incluindo artefatos, Odin’s Ravens, Jötnar shrines, Nornir Chests, treasure maps, lore markers e baús importantes.",
-      "Etapa 4: melhore equipamentos, Leviathan Axe, Blades of Chaos, Runic Attacks, armaduras e recursos para preparar Muspelheim, Niflheim e chefes opcionais.",
-      "Etapa 5: enfrente valquírias, Trials of Muspelheim e Workshop de Niflheim quando estiver com build forte; esses são os desafios mais exigentes da platina.",
-      "Etapa 6: faça o cleanup final no free-roam após a história. A lista base não tem troféus perdíveis, não exige online e não pede múltiplas runs."
+      "Etapa 1: avance a história no seu ritmo, aprendendo combate, Atreus, Runic Attacks e upgrades. Não reinicie por medo de perdíveis: a lista base pode ser concluída no free-roam depois da campanha.",
+      "Etapa 2: enquanto a campanha abre novas rotas, resolva favores que aparecerem naturalmente e marque no checklist o que você já pegou: Nornir Chests, artefatos, Jötnar shrines, lore markers, treasure maps e Odin’s Ravens visíveis.",
+      "Etapa 3: depois de liberar bem o Lake of Nine, comece limpezas por região em vez de caçar itens soltos. Priorize Veithurgard, dragões, wayward spirits, favores de Brok/Sindri e áreas que o mapa já mostra quase completas.",
+      "Etapa 4: trate coletáveis longos como checklist, especialmente os 51 Odin’s Ravens. Se um corvo ou baú exigir habilidade/equipamento que ainda não abriu, deixe anotado e volte no cleanup em vez de travar a progressão.",
+      "Etapa 5: fortaleça Kratos antes do endgame: melhore Leviathan Axe, Blades of Chaos, armaduras, Runic Attacks e encantamentos. Entre em Muspelheim e Niflheim quando já tiver build confortável para trials, Mist Echoes e recursos finais.",
+      "Etapa 6: no pós-game/free-roam, feche Muspelheim, Workshop de Niflheim, upgrades restantes e valquírias. A lista base não exige online; deixe a Valkyrie Queen para o fim, pois ela é o maior teste mecânico da platina."
     ],
     "trophies": [
       {

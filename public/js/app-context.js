@@ -168,6 +168,10 @@ window.AppContextFactory = (() => {
     }
 
     function syncSuggestionHighlight() {
+      if (typeof UI.syncSuggestionHighlight === 'function') {
+        UI.syncSuggestionHighlight(state.activeSuggestionIndex, { scroll: true });
+        return;
+      }
       UI.renderSuggestions(state.searchSuggestions, { activeIndex: state.activeSuggestionIndex });
     }
 

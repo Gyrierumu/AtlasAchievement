@@ -807,7 +807,7 @@
 
   .atlas-bg-orb--one {
     width: 240px;
-    height: 240px;
+    height: 270px;
   }
 
   .atlas-bg-orb--two {
@@ -918,7 +918,7 @@
   }
 
   .spoiler-blur {
-    filter: blur(5px);
+    filter: none;
   }
 
   #view-guide .atlas-guide-hero {
@@ -1345,7 +1345,7 @@
     top: 0;
     right: 0;
     width: 68px;
-    height: 92px;
+    height: 102px;
     border-radius: 12px;
     box-shadow: 0 8px 18px rgba(2, 6, 23, .20);
   }
@@ -1768,7 +1768,7 @@
 @media (max-width: 420px) {
   #view-guide .atlas-guide-cover--hero {
     width: 64px;
-    height: 86px;
+    height: 96px;
   }
 
   #view-guide .atlas-guide-hero__kicker,

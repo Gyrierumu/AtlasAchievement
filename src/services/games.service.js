@@ -148,6 +148,8 @@ function normalizeGame(row, roadmapRows, trophyRows) {
       id: item.trophy_code,
       name: item.name,
       name_pt: item.name_pt || '',
+      trophyNameOriginal: item.name,
+      trophyNamePtBr: item.name_pt || '',
       type: item.type,
       description: item.description,
       tip: item.tip,

@@ -9,8 +9,8 @@
   box-shadow: inset 0 0 0 1px rgba(34, 197, 94, .14);
 }
 .spoiler-blur {
-  filter: blur(7px);
-  user-select: none;
+  filter: none;
+  user-select: text;
 }
 .spoiler-hint {
   display: inline-flex;
@@ -275,6 +275,10 @@
 }
 
 .atlas-trophy-card__title-translation {
+  display: flex;
+  align-items: center;
+  gap: 7px;
+  flex-wrap: wrap;
   margin-top: 3px;
   color: rgba(255,255,255,.62);
   font-size: .84rem;
@@ -668,9 +672,20 @@
 }
 
 .atlas-checklist-list[data-checklist-density="compact"] .atlas-trophy-card__title-translation {
+  display: flex;
+  align-items: center;
+  gap: 6px;
   margin-top: 1px;
   font-size: .76rem;
   line-height: 1.18;
+}
+
+.atlas-trophy-card__title-translation span {
+  color: rgba(125, 211, 252, .78);
+  font-size: .64rem;
+  font-weight: 850;
+  letter-spacing: .08em;
+  text-transform: uppercase;
 }
 
 .atlas-checklist-list[data-checklist-density="compact"] .atlas-trophy-type,

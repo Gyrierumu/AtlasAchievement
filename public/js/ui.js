@@ -70,6 +70,7 @@ window.UI = (() => {
       suggestionsDiv.classList.add('hidden');
       suggestionsDiv.setAttribute('aria-expanded', 'false');
       qs('#gameInput')?.setAttribute('aria-expanded', 'false');
+      qs('#gameInput')?.removeAttribute('aria-activedescendant');
       setSearchFeedback('Nenhum jogo encontrado com esse nome. Tente outro termo.', 'error');
       return;
     }
@@ -86,6 +87,7 @@ window.UI = (() => {
         <button
           type="button"
           class="atlas-suggestion-item ${isActive ? 'is-active' : ''}"
+          id="suggestion-option-${index}"
           data-suggestion="${escapeAttribute(game.name)}"
           data-suggestion-index="${index}"
           data-suggestion-slug="${escapeAttribute(game.slug || '')}"
@@ -106,6 +108,25 @@ window.UI = (() => {
     suggestionsDiv.classList.remove('hidden');
     suggestionsDiv.setAttribute('aria-expanded', 'true');
     qs('#gameInput')?.setAttribute('aria-expanded', 'true');
+    syncSuggestionHighlight(activeIndex, { scroll: false });
+  }
+
+  function syncSuggestionHighlight(activeIndex = -1, options = {}) {
+    const suggestionsDiv = qs('#suggestions');
+    const input = qs('#gameInput');
+    if (!suggestionsDiv) return;
+    qsa('#suggestions [data-suggestion-index]').forEach(item => {
+      const isActive = Number(item.dataset.suggestionIndex) === activeIndex;
+      item.classList.toggle('is-active', isActive);
+      item.setAttribute('aria-selected', isActive ? 'true' : 'false');
+      if (isActive) {
+        input?.setAttribute('aria-activedescendant', item.id || '');
+        if (options.scroll !== false && typeof item.scrollIntoView === 'function') {
+          item.scrollIntoView({ block: 'nearest' });
+        }
+      }
+    });
+    if (activeIndex < 0) input?.removeAttribute('aria-activedescendant');
   }
 
   function hideSuggestions() {
@@ -114,6 +135,7 @@ window.UI = (() => {
       suggestions.classList.add('hidden');
       suggestions.setAttribute('aria-expanded', 'false');
       qs('#gameInput')?.setAttribute('aria-expanded', 'false');
+      qs('#gameInput')?.removeAttribute('aria-activedescendant');
     }
   }
 
@@ -281,6 +303,7 @@ window.UI = (() => {
     resetPageScroll,
     setSearchFeedback,
     renderSuggestions,
+    syncSuggestionHighlight,
     hideSuggestions,
     setGuideEmptyState,
     renderPagination,

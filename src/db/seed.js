@@ -1,5 +1,5 @@
 const sampleGames = require('../data/sampleGames');
-const { get, run } = require('./db');
+const { all, run } = require('./db');
 const { slugifyGameName } = require('../utils/slug');
 const { formatTimeMetadata } = require('../utils/time');
 
@@ -55,14 +55,13 @@ function normalizeCoverageLevel(game = {}) {
 }
 
 async function seed() {
-  const existing = await get('SELECT COUNT(*) AS total FROM games');
-  if (existing && existing.total > 0) {
-    return;
-  }
+  const existingRows = await all('SELECT slug FROM games');
+  const existingSlugs = new Set(existingRows.map(row => String(row.slug || '').trim()).filter(Boolean));
 
   for (const game of sampleGames) {
     const timeMeta = formatTimeMetadata(game.time);
     const slug = game.slug || slugifyGameName(game.name);
+    if (existingSlugs.has(slug)) continue;
     const timeMinHours = Number.isFinite(Number(game.time_min_hours)) ? Number(game.time_min_hours) : timeMeta.time_min_hours;
     const timeMaxHours = Number.isFinite(Number(game.time_max_hours)) ? Number(game.time_max_hours) : timeMeta.time_max_hours;
     const timeSortHours = Number.isFinite(Number(game.time_sort_hours)) ? Number(game.time_sort_hours) : timeMeta.time_sort_hours;
@@ -103,6 +102,7 @@ async function seed() {
     );
 
     const gameId = result.lastID;
+    existingSlugs.add(slug);
 
     for (const alias of GAME_SLUG_ALIASES[slug] || []) {
       await run(

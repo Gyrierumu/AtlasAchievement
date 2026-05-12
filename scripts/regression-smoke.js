@@ -241,6 +241,7 @@ function assertUIModules() {
     'showView',
     'setSearchFeedback',
     'renderSuggestions',
+    'syncSuggestionHighlight',
     'hideSuggestions',
     'renderHomeOverview',
     'renderCatalog',
@@ -321,9 +322,15 @@ function assertUIModules() {
 
   const guideUiCode = read('public/js/ui-guide.js');
   const guideViewCode = read('public/js/app-guide-view.js');
+  const searchContextCode = read('public/js/app-context.js');
   const responsiveCss = read('public/css/responsive.css');
   const guideCss = read('public/css/guide.css');
   const publicIndex = read('public/index.html');
+  assert(publicIndex.includes('class="atlas-brand notranslate') && publicIndex.includes('translate="no" aria-label="AtlasAchievement"'), 'marca AtlasAchievement precisa estar protegida contra traducao automatica');
+  assert(publicIndex.includes('atlas-logo-letter notranslate') && publicIndex.includes('translate="no">A</span>'), 'simbolo A da logo precisa ser notranslate');
+  assert(/\.atlas-suggestion-panel[\s\S]*?overflow-y:\s*auto/.test(componentsCss), 'dropdown da busca precisa permitir scroll vertical com mouse wheel');
+  assert(/\.atlas-suggestion-panel[\s\S]*?overscroll-behavior:\s*contain/.test(componentsCss), 'dropdown da busca precisa conter scroll sem jogar a pagina junto');
+  assert(searchContextCode.includes('UI.syncSuggestionHighlight') && searchContextCode.includes('scroll: true'), 'setas da busca precisam manter sugestao ativa visivel sem recriar a lista');
   assert(publicIndex.includes('data-filter="pending"') && publicIndex.includes('Pendentes'), 'checklist precisa expor filtro Pendentes claro');
   assert(publicIndex.includes('data-filter="completed"'), 'checklist precisa expor filtro Concluidos');
   ['online', 'coop', 'grind', 'collectible', 'story', 'difficulty', 'cleanup', 'Platina', 'Ouro', 'Prata', 'Bronze'].forEach(filter => {
@@ -331,6 +338,9 @@ function assertUIModules() {
   });
   assert(guideUiCode.includes('getGuideTrophySearchText'), 'busca do checklist precisa incluir texto normalizado, tipo e tags derivadas');
   assert(guideUiCode.includes('getGuideTrophyDisplayTags'), 'cards do checklist precisam priorizar badges de risco');
+  assert(!guideUiCode.includes('Conteúdo oculto até você revelar.'), 'spoilers nao devem esconder o texto basico do card com mensagem redundante');
+  assert(!read('src/app.js').includes('Conteúdo oculto até você revelar.'), 'SSR nao deve esconder texto basico de spoiler com mensagem redundante');
+  assert(/\.spoiler-blur[\s\S]*?filter:\s*none/.test(read('public/css/checklist.css')), 'classe antiga de spoiler nao deve borrar leitura basica');
   assert(read('public/js/ui.js').includes('data-guide-clear-filters'), 'estado vazio do checklist precisa oferecer Limpar filtros');
   assert(guideViewCode.includes('data-guide-clear-filters'), 'guia precisa tratar clique em Limpar filtros');
   assert(publicIndex.indexOf('id="guideHeader"') < publicIndex.indexOf('id="guideDecisionStack"'), 'hero do guia deve aparecer antes do resumo/alertas');
@@ -6355,6 +6365,21 @@ async function assertSeedData({ all, get }, sampleGames) {
   assert.strictEqual(godOfWarTypeById.gow2018_chooser_of_the_slain, 'Ouro', 'Chooser of the Slain deve ser ouro');
   assert.strictEqual(godOfWarTypeById.gow2018_idunns_orchard, 'Prata', 'Iðunn’s Orchard deve ser prata');
   assert.strictEqual(godOfWarTypeById.gow2018_the_journey_begins, 'Bronze', 'The Journey Begins deve ser bronze');
+  const guideModel = require('../src/shared/guideViewModel');
+  const godOfWarTagsById = Object.fromEntries(godOfWarSample.trophies.map(trophy => [
+    trophy.id,
+    guideModel.getGuideTrophyTags(trophy, godOfWarSample).map(tag => tag.id)
+  ]));
+  assert(godOfWarTagsById.gow2018_last_wish.includes('story'), 'Last Wish deve aparecer como trofeu de historia');
+  assert(!godOfWarTagsById.gow2018_last_wish.includes('grind'), 'Last Wish nao deve receber tag Grind por texto narrativo');
+  assert(!godOfWarTagsById.gow2018_trilingual.includes('missable'), 'Trilingual nao deve virar perdivel quando a dica diz que nao fica perdivel');
+  assert(godOfWarTagsById.gow2018_allfather_blinded.includes('collectible'), 'Allfather Blinded deve aparecer como coletavel');
+  assert(!godOfWarTagsById.gow2018_allfather_blinded.includes('story'), 'Allfather Blinded nao deve virar historia por mencionar cleanup no final');
+  assert(godOfWarTagsById.gow2018_chooser_of_the_slain.includes('difficulty'), 'Chooser of the Slain deve sinalizar desafio mecanico real');
+  const godOfWarGuideModel = guideModel.buildGuideViewModel(godOfWarSample, []);
+  assert.strictEqual(godOfWarGuideModel.missableCount, 0, 'view model de God of War deve separar spoilers de perdiveis reais');
+  assert.strictEqual(godOfWarGuideModel.missables, 0, 'view model nao deve contar spoilers como perdiveis');
+  assert.strictEqual(guideModel.buildGuideQuickDecisionModel(godOfWarSample, godOfWarGuideModel).cards.find(card => card.id === 'missables').value, 'Sem perdíveis', 'badge de perdiveis deve ser coerente com tooltip/resumo');
 
   const godOfWarSeeded = await get('SELECT slug, difficulty, time, time_bucket, time_min_hours, time_max_hours, time_sort_hours, editorial_status, coverage_level, is_verified, verification_status, image, cover_image, online_summary, dlc_scope, missable_summary, runs_summary FROM games WHERE slug = ?', ['god-of-war-2018']);
   assert.strictEqual(godOfWarSeeded?.slug, 'god-of-war-2018', 'seed deve persistir slug de God of War (2018)');

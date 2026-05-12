@@ -84,6 +84,11 @@
     return Boolean(contrastMatch && riskPattern.test(contrastMatch[1]));
   }
 
+  function hasNegatedMissableRiskTagText(value = '') {
+    const text = normalizeRiskText(value);
+    return /nao (?:fica|e|eh|sao|são|ha|existe|existem).*perdivel|nao .*perdiveis|sem .*perdivel|sem .*perdiveis|nada .*perdivel|nada .*missable|free roam|cleanup completo/.test(text);
+  }
+
   function pushRiskTag(tags, id) {
     if (!TROPHY_RISK_DEFINITIONS[id] || tags.some(tag => tag.id === id)) return;
     tags.push({ id, ...TROPHY_RISK_DEFINITIONS[id] });
@@ -92,13 +97,13 @@
   function getTrophyRiskTags(trophy = {}) {
     const text = normalizeRiskText(`${trophy?.name || ''} ${trophy?.description || ''} ${trophy?.tip || ''}`);
     const tags = [];
-    if (trophy?.is_missable || /perdivel|missable|perder|ficar indisponivel|bloqueia|sem chapter|no chapter|janela/.test(text)) pushRiskTag(tags, 'missable');
+    if (trophy?.is_missable || (!hasNegatedMissableRiskTagText(text) && /perdivel|missable|perder|ficar indisponivel|bloqueia|sem chapter|no chapter|janela/.test(text))) pushRiskTag(tags, 'missable');
     if (trophy?.is_spoiler) pushRiskTag(tags, 'spoiler');
     if (/colet|colecion|collect|todos os|todas as|all |arquivo|files|memoriam|raccoon|lendari|legendary|mapa|cofre|tesouro|modelo|concept art/.test(text)) pushRiskTag(tags, 'collectible');
-    if (/historia|story|campanha principal|progresso|automatico|ato |chapter|capitulo|final|ending|conclua a historia|finish the game/.test(text)) pushRiskTag(tags, 'story');
+    if (/historia|story|campanha principal|progresso|automatico|ato |chapter|capitulo|final verdadeiro|finais|ending|conclua a historia|finish the game/.test(text)) pushRiskTag(tags, 'story');
     if (/dificuldade|difficulty|hard|madhouse|insanity|professional|nightmare|inferno|survival|rank s|s\+|sem cura|sem save|only your knife|faca/.test(text)) pushRiskTag(tags, 'difficulty');
     if (/cleanup|limpeza|pos-jogo|post-game|deixe para o final|volte depois|fast travel|recarregue|reload/.test(text)) pushRiskTag(tags, 'cleanup');
-    if (/grind|farm|rank|xp|nivel|level|acumule|dinheiro|creditos|pontos|300|500|200\.000|mercenaries/.test(text)) pushRiskTag(tags, 'grind');
+    if (/grind|farm|\brank\b|\bxp\b|\bnivel\b|\blevel\b|acumule|dinheiro|creditos|pontos|300|500|200\.000|mercenaries/.test(text)) pushRiskTag(tags, 'grind');
     if (/run|campanha dedicada|multiplas campanhas|nova campanha|new game|ng\+|speedrun|sem usar|without|only|finais|final alternativo|backup/.test(text)) pushRiskTag(tags, 'run');
     return tags;
   }

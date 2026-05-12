@@ -264,7 +264,11 @@ select:focus {
   background: rgba(4, 9, 18, .97);
   border: 1px solid rgba(255,255,255,.08);
   box-shadow: 0 24px 60px rgba(0,0,0,.35);
-  overflow: hidden;
+  overflow-x: hidden;
+  overflow-y: auto;
+  overscroll-behavior: contain;
+  scrollbar-gutter: stable;
+  -webkit-overflow-scrolling: touch;
 }
 .atlas-suggestion-item {
   width: 100%;

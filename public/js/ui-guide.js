@@ -238,12 +238,12 @@ window.UIGuide = (() => {
   }
 
   function shouldShowTrophyDetailsToggle(trophy = {}, description = '', tip = '') {
-    return Boolean(trophy?.is_spoiler || String(tip || '').trim() || hasLongTrophyDescription(description));
+    return Boolean(String(tip || '').trim() || hasLongTrophyDescription(description));
   }
 
   function getTrophyEditorialName(trophy = {}) {
-    const officialName = String(trophy?.name || '').trim();
-    const editorialName = String(trophy?.name_pt || '').trim();
+    const officialName = String(trophy?.trophyNameOriginal || trophy?.name || '').trim();
+    const editorialName = String(trophy?.trophyNamePtBr || trophy?.name_pt || '').trim();
     if (!editorialName || editorialName.toLowerCase() === officialName.toLowerCase()) return '';
     return editorialName;
   }
@@ -694,7 +694,7 @@ window.UIGuide = (() => {
       <div class="atlas-guide-cover atlas-guide-cover--hero ${escapeAttribute(cover.className || '')}${fallbackVisible}">
         <span class="atlas-guide-cover__fallback" aria-hidden="true">${escapeHtml(title)}</span>
         ${backdrop}
-        ${image ? `<img src="${escapeAttribute(image)}" alt="${escapeAttribute(cover.alt || `Capa de ${title}`)}" class="atlas-guide-cover__image" loading="eager" decoding="sync" fetchpriority="high" width="900" height="1200" sizes="(min-width: 1280px) 220px, (min-width: 768px) 180px, 120px" onerror="this.hidden=true;this.parentElement.classList.add('atlas-guide-cover--fallback-visible');var backdrop=this.parentElement.querySelector('.atlas-guide-cover__backdrop');if(backdrop)backdrop.setAttribute('hidden','hidden');">` : ''}
+        ${image ? `<img src="${escapeAttribute(image)}" alt="${escapeAttribute(cover.alt || `Capa de ${title}`)}" class="atlas-guide-cover__image" loading="eager" decoding="sync" fetchpriority="high" width="600" height="900" sizes="(min-width: 1280px) 180px, (min-width: 768px) 104px, 88px" onerror="this.hidden=true;this.parentElement.classList.add('atlas-guide-cover--fallback-visible');var backdrop=this.parentElement.querySelector('.atlas-guide-cover__backdrop');if(backdrop)backdrop.setAttribute('hidden','hidden');">` : ''}
       </div>
     `;
   }
@@ -874,17 +874,15 @@ window.UIGuide = (() => {
             const done = viewModel.completedIds.has(trophy.id);
             const description = trophy.description || '';
             const tip = trophy.tip || '';
-            const officialName = trophy.name || 'Troféu';
+            const officialName = trophy.trophyNameOriginal || trophy.name || 'Troféu';
             const editorialName = getTrophyEditorialName(trophy);
             const riskTags = typeof getGuideTrophyTags === 'function' ? getGuideTrophyTags(trophy, game) : getTrophyRiskTags(trophy);
             const displayRiskTags = typeof getGuideTrophyDisplayTags === 'function' ? getGuideTrophyDisplayTags(trophy, game, 4) : riskTags.slice(0, 4);
             const riskTokens = riskTags.map(tag => tag.id).join(' ');
             const search = typeof getGuideTrophySearchText === 'function'
               ? getGuideTrophySearchText(trophy, riskTags)
-              : normalizeGuideSearchValue(`${trophy.name || ''} ${trophy.name_pt || ''} ${description} ${tip} ${trophy.type || ''} ${riskTags.map(tag => `${tag.id} ${tag.label}`).join(' ')}`);
-            const spoilerClasses = trophy.is_spoiler ? 'spoiler-blur' : '';
+              : normalizeGuideSearchValue(`${trophy.trophyNameOriginal || trophy.name || ''} ${trophy.trophyNamePtBr || trophy.name_pt || ''} ${description} ${tip} ${trophy.type || ''} ${riskTags.map(tag => `${tag.id} ${tag.label}`).join(' ')}`);
             const detailsId = buildTrophyDetailsId(trophy, index);
-            const spoilerText = trophy.is_spoiler ? '<span class="spoiler-hint">Conteúdo oculto até você revelar.</span>' : '';
             const hasDetailsToggle = shouldShowTrophyDetailsToggle(trophy, description, tip);
             const detailsToggleHtml = hasDetailsToggle
               ? `<button type="button" class="atlas-btn atlas-btn-secondary atlas-btn-compact atlas-trophy-details-toggle" data-trophy-details-toggle="true" aria-expanded="false" aria-controls="${escapeAttribute(detailsId)}"><span data-details-label>Ver detalhes</span><i class="fas fa-chevron-down" aria-hidden="true"></i></button>`
@@ -898,7 +896,7 @@ window.UIGuide = (() => {
                     <div class="atlas-trophy-card__headline">
                       <div class="atlas-trophy-card__title">
                         <h4>${escapeHtml(officialName)}</h4>
-                        ${editorialName ? `<p class="atlas-trophy-card__title-translation">${escapeHtml(editorialName)}</p>` : ''}
+                        ${editorialName ? `<p class="atlas-trophy-card__title-translation"><span>PT-BR</span>${escapeHtml(editorialName)}</p>` : ''}
                       </div>
                       <div class="atlas-trophy-card__meta">
                         <span class="atlas-trophy-type">${escapeHtml(trophy.type || 'Bronze')}</span>
@@ -906,10 +904,9 @@ window.UIGuide = (() => {
                       </div>
                     </div>
                     ${displayRiskTags.length ? `<div class="atlas-trophy-risk-list">${displayRiskTags.map(tag => `<span class="atlas-risk-chip atlas-risk-chip--${escapeAttribute(tag.tone)}">${escapeHtml(tag.label)}</span>`).join('')}</div>` : ''}
-                    ${trophy.is_spoiler ? '<button type="button" class="atlas-btn atlas-btn-secondary atlas-btn-compact atlas-spoiler-btn" data-spoiler-toggle="true" aria-expanded="false">Revelar spoiler</button>' : ''}
                     <div id="${escapeAttribute(detailsId)}" class="atlas-trophy-details" data-trophy-details>
-                      <p class="atlas-trophy-description ${spoilerClasses}" ${trophy.is_spoiler ? 'data-spoiler="true" aria-hidden="true"' : ''}>${spoilerText}${escapeHtml(description || 'Sem descrição.')}</p>
-                      ${tip ? `<div class="atlas-tip-box atlas-trophy-tip"><div class="atlas-tip-label">Dica</div><p class="text-sm mt-2 ${spoilerClasses}" ${trophy.is_spoiler ? 'data-spoiler="true" aria-hidden="true"' : ''}>${trophy.is_spoiler ? '<span class="spoiler-hint">Dica oculta até você revelar.</span>' : ''}${escapeHtml(tip)}</p></div>` : ''}
+                      <p class="atlas-trophy-description">${escapeHtml(description || 'Sem descrição.')}</p>
+                      ${tip ? `<div class="atlas-tip-box atlas-trophy-tip"><div class="atlas-tip-label">${trophy.is_spoiler ? 'Dica com spoiler' : 'Dica'}</div><p class="text-sm mt-2">${escapeHtml(tip)}</p></div>` : ''}
                     </div>
                     ${detailsToggleHtml}
                   </div>
