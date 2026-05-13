@@ -173,6 +173,11 @@ window.UIAdminRender = (() => {
     if (qs('#rawTrophiesInput')) qs('#rawTrophiesInput').value = '';
     if (qs('#gameImageFile')) qs('#gameImageFile').value = '';
     if (qs('#gameEditorialStatus')) qs('#gameEditorialStatus').value = 'published';
+    if (qs('#gameEditorialReviewStatus')) qs('#gameEditorialReviewStatus').value = '';
+    if (qs('#gameLastReviewedAt')) qs('#gameLastReviewedAt').value = '';
+    if (qs('#gameEditorialNotes')) qs('#gameEditorialNotes').value = '';
+    if (qs('#gameQualityWarnings')) qs('#gameQualityWarnings').value = '';
+    if (qs('#gameReviewedBy')) qs('#gameReviewedBy').value = '';
     if (qs('#gameCoverageLevel')) qs('#gameCoverageLevel').value = 'partial';
     if (qs('#gameVerificationStatus')) qs('#gameVerificationStatus').value = 'unverified';
     if (qs('#gameIsVerified')) qs('#gameIsVerified').checked = false;
@@ -255,6 +260,14 @@ window.UIAdminRender = (() => {
     if (qs('#gameBestFor')) qs('#gameBestFor').value = bestFor;
     if (qs('#gameAvoidIf')) qs('#gameAvoidIf').value = avoidIf;
     if (qs('#gameEditorialStatus')) qs('#gameEditorialStatus').value = game.editorial_status || 'published';
+    if (qs('#gameEditorialReviewStatus')) qs('#gameEditorialReviewStatus').value = game.editorial_review_status || game.editorialReviewStatus || '';
+    if (qs('#gameLastReviewedAt')) qs('#gameLastReviewedAt').value = game.last_reviewed_at || game.lastReviewedAt || '';
+    if (qs('#gameEditorialNotes')) qs('#gameEditorialNotes').value = game.editorial_notes || game.editorialNotes || '';
+    if (qs('#gameQualityWarnings')) {
+      const warnings = game.quality_warnings || game.qualityWarnings || '';
+      qs('#gameQualityWarnings').value = Array.isArray(warnings) ? warnings.join('\n') : String(warnings || '');
+    }
+    if (qs('#gameReviewedBy')) qs('#gameReviewedBy').value = game.reviewed_by || game.reviewedBy || '';
     if (qs('#gameCoverageLevel')) qs('#gameCoverageLevel').value = game.coverage_level || 'partial';
     if (qs('#gameVerificationStatus')) qs('#gameVerificationStatus').value = game.verification_status || (game.is_verified ? 'verified' : 'unverified');
     if (qs('#gameIsVerified')) qs('#gameIsVerified').checked = Boolean(game.is_verified);

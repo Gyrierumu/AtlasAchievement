@@ -33,7 +33,7 @@
   <link rel="stylesheet" href="/css/checklist.css">
   <link rel="stylesheet" href="/css/admin.css">
   <link rel="stylesheet" href="/css/responsive.css">
-  <link rel="icon" href="/favicon.svg" type="image/svg+xml">
+  <link rel="icon" href="/favicon.png" type="image/png">
   <link rel="apple-touch-icon" href="/apple-touch-icon.png">
   <link rel="manifest" href="/site.webmanifest">
 </head>
@@ -44,15 +44,16 @@
 
   <header class="sticky top-0 z-50 atlas-topbar">
     <div class="atlas-topbar__row max-w-[1320px] mx-auto px-4 lg:px-6 h-[88px] flex items-center justify-between gap-4">
-      <button data-view-link="home" class="atlas-brand notranslate flex items-center gap-4 text-left shrink-0" translate="no" aria-label="AtlasAchievement">
+      <a href="/" data-view-link="home" class="atlas-brand notranslate flex items-center gap-4 text-left shrink-0" translate="no" aria-label="AtlasAchievement">
         <div class="w-12 h-12 rounded-2xl atlas-logo-mark flex items-center justify-center shadow-atlas" translate="no">
-          <span class="atlas-logo-letter notranslate text-white text-2xl font-black" translate="no">A</span>
+          <img src="/assets/brand/atlasachievement-logo.png" alt="" class="atlas-logo-image" width="44" height="44" decoding="async" aria-hidden="true">
+          <span class="atlas-logo-letter notranslate sr-only" translate="no">A</span>
         </div>
         <div class="atlas-brand__copy">
           <div class="atlas-brand__name notranslate text-[16px] md:text-[20px] font-extrabold leading-none tracking-tight" translate="no">AtlasAchievement</div>
           <div class="atlas-brand__tagline text-[10px] md:text-[11px] uppercase tracking-[0.3em] text-white/40 mt-1">Troféus, conquistas e guias</div>
         </div>
-      </button>
+      </a>
 
       <nav class="hidden xl:flex items-center gap-3 atlas-nav-shell atlas-nav-shell--desktop">
         <button type="button" data-view-link="home" class="atlas-nav-link is-active">Início</button>
@@ -97,7 +98,7 @@
     <section id="view-home" class="atlas-view-shell __HOME_VIEW_CLASS__ space-y-4">
       <section class="atlas-home-hero atlas-panel atlas-panel--primary overflow-hidden">
         <div class="atlas-home-hero__content">
-          <div class="atlas-hero-kicker mb-4"><span class="atlas-hero-kicker__medal"><i class="fas fa-trophy"></i></span><span>Próxima platina</span></div>
+          <div class="atlas-hero-kicker mb-4" translate="no"><span class="atlas-hero-kicker__medal"><img src="/assets/brand/atlasachievement-logo.png" alt="AtlasAchievement" class="atlas-hero-kicker__logo" width="28" height="28" decoding="async"></span><span class="notranslate" translate="no">AtlasAchievement</span></div>
           <__HOME_HERO_HEADING_TAG__ id="homeHeroHeading" class="text-[38px] md:text-[52px] xl:text-[64px] leading-[0.97] font-black tracking-tight max-w-[840px]">
             Escolha sua próxima platina com roadmap, checklist e progresso salvo.
           </__HOME_HERO_HEADING_TAG__>

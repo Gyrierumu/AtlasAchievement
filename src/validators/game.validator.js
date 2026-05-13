@@ -3,6 +3,15 @@ const AppError = require('../utils/AppError');
 
 const ALLOWED_TROPHY_TYPES = ['Platina', 'Ouro', 'Prata', 'Bronze'];
 const ALLOWED_EDITORIAL_STATUSES = ['draft', 'review', 'published'];
+const ALLOWED_EDITORIAL_REVIEW_STATUSES = [
+  'verified',
+  'in_review',
+  'needs_missables_check',
+  'needs_online_check',
+  'dlc_pending',
+  'outdated',
+  'draft'
+];
 const ALLOWED_COVERAGE_LEVELS = ['partial', 'strong', 'complete'];
 const ALLOWED_VERIFICATION_STATUSES = ['unverified', 'review', 'verified'];
 const TROPHY_TYPE_ALIASES = {
@@ -61,6 +70,27 @@ function sanitizeString(value, maxLength = null) {
   return sanitized;
 }
 
+function normalizeEditorialReviewStatus(value) {
+  const status = sanitizeString(value, 80).toLowerCase().replace(/-/g, '_');
+  return ALLOWED_EDITORIAL_REVIEW_STATUSES.includes(status) ? status : '';
+}
+
+function normalizeQualityWarnings(value) {
+  if (Array.isArray(value)) {
+    return value.map(item => sanitizeString(item, 220)).filter(Boolean).slice(0, 12);
+  }
+  return sanitizeString(value, 2000)
+    .split(/\r?\n|;/)
+    .map(item => sanitizeString(item, 220))
+    .filter(Boolean)
+    .slice(0, 12);
+}
+
+function normalizeReviewedDate(value) {
+  const text = sanitizeString(value, 20);
+  return /^\d{4}-\d{2}-\d{2}$/.test(text) ? text : '';
+}
+
 function normalizeTrophyType(value) {
   const raw = sanitizeString(value, 20);
   const key = raw
@@ -104,7 +134,8 @@ function normalizeGamePayload(payload = {}) {
   const requestedVerificationStatus = ALLOWED_VERIFICATION_STATUSES.includes(payload.verification_status)
     ? payload.verification_status
     : (payload.is_verified ? 'verified' : 'unverified');
-  const isVerified = Boolean(payload.is_verified) || requestedVerificationStatus === 'verified';
+  const editorialReviewStatus = normalizeEditorialReviewStatus(payload.editorial_review_status ?? payload.editorialReviewStatus ?? payload.editorialStatus);
+  const isVerified = Boolean(payload.is_verified) || requestedVerificationStatus === 'verified' || editorialReviewStatus === 'verified';
   const verificationStatus = isVerified ? 'verified' : requestedVerificationStatus;
   return {
     name: sanitizeString(payload.name, 120),
@@ -132,6 +163,11 @@ function normalizeGamePayload(payload = {}) {
     avoid_if: avoidIf,
     verification_status: verificationStatus,
     editorial_status: ALLOWED_EDITORIAL_STATUSES.includes(payload.editorial_status) ? payload.editorial_status : 'published',
+    editorial_review_status: editorialReviewStatus,
+    last_reviewed_at: normalizeReviewedDate(payload.last_reviewed_at ?? payload.lastReviewedAt),
+    editorial_notes: sanitizeString(payload.editorial_notes ?? payload.editorialNotes, 2000),
+    quality_warnings: normalizeQualityWarnings(payload.quality_warnings ?? payload.qualityWarnings),
+    reviewed_by: sanitizeString(payload.reviewed_by ?? payload.reviewedBy, 120),
     coverage_level: ALLOWED_COVERAGE_LEVELS.includes(payload.coverage_level) ? payload.coverage_level : '',
     is_verified: isVerified,
     verification_note: sanitizeString(payload.verification_note, 180),
@@ -180,6 +216,14 @@ function validateGamePayload(payload) {
 
   if (!ALLOWED_EDITORIAL_STATUSES.includes(payload.editorial_status)) {
     errors.push('editorial_status deve ser draft, review ou published.');
+  }
+
+  if (payload.editorial_review_status && !ALLOWED_EDITORIAL_REVIEW_STATUSES.includes(payload.editorial_review_status)) {
+    errors.push('editorial_review_status deve ser um status editorial de confiabilidade válido.');
+  }
+
+  if (payload.last_reviewed_at && !/^\d{4}-\d{2}-\d{2}$/.test(payload.last_reviewed_at)) {
+    errors.push('last_reviewed_at deve usar o formato YYYY-MM-DD.');
   }
 
   if (payload.coverage_level && !ALLOWED_COVERAGE_LEVELS.includes(payload.coverage_level)) {

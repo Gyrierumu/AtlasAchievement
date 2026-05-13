@@ -58,8 +58,10 @@
     const difficulty = game?.difficulty || '-';
     const time = game?.time || 'Tempo não informado';
     const trophies = getTrophyTotal(game);
-    const statusBadge = typeof editorial.getEditorialBadge === 'function'
-      ? editorial.getEditorialBadge(game)
+    const statusBadge = typeof editorial.getEditorialTrustBadge === 'function'
+      ? editorial.getEditorialTrustBadge(game)
+      : typeof editorial.getEditorialBadge === 'function'
+        ? editorial.getEditorialBadge(game)
       : { label: 'Guia parcial', tone: 'partial', badge: 'partial', detail: 'Cobertura parcial, use como ponto de partida.' };
 
     return {

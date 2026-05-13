@@ -190,6 +190,105 @@ select:focus {
   line-height: 1;
   text-transform: uppercase;
 }
+.atlas-editorial-badge {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 6px;
+  max-width: 100%;
+  min-height: 28px;
+  padding: 0 9px;
+  border-radius: 999px;
+  border: 1px solid rgba(226, 232, 240, .16);
+  background: rgba(15, 23, 42, .72);
+  color: rgba(226, 232, 240, .86);
+  font-size: .72rem;
+  font-weight: 850;
+  letter-spacing: .02em;
+  line-height: 1.15;
+  white-space: normal;
+  text-align: center;
+}
+.atlas-editorial-badge--small {
+  min-height: 24px;
+  padding-inline: 8px;
+  font-size: .68rem;
+}
+.atlas-editorial-badge--verified {
+  color: #bbf7d0;
+  border-color: rgba(34, 197, 94, .34);
+  background: rgba(22, 101, 52, .22);
+}
+.atlas-editorial-badge--in_review,
+.atlas-editorial-badge--review {
+  color: #bfdbfe;
+  border-color: rgba(59, 130, 246, .30);
+  background: rgba(30, 64, 175, .20);
+}
+.atlas-editorial-badge--needs_missables_check,
+.atlas-editorial-badge--needs_online_check,
+.atlas-editorial-badge--dlc_pending,
+.atlas-editorial-badge--warning {
+  color: #fde68a;
+  border-color: rgba(245, 158, 11, .32);
+  background: rgba(146, 64, 14, .20);
+}
+.atlas-editorial-badge--outdated,
+.atlas-editorial-badge--risk {
+  color: #fecaca;
+  border-color: rgba(248, 113, 113, .34);
+  background: rgba(127, 29, 29, .22);
+}
+.atlas-editorial-badge--draft,
+.atlas-editorial-badge--neutral {
+  color: rgba(226, 232, 240, .76);
+  border-color: rgba(148, 163, 184, .22);
+  background: rgba(51, 65, 85, .24);
+}
+.atlas-editorial-trust {
+  display: grid;
+  gap: 7px;
+  margin-top: 10px;
+  max-width: 760px;
+}
+.atlas-editorial-trust__row {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 8px;
+}
+.atlas-editorial-trust__date,
+.atlas-editorial-trust__copy,
+.atlas-editorial-alert,
+.atlas-editorial-warning-list {
+  color: rgba(226, 232, 240, .64);
+  font-size: .82rem;
+  line-height: 1.45;
+}
+.atlas-editorial-alert {
+  color: #fde68a;
+}
+.atlas-editorial-warning-list {
+  margin: 0;
+  padding-left: 18px;
+}
+.atlas-badge--verified,
+.atlas-badge--review,
+.atlas-badge--warning {
+  color: rgba(226, 232, 240, .88);
+}
+.atlas-badge--verified {
+  border-color: rgba(34, 197, 94, .28);
+  background: rgba(22, 101, 52, .20);
+}
+.atlas-badge--review {
+  border-color: rgba(59, 130, 246, .26);
+  background: rgba(30, 64, 175, .18);
+}
+.atlas-badge--warning {
+  border-color: rgba(245, 158, 11, .28);
+  background: rgba(146, 64, 14, .18);
+}
 .atlas-pill {
   min-height: 42px;
   padding: 0 16px;

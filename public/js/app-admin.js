@@ -94,8 +94,9 @@ window.AppAdmin = (() => {
     const bestFor = firstText(readField('#gameBestFor'), readField('#gameIdealFor'));
     const avoidIf = firstText(readField('#gameAvoidIf'), readField('#gameAvoidFor'));
     const legacyVerified = Boolean(UI.qs('#gameIsVerified')?.checked);
+    const editorialReviewStatus = UI.qs('#gameEditorialReviewStatus')?.value || '';
     const selectedVerificationStatus = UI.qs('#gameVerificationStatus')?.value || '';
-    const verificationStatus = legacyVerified ? 'verified' : (selectedVerificationStatus || 'unverified');
+    const verificationStatus = legacyVerified || editorialReviewStatus === 'verified' ? 'verified' : (selectedVerificationStatus || 'unverified');
     return {
       name: readField('#gameName'),
       difficulty: Number(UI.qs('#gameDifficulty').value),
@@ -125,8 +126,13 @@ window.AppAdmin = (() => {
       avoid_if: avoidIf,
       verification_status: verificationStatus,
       editorial_status: UI.qs('#gameEditorialStatus')?.value || 'published',
+      editorial_review_status: editorialReviewStatus,
+      last_reviewed_at: readField('#gameLastReviewedAt'),
+      editorial_notes: readField('#gameEditorialNotes'),
+      quality_warnings: readField('#gameQualityWarnings').split(/\r?\n|;/).map(item => item.trim()).filter(Boolean),
+      reviewed_by: readField('#gameReviewedBy'),
       coverage_level: UI.qs('#gameCoverageLevel')?.value || 'partial',
-      is_verified: legacyVerified || verificationStatus === 'verified',
+      is_verified: legacyVerified || editorialReviewStatus === 'verified' || verificationStatus === 'verified',
       verification_note: readField('#gameVerificationNote'),
       trophies
     };

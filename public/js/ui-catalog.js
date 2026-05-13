@@ -26,11 +26,13 @@ window.UICatalog = (() => {
   }
 
   function isUnverifiedBadge(statusBadge = {}) {
+    if (statusBadge.status && statusBadge.status !== 'verified') return true;
     return (statusBadge.badge || statusBadge.tone) === 'unverified'
       || /verifica/i.test(String(statusBadge.label || ''));
   }
 
   function getCatalogStatusBadge(statusBadge = {}) {
+    if (statusBadge.status) return statusBadge;
     if (isUnverifiedBadge(statusBadge)) {
       return { ...statusBadge, label: 'Em verificação', badge: 'unverified', tone: 'unverified' };
     }

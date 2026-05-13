@@ -5,6 +5,12 @@ window.UIHome = (() => {
   const sharedCatalog = window.AtlasCatalogModel || {};
   const sharedCard = window.AtlasCardModel || {};
 
+  function renderHomeEditorialBadge(model = {}) {
+    const badge = model.statusBadge || {};
+    if (!badge.label) return '';
+    return `<span class="atlas-editorial-badge atlas-editorial-badge--small atlas-editorial-badge--${escapeAttribute(badge.status || badge.badge || badge.tone || 'in_review')}" title="${escapeAttribute(badge.detail || '')}">${escapeHtml(badge.label)}</span>`;
+  }
+
   function renderHomeImage(model = {}, imageClass = 'atlas-card__image', options = {}) {
     const name = model.name || 'Jogo';
     const source = model.image ? getGameImageSrc(model.image) : '';
@@ -77,7 +83,7 @@ window.UIHome = (() => {
             ${renderHomeImage(model, 'atlas-card__image', { width: 600, height: 900, sizes: '(min-width: 1024px) 20vw, (min-width: 640px) 28vw, 42vw' })}
           </div>
           <div class="atlas-card__body">
-            <div class="atlas-card__badges"><span class="atlas-card__status atlas-badge atlas-badge--partial">Novo guia</span></div>
+            <div class="atlas-card__badges">${renderHomeEditorialBadge(model)}<span class="atlas-card__status atlas-badge atlas-badge--partial">Novo guia</span></div>
             <h3 class="atlas-card__title">${escapeHtml(model.name)}</h3>
             <div class="atlas-card__meta">
               <span class="atlas-meta-signal ${escapeAttribute(model.difficultyClass)}"><i class="fas fa-gauge-high"></i>${escapeHtml(String(model.difficulty))}/10</span>
@@ -143,6 +149,7 @@ window.UIHome = (() => {
               ${renderHomeImage(model, 'atlas-card__image atlas-featured-game__image', { width: 600, height: 900, sizes: '(min-width: 1024px) 180px, 42vw' })}
             </div>
             <div class="atlas-card__body atlas-featured-game__body">
+              <div class="atlas-card__badges">${renderHomeEditorialBadge(model)}</div>
               <h3 class="atlas-card__title">${escapeHtml(model.name)}</h3>
               <p class="atlas-card__reason">${escapeHtml(reason)}</p>
               <div class="atlas-card__meta atlas-featured-game__meta" aria-label="Resumo da recomendação">

@@ -279,7 +279,7 @@ function buildAdminLoginPageHtml() {
   <link rel="stylesheet" href="/css/components.css">
   <link rel="stylesheet" href="/css/admin.css">
   <link rel="stylesheet" href="/css/responsive.css">
-  <link rel="icon" href="/favicon.svg" type="image/svg+xml">
+  <link rel="icon" href="/favicon.png" type="image/png">
   <link rel="apple-touch-icon" href="/apple-touch-icon.png">
   <link rel="manifest" href="/site.webmanifest">
   <style>
@@ -322,10 +322,10 @@ function buildAdminLoginPageHtml() {
 <body class="atlas-body min-h-screen" data-page="admin-login">
   <header class="sticky top-0 z-40 atlas-topbar atlas-topbar--admin">
     <div class="atlas-topbar__row max-w-[1320px] mx-auto px-4 lg:px-6 h-[88px] flex items-center justify-between gap-4">
-      <a href="/" class="atlas-brand flex items-center gap-4">
-        <div class="w-12 h-12 rounded-2xl atlas-logo-mark flex items-center justify-center"><span class="atlas-logo-letter text-white text-2xl font-black">A</span></div>
+      <a href="/" class="atlas-brand notranslate flex items-center gap-4" translate="no" aria-label="AtlasAchievement">
+        <div class="w-12 h-12 rounded-2xl atlas-logo-mark flex items-center justify-center"><img src="/assets/brand/atlasachievement-logo.png" alt="" class="atlas-logo-image" width="44" height="44" decoding="async" aria-hidden="true"><span class="atlas-logo-letter notranslate sr-only" translate="no">A</span></div>
         <div class="atlas-brand__copy">
-          <div class="atlas-brand__name text-[20px] font-extrabold leading-none">AtlasAchievement</div>
+          <div class="atlas-brand__name notranslate text-[20px] font-extrabold leading-none" translate="no">AtlasAchievement</div>
           <div class="atlas-brand__tagline text-[11px] uppercase tracking-[0.28em] text-white/40 mt-1">Console Atlas</div>
         </div>
       </a>
@@ -589,7 +589,13 @@ function renderHomeImageHtml(model = {}, imageClass = 'atlas-card__image', optio
   return `
     <span class="atlas-home-image-fallback" aria-hidden="true">${escapeHtml(name)}</span>
     ${source ? `<img src="${escapeHtml(source)}" alt="${escapeHtml(name)}" class="${escapeHtml(imageClass)}" loading="${escapeHtml(options.loading || 'lazy')}" decoding="${escapeHtml(options.decoding || 'async')}" width="${escapeHtml(String(width))}" height="${escapeHtml(String(height))}" sizes="${escapeHtml(sizes)}" onerror="this.hidden=true;this.parentElement.classList.add('atlas-home-image-shell--fallback-visible');">` : ''}
-  `;
+    `;
+}
+
+function renderEditorialBadgeHtml(statusBadge = {}, options = {}) {
+  if (!statusBadge?.label) return '';
+  const sizeClass = options.small ? ' atlas-editorial-badge--small' : '';
+  return `<span class="atlas-editorial-badge${sizeClass} atlas-editorial-badge--${escapeHtml(statusBadge.status || statusBadge.badge || statusBadge.tone || 'in_review')}" title="${escapeHtml(statusBadge.detail || '')}">${escapeHtml(statusBadge.label)}</span>`;
 }
 
 function renderHomeIntentCardsHtml(games = []) {
@@ -632,6 +638,7 @@ function renderHomeFeaturedGameHtml(games = []) {
         ${renderHomeImageHtml(model, 'atlas-card__image atlas-featured-game__image', { width: 600, height: 900, sizes: '(min-width: 1024px) 180px, 42vw' })}
       </div>
       <div class="atlas-card__body atlas-featured-game__body">
+        <div class="atlas-card__badges">${renderEditorialBadgeHtml(model.statusBadge, { small: true })}</div>
         <h3 class="atlas-card__title">${escapeHtml(model.name)}</h3>
         <p class="atlas-card__reason">${escapeHtml(reason)}</p>
         <div class="atlas-card__meta atlas-featured-game__meta" aria-label="Resumo da recomendação">
@@ -663,7 +670,7 @@ function renderHomeDiscoveryGuidesHtml(games = []) {
           ${renderHomeImageHtml(model, 'atlas-card__image', { width: 600, height: 900, sizes: '(min-width: 1024px) 20vw, (min-width: 640px) 28vw, 42vw' })}
         </div>
         <div class="atlas-card__body">
-          <div class="atlas-card__badges"><span class="atlas-card__status atlas-badge atlas-badge--partial">Novo guia</span></div>
+          <div class="atlas-card__badges">${renderEditorialBadgeHtml(model.statusBadge, { small: true })}<span class="atlas-card__status atlas-badge atlas-badge--partial">Novo guia</span></div>
           <h3 class="atlas-card__title">${escapeHtml(model.name)}</h3>
           <div class="atlas-card__meta">
             <span class="atlas-meta-signal ${escapeHtml(model.difficultyClass)}"><i class="fas fa-gauge-high"></i>${escapeHtml(String(model.difficulty))}/10</span>
@@ -756,6 +763,7 @@ function hasReliableMaxTimeAtMost(game = {}, max = 20) {
 }
 
 function hasExplicitNoOnline(game = {}) {
+  if (sharedEditorialModel.getEditorialTrustStatus(game) === 'needs_online_check') return false;
   const text = getSeoGameText(game, ['online_summary', 'guide_online', 'online']);
   if (!text || hasUncertainEditorialText(text)) return false;
   const explicitNoOnline = /sem online(?: obrigatorio)?|sem trofeus online|nao ha (?:trofeus )?(?:exigencia )?online|nao exige online|nao ha requisito online|nao ha multiplayer obrigatorio|nao ha trofeus exclusivamente online/.test(text);
@@ -765,6 +773,7 @@ function hasExplicitNoOnline(game = {}) {
 }
 
 function hasExplicitNoMissables(game = {}) {
+  if (sharedEditorialModel.getEditorialTrustStatus(game) === 'needs_missables_check') return false;
   const text = getSeoGameText(game, ['missable_summary', 'missable']);
   if (!text || hasUncertainEditorialText(text)) return false;
   if (Number(game?.missable_count || 0) > 0) return false;
@@ -1012,6 +1021,30 @@ function buildGuideHeroStats(game = {}, viewModel = {}) {
   return sharedEditorialModel.buildGuideHeroStats(game, viewModel);
 }
 
+function formatGuideReviewDate(value = '') {
+  const text = String(value || '').trim();
+  if (!text) return '';
+  const match = text.match(/^(\d{4})-(\d{2})-(\d{2})/);
+  return match ? `${match[3]}/${match[2]}/${match[1]}` : text;
+}
+
+function renderEditorialTrustHtml(game = {}, viewModel = {}) {
+  const badge = viewModel.editorial?.statusBadge || sharedEditorialModel.getEditorialTrustBadge(game);
+  const reviewedAt = badge.lastReviewedAt || viewModel.editorial?.lastReviewedAt || game.last_reviewed_at || game.lastReviewedAt || '';
+  const reviewedLabel = formatGuideReviewDate(reviewedAt);
+  const detail = badge.detail || 'Este guia ainda está passando por revisão editorial.';
+  const warnings = Array.isArray(viewModel.editorial?.qualityWarnings) ? viewModel.editorial.qualityWarnings : (badge.qualityWarnings || []);
+  return `
+    <div class="atlas-editorial-trust">
+      <div class="atlas-editorial-trust__row">
+        <span class="atlas-editorial-badge atlas-editorial-badge--${escapeHtml(badge.status || badge.badge || badge.tone || 'in_review')}" title="${escapeHtml(detail)}"><i class="fas fa-clipboard-check" aria-hidden="true"></i>${escapeHtml(badge.label || 'Em revisão')}</span>
+        ${reviewedLabel ? `<span class="atlas-editorial-trust__date">Revisado em ${escapeHtml(reviewedLabel)}</span>` : ''}
+      </div>
+      <p class="${badge.critical ? 'atlas-editorial-alert' : 'atlas-editorial-trust__copy'}">${escapeHtml(detail)}</p>
+      ${warnings.length ? `<ul class="atlas-editorial-warning-list">${warnings.slice(0, 3).map(item => `<li>${escapeHtml(item)}</li>`).join('')}</ul>` : ''}
+    </div>`;
+}
+
 function getGuideCoverModel(game = {}, viewModel = {}) {
   const fallbackImage = sharedCardModel.getGameCoverImage(game) || viewModel.image || '';
   return viewModel.guideCover || {
@@ -1055,6 +1088,7 @@ function renderGuideHeaderHtml(game, viewModel) {
             <span>${escapeHtml(guideEyebrow)}</span>
           </div>
           <h1>${escapeHtml(buildGameGuideH1(game))}</h1>
+          ${renderEditorialTrustHtml(game, viewModel)}
           <p class="atlas-guide-hero__subtitle">${escapeHtml(scopeModel.subtitle || 'Guia de troféus e roadmap da platina')}</p>
           <p class="atlas-guide-hero__summary" hidden>${escapeHtml(verdict.summary || viewModel.decisionModel.verdictDetail)}</p>
           <div class="atlas-guide-start-card">
@@ -1818,11 +1852,13 @@ function formatCatalogCount(count) {
 }
 
 function isCatalogUnverifiedBadge(statusBadge = {}) {
+  if (statusBadge.status && statusBadge.status !== 'verified') return true;
   return (statusBadge.badge || statusBadge.tone) === 'unverified'
     || /verifica/i.test(String(statusBadge.label || ''));
 }
 
 function getCatalogStatusBadge(statusBadge = {}) {
+  if (statusBadge.status) return statusBadge;
   if (isCatalogUnverifiedBadge(statusBadge)) {
     return { ...statusBadge, label: 'Em verificação', badge: 'unverified', tone: 'unverified' };
   }
@@ -2250,7 +2286,7 @@ app.get('/api/health', (req, res) => {
 
 app.get('/favicon.ico', (req, res) => {
   res.setHeader('Cache-Control', env.isProduction ? 'public, max-age=604800, stale-while-revalidate=86400' : 'no-cache');
-  res.redirect(302, '/favicon.svg');
+  res.redirect(302, '/favicon.png');
 });
 
 app.get('/robots.txt', (req, res) => {

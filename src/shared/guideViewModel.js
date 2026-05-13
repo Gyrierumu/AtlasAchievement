@@ -15,6 +15,7 @@
     getTrophyRiskTags,
     hasMissableRiskText,
     getEditorialBadge,
+    getEditorialTrustBadge = getEditorialBadge,
     getCoverageDisplayLabel,
     getVerificationStatusLabel
   } = editorial;
@@ -1423,6 +1424,7 @@
   }
 
   function getGuideEditorialStatusBadge(game = {}, fallbackBadge = null) {
+    return getEditorialTrustBadge(game || {}) || fallbackBadge;
     const coverage = String(game?.coverage_level || 'partial').toLowerCase();
     const editorialStatus = String(game?.editorial_status || 'published').toLowerCase();
 
@@ -1590,7 +1592,9 @@
     const missables = Number(viewModel?.missables || 0);
     const difficulty = Number(game?.difficulty || 0);
     const statusBadge = getGuideEditorialStatusBadge(game || {}, getEditorialBadge(game || {}));
-    const reviewedAt = formatDisplayDate(game?.updated_at || game?.created_at || new Date().toISOString());
+    const reviewedAt = game?.last_reviewed_at || game?.lastReviewedAt
+      ? formatDisplayDate(game?.last_reviewed_at || game?.lastReviewedAt)
+      : '';
     const customRuns = firstGuideText(game?.runs_summary, game?.guide_runs, game?.runs);
     const customMissable = firstGuideText(game?.missable_summary, game?.missable);
     const customOnline = firstGuideText(game?.online_summary, game?.guide_online, game?.online);
@@ -1661,7 +1665,12 @@
       reviewer: 'Equipe editorial AtlasAchievement',
       reviewedAt,
       statusBadge,
-      isVerified: Boolean(game?.is_verified),
+      editorialStatus: statusBadge.status || 'in_review',
+      lastReviewedAt: statusBadge.lastReviewedAt || game?.last_reviewed_at || game?.lastReviewedAt || '',
+      reviewedBy: statusBadge.reviewedBy || game?.reviewed_by || game?.reviewedBy || '',
+      editorialNotes: statusBadge.notes || game?.editorial_notes || game?.editorialNotes || '',
+      qualityWarnings: Array.isArray(statusBadge.qualityWarnings) ? statusBadge.qualityWarnings : [],
+      isVerified: statusBadge.status === 'verified' || Boolean(game?.is_verified),
       verificationNote: game?.verification_note || '',
       coverageLabel,
       coverageDetail,

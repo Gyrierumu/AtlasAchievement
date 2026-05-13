@@ -9,6 +9,8 @@
   const getTimeValue = editorial.getTimeValue || (() => FALLBACK_TIME_VALUE);
   const parseTimeValue = editorial.parseTimeValue || (() => null);
   const hasMissableRiskText = editorial.hasMissableRiskText || (() => false);
+  const getEditorialTrustStatus = editorial.getEditorialTrustStatus || (() => 'in_review');
+  const getEditorialTrustBadge = editorial.getEditorialTrustBadge || (() => ({ status: 'in_review', label: 'Em revisão', tone: 'review', badge: 'review' }));
 
   const catalogFacetMeta = {
     all: {
@@ -488,11 +490,21 @@
   }
 
   function isCatalogVerified(game = {}) {
-    return Boolean(game?.is_verified) || game?.verification_status === 'verified';
+    return getEditorialTrustStatus(game) === 'verified';
   }
 
   function isCatalogInReview(game = {}) {
-    return !isCatalogVerified(game) && (game?.verification_status === 'review' || game?.editorial_status === 'review' || game?.coverage_level === 'strong');
+    const status = getEditorialTrustStatus(game);
+    return status !== 'verified' && status !== 'draft';
+  }
+
+  function hasCatalogEditorialStatus(game = {}, status = '') {
+    return getEditorialTrustStatus(game) === status;
+  }
+
+  function hasCatalogCriticalEditorialStatus(game = {}) {
+    const badge = getEditorialTrustBadge(game);
+    return Boolean(badge?.critical);
   }
 
   function getCatalogDecisionSignals(game = {}) {
@@ -524,6 +536,7 @@
       chapterSelect,
       isVerified: isCatalogVerified(game),
       inReview: isCatalogInReview(game),
+      editorialStatus: getEditorialTrustStatus(game),
       signals
     };
   }
@@ -571,11 +584,11 @@
     if (id === 'trophies-small') return trophyCount > 0 && trophyCount <= 30;
     if (id === 'trophies-medium') return trophyCount > 30 && trophyCount <= 60;
     if (id === 'trophies-large') return trophyCount > 60;
-    if (id === 'online-none') return !hasCatalogOnlineRequired(game);
+    if (id === 'online-none') return !hasCatalogEditorialStatus(game, 'needs_online_check') && !hasCatalogOnlineRequired(game);
     if (id === 'online-required') return hasCatalogOnlineRequired(game);
     if (id === 'coop-required') return hasCatalogCoopRequired(game);
     if (id === 'missable-present') return hasCatalogMissables(game);
-    if (id === 'missable-none') return !hasCatalogMissables(game);
+    if (id === 'missable-none') return !hasCatalogEditorialStatus(game, 'needs_missables_check') && !hasCatalogMissables(game);
     if (id === 'grind-present') return hasCatalogGrind(game);
     if (id === 'dlc-base') return hasCatalogBaseGameScope(game);
     if (id === 'chapter-select') return hasCatalogChapterSelect(game);
@@ -758,7 +771,9 @@
 
   function selectHomeShowcaseGames(games = [], limit = 6) {
     const list = Array.isArray(games) ? games.filter(game => game?.slug) : [];
-    const bySlug = new Map(list.map(game => [game.slug, game]));
+    const showcaseList = list.filter(game => !hasCatalogCriticalEditorialStatus(game));
+    const candidateList = showcaseList.length ? showcaseList : list;
+    const bySlug = new Map(candidateList.map(game => [game.slug, game]));
     const prioritySlugs = [
       'little-nightmares-ii',
       'monster-hunter-world',
@@ -778,7 +793,7 @@
       seen.add(slug);
     });
 
-    list
+    candidateList
       .slice()
       .sort((a, b) => getHomeRecommendationScore(b) - getHomeRecommendationScore(a))
       .forEach(game => {
@@ -903,7 +918,7 @@
       const timeValue = getTimeValue(game);
       if (collectionSlug === 'primeira-platina') return difficulty > 0 && difficulty <= 3 && timeValue <= 25;
       if (collectionSlug === 'platinas-rapidas') return timeValue <= 15;
-      if (collectionSlug === 'baixo-risco-de-perdiveis') return isLowRisk(game);
+      if (collectionSlug === 'baixo-risco-de-perdiveis') return !hasCatalogEditorialStatus(game, 'needs_missables_check') && isLowRisk(game);
       return true;
     });
 
@@ -930,6 +945,10 @@
     getRoadmapCount,
     hasGuideRisk,
     getCatalogDecisionSignals,
+    isCatalogVerified,
+    isCatalogInReview,
+    hasCatalogEditorialStatus,
+    hasCatalogCriticalEditorialStatus,
     matchesCatalogFacet,
     getCatalogFacetCountFromGames,
     getCatalogFacetCountsFromGames,

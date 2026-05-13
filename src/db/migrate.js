@@ -100,6 +100,21 @@ async function ensureGameColumns() {
   if (!columnNames.has('verification_note')) {
     statements.push('ALTER TABLE games ADD COLUMN verification_note TEXT');
   }
+  if (!columnNames.has('editorial_review_status')) {
+    statements.push('ALTER TABLE games ADD COLUMN editorial_review_status TEXT');
+  }
+  if (!columnNames.has('last_reviewed_at')) {
+    statements.push('ALTER TABLE games ADD COLUMN last_reviewed_at TEXT');
+  }
+  if (!columnNames.has('editorial_notes')) {
+    statements.push('ALTER TABLE games ADD COLUMN editorial_notes TEXT');
+  }
+  if (!columnNames.has('quality_warnings')) {
+    statements.push('ALTER TABLE games ADD COLUMN quality_warnings TEXT');
+  }
+  if (!columnNames.has('reviewed_by')) {
+    statements.push('ALTER TABLE games ADD COLUMN reviewed_by TEXT');
+  }
   if (!columnNames.has('runs_summary')) {
     statements.push('ALTER TABLE games ADD COLUMN runs_summary TEXT');
   }
@@ -151,6 +166,7 @@ async function ensureGameColumns() {
   await exec('CREATE INDEX IF NOT EXISTS idx_games_time_sort_hours ON games(time_sort_hours)');
   await exec('CREATE INDEX IF NOT EXISTS idx_games_time_bucket ON games(time_bucket)');
   await exec('CREATE INDEX IF NOT EXISTS idx_games_editorial_status ON games(editorial_status)');
+  await exec('CREATE INDEX IF NOT EXISTS idx_games_editorial_review_status ON games(editorial_review_status)');
   await exec('CREATE INDEX IF NOT EXISTS idx_games_coverage_level ON games(coverage_level)');
   await exec('CREATE INDEX IF NOT EXISTS idx_games_created_at ON games(created_at)');
   await exec('CREATE INDEX IF NOT EXISTS idx_games_updated_at ON games(updated_at)');
@@ -471,6 +487,13 @@ async function syncSeedGameFromSeed(seedSlug, options = {}) {
     normalizeSeedCoverageLevel(game),
     verificationStatus === 'verified' ? 1 : 0,
     game.verification_note || '',
+    game.editorial_review_status || game.editorialReviewStatus || null,
+    game.last_reviewed_at || game.lastReviewedAt || '',
+    game.editorial_notes || game.editorialNotes || '',
+    Array.isArray(game.quality_warnings || game.qualityWarnings)
+      ? JSON.stringify(game.quality_warnings || game.qualityWarnings)
+      : (game.quality_warnings || game.qualityWarnings || ''),
+    game.reviewed_by || game.reviewedBy || '',
     game.image || null,
     game.cover_image || deriveSteamCoverImage(game.image) || null
   ];
@@ -479,12 +502,12 @@ async function syncSeedGameFromSeed(seedSlug, options = {}) {
 
   if (existing) {
     await run(
-      'UPDATE games SET name = ?, slug = ?, difficulty = ?, time = ?, time_min_hours = ?, time_max_hours = ?, time_sort_hours = ?, time_bucket = ?, missable = ?, runs_summary = ?, missable_summary = ?, online_summary = ?, grind_summary = ?, dlc_scope = ?, difficulty_reason = ?, time_reason = ?, first_run_advice = ?, cleanup_advice = ?, before_you_start = ?, best_for = ?, avoid_if = ?, verification_status = ?, editorial_status = ?, coverage_level = ?, is_verified = ?, verification_note = ?, image = ?, cover_image = ? WHERE id = ?',
+      'UPDATE games SET name = ?, slug = ?, difficulty = ?, time = ?, time_min_hours = ?, time_max_hours = ?, time_sort_hours = ?, time_bucket = ?, missable = ?, runs_summary = ?, missable_summary = ?, online_summary = ?, grind_summary = ?, dlc_scope = ?, difficulty_reason = ?, time_reason = ?, first_run_advice = ?, cleanup_advice = ?, before_you_start = ?, best_for = ?, avoid_if = ?, verification_status = ?, editorial_status = ?, coverage_level = ?, is_verified = ?, verification_note = ?, editorial_review_status = ?, last_reviewed_at = ?, editorial_notes = ?, quality_warnings = ?, reviewed_by = ?, image = ?, cover_image = ? WHERE id = ?',
       [...gameValues, existing.id]
     );
   } else if (insertIfMissing) {
     const result = await run(
-      'INSERT INTO games (name, slug, difficulty, time, time_min_hours, time_max_hours, time_sort_hours, time_bucket, missable, runs_summary, missable_summary, online_summary, grind_summary, dlc_scope, difficulty_reason, time_reason, first_run_advice, cleanup_advice, before_you_start, best_for, avoid_if, verification_status, editorial_status, coverage_level, is_verified, verification_note, image, cover_image) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)',
+      'INSERT INTO games (name, slug, difficulty, time, time_min_hours, time_max_hours, time_sort_hours, time_bucket, missable, runs_summary, missable_summary, online_summary, grind_summary, dlc_scope, difficulty_reason, time_reason, first_run_advice, cleanup_advice, before_you_start, best_for, avoid_if, verification_status, editorial_status, coverage_level, is_verified, verification_note, editorial_review_status, last_reviewed_at, editorial_notes, quality_warnings, reviewed_by, image, cover_image) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)',
       gameValues
     );
     gameId = result.lastID;
@@ -658,6 +681,9 @@ async function backfillEditorialStatusFields({ recalculateCoverage = false } = {
   await run(
     "UPDATE games SET coverage_level = 'partial' WHERE coverage_level IS NULL OR coverage_level NOT IN ('partial', 'strong', 'complete')"
   );
+  await run(
+    "UPDATE games SET editorial_review_status = NULL WHERE editorial_review_status IS NOT NULL AND editorial_review_status NOT IN ('verified', 'in_review', 'needs_missables_check', 'needs_online_check', 'dlc_pending', 'outdated', 'draft')"
+  );
   await run('UPDATE games SET is_verified = 0 WHERE is_verified IS NULL OR is_verified NOT IN (0, 1)');
   await run(
     "UPDATE games SET runs_summary = guide_runs WHERE (runs_summary IS NULL OR trim(runs_summary) = '') AND guide_runs IS NOT NULL AND trim(guide_runs) != ''"
@@ -803,6 +829,11 @@ async function migrate(options = {}) {
       coverage_level TEXT NOT NULL DEFAULT 'partial',
       is_verified INTEGER NOT NULL DEFAULT 0,
       verification_note TEXT,
+      editorial_review_status TEXT,
+      last_reviewed_at TEXT,
+      editorial_notes TEXT,
+      quality_warnings TEXT,
+      reviewed_by TEXT,
       image TEXT,
       cover_image TEXT,
       created_at TEXT DEFAULT CURRENT_TIMESTAMP,

@@ -3,10 +3,12 @@ const AppError = require('../utils/AppError');
 const { removeManagedUpload, isManagedUpload } = require('./file.service');
 const { slugifyGameName, buildSlugVariant } = require('../utils/slug');
 const { formatTimeMetadata } = require('../utils/time');
+const editorialModel = require('../shared/editorialModel');
 
 const PUBLIC_EDITORIAL_STATUSES = new Set(['review', 'published']);
 const COVERAGE_LEVELS = new Set(['partial', 'strong', 'complete']);
 const VERIFICATION_STATUSES = new Set(['unverified', 'review', 'verified']);
+const EDITORIAL_REVIEW_STATUSES = new Set(Object.keys(editorialModel.EDITORIAL_TRUST_STATUSES || {}));
 const TROPHY_TYPE_ALIASES = {
   platinum: 'Platina',
   platina: 'Platina',
@@ -71,6 +73,46 @@ function normalizeEditorialStatus(value) {
   return ['draft', 'review', 'published'].includes(value) ? value : 'published';
 }
 
+function normalizeEditorialReviewStatus(value) {
+  const status = String(value || '').trim().toLowerCase().replace(/-/g, '_');
+  return EDITORIAL_REVIEW_STATUSES.has(status) ? status : null;
+}
+
+function serializeQualityWarnings(value) {
+  const warnings = editorialModel.parseQualityWarnings(value);
+  return warnings.length ? JSON.stringify(warnings) : '';
+}
+
+function normalizeReviewedDate(value) {
+  const text = String(value || '').trim();
+  if (!text) return '';
+  const match = text.match(/^(\d{4})-(\d{2})-(\d{2})/);
+  return match ? match[0] : '';
+}
+
+function buildEditorialReviewFields(row = {}) {
+  const editorialReviewStatus = normalizeEditorialReviewStatus(row.editorial_review_status);
+  const trustGame = {
+    ...row,
+    editorial_review_status: editorialReviewStatus,
+    quality_warnings: row.quality_warnings || ''
+  };
+  const badge = editorialModel.getEditorialTrustBadge(trustGame);
+  return {
+    editorial_review_status: editorialReviewStatus,
+    editorialReviewStatus: badge.status,
+    editorialStatus: badge.status,
+    last_reviewed_at: normalizeReviewedDate(row.last_reviewed_at),
+    lastReviewedAt: normalizeReviewedDate(row.last_reviewed_at),
+    editorial_notes: row.editorial_notes || '',
+    editorialNotes: row.editorial_notes || '',
+    quality_warnings: badge.qualityWarnings,
+    qualityWarnings: badge.qualityWarnings,
+    reviewed_by: row.reviewed_by || '',
+    reviewedBy: row.reviewed_by || ''
+  };
+}
+
 function normalizeTrophyType(value) {
   const raw = String(value || '').trim();
   const key = raw
@@ -102,6 +144,9 @@ function ensurePublicGame(row, includeDrafts = false) {
   if (!row) return row;
   if (!includeDrafts && !PUBLIC_EDITORIAL_STATUSES.has(row.editorial_status || 'published')) {
     throw new AppError('Jogo não encontrado.', 404, null, 'GAME_NOT_FOUND');
+  }
+  if (!includeDrafts && normalizeEditorialReviewStatus(row.editorial_review_status) === 'draft') {
+    throw new AppError('Jogo nÃ£o encontrado.', 404, null, 'GAME_NOT_FOUND');
   }
   return row;
 }
@@ -139,6 +184,8 @@ function normalizeGame(row, roadmapRows, trophyRows) {
     avoid_for: firstText(row.avoid_if, row.guide_avoid),
     best_for_when: row.guide_best_moment || '',
     editorial_status: normalizeEditorialStatus(row.editorial_status),
+    publication_status: normalizeEditorialStatus(row.editorial_status),
+    ...buildEditorialReviewFields(row),
     coverage_level: normalizeCoverageLevel(row.coverage_level, row),
     is_verified: Boolean(row.is_verified),
     verification_note: row.verification_note || '',
@@ -259,6 +306,7 @@ function buildListFilters({ search = '', facet = 'all' } = {}) {
       break;
     case 'online-none':
       where.push(`NOT ${onlineRequiredSql}`);
+      where.push("(coalesce(editorial_review_status, '') != 'needs_online_check')");
       break;
     case 'online-required':
       where.push(onlineRequiredSql);
@@ -271,6 +319,7 @@ function buildListFilters({ search = '', facet = 'all' } = {}) {
       break;
     case 'missable-none':
       where.push(`NOT ${missableSql}`);
+      where.push("(coalesce(editorial_review_status, '') != 'needs_missables_check')");
       break;
     case 'grind-present':
       where.push(grindSql);
@@ -282,10 +331,10 @@ function buildListFilters({ search = '', facet = 'all' } = {}) {
       where.push(chapterSelectSql);
       break;
     case 'editorial-verified':
-      where.push("(is_verified = 1 OR verification_status = 'verified')");
+      where.push("(editorial_review_status = 'verified' OR is_verified = 1 OR verification_status = 'verified')");
       break;
     case 'editorial-review':
-      where.push("(is_verified = 0 AND (verification_status = 'review' OR editorial_status = 'review' OR coverage_level = 'strong'))");
+      where.push("(coalesce(editorial_review_status, '') IN ('in_review', 'needs_missables_check', 'needs_online_check', 'dlc_pending', 'outdated') OR (is_verified = 0 AND (verification_status = 'review' OR editorial_status = 'review' OR coverage_level = 'strong')))");
       break;
     default:
       break;
@@ -306,6 +355,8 @@ function normalizeListRow(row) {
     spoiler_count: Number(row.spoiler_count || 0),
     attention_count: Number(row.attention_count || 0),
     editorial_status: normalizeEditorialStatus(row.editorial_status),
+    publication_status: normalizeEditorialStatus(row.editorial_status),
+    ...buildEditorialReviewFields(row),
     coverage_level: normalizeCoverageLevel(row.coverage_level),
     is_verified: Boolean(row.is_verified),
     verification_note: row.verification_note || '',
@@ -393,7 +444,7 @@ async function listGames(options = {}) {
   const safeLimit = Math.min(Math.max(Number(limit) || 24, 1), 100);
   const requestedPage = Math.max(Number(page) || 1, 1);
   const { whereSql, params } = buildListFilters({ search, facet });
-  const visibilitySql = includeDrafts ? '' : "editorial_status IN ('review', 'published')";
+  const visibilitySql = includeDrafts ? '' : "editorial_status IN ('review', 'published') AND coalesce(editorial_review_status, '') != 'draft'";
   const finalWhereSql = [visibilitySql, whereSql.replace(/^WHERE\s+/i, '')].filter(Boolean).join(' AND ');
   const scopedWhereSql = finalWhereSql ? `WHERE ${finalWhereSql}` : '';
   const orderBy = getListOrderBy(sort);
@@ -433,6 +484,11 @@ async function listGames(options = {}) {
            g.coverage_level,
            g.is_verified,
            g.verification_note,
+           g.editorial_review_status,
+           g.last_reviewed_at,
+           g.editorial_notes,
+           g.quality_warnings,
+           g.reviewed_by,
            g.image,
            g.cover_image,
            g.created_at,
@@ -445,7 +501,7 @@ async function listGames(options = {}) {
     FROM games g
     LEFT JOIN trophies t ON t.game_id = g.id
     LEFT JOIN roadmaps r ON r.game_id = g.id
-    GROUP BY g.id, g.name, g.slug, g.difficulty, g.time, g.time_min_hours, g.time_max_hours, g.time_sort_hours, g.time_bucket, g.missable, g.guide_runs, g.guide_online, g.guide_grind, g.guide_dlc, g.guide_ideal, g.guide_avoid, g.guide_best_moment, g.runs_summary, g.missable_summary, g.online_summary, g.grind_summary, g.dlc_scope, g.difficulty_reason, g.time_reason, g.first_run_advice, g.cleanup_advice, g.before_you_start, g.best_for, g.avoid_if, g.verification_status, g.editorial_status, g.coverage_level, g.is_verified, g.verification_note, g.image, g.cover_image, g.created_at, g.updated_at
+    GROUP BY g.id, g.name, g.slug, g.difficulty, g.time, g.time_min_hours, g.time_max_hours, g.time_sort_hours, g.time_bucket, g.missable, g.guide_runs, g.guide_online, g.guide_grind, g.guide_dlc, g.guide_ideal, g.guide_avoid, g.guide_best_moment, g.runs_summary, g.missable_summary, g.online_summary, g.grind_summary, g.dlc_scope, g.difficulty_reason, g.time_reason, g.first_run_advice, g.cleanup_advice, g.before_you_start, g.best_for, g.avoid_if, g.verification_status, g.editorial_status, g.coverage_level, g.is_verified, g.verification_note, g.editorial_review_status, g.last_reviewed_at, g.editorial_notes, g.quality_warnings, g.reviewed_by, g.image, g.cover_image, g.created_at, g.updated_at
   )`;
 
   const totalRow = await get(
@@ -520,7 +576,7 @@ async function getCatalogFacetCounts(options = {}) {
 
 async function getGameRowById(id, options = {}) {
   const row = await get(
-    'SELECT id, name, slug, difficulty, time, time_min_hours, time_max_hours, time_sort_hours, time_bucket, missable, guide_runs, guide_online, guide_grind, guide_dlc, guide_ideal, guide_avoid, guide_best_moment, runs_summary, missable_summary, online_summary, grind_summary, dlc_scope, difficulty_reason, time_reason, first_run_advice, cleanup_advice, before_you_start, best_for, avoid_if, verification_status, editorial_status, coverage_level, is_verified, verification_note, image, cover_image, created_at, updated_at FROM games WHERE id = ?',
+    'SELECT id, name, slug, difficulty, time, time_min_hours, time_max_hours, time_sort_hours, time_bucket, missable, guide_runs, guide_online, guide_grind, guide_dlc, guide_ideal, guide_avoid, guide_best_moment, runs_summary, missable_summary, online_summary, grind_summary, dlc_scope, difficulty_reason, time_reason, first_run_advice, cleanup_advice, before_you_start, best_for, avoid_if, verification_status, editorial_status, coverage_level, is_verified, verification_note, editorial_review_status, last_reviewed_at, editorial_notes, quality_warnings, reviewed_by, image, cover_image, created_at, updated_at FROM games WHERE id = ?',
     [id]
   );
   return ensurePublicGame(row, options.includeDrafts);
@@ -667,6 +723,11 @@ function buildEditorialPersistence(payload = {}) {
     bestFor,
     avoidIf,
     verificationStatus: normalizeVerificationStatus(payload.verification_status, payload),
+    editorialReviewStatus: normalizeEditorialReviewStatus(payload.editorial_review_status ?? payload.editorialReviewStatus ?? payload.editorialStatus),
+    lastReviewedAt: normalizeReviewedDate(payload.last_reviewed_at ?? payload.lastReviewedAt),
+    editorialNotes: payload.editorial_notes || payload.editorialNotes || '',
+    qualityWarnings: serializeQualityWarnings(payload.quality_warnings ?? payload.qualityWarnings),
+    reviewedBy: payload.reviewed_by || payload.reviewedBy || '',
     legacyRuns: runsSummary,
     legacyOnline: onlineSummary,
     legacyGrind: grindSummary,
@@ -700,8 +761,8 @@ async function createGame(payload) {
   let result;
   try {
     result = await run(
-      'INSERT INTO games (name, slug, difficulty, time, time_min_hours, time_max_hours, time_sort_hours, time_bucket, missable, guide_runs, guide_online, guide_grind, guide_dlc, guide_ideal, guide_avoid, guide_best_moment, runs_summary, missable_summary, online_summary, grind_summary, dlc_scope, difficulty_reason, time_reason, first_run_advice, cleanup_advice, before_you_start, best_for, avoid_if, verification_status, editorial_status, coverage_level, is_verified, verification_note, image, cover_image) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)',
-      [payload.name.trim(), slug, payload.difficulty, payload.time.trim(), timeMeta.time_min_hours, timeMeta.time_max_hours, timeMeta.time_sort_hours, timeMeta.time_bucket, payload.missable.trim(), editorial.legacyRuns, editorial.legacyOnline, editorial.legacyGrind, editorial.legacyDlc, editorial.legacyIdeal, editorial.legacyAvoid, editorial.legacyBestMoment, editorial.runsSummary, editorial.missableSummary, editorial.onlineSummary, editorial.grindSummary, editorial.dlcScope, editorial.difficultyReason, editorial.timeReason, editorial.firstRunAdvice, editorial.cleanupAdvice, editorial.beforeYouStart, editorial.bestFor, editorial.avoidIf, editorial.verificationStatus, editorialStatus, coverageLevel, isVerified, verificationNote, payload.image?.trim() || null, payload.cover_image?.trim() || null]
+      'INSERT INTO games (name, slug, difficulty, time, time_min_hours, time_max_hours, time_sort_hours, time_bucket, missable, guide_runs, guide_online, guide_grind, guide_dlc, guide_ideal, guide_avoid, guide_best_moment, runs_summary, missable_summary, online_summary, grind_summary, dlc_scope, difficulty_reason, time_reason, first_run_advice, cleanup_advice, before_you_start, best_for, avoid_if, verification_status, editorial_status, coverage_level, is_verified, verification_note, editorial_review_status, last_reviewed_at, editorial_notes, quality_warnings, reviewed_by, image, cover_image) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)',
+      [payload.name.trim(), slug, payload.difficulty, payload.time.trim(), timeMeta.time_min_hours, timeMeta.time_max_hours, timeMeta.time_sort_hours, timeMeta.time_bucket, payload.missable.trim(), editorial.legacyRuns, editorial.legacyOnline, editorial.legacyGrind, editorial.legacyDlc, editorial.legacyIdeal, editorial.legacyAvoid, editorial.legacyBestMoment, editorial.runsSummary, editorial.missableSummary, editorial.onlineSummary, editorial.grindSummary, editorial.dlcScope, editorial.difficultyReason, editorial.timeReason, editorial.firstRunAdvice, editorial.cleanupAdvice, editorial.beforeYouStart, editorial.bestFor, editorial.avoidIf, editorial.verificationStatus, editorialStatus, coverageLevel, isVerified, verificationNote, editorial.editorialReviewStatus, editorial.lastReviewedAt, editorial.editorialNotes, editorial.qualityWarnings, editorial.reviewedBy, payload.image?.trim() || null, payload.cover_image?.trim() || null]
     );
 
     await insertGameData(result.lastID, payload);
@@ -769,8 +830,8 @@ async function updateGame(id, payload) {
     }
 
     await run(
-      'UPDATE games SET name = ?, slug = ?, difficulty = ?, time = ?, time_min_hours = ?, time_max_hours = ?, time_sort_hours = ?, time_bucket = ?, missable = ?, guide_runs = ?, guide_online = ?, guide_grind = ?, guide_dlc = ?, guide_ideal = ?, guide_avoid = ?, guide_best_moment = ?, runs_summary = ?, missable_summary = ?, online_summary = ?, grind_summary = ?, dlc_scope = ?, difficulty_reason = ?, time_reason = ?, first_run_advice = ?, cleanup_advice = ?, before_you_start = ?, best_for = ?, avoid_if = ?, verification_status = ?, editorial_status = ?, coverage_level = ?, is_verified = ?, verification_note = ?, image = ?, cover_image = ? WHERE id = ?',
-      [payload.name.trim(), slug, payload.difficulty, payload.time.trim(), timeMeta.time_min_hours, timeMeta.time_max_hours, timeMeta.time_sort_hours, timeMeta.time_bucket, payload.missable.trim(), editorial.legacyRuns, editorial.legacyOnline, editorial.legacyGrind, editorial.legacyDlc, editorial.legacyIdeal, editorial.legacyAvoid, editorial.legacyBestMoment, editorial.runsSummary, editorial.missableSummary, editorial.onlineSummary, editorial.grindSummary, editorial.dlcScope, editorial.difficultyReason, editorial.timeReason, editorial.firstRunAdvice, editorial.cleanupAdvice, editorial.beforeYouStart, editorial.bestFor, editorial.avoidIf, editorial.verificationStatus, editorialStatus, coverageLevel, isVerified, verificationNote, payload.image?.trim() || null, payload.cover_image?.trim() || null, id]
+      'UPDATE games SET name = ?, slug = ?, difficulty = ?, time = ?, time_min_hours = ?, time_max_hours = ?, time_sort_hours = ?, time_bucket = ?, missable = ?, guide_runs = ?, guide_online = ?, guide_grind = ?, guide_dlc = ?, guide_ideal = ?, guide_avoid = ?, guide_best_moment = ?, runs_summary = ?, missable_summary = ?, online_summary = ?, grind_summary = ?, dlc_scope = ?, difficulty_reason = ?, time_reason = ?, first_run_advice = ?, cleanup_advice = ?, before_you_start = ?, best_for = ?, avoid_if = ?, verification_status = ?, editorial_status = ?, coverage_level = ?, is_verified = ?, verification_note = ?, editorial_review_status = ?, last_reviewed_at = ?, editorial_notes = ?, quality_warnings = ?, reviewed_by = ?, image = ?, cover_image = ? WHERE id = ?',
+      [payload.name.trim(), slug, payload.difficulty, payload.time.trim(), timeMeta.time_min_hours, timeMeta.time_max_hours, timeMeta.time_sort_hours, timeMeta.time_bucket, payload.missable.trim(), editorial.legacyRuns, editorial.legacyOnline, editorial.legacyGrind, editorial.legacyDlc, editorial.legacyIdeal, editorial.legacyAvoid, editorial.legacyBestMoment, editorial.runsSummary, editorial.missableSummary, editorial.onlineSummary, editorial.grindSummary, editorial.dlcScope, editorial.difficultyReason, editorial.timeReason, editorial.firstRunAdvice, editorial.cleanupAdvice, editorial.beforeYouStart, editorial.bestFor, editorial.avoidIf, editorial.verificationStatus, editorialStatus, coverageLevel, isVerified, verificationNote, editorial.editorialReviewStatus, editorial.lastReviewedAt, editorial.editorialNotes, editorial.qualityWarnings, editorial.reviewedBy, payload.image?.trim() || null, payload.cover_image?.trim() || null, id]
     );
 
     await run('DELETE FROM roadmaps WHERE game_id = ?', [id]);

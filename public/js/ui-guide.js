@@ -46,6 +46,30 @@ window.UIGuide = (() => {
     Bronze: 'Bronze'
   };
 
+  function formatGuideReviewDate(value = '') {
+    const text = String(value || '').trim();
+    if (!text) return '';
+    const match = text.match(/^(\d{4})-(\d{2})-(\d{2})/);
+    return match ? `${match[3]}/${match[2]}/${match[1]}` : text;
+  }
+
+  function renderEditorialTrustRow(game = {}, viewModel = {}) {
+    const badge = viewModel.editorial?.statusBadge || getEditorialBadge(game);
+    const reviewedAt = badge.lastReviewedAt || viewModel.editorial?.lastReviewedAt || game.last_reviewed_at || game.lastReviewedAt || '';
+    const reviewedLabel = formatGuideReviewDate(reviewedAt);
+    const detail = badge.detail || 'Este guia ainda está passando por revisão editorial.';
+    const warningItems = Array.isArray(viewModel.editorial?.qualityWarnings) ? viewModel.editorial.qualityWarnings : (badge.qualityWarnings || []);
+    return `
+      <div class="atlas-editorial-trust">
+        <div class="atlas-editorial-trust__row">
+          <span class="atlas-editorial-badge atlas-editorial-badge--${escapeAttribute(badge.status || badge.badge || badge.tone || 'in_review')}" title="${escapeAttribute(detail)}"><i class="fas fa-clipboard-check" aria-hidden="true"></i>${escapeHtml(badge.label || 'Em revisão')}</span>
+          ${reviewedLabel ? `<span class="atlas-editorial-trust__date">Revisado em ${escapeHtml(reviewedLabel)}</span>` : ''}
+        </div>
+        <p class="${badge.critical ? 'atlas-editorial-alert' : 'atlas-editorial-trust__copy'}">${escapeHtml(detail)}</p>
+        ${warningItems.length ? `<ul class="atlas-editorial-warning-list">${warningItems.slice(0, 3).map(item => `<li>${escapeHtml(item)}</li>`).join('')}</ul>` : ''}
+      </div>`;
+  }
+
   function normalizeChecklistDensity(value = 'compact') {
     return CHECKLIST_DENSITIES.has(value) ? value : 'compact';
   }
@@ -714,6 +738,7 @@ window.UIGuide = (() => {
               <span>${escapeHtml(guideEyebrow)}</span>
             </div>
             <h1>${escapeHtml(buildGameGuideH1(game))}</h1>
+            ${renderEditorialTrustRow(game, viewModel)}
             <p class="atlas-guide-hero__subtitle">${escapeHtml(scopeModel.subtitle || 'Guia de troféus e roadmap da platina')}</p>
             <p class="atlas-guide-hero__summary" hidden>${escapeHtml(verdict.summary || viewModel.decisionModel.verdictDetail)}</p>
             <div class="atlas-guide-start-card">

@@ -14,7 +14,7 @@
   <link rel="stylesheet" href="/css/components.css">
   <link rel="stylesheet" href="/css/admin.css">
   <link rel="stylesheet" href="/css/responsive.css">
-  <link rel="icon" href="/favicon.svg" type="image/svg+xml">
+  <link rel="icon" href="/favicon.png" type="image/png">
   <link rel="apple-touch-icon" href="/apple-touch-icon.png">
   <link rel="manifest" href="/site.webmanifest">
 </head>
@@ -24,10 +24,10 @@
 
   <header class="sticky top-0 z-40 atlas-topbar atlas-topbar--admin">
     <div class="atlas-topbar__row max-w-[1320px] mx-auto px-4 lg:px-6 h-[88px] flex items-center justify-between gap-4">
-      <a href="/" class="atlas-brand flex items-center gap-4">
-        <div class="w-12 h-12 rounded-2xl atlas-logo-mark flex items-center justify-center"><span class="atlas-logo-letter text-white text-2xl font-black">A</span></div>
+      <a href="/" class="atlas-brand notranslate flex items-center gap-4" translate="no" aria-label="AtlasAchievement">
+        <div class="w-12 h-12 rounded-2xl atlas-logo-mark flex items-center justify-center"><img src="/assets/brand/atlasachievement-logo.png" alt="" class="atlas-logo-image" width="44" height="44" decoding="async" aria-hidden="true"><span class="atlas-logo-letter notranslate sr-only" translate="no">A</span></div>
         <div class="atlas-brand__copy">
-          <div class="atlas-brand__name text-[20px] font-extrabold leading-none">AtlasAchievement</div>
+          <div class="atlas-brand__name notranslate text-[20px] font-extrabold leading-none" translate="no">AtlasAchievement</div>
           <div class="atlas-brand__tagline text-[11px] uppercase tracking-[0.28em] text-white/40 mt-1">Console Atlas</div>
         </div>
       </a>
@@ -367,6 +367,27 @@
                   </div>
                 </div>
                 <div class="admin-field-grid admin-field-grid--two">
+                  <div class="admin-field">
+                    <label class="atlas-label" for="gameEditorialReviewStatus">Selo editorial</label>
+                    <select id="gameEditorialReviewStatus" class="atlas-input">
+                      <option value="">Fallback: Em revisão</option>
+                      <option value="verified">Verificado</option>
+                      <option value="in_review">Em revisão</option>
+                      <option value="needs_missables_check">Checar perdíveis</option>
+                      <option value="needs_online_check">Checar online</option>
+                      <option value="dlc_pending">DLC pendente</option>
+                      <option value="outdated">Desatualizado</option>
+                      <option value="draft">Rascunho</option>
+                    </select>
+                    <p class="admin-field-help">Não marque Verificado sem revisão manual explícita.</p>
+                  </div>
+                  <div class="admin-field">
+                    <label class="atlas-label" for="gameLastReviewedAt">Última revisão</label>
+                    <input id="gameLastReviewedAt" type="date" class="atlas-input">
+                    <p class="admin-field-help">Aparece no guia como “Revisado em”.</p>
+                  </div>
+                </div>
+                <div class="admin-field-grid admin-field-grid--two">
                   <label class="admin-checkbox-field">
                     <input id="gameIsVerified" type="checkbox">
                     <span>
@@ -379,6 +400,20 @@
                     <input id="gameVerificationNote" type="text" maxlength="180" class="atlas-input" placeholder="Ex.: conferido contra lista PSN em abril/2026">
                     <p class="admin-field-help">Máximo de 180 caracteres. Ajuda revisão futura.</p>
                   </div>
+                </div>
+                <div class="admin-field-grid admin-field-grid--two">
+                  <div class="admin-field">
+                    <label class="atlas-label" for="gameReviewedBy">Revisado por</label>
+                    <input id="gameReviewedBy" type="text" maxlength="120" class="atlas-input" placeholder="Equipe editorial AtlasAchievement">
+                  </div>
+                  <div class="admin-field">
+                    <label class="atlas-label" for="gameQualityWarnings">Avisos de qualidade</label>
+                    <textarea id="gameQualityWarnings" class="atlas-input admin-textarea" placeholder="Um aviso por linha"></textarea>
+                  </div>
+                </div>
+                <div class="admin-field">
+                  <label class="atlas-label" for="gameEditorialNotes">Notas editoriais</label>
+                  <textarea id="gameEditorialNotes" class="atlas-input admin-textarea" placeholder="Contexto interno da revisão editorial"></textarea>
                 </div>
               </section>
 

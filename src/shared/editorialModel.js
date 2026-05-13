@@ -15,6 +15,57 @@
     grind: { label: 'Grind', tone: 'warning' },
     run: { label: 'Run específica', tone: 'warning' }
   };
+  const EDITORIAL_TRUST_STATUSES = {
+    verified: {
+      label: 'Verificado',
+      detail: 'Guia revisado editorialmente.',
+      tone: 'verified',
+      badge: 'verified',
+      critical: false
+    },
+    in_review: {
+      label: 'Em revisão',
+      detail: 'Este guia ainda está passando por revisão editorial.',
+      tone: 'review',
+      badge: 'review',
+      critical: false
+    },
+    needs_missables_check: {
+      label: 'Checar perdíveis',
+      detail: 'As informações sobre troféus perdíveis ainda precisam de validação.',
+      tone: 'warning',
+      badge: 'warning',
+      critical: true
+    },
+    needs_online_check: {
+      label: 'Checar online',
+      detail: 'As informações sobre online/coop ainda precisam de validação.',
+      tone: 'warning',
+      badge: 'warning',
+      critical: true
+    },
+    dlc_pending: {
+      label: 'DLC pendente',
+      detail: 'A separação entre base game e DLC ainda está em revisão.',
+      tone: 'warning',
+      badge: 'warning',
+      critical: true
+    },
+    outdated: {
+      label: 'Desatualizado',
+      detail: 'Este guia pode estar desatualizado e precisa de nova revisão.',
+      tone: 'risk',
+      badge: 'risk',
+      critical: true
+    },
+    draft: {
+      label: 'Rascunho',
+      detail: 'Este guia ainda está em rascunho.',
+      tone: 'neutral',
+      badge: 'neutral',
+      critical: true
+    }
+  };
 
   function parseTimeValue(value = '') {
     const normalized = String(value || '').toLowerCase();
@@ -137,7 +188,78 @@
     return 'não verificado';
   }
 
+  function normalizeEditorialTrustStatus(value = '') {
+    const status = String(value || '').trim().toLowerCase().replace(/-/g, '_');
+    return EDITORIAL_TRUST_STATUSES[status] ? status : '';
+  }
+
+  function parseQualityWarnings(value = []) {
+    if (Array.isArray(value)) return value.map(item => String(item || '').trim()).filter(Boolean);
+    const raw = String(value || '').trim();
+    if (!raw) return [];
+    if (/^\s*\[/.test(raw)) {
+      try {
+        const parsed = JSON.parse(raw);
+        if (Array.isArray(parsed)) return parsed.map(item => String(item || '').trim()).filter(Boolean);
+      } catch (error) {
+        // Legacy free-text values are parsed line by line below.
+      }
+    }
+    return raw.split(/\r?\n|;/).map(item => item.trim()).filter(Boolean);
+  }
+
+  function inferEditorialTrustStatusFromNotes(game = {}) {
+    const text = normalizeRiskText([
+      game.editorial_notes,
+      game.editorialNotes,
+      game.verification_note,
+      game.verificationNote
+    ].filter(Boolean).join(' '));
+    if (!text) return '';
+    if (/needs_missables_check|checar perdiveis|perdiveis.*validacao|perdiveis.*validar|missables.*check/.test(text)) return 'needs_missables_check';
+    if (/needs_online_check|checar online|online.*validacao|online.*validar|coop.*validacao|coop.*validar/.test(text)) return 'needs_online_check';
+    if (/dlc_pending|dlc pendente|dlc.*revisao|base game.*dlc|separacao.*dlc/.test(text)) return 'dlc_pending';
+    if (/outdated|desatualizado|defasado|nova versao|atualizacao.*lista/.test(text)) return 'outdated';
+    return '';
+  }
+
+  function getEditorialTrustStatus(game = {}) {
+    const explicit = normalizeEditorialTrustStatus(
+      game.editorial_review_status
+      || game.editorialReviewStatus
+      || game.editorialStatus
+      || ''
+    );
+    if (explicit) return explicit;
+    if (game?.is_verified || game?.verification_status === 'verified') return 'verified';
+    if (String(game?.editorial_status || '').toLowerCase() === 'draft') return 'draft';
+    return inferEditorialTrustStatusFromNotes(game) || 'in_review';
+  }
+
+  function getEditorialTrustBadge(game = {}) {
+    const status = getEditorialTrustStatus(game);
+    const meta = EDITORIAL_TRUST_STATUSES[status] || EDITORIAL_TRUST_STATUSES.in_review;
+    const warnings = parseQualityWarnings(game.quality_warnings ?? game.qualityWarnings ?? []);
+    return {
+      status,
+      label: meta.label,
+      detail: meta.detail,
+      tone: meta.tone,
+      badge: meta.badge,
+      critical: Boolean(meta.critical),
+      lastReviewedAt: game.last_reviewed_at || game.lastReviewedAt || '',
+      reviewedBy: game.reviewed_by || game.reviewedBy || '',
+      notes: game.editorial_notes || game.editorialNotes || '',
+      qualityWarnings: warnings
+    };
+  }
+
   function getEditorialBadge(game = {}) {
+    const trustBadge = getEditorialTrustBadge(game);
+    if (trustBadge.status === 'verified' || trustBadge.status === 'in_review' || trustBadge.critical) {
+      return trustBadge;
+    }
+
     const status = game.editorial_status || 'published';
     const coverage = game.coverage_level || 'partial';
 
@@ -216,6 +338,11 @@
     getRiskCounts,
     getCoverageDisplayLabel,
     getVerificationStatusLabel,
+    EDITORIAL_TRUST_STATUSES,
+    normalizeEditorialTrustStatus,
+    parseQualityWarnings,
+    getEditorialTrustStatus,
+    getEditorialTrustBadge,
     getEditorialBadge,
     getGuideRoadmapCount,
     buildGuideHeroStats

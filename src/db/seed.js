@@ -67,8 +67,11 @@ async function seed() {
     const timeSortHours = Number.isFinite(Number(game.time_sort_hours)) ? Number(game.time_sort_hours) : timeMeta.time_sort_hours;
     const timeBucket = game.time_bucket || timeMeta.time_bucket;
     const verificationStatus = normalizeVerificationStatus(game);
+    const qualityWarnings = Array.isArray(game.quality_warnings || game.qualityWarnings)
+      ? JSON.stringify(game.quality_warnings || game.qualityWarnings)
+      : (game.quality_warnings || game.qualityWarnings || '');
     const result = await run(
-      'INSERT INTO games (name, slug, difficulty, time, time_min_hours, time_max_hours, time_sort_hours, time_bucket, missable, runs_summary, missable_summary, online_summary, grind_summary, dlc_scope, difficulty_reason, time_reason, first_run_advice, cleanup_advice, before_you_start, best_for, avoid_if, verification_status, editorial_status, coverage_level, is_verified, verification_note, image, cover_image) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)',
+      'INSERT INTO games (name, slug, difficulty, time, time_min_hours, time_max_hours, time_sort_hours, time_bucket, missable, runs_summary, missable_summary, online_summary, grind_summary, dlc_scope, difficulty_reason, time_reason, first_run_advice, cleanup_advice, before_you_start, best_for, avoid_if, verification_status, editorial_status, coverage_level, is_verified, verification_note, editorial_review_status, last_reviewed_at, editorial_notes, quality_warnings, reviewed_by, image, cover_image) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)',
       [
         game.name,
         slug,
@@ -96,6 +99,11 @@ async function seed() {
         normalizeCoverageLevel(game),
         verificationStatus === 'verified' ? 1 : 0,
         game.verification_note || '',
+        game.editorial_review_status || game.editorialReviewStatus || null,
+        game.last_reviewed_at || game.lastReviewedAt || '',
+        game.editorial_notes || game.editorialNotes || '',
+        qualityWarnings,
+        game.reviewed_by || game.reviewedBy || '',
         game.image || null,
         game.cover_image || deriveSteamCoverImage(game.image) || null
       ]

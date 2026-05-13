@@ -74,6 +74,13 @@
     linear-gradient(135deg, rgba(250, 204, 21, .22), rgba(219, 234, 254, .12));
   border: 1px solid rgba(250, 204, 21, .28);
   box-shadow: 0 0 24px rgba(250, 204, 21, .16);
+  overflow: hidden;
+}
+.atlas-hero-kicker__logo {
+  display: block;
+  width: 28px;
+  height: 28px;
+  object-fit: contain;
 }
 .atlas-home-metrics {
   display: grid;
