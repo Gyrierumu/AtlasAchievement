@@ -12,6 +12,7 @@ const meRoutes = require('./routes/me.routes');
 const gamesRoutes = require('./routes/games.routes');
 const feedbackRoutes = require('./routes/feedback.routes');
 const uploadsRoutes = require('./routes/uploads.routes');
+const analyticsRoutes = require('./routes/analytics.routes');
 const errorHandler = require('./middleware/errorHandler');
 const gamesService = require('./services/games.service');
 const sharedEditorialModel = require('./shared/editorialModel');
@@ -30,6 +31,9 @@ const publicIndexTemplate = fs.readFileSync(publicIndexPath, 'utf8');
 const catalogFacetPageMap = sharedCatalogModel.catalogFacetPageMap;
 const PUBLIC_CATALOG_PAGE_SIZE = 24;
 const PRODUCTION_CANONICAL_ORIGIN = 'https://atlasachievement.com.br';
+const DEFAULT_SOCIAL_IMAGE_PATH = '/assets/brand/atlasachievement-og.png';
+const HOME_SEO_TITLE = 'AtlasAchievement — Guias de troféus e platina em português';
+const HOME_SEO_DESCRIPTION = 'Escolha sua próxima platina com tempo estimado, dificuldade, roadmap, checklist, troféus perdíveis, online/coop e guias em português.';
 
 const editorialCollectionPageMap = {
   'primeira-platina': {
@@ -228,7 +232,7 @@ function buildPublicUrl(req, pathname = '/') {
 }
 
 function resolveMetaImage(origin, imagePath) {
-  if (!imagePath) return `${origin}/og-default.svg`;
+  if (!imagePath) return `${origin}${DEFAULT_SOCIAL_IMAGE_PATH}`;
   if (/^https?:\/\//i.test(imagePath)) return imagePath;
   return `${origin}${imagePath}`;
 }
@@ -279,7 +283,7 @@ function buildAdminLoginPageHtml() {
   <link rel="stylesheet" href="/css/components.css">
   <link rel="stylesheet" href="/css/admin.css">
   <link rel="stylesheet" href="/css/responsive.css">
-  <link rel="icon" href="/favicon.png" type="image/png">
+  <link rel="icon" href="/favicon.png" type="image/png" sizes="any">
   <link rel="apple-touch-icon" href="/apple-touch-icon.png">
   <link rel="manifest" href="/site.webmanifest">
   <style>
@@ -1620,18 +1624,18 @@ async function buildDefaultPageHtml(req) {
   const totalRoadmaps = games.reduce((sum, game) => sum + getHomeRoadmapCount(game), 0);
 
   return applyTemplateDefaults(publicIndexTemplate
-    .replace(/__PAGE_TITLE__/g, 'AtlasAchievement - Guias de Platina com Roadmap e Checklist')
-    .replace(/__PAGE_DESCRIPTION__/g, 'Compare tempo, dificuldade, perdíveis, online e roadmaps de platina em guias de troféus com checklist e progresso salvo.')
+    .replace(/__PAGE_TITLE__/g, HOME_SEO_TITLE)
+    .replace(/__PAGE_DESCRIPTION__/g, HOME_SEO_DESCRIPTION)
     .replace(/__ROBOTS_META__/g, '')
     .replace(/__PAGE_OG_TYPE__/g, 'website')
     .replace(/__PAGE_CANONICAL__/g, buildPublicUrl(req, '/'))
-    .replace(/__PAGE_OG_IMAGE__/g, `${origin}/og-default.svg`)
+    .replace(/__PAGE_OG_IMAGE__/g, resolveMetaImage(origin))
     .replace(/__PAGE_JSON_LD__/g, safeJsonForHtml({
       '@context': 'https://schema.org',
       '@type': 'WebSite',
       name: 'AtlasAchievement',
       url: buildPublicUrl(req, '/'),
-      description: 'Compare tempo, dificuldade, perdíveis, online e roadmaps de platina em guias de troféus com checklist e progresso salvo.'
+      description: HOME_SEO_DESCRIPTION
     }))
     .replace(/__HOME_CATALOG_PROOF__/g, formatHomeCatalogProof(games.length, totalTrophies, totalRoadmaps))
     .replace(/__HOME_INTENT_CARDS__/g, renderHomeIntentCardsHtml(games))
@@ -1662,7 +1666,7 @@ async function buildStaticPublicPageHtml(req, pageConfig = {}) {
     .replace(/__ROBOTS_META__/g, pageConfig.robotsMeta || '<meta name="robots" content="noindex,follow">')
     .replace(/__PAGE_OG_TYPE__/g, 'website')
     .replace(/__PAGE_CANONICAL__/g, escapeHtml(canonicalUrl))
-    .replace(/__PAGE_OG_IMAGE__/g, `${origin}/og-default.svg`)
+    .replace(/__PAGE_OG_IMAGE__/g, resolveMetaImage(origin))
     .replace(/__PAGE_JSON_LD__/g, safeJsonForHtml(structuredData))
     .replace(/__HOME_VIEW_CLASS__/g, activeView === 'home' ? '' : 'hidden')
     .replace(/__HOME_HERO_HEADING_TAG__/g, activeView === 'home' ? 'h1' : 'h2')
@@ -1765,7 +1769,7 @@ async function buildStartHerePageHtml(req) {
     .replace(/__ROBOTS_META__/g, '')
     .replace(/__PAGE_OG_TYPE__/g, 'website')
     .replace(/__PAGE_CANONICAL__/g, escapeHtml(canonicalUrl))
-    .replace(/__PAGE_OG_IMAGE__/g, `${origin}/og-default.svg`)
+    .replace(/__PAGE_OG_IMAGE__/g, resolveMetaImage(origin))
     .replace(/__PAGE_JSON_LD__/g, safeJsonForHtml(buildStartHereStructuredData(origin, canonicalUrl)))
     .replace(/__HOME_VIEW_CLASS__/g, 'hidden')
     .replace(/__HOME_HERO_HEADING_TAG__/g, 'h2')
@@ -1805,7 +1809,7 @@ async function buildOrganicListPageHtml(req, config) {
     .replace(/__ROBOTS_META__/g, '')
     .replace(/__PAGE_OG_TYPE__/g, 'website')
     .replace(/__PAGE_CANONICAL__/g, escapeHtml(canonicalUrl))
-    .replace(/__PAGE_OG_IMAGE__/g, `${origin}/og-default.svg`)
+    .replace(/__PAGE_OG_IMAGE__/g, resolveMetaImage(origin))
     .replace(/__PAGE_JSON_LD__/g, safeJsonForHtml(structuredData))
     .replace(/__HOME_VIEW_CLASS__/g, 'hidden')
     .replace(/__HOME_HERO_HEADING_TAG__/g, 'h2')
@@ -2099,7 +2103,7 @@ async function buildEditorialCollectionPageHtml(req, collectionSlug) {
     .replace(/__PAGE_DESCRIPTION__/g, escapeHtml(config.description))
     .replace(/__PAGE_OG_TYPE__/g, 'website')
     .replace(/__PAGE_CANONICAL__/g, escapeHtml(canonicalUrl))
-    .replace(/__PAGE_OG_IMAGE__/g, `${origin}/og-default.svg`)
+    .replace(/__PAGE_OG_IMAGE__/g, resolveMetaImage(origin))
     .replace(/__PAGE_JSON_LD__/g, safeJsonForHtml(structuredData))
     .replace(/__HOME_VIEW_CLASS__/g, 'hidden')
     .replace(/__HOME_HERO_HEADING_TAG__/g, 'h2')
@@ -2153,7 +2157,7 @@ async function buildCatalogPageHtml(req, facetSlug = null) {
     .replace(/__ROBOTS_META__/g, robotsMeta)
     .replace(/__PAGE_OG_TYPE__/g, 'website')
     .replace(/__PAGE_CANONICAL__/g, escapeHtml(canonicalUrl))
-    .replace(/__PAGE_OG_IMAGE__/g, `${origin}/og-default.svg`)
+    .replace(/__PAGE_OG_IMAGE__/g, resolveMetaImage(origin))
     .replace(/__PAGE_JSON_LD__/g, safeJsonForHtml(structuredData))
     .replace(/__HOME_VIEW_CLASS__/g, 'hidden')
     .replace(/__HOME_HERO_HEADING_TAG__/g, 'h2')
@@ -2354,6 +2358,7 @@ app.get('/sitemap.xml', async (req, res, next) => {
 app.use('/api/auth/login', loginRateLimit);
 app.use('/api/auth/register', registerRateLimit);
 app.use('/api/auth', authRoutes);
+app.use('/api/analytics', analyticsRoutes);
 app.use('/api/feedback', requireCsrf, feedbackRoutes);
 app.use('/api/me', requireCsrf, meRoutes);
 app.use('/api/uploads', requireCsrf, uploadsRoutes);

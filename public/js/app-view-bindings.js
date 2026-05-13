@@ -223,7 +223,11 @@ window.AppViewBindings = (() => {
       state.catalogSearch = event.target.value || '';
       state.catalogPage = 1;
       setCatalogIntent('all');
-      await loadCatalogPage({ page: 1 });
+      const response = await loadCatalogPage({ page: 1 });
+      window.AtlasAnalytics?.trackCatalogSearch?.({
+        searchTerm: state.catalogSearch,
+        resultsCount: response
+      });
     });
 
     UI.qs('#catalogSort')?.addEventListener('change', async event => {
@@ -245,7 +249,11 @@ window.AppViewBindings = (() => {
         state.catalogPage = 1;
         const sortField = UI.qs('#catalogSort');
         if (sortField) sortField.value = sort;
-        await loadCatalogPage({ page: 1, facet, sort });
+        const response = await loadCatalogPage({ page: 1, facet, sort });
+        window.AtlasAnalytics?.trackCatalogFilterUsed?.({
+          facet,
+          resultsCount: response
+        });
         navigate('catalog', { facet });
         return;
       }
@@ -283,7 +291,14 @@ window.AppViewBindings = (() => {
       if (compareOpenButton) {
         event.preventDefault();
         const slug = compareOpenButton.dataset.compareOpen || '';
-        if (slug) await loadGuideBySlug(slug);
+        if (slug) {
+          window.AtlasAnalytics?.trackGameCardClick?.({
+            element: compareOpenButton,
+            gameSlug: slug,
+            origin: 'catalog'
+          });
+          await loadGuideBySlug(slug, { analyticsSource: 'catalog' });
+        }
         return;
       }
 
@@ -293,7 +308,11 @@ window.AppViewBindings = (() => {
         setCatalogIntent('all');
         state.catalogFacet = facetButton.dataset.catalogFacet || 'all';
         state.catalogPage = 1;
-        await loadCatalogPage({ page: 1, facet: state.catalogFacet });
+        const response = await loadCatalogPage({ page: 1, facet: state.catalogFacet });
+        window.AtlasAnalytics?.trackCatalogFilterUsed?.({
+          facet: state.catalogFacet,
+          resultsCount: response
+        });
         navigate('catalog', { facet: state.catalogFacet });
         return;
       }
@@ -303,7 +322,14 @@ window.AppViewBindings = (() => {
       event.preventDefault();
       const slug = gameLink.dataset.gameSlug || gameLink.dataset.openGuideCard || decodeURIComponent(((gameLink.getAttribute('href') || '').split('/jogo/')[1] || '').trim());
       if (slug) {
-        await loadGuideBySlug(slug);
+        const origin = window.AtlasAnalytics?.getInteractionOrigin?.(gameLink)
+          || (window.location.pathname.startsWith('/platinas-') || window.location.pathname === '/comece-aqui' ? 'seo_page' : 'catalog');
+        window.AtlasAnalytics?.trackGameCardClick?.({
+          element: gameLink,
+          gameSlug: slug,
+          origin
+        });
+        await loadGuideBySlug(slug, { analyticsSource: origin });
       }
     });
   }

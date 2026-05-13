@@ -110,6 +110,10 @@ window.AppGuideView = (() => {
         event.preventDefault();
         state.activeGuideTab = tabButton.dataset.guideTabButton || tabButton.dataset.guideTabTarget || 'summary';
         UI.activateGuideTab?.(state.activeGuideTab, { scroll: true });
+        window.AtlasAnalytics?.trackGuideTabChange?.({
+          gameSlug: state.currentGame?.slug || '',
+          tabName: state.activeGuideTab
+        });
         if (state.activeGuideTab === 'trophies') {
           state.activeFilter = 'all';
           UI.applyTrophyFilter(state.activeFilter, state.guideSearch);
@@ -159,8 +163,14 @@ window.AppGuideView = (() => {
       const relatedLink = event.target.closest('[data-home-game]');
       if (relatedLink) {
         event.preventDefault();
+        window.AtlasAnalytics?.trackGameCardClick?.({
+          element: relatedLink,
+          gameSlug: relatedLink.dataset.openGuideCard || '',
+          gameTitle: relatedLink.dataset.homeGame || '',
+          origin: 'related_games'
+        });
         const handler = state.loadGuideByName;
-        if (typeof handler === 'function') await handler(relatedLink.dataset.homeGame);
+        if (typeof handler === 'function') await handler(relatedLink.dataset.homeGame, { analyticsSource: 'related_games' });
       }
     });
   }

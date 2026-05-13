@@ -422,6 +422,12 @@ window.AppAdmin = (() => {
       UI.renderAdminFeedback?.(state.adminFeedbackResponse);
     }
 
+    async function loadAdminBetaMetrics() {
+      if (!state.session.authenticated) return;
+      state.adminBetaMetrics = await ApiService.getAdminBetaMetrics();
+      UI.renderAdminBetaMetrics?.(state.adminBetaMetrics);
+    }
+
     function openFormPreview() {
       const payload = buildPreviewPayload({ UI, state, collectGameFormPayload });
       UI.renderAdminQuality(createEditorialQualityModel(payload));
@@ -443,7 +449,7 @@ window.AppAdmin = (() => {
         UI.openAdminModal();
         return;
       }
-      await Promise.all([loadGames(), loadAdminSummary(), loadAdminGames(), loadAdminFeedback()]);
+      await Promise.all([loadGames(), loadAdminSummary(), loadAdminGames(), loadAdminFeedback(), loadAdminBetaMetrics()]);
       UI.showView('admin');
       refreshEditorialQuality(UI, state, collectGameFormPayload);
       UI.updateAdminFieldMetrics?.();
@@ -641,12 +647,16 @@ window.AppAdmin = (() => {
       UI.qs('#closePasswordPanelBtn')?.addEventListener('click', () => UI.togglePasswordPanel(false));
       UI.qs('#passwordForm')?.addEventListener('submit', handlePasswordChange);
       UI.qs('#adminRefreshBtn')?.addEventListener('click', async () => {
-        await Promise.all([loadGames({ force: true }), loadAdminSummary(), loadAdminGames(), loadAdminFeedback()]);
+        await Promise.all([loadGames({ force: true }), loadAdminSummary(), loadAdminGames(), loadAdminFeedback(), loadAdminBetaMetrics()]);
         UI.showToast('Catálogo administrativo atualizado.', 'success');
+      });
+      UI.qs('#adminBetaMetricsRefreshBtn')?.addEventListener('click', async () => {
+        await loadAdminBetaMetrics();
+        UI.showToast('Métricas do beta atualizadas.', 'success');
       });
       UI.qs('#adminFeedbackRefreshBtn')?.addEventListener('click', async () => {
         state.adminFeedbackPage = 1;
-        await loadAdminFeedback();
+        await Promise.all([loadAdminFeedback(), loadAdminBetaMetrics()]);
         UI.showToast('Feedbacks atualizados.', 'success');
       });
       UI.qs('#adminFeedbackPanel')?.addEventListener('click', async event => {
@@ -729,6 +739,7 @@ window.AppAdmin = (() => {
       loadAdminGames,
       loadAdminSummary,
       loadAdminFeedback,
+      loadAdminBetaMetrics,
       openFormPreview,
       openAdminPanel,
       bindAdminEvents

@@ -313,6 +313,7 @@ window.UICatalog = (() => {
     const meta = catalogFacetMeta[facet] || catalogFacetMeta.all;
     const items = Array.isArray(options.items) ? options.items.filter(game => game?.slug && game?.name) : [];
     const publicOrigin = getPublicOrigin();
+    const defaultSocialImage = `${publicOrigin}/assets/brand/atlasachievement-og.png`;
     const canonicalUrl = `${publicOrigin}${meta.path}`;
     document.title = meta.title;
     const metaDescription = qs('meta[name="description"]');
@@ -328,13 +329,13 @@ window.UICatalog = (() => {
     const ogUrl = qs('meta[property="og:url"]');
     if (ogUrl) ogUrl.setAttribute('content', canonicalUrl);
     const ogImage = qs('meta[property="og:image"]');
-    if (ogImage) ogImage.setAttribute('content', `${publicOrigin}/og-default.svg`);
+    if (ogImage) ogImage.setAttribute('content', defaultSocialImage);
     const twitterTitle = qs('meta[name="twitter:title"]');
     if (twitterTitle) twitterTitle.setAttribute('content', meta.title);
     const twitterDescription = qs('meta[name="twitter:description"]');
     if (twitterDescription) twitterDescription.setAttribute('content', meta.description);
     const twitterImage = qs('meta[name="twitter:image"]');
-    if (twitterImage) twitterImage.setAttribute('content', `${publicOrigin}/og-default.svg`);
+    if (twitterImage) twitterImage.setAttribute('content', defaultSocialImage);
     const breadcrumbsTarget = qs('#catalogBreadcrumbs');
     if (breadcrumbsTarget) breadcrumbsTarget.innerHTML = buildBreadcrumbsHtml([{ label: 'Início', href: '/' }, { label: 'Catálogo', href: '/catalogo' }, { label: meta.name }]);
     const jsonLd = qs('#gameStructuredData');

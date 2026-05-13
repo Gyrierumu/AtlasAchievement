@@ -131,7 +131,14 @@ window.AppFeedback = (() => {
       await window.ApiService.submitFeedback(payload);
       window.AtlasAnalytics?.trackFeedbackSubmit?.({
         feedbackType: payload.type,
-        gameSlug: getFeedbackGameSlug(payload.pageUrl)
+        gameSlug: getFeedbackGameSlug(payload.pageUrl),
+        pageContext: (() => {
+          try {
+            return new URL(payload.pageUrl || window.location.href, window.location.origin).pathname;
+          } catch (_error) {
+            return window.location.pathname;
+          }
+        })()
       });
       form.reset();
       syncTypeButtons('Bug do site');

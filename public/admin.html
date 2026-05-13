@@ -14,7 +14,7 @@
   <link rel="stylesheet" href="/css/components.css">
   <link rel="stylesheet" href="/css/admin.css">
   <link rel="stylesheet" href="/css/responsive.css">
-  <link rel="icon" href="/favicon.png" type="image/png">
+  <link rel="icon" href="/favicon.png" type="image/png" sizes="any">
   <link rel="apple-touch-icon" href="/apple-touch-icon.png">
   <link rel="manifest" href="/site.webmanifest">
 </head>
@@ -60,6 +60,25 @@
           <div id="adminStatus" class="mt-5 text-sm text-white/55"></div>
         </section>
       </div>
+
+      <section id="adminBetaMetricsPanel" class="atlas-panel p-5 md:p-6 space-y-5">
+        <div class="atlas-section-head">
+          <div>
+            <div class="atlas-eyebrow">Beta público</div>
+            <h2 class="text-[28px] md:text-[36px] leading-none font-extrabold tracking-tight">Métricas do beta</h2>
+            <p id="adminBetaMetricsSummary" class="text-sm text-white/55 mt-2">Carregando sinais de uso, feedback e revisão editorial.</p>
+          </div>
+          <button id="adminBetaMetricsRefreshBtn" type="button" class="atlas-btn atlas-btn-secondary"><i class="fas fa-rotate-right"></i><span>Atualizar</span></button>
+        </div>
+        <div id="adminBetaMetricCards" class="atlas-region atlas-responsive-grid grid md:grid-cols-3 xl:grid-cols-6 gap-3"></div>
+        <div class="grid xl:grid-cols-2 gap-4">
+          <div id="adminBetaFeedbackMetrics" class="atlas-panel atlas-panel--flat p-4"></div>
+          <div id="adminBetaGuideMetrics" class="atlas-panel atlas-panel--flat p-4"></div>
+          <div id="adminBetaSearchMetrics" class="atlas-panel atlas-panel--flat p-4"></div>
+          <div id="adminBetaSeoMetrics" class="atlas-panel atlas-panel--flat p-4"></div>
+          <div id="adminBetaChecklistMetrics" class="atlas-panel atlas-panel--flat p-4 xl:col-span-2"></div>
+        </div>
+      </section>
 
       <section id="adminFeedbackPanel" class="atlas-panel p-5 md:p-6 space-y-4">
         <div class="atlas-section-head">

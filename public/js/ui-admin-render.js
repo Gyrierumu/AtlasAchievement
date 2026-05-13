@@ -420,6 +420,198 @@ window.UIAdminRender = (() => {
     `;
   }
 
+  function renderMetricEmpty() {
+    return '<div class="glass-morphism p-4 rounded-[18px] text-sm text-white/45">Ainda não há dados suficientes para esta métrica.</div>';
+  }
+
+  function renderMetricList(items = [], renderItem) {
+    if (!Array.isArray(items) || !items.length) return renderMetricEmpty();
+    return `<div class="space-y-2">${items.map(renderItem).join('')}</div>`;
+  }
+
+  function renderMetricTable(items = [], columns = []) {
+    if (!Array.isArray(items) || !items.length) return renderMetricEmpty();
+    return `
+      <div class="overflow-x-auto">
+        <table class="w-full text-sm">
+          <thead>
+            <tr class="text-left text-white/45">
+              ${columns.map(column => `<th class="py-2 pr-3 font-semibold">${escapeHtml(column.label)}</th>`).join('')}
+            </tr>
+          </thead>
+          <tbody class="divide-y divide-white/10">
+            ${items.map(item => `
+              <tr>
+                ${columns.map(column => `<td class="py-2 pr-3 text-white/75">${escapeHtml(column.value(item))}</td>`).join('')}
+              </tr>`).join('')}
+          </tbody>
+        </table>
+      </div>`;
+  }
+
+  function statusLabel(value = '') {
+    const labels = {
+      new: 'Novo',
+      reviewed: 'Revisado',
+      archived: 'Arquivado',
+      verified: 'Verificado',
+      in_review: 'Em revisão',
+      needs_missables_check: 'Checar perdíveis',
+      needs_online_check: 'Checar online',
+      dlc_pending: 'DLC pendente',
+      outdated: 'Desatualizado',
+      draft: 'Rascunho'
+    };
+    return labels[value] || value || 'Sem status';
+  }
+
+  function renderBetaMetricBlock(title, bodyHtml, description = '') {
+    return `
+      <div class="flex items-start justify-between gap-3 mb-3">
+        <div>
+          <h3 class="text-lg font-bold">${escapeHtml(title)}</h3>
+          ${description ? `<p class="text-xs text-white/45 mt-1">${escapeHtml(description)}</p>` : ''}
+        </div>
+      </div>
+      ${bodyHtml}`;
+  }
+
+  function renderAdminBetaMetrics(metrics = {}) {
+    const summary = qs('#adminBetaMetricsSummary');
+    const cards = qs('#adminBetaMetricCards');
+    const feedbackTarget = qs('#adminBetaFeedbackMetrics');
+    const guideTarget = qs('#adminBetaGuideMetrics');
+    const searchTarget = qs('#adminBetaSearchMetrics');
+    const seoTarget = qs('#adminBetaSeoMetrics');
+    const checklistTarget = qs('#adminBetaChecklistMetrics');
+    const overview = metrics.overview || {};
+
+    if (summary) {
+      summary.textContent = metrics.generatedAt
+        ? `Atualizado em ${formatFeedbackDate(metrics.generatedAt)}. Eventos internos consideram os últimos 90 dias.`
+        : 'Ainda não foi possível carregar as métricas do beta.';
+    }
+
+    if (cards) {
+      const cardItems = [
+        ['Feedbacks', overview.totalFeedbacks || 0, `${overview.newFeedbacks || 0} novo(s)`],
+        ['Jogos', overview.totalGames || 0, 'catálogo'],
+        ['Guias publicados', overview.publishedGuides || 0, 'fora de rascunho'],
+        ['Em revisão', overview.guidesInReview || 0, 'editorial'],
+        ['Verificados', overview.verifiedGuides || 0, 'manual'],
+        ['Eventos 90d', overview.internalEvents90d || 0, 'internos']
+      ];
+      cards.innerHTML = cardItems.map(([label, value, help]) => `
+        <div class="glass-morphism p-4 rounded-[18px]">
+          <div class="text-[11px] uppercase tracking-wide text-white/45">${escapeHtml(label)}</div>
+          <div class="text-2xl font-extrabold text-atlas-300 mt-2">${escapeHtml(String(value))}</div>
+          <div class="text-xs text-white/45 mt-1">${escapeHtml(help)}</div>
+        </div>`).join('');
+    }
+
+    if (feedbackTarget) {
+      const feedback = metrics.feedback || {};
+      feedbackTarget.innerHTML = renderBetaMetricBlock('Feedback', `
+        <div class="space-y-4">
+          <div>
+            <div class="text-xs uppercase tracking-wide text-white/45 mb-2">Por tipo</div>
+            ${renderMetricTable(feedback.byType, [
+              { label: 'Tipo', value: item => item.type || 'Feedback' },
+              { label: 'Total', value: item => String(item.count || 0) }
+            ])}
+          </div>
+          <div>
+            <div class="text-xs uppercase tracking-wide text-white/45 mb-2">Recentes</div>
+            ${renderMetricList(feedback.recent, item => `
+              <div class="glass-morphism p-3 rounded-[14px]">
+                <div class="flex items-center justify-between gap-3">
+                  <strong>${escapeHtml(item.type || 'Feedback')}</strong>
+                  <span class="text-xs text-white/45">${escapeHtml(statusLabel(item.status))}</span>
+                </div>
+                <div class="text-xs text-white/50 mt-1">${escapeHtml(item.relatedGame || item.pagePath || 'Sem contexto')} • ${escapeHtml(formatFeedbackDate(item.createdAt))}</div>
+              </div>`)}
+          </div>
+        </div>`);
+    }
+
+    if (guideTarget) {
+      const guides = metrics.guides || {};
+      guideTarget.innerHTML = renderBetaMetricBlock('Guias', `
+        <div class="space-y-4">
+          <div>
+            <div class="text-xs uppercase tracking-wide text-white/45 mb-2">Mais feedback</div>
+            ${renderMetricTable(guides.topFeedbackGames, [
+              { label: 'Jogo', value: item => item.game || 'Sem jogo relacionado' },
+              { label: 'Feedbacks', value: item => String(item.count || 0) }
+            ])}
+          </div>
+          <div>
+            <div class="text-xs uppercase tracking-wide text-white/45 mb-2">Pendências editoriais</div>
+            ${renderMetricList(guides.pendingEditorial, item => `
+              <div class="glass-morphism p-3 rounded-[14px]">
+                <div class="font-semibold">${escapeHtml(item.name || item.slug || 'Guia')}</div>
+                <div class="text-xs text-amber-200 mt-1">${escapeHtml(statusLabel(item.status))}</div>
+              </div>`)}
+          </div>
+        </div>`);
+    }
+
+    if (searchTarget) {
+      const search = metrics.search || {};
+      searchTarget.innerHTML = renderBetaMetricBlock('Busca', `
+        <div class="space-y-4">
+          <div>
+            <div class="text-xs uppercase tracking-wide text-white/45 mb-2">Termos mais buscados</div>
+            ${renderMetricTable(search.topTerms, [
+              { label: 'Termo', value: item => item.term || '' },
+              { label: 'Buscas', value: item => String(item.count || 0) }
+            ])}
+          </div>
+          <div>
+            <div class="text-xs uppercase tracking-wide text-white/45 mb-2">Sem resultado</div>
+            ${renderMetricTable(search.noResultTerms, [
+              { label: 'Termo', value: item => item.term || '' },
+              { label: 'Ocorrências', value: item => String(item.count || 0) }
+            ])}
+          </div>
+        </div>`, 'Preenchido por eventos internos de busca.');
+    }
+
+    if (seoTarget) {
+      const seo = metrics.seo || {};
+      seoTarget.innerHTML = renderBetaMetricBlock('Páginas SEO', renderMetricTable(seo.topPages, [
+        { label: 'Página', value: item => item.pagePath || '' },
+        { label: 'Views', value: item => String(item.count || 0) }
+      ]), 'Preenchido por eventos internos de páginas especiais.');
+    }
+
+    if (checklistTarget) {
+      const checklist = metrics.checklist || {};
+      checklistTarget.innerHTML = renderBetaMetricBlock('Checklist', `
+        <div class="grid md:grid-cols-3 gap-3 mb-4">
+          <div class="glass-morphism p-4 rounded-[16px]"><div class="text-xs text-white/45 uppercase tracking-wide">Marcações</div><div class="text-2xl font-bold mt-1">${escapeHtml(String(checklist.checked || 0))}</div></div>
+          <div class="glass-morphism p-4 rounded-[16px]"><div class="text-xs text-white/45 uppercase tracking-wide">Desmarcações</div><div class="text-2xl font-bold mt-1">${escapeHtml(String(checklist.unchecked || 0))}</div></div>
+          <div class="glass-morphism p-4 rounded-[16px]"><div class="text-xs text-white/45 uppercase tracking-wide">Total</div><div class="text-2xl font-bold mt-1">${escapeHtml(String(checklist.totalToggles || 0))}</div></div>
+        </div>
+        <div class="grid md:grid-cols-2 gap-4">
+          <div>
+            <div class="text-xs uppercase tracking-wide text-white/45 mb-2">Guias com mais uso</div>
+            ${renderMetricTable(checklist.topGames, [
+              { label: 'Slug', value: item => item.gameSlug || '' },
+              { label: 'Ações', value: item => String(item.count || 0) }
+            ])}
+          </div>
+          <div>
+            <div class="text-xs uppercase tracking-wide text-white/45 mb-2">Troféus mais marcados/desmarcados</div>
+            ${renderMetricTable(checklist.topTrophies, [
+              { label: 'Troféu', value: item => item.trophy || '' },
+              { label: 'Ações', value: item => String(item.count || 0) }
+            ])}
+          </div>
+        </div>`, 'Não mostra progresso completo de usuários.');
+    }
+  }
+
   function setAdminState(session) {
     const authenticated = Boolean(session?.authenticated);
     document.body?.classList.toggle('atlas-admin-shell-locked', !authenticated);
@@ -468,6 +660,7 @@ window.UIAdminRender = (() => {
     renderAdminQuality,
     renderAdminGames,
     renderAdminFeedback,
+    renderAdminBetaMetrics,
     setAdminState,
     openAdminModal,
     closeAdminModal

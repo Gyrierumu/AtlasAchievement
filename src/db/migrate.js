@@ -882,6 +882,16 @@ async function migrate(options = {}) {
       created_at TEXT DEFAULT CURRENT_TIMESTAMP
     );
 
+    CREATE TABLE IF NOT EXISTS analytics_events (
+      id INTEGER PRIMARY KEY AUTOINCREMENT,
+      event_type TEXT NOT NULL,
+      page TEXT,
+      game_slug TEXT,
+      metadata_json TEXT,
+      anonymous_session_id TEXT,
+      created_at TEXT DEFAULT CURRENT_TIMESTAMP
+    );
+
     CREATE TABLE IF NOT EXISTS sessions (
       sid TEXT PRIMARY KEY,
       sess TEXT NOT NULL,
@@ -920,6 +930,9 @@ async function migrate(options = {}) {
     CREATE INDEX IF NOT EXISTS idx_sessions_expires_at ON sessions(expires_at);
     CREATE INDEX IF NOT EXISTS idx_feedbacks_created_at ON feedbacks(created_at);
     CREATE INDEX IF NOT EXISTS idx_feedbacks_status ON feedbacks(status);
+    CREATE INDEX IF NOT EXISTS idx_analytics_events_type_created ON analytics_events(event_type, created_at);
+    CREATE INDEX IF NOT EXISTS idx_analytics_events_game_slug ON analytics_events(game_slug);
+    CREATE INDEX IF NOT EXISTS idx_analytics_events_page ON analytics_events(page);
     CREATE INDEX IF NOT EXISTS idx_users_email ON users(email);
     CREATE INDEX IF NOT EXISTS idx_users_username ON users(username);
     CREATE INDEX IF NOT EXISTS idx_user_library_user ON user_library(user_id);

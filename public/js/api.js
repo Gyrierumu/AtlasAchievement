@@ -99,6 +99,9 @@ window.ApiService = (() => {
       const query = searchParams.toString();
       return request(`/api/feedback/admin${query ? `?${query}` : ''}`);
     },
+    getAdminBetaMetrics() {
+      return request('/api/analytics/admin/beta');
+    },
     getSession() {
       return request('/api/auth/session');
     },

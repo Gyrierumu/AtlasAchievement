@@ -25,6 +25,7 @@ window.AppContextFactory = (() => {
       adminFeedbackPage: 1,
       adminGamesResponse: { items: [], pagination: { page: 1, totalPages: 1, total: 0 } },
       adminFeedbackResponse: { items: [], pagination: { page: 1, totalPages: 1, total: 0 } },
+      adminBetaMetrics: null,
       library: StorageService.getLibrary(),
       session: { authenticated: false },
       userSession: { authenticated: false, user: null },

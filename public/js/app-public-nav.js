@@ -1,4 +1,6 @@
 window.AppPublicNav = (() => {
+  const DEFAULT_SOCIAL_IMAGE_PATH = '/assets/brand/atlasachievement-og.png';
+
   const organicSeoPages = {
     '/comece-aqui': {
       view: 'seo-page',
@@ -84,11 +86,11 @@ window.AppPublicNav = (() => {
     ensureMeta('meta[property="og:description"]', 'content', description);
     ensureMeta('meta[property="og:type"]', 'content', 'website');
     ensureMeta('meta[property="og:url"]', 'content', canonical);
-    ensureMeta('meta[property="og:image"]', 'content', buildPublicUrl('/og-default.svg'));
+    ensureMeta('meta[property="og:image"]', 'content', buildPublicUrl(DEFAULT_SOCIAL_IMAGE_PATH));
     ensureMeta('meta[name="twitter:card"]', 'content', 'summary_large_image');
     ensureMeta('meta[name="twitter:title"]', 'content', title);
     ensureMeta('meta[name="twitter:description"]', 'content', description);
-    ensureMeta('meta[name="twitter:image"]', 'content', buildPublicUrl('/og-default.svg'));
+    ensureMeta('meta[name="twitter:image"]', 'content', buildPublicUrl(DEFAULT_SOCIAL_IMAGE_PATH));
   }
 
   function setLibraryMeta() {
@@ -193,12 +195,14 @@ window.AppPublicNav = (() => {
       UI?.showView?.(organicSeoPage.view);
       state.activeView = organicSeoPage.view;
       setOrganicSeoMeta(pathname);
+      window.AtlasAnalytics?.trackPageView?.({ path: pathname, title: document.title });
+      window.AtlasAnalytics?.trackSeoPageView?.({ path: pathname, title: document.title });
       return;
     }
 
     if (pathname.startsWith('/jogo/')) {
       const slug = decodeURIComponent(pathname.split('/jogo/')[1] || '');
-      await loadGuideBySlug(slug, { skipHistory: true });
+      await loadGuideBySlug(slug, { skipHistory: true, analyticsSource: 'direct' });
       return;
     }
 
@@ -266,7 +270,13 @@ window.AppPublicNav = (() => {
       const gameTrigger = event.target.closest('[data-home-game]');
       if (gameTrigger) {
         event.preventDefault();
-        await loadGuideByName(gameTrigger.dataset.homeGame);
+        window.AtlasAnalytics?.trackGameCardClick?.({
+          element: gameTrigger,
+          gameSlug: gameTrigger.dataset.openGuideCard || '',
+          gameTitle: gameTrigger.dataset.homeGame || '',
+          origin: 'home'
+        });
+        await loadGuideByName(gameTrigger.dataset.homeGame, { analyticsSource: 'home' });
         return;
       }
 
@@ -277,7 +287,7 @@ window.AppPublicNav = (() => {
         if (!value || !UI.qs('#gameInput')) return;
         UI.qs('#gameInput').value = value;
         debouncedSearchGames(value);
-        await loadGuideByName(value);
+        await loadGuideByName(value, { analyticsSource: 'home' });
       }
     });
   }

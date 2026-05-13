@@ -47,7 +47,9 @@ window.AppGuideController = (() => {
       if (UI.has('#guideDecisionStack')) UI.qs('#guideDecisionStack').classList.remove('hidden');
       if (UI.has('#guideContent')) UI.qs('#guideContent').classList.remove('hidden');
       if (!options.preserveChecklistState) {
-        window.AtlasAnalytics?.trackGuideView?.(state.currentGame);
+        window.AtlasAnalytics?.trackGuideView?.(state.currentGame, {
+          source: options.analyticsSource || 'direct'
+        });
       }
     }
 
@@ -130,6 +132,14 @@ window.AppGuideController = (() => {
       const index = completed.indexOf(trophyId);
       const nextCompleted = index < 0;
       if (index >= 0) completed.splice(index, 1); else completed.push(trophyId);
+      const trophy = (Array.isArray(state.currentGame.trophies) ? state.currentGame.trophies : [])
+        .find(item => String(item?.id || item?.name || '') === String(trophyId));
+      window.AtlasAnalytics?.trackChecklistToggle?.({
+        gameSlug: getGameSlug(state.currentGame),
+        trophyId: trophy?.id || trophyId,
+        trophyName: trophy?.name || '',
+        action: nextCompleted ? 'checked' : 'unchecked'
+      });
       upsertLibraryEntry(state.currentGame, {
         completed,
         lastActivityAt: new Date().toISOString(),
@@ -175,6 +185,10 @@ window.AppGuideController = (() => {
       const nextTab = tabByAction[action] || 'checklist';
       state.activeGuideTab = nextTab;
       UI.activateGuideTab?.(nextTab, { scroll: false });
+      window.AtlasAnalytics?.trackGuideTabChange?.({
+        gameSlug: getGameSlug(state.currentGame),
+        tabName: nextTab
+      });
       const map = {
         header: '#guideHeader',
         quick: '#guidePlatinumSummaryPanel',

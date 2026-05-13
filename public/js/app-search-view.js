@@ -2,7 +2,7 @@ window.AppSearchView = (() => {
   function bindGlobalSearch({ UI, state, debouncedSearchGames, openBestSearchResult, syncSuggestionHighlight }) {
     UI.qs('#btnLoad')?.addEventListener('click', event => {
       event.preventDefault();
-      openBestSearchResult(UI.qs('#gameInput').value);
+      openBestSearchResult(UI.qs('#gameInput').value, { analyticsSource: 'home' });
     });
 
     UI.qs('#gameInput')?.addEventListener('input', event => {
@@ -12,7 +12,7 @@ window.AppSearchView = (() => {
     UI.qs('#gameInput')?.addEventListener('keydown', event => {
       if (event.key === 'Enter') {
         event.preventDefault();
-        openBestSearchResult(event.target.value);
+        openBestSearchResult(event.target.value, { analyticsSource: 'home' });
         return;
       }
       if (!state.searchSuggestions.length) return;
@@ -47,7 +47,7 @@ window.AppSearchView = (() => {
       const nextIndex = Number(button.dataset.suggestionIndex);
       if (Number.isInteger(nextIndex)) state.activeSuggestionIndex = nextIndex;
       UI.qs('#gameInput').value = button.dataset.suggestion;
-      openBestSearchResult(button.dataset.suggestion);
+      openBestSearchResult(button.dataset.suggestion, { analyticsSource: 'home' });
     });
 
     document.addEventListener('click', event => {

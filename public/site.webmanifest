@@ -1,7 +1,7 @@
 {
   "name": "AtlasAchievement",
   "short_name": "AtlasAchievement",
-  "description": "Compare tempo, dificuldade, perdíveis e roteiro de platinas antes de abrir o guia completo.",
+  "description": "Guias de troféus e platina em português com tempo, dificuldade, roadmap e checklist.",
   "start_url": "/",
   "scope": "/",
   "display": "standalone",
