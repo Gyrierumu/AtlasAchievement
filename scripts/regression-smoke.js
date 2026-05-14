@@ -2512,6 +2512,29 @@ async function assertSeedData({ all, get }, sampleGames) {
     'Elden Ring deve marcar apenas finais, Fortissax e Legendary Armaments como perdiveis'
   );
 
+  const hadesSample = sampleGames.find(game => game.slug === 'hades');
+  assert(hadesSample, 'sampleGames deve incluir Hades');
+  assert.strictEqual(hadesSample.name, 'Hades', 'Hades deve manter nome oficial');
+  assert.strictEqual(hadesSample.slug, 'hades', 'Hades deve manter slug canonico');
+  assert.strictEqual(hadesSample.difficulty, 5, 'Hades deve usar dificuldade editorial 5/10');
+  assert.strictEqual(hadesSample.time, '70 a 100 horas', 'Hades deve manter estimativa editorial 70 a 100 horas');
+  assert.strictEqual(hadesSample.trophies.length, 50, 'Hades deve ter 50 trofeus da lista PlayStation');
+  assert.deepStrictEqual(
+    hadesSample.trophies.reduce((counts, trophy) => {
+      counts[trophy.type] = (counts[trophy.type] || 0) + 1;
+      return counts;
+    }, {}),
+    { Platina: 1, Bronze: 40, Prata: 7, Ouro: 2 },
+    'Hades deve manter distribuicao 1 platina, 2 ouro, 7 prata e 40 bronze'
+  );
+  assert.strictEqual(hadesSample.trophies.filter(trophy => trophy.is_missable).length, 0, 'Hades nao deve marcar perdiveis reais');
+  assert.strictEqual(hadesSample.roadmap.length, 5, 'Hades deve ter roadmap editorial em 5 etapas');
+  assert(hadesSample.online_summary.includes('sem coop') && hadesSample.online_summary.includes('offline'), 'Hades deve deixar online/coop como nao obrigatorios');
+  assert(hadesSample.dlc_scope.includes('Não há DLC') || hadesSample.dlc_scope.includes('DLC necessária') || hadesSample.dlc_scope.includes('DLC necessaria'), 'Hades deve separar DLC da platina base');
+  assert(hadesSample.before_you_start.includes('Pact of Punishment') && hadesSample.before_you_start.includes('Fated List'), 'Hades deve destacar Fated List e Heat na decisao inicial');
+  assert.strictEqual(hadesSample.is_verified, false, 'Hades nao deve ser verificado automaticamente');
+  assert.strictEqual(hadesSample.verification_status, 'review', 'Hades deve permanecer em revisao editorial');
+
   const eldenRing = await get('SELECT slug, difficulty, time, time_bucket, time_min_hours, time_max_hours, time_sort_hours, editorial_status, coverage_level, is_verified, verification_status, image, cover_image FROM games WHERE name = ?', ['Elden Ring']);
   assert.strictEqual(eldenRing?.slug, 'elden-ring', 'seed deve calcular slug do Elden Ring');
   assert.strictEqual(eldenRing?.difficulty, 7, 'seed deve persistir dificuldade 7/10 do Elden Ring');
@@ -11450,6 +11473,44 @@ async function assertBackendEditorialConsistency() {
     assert(tlouPartIIGuideHtml.includes(tlouPartIISample.cover_image), 'SSR de The Last of Us Part II deve renderizar cover_image');
     assert(tlouPartIIGuideHtml.includes(`property="og:image" content="${tlouPartIISample.image}"`), 'SEO de The Last of Us Part II deve usar image horizontal');
 
+    const hadesDetail = await httpGetJson(baseUrl, '/api/games/slug/hades');
+    assert.strictEqual(hadesDetail.slug, 'hades', 'GET /api/games/slug/hades deve retornar Hades');
+    assert.strictEqual(hadesDetail.name, 'Hades', 'detalhe de Hades deve retornar nome oficial');
+    assert.strictEqual(hadesDetail.difficulty, 5, 'detalhe de Hades deve retornar dificuldade 5/10');
+    assert.strictEqual(hadesDetail.time, '70 a 100 horas', 'detalhe de Hades deve retornar tempo revisado');
+    assert.strictEqual(hadesDetail.trophies.length, 50, 'detalhe de Hades deve retornar 50 trofeus');
+    assert.strictEqual(hadesDetail.trophies.filter(trophy => trophy.type === 'Platina').length, 1, 'Hades deve ter 1 platina');
+    assert.strictEqual(hadesDetail.trophies.filter(trophy => trophy.type === 'Ouro').length, 2, 'Hades deve ter 2 ouro');
+    assert.strictEqual(hadesDetail.trophies.filter(trophy => trophy.type === 'Prata').length, 7, 'Hades deve ter 7 prata');
+    assert.strictEqual(hadesDetail.trophies.filter(trophy => trophy.type === 'Bronze').length, 40, 'Hades deve ter 40 bronze');
+    assert.strictEqual(hadesDetail.missable_count, 0, 'Hades nao deve marcar perdiveis reais');
+    assert.strictEqual(hadesDetail.trophies.filter(trophy => trophy.is_missable).length, 0, 'Hades deve retornar is_missable false em todos os trofeus');
+    assert.strictEqual(hadesDetail.roadmap.length, 5, 'detalhe de Hades deve retornar roadmap de 5 etapas');
+    assert(hadesDetail.roadmap.join(' ').includes('Pact of Punishment') && hadesDetail.roadmap.join(' ').includes('Fated List'), 'roadmap de Hades deve citar Pact of Punishment e Fated List');
+    assert(hadesDetail.online_summary.includes('Sem online') && hadesDetail.online_summary.includes('sem coop'), 'Hades deve indicar ausencia de online e coop obrigatorios');
+    assert(hadesDetail.dlc_scope.includes('Não há DLC') || hadesDetail.dlc_scope.includes('DLC necessária') || hadesDetail.dlc_scope.includes('DLC necessaria'), 'Hades deve indicar DLC fora da platina base');
+    assert.strictEqual(hadesDetail.is_verified, false, 'Hades nao deve estar verificado');
+    assert.strictEqual(hadesDetail.verification_status, 'review', 'Hades deve ficar em revisao editorial');
+    assert(hadesDetail.trophies.some(trophy => trophy.id === 'hades_harsh_conditions' && /Pact of Punishment|Heat/.test(trophy.tip)), 'Harsh Conditions deve orientar Pact/Heat');
+    assert(hadesDetail.trophies.some(trophy => trophy.id === 'hades_complete_set' && /Companions|Ambrosia|Relacionamento/i.test(trophy.tip)), 'Complete Set deve orientar Companions e relacionamento');
+
+    const hadesGuideHtml = await httpGetHtml(baseUrl, '/jogo/hades');
+    assertSeoBasics(hadesGuideHtml, {
+      label: 'SSR /jogo/hades',
+      canonical: `${baseUrl}/jogo/hades`,
+      titleIncludes: 'Hades',
+      descriptionIncludes: 'Pact of Punishment',
+      h1Includes: 'Hades'
+    });
+    assert.strictEqual(getHtmlTitle(hadesGuideHtml), 'Hades: guia de platina, troféus e roadmap | AtlasAchievement', 'SSR de Hades deve gerar title editorial exato');
+    assert.strictEqual(getMetaDescription(hadesGuideHtml), 'Guia de platina de Hades em português, com tempo estimado, dificuldade, Pact of Punishment, relacionamentos, grind, roadmap e checklist de troféus.', 'SSR de Hades deve gerar description editorial exata');
+    assert(hadesGuideHtml.includes('God of Blood'), 'SSR de Hades deve renderizar checklist');
+    assert(hadesGuideHtml.includes('Pact of Punishment') && hadesGuideHtml.includes('Fated List'), 'SSR de Hades deve renderizar grind/progressao e Heat');
+    assert(hadesGuideHtml.includes('Hades tem trof') && hadesGuideHtml.includes('Pact of Punishment/Heat'), 'FAQ de Hades deve cobrir perdiveis e Heat');
+    assert(hadesGuideHtml.includes('atlas-guide-cover--poster'), 'SSR de Hades deve usar cover_image como poster do guia');
+    assert(hadesGuideHtml.includes('https://cdn.cloudflare.steamstatic.com/steam/apps/1145360/library_600x900.jpg'), 'SSR de Hades deve renderizar cover_image vertical no guia');
+    assert(hadesGuideHtml.includes('property="og:image" content="https://cdn.cloudflare.steamstatic.com/steam/apps/1145360/header.jpg"'), 'SEO de Hades deve continuar usando image horizontal');
+
     const hades2Detail = await httpGetJson(baseUrl, '/api/games/slug/hades-ii');
     assert.strictEqual(hades2Detail.slug, 'hades-ii', 'GET /api/games/slug/hades-ii deve retornar Hades II');
     assert.strictEqual(hades2Detail.trophies.length, 50, 'detalhe de Hades II deve retornar 50 trofeus');
@@ -11672,8 +11733,8 @@ async function assertBackendEditorialConsistency() {
     const guideHtml = await guideHtmlResponse.text();
     assert(guideHtml.includes('Aguardando revisão final') || guideHtml.includes('Base inicial'), 'SSR deve sinalizar revisao editorial pendente com texto amigavel');
     assert(!guideHtml.includes('>unverified<'), 'SSR nao deve exibir status bruto unverified');
-    const expectedGuideTitle = 'Elden Ring: guia de troféus, roadmap e tempo para platinar | AtlasAchievement';
-    const expectedGuideDescription = 'Veja dificuldade, tempo estimado, runs, troféus perdíveis, roadmap e checklist para platinar Elden Ring com menos retrabalho.';
+    const expectedGuideTitle = 'Elden Ring: guia de platina, troféus e roadmap | AtlasAchievement';
+    const expectedGuideDescription = 'Guia de platina de Elden Ring em português, com tempo estimado, dificuldade, finais, armas lendárias, bosses, roadmap e checklist de troféus.';
     assert.strictEqual(getHtmlTitle(guideHtml), expectedGuideTitle, 'SSR de jogo deve gerar title por intenção de platina');
     assert.strictEqual(getMetaDescription(guideHtml), expectedGuideDescription, 'SSR de jogo deve gerar meta description padrao');
     assert.strictEqual(getCanonicalHref(guideHtml), `${baseUrl}/jogo/elden-ring`, 'SSR de jogo deve ter canonical correto');
@@ -12182,6 +12243,8 @@ function assertLote2LongHardGuideRoadmaps() {
 
   assertBody('elden-ring', /backup.*finais|elden lord.*age of the stars.*lord of frenzied flame/, 'Elden Ring deve destacar finais e backup/multiplas runs');
   assertBody('elden-ring', /shadow of the erdtree.*nao.*necessario|shadow of the erdtree.*fora/, 'Elden Ring deve separar Shadow of the Erdtree');
+  assertBody('hades', /pact of punishment.*heat|heat.*pact of punishment/, 'Hades deve destacar Pact of Punishment e Heat');
+  assertBody('hades', /fated list.*relacion|relacion.*fated list/, 'Hades deve destacar Fated List e relacionamentos');
   assertBody('red-dead-redemption-2', /red dead online.*rank 50|rank 50.*red dead online/, 'RDR2 deve separar Red Dead Online e rank');
   assertBody('red-dead-redemption-2', /70 medalhas|zoologist|skin deep|100%/, 'RDR2 deve destacar medalhas, compendio/coletaveis e 100%');
   assertBody('monster-hunter-world', /iceborne.*platina propria|sem iceborne/, 'Monster Hunter: World deve manter Iceborne fora do escopo');

@@ -85,6 +85,26 @@
   padding: 16px 18px;
   transition: .2s ease;
 }
+select.atlas-input {
+  color: #e5edf7;
+  background-color: rgba(15, 23, 42, .96);
+  color-scheme: dark;
+}
+select.atlas-input option,
+select.atlas-input optgroup {
+  color: #e5edf7;
+  background-color: #0f172a;
+}
+select.atlas-input option:checked {
+  color: #ffffff;
+  background-color: #1e40af;
+}
+select.atlas-input option:hover,
+select.atlas-input option:focus,
+select.atlas-input option:active {
+  color: #ffffff;
+  background-color: #1d4ed8;
+}
 .atlas-search-input {
   min-height: 62px;
   font-size: 1rem;

@@ -50,7 +50,7 @@
     return String(value || '').toLowerCase().normalize('NFD').replace(/[\u0300-\u036f]/g, '');
   }
 
-  const GUIDE_TROPHY_TAG_PRIORITY = ['missable', 'online', 'coop', 'difficulty', 'grind', 'collectible', 'spoiler', 'cleanup', 'story', 'run'];
+  const GUIDE_TROPHY_TAG_PRIORITY = ['missable', 'final', 'boss', 'legendary', 'online', 'coop', 'difficulty', 'grind', 'collectible', 'spoiler', 'cleanup', 'story', 'run'];
 
   function getGuideTrophySignalText(trophy = {}) {
     return `${trophy?.trophyNameOriginal || trophy?.name || ''} ${trophy?.trophyNamePtBr || trophy?.name_pt || ''} ${trophy?.description || ''} ${trophy?.tip || ''}`;
@@ -167,11 +167,26 @@
       tags.push({ id: 'collectible', label: 'Coletável', tone: 'partial' });
       ids.add('collectible');
     }
+    if (String(game?.slug || '').trim().toLowerCase() === 'elden-ring') {
+      const eldenEndingText = normalizeGuideSignalText(`${trophy?.id || ''} ${trophy?.name || ''} ${trophy?.description || ''}`);
+      if (!ids.has('final') && /ending|er_elden_lord|er_age_of_stars|er_frenzied_flame/.test(eldenEndingText)) {
+        tags.push({ id: 'final', label: 'Final', tone: 'spoiler' });
+        ids.add('final');
+      }
+      if (!ids.has('boss') && /chefe|boss|shardbearer|defeat|defeated|derrote/.test(normalized)) {
+        tags.push({ id: 'boss', label: 'Chefe', tone: 'warning' });
+        ids.add('boss');
+      }
+      if (!ids.has('legendary') && /lendari|legendary|talismans?|ashen remains|sorceries|incantations/.test(normalized)) {
+        tags.push({ id: 'legendary', label: 'Lendário', tone: 'partial' });
+        ids.add('legendary');
+      }
+    }
     if (!ids.has('story') && /historia|story|campanha|prologo|ato |chapter|capitulo|finish the game|complete a historia|conclua a historia|reach the|defeat the|derrote/.test(normalized)) {
       tags.push({ id: 'story', label: 'História', tone: 'partial' });
       ids.add('story');
     }
-    if (!ids.has('difficulty') && /dificuldade|difficulty|hard|boss stem cell|stem cells|bsc|sem dano|no damage|flawless|professional|challenge rift|cursed sword|equipamento inicial|starter sword|sem usar|without|valquir|valkyr/.test(normalized)) {
+    if (!ids.has('difficulty') && /dificuldade|difficulty|\bhard\b|boss stem cell|stem cells|bsc|sem dano|no damage|flawless|professional|challenge rift|cursed sword|equipamento inicial|starter sword|sem usar|without|valquir|valkyr/.test(normalized)) {
       tags.push({ id: 'difficulty', label: 'Dificuldade', tone: 'warning' });
       ids.add('difficulty');
     }
@@ -1215,6 +1230,88 @@
     const dlcNotRequired = /lista base|jogo base|base game|sem dlc|nao inclui|nao foram adicionados|nao foi misturado|dlc nao necessaria|nao e necessaria|nao ha dlc|fora do escopo|fica fora|ficam fora|entrada separada/.test(dlcNormalized);
     const dlcRequired = /necessaria|obrigatoria|dlc no escopo|expansao|expansoes/.test(dlcNormalized) && !dlcNotRequired;
     const reviewAnswer = 'Essa informação ainda está em revisão editorial. Consulte os alertas do guia antes de começar.';
+
+    if (String(game?.slug || '').trim().toLowerCase() === 'elden-ring') {
+      return [
+        {
+          question: 'Elden Ring tem troféus perdíveis?',
+          answer: 'Sim, o guia marca riscos perdíveis/semi-perdíveis: os finais Elden Lord, Age of the Stars e Lord of Frenzied Flame são mutuamente exclusivos por save, Lichdragon Fortissax depende da quest da Fia e Bolt of Gransax deve ser coletado antes de Leyndell virar Ashen Capital.'
+        },
+        {
+          question: 'Elden Ring precisa de online para platinar?',
+          answer: 'Não. A platina base não exige troféus online, servidores, invasões, mensagens, invocações ou PS+. Recursos online podem ajudar, mas são opcionais.'
+        },
+        {
+          question: 'Elden Ring tem coop obrigatório?',
+          answer: 'Não. Coop pode facilitar bosses e exploração, mas o guia não trata coop como requisito de troféu.'
+        },
+        {
+          question: 'Quanto tempo leva para platinar Elden Ring?',
+          answer: timeLabel ? `O tempo estimado do guia é ${timeLabel}, considerando exploração ampla, bosses opcionais, lendários, finais e cleanup.` : reviewAnswer
+        },
+        {
+          question: 'Qual a dificuldade da platina de Elden Ring?',
+          answer: difficulty > 0 ? `A dificuldade cadastrada é ${difficulty}/10. O desafio vem de bosses exigentes e conteúdo opcional da lista base, não de modo difícil obrigatório.` : reviewAnswer
+        },
+        {
+          question: 'Quantas jogadas são necessárias para platinar Elden Ring?',
+          answer: 'A recomendação do guia é uma jogada longa com backup de save antes dos finais. Sem backup, planeje 2-3 jogadas, NG+ ou múltiplos saves para cobrir Elden Lord, Age of the Stars e Lord of Frenzied Flame.'
+        },
+        {
+          question: 'A DLC Shadow of the Erdtree é necessária para a platina?',
+          answer: 'Não. O guia cobre somente a lista base de Elden Ring; Shadow of the Erdtree fica fora do checklist da platina base.'
+        },
+        {
+          question: 'É possível fazer os finais em uma única jogada?',
+          answer: 'Sim, se o jogador preparar as rotas e usar backup de save antes da decisão final. Sem backup, cada final com troféu deve ser tratado como outra jogada, NG+ ou save separado.'
+        }
+      ];
+    }
+
+    if (String(game?.slug || '').trim().toLowerCase() === 'hades') {
+      return [
+        {
+          question: 'Hades tem troféus perdíveis?',
+          answer: 'Não. O guia trata Hades como sem perdíveis reais: objetivos demorados, RNG, diálogos, peixes, profecias e Heat podem atrasar a platina, mas podem ser retomados em novas runs.'
+        },
+        {
+          question: 'Hades precisa de online para platinar?',
+          answer: 'Não. A platina base é totalmente offline e não exige multiplayer, servidores, PS+ ou troféus online.'
+        },
+        {
+          question: 'Hades tem coop obrigatório?',
+          answer: 'Não. Hades é uma platina single-player e o guia não aponta coop obrigatório.'
+        },
+        {
+          question: 'Quanto tempo leva para platinar Hades?',
+          answer: timeLabel ? `O tempo estimado do guia é ${timeLabel}, considerando primeira clear, 10 clears da história, epílogo, relacionamentos, Fated List, Heat e cleanup.` : reviewAnswer
+        },
+        {
+          question: 'Qual a dificuldade da platina de Hades?',
+          answer: difficulty > 0 ? `A dificuldade cadastrada é ${difficulty}/10. O desafio mistura combate, consistência em runs, Heat 8/16 e grind de progressão.` : reviewAnswer
+        },
+        {
+          question: 'Quantas runs são necessárias para platinar Hades?',
+          answer: 'Não há número fixo. O guia trabalha com dezenas de tentativas: primeira fuga, 10 clears para a história principal e várias runs extras para relacionamentos, recursos, Fated List, Keepsakes, Companions e Heat.'
+        },
+        {
+          question: 'A DLC é necessária para a platina de Hades?',
+          answer: 'Não. O guia cobre a lista base de PlayStation e não trata DLC ou conteúdo extra como requisito da platina.'
+        },
+        {
+          question: 'O maior desafio da platina é dificuldade ou grind?',
+          answer: 'É uma mistura, mas o peso maior está em grind/progressão: muitas runs, recursos, afinidade, Fated List, Keepsakes e Companions. A dificuldade aparece mais em Heat, Extreme Measures e salas sem dano.'
+        },
+        {
+          question: 'Pact of Punishment/Heat é obrigatório para a platina?',
+          answer: 'Sim. Há troféus ligados a Pact of Punishment/Heat, como prêmios de Skelly, Extreme Measures, Harsh Conditions, Slashed Benefits e Infernal Gate. Suba Heat gradualmente depois de estabilizar clears.'
+        },
+        {
+          question: 'É possível fazer tudo depois da história?',
+          answer: 'Quase tudo pode ser continuado no pós-game. O guia recomenda avançar relacionamentos, Fated List e recursos durante a campanha para reduzir grind, mas não marca esses objetivos como perdíveis.'
+        }
+      ];
+    }
 
     return [
       {

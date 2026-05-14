@@ -28,6 +28,12 @@ window.UIFormatters = (() => {
 
   function buildGameSeoDescription(game = {}) {
     const name = String(game?.name || 'este jogo').trim() || 'este jogo';
+    if (String(game?.slug || '').trim().toLowerCase() === 'elden-ring') {
+      return 'Guia de platina de Elden Ring em português, com tempo estimado, dificuldade, finais, armas lendárias, bosses, roadmap e checklist de troféus.';
+    }
+    if (String(game?.slug || '').trim().toLowerCase() === 'hades') {
+      return 'Guia de platina de Hades em português, com tempo estimado, dificuldade, Pact of Punishment, relacionamentos, grind, roadmap e checklist de troféus.';
+    }
     const parts = [];
     const time = String(game?.time || '').trim();
     const difficulty = Number(game?.difficulty || 0);

@@ -385,33 +385,35 @@ const sampleGames = [
     "time_max_hours": 140,
     "time_sort_hours": 100,
     "time_bucket": "long",
-    "missable": "A maior parte dos troféus pode ser feita em cleanup, mas os três finais são mutuamente exclusivos por save. Lichdragon Fortissax pode ser perdido se a quest da Fia for encerrada incorretamente, e o armamento lendário Bolt of Gransax pode ficar indisponível após a mudança de Leyndell no fim do jogo. Faça backup do save antes do final e pegue os lendários importantes antes de concluir Crumbling Farum Azula.",
-    "runs_summary": "Pode ser feita em uma run com backup de save antes dos finais; sem backup, os três finais exigem múltiplas runs ou NG+.",
-    "missable_summary": "Os finais são mutuamente exclusivos por save. Lichdragon Fortissax pode ser perdido se Fia for morta, e Bolt of Gransax pode ficar indisponível após a mudança de Leyndell.",
-    "online_summary": "Não há troféus online obrigatórios para a platina.",
-    "grind_summary": "O peso está em exploração, chefes opcionais, itens lendários e preparação dos finais, não em grind repetitivo puro.",
-    "dlc_scope": "Guia focado na lista base da platina de Elden Ring. Shadow of the Erdtree tem escopo separado e não é necessário para a platina base.",
-    "difficulty_reason": "A dificuldade vem de chefes exigentes, liberdade de progressão, builds e conteúdo opcional necessário para completar a lista.",
-    "time_reason": "A faixa conservadora de 100-140 horas considera exploração ampla, chefes opcionais, itens lendários, finais e cleanup.",
-    "first_run_advice": "Jogue explorando bastante, mas acompanhe finais, questlines de Ranni/Fia/Three Fingers e itens lendários para evitar retrabalho.",
-    "cleanup_advice": "Antes do final, revise chefes opcionais, armamentos/magias/talismãs/cinzas lendárias e condições dos finais; faça backup de save se quiser evitar múltiplas runs.",
-    "before_you_start": "Decida se vai usar backup de save para Elden Lord, Age of the Stars e Lord of Frenzied Flame. Acompanhe itens lendários desde cedo e não misture Shadow of the Erdtree.",
+    "missable": "A maior parte da lista base pode ser limpa no pós-game, mas há riscos semi-perdíveis importantes. Os três finais com troféu são mutuamente exclusivos por save: Elden Lord, Age of the Stars e Lord of Frenzied Flame. Lichdragon Fortissax depende da quest da Fia, e o armamento lendário Bolt of Gransax pode ficar indisponível após Leyndell mudar para Ashen Capital. Planeje finais, questlines e armamentos lendários antes de concluir a reta final.",
+    "runs_summary": "Recomendado: uma jogada longa com backup de save antes dos finais. Sem backup, planeje 2-3 jogadas, NG+ ou múltiplos saves para Elden Lord, Age of the Stars e Lord of Frenzied Flame.",
+    "missable_summary": "Há perdíveis/semi-perdíveis: finais mutuamente exclusivos por save, Lichdragon Fortissax pela quest da Fia e Bolt of Gransax antes de Ashen Capital.",
+    "online_summary": "Não há troféus online obrigatórios, coop obrigatório ou PS+ necessário para a platina base. Mensagens, invocações e coop podem ajudar, mas são recursos opcionais.",
+    "grind_summary": "O peso está em exploração, bosses opcionais, itens lendários e preparação dos finais; não há grind repetitivo puro nem troféu de dificuldade.",
+    "dlc_scope": "Guia focado somente na lista base da platina de Elden Ring. Shadow of the Erdtree não é necessário para a platina base; bosses, armas e áreas da DLC ficam fora deste checklist.",
+    "difficulty_reason": "A dificuldade 7/10 vem de bosses exigentes, liberdade de progressão, builds e conteúdo opcional necessário, não de modo difícil obrigatório.",
+    "time_reason": "A faixa conservadora de 100-140 horas considera exploração ampla, bosses opcionais com troféu, armamentos/magias/talismãs/cinzas lendárias, finais e cleanup.",
+    "first_run_advice": "Jogue normalmente no início, mas acompanhe bosses com troféu, armas lendárias e requisitos de finais antes de avançar para o fim da campanha.",
+    "cleanup_advice": "Antes do final, confira pendências de bosses opcionais, armamentos lendários, magias, talismãs, cinzas lendárias e questlines de finais; depois use o checklist para a limpeza restante.",
+    "before_you_start": "Planeje os finais antes de concluir o jogo. Para reduzir jogadas, confira os requisitos dos finais e considere backup de save antes da decisão final.",
     "best_for": "Ideal para quem quer uma platina longa, aberta e memorável, com exploração pesada e chefes marcantes.",
     "avoid_if": "Evite se você quer uma platina curta, linear ou sem risco de retrabalho.",
     "editorial_status": "published",
     "coverage_level": "strong",
     "is_verified": false,
     "verification_status": "review",
-    "verification_note": "Lista base revisada; aguarda validação editorial final.",
+    "verification_note": "Lista base revisada; dados principais conferidos, mas sem selo verified automático.",
+    "editorial_review_status": "in_review",
+    "last_reviewed_at": "2026-05-14",
+    "editorial_notes": "Revisão editorial focada na lista base: 42 troféus, distribuição 1 platina/3 ouro/14 prata/24 bronze, sem online/coop obrigatório e sem dependência de Shadow of the Erdtree. Pode ser candidato a verified após validação manual final das rotas de finais, Fia/Fortissax e Bolt of Gransax.",
     "image": "https://cdn.cloudflare.steamstatic.com/steam/apps/1245620/header.jpg",
     "cover_image": "https://cdn.cloudflare.steamstatic.com/steam/apps/1245620/library_600x900.jpg",
     "roadmap": [
-      "Etapa 1: jogue uma primeira run ampla por Limgrave, Weeping Peninsula, Liurnia e Caelid, consolidando build, frascos, upgrades e Sites of Grace antes de correr para chefes grandes.",
-      "Etapa 2: derrote Shardbearers e chefes suficientes para abrir Leyndell; Godrick, Rennala, Radahn, Rykard, Morgott, Mohg e Malenia entram na lista base, mas nem todos precisam ser feitos cedo.",
-      "Etapa 3: acompanhe Ranni, Fia e Three Fingers antes da reta final. O maior risco é perder Fortissax, travar o save em Frenzied Flame sem agulha ou deixar finais mutuamente exclusivos sem backup.",
-      "Etapa 4: antes de concluir Crumbling Farum Azula e transformar Leyndell em Ashen Capital, pegue armamentos, magias, talismãs e cinzas lendárias, com atenção especial ao Bolt of Gransax.",
-      "Etapa 5: no ponto final da história, faça backup de save se quiser obter Elden Lord, Age of the Stars e Lord of Frenzied Flame em uma única run; sem backup, planeje NG+ ou múltiplas runs.",
-      "Etapa 6: deixe para o cleanup chefes opcionais, áreas avançadas, lendários restantes e ajustes de build. A platina base não exige online, coop ou Shadow of the Erdtree."
+      "Etapa 1 — Início da jornada: jogue normalmente, explore Limgrave, Weeping Peninsula, Liurnia e Caelid, evolua personagem, frascos e arma principal. Não tente fechar todos os troféus imediatamente; comece a acompanhar NPCs/quests importantes quando o guia indicar e evite decisões críticas de finais sem ler os alertas.",
+      "Etapa 2 — Exploração e chefes principais: avance pelas áreas principais, derrote bosses obrigatórios de progresso e comece a registrar bosses opcionais com troféu. Acompanhe armamentos lendários e itens lendários enquanto abre Leyndell, áreas subterrâneas e rotas de Shardbearers como Godrick, Rennala, Radahn, Rykard, Morgott, Mohg e Malenia.",
+      "Etapa 3 — Preparação para finais: antes de concluir Crumbling Farum Azula e alterar Leyndell para Ashen Capital, revise requisitos de Elden Lord, Age of the Stars e Lord of Frenzied Flame. Pegue Bolt of Gransax, confira Lichdragon Fortissax/Fia e prepare backup de save se quiser reduzir múltiplas jogadas.",
+      "Etapa 4 — Finais: no ponto final da história, obtenha os finais com troféu pela rota planejada. É possível concentrar os finais em uma jogada com backup de save; sem backup, trate Elden Lord, Age of the Stars e Lord of Frenzied Flame como múltiplas jogadas ou NG+. Atenção ao Lord of Frenzied Flame, que pode conflitar com outros finais no save.",
+      "Etapa 5 — Limpeza: depois dos finais planejados, derrote bosses opcionais restantes, colete armamentos/magias/talismãs/cinzas lendárias e finalize marcos de exploração. Use o checklist para confirmar pendências até a platina; Shadow of the Erdtree, online e coop não são requisitos da platina base."
     ],
     "trophies": [
       {
@@ -419,7 +421,7 @@ const sampleGames = [
         "name": "Elden Ring",
         "type": "Platina",
         "description": "Obtained all trophies.",
-        "tip": "A platina exige os 41 troféus restantes: chefes-chave, lendários, finais e alguns marcos de progresso.",
+        "tip": "A platina exige os 41 troféus restantes: chefes-chave, coletáveis lendários, finais e marcos de progresso. Shadow of the Erdtree não entra na lista base.",
         "is_spoiler": false
       },
       {
@@ -427,7 +429,7 @@ const sampleGames = [
         "name": "Elden Lord",
         "type": "Ouro",
         "description": "Achieved the \"Elden Lord\" ending.",
-        "tip": "É o final padrão. Faça backup do save antes da escolha final para combinar com os outros endings.",
+        "tip": "Final com troféu, perdível por save e com spoiler. É a rota de Elden Lord; prepare backup do save antes da escolha final se quiser combinar com Age of the Stars e Lord of Frenzied Flame.",
         "is_spoiler": true
       },
       {
@@ -435,7 +437,7 @@ const sampleGames = [
         "name": "Age of the Stars",
         "type": "Ouro",
         "description": "Achieved the \"Age of the Stars\" ending.",
-        "tip": "Exige concluir a quest principal da Ranni até a Cathedral of Manus Celes.",
+        "tip": "Final com troféu, perdível por save e com spoiler. Exige concluir a quest da Ranni até a Cathedral of Manus Celes e escolher o sinal dela no fim.",
         "is_spoiler": true
       },
       {
@@ -443,46 +445,46 @@ const sampleGames = [
         "name": "Lord of Frenzied Flame",
         "type": "Ouro",
         "description": "Achieved the \"Lord of Frenzied Flame\" ending.",
-        "tip": "Entre na câmara dos Três Dedos antes do final. Sem a Miquella's Needle, isso bloqueia os outros finais no save.",
+        "tip": "Final com troféu, perdível por save e com spoiler. Entrar na câmara dos Três Dedos altera a rota final; sem Miquella's Needle, isso conflita com Elden Lord e Age of the Stars no mesmo save.",
         "is_spoiler": true
       },
       {
         "id": "er_godrick",
         "name": "Shardbearer Godrick",
         "type": "Prata",
-        "description": "Defeatéd Shardbearer Godrick.",
-        "tip": "Primeiro grande chefe mais comum da rota inicial. Use invocação se estiver subindo a curva do jogo.",
+        "description": "Defeated Shardbearer Godrick.",
+        "tip": "Chefe de progressão/história e Shardbearer inicial comum. Use invocação se estiver subindo a curva do jogo.",
         "is_spoiler": false
       },
       {
         "id": "er_radahn",
         "name": "Shardbearer Radahn",
         "type": "Prata",
-        "description": "Defeatéd Shardbearer Radahn.",
-        "tip": "As summons do festival ajudam muito. Volte depois de evoluir se estiver sofrendo.",
+        "description": "Defeated Shardbearer Radahn.",
+        "tip": "Chefe de progressão e Shardbearer ligado a várias rotas opcionais. As summons do festival ajudam muito; volte depois de evoluir se estiver sofrendo.",
         "is_spoiler": false
       },
       {
         "id": "er_morgott",
         "name": "Shardbearer Morgott",
         "type": "Prata",
-        "description": "Defeatéd Shardbearer Morgott.",
-        "tip": "Marca a reta final do jogo base. Builds com sangramento ou gelo costumam facilitar.",
+        "description": "Defeated Shardbearer Morgott.",
+        "tip": "Chefe de história com spoiler que marca a reta final do jogo base. Builds com sangramento ou gelo costumam facilitar.",
         "is_spoiler": true
       },
       {
         "id": "er_rykard",
         "name": "Shardbearer Rykard",
         "type": "Prata",
-        "description": "Defeatéd Shardbearer Rykard.",
-        "tip": "Use a Serpent-Hunter da arena; a luta é desenhada para essa arma.",
+        "description": "Defeated Shardbearer Rykard.",
+        "tip": "Chefe opcional/limpeza de Volcano Manor. Use a Serpent-Hunter da arena; a luta é desenhada para essa arma.",
         "is_spoiler": false
       },
       {
         "id": "er_malenia",
         "name": "Shardbearer Malenia",
         "type": "Prata",
-        "description": "Defeatéd Shardbearer Malenia.",
+        "description": "Defeated Shardbearer Malenia.",
         "tip": "Chefe opcional de dificuldade alta e um dos maiores testes da platina. Mimic Tear bem montada e builds de stagger ajudam bastante.",
         "is_spoiler": true
       },
@@ -490,32 +492,32 @@ const sampleGames = [
         "id": "er_mohg",
         "name": "Shardbearer Mohg",
         "type": "Prata",
-        "description": "Defeatéd Shardbearer Mohg.",
-        "tip": "Use o Purifying Crystal Tear para reduzir a pressão do ritual de sangue na fase de transição.",
+        "description": "Defeated Shardbearer Mohg.",
+        "tip": "Chefe opcional com spoiler e rota própria no Mohgwyn Palace. Use o Purifying Crystal Tear para reduzir a pressão do ritual de sangue na transição.",
         "is_spoiler": true
       },
       {
         "id": "er_maliketh",
         "name": "Maliketh the Black Blade",
         "type": "Prata",
-        "description": "Defeatéd Maliketh the Black Blade.",
-        "tip": "Leve dano explosivo para encurtar a fase 2. Ele pune cura lenta.",
+        "description": "Defeated Maliketh the Black Blade.",
+        "tip": "Chefe obrigatório de história em Crumbling Farum Azula. Antes dele, confira Bolt of Gransax e pendências de Leyndell; ele pune cura lenta na fase 2.",
         "is_spoiler": true
       },
       {
         "id": "er_hoarah_loux",
         "name": "Hoarah Loux, Warrior",
         "type": "Prata",
-        "description": "Defeatéd Hoarah Loux, Warrior.",
-        "tip": "Rolagens tardias e boa leitura dos grabs fazem diferença aqui.",
+        "description": "Defeated Hoarah Loux, Warrior.",
+        "tip": "Chefe obrigatório de história na reta final. Rolagens tardias e boa leitura dos grabs fazem diferença aqui.",
         "is_spoiler": true
       },
       {
         "id": "er_placidusax",
         "name": "Dragonlord Placidusax",
         "type": "Prata",
-        "description": "Defeatéd Dragonlord Placidusax.",
-        "tip": "Chefe opcional escondido em Farum Azula. Faça antes de encerrar a run para um cleanup mais limpo.",
+        "description": "Defeated Dragonlord Placidusax.",
+        "tip": "Chefe opcional escondido em Farum Azula. Enfrente antes de encerrar a run para um cleanup mais limpo.",
         "is_spoiler": true
       },
       {
@@ -523,7 +525,7 @@ const sampleGames = [
         "name": "God-Slaying Armament",
         "type": "Prata",
         "description": "Upgraded any armament to its highest stage.",
-        "tip": "Escolha sua arma principal cedo e concentre smithing stones nela.",
+        "tip": "Progresso de equipamento, sem modo difícil obrigatório. Escolha sua arma principal cedo e concentre smithing stones nela para chegar a +25 ou +10 especial.",
         "is_spoiler": false
       },
       {
@@ -531,7 +533,7 @@ const sampleGames = [
         "name": "Legendary Armaments",
         "type": "Prata",
         "description": "Acquired all legendary armaments.",
-        "tip": "Não deixe Bolt of Gransax para depois da transformação de Leyndell; este é o coletável mais fácil de perder.",
+        "tip": "Coletável lendário e perdível. São 9 armamentos lendários no jogo base; não deixe Bolt of Gransax para depois de Leyndell virar Ashen Capital.",
         "is_spoiler": false
       },
       {
@@ -539,7 +541,7 @@ const sampleGames = [
         "name": "Legendary Ashen Remains",
         "type": "Prata",
         "description": "Acquired all legendary ashen remains.",
-        "tip": "Lhutel, Mimic Tear, Cleanrot Knight Finlay, Redmane Knight Ogha, Ancient Dragon Knight Kristoff e Black Knife Tiche entram na conta.",
+        "tip": "Coletável lendário. Lhutel, Mimic Tear, Cleanrot Knight Finlay, Redmane Knight Ogha, Ancient Dragon Knight Kristoff e Black Knife Tiche entram na conta.",
         "is_spoiler": false
       },
       {
@@ -547,7 +549,7 @@ const sampleGames = [
         "name": "Legendary Sorceries and Incantations",
         "type": "Prata",
         "description": "Acquired all legendary sorceries and incantations.",
-        "tip": "Faça checklist por região para não ficar caçando item solto no pós-game.",
+        "tip": "Coletável lendário. Use checklist por região para não ficar caçando magia ou encantamento solto no pós-game.",
         "is_spoiler": false
       },
       {
@@ -555,46 +557,46 @@ const sampleGames = [
         "name": "Legendary Talismans",
         "type": "Prata",
         "description": "Acquired all legendary talismans.",
-        "tip": "Alguns ficam em áreas avançadas como Haligtree, Farum Azula e Ashen Capital. Planeje o cleanup perto do fim.",
+        "tip": "Coletável lendário. Alguns ficam em áreas avançadas como Haligtree, Farum Azula e Ashen Capital. Planeje o cleanup perto do fim.",
         "is_spoiler": false
       },
       {
         "id": "er_rennala",
         "name": "Rennala, Queen of the Full Moon",
         "type": "Bronze",
-        "description": "Defeatéd Rennala, Queen of the Full Moon.",
-        "tip": "Um dos dois Great Runes mais fáceis para abrir Leyndell. Foque em pressão corpo a corpo na segunda fase.",
+        "description": "Defeated Rennala, Queen of the Full Moon.",
+        "tip": "Chefe de progressão. Um dos Great Runes mais fáceis para abrir Leyndell e importante para respec; pressione corpo a corpo na segunda fase.",
         "is_spoiler": false
       },
       {
         "id": "er_fortissax",
         "name": "Lichdragon Fortissax",
         "type": "Bronze",
-        "description": "Defeatéd Lichdragon Fortissax.",
-        "tip": "Vinculado à quest da Fia em Deeproot Depths.",
+        "description": "Defeated Lichdragon Fortissax.",
+        "tip": "Chefe opcional, perdível e com spoiler. Vinculado à quest da Fia em Deeproot Depths; não encerre a linha dela de forma hostil antes da luta.",
         "is_spoiler": true
       },
       {
         "id": "er_godskin_duo",
         "name": "Godskin Duo",
         "type": "Bronze",
-        "description": "Defeatéd Godskin Duo.",
-        "tip": "Sleep pots e dano concentrado em um alvo simplificam bastante a luta.",
+        "description": "Defeated Godskin Duo.",
+        "tip": "Chefe obrigatório de história em Farum Azula. Sleep pots e dano concentrado em um alvo simplificam bastante a luta.",
         "is_spoiler": true
       },
       {
         "id": "er_fire_giant",
         "name": "Fire Giant",
         "type": "Bronze",
-        "description": "Defeatéd Fire Giant.",
-        "tip": "Ataque a perna ferida na fase 1 e mantenha distância inteligente na fase 2.",
+        "description": "Defeated Fire Giant.",
+        "tip": "Chefe obrigatório de história antes da reta final. Ataque a perna ferida na fase 1 e mantenha distância inteligente na fase 2.",
         "is_spoiler": true
       },
       {
         "id": "er_dragonkin",
         "name": "Dragonkin Soldier of Nokstella",
         "type": "Bronze",
-        "description": "Defeatéd Dragonkin Soldier of Nokstella.",
+        "description": "Defeated Dragonkin Soldier of Nokstella.",
         "tip": "Chefe opcional simples de encaixar cedo na exploração subterrânea.",
         "is_spoiler": false
       },
@@ -602,111 +604,111 @@ const sampleGames = [
         "id": "er_regal_ancestor",
         "name": "Regal Ancestor Spirit",
         "type": "Bronze",
-        "description": "Defeatéd Regal Ancestor Spirit.",
-        "tip": "Outro opcional ligado a Nokron; aproveite a exploração pós-Radahn.",
+        "description": "Defeated Regal Ancestor Spirit.",
+        "tip": "Chefe opcional/limpeza ligado a Nokron; aproveite a exploração pós-Radahn.",
         "is_spoiler": false
       },
       {
         "id": "er_valiant_gargoyles",
         "name": "Valiant Gargoyles",
         "type": "Bronze",
-        "description": "Defeatéd Valiant Gargoyles.",
-        "tip": "A luta aperta quando o segundo entra. Burst damage e summon ajudam bastante.",
+        "description": "Defeated Valiant Gargoyles.",
+        "tip": "Chefe opcional/limpeza que abre caminho para Deeproot Depths e Fortissax. A luta aperta quando o segundo entra; burst damage e summon ajudam bastante.",
         "is_spoiler": false
       },
       {
         "id": "er_margit",
         "name": "Margit, the Fell Omen",
         "type": "Bronze",
-        "description": "Defeatéd Margit, the Fell Omen.",
-        "tip": "Primeiro muro real do jogo. Explore Limgrave antes se estiver com pouco dano.",
+        "description": "Defeated Margit, the Fell Omen.",
+        "tip": "Chefe inicial de progressão em Stormveil. Explore Limgrave antes se estiver com pouco dano.",
         "is_spoiler": false
       },
       {
         "id": "er_red_wolf",
         "name": "Red Wolf of Radagon",
         "type": "Bronze",
-        "description": "Defeatéd Red Wolf of Radagon.",
-        "tip": "Chefe rápido, mas frágil. Pressão constante costuma resolver.",
+        "description": "Defeated Red Wolf of Radagon.",
+        "tip": "Chefe de progressão dentro da Academy of Raya Lucaria. É rápido, mas frágil; pressão constante costuma resolver.",
         "is_spoiler": false
       },
       {
         "id": "er_godskin_noble",
         "name": "Godskin Noble",
         "type": "Bronze",
-        "description": "Defeatéd Godskin Noble.",
-        "tip": "Sleep pots funcionam muito bem aqui também.",
+        "description": "Defeated Godskin Noble.",
+        "tip": "Chefe opcional/limpeza em Volcano Manor. Sleep pots funcionam muito bem aqui também.",
         "is_spoiler": false
       },
       {
         "id": "er_makar",
         "name": "Magma Wyrm Makar",
         "type": "Bronze",
-        "description": "Defeatéd Magma Wyrm Makar.",
-        "tip": "Bom caminho alternativo para subir rumo ao Altus Platéau.",
+        "description": "Defeated Magma Wyrm Makar.",
+        "tip": "Chefe opcional/limpeza e caminho alternativo para subir rumo ao Altus Plateau.",
         "is_spoiler": false
       },
       {
         "id": "er_godfrey",
         "name": "Godfrey, First Elden Lord",
         "type": "Bronze",
-        "description": "Defeatéd Godfrey, First Elden Lord.",
-        "tip": "É a versão espectral em Leyndell, não a luta final em carne e osso.",
+        "description": "Defeated Godfrey, First Elden Lord.",
+        "tip": "Chefe obrigatório de história em Leyndell. É a versão espectral, não a luta final em carne e osso.",
         "is_spoiler": true
       },
       {
         "id": "er_mohg_omen",
         "name": "Mohg, the Omen",
         "type": "Bronze",
-        "description": "Defeatéd Mohg, the Omen.",
-        "tip": "Fica nos subterrâneos de Leyndell e serve de acesso para a rota dos Três Dedos.",
+        "description": "Defeated Mohg, the Omen.",
+        "tip": "Chefe opcional com spoiler nos subterrâneos de Leyndell. Serve de acesso para a rota dos Três Dedos e Lord of Frenzied Flame.",
         "is_spoiler": true
       },
       {
         "id": "er_mimic",
         "name": "Mimic Tear",
         "type": "Bronze",
-        "description": "Defeatéd Mimic Tear.",
-        "tip": "Remova equipamentos fortes antes de entrar se quiser trivializar o combate.",
+        "description": "Defeated Mimic Tear.",
+        "tip": "Chefe opcional/progressão em Nokron, normalmente visto na rota de Ranni. Remova equipamentos fortes antes de entrar se quiser trivializar o combate.",
         "is_spoiler": false
       },
       {
         "id": "er_loretta_haligtree",
         "name": "Loretta, Knight of the Haligtree",
         "type": "Bronze",
-        "description": "Defeatéd Loretta, Knight of the Haligtree.",
-        "tip": "Barreira obrigatória para acessar a parte final da área da Malenia.",
+        "description": "Defeated Loretta, Knight of the Haligtree.",
+        "tip": "Chefe opcional/limpeza e barreira obrigatória para acessar a parte final da área da Malenia.",
         "is_spoiler": true
       },
       {
         "id": "er_astel",
         "name": "Astel, Naturalborn of the Void",
         "type": "Bronze",
-        "description": "Defeatéd Astel, Naturalborn of the Void.",
-        "tip": "Obrigatório para a parte final da quest da Ranni.",
+        "description": "Defeated Astel, Naturalborn of the Void.",
+        "tip": "Chefe opcional com spoiler, obrigatório para a parte final da quest da Ranni e para o final Age of the Stars.",
         "is_spoiler": true
       },
       {
         "id": "er_leonine",
         "name": "Leonine Misbegotten",
         "type": "Bronze",
-        "description": "Defeatéd the Leonine Misbegotten.",
-        "tip": "Chefe inicial útil para ganhar ritmo e já liberar uma arma lendária na mesma região.",
+        "description": "Defeated the Leonine Misbegotten.",
+        "tip": "Chefe opcional/limpeza inicial, útil para ganhar ritmo e já liberar uma arma lendária na mesma região.",
         "is_spoiler": false
       },
       {
         "id": "er_royal_loretta",
         "name": "Royal Knight Loretta",
         "type": "Bronze",
-        "description": "Defeatéd Royal Knight Loretta.",
-        "tip": "Marca a conclusão de Caria Manor e abre a rota da Ranni.",
+        "description": "Defeated Royal Knight Loretta.",
+        "tip": "Chefe opcional/progressão que marca a conclusão de Caria Manor e abre a rota da Ranni.",
         "is_spoiler": false
       },
       {
         "id": "er_elemer",
         "name": "Elemer of the Briar",
         "type": "Bronze",
-        "description": "Defeatéd Elemer of the Briar.",
+        "description": "Defeated Elemer of the Briar.",
         "tip": "Chefe opcional de The Shaded Castle, útil para cleanup regional.",
         "is_spoiler": false
       },
@@ -714,7 +716,7 @@ const sampleGames = [
         "id": "er_ancestor",
         "name": "Ancestor Spirit",
         "type": "Bronze",
-        "description": "Defeatéd Ancestor Spirit.",
+        "description": "Defeated Ancestor Spirit.",
         "tip": "Chefe opcional cedo em Siofra River e bom para cleanup sem pressão.",
         "is_spoiler": false
       },
@@ -722,8 +724,8 @@ const sampleGames = [
         "id": "er_niall",
         "name": "Commander Niall",
         "type": "Bronze",
-        "description": "Defeatéd Commander Niall.",
-        "tip": "Luta importante para abrir caminho rumo ao Haligtree. Beacons, summons e controle dos adds ajudam.",
+        "description": "Defeated Commander Niall.",
+        "tip": "Chefe opcional com spoiler e etapa para acessar Haligtree. Bewitching Branches, summons e controle dos adds ajudam.",
         "is_spoiler": true
       },
       {
@@ -731,7 +733,7 @@ const sampleGames = [
         "name": "Roundtable Hold",
         "type": "Bronze",
         "description": "Arrived at Roundtable Hold.",
-        "tip": "Desbloqueia naturalmente ao avançar um pouco na campanha e descansar em Sites of Grace importantes.",
+        "tip": "Troféu de história/progresso. Desbloqueia naturalmente ao avançar um pouco na campanha e descansar em Sites of Grace importantes.",
         "is_spoiler": false
       },
       {
@@ -739,7 +741,7 @@ const sampleGames = [
         "name": "Great Rune",
         "type": "Bronze",
         "description": "Restored the power of a Great Rune.",
-        "tip": "A de Godrick é a mais simples para esse troféu.",
+        "tip": "Troféu de progresso. A Great Rune de Godrick é a mais simples: derrote o Shardbearer e restaure a runa na Divine Tower correspondente.",
         "is_spoiler": false
       },
       {
@@ -747,7 +749,7 @@ const sampleGames = [
         "name": "Erdtree Aflame",
         "type": "Bronze",
         "description": "Used kindling to set the Erdtree aflame.",
-        "tip": "Marco natural da campanha principal, perto da reta final.",
+        "tip": "Troféu de história com spoiler. Marco natural da campanha principal, perto da reta final; confira finais e Bolt of Gransax antes de avançar demais.",
         "is_spoiler": true
       }
     ]
@@ -1219,34 +1221,35 @@ const sampleGames = [
     "time_max_hours": 100,
     "time_sort_hours": 100,
     "time_bucket": "long",
-    "missable": "Sem perdíveis. A platina de Hades permite voltar a qualquer objetivo por novas tentativas; se uma condição, diálogo, peixe ou profecia não aparecer agora, continue fazendo runs e retome depois.",
+    "missable": "Sem perdíveis reais na lista base. A platina de Hades exige muitas runs, recursos, diálogos e progressão, mas não há perda definitiva de troféus: se uma condição do Pact, diálogo, peixe, boon ou profecia não aparecer agora, continue fazendo tentativas e retome depois.",
     "image": "https://cdn.cloudflare.steamstatic.com/steam/apps/1145360/header.jpg",
     "cover_image": "https://cdn.cloudflare.steamstatic.com/steam/apps/1145360/library_600x900.jpg",
     "editorial_status": "published",
     "coverage_level": "strong",
     "is_verified": false,
-    "verification_status": "unverified",
-    "verification_note": "Guia revisado com lista completa de troféus e dicas editoriais; manter como não verificado até checagem manual final.",
-    "runs_summary": "Platina multi-run: você aprende o combate, desbloqueia armas e Mirror, conquista a primeira clear, faz 10 clears para a história principal e depois resolve relações, profecias, Heat e cleanup.",
-    "missable_summary": "Sem perdíveis. Fale com personagens após as runs, entregue Nectar/Ambrosia quando fizer sentido e use a Fated List para transformar objetivos soltos em checklist planejado.",
-    "online_summary": "Sem online e sem coop: a platina é totalmente single-player/offline, sem multiplayer, servidores, PS+ ou parceiro obrigatório.",
-    "grind_summary": "Grind relevante de recursos, afinidade, diálogos, Keepsakes rank 3, Companions, profecias, pesca e Pact of Punishment. RNG afeta encontros e diálogos, mas novas runs sempre preservam progresso.",
-    "dlc_scope": "Lista base de PlayStation. Não há DLC obrigatória para a platina.",
-    "difficulty_reason": "O desafio vem de consistência em combate, leitura de builds, primeira clear, Heat 8/16, Extreme Measures, Infernal Gate sem dano e objetivos com keepsakes. Mirror, armas evoluídas e God Mode tornam a execução bem mais controlável.",
-    "time_reason": "70 a 100 horas considera aprendizado inicial, primeira clear, 10 clears da história, epílogo, relações com personagens, Fated List, recursos raros, Keepsakes no rank máximo, Heat e cleanup situacional.",
-    "first_run_advice": "Nas primeiras runs, não tente resolver tudo. Aprenda biomas e chefes, desbloqueie armas, invista Darkness no Mirror, compre a Fated List cedo e converse com todos no House of Hades após cada tentativa.",
-    "cleanup_advice": "No fim, use a Fated List como painel de controle: feche profecias, relações, Companions, Keepsakes rank 3, pesca por região, Charon, Thanatos/Hermes, Bad Call, Skelly e Heat pendente.",
-    "before_you_start": "A platina não é linear: você não precisa fazer tudo em uma run. Relações com personagens são obrigatórias, a Fated List deve guiar o checklist, RNG pode alongar diálogos/encontros e God Mode é uma opção legítima para reduzir pressão.",
+    "verification_status": "review",
+    "verification_note": "Guia revisado com lista completa de troféus e dicas editoriais; manter sem verified até validação manual final.",
+    "editorial_review_status": "in_review",
+    "last_reviewed_at": "2026-05-14",
+    "editorial_notes": "Revisão editorial focada na lista base de PlayStation: 50 troféus, distribuição 1 platina/2 ouro/7 prata/40 bronze, sem perdíveis reais, sem online/coop obrigatório e sem DLC necessária. Pode ser candidato a verified após checagem manual final de tempo médio, profecias, relacionamentos e requisitos de Heat.",
+    "runs_summary": "Platina multi-run: espere dezenas de tentativas. O guia considera aprendizado inicial, primeira clear, 10 clears para a história principal e várias runs extras para relações, Fated List, recursos, Keepsakes, Companions, Heat e cleanup.",
+    "missable_summary": "Sem perdíveis reais. O risco é atrasar progresso por esquecer diálogos, Nectar/Ambrosia, Fated List, Keepsakes, Companions ou Heat; nada disso bloqueia a platina definitivamente.",
+    "online_summary": "Sem online e sem coop obrigatório: a platina é totalmente single-player/offline, sem multiplayer, servidores, PS+ ou parceiro obrigatório.",
+    "grind_summary": "Grind/progressão são o centro da platina: recursos, afinidade, diálogos, Keepsakes rank 3, Companions, 15 profecias, pesca, armas/aspectos, Mirror of Night e Pact of Punishment/Heat. RNG pode alongar encontros e diálogos, mas novas runs preservam progresso.",
+    "dlc_scope": "Lista base de PlayStation. Não há DLC necessária ou conteúdo extra obrigatório para a platina.",
+    "difficulty_reason": "A dificuldade 5/10 vem de consistência em combate, leitura de builds, primeira clear, Heat 8/16, Extreme Measures e Infernal Gate sem dano. Mirror of Night, armas evoluídas, Keepsakes e God Mode tornam a execução mais controlável.",
+    "time_reason": "70 a 100 horas considera aprendizado inicial, primeira clear, 10 clears da história, epílogo, relacionamentos, Fated List, recursos raros, Keepsakes no rank máximo, Heat e cleanup situacional.",
+    "first_run_advice": "Nas primeiras runs, foque em aprender armas, melhorar a Mirror of Night e avançar diálogos. Depois acompanhe relacionamentos, Fated List, Keepsakes e Heat pelo checklist.",
+    "cleanup_advice": "No fim, use a Fated List e o checklist como painel de controle: feche profecias, relacionamentos, Companions, Keepsakes rank 3, pesca por região, Charon, Thanatos/Hermes, Bad Call, Skelly e Heat pendente.",
+    "before_you_start": "A platina não depende de online, mas exige muitas runs, progressão de relacionamentos, Fated List e domínio gradual do Pact of Punishment/Heat.",
     "best_for": "Excelente para quem gosta de progresso incremental, builds variadas, ação responsiva e uma platina longa em que quase toda tentativa avança algum sistema.",
     "avoid_if": "Evite se você quer uma platina curta, linear, sem repetição de runs ou sem depender de diálogos, RNG e grind de recursos.",
     "roadmap": [
-      "Primeiras runs: aprenda Tartarus, Asphodel, Elysium e chefes sem perseguir checklist agressivo. O objetivo é sobreviver mais longe, juntar Darkness/Keys/Gemstones e criar o hábito de falar com todos após cada tentativa.",
-      "Armas e Mirror: desbloqueie as seis Infernal Arms, compre talentos do Mirror of Night e entregue Nectar para abrir Keepsakes. Faça isso cedo porque armas, Mirror e keepsakes aceleram clears, profecias e relações.",
-      "Primeira clear: escolha a arma mais confortável, invista em Death Defiance e priorize boons defensivos/dano consistente. A primeira fuga libera o Pact of Punishment e transforma a platina em progressão de Heat, recursos e história.",
-      "10 clears da história principal: continue vencendo runs com armas variadas enquanto coleta Titan Blood, Diamonds, Ambrosia e diálogos. Essas clears empurram o final verdadeiro e abrem recursos essenciais para upgrades e contratos.",
-      "Relações e epílogo: entregue Nectar/Ambrosia, conclua favores de personagens e avance linhas como Nyx/Chaos, Orpheus/Eurydice, Achilles/Patroclus, Sisyphus e Olimpianos. Faça entre runs, porque diálogos dependem de aparição e sequência.",
-      "Pact of Punishment e Heat: depois de estabilizar clears, suba Heat com condições controláveis para Skelly, Extreme Measures, Harsh Conditions, Slashed Benefits e Infernal Gate sem dano. Não empilhe modificadores ruins antes de dominar a arma.",
-      "Grind final, profecias e cleanup: use a Fated List para fechar boons, Daedalus Hammers, aspectos, Codex, pesca por região, Keepsakes rank 3, Companions, Charon, Thanatos, Hermes, Bad Call, Cerberus e Skelly."
+      "Etapa 1 — Primeiras runs e aprendizado: jogue normalmente para aprender Tartarus, Asphodel, Elysium, armas, boons e padrões dos chefes. Priorize desbloqueios permanentes, Mirror of Night, Chthonic Keys, Darkness e Fated List; não tente fechar 100% logo no início.",
+      "Etapa 2 — Primeira fuga e progresso de história: foque em consistência, teste armas diferentes, invista em Death Defiance e converse com todos após cada tentativa. Comece a distribuir Nectar com planejamento para abrir Keepsakes e avançar relacionamentos sem gastar Ambrosia cedo demais.",
+      "Etapa 3 — Pós-primeira fuga e repetição controlada: depois da primeira clear, continue completando runs para chegar às 10 clears da história principal. Trabalhe relacionamentos, Keepsakes, Companions, recursos raros, Fated List e epílogo em paralelo, usando o checklist para objetivos longos.",
+      "Etapa 4 — Pact of Punishment / Heat: quando as clears estiverem consistentes, suba Heat gradualmente com condições controláveis. Use o Pact para Skelly, Extreme Measures, Harsh Conditions, Slashed Benefits e Infernal Gate sem dano; deixe Heat alto para builds e armas que você já domina.",
+      "Etapa 5 — Limpeza final: complete Fated List, relacionamentos, Keepsakes rank 3, Companions, armas/aspectos, Mirror of Night, pesca por região, Charon, Thanatos/Hermes, Bad Call, Cerberus e Skelly. O maior grind está em profecias, afinidade, recursos e runs extras, não em online ou coop."
     ],
     "trophies": [
       {
@@ -1254,7 +1257,7 @@ const sampleGames = [
         "name": "God of Blood",
         "type": "Platina",
         "description": "Earn every other Trophy.",
-        "tip": "Surge automaticamente ao concluir o restante da lista. Não exige ação própria além de fechar os troféus pendentes.",
+        "tip": "Surge automaticamente ao concluir o restante da lista base. Use o checklist para controlar grind, relacionamentos, Fated List, Heat e limpeza final.",
         "is_missable": false,
         "is_spoiler": false
       },
@@ -1263,7 +1266,7 @@ const sampleGames = [
         "name": "Escaped Tartarus",
         "type": "Bronze",
         "description": "Clear Tartarus.",
-        "tip": "Complete o primeiro bioma derrotando uma Fury. Foque em aprender padrões, sobreviver mais salas e investir Darkness no Mirror.",
+        "tip": "Troféu de história/chefe. Complete o primeiro bioma derrotando uma Fury; foque em aprender padrões, sobreviver mais salas e investir Darkness no Mirror.",
         "is_spoiler": false
       },
       {
@@ -1271,7 +1274,7 @@ const sampleGames = [
         "name": "Escaped Asphodel",
         "type": "Bronze",
         "description": "Clear Asphodel.",
-        "tip": "Complete o segundo bioma. Priorize mobilidade, dano seguro e evite ficar preso na lava.",
+        "tip": "Troféu de história/chefe. Complete o segundo bioma; priorize mobilidade, dano seguro e evite ficar preso na lava.",
         "is_spoiler": false
       },
       {
@@ -1279,7 +1282,7 @@ const sampleGames = [
         "name": "Escaped Elysium",
         "type": "Bronze",
         "description": "Clear Elysium.",
-        "tip": "Vença Theseus e Asterius. Elimine Asterius primeiro se a dupla ainda estiver te pressionando.",
+        "tip": "Troféu de história/chefe. Vença Theseus e Asterius; eliminar Asterius primeiro costuma deixar a dupla mais controlável.",
         "is_spoiler": false
       },
       {
@@ -1287,7 +1290,7 @@ const sampleGames = [
         "name": "Champion of Elysium",
         "type": "Prata",
         "description": "Clear Elysium with the 'Extreme Measures' Condition.",
-        "tip": "Depois de liberar o Pact of Punishment, ative Extreme Measures até o nível que altera Elysium e derrote a dupla novamente.",
+        "tip": "Dificuldade/progressão de Heat. Depois de liberar o Pact of Punishment, ative Extreme Measures até alterar Elysium e derrote a dupla novamente.",
         "is_spoiler": false
       },
       {
@@ -1295,7 +1298,7 @@ const sampleGames = [
         "name": "Hold the Onions",
         "type": "Bronze",
         "description": "Clear an Infernal Gate without taking damage.",
-        "tip": "Compre Gateways, Erebus no Contractor, entre em uma Infernal Gate com Heat suficiente e complete a sala sem levar dano. É desafio de execução para tentar em novas runs.",
+        "tip": "Dificuldade e combate. Compre Gateways, Erebus no Contractor, entre em uma Infernal Gate com Heat suficiente e complete a sala sem levar dano.",
         "is_spoiler": false
       },
       {
@@ -1303,7 +1306,7 @@ const sampleGames = [
         "name": "Is There No Escape?",
         "type": "Prata",
         "description": "Clear an escape attempt.",
-        "tip": "Complete uma run inteira pela primeira vez. Death Defiance, Mirror bem investido e uma arma confortavel ajudam muito.",
+        "tip": "Troféu de história/chefe com spoiler. Complete uma run inteira pela primeira vez; Death Defiance, Mirror bem investido e uma arma confortável ajudam muito.",
         "is_spoiler": true
       },
       {
@@ -1311,7 +1314,7 @@ const sampleGames = [
         "name": "Weapon of Fate",
         "type": "Bronze",
         "description": "Clear an escape attempt with a hidden Weapon Aspect.",
-        "tip": "Revele um aspecto oculto por progresso e diálogos, equipe-o e conclua uma run com ele.",
+        "tip": "Progressão de armas/aspectos. Revele um aspecto oculto por diálogos, equipe-o e conclua uma run com ele.",
         "is_spoiler": false
       },
       {
@@ -1319,7 +1322,7 @@ const sampleGames = [
         "name": "To Charon's Credit",
         "type": "Prata",
         "description": "Earn a Loyalty Card.",
-        "tip": "Roube a sacola de obols na loja de Charon quando ela aparecer e vença a luta opcional contra ele. A aparição é RNG; tente novamente em outras runs.",
+        "tip": "Combate opcional e limpeza. Roube a sacola de obols na loja de Charon quando ela aparecer e vença a luta; a aparição é RNG, então tente em outras runs.",
         "is_spoiler": false
       },
       {
@@ -1327,7 +1330,7 @@ const sampleGames = [
         "name": "The Useless Trinket",
         "type": "Bronze",
         "description": "Earn the first of Skelly's prizes.",
-        "tip": "Depois de liberar o Pact, complete uma run em Heat 8 ou mais e resgate o primeiro prêmio de Skelly no pátio. Trate como desafio de dificuldade.",
+        "tip": "Dificuldade/progressão de Heat. Depois de liberar o Pact, complete uma run em Heat 8 ou mais e resgate o primeiro prêmio de Skelly no pátio.",
         "is_spoiler": false
       },
       {
@@ -1335,7 +1338,7 @@ const sampleGames = [
         "name": "Skelly's Last Lamentations",
         "type": "Ouro",
         "description": "Earn the second of Skelly's prizes.",
-        "tip": "Complete uma run em Heat 16 ou mais. Deixe para quando tiver armas, Mirror e builds de segurança bem dominados; é um dos desafios de dificuldade da platina.",
+        "tip": "Dificuldade/progressão de Heat. Complete uma run em Heat 16 ou mais; deixe para quando tiver armas, Mirror, Keepsakes e builds de segurança bem dominados.",
         "is_spoiler": false
       },
       {
@@ -1343,7 +1346,7 @@ const sampleGames = [
         "name": "Something From Everyone",
         "type": "Bronze",
         "description": "Unlock each standard Keepsake.",
-        "tip": "Dê Nectar uma vez a cada personagem que oferece Keepsake. Consulte o Codex para ver quem falta e faça isso aos poucos entre runs.",
+        "tip": "Coletável de relacionamento. Dê Nectar uma vez a cada personagem que oferece Keepsake; consulte o Codex para ver quem falta e faça aos poucos entre runs.",
         "is_spoiler": false
       },
       {
@@ -1351,7 +1354,7 @@ const sampleGames = [
         "name": "Friends Forever",
         "type": "Prata",
         "description": "Max-rank each standard Keepsake.",
-        "tip": "Equipe Keepsakes durante runs até todos chegarem ao rank 3. Alterne por bioma para acelerar o progresso.",
+        "tip": "Grind de coletável/progressão. Equipe Keepsakes durante runs até todos chegarem ao rank 3; alterne por bioma para acelerar o progresso.",
         "is_spoiler": false
       },
       {
@@ -1359,7 +1362,7 @@ const sampleGames = [
         "name": "Rare Collectible",
         "type": "Bronze",
         "description": "Equip a Chthonic Companion.",
-        "tip": "Complete o favor de um personagem elegível, entregue Ambrosia para receber o Companion e equipe-o antes de uma run.",
+        "tip": "Relacionamento/coletável. Complete o favor de um personagem elegível, entregue Ambrosia para receber o Companion e equipe-o antes de uma run.",
         "is_spoiler": false
       },
       {
@@ -1367,7 +1370,7 @@ const sampleGames = [
         "name": "Complete Set",
         "type": "Bronze",
         "description": "Earn all Chthonic Companions.",
-        "tip": "Avance os favores de Megaera, Thanatos, Skelly, Sisyphus, Dusa e Achilles/Patroclus, depois use Ambrosia.",
+        "tip": "Relacionamento e grind de Companions. Avance favores de Megaera, Thanatos, Skelly, Sisyphus, Dusa e Achilles/Patroclus, depois use Ambrosia.",
         "is_spoiler": false
       },
       {
@@ -1375,7 +1378,7 @@ const sampleGames = [
         "name": "Blood Bound",
         "type": "Bronze",
         "description": "Max any Weapon Aspect.",
-        "tip": "Gaste Titan Blood para maximizar um aspecto de arma. Escolha uma arma que você usa bastante para aproveitar o investimento.",
+        "tip": "Progressão de arma. Gaste Titan Blood para maximizar um aspecto; escolha uma arma que você usa bastante para aproveitar o investimento.",
         "is_spoiler": false
       },
       {
@@ -1383,7 +1386,7 @@ const sampleGames = [
         "name": "Infernal Arms",
         "type": "Prata",
         "description": "Unlock all Weapon Aspects.",
-        "tip": "Use Titan Blood para liberar todos os aspectos de todas as armas, incluindo os ocultos revelados por diálogos.",
+        "tip": "Coletável/progressão de armas. Use Titan Blood para liberar todos os aspectos, incluindo os ocultos revelados por diálogos.",
         "is_spoiler": false
       },
       {
@@ -1391,7 +1394,7 @@ const sampleGames = [
         "name": "Blessed by the Gods",
         "type": "Bronze",
         "description": "Choose 100 different Olympian Boon effects.",
-        "tip": "Pegue boons diferentes ao longo das runs. Use Keepsakes dos deuses e a Fated List para cobrir lacunas; o RNG de oferta pode alongar o cleanup.",
+        "tip": "Grind/progressão. Pegue boons diferentes ao longo das runs; use Keepsakes dos deuses e a Fated List para cobrir lacunas de RNG no cleanup.",
         "is_spoiler": false
       },
       {
@@ -1399,7 +1402,7 @@ const sampleGames = [
         "name": "Thanks, But No Thanks",
         "type": "Bronze",
         "description": "Purge a Legendary Boon.",
-        "tip": "Quando conseguir um boon Legendary, procure um Pool of Purging e venda esse boon. Depende de RNG, então deixe para uma run de cleanup se não aparecer naturalmente.",
+        "tip": "Limpeza com RNG. Quando conseguir um boon Legendary, procure um Pool of Purging e venda esse boon; deixe para cleanup se não aparecer naturalmente.",
         "is_spoiler": false
       },
       {
@@ -1407,7 +1410,7 @@ const sampleGames = [
         "name": "Tools of the Architect",
         "type": "Bronze",
         "description": "Choose 50 different Daedalus Hammer enchantments.",
-        "tip": "Use armas variadas e escolha encantamentos novos de Daedalus Hammer sempre que aparecerem. A Fated List ajuda a rastrear o que falta.",
+        "tip": "Grind/progressão de armas. Use armas variadas e escolha encantamentos novos de Daedalus Hammer sempre que aparecerem; a Fated List rastreia o que falta.",
         "is_spoiler": false
       },
       {
@@ -1415,7 +1418,7 @@ const sampleGames = [
         "name": "Arms Collector",
         "type": "Bronze",
         "description": "Unlock each of the Infernal Arms.",
-        "tip": "Gaste Chthonic Keys para liberar as seis armas base no arsenal antes de focar em aspectos.",
+        "tip": "Coletável/progressão. Gaste Chthonic Keys para liberar as seis armas base no arsenal antes de focar em aspectos.",
         "is_spoiler": false
       },
       {
@@ -1423,7 +1426,7 @@ const sampleGames = [
         "name": "Grown Close",
         "type": "Bronze",
         "description": "Forge a bond with any character.",
-        "tip": "Presenteie um personagem até completar o vínculo. Skelly, Dusa ou Thanatos costumam ser boas linhas para acompanhar.",
+        "tip": "Relacionamento/progressão. Presenteie um personagem até completar o vínculo; acompanhe o Codex e escolha uma linha simples como Skelly, Dusa ou Thanatos.",
         "is_spoiler": false
       },
       {
@@ -1431,7 +1434,7 @@ const sampleGames = [
         "name": "Well Versed",
         "type": "Bronze",
         "description": "Fully Unlock the Olympians' Codex entries.",
-        "tip": "Aceite boons de todos os olimpianos até completar as entradas deles no Codex.",
+        "tip": "Progressão de Codex. Aceite boons de todos os olimpianos até completar as entradas; use Keepsakes para forçar deuses que faltam.",
         "is_spoiler": false
       },
       {
@@ -1439,7 +1442,7 @@ const sampleGames = [
         "name": "Day-or-Night Trader",
         "type": "Bronze",
         "description": "Trade 20 times with the Wretched Broker.",
-        "tip": "Faça 20 trocas com o Broker. Use recursos excedentes, mas evite gastar materiais raros antes dos upgrades importantes.",
+        "tip": "Grind leve de recursos. Faça 20 trocas com o Broker usando excedentes, mas evite gastar materiais raros antes dos upgrades importantes.",
         "is_spoiler": false
       },
       {
@@ -1447,7 +1450,7 @@ const sampleGames = [
         "name": "Home Makeover",
         "type": "Bronze",
         "description": "Pay for 50 jobs from the House Contractor.",
-        "tip": "Compre 50 obras do Contractor. Melhorias baratas e cosméticos contam, então vá comprando com Gemstones excedentes.",
+        "tip": "Grind/progressão da House. Compre 50 obras do Contractor; melhorias baratas e cosméticos contam, então use Gemstones excedentes.",
         "is_spoiler": false
       },
       {
@@ -1455,7 +1458,7 @@ const sampleGames = [
         "name": "Had to Happen",
         "type": "Bronze",
         "description": "Fulfill any 15 Prophecies.",
-        "tip": "Compre a Fated List cedo e conclua 15 profecias. Misture objetivos simples de armas, boons, personagens e Pact para reduzir grind no fim.",
+        "tip": "Grind/progressão da Fated List. Compre a lista cedo e conclua 15 profecias misturando armas, boons, personagens e Pact para reduzir cleanup.",
         "is_spoiler": false
       },
       {
@@ -1463,7 +1466,7 @@ const sampleGames = [
         "name": "River Denizens",
         "type": "Bronze",
         "description": "Catch a fish from each region.",
-        "tip": "Compre a Rod of Fishing e pesque em Tartarus, Asphodel, Elysium, Styx, Chaos e Greece quando os pontos aparecerem.",
+        "tip": "Coletável/limpeza com RNG. Compre a Rod of Fishing e pesque em Tartarus, Asphodel, Elysium, Styx, Chaos e Greece quando os pontos aparecerem.",
         "is_spoiler": false
       },
       {
@@ -1471,7 +1474,7 @@ const sampleGames = [
         "name": "Urge to Sing",
         "type": "Bronze",
         "description": "Compel Orpheus to sing again.",
-        "tip": "Depois que Orpheus voltar ao House, fale com ele e Eurydice sempre que possível e avance a afinidade até ele cantar novamente.",
+        "tip": "Relacionamento/progressão de história. Depois que Orpheus voltar, fale com ele e Eurydice sempre que possível e avance afinidade até ele cantar novamente.",
         "is_spoiler": false
       },
       {
@@ -1479,7 +1482,7 @@ const sampleGames = [
         "name": "Nyx's Mirror",
         "type": "Bronze",
         "description": "Have at least one rank in each Mirror of Night Talent.",
-        "tip": "Desbloqueie todos os talentos do Mirror com Chthonic Keys e coloque ao menos um rank em cada um.",
+        "tip": "Progressão da Mirror of Night. Desbloqueie todos os talentos com Chthonic Keys e coloque ao menos um rank em cada um.",
         "is_spoiler": false
       },
       {
@@ -1487,7 +1490,7 @@ const sampleGames = [
         "name": "Night and Darkness",
         "type": "Bronze",
         "description": "Fulfill the 'Night and Darkness' Prophecy.",
-        "tip": "Avance afinidade e diálogos de Nyx e Chaos, reabra a Administrative Chamber e compre a restauração necessária no Contractor.",
+        "tip": "Relacionamento/progressão de profecia. Avance Nyx e Chaos, reabra a Administrative Chamber e compre a restauração necessária no Contractor.",
         "is_spoiler": false
       },
       {
@@ -1495,7 +1498,7 @@ const sampleGames = [
         "name": "Chthonic Colleagues",
         "type": "Bronze",
         "description": "Fulfill the 'Chthonic Colleagues' Prophecy.",
-        "tip": "Conheça todos os deuses ctônicos listados na Fated List. Continue explorando rotas e falando com NPCs raros.",
+        "tip": "Progressão da Fated List. Conheça todos os deuses ctônicos listados; continue explorando rotas e falando com NPCs raros.",
         "is_spoiler": false
       },
       {
@@ -1503,7 +1506,7 @@ const sampleGames = [
         "name": "War-God's Bloodlust",
         "type": "Bronze",
         "description": "Fulfill the 'War-God's Bloodlust' Prophecy.",
-        "tip": "Dê Nectar a Ares, acumule mortes ao longo das runs e fale com ele novamente quando a meta da profecia for alcançada. É grind acumulativo.",
+        "tip": "Grind/progressão de relacionamento. Dê Nectar a Ares, acumule mortes ao longo das runs e fale com ele quando a meta da profecia for alcançada.",
         "is_spoiler": false
       },
       {
@@ -1511,7 +1514,7 @@ const sampleGames = [
         "name": "End to Torment",
         "type": "Bronze",
         "description": "Fulfill the 'End to Torment' Prophecy.",
-        "tip": "Aumente afinidade com Sisyphus, fale com Bouldy e os personagens ligados ao caso, depois compre o contrato no Contractor.",
+        "tip": "Relacionamento/progressão de profecia. Aumente afinidade com Sisyphus, fale com Bouldy e personagens ligados ao caso, depois compre o contrato.",
         "is_spoiler": false
       },
       {
@@ -1519,7 +1522,7 @@ const sampleGames = [
         "name": "Musician and Muse",
         "type": "Bronze",
         "description": "Fulfill the 'Musician and Muse' Prophecy.",
-        "tip": "Avance Orpheus e Eurydice com diálogos e Nectar, então compre o contrato deles quando aparecer. O ritmo depende de diálogos entre runs.",
+        "tip": "Relacionamento/progressão de profecia. Avance Orpheus e Eurydice com diálogos e Nectar, então compre o contrato quando aparecer.",
         "is_spoiler": false
       },
       {
@@ -1527,7 +1530,7 @@ const sampleGames = [
         "name": "Divided by Death",
         "type": "Bronze",
         "description": "Fulfill the 'Divided by Death' Prophecy.",
-        "tip": "Aumente afinidade com Achilles e Patroclus, resolva pré-requisitos de contratos e compre a reunião no Contractor.",
+        "tip": "Relacionamento/progressão de profecia. Aumente afinidade com Achilles e Patroclus, resolva pré-requisitos e compre a reunião no Contractor.",
         "is_spoiler": false
       },
       {
@@ -1535,7 +1538,7 @@ const sampleGames = [
         "name": "Dark Reflections",
         "type": "Bronze",
         "description": "Fulfill the 'Dark Reflections' Prophecy.",
-        "tip": "Depois de liberar os talentos alternativos do Mirror, complete runs usando cada talento exigido pela profecia.",
+        "tip": "Progressão da Mirror of Night. Depois de liberar talentos alternativos, complete runs usando cada talento exigido pela profecia.",
         "is_spoiler": false
       },
       {
@@ -1543,7 +1546,7 @@ const sampleGames = [
         "name": "Harsh Conditions",
         "type": "Prata",
         "description": "Fulfill the 'Harsh Conditions' Prophecy.",
-        "tip": "Use cada condição do Pact of Punishment ao menos uma vez em clears. Faça em lotes para não sobrecarregar a run com dificuldade desnecessária.",
+        "tip": "Dificuldade/progressão de Heat. Use cada condição do Pact of Punishment ao menos uma vez em clears; faça em lotes para não sobrecarregar a run.",
         "is_spoiler": false
       },
       {
@@ -1551,7 +1554,7 @@ const sampleGames = [
         "name": "Master of Arms",
         "type": "Prata",
         "description": "Fulfill the 'Master of Arms' Prophecy.",
-        "tip": "Conclua uma escape attempt com cada uma das seis armas base.",
+        "tip": "Progressão/combate. Conclua uma escape attempt com cada uma das seis armas base.",
         "is_spoiler": false
       },
       {
@@ -1559,7 +1562,7 @@ const sampleGames = [
         "name": "Slashed Benefits",
         "type": "Bronze",
         "description": "Fulfill the 'Slashed Benefits' Prophecy.",
-        "tip": "Ative Benefits Package no Pact e derrote inimigos com todos os perks exigidos pela profecia.",
+        "tip": "Dificuldade/progressão de Pact. Ative Benefits Package e derrote inimigos com todos os perks exigidos pela profecia.",
         "is_spoiler": false
       },
       {
@@ -1567,7 +1570,7 @@ const sampleGames = [
         "name": "Back to Work",
         "type": "Bronze",
         "description": "Earn access to and enter the Administrative Chamber.",
-        "tip": "Avance a história até poder comprar Administrative Privilege no Contractor, depois entre na sala.",
+        "tip": "Troféu de história/progressão com spoiler. Avance até poder comprar Administrative Privilege no Contractor, depois entre na sala.",
         "is_spoiler": true
       },
       {
@@ -1575,7 +1578,7 @@ const sampleGames = [
         "name": "The Family Secret",
         "type": "Ouro",
         "description": "Complete the main quest in the story.",
-        "tip": "Complete 10 fugas bem-sucedidas e continue a linha principal até o final verdadeiro.",
+        "tip": "Troféu de história com spoiler. Complete 10 fugas bem-sucedidas e continue a linha principal até o final verdadeiro.",
         "is_spoiler": true
       },
       {
@@ -1583,7 +1586,7 @@ const sampleGames = [
         "name": "One for the Ages",
         "type": "Bronze",
         "description": "Reach the epilogue of the story.",
-        "tip": "Depois do final principal, avance favores e diálogos com os Olimpianos e Persephone até abrir o epílogo.",
+        "tip": "Pós-game, história e relacionamento. Depois do final principal, avance favores e diálogos com os Olimpianos e Persephone até abrir o epílogo.",
         "is_spoiler": true
       },
       {
@@ -1591,7 +1594,7 @@ const sampleGames = [
         "name": "Well Stocked",
         "type": "Bronze",
         "description": "Buy 9 'Well of Charon' items in one escape attempt.",
-        "tip": "Entre em uma run com bastante obol, visite todos os Wells que aparecerem e compre nove itens no total.",
+        "tip": "Limpeza situacional. Entre em uma run com bastante obol, visite todos os Wells que aparecerem e compre nove itens no total.",
         "is_spoiler": false
       },
       {
@@ -1599,7 +1602,7 @@ const sampleGames = [
         "name": "Thorn of Thanatos",
         "type": "Bronze",
         "description": "Get 30% bonus damage with the Pierced Butterfly.",
-        "tip": "Equipe Pierced Butterfly e limpe encontros sem tomar dano até acumular 30%. Rank 3 torna a meta bem mais curta.",
+        "tip": "Combate/dificuldade com Keepsake. Equipe Pierced Butterfly e limpe encontros sem tomar dano até acumular 30%; rank 3 torna a meta mais curta.",
         "is_spoiler": false
       },
       {
@@ -1607,7 +1610,7 @@ const sampleGames = [
         "name": "Haste of Hermes",
         "type": "Bronze",
         "description": "Get 20% dodge chance with the Lambent Plume.",
-        "tip": "Equipe Lambent Plume e limpe encontros rápido. No rank 3, você precisa de menos salas perfeitas para chegar a 20%.",
+        "tip": "Combate/dificuldade com Keepsake. Equipe Lambent Plume e limpe encontros rápido; no rank 3, você precisa de menos salas perfeitas.",
         "is_spoiler": false
       },
       {
@@ -1615,7 +1618,7 @@ const sampleGames = [
         "name": "Death Dealer",
         "type": "Bronze",
         "description": "Beat Thanatos by 15 kills or more.",
-        "tip": "Quando Thanatos aparecer, foque inimigos frágeis e dano em área para terminar o desafio com 15 abates de vantagem. A aparição dele depende de RNG.",
+        "tip": "Combate e relacionamento com RNG. Quando Thanatos aparecer, foque inimigos frágeis e dano em área para terminar com 15 abates de vantagem.",
         "is_spoiler": false
       },
       {
@@ -1623,7 +1626,7 @@ const sampleGames = [
         "name": "Friends in High Places",
         "type": "Bronze",
         "description": "Use Greater Call to invoke an Olympian's aid.",
-        "tip": "Pegue um boon de Call, encha a barra completa e use a Greater Call em qualquer encontro.",
+        "tip": "Combate/progressão de boons. Pegue um boon de Call, encha a barra completa e use a Greater Call em qualquer encontro.",
         "is_spoiler": false
       },
       {
@@ -1631,7 +1634,7 @@ const sampleGames = [
         "name": "Bad Call",
         "type": "Bronze",
         "description": "Use an Olympian's Greater Call against them in a Trial.",
-        "tip": "Em uma Trial of the Gods, tenha a Call de um dos deuses, escolha o outro boon e use a Greater Call contra o deus irritado. Depende de RNG de Trial e Call.",
+        "tip": "Limpeza com RNG. Em uma Trial of the Gods, tenha a Call de um deus, escolha o outro boon e use a Greater Call contra o deus irritado.",
         "is_spoiler": false
       },
       {
@@ -1639,7 +1642,7 @@ const sampleGames = [
         "name": "Skelly Slayer",
         "type": "Bronze",
         "description": "Slay Skelly 15 times.",
-        "tip": "Ataque Skelly no pátio 15 vezes ao longo do jogo. Pode ser feito rapidamente entre tentativas.",
+        "tip": "Limpeza simples. Ataque Skelly no pátio 15 vezes ao longo do jogo; pode ser feito rapidamente entre tentativas.",
         "is_spoiler": false
       },
       {
@@ -1647,7 +1650,7 @@ const sampleGames = [
         "name": "Three-Headed Boy",
         "type": "Bronze",
         "description": "Pet Cerberus 10 times.",
-        "tip": "Faça carinho em Cerberus no House of Hades sempre que puder até acumular 10 interações.",
+        "tip": "Limpeza/relacionamento. Faça carinho em Cerberus no House of Hades sempre que puder até acumular 10 interações.",
         "is_spoiler": false
       }
     ]
