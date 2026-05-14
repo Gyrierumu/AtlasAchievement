@@ -12472,7 +12472,9 @@ function assertPriorityGuideEditorialTrust() {
     'little-nightmares-ii': { total: 35, Platina: 1, Ouro: 3, Prata: 15, Bronze: 16 },
     'dead-cells': { total: 54, Platina: 1, Ouro: 1, Prata: 11, Bronze: 41 },
     'monster-hunter-world': { total: 50, Platina: 1, Ouro: 2, Prata: 11, Bronze: 36 },
-    'clair-obscur-expedition-33': { total: 56, Platina: 1, Ouro: 2, Prata: 5, Bronze: 48 }
+    'clair-obscur-expedition-33': { total: 56, Platina: 1, Ouro: 2, Prata: 5, Bronze: 48 },
+    'elden-ring': { total: 42, Platina: 1, Ouro: 3, Prata: 14, Bronze: 24 },
+    'hades': { total: 50, Platina: 1, Ouro: 2, Prata: 7, Bronze: 40 }
   };
   const bySlug = new Map(sampleGames.map(game => [game.slug, game]));
   const countTag = (game, tagId) => game.trophies.filter(trophy => guideModel.getGuideTrophyTags(trophy).some(tag => tag.id === tagId)).length;

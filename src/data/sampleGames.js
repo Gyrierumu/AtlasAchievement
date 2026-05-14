@@ -419,336 +419,378 @@ const sampleGames = [
       {
         "id": "er_platinum",
         "name": "Elden Ring",
+        "name_pt": "Anel Prístino",
         "type": "Platina",
-        "description": "Obtained all trophies.",
+        "description": "Obteve todos os troféus.",
         "tip": "A platina exige os 41 troféus restantes: chefes-chave, coletáveis lendários, finais e marcos de progresso. Shadow of the Erdtree não entra na lista base.",
         "is_spoiler": false
       },
       {
         "id": "er_elden_lord",
         "name": "Elden Lord",
+        "name_pt": "Lorde Prístino",
         "type": "Ouro",
-        "description": "Achieved the \"Elden Lord\" ending.",
+        "description": "Conquistou o final \"Lorde Prístino\".",
         "tip": "Final com troféu, perdível por save e com spoiler. É a rota de Elden Lord; prepare backup do save antes da escolha final se quiser combinar com Age of the Stars e Lord of Frenzied Flame.",
         "is_spoiler": true
       },
       {
         "id": "er_age_of_stars",
         "name": "Age of the Stars",
+        "name_pt": "Era das Estrelas",
         "type": "Ouro",
-        "description": "Achieved the \"Age of the Stars\" ending.",
+        "description": "Conquistou o final \"Era das Estrelas\".",
         "tip": "Final com troféu, perdível por save e com spoiler. Exige concluir a quest da Ranni até a Cathedral of Manus Celes e escolher o sinal dela no fim.",
         "is_spoiler": true
       },
       {
         "id": "er_frenzied_flame",
         "name": "Lord of Frenzied Flame",
+        "name_pt": "Lorde da Chama Frenética",
         "type": "Ouro",
-        "description": "Achieved the \"Lord of Frenzied Flame\" ending.",
+        "description": "Conquistou o final \"Lorde da Chama Frenética\".",
         "tip": "Final com troféu, perdível por save e com spoiler. Entrar na câmara dos Três Dedos altera a rota final; sem Miquella's Needle, isso conflita com Elden Lord e Age of the Stars no mesmo save.",
         "is_spoiler": true
       },
       {
         "id": "er_godrick",
         "name": "Shardbearer Godrick",
+        "name_pt": "Portador de Fragmento, Godrick",
         "type": "Prata",
-        "description": "Defeated Shardbearer Godrick.",
+        "description": "Derrotou o portador de fragmento, Godrick.",
         "tip": "Chefe de progressão/história e Shardbearer inicial comum. Use invocação se estiver subindo a curva do jogo.",
         "is_spoiler": false
       },
       {
         "id": "er_radahn",
         "name": "Shardbearer Radahn",
+        "name_pt": "Portador de Fragmento, Radahn",
         "type": "Prata",
-        "description": "Defeated Shardbearer Radahn.",
+        "description": "Derrotou o portador de fragmento, Radahn.",
         "tip": "Chefe de progressão e Shardbearer ligado a várias rotas opcionais. As summons do festival ajudam muito; volte depois de evoluir se estiver sofrendo.",
         "is_spoiler": false
       },
       {
         "id": "er_morgott",
         "name": "Shardbearer Morgott",
+        "name_pt": "Portador de Fragmento, Morgott",
         "type": "Prata",
-        "description": "Defeated Shardbearer Morgott.",
+        "description": "Derrotou o portador de fragmento, Morgott.",
         "tip": "Chefe de história com spoiler que marca a reta final do jogo base. Builds com sangramento ou gelo costumam facilitar.",
         "is_spoiler": true
       },
       {
         "id": "er_rykard",
         "name": "Shardbearer Rykard",
+        "name_pt": "Portador de Fragmento, Rykard",
         "type": "Prata",
-        "description": "Defeated Shardbearer Rykard.",
+        "description": "Derrotou o portador de fragmento, Rykard.",
         "tip": "Chefe opcional/limpeza de Volcano Manor. Use a Serpent-Hunter da arena; a luta é desenhada para essa arma.",
         "is_spoiler": false
       },
       {
         "id": "er_malenia",
         "name": "Shardbearer Malenia",
+        "name_pt": "Portadora de Fragmento, Malenia",
         "type": "Prata",
-        "description": "Defeated Shardbearer Malenia.",
+        "description": "Derrotou a portadora de fragmento, Malenia.",
         "tip": "Chefe opcional de dificuldade alta e um dos maiores testes da platina. Mimic Tear bem montada e builds de stagger ajudam bastante.",
         "is_spoiler": true
       },
       {
         "id": "er_mohg",
         "name": "Shardbearer Mohg",
+        "name_pt": "Portador de Fragmento, Mohg",
         "type": "Prata",
-        "description": "Defeated Shardbearer Mohg.",
+        "description": "Derrotou o portador de fragmento, Mohg.",
         "tip": "Chefe opcional com spoiler e rota própria no Mohgwyn Palace. Use o Purifying Crystal Tear para reduzir a pressão do ritual de sangue na transição.",
         "is_spoiler": true
       },
       {
         "id": "er_maliketh",
         "name": "Maliketh the Black Blade",
+        "name_pt": "Maliketh, a Lâmina Negra",
         "type": "Prata",
-        "description": "Defeated Maliketh the Black Blade.",
+        "description": "Derrotou Maliketh, a Lâmina Negra.",
         "tip": "Chefe obrigatório de história em Crumbling Farum Azula. Antes dele, confira Bolt of Gransax e pendências de Leyndell; ele pune cura lenta na fase 2.",
         "is_spoiler": true
       },
       {
         "id": "er_hoarah_loux",
         "name": "Hoarah Loux, Warrior",
+        "name_pt": "Hoarah Loux, o Guerreiro",
         "type": "Prata",
-        "description": "Defeated Hoarah Loux, Warrior.",
+        "description": "Derrotou Hoarah Loux, o Guerreiro.",
         "tip": "Chefe obrigatório de história na reta final. Rolagens tardias e boa leitura dos grabs fazem diferença aqui.",
         "is_spoiler": true
       },
       {
         "id": "er_placidusax",
         "name": "Dragonlord Placidusax",
+        "name_pt": "Placidusax, o Lorde Dragão",
         "type": "Prata",
-        "description": "Defeated Dragonlord Placidusax.",
+        "description": "Derrotou Placidusax, o Lorde Dragão.",
         "tip": "Chefe opcional escondido em Farum Azula. Enfrente antes de encerrar a run para um cleanup mais limpo.",
         "is_spoiler": true
       },
       {
         "id": "er_godslayer",
         "name": "God-Slaying Armament",
+        "name_pt": "Arma Matadora de Deuses",
         "type": "Prata",
-        "description": "Upgraded any armament to its highest stage.",
+        "description": "Melhorou qualquer arma ao nível máximo.",
         "tip": "Progresso de equipamento, sem modo difícil obrigatório. Escolha sua arma principal cedo e concentre smithing stones nela para chegar a +25 ou +10 especial.",
         "is_spoiler": false
       },
       {
         "id": "er_legendary_armaments",
         "name": "Legendary Armaments",
+        "name_pt": "Armas Lendárias",
         "type": "Prata",
-        "description": "Acquired all legendary armaments.",
+        "description": "Obteve todas as armas lendárias.",
         "tip": "Coletável lendário e perdível. São 9 armamentos lendários no jogo base; não deixe Bolt of Gransax para depois de Leyndell virar Ashen Capital.",
         "is_spoiler": false
       },
       {
         "id": "er_legendary_ashes",
         "name": "Legendary Ashen Remains",
+        "name_pt": "Cinzas Lendárias",
         "type": "Prata",
-        "description": "Acquired all legendary ashen remains.",
+        "description": "Obteve todas as cinzas lendárias.",
         "tip": "Coletável lendário. Lhutel, Mimic Tear, Cleanrot Knight Finlay, Redmane Knight Ogha, Ancient Dragon Knight Kristoff e Black Knife Tiche entram na conta.",
         "is_spoiler": false
       },
       {
         "id": "er_legendary_sorceries",
         "name": "Legendary Sorceries and Incantations",
+        "name_pt": "Feitiços e Encantos Lendários",
         "type": "Prata",
-        "description": "Acquired all legendary sorceries and incantations.",
+        "description": "Obteve todos os feitiços e encantos lendários.",
         "tip": "Coletável lendário. Use checklist por região para não ficar caçando magia ou encantamento solto no pós-game.",
         "is_spoiler": false
       },
       {
         "id": "er_legendary_talismans",
         "name": "Legendary Talismans",
+        "name_pt": "Talismãs Lendários",
         "type": "Prata",
-        "description": "Acquired all legendary talismans.",
+        "description": "Obteve todos os talismãs lendários.",
         "tip": "Coletável lendário. Alguns ficam em áreas avançadas como Haligtree, Farum Azula e Ashen Capital. Planeje o cleanup perto do fim.",
         "is_spoiler": false
       },
       {
         "id": "er_rennala",
         "name": "Rennala, Queen of the Full Moon",
+        "name_pt": "Rennala, Rainha da Lua Cheia",
         "type": "Bronze",
-        "description": "Defeated Rennala, Queen of the Full Moon.",
+        "description": "Derrotou Rennala, Rainha da Lua Cheia.",
         "tip": "Chefe de progressão. Um dos Great Runes mais fáceis para abrir Leyndell e importante para respec; pressione corpo a corpo na segunda fase.",
         "is_spoiler": false
       },
       {
         "id": "er_fortissax",
         "name": "Lichdragon Fortissax",
+        "name_pt": "Fortissax, o Dragão Lich",
         "type": "Bronze",
-        "description": "Defeated Lichdragon Fortissax.",
+        "description": "Derrotou Fortissax, o Dragão Lich.",
         "tip": "Chefe opcional, perdível e com spoiler. Vinculado à quest da Fia em Deeproot Depths; não encerre a linha dela de forma hostil antes da luta.",
         "is_spoiler": true
       },
       {
         "id": "er_godskin_duo",
         "name": "Godskin Duo",
+        "name_pt": "Dupla da Pele Divina",
         "type": "Bronze",
-        "description": "Defeated Godskin Duo.",
+        "description": "Derrotou a Dupla da Pele Divina.",
         "tip": "Chefe obrigatório de história em Farum Azula. Sleep pots e dano concentrado em um alvo simplificam bastante a luta.",
         "is_spoiler": true
       },
       {
         "id": "er_fire_giant",
         "name": "Fire Giant",
+        "name_pt": "Gigante de Fogo",
         "type": "Bronze",
-        "description": "Defeated Fire Giant.",
+        "description": "Derrotou o Gigante de Fogo.",
         "tip": "Chefe obrigatório de história antes da reta final. Ataque a perna ferida na fase 1 e mantenha distância inteligente na fase 2.",
         "is_spoiler": true
       },
       {
         "id": "er_dragonkin",
         "name": "Dragonkin Soldier of Nokstella",
+        "name_pt": "Soldado Draconiano de Nokstella",
         "type": "Bronze",
-        "description": "Defeated Dragonkin Soldier of Nokstella.",
+        "description": "Derrotou o Soldado Draconiano de Nokstella.",
         "tip": "Chefe opcional simples de encaixar cedo na exploração subterrânea.",
         "is_spoiler": false
       },
       {
         "id": "er_regal_ancestor",
         "name": "Regal Ancestor Spirit",
+        "name_pt": "Espírito Ancestral Nobre",
         "type": "Bronze",
-        "description": "Defeated Regal Ancestor Spirit.",
+        "description": "Derrotou o Espírito Ancestral Nobre.",
         "tip": "Chefe opcional/limpeza ligado a Nokron; aproveite a exploração pós-Radahn.",
         "is_spoiler": false
       },
       {
         "id": "er_valiant_gargoyles",
-        "name": "Valiant Gargoyles",
+        "name": "Valiant Gargoyle",
+        "name_pt": "Gárgulas Valentes",
         "type": "Bronze",
-        "description": "Defeated Valiant Gargoyles.",
+        "description": "Derrotou as Gárgulas Valentes.",
         "tip": "Chefe opcional/limpeza que abre caminho para Deeproot Depths e Fortissax. A luta aperta quando o segundo entra; burst damage e summon ajudam bastante.",
         "is_spoiler": false
       },
       {
         "id": "er_margit",
         "name": "Margit, the Fell Omen",
+        "name_pt": "Margit, o Agouro Caído",
         "type": "Bronze",
-        "description": "Defeated Margit, the Fell Omen.",
+        "description": "Derrotou Margit, o Agouro Caído.",
         "tip": "Chefe inicial de progressão em Stormveil. Explore Limgrave antes se estiver com pouco dano.",
         "is_spoiler": false
       },
       {
         "id": "er_red_wolf",
         "name": "Red Wolf of Radagon",
+        "name_pt": "Lobo Vermelho de Radagon",
         "type": "Bronze",
-        "description": "Defeated Red Wolf of Radagon.",
+        "description": "Derrotou o Lobo Vermelho de Radagon.",
         "tip": "Chefe de progressão dentro da Academy of Raya Lucaria. É rápido, mas frágil; pressão constante costuma resolver.",
         "is_spoiler": false
       },
       {
         "id": "er_godskin_noble",
         "name": "Godskin Noble",
+        "name_pt": "Nobre da Pele Divina",
         "type": "Bronze",
-        "description": "Defeated Godskin Noble.",
+        "description": "Derrotou o Nobre da Pele Divina.",
         "tip": "Chefe opcional/limpeza em Volcano Manor. Sleep pots funcionam muito bem aqui também.",
         "is_spoiler": false
       },
       {
         "id": "er_makar",
         "name": "Magma Wyrm Makar",
+        "name_pt": "Wyrm de Magma de Makar",
         "type": "Bronze",
-        "description": "Defeated Magma Wyrm Makar.",
+        "description": "Derrotou o Wyrm de Magma de Makar.",
         "tip": "Chefe opcional/limpeza e caminho alternativo para subir rumo ao Altus Plateau.",
         "is_spoiler": false
       },
       {
         "id": "er_godfrey",
         "name": "Godfrey, First Elden Lord",
+        "name_pt": "Godfrey, o Primeiro Lorde Prístino",
         "type": "Bronze",
-        "description": "Defeated Godfrey, First Elden Lord.",
+        "description": "Derrotou Godfrey, o Primeiro Lorde Prístino.",
         "tip": "Chefe obrigatório de história em Leyndell. É a versão espectral, não a luta final em carne e osso.",
         "is_spoiler": true
       },
       {
         "id": "er_mohg_omen",
         "name": "Mohg, the Omen",
+        "name_pt": "Mohg, o Agouro",
         "type": "Bronze",
-        "description": "Defeated Mohg, the Omen.",
+        "description": "Derrotou Mohg, o Agouro.",
         "tip": "Chefe opcional com spoiler nos subterrâneos de Leyndell. Serve de acesso para a rota dos Três Dedos e Lord of Frenzied Flame.",
         "is_spoiler": true
       },
       {
         "id": "er_mimic",
         "name": "Mimic Tear",
+        "name_pt": "Lágrima Imitadora",
         "type": "Bronze",
-        "description": "Defeated Mimic Tear.",
+        "description": "Derrotou a Lágrima Imitadora.",
         "tip": "Chefe opcional/progressão em Nokron, normalmente visto na rota de Ranni. Remova equipamentos fortes antes de entrar se quiser trivializar o combate.",
         "is_spoiler": false
       },
       {
         "id": "er_loretta_haligtree",
         "name": "Loretta, Knight of the Haligtree",
+        "name_pt": "Loretta, Cavaleira da Árvore Sacra",
         "type": "Bronze",
-        "description": "Defeated Loretta, Knight of the Haligtree.",
+        "description": "Derrotou Loretta, Cavaleira da Árvore Sacra.",
         "tip": "Chefe opcional/limpeza e barreira obrigatória para acessar a parte final da área da Malenia.",
         "is_spoiler": true
       },
       {
         "id": "er_astel",
         "name": "Astel, Naturalborn of the Void",
+        "name_pt": "Astel, Filho Natural da Escuridão",
         "type": "Bronze",
-        "description": "Defeated Astel, Naturalborn of the Void.",
+        "description": "Derrotou Astel, Filho Natural da Escuridão.",
         "tip": "Chefe opcional com spoiler, obrigatório para a parte final da quest da Ranni e para o final Age of the Stars.",
         "is_spoiler": true
       },
       {
         "id": "er_leonine",
         "name": "Leonine Misbegotten",
+        "name_pt": "Bastardo Leonino",
         "type": "Bronze",
-        "description": "Defeated the Leonine Misbegotten.",
+        "description": "Derrotou o Bastardo Leonino.",
         "tip": "Chefe opcional/limpeza inicial, útil para ganhar ritmo e já liberar uma arma lendária na mesma região.",
         "is_spoiler": false
       },
       {
         "id": "er_royal_loretta",
         "name": "Royal Knight Loretta",
+        "name_pt": "Loretta, Cavaleira Real",
         "type": "Bronze",
-        "description": "Defeated Royal Knight Loretta.",
+        "description": "Derrotou Loretta, Cavaleira Real.",
         "tip": "Chefe opcional/progressão que marca a conclusão de Caria Manor e abre a rota da Ranni.",
         "is_spoiler": false
       },
       {
         "id": "er_elemer",
         "name": "Elemer of the Briar",
+        "name_pt": "Elemer dos Espinhos",
         "type": "Bronze",
-        "description": "Defeated Elemer of the Briar.",
+        "description": "Derrotou Elemer dos Espinhos.",
         "tip": "Chefe opcional de The Shaded Castle, útil para cleanup regional.",
         "is_spoiler": false
       },
       {
         "id": "er_ancestor",
         "name": "Ancestor Spirit",
+        "name_pt": "Espírito Ancestral",
         "type": "Bronze",
-        "description": "Defeated Ancestor Spirit.",
+        "description": "Derrotou o Espírito Ancestral.",
         "tip": "Chefe opcional cedo em Siofra River e bom para cleanup sem pressão.",
         "is_spoiler": false
       },
       {
         "id": "er_niall",
         "name": "Commander Niall",
+        "name_pt": "Comandante Niall",
         "type": "Bronze",
-        "description": "Defeated Commander Niall.",
+        "description": "Derrotou o Comandante Niall.",
         "tip": "Chefe opcional com spoiler e etapa para acessar Haligtree. Bewitching Branches, summons e controle dos adds ajudam.",
         "is_spoiler": true
       },
       {
         "id": "er_roundtable",
         "name": "Roundtable Hold",
+        "name_pt": "Mesa-Redonda",
         "type": "Bronze",
-        "description": "Arrived at Roundtable Hold.",
+        "description": "Chegou à Mesa-Redonda.",
         "tip": "Troféu de história/progresso. Desbloqueia naturalmente ao avançar um pouco na campanha e descansar em Sites of Grace importantes.",
         "is_spoiler": false
       },
       {
         "id": "er_great_rune",
         "name": "Great Rune",
+        "name_pt": "Grande Runa",
         "type": "Bronze",
-        "description": "Restored the power of a Great Rune.",
+        "description": "Restaurou o poder de uma Grande Runa.",
         "tip": "Troféu de progresso. A Great Rune de Godrick é a mais simples: derrote o Shardbearer e restaure a runa na Divine Tower correspondente.",
         "is_spoiler": false
       },
       {
         "id": "er_erdtree_aflame",
         "name": "Erdtree Aflame",
+        "name_pt": "Térvore em Chamas",
         "type": "Bronze",
-        "description": "Used kindling to set the Erdtree aflame.",
+        "description": "Usou acendalha para atear fogo à Térvore.",
         "tip": "Troféu de história com spoiler. Marco natural da campanha principal, perto da reta final; confira finais e Bolt of Gransax antes de avançar demais.",
         "is_spoiler": true
       }
@@ -1255,8 +1297,9 @@ const sampleGames = [
       {
         "id": "hades_platinum",
         "name": "God of Blood",
+        "name_pt": "Deus do Sangue",
         "type": "Platina",
-        "description": "Earn every other Trophy.",
+        "description": "Obtenha todos os Troféus.",
         "tip": "Surge automaticamente ao concluir o restante da lista base. Use o checklist para controlar grind, relacionamentos, Fated List, Heat e limpeza final.",
         "is_missable": false,
         "is_spoiler": false
@@ -1264,392 +1307,441 @@ const sampleGames = [
       {
         "id": "hades_tartarus",
         "name": "Escaped Tartarus",
+        "name_pt": "Escapou do Tártaro",
         "type": "Bronze",
-        "description": "Clear Tartarus.",
+        "description": "Complete o Tártaro.",
         "tip": "Troféu de história/chefe. Complete o primeiro bioma derrotando uma Fury; foque em aprender padrões, sobreviver mais salas e investir Darkness no Mirror.",
         "is_spoiler": false
       },
       {
         "id": "hades_asphodel",
         "name": "Escaped Asphodel",
+        "name_pt": "Escapou de Asfódelo",
         "type": "Bronze",
-        "description": "Clear Asphodel.",
+        "description": "Complete Asfódelo.",
         "tip": "Troféu de história/chefe. Complete o segundo bioma; priorize mobilidade, dano seguro e evite ficar preso na lava.",
         "is_spoiler": false
       },
       {
         "id": "hades_elysium",
         "name": "Escaped Elysium",
+        "name_pt": "Escapou do Elísio",
         "type": "Bronze",
-        "description": "Clear Elysium.",
+        "description": "Complete o Elísio.",
         "tip": "Troféu de história/chefe. Vença Theseus e Asterius; eliminar Asterius primeiro costuma deixar a dupla mais controlável.",
         "is_spoiler": false
       },
       {
         "id": "hades_champion_of_elysium",
         "name": "Champion of Elysium",
+        "name_pt": "Campeão do Elísio",
         "type": "Prata",
-        "description": "Clear Elysium with the 'Extreme Measures' Condition.",
+        "description": "Complete o Elísio com a condição 'Medidas Extremas'.",
         "tip": "Dificuldade/progressão de Heat. Depois de liberar o Pact of Punishment, ative Extreme Measures até alterar Elysium e derrote a dupla novamente.",
         "is_spoiler": false
       },
       {
         "id": "hades_hold_the_onions",
         "name": "Hold the Onions",
+        "name_pt": "Sem Cebola, Por Favor",
         "type": "Bronze",
-        "description": "Clear an Infernal Gate without taking damage.",
+        "description": "Complete um Portão de Érebo sem sofrer dano.",
         "tip": "Dificuldade e combate. Compre Gateways, Erebus no Contractor, entre em uma Infernal Gate com Heat suficiente e complete a sala sem levar dano.",
         "is_spoiler": false
       },
       {
         "id": "hades_escape",
         "name": "Is There No Escape?",
+        "name_pt": "Não há escapatória?",
         "type": "Prata",
-        "description": "Clear an escape attempt.",
+        "description": "Escape com sucesso.",
         "tip": "Troféu de história/chefe com spoiler. Complete uma run inteira pela primeira vez; Death Defiance, Mirror bem investido e uma arma confortável ajudam muito.",
         "is_spoiler": true
       },
       {
         "id": "hades_weapon_of_faté",
         "name": "Weapon of Fate",
+        "name_pt": "Arma do Destino",
         "type": "Bronze",
-        "description": "Clear an escape attempt with a hidden Weapon Aspect.",
+        "description": "Escape usando o aspecto oculto de uma arma.",
         "tip": "Progressão de armas/aspectos. Revele um aspecto oculto por diálogos, equipe-o e conclua uma run com ele.",
         "is_spoiler": false
       },
       {
         "id": "hades_charon_credit",
         "name": "To Charon's Credit",
+        "name_pt": "Crédito do Caronte",
         "type": "Prata",
-        "description": "Earn a Loyalty Card.",
+        "description": "Ganhe um Cartão de Fidelidade.",
         "tip": "Combate opcional e limpeza. Roube a sacola de obols na loja de Charon quando ela aparecer e vença a luta; a aparição é RNG, então tente em outras runs.",
         "is_spoiler": false
       },
       {
         "id": "hades_useless_trinket",
         "name": "The Useless Trinket",
+        "name_pt": "A Bugiganga Inútil",
         "type": "Bronze",
-        "description": "Earn the first of Skelly's prizes.",
+        "description": "Receba o primeiro prêmio do Zé Caveira.",
         "tip": "Dificuldade/progressão de Heat. Depois de liberar o Pact, complete uma run em Heat 8 ou mais e resgate o primeiro prêmio de Skelly no pátio.",
         "is_spoiler": false
       },
       {
         "id": "hades_skelly_last_lamentations",
         "name": "Skelly's Last Lamentations",
+        "name_pt": "As Últimas Lamentações do Zé",
         "type": "Ouro",
-        "description": "Earn the second of Skelly's prizes.",
+        "description": "Receba o segundo prêmio do Zé Caveira.",
         "tip": "Dificuldade/progressão de Heat. Complete uma run em Heat 16 ou mais; deixe para quando tiver armas, Mirror, Keepsakes e builds de segurança bem dominados.",
         "is_spoiler": false
       },
       {
         "id": "hades_keepsakes",
         "name": "Something From Everyone",
+        "name_pt": "Algo de todos",
         "type": "Bronze",
-        "description": "Unlock each standard Keepsake.",
+        "description": "Obtenha todas as Lembrancinhas padrão.",
         "tip": "Coletável de relacionamento. Dê Nectar uma vez a cada personagem que oferece Keepsake; consulte o Codex para ver quem falta e faça aos poucos entre runs.",
         "is_spoiler": false
       },
       {
         "id": "hades_friends_forever",
         "name": "Friends Forever",
+        "name_pt": "Amizade Eterna",
         "type": "Prata",
-        "description": "Max-rank each standard Keepsake.",
+        "description": "Alcance o nível máximo de todas as Lembrancinhas padrão.",
         "tip": "Grind de coletável/progressão. Equipe Keepsakes durante runs até todos chegarem ao rank 3; alterne por bioma para acelerar o progresso.",
         "is_spoiler": false
       },
       {
         "id": "hades_rare_collectible",
         "name": "Rare Collectible",
+        "name_pt": "Colecionável Raro",
         "type": "Bronze",
-        "description": "Equip a Chthonic Companion.",
+        "description": "Equipe um Companheiro Ctônico.",
         "tip": "Relacionamento/coletável. Complete o favor de um personagem elegível, entregue Ambrosia para receber o Companion e equipe-o antes de uma run.",
         "is_spoiler": false
       },
       {
         "id": "hades_complete_set",
         "name": "Complete Set",
+        "name_pt": "Colecionador",
         "type": "Bronze",
-        "description": "Earn all Chthonic Companions.",
+        "description": "Obtenha todos os Companheiros Ctônicos.",
         "tip": "Relacionamento e grind de Companions. Avance favores de Megaera, Thanatos, Skelly, Sisyphus, Dusa e Achilles/Patroclus, depois use Ambrosia.",
         "is_spoiler": false
       },
       {
         "id": "hades_blood_bound",
         "name": "Blood Bound",
+        "name_pt": "Vínculo de Sangue",
         "type": "Bronze",
-        "description": "Max any Weapon Aspect.",
+        "description": "Maximize qualquer Aspecto de Arma.",
         "tip": "Progressão de arma. Gaste Titan Blood para maximizar um aspecto; escolha uma arma que você usa bastante para aproveitar o investimento.",
         "is_spoiler": false
       },
       {
         "id": "hades_infernal_arms",
         "name": "Infernal Arms",
+        "name_pt": "Armas Infernais",
         "type": "Prata",
-        "description": "Unlock all Weapon Aspects.",
+        "description": "Desbloqueie todos os Aspectos das Armas.",
         "tip": "Coletável/progressão de armas. Use Titan Blood para liberar todos os aspectos, incluindo os ocultos revelados por diálogos.",
         "is_spoiler": false
       },
       {
         "id": "hades_blessed_by_the_gods",
         "name": "Blessed by the Gods",
+        "name_pt": "Abençoado pelos Deuses",
         "type": "Bronze",
-        "description": "Choose 100 different Olympian Boon effects.",
+        "description": "Aceite 100 efeitos de Bençãos diferentes.",
         "tip": "Grind/progressão. Pegue boons diferentes ao longo das runs; use Keepsakes dos deuses e a Fated List para cobrir lacunas de RNG no cleanup.",
         "is_spoiler": false
       },
       {
         "id": "hades_thanks_but_no_thanks",
         "name": "Thanks, But No Thanks",
+        "name_pt": "Obrigado, Só Que Não",
         "type": "Bronze",
-        "description": "Purge a Legendary Boon.",
+        "description": "Expurgue uma Benção Lendária.",
         "tip": "Limpeza com RNG. Quando conseguir um boon Legendary, procure um Pool of Purging e venda esse boon; deixe para cleanup se não aparecer naturalmente.",
         "is_spoiler": false
       },
       {
         "id": "hades_tools_of_the_architect",
         "name": "Tools of the Architect",
+        "name_pt": "Ferramentas do Arquiteto",
         "type": "Bronze",
-        "description": "Choose 50 different Daedalus Hammer enchantments.",
+        "description": "Escolha 50 melhorias diferentes do Martelo de Dédalo.",
         "tip": "Grind/progressão de armas. Use armas variadas e escolha encantamentos novos de Daedalus Hammer sempre que aparecerem; a Fated List rastreia o que falta.",
         "is_spoiler": false
       },
       {
         "id": "hades_arms_collector",
         "name": "Arms Collector",
+        "name_pt": "Coletor de Armas",
         "type": "Bronze",
-        "description": "Unlock each of the Infernal Arms.",
+        "description": "Desbloqueie todas as Armas Infernais.",
         "tip": "Coletável/progressão. Gaste Chthonic Keys para liberar as seis armas base no arsenal antes de focar em aspectos.",
         "is_spoiler": false
       },
       {
         "id": "hades_bond",
         "name": "Grown Close",
+        "name_pt": "Amigos Íntimos",
         "type": "Bronze",
-        "description": "Forge a bond with any character.",
+        "description": "Forme um vínculo com qualquer personagem.",
         "tip": "Relacionamento/progressão. Presenteie um personagem até completar o vínculo; acompanhe o Codex e escolha uma linha simples como Skelly, Dusa ou Thanatos.",
         "is_spoiler": false
       },
       {
         "id": "hades_well_versed",
         "name": "Well Versed",
+        "name_pt": "Bem versado",
         "type": "Bronze",
-        "description": "Fully Unlock the Olympians' Codex entries.",
+        "description": "Desbloqueie totalmente as entradas de Codex do Olimpo.",
         "tip": "Progressão de Codex. Aceite boons de todos os olimpianos até completar as entradas; use Keepsakes para forçar deuses que faltam.",
         "is_spoiler": false
       },
       {
         "id": "hades_day_or_night_trader",
         "name": "Day-or-Night Trader",
+        "name_pt": "Negociante Diúrno e Noturno",
         "type": "Bronze",
-        "description": "Trade 20 times with the Wretched Broker.",
+        "description": "Realize 20 trocas com o Mercador Miserável.",
         "tip": "Grind leve de recursos. Faça 20 trocas com o Broker usando excedentes, mas evite gastar materiais raros antes dos upgrades importantes.",
         "is_spoiler": false
       },
       {
         "id": "hades_home_makeover",
         "name": "Home Makeover",
+        "name_pt": "Reformando a Casa",
         "type": "Bronze",
-        "description": "Pay for 50 jobs from the House Contractor.",
+        "description": "Pague por 50 trabalhos do Empreiteiro.",
         "tip": "Grind/progressão da House. Compre 50 obras do Contractor; melhorias baratas e cosméticos contam, então use Gemstones excedentes.",
         "is_spoiler": false
       },
       {
         "id": "hades_had_to_happen",
         "name": "Had to Happen",
+        "name_pt": "Predestinado",
         "type": "Bronze",
-        "description": "Fulfill any 15 Prophecies.",
+        "description": "Realize 15 profecias.",
         "tip": "Grind/progressão da Fated List. Compre a lista cedo e conclua 15 profecias misturando armas, boons, personagens e Pact para reduzir cleanup.",
         "is_spoiler": false
       },
       {
         "id": "hades_river_denizens",
         "name": "River Denizens",
+        "name_pt": "Habitantes do rio",
         "type": "Bronze",
-        "description": "Catch a fish from each region.",
+        "description": "Pesque um peixe de cada região.",
         "tip": "Coletável/limpeza com RNG. Compre a Rod of Fishing e pesque em Tartarus, Asphodel, Elysium, Styx, Chaos e Greece quando os pontos aparecerem.",
         "is_spoiler": false
       },
       {
         "id": "hades_urge_to_sing",
         "name": "Urge to Sing",
+        "name_pt": "Vontade de Cantar",
         "type": "Bronze",
-        "description": "Compel Orpheus to sing again.",
+        "description": "Convença Orfeu a voltar a cantar.",
         "tip": "Relacionamento/progressão de história. Depois que Orpheus voltar, fale com ele e Eurydice sempre que possível e avance afinidade até ele cantar novamente.",
         "is_spoiler": false
       },
       {
         "id": "hades_nyx_mirror",
         "name": "Nyx's Mirror",
+        "name_pt": "O Espelho de Nix",
         "type": "Bronze",
-        "description": "Have at least one rank in each Mirror of Night Talent.",
+        "description": "Tenha ao menos um nível em cada talento do Espelho da Noite.",
         "tip": "Progressão da Mirror of Night. Desbloqueie todos os talentos com Chthonic Keys e coloque ao menos um rank em cada um.",
         "is_spoiler": false
       },
       {
         "id": "hades_night_and_darkness",
         "name": "Night and Darkness",
+        "name_pt": "Noite e Escuridão",
         "type": "Bronze",
-        "description": "Fulfill the 'Night and Darkness' Prophecy.",
+        "description": "Realize a profecia 'Noite e Escuridão'.",
         "tip": "Relacionamento/progressão de profecia. Avance Nyx e Chaos, reabra a Administrative Chamber e compre a restauração necessária no Contractor.",
         "is_spoiler": false
       },
       {
         "id": "hades_chthonic_colleagues",
         "name": "Chthonic Colleagues",
+        "name_pt": "Colegas Ctônicos",
         "type": "Bronze",
-        "description": "Fulfill the 'Chthonic Colleagues' Prophecy.",
+        "description": "Realize a profecia 'Colegas Ctônicos'.",
         "tip": "Progressão da Fated List. Conheça todos os deuses ctônicos listados; continue explorando rotas e falando com NPCs raros.",
         "is_spoiler": false
       },
       {
         "id": "hades_war_gods_bloodlust",
         "name": "War-God's Bloodlust",
+        "name_pt": "Sede do Deus da Guerra",
         "type": "Bronze",
-        "description": "Fulfill the 'War-God's Bloodlust' Prophecy.",
+        "description": "Realize a profecia 'Sede do Deus da Guerra'.",
         "tip": "Grind/progressão de relacionamento. Dê Nectar a Ares, acumule mortes ao longo das runs e fale com ele quando a meta da profecia for alcançada.",
         "is_spoiler": false
       },
       {
         "id": "hades_end_to_torment",
         "name": "End to Torment",
+        "name_pt": "Fim do Tormento",
         "type": "Bronze",
-        "description": "Fulfill the 'End to Torment' Prophecy.",
+        "description": "Realize a profecia 'Fim do Tormento'.",
         "tip": "Relacionamento/progressão de profecia. Aumente afinidade com Sisyphus, fale com Bouldy e personagens ligados ao caso, depois compre o contrato.",
         "is_spoiler": false
       },
       {
         "id": "hades_musician_and_muse",
         "name": "Musician and Muse",
+        "name_pt": "Músico e Musa",
         "type": "Bronze",
-        "description": "Fulfill the 'Musician and Muse' Prophecy.",
+        "description": "Realize a profecia 'Músico e Musa'.",
         "tip": "Relacionamento/progressão de profecia. Avance Orpheus e Eurydice com diálogos e Nectar, então compre o contrato quando aparecer.",
         "is_spoiler": false
       },
       {
         "id": "hades_divided_by_death",
         "name": "Divided by Death",
+        "name_pt": "Separados pela Morte",
         "type": "Bronze",
-        "description": "Fulfill the 'Divided by Death' Prophecy.",
+        "description": "Realize a profecia 'Separados pela Morte'.",
         "tip": "Relacionamento/progressão de profecia. Aumente afinidade com Achilles e Patroclus, resolva pré-requisitos e compre a reunião no Contractor.",
         "is_spoiler": false
       },
       {
         "id": "hades_dark_reflections",
         "name": "Dark Reflections",
+        "name_pt": "Reflexões Sombrias",
         "type": "Bronze",
-        "description": "Fulfill the 'Dark Reflections' Prophecy.",
+        "description": "Realize a profecia 'Reflexões Sombrias'.",
         "tip": "Progressão da Mirror of Night. Depois de liberar talentos alternativos, complete runs usando cada talento exigido pela profecia.",
         "is_spoiler": false
       },
       {
         "id": "hades_harsh_conditions",
         "name": "Harsh Conditions",
+        "name_pt": "Condições Difíceis",
         "type": "Prata",
-        "description": "Fulfill the 'Harsh Conditions' Prophecy.",
+        "description": "Realize a profecia 'Condições Difíceis'.",
         "tip": "Dificuldade/progressão de Heat. Use cada condição do Pact of Punishment ao menos uma vez em clears; faça em lotes para não sobrecarregar a run.",
         "is_spoiler": false
       },
       {
         "id": "hades_master_of_arms",
         "name": "Master of Arms",
+        "name_pt": "Mestre das Armas",
         "type": "Prata",
-        "description": "Fulfill the 'Master of Arms' Prophecy.",
+        "description": "Realize a profecia 'Mestre das Armas'.",
         "tip": "Progressão/combate. Conclua uma escape attempt com cada uma das seis armas base.",
         "is_spoiler": false
       },
       {
         "id": "hades_slashed_benefits",
         "name": "Slashed Benefits",
+        "name_pt": "Benefícios Reduzidos",
         "type": "Bronze",
-        "description": "Fulfill the 'Slashed Benefits' Prophecy.",
+        "description": "Realize a profecia 'Benefícios Reduzidos'.",
         "tip": "Dificuldade/progressão de Pact. Ative Benefits Package e derrote inimigos com todos os perks exigidos pela profecia.",
         "is_spoiler": false
       },
       {
         "id": "hades_back_to_work",
         "name": "Back to Work",
+        "name_pt": "Ao Trabalho",
         "type": "Bronze",
-        "description": "Earn access to and enter the Administrative Chamber.",
+        "description": "Obtenha acesso à Câmara Administrativa.",
         "tip": "Troféu de história/progressão com spoiler. Avance até poder comprar Administrative Privilege no Contractor, depois entre na sala.",
         "is_spoiler": true
       },
       {
         "id": "hades_family_secret",
         "name": "The Family Secret",
+        "name_pt": "O Segredo de Familia",
         "type": "Ouro",
-        "description": "Complete the main quest in the story.",
+        "description": "Termine a missão principal da história.",
         "tip": "Troféu de história com spoiler. Complete 10 fugas bem-sucedidas e continue a linha principal até o final verdadeiro.",
         "is_spoiler": true
       },
       {
         "id": "hades_epilogue",
         "name": "One for the Ages",
+        "name_pt": "Entrar pra História",
         "type": "Bronze",
-        "description": "Reach the epilogue of the story.",
+        "description": "Chegue ao Epílogo da História.",
         "tip": "Pós-game, história e relacionamento. Depois do final principal, avance favores e diálogos com os Olimpianos e Persephone até abrir o epílogo.",
         "is_spoiler": true
       },
       {
         "id": "hades_well_stocked",
         "name": "Well Stocked",
+        "name_pt": "Bem Abastecido",
         "type": "Bronze",
-        "description": "Buy 9 'Well of Charon' items in one escape attempt.",
+        "description": "Compre nove itens do 'Poço do Caronte' em uma tentativa de fuga.",
         "tip": "Limpeza situacional. Entre em uma run com bastante obol, visite todos os Wells que aparecerem e compre nove itens no total.",
         "is_spoiler": false
       },
       {
         "id": "hades_thorn_of_thanatos",
         "name": "Thorn of Thanatos",
+        "name_pt": "Espinho de Tânato",
         "type": "Bronze",
-        "description": "Get 30% bonus damage with the Pierced Butterfly.",
+        "description": "Ganhe 30% de dano extra com a Broche de Borboleta.",
         "tip": "Combate/dificuldade com Keepsake. Equipe Pierced Butterfly e limpe encontros sem tomar dano até acumular 30%; rank 3 torna a meta mais curta.",
         "is_spoiler": false
       },
       {
         "id": "hades_haste_of_hermes",
         "name": "Haste of Hermes",
+        "name_pt": "Pressa de Hermes",
         "type": "Bronze",
-        "description": "Get 20% dodge chance with the Lambent Plume.",
+        "description": "Ganhe 20% de chance de esquiva com a Pluma Cintilante.",
         "tip": "Combate/dificuldade com Keepsake. Equipe Lambent Plume e limpe encontros rápido; no rank 3, você precisa de menos salas perfeitas.",
         "is_spoiler": false
       },
       {
         "id": "hades_death_dealer",
         "name": "Death Dealer",
+        "name_pt": "Ceifador",
         "type": "Bronze",
-        "description": "Beat Thanatos by 15 kills or more.",
+        "description": "Derrote Tânato por 15 ou mais eliminações de diferença.",
         "tip": "Combate e relacionamento com RNG. Quando Thanatos aparecer, foque inimigos frágeis e dano em área para terminar com 15 abates de vantagem.",
         "is_spoiler": false
       },
       {
         "id": "hades_friends_in_high_places",
         "name": "Friends in High Places",
+        "name_pt": "Amigos em Lugares de Honra",
         "type": "Bronze",
-        "description": "Use Greater Call to invoke an Olympian's aid.",
+        "description": "Use o Grande Chamado para invocar a ajuda de alguém do Olimpo.",
         "tip": "Combate/progressão de boons. Pegue um boon de Call, encha a barra completa e use a Greater Call em qualquer encontro.",
         "is_spoiler": false
       },
       {
         "id": "hades_bad_call",
         "name": "Bad Call",
+        "name_pt": "Péssima escolha",
         "type": "Bronze",
-        "description": "Use an Olympian's Greater Call against them in a Trial.",
+        "description": "Use o Grande Chamado de alguém do Olimpo contra eles em uma Provação.",
         "tip": "Limpeza com RNG. Em uma Trial of the Gods, tenha a Call de um deus, escolha o outro boon e use a Greater Call contra o deus irritado.",
         "is_spoiler": false
       },
       {
         "id": "hades_skelly_slayer",
         "name": "Skelly Slayer",
+        "name_pt": "Caveirocídio",
         "type": "Bronze",
-        "description": "Slay Skelly 15 times.",
+        "description": "Mate Zé Caveira 15 vezes.",
         "tip": "Limpeza simples. Ataque Skelly no pátio 15 vezes ao longo do jogo; pode ser feito rapidamente entre tentativas.",
         "is_spoiler": false
       },
       {
         "id": "hades_three_headed_boy",
         "name": "Three-Headed Boy",
+        "name_pt": "Garoto de três cabeças",
         "type": "Bronze",
-        "description": "Pet Cerberus 10 times.",
+        "description": "Acaricie Cérbero 10 vezes.",
         "tip": "Limpeza/relacionamento. Faça carinho em Cerberus no House of Hades sempre que puder até acumular 10 interações.",
         "is_spoiler": false
       }
