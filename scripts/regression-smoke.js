@@ -11522,8 +11522,8 @@ async function assertBackendEditorialConsistency() {
     assert(hadesDetail.dlc_scope.includes('Não há DLC') || hadesDetail.dlc_scope.includes('DLC necessária') || hadesDetail.dlc_scope.includes('DLC necessaria'), 'Hades deve indicar DLC fora da platina base');
     assert.strictEqual(hadesDetail.is_verified, false, 'Hades nao deve estar verificado');
     assert.strictEqual(hadesDetail.verification_status, 'review', 'Hades deve ficar em revisao editorial');
-    assert(hadesDetail.trophies.some(trophy => trophy.id === 'hades_harsh_conditions' && /Pact of Punishment|Heat/.test(trophy.tip)), 'Harsh Conditions deve orientar Pact/Heat');
-    assert(hadesDetail.trophies.some(trophy => trophy.id === 'hades_complete_set' && /Companions|Ambrosia|Relacionamento/i.test(trophy.tip)), 'Complete Set deve orientar Companions e relacionamento');
+    assert(hadesDetail.trophies.some(trophy => trophy.id === 'hades-harsh-conditions' && /Pact of Punishment|Heat/.test(trophy.tip)), 'Harsh Conditions deve orientar Pact/Heat');
+    assert(hadesDetail.trophies.some(trophy => trophy.id === 'hades-complete-set' && /Companions|Ambrosia|Relacionamento/i.test(trophy.tip)), 'Complete Set deve orientar Companions e relacionamento');
 
     const hadesGuideHtml = await httpGetHtml(baseUrl, '/jogo/hades');
     assertSeoBasics(hadesGuideHtml, {

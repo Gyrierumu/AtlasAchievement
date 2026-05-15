@@ -1521,7 +1521,7 @@ const sampleGames = [
     ],
     "trophies": [
       {
-        "id": "hades_platinum",
+        "id": "hades-god-of-blood",
         "name": "God of Blood",
         "name_pt": "Deus do Sangue",
         "type": "Platina",
@@ -1531,7 +1531,7 @@ const sampleGames = [
         "is_spoiler": false
       },
       {
-        "id": "hades_tartarus",
+        "id": "hades-escaped-tartarus",
         "name": "Escaped Tartarus",
         "name_pt": "Escapou do Tártaro",
         "type": "Bronze",
@@ -1540,7 +1540,7 @@ const sampleGames = [
         "is_spoiler": false
       },
       {
-        "id": "hades_asphodel",
+        "id": "hades-escaped-asphodel",
         "name": "Escaped Asphodel",
         "name_pt": "Escapou de Asfódelo",
         "type": "Bronze",
@@ -1549,7 +1549,7 @@ const sampleGames = [
         "is_spoiler": false
       },
       {
-        "id": "hades_elysium",
+        "id": "hades-escaped-elysium",
         "name": "Escaped Elysium",
         "name_pt": "Escapou do Elísio",
         "type": "Bronze",
@@ -1558,7 +1558,7 @@ const sampleGames = [
         "is_spoiler": false
       },
       {
-        "id": "hades_champion_of_elysium",
+        "id": "hades-champion-of-elysium",
         "name": "Champion of Elysium",
         "name_pt": "Campeão do Elísio",
         "type": "Prata",
@@ -1567,7 +1567,7 @@ const sampleGames = [
         "is_spoiler": false
       },
       {
-        "id": "hades_hold_the_onions",
+        "id": "hades-hold-the-onions",
         "name": "Hold the Onions",
         "name_pt": "Sem Cebola, Por Favor",
         "type": "Bronze",
@@ -1576,7 +1576,7 @@ const sampleGames = [
         "is_spoiler": false
       },
       {
-        "id": "hades_escape",
+        "id": "hades-is-there-no-escape",
         "name": "Is There No Escape?",
         "name_pt": "Não há escapatória?",
         "type": "Prata",
@@ -1585,7 +1585,7 @@ const sampleGames = [
         "is_spoiler": true
       },
       {
-        "id": "hades_weapon_of_faté",
+        "id": "hades-weapon-of-fate",
         "name": "Weapon of Fate",
         "name_pt": "Arma do Destino",
         "type": "Bronze",
@@ -1594,7 +1594,7 @@ const sampleGames = [
         "is_spoiler": false
       },
       {
-        "id": "hades_charon_credit",
+        "id": "hades-to-charons-credit",
         "name": "To Charon's Credit",
         "name_pt": "Crédito do Caronte",
         "type": "Prata",
@@ -1603,7 +1603,7 @@ const sampleGames = [
         "is_spoiler": false
       },
       {
-        "id": "hades_useless_trinket",
+        "id": "hades-useless-trinket",
         "name": "The Useless Trinket",
         "name_pt": "A Bugiganga Inútil",
         "type": "Bronze",
@@ -1612,7 +1612,7 @@ const sampleGames = [
         "is_spoiler": false
       },
       {
-        "id": "hades_skelly_last_lamentations",
+        "id": "hades-skellys-last-lamentations",
         "name": "Skelly's Last Lamentations",
         "name_pt": "As Últimas Lamentações do Zé",
         "type": "Ouro",
@@ -1621,7 +1621,7 @@ const sampleGames = [
         "is_spoiler": false
       },
       {
-        "id": "hades_keepsakes",
+        "id": "hades-something-from-everyone",
         "name": "Something From Everyone",
         "name_pt": "Algo de todos",
         "type": "Bronze",
@@ -1630,7 +1630,7 @@ const sampleGames = [
         "is_spoiler": false
       },
       {
-        "id": "hades_friends_forever",
+        "id": "hades-friends-forever",
         "name": "Friends Forever",
         "name_pt": "Amizade Eterna",
         "type": "Prata",
@@ -1639,7 +1639,7 @@ const sampleGames = [
         "is_spoiler": false
       },
       {
-        "id": "hades_rare_collectible",
+        "id": "hades-rare-collectible",
         "name": "Rare Collectible",
         "name_pt": "Colecionável Raro",
         "type": "Bronze",
@@ -1648,7 +1648,7 @@ const sampleGames = [
         "is_spoiler": false
       },
       {
-        "id": "hades_complete_set",
+        "id": "hades-complete-set",
         "name": "Complete Set",
         "name_pt": "Colecionador",
         "type": "Bronze",
@@ -1657,7 +1657,7 @@ const sampleGames = [
         "is_spoiler": false
       },
       {
-        "id": "hades_blood_bound",
+        "id": "hades-blood-bound",
         "name": "Blood Bound",
         "name_pt": "Vínculo de Sangue",
         "type": "Bronze",
@@ -1666,7 +1666,7 @@ const sampleGames = [
         "is_spoiler": false
       },
       {
-        "id": "hades_infernal_arms",
+        "id": "hades-infernal-arms",
         "name": "Infernal Arms",
         "name_pt": "Armas Infernais",
         "type": "Prata",
@@ -1675,7 +1675,7 @@ const sampleGames = [
         "is_spoiler": false
       },
       {
-        "id": "hades_blessed_by_the_gods",
+        "id": "hades-blessed-by-the-gods",
         "name": "Blessed by the Gods",
         "name_pt": "Abençoado pelos Deuses",
         "type": "Bronze",
@@ -1684,7 +1684,7 @@ const sampleGames = [
         "is_spoiler": false
       },
       {
-        "id": "hades_thanks_but_no_thanks",
+        "id": "hades-thanks-but-no-thanks",
         "name": "Thanks, But No Thanks",
         "name_pt": "Obrigado, Só Que Não",
         "type": "Bronze",
@@ -1693,7 +1693,7 @@ const sampleGames = [
         "is_spoiler": false
       },
       {
-        "id": "hades_tools_of_the_architect",
+        "id": "hades-tools-of-the-architect",
         "name": "Tools of the Architect",
         "name_pt": "Ferramentas do Arquiteto",
         "type": "Bronze",
@@ -1702,7 +1702,7 @@ const sampleGames = [
         "is_spoiler": false
       },
       {
-        "id": "hades_arms_collector",
+        "id": "hades-arms-collector",
         "name": "Arms Collector",
         "name_pt": "Coletor de Armas",
         "type": "Bronze",
@@ -1711,7 +1711,7 @@ const sampleGames = [
         "is_spoiler": false
       },
       {
-        "id": "hades_bond",
+        "id": "hades-grown-close",
         "name": "Grown Close",
         "name_pt": "Amigos Íntimos",
         "type": "Bronze",
@@ -1720,7 +1720,7 @@ const sampleGames = [
         "is_spoiler": false
       },
       {
-        "id": "hades_well_versed",
+        "id": "hades-well-versed",
         "name": "Well Versed",
         "name_pt": "Bem versado",
         "type": "Bronze",
@@ -1729,7 +1729,7 @@ const sampleGames = [
         "is_spoiler": false
       },
       {
-        "id": "hades_day_or_night_trader",
+        "id": "hades-day-or-night-trader",
         "name": "Day-or-Night Trader",
         "name_pt": "Negociante Diúrno e Noturno",
         "type": "Bronze",
@@ -1738,7 +1738,7 @@ const sampleGames = [
         "is_spoiler": false
       },
       {
-        "id": "hades_home_makeover",
+        "id": "hades-home-makeover",
         "name": "Home Makeover",
         "name_pt": "Reformando a Casa",
         "type": "Bronze",
@@ -1747,7 +1747,7 @@ const sampleGames = [
         "is_spoiler": false
       },
       {
-        "id": "hades_had_to_happen",
+        "id": "hades-had-to-happen",
         "name": "Had to Happen",
         "name_pt": "Predestinado",
         "type": "Bronze",
@@ -1756,7 +1756,7 @@ const sampleGames = [
         "is_spoiler": false
       },
       {
-        "id": "hades_river_denizens",
+        "id": "hades-river-denizens",
         "name": "River Denizens",
         "name_pt": "Habitantes do rio",
         "type": "Bronze",
@@ -1765,7 +1765,7 @@ const sampleGames = [
         "is_spoiler": false
       },
       {
-        "id": "hades_urge_to_sing",
+        "id": "hades-urge-to-sing",
         "name": "Urge to Sing",
         "name_pt": "Vontade de Cantar",
         "type": "Bronze",
@@ -1774,7 +1774,7 @@ const sampleGames = [
         "is_spoiler": false
       },
       {
-        "id": "hades_nyx_mirror",
+        "id": "hades-nyxs-mirror",
         "name": "Nyx's Mirror",
         "name_pt": "O Espelho de Nix",
         "type": "Bronze",
@@ -1783,7 +1783,7 @@ const sampleGames = [
         "is_spoiler": false
       },
       {
-        "id": "hades_night_and_darkness",
+        "id": "hades-night-and-darkness",
         "name": "Night and Darkness",
         "name_pt": "Noite e Escuridão",
         "type": "Bronze",
@@ -1792,7 +1792,7 @@ const sampleGames = [
         "is_spoiler": false
       },
       {
-        "id": "hades_chthonic_colleagues",
+        "id": "hades-chthonic-colleagues",
         "name": "Chthonic Colleagues",
         "name_pt": "Colegas Ctônicos",
         "type": "Bronze",
@@ -1801,7 +1801,7 @@ const sampleGames = [
         "is_spoiler": false
       },
       {
-        "id": "hades_war_gods_bloodlust",
+        "id": "hades-war-gods-bloodlust",
         "name": "War-God's Bloodlust",
         "name_pt": "Sede do Deus da Guerra",
         "type": "Bronze",
@@ -1810,7 +1810,7 @@ const sampleGames = [
         "is_spoiler": false
       },
       {
-        "id": "hades_end_to_torment",
+        "id": "hades-end-to-torment",
         "name": "End to Torment",
         "name_pt": "Fim do Tormento",
         "type": "Bronze",
@@ -1819,7 +1819,7 @@ const sampleGames = [
         "is_spoiler": false
       },
       {
-        "id": "hades_musician_and_muse",
+        "id": "hades-musician-and-muse",
         "name": "Musician and Muse",
         "name_pt": "Músico e Musa",
         "type": "Bronze",
@@ -1828,7 +1828,7 @@ const sampleGames = [
         "is_spoiler": false
       },
       {
-        "id": "hades_divided_by_death",
+        "id": "hades-divided-by-death",
         "name": "Divided by Death",
         "name_pt": "Separados pela Morte",
         "type": "Bronze",
@@ -1837,7 +1837,7 @@ const sampleGames = [
         "is_spoiler": false
       },
       {
-        "id": "hades_dark_reflections",
+        "id": "hades-dark-reflections",
         "name": "Dark Reflections",
         "name_pt": "Reflexões Sombrias",
         "type": "Bronze",
@@ -1846,7 +1846,7 @@ const sampleGames = [
         "is_spoiler": false
       },
       {
-        "id": "hades_harsh_conditions",
+        "id": "hades-harsh-conditions",
         "name": "Harsh Conditions",
         "name_pt": "Condições Difíceis",
         "type": "Prata",
@@ -1855,7 +1855,7 @@ const sampleGames = [
         "is_spoiler": false
       },
       {
-        "id": "hades_master_of_arms",
+        "id": "hades-master-of-arms",
         "name": "Master of Arms",
         "name_pt": "Mestre das Armas",
         "type": "Prata",
@@ -1864,7 +1864,7 @@ const sampleGames = [
         "is_spoiler": false
       },
       {
-        "id": "hades_slashed_benefits",
+        "id": "hades-slashed-benefits",
         "name": "Slashed Benefits",
         "name_pt": "Benefícios Reduzidos",
         "type": "Bronze",
@@ -1873,7 +1873,7 @@ const sampleGames = [
         "is_spoiler": false
       },
       {
-        "id": "hades_back_to_work",
+        "id": "hades-back-to-work",
         "name": "Back to Work",
         "name_pt": "Ao Trabalho",
         "type": "Bronze",
@@ -1882,7 +1882,7 @@ const sampleGames = [
         "is_spoiler": true
       },
       {
-        "id": "hades_family_secret",
+        "id": "hades-family-secret",
         "name": "The Family Secret",
         "name_pt": "O Segredo de Familia",
         "type": "Ouro",
@@ -1891,7 +1891,7 @@ const sampleGames = [
         "is_spoiler": true
       },
       {
-        "id": "hades_epilogue",
+        "id": "hades-one-for-the-ages",
         "name": "One for the Ages",
         "name_pt": "Entrar pra História",
         "type": "Bronze",
@@ -1900,7 +1900,7 @@ const sampleGames = [
         "is_spoiler": true
       },
       {
-        "id": "hades_well_stocked",
+        "id": "hades-well-stocked",
         "name": "Well Stocked",
         "name_pt": "Bem Abastecido",
         "type": "Bronze",
@@ -1909,7 +1909,7 @@ const sampleGames = [
         "is_spoiler": false
       },
       {
-        "id": "hades_thorn_of_thanatos",
+        "id": "hades-thorn-of-thanatos",
         "name": "Thorn of Thanatos",
         "name_pt": "Espinho de Tânato",
         "type": "Bronze",
@@ -1918,7 +1918,7 @@ const sampleGames = [
         "is_spoiler": false
       },
       {
-        "id": "hades_haste_of_hermes",
+        "id": "hades-haste-of-hermes",
         "name": "Haste of Hermes",
         "name_pt": "Pressa de Hermes",
         "type": "Bronze",
@@ -1927,7 +1927,7 @@ const sampleGames = [
         "is_spoiler": false
       },
       {
-        "id": "hades_death_dealer",
+        "id": "hades-death-dealer",
         "name": "Death Dealer",
         "name_pt": "Ceifador",
         "type": "Bronze",
@@ -1936,7 +1936,7 @@ const sampleGames = [
         "is_spoiler": false
       },
       {
-        "id": "hades_friends_in_high_places",
+        "id": "hades-friends-in-high-places",
         "name": "Friends in High Places",
         "name_pt": "Amigos em Lugares de Honra",
         "type": "Bronze",
@@ -1945,7 +1945,7 @@ const sampleGames = [
         "is_spoiler": false
       },
       {
-        "id": "hades_bad_call",
+        "id": "hades-bad-call",
         "name": "Bad Call",
         "name_pt": "Péssima escolha",
         "type": "Bronze",
@@ -1954,7 +1954,7 @@ const sampleGames = [
         "is_spoiler": false
       },
       {
-        "id": "hades_skelly_slayer",
+        "id": "hades-skelly-slayer",
         "name": "Skelly Slayer",
         "name_pt": "Caveirocídio",
         "type": "Bronze",
@@ -1963,7 +1963,7 @@ const sampleGames = [
         "is_spoiler": false
       },
       {
-        "id": "hades_three_headed_boy",
+        "id": "hades-three-headed-boy",
         "name": "Three-Headed Boy",
         "name_pt": "Garoto de três cabeças",
         "type": "Bronze",
@@ -27124,146 +27124,146 @@ const eldenRingDescriptionOriginalById = {
 };
 
 const hadesDescriptionOriginalById = {
-  hades_platinum: "Earn every other Trophy.",
-  hades_tartarus: "Clear Tartarus.",
-  hades_asphodel: "Clear Asphodel.",
-  hades_elysium: "Clear Elysium.",
-  hades_champion_of_elysium: "Clear Elysium with the 'Extreme Measures' Condition.",
-  hades_hold_the_onions: "Clear an Infernal Gate without taking damage.",
-  hades_escape: "Clear an escape attempt.",
-  hades_weapon_of_faté: "Clear an escape attempt with a hidden Weapon Aspect.",
-  hades_charon_credit: "Earn a Loyalty Card.",
-  hades_useless_trinket: "Earn the first of Skelly's prizes.",
-  hades_skelly_last_lamentations: "Earn the second of Skelly's prizes.",
-  hades_keepsakes: "Unlock each standard Keepsake.",
-  hades_friends_forever: "Max-rank each standard Keepsake.",
-  hades_rare_collectible: "Equip a Chthonic Companion.",
-  hades_complete_set: "Earn all Chthonic Companions.",
-  hades_blood_bound: "Max any Weapon Aspect.",
-  hades_infernal_arms: "Unlock all Weapon Aspects.",
-  hades_blessed_by_the_gods: "Choose 100 different Olympian Boon effects.",
-  hades_thanks_but_no_thanks: "Purge a Legendary Boon.",
-  hades_tools_of_the_architect: "Choose 50 different Daedalus Hammer enchantments.",
-  hades_arms_collector: "Unlock each of the Infernal Arms.",
-  hades_bond: "Forge a bond with any character.",
-  hades_well_versed: "Fully Unlock the Olympians' Codex entries.",
-  hades_day_or_night_trader: "Trade 20 times with the Wretched Broker.",
-  hades_home_makeover: "Pay for 50 jobs from the House Contractor.",
-  hades_had_to_happen: "Fulfill any 15 Prophecies.",
-  hades_river_denizens: "Catch a fish from each region.",
-  hades_urge_to_sing: "Compel Orpheus to sing again.",
-  hades_nyx_mirror: "Have at least one rank in each Mirror of Night Talent.",
-  hades_night_and_darkness: "Fulfill the 'Night and Darkness' Prophecy.",
-  hades_chthonic_colleagues: "Fulfill the 'Chthonic Colleagues' Prophecy.",
-  hades_war_gods_bloodlust: "Fulfill the 'War-God's Bloodlust' Prophecy.",
-  hades_end_to_torment: "Fulfill the 'End to Torment' Prophecy.",
-  hades_musician_and_muse: "Fulfill the 'Musician and Muse' Prophecy.",
-  hades_divided_by_death: "Fulfill the 'Divided by Death' Prophecy.",
-  hades_dark_reflections: "Fulfill the 'Dark Reflections' Prophecy.",
-  hades_harsh_conditions: "Fulfill the 'Harsh Conditions' Prophecy.",
-  hades_master_of_arms: "Fulfill the 'Master of Arms' Prophecy.",
-  hades_slashed_benefits: "Fulfill the 'Slashed Benefits' Prophecy.",
-  hades_back_to_work: "Earn access to and enter the Administrative Chamber.",
-  hades_family_secret: "Complete the main quest in the story.",
-  hades_epilogue: "Reach the epilogue of the story.",
-  hades_well_stocked: "Buy 9 'Well of Charon' items in one escape attempt.",
-  hades_thorn_of_thanatos: "Get 30% bonus damage with the Pierced Butterfly.",
-  hades_haste_of_hermes: "Get 20% dodge chance with the Lambent Plume.",
-  hades_death_dealer: "Beat Thanatos by 15 kills or more.",
-  hades_friends_in_high_places: "Use Greater Call to invoke an Olympian's aid.",
-  hades_bad_call: "Use an Olympian's Greater Call against them in a Trial.",
-  hades_skelly_slayer: "Slay Skelly 15 times.",
-  hades_three_headed_boy: "Pet Cerberus 10 times."
+  "hades-god-of-blood": "Earn every other Trophy.",
+  "hades-escaped-tartarus": "Clear Tartarus.",
+  "hades-escaped-asphodel": "Clear Asphodel.",
+  "hades-escaped-elysium": "Clear Elysium.",
+  "hades-champion-of-elysium": "Clear Elysium with the 'Extreme Measures' Condition.",
+  "hades-hold-the-onions": "Clear an Infernal Gate without taking damage.",
+  "hades-is-there-no-escape": "Clear an escape attempt.",
+  "hades-weapon-of-fate": "Clear an escape attempt with a hidden Weapon Aspect.",
+  "hades-to-charons-credit": "Earn a Loyalty Card.",
+  "hades-useless-trinket": "Earn the first of Skelly's prizes.",
+  "hades-skellys-last-lamentations": "Earn the second of Skelly's prizes.",
+  "hades-something-from-everyone": "Unlock each standard Keepsake.",
+  "hades-friends-forever": "Max-rank each standard Keepsake.",
+  "hades-rare-collectible": "Equip a Chthonic Companion.",
+  "hades-complete-set": "Earn all Chthonic Companions.",
+  "hades-blood-bound": "Max any Weapon Aspect.",
+  "hades-infernal-arms": "Unlock all Weapon Aspects.",
+  "hades-blessed-by-the-gods": "Choose 100 different Olympian Boon effects.",
+  "hades-thanks-but-no-thanks": "Purge a Legendary Boon.",
+  "hades-tools-of-the-architect": "Choose 50 different Daedalus Hammer enchantments.",
+  "hades-arms-collector": "Unlock each of the Infernal Arms.",
+  "hades-grown-close": "Forge a bond with any character.",
+  "hades-well-versed": "Fully Unlock the Olympians' Codex entries.",
+  "hades-day-or-night-trader": "Trade 20 times with the Wretched Broker.",
+  "hades-home-makeover": "Pay for 50 jobs from the House Contractor.",
+  "hades-had-to-happen": "Fulfill any 15 Prophecies.",
+  "hades-river-denizens": "Catch a fish from each region.",
+  "hades-urge-to-sing": "Compel Orpheus to sing again.",
+  "hades-nyxs-mirror": "Have at least one rank in each Mirror of Night Talent.",
+  "hades-night-and-darkness": "Fulfill the 'Night and Darkness' Prophecy.",
+  "hades-chthonic-colleagues": "Fulfill the 'Chthonic Colleagues' Prophecy.",
+  "hades-war-gods-bloodlust": "Fulfill the 'War-God's Bloodlust' Prophecy.",
+  "hades-end-to-torment": "Fulfill the 'End to Torment' Prophecy.",
+  "hades-musician-and-muse": "Fulfill the 'Musician and Muse' Prophecy.",
+  "hades-divided-by-death": "Fulfill the 'Divided by Death' Prophecy.",
+  "hades-dark-reflections": "Fulfill the 'Dark Reflections' Prophecy.",
+  "hades-harsh-conditions": "Fulfill the 'Harsh Conditions' Prophecy.",
+  "hades-master-of-arms": "Fulfill the 'Master of Arms' Prophecy.",
+  "hades-slashed-benefits": "Fulfill the 'Slashed Benefits' Prophecy.",
+  "hades-back-to-work": "Earn access to and enter the Administrative Chamber.",
+  "hades-family-secret": "Complete the main quest in the story.",
+  "hades-one-for-the-ages": "Reach the epilogue of the story.",
+  "hades-well-stocked": "Buy 9 'Well of Charon' items in one escape attempt.",
+  "hades-thorn-of-thanatos": "Get 30% bonus damage with the Pierced Butterfly.",
+  "hades-haste-of-hermes": "Get 20% dodge chance with the Lambent Plume.",
+  "hades-death-dealer": "Beat Thanatos by 15 kills or more.",
+  "hades-friends-in-high-places": "Use Greater Call to invoke an Olympian's aid.",
+  "hades-bad-call": "Use an Olympian's Greater Call against them in a Trial.",
+  "hades-skelly-slayer": "Slay Skelly 15 times.",
+  "hades-three-headed-boy": "Pet Cerberus 10 times."
 };
 
 const hadesStoryTrophyIds = new Set([
-  'hades_tartarus',
-  'hades_asphodel',
-  'hades_elysium',
-  'hades_escape',
-  'hades_back_to_work',
-  'hades_family_secret',
-  'hades_epilogue'
+  'hades-escaped-tartarus',
+  'hades-escaped-asphodel',
+  'hades-escaped-elysium',
+  'hades-is-there-no-escape',
+  'hades-back-to-work',
+  'hades-family-secret',
+  'hades-one-for-the-ages'
 ]);
 
 const hadesRelationshipTrophyIds = new Set([
-  'hades_bond',
-  'hades_rare_collectible',
-  'hades_complete_set',
-  'hades_urge_to_sing',
-  'hades_night_and_darkness',
-  'hades_chthonic_colleagues',
-  'hades_war_gods_bloodlust',
-  'hades_end_to_torment',
-  'hades_musician_and_muse',
-  'hades_divided_by_death',
-  'hades_family_secret',
-  'hades_epilogue'
+  'hades-grown-close',
+  'hades-rare-collectible',
+  'hades-complete-set',
+  'hades-urge-to-sing',
+  'hades-night-and-darkness',
+  'hades-chthonic-colleagues',
+  'hades-war-gods-bloodlust',
+  'hades-end-to-torment',
+  'hades-musician-and-muse',
+  'hades-divided-by-death',
+  'hades-family-secret',
+  'hades-one-for-the-ages'
 ]);
 
 const hadesCollectibleTrophyIds = new Set([
-  'hades_keepsakes',
-  'hades_friends_forever',
-  'hades_rare_collectible',
-  'hades_complete_set',
-  'hades_infernal_arms',
-  'hades_arms_collector',
-  'hades_blessed_by_the_gods',
-  'hades_tools_of_the_architect',
-  'hades_well_versed',
-  'hades_river_denizens'
+  'hades-something-from-everyone',
+  'hades-friends-forever',
+  'hades-rare-collectible',
+  'hades-complete-set',
+  'hades-infernal-arms',
+  'hades-arms-collector',
+  'hades-blessed-by-the-gods',
+  'hades-tools-of-the-architect',
+  'hades-well-versed',
+  'hades-river-denizens'
 ]);
 
 const hadesDifficultyTrophyIds = new Set([
-  'hades_champion_of_elysium',
-  'hades_hold_the_onions',
-  'hades_useless_trinket',
-  'hades_skelly_last_lamentations',
-  'hades_harsh_conditions',
-  'hades_slashed_benefits',
-  'hades_thorn_of_thanatos',
-  'hades_haste_of_hermes',
-  'hades_death_dealer',
-  'hades_bad_call'
+  'hades-champion-of-elysium',
+  'hades-hold-the-onions',
+  'hades-useless-trinket',
+  'hades-skellys-last-lamentations',
+  'hades-harsh-conditions',
+  'hades-slashed-benefits',
+  'hades-thorn-of-thanatos',
+  'hades-haste-of-hermes',
+  'hades-death-dealer',
+  'hades-bad-call'
 ]);
 
 const hadesPostGameTrophyIds = new Set([
-  'hades_useless_trinket',
-  'hades_skelly_last_lamentations',
-  'hades_complete_set',
-  'hades_friends_forever',
-  'hades_had_to_happen',
-  'hades_dark_reflections',
-  'hades_harsh_conditions',
-  'hades_master_of_arms',
-  'hades_slashed_benefits',
-  'hades_family_secret',
-  'hades_epilogue',
-  'hades_night_and_darkness',
-  'hades_chthonic_colleagues',
-  'hades_war_gods_bloodlust',
-  'hades_end_to_torment',
-  'hades_musician_and_muse',
-  'hades_divided_by_death'
+  'hades-useless-trinket',
+  'hades-skellys-last-lamentations',
+  'hades-complete-set',
+  'hades-friends-forever',
+  'hades-had-to-happen',
+  'hades-dark-reflections',
+  'hades-harsh-conditions',
+  'hades-master-of-arms',
+  'hades-slashed-benefits',
+  'hades-family-secret',
+  'hades-one-for-the-ages',
+  'hades-night-and-darkness',
+  'hades-chthonic-colleagues',
+  'hades-war-gods-bloodlust',
+  'hades-end-to-torment',
+  'hades-musician-and-muse',
+  'hades-divided-by-death'
 ]);
 
 const hadesGrindTrophyIds = new Set([
-  'hades_keepsakes',
-  'hades_friends_forever',
-  'hades_complete_set',
-  'hades_blessed_by_the_gods',
-  'hades_tools_of_the_architect',
-  'hades_day_or_night_trader',
-  'hades_home_makeover',
-  'hades_had_to_happen',
-  'hades_river_denizens',
-  'hades_dark_reflections',
-  'hades_harsh_conditions',
-  'hades_master_of_arms',
-  'hades_slashed_benefits',
-  'hades_well_stocked',
-  'hades_skelly_slayer',
-  'hades_three_headed_boy'
+  'hades-something-from-everyone',
+  'hades-friends-forever',
+  'hades-complete-set',
+  'hades-blessed-by-the-gods',
+  'hades-tools-of-the-architect',
+  'hades-day-or-night-trader',
+  'hades-home-makeover',
+  'hades-had-to-happen',
+  'hades-river-denizens',
+  'hades-dark-reflections',
+  'hades-harsh-conditions',
+  'hades-master-of-arms',
+  'hades-slashed-benefits',
+  'hades-well-stocked',
+  'hades-skelly-slayer',
+  'hades-three-headed-boy'
 ]);
 
 function buildHadesTrophyTags(trophy = {}) {
