@@ -436,12 +436,73 @@ const sampleGames = [
     "image": "https://cdn.cloudflare.steamstatic.com/steam/apps/1245620/header.jpg",
     "cover_image": "https://cdn.cloudflare.steamstatic.com/steam/apps/1245620/library_600x900.jpg",
     "roadmap": [
-      "title: Explore sem pressa e fortaleça sua build | focus: Início da jornada | objective: Avançar pelas primeiras regiões enquanto melhora frascos, armas, atributos e recursos básicos. | actions: Explore Limgrave, Weeping Peninsula e Liurnia antes de correr para chefes grandes.; Ative Sites of Grace e colete upgrades de frasco sempre que possível.; Teste armas, magias, invocações e estilos de build.; Comece a marcar no checklist chefes com troféu e itens lendários encontrados. | result: Personagem preparado para avançar com mais segurança para chefes principais.",
-      "title: Derrote chefes principais e Shardbearers | focus: História e chefes | objective: Abrir caminho para Leyndell e avançar a campanha sem ignorar chefes importantes para troféus. | actions: Derrote chefes obrigatórios e Shardbearers necessários para progredir.; Registre bosses opcionais com troféu para não deixar tudo para a limpeza final.; Evite misturar conteúdo de Shadow of the Erdtree com a platina base. | result: Campanha avançada e principais chefes da lista base mapeados.",
-      "title: Acompanhe questlines e requisitos de finais | focus: Finais | objective: Preparar os finais Elden Lord, Age of the Stars e Lord of Frenzied Flame. | actions: Acompanhe a rota de Ranni para Age of the Stars.; Tenha cuidado com escolhas ligadas aos Three Fingers.; Antes da decisão final, confirme quais finais ainda faltam. | warning: Se quiser reduzir jogadas, planeje backup de save antes do final. Sem backup, será necessário usar NG+ ou múltiplas runs.",
-      "title: Colete lendários antes do ponto crítico | focus: Coletáveis | objective: Evitar perder acesso a itens importantes antes das mudanças em Leyndell. | actions: Priorize armamentos, magias, talismãs e cinzas lendárias.; Dê atenção especial ao Bolt of Gransax antes da transformação de Leyndell.; Use o checklist para separar o que já foi coletado e o que ainda falta. | warning: Não avance demais na história sem revisar os lendários pendentes.",
-      "title: Faça os finais da forma planejada | focus: Finalização da campanha | objective: Obter os troféus de finais necessários sem repetir mais runs do que o desejado. | actions: Faça o final escolhido conforme os requisitos já preparados.; Use backup de save somente se essa for a estratégia do jogador.; Sem backup, planeje NG+ ou novas runs para os finais restantes. | result: Troféus de final concluídos ou rota definida para NG+.",
-      "title: Cleanup final da platina base | focus: Limpeza | objective: Finalizar chefes opcionais, itens lendários e pendências restantes. | actions: Derrote bosses opcionais com troféu.; Complete armas, magias, talismãs e cinzas lendárias restantes.; Confira o checklist antes de considerar a platina encerrada. | result: A platina base não exige online nem Shadow of the Erdtree."
+      {
+        "title": "Explore sem pressa e fortaleça sua build",
+        "focus": "Início da jornada",
+        "objective": "Avançar pelas primeiras regiões enquanto melhora frascos, armas, atributos e recursos básicos.",
+        "actions": [
+          "Explore Limgrave, Weeping Peninsula e Liurnia antes de correr para chefes grandes.",
+          "Ative Sites of Grace e colete upgrades de frasco sempre que possível.",
+          "Teste armas, magias, invocações e estilos de build.",
+          "Comece a marcar no checklist chefes com troféu e itens lendários encontrados."
+        ],
+        "result": "Personagem preparado para avançar com mais segurança para chefes principais."
+      },
+      {
+        "title": "Derrote chefes principais e Shardbearers",
+        "focus": "História e chefes",
+        "objective": "Abrir caminho para Leyndell e avançar a campanha sem ignorar chefes importantes para troféus.",
+        "actions": [
+          "Derrote chefes obrigatórios e Shardbearers necessários para progredir.",
+          "Registre bosses opcionais com troféu para não deixar tudo para a limpeza final.",
+          "Evite misturar conteúdo de Shadow of the Erdtree com a platina base."
+        ],
+        "result": "Campanha avançada e principais chefes da lista base mapeados."
+      },
+      {
+        "title": "Acompanhe questlines e requisitos de finais",
+        "focus": "Finais",
+        "objective": "Preparar os finais Elden Lord, Age of the Stars e Lord of Frenzied Flame.",
+        "actions": [
+          "Acompanhe a rota de Ranni para Age of the Stars.",
+          "Tenha cuidado com escolhas ligadas aos Three Fingers.",
+          "Antes da decisão final, confirme quais finais ainda faltam."
+        ],
+        "warning": "Se quiser reduzir jogadas, planeje backup de save antes do final. Sem backup, será necessário usar NG+ ou múltiplas runs."
+      },
+      {
+        "title": "Colete lendários antes do ponto crítico",
+        "focus": "Coletáveis",
+        "objective": "Evitar perder acesso a itens importantes antes das mudanças em Leyndell.",
+        "actions": [
+          "Priorize armamentos, magias, talismãs e cinzas lendárias.",
+          "Dê atenção especial ao Bolt of Gransax antes da transformação de Leyndell.",
+          "Use o checklist para separar o que já foi coletado e o que ainda falta."
+        ],
+        "warning": "Não avance demais na história sem revisar os lendários pendentes."
+      },
+      {
+        "title": "Faça os finais da forma planejada",
+        "focus": "Finalização da campanha",
+        "objective": "Obter os troféus de finais necessários sem repetir mais runs do que o desejado.",
+        "actions": [
+          "Faça o final escolhido conforme os requisitos já preparados.",
+          "Use backup de save somente se essa for a estratégia do jogador.",
+          "Sem backup, planeje NG+ ou novas runs para os finais restantes."
+        ],
+        "result": "Troféus de final concluídos ou rota definida para NG+."
+      },
+      {
+        "title": "Cleanup final da platina base",
+        "focus": "Limpeza",
+        "objective": "Finalizar chefes opcionais, itens lendários e pendências restantes.",
+        "actions": [
+          "Derrote bosses opcionais com troféu.",
+          "Complete armas, magias, talismãs e cinzas lendárias restantes.",
+          "Confira o checklist antes de considerar a platina encerrada."
+        ],
+        "note": "A platina base não exige online nem Shadow of the Erdtree."
+      }
     ],
     "trophies": [
       {
@@ -1388,77 +1449,74 @@ const sampleGames = [
     "avoid_if": "Evite se você quer uma platina curta, linear, sem repetição de runs ou sem depender de diálogos, RNG e grind de recursos.",
     "roadmap": [
       {
-        "title": "Aprenda armas, boons e o loop das runs",
+        "title": "Aprenda as armas e fortaleça Zagreus",
         "focus": "Primeiras runs",
-        "objective": "Entender o combate, testar armas e acumular Darkness/Keys para destravar progresso permanente.",
+        "objective": "Usar as primeiras tentativas para aprender combate, chefes, boons e melhorias permanentes.",
         "actions": [
-          "Teste armas diferentes cedo.",
-          "Priorize rotas com Darkness e Chthonic Keys no início.",
-          "Comece a investir na Mirror of Night.",
-          "Não tente fazer 100% nos primeiros escapes."
+          "Teste armas diferentes para descobrir qual combina com seu estilo.",
+          "Invista recursos na Mirror of Night para melhorar consistência nas runs.",
+          "Observe padrões dos chefes sem tentar fazer 100% logo no início.",
+          "Comece a acompanhar profecias da Fated List quando forem liberadas."
         ],
-        "result": "Base de progressão montada para runs mais consistentes."
+        "result": "Base de progressão criada para escapar com mais frequência."
       },
       {
-        "title": "Faça a primeira fuga e abra sistemas centrais",
-        "focus": "História e progressão",
-        "objective": "Conseguir a primeira escape e liberar sistemas que ampliam a rota da platina.",
+        "title": "Faça a primeira fuga e avance a história",
+        "focus": "História e consistência",
+        "objective": "Conseguir completar runs e destravar mais diálogos, recursos e sistemas.",
         "actions": [
-          "Foque em completar uma run com build estável.",
-          "Converse com personagens entre runs.",
-          "Garanta acesso ao Codex e acompanhe Nectar dado a NPCs.",
-          "Comece a observar House Contractor, Keepsakes e demais desbloqueios."
+          "Foque em builds consistentes até conseguir a primeira fuga.",
+          "Continue evoluindo a Mirror of Night.",
+          "Distribua Nectar com intenção, priorizando personagens ligados a troféus e lembranças.",
+          "Use Keepsakes para facilitar builds e acelerar progresso."
         ],
-        "result": "Primeira fuga concluída e sistemas principais liberados."
+        "result": "Primeira fuga concluída e progresso narrativo avançando."
       },
       {
-        "title": "Trabalhe relacionamentos, Keepsakes e Companions",
-        "focus": "Relacionamentos",
-        "objective": "Avançar troféus ligados a Nectar, vínculos, Keepsakes e Companions sem grind cego.",
+        "title": "Trabalhe relacionamentos e coleções",
+        "focus": "Relacionamentos e coletáveis",
+        "objective": "Avançar troféus ligados a Nectar, Ambrosia, Keepsakes, Companions e personagens.",
         "actions": [
-          "Distribua Nectar de forma planejada.",
-          "Evolua Keepsakes em paralelo às runs.",
-          "Acompanhe personagens com progresso de vínculo.",
-          "Evite perder controle do checklist de relacionamentos."
+          "Continue conversando com personagens entre as runs.",
+          "Acompanhe quem ainda precisa de Nectar ou Ambrosia.",
+          "Evolua Keepsakes e desbloqueie Companions conforme os requisitos aparecerem.",
+          "Use o checklist para evitar perder controle do grind."
         ],
-        "result": "Boa parte dos troféus sociais e de coleção encaminhada."
+        "result": "Relacionamentos e coleções principais encaminhados."
       },
       {
-        "title": "Feche profecias, espelho e coleções estruturais",
-        "focus": "Prophecies e sistema da casa",
-        "objective": "Resolver troféus de Prophecies, Mirror of Night, Codex, Contractor e Broker.",
+        "title": "Complete Fated List e objetivos longos",
+        "focus": "Grind e profecias",
+        "objective": "Reduzir pendências de longo prazo ligadas à Fated List, armas, boons e tarefas específicas.",
         "actions": [
-          "Consulte a Fated List com frequência.",
-          "Varie armas, boons e aspectos para completar requisitos diferentes.",
-          "Complete compras/trabalhos e trocas da casa no mesmo save.",
-          "Use o checklist para separar grind estrutural de troféus situacionais."
+          "Consulte a Fated List com frequência para priorizar objetivos pendentes.",
+          "Varie armas, aspectos e deuses para completar requisitos diferentes.",
+          "Separe troféus de grind dos troféus de história para não repetir runs sem foco."
         ],
-        "result": "Miolo da platina avançado com menos retrabalho."
+        "result": "Grande parte do grind estrutural concluída."
       },
       {
-        "title": "Suba Heat com o Pact of Punishment",
-        "focus": "Dificuldade",
-        "objective": "Cumprir troféus ligados ao Pact of Punishment e desafios de Skelly sem exagerar cedo demais.",
+        "title": "Suba Heat com Pact of Punishment",
+        "focus": "Dificuldade e progressão",
+        "objective": "Cumprir requisitos ligados ao Pact of Punishment sem tentar Heat alto cedo demais.",
         "actions": [
-          "Aumente Heat gradualmente.",
-          "Use armas/builds confortáveis para requisitos específicos.",
-          "Trate God Mode como recurso opcional, não como invalidador de troféu.",
-          "Não marque essa etapa como perdível."
+          "Comece a aumentar Heat gradualmente depois de ter builds mais consistentes.",
+          "Escolha modificadores que você consegue controlar.",
+          "Use armas confortáveis para troféus ligados a dificuldade."
         ],
-        "warning": "A dificuldade extra deve ser tratada como progressão planejada, não como lockout.",
-        "result": "Troféus de Heat e desafios avançados encaminhados."
+        "warning": "Heat não é online nem coop; é progressão/dificuldade dentro das runs."
       },
       {
         "title": "Cleanup final da platina",
-        "focus": "Checklist final",
-        "objective": "Revisar o save, fechar pendências e confirmar a lista base.",
+        "focus": "Limpeza",
+        "objective": "Finalizar troféus restantes de relacionamentos, profecias, Companions, Keepsakes e runs.",
         "actions": [
-          "Revise checklist completo e “Ver detalhes”.",
-          "Feche o que faltar de profecias, Keepsakes, Companions, relações e troféus situacionais.",
-          "Confirme que a platina não está marcada como perdível.",
-          "Confirme que o FAQ, tags e a decisão rápida estão coerentes com o guia final."
+          "Revise o checklist completo antes de continuar fazendo runs aleatórias.",
+          "Finalize pendências de personagens e recursos raros.",
+          "Complete objetivos restantes da Fated List.",
+          "Feche qualquer troféu de Heat, arma ou progressão que ainda faltar."
         ],
-        "result": "Guia consistente e platina pronta sem erros de classificação."
+        "result": "Checklist completo e platina pronta."
       }
     ],
     "trophies": [

@@ -2496,7 +2496,12 @@ async function assertSeedData({ all, get }, sampleGames) {
   assert.strictEqual(eldenRingSample.verification_status, 'review', 'Elden Ring deve aguardar revisao editorial final');
   assert(eldenRingSample.cover_image, 'Elden Ring deve expor cover_image vertical para biblioteca/guia');
   assert(eldenRingSample.dlc_scope.includes('Shadow of the Erdtree'), 'Elden Ring deve deixar claro que DLC nao entra na platina base');
-  assert(eldenRingSample.roadmap.some(step => step.includes('backup de save')), 'roadmap de Elden Ring deve orientar backup de save para finais');
+  const eldenRingRoadmapText = eldenRingSample.roadmap.map(step => {
+    if (typeof step === 'string') return step;
+    return [step.title, step.focus, step.objective, ...(Array.isArray(step.actions) ? step.actions : []), step.warning, step.note, step.result].filter(Boolean).join(' ');
+  }).join(' ');
+  assert(eldenRingRoadmapText.includes('backup de save'), 'roadmap de Elden Ring deve orientar backup de save para finais');
+  assert(eldenRingSample.roadmap.every(step => step && typeof step === 'object' && Array.isArray(step.actions)), 'roadmap de Elden Ring deve usar etapas estruturadas');
   const eldenRingTypeCounts = eldenRingSample.trophies.reduce((counts, trophy) => {
     counts[trophy.type] = (counts[trophy.type] || 0) + 1;
     return counts;

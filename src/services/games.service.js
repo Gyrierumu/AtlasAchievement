@@ -28,6 +28,17 @@ function serializeRoadmapStep(step) {
   return String(step || '');
 }
 
+function deserializeRoadmapStep(content) {
+  const text = String(content || '').trim();
+  if (!text || !/^\{[\s\S]*\}$/.test(text)) return text;
+  try {
+    const parsed = JSON.parse(text);
+    return parsed && typeof parsed === 'object' && !Array.isArray(parsed) ? parsed : text;
+  } catch (_error) {
+    return text;
+  }
+}
+
 function normalizeGuideCleanupAdvice(row = {}) {
   const text = row.cleanup_advice || '';
   if (row.slug === 'road-96') {
@@ -206,7 +217,7 @@ function normalizeGame(row, roadmapRows, trophyRows) {
     is_verified: Boolean(row.is_verified),
     verification_note: row.verification_note || '',
     slug: row.slug || slugifyGameName(row.name),
-    roadmap: roadmapRows.map(item => item.content),
+    roadmap: roadmapRows.map(item => deserializeRoadmapStep(item.content)),
     trophies: trophyRows.map(item => {
       const description = item.description || '';
       const isMissable = Boolean(item.is_missable) && !isPlatinumTrophy(item);

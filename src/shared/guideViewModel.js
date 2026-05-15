@@ -1187,27 +1187,84 @@
     }
   }
 
+  function cleanRoadmapFieldText(value = '') {
+    return String(value || '')
+      .replace(/\s*\|\s*/g, ' ')
+      .replace(/^\s*(title|focus|objective|actions|warning|note|observation|observacao|result|plan|summary|description|goal|goals|checklist)\s*:\s*/i, '')
+      .replace(/\s+/g, ' ')
+      .trim();
+  }
+
+  function isSerializedRoadmapText(value = '') {
+    const text = String(value || '');
+    return /\b(title|focus|objective|actions|warning|note|observation|observacao|result)\s*:/i.test(text)
+      && (/\s\|\s/.test(text) || /\bobjective\s*:/i.test(text) || /\bactions\s*:/i.test(text));
+  }
+
+  function findStructuredRoadmapPayload(source = {}) {
+    if (!source || typeof source !== 'object' || Array.isArray(source)) return null;
+    const candidates = [
+      source.serialized,
+      source.plan,
+      source.description,
+      source.summary,
+      source.objective,
+      source.detail,
+      source.goal,
+      source.goals,
+      source.checklist
+    ];
+    for (const candidate of candidates) {
+      if (typeof candidate !== 'string' || !isSerializedRoadmapText(candidate)) continue;
+      const jsonStep = parseJsonRoadmapStep(candidate);
+      if (jsonStep) return findStructuredRoadmapPayload(jsonStep) || jsonStep;
+      const structured = parseStructuredRoadmapStep(candidate);
+      if (structured) return structured;
+    }
+    return null;
+  }
+
+  function pickRoadmapText(...values) {
+    return values
+      .map(value => String(value || '').trim())
+      .filter(value => value && !isSerializedRoadmapText(value))
+      .map(cleanRoadmapFieldText)
+      .find(Boolean) || '';
+  }
+
   function normalizeRoadmapStep(step = {}, index = 0, total = 1) {
     const jsonStep = typeof step === 'string' ? parseJsonRoadmapStep(step) : null;
     const source = jsonStep || step;
     const raw = typeof source === 'string'
       ? source
-      : (source?.description || source?.detail || source?.objective || source?.goal || source?.title || source?.name || 'Etapa');
-    const structured = typeof source === 'string' ? parseStructuredRoadmapStep(raw) : null;
+      : (source?.description || source?.detail || source?.objective || source?.plan || source?.summary || source?.goal || source?.title || source?.name || 'Etapa');
     const isObject = source && typeof source === 'object' && !Array.isArray(source);
+    const structured = typeof source === 'string'
+      ? parseStructuredRoadmapStep(raw)
+      : findStructuredRoadmapPayload(source);
     const relatedTrophies = isObject
       ? (Array.isArray(source?.trophies) ? source.trophies : (Array.isArray(source?.relatedTrophies) ? source.relatedTrophies : []))
       : [];
-    const title = String(structured?.title || (isObject ? (source.title || source.name) : '') || '').trim();
-    const focus = String(structured?.focus || (isObject ? source.focus : '') || '').trim();
-    const objective = String(structured?.objective || (isObject ? (source.objective || source.goal || source.description || source.detail) : '') || '').trim();
-    const actions = normalizeRoadmapActions(structured?.actions || (isObject ? source.actions : []));
-    const warning = String(structured?.warning || (isObject ? source.warning : '') || '').trim();
-    const note = String(structured?.note || (isObject ? (source.note || source.observation || source.observacao) : '') || '').trim();
-    const result = String(structured?.result || (isObject ? source.result : '') || '').trim();
-    const risk = String(warning || (isObject ? source.risk : '') || '').trim();
-    const clean = String(objective || raw || 'Etapa').trim().replace(/^Etapa\s+\d+\s*[:.-]\s*/i, '');
-    const explicitTitle = title || (isObject ? (source.title || source.name) : '');
+    const title = cleanRoadmapFieldText(structured?.title || (isObject ? (source.title || source.name || source.label) : '') || '');
+    const focus = cleanRoadmapFieldText(structured?.focus || (isObject ? (source.focus || source.tag || source.category) : '') || '');
+    const objective = pickRoadmapText(
+      structured?.objective,
+      isObject ? source.objective : '',
+      isObject ? source.goal : '',
+      isObject ? source.description : '',
+      isObject ? source.detail : '',
+      isObject ? source.summary : '',
+      isObject ? source.plan : ''
+    );
+    const actions = normalizeRoadmapActions(structured?.actions || (isObject ? (source.actions || source.checklist || source.goals) : []))
+      .map(cleanRoadmapFieldText)
+      .filter(Boolean);
+    const warning = cleanRoadmapFieldText(structured?.warning || (isObject ? source.warning : '') || '');
+    const note = cleanRoadmapFieldText(structured?.note || (isObject ? (source.note || source.observation || source.observacao) : '') || '');
+    const result = cleanRoadmapFieldText(structured?.result || (isObject ? source.result : '') || '');
+    const risk = cleanRoadmapFieldText(warning || (isObject ? source.risk : '') || '');
+    const clean = cleanRoadmapFieldText(objective || (isSerializedRoadmapText(raw) ? structured?.objective : raw) || 'Etapa').replace(/^Etapa\s+\d+\s*[:.-]\s*/i, '');
+    const explicitTitle = title || (isObject ? (source.title || source.name || source.label) : '');
     const signalText = [title, focus, clean, ...actions, warning, note].filter(Boolean).join(' ');
     const category = classifyRoadmapStage(signalText || clean);
     const inferredTitle = title || inferRoadmapStageTitle(clean, index, total, explicitTitle);
