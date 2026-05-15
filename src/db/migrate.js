@@ -1055,6 +1055,7 @@ async function migrate(options = {}) {
   if (shouldSyncSeedData(options)) {
     await syncReviewedGuidesFromSeed();
   }
+  await syncSeedGameFromSeed('pragmata', { insertIfMissing: true, forceSync: true });
   await syncSeedGameFromSeed('disney-epic-mickey-rebrushed', { insertIfMissing: true });
   await ensureKnownSlugRedirects();
 }
