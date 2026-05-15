@@ -2486,7 +2486,7 @@ async function assertSeedData({ all, get }, sampleGames) {
   const eldenRingSample = sampleGames.find(game => game.slug === 'elden-ring');
   assert(eldenRingSample, 'sampleGames deve incluir Elden Ring');
   assert.strictEqual(eldenRingSample.difficulty, 7, 'Elden Ring deve usar dificuldade editorial 7/10');
-  assert.strictEqual(eldenRingSample.time, '100-140 horas', 'Elden Ring deve usar estimativa conservadora coerente');
+  assert.strictEqual(eldenRingSample.time, '60-100 horas', 'Elden Ring deve usar estimativa de referencia 60-100h');
   assert.strictEqual(eldenRingSample.time_bucket, 'long', 'Elden Ring deve ser classificado como jogo longo');
   assert.strictEqual(eldenRingSample.trophies.length, 42, 'Elden Ring deve ter 42 trofeus da lista base');
   assert.strictEqual(new Set(eldenRingSample.trophies.map(trophy => trophy.id)).size, 42, 'Elden Ring nao deve ter trophy_code duplicado');
@@ -2538,11 +2538,11 @@ async function assertSeedData({ all, get }, sampleGames) {
   const eldenRing = await get('SELECT slug, difficulty, time, time_bucket, time_min_hours, time_max_hours, time_sort_hours, editorial_status, coverage_level, is_verified, verification_status, image, cover_image FROM games WHERE name = ?', ['Elden Ring']);
   assert.strictEqual(eldenRing?.slug, 'elden-ring', 'seed deve calcular slug do Elden Ring');
   assert.strictEqual(eldenRing?.difficulty, 7, 'seed deve persistir dificuldade 7/10 do Elden Ring');
-  assert.strictEqual(eldenRing?.time, '100-140 horas', 'seed deve persistir tempo revisado do Elden Ring');
+  assert.strictEqual(eldenRing?.time, '60-100 horas', 'seed deve persistir tempo revisado do Elden Ring');
   assert.strictEqual(eldenRing?.time_bucket, 'long', 'seed deve calcular time_bucket long');
-  assert.strictEqual(eldenRing?.time_min_hours, 100, 'seed deve calcular time_min_hours');
-  assert.strictEqual(eldenRing?.time_max_hours, 140, 'seed deve calcular time_max_hours');
-  assert.strictEqual(eldenRing?.time_sort_hours, 100, 'seed deve calcular time_sort_hours');
+  assert.strictEqual(eldenRing?.time_min_hours, 60, 'seed deve calcular time_min_hours');
+  assert.strictEqual(eldenRing?.time_max_hours, 100, 'seed deve calcular time_max_hours');
+  assert.strictEqual(eldenRing?.time_sort_hours, 60, 'seed deve calcular time_sort_hours');
   assert.strictEqual(eldenRing?.editorial_status, 'published', 'Elden Ring deve entrar publicado');
   assert.strictEqual(eldenRing?.coverage_level, 'strong', 'Elden Ring deve entrar com cobertura strong');
   assert.strictEqual(eldenRing?.is_verified, 0, 'Elden Ring nao deve entrar como verificado');
@@ -9082,8 +9082,8 @@ async function assertBackendEditorialConsistency() {
     assert.strictEqual(gameDetail.slug, 'elden-ring', 'GET /api/games/slug/elden-ring deve retornar Elden Ring');
     assert.strictEqual(gameDetail.difficulty, 7, 'detalhe de Elden Ring deve retornar dificuldade revisada');
     assert.strictEqual(gameDetail.time_bucket, 'long', 'detalhe de Elden Ring deve retornar time_bucket long');
-    assert.strictEqual(gameDetail.time_min_hours, 100, 'detalhe de Elden Ring deve retornar time_min_hours revisado');
-    assert.strictEqual(gameDetail.time_max_hours, 140, 'detalhe de Elden Ring deve retornar time_max_hours revisado');
+    assert.strictEqual(gameDetail.time_min_hours, 60, 'detalhe de Elden Ring deve retornar time_min_hours revisado');
+    assert.strictEqual(gameDetail.time_max_hours, 100, 'detalhe de Elden Ring deve retornar time_max_hours revisado');
     assert.strictEqual(gameDetail.trophies.length, 42, 'detalhe de Elden Ring deve retornar 42 trofeus');
     assert.strictEqual(gameDetail.trophies.filter(trophy => trophy.type === 'Platina').length, 1, 'Elden Ring deve ter 1 platina');
     assert.strictEqual(gameDetail.trophies.filter(trophy => trophy.type === 'Ouro').length, 3, 'Elden Ring deve ter 3 ouro');

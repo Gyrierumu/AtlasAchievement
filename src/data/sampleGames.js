@@ -379,12 +379,34 @@ const sampleGames = [
     "id": 1,
     "name": "Elden Ring",
     "slug": "elden-ring",
+    "title": "Elden Ring",
+    "published": true,
+    "developer": "FromSoftware, Inc.",
+    "publisher": "Bandai Namco Entertainment America Inc.",
+    "platforms": [
+      "PS4",
+      "PS5"
+    ],
+    "genre": [
+      "RPG",
+      "ação",
+      "fantasia"
+    ],
     "difficulty": 7,
-    "time": "100-140 horas",
-    "time_min_hours": 100,
-    "time_max_hours": 140,
-    "time_sort_hours": 100,
+    "estimatedTime": "60-100 horas",
+    "time": "60-100 horas",
+    "time_min_hours": 60,
+    "time_max_hours": 100,
+    "time_sort_hours": 60,
     "time_bucket": "long",
+    "runs": "1 com backup de save; múltiplas runs sem backup",
+    "hasMissables": true,
+    "missableCount": 5,
+    "hasOnline": false,
+    "hasMandatoryOnline": false,
+    "hasMandatoryCoop": false,
+    "dlcRequired": false,
+    "platinumType": "lista base + chefes + lendários + finais",
     "missable": "A maior parte da lista base pode ser limpa no pós-game, mas há riscos semi-perdíveis importantes. Os três finais com troféu são mutuamente exclusivos por save: Elden Lord, Age of the Stars e Lord of Frenzied Flame. Lichdragon Fortissax depende da quest da Fia, e o armamento lendário Bolt of Gransax pode ficar indisponível após Leyndell mudar para Ashen Capital. Planeje finais, questlines e armamentos lendários antes de concluir a reta final.",
     "runs_summary": "Recomendado: uma jogada longa com backup de save antes dos finais. Sem backup, planeje 2-3 jogadas, NG+ ou múltiplos saves para Elden Lord, Age of the Stars e Lord of Frenzied Flame.",
     "missable_summary": "Há perdíveis/semi-perdíveis: finais mutuamente exclusivos por save, Lichdragon Fortissax pela quest da Fia e Bolt of Gransax antes de Ashen Capital.",
@@ -392,7 +414,7 @@ const sampleGames = [
     "grind_summary": "O peso está em exploração, bosses opcionais, itens lendários e preparação dos finais; não há grind repetitivo puro nem troféu de dificuldade.",
     "dlc_scope": "Guia focado somente na lista base da platina de Elden Ring. Shadow of the Erdtree não é necessário para a platina base; bosses, armas e áreas da DLC ficam fora deste checklist.",
     "difficulty_reason": "A dificuldade 7/10 vem de bosses exigentes, liberdade de progressão, builds e conteúdo opcional necessário, não de modo difícil obrigatório.",
-    "time_reason": "A faixa conservadora de 100-140 horas considera exploração ampla, bosses opcionais com troféu, armamentos/magias/talismãs/cinzas lendárias, finais e cleanup.",
+    "time_reason": "A faixa de 60-100 horas segue a referência forte de roadmap e varia conforme exploração, build, backup de save, bosses opcionais com troféu, lendários, finais e cleanup.",
     "first_run_advice": "Jogue normalmente no início, mas acompanhe bosses com troféu, armas lendárias e requisitos de finais antes de avançar para o fim da campanha.",
     "cleanup_advice": "Antes do final, confira pendências de bosses opcionais, armamentos lendários, magias, talismãs, cinzas lendárias e questlines de finais; depois use o checklist para a limpeza restante.",
     "before_you_start": "Planeje os finais antes de concluir o jogo. Para reduzir jogadas, confira os requisitos dos finais e considere backup de save antes da decisão final.",
@@ -404,8 +426,13 @@ const sampleGames = [
     "verification_status": "review",
     "verification_note": "Lista base revisada; dados principais conferidos, mas sem selo verified automático.",
     "editorial_review_status": "in_review",
-    "last_reviewed_at": "2026-05-14",
-    "editorial_notes": "Revisão editorial focada na lista base: 42 troféus, distribuição 1 platina/3 ouro/14 prata/24 bronze, sem online/coop obrigatório e sem dependência de Shadow of the Erdtree. Pode ser candidato a verified após validação manual final das rotas de finais, Fia/Fortissax e Bolt of Gransax.",
+    "editorialStatus": "in_review",
+    "last_reviewed_at": "2026-05-15",
+    "lastReviewedAt": "2026-05-15T06:30:48.9260322-03:00",
+    "editorial_notes": "Fontes consultadas: PlayStation Store Brasil, site oficial Bandai Namco, Steam Community Achievements em inglês e pt-BR, PowerPyx, PSNProfiles/TrueTrophies/Push Square como apoio. Decisão editorial: guia cobre somente a lista base de 42 troféus; Shadow of the Erdtree fica fora da platina. Política de missables: contar 5 riscos em single-run, incluindo os três finais mutuamente exclusivos por save, Legendary Armaments por Bolt of Gransax antes da mudança de Leyndell e Lichdragon Fortissax pela quest da Fia. Online e coop são opcionais e não entram como requisito.",
+    "editorialNotes": "Fontes consultadas: PlayStation Store Brasil, site oficial Bandai Namco, Steam Community Achievements em inglês e pt-BR, PowerPyx, PSNProfiles/TrueTrophies/Push Square como apoio. Decisão editorial: guia cobre somente a lista base de 42 troféus; Shadow of the Erdtree fica fora da platina. Política de missables: contar 5 riscos em single-run, incluindo os três finais mutuamente exclusivos por save, Legendary Armaments por Bolt of Gransax antes da mudança de Leyndell e Lichdragon Fortissax pela quest da Fia. Online e coop são opcionais e não entram como requisito.",
+    "quality_warnings": [],
+    "qualityWarnings": [],
     "image": "https://cdn.cloudflare.steamstatic.com/steam/apps/1245620/header.jpg",
     "cover_image": "https://cdn.cloudflare.steamstatic.com/steam/apps/1245620/library_600x900.jpg",
     "roadmap": [
@@ -26948,8 +26975,28 @@ const ghostDescriptionOriginalById = {
 for (const game of sampleGames) {
   for (const trophy of game.trophies || []) {
     if (game.slug === 'elden-ring') {
+      trophy.trophyNameOriginal = trophy.name;
+      trophy.trophyNamePtBr = trophy.name_pt || null;
       trophy.descriptionPtBr = trophy.description;
       trophy.descriptionOriginal = eldenRingDescriptionOriginalById[trophy.id] || trophy.descriptionOriginal || '';
+      trophy.tier = trophy.type;
+      trophy.guideTip = trophy.tip || '';
+      trophy.is_missable = Boolean(trophy.is_missable || missableTrophyIds.has(trophy.id));
+      trophy.isMissable = trophy.is_missable;
+      trophy.is_online = false;
+      trophy.isOnline = false;
+      trophy.is_coop = false;
+      trophy.isCoop = false;
+      const tags = trophy.type === 'Platina' ? ['platina'] : [];
+      if (trophy.type !== 'Platina') {
+        if (trophy.is_missable) tags.push('perdível');
+        if (trophy.id === 'er_elden_lord' || trophy.id === 'er_age_of_stars' || trophy.id === 'er_frenzied_flame') tags.push('final');
+        if (/legendary|lendári/i.test(`${trophy.name} ${trophy.name_pt} ${trophy.description}`)) tags.push('coletável');
+        if (/defeated|derrotou|boss|chefe|shardbearer|portador de fragmento/i.test(`${trophy.descriptionOriginal} ${trophy.description} ${trophy.tip}`)) tags.push('chefe');
+        if (/story|história|progressão|obrigatório|reta final/i.test(`${trophy.tip}`)) tags.push('história');
+        if (trophy.is_spoiler) tags.push('spoiler');
+      }
+      trophy.tags = [...new Set(tags)];
     }
     if (game.slug === 'hades') {
       trophy.descriptionPtBr = trophy.description;
