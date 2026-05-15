@@ -25522,8 +25522,8 @@ const sampleGames = [
     "needs_missables_validation"
   ],
   "reviewed_by": "AtlasAchievement Editorial",
-  "image": "https://cdn.cloudflare.steamstatic.com/steam/apps/3357650/header.jpg",
-  "cover_image": "https://cdn.cloudflare.steamstatic.com/steam/apps/3357650/library_600x900.jpg",
+  "image": "/assets/games/pragmata/hero.jpg",
+  "cover_image": "/assets/games/pragmata/cover.webp",
   "roadmap": [
     "Etapa 1 - Primeira jogada e aprendizado: jogue em dificuldade livre para aprender combate, hacking, exploração e upgrades. Colete o máximo possível durante a campanha, acompanhe coletáveis e troféus situacionais pelo checklist e dê atenção especial ao possível perdível You're Not Getting Away That Easy.",
     "Etapa 2 - Limpeza pós-game / Unknown Signal: após concluir a campanha, valide se Unknown Signal permite revisitar setores, completar coletáveis restantes, concluir desafios pós-game e fechar objetivos de 100% por setor antes da jogada em Lunatic.",
