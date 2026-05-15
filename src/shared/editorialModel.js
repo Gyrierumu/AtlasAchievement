@@ -148,7 +148,8 @@
   function getTrophyRiskTags(trophy = {}) {
     const text = normalizeRiskText(`${trophy?.name || ''} ${trophy?.description || ''} ${trophy?.tip || ''}`);
     const tags = [];
-    if (trophy?.is_missable || (!hasNegatedMissableRiskTagText(text) && /perdivel|missable|perder|ficar indisponivel|bloqueia|sem chapter|no chapter|janela/.test(text))) pushRiskTag(tags, 'missable');
+    const isPlatinum = normalizeRiskText(trophy?.type || '') === 'platina';
+    if (!isPlatinum && (trophy?.is_missable || (!hasNegatedMissableRiskTagText(text) && /perdivel|missable|perder|ficar indisponivel|bloqueia|sem chapter|no chapter|janela/.test(text)))) pushRiskTag(tags, 'missable');
     if (trophy?.is_spoiler) pushRiskTag(tags, 'spoiler');
     if (/colet|colecion|collect|todos os|todas as|all |arquivo|files|memoriam|raccoon|lendari|legendary|mapa|cofre|tesouro|modelo|concept art/.test(text)) pushRiskTag(tags, 'collectible');
     if (/historia|story|campanha principal|progresso|automatico|ato |chapter|capitulo|final verdadeiro|finais|ending|conclua a historia|finish the game/.test(text)) pushRiskTag(tags, 'story');

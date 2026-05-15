@@ -425,6 +425,9 @@ function buildGameSeoDescription(game = {}) {
   if (String(game?.slug || '').trim().toLowerCase() === 'hades') {
     return 'Guia de platina de Hades em português, com tempo estimado, dificuldade, Pact of Punishment, relacionamentos, grind, roadmap e checklist de troféus.';
   }
+  if (String(game?.slug || '').trim().toLowerCase() === 'pragmata') {
+    return 'Guia de platina de PRAGMATA em português, com tempo estimado, dificuldade, troféus perdíveis, Lunatic, coletáveis, roadmap e checklist.';
+  }
   const parts = [];
   const time = String(game?.time || '').trim();
   const difficulty = Number(game?.difficulty || 0);
@@ -481,9 +484,28 @@ function getTrophyEditorialName(trophy = {}) {
   return editorialName;
 }
 
+function looksLikeEnglishTrophyDescription(value = '') {
+  return /\b(Obtained|Reached|Achieved|Defeated|Acquired|Upgraded|Arrived|Restored|Used|Clear|Earn|Complete|Unlock|Max-rank|Equip|Choose|Purge|Forge|Trade|Pay|Fulfill|Catch|Compel|Have|Buy|Get|Beat|Slay|Pet)\b/i.test(String(value || ''));
+}
+
+function getTrophyDisplayDescription(trophy = {}, game = {}) {
+  const localizedDescription = [
+    trophy.descriptionPtBr,
+    trophy.ptDescription,
+    trophy.localizedDescription?.ptBr,
+    trophy.localizedDescription?.['pt-BR']
+  ].map(value => String(value || '').trim()).find(Boolean) || '';
+  if (localizedDescription) return localizedDescription;
+
+  const description = String(trophy.description || '').trim();
+  const blockEnglishFallback = ['elden-ring', 'hades'].includes(String(game?.slug || '').trim().toLowerCase());
+  if (description && (!blockEnglishFallback || !looksLikeEnglishTrophyDescription(description))) return description;
+  return 'Descrição em revisão editorial.';
+}
+
 function renderTrophyCardHtml(trophy, completedIds = new Set(), index = 0, game = {}) {
   const done = completedIds.has(trophy.id);
-  const description = trophy.description || '';
+  const description = getTrophyDisplayDescription(trophy, game);
   const tip = trophy.tip || '';
   const officialName = trophy.trophyNameOriginal || trophy.name || 'Troféu';
   const editorialName = getTrophyEditorialName(trophy);

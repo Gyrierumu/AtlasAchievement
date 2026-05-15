@@ -53,7 +53,7 @@
   const GUIDE_TROPHY_TAG_PRIORITY = ['missable', 'final', 'boss', 'legendary', 'online', 'coop', 'difficulty', 'grind', 'collectible', 'spoiler', 'cleanup', 'story', 'run'];
 
   function getGuideTrophySignalText(trophy = {}) {
-    return `${trophy?.trophyNameOriginal || trophy?.name || ''} ${trophy?.trophyNamePtBr || trophy?.name_pt || ''} ${trophy?.description || ''} ${trophy?.tip || ''}`;
+    return `${trophy?.trophyNameOriginal || trophy?.name || ''} ${trophy?.trophyNamePtBr || trophy?.name_pt || ''} ${trophy?.descriptionPtBr || trophy?.ptDescription || trophy?.localizedDescription?.ptBr || trophy?.description || ''} ${trophy?.tip || ''}`;
   }
 
   function getGuideTrophyGameSignalText(game = {}) {
@@ -211,6 +211,9 @@
       trophy?.name_pt,
       trophy?.trophyNameOriginal,
       trophy?.trophyNamePtBr,
+      trophy?.descriptionPtBr,
+      trophy?.ptDescription,
+      trophy?.localizedDescription?.ptBr,
       trophy?.description,
       trophy?.tip,
       trophy?.type,
@@ -1264,6 +1267,51 @@
         {
           question: 'É possível fazer os finais em uma única jogada?',
           answer: 'Sim, se o jogador preparar as rotas e usar backup de save antes da decisão final. Sem backup, cada final com troféu deve ser tratado como outra jogada, NG+ ou save separado.'
+        }
+      ];
+    }
+
+    if (String(game?.slug || '').trim().toLowerCase() === 'pragmata') {
+      return [
+        {
+          question: 'PRAGMATA tem troféus perdíveis?',
+          answer: 'Até a última revisão editorial, o guia trata 1 troféu como potencialmente perdível: You\'re Not Getting Away That Easy. Esse ponto segue em validação por ser um jogo recente.'
+        },
+        {
+          question: 'PRAGMATA precisa de online para platinar?',
+          answer: 'Não. A lista atual não indica troféus online, servidores ou assinatura obrigatória para a platina.'
+        },
+        {
+          question: 'PRAGMATA tem coop obrigatório?',
+          answer: 'Não. As fontes oficiais descrevem PRAGMATA como single-player, e a lista de troféus não indica coop obrigatório.'
+        },
+        {
+          question: 'Quanto tempo leva para platinar PRAGMATA?',
+          answer: timeLabel ? `O tempo estimado inicial do guia é ${timeLabel}, considerando campanha, coletáveis, Unknown Signal, Training Sims, cleanup e Lunatic.` : reviewAnswer
+        },
+        {
+          question: 'Qual a dificuldade da platina de PRAGMATA?',
+          answer: difficulty > 0 ? `A dificuldade cadastrada é ${difficulty}/10. O maior peso inicial está na campanha em Lunatic, no possível perdível e em objetivos situacionais de combate/coleta.` : reviewAnswer
+        },
+        {
+          question: 'Quantas jogadas são necessárias para platinar PRAGMATA?',
+          answer: 'O guia recomenda 2 jogadas: uma primeira campanha para aprender sistemas e limpar bastante conteúdo, e uma campanha em Lunatic para o troféu de dificuldade.'
+        },
+        {
+          question: 'DLC ou Deluxe Edition são necessárias para a platina?',
+          answer: 'Não. O guia cobre a lista base e não trata DLC, Deluxe Edition, cosméticos ou bônus de pré-venda como requisito da platina.'
+        },
+        {
+          question: 'O modo Lunatic é obrigatório para a platina?',
+          answer: 'Sim, a lista atual inclui Lunar Supremacy, que exige concluir o jogo na dificuldade Lunatic. A relação com New Game+ ainda deve ser revalidada após patches e novas fontes.'
+        },
+        {
+          question: 'Dá para limpar coletáveis depois da história?',
+          answer: 'Este ponto ainda está em validação. O roadmap orienta usar Unknown Signal e cleanup pós-game para revisar setores, mas recomenda acompanhar coletáveis desde a primeira campanha.'
+        },
+        {
+          question: 'O guia já está verificado?',
+          answer: 'Não. PRAGMATA está como guia inicial em revisão editorial, com avisos para checagem de patches, localização de troféus e validação de perdíveis.'
         }
       ];
     }

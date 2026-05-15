@@ -387,6 +387,67 @@ async function backfillTrophyNamePtFromSeed() {
   await exec('COMMIT');
 }
 
+async function backfillEldenRingTrophyDescriptionsFromSeed() {
+  const game = getSeedGameBySlug('elden-ring');
+  const localizedTrophies = (game?.trophies || [])
+    .filter(trophy => trophy?.id && (trophy.descriptionPtBr || trophy.ptDescription || trophy.localizedDescription?.ptBr || trophy.description))
+    .map(trophy => ({
+      trophyCode: trophy.id,
+      description: trophy.descriptionPtBr || trophy.ptDescription || trophy.localizedDescription?.ptBr || trophy.description
+    }));
+
+  if (!localizedTrophies.length) return;
+
+  await exec('BEGIN TRANSACTION');
+  for (const trophy of localizedTrophies) {
+    try {
+      await run(
+        `UPDATE trophies
+         SET description = ?
+         WHERE trophy_code = ?
+           AND game_id = (SELECT id FROM games WHERE slug = 'elden-ring')
+           AND description != ?`,
+        [trophy.description, trophy.trophyCode, trophy.description]
+      );
+    } catch (error) {
+      await exec('ROLLBACK').catch(() => {});
+      throw error;
+    }
+  }
+  await exec('COMMIT');
+}
+
+async function backfillHadesTrophyLocalizationFromSeed() {
+  const game = getSeedGameBySlug('hades');
+  const localizedTrophies = (game?.trophies || [])
+    .filter(trophy => trophy?.id && (trophy.descriptionPtBr || trophy.ptDescription || trophy.localizedDescription?.ptBr || trophy.description))
+    .map(trophy => ({
+      trophyCode: trophy.id,
+      description: trophy.descriptionPtBr || trophy.ptDescription || trophy.localizedDescription?.ptBr || trophy.description
+    }));
+
+  if (!localizedTrophies.length) return;
+
+  await exec('BEGIN TRANSACTION');
+  for (const trophy of localizedTrophies) {
+    try {
+      await run(
+        `UPDATE trophies
+         SET description = ?,
+             is_missable = 0
+         WHERE trophy_code = ?
+           AND game_id = (SELECT id FROM games WHERE slug = 'hades')
+           AND (description != ? OR is_missable != 0)`,
+        [trophy.description, trophy.trophyCode, trophy.description]
+      );
+    } catch (error) {
+      await exec('ROLLBACK').catch(() => {});
+      throw error;
+    }
+  }
+  await exec('COMMIT');
+}
+
 function getSeedGameBySlug(slug) {
   return sampleGames.find(game => (game.slug || slugifyGameName(game.name)) === slug);
 }
@@ -617,6 +678,7 @@ async function syncReviewedGuidesFromSeed() {
   await syncSeedGameFromSeed('reanimal', syncOptions);
   await syncSeedGameFromSeed('dead-cells', syncOptions);
   await syncSeedGameFromSeed('monster-hunter-world', syncOptions);
+  await syncSeedGameFromSeed('pragmata', syncOptions);
   await syncSeedGameFromSeed('clair-obscur-expedition-33', syncOptions);
 }
 
@@ -987,6 +1049,8 @@ async function migrate(options = {}) {
   await backfillMissableTrophyFlags();
   await backfillCoverImagesFromSeed();
   await backfillTrophyNamePtFromSeed();
+  await backfillEldenRingTrophyDescriptionsFromSeed();
+  await backfillHadesTrophyLocalizationFromSeed();
   await backfillEditorialStatusFields({ recalculateCoverage: gameColumnChanges.coverageLevel });
   if (shouldSyncSeedData(options)) {
     await syncReviewedGuidesFromSeed();

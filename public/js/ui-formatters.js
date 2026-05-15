@@ -34,6 +34,9 @@ window.UIFormatters = (() => {
     if (String(game?.slug || '').trim().toLowerCase() === 'hades') {
       return 'Guia de platina de Hades em português, com tempo estimado, dificuldade, Pact of Punishment, relacionamentos, grind, roadmap e checklist de troféus.';
     }
+    if (String(game?.slug || '').trim().toLowerCase() === 'pragmata') {
+      return 'Guia de platina de PRAGMATA em português, com tempo estimado, dificuldade, troféus perdíveis, Lunatic, coletáveis, roadmap e checklist.';
+    }
     const parts = [];
     const time = String(game?.time || '').trim();
     const difficulty = Number(game?.difficulty || 0);

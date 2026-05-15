@@ -152,7 +152,9 @@ function ensurePublicGame(row, includeDrafts = false) {
 }
 
 function normalizeGame(row, roadmapRows, trophyRows) {
-  const missableCount = trophyRows.filter(item => item.is_missable).length;
+  const isPlatinumTrophy = item => String(item?.type || '').trim().toLowerCase() === 'platina';
+  const supportsLocalizedDescriptions = ['elden-ring', 'hades', 'pragmata'].includes(String(row.slug || '').trim().toLowerCase());
+  const missableCount = trophyRows.filter(item => item.is_missable && !isPlatinumTrophy(item)).length;
   const spoilerCount = trophyRows.filter(item => item.is_spoiler).length;
 
   return {
@@ -191,18 +193,24 @@ function normalizeGame(row, roadmapRows, trophyRows) {
     verification_note: row.verification_note || '',
     slug: row.slug || slugifyGameName(row.name),
     roadmap: roadmapRows.map(item => item.content),
-    trophies: trophyRows.map(item => ({
-      id: item.trophy_code,
-      name: item.name,
-      name_pt: item.name_pt || '',
-      trophyNameOriginal: item.name,
-      trophyNamePtBr: item.name_pt || '',
-      type: item.type,
-      description: item.description,
-      tip: item.tip,
-      is_missable: Boolean(item.is_missable),
-      is_spoiler: Boolean(item.is_spoiler)
-    })),
+    trophies: trophyRows.map(item => {
+      const description = item.description || '';
+      const isMissable = Boolean(item.is_missable) && !isPlatinumTrophy(item);
+      return {
+        id: item.trophy_code,
+        name: item.name,
+        name_pt: item.name_pt || '',
+        trophyNameOriginal: item.name,
+        trophyNamePtBr: item.name_pt || '',
+        type: item.type,
+        description,
+        descriptionPtBr: supportsLocalizedDescriptions ? description : '',
+        ptDescription: supportsLocalizedDescriptions ? description : '',
+        tip: item.tip,
+        is_missable: isMissable,
+        is_spoiler: Boolean(item.is_spoiler)
+      };
+    }),
     created_at: row.created_at,
     updated_at: row.updated_at,
     time_min_hours: row.time_min_hours,

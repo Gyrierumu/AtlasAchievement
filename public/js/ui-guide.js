@@ -272,6 +272,25 @@ window.UIGuide = (() => {
     return editorialName;
   }
 
+  function looksLikeEnglishTrophyDescription(value = '') {
+    return /\b(Obtained|Reached|Achieved|Defeated|Acquired|Upgraded|Arrived|Restored|Used|Clear|Earn|Complete|Unlock|Max-rank|Equip|Choose|Purge|Forge|Trade|Pay|Fulfill|Catch|Compel|Have|Buy|Get|Beat|Slay|Pet)\b/i.test(String(value || ''));
+  }
+
+  function getTrophyDisplayDescription(trophy = {}, game = {}) {
+    const localizedDescription = [
+      trophy.descriptionPtBr,
+      trophy.ptDescription,
+      trophy.localizedDescription?.ptBr,
+      trophy.localizedDescription?.['pt-BR']
+    ].map(value => String(value || '').trim()).find(Boolean) || '';
+    if (localizedDescription) return localizedDescription;
+
+    const description = String(trophy.description || '').trim();
+    const blockEnglishFallback = ['elden-ring', 'hades'].includes(String(game?.slug || '').trim().toLowerCase());
+    if (description && (!blockEnglishFallback || !looksLikeEnglishTrophyDescription(description))) return description;
+    return 'Descrição em revisão editorial.';
+  }
+
   function buildGuideHeroStats(game = {}, viewModel = {}) {
     const quickDecision = typeof buildGuideQuickDecisionModel === 'function' ? buildGuideQuickDecisionModel(game, viewModel) : null;
     if (quickDecision?.cards?.length) {
@@ -897,7 +916,7 @@ window.UIGuide = (() => {
       trophiesEl.innerHTML = viewModel.trophies.length
         ? viewModel.trophies.map((trophy, index) => {
             const done = viewModel.completedIds.has(trophy.id);
-            const description = trophy.description || '';
+            const description = getTrophyDisplayDescription(trophy, game);
             const tip = trophy.tip || '';
             const officialName = trophy.trophyNameOriginal || trophy.name || 'Troféu';
             const editorialName = getTrophyEditorialName(trophy);
