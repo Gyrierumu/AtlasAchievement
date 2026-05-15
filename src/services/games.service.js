@@ -153,7 +153,7 @@ function ensurePublicGame(row, includeDrafts = false) {
 
 function normalizeGame(row, roadmapRows, trophyRows) {
   const isPlatinumTrophy = item => String(item?.type || '').trim().toLowerCase() === 'platina';
-  const supportsLocalizedDescriptions = ['elden-ring', 'hades', 'pragmata'].includes(String(row.slug || '').trim().toLowerCase());
+  const supportsLocalizedDescriptions = ['elden-ring', 'hades', 'pragmata', 'ghost-of-tsushima'].includes(String(row.slug || '').trim().toLowerCase());
   const missableCount = trophyRows.filter(item => item.is_missable && !isPlatinumTrophy(item)).length;
   const spoilerCount = trophyRows.filter(item => item.is_spoiler).length;
 

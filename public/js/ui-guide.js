@@ -276,6 +276,12 @@ window.UIGuide = (() => {
     return /\b(Obtained|Reached|Achieved|Defeated|Acquired|Upgraded|Arrived|Restored|Used|Clear|Earn|Complete|Unlock|Max-rank|Equip|Choose|Purge|Forge|Trade|Pay|Fulfill|Catch|Compel|Have|Buy|Get|Beat|Slay|Pet)\b/i.test(String(value || ''));
   }
 
+  function looksLikePortugueseTrophyDescription(value = '') {
+    const text = String(value || '').trim();
+    return /[áàâãéêíóôõúç]/i.test(text)
+      || /\b(os|as|um|uma|todos|todas|com|em|de|do|da|dos|das|ao|aos|seu|sua|trofeus|troféus|conquistas|inimigos|areas|áreas|santuarios|santuários|farois|faróis|colete|obtenha|liberte|derrote|mate|conclua|aprenda|equipe|descubra|compre|personalize|reacenda|honre)\b/i.test(text);
+  }
+
   function getTrophyDisplayDescription(trophy = {}, game = {}) {
     const localizedDescription = [
       trophy.descriptionPtBr,
@@ -286,8 +292,8 @@ window.UIGuide = (() => {
     if (localizedDescription) return localizedDescription;
 
     const description = String(trophy.description || '').trim();
-    const blockEnglishFallback = ['elden-ring', 'hades'].includes(String(game?.slug || '').trim().toLowerCase());
-    if (description && (!blockEnglishFallback || !looksLikeEnglishTrophyDescription(description))) return description;
+    if (description && looksLikePortugueseTrophyDescription(description) && !looksLikeEnglishTrophyDescription(description)) return description;
+    if (description && looksLikePortugueseTrophyDescription(description)) return description;
     return 'Descrição em revisão editorial.';
   }
 
@@ -342,21 +348,36 @@ window.UIGuide = (() => {
       <ol class="atlas-roadmap-timeline">
         ${roadmapStages.map(stage => {
           const category = stage.category || { id: 'plan', label: 'Plano', icon: 'fa-route' };
-          const actions = splitGuideRoadmapActions(stage.description || stage.objective).slice(0, 3);
+          const actions = Array.isArray(stage.actions) && stage.actions.length
+            ? stage.actions.slice(0, 5)
+            : splitGuideRoadmapActions(stage.description || stage.objective).slice(0, 3);
+          const focusLabel = stage.focus || category.label || 'Plano';
+          const metaItems = stage.isStructured
+            ? [
+                stage.focus ? `<span><strong>Foco</strong>${escapeHtml(stage.focus)}</span>` : '',
+                stage.warning ? `<span><strong>Alerta</strong>${escapeHtml(stage.warning)}</span>` : '',
+                stage.result ? `<span><strong>Resultado</strong>${escapeHtml(stage.result)}</span>` : ''
+              ].filter(Boolean)
+            : [
+                `<span><strong>Objetivo</strong>${escapeHtml(stage.objective)}</span>`,
+                stage.risk ? `<span><strong>Risco</strong>${escapeHtml(stage.risk)}</span>` : '',
+                stage.relatedTrophies?.length ? `<span><strong>TrofÃ©us relacionados</strong>${stage.relatedTrophies.map(escapeHtml).join(' / ')}</span>` : ''
+              ].filter(Boolean);
           return `
           <li class="atlas-roadmap-step atlas-roadmap-step--${escapeAttribute(category.id || 'plan')}${Number(stage.number) === 1 ? ' atlas-roadmap-step--first' : ''}">
             <div class="atlas-roadmap-step__marker">${escapeHtml(String(stage.number))}</div>
             <article class="atlas-roadmap-step__body">
               <div class="atlas-roadmap-step__head">
                 <div>
-                  <span>${Number(stage.number) === 1 ? 'Comece aqui' : `Passo ${escapeHtml(String(stage.number))}`}</span>
+                  <span>${stage.isStructured ? `Etapa ${escapeHtml(String(stage.number))}` : (Number(stage.number) === 1 ? 'Comece aqui' : `Passo ${escapeHtml(String(stage.number))}`)}</span>
                   <h3>${escapeHtml(stage.title)}</h3>
                 </div>
-                <span class="atlas-roadmap-step__category atlas-roadmap-step__category--${escapeAttribute(category.id || 'plan')}"><i class="fas ${escapeAttribute(category.icon || 'fa-route')}" aria-hidden="true"></i>${escapeHtml(category.label || 'Plano')}</span>
+                <span class="atlas-roadmap-step__category atlas-roadmap-step__category--${escapeAttribute(category.id || 'plan')}"><i class="fas ${escapeAttribute(category.icon || 'fa-route')}" aria-hidden="true"></i>${escapeHtml(focusLabel)}</span>
               </div>
               <p>${escapeHtml(stage.objective || stage.description)}</p>
               ${actions.length ? `<ul class="atlas-roadmap-step__actions">${actions.map(action => `<li>${escapeHtml(action)}</li>`).join('')}</ul>` : ''}
-              <div class="atlas-roadmap-step__meta">
+              ${stage.isStructured && metaItems.length ? `<div class="atlas-roadmap-step__meta">${metaItems.join('')}</div>` : ''}
+              <div class="atlas-roadmap-step__meta"${stage.isStructured ? ' hidden' : ''}>
                 <span><strong>Objetivo</strong>${escapeHtml(stage.objective)}</span>
                 ${stage.risk ? `<span><strong>Risco</strong>${escapeHtml(stage.risk)}</span>` : ''}
                 ${stage.relatedTrophies?.length ? `<span><strong>Troféus relacionados</strong>${stage.relatedTrophies.map(escapeHtml).join(' / ')}</span>` : ''}

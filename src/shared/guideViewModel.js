@@ -150,6 +150,7 @@
   }
 
   function getGuideTrophyTags(trophy = {}, game = {}) {
+    if (normalizeGuideSignalText(trophy?.type || '') === 'platina') return [];
     const tags = Array.isArray(getTrophyRiskTags(trophy)) ? getTrophyRiskTags(trophy).slice() : [];
     const ids = new Set(tags.map(tag => tag?.id).filter(Boolean));
     const signalText = getGuideTrophySignalText(trophy);
@@ -1086,21 +1087,51 @@
     const steps = Array.isArray(viewModel.roadmap) ? viewModel.roadmap : [];
     return steps.map((step, index) => {
       const raw = typeof step === 'string' ? step : (step?.description || step?.detail || step?.title || step?.name || 'Etapa');
-      const clean = String(raw || 'Etapa').trim().replace(/^Etapa\s+\d+\s*[:.-]\s*/i, '');
+      const structured = parseStructuredRoadmapStep(raw);
+      const clean = String(structured?.description || structured?.objective || raw || 'Etapa').trim().replace(/^Etapa\s+\d+\s*[:.-]\s*/i, '');
       const explicitTitle = typeof step === 'object' && step ? (step.title || step.name) : '';
       const relatedTrophies = Array.isArray(step?.trophies) ? step.trophies : (Array.isArray(step?.relatedTrophies) ? step.relatedTrophies : []);
       const category = classifyRoadmapStage(clean);
-      const inferredTitle = inferRoadmapStageTitle(clean, index, steps.length, explicitTitle);
+      const inferredTitle = structured?.title || inferRoadmapStageTitle(clean, index, steps.length, explicitTitle);
       return {
         number: index + 1,
         title: inferredTitle,
         category,
         description: clean,
-        objective: String(step?.objective || step?.goal || clean).trim(),
-        risk: String(step?.risk || '').trim(),
-        relatedTrophies: relatedTrophies.map(item => String(item || '').trim()).filter(Boolean)
+        objective: String(structured?.objective || step?.objective || step?.goal || clean).trim(),
+        focus: String(structured?.focus || step?.focus || '').trim(),
+        actions: Array.isArray(structured?.actions) ? structured.actions : [],
+        warning: String(structured?.warning || step?.warning || '').trim(),
+        result: String(structured?.result || step?.result || '').trim(),
+        risk: String(structured?.warning || step?.risk || '').trim(),
+        relatedTrophies: relatedTrophies.map(item => String(item || '').trim()).filter(Boolean),
+        isStructured: Boolean(structured)
       };
     });
+  }
+
+  function parseStructuredRoadmapStep(value = '') {
+    const text = String(value || '').trim();
+    if (!text.includes('title:') || !text.includes('objective:')) return null;
+
+    const fields = {};
+    const matches = [...text.matchAll(/(?:^|\s\|\s)(title|focus|objective|actions|warning|result):\s*([\s\S]*?)(?=\s\|\s(?:title|focus|objective|actions|warning|result):|$)/gi)];
+    for (const match of matches) {
+      fields[match[1].toLowerCase()] = String(match[2] || '').trim();
+    }
+    if (!fields.title || !fields.objective) return null;
+
+    return {
+      title: fields.title,
+      focus: fields.focus || '',
+      objective: fields.objective,
+      actions: String(fields.actions || '')
+        .split(/\s*;\s*/)
+        .map(item => item.trim().replace(/^[-•]\s*/, ''))
+        .filter(Boolean),
+      warning: fields.warning || '',
+      result: fields.result || ''
+    };
   }
 
   function classifyRoadmapStage(text = '') {

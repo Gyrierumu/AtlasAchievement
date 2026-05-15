@@ -2753,10 +2753,10 @@ async function assertSeedData({ all, get }, sampleGames) {
   assert.strictEqual(ghostSample.is_verified, false, 'Ghost of Tsushima nao deve ser verificado automaticamente');
   assert.strictEqual(ghostSample.verification_status, 'review', 'Ghost of Tsushima deve aguardar revisao editorial final');
   assert(ghostSample.dlc_scope.includes('Iki Island') && ghostSample.dlc_scope.includes('Legends'), 'Ghost of Tsushima deve separar DLC da platina base');
-  assert(ghostSample.image.includes('/header.jpg'), 'Ghost of Tsushima deve usar image horizontal valida');
-  assert(ghostSample.cover_image.includes('/library_600x900.jpg'), 'Ghost of Tsushima deve expor cover_image vertical');
-  assert(ghostSample.roadmap.some(step => step.includes('free roam')), 'roadmap de Ghost of Tsushima deve citar cleanup em free roam');
-  assert(ghostSample.roadmap.some(step => step.includes('Iki Island/Legends')), 'roadmap de Ghost of Tsushima deve excluir DLC da platina base');
+  assert.strictEqual(ghostSample.image, '/assets/games/ghost-of-tsushima/hero.jpg', 'Ghost of Tsushima deve usar image local horizontal valida');
+  assert.strictEqual(ghostSample.cover_image, '/assets/games/ghost-of-tsushima/cover.jpg', 'Ghost of Tsushima deve expor cover_image local vertical');
+  assert(ghostSample.roadmap.some(step => step.includes('exploração livre')), 'roadmap de Ghost of Tsushima deve citar exploração livre');
+  assert(ghostSample.roadmap.some(step => step.includes('Iki, New Game+ e Legends')), 'roadmap de Ghost of Tsushima deve excluir extras da platina base');
   assert.strictEqual(ghostSample.trophies.filter(trophy => trophy.is_missable).length, 0, 'Ghost of Tsushima nao deve marcar perdiveis na lista base');
   const ghostSpoilerIds = ghostSample.trophies.filter(trophy => trophy.is_spoiler).map(trophy => trophy.id);
   assert(ghostSpoilerIds.includes('got_mono_no_aware'), 'Ghost of Tsushima deve marcar final como spoiler');
@@ -2800,7 +2800,7 @@ async function assertSeedData({ all, get }, sampleGames) {
 
   const ghostRoadmapRows = await all('SELECT content FROM roadmaps WHERE game_id = (SELECT id FROM games WHERE slug = ?) ORDER BY step_order', ['ghost-of-tsushima']);
   assert.strictEqual(ghostRoadmapRows.length, 6, 'seed deve inserir 6 etapas de roadmap para Ghost of Tsushima');
-  assert(ghostRoadmapRows.some(row => row.content.includes('free roam')), 'seed deve persistir etapa de cleanup free roam para Ghost of Tsushima');
+  assert(ghostRoadmapRows.some(row => row.content.includes('exploração livre')), 'seed deve persistir etapa de exploração livre para Ghost of Tsushima');
 
   const ghostTrophyRows = await all('SELECT trophy_code, name, type, is_missable, is_spoiler FROM trophies WHERE game_id = (SELECT id FROM games WHERE slug = ?) ORDER BY id', ['ghost-of-tsushima']);
   assert.strictEqual(ghostTrophyRows.length, 52, 'seed deve inserir checklist base completo do Ghost of Tsushima');
@@ -8189,8 +8189,8 @@ async function assertBackendEditorialConsistency() {
     assert.strictEqual(ghost.coverage_level, 'strong', 'Ghost of Tsushima deve aparecer com coverage strong');
     assert.strictEqual(ghost.is_verified, false, 'Ghost of Tsushima nao deve aparecer como verificado');
     assert.strictEqual(ghost.verification_status, 'review', 'Ghost of Tsushima deve aparecer em revisao editorial');
-    assert.strictEqual(ghost.image, 'https://cdn.cloudflare.steamstatic.com/steam/apps/2215430/header.jpg', 'catalogo deve usar image horizontal do Ghost of Tsushima');
-    assert.strictEqual(ghost.cover_image, 'https://cdn.cloudflare.steamstatic.com/steam/apps/2215430/library_600x900.jpg', 'API deve expor cover_image vertical do Ghost of Tsushima');
+    assert.strictEqual(ghost.image, '/assets/games/ghost-of-tsushima/hero.jpg', 'catalogo deve usar image horizontal local do Ghost of Tsushima');
+    assert.strictEqual(ghost.cover_image, '/assets/games/ghost-of-tsushima/cover.jpg', 'API deve expor cover_image vertical local do Ghost of Tsushima');
     assert.strictEqual(ghost.missable_count, 0, 'API não deve contar spoilers como perdíveis');
     assert.strictEqual(ghost.spoiler_count, 12, 'API deve contar spoilers coerentes no Ghost of Tsushima');
     assert.strictEqual(horizon.trophy_count, 56, 'catalogo deve expor 56 trofeus para Horizon Zero Dawn');
@@ -9531,14 +9531,14 @@ async function assertBackendEditorialConsistency() {
     assert.strictEqual(ghostDetail.missable_count, 0, 'Ghost of Tsushima nao deve marcar perdiveis');
     assert.strictEqual(ghostDetail.spoiler_count, 12, 'Ghost of Tsushima deve retornar spoiler_count coerente');
     assert.strictEqual(ghostDetail.roadmap.length, 6, 'detalhe de Ghost of Tsushima deve retornar roadmap de 6 etapas');
-    assert(ghostDetail.roadmap.some(step => step.includes('free roam')), 'roadmap de Ghost of Tsushima deve citar cleanup livre');
-    assert(ghostDetail.roadmap.some(step => step.includes('Iki Island/Legends')), 'roadmap de Ghost of Tsushima deve excluir DLC da platina base');
+    assert(ghostDetail.roadmap.some(step => step.includes('exploração livre')), 'roadmap de Ghost of Tsushima deve citar exploração livre');
+    assert(ghostDetail.roadmap.some(step => step.includes('Iki, New Game+ e Legends')), 'roadmap de Ghost of Tsushima deve excluir extras da platina base');
     assert(ghostDetail.online_summary.includes('Não há troféus online'), 'detalhe de Ghost of Tsushima deve indicar ausência de online obrigatório');
     assert(ghostDetail.dlc_scope.includes('Iki Island') && ghostDetail.dlc_scope.includes('Legends'), 'detalhe de Ghost of Tsushima deve manter DLC em escopo separado');
     assert.strictEqual(ghostDetail.coverage_level, 'strong', 'Ghost of Tsushima nao deve ser complete sem revisao manual');
     assert.strictEqual(ghostDetail.is_verified, false, 'Ghost of Tsushima nao deve estar verificado');
     assert.strictEqual(ghostDetail.verification_status, 'review', 'Ghost of Tsushima deve ficar em revisao editorial');
-    assert.strictEqual(ghostDetail.cover_image, 'https://cdn.cloudflare.steamstatic.com/steam/apps/2215430/library_600x900.jpg', 'detalhe de Ghost of Tsushima deve retornar cover_image');
+    assert.strictEqual(ghostDetail.cover_image, '/assets/games/ghost-of-tsushima/cover.jpg', 'detalhe de Ghost of Tsushima deve retornar cover_image local');
     assert(ghostDetail.trophies.some(trophy => trophy.id === 'got_there_can_be_only_one' && trophy.type === 'Bronze'), 'Ghost of Tsushima deve corrigir There Can Be Only One para bronze');
     assert(ghostDetail.trophies.some(trophy => trophy.id === 'got_have_a_nice_fall' && trophy.type === 'Prata'), 'Ghost of Tsushima deve corrigir Have a Nice Fall para prata');
     assert(ghostDetail.trophies.some(trophy => trophy.id === 'got_ghost_of_legend' && trophy.type === 'Bronze'), 'Ghost of Tsushima deve corrigir The Ghost of Legend para bronze');
@@ -9554,10 +9554,11 @@ async function assertBackendEditorialConsistency() {
       h1Includes: 'Ghost of Tsushima'
     });
     assert(ghostGuideHtml.includes('Living Legend'), 'SSR de Ghost of Tsushima deve renderizar checklist');
+    assert(ghostGuideHtml.includes('Lenda Viva'), 'SSR de Ghost of Tsushima deve renderizar trophyNamePtBr oficial');
     assert(ghostGuideHtml.includes('52 trof'), 'SSR de Ghost of Tsushima deve renderizar total de 52 trofeus');
     assert(ghostGuideHtml.includes('atlas-guide-cover--poster'), 'SSR de Ghost of Tsushima deve usar cover_image como poster do guia');
-    assert(ghostGuideHtml.includes('https://cdn.cloudflare.steamstatic.com/steam/apps/2215430/library_600x900.jpg'), 'SSR de Ghost of Tsushima deve renderizar cover_image vertical no guia');
-    assert(ghostGuideHtml.includes('property="og:image" content="https://cdn.cloudflare.steamstatic.com/steam/apps/2215430/header.jpg"'), 'SEO de Ghost of Tsushima deve usar image horizontal');
+    assert(ghostGuideHtml.includes('/assets/games/ghost-of-tsushima/cover.jpg'), 'SSR de Ghost of Tsushima deve renderizar cover_image vertical local no guia');
+    assert(ghostGuideHtml.includes('property="og:image" content="') && ghostGuideHtml.includes('/assets/games/ghost-of-tsushima/hero.jpg'), 'SEO de Ghost of Tsushima deve usar image horizontal local');
 
     const horizonDetail = await httpGetJson(baseUrl, '/api/games/slug/horizon-zero-dawn');
     assert.strictEqual(horizonDetail.slug, 'horizon-zero-dawn', 'GET /api/games/slug/horizon-zero-dawn deve retornar Horizon Zero Dawn');
@@ -12474,7 +12475,9 @@ function assertPriorityGuideEditorialTrust() {
     'monster-hunter-world': { total: 50, Platina: 1, Ouro: 2, Prata: 11, Bronze: 36 },
     'clair-obscur-expedition-33': { total: 56, Platina: 1, Ouro: 2, Prata: 5, Bronze: 48 },
     'elden-ring': { total: 42, Platina: 1, Ouro: 3, Prata: 14, Bronze: 24 },
-    'hades': { total: 50, Platina: 1, Ouro: 2, Prata: 7, Bronze: 40 }
+    'hades': { total: 50, Platina: 1, Ouro: 2, Prata: 7, Bronze: 40 },
+    'ghost-of-tsushima': { total: 52, Platina: 1, Ouro: 2, Prata: 9, Bronze: 40 },
+    'pragmata': { total: 36, Platina: 1, Ouro: 5, Prata: 9, Bronze: 21, namePt: 35 }
   };
   const bySlug = new Map(sampleGames.map(game => [game.slug, game]));
   const countTag = (game, tagId) => game.trophies.filter(trophy => guideModel.getGuideTrophyTags(trophy).some(tag => tag.id === tagId)).length;
@@ -12524,7 +12527,8 @@ function assertPriorityGuideEditorialTrust() {
     const game = bySlug.get(slug);
     assert(game, `${slug} deve existir em sampleGames`);
     assert.strictEqual(game.trophies.length, expected.total, `${slug} deve manter total de trofeus`);
-    assert(game.trophies.every(trophy => trophy.name_pt && trophy.name_pt.trim()), `${slug} deve ter name_pt em todos os trofeus do piloto`);
+    const expectedNamePt = Number.isFinite(expected.namePt) ? expected.namePt : expected.total;
+    assert.strictEqual(game.trophies.filter(trophy => trophy.name_pt && trophy.name_pt.trim()).length, expectedNamePt, `${slug} deve ter a quantidade esperada de name_pt`);
     assert.strictEqual(new Set(game.trophies.map(trophy => trophy.id)).size, game.trophies.length, `${slug} nao pode duplicar trophy_code ao adicionar name_pt`);
     assert.deepStrictEqual(countTypes(game), {
       Platina: expected.Platina,

@@ -604,6 +604,23 @@ async function syncSeedGameFromSeed(seedSlug, options = {}) {
   }
 }
 
+async function syncSeedGameRoadmapFromSeed(seedSlug) {
+  const game = getSeedGameBySlug(seedSlug);
+  if (!game || !Array.isArray(game.roadmap)) return;
+
+  const slug = game.slug || slugifyGameName(game.name);
+  const existing = await get('SELECT id FROM games WHERE slug = ? OR name = ? ORDER BY id ASC LIMIT 1', [slug, game.name]);
+  if (!existing) return;
+
+  await run('DELETE FROM roadmaps WHERE game_id = ?', [existing.id]);
+  for (let index = 0; index < game.roadmap.length; index += 1) {
+    await run(
+      'INSERT INTO roadmaps (game_id, step_order, content) VALUES (?, ?, ?)',
+      [existing.id, index + 1, String(game.roadmap[index] || '')]
+    );
+  }
+}
+
 async function syncReviewedGuidesFromSeed() {
   const existingGames = await get('SELECT COUNT(*) AS total FROM games');
   const syncOptions = {
@@ -1055,6 +1072,8 @@ async function migrate(options = {}) {
   if (shouldSyncSeedData(options)) {
     await syncReviewedGuidesFromSeed();
   }
+  await syncSeedGameRoadmapFromSeed('elden-ring');
+  await syncSeedGameRoadmapFromSeed('hades');
   await syncSeedGameFromSeed('pragmata', { insertIfMissing: true, forceSync: true });
   await syncSeedGameFromSeed('disney-epic-mickey-rebrushed', { insertIfMissing: true });
   await ensureKnownSlugRedirects();
