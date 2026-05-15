@@ -76,6 +76,18 @@
   }
 
   function getGuideRoadmapStepText(step = {}) {
+    const normalized = normalizeRoadmapStep(step);
+    if (normalized?.isStructured) {
+      return [
+        normalized.title,
+        normalized.focus,
+        normalized.objective,
+        ...(Array.isArray(normalized.actions) ? normalized.actions : []),
+        normalized.warning,
+        normalized.note,
+        normalized.result
+      ].filter(Boolean).join(' ');
+    }
     if (typeof step === 'string') return step;
     return firstGuideText(step?.description, step?.detail, step?.objective, step?.goal, step?.title, step?.name);
   }
@@ -239,6 +251,9 @@
   function hasAffirmativeOnlineRequirement(value = '', onlineCount = 0) {
     if (onlineCount > 0) return true;
     const text = normalizeGuideSignalText(value);
+    if (/nao (?:indica|aponta|lista|tem).{0,80}(?:trofeus? )?(?:online|multiplayer|servidor|servidores)/.test(text)) {
+      return false;
+    }
     if (/atencao tecnica/.test(text) && /nao.*multiplayer|nao.*online obrigatorio|ps\+ nao|nao.*ps\+/.test(text)) {
       return false;
     }
@@ -253,6 +268,9 @@
     if (coopCount > 0) return true;
     const text = normalizeGuideSignalText(value);
     if (!text) return false;
+    if (/nao (?:indica|aponta|lista|tem).{0,80}(?:coop|co-op|segundo jogador|2 jogadores|dois jogadores)/.test(text)) {
+      return false;
+    }
     if (/pode ser (?:feito|platinado|planejado) solo|solo com|coop opcional|parceiro humano.*(?:ajuda|opcional)|nao trate .*coop.*obrigatorio|sem coop/.test(text)) {
       return false;
     }
@@ -632,7 +650,9 @@
     const missableReview = !missableText || (!hasMissable && hasGuideReviewSignal(missableText));
     const onlineReview = !inputs.online || (!network.hasOnline && hasGuideOnlineReviewSignal(inputs.online));
     const combinedText = getGuideCombinedPlanningText(game, { ...viewModel, trophies, roadmap });
-    const coopReview = (!inputs.online && !combinedText) || (!network.hasCoop && /coop|co-op|2 jogadores|dois jogadores|segundo jogador/.test(normalizeGuideSignalText(combinedText)) && hasGuideReviewSignal(combinedText));
+    const normalizedCombinedText = normalizeGuideSignalText(combinedText);
+    const coopNegated = /nao (?:indica|aponta|lista|tem).{0,80}(?:coop|co-op|segundo jogador|2 jogadores|dois jogadores)|sem coop|nao exige coop/.test(normalizedCombinedText);
+    const coopReview = (!inputs.online && !combinedText) || (!network.hasCoop && !coopNegated && /coop|co-op|2 jogadores|dois jogadores|segundo jogador/.test(normalizedCombinedText) && hasGuideReviewSignal(combinedText));
     const dlcReview = !inputs.dlc || (!/complete|warning/.test(String(dlcScope.tone || '')) && hasGuideReviewSignal(inputs.dlc));
 
     let dlcValue = dlcScope.value;
@@ -1044,7 +1064,7 @@
     const riskCounts = viewModel.riskCounts || getRiskCounts(trophies);
     const difficulty = Number(game?.difficulty || 0);
     const runs = String(game?.runs || '').trim();
-    const guideText = String(`${runs} ${game?.missable || ''} ${roadmap.join(' ')}`).toLowerCase().normalize('NFD').replace(/[\u0300-\u036f]/g, '');
+    const guideText = String(`${runs} ${game?.missable || ''} ${getGuideRoadmapText(roadmap)}`).toLowerCase().normalize('NFD').replace(/[\u0300-\u036f]/g, '');
     const cards = [];
 
     if (runs || /multiplas|varias|multi-run|run|campanha dedicada|speedrun/.test(guideText) || riskCounts.run) {
@@ -1085,37 +1105,78 @@
 
   function buildDecisionRoadmapStages(viewModel = {}) {
     const steps = Array.isArray(viewModel.roadmap) ? viewModel.roadmap : [];
-    return steps.map((step, index) => {
-      const raw = typeof step === 'string' ? step : (step?.description || step?.detail || step?.title || step?.name || 'Etapa');
-      const structured = parseStructuredRoadmapStep(raw);
-      const clean = String(structured?.description || structured?.objective || raw || 'Etapa').trim().replace(/^Etapa\s+\d+\s*[:.-]\s*/i, '');
-      const explicitTitle = typeof step === 'object' && step ? (step.title || step.name) : '';
-      const relatedTrophies = Array.isArray(step?.trophies) ? step.trophies : (Array.isArray(step?.relatedTrophies) ? step.relatedTrophies : []);
-      const category = classifyRoadmapStage(clean);
-      const inferredTitle = structured?.title || inferRoadmapStageTitle(clean, index, steps.length, explicitTitle);
-      return {
-        number: index + 1,
-        title: inferredTitle,
-        category,
-        description: clean,
-        objective: String(structured?.objective || step?.objective || step?.goal || clean).trim(),
-        focus: String(structured?.focus || step?.focus || '').trim(),
-        actions: Array.isArray(structured?.actions) ? structured.actions : [],
-        warning: String(structured?.warning || step?.warning || '').trim(),
-        result: String(structured?.result || step?.result || '').trim(),
-        risk: String(structured?.warning || step?.risk || '').trim(),
-        relatedTrophies: relatedTrophies.map(item => String(item || '').trim()).filter(Boolean),
-        isStructured: Boolean(structured)
-      };
-    });
+    return steps.map((step, index) => normalizeRoadmapStep(step, index, steps.length));
+  }
+
+  function normalizeRoadmapActions(value = '') {
+    if (Array.isArray(value)) {
+      return value.map(item => String(item || '').trim().replace(/^[-•]\s*/, '')).filter(Boolean);
+    }
+    return String(value || '')
+      .split(/\s*;\s*/)
+      .map(item => item.trim().replace(/^[-•]\s*/, ''))
+      .filter(Boolean);
+  }
+
+  function parseJsonRoadmapStep(value = '') {
+    const text = String(value || '').trim();
+    if (!text || !/^\{[\s\S]*\}$/.test(text)) return null;
+    try {
+      const parsed = JSON.parse(text);
+      return parsed && typeof parsed === 'object' && !Array.isArray(parsed) ? parsed : null;
+    } catch (error) {
+      return null;
+    }
+  }
+
+  function normalizeRoadmapStep(step = {}, index = 0, total = 1) {
+    const jsonStep = typeof step === 'string' ? parseJsonRoadmapStep(step) : null;
+    const source = jsonStep || step;
+    const raw = typeof source === 'string'
+      ? source
+      : (source?.description || source?.detail || source?.objective || source?.goal || source?.title || source?.name || 'Etapa');
+    const structured = typeof source === 'string' ? parseStructuredRoadmapStep(raw) : null;
+    const isObject = source && typeof source === 'object' && !Array.isArray(source);
+    const relatedTrophies = isObject
+      ? (Array.isArray(source?.trophies) ? source.trophies : (Array.isArray(source?.relatedTrophies) ? source.relatedTrophies : []))
+      : [];
+    const title = String(structured?.title || (isObject ? (source.title || source.name) : '') || '').trim();
+    const focus = String(structured?.focus || (isObject ? source.focus : '') || '').trim();
+    const objective = String(structured?.objective || (isObject ? (source.objective || source.goal || source.description || source.detail) : '') || '').trim();
+    const actions = normalizeRoadmapActions(structured?.actions || (isObject ? source.actions : []));
+    const warning = String(structured?.warning || (isObject ? source.warning : '') || '').trim();
+    const note = String(structured?.note || (isObject ? (source.note || source.observation || source.observacao) : '') || '').trim();
+    const result = String(structured?.result || (isObject ? source.result : '') || '').trim();
+    const risk = String(warning || (isObject ? source.risk : '') || '').trim();
+    const clean = String(objective || raw || 'Etapa').trim().replace(/^Etapa\s+\d+\s*[:.-]\s*/i, '');
+    const explicitTitle = title || (isObject ? (source.title || source.name) : '');
+    const signalText = [title, focus, clean, ...actions, warning, note].filter(Boolean).join(' ');
+    const category = classifyRoadmapStage(signalText || clean);
+    const inferredTitle = title || inferRoadmapStageTitle(clean, index, total, explicitTitle);
+    const isStructured = Boolean(structured || jsonStep || (isObject && (title || focus || objective || actions.length || warning || result)));
+    return {
+      number: index + 1,
+      title: inferredTitle,
+      category,
+      description: clean,
+      objective: clean,
+      focus,
+      actions,
+      warning,
+      note,
+      result,
+      risk,
+      relatedTrophies: relatedTrophies.map(item => String(item || '').trim()).filter(Boolean),
+      isStructured
+    };
   }
 
   function parseStructuredRoadmapStep(value = '') {
     const text = String(value || '').trim();
-    if (!text.includes('title:') || !text.includes('objective:')) return null;
+    if (!/title\s*:/i.test(text) || !/objective\s*:/i.test(text)) return null;
 
     const fields = {};
-    const matches = [...text.matchAll(/(?:^|\s\|\s)(title|focus|objective|actions|warning|result):\s*([\s\S]*?)(?=\s\|\s(?:title|focus|objective|actions|warning|result):|$)/gi)];
+    const matches = [...text.matchAll(/(?:^|\s\|\s)(title|focus|objective|actions|warning|note|observation|observacao|result):\s*([\s\S]*?)(?=\s\|\s(?:title|focus|objective|actions|warning|note|observation|observacao|result):|$)/gi)];
     for (const match of matches) {
       fields[match[1].toLowerCase()] = String(match[2] || '').trim();
     }
@@ -1130,19 +1191,21 @@
         .map(item => item.trim().replace(/^[-•]\s*/, ''))
         .filter(Boolean),
       warning: fields.warning || '',
+      note: fields.note || fields.observation || fields.observacao || '',
       result: fields.result || ''
     };
   }
 
   function classifyRoadmapStage(text = '') {
     const normalized = normalizeGuideSignalText(text);
+    const networkNegated = /nao .*online|nao .*coop|nao e online|sem online|sem coop|offline/.test(normalized);
     if (/limpeza final|cleanup|fechamento|desafios especificos/.test(normalized)) {
       return { id: 'cleanup', label: 'Cleanup', icon: 'fa-broom', tone: 'neutral' };
     }
-    if (/coop|co-op|2 jogadores|dois jogadores|dupla|segundo jogador/.test(normalized)) {
+    if (!networkNegated && /coop|co-op|2 jogadores|dois jogadores|dupla|segundo jogador/.test(normalized)) {
       return { id: 'online', label: 'Coop', icon: 'fa-users', tone: 'warning' };
     }
-    if (/online|multiplayer|sos|guild card|guild cards/.test(normalized)) {
+    if (!networkNegated && /online|multiplayer|\bsos\b|guild card|guild cards/.test(normalized)) {
       return { id: 'online', label: 'Online', icon: 'fa-wifi', tone: 'warning' };
     }
     if (/(historia|new game\+|ng\+).*(historia|new game\+|ng\+)|comece pela campanha|campanha principal|primeiras runs|prologo|atos|high rank/.test(normalized) && !/farm principal|limpeza final/.test(normalized)) {
@@ -1229,9 +1292,10 @@
   function buildRoadmapStages(viewModel = {}) {
     const steps = Array.isArray(viewModel.roadmap) ? viewModel.roadmap : [];
     return steps.map((step, index) => {
-      const raw = typeof step === 'string' ? step : (step?.title || step?.description || step?.name || 'Etapa');
-      const clean = String(raw || 'Etapa').trim();
-      const title = clean.length > 72 ? `${clean.slice(0, 69).trimEnd()}...` : clean;
+      const normalized = normalizeRoadmapStep(step, index, steps.length);
+      const clean = String(normalized.objective || normalized.description || normalized.title || 'Etapa').trim();
+      const titleText = normalized.title || clean;
+      const title = titleText.length > 72 ? `${titleText.slice(0, 69).trimEnd()}...` : titleText;
       let cue = 'Use esta etapa como bloco principal antes de avançar para a próxima.';
       if (index === 0) cue = 'Comece por aqui para alinhar rota, risco e ritmo antes de investir várias horas.';
       else if (index === steps.length - 1) cue = 'Feche por aqui com cleanup, revisão final e validação do que ficou pendente.';
@@ -2051,6 +2115,7 @@
     buildPlatinumSummary,
     buildBeforeStartCards,
     buildRouteChangingTrophies,
+    normalizeRoadmapStep,
     buildDecisionRoadmapStages,
     buildRoadmapStages,
     buildContextualFaq,

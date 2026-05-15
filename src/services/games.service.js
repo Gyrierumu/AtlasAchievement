@@ -23,6 +23,11 @@ function firstText(...values) {
   return values.map(value => String(value || '').trim()).find(Boolean) || '';
 }
 
+function serializeRoadmapStep(step) {
+  if (step && typeof step === 'object') return JSON.stringify(step);
+  return String(step || '');
+}
+
 function normalizeGuideCleanupAdvice(row = {}) {
   const text = row.cleanup_advice || '';
   if (row.slug === 'road-96') {
@@ -666,7 +671,7 @@ async function insertGameData(gameId, payload) {
   for (let index = 0; index < payload.roadmap.length; index += 1) {
     await run(
       'INSERT INTO roadmaps (game_id, step_order, content) VALUES (?, ?, ?)',
-      [gameId, index + 1, payload.roadmap[index].trim()]
+      [gameId, index + 1, serializeRoadmapStep(payload.roadmap[index]).trim()]
     );
   }
 

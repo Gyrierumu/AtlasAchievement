@@ -352,14 +352,16 @@ window.UIGuide = (() => {
             ? stage.actions.slice(0, 5)
             : splitGuideRoadmapActions(stage.description || stage.objective).slice(0, 3);
           const focusLabel = stage.focus || category.label || 'Plano';
+          const primaryText = stage.objective || stage.description;
+          const showObjectiveMeta = !stage.isStructured && stage.objective && String(stage.objective).trim() !== String(primaryText || '').trim();
           const metaItems = stage.isStructured
             ? [
-                stage.focus ? `<span><strong>Foco</strong>${escapeHtml(stage.focus)}</span>` : '',
                 stage.warning ? `<span><strong>Alerta</strong>${escapeHtml(stage.warning)}</span>` : '',
+                stage.note ? `<span><strong>Observação</strong>${escapeHtml(stage.note)}</span>` : '',
                 stage.result ? `<span><strong>Resultado</strong>${escapeHtml(stage.result)}</span>` : ''
               ].filter(Boolean)
             : [
-                `<span><strong>Objetivo</strong>${escapeHtml(stage.objective)}</span>`,
+                showObjectiveMeta ? `<span><strong>Objetivo</strong>${escapeHtml(stage.objective)}</span>` : '',
                 stage.risk ? `<span><strong>Risco</strong>${escapeHtml(stage.risk)}</span>` : '',
                 stage.relatedTrophies?.length ? `<span><strong>TrofÃ©us relacionados</strong>${stage.relatedTrophies.map(escapeHtml).join(' / ')}</span>` : ''
               ].filter(Boolean);
@@ -374,14 +376,10 @@ window.UIGuide = (() => {
                 </div>
                 <span class="atlas-roadmap-step__category atlas-roadmap-step__category--${escapeAttribute(category.id || 'plan')}"><i class="fas ${escapeAttribute(category.icon || 'fa-route')}" aria-hidden="true"></i>${escapeHtml(focusLabel)}</span>
               </div>
-              <p>${escapeHtml(stage.objective || stage.description)}</p>
+              <p>${escapeHtml(primaryText)}</p>
               ${actions.length ? `<ul class="atlas-roadmap-step__actions">${actions.map(action => `<li>${escapeHtml(action)}</li>`).join('')}</ul>` : ''}
               ${stage.isStructured && metaItems.length ? `<div class="atlas-roadmap-step__meta">${metaItems.join('')}</div>` : ''}
-              <div class="atlas-roadmap-step__meta"${stage.isStructured ? ' hidden' : ''}>
-                <span><strong>Objetivo</strong>${escapeHtml(stage.objective)}</span>
-                ${stage.risk ? `<span><strong>Risco</strong>${escapeHtml(stage.risk)}</span>` : ''}
-                ${stage.relatedTrophies?.length ? `<span><strong>Troféus relacionados</strong>${stage.relatedTrophies.map(escapeHtml).join(' / ')}</span>` : ''}
-              </div>
+              ${!stage.isStructured && metaItems.length ? `<div class="atlas-roadmap-step__meta">${metaItems.join('')}</div>` : ''}
             </article>
           </li>
         `;

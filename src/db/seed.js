@@ -27,6 +27,11 @@ function normalizeTrophyType(value) {
   return TROPHY_TYPE_ALIASES[key] || raw;
 }
 
+function serializeRoadmapStep(step) {
+  if (step && typeof step === 'object') return JSON.stringify(step);
+  return String(step || '');
+}
+
 function deriveSteamCoverImage(imageUrl) {
   const match = String(imageUrl || '').match(/steam\/apps\/(\d+)\/header\.jpg/i);
   return match ? `https://cdn.cloudflare.steamstatic.com/steam/apps/${match[1]}/library_600x900.jpg` : null;
@@ -122,7 +127,7 @@ async function seed() {
     for (let index = 0; index < game.roadmap.length; index += 1) {
       await run(
         'INSERT INTO roadmaps (game_id, step_order, content) VALUES (?, ?, ?)',
-        [gameId, index + 1, game.roadmap[index]]
+        [gameId, index + 1, serializeRoadmapStep(game.roadmap[index])]
       );
     }
 

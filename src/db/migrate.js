@@ -452,6 +452,11 @@ function getSeedGameBySlug(slug) {
   return sampleGames.find(game => (game.slug || slugifyGameName(game.name)) === slug);
 }
 
+function serializeRoadmapStep(step) {
+  if (step && typeof step === 'object') return JSON.stringify(step);
+  return String(step || '');
+}
+
 async function shouldSyncSeedGame(seedSlug, options = {}) {
   if (options.forceSync) return true;
 
@@ -580,7 +585,7 @@ async function syncSeedGameFromSeed(seedSlug, options = {}) {
   for (let index = 0; index < game.roadmap.length; index += 1) {
     await run(
       'INSERT INTO roadmaps (game_id, step_order, content) VALUES (?, ?, ?)',
-      [gameId, index + 1, game.roadmap[index]]
+      [gameId, index + 1, serializeRoadmapStep(game.roadmap[index])]
     );
   }
 
@@ -616,7 +621,7 @@ async function syncSeedGameRoadmapFromSeed(seedSlug) {
   for (let index = 0; index < game.roadmap.length; index += 1) {
     await run(
       'INSERT INTO roadmaps (game_id, step_order, content) VALUES (?, ?, ?)',
-      [existing.id, index + 1, String(game.roadmap[index] || '')]
+      [existing.id, index + 1, serializeRoadmapStep(game.roadmap[index])]
     );
   }
 }

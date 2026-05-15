@@ -861,12 +861,78 @@ const sampleGames = [
     "image": "/assets/games/ghost-of-tsushima/hero.jpg",
     "cover_image": "/assets/games/ghost-of-tsushima/cover.jpg",
     "roadmap": [
-      "title: Feche o Ato I e monte a base da build | focus: Ato I / Izuhara | objective: Avançar a campanha inicial enquanto abre Izuhara, melhora equipamento e desbloqueia sistemas essenciais. | actions: Avance a história até consolidar exploração livre e recursos básicos.; Colete materiais, presentes e upgrades naturais pelo caminho.; Abra ocupações de Izuhara sem tentar farmar tudo cedo demais.; Deixe troféus de combate situacionais caírem naturalmente no começo. | result: Base forte para a campanha e mapa inicial bem encaminhado.",
-      "title: Resolva Tales de personagens e Mythic Tales conforme o mapa abre | focus: Side content importante | objective: Adiantar as cadeias de Ishikawa, Masako, Norio, Yuna e os Mythic Tales sem acumular tudo para o fim. | actions: Intercale a história principal com Tales de personagens.; Complete Mythic Tales sempre que a rota for conveniente.; Marque Tales comuns no checklist para evitar pendências invisíveis.; Não ignore NPCs e leads de side quest nas cidades. | result: Grande parte dos troféus de side quests encaminhada cedo.",
-      "title: Conclua os Atos II e III e libere regiões em sequência | focus: Campanha e ocupações | objective: Fechar a história e alinhar a limpeza regional de Izuhara, Toyotama e Kamiagata. | actions: Avance até o final da campanha sem abandonar as liberações regionais.; Limpe ocupações suficientes em cada área para evitar backtracking massivo.; Use a campanha para alcançar troféus regionais de forma orgânica. | result: Campanha concluída e libertação regional quase completa.",
-      "title: Faça o cleanup estrutural dos colecionáveis e atividades permanentes | focus: Coletáveis | objective: Fechar os troféus longos e objetivos de mapa. | actions: Complete Hot Springs, Haiku, Inari Shrines e Bamboo Strikes.; Feche Shinto Shrines, lighthouses, Records e Mongol artifacts.; Use o checklist para controlar Vanity Gear, Pillars of Honor e presentes.; Se o projeto já orientar isso, aproveite os recursos de exploração para rastrear colecionáveis restantes. | result: Troféus estruturais de progressão e exploração praticamente concluídos.",
-      "title: Limpe os troféus misc e os ocultos | focus: Misc / ocultos | objective: Resolver as pendências mais fáceis de esquecer antes da platina. | actions: Feche troféus como All in the Wrist, Have a Nice Fall e Witness Protection.; Confira Honor the Unseen, Monochrome Masters e Cooper Clan Cosplayer.; Faça Dirge of the Fallen Forge e A Moment in Time.; Revise o checklist completo antes de considerar a platina encerrada. | result: Pendências específicas e ocultas resolvidas.",
-      "title: Trate Iki, New Game+ e Legends como extras separados | focus: Conteúdo opcional | objective: Se o guia atual incluir o conjunto expandido, manter extras claramente separados da platina base. | actions: Iki Island deve ficar em seção separada, se existir no escopo atual.; New Game+ deve ficar em seção separada, se existir no escopo atual.; Legends deve ficar em seção separada e, se existir, ser tratado como online/co-op extra.; Não deixe esses extras mudarem a lógica da platina base. | warning: A platina base não deve ser tratada como online obrigatória, nem como perdível. | result: Roadmap limpo, específico e correto para base versus extras."
+      {
+        "title": "Avance a história e libere recursos básicos",
+        "focus": "Campanha principal",
+        "objective": "Progredir pela história enquanto desbloqueia ferramentas, posturas, técnicas e acesso gradual às regiões.",
+        "actions": [
+          "Avance os contos principais até abrir melhor o mapa.",
+          "Use os primeiros pontos de técnica para melhorar combate, furtividade e exploração.",
+          "Ative pontos de viagem rápida sempre que possível.",
+          "Faça atividades próximas ao caminho sem tentar limpar tudo cedo demais."
+        ],
+        "result": "Jin preparado para explorar Tsushima com mais recursos e menos retrabalho."
+      },
+      {
+        "title": "Liberte regiões e revele o mapa",
+        "focus": "Exploração",
+        "objective": "Reduzir a névoa do mapa e abrir atividades importantes em Izuhara, Toyotama e Kamiagata.",
+        "actions": [
+          "Liberte acampamentos mongóis conforme eles ficarem acessíveis.",
+          "Use pássaros dourados, raposas e fumaça no horizonte para localizar atividades.",
+          "Complete fontes termais, bambus, haiku e santuários quando estiverem no caminho.",
+          "Marque pendências por região no checklist."
+        ],
+        "result": "Mapa mais aberto e atividades de platina mais fáceis de organizar."
+      },
+      {
+        "title": "Complete Tales e Mythic Tales",
+        "focus": "Missões secundárias",
+        "objective": "Concluir histórias secundárias importantes para recursos, técnicas, armaduras e troféus.",
+        "actions": [
+          "Faça Mythic Tales assim que ficarem disponíveis.",
+          "Complete linhas de aliados como Ishikawa, Masako, Norio e Yuna.",
+          "Intercale contos secundários com a campanha para evitar limpeza pesada no final.",
+          "Use o checklist para separar Tales concluídos dos pendentes."
+        ],
+        "result": "Principais missões paralelas concluídas e pós-jogo mais leve."
+      },
+      {
+        "title": "Limpe coletáveis e atividades de mundo aberto",
+        "focus": "Coletáveis",
+        "objective": "Finalizar atividades exigidas pela platina base sem misturar conteúdo de DLC.",
+        "actions": [
+          "Complete santuários Shinto e Inari, fontes termais, haiku, bambus e faróis.",
+          "Procure altares escondidos, Records e artefatos mongóis.",
+          "Finalize duelos, acampamentos e atividades restantes por região.",
+          "Priorize uma região por vez para não se perder no cleanup."
+        ],
+        "note": "Iki Island, Legends e New Game+ não são obrigatórios para a platina base."
+      },
+      {
+        "title": "Use o free roam para cleanup final",
+        "focus": "Pós-história",
+        "objective": "Aproveitar o free roam após a campanha para fechar o que ficou pendente.",
+        "actions": [
+          "Volte às regiões com atividades incompletas.",
+          "Finalize troféus miscelâneos e cosméticos da lista base.",
+          "Confira contos, coletáveis e atividades regionais restantes.",
+          "Verifique se nenhum troféu da lista base ficou sem progresso."
+        ],
+        "result": "Quase toda a lista base concluída antes da revisão final."
+      },
+      {
+        "title": "Revise a lista base e feche Living Legend",
+        "focus": "Checklist final",
+        "objective": "Confirmar todos os requisitos da platina base antes de encerrar o guia.",
+        "actions": [
+          "Revise a contagem total da lista base e os troféus restantes.",
+          "Confirme que não está contando Iki Island, Legends ou New Game+ como obrigatórios.",
+          "Verifique se não há troféus online marcados como necessários para a platina base.",
+          "Feche qualquer pendência de exploração, contos ou atividades."
+        ],
+        "result": "Lista base concluída e troféu de platina Living Legend liberado."
+      }
     ],
     "trophies": [
       {
@@ -25560,12 +25626,80 @@ const sampleGames = [
   "image": "/assets/games/pragmata/hero.jpg",
   "cover_image": "/assets/games/pragmata/cover.webp",
   "roadmap": [
-    "title: Aprender combate e hacking | focus: Hugh + Diana / Abrigo | objective: Dominar o ritmo entre movimentação, tiros, hackeamento de Diana, Abrigo e treino inicial. | actions: Avance pelo início até estabilizar o Abrigo; Converse com Diana e entenda as interações de LMT; Treine hackeamento, disparos e troca de recursos sem pressa; Marque no checklist os primeiros objetivos situacionais que surgirem. | result: Base mecânica pronta para seguir a campanha com menos retrabalho.",
-    "title: Fechar a campanha base | focus: História principal | objective: Concluir a história uma vez em dificuldade livre, preservando atenção ao perdível validado. | actions: Jogue na dificuldade que preferir para aprender encontros e chefes; Priorize o Sweeper bot se encontrar um spawn; Colete o que estiver no caminho sem transformar a primeira run em farm pesado; Continue atualizando o checklist de LMTs, Mini Cabins, escotilhas e Red Zones. | warning: You're Not Getting Away That Easy é o único perdível tratado como validado por enquanto. | result: Campanha concluída e Sinal Desconhecido liberado para cleanup.",
-    "title: Mapear coletáveis e metas paralelas | focus: Coletáveis / setores | objective: Reduzir o cleanup de LMTs, Mini Cabins, escotilhas, Red Zones, impressões e progresso de setor. | actions: Revise cada setor antes de depender só da memória; Feche LMTs e presentes de Diana quando estiver no Abrigo; Atire nas Mini Cabins e registre as que faltarem; Imprima armas, nodos de hackeamento e habilidades disponíveis durante a história principal. | result: Menos pendências espalhadas antes do pós-jogo.",
-    "title: Limpar o pós-jogo em Unknown Signal | focus: Pós-jogo / Sinal Desconhecido | objective: Fechar 100% por setor, desafios especiais, chefes fortalecidos e Black Box. | actions: Use Sinal Desconhecido para revisitar áreas pelo sistema do Abrigo; Complete 100% de progresso nos setores necessários; Faça as missões do setor especial e os desafios liberados; Equipe a Black Box quando o objetivo exigir. | result: Conteúdo de pós-jogo resolvido antes da run em Lunatic.",
-    "title: Fazer a run em Lunatic | focus: Dificuldade | objective: Concluir a segunda jogada em Nova Partida na dificuldade Lunática. | actions: Inicie uma Nova Partida depois de liberar Lunatic; Priorize vida, dano, hackeamento de Diana e sobrevivência; Reaplique o conhecimento de chefes e rotas da primeira campanha; Evite tratar essa etapa como New Game+. | warning: Lunatic não está disponível em New Game+. | result: Troféu Lunar Supremacy encaminhado sem misturar regras de NG+.",
-    "title: Fechar pendências finais | focus: Checklist final | objective: Revisar a checklist e confirmar qualquer troféu restante antes de encerrar a platina. | actions: Confira Training Sims, Red Zones, escotilhas e 100% por setor; Finalize troféus de combate como IT'S OVER 6000! e Who Needs Guns!?; Revise interações com Diana e LMTs; Confirme que DLC e cosméticos ficaram fora da lógica da platina base. | result: Lista base fechada mantendo PRAGMATA em revisão editorial."
+    {
+      "title": "Aprenda combate e hacking",
+      "focus": "Hugh + Diana / Abrigo",
+      "objective": "Dominar o ritmo entre movimentação, tiros, hackeamento de Diana, Abrigo e treino inicial.",
+      "actions": [
+        "Avance pelo início até estabilizar o Abrigo.",
+        "Converse com Diana e entenda as interações de LMT.",
+        "Treine hackeamento, disparos e troca de recursos sem pressa.",
+        "Marque no checklist os primeiros objetivos situacionais que surgirem."
+      ],
+      "result": "Base mecânica pronta para seguir a campanha com menos retrabalho."
+    },
+    {
+      "title": "Feche a campanha base",
+      "focus": "História principal",
+      "objective": "Concluir a história uma vez em dificuldade livre, mantendo atenção ao troféu perdível validado.",
+      "actions": [
+        "Jogue na dificuldade que preferir para aprender encontros, chefes e sistemas.",
+        "Priorize o Sweeper bot se encontrar um spawn.",
+        "Colete o que estiver no caminho sem transformar a primeira run em farm pesado.",
+        "Continue atualizando o checklist de LMTs, Mini Cabins, escotilhas e Red Zones."
+      ],
+      "warning": "You’re Not Getting Away That Easy deve continuar tratado como perdível somente se essa validação editorial estiver confirmada.",
+      "result": "Campanha concluída e Sinal Desconhecido liberado para cleanup."
+    },
+    {
+      "title": "Mapeie coletáveis e metas paralelas",
+      "focus": "Coletáveis / setores",
+      "objective": "Reduzir pendências de LMTs, Mini Cabins, escotilhas, Red Zones, impressões e progresso de setor.",
+      "actions": [
+        "Revise cada setor antes de depender só da memória.",
+        "Feche LMTs e presentes de Diana quando estiver no Abrigo.",
+        "Atire nas Mini Cabins e registre as que faltarem.",
+        "Imprima armas, nodos de hackeamento e habilidades disponíveis durante a campanha."
+      ],
+      "result": "Menos pendências espalhadas antes do pós-jogo."
+    },
+    {
+      "title": "Limpe o pós-jogo em Unknown Signal",
+      "focus": "Pós-jogo / Sinal Desconhecido",
+      "objective": "Fechar 100% por setor, desafios especiais, chefes fortalecidos e Black Box.",
+      "actions": [
+        "Use Sinal Desconhecido para revisitar áreas pelo sistema do Abrigo.",
+        "Complete 100% de progresso nos setores necessários.",
+        "Faça as missões do setor especial e os desafios liberados.",
+        "Equipe a Black Box quando o objetivo exigir."
+      ],
+      "result": "Conteúdo de pós-jogo resolvido antes da run em Lunatic."
+    },
+    {
+      "title": "Faça a run em Lunatic",
+      "focus": "Dificuldade",
+      "objective": "Concluir a segunda jogada em Nova Partida na dificuldade Lunática.",
+      "actions": [
+        "Inicie uma Nova Partida depois de liberar Lunatic.",
+        "Priorize vida, dano, hackeamento de Diana e sobrevivência.",
+        "Reaplique o conhecimento de chefes e rotas da primeira campanha.",
+        "Evite tratar essa etapa como New Game+."
+      ],
+      "warning": "Lunatic não está disponível em New Game+, se essa informação estiver validada nas fontes do guia.",
+      "result": "Troféu Lunar Supremacy encaminhado sem misturar regras de NG+."
+    },
+    {
+      "title": "Feche pendências finais",
+      "focus": "Checklist final",
+      "objective": "Revisar o checklist e confirmar qualquer troféu restante antes de encerrar a platina.",
+      "actions": [
+        "Confira Training Sims, Red Zones, escotilhas e 100% por setor.",
+        "Finalize troféus de combate como \"IT'S OVER 6000!\" e \"Who Needs Guns!?\", se esses troféus estiverem validados no guia.",
+        "Revise interações com Diana e LMTs.",
+        "Confirme que DLC, Deluxe Edition, cosméticos e bônus ficaram fora da lógica da platina base."
+      ],
+      "result": "Lista base fechada mantendo PRAGMATA em revisão editorial."
+    }
   ],
   "trophies": [
     {
