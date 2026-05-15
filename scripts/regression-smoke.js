@@ -2528,7 +2528,24 @@ async function assertSeedData({ all, get }, sampleGames) {
     'Hades deve manter distribuicao 1 platina, 2 ouro, 7 prata e 40 bronze'
   );
   assert.strictEqual(hadesSample.trophies.filter(trophy => trophy.is_missable).length, 0, 'Hades nao deve marcar perdiveis reais');
-  assert.strictEqual(hadesSample.roadmap.length, 5, 'Hades deve ter roadmap editorial em 5 etapas');
+  {
+    const guideModel = require('../src/shared/guideViewModel');
+    const brokenHades = JSON.parse(JSON.stringify(hadesSample));
+    brokenHades.missable_count = 1;
+    const platinum = brokenHades.trophies.find(trophy => trophy.type === 'Platina');
+    platinum.is_missable = true;
+    platinum.isMissable = true;
+    platinum.tags = ['perdível'];
+    platinum.risk = 'missable';
+    const hadesViewModel = guideModel.buildGuideViewModel(brokenHades, []);
+    const hadesQuickDecision = guideModel.buildGuideQuickDecisionModel(brokenHades, hadesViewModel);
+    assert.strictEqual(hadesViewModel.missableCount, 0, 'Hades nao deve contar a platina como perdivel mesmo com dado legado incorreto');
+    assert.strictEqual(hadesQuickDecision.cards.find(card => card.id === 'missables').value, 'Sem perdíveis', 'badge de Hades deve mostrar Sem perdiveis quando so a platina estiver marcada por legado');
+    assert.notStrictEqual(hadesQuickDecision.firstAction.title, 'Ler alertas antes do checklist', 'primeiro passo de Hades nao deve mandar ler alertas de perdiveis inexistentes');
+    assert.strictEqual(guideModel.getGuideTrophyTags(platinum, brokenHades).some(tag => tag.id === 'missable'), false, 'platina de Hades nao deve aparecer no filtro/tag de perdiveis');
+  }
+  assert.strictEqual(hadesSample.roadmap.length, 6, 'Hades deve ter roadmap editorial em 6 etapas');
+  assert(hadesSample.roadmap.every(step => step && typeof step === 'object' && Array.isArray(step.actions)), 'roadmap de Hades deve usar etapas estruturadas');
   assert(hadesSample.online_summary.includes('sem coop') && hadesSample.online_summary.includes('offline'), 'Hades deve deixar online/coop como nao obrigatorios');
   assert(hadesSample.dlc_scope.includes('Não há DLC') || hadesSample.dlc_scope.includes('DLC necessária') || hadesSample.dlc_scope.includes('DLC necessaria'), 'Hades deve separar DLC da platina base');
   assert(hadesSample.before_you_start.includes('Pact of Punishment') && hadesSample.before_you_start.includes('Fated List'), 'Hades deve destacar Fated List e Heat na decisao inicial');
@@ -2755,8 +2772,12 @@ async function assertSeedData({ all, get }, sampleGames) {
   assert(ghostSample.dlc_scope.includes('Iki Island') && ghostSample.dlc_scope.includes('Legends'), 'Ghost of Tsushima deve separar DLC da platina base');
   assert.strictEqual(ghostSample.image, '/assets/games/ghost-of-tsushima/hero.jpg', 'Ghost of Tsushima deve usar image local horizontal valida');
   assert.strictEqual(ghostSample.cover_image, '/assets/games/ghost-of-tsushima/cover.jpg', 'Ghost of Tsushima deve expor cover_image local vertical');
-  assert(ghostSample.roadmap.some(step => step.includes('exploração livre')), 'roadmap de Ghost of Tsushima deve citar exploração livre');
-  assert(ghostSample.roadmap.some(step => step.includes('Iki, New Game+ e Legends')), 'roadmap de Ghost of Tsushima deve excluir extras da platina base');
+  const ghostSampleRoadmapText = ghostSample.roadmap.map(step => {
+    if (typeof step === 'string') return step;
+    return [step.title, step.focus, step.objective, ...(Array.isArray(step.actions) ? step.actions : []), step.note, step.warning, step.result].filter(Boolean).join(' ');
+  }).join(' ');
+  assert(/free roam|exploração livre/i.test(ghostSampleRoadmapText), 'roadmap de Ghost of Tsushima deve citar exploração livre/free roam');
+  assert(ghostSampleRoadmapText.includes('Iki Island') && ghostSampleRoadmapText.includes('New Game+') && ghostSampleRoadmapText.includes('Legends'), 'roadmap de Ghost of Tsushima deve excluir extras da platina base');
   assert.strictEqual(ghostSample.trophies.filter(trophy => trophy.is_missable).length, 0, 'Ghost of Tsushima nao deve marcar perdiveis na lista base');
   const ghostSpoilerIds = ghostSample.trophies.filter(trophy => trophy.is_spoiler).map(trophy => trophy.id);
   assert(ghostSpoilerIds.includes('got_mono_no_aware'), 'Ghost of Tsushima deve marcar final como spoiler');
@@ -2800,7 +2821,7 @@ async function assertSeedData({ all, get }, sampleGames) {
 
   const ghostRoadmapRows = await all('SELECT content FROM roadmaps WHERE game_id = (SELECT id FROM games WHERE slug = ?) ORDER BY step_order', ['ghost-of-tsushima']);
   assert.strictEqual(ghostRoadmapRows.length, 6, 'seed deve inserir 6 etapas de roadmap para Ghost of Tsushima');
-  assert(ghostRoadmapRows.some(row => row.content.includes('exploração livre')), 'seed deve persistir etapa de exploração livre para Ghost of Tsushima');
+  assert(ghostRoadmapRows.some(row => /exploração livre|free roam/i.test(row.content)), 'seed deve persistir etapa de exploração livre/free roam para Ghost of Tsushima');
 
   const ghostTrophyRows = await all('SELECT trophy_code, name, type, is_missable, is_spoiler FROM trophies WHERE game_id = (SELECT id FROM games WHERE slug = ?) ORDER BY id', ['ghost-of-tsushima']);
   assert.strictEqual(ghostTrophyRows.length, 52, 'seed deve inserir checklist base completo do Ghost of Tsushima');
@@ -11486,8 +11507,12 @@ async function assertBackendEditorialConsistency() {
     assert.strictEqual(hadesDetail.trophies.filter(trophy => trophy.type === 'Bronze').length, 40, 'Hades deve ter 40 bronze');
     assert.strictEqual(hadesDetail.missable_count, 0, 'Hades nao deve marcar perdiveis reais');
     assert.strictEqual(hadesDetail.trophies.filter(trophy => trophy.is_missable).length, 0, 'Hades deve retornar is_missable false em todos os trofeus');
-    assert.strictEqual(hadesDetail.roadmap.length, 5, 'detalhe de Hades deve retornar roadmap de 5 etapas');
-    assert(hadesDetail.roadmap.join(' ').includes('Pact of Punishment') && hadesDetail.roadmap.join(' ').includes('Fated List'), 'roadmap de Hades deve citar Pact of Punishment e Fated List');
+    assert.strictEqual(hadesDetail.roadmap.length, 6, 'detalhe de Hades deve retornar roadmap de 6 etapas');
+    const hadesRoadmapText = hadesDetail.roadmap.map(step => {
+      if (typeof step === 'string') return step;
+      return [step.title, step.focus, step.objective, ...(Array.isArray(step.actions) ? step.actions : []), step.warning, step.result].filter(Boolean).join(' ');
+    }).join(' ');
+    assert(hadesRoadmapText.includes('Pact of Punishment') && hadesRoadmapText.includes('Fated List'), 'roadmap de Hades deve citar Pact of Punishment e Fated List');
     assert(hadesDetail.online_summary.includes('Sem online') && hadesDetail.online_summary.includes('sem coop'), 'Hades deve indicar ausencia de online e coop obrigatorios');
     assert(hadesDetail.dlc_scope.includes('Não há DLC') || hadesDetail.dlc_scope.includes('DLC necessária') || hadesDetail.dlc_scope.includes('DLC necessaria'), 'Hades deve indicar DLC fora da platina base');
     assert.strictEqual(hadesDetail.is_verified, false, 'Hades nao deve estar verificado');

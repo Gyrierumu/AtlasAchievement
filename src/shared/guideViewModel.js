@@ -96,6 +96,41 @@
     return (Array.isArray(roadmap) ? roadmap : []).map(getGuideRoadmapStepText).filter(Boolean).join(' ');
   }
 
+  function isCompletionTrophy(trophy = {}) {
+    const type = normalizeGuideSignalText(trophy?.type || '');
+    const tier = normalizeGuideSignalText(trophy?.tier || '');
+    const name = normalizeGuideSignalText(`${trophy?.trophyNameOriginal || ''} ${trophy?.name || ''}`);
+    const description = normalizeGuideSignalText([
+      trophy?.descriptionOriginal,
+      trophy?.descriptionPtBr,
+      trophy?.ptDescription,
+      trophy?.localizedDescription?.ptBr,
+      trophy?.localizedDescription?.['pt-BR'],
+      trophy?.description
+    ].filter(Boolean).join(' '));
+    return type === 'platina'
+      || type === 'platinum'
+      || tier === 'platina'
+      || tier === 'platinum'
+      || /god of blood/.test(name)
+      || /earn (?:every|all) other trophies|obtenha todos os trofeus|obtenha todos os outros trofeus/.test(description);
+  }
+
+  function isRealMissableTrophy(trophy = {}) {
+    if (!trophy || isCompletionTrophy(trophy)) return false;
+    const tags = Array.isArray(trophy.tags) ? trophy.tags : [];
+    return trophy.is_missable === true
+      || trophy.isMissable === true
+      || trophy.missable === true
+      || String(trophy.risk || '').toLowerCase() === 'missable'
+      || String(trophy.riskType || '').toLowerCase() === 'missable'
+      || tags.some(tag => normalizeGuideSignalText(typeof tag === 'string' ? tag : `${tag?.id || ''} ${tag?.label || ''}`).includes('perdivel'));
+  }
+
+  function countRealMissableTrophies(trophies = []) {
+    return (Array.isArray(trophies) ? trophies : []).filter(isRealMissableTrophy).length;
+  }
+
   function getGuideCombinedPlanningText(game = {}, viewModel = {}) {
     const roadmapText = getGuideRoadmapText(viewModel.roadmap || game?.roadmap || []);
     const trophyText = (Array.isArray(viewModel.trophies || game?.trophies) ? (viewModel.trophies || game.trophies) : [])
@@ -162,7 +197,7 @@
   }
 
   function getGuideTrophyTags(trophy = {}, game = {}) {
-    if (normalizeGuideSignalText(trophy?.type || '') === 'platina') return [];
+    if (isCompletionTrophy(trophy)) return [];
     const tags = Array.isArray(getTrophyRiskTags(trophy)) ? getTrophyRiskTags(trophy).slice() : [];
     const ids = new Set(tags.map(tag => tag?.id).filter(Boolean));
     const signalText = getGuideTrophySignalText(trophy);
@@ -235,6 +270,7 @@
   }
 
   function countGuideTrophyTag(trophies = [], tagId = '') {
+    if (tagId === 'missable') return countRealMissableTrophies(trophies);
     return (Array.isArray(trophies) ? trophies : []).filter(trophy => getGuideTrophyTags(trophy).some(tag => tag.id === tagId)).length;
   }
 
@@ -367,7 +403,7 @@
     const combinedText = getGuideCombinedPlanningText(game, { ...viewModel, trophies, roadmap });
     const normalized = normalizeGuideSignalText(combinedText);
     const network = getGuideNetworkRequirementModel(game, { ...viewModel, trophies, roadmap });
-    const missableCount = Number(inputs.missableCount || riskCounts.missable || 0);
+    const missableCount = countRealMissableTrophies(trophies);
     const missableText = inputs.missableSummary || '';
     const missableNegated = hasNegatedGuideRequirement(missableText);
     const hasMissable = Boolean(!missableNegated && (missableCount || hasMissableRiskText(missableText)));
@@ -538,7 +574,8 @@
     const coopCount = countGuideTrophyTag(trophies, 'coop');
     const hasOnline = hasAffirmativeOnlineRequirement(inputs.online, onlineCount);
     const hasCoop = hasAffirmativeCoopRequirement(inputs.online, coopCount);
-    const hasMissable = Number(inputs.missableCount || riskCounts.missable || 0) > 0 || hasMissableRiskText(inputs.missableSummary);
+    const missableText = firstGuideText(inputs.missableSummary, game?.missable);
+    const hasMissable = countRealMissableTrophies(trophies) > 0 || (!hasNegatedGuideRequirement(missableText) && hasMissableRiskText(missableText));
     const timeValue = getTimeValue(game);
     return Boolean(
       hasMissable
@@ -559,7 +596,7 @@
     const riskCounts = viewModel.riskCounts || getRiskCounts(trophies);
     const total = Number(inputs.trophyCount || viewModel.total || trophies.length || 0);
     const network = getGuideNetworkRequirementModel(game, { ...viewModel, trophies });
-    const missableCount = Number(inputs.missableCount || riskCounts.missable || 0);
+    const missableCount = countRealMissableTrophies(trophies);
     const hasMissableText = hasMissableRiskText(inputs.missableSummary);
     const dlcScope = buildGuideDlcScopeModel(game, inputs);
     const statusBadge = viewModel.editorial?.statusBadge || getGuideEditorialStatusBadge(game, getEditorialBadge(game));
@@ -645,7 +682,7 @@
       : buildGuideBeforeStartItems(game, { ...viewModel, trophies, roadmap, riskCounts });
 
     const missableText = firstGuideText(inputs.missableSummary, game?.missable);
-    const missableCount = Number(inputs.missableCount || riskCounts.missable || 0);
+    const missableCount = countRealMissableTrophies(trophies);
     const hasMissable = Boolean(missableCount || (!hasNegatedGuideRequirement(missableText) && hasMissableRiskText(missableText)));
     const missableReview = !missableText || (!hasMissable && hasGuideReviewSignal(missableText));
     const onlineReview = !inputs.online || (!network.hasOnline && hasGuideOnlineReviewSignal(inputs.online));
@@ -826,7 +863,7 @@
     const trophies = Array.isArray(viewModel.trophies) ? viewModel.trophies : [];
     const inputs = getGuideVerdictInputs(game, viewModel);
     const riskCounts = viewModel.riskCounts || getRiskCounts(trophies);
-    const missableCount = Number(inputs.missableCount || riskCounts.missable || 0);
+    const missableCount = countRealMissableTrophies(trophies);
     const network = getGuideNetworkRequirementModel(game, { ...viewModel, trophies });
     const onlineCount = network.onlineCount;
     const coopCount = network.coopCount;
@@ -838,13 +875,23 @@
     const dlcText = firstGuideText(inputs.dlc);
     const alerts = [];
 
-    if (missableCount || inputs.missableSummary) {
+    const missableText = firstGuideText(inputs.missableSummary, game?.missable);
+    const hasMissable = Boolean(missableCount || (!hasNegatedGuideRequirement(missableText) && hasMissableRiskText(missableText)));
+    if (hasMissable) {
       alerts.push({
         icon: 'fa-triangle-exclamation',
         tone: 'risk',
         label: 'Perdíveis',
         title: 'Atenção: há troféus perdíveis.',
-        detail: compactGuideText(inputs.missableSummary, `${missableCount || 1} ponto(s) precisam ser revisados antes de avançar demais.`, 150)
+        detail: compactGuideText(missableText, `${missableCount || 1} ponto(s) precisam ser revisados antes de avançar demais.`, 150)
+      });
+    } else if (missableText) {
+      alerts.push({
+        icon: 'fa-shield-halved',
+        tone: 'soft',
+        label: 'Perdíveis',
+        title: 'Sem perdíveis reais confirmados.',
+        detail: compactGuideText(missableText, 'A platina não conta como perdível e não há bloqueio crítico marcado.', 150)
       });
     }
     if (onlineCount || coopCount) {
@@ -944,7 +991,7 @@
     const started = completedCount > 0;
     const pendingTrophies = trophies.filter(trophy => trophy && !completedSet.has(trophy.id));
     const firstPending = pendingTrophies[0] || null;
-    const missablePending = pendingTrophies.find(trophy => trophy && trophy.is_missable);
+    const missablePending = pendingTrophies.find(isRealMissableTrophy);
     const spoilerPending = pendingTrophies.find(trophy => trophy && trophy.is_spoiler);
     const roadmapCount = Array.isArray(game.roadmap) ? game.roadmap.length : Number(game.roadmap_count || 0);
 
@@ -974,6 +1021,17 @@
 
     if (!started && roadmapCount > 0) {
       const readRoadmapFirst = shouldReadRoadmapFirst(game, trophies, Array.isArray(game.roadmap) ? game.roadmap : []);
+      if (String(game?.slug || '').trim().toLowerCase() === 'hades') {
+        return {
+          kind: 'roadmap',
+          title: 'Comece pelas primeiras runs',
+          detail: 'Faça as primeiras runs evoluindo a Mirror of Night, testando armas e avançando a história sem se preocupar com limpeza completa no início.',
+          cta: 'Abrir roadmap',
+          focus: 'roadmap',
+          trophyId: firstPending?.id || '',
+          trophyName: firstPending?.name || ''
+        };
+      }
       return {
         kind: readRoadmapFirst ? 'roadmap' : 'checklist',
         title: readRoadmapFirst ? 'Ler alertas antes do checklist' : 'Ir direto para o checklist',
@@ -1316,7 +1374,7 @@
     const dlcScope = buildGuideDlcScopeModel(game, inputs);
     const combinedText = getGuideCombinedPlanningText(game, { ...viewModel, trophies, roadmap });
     const missableText = firstGuideText(inputs.missableSummary, game?.missable);
-    const missableCount = Number(inputs.missableCount || riskCounts.missable || trophies.filter(trophy => trophy?.is_missable).length || 0);
+    const missableCount = countRealMissableTrophies(trophies);
     const hasMissable = Boolean(missableCount || (!hasNegatedGuideRequirement(missableText) && hasMissableRiskText(missableText)));
     const missableReview = !missableText || (!hasMissable && hasGuideReviewSignal(missableText));
     const onlineReview = !inputs.online || (!network.hasOnline && hasGuideOnlineReviewSignal(inputs.online));
@@ -1415,7 +1473,7 @@
       return [
         {
           question: 'Hades tem troféus perdíveis?',
-          answer: 'Não. O guia trata Hades como sem perdíveis reais: objetivos demorados, RNG, diálogos, peixes, profecias e Heat podem atrasar a platina, mas podem ser retomados em novas runs.'
+          answer: 'Não há perdíveis reais confirmados para a platina de Hades. O desafio está em repetição de runs, relacionamentos, Fated List, Keepsakes, Companions, Pact of Punishment/Heat e limpeza final.'
         },
         {
           question: 'Hades precisa de online para platinar?',
@@ -1424,6 +1482,14 @@
         {
           question: 'Hades tem coop obrigatório?',
           answer: 'Não. Hades é uma platina single-player e o guia não aponta coop obrigatório.'
+        },
+        {
+          question: 'God Mode bloqueia troféus em Hades?',
+          answer: 'Não. God Mode é tratado como recurso opcional de acessibilidade/dificuldade e não invalida troféus da lista base.'
+        },
+        {
+          question: 'Dá para fazer tudo no mesmo save?',
+          answer: 'Sim. A platina pode ser avançada no mesmo save, acumulando progresso entre runs para relacionamentos, Fated List, Keepsakes, Companions, Heat e cleanup.'
         },
         {
           question: 'Quanto tempo leva para platinar Hades?',
@@ -1554,7 +1620,7 @@
   function buildGuideDecisionModel(game, trophies = [], roadmap = []) {
     const difficulty = Number(game?.difficulty || 0);
     const total = Array.isArray(trophies) ? trophies.length : 0;
-    const missables = trophies.filter(trophy => trophy && (trophy.is_missable || trophy.is_spoiler)).length;
+    const missables = trophies.filter(trophy => trophy && (isRealMissableTrophy(trophy) || trophy.is_spoiler)).length;
     const roadmapCount = Array.isArray(roadmap) ? roadmap.length : 0;
 
     let fitLabel = 'Projeto enxuto';
@@ -1626,7 +1692,7 @@
     const timeValue = getTimeValue(game);
     const hasTimeValue = hasKnownTimeValue(timeValue);
     const difficulty = Number(game?.difficulty || 0);
-    const missableCount = trophies.filter(trophy => trophy?.is_missable).length;
+    const missableCount = countRealMissableTrophies(trophies);
     if (roadmap.length >= 4 || missableCount >= 3 || difficulty >= 8 || (hasTimeValue && timeValue > 40)) return 'Provável multi-run ou cleanup pesado';
     if (roadmap.length >= 2 || difficulty >= 5 || missableCount >= 1 || (hasTimeValue && timeValue > 15)) return '1 run + cleanup provável';
     return 'Boa chance de 1 run bem guiada';
@@ -1725,7 +1791,7 @@
 
   function buildGuideSnapshot(game = {}, trophies = [], roadmap = [], editorialModel = null) {
     const total = trophies.length;
-    const missableCount = trophies.filter(trophy => trophy?.is_missable).length;
+    const missableCount = countRealMissableTrophies(trophies);
     const onlineCount = trophies.filter(trophy => /online|multiplayer|coop/i.test(`${trophy?.name || ''} ${trophy?.description || ''} ${trophy?.tip || ''}`)).length;
     const grindCount = trophies.filter(trophy => /grind|farm|\brank\b|\bxp\b|\bnível\b|\blevel\b/i.test(`${trophy?.name || ''} ${trophy?.description || ''} ${trophy?.tip || ''}`)).length;
     const spoilerCount = trophies.filter(trophy => trophy?.is_spoiler).length;
@@ -1753,7 +1819,9 @@
     const parsedTimeValue = getTimeValue(game);
     const trophyCount = Number(game?.trophy_count || viewModel.total || trophies.length || 0);
     const roadmapCount = Number(game?.roadmap_count || roadmap.length || 0);
-    const missableCount = Number(game?.missable_count || viewModel.missableCount || trophies.filter(trophy => trophy?.is_missable).length || 0);
+    const missableCount = trophies.length
+      ? countRealMissableTrophies(trophies)
+      : Number(viewModel.missableCount || game?.missable_count || 0);
     const spoilerCount = Number(game?.spoiler_count || viewModel.spoilerCount || trophies.filter(trophy => trophy?.is_spoiler).length || 0);
     return {
       difficulty: Number(game?.difficulty || 0),
@@ -1930,7 +1998,7 @@
   function buildPrepCards(game = {}, viewModel = {}) {
     const trophies = Array.isArray(viewModel.trophies) ? viewModel.trophies : [];
     const roadmapCount = Array.isArray(viewModel.roadmap) ? viewModel.roadmap.length : 0;
-    const missableCount = trophies.filter(trophy => trophy && trophy.is_missable).length;
+    const missableCount = countRealMissableTrophies(trophies);
     const spoilerCount = trophies.filter(trophy => trophy && trophy.is_spoiler).length;
     const hasLongList = trophies.length >= 45;
     const timeLabel = game?.time || 'Tempo não informado';
@@ -1948,7 +2016,7 @@
       .map(trophy => {
         const bag = `${trophy?.name || ''} ${trophy?.description || ''} ${trophy?.tip || ''}`.toLowerCase();
         let score = 0;
-        if (trophy?.is_missable) score += 5;
+        if (isRealMissableTrophy(trophy)) score += 5;
         if (trophy?.is_spoiler) score += 2;
         if (/online|multiplayer|coop/.test(bag)) score += 4;
         if (/grind|farm|\brank\b|\bxp\b|\bnível\b|\blevel\b/.test(bag)) score += 3;
@@ -1956,7 +2024,7 @@
         if (/difficulty|dificuldade|hard|survival/.test(bag)) score += 2;
         return {
           name: trophy?.name || 'Troféu',
-          label: trophy?.is_missable ? 'Perdível' : (trophy?.is_spoiler ? 'Spoiler / atenção' : (trophy?.type || 'Troféu')),
+          label: isRealMissableTrophy(trophy) ? 'Perdível' : (trophy?.is_spoiler ? 'Spoiler / atenção' : (trophy?.type || 'Troféu')),
           reason: trophy?.tip || trophy?.description || 'Requer leitura antes da run.',
           score
         };
@@ -1980,7 +2048,7 @@
     const difficulty = Number(game?.difficulty || 0);
     const onlineCount = trophies.filter(trophy => /online|multiplayer|coop/i.test(`${trophy?.name || ''} ${trophy?.description || ''} ${trophy?.tip || ''}`)).length;
     const grindCount = trophies.filter(trophy => /grind|farm|\brank\b|\bxp\b|\bnível\b|\blevel\b/i.test(`${trophy?.name || ''} ${trophy?.description || ''} ${trophy?.tip || ''}`)).length;
-    const missableCount = trophies.filter(trophy => trophy?.is_missable).length;
+    const missableCount = countRealMissableTrophies(trophies);
 
     let timeBand = 'Tempo não informado';
     let timeDetail = 'Valide a estimativa antes de assumir compromisso longo ou planejar sessões apertadas.';
@@ -2023,8 +2091,8 @@
     const total = trophies.length;
     const progress = total ? Math.round((completed / total) * 100) : 0;
     const pending = Math.max(total - completed, 0);
-    const missableCount = trophies.filter(trophy => trophy && trophy.is_missable).length;
-    const attentionCount = trophies.filter(trophy => trophy && (trophy.is_missable || trophy.is_spoiler)).length;
+    const missableCount = countRealMissableTrophies(trophies);
+    const attentionCount = trophies.filter(trophy => trophy && (isRealMissableTrophy(trophy) || trophy.is_spoiler)).length;
     const spoilerCount = trophies.filter(trophy => trophy?.is_spoiler).length;
     const riskCounts = getRiskCounts(trophies);
     const breakdown = getTrophyBreakdown(trophies);
@@ -2099,6 +2167,9 @@
     firstGuideText,
     compactGuideText,
     normalizeGuideSignalText,
+    isCompletionTrophy,
+    isRealMissableTrophy,
+    countRealMissableTrophies,
     getGuideTrophyTags,
     getGuideTrophyDisplayTags,
     getGuideTrophySearchText,

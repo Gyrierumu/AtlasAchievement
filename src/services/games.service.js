@@ -157,7 +157,16 @@ function ensurePublicGame(row, includeDrafts = false) {
 }
 
 function normalizeGame(row, roadmapRows, trophyRows) {
-  const isPlatinumTrophy = item => String(item?.type || '').trim().toLowerCase() === 'platina';
+  const normalizeCompletionText = value => String(value || '').trim().toLowerCase().normalize('NFD').replace(/[\u0300-\u036f]/g, '');
+  const isPlatinumTrophy = item => {
+    const type = normalizeCompletionText(item?.type);
+    const name = normalizeCompletionText(item?.name);
+    const description = normalizeCompletionText(item?.description);
+    return type === 'platina'
+      || type === 'platinum'
+      || /god of blood/.test(name)
+      || /earn (?:every|all) other trophies|obtenha todos os trofeus|obtenha todos os outros trofeus/.test(description);
+  };
   const supportsLocalizedDescriptions = ['elden-ring', 'hades', 'pragmata', 'ghost-of-tsushima'].includes(String(row.slug || '').trim().toLowerCase());
   const missableCount = trophyRows.filter(item => item.is_missable && !isPlatinumTrophy(item)).length;
   const spoilerCount = trophyRows.filter(item => item.is_spoiler).length;
@@ -507,9 +516,9 @@ async function listGames(options = {}) {
            g.created_at,
            g.updated_at,
            COUNT(DISTINCT t.id) AS trophy_count,
-           COUNT(DISTINCT CASE WHEN t.is_missable = 1 THEN t.id END) AS missable_count,
+           COUNT(DISTINCT CASE WHEN t.is_missable = 1 AND lower(coalesce(t.type, '')) NOT IN ('platina', 'platinum') THEN t.id END) AS missable_count,
            COUNT(DISTINCT CASE WHEN t.is_spoiler = 1 THEN t.id END) AS spoiler_count,
-           COUNT(DISTINCT CASE WHEN t.is_missable = 1 OR t.is_spoiler = 1 THEN t.id END) AS attention_count,
+           COUNT(DISTINCT CASE WHEN (t.is_missable = 1 AND lower(coalesce(t.type, '')) NOT IN ('platina', 'platinum')) OR t.is_spoiler = 1 THEN t.id END) AS attention_count,
            COUNT(DISTINCT r.id) AS roadmap_count
     FROM games g
     LEFT JOIN trophies t ON t.game_id = g.id

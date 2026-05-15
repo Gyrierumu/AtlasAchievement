@@ -1387,12 +1387,79 @@ const sampleGames = [
     "best_for": "Excelente para quem gosta de progresso incremental, builds variadas, ação responsiva e uma platina longa em que quase toda tentativa avança algum sistema.",
     "avoid_if": "Evite se você quer uma platina curta, linear, sem repetição de runs ou sem depender de diálogos, RNG e grind de recursos.",
     "roadmap": [
-      "title: Aprenda as armas e fortaleça Zagreus | focus: Primeiras runs | objective: Usar as primeiras tentativas para aprender combate, chefes, boons e melhorias permanentes. | actions: Teste armas diferentes para descobrir qual combina com seu estilo.; Invista recursos na Mirror of Night para melhorar consistência nas runs.; Observe padrões dos chefes sem tentar fazer 100% logo no início.; Comece a acompanhar profecias da Fated List quando forem liberadas. | result: Base de progressão criada para escapar com mais frequência.",
-      "title: Faça a primeira fuga e avance a história | focus: História e consistência | objective: Conseguir completar runs e destravar mais diálogos, recursos e sistemas. | actions: Foque em builds consistentes até conseguir a primeira fuga.; Continue evoluindo a Mirror of Night.; Distribua Nectar com intenção, priorizando personagens ligados a troféus e lembranças.; Use Keepsakes para facilitar builds e acelerar progresso. | result: Primeira fuga concluída e progresso narrativo avançando.",
-      "title: Trabalhe relacionamentos e coleções | focus: Relacionamentos e coletáveis | objective: Avançar troféus ligados a Nectar, Ambrosia, Keepsakes, Companions e personagens. | actions: Continue conversando com personagens entre as runs.; Acompanhe quem ainda precisa de Nectar ou Ambrosia.; Evolua Keepsakes e desbloqueie Companions conforme os requisitos aparecerem.; Use o checklist para evitar perder controle do grind. | result: Relacionamentos e coleções principais encaminhados.",
-      "title: Complete Fated List e objetivos longos | focus: Grind e profecias | objective: Reduzir pendências de longo prazo ligadas à Fated List, armas, boons e tarefas específicas. | actions: Consulte a Fated List com frequência para priorizar objetivos pendentes.; Varie armas, aspectos e deuses para completar requisitos diferentes.; Separe troféus de grind dos troféus de história para não repetir runs sem foco. | result: Grande parte do grind estrutural concluída.",
-      "title: Suba Heat com Pact of Punishment | focus: Dificuldade e progressão | objective: Cumprir requisitos ligados ao Pact of Punishment sem tentar Heat alto cedo demais. | actions: Comece a aumentar Heat gradualmente depois de ter builds mais consistentes.; Escolha modificadores que você consegue controlar.; Use armas confortáveis para troféus ligados a dificuldade. | warning: Heat não é online nem coop; é progressão/dificuldade dentro das runs.",
-      "title: Cleanup final da platina | focus: Limpeza | objective: Finalizar troféus restantes de relacionamentos, profecias, Companions, Keepsakes e runs. | actions: Revise o checklist completo antes de continuar fazendo runs aleatórias.; Finalize pendências de personagens e recursos raros.; Complete objetivos restantes da Fated List.; Feche qualquer troféu de Heat, arma ou progressão que ainda faltar. | result: Checklist completo e platina pronta."
+      {
+        "title": "Aprenda armas, boons e o loop das runs",
+        "focus": "Primeiras runs",
+        "objective": "Entender o combate, testar armas e acumular Darkness/Keys para destravar progresso permanente.",
+        "actions": [
+          "Teste armas diferentes cedo.",
+          "Priorize rotas com Darkness e Chthonic Keys no início.",
+          "Comece a investir na Mirror of Night.",
+          "Não tente fazer 100% nos primeiros escapes."
+        ],
+        "result": "Base de progressão montada para runs mais consistentes."
+      },
+      {
+        "title": "Faça a primeira fuga e abra sistemas centrais",
+        "focus": "História e progressão",
+        "objective": "Conseguir a primeira escape e liberar sistemas que ampliam a rota da platina.",
+        "actions": [
+          "Foque em completar uma run com build estável.",
+          "Converse com personagens entre runs.",
+          "Garanta acesso ao Codex e acompanhe Nectar dado a NPCs.",
+          "Comece a observar House Contractor, Keepsakes e demais desbloqueios."
+        ],
+        "result": "Primeira fuga concluída e sistemas principais liberados."
+      },
+      {
+        "title": "Trabalhe relacionamentos, Keepsakes e Companions",
+        "focus": "Relacionamentos",
+        "objective": "Avançar troféus ligados a Nectar, vínculos, Keepsakes e Companions sem grind cego.",
+        "actions": [
+          "Distribua Nectar de forma planejada.",
+          "Evolua Keepsakes em paralelo às runs.",
+          "Acompanhe personagens com progresso de vínculo.",
+          "Evite perder controle do checklist de relacionamentos."
+        ],
+        "result": "Boa parte dos troféus sociais e de coleção encaminhada."
+      },
+      {
+        "title": "Feche profecias, espelho e coleções estruturais",
+        "focus": "Prophecies e sistema da casa",
+        "objective": "Resolver troféus de Prophecies, Mirror of Night, Codex, Contractor e Broker.",
+        "actions": [
+          "Consulte a Fated List com frequência.",
+          "Varie armas, boons e aspectos para completar requisitos diferentes.",
+          "Complete compras/trabalhos e trocas da casa no mesmo save.",
+          "Use o checklist para separar grind estrutural de troféus situacionais."
+        ],
+        "result": "Miolo da platina avançado com menos retrabalho."
+      },
+      {
+        "title": "Suba Heat com o Pact of Punishment",
+        "focus": "Dificuldade",
+        "objective": "Cumprir troféus ligados ao Pact of Punishment e desafios de Skelly sem exagerar cedo demais.",
+        "actions": [
+          "Aumente Heat gradualmente.",
+          "Use armas/builds confortáveis para requisitos específicos.",
+          "Trate God Mode como recurso opcional, não como invalidador de troféu.",
+          "Não marque essa etapa como perdível."
+        ],
+        "warning": "A dificuldade extra deve ser tratada como progressão planejada, não como lockout.",
+        "result": "Troféus de Heat e desafios avançados encaminhados."
+      },
+      {
+        "title": "Cleanup final da platina",
+        "focus": "Checklist final",
+        "objective": "Revisar o save, fechar pendências e confirmar a lista base.",
+        "actions": [
+          "Revise checklist completo e “Ver detalhes”.",
+          "Feche o que faltar de profecias, Keepsakes, Companions, relações e troféus situacionais.",
+          "Confirme que a platina não está marcada como perdível.",
+          "Confirme que o FAQ, tags e a decisão rápida estão coerentes com o guia final."
+        ],
+        "result": "Guia consistente e platina pronta sem erros de classificação."
+      }
     ],
     "trophies": [
       {
@@ -27051,6 +27118,109 @@ const hadesDescriptionOriginalById = {
   hades_three_headed_boy: "Pet Cerberus 10 times."
 };
 
+const hadesStoryTrophyIds = new Set([
+  'hades_tartarus',
+  'hades_asphodel',
+  'hades_elysium',
+  'hades_escape',
+  'hades_back_to_work',
+  'hades_family_secret',
+  'hades_epilogue'
+]);
+
+const hadesRelationshipTrophyIds = new Set([
+  'hades_bond',
+  'hades_rare_collectible',
+  'hades_complete_set',
+  'hades_urge_to_sing',
+  'hades_night_and_darkness',
+  'hades_chthonic_colleagues',
+  'hades_war_gods_bloodlust',
+  'hades_end_to_torment',
+  'hades_musician_and_muse',
+  'hades_divided_by_death',
+  'hades_family_secret',
+  'hades_epilogue'
+]);
+
+const hadesCollectibleTrophyIds = new Set([
+  'hades_keepsakes',
+  'hades_friends_forever',
+  'hades_rare_collectible',
+  'hades_complete_set',
+  'hades_infernal_arms',
+  'hades_arms_collector',
+  'hades_blessed_by_the_gods',
+  'hades_tools_of_the_architect',
+  'hades_well_versed',
+  'hades_river_denizens'
+]);
+
+const hadesDifficultyTrophyIds = new Set([
+  'hades_champion_of_elysium',
+  'hades_hold_the_onions',
+  'hades_useless_trinket',
+  'hades_skelly_last_lamentations',
+  'hades_harsh_conditions',
+  'hades_slashed_benefits',
+  'hades_thorn_of_thanatos',
+  'hades_haste_of_hermes',
+  'hades_death_dealer',
+  'hades_bad_call'
+]);
+
+const hadesPostGameTrophyIds = new Set([
+  'hades_useless_trinket',
+  'hades_skelly_last_lamentations',
+  'hades_complete_set',
+  'hades_friends_forever',
+  'hades_had_to_happen',
+  'hades_dark_reflections',
+  'hades_harsh_conditions',
+  'hades_master_of_arms',
+  'hades_slashed_benefits',
+  'hades_family_secret',
+  'hades_epilogue',
+  'hades_night_and_darkness',
+  'hades_chthonic_colleagues',
+  'hades_war_gods_bloodlust',
+  'hades_end_to_torment',
+  'hades_musician_and_muse',
+  'hades_divided_by_death'
+]);
+
+const hadesGrindTrophyIds = new Set([
+  'hades_keepsakes',
+  'hades_friends_forever',
+  'hades_complete_set',
+  'hades_blessed_by_the_gods',
+  'hades_tools_of_the_architect',
+  'hades_day_or_night_trader',
+  'hades_home_makeover',
+  'hades_had_to_happen',
+  'hades_river_denizens',
+  'hades_dark_reflections',
+  'hades_harsh_conditions',
+  'hades_master_of_arms',
+  'hades_slashed_benefits',
+  'hades_well_stocked',
+  'hades_skelly_slayer',
+  'hades_three_headed_boy'
+]);
+
+function buildHadesTrophyTags(trophy = {}) {
+  const id = trophy.id || '';
+  const tags = trophy.type === 'Platina' ? ['platina'] : [];
+  if (hadesStoryTrophyIds.has(id)) tags.push('história');
+  if (hadesRelationshipTrophyIds.has(id)) tags.push('relacionamento');
+  if (hadesCollectibleTrophyIds.has(id)) tags.push('coletável');
+  if (hadesDifficultyTrophyIds.has(id)) tags.push('dificuldade');
+  if (hadesPostGameTrophyIds.has(id)) tags.push('pós-jogo');
+  if (hadesGrindTrophyIds.has(id)) tags.push('grind');
+  if (!tags.length) tags.push('progressão');
+  return [...new Set(tags)].filter(tag => !/perd[ií]vel|online|coop/i.test(tag));
+}
+
 const ghostDescriptionOriginalById = {
   got_living_legend: "Obtain all trophies.",
   got_gathering_storm: "Recover the katana of clan Sakai.",
@@ -27133,9 +27303,21 @@ for (const game of sampleGames) {
       trophy.tags = [...new Set(tags)];
     }
     if (game.slug === 'hades') {
+      trophy.trophyNameOriginal = trophy.name;
+      trophy.trophyNamePtBr = trophy.name_pt || null;
       trophy.descriptionPtBr = trophy.description;
+      trophy.ptDescription = trophy.description;
+      trophy.localizedDescription = { ...(trophy.localizedDescription || {}), ptBr: trophy.description };
       trophy.descriptionOriginal = hadesDescriptionOriginalById[trophy.id] || trophy.descriptionOriginal || '';
+      trophy.tier = trophy.type;
+      trophy.guideTip = trophy.tip || '';
       trophy.is_missable = false;
+      trophy.isMissable = false;
+      trophy.is_online = false;
+      trophy.isOnline = false;
+      trophy.is_coop = false;
+      trophy.isCoop = false;
+      trophy.tags = buildHadesTrophyTags(trophy);
     }
     if (game.slug === 'ghost-of-tsushima') {
       trophy.descriptionPtBr = trophy.description;
@@ -27145,7 +27327,8 @@ for (const game of sampleGames) {
     if (trophyNamePtById[trophy.id]) {
       trophy.name_pt = trophyNamePtById[trophy.id];
     }
-    trophy.is_missable = Boolean(trophy.is_missable || missableTrophyIds.has(trophy.id));
+    trophy.is_missable = game.slug === 'hades' ? false : Boolean(trophy.is_missable || missableTrophyIds.has(trophy.id));
+    if (game.slug === 'hades') trophy.isMissable = false;
   }
 }
 

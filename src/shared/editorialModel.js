@@ -140,6 +140,26 @@
     return /nao (?:fica|e|eh|sao|são|ha|existe|existem).*perdivel|nao .*perdiveis|sem .*perdivel|sem .*perdiveis|nada .*perdivel|nada .*missable|free roam|cleanup completo/.test(text);
   }
 
+  function isCompletionTrophy(trophy = {}) {
+    const type = normalizeRiskText(trophy?.type || '');
+    const tier = normalizeRiskText(trophy?.tier || '');
+    const name = normalizeRiskText(`${trophy?.trophyNameOriginal || ''} ${trophy?.name || ''}`);
+    const description = normalizeRiskText([
+      trophy?.descriptionOriginal,
+      trophy?.descriptionPtBr,
+      trophy?.ptDescription,
+      trophy?.localizedDescription?.ptBr,
+      trophy?.localizedDescription?.['pt-BR'],
+      trophy?.description
+    ].filter(Boolean).join(' '));
+    return type === 'platina'
+      || type === 'platinum'
+      || tier === 'platina'
+      || tier === 'platinum'
+      || /god of blood/.test(name)
+      || /earn (?:every|all) other trophies|obtenha todos os trofeus|obtenha todos os outros trofeus/.test(description);
+  }
+
   function pushRiskTag(tags, id) {
     if (!TROPHY_RISK_DEFINITIONS[id] || tags.some(tag => tag.id === id)) return;
     tags.push({ id, ...TROPHY_RISK_DEFINITIONS[id] });
@@ -148,7 +168,7 @@
   function getTrophyRiskTags(trophy = {}) {
     const text = normalizeRiskText(`${trophy?.name || ''} ${trophy?.description || ''} ${trophy?.tip || ''}`);
     const tags = [];
-    const isPlatinum = normalizeRiskText(trophy?.type || '') === 'platina';
+    const isPlatinum = isCompletionTrophy(trophy);
     if (isPlatinum) return tags;
     if (!isPlatinum && (trophy?.is_missable || (!hasNegatedMissableRiskTagText(text) && /perdivel|missable|perder|ficar indisponivel|bloqueia|sem chapter|no chapter|janela/.test(text)))) pushRiskTag(tags, 'missable');
     if (trophy?.is_spoiler) pushRiskTag(tags, 'spoiler');
