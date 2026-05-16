@@ -2344,7 +2344,8 @@ const sampleGames = [
     "roadmap": [
       {
         "title": "Etapa 1",
-        "focus": "História",
+        "focus": "Conclua as nebulosas e aprenda os poderes",
+        "category": "História",
         "objective": "Avançar pela campanha principal enquanto aprende as mecânicas, resgata bots e coleta peças sem precisar limpar tudo de primeira.",
         "actions": [
           "Avance pelas cinco nebulosas principais no ritmo normal.",
@@ -2357,8 +2358,9 @@ const sampleGames = [
       },
       {
         "title": "Etapa 2",
-        "focus": "Coletáveis",
-        "objective": "Revisitar fases com pendências, encontrar as saídas secretas e completar os colecionáveis necessários para a platina.",
+        "focus": "Rejogue fases e complete os colecionáveis",
+        "category": "Coletáveis",
+        "objective": "Revisitar fases com pendências para completar bots, peças de quebra-cabeça e saídas secretas necessárias para a platina.",
         "actions": [
           "Rejogue fases que ainda tenham bots, peças ou saídas secretas faltando.",
           "Procure as saídas secretas que liberam a Lost Galaxy.",
@@ -2371,8 +2373,9 @@ const sampleGames = [
       },
       {
         "title": "Etapa 3",
-        "focus": "Hub",
-        "objective": "Liberar as áreas do hub, comprar recompensas no Gatcha Lab e resolver troféus de interação.",
+        "focus": "Finalize o Crash Site e o Gatcha Lab",
+        "category": "Hub",
+        "objective": "Usar as peças e moedas acumuladas para liberar áreas do hub, comprar recompensas e preparar troféus de interação.",
         "actions": [
           "Use peças de quebra-cabeça para abrir as instalações do Crash Site.",
           "Libere áreas como Gatcha Lab, Safari Park, Dual Speeder Garage e Changing Room conforme o progresso permitir.",
@@ -2380,12 +2383,13 @@ const sampleGames = [
           "Interaja com bots, objetos e props do hub para encaminhar troféus contextuais.",
           "Rejogue fases curtas se ainda faltarem moedas para o Gatcha Lab."
         ],
-        "warning": "Evite transformar a coleta de moedas em grind cedo demais; a limpeza dos níveis costuma gerar boa parte do necessário.",
+        "warning": "Evite transformar moedas em grind cedo demais; a limpeza dos níveis costuma gerar boa parte do necessário.",
         "result": "Crash Site avançado, Gatcha Lab resolvido e troféus de hub bem encaminhados."
       },
       {
         "title": "Etapa 4",
-        "focus": "Desafio final",
+        "focus": "Libere a Estátua Dourada e o desafio final",
+        "category": "Desafio final",
         "objective": "Abrir o caminho para o desafio final da platina e concluir a etapa ligada ao Special Master Bot.",
         "actions": [
           "Confirme se todas as 120 peças de quebra-cabeça foram coletadas.",
@@ -2398,10 +2402,11 @@ const sampleGames = [
       },
       {
         "title": "Etapa 5",
-        "focus": "Cleanup",
-        "objective": "Finalizar qualquer troféu contextual, de interação ou coleta que tenha sobrado.",
+        "focus": "Faça o cleanup dos troféus contextuais",
+        "category": "Cleanup",
+        "objective": "Finalizar troféus específicos de fases, interações do Crash Site e qualquer pendência restante da lista base.",
         "actions": [
-          "Abra o checklist e revise os troféus restantes.",
+          "Abra o checklist e revise quais troféus ainda não foram concluídos.",
           "Resolva troféus específicos de fases que não vieram naturalmente.",
           "Confira interações do Crash Site que dependem de bots e itens do Gatcha Lab.",
           "Verifique se os requisitos de 300 bots, 120 peças e 150 recompensas estão concluídos.",
@@ -2673,7 +2678,7 @@ const sampleGames = [
         "title": "Etapa 1",
         "focus": "Faça a campanha 100% com saves manuais",
         "category": "Coleta inicial",
-        "objective": "Concluir a primeira campanha coletando tesouros, Castellans, pedidos do Mercador e troféus de capítulo sem depender de chapter select depois.",
+        "objective": "Concluir a primeira campanha coletando tesouros, castelões mecânicos, pedidos do Mercador e troféus de capítulo sem depender de chapter select depois.",
         "actions": [
           "Jogue em Assisted ou Standard para facilitar a coleta inicial.",
           "Pegue tesouros, Clockwork Castellans e pedidos do Mercador conforme avança pelos capítulos.",
@@ -2682,11 +2687,11 @@ const sampleGames = [
           "Priorize melhorar uma pistola confiável e preparar recursos para as próximas runs."
         ],
         "warning": "O jogo não tem chapter select nem free-roam final; muitos troféus exigem replay se forem ignorados no capítulo certo.",
-        "result": "História concluída, grande parte dos colecionáveis resolvida e base preparada para New Game+."
+        "result": "História concluída, boa parte dos colecionáveis resolvida e base preparada para New Game+."
       },
       {
         "title": "Etapa 2",
-        "focus": "Organize armas, Castellans e New Game+",
+        "focus": "Organize armas, castelões e New Game+",
         "category": "Preparação",
         "objective": "Usar o pós-jogo para preparar armas especiais, upgrades e saves que reduzem retrabalho nas runs de restrição e rank.",
         "actions": [
@@ -2711,7 +2716,7 @@ const sampleGames = [
           "Salve em slots separados para corrigir qualquer erro de restrição."
         ],
         "warning": "Granadas, ovos, armas especiais e outros recursos podem invalidar Minimalist se usados fora das exceções permitidas.",
-        "result": "Minimalist e Silent Stranger concluídos ou encaminhados sem precisar repetir a campanha inteira."
+        "result": "Minimalist e Silent Stranger concluídos ou encaminhados sem repetir a campanha inteira."
       },
       {
         "title": "Etapa 4",
@@ -2722,10 +2727,10 @@ const sampleGames = [
           "Complete Professional com rank A para liberar Chicago Sweeper.",
           "Use Infinite Rocket Launcher em New Game+ se estiver seguindo a rota mais segura.",
           "Considere Mercenaries como rota opcional para Handcannon, se o guia adotar essa estratégia.",
-          "Se não usar The Mercenaries, documente a alternativa de Professional New Game sem armas especiais.",
+          "Se não usar Mercenaries, documente a alternativa de Professional New Game sem armas especiais.",
           "Atualize o progresso de Gun Fanatic conforme todas as armas forem obtidas."
         ],
-        "warning": "Tickets pagos de upgrade podem facilitar, mas não devem aparecer como necessários para a platina.",
+        "warning": "Tickets pagos de upgrade podem facilitar, mas nunca devem aparecer como necessários para a platina.",
         "result": "Armas especiais e desbloqueios principais prontos para as runs S+ e cleanup."
       },
       {

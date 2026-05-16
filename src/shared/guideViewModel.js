@@ -1246,7 +1246,11 @@
       ? (Array.isArray(source?.trophies) ? source.trophies : (Array.isArray(source?.relatedTrophies) ? source.relatedTrophies : []))
       : [];
     const title = cleanRoadmapFieldText(structured?.title || (isObject ? (source.title || source.name || source.label) : '') || '');
-    const focus = cleanRoadmapFieldText(structured?.focus || (isObject ? (source.focus || source.tag || source.category) : '') || '');
+    const rawFocus = cleanRoadmapFieldText(structured?.focus || (isObject ? (source.focus || source.tag || source.category) : '') || '');
+    const titleIsStepLabel = /^Etapa\s+\d+$/i.test(title);
+    const explicitCategory = cleanRoadmapFieldText(isObject ? (source.category || source.type || source.phase || (titleIsStepLabel ? source.tag : '')) : '');
+    const displayTitle = titleIsStepLabel ? rawFocus : title;
+    const focus = explicitCategory || (titleIsStepLabel ? '' : rawFocus);
     const objective = pickRoadmapText(
       structured?.objective,
       isObject ? source.objective : '',
@@ -1264,10 +1268,11 @@
     const result = cleanRoadmapFieldText(structured?.result || (isObject ? source.result : '') || '');
     const risk = cleanRoadmapFieldText(warning || (isObject ? source.risk : '') || '');
     const clean = cleanRoadmapFieldText(objective || (isSerializedRoadmapText(raw) ? structured?.objective : raw) || 'Etapa').replace(/^Etapa\s+\d+\s*[:.-]\s*/i, '');
-    const explicitTitle = title || (isObject ? (source.title || source.name || source.label) : '');
-    const signalText = [title, focus, clean, ...actions, warning, note].filter(Boolean).join(' ');
-    const category = classifyRoadmapStage(signalText || clean);
-    const inferredTitle = title || inferRoadmapStageTitle(clean, index, total, explicitTitle);
+    const explicitTitle = displayTitle || (titleIsStepLabel ? '' : (isObject ? (source.title || source.name || source.label) : ''));
+    const signalText = [displayTitle, focus, explicitCategory, clean, ...actions, warning, note].filter(Boolean).join(' ');
+    const inferredCategory = classifyRoadmapStage(signalText || clean);
+    const category = explicitCategory ? { ...inferredCategory, label: explicitCategory } : inferredCategory;
+    const inferredTitle = displayTitle || inferRoadmapStageTitle(clean, index, total, explicitTitle);
     const isStructured = Boolean(structured || jsonStep || (isObject && (title || focus || objective || actions.length || warning || result)));
     return {
       number: index + 1,
