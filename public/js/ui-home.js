@@ -4,6 +4,8 @@ window.UIHome = (() => {
   const { hasMissableRiskText, getDifficultyTone, getDifficultyToneClass } = window.UIDecisionModels;
   const sharedCatalog = window.AtlasCatalogModel || {};
   const sharedCard = window.AtlasCardModel || {};
+  const siteUpdates = window.AtlasSiteUpdates || {};
+  let activeAnnouncementCleanup = null;
 
   function renderHomeEditorialBadge(model = {}) {
     const badge = model.statusBadge || {};
@@ -21,6 +23,192 @@ window.UIHome = (() => {
       <span class="atlas-home-image-fallback" aria-hidden="true">${escapeHtml(name)}</span>
       ${source ? `<img src="${escapeAttribute(source)}" alt="${escapeAttribute(name)}" class="${escapeAttribute(imageClass)}" loading="${escapeAttribute(options.loading || 'lazy')}" decoding="${escapeAttribute(options.decoding || 'async')}" width="${escapeAttribute(String(width))}" height="${escapeAttribute(String(height))}" sizes="${escapeAttribute(sizes)}" onerror="this.hidden=true;this.parentElement.classList.add('atlas-home-image-shell--fallback-visible');">` : ''}
     `;
+  }
+
+  function normalizeSlug(value = '') {
+    return String(value || '').trim().toLowerCase();
+  }
+
+  function isHomeRoute() {
+    if (typeof window === 'undefined') return false;
+    const path = window.location?.pathname || '/';
+    return path === '/' || path === '/index.html';
+  }
+
+  function hasSeenUpdate(key = '') {
+    if (typeof window === 'undefined' || !key) return true;
+    try {
+      return window.localStorage.getItem(key) === '1';
+    } catch (_error) {
+      return false;
+    }
+  }
+
+  function markUpdateSeen(key = '') {
+    if (typeof window === 'undefined' || !key) return;
+    try {
+      window.localStorage.setItem(key, '1');
+    } catch (_error) {
+      // localStorage can be blocked; the user can still close the dialog.
+    }
+  }
+
+  function isGuideVerified(game = {}) {
+    const reviewStatus = normalizeSlug(game.editorial_review_status || game.editorialReviewStatus || game.editorialStatus);
+    const verificationStatus = normalizeSlug(game.verification_status || game.verificationStatus || game.qualityStatus);
+    return game.is_verified === true || game.verified === true || reviewStatus === 'verified' || verificationStatus === 'verified';
+  }
+
+  function resolveUpdateItems(items = [], gamesBySlug = new Map()) {
+    return items.map(item => {
+      const slug = normalizeSlug(item.slug);
+      const game = gamesBySlug.get(slug);
+      if (!slug || !game || !item.href) return null;
+      return {
+        ...item,
+        slug,
+        label: item.label || game.name || slug,
+        verified: isGuideVerified(game)
+      };
+    }).filter(Boolean);
+  }
+
+  function trackUpdatePopup(eventName, params = {}) {
+    if (!eventName || typeof window === 'undefined') return;
+    window.AtlasAnalytics?.trackEvent?.(eventName, {
+      campaign_id: siteUpdates.activeHomeUpdate?.id || '',
+      ...params
+    });
+  }
+
+  function closeHomeUpdatePopup(dialog, storageKey, previousFocus, reason = 'close') {
+    if (!dialog) return;
+    markUpdateSeen(storageKey);
+    trackUpdatePopup('update_popup_close', { reason });
+    if (typeof activeAnnouncementCleanup === 'function') {
+      activeAnnouncementCleanup();
+      activeAnnouncementCleanup = null;
+    }
+    dialog.remove();
+    if (previousFocus && typeof previousFocus.focus === 'function') {
+      try {
+        previousFocus.focus({ preventScroll: true });
+      } catch (_error) {
+        previousFocus.focus();
+      }
+    }
+  }
+
+  function maybeShowHomeUpdatePopup(games = []) {
+    const update = siteUpdates.activeHomeUpdate;
+    if (!update?.active || !isHomeRoute() || hasSeenUpdate(update.localStorageKey)) return;
+    const homeView = qs('#view-home');
+    if (!homeView || homeView.classList.contains('hidden') || document.querySelector('[data-home-update-popup]')) return;
+
+    const gamesBySlug = new Map((Array.isArray(games) ? games : []).map(game => [normalizeSlug(game.slug), game]));
+    if (!gamesBySlug.has('saros')) return;
+
+    const sections = (Array.isArray(update.sections) ? update.sections : []).map(section => {
+      const items = resolveUpdateItems(section.items || [], gamesBySlug);
+      if (!items.length) return null;
+      const allVerified = !section.requiresVerifiedStatus || items.every(item => item.verified);
+      return {
+        ...section,
+        title: section.requiresVerifiedStatus && !allVerified ? (section.fallbackTitle || 'Guias revisados recentemente') : section.title,
+        allVerified,
+        items
+      };
+    }).filter(Boolean);
+
+    const addedSection = sections.find(section => /Novos jogos adicionados/i.test(section.title));
+    if (!addedSection || !addedSection.items.some(item => item.slug === 'saros')) return;
+
+    const usesConservativeCopy = sections.some(section => section.requiresVerifiedStatus && !section.allVerified);
+    const subtitle = usesConservativeCopy ? (update.conservativeSubtitle || update.subtitle) : update.subtitle;
+    const previousFocus = document.activeElement;
+    const popup = document.createElement('div');
+    popup.className = 'atlas-update-popup';
+    popup.dataset.homeUpdatePopup = update.id || 'home-update';
+    popup.innerHTML = `
+      <div class="atlas-update-popup__overlay" aria-hidden="true"></div>
+      <section class="atlas-update-popup__dialog" role="dialog" aria-modal="true" aria-labelledby="atlasUpdatePopupTitle" aria-describedby="atlasUpdatePopupDescription">
+        <button type="button" class="atlas-update-popup__close" data-update-popup-close aria-label="Fechar pop-up de novidades">
+          <i class="fas fa-xmark" aria-hidden="true"></i>
+          <span class="sr-only">Fechar</span>
+        </button>
+        <div class="atlas-update-popup__badge"><i class="fas fa-star" aria-hidden="true"></i> Atualização do catálogo</div>
+        <h2 id="atlasUpdatePopupTitle">${escapeHtml(update.title)}</h2>
+        <p class="atlas-update-popup__subtitle">${escapeHtml(subtitle)}</p>
+        <p id="atlasUpdatePopupDescription" class="atlas-update-popup__description">${escapeHtml(update.description)}</p>
+        <div class="atlas-update-popup__sections">
+          ${sections.map(section => `
+            <article class="atlas-update-popup__section">
+              <h3>${escapeHtml(section.title)}</h3>
+              <div class="atlas-update-popup__chips">
+                ${section.items.map(item => `
+                  <a href="${escapeAttribute(item.href)}" class="atlas-update-popup__chip" data-update-popup-game="${escapeAttribute(item.slug)}" data-home-game="${escapeAttribute(item.label)}" data-open-guide-card="${escapeAttribute(item.slug)}">${escapeHtml(item.label)}</a>
+                `).join('')}
+              </div>
+            </article>
+          `).join('')}
+        </div>
+        <div class="atlas-update-popup__actions">
+          <a href="${escapeAttribute(update.primaryCta?.href || '/catalogo')}" class="atlas-btn atlas-btn-primary" data-update-popup-primary data-view-link="catalog">${escapeHtml(update.primaryCta?.label || 'Ver novidades')}</a>
+          <a href="${escapeAttribute(update.secondaryCta?.href || '/catalogo')}" class="atlas-btn atlas-btn-secondary" data-update-popup-secondary data-view-link="catalog">${escapeHtml(update.secondaryCta?.label || 'Explorar catálogo')}</a>
+          <button type="button" class="atlas-update-popup__dismiss" data-update-popup-close>Fechar</button>
+        </div>
+      </section>
+    `;
+
+    homeView.appendChild(popup);
+
+    const close = reason => closeHomeUpdatePopup(popup, update.localStorageKey, previousFocus, reason);
+    const handleKeydown = event => {
+      if (event.key === 'Escape') close('escape');
+    };
+    const handleClick = event => {
+      const closeButton = event.target.closest('[data-update-popup-close]');
+      if (closeButton) {
+        event.preventDefault();
+        close('button');
+        return;
+      }
+      const primary = event.target.closest('[data-update-popup-primary]');
+      if (primary) {
+        markUpdateSeen(update.localStorageKey);
+        trackUpdatePopup('update_popup_primary_cta_click', { href: primary.getAttribute('href') || '' });
+        return;
+      }
+      const secondary = event.target.closest('[data-update-popup-secondary]');
+      if (secondary) {
+        markUpdateSeen(update.localStorageKey);
+        trackUpdatePopup('update_popup_secondary_cta_click', { href: secondary.getAttribute('href') || '' });
+        return;
+      }
+      const gameLink = event.target.closest('[data-update-popup-game]');
+      if (gameLink) {
+        markUpdateSeen(update.localStorageKey);
+        trackUpdatePopup('update_popup_game_click', {
+          game_slug: gameLink.dataset.updatePopupGame || '',
+          href: gameLink.getAttribute('href') || ''
+        });
+      }
+    };
+
+    popup.addEventListener('click', handleClick);
+    document.addEventListener('keydown', handleKeydown);
+    activeAnnouncementCleanup = () => {
+      popup.removeEventListener('click', handleClick);
+      document.removeEventListener('keydown', handleKeydown);
+    };
+
+    trackUpdatePopup('update_popup_view', { conservative_copy: usesConservativeCopy ? 'true' : 'false' });
+
+    requestAnimationFrame(() => {
+      const primary = popup.querySelector('[data-update-popup-primary]');
+      const closeButton = popup.querySelector('[data-update-popup-close]');
+      (primary || closeButton)?.focus?.({ preventScroll: true });
+    });
   }
 
   function renderHomeOverview(games = []) {
@@ -189,6 +377,7 @@ window.UIHome = (() => {
 
     renderDiscoveryList(recentTarget, byRecent, 'Nenhum guia recente disponível.');
     renderEditorialHistory(updatedTarget, byUpdated, 'Nenhuma revisão recente disponível.');
+    maybeShowHomeUpdatePopup(games);
   }
 
   return { renderHomeOverview };

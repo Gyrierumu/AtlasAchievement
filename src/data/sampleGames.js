@@ -377,6 +377,87 @@ const missableTrophyIds = new Set([
 
 ]);
 
+const nioh2BaseRoadmap = [
+  {
+    "title": "Aprenda o combate e avance a campanha",
+    "focus": "Campanha / aprendizado",
+    "objective": "Progredir pela história enquanto aprende Ki Pulse, Burst Counter, Yokai abilities, posturas e gerenciamento de equipamento.",
+    "actions": [
+      "Avance as missões principais sem tentar fazer 100% em cada região logo de início.",
+      "Pratique Ki Pulse e Burst Counter, porque eles reduzem muito a dificuldade dos chefes.",
+      "Troque equipamentos com frequência e use armas que combinem com seu estilo.",
+      "Complete missões secundárias próximas do seu nível quando precisar de recursos, experiência ou prática."
+    ],
+    "warning": "",
+    "result": "Base de combate consolidada e campanha encaminhada com menos frustração."
+  },
+  {
+    "title": "Complete missões principais e secundárias da lista base",
+    "focus": "Missões",
+    "objective": "Abrir todas as regiões e reduzir pendências de missões necessárias para a platina base.",
+    "actions": [
+      "Continue avançando a história até liberar todas as regiões principais.",
+      "Complete missões secundárias conforme ficarem disponíveis e fizerem sentido para seu nível.",
+      "Revise o checklist para separar missões principais, secundárias e especiais.",
+      "Não misture missões de DLC com a platina base."
+    ],
+    "warning": "",
+    "result": "Mapa da campanha praticamente completo e base pronta para cleanup."
+  },
+  {
+    "title": "Limpe Kodama, Hot Springs e pendências por região",
+    "focus": "Coletáveis",
+    "objective": "Finalizar coletáveis e atividades de exploração sem depender de memória no fim do jogo.",
+    "actions": [
+      "Revise Kodama por missão ou região usando o checklist.",
+      "Complete Hot Springs e outros pontos de exploração exigidos pela lista base.",
+      "Retorne a missões antigas quando estiver mais forte e conhecer melhor os atalhos.",
+      "Organize a limpeza por região para evitar repetir missões desnecessariamente."
+    ],
+    "warning": "",
+    "result": "Coletáveis principais fechados ou com pendências claramente mapeadas."
+  },
+  {
+    "title": "Trabalhe proficiência, armas e habilidades",
+    "focus": "Grind / proficiência",
+    "objective": "Avançar troféus ligados a armas, habilidades, proficiência e sistemas de progressão.",
+    "actions": [
+      "Varie tipos de armas se a lista exigir proficiência ou domínio com categorias diferentes.",
+      "Invista pontos nas árvores de habilidade conforme os troféus pedirem.",
+      "Aproveite missões repetíveis para farmar proficiência, Amrita e recursos.",
+      "Separe grind de armas dos troféus de história para não perder foco."
+    ],
+    "warning": "",
+    "result": "Progresso de armas, habilidades e proficiência encaminhado para a reta final."
+  },
+  {
+    "title": "Finalize Yokai, Soul Cores e troféus situacionais",
+    "focus": "Combate / sistemas",
+    "objective": "Concluir troféus de combate, Yokai abilities, Soul Cores, Burst Counter, Yokai Shift e ações específicas que não vieram naturalmente.",
+    "actions": [
+      "Revise troféus ligados a Yokai abilities, Burst Counter, Yokai Shift e Soul Cores.",
+      "Complete troféus situacionais em missões específicas usando seleção de missão.",
+      "Derrote chefes ou inimigos pendentes sem tratar isso como perdível se a missão puder ser repetida.",
+      "Ajuste build, equipamento e espíritos guardiões para facilitar desafios restantes."
+    ],
+    "warning": "",
+    "result": "Pendências de combate e sistemas reduzidas antes da revisão final."
+  },
+  {
+    "title": "Cleanup final da platina base",
+    "focus": "Checklist final",
+    "objective": "Conferir todos os troféus restantes da lista base sem misturar DLCs ou coop opcional.",
+    "actions": [
+      "Revise missões, coletáveis, Kodama, Hot Springs, proficiência, Soul Cores e ações situacionais.",
+      "Confirme que nenhum troféu de DLC foi contado como requisito da platina base.",
+      "Verifique se online e coop não estão marcados como obrigatórios sem necessidade.",
+      "Finalize pendências curtas usando seleção de missão e checklist."
+    ],
+    "warning": "",
+    "result": "Lista base concluída e platina pronta."
+  }
+];
+
 const sampleGames = [
   {
     "id": 1,
@@ -914,6 +995,13 @@ const sampleGames = [
     "runs_summary": "Uma playthrough com cleanup livre no pós-jogo. A platina base não exige múltiplas runs.",
     "missable_summary": "Não há troféus perdíveis na lista base; tudo pode ser limpo depois da história em free roam.",
     "online_summary": "Não há troféus online, coop obrigatório, multiplayer ou PS+ para a platina base. Legends/online fica fora deste guia de lista base.",
+    "mandatoryOnline": false,
+    "mandatoryCoop": false,
+    "multiplayerRequired": false,
+    "legendsRequired": false,
+    "ikiIslandRequired": false,
+    "newGamePlusRequired": false,
+    "platinumType": "campanha + mundo aberto + coletáveis + cleanup",
     "grind_summary": "O peso está em exploração de mundo aberto, atividades, side tales, coletáveis e libertação de áreas.",
     "dlc_scope": "Guia focado na lista base da platina; Iki Island e Legends devem ficar separados se o projeto suportar DLC.",
     "difficulty_reason": "A platina é acessível; a dificuldade vem mais do volume de atividades e exploração do que de execução extrema.",
@@ -930,7 +1018,7 @@ const sampleGames = [
     "verification_note": "Lista base revisada com foco em platina; aguarda validação editorial manual final.",
     "editorial_review_status": "in_review",
     "last_reviewed_at": "2026-05-15",
-    "editorial_notes": "Revisão editorial focada na lista base de 52 troféus. Nomes PT-BR preenchidos a partir da localização brasileira oficial da Steam; descrições secretas permanecem em tradução editorial fiel quando a fonte pública não exibe o texto localizado.",
+    "editorial_notes": "Revisão editorial focada na lista base de 52 troféus. Legends/co-op, Iki Island e New Game+ ficam fora da platina base. Nomes PT-BR preenchidos a partir da localização brasileira oficial da Steam; descrições secretas permanecem em tradução editorial fiel quando a fonte pública não exibe o texto localizado.",
     "quality_warnings": [
       "Algumas descrições secretas usam tradução editorial PT-BR porque a página pública da Steam oculta a descrição localizada."
     ],
@@ -2252,6 +2340,7 @@ const sampleGames = [
     "developer": "Team Asobi",
     "publisher": "Sony Interactive Entertainment",
     "guide_platform": "PS5",
+    "genre": "Plataforma / Aventura / Collectathon",
     "difficulty": 3,
     "time": "15 horas",
     "time_min_hours": 15,
@@ -2272,6 +2361,12 @@ const sampleGames = [
     "coopRequired": false,
     "dlcRequired": false,
     "dlcRequiredForPlatinum": false,
+    "mandatoryOnline": false,
+    "mandatoryCoop": false,
+    "multiplayerRequired": false,
+    "onlineTrophies": 0,
+    "coopTrophies": 0,
+    "platinumType": "campanha + coletáveis + cleanup",
     "missable": "Não há troféus perdíveis. A campanha e a seleção de fases permitem voltar para bots, puzzle pieces, Lost Galaxy, desafios opcionais e itens do Gatcha depois da história.",
     "image": "https://image.api.playstation.com/vulcan/ap/rnd/202406/0500/80ecf657918558eeef8da3ee4cef326e4517d34e6c69d950.jpg",
     "cover_image": "https://image.api.playstation.com/vulcan/ap/rnd/202406/0500/0d05cb43413f28a641ac0c40fc272c70bbe194f6ade4b175.png",
@@ -2470,14 +2565,35 @@ const sampleGames = [
     ]
   },
   {
-    "name": "Astro's Playroom",
+    "name": "Astro’s Playroom",
     "slug": "astros-playroom",
+    "title": "Astro’s Playroom",
+    "primary_platform": "PS5",
+    "platforms": ["PS5"],
+    "developer": "Team Asobi / Japan Studio",
+    "publisher": "Sony Interactive Entertainment",
+    "guide_platform": "PS5",
+    "genre": "Plataforma / demonstração técnica / aventura",
     "difficulty": 2,
     "time": "3-5 horas",
     "time_min_hours": 3,
     "time_max_hours": 5,
     "time_sort_hours": 5,
     "time_bucket": "short",
+    "trophy_count": 43,
+    "trophy_distribution": { "Platina": 1, "Ouro": 3, "Prata": 13, "Bronze": 26 },
+    "hasMissables": false,
+    "missableCount": 0,
+    "hasOnline": false,
+    "hasCoop": false,
+    "hasMandatoryOnline": false,
+    "hasMandatoryCoop": false,
+    "requiresOnline": false,
+    "requiresCoop": false,
+    "onlineRequired": false,
+    "coopRequired": false,
+    "dlcRequired": false,
+    "dlcRequiredForPlatinum": false,
     "missable": "Não há troféus perdíveis na lista base da platina. A campanha curta e a seleção de fases permitem voltar aos mundos, ao CPU Plaza e ao PlayStation Labo para limpar artefatos, puzzle pieces, moedas e interações.",
     "image": "https://image.api.playstation.com/vulcan/ap/rnd/202008/1220/M6bheZDaxpbtj8FiDW0UEQx7.jpg",
     "cover_image": "https://images.launchbox-app.com/63073a9e-497e-4069-b47a-e24577a6c407.jpg",
@@ -2485,25 +2601,138 @@ const sampleGames = [
     "coverage_level": "strong",
     "is_verified": false,
     "verification_status": "review",
-    "verification_note": "Precisa revisão editorial final: lista base da platina separada dos add-ons, mas checklist completo ainda não recebeu selo verificado.",
-    "runs_summary": "Uma campanha curta com cleanup livre por seleção de fases. Nada é perdível.",
-    "missable_summary": "Não há perdíveis na lista base da platina; todo cleanup pode ser feito pela seleção de fases, CPU Plaza e PlayStation Labo.",
-    "online_summary": "Não há exigência online para a platina.",
-    "grind_summary": "O peso está em coletáveis, moedas e interações específicas, não em grind pesado.",
-    "dlc_scope": "Guia focado na lista base da platina; add-ons podem ser tratados separadamente se o projeto suportar DLC.",
-    "difficulty_reason": "A platina é muito acessível, com desafios leves de plataforma, exploração e speedrun.",
-    "time_reason": "A faixa de 3-5 horas considera campanha, coletáveis, Gatcha e cleanup.",
-    "first_run_advice": "Explore com calma e colete artefatos, puzzle pieces e moedas enquanto avança pelos mundos.",
-    "cleanup_advice": "Use a seleção de fases para buscar coletáveis restantes e finalize interações no hub.",
-    "before_you_start": "Nada é perdível; jogue naturalmente e deixe o cleanup para depois.",
+    "editorial_review_status": "in_review",
+    "editorialStatus": "in_review",
+    "verification_note": "Guia revisado para a lista base de 43 troféus da platina, separado dos troféus adicionais/Special Bots; manter sem verified até revisão manual final de localização PT-BR oficial.",
+    "editorial_notes": "Escopo da platina base: 43 troféus (1 Platina, 3 Ouro, 13 Prata, 26 Bronze). Troféus adicionais de add-on/Speed Run e Special Bots ligados a Astro Bot existem em listas públicas, mas não entram na checklist da platina base deste guia.",
+    "quality_warnings": [
+      "needs_pt_br_trophy_name_source_check",
+      "needs_extra_trophies_scope_check"
+    ],
+    "runs_summary": "Campanha curta pelos quatro mundos principais, seguida de cleanup livre por seleção de fases, CPU Plaza e PlayStation Labo.",
+    "missable_summary": "Não há perdíveis reais na lista base da platina; todo cleanup pode ser feito pela seleção de fases, CPU Plaza e PlayStation Labo.",
+    "online_summary": "Sem online obrigatório: a platina base é single-player/offline e não exige servidores, PS+ ou multiplayer.",
+    "grind_summary": "O peso está em coletáveis, moedas para Gatcha, interações específicas e desafios curtos, não em grind pesado.",
+    "dlc_scope": "Guia focado na lista base de 43 troféus da platina. Troféus extras/adicionais, incluindo Special Bots ligados a Astro Bot, ficam fora da checklist da platina base.",
+    "difficulty_reason": "A platina é baixa dificuldade: exploração leve, coletáveis bem distribuídos, desafios curtos e cleanup por fase.",
+    "time_reason": "A faixa conservadora de 3-5 horas considera campanha, puzzle pieces, artefatos, Gatcha e troféus situacionais da lista base.",
+    "first_run_advice": "Jogue as fases principais explorando com calma, resgatando bots, pegando puzzle pieces e marcando pendências no checklist.",
+    "cleanup_advice": "Use a seleção de fases para buscar puzzle pieces, artefatos e interações restantes, depois finalize o PlayStation Labo e desafios de tempo.",
+    "before_you_start": "A platina é focada em exploração, coletáveis, desafios curtos e limpeza por fase; não misture troféus extras com a lista base.",
     "best_for": "Ideal como primeira platina de PS5 ou platina curta, leve e sem risco de retrabalho.",
     "avoid_if": "Evite apenas se você não gosta de collectathon curto ou desafios simples de plataforma.",
+    "seo": {
+      "title": "Astro’s Playroom: guia de platina, troféus e roadmap | AtlasAchievement",
+      "description": "Guia de platina de Astro’s Playroom em português, com tempo estimado, dificuldade, coletáveis, puzzle pieces, artefatos, roadmap e checklist de troféus.",
+      "ogTitle": "Astro’s Playroom: guia de platina, troféus e roadmap | AtlasAchievement",
+      "ogDescription": "Roadmap de Astro’s Playroom para PS5 com lista base de 43 troféus, sem perdíveis, sem online obrigatório, sem coop e sem DLC obrigatória."
+    },
+    "quickDecision": {
+      "summary": "Platina curta e acessível: 43 troféus base, cerca de 3-5h, dificuldade 2/10, sem perdíveis reais, sem online, sem coop e sem DLC obrigatória.",
+      "recommendation": "Avance pelos quatro mundos principais, colete puzzle pieces e artefatos no caminho, depois use seleção de fases e PlayStation Labo para fechar a limpeza.",
+      "firstAction": "Jogue as fases principais explorando com calma, resgatando bots, pegando puzzle pieces e marcando pendências no checklist."
+    },
+    "checklist": [
+      "Concluir Cooling Springs, GPU Jungle, SSD Speedway e Memory Meadow.",
+      "Coletar todos os artefatos dos quatro mundos e do PlayStation Labo.",
+      "Coletar todas as puzzle pieces dos mundos, CPU Plaza e Gatcha.",
+      "Gastar moedas no Gatcha até liberar todos os prêmios necessários.",
+      "Resolver interações do CPU Plaza e PlayStation Labo.",
+      "Fazer troféus situacionais de Cooling Springs, GPU Jungle, SSD Speedway e Memory Meadow.",
+      "Separar Network Speed Run, add-ons e Special Bots da checklist da platina base.",
+      "Confirmar que troféus extras/adicionais e Special Bots não foram misturados à platina base."
+    ],
+    "faq": [
+      { "question": "Astro’s Playroom tem troféus perdíveis?", "answer": "Não. A lista base da platina não tem perdíveis reais; a seleção de fases permite voltar para coletáveis, interações e desafios curtos." },
+      { "question": "Astro’s Playroom precisa de online para platinar?", "answer": "Não. A platina base é single-player/offline e não exige servidores, PS+ ou multiplayer." },
+      { "question": "Astro’s Playroom tem coop obrigatório?", "answer": "Não. A platina base é solo e não exige coop." },
+      { "question": "Quanto tempo leva para platinar Astro’s Playroom?", "answer": "Use uma faixa conservadora de 3-5 horas para campanha, coletáveis, Gatcha e cleanup da lista base." },
+      { "question": "Qual a dificuldade da platina?", "answer": "Baixa. O guia usa 2/10 porque os desafios são curtos e a maior parte da lista é exploração e coleta." },
+      { "question": "Dá para limpar coletáveis depois?", "answer": "Sim. Você pode voltar às fases, ao CPU Plaza e ao PlayStation Labo para buscar puzzle pieces, artefatos e interações restantes." },
+      { "question": "Os troféus extras/Special Bots contam para a platina base?", "answer": "Não. Este guia cobre a lista base de 43 troféus; extras, add-ons e Special Bots ligados a Astro Bot ficam fora da checklist da platina base." },
+      { "question": "Astro’s Playroom é o mesmo jogo que Astro Bot?", "answer": "Não. Astro’s Playroom é o jogo de PS5 de 2020 incluso no console; Astro Bot é outro jogo, lançado depois, com lista própria." },
+      { "question": "O jogo exige DLC para platina?", "answer": "Não. A platina base não exige DLC nem troféus adicionais." },
+      { "question": "O guia está verificado?", "answer": "Ainda não. A lista base e o escopo foram revisados, mas o guia permanece em revisão até validação manual final de localização PT-BR e extras." }
+    ],
     "roadmap": [
-      "Jogue os 4 mundos principais coletando artefatos, puzzle pieces e moedas quando estiverem no caminho.",
-      "Use a seleção de fases para limpar artefatos e puzzle pieces restantes em Cooling Springs, GPU Jungle, Memory Meadow e SSD Speedway.",
-      "Gaste moedas no PlayStation Labo e no Gatcha até liberar os prêmios necessários.",
-      "Complete speedruns e desafios adicionais necessários para fechar a lista base.",
-      "Finalize o cleanup de troféus específicos e interações no CPU Plaza e PlayStation Labo."
+      {
+        "title": "Explore os mundos principais",
+        "focus": "Campanha",
+        "objective": "Completar as áreas principais enquanto aprende as mecânicas de cada mundo e coleta o que encontrar naturalmente.",
+        "actions": [
+          "Avance por Cooling Springs, GPU Jungle, SSD Speedway e Memory Meadow.",
+          "Explore rotas alternativas, objetos interativos e cantos das fases.",
+          "Colete artefatos e puzzle pieces sempre que estiverem no caminho.",
+          "Marque no checklist fases com itens pendentes."
+        ],
+        "warning": "",
+        "result": "Todos os mundos principais abertos e boa parte dos coletáveis adiantada."
+      },
+      {
+        "title": "Limpe puzzle pieces e artefatos por fase",
+        "focus": "Coletáveis",
+        "objective": "Revisitar fases com pendências e fechar os principais coletáveis da lista base.",
+        "actions": [
+          "Use a seleção de fases para voltar aos níveis incompletos.",
+          "Procure puzzle pieces em rotas secundárias e interações escondidas.",
+          "Revise artefatos faltantes em cada mundo.",
+          "Priorize uma área por vez para evitar confusão no cleanup."
+        ],
+        "warning": "",
+        "result": "Coletáveis principais quase completos e progresso do checklist mais organizado."
+      },
+      {
+        "title": "Complete desafios e troféus situacionais",
+        "focus": "Desafios",
+        "objective": "Resolver troféus de ações específicas, interações e pequenos desafios que não vieram naturalmente.",
+        "actions": [
+          "Revise troféus ligados a ações específicas dentro das fases.",
+          "Faça interações especiais com objetos, controles, inimigos ou cenários quando necessário.",
+          "Use checkpoints das fases para repetir trechos curtos.",
+          "Separe troféus situacionais dos coletáveis para não repetir fases sem foco."
+        ],
+        "warning": "",
+        "result": "Troféus de ações específicas concluídos ou reduzidos ao mínimo."
+      },
+      {
+        "title": "Organize o PlayStation Labo",
+        "focus": "Hub",
+        "objective": "Conferir desbloqueios, artefatos, puzzle pieces e interações do hub.",
+        "actions": [
+          "Volte ao PlayStation Labo para revisar itens desbloqueados.",
+          "Confira se os artefatos e puzzle pieces foram registrados corretamente.",
+          "Complete interações do hub ligadas a troféus.",
+          "Use o checklist para confirmar o que ainda falta."
+        ],
+        "warning": "",
+        "result": "Hub organizado e coleções principais encaminhadas para a platina."
+      },
+      {
+        "title": "Separe Network Speed Run e troféus adicionais",
+        "focus": "Desafios",
+        "objective": "Evitar que add-ons, speedruns extras ou Special Bots sejam tratados como requisito da platina base.",
+        "actions": [
+          "Confira se Run Astro Run!, Play Has No Limits! e Gravity Daze! não entraram na checklist da platina base.",
+          "Trate Network Speed Run como conteúdo adicional quando o objetivo for apenas a platina.",
+          "Mantenha Special Bots ligados a Astro Bot fora da contagem de 43 troféus base.",
+          "Use essa etapa apenas como conferência editorial antes do cleanup final."
+        ],
+        "warning": "Network Speed Run tem estrutura online/ranking, mas seus troféus adicionais não são obrigatórios para a platina base.",
+        "result": "Escopo da platina base preservado sem misturar troféus adicionais."
+      },
+      {
+        "title": "Cleanup final da platina base",
+        "focus": "Checklist final",
+        "objective": "Conferir todos os troféus da lista base antes de encerrar a platina.",
+        "actions": [
+          "Revise mundos, fases, puzzle pieces, artefatos e troféus situacionais.",
+          "Confirme que nenhum troféu extra/adicional foi misturado à platina base.",
+          "Verifique se online, coop e DLC não estão marcados como obrigatórios.",
+          "Finalize qualquer pendência curta usando seleção de fases."
+        ],
+        "warning": "Special Bots e troféus adicionais ligados a Astro Bot não fazem parte da platina base deste guia.",
+        "result": "Lista base concluída e platina pronta."
+      }
     ],
     "trophies": [
       { "id": "astros_playroom_youve_only_done_everything", "name": "You've Only Done Everything", "type": "Platina", "description": "Found all trophies in ASTRO's PLAYROOM. See you in our next adventure!", "tip": "Complete todos os outros 42 troféus da lista base para liberar a platina.", "is_missable": false, "is_spoiler": false },
@@ -2545,7 +2774,7 @@ const sampleGames = [
       { "id": "astros_playroom_ready_for_the_proving", "name": "Ready for the Proving", "type": "Bronze", "description": "Deflected a Spitter's attack with an arrow.", "tip": "Em Raytrace Ruins, use uma flecha para rebater o projétil de um Spitter.", "is_missable": false, "is_spoiler": false },
       { "id": "astros_playroom_little_rolling_star", "name": "Little Rolling Star...", "type": "Bronze", "description": "Made a huge snowball.", "tip": "Em Frigid Floes, empurre a bola de neve até ela crescer o suficiente.", "is_missable": false, "is_spoiler": false },
       { "id": "astros_playroom_no_no_no_noooooo", "name": "No No No Noooooo!", "type": "Bronze", "description": "Fell 30 meters and caught yourself in the monkey suit in GPU Jungle.", "tip": "Em Teraflop Treetops, solte-se de uma altura grande e agarre uma barra antes de cair.", "is_missable": false, "is_spoiler": false },
-      { "id": "astros_playroom_adequaté_boy", "name": "Adequate, Boy...", "type": "Bronze", "description": "Hit all rabbits with arrows at the mountain peak of GPU Jungle.", "tip": "No topo de Mt. Motherboard, pegue o arco e acerte todos os coelhos da área.", "is_missable": false, "is_spoiler": false },
+      { "id": "astros_playroom_adequate_boy", "name": "Adequate, Boy...", "type": "Bronze", "description": "Hit all rabbits with arrows at the mountain peak of GPU Jungle.", "tip": "No topo de Mt. Motherboard, pegue o arco e acerte todos os coelhos da área.", "is_missable": false, "is_spoiler": false },
       { "id": "astros_playroom_wild_arms", "name": "Wild Arms", "type": "Bronze", "description": "Performed a spin while shooting the machine gun.", "tip": "Em Deep Dataspace, carregue um spin attack e atire com a metralhadora enquanto gira.", "is_missable": false, "is_spoiler": false },
       { "id": "astros_playroom_its_all_in_the_mind", "name": "It's All in the Mind", "type": "Bronze", "description": "Beat 3 enemies quickly by punching them.", "tip": "Derrote três inimigos em sequência rápida com socos; pode sair naturalmente.", "is_missable": false, "is_spoiler": false },
       { "id": "astros_playroom_super_computer", "name": "Super Computer", "type": "Bronze", "description": "Revealed former logo in PlayStation Labo.", "tip": "Depois de liberar o logo da SIE pelo Gatcha, acerte-o no PlayStation Labo para revelar o logo antigo.", "is_missable": false, "is_spoiler": true }
@@ -2580,6 +2809,13 @@ const sampleGames = [
     "coopRequired": false,
     "dlcRequired": false,
     "dlcRequiredForPlatinum": false,
+    "hasChapterSelect": false,
+    "chapterSelect": false,
+    "cleanupMethod": "saves + múltiplas runs + NG+",
+    "mandatoryOnline": false,
+    "mandatoryCoop": false,
+    "multiplayerRequired": false,
+    "platinumType": "múltiplas runs + rank + coletáveis + desafios",
     "missable": "Há muitos troféus perdíveis ou altamente missable por capítulo/run, porque o jogo não tem chapter select nem free-roam final. A platina em si e troféus automáticos de história não entram nessa contagem.",
     "runs_summary": "Múltiplas campanhas planejadas: uma primeira run de coleta/aprendizado, runs de rank/speedrun e campanhas separadas para restrições como sem cura, sem Mercador e só pistolas/faca.",
     "missable_summary": "A contagem considera troféus de capítulo, colecionáveis de área, pedidos do Mercador, armas, estande de tiro e desafios de run/rank que exigem replay se forem ignorados.",
@@ -2600,7 +2836,7 @@ const sampleGames = [
     "editorial_review_status": "in_review",
     "editorialStatus": "in_review",
     "verification_note": "Guia da lista base revisado editorialmente; manter sem verified até revisão manual final de requisitos, nomes PT-BR e estratégia de Handcannon/Mercenaries.",
-    "editorial_notes": "Escopo PS4/PS5 da platina base com 40 troféus. The Mercenaries pode ser citado como rota opcional para Handcannon, mas não é DLC paga obrigatória; Separate Ways/Caminhos Distintos, VR Mode, DLC extra e tickets pagos ficam fora da lista principal.",
+    "editorial_notes": "Escopo PS4/PS5 da platina base com 40 troféus. Cleanup depende de saves, NG+ e múltiplas runs; não tratar como chapter select tradicional. The Mercenaries pode ser citado como rota opcional para Handcannon, mas não é DLC paga obrigatória; Separate Ways/Caminhos Distintos, VR Mode, DLC extra e tickets pagos ficam fora da lista principal.",
     "image": "https://cdn.cloudflare.steamstatic.com/steam/apps/2050650/header.jpg",
     "cover_image": "https://cdn.cloudflare.steamstatic.com/steam/apps/2050650/library_600x900.jpg",
     "seo": {
@@ -3588,191 +3824,133 @@ const sampleGames = [
   {
       "name": "Nioh 2",
       "slug": "nioh-2",
+      "title": "Nioh 2",
+      "primary_platform": "PS4",
+      "platforms": ["PS4", "PS5", "PC"],
+      "developer": "Team Ninja",
+      "publisher": "Koei Tecmo / Sony Interactive Entertainment",
+      "guide_platform": "PS4/PS5",
+      "genre": "Action RPG / Soulslike / Hack and slash",
       "difficulty": 6,
       "time": "100-150h",
       "time_min_hours": 100,
       "time_max_hours": 150,
       "time_sort_hours": 150,
       "time_bucket": "long",
-      "missable": "Não há troféus perdíveis definitivos na lista base. As missões podem ser revisitadas, então o cleanup de Kodama, Hot Springs, Soul Cores, Mystic Arts e objetivos específicos pode ser feito por replay de missões.",
-      "runs_summary": "Uma campanha principal com replay livre de missões para cleanup. NG+ pode ajudar farm e builds, mas a lista base não depende de DLC.",
-      "missable_summary": "Nenhum troféu da lista base foi marcado como perdível; use replay de missões para limpar objetivos, coletáveis e proficiências.",
-      "online_summary": "Não há exigência online para a platina da lista base.",
-      "grind_summary": "O peso está em todas as missões, Kodama, Hot Springs, Soul Cores, Mystic Arts, proficiências, builds e cleanup por replay.",
-      "dlc_scope": "Guia focado na lista base da platina; The Tengu’s Disciple, Darkness in the Capital e The First Samurai ficam separados e não fazem parte do checklist base.",
+      "trophy_count": 56,
+      "trophy_distribution": { "Platina": 1, "Ouro": 2, "Prata": 5, "Bronze": 48 },
+      "hasOnline": false,
+      "hasCoop": false,
+      "hasMandatoryOnline": false,
+      "hasMandatoryCoop": false,
+      "requiresOnline": false,
+      "requiresCoop": false,
+      "missable": "Não há troféus perdíveis reais na lista base. As missões podem ser revisitadas por seleção/replay, então Kodama, Hot Springs, Soul Cores, Dark Realms, proficiências e objetivos situacionais podem ser limpos depois.",
+      "runs_summary": "Campanha principal e pós-game/cleanup por seleção de missão. NG+ pode acelerar proficiência e farm, mas não é obrigatório para a platina base.",
+      "missable_summary": "Não há perdíveis reais na lista base; a platina também não é perdível. Use replay de missões para limpar objetivos, coletáveis e proficiências.",
+      "online_summary": "Sem online obrigatório: coop/expedições podem ajudar, mas a platina base pode ser feita solo/offline usando NPCs, Acolytes e replay de missões.",
+      "grind_summary": "O maior peso está em concluir missões, coletar Kodama e Hot Springs, obter Soul Cores, liberar Mystic Arts/proficiências e fazer cleanup situacional.",
+      "dlc_scope": "Guia focado na lista base de 56 troféus. The Tengu's Disciple, Darkness in the Capital e The First Samurai existem como listas separadas de DLC e não contam para a platina base.",
       "difficulty_reason": "A dificuldade vem do combate técnico, gestão de Ki, Burst Counter, bosses, builds e domínio dos sistemas de Nioh.",
-      "time_reason": "A faixa de 100-150 horas considera campanha, todas as missões, coletáveis, proficiências, Soul Cores, Mystic Arts e cleanup.",
-      "first_run_advice": "Aprenda Ki Pulse, Burst Counter e stances cedo. Explore bem as missões e colete Kodama/Hot Springs quando passar por eles.",
-      "cleanup_advice": "Use replay de missões para limpar Kodama, Hot Springs, Soul Cores, proficiências, Mystic Arts e troféus específicos.",
-      "before_you_start": "Nada da lista base deve ser tratado como perdível sem confirmação; o desafio real é habilidade, tempo e domínio dos sistemas.",
+      "time_reason": "A faixa conservadora de 100-150 horas considera curva de aprendizado, campanha, todas as missões, coletáveis, proficiências, Soul Cores, Mystic Arts e cleanup.",
+      "first_run_advice": "Avance a campanha aprendendo Ki Pulse, Burst Counter, Yokai abilities e gerenciamento de equipamento antes de focar na limpeza completa.",
+      "cleanup_advice": "Use seleção/replay de missões para limpar Kodama, Hot Springs, Dark Realms, Soul Cores, proficiências, Mystic Arts e troféus situacionais.",
+      "before_you_start": "A platina exige domínio do combate, conclusão de missões, coletáveis como Kodama/Hot Springs, proficiência/armas e bastante limpeza, mas não deve misturar DLC com a lista base.",
       "best_for": "Ideal para quem quer uma platina soulslike/action RPG longa, técnica e cheia de sistemas de build.",
       "avoid_if": "Evite se você não gosta de combate exigente, farm de proficiência, replay de missões ou checklist extenso.",
       "editorial_status": "published",
-      "coverage_level": "strong",
+      "coverage_level": "complete",
       "is_verified": false,
       "verification_status": "review",
-      "verification_note": "Guia público seed-managed com checklist base e roadmap; aguardando revisão editorial manual final.",
+      "editorial_review_status": "in_review",
+      "editorialStatus": "in_review",
+      "last_reviewed_at": "2026-05-16",
+      "reviewed_by": "Codex",
+      "verification_note": "Lista base revisada com 56 troféus (1 Platina, 2 Ouro, 5 Prata, 48 Bronze), sem perdíveis reais, sem online/coop obrigatório e com DLCs separadas da platina. Mantido em revisão porque o selo manual verified não deve ser promovido pelo seed.",
+      "editorial_notes": "Nomes oficiais em inglês preservados. Nomes PT-BR não foram preenchidos por falta de fonte oficial/confiável no projeto; descrições principais usam tradução editorial em português fiel ao requisito.",
+      "quality_warnings": [],
       "hasMissables": false,
       "missableCount": 0,
       "onlineRequired": false,
       "coopRequired": false,
       "dlcRequired": false,
       "dlcRequiredForPlatinum": false,
+      "platinumType": "campanha + missões + coletáveis + proficiência + cleanup",
       "seo": {
-        "title": "Nioh 2: guia de troféus e platina | AtlasAchievement",
-        "description": "Roadmap completo da platina de Nioh 2, com checklist de 56 troféus da lista base, Kodama, Hot Springs, Soul Cores, Mystic Arts, builds e cleanup sem DLC.",
-        "ogTitle": "Nioh 2: guia de troféus e platina | AtlasAchievement",
-        "ogDescription": "Roadmap completo da platina de Nioh 2, com checklist de 56 troféus da lista base, Kodama, Hot Springs, Soul Cores, Mystic Arts, builds e cleanup sem DLC."
+        "title": "Nioh 2: guia de platina, troféus e roadmap | AtlasAchievement",
+        "description": "Guia de platina de Nioh 2 em português, com tempo estimado, dificuldade, missões, Kodama, Hot Springs, proficiência, Soul Cores, roadmap e checklist de troféus.",
+        "canonical": "https://atlasachievement.com.br/jogo/nioh-2",
+        "ogTitle": "Nioh 2: guia de platina, troféus e roadmap | AtlasAchievement",
+        "ogDescription": "Guia de platina de Nioh 2 em português, com tempo estimado, dificuldade, missões, Kodama, Hot Springs, proficiência, Soul Cores, roadmap e checklist."
       },
       "quickDecision": {
-        "summary": "Platina longa e técnica, mas sem online obrigatório nem troféus perdíveis. O foco é completar a lista base, coletar Kodama/Hot Springs, desbloquear Mystic Arts e limpar por replay de missões.",
-        "recommendation": "Progrida pela campanha natural, limpe coletáveis enquanto avança e use replay de missões para fechar Soul Cores, Dark Realms e objetivos específicos.",
-        "firstAction": "Comece pela história principal e use Kodama/Hot Springs como checkpoints para reduzir cleanup futuro."
+        "summary": "Platina longa e técnica: 56 troféus base, cerca de 100-150h, dificuldade 6/10, sem perdíveis reais, sem online obrigatório, sem coop obrigatório e sem DLC necessária.",
+        "recommendation": "Avance a campanha aprendendo Ki Pulse, Burst Counter, Yokai abilities e gerenciamento de equipamento antes de focar na limpeza completa.",
+        "firstAction": "Avance a campanha aprendendo Ki Pulse, Burst Counter, Yokai abilities e gerenciamento de equipamento antes de focar na limpeza completa.",
+        "attention": "A platina exige domínio do combate, conclusão de missões, coletáveis como Kodama/Hot Springs, proficiência/armas e bastante limpeza, mas não deve misturar DLC com a lista base."
       },
       "checklist": [
-        "Complete todas as missões principais da lista base",
-        "Complete as missões secundárias necessárias sem incluir DLC",
-        "Colete todos os Kodama da lista base",
-        "Use todas as fontes termais base",
-        "Dissipe os Dark Realms das missões principais",
-        "Obtenha todos os Guardian Spirits base",
-        "Obtenha todas as Soul Cores base",
-        "Obtenha a Kodama Soul Core",
-        "Desbloqueie Mystic Arts para as armas base, Ninjutsu e Onmyo Magic",
-        "Use Burst Counter Brute, Feral e Phantom",
-        "Use Soul Match, Forge e Remodel para preparar equipamentos",
-        "Finalize com replay de missões para cleanup da lista base"
+        "Concluir os troféus de história da campanha base.",
+        "Completar todas as missões principais exigidas por Samurai of Legend.",
+        "Completar as missões secundárias da lista base sem incluir missões de DLC.",
+        "Coletar todos os Kodama da lista base por missão/região.",
+        "Usar todas as Hot Springs da lista base.",
+        "Dissipar todos os Dark Realms das missões principais.",
+        "Obter todos os Guardian Spirits da lista base.",
+        "Obter todas as Soul Cores da lista base, incluindo Kodama Soul Core.",
+        "Liberar Mystic Arts/proficiência para armas, Ninjutsu e Onmyo Magic.",
+        "Fazer Burst Counter Brute, Feral e Phantom cinco vezes cada.",
+        "Resolver troféus situacionais por missão, como Seven Wonders, Clean Sweep e Peal of Ten Thousand Bells.",
+        "Conferir Soul Match, Forge, Remodel, Tea Utensils, Kodama Bazaar e demais sistemas.",
+        "Finalizar cleanup por seleção/replay de missões sem marcar nada como perdível se puder repetir.",
+        "Confirmar que The Tengu's Disciple, Darkness in the Capital e The First Samurai ficaram fora da platina base."
       ],
       "faq": [
         {
-          "question": "Nioh 2 exige online para a platina base?",
-          "answer": "Não. A lista base deste guia não requer online, e objetivos como Teamwork ou Help Wanted podem ser feitos com NPCs ou Acolytes sem depender de partidas públicas."
+          "question": "Nioh 2 tem troféus perdíveis?",
+          "answer": "Não há perdíveis reais confirmados na platina base se você puder repetir missões e limpar pendências depois. O desafio está em campanha, missões, coletáveis, proficiência, Soul Cores, Yokai abilities e cleanup."
         },
         {
-          "question": "The Tengu’s Disciple é obrigatório para a platina?",
-          "answer": "Não. The Tengu’s Disciple é DLC e fica fora do checklist base de 56 troféus."
+          "question": "Nioh 2 precisa de online para platinar?",
+          "answer": "Não. A platina base não tem troféus online obrigatórios. Coop online pode ajudar em algumas lutas, mas o guia não deve tratar online como requisito."
         },
         {
-          "question": "Darkness in the Capital faz parte da platina base?",
-          "answer": "Não. Darkness in the Capital é expansão separada e não é necessária para a platina base descrita aqui."
+          "question": "Nioh 2 tem coop obrigatório?",
+          "answer": "Não. A platina base pode ser feita solo. Troféus como Teamwork e Help Wanted têm alternativas com NPCs, Acolytes ou sistemas do próprio jogo."
         },
         {
-          "question": "The First Samurai é necessário?",
-          "answer": "Não. The First Samurai é DLC adicional e foi mantido fora deste guia da lista base."
+          "question": "Quanto tempo leva para platinar Nioh 2?",
+          "answer": "A faixa do guia é 100-150 horas. Jogadores experientes podem terminar mais rápido, mas a estimativa conservadora considera aprendizado, missões, coletáveis, Soul Cores, proficiência e cleanup."
         },
         {
-          "question": "Existem troféus perdíveis no Nioh 2 base?",
-          "answer": "Não há troféus perdíveis definitivos na lista base; use replay de missões e mission select para fechar coletáveis e objetivos específicos."
+          "question": "Qual a dificuldade da platina?",
+          "answer": "O guia usa 6/10. A lista não é complicada por perdíveis ou online, mas o combate de Nioh 2 cobra domínio de Ki Pulse, Burst Counter, equipamentos, chefes e sistemas de build."
         },
         {
-          "question": "Quando devo fazer o cleanup final?",
-          "answer": "Faça o cleanup após completar a história principal e os sistemas-chave, usando replay de missões para Kodama, Hot Springs, Dark Realms e objetivos de missão restantes."
+          "question": "É necessário jogar DLC para a platina base?",
+          "answer": "Não. The Tengu's Disciple, Darkness in the Capital e The First Samurai são listas separadas e não entram nos 56 troféus da platina base."
+        },
+        {
+          "question": "Dá para repetir missões para limpar coletáveis?",
+          "answer": "Sim. A seleção/replay de missões permite voltar para Kodama, Hot Springs, Dark Realms, Soul Cores e objetivos situacionais."
+        },
+        {
+          "question": "NG+ é obrigatório para a platina base?",
+          "answer": "Não como requisito formal da lista base. NG+ pode acelerar proficiência, Amrita e farm, mas a rota da platina deve ser descrita como campanha + pós-game/cleanup."
+        },
+        {
+          "question": "Qual é o maior grind da platina?",
+          "answer": "O maior grind costuma ser proficiência/Mystic Arts, Soul Cores, Tea Utensils e limpeza de missões/coletáveis. A habilidade do jogador também pesa bastante no tempo final."
+        },
+        {
+          "question": "O guia está verificado?",
+          "answer": "Ainda não tem selo manual verified. A revisão validou a contagem da lista base, separou DLCs, preservou nomes oficiais em inglês, deixou nomes PT-BR vazios por falta de fonte oficial/confiável e confirmou sem perdíveis, online, coop ou DLC obrigatórios."
         }
       ],
       "image": "https://cdn.cloudflare.steamstatic.com/steam/apps/1325200/header.jpg",
       "cover_image": "https://cdn.cloudflare.steamstatic.com/steam/apps/1325200/library_600x900.jpg",
-      "roadmap": [
-          "Etapa 1: avance pela campanha principal e aprenda Ki Pulse, Yokai Shift, Burst Counter, stances e a usar Hot Springs sem sair do fluxo.",
-          "Etapa 2: colecione Kodama e visite Hot Springs sempre que passar por elas, reduzindo retrabalho natural da lista base.",
-          "Etapa 3: finalize as missões secundárias necessárias para Samurai of Legend, mantendo a lista base separada de qualquer DLC.",
-          "Etapa 4: desbloqueie Guardian Spirits, Mystic Arts para as armas base, Ninjutsu e Onmyo Magic; esses sistemas ajudam nos bosses e no cleanup.",
-          "Etapa 5: use Soul Match, Forge, Remodel e proficiências de armas para montar builds que suportem as lutas mais exigentes.",
-          "Etapa 6: use replay de missões para limpar Kodama, Hot Springs, Dark Realms, Soul Cores e objetivos específicos deixados para trás.",
-          "Etapa 7: revise o checklist final da lista base: 56 troféus, 0 online obrigatório, 0 perdíveis definitivos e DLCs separados do guia."
-      ],
-      "roadmapStages": [
-        {
-          "title": "Aprenda os fundamentos da campanha",
-          "focus": "Fundamentos de combate e build",
-          "objective": "Avance nos primeiros atos enquanto domina Ki Pulse, Yokai Shift, Burst Counter e Hot Springs.",
-          "actions": [
-            "Jogue a história principal normalmente sem pular tutoriais importantes.",
-            "Use Hot Springs como checkpoints naturais para curar e reduzir retrabalho.",
-            "Experimente stances e builds leves antes de enfrentar bosses mais fortes."
-          ],
-          "warning": "Não tente completar todos os objetivos de coleta antes de dominar o básico de combate.",
-          "result": "Base sólida para a platina base sem depender de online ou DLC.",
-          "category": "Preparação"
-        },
-        {
-          "title": "Progresso principal e coleta emergente",
-          "focus": "Missões principais, Kodama e Hot Springs",
-          "objective": "Complete as regiões principais e colete Kodama e Hot Springs no caminho.",
-          "actions": [
-            "Pegue Kodama enquanto explora cada missão.",
-            "Use Hot Springs sempre que estiver disponível.",
-            "Evite deixar coletáveis importantes para o final."
-          ],
-          "warning": "Não pule os Kodama e Hot Springs — o cleanup será muito maior depois.",
-          "result": "Minimiza retrabalho e torna o resto da lista mais previsível.",
-          "category": "Colecionáveis"
-        },
-        {
-          "title": "Missões secundárias e escopo base",
-          "focus": "Requisitos de Samurai of Legend",
-          "objective": "Finalize as missões secundárias necessárias sem incluir conteúdo de DLC.",
-          "actions": [
-            "Verifique quais side missions são exigidas pelo troféu Samurai of Legend.",
-            "Separe missões de DLC ou expansões do checklist base.",
-            "Mantenha The Tengu’s Disciple e outras expansões fora da rota base."
-          ],
-          "warning": "Não assuma que todas as side missions são obrigatórias; foque nas da lista base.",
-          "result": "O troféu Samurai of Legend fica mais claro e o escopo do guia permanece preciso.",
-          "category": "Escopo"
-        },
-        {
-          "title": "Desbloqueie Mystic Arts e Guardian Spirits",
-          "focus": "Soul Cores, Mystic Arts e Spirits",
-          "objective": "Desbloqueie Mystic Arts para as armas base, Ninjutsu, Onmyo Magic e obtenha Guardian Spirits úteis.",
-          "actions": [
-            "Complete dojos para cada arma base.",
-            "Compre Mystic Arts de Ninjutsu e Onmyo Magic quando disponível.",
-            "Reúna todos os Guardian Spirits base."
-          ],
-          "warning": "Não deixe as artes místicas para o final; elas ajudam em várias lutas e no cleanup.",
-          "result": "Você terá ferramentas de combate e suporte para enfrentar o conteúdo restante.",
-          "category": "Build"
-        },
-        {
-          "title": "Prepare equipamento e proficiências",
-          "focus": "Forge, Soul Match e upgrades",
-          "objective": "Use Soul Match, Forge e Remodel para preparar equipamentos fortes.",
-          "actions": [
-            "Faça Soul Match em itens úteis para sua build.",
-            "Use Forge e Remodel para ajustar equipamentos de acordo com a sua progressão.",
-            "Aprimore proficiências de armas e colecione Tea Utensils no processo."
-          ],
-          "warning": "Não gaste recursos caros antes de ter uma build funcional e estável.",
-          "result": "Equipamentos e proficiências estão prontos para o cleanup final.",
-          "category": "Progressão"
-        },
-        {
-          "title": "Limpe por replay de missões",
-          "focus": "Reuse missões para fechar coletáveis",
-          "objective": "Use replay de missões para fechar Kodama, Hot Springs, Dark Realms, Soul Cores e objetivos específicos.",
-          "actions": [
-            "Rejogue missões com objetivos pendentes.",
-            "Limpe Dark Realms e colecionáveis por região.",
-            "Foque em metas como Seven Spears, Bells e Amrita shards."
-          ],
-          "warning": "Não ignore objetivos de missão específicos; eles podem exigir replay dedicado.",
-          "result": "A maior parte do checklist base será fechada sem precisar reiniciar a campanha.",
-          "category": "Cleanup"
-        },
-        {
-          "title": "Revisão final da platina base",
-          "focus": "Checklist de fechamento e separação de DLC",
-          "objective": "Revise todos os troféus da lista base e confirme que o DLC está separado.",
-          "actions": [
-            "Cheque a contagem dos 56 troféus base.",
-            "Confirme que nenhum troféu de DLC está na lista base.",
-            "Use mission select e replay para os últimos objetivos."
-          ],
-          "warning": "Não misture conteúdo de DLC com a lista base no fechamento.",
-          "result": "Platina base finalizada com foco correto e sem dependências de DLC.",
-          "category": "Verificação"
-        }
-      ],
+      "roadmap": nioh2BaseRoadmap,
+      "roadmapStages": nioh2BaseRoadmap,
       "trophies": [
           {
               "id": "nioh2_you_are_nioh",
@@ -4345,33 +4523,199 @@ const sampleGames = [
     "time_max_hours": 60,
     "time_sort_hours": 60,
     "time_bucket": "long",
-    "missable": "Não há troféus perdíveis confirmados na lista base disponível até o momento. A platina pode ser feita em uma playthrough, com cleanup por regiões, free roam e replay de missões pelo Battle Scroll; dados sujeitos a revisão editorial.",
-    "runs_summary": "Uma playthrough principal com cleanup por regiões, Myths e missões repetíveis. Não há perdíveis confirmados na lista base, mas a lista segue em revisão.",
-    "missable_summary": "Sem perdíveis confirmados; use o pós-história, free roam e Battle Scroll para fechar pendências. Precisa validar novamente se patches ou DLCs alterarem requisitos.",
-    "online_summary": "Não há troféus online obrigatórios confirmados para a platina base; precisa validar em revisão final por ser lista recente. O jogo tem coop online opcional e suporte por NPC/Acolytes; o requisito de Teamwork pode ser feito solo com Acolytes, então não trate coop como obrigatório sem nova validação.",
+    "developer": "Team Ninja",
+    "publisher": "Koei Tecmo",
+    "platforms": ["PS5", "PC/Windows"],
+    "genre": "Action RPG / Soulslike / Hack and slash",
+    "trophy_count": 51,
+    "trophy_distribution": { "Platina": 1, "Ouro": 2, "Prata": 10, "Bronze": 38 },
+    "hasMissables": false,
+    "missableCount": 0,
+    "onlineRequired": false,
+    "coopRequired": false,
+    "dlcRequired": false,
+    "chapterSelect": false,
+    "missionReplay": true,
+    "freeRoamCleanup": true,
+    "platinumType": "campanha + myths + coletáveis + proficiência + cleanup/replay",
+    "missable": "Não há troféus perdíveis reais na lista base. A platina pode ser feita em uma campanha com cleanup por regiões, free roam e replay de missões pelo Battle Scroll.",
+    "runs_summary": "1 campanha + cleanup/replay por regiões, Myths e missões repetíveis via Battle Scroll.",
+    "missable_summary": "Sem perdíveis reais na lista base. Use pós-história, free roam e Battle Scroll para fechar pendências.",
+    "online_summary": "Não há online obrigatório para a platina base. O jogo possui coop online opcional, mas Teamwork deve ser tratado como possível solo com NPCs/Acolytes quando validado.",
     "grind_summary": "O peso está em exploração de regiões, coletáveis, Myths, bases, Crucibles, proficiências, ferreiro e domínio dos sistemas de combate.",
-    "dlc_scope": "Guia focado na lista base da platina de PS5/PC. Season Pass, Digital Deluxe e DLC futura devem ficar separados se o projeto suportar DLC.",
+    "dlc_scope": "DLCs futuras/Season Pass ficam fora do escopo da platina base.",
     "difficulty_reason": "A dificuldade vem do combate exigente, chefes, builds e volume de conteúdo de mundo aberto; não há troféu de dificuldade confirmado na lista base.",
     "time_reason": "A faixa de 40-60 horas considera história, exploração das regiões, coletáveis, Myths, side content, sistemas de combate e cleanup; informação baseada na lista disponível até o momento.",
-    "first_run_advice": "Avance aprendendo os estilos Samurai e Ninja, mas acompanhe coletáveis, shrines e atividades por região para reduzir cleanup.",
+    "first_run_advice": "Avance a campanha aprendendo Samurai/Ninja, Battle Scroll e trackers regionais antes do cleanup.",
     "cleanup_advice": "Depois da história, revise cada região pelos trackers de coletáveis, bases, Crucibles, Myths, Battle Scroll e troféus de combate.",
-    "before_you_start": "Confirme que está usando a lista base de Nioh 3 em PS5/PC. O jogo tem coop online opcional, mas a platina não deve ser descrita como coop obrigatória sem validação nova.",
+    "before_you_start": "Confirme que está usando a lista base de Nioh 3 em PS5/PC. Season Pass, Digital Deluxe, bônus, cosméticos, demo e DLCs futuras ficam fora da platina base.",
     "best_for": "Ideal para quem quer uma platina de ação/RPG exigente, com exploração, loot, builds e checklist robusto.",
     "avoid_if": "Evite se você quer uma platina curta, simples ou sem domínio de combate.",
     "editorial_status": "published",
+    "editorialStatus": "in_review",
+    "editorial_review_status": "in_review",
+    "quality_warnings": ["recent_release", "needs_ptbr_trophy_name_validation", "needs_future_dlc_scope_check"],
+    "last_reviewed_at": "2026-05-16",
     "coverage_level": "strong",
     "is_verified": false,
     "verification_status": "review",
-    "verification_note": "Lista base revisada com fontes publicas; aguarda validação editorial manual final e não deve ser tratada como verificada.",
+    "verification_note": "Lista base de 51 troféus revisada com distribuição 1/2/10/38, sem perdíveis reais, sem online/coop/DLC obrigatórios e com Battle Scroll como replay de missões; permanece em revisão editorial por validação PT-BR e escopo de DLCs futuras.",
+    "seo": {
+      "title": "Nioh 3: guia de platina, troféus e roadmap | AtlasAchievement",
+      "description": "Guia de platina de Nioh 3 em português, com tempo estimado, dificuldade, troféus, Samurai, Ninja, missões, coletáveis, Battle Scroll, roadmap e checklist.",
+      "canonical": "https://atlasachievement.com.br/jogo/nioh-3"
+    },
     "image": "https://shared.fastly.steamstatic.com/store_item_assets/steam/apps/3681010/a21264e9fd476dcb2901c2432b598107d024c5a8/header.jpg?t=1772090941",
     "cover_image": "https://shared.fastly.steamstatic.com/store_item_assets/steam/apps/3681010/a6c07532fbcfa8c7aeecddc251aa4a6a7156323c/library_capsule.jpg?t=1772090941",
+    "quickDecision": {
+      "time": "40-60h",
+      "difficulty": "5/10",
+      "runs": "1 campanha + cleanup/replay",
+      "missables": "Não",
+      "onlineRequired": "Não",
+      "coopRequired": "Não",
+      "dlcRequired": "Não",
+      "firstAction": "Avance a campanha aprendendo Samurai/Ninja, Battle Scroll e trackers regionais antes do cleanup.",
+      "mainAttention": "A platina exige campanha, myths, coletáveis, proficiência, bosses opcionais e cleanup robusto, mas não deve ser tratada como dependente de online, coop obrigatório ou DLC."
+    },
+    "checklist": [
+      "Confirmar os 51 troféus da lista base, sem misturar Season Pass, Digital Deluxe, demo ou DLCs futuras.",
+      "Avançar campanha principal e missões de história até abrir regiões, Guardian Spirits, Battle Scroll e Eternal Rift.",
+      "Completar missões principais, missões secundárias e Myths, incluindo Myths ocultos quando o progresso permitir.",
+      "Limpar coletáveis por região: Kodama, Chijiko, Six Jizo, hot springs, Scampusses, enemy bases e Lesser Crucibles.",
+      "Ativar shrines nomeados e Bodhisattva Statues enquanto acompanha Exploration Level e trackers regionais.",
+      "Trabalhar Samurai/Ninja, Ninjutsu, Burst Break, Guardian Spirit, Soul Cores/Yokai e proficiência de armas.",
+      "Resolver ferreiro, Crucible weapon, Arts Proficiency, Soul Match, remodelagem e upgrades no Eternal Rift.",
+      "Derrotar bosses opcionais, masters e inimigos especiais com troféu próprio.",
+      "Fechar troféus situacionais por Battle Scroll/replay sem tratá-los como perdíveis.",
+      "Validar Teamwork como solo com NPCs/Acolytes quando aplicável, sem marcar coop obrigatório.",
+      "Fazer cleanup final por free roam/Battle Scroll e conferir que DLCs futuras ficaram fora da platina base."
+    ],
+    "faq": [
+      {
+        "question": "Nioh 3 tem troféus perdíveis?",
+        "answer": "Não há troféus perdíveis reais confirmados na lista base. O jogo permite limpeza posterior por free roam/replay de missões, então o desafio está em campanha, myths, coletáveis, proficiência, bosses opcionais e cleanup."
+      },
+      {
+        "question": "Nioh 3 precisa de online para platinar?",
+        "answer": "Não. A platina base não deve exigir online obrigatório. Recursos online existem como opção, mas não são tratados como requisito da lista base."
+      },
+      {
+        "question": "Nioh 3 tem coop obrigatório?",
+        "answer": "Não. O jogo possui coop online opcional, mas a platina base não deve exigir coop obrigatório. Se o troféu Teamwork estiver na lista, ele deve ser tratado como possível via NPCs/Acolytes quando validado."
+      },
+      {
+        "question": "Quanto tempo leva para platinar Nioh 3?",
+        "answer": "O resumo editorial mantém 40-60h, considerando campanha, Myths, coletáveis, proficiência, bosses opcionais, sistemas de combate e cleanup/replay."
+      },
+      {
+        "question": "Qual a dificuldade da platina?",
+        "answer": "A dificuldade cadastrada é 5/10. O peso vem do combate, chefes, exploração, builds e volume de checklist, não de modo difícil obrigatório."
+      },
+      {
+        "question": "É necessário jogar DLC para a platina base?",
+        "answer": "Não. Season Pass, Digital Deluxe, bônus, cosméticos, demo e DLCs futuras ficam fora do escopo da platina base."
+      },
+      {
+        "question": "Dá para repetir missões para limpar coletáveis?",
+        "answer": "Sim. O guia trata Battle Scroll e free roam como caminhos de limpeza para missões, coletáveis, diálogos e condições situacionais."
+      },
+      {
+        "question": "Nioh 3 tem Chapter Select?",
+        "answer": "Não deve ser marcado como Chapter Select tradicional. O conceito correto para o guia é replay de missões via Battle Scroll."
+      },
+      {
+        "question": "Battle Scroll conta como replay de missões?",
+        "answer": "Sim. Battle Scroll é o sistema usado no guia para revisar missões e corrigir pendências sem reiniciar a campanha."
+      },
+      {
+        "question": "Qual é o maior grind da platina?",
+        "answer": "O maior volume está em exploração regional, Myths, coletáveis, proficiência, sistemas de ferreiro, Soul Cores/Yokai, bosses opcionais e cleanup final."
+      },
+      {
+        "question": "O guia está verificado?",
+        "answer": "Não. O guia permanece em revisão editorial por ser recente e por exigir validação final de nomes PT-BR oficiais e escopo de DLCs futuras."
+      }
+    ],
     "roadmap": [
-      "Etapa 1: conclua o prólogo, aprenda a alternar entre Samurai e Ninja e abra as primeiras regiões. Não há perdíveis confirmados nem troféus online obrigatórios na lista base; Expeditions são opcionais e Teamwork deve ser validado como solo via Acolytes.",
-      "Etapa 2: avance a história principal para desbloquear regiões, Guardian Spirits, Spirit Veins e o Battle Scroll. Depois da história, o replay de missões e o free roam continuam disponíveis.",
-      "Etapa 3: complete Myths, side quests, Acolytes/NPC helpers e atividades regionais conforme elas aparecem. Elas ajudam em nível, recursos, ferreiro, proficiências e reduzem bastante o cleanup.",
-      "Etapa 4: limpe coletáveis e atividades de mundo aberto por região: Kodama, hot springs, Scampuss, Chijiko, Six Jizo, bases inimigas e Lesser Crucibles.",
-      "Etapa 5: finalize troféus de sistemas de combate e progressão: Burst Break, Guardian Spirit, ninjutsu, onmyo, armas, proficiências, forja, Soul Match e remodelagem.",
-      "Etapa 6: faça o cleanup final pelos trackers de cada região, revise os 51 troféus da lista base e separe Season Pass, Digital Deluxe ou qualquer DLC futura fora deste guia de platina."
+      {
+        "title": "Etapa 1 — Aprenda o combate e avance a campanha",
+        "focus": "Campanha / aprendizado",
+        "objective": "Entender a alternância entre Samurai Style e Ninja Style, estabilizar sua build inicial e atravessar as primeiras missões sem tentar limpar 100% do mapa cedo demais.",
+        "actions": [
+          "Complete o prólogo e as primeiras missões focando em sobrevivência, Ki, Burst Break e troca de estilos.",
+          "Teste armas e descubra rapidamente qual combinação funciona melhor para campanha e exploração.",
+          "Use side content próximo do seu nível para ganhar recursos e reduzir a curva dos primeiros chefes.",
+          "Não force limpeza total se algum ponto estiver bloqueado por Spirit Vein ou Guardian Spirit ainda não liberado."
+        ],
+        "warning": "O início tende a ser a parte mais severa do jogo. Se um caminho parecer travado, avance a história e volte depois.",
+        "result": "Campanha inicial estabilizada, estilos de combate assimilados e primeiras regiões abertas."
+      },
+      {
+        "title": "Etapa 2 — Abra regiões, Guardian Spirits e Battle Scroll",
+        "focus": "Progresso / regiões",
+        "objective": "Desbloquear as quatro eras principais, os Guardian Spirits centrais, a exploração regional e o sistema de replay de missões necessário para cleanup.",
+        "actions": [
+          "Priorize a história principal até abrir novas eras, regiões e ferramentas de exploração.",
+          "Desbloqueie o Eternal Rift e use o hub para ferreiro, upgrades e organização do progresso.",
+          "Chegue ao ponto em que o Battle Scroll fica funcional para repetição de missões e correção de pendências.",
+          "Observe no mapa os trackers regionais e acostume-se a revisar o Exploration Level."
+        ],
+        "warning": "Nioh 3 não deve ser tratado como jogo de Chapter Select tradicional; o replay útil aqui é o Battle Scroll.",
+        "result": "Mapa macro aberto, Guardian Spirits essenciais liberados e base pronta para exploração metódica."
+      },
+      {
+        "title": "Etapa 3 — Limpe Myths, missões e coletáveis por região",
+        "focus": "Missões / coletáveis",
+        "objective": "Reduzir o volume do cleanup deixando cada região o mais limpa possível antes da reta final.",
+        "actions": [
+          "Complete Myths conforme surgirem, incluindo os ocultos quando a progressão já permitir acessá-los.",
+          "Varra por região Kodama, Chijiko, Six Jizo, hot springs, Scampusses, enemy bases e Lesser Crucibles.",
+          "Use o Exploration Level para abrir o mapa e facilitar a marcação automática dos itens restantes.",
+          "Ative named shrines e Bodhisattva Statues durante a campanha para não precisar reabrir missão por missão depois."
+        ],
+        "warning": "Nem tudo precisa ser pego imediatamente; alguns pontos exigem backtracking após liberar Spirit Veins e Guardian Spirits específicos.",
+        "result": "Grande parte dos coletáveis relevantes para a platina fica resolvida antes do pós-jogo."
+      },
+      {
+        "title": "Etapa 4 — Resolva progressão, proficiência e sistemas de ferraria",
+        "focus": "Proficiência / armas",
+        "objective": "Fechar troféus ligados a level, combate, Crucible weapon, Ninjutsu e recursos do ferreiro sem deixar tudo para o último momento.",
+        "actions": [
+          "Garanta naturalmente troféus de level/progresso enquanto avança pela campanha e faz side content.",
+          "Trabalhe Crucible Arts, Arts Proficiency, Ninjutsu, Burst Break e Guardian Spirit durante a exploração.",
+          "Use o Eternal Rift para troféus ligados ao ferreiro, casamento de acessórios, remodelagem e upgrades quando os sistemas estiverem liberados.",
+          "Purifique Soul Cores e use sistemas de Yokai sem transformar isso em grind tardio desnecessário."
+        ],
+        "warning": "Evite inventar requisito não sustentado pela lista, como um bloco obrigatório de Onmyo se a lista base não pedir explicitamente.",
+        "result": "Troféus de sistema, combate e ferreiro resolvidos em paralelo ao progresso normal."
+      },
+      {
+        "title": "Etapa 5 — Feche bosses opcionais e troféus situacionais",
+        "focus": "Bosses / desafios",
+        "objective": "Concluir troféus que pedem condições específicas de missão, lutas opcionais e cadeias secundárias mais sensíveis.",
+        "actions": [
+          "Derrote bosses opcionais e inimigos especiais que tenham troféu próprio.",
+          "Revise troféus situacionais usando Battle Scroll quando necessário.",
+          "Complete cadeias secundárias e Myths ligados a objetivos específicos.",
+          "Resolva Teamwork de forma solo com NPCs/Acolytes, se essa alternativa estiver validada."
+        ],
+        "warning": "Esses troféus podem parecer perdíveis à primeira vista, mas devem ser tratados como situacionais de replay, não como perdíveis reais.",
+        "result": "Pendências específicas ficam limpas antes do fechamento da lista."
+      },
+      {
+        "title": "Etapa 6 — Faça o cleanup final da lista base",
+        "focus": "Cleanup final",
+        "objective": "Conferir os 51 troféus da lista base, separar qualquer conteúdo de Season Pass/Digital Deluxe e fechar os últimos trackers.",
+        "actions": [
+          "Revise o checklist completo de campanha, Myths, Kodama, Chijiko, Six Jizo, hot springs, Scampusses, enemy bases, Lesser Crucibles e shrines.",
+          "Use Battle Scroll e free roam para qualquer missão, diálogo ou condição de troféu que tenha ficado para trás.",
+          "Confirme que Teamwork não está sendo tratado como online obrigatório e que nenhum troféu está marcado indevidamente como perdível.",
+          "Mantenha DLC 1, DLC 2, Season Pass e qualquer conteúdo futuro fora do escopo da platina base."
+        ],
+        "warning": "Se algo estiver faltando depois do final, o caminho normal é replay/free roam, não reinício de run.",
+        "result": "Lista base concluída sem misturar Season Pass ou futuros extras à platina principal."
+      }
     ],
     "trophies": [
       {
@@ -4559,8 +4903,8 @@ const sampleGames = [
         "is_spoiler": false
       },
       {
-        "id": "nioh3_latést_masterpiece",
-        "name": "Latést Masterpiece",
+        "id": "nioh3_latest_masterpiece",
+        "name": "Latest Masterpiece",
         "type": "Bronze",
         "description": "Forje um item pela primeira vez.",
         "tip": "Use a opção Forge na ferreira do Eternal Rift.",
@@ -4782,6 +5126,251 @@ const sampleGames = [
         "tip": "Faça também as versões Novice e Adept antes da Veteran.",
         "is_spoiler": true
       }
+    ]
+  },
+  {
+    "name": "Saros",
+    "slug": "saros",
+    "difficulty": 4,
+    "time": "20-30h",
+    "time_min_hours": 20,
+    "time_max_hours": 30,
+    "time_sort_hours": 30,
+    "time_bucket": "medium",
+    "developer": "Housemarque",
+    "publisher": "Sony Interactive Entertainment",
+    "platforms": ["PS5"],
+    "genre": "ação / roguelite / shooter",
+    "trophy_count": 45,
+    "trophy_distribution": { "Platina": 1, "Ouro": 2, "Prata": 16, "Bronze": 26 },
+    "hasMissables": false,
+    "missableCount": 0,
+    "onlineRequired": false,
+    "coopRequired": false,
+    "dlcRequired": false,
+    "chapterSelect": false,
+    "platinumType": "campanha + runs + coletáveis + desafios + cleanup",
+    "missable": "Não há troféus perdíveis reais na lista base. A lista pode ser concluída com runs adicionais e cleanup, sem bloquear a platina por ordem errada.",
+    "runs_summary": "Campanha/runs principais + cleanup de bosses, Nightmare Gates, armas, desafios de combate e objetivos cumulativos.",
+    "missable_summary": "Sem perdíveis reais na lista base. Troféus situacionais, bosses e objetivos de combate devem ser tratados como cleanup de runs, não como perda permanente.",
+    "online_summary": "Não há online obrigatório para a platina base. A página oficial descreve Saros como jogo single-player, então coop e multiplayer não entram como requisito de platina.",
+    "grind_summary": "O grind principal está em 33 expedições bem-sucedidas com Carcosan Modifiers, 1.995 inimigos, armas/variantes, Halcyon, upgrades e desafios de combate.",
+    "dlc_scope": "Guia focado na lista base de PS5. Digital Deluxe, cosméticos, acesso antecipado e qualquer conteúdo futuro ficam fora da platina base.",
+    "difficulty_reason": "A dificuldade estimada fica em 4/10: a lista é direta, mas pede consistência em runs, chefes, Nightmare Gates, um bioma sem dano relevante e desafios de armas.",
+    "time_reason": "A faixa de 20-30 horas considera campanha, epílogo, bosses, 7 Nightmare Gates, 33 expedições com modificadores, objetivos cumulativos e cleanup de armas/desafios.",
+    "first_run_advice": "Avance pelas primeiras runs aprendendo combate, movimentação, upgrades permanentes e padrões dos chefes antes de tentar limpar tudo.",
+    "cleanup_advice": "Depois da campanha/epílogo, foque em Nightmare Gates, armas, 33 expedições com modificadores, objetivos cumulativos, desafios situacionais e bioma sem dano.",
+    "before_you_start": "Não trate Saros como Returnal 2 nem copie roadmap de Returnal. O guia cobre Saros como lista própria de PS5, sem online, coop ou DLC obrigatórios.",
+    "best_for": "Ideal para quem gosta de roguelite de ação com runs curtas, chefes, upgrades permanentes e desafios de execução.",
+    "avoid_if": "Evite se você não curte repetir runs, aprender padrões de chefes ou fazer desafios situacionais de armas e combate.",
+    "editorial_status": "published",
+    "editorialStatus": "in_review",
+    "editorial_review_status": "in_review",
+    "quality_warnings": ["recent_release", "needs_trophy_list_validation", "needs_trophy_localization_check", "needs_cover_asset"],
+    "last_reviewed_at": "2026-05-16",
+    "coverage_level": "strong",
+    "is_verified": false,
+    "verification_status": "review",
+    "verification_note": "Guia inicial de Saros adicionado com 45 troféus, distribuição 1/2/16/26, sem perdíveis, sem online/coop/DLC obrigatórios e fontes públicas; permanece em revisão editorial por localização PT-BR, validação final da lista e capa dedicada.",
+    "seo": {
+      "title": "Saros: guia de platina, troféus e roadmap | AtlasAchievement",
+      "description": "Guia de platina de Saros em português, com tempo estimado, dificuldade, troféus, roadmap, checklist, coletáveis, bosses e dicas para a platina.",
+      "canonical": "https://atlasachievement.com.br/jogo/saros"
+    },
+    "image": "/assets/brand/atlasachievement-og.png",
+    "cover_image": "/assets/brand/atlasachievement-og.png",
+    "quickDecision": {
+      "time": "20-30h",
+      "difficulty": "4/10",
+      "runs": "campanha/runs principais + cleanup",
+      "missables": "Não",
+      "onlineRequired": "Não",
+      "coopRequired": "Não",
+      "dlcRequired": "Não",
+      "firstAction": "Avance pelas primeiras runs aprendendo combate, movimentação, upgrades permanentes e padrões dos chefes antes de tentar limpar tudo.",
+      "mainAttention": "A platina deve focar em domínio das runs, chefes, coletáveis, upgrades e cleanup, sem tratar online, coop ou DLC como obrigatórios."
+    },
+    "checklist": [
+      "Confirmar os 45 troféus da lista base e a distribuição 1 platina, 2 ouro, 16 prata e 26 bronze.",
+      "Avançar pelas primeiras runs aprendendo combate, movimentação, escudo, parry, Overdrive e upgrades permanentes.",
+      "Concluir atos, epílogo e principais marcos de história/progressão.",
+      "Derrotar os Overlords de Shattered Rise, Ancient Depths, Shattered Descent, Blighted Marsh, Desecrated Fortress, Acolyte's Haven, Cathedral e Yellow Shore.",
+      "Entrar na Banyan Tree e completar todos os encontros internos exigidos.",
+      "Entrar e concluir todos os 7 Nightmare Gates pelo menos uma vez.",
+      "Desbloquear armas principais, Power Weapons, Traits e Variants necessários.",
+      "Trabalhar objetivos cumulativos: 1.995 hostis, 2.021 projéteis absorvidos, 70 Halcyon, 20 Integrity Augments e 33 expedições com Carcosan Modifiers.",
+      "Fazer desafios situacionais de Handcannons, Rifles, Shotguns, Chakrams, Crossbows e Power Weapons.",
+      "Reservar runs dedicadas para Untouchable, Vincible, Fatal Triptych, War Within e Fall From Grace.",
+      "Revisar o cleanup final sem marcar online, coop, DLC ou conteúdo futuro como obrigatório."
+    ],
+    "faq": [
+      {
+        "question": "Saros tem troféus perdíveis?",
+        "answer": "Não há troféus perdíveis reais tratados na lista base. O guia considera bosses, desafios, armas e objetivos cumulativos como cleanup de runs, não como perda permanente."
+      },
+      {
+        "question": "Saros precisa de online para platinar?",
+        "answer": "Não. A página oficial descreve Saros como um jogo single-player, e a lista base não deve ser tratada como dependente de online obrigatório."
+      },
+      {
+        "question": "Saros tem coop obrigatório?",
+        "answer": "Não. O guia não marca coop obrigatório porque não há requisito de coop validado para a platina base."
+      },
+      {
+        "question": "Quanto tempo leva para platinar Saros?",
+        "answer": "A estimativa inicial do guia é 20-30h, considerando campanha, epílogo, Nightmare Gates, 33 expedições com modificadores e cleanup de armas/desafios."
+      },
+      {
+        "question": "Qual a dificuldade da platina?",
+        "answer": "A dificuldade inicial ficou em 4/10. A lista é direta, mas exige consistência em runs, chefes, desafios de armas e um bioma sem dano relevante."
+      },
+      {
+        "question": "Saros exige DLC para platina?",
+        "answer": "Não. Digital Deluxe, cosméticos, acesso antecipado e qualquer conteúdo futuro ficam fora do escopo da platina base."
+      },
+      {
+        "question": "Dá para limpar pendências depois da campanha?",
+        "answer": "O guia trata a platina como campanha/runs principais + cleanup. Pendências de armas, desafios, Nightmare Gates e objetivos cumulativos devem ser resolvidas em runs adicionais."
+      },
+      {
+        "question": "Saros tem chapter select ou replay de áreas?",
+        "answer": "Não há Chapter Select tradicional marcado no guia. Replays, pós-jogo ou seleção de áreas devem continuar em validação editorial antes de virar badge específico."
+      },
+      {
+        "question": "A platina depende de múltiplas runs?",
+        "answer": "Sim. Como roguelite, a platina depende de várias runs para progressão, bosses, recursos, modificadores, armas e desafios situacionais."
+      },
+      {
+        "question": "O guia está verificado?",
+        "answer": "Não. Saros foi adicionado como guia inicial em revisão editorial, com avisos para validação final da lista e localização oficial dos troféus."
+      }
+    ],
+    "roadmap": [
+      {
+        "title": "Etapa 1 — Aprenda as runs e fortaleça a base",
+        "focus": "Primeiras runs / aprendizado",
+        "objective": "Usar as primeiras tentativas para entender combate, movimentação, ritmo dos biomas, upgrades e padrões dos chefes.",
+        "actions": [
+          "Avance sem tentar limpar tudo na primeira run.",
+          "Priorize sobrevivência, mobilidade e upgrades permanentes.",
+          "Teste armas, habilidades e modificadores para encontrar uma build confortável.",
+          "Observe padrões de inimigos e chefes antes de focar em troféus específicos."
+        ],
+        "warning": "",
+        "result": "Base de combate criada e progresso inicial estabilizado."
+      },
+      {
+        "title": "Etapa 2 — Avance a campanha e desbloqueie sistemas",
+        "focus": "Campanha / progressão",
+        "objective": "Progredir pelas áreas principais enquanto libera sistemas, recursos e opções que facilitam as runs futuras.",
+        "actions": [
+          "Foque em chegar cada vez mais longe nas runs principais.",
+          "Use recursos obtidos para fortalecer o personagem entre tentativas.",
+          "Desbloqueie sistemas de upgrade conforme ficarem disponíveis.",
+          "Marque no checklist qualquer troféu de história, boss ou sistema concluído."
+        ],
+        "warning": "",
+        "result": "Campanha encaminhada e ferramentas principais liberadas."
+      },
+      {
+        "title": "Etapa 3 — Derrote chefes e complete objetivos de progressão",
+        "focus": "Chefes / história",
+        "objective": "Concluir os principais marcos de progressão e reduzir pendências ligadas a bosses e áreas.",
+        "actions": [
+          "Aprenda os padrões dos chefes antes de tentar desafios secundários.",
+          "Use builds consistentes para avançar por biomas mais difíceis.",
+          "Priorize objetivos de história e progressão principal.",
+          "Volte a áreas anteriores quando estiver mais forte, se o jogo permitir."
+        ],
+        "warning": "",
+        "result": "Principais chefes vencidos e rota de platina mais clara."
+      },
+      {
+        "title": "Etapa 4 — Trabalhe coletáveis, upgrades e objetivos longos",
+        "focus": "Coletáveis / upgrades",
+        "objective": "Fechar troféus ligados a coleta, recursos, melhorias permanentes e objetivos de médio/longo prazo.",
+        "actions": [
+          "Revise o checklist de coletáveis e recursos por área.",
+          "Complete upgrades permanentes ou sistemas de progressão exigidos pelos troféus.",
+          "Separe runs de farm das runs focadas em chefes.",
+          "Use replay/free roam/seleção de área somente se esse recurso estiver validado."
+        ],
+        "warning": "",
+        "result": "Coletáveis, recursos e upgrades avançados antes do cleanup final."
+      },
+      {
+        "title": "Etapa 5 — Complete desafios e troféus situacionais",
+        "focus": "Desafios / combate",
+        "objective": "Resolver troféus de ações específicas, desafios de combate, condições especiais e pendências que não vieram naturalmente.",
+        "actions": [
+          "Revise troféus situacionais no checklist.",
+          "Faça runs focadas em requisitos específicos de arma, habilidade, dano, esquiva ou boss.",
+          "Não classifique como perdível algo que possa ser repetido depois.",
+          "Ajuste build e upgrades para facilitar desafios restantes."
+        ],
+        "warning": "",
+        "result": "Pendências específicas reduzidas e lista pronta para revisão final."
+      },
+      {
+        "title": "Etapa 6 — Cleanup final da platina",
+        "focus": "Checklist final",
+        "objective": "Conferir todos os troféus da lista base sem misturar rede, dupla, DLC ou conteúdo futuro.",
+        "actions": [
+          "Revise história, bosses, coletáveis, upgrades, desafios e troféus situacionais.",
+          "Confirme que nenhum requisito de rede ou dupla foi marcado como obrigatório sem validação.",
+          "Confirme que DLCs ou extras não foram contados como platina base.",
+          "Finalize qualquer pendência usando replay, pós-jogo ou runs adicionais, se disponível."
+        ],
+        "warning": "",
+        "result": "Lista base concluída e platina pronta, mantendo o guia em revisão se algum dado ainda estiver pendente."
+      }
+    ],
+    "trophies": [
+      { "id": "saros-the-sun-is-forever", "name": "The Sun Is Forever", "type": "Platina", "description": "Domine Carcosa e obtenha todos os troféus de SAROS.", "tip": "A platina libera ao concluir todos os outros 44 troféus da lista base.", "is_missable": false, "is_spoiler": false },
+      { "id": "saros-prophet", "name": "Prophet", "type": "Prata", "description": "Derrote o Overlord de Shattered Rise.", "tip": "Chefe do primeiro bioma; foque em aprender padrões antes de buscar desafios extras.", "is_missable": false, "is_spoiler": true },
+      { "id": "saros-bastion", "name": "Bastion", "type": "Bronze", "description": "Derrote o Overlord de Ancient Depths.", "tip": "Chefe do segundo bioma; continue investindo em sobrevivência e upgrades permanentes.", "is_missable": false, "is_spoiler": true },
+      { "id": "saros-rhabdom", "name": "Rhabdom", "type": "Bronze", "description": "Derrote o Overlord de Shattered Descent.", "tip": "Chefe do terceiro bioma; use uma build estável antes de tentar objetivos paralelos.", "is_missable": false, "is_spoiler": true },
+      { "id": "saros-legion", "name": "Legion", "type": "Bronze", "description": "Derrote o Overlord de Blighted Marsh.", "tip": "Chefe do quarto bioma; trate como marco de progressão principal.", "is_missable": false, "is_spoiler": true },
+      { "id": "saros-architect", "name": "Architect", "type": "Prata", "description": "Derrote o Overlord de Desecrated Fortress.", "tip": "Chefe do quinto bioma; volte ao cleanup depois de liberar mais recursos.", "is_missable": false, "is_spoiler": true },
+      { "id": "saros-shepherd", "name": "Shepherd", "type": "Prata", "description": "Derrote o Overlord de Acolyte's Haven.", "tip": "Chefe do sexto bioma; priorize consistência e controle de dano.", "is_missable": false, "is_spoiler": true },
+      { "id": "saros-priestess", "name": "Priestess", "type": "Prata", "description": "Derrote o Overlord de Cathedral.", "tip": "Chefe de progressão; mantenha upgrades e armas confortáveis para chegar inteiro à luta.", "is_missable": false, "is_spoiler": true },
+      { "id": "saros-king", "name": "King", "type": "Prata", "description": "Derrote o Overlord de Yellow Shore.", "tip": "Marco importante do fim da rota; deixe desafios mais técnicos para depois.", "is_missable": false, "is_spoiler": true },
+      { "id": "saros-let-go", "name": "Let Go", "type": "Ouro", "description": "Complete todos os requisitos do epílogo e derrote o King.", "tip": "Siga os objetivos liberados após os créditos e finalize o epílogo.", "is_missable": false, "is_spoiler": true },
+      { "id": "saros-never-let-go", "name": "Never Let Go", "type": "Bronze", "description": "Complete o Ato 1.", "tip": "Troféu de progressão da campanha.", "is_missable": false, "is_spoiler": true },
+      { "id": "saros-into-yellow", "name": "Into Yellow", "type": "Bronze", "description": "Complete o Ato 2.", "tip": "Troféu de progressão da campanha.", "is_missable": false, "is_spoiler": true },
+      { "id": "saros-the-blazing-throne", "name": "The Blazing Throne", "type": "Bronze", "description": "Complete o Ato 3.", "tip": "Troféu de progressão da campanha.", "is_missable": false, "is_spoiler": true },
+      { "id": "saros-strange-is-the-night", "name": "Strange Is The Night", "type": "Bronze", "description": "Entre na Banyan Tree pela primeira vez.", "tip": "Libera ao acessar esse conteúdo pela primeira vez.", "is_missable": false, "is_spoiler": true },
+      { "id": "saros-shattered-glass", "name": "Shattered Glass", "type": "Prata", "description": "Complete todos os encontros dentro da Banyan Tree.", "tip": "Volte preparado e limpe todos os encontros internos exigidos.", "is_missable": false, "is_spoiler": true },
+      { "id": "saros-nightmare-strands", "name": "Nightmare Strands", "type": "Ouro", "description": "Entre e conclua todos os 7 Nightmare Gates pelo menos uma vez.", "tip": "Deixe para quando sua build e seus upgrades estiverem mais consistentes.", "is_missable": false, "is_spoiler": false },
+      { "id": "saros-full-arsenal", "name": "Full Arsenal", "type": "Prata", "description": "Desbloqueie todas as Main Weapons e Power Weapons e derrote 25 hostis com cada uma.", "tip": "Faça progresso por arma ao longo das runs para evitar grind concentrado no fim.", "is_missable": false, "is_spoiler": false },
+      { "id": "saros-bullet-paradise", "name": "Bullet Paradise", "type": "Prata", "description": "Elimine 1.995 hostis comuns.", "tip": "Objetivo cumulativo; deve vir naturalmente durante runs e cleanup.", "is_missable": false, "is_spoiler": false },
+      { "id": "saros-carcosan-cartographer", "name": "Carcosan Cartographer", "type": "Bronze", "description": "Use Carcosan Modifiers para iniciar e sobreviver a 33 expedições.", "tip": "Use modificadores cedo e com frequência para diluir o grind.", "is_missable": false, "is_spoiler": false },
+      { "id": "saros-soltari-rd", "name": "Soltari R&D", "type": "Prata", "description": "Desbloqueie e utilize todos os Traits e Variants de uma arma.", "tip": "Escolha uma arma confortável e foque em explorar todas as variações dela.", "is_missable": false, "is_spoiler": false },
+      { "id": "saros-break-the-cycle", "name": "Break The Cycle", "type": "Prata", "description": "Absorva 2.021 projéteis usando o Shield.", "tip": "Use o escudo com frequência durante runs normais para acelerar o acumulado.", "is_missable": false, "is_spoiler": false },
+      { "id": "saros-reinforced-carapace", "name": "Reinforced Carapace", "type": "Prata", "description": "Colete 20 Integrity Augments.", "tip": "Priorize melhorias de sobrevivência quando aparecerem.", "is_missable": false, "is_spoiler": false },
+      { "id": "saros-eclipses-gift", "name": "Eclipse's Gift", "type": "Prata", "description": "Colete 70 Halcyon.", "tip": "Objetivo cumulativo; mantenha o foco em exploração e sobrevivência.", "is_missable": false, "is_spoiler": false },
+      { "id": "saros-carcosan-conqueror", "name": "Carcosan Conqueror", "type": "Bronze", "description": "Encontre e derrote 10 hostis Alpha.", "tip": "Objetivo de progressão/combate que deve avançar durante runs mais longas.", "is_missable": false, "is_spoiler": false },
+      { "id": "saros-catch-and-release", "name": "Catch And Release", "type": "Prata", "description": "Use o Shield para absorver 3 barras de Power e depois derrote um hostil com uma Power Weapon.", "tip": "Carregue as barras com o escudo e finalize um inimigo fraco com Power Weapon.", "is_missable": false, "is_spoiler": false },
+      { "id": "saros-untouchable", "name": "Untouchable", "type": "Prata", "description": "Complete um bioma sem sofrer dano direto que não seja de Corruption e sem perder Adrenaline.", "tip": "Deixe para uma run forte em bioma conhecido, priorizando segurança e esquiva.", "is_missable": false, "is_spoiler": false },
+      { "id": "saros-second-chance", "name": "Second Chance", "type": "Bronze", "description": "Use Second Chance pela primeira vez.", "tip": "Libera ao acionar esse recurso pela primeira vez após desbloqueá-lo.", "is_missable": false, "is_spoiler": false },
+      { "id": "saros-approach-vector", "name": "Approach Vector", "type": "Bronze", "description": "Elimine um hostil com escudo usando um ataque Melee no ar.", "tip": "Enfraqueça o alvo e finalize com Melee aéreo.", "is_missable": false, "is_spoiler": false },
+      { "id": "saros-overdriven", "name": "Overdriven", "type": "Bronze", "description": "Elimine 30 hostis usando Overdrive durante um único ciclo.", "tip": "Faça uma run dedicada e use Overdrive sempre que houver grupos seguros.", "is_missable": false, "is_spoiler": false },
+      { "id": "saros-countermand", "name": "Countermand", "type": "Bronze", "description": "Atordoe 2 hostis simultaneamente com um Parry.", "tip": "Procure grupos próximos e use Parry quando dois inimigos estiverem alinhados.", "is_missable": false, "is_spoiler": false },
+      { "id": "saros-enforcer", "name": "Enforcer", "type": "Bronze", "description": "Cause dano a 7 hostis em até 5 segundos com Handcannons.", "tip": "Tente em salas com grupos pequenos e espalhe tiros rapidamente.", "is_missable": false, "is_spoiler": false },
+      { "id": "saros-relentless", "name": "Relentless", "type": "Bronze", "description": "Acerte 50 tiros consecutivos em hostis com Rifles.", "tip": "Use inimigos maiores ou grupos próximos para manter a sequência sem errar.", "is_missable": false, "is_spoiler": false },
+      { "id": "saros-spread-the-cost", "name": "Spread The Cost", "type": "Bronze", "description": "Acerte 7 disparos consecutivos de Shotgun com 100% de precisão dos projéteis.", "tip": "Atire de perto em alvos grandes para garantir que todos os pellets acertem.", "is_missable": false, "is_spoiler": false },
+      { "id": "saros-vicious-circle", "name": "Vicious Circle", "type": "Bronze", "description": "Use Chakrams para causar dano a 4 hostis em até 2 segundos.", "tip": "Espere uma sala com inimigos agrupados antes de tentar.", "is_missable": false, "is_spoiler": false },
+      { "id": "saros-all-shall-bow", "name": "All Shall Bow", "type": "Bronze", "description": "Acerte 3 hostis de uma vez com Crossbows.", "tip": "Alinhe inimigos em corredor ou grupo compacto para facilitar.", "is_missable": false, "is_spoiler": false },
+      { "id": "saros-broadside", "name": "Broadside", "type": "Bronze", "description": "Derrote 5 hostis com uma única explosão de Prominence.", "tip": "Use Prominence contra grupos de inimigos fracos.", "is_missable": false, "is_spoiler": false },
+      { "id": "saros-atrophy", "name": "Atrophy", "type": "Bronze", "description": "Cause dano simultâneo a 5 hostis com projéteis de Dispiritor.", "tip": "Procure grupos numerosos e dispare quando todos estiverem dentro da área.", "is_missable": false, "is_spoiler": false },
+      { "id": "saros-angle-of-attack", "name": "Angle Of Attack", "type": "Bronze", "description": "Derrote um hostil usando um disparo ricocheteado de Nova Lance.", "tip": "Ricocheteie o disparo no chão ou parede para atingir um inimigo próximo.", "is_missable": false, "is_spoiler": false },
+      { "id": "saros-radiance", "name": "Radiance", "type": "Bronze", "description": "Cause dano simultâneo a 3 hostis usando Illumine.", "tip": "Use o feixe em grupo de inimigos alinhados.", "is_missable": false, "is_spoiler": false },
+      { "id": "saros-fatal-triptych", "name": "Fatal Triptych", "type": "Prata", "description": "Morra 3 vezes durante um único ciclo.", "tip": "Planeje depois de desbloquear Second Chance e recursos que recuperem essa chance durante a run.", "is_missable": false, "is_spoiler": false },
+      { "id": "saros-war-within", "name": "War Within", "type": "Prata", "description": "Alcance o nível máximo de Corruption e sobreviva.", "tip": "Tente em luta controlável, absorvendo Corruption com o Shield e sobrevivendo até fechar o encontro.", "is_missable": false, "is_spoiler": false },
+      { "id": "saros-never-enough", "name": "Never Enough", "type": "Bronze", "description": "Colete 20 Halcyon em Yellow Shore.", "tip": "Faça uma run dedicada quando já estiver confortável nessa área.", "is_missable": false, "is_spoiler": false },
+      { "id": "saros-fall-from-grace", "name": "Fall From Grace", "type": "Bronze", "description": "Use o ambiente para eliminar um hostil sem atirar nele.", "tip": "Use parry e posicionamento para derrubar um inimigo em queda ou perigo ambiental.", "is_missable": false, "is_spoiler": false },
+      { "id": "saros-vincible", "name": "Vincible", "type": "Bronze", "description": "Complete um bioma sem usar o Shield.", "tip": "Escolha um bioma conhecido e jogue focado em esquiva, distância e segurança.", "is_missable": false, "is_spoiler": false },
+      { "id": "saros-come-back-stronger", "name": "Come Back Stronger", "type": "Bronze", "description": "Morra pela primeira vez.", "tip": "Troféu simples: libera na primeira morte.", "is_missable": false, "is_spoiler": false }
     ]
   },
   {
@@ -28261,6 +28850,212 @@ const ghostDescriptionOriginalById = {
   got_master_liberator: "Liberate the entirety of Tsushima Island."
 };
 
+const astrosPlayroomDescriptionPtById = {
+  astros_playroom_youve_only_done_everything: "Encontre todos os troféus de ASTRO's PLAYROOM. Até a próxima aventura!",
+  astros_playroom_do_it: "Conclua Memory Meadow.",
+  astros_playroom_emotion_engine: "Conclua SSD Speedway.",
+  astros_playroom_hd_graphics: "Conclua Cooling Springs.",
+  astros_playroom_greatness_awaits: "Conclua GPU Jungle.",
+  astros_playroom_in_mint_condition: "Pegue seu primeiro artefato.",
+  astros_playroom_such_a_big_fan: "Pegue todos os artefatos em Cooling Springs.",
+  astros_playroom_charted: "Pegue todos os artefatos em GPU Jungle.",
+  astros_playroom_welcome_to_the_third_place: "Pegue todos os artefatos em SSD Speedway.",
+  astros_playroom_and_conquered_worlds: "Pegue todos os artefatos em Memory Meadow.",
+  astros_playroom_dude_raider: "Colete todos os artefatos nas 4 fases principais e no PS Labo.",
+  astros_playroom_one_down_lots_more_to_go: "Pegue sua primeira puzzle piece.",
+  astros_playroom_cool_hoarder: "Pegue todas as puzzle pieces em Cooling Springs.",
+  astros_playroom_the_found_legacy: "Pegue todas as puzzle pieces em GPU Jungle.",
+  astros_playroom_omega_booster: "Pegue todas as puzzle pieces em SSD Speedway.",
+  astros_playroom_ico_nic: "Pegue todas as puzzle pieces em Memory Meadow.",
+  astros_playroom_a_grand_tour: "Pegue todas as puzzle pieces do jogo.",
+  astros_playroom_gatcha_beginner: "Pegue seu primeiro prêmio do Gatcha.",
+  astros_playroom_for_the_players: "Pegue um prêmio secreto do Gatcha.",
+  astros_playroom_gatcha_maniac: "Pegue metade dos prêmios do Gatcha.",
+  astros_playroom_saru_gatcha: "Pegue todos os prêmios do Gatcha.",
+  astros_playroom_project_neo: "Lance 10 bots voando com um único spin attack.",
+  astros_playroom_the_last_guy: "Ande pelo CPU Plaza com pelo menos 20 bots seguindo você.",
+  astros_playroom_this_way_up: "Acerte o logo PS no PS2 em PlayStation Labo.",
+  astros_playroom_you_got_a_trophy: "Pegue um troféu em PlayStation Labo.",
+  astros_playroom_i_recognize_you: "Acerte e olhe para a lente do PS VR em PlayStation Labo.",
+  astros_playroom_the_very_far_point: "Fique na ponta do Aim Controller em PlayStation Labo.",
+  astros_playroom_honey_im_home: "Passe por baixo do ícone do PlayStation Home em PlayStation Labo.",
+  astros_playroom_disc_swap: "Abra a tampa do console PlayStation em PlayStation Labo.",
+  astros_playroom_keepy_uppies: "Faça uma bola quicar 5 vezes usando o Frog Suit.",
+  astros_playroom_hell_diver: "Mergulhe na água a partir do trampolim.",
+  astros_playroom_jumping_splash: "Pule na fonte perto do objetivo final em Cooling Springs.",
+  astros_playroom_twisting_metal: "Pule 3 vezes durante um spin attack no gelo.",
+  astros_playroom_jason: "Abrace-se da chuva forte em Memory Meadow.",
+  astros_playroom_pain: "Seja atingido por lixo voando em Memory Meadow.",
+  astros_playroom_wipeout: "Faça um strike em Memory Meadow.",
+  astros_playroom_ready_for_the_proving: "Rebata o ataque de um Spitter com uma flecha.",
+  astros_playroom_little_rolling_star: "Faça uma bola de neve enorme.",
+  astros_playroom_no_no_no_noooooo: "Caia 30 metros e se segure usando o monkey suit em GPU Jungle.",
+  astros_playroom_adequate_boy: "Acerte todos os coelhos com flechas no pico da montanha de GPU Jungle.",
+  astros_playroom_wild_arms: "Faça um giro enquanto dispara a metralhadora.",
+  astros_playroom_its_all_in_the_mind: "Derrote 3 inimigos rapidamente com socos.",
+  astros_playroom_super_computer: "Revele o logo anterior em PlayStation Labo."
+};
+
+const nioh2DescriptionOriginalById = {
+  nioh2_you_are_nioh: "Obtained all trophies.",
+  nioh2_samurai_of_legend: "Completed all missions on any difficulty level. (Does not include training missions.)",
+  nioh2_beginning_samurai: "Reached level 10.",
+  nioh2_full_fledged_samurai: "Reached Level 100.",
+  nioh2_dawn_of_a_dream: "Befriended Tokichiro.",
+  nioh2_electrifying_triumph: "Defeated Imagawa Yoshimoto and was made a samurai.",
+  nioh2_hideyoshi: "Decided to share a name with Tokichiro.",
+  nioh2_paths_we_tread: "Parted ways with Tokichiro.",
+  nioh2_dreams_toll: "Defeated Tokichiro.",
+  nioh2_mother_and_child: "Reunited with your mother in the Interim.",
+  nioh2_what_is_written: "Fulfilled your ultimate destiny.",
+  nioh2_dream_within_dream: "Saw Tokichiro off on his final departure.",
+  nioh2_weapons_mind: "Listened to the innermost thoughts of a Yokai Weapon.",
+  nioh2_sword_master: "Acquired mystic art for the sword.",
+  nioh2_dual_sword_master: "Acquired mystic art for the dual swords.",
+  nioh2_spear_master: "Acquired mystic art for the spear.",
+  nioh2_axe_master: "Acquired mystic art for the axe.",
+  nioh2_kusarigama_master: "Acquired mystic art for the kusarigama.",
+  nioh2_odachi_master: "Acquired mystic art for the odachi.",
+  nioh2_tonfa_master: "Acquired mystic art for the tonfa.",
+  nioh2_hatchet_master: "Acquired mystic art for the hatchets.",
+  nioh2_switchglaive_master: "Acquired mystic art for the switchglaive.",
+  nioh2_ninjutsu_master: "Acquired mystic art for Ninjutsu.",
+  nioh2_onmyo_magic_master: "Acquired mystic art for Onmyo Magic.",
+  nioh2_burst_breaker: "Used the Brute, Feral, and Phantom Burst Counters five times each to counter a Burst Attack.",
+  nioh2_match_made_heaven: "Performed a Soul Match.",
+  nioh2_latest_masterpiece: "Forged an item.",
+  nioh2_remodeling_novice: "Remodeled a piece of equipment.",
+  nioh2_tea_connoisseur: "Appraised your tea utensils 50 times.",
+  nioh2_lover_of_letters: "Displayed a calligraphy scroll in your hut.",
+  nioh2_trinket_triumph: "Used the Kodama Bazaar.",
+  nioh2_teamwork: "Completed 10 missions with NPCs or in Expeditions with other users. (Acolytes do not count.)",
+  nioh2_help_wanted: "Summoned an Acolyte from a Benevolent Grave 10 times.",
+  nioh2_twilight_walker: "Completed your first Twilight mission.",
+  nioh2_spa_healer: "Bathed in first hot spring.",
+  nioh2_spa_lover: "Bathed in every hot spring.",
+  nioh2_yokai_quelling_master: "Defeated all types of yokai.",
+  nioh2_kodama_leader: "Collected all Kodama.",
+  nioh2_friend_of_guardians: "Collected all Guardian Spirits.",
+  nioh2_sudama_swapper: "Exchanged gifts with a Sudama for the first time.",
+  nioh2_core_score: "Obtained your first Soul Core.",
+  nioh2_friend_to_kodama: "Obtained a Kodama Soul Core.",
+  nioh2_soul_searcher: "Obtained all Soul Cores.",
+  nioh2_fuse_it_or_lose_it: "Fused any Soul Core until it reached rank 9.",
+  nioh2_seasoned_traveler: "Discovered 10 hidden items on the map.",
+  nioh2_let_there_be_light: "Dispelled every instance of the Dark Realm in the main missions.",
+  nioh2_grazer_eraser: "Defeated Mezuki and Gozuki in the same mission.",
+  nioh2_dungball_roller: "Became Ryunojo the Dung Lover's best friend.",
+  nioh2_hidden_hopes: "Encountered all the Usura-Hicho in \"The Frenzied Blaze\".",
+  nioh2_clean_sweep: "Destroyed every Amrita shard in \"The High-spirited Demon\".",
+  nioh2_devout_believer: "Defeated the boss of \"The Viper's Sanctum\" without breaking the statue of Shirohami.",
+  nioh2_seven_wonders: "Defeated each of the Seven Spears in \"Cherry Blossom Viewing in Daigo\".",
+  nioh2_feather_buster: "Drove back every Tatarimokke along the journey in \"A Way Out\".",
+  nioh2_bold_wrangler: "Defeated Gozuki in \"The Village of Cursed Blossoms\".",
+  nioh2_schemer: "Got Gyuki to attack the dam in \"Pervading Waters\".",
+  nioh2_peal_ten_thousand_bells: "Rang all the bells in \"Ruin Draws Near\"."
+};
+
+const nioh2DescriptionPtById = {
+  nioh2_you_are_nioh: "Obtenha todos os troféus.",
+  nioh2_samurai_of_legend: "Conclua todas as missões em qualquer dificuldade. (Não inclui missões de treinamento.)",
+  nioh2_beginning_samurai: "Alcance o nível 10.",
+  nioh2_full_fledged_samurai: "Alcance o nível 100.",
+  nioh2_dawn_of_a_dream: "Faça amizade com Tokichiro.",
+  nioh2_electrifying_triumph: "Derrote Imagawa Yoshimoto e torne-se um samurai.",
+  nioh2_hideyoshi: "Decida compartilhar um nome com Tokichiro.",
+  nioh2_paths_we_tread: "Separe-se de Tokichiro.",
+  nioh2_dreams_toll: "Derrote Tokichiro.",
+  nioh2_mother_and_child: "Reencontre sua mãe no Interim.",
+  nioh2_what_is_written: "Cumpra seu destino final.",
+  nioh2_dream_within_dream: "Veja Tokichiro partir em sua despedida final.",
+  nioh2_weapons_mind: "Escute os pensamentos mais íntimos de uma Yokai Weapon.",
+  nioh2_sword_master: "Adquira a Mystic Art da espada.",
+  nioh2_dual_sword_master: "Adquira a Mystic Art das dual swords.",
+  nioh2_spear_master: "Adquira a Mystic Art da lança.",
+  nioh2_axe_master: "Adquira a Mystic Art do machado.",
+  nioh2_kusarigama_master: "Adquira a Mystic Art do kusarigama.",
+  nioh2_odachi_master: "Adquira a Mystic Art do odachi.",
+  nioh2_tonfa_master: "Adquira a Mystic Art do tonfa.",
+  nioh2_hatchet_master: "Adquira a Mystic Art dos hatchets.",
+  nioh2_switchglaive_master: "Adquira a Mystic Art do switchglaive.",
+  nioh2_ninjutsu_master: "Adquira a Mystic Art de Ninjutsu.",
+  nioh2_onmyo_magic_master: "Adquira a Mystic Art de Onmyo Magic.",
+  nioh2_burst_breaker: "Use os Burst Counters Brute, Feral e Phantom cinco vezes cada para contra-atacar um Burst Attack.",
+  nioh2_match_made_heaven: "Realize uma Soul Match.",
+  nioh2_latest_masterpiece: "Forje um item.",
+  nioh2_remodeling_novice: "Remodele uma peça de equipamento.",
+  nioh2_tea_connoisseur: "Avalie seus Tea Utensils 50 vezes.",
+  nioh2_lover_of_letters: "Exiba um pergaminho de caligrafia na sua cabana.",
+  nioh2_trinket_triumph: "Use o Kodama Bazaar.",
+  nioh2_teamwork: "Conclua 10 missões com NPCs ou em Expedições com outros usuários. (Acolytes não contam.)",
+  nioh2_help_wanted: "Invoque um Acolyte de um Benevolent Grave 10 vezes.",
+  nioh2_twilight_walker: "Conclua sua primeira Twilight Mission.",
+  nioh2_spa_healer: "Tome banho na primeira Hot Spring.",
+  nioh2_spa_lover: "Tome banho em todas as Hot Springs.",
+  nioh2_yokai_quelling_master: "Derrote todos os tipos de yokai.",
+  nioh2_kodama_leader: "Colete todos os Kodama.",
+  nioh2_friend_of_guardians: "Colete todos os Guardian Spirits.",
+  nioh2_sudama_swapper: "Troque presentes com um Sudama pela primeira vez.",
+  nioh2_core_score: "Obtenha sua primeira Soul Core.",
+  nioh2_friend_to_kodama: "Obtenha uma Kodama Soul Core.",
+  nioh2_soul_searcher: "Obtenha todas as Soul Cores.",
+  nioh2_fuse_it_or_lose_it: "Faça fusão em qualquer Soul Core até ela chegar ao rank 9.",
+  nioh2_seasoned_traveler: "Descubra 10 itens ocultos no mapa.",
+  nioh2_let_there_be_light: "Dissipe todas as instâncias do Dark Realm nas missões principais.",
+  nioh2_grazer_eraser: "Derrote Mezuki e Gozuki na mesma missão.",
+  nioh2_dungball_roller: "Torne-se o melhor amigo de Ryunojo, o amante de dungs.",
+  nioh2_hidden_hopes: "Encontre todos os Usura-Hicho em \"The Frenzied Blaze\".",
+  nioh2_clean_sweep: "Destrua todos os Amrita shards em \"The High-spirited Demon\".",
+  nioh2_devout_believer: "Derrote o chefe de \"The Viper's Sanctum\" sem quebrar a estátua de Shirohami.",
+  nioh2_seven_wonders: "Derrote cada um dos Seven Spears em \"Cherry Blossom Viewing in Daigo\".",
+  nioh2_feather_buster: "Afaste todos os Tatarimokke durante a jornada em \"A Way Out\".",
+  nioh2_bold_wrangler: "Derrote Gozuki em \"The Village of Cursed Blossoms\".",
+  nioh2_schemer: "Faça Gyuki atacar a barragem em \"Pervading Waters\".",
+  nioh2_peal_ten_thousand_bells: "Toque todos os sinos em \"Ruin Draws Near\"."
+};
+
+const nioh2TagsById = {
+  nioh2_you_are_nioh: ["platina"],
+  nioh2_samurai_of_legend: ["missão", "cleanup"],
+  nioh2_beginning_samurai: ["progressão"],
+  nioh2_full_fledged_samurai: ["progressão", "grind"],
+  nioh2_dawn_of_a_dream: ["história"],
+  nioh2_electrifying_triumph: ["história", "chefe"],
+  nioh2_hideyoshi: ["história"],
+  nioh2_paths_we_tread: ["história"],
+  nioh2_dreams_toll: ["história", "chefe"],
+  nioh2_mother_and_child: ["história"],
+  nioh2_what_is_written: ["história"],
+  nioh2_dream_within_dream: ["história"],
+  nioh2_weapons_mind: ["combate", "equipamento"],
+  nioh2_burst_breaker: ["combate", "situacional"],
+  nioh2_teamwork: ["missão", "npc"],
+  nioh2_help_wanted: ["npc", "situacional"],
+  nioh2_twilight_walker: ["missão"],
+  nioh2_spa_healer: ["coletável"],
+  nioh2_spa_lover: ["coletável", "hot-spring"],
+  nioh2_yokai_quelling_master: ["combate", "yokai"],
+  nioh2_kodama_leader: ["coletável", "kodama"],
+  nioh2_friend_of_guardians: ["história", "missão"],
+  nioh2_sudama_swapper: ["situacional"],
+  nioh2_core_score: ["soul-core"],
+  nioh2_friend_to_kodama: ["soul-core", "kodama"],
+  nioh2_soul_searcher: ["soul-core", "grind", "cleanup"],
+  nioh2_fuse_it_or_lose_it: ["soul-core", "sistema"],
+  nioh2_seasoned_traveler: ["coletável", "mapa"],
+  nioh2_let_there_be_light: ["missão", "dark-realm"],
+  nioh2_grazer_eraser: ["combate", "chefe", "situacional"],
+  nioh2_dungball_roller: ["grind", "situacional"],
+  nioh2_hidden_hopes: ["missão", "situacional"],
+  nioh2_clean_sweep: ["missão", "situacional"],
+  nioh2_devout_believer: ["combate", "chefe", "situacional"],
+  nioh2_seven_wonders: ["combate", "missão", "situacional"],
+  nioh2_feather_buster: ["missão", "situacional"],
+  nioh2_bold_wrangler: ["combate", "chefe", "situacional"],
+  nioh2_schemer: ["combate", "chefe", "situacional"],
+  nioh2_peal_ten_thousand_bells: ["missão", "situacional"]
+};
+
 for (const game of sampleGames) {
   for (const trophy of game.trophies || []) {
     if (game.slug === 'elden-ring') {
@@ -28309,8 +29104,48 @@ for (const game of sampleGames) {
       trophy.descriptionOriginal = ghostDescriptionOriginalById[trophy.id] || trophy.descriptionOriginal || '';
       trophy.is_missable = false;
     }
+    if (game.slug === 'astros-playroom') {
+      const descriptionPtBr = astrosPlayroomDescriptionPtById[trophy.id] || trophy.description;
+      trophy.trophyNameOriginal = trophy.name;
+      trophy.trophyNamePtBr = trophy.name_pt || null;
+      trophy.descriptionOriginal = trophy.descriptionOriginal || trophy.description || '';
+      trophy.descriptionPtBr = descriptionPtBr;
+      trophy.ptDescription = descriptionPtBr;
+      trophy.localizedDescription = { ...(trophy.localizedDescription || {}), ptBr: descriptionPtBr };
+      trophy.description = descriptionPtBr;
+      trophy.tier = trophy.type;
+      trophy.guideTip = trophy.tip || '';
+      trophy.is_missable = false;
+      trophy.isMissable = false;
+      trophy.is_online = false;
+      trophy.isOnline = false;
+      trophy.is_coop = false;
+      trophy.isCoop = false;
+      trophy.tags = Array.isArray(trophy.tags) ? trophy.tags.filter(tag => !/online|coop|perd/i.test(String(tag?.id || tag))) : [];
+    }
     if (trophyNamePtById[trophy.id]) {
       trophy.name_pt = trophyNamePtById[trophy.id];
+    }
+    if (game.slug === 'nioh-2') {
+      const descriptionPtBr = nioh2DescriptionPtById[trophy.id] || trophy.description || '';
+      trophy.trophyNameOriginal = trophy.name;
+      trophy.trophyNamePtBr = null;
+      trophy.name_pt = null;
+      trophy.descriptionOriginal = nioh2DescriptionOriginalById[trophy.id] || trophy.descriptionOriginal || '';
+      trophy.descriptionPtBr = descriptionPtBr;
+      trophy.ptDescription = descriptionPtBr;
+      trophy.localizedDescription = { ...(trophy.localizedDescription || {}), ptBr: descriptionPtBr };
+      trophy.description = descriptionPtBr;
+      trophy.tier = trophy.type;
+      trophy.guideTip = trophy.tip || '';
+      trophy.is_missable = false;
+      trophy.isMissable = false;
+      trophy.is_online = false;
+      trophy.isOnline = false;
+      trophy.is_coop = false;
+      trophy.isCoop = false;
+      trophy.tags = nioh2TagsById[trophy.id]
+        || (/master$/.test(trophy.id) ? ['proficiência', 'arma', 'grind'] : (trophy.type === 'Platina' ? ['platina'] : ['cleanup']));
     }
     trophy.is_missable = game.slug === 'hades' ? false : Boolean(trophy.is_missable || missableTrophyIds.has(trophy.id));
     if (game.slug === 'hades') trophy.isMissable = false;

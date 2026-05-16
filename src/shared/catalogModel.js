@@ -449,17 +449,34 @@
   }
 
   function hasCatalogOnlineRequired(game = {}) {
+    if (game?.onlineRequired === false || game?.requiresOnline === false || game?.hasMandatoryOnline === false) {
+      const explicitText = getCatalogText(game, ['online_summary', 'guide_online', 'online']);
+      const explicitStrong = /online\/multiplayer|sos flare|guild cards?|quests multiplayer|100 quests em multiplayer|pvp obrigatorio|servidor obrigatorio|server obrigatorio|sport mode|red dead online|daily challenge/.test(explicitText);
+      if (!explicitStrong) return false;
+    }
     const text = getCatalogText(game, ['online_summary', 'guide_online', 'online']);
     if (!text) return false;
-    if (/nao ha trofeus online obrigatorios tradicionais|nao ha exigencia online|nao ha trofeus online|sem online obrigatorio|nao exige online/.test(text)) {
-      return /sos flare|guild cards?|quests multiplayer|online\/multiplayer|100 quests em multiplayer|pvp|servidor obrigatorio|server obrigatorio/.test(text);
+    const noOnlineRequired = /nao ha .*online obrigatorio|nao ha exigencia online|nao ha trofeus? online|sem online obrigatorio|nao exige online|online opcional|recursos online opcionais|rankings? online .*fora|fora dos requisitos da platina/.test(text);
+    const strongOnlineRequirement = /online\/multiplayer|sos flare|guild cards?|quests multiplayer|100 quests em multiplayer|pvp obrigatorio|servidor obrigatorio|server obrigatorio|sport mode|red dead online|daily challenge/.test(text);
+    if (strongOnlineRequirement) {
+      return true;
     }
-    return /online\/multiplayer|sos flare|guild cards?|quests multiplayer|multiplayer obrigatorio|online obrigatorio|pvp|servidor|server|ps\+ obrigatorio/.test(text);
+    return !noOnlineRequired && /multiplayer obrigatorio|online obrigatorio|trofeus? online confirmad|depende .*servidor|ps\+ obrigatorio/.test(text);
   }
 
   function hasCatalogCoopRequired(game = {}) {
+    if (game?.coopRequired === false || game?.requiresCoop === false || game?.hasMandatoryCoop === false) {
+      const explicitText = getCatalogText(game, ['online_summary', 'guide_online', 'online', 'before_you_start']);
+      const explicitStrong = /exige 2 jogadores|2 jogadores|dois jogadores|nao pode ser platinado solo|nao pode ser feito solo|campanha em coop|segundo jogador|dupla obrigatoria/.test(explicitText);
+      if (!explicitStrong) return false;
+    }
     const text = getCatalogText(game, ['online_summary', 'guide_online', 'online', 'before_you_start']);
-    return /exige 2 jogadores|2 jogadores|dois jogadores|nao pode ser platinado solo|nao pode ser feito solo|coop obrigatorio|co-op obrigatorio|campanha em coop|segundo jogador|dupla/.test(text);
+    if (!text) return false;
+    const soloCapable = /pode ser (feito|feita|concluido|concluida|platinado|platinada|jogado|jogada) solo/.test(text)
+      && !/nao pode ser (feito|feita|concluido|concluida|platinado|platinada|jogado|jogada) solo/.test(text);
+    const noCoopRequired = /nao ha .*coop obrigatorio|sem coop obrigatorio|nao exige coop|coop opcional|co-op opcional|single-player|single player/.test(text) || soloCapable;
+    const coopRequired = /exige 2 jogadores|2 jogadores|dois jogadores|nao pode ser platinado solo|nao pode ser feito solo|campanha em coop|segundo jogador|dupla obrigatoria|coop obrigatorio|co-op obrigatorio/.test(text);
+    return coopRequired && !noCoopRequired;
   }
 
   function hasCatalogMissables(game = {}) {
@@ -467,14 +484,14 @@
     const text = getCatalogText(game, ['missable_summary', 'missable']);
     if (count > 0) return true;
     if (!text) return false;
-    if (/nao ha .*perdivel|nao ha .*perdiveis|nao ha perda permanente|sem perdivel permanente|sem perdiveis|nada .*perdivel/.test(text)) return false;
+    if (/nao ha .*perdivel|nao ha .*perdiveis|nao ha perda permanente|sem perdivel permanente|sem perdiveis|nada .*perdivel|nenhum(?:a)?\s+trofeu.{0,80}(?:marcado|tratado|contado).{0,40}perdivel|nao ha.{0,80}perdiveis? reais|sem.{0,80}perdiveis? reais/.test(text)) return false;
     return hasMissableRiskText(text) || /perdivel|perdiveis|perda permanente|bloqueado|bloquear|perder definitivamente/.test(text);
   }
 
   function hasCatalogGrind(game = {}) {
     const text = getCatalogText(game, ['grind_summary', 'guide_grind', 'grind', 'cleanup_advice']);
     if (!text) return false;
-    if (/sem grind|nao ha grind|nao exige grind|grind leve|sem farm pesado/.test(text)) return false;
+    if (/sem grind|nao ha grind|nao exige grind|nao em grind pesado|nao e grind pesado|grind leve|sem farm pesado/.test(text)) return false;
     return /grind|farm|rng|rank|coroa|coroas|crown|crowns|boss stem cell|bsc|level|nivel|endgame longo|repeticao/.test(text);
   }
 
@@ -485,8 +502,11 @@
   }
 
   function hasCatalogChapterSelect(game = {}) {
+    if (game?.hasChapterSelect === false || game?.chapterSelect === false) return false;
     const text = getCatalogText(game, ['missable_summary', 'cleanup_advice', 'first_run_advice', 'before_you_start']);
-    return /chapter select|selecao de capitulo|selecao de capitulos|selecionar capitulo|capitulos/.test(text);
+    if (!text) return false;
+    const noChapterSelect = /nao ha chapter select|nao tem chapter select|sem chapter select|nao existe chapter select|nao ha selecao de capitulo|nao ha selecao de capitulos|sem selecao de capitulo|sem selecao de capitulos/.test(text);
+    return !noChapterSelect && /chapter select|selecao de capitulo|selecao de capitulos|selecionar capitulo|selecionar capitulos|collectible mode/.test(text);
   }
 
   function isCatalogVerified(game = {}) {

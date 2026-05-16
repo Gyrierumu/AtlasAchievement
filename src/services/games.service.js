@@ -178,7 +178,8 @@ function normalizeGame(row, roadmapRows, trophyRows) {
       || /god of blood/.test(name)
       || /earn (?:every|all) other trophies|obtenha todos os trofeus|obtenha todos os outros trofeus/.test(description);
   };
-  const supportsLocalizedDescriptions = ['elden-ring', 'hades', 'pragmata', 'ghost-of-tsushima'].includes(String(row.slug || '').trim().toLowerCase());
+  const normalizedSlug = String(row.slug || '').trim().toLowerCase();
+  const supportsLocalizedDescriptions = ['elden-ring', 'hades', 'pragmata', 'ghost-of-tsushima', 'nioh-3', 'saros'].includes(normalizedSlug);
   const missableCount = trophyRows.filter(item => item.is_missable && !isPlatinumTrophy(item)).length;
   const spoilerCount = trophyRows.filter(item => item.is_spoiler).length;
 
@@ -217,6 +218,11 @@ function normalizeGame(row, roadmapRows, trophyRows) {
     is_verified: Boolean(row.is_verified),
     verification_note: row.verification_note || '',
     slug: row.slug || slugifyGameName(row.name),
+    chapterSelect: ['nioh-3', 'saros'].includes(normalizedSlug) ? false : undefined,
+    missionReplay: normalizedSlug === 'nioh-3' ? true : undefined,
+    onlineRequired: ['nioh-3', 'saros'].includes(normalizedSlug) ? false : undefined,
+    coopRequired: ['nioh-3', 'saros'].includes(normalizedSlug) ? false : undefined,
+    dlcRequired: ['nioh-3', 'saros'].includes(normalizedSlug) ? false : undefined,
     roadmap: roadmapRows.map(item => deserializeRoadmapStep(item.content)),
     trophies: trophyRows.map(item => {
       const description = item.description || '';
@@ -267,6 +273,8 @@ function buildListFilters({ search = '', facet = 'all' } = {}) {
   const grindSql = `(((${grindText}) LIKE '%grind%' OR (${grindText}) LIKE '%farm%' OR (${grindText}) LIKE '%rng%' OR (${grindText}) LIKE '%coroa%' OR (${grindText}) LIKE '%crown%' OR (${grindText}) LIKE '%boss stem cell%' OR (${grindText}) LIKE '%bsc%' OR (${grindText}) LIKE '%endgame longo%') AND (${grindText}) NOT LIKE '%sem grind%' AND (${grindText}) NOT LIKE '%não há grind%' AND (${grindText}) NOT LIKE '%nao ha grind%')`;
   const baseGameSql = `((${dlcText}) LIKE '%lista base%' OR (${dlcText}) LIKE '%jogo base%' OR (${dlcText}) LIKE '%base game%' OR (${dlcText}) LIKE '%sem dlc%' OR (${dlcText}) LIKE '%não inclui%' OR (${dlcText}) LIKE '%nao inclui%' OR (${dlcText}) LIKE '%não é necessária%' OR (${dlcText}) LIKE '%nao e necessaria%' OR (${dlcText}) LIKE '%dlc não necessária%' OR (${dlcText}) LIKE '%dlc nao necessaria%' OR (${dlcText}) LIKE '%não há dlc%' OR (${dlcText}) LIKE '%nao ha dlc%' OR (${dlcText}) LIKE '%platina própria%' OR (${dlcText}) LIKE '%platina propria%')`;
   const chapterSelectSql = `((${chapterText}) LIKE '%chapter select%' OR (${chapterText}) LIKE '%seleção de capítulo%' OR (${chapterText}) LIKE '%selecao de capitulo%' OR (${chapterText}) LIKE '%seleção de capítulos%' OR (${chapterText}) LIKE '%selecao de capitulos%' OR (${chapterText}) LIKE '%selecionar capítulo%' OR (${chapterText}) LIKE '%selecionar capitulo%')`;
+
+  const chapterSelectNegatedSql = `((${chapterText}) LIKE '%não há%chapter select%' OR (${chapterText}) LIKE '%nao ha%chapter select%' OR (${chapterText}) LIKE '%não tem%chapter select%' OR (${chapterText}) LIKE '%nao tem%chapter select%' OR (${chapterText}) LIKE '%sem chapter select%' OR (${chapterText}) LIKE '%não existe%chapter select%' OR (${chapterText}) LIKE '%nao existe%chapter select%' OR (${chapterText}) LIKE '%não há%seleção de capítulo%' OR (${chapterText}) LIKE '%nao ha%selecao de capitulo%' OR (${chapterText}) LIKE '%sem seleção de capítulo%' OR (${chapterText}) LIKE '%sem selecao de capitulo%')`;
 
   if (search) {
     const tokens = String(search || '')
@@ -343,9 +351,11 @@ function buildListFilters({ search = '', facet = 'all' } = {}) {
       break;
     case 'online-required':
       where.push(onlineRequiredSql);
+      where.push(`NOT ((${onlineText}) LIKE '%não há%online obrigat%' OR (${onlineText}) LIKE '%nao ha%online obrigat%' OR (${onlineText}) LIKE '%sem online obrigat%' OR (${onlineText}) LIKE '%não exige online%' OR (${onlineText}) LIKE '%nao exige online%' OR (${onlineText}) LIKE '%online opcional%' OR (${onlineText}) LIKE '%recursos online opcionais%' OR (${onlineText}) LIKE '%fora dos requisitos da platina%')`);
       break;
     case 'coop-required':
       where.push(coopRequiredSql);
+      where.push(`NOT ((${onlineText}) LIKE '%não há%coop obrigat%' OR (${onlineText}) LIKE '%nao ha%coop obrigat%' OR (${onlineText}) LIKE '%não indica%coop obrigat%' OR (${onlineText}) LIKE '%nao indica%coop obrigat%' OR (${onlineText}) LIKE '%sem coop obrigat%' OR (${onlineText}) LIKE '%não exige coop%' OR (${onlineText}) LIKE '%nao exige coop%' OR (${onlineText}) LIKE '%coop opcional%' OR (${onlineText}) LIKE '%single-player%' OR (${onlineText}) LIKE '%single player%' OR lower(coalesce(before_you_start, '')) LIKE '%não há%coop obrigat%' OR lower(coalesce(before_you_start, '')) LIKE '%nao ha%coop obrigat%' OR lower(coalesce(before_you_start, '')) LIKE '%não indica%coop obrigat%' OR lower(coalesce(before_you_start, '')) LIKE '%nao indica%coop obrigat%' OR lower(coalesce(before_you_start, '')) LIKE '%sem coop obrigat%' OR lower(coalesce(before_you_start, '')) LIKE '%single-player%' OR lower(coalesce(before_you_start, '')) LIKE '%single player%')`);
       break;
     case 'missable-present':
       where.push(missableSql);
@@ -362,6 +372,7 @@ function buildListFilters({ search = '', facet = 'all' } = {}) {
       break;
     case 'chapter-select':
       where.push(chapterSelectSql);
+      where.push(`NOT ${chapterSelectNegatedSql}`);
       break;
     case 'editorial-verified':
       where.push("(editorial_review_status = 'verified' OR is_verified = 1 OR verification_status = 'verified')");

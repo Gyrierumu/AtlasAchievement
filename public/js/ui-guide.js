@@ -688,7 +688,9 @@ window.UIGuide = (() => {
 
   function renderGuideEditorialNotes(game = {}, viewModel = {}) {
     const routeTrophies = Array.isArray(viewModel.routeChangingTrophies) ? viewModel.routeChangingTrophies.slice(0, 4) : [];
-    const faqItems = Array.isArray(viewModel.contextualFaq) ? viewModel.contextualFaq.slice(0, 6) : [];
+    const normalizedSlug = String(game?.slug || '').trim().toLowerCase();
+    const faqLimit = normalizedSlug === 'nioh-3' ? 11 : (normalizedSlug === 'saros' ? 10 : 6);
+    const faqItems = Array.isArray(viewModel.contextualFaq) ? viewModel.contextualFaq.slice(0, faqLimit) : [];
     const playerFit = viewModel.playerFit || buildGuidePlayerFit(game, viewModel);
     const methodItems = Array.isArray(viewModel.editorial?.methodItems) ? viewModel.editorial.methodItems : [];
     const statusBadge = viewModel.editorial?.statusBadge || getEditorialBadge(game);

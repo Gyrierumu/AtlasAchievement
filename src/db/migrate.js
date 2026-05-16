@@ -626,6 +626,71 @@ async function syncSeedGameRoadmapFromSeed(seedSlug) {
   }
 }
 
+async function syncSeedGameGuideSummaryAndRoadmapFromSeed(seedSlug) {
+  const game = getSeedGameBySlug(seedSlug);
+  if (!game || !Array.isArray(game.roadmap)) return;
+
+  const slug = game.slug || slugifyGameName(game.name);
+  const existing = await get('SELECT id FROM games WHERE slug = ? OR name = ? ORDER BY id ASC LIMIT 1', [slug, game.name]);
+  if (!existing) return;
+
+  await run(
+    `UPDATE games
+        SET runs_summary = ?,
+            missable_summary = ?,
+            online_summary = ?,
+            grind_summary = ?,
+            dlc_scope = ?,
+            difficulty_reason = ?,
+            time_reason = ?,
+            first_run_advice = ?,
+            cleanup_advice = ?,
+            before_you_start = ?,
+            best_for = ?,
+            avoid_if = ?,
+            verification_status = ?,
+            editorial_status = ?,
+            coverage_level = ?,
+            is_verified = ?,
+            verification_note = ?,
+            editorial_review_status = ?,
+            last_reviewed_at = ?,
+            editorial_notes = ?,
+            quality_warnings = ?,
+            reviewed_by = ?
+      WHERE id = ?`,
+    [
+      game.runs_summary || game.guide_runs || game.runs || '',
+      game.missable_summary || game.missable || '',
+      game.online_summary || game.guide_online || game.online || '',
+      game.grind_summary || game.guide_grind || game.grind || '',
+      game.dlc_scope || game.guide_dlc || game.dlc || '',
+      game.difficulty_reason || '',
+      game.time_reason || '',
+      game.first_run_advice || game.guide_best_moment || game.best_for_when || '',
+      game.cleanup_advice || '',
+      game.before_you_start || '',
+      game.best_for || game.guide_ideal || game.ideal_for || '',
+      game.avoid_if || game.guide_avoid || game.avoid_for || '',
+      normalizeVerificationStatus(game),
+      game.editorial_status || 'published',
+      normalizeSeedCoverageLevel(game),
+      normalizeVerificationStatus(game) === 'verified' ? 1 : 0,
+      game.verification_note || '',
+      game.editorial_review_status || game.editorialReviewStatus || null,
+      game.last_reviewed_at || game.lastReviewedAt || '',
+      game.editorial_notes || game.editorialNotes || '',
+      Array.isArray(game.quality_warnings || game.qualityWarnings)
+        ? JSON.stringify(game.quality_warnings || game.qualityWarnings)
+        : (game.quality_warnings || game.qualityWarnings || ''),
+      game.reviewed_by || game.reviewedBy || '',
+      existing.id
+    ]
+  );
+
+  await syncSeedGameRoadmapFromSeed(seedSlug);
+}
+
 async function syncReviewedGuidesFromSeed() {
   const existingGames = await get('SELECT COUNT(*) AS total FROM games');
   const syncOptions = {
@@ -1080,6 +1145,14 @@ async function migrate(options = {}) {
   await syncSeedGameRoadmapFromSeed('elden-ring');
   await syncSeedGameRoadmapFromSeed('hades');
   await syncSeedGameFromSeed('pragmata', { insertIfMissing: true, forceSync: true });
+  await syncSeedGameGuideSummaryAndRoadmapFromSeed('ghost-of-tsushima');
+  await syncSeedGameGuideSummaryAndRoadmapFromSeed('hades-ii');
+  await syncSeedGameGuideSummaryAndRoadmapFromSeed('astro-bot');
+  await syncSeedGameFromSeed('astros-playroom', { insertIfMissing: true, forceSync: true });
+  await syncSeedGameGuideSummaryAndRoadmapFromSeed('resident-evil-4-remake');
+  await syncSeedGameFromSeed('nioh-2', { insertIfMissing: true, forceSync: true });
+  await syncSeedGameFromSeed('nioh-3', { insertIfMissing: true, forceSync: true });
+  await syncSeedGameFromSeed('saros', { insertIfMissing: true, forceSync: true });
   await syncSeedGameFromSeed('disney-epic-mickey-rebrushed', { insertIfMissing: true });
   await ensureKnownSlugRedirects();
 }

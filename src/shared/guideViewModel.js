@@ -50,6 +50,14 @@
     return String(value || '').toLowerCase().normalize('NFD').replace(/[\u0300-\u036f]/g, '');
   }
 
+  function hasGuideChapterSelectSignal(value = '', game = {}) {
+    if (game?.hasChapterSelect === false || game?.chapterSelect === false) return false;
+    const text = normalizeGuideSignalText(value);
+    if (!text) return false;
+    const negated = /nao ha chapter select|nao tem chapter select|sem chapter select|nao existe chapter select|nao ha selecao de capitulo|nao ha selecao de capitulos|sem selecao de capitulo|sem selecao de capitulos/.test(text);
+    return !negated && /chapter select|selecao de capitulo|selecao de capitulos|selecionar capitulo|selecionar capitulos|collectible mode/.test(text);
+  }
+
   const GUIDE_TROPHY_TAG_PRIORITY = ['missable', 'final', 'boss', 'legendary', 'online', 'coop', 'difficulty', 'grind', 'collectible', 'spoiler', 'cleanup', 'story', 'run'];
 
   function getGuideTrophySignalText(trophy = {}) {
@@ -281,7 +289,7 @@
 
   function hasNegatedGuideRequirement(value = '') {
     const text = normalizeGuideSignalText(value);
-    return /nao ha|nada (?:e|eh)? ?permanentemente perdivel|nada .*perdivel|nao exige|nao e obrigatorio|nao precisa|sem exigencia|sem trofeu|sem trofeus|sem online|sem multiplayer|sem coop|dispensa|desnecessar|nao inclui|nao foram adicionados/.test(text);
+    return /nao ha|nada (?:e|eh)? ?permanentemente perdivel|nada .*perdivel|nenhum(?:a)?\s+trofeu.{0,80}(?:marcado|tratado|contado).{0,40}perdivel|nao ha.{0,80}perdiveis? reais|sem.{0,80}perdiveis? reais|nao exige|nao e obrigatorio|nao precisa|sem exigencia|sem trofeu|sem trofeus|sem online|sem multiplayer|sem coop|dispensa|desnecessar|nao inclui|nao foram adicionados/.test(text);
   }
 
   function hasAffirmativeOnlineRequirement(value = '', onlineCount = 0) {
@@ -408,8 +416,7 @@
     const missableNegated = hasNegatedGuideRequirement(missableText);
     const hasMissable = Boolean(!missableNegated && (missableCount || hasMissableRiskText(missableText)));
     const dlcScope = buildGuideDlcScopeModel(game, inputs);
-    const chapterSelectNegated = /nao ha chapter select|sem chapter select|nao ha selecao de capitulo|nao ha selecao de capitulos|sem selecao de capitulo|sem selecao de capitulos/.test(normalized);
-    const hasChapterSelect = !chapterSelectNegated && /chapter select|selecao de capitulo|selecao de capitulos|selecionar capitulo|capitulo|capitulos/.test(normalized);
+    const hasChapterSelect = hasGuideChapterSelectSignal(normalized, game);
     const ngPlusNegated = /sem new game\+|sem ng\+|sem ng plus|nao ha new game\+|nao ha ng\+|ng\+ nao e necessario|ng plus nao e necessario/.test(normalized);
     const hasNgPlus = !ngPlusNegated && /new game\+|new game plus|ng\+|ng plus|nova jornada\+|novo jogo\+/.test(normalized);
     const grindText = normalizeGuideSignalText(inputs.grind);
@@ -428,7 +435,7 @@
     );
     const chapterSnippet = findGuidePlanningSnippet(
       [inputs.missableSummary, inputs.cleanupAdvice, ...roadmapTexts],
-      /chapter select|selecao de capitulo|selecao de capitulos|selecionar capitulo|capitulo|capitulos/,
+      /chapter select|selecao de capitulo|selecao de capitulos|selecionar capitulo|selecionar capitulos|collectible mode/,
       hasChapterSelect ? 'O guia menciona capitulos ou selecao de capitulo; revise antes de avancar.' : 'Sem Chapter Select confirmado nos dados do guia.'
     );
     const ngPlusSnippet = findGuidePlanningSnippet(
@@ -602,8 +609,7 @@
     const statusBadge = viewModel.editorial?.statusBadge || getGuideEditorialStatusBadge(game, getEditorialBadge(game));
     const scope = viewModel.scopeModel || buildGuideScopeModel(game, { ...viewModel, trophies, total });
     const combinedText = normalizeGuideSignalText(getGuideCombinedPlanningText(game, { ...viewModel, trophies }));
-    const hasChapterSelect = !/nao ha chapter select|sem chapter select|nao ha selecao de capitulo|sem selecao de capitulo/.test(combinedText)
-      && /chapter select|selecao de capitulo|selecao de capitulos|selecionar capitulo/.test(combinedText);
+    const hasChapterSelect = hasGuideChapterSelectSignal(combinedText, game);
     const grindCount = Number(riskCounts.grind || countGuideTrophyTag(trophies, 'grind') || 0);
     const normalizedGrindSummary = normalizeGuideSignalText(inputs.grind);
     const hasGrind = grindCount >= 4 || Boolean(normalizedGrindSummary
@@ -617,9 +623,19 @@
       { icon: 'fa-triangle-exclamation', label: 'Perdíveis', value: missableCount ? formatGuideCount(missableCount, 'perdível', 'perdíveis') : (hasMissableText ? 'Atenção' : 'Sem perdíveis'), detail: compactGuideText(inputs.missableSummary, hasMissableText ? 'Leia antes de avançar.' : 'Sem bloqueio crítico marcado.', 96), tone: missableCount || hasMissableText ? 'atlas-meta-signal--risk' : 'atlas-meta-signal--complete' },
       { icon: 'fa-wifi', label: 'Online', value: network.onlineLabel, detail: compactGuideText(network.onlineDetail, '', 96), tone: `atlas-meta-signal--${network.onlineTone}` },
       { icon: 'fa-users', label: 'Coop', value: network.coopLabel, detail: compactGuideText(network.coopDetail, '', 96), tone: `atlas-meta-signal--${network.coopTone}` },
-      { icon: 'fa-layer-group', label: 'DLC', value: dlcScope.value, detail: compactGuideText(dlcScope.detail, 'Escopo de DLC do guia.', 96), tone: dlcScope.tone },
-      { icon: 'fa-book-open', label: 'Chapter Select', value: hasChapterSelect ? 'Ajuda no cleanup' : 'Nao confirmado', detail: hasChapterSelect ? 'Use selecao de capitulos para limpar pendencias.' : 'Siga o roadmap antes de depender de selecao de capitulos.', tone: hasChapterSelect ? 'atlas-meta-signal--complete' : 'atlas-meta-signal--partial' }
+      { icon: 'fa-layer-group', label: 'DLC', value: dlcScope.value, detail: compactGuideText(dlcScope.detail, 'Escopo de DLC do guia.', 96), tone: dlcScope.tone }
     ];
+
+    const explicitlyNoChapterSelect = game?.hasChapterSelect === false || game?.chapterSelect === false;
+    if (hasChapterSelect || !explicitlyNoChapterSelect) {
+      cards.push({
+        icon: 'fa-book-open',
+        label: 'Chapter Select',
+        value: hasChapterSelect ? 'Ajuda no cleanup' : 'Nao confirmado',
+        detail: hasChapterSelect ? 'Use selecao de capitulos para limpar pendencias.' : 'Siga o roadmap antes de depender de selecao de capitulos.',
+        tone: hasChapterSelect ? 'atlas-meta-signal--complete' : 'atlas-meta-signal--partial'
+      });
+    }
 
     if (hasGrind) {
       cards.push({
@@ -689,7 +705,8 @@
     const combinedText = getGuideCombinedPlanningText(game, { ...viewModel, trophies, roadmap });
     const normalizedCombinedText = normalizeGuideSignalText(combinedText);
     const coopNegated = /nao (?:indica|aponta|lista|tem).{0,80}(?:coop|co-op|segundo jogador|2 jogadores|dois jogadores)|sem coop|nao exige coop/.test(normalizedCombinedText);
-    const coopReview = (!inputs.online && !combinedText) || (!network.hasCoop && !coopNegated && /coop|co-op|2 jogadores|dois jogadores|segundo jogador/.test(normalizedCombinedText) && hasGuideReviewSignal(combinedText));
+    const explicitlyNoCoop = game?.coopRequired === false || game?.requiresCoop === false || game?.hasMandatoryCoop === false;
+    const coopReview = !explicitlyNoCoop && ((!inputs.online && !combinedText) || (!network.hasCoop && !coopNegated && /coop|co-op|2 jogadores|dois jogadores|segundo jogador/.test(normalizedCombinedText) && hasGuideReviewSignal(combinedText)));
     const dlcReview = !inputs.dlc || (!/complete|warning/.test(String(dlcScope.tone || '')) && hasGuideReviewSignal(inputs.dlc));
 
     let dlcValue = dlcScope.value;
@@ -1021,6 +1038,8 @@
 
     if (!started && roadmapCount > 0) {
       const readRoadmapFirst = shouldReadRoadmapFirst(game, trophies, Array.isArray(game.roadmap) ? game.roadmap : []);
+      const hasMissableRoadmapRisk = Boolean(missablePending);
+      const firstRunAdvice = firstGuideText(game?.first_run_advice, game?.quickDecision?.firstAction);
       if (String(game?.slug || '').trim().toLowerCase() === 'hades') {
         return {
           kind: 'roadmap',
@@ -1034,12 +1053,14 @@
       }
       return {
         kind: readRoadmapFirst ? 'roadmap' : 'checklist',
-        title: readRoadmapFirst ? 'Ler alertas antes do checklist' : 'Ir direto para o checklist',
+        title: readRoadmapFirst
+          ? (hasMissableRoadmapRisk ? 'Ler alertas antes do checklist' : 'Comece pelo roadmap')
+          : 'Ir direto para o checklist',
         detail: readRoadmapFirst
-          ? `Use as ${roadmapCount} etapa(s) do roadmap para iniciar sem retrabalho e evitar ordem errada logo no começo.`
+          ? (firstRunAdvice || `Use as ${roadmapCount} etapa(s) do roadmap para iniciar sem retrabalho e evitar ordem errada logo no começo.`)
           : 'Este guia não aponta um bloqueio crítico forte no topo; abra a checklist e avance marcando o progresso.',
-        cta: readRoadmapFirst ? 'Ler alertas e roadmap' : 'Ir para checklist',
-        focus: readRoadmapFirst ? 'risks' : 'trophies',
+        cta: readRoadmapFirst ? (hasMissableRoadmapRisk ? 'Ler alertas e roadmap' : 'Abrir roadmap') : 'Ir para checklist',
+        focus: readRoadmapFirst ? (hasMissableRoadmapRisk ? 'risks' : 'roadmap') : 'trophies',
         trophyId: firstPending?.id || '',
         trophyName: firstPending?.name || ''
       };
@@ -1120,16 +1141,20 @@
     const trophies = Array.isArray(viewModel.trophies) ? viewModel.trophies : [];
     const roadmap = Array.isArray(viewModel.roadmap) ? viewModel.roadmap : [];
     const riskCounts = viewModel.riskCounts || getRiskCounts(trophies);
+    const missableCount = countRealMissableTrophies(trophies);
     const difficulty = Number(game?.difficulty || 0);
     const runs = String(game?.runs || '').trim();
     const guideText = String(`${runs} ${game?.missable || ''} ${getGuideRoadmapText(roadmap)}`).toLowerCase().normalize('NFD').replace(/[\u0300-\u036f]/g, '');
+    const missableText = firstGuideText(game?.missable, game?.missable_summary);
+    const missableNegated = hasNegatedGuideRequirement(missableText);
+    const hasMissableRisk = Boolean(missableCount || riskCounts.missable || (!missableNegated && /perdivel|missable|perder|sem chapter|no chapter/.test(guideText)));
     const cards = [];
 
     if (runs || /multiplas|varias|multi-run|run|campanha dedicada|speedrun/.test(guideText) || riskCounts.run) {
       cards.push({ tag: 'Runs', title: runs || 'O guia menciona runs ou campanhas específicas', text: runs ? 'Use esta estrutura antes de misturar história, cleanup e restrições.' : 'Há sinais no roadmap, alerta ou troféus de que a ordem das runs muda o esforço.' });
     }
-    if (riskCounts.missable || /perdivel|missable|perder|sem chapter|no chapter/.test(guideText)) {
-      cards.push({ tag: 'Perdíveis', title: `${riskCounts.missable || 1} ponto(s) com risco de perda`, text: game?.missable || 'Revise os troféus marcados antes de avançar demais na campanha.' });
+    if (hasMissableRisk) {
+      cards.push({ tag: 'Perdíveis', title: `${missableCount || riskCounts.missable || 1} ponto(s) com risco de perda`, text: game?.missable || 'Revise os troféus marcados antes de avançar demais na campanha.' });
     }
     if (riskCounts.spoiler) cards.push({ tag: 'Spoiler', title: `${riskCounts.spoiler} troféu(s) escondem informação sensível`, text: 'Revele detalhes só quando fizer sentido para sua run atual.' });
     if (riskCounts.collectible) cards.push({ tag: 'Coletáveis', title: `${riskCounts.collectible} troféu(s) com sinal de coleta ou checklist`, text: 'Marque progresso desde cedo para evitar varrer áreas sem contexto no final.' });
@@ -1318,7 +1343,7 @@
 
   function classifyRoadmapStage(text = '') {
     const normalized = normalizeGuideSignalText(text);
-    const networkNegated = /nao .*online|nao .*coop|nao e online|sem online|sem coop|offline/.test(normalized);
+    const networkNegated = /nao .*online|nao .*coop|nao e online|sem online|sem coop|offline|online opcional|coop opcional|co-op opcional|fora dos requisitos obrigatorios/.test(normalized);
     if (/limpeza final|cleanup|fechamento|desafios especificos/.test(normalized)) {
       return { id: 'cleanup', label: 'Cleanup', icon: 'fa-broom', tone: 'neutral' };
     }
@@ -1448,6 +1473,100 @@
     const dlcNotRequired = /lista base|jogo base|base game|sem dlc|nao inclui|nao foram adicionados|nao foi misturado|dlc nao necessaria|nao e necessaria|nao ha dlc|fora do escopo|fica fora|ficam fora|entrada separada/.test(dlcNormalized);
     const dlcRequired = /necessaria|obrigatoria|dlc no escopo|expansao|expansoes/.test(dlcNormalized) && !dlcNotRequired;
     const reviewAnswer = 'Essa informação ainda está em revisão editorial. Consulte os alertas do guia antes de começar.';
+
+    if (String(game?.slug || '').trim().toLowerCase() === 'saros') {
+      return [
+        {
+          question: 'Saros tem troféus perdíveis?',
+          answer: 'Não há troféus perdíveis reais tratados na lista base. O guia considera bosses, desafios, armas e objetivos cumulativos como cleanup de runs, não como perda permanente.'
+        },
+        {
+          question: 'Saros precisa de online para platinar?',
+          answer: 'Não. A página oficial descreve Saros como um jogo single-player, e a lista base não deve ser tratada como dependente de online obrigatório.'
+        },
+        {
+          question: 'Saros tem coop obrigatório?',
+          answer: 'Não. O guia não marca coop obrigatório porque não há requisito de coop validado para a platina base.'
+        },
+        {
+          question: 'Quanto tempo leva para platinar Saros?',
+          answer: 'A estimativa inicial do guia é 20-30h, considerando campanha, epílogo, Nightmare Gates, 33 expedições com modificadores e cleanup de armas/desafios.'
+        },
+        {
+          question: 'Qual a dificuldade da platina?',
+          answer: 'A dificuldade inicial ficou em 4/10. A lista é direta, mas exige consistência em runs, chefes, desafios de armas e um bioma sem dano relevante.'
+        },
+        {
+          question: 'Saros exige DLC para platina?',
+          answer: 'Não. Digital Deluxe, cosméticos, acesso antecipado e qualquer conteúdo futuro ficam fora do escopo da platina base.'
+        },
+        {
+          question: 'Dá para limpar pendências depois da campanha?',
+          answer: 'O guia trata a platina como campanha/runs principais + cleanup. Pendências de armas, desafios, Nightmare Gates e objetivos cumulativos devem ser resolvidas em runs adicionais.'
+        },
+        {
+          question: 'Saros tem chapter select ou replay de áreas?',
+          answer: 'Não há Chapter Select tradicional marcado no guia. Replays, pós-jogo ou seleção de áreas devem continuar em validação editorial antes de virar badge específico.'
+        },
+        {
+          question: 'A platina depende de múltiplas runs?',
+          answer: 'Sim. Como roguelite, a platina depende de várias runs para progressão, bosses, recursos, modificadores, armas e desafios situacionais.'
+        },
+        {
+          question: 'O guia está verificado?',
+          answer: 'Não. Saros foi adicionado como guia inicial em revisão editorial, com avisos para validação final da lista e localização oficial dos troféus.'
+        }
+      ];
+    }
+
+    if (String(game?.slug || '').trim().toLowerCase() === 'nioh-3') {
+      return [
+        {
+          question: 'Nioh 3 tem troféus perdíveis?',
+          answer: 'Não há troféus perdíveis reais confirmados na lista base. O jogo permite limpeza posterior por free roam/replay de missões, então o desafio está em campanha, myths, coletáveis, proficiência, bosses opcionais e cleanup.'
+        },
+        {
+          question: 'Nioh 3 precisa de online para platinar?',
+          answer: 'Não. A platina base não deve exigir online obrigatório. Recursos online existem como opção, mas não são tratados como requisito da lista base.'
+        },
+        {
+          question: 'Nioh 3 tem coop obrigatório?',
+          answer: 'Não. O jogo possui coop online opcional, mas a platina base não deve exigir coop obrigatório. Se o troféu Teamwork estiver na lista, ele deve ser tratado como possível via NPCs/Acolytes quando validado.'
+        },
+        {
+          question: 'Quanto tempo leva para platinar Nioh 3?',
+          answer: 'O resumo editorial mantém 40-60h, considerando campanha, Myths, coletáveis, proficiência, bosses opcionais, sistemas de combate e cleanup/replay.'
+        },
+        {
+          question: 'Qual a dificuldade da platina?',
+          answer: 'A dificuldade cadastrada é 5/10. O peso vem do combate, chefes, exploração, builds e volume de checklist, não de modo difícil obrigatório.'
+        },
+        {
+          question: 'É necessário jogar DLC para a platina base?',
+          answer: 'Não. Season Pass, Digital Deluxe, bônus, cosméticos, demo e DLCs futuras ficam fora do escopo da platina base.'
+        },
+        {
+          question: 'Dá para repetir missões para limpar coletáveis?',
+          answer: 'Sim. O guia trata Battle Scroll e free roam como caminhos de limpeza para missões, coletáveis, diálogos e condições situacionais.'
+        },
+        {
+          question: 'Nioh 3 tem Chapter Select?',
+          answer: 'Não deve ser marcado como Chapter Select tradicional. O conceito correto para o guia é replay de missões via Battle Scroll.'
+        },
+        {
+          question: 'Battle Scroll conta como replay de missões?',
+          answer: 'Sim. Battle Scroll é o sistema usado no guia para revisar missões e corrigir pendências sem reiniciar a campanha.'
+        },
+        {
+          question: 'Qual é o maior grind da platina?',
+          answer: 'O maior volume está em exploração regional, Myths, coletáveis, proficiência, sistemas de ferreiro, Soul Cores/Yokai, bosses opcionais e cleanup final.'
+        },
+        {
+          question: 'O guia está verificado?',
+          answer: 'Não. O guia permanece em revisão editorial por ser recente e por exigir validação final de nomes PT-BR oficiais e escopo de DLCs futuras.'
+        }
+      ];
+    }
 
     if (String(game?.slug || '').trim().toLowerCase() === 'elden-ring') {
       return [

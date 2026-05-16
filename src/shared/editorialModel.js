@@ -128,6 +128,8 @@
     if (!hasRiskPhrase) return false;
 
     const hasLowRiskStatement = /(?:nao ha|sem|nenhum|nenhuma|baixo risco de)\s+(?:trofeus?\s+)?(?:perdiveis?|missables?)/.test(text)
+      || /nenhum(?:a)?\s+trofeu.{0,80}(?:marcado|tratado|contado).{0,40}perdivel/.test(text)
+      || /nao ha.{0,80}perdiveis? reais|sem.{0,80}perdiveis? reais/.test(text)
       || /chapter select resolve|free roam|cleanup completo|nada e perdivel|nada e missable/.test(text);
     if (!hasLowRiskStatement) return true;
 

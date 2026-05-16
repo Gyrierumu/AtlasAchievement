@@ -71,6 +71,7 @@ function assertHtmlLoadsModules(relPath) {
       '/shared/cardModel.js',
       '/shared/catalogModel.js',
       '/js/ui-decision-models.js',
+      '/js/site-updates.js',
       '/js/ui-home.js',
       '/js/ui-catalog.js',
       '/js/ui-guide.js',
@@ -12085,7 +12086,9 @@ function assertLote1BNetworkClassification() {
   assert(/duo mode|app compativel|modo\/controle/.test(normalizeEditorialSmokeText(`${beyondTwoSouls.online_summary} ${beyondTwoSouls.before_you_start}`)), 'Beyond: Two Souls deve explicar Duo Mode/local corretamente');
 
   const nioh3 = bySlug.get('nioh-3');
-  assert(/precisa validar/.test(normalizeEditorialSmokeText(nioh3.online_summary)), 'Nioh 3 deve manter aviso de validacao para lista/Expeditions');
+  assert.strictEqual(summaryCardValue(nioh3, 'Online'), 'Sem online obrigatório', 'Nioh 3 nao deve marcar online obrigatorio');
+  assert.strictEqual(summaryCardValue(nioh3, 'Coop'), 'Sem coop obrigatório', 'Nioh 3 nao deve marcar coop obrigatorio');
+  assert(/teamwork/.test(normalizeEditorialSmokeText(nioh3.online_summary)) && /npc|acolytes/.test(normalizeEditorialSmokeText(nioh3.online_summary)), 'Nioh 3 deve tratar Teamwork como possível via NPCs/Acolytes');
 
   const reanimal = bySlug.get('reanimal');
   assert(/solo/.test(normalizeEditorialSmokeText(reanimal.online_summary)) && /precisa validar/.test(normalizeEditorialSmokeText(reanimal.online_summary)), 'REANIMAL deve explicar solo/parceiro e validacao final sem coop obrigatorio');

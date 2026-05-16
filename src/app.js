@@ -428,6 +428,15 @@ function buildGameSeoDescription(game = {}) {
   if (String(game?.slug || '').trim().toLowerCase() === 'pragmata') {
     return 'Guia de platina de PRAGMATA em português, com tempo estimado, dificuldade, troféus perdíveis, Lunatic, coletáveis, roadmap e checklist.';
   }
+  if (String(game?.slug || '').trim().toLowerCase() === 'nioh-2') {
+    return 'Guia de platina de Nioh 2 em português, com tempo estimado, dificuldade, missões, Kodama, Hot Springs, proficiência, Soul Cores, roadmap e checklist de troféus.';
+  }
+  if (String(game?.slug || '').trim().toLowerCase() === 'nioh-3') {
+    return 'Guia de platina de Nioh 3 em português, com tempo estimado, dificuldade, troféus, Samurai, Ninja, missões, coletáveis, Battle Scroll, roadmap e checklist.';
+  }
+  if (String(game?.slug || '').trim().toLowerCase() === 'saros') {
+    return 'Guia de platina de Saros em português, com tempo estimado, dificuldade, troféus, roadmap, checklist, coletáveis, bosses e dicas para a platina.';
+  }
   const parts = [];
   const time = String(game?.time || '').trim();
   const difficulty = Number(game?.difficulty || 0);
@@ -896,7 +905,9 @@ function buildGuideFaqStructuredData(canonicalUrl, viewModel) {
 
 function renderGuideEditorialNotesHtml(game = {}, viewModel = {}) {
   const routeTrophies = Array.isArray(viewModel.routeChangingTrophies) ? viewModel.routeChangingTrophies.slice(0, 4) : [];
-  const faqItems = Array.isArray(viewModel.contextualFaq) ? viewModel.contextualFaq.slice(0, 6) : [];
+  const normalizedSlug = String(game?.slug || '').trim().toLowerCase();
+  const faqLimit = normalizedSlug === 'nioh-3' ? 11 : (normalizedSlug === 'saros' ? 10 : 6);
+  const faqItems = Array.isArray(viewModel.contextualFaq) ? viewModel.contextualFaq.slice(0, faqLimit) : [];
   const playerFit = viewModel.playerFit || buildGuidePlayerFit(game, viewModel);
   const methodItems = Array.isArray(viewModel.editorial?.methodItems) ? viewModel.editorial.methodItems : [];
   const statusBadge = viewModel.editorial?.statusBadge || getEditorialBadge(game);
@@ -1588,7 +1599,10 @@ function prioritizeGuideViewHtml(html = '') {
 
 async function buildGamePageHtml(game, req) {
   const origin = getPublicOrigin(req);
-  const canonicalUrl = buildPublicUrl(req, `/jogo/${game.slug}`);
+  const normalizedSlug = String(game?.slug || '').trim().toLowerCase();
+  const canonicalUrl = ['nioh-2', 'nioh-3', 'saros'].includes(normalizedSlug)
+    ? `https://atlasachievement.com.br/jogo/${normalizedSlug}`
+    : buildPublicUrl(req, `/jogo/${game.slug}`);
   const relatedResponse = await gamesService.listGames({ page: 1, limit: 80, sort: 'recommended-desc' });
   const relatedPool = Array.isArray(relatedResponse?.items) ? relatedResponse.items : [];
   const relatedGames = buildRelatedGamesServer(game, relatedPool, 4);

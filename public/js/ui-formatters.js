@@ -37,6 +37,15 @@ window.UIFormatters = (() => {
     if (String(game?.slug || '').trim().toLowerCase() === 'pragmata') {
       return 'Guia de platina de PRAGMATA em português, com tempo estimado, dificuldade, troféus perdíveis, Lunatic, coletáveis, roadmap e checklist.';
     }
+    if (String(game?.slug || '').trim().toLowerCase() === 'nioh-2') {
+      return 'Guia de platina de Nioh 2 em português, com tempo estimado, dificuldade, missões, Kodama, Hot Springs, proficiência, Soul Cores, roadmap e checklist de troféus.';
+    }
+    if (String(game?.slug || '').trim().toLowerCase() === 'nioh-3') {
+      return 'Guia de platina de Nioh 3 em português, com tempo estimado, dificuldade, troféus, Samurai, Ninja, missões, coletáveis, Battle Scroll, roadmap e checklist.';
+    }
+    if (String(game?.slug || '').trim().toLowerCase() === 'saros') {
+      return 'Guia de platina de Saros em português, com tempo estimado, dificuldade, troféus, roadmap, checklist, coletáveis, bosses e dicas para a platina.';
+    }
     const parts = [];
     const time = String(game?.time || '').trim();
     const difficulty = Number(game?.difficulty || 0);
