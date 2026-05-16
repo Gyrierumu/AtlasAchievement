@@ -938,82 +938,76 @@ const sampleGames = [
     "cover_image": "/assets/games/ghost-of-tsushima/cover.jpg",
     "roadmap": [
       {
-        "title": "Avance a história e libere recursos básicos",
-        "focus": "Campanha principal",
-        "objective": "Progredir pela história enquanto desbloqueia ferramentas, posturas, técnicas e acesso gradual às regiões.",
+        "title": "Etapa 1",
+        "focus": "Avance a história e libere as regiões",
+        "category": "História",
+        "objective": "Progredir pelos atos principais enquanto libera mecânicas, equipamentos e acesso às regiões necessárias para a platina base.",
         "actions": [
-          "Avance os contos principais até abrir melhor o mapa.",
-          "Use os primeiros pontos de técnica para melhorar combate, furtividade e exploração.",
-          "Ative pontos de viagem rápida sempre que possível.",
-          "Faça atividades próximas ao caminho sem tentar limpar tudo cedo demais."
+          "Avance pelas missões principais sem tentar limpar todo o mapa logo no início.",
+          "Libere posturas, ferramentas fantasma e melhorias úteis para combate e exploração.",
+          "Faça atividades secundárias próximas do caminho quando ajudarem na progressão.",
+          "Observe acampamentos, santuários, fontes termais, bambus, haikus e tocas de raposa conforme surgirem no mapa."
         ],
-        "warning": "Não trate Legends, coop ou online como requisito da platina base.",
-        "result": "Jin preparado para explorar Tsushima com mais recursos e menos retrabalho."
+        "warning": "",
+        "result": "Campanha avançada, Jin fortalecido e mapa preparado para a limpeza posterior."
       },
       {
-        "title": "Liberte regiões e revele o mapa",
-        "focus": "Exploração",
-        "objective": "Reduzir a névoa do mapa e abrir atividades importantes em Izuhara, Toyotama e Kamiagata.",
+        "title": "Etapa 2",
+        "focus": "Complete contos de aliados e secundários",
+        "category": "Contos",
+        "objective": "Reduzir pendências narrativas e avançar troféus ligados a personagens, contos e atividades regionais.",
         "actions": [
-          "Liberte acampamentos mongóis conforme eles ficarem acessíveis.",
-          "Use pássaros dourados, raposas e fumaça no horizonte para localizar atividades.",
-          "Complete fontes termais, bambus, haiku e santuários quando estiverem no caminho.",
-          "Marque pendências por região no checklist."
+          "Complete os contos principais dos aliados conforme forem liberados.",
+          "Faça contos secundários encontrados nas regiões.",
+          "Libere áreas ocupadas quando estiverem próximas dos objetivos atuais.",
+          "Colete recursos para melhorar armaduras, armas e ferramentas importantes."
         ],
-        "warning": "A libertação e exploração do jogo base bastam para este escopo; não misture Iki Island aqui.",
-        "result": "Mapa mais aberto e atividades de platina mais fáceis de organizar."
+        "warning": "Não misture requisitos de Legends, Iki Island ou Director’s Cut com a platina base.",
+        "result": "Grande parte dos contos e troféus de progressão secundária encaminhada."
       },
       {
-        "title": "Complete Tales e Mythic Tales",
-        "focus": "Missões secundárias",
-        "objective": "Concluir histórias secundárias importantes para recursos, técnicas, armaduras e troféus.",
+        "title": "Etapa 3",
+        "focus": "Limpe o mapa e atividades de exploração",
+        "category": "Coletáveis",
+        "objective": "Completar os requisitos de exploração, libertação e atividades do mundo aberto exigidos pela platina base.",
         "actions": [
-          "Faça Mythic Tales assim que ficarem disponíveis.",
-          "Complete linhas de aliados como Ishikawa, Masako, Norio e Yuna.",
-          "Intercale contos secundários com a campanha para evitar limpeza pesada no final.",
-          "Use o checklist para separar Tales concluídos dos pendentes."
+          "Revisite regiões com pontos de interesse pendentes.",
+          "Complete santuários, fontes termais, bambus, haikus, tocas de raposa e demais atividades relevantes.",
+          "Liberte territórios restantes para revelar pontos que ainda faltam.",
+          "Use o checklist para separar o que já foi concluído do que ainda falta.",
+          "Confira itens cosméticos e registros necessários para troféus da lista base."
         ],
-        "warning": "Concentre-se nos contos da lista base; expansões e Legends ficam fora da platina principal.",
-        "result": "Principais missões paralelas concluídas e pós-jogo mais leve."
+        "warning": "",
+        "result": "Mapa praticamente limpo e a maioria dos requisitos de exploração concluída."
       },
       {
-        "title": "Limpe coletáveis e atividades de mundo aberto",
-        "focus": "Coletáveis",
-        "objective": "Finalizar atividades exigidas pela platina base sem misturar conteúdo de DLC.",
+        "title": "Etapa 4",
+        "focus": "Resolva troféus de combate e ações específicas",
+        "category": "Combate",
+        "objective": "Finalizar troféus situacionais ligados a postura, ferramentas, duelos, furtividade e ações específicas que talvez não venham naturalmente.",
         "actions": [
-          "Complete santuários Shinto e Inari, fontes termais, haiku, bambus e faróis.",
-          "Procure altares escondidos, Records e artefatos mongóis.",
-          "Finalize duelos, acampamentos e atividades restantes por região.",
-          "Priorize uma região por vez para não se perder no cleanup."
+          "Revise o checklist para identificar troféus de combate ainda pendentes.",
+          "Use acampamentos ou patrulhas restantes para completar ações específicas.",
+          "Finalize upgrades necessários antes de tentar desafios mais chatos.",
+          "Busque troféus de postura, furtividade, ferramentas e confronto direto conforme a exigência de cada um."
         ],
-        "warning": "Iki Island, Legends e New Game+ não são obrigatórios para a platina base.",
-        "result": "Exploração da lista base praticamente concluída, sem pendências de DLC no checklist."
+        "warning": "Evite libertar absolutamente tudo antes de conferir troféus situacionais, para ainda ter inimigos disponíveis com facilidade.",
+        "result": "Troféus de combate e ações específicas resolvidos ou prontos para a conferência final."
       },
       {
-        "title": "Use o free roam para cleanup final",
-        "focus": "Pós-história",
-        "objective": "Aproveitar o free roam após a campanha para fechar o que ficou pendente.",
+        "title": "Etapa 5",
+        "focus": "Faça o cleanup final da platina",
+        "category": "Cleanup",
+        "objective": "Conferir todos os requisitos restantes da platina base sem incluir conteúdo online, coop ou DLC.",
         "actions": [
-          "Volte às regiões com atividades incompletas.",
-          "Finalize troféus miscelâneos e cosméticos da lista base.",
-          "Confira contos, coletáveis e atividades regionais restantes.",
-          "Verifique se nenhum troféu da lista base ficou sem progresso."
+          "Abra o checklist e revise troféus restantes um por um.",
+          "Complete upgrades, cosméticos, registros ou atividades que ainda faltarem.",
+          "Confirme se todos os contos e atividades da lista base foram concluídos.",
+          "Verifique se o guia não está marcando Legends, Iki Island ou DLC como obrigatório.",
+          "Finalize qualquer pendência antes de considerar o guia pronto."
         ],
-        "warning": "A exploração livre pós-história resolve pendências do jogo base; a platina não deve ser marcada como perdível.",
-        "result": "Quase toda a lista base concluída antes da revisão final."
-      },
-      {
-        "title": "Revise a lista base e feche Living Legend",
-        "focus": "Checklist final",
-        "objective": "Confirmar todos os requisitos da platina base antes de encerrar o guia.",
-        "actions": [
-          "Revise a contagem total da lista base e os troféus restantes.",
-          "Confirme que não está contando Iki Island, Legends ou New Game+ como obrigatórios.",
-          "Verifique se não há troféus online marcados como necessários para a platina base.",
-          "Feche qualquer pendência de exploração, contos ou atividades."
-        ],
-        "warning": "Living Legend é a platina de conclusão e não deve contar como troféu perdível.",
-        "result": "Lista base concluída e troféu de platina Living Legend liberado."
+        "warning": "A platina base não exige online, coop, Legends ou DLC.",
+        "result": "Checklist completo e requisitos da platina base concluídos."
       }
     ],
     "trophies": [
@@ -2678,7 +2672,7 @@ const sampleGames = [
         "title": "Etapa 1",
         "focus": "Faça a campanha 100% com saves manuais",
         "category": "Coleta inicial",
-        "objective": "Concluir a primeira campanha coletando tesouros, castelões mecânicos, pedidos do Mercador e troféus de capítulo sem depender de chapter select depois.",
+        "objective": "Concluir a primeira campanha coletando tesouros, Castellans, pedidos do Mercador e troféus de capítulo sem depender de chapter select depois.",
         "actions": [
           "Jogue em Assisted ou Standard para facilitar a coleta inicial.",
           "Pegue tesouros, Clockwork Castellans e pedidos do Mercador conforme avança pelos capítulos.",
@@ -2687,11 +2681,11 @@ const sampleGames = [
           "Priorize melhorar uma pistola confiável e preparar recursos para as próximas runs."
         ],
         "warning": "O jogo não tem chapter select nem free-roam final; muitos troféus exigem replay se forem ignorados no capítulo certo.",
-        "result": "História concluída, boa parte dos colecionáveis resolvida e base preparada para New Game+."
+        "result": "História concluída, grande parte dos colecionáveis resolvida e base preparada para New Game+."
       },
       {
         "title": "Etapa 2",
-        "focus": "Organize armas, castelões e New Game+",
+        "focus": "Organize armas, Castellans e New Game+",
         "category": "Preparação",
         "objective": "Usar o pós-jogo para preparar armas especiais, upgrades e saves que reduzem retrabalho nas runs de restrição e rank.",
         "actions": [
@@ -2716,7 +2710,7 @@ const sampleGames = [
           "Salve em slots separados para corrigir qualquer erro de restrição."
         ],
         "warning": "Granadas, ovos, armas especiais e outros recursos podem invalidar Minimalist se usados fora das exceções permitidas.",
-        "result": "Minimalist e Silent Stranger concluídos ou encaminhados sem repetir a campanha inteira."
+        "result": "Minimalist e Silent Stranger concluídos ou encaminhados sem precisar repetir a campanha inteira."
       },
       {
         "title": "Etapa 4",
@@ -3416,7 +3410,7 @@ const sampleGames = [
       "missable_summary": "Nenhum troféu da lista base foi marcado como perdível; use replay de missões para limpar objetivos, coletáveis e proficiências.",
       "online_summary": "Não há exigência online para a platina da lista base.",
       "grind_summary": "O peso está em todas as missões, Kodama, Hot Springs, Soul Cores, Mystic Arts, proficiências, builds e cleanup por replay.",
-      "dlc_scope": "Guia focado na lista base da platina; The Tengu’s Disciple, Darkness in the Capital e The First Samurai devem ficar separados se o projeto suportar DLC/add-ons.",
+      "dlc_scope": "Guia focado na lista base da platina; The Tengu’s Disciple, Darkness in the Capital e The First Samurai ficam separados e não fazem parte do checklist base.",
       "difficulty_reason": "A dificuldade vem do combate técnico, gestão de Ki, Burst Counter, bosses, builds e domínio dos sistemas de Nioh.",
       "time_reason": "A faixa de 100-150 horas considera campanha, todas as missões, coletáveis, proficiências, Soul Cores, Mystic Arts e cleanup.",
       "first_run_advice": "Aprenda Ki Pulse, Burst Counter e stances cedo. Explore bem as missões e colete Kodama/Hot Springs quando passar por eles.",
@@ -3429,16 +3423,166 @@ const sampleGames = [
       "is_verified": false,
       "verification_status": "review",
       "verification_note": "Guia público seed-managed com checklist base e roadmap; aguardando revisão editorial manual final.",
+      "hasMissables": false,
+      "missableCount": 0,
+      "onlineRequired": false,
+      "coopRequired": false,
+      "dlcRequired": false,
+      "dlcRequiredForPlatinum": false,
+      "seo": {
+        "title": "Nioh 2: guia de troféus e platina | AtlasAchievement",
+        "description": "Roadmap completo da platina de Nioh 2, com checklist de 56 troféus da lista base, Kodama, Hot Springs, Soul Cores, Mystic Arts, builds e cleanup sem DLC.",
+        "ogTitle": "Nioh 2: guia de troféus e platina | AtlasAchievement",
+        "ogDescription": "Roadmap completo da platina de Nioh 2, com checklist de 56 troféus da lista base, Kodama, Hot Springs, Soul Cores, Mystic Arts, builds e cleanup sem DLC."
+      },
+      "quickDecision": {
+        "summary": "Platina longa e técnica, mas sem online obrigatório nem troféus perdíveis. O foco é completar a lista base, coletar Kodama/Hot Springs, desbloquear Mystic Arts e limpar por replay de missões.",
+        "recommendation": "Progrida pela campanha natural, limpe coletáveis enquanto avança e use replay de missões para fechar Soul Cores, Dark Realms e objetivos específicos.",
+        "firstAction": "Comece pela história principal e use Kodama/Hot Springs como checkpoints para reduzir cleanup futuro."
+      },
+      "checklist": [
+        "Complete todas as missões principais da lista base",
+        "Complete as missões secundárias necessárias sem incluir DLC",
+        "Colete todos os Kodama da lista base",
+        "Use todas as fontes termais base",
+        "Dissipe os Dark Realms das missões principais",
+        "Obtenha todos os Guardian Spirits base",
+        "Obtenha todas as Soul Cores base",
+        "Obtenha a Kodama Soul Core",
+        "Desbloqueie Mystic Arts para as armas base, Ninjutsu e Onmyo Magic",
+        "Use Burst Counter Brute, Feral e Phantom",
+        "Use Soul Match, Forge e Remodel para preparar equipamentos",
+        "Finalize com replay de missões para cleanup da lista base"
+      ],
+      "faq": [
+        {
+          "question": "Nioh 2 exige online para a platina base?",
+          "answer": "Não. A lista base deste guia não requer online, e objetivos como Teamwork ou Help Wanted podem ser feitos com NPCs ou Acolytes sem depender de partidas públicas."
+        },
+        {
+          "question": "The Tengu’s Disciple é obrigatório para a platina?",
+          "answer": "Não. The Tengu’s Disciple é DLC e fica fora do checklist base de 56 troféus."
+        },
+        {
+          "question": "Darkness in the Capital faz parte da platina base?",
+          "answer": "Não. Darkness in the Capital é expansão separada e não é necessária para a platina base descrita aqui."
+        },
+        {
+          "question": "The First Samurai é necessário?",
+          "answer": "Não. The First Samurai é DLC adicional e foi mantido fora deste guia da lista base."
+        },
+        {
+          "question": "Existem troféus perdíveis no Nioh 2 base?",
+          "answer": "Não há troféus perdíveis definitivos na lista base; use replay de missões e mission select para fechar coletáveis e objetivos específicos."
+        },
+        {
+          "question": "Quando devo fazer o cleanup final?",
+          "answer": "Faça o cleanup após completar a história principal e os sistemas-chave, usando replay de missões para Kodama, Hot Springs, Dark Realms e objetivos de missão restantes."
+        }
+      ],
       "image": "https://cdn.cloudflare.steamstatic.com/steam/apps/1325200/header.jpg",
       "cover_image": "https://cdn.cloudflare.steamstatic.com/steam/apps/1325200/library_600x900.jpg",
       "roadmap": [
-          "Etapa 1: jogue a campanha naturalmente, aprendendo Ki Pulse, Yokai Shift, Burst Counter, stances, gestão de Ki e fundamentos de build. A lista base não exige online nem DLC.",
-          "Etapa 2: avance todas as regiões e missões principais, coletando Kodama e Hot Springs quando possível para reduzir o cleanup e facilitar a cura durante a campanha.",
-          "Etapa 3: complete missões secundárias e limpe objetivos regionais. Samurai of Legend exige todas as missões principais e secundárias da lista base, sem incluir DLC.",
-          "Etapa 4: foque em Soul Cores, Guardian Spirits, Mystic Arts, proficiências de armas, Ninjutsu, Onmyo Magic, Yokai Shift, Burst Counter e troféus de combate específicos.",
-          "Etapa 5: faça cleanup por replay de missões para Kodama, Hot Springs, Soul Cores, Dark Realms, objetivos específicos como Seven Spears, Bells, Amrita shards, Sudama e troféus de bosses.",
-          "Etapa 6: use NG+ ou farm/build se for útil para proficiências, Tea Utensils, Soul Cores e gear, mas mantenha The Tengu’s Disciple, Darkness in the Capital e The First Samurai fora da platina base.",
-          "Etapa 7: revise o checklist final da lista base: 56 troféus, 0 online obrigatório, 0 perdíveis definitivos, replay de missões disponível e DLCs separadas do guia de platina."
+          "Etapa 1: avance pela campanha principal e aprenda Ki Pulse, Yokai Shift, Burst Counter, stances e a usar Hot Springs sem sair do fluxo.",
+          "Etapa 2: colecione Kodama e visite Hot Springs sempre que passar por elas, reduzindo retrabalho natural da lista base.",
+          "Etapa 3: finalize as missões secundárias necessárias para Samurai of Legend, mantendo a lista base separada de qualquer DLC.",
+          "Etapa 4: desbloqueie Guardian Spirits, Mystic Arts para as armas base, Ninjutsu e Onmyo Magic; esses sistemas ajudam nos bosses e no cleanup.",
+          "Etapa 5: use Soul Match, Forge, Remodel e proficiências de armas para montar builds que suportem as lutas mais exigentes.",
+          "Etapa 6: use replay de missões para limpar Kodama, Hot Springs, Dark Realms, Soul Cores e objetivos específicos deixados para trás.",
+          "Etapa 7: revise o checklist final da lista base: 56 troféus, 0 online obrigatório, 0 perdíveis definitivos e DLCs separados do guia."
+      ],
+      "roadmapStages": [
+        {
+          "title": "Aprenda os fundamentos da campanha",
+          "focus": "Fundamentos de combate e build",
+          "objective": "Avance nos primeiros atos enquanto domina Ki Pulse, Yokai Shift, Burst Counter e Hot Springs.",
+          "actions": [
+            "Jogue a história principal normalmente sem pular tutoriais importantes.",
+            "Use Hot Springs como checkpoints naturais para curar e reduzir retrabalho.",
+            "Experimente stances e builds leves antes de enfrentar bosses mais fortes."
+          ],
+          "warning": "Não tente completar todos os objetivos de coleta antes de dominar o básico de combate.",
+          "result": "Base sólida para a platina base sem depender de online ou DLC.",
+          "category": "Preparação"
+        },
+        {
+          "title": "Progresso principal e coleta emergente",
+          "focus": "Missões principais, Kodama e Hot Springs",
+          "objective": "Complete as regiões principais e colete Kodama e Hot Springs no caminho.",
+          "actions": [
+            "Pegue Kodama enquanto explora cada missão.",
+            "Use Hot Springs sempre que estiver disponível.",
+            "Evite deixar coletáveis importantes para o final."
+          ],
+          "warning": "Não pule os Kodama e Hot Springs — o cleanup será muito maior depois.",
+          "result": "Minimiza retrabalho e torna o resto da lista mais previsível.",
+          "category": "Colecionáveis"
+        },
+        {
+          "title": "Missões secundárias e escopo base",
+          "focus": "Requisitos de Samurai of Legend",
+          "objective": "Finalize as missões secundárias necessárias sem incluir conteúdo de DLC.",
+          "actions": [
+            "Verifique quais side missions são exigidas pelo troféu Samurai of Legend.",
+            "Separe missões de DLC ou expansões do checklist base.",
+            "Mantenha The Tengu’s Disciple e outras expansões fora da rota base."
+          ],
+          "warning": "Não assuma que todas as side missions são obrigatórias; foque nas da lista base.",
+          "result": "O troféu Samurai of Legend fica mais claro e o escopo do guia permanece preciso.",
+          "category": "Escopo"
+        },
+        {
+          "title": "Desbloqueie Mystic Arts e Guardian Spirits",
+          "focus": "Soul Cores, Mystic Arts e Spirits",
+          "objective": "Desbloqueie Mystic Arts para as armas base, Ninjutsu, Onmyo Magic e obtenha Guardian Spirits úteis.",
+          "actions": [
+            "Complete dojos para cada arma base.",
+            "Compre Mystic Arts de Ninjutsu e Onmyo Magic quando disponível.",
+            "Reúna todos os Guardian Spirits base."
+          ],
+          "warning": "Não deixe as artes místicas para o final; elas ajudam em várias lutas e no cleanup.",
+          "result": "Você terá ferramentas de combate e suporte para enfrentar o conteúdo restante.",
+          "category": "Build"
+        },
+        {
+          "title": "Prepare equipamento e proficiências",
+          "focus": "Forge, Soul Match e upgrades",
+          "objective": "Use Soul Match, Forge e Remodel para preparar equipamentos fortes.",
+          "actions": [
+            "Faça Soul Match em itens úteis para sua build.",
+            "Use Forge e Remodel para ajustar equipamentos de acordo com a sua progressão.",
+            "Aprimore proficiências de armas e colecione Tea Utensils no processo."
+          ],
+          "warning": "Não gaste recursos caros antes de ter uma build funcional e estável.",
+          "result": "Equipamentos e proficiências estão prontos para o cleanup final.",
+          "category": "Progressão"
+        },
+        {
+          "title": "Limpe por replay de missões",
+          "focus": "Reuse missões para fechar coletáveis",
+          "objective": "Use replay de missões para fechar Kodama, Hot Springs, Dark Realms, Soul Cores e objetivos específicos.",
+          "actions": [
+            "Rejogue missões com objetivos pendentes.",
+            "Limpe Dark Realms e colecionáveis por região.",
+            "Foque em metas como Seven Spears, Bells e Amrita shards."
+          ],
+          "warning": "Não ignore objetivos de missão específicos; eles podem exigir replay dedicado.",
+          "result": "A maior parte do checklist base será fechada sem precisar reiniciar a campanha.",
+          "category": "Cleanup"
+        },
+        {
+          "title": "Revisão final da platina base",
+          "focus": "Checklist de fechamento e separação de DLC",
+          "objective": "Revise todos os troféus da lista base e confirme que o DLC está separado.",
+          "actions": [
+            "Cheque a contagem dos 56 troféus base.",
+            "Confirme que nenhum troféu de DLC está na lista base.",
+            "Use mission select e replay para os últimos objetivos."
+          ],
+          "warning": "Não misture conteúdo de DLC com a lista base no fechamento.",
+          "result": "Platina base finalizada com foco correto e sem dependências de DLC.",
+          "category": "Verificação"
+        }
       ],
       "trophies": [
           {

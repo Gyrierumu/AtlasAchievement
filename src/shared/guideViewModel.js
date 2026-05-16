@@ -2148,6 +2148,7 @@
   function buildGuideViewModel(game, completedSource = [], options = {}) {
     const trophies = Array.isArray(game?.trophies) ? game.trophies : [];
     const roadmap = Array.isArray(game?.roadmap) ? game.roadmap : [];
+    const roadmapStagesSource = Array.isArray(game?.roadmapStages) ? game.roadmapStages : roadmap;
     const completedIds = new Set(Array.isArray(completedSource) ? completedSource : []);
     const completed = trophies.filter(trophy => completedIds.has(trophy.id)).length;
     const total = trophies.length;
@@ -2194,7 +2195,7 @@
       beforeStartItems: buildGuideBeforeStartItems(game, { trophies, roadmap, total, riskCounts }),
       prepCards: buildPrepCards(game, { trophies, roadmap }),
       beforeStartCards: buildBeforeStartCards(game, { trophies, roadmap, total, riskCounts }),
-      roadmapStages: buildDecisionRoadmapStages({ roadmap }),
+      roadmapStages: buildDecisionRoadmapStages({ roadmap: roadmapStagesSource }),
       criticalAlerts: buildCriticalTrophyAlerts(game, trophies),
       executionProfile: buildExecutionProfile(game, trophies, roadmap),
       routeChangingTrophies: buildRouteChangingTrophies(trophies),
