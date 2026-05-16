@@ -3122,279 +3122,461 @@ const sampleGames = [
     ]
   },
   {
-        "name": "Mortal Shell",
-        "slug": "mortal-shell",
-        "difficulty": 6,
-        "time": "20-40h",
-        "time_min_hours": 20,
-        "time_max_hours": 40,
-        "time_sort_hours": 40,
-        "time_bucket": "medium",
-        "missable": "Há troféus missable na lista base: Forever Alone e Life is Suffering exigem uma run sem Shell/Obsidian Dark Form; Face Off só ocorre no tutorial; Seeker of False Truths e Bars Tended têm itens/lore com janela regional antes do boss de Seat of Infinity.",
-        "runs_summary": "Uma run normal para Shells, lore, itens e bosses, seguida de uma run sem Shell para os troféus mais exigentes.",
-        "missable_summary": "Cinco troféus exigem planejamento: Forever Alone, Life is Suffering, Face Off, Seeker of False Truths e Bars Tended.",
-        "online_summary": "Não há exigência online para a platina da lista base.",
-        "grind_summary": "O peso está em coletáveis, familiarity de itens, lore, bosses e principalmente na run sem Shell.",
-        "dlc_scope": "Guia focado na lista base da platina; The Virtuous Cycle deve ficar separado se o projeto suportar DLC/add-ons.",
-        "difficulty_reason": "A dificuldade vem do combate soulslike, bosses e da run sem Shell, onde o personagem fica extremamente vulnerável.",
-        "time_reason": "A faixa de 20-40 horas considera campanha normal, coletáveis, familiarity, cleanup e a run sem Shell.",
-        "first_run_advice": "Na primeira run, aprenda o combate e colete Shells, lore e itens sem se preocupar ainda com a run sem Shell.",
-        "cleanup_advice": "Antes de partir para a run sem Shell, revise itens, lore, familiarity, bosses e troféus específicos da run normal.",
-        "before_you_start": "Entenda que a run sem Shell é o grande desafio da platina; deixe ela para depois de dominar o jogo.",
-        "best_for": "Ideal para quem quer uma platina soulslike curta, intensa e com desafio real de execução.",
-        "avoid_if": "Evite se você não quer uma run restritiva sem Shell ou não gosta de combate punitivo.",
-        "editorial_status": "published",
-        "coverage_level": "strong",
-        "is_verified": false,
-        "verification_status": "review",
-        "verification_note": "Guia público seed-managed com checklist base e roadmap; aguardando revisão editorial manual final.",
-        "image": "https://cdn.cloudflare.steamstatic.com/steam/apps/1110910/header.jpg",
-        "cover_image": "https://cdn.cloudflare.steamstatic.com/steam/apps/1110910/library_600x900.jpg",
-        "roadmap": [
-              "Etapa 1: faça a primeira campanha normal para aprender harden, parry, stamina, Shells, armas, bosses e rotas principais. A lista base não exige online.",
-              "Etapa 2: colete Shells, armas, itens, lore, secret lore e aumente familiarity de itens necessários enquanto explora Fallgrim, Shrine of Ash, Crypt of Martyrs e Seat of Infinity.",
-              "Etapa 3: antes dos bosses de área, revise itens e lore sensíveis, especialmente em Seat of Infinity, para evitar deixar Seeker of False Truths ou Bars Tended para NG+.",
-              "Etapa 4: limpe troféus específicos da run normal: Baghead, Vlas, gato, mushrooms, bear trap, lute, Ballistazooka, parries, Grisha, glands, Shells e bosses.",
-              "Etapa 5: use NG+ apenas se algo da run normal ficou pendente, como itens de familiarity, secret lore ou gastos com Vlas. The Virtuous Cycle não entra na platina base.",
-              "Etapa 6: inicie uma nova run sem Shell para Forever Alone e combine com Obsidian Dark Form para Life is Suffering. Evite interagir com qualquer Shell nessa rota.",
-              "Etapa 7: finalize a run sem Shell, revise o checklist base com 26 troféus, 0 online obrigatório, DLC separada e os missables planejados antes da platina."
+    "name": "Mortal Shell",
+    "slug": "mortal-shell",
+    "title": "Mortal Shell",
+    "primary_platform": "PS4/PS5",
+    "platforms": ["PS4", "PS5"],
+    "developer": "Cold Symmetry",
+    "publisher": "Playstack",
+    "guide_platform": "PS4/PS5",
+    "difficulty": 6,
+    "time": "20-40h",
+    "time_min_hours": 20,
+    "time_max_hours": 40,
+    "time_sort_hours": 40,
+    "time_bucket": "medium",
+    "trophy_count": 26,
+    "trophy_distribution": { "Platina": 1, "Ouro": 6, "Prata": 11, "Bronze": 8 },
+    "hasMissables": true,
+    "missableCount": 5,
+    "hasOnline": false,
+    "hasCoop": false,
+    "hasMandatoryOnline": false,
+    "hasMandatoryCoop": false,
+    "requiresOnline": false,
+    "requiresCoop": false,
+    "onlineRequired": false,
+    "coopRequired": false,
+    "dlcRequired": false,
+    "dlcRequiredForPlatinum": false,
+    "missable": "Há cinco troféus perdíveis ou condicionais de run na lista base: Forever Alone, Life is Suffering, Face Off, Seeker of False Truths e Bars Tended. A platina Platinum não conta como perdível.",
+    "runs_summary": "Recomendado: uma campanha normal para shells, lore, itens, bosses e familiaridade, seguida de uma run sem shell em Obsidian Dark Form.",
+    "missable_summary": "Planeje Forever Alone, Life is Suffering, Face Off, Seeker of False Truths e Bars Tended antes de avançar demais.",
+    "online_summary": "A platina base é totalmente offline. Não há online, coop ou PS+ obrigatório.",
+    "grind_summary": "O peso está em familiaridade de itens, mushrooms, 50.000 Tar com Vlas, 100 parries, colecionáveis e a run sem shell.",
+    "dlc_scope": "Guia focado nos 26 troféus da lista base. The Virtuous Cycle é conteúdo separado e não é requisito da platina.",
+    "difficulty_reason": "A dificuldade 6/10 vem do combate soulslike, da falta de seleção de dificuldade e principalmente da run sem shell/Obsidian Dark Form.",
+    "time_reason": "A faixa de 20-40 horas considera uma campanha normal, cleanup de itens/lore/familiaridade e uma run de desafio sem shell.",
+    "first_run_advice": "Use a primeira campanha para aprender harden, parry, stamina e padrões dos chefes enquanto coleta shells, armas, lore e itens.",
+    "cleanup_advice": "Antes da run sem shell, revise secret lore, Bars Tended, Vlas, mushrooms, parries, chefes, armas e troféus situacionais.",
+    "before_you_start": "Não há seleção de dificuldade. Depois do chefe final, escolha voltar a Fallgrim se ainda houver cleanup na jogada atual.",
+    "best_for": "Recomendado para quem gosta de soulslike curto, denso e desafiador, com uma run restritiva como teste principal.",
+    "avoid_if": "Evite se você quer uma platina casual, sem perdíveis ou sem desafio de terminar o jogo praticamente sem margem para erro.",
+    "editorial_status": "published",
+    "coverage_level": "strong",
+    "is_verified": false,
+    "verification_status": "review",
+    "verification_note": "Guia revisado para a lista base de 26 troféus; manter sem verified até confirmação manual de nomes PT-BR oficiais e detalhes de itens de Bars Tended.",
+    "seo": {
+      "title": "Mortal Shell: guia de troféus e platina | AtlasAchievement",
+      "description": "Roadmap completo da platina de Mortal Shell, com troféus perdíveis, run sem shell, Obsidian Dark Form, colecionáveis, checklist e dicas para evitar replay desnecessário.",
+      "keywords": "Mortal Shell troféus, Mortal Shell platina, Mortal Shell guia, Mortal Shell roadmap, Mortal Shell perdíveis, Mortal Shell Forever Alone, Mortal Shell Life is Suffering, Mortal Shell Obsidian Dark Form, Mortal Shell checklist",
+      "ogTitle": "Mortal Shell: guia de troféus e platina | AtlasAchievement",
+      "ogDescription": "Roadmap da platina base de Mortal Shell com 26 troféus, cinco perdíveis, run sem shell, Obsidian Dark Form e sem DLC obrigatória."
+    },
+    "quickDecision": {
+      "summary": "Platina curta para o gênero, mas exigente: não pede online, coop ou DLC, porém exige atenção a cinco perdíveis e uma run sem shell.",
+      "recommendation": "Faça uma campanha normal de aprendizado e coleta, depois uma run dedicada combinando Forever Alone com Life is Suffering.",
+      "firstAction": "Comece aprendendo o combate com uma shell confortável e controle Face Off, Seat of Infinity, lore e itens antes dos pontos críticos."
+    },
+    "checklist": [
+      "Derrotar Hadern no tutorial para Face Off",
+      "Encontrar as quatro shells da lista base",
+      "Encontrar as armas principais e upgrades úteis",
+      "Derrotar Imrod, Tarsus, Crucix e The Unchained",
+      "Entregar glândulas ao Dark Father/Old Prisoner",
+      "Coletar secret lore antes de concluir Seat of Infinity",
+      "Completar familiaridade com os itens necessários para Bars Tended",
+      "Coletar 50 mushrooms para Fun Guy",
+      "Gastar mais de 50.000 Tar com Vlas",
+      "Fazer 100 parries para Untarnished",
+      "Matar inimigo com bear trap",
+      "Chutar inimigo de uma plataforma",
+      "Matar dois inimigos com um disparo da Ballistazooka",
+      "Matar inimigo com hardened plunge",
+      "Renunciar à humanidade para The Nihilist",
+      "Acariciar o gato de Vlas",
+      "Completar a campanha sem se vincular a uma shell",
+      "Completar a campanha em Obsidian Dark Form",
+      "Confirmar que The Virtuous Cycle não está no checklist obrigatório da platina base"
+    ],
+    "faq": [
+      {
+        "question": "Mortal Shell exige online para a platina?",
+        "answer": "Não. A lista base da platina pode ser feita offline e não exige PS+."
+      },
+      {
+        "question": "Precisa de coop?",
+        "answer": "Não. Mortal Shell é uma platina single-player; não há coop obrigatório."
+      },
+      {
+        "question": "The Virtuous Cycle conta para a platina?",
+        "answer": "Não. The Virtuous Cycle é conteúdo separado e não entra nos 26 troféus da platina base."
+      },
+      {
+        "question": "Quantas jogadas são recomendadas?",
+        "answer": "Duas. Uma campanha normal para aprender, coletar e limpar requisitos, e uma run sem shell em Obsidian Dark Form para os troféus mais difíceis."
+      },
+      {
+        "question": "O jogo tem seleção de dificuldade?",
+        "answer": "Não. A dificuldade vem do domínio do combate, rotas, harden, parry e da run sem shell."
+      },
+      {
+        "question": "Dá para voltar depois do chefe final?",
+        "answer": "Sim. Depois do chefe final, escolha retornar a Fallgrim se ainda quiser limpar pendências antes de entrar em NG+."
+      },
+      {
+        "question": "Quais troféus são perdíveis?",
+        "answer": "Forever Alone, Life is Suffering, Face Off, Seeker of False Truths e Bars Tended são os cinco riscos principais. Platinum não conta como perdível."
+      },
+      {
+        "question": "O que fazer antes de concluir Seat of Infinity?",
+        "answer": "Revise as inscrições de secret lore e itens ligados a Bars Tended, porque deixar algo para trás pode empurrar a correção para NG+."
+      },
+      {
+        "question": "Forever Alone e Life is Suffering podem ser combinados?",
+        "answer": "Sim. A rota recomendada é iniciar uma nova jogada, não se vincular a nenhuma shell e ativar Obsidian Dark Form para fechar os dois juntos."
+      },
+      {
+        "question": "Face Off pode ser feito em NG+?",
+        "answer": "Trate Face Off como tentativa de tutorial em uma nova jogada. Se Hadern não cair ali, inicie outro save para tentar de novo."
+      },
+      {
+        "question": "Qual é o maior desafio da platina?",
+        "answer": "A run sem shell, especialmente se combinada com Obsidian Dark Form, porque qualquer erro pode matar o personagem."
+      }
+    ],
+    "image": "https://cdn.cloudflare.steamstatic.com/steam/apps/1110910/header.jpg",
+    "cover_image": "https://cdn.cloudflare.steamstatic.com/steam/apps/1110910/library_600x900.jpg",
+    "roadmap": [
+      {
+        "title": "Etapa 1",
+        "focus": "Faça a primeira jornada com uma shell principal",
+        "category": "Primeira campanha",
+        "objective": "Completar a campanha aprendendo o combate, fortalecendo uma shell e coletando itens, lore e equipamentos antes de pensar na run sem shell.",
+        "actions": [
+          "Escolha uma shell confortável e use a primeira jogada para aprender parry, harden, stamina, resolve e padrões dos chefes.",
+          "Encontre as quatro shells e as armas principais disponíveis no jogo base.",
+          "Colete itens, materiais de upgrade, secret lore e consumíveis importantes enquanto explora Fallgrim e os templos.",
+          "Fortaleça pelo menos uma shell o suficiente para liberar compras úteis com Sester Genessa.",
+          "Marque no checklist itens, lore, armas, shells e chefes concluídos."
         ],
-        "trophies": [
-              {
-                    "id": "mortal_shell_platinum",
-                    "name": "Platinum",
-                    "type": "Platina",
-                    "description": "Obtain all other trophies.",
-                    "tip": "Complete os outros 25 troféus da lista base. The Virtuous Cycle não é necessário para a platina.",
-                    "is_missable": false,
-                    "is_spoiler": false
-              },
-              {
-                    "id": "mortal_shell_forever_alone",
-                    "name": "Forever Alone",
-                    "type": "Ouro",
-                    "description": "Beat the game without ever bonding with a shell.",
-                    "tip": "Faça uma nova run sem interagir com nenhum Shell. É o principal desafio da platina e deve ser deixado para depois de dominar o jogo.",
-                    "is_missable": true,
-                    "is_spoiler": true
-              },
-              {
-                    "id": "mortal_shell_face_off",
-                    "name": "Face Off",
-                    "type": "Ouro",
-                    "description": "Defeat Hadern in the tutorial.",
-                    "tip": "Só pode ser feito no tutorial de uma nova campanha. Se perder, será preciso iniciar outro save para tentar novamente.",
-                    "is_missable": true,
-                    "is_spoiler": false
-              },
-              {
-                    "id": "mortal_shell_seeker_of_false_truths",
-                    "name": "Seeker of False Truths",
-                    "type": "Ouro",
-                    "description": "Unlock all secret lore.",
-                    "tip": "Colete todas as inscrições de secret lore. As três da Seat of Infinity precisam ser pegas antes do boss da área ou ficam para NG+.",
-                    "is_missable": true,
-                    "is_spoiler": true
-              },
-              {
-                    "id": "mortal_shell_life_is_suffering",
-                    "name": "Life is Suffering",
-                    "type": "Ouro",
-                    "description": "Beat the game in obsidian dark form.",
-                    "tip": "Combine com Forever Alone: renuncie à humanidade e termine a campanha em Obsidian Dark Form, sem depender de Shell.",
-                    "is_missable": true,
-                    "is_spoiler": true
-              },
-              {
-                    "id": "mortal_shell_crossed_the_threshold",
-                    "name": "Crossed the Threshold",
-                    "type": "Ouro",
-                    "description": "Complete Mortal Shell.",
-                    "tip": "Derrote o boss final e escolha ascender. Troféu de conclusão da campanha base.",
-                    "is_missable": false,
-                    "is_spoiler": true
-              },
-              {
-                    "id": "mortal_shell_the_nihilist",
-                    "name": "The Nihilist",
-                    "type": "Ouro",
-                    "description": "Renounce humankind.",
-                    "tip": "Interaja com o altar de renúncia em Fallgrim para assumir Obsidian Dark Form. Planeje se for combinar com a run sem Shell.",
-                    "is_missable": false,
-                    "is_spoiler": true
-              },
-              {
-                    "id": "mortal_shell_brigand_life",
-                    "name": "Brigand Life",
-                    "type": "Prata",
-                    "description": "Waste your life away with Baghead.",
-                    "tip": "Leve um Roasted Rat e um Superior Moonshine para Baghead em Fallgrim e aceite ficar com ele. O save recarrega antes da escolha.",
-                    "is_missable": false,
-                    "is_spoiler": true
-              },
-              {
-                    "id": "mortal_shell_bars_tended",
-                    "name": "Bars Tended",
-                    "type": "Prata",
-                    "description": "Become familiar with all items.",
-                    "tip": "Aumente a familiarity dos itens aplicáveis. Mango e Glimpse of Disdain em Seat of Infinity pedem atenção antes do boss da área ou ficam para NG+.",
-                    "is_missable": true,
-                    "is_spoiler": false
-              },
-              {
-                    "id": "mortal_shell_sugar_baby",
-                    "name": "Sugar Baby",
-                    "type": "Prata",
-                    "description": "Spend over 50,000 Tar in the Vlas’s Shop.",
-                    "tip": "Gaste mais de 50.000 Tar com Vlas em um save. Deixe para quando já tiver upgrades e recursos sobrando.",
-                    "is_missable": false,
-                    "is_spoiler": false
-              },
-              {
-                    "id": "mortal_shell_untarnished",
-                    "name": "Untarnished",
-                    "type": "Prata",
-                    "description": "Parry over 100 attacks.",
-                    "tip": "Após obter o Tarnished Seal, pratique parries ao longo da campanha até acumular 100 ataques aparados.",
-                    "is_missable": false,
-                    "is_spoiler": false
-              },
-              {
-                    "id": "mortal_shell_you_seem_different",
-                    "name": "You Seem Different…",
-                    "type": "Prata",
-                    "description": "Unlock all of the Shells in the game.",
-                    "tip": "Encontre os 4 Shells em Fallgrim em um mesmo save. Não faça isso na run dedicada de Forever Alone.",
-                    "is_missable": false,
-                    "is_spoiler": false
-              },
-              {
-                    "id": "mortal_shell_different_kinds_of_grisha",
-                    "name": "Different Kinds of Grisha",
-                    "type": "Prata",
-                    "description": "Defeat all different versions of Grisha in the game.",
-                    "tip": "Derrote as versões normal, fraca na névoa e Enslaved Grisha. Use cleanup antes do fim se alguma versão ficar pendente.",
-                    "is_missable": false,
-                    "is_spoiler": true
-              },
-              {
-                    "id": "mortal_shell_faded_the_fire",
-                    "name": "Faded the Fire",
-                    "type": "Prata",
-                    "description": "Defeat Imrod, the Unrepentant.",
-                    "tip": "Boss de Shrine of Ash. Troféu de progressão ligado a uma das glândulas principais.",
-                    "is_missable": false,
-                    "is_spoiler": true
-              },
-              {
-                    "id": "mortal_shell_martyrd_the_martyr",
-                    "name": "Martyr’d the Martyr",
-                    "type": "Prata",
-                    "description": "Defeat Tarsus, the First Martyr.",
-                    "tip": "Boss de Crypt of Martyrs. Aprenda os padrões de gelo antes de tentar a run sem Shell.",
-                    "is_missable": false,
-                    "is_spoiler": true
-              },
-              {
-                    "id": "mortal_shell_tragic_loss",
-                    "name": "Tragic Loss",
-                    "type": "Prata",
-                    "description": "Defeat Crucix, the Twiceborn.",
-                    "tip": "Boss de Seat of Infinity. Antes dele, revise lore e itens sensíveis dessa região.",
-                    "is_missable": false,
-                    "is_spoiler": true
-              },
-              {
-                    "id": "mortal_shell_felled_the_glandfather",
-                    "name": "Felled the Glandfather",
-                    "type": "Prata",
-                    "description": "Defeat The Unchained.",
-                    "tip": "Boss final da lista base. É uma das maiores barreiras na run sem Shell.",
-                    "is_missable": false,
-                    "is_spoiler": true
-              },
-              {
-                    "id": "mortal_shell_nailed_it",
-                    "name": "Nailed It",
-                    "type": "Prata",
-                    "description": "Kill Two or more enemies with one shot from the ballistazooka.",
-                    "tip": "Compre Tools de Vlas, conserte a Ballistazooka e alinhe dois inimigos comuns para matar ambos com um disparo.",
-                    "is_missable": false,
-                    "is_spoiler": false
-              },
-              {
-                    "id": "mortal_shell_fun_guy",
-                    "name": "Fun Guy",
-                    "type": "Bronze",
-                    "description": "Pick 50 mushrooms.",
-                    "tip": "Pegue Weltcaps e Tarspores durante a exploração. Eles reaparecem com o tempo.",
-                    "is_missable": false,
-                    "is_spoiler": false
-              },
-              {
-                    "id": "mortal_shell_step_goal",
-                    "name": "Step Goal",
-                    "type": "Bronze",
-                    "description": "Kill an enemy with bear trap.",
-                    "tip": "Atraia um inimigo comum para uma armadilha de urso e deixe o dano final vir da armadilha.",
-                    "is_missable": false,
-                    "is_spoiler": false
-              },
-              {
-                    "id": "mortal_shell_flesh_and_instinct",
-                    "name": "Flesh and Instinct",
-                    "type": "Bronze",
-                    "description": "Find your first Shell.",
-                    "tip": "Pegue o primeiro Shell na área inicial após o tutorial. Evite este troféu apenas no save da run sem Shell.",
-                    "is_missable": false,
-                    "is_spoiler": false
-              },
-              {
-                    "id": "mortal_shell_is_this_a_sparta",
-                    "name": "Is This a Sparta?",
-                    "type": "Bronze",
-                    "description": "Kill an enemy by kicking them off a platform.",
-                    "tip": "Desbloqueie o chute de um Shell e empurre um inimigo comum para fora de uma borda.",
-                    "is_missable": false,
-                    "is_spoiler": false
-              },
-              {
-                    "id": "mortal_shell_bring_the_glands_back_to_me",
-                    "name": "Bring the Glands Back to Me",
-                    "type": "Bronze",
-                    "description": "Bring a gland to Dark Father.",
-                    "tip": "Após derrotar um dos três bosses principais, entregue a primeira glândula ao Old Prisoner em Fallgrim Tower.",
-                    "is_missable": false,
-                    "is_spoiler": true
-              },
-              {
-                    "id": "mortal_shell_the_good_times_are_killing_me",
-                    "name": "The Good Times are Killing Me",
-                    "type": "Bronze",
-                    "description": "Jam with a brigand.",
-                    "tip": "Use um lute perto de um brigand tocando música em Fallgrim.",
-                    "is_missable": false,
-                    "is_spoiler": false
-              },
-              {
-                    "id": "mortal_shell_its_a_me",
-                    "name": "It’s a me",
-                    "type": "Bronze",
-                    "description": "Kill an enemy with a hardened plunge.",
-                    "tip": "Use harden enquanto cai para matar um inimigo com um mergulho endurecido.",
-                    "is_missable": false,
-                    "is_spoiler": false
-              },
-              {
-                    "id": "mortal_shell_purrfect",
-                    "name": "Purrfect",
-                    "type": "Bronze",
-                    "description": "Pet Vlas’s Cat.",
-                    "tip": "Acaricie o gato perto de Vlas, no topo de Fallgrim Tower.",
-                    "is_missable": false,
-                    "is_spoiler": false
-              }
-        ]
+        "warning": "Não avance no Seat of Infinity sem pegar os itens e inscrições ligados a Seeker of False Truths e Bars Tended.",
+        "result": "Campanha base avançada, personagem fortalecido e maior parte dos colecionáveis encaminhada."
+      },
+      {
+        "title": "Etapa 2",
+        "focus": "Controle os perdíveis antes dos chefes críticos",
+        "category": "Perdíveis",
+        "objective": "Garantir os troféus que podem exigir nova jogada se forem ignorados no momento certo.",
+        "actions": [
+          "Tente Face Off contra Hadern no tutorial em uma nova jogada, se ainda não tiver conseguido.",
+          "Antes de concluir o Seat of Infinity, colete as inscrições necessárias para Seeker of False Truths.",
+          "Antes de concluir o Seat of Infinity, colete os itens necessários para Bars Tended, incluindo os que podem ficar bloqueados na jogada atual.",
+          "Mantenha saves e checklist atualizados para saber quais riscos ainda faltam.",
+          "Não trate a platina como perdível; marque apenas troféus reais com risco."
+        ],
+        "warning": "Face Off só pode ser feito no tutorial de uma nova jogada, e parte dos itens/lore do Seat of Infinity pode exigir NG+ se for perdida.",
+        "result": "Principais riscos de perda controlados antes da limpeza e da run sem shell."
+      },
+      {
+        "title": "Etapa 3",
+        "focus": "Finalize colecionáveis, familiaridade e gastos",
+        "category": "Coleta e grind",
+        "objective": "Completar itens, familiaridade, lojas, mushrooms, parries e troféus variados antes da jogada sem shell.",
+        "actions": [
+          "Trabalhe Bars Tended usando todos os itens necessários até atingir familiaridade completa.",
+          "Gaste o Tar necessário na loja de Vlas para Sugar Baby.",
+          "Faça progresso em Fun Guy coletando mushrooms durante a exploração.",
+          "Use combates seguros para acumular parries rumo a Untarnished.",
+          "Resolva troféus variados como Step Goal, Is This a Sparta?, The Good Times are Killing Me, Nailed It, It's a me, The Nihilist e Purrfect."
+        ],
+        "warning": "",
+        "result": "Troféus de coleta, familiaridade, loja e ações específicas resolvidos ou quase finalizados."
+      },
+      {
+        "title": "Etapa 4",
+        "focus": "Derrote chefes e conclua a campanha base",
+        "category": "Chefes",
+        "objective": "Fechar os chefes principais e troféus de progresso sem misturar conteúdo de The Virtuous Cycle com a platina base.",
+        "actions": [
+          "Derrote Imrod, the Unrepentant para Faded the Fire.",
+          "Derrote Tarsus, the First Martyr para Matryr'd the Martyr.",
+          "Derrote Crucix, the Twiceborn para Tragic Loss.",
+          "Leve as glândulas ao Dark Father/Old Prisoner conforme a progressão exigir.",
+          "Derrote The Unchained e conclua a campanha para Crossed the Threshold e Felled the Glandfather."
+        ],
+        "warning": "Depois do chefe final, escolha voltar a Fallgrim se ainda houver limpeza na jogada atual.",
+        "result": "Campanha base concluída e chefes principais da lista da platina resolvidos."
+      },
+      {
+        "title": "Etapa 5",
+        "focus": "Faça a run sem shell em Obsidian Dark Form",
+        "category": "Run de desafio",
+        "objective": "Completar a jogada mais difícil combinando Forever Alone e Life is Suffering quando possível.",
+        "actions": [
+          "Inicie uma nova jogada sem se vincular a nenhuma shell.",
+          "Renuncie à humanidade para ativar Obsidian Dark Form.",
+          "Use mobilidade, harden, upgrades de arma e rotas seguras para atravessar áreas sem depender de defesa de shell.",
+          "Evite interagir com shells para não invalidar Forever Alone.",
+          "Finalize a campanha nessa condição para concluir os troféus de desafio."
+        ],
+        "warning": "Sem shell, o personagem morre com um único golpe; deixe essa etapa para depois de conhecer bem chefes e rotas.",
+        "result": "Forever Alone e Life is Suffering concluídos, removendo o maior obstáculo da platina."
+      },
+      {
+        "title": "Etapa 6",
+        "focus": "Faça o cleanup final da platina",
+        "category": "Cleanup",
+        "objective": "Revisar qualquer troféu restante da lista base e confirmar que DLC não foi tratada como requisito.",
+        "actions": [
+          "Abra o checklist e revise todos os troféus ainda pendentes.",
+          "Use a jogada atual, NG+ ou uma nova run curta para corrigir perdas específicas.",
+          "Confirme se Platinum não está marcado como perdível.",
+          "Confirme se The Virtuous Cycle está separado da platina base.",
+          "Revise flags de online, coop, DLC e perdíveis antes de finalizar o guia."
+        ],
+        "warning": "Não inclua troféus de The Virtuous Cycle no requisito da platina base.",
+        "result": "Todos os requisitos da platina base concluídos."
+      }
+    ],
+    "trophies": [
+      {
+        "id": "mortal_shell_platinum",
+        "name": "Platinum",
+        "type": "Platina",
+        "description": "Obtenha todos os outros troféus da lista base.",
+        "tip": "Complete os outros 25 troféus da lista base. The Virtuous Cycle não é necessário para a platina.",
+        "is_missable": false,
+        "is_spoiler": false
+      },
+      {
+        "id": "mortal_shell_forever_alone",
+        "name": "Forever Alone",
+        "type": "Ouro",
+        "description": "Termine o jogo sem nunca se vincular a uma shell.",
+        "tip": "Faça uma nova run sem interagir com nenhuma shell. Combine com Life is Suffering quando já conhecer bem rotas e chefes.",
+        "is_missable": true,
+        "is_spoiler": true
+      },
+      {
+        "id": "mortal_shell_face_off",
+        "name": "Face Off",
+        "type": "Ouro",
+        "description": "Derrote Hadern no tutorial.",
+        "tip": "Só pode ser feito no tutorial de uma nova campanha. Se perder a tentativa, será preciso iniciar outro save.",
+        "is_missable": true,
+        "is_spoiler": false
+      },
+      {
+        "id": "mortal_shell_seeker_of_false_truths",
+        "name": "Seeker of False Truths",
+        "type": "Ouro",
+        "description": "Desbloqueie todo o secret lore.",
+        "tip": "Colete todas as inscrições de secret lore. Dê atenção especial às inscrições de Seat of Infinity antes do chefe da área.",
+        "is_missable": true,
+        "is_spoiler": true
+      },
+      {
+        "id": "mortal_shell_life_is_suffering",
+        "name": "Life is Suffering",
+        "type": "Ouro",
+        "description": "Termine o jogo em Obsidian Dark Form.",
+        "tip": "Renuncie à humanidade e conclua a campanha nessa forma. A rota costuma ser combinada com Forever Alone.",
+        "is_missable": true,
+        "is_spoiler": true
+      },
+      {
+        "id": "mortal_shell_crossed_the_threshold",
+        "name": "Crossed the Threshold",
+        "type": "Ouro",
+        "description": "Complete Mortal Shell.",
+        "tip": "Derrote o chefe final e escolha concluir a campanha. Se ainda houver limpeza, escolha retornar a Fallgrim antes de entrar em NG+.",
+        "is_missable": false,
+        "is_spoiler": true
+      },
+      {
+        "id": "mortal_shell_the_nihilist",
+        "name": "The Nihilist",
+        "type": "Ouro",
+        "description": "Renuncie à humanidade.",
+        "tip": "Interaja com o altar de renúncia em Fallgrim para assumir Obsidian Dark Form.",
+        "is_missable": false,
+        "is_spoiler": true
+      },
+      {
+        "id": "mortal_shell_brigand_life",
+        "name": "Brigand Life",
+        "type": "Prata",
+        "description": "Desperdice sua vida com Baghead.",
+        "tip": "Leve um Roasted Rat e um Superior Moonshine para Baghead em Fallgrim e aceite a proposta dele.",
+        "is_missable": false,
+        "is_spoiler": true
+      },
+      {
+        "id": "mortal_shell_bars_tended",
+        "name": "Bars Tended",
+        "type": "Prata",
+        "description": "Torne-se familiarizado com todos os itens necessários.",
+        "tip": "Aumente a familiaridade dos itens aplicáveis. Itens ligados a Seat of Infinity podem exigir NG+ se forem ignorados.",
+        "is_missable": true,
+        "is_spoiler": false
+      },
+      {
+        "id": "mortal_shell_sugar_baby",
+        "name": "Sugar Baby",
+        "type": "Prata",
+        "description": "Gaste mais de 50.000 Tar na loja de Vlas.",
+        "tip": "Deixe para uma fase em que upgrades e recursos principais já estejam encaminhados.",
+        "is_missable": false,
+        "is_spoiler": false
+      },
+      {
+        "id": "mortal_shell_untarnished",
+        "name": "Untarnished",
+        "type": "Prata",
+        "description": "Apare mais de 100 ataques.",
+        "tip": "Depois de obter o Tarnished Seal, pratique parries em inimigos seguros até acumular o total.",
+        "is_missable": false,
+        "is_spoiler": false
+      },
+      {
+        "id": "mortal_shell_you_seem_different",
+        "name": "You Seem Different...",
+        "type": "Prata",
+        "description": "Desbloqueie todas as shells do jogo.",
+        "tip": "Encontre as quatro shells em Fallgrim em um mesmo save. Não faça isso na run dedicada de Forever Alone.",
+        "is_missable": false,
+        "is_spoiler": false
+      },
+      {
+        "id": "mortal_shell_different_kinds_of_grisha",
+        "name": "Different Kinds of Grisha",
+        "type": "Prata",
+        "description": "Derrote todos os tipos diferentes de Grisha no jogo.",
+        "tip": "Derrote a versão comum, a versão da névoa e Enslaved Grisha antes de encerrar o cleanup.",
+        "is_missable": false,
+        "is_spoiler": true
+      },
+      {
+        "id": "mortal_shell_faded_the_fire",
+        "name": "Faded the Fire",
+        "type": "Prata",
+        "description": "Derrote Imrod, the Unrepentant.",
+        "tip": "Chefe de Shrine of Ash e um dos portadores de glândula da campanha base.",
+        "is_missable": false,
+        "is_spoiler": true
+      },
+      {
+        "id": "mortal_shell_martyrd_the_martyr",
+        "name": "Matryr'd the Martyr",
+        "type": "Prata",
+        "description": "Derrote Tarsus, the First Martyr.",
+        "tip": "Chefe de Crypt of Martyrs. Aprenda os padrões dele antes de tentar a run sem shell.",
+        "is_missable": false,
+        "is_spoiler": true
+      },
+      {
+        "id": "mortal_shell_tragic_loss",
+        "name": "Tragic Loss",
+        "type": "Prata",
+        "description": "Derrote Crucix, the Twiceborn.",
+        "tip": "Chefe de Seat of Infinity. Revise lore e itens sensíveis dessa região antes da luta.",
+        "is_missable": false,
+        "is_spoiler": true
+      },
+      {
+        "id": "mortal_shell_felled_the_glandfather",
+        "name": "Felled the Glandfather",
+        "type": "Prata",
+        "description": "Derrote The Unchained.",
+        "tip": "Chefe final da lista base e uma das maiores barreiras na run sem shell.",
+        "is_missable": false,
+        "is_spoiler": true
+      },
+      {
+        "id": "mortal_shell_nailed_it",
+        "name": "Nailed It",
+        "type": "Prata",
+        "description": "Mate dois ou mais inimigos com um único disparo da Ballistazooka.",
+        "tip": "Compre Tools com Vlas, conserte a Ballistazooka e alinhe inimigos comuns para o disparo.",
+        "is_missable": false,
+        "is_spoiler": false
+      },
+      {
+        "id": "mortal_shell_fun_guy",
+        "name": "Fun Guy",
+        "type": "Bronze",
+        "description": "Colete 50 mushrooms.",
+        "tip": "Pegue Weltcaps e Tarspores durante a exploração. Eles reaparecem com o tempo.",
+        "is_missable": false,
+        "is_spoiler": false
+      },
+      {
+        "id": "mortal_shell_step_goal",
+        "name": "Step Goal",
+        "type": "Bronze",
+        "description": "Mate um inimigo com uma bear trap.",
+        "tip": "Atraia um inimigo comum para uma armadilha e deixe o dano final vir dela.",
+        "is_missable": false,
+        "is_spoiler": false
+      },
+      {
+        "id": "mortal_shell_flesh_and_instinct",
+        "name": "Flesh and Instinct",
+        "type": "Bronze",
+        "description": "Encontre sua primeira shell.",
+        "tip": "Pegue o primeiro corpo na área inicial após o tutorial. Evite isso apenas no save da run sem shell.",
+        "is_missable": false,
+        "is_spoiler": false
+      },
+      {
+        "id": "mortal_shell_is_this_a_sparta",
+        "name": "Is This a Sparta?",
+        "type": "Bronze",
+        "description": "Mate um inimigo chutando-o de uma plataforma.",
+        "tip": "Desbloqueie o chute de uma shell e empurre um inimigo comum para fora de uma borda.",
+        "is_missable": false,
+        "is_spoiler": false
+      },
+      {
+        "id": "mortal_shell_bring_the_glands_back_to_me",
+        "name": "Bring the Glands Back to Me",
+        "type": "Bronze",
+        "description": "Leve uma glândula ao Dark Father.",
+        "tip": "Após derrotar um dos três chefes principais, entregue a glândula ao Old Prisoner em Fallgrim Tower.",
+        "is_missable": false,
+        "is_spoiler": true
+      },
+      {
+        "id": "mortal_shell_the_good_times_are_killing_me",
+        "name": "The Good Times are Killing Me",
+        "type": "Bronze",
+        "description": "Toque com um brigand.",
+        "tip": "Use um lute perto de um brigand tocando música em Fallgrim.",
+        "is_missable": false,
+        "is_spoiler": false
+      },
+      {
+        "id": "mortal_shell_its_a_me",
+        "name": "It's a me",
+        "type": "Bronze",
+        "description": "Mate um inimigo com um hardened plunge.",
+        "tip": "Use harden enquanto cai para matar um inimigo com o impacto endurecido.",
+        "is_missable": false,
+        "is_spoiler": false
+      },
+      {
+        "id": "mortal_shell_purrfect",
+        "name": "Purrfect",
+        "type": "Bronze",
+        "description": "Acaricie o gato de Vlas.",
+        "tip": "Interaja com o gato perto de Vlas, no topo de Fallgrim Tower.",
+        "is_missable": false,
+        "is_spoiler": false
+      }
+    ]
   },
   {
       "name": "Nioh 2",
@@ -3588,8 +3770,9 @@ const sampleGames = [
           {
               "id": "nioh2_you_are_nioh",
               "name": "You Are Nioh",
+              "name_pt": "Você é Nioh",
               "type": "Platina",
-              "description": "Obtained all trophies.",
+              "description": "Obteve todos os troféus da lista base.",
               "tip": "Complete todos os outros 55 troféus da lista base. DLCs não são necessárias para a platina.",
               "is_missable": false,
               "is_spoiler": false
@@ -3597,17 +3780,19 @@ const sampleGames = [
           {
               "id": "nioh2_samurai_of_legend",
               "name": "Samurai of Legend",
+              "name_pt": "Samurai Lendário",
               "type": "Ouro",
-              "description": "Completed all missions on any difficulty level. (Does not include training missions.)",
-              "tip": "Complete todas as missões principais e secundárias da lista base em qualquer dificuldade; training missions não contam.",
+              "description": "Concluiu todas as missões da lista base em qualquer dificuldade. (Não inclui training missions.)",
+              "tip": "Complete todas as missões principais e secundárias da lista base; training missions não contam.",
               "is_missable": false,
               "is_spoiler": false
           },
           {
               "id": "nioh2_beginning_samurai",
               "name": "The Beginning of a Samurai",
+              "name_pt": "O Começo de um Samurai",
               "type": "Bronze",
-              "description": "Reached level 10.",
+              "description": "Alcançou nível 10.",
               "tip": "Vem naturalmente no começo da campanha ao gastar Amrita em um Shrine.",
               "is_missable": false,
               "is_spoiler": false
@@ -3615,17 +3800,19 @@ const sampleGames = [
           {
               "id": "nioh2_full_fledged_samurai",
               "name": "Full-fledged Samurai",
+              "name_pt": "Samurai Completo",
               "type": "Bronze",
-              "description": "Reached Level 100.",
-              "tip": "Normalmente vem ao completar história e missões secundárias, sem farm pesado dedicado.",
+              "description": "Alcançou nível 100.",
+              "tip": "Normalmente vem ao completar história e missões secundárias sem farm pesado dedicado.",
               "is_missable": false,
               "is_spoiler": false
           },
           {
               "id": "nioh2_dawn_of_a_dream",
               "name": "Dawn of a Dream",
+              "name_pt": "Renascer de um Sonho",
               "type": "Bronze",
-              "description": "Befriended Tokichiro.",
+              "description": "Fez amizade com Tokichiro.",
               "tip": "Troféu automático de história logo no início da jornada.",
               "is_missable": false,
               "is_spoiler": true
@@ -3633,17 +3820,19 @@ const sampleGames = [
           {
               "id": "nioh2_electrifying_triumph",
               "name": "An Electrifying Triumph",
+              "name_pt": "Triunfo Eletrizante",
               "type": "Bronze",
-              "description": "Defeated Imagawa Yoshimoto and was made a samurai.",
-              "tip": "Troféu de história ligado à progressão contra Imagawa Yoshimoto.",
+              "description": "Derrotou Imagawa Yoshimoto e tornou-se um samurai.",
+              "tip": "Troféu de história ligado ao confronto com Imagawa Yoshimoto.",
               "is_missable": false,
               "is_spoiler": true
           },
           {
               "id": "nioh2_hideyoshi",
               "name": "Hideyoshi",
+              "name_pt": "Hideyoshi",
               "type": "Bronze",
-              "description": "Decided to share a name with Tokichiro.",
+              "description": "Compartilhou um nome com Tokichiro.",
               "tip": "Marco narrativo automático ao avançar para regiões intermediárias.",
               "is_missable": false,
               "is_spoiler": true
@@ -3651,8 +3840,9 @@ const sampleGames = [
           {
               "id": "nioh2_paths_we_tread",
               "name": "The Paths We Tread",
+              "name_pt": "Os Caminhos que Trilhamos",
               "type": "Bronze",
-              "description": "Parted ways with Tokichiro.",
+              "description": "Separou-se de Tokichiro.",
               "tip": "Troféu automático de história em ponto narrativo avançado.",
               "is_missable": false,
               "is_spoiler": true
@@ -3660,17 +3850,19 @@ const sampleGames = [
           {
               "id": "nioh2_dreams_toll",
               "name": "Dream’s Toll",
+              "name_pt": "O Preço do Sonho",
               "type": "Bronze",
-              "description": "Defeated Tokichiro.",
-              "tip": "Troféu de história ligado a boss/personagem importante.",
+              "description": "Derrotou Tokichiro.",
+              "tip": "Troféu de história ligado a um dos confrontos finais.",
               "is_missable": false,
               "is_spoiler": true
           },
           {
               "id": "nioh2_mother_and_child",
               "name": "Mother and Child",
+              "name_pt": "Mãe e Filho",
               "type": "Bronze",
-              "description": "Reunited with your mother in the Interim.",
+              "description": "Reencontrou sua mãe no Interim.",
               "tip": "Marco narrativo avançado da campanha.",
               "is_missable": false,
               "is_spoiler": true
@@ -3678,8 +3870,9 @@ const sampleGames = [
           {
               "id": "nioh2_what_is_written",
               "name": "What is Written",
+              "name_pt": "O que Está Escrito",
               "type": "Bronze",
-              "description": "Fulfilled your ultimate destiny.",
+              "description": "Cumpriu seu destino final.",
               "tip": "Troféu de história da reta final.",
               "is_missable": false,
               "is_spoiler": true
@@ -3687,8 +3880,9 @@ const sampleGames = [
           {
               "id": "nioh2_dream_within_dream",
               "name": "Dream Within a Dream",
+              "name_pt": "Sonho Dentro de um Sonho",
               "type": "Ouro",
-              "description": "Saw Tokichiro off on his final departure.",
+              "description": "Viu Tokichiro partir definitivamente.",
               "tip": "Conclua a história principal da lista base.",
               "is_missable": false,
               "is_spoiler": true
@@ -3696,116 +3890,129 @@ const sampleGames = [
           {
               "id": "nioh2_weapons_mind",
               "name": "A Weapon’s Mind",
+              "name_pt": "A Mente de uma Arma",
               "type": "Bronze",
-              "description": "Listened to the innermost thoughts of a Yokai Weapon.",
-              "tip": "Use uma Yokai Weapon até ouvir todos os diálogos de Sentience/Familiarity exigidos.",
+              "description": "Escutou os pensamentos íntimos de uma Yokai Weapon.",
+              "tip": "Use uma Yokai Weapon até ouvir todos os diálogos exigidos.",
               "is_missable": false,
               "is_spoiler": false
           },
           {
               "id": "nioh2_sword_master",
               "name": "Sword Master",
+              "name_pt": "Mestre da Espada",
               "type": "Bronze",
-              "description": "Acquired mystic art for the sword.",
-              "tip": "Ganhe proficiência suficiente com espada e conclua o dojo correspondente para liberar a Mystic Art.",
+              "description": "Adquiriu a Mystic Art da espada.",
+              "tip": "Ganhe proficiência com espada e conclua o dojo correspondente.",
               "is_missable": false,
               "is_spoiler": false
           },
           {
               "id": "nioh2_dual_sword_master",
               "name": "Dual Sword Master",
+              "name_pt": "Mestre das Dual Swords",
               "type": "Bronze",
-              "description": "Acquired mystic art for the dual swords.",
-              "tip": "Ganhe proficiência suficiente com dual swords e conclua o dojo correspondente.",
+              "description": "Adquiriu a Mystic Art das dual swords.",
+              "tip": "Ganhe proficiência com dual swords e conclua o dojo correspondente.",
               "is_missable": false,
               "is_spoiler": false
           },
           {
               "id": "nioh2_spear_master",
               "name": "Spear Master",
+              "name_pt": "Mestre da Lança",
               "type": "Bronze",
-              "description": "Acquired mystic art for the spear.",
-              "tip": "Ganhe proficiência suficiente com spear e conclua o dojo correspondente.",
+              "description": "Adquiriu a Mystic Art da lança.",
+              "tip": "Ganhe proficiência com spear e conclua o dojo correspondente.",
               "is_missable": false,
               "is_spoiler": false
           },
           {
               "id": "nioh2_axe_master",
               "name": "Axe Master",
+              "name_pt": "Mestre do Machado",
               "type": "Bronze",
-              "description": "Acquired mystic art for the axe.",
-              "tip": "Ganhe proficiência suficiente com axe e conclua o dojo correspondente.",
+              "description": "Adquiriu a Mystic Art do machado.",
+              "tip": "Ganhe proficiência com axe e conclua o dojo correspondente.",
               "is_missable": false,
               "is_spoiler": false
           },
           {
               "id": "nioh2_kusarigama_master",
               "name": "Kusarigama Master",
+              "name_pt": "Mestre do Kusarigama",
               "type": "Bronze",
-              "description": "Acquired mystic art for the kusarigama.",
-              "tip": "Ganhe proficiência suficiente com kusarigama e conclua o dojo correspondente.",
+              "description": "Adquiriu a Mystic Art do kusarigama.",
+              "tip": "Ganhe proficiência com kusarigama e conclua o dojo correspondente.",
               "is_missable": false,
               "is_spoiler": false
           },
           {
               "id": "nioh2_odachi_master",
               "name": "Odachi Master",
+              "name_pt": "Mestre do Odachi",
               "type": "Bronze",
-              "description": "Acquired mystic art for the odachi.",
-              "tip": "Ganhe proficiência suficiente com odachi e conclua o dojo correspondente.",
+              "description": "Adquiriu a Mystic Art do odachi.",
+              "tip": "Ganhe proficiência com odachi e conclua o dojo correspondente.",
               "is_missable": false,
               "is_spoiler": false
           },
           {
               "id": "nioh2_tonfa_master",
               "name": "Tonfa Master",
+              "name_pt": "Mestre do Tonfa",
               "type": "Bronze",
-              "description": "Acquired mystic art for the tonfa.",
-              "tip": "Ganhe proficiência suficiente com tonfa e conclua o dojo correspondente.",
+              "description": "Adquiriu a Mystic Art do tonfa.",
+              "tip": "Ganhe proficiência com tonfa e conclua o dojo correspondente.",
               "is_missable": false,
               "is_spoiler": false
           },
           {
               "id": "nioh2_hatchet_master",
               "name": "Hatchet Master",
+              "name_pt": "Mestre do Hatchet",
               "type": "Bronze",
-              "description": "Acquired mystic art for the hatchets.",
-              "tip": "Ganhe proficiência suficiente com hatchets e conclua o dojo correspondente.",
+              "description": "Adquiriu a Mystic Art dos hatchets.",
+              "tip": "Ganhe proficiência com hatchets e conclua o dojo correspondente.",
               "is_missable": false,
               "is_spoiler": false
           },
           {
               "id": "nioh2_switchglaive_master",
               "name": "Switchglaive Master",
+              "name_pt": "Mestre do Switchglaive",
               "type": "Bronze",
-              "description": "Acquired mystic art for the switchglaive.",
-              "tip": "Ganhe proficiência suficiente com switchglaive e conclua o dojo correspondente.",
+              "description": "Adquiriu a Mystic Art do switchglaive.",
+              "tip": "Ganhe proficiência com switchglaive e conclua o dojo correspondente.",
               "is_missable": false,
               "is_spoiler": false
           },
           {
               "id": "nioh2_ninjutsu_master",
               "name": "Ninjutsu Master",
+              "name_pt": "Mestre do Ninjutsu",
               "type": "Bronze",
-              "description": "Acquired mystic art for Ninjutsu.",
-              "tip": "Use Ninjutsu até liberar a missão/árvore necessária e compre a Mystic Art.",
+              "description": "Adquiriu a Mystic Art do Ninjutsu.",
+              "tip": "Use Ninjutsu até liberar a árvore necessária e compre a Mystic Art.",
               "is_missable": false,
               "is_spoiler": false
           },
           {
               "id": "nioh2_onmyo_magic_master",
               "name": "Onmyo Magic Master",
+              "name_pt": "Mestre do Onmyo Magic",
               "type": "Bronze",
-              "description": "Acquired mystic art for Onmyo Magic.",
-              "tip": "Use Onmyo Magic até liberar a missão/árvore necessária e compre a Mystic Art.",
+              "description": "Adquiriu a Mystic Art do Onmyo Magic.",
+              "tip": "Use Onmyo Magic até liberar a árvore necessária e compre a Mystic Art.",
               "is_missable": false,
               "is_spoiler": false
           },
           {
               "id": "nioh2_burst_breaker",
               "name": "Burst Breaker",
+              "name_pt": "Quebrador de Explosão",
               "type": "Bronze",
-              "description": "Used the Brute, Feral, and Phantom Burst Counters five times each to counter a Burst Attack.",
+              "description": "Usou Burst Counter Brute, Feral e Phantom cinco vezes cada.",
               "tip": "Pratique os três tipos de Burst Counter contra ataques vermelhos; pode ser feito em missões repetidas.",
               "is_missable": false,
               "is_spoiler": false
@@ -3813,8 +4020,9 @@ const sampleGames = [
           {
               "id": "nioh2_match_made_heaven",
               "name": "Match Made in Heaven",
+              "name_pt": "Combinação Perfeita",
               "type": "Bronze",
-              "description": "Performed a Soul Match.",
+              "description": "Realizou uma Soul Match.",
               "tip": "Use o Blacksmith para fazer Soul Match em qualquer equipamento.",
               "is_missable": false,
               "is_spoiler": false
@@ -3822,8 +4030,9 @@ const sampleGames = [
           {
               "id": "nioh2_latest_masterpiece",
               "name": "Latest Masterpiece",
+              "name_pt": "Última Obra-Prima",
               "type": "Bronze",
-              "description": "Forged an item.",
+              "description": "Forjou um item.",
               "tip": "Forje qualquer item no Blacksmith.",
               "is_missable": false,
               "is_spoiler": false
@@ -3831,17 +4040,19 @@ const sampleGames = [
           {
               "id": "nioh2_remodeling_novice",
               "name": "Remodeling Novice",
+              "name_pt": "Novato em Remodelagem",
               "type": "Bronze",
-              "description": "Remodeled a piece of equipment.",
-              "tip": "Use a opção de remodelar equipamento no Blacksmith quando o sistema estiver liberado.",
+              "description": "Remodelou um equipamento.",
+              "tip": "Use a opção de remodelar equipamento no Blacksmith.",
               "is_missable": false,
               "is_spoiler": false
           },
           {
               "id": "nioh2_tea_connoisseur",
               "name": "Tea Connoisseur",
+              "name_pt": "Apreciador de Chá",
               "type": "Bronze",
-              "description": "Appraised your tea utensils 50 times.",
+              "description": "Avaliou 50 Tea Utensils.",
               "tip": "Tea Utensils vêm como drops; deixe para limpar junto de farm/build e missões repetidas.",
               "is_missable": false,
               "is_spoiler": false
@@ -3849,26 +4060,29 @@ const sampleGames = [
           {
               "id": "nioh2_lover_of_letters",
               "name": "Lover of Letters",
+              "name_pt": "Amante das Letras",
               "type": "Bronze",
-              "description": "Displayed a calligraphy scroll in your hut.",
-              "tip": "Compre/obtenha um scroll e coloque-o na hut.",
+              "description": "Exibiu um pergaminho de caligrafia na cabana.",
+              "tip": "Compre ou obtenha um pergaminho de caligrafia e coloque-o na hut.",
               "is_missable": false,
               "is_spoiler": false
           },
           {
               "id": "nioh2_trinket_triumph",
               "name": "Trinket Triumph",
+              "name_pt": "Triunfo dos Amuletos",
               "type": "Bronze",
-              "description": "Used the Kodama Bazaar.",
-              "tip": "Use qualquer oferta no Kodama Bazaar em um Shrine.",
+              "description": "Usou o Kodama Bazaar.",
+              "tip": "Use qualquer oferta do Kodama Bazaar em um Shrine.",
               "is_missable": false,
               "is_spoiler": false
           },
           {
               "id": "nioh2_teamwork",
               "name": "Teamwork",
+              "name_pt": "Trabalho em Equipe",
               "type": "Bronze",
-              "description": "Completed 10 missions with NPCs or as Expeditions with other users. (Does not include Acolytes.)",
+              "description": "Concluiu 10 missões com NPCs ou expedições; Acolytes não contam.",
               "tip": "Não exige online: várias missões com NPCs contam naturalmente.",
               "is_missable": false,
               "is_spoiler": false
@@ -3876,17 +4090,19 @@ const sampleGames = [
           {
               "id": "nioh2_help_wanted",
               "name": "Help Wanted",
+              "name_pt": "Ajuda Solicitada",
               "type": "Bronze",
-              "description": "Summoned an Acolyte from a Benevolent Grave 10 times.",
-              "tip": "Use blue graves/Benevolent Graves para chamar aliados AI; não trate como multiplayer obrigatório.",
+              "description": "Invocou um Acolyte de um Benevolent Grave 10 vezes.",
+              "tip": "Use Benevolent Graves/Blue Graves para chamar aliados AI; não trate como multiplayer obrigatório.",
               "is_missable": false,
               "is_spoiler": false
           },
           {
               "id": "nioh2_twilight_walker",
               "name": "Twilight Walker",
+              "name_pt": "Caminhante do Crepúsculo",
               "type": "Bronze",
-              "description": "Completed your first Twilight mission.",
+              "description": "Completou sua primeira Twilight Mission.",
               "tip": "Complete qualquer Twilight Mission disponível após desbloqueá-las.",
               "is_missable": false,
               "is_spoiler": false
@@ -3894,8 +4110,9 @@ const sampleGames = [
           {
               "id": "nioh2_spa_healer",
               "name": "Spa Healer",
+              "name_pt": "Curandeiro da Fonte",
               "type": "Bronze",
-              "description": "Bathed in first hot spring.",
+              "description": "Tomou banho na primeira Hot Spring.",
               "tip": "Entre em qualquer Hot Spring pela primeira vez.",
               "is_missable": false,
               "is_spoiler": false
@@ -3903,8 +4120,9 @@ const sampleGames = [
           {
               "id": "nioh2_spa_lover",
               "name": "Spa Lover",
+              "name_pt": "Amante do Spa",
               "type": "Prata",
-              "description": "Bathed in every hot spring.",
+              "description": "Tomou banho em todas as Hot Springs.",
               "tip": "Há Hot Springs espalhadas por missões; use replay para limpar as que faltarem.",
               "is_missable": false,
               "is_spoiler": false
@@ -3912,8 +4130,9 @@ const sampleGames = [
           {
               "id": "nioh2_yokai_quelling_master",
               "name": "Yokai Quelling Master",
+              "name_pt": "Mestre da Erradicação Yokai",
               "type": "Bronze",
-              "description": "Defeated all types of yokai.",
+              "description": "Derrotou todos os tipos de yokai base.",
               "tip": "Derrote todos os tipos de Yokai da lista base; acompanhe inimigos raros como Mujina.",
               "is_missable": false,
               "is_spoiler": true
@@ -3921,17 +4140,19 @@ const sampleGames = [
           {
               "id": "nioh2_kodama_leader",
               "name": "Kodama Leader",
+              "name_pt": "Líder dos Kodama",
               "type": "Prata",
-              "description": "Collected all Kodama.",
-              "tip": "Colete todos os Kodama por missão/região; replay de missões facilita o cleanup.",
+              "description": "Coletou todos os Kodama.",
+              "tip": "Colete todos os Kodama por missão/região; replay facilita o cleanup.",
               "is_missable": false,
               "is_spoiler": false
           },
           {
               "id": "nioh2_friend_of_guardians",
               "name": "Friend of Guardians",
+              "name_pt": "Amigo dos Guardiões",
               "type": "Bronze",
-              "description": "Collected all Guardian Spirits.",
+              "description": "Coletou todos os Guardian Spirits.",
               "tip": "Complete missões principais e secundárias necessárias para receber todos os Guardian Spirits.",
               "is_missable": false,
               "is_spoiler": true
@@ -3939,8 +4160,9 @@ const sampleGames = [
           {
               "id": "nioh2_sudama_swapper",
               "name": "Sudama Swapper",
+              "name_pt": "Trocador de Sudama",
               "type": "Bronze",
-              "description": "Exchanged gifts with a Sudama for the first time.",
+              "description": "Trocou presentes com um Sudama pela primeira vez.",
               "tip": "Derrube um item perto de um Sudama para fazer a troca.",
               "is_missable": false,
               "is_spoiler": false
@@ -3948,8 +4170,9 @@ const sampleGames = [
           {
               "id": "nioh2_core_score",
               "name": "Core Score",
+              "name_pt": "Pontuação de Núcleo",
               "type": "Bronze",
-              "description": "Obtained your first Soul Core.",
+              "description": "Obteve sua primeira Soul Core.",
               "tip": "Derrote Yokai e purifique o Soul Core em um Shrine.",
               "is_missable": false,
               "is_spoiler": false
@@ -3957,35 +4180,39 @@ const sampleGames = [
           {
               "id": "nioh2_friend_to_kodama",
               "name": "Friend to the Kodama",
+              "name_pt": "Amigo dos Kodama",
               "type": "Bronze",
-              "description": "Obtained a Kodama’s Soul Core.",
-              "tip": "Entregue Soul Cores a Sudama até receber um Kodama Soul Core.",
+              "description": "Obteve a Kodama Soul Core.",
+              "tip": "Entregue Soul Cores a Sudama até receber uma Kodama Soul Core.",
               "is_missable": false,
               "is_spoiler": false
           },
           {
               "id": "nioh2_soul_searcher",
               "name": "Soul Searcher",
+              "name_pt": "Buscador de Almas",
               "type": "Prata",
-              "description": "Obtained all Soul Cores.",
-              "tip": "Colete todos os Soul Cores da lista base. Guarde ao menos um de cada tipo para evitar retrabalho.",
+              "description": "Obteve todas as Soul Cores base.",
+              "tip": "Colete todas as Soul Cores da lista base e guarde ao menos um de cada tipo para evitar retrabalho.",
               "is_missable": false,
               "is_spoiler": true
           },
           {
               "id": "nioh2_fuse_it_or_lose_it",
               "name": "Fuse It or Lose It",
+              "name_pt": "Funde ou Perde",
               "type": "Bronze",
-              "description": "Fused any Soul Core until it reached rank 9.",
-              "tip": "Use Soul Fusion em um Soul Core comum até atingir rank 9.",
+              "description": "Fundi uma Soul Core até rank 9.",
+              "tip": "Use Soul Fusion em uma Soul Core comum até atingir rank 9.",
               "is_missable": false,
               "is_spoiler": false
           },
           {
               "id": "nioh2_seasoned_traveler",
               "name": "Seasoned Traveler",
+              "name_pt": "Viajante Experiente",
               "type": "Bronze",
-              "description": "Discovered 10 hidden items on the map.",
+              "description": "Descobriu 10 itens ocultos no mapa.",
               "tip": "Procure pontos ocultos no mapa de missões/regiões e interaja com eles.",
               "is_missable": false,
               "is_spoiler": false
@@ -3993,26 +4220,29 @@ const sampleGames = [
           {
               "id": "nioh2_let_there_be_light",
               "name": "Let There Be Light",
+              "name_pt": "Faça-se a Luz",
               "type": "Prata",
-              "description": "Dispelled every instance of the Dark Realm in the main missions.",
-              "tip": "Limpe todos os Dark Realms das missões principais; use replay para conferir pendências.",
+              "description": "Dissipou todos os Dark Realms das missões principais.",
+              "tip": "Limpe todos os Dark Realms na campanha principal; use replay para conferir pendências.",
               "is_missable": false,
               "is_spoiler": true
           },
           {
               "id": "nioh2_grazer_eraser",
               "name": "Grazer Eraser",
+              "name_pt": "Exterminador de Caprinos",
               "type": "Bronze",
-              "description": "Defeated Mezuki and Gozuki in the same mission.",
-              "tip": "Na primeira missão, derrote o Gozuki opcional antes do boss Mezuki.",
+              "description": "Derrotou Mezuki e Gozuki na mesma missão.",
+              "tip": "Na missão adequada, derrote o Gozuki opcional antes do boss Mezuki.",
               "is_missable": false,
               "is_spoiler": true
           },
           {
               "id": "nioh2_dungball_roller",
               "name": "Dungball Roller",
+              "name_pt": "Rolador de Cocôs",
               "type": "Bronze",
-              "description": "Became Ryunojo the Dung Lover’s best friend.",
+              "description": "Conquistou Ryunojo, o amante de dungs.",
               "tip": "Entregue Dungballs/Noble Dungballs suficientes a Ryunojo; pode ficar para o cleanup.",
               "is_missable": false,
               "is_spoiler": false
@@ -4020,8 +4250,9 @@ const sampleGames = [
           {
               "id": "nioh2_hidden_hopes",
               "name": "Hidden Hopes",
+              "name_pt": "Esperanças Ocultas",
               "type": "Bronze",
-              "description": "Encountered all the Usura-Hicho in “The Frenzied Blaze”.",
+              "description": "Encontrou todos os Usura-Hicho em The Frenzied Blaze.",
               "tip": "Interaja com todos os Usura-Hicho nessa missão; se faltar, use replay.",
               "is_missable": false,
               "is_spoiler": true
@@ -4029,8 +4260,9 @@ const sampleGames = [
           {
               "id": "nioh2_clean_sweep",
               "name": "Clean Sweep",
+              "name_pt": "Varredura Completa",
               "type": "Bronze",
-              "description": "Destroyed every Amrita shard in “The High-spirited Demon”.",
+              "description": "Destruiu todos os Amrita shards em The High-spirited Demon.",
               "tip": "Destrua todos os Amrita shards da missão; pode ser repetido depois.",
               "is_missable": false,
               "is_spoiler": true
@@ -4038,8 +4270,9 @@ const sampleGames = [
           {
               "id": "nioh2_devout_believer",
               "name": "Devout Believer",
+              "name_pt": "Crente Devoto",
               "type": "Bronze",
-              "description": "Defeated the boss of “The Viper’s Sanctum” without breaking the statue of Shirohami.",
+              "description": "Derrotou o boss de The Viper’s Sanctum sem quebrar a estátua de Shirohami.",
               "tip": "Rejogue a missão forte o suficiente e derrote o boss sem quebrar as estátuas.",
               "is_missable": false,
               "is_spoiler": true
@@ -4047,8 +4280,9 @@ const sampleGames = [
           {
               "id": "nioh2_seven_wonders",
               "name": "Seven Wonders",
+              "name_pt": "Sete Maravilhas",
               "type": "Prata",
-              "description": "Defeated each of the Seven Spears in “Cherry Blossom Viewing in Daigo”.",
+              "description": "Derrotou cada um dos Seven Spears em Cherry Blossom Viewing in Daigo.",
               "tip": "Derrote todos os Seven Spears antes de avançar para o fim da missão; se faltar, rejogue.",
               "is_missable": false,
               "is_spoiler": true
@@ -4056,8 +4290,9 @@ const sampleGames = [
           {
               "id": "nioh2_feather_buster",
               "name": "Feather Buster",
+              "name_pt": "Depenador",
               "type": "Bronze",
-              "description": "Drove back every Tatarimokke along the journey in “A Way Out”.",
+              "description": "Afastou todos os Tatarimokke em A Way Out.",
               "tip": "Destrua os orbes/searchlights de Tatarimokke na missão A Way Out.",
               "is_missable": false,
               "is_spoiler": true
@@ -4065,8 +4300,9 @@ const sampleGames = [
           {
               "id": "nioh2_bold_wrangler",
               "name": "Bold Wrangler",
+              "name_pt": "Toureiro Corajoso",
               "type": "Bronze",
-              "description": "Defeated Gozuki in “The Village of Cursed Blossoms”.",
+              "description": "Derrotou Gozuki em The Village of Cursed Blossoms.",
               "tip": "Derrote o Gozuki opcional no começo da primeira missão; pode ser feito via replay.",
               "is_missable": false,
               "is_spoiler": true
@@ -4074,8 +4310,9 @@ const sampleGames = [
           {
               "id": "nioh2_schemer",
               "name": "Schemer",
+              "name_pt": "Conspirador",
               "type": "Bronze",
-              "description": "Got Gyuki to attack the dam in “Pervading Waters”.",
+              "description": "Fez Gyuki atacar a barragem em Pervading Waters.",
               "tip": "Durante a luta contra Gyuki, posicione-se perto da barragem para provocar o ataque.",
               "is_missable": false,
               "is_spoiler": true
@@ -4083,8 +4320,9 @@ const sampleGames = [
           {
               "id": "nioh2_peal_ten_thousand_bells",
               "name": "Peal of Ten Thousand Bells",
+              "name_pt": "Repique de Dez Mil Sinos",
               "type": "Bronze",
-              "description": "Rang all the bells in “Ruin Draws Near”.",
+              "description": "Tocou todos os sinos em Ruin Draws Near.",
               "tip": "Toque todos os sinos da missão Ruin Draws Near; use replay se algum ficar para trás.",
               "is_missable": false,
               "is_spoiler": true
