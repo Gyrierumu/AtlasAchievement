@@ -938,76 +938,82 @@ const sampleGames = [
     "cover_image": "/assets/games/ghost-of-tsushima/cover.jpg",
     "roadmap": [
       {
-        "title": "Etapa 1",
-        "focus": "Avance a história e libere as regiões",
-        "category": "História",
-        "objective": "Progredir pelos atos principais enquanto libera mecânicas, equipamentos e acesso às regiões necessárias para a platina base.",
+        "title": "Avance a história e libere recursos básicos",
+        "focus": "Campanha principal",
+        "objective": "Progredir pela história enquanto desbloqueia ferramentas, posturas, técnicas e acesso gradual às regiões.",
         "actions": [
-          "Avance pelas missões principais sem tentar limpar todo o mapa logo no início.",
-          "Libere posturas, ferramentas fantasma e melhorias úteis para combate e exploração.",
-          "Faça atividades secundárias próximas do caminho quando ajudarem na progressão.",
-          "Observe acampamentos, santuários, fontes termais, bambus, haikus e tocas de raposa conforme surgirem no mapa."
+          "Avance os contos principais até abrir melhor o mapa.",
+          "Use os primeiros pontos de técnica para melhorar combate, furtividade e exploração.",
+          "Ative pontos de viagem rápida sempre que possível.",
+          "Faça atividades próximas ao caminho sem tentar limpar tudo cedo demais."
         ],
         "warning": "",
-        "result": "Campanha avançada, Jin fortalecido e mapa preparado para a limpeza posterior."
+        "result": "Jin preparado para explorar Tsushima com mais recursos e menos retrabalho."
       },
       {
-        "title": "Etapa 2",
-        "focus": "Complete contos de aliados e secundários",
-        "category": "Contos",
-        "objective": "Reduzir pendências narrativas e avançar troféus ligados a personagens, contos e atividades regionais.",
+        "title": "Liberte regiões e revele o mapa",
+        "focus": "Exploração",
+        "objective": "Reduzir a névoa do mapa e abrir atividades importantes em Izuhara, Toyotama e Kamiagata.",
         "actions": [
-          "Complete os contos principais dos aliados conforme forem liberados.",
-          "Faça contos secundários encontrados nas regiões.",
-          "Libere áreas ocupadas quando estiverem próximas dos objetivos atuais.",
-          "Colete recursos para melhorar armaduras, armas e ferramentas importantes."
-        ],
-        "warning": "Não misture requisitos de Legends, Iki Island ou Director’s Cut com a platina base.",
-        "result": "Grande parte dos contos e troféus de progressão secundária encaminhada."
-      },
-      {
-        "title": "Etapa 3",
-        "focus": "Limpe o mapa e atividades de exploração",
-        "category": "Coletáveis",
-        "objective": "Completar os requisitos de exploração, libertação e atividades do mundo aberto exigidos pela platina base.",
-        "actions": [
-          "Revisite regiões com pontos de interesse pendentes.",
-          "Complete santuários, fontes termais, bambus, haikus, tocas de raposa e demais atividades relevantes.",
-          "Liberte territórios restantes para revelar pontos que ainda faltam.",
-          "Use o checklist para separar o que já foi concluído do que ainda falta.",
-          "Confira itens cosméticos e registros necessários para troféus da lista base."
+          "Liberte acampamentos mongóis conforme eles ficarem acessíveis.",
+          "Use pássaros dourados, raposas e fumaça no horizonte para localizar atividades.",
+          "Complete fontes termais, bambus, haiku e santuários quando estiverem no caminho.",
+          "Marque pendências por região no checklist."
         ],
         "warning": "",
-        "result": "Mapa praticamente limpo e a maioria dos requisitos de exploração concluída."
+        "result": "Mapa mais aberto e atividades da platina mais fáceis de organizar."
       },
       {
-        "title": "Etapa 4",
-        "focus": "Resolva troféus de combate e ações específicas",
-        "category": "Combate",
-        "objective": "Finalizar troféus situacionais ligados a postura, ferramentas, duelos, furtividade e ações específicas que talvez não venham naturalmente.",
+        "title": "Complete Tales e Mythic Tales",
+        "focus": "Missões secundárias",
+        "objective": "Concluir histórias secundárias importantes para recursos, técnicas, armaduras e troféus.",
         "actions": [
-          "Revise o checklist para identificar troféus de combate ainda pendentes.",
-          "Use acampamentos ou patrulhas restantes para completar ações específicas.",
-          "Finalize upgrades necessários antes de tentar desafios mais chatos.",
-          "Busque troféus de postura, furtividade, ferramentas e confronto direto conforme a exigência de cada um."
+          "Faça Mythic Tales assim que ficarem disponíveis.",
+          "Complete linhas de aliados como Ishikawa, Masako, Norio e Yuna.",
+          "Intercale contos secundários com a campanha para evitar limpeza pesada no final.",
+          "Use o checklist para separar Tales concluídos dos pendentes."
         ],
-        "warning": "Evite libertar absolutamente tudo antes de conferir troféus situacionais, para ainda ter inimigos disponíveis com facilidade.",
-        "result": "Troféus de combate e ações específicas resolvidos ou prontos para a conferência final."
+        "warning": "",
+        "result": "Principais missões paralelas concluídas e pós-jogo mais leve."
       },
       {
-        "title": "Etapa 5",
-        "focus": "Faça o cleanup final da platina",
-        "category": "Cleanup",
-        "objective": "Conferir todos os requisitos restantes da platina base sem incluir conteúdo online, coop ou DLC.",
+        "title": "Limpe coletáveis e atividades de mundo aberto",
+        "focus": "Coletáveis",
+        "objective": "Finalizar atividades exigidas pela platina base sem misturar conteúdo de DLC.",
         "actions": [
-          "Abra o checklist e revise troféus restantes um por um.",
-          "Complete upgrades, cosméticos, registros ou atividades que ainda faltarem.",
-          "Confirme se todos os contos e atividades da lista base foram concluídos.",
-          "Verifique se o guia não está marcando Legends, Iki Island ou DLC como obrigatório.",
-          "Finalize qualquer pendência antes de considerar o guia pronto."
+          "Complete santuários Shinto e Inari, fontes termais, haiku, bambus e faróis.",
+          "Procure altares escondidos, Records e artefatos mongóis.",
+          "Finalize duelos, acampamentos e atividades restantes por região.",
+          "Priorize uma região por vez para não se perder no cleanup."
         ],
-        "warning": "A platina base não exige online, coop, Legends ou DLC.",
-        "result": "Checklist completo e requisitos da platina base concluídos."
+        "warning": "Iki Island, New Game+ e Legends não são obrigatórios para a platina base.",
+        "result": "Coletáveis e atividades principais encaminhados sem incluir extras fora da lista base."
+      },
+      {
+        "title": "Use o free roam para cleanup final",
+        "focus": "Pós-história",
+        "objective": "Aproveitar o free roam/exploração livre após a campanha para fechar o que ficou pendente.",
+        "actions": [
+          "Volte às regiões com atividades incompletas.",
+          "Finalize troféus miscelâneos e cosméticos da lista base.",
+          "Confira contos, coletáveis e atividades regionais restantes.",
+          "Verifique se nenhum troféu da lista base ficou sem progresso."
+        ],
+        "warning": "",
+        "result": "Quase toda a lista base concluída antes da revisão final."
+      },
+      {
+        "title": "Revise a lista base e feche Living Legend",
+        "focus": "Checklist final",
+        "objective": "Confirmar todos os requisitos da platina base antes de encerrar o guia.",
+        "actions": [
+          "Revise a contagem total da lista base e os troféus restantes.",
+          "Confirme que não está contando Iki Island, New Game+ ou Legends como obrigatórios.",
+          "Verifique se não há troféus online marcados como necessários para a platina base.",
+          "Feche qualquer pendência de exploração, contos ou atividades."
+        ],
+        "warning": "",
+        "result": "Lista base concluída e troféu de platina Living Legend liberado."
       }
     ],
     "trophies": [
@@ -2042,7 +2048,7 @@ const sampleGames = [
     ],
     "runs_summary": "Muitas runs no Submundo e na Superfície. A platina exige história, epílogo, profecias, Chaos Trials, familiars, keepsakes, Arcana e vínculos.",
     "missable_summary": "Não há perdíveis reais na lista base. Organize conversas, presentes, profecias e recursos entre runs apenas para reduzir grind e retrabalho.",
-    "online_summary": "Não há online obrigatório e não exige coop, servidores ou PS+ para a platina base de PS5.",
+    "online_summary": "Sem online obrigatório: a platina base de PS5 é single-player/offline e não exige coop, servidores ou PS+.",
     "grind_summary": "Grind alto de materiais, Kudos, profecias, upgrades de Arcana, familiars, keepsakes, vínculos e Chaos Trials.",
     "dlc_scope": "Lista base de PS5, sem DLC obrigatória para a platina.",
     "difficulty_reason": "A execução é moderada a alta sem God Mode, com chefes finais, rotas longas e desafios de endgame. Com God Mode, a pressão editorial cai para aproximadamente 5/10.",
@@ -2106,82 +2112,82 @@ const sampleGames = [
     ],
     "roadmap": [
       {
-        "title": "Estabilize a Encruzilhada",
-        "focus": "Base, armas e sistemas persistentes",
-        "objective": "Abrir os sistemas que sustentam a platina antes de transformar runs em cleanup pesado.",
+        "title": "Aprenda as runs e estabilize a Crossroads",
+        "focus": "Primeiras runs",
+        "objective": "Usar as primeiras tentativas para aprender combate, boons, recursos e sistemas centrais sem tentar fazer 100% cedo demais.",
         "actions": [
-          "Desbloqueie armas, ferramentas, Altar of Ashes, Cauldron, Fated List e recursos de coleta.",
-          "Converse com personagens marcados depois de cada run.",
-          "Use Nectar e presentes para abrir keepsakes e vínculos sem deixar tudo para o pós-game.",
-          "Ative God Mode se quiser reduzir a pressão; ele não deve ser tratado como bloqueio automático de troféus."
+          "Faça runs para conhecer armas, magias, esquivas, ataques especiais e padrões dos primeiros Guardians.",
+          "Volte à Crossroads entre tentativas para liberar melhorias, diálogos e sistemas.",
+          "Invista recursos iniciais em upgrades que aumentem consistência e sobrevivência.",
+          "Comece a observar quais recursos aparecem em cada rota para planejar progresso futuro."
         ],
-        "warning": "Não trate esta etapa como alerta de perdíveis; a função dela é reduzir grind e organizar sistemas persistentes.",
-        "result": "Base pronta para avançar pelas duas rotas com progresso acumulado."
+        "warning": "",
+        "result": "Base de progressão criada e jogador preparado para avançar com mais consistência."
       },
       {
-        "title": "Domine a rota do Submundo",
-        "focus": "Erebus, Oceanus, Fields of Mourning e Tartarus",
-        "objective": "Concluir a progressão do Submundo e preparar a missão principal contra Chronos.",
+        "title": "Evolua Arcana, Incantations e recursos essenciais",
+        "focus": "Progressão permanente",
+        "objective": "Fortalecer Melinoë com melhorias permanentes e desbloquear sistemas que reduzem retrabalho nas próximas runs.",
         "actions": [
-          "Limpe Erebus, Oceanus, Fields of Mourning e Tartarus.",
-          "Teste armas e Arcana enquanto aprende chefes e biomas.",
-          "Continue coletando materiais para incantations e upgrades.",
-          "Registre profecias ligadas a armas, Arcana, pesca e encontros."
+          "Priorize Arcana e upgrades que aumentem sobrevivência, dano e controle de combate.",
+          "Use Incantations para liberar recursos, rotas, ferramentas e melhorias importantes da Crossroads.",
+          "Guarde materiais raros para desbloqueios que impactem troféus, aspectos, familiars e progressão.",
+          "Atualize o checklist sempre que um recurso, desbloqueio ou sistema novo aparecer."
         ],
-        "warning": "Spoilers de história aparecem na reta de Tartarus e em objetivos ligados a Chronos.",
-        "result": "Rota inferior estabilizada e caminho aberto para Death to Chronos."
+        "warning": "",
+        "result": "Progressão permanente encaminhada e runs futuras mais eficientes."
       },
       {
-        "title": "Abra a rota da Superfície",
-        "focus": "City of Ephyra, Rift of Thessaly, Mount Olympus e Summit",
-        "objective": "Remover barreiras da Superfície e concluir a rota superior da lista base.",
+        "title": "Avance rotas, Guardians e história principal",
+        "focus": "História",
+        "objective": "Progredir pelo Underworld e pela Surface, derrotar Guardians e avançar eventos narrativos importantes.",
         "actions": [
-          "Avance incantations que permitem sobreviver e progredir na Superfície.",
-          "Conclua City of Ephyra, Rift of Thessaly, Mount Olympus e Summit.",
-          "Colete materiais exclusivos da rota para armas, aspectos, Arcana e familiars.",
-          "Use clears da Superfície para avançar Sword of the Night e profecias relacionadas."
+          "Foque em chegar cada vez mais longe nas rotas disponíveis, incluindo Erebus, Oceanus, Fields of Mourning, Tartarus, City of Ephyra, Rift of Thessaly, Mount Olympus e Summit.",
+          "Aprenda padrões dos Guardians antes de tentar objetivos secundários difíceis.",
+          "Alterne runs de progresso com runs de farm quando faltar material importante.",
+          "Continue conversando com personagens na Crossroads e em encontros relevantes."
         ],
-        "warning": "A Superfície exige progressão estrutural; se a rota travar, volte à Encruzilhada e avance incantations.",
-        "result": "As duas rotas principais ficam disponíveis para história, farm e profecias."
+        "warning": "Objetivos ligados a Chronos e ao epílogo podem conter spoilers de história.",
+        "result": "História avançada, principais rotas abertas e bosses mais familiares."
       },
       {
-        "title": "Finalize a missão principal",
-        "focus": "Chronos e história central",
-        "objective": "Concluir a tarefa principal de Melinoe e desbloquear Death to Chronos.",
+        "title": "Trabalhe armas, aspectos, Keepsakes e relacionamentos",
+        "focus": "Relacionamentos",
+        "objective": "Avançar troféus ligados a armas, aspectos, lembranças, presentes, personagens e sistemas de longo prazo.",
         "actions": [
-          "Continue vencendo runs e acionando diálogos novos na Encruzilhada.",
-          "Resolva incantations centrais ligadas à progressão da história.",
-          "Priorize consistência de build para encontros finais.",
-          "Após Death to Chronos, continue jogando para abrir objetivos de epílogo."
+          "Varie armas e estilos para cumprir requisitos diferentes da Fated List.",
+          "Evolua aspectos e armas conforme os troféus e o checklist exigirem.",
+          "Distribua presentes com intenção para avançar relacionamentos, Keepsakes e convites da Crossroads.",
+          "Use Keepsakes de forma planejada para acelerar progresso e completar pendências."
         ],
-        "warning": "Esta etapa contém spoilers de história; revele detalhes dos troféus finais só quando fizer sentido.",
-        "result": "História principal encaminhada e troféu Death to Chronos resolvido."
+        "warning": "",
+        "result": "Coleções, relacionamentos e desbloqueios de longo prazo encaminhados."
       },
       {
-        "title": "Limpe profecias e sistemas longos",
-        "focus": "Arcana, weapons, keepsakes, familiars, vínculos e Kudos",
-        "objective": "Transformar o pós-game em blocos claros de progresso em vez de runs aleatórias.",
+        "title": "Complete desafios, rotas avançadas e objetivos longos",
+        "focus": "Desafios",
+        "objective": "Reduzir pendências de maior duração antes do cleanup final da platina.",
         "actions": [
-          "Complete 60 Minor Prophecies e profecias específicas de armas, Arcana, peixes e encontros.",
-          "Maximize Arcana e familiars com materiais acumulados.",
-          "Colete todos os keepsakes e forje 10 vínculos.",
-          "Farme Kudos quando os upgrades principais já estiverem resolvidos."
+          "Revise objetivos longos no checklist antes de continuar fazendo runs aleatórias.",
+          "Priorize desafios ligados a armas, bosses, recursos, rotas, Chaos Trials, Familiars, Kudos e sistemas específicos.",
+          "Separe runs de farm das runs focadas em Guardians, Chronos, Surface ou progresso de história.",
+          "Complete tarefas avançadas somente depois de ter upgrades e recursos suficientes."
         ],
-        "warning": "Alguns diálogos dependem de RNG e sequência de relacionamento; continue alternando runs e conversas.",
-        "result": "Checklist de progressão longa reduzido aos desafios e troféus situacionais finais."
+        "warning": "Não trate grind ou repetição de runs como troféu perdível. Marque como perdível apenas o que for realmente bloqueável e validado.",
+        "result": "Pendências longas reduzidas e guia encaminhado para limpeza final."
       },
       {
-        "title": "Complete desafios finais e epílogo",
-        "focus": "Chaos Trials, Gift of the Veil, Contest of Champions e Golden Age",
-        "objective": "Fechar os objetivos de endgame e alcançar o epílogo da história.",
+        "title": "Faça o cleanup final da platina",
+        "focus": "Checklist final",
+        "objective": "Conferir todos os troféus restantes, fechar coleções, desafios, relacionamentos e qualquer requisito específico.",
         "actions": [
-          "Complete 20 Chaos Trials e Great Chaos Below.",
-          "Busque o primeiro e o segundo Gift of the Veil.",
-          "Resolva Contest of Champions e troféus situacionais restantes.",
-          "Continue diálogos e runs até desbloquear Golden Age."
+          "Revise troféus de história, bosses, armas, aspectos, recursos, Keepsakes, Familiars, Arcana e relacionamentos.",
+          "Complete qualquer objetivo situacional que não veio naturalmente nas runs.",
+          "Confirme se não há troféu online, coop ou DLC sendo contado por engano.",
+          "Verifique se nenhum requisito ficou preso a versão antiga, patch ou informação ainda não validada."
         ],
-        "warning": "Soothing Soak e So Mote It Be devem ser rechecados com requisitos, diálogos e patch notes se não desbloquearem no momento esperado.",
-        "result": "Lista base PS5 fechada sem usar contagem Xbox e mantendo o guia em revisão editorial."
+        "warning": "Como o guia está em revisão editorial, revalide patch notes e relatos de desbloqueio antes de marcar qualquer requisito recente como definitivo.",
+        "result": "Checklist completo e platina pronta, mantendo o guia em revisão se houver dado recente ainda pendente."
       }
     ],
     "trophies": [
@@ -2337,77 +2343,83 @@ const sampleGames = [
     ],
     "roadmap": [
       {
-        "title": "Etapa 1",
-        "focus": "Conclua as nebulosas e aprenda os poderes",
-        "category": "História",
-        "objective": "Avançar pela campanha principal enquanto aprende as mecânicas, resgata bots e coleta peças sem precisar limpar tudo de primeira.",
+        "title": "Jogue a campanha explorando com calma",
+        "focus": "Campanha",
+        "objective": "Avançar pelos mundos principais enquanto aprende as mecânicas de cada fase e coleta o que encontrar naturalmente.",
         "actions": [
-          "Avance pelas cinco nebulosas principais no ritmo normal.",
-          "Resgate bots e pegue peças de quebra-cabeça sempre que estiverem no caminho.",
-          "Use os poderes de cada fase para se acostumar com os desafios e troféus contextuais.",
-          "Volte ao Crash Site quando novas áreas ou interações forem liberadas."
+          "Complete as fases principais sem pressa, explorando cantos, rotas alternativas e interações do cenário.",
+          "Resgate bots e colete puzzle pieces sempre que estiverem no caminho.",
+          "Observe fases que escondem saídas secretas ou caminhos opcionais.",
+          "Não se preocupe em fazer 100% perfeito em todas as fases logo na primeira passagem."
         ],
         "warning": "",
-        "result": "Campanha encaminhada, principais poderes aprendidos e boa base pronta para a limpeza."
+        "result": "Campanha avançada, boa parte dos coletáveis obtida e fases principais liberadas para revisita."
       },
       {
-        "title": "Etapa 2",
-        "focus": "Rejogue fases e complete os colecionáveis",
-        "category": "Coletáveis",
-        "objective": "Revisitar fases com pendências para completar bots, peças de quebra-cabeça e saídas secretas necessárias para a platina.",
+        "title": "Revise fases principais em busca de bots e puzzle pieces",
+        "focus": "Coletáveis",
+        "objective": "Limpar bots, puzzle pieces e objetivos de exploração que ficaram para trás nas fases já concluídas.",
         "actions": [
-          "Rejogue fases que ainda tenham bots, peças ou saídas secretas faltando.",
-          "Procure as saídas secretas que liberam a Lost Galaxy.",
-          "Complete os níveis da Lost Galaxy para fechar a lista de bots.",
-          "Use o auxílio de localização quando fizer sentido, evitando gastar moedas em excesso antes do Gatcha Lab.",
-          "Confira o progresso rumo aos 300 bots, 120 peças de quebra-cabeça e 10 Lost Galaxies."
+          "Use a seleção de fases para voltar aos níveis com coletáveis pendentes.",
+          "Priorize fases com bots faltando antes de seguir para desafios mais difíceis.",
+          "Revise áreas escondidas, objetos interativos e caminhos fora da rota principal.",
+          "Use o checklist para marcar bots, puzzle pieces e pendências por fase."
         ],
         "warning": "",
-        "result": "Colecionáveis principais resolvidos ou quase completos para liberar o conteúdo final."
+        "result": "Grande parte dos coletáveis principais concluída antes da limpeza mais avançada."
       },
       {
-        "title": "Etapa 3",
-        "focus": "Finalize o Crash Site e o Gatcha Lab",
-        "category": "Hub",
-        "objective": "Usar as peças e moedas acumuladas para liberar áreas do hub, comprar recompensas e preparar troféus de interação.",
+        "title": "Encontre fases secretas e caminhos alternativos",
+        "focus": "Fases secretas",
+        "objective": "Liberar fases escondidas e conteúdos opcionais relacionados à exploração dos mundos.",
         "actions": [
-          "Use peças de quebra-cabeça para abrir as instalações do Crash Site.",
-          "Libere áreas como Gatcha Lab, Safari Park, Dual Speeder Garage e Changing Room conforme o progresso permitir.",
-          "Compre pelo menos 150 recompensas no Gatcha Lab.",
-          "Interaja com bots, objetos e props do hub para encaminhar troféus contextuais.",
-          "Rejogue fases curtas se ainda faltarem moedas para o Gatcha Lab."
+          "Revise fases com indicação de saída secreta ou portal escondido.",
+          "Explore rotas alternativas, paredes falsas, objetos suspeitos e interações incomuns.",
+          "Complete fases secretas assim que forem liberadas.",
+          "Marque no checklist quais fases escondidas já foram abertas e concluídas."
         ],
-        "warning": "Evite transformar moedas em grind cedo demais; a limpeza dos níveis costuma gerar boa parte do necessário.",
-        "result": "Crash Site avançado, Gatcha Lab resolvido e troféus de hub bem encaminhados."
+        "warning": "",
+        "result": "Fases secretas liberadas e menos pendências ocultas para o final."
       },
       {
-        "title": "Etapa 4",
-        "focus": "Libere a Estátua Dourada e o desafio final",
-        "category": "Desafio final",
-        "objective": "Abrir o caminho para o desafio final da platina e concluir a etapa ligada ao Special Master Bot.",
+        "title": "Complete desafios e fases especiais",
+        "focus": "Desafios",
+        "objective": "Resolver fases de maior precisão, desafios curtos e conteúdos que exigem mais domínio de plataforma.",
         "actions": [
-          "Confirme se todas as 120 peças de quebra-cabeça foram coletadas.",
-          "Use os 300 bots para acessar o desafio final da Estátua Dourada.",
-          "Treine o percurso do Great Master Challenge com calma.",
-          "Conclua o desafio para resgatar o Special Master Bot e liberar The Golden Bot."
+          "Deixe desafios mais difíceis para depois de se acostumar com a movimentação.",
+          "Faça fases especiais com calma, memorizando obstáculos e padrões.",
+          "Repita desafios curtos até fechar os bots ou recompensas associadas.",
+          "Evite misturar cleanup de coletáveis com desafio de execução se isso atrapalhar o ritmo."
         ],
-        "warning": "Esse é o principal pico de dificuldade da platina base.",
-        "result": "Desafio final concluído e troféu principal de habilidade resolvido."
+        "warning": "Alguns desafios podem exigir tentativa e erro, mas fazem parte da progressão solo de plataforma da lista base.",
+        "result": "Bloco de desafios concluído e platina encaminhada para cleanup final."
       },
       {
-        "title": "Etapa 5",
-        "focus": "Faça o cleanup dos troféus contextuais",
-        "category": "Cleanup",
-        "objective": "Finalizar troféus específicos de fases, interações do Crash Site e qualquer pendência restante da lista base.",
+        "title": "Organize o Crash Site e conteúdos desbloqueados",
+        "focus": "Hub",
+        "objective": "Usar o hub e os desbloqueios acumulados para concluir interações, construções e objetivos relacionados aos bots resgatados.",
         "actions": [
-          "Abra o checklist e revise quais troféus ainda não foram concluídos.",
-          "Resolva troféus específicos de fases que não vieram naturalmente.",
-          "Confira interações do Crash Site que dependem de bots e itens do Gatcha Lab.",
-          "Verifique se os requisitos de 300 bots, 120 peças e 150 recompensas estão concluídos.",
-          "Confirme que o guia não está misturando troféus de updates gratuitos com a platina base."
+          "Volte ao Crash Site para conferir desbloqueios pendentes.",
+          "Use bots resgatados para acessar áreas, interações ou recompensas bloqueadas.",
+          "Abra instalações como Gatcha Lab, Safari Park, Dual Speeder Garage e Changing Room quando tiver puzzle pieces suficientes.",
+          "Compre recompensas no Gatcha Lab e confira interações especiais relacionadas a bots, peças ou coleções."
         ],
-        "warning": "Não incluir DLC, update ou nível extra gratuito como requisito obrigatório da platina base.",
-        "result": "Todos os requisitos da platina base concluídos."
+        "warning": "",
+        "result": "Hub organizado e pendências de progressão central reduzidas."
+      },
+      {
+        "title": "Cleanup final da platina",
+        "focus": "Checklist final",
+        "objective": "Conferir todos os coletáveis, desafios e troféus situacionais restantes antes de encerrar a platina.",
+        "actions": [
+          "Revise bots, puzzle pieces, fases secretas e desafios restantes.",
+          "Complete troféus situacionais que não vieram naturalmente durante a campanha.",
+          "Confirme os marcos da lista base: 300 bots, 120 puzzle pieces, 10 saídas de Lost Galaxy e 150 recompensas do Gatcha Lab.",
+          "Confira que conteúdos extras pós-lançamento ficaram fora do roteiro da platina base.",
+          "Use o checklist final para fechar qualquer fase com item pendente."
+        ],
+        "warning": "",
+        "result": "Lista base concluída e platina pronta."
       }
     ],
     "trophies": [
@@ -2669,90 +2681,85 @@ const sampleGames = [
     ],
     "roadmap": [
       {
-        "title": "Etapa 1",
-        "focus": "Faça a campanha 100% com saves manuais",
-        "category": "Coleta inicial",
-        "objective": "Concluir a primeira campanha coletando tesouros, Castellans, pedidos do Mercador e troféus de capítulo sem depender de chapter select depois.",
+        "title": "Primeira campanha com coletáveis e aprendizado",
+        "focus": "Primeira run",
+        "objective": "Concluir a história aprendendo combate, rotas, chefes e sistemas enquanto já adianta coletáveis importantes.",
         "actions": [
-          "Jogue em Assisted ou Standard para facilitar a coleta inicial.",
-          "Pegue tesouros, Clockwork Castellans e pedidos do Mercador conforme avança pelos capítulos.",
-          "Faça saves manuais em slots diferentes antes de pontos importantes.",
-          "Guarde um save manual no Capítulo 16 antes do último trecho.",
-          "Priorize melhorar uma pistola confiável e preparar recursos para as próximas runs."
+          "Jogue em uma dificuldade confortável para aprender inimigos, chefes e economia de recursos.",
+          "Faça o máximo possível de Merchant Requests durante a campanha.",
+          "Colete Clockwork Castellans, tesouros, armas e itens importantes conforme avança.",
+          "Marque no checklist troféus situacionais de capítulo para evitar esquecimento.",
+          "Faça saves manuais antes de trechos importantes quando houver troféus específicos."
         ],
-        "warning": "O jogo não tem chapter select nem free-roam final; muitos troféus exigem replay se forem ignorados no capítulo certo.",
-        "result": "História concluída, grande parte dos colecionáveis resolvida e base preparada para New Game+."
+        "warning": "O jogo não tem chapter select nem free-roam final; muitos objetivos exigem replay se forem ignorados no capítulo certo.",
+        "result": "Campanha concluída, boa parte dos coletáveis adiantada e base pronta para runs mais técnicas."
       },
       {
-        "title": "Etapa 2",
-        "focus": "Organize armas, Castellans e New Game+",
-        "category": "Preparação",
-        "objective": "Usar o pós-jogo para preparar armas especiais, upgrades e saves que reduzem retrabalho nas runs de restrição e rank.",
+        "title": "Cleanup de coletáveis, requests e troféus situacionais",
+        "focus": "Coletáveis",
+        "objective": "Reduzir pendências antes de entrar nas runs de dificuldade, rank e restrição.",
         "actions": [
-          "Confirme se todos os Clockwork Castellans foram destruídos para liberar o Primal Knife.",
-          "Compre e melhore armas necessárias para Gun Fanatic.",
-          "Use o save do Capítulo 16 para ajustar inventário, upgrades e recursos.",
-          "Planeje quais desafios serão combinados e quais serão feitos em runs separadas."
+          "Revise Clockwork Castellans, Merchant Requests, tesouros e armas pendentes.",
+          "Faça troféus situacionais de chefes, carrinho, lancha, Ashley, ilha e capítulos específicos.",
+          "Complete objetivos ligados ao Shooting Range, se ainda faltarem.",
+          "Confira se há armas faltando para Gun Fanatic.",
+          "Use saves manuais para corrigir pendências curtas sem transformar tudo em uma nova campanha."
         ],
         "warning": "Não venda ou descarte armas de forma que atrapalhe Gun Fanatic sem confirmar se o jogo já registrou a obtenção.",
-        "result": "Inventário, armas e saves preparados para as campanhas de restrição."
+        "result": "Checklist de coletáveis e troféus situacionais praticamente fechado."
       },
       {
-        "title": "Etapa 3",
-        "focus": "Complete Minimalist e Silent Stranger",
-        "category": "Runs de restrição",
-        "objective": "Concluir uma campanha em New Game+ usando apenas facas e pistolas, sem falar com o Mercador, quando a rota permitir combinar os requisitos.",
+        "title": "Run rápida em NG+ para recursos e rank",
+        "focus": "NG+",
+        "objective": "Usar equipamentos e upgrades acumulados para cumprir objetivos de tempo, dificuldade ou rank que aceitem New Game+.",
         "actions": [
-          "Inicie New Game+ em Assisted com pistola e Primal Knife preparados.",
-          "Não fale com o Mercador durante essa run.",
-          "Use apenas facas e pistolas, respeitando as exceções permitidas pelo próprio jogo.",
-          "Cheque o contador dos desafios depois de cada capítulo.",
-          "Salve em slots separados para corrigir qualquer erro de restrição."
+          "Use New Game+ para aproveitar armas, upgrades e dinheiro acumulado.",
+          "Planeje uma campanha rápida para Sprinter e outros objetivos compatíveis com New Game+.",
+          "Considere Professional em New Game+ para Peerless Agent se quiser reduzir pressão de recursos.",
+          "Priorize desbloqueios e dinheiro que facilitem runs futuras.",
+          "Não misture esta etapa com desafios que exigem New Game."
         ],
-        "warning": "Granadas, ovos, armas especiais e outros recursos podem invalidar Minimalist se usados fora das exceções permitidas.",
-        "result": "Minimalist e Silent Stranger concluídos ou encaminhados sem precisar repetir a campanha inteira."
+        "warning": "Mission Accomplished S+ e S+ Rank Investigator exigem New Game; não use New Game+ nesses requisitos.",
+        "result": "Recursos, desbloqueios e objetivos de tempo/dificuldade encaminhados para reduzir a dificuldade das próximas runs."
       },
       {
-        "title": "Etapa 4",
-        "focus": "Libere armas especiais e Professional A",
-        "category": "Desbloqueios",
-        "objective": "Obter os desbloqueios importantes para a platina, incluindo Chicago Sweeper e Handcannon, sem tratar DLC paga como requisito.",
+        "title": "Runs de restrição: Minimalist, Frugalist e Silent Stranger",
+        "focus": "Desafios",
+        "objective": "Cumprir troféus de restrição sem atrapalhar as runs de rank mais exigentes.",
         "actions": [
-          "Complete Professional com rank A para liberar Chicago Sweeper.",
-          "Use Infinite Rocket Launcher em New Game+ se estiver seguindo a rota mais segura.",
-          "Considere Mercenaries como rota opcional para Handcannon, se o guia adotar essa estratégia.",
-          "Se não usar Mercenaries, documente a alternativa de Professional New Game sem armas especiais.",
-          "Atualize o progresso de Gun Fanatic conforme todas as armas forem obtidas."
+          "Planeje uma run específica para Minimalist usando apenas facas e pistolas, respeitando as exceções do jogo.",
+          "Planeje Frugalist sem usar itens de cura.",
+          "Planeje Silent Stranger sem falar com o Merchant.",
+          "Combine restrições somente se fizer sentido e se você estiver confortável.",
+          "Use dificuldade mais baixa quando o troféu permitir e cheque os contadores de desafio depois de cada capítulo."
         ],
-        "warning": "Tickets pagos de upgrade podem facilitar, mas nunca devem aparecer como necessários para a platina.",
-        "result": "Armas especiais e desbloqueios principais prontos para as runs S+ e cleanup."
+        "warning": "Não combine restrições demais se isso aumentar muito o risco de erro. É melhor separar runs do que perder horas por uma regra quebrada.",
+        "result": "Principais troféus de restrição concluídos ou separados em runs controladas."
       },
       {
-        "title": "Etapa 5",
-        "focus": "Busque Standard S+ e Hardcore S+",
-        "category": "Ranks",
-        "objective": "Completar as campanhas exigidas com S+ respeitando que S+ precisa ser feito em New Game, não em New Game+.",
+        "title": "Run de S+ e dificuldade alta em save novo",
+        "focus": "Rank",
+        "objective": "Cumprir os requisitos mais exigentes de rank e dificuldade com planejamento de rota, saves e tempo.",
         "actions": [
-          "Faça Standard S+ em New Game dentro do tempo exigido.",
-          "Faça Hardcore S+ em New Game dentro do tempo exigido.",
-          "Use Chicago Sweeper ou Handcannon com upgrade exclusivo quando a estratégia permitir.",
-          "Evite usar Continue após morrer; carregue o save pelo menu para não somar tempo indevido.",
-          "Tenha rotas simples para chefes, pedidos úteis do Mercador e trechos de alto risco."
+          "Faça Mission Accomplished S+ em Standard usando New Game.",
+          "Faça S+ Rank Investigator em Hardcore usando New Game.",
+          "Planeje rota curta, upgrades prioritários e pontos de save antes de começar.",
+          "Evite gastar tempo com coletáveis já concluídos em runs anteriores.",
+          "Use desbloqueios permitidos pela regra do troféu, sem violar requisitos."
         ],
-        "warning": "Hardcore S+ não substitui automaticamente Standard S+; valide no guia porque a lista exige troféus separados.",
-        "result": "Troféus de rank S+ concluídos e recursos úteis liberados para a limpeza final."
+        "warning": "S+ exige campanha nova e controle de tempo. A lista traz Standard S+ e Hardcore S+ separados; confirme no seu save se ambos foram desbloqueados antes de encerrar a etapa.",
+        "result": "Troféus de rank/dificuldade mais críticos concluídos."
       },
       {
-        "title": "Etapa 6",
-        "focus": "Feche Frugalist e cleanup da platina",
-        "category": "Cleanup",
-        "objective": "Resolver troféus restantes de cura, estande de tiro, armas, tesouros, pedidos ou ações específicas de capítulo.",
+        "title": "Revisão final da platina base",
+        "focus": "Cleanup final",
+        "objective": "Conferir todos os troféus restantes da lista base antes de encerrar a platina.",
         "actions": [
-          "Faça uma run sem usar itens de cura para Frugalist, preferencialmente com recursos de New Game+.",
-          "Complete os desafios necessários da galeria de tiro.",
-          "Revise Bandit, Raider, Burglar, Jack of All Trades, Revolution Wind-up e Gun Fanatic.",
-          "Cheque troféus de capítulo como Verdugo, carrinhos, torre do relógio, jet ski, Salazar e Regenerador.",
-          "Confirme que o guia da platina base não inclui Separate Ways, VR ou DLC paga."
+          "Revise checklist de armas, Merchant Requests, Clockwork Castellans, Shooting Range e troféus situacionais.",
+          "Confirme se todos os troféus de dificuldade, rank e restrição foram concluídos.",
+          "Verifique se nenhum troféu de Separate Ways, The Mercenaries ou DLC foi misturado à platina base.",
+          "Finalize qualquer pendência curta em save específico ou campanha separada.",
+          "Confirme a distribuição final de 40 troféus da lista base antes de encerrar o guia."
         ],
         "warning": "A platina não é perdível, mas muitos troféus exigem nova campanha se forem ignorados no momento certo.",
         "result": "Pendências finais resolvidas e todos os requisitos da platina base concluídos."
