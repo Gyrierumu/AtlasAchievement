@@ -524,6 +524,7 @@ function renderTrophyCardHtml(trophy, completedIds = new Set(), index = 0, game 
   const tip = trophy.tip || '';
   const officialName = trophy.trophyNameOriginal || trophy.name || 'Troféu';
   const editorialName = getTrophyEditorialName(trophy);
+  const primaryName = editorialName || officialName;
   const riskTags = getGuideTrophyTags(trophy, game);
   const displayRiskTags = typeof sharedGuideViewModel.getGuideTrophyDisplayTags === 'function'
     ? sharedGuideViewModel.getGuideTrophyDisplayTags(trophy, game, 4)
@@ -538,7 +539,7 @@ function renderTrophyCardHtml(trophy, completedIds = new Set(), index = 0, game 
     ? `<button type="button" class="atlas-btn atlas-btn-secondary atlas-btn-compact atlas-trophy-details-toggle" data-trophy-details-toggle="true" aria-expanded="false" aria-controls="${escapeHtml(detailsId)}"><span data-details-label>Ver detalhes</span><i class="fas fa-chevron-down" aria-hidden="true"></i></button>`
     : '';
   const toggleLabel = done ? 'Desmarcar' : 'Concluir';
-  const toggleAria = `${toggleLabel} ${officialName}`;
+  const toggleAria = `${toggleLabel} ${primaryName}`;
 
   return `
     <article class="trophy-card atlas-trophy-card atlas-panel atlas-panel--quiet ${done ? 'completed' : ''} ${hasDetailsToggle ? 'has-details-toggle' : ''}" data-trophy-id="${escapeHtml(trophy.id || '')}" data-type="${escapeHtml(trophy.type || 'Bronze')}" data-risks="${escapeHtml(riskTokens)}" data-status="${done ? 'completed' : 'pending'}" data-search="${escapeHtml(search)}">
@@ -546,8 +547,8 @@ function renderTrophyCardHtml(trophy, completedIds = new Set(), index = 0, game 
         <div class="atlas-trophy-card__main">
           <div class="atlas-trophy-card__headline">
             <div class="atlas-trophy-card__title">
-              <h4>${escapeHtml(officialName)}</h4>
-              ${editorialName ? `<p class="atlas-trophy-card__title-translation"><span>PT-BR</span>${escapeHtml(editorialName)}</p>` : ''}
+              <h4>${escapeHtml(primaryName)}</h4>
+              ${editorialName ? `<p class="atlas-trophy-card__title-translation"><span>Nome original:</span>${escapeHtml(officialName)}</p>` : ''}
             </div>
             <div class="atlas-trophy-card__meta">
               <span class="atlas-trophy-type">${escapeHtml(trophy.type || 'Bronze')}</span>
@@ -1206,7 +1207,7 @@ function renderGuideRoadmapTimelineHtml(roadmapStages = []) {
         const actions = Array.isArray(stage.actions) && stage.actions.length
           ? stage.actions.slice(0, 5)
           : splitGuideRoadmapActions(stage.description || stage.objective).slice(0, 3);
-        const focusLabel = stage.focus || category.label || 'Plano';
+        const focusLabel = stage.focus || (!stage.isStructured ? category.label : '');
         const primaryText = stage.objective || stage.description;
         const showObjectiveMeta = !stage.isStructured && stage.objective && String(stage.objective).trim() !== String(primaryText || '').trim();
         const metaItems = stage.isStructured
@@ -1226,10 +1227,10 @@ function renderGuideRoadmapTimelineHtml(roadmapStages = []) {
           <article class="atlas-roadmap-step__body">
             <div class="atlas-roadmap-step__head">
               <div>
-                <span>${stage.isStructured ? `Etapa ${escapeHtml(String(stage.number))}` : (Number(stage.number) === 1 ? 'Comece aqui' : `Passo ${escapeHtml(String(stage.number))}`)}</span>
+                <span>Etapa ${escapeHtml(String(stage.number))}</span>
                 <h3>${escapeHtml(stage.title)}</h3>
               </div>
-              <span class="atlas-roadmap-step__category atlas-roadmap-step__category--${escapeHtml(category.id || 'plan')}"><i class="fas ${escapeHtml(category.icon || 'fa-route')}" aria-hidden="true"></i>${escapeHtml(focusLabel)}</span>
+              ${focusLabel ? `<span class="atlas-roadmap-step__category atlas-roadmap-step__category--${escapeHtml(category.id || 'plan')}"><i class="fas ${escapeHtml(category.icon || 'fa-route')}" aria-hidden="true"></i>${escapeHtml(focusLabel)}</span>` : ''}
             </div>
             <p>${escapeHtml(primaryText)}</p>
             ${actions.length ? `<ul class="atlas-roadmap-step__actions">${actions.map(action => `<li>${escapeHtml(action)}</li>`).join('')}</ul>` : ''}
@@ -1965,10 +1966,10 @@ function renderCatalogEmptyState(facetConfig, facetCounts = {}) {
 
 function getCatalogCardImageSource(game = {}, model = {}) {
   const candidates = [
-    game?.image,
-    model?.bannerImage,
     game?.cover_image,
     model?.coverImage,
+    game?.image,
+    model?.bannerImage,
     model?.image
   ];
   return candidates

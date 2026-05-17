@@ -12577,10 +12577,25 @@ function assertPriorityGuideEditorialTrust() {
     assert(guideModel.buildGuideViewModel(game, []).beforeStartItems.length <= 5, `${slug} deve mostrar no maximo 5 alertas antes de comecar`);
   });
 
+  const localizedNameAllowedSlugs = new Set([
+    ...Object.keys(expectedCounts),
+    'resident-evil-4-remake',
+    'saros'
+  ]);
   const translatedOutsidePilot = sampleGames
-    .filter(game => !Object.keys(expectedCounts).includes(game.slug))
+    .filter(game => !localizedNameAllowedSlugs.has(game.slug))
     .flatMap(game => game.trophies.filter(trophy => trophy.name_pt));
   assert.strictEqual(translatedOutsidePilot.length, 0, 'somente os guias piloto devem receber name_pt nesta fase');
+
+  const saros = bySlug.get('saros');
+  assert(saros, 'sampleGames deve incluir Saros');
+  assert.strictEqual(saros.image, '/assets/games/saros/hero.png', 'Saros deve usar hero local dedicado');
+  assert.strictEqual(saros.cover_image, '/assets/games/saros/cover.png', 'Saros deve usar capa local dedicada');
+  assert.strictEqual(saros.trophies.length, 45, 'Saros deve manter 45 trofeus');
+  assert.deepStrictEqual(countTypes(saros), { Platina: 1, Ouro: 2, Prata: 16, Bronze: 26 }, 'Saros deve manter distribuicao 1/2/16/26');
+  assert.strictEqual(saros.trophies.filter(trophy => trophy.name_pt && trophy.name_pt.trim()).length, 45, 'Saros deve preencher name_pt dos 45 trofeus localizados');
+  assert.strictEqual(new Set(saros.trophies.map(trophy => trophy.id)).size, saros.trophies.length, 'Saros nao pode duplicar trophy_code');
+  assert(saros.trophies.every(trophy => /^[A-Za-z0-9_:-]{1,60}$/.test(trophy.id)), 'Saros deve usar ids internos seguros');
 
   ['hollow-knight', 'it-takes-two', 'a-way-out', 'little-nightmares-ii'].forEach(slug => {
     const generatedRoadmap = roadmapTitles(bySlug.get(slug));
@@ -12718,6 +12733,96 @@ function assertSyntax(relDir) {
   }
 }
 
+function assertRoadmapStructuredRendering() {
+  const sampleGames = require(path.join(ROOT, 'src/data/sampleGames'));
+  const guideModel = require(path.join(ROOT, 'src/shared/guideViewModel'));
+  const normalizeTitle = value => String(value || '').normalize('NFD').replace(/[\u0300-\u036f]/g, '').toLowerCase();
+  const expectedTitles = {
+    'nioh-2': [
+      'Aprenda o combate e avance a campanha',
+      'Complete missões principais e secundárias da lista base',
+      'Limpe Kodama, Hot Springs e pendências por região',
+      'Trabalhe proficiência, armas e habilidades',
+      'Finalize Yokai, Soul Cores e troféus situacionais',
+      'Cleanup final da platina base'
+    ],
+    'nioh-3': [
+      'Aprenda o combate e avance a campanha',
+      'Abra regiões, Guardian Spirits e Battle Scroll',
+      'Limpe Myths, missões e coletáveis por região',
+      'Resolva progressão, proficiência e sistemas de ferraria',
+      'Feche bosses opcionais e troféus situacionais',
+      'Faça o cleanup final da lista base'
+    ],
+    'astro-bot': [
+      'Jogue a campanha explorando com calma',
+      'Revise fases principais em busca de bots e puzzle pieces',
+      'Encontre fases secretas e caminhos alternativos',
+      'Complete desafios e fases especiais',
+      'Organize o Crash Site e conteúdos desbloqueados',
+      'Cleanup final da platina'
+    ],
+    'ghost-of-tsushima': [
+      'Avance a história e libere recursos básicos',
+      'Liberte regiões e revele o mapa',
+      'Complete Tales e Mythic Tales',
+      'Limpe coletáveis e atividades de mundo aberto',
+      'Use o free roam para cleanup final',
+      'Revise a lista base e feche Living Legend'
+    ],
+    'hades-ii': [
+      'Aprenda as runs e estabilize a Crossroads',
+      'Evolua Arcana, Incantations e recursos essenciais',
+      'Avance rotas, Guardians e história principal',
+      'Trabalhe armas, aspectos, Keepsakes e relacionamentos',
+      'Complete desafios, rotas avançadas e objetivos longos',
+      'Faça o cleanup final da platina'
+    ],
+    'resident-evil-4-remake': [
+      'Primeira campanha com coletáveis e aprendizado',
+      'Cleanup de coletáveis, requests e troféus situacionais',
+      'Run rápida em NG+ para recursos e rank',
+      'Runs de restrição: Minimalist, Frugalist e Silent Stranger',
+      'Run de S+ / dificuldade alta em save novo',
+      'Revisão final da platina base'
+    ]
+  };
+
+  const fixtureSteps = [
+    'title: Rota segura | focus: Campanha | objective: Avance sem limpar tudo | actions: Fazer A; Fazer B | warning: Cuidado | result: Rota aberta',
+    { title: 'Etapa 2 — Título real', focus: 'Foco', objective: 'Objetivo real', actions: ['Ação 1', { text: 'Ação 2' }], warning: { text: 'Aviso' }, result: { text: 'Resultado' } },
+    { plan: { objective: 'Objetivo vindo do plan', actions: ['Planejar', 'Executar'], result: 'Plan pronto' } },
+    { title: { text: 'Título aninhado' }, objective: { text: 'Objetivo aninhado' }, actions: { items: [{ text: 'Ação aninhada' }] } },
+    { title: '', objective: '', actions: {} },
+    'Etapa simples; ação opcional'
+  ];
+  fixtureSteps.forEach((step, index) => {
+    const normalized = guideModel.normalizeRoadmapStep(step, index, fixtureSteps.length);
+    const serialized = JSON.stringify(normalized);
+    assert(!serialized.includes('[object Object]'), 'normalizeRoadmapStep nunca deve retornar objeto cru serializado');
+    ['title', 'focus', 'objective', 'warning', 'result'].forEach(field => {
+      assert.strictEqual(typeof normalized[field], 'string', `normalizeRoadmapStep deve retornar ${field} como string`);
+      assert(!normalized[field].includes('[object Object]'), `${field} nao pode conter [object Object]`);
+    });
+    assert(Array.isArray(normalized.actions), 'normalizeRoadmapStep deve retornar actions como array');
+    assert(normalized.actions.every(action => typeof action === 'string' && action && !action.includes('[object Object]')), 'actions deve conter apenas strings uteis');
+  });
+
+  Object.entries(expectedTitles).forEach(([slug, titles]) => {
+    const game = sampleGames.find(item => item.slug === slug);
+    assert(game, `${slug} deve existir para validar roadmap estruturado`);
+    const viewModel = guideModel.buildGuideViewModel(game, []);
+    const serialized = JSON.stringify(viewModel.roadmapStages);
+    assert(!/\[object Object\]|\btitle:|\bfocus:|\bobjective:|\bactions:|\bwarning:|\bresult:|\s\|\s/.test(serialized), `${slug} nao deve renderizar roadmap serializado`);
+    assert.strictEqual(viewModel.roadmapStages.length, titles.length, `${slug} deve manter quantidade esperada de etapas`);
+    titles.forEach((title, index) => {
+      assert.strictEqual(normalizeTitle(viewModel.roadmapStages[index]?.title), normalizeTitle(title), `${slug} deve manter titulo especifico da etapa ${index + 1}`);
+      assert(!/^(comece aqui|passo \d+|planeje a proxima run)$/i.test(normalizeTitle(viewModel.roadmapStages[index]?.title)), `${slug} nao deve usar titulo generico na etapa ${index + 1}`);
+      assert(viewModel.roadmapStages[index].actions.length > 0, `${slug} deve manter actions em bullets na etapa ${index + 1}`);
+    });
+  });
+}
+
 async function main() {
   assertHtmlLoadsModules('public/index.html');
   assertHtmlLoadsModules('public/admin.html');
@@ -12772,6 +12877,7 @@ async function main() {
   assertLote4NarrativeGuideRoadmaps();
   assertFinalQaPriorityBlockerFixes();
   assertPriorityGuideEditorialTrust();
+  assertRoadmapStructuredRendering();
   await assertBackendEditorialConsistency();
   console.log('Regression smoke tests passed.');
   process.exit(0);

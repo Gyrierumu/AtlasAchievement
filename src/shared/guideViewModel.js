@@ -1191,13 +1191,54 @@
     return steps.map((step, index) => normalizeRoadmapStep(step, index, steps.length));
   }
 
-  function normalizeRoadmapActions(value = '') {
-    if (Array.isArray(value)) {
-      return value.map(item => String(item || '').trim().replace(/^[-•]\s*/, '')).filter(Boolean);
-    }
+  function isRoadmapPlainObject(value) {
+    return Boolean(value && typeof value === 'object' && !Array.isArray(value));
+  }
+
+  function stripRoadmapStepPrefix(value = '') {
     return String(value || '')
-      .split(/\s*;\s*/)
-      .map(item => item.trim().replace(/^[-•]\s*/, ''))
+      .replace(/^\s*(?:Etapa|Passo)\s+\d+\s*(?:[-:.\u2013\u2014\uFFFD]\s*)?/i, '')
+      .trim();
+  }
+
+  function safeRoadmapText(value = '', seen = new WeakSet()) {
+    if (value === null || value === undefined) return '';
+    if (typeof value === 'string') {
+      const text = value.replace(/\s+/g, ' ').trim();
+      return text === '[object Object]' ? '' : text;
+    }
+    if (typeof value === 'number' || typeof value === 'boolean') return String(value).trim();
+    if (Array.isArray(value)) return value.map(item => safeRoadmapText(item, seen)).filter(Boolean).join('; ');
+    if (!isRoadmapPlainObject(value) || seen.has(value)) return '';
+    seen.add(value);
+    const directKeys = ['text', 'label', 'title', 'objective', 'summary', 'description', 'detail', 'goal', 'name', 'value'];
+    for (const key of directKeys) {
+      const text = safeRoadmapText(value[key], seen);
+      if (text) return text;
+    }
+    return Object.values(value).map(item => safeRoadmapText(item, seen)).filter(Boolean).join('; ');
+  }
+
+  function isMeaningfullyDifferentRoadmapText(value = '', compareTo = '') {
+    const left = normalizeGuideSignalText(value);
+    const right = normalizeGuideSignalText(compareTo);
+    return Boolean(left && right && left !== right && !right.includes(left) && !left.includes(right));
+  }
+
+  function normalizeRoadmapActions(value = '') {
+    if (isRoadmapPlainObject(value)) {
+      const nested = [value.actions, value.items, value.steps, value.checklist, value.goals]
+        .flatMap(item => normalizeRoadmapActions(item))
+        .filter(Boolean);
+      if (nested.length) return nested;
+      return Object.values(value).flatMap(item => normalizeRoadmapActions(item)).filter(Boolean);
+    }
+    if (Array.isArray(value)) {
+      return value.flatMap(item => normalizeRoadmapActions(item)).filter(Boolean);
+    }
+    return safeRoadmapText(value)
+      .split(/\s*(?:;|\n|â€¢|•)\s*/)
+      .map(item => cleanRoadmapFieldText(item).replace(/^[-â€¢•]\s*/, ''))
       .filter(Boolean);
   }
 
@@ -1213,21 +1254,23 @@
   }
 
   function cleanRoadmapFieldText(value = '') {
-    return String(value || '')
+    return safeRoadmapText(value)
       .replace(/\s*\|\s*/g, ' ')
       .replace(/^\s*(title|focus|objective|actions|warning|note|observation|observacao|result|plan|summary|description|goal|goals|checklist)\s*:\s*/i, '')
+      .replace(/^\s*\[object Object\]\s*$/i, '')
       .replace(/\s+/g, ' ')
       .trim();
   }
 
   function isSerializedRoadmapText(value = '') {
-    const text = String(value || '');
+    const text = safeRoadmapText(value);
     return /\b(title|focus|objective|actions|warning|note|observation|observacao|result)\s*:/i.test(text)
       && (/\s\|\s/.test(text) || /\bobjective\s*:/i.test(text) || /\bactions\s*:/i.test(text));
   }
 
   function findStructuredRoadmapPayload(source = {}) {
-    if (!source || typeof source !== 'object' || Array.isArray(source)) return null;
+    if (!isRoadmapPlainObject(source)) return null;
+    if (source.title || source.focus || source.objective || source.actions || source.warning || source.result) return source;
     const candidates = [
       source.serialized,
       source.plan,
@@ -1240,6 +1283,11 @@
       source.checklist
     ];
     for (const candidate of candidates) {
+      if (isRoadmapPlainObject(candidate)) {
+        const nested = findStructuredRoadmapPayload(candidate);
+        if (nested) return nested;
+        continue;
+      }
       if (typeof candidate !== 'string' || !isSerializedRoadmapText(candidate)) continue;
       const jsonStep = parseJsonRoadmapStep(candidate);
       if (jsonStep) return findStructuredRoadmapPayload(jsonStep) || jsonStep;
@@ -1250,11 +1298,15 @@
   }
 
   function pickRoadmapText(...values) {
-    return values
-      .map(value => String(value || '').trim())
+    const unique = [];
+    values
+      .map(value => safeRoadmapText(value))
       .filter(value => value && !isSerializedRoadmapText(value))
       .map(cleanRoadmapFieldText)
-      .find(Boolean) || '';
+      .forEach(value => {
+        if (value && !unique.some(existing => !isMeaningfullyDifferentRoadmapText(value, existing))) unique.push(value);
+      });
+    return unique.find(Boolean) || '';
   }
 
   function normalizeRoadmapStep(step = {}, index = 0, total = 1) {
@@ -1262,15 +1314,15 @@
     const source = jsonStep || step;
     const raw = typeof source === 'string'
       ? source
-      : (source?.description || source?.detail || source?.objective || source?.plan || source?.summary || source?.goal || source?.title || source?.name || 'Etapa');
-    const isObject = source && typeof source === 'object' && !Array.isArray(source);
+      : safeRoadmapText(source?.description || source?.detail || source?.objective || source?.plan || source?.summary || source?.goal || source?.title || source?.name || '');
+    const isObject = isRoadmapPlainObject(source);
     const structured = typeof source === 'string'
       ? parseStructuredRoadmapStep(raw)
       : findStructuredRoadmapPayload(source);
     const relatedTrophies = isObject
       ? (Array.isArray(source?.trophies) ? source.trophies : (Array.isArray(source?.relatedTrophies) ? source.relatedTrophies : []))
       : [];
-    const title = cleanRoadmapFieldText(structured?.title || (isObject ? (source.title || source.name || source.label) : '') || '');
+    const title = stripRoadmapStepPrefix(cleanRoadmapFieldText(structured?.title || (isObject ? (source.title || source.name || source.label) : '') || ''));
     const rawFocus = cleanRoadmapFieldText(structured?.focus || (isObject ? (source.focus || source.tag || source.category) : '') || '');
     const titleIsStepLabel = /^Etapa\s+\d+$/i.test(title);
     const explicitCategory = cleanRoadmapFieldText(isObject ? (source.category || source.type || source.phase || (titleIsStepLabel ? source.tag : '')) : '');
@@ -1292,32 +1344,32 @@
     const note = cleanRoadmapFieldText(structured?.note || (isObject ? (source.note || source.observation || source.observacao) : '') || '');
     const result = cleanRoadmapFieldText(structured?.result || (isObject ? source.result : '') || '');
     const risk = cleanRoadmapFieldText(warning || (isObject ? source.risk : '') || '');
-    const clean = cleanRoadmapFieldText(objective || (isSerializedRoadmapText(raw) ? structured?.objective : raw) || 'Etapa').replace(/^Etapa\s+\d+\s*[:.-]\s*/i, '');
-    const explicitTitle = displayTitle || (titleIsStepLabel ? '' : (isObject ? (source.title || source.name || source.label) : ''));
+    const clean = stripRoadmapStepPrefix(cleanRoadmapFieldText(objective || (isSerializedRoadmapText(raw) ? structured?.objective : raw) || ''));
+    const explicitTitle = displayTitle || (titleIsStepLabel ? '' : cleanRoadmapFieldText(isObject ? (source.title || source.name || source.label) : ''));
     const signalText = [displayTitle, focus, explicitCategory, clean, ...actions, warning, note].filter(Boolean).join(' ');
     const inferredCategory = classifyRoadmapStage(signalText || clean);
     const category = explicitCategory ? { ...inferredCategory, label: explicitCategory } : inferredCategory;
-    const inferredTitle = displayTitle || inferRoadmapStageTitle(clean, index, total, explicitTitle);
+    const inferredTitle = stripRoadmapStepPrefix(displayTitle || inferRoadmapStageTitle(clean, index, total, explicitTitle));
     const isStructured = Boolean(structured || jsonStep || (isObject && (title || focus || objective || actions.length || warning || result)));
     return {
       number: index + 1,
-      title: inferredTitle,
+      title: inferredTitle || `Etapa ${index + 1}`,
       category,
-      description: clean,
-      objective: clean,
+      description: clean || inferredTitle || `Etapa ${index + 1}`,
+      objective: clean || inferredTitle || `Etapa ${index + 1}`,
       focus,
       actions,
       warning,
       note,
       result,
       risk,
-      relatedTrophies: relatedTrophies.map(item => String(item || '').trim()).filter(Boolean),
+      relatedTrophies: relatedTrophies.map(item => safeRoadmapText(item)).filter(Boolean),
       isStructured
     };
   }
 
   function parseStructuredRoadmapStep(value = '') {
-    const text = String(value || '').trim();
+    const text = safeRoadmapText(value);
     if (!/title\s*:/i.test(text) || !/objective\s*:/i.test(text)) return null;
 
     const fields = {};
