@@ -86,6 +86,18 @@ function normalizeQualityWarnings(value) {
     .slice(0, 12);
 }
 
+function normalizeRoadmapStepPayload(step) {
+  if (typeof step === 'string') return sanitizeString(step, 2000);
+  if (step && typeof step === 'object' && !Array.isArray(step)) {
+    try {
+      return JSON.stringify(step);
+    } catch (_error) {
+      return '';
+    }
+  }
+  return sanitizeString(step, 2000);
+}
+
 function normalizeReviewedDate(value) {
   const text = sanitizeString(value, 20);
   return /^\d{4}-\d{2}-\d{2}$/.test(text) ? text : '';
@@ -117,9 +129,27 @@ function isSafeUploadPath(value) {
   return normalizedPath.split('/').every(segment => segment && segment !== '.' && segment !== '..');
 }
 
+function isSafePublicAssetPath(value) {
+  const trimmed = typeof value === 'string' ? value.trim() : '';
+  if (!trimmed.startsWith('/assets/') || trimmed.includes('\\')) return false;
+  if (!/\.(?:jpe?g|png|webp|svg)(?:[?#].*)?$/i.test(trimmed)) return false;
+
+  const relativePath = trimmed.slice('/assets/'.length).split(/[?#]/)[0];
+  if (!relativePath || relativePath.startsWith('/') || path.isAbsolute(relativePath) || /^[a-z]:/i.test(relativePath)) {
+    return false;
+  }
+
+  const normalizedPath = path.posix.normalize(relativePath);
+  if (normalizedPath !== relativePath || normalizedPath === '.' || normalizedPath.startsWith('../')) {
+    return false;
+  }
+
+  return normalizedPath.split('/').every(segment => segment && segment !== '.' && segment !== '..');
+}
+
 function isSafeImagePath(value) {
   const trimmed = typeof value === 'string' ? value.trim() : '';
-  return /^https?:\/\//i.test(trimmed) || isSafeUploadPath(trimmed);
+  return /^https?:\/\//i.test(trimmed) || isSafeUploadPath(trimmed) || isSafePublicAssetPath(trimmed);
 }
 
 function normalizeGamePayload(payload = {}) {
@@ -174,7 +204,7 @@ function normalizeGamePayload(payload = {}) {
     image: typeof payload.image === 'string' ? payload.image.trim() || null : null,
     cover_image: typeof payload.cover_image === 'string' ? payload.cover_image.trim() || null : null,
     roadmap: Array.isArray(payload.roadmap)
-      ? payload.roadmap.map(step => sanitizeString(step, 500)).filter(Boolean)
+      ? payload.roadmap.map(normalizeRoadmapStepPayload).filter(Boolean)
       : [],
     trophies: Array.isArray(payload.trophies)
       ? payload.trophies.map(trophy => ({
@@ -285,13 +315,13 @@ function validateGamePayload(payload) {
   if (payload.image !== null && typeof payload.image !== 'string') {
     errors.push('image deve ser uma string quando informada.');
   } else if (payload.image && !isSafeImagePath(payload.image)) {
-    errors.push('image deve ser uma URL http(s) válida ou um caminho interno de upload.');
+    errors.push('image deve ser uma URL http(s) valida, um caminho interno de upload ou um asset publico interno.');
   }
 
   if (payload.cover_image !== null && typeof payload.cover_image !== 'string') {
     errors.push('cover_image deve ser uma string quando informada.');
   } else if (payload.cover_image && !isSafeImagePath(payload.cover_image)) {
-    errors.push('cover_image deve ser uma URL http(s) válida ou um caminho interno de upload.');
+    errors.push('cover_image deve ser uma URL http(s) valida, um caminho interno de upload ou um asset publico interno.');
   }
 
   return {

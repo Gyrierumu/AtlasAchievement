@@ -12724,6 +12724,63 @@ function assertReleaseCheckModule() {
   }
 }
 
+function assertGameImageValidationAcceptsPublicAssets() {
+  const { normalizeGamePayload, validateGamePayload } = require(path.join(ROOT, 'src/validators/game.validator'));
+  const buildPayload = (image, coverImage) => ({
+    name: 'Imagem Teste',
+    difficulty: 3,
+    time: '10h',
+    missable: 'Sem perdiveis.',
+    editorial_status: 'published',
+    roadmap: ['Comece pela campanha.'],
+    trophies: [{
+      id: 'image-test-platinum',
+      name: 'Platinum',
+      type: 'Platina',
+      description: 'Obtenha todos os trofeus.',
+      tip: 'Complete a lista.',
+      is_missable: false,
+      is_spoiler: false
+    }],
+    image,
+    cover_image: coverImage
+  });
+  const buildStructuredRoadmapPayload = (image, coverImage) => ({
+    ...buildPayload(image, coverImage),
+    roadmap: [{
+      title: 'Etapa estruturada',
+      focus: 'Campanha',
+      objective: 'Avancar sem perder contexto.',
+      actions: ['Fazer A', 'Fazer B'],
+      result: 'Roadmap preservado.'
+    }]
+  });
+
+  [
+    ['/assets/games/saros/hero.png', '/assets/games/saros/cover.png'],
+    ['/assets/games/pragmata/hero.jpg', '/assets/games/pragmata/cover.webp'],
+    ['/uploads/games/example/hero.jpg', '/uploads/games/example/cover.png'],
+    ['https://example.com/hero.jpg', 'https://example.com/cover.webp']
+  ].forEach(([image, coverImage]) => {
+    const result = validateGamePayload(buildPayload(image, coverImage));
+    assert.strictEqual(result.errors.filter(error => /^image |^cover_image /.test(error)).length, 0, `${image} e ${coverImage} devem passar no validador de imagem`);
+  });
+
+  const structuredPayload = validateGamePayload(normalizeGamePayload(buildStructuredRoadmapPayload('/assets/games/saros/hero.png', '/assets/games/saros/cover.png')));
+  assert.strictEqual(structuredPayload.errors.filter(error => /^image |^cover_image |^roadmap /.test(error)).length, 0, 'payload com asset interno e roadmap estruturado deve passar na validacao de imagem/roadmap');
+
+  [
+    ['assets/games/saros/hero.png', '/assets/games/saros/cover.png'],
+    ['/assets/../secrets/cover.png', '/assets/games/saros/cover.png'],
+    ['file:///tmp/cover.png', '/assets/games/saros/cover.png'],
+    ['javascript:alert(1)', '/assets/games/saros/cover.png'],
+    ['C:\\temp\\cover.png', '/assets/games/saros/cover.png']
+  ].forEach(([image, coverImage]) => {
+    const result = validateGamePayload(buildPayload(image, coverImage));
+    assert(result.errors.some(error => error.startsWith('image deve ser')), `${image} deve falhar no validador de imagem`);
+  });
+}
+
 function assertSyntax(relDir) {
   const dir = path.join(ROOT, relDir);
   for (const entry of fs.readdirSync(dir)) {
@@ -12869,6 +12926,7 @@ async function main() {
   assertFileContains('src/db/migrate.js', 'clair-obscur-expedition-33');
   assertSyntax('public/js');
   assertReleaseCheckModule();
+  assertGameImageValidationAcceptsPublicAssets();
   assertClairObscurSampleData();
   assertLote1ACriticalEditorialData();
   assertLote1BNetworkClassification();
