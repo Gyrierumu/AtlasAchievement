@@ -282,16 +282,26 @@ window.UIGuide = (() => {
       || /\b(os|as|um|uma|todos|todas|com|em|de|do|da|dos|das|ao|aos|seu|sua|trofeus|troféus|conquistas|inimigos|areas|áreas|santuarios|santuários|farois|faróis|colete|obtenha|liberte|derrote|mate|conclua|aprenda|equipe|descubra|compre|personalize|reacenda|honre)\b/i.test(text);
   }
 
+  function cleanTrophyDescriptionCandidate(value) {
+    if (value && typeof value === 'object') return '';
+    const text = String(value ?? '').trim().replace(/\s+/g, ' ');
+    if (!text) return '';
+    if (/^(undefined|null|\[object Object\])$/i.test(text)) return '';
+    const normalized = text.normalize('NFD').replace(/[\u0300-\u036f]/g, '').toLowerCase();
+    if (/^descricao em revisao editorial\.\s*[.;]*\s*(?:undefined|null)?$/.test(normalized)) return '';
+    return text.replace(/\s+([.;,!?])/g, '$1');
+  }
+
   function getTrophyDisplayDescription(trophy = {}, game = {}) {
     const localizedDescription = [
       trophy.descriptionPtBr,
       trophy.ptDescription,
       trophy.localizedDescription?.ptBr,
       trophy.localizedDescription?.['pt-BR']
-    ].map(value => String(value || '').trim()).find(Boolean) || '';
+    ].map(cleanTrophyDescriptionCandidate).find(Boolean) || '';
     if (localizedDescription) return localizedDescription;
 
-    const description = String(trophy.description || '').trim();
+    const description = cleanTrophyDescriptionCandidate(trophy.description);
     if (description && looksLikePortugueseTrophyDescription(description) && !looksLikeEnglishTrophyDescription(description)) return description;
     if (description && looksLikePortugueseTrophyDescription(description)) return description;
     return 'Descrição em revisão editorial.';
@@ -689,7 +699,7 @@ window.UIGuide = (() => {
   function renderGuideEditorialNotes(game = {}, viewModel = {}) {
     const routeTrophies = Array.isArray(viewModel.routeChangingTrophies) ? viewModel.routeChangingTrophies.slice(0, 4) : [];
     const normalizedSlug = String(game?.slug || '').trim().toLowerCase();
-    const faqLimit = normalizedSlug === 'nioh-3' ? 11 : (normalizedSlug === 'saros' ? 10 : 6);
+    const faqLimit = normalizedSlug === 'nioh-3' ? 11 : (['saros', 'the-last-of-us-part-i', 'subnautica'].includes(normalizedSlug) ? 10 : (normalizedSlug === 'the-last-of-us-part-ii' ? 11 : 6));
     const faqItems = Array.isArray(viewModel.contextualFaq) ? viewModel.contextualFaq.slice(0, faqLimit) : [];
     const playerFit = viewModel.playerFit || buildGuidePlayerFit(game, viewModel);
     const methodItems = Array.isArray(viewModel.editorial?.methodItems) ? viewModel.editorial.methodItems : [];

@@ -437,6 +437,15 @@ function buildGameSeoDescription(game = {}) {
   if (String(game?.slug || '').trim().toLowerCase() === 'saros') {
     return 'Guia de platina de Saros em português, com tempo estimado, dificuldade, troféus, roadmap, checklist, coletáveis, bosses e dicas para a platina.';
   }
+  if (String(game?.slug || '').trim().toLowerCase() === 'the-last-of-us-part-i') {
+    return 'Guia de platina de The Last of Us Part I em português, com tempo estimado, dificuldade, troféus, coletáveis, Left Behind, Chapter Select, roadmap e checklist.';
+  }
+  if (String(game?.slug || '').trim().toLowerCase() === 'the-last-of-us-part-ii') {
+    return 'Guia de platina de The Last of Us Part II em português, com tempo estimado, dificuldade, troféus, coletáveis, upgrades, Chapter Select, NG+ parcial, roadmap e checklist.';
+  }
+  if (String(game?.slug || '').trim().toLowerCase() === 'subnautica') {
+    return 'Guia de platina de Subnautica em português, com tempo estimado, dificuldade, troféus, exploração, veículos, base, história, roadmap e checklist.';
+  }
   const parts = [];
   const time = String(game?.time || '').trim();
   const difficulty = Number(game?.difficulty || 0);
@@ -503,16 +512,26 @@ function looksLikePortugueseTrophyDescription(value = '') {
     || /\b(os|as|um|uma|todos|todas|com|em|de|do|da|dos|das|ao|aos|seu|sua|trofeus|troféus|conquistas|inimigos|areas|áreas|santuarios|santuários|farois|faróis|colete|obtenha|liberte|derrote|mate|conclua|aprenda|equipe|descubra|compre|personalize|reacenda|honre)\b/i.test(text);
 }
 
+function cleanTrophyDescriptionCandidate(value) {
+  if (value && typeof value === 'object') return '';
+  const text = String(value ?? '').trim().replace(/\s+/g, ' ');
+  if (!text) return '';
+  if (/^(undefined|null|\[object Object\])$/i.test(text)) return '';
+  const normalized = text.normalize('NFD').replace(/[\u0300-\u036f]/g, '').toLowerCase();
+  if (/^descricao em revisao editorial\.\s*[.;]*\s*(?:undefined|null)?$/.test(normalized)) return '';
+  return text.replace(/\s+([.;,!?])/g, '$1');
+}
+
 function getTrophyDisplayDescription(trophy = {}, game = {}) {
   const localizedDescription = [
     trophy.descriptionPtBr,
     trophy.ptDescription,
     trophy.localizedDescription?.ptBr,
     trophy.localizedDescription?.['pt-BR']
-  ].map(value => String(value || '').trim()).find(Boolean) || '';
+  ].map(cleanTrophyDescriptionCandidate).find(Boolean) || '';
   if (localizedDescription) return localizedDescription;
 
-  const description = String(trophy.description || '').trim();
+  const description = cleanTrophyDescriptionCandidate(trophy.description);
   if (description && looksLikePortugueseTrophyDescription(description) && !looksLikeEnglishTrophyDescription(description)) return description;
   if (description && looksLikePortugueseTrophyDescription(description)) return description;
   return 'Descrição em revisão editorial.';
@@ -907,7 +926,7 @@ function buildGuideFaqStructuredData(canonicalUrl, viewModel) {
 function renderGuideEditorialNotesHtml(game = {}, viewModel = {}) {
   const routeTrophies = Array.isArray(viewModel.routeChangingTrophies) ? viewModel.routeChangingTrophies.slice(0, 4) : [];
   const normalizedSlug = String(game?.slug || '').trim().toLowerCase();
-  const faqLimit = normalizedSlug === 'nioh-3' ? 11 : (normalizedSlug === 'saros' ? 10 : 6);
+  const faqLimit = normalizedSlug === 'nioh-3' ? 11 : (['saros', 'the-last-of-us-part-i', 'subnautica'].includes(normalizedSlug) ? 10 : (normalizedSlug === 'the-last-of-us-part-ii' ? 11 : 6));
   const faqItems = Array.isArray(viewModel.contextualFaq) ? viewModel.contextualFaq.slice(0, faqLimit) : [];
   const playerFit = viewModel.playerFit || buildGuidePlayerFit(game, viewModel);
   const methodItems = Array.isArray(viewModel.editorial?.methodItems) ? viewModel.editorial.methodItems : [];
@@ -1601,7 +1620,7 @@ function prioritizeGuideViewHtml(html = '') {
 async function buildGamePageHtml(game, req) {
   const origin = getPublicOrigin(req);
   const normalizedSlug = String(game?.slug || '').trim().toLowerCase();
-  const canonicalUrl = ['nioh-2', 'nioh-3', 'saros'].includes(normalizedSlug)
+  const canonicalUrl = ['nioh-2', 'nioh-3', 'saros', 'the-last-of-us-part-i', 'the-last-of-us-part-ii', 'subnautica'].includes(normalizedSlug)
     ? `https://atlasachievement.com.br/jogo/${normalizedSlug}`
     : buildPublicUrl(req, `/jogo/${game.slug}`);
   const relatedResponse = await gamesService.listGames({ page: 1, limit: 80, sort: 'recommended-desc' });
@@ -1966,6 +1985,9 @@ function renderCatalogEmptyState(facetConfig, facetCounts = {}) {
 
 function getCatalogCardImageSource(game = {}, model = {}) {
   const candidates = [
+    game?.catalogImage,
+    game?.catalog_image,
+    game?.cardImage,
     game?.cover_image,
     model?.coverImage,
     game?.image,

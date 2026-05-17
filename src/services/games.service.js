@@ -4,11 +4,16 @@ const { removeManagedUpload, isManagedUpload } = require('./file.service');
 const { slugifyGameName, buildSlugVariant } = require('../utils/slug');
 const { formatTimeMetadata } = require('../utils/time');
 const editorialModel = require('../shared/editorialModel');
+const sampleGames = require('../data/sampleGames');
 
 const PUBLIC_EDITORIAL_STATUSES = new Set(['review', 'published']);
 const COVERAGE_LEVELS = new Set(['partial', 'strong', 'complete']);
 const VERIFICATION_STATUSES = new Set(['unverified', 'review', 'verified']);
 const EDITORIAL_REVIEW_STATUSES = new Set(Object.keys(editorialModel.EDITORIAL_TRUST_STATUSES || {}));
+const LOCALIZED_TROPHY_SOURCE_SLUGS = new Set(['astro-bot', 'astros-playroom', 'hades-ii', 'nioh-2', 'nioh-3', 'the-last-of-us-part-i', 'the-last-of-us-part-ii', 'subnautica']);
+const CATALOG_IMAGE_BY_SLUG = {
+  'the-last-of-us-part-ii': 'https://cdn.cloudflare.steamstatic.com/steam/apps/2531310/header.jpg'
+};
 const TROPHY_TYPE_ALIASES = {
   platinum: 'Platina',
   platina: 'Platina',
@@ -45,6 +50,14 @@ function normalizeGuideCleanupAdvice(row = {}) {
     return text.replace('seleção de capítulos tradicional', 'Chapter Select tradicional');
   }
   return text;
+}
+
+function getSeedTrophy(slug = '', trophyCode = '') {
+  const normalizedSlug = String(slug || '').trim().toLowerCase();
+  const code = String(trophyCode || '').trim();
+  if (!normalizedSlug || !code) return null;
+  const game = sampleGames.find(item => String(item?.slug || '').trim().toLowerCase() === normalizedSlug);
+  return (game?.trophies || []).find(trophy => trophy?.id === code) || null;
 }
 
 function inferCoverageLevelFromPayload(payload = {}) {
@@ -179,7 +192,21 @@ function normalizeGame(row, roadmapRows, trophyRows) {
       || /earn (?:every|all) other trophies|obtenha todos os trofeus|obtenha todos os outros trofeus/.test(description);
   };
   const normalizedSlug = String(row.slug || '').trim().toLowerCase();
-  const supportsLocalizedDescriptions = ['elden-ring', 'hades', 'pragmata', 'ghost-of-tsushima', 'nioh-3', 'saros'].includes(normalizedSlug);
+  const supportsLocalizedDescriptions = [
+    'elden-ring',
+    'hades',
+    'pragmata',
+    'ghost-of-tsushima',
+    'hades-ii',
+    'astro-bot',
+    'astros-playroom',
+    'nioh-2',
+    'nioh-3',
+    'saros',
+    'the-last-of-us-part-i',
+    'the-last-of-us-part-ii',
+    'subnautica'
+  ].includes(normalizedSlug);
   const missableCount = trophyRows.filter(item => item.is_missable && !isPlatinumTrophy(item)).length;
   const spoilerCount = trophyRows.filter(item => item.is_spoiler).length;
 
@@ -191,6 +218,7 @@ function normalizeGame(row, roadmapRows, trophyRows) {
     missable: row.missable,
     image: row.image,
     cover_image: row.cover_image || null,
+    catalogImage: CATALOG_IMAGE_BY_SLUG[normalizedSlug] || '',
     runs_summary: firstText(row.runs_summary, row.guide_runs),
     missable_summary: firstText(row.missable_summary, row.missable),
     online_summary: firstText(row.online_summary, row.guide_online),
@@ -218,25 +246,32 @@ function normalizeGame(row, roadmapRows, trophyRows) {
     is_verified: Boolean(row.is_verified),
     verification_note: row.verification_note || '',
     slug: row.slug || slugifyGameName(row.name),
-    chapterSelect: ['nioh-3', 'saros'].includes(normalizedSlug) ? false : undefined,
+    chapterSelect: ['the-last-of-us-part-i', 'the-last-of-us-part-ii'].includes(normalizedSlug) ? true : (['nioh-3', 'saros', 'subnautica'].includes(normalizedSlug) ? false : undefined),
     missionReplay: normalizedSlug === 'nioh-3' ? true : undefined,
-    onlineRequired: ['nioh-3', 'saros'].includes(normalizedSlug) ? false : undefined,
-    coopRequired: ['nioh-3', 'saros'].includes(normalizedSlug) ? false : undefined,
-    dlcRequired: ['nioh-3', 'saros'].includes(normalizedSlug) ? false : undefined,
+    openWorldCleanup: normalizedSlug === 'subnautica' ? true : undefined,
+    onlineRequired: ['astro-bot', 'astros-playroom', 'nioh-2', 'nioh-3', 'saros', 'the-last-of-us-part-i', 'the-last-of-us-part-ii', 'subnautica'].includes(normalizedSlug) ? false : undefined,
+    coopRequired: ['astro-bot', 'astros-playroom', 'nioh-2', 'nioh-3', 'saros', 'the-last-of-us-part-i', 'the-last-of-us-part-ii', 'subnautica'].includes(normalizedSlug) ? false : undefined,
+    dlcRequired: ['astro-bot', 'astros-playroom', 'nioh-2', 'nioh-3', 'saros', 'the-last-of-us-part-i', 'the-last-of-us-part-ii', 'subnautica'].includes(normalizedSlug) ? false : undefined,
+    newGamePlusRequired: normalizedSlug === 'the-last-of-us-part-ii' ? true : (normalizedSlug === 'the-last-of-us-part-i' ? false : undefined),
+    difficultyTrophiesRequired: ['the-last-of-us-part-i', 'the-last-of-us-part-ii'].includes(normalizedSlug) ? false : undefined,
     roadmap: roadmapRows.map(item => deserializeRoadmapStep(item.content)),
     trophies: trophyRows.map(item => {
       const description = item.description || '';
       const isMissable = Boolean(item.is_missable) && !isPlatinumTrophy(item);
+      const seedTrophy = LOCALIZED_TROPHY_SOURCE_SLUGS.has(normalizedSlug) ? getSeedTrophy(normalizedSlug, item.trophy_code) : null;
       return {
         id: item.trophy_code,
         name: item.name,
         name_pt: item.name_pt || '',
         trophyNameOriginal: item.name,
         trophyNamePtBr: item.name_pt || '',
+        namePtSource: item.name_pt && LOCALIZED_TROPHY_SOURCE_SLUGS.has(normalizedSlug) ? (seedTrophy?.namePtSource || 'trusted_steam_ptbr') : '',
         type: item.type,
         description,
+        descriptionOriginal: seedTrophy?.descriptionOriginal || '',
         descriptionPtBr: supportsLocalizedDescriptions ? description : '',
         ptDescription: supportsLocalizedDescriptions ? description : '',
+        descriptionPtSource: supportsLocalizedDescriptions && LOCALIZED_TROPHY_SOURCE_SLUGS.has(normalizedSlug) ? (seedTrophy?.descriptionPtSource || 'trusted_steam_ptbr') : '',
         tip: item.tip,
         is_missable: isMissable,
         is_spoiler: Boolean(item.is_spoiler)
@@ -391,6 +426,7 @@ function buildListFilters({ search = '', facet = 'all' } = {}) {
 }
 
 function normalizeListRow(row) {
+  const normalizedSlug = String(row.slug || '').trim().toLowerCase();
   return {
     ...row,
     trophy_count: Number(row.trophy_count || 0),
@@ -406,6 +442,7 @@ function normalizeListRow(row) {
     verification_note: row.verification_note || '',
     verification_status: normalizeVerificationStatus(row.verification_status, row),
     cover_image: row.cover_image || null,
+    catalogImage: CATALOG_IMAGE_BY_SLUG[normalizedSlug] || '',
     runs_summary: firstText(row.runs_summary, row.guide_runs),
     missable_summary: firstText(row.missable_summary, row.missable),
     online_summary: firstText(row.online_summary, row.guide_online),

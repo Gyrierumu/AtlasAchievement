@@ -2095,10 +2095,10 @@ const sampleGames = [
     "release_date": "2026-04-14",
     "guide_platform": "PS5",
     "difficulty": 7,
-    "time": "65-90 horas",
+    "time": "65-85 horas",
     "time_min_hours": 65,
-    "time_max_hours": 90,
-    "time_sort_hours": 90,
+    "time_max_hours": 85,
+    "time_sort_hours": 85,
     "time_bucket": "long",
     "trophy_count": 50,
     "trophy_distribution": { "Platina": 1, "Ouro": 2, "Prata": 11, "Bronze": 36 },
@@ -2565,9 +2565,9 @@ const sampleGames = [
     ]
   },
   {
-    "name": "Astro’s Playroom",
+    "name": "Astro's Playroom",
     "slug": "astros-playroom",
-    "title": "Astro’s Playroom",
+    "title": "Astro's Playroom",
     "primary_platform": "PS5",
     "platforms": ["PS5"],
     "developer": "Team Asobi / Japan Studio",
@@ -2613,7 +2613,7 @@ const sampleGames = [
     "missable_summary": "Não há perdíveis reais na lista base da platina; todo cleanup pode ser feito pela seleção de fases, CPU Plaza e PlayStation Labo.",
     "online_summary": "Sem online obrigatório: a platina base é single-player/offline e não exige servidores, PS+ ou multiplayer.",
     "grind_summary": "O peso está em coletáveis, moedas para Gatcha, interações específicas e desafios curtos, não em grind pesado.",
-    "dlc_scope": "Guia focado na lista base de 43 troféus da platina. Troféus extras/adicionais, incluindo Special Bots ligados a Astro Bot, ficam fora da checklist da platina base.",
+    "dlc_scope": "Guia focado na lista base da platina, com 43 troféus. Troféus extras/adicionais, incluindo Special Bots ligados a Astro Bot, ficam fora da checklist da platina base.",
     "difficulty_reason": "A platina é baixa dificuldade: exploração leve, coletáveis bem distribuídos, desafios curtos e cleanup por fase.",
     "time_reason": "A faixa conservadora de 3-5 horas considera campanha, puzzle pieces, artefatos, Gatcha e troféus situacionais da lista base.",
     "first_run_advice": "Jogue as fases principais explorando com calma, resgatando bots, pegando puzzle pieces e marcando pendências no checklist.",
@@ -4730,7 +4730,7 @@ const sampleGames = [
         "id": "nioh3_answering_people",
         "name": "Answering to the People",
         "type": "Ouro",
-        "description": "Complete todos os Myths.",
+        "description": "Conclua todos os Myths.",
         "tip": "Há 39 Myths no jogo. Faça também os dois ocultos no pós-jogo.",
         "is_spoiler": false
       },
@@ -4954,7 +4954,7 @@ const sampleGames = [
         "id": "nioh3_teamwork",
         "name": "Teamwork",
         "type": "Bronze",
-        "description": "Complete três missões em Expeditions ou com aliados NPC. (Inclui Acolytes.)",
+        "description": "Conclua três missões em Expeditions ou com aliados NPC. (Inclui Acolytes.)",
         "tip": "Vale co-op, NPCs ou acólitos de Blue Graves.",
         "is_spoiler": false
       },
@@ -5122,7 +5122,7 @@ const sampleGames = [
         "id": "nioh3_nothing_left",
         "name": "Nothing Left to Learn",
         "type": "Bronze",
-        "description": "Complete as veteran missions com Yagyu Munenori e Hattori Hanzo.",
+        "description": "Conclua as veteran missions com Yagyu Munenori e Hattori Hanzo.",
         "tip": "Faça também as versões Novice e Adept antes da Veteran.",
         "is_spoiler": true
       }
@@ -10964,45 +10964,139 @@ const sampleGames = [
     "id": 18,
     "name": "The Last of Us Part I",
     "slug": "the-last-of-us-part-i",
+    "primary_platform": "PS5",
+    "platforms": ["PS5", "PC"],
+    "developer": "Naughty Dog",
+    "publisher": "Sony Interactive Entertainment / PlayStation Studios",
+    "guide_platform": "PS5/PC",
+    "genre": "Ação / aventura / sobrevivência / narrativa",
     "difficulty": 3,
     "time": "20-30h",
     "time_min_hours": 20,
     "time_max_hours": 30,
     "time_sort_hours": 30,
     "time_bucket": "medium",
-    "missable": "Não há troféus perdíveis definitivos na lista de The Last of Us Part I: chapter select e encounter select permitem voltar para coletáveis, interações e ações específicas. O guia exige atenção porque conversas opcionais, piadas, cofres, ferramentas e ações de capítulo são fáceis de deixar para cleanup.",
-    "runs_summary": "Uma campanha principal com cleanup por seleção de capítulos, mais Left Behind integrado à lista oficial. O foco é coletável, upgrade e interações específicas.",
-    "missable_summary": "Não há troféus perdíveis definitivos; chapter select permite limpar coletáveis, conversas, piadas e ações específicas depois.",
-    "online_summary": "Não há exigência online para a platina de The Last of Us Part I.",
-    "grind_summary": "O peso está em coletáveis, upgrades, conversas opcionais, piadas e ações específicas, não em grind repetitivo.",
-    "dlc_scope": "Guia focado na lista oficial de The Last of Us Part I; os troféus de Left Behind fazem parte da lista de 29 e não devem ser separados como DLC. Não usar a lista Remastered.",
-    "difficulty_reason": "A platina é acessível porque não depende de multiplayer, Factions nem dificuldade máxima obrigatória; a atenção maior está em coletáveis e interações.",
+    "missable": "Sem perdíveis definitivos: a seleção de capítulos permite cleanup de coletáveis, conversas opcionais, piadas da Ellie, portas com shiv, safes, bancadas, ferramentas e ações situacionais. Esses objetivos podem passar batido durante uma jogada, mas não devem ser tratados como perda permanente.",
+    "runs_summary": "1 campanha principal + Left Behind + cleanup por seleção de capítulos.",
+    "missable_summary": "Sem perdíveis definitivos; use Chapter Select para cleanup de coletáveis, conversas, piadas e troféus situacionais.",
+    "online_summary": "Não há exigência online, multiplayer ou PS+ para a platina de The Last of Us Part I. Também não há coop obrigatório.",
+    "grind_summary": "O peso está em coletáveis, conversas opcionais, piadas da Ellie, portas com shiv, safes, ferramentas, manuais, crafting, upgrades e ações situacionais, não em grind repetitivo.",
+    "dlc_scope": "Base game. Left Behind integra o pacote e a lista de 29 troféus de The Last of Us Part I; não trate como DLC paga separada obrigatória e não use a lista de The Last of Us Remastered.",
+    "difficulty_reason": "A platina é acessível porque não exige multiplayer, coop, dificuldade alta, Survivor/Grounded ou New Game+. A atenção maior está em coletáveis, interações e ações situacionais.",
     "time_reason": "A faixa de 20-30 horas considera campanha, coletáveis, upgrades, Left Behind integrado e cleanup por capítulos.",
-    "first_run_advice": "Jogue com um checklist de coletáveis aberto se quiser reduzir cleanup; conversas opcionais e piadas exigem atenção.",
+    "first_run_advice": "Jogue a campanha coletando o máximo possível e salve o cleanup de coletáveis, conversas e situacionais para a seleção de capítulos.",
     "cleanup_advice": "Use seleção de capítulos para limpar coletáveis, conversas, piadas, cofres, ferramentas, shiv doors e ações específicas restantes.",
-    "before_you_start": "Não use a lista de troféus da versão Remastered; Part I tem lista própria, integra Left Behind e não exige multiplayer.",
+    "before_you_start": "A platina não exige dificuldade alta nem multiplayer, mas exige atenção a coletáveis, conversas opcionais, piadas da Ellie, portas com shiv, safes, ferramentas, manuais e troféus situacionais. Não misture com Remastered, Part II ou Part II Remastered.",
     "best_for": "Ideal para quem quer uma platina narrativa, sem online, com foco em exploração cuidadosa e checklist de coletáveis.",
     "avoid_if": "Evite se você não gosta de seguir checklist de coletáveis e interações opcionais durante campanha narrativa.",
     "editorial_status": "published",
     "coverage_level": "strong",
     "is_verified": false,
     "verification_status": "review",
-    "verification_note": "Guia forte de The Last of Us Part I com lista base, roadmap, imagens e flags adicionados em abril de 2026; aguardando revisão final manual.",
+    "editorial_review_status": "in_review",
+    "editorial_notes": "Contagem e distribuição validadas em PowerPyx, PlayStationTrophies, Fandom/Steam e fontes agregadoras. Nomes oficiais em inglês preservados; nomes PT-BR não preenchidos por falta de fonte oficial/confiável localizada. Left Behind tratado como parte da lista base de 29 troféus.",
+    "quality_warnings": [
+      "needs_trophy_localization_check",
+      "needs_left_behind_scope_check"
+    ],
+    "verification_note": "Guia forte de The Last of Us Part I em revisão editorial: lista base validada, mas sem selo verified até checagem final de localização oficial PT-BR.",
+    "chapterSelect": true,
+    "hasChapterSelect": true,
+    "onlineRequired": false,
+    "coopRequired": false,
+    "dlcRequired": false,
+    "newGamePlusRequired": false,
+    "difficultyTrophiesRequired": false,
+    "platinumType": "campanha + Left Behind + coletáveis + chapter select + cleanup",
     "image": "https://cdn.cloudflare.steamstatic.com/steam/apps/1888930/header.jpg",
     "cover_image": "https://cdn.cloudflare.steamstatic.com/steam/apps/1888930/library_600x900.jpg",
     "roadmap": [
-      "Etapa 1: complete a campanha principal coletando Firefly pendants, notes, artefacts, comics, training manuals, tools, safes, shiv doors, workbenches e conversas opcionais.",
-      "Etapa 2: controle recursos, bancadas e suplementos para conseguir pelo menos uma arma totalmente melhorada, ferramentas, crafting de todos os itens e portas abertas com shivs.",
-      "Etapa 3: limpe ações específicas, piadas da Ellie e interações contextuais por chapter select ou encounter select, como In Memorium, Lights Out, Waterlogged, Left Hanging e Who’s A Good Boy?.",
-      "Etapa 4: complete Left Behind, que está integrado à lista oficial de Part I, coletando seus itens e fazendo Nobody’s Perfect, Brick Master, Angel Knives, Skillz e Live Bait.",
-      "Etapa 5: faça o cleanup final por seleção de capítulos e revise o checklist. A lista de Part I não tem Factions, não exige online, não usa troféus da Remastered e não pede dificuldade máxima."
+      {
+        "title": "Complete a campanha coletando o máximo possível",
+        "focus": "Campanha / exploração",
+        "objective": "Finalizar a história principal enquanto já pega coletáveis, conversas opcionais, portas com shiv, safes e itens de progressão quando estiverem no caminho.",
+        "actions": [
+          "Jogue a campanha em qualquer dificuldade confortável.",
+          "Explore ambientes antes de avançar para áreas sem volta.",
+          "Pegue artefatos, Firefly pendants, comics, manuais de treinamento e ferramentas sempre que possível.",
+          "Abra portas com shiv e safes conforme encontrar combinações e recursos.",
+          "Faça conversas opcionais e piadas da Ellie quando surgirem."
+        ],
+        "warning": "",
+        "result": "História principal concluída e boa parte dos coletáveis já encaminhada."
+      },
+      {
+        "title": "Conclua Left Behind",
+        "focus": "Left Behind / história",
+        "objective": "Finalizar a campanha extra Left Behind e resolver os troféus próprios desse conteúdo incluído no Part I.",
+        "actions": [
+          "Complete Left Behind depois da campanha principal ou quando preferir.",
+          "Faça os troféus situacionais de Left Behind durante a jogada, se possível.",
+          "Preste atenção em interações específicas, minigames e desafios próprios da Ellie.",
+          "Use seleção de capítulos para corrigir qualquer pendência depois."
+        ],
+        "warning": "",
+        "result": "Conteúdo de Left Behind concluído e lista base mais próxima da platina."
+      },
+      {
+        "title": "Faça cleanup de coletáveis por capítulo",
+        "focus": "Coletáveis / Chapter Select",
+        "objective": "Usar a seleção de capítulos para buscar tudo que ficou faltando sem reiniciar a campanha inteira.",
+        "actions": [
+          "Revise Firefly pendants, artifacts, notes, comics, manuais de treinamento e ferramentas.",
+          "Confira bancadas, safes e portas com shiv.",
+          "Limpe um capítulo por vez para evitar retrabalho.",
+          "Use checklist para marcar exatamente o que falta."
+        ],
+        "warning": "",
+        "result": "Coletáveis principais concluídos com menos repetição."
+      },
+      {
+        "title": "Complete conversas opcionais e piadas da Ellie",
+        "focus": "Conversas / situacionais",
+        "objective": "Finalizar interações específicas que dependem de momentos concretos da campanha.",
+        "actions": [
+          "Revise todas as optional conversations pendentes.",
+          "Complete todas as piadas da Ellie nos capítulos corretos.",
+          "Use Chapter Select para voltar aos pontos necessários.",
+          "Evite avançar rápido demais quando houver área com diálogo opcional."
+        ],
+        "warning": "",
+        "result": "Troféus de interação concluídos sem precisar refazer a campanha inteira."
+      },
+      {
+        "title": "Resolva troféus situacionais e de sistemas",
+        "focus": "Situacionais / gameplay",
+        "objective": "Fechar troféus ligados a crafting, upgrades, ações específicas, combate e momentos únicos.",
+        "actions": [
+          "Crie todos os tipos de item exigidos.",
+          "Faça upgrades de armas e melee quando tiver recursos.",
+          "Complete troféus situacionais como ações específicas em capítulos determinados.",
+          "Use seleção de capítulos para repetir cenas ou encontros necessários."
+        ],
+        "warning": "",
+        "result": "Pendências de gameplay e ações específicas resolvidas."
+      },
+      {
+        "title": "Revisão final da platina",
+        "focus": "Checklist final",
+        "objective": "Conferir campanha, Left Behind, coletáveis, conversas, piadas, safes, portas e situacionais antes da platina.",
+        "actions": [
+          "Revise o checklist completo da lista base.",
+          "Confirme que não há troféus online ou coop obrigatórios.",
+          "Confirme que dificuldade alta e New Game+ não foram tratados como obrigatórios.",
+          "Finalize qualquer item restante por Chapter Select."
+        ],
+        "warning": "",
+        "result": "Lista base concluída e platina pronta."
+      }
     ],
     "trophies": [
       {
         "id": "tlou1_it_cant_be_for_nothing",
-        "name": "It can’t be for nothing",
+        "name": "It Can't Be For Nothing",
         "type": "Platina",
-        "description": "Collect all trophies",
+        "description": "Colete todos os troféus.",
         "tip": "Conclua todos os troféus da lista oficial de The Last of Us Part I.",
         "is_spoiler": false
       },
@@ -11010,15 +11104,15 @@ const sampleGames = [
         "id": "tlou1_no_matter_what",
         "name": "No Matter What",
         "type": "Ouro",
-        "description": "Complete Part 1",
-        "tip": "Complete a campanha principal em qualquer dificuldade.",
+        "description": "Conclua a campanha principal.",
+        "tip": "Complete a campanha principal no modo que preferir.",
         "is_spoiler": true
       },
       {
         "id": "tlou1_dont_go",
-        "name": "Don’t Go",
+        "name": "Don't Go",
         "type": "Ouro",
-        "description": "Complete Left Behind",
+        "description": "Conclua Left Behind.",
         "tip": "Complete Left Behind, que faz parte da lista oficial de Part I.",
         "is_spoiler": true
       },
@@ -11026,7 +11120,7 @@ const sampleGames = [
         "id": "tlou1_look_for_the_light",
         "name": "Look for the Light",
         "type": "Ouro",
-        "description": "Find all Firefly pendants",
+        "description": "Encontre todos os pingentes dos Vaga-lumes.",
         "tip": "Colete todos os Firefly pendants da campanha principal.",
         "is_spoiler": false
       },
@@ -11034,7 +11128,7 @@ const sampleGames = [
         "id": "tlou1_endure_and_survive",
         "name": "Endure and Survive",
         "type": "Ouro",
-        "description": "Collect all comics",
+        "description": "Colete todos os quadrinhos.",
         "tip": "Colete todos os comics Savage Starlight.",
         "is_spoiler": false
       },
@@ -11042,7 +11136,7 @@ const sampleGames = [
         "id": "tlou1_chronicles",
         "name": "Chronicles",
         "type": "Ouro",
-        "description": "Find all notes and artifacts",
+        "description": "Encontre todas as notas e artefatos.",
         "tip": "Colete todos os notes e artefacts da campanha e de Left Behind.",
         "is_spoiler": false
       },
@@ -11050,15 +11144,15 @@ const sampleGames = [
         "id": "tlou1_getting_to_know_you",
         "name": "Getting to Know You",
         "type": "Ouro",
-        "description": "Engage in all optional conversations",
+        "description": "Participe de todas as conversas opcionais.",
         "tip": "Acione todas as conversas opcionais; algumas exigem posicionamento e espera.",
         "is_spoiler": true
       },
       {
         "id": "tlou1_thats_all_i_got",
-        "name": "That’s all I got",
+        "name": "That's All I Got",
         "type": "Ouro",
-        "description": "Survive all of Ellie’s jokes",
+        "description": "Sobreviva a todas as piadas da Ellie.",
         "tip": "Acione todos os conjuntos de piadas da Ellie na campanha e em Left Behind.",
         "is_spoiler": true
       },
@@ -11066,7 +11160,7 @@ const sampleGames = [
         "id": "tlou1_something_to_fight_for",
         "name": "Something to Fight For",
         "type": "Prata",
-        "description": "Find all training manuals",
+        "description": "Encontre todos os manuais de treinamento.",
         "tip": "Colete todos os training manuals para completar essa linha de coletáveis.",
         "is_spoiler": false
       },
@@ -11074,15 +11168,15 @@ const sampleGames = [
         "id": "tlou1_combat_ready",
         "name": "Combat Ready",
         "type": "Prata",
-        "description": "Fully upgrade a weapon",
-        "tip": "Concentre peças em uma arma barata, como o revolver, para garantir o upgrade completo.",
+        "description": "Melhore totalmente uma arma.",
+        "tip": "Concentre peças em uma arma barata, como o revólver, para garantir o upgrade completo.",
         "is_spoiler": false
       },
       {
         "id": "tlou1_master_of_unlocking",
         "name": "Master of Unlocking",
         "type": "Prata",
-        "description": "Break into every locked door using shivs",
+        "description": "Abra todas as portas trancadas usando shivs.",
         "tip": "Abra todas as shiv doors; evite gastar shivs em stealth kills antes de conferir portas.",
         "is_spoiler": false
       },
@@ -11090,7 +11184,7 @@ const sampleGames = [
         "id": "tlou1_prepared_for_the_worst",
         "name": "Prepared For the Worst",
         "type": "Prata",
-        "description": "Find all workbenches",
+        "description": "Encontre todas as bancadas.",
         "tip": "Interaja com todas as workbenches da campanha principal.",
         "is_spoiler": false
       },
@@ -11098,7 +11192,7 @@ const sampleGames = [
         "id": "tlou1_sticky_fingers",
         "name": "Sticky Fingers",
         "type": "Prata",
-        "description": "Open All Safes",
+        "description": "Abra todos os cofres.",
         "tip": "Abra todos os cofres e pegue o conteúdo para registrar o progresso.",
         "is_spoiler": false
       },
@@ -11106,7 +11200,7 @@ const sampleGames = [
         "id": "tlou1_sharpest_tool_in_the_shed",
         "name": "Sharpest Tool in the Shed",
         "type": "Prata",
-        "description": "Find all workbench tools",
+        "description": "Encontre todas as ferramentas de bancada.",
         "tip": "Colete todas as ferramentas vermelhas; elas não são rastreadas como outros coletáveis.",
         "is_spoiler": false
       },
@@ -11114,7 +11208,7 @@ const sampleGames = [
         "id": "tlou1_build_em_up_break_em_down",
         "name": "Build Em Up, Break Em Down",
         "type": "Prata",
-        "description": "Upgrade and then break one of every melee weapon",
+        "description": "Melhore e depois quebre uma de cada arma corpo a corpo.",
         "tip": "Melhore e quebre cada tipo de arma corpo a corpo; encounter select ajuda no cleanup.",
         "is_spoiler": false
       },
@@ -11122,7 +11216,7 @@ const sampleGames = [
         "id": "tlou1_fallen_firefly",
         "name": "Fallen Firefly",
         "type": "Bronze",
-        "description": "Find a Firefly pendant",
+        "description": "Encontre um pingente dos Vaga-lumes.",
         "tip": "Colete qualquer Firefly pendant.",
         "is_spoiler": false
       },
@@ -11130,7 +11224,7 @@ const sampleGames = [
         "id": "tlou1_self_help",
         "name": "Self Help",
         "type": "Bronze",
-        "description": "Find one training manual",
+        "description": "Encontre um manual de treinamento.",
         "tip": "Colete qualquer training manual.",
         "is_spoiler": false
       },
@@ -11138,7 +11232,7 @@ const sampleGames = [
         "id": "tlou1_savage_starlight_fan",
         "name": "Savage Starlight Fan",
         "type": "Bronze",
-        "description": "Find a comic",
+        "description": "Encontre um quadrinho.",
         "tip": "Colete qualquer comic Savage Starlight.",
         "is_spoiler": false
       },
@@ -11146,7 +11240,7 @@ const sampleGames = [
         "id": "tlou1_geared_up",
         "name": "Geared Up",
         "type": "Bronze",
-        "description": "Craft every item",
+        "description": "Crie todos os itens.",
         "tip": "Crie health kit, molotov, shiv, melee upgrade, bomb e smoke bomb.",
         "is_spoiler": false
       },
@@ -11154,7 +11248,7 @@ const sampleGames = [
         "id": "tlou1_in_memorium",
         "name": "In Memorium",
         "type": "Bronze",
-        "description": "Pick up Frank’s note after it’s discarded",
+        "description": "Pegue a nota de Frank depois que ela for descartada.",
         "tip": "Em Bill’s Town, entregue a nota a Bill e pegue-a novamente depois que ele a descartar.",
         "is_spoiler": true
       },
@@ -11162,7 +11256,7 @@ const sampleGames = [
         "id": "tlou1_lights_out",
         "name": "Lights Out",
         "type": "Bronze",
-        "description": "While in stealth, turn off the spotlight generator in Pittsburgh.",
+        "description": "Enquanto estiver furtivo, desligue o gerador do holofote em Pittsburgh.",
         "tip": "No checkpoint de Pittsburgh, desligue o gerador furtivamente antes de ser detectado.",
         "is_spoiler": false
       },
@@ -11170,7 +11264,7 @@ const sampleGames = [
         "id": "tlou1_waterlogged",
         "name": "Waterlogged",
         "type": "Bronze",
-        "description": "Ride the sewer contraption with Henry and Sam",
+        "description": "Ande na engenhoca do esgoto com Henry e Sam.",
         "tip": "Nos esgotos, suba na plataforma com Henry e Sam assim que ela começar a se mover.",
         "is_spoiler": true
       },
@@ -11178,23 +11272,23 @@ const sampleGames = [
         "id": "tlou1_left_hanging",
         "name": "Left Hanging",
         "type": "Bronze",
-        "description": "Leave Ellie hanging after a job well done",
+        "description": "Deixe Ellie no vácuo depois de um trabalho bem feito.",
         "tip": "Em Tommy’s Dam, ignore o pedido de high five da Ellie.",
         "is_spoiler": true
       },
       {
         "id": "tlou1_whos_a_good_boy",
-        "name": "Who’s A Good Boy?",
+        "name": "Who's A Good Boy?",
         "type": "Bronze",
-        "description": "Pet Buckley the dog",
+        "description": "Acaricie Buckley, o cachorro.",
         "tip": "Durante a visita à represa, interaja com Buckley.",
         "is_spoiler": false
       },
       {
         "id": "tlou1_nobodys_perfect",
-        "name": "Nobody’s Perfect",
+        "name": "Nobody's Perfect",
         "type": "Bronze",
-        "description": "Played the Jak X game in Left Behind",
+        "description": "Jogue o jogo Jak X em Left Behind.",
         "tip": "Em Left Behind, interaja com a máquina de Jak X no arcade antes de avançar.",
         "is_spoiler": false
       },
@@ -11202,7 +11296,7 @@ const sampleGames = [
         "id": "tlou1_brick_master",
         "name": "Brick Master",
         "type": "Bronze",
-        "description": "Win the brick throwing contest",
+        "description": "Vença o concurso de arremesso de tijolos.",
         "tip": "Em Left Behind, vença Riley na disputa de tijolos.",
         "is_spoiler": false
       },
@@ -11210,7 +11304,7 @@ const sampleGames = [
         "id": "tlou1_angel_knives",
         "name": "Angel Knives",
         "type": "Bronze",
-        "description": "Defeat Black Fang without getting hit",
+        "description": "Derrote Black Fang sem ser atingido.",
         "tip": "Em Left Behind, vença o minigame The Turning sem errar a sequência.",
         "is_spoiler": false
       },
@@ -11218,7 +11312,7 @@ const sampleGames = [
         "id": "tlou1_skillz",
         "name": "Skillz",
         "type": "Bronze",
-        "description": "Win the water gun fight",
+        "description": "Vença a luta de pistolas d’água.",
         "tip": "Em Left Behind, vença a disputa de pistolas d’água contra Riley.",
         "is_spoiler": false
       },
@@ -11226,7 +11320,7 @@ const sampleGames = [
         "id": "tlou1_live_bait",
         "name": "Live Bait",
         "type": "Bronze",
-        "description": "Use bricks or bottles to lure an infected into attacking a human",
+        "description": "Use tijolos ou garrafas para atrair um infectado e fazê-lo atacar um humano.",
         "tip": "Em Left Behind, use garrafas ou tijolos para iniciar conflito entre infectados e humanos.",
         "is_spoiler": true
       }
@@ -11242,39 +11336,134 @@ const sampleGames = [
     "time_max_hours": 35,
     "time_sort_hours": 35,
     "time_bucket": "medium",
-    "missable": "Não há troféus perdíveis definitivos na lista base de The Last of Us Part II: chapter select permite limpar coletáveis, locais, cofres e troféus específicos. Mantenha um save manual do fim da história para preservar o acesso confortável aos capítulos.",
-    "runs_summary": "Uma campanha completa com checklist de coletáveis e um New Game+ parcial para completar upgrades restantes.",
-    "missable_summary": "Não há troféus perdíveis definitivos; chapter select cobre cleanup, e New Game+ parcial cobre upgrades restantes.",
-    "online_summary": "Não há exigência online para a platina da lista base.",
-    "grind_summary": "O peso está em coletáveis, suplementos, peças, upgrades e cleanup por capítulos, não em grind repetitivo.",
-    "dlc_scope": "Guia focado na lista base da platina; Grounded, Permadeath e No Return devem ficar separados se o projeto suportar add-ons.",
-    "difficulty_reason": "A platina é acessível porque não exige online nem dificuldade máxima; a atenção maior está em coletáveis, suplementos, peças e upgrades.",
-    "time_reason": "A faixa de 25-35 horas considera campanha, coletáveis, upgrades, New Game+ parcial e cleanup por capítulos.",
-    "first_run_advice": "Jogue com um checklist de coletáveis se quiser reduzir cleanup, mas não se preocupe com troféus perdíveis definitivos.",
-    "cleanup_advice": "Use chapter select para limpar coletáveis e troféus específicos; use New Game+ parcial para fechar upgrades de armas e habilidades.",
-    "before_you_start": "Não use listas de Part I ou extras de No Return; a platina base de Part II tem lista própria, sem online obrigatório e sem Grounded ou Permadeath.",
+    "primary_platform": "PS4",
+    "platforms": ["PS4", "PS5 via retrocompatibilidade"],
+    "developer": "Naughty Dog",
+    "publisher": "Sony Interactive Entertainment / PlayStation Studios",
+    "guide_platform": "PS4",
+    "genre": "ação / aventura / sobrevivência / narrativa",
+    "missable": "Não há troféus perdíveis definitivos na lista base de The Last of Us Part II. Chapter Select permite limpar coletáveis, cofres, bancadas e troféus situacionais, e NG+ parcial cobre upgrades restantes.",
+    "runs_summary": "1 campanha completa + cleanup por Chapter Select + NG+ parcial para upgrades de armas e personagens.",
+    "missable_summary": "Sem perdíveis definitivos; use Chapter Select e NG+ parcial para cleanup.",
+    "online_summary": "Não há troféus online, coop ou multiplayer obrigatórios para a platina da lista base.",
+    "grind_summary": "O peso está em coletáveis, cartas, moedas, suplementos, peças, upgrades e cleanup por capítulos, não em grind repetitivo.",
+    "dlc_scope": "Guia focado na lista base da platina do Part II original; Grounded e Permadeath são troféus extras/update, e Remastered/No Return ficam fora deste escopo.",
+    "difficulty_reason": "A platina não exige dificuldade alta, Grounded, Permadeath, online ou multiplayer; a atenção maior está em coletáveis, suplementos, peças e upgrades.",
+    "time_reason": "A faixa de 25-35 horas considera campanha, coletáveis, upgrades, Chapter Select, NG+ parcial e cleanup.",
+    "first_run_advice": "Jogue a campanha coletando o máximo possível e deixe o cleanup de coletáveis, conversas, cofres, upgrades e situacionais para Chapter Select e NG+ parcial.",
+    "cleanup_advice": "Use Chapter Select para limpar coletáveis, cofres, bancadas e troféus específicos; use NG+ parcial para fechar upgrades de armas e personagens.",
+    "before_you_start": "Não use listas de Part I, Remastered ou No Return. A platina base do Part II original tem lista própria, sem online obrigatório e sem Grounded ou Permadeath como requisito.",
     "best_for": "Ideal para quem quer uma platina narrativa, sem online, com foco em exploração cuidadosa e checklist de coletáveis.",
     "avoid_if": "Evite se você não gosta de coletáveis, campanha longa ou repetir parte do jogo em New Game+.",
     "editorial_status": "published",
+    "editorial_review_status": "in_review",
     "coverage_level": "strong",
     "is_verified": false,
     "verification_status": "review",
-    "verification_note": "Guia forte de The Last of Us Part II com lista base, roadmap, imagens e flags adicionados em abril de 2026; aguardando revisão final manual.",
-    "image": "https://cdn.cloudflare.steamstatic.com/steam/apps/2531310/header.jpg",
-    "cover_image": "https://cdn.cloudflare.steamstatic.com/steam/apps/2531310/library_600x900.jpg",
+    "verification_note": "Guia de The Last of Us Part II revisado como lista base da platina original; aguardando validação final manual de localização e escopo de extras.",
+    "editorial_notes": "Contagem base validada como 26 troféus, distribuição 1/7/8/10. Grounded e Permadeath tratados como extras/update fora da platina base; Remastered e No Return fora do escopo.",
+    "quality_warnings": [
+      "needs_trophy_localization_check",
+      "needs_extra_trophies_scope_check"
+    ],
+    "chapterSelect": true,
+    "hasChapterSelect": true,
+    "onlineRequired": false,
+    "coopRequired": false,
+    "dlcRequired": false,
+    "newGamePlusRequired": true,
+    "difficultyTrophiesRequired": false,
+    "platinumType": "campanha + coletáveis + Chapter Select + NG+ parcial + cleanup",
+    "image": "https://image.api.playstation.com/vulcan/img/rnd/202010/2619/mw8nzMIY8TJUtdTbAuCGDxr4.png",
+    "cover_image": "https://image.api.playstation.com/vulcan/img/rnd/202010/2618/Y02ljdBodKFBiziorYgqftLE.png",
+    "catalogImage": "https://cdn.cloudflare.steamstatic.com/steam/apps/2531310/header.jpg",
     "roadmap": [
-      "Etapa 1: complete a campanha principal com foco em história, exploração e coleta, mantendo atenção a artefatos, trading cards, coins, journal entries, safes e workbenches.",
-      "Etapa 2: revise coletáveis por chapter select, incluindo artefatos, journal entries, trading cards, coins, safes, workbenches e locais de Downtown Seattle.",
-      "Etapa 3: controle suplementos e peças para avançar upgrades de armas e habilidades. Survival Expert e Arms Master exigem recursos além de uma campanha comum.",
-      "Etapa 4: inicie New Game+ parcial para completar upgrades restantes de armas e player upgrades; a lista base não exige dificuldade máxima.",
-      "Etapa 5: faça cleanup por chapter select dos troféus específicos, como Looks Good On You, Sharpshooter, Put My Name Up, Relic of the Sages e So Great and Small. A lista base não inclui Grounded, Permadeath ou No Return."
+      {
+        "title": "Complete a campanha explorando com calma",
+        "focus": "Campanha / exploração",
+        "objective": "Finalizar a história principal enquanto coleta o máximo possível de itens, artefatos, cartas, moedas, entradas de diário, manuais, cofres e bancadas.",
+        "actions": [
+          "Jogue em qualquer dificuldade confortável.",
+          "Explore todos os ambientes antes de avançar para áreas sem volta.",
+          "Pegue artefatos, cartas, moedas e entradas de diário sempre que encontrar.",
+          "Abra cofres e visite bancadas conforme aparecerem.",
+          "Guarde recursos para upgrades importantes, mas não se preocupe em completar tudo na primeira passagem."
+        ],
+        "warning": "",
+        "result": "Campanha concluída e grande parte dos coletáveis já encaminhada."
+      },
+      {
+        "title": "Organize coletáveis por capítulo",
+        "focus": "Coletáveis / Chapter Select",
+        "objective": "Usar seleção de capítulos para buscar itens perdidos sem reiniciar a campanha inteira.",
+        "actions": [
+          "Revise artefatos, cartas colecionáveis, moedas e entradas de diário.",
+          "Confira cofres, bancadas, manuais de treinamento e itens de upgrade.",
+          "Limpe um capítulo por vez para evitar retrabalho.",
+          "Use checklist para marcar exatamente o que falta."
+        ],
+        "warning": "",
+        "result": "Coletáveis principais resolvidos com menos repetição."
+      },
+      {
+        "title": "Complete upgrades de armas e personagens",
+        "focus": "Upgrades / NG+",
+        "objective": "Finalizar melhorias de armas e habilidades que normalmente exigem recursos além de uma campanha única.",
+        "actions": [
+          "Inicie NG+ se os upgrades não forem concluídos na primeira campanha.",
+          "Priorize suplementos e peças de melhoria.",
+          "Complete upgrades de personagens e armas conforme os recursos permitirem.",
+          "Continue coletando recursos em capítulos com boa densidade de itens."
+        ],
+        "warning": "",
+        "result": "Troféus de upgrades concluídos ou muito próximos do fim."
+      },
+      {
+        "title": "Resolva troféus situacionais",
+        "focus": "Situacionais / gameplay",
+        "objective": "Fechar troféus ligados a ações específicas, treinamento, minigames ou momentos únicos.",
+        "actions": [
+          "Revise troféus situacionais no checklist.",
+          "Use Chapter Select para voltar aos capítulos necessários.",
+          "Faça ações específicas de combate, treino ou interação que não vieram naturalmente.",
+          "Evite misturar esses objetivos com runs longas sem necessidade."
+        ],
+        "warning": "",
+        "result": "Pendências de gameplay e interações específicas resolvidas."
+      },
+      {
+        "title": "Separe extras da platina base",
+        "focus": "Extras / escopo",
+        "objective": "Garantir que Grounded, Permadeath, Remastered ou No Return não sejam misturados com a platina base do Part II original.",
+        "actions": [
+          "Confirme que a lista base está separada de troféus extras ou updates.",
+          "Não conte Grounded Mode como requisito da platina base.",
+          "Não conte Permadeath como requisito da platina base.",
+          "Não misture troféus da versão Remastered ou do modo No Return neste guia."
+        ],
+        "warning": "",
+        "result": "Escopo da platina base claro e sem confusão com conteúdos extras."
+      },
+      {
+        "title": "Revisão final da platina",
+        "focus": "Checklist final",
+        "objective": "Conferir campanha, coletáveis, upgrades, cofres, bancadas, manuais e situacionais antes da platina.",
+        "actions": [
+          "Revise o checklist completo da lista base.",
+          "Confirme que não há troféus online ou coop obrigatórios.",
+          "Confirme que dificuldade alta não foi tratada como obrigatória.",
+          "Finalize qualquer item restante por Chapter Select ou NG+ parcial."
+        ],
+        "warning": "",
+        "result": "Lista base concluída e platina pronta."
+      }
     ],
     "trophies": [
       {
         "id": "tlou2_every_last_one_of_them",
         "name": "Every Last One of Them",
         "type": "Platina",
-        "description": "Collect all trophies",
+        "description": "Colete todos os troféus.",
         "tip": "Conclua todos os troféus da lista base de The Last of Us Part II. Add-ons não contam para a platina.",
         "is_spoiler": false
       },
@@ -11282,7 +11471,7 @@ const sampleGames = [
         "id": "tlou2_what_i_had_to_do",
         "name": "What I Had to Do",
         "type": "Ouro",
-        "description": "Complete the story",
+        "description": "Conclua a história.",
         "tip": "Complete a campanha em qualquer dificuldade; não há troféu de dificuldade máxima na lista base.",
         "is_spoiler": true
       },
@@ -11290,7 +11479,7 @@ const sampleGames = [
         "id": "tlou2_survival_expert",
         "name": "Survival Expert",
         "type": "Ouro",
-        "description": "Learn all player upgrades",
+        "description": "Aprenda todos os upgrades de personagem.",
         "tip": "Compre todos os player upgrades. Será necessário avançar em New Game+ para obter suplementos suficientes.",
         "is_spoiler": false
       },
@@ -11298,7 +11487,7 @@ const sampleGames = [
         "id": "tlou2_arms_master",
         "name": "Arms Master",
         "type": "Ouro",
-        "description": "Fully upgrade all weapons",
+        "description": "Melhore totalmente todas as armas.",
         "tip": "Melhore todas as armas. Peças não são suficientes em uma campanha comum, então planeje New Game+ parcial.",
         "is_spoiler": false
       },
@@ -11306,7 +11495,7 @@ const sampleGames = [
         "id": "tlou2_archivist",
         "name": "Archivist",
         "type": "Ouro",
-        "description": "Find all artifacts and journal entries",
+        "description": "Encontre todos os artefatos e entradas de diário.",
         "tip": "Colete todos os artefatos e journal entries; chapter select ajuda no cleanup.",
         "is_spoiler": false
       },
@@ -11314,7 +11503,7 @@ const sampleGames = [
         "id": "tlou2_master_set",
         "name": "Master Set",
         "type": "Ouro",
-        "description": "Find all trading cards",
+        "description": "Encontre todas as cartas colecionáveis.",
         "tip": "Colete todos os trading cards.",
         "is_spoiler": false
       },
@@ -11322,7 +11511,7 @@ const sampleGames = [
         "id": "tlou2_numismatist",
         "name": "Numismatist",
         "type": "Ouro",
-        "description": "Find all coins",
+        "description": "Encontre todas as moedas.",
         "tip": "Colete todas as coins.",
         "is_spoiler": false
       },
@@ -11330,7 +11519,7 @@ const sampleGames = [
         "id": "tlou2_prepared_for_the_worst",
         "name": "Prepared For the Worst",
         "type": "Ouro",
-        "description": "Find all workbenches",
+        "description": "Encontre todas as bancadas.",
         "tip": "Encontre todas as workbenches da campanha.",
         "is_spoiler": false
       },
@@ -11338,7 +11527,7 @@ const sampleGames = [
         "id": "tlou2_mechanist",
         "name": "Mechanist",
         "type": "Prata",
-        "description": "Fully upgrade a weapon",
+        "description": "Melhore totalmente uma arma.",
         "tip": "Melhore completamente qualquer arma em uma workbench.",
         "is_spoiler": false
       },
@@ -11346,7 +11535,7 @@ const sampleGames = [
         "id": "tlou2_specialist",
         "name": "Specialist",
         "type": "Prata",
-        "description": "Learn all player upgrades in one branch",
+        "description": "Aprenda todos os upgrades de personagem de um ramo.",
         "tip": "Complete uma árvore de habilidades inteira.",
         "is_spoiler": false
       },
@@ -11354,7 +11543,7 @@ const sampleGames = [
         "id": "tlou2_safecracker",
         "name": "Safecracker",
         "type": "Prata",
-        "description": "Unlock every safe",
+        "description": "Abra todos os cofres.",
         "tip": "Abra todos os cofres e pegue o conteúdo para registrar o progresso.",
         "is_spoiler": false
       },
@@ -11362,7 +11551,7 @@ const sampleGames = [
         "id": "tlou2_sightseer",
         "name": "Sightseer",
         "type": "Prata",
-        "description": "Visit every location in downtown Seattle",
+        "description": "Visite todos os locais do centro de Seattle.",
         "tip": "Explore todos os pontos marcados no mapa de Downtown Seattle; se não desbloquear, refaça pelo chapter select.",
         "is_spoiler": true
       },
@@ -11370,7 +11559,7 @@ const sampleGames = [
         "id": "tlou2_journeyman",
         "name": "Journeyman",
         "type": "Prata",
-        "description": "Find all training manuals",
+        "description": "Encontre todos os manuais de treinamento.",
         "tip": "Encontre todos os training manuals para liberar as árvores de habilidade.",
         "is_spoiler": false
       },
@@ -11378,7 +11567,7 @@ const sampleGames = [
         "id": "tlou2_survival_training",
         "name": "Survival Training",
         "type": "Prata",
-        "description": "Learn 25 player upgrades",
+        "description": "Aprenda 25 upgrades de personagem.",
         "tip": "Compre 25 upgrades de personagem com suplementos.",
         "is_spoiler": false
       },
@@ -11386,7 +11575,7 @@ const sampleGames = [
         "id": "tlou2_high_caliber",
         "name": "High Caliber",
         "type": "Prata",
-        "description": "Find all weapons",
+        "description": "Encontre todas as armas.",
         "tip": "Encontre todas as armas da campanha.",
         "is_spoiler": true
       },
@@ -11394,7 +11583,7 @@ const sampleGames = [
         "id": "tlou2_in_the_field",
         "name": "In the Field",
         "type": "Prata",
-        "description": "Find 12 workbenches",
+        "description": "Encontre 12 bancadas.",
         "tip": "Encontre 12 workbenches.",
         "is_spoiler": false
       },
@@ -11402,7 +11591,7 @@ const sampleGames = [
         "id": "tlou2_tools_of_the_trade",
         "name": "Tools of the Trade",
         "type": "Bronze",
-        "description": "Craft every item",
+        "description": "Crie todos os itens.",
         "tip": "Crie todos os tipos de item disponíveis na campanha.",
         "is_spoiler": false
       },
@@ -11410,7 +11599,7 @@ const sampleGames = [
         "id": "tlou2_tinkerer",
         "name": "Tinkerer",
         "type": "Bronze",
-        "description": "Upgrade a weapon",
+        "description": "Melhore uma arma.",
         "tip": "Faça qualquer upgrade de arma em uma workbench.",
         "is_spoiler": false
       },
@@ -11418,7 +11607,7 @@ const sampleGames = [
         "id": "tlou2_apprentice",
         "name": "Apprentice",
         "type": "Bronze",
-        "description": "Learn a player upgrade",
+        "description": "Aprenda um upgrade de personagem.",
         "tip": "Compre qualquer upgrade de personagem.",
         "is_spoiler": false
       },
@@ -11426,7 +11615,7 @@ const sampleGames = [
         "id": "tlou2_starter_set",
         "name": "Starter Set",
         "type": "Bronze",
-        "description": "Find 5 trading cards",
+        "description": "Encontre 5 cartas colecionáveis.",
         "tip": "Colete 5 trading cards.",
         "is_spoiler": false
       },
@@ -11434,7 +11623,7 @@ const sampleGames = [
         "id": "tlou2_mint_condition",
         "name": "Mint Condition",
         "type": "Bronze",
-        "description": "Find 5 coins",
+        "description": "Encontre 5 moedas.",
         "tip": "Colete 5 coins.",
         "is_spoiler": false
       },
@@ -11442,7 +11631,7 @@ const sampleGames = [
         "id": "tlou2_looks_good_on_you",
         "name": "Looks Good On You",
         "type": "Bronze",
-        "description": "Put a hat on your companion",
+        "description": "Coloque um chapéu no seu companheiro.",
         "tip": "No capítulo The Birthday Gift, interaja com o chapéu e coloque-o no companion depois dos dinossauros.",
         "is_spoiler": true
       },
@@ -11450,7 +11639,7 @@ const sampleGames = [
         "id": "tlou2_sharpshooter",
         "name": "Sharpshooter",
         "type": "Bronze",
-        "description": "Win the marksmanship competition",
+        "description": "Vença a competição de tiro ao alvo.",
         "tip": "No capítulo The Stadium, vença a competição de tiro.",
         "is_spoiler": true
       },
@@ -11458,7 +11647,7 @@ const sampleGames = [
         "id": "tlou2_put_my_name_up",
         "name": "Put My Name Up",
         "type": "Bronze",
-        "description": "Earn the high score in the archery game",
+        "description": "Consiga a maior pontuação no jogo de arco.",
         "tip": "No capítulo Winter Visit, faça a maior pontuação no minigame de arco.",
         "is_spoiler": true
       },
@@ -11466,7 +11655,7 @@ const sampleGames = [
         "id": "tlou2_relic_of_the_sages",
         "name": "Relic of the Sages",
         "type": "Bronze",
-        "description": "Find the Strange Artifact",
+        "description": "Encontre o Artefato Estranho.",
         "tip": "Encontre o Strange Artifact no capítulo Hostile Territory.",
         "is_spoiler": true
       },
@@ -11474,7 +11663,7 @@ const sampleGames = [
         "id": "tlou2_so_great_and_small",
         "name": "So Great and Small",
         "type": "Bronze",
-        "description": "Find the Engraved Ring",
+        "description": "Encontre o Anel Gravado.",
         "tip": "Encontre o Engraved Ring no cofre do banco em Downtown Seattle.",
         "is_spoiler": true
       }
@@ -28269,6 +28458,341 @@ const sampleGames = [
     "needs_missables_validation",
     "needs_trophy_localization_check"
   ]
+},
+{
+  "name": "Subnautica",
+  "slug": "subnautica",
+  "difficulty": 3,
+  "time": "20-30h",
+  "time_min_hours": 20,
+  "time_max_hours": 30,
+  "time_sort_hours": 30,
+  "time_bucket": "medium",
+  "primary_platform": "PlayStation",
+  "platforms": ["PS4", "PS5", "PC", "Xbox One", "Xbox Series", "Nintendo Switch"],
+  "developer": "Unknown Worlds Entertainment",
+  "publisher": "Unknown Worlds Entertainment",
+  "guide_platform": "PlayStation",
+  "genre": "sobrevivência / exploração / aventura / mundo aberto subaquático",
+  "modes": ["single-player"],
+  "missable": "Há um risco conservador ligado ao troféu Man's Best Friend, porque ovos de Cuddlefish são finitos. O restante da platina pode ser organizado em free roam antes do final; mantenha saves manuais e revise pendências antes de lançar o foguete.",
+  "runs_summary": "1 campanha + exploração, veículos, base e cleanup antes do final.",
+  "missable_summary": "1 risco real/conservador: Man's Best Friend. Faça esse troféu antes do final e evite descartar ou perder todos os ovos de Cuddlefish.",
+  "online_summary": "Não há online, coop ou multiplayer obrigatório; Subnautica é uma platina single-player.",
+  "grind_summary": "O esforço está em exploração, profundidade, veículos, base, recursos e preparação, não em grind repetitivo.",
+  "dlc_scope": "Guia focado na lista base de Subnautica original; não inclui Below Zero, Subnautica 2, versões mobile ou ports futuros.",
+  "difficulty_reason": "A dificuldade é baixa/média: o desafio vem de sobrevivência, navegação, profundidade e planejamento, sem online, coop ou dificuldade obrigatória.",
+  "time_reason": "A faixa de 20-30h considera campanha, exploração, veículos, base, história, Cuddlefish e cleanup antes do lançamento final.",
+  "first_run_advice": "Explore com calma, construa uma base funcional e avance a história enquanto cria veículos, equipamentos e saves manuais antes de grandes marcos.",
+  "cleanup_advice": "Antes do final, revise veículos, base, Aurora, instalações alienígenas, profundidade, Cuddlefish e qualquer objetivo pendente.",
+  "before_you_start": "Subnautica não tem Chapter Select tradicional. Use saves manuais antes de grandes expedições e antes do final, e não confunda este guia com Below Zero ou Subnautica 2.",
+  "best_for": "Ideal para quem quer uma platina de sobrevivência e exploração, com ritmo livre, progressão por descoberta e foco em veículos e mundo aberto subaquático.",
+  "avoid_if": "Evite se você não gosta de navegação sem marcações constantes, exploração subaquática, gestão de oxigênio ou preparação antes de áreas profundas.",
+  "editorial_status": "published",
+  "editorial_review_status": "in_review",
+  "coverage_level": "strong",
+  "is_verified": false,
+  "verification_status": "review",
+  "verification_note": "Guia inicial de Subnautica adicionado com lista PlayStation base; distribuição e risco de Cuddlefish requerem revisão editorial final.",
+  "editorial_notes": "Lista PlayStation validada como 18 troféus, distribuição 1 platina, 9 ouro, 7 prata e 1 bronze. Fontes divergem sobre perdíveis: PowerPyx trata 0 missables, mas guias de apoio apontam risco no Cuddlefish por recursos finitos; dado conservador aplicado.",
+  "quality_warnings": [
+    "needs_trophy_list_validation",
+    "needs_trophy_distribution_validation",
+    "needs_trophy_localization_check",
+    "needs_missables_validation"
+  ],
+  "trophyCount": 18,
+  "trophyDistribution": {
+    "platinum": 1,
+    "gold": 9,
+    "silver": 7,
+    "bronze": 1
+  },
+  "hasOnline": false,
+  "hasMandatoryOnline": false,
+  "requiresOnline": false,
+  "onlineTrophies": 0,
+  "onlineRequired": false,
+  "hasCoop": false,
+  "hasMandatoryCoop": false,
+  "coopRequired": false,
+  "coopTrophies": 0,
+  "multiplayerRequired": false,
+  "dlcRequired": false,
+  "chapterSelect": false,
+  "openWorldCleanup": true,
+  "hasMissables": true,
+  "missableCount": 1,
+  "platinumType": "sobrevivência + exploração + veículos + história + cleanup",
+  "image": "https://image.api.playstation.com/vulcan/ap/rnd/202009/3006/xaQnlPaY1BGyNVrSJHruGiMb.jpg",
+  "cover_image": "https://image.api.playstation.com/vulcan/ap/rnd/202009/3006/aJJxsiebmzSzHAVXztSZE9gI.jpg",
+  "roadmap": [
+    {
+      "title": "Sobreviva aos primeiros dias e estabilize recursos",
+      "focus": "Início / sobrevivência",
+      "objective": "Aprender os sistemas básicos, coletar recursos essenciais e criar uma rotina segura de oxigênio, comida, água e crafting.",
+      "actions": [
+        "Explore as áreas próximas ao Lifepod sem se afastar demais no começo.",
+        "Colete recursos básicos para ferramentas iniciais.",
+        "Priorize oxigênio, água, comida e armazenamento.",
+        "Escaneie fragmentos sempre que encontrar destroços.",
+        "Crie beacons para marcar locais importantes."
+      ],
+      "warning": "",
+      "result": "Base de sobrevivência criada e exploração inicial mais segura."
+    },
+    {
+      "title": "Construa base e equipamentos essenciais",
+      "focus": "Base / crafting",
+      "objective": "Criar uma estrutura de suporte para exploração, armazenamento, fabricação e progressão.",
+      "actions": [
+        "Construa uma base simples e funcional.",
+        "Organize recursos por categoria.",
+        "Crie ferramentas de exploração e sobrevivência.",
+        "Escaneie fragmentos de módulos, equipamentos e veículos.",
+        "Marque biomas e destroços importantes."
+      ],
+      "warning": "",
+      "result": "Base preparada para expedições mais longas e progresso consistente."
+    },
+    {
+      "title": "Desbloqueie veículos e aumente a profundidade",
+      "focus": "Veículos / exploração",
+      "objective": "Construir veículos e equipamentos que permitam explorar áreas mais profundas e avançar a história.",
+      "actions": [
+        "Busque fragmentos do Seamoth, Prawn Suit e Cyclops conforme a progressão permitir.",
+        "Faça upgrades de profundidade e segurança.",
+        "Use veículos para explorar biomas mais distantes.",
+        "Leve beacons, comida, água, baterias e kits de cura em expedições longas."
+      ],
+      "warning": "",
+      "result": "Acesso a áreas profundas liberado e exploração avançada encaminhada."
+    },
+    {
+      "title": "Avance a história e investigue instalações alienígenas",
+      "focus": "História / alienígenas",
+      "objective": "Seguir os sinais principais, investigar instalações alienígenas e desbloquear marcos narrativos da platina.",
+      "actions": [
+        "Siga pistas de rádio, sinais e locais importantes.",
+        "Explore a Aurora quando estiver preparado.",
+        "Investigue estruturas alienígenas e áreas de maior profundidade.",
+        "Faça saves manuais antes de grandes expedições.",
+        "Não avance para o final sem revisar pendências importantes."
+      ],
+      "warning": "",
+      "result": "História principal avançada e principais locais descobertos."
+    },
+    {
+      "title": "Faça cleanup de criaturas, bases, veículos e objetivos opcionais",
+      "focus": "Cleanup / exploração",
+      "objective": "Finalizar troféus ligados a construção, veículos, exploração, criaturas e objetivos que não vieram naturalmente.",
+      "actions": [
+        "Revise troféus de construção de base e veículos.",
+        "Complete objetivos de exploração pendentes.",
+        "Faça Man's Best Friend antes do final e preserve ovos de Cuddlefish.",
+        "Verifique se falta algum marco antes do final.",
+        "Use saves manuais para evitar retrabalho."
+      ],
+      "warning": "O Cuddlefish é o principal ponto de atenção por depender de ovos finitos.",
+      "result": "Pendências secundárias reduzidas antes da conclusão."
+    },
+    {
+      "title": "Prepare o final e conclua a platina",
+      "focus": "Final / checklist",
+      "objective": "Revisar a lista de troféus antes de concluir a história e finalizar a platina com segurança.",
+      "actions": [
+        "Revise checklist completo antes do lançamento final.",
+        "Confirme que troféus de exploração, veículos, base e história estão concluídos.",
+        "Faça um save manual antes do ponto final.",
+        "Conclua os objetivos finais da campanha.",
+        "Volte ao save anterior se precisar limpar algo restante, se o jogo permitir."
+      ],
+      "warning": "",
+      "result": "História concluída e platina pronta sem misturar online, coop ou DLC."
+    }
+  ],
+  "trophies": [
+    {
+      "id": "subnautica-platinum-trophy",
+      "name": "Platinum Trophy",
+      "type": "Platina",
+      "description": "Colete todos os troféus.",
+      "tip": "Conclua os 17 troféus restantes da lista PlayStation base de Subnautica.",
+      "is_missable": false,
+      "is_spoiler": false,
+      "tags": ["platina"]
+    },
+    {
+      "id": "subnautica-getting-your-feet-wet",
+      "name": "Getting Your Feet Wet",
+      "type": "Bronze",
+      "description": "Mergulhe pela primeira vez.",
+      "tip": "Troféu inicial; entre na água após sair do Lifepod.",
+      "is_missable": false,
+      "is_spoiler": false,
+      "tags": ["história", "sobrevivência"]
+    },
+    {
+      "id": "subnautica-extinction-event-avoided",
+      "name": "Extinction Event Avoided",
+      "type": "Ouro",
+      "description": "Conserte o reator da Aurora.",
+      "tip": "Prepare radiação, ferramentas, água e suprimentos antes de explorar a Aurora.",
+      "is_missable": false,
+      "is_spoiler": true,
+      "tags": ["aurora", "história", "exploração"]
+    },
+    {
+      "id": "subnautica-ancient-technologies",
+      "name": "Ancient Technologies",
+      "type": "Prata",
+      "description": "Encontre a Plataforma de Aplicação de Quarentena.",
+      "tip": "Siga a progressão principal e investigue as estruturas alienígenas.",
+      "is_missable": false,
+      "is_spoiler": true,
+      "tags": ["história", "alienígenas", "exploração"]
+    },
+    {
+      "id": "subnautica-thermal-activity",
+      "name": "Thermal Activity",
+      "type": "Ouro",
+      "description": "Encontre a Usina Térmica Alienígena.",
+      "tip": "Exige exploração profunda e veículos/upgrades adequados.",
+      "is_missable": false,
+      "is_spoiler": true,
+      "tags": ["história", "alienígenas", "profundidade"]
+    },
+    {
+      "id": "subnautica-find-the-lost-river",
+      "name": "Find the Lost River",
+      "type": "Ouro",
+      "description": "Encontre a Instalação de Pesquisa da Doença.",
+      "tip": "Prepare expedições longas com veículos, beacons e suprimentos.",
+      "is_missable": false,
+      "is_spoiler": true,
+      "tags": ["história", "profundidade", "exploração"]
+    },
+    {
+      "id": "subnautica-fourteen-thousand-leagues-under-the-sea",
+      "name": "Fourteen Thousand Leagues Under the Sea",
+      "type": "Ouro",
+      "description": "Encontre a Unidade de Contenção Primária.",
+      "tip": "Marco de progressão profunda; leve veículo preparado e recursos de sobrevivência.",
+      "is_missable": false,
+      "is_spoiler": true,
+      "tags": ["história", "profundidade", "alienígenas"]
+    },
+    {
+      "id": "subnautica-optimal-health",
+      "name": "Optimal Health",
+      "type": "Ouro",
+      "description": "Cure a infecção.",
+      "tip": "Avance a linha principal das instalações alienígenas e criaturas relacionadas.",
+      "is_missable": false,
+      "is_spoiler": true,
+      "tags": ["história", "final"]
+    },
+    {
+      "id": "subnautica-leave-only-time-capsules",
+      "name": "Leave Only Time Capsules",
+      "type": "Ouro",
+      "description": "Crie e implante uma cápsula do tempo.",
+      "tip": "Faça antes de concluir o lançamento final do foguete.",
+      "is_missable": false,
+      "is_spoiler": true,
+      "tags": ["história", "final", "cleanup"]
+    },
+    {
+      "id": "subnautica-go-among-the-stars",
+      "name": "Go Among the Stars",
+      "type": "Ouro",
+      "description": "Lance o foguete Neptune.",
+      "tip": "Revise o checklist e faça save manual antes de finalizar a campanha.",
+      "is_missable": false,
+      "is_spoiler": true,
+      "tags": ["história", "final"]
+    },
+    {
+      "id": "subnautica-settling-in-for-the-long-haul",
+      "name": "Settling in for the Long Haul",
+      "type": "Prata",
+      "description": "Construa uma base.",
+      "tip": "Uma base simples já resolve o troféu e facilita armazenamento e crafting.",
+      "is_missable": false,
+      "is_spoiler": false,
+      "tags": ["base", "crafting"]
+    },
+    {
+      "id": "subnautica-personal-propulsion",
+      "name": "Personal Propulsion",
+      "type": "Prata",
+      "description": "Construa um Seamoth.",
+      "tip": "Escaneie fragmentos e construa o veículo para expandir a exploração.",
+      "is_missable": false,
+      "is_spoiler": false,
+      "tags": ["veículo", "exploração"]
+    },
+    {
+      "id": "subnautica-40-foot-sub-for-one",
+      "name": "40-foot Sub For One",
+      "type": "Prata",
+      "description": "Construa um Cyclops.",
+      "tip": "Procure fragmentos do Cyclops em destroços e biomas mais avançados.",
+      "is_missable": false,
+      "is_spoiler": false,
+      "tags": ["veículo", "profundidade"]
+    },
+    {
+      "id": "subnautica-ordered-the-prawn",
+      "name": "Ordered the Prawn",
+      "type": "Prata",
+      "description": "Construa um Prawn Suit.",
+      "tip": "Escaneie fragmentos do Prawn Suit, especialmente durante a progressão pela Aurora.",
+      "is_missable": false,
+      "is_spoiler": false,
+      "tags": ["veículo", "aurora", "profundidade"]
+    },
+    {
+      "id": "subnautica-seaside-living-with-an-ocean-view",
+      "name": "Seaside Living with an Ocean View",
+      "type": "Prata",
+      "description": "Encontre a base Degasi na ilha flutuante.",
+      "tip": "Siga pistas de PDAs/sinais e explore a ilha flutuante com beacons.",
+      "is_missable": false,
+      "is_spoiler": false,
+      "tags": ["exploração", "história", "base"]
+    },
+    {
+      "id": "subnautica-follow-the-degasi",
+      "name": "Follow the Degasi",
+      "type": "Ouro",
+      "description": "Encontre a base Degasi no recife profundo.",
+      "tip": "Continue seguindo a trilha Degasi e prepare-se para maior profundidade.",
+      "is_missable": false,
+      "is_spoiler": true,
+      "tags": ["exploração", "história", "profundidade"]
+    },
+    {
+      "id": "subnautica-man-s-best-friend",
+      "name": "Man's Best Friend",
+      "type": "Prata",
+      "description": "Choque e liberte um Cuddlefish.",
+      "tip": "Priorize este troféu antes do final. Ovos de Cuddlefish são finitos, então não descarte nem perca todos eles.",
+      "is_missable": true,
+      "is_spoiler": false,
+      "tags": ["criatura", "cleanup", "perdível"]
+    },
+    {
+      "id": "subnautica-seamonsters",
+      "name": "Seamonsters",
+      "type": "Ouro",
+      "description": "Encontre o habitat do Sea Emperor.",
+      "tip": "Marco de história profunda; leve veículo preparado, beacons e recursos extras.",
+      "is_missable": false,
+      "is_spoiler": true,
+      "tags": ["história", "profundidade", "criatura"]
+    }
+  ]
 }
 
 ];
@@ -28861,17 +29385,17 @@ const astrosPlayroomDescriptionPtById = {
   astros_playroom_charted: "Pegue todos os artefatos em GPU Jungle.",
   astros_playroom_welcome_to_the_third_place: "Pegue todos os artefatos em SSD Speedway.",
   astros_playroom_and_conquered_worlds: "Pegue todos os artefatos em Memory Meadow.",
-  astros_playroom_dude_raider: "Colete todos os artefatos nas 4 fases principais e no PS Labo.",
+  astros_playroom_dude_raider: "Colete todos os artefatos nas quatro fases principais e no PS Labo.",
   astros_playroom_one_down_lots_more_to_go: "Pegue sua primeira puzzle piece.",
   astros_playroom_cool_hoarder: "Pegue todas as puzzle pieces em Cooling Springs.",
   astros_playroom_the_found_legacy: "Pegue todas as puzzle pieces em GPU Jungle.",
   astros_playroom_omega_booster: "Pegue todas as puzzle pieces em SSD Speedway.",
   astros_playroom_ico_nic: "Pegue todas as puzzle pieces em Memory Meadow.",
-  astros_playroom_a_grand_tour: "Pegue todas as puzzle pieces do jogo.",
+  astros_playroom_a_grand_tour: "Colete todas as peças de puzzle do jogo.",
   astros_playroom_gatcha_beginner: "Pegue seu primeiro prêmio do Gatcha.",
   astros_playroom_for_the_players: "Pegue um prêmio secreto do Gatcha.",
   astros_playroom_gatcha_maniac: "Pegue metade dos prêmios do Gatcha.",
-  astros_playroom_saru_gatcha: "Pegue todos os prêmios do Gatcha.",
+  astros_playroom_saru_gatcha: "Obtenha todos os prêmios do Gatcha.",
   astros_playroom_project_neo: "Lance 10 bots voando com um único spin attack.",
   astros_playroom_the_last_guy: "Ande pelo CPU Plaza com pelo menos 20 bots seguindo você.",
   astros_playroom_this_way_up: "Acerte o logo PS no PS2 em PlayStation Labo.",
@@ -28894,6 +29418,52 @@ const astrosPlayroomDescriptionPtById = {
   astros_playroom_wild_arms: "Faça um giro enquanto dispara a metralhadora.",
   astros_playroom_its_all_in_the_mind: "Derrote 3 inimigos rapidamente com socos.",
   astros_playroom_super_computer: "Revele o logo anterior em PlayStation Labo."
+};
+
+const astrosPlayroomNamePtById = {
+  astros_playroom_youve_only_done_everything: "Você Fez Tudo",
+  astros_playroom_do_it: "Manda Ver!",
+  astros_playroom_emotion_engine: "Motor de Emoção!",
+  astros_playroom_hd_graphics: "Gráficos em HD!",
+  astros_playroom_greatness_awaits: "A Grandeza Aguarda!",
+  astros_playroom_in_mint_condition: "Em Estado Impecável",
+  astros_playroom_such_a_big_fan: "Que Fã!",
+  astros_playroom_charted: "Mapeado!",
+  astros_playroom_welcome_to_the_third_place: "Bem-vindo ao Terceiro Lugar",
+  astros_playroom_and_conquered_worlds: "... E Mundos Conquistados",
+  astros_playroom_dude_raider: "Aventureiro de Artefatos",
+  astros_playroom_one_down_lots_more_to_go: "Um Foi, Faltam Muitos!",
+  astros_playroom_cool_hoarder: "Acumulador Radical",
+  astros_playroom_the_found_legacy: "O Legado Encontrado",
+  astros_playroom_omega_booster: "Impulso Ômega!",
+  astros_playroom_ico_nic: "Ico-nico",
+  astros_playroom_a_grand_tour: "Um Grande Passeio!",
+  astros_playroom_gatcha_beginner: "Iniciante no Gatcha",
+  astros_playroom_for_the_players: "Para os Jogadores!",
+  astros_playroom_gatcha_maniac: "Maníaco do Gatcha",
+  astros_playroom_saru_gatcha: "Saru Gatcha!",
+  astros_playroom_project_neo: "Projeto Neo",
+  astros_playroom_the_last_guy: "O Último Cara",
+  astros_playroom_this_way_up: "Este Lado para Cima",
+  astros_playroom_you_got_a_trophy: "Você Ganhou um Troféu!",
+  astros_playroom_i_recognize_you: "Eu Reconheço Você...",
+  astros_playroom_the_very_far_point: "O Ponto Mais Distante...",
+  astros_playroom_honey_im_home: "Querido, Cheguei!",
+  astros_playroom_disc_swap: "Troca de Disco!",
+  astros_playroom_keepy_uppies: "Embaixadinhas",
+  astros_playroom_hell_diver: "Mergulhador Infernal",
+  astros_playroom_jumping_splash: "Salto na Fonte!",
+  astros_playroom_twisting_metal: "Metal Torcido",
+  astros_playroom_jason: "Jason!",
+  astros_playroom_pain: "Dor!",
+  astros_playroom_wipeout: "Wipeout!",
+  astros_playroom_ready_for_the_proving: "Pronto para a Provação",
+  astros_playroom_little_rolling_star: "Pequena Estrela Rolante...",
+  astros_playroom_no_no_no_noooooo: "Não Não Não Nãããão!",
+  astros_playroom_adequate_boy: "Adequado, Garoto...",
+  astros_playroom_wild_arms: "Braços Selvagens",
+  astros_playroom_its_all_in_the_mind: "Está Tudo na Mente",
+  astros_playroom_super_computer: "Supercomputador"
 };
 
 const nioh2DescriptionOriginalById = {
@@ -29014,6 +29584,64 @@ const nioh2DescriptionPtById = {
   nioh2_peal_ten_thousand_bells: "Toque todos os sinos em \"Ruin Draws Near\"."
 };
 
+const nioh2TrustedSteamPtBrById = {
+  nioh2_you_are_nioh: { name_pt: "Você é Nioh", descriptionOriginal: "You have unlocked all achievements!", descriptionPtBr: "Você desbloqueou todas as conquistas!" },
+  nioh2_beginning_samurai: { name_pt: "Aprendiz de Samurai", descriptionOriginal: "Reached level 10.", descriptionPtBr: "Atingiu o nível 10." },
+  nioh2_full_fledged_samurai: { name_pt: "Samurai Pleno", descriptionOriginal: "Reached level 100.", descriptionPtBr: "Atingiu o nível 100." },
+  nioh2_dawn_of_a_dream: { name_pt: "Despertar de um Sonho", descriptionOriginal: "Befriended Tokichiro.", descriptionPtBr: "Fez amizade com Tokichiro." },
+  nioh2_electrifying_triumph: { name_pt: "Uma Conquista Eletrizante", descriptionOriginal: "Defeated Imagawa Yoshimoto and was made a samurai.", descriptionPtBr: "Derrotou Imagawa Yoshimoto e tornou-se um samurai." },
+  nioh2_hideyoshi: { name_pt: "Hideyoshi", descriptionOriginal: "Decided to share a name with Tokichiro.", descriptionPtBr: "Escolheu compartilhar um nome com Tokichiro." },
+  nioh2_paths_we_tread: { name_pt: "Os Caminhos que Trilhamos", descriptionOriginal: "Parted ways with Tokichiro.", descriptionPtBr: "Separou-se de Tokichiro." },
+  nioh2_dreams_toll: { name_pt: "Preço de um Sonho", descriptionOriginal: "Defeated Tokichiro.", descriptionPtBr: "Derrotou Tokichiro." },
+  nioh2_mother_and_child: { name_pt: "Laço Materno", descriptionOriginal: "Reunited with your mother in the Interim.", descriptionPtBr: "Reuniu-se com sua mãe no Ínterim." },
+  nioh2_what_is_written: { name_pt: "Estava Escrito", descriptionOriginal: "Fulfilled your ultimate destiny.", descriptionPtBr: "Cumpriu seu verdadeiro destino." },
+  nioh2_dream_within_dream: { name_pt: "Sonho de um Sonho", descriptionOriginal: "Saw Tokichiro off on his final departure.", descriptionPtBr: "Despediu-se de Tokichiro em sua última partida." },
+  nioh2_weapons_mind: { name_pt: "Pensamento Afiado", descriptionOriginal: "Listened to the innermost thoughts of a Yokai Weapon.", descriptionPtBr: "Ouviu os pensamentos mais profundos de uma Arma Yokai." },
+  nioh2_sword_master: { name_pt: "Mestre Espadachim", descriptionOriginal: "Acquired mystic art for the sword.", descriptionPtBr: "Obteve artes místicas de katana." },
+  nioh2_dual_sword_master: { name_pt: "Mestre das Katanas Duplas", descriptionOriginal: "Acquired mystic art for the dual swords.", descriptionPtBr: "Obteve artes místicas de katanas duplas." },
+  nioh2_spear_master: { name_pt: "Mestre Lanceiro", descriptionOriginal: "Acquired mystic art for the spear.", descriptionPtBr: "Obteve artes místicas de lança." },
+  nioh2_axe_master: { name_pt: "Mestre do Machado", descriptionOriginal: "Acquired mystic art for the axe.", descriptionPtBr: "Obteve artes místicas de machado." },
+  nioh2_kusarigama_master: { name_pt: "Mestre da Kusarigama", descriptionOriginal: "Acquired mystic art for the kusarigama.", descriptionPtBr: "Obteve artes místicas de kusarigama." },
+  nioh2_odachi_master: { name_pt: "Mestre da Odachi", descriptionOriginal: "Acquired mystic art for the odachi.", descriptionPtBr: "Obteve artes místicas de odachi." },
+  nioh2_tonfa_master: { name_pt: "Mestre da Tonfa", descriptionOriginal: "Acquired mystic art for the tonfa.", descriptionPtBr: "Obteve artes místicas de tonfa." },
+  nioh2_hatchet_master: { name_pt: "Mestre em Machadinhas", descriptionOriginal: "Acquired mystic art for the hatchets.", descriptionPtBr: "Obteve artes místicas de machadinhas." },
+  nioh2_switchglaive_master: { name_pt: "Mestre em Foice-borboleta", descriptionOriginal: "Acquired mystic art for the switchglaive.", descriptionPtBr: "Obteve artes místicas de foice-borboleta." },
+  nioh2_ninjutsu_master: { name_pt: "Mestre do Ninjutsu", descriptionOriginal: "Acquired mystic art for Ninjutsu.", descriptionPtBr: "Obteve artes místicas de ninjutsu." },
+  nioh2_onmyo_magic_master: { name_pt: "Mestre de Magia Onmyo", descriptionOriginal: "Acquired mystic art for Onmyo Magic.", descriptionPtBr: "Obteve artes místicas de Magia Onmyo." },
+  nioh2_burst_breaker: { name_pt: "Vingador Impetuoso", descriptionOriginal: "Used the Brute, Feral, and Phantom Burst Counters five times each to counter a Burst Attack.", descriptionPtBr: "Usou Revides Impetuosos (Brutamontes, Fera e Fantasma) 5 vezes cada para revidar Ataques Impetuosos." },
+  nioh2_match_made_heaven: { name_pt: "Par Perfeito", descriptionOriginal: "Performed a Soul Match.", descriptionPtBr: "Realizou uma Fusão Espiritual." },
+  nioh2_latest_masterpiece: { name_pt: "Obra-prima", descriptionOriginal: "Forged an item.", descriptionPtBr: "Forjou um item." },
+  nioh2_remodeling_novice: { name_pt: "Novato em Remodelação", descriptionOriginal: "Remodeled a piece of equipment.", descriptionPtBr: "Remodelou um equipamento." },
+  nioh2_tea_connoisseur: { name_pt: "Especialista em Chá", descriptionOriginal: "Appraised your tea utensils 50 times.", descriptionPtBr: "Seus utensílios de chá foram apreciados 50 vezes." },
+  nioh2_lover_of_letters: { name_pt: "Amante das Letras", descriptionOriginal: "Displayed a calligraphy scroll in your hut.", descriptionPtBr: "Decorou sua cabana com um pergaminho de caligrafia." },
+  nioh2_trinket_triumph: { name_pt: "Triunfo do Artefato", descriptionOriginal: "Used the Kodama Bazaar.", descriptionPtBr: "Usou o Bazar Kodama." },
+  nioh2_teamwork: { name_pt: "Trabalho em Equipe", descriptionOriginal: "Completed 10 missions with NPCs or as Expeditions with other users. (Does not include Acolytes.)", descriptionPtBr: "Concluiu 10 missões com um PNJ ou em Expedições com outros jogadores. (Não inclui Acólitos.)" },
+  nioh2_help_wanted: { name_pt: "Mão Amiga", descriptionOriginal: "Summoned an Acolyte from a Benevolent Grave 10 times.", descriptionPtBr: "Invocou um Acólito de um Túmulo Benevolente 10 vezes." },
+  nioh2_twilight_walker: { name_pt: "Andarilho do Crepúsculo", descriptionOriginal: "Completed your first Twilight mission.", descriptionPtBr: "Concluiu a primeira Missão Crepuscular." },
+  nioh2_spa_healer: { name_pt: "Descanso no Spa", descriptionOriginal: "Bathed in first hot spring.", descriptionPtBr: "Banhou-se na primeira fonte termal." },
+  nioh2_spa_lover: { name_pt: "Viciado em Spa", descriptionOriginal: "Bathed in every hot spring.", descriptionPtBr: "Banhou-se em todas as fontes termais." },
+  nioh2_yokai_quelling_master: { name_pt: "Exterminador de Yokai", descriptionOriginal: "Defeated all types of yokai.", descriptionPtBr: "Derrotou todos os tipos de Yokai." },
+  nioh2_kodama_leader: { name_pt: "Líder dos Kodama", descriptionOriginal: "Collected all Kodama.", descriptionPtBr: "Coletou todos os Kodama." },
+  nioh2_friend_of_guardians: { name_pt: "Amigo dos Guardiões", descriptionOriginal: "Collected all Guardian Spirits.", descriptionPtBr: "Coletou todos os Espíritos Guardiões." },
+  nioh2_sudama_swapper: { name_pt: "Troca com Sudama", descriptionOriginal: "Exchanged gifts with a Sudama for the first time.", descriptionPtBr: "Trocou presentes com um Sudama pela primeira vez." },
+  nioh2_core_score: { name_pt: "Essência Essencial", descriptionOriginal: "Obtained your first Soul Core.", descriptionPtBr: "Obteve sua primeira Almessência." },
+  nioh2_friend_to_kodama: { name_pt: "Amigo dos Kodama", descriptionOriginal: "Obtained a Kodama's Soul Core.", descriptionPtBr: "Obteve uma Almessência de Kodama." },
+  nioh2_soul_searcher: { name_pt: "Colecionador de Almas", descriptionOriginal: "Obtained all Soul Cores.", descriptionPtBr: "Obteve todas as Almessências." },
+  nioh2_fuse_it_or_lose_it: { name_pt: "Fundir ou Perder", descriptionOriginal: "Fused any Soul Core until it reached rank 9.", descriptionPtBr: "Fundiu uma Almessência até o nível 9." },
+  nioh2_seasoned_traveler: { name_pt: "Viajado", descriptionOriginal: "Discovered 10 hidden items on the map.", descriptionPtBr: "Descobriu 10 itens ocultos no mapa." },
+  nioh2_let_there_be_light: { name_pt: "Faça-se a Luz", descriptionOriginal: "Dispelled every instance of the Dark Realm in the main missions.", descriptionPtBr: "Removeu todas as instâncias do Reino Sombrio nas missões principais." },
+  nioh2_grazer_eraser: { name_pt: "Vá Pastar", descriptionOriginal: "Defeated Mezuki and Gozuki in the same mission.", descriptionPtBr: "Derrotou Mezuki e Gozuki na mesma missão." },
+  nioh2_dungball_roller: { name_pt: "Bolas de Estrume", descriptionOriginal: "Became Ryunojo the Dung Lover's best friend and received the Coiled Snake Helmet smithing text.", descriptionPtBr: "Tornou-se o melhor amigo de Ryunojo, o apaixonado por estrume, e recebeu o texto antigo do Elmo Serpente Enrolada." },
+  nioh2_hidden_hopes: { name_pt: "Esperanças Ocultas", descriptionOriginal: "Encountered all the Usura-Hicho in \"The Frenzied Blaze\".", descriptionPtBr: "Encontrou todas as Usura-hicho em \"A Lâmina Ensandecida\"." },
+  nioh2_clean_sweep: { name_pt: "Varredura Completa", descriptionOriginal: "Destroyed every Amrita shard in \"The High-spirited Demon\".", descriptionPtBr: "Destruiu todos os pedaços de Amrita em \"O Demônio Destemido\"." },
+  nioh2_devout_believer: { name_pt: "Beato Devoto", descriptionOriginal: "Defeated the boss of \"The Viper's Sanctum\" without breaking the statue of Shirohami.", descriptionPtBr: "Derrotou o chefe de \"O Santuário da Víbora\" sem quebrar a estátua de Shirohami." },
+  nioh2_seven_wonders: { name_pt: "Sete Maravilhas", descriptionOriginal: "Defeated each of the Seven Spears in \"Cherry Blossom Viewing in Daigo\".", descriptionPtBr: "Derrotou cada uma das Sete Lanças em \"As Flores de Cerejeira em Daigo\"." },
+  nioh2_feather_buster: { name_pt: "Depenador", descriptionOriginal: "Drove back every Tatarimokke along the journey in \"A Way Out\".", descriptionPtBr: "Expulsou cada Tatarimokke pelo caminho em \"Uma Saída\"." },
+  nioh2_bold_wrangler: { name_pt: "Toureiro Corajoso", descriptionOriginal: "Defeated Gozuki in \"The Village of Cursed Blossoms\".", descriptionPtBr: "Derrotou Gozuki em \"O Vilarejo das Flores Amaldiçoadas\"." },
+  nioh2_schemer: { name_pt: "Conspirador", descriptionOriginal: "Got Gyuki to attack the dam in \"Pervading Waters\".", descriptionPtBr: "Fez Gyuki atacar a represa em \"Águas Imbuídas\"." },
+  nioh2_peal_ten_thousand_bells: { name_pt: "Repique de Dez Mil Sinos", descriptionOriginal: "Rang all the bells in \"Ruin Draws Near\".", descriptionPtBr: "Tocou todos os sinos em \"A Destruição se Avizinha\"." }
+};
+
 const nioh2TagsById = {
   nioh2_you_are_nioh: ["platina"],
   nioh2_samurai_of_legend: ["missão", "cleanup"],
@@ -29056,8 +29684,403 @@ const nioh2TagsById = {
   nioh2_peal_ten_thousand_bells: ["missão", "situacional"]
 };
 
+const astroBotEditorialPtBrByName = {
+  "Astro-nomical!": { name_pt: "Astro-nômico!", descriptionOriginal: "Earned all Trophies. Well done and see you in Astro's next adventure!", descriptionPtBr: "Conquiste todos os troféus." },
+  "Unforgettable!": { name_pt: "Inesquecível!", descriptionOriginal: "Recovered the Mothership's Memory.", descriptionPtBr: "Recupere a memória da nave-mãe." },
+  "Solid Performance": { name_pt: "Desempenho Sólido", descriptionOriginal: "Recovered the Mothership's SSD.", descriptionPtBr: "Recupere o SSD da nave-mãe." },
+  "Doing It For You": { name_pt: "Fazendo Isso por Você", descriptionOriginal: "Recovered the Mothership's GPU.", descriptionPtBr: "Recupere a GPU da nave-mãe." },
+  "Keep It Cool": { name_pt: "Mantenha a Cabeça Fria", descriptionOriginal: "Recovered the Mothership's Cooling Fan.", descriptionPtBr: "Recupere a ventoinha de resfriamento da nave-mãe." },
+  "Take Cover!": { name_pt: "Protejam-se!", descriptionOriginal: "Recovered the Mothership's Protection Covers.", descriptionPtBr: "Recupere as capas de proteção da nave-mãe." },
+  "A Lot To Process": { name_pt: "Muito a Processar", descriptionOriginal: "Saved the CPU Kid.", descriptionPtBr: "Salve o CPU Kid." },
+  "One Bot Down…": { name_pt: "Um Bot a Menos...", descriptionOriginal: "Rescued your first Bot.", descriptionPtBr: "Resgate seu primeiro Bot." },
+  "Monkey See, Monkey Rescue": { name_pt: "Macaco Vê, Macaco Resgata", descriptionOriginal: "Rescued all Bots in Gorilla Nebula.", descriptionPtBr: "Resgate todos os Bots em Gorilla Nebula." },
+  "Tentacular Spectacular": { name_pt: "Espetáculo Tentacular", descriptionOriginal: "Rescued all Bots in Tentacle System.", descriptionPtBr: "Resgate todos os Bots em Tentacle System." },
+  "Fangs Very Much!": { name_pt: "Presas, Muito Obrigado!", descriptionOriginal: "Rescued all Bots in Serpent Starway.", descriptionPtBr: "Resgate todos os Bots em Serpent Starway." },
+  "Nowhere To Hide": { name_pt: "Sem Lugar para se Esconder", descriptionOriginal: "Rescued all Bots in Camo Cosmos.", descriptionPtBr: "Resgate todos os Bots em Camo Cosmos." },
+  "Back To The Nest": { name_pt: "De Volta ao Ninho", descriptionOriginal: "Rescued all Bots in Feather Cluster.", descriptionPtBr: "Resgate todos os Bots em Feather Cluster." },
+  "Lost And Found": { name_pt: "Achados e Perdidos", descriptionOriginal: "Rescued all Bots in Lost Galaxy.", descriptionPtBr: "Resgate todos os Bots em Lost Galaxy." },
+  "The Golden Bot": { name_pt: "O Bot Dourado", descriptionOriginal: "Rescued the Special Master Bot at the top of the Golden Statue.", descriptionPtBr: "Resgate o Bot Mestre Especial no topo da Estátua Dourada." },
+  "A Puzzling Start": { name_pt: "Começo Enigmático", descriptionOriginal: "Found your first Puzzle Piece.", descriptionPtBr: "Encontre sua primeira peça de quebra-cabeça." },
+  "Licence To Spend": { name_pt: "Licença para Gastar", descriptionOriginal: "Opened the Gatcha Lab.", descriptionPtBr: "Abra o Laboratório Gatcha." },
+  "Animal Attraction": { name_pt: "Atração Animal", descriptionOriginal: "Opened the Safari Park.", descriptionPtBr: "Abra o Safari Park." },
+  "Splash My Dash": { name_pt: "Corrida Molhada", descriptionOriginal: "Opened the Dual Speeder Garage.", descriptionPtBr: "Abra a garagem da Dual Speeder." },
+  "Time For A Change": { name_pt: "Hora de Mudar", descriptionOriginal: "Opened the Changing Room.", descriptionPtBr: "Abra o vestiário." },
+  "Monumental Achievement": { name_pt: "Conquista Monumental", descriptionOriginal: "Unlocked the Golden Statue.", descriptionPtBr: "Desbloqueie a Estátua Dourada." },
+  "First Prize": { name_pt: "Primeiro Prêmio", descriptionOriginal: "Collected your first Gatcha from the Gatcha Lab.", descriptionPtBr: "Colete seu primeiro Gatcha no Laboratório Gatcha." },
+  "Money Well Spent": { name_pt: "Dinheiro Bem Gasto", descriptionOriginal: "Earned 150 prizes from the Gatcha Lab.", descriptionPtBr: "Ganhe 150 prêmios no Laboratório Gatcha." },
+  "Strike A Pose!": { name_pt: "Faça uma Pose!", descriptionOriginal: "Took a picture at a Photo Spot.", descriptionPtBr: "Tire uma foto em um ponto de foto." },
+  "SingStars": { name_pt: "Astros Cantores", descriptionOriginal: "Witnessed all ship parts singing together in Crash Site.", descriptionPtBr: "Veja todas as peças da nave cantando juntas no Crash Site." },
+  "What Is He Saying?": { name_pt: "O Que Ele Está Dizendo?", descriptionOriginal: "Splashed Papa Tree's face during his song.", descriptionPtBr: "Molhe o rosto de Papa Tree durante a música dele." },
+  "Um Jammer Slammy": { name_pt: "Enterrada no Ritmo", descriptionOriginal: "Successfully dunked the basketball in Construction Derby.", descriptionPtBr: "Enterre a bola de basquete em Construction Derby." },
+  "Net Profit": { name_pt: "Lucro na Rede", descriptionOriginal: "Caught the gold butterfly in Apes On The Loose.", descriptionPtBr: "Capture a borboleta dourada em Apes On The Loose." },
+  "Eyes Of The All-Father": { name_pt: "Olhos do Pai de Todos", descriptionOriginal: "Found and defeated all eight ravens in Bot Of War.", descriptionPtBr: "Encontre e derrote os oito corvos em Bot Of War." },
+  "The Lost Eggacy": { name_pt: "O Ovolegado Perdido", descriptionOriginal: "Collected all three egg artifacts in Dude Raiding.", descriptionPtBr: "Colete os três artefatos de ovo em Dude Raiding." },
+  "What A Trip!": { name_pt: "Que Viagem!", descriptionOriginal: "Defeated seven enemies with the Tripcaster.", descriptionPtBr: "Derrote sete inimigos com o Tripcaster." },
+  "Double Dug-in": { name_pt: "Dupla Escavada", descriptionOriginal: "Took out two Wormys at the same time.", descriptionPtBr: "Elimine dois Wormys ao mesmo tempo." },
+  "Time To Cash In!": { name_pt: "Hora de Faturar!", descriptionOriginal: "Stopped time and won the jackpot on all four slot machines in Slo-Mo Casino.", descriptionPtBr: "Pare o tempo e ganhe o jackpot nas quatro máquinas caça-níqueis de Slo-Mo Casino." },
+  "Jumping Through Hoops": { name_pt: "Saltando por Aros", descriptionOriginal: "Leaped through the ring in Bubbling Under.", descriptionPtBr: "Salte através da argola em Bubbling Under." },
+  "Thick As Thieves": { name_pt: "Parceiros de Roubo", descriptionOriginal: "Captured a photo of two legendary explorers in Crash Site.", descriptionPtBr: "Tire uma foto de dois exploradores lendários no Crash Site." },
+  "Thaw, God of Thunder!": { name_pt: "Descongele, Deus do Trovão!", descriptionOriginal: "Froze a hammer-wielding deity with the axe in Crash Site.", descriptionPtBr: "Congele uma divindade empunhando martelo com o machado no Crash Site." },
+  "Royally Stuck": { name_pt: "Realmente Grudento", descriptionOriginal: "Got a little too close to a sticky sphere in Crash Site.", descriptionPtBr: "Chegue perto demais de uma esfera grudenta no Crash Site." },
+  "Let’s Twist Again": { name_pt: "Vamos Rodopiar de Novo", descriptionOriginal: "Busted a move with an iconic marsupial in Crash Site.", descriptionPtBr: "Dance com um marsupial icônico no Crash Site." },
+  "Deep-Pocket Dragon": { name_pt: "Dragão dos Bolsos Fundos", descriptionOriginal: "Made a tough guy drop all his items in Crash Site.", descriptionPtBr: "Faça um durão derrubar todos os itens dele no Crash Site." },
+  "KO!": { name_pt: "Nocaute!", descriptionOriginal: "Picked a fight with two street fighting warriors in Crash Site.", descriptionPtBr: "Arrume briga com dois guerreiros de luta de rua no Crash Site." },
+  "Wall Buster": { name_pt: "Quebra-Parede", descriptionOriginal: "Broke up a Bot Wall.", descriptionPtBr: "Desfaça uma Parede de Bots." },
+  "Keep It Together!": { name_pt: "Mantenha a Formação!", descriptionOriginal: "Knocked a Bot out of a Bot Tower without it collapsing.", descriptionPtBr: "Derrube um Bot de uma Torre de Bots sem fazê-la cair." },
+  "Bot Bot Revolution": { name_pt: "Bot Bot Revolution", descriptionOriginal: "Danced with 100 Bots in Crash Site.", descriptionPtBr: "Dance com 100 Bots no Crash Site." },
+  "At The Top Of My Game": { name_pt: "No Topo do Meu Jogo", descriptionOriginal: "Made it to the top of the Mothership.", descriptionPtBr: "Chegue ao topo da nave-mãe." }
+};
+
+const hadesIITrustedSteamPtBrByName = {
+  "Witch of the Woods": { name_pt: "Bruxa da Mata", descriptionOriginal: "Clear Erebus", descriptionPtBr: "Transponha o Érebo." },
+  "Witch of the Depths": { name_pt: "Bruxa das Profundezas", descriptionOriginal: "Clear Oceanus", descriptionPtBr: "Transponha o Oceano." },
+  "Witch of the Plains": { name_pt: "Bruxa das Planícies", descriptionOriginal: "Clear the Fields of Mourning", descriptionPtBr: "Transponha os Campos da Dor." },
+  "Witch of the Outskirts": { name_pt: "Bruxa das Cercanias", descriptionOriginal: "Clear the City of Ephyra", descriptionPtBr: "Transponha a cidade de Éfira." },
+  "Witch of the Waters": { name_pt: "Bruxa das Águas", descriptionOriginal: "Clear the Rift of Thessaly", descriptionPtBr: "Transponha a Fenda da Tessália." },
+  "Soothing Soak": { name_pt: "Mergulho Relaxante", descriptionOriginal: "Take one of your comrades to the Hot Springs", descriptionPtBr: "Vá às termas com um dos seus companheiros." },
+  "Witch of the Abyss": { name_pt: "Bruxa do Abismo", descriptionOriginal: "Clear Tartarus", descriptionPtBr: "Transponha o Tártaro." },
+  "The Arms of Night": { name_pt: "As Armas da Noite", descriptionOriginal: "Fulfill the Prophecy 'The Arms of Night'", descriptionPtBr: "Cumpra a profecia “As Armas da Noite”." },
+  "Witch of the Mountains": { name_pt: "Bruxa das Montanhas", descriptionOriginal: "Clear Mount Olympus", descriptionPtBr: "Transponha o monte Olimpo." },
+  "So Mote It Be": { name_pt: "Que Assim Seja", descriptionOriginal: "Cast 50 Incantations at the Crossroads Cauldron", descriptionPtBr: "Conjure 50 encantos no caldeirão da Encruzilhada." },
+  "Sheep's Clothing": { name_pt: "Pele de Cordeiro", descriptionOriginal: "Slay a Sister of the Dead while afflicted with Twilight Curse", descriptionPtBr: "Elimine uma Irmã dos Mortos sob o efeito da Maldição Crepuscular." },
+  "Breadth of Knowledge": { name_pt: "Amplo Conhecimento", descriptionOriginal: "Fulfill the Prophecy 'Breadth of Knowledge'", descriptionPtBr: "Cumpra a profecia “Amplo Conhecimento”." },
+  "Familiar Confidant": { name_pt: "Confidente Selvagem", descriptionOriginal: "Fulfill the Prophecy 'Familiar Confidant'", descriptionPtBr: "Cumpra a profecia “Confidente Selvagem”." },
+  "Catch of the Night": { name_pt: "Fisgada Noturna", descriptionOriginal: "Take one of your comrades to the Fishing Pier", descriptionPtBr: "Vá ao píer de pesca com um dos seus companheiros." },
+  "Witch of the Clouds": { name_pt: "Bruxa das Nuvens", descriptionOriginal: "Clear the Summit", descriptionPtBr: "Transponha o Topo." },
+  "Ambrosia for Two": { name_pt: "Ambrosia a Dois", descriptionOriginal: "Take one of your comrades to the Taverna", descriptionPtBr: "Vá à taverna com um dos seus companheiros." },
+  "Mind for Magick": { name_pt: "Afinidade Mágica", descriptionOriginal: "Gain 30 Grasp at the Altar of Ashes", descriptionPtBr: "Alcance 30 de domínio no Altar Cinerário." },
+  "Natural Talent": { name_pt: "Talento Nato", descriptionOriginal: "Fulfill the Prophecy 'Natural Talent'", descriptionPtBr: "Cumpra a profecia “Talento Nato”." },
+  "Death to Chronos": { name_pt: "Morte a Cronos", descriptionOriginal: "Complete the lifelong task of the Princess of the Underworld", descriptionPtBr: "Conclua a missão de vida da Princesa do Submundo." },
+  "Animal Whisperer": { name_pt: "Amiga das Feras", descriptionOriginal: "Recruit all Animal Familiars", descriptionPtBr: "Recrute todos os familiares selvagens." },
+  "Behold Night's Champion": { name_pt: "Contemple a Campeã da Noite", descriptionOriginal: "Earn the first Gift of the Veil", descriptionPtBr: "Receba a primeira dádiva do véu." },
+  "Breaking Up the Band": { name_pt: "Crise na Banda", descriptionOriginal: "Use Night Bloom to raise a Siren", descriptionPtBr: "Use o Florescimento Noturno para reanimar uma sereia." },
+  "Giving Back": { name_pt: "Contribuições à Causa", descriptionOriginal: "Earn 10,000 Kudos", descriptionPtBr: "Alcance 10.000 de prestígio." },
+  "Mercy, Night's Executioner": { name_pt: "Piedade, ó Executora da Noite", descriptionOriginal: "Earn the second Gift of the Veil", descriptionPtBr: "Receba a segunda dádiva do véu." },
+  "Haunted by the Past": { name_pt: "Assombrada pelo Passado", descriptionOriginal: "Fulfill the Prophecy 'Haunted by the Past'", descriptionPtBr: "Cumpra a profecia “Assombrada pelo Passado”." },
+  "Elysian Glory": { name_pt: "Glória Elísia", descriptionOriginal: "Prevail in the Contest of Champions", descriptionPtBr: "Triunfe no Duelo dos Campeões." },
+  "Soundest of Sleepers": { name_pt: "Eterno Sonhador", descriptionOriginal: "Fulfill the Prophecy 'Soundest of Sleepers'", descriptionPtBr: "Cumpra a profecia “Eterno Sonhador”." },
+  "Arcana of the Ages": { name_pt: "Arcanos das Eras", descriptionOriginal: "Fulfill the Prophecy 'Arcana of the Ages'", descriptionPtBr: "Cumpra a profecia “Arcanos das Eras”." },
+  "Denizens of the Depths": { name_pt: "Habitantes das Profundezas", descriptionOriginal: "Fulfill the Prophecy 'Denizens of the Depths'", descriptionPtBr: "Cumpra a profecia “Habitantes das Profundezas”." },
+  "Fair Fight": { name_pt: "Luta Justa", descriptionOriginal: "Earn 1,000 Gold competing against Nemesis", descriptionPtBr: "Obtenha 1.000 de ouro em competições com a Nêmesis." },
+  "Sword of the Night": { name_pt: "Espada da Noite", descriptionOriginal: "Fulfill the Prophecy 'Sword of the Night'", descriptionPtBr: "Cumpra a profecia “Espada da Noite”." },
+  "Hand of the Fates": { name_pt: "Mão das Moiras", descriptionOriginal: "Fulfill 60 Minor Prophecies", descriptionPtBr: "Cumpra 60 pequenas profecias." },
+  "Close Comrades": { name_pt: "Grandes Companheiros", descriptionOriginal: "Forge a bond with 10 comrades", descriptionPtBr: "Estabeleça um laço com 10 companheiros." },
+  "Unassailable Insight": { name_pt: "Compreensão Inabalável", descriptionOriginal: "Fully upgrade all Arcana", descriptionPtBr: "Aprimore ao máximo todos os arcanos." },
+  "Dressed to Kill": { name_pt: "Vestida para Matar", descriptionOriginal: "Reach the final confrontation in an Arachne outfit", descriptionPtBr: "Chegue ao confronto final usando uma túnica da Aracne." },
+  "Voice and Vanity": { name_pt: "Voz e Vaidade", descriptionOriginal: "Fulfill the Prophecy 'Voice and Vanity'", descriptionPtBr: "Cumpra a profecia “Voz e Vaidade”." },
+  "Born to Win": { name_pt: "Vitória Vem de Berço", descriptionOriginal: "Fulfill the Prophecy 'Born to Win'", descriptionPtBr: "Cumpra a profecia “Vitória Vem de Berço”." },
+  "Sentimental Value": { name_pt: "Valor Sentimental", descriptionOriginal: "Collect every Keepsake", descriptionPtBr: "Obtenha todas as lembranças." },
+  "The Unseen Sentinel": { name_pt: "Sentinela Oculta", descriptionOriginal: "Fulfill the Prophecy 'The Unseen Sentinel'", descriptionPtBr: "Cumpra a profecia “Sentinela Oculta”." },
+  "Unrivaled Prowess": { name_pt: "Maestria Incomparável", descriptionOriginal: "Fulfill the Prophecy 'Unrivaled Prowess'", descriptionPtBr: "Cumpra a profecia “Maestria Incomparável”." },
+  "Infinite Possibility": { name_pt: "Infinitas Possibilidades", descriptionOriginal: "Clear 20 Chaos Trials", descriptionPtBr: "Supere 20 testes do Caos." },
+  "Golden Age": { name_pt: "Era de Ouro", descriptionOriginal: "Reach the epilogue of the story", descriptionPtBr: "Alcance o epílogo da história." },
+  "Beast Master": { name_pt: "Mestra das Feras", descriptionOriginal: "Fully upgrade all Animal Familiars", descriptionPtBr: "Fortaleça ao máximo todos os familiares selvagens." },
+  "Unfinished Business": { name_pt: "Assuntos Inacabados", descriptionOriginal: "Fulfill the Prophecy 'Unfinished Business'", descriptionPtBr: "Cumpra a profecia “Assuntos Inacabados”." },
+  "Unfamiliar Forms": { name_pt: "Formas Pouco Familiares", descriptionOriginal: "Alter the appearance of each Animal Familiar", descriptionPtBr: "Altere a aparência de cada um dos familiares selvagens." },
+  "Silk and Spitefulness": { name_pt: "Seda e Despeito", descriptionOriginal: "Fulfill the Prophecy 'Silk and Spitefulness'", descriptionPtBr: "Cumpra a profecia “Seda e Despeito”." },
+  "Bearing Dark Gifts": { name_pt: "Presentes das Trevas", descriptionOriginal: "Fulfill the Prophecy 'Bearing Dark Gifts'", descriptionPtBr: "Cumpra a profecia “Presentes das Trevas”." },
+  "Improbable Outcomes": { name_pt: "Resultados Improváveis", descriptionOriginal: "Fulfill the Prophecy 'Improbable Outcomes'", descriptionPtBr: "Cumpra a profecia “Resultados Improváveis”." },
+  "Chaos in Hell": { name_pt: "Caos no Inferno", descriptionOriginal: "Clear the 'Great Chaos Below' Trial", descriptionPtBr: "Supere o teste “Grande Caos Sob a Terra”." },
+  "Goddess of Nightmares": { name_pt: "Deusa dos Pesadelos", descriptionOriginal: "Earn all other Achievements", descriptionPtBr: "Obtenha todas as outras conquistas." }
+};
+
+const tlouPartITrustedSteamPtBrByName = {
+  "Fallen Firefly": { name_pt: "Vaga-lume Caído", descriptionOriginal: "Find a Firefly pendant", descriptionPtBr: "Encontre um pingente Vaga-lume" },
+  "Self-Help": { name_pt: "Auto-ajuda", descriptionOriginal: "Find one training manual", descriptionPtBr: "Encontre um manual de treinamento" },
+  "Savage Starlight Fan": { name_pt: "Fã de Savage Starlight", descriptionOriginal: "Find a comic", descriptionPtBr: "Encontre um gibi" },
+  "No Matter What": { name_pt: "Não Importa Como", descriptionOriginal: "Complete Part 1", descriptionPtBr: "Conclua a Parte 1" },
+  "Who's A Good Boy?": { name_pt: "Quem É um Bom Garoto?", descriptionOriginal: "Pet Buckley the dog", descriptionPtBr: "Faça carinho em Buckley, o cão" },
+  "Geared Up": { name_pt: "Todo Equipado", descriptionOriginal: "Craft every item", descriptionPtBr: "Monte todos os itens" },
+  "Sharpest Tool in the Shed": { name_pt: "Ferramenta Certa para o Trabalho", descriptionOriginal: "Find all workbench tools", descriptionPtBr: "Encontre todas as ferramentas da bancada" },
+  "Combat Ready": { name_pt: "De Prontidão para o Combate", descriptionOriginal: "Fully upgrade a weapon", descriptionPtBr: "Melhore totalmente uma arma" },
+  "Lights Out": { name_pt: "Apagando as Luzes", descriptionOriginal: "While in stealth, turn off the spotlight generator in Pittsburgh", descriptionPtBr: "De modo furtivo, desligue o gerador dos holofotes em Pittsburgh" },
+  "Brick Master": { name_pt: "Mestra dos Tijolos", descriptionOriginal: "Win the brick throwing contest", descriptionPtBr: "Vença a competição de arremesso de tijolos" },
+  "Don't Go": { name_pt: "Não Vá", descriptionOriginal: "Complete Left Behind", descriptionPtBr: "Conclua Left Behind" },
+  "Live Bait": { name_pt: "Isca Viva", descriptionOriginal: "Use bricks or bottles to lure an infected into attacking a human", descriptionPtBr: "Use tijolos ou garrafas para instigar um infectado a atacar um humano" },
+  "Skillz": { name_pt: "Rápida no Gatilho", descriptionOriginal: "Win the water gun fight", descriptionPtBr: "Vença a batalha com armas de água" },
+  "Sticky Fingers": { name_pt: "Mãos Leves", descriptionOriginal: "Open all safes", descriptionPtBr: "Abra todos os cofres" },
+  "Prepared For the Worst": { name_pt: "Preparado para o Pior", descriptionOriginal: "Find all workbenches", descriptionPtBr: "Encontre todas as bancadas" },
+  "In Memoriam": { name_pt: "Em Memória", descriptionOriginal: "Pick up Frank's note after it's discarded", descriptionPtBr: "Pegue o bilhete de Frank após ele ser descartado" },
+  "Left Hanging": { name_pt: "No Vácuo", descriptionOriginal: "Leave Ellie hanging after a job well done", descriptionPtBr: "Deixe Ellie no vácuo após um trabalho bem-feito" },
+  "Build Em Up, Break Em Down": { name_pt: "Construção e Destruição", descriptionOriginal: "Upgrade and then break one of every melee weapon", descriptionPtBr: "Melhore e quebre uma de cada arma branca" },
+  "Waterlogged": { name_pt: "Que Mergulho", descriptionOriginal: "Ride the sewer contraption with Henry and Sam", descriptionPtBr: "Navegue pelo Aparato do Esgoto com Henry e Sam" },
+  "Nobody's Perfect": { name_pt: "Ninguém é perfeito", descriptionOriginal: "Play the Jak X game in Left Behind", descriptionPtBr: "Jogou Jak X em Left Behind" },
+  "Angel Knives": { name_pt: "Angel Knives", descriptionOriginal: "Defeat Black Fang without getting hit", descriptionPtBr: "Derrote Blackfang sem ser atingido" },
+  "Master of Unlocking": { name_pt: "Mestre da Abertura", descriptionOriginal: "Break into every locked door using shivs", descriptionPtBr: "Arrombe todas as portas trancadas à faca" },
+  "Something to Fight For": { name_pt: "Algo Pelo Qual Lutar", descriptionOriginal: "Find all training manuals", descriptionPtBr: "Encontre todos os manuais de treinamento" },
+  "Endure and Survive": { name_pt: "Resistir e Sobreviver", descriptionOriginal: "Collect all comics", descriptionPtBr: "Colete todos os gibis" },
+  "Look for the Light": { name_pt: "Procure a Luz", descriptionOriginal: "Find all Firefly pendants", descriptionPtBr: "Encontre todos os pingentes Vaga-lume" },
+  "That's All I Got": { name_pt: "É só isso que eu tenho", descriptionOriginal: "Survive all of Ellie's jokes", descriptionPtBr: "Sobreviva a todas as piadas da Ellie" },
+  "Chronicles": { name_pt: "Crônicas", descriptionOriginal: "Find all notes and artifacts", descriptionPtBr: "Encontre todos os bilhetes e artefatos" },
+  "Getting to Know You": { name_pt: "Conhecendo Você Melhor", descriptionOriginal: "Engage in all optional conversations", descriptionPtBr: "Inicie todas as conversas opcionais" },
+  "It Can't Be For Nothing": { name_pt: "Não pode ser em vão", descriptionOriginal: "Collect all the achievements", descriptionPtBr: "Conquiste todas as conquistas" }
+};
+
+const tlouPartITrustedSteamNameAliases = {
+  "Self Help": "Self-Help",
+  "In Memorium": "In Memoriam"
+};
+
+const tlouPartIITrustedSteamPtBrRemasteredByName = {
+  "Every Last One of Them": { name_pt: "Até Não Sobrar Nenhum", descriptionOriginal: "Collect all the regular story achievements", descriptionPtBr: "Obtenha todas as conquistas da história normal", descriptionPtSource: "trusted_steam_ptbr_remastered" },
+  "What I Had to Do": { name_pt: "O Que Eu Tive Que Fazer", descriptionOriginal: "Complete the story", descriptionPtBr: "Conclua a história", descriptionPtSource: "trusted_steam_ptbr_remastered" },
+  "Survival Expert": { name_pt: "Especialista em Sobrevivência", descriptionOriginal: "Learn all player upgrades", descriptionPtBr: "Aprenda todas as melhorias de jogador", descriptionPtSource: "trusted_steam_ptbr_remastered" },
+  "Arms Master": { name_pt: "Mestre de Armas", descriptionOriginal: "Fully upgrade all weapons", descriptionPtBr: "Melhore totalmente todas as armas", descriptionPtSource: "trusted_steam_ptbr_remastered" },
+  "Archivist": { name_pt: "Arquivista", descriptionOriginal: "Find all artifacts and journal entries", descriptionPtBr: "Encontre todos os artefatos e registros de diário", descriptionPtSource: "trusted_steam_ptbr_remastered" },
+  "Master Set": { name_pt: "Conjunto Completo", descriptionOriginal: "Find all trading cards", descriptionPtBr: "Encontre todas as cartas colecionáveis", descriptionPtSource: "trusted_steam_ptbr_remastered" },
+  "Numismatist": { name_pt: "Numismata", descriptionOriginal: "Find all coins", descriptionPtBr: "Encontre todas as moedas", descriptionPtSource: "trusted_steam_ptbr_remastered" },
+  "Prepared For the Worst": { name_pt: "Preparada para o Pior", descriptionOriginal: "Find all workbenches", descriptionPtBr: "Encontre todas as bancadas", descriptionPtSource: "trusted_steam_ptbr_remastered" },
+  "Mechanist": { name_pt: "Mecanicista", descriptionOriginal: "Fully upgrade a weapon", descriptionPtBr: "Melhore totalmente uma arma", descriptionPtSource: "trusted_steam_ptbr_remastered" },
+  "Specialist": { name_pt: "Especialista", descriptionOriginal: "Learn all player upgrades in one branch", descriptionPtBr: "Aprenda toda uma linha de melhorias de jogador", descriptionPtSource: "trusted_steam_ptbr_remastered" },
+  "Safecracker": { name_pt: "Arrombadora", descriptionOriginal: "Unlock every safe", descriptionPtBr: "Abra todos os cofres", descriptionPtSource: "trusted_steam_ptbr_remastered" },
+  "Sightseer": { name_pt: "Turista", descriptionOriginal: "Visit every location in downtown Seattle", descriptionPtBr: "Visite todos os locais do centro de Seattle", descriptionPtSource: "trusted_steam_ptbr_remastered" },
+  "Journeyman": { name_pt: "Profissional", descriptionOriginal: "Find all training manuals", descriptionPtBr: "Encontre todos os manuais de treinamento", descriptionPtSource: "trusted_steam_ptbr_remastered" },
+  "Survival Training": { name_pt: "Treinamento de Sobrevivência", descriptionOriginal: "Learn 25 player upgrades", descriptionPtBr: "Aprenda 25 melhorias de jogador", descriptionPtSource: "trusted_steam_ptbr_remastered" },
+  "High Caliber": { name_pt: "Chumbo Grosso", descriptionOriginal: "Find all weapons", descriptionPtBr: "Encontre todas as armas", descriptionPtSource: "trusted_steam_ptbr_remastered" },
+  "In the Field": { name_pt: "No Campo", descriptionOriginal: "Find 12 workbenches", descriptionPtBr: "Encontre 12 bancadas", descriptionPtSource: "trusted_steam_ptbr_remastered" },
+  "Tools of the Trade": { name_pt: "Ferramentas do Ofício", descriptionOriginal: "Craft every item", descriptionPtBr: "Fabrique todos os itens", descriptionPtSource: "trusted_steam_ptbr_remastered" },
+  "Tinkerer": { name_pt: "Só na Gambiarra", descriptionOriginal: "Upgrade a weapon", descriptionPtBr: "Melhore uma arma", descriptionPtSource: "trusted_steam_ptbr_remastered" },
+  "Apprentice": { name_pt: "Aprendiz", descriptionOriginal: "Learn a player upgrade", descriptionPtBr: "Aprenda uma melhoria de jogador", descriptionPtSource: "trusted_steam_ptbr_remastered" },
+  "Starter Set": { name_pt: "Kit Básico", descriptionOriginal: "Find 5 trading cards", descriptionPtBr: "Encontre 5 cartas colecionáveis", descriptionPtSource: "trusted_steam_ptbr_remastered" },
+  "Mint Condition": { name_pt: "Em Ótimo Estado", descriptionOriginal: "Find 5 coins", descriptionPtBr: "Encontre 5 moedas", descriptionPtSource: "trusted_steam_ptbr_remastered" },
+  "Looks Good On You": { name_pt: "Ficou Bonitão", descriptionOriginal: "Put a hat on your companion", descriptionPtBr: "Coloque um chapéu no seu companheiro", descriptionPtSource: "editorial_from_existing_requirement" },
+  "Sharpshooter": { name_pt: "Atirador de Elite", descriptionOriginal: "Win the marksman competition", descriptionPtBr: "Vença a competição de tiro ao alvo", descriptionPtSource: "editorial_from_existing_requirement" },
+  "Put My Name Up": { name_pt: "Na Mosca", descriptionOriginal: "Earn the high score in the archery game", descriptionPtBr: "Consiga a maior pontuação no jogo de arco", descriptionPtSource: "editorial_from_existing_requirement" },
+  "Relic of the Sages": { name_pt: "Relíquia dos Sábios", descriptionOriginal: "Find the Strange Artifact", descriptionPtBr: "Encontre o Artefato Estranho", descriptionPtSource: "trusted_steam_ptbr_remastered" },
+  "So Great and Small": { name_pt: "Tão Grandioso e Tão Pequeno", descriptionOriginal: "Find the Engraved Ring", descriptionPtBr: "Encontre o Anel Gravado", descriptionPtSource: "trusted_steam_ptbr_remastered" }
+};
+
+const subnauticaTrustedSteamPtBrByName = {
+  "Getting Your Feet Wet": { name_pt: "Molhando Os Pés" },
+  "Settling in for the Long Haul": { name_pt: "Estabelecendo-se Para Uma Longa Estadia" },
+  "Personal Propulsion": { name_pt: "Propulsão Pessoal" },
+  "Ancient Technologies": { name_pt: "Tecnologias Antigas" },
+  "Seaside Living with an Ocean View": { name_pt: "Vivendo a Beira-Mar com Vista Para o Oceano" },
+  "Extinction Event Avoided": { name_pt: "Evento de Extinção Evitado" },
+  "40-foot Sub For One": { name_pt: "40-pés Abaixo Para Um" },
+  "Follow the Degasi": { name_pt: "Siga a Degasi" },
+  "Ordered the Prawn": { name_pt: "Encomendado o P.R.A.W.N" },
+  "Follow the Lost River": { name_pt: "Siga pelo Rio Perdido" },
+  "Seamonsters": { name_pt: "Monstros Marinhos" },
+  "Thermal Activity": { name_pt: "Atividade Térmica" },
+  "Fourteen Thousand Leagues Under the Sea": { name_pt: "Quatorze Mil Léguas Sob o Mar" },
+  "Optimal Health": { name_pt: "Saudável" },
+  "Leave Only Time Capsules": { name_pt: "Deixe Apenas Cápsulas do Tempo" },
+  "Go Among the Stars": { name_pt: "Vá Além das Estrelas" },
+  "\"Man's Best Friend\"": { name_pt: "\"Melhor Amigo do Homem\"" }
+};
+
+const nioh3TrustedSteamPtBrById = {
+  nioh3_platinum: { name_pt: "Você é Nioh", descriptionOriginal: "Unlocked all achievements.", descriptionPtBr: "Você desbloqueou todas as conquistas.", descriptionPtSource: "trusted_steam_ptbr" },
+  nioh3_answering_people: { name_pt: "A Pedido do Povo", descriptionOriginal: "Completed all Myths.", descriptionPtBr: "Você concluiu todos os Contos.", descriptionPtSource: "trusted_steam_ptbr" },
+  nioh3_budding_talent: { name_pt: "Talento Emergente", descriptionOriginal: "Reached level 10.", descriptionPtBr: "Você atingiu o nível 10.", descriptionPtSource: "trusted_steam_ptbr" },
+  nioh3_grizzled_veteran: { name_pt: "Experiência Extensa", descriptionOriginal: "Reached level 100.", descriptionPtBr: "Você atingiu o nível 100.", descriptionPtSource: "trusted_steam_ptbr" },
+  nioh3_wanderer_time: { name_pt: "Errante do Tempo", descriptionOriginal: "", descriptionPtBr: "Viaje no tempo pela primeira vez.", descriptionPtSource: "editorial_from_existing_requirement" },
+  nioh3_guiding_mirror: { name_pt: "Espelho-guia", descriptionOriginal: "", descriptionPtBr: "Receba o Guiding Mirror de Ii Naotora.", descriptionPtSource: "editorial_from_existing_requirement" },
+  nioh3_old_tiger: { name_pt: "O Tigre que Parte", descriptionOriginal: "", descriptionPtBr: "Destrua o Crucinite abrigado no espírito guardião de Takeda Shingen.", descriptionPtSource: "editorial_from_existing_requirement" },
+  nioh3_unbreakable_cause: { name_pt: "Determinação Inflexível", descriptionOriginal: "", descriptionPtBr: "Destrua o Crucinite abrigado no espírito guardião de Minamoto no Yoritomo.", descriptionPtSource: "editorial_from_existing_requirement" },
+  nioh3_queens_eyes: { name_pt: "Os Olhos da Rainha se Abrem", descriptionOriginal: "", descriptionPtBr: "Destrua o Crucinite abrigado no espírito guardião de Himiko.", descriptionPtSource: "editorial_from_existing_requirement" },
+  nioh3_what_must: { name_pt: "O Que Deve Ser Feito", descriptionOriginal: "", descriptionPtBr: "Destrua o Crucinite abrigado no espírito guardião de Tokugawa Yoshinobu.", descriptionPtSource: "editorial_from_existing_requirement" },
+  nioh3_delusion: { name_pt: "Desilusão Destruída", descriptionOriginal: "", descriptionPtBr: "Destrua o Crucinite abrigado em Hiruko.", descriptionPtSource: "editorial_from_existing_requirement" },
+  nioh3_as_shogun: { name_pt: "Como Xogum", descriptionOriginal: "", descriptionPtBr: "Seja apontado como o terceiro xogum do xogunato Edo.", descriptionPtSource: "editorial_from_existing_requirement" },
+  nioh3_crucible_arts: { name_pt: "Especialista em Artes do Umbrasal", descriptionOriginal: "Learned a Martial Art from a Crucible weapon for the first time.", descriptionPtBr: "Você aprendeu a Arte Marcial de uma arma do Umbrasal pela primeira vez.", descriptionPtSource: "trusted_steam_ptbr" },
+  nioh3_arts_proficiency: { name_pt: "Domínio das Artes", descriptionOriginal: "Defeated 10 enemies with a Strong Attack or a Martial Art enhanced via Arts Proficiency.", descriptionPtBr: "Você derrotou 10 inimigos com um Ataque Forte ou uma Arte Marcial aprimorada pelo Domínio das Artes.", descriptionPtSource: "trusted_steam_ptbr" },
+  nioh3_ninjutsu: { name_pt: "Ninjutsu", descriptionOriginal: "Defeated 10 enemies with Ninjutsu.", descriptionPtBr: "Você derrotou 10 inimigos com Ninjutsu.", descriptionPtSource: "trusted_steam_ptbr" },
+  nioh3_burst_break: { name_pt: "Quebra Impetuosa", descriptionOriginal: "Successfully activated Burst Break 10 times.", descriptionPtBr: "Você ativou a Quebra Impetuosa 10 vezes.", descriptionPtSource: "trusted_steam_ptbr" },
+  nioh3_guardian_aid: { name_pt: "Ajuda do Espírito Guardião", descriptionOriginal: "Successfully activated a Guardian Spirit Skill Burst Break for the first time.", descriptionPtBr: "Você ativou Repelir Habilidade Espiritual pela primeira vez.", descriptionPtSource: "trusted_steam_ptbr" },
+  nioh3_yokai_manipulator: { name_pt: "Manipulador de Yokai", descriptionOriginal: "Used a Summoning Seal to summon a yokai for the first time.", descriptionPtBr: "Você usou um Selo de Invocação para invocar um yokai pela primeira vez.", descriptionPtSource: "trusted_steam_ptbr" },
+  nioh3_devotee: { name_pt: "Adepto", descriptionOriginal: "Unlocked all named shrines and Bodhisattva Statues.", descriptionPtBr: "Você desbloqueou todos os santuários e as Estátuas de Bodhisattva com nomes.", descriptionPtSource: "trusted_steam_ptbr" },
+  nioh3_explorer: { name_pt: "Explorador", descriptionOriginal: "Raised your Exploration Level to 4 in any area.", descriptionPtBr: "Você subiu seu Nível de Exploração para 4 em qualquer área.", descriptionPtSource: "trusted_steam_ptbr" },
+  nioh3_masterful_pupil: { name_pt: "Pupilo Magistral", descriptionOriginal: "Defeated a master for the first time.", descriptionPtBr: "Você derrotou um mestre pela primeira vez.", descriptionPtSource: "trusted_steam_ptbr" },
+  nioh3_god_among_men: { name_pt: "Habilidade Imbatível", descriptionOriginal: "Defeated all masters.", descriptionPtBr: "Você derrotou todos os mestres.", descriptionPtSource: "trusted_steam_ptbr" },
+  nioh3_armors_value: { name_pt: "Real Valor da Armadura", descriptionOriginal: "Activated all set bonus effects for an equipment set.", descriptionPtBr: "Você ativou todos os efeitos de bônus de conjunto para um conjunto de equipamentos.", descriptionPtSource: "trusted_steam_ptbr" },
+  nioh3_latest_masterpiece: { name_pt: "A última Obra-prima", descriptionOriginal: "Forged an item for the first time.", descriptionPtBr: "Você forjou um item pela primeira vez.", descriptionPtSource: "trusted_steam_ptbr" },
+  nioh3_match_made: { name_pt: "Almas Entrelaçadas", descriptionOriginal: "Performed a Soul Match for the first time.", descriptionPtBr: "Você realizou uma Fusão Espiritual pela primeira vez.", descriptionPtSource: "trusted_steam_ptbr" },
+  nioh3_remodeler: { name_pt: "Remodelador", descriptionOriginal: "Remodeled a piece of equipment for the first time.", descriptionPtBr: "Você remodelou um equipamento pela primeira vez.", descriptionPtSource: "trusted_steam_ptbr" },
+  nioh3_keen_eyed: { name_pt: "Visão Aguçada", descriptionOriginal: "Pet a Chijiko for the first time.", descriptionPtBr: "Acaricie um Chijiko pela primeira vez.", descriptionPtSource: "trusted_steam_ptbr" },
+  nioh3_eagle_eyed: { name_pt: "Olhos de Lince", descriptionOriginal: "Pet all Chijiko.", descriptionPtBr: "Acaricie todos os Chijiko.", descriptionPtSource: "trusted_steam_ptbr" },
+  nioh3_unimpeded: { name_pt: "Sem Obstáculos", descriptionOriginal: "Used all methods to traverse Spirit Veins.", descriptionPtBr: "Você usou todos os métodos para atravessar os Veios Espirituais.", descriptionPtSource: "trusted_steam_ptbr" },
+  nioh3_teamwork: { name_pt: "Trabalho em Equipe", descriptionOriginal: "Completed three missions during Expeditions or with NPCs. (Includes Acolytes.)", descriptionPtBr: "Você concluiu três missões com um NPC ou em Expedições com outros jogadores (incluindo Acólitos).", descriptionPtSource: "trusted_steam_ptbr" },
+  nioh3_scampuss_best_friend: { name_pt: "Melhor Amigo de um Sunekosuri", descriptionOriginal: "Traded a furball with a Scampuss in the Eternal Rift for the first time.", descriptionPtBr: "Você negociou uma pelúcia com um Sunekosuri na Fenda Eterna pela primeira vez.", descriptionPtSource: "trusted_steam_ptbr" },
+  nioh3_spa_healer: { name_pt: "Apreciador de Spa", descriptionOriginal: "Bathed in first hot spring.", descriptionPtBr: "Você se banhou na fonte termal pela primeira vez.", descriptionPtSource: "trusted_steam_ptbr" },
+  nioh3_spa_lover: { name_pt: "Viciado em Spa", descriptionOriginal: "", descriptionPtBr: "Banhe-se em todas as fontes termais.", descriptionPtSource: "editorial_from_existing_requirement" },
+  nioh3_kodama_leader: { name_pt: "Líder dos Kodama", descriptionOriginal: "Guided all Kodama home.", descriptionPtBr: "Você guiou todos os Kodama para casa.", descriptionPtSource: "trusted_steam_ptbr" },
+  nioh3_six_jizo: { name_pt: "Visita aos Seis Jizo", descriptionOriginal: "Prayed at all of the Six Jizo.", descriptionPtBr: "Você orou para todos os Seis Jizo.", descriptionPtSource: "trusted_steam_ptbr" },
+  nioh3_scampuss_enthusiast: { name_pt: "Entusiasta de Sunekosuri", descriptionOriginal: "Pet all Scampusses.", descriptionPtBr: "Você fez carinho em todos os Sunekosuri.", descriptionPtSource: "trusted_steam_ptbr" },
+  nioh3_soul_core_owner: { name_pt: "Proprietário de Almessências", descriptionOriginal: "Purified a Soul Core for the first time.", descriptionPtBr: "Você purificou uma Almessência pela primeira vez.", descriptionPtSource: "trusted_steam_ptbr" },
+  nioh3_base_captured: { name_pt: "Base Capturada", descriptionOriginal: "Captured an enemy base for the first time.", descriptionPtBr: "Você conquistou uma base inimiga pela primeira vez.", descriptionPtSource: "trusted_steam_ptbr" },
+  nioh3_total_control: { name_pt: "Controle Total", descriptionOriginal: "Captured all enemy bases.", descriptionPtBr: "Você conquistou todas as bases inimigas.", descriptionPtSource: "trusted_steam_ptbr" },
+  nioh3_lesser_cleanser: { name_pt: "Purificador de Umbrasal Inferior", descriptionOriginal: "Purified a Lesser Crucible for the first time.", descriptionPtBr: "Você purificou um Umbrasal Inferior pela primeira vez.", descriptionPtSource: "trusted_steam_ptbr" },
+  nioh3_lesser_eradicator: { name_pt: "Erradicador do Umbrasal Inferior", descriptionOriginal: "Purified all Lesser Crucibles.", descriptionPtBr: "Você purificou todos os Umbrasais Inferiores.", descriptionPtSource: "trusted_steam_ptbr" },
+  nioh3_kunimatsu_pride: { name_pt: "Orgulho de Kunimatsu", descriptionOriginal: "", descriptionPtBr: "Derrote o Demônio do Orgulho e vislumbre as emoções de Kunimatsu.", descriptionPtSource: "editorial_from_existing_requirement" },
+  nioh3_kunimatsu_envy: { name_pt: "Inveja de Kunimatsu", descriptionOriginal: "", descriptionPtBr: "Derrote o Demônio da Inveja e vislumbre as emoções de Kunimatsu.", descriptionPtSource: "editorial_from_existing_requirement" },
+  nioh3_kunimatsu_obsession: { name_pt: "Obsessão de Kunimatsu", descriptionOriginal: "", descriptionPtBr: "Derrote o Demônio da Obsessão e vislumbre as emoções de Kunimatsu.", descriptionPtSource: "editorial_from_existing_requirement" },
+  nioh3_senji_toyo: { name_pt: "Senji Toyo", descriptionOriginal: "", descriptionPtBr: "Recupere a memória da ferreira.", descriptionPtSource: "editorial_from_existing_requirement" },
+  nioh3_ruckus_sanctuary: { name_pt: "Confusão no Santuário", descriptionOriginal: "", descriptionPtBr: "Em \"Black Feather Sanctuary\", afugente todos os corvos de Matsuo-taisha Shrine e derrote Otoroshi.", descriptionPtSource: "editorial_from_existing_requirement" },
+  nioh3_pain_pain: { name_pt: "Dor, Dor, Vai Embora", descriptionOriginal: "", descriptionPtBr: "Em \"A Sinister End\", repele todos os ataques de Murakumo.", descriptionPtSource: "editorial_from_existing_requirement" },
+  nioh3_distant_memories: { name_pt: "Memórias Distantes", descriptionOriginal: "", descriptionPtBr: "Banhe-se com Himiko em \"Dark Roots\" e depois relembre o incidente de Naotora em \"Apparition of Ryotan Temple\".", descriptionPtSource: "editorial_from_existing_requirement" },
+  nioh3_like_minded: { name_pt: "Amigos com Afinidades", descriptionOriginal: "", descriptionPtBr: "Em \"Seeking Rare Yokai\", satisfaça Toriyama Sekien com uma pintura de Kusanagi.", descriptionPtSource: "editorial_from_existing_requirement" },
+  nioh3_dung_ball: { name_pt: "Rola-bosta", descriptionOriginal: "", descriptionPtBr: "Ajude Tatsumaro, o amante de esterco, a se conectar com Takechiyo.", descriptionPtSource: "editorial_from_existing_requirement" },
+  nioh3_nothing_left: { name_pt: "Nada mais para Aprender", descriptionOriginal: "", descriptionPtBr: "Conclua as veteran missions com Yagyu Munenori e Hattori Hanzo.", descriptionPtSource: "editorial_from_existing_requirement" }
+};
+
+const localizedChecklistGuideSlugs = new Set([
+  'hades-ii',
+  'astro-bot',
+  'astros-playroom',
+  'the-last-of-us-part-i',
+  'the-last-of-us-part-ii',
+  'subnautica',
+  'nioh-2',
+  'nioh-3'
+]);
+
 for (const game of sampleGames) {
   for (const trophy of game.trophies || []) {
+    if (localizedChecklistGuideSlugs.has(game.slug)) {
+      const descriptionPtBr = trophy.descriptionPtBr || trophy.ptDescription || trophy.localizedDescription?.ptBr || trophy.description || '';
+      trophy.trophyNameOriginal = trophy.name;
+      trophy.name_pt = trophy.name_pt || null;
+      trophy.trophyNamePtBr = trophy.name_pt || null;
+      trophy.descriptionPtBr = descriptionPtBr;
+      trophy.ptDescription = descriptionPtBr;
+      trophy.localizedDescription = { ...(trophy.localizedDescription || {}), ptBr: descriptionPtBr };
+      trophy.description = descriptionPtBr;
+      trophy.tier = trophy.type;
+      trophy.guideTip = trophy.tip || '';
+      trophy.is_online = false;
+      trophy.isOnline = false;
+      trophy.is_coop = false;
+      trophy.isCoop = false;
+      trophy.tags = Array.isArray(trophy.tags)
+        ? trophy.tags.filter(tag => !/online|coop|co-?op/i.test(String(tag?.id || tag?.label || tag)))
+        : [];
+    }
+    if (game.slug === 'astro-bot') {
+      const editorialPtBr = astroBotEditorialPtBrByName[trophy.name];
+      if (editorialPtBr) {
+        trophy.name_pt = editorialPtBr.name_pt;
+        trophy.trophyNamePtBr = editorialPtBr.name_pt;
+        trophy.namePtSource = 'editorial_ptbr';
+        trophy.descriptionOriginal = editorialPtBr.descriptionOriginal;
+        trophy.descriptionPtBr = editorialPtBr.descriptionPtBr;
+        trophy.ptDescription = editorialPtBr.descriptionPtBr;
+        trophy.localizedDescription = { ...(trophy.localizedDescription || {}), ptBr: editorialPtBr.descriptionPtBr };
+        trophy.description = editorialPtBr.descriptionPtBr;
+        trophy.descriptionPtSource = 'editorial_ptbr';
+        trophy.is_missable = false;
+        trophy.isMissable = false;
+        trophy.is_online = false;
+        trophy.isOnline = false;
+        trophy.is_coop = false;
+        trophy.isCoop = false;
+      }
+    }
+    if (game.slug === 'hades-ii') {
+      const steamPtBr = hadesIITrustedSteamPtBrByName[trophy.name];
+      if (steamPtBr) {
+        trophy.name_pt = steamPtBr.name_pt;
+        trophy.trophyNamePtBr = steamPtBr.name_pt;
+        trophy.namePtSource = 'trusted_steam_ptbr';
+        trophy.descriptionOriginal = steamPtBr.descriptionOriginal;
+        trophy.descriptionPtBr = steamPtBr.descriptionPtBr;
+        trophy.ptDescription = steamPtBr.descriptionPtBr;
+        trophy.localizedDescription = { ...(trophy.localizedDescription || {}), ptBr: steamPtBr.descriptionPtBr };
+        trophy.description = steamPtBr.descriptionPtBr;
+        trophy.descriptionPtSource = 'trusted_steam_ptbr';
+        trophy.is_missable = false;
+        trophy.isMissable = false;
+        trophy.is_online = false;
+        trophy.isOnline = false;
+        trophy.is_coop = false;
+        trophy.isCoop = false;
+      }
+    }
+    if (game.slug === 'the-last-of-us-part-i') {
+      const steamName = tlouPartITrustedSteamNameAliases[trophy.name] || trophy.name;
+      const steamPtBr = tlouPartITrustedSteamPtBrByName[steamName];
+      if (steamPtBr) {
+        trophy.name = steamName;
+        trophy.trophyNameOriginal = steamName;
+        trophy.name_pt = steamPtBr.name_pt;
+        trophy.trophyNamePtBr = steamPtBr.name_pt;
+        trophy.namePtSource = 'trusted_steam_ptbr';
+        trophy.descriptionOriginal = steamPtBr.descriptionOriginal;
+        trophy.descriptionPtBr = steamPtBr.descriptionPtBr;
+        trophy.ptDescription = steamPtBr.descriptionPtBr;
+        trophy.localizedDescription = { ...(trophy.localizedDescription || {}), ptBr: steamPtBr.descriptionPtBr };
+        trophy.description = steamPtBr.descriptionPtBr;
+        trophy.descriptionPtSource = 'trusted_steam_ptbr';
+        trophy.is_missable = false;
+        trophy.isMissable = false;
+        trophy.is_online = false;
+        trophy.isOnline = false;
+        trophy.is_coop = false;
+        trophy.isCoop = false;
+      }
+    }
+    if (game.slug === 'the-last-of-us-part-ii') {
+      const steamPtBr = tlouPartIITrustedSteamPtBrRemasteredByName[trophy.name];
+      if (steamPtBr) {
+        trophy.name_pt = steamPtBr.name_pt;
+        trophy.trophyNamePtBr = steamPtBr.name_pt;
+        trophy.namePtSource = 'trusted_steam_ptbr_remastered';
+        trophy.descriptionOriginal = steamPtBr.descriptionOriginal;
+        trophy.descriptionPtBr = steamPtBr.descriptionPtBr;
+        trophy.ptDescription = steamPtBr.descriptionPtBr;
+        trophy.localizedDescription = { ...(trophy.localizedDescription || {}), ptBr: steamPtBr.descriptionPtBr };
+        trophy.description = steamPtBr.descriptionPtBr;
+        trophy.descriptionPtSource = steamPtBr.descriptionPtSource;
+        trophy.is_missable = false;
+        trophy.isMissable = false;
+        trophy.is_online = false;
+        trophy.isOnline = false;
+        trophy.is_coop = false;
+        trophy.isCoop = false;
+      }
+    }
+    if (game.slug === 'subnautica') {
+      if (trophy.id === 'subnautica-find-the-lost-river') {
+        trophy.name = 'Follow the Lost River';
+        trophy.trophyNameOriginal = 'Follow the Lost River';
+      }
+      if (trophy.id === 'subnautica-man-s-best-friend') {
+        trophy.name = '"Man\'s Best Friend"';
+        trophy.trophyNameOriginal = '"Man\'s Best Friend"';
+      }
+
+      const steamPtBr = subnauticaTrustedSteamPtBrByName[trophy.name];
+      const descriptionPtBr = trophy.descriptionPtBr || trophy.ptDescription || trophy.localizedDescription?.ptBr || trophy.description || '';
+
+      if (steamPtBr) {
+        trophy.name_pt = steamPtBr.name_pt;
+        trophy.trophyNamePtBr = steamPtBr.name_pt;
+        trophy.namePtSource = 'trusted_steam_ptbr';
+      } else if (trophy.type === 'Platina') {
+        trophy.name_pt = trophy.name_pt || 'Troféu de Platina';
+        trophy.trophyNamePtBr = trophy.name_pt;
+        trophy.namePtSource = 'editorial_ptbr';
+        trophy.description = 'Conquiste todos os outros troféus.';
+      }
+
+      const finalDescriptionPtBr = trophy.type === 'Platina'
+        ? 'Conquiste todos os outros troféus.'
+        : descriptionPtBr;
+      trophy.descriptionPtBr = finalDescriptionPtBr;
+      trophy.ptDescription = finalDescriptionPtBr;
+      trophy.localizedDescription = { ...(trophy.localizedDescription || {}), ptBr: finalDescriptionPtBr };
+      trophy.description = finalDescriptionPtBr;
+      trophy.descriptionPtSource = 'editorial_from_existing_requirement';
+      trophy.tier = trophy.type;
+      trophy.guideTip = trophy.tip || '';
+      trophy.is_online = false;
+      trophy.isOnline = false;
+      trophy.is_coop = false;
+      trophy.isCoop = false;
+      trophy.tags = Array.isArray(trophy.tags)
+        ? trophy.tags.filter(tag => !/online|multiplayer|coop|co-?op/i.test(String(tag?.id || tag?.label || tag)))
+        : [];
+    }
     if (game.slug === 'elden-ring') {
       trophy.trophyNameOriginal = trophy.name;
       trophy.trophyNamePtBr = trophy.name_pt || null;
@@ -29106,13 +30129,17 @@ for (const game of sampleGames) {
     }
     if (game.slug === 'astros-playroom') {
       const descriptionPtBr = astrosPlayroomDescriptionPtById[trophy.id] || trophy.description;
+      const namePtBr = astrosPlayroomNamePtById[trophy.id] || trophy.name_pt || null;
       trophy.trophyNameOriginal = trophy.name;
-      trophy.trophyNamePtBr = trophy.name_pt || null;
+      trophy.name_pt = namePtBr;
+      trophy.trophyNamePtBr = namePtBr;
+      trophy.namePtSource = namePtBr ? 'editorial_ptbr' : '';
       trophy.descriptionOriginal = trophy.descriptionOriginal || trophy.description || '';
       trophy.descriptionPtBr = descriptionPtBr;
       trophy.ptDescription = descriptionPtBr;
       trophy.localizedDescription = { ...(trophy.localizedDescription || {}), ptBr: descriptionPtBr };
       trophy.description = descriptionPtBr;
+      trophy.descriptionPtSource = 'editorial_ptbr';
       trophy.tier = trophy.type;
       trophy.guideTip = trophy.tip || '';
       trophy.is_missable = false;
@@ -29127,15 +30154,18 @@ for (const game of sampleGames) {
       trophy.name_pt = trophyNamePtById[trophy.id];
     }
     if (game.slug === 'nioh-2') {
-      const descriptionPtBr = nioh2DescriptionPtById[trophy.id] || trophy.description || '';
+      const steamPtBr = nioh2TrustedSteamPtBrById[trophy.id];
+      const descriptionPtBr = steamPtBr?.descriptionPtBr || nioh2DescriptionPtById[trophy.id] || trophy.description || '';
       trophy.trophyNameOriginal = trophy.name;
-      trophy.trophyNamePtBr = null;
-      trophy.name_pt = null;
-      trophy.descriptionOriginal = nioh2DescriptionOriginalById[trophy.id] || trophy.descriptionOriginal || '';
+      trophy.trophyNamePtBr = steamPtBr?.name_pt || null;
+      trophy.name_pt = steamPtBr?.name_pt || null;
+      trophy.namePtSource = steamPtBr ? 'trusted_steam_ptbr' : '';
+      trophy.descriptionOriginal = steamPtBr?.descriptionOriginal || nioh2DescriptionOriginalById[trophy.id] || trophy.descriptionOriginal || '';
       trophy.descriptionPtBr = descriptionPtBr;
       trophy.ptDescription = descriptionPtBr;
       trophy.localizedDescription = { ...(trophy.localizedDescription || {}), ptBr: descriptionPtBr };
       trophy.description = descriptionPtBr;
+      trophy.descriptionPtSource = steamPtBr ? 'trusted_steam_ptbr' : 'editorial_from_existing_requirement';
       trophy.tier = trophy.type;
       trophy.guideTip = trophy.tip || '';
       trophy.is_missable = false;
@@ -29146,6 +30176,31 @@ for (const game of sampleGames) {
       trophy.isCoop = false;
       trophy.tags = nioh2TagsById[trophy.id]
         || (/master$/.test(trophy.id) ? ['proficiência', 'arma', 'grind'] : (trophy.type === 'Platina' ? ['platina'] : ['cleanup']));
+    }
+    if (game.slug === 'nioh-3') {
+      const steamPtBr = nioh3TrustedSteamPtBrById[trophy.id];
+      const descriptionPtBr = steamPtBr?.descriptionPtBr || trophy.descriptionPtBr || trophy.ptDescription || trophy.description || '';
+      trophy.trophyNameOriginal = trophy.name;
+      trophy.trophyNamePtBr = steamPtBr?.name_pt || null;
+      trophy.name_pt = steamPtBr?.name_pt || null;
+      trophy.namePtSource = steamPtBr?.name_pt ? 'trusted_steam_ptbr' : '';
+      trophy.descriptionOriginal = steamPtBr?.descriptionOriginal || trophy.descriptionOriginal || '';
+      trophy.descriptionPtBr = descriptionPtBr;
+      trophy.ptDescription = descriptionPtBr;
+      trophy.localizedDescription = { ...(trophy.localizedDescription || {}), ptBr: descriptionPtBr };
+      trophy.description = descriptionPtBr;
+      trophy.descriptionPtSource = steamPtBr?.descriptionPtSource || 'editorial_from_existing_requirement';
+      trophy.tier = trophy.type;
+      trophy.guideTip = trophy.tip || '';
+      trophy.is_missable = false;
+      trophy.isMissable = false;
+      trophy.is_online = false;
+      trophy.isOnline = false;
+      trophy.is_coop = false;
+      trophy.isCoop = false;
+      trophy.tags = Array.isArray(trophy.tags)
+        ? trophy.tags.filter(tag => !/online|multiplayer|coop|co-?op/i.test(String(tag?.id || tag?.label || tag)))
+        : [];
     }
     trophy.is_missable = game.slug === 'hades' ? false : Boolean(trophy.is_missable || missableTrophyIds.has(trophy.id));
     if (game.slug === 'hades') trophy.isMissable = false;

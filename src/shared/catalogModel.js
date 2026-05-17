@@ -456,7 +456,7 @@
     }
     const text = getCatalogText(game, ['online_summary', 'guide_online', 'online']);
     if (!text) return false;
-    const noOnlineRequired = /nao ha .*online obrigatorio|nao ha exigencia online|nao ha trofeus? online|sem online obrigatorio|nao exige online|online opcional|recursos online opcionais|rankings? online .*fora|fora dos requisitos da platina/.test(text);
+    const noOnlineRequired = /nao ha .*online(?:,| e|\/| obrigatorio)|nao ha .*multiplayer obrigatorio|nao ha exigencia online|nao ha trofeus? online|sem online obrigatorio|nao exige online|online opcional|recursos online opcionais|rankings? online .*fora|fora dos requisitos da platina/.test(text);
     const strongOnlineRequirement = /online\/multiplayer|sos flare|guild cards?|quests multiplayer|100 quests em multiplayer|pvp obrigatorio|servidor obrigatorio|server obrigatorio|sport mode|red dead online|daily challenge/.test(text);
     if (strongOnlineRequirement) {
       return true;
@@ -480,9 +480,10 @@
   }
 
   function hasCatalogMissables(game = {}) {
-    const count = Number(game?.missable_count || 0);
+    const count = Number(game?.missable_count || game?.missableCount || 0);
     const text = getCatalogText(game, ['missable_summary', 'missable']);
     if (count > 0) return true;
+    if (game?.hasMissables === true) return true;
     if (!text) return false;
     if (/nao ha .*perdivel|nao ha .*perdiveis|nao ha perda permanente|sem perdivel permanente|sem perdiveis|nada .*perdivel|nenhum(?:a)?\s+trofeu.{0,80}(?:marcado|tratado|contado).{0,40}perdivel|nao ha.{0,80}perdiveis? reais|sem.{0,80}perdiveis? reais/.test(text)) return false;
     return hasMissableRiskText(text) || /perdivel|perdiveis|perda permanente|bloqueado|bloquear|perder definitivamente/.test(text);
@@ -491,7 +492,7 @@
   function hasCatalogGrind(game = {}) {
     const text = getCatalogText(game, ['grind_summary', 'guide_grind', 'grind', 'cleanup_advice']);
     if (!text) return false;
-    if (/sem grind|nao ha grind|nao exige grind|nao em grind pesado|nao e grind pesado|grind leve|sem farm pesado/.test(text)) return false;
+    if (/sem grind|nao ha grind|nao exige grind|nao em grind|nao e grind pesado|grind leve|sem farm pesado/.test(text)) return false;
     return /grind|farm|rng|rank|coroa|coroas|crown|crowns|boss stem cell|bsc|level|nivel|endgame longo|repeticao/.test(text);
   }
 
@@ -534,18 +535,37 @@
     const hasGrind = hasCatalogGrind(game);
     const baseGame = hasCatalogBaseGameScope(game);
     const chapterSelect = hasCatalogChapterSelect(game);
+    const text = getCatalogText(game, ['online_summary', 'guide_online', 'online', 'before_you_start', 'missable_summary', 'missable', 'cleanup_advice', 'grind_summary', 'runs_summary', 'dlc_scope', 'difficulty_reason', 'time_reason']);
+    const explicitNoCoop = !coopRequired && /nao ha .*coop obrigatorio|sem coop obrigatorio|coop ou multiplayer obrigatorios?|nao exige coop|tambem nao ha coop obrigatorio/.test(text);
+    const hasCollectibles = /colet|colecion|cartas|trading cards|moedas|coins|artefatos|firefly pendants|comics|artifacts|notes|di[aá]rio|journal entries|manuais|manuals|ferramentas|tools|safes|cofres|shiv doors|bancadas|workbenches|conversas opcionais|piadas/.test(text);
+    const hasCleanup = /cleanup|limpar|sele[cç]ao de cap[ií]tulos|chapter select/.test(text);
+    const hasNewGamePlus = /ng\+|new game\+/.test(text);
+    const hasPartialNewGamePlus = /ng\+ parcial|new game\+ parcial/.test(text);
+    const hasUpgrades = /upgrade|upgrades|melhoria|melhorias|suplementos|pe[cç]as/.test(text);
+    const noMissableLabel = /definitiv|permanente|chapter select|sele[cç]ao de cap[ií]tulos/.test(text) ? 'Sem perdíveis definitivos' : 'Sem perdíveis';
     const signals = [];
 
+    if (baseGame) signals.push({ id: 'base-game', label: 'Base game', tone: 'neutral', icon: 'fa-layer-group' });
     signals.push(onlineRequired
       ? { id: 'online', label: 'Online', tone: 'warning', icon: 'fa-wifi' }
       : { id: 'no-online', label: 'Sem online', tone: 'safe', icon: 'fa-wifi' });
+    if (explicitNoCoop) signals.push({ id: 'no-coop', label: 'Sem coop', tone: 'safe', icon: 'fa-users' });
     if (coopRequired) signals.push({ id: 'coop', label: 'Coop obrigatório', tone: 'warning', icon: 'fa-users' });
     signals.push(hasMissable
       ? { id: 'missable', label: 'Perdíveis', tone: 'risk', icon: 'fa-triangle-exclamation' }
-      : { id: 'no-missable', label: 'Sem perdíveis', tone: 'safe', icon: 'fa-shield-halved' });
+      : { id: 'no-missable', label: noMissableLabel, tone: 'safe', icon: 'fa-shield-halved' });
     if (hasGrind) signals.push({ id: 'grind', label: 'Grind', tone: 'warning', icon: 'fa-repeat' });
-    if (baseGame) signals.push({ id: 'base-game', label: 'Base game', tone: 'neutral', icon: 'fa-layer-group' });
     if (chapterSelect) signals.push({ id: 'chapter-select', label: 'Chapter Select', tone: 'neutral', icon: 'fa-book-open' });
+    if (hasNewGamePlus) signals.push({ id: 'ng-plus', label: hasPartialNewGamePlus ? 'NG+ parcial' : 'NG+', tone: 'neutral', icon: 'fa-rotate' });
+    if (hasCollectibles) signals.push({ id: 'collectibles', label: 'Coletáveis', tone: 'neutral', icon: 'fa-map-pin' });
+    if (hasUpgrades) signals.push({ id: 'upgrades', label: 'Upgrades', tone: 'neutral', icon: 'fa-screwdriver-wrench' });
+    if (String(game?.slug || '').trim().toLowerCase() === 'subnautica') {
+      signals.push({ id: 'single-player', label: 'Single-player', tone: 'safe', icon: 'fa-user' });
+      signals.push({ id: 'exploration', label: 'Exploração', tone: 'neutral', icon: 'fa-compass' });
+      signals.push({ id: 'survival', label: 'Sobrevivência', tone: 'neutral', icon: 'fa-campground' });
+      signals.push({ id: 'vehicles', label: 'Veículos', tone: 'neutral', icon: 'fa-ship' });
+    }
+    if (hasCleanup) signals.push({ id: 'cleanup', label: 'Cleanup', tone: 'neutral', icon: 'fa-broom' });
 
     return {
       onlineRequired,

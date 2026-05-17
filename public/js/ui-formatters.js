@@ -46,6 +46,15 @@ window.UIFormatters = (() => {
     if (String(game?.slug || '').trim().toLowerCase() === 'saros') {
       return 'Guia de platina de Saros em português, com tempo estimado, dificuldade, troféus, roadmap, checklist, coletáveis, bosses e dicas para a platina.';
     }
+    if (String(game?.slug || '').trim().toLowerCase() === 'the-last-of-us-part-i') {
+      return 'Guia de platina de The Last of Us Part I em português, com tempo estimado, dificuldade, troféus, coletáveis, Left Behind, Chapter Select, roadmap e checklist.';
+    }
+    if (String(game?.slug || '').trim().toLowerCase() === 'the-last-of-us-part-ii') {
+      return 'Guia de platina de The Last of Us Part II em português, com tempo estimado, dificuldade, troféus, coletáveis, upgrades, Chapter Select, NG+ parcial, roadmap e checklist.';
+    }
+    if (String(game?.slug || '').trim().toLowerCase() === 'subnautica') {
+      return 'Guia de platina de Subnautica em português, com tempo estimado, dificuldade, troféus, exploração, veículos, base, história, roadmap e checklist.';
+    }
     const parts = [];
     const time = String(game?.time || '').trim();
     const difficulty = Number(game?.difficulty || 0);

@@ -417,17 +417,20 @@
     const hasMissable = Boolean(!missableNegated && (missableCount || hasMissableRiskText(missableText)));
     const dlcScope = buildGuideDlcScopeModel(game, inputs);
     const hasChapterSelect = hasGuideChapterSelectSignal(normalized, game);
-    const ngPlusNegated = /sem new game\+|sem ng\+|sem ng plus|nao ha new game\+|nao ha ng\+|ng\+ nao e necessario|ng plus nao e necessario/.test(normalized);
+    const ngPlusNegated = /sem new game\+|sem ng\+|sem ng plus|nao ha new game\+|nao ha ng\+|nao exige.{0,80}(?:new game\+|ng\+|ng plus)|(?:new game\+|ng\+|ng plus).{0,80}nao (?:e necessario|foi tratado como obrigatorio|foram tratados como obrigatorios)/.test(normalized);
     const hasNgPlus = !ngPlusNegated && /new game\+|new game plus|ng\+|ng plus|nova jornada\+|novo jogo\+/.test(normalized);
     const grindText = normalizeGuideSignalText(inputs.grind);
-    const hasGrind = !/nao ha grind|sem grind|nao existe grind/.test(normalized)
+    const hasGrind = !/nao ha grind|sem grind|nao existe grind|nao em grind|nao e grind pesado/.test(normalized)
       && (
         /grind|farm|rng|coroa|coroas|crown|crowns|hunter rank|rank 100|boss stem cell|stem cells|bsc|nivel 99|level 99/.test(normalized)
         || (Number(riskCounts.grind || 0) > 0 && /grind|farm|rng|coroa|coroas|crown|crowns|rank|boss stem cell|bsc|blueprints/.test(grindText))
       );
     const hasCollectibles = /colet|colecion|journal|journals|disco|discos|old key|mime|maelle|lost gestral|glitching remains|chapeu|hunter.?s journal|blueprints|runa|runas/.test(normalized)
       || Number(riskCounts.collectible || 0) > 0;
-    const hasDifficultyRisk = Number(inputs.difficulty || 0) >= 7 || Number(riskCounts.difficulty || 0) > 0;
+    const difficultyText = normalizeGuideSignalText(firstGuideText(inputs.difficultyReason, inputs.beforeYouStart, inputs.dlc, ...roadmapTexts));
+    const hasDifficultyNegation = /nao exige dificuldade|sem dificuldade alta|dificuldade alta nao|nao ha trofeu de dificuldade|maxima nao|grounded.*fora|grounded.*nao/.test(difficultyText);
+    const currentSlug = String(game?.slug || '').trim().toLowerCase();
+    const hasDifficultyRisk = currentSlug !== 'subnautica' && (Number(inputs.difficulty || 0) >= 7 || (!hasDifficultyNegation && Number(riskCounts.difficulty || 0) > 0));
     const grindSnippet = findGuidePlanningSnippet(
       [inputs.grind, inputs.missableSummary, ...roadmapTexts],
       /grind|farm|rng|coroa|coroas|crown|crowns|hunter rank|rank 100|boss stem cell|stem cells|bsc|nivel 99|level 99/,
@@ -1040,6 +1043,39 @@
       const readRoadmapFirst = shouldReadRoadmapFirst(game, trophies, Array.isArray(game.roadmap) ? game.roadmap : []);
       const hasMissableRoadmapRisk = Boolean(missablePending);
       const firstRunAdvice = firstGuideText(game?.first_run_advice, game?.quickDecision?.firstAction);
+      if (String(game?.slug || '').trim().toLowerCase() === 'the-last-of-us-part-i') {
+        return {
+          kind: 'roadmap',
+          title: 'Jogue a campanha coletando o máximo possível',
+          detail: firstRunAdvice || 'Salve o cleanup de coletáveis, conversas e situacionais para a seleção de capítulos.',
+          cta: 'Abrir roadmap',
+          focus: 'roadmap',
+          trophyId: firstPending?.id || '',
+          trophyName: firstPending?.name || ''
+        };
+      }
+      if (String(game?.slug || '').trim().toLowerCase() === 'the-last-of-us-part-ii') {
+        return {
+          kind: 'roadmap',
+          title: 'Jogue a campanha explorando com calma',
+          detail: firstRunAdvice || 'Deixe o cleanup de coletáveis, cofres, upgrades e situacionais para Chapter Select e NG+ parcial.',
+          cta: 'Abrir roadmap',
+          focus: 'roadmap',
+          trophyId: firstPending?.id || '',
+          trophyName: firstPending?.name || ''
+        };
+      }
+      if (String(game?.slug || '').trim().toLowerCase() === 'subnautica') {
+        return {
+          kind: 'roadmap',
+          title: 'Explore com calma e estabilize recursos',
+          detail: firstRunAdvice || 'Construa uma base funcional, avance a história e faça saves manuais antes de grandes marcos.',
+          cta: 'Abrir roadmap',
+          focus: 'roadmap',
+          trophyId: firstPending?.id || '',
+          trophyName: firstPending?.name || ''
+        };
+      }
       if (String(game?.slug || '').trim().toLowerCase() === 'hades') {
         return {
           kind: 'roadmap',
@@ -1525,6 +1561,145 @@
     const dlcNotRequired = /lista base|jogo base|base game|sem dlc|nao inclui|nao foram adicionados|nao foi misturado|dlc nao necessaria|nao e necessaria|nao ha dlc|fora do escopo|fica fora|ficam fora|entrada separada/.test(dlcNormalized);
     const dlcRequired = /necessaria|obrigatoria|dlc no escopo|expansao|expansoes/.test(dlcNormalized) && !dlcNotRequired;
     const reviewAnswer = 'Essa informação ainda está em revisão editorial. Consulte os alertas do guia antes de começar.';
+
+    if (String(game?.slug || '').trim().toLowerCase() === 'the-last-of-us-part-i') {
+      return [
+        {
+          question: 'The Last of Us Part I tem troféus perdíveis?',
+          answer: 'Não há perdíveis definitivos no guia. Coletáveis, conversas opcionais, piadas da Ellie, portas com shiv, safes e ações situacionais podem passar batido em uma jogada, mas podem ser limpos por Chapter Select.'
+        },
+        {
+          question: 'Precisa jogar no Survivor/Grounded para platinar?',
+          answer: 'Não. A platina de The Last of Us Part I não exige dificuldade alta; você pode jogar em qualquer dificuldade confortável.'
+        },
+        {
+          question: 'The Last of Us Part I tem troféus online?',
+          answer: 'Não. A lista de The Last of Us Part I não exige online, multiplayer, Factions, servidores ou PS+ para a platina.'
+        },
+        {
+          question: 'Precisa de coop ou multiplayer?',
+          answer: 'Não. O guia trata a platina como totalmente solo, sem coop obrigatório e sem troféus de multiplayer.'
+        },
+        {
+          question: 'Left Behind conta para a platina?',
+          answer: 'Sim. Em The Last of Us Part I, Left Behind faz parte do pacote e da lista base de 29 troféus; não foi tratado como DLC paga separada obrigatória.'
+        },
+        {
+          question: 'Quanto tempo leva para platinar?',
+          answer: 'A estimativa editorial ficou em 20-30h, considerando campanha principal, Left Behind, coletáveis e cleanup por seleção de capítulos.'
+        },
+        {
+          question: 'Qual a dificuldade da platina?',
+          answer: 'A dificuldade ficou em 3/10. O desafio é mais organização de checklist do que execução difícil.'
+        },
+        {
+          question: 'Dá para usar Chapter Select para limpar coletáveis?',
+          answer: 'Sim. Use a seleção de capítulos para revisar coletáveis, conversas opcionais, piadas, safes, portas com shiv, ferramentas, bancadas e troféus situacionais.'
+        },
+        {
+          question: 'Precisa de New Game+?',
+          answer: 'Não. New Game+ não é obrigatório para a platina; uma campanha, Left Behind e cleanup por Chapter Select bastam para a rota editorial.'
+        },
+        {
+          question: 'O que mais dá trabalho na platina?',
+          answer: 'O maior cuidado está em coletáveis, conversas opcionais, piadas da Ellie, portas com shiv, safes, ferramentas, manuais, workbenches e troféus situacionais.'
+        }
+      ];
+    }
+
+    if (String(game?.slug || '').trim().toLowerCase() === 'the-last-of-us-part-ii') {
+      return [
+        {
+          question: 'The Last of Us Part II tem troféus perdíveis?',
+          answer: 'Não há perdíveis definitivos na platina base. Coletáveis, cartas, moedas, cofres, bancadas, manuais, upgrades e troféus situacionais podem passar batido, mas podem ser limpos com Chapter Select e NG+ parcial.'
+        },
+        {
+          question: 'Precisa jogar no Grounded ou dificuldade alta para platinar?',
+          answer: 'Não. A platina base de The Last of Us Part II não exige Grounded nem dificuldade alta; você pode jogar em qualquer dificuldade confortável.'
+        },
+        {
+          question: 'The Last of Us Part II tem troféus online?',
+          answer: 'Não. A lista base da platina é offline e não exige servidores, multiplayer, Factions ou PS+.'
+        },
+        {
+          question: 'Precisa de coop ou multiplayer?',
+          answer: 'Não. O guia trata a platina base como uma rota solo, sem coop obrigatório e sem troféus de multiplayer.'
+        },
+        {
+          question: 'Grounded e Permadeath contam para a platina?',
+          answer: 'Não. Grounded e Permadeath são troféus extras/update e ficam separados da platina base do Part II original.'
+        },
+        {
+          question: 'Quanto tempo leva para platinar?',
+          answer: 'A estimativa editorial ficou em 25-35h, considerando campanha completa, coletáveis, Chapter Select, NG+ parcial para upgrades e cleanup final.'
+        },
+        {
+          question: 'Qual a dificuldade da platina?',
+          answer: 'A dificuldade ficou em 3/10. O desafio principal é organização de checklist, coletáveis e recursos para upgrades, não execução em dificuldade alta.'
+        },
+        {
+          question: 'Dá para usar Chapter Select para limpar coletáveis?',
+          answer: 'Sim. Chapter Select ajuda a revisar artefatos, cartas, moedas, entradas de diário, cofres, bancadas, manuais e troféus situacionais.'
+        },
+        {
+          question: 'Precisa de New Game+?',
+          answer: 'Sim, normalmente como NG+ parcial. Uma campanha única costuma não dar suplementos e peças suficientes para todos os upgrades de personagem e armas.'
+        },
+        {
+          question: 'O que mais dá trabalho na platina?',
+          answer: 'O maior cuidado está em coletáveis, cartas, moedas, bancadas, cofres, manuais, suplementos, peças, upgrades de armas/personagens e cleanup.'
+        },
+        {
+          question: 'Este guia vale para The Last of Us Part II Remastered?',
+          answer: 'Não como escopo completo. Este guia cobre The Last of Us Part II original e sua platina base; Remastered e o modo No Return devem ter tratamento separado.'
+        }
+      ];
+    }
+
+    if (String(game?.slug || '').trim().toLowerCase() === 'subnautica') {
+      return [
+        {
+          question: 'Subnautica tem troféus perdíveis?',
+          answer: 'O guia marca um risco conservador em Man’s Best Friend, porque ovos de Cuddlefish são finitos. Faça esse troféu antes do final, mantenha saves manuais e não descarte os ovos.'
+        },
+        {
+          question: 'Subnautica precisa de online para platinar?',
+          answer: 'Não. A platina de Subnautica é single-player e não exige online, servidores, multiplayer ou assinatura.'
+        },
+        {
+          question: 'Subnautica tem coop obrigatório?',
+          answer: 'Não. Não há coop obrigatório para a platina; a rota do guia é totalmente solo.'
+        },
+        {
+          question: 'Quanto tempo leva para platinar Subnautica?',
+          answer: 'A estimativa editorial ficou em 20-30h, considerando sobrevivência, exploração, veículos, história, base e cleanup antes do final.'
+        },
+        {
+          question: 'Qual a dificuldade da platina?',
+          answer: 'A dificuldade ficou em 3/10. O maior desafio é orientação, preparação para áreas profundas e gestão de recursos, não execução difícil.'
+        },
+        {
+          question: 'Precisa de DLC para a platina?',
+          answer: 'Não. O guia cobre a lista base do Subnautica original e não inclui Below Zero, Subnautica 2, versões mobile ou conteúdo futuro.'
+        },
+        {
+          question: 'Subnautica tem Chapter Select?',
+          answer: 'Não há Chapter Select tradicional. O cleanup depende de exploração em mundo aberto, planejamento e saves manuais antes de grandes marcos.'
+        },
+        {
+          question: 'Dá para continuar explorando antes/depois do final?',
+          answer: 'O caminho mais seguro é revisar tudo antes do lançamento final e manter um save manual. Se precisar limpar algo, volte ao save anterior quando o jogo permitir.'
+        },
+        {
+          question: 'Quais veículos são importantes para a platina?',
+          answer: 'Seamoth, Prawn Suit e Cyclops são importantes para troféus próprios, exploração profunda, segurança e avanço da história.'
+        },
+        {
+          question: 'O que mais dá trabalho na platina?',
+          answer: 'Exploração profunda, construção dos veículos, Aurora, instalações alienígenas, recursos para expedições longas, Cuddlefish e preparação antes do final.'
+        }
+      ];
+    }
 
     if (String(game?.slug || '').trim().toLowerCase() === 'saros') {
       return [

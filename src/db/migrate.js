@@ -448,6 +448,49 @@ async function backfillHadesTrophyLocalizationFromSeed() {
   await exec('COMMIT');
 }
 
+async function backfillTrophyChecklistLocalizationFromSeed(seedSlug) {
+  const game = getSeedGameBySlug(seedSlug);
+  const localizedTrophies = (game?.trophies || [])
+    .filter(trophy => trophy?.id && trophy?.name && trophy?.name_pt && (trophy.descriptionPtBr || trophy.ptDescription || trophy.localizedDescription?.ptBr || trophy.description))
+    .map(trophy => ({
+      trophyCode: trophy.id,
+      name: trophy.name,
+      namePt: trophy.name_pt,
+      description: trophy.descriptionPtBr || trophy.ptDescription || trophy.localizedDescription?.ptBr || trophy.description
+    }));
+
+  if (!localizedTrophies.length) return;
+
+  await exec('BEGIN TRANSACTION');
+  for (const trophy of localizedTrophies) {
+    try {
+      await run(
+        `UPDATE trophies
+         SET name = ?,
+             name_pt = ?,
+             description = ?
+         WHERE trophy_code = ?
+           AND game_id = (SELECT id FROM games WHERE slug = ?)
+           AND (name != ? OR name_pt IS NULL OR trim(name_pt) != ? OR description != ?)`,
+        [
+          trophy.name,
+          trophy.namePt,
+          trophy.description,
+          trophy.trophyCode,
+          seedSlug,
+          trophy.name,
+          trophy.namePt,
+          trophy.description
+        ]
+      );
+    } catch (error) {
+      await exec('ROLLBACK').catch(() => {});
+      throw error;
+    }
+  }
+  await exec('COMMIT');
+}
+
 function getSeedGameBySlug(slug) {
   return sampleGames.find(game => (game.slug || slugifyGameName(game.name)) === slug);
 }
@@ -744,6 +787,7 @@ async function syncReviewedGuidesFromSeed() {
   await syncSeedGameFromSeed('god-of-war-ragnarok', syncOptions);
   await syncSeedGameFromSeed('the-last-of-us-part-i', syncOptions);
   await syncSeedGameFromSeed('the-last-of-us-part-ii', syncOptions);
+  await syncSeedGameFromSeed('subnautica', syncOptions);
   await syncSeedGameFromSeed('uncharted-legacy-of-thieves-collection', syncOptions);
   await syncSeedGameFromSeed('life-is-strange-true-colors', syncOptions);
   await syncSeedGameFromSeed('life-is-strange-double-exposure', syncOptions);
@@ -1138,6 +1182,9 @@ async function migrate(options = {}) {
   await backfillTrophyNamePtFromSeed();
   await backfillEldenRingTrophyDescriptionsFromSeed();
   await backfillHadesTrophyLocalizationFromSeed();
+  await backfillTrophyChecklistLocalizationFromSeed('astro-bot');
+  await backfillTrophyChecklistLocalizationFromSeed('astros-playroom');
+  await backfillTrophyChecklistLocalizationFromSeed('the-last-of-us-part-ii');
   await backfillEditorialStatusFields({ recalculateCoverage: gameColumnChanges.coverageLevel });
   if (shouldSyncSeedData(options)) {
     await syncReviewedGuidesFromSeed();
@@ -1146,13 +1193,14 @@ async function migrate(options = {}) {
   await syncSeedGameRoadmapFromSeed('hades');
   await syncSeedGameFromSeed('pragmata', { insertIfMissing: true, forceSync: true });
   await syncSeedGameGuideSummaryAndRoadmapFromSeed('ghost-of-tsushima');
-  await syncSeedGameGuideSummaryAndRoadmapFromSeed('hades-ii');
-  await syncSeedGameGuideSummaryAndRoadmapFromSeed('astro-bot');
+  await syncSeedGameFromSeed('hades-ii', { insertIfMissing: true, forceSync: true });
+  await syncSeedGameFromSeed('astro-bot', { insertIfMissing: true, forceSync: true });
   await syncSeedGameFromSeed('astros-playroom', { insertIfMissing: true, forceSync: true });
   await syncSeedGameGuideSummaryAndRoadmapFromSeed('resident-evil-4-remake');
   await syncSeedGameFromSeed('nioh-2', { insertIfMissing: true, forceSync: true });
   await syncSeedGameFromSeed('nioh-3', { insertIfMissing: true, forceSync: true });
   await syncSeedGameFromSeed('saros', { insertIfMissing: true, forceSync: true });
+  await syncSeedGameFromSeed('subnautica', { insertIfMissing: true, forceSync: true });
   await syncSeedGameFromSeed('disney-epic-mickey-rebrushed', { insertIfMissing: true });
   await ensureKnownSlugRedirects();
 }

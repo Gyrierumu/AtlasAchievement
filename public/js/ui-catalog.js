@@ -55,6 +55,9 @@ window.UICatalog = (() => {
 
   function getCatalogCardImageSource(game = {}, model = {}) {
     const candidates = [
+      game?.catalogImage,
+      game?.catalog_image,
+      game?.cardImage,
       game?.image,
       model?.bannerImage,
       game?.cover_image,

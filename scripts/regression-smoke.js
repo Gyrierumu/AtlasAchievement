@@ -2686,10 +2686,19 @@ async function assertSeedData({ all, get }, sampleGames) {
   assert.strictEqual(astroBotSample.verification_status, 'review', 'Astro Bot deve ficar aguardando revisao editorial');
   assert(astroBotSample.cover_image, 'Astro Bot deve expor cover_image vertical para a biblioteca');
   assert.strictEqual(astroBotSample.trophies.filter(trophy => trophy.is_missable).length, 0, 'Astro Bot nao deve marcar trofeus perdiveis');
+  assert(astroBotSample.trophies.every(trophy => /^[A-Za-z0-9_:-]{1,60}$/.test(trophy.id)), 'Astro Bot deve ter trophy.id seguro');
+  assert.strictEqual(astroBotSample.trophies.filter(trophy => trophy.name_pt && trophy.name_pt.trim()).length, 44, 'Astro Bot deve preencher name_pt nos 44 trofeus');
+  assert.strictEqual(astroBotSample.trophies.filter(trophy => trophy.namePtSource === 'editorial_ptbr').length, 44, 'Astro Bot deve registrar fonte editorial_ptbr para name_pt');
+  assert.strictEqual(astroBotSample.trophies.filter(trophy => trophy.descriptionPtBr).length, 44, 'Astro Bot deve preencher descriptionPtBr nos 44 trofeus');
+  assert.strictEqual(astroBotSample.trophies.filter(trophy => trophy.descriptionPtSource === 'editorial_ptbr').length, 44, 'Astro Bot deve registrar fonte editorial_ptbr para descricoes');
+  assert(!astroBotSample.trophies.some(trophy => /Descrição em revisão editorial|undefined|null|\[object Object\]/i.test(`${trophy.name} ${trophy.name_pt} ${trophy.descriptionPtBr} ${trophy.description}`)), 'Astro Bot nao deve exibir placeholder ou campos crus na checklist');
   const astroBotTypeCounts = astroBotSample.trophies.reduce((counts, trophy) => {
     counts[trophy.type] = (counts[trophy.type] || 0) + 1;
     return counts;
   }, {});
+  assert(astroBotSample.trophies.some(trophy => trophy.name === 'Astro-nomical!' && trophy.name_pt === 'Astro-nômico!' && trophy.descriptionPtBr === 'Conquiste todos os troféus.' && trophy.type === 'Platina'), 'Astro Bot deve localizar Astro-nomical! e manter platina');
+  assert(astroBotSample.trophies.some(trophy => trophy.name === 'A Lot To Process' && trophy.name_pt === 'Muito a Processar' && trophy.descriptionPtBr === 'Salve o CPU Kid.' && trophy.type === 'Ouro'), 'Astro Bot deve localizar A Lot To Process e manter ouro');
+  assert(astroBotSample.trophies.some(trophy => trophy.name === 'The Golden Bot' && trophy.name_pt === 'O Bot Dourado' && trophy.descriptionPtBr === 'Resgate o Bot Mestre Especial no topo da Estátua Dourada.' && trophy.type === 'Ouro'), 'Astro Bot deve localizar The Golden Bot e manter ouro');
   assert.deepStrictEqual(astroBotTypeCounts, { Platina: 1, Prata: 17, Ouro: 2, Bronze: 24 }, 'Astro Bot deve manter distribuicao oficial de trofeus');
 
   const astroBot = await get('SELECT slug, difficulty, time_bucket, time_min_hours, time_max_hours, time_sort_hours, editorial_status, coverage_level, is_verified, verification_status, image, cover_image FROM games WHERE name = ?', ['Astro Bot']);
@@ -2706,9 +2715,11 @@ async function assertSeedData({ all, get }, sampleGames) {
   assert.strictEqual(astroBot?.image, astroBotSample.image, 'Astro Bot deve preservar image horizontal');
   assert.strictEqual(astroBot?.cover_image, astroBotSample.cover_image, 'Astro Bot deve persistir cover_image vertical');
 
-  const astroBotTrophyRows = await all('SELECT type, is_missable FROM trophies WHERE game_id = (SELECT id FROM games WHERE slug = ?) ORDER BY id', ['astro-bot']);
+  const astroBotTrophyRows = await all('SELECT trophy_code, name, name_pt, type, description, is_missable FROM trophies WHERE game_id = (SELECT id FROM games WHERE slug = ?) ORDER BY id', ['astro-bot']);
   assert.strictEqual(astroBotTrophyRows.length, 44, 'seed deve inserir checklist completo do Astro Bot');
   assert.strictEqual(astroBotTrophyRows.filter(trophy => trophy.is_missable).length, 0, 'Astro Bot nao deve marcar perdiveis');
+  assert.strictEqual(astroBotTrophyRows.filter(trophy => trophy.name_pt).length, 44, 'seed deve persistir name_pt do Astro Bot');
+  assert(astroBotTrophyRows.some(trophy => trophy.trophy_code === 'astrobot_the_golden_bot' && trophy.name === 'The Golden Bot' && trophy.name_pt === 'O Bot Dourado' && trophy.description === 'Resgate o Bot Mestre Especial no topo da Estátua Dourada.'), 'seed deve persistir The Golden Bot bilingue');
 
   const astrosPlayroomSample = sampleGames.find(game => game.slug === 'astros-playroom');
   assert(astrosPlayroomSample, "sampleGames deve incluir Astro's Playroom");
@@ -2720,6 +2731,12 @@ async function assertSeedData({ all, get }, sampleGames) {
   assert(astrosPlayroomSample.cover_image, "Astro's Playroom deve expor cover_image vertical para a biblioteca");
   assert(astrosPlayroomSample.dlc_scope.includes('lista base da platina'), "Astro's Playroom deve deixar claro que cobre a lista base da platina");
   assert.strictEqual(astrosPlayroomSample.trophies.filter(trophy => trophy.is_missable).length, 0, "Astro's Playroom nao deve marcar trofeus perdiveis");
+  assert(astrosPlayroomSample.trophies.every(trophy => /^[A-Za-z0-9_:-]{1,60}$/.test(trophy.id)), "Astro's Playroom deve ter trophy.id seguro");
+  assert.strictEqual(astrosPlayroomSample.trophies.filter(trophy => trophy.name_pt && trophy.name_pt.trim()).length, 43, "Astro's Playroom deve preencher name_pt nos 43 trofeus base");
+  assert.strictEqual(astrosPlayroomSample.trophies.filter(trophy => trophy.namePtSource === 'editorial_ptbr').length, 43, "Astro's Playroom deve registrar fonte editorial_ptbr para name_pt");
+  assert.strictEqual(astrosPlayroomSample.trophies.filter(trophy => trophy.descriptionPtBr).length, 43, "Astro's Playroom deve preencher descriptionPtBr nos 43 trofeus base");
+  assert.strictEqual(astrosPlayroomSample.trophies.filter(trophy => trophy.descriptionPtSource === 'editorial_ptbr').length, 43, "Astro's Playroom deve registrar fonte editorial_ptbr para descricoes");
+  assert(!astrosPlayroomSample.trophies.some(trophy => /Descrição em revisão editorial|undefined|null|\[object Object\]/i.test(`${trophy.name} ${trophy.name_pt} ${trophy.descriptionPtBr} ${trophy.description}`)), "Astro's Playroom nao deve exibir placeholder ou campos crus na checklist");
   const astrosPlayroomTrophyNames = new Set(astrosPlayroomSample.trophies.map(trophy => trophy.name));
   assert(!astrosPlayroomTrophyNames.has('Run Astro Run!'), "Astro's Playroom nao deve incluir add-on Run Astro Run! na lista base");
   assert(!astrosPlayroomTrophyNames.has('Play Has No Limits!'), "Astro's Playroom nao deve incluir add-on Play Has No Limits! na lista base");
@@ -2728,6 +2745,10 @@ async function assertSeedData({ all, get }, sampleGames) {
     counts[trophy.type] = (counts[trophy.type] || 0) + 1;
     return counts;
   }, {});
+  assert(astrosPlayroomSample.trophies.some(trophy => trophy.name === "You've Only Done Everything" && trophy.name_pt === 'Você Fez Tudo' && trophy.descriptionPtBr === "Encontre todos os troféus de ASTRO's PLAYROOM. Até a próxima aventura!" && trophy.type === 'Platina'), "Astro's Playroom deve localizar You've Only Done Everything e manter platina");
+  assert(astrosPlayroomSample.trophies.some(trophy => trophy.name === 'Do it!' && trophy.name_pt === 'Manda Ver!' && trophy.descriptionPtBr === 'Conclua Memory Meadow.'), "Astro's Playroom deve localizar Do it!");
+  assert(astrosPlayroomSample.trophies.some(trophy => trophy.name === 'Dude Raider!' && trophy.name_pt === 'Aventureiro de Artefatos' && trophy.descriptionPtBr === 'Colete todos os artefatos nas quatro fases principais e no PS Labo.'), "Astro's Playroom deve localizar Dude Raider!");
+  assert(astrosPlayroomSample.trophies.some(trophy => trophy.name === 'A Grand Tour!' && trophy.name_pt === 'Um Grande Passeio!' && trophy.descriptionPtBr === 'Colete todas as peças de puzzle do jogo.'), "Astro's Playroom deve localizar A Grand Tour!");
   assert.deepStrictEqual(astrosPlayroomTypeCounts, { Platina: 1, Prata: 13, Bronze: 26, Ouro: 3 }, "Astro's Playroom deve manter distribuicao base oficial de trofeus");
 
   const astrosPlayroom = await get('SELECT slug, difficulty, time_bucket, time_min_hours, time_max_hours, time_sort_hours, editorial_status, coverage_level, is_verified, verification_status, image, cover_image FROM games WHERE name = ?', ["Astro's Playroom"]);
@@ -2744,9 +2765,11 @@ async function assertSeedData({ all, get }, sampleGames) {
   assert.strictEqual(astrosPlayroom?.image, astrosPlayroomSample.image, "Astro's Playroom deve preservar image horizontal");
   assert.strictEqual(astrosPlayroom?.cover_image, astrosPlayroomSample.cover_image, "Astro's Playroom deve persistir cover_image vertical");
 
-  const astrosPlayroomTrophyRows = await all('SELECT trophy_code, type, is_missable FROM trophies WHERE game_id = (SELECT id FROM games WHERE slug = ?) ORDER BY id', ['astros-playroom']);
+  const astrosPlayroomTrophyRows = await all('SELECT trophy_code, name, name_pt, type, description, is_missable FROM trophies WHERE game_id = (SELECT id FROM games WHERE slug = ?) ORDER BY id', ['astros-playroom']);
   assert.strictEqual(astrosPlayroomTrophyRows.length, 43, "seed deve inserir checklist base completo do Astro's Playroom");
   assert.strictEqual(astrosPlayroomTrophyRows.filter(trophy => trophy.is_missable).length, 0, "Astro's Playroom nao deve marcar perdiveis");
+  assert.strictEqual(astrosPlayroomTrophyRows.filter(trophy => trophy.name_pt).length, 43, "seed deve persistir name_pt do Astro's Playroom");
+  assert(astrosPlayroomTrophyRows.some(trophy => trophy.trophy_code === 'astros_playroom_dude_raider' && trophy.name === 'Dude Raider!' && trophy.name_pt === 'Aventureiro de Artefatos' && trophy.description === 'Colete todos os artefatos nas quatro fases principais e no PS Labo.'), "seed deve persistir Dude Raider! bilingue");
   const astrosPlayroomTrophyCodes = new Set(astrosPlayroomTrophyRows.map(trophy => trophy.trophy_code));
   assert(!astrosPlayroomTrophyCodes.has('astros_playroom_run_astro_run'), "seed nao deve inserir add-ons de Astro's Playroom na lista base");
 
@@ -5584,6 +5607,32 @@ async function assertSeedData({ all, get }, sampleGames) {
   assert.strictEqual(nioh2TypeById.nioh2_soul_searcher, 'Prata', 'Soul Searcher deve ser prata');
   assert.strictEqual(nioh2TypeById.nioh2_let_there_be_light, 'Prata', 'Let There Be Light deve ser prata');
   assert.strictEqual(nioh2TypeById.nioh2_seven_wonders, 'Prata', 'Seven Wonders deve ser prata');
+  const nioh2LocalizedTrophies = nioh2Sample.trophies.filter(trophy => trophy.name_pt);
+  assert.strictEqual(nioh2LocalizedTrophies.length, 55, 'Nioh 2 deve parear 55 trofeus base com nomes PT-BR da Steam');
+  assert.strictEqual(nioh2Sample.trophies.filter(trophy => trophy.namePtSource === 'trusted_steam_ptbr').length, 55, 'Nioh 2 deve marcar 55 nomes como trusted_steam_ptbr');
+  assert.strictEqual(nioh2Sample.trophies.filter(trophy => trophy.descriptionPtBr).length, 56, 'Nioh 2 deve ter descricao PT-BR em todos os 56 trofeus base');
+  assert.strictEqual(nioh2Sample.trophies.filter(trophy => trophy.descriptionPtSource === 'trusted_steam_ptbr').length, 55, 'Nioh 2 deve marcar 55 descricoes como trusted_steam_ptbr');
+  assert(nioh2Sample.trophies.every(trophy => /^[A-Za-z0-9_:-]{1,60}$/.test(trophy.id)), 'Nioh 2 deve manter trophy ids validos');
+  assert.strictEqual(nioh2Sample.trophies.filter(trophy => trophy.isOnline || trophy.is_online || trophy.isCoop || trophy.is_coop).length, 0, 'Nioh 2 nao deve marcar trofeus como online/coop obrigatorios');
+  assert(!nioh2Sample.trophies.some(trophy => /Descricao em revisao editorial|undefined|null|\[object Object\]/i.test(`${trophy.descriptionPtBr || trophy.description || ''}`)), 'Nioh 2 nao deve exibir descricoes placeholder ou invalidas');
+  const nioh2TrophyById = Object.fromEntries(nioh2Sample.trophies.map(trophy => [trophy.id, trophy]));
+  assert.strictEqual(nioh2TrophyById.nioh2_you_are_nioh.name, 'You Are Nioh', 'You Are Nioh deve preservar nome em ingles');
+  assert.strictEqual(nioh2TrophyById.nioh2_you_are_nioh.name_pt, 'Você é Nioh', 'You Are Nioh deve receber nome PT-BR da Steam');
+  assert.strictEqual(nioh2TrophyById.nioh2_you_are_nioh.descriptionPtBr, 'Você desbloqueou todas as conquistas!', 'You Are Nioh deve receber descricao PT-BR da Steam');
+  assert.strictEqual(nioh2TrophyById.nioh2_you_are_nioh.type, 'Platina', 'You Are Nioh deve preservar tier platinum');
+  assert.strictEqual(nioh2TrophyById.nioh2_beginning_samurai.name_pt, 'Aprendiz de Samurai', 'The Beginning of a Samurai deve receber nome PT-BR');
+  assert.strictEqual(nioh2TrophyById.nioh2_beginning_samurai.descriptionPtBr, 'Atingiu o nível 10.', 'The Beginning of a Samurai deve receber descricao PT-BR');
+  assert.strictEqual(nioh2TrophyById.nioh2_spa_healer.name_pt, 'Descanso no Spa', 'Spa Healer deve receber nome PT-BR');
+  assert.strictEqual(nioh2TrophyById.nioh2_spa_healer.descriptionPtBr, 'Banhou-se na primeira fonte termal.', 'Spa Healer deve receber descricao PT-BR');
+  assert.strictEqual(nioh2TrophyById.nioh2_latest_masterpiece.name, 'Latest Masterpiece', 'Latest Masterpiece deve preservar grafia correta em ingles');
+  assert.strictEqual(nioh2TrophyById.nioh2_latest_masterpiece.name_pt, 'Obra-prima', 'Latest Masterpiece deve receber nome PT-BR');
+  assert.strictEqual(nioh2TrophyById.nioh2_latest_masterpiece.descriptionPtBr, 'Forjou um item.', 'Latest Masterpiece deve receber descricao PT-BR');
+  assert.strictEqual(nioh2TrophyById.nioh2_teamwork.name_pt, 'Trabalho em Equipe', 'Teamwork deve receber nome PT-BR');
+  assert.strictEqual(nioh2TrophyById.nioh2_teamwork.isOnline, false, 'Teamwork nao deve virar trofeu online obrigatorio');
+  assert.strictEqual(nioh2TrophyById.nioh2_kodama_leader.name_pt, 'Líder dos Kodama', 'Kodama Leader deve receber nome PT-BR');
+  assert.strictEqual(nioh2TrophyById.nioh2_spa_lover.name, 'Spa Lover', 'Spa Lover base deve ser preservado sem importar Spa Addict de DLC');
+  assert.strictEqual(nioh2TrophyById.nioh2_spa_lover.name_pt, 'Viciado em Spa', 'Spa Lover deve receber nome PT-BR correspondente');
+  assert.strictEqual(nioh2TrophyById.nioh2_samurai_of_legend.name_pt, null, 'Samurai of Legend nao deve receber traducao sem pareamento confiavel na Steam');
 
 
   const princeOfPersiaLostCrownSeeded = await get('SELECT slug, difficulty, time, time_bucket, time_min_hours, time_max_hours, time_sort_hours, editorial_status, coverage_level, is_verified, verification_status, image, cover_image, online_summary, dlc_scope, before_you_start FROM games WHERE slug = ?', ['prince-of-persia-the-lost-crown']);
@@ -5963,10 +6012,19 @@ async function assertSeedData({ all, get }, sampleGames) {
   assert(nioh2RoadmapRows.some(row => row.content.includes('replay de missões')), 'seed deve persistir replay de missoes para Nioh 2');
   assert(nioh2RoadmapRows.some(row => row.content.includes('Soul Cores') && row.content.includes('Mystic Arts')), 'seed deve persistir foco em Soul Cores e Mystic Arts para Nioh 2');
 
-  const nioh2TrophyRows = await all('SELECT trophy_code, name, type, is_missable, is_spoiler FROM trophies WHERE game_id = (SELECT id FROM games WHERE slug = ?) ORDER BY id', ['nioh-2']);
+  const nioh2TrophyRows = await all('SELECT trophy_code, name, name_pt, type, description, is_missable, is_spoiler FROM trophies WHERE game_id = (SELECT id FROM games WHERE slug = ?) ORDER BY id', ['nioh-2']);
   assert.strictEqual(nioh2TrophyRows.length, 56, 'seed deve inserir checklist base completo do Nioh 2');
   assert.strictEqual(new Set(nioh2TrophyRows.map(trophy => trophy.trophy_code)).size, 56, 'seed nao deve inserir trophy_code duplicado no Nioh 2');
   assert.strictEqual(nioh2TrophyRows.filter(trophy => trophy.is_missable).length, 0, 'seed nao deve marcar perdiveis no Nioh 2');
+  assert.strictEqual(nioh2TrophyRows.filter(trophy => trophy.name_pt).length, 55, 'seed deve persistir 55 nomes PT-BR no Nioh 2');
+  assert.strictEqual(nioh2TrophyRows.filter(trophy => trophy.description).length, 56, 'seed deve persistir 56 descricoes PT-BR no Nioh 2');
+  const nioh2PersistedByCode = Object.fromEntries(nioh2TrophyRows.map(trophy => [trophy.trophy_code, trophy]));
+  assert.strictEqual(nioh2PersistedByCode.nioh2_you_are_nioh?.name_pt, 'Você é Nioh', 'seed deve persistir PT-BR de You Are Nioh');
+  assert.strictEqual(nioh2PersistedByCode.nioh2_beginning_samurai?.name_pt, 'Aprendiz de Samurai', 'seed deve persistir PT-BR de The Beginning of a Samurai');
+  assert.strictEqual(nioh2PersistedByCode.nioh2_spa_healer?.description, 'Banhou-se na primeira fonte termal.', 'seed deve persistir descricao PT-BR de Spa Healer');
+  assert.strictEqual(nioh2PersistedByCode.nioh2_latest_masterpiece?.name, 'Latest Masterpiece', 'seed deve preservar grafia de Latest Masterpiece');
+  assert.strictEqual(nioh2PersistedByCode.nioh2_latest_masterpiece?.name_pt, 'Obra-prima', 'seed deve persistir PT-BR de Latest Masterpiece');
+  assert.strictEqual(nioh2PersistedByCode.nioh2_samurai_of_legend?.name_pt, null, 'seed nao deve inventar PT-BR para Samurai of Legend');
   const nioh2PersistedTypeCounts = nioh2TrophyRows.reduce((counts, trophy) => {
     counts[trophy.type] = (counts[trophy.type] || 0) + 1;
     return counts;
@@ -6020,6 +6078,30 @@ async function assertSeedData({ all, get }, sampleGames) {
   assert.strictEqual(nioh3TypeById.nioh3_dung_ball, 'Prata', 'Dung Ball Roller deve ser prata');
   assert.strictEqual(nioh3TypeById.nioh3_answering_people, 'Ouro', 'Answering to the People deve ser ouro');
   assert.strictEqual(nioh3TypeById.nioh3_as_shogun, 'Ouro', 'As Shogun deve ser ouro');
+  assert.strictEqual(nioh3Sample.trophies.filter(trophy => trophy.name_pt && trophy.name_pt.trim()).length, 51, 'Nioh 3 deve parear os 51 trofeus com nomes PT-BR da Steam');
+  assert.strictEqual(nioh3Sample.trophies.filter(trophy => trophy.namePtSource === 'trusted_steam_ptbr').length, 51, 'Nioh 3 deve marcar 51 nomes como trusted_steam_ptbr');
+  assert.strictEqual(nioh3Sample.trophies.filter(trophy => trophy.descriptionPtBr).length, 51, 'Nioh 3 deve ter descricao PT-BR nos 51 trofeus');
+  assert.strictEqual(nioh3Sample.trophies.filter(trophy => trophy.descriptionPtSource === 'trusted_steam_ptbr').length, 32, 'Nioh 3 deve marcar 32 descricoes visiveis da Steam como trusted_steam_ptbr');
+  assert.strictEqual(nioh3Sample.trophies.filter(trophy => trophy.descriptionPtSource === 'editorial_from_existing_requirement').length, 19, 'Nioh 3 deve marcar descricoes ocultas na Steam como editoriais do requisito existente');
+  assert(nioh3Sample.trophies.every(trophy => /^[A-Za-z0-9_:-]{1,60}$/.test(trophy.id)), 'Nioh 3 deve manter trophy ids validos');
+  assert.strictEqual(nioh3Sample.trophies.filter(trophy => trophy.isOnline || trophy.is_online || trophy.isCoop || trophy.is_coop).length, 0, 'Nioh 3 nao deve marcar trofeus como online/coop obrigatorios');
+  assert(!nioh3Sample.trophies.some(trophy => /Descricao em revisao editorial|undefined|null|\[object Object\]/i.test(`${trophy.descriptionPtBr || trophy.description || ''}`)), 'Nioh 3 nao deve exibir descricoes placeholder ou invalidas');
+  const nioh3TrophyById = Object.fromEntries(nioh3Sample.trophies.map(trophy => [trophy.id, trophy]));
+  assert.strictEqual(nioh3TrophyById.nioh3_platinum.name, 'You Are Nioh', 'You Are Nioh deve preservar nome em ingles');
+  assert.strictEqual(nioh3TrophyById.nioh3_platinum.name_pt, 'Você é Nioh', 'You Are Nioh deve receber nome PT-BR da Steam');
+  assert.strictEqual(nioh3TrophyById.nioh3_platinum.descriptionPtBr, 'Você desbloqueou todas as conquistas.', 'You Are Nioh deve receber descricao PT-BR da Steam');
+  assert.strictEqual(nioh3TrophyById.nioh3_platinum.type, 'Platina', 'You Are Nioh deve preservar tier platinum');
+  assert.strictEqual(nioh3TrophyById.nioh3_wanderer_time.name_pt, 'Errante do Tempo', 'Wanderer in Time deve receber nome PT-BR');
+  assert.strictEqual(nioh3TrophyById.nioh3_wanderer_time.descriptionPtSource, 'editorial_from_existing_requirement', 'Wanderer in Time deve usar descricao editorial quando a Steam oculta o requisito');
+  assert.strictEqual(nioh3TrophyById.nioh3_spa_healer.name_pt, 'Apreciador de Spa', 'Spa Healer deve receber nome PT-BR');
+  assert.strictEqual(nioh3TrophyById.nioh3_spa_healer.descriptionPtBr, 'Você se banhou na fonte termal pela primeira vez.', 'Spa Healer deve receber descricao PT-BR');
+  assert.strictEqual(nioh3TrophyById.nioh3_latest_masterpiece.name, 'Latest Masterpiece', 'Latest Masterpiece deve preservar grafia correta em ingles');
+  assert.strictEqual(nioh3TrophyById.nioh3_latest_masterpiece.name_pt, 'A última Obra-prima', 'Latest Masterpiece deve receber nome PT-BR');
+  assert.strictEqual(nioh3TrophyById.nioh3_teamwork.name_pt, 'Trabalho em Equipe', 'Teamwork deve receber nome PT-BR');
+  assert.strictEqual(nioh3TrophyById.nioh3_teamwork.isOnline, false, 'Teamwork nao deve virar trofeu online obrigatorio');
+  assert.strictEqual(nioh3TrophyById.nioh3_kodama_leader.name_pt, 'Líder dos Kodama', 'Kodama Leader deve receber nome PT-BR');
+  assert.strictEqual(nioh3TrophyById.nioh3_answering_people.name_pt, 'A Pedido do Povo', 'Answering to the People deve receber nome PT-BR');
+  assert.strictEqual(nioh3TrophyById.nioh3_lesser_eradicator.name_pt, 'Erradicador do Umbrasal Inferior', 'Lesser Crucible Eradicator deve receber nome PT-BR');
 
   const nioh3Seeded = await get('SELECT slug, difficulty, time, time_bucket, time_min_hours, time_max_hours, time_sort_hours, editorial_status, coverage_level, is_verified, verification_status, image, cover_image, online_summary, dlc_scope FROM games WHERE slug = ?', ['nioh-3']);
   assert.strictEqual(nioh3Seeded?.slug, 'nioh-3', 'seed deve persistir slug do Nioh 3');
@@ -6042,11 +6124,19 @@ async function assertSeedData({ all, get }, sampleGames) {
   assert.strictEqual(nioh3RoadmapRows.length, 6, 'seed deve inserir 6 etapas de roadmap para Nioh 3');
   assert(nioh3RoadmapRows.some(row => row.content.includes('Battle Scroll')), 'seed deve persistir cleanup por Battle Scroll para Nioh 3');
 
-  const nioh3TrophyRows = await all('SELECT trophy_code, name, type, is_missable, is_spoiler FROM trophies WHERE game_id = (SELECT id FROM games WHERE slug = ?) ORDER BY id', ['nioh-3']);
+  const nioh3TrophyRows = await all('SELECT trophy_code, name, name_pt, type, description, is_missable, is_spoiler FROM trophies WHERE game_id = (SELECT id FROM games WHERE slug = ?) ORDER BY id', ['nioh-3']);
   assert.strictEqual(nioh3TrophyRows.length, 51, 'seed deve inserir checklist base completo do Nioh 3');
   assert.strictEqual(new Set(nioh3TrophyRows.map(trophy => trophy.trophy_code)).size, 51, 'seed nao deve inserir trophy_code duplicado no Nioh 3');
   assert.strictEqual(nioh3TrophyRows.filter(trophy => trophy.is_missable).length, 0, 'seed nao deve marcar perdiveis no Nioh 3');
   assert.strictEqual(nioh3TrophyRows.filter(trophy => trophy.is_spoiler).length, 18, 'seed deve persistir spoiler_count coerente no Nioh 3');
+  assert.strictEqual(nioh3TrophyRows.filter(trophy => trophy.name_pt).length, 51, 'seed deve persistir 51 nomes PT-BR no Nioh 3');
+  assert.strictEqual(nioh3TrophyRows.filter(trophy => trophy.description).length, 51, 'seed deve persistir 51 descricoes PT-BR no Nioh 3');
+  const nioh3PersistedByCode = Object.fromEntries(nioh3TrophyRows.map(trophy => [trophy.trophy_code, trophy]));
+  assert.strictEqual(nioh3PersistedByCode.nioh3_platinum?.name_pt, 'Você é Nioh', 'seed deve persistir PT-BR de You Are Nioh');
+  assert.strictEqual(nioh3PersistedByCode.nioh3_wanderer_time?.name_pt, 'Errante do Tempo', 'seed deve persistir PT-BR de Wanderer in Time');
+  assert.strictEqual(nioh3PersistedByCode.nioh3_spa_healer?.description, 'Você se banhou na fonte termal pela primeira vez.', 'seed deve persistir descricao PT-BR de Spa Healer');
+  assert.strictEqual(nioh3PersistedByCode.nioh3_latest_masterpiece?.name, 'Latest Masterpiece', 'seed deve preservar grafia de Latest Masterpiece');
+  assert.strictEqual(nioh3PersistedByCode.nioh3_latest_masterpiece?.name_pt, 'A última Obra-prima', 'seed deve persistir PT-BR de Latest Masterpiece');
   const nioh3PersistedTypeCounts = nioh3TrophyRows.reduce((counts, trophy) => {
     counts[trophy.type] = (counts[trophy.type] || 0) + 1;
     return counts;
@@ -6550,12 +6640,19 @@ async function assertSeedData({ all, get }, sampleGames) {
   assert.strictEqual(tlouPartISample.trophies.length, 29, 'The Last of Us Part I deve ter 29 trofeus');
   assert.strictEqual(new Set(tlouPartISample.trophies.map(trophy => trophy.id)).size, 29, 'The Last of Us Part I nao deve ter trophy_code duplicado');
   assert.strictEqual(tlouPartISample.editorial_status, 'published', 'The Last of Us Part I deve ser publico');
+  assert.strictEqual(tlouPartISample.editorial_review_status, 'in_review', 'The Last of Us Part I deve manter status editorial in_review');
   assert.strictEqual(tlouPartISample.coverage_level, 'strong', 'The Last of Us Part I deve ter coverage strong');
   assert.strictEqual(tlouPartISample.is_verified, false, 'The Last of Us Part I nao deve ser verificado automaticamente');
   assert.strictEqual(tlouPartISample.verification_status, 'review', 'The Last of Us Part I deve aguardar revisao editorial final');
   assert(tlouPartISample.online_summary.includes('Não há exigência online'), 'The Last of Us Part I deve deixar claro que online nao e obrigatorio');
   assert(tlouPartISample.before_you_start.includes('Remastered') && tlouPartISample.before_you_start.includes('multiplayer'), 'The Last of Us Part I deve diferenciar Remastered e multiplayer');
   assert(tlouPartISample.dlc_scope.includes('Left Behind') && tlouPartISample.dlc_scope.includes('lista de 29'), 'The Last of Us Part I deve manter Left Behind integrado na lista oficial');
+  assert.strictEqual(tlouPartISample.chapterSelect, true, 'The Last of Us Part I deve marcar Chapter Select');
+  assert.strictEqual(tlouPartISample.onlineRequired, false, 'The Last of Us Part I nao deve exigir online');
+  assert.strictEqual(tlouPartISample.coopRequired, false, 'The Last of Us Part I nao deve exigir coop');
+  assert.strictEqual(tlouPartISample.dlcRequired, false, 'The Last of Us Part I nao deve exigir DLC separada');
+  assert.strictEqual(tlouPartISample.newGamePlusRequired, false, 'The Last of Us Part I nao deve exigir NG+');
+  assert.strictEqual(tlouPartISample.difficultyTrophiesRequired, false, 'The Last of Us Part I nao deve exigir dificuldade alta');
   assert.strictEqual(tlouPartISample.trophies.filter(trophy => trophy.is_missable).length, 0, 'The Last of Us Part I nao deve marcar perdiveis definitivos');
   assert(!tlouPartISample.trophies.some(trophy => /Factions|multiplayer|Hunter|Firefly Journey|Left Behind DLC|Part II|Remastered/i.test(`${trophy.name} ${trophy.description}`)), 'The Last of Us Part I nao deve misturar Factions, Remastered ou Part II na checklist');
   const tlouPartITypeCounts = tlouPartISample.trophies.reduce((counts, trophy) => {
@@ -6567,22 +6664,34 @@ async function assertSeedData({ all, get }, sampleGames) {
   assert.strictEqual(tlouPartITypeCounts.Prata, 7, 'The Last of Us Part I deve ter 7 prata');
   assert.strictEqual(tlouPartITypeCounts.Bronze, 14, 'The Last of Us Part I deve ter 14 bronze');
 
-  const tlouPartISeeded = await get('SELECT slug, difficulty, time, time_bucket, editorial_status, coverage_level, is_verified, verification_status, online_summary, dlc_scope, missable_summary FROM games WHERE slug = ?', ['the-last-of-us-part-i']);
+  assert(tlouPartISample.trophies.every(trophy => /^[A-Za-z0-9_:-]{1,60}$/.test(trophy.id)), 'The Last of Us Part I deve ter trophy.id valido');
+  assert.strictEqual(tlouPartISample.trophies.filter(trophy => trophy.name_pt).length, 29, 'The Last of Us Part I deve preencher nomes PT-BR via Steam confiavel');
+  assert.strictEqual(tlouPartISample.trophies.filter(trophy => trophy.namePtSource === 'trusted_steam_ptbr').length, 29, 'The Last of Us Part I deve registrar fonte Steam PT-BR para name_pt');
+  assert.strictEqual(tlouPartISample.trophies.filter(trophy => trophy.descriptionPtSource === 'trusted_steam_ptbr').length, 29, 'The Last of Us Part I deve registrar fonte Steam PT-BR para descricoes');
+  assert.strictEqual(tlouPartISample.trophies.filter(trophy => /[áàâãéêíóôõúç]/i.test(trophy.description) || /\b(Colete|Conclua|Encontre|Participe|Sobreviva|Melhore|Abra|Crie|Pegue|Enquanto|Ande|Deixe|Acaricie|Jogue|Vença|Derrote|Use)\b/.test(trophy.description)).length, 29, 'The Last of Us Part I deve ter descricoes em portugues nos 29 trofeus');
+
+  const tlouPartISeeded = await get('SELECT slug, difficulty, time, time_bucket, editorial_status, editorial_review_status, coverage_level, is_verified, verification_status, online_summary, dlc_scope, missable_summary, quality_warnings FROM games WHERE slug = ?', ['the-last-of-us-part-i']);
   assert.strictEqual(tlouPartISeeded?.slug, 'the-last-of-us-part-i', 'seed deve persistir slug de The Last of Us Part I');
   assert.strictEqual(tlouPartISeeded?.difficulty, 3, 'seed deve persistir dificuldade 3/10 de The Last of Us Part I');
   assert.strictEqual(tlouPartISeeded?.time, '20-30h', 'seed deve persistir tempo 20-30h de The Last of Us Part I');
   assert.strictEqual(tlouPartISeeded?.time_bucket, 'medium', 'seed deve persistir The Last of Us Part I na faixa media');
   assert.strictEqual(tlouPartISeeded?.editorial_status, 'published', 'The Last of Us Part I deve entrar publicado');
+  assert.strictEqual(tlouPartISeeded?.editorial_review_status, 'in_review', 'The Last of Us Part I deve persistir in_review');
   assert.strictEqual(tlouPartISeeded?.coverage_level, 'strong', 'The Last of Us Part I deve entrar com coverage strong');
   assert.strictEqual(tlouPartISeeded?.is_verified, 0, 'The Last of Us Part I nao deve entrar como verificado');
   assert.strictEqual(tlouPartISeeded?.verification_status, 'review', 'The Last of Us Part I deve entrar em revisao editorial');
   assert(tlouPartISeeded?.online_summary.includes('Não há exigência online'), 'The Last of Us Part I deve persistir ausencia de online');
   assert(tlouPartISeeded?.dlc_scope.includes('Left Behind'), 'The Last of Us Part I deve persistir Left Behind integrado');
+  assert(tlouPartISeeded?.quality_warnings.includes('needs_trophy_localization_check'), 'The Last of Us Part I deve persistir aviso de localizacao');
 
   const tlouPartIRoadmapRows = await all('SELECT content FROM roadmaps WHERE game_id = (SELECT id FROM games WHERE slug = ?) ORDER BY step_order', ['the-last-of-us-part-i']);
-  assert.strictEqual(tlouPartIRoadmapRows.length, 5, 'seed deve inserir 5 etapas de roadmap para The Last of Us Part I');
+  assert.strictEqual(tlouPartIRoadmapRows.length, 6, 'seed deve inserir 6 etapas de roadmap para The Last of Us Part I');
   const tlouPartIRoadmapText = tlouPartIRoadmapRows.map(row => row.content).join(' ');
-  assert(tlouPartIRoadmapText.includes('Left Behind') && tlouPartIRoadmapText.includes('Factions'), 'seed deve persistir roadmap sem Factions e com Left Behind integrado');
+  assert(tlouPartIRoadmapText.includes('Left Behind') && !tlouPartIRoadmapText.includes('Factions'), 'seed deve persistir roadmap sem Factions e com Left Behind integrado');
+  assert(tlouPartIRoadmapRows.every(row => {
+    const step = JSON.parse(row.content);
+    return step.title && step.focus && step.objective && Array.isArray(step.actions) && step.result;
+  }), 'seed deve persistir roadmap estruturado para The Last of Us Part I');
 
   const tlouPartITrophyRows = await all('SELECT trophy_code, name, type, is_missable FROM trophies WHERE game_id = (SELECT id FROM games WHERE slug = ?) ORDER BY id', ['the-last-of-us-part-i']);
   assert.strictEqual(tlouPartITrophyRows.length, 29, 'seed deve inserir checklist completo de The Last of Us Part I');
@@ -6609,22 +6718,39 @@ async function assertSeedData({ all, get }, sampleGames) {
   assert.strictEqual(tlouPartIISample.coverage_level, 'strong', 'The Last of Us Part II deve ter coverage strong');
   assert.strictEqual(tlouPartIISample.is_verified, false, 'The Last of Us Part II nao deve ser verificado automaticamente');
   assert.strictEqual(tlouPartIISample.verification_status, 'review', 'The Last of Us Part II deve aguardar revisao editorial final');
-  assert(tlouPartIISample.online_summary.includes('Não há exigência online'), 'The Last of Us Part II deve deixar claro que online nao e obrigatorio');
+  assert.strictEqual(tlouPartIISample.editorial_review_status, 'in_review', 'The Last of Us Part II deve ficar em revisao editorial profunda');
+  assert.deepStrictEqual(tlouPartIISample.quality_warnings, ['needs_trophy_localization_check', 'needs_extra_trophies_scope_check'], 'The Last of Us Part II deve registrar pendencias editoriais certas');
+  assert.strictEqual(tlouPartIISample.onlineRequired, false, 'The Last of Us Part II nao deve exigir online');
+  assert.strictEqual(tlouPartIISample.coopRequired, false, 'The Last of Us Part II nao deve exigir coop');
+  assert.strictEqual(tlouPartIISample.dlcRequired, false, 'The Last of Us Part II nao deve exigir DLC para a platina base');
+  assert.strictEqual(tlouPartIISample.chapterSelect, true, 'The Last of Us Part II deve indicar Chapter Select');
+  assert.strictEqual(tlouPartIISample.newGamePlusRequired, true, 'The Last of Us Part II deve indicar NG+ parcial para upgrades');
+  assert.strictEqual(tlouPartIISample.difficultyTrophiesRequired, false, 'The Last of Us Part II nao deve exigir dificuldade alta');
+  assert(tlouPartIISample.online_summary.includes('Não há troféus online'), 'The Last of Us Part II deve deixar claro que online nao e obrigatorio');
   assert(tlouPartIISample.runs_summary.includes('New Game+ parcial'), 'The Last of Us Part II deve mencionar New Game+ parcial');
-  assert(tlouPartIISample.before_you_start.includes('Part I') && tlouPartIISample.before_you_start.includes('No Return'), 'The Last of Us Part II deve diferenciar Part I e No Return');
+  assert(tlouPartIISample.before_you_start.includes('Part I') && tlouPartIISample.before_you_start.includes('Remastered') && tlouPartIISample.before_you_start.includes('No Return'), 'The Last of Us Part II deve diferenciar Part I, Remastered e No Return');
   assert(tlouPartIISample.dlc_scope.includes('Grounded') && tlouPartIISample.dlc_scope.includes('Permadeath') && tlouPartIISample.dlc_scope.includes('No Return'), 'The Last of Us Part II deve separar add-ons da lista base');
   assert.strictEqual(tlouPartIISample.trophies.filter(trophy => trophy.is_missable).length, 0, 'The Last of Us Part II nao deve marcar perdiveis definitivos');
+  assert(tlouPartIISample.trophies.every(trophy => /^[A-Za-z0-9_:-]{1,60}$/.test(trophy.id)), 'The Last of Us Part II deve usar trophy.id seguro');
+  assert.strictEqual(tlouPartIISample.trophies.filter(trophy => trophy.name_pt && trophy.name_pt.trim()).length, 26, 'The Last of Us Part II deve usar nomes PT-BR confiaveis da Steam Remastered nos 26 trofeus base');
+  assert.strictEqual(tlouPartIISample.trophies.filter(trophy => trophy.namePtSource === 'trusted_steam_ptbr_remastered').length, 26, 'The Last of Us Part II deve registrar fonte Steam PT-BR Remastered para name_pt');
+  assert.strictEqual(tlouPartIISample.trophies.filter(trophy => trophy.descriptionPtSource === 'trusted_steam_ptbr_remastered').length, 23, 'The Last of Us Part II deve registrar fonte Steam PT-BR Remastered para descricoes disponiveis na Steam');
+  assert.strictEqual(tlouPartIISample.trophies.filter(trophy => trophy.descriptionPtSource === 'editorial_from_existing_requirement').length, 3, 'The Last of Us Part II deve registrar descricoes editoriais somente para conquistas sem descricao na Steam');
+  assert(tlouPartIISample.trophies.every(trophy => trophy.description && !/[A-Za-z]+ all trophies|Complete the story|Find all|Unlock every|Craft every|Upgrade a weapon|Learn a player upgrade|Earn the high score/i.test(trophy.description)), 'The Last of Us Part II deve manter descricoes principais em portugues');
   assert(!tlouPartIISample.trophies.some(trophy => /No Return|Grounded|Permadeath|Part I|Factions|multiplayer|Dig Two Graves|You Can.?t Stop This/i.test(`${trophy.name} ${trophy.description}`)), 'The Last of Us Part II nao deve misturar Part I, No Return, Grounded, Permadeath ou multiplayer na checklist');
   const tlouPartIITypeCounts = tlouPartIISample.trophies.reduce((counts, trophy) => {
     counts[trophy.type] = (counts[trophy.type] || 0) + 1;
     return counts;
   }, {});
+  assert(tlouPartIISample.trophies.some(trophy => trophy.name === 'Every Last One of Them' && trophy.name_pt === 'Até Não Sobrar Nenhum' && trophy.descriptionPtBr === 'Obtenha todas as conquistas da história normal' && trophy.type === 'Platina'), 'The Last of Us Part II deve localizar Every Last One of Them e manter platina');
+  assert(tlouPartIISample.trophies.some(trophy => trophy.name === 'What I Had to Do' && trophy.name_pt === 'O Que Eu Tive Que Fazer' && trophy.descriptionPtBr === 'Conclua a história'), 'The Last of Us Part II deve localizar What I Had to Do');
+  assert(tlouPartIISample.trophies.some(trophy => trophy.name === 'Archivist' && trophy.name_pt === 'Arquivista' && trophy.descriptionPtBr === 'Encontre todos os artefatos e registros de diário'), 'The Last of Us Part II deve localizar Archivist');
   assert.strictEqual(tlouPartIITypeCounts.Platina, 1, 'The Last of Us Part II deve ter 1 platina');
   assert.strictEqual(tlouPartIITypeCounts.Ouro, 7, 'The Last of Us Part II deve ter 7 ouro');
   assert.strictEqual(tlouPartIITypeCounts.Prata, 8, 'The Last of Us Part II deve ter 8 prata');
   assert.strictEqual(tlouPartIITypeCounts.Bronze, 10, 'The Last of Us Part II deve ter 10 bronze');
 
-  const tlouPartIISeeded = await get('SELECT slug, difficulty, time, time_bucket, editorial_status, coverage_level, is_verified, verification_status, online_summary, dlc_scope, runs_summary FROM games WHERE slug = ?', ['the-last-of-us-part-ii']);
+  const tlouPartIISeeded = await get('SELECT slug, difficulty, time, time_bucket, editorial_status, editorial_review_status, quality_warnings, coverage_level, is_verified, verification_status, online_summary, dlc_scope, runs_summary FROM games WHERE slug = ?', ['the-last-of-us-part-ii']);
   assert.strictEqual(tlouPartIISeeded?.slug, 'the-last-of-us-part-ii', 'seed deve persistir slug de The Last of Us Part II');
   assert.strictEqual(tlouPartIISeeded?.difficulty, 3, 'seed deve persistir dificuldade 3/10 de The Last of Us Part II');
   assert.strictEqual(tlouPartIISeeded?.time, '25-35h', 'seed deve persistir tempo 25-35h de The Last of Us Part II');
@@ -6633,11 +6759,17 @@ async function assertSeedData({ all, get }, sampleGames) {
   assert.strictEqual(tlouPartIISeeded?.coverage_level, 'strong', 'The Last of Us Part II deve entrar com coverage strong');
   assert.strictEqual(tlouPartIISeeded?.is_verified, 0, 'The Last of Us Part II nao deve entrar como verificado');
   assert.strictEqual(tlouPartIISeeded?.verification_status, 'review', 'The Last of Us Part II deve entrar em revisao editorial');
-  assert(tlouPartIISeeded?.online_summary.includes('Não há exigência online'), 'The Last of Us Part II deve persistir ausencia de online');
+  assert.strictEqual(tlouPartIISeeded?.editorial_review_status, 'in_review', 'The Last of Us Part II deve persistir in_review');
+  assert(tlouPartIISeeded?.quality_warnings.includes('needs_trophy_localization_check') && tlouPartIISeeded?.quality_warnings.includes('needs_extra_trophies_scope_check'), 'The Last of Us Part II deve persistir quality warnings');
+  assert(tlouPartIISeeded?.online_summary.includes('Não há troféus online'), 'The Last of Us Part II deve persistir ausencia de online');
   assert(tlouPartIISeeded?.dlc_scope.includes('Grounded') && tlouPartIISeeded?.runs_summary.includes('New Game+ parcial'), 'The Last of Us Part II deve persistir add-ons separados e New Game+ parcial');
 
   const tlouPartIIRoadmapRows = await all('SELECT content FROM roadmaps WHERE game_id = (SELECT id FROM games WHERE slug = ?) ORDER BY step_order', ['the-last-of-us-part-ii']);
-  assert.strictEqual(tlouPartIIRoadmapRows.length, 5, 'seed deve inserir 5 etapas de roadmap para The Last of Us Part II');
+  assert.strictEqual(tlouPartIIRoadmapRows.length, 6, 'seed deve inserir 6 etapas de roadmap para The Last of Us Part II');
+  assert(tlouPartIIRoadmapRows.every(row => {
+    const stage = JSON.parse(row.content);
+    return stage && typeof stage.title === 'string' && typeof stage.focus === 'string' && typeof stage.objective === 'string' && Array.isArray(stage.actions) && typeof stage.result === 'string';
+  }), 'seed deve persistir roadmap estruturado para The Last of Us Part II');
   const tlouPartIIRoadmapText = tlouPartIIRoadmapRows.map(row => row.content).join(' ');
   assert(tlouPartIIRoadmapText.includes('New Game+ parcial') && tlouPartIIRoadmapText.includes('No Return'), 'seed deve persistir roadmap com NG+ parcial e sem add-ons na lista base');
 
@@ -7893,9 +8025,9 @@ async function assertBackendEditorialConsistency() {
   assert.strictEqual(tlouPartITrophiesAfterSync.length, 29, 'migration deve substituir checklist antigo de The Last of Us Part I por 29 trofeus');
   assert(!tlouPartITrophiesAfterSync.some(trophy => /factions|multiplayer|remastered|part ii|firefly journey/i.test(`${trophy.trophy_code} ${trophy.name}`)), 'migration deve remover trofeus de Factions/Remastered de The Last of Us Part I');
   assert.strictEqual(tlouPartITrophiesAfterSync.filter(trophy => trophy.is_missable).length, 0, 'migration deve limpar perdiveis definitivos antigos em The Last of Us Part I');
-  assert.strictEqual(tlouPartIRoadmapAfterSync.length, 5, 'migration deve atualizar roadmap de The Last of Us Part I');
+  assert.strictEqual(tlouPartIRoadmapAfterSync.length, 6, 'migration deve atualizar roadmap de The Last of Us Part I');
   const tlouPartIRoadmapAfterSyncText = tlouPartIRoadmapAfterSync.map(row => row.content).join(' ');
-  assert(tlouPartIRoadmapAfterSyncText.includes('Left Behind') && tlouPartIRoadmapAfterSyncText.includes('Factions'), 'migration deve restaurar roadmap com Left Behind integrado e sem Factions');
+  assert(tlouPartIRoadmapAfterSyncText.includes('Left Behind') && !tlouPartIRoadmapAfterSyncText.includes('Factions'), 'migration deve restaurar roadmap com Left Behind integrado e sem Factions');
 
   let tlouPartIIForSync = await get('SELECT id FROM games WHERE slug = ?', ['the-last-of-us-part-ii']);
   assert(tlouPartIIForSync, 'seed deve ter The Last of Us Part II antes do teste de sync');
@@ -7906,7 +8038,7 @@ async function assertBackendEditorialConsistency() {
   await run('DELETE FROM trophies WHERE game_id = ?', [tlouPartIIForSync.id]);
   await run('DELETE FROM games WHERE id = ?', [tlouPartIIForSync.id]);
   await migrate();
-  tlouPartIIForSync = await get('SELECT id, difficulty, time, time_bucket, coverage_level, is_verified, verification_status FROM games WHERE slug = ?', ['the-last-of-us-part-ii']);
+  tlouPartIIForSync = await get('SELECT id, difficulty, time, time_bucket, coverage_level, is_verified, verification_status, editorial_review_status FROM games WHERE slug = ?', ['the-last-of-us-part-ii']);
   assert(tlouPartIIForSync, 'migration deve inserir The Last of Us Part II em banco existente quando o seed novo ainda nao existir');
   const tlouPartIIInsertedTrophies = await all('SELECT trophy_code, type, is_missable FROM trophies WHERE game_id = ? ORDER BY id', [tlouPartIIForSync.id]);
   assert.strictEqual(tlouPartIIForSync?.difficulty, 3, 'migration deve inserir The Last of Us Part II com dificuldade 3');
@@ -7915,6 +8047,7 @@ async function assertBackendEditorialConsistency() {
   assert.strictEqual(tlouPartIIForSync?.coverage_level, 'strong', 'migration deve inserir The Last of Us Part II como guia forte em revisao');
   assert.strictEqual(tlouPartIIForSync?.is_verified, 0, 'migration nao deve inserir The Last of Us Part II como verificado');
   assert.strictEqual(tlouPartIIForSync?.verification_status, 'review', 'migration deve inserir The Last of Us Part II em revisao editorial');
+  assert.strictEqual(tlouPartIIForSync?.editorial_review_status, 'in_review', 'migration deve inserir The Last of Us Part II em in_review');
   assert.strictEqual(tlouPartIIInsertedTrophies.length, 26, 'migration deve inserir checklist de 26 trofeus para The Last of Us Part II ausente');
   assert.strictEqual(tlouPartIIInsertedTrophies.filter(trophy => trophy.is_missable).length, 0, 'migration deve inserir The Last of Us Part II sem perdiveis definitivos');
 
@@ -7930,7 +8063,7 @@ async function assertBackendEditorialConsistency() {
     [tlouPartIIForSync.id, 'tlou2_grounded_wrong_count', 'Dig Two Graves', 'Prata', 'Old Grounded add-on row.', 'Must be replaced by migrate sync.', 1, 0]
   );
   await migrate();
-  const tlouPartIIAfterSync = await get('SELECT difficulty, time, time_sort_hours, time_bucket, coverage_level, is_verified, verification_status FROM games WHERE slug = ?', ['the-last-of-us-part-ii']);
+  const tlouPartIIAfterSync = await get('SELECT difficulty, time, time_sort_hours, time_bucket, coverage_level, is_verified, verification_status, editorial_review_status FROM games WHERE slug = ?', ['the-last-of-us-part-ii']);
   const tlouPartIITrophiesAfterSync = await all('SELECT trophy_code, name, type, is_missable FROM trophies WHERE game_id = ? ORDER BY id', [tlouPartIIForSync.id]);
   const tlouPartIIRoadmapAfterSync = await all('SELECT content FROM roadmaps WHERE game_id = ? ORDER BY step_order', [tlouPartIIForSync.id]);
   assert.strictEqual(tlouPartIIAfterSync?.difficulty, 3, 'migration deve corrigir The Last of Us Part II se banco preservar dificuldade antiga');
@@ -7940,10 +8073,11 @@ async function assertBackendEditorialConsistency() {
   assert.strictEqual(tlouPartIIAfterSync?.coverage_level, 'strong', 'migration nao deve manter The Last of Us Part II como complete automatico');
   assert.strictEqual(tlouPartIIAfterSync?.is_verified, 0, 'migration nao deve manter The Last of Us Part II como verificado sem revisao manual');
   assert.strictEqual(tlouPartIIAfterSync?.verification_status, 'review', 'migration deve voltar The Last of Us Part II para revisao editorial');
+  assert.strictEqual(tlouPartIIAfterSync?.editorial_review_status, 'in_review', 'migration deve voltar The Last of Us Part II para in_review');
   assert.strictEqual(tlouPartIITrophiesAfterSync.length, 26, 'migration deve substituir checklist antigo de The Last of Us Part II por 26 trofeus');
   assert(!tlouPartIITrophiesAfterSync.some(trophy => /grounded|permadeath|no return|dig two graves|you can.?t stop this|part i/i.test(`${trophy.trophy_code} ${trophy.name}`)), 'migration deve remover add-ons/lista errada de The Last of Us Part II');
   assert.strictEqual(tlouPartIITrophiesAfterSync.filter(trophy => trophy.is_missable).length, 0, 'migration deve limpar perdiveis definitivos antigos em The Last of Us Part II');
-  assert.strictEqual(tlouPartIIRoadmapAfterSync.length, 5, 'migration deve atualizar roadmap de The Last of Us Part II');
+  assert.strictEqual(tlouPartIIRoadmapAfterSync.length, 6, 'migration deve atualizar roadmap de The Last of Us Part II');
   const tlouPartIIRoadmapAfterSyncText = tlouPartIIRoadmapAfterSync.map(row => row.content).join(' ');
   assert(tlouPartIIRoadmapAfterSyncText.includes('New Game+ parcial') && tlouPartIIRoadmapAfterSyncText.includes('No Return'), 'migration deve restaurar roadmap com NG+ parcial e add-ons separados');
 
@@ -8675,7 +8809,7 @@ async function assertBackendEditorialConsistency() {
     assert.strictEqual(tlouPartI.time_max_hours, 30, 'catalogo deve expor time_max_hours de The Last of Us Part I');
     assert.strictEqual(tlouPartI.time_sort_hours, 30, 'catalogo deve expor time_sort_hours de The Last of Us Part I');
     assert.strictEqual(tlouPartI.time_bucket, 'medium', 'catalogo deve classificar The Last of Us Part I como jogo medio');
-    assert.strictEqual(tlouPartI.roadmap_count, 5, 'catalogo deve expor roadmap completo de The Last of Us Part I');
+    assert.strictEqual(tlouPartI.roadmap_count, 6, 'catalogo deve expor roadmap completo de The Last of Us Part I');
     assert.strictEqual(tlouPartI.coverage_level, 'strong', 'The Last of Us Part I deve aparecer com coverage strong');
     assert.strictEqual(tlouPartI.is_verified, false, 'The Last of Us Part I nao deve aparecer como verificado');
     assert.strictEqual(tlouPartI.verification_status, 'review', 'The Last of Us Part I deve aparecer em revisao editorial');
@@ -8690,7 +8824,7 @@ async function assertBackendEditorialConsistency() {
     assert.strictEqual(tlouPartII.time_max_hours, 35, 'catalogo deve expor time_max_hours de The Last of Us Part II');
     assert.strictEqual(tlouPartII.time_sort_hours, 35, 'catalogo deve expor time_sort_hours de The Last of Us Part II');
     assert.strictEqual(tlouPartII.time_bucket, 'medium', 'catalogo deve classificar The Last of Us Part II como jogo medio');
-    assert.strictEqual(tlouPartII.roadmap_count, 5, 'catalogo deve expor roadmap completo de The Last of Us Part II');
+    assert.strictEqual(tlouPartII.roadmap_count, 6, 'catalogo deve expor roadmap completo de The Last of Us Part II');
     assert.strictEqual(tlouPartII.coverage_level, 'strong', 'The Last of Us Part II deve aparecer com coverage strong');
     assert.strictEqual(tlouPartII.is_verified, false, 'The Last of Us Part II nao deve aparecer como verificado');
     assert.strictEqual(tlouPartII.verification_status, 'review', 'The Last of Us Part II deve aparecer em revisao editorial');
@@ -11413,10 +11547,16 @@ async function assertBackendEditorialConsistency() {
     assert.strictEqual(tlouPartIDetail.trophies.filter(trophy => trophy.is_missable).length, 0, 'The Last of Us Part I deve retornar is_missable false em todos os trofeus');
     assert.strictEqual(tlouPartIDetail.missable_count, 0, 'The Last of Us Part I nao deve contar perdiveis definitivos');
     assert.strictEqual(tlouPartIDetail.spoiler_count, 8, 'The Last of Us Part I deve retornar spoiler_count coerente');
-    assert.strictEqual(tlouPartIDetail.roadmap.length, 5, 'detalhe de The Last of Us Part I deve retornar roadmap de 5 etapas');
-    assert(tlouPartIDetail.roadmap.some(step => step.includes('Firefly pendants') && step.includes('conversas opcionais')), 'roadmap de The Last of Us Part I deve citar coletaveis e conversas opcionais');
-    const tlouPartIDetailRoadmapText = tlouPartIDetail.roadmap.join(' ');
-    assert(tlouPartIDetailRoadmapText.includes('Left Behind') && tlouPartIDetailRoadmapText.includes('Factions'), 'roadmap de The Last of Us Part I deve integrar Left Behind e excluir Factions');
+    assert.strictEqual(tlouPartIDetail.trophies.filter(trophy => trophy.descriptionPtBr).length, 29, 'The Last of Us Part I deve retornar descriptionPtBr nos 29 trofeus');
+    assert.strictEqual(tlouPartIDetail.trophies.filter(trophy => trophy.name_pt || trophy.trophyNamePtBr).length, 29, 'The Last of Us Part I deve retornar nomes PT-BR via Steam confiavel');
+    assert.strictEqual(tlouPartIDetail.trophies.filter(trophy => trophy.namePtSource === 'trusted_steam_ptbr').length, 29, 'The Last of Us Part I deve expor fonte Steam PT-BR dos nomes');
+    assert.strictEqual(tlouPartIDetail.trophies.filter(trophy => trophy.descriptionPtSource === 'trusted_steam_ptbr').length, 29, 'The Last of Us Part I deve expor fonte Steam PT-BR das descricoes');
+    assert(tlouPartIDetail.trophies.every(trophy => /^[A-Za-z0-9_:-]{1,60}$/.test(trophy.id)), 'The Last of Us Part I deve retornar trophy.id validos');
+    assert.strictEqual(tlouPartIDetail.roadmap.length, 6, 'detalhe de The Last of Us Part I deve retornar roadmap de 6 etapas');
+    assert(tlouPartIDetail.roadmap.every(step => step && typeof step === 'object' && step.title && step.focus && step.objective && Array.isArray(step.actions) && step.result), 'roadmap de The Last of Us Part I deve retornar etapas estruturadas');
+    assert(tlouPartIDetail.roadmap.some(step => step.objective.includes('coletáveis') && step.actions.some(action => action.includes('Firefly pendants'))), 'roadmap de The Last of Us Part I deve citar coletaveis e conversas opcionais');
+    const tlouPartIDetailRoadmapText = tlouPartIDetail.roadmap.map(step => `${step.title} ${step.focus} ${step.objective} ${(step.actions || []).join(' ')} ${step.result || ''}`).join(' ');
+    assert(tlouPartIDetailRoadmapText.includes('Left Behind') && !tlouPartIDetailRoadmapText.includes('Factions'), 'roadmap de The Last of Us Part I deve integrar Left Behind e excluir Factions');
     assert(tlouPartIDetail.runs_summary.includes('seleção de capítulos') || tlouPartIDetail.runs_summary.includes('chapter'), 'detalhe de The Last of Us Part I deve explicar cleanup por capitulos');
     assert(tlouPartIDetail.online_summary.includes('online'), 'detalhe de The Last of Us Part I deve indicar ausencia de online obrigatorio');
     assert(tlouPartIDetail.dlc_scope.includes('Left Behind') && tlouPartIDetail.dlc_scope.includes('Remastered'), 'detalhe de The Last of Us Part I deve diferenciar Left Behind integrado e Remastered');
@@ -11424,6 +11564,8 @@ async function assertBackendEditorialConsistency() {
     assert.strictEqual(tlouPartIDetail.coverage_level, 'strong', 'The Last of Us Part I nao deve ser complete sem revisao manual');
     assert.strictEqual(tlouPartIDetail.is_verified, false, 'The Last of Us Part I nao deve estar verificado');
     assert.strictEqual(tlouPartIDetail.verification_status, 'review', 'The Last of Us Part I deve ficar em revisao editorial');
+    assert.strictEqual(tlouPartIDetail.editorialReviewStatus, 'in_review', 'The Last of Us Part I deve ficar com editorialStatus in_review');
+    assert(tlouPartIDetail.qualityWarnings.includes('needs_trophy_localization_check'), 'The Last of Us Part I deve expor quality warning de localizacao');
     assert.strictEqual(tlouPartIDetail.cover_image, tlouPartISample.cover_image, 'detalhe de The Last of Us Part I deve retornar cover_image');
     assert(tlouPartIDetail.trophies.some(trophy => trophy.id === 'tlou1_it_cant_be_for_nothing' && trophy.type === 'Platina'), 'The Last of Us Part I deve manter It can be for nothing como platina');
     assert(tlouPartIDetail.trophies.some(trophy => trophy.id === 'tlou1_no_matter_what' && trophy.type === 'Ouro'), 'The Last of Us Part I deve manter No Matter What como ouro');
@@ -11465,19 +11607,30 @@ async function assertBackendEditorialConsistency() {
     assert.strictEqual(tlouPartIIDetail.trophies.filter(trophy => trophy.is_missable).length, 0, 'The Last of Us Part II deve retornar is_missable false em todos os trofeus');
     assert.strictEqual(tlouPartIIDetail.missable_count, 0, 'The Last of Us Part II nao deve contar perdiveis definitivos');
     assert.strictEqual(tlouPartIIDetail.spoiler_count, 8, 'The Last of Us Part II deve retornar spoiler_count coerente');
-    assert.strictEqual(tlouPartIIDetail.roadmap.length, 5, 'detalhe de The Last of Us Part II deve retornar roadmap de 5 etapas');
-    const tlouPartIIDetailRoadmapText = tlouPartIIDetail.roadmap.join(' ');
-    assert(tlouPartIIDetailRoadmapText.includes('trading cards') && tlouPartIIDetailRoadmapText.includes('coins'), 'roadmap de The Last of Us Part II deve citar coletaveis centrais');
+    assert.strictEqual(tlouPartIIDetail.roadmap.length, 6, 'detalhe de The Last of Us Part II deve retornar roadmap de 6 etapas');
+    assert(tlouPartIIDetail.roadmap.every(stage => stage && typeof stage === 'object' && Array.isArray(stage.actions)), 'detalhe de The Last of Us Part II deve retornar roadmap estruturado');
+    const tlouPartIIDetailRoadmapText = JSON.stringify(tlouPartIIDetail.roadmap);
+    assert(tlouPartIIDetailRoadmapText.includes('cartas') && tlouPartIIDetailRoadmapText.includes('moedas'), 'roadmap de The Last of Us Part II deve citar coletaveis centrais');
     assert(tlouPartIIDetailRoadmapText.includes('New Game+ parcial') && tlouPartIIDetailRoadmapText.includes('No Return'), 'roadmap de The Last of Us Part II deve citar NG+ parcial e separar add-ons');
     assert(tlouPartIIDetail.runs_summary.includes('New Game+ parcial'), 'detalhe de The Last of Us Part II deve explicar New Game+ parcial em runs_summary');
     assert(tlouPartIIDetail.online_summary.includes('online'), 'detalhe de The Last of Us Part II deve indicar ausencia de online obrigatorio');
     assert(tlouPartIIDetail.dlc_scope.includes('Grounded') && tlouPartIIDetail.dlc_scope.includes('Permadeath') && tlouPartIIDetail.dlc_scope.includes('No Return'), 'detalhe de The Last of Us Part II deve manter add-ons fora da lista base');
-    assert(tlouPartIIDetail.before_you_start.includes('Part I') && tlouPartIIDetail.before_you_start.includes('No Return'), 'detalhe de The Last of Us Part II deve avisar sobre lista propria sem extras');
+    assert(tlouPartIIDetail.before_you_start.includes('Part I') && tlouPartIIDetail.before_you_start.includes('Remastered') && tlouPartIIDetail.before_you_start.includes('No Return'), 'detalhe de The Last of Us Part II deve avisar sobre lista propria sem extras');
+    assert.strictEqual(tlouPartIIDetail.editorialStatus, 'in_review', 'detalhe de The Last of Us Part II deve expor in_review');
+    assert(tlouPartIIDetail.qualityWarnings.includes('needs_trophy_localization_check') && tlouPartIIDetail.qualityWarnings.includes('needs_extra_trophies_scope_check'), 'detalhe de The Last of Us Part II deve expor pendencias editoriais');
+    assert.strictEqual(tlouPartIIDetail.trophies.filter(trophy => trophy.descriptionPtBr).length, 26, 'The Last of Us Part II deve expor descriptionPtBr nos 26 trofeus');
+    assert.strictEqual(tlouPartIIDetail.trophies.filter(trophy => trophy.trophyNamePtBr).length, 26, 'The Last of Us Part II deve expor nomes PT-BR confiaveis da Steam Remastered');
+    assert.strictEqual(tlouPartIIDetail.trophies.filter(trophy => trophy.namePtSource === 'trusted_steam_ptbr_remastered').length, 26, 'The Last of Us Part II deve expor fonte Steam PT-BR Remastered para nomes');
+    assert.strictEqual(tlouPartIIDetail.trophies.filter(trophy => trophy.descriptionPtSource === 'trusted_steam_ptbr_remastered').length, 23, 'The Last of Us Part II deve expor fonte Steam PT-BR Remastered para descricoes com texto na Steam');
+    assert.strictEqual(tlouPartIIDetail.trophies.filter(trophy => trophy.descriptionPtSource === 'editorial_from_existing_requirement').length, 3, 'The Last of Us Part II deve expor fonte editorial para descricoes ausentes na Steam');
     assert.strictEqual(tlouPartIIDetail.coverage_level, 'strong', 'The Last of Us Part II nao deve ser complete sem revisao manual');
     assert.strictEqual(tlouPartIIDetail.is_verified, false, 'The Last of Us Part II nao deve estar verificado');
     assert.strictEqual(tlouPartIIDetail.verification_status, 'review', 'The Last of Us Part II deve ficar em revisao editorial');
     assert.strictEqual(tlouPartIIDetail.cover_image, tlouPartIISample.cover_image, 'detalhe de The Last of Us Part II deve retornar cover_image');
     assert(tlouPartIIDetail.trophies.some(trophy => trophy.id === 'tlou2_every_last_one_of_them' && trophy.type === 'Platina'), 'The Last of Us Part II deve manter Every Last One of Them como platina');
+    assert(tlouPartIIDetail.trophies.some(trophy => trophy.name === 'Every Last One of Them' && trophy.trophyNamePtBr === 'Até Não Sobrar Nenhum' && trophy.descriptionPtBr === 'Obtenha todas as conquistas da história normal'), 'The Last of Us Part II deve corrigir Every Last One of Them');
+    assert(tlouPartIIDetail.trophies.some(trophy => trophy.name === 'What I Had to Do' && trophy.trophyNamePtBr === 'O Que Eu Tive Que Fazer' && trophy.descriptionPtBr === 'Conclua a história'), 'The Last of Us Part II deve corrigir What I Had to Do');
+    assert(tlouPartIIDetail.trophies.some(trophy => trophy.name === 'Archivist' && trophy.trophyNamePtBr === 'Arquivista' && trophy.descriptionPtBr === 'Encontre todos os artefatos e registros de diário'), 'The Last of Us Part II deve corrigir Archivist');
     assert(tlouPartIIDetail.trophies.some(trophy => trophy.id === 'tlou2_survival_expert' && trophy.type === 'Ouro'), 'The Last of Us Part II deve manter Survival Expert como ouro');
     assert(tlouPartIIDetail.trophies.some(trophy => trophy.id === 'tlou2_sightseer' && trophy.type === 'Prata'), 'The Last of Us Part II deve manter Sightseer como prata');
     assert(tlouPartIIDetail.trophies.some(trophy => trophy.id === 'tlou2_so_great_and_small' && trophy.type === 'Bronze'), 'The Last of Us Part II deve manter So Great and Small como bronze');
@@ -11486,12 +11639,13 @@ async function assertBackendEditorialConsistency() {
     const tlouPartIIGuideHtml = await httpGetHtml(baseUrl, '/jogo/the-last-of-us-part-ii');
     assertSeoBasics(tlouPartIIGuideHtml, {
       label: 'SSR /jogo/the-last-of-us-part-ii',
-      canonical: `${baseUrl}/jogo/the-last-of-us-part-ii`,
+      canonical: 'https://atlasachievement.com.br/jogo/the-last-of-us-part-ii',
       titleIncludes: 'The Last of Us Part II',
       descriptionIncludes: 'The Last of Us Part II',
       h1Includes: 'The Last of Us Part II'
     });
-    assert(tlouPartIIGuideHtml.includes('Every Last One of Them'), 'SSR de The Last of Us Part II deve renderizar checklist');
+    assert(tlouPartIIGuideHtml.includes('Até Não Sobrar Nenhum') && tlouPartIIGuideHtml.includes('Nome original:</span>Every Last One of Them'), 'SSR de The Last of Us Part II deve renderizar nome PT-BR e nome original na checklist');
+    assert(tlouPartIIGuideHtml.includes('O Que Eu Tive Que Fazer') && tlouPartIIGuideHtml.includes('Arquivista'), 'SSR de The Last of Us Part II deve renderizar localizacoes Steam PT-BR');
     assert(tlouPartIIGuideHtml.includes('26 trof'), 'SSR de The Last of Us Part II deve renderizar total de 26 trofeus');
     assert(tlouPartIIGuideHtml.includes('New Game+ parcial'), 'SSR de The Last of Us Part II deve renderizar New Game+ parcial');
     assert(tlouPartIIGuideHtml.includes('No Return'), 'SSR de The Last of Us Part II deve renderizar escopo sem No Return');
@@ -11582,8 +11736,19 @@ async function assertBackendEditorialConsistency() {
     assert.strictEqual(astroBotDetail.coverage_level, 'strong', 'Astro Bot nao deve ser complete sem revisao manual');
     assert.strictEqual(astroBotDetail.verification_status, 'review', 'Astro Bot deve ficar em revisao editorial');
     assert.strictEqual(astroBotDetail.time_bucket, 'short', 'Astro Bot deve retornar time_bucket short');
+    assert.strictEqual(astroBotDetail.onlineRequired, false, 'Astro Bot nao deve exigir online no detalhe');
+    assert.strictEqual(astroBotDetail.coopRequired, false, 'Astro Bot nao deve exigir coop no detalhe');
+    assert.strictEqual(astroBotDetail.dlcRequired, false, 'Astro Bot nao deve exigir DLC para platina base no detalhe');
     assert.strictEqual(astroBotDetail.cover_image, 'https://image.api.playstation.com/vulcan/ap/rnd/202406/0500/0d05cb43413f28a641ac0c40fc272c70bbe194f6ade4b175.png', 'detalhe de Astro Bot deve retornar cover_image');
     assert(astroBotDetail.trophies.some(trophy => trophy.id === 'astrobot_the_golden_bot' && trophy.is_spoiler), 'Astro Bot deve marcar spoilers claros de conteudo final');
+    assert.strictEqual(astroBotDetail.trophies.filter(trophy => trophy.trophyNamePtBr).length, 44, 'Astro Bot deve expor trophyNamePtBr nos 44 trofeus');
+    assert.strictEqual(astroBotDetail.trophies.filter(trophy => trophy.namePtSource === 'editorial_ptbr').length, 44, 'Astro Bot deve expor fonte editorial_ptbr para nomes');
+    assert.strictEqual(astroBotDetail.trophies.filter(trophy => trophy.descriptionPtBr).length, 44, 'Astro Bot deve expor descriptionPtBr nos 44 trofeus');
+    assert.strictEqual(astroBotDetail.trophies.filter(trophy => trophy.descriptionPtSource === 'editorial_ptbr').length, 44, 'Astro Bot deve expor fonte editorial_ptbr para descricoes');
+    assert(!astroBotDetail.trophies.some(trophy => /Descrição em revisão editorial|undefined|null|\[object Object\]/i.test(`${trophy.name} ${trophy.trophyNamePtBr} ${trophy.descriptionPtBr} ${trophy.description}`)), 'Astro Bot nao deve expor placeholder ou campos crus');
+    assert(astroBotDetail.trophies.some(trophy => trophy.name === 'Astro-nomical!' && trophy.trophyNamePtBr === 'Astro-nômico!' && trophy.descriptionPtBr === 'Conquiste todos os troféus.' && trophy.type === 'Platina'), 'Astro Bot deve corrigir Astro-nomical!');
+    assert(astroBotDetail.trophies.some(trophy => trophy.name === 'A Lot To Process' && trophy.trophyNamePtBr === 'Muito a Processar' && trophy.descriptionPtBr === 'Salve o CPU Kid.' && trophy.type === 'Ouro'), 'Astro Bot deve corrigir A Lot To Process');
+    assert(astroBotDetail.trophies.some(trophy => trophy.name === 'The Golden Bot' && trophy.trophyNamePtBr === 'O Bot Dourado' && trophy.descriptionPtBr === 'Resgate o Bot Mestre Especial no topo da Estátua Dourada.' && trophy.type === 'Ouro'), 'Astro Bot deve corrigir The Golden Bot');
 
     const astroBotGuideHtml = await httpGetHtml(baseUrl, '/jogo/astro-bot');
     assertSeoBasics(astroBotGuideHtml, {
@@ -11593,7 +11758,8 @@ async function assertBackendEditorialConsistency() {
       descriptionIncludes: 'Astro Bot',
       h1Includes: 'Astro Bot'
     });
-    assert(astroBotGuideHtml.includes('Astro-nomical!'), 'SSR de Astro Bot deve renderizar checklist');
+    assert(astroBotGuideHtml.includes('Astro-nômico!') && astroBotGuideHtml.includes('Nome original:</span>Astro-nomical!'), 'SSR de Astro Bot deve renderizar nome PT-BR e nome original');
+    assert(astroBotGuideHtml.includes('Muito a Processar') && astroBotGuideHtml.includes('O Bot Dourado'), 'SSR de Astro Bot deve renderizar localizacao editorial na checklist');
     const astroBotHeroActions = astroBotGuideHtml.slice(
       astroBotGuideHtml.indexOf('atlas-guide-hero__actions'),
       astroBotGuideHtml.indexOf('atlas-guide-hero__actions') + 900
@@ -11620,10 +11786,22 @@ async function assertBackendEditorialConsistency() {
     assert.strictEqual(astrosPlayroomDetail.coverage_level, 'strong', "Astro's Playroom nao deve ser complete sem revisao manual");
     assert.strictEqual(astrosPlayroomDetail.verification_status, 'review', "Astro's Playroom deve ficar em revisao editorial");
     assert.strictEqual(astrosPlayroomDetail.time_bucket, 'short', "Astro's Playroom deve retornar time_bucket short");
+    assert.strictEqual(astrosPlayroomDetail.onlineRequired, false, "Astro's Playroom nao deve exigir online no detalhe");
+    assert.strictEqual(astrosPlayroomDetail.coopRequired, false, "Astro's Playroom nao deve exigir coop no detalhe");
+    assert.strictEqual(astrosPlayroomDetail.dlcRequired, false, "Astro's Playroom nao deve exigir DLC para platina base no detalhe");
     assert.strictEqual(astrosPlayroomDetail.cover_image, 'https://images.launchbox-app.com/63073a9e-497e-4069-b47a-e24577a6c407.jpg', "detalhe de Astro's Playroom deve retornar cover_image");
     assert(astrosPlayroomDetail.dlc_scope.includes('lista base da platina'), "detalhe de Astro's Playroom deve deixar claro que cobre lista base");
     assert(astrosPlayroomDetail.trophies.some(trophy => trophy.id === 'astros_playroom_for_the_players' && trophy.is_spoiler), "Astro's Playroom deve marcar spoiler apenas em segredo claro da lista base");
     assert(!astrosPlayroomDetail.trophies.some(trophy => ['Run Astro Run!', 'Play Has No Limits!', 'Gravity Daze!'].includes(trophy.name)), "detalhe de Astro's Playroom nao deve incluir add-ons");
+    assert.strictEqual(astrosPlayroomDetail.trophies.filter(trophy => trophy.trophyNamePtBr).length, 43, "Astro's Playroom deve expor trophyNamePtBr nos 43 trofeus");
+    assert.strictEqual(astrosPlayroomDetail.trophies.filter(trophy => trophy.namePtSource === 'editorial_ptbr').length, 43, "Astro's Playroom deve expor fonte editorial_ptbr para nomes");
+    assert.strictEqual(astrosPlayroomDetail.trophies.filter(trophy => trophy.descriptionPtBr).length, 43, "Astro's Playroom deve expor descriptionPtBr nos 43 trofeus");
+    assert.strictEqual(astrosPlayroomDetail.trophies.filter(trophy => trophy.descriptionPtSource === 'editorial_ptbr').length, 43, "Astro's Playroom deve expor fonte editorial_ptbr para descricoes");
+    assert(!astrosPlayroomDetail.trophies.some(trophy => /Descrição em revisão editorial|undefined|null|\[object Object\]/i.test(`${trophy.name} ${trophy.trophyNamePtBr} ${trophy.descriptionPtBr} ${trophy.description}`)), "Astro's Playroom nao deve expor placeholder ou campos crus");
+    assert(astrosPlayroomDetail.trophies.some(trophy => trophy.name === "You've Only Done Everything" && trophy.trophyNamePtBr === 'Você Fez Tudo' && trophy.descriptionPtBr === "Encontre todos os troféus de ASTRO's PLAYROOM. Até a próxima aventura!" && trophy.type === 'Platina'), "Astro's Playroom deve corrigir You've Only Done Everything");
+    assert(astrosPlayroomDetail.trophies.some(trophy => trophy.name === 'Do it!' && trophy.trophyNamePtBr === 'Manda Ver!' && trophy.descriptionPtBr === 'Conclua Memory Meadow.'), "Astro's Playroom deve corrigir Do it!");
+    assert(astrosPlayroomDetail.trophies.some(trophy => trophy.name === 'Dude Raider!' && trophy.trophyNamePtBr === 'Aventureiro de Artefatos' && trophy.descriptionPtBr === 'Colete todos os artefatos nas quatro fases principais e no PS Labo.'), "Astro's Playroom deve corrigir Dude Raider!");
+    assert(astrosPlayroomDetail.trophies.some(trophy => trophy.name === 'A Grand Tour!' && trophy.trophyNamePtBr === 'Um Grande Passeio!' && trophy.descriptionPtBr === 'Colete todas as peças de puzzle do jogo.'), "Astro's Playroom deve corrigir A Grand Tour!");
 
     const astrosPlayroomGuideHtml = await httpGetHtml(baseUrl, '/jogo/astros-playroom');
     assertSeoBasics(astrosPlayroomGuideHtml, {
@@ -11633,7 +11811,8 @@ async function assertBackendEditorialConsistency() {
       descriptionIncludes: 'Astro&#39;s Playroom',
       h1Includes: 'Astro&#39;s Playroom'
     });
-    assert(astrosPlayroomGuideHtml.includes('You&#39;ve Only Done Everything'), "SSR de Astro's Playroom deve renderizar checklist");
+    assert(astrosPlayroomGuideHtml.includes('Você Fez Tudo') && astrosPlayroomGuideHtml.includes('Nome original:</span>You&#39;ve Only Done Everything'), "SSR de Astro's Playroom deve renderizar nome PT-BR e nome original");
+    assert(astrosPlayroomGuideHtml.includes('Manda Ver!') && astrosPlayroomGuideHtml.includes('Aventureiro de Artefatos') && astrosPlayroomGuideHtml.includes('Um Grande Passeio!'), "SSR de Astro's Playroom deve renderizar localizacao editorial na checklist");
     assert(astrosPlayroomGuideHtml.includes('atlas-guide-cover--poster'), "SSR de Astro's Playroom deve usar cover_image como poster do guia");
     assert(astrosPlayroomGuideHtml.includes('https://images.launchbox-app.com/63073a9e-497e-4069-b47a-e24577a6c407.jpg'), "SSR de Astro's Playroom deve renderizar cover_image vertical");
     assert(astrosPlayroomGuideHtml.includes('property="og:image" content="https://image.api.playstation.com/vulcan/ap/rnd/202008/1220/M6bheZDaxpbtj8FiDW0UEQx7.jpg"'), "SEO de Astro's Playroom deve usar image horizontal");
@@ -12499,6 +12678,7 @@ function assertFinalQaPriorityBlockerFixes() {
 function assertPriorityGuideEditorialTrust() {
   const sampleGames = require(path.join(ROOT, 'src/data/sampleGames'));
   const guideModel = require(path.join(ROOT, 'src/shared/guideViewModel'));
+  const catalogModel = require(path.join(ROOT, 'src/shared/catalogModel'));
   const expectedCounts = {
     'hollow-knight': { total: 35, Platina: 1, Ouro: 5, Prata: 11, Bronze: 18 },
     'it-takes-two': { total: 21, Platina: 1, Ouro: 10, Prata: 0, Bronze: 10 },
@@ -12507,8 +12687,13 @@ function assertPriorityGuideEditorialTrust() {
     'dead-cells': { total: 54, Platina: 1, Ouro: 1, Prata: 11, Bronze: 41 },
     'monster-hunter-world': { total: 50, Platina: 1, Ouro: 2, Prata: 11, Bronze: 36 },
     'clair-obscur-expedition-33': { total: 56, Platina: 1, Ouro: 2, Prata: 5, Bronze: 48 },
+    'astro-bot': { total: 44, Platina: 1, Ouro: 2, Prata: 17, Bronze: 24, namePt: 44 },
+    'astros-playroom': { total: 43, Platina: 1, Ouro: 3, Prata: 13, Bronze: 26, namePt: 43 },
     'elden-ring': { total: 42, Platina: 1, Ouro: 3, Prata: 14, Bronze: 24 },
     'hades': { total: 50, Platina: 1, Ouro: 2, Prata: 7, Bronze: 40 },
+    'hades-ii': { total: 50, Platina: 1, Ouro: 2, Prata: 11, Bronze: 36, namePt: 50 },
+    'the-last-of-us-part-i': { total: 29, Platina: 1, Ouro: 7, Prata: 7, Bronze: 14, namePt: 29 },
+    'the-last-of-us-part-ii': { total: 26, Platina: 1, Ouro: 7, Prata: 8, Bronze: 10, namePt: 26 },
     'ghost-of-tsushima': { total: 52, Platina: 1, Ouro: 2, Prata: 9, Bronze: 40 },
     'pragmata': { total: 36, Platina: 1, Ouro: 5, Prata: 9, Bronze: 21, namePt: 35 }
   };
@@ -12579,8 +12764,11 @@ function assertPriorityGuideEditorialTrust() {
 
   const localizedNameAllowedSlugs = new Set([
     ...Object.keys(expectedCounts),
+    'nioh-2',
+    'nioh-3',
     'resident-evil-4-remake',
-    'saros'
+    'saros',
+    'subnautica'
   ]);
   const translatedOutsidePilot = sampleGames
     .filter(game => !localizedNameAllowedSlugs.has(game.slug))
@@ -12596,6 +12784,28 @@ function assertPriorityGuideEditorialTrust() {
   assert.strictEqual(saros.trophies.filter(trophy => trophy.name_pt && trophy.name_pt.trim()).length, 45, 'Saros deve preencher name_pt dos 45 trofeus localizados');
   assert.strictEqual(new Set(saros.trophies.map(trophy => trophy.id)).size, saros.trophies.length, 'Saros nao pode duplicar trophy_code');
   assert(saros.trophies.every(trophy => /^[A-Za-z0-9_:-]{1,60}$/.test(trophy.id)), 'Saros deve usar ids internos seguros');
+
+  const subnautica = bySlug.get('subnautica');
+  assert(subnautica, 'sampleGames deve incluir Subnautica');
+  assert.strictEqual(subnautica.trophies.length, 18, 'Subnautica deve manter 18 trofeus PlayStation');
+  assert.deepStrictEqual(countTypes(subnautica), { Platina: 1, Ouro: 9, Prata: 7, Bronze: 1 }, 'Subnautica deve manter distribuicao 1/9/7/1');
+  assert.strictEqual(subnautica.trophies.filter(trophy => trophy.name_pt && trophy.name_pt.trim()).length, 18, 'Subnautica deve preencher name_pt nos 18 trofeus');
+  assert.strictEqual(new Set(subnautica.trophies.map(trophy => trophy.id)).size, subnautica.trophies.length, 'Subnautica nao pode duplicar trophy_code');
+  assert(subnautica.trophies.every(trophy => /^[A-Za-z0-9_:-]{1,60}$/.test(trophy.id)), 'Subnautica deve usar ids internos seguros');
+  assert.strictEqual(subnautica.trophies.filter(trophy => trophy.namePtSource === 'trusted_steam_ptbr').length, 17, 'Subnautica deve usar Steam PT-BR confiavel nos 17 achievements equivalentes');
+  assert.strictEqual(subnautica.trophies.filter(trophy => trophy.namePtSource === 'editorial_ptbr').length, 1, 'Subnautica deve tratar a platina como traducao editorial');
+  assert.strictEqual(subnautica.trophies.filter(trophy => trophy.descriptionPtSource === 'editorial_from_existing_requirement').length, 18, 'Subnautica deve derivar descricoes PT-BR do requisito existente');
+  assert(subnautica.trophies.some(trophy => trophy.name === 'Getting Your Feet Wet' && trophy.name_pt === 'Molhando Os Pés'), 'Subnautica deve corrigir Getting Your Feet Wet');
+  assert(subnautica.trophies.some(trophy => trophy.name === 'Go Among the Stars' && trophy.name_pt === 'Vá Além das Estrelas'), 'Subnautica deve corrigir Go Among the Stars');
+  assert(subnautica.trophies.some(trophy => trophy.name === 'Leave Only Time Capsules' && trophy.name_pt === 'Deixe Apenas Cápsulas do Tempo'), 'Subnautica deve corrigir Leave Only Time Capsules');
+  assert.strictEqual(countChecklistTag(subnautica, 'online'), 0, 'Subnautica nao deve ter filtro Online preenchido indevidamente');
+  assert.strictEqual(countChecklistTag(subnautica, 'coop'), 0, 'Subnautica nao deve ter filtro Coop preenchido indevidamente');
+  assert(/sem online obrigatorio|sem online/.test(normalizeEditorialSmokeText(summaryOnlineValue(subnautica))), 'Subnautica deve aparecer sem online no resumo editorial');
+  assert(/sem coop obrigatorio|sem coop/.test(normalizeEditorialSmokeText(summaryCoopValue(subnautica))), 'Subnautica deve aparecer sem coop no resumo editorial');
+  const subnauticaCatalogSignals = catalogModel.getCatalogDecisionSignals(subnautica);
+  assert.strictEqual(subnauticaCatalogSignals.onlineRequired, false, 'Subnautica nao deve gerar badge Online no catalogo');
+  assert.strictEqual(subnauticaCatalogSignals.coopRequired, false, 'Subnautica nao deve gerar badge Coop obrigatorio no catalogo');
+  assert(!subnauticaCatalogSignals.signals.some(signal => signal.id === 'online' || signal.id === 'coop'), 'Subnautica nao deve exibir sinais positivos de Online/Coop no catalogo');
 
   ['hollow-knight', 'it-takes-two', 'a-way-out', 'little-nightmares-ii'].forEach(slug => {
     const generatedRoadmap = roadmapTitles(bySlug.get(slug));
