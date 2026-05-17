@@ -38,6 +38,46 @@ function normalizeVerificationStatus(game = {}) {
   return 'unverified';
 }
 
+function hasManualVerifiedStatus(row = {}) {
+  return row?.is_verified === 1
+    || row?.is_verified === true
+    || row?.verification_status === 'verified'
+    || row?.editorial_review_status === 'verified'
+    || row?.editorialReviewStatus === 'verified';
+}
+
+function buildSeedEditorialPersistence(game = {}, existing = null, options = {}) {
+  const seedVerificationStatus = normalizeVerificationStatus(game);
+  const seedReviewStatus = game.editorial_review_status || game.editorialReviewStatus || null;
+  const seedQualityWarnings = Array.isArray(game.quality_warnings || game.qualityWarnings)
+    ? JSON.stringify(game.quality_warnings || game.qualityWarnings)
+    : (game.quality_warnings || game.qualityWarnings || '');
+
+  if (existing && hasManualVerifiedStatus(existing) && options.forceEditorialStatus !== true) {
+    return {
+      verificationStatus: 'verified',
+      isVerified: 1,
+      editorialReviewStatus: 'verified',
+      verificationNote: existing.verification_note || game.verification_note || '',
+      lastReviewedAt: existing.last_reviewed_at || game.last_reviewed_at || game.lastReviewedAt || '',
+      editorialNotes: existing.editorial_notes || game.editorial_notes || game.editorialNotes || '',
+      qualityWarnings: existing.quality_warnings || seedQualityWarnings,
+      reviewedBy: existing.reviewed_by || game.reviewed_by || game.reviewedBy || ''
+    };
+  }
+
+  return {
+    verificationStatus: seedVerificationStatus,
+    isVerified: seedVerificationStatus === 'verified' ? 1 : 0,
+    editorialReviewStatus: seedReviewStatus,
+    verificationNote: game.verification_note || '',
+    lastReviewedAt: game.last_reviewed_at || game.lastReviewedAt || '',
+    editorialNotes: game.editorial_notes || game.editorialNotes || '',
+    qualityWarnings: seedQualityWarnings,
+    reviewedBy: game.reviewed_by || game.reviewedBy || ''
+  };
+}
+
 function normalizeSeedCoverageLevel(game = {}) {
   const level = game.coverage_level || 'strong';
   return level === 'complete' && normalizeVerificationStatus(game) !== 'verified' ? 'strong' : level;
@@ -518,6 +558,7 @@ async function shouldSyncSeedGame(seedSlug, options = {}) {
             g.coverage_level,
             g.is_verified,
             g.verification_status,
+            g.editorial_review_status,
             COUNT(DISTINCT t.id) AS trophy_count,
             COUNT(DISTINCT r.id) AS roadmap_count
        FROM games g
@@ -537,7 +578,12 @@ async function shouldSyncSeedGame(seedSlug, options = {}) {
   const expectedTimeMaxHours = Number.isFinite(Number(game.time_max_hours)) ? Number(game.time_max_hours) : timeMeta.time_max_hours;
   const expectedTimeSortHours = Number.isFinite(Number(game.time_sort_hours)) ? Number(game.time_sort_hours) : timeMeta.time_sort_hours;
   const expectedTimeBucket = game.time_bucket || timeMeta.time_bucket;
-  const expectedVerificationStatus = normalizeVerificationStatus(game);
+  const editorialPersistence = buildSeedEditorialPersistence(game, existing, options);
+  const coverageSeed = {
+    ...game,
+    verification_status: editorialPersistence.verificationStatus,
+    is_verified: editorialPersistence.isVerified
+  };
 
   return (
     Number(existing.trophy_count || 0) !== Number((game.trophies || []).length) ||
@@ -548,9 +594,10 @@ async function shouldSyncSeedGame(seedSlug, options = {}) {
     Number(existing.time_max_hours || 0) !== Number(expectedTimeMaxHours || 0) ||
     Number(existing.time_sort_hours || 0) !== Number(expectedTimeSortHours || 0) ||
     existing.time_bucket !== expectedTimeBucket ||
-    existing.coverage_level !== normalizeSeedCoverageLevel(game) ||
-    Number(existing.is_verified || 0) !== Number(expectedVerificationStatus === 'verified' ? 1 : 0) ||
-    existing.verification_status !== expectedVerificationStatus
+    existing.coverage_level !== normalizeSeedCoverageLevel(coverageSeed) ||
+    Number(existing.is_verified || 0) !== Number(editorialPersistence.isVerified || 0) ||
+    existing.verification_status !== editorialPersistence.verificationStatus ||
+    (existing.editorial_review_status || null) !== (editorialPersistence.editorialReviewStatus || null)
   );
 }
 
@@ -561,14 +608,34 @@ async function syncSeedGameFromSeed(seedSlug, options = {}) {
 
   const { insertIfMissing = false } = options;
   const slug = game.slug || slugifyGameName(game.name);
-  const existing = await get('SELECT id FROM games WHERE slug = ? OR name = ? ORDER BY id ASC LIMIT 1', [slug, game.name]);
+  const existing = await get(
+    `SELECT id,
+            is_verified,
+            verification_status,
+            editorial_review_status,
+            verification_note,
+            last_reviewed_at,
+            editorial_notes,
+            quality_warnings,
+            reviewed_by
+       FROM games
+      WHERE slug = ? OR name = ?
+      ORDER BY id ASC
+      LIMIT 1`,
+    [slug, game.name]
+  );
 
   const timeMeta = formatTimeMetadata(game.time);
   const timeMinHours = Number.isFinite(Number(game.time_min_hours)) ? Number(game.time_min_hours) : timeMeta.time_min_hours;
   const timeMaxHours = Number.isFinite(Number(game.time_max_hours)) ? Number(game.time_max_hours) : timeMeta.time_max_hours;
   const timeSortHours = Number.isFinite(Number(game.time_sort_hours)) ? Number(game.time_sort_hours) : timeMeta.time_sort_hours;
   const timeBucket = game.time_bucket || timeMeta.time_bucket;
-  const verificationStatus = normalizeVerificationStatus(game);
+  const editorialPersistence = buildSeedEditorialPersistence(game, existing, options);
+  const coverageSeed = {
+    ...game,
+    verification_status: editorialPersistence.verificationStatus,
+    is_verified: editorialPersistence.isVerified
+  };
   const gameValues = [
     game.name,
     slug,
@@ -591,18 +658,16 @@ async function syncSeedGameFromSeed(seedSlug, options = {}) {
     game.before_you_start || '',
     game.best_for || game.guide_ideal || game.ideal_for || '',
     game.avoid_if || game.guide_avoid || game.avoid_for || '',
-    verificationStatus,
+    editorialPersistence.verificationStatus,
     game.editorial_status || 'published',
-    normalizeSeedCoverageLevel(game),
-    verificationStatus === 'verified' ? 1 : 0,
-    game.verification_note || '',
-    game.editorial_review_status || game.editorialReviewStatus || null,
-    game.last_reviewed_at || game.lastReviewedAt || '',
-    game.editorial_notes || game.editorialNotes || '',
-    Array.isArray(game.quality_warnings || game.qualityWarnings)
-      ? JSON.stringify(game.quality_warnings || game.qualityWarnings)
-      : (game.quality_warnings || game.qualityWarnings || ''),
-    game.reviewed_by || game.reviewedBy || '',
+    normalizeSeedCoverageLevel(coverageSeed),
+    editorialPersistence.isVerified,
+    editorialPersistence.verificationNote,
+    editorialPersistence.editorialReviewStatus,
+    editorialPersistence.lastReviewedAt,
+    editorialPersistence.editorialNotes,
+    editorialPersistence.qualityWarnings,
+    editorialPersistence.reviewedBy,
     game.image || null,
     game.cover_image || deriveSteamCoverImage(game.image) || null
   ];
@@ -674,8 +739,30 @@ async function syncSeedGameGuideSummaryAndRoadmapFromSeed(seedSlug) {
   if (!game || !Array.isArray(game.roadmap)) return;
 
   const slug = game.slug || slugifyGameName(game.name);
-  const existing = await get('SELECT id FROM games WHERE slug = ? OR name = ? ORDER BY id ASC LIMIT 1', [slug, game.name]);
+  const existing = await get(
+    `SELECT id,
+            is_verified,
+            verification_status,
+            editorial_review_status,
+            verification_note,
+            last_reviewed_at,
+            editorial_notes,
+            quality_warnings,
+            reviewed_by
+       FROM games
+      WHERE slug = ? OR name = ?
+      ORDER BY id ASC
+      LIMIT 1`,
+    [slug, game.name]
+  );
   if (!existing) return;
+
+  const editorialPersistence = buildSeedEditorialPersistence(game, existing);
+  const coverageSeed = {
+    ...game,
+    verification_status: editorialPersistence.verificationStatus,
+    is_verified: editorialPersistence.isVerified
+  };
 
   await run(
     `UPDATE games
@@ -715,18 +802,16 @@ async function syncSeedGameGuideSummaryAndRoadmapFromSeed(seedSlug) {
       game.before_you_start || '',
       game.best_for || game.guide_ideal || game.ideal_for || '',
       game.avoid_if || game.guide_avoid || game.avoid_for || '',
-      normalizeVerificationStatus(game),
+      editorialPersistence.verificationStatus,
       game.editorial_status || 'published',
-      normalizeSeedCoverageLevel(game),
-      normalizeVerificationStatus(game) === 'verified' ? 1 : 0,
-      game.verification_note || '',
-      game.editorial_review_status || game.editorialReviewStatus || null,
-      game.last_reviewed_at || game.lastReviewedAt || '',
-      game.editorial_notes || game.editorialNotes || '',
-      Array.isArray(game.quality_warnings || game.qualityWarnings)
-        ? JSON.stringify(game.quality_warnings || game.qualityWarnings)
-        : (game.quality_warnings || game.qualityWarnings || ''),
-      game.reviewed_by || game.reviewedBy || '',
+      normalizeSeedCoverageLevel(coverageSeed),
+      editorialPersistence.isVerified,
+      editorialPersistence.verificationNote,
+      editorialPersistence.editorialReviewStatus,
+      editorialPersistence.lastReviewedAt,
+      editorialPersistence.editorialNotes,
+      editorialPersistence.qualityWarnings,
+      editorialPersistence.reviewedBy,
       existing.id
     ]
   );
@@ -902,9 +987,13 @@ async function backfillEditorialStatusFields({ recalculateCoverage = false } = {
   await run(
     "UPDATE games SET verification_status = CASE WHEN is_verified = 1 THEN 'verified' WHEN editorial_status = 'review' THEN 'review' ELSE 'unverified' END WHERE verification_status IS NULL OR verification_status NOT IN ('unverified', 'review', 'verified')"
   );
+  await run("UPDATE games SET verification_status = 'verified' WHERE editorial_review_status = 'verified'");
   await run("UPDATE games SET verification_status = 'verified' WHERE is_verified = 1");
   await run("UPDATE games SET is_verified = 1 WHERE verification_status = 'verified'");
-  await run("UPDATE games SET is_verified = 0 WHERE verification_status != 'verified' AND is_verified != 0");
+  await run(
+    "UPDATE games SET editorial_review_status = 'verified' WHERE (is_verified = 1 OR verification_status = 'verified') AND (editorial_review_status IS NULL OR editorial_review_status = '' OR editorial_review_status = 'in_review')"
+  );
+  await run("UPDATE games SET is_verified = 0 WHERE verification_status != 'verified' AND coalesce(editorial_review_status, '') != 'verified' AND is_verified != 0");
   await run(
     "UPDATE games SET coverage_level = 'strong' WHERE coverage_level = 'complete' AND (verification_status != 'verified' OR is_verified != 1)"
   );

@@ -7452,6 +7452,84 @@ function closeSessionStore(store) {
   });
 }
 
+async function assertSeedSyncPreservesManualVerifiedStatus({ migrate, get, run }) {
+  const verifiedSlugs = ['ghost-of-tsushima', 'resident-evil-4-remake'];
+  for (const slug of verifiedSlugs) {
+    await run(
+      `UPDATE games
+          SET verification_status = 'verified',
+              editorial_review_status = 'verified',
+              is_verified = 1,
+              last_reviewed_at = '2026-05-17',
+              reviewed_by = 'admin'
+        WHERE slug = ?`,
+      [slug]
+    );
+  }
+
+  await run(
+    `UPDATE games
+        SET verification_status = 'review',
+            editorial_review_status = 'in_review',
+            is_verified = 0
+      WHERE slug = ?`,
+    ['nioh-3']
+  );
+  await run('DELETE FROM games WHERE slug = ?', ['days-gone']);
+
+  const previousNodeEnv = process.env.NODE_ENV;
+  process.env.NODE_ENV = 'production';
+  try {
+    await migrate({ syncSeedData: true });
+  } finally {
+    process.env.NODE_ENV = previousNodeEnv;
+  }
+
+  for (const slug of verifiedSlugs) {
+    const row = await get(
+      'SELECT slug, verification_status, editorial_review_status, is_verified, last_reviewed_at, reviewed_by FROM games WHERE slug = ?',
+      [slug]
+    );
+    assert(row, `${slug} deve continuar existindo apos sync de deploy`);
+    assert.strictEqual(row.verification_status, 'verified', `${slug} nao deve sofrer downgrade silencioso em verification_status`);
+    assert.strictEqual(row.editorial_review_status, 'verified', `${slug} nao deve voltar para editorial_review_status in_review`);
+    assert.strictEqual(Number(row.is_verified), 1, `${slug} deve preservar is_verified = 1`);
+    assert.strictEqual(row.last_reviewed_at, '2026-05-17', `${slug} deve preservar data de verificacao manual`);
+    assert.strictEqual(row.reviewed_by, 'admin', `${slug} deve preservar revisor manual`);
+  }
+
+  const reviewRow = await get('SELECT verification_status, editorial_review_status, is_verified FROM games WHERE slug = ?', ['nioh-3']);
+  assert(reviewRow, 'nioh-3 deve existir no banco temporario');
+  assert.notStrictEqual(reviewRow.verification_status, 'verified', 'jogo em revisao nao deve virar verified sem acao manual');
+  assert.notStrictEqual(reviewRow.editorial_review_status, 'verified', 'editorial_review_status em revisao deve continuar sem verified automatico');
+  assert.strictEqual(Number(reviewRow.is_verified), 0, 'jogo em revisao deve continuar com is_verified = 0');
+
+  const insertedRow = await get('SELECT slug, verification_status, editorial_review_status, is_verified FROM games WHERE slug = ?', ['days-gone']);
+  assert(insertedRow, 'jogo ausente deve ser inserido normalmente pelo seed');
+  assert.notStrictEqual(insertedRow.verification_status, null, 'jogo novo deve receber status do seed');
+
+  await run(
+    `UPDATE games
+        SET verification_status = 'review',
+            editorial_review_status = 'in_review',
+            is_verified = 0,
+            last_reviewed_at = '2026-05-15',
+            reviewed_by = ''
+      WHERE slug = ?`,
+    ['ghost-of-tsushima']
+  );
+  await run(
+    `UPDATE games
+        SET verification_status = 'review',
+            editorial_review_status = 'in_review',
+            is_verified = 0,
+            last_reviewed_at = NULL,
+            reviewed_by = ''
+      WHERE slug = ?`,
+    ['resident-evil-4-remake']
+  );
+}
+
 async function assertBackendEditorialConsistency() {
   const tempDir = fs.mkdtempSync(path.join(os.tmpdir(), 'atlas-smoke-'));
   process.env.NODE_ENV = 'test';
@@ -7470,6 +7548,7 @@ async function assertBackendEditorialConsistency() {
   await assertMigrationShape({ all, get });
   await adminService.ensureDefaultAdmin();
   await seed();
+  await assertSeedSyncPreservesManualVerifiedStatus({ migrate, get, run });
   await assertSeedData({ all, get }, sampleGames);
 
   const gameColumns = await all('PRAGMA table_info(games)');
