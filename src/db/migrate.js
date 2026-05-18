@@ -1,10 +1,20 @@
 const { exec, all, run, get } = require('./db');
 const sampleGames = require('../data/sampleGames');
-const { slugifyGameName, buildSlugVariant } = require('../utils/slug');
+const { slugifyGameName, getCanonicalGameSlug, buildSlugVariant } = require('../utils/slug');
 const { formatTimeMetadata, getTimeBucketFromHours } = require('../utils/time');
 const guideModel = require('../shared/guideViewModel');
 
 const GAME_SLUG_ALIASES = {
+  'astros-playroom': [
+    "Astro's Playroom",
+    'Astros Playroom',
+    'Astro Playroom',
+    "Astro's Playrrom",
+    'astro-s-playroom',
+    'astros-playrrom',
+    'astro-playroom',
+    'astro-s-playrrom'
+  ],
   'little-nightmares-ii': ['little-nightmares'],
   'monster-hunter-world': ['monster-hunter-world-iceborne']
 };
@@ -218,8 +228,8 @@ async function ensureGameColumns() {
   const usedSlugs = new Set();
 
   for (const row of rows) {
-    const baseSlug = slugifyGameName(row.name);
-    let slug = row.slug || baseSlug;
+    const baseSlug = getCanonicalGameSlug(row.slug || row.name);
+    let slug = row.slug ? slugifyGameName(row.slug) : baseSlug;
     let sequence = 0;
     while (usedSlugs.has(slug) || (await get('SELECT id FROM games WHERE slug = ? AND id != ?', [slug, row.id]))) {
       sequence += 1;
@@ -361,7 +371,7 @@ async function backfillMissableTrophyFlags() {
 async function backfillCoverImagesFromSeed() {
   const seededCovers = sampleGames
     .map(game => ({
-      slug: game.slug || slugifyGameName(game.name),
+      slug: getCanonicalGameSlug(game.slug || game.name),
       coverImage: typeof game.cover_image === 'string' && game.cover_image.trim()
         ? game.cover_image.trim()
         : deriveSteamCoverImage(game.image)
@@ -387,7 +397,7 @@ async function backfillTrophyTypeAliases() {
 
 async function backfillTrophyNamePtFromSeed() {
   const translatedTrophies = sampleGames.flatMap(game => {
-    const slug = game.slug || slugifyGameName(game.name);
+    const slug = getCanonicalGameSlug(game.slug || game.name);
     return (game.trophies || [])
       .filter(trophy => trophy?.id && trophy?.name_pt)
       .map(trophy => ({
@@ -533,7 +543,8 @@ async function backfillTrophyChecklistLocalizationFromSeed(seedSlug) {
 }
 
 function getSeedGameBySlug(slug) {
-  return sampleGames.find(game => (game.slug || slugifyGameName(game.name)) === slug);
+  const canonicalSlug = getCanonicalGameSlug(slug);
+  return sampleGames.find(game => getCanonicalGameSlug(game.slug || game.name) === canonicalSlug);
 }
 
 function serializeRoadmapStep(step, index = 0, total = 1) {
@@ -554,7 +565,7 @@ async function shouldSyncSeedGame(seedSlug, options = {}) {
   const game = getSeedGameBySlug(seedSlug);
   if (!game) return false;
 
-  const slug = game.slug || slugifyGameName(game.name);
+  const slug = getCanonicalGameSlug(game.slug || game.name);
   const existing = await get(
     `SELECT g.id,
             g.difficulty,
@@ -615,7 +626,7 @@ async function syncSeedGameFromSeed(seedSlug, options = {}) {
   if (!(await shouldSyncSeedGame(seedSlug, options))) return;
 
   const { insertIfMissing = false } = options;
-  const slug = game.slug || slugifyGameName(game.name);
+  const slug = getCanonicalGameSlug(game.slug || game.name);
   const existing = await get(
     `SELECT id,
             is_verified,
@@ -729,7 +740,7 @@ async function syncSeedGameRoadmapFromSeed(seedSlug) {
   const game = getSeedGameBySlug(seedSlug);
   if (!game || !Array.isArray(game.roadmap)) return;
 
-  const slug = game.slug || slugifyGameName(game.name);
+  const slug = getCanonicalGameSlug(game.slug || game.name);
   const existing = await get('SELECT id FROM games WHERE slug = ? OR name = ? ORDER BY id ASC LIMIT 1', [slug, game.name]);
   if (!existing) return;
 
@@ -746,7 +757,7 @@ async function syncSeedGameGuideSummaryAndRoadmapFromSeed(seedSlug) {
   const game = getSeedGameBySlug(seedSlug);
   if (!game || !Array.isArray(game.roadmap)) return;
 
-  const slug = game.slug || slugifyGameName(game.name);
+  const slug = getCanonicalGameSlug(game.slug || game.name);
   const existing = await get(
     `SELECT id,
             is_verified,
@@ -1050,6 +1061,117 @@ async function backfillEditorialStatusFields({ recalculateCoverage = false } = {
   }
 }
 
+function isAstrosPlayroomCandidate(row = {}) {
+  return getCanonicalGameSlug(row.slug) === 'astros-playroom'
+    || getCanonicalGameSlug(row.name) === 'astros-playroom';
+}
+
+async function addAstrosPlayroomRedirects(gameId, extraAliases = []) {
+  const aliases = [
+    ...extraAliases,
+    ...(GAME_SLUG_ALIASES['astros-playroom'] || [])
+  ];
+
+  for (const alias of aliases) {
+    const normalizedAlias = slugifyGameName(alias);
+    if (!normalizedAlias || normalizedAlias === 'astros-playroom') continue;
+    await run(
+      'INSERT OR IGNORE INTO game_slug_redirects (game_id, slug) VALUES (?, ?)',
+      [gameId, normalizedAlias]
+    );
+  }
+}
+
+async function mergeUserProgressIntoAstrosPlayroom(sourceGameId, targetGameId) {
+  const progressRows = await all(
+    `SELECT user_id, trophy_code, completed, completed_at, created_at, updated_at
+       FROM user_trophy_progress
+      WHERE game_id = ?`,
+    [sourceGameId]
+  );
+
+  for (const progress of progressRows) {
+    const existing = await get(
+      `SELECT id, completed, completed_at
+         FROM user_trophy_progress
+        WHERE user_id = ? AND game_id = ? AND trophy_code = ?`,
+      [progress.user_id, targetGameId, progress.trophy_code]
+    );
+
+    if (!existing) {
+      await run(
+        `INSERT INTO user_trophy_progress
+          (user_id, game_id, trophy_code, completed, completed_at, created_at, updated_at)
+         VALUES (?, ?, ?, ?, ?, ?, ?)`,
+        [
+          progress.user_id,
+          targetGameId,
+          progress.trophy_code,
+          progress.completed,
+          progress.completed_at,
+          progress.created_at,
+          progress.updated_at
+        ]
+      );
+      continue;
+    }
+
+    if (Number(progress.completed) && !Number(existing.completed)) {
+      await run(
+        `UPDATE user_trophy_progress
+            SET completed = 1,
+                completed_at = ?,
+                updated_at = COALESCE(?, CURRENT_TIMESTAMP)
+          WHERE id = ?`,
+        [progress.completed_at || existing.completed_at, progress.updated_at, existing.id]
+      );
+    } else if (Number(progress.completed) && Number(existing.completed) && !existing.completed_at && progress.completed_at) {
+      await run(
+        'UPDATE user_trophy_progress SET completed_at = ? WHERE id = ?',
+        [progress.completed_at, existing.id]
+      );
+    }
+  }
+
+  await run('DELETE FROM user_trophy_progress WHERE game_id = ?', [sourceGameId]);
+}
+
+async function mergeAstrosPlayroomDuplicates() {
+  const rows = await all('SELECT id, name, slug FROM games ORDER BY id ASC');
+  const candidates = rows.filter(isAstrosPlayroomCandidate);
+  if (candidates.length === 0) return;
+
+  const canonical = candidates.find(row => row.slug === 'astros-playroom') || candidates[0];
+  const duplicates = candidates.filter(row => row.id !== canonical.id);
+
+  if (canonical.slug !== 'astros-playroom') {
+    await run('UPDATE games SET slug = ? WHERE id = ?', ['astros-playroom', canonical.id]);
+  }
+
+  for (const duplicate of duplicates) {
+    const duplicateAliases = [duplicate.slug, duplicate.name].filter(Boolean);
+    await run('DELETE FROM game_slug_redirects WHERE game_id = ?', [duplicate.id]);
+    await addAstrosPlayroomRedirects(canonical.id, duplicateAliases);
+    await run(
+      `INSERT OR IGNORE INTO user_library
+        (user_id, game_id, status, created_at, updated_at, last_opened_at)
+       SELECT user_id, ?, status, created_at, updated_at, last_opened_at
+         FROM user_library
+        WHERE game_id = ?`,
+      [canonical.id, duplicate.id]
+    );
+    await run('DELETE FROM user_library WHERE game_id = ?', [duplicate.id]);
+    await mergeUserProgressIntoAstrosPlayroom(duplicate.id, canonical.id);
+    await run('UPDATE analytics_events SET game_slug = ? WHERE game_slug = ?', ['astros-playroom', duplicate.slug]);
+    await run('DELETE FROM roadmaps WHERE game_id = ?', [duplicate.id]);
+    await run('DELETE FROM trophies WHERE game_id = ?', [duplicate.id]);
+    await run('DELETE FROM games WHERE id = ?', [duplicate.id]);
+  }
+
+  await run('UPDATE games SET name = ?, slug = ? WHERE id = ?', ['Astro’s Playroom', 'astros-playroom', canonical.id]);
+  await addAstrosPlayroomRedirects(canonical.id);
+}
+
 function shouldSyncSeedData(options = {}) {
   if (Object.prototype.hasOwnProperty.call(options, 'syncSeedData')) {
     return Boolean(options.syncSeedData);
@@ -1274,6 +1396,7 @@ async function migrate(options = {}) {
   await backfillTrophyTypeAliases();
   await ensureUserTables();
   await ensureUserProgressTables();
+  await mergeAstrosPlayroomDuplicates();
   await backfillMissableTrophyFlags();
   await backfillCoverImagesFromSeed();
   await backfillTrophyNamePtFromSeed();
@@ -1311,6 +1434,7 @@ async function migrate(options = {}) {
   await syncSeedGameRoadmapFromSeed('saros');
   await syncSeedGameRoadmapFromSeed('subnautica');
   await syncSeedGameFromSeed('disney-epic-mickey-rebrushed', { insertIfMissing: true });
+  await mergeAstrosPlayroomDuplicates();
   await ensureKnownSlugRedirects();
 }
 

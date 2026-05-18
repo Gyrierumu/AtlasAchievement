@@ -6,6 +6,13 @@ const SKIPPED_DIRECTORIES = new Set(['.git']);
 const ALLOWED_EXACT_FILES = new Set(['.env.example', 'package-lock.json']);
 const BLOCKED_ENV_FILES = new Set(['.env', '.env.local', '.env.production', '.env.development']);
 const BLOCKED_LOCAL_DIRS = new Set(['dumps', 'dump', 'backups', 'backup', 'sessions', 'tmp', 'temp']);
+const ASTROS_CANONICAL_NAME = 'Astro’s Playroom';
+const ASTROS_CANONICAL_SLUG = 'astros-playroom';
+const ASTROS_FORBIDDEN_PATTERNS = [
+  /Playrrom/i,
+  /astros-playrrom/i,
+  /astro-s-playroom/i
+];
 
 const SUGGESTIONS = {
   dependencies: 'Remova a pasta do pacote e rode npm ci no ambiente de destino.',
@@ -140,6 +147,51 @@ function scanReleaseTree(root = DEFAULT_ROOT) {
   return results.sort((a, b) => a.packagePath.localeCompare(b.packagePath));
 }
 
+function scanAstrosPlayroomData(root = DEFAULT_ROOT) {
+  const findings = [];
+  const sampleGamesPath = path.join(root, 'src', 'data', 'sampleGames.js');
+  const slugUtilsPath = path.join(root, 'src', 'utils', 'slug.js');
+  if (!fs.existsSync(sampleGamesPath) || !fs.existsSync(slugUtilsPath)) return findings;
+
+  const sampleText = fs.readFileSync(sampleGamesPath, 'utf8');
+  ASTROS_FORBIDDEN_PATTERNS.forEach(pattern => {
+    if (pattern.test(sampleText)) {
+      findings.push({
+        packagePath: normalizePackagePath(sampleGamesPath, root),
+        reason: `sampleGames contem variante proibida de Astro's Playroom: ${pattern}.`,
+        suggestion: 'Use apenas Astro’s Playroom com slug astros-playroom no seed canonico.'
+      });
+    }
+  });
+
+  const { getCanonicalGameSlug } = require(slugUtilsPath);
+  const sampleGames = require(sampleGamesPath);
+  const candidates = sampleGames.filter(game => (
+    getCanonicalGameSlug(game.slug || game.name) === ASTROS_CANONICAL_SLUG
+    || getCanonicalGameSlug(game.name) === ASTROS_CANONICAL_SLUG
+  ));
+
+  if (candidates.length !== 1) {
+    findings.push({
+      packagePath: normalizePackagePath(sampleGamesPath, root),
+      reason: `sampleGames deve ter exatamente um Astro's Playroom canonico; encontrados ${candidates.length}.`,
+      suggestion: 'Mescle aliases/typos no registro astros-playroom em vez de criar outro jogo.'
+    });
+    return findings;
+  }
+
+  const [game] = candidates;
+  if (game.slug !== ASTROS_CANONICAL_SLUG || game.name !== ASTROS_CANONICAL_NAME) {
+    findings.push({
+      packagePath: normalizePackagePath(sampleGamesPath, root),
+      reason: `Astro's Playroom canonico deve usar name "${ASTROS_CANONICAL_NAME}" e slug "${ASTROS_CANONICAL_SLUG}".`,
+      suggestion: 'Corrija o registro canonico sem criar aliases como jogos publicados.'
+    });
+  }
+
+  return findings;
+}
+
 function formatBlockedArtifacts(blockedArtifacts) {
   return blockedArtifacts
     .map(item => `- ${item.packagePath}\n  Motivo: ${item.reason}\n  Sugestao: ${item.suggestion}`)
@@ -147,7 +199,10 @@ function formatBlockedArtifacts(blockedArtifacts) {
 }
 
 function runReleaseCheck(root = DEFAULT_ROOT) {
-  const blockedArtifacts = scanReleaseTree(root);
+  const blockedArtifacts = [
+    ...scanReleaseTree(root),
+    ...scanAstrosPlayroomData(root)
+  ].sort((a, b) => a.packagePath.localeCompare(b.packagePath));
 
   if (blockedArtifacts.length > 0) {
     console.error('Release bloqueado: foram encontrados arquivos locais/sensiveis. Remova os itens abaixo antes de gerar o ZIP.');
@@ -165,6 +220,7 @@ if (require.main === module) {
 
 module.exports = {
   scanReleaseTree,
+  scanAstrosPlayroomData,
   formatBlockedArtifacts,
   runReleaseCheck
 };

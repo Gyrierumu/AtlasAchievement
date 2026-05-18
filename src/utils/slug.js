@@ -8,6 +8,18 @@ function slugifyGameName(value) {
     .slice(0, 96);
 }
 
+const CANONICAL_GAME_SLUG_ALIASES = Object.freeze({
+  'astro-s-playroom': 'astros-playroom',
+  'astro-playroom': 'astros-playroom',
+  'astros-playrrom': 'astros-playroom',
+  'astro-s-playrrom': 'astros-playroom'
+});
+
+function getCanonicalGameSlug(value) {
+  const slug = slugifyGameName(value);
+  return CANONICAL_GAME_SLUG_ALIASES[slug] || slug;
+}
+
 function buildSlugVariant(baseSlug, sequence = 0) {
   const fallbackBase = baseSlug || 'jogo';
   if (sequence <= 0) {
@@ -21,5 +33,7 @@ function buildSlugVariant(baseSlug, sequence = 0) {
 
 module.exports = {
   slugifyGameName,
+  getCanonicalGameSlug,
+  CANONICAL_GAME_SLUG_ALIASES,
   buildSlugVariant
 };

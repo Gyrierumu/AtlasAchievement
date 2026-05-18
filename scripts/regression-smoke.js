@@ -2751,7 +2751,7 @@ async function assertSeedData({ all, get }, sampleGames) {
   assert(astrosPlayroomSample.trophies.some(trophy => trophy.name === 'A Grand Tour!' && trophy.name_pt === 'Um Grande Passeio!' && trophy.descriptionPtBr === 'Colete todas as peças de puzzle do jogo.'), "Astro's Playroom deve localizar A Grand Tour!");
   assert.deepStrictEqual(astrosPlayroomTypeCounts, { Platina: 1, Prata: 13, Bronze: 26, Ouro: 3 }, "Astro's Playroom deve manter distribuicao base oficial de trofeus");
 
-  const astrosPlayroom = await get('SELECT slug, difficulty, time_bucket, time_min_hours, time_max_hours, time_sort_hours, editorial_status, coverage_level, is_verified, verification_status, image, cover_image FROM games WHERE name = ?', ["Astro's Playroom"]);
+  const astrosPlayroom = await get('SELECT slug, difficulty, time_bucket, time_min_hours, time_max_hours, time_sort_hours, editorial_status, coverage_level, is_verified, verification_status, image, cover_image FROM games WHERE slug = ?', ['astros-playroom']);
   assert.strictEqual(astrosPlayroom?.slug, 'astros-playroom', "seed deve preservar slug explicito do Astro's Playroom");
   assert.strictEqual(astrosPlayroom?.difficulty, 2, "Astro's Playroom deve entrar com dificuldade 2/10");
   assert.strictEqual(astrosPlayroom?.time_bucket, 'short', "Astro's Playroom deve ser projeto curto");
@@ -7538,6 +7538,106 @@ async function assertSeedSyncPreservesManualVerifiedStatus({ migrate, get, run }
   );
 }
 
+function assertAstrosPlayroomCanonicalSlug() {
+  const { getCanonicalGameSlug } = require(path.join(ROOT, 'src/utils/slug'));
+  [
+    'Astro’s Playroom',
+    "Astro's Playroom",
+    'Astros Playroom',
+    'Astro Playroom',
+    "Astro's Playrrom",
+    'astro-s-playroom',
+    'astros-playrrom',
+    'astro-playroom',
+    'astro-s-playrrom'
+  ].forEach(alias => {
+    assert.strictEqual(getCanonicalGameSlug(alias), 'astros-playroom', `${alias} deve apontar para astros-playroom`);
+  });
+
+  const sampleGames = require(path.join(ROOT, 'src/data/sampleGames'));
+  const candidates = sampleGames.filter(game => (
+    getCanonicalGameSlug(game.slug || game.name) === 'astros-playroom'
+    || getCanonicalGameSlug(game.name) === 'astros-playroom'
+  ));
+  assert.strictEqual(candidates.length, 1, 'sampleGames deve manter apenas um Astro’s Playroom canonico');
+  assert.strictEqual(candidates[0].slug, 'astros-playroom', 'Astro’s Playroom deve manter slug canonico');
+  assert.strictEqual(candidates[0].name, 'Astro’s Playroom', 'Astro’s Playroom deve manter nome canonico');
+}
+
+async function assertAstrosPlayroomDuplicateMerge({ migrate, all, get, run }) {
+  const canonicalBefore = await get('SELECT id FROM games WHERE slug = ?', ['astros-playroom']);
+  assert(canonicalBefore, 'Astro’s Playroom canonico deve existir antes do teste de merge');
+
+  const duplicateInsert = await run(
+    `INSERT INTO games
+      (name, slug, difficulty, time, missable, verification_status, editorial_status, coverage_level, is_verified, image)
+     VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?)`,
+    [
+      "Astro's Playrrom",
+      'astros-playrrom',
+      2,
+      '3-5h',
+      'Sem perdiveis.',
+      'unverified',
+      'published',
+      'partial',
+      0,
+      'https://example.com/astros-playrrom.jpg'
+    ]
+  );
+  const duplicateId = duplicateInsert.lastID;
+
+  const userInsert = await run(
+    `INSERT INTO users (username, email, password_hash, display_name)
+     VALUES (?, ?, ?, ?)`,
+    ['astros-merge-user', 'astros-merge@example.com', 'hash', 'Astros Merge']
+  );
+  const userId = userInsert.lastID;
+
+  await run(
+    `INSERT INTO user_library (user_id, game_id, status, last_opened_at)
+     VALUES (?, ?, ?, ?)`,
+    [userId, duplicateId, 'completed', '2026-05-17T12:00:00.000Z']
+  );
+  await run(
+    `INSERT INTO user_trophy_progress (user_id, game_id, trophy_code, completed, completed_at)
+     VALUES (?, ?, ?, ?, ?)`,
+    [userId, duplicateId, 'astros_playroom_do_it', 1, '2026-05-17T12:05:00.000Z']
+  );
+  await run(
+    `INSERT INTO analytics_events (event_type, game_slug, page)
+     VALUES (?, ?, ?)`,
+    ['guide_view', 'astros-playrrom', '/jogo/astros-playrrom']
+  );
+
+  await migrate();
+
+  const astrosRows = await all('SELECT id, name, slug FROM games ORDER BY id ASC');
+  const candidates = astrosRows.filter(row => (
+    ['astros-playroom', 'astro-s-playroom', 'astros-playrrom', 'astro-playroom', 'astro-s-playrrom'].includes(row.slug)
+    || /astro.?s?\s+playr?room/i.test(String(row.name || ''))
+  ));
+  assert.deepStrictEqual(
+    candidates.map(row => row.slug),
+    ['astros-playroom'],
+    'migration deve mesclar duplicados/typos de Astro’s Playroom no slug canonico'
+  );
+
+  const canonicalAfter = await get('SELECT id, name, slug FROM games WHERE slug = ?', ['astros-playroom']);
+  assert.strictEqual(canonicalAfter.name, 'Astro’s Playroom', 'merge deve preservar nome canonico de Astro’s Playroom');
+  const movedLibrary = await get('SELECT status FROM user_library WHERE user_id = ? AND game_id = ?', [userId, canonicalAfter.id]);
+  assert.strictEqual(movedLibrary?.status, 'completed', 'merge deve reassociar biblioteca do duplicado ao jogo canonico');
+  const movedProgress = await get(
+    'SELECT completed, completed_at FROM user_trophy_progress WHERE user_id = ? AND game_id = ? AND trophy_code = ?',
+    [userId, canonicalAfter.id, 'astros_playroom_do_it']
+  );
+  assert.strictEqual(Number(movedProgress?.completed), 1, 'merge deve reassociar progresso de checklist ao jogo canonico');
+  const redirect = await get('SELECT game_id FROM game_slug_redirects WHERE slug = ?', ['astros-playrrom']);
+  assert.strictEqual(redirect?.game_id, canonicalAfter.id, 'slug antigo com typo deve redirecionar para astros-playroom');
+  const analytics = await get('SELECT game_slug FROM analytics_events WHERE event_type = ?', ['guide_view']);
+  assert.strictEqual(analytics?.game_slug, 'astros-playroom', 'merge deve normalizar analytics do slug duplicado');
+}
+
 async function assertPersistedRoadmapsUseSharedNormalizer(gamesService, guideModel) {
   const slugs = [
     'hades-ii',
@@ -7592,7 +7692,13 @@ async function assertBackendEditorialConsistency() {
   await assertMigrationShape({ all, get });
   await adminService.ensureDefaultAdmin();
   await seed();
+  await assert.rejects(
+    () => gamesService.reserveUniqueSlug("Astro's Playrrom"),
+    error => error?.code === 'GAME_NAME_CONFLICT',
+    'reserveUniqueSlug nao deve gerar astros-playroom-2 para alias/typo de Astro’s Playroom'
+  );
   await assertSeedSyncPreservesManualVerifiedStatus({ migrate, get, run });
+  await assertAstrosPlayroomDuplicateMerge({ migrate, all, get, run });
   await assertPersistedRoadmapsUseSharedNormalizer(gamesService, guideModel);
   await assertSeedData({ all, get }, sampleGames);
 
@@ -13409,6 +13515,7 @@ async function main() {
   assertFinalQaPriorityBlockerFixes();
   assertPriorityGuideEditorialTrust();
   assertRoadmapRegressionProtection();
+  assertAstrosPlayroomCanonicalSlug();
   await assertBackendEditorialConsistency();
   console.log('Regression smoke tests passed.');
   process.exit(0);

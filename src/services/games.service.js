@@ -1,7 +1,7 @@
 const { all, get, run, exec } = require('../db/db');
 const AppError = require('../utils/AppError');
 const { removeManagedUpload, isManagedUpload } = require('./file.service');
-const { slugifyGameName, buildSlugVariant } = require('../utils/slug');
+const { slugifyGameName, getCanonicalGameSlug, buildSlugVariant } = require('../utils/slug');
 const { formatTimeMetadata } = require('../utils/time');
 const editorialModel = require('../shared/editorialModel');
 const guideModel = require('../shared/guideViewModel');
@@ -199,7 +199,7 @@ function normalizeGame(row, roadmapRows, trophyRows) {
       || /god of blood/.test(name)
       || /earn (?:every|all) other trophies|obtenha todos os trofeus|obtenha todos os outros trofeus/.test(description);
   };
-  const normalizedSlug = String(row.slug || '').trim().toLowerCase();
+  const normalizedSlug = getCanonicalGameSlug(row.slug || row.name);
   const supportsLocalizedDescriptions = [
     'elden-ring',
     'hades',
@@ -253,7 +253,7 @@ function normalizeGame(row, roadmapRows, trophyRows) {
     coverage_level: normalizeCoverageLevel(row.coverage_level, row),
     is_verified: Boolean(row.is_verified),
     verification_note: row.verification_note || '',
-    slug: row.slug || slugifyGameName(row.name),
+    slug: getCanonicalGameSlug(row.slug || row.name),
     chapterSelect: ['the-last-of-us-part-i', 'the-last-of-us-part-ii'].includes(normalizedSlug) ? true : (['nioh-3', 'saros', 'subnautica'].includes(normalizedSlug) ? false : undefined),
     missionReplay: normalizedSlug === 'nioh-3' ? true : undefined,
     openWorldCleanup: normalizedSlug === 'subnautica' ? true : undefined,
@@ -472,7 +472,7 @@ function normalizeListRow(row) {
     ideal_for: firstText(row.best_for, row.guide_ideal),
     avoid_for: firstText(row.avoid_if, row.guide_avoid),
     best_for_when: row.guide_best_moment || '',
-    slug: row.slug || slugifyGameName(row.name),
+    slug: getCanonicalGameSlug(row.slug || row.name),
     time_bucket: row.time_bucket || null
   };
 }
@@ -511,7 +511,9 @@ function getListOrderBy(sort = 'name-asc') {
   return sorts[sort] || sorts['name-asc'];
 }
 async function reserveUniqueSlug(baseName, excludeGameId = null) {
-  const normalizedBase = slugifyGameName(baseName) || 'jogo';
+  const rawBase = slugifyGameName(baseName) || 'jogo';
+  const normalizedBase = getCanonicalGameSlug(baseName) || 'jogo';
+  const isKnownAlias = rawBase !== normalizedBase;
   let sequence = 0;
 
   while (sequence < 1000) {
@@ -519,6 +521,10 @@ async function reserveUniqueSlug(baseName, excludeGameId = null) {
     const existing = excludeGameId
       ? await get('SELECT id FROM games WHERE slug = ? AND id != ?', [candidate, excludeGameId])
       : await get('SELECT id FROM games WHERE slug = ?', [candidate]);
+
+    if (existing && isKnownAlias && candidate === normalizedBase) {
+      throw new AppError('Ja existe um jogo com esse nome.', 409, null, 'GAME_NAME_CONFLICT');
+    }
 
     if (!existing) {
       return candidate;
@@ -528,6 +534,19 @@ async function reserveUniqueSlug(baseName, excludeGameId = null) {
   }
 
   throw new AppError('Não foi possível gerar um slug único para o jogo.', 500, null, 'SLUG_GENERATION_FAILED');
+}
+
+async function ensureNoCanonicalSlugConflict(baseName, excludeGameId = null) {
+  const canonicalSlug = getCanonicalGameSlug(baseName);
+  if (!canonicalSlug) return;
+
+  const existing = excludeGameId
+    ? await get('SELECT id FROM games WHERE slug = ? AND id != ?', [canonicalSlug, excludeGameId])
+    : await get('SELECT id FROM games WHERE slug = ?', [canonicalSlug]);
+
+  if (existing) {
+    throw new AppError('Ja existe um jogo com esse nome.', 409, null, 'GAME_NAME_CONFLICT');
+  }
 }
 
 async function listGames(options = {}) {
@@ -714,22 +733,23 @@ async function getGameByName(name, options = {}) {
 }
 
 async function getGameBySlug(slug, options = {}) {
-  const normalizedSlug = slugifyGameName(slug);
+  const requestedSlug = slugifyGameName(slug);
+  const normalizedSlug = getCanonicalGameSlug(slug);
   const directRow = await get('SELECT id, slug FROM games WHERE slug = ?', [normalizedSlug]);
 
   if (directRow) {
     const game = await getGameById(directRow.id, options);
     return {
       ...game,
-      requested_slug: normalizedSlug,
+      requested_slug: requestedSlug,
       canonical_slug: game.slug,
-      redirect_required: false
+      redirect_required: requestedSlug !== game.slug
     };
   }
 
   const redirectRow = await get(
     'SELECT g.id, g.slug FROM game_slug_redirects r JOIN games g ON g.id = r.game_id WHERE r.slug = ?',
-    [normalizedSlug]
+    [requestedSlug]
   );
 
   if (!redirectRow) {
@@ -739,9 +759,9 @@ async function getGameBySlug(slug, options = {}) {
   const game = await getGameById(redirectRow.id, options);
   return {
     ...game,
-    requested_slug: normalizedSlug,
+    requested_slug: requestedSlug,
     canonical_slug: game.slug,
-    redirect_required: redirectRow.slug !== normalizedSlug
+    redirect_required: redirectRow.slug !== requestedSlug
   };
 }
 
@@ -835,6 +855,7 @@ async function createGame(payload) {
     throw new AppError('Já existe um jogo com esse nome.', 409, null, 'GAME_NAME_CONFLICT');
   }
 
+  await ensureNoCanonicalSlugConflict(payload.name);
   const slug = await reserveUniqueSlug(payload.name);
   const timeMeta = formatTimeMetadata(payload.time);
   const editorialStatus = normalizeEditorialStatus(payload.editorial_status);
@@ -885,6 +906,7 @@ async function updateGame(id, payload) {
     throw new AppError('Já existe outro jogo com esse nome.', 409, null, 'GAME_NAME_CONFLICT');
   }
 
+  await ensureNoCanonicalSlugConflict(payload.name, id);
   const slug = await reserveUniqueSlug(payload.name, id);
   const timeMeta = formatTimeMetadata(payload.time);
   const editorialStatus = normalizeEditorialStatus(payload.editorial_status);

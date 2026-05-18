@@ -2565,9 +2565,9 @@ const sampleGames = [
     ]
   },
   {
-    "name": "Astro's Playroom",
+    "name": "Astro’s Playroom",
     "slug": "astros-playroom",
-    "title": "Astro's Playroom",
+    "title": "Astro’s Playroom",
     "primary_platform": "PS5",
     "platforms": ["PS5"],
     "developer": "Team Asobi / Japan Studio",

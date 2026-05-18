@@ -1,10 +1,20 @@
 const sampleGames = require('../data/sampleGames');
 const { all, run } = require('./db');
-const { slugifyGameName } = require('../utils/slug');
+const { slugifyGameName, getCanonicalGameSlug } = require('../utils/slug');
 const { formatTimeMetadata } = require('../utils/time');
 const guideModel = require('../shared/guideViewModel');
 
 const GAME_SLUG_ALIASES = {
+  'astros-playroom': [
+    "Astro's Playroom",
+    'Astros Playroom',
+    'Astro Playroom',
+    "Astro's Playrrom",
+    'astro-s-playroom',
+    'astros-playrrom',
+    'astro-playroom',
+    'astro-s-playrrom'
+  ],
   'little-nightmares-ii': ['little-nightmares'],
   'monster-hunter-world': ['monster-hunter-world-iceborne']
 };
@@ -68,12 +78,12 @@ function normalizeCoverageLevel(game = {}) {
 }
 
 async function seed() {
-  const existingRows = await all('SELECT slug FROM games');
-  const existingSlugs = new Set(existingRows.map(row => String(row.slug || '').trim()).filter(Boolean));
+  const existingRows = await all('SELECT slug, name FROM games');
+  const existingSlugs = new Set(existingRows.map(row => getCanonicalGameSlug(row.slug || row.name)).filter(Boolean));
 
   for (const game of sampleGames) {
     const timeMeta = formatTimeMetadata(game.time);
-    const slug = game.slug || slugifyGameName(game.name);
+    const slug = getCanonicalGameSlug(game.slug || game.name);
     if (existingSlugs.has(slug)) continue;
     const timeMinHours = Number.isFinite(Number(game.time_min_hours)) ? Number(game.time_min_hours) : timeMeta.time_min_hours;
     const timeMaxHours = Number.isFinite(Number(game.time_max_hours)) ? Number(game.time_max_hours) : timeMeta.time_max_hours;
@@ -126,9 +136,11 @@ async function seed() {
     existingSlugs.add(slug);
 
     for (const alias of GAME_SLUG_ALIASES[slug] || []) {
+      const normalizedAlias = slugifyGameName(alias);
+      if (!normalizedAlias || normalizedAlias === slug) continue;
       await run(
         'INSERT OR IGNORE INTO game_slug_redirects (game_id, slug) VALUES (?, ?)',
-        [gameId, alias]
+        [gameId, normalizedAlias]
       );
     }
 
