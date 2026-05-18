@@ -4,6 +4,7 @@ const { removeManagedUpload, isManagedUpload } = require('./file.service');
 const { slugifyGameName, buildSlugVariant } = require('../utils/slug');
 const { formatTimeMetadata } = require('../utils/time');
 const editorialModel = require('../shared/editorialModel');
+const guideModel = require('../shared/guideViewModel');
 const sampleGames = require('../data/sampleGames');
 
 const PUBLIC_EDITORIAL_STATUSES = new Set(['review', 'published']);
@@ -28,9 +29,16 @@ function firstText(...values) {
   return values.map(value => String(value || '').trim()).find(Boolean) || '';
 }
 
-function serializeRoadmapStep(step) {
-  if (step && typeof step === 'object') return JSON.stringify(step);
-  return String(step || '');
+function serializeRoadmapStep(step, index = 0, total = 1) {
+  const normalized = guideModel.normalizeRoadmapStep(step, index, total);
+  return JSON.stringify({
+    title: normalized.title,
+    focus: normalized.focus,
+    objective: normalized.objective,
+    actions: normalized.actions,
+    warning: normalized.warning,
+    result: normalized.result
+  });
 }
 
 function deserializeRoadmapStep(content) {
@@ -254,7 +262,9 @@ function normalizeGame(row, roadmapRows, trophyRows) {
     dlcRequired: ['astro-bot', 'astros-playroom', 'nioh-2', 'nioh-3', 'saros', 'the-last-of-us-part-i', 'the-last-of-us-part-ii', 'subnautica'].includes(normalizedSlug) ? false : undefined,
     newGamePlusRequired: normalizedSlug === 'the-last-of-us-part-ii' ? true : (normalizedSlug === 'the-last-of-us-part-i' ? false : undefined),
     difficultyTrophiesRequired: ['the-last-of-us-part-i', 'the-last-of-us-part-ii'].includes(normalizedSlug) ? false : undefined,
-    roadmap: roadmapRows.map(item => deserializeRoadmapStep(item.content)),
+    roadmap: roadmapRows
+      .map(item => deserializeRoadmapStep(item.content))
+      .map((step, index, rows) => guideModel.normalizeRoadmapStep(step, index, rows.length)),
     trophies: trophyRows.map(item => {
       const description = item.description || '';
       const isMissable = Boolean(item.is_missable) && !isPlatinumTrophy(item);
@@ -739,7 +749,7 @@ async function insertGameData(gameId, payload) {
   for (let index = 0; index < payload.roadmap.length; index += 1) {
     await run(
       'INSERT INTO roadmaps (game_id, step_order, content) VALUES (?, ?, ?)',
-      [gameId, index + 1, serializeRoadmapStep(payload.roadmap[index]).trim()]
+      [gameId, index + 1, serializeRoadmapStep(payload.roadmap[index], index, payload.roadmap.length).trim()]
     );
   }
 

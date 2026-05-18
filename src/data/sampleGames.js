@@ -2265,7 +2265,7 @@ const sampleGames = [
         "result": "Pendências longas reduzidas e guia encaminhado para limpeza final."
       },
       {
-        "title": "Faça o cleanup final da platina",
+        "title": "Cleanup final da platina",
         "focus": "Checklist final",
         "objective": "Conferir todos os troféus restantes, fechar coleções, desafios, relacionamentos e qualquer requisito específico.",
         "actions": [
@@ -2708,7 +2708,7 @@ const sampleGames = [
         "result": "Hub organizado e coleções principais encaminhadas para a platina."
       },
       {
-        "title": "Separe Network Speed Run e troféus adicionais",
+        "title": "Speedruns e Network Speed Run, se aplicável",
         "focus": "Desafios",
         "objective": "Evitar que add-ons, speedruns extras ou Special Bots sejam tratados como requisito da platina base.",
         "actions": [

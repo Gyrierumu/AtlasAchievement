@@ -2,6 +2,7 @@ const { exec, all, run, get } = require('./db');
 const sampleGames = require('../data/sampleGames');
 const { slugifyGameName, buildSlugVariant } = require('../utils/slug');
 const { formatTimeMetadata, getTimeBucketFromHours } = require('../utils/time');
+const guideModel = require('../shared/guideViewModel');
 
 const GAME_SLUG_ALIASES = {
   'little-nightmares-ii': ['little-nightmares'],
@@ -535,9 +536,16 @@ function getSeedGameBySlug(slug) {
   return sampleGames.find(game => (game.slug || slugifyGameName(game.name)) === slug);
 }
 
-function serializeRoadmapStep(step) {
-  if (step && typeof step === 'object') return JSON.stringify(step);
-  return String(step || '');
+function serializeRoadmapStep(step, index = 0, total = 1) {
+  const normalized = guideModel.normalizeRoadmapStep(step, index, total);
+  return JSON.stringify({
+    title: normalized.title,
+    focus: normalized.focus,
+    objective: normalized.objective,
+    actions: normalized.actions,
+    warning: normalized.warning,
+    result: normalized.result
+  });
 }
 
 async function shouldSyncSeedGame(seedSlug, options = {}) {
@@ -693,7 +701,7 @@ async function syncSeedGameFromSeed(seedSlug, options = {}) {
   for (let index = 0; index < game.roadmap.length; index += 1) {
     await run(
       'INSERT INTO roadmaps (game_id, step_order, content) VALUES (?, ?, ?)',
-      [gameId, index + 1, serializeRoadmapStep(game.roadmap[index])]
+      [gameId, index + 1, serializeRoadmapStep(game.roadmap[index], index, game.roadmap.length)]
     );
   }
 
@@ -729,7 +737,7 @@ async function syncSeedGameRoadmapFromSeed(seedSlug) {
   for (let index = 0; index < game.roadmap.length; index += 1) {
     await run(
       'INSERT INTO roadmaps (game_id, step_order, content) VALUES (?, ?, ?)',
-      [existing.id, index + 1, serializeRoadmapStep(game.roadmap[index])]
+      [existing.id, index + 1, serializeRoadmapStep(game.roadmap[index], index, game.roadmap.length)]
     );
   }
 }
@@ -1290,6 +1298,18 @@ async function migrate(options = {}) {
   await syncSeedGameFromSeed('nioh-3', { insertIfMissing: true, forceSync: true });
   await syncSeedGameFromSeed('saros', { insertIfMissing: true, forceSync: true });
   await syncSeedGameFromSeed('subnautica', { insertIfMissing: true, forceSync: true });
+  await syncSeedGameRoadmapFromSeed('the-last-of-us-part-i');
+  await syncSeedGameRoadmapFromSeed('the-last-of-us-part-ii');
+  await syncSeedGameRoadmapFromSeed('pragmata');
+  await syncSeedGameRoadmapFromSeed('hades-ii');
+  await syncSeedGameRoadmapFromSeed('astro-bot');
+  await syncSeedGameRoadmapFromSeed('astros-playroom');
+  await syncSeedGameRoadmapFromSeed('ghost-of-tsushima');
+  await syncSeedGameRoadmapFromSeed('resident-evil-4-remake');
+  await syncSeedGameRoadmapFromSeed('nioh-2');
+  await syncSeedGameRoadmapFromSeed('nioh-3');
+  await syncSeedGameRoadmapFromSeed('saros');
+  await syncSeedGameRoadmapFromSeed('subnautica');
   await syncSeedGameFromSeed('disney-epic-mickey-rebrushed', { insertIfMissing: true });
   await ensureKnownSlugRedirects();
 }

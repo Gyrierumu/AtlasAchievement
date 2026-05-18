@@ -1237,6 +1237,14 @@
       .trim();
   }
 
+  function isGenericRoadmapTitle(value = '') {
+    const normalized = normalizeGuideSignalText(String(value || '').trim());
+    return !normalized
+      || /^etapa\s+\d+$/.test(normalized)
+      || /^passo\s+\d+$/.test(normalized)
+      || /^(comece aqui|plano|planeje a proxima run)$/.test(normalized);
+  }
+
   function safeRoadmapText(value = '', seen = new WeakSet()) {
     if (value === null || value === undefined) return '';
     if (typeof value === 'string') {
@@ -1292,7 +1300,7 @@
   function cleanRoadmapFieldText(value = '') {
     return safeRoadmapText(value)
       .replace(/\s*\|\s*/g, ' ')
-      .replace(/^\s*(title|focus|objective|actions|warning|note|observation|observacao|result|plan|summary|description|goal|goals|checklist)\s*:\s*/i, '')
+      .replace(/\b(title|focus|objective|actions|warning|note|observation|observacao|result|plan|summary|description|goal|goals|checklist)\s*:\s*/gi, '')
       .replace(/^\s*\[object Object\]\s*$/i, '')
       .replace(/\s+/g, ' ')
       .trim();
@@ -1358,9 +1366,10 @@
     const relatedTrophies = isObject
       ? (Array.isArray(source?.trophies) ? source.trophies : (Array.isArray(source?.relatedTrophies) ? source.relatedTrophies : []))
       : [];
-    const title = stripRoadmapStepPrefix(cleanRoadmapFieldText(structured?.title || (isObject ? (source.title || source.name || source.label) : '') || ''));
+    const rawTitleField = cleanRoadmapFieldText(structured?.title || (isObject ? (source.title || source.name || source.label) : '') || '');
+    const titleIsStepLabel = /^Etapa\s+\d+$/i.test(rawTitleField) || /^Passo\s+\d+$/i.test(rawTitleField);
+    const title = titleIsStepLabel ? '' : stripRoadmapStepPrefix(rawTitleField);
     const rawFocus = cleanRoadmapFieldText(structured?.focus || (isObject ? (source.focus || source.tag || source.category) : '') || '');
-    const titleIsStepLabel = /^Etapa\s+\d+$/i.test(title);
     const explicitCategory = cleanRoadmapFieldText(isObject ? (source.category || source.type || source.phase || (titleIsStepLabel ? source.tag : '')) : '');
     const displayTitle = titleIsStepLabel ? rawFocus : title;
     const focus = explicitCategory || (titleIsStepLabel ? '' : rawFocus);
@@ -1381,25 +1390,27 @@
     const result = cleanRoadmapFieldText(structured?.result || (isObject ? source.result : '') || '');
     const risk = cleanRoadmapFieldText(warning || (isObject ? source.risk : '') || '');
     const clean = stripRoadmapStepPrefix(cleanRoadmapFieldText(objective || (isSerializedRoadmapText(raw) ? structured?.objective : raw) || ''));
-    const explicitTitle = displayTitle || (titleIsStepLabel ? '' : cleanRoadmapFieldText(isObject ? (source.title || source.name || source.label) : ''));
+    const explicitTitleCandidate = displayTitle || (titleIsStepLabel ? '' : cleanRoadmapFieldText(isObject ? (source.title || source.name || source.label) : ''));
+    const explicitTitle = isGenericRoadmapTitle(explicitTitleCandidate) ? '' : explicitTitleCandidate;
     const signalText = [displayTitle, focus, explicitCategory, clean, ...actions, warning, note].filter(Boolean).join(' ');
     const inferredCategory = classifyRoadmapStage(signalText || clean);
     const category = explicitCategory ? { ...inferredCategory, label: explicitCategory } : inferredCategory;
-    const inferredTitle = stripRoadmapStepPrefix(displayTitle || inferRoadmapStageTitle(clean, index, total, explicitTitle));
+    const inferredTitle = stripRoadmapStepPrefix(explicitTitle || inferRoadmapStageTitle(clean, index, total, explicitTitle));
+    const fallbackObjective = clean || actions[0] || inferredTitle || `Etapa ${index + 1}`;
     const isStructured = Boolean(structured || jsonStep || (isObject && (title || focus || objective || actions.length || warning || result)));
     return {
       number: index + 1,
       title: inferredTitle || `Etapa ${index + 1}`,
       category,
-      description: clean || inferredTitle || `Etapa ${index + 1}`,
-      objective: clean || inferredTitle || `Etapa ${index + 1}`,
+      description: fallbackObjective,
+      objective: fallbackObjective,
       focus,
       actions,
       warning,
       note,
       result,
       risk,
-      relatedTrophies: relatedTrophies.map(item => safeRoadmapText(item)).filter(Boolean),
+      relatedTrophies: relatedTrophies.map(item => cleanRoadmapFieldText(item)).filter(Boolean),
       isStructured
     };
   }
@@ -1459,7 +1470,7 @@
     if (/historia|campanha|prologo|ato|atos|run|runs|primeiras runs|spring meadows|monolith|paintress|back to lumiere/.test(normalized)) {
       return { id: 'story', label: 'História', icon: 'fa-book-open', tone: 'soft' };
     }
-    return { id: 'plan', label: 'Plano', icon: 'fa-route', tone: 'soft' };
+    return { id: 'plan', label: 'Etapa', icon: 'fa-route', tone: 'soft' };
   }
 
   function inferRoadmapStageTitle(text = '', index = 0, total = 1, explicitTitle = '') {
@@ -1512,14 +1523,14 @@
     if (/chefes sem dano|sem dano|flawless|boss|chefe/.test(normalized)) return 'Treine chefes sem dano';
     if (/desafio|challenge|cursed sword|equipamento inicial/.test(normalized)) return 'Resolva desafios opcionais';
     if (/farm|grind|rng|\brank\b|\bxp\b|\bnivel\b|\blevel\b/.test(normalized)) return 'Planeje o grind principal';
-    if (/run|campanha|historia|new game|ng\+?/.test(normalized)) return index === 0 ? 'Avance a campanha principal' : 'Planeje a próxima run';
+    if (/run|campanha|historia|new game|ng\+?/.test(normalized)) return index === 0 ? 'Avance a campanha principal' : 'Continue a rota principal';
     if (/final|platina|100%|cem por cento/.test(normalized) || index === total - 1) return 'Fechamento e revisão final';
-    if (index === 0) return 'Comece pela rota segura';
+    if (index === 0) return 'Etapa 1';
 
     const firstClause = clean.split(/[.;:]/).map(part => part.trim()).find(Boolean) || clean;
     if (firstClause && firstClause.length <= 64) return firstClause;
     if (firstClause) return `${firstClause.slice(0, 61).trimEnd()}...`;
-    return `Passo ${index + 1}`;
+    return `Etapa ${index + 1}`;
   }
 
   function buildRoadmapStages(viewModel = {}) {
@@ -2595,6 +2606,7 @@
     buildPlatinumSummary,
     buildBeforeStartCards,
     buildRouteChangingTrophies,
+    safeRoadmapText,
     normalizeRoadmapStep,
     buildDecisionRoadmapStages,
     buildRoadmapStages,

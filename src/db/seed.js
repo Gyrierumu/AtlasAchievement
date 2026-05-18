@@ -2,6 +2,7 @@ const sampleGames = require('../data/sampleGames');
 const { all, run } = require('./db');
 const { slugifyGameName } = require('../utils/slug');
 const { formatTimeMetadata } = require('../utils/time');
+const guideModel = require('../shared/guideViewModel');
 
 const GAME_SLUG_ALIASES = {
   'little-nightmares-ii': ['little-nightmares'],
@@ -27,9 +28,16 @@ function normalizeTrophyType(value) {
   return TROPHY_TYPE_ALIASES[key] || raw;
 }
 
-function serializeRoadmapStep(step) {
-  if (step && typeof step === 'object') return JSON.stringify(step);
-  return String(step || '');
+function serializeRoadmapStep(step, index = 0, total = 1) {
+  const normalized = guideModel.normalizeRoadmapStep(step, index, total);
+  return JSON.stringify({
+    title: normalized.title,
+    focus: normalized.focus,
+    objective: normalized.objective,
+    actions: normalized.actions,
+    warning: normalized.warning,
+    result: normalized.result
+  });
 }
 
 function deriveSteamCoverImage(imageUrl) {
@@ -127,7 +135,7 @@ async function seed() {
     for (let index = 0; index < game.roadmap.length; index += 1) {
       await run(
         'INSERT INTO roadmaps (game_id, step_order, content) VALUES (?, ?, ?)',
-        [gameId, index + 1, serializeRoadmapStep(game.roadmap[index])]
+        [gameId, index + 1, serializeRoadmapStep(game.roadmap[index], index, game.roadmap.length)]
       );
     }
 
