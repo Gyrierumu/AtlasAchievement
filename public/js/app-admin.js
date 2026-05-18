@@ -97,14 +97,19 @@ window.AppAdmin = (() => {
     const editorialReviewStatus = UI.qs('#gameEditorialReviewStatus')?.value || '';
     const selectedVerificationStatus = UI.qs('#gameVerificationStatus')?.value || '';
     const verificationStatus = legacyVerified || editorialReviewStatus === 'verified' ? 'verified' : (selectedVerificationStatus || 'unverified');
-    return {
+    const roadmapField = UI.qs('#gameRoadmap');
+    const roadmapValue = roadmapField?.value || '';
+    const originalRoadmapValue = roadmapField?.dataset?.originalRoadmap || '';
+    const isEditingExistingGame = Boolean(UI.qs('#gameId')?.value?.trim());
+    const roadmapChanged = !isEditingExistingGame || roadmapValue !== originalRoadmapValue;
+    const roadmapLines = roadmapValue.split('\n').map(item => item.trim()).filter(Boolean);
+    const payload = {
       name: readField('#gameName'),
       difficulty: Number(UI.qs('#gameDifficulty').value),
       time: readField('#gameTime'),
       image: readField('#gameImage'),
       cover_image: readField('#gameCoverImage'),
       missable: missableSummary,
-      roadmap: UI.qs('#gameRoadmap').value.split('\n').map(item => item.trim()).filter(Boolean),
       runs: runsSummary,
       online: onlineSummary,
       grind: grindSummary,
@@ -136,6 +141,12 @@ window.AppAdmin = (() => {
       verification_note: readField('#gameVerificationNote'),
       trophies
     };
+    if (roadmapChanged && roadmapLines.length) {
+      payload.roadmap = roadmapLines;
+    } else if (!isEditingExistingGame) {
+      payload.roadmap = roadmapLines;
+    }
+    return payload;
   }
 
   function buildPreviewPayload({ UI, state, collectGameFormPayload }) {

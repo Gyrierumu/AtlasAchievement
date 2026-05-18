@@ -4639,82 +4639,88 @@ const sampleGames = [
     ],
     "roadmap": [
       {
-        "title": "Etapa 1 — Aprenda o combate e avance a campanha",
+        "title": "Aprenda o combate e avance a campanha",
         "focus": "Campanha / aprendizado",
-        "objective": "Entender a alternância entre Samurai Style e Ninja Style, estabilizar sua build inicial e atravessar as primeiras missões sem tentar limpar 100% do mapa cedo demais.",
+        "objective": "Entender Samurai Style, Ninja Style, troca de estilos, primeiras missões e ritmo de progressão antes de tentar limpar tudo.",
         "actions": [
-          "Complete o prólogo e as primeiras missões focando em sobrevivência, Ki, Burst Break e troca de estilos.",
-          "Teste armas e descubra rapidamente qual combinação funciona melhor para campanha e exploração.",
-          "Use side content próximo do seu nível para ganhar recursos e reduzir a curva dos primeiros chefes.",
-          "Não force limpeza total se algum ponto estiver bloqueado por Spirit Vein ou Guardian Spirit ainda não liberado."
+          "Avance pelo prólogo e pelas primeiras missões principais.",
+          "Treine a troca entre Samurai Style e Ninja Style.",
+          "Aprenda Burst Break, Ki, esquiva, defesa e leitura de inimigos.",
+          "Teste armas diferentes antes de fixar uma build.",
+          "Não force limpeza completa de regiões no início."
         ],
-        "warning": "O início tende a ser a parte mais severa do jogo. Se um caminho parecer travado, avance a história e volte depois.",
-        "result": "Campanha inicial estabilizada, estilos de combate assimilados e primeiras regiões abertas."
+        "warning": "O começo pode parecer severo; volte para pendências quando tiver mais recursos, Guardian Spirits e opções de build.",
+        "result": "Campanha encaminhada e base de combate pronta para o restante da platina."
       },
       {
-        "title": "Etapa 2 — Abra regiões, Guardian Spirits e Battle Scroll",
+        "title": "Abra regiões, Guardian Spirits e Battle Scroll",
         "focus": "Progresso / regiões",
-        "objective": "Desbloquear as quatro eras principais, os Guardian Spirits centrais, a exploração regional e o sistema de replay de missões necessário para cleanup.",
+        "objective": "Desbloquear regiões, sistemas de progressão, Guardian Spirits e ferramentas de replay antes do cleanup.",
         "actions": [
-          "Priorize a história principal até abrir novas eras, regiões e ferramentas de exploração.",
-          "Desbloqueie o Eternal Rift e use o hub para ferreiro, upgrades e organização do progresso.",
-          "Chegue ao ponto em que o Battle Scroll fica funcional para repetição de missões e correção de pendências.",
-          "Observe no mapa os trackers regionais e acostume-se a revisar o Exploration Level."
+          "Avance a história até liberar mais regiões.",
+          "Desbloqueie Guardian Spirits e recursos ligados à progressão.",
+          "Use o Battle Scroll/replay de missões para retornar a conteúdos pendentes.",
+          "Marque regiões com coletáveis, Myths ou objetivos incompletos.",
+          "Evite tratar Battle Scroll como Chapter Select tradicional se o projeto diferencia esses conceitos."
         ],
-        "warning": "Nioh 3 não deve ser tratado como jogo de Chapter Select tradicional; o replay útil aqui é o Battle Scroll.",
-        "result": "Mapa macro aberto, Guardian Spirits essenciais liberados e base pronta para exploração metódica."
+        "warning": "Não use badge “Chapter Select” tradicional se o jogo usa replay de missão/Battle Scroll em vez de seleção livre clássica de capítulos.",
+        "result": "Estrutura de replay e exploração regional pronta para limpeza organizada."
       },
       {
-        "title": "Etapa 3 — Limpe Myths, missões e coletáveis por região",
+        "title": "Limpe Myths, missões e coletáveis por região",
         "focus": "Missões / coletáveis",
-        "objective": "Reduzir o volume do cleanup deixando cada região o mais limpa possível antes da reta final.",
+        "objective": "Resolver atividades regionais, missões secundárias, Myths e coletáveis sem retrabalho.",
         "actions": [
-          "Complete Myths conforme surgirem, incluindo os ocultos quando a progressão já permitir acessá-los.",
-          "Varra por região Kodama, Chijiko, Six Jizo, hot springs, Scampusses, enemy bases e Lesser Crucibles.",
-          "Use o Exploration Level para abrir o mapa e facilitar a marcação automática dos itens restantes.",
-          "Ative named shrines e Bodhisattva Statues durante a campanha para não precisar reabrir missão por missão depois."
+          "Complete Myths e missões secundárias disponíveis.",
+          "Busque Kodama, Chijiko, Six Jizo, Hot Springs e Scampusses.",
+          "Limpe enemy bases, Lesser Crucibles e shrines/named shrines.",
+          "Use checklist por região para não repetir exploração.",
+          "Volte depois a áreas bloqueadas por progressão ou força insuficiente."
         ],
-        "warning": "Nem tudo precisa ser pego imediatamente; alguns pontos exigem backtracking após liberar Spirit Veins e Guardian Spirits específicos.",
-        "result": "Grande parte dos coletáveis relevantes para a platina fica resolvida antes do pós-jogo."
+        "warning": "",
+        "result": "Grande parte dos coletáveis e atividades regionais concluída."
       },
       {
-        "title": "Etapa 4 — Resolva progressão, proficiência e sistemas de ferraria",
-        "focus": "Proficiência / armas",
-        "objective": "Fechar troféus ligados a level, combate, Crucible weapon, Ninjutsu e recursos do ferreiro sem deixar tudo para o último momento.",
+        "title": "Resolva progressão, proficiência e sistemas de ferraria",
+        "focus": "Proficiência / sistemas",
+        "objective": "Fechar troféus ligados a level, armas, Ninjutsu, Soul Cores, ferreiro e sistemas de evolução.",
         "actions": [
-          "Garanta naturalmente troféus de level/progresso enquanto avança pela campanha e faz side content.",
-          "Trabalhe Crucible Arts, Arts Proficiency, Ninjutsu, Burst Break e Guardian Spirit durante a exploração.",
-          "Use o Eternal Rift para troféus ligados ao ferreiro, casamento de acessórios, remodelagem e upgrades quando os sistemas estiverem liberados.",
-          "Purifique Soul Cores e use sistemas de Yokai sem transformar isso em grind tardio desnecessário."
+          "Trabalhe proficiência de armas conforme os troféus exigirem.",
+          "Use Ninjutsu e sistemas de combate até cumprir requisitos específicos.",
+          "Colete e gerencie Soul Cores/Yokai abilities.",
+          "Use o ferreiro para forja, remodelagem ou melhorias exigidas.",
+          "Revise requisitos de Crucible weapon e artes relacionadas."
         ],
-        "warning": "Evite inventar requisito não sustentado pela lista, como um bloco obrigatório de Onmyo se a lista base não pedir explicitamente.",
-        "result": "Troféus de sistema, combate e ferreiro resolvidos em paralelo ao progresso normal."
+        "warning": "",
+        "result": "Troféus de progressão e sistemas avançados encaminhados."
       },
       {
-        "title": "Etapa 5 — Feche bosses opcionais e troféus situacionais",
+        "title": "Feche bosses opcionais e troféus situacionais",
         "focus": "Bosses / desafios",
-        "objective": "Concluir troféus que pedem condições específicas de missão, lutas opcionais e cadeias secundárias mais sensíveis.",
+        "objective": "Resolver chefes opcionais, desafios específicos e troféus que exigem ações concretas.",
         "actions": [
-          "Derrote bosses opcionais e inimigos especiais que tenham troféu próprio.",
-          "Revise troféus situacionais usando Battle Scroll quando necessário.",
-          "Complete cadeias secundárias e Myths ligados a objetivos específicos.",
-          "Resolva Teamwork de forma solo com NPCs/Acolytes, se essa alternativa estiver validada."
+          "Enfrente bosses opcionais pendentes quando sua build estiver pronta.",
+          "Complete requisitos ligados a Kunimatsu, Senji Toyo e desafios de santuário, se estiverem na lista.",
+          "Revise troféus situacionais que não vieram naturalmente.",
+          "Faça Teamwork com NPCs/Acolytes ou alternativa validada, sem marcar online obrigatório.",
+          "Repita missões específicas pelo Battle Scroll quando necessário."
         ],
-        "warning": "Esses troféus podem parecer perdíveis à primeira vista, mas devem ser tratados como situacionais de replay, não como perdíveis reais.",
-        "result": "Pendências específicas ficam limpas antes do fechamento da lista."
+        "warning": "Não marcar coop ou online como obrigatório se o requisito puder ser concluído com NPCs/Acolytes ou alternativa offline validada.",
+        "result": "Pendências de combate, bosses e situacionais resolvidas."
       },
       {
-        "title": "Etapa 6 — Faça o cleanup final da lista base",
-        "focus": "Cleanup final",
-        "objective": "Conferir os 51 troféus da lista base, separar qualquer conteúdo de Season Pass/Digital Deluxe e fechar os últimos trackers.",
+        "title": "Faça o cleanup final da lista base",
+        "focus": "Checklist final",
+        "objective": "Revisar os 51 troféus da lista base e fechar qualquer pendência sem misturar DLC ou conteúdo futuro.",
         "actions": [
-          "Revise o checklist completo de campanha, Myths, Kodama, Chijiko, Six Jizo, hot springs, Scampusses, enemy bases, Lesser Crucibles e shrines.",
-          "Use Battle Scroll e free roam para qualquer missão, diálogo ou condição de troféu que tenha ficado para trás.",
-          "Confirme que Teamwork não está sendo tratado como online obrigatório e que nenhum troféu está marcado indevidamente como perdível.",
-          "Mantenha DLC 1, DLC 2, Season Pass e qualquer conteúdo futuro fora do escopo da platina base."
+          "Confira campanha, regiões, Myths, coletáveis, proficiência, bosses e situacionais.",
+          "Confirme que não há troféus perdíveis reais na lista base.",
+          "Confirme que online, coop e DLC não foram tratados como obrigatórios.",
+          "Use replay/Battle Scroll para qualquer missão ou região restante.",
+          "Finalize o checklist antes de marcar o guia como verificado."
         ],
-        "warning": "Se algo estiver faltando depois do final, o caminho normal é replay/free roam, não reinício de run.",
-        "result": "Lista base concluída sem misturar Season Pass ou futuros extras à platina principal."
+        "warning": "",
+        "result": "Lista base concluída e platina pronta."
       }
     ],
     "trophies": [

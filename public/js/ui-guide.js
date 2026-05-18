@@ -381,7 +381,6 @@ window.UIGuide = (() => {
             <article class="atlas-roadmap-step__body">
               <div class="atlas-roadmap-step__head">
                 <div>
-                  <span>Etapa ${escapeHtml(String(stage.number))}</span>
                   <h3>${escapeHtml(stage.title)}</h3>
                 </div>
                 ${focusLabel ? `<span class="atlas-roadmap-step__category atlas-roadmap-step__category--${escapeAttribute(category.id || 'plan')}"><i class="fas ${escapeAttribute(category.icon || 'fa-route')}" aria-hidden="true"></i>${escapeHtml(focusLabel)}</span>` : ''}

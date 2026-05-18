@@ -7672,6 +7672,106 @@ async function assertPersistedRoadmapsUseSharedNormalizer(gamesService, guideMod
   }
 }
 
+async function assertAdminRoadmapUpdateProtection({ gamesService, all }) {
+  const { normalizeGamePayload } = require('../src/validators/game.validator');
+  const normalizeText = value => String(value || '')
+    .normalize('NFD')
+    .replace(/[\u0300-\u036f]/g, '')
+    .toLowerCase()
+    .trim();
+  const serializeRoadmap = roadmap => JSON.stringify((roadmap || []).map(step => ({
+    title: step.title,
+    focus: step.focus,
+    objective: step.objective,
+    actions: step.actions,
+    warning: step.warning,
+    result: step.result
+  })));
+  const expectedNioh3Titles = [
+    'Aprenda o combate e avance a campanha',
+    'Abra regioes, Guardian Spirits e Battle Scroll',
+    'Limpe Myths, missoes e coletaveis por regiao',
+    'Resolva progressao, proficiencia e sistemas de ferraria',
+    'Feche bosses opcionais e trofeus situacionais',
+    'Faca o cleanup final da lista base'
+  ];
+  const genericBrokenRoadmap = [
+    { title: 'Etapa 1', focus: 'Etapa', objective: 'Comece pela rota segura', actions: [] },
+    { title: 'Etapa 2', focus: 'Etapa', objective: 'Etapa 2', actions: [] }
+  ];
+
+  const nioh3 = await gamesService.getGameBySlug('nioh-3', { includeDrafts: true });
+  const originalNioh3Roadmap = serializeRoadmap(nioh3.roadmap);
+  assert.strictEqual(nioh3.roadmap.length, 6, 'Nioh 3 deve iniciar teste de admin com 6 etapas');
+
+  await gamesService.updateGame(nioh3.id, normalizeGamePayload({
+    verification_note: 'Teste automatizado de preservacao de roadmap'
+  }));
+  assert.strictEqual(serializeRoadmap((await gamesService.getGameBySlug('nioh-3', { includeDrafts: true })).roadmap), originalNioh3Roadmap, 'update admin sem roadmap no payload deve preservar roadmap existente');
+
+  await gamesService.updateGame(nioh3.id, normalizeGamePayload({
+    roadmap: undefined,
+    verification_note: 'Teste com roadmap undefined'
+  }));
+  assert.strictEqual(serializeRoadmap((await gamesService.getGameBySlug('nioh-3', { includeDrafts: true })).roadmap), originalNioh3Roadmap, 'update admin com roadmap undefined deve preservar roadmap existente');
+
+  const warnings = [];
+  const originalWarn = console.warn;
+  console.warn = message => warnings.push(String(message || ''));
+  try {
+    await gamesService.updateGame(nioh3.id, normalizeGamePayload({
+      roadmap: [],
+      verification_note: 'Teste com roadmap vazio'
+    }));
+    await gamesService.updateGame(nioh3.id, normalizeGamePayload({
+      roadmap: genericBrokenRoadmap,
+      verification_note: 'Teste com roadmap generico quebrado'
+    }));
+  } finally {
+    console.warn = originalWarn;
+  }
+  assert(warnings.filter(message => message.includes('Roadmap inválido recebido do admin; roadmap existente preservado.')).length >= 2, 'roadmap invalido recebido do admin deve gerar warning claro');
+  assert.strictEqual(serializeRoadmap((await gamesService.getGameBySlug('nioh-3', { includeDrafts: true })).roadmap), originalNioh3Roadmap, 'roadmap vazio/generico do admin deve ser rejeitado e preservar Nioh 3');
+
+  const restoredNioh3 = await gamesService.getGameBySlug('nioh-3', { includeDrafts: true });
+  expectedNioh3Titles.forEach((title, index) => {
+    assert.strictEqual(normalizeText(restoredNioh3.roadmap[index]?.title), normalizeText(title), `Nioh 3 deve preservar titulo real da etapa ${index + 1} apos updates do admin`);
+  });
+  assert(!/Etapa 1|Etapa 2|Comece pela rota segura|\[object Object\]/.test(JSON.stringify(restoredNioh3.roadmap)), 'Nioh 3 nao deve voltar ao fallback generico apos update admin');
+
+  const astro = await gamesService.getGameBySlug('astro-bot', { includeDrafts: true });
+  const originalAstroRoadmap = astro.roadmap;
+  const validRoadmap = [
+    {
+      title: 'Teste editorial valido',
+      focus: 'Validacao',
+      objective: 'Confirmar que roadmap estruturado real pode ser salvo pelo admin.',
+      actions: ['Salvar uma etapa estruturada real.', 'Confirmar bullets normalizados.'],
+      warning: '',
+      result: 'Roadmap valido persistido sem fallback.'
+    }
+  ];
+  await gamesService.updateGame(astro.id, normalizeGamePayload({ roadmap: validRoadmap }));
+  const updatedAstro = await gamesService.getGameBySlug('astro-bot', { includeDrafts: true });
+  assert.strictEqual(updatedAstro.roadmap.length, 1, 'roadmap valido recebido do admin deve substituir o roadmap existente');
+  assert.strictEqual(updatedAstro.roadmap[0].title, 'Teste editorial valido', 'roadmap valido deve ser salvo normalizado');
+  assert.deepStrictEqual(updatedAstro.roadmap[0].actions, validRoadmap[0].actions, 'actions validas devem ser preservadas como array de strings');
+  await gamesService.updateGame(astro.id, normalizeGamePayload({ roadmap: originalAstroRoadmap }));
+
+  const rows = await all('SELECT g.slug, r.content FROM roadmaps r JOIN games g ON g.id = r.game_id ORDER BY g.slug, r.step_order');
+  const forbidden = /\[object Object\]|\btitle\s*:|\bfocus\s*:|\bobjective\s*:|\bactions\s*:|\bwarning\s*:|\bresult\s*:|\s\|\s|comece pela rota segura|^etapa\s+2$|^passo\s+2$|^comece aqui$/i;
+  rows.forEach(row => {
+    let parsed = row.content;
+    try {
+      parsed = JSON.parse(row.content);
+    } catch (_error) {}
+    const text = Array.isArray(parsed?.actions)
+      ? [parsed.title, parsed.focus, parsed.objective, ...parsed.actions, parsed.warning, parsed.result].join('\n')
+      : String(parsed || '');
+    assert(!forbidden.test(normalizeText(text)), `${row.slug} nao deve persistir roadmap cru, serializado ou fallback generico`);
+  });
+}
+
 async function assertBackendEditorialConsistency() {
   const tempDir = fs.mkdtempSync(path.join(os.tmpdir(), 'atlas-smoke-'));
   process.env.NODE_ENV = 'test';
@@ -7700,6 +7800,7 @@ async function assertBackendEditorialConsistency() {
   await assertSeedSyncPreservesManualVerifiedStatus({ migrate, get, run });
   await assertAstrosPlayroomDuplicateMerge({ migrate, all, get, run });
   await assertPersistedRoadmapsUseSharedNormalizer(gamesService, guideModel);
+  await assertAdminRoadmapUpdateProtection({ gamesService, all });
   await assertSeedData({ all, get }, sampleGames);
 
   const gameColumns = await all('PRAGMA table_info(games)');
@@ -11453,8 +11554,11 @@ async function assertBackendEditorialConsistency() {
     assert.strictEqual(nioh3Detail.missable_count, 0, 'Nioh 3 nao deve marcar perdiveis');
     assert.strictEqual(nioh3Detail.spoiler_count, 18, 'Nioh 3 deve retornar spoiler_count coerente');
     assert.strictEqual(nioh3Detail.roadmap.length, 6, 'detalhe de Nioh 3 deve retornar roadmap de 6 etapas');
-    assert(nioh3Detail.roadmap.some(step => step.includes('Battle Scroll')), 'roadmap de Nioh 3 deve citar Battle Scroll');
-    assert(nioh3Detail.roadmap.some(step => step.includes('Kodama') && step.includes('Lesser Crucibles')), 'roadmap de Nioh 3 deve citar coletaveis e Crucibles');
+    const nioh3RoadmapStepText = step => typeof step === 'string'
+      ? step
+      : [step.title, step.focus, step.objective, ...(Array.isArray(step.actions) ? step.actions : []), step.warning, step.result].filter(Boolean).join(' ');
+    assert(nioh3Detail.roadmap.some(step => nioh3RoadmapStepText(step).includes('Battle Scroll')), 'roadmap de Nioh 3 deve citar Battle Scroll');
+    assert(nioh3Detail.roadmap.some(step => nioh3RoadmapStepText(step).includes('Kodama') && nioh3RoadmapStepText(step).includes('Lesser Crucibles')), 'roadmap de Nioh 3 deve citar coletaveis e Crucibles');
     assert(nioh3Detail.online_summary.includes('Não há troféus online obrigatórios'), 'detalhe de Nioh 3 deve indicar ausência de online obrigatório');
     assert(nioh3Detail.dlc_scope.includes('DLC futura'), 'detalhe de Nioh 3 deve manter DLC futura em escopo separado');
     assert.strictEqual(nioh3Detail.coverage_level, 'strong', 'Nioh 3 nao deve ser complete sem revisao manual');
@@ -13456,6 +13560,28 @@ function assertRoadmapRegressionProtection() {
       assert(stage.actions.length > 0, `${slug} deve manter actions em bullets na etapa ${index + 1}`);
       assertCleanStage(stage, `${slug} etapa ${index + 1}`);
     });
+  });
+
+  const nioh3 = sampleGames.find(item => item.slug === 'nioh-3');
+  const nioh3Stages = guideModel.buildGuideViewModel(nioh3, []).roadmapStages;
+  const nioh3ForbiddenFragments = [
+    'Etapa 1',
+    'Etapa 2',
+    'Comece pela rota segura',
+    '[object Object]',
+    'title:',
+    'focus:',
+    'objective:',
+    'actions:'
+  ];
+  assert.strictEqual(nioh3Stages.length, 6, 'Nioh 3 deve normalizar exatamente 6 etapas no roadmap');
+  expectedTitles['nioh-3'].forEach((title, index) => {
+    assert.strictEqual(normalizeTitle(nioh3Stages[index]?.title), normalizeTitle(title), `Nioh 3 deve manter titulo especifico da etapa ${index + 1}`);
+    assert(Array.isArray(nioh3Stages[index]?.actions) && nioh3Stages[index].actions.length > 0, `Nioh 3 deve manter actions em bullets na etapa ${index + 1}`);
+  });
+  const nioh3SerializedRoadmap = JSON.stringify(nioh3Stages);
+  nioh3ForbiddenFragments.forEach(fragment => {
+    assert(!nioh3SerializedRoadmap.includes(fragment), `Nioh 3 nao deve voltar ao fallback generico ou serializado: ${fragment}`);
   });
 }
 

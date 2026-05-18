@@ -24,7 +24,7 @@ async function getGameById(req, res) {
 
 async function createGame(req, res) {
   const payload = normalizeGamePayload(req.body);
-  const validation = validateGamePayload(payload);
+  const validation = validateGamePayload(payload, { requireRoadmap: true, requireTrophies: true });
   if (!validation.isValid) {
     const error = new Error('Payload inválido.');
     error.statusCode = 400;
@@ -39,7 +39,7 @@ async function createGame(req, res) {
 
 async function updateGame(req, res) {
   const payload = normalizeGamePayload(req.body);
-  const validation = validateGamePayload(payload);
+  const validation = validateGamePayload(payload, { requireCore: false, requireRoadmap: false, requireTrophies: false });
   if (!validation.isValid) {
     const error = new Error('Payload inválido.');
     error.statusCode = 400;

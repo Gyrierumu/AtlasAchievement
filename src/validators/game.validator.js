@@ -1,5 +1,6 @@
 const path = require('path');
 const AppError = require('../utils/AppError');
+const guideModel = require('../shared/guideViewModel');
 
 const ALLOWED_TROPHY_TYPES = ['Platina', 'Ouro', 'Prata', 'Bronze'];
 const ALLOWED_EDITORIAL_STATUSES = ['draft', 'review', 'published'];
@@ -89,11 +90,7 @@ function normalizeQualityWarnings(value) {
 function normalizeRoadmapStepPayload(step) {
   if (typeof step === 'string') return sanitizeString(step, 2000);
   if (step && typeof step === 'object' && !Array.isArray(step)) {
-    try {
-      return JSON.stringify(step);
-    } catch (_error) {
-      return '';
-    }
+    return step;
   }
   return sanitizeString(step, 2000);
 }
@@ -153,6 +150,8 @@ function isSafeImagePath(value) {
 }
 
 function normalizeGamePayload(payload = {}) {
+  const providedFields = Object.keys(payload || {});
+  const hasOwn = field => Object.prototype.hasOwnProperty.call(payload, field);
   const runsSummary = sanitizeString(payload.runs_summary ?? payload.runs ?? payload.guide_runs, 500);
   const missableSummary = sanitizeString(payload.missable_summary ?? payload.missable, 1000);
   const onlineSummary = sanitizeString(payload.online_summary ?? payload.online ?? payload.guide_online, 500);
@@ -167,7 +166,8 @@ function normalizeGamePayload(payload = {}) {
   const editorialReviewStatus = normalizeEditorialReviewStatus(payload.editorial_review_status ?? payload.editorialReviewStatus ?? payload.editorialStatus);
   const isVerified = Boolean(payload.is_verified) || requestedVerificationStatus === 'verified' || editorialReviewStatus === 'verified';
   const verificationStatus = isVerified ? 'verified' : requestedVerificationStatus;
-  return {
+  const normalized = {
+    _providedFields: providedFields,
     name: sanitizeString(payload.name, 120),
     difficulty: Number(payload.difficulty),
     time: sanitizeString(payload.time, 40),
@@ -203,10 +203,8 @@ function normalizeGamePayload(payload = {}) {
     verification_note: sanitizeString(payload.verification_note, 180),
     image: typeof payload.image === 'string' ? payload.image.trim() || null : null,
     cover_image: typeof payload.cover_image === 'string' ? payload.cover_image.trim() || null : null,
-    roadmap: Array.isArray(payload.roadmap)
-      ? payload.roadmap.map(normalizeRoadmapStepPayload).filter(Boolean)
-      : [],
-    trophies: Array.isArray(payload.trophies)
+    clearRoadmap: payload.clearRoadmap === true,
+    trophies: hasOwn('trophies') && Array.isArray(payload.trophies)
       ? payload.trophies.map(trophy => ({
           id: sanitizeString(trophy?.id, 60),
           name: sanitizeString(trophy?.name, 140),
@@ -217,30 +215,47 @@ function normalizeGamePayload(payload = {}) {
           is_missable: Boolean(trophy?.is_missable),
           is_spoiler: Boolean(trophy?.is_spoiler)
         }))
-      : []
+      : undefined
   };
+
+  if (hasOwn('roadmap')) {
+    normalized.roadmap = Array.isArray(payload.roadmap)
+      ? payload.roadmap.map(normalizeRoadmapStepPayload).filter(item => {
+          if (typeof item === 'string') return Boolean(item);
+          return Boolean(item && typeof item === 'object' && !Array.isArray(item));
+        })
+      : payload.roadmap;
+  } else {
+    normalized.roadmap = undefined;
+  }
+
+  return normalized;
 }
 
-function validateGamePayload(payload) {
+function validateGamePayload(payload, options = {}) {
+  const requireCore = options.requireCore !== false;
+  const requireRoadmap = options.requireRoadmap !== false;
+  const requireTrophies = options.requireTrophies !== false;
+  const hasProvided = field => !Array.isArray(payload._providedFields) || payload._providedFields.includes(field);
   const errors = [];
 
-  if (!isNonEmptyString(payload.name)) {
+  if ((requireCore || hasProvided('name')) && !isNonEmptyString(payload.name)) {
     errors.push('name é obrigatório.');
-  } else if (payload.name.length < 2 || payload.name.length > 120) {
+  } else if ((requireCore || hasProvided('name')) && (payload.name.length < 2 || payload.name.length > 120)) {
     errors.push('name deve ter entre 2 e 120 caracteres.');
   }
 
-  if (!Number.isInteger(payload.difficulty) || payload.difficulty < 1 || payload.difficulty > 10) {
+  if ((requireCore || hasProvided('difficulty')) && (!Number.isInteger(payload.difficulty) || payload.difficulty < 1 || payload.difficulty > 10)) {
     errors.push('difficulty deve ser um número inteiro entre 1 e 10.');
   }
 
-  if (!isNonEmptyString(payload.time)) {
+  if ((requireCore || hasProvided('time')) && !isNonEmptyString(payload.time)) {
     errors.push('time é obrigatório.');
-  } else if (!/\d/.test(payload.time)) {
+  } else if ((requireCore || hasProvided('time')) && !/\d/.test(payload.time)) {
     errors.push('time deve informar pelo menos um valor numérico de horas.');
   }
 
-  if (!isNonEmptyString(payload.missable)) {
+  if ((requireCore || hasProvided('missable') || hasProvided('missable_summary')) && !isNonEmptyString(payload.missable)) {
     errors.push('missable é obrigatório.');
   }
 
@@ -272,15 +287,16 @@ function validateGamePayload(payload) {
     errors.push('verification_status deve ser unverified, review ou verified.');
   }
 
-  if (!Array.isArray(payload.roadmap) || payload.roadmap.length === 0 || payload.roadmap.some(step => !isNonEmptyString(step))) {
+  if (requireRoadmap && !guideModel.isValidRoadmap(payload.roadmap)) {
     errors.push('roadmap deve ser um array com pelo menos um passo válido.');
-  } else if (payload.roadmap.length > 40) {
+  } else if (Array.isArray(payload.roadmap) && payload.roadmap.length > 40) {
     errors.push('roadmap aceita até 40 passos.');
   }
 
-  if (!Array.isArray(payload.trophies) || payload.trophies.length === 0) {
+  const shouldValidateTrophies = Array.isArray(payload.trophies);
+  if (requireTrophies && (!shouldValidateTrophies || payload.trophies.length === 0)) {
     errors.push('trophies deve ser um array com pelo menos um troféu.');
-  } else {
+  } else if (shouldValidateTrophies) {
     const ids = new Set();
 
     payload.trophies.forEach((trophy, index) => {

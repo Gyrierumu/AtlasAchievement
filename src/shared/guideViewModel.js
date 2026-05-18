@@ -1242,7 +1242,15 @@
     return !normalized
       || /^etapa\s+\d+$/.test(normalized)
       || /^passo\s+\d+$/.test(normalized)
-      || /^(comece aqui|plano|planeje a proxima run)$/.test(normalized);
+      || /^(comece aqui|comece pela rota segura|plano|planeje a proxima run)$/.test(normalized);
+  }
+
+  function isGenericRoadmapFocus(value = '') {
+    const normalized = normalizeGuideSignalText(String(value || '').trim());
+    return !normalized
+      || /^etapa(?:\s+\d+)?$/.test(normalized)
+      || /^passo(?:\s+\d+)?$/.test(normalized)
+      || /^(plano|roadmap|comece aqui|comece pela rota segura|planeje a proxima run)$/.test(normalized);
   }
 
   function safeRoadmapText(value = '', seen = new WeakSet()) {
@@ -1366,13 +1374,27 @@
     const relatedTrophies = isObject
       ? (Array.isArray(source?.trophies) ? source.trophies : (Array.isArray(source?.relatedTrophies) ? source.relatedTrophies : []))
       : [];
-    const rawTitleField = cleanRoadmapFieldText(structured?.title || (isObject ? (source.title || source.name || source.label) : '') || '');
+    const titleCandidates = [
+      structured?.title,
+      isObject ? source.title : '',
+      isObject ? source.name : '',
+      isObject ? source.label : '',
+      isObject && isRoadmapPlainObject(source.plan) ? source.plan.title : '',
+      isObject && isRoadmapPlainObject(source.summary) ? source.summary.title : '',
+      isObject && isRoadmapPlainObject(source.description) ? source.description.title : '',
+      isObject && isRoadmapPlainObject(source.detail) ? source.detail.title : '',
+      isObject && isRoadmapPlainObject(source.goal) ? source.goal.title : ''
+    ].map(cleanRoadmapFieldText).filter(Boolean);
+    const rawTitleField = titleCandidates.find(candidate => !isGenericRoadmapTitle(candidate)) || titleCandidates[0] || '';
     const titleIsStepLabel = /^Etapa\s+\d+$/i.test(rawTitleField) || /^Passo\s+\d+$/i.test(rawTitleField);
     const title = titleIsStepLabel ? '' : stripRoadmapStepPrefix(rawTitleField);
     const rawFocus = cleanRoadmapFieldText(structured?.focus || (isObject ? (source.focus || source.tag || source.category) : '') || '');
-    const explicitCategory = cleanRoadmapFieldText(isObject ? (source.category || source.type || source.phase || (titleIsStepLabel ? source.tag : '')) : '');
-    const displayTitle = titleIsStepLabel ? rawFocus : title;
-    const focus = explicitCategory || (titleIsStepLabel ? '' : rawFocus);
+    const rawCategory = cleanRoadmapFieldText(isObject ? (source.category || source.type || source.phase || (titleIsStepLabel ? source.tag : '')) : '');
+    const explicitCategory = isGenericRoadmapFocus(rawCategory) ? '' : rawCategory;
+    const explicitFocus = isGenericRoadmapFocus(rawFocus) ? '' : rawFocus;
+    const focusCandidate = explicitFocus || (titleIsStepLabel ? '' : explicitCategory);
+    const displayTitle = titleIsStepLabel && explicitFocus ? explicitFocus : title;
+    const focus = isGenericRoadmapFocus(focusCandidate) ? '' : focusCandidate;
     const objective = pickRoadmapText(
       structured?.objective,
       isObject ? source.objective : '',
@@ -1390,17 +1412,18 @@
     const result = cleanRoadmapFieldText(structured?.result || (isObject ? source.result : '') || '');
     const risk = cleanRoadmapFieldText(warning || (isObject ? source.risk : '') || '');
     const clean = stripRoadmapStepPrefix(cleanRoadmapFieldText(objective || (isSerializedRoadmapText(raw) ? structured?.objective : raw) || ''));
-    const explicitTitleCandidate = displayTitle || (titleIsStepLabel ? '' : cleanRoadmapFieldText(isObject ? (source.title || source.name || source.label) : ''));
+    const explicitTitleCandidate = displayTitle || (titleIsStepLabel ? '' : titleCandidates.find(candidate => !isGenericRoadmapTitle(candidate)) || '');
     const explicitTitle = isGenericRoadmapTitle(explicitTitleCandidate) ? '' : explicitTitleCandidate;
     const signalText = [displayTitle, focus, explicitCategory, clean, ...actions, warning, note].filter(Boolean).join(' ');
     const inferredCategory = classifyRoadmapStage(signalText || clean);
     const category = explicitCategory ? { ...inferredCategory, label: explicitCategory } : inferredCategory;
-    const inferredTitle = stripRoadmapStepPrefix(explicitTitle || inferRoadmapStageTitle(clean, index, total, explicitTitle));
-    const fallbackObjective = clean || actions[0] || inferredTitle || `Etapa ${index + 1}`;
+    const inferredTitleCandidate = stripRoadmapStepPrefix(explicitTitle || inferRoadmapStageTitle(clean, index, total, explicitTitle));
+    const inferredTitle = isGenericRoadmapTitle(inferredTitleCandidate) ? '' : inferredTitleCandidate;
+    const fallbackObjective = clean || actions[0] || inferredTitle || 'Siga esta etapa do roadmap.';
     const isStructured = Boolean(structured || jsonStep || (isObject && (title || focus || objective || actions.length || warning || result)));
     return {
       number: index + 1,
-      title: inferredTitle || `Etapa ${index + 1}`,
+      title: inferredTitle || 'Rota da platina',
       category,
       description: fallbackObjective,
       objective: fallbackObjective,
@@ -1413,6 +1436,83 @@
       relatedTrophies: relatedTrophies.map(item => cleanRoadmapFieldText(item)).filter(Boolean),
       isStructured
     };
+  }
+
+  function hasUnsafeRoadmapPersistenceText(value = '') {
+    const text = safeRoadmapText(value);
+    if (!text) return true;
+    return /\[object Object\]/i.test(text)
+      || /\b(title|focus|objective|actions|warning|result)\s*:/i.test(text)
+      || /\s\|\s/.test(text);
+  }
+
+  function isPureGenericRoadmapText(value = '') {
+    const normalized = normalizeGuideSignalText(cleanRoadmapFieldText(value));
+    return !normalized
+      || /^etapa\s+\d+$/.test(normalized)
+      || /^passo\s+\d+$/.test(normalized)
+      || /^(etapa|passo|comece aqui|comece pela rota segura|planeje a proxima run|plano|roadmap)$/.test(normalized);
+  }
+
+  function isUsefulRoadmapSaveText(value = '') {
+    const text = cleanRoadmapFieldText(value);
+    return Boolean(text && !hasUnsafeRoadmapPersistenceText(text) && !isPureGenericRoadmapText(text));
+  }
+
+  function normalizeRoadmapForSave(roadmap = []) {
+    if (!Array.isArray(roadmap)) return [];
+    return roadmap
+      .map((step, index) => normalizeRoadmapStep(step, index, roadmap.length))
+      .map(step => {
+        const title = isUsefulRoadmapSaveText(step.title) ? cleanRoadmapFieldText(step.title) : '';
+        const focus = isUsefulRoadmapSaveText(step.focus) ? cleanRoadmapFieldText(step.focus) : '';
+        const objective = isUsefulRoadmapSaveText(step.objective) ? cleanRoadmapFieldText(step.objective) : '';
+        const actions = (Array.isArray(step.actions) ? step.actions : [])
+          .map(cleanRoadmapFieldText)
+          .filter(isUsefulRoadmapSaveText);
+        const warning = isUsefulRoadmapSaveText(step.warning) ? cleanRoadmapFieldText(step.warning) : '';
+        const result = isUsefulRoadmapSaveText(step.result) ? cleanRoadmapFieldText(step.result) : '';
+        return {
+          title,
+          focus,
+          objective,
+          actions,
+          warning,
+          result
+        };
+      })
+      .filter(step => step.title && (step.objective || step.actions.length));
+  }
+
+  function isValidRoadmap(roadmap = []) {
+    if (!Array.isArray(roadmap) || roadmap.length === 0 || roadmap.length > 40) return false;
+    const hasUnsafeRawValue = roadmap.some(step => {
+      if (typeof step === 'string') return hasUnsafeRoadmapPersistenceText(step) || isPureGenericRoadmapText(step);
+      if (!isRoadmapPlainObject(step)) return true;
+      const values = [
+        step.title,
+        step.focus,
+        step.objective,
+        step.summary,
+        step.description,
+        step.plan,
+        step.warning,
+        step.result,
+        ...(Array.isArray(step.actions) ? step.actions : [])
+      ];
+      const texts = values
+        .filter(value => value !== null && value !== undefined)
+        .filter(value => safeRoadmapText(value));
+      if (texts.length && texts.every(value => !isRoadmapPlainObject(value) && !Array.isArray(value) && isPureGenericRoadmapText(value))) return true;
+      return texts.some(value => {
+        if (isRoadmapPlainObject(value) || Array.isArray(value)) return false;
+        return hasUnsafeRoadmapPersistenceText(value);
+      });
+    });
+    if (hasUnsafeRawValue) return false;
+    const normalized = normalizeRoadmapForSave(roadmap);
+    if (normalized.length !== roadmap.length) return false;
+    return normalized.every(step => step.title && (step.objective || step.actions.length));
   }
 
   function parseStructuredRoadmapStep(value = '') {
@@ -1470,7 +1570,7 @@
     if (/historia|campanha|prologo|ato|atos|run|runs|primeiras runs|spring meadows|monolith|paintress|back to lumiere/.test(normalized)) {
       return { id: 'story', label: 'História', icon: 'fa-book-open', tone: 'soft' };
     }
-    return { id: 'plan', label: 'Etapa', icon: 'fa-route', tone: 'soft' };
+    return { id: 'plan', label: 'Plano', icon: 'fa-route', tone: 'soft' };
   }
 
   function inferRoadmapStageTitle(text = '', index = 0, total = 1, explicitTitle = '') {
@@ -1525,12 +1625,12 @@
     if (/farm|grind|rng|\brank\b|\bxp\b|\bnivel\b|\blevel\b/.test(normalized)) return 'Planeje o grind principal';
     if (/run|campanha|historia|new game|ng\+?/.test(normalized)) return index === 0 ? 'Avance a campanha principal' : 'Continue a rota principal';
     if (/final|platina|100%|cem por cento/.test(normalized) || index === total - 1) return 'Fechamento e revisão final';
-    if (index === 0) return 'Etapa 1';
+    if (index === 0) return 'Rota inicial da platina';
 
     const firstClause = clean.split(/[.;:]/).map(part => part.trim()).find(Boolean) || clean;
     if (firstClause && firstClause.length <= 64) return firstClause;
     if (firstClause) return `${firstClause.slice(0, 61).trimEnd()}...`;
-    return `Etapa ${index + 1}`;
+    return 'Rota da platina';
   }
 
   function buildRoadmapStages(viewModel = {}) {
@@ -2608,6 +2708,8 @@
     buildRouteChangingTrophies,
     safeRoadmapText,
     normalizeRoadmapStep,
+    normalizeRoadmapForSave,
+    isValidRoadmap,
     buildDecisionRoadmapStages,
     buildRoadmapStages,
     buildContextualFaq,

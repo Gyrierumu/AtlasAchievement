@@ -41,6 +41,23 @@ function serializeRoadmapStep(step, index = 0, total = 1) {
   });
 }
 
+function hasPayloadField(payload = {}, field = '') {
+  if (Array.isArray(payload._providedFields)) return payload._providedFields.includes(field);
+  return Object.prototype.hasOwnProperty.call(payload, field);
+}
+
+function hasAnyPayloadField(payload = {}, fields = []) {
+  return fields.some(field => hasPayloadField(payload, field));
+}
+
+function normalizeRoadmapForPersistence(roadmap = []) {
+  return guideModel.normalizeRoadmapForSave(roadmap);
+}
+
+function warnInvalidAdminRoadmap() {
+  console.warn('Roadmap inválido recebido do admin; roadmap existente preservado.');
+}
+
 function deserializeRoadmapStep(content) {
   const text = String(content || '').trim();
   if (!text || !/^\{[\s\S]*\}$/.test(text)) return text;
@@ -765,15 +782,18 @@ async function getGameBySlug(slug, options = {}) {
   };
 }
 
-async function insertGameData(gameId, payload) {
-  for (let index = 0; index < payload.roadmap.length; index += 1) {
+async function insertRoadmapData(gameId, roadmap = []) {
+  const normalizedRoadmap = normalizeRoadmapForPersistence(roadmap);
+  for (let index = 0; index < normalizedRoadmap.length; index += 1) {
     await run(
       'INSERT INTO roadmaps (game_id, step_order, content) VALUES (?, ?, ?)',
-      [gameId, index + 1, serializeRoadmapStep(payload.roadmap[index], index, payload.roadmap.length).trim()]
+      [gameId, index + 1, serializeRoadmapStep(normalizedRoadmap[index], index, normalizedRoadmap.length).trim()]
     );
   }
+}
 
-  for (const trophy of payload.trophies) {
+async function insertTrophyData(gameId, trophies = []) {
+  for (const trophy of trophies) {
     await run(
       `INSERT INTO trophies (game_id, trophy_code, name, name_pt, type, description, tip, is_missable, is_spoiler)
        VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?)`,
@@ -790,6 +810,11 @@ async function insertGameData(gameId, payload) {
       ]
     );
   }
+}
+
+async function insertGameData(gameId, payload) {
+  await insertRoadmapData(gameId, payload.roadmap);
+  await insertTrophyData(gameId, payload.trophies);
 }
 
 
@@ -849,6 +874,63 @@ function buildEditorialPersistence(payload = {}) {
   };
 }
 
+function buildEffectiveUpdatePayload(existing = {}, payload = {}) {
+  const pick = (fields, incomingValue, existingValue) => (
+    hasAnyPayloadField(payload, fields) ? incomingValue : existingValue
+  );
+  const runsSummary = pick(['runs_summary', 'runs', 'guide_runs'], payload.runs_summary, firstText(existing.runs_summary, existing.guide_runs));
+  const missableSummary = pick(['missable_summary', 'missable'], payload.missable_summary, firstText(existing.missable_summary, existing.missable));
+  const onlineSummary = pick(['online_summary', 'online', 'guide_online'], payload.online_summary, firstText(existing.online_summary, existing.guide_online));
+  const grindSummary = pick(['grind_summary', 'grind', 'guide_grind'], payload.grind_summary, firstText(existing.grind_summary, existing.guide_grind));
+  const dlcScope = pick(['dlc_scope', 'dlc', 'guide_dlc'], payload.dlc_scope, firstText(existing.dlc_scope, existing.guide_dlc));
+  const bestFor = pick(['best_for', 'ideal_for', 'guide_ideal'], payload.best_for, firstText(existing.best_for, existing.guide_ideal));
+  const avoidIf = pick(['avoid_if', 'avoid_for', 'guide_avoid'], payload.avoid_if, firstText(existing.avoid_if, existing.guide_avoid));
+  const firstRunAdvice = pick(['first_run_advice', 'best_for_when', 'guide_best_moment'], payload.first_run_advice, firstText(existing.first_run_advice, existing.guide_best_moment));
+  const verificationStatus = pick(['verification_status', 'is_verified'], payload.verification_status, existing.verification_status || (existing.is_verified ? 'verified' : 'unverified'));
+  const editorialReviewStatus = pick(['editorial_review_status', 'editorialReviewStatus', 'editorialStatus'], payload.editorial_review_status, existing.editorial_review_status || '');
+
+  return {
+    ...payload,
+    name: pick(['name'], payload.name, existing.name),
+    difficulty: pick(['difficulty'], payload.difficulty, Number(existing.difficulty)),
+    time: pick(['time'], payload.time, existing.time),
+    missable: missableSummary,
+    runs: runsSummary,
+    online: onlineSummary,
+    grind: grindSummary,
+    dlc: dlcScope,
+    ideal_for: bestFor,
+    avoid_for: avoidIf,
+    best_for_when: pick(['best_for_when', 'first_run_advice', 'guide_best_moment'], payload.best_for_when, firstText(existing.guide_best_moment, firstRunAdvice)),
+    runs_summary: runsSummary,
+    missable_summary: missableSummary,
+    online_summary: onlineSummary,
+    grind_summary: grindSummary,
+    dlc_scope: dlcScope,
+    difficulty_reason: pick(['difficulty_reason'], payload.difficulty_reason, existing.difficulty_reason || ''),
+    time_reason: pick(['time_reason'], payload.time_reason, existing.time_reason || ''),
+    first_run_advice: firstRunAdvice,
+    cleanup_advice: pick(['cleanup_advice'], payload.cleanup_advice, existing.cleanup_advice || ''),
+    before_you_start: pick(['before_you_start'], payload.before_you_start, existing.before_you_start || ''),
+    best_for: bestFor,
+    avoid_if: avoidIf,
+    verification_status: verificationStatus,
+    editorial_status: pick(['editorial_status'], payload.editorial_status, existing.editorial_status || 'published'),
+    editorial_review_status: editorialReviewStatus,
+    last_reviewed_at: pick(['last_reviewed_at', 'lastReviewedAt'], payload.last_reviewed_at, existing.last_reviewed_at || ''),
+    editorial_notes: pick(['editorial_notes', 'editorialNotes'], payload.editorial_notes, existing.editorial_notes || ''),
+    quality_warnings: pick(['quality_warnings', 'qualityWarnings'], payload.quality_warnings, existing.quality_warnings || ''),
+    reviewed_by: pick(['reviewed_by', 'reviewedBy'], payload.reviewed_by, existing.reviewed_by || ''),
+    coverage_level: pick(['coverage_level'], payload.coverage_level, existing.coverage_level || ''),
+    is_verified: hasAnyPayloadField(payload, ['is_verified', 'verification_status', 'editorial_review_status', 'editorialReviewStatus', 'editorialStatus'])
+      ? payload.is_verified
+      : Boolean(existing.is_verified),
+    verification_note: pick(['verification_note'], payload.verification_note, existing.verification_note || ''),
+    image: pick(['image'], payload.image, existing.image || null),
+    cover_image: pick(['cover_image'], payload.cover_image, existing.cover_image || null)
+  };
+}
+
 async function createGame(payload) {
   const duplicate = await get('SELECT id FROM games WHERE lower(name) = lower(?)', [payload.name]);
   if (duplicate) {
@@ -897,24 +979,33 @@ async function updateGame(id, payload) {
     throw new AppError('Jogo não encontrado.', 404, null, 'GAME_NOT_FOUND');
   }
 
+  const effectivePayload = buildEffectiveUpdatePayload(existing, payload);
+
   const duplicate = await get(
     'SELECT id FROM games WHERE lower(name) = lower(?) AND id != ?',
-    [payload.name, id]
+    [effectivePayload.name, id]
   );
 
   if (duplicate) {
     throw new AppError('Já existe outro jogo com esse nome.', 409, null, 'GAME_NAME_CONFLICT');
   }
 
-  await ensureNoCanonicalSlugConflict(payload.name, id);
-  const slug = await reserveUniqueSlug(payload.name, id);
-  const timeMeta = formatTimeMetadata(payload.time);
-  const editorialStatus = normalizeEditorialStatus(payload.editorial_status);
-  const verificationNote = payload.verification_note || '';
-  const editorial = buildEditorialPersistence(payload);
+  await ensureNoCanonicalSlugConflict(effectivePayload.name, id);
+  const slug = await reserveUniqueSlug(effectivePayload.name, id);
+  const timeMeta = hasPayloadField(payload, 'time')
+    ? formatTimeMetadata(effectivePayload.time)
+    : {
+        time_min_hours: existing.time_min_hours,
+        time_max_hours: existing.time_max_hours,
+        time_sort_hours: existing.time_sort_hours,
+        time_bucket: existing.time_bucket
+      };
+  const editorialStatus = normalizeEditorialStatus(effectivePayload.editorial_status);
+  const verificationNote = effectivePayload.verification_note || '';
+  const editorial = buildEditorialPersistence(effectivePayload);
   const isVerified = editorial.verificationStatus === 'verified' ? 1 : 0;
-  const coverageLevel = normalizeCoverageLevel(payload.coverage_level, {
-    ...payload,
+  const coverageLevel = normalizeCoverageLevel(effectivePayload.coverage_level, {
+    ...effectivePayload,
     verification_status: editorial.verificationStatus,
     is_verified: isVerified
   });
@@ -922,20 +1013,31 @@ async function updateGame(id, payload) {
   await exec('BEGIN TRANSACTION');
 
   try {
-    const existingTrophyTranslations = await all(
-      'SELECT trophy_code, name_pt FROM trophies WHERE game_id = ?',
-      [id]
-    );
-    const existingNamePtByCode = new Map(existingTrophyTranslations
-      .filter(trophy => trophy.name_pt)
-      .map(trophy => [trophy.trophy_code, trophy.name_pt]));
-    const persistedPayload = {
-      ...payload,
-      trophies: payload.trophies.map(trophy => ({
+    const shouldReplaceTrophies = Array.isArray(payload.trophies);
+    const shouldConsiderRoadmap = hasPayloadField(payload, 'roadmap') && payload.roadmap !== undefined;
+    const shouldReplaceRoadmap = payload.clearRoadmap === true || (shouldConsiderRoadmap && guideModel.isValidRoadmap(payload.roadmap));
+    const normalizedIncomingRoadmap = shouldConsiderRoadmap && guideModel.isValidRoadmap(payload.roadmap)
+      ? normalizeRoadmapForPersistence(payload.roadmap)
+      : [];
+
+    if (shouldConsiderRoadmap && !shouldReplaceRoadmap) {
+      warnInvalidAdminRoadmap();
+    }
+
+    let persistedTrophies = [];
+    if (shouldReplaceTrophies) {
+      const existingTrophyTranslations = await all(
+        'SELECT trophy_code, name_pt FROM trophies WHERE game_id = ?',
+        [id]
+      );
+      const existingNamePtByCode = new Map(existingTrophyTranslations
+        .filter(trophy => trophy.name_pt)
+        .map(trophy => [trophy.trophy_code, trophy.name_pt]));
+      persistedTrophies = payload.trophies.map(trophy => ({
         ...trophy,
         name_pt: trophy.name_pt || existingNamePtByCode.get(trophy.id) || ''
-      }))
-    };
+      }));
+    }
 
     if (existing.slug && existing.slug !== slug) {
       await run('INSERT OR IGNORE INTO game_slug_redirects (game_id, slug) VALUES (?, ?)', [id, existing.slug]);
@@ -944,26 +1046,32 @@ async function updateGame(id, payload) {
 
     await run(
       'UPDATE games SET name = ?, slug = ?, difficulty = ?, time = ?, time_min_hours = ?, time_max_hours = ?, time_sort_hours = ?, time_bucket = ?, missable = ?, guide_runs = ?, guide_online = ?, guide_grind = ?, guide_dlc = ?, guide_ideal = ?, guide_avoid = ?, guide_best_moment = ?, runs_summary = ?, missable_summary = ?, online_summary = ?, grind_summary = ?, dlc_scope = ?, difficulty_reason = ?, time_reason = ?, first_run_advice = ?, cleanup_advice = ?, before_you_start = ?, best_for = ?, avoid_if = ?, verification_status = ?, editorial_status = ?, coverage_level = ?, is_verified = ?, verification_note = ?, editorial_review_status = ?, last_reviewed_at = ?, editorial_notes = ?, quality_warnings = ?, reviewed_by = ?, image = ?, cover_image = ? WHERE id = ?',
-      [payload.name.trim(), slug, payload.difficulty, payload.time.trim(), timeMeta.time_min_hours, timeMeta.time_max_hours, timeMeta.time_sort_hours, timeMeta.time_bucket, payload.missable.trim(), editorial.legacyRuns, editorial.legacyOnline, editorial.legacyGrind, editorial.legacyDlc, editorial.legacyIdeal, editorial.legacyAvoid, editorial.legacyBestMoment, editorial.runsSummary, editorial.missableSummary, editorial.onlineSummary, editorial.grindSummary, editorial.dlcScope, editorial.difficultyReason, editorial.timeReason, editorial.firstRunAdvice, editorial.cleanupAdvice, editorial.beforeYouStart, editorial.bestFor, editorial.avoidIf, editorial.verificationStatus, editorialStatus, coverageLevel, isVerified, verificationNote, editorial.editorialReviewStatus, editorial.lastReviewedAt, editorial.editorialNotes, editorial.qualityWarnings, editorial.reviewedBy, payload.image?.trim() || null, payload.cover_image?.trim() || null, id]
+      [effectivePayload.name.trim(), slug, effectivePayload.difficulty, effectivePayload.time.trim(), timeMeta.time_min_hours, timeMeta.time_max_hours, timeMeta.time_sort_hours, timeMeta.time_bucket, effectivePayload.missable.trim(), editorial.legacyRuns, editorial.legacyOnline, editorial.legacyGrind, editorial.legacyDlc, editorial.legacyIdeal, editorial.legacyAvoid, editorial.legacyBestMoment, editorial.runsSummary, editorial.missableSummary, editorial.onlineSummary, editorial.grindSummary, editorial.dlcScope, editorial.difficultyReason, editorial.timeReason, editorial.firstRunAdvice, editorial.cleanupAdvice, editorial.beforeYouStart, editorial.bestFor, editorial.avoidIf, editorial.verificationStatus, editorialStatus, coverageLevel, isVerified, verificationNote, editorial.editorialReviewStatus, editorial.lastReviewedAt, editorial.editorialNotes, editorial.qualityWarnings, editorial.reviewedBy, effectivePayload.image?.trim() || null, effectivePayload.cover_image?.trim() || null, id]
     );
 
-    await run('DELETE FROM roadmaps WHERE game_id = ?', [id]);
-    await run('DELETE FROM trophies WHERE game_id = ?', [id]);
-    await insertGameData(id, persistedPayload);
+    if (shouldReplaceRoadmap) {
+      await run('DELETE FROM roadmaps WHERE game_id = ?', [id]);
+      await insertRoadmapData(id, normalizedIncomingRoadmap);
+    }
+
+    if (shouldReplaceTrophies) {
+      await run('DELETE FROM trophies WHERE game_id = ?', [id]);
+      await insertTrophyData(id, persistedTrophies);
+    }
 
     await exec('COMMIT');
   } catch (error) {
     await exec('ROLLBACK').catch(() => {});
     await Promise.all([
-      payload.image && payload.image !== existing.image ? removeManagedUploadIfUnused(payload.image, id) : Promise.resolve(),
-      payload.cover_image && payload.cover_image !== existing.cover_image ? removeManagedUploadIfUnused(payload.cover_image, id) : Promise.resolve()
+      effectivePayload.image && effectivePayload.image !== existing.image ? removeManagedUploadIfUnused(effectivePayload.image, id) : Promise.resolve(),
+      effectivePayload.cover_image && effectivePayload.cover_image !== existing.cover_image ? removeManagedUploadIfUnused(effectivePayload.cover_image, id) : Promise.resolve()
     ]);
     throw error;
   }
 
   await Promise.all([
-    existing.image && existing.image !== payload.image ? removeManagedUploadIfUnused(existing.image, id) : Promise.resolve(),
-    existing.cover_image && existing.cover_image !== payload.cover_image ? removeManagedUploadIfUnused(existing.cover_image, id) : Promise.resolve()
+    existing.image && existing.image !== effectivePayload.image ? removeManagedUploadIfUnused(existing.image, id) : Promise.resolve(),
+    existing.cover_image && existing.cover_image !== effectivePayload.cover_image ? removeManagedUploadIfUnused(existing.cover_image, id) : Promise.resolve()
   ]);
 
   return getGameById(id, { includeDrafts: true });

@@ -44,6 +44,21 @@ window.UIAdminRender = (() => {
     return String(value || '').split(/\r?\n/).map(line => line.trim()).filter(Boolean).length;
   }
 
+  function getRoadmapStepAdminText(step = '') {
+    if (typeof step === 'string') return step.trim();
+    if (!step || typeof step !== 'object' || Array.isArray(step)) return '';
+    const title = String(step.title || step.name || step.label || '').trim();
+    const objective = String(step.objective || step.description || step.summary || step.detail || '').trim();
+    const focus = String(step.focus || step.category || '').trim();
+    return [title, focus, objective].filter(Boolean).join(' - ');
+  }
+
+  function getRoadmapAdminText(roadmap = []) {
+    return Array.isArray(roadmap)
+      ? roadmap.map(getRoadmapStepAdminText).filter(Boolean).join('\n')
+      : '';
+  }
+
   function updateAdminFieldMetrics() {
     qsa('[data-admin-count-for]').forEach(target => {
       const field = qs(`#${target.dataset.adminCountFor}`);
@@ -80,7 +95,7 @@ window.UIAdminRender = (() => {
     const target = qs('#adminPreviewContent');
     const openBtn = qs('#previewOpenPublicBtn');
     if (!target) return;
-    const roadmap = Array.isArray(game.roadmap) ? game.roadmap : [];
+    const roadmap = Array.isArray(game.roadmap) ? game.roadmap.map(getRoadmapStepAdminText).filter(Boolean) : [];
     const trophies = Array.isArray(game.trophies) ? game.trophies : [];
     const spoilerCount = trophies.filter(item => item.is_spoiler).length;
     const statusBadge = getEditorialBadge(game);
@@ -182,6 +197,7 @@ window.UIAdminRender = (() => {
     if (qs('#gameVerificationStatus')) qs('#gameVerificationStatus').value = 'unverified';
     if (qs('#gameIsVerified')) qs('#gameIsVerified').checked = false;
     if (qs('#gameVerificationNote')) qs('#gameVerificationNote').value = '';
+    if (qs('#gameRoadmap')) qs('#gameRoadmap').dataset.originalRoadmap = '';
     [
       '#gameMissable',
       '#gameRuns',
@@ -239,7 +255,9 @@ window.UIAdminRender = (() => {
     qs('#gameTime').value = game.time;
     if (qs('#gameCoverImage')) qs('#gameCoverImage').value = game.cover_image || '';
     qs('#gameMissable').value = missableSummary;
-    qs('#gameRoadmap').value = game.roadmap.join('\n');
+    const roadmapText = getRoadmapAdminText(game.roadmap);
+    qs('#gameRoadmap').value = roadmapText;
+    qs('#gameRoadmap').dataset.originalRoadmap = roadmapText;
     if (qs('#gameRuns')) qs('#gameRuns').value = runsSummary;
     if (qs('#gameOnline')) qs('#gameOnline').value = onlineSummary;
     if (qs('#gameGrind')) qs('#gameGrind').value = grindSummary;
