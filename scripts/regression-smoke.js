@@ -60,6 +60,7 @@ function loadBrowserScripts(relPaths, contextExtras = {}) {
 function assertHtmlLoadsModules(relPath) {
   const html = read(relPath);
   const scripts = Array.from(html.matchAll(/<script\s+src="([^"]+)"\s+defer><\/script>/g)).map(match => match[1]);
+  const scriptPaths = scripts.map(src => src.split('?')[0]);
   const expectedScriptsByPage = {
     'public/index.html': [
       '/js/api.js',
@@ -119,9 +120,10 @@ function assertHtmlLoadsModules(relPath) {
 
   const expectedScripts = expectedScriptsByPage[relPath];
   assert(expectedScripts, `Página de teste não mapeada: ${relPath}`);
-  assert.deepStrictEqual(scripts, expectedScripts, `${relPath} precisa carregar apenas os scripts esperados, na ordem correta`);
+  assert.deepStrictEqual(scriptPaths, expectedScripts, `${relPath} precisa carregar apenas os scripts esperados, na ordem correta`);
 
   if (relPath === 'public/index.html') {
+    assert(scripts.includes('/js/ui-guide.js?v=requiem-summary-20260519'), 'public/index.html deve versionar ui-guide.js para evitar cache antigo do resumo do Requiem');
     assert(html.includes('id="catalogIntentBar"'), 'public/index.html precisa do container de intenções do catálogo');
     assert(html.includes('id="catalogCompareTray"'), 'public/index.html precisa do tray de comparação do catálogo');
     assert(html.includes('id="librarySuggestions"'), 'public/index.html precisa do bloco de sugestões da biblioteca');
