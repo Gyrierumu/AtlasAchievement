@@ -29,7 +29,7 @@ window.UIFormatters = (() => {
   function buildGameSeoDescription(game = {}) {
     const name = String(game?.name || 'este jogo').trim() || 'este jogo';
     if (String(game?.slug || '').trim().toLowerCase() === 'elden-ring') {
-      return 'Guia de platina de Elden Ring em português, com tempo estimado, dificuldade, finais, armas lendárias, bosses, roadmap e checklist de troféus.';
+      return 'Guia de platina de Elden Ring em português, com tempo estimado, dificuldade, finais, armas lendárias, Bolt of Gransax, chefes, roadmap e checklist de troféus.';
     }
     if (String(game?.slug || '').trim().toLowerCase() === 'hades') {
       return 'Guia de platina de Hades em português, com tempo estimado, dificuldade, Pact of Punishment, relacionamentos, grind, roadmap e checklist de troféus.';
@@ -45,6 +45,9 @@ window.UIFormatters = (() => {
     }
     if (String(game?.slug || '').trim().toLowerCase() === 'saros') {
       return 'Guia de platina de Saros em português, com tempo estimado, dificuldade, troféus, roadmap, checklist, coletáveis, bosses e dicas para a platina.';
+    }
+    if (String(game?.slug || '').trim().toLowerCase() === 'resident-evil-requiem') {
+      return 'Guia de platina de Resident Evil Requiem em português, com tempo estimado, dificuldade, troféus, coletáveis, roadmap, checklist e dicas para a platina.';
     }
     if (String(game?.slug || '').trim().toLowerCase() === 'the-last-of-us-part-i') {
       return 'Guia de platina de The Last of Us Part I em português, com tempo estimado, dificuldade, troféus, coletáveis, Left Behind, Chapter Select, roadmap e checklist.';
@@ -85,6 +88,10 @@ window.UIFormatters = (() => {
 
   function buildGameGuideH1(game = {}) {
     const name = String(game?.name || 'Guia').trim() || 'Guia';
+    const hasPlatinum = Array.isArray(game?.trophies)
+      ? game.trophies.some(trophy => String(trophy?.type || '').trim().toLowerCase() === 'platina' || String(trophy?.type || '').trim().toLowerCase() === 'platinum')
+      : Boolean(game?.platinumType || game?.platinum_type);
+    if (hasPlatinum) return `${name} — Guia de platina e troféus`;
     return name;
   }
 

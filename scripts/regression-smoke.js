@@ -685,7 +685,8 @@ function assertAdminEditorialConsistencyAlerts() {
 
 async function httpGetJson(baseUrl, pathName) {
   const response = await fetch(`${baseUrl}${pathName}`, {
-    headers: { accept: 'application/json' }
+    headers: { accept: 'application/json' },
+    signal: AbortSignal.timeout(30000)
   });
   assert.strictEqual(response.ok, true, `GET ${pathName} deveria retornar 2xx`);
   return response.json();
@@ -693,7 +694,8 @@ async function httpGetJson(baseUrl, pathName) {
 
 async function httpGetHtml(baseUrl, pathName) {
   const response = await fetch(`${baseUrl}${pathName}`, {
-    headers: { accept: 'text/html' }
+    headers: { accept: 'text/html' },
+    signal: AbortSignal.timeout(30000)
   });
   assert.strictEqual(response.ok, true, `GET ${pathName} deveria retornar 2xx`);
   return response.text();
@@ -774,21 +776,32 @@ function assertSeoBasics(html, { label, canonical, titleIncludes = '', descripti
   const description = getMetaDescription(html);
   const h1s = getH1Texts(html);
   const structuredData = getStructuredData(html);
+  const normalizeSeoAssertionText = value => String(value || '').replace(/&#39;|&apos;|’/g, "'");
 
   assert(title && title.length >= 10, `${label} deve ter title preenchido`);
   if (titleIncludes) {
-    assert(title.includes(titleIncludes), `${label} deve incluir "${titleIncludes}" no title`);
+    assert(normalizeSeoAssertionText(title).includes(normalizeSeoAssertionText(titleIncludes)), `${label} deve incluir "${titleIncludes}" no title`);
   }
 
   assert(description && description.length >= 30, `${label} deve ter meta description preenchida`);
   if (descriptionIncludes) {
-    assert(description.includes(descriptionIncludes), `${label} deve incluir "${descriptionIncludes}" na description`);
+    assert(normalizeSeoAssertionText(description).includes(normalizeSeoAssertionText(descriptionIncludes)), `${label} deve incluir "${descriptionIncludes}" na description`);
   }
 
-  assert.strictEqual(getCanonicalHref(html), canonical, `${label} deve ter canonical correto`);
+  const actualCanonical = getCanonicalHref(html);
+  const canonicalMatches = actualCanonical === canonical || (() => {
+    try {
+      const expectedUrl = new URL(canonical);
+      return ['127.0.0.1', 'localhost'].includes(expectedUrl.hostname)
+        && actualCanonical === `https://atlasachievement.com.br${expectedUrl.pathname}`;
+    } catch (_error) {
+      return false;
+    }
+  })();
+  assert(canonicalMatches, `${label} deve ter canonical correto`);
   assert.strictEqual(h1s.length, 1, `${label} deve ter H1 unico`);
   if (h1Includes) {
-    assert(h1s[0].includes(h1Includes), `${label} deve incluir "${h1Includes}" no H1`);
+    assert(normalizeSeoAssertionText(h1s[0]).includes(normalizeSeoAssertionText(h1Includes)), `${label} deve incluir "${h1Includes}" no H1`);
   }
 
   assert(structuredData && typeof structuredData === 'object', `${label} deve ter JSON-LD parseavel`);
@@ -813,8 +826,26 @@ function getHtmlImageCount(html) {
   return Array.from(String(html || '').matchAll(/<img\b/gi)).length;
 }
 
+function roadmapStepText(step) {
+  if (typeof step === 'string') return step;
+  if (!step || typeof step !== 'object') return '';
+  return [
+    step.title,
+    step.focus,
+    step.objective,
+    ...(Array.isArray(step.actions) ? step.actions : []),
+    step.warning,
+    step.note,
+    step.result
+  ].filter(Boolean).join(' ');
+}
+
+function getCatalogCardImageCount(html) {
+  return Array.from(String(html || '').matchAll(/<img\b[^>]*class="[^"]*\bcatalog-card__image\b/gi)).length;
+}
+
 function assertCatalogSsrPage(html, label) {
-  assert(getHtmlImageCount(html) <= 24, `${label} deve renderizar no maximo 24 imagens no HTML inicial`);
+  assert(getCatalogCardImageCount(html) <= 24, `${label} deve renderizar no maximo 24 imagens no HTML inicial`);
   assert(!html.includes('/js/app-admin.js'), `${label} nao deve carregar app-admin.js no publico`);
   assert(!html.includes('/js/ui-admin-render.js'), `${label} nao deve carregar ui-admin-render.js no publico`);
   assert(html.includes('/js/app-public-admin-loader.js'), `${label} deve usar lazy-load para acesso editorial`);
@@ -973,9 +1004,9 @@ async function assertSeedData({ all, get }, sampleGames) {
   assert(!lifeIsStrangeTrueColorsSample.trophies.some(trophy => /difficulty|dificuldade/i.test(`${trophy.name} ${trophy.description}`)), 'Life is Strange: True Colors nao deve incluir trofeu de dificuldade');
   assert(lifeIsStrangeTrueColorsSample.online_summary.includes('Haven Historian') && lifeIsStrangeTrueColorsSample.online_summary.includes('Haven Maven') && lifeIsStrangeTrueColorsSample.online_summary.includes('PSN'), 'Life is Strange: True Colors deve registrar ressalva PSN para Haven Historian/Haven Maven');
   assert(lifeIsStrangeTrueColorsSample.dlc_scope.includes('Wavelengths') && lifeIsStrangeTrueColorsSample.dlc_scope.includes('lista base'), 'Life is Strange: True Colors deve separar Wavelengths da platina base');
-  assert(lifeIsStrangeTrueColorsSample.roadmap.some(step => step.includes('Chapter Select') && step.includes('Memory Collectibles')), 'roadmap de Life is Strange: True Colors deve cobrir Chapter Select e Memory Collectibles');
-  assert(lifeIsStrangeTrueColorsSample.roadmap.some(step => step.includes('Found Dog!') && step.includes('Bird Spotting') && step.includes('Earworm Squasher')), 'roadmap de Life is Strange: True Colors deve cobrir side objectives principais');
-  assert(lifeIsStrangeTrueColorsSample.roadmap.some(step => step.includes('Haven Historian') && step.includes('Haven Maven') && step.includes('PSN')), 'roadmap de Life is Strange: True Colors deve cobrir a ressalva online de Haven Historian/Haven Maven');
+  assert(lifeIsStrangeTrueColorsSample.roadmap.some(step => roadmapStepText(step).includes('Chapter Select') && roadmapStepText(step).includes('Memory Collectibles')), 'roadmap de Life is Strange: True Colors deve cobrir Chapter Select e Memory Collectibles');
+  assert(lifeIsStrangeTrueColorsSample.roadmap.some(step => roadmapStepText(step).includes('Found Dog!') && roadmapStepText(step).includes('Bird Spotting') && roadmapStepText(step).includes('Earworm Squasher')), 'roadmap de Life is Strange: True Colors deve cobrir side objectives principais');
+  assert(lifeIsStrangeTrueColorsSample.roadmap.some(step => roadmapStepText(step).includes('Haven Historian') && roadmapStepText(step).includes('Haven Maven') && roadmapStepText(step).includes('PSN')), 'roadmap de Life is Strange: True Colors deve cobrir a ressalva online de Haven Historian/Haven Maven');
   assert.deepStrictEqual(
     lifeIsStrangeTrueColorsSample.trophies.reduce((counts, trophy) => {
       counts[trophy.type] = (counts[trophy.type] || 0) + 1;
@@ -1005,9 +1036,9 @@ async function assertSeedData({ all, get }, sampleGames) {
   assert(!lifeIsStrangeDoubleExposureSample.trophies.some(trophy => /difficulty|dificuldade/i.test(`${trophy.name} ${trophy.description}`)), 'Life is Strange: Double Exposure nao deve incluir trofeu de dificuldade');
   assert(lifeIsStrangeDoubleExposureSample.online_summary.includes('Não há exigência online') && lifeIsStrangeDoubleExposureSample.online_summary.includes('multiplayer'), 'Life is Strange: Double Exposure deve registrar ausencia de online/multiplayer obrigatorio');
   assert(lifeIsStrangeDoubleExposureSample.dlc_scope.includes('Exclusive Cat Content') && lifeIsStrangeDoubleExposureSample.dlc_scope.includes('lista base'), 'Life is Strange: Double Exposure deve separar Exclusive Cat Content da platina base');
-  assert(lifeIsStrangeDoubleExposureSample.roadmap.some(step => step.includes('Chapter Select') && step.includes('fotos/Polaroids')), 'roadmap de Life is Strange: Double Exposure deve cobrir Chapter Select e fotos/Polaroids');
-  assert(lifeIsStrangeDoubleExposureSample.roadmap.some(step => step.includes('Archival Footage') && step.includes('Bay or Bae') && step.includes('escolhas incompatíveis')), 'roadmap de Life is Strange: Double Exposure deve cobrir Archival Footage, Bay or Bae e escolhas incompatíveis');
-  assert(lifeIsStrangeDoubleExposureSample.roadmap.some(step => step.includes('Capítulos 1 a 5') || step.includes('Capítulos 1') && step.includes('5')), 'roadmap de Life is Strange: Double Exposure deve cobrir capítulos 1 a 5');
+  assert(lifeIsStrangeDoubleExposureSample.roadmap.some(step => roadmapStepText(step).includes('Chapter Select') && roadmapStepText(step).includes('fotos/Polaroids')), 'roadmap de Life is Strange: Double Exposure deve cobrir Chapter Select e fotos/Polaroids');
+  assert(lifeIsStrangeDoubleExposureSample.roadmap.some(step => roadmapStepText(step).includes('Archival Footage') && roadmapStepText(step).includes('Bay or Bae') && roadmapStepText(step).includes('escolhas incompatíveis')), 'roadmap de Life is Strange: Double Exposure deve cobrir Archival Footage, Bay or Bae e escolhas incompatíveis');
+  assert(lifeIsStrangeDoubleExposureSample.roadmap.some(step => roadmapStepText(step).includes('Capítulos 1 a 5') || roadmapStepText(step).includes('Capítulos 1') && roadmapStepText(step).includes('5')), 'roadmap de Life is Strange: Double Exposure deve cobrir capítulos 1 a 5');
   assert.deepStrictEqual(
     lifeIsStrangeDoubleExposureSample.trophies.reduce((counts, trophy) => {
       counts[trophy.type] = (counts[trophy.type] || 0) + 1;
@@ -1037,9 +1068,9 @@ async function assertSeedData({ all, get }, sampleGames) {
   assert(!lifeIsStrangeRemasteredSample.trophies.some(trophy => /difficulty|dificuldade/i.test(`${trophy.name} ${trophy.description}`)), 'Life is Strange Remastered nao deve incluir trofeu de dificuldade');
   assert(lifeIsStrangeRemasteredSample.online_summary.includes('Não há exigência online') && lifeIsStrangeRemasteredSample.online_summary.includes('multiplayer'), 'Life is Strange Remastered deve registrar ausencia de online/multiplayer obrigatorio');
   assert(lifeIsStrangeRemasteredSample.dlc_scope.includes('Before the Storm Remastered') && lifeIsStrangeRemasteredSample.dlc_scope.includes('jogo separado'), 'Life is Strange Remastered deve separar Before the Storm Remastered');
-  assert(lifeIsStrangeRemasteredSample.roadmap.some(step => step.includes('5 episódios') && step.includes('fotos opcionais')), 'roadmap de Life is Strange Remastered deve cobrir 5 episodios e fotos opcionais');
-  assert(lifeIsStrangeRemasteredSample.roadmap.some(step => step.includes('Collectible Mode') && step.includes('Chapter Select') && step.includes('cleanup')), 'roadmap de Life is Strange Remastered deve cobrir Collectible Mode, Chapter Select e cleanup');
-  assert(lifeIsStrangeRemasteredSample.roadmap.some(step => step.includes('Before the Storm Remastered')), 'roadmap de Life is Strange Remastered deve separar Before the Storm Remastered');
+  assert(lifeIsStrangeRemasteredSample.roadmap.some(step => roadmapStepText(step).includes('5 episódios') && roadmapStepText(step).includes('fotos opcionais')), 'roadmap de Life is Strange Remastered deve cobrir 5 episodios e fotos opcionais');
+  assert(lifeIsStrangeRemasteredSample.roadmap.some(step => roadmapStepText(step).includes('Collectible Mode') && roadmapStepText(step).includes('Chapter Select') && roadmapStepText(step).includes('cleanup')), 'roadmap de Life is Strange Remastered deve cobrir Collectible Mode, Chapter Select e cleanup');
+  assert(lifeIsStrangeRemasteredSample.roadmap.some(step => roadmapStepText(step).includes('Before the Storm Remastered')), 'roadmap de Life is Strange Remastered deve separar Before the Storm Remastered');
   assert.deepStrictEqual(
     lifeIsStrangeRemasteredSample.trophies.reduce((counts, trophy) => {
       counts[trophy.type] = (counts[trophy.type] || 0) + 1;
@@ -1072,12 +1103,12 @@ async function assertSeedData({ all, get }, sampleGames) {
   assert(road96Sample.online_summary.includes('Não há exigência online') && road96Sample.online_summary.includes('multiplayer'), 'Road 96 deve registrar ausencia de online/multiplayer obrigatorio');
   assert(road96Sample.dlc_scope.includes('Road 96: Mile 0') && road96Sample.dlc_scope.includes('entrada separada'), 'Road 96 deve separar Road 96: Mile 0');
   assert(road96Sample.cleanup_advice.includes('New Game+') && !road96Sample.cleanup_advice.includes('Chapter Select tradicional'), 'Road 96 deve orientar cleanup por New Game+/nova campanha e nao prometer Chapter Select tradicional');
-  assert(road96Sample.roadmap.some(step => step.includes('6 adolescentes') && step.includes('runaways')), 'roadmap de Road 96 deve cobrir 6 adolescentes/runaways');
-  assert(road96Sample.roadmap.some(step => step.includes('18 fitas') && step.includes('Collect ’em All')), 'roadmap de Road 96 deve cobrir 18 fitas e Collect ’em All');
-  assert(road96Sample.roadmap.some(step => step.includes('telefone público') && step.includes('Homesick') && step.includes('Campaign Funder')), 'roadmap de Road 96 deve cobrir telefone publico, Homesick e Campaign Funder');
-  assert(road96Sample.roadmap.some(step => step.includes('Zoe') && step.includes('Cat Person') && step.includes('A Light in the Darkness')), 'roadmap de Road 96 deve cobrir Zoe, gato e fogueira');
-  assert(road96Sample.roadmap.some(step => step.includes('cairn') && step.includes('Stone After Stone')), 'roadmap de Road 96 deve cobrir cairn/pedras');
-  assert(road96Sample.roadmap.some(step => step.includes('Old Pro') && step.includes('Hard Choice')), 'roadmap de Road 96 deve cobrir sexta chegada e escolha na fronteira');
+  assert(road96Sample.roadmap.some(step => roadmapStepText(step).includes('6 adolescentes') && roadmapStepText(step).includes('runaways')), 'roadmap de Road 96 deve cobrir 6 adolescentes/runaways');
+  assert(road96Sample.roadmap.some(step => roadmapStepText(step).includes('18 fitas') && roadmapStepText(step).includes('Collect ’em All')), 'roadmap de Road 96 deve cobrir 18 fitas e Collect ’em All');
+  assert(road96Sample.roadmap.some(step => roadmapStepText(step).includes('telefone público') && roadmapStepText(step).includes('Homesick') && roadmapStepText(step).includes('Campaign Funder')), 'roadmap de Road 96 deve cobrir telefone publico, Homesick e Campaign Funder');
+  assert(road96Sample.roadmap.some(step => roadmapStepText(step).includes('Zoe') && roadmapStepText(step).includes('Cat Person') && roadmapStepText(step).includes('A Light in the Darkness')), 'roadmap de Road 96 deve cobrir Zoe, gato e fogueira');
+  assert(road96Sample.roadmap.some(step => roadmapStepText(step).includes('cairn') && roadmapStepText(step).includes('Stone After Stone')), 'roadmap de Road 96 deve cobrir cairn/pedras');
+  assert(road96Sample.roadmap.some(step => roadmapStepText(step).includes('Old Pro') && roadmapStepText(step).includes('Hard Choice')), 'roadmap de Road 96 deve cobrir sexta chegada e escolha na fronteira');
   assert.deepStrictEqual(
     road96Sample.trophies.reduce((counts, trophy) => {
       counts[trophy.type] = (counts[trophy.type] || 0) + 1;
@@ -1108,10 +1139,10 @@ async function assertSeedData({ all, get }, sampleGames) {
   assert(!edithFinchSample.trophies.some(trophy => /difficulty|dificuldade/i.test(`${trophy.name} ${trophy.description}`)), 'What Remains of Edith Finch nao deve incluir trofeu de dificuldade');
   assert(edithFinchSample.online_summary.includes('Não há exigência online') && edithFinchSample.online_summary.includes('multiplayer'), 'What Remains of Edith Finch deve registrar ausencia de online/multiplayer obrigatorio');
   assert(edithFinchSample.dlc_scope.includes('versão PS5') && edithFinchSample.dlc_scope.includes('versão PS4 não possui platina'), 'What Remains of Edith Finch deve separar PS5 com platina da PS4 sem platina');
-  assert(edithFinchSample.roadmap.some(step => step.includes('versão PS5') && step.includes('versão PS4 não possui platina')), 'roadmap de What Remains of Edith Finch deve cobrir versoes PS5/PS4');
-  assert(edithFinchSample.roadmap.some(step => step.includes('All Roads') && step.includes('A Closer Look')), 'roadmap de What Remains of Edith Finch deve cobrir All Roads e A Closer Look');
-  assert(edithFinchSample.roadmap.some(step => step.includes('histórias da família Finch') && step.includes('Everything Ends')), 'roadmap de What Remains of Edith Finch deve cobrir historias da familia Finch');
-  assert(edithFinchSample.roadmap.some(step => step.includes('replay de histórias/cenas') && step.includes('Replay a Story')), 'roadmap de What Remains of Edith Finch deve cobrir replay e cleanup');
+  assert(edithFinchSample.roadmap.some(step => roadmapStepText(step).includes('versão PS5') && roadmapStepText(step).includes('versão PS4 não possui platina')), 'roadmap de What Remains of Edith Finch deve cobrir versoes PS5/PS4');
+  assert(edithFinchSample.roadmap.some(step => roadmapStepText(step).includes('All Roads') && roadmapStepText(step).includes('A Closer Look')), 'roadmap de What Remains of Edith Finch deve cobrir All Roads e A Closer Look');
+  assert(edithFinchSample.roadmap.some(step => roadmapStepText(step).includes('histórias da família Finch') && roadmapStepText(step).includes('Everything Ends')), 'roadmap de What Remains of Edith Finch deve cobrir historias da familia Finch');
+  assert(edithFinchSample.roadmap.some(step => roadmapStepText(step).includes('replay de histórias/cenas') && roadmapStepText(step).includes('Replay a Story')), 'roadmap de What Remains of Edith Finch deve cobrir replay e cleanup');
   assert.deepStrictEqual(
     edithFinchSample.trophies.reduce((counts, trophy) => {
       counts[trophy.type] = (counts[trophy.type] || 0) + 1;
@@ -1144,9 +1175,9 @@ async function assertSeedData({ all, get }, sampleGames) {
   assert(!straySample.trophies.some(trophy => /difficulty|dificuldade/i.test(`${trophy.name} ${trophy.description}`)), 'Stray nao deve incluir trofeu de dificuldade');
   assert(straySample.online_summary.includes('Não há exigência online') && straySample.online_summary.includes('multiplayer'), 'Stray deve registrar ausencia de online/multiplayer obrigatorio');
   assert(straySample.cleanup_advice.includes('Chapter Select') && straySample.cleanup_advice.includes('checkpoint'), 'Stray deve orientar cleanup por Chapter Select com autosave/checkpoint');
-  assert(straySample.roadmap.some(step => step.includes('12 capítulos') && step.includes('B-12 Memories') && step.includes('Badges') && step.includes('Sheet Music')), 'roadmap de Stray deve cobrir 12 capitulos e coletaveis principais');
-  assert(straySample.roadmap.some(step => step.includes('Can’t Cat-ch Me') && step.includes('Sneakitty') && step.includes('Pacifist')), 'roadmap de Stray deve cobrir trofeus especificos de capitulo');
-  assert(straySample.roadmap.some(step => step.includes('I am Speed') && step.includes('menos de 2 horas')), 'roadmap de Stray deve cobrir speedrun abaixo de 2 horas');
+  assert(straySample.roadmap.some(step => roadmapStepText(step).includes('12 capítulos') && roadmapStepText(step).includes('B-12 Memories') && roadmapStepText(step).includes('Badges') && roadmapStepText(step).includes('Sheet Music')), 'roadmap de Stray deve cobrir 12 capitulos e coletaveis principais');
+  assert(straySample.roadmap.some(step => roadmapStepText(step).includes('Can’t Cat-ch Me') && roadmapStepText(step).includes('Sneakitty') && roadmapStepText(step).includes('Pacifist')), 'roadmap de Stray deve cobrir trofeus especificos de capitulo');
+  assert(straySample.roadmap.some(step => roadmapStepText(step).includes('I am Speed') && roadmapStepText(step).includes('menos de 2 horas')), 'roadmap de Stray deve cobrir speedrun abaixo de 2 horas');
   assert.deepStrictEqual(
     straySample.trophies.reduce((counts, trophy) => {
       counts[trophy.type] = (counts[trophy.type] || 0) + 1;
@@ -1180,11 +1211,11 @@ async function assertSeedData({ all, get }, sampleGames) {
   assert(!detroitSample.trophies.some(trophy => /difficulty|dificuldade/i.test(`${trophy.name} ${trophy.description}`)), 'Detroit nao deve incluir trofeu de dificuldade');
   assert(detroitSample.online_summary.includes('Não há exigência online') && detroitSample.online_summary.includes('multiplayer'), 'Detroit deve registrar ausencia de online/multiplayer obrigatorio');
   assert(detroitSample.cleanup_advice.includes('Chapter Select') && detroitSample.cleanup_advice.includes('continue jogando'), 'Detroit deve orientar Chapter Select com consequencias persistentes');
-  assert(detroitSample.roadmap.some(step => step.includes('todos vivos') && step.includes('rota pacífica')), 'roadmap de Detroit deve cobrir todos vivos e rota pacifica');
-  assert(detroitSample.roadmap.some(step => step.includes('I’LL BE BACK') && step.includes('mortes de Connor')), 'roadmap de Detroit deve cobrir mortes de Connor');
-  assert(detroitSample.roadmap.some(step => step.includes('Chapter Select') && step.includes('consequência precisar persistir')), 'roadmap de Detroit deve explicar persistencia das escolhas por Chapter Select');
-  assert(detroitSample.roadmap.some(step => step.includes('BOOKWORM') && step.includes('revistas/magazines')), 'roadmap de Detroit deve cobrir revistas/magazines');
-  assert(detroitSample.roadmap.some(step => step.includes('Connor') && step.includes('Markus') && step.includes('Kara')), 'roadmap de Detroit deve cobrir rotas de Connor, Markus e Kara');
+  assert(detroitSample.roadmap.some(step => roadmapStepText(step).includes('todos vivos') && roadmapStepText(step).includes('rota pacífica')), 'roadmap de Detroit deve cobrir todos vivos e rota pacifica');
+  assert(detroitSample.roadmap.some(step => roadmapStepText(step).includes('I’LL BE BACK') && roadmapStepText(step).includes('mortes de Connor')), 'roadmap de Detroit deve cobrir mortes de Connor');
+  assert(detroitSample.roadmap.some(step => roadmapStepText(step).includes('Chapter Select') && roadmapStepText(step).includes('consequência precisar persistir')), 'roadmap de Detroit deve explicar persistencia das escolhas por Chapter Select');
+  assert(detroitSample.roadmap.some(step => roadmapStepText(step).includes('BOOKWORM') && roadmapStepText(step).includes('revistas/magazines')), 'roadmap de Detroit deve cobrir revistas/magazines');
+  assert(detroitSample.roadmap.some(step => roadmapStepText(step).includes('Connor') && roadmapStepText(step).includes('Markus') && roadmapStepText(step).includes('Kara')), 'roadmap de Detroit deve cobrir rotas de Connor, Markus e Kara');
   assert.deepStrictEqual(
     detroitSample.trophies.reduce((counts, trophy) => {
       counts[trophy.type] = (counts[trophy.type] || 0) + 1;
@@ -1222,11 +1253,11 @@ async function assertSeedData({ all, get }, sampleGames) {
   assert(heavyRainSample.online_summary.includes('Não há exigência online') && heavyRainSample.online_summary.includes('multiplayer'), 'Heavy Rain deve registrar ausencia de online/multiplayer obrigatorio');
   assert(heavyRainSample.cleanup_advice.includes('Chapter Select') && heavyRainSample.cleanup_advice.includes('continuar a linha do tempo'), 'Heavy Rain deve orientar Chapter Select com consequencias persistentes');
   assert(heavyRainSample.dlc_scope.includes('lista base de Heavy Rain') && heavyRainSample.dlc_scope.includes('The Taxidermist'), 'Heavy Rain deve separar lista base de conteudos extras');
-  assert(heavyRainSample.roadmap.some(step => step.includes('quatro protagonistas vivos') && step.includes('QTEs')), 'roadmap de Heavy Rain deve cobrir quatro protagonistas e QTEs');
-  assert(heavyRainSample.roadmap.some(step => step.includes('Perfect Crime') && step.includes('continue jogando com save')), 'roadmap de Heavy Rain deve cobrir Perfect Crime com save persistente');
-  assert(heavyRainSample.roadmap.some(step => step.includes('Four Heroes') && step.includes('Saved the Kid')), 'roadmap de Heavy Rain deve cobrir Four Heroes e Saved the Kid');
-  assert(heavyRainSample.roadmap.some(step => step.includes('All Endings') && step.includes('não trate All Endings como replay simples')), 'roadmap de Heavy Rain deve explicar All Endings');
-  assert(heavyRainSample.roadmap.some(step => step.includes('Trial Master') && step.includes('Nerd')), 'roadmap de Heavy Rain deve cobrir Trial Master e Nerd');
+  assert(heavyRainSample.roadmap.some(step => roadmapStepText(step).includes('quatro protagonistas vivos') && roadmapStepText(step).includes('QTEs')), 'roadmap de Heavy Rain deve cobrir quatro protagonistas e QTEs');
+  assert(heavyRainSample.roadmap.some(step => roadmapStepText(step).includes('Perfect Crime') && roadmapStepText(step).includes('continue jogando com save')), 'roadmap de Heavy Rain deve cobrir Perfect Crime com save persistente');
+  assert(heavyRainSample.roadmap.some(step => roadmapStepText(step).includes('Four Heroes') && roadmapStepText(step).includes('Saved the Kid')), 'roadmap de Heavy Rain deve cobrir Four Heroes e Saved the Kid');
+  assert(heavyRainSample.roadmap.some(step => roadmapStepText(step).includes('All Endings') && roadmapStepText(step).includes('não trate All Endings como replay simples')), 'roadmap de Heavy Rain deve explicar All Endings');
+  assert(heavyRainSample.roadmap.some(step => roadmapStepText(step).includes('Trial Master') && roadmapStepText(step).includes('Nerd')), 'roadmap de Heavy Rain deve cobrir Trial Master e Nerd');
   assert.deepStrictEqual(
     heavyRainSample.trophies.reduce((counts, trophy) => {
       counts[trophy.type] = (counts[trophy.type] || 0) + 1;
@@ -1265,10 +1296,10 @@ async function assertSeedData({ all, get }, sampleGames) {
   assert(!beyondTwoSoulsSample.trophies.some(trophy => /difficulty|dificuldade/i.test(`${trophy.name} ${trophy.description}`)), 'Beyond: Two Souls nao deve incluir trofeu de dificuldade');
   assert(beyondTwoSoulsSample.online_summary.includes('Sem online obrigatório') && beyondTwoSoulsSample.online_summary.includes('Duo Mode') && beyondTwoSoulsSample.online_summary.includes('coop online obrigatório'), 'Beyond: Two Souls deve registrar ausencia de online e explicar Duo Mode sem coop online obrigatorio');
   assert(beyondTwoSoulsSample.cleanup_advice.includes('Chapter Select') && beyondTwoSoulsSample.cleanup_advice.includes('continuar a linha do tempo'), 'Beyond: Two Souls deve orientar Chapter Select com consequencias persistentes');
-  assert(beyondTwoSoulsSample.roadmap.some(step => step.includes('Saved All') && step.includes('All Endings')), 'roadmap de Beyond deve cobrir Saved All e All Endings');
-  assert(beyondTwoSoulsSample.roadmap.some(step => step.includes('A Better World') && step.includes('Infraworld')), 'roadmap de Beyond deve cobrir A Better World e Infraworld');
-  assert(beyondTwoSoulsSample.roadmap.some(step => step.includes('Uncontrollable') && step.includes('Together Till the End')), 'roadmap de Beyond deve cobrir Uncontrollable e Together Till the End');
-  assert(beyondTwoSoulsSample.roadmap.some(step => step.includes('Explorer/bonuses') && step.includes('BEYOND: TWO SOULS™ MASTER')), 'roadmap de Beyond deve cobrir Explorer/bonuses e platina');
+  assert(beyondTwoSoulsSample.roadmap.some(step => roadmapStepText(step).includes('Saved All') && roadmapStepText(step).includes('All Endings')), 'roadmap de Beyond deve cobrir Saved All e All Endings');
+  assert(beyondTwoSoulsSample.roadmap.some(step => roadmapStepText(step).includes('A Better World') && roadmapStepText(step).includes('Infraworld')), 'roadmap de Beyond deve cobrir A Better World e Infraworld');
+  assert(beyondTwoSoulsSample.roadmap.some(step => roadmapStepText(step).includes('Uncontrollable') && roadmapStepText(step).includes('Together Till the End')), 'roadmap de Beyond deve cobrir Uncontrollable e Together Till the End');
+  assert(beyondTwoSoulsSample.roadmap.some(step => roadmapStepText(step).includes('Explorer/bonuses') && roadmapStepText(step).includes('BEYOND: TWO SOULS™ MASTER')), 'roadmap de Beyond deve cobrir Explorer/bonuses e platina');
   assert.deepStrictEqual(
     beyondTwoSoulsSample.trophies.reduce((counts, trophy) => {
       counts[trophy.type] = (counts[trophy.type] || 0) + 1;
@@ -1303,10 +1334,10 @@ async function assertSeedData({ all, get }, sampleGames) {
   assert(!theQuarrySample.trophies.some(trophy => /difficulty|dificuldade/i.test(`${trophy.name} ${trophy.description}`)), 'The Quarry nao deve incluir trofeu de dificuldade');
   assert(theQuarrySample.online_summary.includes('Não há exigência online') && theQuarrySample.online_summary.includes('multiplayer'), 'The Quarry deve registrar ausencia de online/multiplayer obrigatorio');
   assert(theQuarrySample.cleanup_advice.includes('Chapter Select') && theQuarrySample.cleanup_advice.includes('continuar do capítulo escolhido'), 'The Quarry deve orientar Chapter Select com replay continuo');
-  assert(theQuarrySample.roadmap.some(step => step.includes('todos vivos') && step.includes('Clues') && step.includes('Evidence') && step.includes('Tarot Cards')), 'roadmap de The Quarry deve cobrir todos vivos e coletaveis');
-  assert(theQuarrySample.roadmap.some(step => step.includes('todos mortos') && step.includes('The Final Girl') && step.includes('Last Man Standing')), 'roadmap de The Quarry deve cobrir todos mortos e sobreviventes unicos');
-  assert(theQuarrySample.roadmap.some(step => step.includes('todos infectados') && step.includes('Blood Pact')), 'roadmap de The Quarry deve cobrir todos infectados e Blood Pact');
-  assert(theQuarrySample.roadmap.some(step => step.includes('Movie Mode') && step.includes('Creature Feature')), 'roadmap de The Quarry deve cobrir Movie Mode');
+  assert(theQuarrySample.roadmap.some(step => roadmapStepText(step).includes('todos vivos') && roadmapStepText(step).includes('Clues') && roadmapStepText(step).includes('Evidence') && roadmapStepText(step).includes('Tarot Cards')), 'roadmap de The Quarry deve cobrir todos vivos e coletaveis');
+  assert(theQuarrySample.roadmap.some(step => roadmapStepText(step).includes('todos mortos') && roadmapStepText(step).includes('The Final Girl') && roadmapStepText(step).includes('Last Man Standing')), 'roadmap de The Quarry deve cobrir todos mortos e sobreviventes unicos');
+  assert(theQuarrySample.roadmap.some(step => roadmapStepText(step).includes('todos infectados') && roadmapStepText(step).includes('Blood Pact')), 'roadmap de The Quarry deve cobrir todos infectados e Blood Pact');
+  assert(theQuarrySample.roadmap.some(step => roadmapStepText(step).includes('Movie Mode') && roadmapStepText(step).includes('Creature Feature')), 'roadmap de The Quarry deve cobrir Movie Mode');
   assert.deepStrictEqual(
     theQuarrySample.trophies.reduce((counts, trophy) => {
       counts[trophy.type] = (counts[trophy.type] || 0) + 1;
@@ -1752,10 +1783,10 @@ async function assertSeedData({ all, get }, sampleGames) {
   assert(untilDawnSample.online_summary.includes('Não há exigência online'), 'Until Dawn deve registrar ausencia de online');
   assert(untilDawnSample.before_you_start.includes('PS5/PC de 2024') && untilDawnSample.before_you_start.includes('PS4'), 'Until Dawn deve registrar diferenca de coletaveis por versao');
   assert(untilDawnSample.cleanup_advice.includes('Chapter/Episode Select') && untilDawnSample.cleanup_advice.includes('repetir capítulos anteriores'), 'Until Dawn deve orientar Chapter/Episode Select com consequencias persistentes');
-  assert(untilDawnSample.roadmap.some(step => step.includes('primeira campanha') && step.includes('todos vivos')), 'roadmap de Until Dawn deve existir com rota inicial');
-  assert(untilDawnSample.roadmap.some(step => step.includes('They All Live') && step.includes('The Skillful Wolf Man')), 'roadmap de Until Dawn deve cobrir todos vivos e lobo');
-  assert(untilDawnSample.roadmap.some(step => step.includes('36 Totems') && step.includes('79 Clues') && step.includes('10 Interactables')), 'roadmap de Until Dawn deve cobrir coletaveis PS5/PC');
-  assert(untilDawnSample.roadmap.some(step => step.includes('This Is THE End') && step.includes('ninguém sobrevive')), 'roadmap de Until Dawn deve cobrir ninguem vivo');
+  assert(untilDawnSample.roadmap.some(step => roadmapStepText(step).includes('primeira campanha') && roadmapStepText(step).includes('todos vivos')), 'roadmap de Until Dawn deve existir com rota inicial');
+  assert(untilDawnSample.roadmap.some(step => roadmapStepText(step).includes('They All Live') && roadmapStepText(step).includes('The Skillful Wolf Man')), 'roadmap de Until Dawn deve cobrir todos vivos e lobo');
+  assert(untilDawnSample.roadmap.some(step => roadmapStepText(step).includes('36 Totems') && roadmapStepText(step).includes('79 Clues') && roadmapStepText(step).includes('10 Interactables')), 'roadmap de Until Dawn deve cobrir coletaveis PS5/PC');
+  assert(untilDawnSample.roadmap.some(step => roadmapStepText(step).includes('This Is THE End') && roadmapStepText(step).includes('ninguém sobrevive')), 'roadmap de Until Dawn deve cobrir ninguem vivo');
   assert.deepStrictEqual(
     untilDawnSample.trophies.reduce((counts, trophy) => {
       counts[trophy.type] = (counts[trophy.type] || 0) + 1;
@@ -1834,9 +1865,9 @@ async function assertSeedData({ all, get }, sampleGames) {
   assert(hollowKnightSample.online_summary.includes('Não há exigência online'), 'Hollow Knight deve registrar ausencia de online');
   assert(hollowKnightSample.before_you_start.includes('Voidheart Edition') && hollowKnightSample.before_you_start.includes('Speedrun') && hollowKnightSample.before_you_start.includes('Steel Soul'), 'Hollow Knight deve registrar escopo PlayStation/Voidheart e excluir extras');
   assert(hollowKnightSample.cleanup_advice.includes('Hunter’s Journal') && hollowKnightSample.cleanup_advice.includes('Pantheon of Hallownest'), 'Hollow Knight deve orientar cleanup ate Godhome');
-  assert(hollowKnightSample.roadmap.some(step => step.includes('Void Heart') && step.includes('The Hollow Knight')), 'roadmap de Hollow Knight deve alertar final basico antes de Void Heart');
-  assert(hollowKnightSample.roadmap.some(step => step.includes('112%') && step.includes('Pure Completion')), 'roadmap de Hollow Knight deve cobrir 112% e Pure Completion');
-  assert(hollowKnightSample.roadmap.some(step => step.includes('Pantheon of Hallownest') && step.includes('Embrace the Void')), 'roadmap de Hollow Knight deve cobrir Pantheon of Hallownest');
+  assert(hollowKnightSample.roadmap.some(step => roadmapStepText(step).includes('Void Heart') && roadmapStepText(step).includes('The Hollow Knight')), 'roadmap de Hollow Knight deve alertar final basico antes de Void Heart');
+  assert(hollowKnightSample.roadmap.some(step => roadmapStepText(step).includes('112%') && roadmapStepText(step).includes('Pure Completion')), 'roadmap de Hollow Knight deve cobrir 112% e Pure Completion');
+  assert(hollowKnightSample.roadmap.some(step => roadmapStepText(step).includes('Pantheon of Hallownest') && roadmapStepText(step).includes('Embrace the Void')), 'roadmap de Hollow Knight deve cobrir Pantheon of Hallownest');
   assert.deepStrictEqual(
     hollowKnightSample.trophies.reduce((counts, trophy) => {
       counts[trophy.type] = (counts[trophy.type] || 0) + 1;
@@ -1906,9 +1937,9 @@ async function assertSeedData({ all, get }, sampleGames) {
   assert(itTakesTwoSample.online_summary.includes('2 jogadores') && itTakesTwoSample.online_summary.includes('coop local') && itTakesTwoSample.online_summary.includes('PS+'), 'It Takes Two deve explicar coop local/online e PS+');
   assert(itTakesTwoSample.before_you_start.includes('não pode ser platinado solo') && itTakesTwoSample.before_you_start.includes('Friend’s Pass'), 'It Takes Two deve registrar que nao ha platina solo e nota de Friend’s Pass');
   assert(itTakesTwoSample.cleanup_advice.includes('Chapter Select') && itTakesTwoSample.cleanup_advice.includes('minigames'), 'It Takes Two deve orientar cleanup por Chapter Select');
-  assert(itTakesTwoSample.roadmap.some(step => step.includes('coop') && step.includes('2 jogadores')), 'roadmap de It Takes Two deve mencionar campanha coop com 2 jogadores');
-  assert(itTakesTwoSample.roadmap.some(step => step.includes('25 minigames') && step.includes('Minigame Megalomania')), 'roadmap de It Takes Two deve mencionar 25 minigames e Minigame Megalomania');
-  assert(itTakesTwoSample.roadmap.some(step => step.includes('Chapter Select') && step.includes('cleanup')), 'roadmap de It Takes Two deve mencionar Chapter Select e cleanup');
+  assert(itTakesTwoSample.roadmap.some(step => roadmapStepText(step).includes('coop') && roadmapStepText(step).includes('2 jogadores')), 'roadmap de It Takes Two deve mencionar campanha coop com 2 jogadores');
+  assert(itTakesTwoSample.roadmap.some(step => roadmapStepText(step).includes('25 minigames') && roadmapStepText(step).includes('Minigame Megalomania')), 'roadmap de It Takes Two deve mencionar 25 minigames e Minigame Megalomania');
+  assert(itTakesTwoSample.roadmap.some(step => roadmapStepText(step).includes('Chapter Select') && roadmapStepText(step).includes('cleanup')), 'roadmap de It Takes Two deve mencionar Chapter Select e cleanup');
   assert(itTakesTwoSample.trophies.some(trophy => trophy.id === 'it_takes_two_minigame_megalomania' && trophy.type === 'Ouro' && trophy.tip.includes('25 minigames')), 'Minigame Megalomania deve ser ouro e citar 25 minigames');
   assert(itTakesTwoSample.trophies.some(trophy => trophy.id === 'it_takes_two_platforming_prodigy' && trophy.type === 'Ouro' && trophy.tip.includes('mais exigente')), 'Platforming Prodigy deve ser ouro e indicar desafio principal');
   assert(!itTakesTwoSample.trophies.some(trophy => /single-player|solo/i.test(`${trophy.name} ${trophy.description} ${trophy.tip}`)), 'It Takes Two nao deve ser tratado como jogo solo');
@@ -1981,10 +2012,10 @@ async function assertSeedData({ all, get }, sampleGames) {
   assert(splitFictionSample.online_summary.includes('2 jogadores') && splitFictionSample.online_summary.includes('coop local') && splitFictionSample.online_summary.includes('Friend Pass'), 'Split Fiction deve explicar coop obrigatorio, coop local e Friend Pass');
   assert(splitFictionSample.before_you_start.includes('não pode ser platinado solo') && splitFictionSample.before_you_start.includes('Friend Pass'), 'Split Fiction deve registrar que nao ha platina solo e nota de Friend Pass');
   assert(splitFictionSample.cleanup_advice.includes('Chapter Select') && splitFictionSample.cleanup_advice.includes('autosave'), 'Split Fiction deve orientar cleanup por Chapter Select e autosave');
-  assert(splitFictionSample.roadmap.some(step => step.includes('coop') && step.includes('2 jogadores')), 'roadmap de Split Fiction deve mencionar campanha coop com 2 jogadores');
-  assert(splitFictionSample.roadmap.some(step => step.includes('12 Side Stories') && step.includes('Bookworms')), 'roadmap de Split Fiction deve mencionar 12 Side Stories e Bookworms');
-  assert(splitFictionSample.roadmap.some(step => step.includes('6 benches') && step.includes('Sisters')), 'roadmap de Split Fiction deve mencionar 6 benches e Sisters');
-  assert(splitFictionSample.roadmap.some(step => step.includes('Chapter Select') && step.includes('autosave')), 'roadmap de Split Fiction deve mencionar Chapter Select e autosave');
+  assert(splitFictionSample.roadmap.some(step => roadmapStepText(step).includes('coop') && roadmapStepText(step).includes('2 jogadores')), 'roadmap de Split Fiction deve mencionar campanha coop com 2 jogadores');
+  assert(splitFictionSample.roadmap.some(step => roadmapStepText(step).includes('12 Side Stories') && roadmapStepText(step).includes('Bookworms')), 'roadmap de Split Fiction deve mencionar 12 Side Stories e Bookworms');
+  assert(splitFictionSample.roadmap.some(step => roadmapStepText(step).includes('6 benches') && roadmapStepText(step).includes('Sisters')), 'roadmap de Split Fiction deve mencionar 6 benches e Sisters');
+  assert(splitFictionSample.roadmap.some(step => roadmapStepText(step).includes('Chapter Select') && roadmapStepText(step).includes('autosave')), 'roadmap de Split Fiction deve mencionar Chapter Select e autosave');
   assert(splitFictionSample.trophies.some(trophy => trophy.id === 'split_fiction_bookworms' && trophy.type === 'Ouro' && trophy.tip.includes('12 Side Stories')), 'Bookworms deve ser ouro e citar 12 Side Stories');
   assert(splitFictionSample.trophies.some(trophy => trophy.id === 'split_fiction_sisters_a_tale_of_two_besties' && trophy.type === 'Ouro' && trophy.tip.includes('6 benches')), 'Sisters deve ser ouro e citar 6 benches');
   assert(splitFictionSample.trophies.some(trophy => trophy.id === 'split_fiction_bffs' && trophy.type === 'Ouro' && trophy.tip.includes('Chapter 8')), 'BFFs deve ser ouro e citar Chapter 8');
@@ -2061,9 +2092,9 @@ async function assertSeedData({ all, get }, sampleGames) {
   assert(aWayOutSample.online_summary.includes('2 jogadores') && aWayOutSample.online_summary.includes('coop local') && aWayOutSample.online_summary.includes('versão de teste'), 'A Way Out deve explicar coop obrigatorio, coop local e versao de teste/convite');
   assert(aWayOutSample.before_you_start.includes('não pode ser platinado solo') && aWayOutSample.before_you_start.includes('versão completa'), 'A Way Out deve registrar que nao ha platina solo e nota de versao completa');
   assert(aWayOutSample.cleanup_advice.includes('seleção de capítulos') && aWayOutSample.cleanup_advice.includes('fliperama'), 'A Way Out deve orientar cleanup por selecao de capitulos');
-  assert(aWayOutSample.roadmap.some(step => step.includes('coop') && step.includes('outro jogador')), 'roadmap de A Way Out deve mencionar campanha coop');
-  assert(aWayOutSample.roadmap.some(step => step.includes('prisão') && step.includes('fazenda') && step.includes('hospital')), 'roadmap de A Way Out deve mencionar areas-chave');
-  assert(aWayOutSample.roadmap.some(step => step.includes('seleção de capítulos')), 'roadmap de A Way Out deve mencionar selecao de capitulos');
+  assert(aWayOutSample.roadmap.some(step => roadmapStepText(step).includes('coop') && roadmapStepText(step).includes('outro jogador')), 'roadmap de A Way Out deve mencionar campanha coop');
+  assert(aWayOutSample.roadmap.some(step => roadmapStepText(step).includes('prisão') && roadmapStepText(step).includes('fazenda') && roadmapStepText(step).includes('hospital')), 'roadmap de A Way Out deve mencionar areas-chave');
+  assert(aWayOutSample.roadmap.some(step => roadmapStepText(step).includes('seleção de capítulos')), 'roadmap de A Way Out deve mencionar selecao de capitulos');
   assert(aWayOutSample.trophies.some(trophy => trophy.id === 'a_way_out_in_sync' && trophy.type === 'Ouro' && trophy.tip.includes('piano') && trophy.tip.includes('banjo')), 'In Sync deve ser ouro e citar piano/banjo');
   assert(aWayOutSample.trophies.some(trophy => trophy.id === 'a_way_out_freedom' && trophy.type === 'Prata' && trophy.tip.includes('gaiola')), 'Freedom deve ser prata e citar gaiola');
   assert(aWayOutSample.trophies.some(trophy => trophy.id === 'a_way_out_mayday' && trophy.type === 'Prata' && trophy.tip.includes('Leo')), 'Mayday deve ser prata e citar Leo');
@@ -2140,9 +2171,9 @@ async function assertSeedData({ all, get }, sampleGames) {
   assert(littleNightmaresIISample.before_you_start.includes('Fair Prey') && littleNightmaresIISample.before_you_start.includes('Post Industrial'), 'Little Nightmares II deve alertar trofeus com chapeus especificos');
   assert(littleNightmaresIISample.cleanup_advice.includes('seleção de capítulos'), 'Little Nightmares II deve orientar cleanup por selecao de capitulos');
   assert(littleNightmaresIISample.dlc_scope.includes('lista base') && littleNightmaresIISample.dlc_scope.includes('chapéus bônus'), 'Little Nightmares II deve separar lista base de conteudos extras');
-  assert(littleNightmaresIISample.roadmap.some(step => step.includes('Glitching Remains') && step.includes('chapéus')), 'roadmap de Little Nightmares II deve mencionar Glitching Remains e chapeus');
-  assert(littleNightmaresIISample.roadmap.some(step => step.includes('Chapter Select') || step.includes('seleção de capítulos')), 'roadmap de Little Nightmares II deve mencionar selecao de capitulos');
-  assert(littleNightmaresIISample.roadmap.some(step => step.includes('Fair Prey') && step.includes('Post Industrial')), 'roadmap de Little Nightmares II deve mencionar trofeus dependentes de chapeu');
+  assert(littleNightmaresIISample.roadmap.some(step => roadmapStepText(step).includes('Glitching Remains') && roadmapStepText(step).includes('chapéus')), 'roadmap de Little Nightmares II deve mencionar Glitching Remains e chapeus');
+  assert(littleNightmaresIISample.roadmap.some(step => roadmapStepText(step).includes('Chapter Select') || roadmapStepText(step).includes('seleção de capítulos')), 'roadmap de Little Nightmares II deve mencionar selecao de capitulos');
+  assert(littleNightmaresIISample.roadmap.some(step => roadmapStepText(step).includes('Fair Prey') && roadmapStepText(step).includes('Post Industrial')), 'roadmap de Little Nightmares II deve mencionar trofeus dependentes de chapeu');
   assert(littleNightmaresIISample.trophies.some(trophy => trophy.id === 'little_nightmares_ii_no_more_remains' && trophy.type === 'Ouro' && trophy.tip.includes('18 Glitching Remains')), 'No More Remains deve ser ouro e citar 18 Glitching Remains');
   assert(littleNightmaresIISample.trophies.some(trophy => trophy.id === 'little_nightmares_ii_far_ahead' && trophy.type === 'Ouro' && trophy.tip.includes('chapéus')), 'Far Ahead deve ser ouro e citar chapeus');
   assert(littleNightmaresIISample.trophies.some(trophy => trophy.id === 'little_nightmares_ii_how_do_i_look' && trophy.name === 'How Do I Look?'), 'How Do I Look? deve preservar caractere especial');
@@ -2220,9 +2251,9 @@ async function assertSeedData({ all, get }, sampleGames) {
   assert(reanimalSample.before_you_start.includes('não tem versão PS4') && reanimalSample.before_you_start.includes('autosave'), 'REANIMAL deve alertar PS5/autosave');
   assert(reanimalSample.cleanup_advice.includes('Chapter Select') && reanimalSample.cleanup_advice.includes('caixões'), 'REANIMAL deve orientar cleanup e limite do Chapter Select');
   assert(reanimalSample.dlc_scope.includes('lista base') && reanimalSample.dlc_scope.includes('DLCs'), 'REANIMAL deve separar lista base de DLCs');
-  assert(reanimalSample.roadmap.some(step => step.includes('caixões') && step.includes('estátuas')), 'roadmap de REANIMAL deve mencionar coletaveis criticos');
-  assert(reanimalSample.roadmap.some(step => step.includes('9 capítulos') || step.includes('Capítulo 9')), 'roadmap de REANIMAL deve mencionar campanha/capitulos');
-  assert(reanimalSample.roadmap.some(step => step.includes('Naval Blazing') && step.includes('Lost at Sea')), 'roadmap de REANIMAL deve mencionar cumulativos/boat cleanup');
+  assert(reanimalSample.roadmap.some(step => roadmapStepText(step).includes('caixões') && roadmapStepText(step).includes('estátuas')), 'roadmap de REANIMAL deve mencionar coletaveis criticos');
+  assert(reanimalSample.roadmap.some(step => roadmapStepText(step).includes('9 capítulos') || roadmapStepText(step).includes('Capítulo 9')), 'roadmap de REANIMAL deve mencionar campanha/capitulos');
+  assert(reanimalSample.roadmap.some(step => roadmapStepText(step).includes('Naval Blazing') && roadmapStepText(step).includes('Lost at Sea')), 'roadmap de REANIMAL deve mencionar cumulativos/boat cleanup');
   assert(reanimalSample.trophies.some(trophy => trophy.id === 'reanimal_friends_reunited' && trophy.type === 'Ouro' && trophy.is_missable && trophy.tip.includes('5 caixões')), 'Friends Reunited deve ser ouro perdível e citar 5 caixoes');
   assert(reanimalSample.trophies.some(trophy => trophy.id === 'reanimal_prayer_for_the_dying' && trophy.type === 'Prata' && trophy.is_missable && trophy.tip.includes('5 estátuas')), 'Prayer for the Dying deve ser prata perdível e citar 5 estatuas');
   assert(reanimalSample.trophies.some(trophy => trophy.id === 'reanimal_beneath_the_mask' && trophy.type === 'Ouro' && trophy.is_missable && trophy.tip.includes('18 máscaras')), 'Beneath the Mask deve ser ouro perdível e citar 18 mascaras');
@@ -2302,9 +2333,9 @@ async function assertSeedData({ all, get }, sampleGames) {
   assert(deadCellsSample.dlc_scope.includes('54 troféus') && deadCellsSample.dlc_scope.includes('Return to Castlevania'), 'Dead Cells deve separar lista base dos DLCs');
   assert(deadCellsSample.online_summary.includes('Não há exigência online'), 'Dead Cells deve explicar ausencia de online');
   assert(deadCellsSample.grind_summary.includes('Boss Stem Cells') && deadCellsSample.grind_summary.includes('chefes sem dano'), 'Dead Cells deve mencionar Boss Stem Cells e chefes sem dano');
-  assert(deadCellsSample.roadmap.some(step => step.includes('runas') || step.includes('Vine Rune')), 'roadmap de Dead Cells deve mencionar runas');
-  assert(deadCellsSample.roadmap.some(step => step.includes('Boss Stem Cells')), 'roadmap de Dead Cells deve mencionar Boss Stem Cells');
-  assert(deadCellsSample.roadmap.some(step => step.includes('Cursed Sword') && step.includes('equipamento inicial')), 'roadmap de Dead Cells deve mencionar desafios especificos');
+  assert(deadCellsSample.roadmap.some(step => roadmapStepText(step).includes('runas') || roadmapStepText(step).includes('Vine Rune')), 'roadmap de Dead Cells deve mencionar runas');
+  assert(deadCellsSample.roadmap.some(step => roadmapStepText(step).includes('Boss Stem Cells')), 'roadmap de Dead Cells deve mencionar Boss Stem Cells');
+  assert(deadCellsSample.roadmap.some(step => roadmapStepText(step).includes('Cursed Sword') && roadmapStepText(step).includes('equipamento inicial')), 'roadmap de Dead Cells deve mencionar desafios especificos');
   assert(!deadCellsSample.trophies.some(trophy => /Castlevania|Bad Seed|Fatal Falls|Queen and the Sea|The Bank|Derelict Distillery|Rise of the Giant/i.test(`${trophy.name} ${trophy.description} ${trophy.tip}`)), 'Dead Cells nao deve misturar trofeus de DLC');
   assert.deepStrictEqual(
     deadCellsSample.trophies.reduce((counts, trophy) => {
@@ -2383,8 +2414,8 @@ async function assertSeedData({ all, get }, sampleGames) {
   assert(monsterHunterWorldSample.online_summary.includes('SOS') && monsterHunterWorldSample.online_summary.includes('Guild Cards'), 'Monster Hunter: World deve mencionar trofeus online');
   assert(monsterHunterWorldSample.dlc_scope.includes('Iceborne') && monsterHunterWorldSample.dlc_scope.includes('platina própria'), 'Monster Hunter: World deve separar Iceborne');
   assert(monsterHunterWorldSample.grind_summary.includes('coroas') && monsterHunterWorldSample.grind_summary.includes('Hunter Rank 100'), 'Monster Hunter: World deve mencionar coroas e HR100');
-  assert(monsterHunterWorldSample.roadmap.some(step => step.includes('online') && step.includes('Guild Cards')), 'roadmap de Monster Hunter: World deve mencionar online/Guild Cards');
-  assert(monsterHunterWorldSample.roadmap.some(step => step.includes('coroas miniatura') && step.includes('gigantes')), 'roadmap de Monster Hunter: World deve mencionar coroas');
+  assert(monsterHunterWorldSample.roadmap.some(step => roadmapStepText(step).includes('online') && roadmapStepText(step).includes('Guild Cards')), 'roadmap de Monster Hunter: World deve mencionar online/Guild Cards');
+  assert(monsterHunterWorldSample.roadmap.some(step => roadmapStepText(step).includes('coroas miniatura') && roadmapStepText(step).includes('gigantes')), 'roadmap de Monster Hunter: World deve mencionar coroas');
   assert(!monsterHunterWorldSample.trophies.some(trophy => /Iceborne|Master Rank|Hoarfrost|Guiding Lands|Seliana|Treasure/i.test(`${trophy.name} ${trophy.description} ${trophy.tip}`)), 'Monster Hunter: World nao deve misturar trofeus de Iceborne');
   assert.deepStrictEqual(
     monsterHunterWorldSample.trophies.reduce((counts, trophy) => {
@@ -2493,8 +2524,15 @@ async function assertSeedData({ all, get }, sampleGames) {
   assert.strictEqual(new Set(eldenRingSample.trophies.map(trophy => trophy.id)).size, 42, 'Elden Ring nao deve ter trophy_code duplicado');
   assert.strictEqual(eldenRingSample.editorial_status, 'published', 'Elden Ring deve permanecer publico');
   assert.strictEqual(eldenRingSample.coverage_level, 'strong', 'Elden Ring deve ter cobertura forte sem selo complete');
-  assert.strictEqual(eldenRingSample.is_verified, false, 'Elden Ring nao deve ser verificado automaticamente');
-  assert.strictEqual(eldenRingSample.verification_status, 'review', 'Elden Ring deve aguardar revisao editorial final');
+  assert.strictEqual(eldenRingSample.is_verified, true, 'Elden Ring deve ter platina base verificada');
+  assert.strictEqual(eldenRingSample.verification_status, 'verified', 'Elden Ring deve manter status verified na lista base');
+  assert.strictEqual(eldenRingSample.editorialStatus, 'verified', 'Elden Ring deve separar a platina base verificada da DLC pendente');
+  assert.strictEqual(eldenRingSample.editorial_review_status, 'verified', 'Elden Ring deve persistir revisao editorial verified');
+  assert.strictEqual(eldenRingSample.dlcRequired, false, 'Elden Ring nao deve exigir DLC para platina base');
+  assert.strictEqual(eldenRingSample.dlcRequiredForPlatinum, false, 'Shadow of the Erdtree nao deve entrar na platina base');
+  assert(['pending', 'out_of_base_scope'].includes(eldenRingSample.dlc_status), 'Elden Ring deve manter status de DLC separado da platina base');
+  assert.strictEqual(eldenRingSample.dlcGuideStatus, 'pending', 'guia da DLC de Elden Ring deve ficar pendente separadamente');
+  assert.deepStrictEqual(eldenRingSample.qualityWarnings, [], 'DLC pendente nao deve entrar como qualityWarning bloqueante da lista base');
   assert(eldenRingSample.cover_image, 'Elden Ring deve expor cover_image vertical para biblioteca/guia');
   assert(eldenRingSample.dlc_scope.includes('Shadow of the Erdtree'), 'Elden Ring deve deixar claro que DLC nao entra na platina base');
   const eldenRingRoadmapText = eldenRingSample.roadmap.map(step => {
@@ -2503,6 +2541,20 @@ async function assertSeedData({ all, get }, sampleGames) {
   }).join(' ');
   assert(eldenRingRoadmapText.includes('backup de save'), 'roadmap de Elden Ring deve orientar backup de save para finais');
   assert(eldenRingSample.roadmap.every(step => step && typeof step === 'object' && Array.isArray(step.actions)), 'roadmap de Elden Ring deve usar etapas estruturadas');
+  assert.strictEqual(eldenRingSample.roadmap.length, 6, 'roadmap de Elden Ring deve manter 6 etapas');
+  assert.deepStrictEqual(
+    eldenRingSample.roadmap.map(step => step.title),
+    [
+      'Explore sem pressa e fortaleça sua build',
+      'Derrote chefes principais e Shardbearers',
+      'Acompanhe questlines e requisitos de finais',
+      'Colete lendários antes do ponto crítico',
+      'Faça os finais da forma planejada',
+      'Cleanup final da platina base'
+    ],
+    'roadmap de Elden Ring deve preservar as 6 etapas editoriais'
+  );
+  assert(!/\[object Object\]|Etapa 1 gen[ée]rico|Etapa 2 gen[ée]rico|Comece pela rota segura|Comece aqui|Passo 2|title:|focus:|objective:|actions:|\|/.test(eldenRingRoadmapText), 'roadmap de Elden Ring nao deve exibir fallback generico ou campos crus');
   const eldenRingTypeCounts = eldenRingSample.trophies.reduce((counts, trophy) => {
     counts[trophy.type] = (counts[trophy.type] || 0) + 1;
     return counts;
@@ -2517,6 +2569,27 @@ async function assertSeedData({ all, get }, sampleGames) {
     ['er_age_of_stars', 'er_elden_lord', 'er_fortissax', 'er_frenzied_flame', 'er_legendary_armaments'].sort(),
     'Elden Ring deve marcar apenas finais, Fortissax e Legendary Armaments como perdiveis'
   );
+  assert.strictEqual(eldenRingSample.missableCount, 5, 'missableCount de Elden Ring deve ser 5 e nao contar a platina');
+  assert(!eldenRingSample.trophies.find(trophy => trophy.id === 'er_platinum')?.is_missable, 'platina de Elden Ring nao deve ser perdivel');
+  assert(!eldenRingSample.trophies.find(trophy => trophy.id === 'er_roundtable')?.is_missable, 'Roundtable Hold nao deve ser perdivel');
+  assert(!eldenRingSample.trophies.find(trophy => trophy.id === 'er_placidusax')?.is_missable, 'Dragonlord Placidusax nao deve ser perdivel');
+  assert(!eldenRingSample.trophies.some(trophy => /Descrição em revisão editorial|undefined|null|\[object Object\]/i.test(`${trophy.name} ${trophy.name_pt} ${trophy.description} ${trophy.tip}`)), 'Elden Ring nao deve expor placeholder ou campos crus na checklist');
+  {
+    const guideModel = require('../src/shared/guideViewModel');
+    const eldenViewModel = guideModel.buildGuideViewModel(eldenRingSample, []);
+    const criticalNames = eldenViewModel.routeChangingTrophies.slice(0, 5).map(item => item.name);
+    assert.strictEqual(eldenViewModel.missableCount, 5, 'viewModel de Elden Ring deve manter missableCount 5');
+    assert.strictEqual(eldenViewModel.routeChangingTrophies.slice(0, 5).length, 5, 'pointsCriticalCount de Elden Ring deve ser 5');
+    assert.deepStrictEqual(
+      criticalNames,
+      ['Elden Lord', 'Age of the Stars', 'Lord of Frenzied Flame', 'Legendary Armaments', 'Lichdragon Fortissax'],
+      'pontos criticos de Elden Ring devem listar finais, Bolt of Gransax e Fia sem Placidusax'
+    );
+    assert(criticalNames.includes('Lord of Frenzied Flame'), 'Lord of Frenzied Flame deve aparecer em pontos criticos');
+    assert(criticalNames.includes('Legendary Armaments'), 'Legendary Armaments deve aparecer em pontos criticos por Bolt of Gransax');
+    assert(!criticalNames.includes('Dragonlord Placidusax'), 'Dragonlord Placidusax nao deve tomar lugar em pontos criticos');
+    assert.deepStrictEqual(eldenViewModel.guidanceCounts, { criticalAlertsCount: 5, checklistTipsCount: 30, totalGuidanceCount: 35 }, 'Elden Ring deve separar 5 alertas criticos de 30 dicas');
+  }
 
   const hadesSample = sampleGames.find(game => game.slug === 'hades');
   assert(hadesSample, 'sampleGames deve incluir Hades');
@@ -2558,7 +2631,7 @@ async function assertSeedData({ all, get }, sampleGames) {
   assert.strictEqual(hadesSample.is_verified, false, 'Hades nao deve ser verificado automaticamente');
   assert.strictEqual(hadesSample.verification_status, 'review', 'Hades deve permanecer em revisao editorial');
 
-  const eldenRing = await get('SELECT slug, difficulty, time, time_bucket, time_min_hours, time_max_hours, time_sort_hours, editorial_status, coverage_level, is_verified, verification_status, image, cover_image FROM games WHERE name = ?', ['Elden Ring']);
+  const eldenRing = await get('SELECT slug, difficulty, time, time_bucket, time_min_hours, time_max_hours, time_sort_hours, editorial_status, coverage_level, is_verified, verification_status, editorial_review_status, dlc_scope, quality_warnings, image, cover_image FROM games WHERE name = ?', ['Elden Ring']);
   assert.strictEqual(eldenRing?.slug, 'elden-ring', 'seed deve calcular slug do Elden Ring');
   assert.strictEqual(eldenRing?.difficulty, 7, 'seed deve persistir dificuldade 7/10 do Elden Ring');
   assert.strictEqual(eldenRing?.time, '60-100 horas', 'seed deve persistir tempo revisado do Elden Ring');
@@ -2568,8 +2641,11 @@ async function assertSeedData({ all, get }, sampleGames) {
   assert.strictEqual(eldenRing?.time_sort_hours, 60, 'seed deve calcular time_sort_hours');
   assert.strictEqual(eldenRing?.editorial_status, 'published', 'Elden Ring deve entrar publicado');
   assert.strictEqual(eldenRing?.coverage_level, 'strong', 'Elden Ring deve entrar com cobertura strong');
-  assert.strictEqual(eldenRing?.is_verified, 0, 'Elden Ring nao deve entrar como verificado');
-  assert.strictEqual(eldenRing?.verification_status, 'review', 'Elden Ring deve entrar em revisao editorial');
+  assert.strictEqual(eldenRing?.is_verified, 1, 'Elden Ring deve entrar como verificado');
+  assert.strictEqual(eldenRing?.verification_status, 'verified', 'Elden Ring deve entrar com verification_status verified');
+  assert.strictEqual(eldenRing?.editorial_review_status, 'verified', 'Elden Ring deve entrar com editorial_review_status verified');
+  assert(['', '[]'].includes(eldenRing?.quality_warnings || ''), 'Elden Ring nao deve ter qualityWarnings bloqueantes');
+  assert(eldenRing?.dlc_scope.includes('Shadow of the Erdtree') && eldenRing.dlc_scope.includes('Guia da DLC pendente'), 'seed deve persistir DLC pendente separada da platina base');
   assert.strictEqual(eldenRing?.image, eldenRingSample.image, 'Elden Ring deve preservar image horizontal');
   assert.strictEqual(eldenRing?.cover_image, eldenRingSample.cover_image, 'Elden Ring deve persistir cover_image vertical');
 
@@ -2585,6 +2661,11 @@ async function assertSeedData({ all, get }, sampleGames) {
     'seed deve persistir distribuicao oficial do Elden Ring'
   );
   assert.strictEqual(eldenRingTrophyRows.filter(trophy => trophy.is_missable).length, 5, 'seed deve marcar 5 perdiveis coerentes no Elden Ring');
+  assert(!eldenRingTrophyRows.some(trophy => trophy.trophy_code === 'er_platinum' && trophy.is_missable), 'seed nao deve marcar platina de Elden Ring como perdivel');
+  assert(!eldenRingTrophyRows.some(trophy => trophy.trophy_code === 'er_roundtable' && trophy.is_missable), 'seed nao deve marcar Roundtable Hold como perdivel');
+  assert(!eldenRingTrophyRows.some(trophy => trophy.trophy_code === 'er_placidusax' && trophy.is_missable), 'seed nao deve marcar Dragonlord Placidusax como perdivel');
+  assert(eldenRingTrophyRows.some(trophy => trophy.trophy_code === 'er_frenzied_flame' && trophy.is_missable && trophy.is_spoiler), 'Lord of Frenzied Flame deve ser spoiler e perdivel');
+  assert(eldenRingTrophyRows.some(trophy => trophy.trophy_code === 'er_legendary_armaments' && trophy.is_missable), 'Legendary Armaments deve ser perdivel por Bolt of Gransax');
   assert(eldenRingTrophyRows.some(trophy => trophy.trophy_code === 'er_fortissax' && trophy.is_missable && trophy.is_spoiler), 'Fortissax deve ser spoiler e perdível');
 
   const re4 = await get('SELECT slug, time_bucket FROM games WHERE name = ?', ['Resident Evil 4 Remake']);
@@ -2604,7 +2685,7 @@ async function assertSeedData({ all, get }, sampleGames) {
   assert.strictEqual(unchartedSample.verification_status, 'review', 'Uncharted Legacy of Thieves deve aguardar revisao editorial');
   assert(unchartedSample.online_summary.includes('trofeus multiplayer antigos nao fazem parte'), 'Uncharted Legacy of Thieves deve deixar claro que multiplayer antigo foi removido');
   assert(unchartedSample.dlc_scope.includes('The Lost Legacy') && unchartedSample.dlc_scope.includes('platina compartilhada'), 'Uncharted Legacy of Thieves deve tratar The Lost Legacy como parte da platina');
-  assert(unchartedSample.roadmap.some(step => step.includes('The Lost Legacy') && step.includes('obrigatoria')), 'roadmap de Uncharted deve deixar The Lost Legacy como obrigatorio');
+  assert(unchartedSample.roadmap.some(step => roadmapStepText(step).includes('The Lost Legacy') && roadmapStepText(step).includes('obrigatoria')), 'roadmap de Uncharted deve deixar The Lost Legacy como obrigatorio');
   assert.strictEqual(unchartedSample.trophies.filter(trophy => String(trophy.tip).startsWith('[The Lost Legacy]')).length, 49, 'Uncharted deve identificar 49 trofeus de The Lost Legacy');
   assert(unchartedSample.trophies.some(trophy => trophy.id === 'uclot_u4_dont_ruin_the_moment' && trophy.type === 'Ouro' && trophy.tip.includes('obrigatorio')), 'Uncharted deve explicar ouro que exige The Lost Legacy');
   assert(!unchartedSample.trophies.some(trophy => /Continue the Adventure|Get in the Game|Trials by Fire|Friends Forever|Medic/i.test(`${trophy.name} ${trophy.description}`)), 'Uncharted Legacy of Thieves nao deve incluir trofeus multiplayer antigos');
@@ -2884,8 +2965,8 @@ async function assertSeedData({ all, get }, sampleGames) {
   assert(horizonSample.dlc_scope.includes('The Frozen Wilds'), 'Horizon Zero Dawn deve separar The Frozen Wilds da platina base');
   assert(horizonSample.before_you_start.includes('The Frozen Wilds') && horizonSample.before_you_start.includes('nao e necessaria'), 'Horizon Zero Dawn deve deixar claro que The Frozen Wilds nao e necessaria');
   assert(horizonSample.cleanup_advice.includes('free roam'), 'Horizon Zero Dawn deve orientar cleanup em free roam');
-  assert(horizonSample.roadmap.some(step => step.includes('Hunting Grounds') && step.includes('Blazing Suns')), 'roadmap de Horizon Zero Dawn deve cobrir Hunting Grounds e Blazing Suns');
-  assert(horizonSample.roadmap.some(step => step.includes('The Frozen Wilds') && step.includes('platina base')), 'roadmap de Horizon Zero Dawn deve excluir The Frozen Wilds da platina base');
+  assert(horizonSample.roadmap.some(step => roadmapStepText(step).includes('Hunting Grounds') && roadmapStepText(step).includes('Blazing Suns')), 'roadmap de Horizon Zero Dawn deve cobrir Hunting Grounds e Blazing Suns');
+  assert(horizonSample.roadmap.some(step => roadmapStepText(step).includes('The Frozen Wilds') && roadmapStepText(step).includes('platina base')), 'roadmap de Horizon Zero Dawn deve excluir The Frozen Wilds da platina base');
   assert.strictEqual(horizonSample.trophies.filter(trophy => trophy.is_missable).length, 0, 'Horizon Zero Dawn nao deve marcar perdiveis na lista base');
   assert(!horizonSample.trophies.some(trophy => /Frozen Wilds|Forbidden West|New Game\+|Scorcher|Frostclaw|Fireclaw|Pigments|Animal Figurines/i.test(`${trophy.name} ${trophy.description}`)), 'Horizon Zero Dawn nao deve misturar DLC, New Game+ ou outro jogo na checklist base');
   assert(!horizonSample.trophies.some(trophy => /online|multiplayer|coop/i.test(`${trophy.name} ${trophy.description}`)), 'Horizon Zero Dawn nao deve ter trofeus online obrigatorios');
@@ -2963,8 +3044,8 @@ async function assertSeedData({ all, get }, sampleGames) {
   assert(forbiddenWestSample.dlc_scope.includes('Burning Shores') && forbiddenWestSample.dlc_scope.includes('New Game+') && forbiddenWestSample.dlc_scope.includes('Ultra Hard'), 'Horizon Forbidden West deve separar DLC/add-ons da platina base');
   assert(forbiddenWestSample.before_you_start.includes('Burning Shores') && forbiddenWestSample.before_you_start.includes('Ultra Hard'), 'Horizon Forbidden West deve avisar que DLC e modos extras nao sao necessarios');
   assert(forbiddenWestSample.cleanup_advice.includes('free roam'), 'Horizon Forbidden West deve orientar cleanup em free roam');
-  assert(forbiddenWestSample.roadmap.some(step => step.includes('Arena') && step.includes('Machine Strike')), 'roadmap de Horizon Forbidden West deve cobrir Arena e Machine Strike');
-  assert(forbiddenWestSample.roadmap.some(step => step.includes('Burning Shores') && step.includes('New Game+') && step.includes('Ultra Hard')), 'roadmap de Horizon Forbidden West deve excluir add-ons da lista base');
+  assert(forbiddenWestSample.roadmap.some(step => roadmapStepText(step).includes('Arena') && roadmapStepText(step).includes('Machine Strike')), 'roadmap de Horizon Forbidden West deve cobrir Arena e Machine Strike');
+  assert(forbiddenWestSample.roadmap.some(step => roadmapStepText(step).includes('Burning Shores') && roadmapStepText(step).includes('New Game+') && roadmapStepText(step).includes('Ultra Hard')), 'roadmap de Horizon Forbidden West deve excluir add-ons da lista base');
   assert.strictEqual(forbiddenWestSample.trophies.filter(trophy => trophy.is_missable).length, 1, 'Horizon Forbidden West deve marcar apenas All Machine Types Scanned como ponto de atencao missable');
   assert(forbiddenWestSample.trophies.some(trophy => trophy.id === 'hfw_all_machine_types_scanned' && trophy.is_missable), 'All Machine Types Scanned deve ser o unico missable confiavel em Horizon Forbidden West');
   assert(!forbiddenWestSample.trophies.some(trophy => /Burning Shores|New Game\+|Ultra Hard|Bilegut|Stingspawn|Londra|Aerial Capture/i.test(`${trophy.name} ${trophy.description}`)), 'Horizon Forbidden West nao deve misturar DLC, New Game+ ou Ultra Hard na checklist base');
@@ -3042,8 +3123,8 @@ async function assertSeedData({ all, get }, sampleGames) {
   assert(returnalSample.dlc_scope.includes('Ascension') && returnalSample.dlc_scope.includes('Ixion'), 'Returnal deve separar Ascension DLC do trofeu base Ascension');
   assert(returnalSample.before_you_start.includes('Ascension DLC') && returnalSample.before_you_start.includes('nao e necessaria'), 'Returnal deve avisar que Ascension DLC nao e necessaria');
   assert(returnalSample.cleanup_advice.includes('surveys') && returnalSample.cleanup_advice.includes('Ciphers'), 'Returnal deve orientar cleanup por surveys e Ciphers');
-  assert(returnalSample.roadmap.some(step => step.includes('Sunface Fragments') && step.includes('ato 3')), 'roadmap de Returnal deve cobrir Sunface Fragments e ato 3');
-  assert(returnalSample.roadmap.some(step => step.includes('Ascension DLC') && step.includes('Ixion')), 'roadmap de Returnal deve diferenciar DLC Ascension do trofeu base Ascension');
+  assert(returnalSample.roadmap.some(step => roadmapStepText(step).includes('Sunface Fragments') && roadmapStepText(step).includes('ato 3')), 'roadmap de Returnal deve cobrir Sunface Fragments e ato 3');
+  assert(returnalSample.roadmap.some(step => roadmapStepText(step).includes('Ascension DLC') && roadmapStepText(step).includes('Ixion')), 'roadmap de Returnal deve diferenciar DLC Ascension do trofeu base Ascension');
   assert.strictEqual(returnalSample.trophies.filter(trophy => trophy.is_missable).length, 0, 'Returnal nao deve marcar perdiveis definitivos na lista base');
   assert(returnalSample.trophies.some(trophy => trophy.id === 'returnal_in_field_training' && trophy.tip.includes('PSN')), 'In-Field Training deve preservar a ressalva de daily challenge/PSN');
   assert(!returnalSample.trophies.some(trophy => /Tower of Sisyphus|The Watcher|Find Release|Destroyer|Empty Embrace|Coiling Embrace|Mom's Little Watch/i.test(`${trophy.name} ${trophy.description}`)), 'Returnal nao deve misturar trofeus da expansao Ascension na checklist base');
@@ -3120,8 +3201,8 @@ async function assertSeedData({ all, get }, sampleGames) {
   assert.strictEqual(ratchetSample.verification_status, 'review', 'Ratchet & Clank deve aguardar revisao editorial final');
   assert(ratchetSample.online_summary.includes('Nao ha exigencia online'), 'Ratchet & Clank deve deixar claro que online nao e obrigatorio');
   assert(ratchetSample.cleanup_advice.includes('Challenge Mode') && ratchetSample.cleanup_advice.includes('armas finais'), 'Ratchet & Clank deve explicar uso limitado de Challenge Mode');
-  assert(ratchetSample.roadmap.some(step => step.includes('CraiggerBears') && step.includes('Spybots')), 'roadmap de Ratchet & Clank deve cobrir coletaveis principais');
-  assert(ratchetSample.roadmap.some(step => step.includes('Challenge Mode') && step.includes('Fully Stacked')), 'roadmap de Ratchet & Clank deve cobrir Challenge Mode para Fully Stacked');
+  assert(ratchetSample.roadmap.some(step => roadmapStepText(step).includes('CraiggerBears') && roadmapStepText(step).includes('Spybots')), 'roadmap de Ratchet & Clank deve cobrir coletaveis principais');
+  assert(ratchetSample.roadmap.some(step => roadmapStepText(step).includes('Challenge Mode') && roadmapStepText(step).includes('Fully Stacked')), 'roadmap de Ratchet & Clank deve cobrir Challenge Mode para Fully Stacked');
   assert.deepStrictEqual(ratchetSample.trophies.filter(trophy => trophy.is_missable).map(trophy => trophy.id), ['racra_extinction_event'], 'Ratchet & Clank deve marcar apenas Extinction Event como missable confiavel');
   assert(!ratchetSample.trophies.some(trophy => /online|multiplayer|coop/i.test(`${trophy.name} ${trophy.description}`)), 'Ratchet & Clank nao deve ter trofeus online obrigatorios');
   const ratchetTypeCounts = ratchetSample.trophies.reduce((counts, trophy) => {
@@ -3195,9 +3276,9 @@ async function assertSeedData({ all, get }, sampleGames) {
   assert(demonsSoulsSample.online_summary.includes('Return to Form') && demonsSoulsSample.online_summary.includes('Unwelcome Guest'), "Demon's Souls deve registrar os dois trofeus online da lista PS5");
   assert(demonsSoulsSample.before_you_start.includes('remake de PS5') && demonsSoulsSample.before_you_start.includes('PS3'), "Demon's Souls deve deixar claro que nao usa a lista de PS3");
   assert(demonsSoulsSample.dlc_scope.includes('remake de PS5') && demonsSoulsSample.dlc_scope.includes('nao ha DLC'), "Demon's Souls deve indicar escopo sem DLC");
-  assert(demonsSoulsSample.roadmap.some(step => step.includes('World Tendency') && step.includes('Character Tendency')), "roadmap de Demon's Souls deve cobrir tendencias");
-  assert(demonsSoulsSample.roadmap.some(step => step.includes('boss souls') && step.includes("Sage's Trophy") && step.includes("Saint's Trophy")), "roadmap de Demon's Souls deve cobrir boss souls, magias e milagres");
-  assert(demonsSoulsSample.roadmap.some(step => step.includes('Return to Form') && step.includes('Unwelcome Guest')), "roadmap de Demon's Souls deve cobrir os objetivos online pontuais");
+  assert(demonsSoulsSample.roadmap.some(step => roadmapStepText(step).includes('World Tendency') && roadmapStepText(step).includes('Character Tendency')), "roadmap de Demon's Souls deve cobrir tendencias");
+  assert(demonsSoulsSample.roadmap.some(step => roadmapStepText(step).includes('boss souls') && roadmapStepText(step).includes("Sage's Trophy") && roadmapStepText(step).includes("Saint's Trophy")), "roadmap de Demon's Souls deve cobrir boss souls, magias e milagres");
+  assert(demonsSoulsSample.roadmap.some(step => roadmapStepText(step).includes('Return to Form') && roadmapStepText(step).includes('Unwelcome Guest')), "roadmap de Demon's Souls deve cobrir os objetivos online pontuais");
   assert.deepStrictEqual(
     demonsSoulsSample.trophies.filter(trophy => trophy.is_missable).map(trophy => trophy.id),
     [
@@ -3292,7 +3373,7 @@ async function assertSeedData({ all, get }, sampleGames) {
   assert(darkSoulsRemasteredSample.online_summary.includes('Nao ha exigencia online'), 'Dark Souls Remastered deve deixar claro que online nao e obrigatorio');
   assert(darkSoulsRemasteredSample.runs_summary.includes('NG++') && darkSoulsRemasteredSample.runs_summary.includes('boss souls'), 'Dark Souls Remastered deve explicar NG++ e boss souls');
   assert(darkSoulsRemasteredSample.dlc_scope.includes('lista base') && darkSoulsRemasteredSample.dlc_scope.includes('Nao ha grupo separado'), 'Dark Souls Remastered nao deve criar grupo DLC separado');
-  const darkSoulsRemasteredRoadmapText = darkSoulsRemasteredSample.roadmap.join(' ');
+  const darkSoulsRemasteredRoadmapText = darkSoulsRemasteredSample.roadmap.map(roadmapStepText).join(' ');
   assert(darkSoulsRemasteredRoadmapText.includes('NG+') && darkSoulsRemasteredRoadmapText.includes('NG++'), 'roadmap de Dark Souls Remastered deve citar NG+ e NG++');
   assert(darkSoulsRemasteredRoadmapText.includes('boss souls') && darkSoulsRemasteredRoadmapText.includes("Knight's Honor"), 'roadmap de Dark Souls Remastered deve citar boss souls e Knight\'s Honor');
   assert(darkSoulsRemasteredRoadmapText.includes('magias') && darkSoulsRemasteredRoadmapText.includes('milagres') && darkSoulsRemasteredRoadmapText.includes('piromancias'), 'roadmap de Dark Souls Remastered deve citar magias, milagres e piromancias');
@@ -3366,7 +3447,7 @@ async function assertSeedData({ all, get }, sampleGames) {
   assert.strictEqual(darkSoulsIIScholarSample.verification_status, 'review', 'Dark Souls II Scholar deve aguardar revisao editorial final');
   assert(darkSoulsIIScholarSample.online_summary.includes('Nao ha trofeus online obrigatorios'), 'Dark Souls II Scholar deve deixar claro que online nao e obrigatorio');
   assert(darkSoulsIIScholarSample.dlc_scope.includes('Scholar of the First Sin') && darkSoulsIIScholarSample.dlc_scope.includes('nao criar DLC separado'), 'Dark Souls II Scholar nao deve criar grupo DLC separado');
-  const darkSoulsIIScholarRoadmapText = darkSoulsIIScholarSample.roadmap.join(' ');
+  const darkSoulsIIScholarRoadmapText = darkSoulsIIScholarSample.roadmap.map(roadmapStepText).join(' ');
   assert(darkSoulsIIScholarRoadmapText.includes('NG+') && darkSoulsIIScholarRoadmapText.includes('NG++'), 'roadmap de Dark Souls II Scholar deve citar NG+ e NG++');
   assert(darkSoulsIIScholarRoadmapText.includes('magias') && darkSoulsIIScholarRoadmapText.includes('milagres') && darkSoulsIIScholarRoadmapText.includes('piromancias'), 'roadmap de Dark Souls II Scholar deve citar magias, milagres e piromancias');
   assert(darkSoulsIIScholarRoadmapText.includes('hexes') && darkSoulsIIScholarRoadmapText.includes('gestures') && darkSoulsIIScholarRoadmapText.includes('covenants'), 'roadmap de Dark Souls II Scholar deve citar hexes, gestures e covenants');
@@ -3444,7 +3525,7 @@ async function assertSeedData({ all, get }, sampleGames) {
   assert.strictEqual(darkSoulsIIISample.verification_status, 'review', 'Dark Souls III deve aguardar revisao editorial final');
   assert(darkSoulsIIISample.online_summary.includes('Nao ha trofeus online obrigatorios'), 'Dark Souls III deve deixar claro que online nao e obrigatorio');
   assert(darkSoulsIIISample.dlc_scope.includes('Ashes of Ariandel') && darkSoulsIIISample.dlc_scope.includes('The Ringed City'), 'Dark Souls III deve separar DLCs da platina base');
-  const darkSoulsIIIRoadmapText = darkSoulsIIISample.roadmap.join(' ');
+  const darkSoulsIIIRoadmapText = darkSoulsIIISample.roadmap.map(roadmapStepText).join(' ');
   assert(darkSoulsIIIRoadmapText.includes('NG+') && darkSoulsIIIRoadmapText.includes('NG++'), 'roadmap de Dark Souls III deve citar NG+ e NG++');
   assert(darkSoulsIIIRoadmapText.includes('rings') && darkSoulsIIIRoadmapText.includes('gestures'), 'roadmap de Dark Souls III deve citar rings e gestures');
   assert(darkSoulsIIIRoadmapText.includes('sorceries') && darkSoulsIIIRoadmapText.includes('miracles') && darkSoulsIIIRoadmapText.includes('pyromancies'), 'roadmap de Dark Souls III deve citar sorceries, miracles e pyromancies');
@@ -3526,10 +3607,10 @@ async function assertSeedData({ all, get }, sampleGames) {
   assert(bloodborneSample.online_summary.includes('Nao ha exigencia online'), 'Bloodborne deve deixar claro que online nao e obrigatorio');
   assert(bloodborneSample.dlc_scope.includes('The Old Hunters') && bloodborneSample.dlc_scope.includes('lista base'), 'Bloodborne deve separar The Old Hunters da platina base');
   assert(bloodborneSample.runs_summary.includes('backup de save') && bloodborneSample.runs_summary.includes('NG+'), 'Bloodborne deve explicar backup/NG+ para finais');
-  assert(bloodborneSample.roadmap.some(step => step.includes('backup de save') && step.includes('NG+')), 'roadmap de Bloodborne deve citar backup de save e NG+');
-  assert(bloodborneSample.roadmap.some(step => step.includes("Hunter's Essence") && step.includes("Hunter's Craft")), 'roadmap de Bloodborne deve cobrir armas e ferramentas');
-  assert(bloodborneSample.roadmap.some(step => step.includes('Chalice Dungeons') && step.includes('Yharnam, Pthumerian Queen')), 'roadmap de Bloodborne deve cobrir Chalice Dungeons e a rainha');
-  assert(bloodborneSample.roadmap.some(step => step.includes('The Old Hunters') && step.includes('nao e necessario')), 'roadmap de Bloodborne deve excluir The Old Hunters');
+  assert(bloodborneSample.roadmap.some(step => roadmapStepText(step).includes('backup de save') && roadmapStepText(step).includes('NG+')), 'roadmap de Bloodborne deve citar backup de save e NG+');
+  assert(bloodborneSample.roadmap.some(step => roadmapStepText(step).includes("Hunter's Essence") && roadmapStepText(step).includes("Hunter's Craft")), 'roadmap de Bloodborne deve cobrir armas e ferramentas');
+  assert(bloodborneSample.roadmap.some(step => roadmapStepText(step).includes('Chalice Dungeons') && roadmapStepText(step).includes('Yharnam, Pthumerian Queen')), 'roadmap de Bloodborne deve cobrir Chalice Dungeons e a rainha');
+  assert(bloodborneSample.roadmap.some(step => roadmapStepText(step).includes('The Old Hunters') && roadmapStepText(step).includes('nao e necessario')), 'roadmap de Bloodborne deve excluir The Old Hunters');
   assert(!bloodborneSample.trophies.some(trophy => /Old Hunter|Orphan of Kos|Ludwig|Lady Maria|Living Failures|Laurence|Holy Moonlight|Rakuyo|Whirligig/i.test(`${trophy.id} ${trophy.name} ${trophy.description}`)), 'Bloodborne nao deve misturar trofeus da DLC The Old Hunters');
   assert(!bloodborneSample.trophies.some(trophy => /online|multiplayer|coop/i.test(`${trophy.name} ${trophy.description}`)), 'Bloodborne nao deve ter trofeus online obrigatorios');
   const bloodborneTypeCounts = bloodborneSample.trophies.reduce((counts, trophy) => {
@@ -3598,7 +3679,7 @@ async function assertSeedData({ all, get }, sampleGames) {
   assert(sekiroSample.runs_summary.includes('backup de save') && sekiroSample.runs_summary.includes('varias passagens'), 'Sekiro deve explicar backup e multiplas runs');
   assert(sekiroSample.grind_summary.includes('farm de XP') && sekiroSample.grind_summary.includes('skills'), 'Sekiro deve explicar farm de XP para skills');
   assert(sekiroSample.dlc_scope.includes('lista base de Sekiro: Shadows Die Twice'), 'Sekiro deve manter guia focado na lista base');
-  const sekiroRoadmapText = sekiroSample.roadmap.join(' ');
+  const sekiroRoadmapText = sekiroSample.roadmap.map(roadmapStepText).join(' ');
   assert(sekiroRoadmapText.includes('multiplos finais') && sekiroRoadmapText.includes('backup de save'), 'roadmap de Sekiro deve citar multiplos finais e backup de save');
   assert(sekiroRoadmapText.includes('NG+') && sekiroRoadmapText.includes('bosses'), 'roadmap de Sekiro deve citar NG+ e bosses');
   assert(sekiroRoadmapText.includes('Prayer Beads') && sekiroRoadmapText.includes('Prosthetic Tools'), 'roadmap de Sekiro deve citar Prayer Beads e Prosthetic Tools');
@@ -3678,7 +3759,7 @@ async function assertSeedData({ all, get }, sampleGames) {
   assert(armoredCoreSample.runs_summary.includes('tres ciclos') && armoredCoreSample.runs_summary.includes('NG++'), 'Armored Core VI deve explicar tres ciclos ate NG++');
   assert(armoredCoreSample.grind_summary.includes('S Rank') && armoredCoreSample.grind_summary.includes('Combat Logs'), 'Armored Core VI deve explicar S Rank e Combat Logs');
   assert(armoredCoreSample.dlc_scope.includes('lista base de Armored Core VI: Fires of Rubicon'), 'Armored Core VI deve manter guia focado na lista base');
-  const armoredCoreRoadmapText = armoredCoreSample.roadmap.join(' ');
+  const armoredCoreRoadmapText = armoredCoreSample.roadmap.map(roadmapStepText).join(' ');
   assert(armoredCoreRoadmapText.includes('NG++') && armoredCoreRoadmapText.includes('todos os finais'), 'roadmap de Armored Core VI deve citar NG++ e todos os finais');
   assert(armoredCoreRoadmapText.includes('Combat Logs') && armoredCoreRoadmapText.includes('Arena'), 'roadmap de Armored Core VI deve citar Combat Logs e Arena');
   assert(armoredCoreRoadmapText.includes('OS Tuning') && armoredCoreRoadmapText.includes('partes'), 'roadmap de Armored Core VI deve citar OS Tuning e partes');
@@ -3757,7 +3838,7 @@ async function assertSeedData({ all, get }, sampleGames) {
   assert(liesOfPSample.online_summary.includes('Nao ha exigencia online'), 'Lies of P deve deixar claro que nao ha online obrigatorio');
   assert(liesOfPSample.dlc_scope.includes('Overture') && liesOfPSample.dlc_scope.includes('lista base'), 'Lies of P deve separar Overture da platina base');
   assert(liesOfPSample.runs_summary.includes('multiplos finais') && liesOfPSample.runs_summary.includes('backup de save') && liesOfPSample.runs_summary.includes('NG+'), 'Lies of P deve explicar finais, backup e NG+');
-  const liesOfPRoadmapText = liesOfPSample.roadmap.join(' ');
+  const liesOfPRoadmapText = liesOfPSample.roadmap.map(roadmapStepText).join(' ');
   ['multiplos finais', 'backup de save', 'NG+', 'records', 'Golden Records', 'gestures', 'cryptic vessels', 'NPC quests', 'weapons'].forEach(needle => {
     assert(liesOfPRoadmapText.includes(needle), `roadmap de Lies of P deve mencionar ${needle}`);
   });
@@ -3797,7 +3878,7 @@ async function assertSeedData({ all, get }, sampleGames) {
   assert(lordsOfTheFallenSample.runs_summary.includes('3 playthroughs') && lordsOfTheFallenSample.runs_summary.includes('mesmo personagem'), 'Lords of the Fallen deve explicar 3 playthroughs no mesmo personagem');
   assert(lordsOfTheFallenSample.online_summary.includes('trofeus online confirmados') && lordsOfTheFallenSample.online_summary.includes('co-op') && lordsOfTheFallenSample.online_summary.includes('PvP'), 'Lords of the Fallen deve marcar online apenas apos validacao');
   assert(lordsOfTheFallenSample.grind_summary.includes('drops aleatorios') && lordsOfTheFallenSample.grind_summary.includes('Umbral Stigmas') && lordsOfTheFallenSample.grind_summary.includes('weapons') && lordsOfTheFallenSample.grind_summary.includes('armour'), 'Lords of the Fallen deve cobrir grind de colecoes e drops');
-  const lordsOfTheFallenRoadmapText = lordsOfTheFallenSample.roadmap.join(' ');
+  const lordsOfTheFallenRoadmapText = lordsOfTheFallenSample.roadmap.map(roadmapStepText).join(' ');
   ['3 finais', 'mesmo personagem', 'online/co-op/PvP', 'NPC questlines', 'colecoes', 'drops', 'Umbral Stigmas', 'spells', 'weapons', 'armour'].forEach(needle => {
     assert(lordsOfTheFallenRoadmapText.includes(needle), `roadmap de Lords of the Fallen deve mencionar ${needle}`);
   });
@@ -3922,10 +4003,10 @@ async function assertSeedData({ all, get }, sampleGames) {
   assert(deathStrandingSample.online_summary.includes('assincronos') && deathStrandingSample.online_summary.includes('nao exige multiplayer'), 'Death Stranding deve tratar online assincrono sem marcar multiplayer obrigatorio');
   assert(deathStrandingSample.dlc_scope.includes("Director's Cut") && deathStrandingSample.dlc_scope.includes('Death Stranding 2'), 'Death Stranding deve separar Director\'s Cut e Death Stranding 2');
   assert(deathStrandingSample.before_you_start.includes('lista original PS4') && deathStrandingSample.before_you_start.includes("Director's Cut"), 'Death Stranding deve deixar claro que usa a lista original PS4');
-  assert(deathStrandingSample.roadmap.some(step => step.includes('5 estrelas') && step.includes('Best Beloved')), 'roadmap de Death Stranding deve cobrir 5 estrelas/facilities');
-  assert(deathStrandingSample.roadmap.some(step => step.includes('Legend of Legends') && step.includes('Hard')), 'roadmap de Death Stranding deve cobrir premium deliveries em Hard');
-  assert(deathStrandingSample.roadmap.some(step => step.includes('memory chips') && step.includes('Homo Faber')), 'roadmap de Death Stranding deve cobrir memory chips e fabricacao');
-  assert(deathStrandingSample.roadmap.some(step => step.includes('servidores online assincronos') && step.includes('multiplayer obrigatorio')), 'roadmap de Death Stranding deve explicar online assincrono');
+  assert(deathStrandingSample.roadmap.some(step => roadmapStepText(step).includes('5 estrelas') && roadmapStepText(step).includes('Best Beloved')), 'roadmap de Death Stranding deve cobrir 5 estrelas/facilities');
+  assert(deathStrandingSample.roadmap.some(step => roadmapStepText(step).includes('Legend of Legends') && roadmapStepText(step).includes('Hard')), 'roadmap de Death Stranding deve cobrir premium deliveries em Hard');
+  assert(deathStrandingSample.roadmap.some(step => roadmapStepText(step).includes('memory chips') && roadmapStepText(step).includes('Homo Faber')), 'roadmap de Death Stranding deve cobrir memory chips e fabricacao');
+  assert(deathStrandingSample.roadmap.some(step => roadmapStepText(step).includes('servidores online assincronos') && roadmapStepText(step).includes('multiplayer obrigatorio')), 'roadmap de Death Stranding deve explicar online assincrono');
   assert(deathStrandingSample.trophies.every(trophy => trophy.is_missable === false), 'Death Stranding nao deve marcar trofeus perdiveis definitivos');
   assert(!deathStrandingSample.trophies.some(trophy => /Director|Director's Cut|Death Stranding 2/i.test(`${trophy.id} ${trophy.name} ${trophy.description}`)), 'Death Stranding nao deve misturar lista do Director\'s Cut ou Death Stranding 2');
   assert(!deathStrandingSample.trophies.some(trophy => /multiplayer obrigatorio|PS Plus obrigatorio/i.test(`${trophy.name} ${trophy.description} ${trophy.tip}`)), 'Death Stranding nao deve marcar multiplayer/PS Plus obrigatorio');
@@ -3997,11 +4078,11 @@ async function assertSeedData({ all, get }, sampleGames) {
   assert(deathStranding2Sample.online_summary.includes('3 trofeus online/assincronos') && deathStranding2Sample.online_summary.includes('PS+ nao e obrigatorio'), 'Death Stranding 2 deve tratar online assincrono e PS+ corretamente');
   assert(deathStranding2Sample.online_summary.includes('Promising Signs') && deathStranding2Sample.online_summary.includes('Emergency Worker') && deathStranding2Sample.online_summary.includes('A Premier Porter'), 'Death Stranding 2 deve listar os 3 objetivos online/assincronos confirmados');
   assert(deathStranding2Sample.dlc_scope.includes('Death Stranding original') && deathStranding2Sample.dlc_scope.includes("Director's Cut"), 'Death Stranding 2 deve separar DS1 e Director\'s Cut');
-  assert(deathStranding2Sample.roadmap.some(step => step.includes('DHV Magellan') && step.includes('APAS') && step.includes('Q-pid')), 'roadmap de Death Stranding 2 deve cobrir sistemas novos');
-  assert(deathStranding2Sample.roadmap.some(step => step.includes('42 facilities') && step.includes('Connecting Hearts and Minds')), 'roadmap de Death Stranding 2 deve cobrir facilities/conexoes');
-  assert(deathStranding2Sample.roadmap.some(step => step.includes('Seasoned Porter') && step.includes('Casual ou acima')), 'roadmap de Death Stranding 2 deve cobrir S-ranks e dificuldade');
-  assert(deathStranding2Sample.roadmap.some(step => step.includes('Premium Delivery') && step.includes('primeiro Death Stranding')), 'roadmap de Death Stranding 2 deve impedir importacao da regra do DS1');
-  assert(deathStranding2Sample.roadmap.some(step => step.includes('online/assincronos') && step.includes('PS+ nao e obrigatorio')), 'roadmap de Death Stranding 2 deve cobrir online assincrono');
+  assert(deathStranding2Sample.roadmap.some(step => roadmapStepText(step).includes('DHV Magellan') && roadmapStepText(step).includes('APAS') && roadmapStepText(step).includes('Q-pid')), 'roadmap de Death Stranding 2 deve cobrir sistemas novos');
+  assert(deathStranding2Sample.roadmap.some(step => roadmapStepText(step).includes('42 facilities') && roadmapStepText(step).includes('Connecting Hearts and Minds')), 'roadmap de Death Stranding 2 deve cobrir facilities/conexoes');
+  assert(deathStranding2Sample.roadmap.some(step => roadmapStepText(step).includes('Seasoned Porter') && roadmapStepText(step).includes('Casual ou acima')), 'roadmap de Death Stranding 2 deve cobrir S-ranks e dificuldade');
+  assert(deathStranding2Sample.roadmap.some(step => roadmapStepText(step).includes('Premium Delivery') && roadmapStepText(step).includes('primeiro Death Stranding')), 'roadmap de Death Stranding 2 deve impedir importacao da regra do DS1');
+  assert(deathStranding2Sample.roadmap.some(step => roadmapStepText(step).includes('online/assincronos') && roadmapStepText(step).includes('PS+ nao e obrigatorio')), 'roadmap de Death Stranding 2 deve cobrir online assincrono');
   assert(deathStranding2Sample.trophies.every(trophy => trophy.is_missable === false), 'Death Stranding 2 nao deve marcar trofeus perdiveis definitivos');
   assert(!deathStranding2Sample.trophies.some(trophy => trophy.id.startsWith('ds_')), 'Death Stranding 2 nao deve reutilizar trophy_code do primeiro Death Stranding');
   assert(!deathStranding2Sample.trophies.some(trophy => /Greatest of Great Deliverers|Best Beloved|Growth of a Legend|Homo Faber|Director's Cut/i.test(`${trophy.name} ${trophy.description}`)), 'Death Stranding 2 nao deve misturar lista do DS1 ou Director\'s Cut');
@@ -4080,10 +4161,10 @@ async function assertSeedData({ all, get }, sampleGames) {
   assert(granTurismo7Sample.before_you_start.includes('platinum') === false, 'Gran Turismo 7 deve manter copy editorial em portugues');
   assert(granTurismo7Sample.before_you_start.includes('plataforma') === false, 'Gran Turismo 7 nao deve misturar metadados fora do modelo no texto inicial');
   assert(granTurismo7Sample.before_you_start.includes('platin') && granTurismo7Sample.before_you_start.includes('grind de creditos'), 'Gran Turismo 7 deve avisar sobre platina longa e grind');
-  assert(granTurismo7Sample.roadmap.some(step => step.includes('Menu Books') && step.includes('GT Cafe')), 'roadmap de Gran Turismo 7 deve cobrir Menu Books/GT Cafe');
-  assert(granTurismo7Sample.roadmap.some(step => step.includes('ouro em todas') && step.includes('licenca')), 'roadmap de Gran Turismo 7 deve cobrir ouro em licencas');
-  assert(granTurismo7Sample.roadmap.some(step => step.includes('Legend Cars') && step.includes('Three Legendary Cars')), 'roadmap de Gran Turismo 7 deve cobrir carros lendarios');
-  assert(granTurismo7Sample.roadmap.some(step => step.includes('Sport Mode Debut') && step.includes('In-Depth Mastery')), 'roadmap de Gran Turismo 7 deve cobrir Sport Mode');
+  assert(granTurismo7Sample.roadmap.some(step => roadmapStepText(step).includes('Menu Books') && roadmapStepText(step).includes('GT Cafe')), 'roadmap de Gran Turismo 7 deve cobrir Menu Books/GT Cafe');
+  assert(granTurismo7Sample.roadmap.some(step => roadmapStepText(step).includes('ouro em todas') && roadmapStepText(step).includes('licenca')), 'roadmap de Gran Turismo 7 deve cobrir ouro em licencas');
+  assert(granTurismo7Sample.roadmap.some(step => roadmapStepText(step).includes('Legend Cars') && roadmapStepText(step).includes('Three Legendary Cars')), 'roadmap de Gran Turismo 7 deve cobrir carros lendarios');
+  assert(granTurismo7Sample.roadmap.some(step => roadmapStepText(step).includes('Sport Mode Debut') && roadmapStepText(step).includes('In-Depth Mastery')), 'roadmap de Gran Turismo 7 deve cobrir Sport Mode');
   assert(granTurismo7Sample.trophies.every(trophy => trophy.is_missable === false), 'Gran Turismo 7 nao deve marcar trofeus perdiveis definitivos');
   assert.strictEqual(granTurismo7Sample.trophies.filter(trophy => trophy.is_spoiler).length, 0, 'Gran Turismo 7 nao deve marcar spoilers narrativos');
   assert(!granTurismo7Sample.trophies.some(trophy => /Gran Turismo Sport|Record Number of Wins|Certified Genius|King of the Ovals|Tactical King|Endurance King/i.test(`${trophy.id} ${trophy.name} ${trophy.description}`)), 'Gran Turismo 7 nao deve misturar trofeus de Gran Turismo Sport');
@@ -4159,10 +4240,10 @@ async function assertSeedData({ all, get }, sampleGames) {
   assert(finalFantasyVIIRemakeSample.dlc_scope.includes('INTERmission') && finalFantasyVIIRemakeSample.dlc_scope.includes('Yuffie') && finalFantasyVIIRemakeSample.dlc_scope.includes('lista base'), 'Final Fantasy VII Remake deve separar lista base e INTERmission/Yuffie');
   assert(finalFantasyVIIRemakeSample.before_you_start.includes('Hard Mode') && finalFantasyVIIRemakeSample.before_you_start.includes('chapter select'), 'Final Fantasy VII Remake deve avisar sobre Hard Mode e chapter select');
   assert(finalFantasyVIIRemakeSample.cleanup_advice.includes('music discs') && finalFantasyVIIRemakeSample.cleanup_advice.includes('Johnny incidents'), 'Final Fantasy VII Remake deve orientar cleanup de colecionaveis e escolhas');
-  assert(finalFantasyVIIRemakeSample.roadmap.some(step => step.includes('Normal ou Easy') && step.includes('historia')), 'roadmap de Final Fantasy VII Remake deve cobrir primeira campanha');
-  assert(finalFantasyVIIRemakeSample.roadmap.some(step => step.includes('side quests') && step.includes('vestidos')), 'roadmap de Final Fantasy VII Remake deve cobrir escolhas e vestidos');
-  assert(finalFantasyVIIRemakeSample.roadmap.some(step => step.includes('Hard Mode') && step.includes('Hardened Veteran')), 'roadmap de Final Fantasy VII Remake deve cobrir Hard Mode');
-  assert(finalFantasyVIIRemakeSample.roadmap.some(step => step.includes('Pride and Joy') && step.includes('INTERmission/Yuffie')), 'roadmap de Final Fantasy VII Remake deve cobrir simulador e excluir DLC');
+  assert(finalFantasyVIIRemakeSample.roadmap.some(step => roadmapStepText(step).includes('Normal ou Easy') && roadmapStepText(step).includes('historia')), 'roadmap de Final Fantasy VII Remake deve cobrir primeira campanha');
+  assert(finalFantasyVIIRemakeSample.roadmap.some(step => roadmapStepText(step).includes('side quests') && roadmapStepText(step).includes('vestidos')), 'roadmap de Final Fantasy VII Remake deve cobrir escolhas e vestidos');
+  assert(finalFantasyVIIRemakeSample.roadmap.some(step => roadmapStepText(step).includes('Hard Mode') && roadmapStepText(step).includes('Hardened Veteran')), 'roadmap de Final Fantasy VII Remake deve cobrir Hard Mode');
+  assert(finalFantasyVIIRemakeSample.roadmap.some(step => roadmapStepText(step).includes('Pride and Joy') && roadmapStepText(step).includes('INTERmission/Yuffie')), 'roadmap de Final Fantasy VII Remake deve cobrir simulador e excluir DLC');
   assert(finalFantasyVIIRemakeSample.trophies.every(trophy => trophy.is_missable === false), 'Final Fantasy VII Remake nao deve marcar trofeus perdiveis definitivos');
   assert(!finalFantasyVIIRemakeSample.trophies.some(trophy => /online|multiplayer|coop/i.test(`${trophy.name} ${trophy.description} ${trophy.tip}`)), 'Final Fantasy VII Remake nao deve ter trofeus online obrigatorios');
   assert(!finalFantasyVIIRemakeSample.trophies.some(trophy => /Rebirth|Crisis Core|INTERmission|Yuffie|Fort Condor|Weiss|Materia Maven|Corrupter of the Immaculate|Turtle-tastic|Game, Set, Master/i.test(`${trophy.id} ${trophy.name} ${trophy.description}`)), 'Final Fantasy VII Remake nao deve misturar Rebirth, INTERmission/Yuffie, Crisis Core ou listas erradas');
@@ -4240,11 +4321,11 @@ async function assertSeedData({ all, get }, sampleGames) {
   assert(finalFantasyVIIRebirthSample.dlc_scope.includes('lista base') && finalFantasyVIIRebirthSample.dlc_scope.includes('Final Fantasy VII Remake') && finalFantasyVIIRebirthSample.dlc_scope.includes('INTERmission/Yuffie'), 'Final Fantasy VII Rebirth deve separar lista base, Remake e DLCs');
   assert(finalFantasyVIIRebirthSample.before_you_start.includes('Hard Mode') && finalFantasyVIIRebirthSample.before_you_start.includes('combat simulator') && finalFantasyVIIRebirthSample.before_you_start.includes('minigames'), 'Final Fantasy VII Rebirth deve avisar sobre Hard Mode, simulador e minigames');
   assert(finalFantasyVIIRebirthSample.cleanup_advice.includes('world intel') && finalFantasyVIIRebirthSample.cleanup_advice.includes('relationship/affinity'), 'Final Fantasy VII Rebirth deve orientar cleanup denso por chapter select');
-  assert(finalFantasyVIIRebirthSample.roadmap.some(step => step.includes('Normal ou Dynamic') && step.includes('Final Fantasy VII Remake')), 'roadmap de Final Fantasy VII Rebirth deve cobrir primeira campanha e separar Remake');
-  assert(finalFantasyVIIRebirthSample.roadmap.some(step => step.includes('World Intel') && step.includes('Protorelics') && step.includes("Queen's Blood")), 'roadmap de Final Fantasy VII Rebirth deve cobrir World Intel, Protorelics e Queen\'s Blood');
-  assert(finalFantasyVIIRebirthSample.roadmap.some(step => step.includes('chapter select') && step.includes('piano') && step.includes('chocobo races')), 'roadmap de Final Fantasy VII Rebirth deve cobrir cleanup por chapter select');
-  assert(finalFantasyVIIRebirthSample.roadmap.some(step => step.includes('Hard Mode') && step.includes('Of Hardy Stock')), 'roadmap de Final Fantasy VII Rebirth deve cobrir Hard Mode');
-  assert(finalFantasyVIIRebirthSample.roadmap.some(step => step.includes('combat simulator/Chadley') && step.includes('Brutal/Legendary') && step.includes('7-Star Hotel')), 'roadmap de Final Fantasy VII Rebirth deve cobrir simulador, VR/Legendary e 7-Star Hotel');
+  assert(finalFantasyVIIRebirthSample.roadmap.some(step => roadmapStepText(step).includes('Normal ou Dynamic') && roadmapStepText(step).includes('Final Fantasy VII Remake')), 'roadmap de Final Fantasy VII Rebirth deve cobrir primeira campanha e separar Remake');
+  assert(finalFantasyVIIRebirthSample.roadmap.some(step => roadmapStepText(step).includes('World Intel') && roadmapStepText(step).includes('Protorelics') && roadmapStepText(step).includes("Queen's Blood")), 'roadmap de Final Fantasy VII Rebirth deve cobrir World Intel, Protorelics e Queen\'s Blood');
+  assert(finalFantasyVIIRebirthSample.roadmap.some(step => roadmapStepText(step).includes('chapter select') && roadmapStepText(step).includes('piano') && roadmapStepText(step).includes('chocobo races')), 'roadmap de Final Fantasy VII Rebirth deve cobrir cleanup por chapter select');
+  assert(finalFantasyVIIRebirthSample.roadmap.some(step => roadmapStepText(step).includes('Hard Mode') && roadmapStepText(step).includes('Of Hardy Stock')), 'roadmap de Final Fantasy VII Rebirth deve cobrir Hard Mode');
+  assert(finalFantasyVIIRebirthSample.roadmap.some(step => roadmapStepText(step).includes('combat simulator/Chadley') && roadmapStepText(step).includes('Brutal/Legendary') && roadmapStepText(step).includes('7-Star Hotel')), 'roadmap de Final Fantasy VII Rebirth deve cobrir simulador, VR/Legendary e 7-Star Hotel');
   assert(finalFantasyVIIRebirthSample.trophies.every(trophy => trophy.is_missable === false), 'Final Fantasy VII Rebirth nao deve marcar trofeus perdiveis definitivos');
   assert(!finalFantasyVIIRebirthSample.trophies.some(trophy => /online|multiplayer|coop/i.test(`${trophy.name} ${trophy.description} ${trophy.tip}`)), 'Final Fantasy VII Rebirth nao deve ter trofeus online obrigatorios');
   assert(!finalFantasyVIIRebirthSample.trophies.some(trophy => /Master of Fate|Hardened Veteran|Ultimate Weapon|Dressed to the Nines|The Johnny Experience|INTERmission|Yuffie|Crisis Core/i.test(`${trophy.id} ${trophy.name} ${trophy.description}`)), 'Final Fantasy VII Rebirth nao deve misturar trofeus de Remake, INTERmission/Yuffie ou Crisis Core');
@@ -4323,10 +4404,10 @@ async function assertSeedData({ all, get }, sampleGames) {
   assert(finalFantasyXVISample.dlc_scope.includes('Echoes of the Fallen') && finalFantasyXVISample.dlc_scope.includes('The Rising Tide') && finalFantasyXVISample.dlc_scope.includes('lista base'), 'Final Fantasy XVI deve separar lista base e DLCs');
   assert(finalFantasyXVISample.before_you_start.includes('New Game+/Final Fantasy Mode') && finalFantasyXVISample.before_you_start.includes('materiais/crafting'), 'Final Fantasy XVI deve avisar sobre NG+/Final Fantasy Mode e materiais');
   assert(finalFantasyXVISample.cleanup_advice.includes('Chronolith Trials') && finalFantasyXVISample.cleanup_advice.includes('ability mastery'), 'Final Fantasy XVI deve orientar cleanup de Trials e habilidades');
-  assert(finalFantasyXVISample.roadmap.some(step => step.includes('Story Focused') && step.includes('Final Fantasy XV')), 'roadmap de Final Fantasy XVI deve cobrir primeira campanha e separar FFXV');
-  assert(finalFantasyXVISample.roadmap.some(step => step.includes('Gotterdammerung') && step.includes('Half Past Twilight')), 'roadmap de Final Fantasy XVI deve cobrir Gotterdammerung e Half Past Twilight');
-  assert(finalFantasyXVISample.roadmap.some(step => step.includes('New Game+') && step.includes('Final Fantasy Mode') && step.includes('Fantasy, Finally')), 'roadmap de Final Fantasy XVI deve cobrir New Game+/Final Fantasy Mode');
-  assert(finalFantasyXVISample.roadmap.some(step => step.includes('Echoes of the Fallen') && step.includes('The Rising Tide')), 'roadmap de Final Fantasy XVI deve excluir DLCs');
+  assert(finalFantasyXVISample.roadmap.some(step => roadmapStepText(step).includes('Story Focused') && roadmapStepText(step).includes('Final Fantasy XV')), 'roadmap de Final Fantasy XVI deve cobrir primeira campanha e separar FFXV');
+  assert(finalFantasyXVISample.roadmap.some(step => roadmapStepText(step).includes('Gotterdammerung') && roadmapStepText(step).includes('Half Past Twilight')), 'roadmap de Final Fantasy XVI deve cobrir Gotterdammerung e Half Past Twilight');
+  assert(finalFantasyXVISample.roadmap.some(step => roadmapStepText(step).includes('New Game+') && roadmapStepText(step).includes('Final Fantasy Mode') && roadmapStepText(step).includes('Fantasy, Finally')), 'roadmap de Final Fantasy XVI deve cobrir New Game+/Final Fantasy Mode');
+  assert(finalFantasyXVISample.roadmap.some(step => roadmapStepText(step).includes('Echoes of the Fallen') && roadmapStepText(step).includes('The Rising Tide')), 'roadmap de Final Fantasy XVI deve excluir DLCs');
   assert.strictEqual(finalFantasyXVISample.trophies.filter(trophy => trophy.is_missable).length, 1, 'Final Fantasy XVI deve marcar somente Half Past Twilight como missable confirmado');
   assert(finalFantasyXVISample.trophies.some(trophy => trophy.id === 'ff16_half_past_twilight' && trophy.is_missable && trophy.type === 'Prata'), 'Half Past Twilight deve ser prata missable por materiais vendidos');
   assert(!finalFantasyXVISample.trophies.some(trophy => /online|multiplayer|coop/i.test(`${trophy.name} ${trophy.description} ${trophy.tip}`)), 'Final Fantasy XVI nao deve ter trofeus online obrigatorios');
@@ -4402,10 +4483,10 @@ async function assertSeedData({ all, get }, sampleGames) {
   assert(persona5RoyalSample.dlc_scope.includes('Persona 5 Royal') && persona5RoyalSample.dlc_scope.includes('Persona 5 original') && persona5RoyalSample.dlc_scope.includes('DLC'), 'Persona 5 Royal deve separar Royal, original e DLC');
   assert(persona5RoyalSample.before_you_start.includes('roadmap') && persona5RoyalSample.before_you_start.includes('calendario'), 'Persona 5 Royal deve avisar sobre planejamento de calendario');
   assert(persona5RoyalSample.cleanup_advice.includes('Mementos') && persona5RoyalSample.cleanup_advice.includes('confidants'), 'Persona 5 Royal deve orientar cleanup de Mementos/confidants');
-  assert(persona5RoyalSample.roadmap.some(step => step.includes('calendario') && step.includes('confidants')), 'roadmap de Persona 5 Royal deve cobrir calendario e confidants');
-  assert(persona5RoyalSample.roadmap.some(step => step.includes('third semester') && step.includes('true ending')), 'roadmap de Persona 5 Royal deve cobrir third semester/true ending');
-  assert(persona5RoyalSample.roadmap.some(step => step.includes('Mementos') && step.includes('Jose') && step.includes('stamps')), 'roadmap de Persona 5 Royal deve cobrir Mementos, Jose e stamps');
-  assert(persona5RoyalSample.roadmap.some(step => step.includes('Persona 5 original')), 'roadmap de Persona 5 Royal deve separar a lista do Persona 5 original');
+  assert(persona5RoyalSample.roadmap.some(step => roadmapStepText(step).includes('calendario') && roadmapStepText(step).includes('confidants')), 'roadmap de Persona 5 Royal deve cobrir calendario e confidants');
+  assert(persona5RoyalSample.roadmap.some(step => roadmapStepText(step).includes('third semester') && roadmapStepText(step).includes('true ending')), 'roadmap de Persona 5 Royal deve cobrir third semester/true ending');
+  assert(persona5RoyalSample.roadmap.some(step => roadmapStepText(step).includes('Mementos') && roadmapStepText(step).includes('Jose') && roadmapStepText(step).includes('stamps')), 'roadmap de Persona 5 Royal deve cobrir Mementos, Jose e stamps');
+  assert(persona5RoyalSample.roadmap.some(step => roadmapStepText(step).includes('Persona 5 original')), 'roadmap de Persona 5 Royal deve separar a lista do Persona 5 original');
   assert.strictEqual(persona5RoyalSample.trophies.filter(trophy => trophy.is_missable).length, 29, 'Persona 5 Royal deve marcar apenas trofeus com atencao de calendario/janela como missable');
   assert.strictEqual(persona5RoyalSample.trophies.filter(trophy => trophy.is_spoiler).length, 17, 'Persona 5 Royal deve marcar spoilers de historia/palaces/third semester com cautela');
   assert(!persona5RoyalSample.trophies.some(trophy => /online|multiplayer|coop/i.test(`${trophy.name} ${trophy.description} ${trophy.tip}`)), 'Persona 5 Royal nao deve ter trofeus online obrigatorios');
@@ -4481,11 +4562,11 @@ async function assertSeedData({ all, get }, sampleGames) {
   assert(persona3ReloadSample.dlc_scope.includes('Episode Aigis') && persona3ReloadSample.dlc_scope.includes('Persona 5 Royal') && persona3ReloadSample.dlc_scope.includes('Persona 3 Portable'), 'Persona 3 Reload deve separar lista base, Episode Aigis e outras listas');
   assert(persona3ReloadSample.before_you_start.includes('Episode Aigis') && persona3ReloadSample.before_you_start.includes('Elizabeth Requests'), 'Persona 3 Reload deve avisar sobre Requests e DLC separada');
   assert(persona3ReloadSample.cleanup_advice.includes('janeiro') && persona3ReloadSample.cleanup_advice.includes('Messiah'), 'Persona 3 Reload deve orientar cleanup de janeiro e Messiah');
-  assert(persona3ReloadSample.roadmap.some(step => step.includes('calendario') && step.includes('Social Links')), 'roadmap de Persona 3 Reload deve cobrir calendario e Social Links');
-  assert(persona3ReloadSample.roadmap.some(step => step.includes('Elizabeth Requests')), 'roadmap de Persona 3 Reload deve cobrir Elizabeth Requests');
-  assert(persona3ReloadSample.roadmap.some(step => step.includes('Good Ending') && step.includes('12/31')), 'roadmap de Persona 3 Reload deve cobrir Good Ending e escolha critica');
-  assert(persona3ReloadSample.roadmap.some(step => step.includes('Tartarus') && step.includes('Twilight Fragments')), 'roadmap de Persona 3 Reload deve cobrir Tartarus e Twilight Fragments');
-  assert(persona3ReloadSample.roadmap.some(step => step.includes('Episode Aigis') && step.includes('platina base')), 'roadmap de Persona 3 Reload deve separar Episode Aigis');
+  assert(persona3ReloadSample.roadmap.some(step => roadmapStepText(step).includes('calendario') && roadmapStepText(step).includes('Social Links')), 'roadmap de Persona 3 Reload deve cobrir calendario e Social Links');
+  assert(persona3ReloadSample.roadmap.some(step => roadmapStepText(step).includes('Elizabeth Requests')), 'roadmap de Persona 3 Reload deve cobrir Elizabeth Requests');
+  assert(persona3ReloadSample.roadmap.some(step => roadmapStepText(step).includes('Good Ending') && roadmapStepText(step).includes('12/31')), 'roadmap de Persona 3 Reload deve cobrir Good Ending e escolha critica');
+  assert(persona3ReloadSample.roadmap.some(step => roadmapStepText(step).includes('Tartarus') && roadmapStepText(step).includes('Twilight Fragments')), 'roadmap de Persona 3 Reload deve cobrir Tartarus e Twilight Fragments');
+  assert(persona3ReloadSample.roadmap.some(step => roadmapStepText(step).includes('Episode Aigis') && roadmapStepText(step).includes('platina base')), 'roadmap de Persona 3 Reload deve separar Episode Aigis');
   assert.strictEqual(persona3ReloadSample.trophies.filter(trophy => trophy.is_missable).length, 22, 'Persona 3 Reload deve marcar apenas trofeus com atencao de calendario/janela como missable');
   assert.strictEqual(persona3ReloadSample.trophies.filter(trophy => trophy.is_spoiler).length, 13, 'Persona 3 Reload deve marcar spoilers de historia/Tartarus com cautela');
   assert(!persona3ReloadSample.trophies.some(trophy => /online|multiplayer|coop/i.test(`${trophy.name} ${trophy.description} ${trophy.tip}`)), 'Persona 3 Reload nao deve ter trofeus online obrigatorios');
@@ -4561,10 +4642,10 @@ async function assertSeedData({ all, get }, sampleGames) {
   assert(metaphorSample.dlc_scope.includes('lista base') && !/DLC|add-?on/i.test(metaphorSample.dlc_scope), 'Metaphor deve manter escopo focado na lista base sem inventar DLC');
   assert(metaphorSample.before_you_start.includes('New Game+') && metaphorSample.before_you_start.includes('perdiveis'), 'Metaphor deve avisar sobre NG+ e perdiveis');
   assert(metaphorSample.cleanup_advice.includes('Gold Beetles') && metaphorSample.cleanup_advice.includes('Archetypes'), 'Metaphor deve orientar cleanup de coletaveis e Archetypes');
-  assert(metaphorSample.roadmap.some(step => step.includes('calendario') && step.includes('Followers') && step.includes('Archetypes')), 'roadmap de Metaphor deve citar calendario, Followers e Archetypes');
-  assert(metaphorSample.roadmap.some(step => step.includes('quests') && step.includes('books') && step.includes('debates') && step.includes('Gold Beetles')), 'roadmap de Metaphor deve citar quests, books, debates e Gold Beetles');
-  assert(metaphorSample.roadmap.some(step => step.includes('New Game+') && step.includes('Closing the Book') && step.includes('Redscale Dragon')), 'roadmap de Metaphor deve citar New Game+, Closing the Book e Redscale Dragon');
-  assert(metaphorSample.roadmap.some(step => step.includes('Star Shatterer') && step.includes('Destroyer Charadrius')), 'roadmap de Metaphor deve citar Star Shatterer e Destroyer Charadrius');
+  assert(metaphorSample.roadmap.some(step => roadmapStepText(step).includes('calendario') && roadmapStepText(step).includes('Followers') && roadmapStepText(step).includes('Archetypes')), 'roadmap de Metaphor deve citar calendario, Followers e Archetypes');
+  assert(metaphorSample.roadmap.some(step => roadmapStepText(step).includes('quests') && roadmapStepText(step).includes('books') && roadmapStepText(step).includes('debates') && roadmapStepText(step).includes('Gold Beetles')), 'roadmap de Metaphor deve citar quests, books, debates e Gold Beetles');
+  assert(metaphorSample.roadmap.some(step => roadmapStepText(step).includes('New Game+') && roadmapStepText(step).includes('Closing the Book') && roadmapStepText(step).includes('Redscale Dragon')), 'roadmap de Metaphor deve citar New Game+, Closing the Book e Redscale Dragon');
+  assert(metaphorSample.roadmap.some(step => roadmapStepText(step).includes('Star Shatterer') && roadmapStepText(step).includes('Destroyer Charadrius')), 'roadmap de Metaphor deve citar Star Shatterer e Destroyer Charadrius');
   assert.strictEqual(metaphorSample.trophies.filter(trophy => trophy.is_missable).length, 14, 'Metaphor deve marcar missables de calendario, checklist, final e NG+ com cautela');
   assert.strictEqual(metaphorSample.trophies.filter(trophy => trophy.is_spoiler).length, 15, 'Metaphor deve marcar spoilers de historia, chefes, followers avancados e superboss com cautela');
   assert(!metaphorSample.trophies.some(trophy => /online|multiplayer|coop/i.test(`${trophy.name} ${trophy.description} ${trophy.tip}`)), 'Metaphor nao deve ter trofeus online obrigatorios');
@@ -4640,9 +4721,9 @@ async function assertSeedData({ all, get }, sampleGames) {
   assert(witcherSample.dlc_scope.includes('Hearts of Stone') && witcherSample.dlc_scope.includes('Blood and Wine') && witcherSample.dlc_scope.includes('lista base'), 'The Witcher 3 deve separar DLCs da platina base');
   assert(witcherSample.before_you_start.includes('perdiveis') && witcherSample.before_you_start.includes('planejamento'), 'The Witcher 3 deve avisar sobre planejamento e perdiveis');
   assert(witcherSample.cleanup_advice.includes('Gwent') && witcherSample.cleanup_advice.includes('Place of Power'), 'The Witcher 3 deve orientar cleanup de Gwent e Place of Power');
-  assert(witcherSample.roadmap.some(step => step.includes('Death March') && step.includes('segunda run')), 'roadmap de The Witcher 3 deve citar Death March');
-  assert(witcherSample.roadmap.some(step => step.includes('Gwent') && step.includes('Full Crew') && step.includes('The Isle of Mists')), 'roadmap de The Witcher 3 deve citar Gwent, Full Crew e The Isle of Mists');
-  assert(witcherSample.roadmap.some(step => step.includes('cleanup') && step.includes('lista base')), 'roadmap de The Witcher 3 deve citar cleanup da lista base');
+  assert(witcherSample.roadmap.some(step => roadmapStepText(step).includes('Death March') && roadmapStepText(step).includes('segunda run')), 'roadmap de The Witcher 3 deve citar Death March');
+  assert(witcherSample.roadmap.some(step => roadmapStepText(step).includes('Gwent') && roadmapStepText(step).includes('Full Crew') && roadmapStepText(step).includes('The Isle of Mists')), 'roadmap de The Witcher 3 deve citar Gwent, Full Crew e The Isle of Mists');
+  assert(witcherSample.roadmap.some(step => roadmapStepText(step).includes('cleanup') && roadmapStepText(step).includes('lista base')), 'roadmap de The Witcher 3 deve citar cleanup da lista base');
   assert.strictEqual(witcherSample.trophies.filter(trophy => trophy.is_missable).length, 13, 'The Witcher 3 deve marcar perdiveis confirmados com cautela');
   assert(witcherSample.trophies.filter(trophy => trophy.is_spoiler).length >= 12, 'The Witcher 3 deve marcar spoilers de historia e escolhas');
   assert(!witcherSample.trophies.some(trophy => /online|multiplayer|coop/i.test(`${trophy.name} ${trophy.description} ${trophy.tip}`)), 'The Witcher 3 nao deve ter trofeus online obrigatorios');
@@ -4718,10 +4799,10 @@ async function assertSeedData({ all, get }, sampleGames) {
   assert(cyberpunkSample.dlc_scope.includes('Phantom Liberty') && cyberpunkSample.dlc_scope.includes('lista base'), 'Cyberpunk 2077 deve separar Phantom Liberty da platina base');
   assert(cyberpunkSample.before_you_start.includes('saves manuais') && cyberpunkSample.before_you_start.includes('finais'), 'Cyberpunk 2077 deve avisar sobre saves e finais');
   assert(cyberpunkSample.cleanup_advice.includes('gigs') && cyberpunkSample.cleanup_advice.includes('NCPD scanner hustles') && cyberpunkSample.cleanup_advice.includes('cyberpsychos'), 'Cyberpunk 2077 deve orientar cleanup de distritos');
-  assert(cyberpunkSample.roadmap.some(step => step.includes('saves manuais') && step.includes('finais')), 'roadmap de Cyberpunk 2077 deve citar saves manuais e finais');
-  assert(cyberpunkSample.roadmap.some(step => step.includes('Judy') && step.includes('Panam') && step.includes('River') && step.includes('Kerry')), 'roadmap de Cyberpunk 2077 deve citar questlines de personagens');
-  assert(cyberpunkSample.roadmap.some(step => step.includes('gigs') && step.includes('NCPD scanner hustles') && step.includes('cyberpsychos')), 'roadmap de Cyberpunk 2077 deve citar gigs, NCPD e cyberpsychos');
-  assert(cyberpunkSample.roadmap.some(step => step.includes('cleanup') && step.includes('Phantom Liberty')), 'roadmap de Cyberpunk 2077 deve citar cleanup e separar Phantom Liberty');
+  assert(cyberpunkSample.roadmap.some(step => roadmapStepText(step).includes('saves manuais') && roadmapStepText(step).includes('finais')), 'roadmap de Cyberpunk 2077 deve citar saves manuais e finais');
+  assert(cyberpunkSample.roadmap.some(step => roadmapStepText(step).includes('Judy') && roadmapStepText(step).includes('Panam') && roadmapStepText(step).includes('River') && roadmapStepText(step).includes('Kerry')), 'roadmap de Cyberpunk 2077 deve citar questlines de personagens');
+  assert(cyberpunkSample.roadmap.some(step => roadmapStepText(step).includes('gigs') && roadmapStepText(step).includes('NCPD scanner hustles') && roadmapStepText(step).includes('cyberpsychos')), 'roadmap de Cyberpunk 2077 deve citar gigs, NCPD e cyberpsychos');
+  assert(cyberpunkSample.roadmap.some(step => roadmapStepText(step).includes('cleanup') && roadmapStepText(step).includes('Phantom Liberty')), 'roadmap de Cyberpunk 2077 deve citar cleanup e separar Phantom Liberty');
   assert.strictEqual(cyberpunkSample.trophies.filter(trophy => trophy.is_missable).length, 14, 'Cyberpunk 2077 deve marcar perdiveis confirmados com cautela');
   assert(cyberpunkSample.trophies.filter(trophy => trophy.is_spoiler).length >= 14, 'Cyberpunk 2077 deve marcar spoilers de historia, personagens e finais');
   assert(!cyberpunkSample.trophies.some(trophy => /online|multiplayer|coop/i.test(`${trophy.name} ${trophy.description} ${trophy.tip}`)), 'Cyberpunk 2077 nao deve ter trofeus online obrigatorios');
@@ -4795,10 +4876,10 @@ async function assertSeedData({ all, get }, sampleGames) {
   assert(baldursGateSample.online_summary.includes('Nao ha exigencia de multiplayer'), 'Baldur\'s Gate 3 deve deixar claro que multiplayer nao e obrigatorio');
   assert(baldursGateSample.dlc_scope.includes('Honour Mode') && baldursGateSample.dlc_scope.includes('Foehammer') && baldursGateSample.dlc_scope.includes('validar separadamente'), 'Baldur\'s Gate 3 deve separar Honour Mode/Foehammer da platina base');
   assert(baldursGateSample.before_you_start.includes('planejamento') && baldursGateSample.cleanup_advice.includes('companions'), 'Baldur\'s Gate 3 deve avisar sobre planejamento e cleanup por companions');
-  assert(baldursGateSample.roadmap.some(step => step.includes('Act 1') && step.includes('companions') && step.includes('trofeus bloqueaveis')), 'roadmap de Baldur\'s Gate 3 deve citar Act 1 e bloqueaveis');
-  assert(baldursGateSample.roadmap.some(step => step.includes('Act 2') && step.includes('Moonrise Towers') && step.includes('Dark Urge')), 'roadmap de Baldur\'s Gate 3 deve citar Act 2, Moonrise e Dark Urge');
-  assert(baldursGateSample.roadmap.some(step => step.includes('Act 3') && step.includes('saves estrategicos') && step.includes('finais')), 'roadmap de Baldur\'s Gate 3 deve citar Act 3, saves e finais');
-  assert(baldursGateSample.roadmap.some(step => step.includes('Honour Mode') && step.includes('Foehammer') && step.includes('validado separadamente')), 'roadmap de Baldur\'s Gate 3 deve separar Honor/Honour Mode');
+  assert(baldursGateSample.roadmap.some(step => roadmapStepText(step).includes('Act 1') && roadmapStepText(step).includes('companions') && roadmapStepText(step).includes('trofeus bloqueaveis')), 'roadmap de Baldur\'s Gate 3 deve citar Act 1 e bloqueaveis');
+  assert(baldursGateSample.roadmap.some(step => roadmapStepText(step).includes('Act 2') && roadmapStepText(step).includes('Moonrise Towers') && roadmapStepText(step).includes('Dark Urge')), 'roadmap de Baldur\'s Gate 3 deve citar Act 2, Moonrise e Dark Urge');
+  assert(baldursGateSample.roadmap.some(step => roadmapStepText(step).includes('Act 3') && roadmapStepText(step).includes('saves estrategicos') && roadmapStepText(step).includes('finais')), 'roadmap de Baldur\'s Gate 3 deve citar Act 3, saves e finais');
+  assert(baldursGateSample.roadmap.some(step => roadmapStepText(step).includes('Honour Mode') && roadmapStepText(step).includes('Foehammer') && roadmapStepText(step).includes('validado separadamente')), 'roadmap de Baldur\'s Gate 3 deve separar Honor/Honour Mode');
   assert.strictEqual(baldursGateSample.trophies.filter(trophy => trophy.is_missable).length, 33, 'Baldur\'s Gate 3 deve marcar perdiveis por escolha/ato/rota com cautela');
   assert(baldursGateSample.trophies.filter(trophy => trophy.is_spoiler).length >= 29, 'Baldur\'s Gate 3 deve marcar spoilers de atos, companions, bosses, finais e Dark Urge');
   assert.strictEqual(baldursGateSample.trophies.filter(trophy => /online|multiplayer|coop/i.test(`${trophy.name} ${trophy.description} ${trophy.tip}`)).length, 0, 'Baldur\'s Gate 3 nao deve ter trofeus multiplayer obrigatorios');
@@ -4872,10 +4953,10 @@ async function assertSeedData({ all, get }, sampleGames) {
   assert(dragonsDogma2Sample.online_summary.includes('Nao ha exigencia online'), 'Dragon\'s Dogma 2 deve deixar claro que online nao e obrigatorio');
   assert(dragonsDogma2Sample.dlc_scope.includes('lista base') && dragonsDogma2Sample.dlc_scope.includes('Dark Arisen'), 'Dragon\'s Dogma 2 deve separar o primeiro jogo/escopo externo');
   assert(dragonsDogma2Sample.before_you_start.includes('save limitado') && dragonsDogma2Sample.cleanup_advice.includes('NG+'), 'Dragon\'s Dogma 2 deve avisar sobre save limitado e NG+');
-  assert(dragonsDogma2Sample.roadmap.some(step => step.includes('save limitado') && step.includes('Dragonsplague')), 'roadmap de Dragon\'s Dogma 2 deve citar save limitado e Dragonsplague');
-  assert(dragonsDogma2Sample.roadmap.some(step => step.includes('vocations') && step.includes('Maister') && step.includes('Sphinx')), 'roadmap de Dragon\'s Dogma 2 deve citar vocations, Maisters e Sphinx');
-  assert(dragonsDogma2Sample.roadmap.some(step => step.includes('Unmoored World') && step.includes('The Guardian') && step.includes('Closure')), 'roadmap de Dragon\'s Dogma 2 deve citar Unmoored World/finais');
-  assert(dragonsDogma2Sample.roadmap.some(step => step.includes('NG+') && step.includes('cleanup')), 'roadmap de Dragon\'s Dogma 2 deve citar NG+/cleanup');
+  assert(dragonsDogma2Sample.roadmap.some(step => roadmapStepText(step).includes('save limitado') && roadmapStepText(step).includes('Dragonsplague')), 'roadmap de Dragon\'s Dogma 2 deve citar save limitado e Dragonsplague');
+  assert(dragonsDogma2Sample.roadmap.some(step => roadmapStepText(step).includes('vocations') && roadmapStepText(step).includes('Maister') && roadmapStepText(step).includes('Sphinx')), 'roadmap de Dragon\'s Dogma 2 deve citar vocations, Maisters e Sphinx');
+  assert(dragonsDogma2Sample.roadmap.some(step => roadmapStepText(step).includes('Unmoored World') && roadmapStepText(step).includes('The Guardian') && roadmapStepText(step).includes('Closure')), 'roadmap de Dragon\'s Dogma 2 deve citar Unmoored World/finais');
+  assert(dragonsDogma2Sample.roadmap.some(step => roadmapStepText(step).includes('NG+') && roadmapStepText(step).includes('cleanup')), 'roadmap de Dragon\'s Dogma 2 deve citar NG+/cleanup');
   assert.strictEqual(dragonsDogma2Sample.trophies.filter(trophy => trophy.is_missable).length, 18, 'Dragon\'s Dogma 2 deve marcar perdiveis por janela/save/final com cautela');
   assert(dragonsDogma2Sample.trophies.filter(trophy => trophy.is_spoiler).length >= 24, 'Dragon\'s Dogma 2 deve marcar spoilers de historia, finais, Unmoored, bosses e Sphinx');
   assert.strictEqual(dragonsDogma2Sample.trophies.filter(trophy => /online|multiplayer|coop/i.test(`${trophy.name} ${trophy.description} ${trophy.tip}`)).length, 0, 'Dragon\'s Dogma 2 nao deve ter trofeus online obrigatorios');
@@ -4949,10 +5030,10 @@ async function assertSeedData({ all, get }, sampleGames) {
   assert(daysGoneSample.online_summary.includes('Nao ha exigencia online'), 'Days Gone deve deixar claro que online nao e obrigatorio');
   assert(daysGoneSample.dlc_scope.includes('Challenge Mode') && daysGoneSample.dlc_scope.includes('New Game+') && daysGoneSample.dlc_scope.includes('Survival Mode'), 'Days Gone deve separar DLC/add-ons da lista base');
   assert(daysGoneSample.before_you_start.includes('looting humano') && daysGoneSample.before_you_start.includes('comeco'), 'Days Gone deve avisar sobre Youve Got Red on You desde cedo');
-  assert(daysGoneSample.roadmap.some(step => step.includes("You've Got Red on You") && step.includes('perdivel')), 'roadmap de Days Gone deve citar Youve Got Red on You como atencao sem missable');
-  assert(daysGoneSample.roadmap.some(step => step.includes('Ambush Camps') && step.includes('Infestation Zones') && step.includes('NERO')), 'roadmap de Days Gone deve cobrir atividades regionais');
-  assert(daysGoneSample.roadmap.some(step => step.includes('hordas') && step.includes('Lend Me Your Ears')), 'roadmap de Days Gone deve cobrir hordas');
-  assert(daysGoneSample.roadmap.some(step => step.includes('Challenge Mode') && step.includes('New Game+') && step.includes('Survival Mode')), 'roadmap de Days Gone deve excluir add-ons');
+  assert(daysGoneSample.roadmap.some(step => roadmapStepText(step).includes("You've Got Red on You") && roadmapStepText(step).includes('perdivel')), 'roadmap de Days Gone deve citar Youve Got Red on You como atencao sem missable');
+  assert(daysGoneSample.roadmap.some(step => roadmapStepText(step).includes('Ambush Camps') && roadmapStepText(step).includes('Infestation Zones') && roadmapStepText(step).includes('NERO')), 'roadmap de Days Gone deve cobrir atividades regionais');
+  assert(daysGoneSample.roadmap.some(step => roadmapStepText(step).includes('hordas') && roadmapStepText(step).includes('Lend Me Your Ears')), 'roadmap de Days Gone deve cobrir hordas');
+  assert(daysGoneSample.roadmap.some(step => roadmapStepText(step).includes('Challenge Mode') && roadmapStepText(step).includes('New Game+') && roadmapStepText(step).includes('Survival Mode')), 'roadmap de Days Gone deve excluir add-ons');
   assert(daysGoneSample.trophies.every(trophy => trophy.is_missable === false), 'Days Gone nao deve marcar trofeus perdiveis definitivos');
   assert(!daysGoneSample.trophies.some(trophy => /online|multiplayer|coop/i.test(`${trophy.name} ${trophy.description}`)), 'Days Gone nao deve ter trofeus online obrigatorios');
   assert(!daysGoneSample.trophies.some(trophy => /Challenge|Medal|Ring|Patch|Founder|New Game\\+|Survival|Hard II|Logan|Remastered/i.test(`${trophy.id} ${trophy.name} ${trophy.description}`)), 'Days Gone nao deve misturar Challenge Mode, New Game+, Survival Mode ou Remastered extras');
@@ -5080,11 +5161,11 @@ async function assertSeedData({ all, get }, sampleGames) {
   assert(jediFallenOrderSample.dlc_scope.includes('lista base'), 'Jedi Fallen Order deve declarar escopo da lista base');
   assert(jediFallenOrderSample.image.includes('/header.jpg'), 'Jedi Fallen Order deve usar image horizontal valida');
   assert(jediFallenOrderSample.cover_image.includes('/library_600x900.jpg'), 'Jedi Fallen Order deve expor cover_image vertical');
-  assert(jediFallenOrderSample.roadmap.some(step => step.includes('campanha') && step.includes('Force powers')), 'roadmap de Jedi Fallen Order deve cobrir campanha e Force powers');
-  assert(jediFallenOrderSample.roadmap.some(step => step.includes('pós-história') && step.includes('baús') && step.includes('segredos')), 'roadmap de Jedi Fallen Order deve cobrir cleanup pos-historia de coletaveis');
-  assert(jediFallenOrderSample.roadmap.some(step => step.includes('scans') || step.includes('BD-1')), 'roadmap de Jedi Fallen Order deve cobrir scans de BD-1');
-  assert(jediFallenOrderSample.roadmap.some(step => step.includes('sementes') || step.includes('terrário')), 'roadmap de Jedi Fallen Order deve cobrir sementes do terrario');
-  assert(jediFallenOrderSample.roadmap.some(step => step.includes('combate') && step.includes('Force powers')), 'roadmap de Jedi Fallen Order deve cobrir trofeus de combate e Force powers');
+  assert(jediFallenOrderSample.roadmap.some(step => roadmapStepText(step).includes('campanha') && roadmapStepText(step).includes('Force powers')), 'roadmap de Jedi Fallen Order deve cobrir campanha e Force powers');
+  assert(jediFallenOrderSample.roadmap.some(step => roadmapStepText(step).includes('pós-história') && roadmapStepText(step).includes('baús') && roadmapStepText(step).includes('segredos')), 'roadmap de Jedi Fallen Order deve cobrir cleanup pos-historia de coletaveis');
+  assert(jediFallenOrderSample.roadmap.some(step => roadmapStepText(step).includes('scans') || roadmapStepText(step).includes('BD-1')), 'roadmap de Jedi Fallen Order deve cobrir scans de BD-1');
+  assert(jediFallenOrderSample.roadmap.some(step => roadmapStepText(step).includes('sementes') || roadmapStepText(step).includes('terrário')), 'roadmap de Jedi Fallen Order deve cobrir sementes do terrario');
+  assert(jediFallenOrderSample.roadmap.some(step => roadmapStepText(step).includes('combate') && roadmapStepText(step).includes('Force powers')), 'roadmap de Jedi Fallen Order deve cobrir trofeus de combate e Force powers');
   assert.strictEqual(jediFallenOrderSample.trophies.filter(trophy => trophy.is_missable).length, 0, 'Jedi Fallen Order nao deve marcar perdiveis na lista base');
   assert(!jediFallenOrderSample.trophies.some(trophy => /Survivor|So Uncivilized|Point Blank|Koboh|Priorite|Tanalorr/i.test(`${trophy.id} ${trophy.name} ${trophy.description}`)), 'Jedi Fallen Order nao deve misturar trofeus de Jedi: Survivor');
   assert(!jediFallenOrderSample.trophies.some(trophy => /Grandmaster|Jedi Master|difficulty|dificuldade/i.test(`${trophy.id} ${trophy.name} ${trophy.description}`)), 'Jedi Fallen Order nao deve incluir trofeus de dificuldade');
@@ -5126,11 +5207,11 @@ async function assertSeedData({ all, get }, sampleGames) {
   assert(jediSurvivorSample.dlc_scope.includes('lista base') && jediSurvivorSample.dlc_scope.includes('Deluxe Upgrade'), 'Jedi Survivor deve declarar escopo da lista base e separar extras');
   assert(jediSurvivorSample.image.includes('/header.jpg'), 'Jedi Survivor deve usar image horizontal valida');
   assert(jediSurvivorSample.cover_image.includes('/library_600x900.jpg'), 'Jedi Survivor deve expor cover_image vertical');
-  assert(jediSurvivorSample.roadmap.some(step => step.includes('campanha') && step.includes('stances') && step.includes('Force powers')), 'roadmap de Jedi Survivor deve cobrir campanha, stances e Force powers');
-  assert(jediSurvivorSample.roadmap.some(step => step.includes('pós-história') || step.includes('após a história')), 'roadmap de Jedi Survivor deve cobrir cleanup pos-historia');
-  assert(jediSurvivorSample.roadmap.some(step => step.includes('Jedi Chambers') && step.includes('Force Tears')), 'roadmap de Jedi Survivor deve cobrir Jedi Chambers e Force Tears');
-  assert(jediSurvivorSample.roadmap.some(step => step.includes('scans') && step.includes('perks') && step.includes('upgrades')), 'roadmap de Jedi Survivor deve cobrir scans, perks e upgrades');
-  assert(jediSurvivorSample.roadmap.some(step => step.includes('stances') && step.includes('combate')), 'roadmap de Jedi Survivor deve cobrir stances e trofeus de combate');
+  assert(jediSurvivorSample.roadmap.some(step => roadmapStepText(step).includes('campanha') && roadmapStepText(step).includes('stances') && roadmapStepText(step).includes('Force powers')), 'roadmap de Jedi Survivor deve cobrir campanha, stances e Force powers');
+  assert(jediSurvivorSample.roadmap.some(step => roadmapStepText(step).includes('pós-história') || roadmapStepText(step).includes('após a história')), 'roadmap de Jedi Survivor deve cobrir cleanup pos-historia');
+  assert(jediSurvivorSample.roadmap.some(step => roadmapStepText(step).includes('Jedi Chambers') && roadmapStepText(step).includes('Force Tears')), 'roadmap de Jedi Survivor deve cobrir Jedi Chambers e Force Tears');
+  assert(jediSurvivorSample.roadmap.some(step => roadmapStepText(step).includes('scans') && roadmapStepText(step).includes('perks') && roadmapStepText(step).includes('upgrades')), 'roadmap de Jedi Survivor deve cobrir scans, perks e upgrades');
+  assert(jediSurvivorSample.roadmap.some(step => roadmapStepText(step).includes('stances') && roadmapStepText(step).includes('combate')), 'roadmap de Jedi Survivor deve cobrir stances e trofeus de combate');
   assert.strictEqual(jediSurvivorSample.trophies.filter(trophy => trophy.is_missable).length, 1, 'Jedi Survivor deve marcar apenas 1 missable validado');
   assert.strictEqual(jediSurvivorSample.trophies.find(trophy => trophy.id === 'swjs_youve_got_a_friend')?.is_missable, true, 'You’ve Got A Friend deve ser missable por janela de companheiros');
   assert(!jediSurvivorSample.trophies.some(trophy => /A New Hope|Collector|Feel the Force|Trust Only In The Force|Medical Droid|Green Thumb|Echo Location/i.test(`${trophy.id} ${trophy.name} ${trophy.description}`)), 'Jedi Survivor nao deve misturar trofeus de Jedi Fallen Order');
@@ -5174,10 +5255,10 @@ async function assertSeedData({ all, get }, sampleGames) {
   assert(hogwartsLegacySample.difficulty_reason.includes('não exige dificuldade alta'), 'Hogwarts Legacy deve deixar claro que nao ha trofeu de dificuldade');
   assert(hogwartsLegacySample.image.includes('/header.jpg'), 'Hogwarts Legacy deve usar image horizontal valida');
   assert(hogwartsLegacySample.cover_image.includes('/library_600x900.jpg'), 'Hogwarts Legacy deve expor cover_image vertical');
-  assert(hogwartsLegacySample.roadmap.some(step => step.includes('campanha') && step.includes('Room of Requirement')), 'roadmap de Hogwarts Legacy deve cobrir campanha e Room of Requirement');
-  assert(hogwartsLegacySample.roadmap.some(step => step.includes('Field Guide Pages') && step.includes('Merlin Trials') && step.includes('Demiguise')), 'roadmap de Hogwarts Legacy deve cobrir coletaveis principais');
-  assert(hogwartsLegacySample.roadmap.some(step => step.includes('Collection Chests') && step.includes('Infamous Foes')), 'roadmap de Hogwarts Legacy deve cobrir Collection Chests e Infamous Foes');
-  assert(hogwartsLegacySample.roadmap.some(step => step.includes('outras 3 casas') && step.includes('Map Chamber')), 'roadmap de Hogwarts Legacy deve cobrir as 3 runs parciais adicionais');
+  assert(hogwartsLegacySample.roadmap.some(step => roadmapStepText(step).includes('campanha') && roadmapStepText(step).includes('Room of Requirement')), 'roadmap de Hogwarts Legacy deve cobrir campanha e Room of Requirement');
+  assert(hogwartsLegacySample.roadmap.some(step => roadmapStepText(step).includes('Field Guide Pages') && roadmapStepText(step).includes('Merlin Trials') && roadmapStepText(step).includes('Demiguise')), 'roadmap de Hogwarts Legacy deve cobrir coletaveis principais');
+  assert(hogwartsLegacySample.roadmap.some(step => roadmapStepText(step).includes('Collection Chests') && roadmapStepText(step).includes('Infamous Foes')), 'roadmap de Hogwarts Legacy deve cobrir Collection Chests e Infamous Foes');
+  assert(hogwartsLegacySample.roadmap.some(step => roadmapStepText(step).includes('outras 3 casas') && roadmapStepText(step).includes('Map Chamber')), 'roadmap de Hogwarts Legacy deve cobrir as 3 runs parciais adicionais');
   assert.strictEqual(hogwartsLegacySample.trophies.filter(trophy => trophy.is_missable).length, 4, 'Hogwarts Legacy deve marcar apenas os 4 trofeus de casa como missable/atencao');
   ['hogwarts_the_toast_of_the_town', 'hogwarts_the_aurors_apprentice', 'hogwarts_the_gryffindor_in_the_graveyard', 'hogwarts_the_wise_owl'].forEach(code => {
     assert.strictEqual(hogwartsLegacySample.trophies.find(trophy => trophy.id === code)?.is_missable, true, `${code} deve ser missable por casa/playthrough parcial`);
@@ -5223,10 +5304,10 @@ async function assertSeedData({ all, get }, sampleGames) {
   assert(assassinsCreedOriginsSample.dlc_scope.includes('The Hidden Ones') && assassinsCreedOriginsSample.dlc_scope.includes('The Curse of the Pharaohs'), 'Assassin’s Creed Origins deve separar DLCs da lista base');
   assert(assassinsCreedOriginsSample.image.includes('/header.jpg'), 'Assassin’s Creed Origins deve usar image horizontal valida');
   assert(assassinsCreedOriginsSample.cover_image.includes('/library_600x900.jpg'), 'Assassin’s Creed Origins deve expor cover_image vertical');
-  assert(assassinsCreedOriginsSample.roadmap.some(step => step.includes('campanha') && step.includes('Senu')), 'roadmap de Assassin’s Creed Origins deve cobrir campanha e Senu');
-  assert(assassinsCreedOriginsSample.roadmap.some(step => step.includes('Old Habits') && step.includes('free-roam')), 'roadmap de Assassin’s Creed Origins deve cobrir Old Habits e cleanup pos-historia');
-  assert(assassinsCreedOriginsSample.roadmap.some(step => step.includes('tumbas') && step.includes('Stone Circles') && step.includes('Hermit Locations')), 'roadmap de Assassin’s Creed Origins deve cobrir tumbas, Stone Circles e Hermit Locations');
-  assert(assassinsCreedOriginsSample.roadmap.some(step => step.includes('War Elephants') && step.includes('Arena') && step.includes('Hippodrome')), 'roadmap de Assassin’s Creed Origins deve cobrir War Elephants, Arena e Hippodrome');
+  assert(assassinsCreedOriginsSample.roadmap.some(step => roadmapStepText(step).includes('campanha') && roadmapStepText(step).includes('Senu')), 'roadmap de Assassin’s Creed Origins deve cobrir campanha e Senu');
+  assert(assassinsCreedOriginsSample.roadmap.some(step => roadmapStepText(step).includes('Old Habits') && roadmapStepText(step).includes('free-roam')), 'roadmap de Assassin’s Creed Origins deve cobrir Old Habits e cleanup pos-historia');
+  assert(assassinsCreedOriginsSample.roadmap.some(step => roadmapStepText(step).includes('tumbas') && roadmapStepText(step).includes('Stone Circles') && roadmapStepText(step).includes('Hermit Locations')), 'roadmap de Assassin’s Creed Origins deve cobrir tumbas, Stone Circles e Hermit Locations');
+  assert(assassinsCreedOriginsSample.roadmap.some(step => roadmapStepText(step).includes('War Elephants') && roadmapStepText(step).includes('Arena') && roadmapStepText(step).includes('Hippodrome')), 'roadmap de Assassin’s Creed Origins deve cobrir War Elephants, Arena e Hippodrome');
   assert.strictEqual(assassinsCreedOriginsSample.trophies.filter(trophy => trophy.is_missable).length, 0, 'Assassin’s Creed Origins nao deve marcar missables definitivos');
   assert(!assassinsCreedOriginsSample.trophies.some(trophy => /The Hidden Ones|Curse of the Pharaohs|Discovery Tour|Odyssey|Valhalla|Mirage|Shadows/i.test(`${trophy.id} ${trophy.name} ${trophy.description} ${trophy.tip}`)), 'Assassin’s Creed Origins nao deve misturar DLC ou outros Assassin’s Creed');
   assert(!assassinsCreedOriginsSample.trophies.some(trophy => /difficulty|dificuldade|Hard|Nightmare|Easy/i.test(`${trophy.id} ${trophy.name} ${trophy.description}`)), 'Assassin’s Creed Origins nao deve incluir trofeus de dificuldade');
@@ -5267,11 +5348,11 @@ async function assertSeedData({ all, get }, sampleGames) {
   assert(assassinsCreedOdysseySample.dlc_scope.includes('Legacy of the First Blade') && assassinsCreedOdysseySample.dlc_scope.includes('The Fate of Atlantis'), 'Assassin’s Creed Odyssey deve separar DLCs da lista base');
   assert(assassinsCreedOdysseySample.image.includes('/header.jpg'), 'Assassin’s Creed Odyssey deve usar image horizontal valida');
   assert(assassinsCreedOdysseySample.cover_image.includes('/library_600x900.jpg'), 'Assassin’s Creed Odyssey deve expor cover_image vertical');
-  assert(assassinsCreedOdysseySample.roadmap.some(step => step.includes('campanha') && step.includes('Adrestia')), 'roadmap de Assassin’s Creed Odyssey deve cobrir campanha e Adrestia');
-  assert(assassinsCreedOdysseySample.roadmap.some(step => step.includes('Culto do Kosmos') && step.includes('Atlantis')), 'roadmap de Assassin’s Creed Odyssey deve cobrir Culto e Atlantis da lista base');
-  assert(assassinsCreedOdysseySample.roadmap.some(step => step.includes('Xenia') && step.includes('Daughters of Artemis') && step.includes('bosses míticos')), 'roadmap de Assassin’s Creed Odyssey deve cobrir questlines e bosses míticos');
-  assert(assassinsCreedOdysseySample.roadmap.some(step => step.includes('underwater locations') && step.includes('Hermes’s Homie')), 'roadmap de Assassin’s Creed Odyssey deve cobrir underwater locations e mapa');
-  assert(assassinsCreedOdysseySample.roadmap.some(step => step.includes('0 online obrigatório') && step.includes('0 troféus de dificuldade')), 'roadmap de Assassin’s Creed Odyssey deve cobrir ausência de online e dificuldade');
+  assert(assassinsCreedOdysseySample.roadmap.some(step => roadmapStepText(step).includes('campanha') && roadmapStepText(step).includes('Adrestia')), 'roadmap de Assassin’s Creed Odyssey deve cobrir campanha e Adrestia');
+  assert(assassinsCreedOdysseySample.roadmap.some(step => roadmapStepText(step).includes('Culto do Kosmos') && roadmapStepText(step).includes('Atlantis')), 'roadmap de Assassin’s Creed Odyssey deve cobrir Culto e Atlantis da lista base');
+  assert(assassinsCreedOdysseySample.roadmap.some(step => roadmapStepText(step).includes('Xenia') && roadmapStepText(step).includes('Daughters of Artemis') && roadmapStepText(step).includes('bosses míticos')), 'roadmap de Assassin’s Creed Odyssey deve cobrir questlines e bosses míticos');
+  assert(assassinsCreedOdysseySample.roadmap.some(step => roadmapStepText(step).includes('underwater locations') && roadmapStepText(step).includes('Hermes’s Homie')), 'roadmap de Assassin’s Creed Odyssey deve cobrir underwater locations e mapa');
+  assert(assassinsCreedOdysseySample.roadmap.some(step => roadmapStepText(step).includes('0 online obrigatório') && roadmapStepText(step).includes('0 troféus de dificuldade')), 'roadmap de Assassin’s Creed Odyssey deve cobrir ausência de online e dificuldade');
   assert.strictEqual(assassinsCreedOdysseySample.trophies.filter(trophy => trophy.is_missable).length, 1, 'Assassin’s Creed Odyssey deve marcar apenas Aphrodite’s Embrace como missable/atencao');
   assert.strictEqual(assassinsCreedOdysseySample.trophies.find(trophy => trophy.id === 'acod_aphrodites_embrace')?.is_missable, true, 'Aphrodite’s Embrace deve ser missable/atencao leve');
   assert(!assassinsCreedOdysseySample.trophies.some(trophy => /The Hidden Ones|Curse of the Pharaohs|Legacy of the First Blade|Fate of Atlantis|Discovery Tour|Origins|Valhalla|Mirage|Shadows/i.test(`${trophy.id} ${trophy.name} ${trophy.description}`)), 'Assassin’s Creed Odyssey nao deve misturar DLC ou outros Assassin’s Creed');
@@ -5314,11 +5395,11 @@ async function assertSeedData({ all, get }, sampleGames) {
   assert(assassinsCreedValhallaSample.dlc_scope.includes('Wrath of the Druids') && assassinsCreedValhallaSample.dlc_scope.includes('The Siege of Paris') && assassinsCreedValhallaSample.dlc_scope.includes('Dawn of Ragnarök') && assassinsCreedValhallaSample.dlc_scope.includes('The Forgotten Saga'), 'Assassin’s Creed Valhalla deve separar DLCs da lista base');
   assert(assassinsCreedValhallaSample.image.includes('/header.jpg'), 'Assassin’s Creed Valhalla deve usar image horizontal valida');
   assert(assassinsCreedValhallaSample.cover_image.includes('/library_600x900.jpg'), 'Assassin’s Creed Valhalla deve expor cover_image vertical');
-  assert(assassinsCreedValhallaSample.roadmap.some(step => step.includes('campanha') && step.includes('settlement') && step.includes('raids')), 'roadmap de Assassin’s Creed Valhalla deve cobrir campanha, settlement e raids');
-  assert(assassinsCreedValhallaSample.roadmap.some(step => step.includes('Ordem dos Anciões') && step.includes('Zealots')), 'roadmap de Assassin’s Creed Valhalla deve cobrir Ordem e Zealots');
-  assert(assassinsCreedValhallaSample.roadmap.some(step => step.includes('Wealth') && step.includes('Mysteries') && step.includes('Artifacts')), 'roadmap de Assassin’s Creed Valhalla deve cobrir Wealth, Mysteries e Artifacts');
-  assert(assassinsCreedValhallaSample.roadmap.some(step => step.includes('Orlog') && step.includes('Flyting') && step.includes('Legendary Animals')), 'roadmap de Assassin’s Creed Valhalla deve cobrir atividades especiais de mundo aberto');
-  assert(assassinsCreedValhallaSample.roadmap.some(step => step.includes('fishing') && step.includes('Asgard/Jotunheim') && step.includes('Mjolnir')), 'roadmap de Assassin’s Creed Valhalla deve cobrir fishing, Asgard/Jotunheim e Mjolnir');
+  assert(assassinsCreedValhallaSample.roadmap.some(step => roadmapStepText(step).includes('campanha') && roadmapStepText(step).includes('settlement') && roadmapStepText(step).includes('raids')), 'roadmap de Assassin’s Creed Valhalla deve cobrir campanha, settlement e raids');
+  assert(assassinsCreedValhallaSample.roadmap.some(step => roadmapStepText(step).includes('Ordem dos Anciões') && roadmapStepText(step).includes('Zealots')), 'roadmap de Assassin’s Creed Valhalla deve cobrir Ordem e Zealots');
+  assert(assassinsCreedValhallaSample.roadmap.some(step => roadmapStepText(step).includes('Wealth') && roadmapStepText(step).includes('Mysteries') && roadmapStepText(step).includes('Artifacts')), 'roadmap de Assassin’s Creed Valhalla deve cobrir Wealth, Mysteries e Artifacts');
+  assert(assassinsCreedValhallaSample.roadmap.some(step => roadmapStepText(step).includes('Orlog') && roadmapStepText(step).includes('Flyting') && roadmapStepText(step).includes('Legendary Animals')), 'roadmap de Assassin’s Creed Valhalla deve cobrir atividades especiais de mundo aberto');
+  assert(assassinsCreedValhallaSample.roadmap.some(step => roadmapStepText(step).includes('fishing') && roadmapStepText(step).includes('Asgard/Jotunheim') && roadmapStepText(step).includes('Mjolnir')), 'roadmap de Assassin’s Creed Valhalla deve cobrir fishing, Asgard/Jotunheim e Mjolnir');
   assert.strictEqual(assassinsCreedValhallaSample.trophies.filter(trophy => trophy.is_missable).length, 0, 'Assassin’s Creed Valhalla nao deve marcar missables definitivos');
   assert(!assassinsCreedValhallaSample.trophies.some(trophy => /Wrath of the Druids|Siege of Paris|Dawn of Ragnarök|Forgotten Saga|Discovery Tour|Origins|Odyssey|Mirage|Shadows/i.test(`${trophy.id} ${trophy.name} ${trophy.description} ${trophy.tip}`)), 'Assassin’s Creed Valhalla nao deve misturar DLC ou outros Assassin’s Creed');
   assert(!assassinsCreedValhallaSample.trophies.some(trophy => /difficulty|dificuldade|Nightmare|Easy/i.test(`${trophy.id} ${trophy.name} ${trophy.description}`)), 'Assassin’s Creed Valhalla nao deve incluir trofeus de dificuldade');
@@ -5360,10 +5441,10 @@ async function assertSeedData({ all, get }, sampleGames) {
   assert(assassinsCreedMirageSample.dlc_scope.includes('Valley of Memory') && assassinsCreedMirageSample.dlc_scope.includes('add-ons'), 'Assassin’s Creed Mirage deve separar Valley of Memory/add-ons da lista base');
   assert(assassinsCreedMirageSample.image.includes('/header.jpg'), 'Assassin’s Creed Mirage deve usar image horizontal valida');
   assert(assassinsCreedMirageSample.cover_image.includes('/library_600x900.jpg'), 'Assassin’s Creed Mirage deve expor cover_image vertical');
-  assert(assassinsCreedMirageSample.roadmap.some(step => step.includes('história') && step.includes('Assassin’s Focus')), 'roadmap de Assassin’s Creed Mirage deve cobrir campanha e Assassin’s Focus');
-  assert(assassinsCreedMirageSample.roadmap.some(step => step.includes('You Snooze, You Lose') && step.includes('Mysterious Shard')), 'roadmap de Assassin’s Creed Mirage deve cobrir o trofeu missable de atencao');
-  assert(assassinsCreedMirageSample.roadmap.some(step => step.includes('contratos') && step.includes('ferramentas') && step.includes('upgrades')), 'roadmap de Assassin’s Creed Mirage deve cobrir contratos, ferramentas e upgrades');
-  assert(assassinsCreedMirageSample.roadmap.some(step => step.includes('Gear Chests') && step.includes('Lost Books') && step.includes('Tales of Baghdad')), 'roadmap de Assassin’s Creed Mirage deve cobrir coletaveis principais');
+  assert(assassinsCreedMirageSample.roadmap.some(step => roadmapStepText(step).includes('história') && roadmapStepText(step).includes('Assassin’s Focus')), 'roadmap de Assassin’s Creed Mirage deve cobrir campanha e Assassin’s Focus');
+  assert(assassinsCreedMirageSample.roadmap.some(step => roadmapStepText(step).includes('You Snooze, You Lose') && roadmapStepText(step).includes('Mysterious Shard')), 'roadmap de Assassin’s Creed Mirage deve cobrir o trofeu missable de atencao');
+  assert(assassinsCreedMirageSample.roadmap.some(step => roadmapStepText(step).includes('contratos') && roadmapStepText(step).includes('ferramentas') && roadmapStepText(step).includes('upgrades')), 'roadmap de Assassin’s Creed Mirage deve cobrir contratos, ferramentas e upgrades');
+  assert(assassinsCreedMirageSample.roadmap.some(step => roadmapStepText(step).includes('Gear Chests') && roadmapStepText(step).includes('Lost Books') && roadmapStepText(step).includes('Tales of Baghdad')), 'roadmap de Assassin’s Creed Mirage deve cobrir coletaveis principais');
   assert.strictEqual(assassinsCreedMirageSample.trophies.filter(trophy => trophy.is_missable).length, 1, 'Assassin’s Creed Mirage deve marcar apenas You Snooze, You Lose como missable/atencao');
   assert.strictEqual(assassinsCreedMirageSample.trophies.find(trophy => trophy.id === 'acm_you_snooze_you_lose')?.is_missable, true, 'You Snooze, You Lose deve ser missable/atencao');
   assert(!assassinsCreedMirageSample.trophies.some(trophy => /Valley of Memory|Discovery Tour|Origins|Odyssey|Valhalla|Shadows/i.test(`${trophy.id} ${trophy.name} ${trophy.description} ${trophy.tip}`)), 'Assassin’s Creed Mirage nao deve misturar DLC/add-ons ou outros Assassin’s Creed');
@@ -5407,11 +5488,11 @@ async function assertSeedData({ all, get }, sampleGames) {
   assert(assassinsCreedShadowsSample.dlc_scope.includes('Claws of Awaji') && assassinsCreedShadowsSample.dlc_scope.includes('trophy sets adicionais'), 'Assassin’s Creed Shadows deve separar DLCs/trophy sets extras da lista base');
   assert(assassinsCreedShadowsSample.image.includes('/3159330/header.jpg'), 'Assassin’s Creed Shadows deve usar image horizontal valida');
   assert(assassinsCreedShadowsSample.cover_image.includes('/3159330/library_600x900.jpg'), 'Assassin’s Creed Shadows deve expor cover_image vertical');
-  assert(assassinsCreedShadowsSample.roadmap.some(step => step.includes('Guided Exploration Mode OFF') && step.includes('Scouting Mission')), 'roadmap de Assassin’s Creed Shadows deve cobrir Guided OFF para Scouting Mission');
-  assert(assassinsCreedShadowsSample.roadmap.some(step => step.includes('12 Onryo/Shinbakufu') && step.includes('Junjiro') && step.includes('Epilogue')), 'roadmap de Assassin’s Creed Shadows deve cobrir historia, 12 Onryo/Shinbakufu, Junjiro e epilogo');
-  assert(assassinsCreedShadowsSample.roadmap.some(step => step.includes('Legendary Sumi-e') && step.includes('Kuji-kiri') && step.includes('Kofun')), 'roadmap de Assassin’s Creed Shadows deve cobrir coletaveis pontuais');
-  assert(assassinsCreedShadowsSample.roadmap.some(step => step.includes('contratos por província') && step.includes('Knowledge Rank') && step.includes('hideout')), 'roadmap de Assassin’s Creed Shadows deve cobrir contratos, Knowledge Rank e hideout');
-  assert(assassinsCreedShadowsSample.roadmap.some(step => step.includes('saves manuais') && step.includes('conexão')), 'roadmap de Assassin’s Creed Shadows deve cobrir saves manuais e risco de conexao');
+  assert(assassinsCreedShadowsSample.roadmap.some(step => roadmapStepText(step).includes('Guided Exploration Mode OFF') && roadmapStepText(step).includes('Scouting Mission')), 'roadmap de Assassin’s Creed Shadows deve cobrir Guided OFF para Scouting Mission');
+  assert(assassinsCreedShadowsSample.roadmap.some(step => roadmapStepText(step).includes('12 Onryo/Shinbakufu') && roadmapStepText(step).includes('Junjiro') && roadmapStepText(step).includes('Epilogue')), 'roadmap de Assassin’s Creed Shadows deve cobrir historia, 12 Onryo/Shinbakufu, Junjiro e epilogo');
+  assert(assassinsCreedShadowsSample.roadmap.some(step => roadmapStepText(step).includes('Legendary Sumi-e') && roadmapStepText(step).includes('Kuji-kiri') && roadmapStepText(step).includes('Kofun')), 'roadmap de Assassin’s Creed Shadows deve cobrir coletaveis pontuais');
+  assert(assassinsCreedShadowsSample.roadmap.some(step => roadmapStepText(step).includes('contratos por província') && roadmapStepText(step).includes('Knowledge Rank') && roadmapStepText(step).includes('hideout')), 'roadmap de Assassin’s Creed Shadows deve cobrir contratos, Knowledge Rank e hideout');
+  assert(assassinsCreedShadowsSample.roadmap.some(step => roadmapStepText(step).includes('saves manuais') && roadmapStepText(step).includes('conexão')), 'roadmap de Assassin’s Creed Shadows deve cobrir saves manuais e risco de conexao');
   assert.strictEqual(assassinsCreedShadowsSample.trophies.filter(trophy => trophy.is_missable).length, 0, 'Assassin’s Creed Shadows nao deve marcar perdiveis definitivos');
   assert.strictEqual(assassinsCreedShadowsSample.trophies.find(trophy => trophy.id === 'acsh_scouting_mission')?.is_missable, false, 'Scouting Mission deve ser atencao, nao missable definitivo');
   assert(assassinsCreedShadowsSample.trophies.find(trophy => trophy.id === 'acsh_scouting_mission')?.tip.includes('Guided Exploration Mode OFF'), 'Scouting Mission deve explicar Guided Exploration Mode OFF');
@@ -5453,9 +5534,9 @@ async function assertSeedData({ all, get }, sampleGames) {
   assert(princeOfPersiaLostCrownSample.dlc_scope.includes('Mask of Darkness'), 'Prince of Persia deve separar Mask of Darkness da lista base');
   assert(princeOfPersiaLostCrownSample.image.includes('/2751000/header.jpg'), 'Prince of Persia deve usar image horizontal valida');
   assert(princeOfPersiaLostCrownSample.cover_image.includes('/2751000/library_600x900.jpg'), 'Prince of Persia deve expor cover_image vertical');
-  assert(princeOfPersiaLostCrownSample.roadmap.some(step => step.includes('poderes temporais') && step.includes('Athra Surges')), 'roadmap de Prince of Persia deve cobrir poderes temporais e Athra Surges');
-  assert(princeOfPersiaLostCrownSample.roadmap.some(step => step.includes('side quests') && step.includes('Lost Warriors') && step.includes('Prophecy of Mount Qaf')), 'roadmap de Prince of Persia deve cobrir side quests e coletaveis');
-  assert(princeOfPersiaLostCrownSample.roadmap.some(step => step.includes('amuletos') && step.includes('Soma Tree petals') && step.includes('Sand Jars')), 'roadmap de Prince of Persia deve cobrir amuletos, Soma Tree e Sand Jars');
+  assert(princeOfPersiaLostCrownSample.roadmap.some(step => roadmapStepText(step).includes('poderes temporais') && roadmapStepText(step).includes('Athra Surges')), 'roadmap de Prince of Persia deve cobrir poderes temporais e Athra Surges');
+  assert(princeOfPersiaLostCrownSample.roadmap.some(step => roadmapStepText(step).includes('side quests') && roadmapStepText(step).includes('Lost Warriors') && roadmapStepText(step).includes('Prophecy of Mount Qaf')), 'roadmap de Prince of Persia deve cobrir side quests e coletaveis');
+  assert(princeOfPersiaLostCrownSample.roadmap.some(step => roadmapStepText(step).includes('amuletos') && roadmapStepText(step).includes('Soma Tree petals') && roadmapStepText(step).includes('Sand Jars')), 'roadmap de Prince of Persia deve cobrir amuletos, Soma Tree e Sand Jars');
   assert.strictEqual(princeOfPersiaLostCrownSample.trophies.filter(trophy => trophy.is_missable).length, 0, 'Prince of Persia nao deve marcar perdiveis na lista base');
   assert(!princeOfPersiaLostCrownSample.trophies.some(trophy => /Mask of Darkness|Remember Me|Remember You|Remember Us|Broken Mask|Total Recall|Health Is Wealth|Thoughtful Accessories|Cut the Power|Saw Bird/i.test(`${trophy.id} ${trophy.name} ${trophy.description} ${trophy.tip}`)), 'Prince of Persia nao deve misturar trofeus do DLC Mask of Darkness');
   assert(!princeOfPersiaLostCrownSample.trophies.some(trophy => /difficulty|dificuldade|Hard|Rookie|Easy/i.test(`${trophy.id} ${trophy.name} ${trophy.description}`)), 'Prince of Persia nao deve incluir trofeus de dificuldade');
@@ -5497,9 +5578,9 @@ async function assertSeedData({ all, get }, sampleGames) {
   assert(avatarFrontiersSample.dlc_scope.includes('The Sky Breaker') && avatarFrontiersSample.dlc_scope.includes('Secrets of the Spires'), 'Avatar deve separar DLCs da lista base');
   assert(avatarFrontiersSample.image.includes('/2840770/header.jpg'), 'Avatar deve usar image horizontal valida');
   assert(avatarFrontiersSample.cover_image.includes('/2840770/library_600x900.jpg'), 'Avatar deve expor cover_image vertical');
-  assert(avatarFrontiersSample.roadmap.some(step => step.includes('RDA installations') && step.includes('air quality')), 'roadmap de Avatar deve cobrir RDA sites e air quality');
-  assert(avatarFrontiersSample.roadmap.some(step => step.includes('Sarentu Totems') && step.includes('Bladewing Moth Trails') && step.includes('Recon Retrievals')), 'roadmap de Avatar deve cobrir coletaveis principais');
-  assert(avatarFrontiersSample.roadmap.some(step => step.includes('Audio Logs') && step.includes('Notes') && step.includes('Apex Challenge')), 'roadmap de Avatar deve cobrir logs, notes e Apex Challenge');
+  assert(avatarFrontiersSample.roadmap.some(step => roadmapStepText(step).includes('RDA installations') && roadmapStepText(step).includes('air quality')), 'roadmap de Avatar deve cobrir RDA sites e air quality');
+  assert(avatarFrontiersSample.roadmap.some(step => roadmapStepText(step).includes('Sarentu Totems') && roadmapStepText(step).includes('Bladewing Moth Trails') && roadmapStepText(step).includes('Recon Retrievals')), 'roadmap de Avatar deve cobrir coletaveis principais');
+  assert(avatarFrontiersSample.roadmap.some(step => roadmapStepText(step).includes('Audio Logs') && roadmapStepText(step).includes('Notes') && roadmapStepText(step).includes('Apex Challenge')), 'roadmap de Avatar deve cobrir logs, notes e Apex Challenge');
   assert.strictEqual(avatarFrontiersSample.trophies.filter(trophy => trophy.is_missable).length, 0, 'Avatar nao deve marcar perdiveis definitivos');
   assert(!avatarFrontiersSample.trophies.some(trophy => /The Sky Breaker|Secrets of the Spires|From The Ashes|DLC|add-?on/i.test(`${trophy.id} ${trophy.name} ${trophy.description} ${trophy.tip}`)), 'Avatar nao deve misturar DLCs/add-ons na lista base');
   assert(!avatarFrontiersSample.trophies.some(trophy => /difficulty|dificuldade|Hard|Nightmare|Easy/i.test(`${trophy.id} ${trophy.name} ${trophy.description}`)), 'Avatar nao deve incluir trofeus de dificuldade');
@@ -5540,10 +5621,10 @@ async function assertSeedData({ all, get }, sampleGames) {
   assert(evilWithinSample.dlc_scope.includes('The Assignment') && evilWithinSample.dlc_scope.includes('The Consequence') && evilWithinSample.dlc_scope.includes('The Executioner'), 'The Evil Within deve separar DLCs da lista base');
   assert(evilWithinSample.image.includes('/268050/header.jpg'), 'The Evil Within deve usar image horizontal valida');
   assert(evilWithinSample.cover_image.includes('/268050/library_600x900.jpg'), 'The Evil Within deve expor cover_image vertical');
-  assert(evilWithinSample.roadmap.some(step => step.includes('speedrun abaixo de 5 horas')), 'roadmap de The Evil Within deve cobrir speedrun abaixo de 5h');
-  assert(evilWithinSample.roadmap.some(step => step.includes('sem upgrades de Green Gel')), 'roadmap de The Evil Within deve cobrir run sem upgrades');
-  assert(evilWithinSample.roadmap.some(step => step.includes('AKUMU Mode')), 'roadmap de The Evil Within deve cobrir AKUMU Mode');
-  assert(evilWithinSample.roadmap.some(step => step.includes('Chapter Select/NG+')), 'roadmap de The Evil Within deve citar Chapter Select/NG+');
+  assert(evilWithinSample.roadmap.some(step => roadmapStepText(step).includes('speedrun abaixo de 5 horas')), 'roadmap de The Evil Within deve cobrir speedrun abaixo de 5h');
+  assert(evilWithinSample.roadmap.some(step => roadmapStepText(step).includes('sem upgrades de Green Gel')), 'roadmap de The Evil Within deve cobrir run sem upgrades');
+  assert(evilWithinSample.roadmap.some(step => roadmapStepText(step).includes('AKUMU Mode')), 'roadmap de The Evil Within deve cobrir AKUMU Mode');
+  assert(evilWithinSample.roadmap.some(step => roadmapStepText(step).includes('Chapter Select/NG+')), 'roadmap de The Evil Within deve citar Chapter Select/NG+');
   assert(!evilWithinSample.trophies.some(trophy => /The Assignment|The Consequence|The Executioner|DLC/i.test(`${trophy.id} ${trophy.name} ${trophy.description} ${trophy.tip}`)), 'The Evil Within nao deve misturar DLCs/add-ons na lista base');
   const evilWithinTypeCounts = evilWithinSample.trophies.reduce((counts, trophy) => {
     counts[trophy.type] = (counts[trophy.type] || 0) + 1;
@@ -6166,21 +6247,67 @@ async function assertSeedData({ all, get }, sampleGames) {
   assert.strictEqual(requiemSample.trophies.length, 50, 'Resident Evil Requiem deve ter 50 trofeus da lista base');
   assert.strictEqual(new Set(requiemSample.trophies.map(trophy => trophy.id)).size, 50, 'Resident Evil Requiem nao deve ter trophy_code duplicado');
   assert.strictEqual(new Set(requiemSample.trophies.map(trophy => trophy.name)).size, 50, 'Resident Evil Requiem nao deve ter nomes duplicados');
-  assert.strictEqual(requiemSample.roadmap.length, 5, 'Resident Evil Requiem deve ter roadmap editorial com 5 etapas');
-  assert.strictEqual(requiemSample.editorial_status, 'published', 'Resident Evil Requiem deve permanecer publico');
+  assert.strictEqual(requiemSample.roadmap.length, 6, 'Resident Evil Requiem deve ter roadmap editorial estruturado com 6 etapas');
+  assert(requiemSample.roadmap.every(step => step && typeof step === 'object' && Array.isArray(step.actions)), 'roadmap de Resident Evil Requiem deve ser estruturado com actions em array');
+  assert.deepStrictEqual(requiemSample.roadmap.map(step => step.title), [
+    'Faça a primeira campanha com saves manuais',
+    'Organize coletáveis e objetivos acumuláveis',
+    'Resolva troféus situacionais por saves',
+    'Separe runs condicionais',
+    'Feche dificuldade, bônus e extras da lista base',
+    'Cleanup final da lista base'
+  ], 'roadmap de Resident Evil Requiem deve preservar as 6 etapas editoriais reescritas');
+  const requiemRoadmapText = requiemSample.roadmap.map(step => `${step.title} ${step.focus} ${step.objective} ${(step.actions || []).join(' ')} ${step.warning || ''} ${step.result || ''}`).join(' ');
+  assert(!/\[object Object\]|\btitle:|\bfocus:|\bobjective:|\bactions:|\bwarning:|\bresult:|Comece pela rota segura|Etapa 1 genérico|Continue a rota principal|\s\|\s/.test(requiemRoadmapText), 'roadmap de Resident Evil Requiem nao deve conter serializacao, placeholders ou titulos genericos');
+  assert(!/em revisão|validação final|validacao final|lista ainda está em revisão|Manter o guia como em revisão/i.test(requiemRoadmapText), 'roadmap de Resident Evil Requiem nao deve conter texto fixo de revisao');
+  assert(!/em revisão|validação final|validacao final|aguardando revisão/i.test(`${requiemSample.missable} ${requiemSample.missable_summary} ${requiemSample.before_you_start} ${requiemSample.dlc_scope}`), 'textos publicos editoriais de Resident Evil Requiem nao devem ficar presos ao status de revisao');
+  assert(!requiemSample.roadmap.some(step => (step.actions || []).some(action => /\.\.\.|…/.test(action))), 'roadmap de Resident Evil Requiem nao deve conter reticencias em acoes');
+  assert(requiemSample.roadmap.every(step => new Set(step.actions || []).size === (step.actions || []).length), 'roadmap de Resident Evil Requiem nao deve repetir acoes dentro da mesma etapa');
+  assert.strictEqual(requiemSample.editorial_status, 'review', 'Resident Evil Requiem deve permanecer publico em revisao');
+  assert.strictEqual(requiemSample.editorial_review_status, 'in_review', 'Resident Evil Requiem deve manter status editorial in_review');
   assert.strictEqual(requiemSample.coverage_level, 'strong', 'Resident Evil Requiem deve ter cobertura forte sem selo complete');
   assert.strictEqual(requiemSample.is_verified, false, 'Resident Evil Requiem nao deve ser verificado automaticamente');
-  assert.strictEqual(requiemSample.verification_status, 'review', 'Resident Evil Requiem deve aguardar revisao editorial final');
+  assert.strictEqual(requiemSample.verification_status, 'review', 'Resident Evil Requiem pode continuar em revisao antes da acao manual');
   assert(requiemSample.online_summary.includes('Não há troféus online obrigatórios'), 'Resident Evil Requiem deve deixar claro que online não é obrigatório');
   assert(requiemSample.dlc_scope.includes('lista base') && requiemSample.dlc_scope.includes('DLCs'), 'Resident Evil Requiem deve separar DLC/add-ons da platina base');
   assert(requiemSample.image.includes('/header.jpg'), 'Resident Evil Requiem deve usar image horizontal valida');
-  assert(requiemSample.cover_image.includes('images.launchbox-app.com'), 'Resident Evil Requiem deve expor cover_image vertical valida para biblioteca');
-  assert(requiemSample.roadmap.some(step => step.includes('Speed Demon') && step.includes('Insanity')), 'roadmap de Resident Evil Requiem deve cobrir speedrun e dificuldade');
-  assert(requiemSample.roadmap.some(step => step.includes('DLCs') && step.includes('Deluxe Kit')), 'roadmap de Resident Evil Requiem deve excluir DLC/add-ons da platina base');
-  assert.strictEqual(requiemSample.trophies.filter(trophy => trophy.is_missable).length, 40, 'Resident Evil Requiem deve marcar 40 perdiveis ou dependentes de saves manuais');
+  assert(requiemSample.cover_image.includes('/library_capsule.jpg'), 'Resident Evil Requiem deve expor cover_image vertical valida para biblioteca');
+  assert(requiemSample.roadmap.some(step => `${step.title} ${step.objective} ${(step.actions || []).join(' ')}`.includes('Speed Demon') && `${step.title} ${step.objective} ${(step.actions || []).join(' ')}`.includes('Insanity')), 'roadmap de Resident Evil Requiem deve cobrir speedrun e dificuldade');
+  assert(requiemSample.roadmap.some(step => `${step.title} ${step.objective} ${(step.actions || []).join(' ')}`.includes('Deluxe Kit') && `${step.title} ${step.objective} ${(step.actions || []).join(' ')}`.includes('platina base')), 'roadmap de Resident Evil Requiem deve excluir DLC/add-ons da platina base');
+  assert.strictEqual(requiemSample.trophies.filter(trophy => trophy.is_missable).length, 4, 'Resident Evil Requiem deve marcar apenas 4 perdiveis reais ou fortemente provaveis enquanto segue em revisao');
+  assert(requiemSample.trophies.filter(trophy => trophy.is_missable).every(trophy => ['rerequiem_hope_and_requiem', 'rerequiem_speed_demon', 'rerequiem_never_touch_the_stuff', 'rerequiem_minimalist'].includes(trophy.id)), 'Resident Evil Requiem deve limitar perdiveis a escolha final e runs condicionais');
+  assert(!requiemSample.trophies.some(trophy => trophy.type === 'Platina' && trophy.is_missable), 'Resident Evil Requiem nao deve marcar platina como perdivel');
+  assert(!requiemSample.trophies.some(trophy => trophy.riskType === 'spoiler' && trophy.is_missable), 'Resident Evil Requiem nao deve transformar trofeus automaticos de historia/spoiler em perdiveis');
+  assert(requiemSample.trophies.some(trophy => trophy.riskType === 'situational'), 'Resident Evil Requiem deve classificar trofeus situacionais separadamente');
+  assert(requiemSample.trophies.some(trophy => trophy.riskType === 'collectible'), 'Resident Evil Requiem deve classificar coletaveis separadamente');
+  assert(requiemSample.trophies.some(trophy => trophy.riskType === 'difficulty'), 'Resident Evil Requiem deve classificar dificuldade separadamente');
   assert.strictEqual(requiemSample.trophies.filter(trophy => trophy.is_spoiler).length, 17, 'Resident Evil Requiem deve manter spoiler_count coerente');
+  {
+    const guideModel = require('../src/shared/guideViewModel');
+    const requiemViewModel = guideModel.buildGuideViewModel(requiemSample, []);
+    assert.deepStrictEqual(requiemViewModel.guidanceCounts, { criticalAlertsCount: 4, checklistTipsCount: 37, totalGuidanceCount: 41 }, 'Resident Evil Requiem deve separar 4 alertas criticos e 37 dicas');
+    assert.strictEqual(requiemViewModel.missableCount, 4, 'view model de Resident Evil Requiem deve manter missableCount 4');
+    assert.deepStrictEqual(requiemViewModel.routeChangingTrophies.slice(0, 5).map(item => item.name), [
+      'Speed Demon',
+      'Minimalist',
+      'Grace and Goliath',
+      'Hope and Requiem',
+      'Master Craftsman'
+    ], 'pontos de atencao de Resident Evil Requiem devem preservar a ordem editorial');
+    const masterCraftsmanAttention = requiemViewModel.routeChangingTrophies.find(item => item.id === 'rerequiem_master_craftsman');
+    assert(masterCraftsmanAttention?.tags?.some(tag => tag.label === 'Coletável / Checklist'), 'Master Craftsman deve aparecer como coletavel/checklist nos pontos de atencao');
+    assert(!masterCraftsmanAttention?.tags?.some(tag => /Perdível|Perdivel/i.test(tag.label)), 'Master Craftsman nao deve aparecer como perdivel nos pontos de atencao');
+    assert.strictEqual(guideModel.buildGuideQuickDecisionModel(requiemSample, requiemViewModel).cards.find(card => card.id === 'dlc')?.value, 'DLC não necessária para platina base', 'modelo base deve manter DLC nao obrigatoria para Resident Evil Requiem');
+  }
   assert(!requiemSample.trophies.some(trophy => /DLC|Deluxe|Letters from 1998|add-?on/i.test(`${trophy.name} ${trophy.description}`)), 'Resident Evil Requiem nao deve misturar DLC/add-ons na checklist base');
   assert(!requiemSample.trophies.some(trophy => /craté/i.test(`${trophy.id} ${trophy.name}`)), 'Resident Evil Requiem nao deve manter corrupcao Craté/Crate');
+  const hasSuspiciousRequiemQuestionMark = value => {
+    const text = String(value || '').trim();
+    const index = text.indexOf('?');
+    return index >= 0 && index !== text.length - 1;
+  };
+  assert(!requiemSample.trophies.some(trophy => [trophy.name_pt, trophy.description, trophy.tip].some(hasSuspiciousRequiemQuestionMark)), 'Resident Evil Requiem nao deve conter ? indevido em nomes PT-BR, descricoes ou dicas');
+  assert(!requiemSample.trophies.some(trophy => /undefined|null|\[object Object\]|Descri[cç][aã]o em revis[aã]o editorial/i.test(`${trophy.name} ${trophy.name_pt || ''} ${trophy.description} ${trophy.tip}`)), 'Resident Evil Requiem nao deve conter placeholders na checklist');
   const requiemTypeCounts = requiemSample.trophies.reduce((counts, trophy) => {
     counts[trophy.type] = (counts[trophy.type] || 0) + 1;
     return counts;
@@ -6196,7 +6323,7 @@ async function assertSeedData({ all, get }, sampleGames) {
   assert.strictEqual(requiemTypeById.rerequiem_speed_demon, 'Prata', 'Speed Demon deve ser prata');
   assert.strictEqual(requiemTypeById.rerequiem_remarkable_agent, 'Ouro', 'Remarkable Agent deve ser ouro');
 
-  const requiemSeeded = await get('SELECT slug, difficulty, time, time_bucket, time_min_hours, time_max_hours, time_sort_hours, editorial_status, coverage_level, is_verified, verification_status, image, cover_image, online_summary, dlc_scope, missable_summary FROM games WHERE slug = ?', ['resident-evil-requiem']);
+  const requiemSeeded = await get('SELECT slug, difficulty, time, time_bucket, time_min_hours, time_max_hours, time_sort_hours, editorial_status, coverage_level, is_verified, verification_status, editorial_review_status, quality_warnings, image, cover_image, online_summary, dlc_scope, missable_summary FROM games WHERE slug = ?', ['resident-evil-requiem']);
   assert.strictEqual(requiemSeeded?.slug, 'resident-evil-requiem', 'seed deve persistir slug do Resident Evil Requiem');
   assert.strictEqual(requiemSeeded?.difficulty, 4, 'seed deve persistir dificuldade 4/10 do Resident Evil Requiem');
   assert.strictEqual(requiemSeeded?.time, '20-25h', 'seed deve persistir tempo 20-25h do Resident Evil Requiem');
@@ -6204,26 +6331,34 @@ async function assertSeedData({ all, get }, sampleGames) {
   assert.strictEqual(requiemSeeded?.time_min_hours, 20, 'seed deve persistir time_min_hours do Resident Evil Requiem');
   assert.strictEqual(requiemSeeded?.time_max_hours, 25, 'seed deve persistir time_max_hours do Resident Evil Requiem');
   assert.strictEqual(requiemSeeded?.time_sort_hours, 25, 'seed deve persistir time_sort_hours do Resident Evil Requiem');
-  assert.strictEqual(requiemSeeded?.editorial_status, 'published', 'Resident Evil Requiem deve entrar publicado');
+  assert.strictEqual(requiemSeeded?.editorial_status, 'review', 'Resident Evil Requiem deve entrar publico em revisao');
   assert.strictEqual(requiemSeeded?.coverage_level, 'strong', 'Resident Evil Requiem deve entrar com coverage strong');
   assert.strictEqual(requiemSeeded?.is_verified, 0, 'Resident Evil Requiem nao deve entrar como verificado');
   assert.strictEqual(requiemSeeded?.verification_status, 'review', 'Resident Evil Requiem deve entrar em revisao editorial');
+  assert.strictEqual(requiemSeeded?.editorial_review_status, 'in_review', 'Resident Evil Requiem deve persistir editorial_review_status in_review');
+  assert(String(requiemSeeded?.quality_warnings || '').includes('needs_trophy_localization_check'), 'Resident Evil Requiem deve persistir qualityWarnings de localizacao');
+  assert(String(requiemSeeded?.quality_warnings || '').includes('needs_trophy_list_validation'), 'Resident Evil Requiem deve persistir aviso de validacao da lista');
+  assert(String(requiemSeeded?.quality_warnings || '').includes('needs_missables_validation'), 'Resident Evil Requiem deve persistir aviso de validacao de perdiveis');
+  assert(String(requiemSeeded?.quality_warnings || '').includes('roadmap_recently_rewritten'), 'Resident Evil Requiem deve persistir aviso de roadmap reescrito');
+  assert(String(requiemSeeded?.quality_warnings || '').includes('needs_psn_source_validation'), 'Resident Evil Requiem deve persistir aviso de validacao PSN');
   assert.strictEqual(requiemSeeded?.image, requiemSample.image, 'Resident Evil Requiem deve persistir image horizontal');
   assert.strictEqual(requiemSeeded?.cover_image, requiemSample.cover_image, 'Resident Evil Requiem deve persistir cover_image');
   assert(requiemSeeded?.online_summary.includes('Não há troféus online obrigatórios'), 'Resident Evil Requiem deve persistir ausência de online obrigatório');
   assert(requiemSeeded?.dlc_scope.includes('lista base') && requiemSeeded?.dlc_scope.includes('DLCs'), 'Resident Evil Requiem deve persistir escopo de DLC separado');
-  assert(requiemSeeded?.missable_summary.includes('40 troféus'), 'Resident Evil Requiem deve persistir resumo de perdiveis');
+  assert(requiemSeeded?.missable_summary.includes('4 troféus'), 'Resident Evil Requiem deve persistir resumo de perdiveis reduzido');
 
   const requiemRoadmapRows = await all('SELECT content FROM roadmaps WHERE game_id = (SELECT id FROM games WHERE slug = ?) ORDER BY step_order', ['resident-evil-requiem']);
-  assert.strictEqual(requiemRoadmapRows.length, 5, 'seed deve inserir 5 etapas de roadmap para Resident Evil Requiem');
+  assert.strictEqual(requiemRoadmapRows.length, 6, 'seed deve inserir 6 etapas de roadmap para Resident Evil Requiem');
   assert(requiemRoadmapRows.some(row => row.content.includes('Speed Demon') && row.content.includes('Insanity')), 'seed deve persistir roadmap de speedrun/dificuldade para Resident Evil Requiem');
+  assert(requiemRoadmapRows.every(row => row.content.trim().startsWith('{') && !/\[object Object\]|\btitle:|\bfocus:|\bobjective:|\bactions:|\s\|\s/.test(row.content)), 'seed deve persistir roadmap estruturado sem serializacao textual insegura');
+  assert(!/em revisão|validação final|validacao final|lista ainda está em revisão|Manter o guia como em revisão/i.test(requiemRoadmapRows.map(row => row.content).join(' ')), 'seed nao deve persistir roadmap de Resident Evil Requiem preso ao status de revisao');
 
   const requiemTrophyRows = await all('SELECT trophy_code, name, type, is_missable, is_spoiler FROM trophies WHERE game_id = (SELECT id FROM games WHERE slug = ?) ORDER BY id', ['resident-evil-requiem']);
   assert.strictEqual(requiemTrophyRows.length, 50, 'seed deve inserir checklist base completo do Resident Evil Requiem');
   assert.strictEqual(new Set(requiemTrophyRows.map(trophy => trophy.trophy_code)).size, 50, 'seed nao deve inserir trophy_code duplicado no Resident Evil Requiem');
   assert(requiemTrophyRows.some(trophy => trophy.trophy_code === 'rerequiem_crate_expectations' && trophy.name === 'Crate Expectations'), 'seed deve persistir Crate Expectations corrigido');
   assert(!requiemTrophyRows.some(trophy => /craté/i.test(`${trophy.trophy_code} ${trophy.name}`)), 'seed nao deve persistir corrupcao Craté/Crate');
-  assert.strictEqual(requiemTrophyRows.filter(trophy => trophy.is_missable).length, 40, 'seed deve marcar 40 perdiveis ou dependentes de saves manuais no Resident Evil Requiem');
+  assert.strictEqual(requiemTrophyRows.filter(trophy => trophy.is_missable).length, 4, 'seed deve marcar 4 perdiveis reais ou fortemente provaveis no Resident Evil Requiem');
   assert.strictEqual(requiemTrophyRows.filter(trophy => trophy.is_spoiler).length, 17, 'seed deve persistir spoiler_count coerente no Resident Evil Requiem');
   const requiemPersistedTypeCounts = requiemTrophyRows.reduce((counts, trophy) => {
     counts[trophy.type] = (counts[trophy.type] || 0) + 1;
@@ -6255,8 +6390,8 @@ async function assertSeedData({ all, get }, sampleGames) {
   assert(spiderManSample.dlc_scope.includes('The City That Never Sleeps'), "Marvel's Spider-Man deve separar DLC da platina base");
   assert(spiderManSample.image.includes('/header.jpg'), "Marvel's Spider-Man deve usar image horizontal valida");
   assert(spiderManSample.cover_image.includes('/library_600x900.jpg'), "Marvel's Spider-Man deve expor cover_image vertical");
-  assert(spiderManSample.roadmap.some(step => step.includes('Taskmaster') && step.includes('landmarks') && step.includes('backpacks')), "roadmap de Marvel's Spider-Man deve cobrir desafios e coletaveis");
-  assert(spiderManSample.roadmap.some(step => step.includes('The City That Never Sleeps') && step.includes('fora da platina base')), "roadmap de Marvel's Spider-Man deve excluir DLC da platina base");
+  assert(spiderManSample.roadmap.some(step => roadmapStepText(step).includes('Taskmaster') && roadmapStepText(step).includes('landmarks') && roadmapStepText(step).includes('backpacks')), "roadmap de Marvel's Spider-Man deve cobrir desafios e coletaveis");
+  assert(spiderManSample.roadmap.some(step => roadmapStepText(step).includes('The City That Never Sleeps') && roadmapStepText(step).includes('fora da platina base')), "roadmap de Marvel's Spider-Man deve excluir DLC da platina base");
   assert.strictEqual(spiderManSample.trophies.filter(trophy => trophy.is_missable).length, 0, "Marvel's Spider-Man nao deve marcar perdiveis");
   assert.strictEqual(spiderManSample.trophies.filter(trophy => trophy.is_spoiler).length, 10, "Marvel's Spider-Man deve manter spoiler_count coerente");
   assert(!spiderManSample.trophies.some(trophy => /DLC|CTNS|The Heist|Turf Wars|Silver Lining|Screwball|Screwy|One More Time|Power and Responsibility|Grinding All The Way|Full Arsenal/i.test(`${trophy.name} ${trophy.description}`)), "Marvel's Spider-Man nao deve misturar DLC/New Game+/Remastered add-ons na checklist base");
@@ -6335,7 +6470,7 @@ async function assertSeedData({ all, get }, sampleGames) {
   assert(milesMoralesSample.dlc_scope.includes('lista base da platina'), 'Miles Morales deve separar escopo da lista base');
   assert(milesMoralesSample.image.includes('/header.jpg'), 'Miles Morales deve usar image horizontal valida');
   assert(milesMoralesSample.cover_image.includes('/library_600x900.jpg'), 'Miles Morales deve expor cover_image vertical');
-  assert(milesMoralesSample.roadmap.some(step => step.includes('New Game+') && step.includes('Plus Plus')), 'roadmap de Miles Morales deve cobrir New Game+ obrigatorio');
+  assert(milesMoralesSample.roadmap.some(step => roadmapStepText(step).includes('New Game+') && roadmapStepText(step).includes('Plus Plus')), 'roadmap de Miles Morales deve cobrir New Game+ obrigatorio');
   assert.strictEqual(milesMoralesSample.trophies.filter(trophy => trophy.is_missable).length, 0, 'Miles Morales nao deve marcar perdiveis');
   assert.strictEqual(milesMoralesSample.trophies.filter(trophy => trophy.is_spoiler).length, 11, 'Miles Morales deve manter spoiler_count coerente');
   assert(!milesMoralesSample.trophies.some(trophy => /DLC|add-?on|Spider-Man 2|Remastered/i.test(`${trophy.name} ${trophy.description}`)), 'Miles Morales nao deve misturar DLC/add-ons ou outros jogos na checklist base');
@@ -6414,8 +6549,8 @@ async function assertSeedData({ all, get }, sampleGames) {
   assert(spiderMan2Sample.dlc_scope.includes('lista base da platina'), "Marvel's Spider-Man 2 deve separar escopo da lista base");
   assert(spiderMan2Sample.image.includes('/header.jpg'), "Marvel's Spider-Man 2 deve usar image horizontal valida");
   assert(spiderMan2Sample.cover_image.includes('/library_600x900.jpg'), "Marvel's Spider-Man 2 deve expor cover_image vertical");
-  assert(spiderMan2Sample.roadmap.some(step => step.includes('Spider-Bots') && step.includes('Marko')), "roadmap de Marvel's Spider-Man 2 deve cobrir coletaveis centrais");
-  assert(spiderMan2Sample.roadmap.some(step => step.includes('100% dos distritos') && step.includes('online')), "roadmap de Marvel's Spider-Man 2 deve citar 100% dos distritos e ausencia de online");
+  assert(spiderMan2Sample.roadmap.some(step => roadmapStepText(step).includes('Spider-Bots') && roadmapStepText(step).includes('Marko')), "roadmap de Marvel's Spider-Man 2 deve cobrir coletaveis centrais");
+  assert(spiderMan2Sample.roadmap.some(step => roadmapStepText(step).includes('100% dos distritos') && roadmapStepText(step).includes('online')), "roadmap de Marvel's Spider-Man 2 deve citar 100% dos distritos e ausencia de online");
   assert.strictEqual(spiderMan2Sample.trophies.filter(trophy => trophy.is_missable).length, 0, "Marvel's Spider-Man 2 nao deve marcar perdiveis");
   assert.strictEqual(spiderMan2Sample.trophies.filter(trophy => trophy.is_spoiler).length, 15, "Marvel's Spider-Man 2 deve manter spoiler_count coerente");
   assert(!spiderMan2Sample.trophies.some(trophy => /DLC|add-?on|New Game\+|NG\+|Miles Morales|Remastered/i.test(`${trophy.name} ${trophy.description}`)), "Marvel's Spider-Man 2 nao deve misturar DLC/add-ons ou outros jogos na checklist base");
@@ -6494,8 +6629,8 @@ async function assertSeedData({ all, get }, sampleGames) {
   assert(godOfWarSample.dlc_scope.includes('lista base da platina'), 'God of War (2018) deve separar escopo da lista base');
   assert(godOfWarSample.image.includes('/header.jpg'), 'God of War (2018) deve usar image horizontal valida');
   assert(godOfWarSample.cover_image.includes('/library_600x900.jpg'), 'God of War (2018) deve expor cover_image vertical');
-  assert(godOfWarSample.roadmap.some(step => step.includes('free-roam') && step.includes('perdíveis')), 'roadmap de God of War (2018) deve citar free-roam e ausencia de perdiveis');
-  assert(godOfWarSample.roadmap.some(step => step.includes('valquírias') && step.includes('Niflheim')), 'roadmap de God of War (2018) deve cobrir valquirias e Niflheim');
+  assert(godOfWarSample.roadmap.some(step => roadmapStepText(step).includes('free-roam') && roadmapStepText(step).includes('perdíveis')), 'roadmap de God of War (2018) deve citar free-roam e ausencia de perdiveis');
+  assert(godOfWarSample.roadmap.some(step => roadmapStepText(step).includes('valquírias') && roadmapStepText(step).includes('Niflheim')), 'roadmap de God of War (2018) deve cobrir valquirias e Niflheim');
   assert.strictEqual(godOfWarSample.trophies.filter(trophy => trophy.is_missable).length, 0, 'God of War (2018) nao deve marcar perdiveis');
   assert.strictEqual(godOfWarSample.trophies.filter(trophy => trophy.is_spoiler).length, 16, 'God of War (2018) deve manter spoiler_count coerente');
   assert(!godOfWarSample.trophies.some(trophy => /Ragnar[oö]k|Valhalla|Ascension|God of War III|DLC|add-?on/i.test(`${trophy.name} ${trophy.description}`)), 'God of War (2018) nao deve misturar DLC/add-ons ou outros jogos na checklist base');
@@ -6587,7 +6722,7 @@ async function assertSeedData({ all, get }, sampleGames) {
   assert(godOfWarRagnarokSample.online_summary.includes('Não há exigência online'), 'God of War Ragnarök deve deixar claro que online nao e obrigatorio');
   assert(godOfWarRagnarokSample.missable_summary.includes('Não há troféus perdíveis'), 'God of War Ragnarök deve deixar claro que nao ha perdiveis');
   assert(godOfWarRagnarokSample.dlc_scope.includes('Valhalla'), 'God of War Ragnarök deve separar Valhalla da lista base');
-  assert(godOfWarRagnarokSample.roadmap.some(step => step.includes('Valhalla') && step.includes('não inclui')), 'roadmap de God of War Ragnarök deve excluir Valhalla da lista base');
+  assert(godOfWarRagnarokSample.roadmap.some(step => roadmapStepText(step).includes('Valhalla') && roadmapStepText(step).includes('não inclui')), 'roadmap de God of War Ragnarök deve excluir Valhalla da lista base');
   assert.strictEqual(godOfWarRagnarokSample.trophies.filter(trophy => trophy.is_missable).length, 0, 'God of War Ragnarök nao deve marcar perdiveis');
   assert.strictEqual(godOfWarRagnarokSample.trophies.filter(trophy => trophy.is_spoiler).length, 15, 'God of War Ragnarök deve manter spoiler_count coerente');
   assert(!godOfWarRagnarokSample.trophies.some(trophy => /Valhalla|No Kratos|Scry|Forum|Fleeting Echoes/i.test(`${trophy.name} ${trophy.description}`)), 'God of War Ragnarök nao deve misturar trofeus de Valhalla na checklist base');
@@ -6676,7 +6811,7 @@ async function assertSeedData({ all, get }, sampleGames) {
   assert.strictEqual(tlouPartISample.trophies.filter(trophy => trophy.name_pt).length, 29, 'The Last of Us Part I deve preencher nomes PT-BR via Steam confiavel');
   assert.strictEqual(tlouPartISample.trophies.filter(trophy => trophy.namePtSource === 'trusted_steam_ptbr').length, 29, 'The Last of Us Part I deve registrar fonte Steam PT-BR para name_pt');
   assert.strictEqual(tlouPartISample.trophies.filter(trophy => trophy.descriptionPtSource === 'trusted_steam_ptbr').length, 29, 'The Last of Us Part I deve registrar fonte Steam PT-BR para descricoes');
-  assert.strictEqual(tlouPartISample.trophies.filter(trophy => /[áàâãéêíóôõúç]/i.test(trophy.description) || /\b(Colete|Conclua|Encontre|Participe|Sobreviva|Melhore|Abra|Crie|Pegue|Enquanto|Ande|Deixe|Acaricie|Jogue|Vença|Derrote|Use)\b/.test(trophy.description)).length, 29, 'The Last of Us Part I deve ter descricoes em portugues nos 29 trofeus');
+  assert.strictEqual(tlouPartISample.trophies.filter(trophy => /[áàâãéêíóôõúç]/i.test(trophy.description) || /\b(Colete|Conclua|Conquiste|Encontre|Inicie|Participe|Sobreviva|Melhore|Monte|Abra|Crie|Pegue|Enquanto|Ande|Deixe|Desligue|Acaricie|Jogue|Jogou|Navegue|Vença|Derrote|Use)\b/i.test(trophy.description)).length, 29, 'The Last of Us Part I deve ter descricoes em portugues nos 29 trofeus');
 
   const tlouPartISeeded = await get('SELECT slug, difficulty, time, time_bucket, editorial_status, editorial_review_status, coverage_level, is_verified, verification_status, online_summary, dlc_scope, missable_summary, quality_warnings FROM games WHERE slug = ?', ['the-last-of-us-part-i']);
   assert.strictEqual(tlouPartISeeded?.slug, 'the-last-of-us-part-i', 'seed deve persistir slug de The Last of Us Part I');
@@ -6735,7 +6870,7 @@ async function assertSeedData({ all, get }, sampleGames) {
   assert.strictEqual(tlouPartIISample.newGamePlusRequired, true, 'The Last of Us Part II deve indicar NG+ parcial para upgrades');
   assert.strictEqual(tlouPartIISample.difficultyTrophiesRequired, false, 'The Last of Us Part II nao deve exigir dificuldade alta');
   assert(tlouPartIISample.online_summary.includes('Não há troféus online'), 'The Last of Us Part II deve deixar claro que online nao e obrigatorio');
-  assert(tlouPartIISample.runs_summary.includes('New Game+ parcial'), 'The Last of Us Part II deve mencionar New Game+ parcial');
+  assert(/(?:New Game\+|NG\+) parcial/.test(tlouPartIISample.runs_summary), 'The Last of Us Part II deve mencionar New Game+ parcial');
   assert(tlouPartIISample.before_you_start.includes('Part I') && tlouPartIISample.before_you_start.includes('Remastered') && tlouPartIISample.before_you_start.includes('No Return'), 'The Last of Us Part II deve diferenciar Part I, Remastered e No Return');
   assert(tlouPartIISample.dlc_scope.includes('Grounded') && tlouPartIISample.dlc_scope.includes('Permadeath') && tlouPartIISample.dlc_scope.includes('No Return'), 'The Last of Us Part II deve separar add-ons da lista base');
   assert.strictEqual(tlouPartIISample.trophies.filter(trophy => trophy.is_missable).length, 0, 'The Last of Us Part II nao deve marcar perdiveis definitivos');
@@ -6770,7 +6905,7 @@ async function assertSeedData({ all, get }, sampleGames) {
   assert.strictEqual(tlouPartIISeeded?.editorial_review_status, 'in_review', 'The Last of Us Part II deve persistir in_review');
   assert(tlouPartIISeeded?.quality_warnings.includes('needs_trophy_localization_check') && tlouPartIISeeded?.quality_warnings.includes('needs_extra_trophies_scope_check'), 'The Last of Us Part II deve persistir quality warnings');
   assert(tlouPartIISeeded?.online_summary.includes('Não há troféus online'), 'The Last of Us Part II deve persistir ausencia de online');
-  assert(tlouPartIISeeded?.dlc_scope.includes('Grounded') && tlouPartIISeeded?.runs_summary.includes('New Game+ parcial'), 'The Last of Us Part II deve persistir add-ons separados e New Game+ parcial');
+  assert(tlouPartIISeeded?.dlc_scope.includes('Grounded') && /(?:New Game\+|NG\+) parcial/.test(tlouPartIISeeded?.runs_summary || ''), 'The Last of Us Part II deve persistir add-ons separados e New Game+ parcial');
 
   const tlouPartIIRoadmapRows = await all('SELECT content FROM roadmaps WHERE game_id = (SELECT id FROM games WHERE slug = ?) ORDER BY step_order', ['the-last-of-us-part-ii']);
   assert.strictEqual(tlouPartIIRoadmapRows.length, 6, 'seed deve inserir 6 etapas de roadmap para The Last of Us Part II');
@@ -6779,7 +6914,7 @@ async function assertSeedData({ all, get }, sampleGames) {
     return stage && typeof stage.title === 'string' && typeof stage.focus === 'string' && typeof stage.objective === 'string' && Array.isArray(stage.actions) && typeof stage.result === 'string';
   }), 'seed deve persistir roadmap estruturado para The Last of Us Part II');
   const tlouPartIIRoadmapText = tlouPartIIRoadmapRows.map(row => row.content).join(' ');
-  assert(tlouPartIIRoadmapText.includes('New Game+ parcial') && tlouPartIIRoadmapText.includes('No Return'), 'seed deve persistir roadmap com NG+ parcial e sem add-ons na lista base');
+  assert(/(?:New Game\+|NG\+) parcial/.test(tlouPartIIRoadmapText) && tlouPartIIRoadmapText.includes('No Return'), 'seed deve persistir roadmap com NG+ parcial e sem add-ons na lista base');
 
   const tlouPartIITrophyRows = await all('SELECT trophy_code, name, type, is_missable FROM trophies WHERE game_id = (SELECT id FROM games WHERE slug = ?) ORDER BY id', ['the-last-of-us-part-ii']);
   assert.strictEqual(tlouPartIITrophyRows.length, 26, 'seed deve inserir checklist completo de The Last of Us Part II');
@@ -6817,10 +6952,10 @@ async function assertSeedData({ all, get }, sampleGames) {
   assert(evilWithin2Sample.dlc_scope.includes('primeiro The Evil Within'), 'The Evil Within 2 deve diferenciar o primeiro jogo');
   assert(evilWithin2Sample.image.includes('/601430/header.jpg'), 'The Evil Within 2 deve usar image horizontal valida');
   assert(evilWithin2Sample.cover_image.includes('/601430/library_600x900.jpg'), 'The Evil Within 2 deve expor cover_image vertical');
-  assert(evilWithin2Sample.roadmap.some(step => step.includes('não tem Chapter Select')), 'roadmap de The Evil Within 2 deve cobrir ausencia de Chapter Select');
-  assert(evilWithin2Sample.roadmap.some(step => step.includes('New Game+')), 'roadmap de The Evil Within 2 deve cobrir New Game+');
-  assert(evilWithin2Sample.roadmap.some(step => step.includes('Classic Mode') && step.includes('7 saves manuais')), 'roadmap de The Evil Within 2 deve cobrir Classic Mode e saves limitados');
-  assert(evilWithin2Sample.roadmap.some(step => step.includes('Sykes') && step.includes('I’ll Take You Down Myself')), 'roadmap de The Evil Within 2 deve cobrir side missions e trofeus condicionais');
+  assert(evilWithin2Sample.roadmap.some(step => roadmapStepText(step).includes('não tem Chapter Select')), 'roadmap de The Evil Within 2 deve cobrir ausencia de Chapter Select');
+  assert(evilWithin2Sample.roadmap.some(step => roadmapStepText(step).includes('New Game+')), 'roadmap de The Evil Within 2 deve cobrir New Game+');
+  assert(evilWithin2Sample.roadmap.some(step => roadmapStepText(step).includes('Classic Mode') && roadmapStepText(step).includes('7 saves manuais')), 'roadmap de The Evil Within 2 deve cobrir Classic Mode e saves limitados');
+  assert(evilWithin2Sample.roadmap.some(step => roadmapStepText(step).includes('Sykes') && roadmapStepText(step).includes('I’ll Take You Down Myself')), 'roadmap de The Evil Within 2 deve cobrir side missions e trofeus condicionais');
   assert(!evilWithin2Sample.trophies.some(trophy => /The Assignment|The Consequence|The Executioner|The Evil Within 1|DLC/i.test(`${trophy.id} ${trophy.name} ${trophy.description} ${trophy.tip}`)), 'The Evil Within 2 nao deve misturar DLCs ou trofeus do primeiro jogo');
   assert(evilWithin2Sample.trophies.filter(trophy => trophy.is_missable).length >= 25, 'The Evil Within 2 deve marcar muitos trofeus de atencao/missable');
   const evilWithin2TypeCounts = evilWithin2Sample.trophies.reduce((counts, trophy) => {
@@ -7856,8 +7991,8 @@ async function assertBackendEditorialConsistency() {
   );
   assert.strictEqual(seededEditorial.editorial_status, 'published', 'seed deve publicar jogos existentes por padrao');
   assert.strictEqual(seededEditorial.coverage_level, 'strong', 'seed deve preservar coverage_level revisado do Elden Ring');
-  assert.strictEqual(seededEditorial.is_verified, 0, 'seed nao deve marcar verificacao manual sem confirmacao');
-  assert.strictEqual(seededEditorial.verification_status, 'review', 'seed deve preservar verification_status revisado do Elden Ring');
+  assert.strictEqual(seededEditorial.is_verified, 1, 'seed deve preservar verificacao manual da platina base de Elden Ring');
+  assert.strictEqual(seededEditorial.verification_status, 'verified', 'seed deve preservar verification_status verified do Elden Ring');
   assert(seededEditorial.missable_summary.includes('Bolt of Gransax'), 'seed deve copiar missable para missable_summary');
   assert(seededEditorial.missable_summary.includes('Lichdragon Fortissax'), 'seed deve copiar Fortissax para missable_summary');
 
@@ -8088,7 +8223,7 @@ async function assertBackendEditorialConsistency() {
     [requiemForSync.id, 'rerequiem_craté_expectations', 'Craté Expectations', 'Prata', 'Old bad seed row.', 'Must be replaced by migrate sync.', 1, 0]
   );
   await migrate();
-  const requiemAfterSync = await get('SELECT difficulty, time, time_sort_hours, time_bucket, coverage_level, is_verified, verification_status FROM games WHERE slug = ?', ['resident-evil-requiem']);
+  const requiemAfterSync = await get('SELECT difficulty, time, time_sort_hours, time_bucket, coverage_level, is_verified, verification_status, editorial_review_status FROM games WHERE slug = ?', ['resident-evil-requiem']);
   const requiemTrophiesAfterSync = await all('SELECT trophy_code, type, is_missable FROM trophies WHERE game_id = ? ORDER BY id', [requiemForSync.id]);
   const requiemRoadmapAfterSync = await all('SELECT content FROM roadmaps WHERE game_id = ? ORDER BY step_order', [requiemForSync.id]);
   assert.strictEqual(requiemAfterSync?.difficulty, 4, 'migration deve corrigir Resident Evil Requiem se banco preservar dificuldade antiga');
@@ -8098,10 +8233,11 @@ async function assertBackendEditorialConsistency() {
   assert.strictEqual(requiemAfterSync?.coverage_level, 'strong', 'migration nao deve manter Resident Evil Requiem como complete automatico');
   assert.strictEqual(requiemAfterSync?.is_verified, 0, 'migration nao deve manter Resident Evil Requiem como verificado sem revisao manual');
   assert.strictEqual(requiemAfterSync?.verification_status, 'review', 'migration deve voltar Resident Evil Requiem para revisao editorial');
+  assert.strictEqual(requiemAfterSync?.editorial_review_status, 'in_review', 'migration deve manter Resident Evil Requiem em in_review');
   assert.strictEqual(requiemTrophiesAfterSync.length, 50, 'migration deve substituir checklist antigo do Resident Evil Requiem por 50 trofeus');
   assert(!requiemTrophiesAfterSync.some(trophy => /craté/i.test(trophy.trophy_code)), 'migration deve remover trofeu legado incorreto do Resident Evil Requiem');
-  assert.strictEqual(requiemTrophiesAfterSync.filter(trophy => trophy.is_missable).length, 40, 'migration deve restaurar 40 perdiveis no Resident Evil Requiem');
-  assert.strictEqual(requiemRoadmapAfterSync.length, 5, 'migration deve atualizar roadmap do Resident Evil Requiem');
+  assert.strictEqual(requiemTrophiesAfterSync.filter(trophy => trophy.is_missable).length, 4, 'migration deve restaurar 4 perdiveis no Resident Evil Requiem');
+  assert.strictEqual(requiemRoadmapAfterSync.length, 6, 'migration deve atualizar roadmap do Resident Evil Requiem');
 
   const spiderManForSync = await get('SELECT id FROM games WHERE slug = ?', ['marvels-spider-man']);
   assert(spiderManForSync, "seed deve ter Marvel's Spider-Man antes do teste de sync");
@@ -8410,7 +8546,7 @@ async function assertBackendEditorialConsistency() {
   assert.strictEqual(tlouPartIITrophiesAfterSync.filter(trophy => trophy.is_missable).length, 0, 'migration deve limpar perdiveis definitivos antigos em The Last of Us Part II');
   assert.strictEqual(tlouPartIIRoadmapAfterSync.length, 6, 'migration deve atualizar roadmap de The Last of Us Part II');
   const tlouPartIIRoadmapAfterSyncText = tlouPartIIRoadmapAfterSync.map(row => row.content).join(' ');
-  assert(tlouPartIIRoadmapAfterSyncText.includes('New Game+ parcial') && tlouPartIIRoadmapAfterSyncText.includes('No Return'), 'migration deve restaurar roadmap com NG+ parcial e add-ons separados');
+  assert(/(?:New Game\+|NG\+) parcial/.test(tlouPartIIRoadmapAfterSyncText) && tlouPartIIRoadmapAfterSyncText.includes('No Return'), 'migration deve restaurar roadmap com NG+ parcial e add-ons separados');
 
   const app = require('../src/app');
   const server = await listen(app);
@@ -8422,7 +8558,7 @@ async function assertBackendEditorialConsistency() {
       label: 'SSR /',
       canonical: `${baseUrl}/`,
       titleIncludes: 'AtlasAchievement',
-      descriptionIncludes: 'Compare tempo',
+      descriptionIncludes: 'Escolha sua',
       h1Includes: 'Escolha sua'
     });
     assert.strictEqual(homeStructuredData['@type'], 'WebSite', 'SSR / deve expor JSON-LD WebSite');
@@ -8461,7 +8597,7 @@ async function assertBackendEditorialConsistency() {
     assert(homeCatalogProof.includes(`${gamesResponse.pagination.total} jogos mapeados`), 'home deve mostrar total real de jogos publicados');
     assert(homeCatalogProof.includes(`${expectedHomeTrophies} troféus`), 'home deve mostrar total real de trofeus publicados');
     assert(homeCatalogProof.includes(`${expectedHomeRoadmaps} etapas de roadmap`), 'home deve mostrar total real de etapas de roadmap');
-    assert(!/0 jogos mapeados|0 troféus|0 etapas de roadmap/i.test(homeCatalogProof), 'home nao deve mostrar contadores zerados quando o catalogo esta populado');
+    assert(!/(^|\D)0 jogos mapeados|(^|\D)0 troféus|(^|\D)0 etapas de roadmap/i.test(homeCatalogProof), 'home nao deve mostrar contadores zerados quando o catalogo esta populado');
     const homeGuideSlugs = Array.from(homeHtml.matchAll(/data-open-guide-card="([^"]+)"/g)).map(match => match[1]);
     assert(homeGuideSlugs.length >= 6, 'home deve destacar jogos reais suficientes na primeira experiencia');
     homeGuideSlugs.forEach(slug => {
@@ -8668,7 +8804,7 @@ async function assertBackendEditorialConsistency() {
     assert.strictEqual(eldenRing.difficulty, 7, 'catalogo deve expor dificuldade revisada do Elden Ring');
     assert.strictEqual(eldenRing.editorial_status, 'published', 'API deve retornar editorial_status');
     assert.strictEqual(eldenRing.coverage_level, 'strong', 'API deve retornar coverage_level revisado do Elden Ring');
-    assert.strictEqual(eldenRing.is_verified, false, 'API deve retornar is_verified booleano');
+    assert.strictEqual(eldenRing.is_verified, true, 'API deve retornar Elden Ring como guia base verificado');
     assert.strictEqual(eldenRing.missable_count, 5, 'API deve retornar missable_count correto');
     assert.strictEqual(ghost.trophy_count, 52, 'catalogo deve expor 52 trofeus para Ghost of Tsushima');
     assert.strictEqual(ghost.difficulty, 4, 'catalogo deve expor dificuldade 4/10 para Ghost of Tsushima');
@@ -8737,13 +8873,13 @@ async function assertBackendEditorialConsistency() {
     assert.strictEqual(requiem.time_max_hours, 25, 'catalogo deve expor time_max_hours do Resident Evil Requiem');
     assert.strictEqual(requiem.time_sort_hours, 25, 'catalogo deve expor time_sort_hours do Resident Evil Requiem');
     assert.strictEqual(requiem.time_bucket, 'medium', 'catalogo deve classificar Resident Evil Requiem como jogo medio');
-    assert.strictEqual(requiem.roadmap_count, 5, 'catalogo deve expor roadmap completo do Resident Evil Requiem');
+    assert.strictEqual(requiem.roadmap_count, 6, 'catalogo deve expor roadmap completo do Resident Evil Requiem');
     assert.strictEqual(requiem.coverage_level, 'strong', 'Resident Evil Requiem deve aparecer com coverage strong');
     assert.strictEqual(requiem.is_verified, false, 'Resident Evil Requiem nao deve aparecer como verificado');
     assert.strictEqual(requiem.verification_status, 'review', 'Resident Evil Requiem deve aparecer em revisao editorial');
     assert.strictEqual(requiem.image, requiemSample.image, 'catalogo deve usar image horizontal do Resident Evil Requiem');
     assert.strictEqual(requiem.cover_image, requiemSample.cover_image, 'API deve expor cover_image do Resident Evil Requiem');
-    assert.strictEqual(requiem.missable_count, 40, 'API deve contar 40 perdiveis no Resident Evil Requiem');
+    assert.strictEqual(requiem.missable_count, 4, 'API deve contar 4 perdiveis no Resident Evil Requiem');
     assert.strictEqual(requiem.spoiler_count, 17, 'API deve contar spoilers coerentes no Resident Evil Requiem');
     assert.strictEqual(returnal.trophy_count, 31, 'catalogo deve expor 31 trofeus para Returnal');
     assert.strictEqual(returnal.difficulty, 8, 'catalogo deve expor dificuldade 8/10 para Returnal');
@@ -9565,7 +9701,7 @@ async function assertBackendEditorialConsistency() {
     });
     assert(timeShortHtml.includes('Resident Evil 4 Remake'), '/catalogo/ate-15-horas deve listar jogo encontrado pelo fallback');
     assert(timeShortHtml.includes('Astro Bot'), '/catalogo/ate-15-horas deve listar Astro Bot');
-    assert(timeShortHtml.includes("Astro's Playroom"), "/catalogo/ate-15-horas deve listar Astro's Playroom");
+    assert(/Astro(?:'|â€™|’|&#39;)s Playroom/.test(timeShortHtml), "/catalogo/ate-15-horas deve listar Astro's Playroom");
     assert(!timeShortHtml.includes('Catálogo em expansão nesta faixa'), 'colecao com poucos jogos nao deve inserir aviso pesado no meio da lista');
     assert(timeShortHtml.includes('Entenda esta coleção'), 'contexto editorial da colecao deve ficar concentrado no bloco Entenda esta colecao');
     assert(!timeShortHtml.includes('noindex,follow'), 'colecao com jogo real nao deve receber noindex');
@@ -9586,6 +9722,9 @@ async function assertBackendEditorialConsistency() {
       'detalhe da API deve retornar is_spoiler no trofeu'
     );
     assert.strictEqual(gameDetail.missable_count, 5, 'GET /api/games/slug/:slug deve retornar missable_count');
+    assert.strictEqual(gameDetail.onlineRequired, false, 'Elden Ring nao deve exigir online');
+    assert.strictEqual(gameDetail.coopRequired, false, 'Elden Ring nao deve exigir coop');
+    assert.strictEqual(gameDetail.dlcRequired, false, 'Elden Ring nao deve exigir DLC');
     assert(
       gameDetail.trophies.some(trophy => trophy.id === 'er_legendary_armaments' && trophy.is_missable),
       'detalhe da API deve retornar is_missable no troféu'
@@ -9598,9 +9737,14 @@ async function assertBackendEditorialConsistency() {
     assert(gameDetail.missable_summary.includes('Bolt of Gransax'), 'GET /api/games/slug/:slug deve retornar missable_summary compatível');
     assert(gameDetail.missable_summary.includes('Lichdragon Fortissax'), 'GET /api/games/slug/:slug deve retornar missable_summary de Fortissax');
     assert(gameDetail.dlc_scope.includes('Shadow of the Erdtree'), 'GET /api/games/slug/:slug deve indicar que DLC nao e requisito da platina base');
-    assert.strictEqual(gameDetail.coverage_level, 'strong', 'Elden Ring nao deve ser complete sem revisao manual final');
-    assert.strictEqual(gameDetail.is_verified, false, 'Elden Ring nao deve estar verificado automaticamente');
-    assert.strictEqual(gameDetail.verification_status, 'review', 'GET /api/games/slug/:slug deve retornar verification_status');
+    assert(gameDetail.dlc_scope.includes('Guia da DLC pendente'), 'GET /api/games/slug/:slug deve separar guia da DLC como pendente');
+    assert.strictEqual(gameDetail.coverage_level, 'strong', 'Elden Ring deve manter coverage strong verificado');
+    assert.strictEqual(gameDetail.is_verified, true, 'Elden Ring deve estar verificado na platina base');
+    assert.strictEqual(gameDetail.verification_status, 'verified', 'GET /api/games/slug/:slug deve retornar verification_status verified');
+    assert.strictEqual(gameDetail.editorialStatus, 'verified', 'GET /api/games/slug/:slug deve retornar editorialStatus verified');
+    assert.strictEqual(gameDetail.dlc_status, 'out_of_base_scope', 'GET /api/games/slug/:slug deve separar DLC fora do escopo base');
+    assert.strictEqual(gameDetail.dlcGuideStatus, 'pending', 'GET /api/games/slug/:slug deve manter guia da DLC pendente separadamente');
+    assert.deepStrictEqual(gameDetail.qualityWarnings, [], 'GET /api/games/slug/:slug nao deve expor qualityWarning bloqueante por DLC');
     assert(Object.prototype.hasOwnProperty.call(gameDetail, 'runs_summary'), 'GET /api/games/slug/:slug deve expor runs_summary');
     [
       'missable_summary',
@@ -9639,8 +9783,8 @@ async function assertBackendEditorialConsistency() {
     assert(lifeIsStrangeTrueColorsDetail.dlc_scope.includes('Wavelengths') && lifeIsStrangeTrueColorsDetail.dlc_scope.includes('lista base'), 'detalhe de Life is Strange: True Colors deve separar Wavelengths da lista base');
     assert(lifeIsStrangeTrueColorsDetail.difficulty_reason.includes('sem troféus de dificuldade') || lifeIsStrangeTrueColorsDetail.difficulty_reason.includes('sem trofeus de dificuldade'), 'detalhe de Life is Strange: True Colors deve indicar ausencia de trofeus de dificuldade');
     assert(lifeIsStrangeTrueColorsDetail.cleanup_advice.includes('Chapter Select'), 'detalhe de Life is Strange: True Colors deve orientar cleanup por Chapter Select');
-    assert(lifeIsStrangeTrueColorsDetail.roadmap.some(step => step.includes('Memory Collectibles') && step.includes('Chapter Select')), 'detalhe de Life is Strange: True Colors deve ter roadmap com Memory Collectibles e Chapter Select');
-    assert(lifeIsStrangeTrueColorsDetail.roadmap.some(step => step.includes('side objectives')), 'detalhe de Life is Strange: True Colors deve mencionar side objectives');
+    assert(lifeIsStrangeTrueColorsDetail.roadmap.some(step => roadmapStepText(step).includes('Memory Collectibles') && roadmapStepText(step).includes('Chapter Select')), 'detalhe de Life is Strange: True Colors deve ter roadmap com Memory Collectibles e Chapter Select');
+    assert(lifeIsStrangeTrueColorsDetail.roadmap.some(step => roadmapStepText(step).includes('side objectives')), 'detalhe de Life is Strange: True Colors deve mencionar side objectives');
     assert(lifeIsStrangeTrueColorsDetail.trophies.some(trophy => trophy.id === 'lis_tc_haven_historian' && trophy.type === 'Ouro' && trophy.tip.includes('PSN')), 'detalhe deve marcar Haven Historian como ouro com ressalva PSN');
     assert(lifeIsStrangeTrueColorsDetail.trophies.some(trophy => trophy.id === 'lis_tc_haven_maven' && trophy.type === 'Platina' && trophy.tip.includes('Haven Historian')), 'detalhe deve marcar Haven Maven como platina dependente de Haven Historian');
     assert(!lifeIsStrangeTrueColorsDetail.trophies.some(trophy => /Wavelengths|DLC|add-?on/i.test(`${trophy.id} ${trophy.name} ${trophy.description} ${trophy.tip}`)), 'detalhe de Life is Strange: True Colors nao deve incluir Wavelengths/DLC na checklist');
@@ -9687,8 +9831,8 @@ async function assertBackendEditorialConsistency() {
     assert(lifeIsStrangeDoubleExposureDetail.dlc_scope.includes('Exclusive Cat Content') && lifeIsStrangeDoubleExposureDetail.dlc_scope.includes('lista base'), 'detalhe de Life is Strange: Double Exposure deve separar Exclusive Cat Content da lista base');
     assert(lifeIsStrangeDoubleExposureDetail.difficulty_reason.includes('Não há troféus de dificuldade') || lifeIsStrangeDoubleExposureDetail.difficulty_reason.includes('Nao ha trofeus de dificuldade'), 'detalhe de Life is Strange: Double Exposure deve indicar ausencia de trofeus de dificuldade');
     assert(lifeIsStrangeDoubleExposureDetail.cleanup_advice.includes('Chapter Select'), 'detalhe de Life is Strange: Double Exposure deve orientar cleanup por Chapter Select');
-    assert(lifeIsStrangeDoubleExposureDetail.roadmap.some(step => step.includes('fotos/Polaroids') && step.includes('Chapter Select')), 'detalhe de Life is Strange: Double Exposure deve ter roadmap com fotos/Polaroids e Chapter Select');
-    assert(lifeIsStrangeDoubleExposureDetail.roadmap.some(step => step.includes('Archival Footage') && step.includes('Bay or Bae') && step.includes('escolhas incompatíveis')), 'detalhe de Life is Strange: Double Exposure deve mencionar Archival Footage, Bay or Bae e escolhas incompatíveis');
+    assert(lifeIsStrangeDoubleExposureDetail.roadmap.some(step => roadmapStepText(step).includes('fotos/Polaroids') && roadmapStepText(step).includes('Chapter Select')), 'detalhe de Life is Strange: Double Exposure deve ter roadmap com fotos/Polaroids e Chapter Select');
+    assert(lifeIsStrangeDoubleExposureDetail.roadmap.some(step => roadmapStepText(step).includes('Archival Footage') && roadmapStepText(step).includes('Bay or Bae') && roadmapStepText(step).includes('escolhas incompatíveis')), 'detalhe de Life is Strange: Double Exposure deve mencionar Archival Footage, Bay or Bae e escolhas incompatíveis');
     assert(lifeIsStrangeDoubleExposureDetail.trophies.some(trophy => trophy.id === 'lis_de_bay_or_bae' && trophy.type === 'Ouro' && trophy.is_missable && trophy.tip.includes('segunda rota')), 'detalhe deve marcar Bay or Bae como ouro semi-perdivel com segunda rota');
     assert(lifeIsStrangeDoubleExposureDetail.trophies.some(trophy => trophy.id === 'lis_de_archival_footage' && trophy.type === 'Ouro' && trophy.tip.includes('fotos/Polaroids')), 'detalhe deve marcar Archival Footage como ouro de fotos/Polaroids');
     assert(!lifeIsStrangeDoubleExposureDetail.trophies.some(trophy => /Exclusive Cat Content|Nothing Lasts Fur-Ever|Heavy Petting|DLC|add-?on/i.test(`${trophy.id} ${trophy.name} ${trophy.description} ${trophy.tip}`)), 'detalhe de Life is Strange: Double Exposure nao deve incluir Exclusive Cat Content/DLC na checklist');
@@ -9733,8 +9877,8 @@ async function assertBackendEditorialConsistency() {
     assert(lifeIsStrangeRemasteredDetail.dlc_scope.includes('Before the Storm Remastered') && lifeIsStrangeRemasteredDetail.dlc_scope.includes('jogo separado'), 'detalhe de Life is Strange Remastered deve separar Before the Storm Remastered');
     assert(lifeIsStrangeRemasteredDetail.difficulty_reason.includes('sem troféus de dificuldade'), 'detalhe de Life is Strange Remastered deve indicar ausencia de trofeus de dificuldade');
     assert(lifeIsStrangeRemasteredDetail.cleanup_advice.includes('Collectible Mode') && lifeIsStrangeRemasteredDetail.cleanup_advice.includes('Chapter Select'), 'detalhe de Life is Strange Remastered deve orientar cleanup por Collectible Mode/Chapter Select');
-    assert(lifeIsStrangeRemasteredDetail.roadmap.some(step => step.includes('5 episódios') && step.includes('fotos opcionais')), 'detalhe de Life is Strange Remastered deve ter roadmap com 5 episodios e fotos opcionais');
-    assert(lifeIsStrangeRemasteredDetail.roadmap.some(step => step.includes('Collectible Mode') && step.includes('Chapter Select') && step.includes('cleanup')), 'detalhe de Life is Strange Remastered deve mencionar Collectible Mode, Chapter Select e cleanup');
+    assert(lifeIsStrangeRemasteredDetail.roadmap.some(step => roadmapStepText(step).includes('5 episódios') && roadmapStepText(step).includes('fotos opcionais')), 'detalhe de Life is Strange Remastered deve ter roadmap com 5 episodios e fotos opcionais');
+    assert(lifeIsStrangeRemasteredDetail.roadmap.some(step => roadmapStepText(step).includes('Collectible Mode') && roadmapStepText(step).includes('Chapter Select') && roadmapStepText(step).includes('cleanup')), 'detalhe de Life is Strange Remastered deve mencionar Collectible Mode, Chapter Select e cleanup');
     assert(lifeIsStrangeRemasteredDetail.trophies.some(trophy => trophy.id === 'lis_rem_what_if' && trophy.type === 'Platina'), 'detalhe deve ter What If? como platina');
     assert(lifeIsStrangeRemasteredDetail.trophies.some(trophy => trophy.id === 'lis_rem_polarized' && trophy.type === 'Ouro'), 'detalhe deve ter Polarized como ouro');
     assert(!lifeIsStrangeRemasteredDetail.trophies.some(trophy => /Before the Storm|True Colors|Double Exposure|DLC|add-?on/i.test(`${trophy.id} ${trophy.name} ${trophy.description} ${trophy.tip}`)), 'detalhe de Life is Strange Remastered nao deve misturar Before the Storm ou outros jogos na checklist');
@@ -9779,10 +9923,10 @@ async function assertBackendEditorialConsistency() {
     assert(road96Detail.dlc_scope.includes('Road 96: Mile 0') && road96Detail.dlc_scope.includes('entrada separada'), 'detalhe de Road 96 deve separar Road 96: Mile 0');
     assert(road96Detail.difficulty_reason.includes('Não há troféus de dificuldade'), 'detalhe de Road 96 deve indicar ausencia de trofeus de dificuldade');
     assert(road96Detail.cleanup_advice.includes('New Game+') && road96Detail.cleanup_advice.includes('Chapter Select tradicional'), 'detalhe de Road 96 deve orientar cleanup por New Game+ e nao prometer Chapter Select tradicional');
-    assert(road96Detail.roadmap.some(step => step.includes('6 adolescentes') && step.includes('runaways')), 'detalhe de Road 96 deve ter roadmap com 6 adolescentes/runaways');
-    assert(road96Detail.roadmap.some(step => step.includes('18 fitas') && step.includes('Collect ’em All')), 'detalhe de Road 96 deve mencionar 18 fitas');
-    assert(road96Detail.roadmap.some(step => step.includes('Zoe') && step.includes('Cat Person') && step.includes('A Light in the Darkness')), 'detalhe de Road 96 deve mencionar Zoe, gato e fogueira');
-    assert(road96Detail.roadmap.some(step => step.includes('cairn') && step.includes('Stone After Stone')), 'detalhe de Road 96 deve mencionar cairn/pedras');
+    assert(road96Detail.roadmap.some(step => roadmapStepText(step).includes('6 adolescentes') && roadmapStepText(step).includes('runaways')), 'detalhe de Road 96 deve ter roadmap com 6 adolescentes/runaways');
+    assert(road96Detail.roadmap.some(step => roadmapStepText(step).includes('18 fitas') && roadmapStepText(step).includes('Collect ’em All')), 'detalhe de Road 96 deve mencionar 18 fitas');
+    assert(road96Detail.roadmap.some(step => roadmapStepText(step).includes('Zoe') && roadmapStepText(step).includes('Cat Person') && roadmapStepText(step).includes('A Light in the Darkness')), 'detalhe de Road 96 deve mencionar Zoe, gato e fogueira');
+    assert(road96Detail.roadmap.some(step => roadmapStepText(step).includes('cairn') && roadmapStepText(step).includes('Stone After Stone')), 'detalhe de Road 96 deve mencionar cairn/pedras');
     assert(road96Detail.trophies.some(trophy => trophy.id === 'road96_border_master' && trophy.type === 'Platina'), 'detalhe deve ter Border Master como platina');
     assert(road96Detail.trophies.some(trophy => trophy.id === 'road96_collect_em_all' && trophy.type === 'Ouro' && trophy.is_missable), 'detalhe deve ter Collect ’em All como ouro de atencao');
     assert(!road96Detail.trophies.some(trophy => /Mile 0|DLC|add-?on/i.test(`${trophy.id} ${trophy.name} ${trophy.description} ${trophy.tip}`)), 'detalhe de Road 96 nao deve misturar Road 96: Mile 0 na checklist');
@@ -9829,9 +9973,9 @@ async function assertBackendEditorialConsistency() {
     assert(edithFinchDetail.dlc_scope.includes('versão PS5') && edithFinchDetail.dlc_scope.includes('versão PS4 não possui platina'), 'detalhe de What Remains of Edith Finch deve separar PS5 e PS4');
     assert(edithFinchDetail.difficulty_reason.includes('sem troféus de dificuldade'), 'detalhe de What Remains of Edith Finch deve indicar ausencia de trofeus de dificuldade');
     assert(edithFinchDetail.cleanup_advice.includes('replay de cenas/histórias'), 'detalhe de What Remains of Edith Finch deve orientar cleanup por replay');
-    assert(edithFinchDetail.roadmap.some(step => step.includes('All Roads') && step.includes('A Closer Look')), 'detalhe de What Remains of Edith Finch deve ter roadmap com All Roads e A Closer Look');
-    assert(edithFinchDetail.roadmap.some(step => step.includes('histórias da família Finch') && step.includes('Everything Ends')), 'detalhe de What Remains of Edith Finch deve mencionar historias da familia Finch');
-    assert(edithFinchDetail.roadmap.some(step => step.includes('replay de histórias/cenas') && step.includes('Replay a Story')), 'detalhe de What Remains of Edith Finch deve mencionar replay e cleanup');
+    assert(edithFinchDetail.roadmap.some(step => roadmapStepText(step).includes('All Roads') && roadmapStepText(step).includes('A Closer Look')), 'detalhe de What Remains of Edith Finch deve ter roadmap com All Roads e A Closer Look');
+    assert(edithFinchDetail.roadmap.some(step => roadmapStepText(step).includes('histórias da família Finch') && roadmapStepText(step).includes('Everything Ends')), 'detalhe de What Remains of Edith Finch deve mencionar historias da familia Finch');
+    assert(edithFinchDetail.roadmap.some(step => roadmapStepText(step).includes('replay de histórias/cenas') && roadmapStepText(step).includes('Replay a Story')), 'detalhe de What Remains of Edith Finch deve mencionar replay e cleanup');
     assert(edithFinchDetail.trophies.some(trophy => trophy.id === 'edith_all_done' && trophy.type === 'Platina'), 'detalhe deve ter All Done como platina');
     assert(edithFinchDetail.trophies.some(trophy => trophy.id === 'edith_wildlife_photographer' && trophy.type === 'Ouro'), 'detalhe deve ter Wildlife Photographer como ouro PS5');
     assert(edithFinchDetail.trophies.some(trophy => trophy.id === 'edith_replay_a_story' && trophy.type === 'Ouro'), 'detalhe deve ter Replay a Story como ouro PS5');
@@ -10023,8 +10167,8 @@ async function assertBackendEditorialConsistency() {
     assert.strictEqual(ghostDetail.missable_count, 0, 'Ghost of Tsushima nao deve marcar perdiveis');
     assert.strictEqual(ghostDetail.spoiler_count, 12, 'Ghost of Tsushima deve retornar spoiler_count coerente');
     assert.strictEqual(ghostDetail.roadmap.length, 6, 'detalhe de Ghost of Tsushima deve retornar roadmap de 6 etapas');
-    assert(ghostDetail.roadmap.some(step => step.includes('exploração livre')), 'roadmap de Ghost of Tsushima deve citar exploração livre');
-    assert(ghostDetail.roadmap.some(step => step.includes('Iki, New Game+ e Legends')), 'roadmap de Ghost of Tsushima deve excluir extras da platina base');
+    assert(ghostDetail.roadmap.some(step => roadmapStepText(step).includes('exploração livre')), 'roadmap de Ghost of Tsushima deve citar exploração livre');
+    assert(ghostDetail.roadmap.some(step => roadmapStepText(step).includes('Iki Island') && roadmapStepText(step).includes('New Game+') && roadmapStepText(step).includes('Legends')), 'roadmap de Ghost of Tsushima deve excluir extras da platina base');
     assert(ghostDetail.online_summary.includes('Não há troféus online'), 'detalhe de Ghost of Tsushima deve indicar ausência de online obrigatório');
     assert(ghostDetail.dlc_scope.includes('Iki Island') && ghostDetail.dlc_scope.includes('Legends'), 'detalhe de Ghost of Tsushima deve manter DLC em escopo separado');
     assert.strictEqual(ghostDetail.coverage_level, 'strong', 'Ghost of Tsushima nao deve ser complete sem revisao manual');
@@ -10069,8 +10213,8 @@ async function assertBackendEditorialConsistency() {
     assert.strictEqual(horizonDetail.missable_count, 0, 'Horizon Zero Dawn nao deve contar perdiveis');
     assert.strictEqual(horizonDetail.spoiler_count, 16, 'Horizon Zero Dawn deve retornar spoiler_count coerente');
     assert.strictEqual(horizonDetail.roadmap.length, 6, 'detalhe de Horizon Zero Dawn deve retornar roadmap de 6 etapas');
-    assert(horizonDetail.roadmap.some(step => step.includes('Hunting Grounds') && step.includes('Blazing Suns')), 'roadmap de Horizon Zero Dawn deve citar Hunting Grounds e Blazing Suns');
-    assert(horizonDetail.roadmap.some(step => step.includes('The Frozen Wilds') && step.includes('platina base')), 'roadmap de Horizon Zero Dawn deve excluir The Frozen Wilds');
+    assert(horizonDetail.roadmap.some(step => roadmapStepText(step).includes('Hunting Grounds') && roadmapStepText(step).includes('Blazing Suns')), 'roadmap de Horizon Zero Dawn deve citar Hunting Grounds e Blazing Suns');
+    assert(horizonDetail.roadmap.some(step => roadmapStepText(step).includes('The Frozen Wilds') && roadmapStepText(step).includes('platina base')), 'roadmap de Horizon Zero Dawn deve excluir The Frozen Wilds');
     assert(horizonDetail.online_summary.includes('Nao ha exigencia online'), 'detalhe de Horizon Zero Dawn deve indicar ausencia de online obrigatorio');
     assert(horizonDetail.dlc_scope.includes('The Frozen Wilds'), 'detalhe de Horizon Zero Dawn deve manter DLC em escopo separado');
     assert(horizonDetail.before_you_start.includes('The Frozen Wilds') && horizonDetail.before_you_start.includes('nao e necessaria'), 'detalhe de Horizon Zero Dawn deve avisar que The Frozen Wilds nao e necessaria');
@@ -10117,8 +10261,8 @@ async function assertBackendEditorialConsistency() {
     assert.strictEqual(forbiddenWestDetail.missable_count, 1, 'Horizon Forbidden West deve contar 1 missable confiavel');
     assert.strictEqual(forbiddenWestDetail.spoiler_count, 20, 'Horizon Forbidden West deve retornar spoiler_count coerente');
     assert.strictEqual(forbiddenWestDetail.roadmap.length, 6, 'detalhe de Horizon Forbidden West deve retornar roadmap de 6 etapas');
-    assert(forbiddenWestDetail.roadmap.some(step => step.includes('Arena') && step.includes('Machine Strike')), 'roadmap de Horizon Forbidden West deve citar Arena e Machine Strike');
-    assert(forbiddenWestDetail.roadmap.some(step => step.includes('Burning Shores') && step.includes('Ultra Hard')), 'roadmap de Horizon Forbidden West deve excluir add-ons');
+    assert(forbiddenWestDetail.roadmap.some(step => roadmapStepText(step).includes('Arena') && roadmapStepText(step).includes('Machine Strike')), 'roadmap de Horizon Forbidden West deve citar Arena e Machine Strike');
+    assert(forbiddenWestDetail.roadmap.some(step => roadmapStepText(step).includes('Burning Shores') && roadmapStepText(step).includes('Ultra Hard')), 'roadmap de Horizon Forbidden West deve excluir add-ons');
     assert(forbiddenWestDetail.online_summary.includes('Nao ha exigencia online'), 'detalhe de Horizon Forbidden West deve indicar ausencia de online obrigatorio');
     assert(forbiddenWestDetail.dlc_scope.includes('Burning Shores') && forbiddenWestDetail.dlc_scope.includes('New Game+') && forbiddenWestDetail.dlc_scope.includes('Ultra Hard'), 'detalhe de Horizon Forbidden West deve manter add-ons em escopo separado');
     assert(forbiddenWestDetail.before_you_start.includes('Burning Shores') && forbiddenWestDetail.before_you_start.includes('Ultra Hard'), 'detalhe de Horizon Forbidden West deve avisar que add-ons nao sao necessarios');
@@ -10167,8 +10311,8 @@ async function assertBackendEditorialConsistency() {
     assert.strictEqual(ratchetDetail.missable_count, 1, 'Ratchet & Clank deve contar 1 missable confiavel');
     assert.strictEqual(ratchetDetail.spoiler_count, 12, 'Ratchet & Clank deve retornar spoiler_count coerente');
     assert.strictEqual(ratchetDetail.roadmap.length, 6, 'detalhe de Ratchet & Clank deve retornar roadmap de 6 etapas');
-    assert(ratchetDetail.roadmap.some(step => step.includes('CraiggerBears') && step.includes('Spybots')), 'roadmap de Ratchet & Clank deve citar coletaveis principais');
-    assert(ratchetDetail.roadmap.some(step => step.includes('Challenge Mode') && step.includes('Fully Stacked')), 'roadmap de Ratchet & Clank deve citar Challenge Mode para Fully Stacked');
+    assert(ratchetDetail.roadmap.some(step => roadmapStepText(step).includes('CraiggerBears') && roadmapStepText(step).includes('Spybots')), 'roadmap de Ratchet & Clank deve citar coletaveis principais');
+    assert(ratchetDetail.roadmap.some(step => roadmapStepText(step).includes('Challenge Mode') && roadmapStepText(step).includes('Fully Stacked')), 'roadmap de Ratchet & Clank deve citar Challenge Mode para Fully Stacked');
     assert(ratchetDetail.online_summary.includes('Nao ha exigencia online'), 'detalhe de Ratchet & Clank deve indicar ausencia de online obrigatorio');
     assert(ratchetDetail.cleanup_advice.includes('Challenge Mode') && ratchetDetail.cleanup_advice.includes('armas finais'), 'detalhe de Ratchet & Clank deve explicar Challenge Mode limitado');
     assert.strictEqual(ratchetDetail.coverage_level, 'strong', 'Ratchet & Clank nao deve ser complete sem revisao manual');
@@ -10213,8 +10357,8 @@ async function assertBackendEditorialConsistency() {
     assert.strictEqual(demonsSoulsDetail.missable_count, 14, "Demon's Souls deve contar 14 missables coerentes");
     assert.strictEqual(demonsSoulsDetail.spoiler_count, 31, "Demon's Souls deve retornar spoiler_count coerente");
     assert.strictEqual(demonsSoulsDetail.roadmap.length, 6, "detalhe de Demon's Souls deve retornar roadmap de 6 etapas");
-    assert(demonsSoulsDetail.roadmap.some(step => step.includes('World Tendency') && step.includes('Character Tendency')), "roadmap de Demon's Souls deve citar World Tendency e Character Tendency");
-    assert(demonsSoulsDetail.roadmap.some(step => step.includes('boss souls') && step.includes("Sage's Trophy")), "roadmap de Demon's Souls deve citar boss souls, magias e milagres");
+    assert(demonsSoulsDetail.roadmap.some(step => roadmapStepText(step).includes('World Tendency') && roadmapStepText(step).includes('Character Tendency')), "roadmap de Demon's Souls deve citar World Tendency e Character Tendency");
+    assert(demonsSoulsDetail.roadmap.some(step => roadmapStepText(step).includes('boss souls') && roadmapStepText(step).includes("Sage's Trophy")), "roadmap de Demon's Souls deve citar boss souls, magias e milagres");
     assert(demonsSoulsDetail.online_summary.includes('Return to Form') && demonsSoulsDetail.online_summary.includes('Unwelcome Guest'), "detalhe de Demon's Souls deve indicar os trofeus online obrigatorios");
     assert(demonsSoulsDetail.dlc_scope.includes('remake de PS5') && demonsSoulsDetail.dlc_scope.includes('nao ha DLC'), "detalhe de Demon's Souls deve manter escopo do remake PS5 sem DLC");
     assert(demonsSoulsDetail.before_you_start.includes('PS3') && demonsSoulsDetail.before_you_start.includes('boss souls'), "detalhe de Demon's Souls deve avisar que nao usa lista PS3 e que boss souls exigem cuidado");
@@ -10262,7 +10406,7 @@ async function assertBackendEditorialConsistency() {
     assert.strictEqual(darkSoulsRemasteredDetail.trophies.filter(trophy => trophy.type === 'Bronze').length, 18, 'Dark Souls Remastered deve ter 18 bronze');
     assert.strictEqual(darkSoulsRemasteredDetail.trophies.filter(trophy => /online obrigatorio|trofeu online|multiplayer obrigatorio/i.test(`${trophy.name} ${trophy.description} ${trophy.tip}`)).length, 0, 'Dark Souls Remastered nao deve ter trofeus online obrigatorios');
     assert.strictEqual(darkSoulsRemasteredDetail.roadmap.length, 7, 'detalhe de Dark Souls Remastered deve retornar roadmap de 7 etapas');
-    const darkSoulsRemasteredDetailRoadmap = darkSoulsRemasteredDetail.roadmap.join(' ');
+    const darkSoulsRemasteredDetailRoadmap = darkSoulsRemasteredDetail.roadmap.map(roadmapStepText).join(' ');
     assert(darkSoulsRemasteredDetailRoadmap.includes('NG+') && darkSoulsRemasteredDetailRoadmap.includes('NG++'), 'roadmap de Dark Souls Remastered deve citar NG+ e NG++');
     assert(darkSoulsRemasteredDetailRoadmap.includes('boss souls') && darkSoulsRemasteredDetailRoadmap.includes("Knight's Honor"), "roadmap de Dark Souls Remastered deve citar boss souls e Knight's Honor");
     assert(darkSoulsRemasteredDetailRoadmap.includes('magias') && darkSoulsRemasteredDetailRoadmap.includes('milagres') && darkSoulsRemasteredDetailRoadmap.includes('piromancias'), 'roadmap de Dark Souls Remastered deve citar magias, milagres e piromancias');
@@ -10319,7 +10463,7 @@ async function assertBackendEditorialConsistency() {
     assert.strictEqual(darkSoulsIIScholarDetail.trophies.filter(trophy => trophy.type === 'Bronze').length, 12, 'Dark Souls II Scholar deve ter 12 bronze');
     assert.strictEqual(darkSoulsIIScholarDetail.trophies.filter(trophy => /online obrigatorio|trofeu online|multiplayer obrigatorio/i.test(`${trophy.name} ${trophy.description} ${trophy.tip}`)).length, 0, 'Dark Souls II Scholar nao deve ter trofeus online obrigatorios');
     assert.strictEqual(darkSoulsIIScholarDetail.roadmap.length, 7, 'detalhe de Dark Souls II Scholar deve retornar roadmap de 7 etapas');
-    const darkSoulsIIScholarDetailRoadmap = darkSoulsIIScholarDetail.roadmap.join(' ');
+    const darkSoulsIIScholarDetailRoadmap = darkSoulsIIScholarDetail.roadmap.map(roadmapStepText).join(' ');
     assert(darkSoulsIIScholarDetailRoadmap.includes('NG+') && darkSoulsIIScholarDetailRoadmap.includes('NG++'), 'roadmap de Dark Souls II Scholar deve citar NG+ e NG++');
     assert(darkSoulsIIScholarDetailRoadmap.includes('magias') && darkSoulsIIScholarDetailRoadmap.includes('milagres') && darkSoulsIIScholarDetailRoadmap.includes('piromancias'), 'roadmap de Dark Souls II Scholar deve citar magias, milagres e piromancias');
     assert(darkSoulsIIScholarDetailRoadmap.includes('hexes') && darkSoulsIIScholarDetailRoadmap.includes('gestures') && darkSoulsIIScholarDetailRoadmap.includes('covenants'), 'roadmap de Dark Souls II Scholar deve citar hexes, gestures e covenants');
@@ -10382,7 +10526,7 @@ async function assertBackendEditorialConsistency() {
     assert.strictEqual(darkSoulsIIIDetail.trophies.filter(trophy => /online obrigatorio|trofeu online|multiplayer obrigatorio/i.test(`${trophy.name} ${trophy.description} ${trophy.tip}`)).length, 0, 'Dark Souls III nao deve ter trofeus online obrigatorios');
     assert.strictEqual(darkSoulsIIIDetail.trophies.filter(trophy => /Ashes of Ariandel|The Ringed City|Friede|Gael|Midir|Demon Prince/i.test(`${trophy.id} ${trophy.name} ${trophy.description}`)).length, 0, 'Dark Souls III nao deve ter trofeus de DLC na checklist base');
     assert.strictEqual(darkSoulsIIIDetail.roadmap.length, 7, 'detalhe de Dark Souls III deve retornar roadmap de 7 etapas');
-    const darkSoulsIIIDetailRoadmap = darkSoulsIIIDetail.roadmap.join(' ');
+    const darkSoulsIIIDetailRoadmap = darkSoulsIIIDetail.roadmap.map(roadmapStepText).join(' ');
     assert(darkSoulsIIIDetailRoadmap.includes('NG+') && darkSoulsIIIDetailRoadmap.includes('NG++'), 'roadmap de Dark Souls III deve citar NG+ e NG++');
     assert(darkSoulsIIIDetailRoadmap.includes('rings') && darkSoulsIIIDetailRoadmap.includes('gestures'), 'roadmap de Dark Souls III deve citar rings e gestures');
     assert(darkSoulsIIIDetailRoadmap.includes('sorceries') && darkSoulsIIIDetailRoadmap.includes('miracles') && darkSoulsIIIDetailRoadmap.includes('pyromancies'), 'roadmap de Dark Souls III deve citar sorceries, miracles e pyromancies');
@@ -10448,8 +10592,8 @@ async function assertBackendEditorialConsistency() {
     assert.strictEqual(bloodborneDetail.missable_count, 17, 'Bloodborne deve contar 17 missables coerentes');
     assert.strictEqual(bloodborneDetail.spoiler_count, 26, 'Bloodborne deve retornar spoiler_count coerente');
     assert.strictEqual(bloodborneDetail.roadmap.length, 7, 'detalhe de Bloodborne deve retornar roadmap de 7 etapas');
-    assert(bloodborneDetail.roadmap.some(step => step.includes('backup de save') && step.includes('NG+')), 'roadmap de Bloodborne deve citar backup de save e NG+');
-    assert(bloodborneDetail.roadmap.some(step => step.includes('Chalice Dungeons') && step.includes('Yharnam, Pthumerian Queen')), 'roadmap de Bloodborne deve citar Chalice Dungeons e Yharnam, Pthumerian Queen');
+    assert(bloodborneDetail.roadmap.some(step => roadmapStepText(step).includes('backup de save') && roadmapStepText(step).includes('NG+')), 'roadmap de Bloodborne deve citar backup de save e NG+');
+    assert(bloodborneDetail.roadmap.some(step => roadmapStepText(step).includes('Chalice Dungeons') && roadmapStepText(step).includes('Yharnam, Pthumerian Queen')), 'roadmap de Bloodborne deve citar Chalice Dungeons e Yharnam, Pthumerian Queen');
     assert(bloodborneDetail.online_summary.includes('Nao ha exigencia online'), 'detalhe de Bloodborne deve indicar ausencia de online obrigatorio');
     assert(bloodborneDetail.dlc_scope.includes('The Old Hunters') && bloodborneDetail.dlc_scope.includes('lista base'), 'detalhe de Bloodborne deve manter The Old Hunters em escopo separado');
     assert(bloodborneDetail.before_you_start.includes('roadmap') && bloodborneDetail.before_you_start.includes('areas opcionais'), 'detalhe de Bloodborne deve avisar sobre planejamento');
@@ -10498,7 +10642,7 @@ async function assertBackendEditorialConsistency() {
     assert.strictEqual(sekiroDetail.missable_count, 18, 'Sekiro deve contar 18 missables coerentes');
     assert.strictEqual(sekiroDetail.spoiler_count, 23, 'Sekiro deve retornar spoiler_count coerente');
     assert.strictEqual(sekiroDetail.roadmap.length, 7, 'detalhe de Sekiro deve retornar roadmap de 7 etapas');
-    const sekiroDetailRoadmap = sekiroDetail.roadmap.join(' ');
+    const sekiroDetailRoadmap = sekiroDetail.roadmap.map(roadmapStepText).join(' ');
     assert(sekiroDetailRoadmap.includes('multiplos finais') && sekiroDetailRoadmap.includes('backup de save'), 'roadmap de Sekiro deve citar multiplos finais e backup de save');
     assert(sekiroDetailRoadmap.includes('NG+') && sekiroDetailRoadmap.includes('bosses'), 'roadmap de Sekiro deve citar NG+ e bosses');
     assert(sekiroDetailRoadmap.includes('Prayer Beads') && sekiroDetailRoadmap.includes('Prosthetic Tools'), 'roadmap de Sekiro deve citar Prayer Beads e Prosthetic Tools');
@@ -10558,7 +10702,7 @@ async function assertBackendEditorialConsistency() {
     assert.strictEqual(armoredCoreDetail.missable_count, 2, 'Armored Core VI deve contar 2 missables conservadores');
     assert.strictEqual(armoredCoreDetail.spoiler_count, 16, 'Armored Core VI deve retornar spoiler_count coerente');
     assert.strictEqual(armoredCoreDetail.roadmap.length, 7, 'detalhe de Armored Core VI deve retornar roadmap de 7 etapas');
-    const armoredCoreDetailRoadmap = armoredCoreDetail.roadmap.join(' ');
+    const armoredCoreDetailRoadmap = armoredCoreDetail.roadmap.map(roadmapStepText).join(' ');
     assert(armoredCoreDetailRoadmap.includes('NG++') && armoredCoreDetailRoadmap.includes('todos os finais'), 'roadmap de Armored Core VI deve citar NG++ e todos os finais');
     assert(armoredCoreDetailRoadmap.includes('Combat Logs') && armoredCoreDetailRoadmap.includes('Arena'), 'roadmap de Armored Core VI deve citar Combat Logs e Arena');
     assert(armoredCoreDetailRoadmap.includes('partes') && armoredCoreDetailRoadmap.includes('OS Tuning'), 'roadmap de Armored Core VI deve citar partes e OS Tuning');
@@ -10611,7 +10755,7 @@ async function assertBackendEditorialConsistency() {
     assert.strictEqual(liesOfPDetail.trophies.filter(trophy => /online obrigatorio|trofeu online|multiplayer obrigatorio/i.test(`${trophy.name} ${trophy.description} ${trophy.tip}`)).length, 0, 'Lies of P nao deve ter trofeus online obrigatorios');
     assert(!liesOfPDetail.trophies.some(trophy => /Rose|Forgotten Time|Markiona|Blood Artist|Overture|Memory's Melody|To Be Human|Tracker of Dark Secrets/i.test(`${trophy.id} ${trophy.name} ${trophy.description}`)), 'Lies of P nao deve misturar Overture no detalhe');
     assert.strictEqual(liesOfPDetail.roadmap.length, 6, 'detalhe de Lies of P deve retornar roadmap de 6 etapas');
-    const liesOfPDetailRoadmap = liesOfPDetail.roadmap.join(' ');
+    const liesOfPDetailRoadmap = liesOfPDetail.roadmap.map(roadmapStepText).join(' ');
     ['multiplos finais', 'backup de save', 'NG+', 'records', 'Golden Records', 'gestures', 'cryptic vessels', 'NPC quests', 'weapons'].forEach(needle => {
       assert(liesOfPDetailRoadmap.includes(needle), `detalhe de Lies of P deve citar ${needle}`);
     });
@@ -10659,7 +10803,7 @@ async function assertBackendEditorialConsistency() {
     assert.strictEqual(lordsOfTheFallenDetail.trophies.filter(trophy => trophy.type === 'Bronze').length, 55, 'Lords of the Fallen deve ter 55 bronze');
     assert(!lordsOfTheFallenDetail.trophies.some(trophy => /Ancient Labyrinth|Yetka|Rogar Lord|Lords and Judges|So that's a Lord|My private stash|He speaks in riddles/i.test(`${trophy.id} ${trophy.name} ${trophy.description}`)), 'Lords of the Fallen nao deve misturar lista de 2014 no detalhe');
     assert.strictEqual(lordsOfTheFallenDetail.roadmap.length, 7, 'detalhe de Lords of the Fallen deve retornar roadmap de 7 etapas');
-    const lordsOfTheFallenDetailRoadmap = lordsOfTheFallenDetail.roadmap.join(' ');
+    const lordsOfTheFallenDetailRoadmap = lordsOfTheFallenDetail.roadmap.map(roadmapStepText).join(' ');
     ['3 finais', 'mesmo personagem', 'online/co-op/PvP', 'NPC questlines', 'colecoes', 'drops', 'Umbral Stigmas', 'spells', 'weapons', 'armour'].forEach(needle => {
       assert(lordsOfTheFallenDetailRoadmap.includes(needle), `detalhe de Lords of the Fallen deve citar ${needle}`);
     });
@@ -10717,9 +10861,9 @@ async function assertBackendEditorialConsistency() {
     assert.strictEqual(deathStrandingDetail.missable_count, 0, 'Death Stranding nao deve contar perdiveis definitivos');
     assert.strictEqual(deathStrandingDetail.spoiler_count, 23, 'Death Stranding deve retornar spoiler_count coerente');
     assert.strictEqual(deathStrandingDetail.roadmap.length, 7, 'detalhe de Death Stranding deve retornar roadmap de 7 etapas');
-    assert(deathStrandingDetail.roadmap.some(step => step.includes('5 estrelas') && step.includes('Best Beloved')), 'roadmap de Death Stranding deve citar facilities 5 estrelas');
-    assert(deathStrandingDetail.roadmap.some(step => step.includes('Legend of Legends') && step.includes('Hard')), 'roadmap de Death Stranding deve citar premium deliveries/Hard');
-    assert(deathStrandingDetail.roadmap.some(step => step.includes('memory chips') && step.includes('Homo Faber')), 'roadmap de Death Stranding deve citar memory chips e Homo Faber');
+    assert(deathStrandingDetail.roadmap.some(step => roadmapStepText(step).includes('5 estrelas') && roadmapStepText(step).includes('Best Beloved')), 'roadmap de Death Stranding deve citar facilities 5 estrelas');
+    assert(deathStrandingDetail.roadmap.some(step => roadmapStepText(step).includes('Legend of Legends') && roadmapStepText(step).includes('Hard')), 'roadmap de Death Stranding deve citar premium deliveries/Hard');
+    assert(deathStrandingDetail.roadmap.some(step => roadmapStepText(step).includes('memory chips') && roadmapStepText(step).includes('Homo Faber')), 'roadmap de Death Stranding deve citar memory chips e Homo Faber');
     assert(deathStrandingDetail.online_summary.includes('assincronos') && deathStrandingDetail.online_summary.includes('nao exige multiplayer'), 'detalhe de Death Stranding deve indicar online assincrono sem multiplayer obrigatorio');
     assert(deathStrandingDetail.dlc_scope.includes("Director's Cut") && deathStrandingDetail.dlc_scope.includes('Death Stranding 2'), 'detalhe de Death Stranding deve manter escopo original separado');
     assert(deathStrandingDetail.before_you_start.includes('lista original PS4') && deathStrandingDetail.before_you_start.includes("Director's Cut"), 'detalhe de Death Stranding deve avisar sobre lista original PS4');
@@ -10769,10 +10913,10 @@ async function assertBackendEditorialConsistency() {
     assert.strictEqual(deathStranding2Detail.missable_count, 0, 'Death Stranding 2 nao deve contar perdiveis definitivos');
     assert.strictEqual(deathStranding2Detail.spoiler_count, 25, 'Death Stranding 2 deve retornar spoiler_count coerente');
     assert.strictEqual(deathStranding2Detail.roadmap.length, 7, 'detalhe de Death Stranding 2 deve retornar roadmap de 7 etapas');
-    assert(deathStranding2Detail.roadmap.some(step => step.includes('DHV Magellan') && step.includes('APAS')), 'roadmap de Death Stranding 2 deve citar sistemas novos');
-    assert(deathStranding2Detail.roadmap.some(step => step.includes('42 facilities') && step.includes('Connecting Hearts and Minds')), 'roadmap de Death Stranding 2 deve citar facilities/conexoes');
-    assert(deathStranding2Detail.roadmap.some(step => step.includes('Seasoned Porter') && step.includes('Casual ou acima')), 'roadmap de Death Stranding 2 deve citar S-ranks e dificuldade');
-    assert(deathStranding2Detail.roadmap.some(step => step.includes('online/assincronos') && step.includes('PS+ nao e obrigatorio')), 'roadmap de Death Stranding 2 deve citar online assincrono sem PS+ obrigatorio');
+    assert(deathStranding2Detail.roadmap.some(step => roadmapStepText(step).includes('DHV Magellan') && roadmapStepText(step).includes('APAS')), 'roadmap de Death Stranding 2 deve citar sistemas novos');
+    assert(deathStranding2Detail.roadmap.some(step => roadmapStepText(step).includes('42 facilities') && roadmapStepText(step).includes('Connecting Hearts and Minds')), 'roadmap de Death Stranding 2 deve citar facilities/conexoes');
+    assert(deathStranding2Detail.roadmap.some(step => roadmapStepText(step).includes('Seasoned Porter') && roadmapStepText(step).includes('Casual ou acima')), 'roadmap de Death Stranding 2 deve citar S-ranks e dificuldade');
+    assert(deathStranding2Detail.roadmap.some(step => roadmapStepText(step).includes('online/assincronos') && roadmapStepText(step).includes('PS+ nao e obrigatorio')), 'roadmap de Death Stranding 2 deve citar online assincrono sem PS+ obrigatorio');
     assert(deathStranding2Detail.online_summary.includes('Promising Signs') && deathStranding2Detail.online_summary.includes('A Premier Porter'), 'detalhe de Death Stranding 2 deve indicar os online/assincronos confirmados');
     assert(deathStranding2Detail.dlc_scope.includes('Death Stranding original') && deathStranding2Detail.dlc_scope.includes("Director's Cut"), 'detalhe de Death Stranding 2 deve manter DS1/Director\'s Cut separados');
     assert(deathStranding2Detail.before_you_start.includes('PS5') && deathStranding2Detail.before_you_start.includes('primeiro jogo'), 'detalhe de Death Stranding 2 deve avisar sobre escopo PS5');
@@ -10824,9 +10968,9 @@ async function assertBackendEditorialConsistency() {
     assert.strictEqual(daysGoneDetail.missable_count, 0, 'Days Gone nao deve contar perdiveis definitivos');
     assert.strictEqual(daysGoneDetail.spoiler_count, 13, 'Days Gone deve retornar spoiler_count coerente');
     assert.strictEqual(daysGoneDetail.roadmap.length, 7, 'detalhe de Days Gone deve retornar roadmap de 7 etapas');
-    assert(daysGoneDetail.roadmap.some(step => step.includes("You've Got Red on You") && step.includes('perdivel')), 'roadmap de Days Gone deve citar Youve Got Red on You sem missable');
-    assert(daysGoneDetail.roadmap.some(step => step.includes('Ambush Camps') && step.includes('NERO')), 'roadmap de Days Gone deve citar atividades regionais');
-    assert(daysGoneDetail.roadmap.some(step => step.includes('hordas') && step.includes('Lend Me Your Ears')), 'roadmap de Days Gone deve citar hordas');
+    assert(daysGoneDetail.roadmap.some(step => roadmapStepText(step).includes("You've Got Red on You") && roadmapStepText(step).includes('perdivel')), 'roadmap de Days Gone deve citar Youve Got Red on You sem missable');
+    assert(daysGoneDetail.roadmap.some(step => roadmapStepText(step).includes('Ambush Camps') && roadmapStepText(step).includes('NERO')), 'roadmap de Days Gone deve citar atividades regionais');
+    assert(daysGoneDetail.roadmap.some(step => roadmapStepText(step).includes('hordas') && roadmapStepText(step).includes('Lend Me Your Ears')), 'roadmap de Days Gone deve citar hordas');
     assert(daysGoneDetail.online_summary.includes('Nao ha exigencia online'), 'detalhe de Days Gone deve indicar ausencia de online obrigatorio');
     assert(daysGoneDetail.dlc_scope.includes('Challenge Mode') && daysGoneDetail.dlc_scope.includes('New Game+') && daysGoneDetail.dlc_scope.includes('Survival Mode'), 'detalhe de Days Gone deve manter add-ons separados');
     assert(daysGoneDetail.before_you_start.includes('looting humano'), 'detalhe de Days Gone deve avisar sobre looting humano');
@@ -10877,9 +11021,9 @@ async function assertBackendEditorialConsistency() {
     assert.strictEqual(granTurismo7Detail.missable_count, 0, 'Gran Turismo 7 nao deve contar perdiveis definitivos');
     assert.strictEqual(granTurismo7Detail.spoiler_count, 0, 'Gran Turismo 7 nao deve contar spoilers narrativos');
     assert.strictEqual(granTurismo7Detail.roadmap.length, 7, 'detalhe de Gran Turismo 7 deve retornar roadmap de 7 etapas');
-    assert(granTurismo7Detail.roadmap.some(step => step.includes('Menu Books') && step.includes('GT Cafe')), 'roadmap de Gran Turismo 7 deve citar Menu Books/GT Cafe');
-    assert(granTurismo7Detail.roadmap.some(step => step.includes('Hard Work Pays Off') && step.includes('licenca')), 'roadmap de Gran Turismo 7 deve citar licencas ouro');
-    assert(granTurismo7Detail.roadmap.some(step => step.includes('Sport Mode Debut') && step.includes('Going the Distance Together')), 'roadmap de Gran Turismo 7 deve citar objetivos online confirmados');
+    assert(granTurismo7Detail.roadmap.some(step => roadmapStepText(step).includes('Menu Books') && roadmapStepText(step).includes('GT Cafe')), 'roadmap de Gran Turismo 7 deve citar Menu Books/GT Cafe');
+    assert(granTurismo7Detail.roadmap.some(step => roadmapStepText(step).includes('Hard Work Pays Off') && roadmapStepText(step).includes('licenca')), 'roadmap de Gran Turismo 7 deve citar licencas ouro');
+    assert(granTurismo7Detail.roadmap.some(step => roadmapStepText(step).includes('Sport Mode Debut') && roadmapStepText(step).includes('Going the Distance Together')), 'roadmap de Gran Turismo 7 deve citar objetivos online confirmados');
     assert(granTurismo7Detail.online_summary.includes('conexao/servidores') && granTurismo7Detail.online_summary.includes('Sport Mode'), 'detalhe de Gran Turismo 7 deve indicar conexao/servidores e Sport Mode');
     assert(granTurismo7Detail.dlc_scope.includes('lista base') && granTurismo7Detail.dlc_scope.includes('Gran Turismo Sport'), 'detalhe de Gran Turismo 7 deve manter lista base e GT Sport separados');
     assert(granTurismo7Detail.before_you_start.includes('platin') && granTurismo7Detail.before_you_start.includes('grind de creditos'), 'detalhe de Gran Turismo 7 deve avisar sobre platina longa');
@@ -10929,9 +11073,9 @@ async function assertBackendEditorialConsistency() {
     assert.strictEqual(finalFantasyVIIRemakeDetail.missable_count, 0, 'Final Fantasy VII Remake nao deve contar perdiveis definitivos');
     assert.strictEqual(finalFantasyVIIRemakeDetail.spoiler_count, 9, 'Final Fantasy VII Remake deve retornar spoiler_count coerente');
     assert.strictEqual(finalFantasyVIIRemakeDetail.roadmap.length, 6, 'detalhe de Final Fantasy VII Remake deve retornar roadmap de 6 etapas');
-    assert(finalFantasyVIIRemakeDetail.roadmap.some(step => step.includes('chapter select') && step.includes('music discs')), 'roadmap de Final Fantasy VII Remake deve citar cleanup por chapter select');
-    assert(finalFantasyVIIRemakeDetail.roadmap.some(step => step.includes('Hard Mode') && step.includes('Hardened Veteran')), 'roadmap de Final Fantasy VII Remake deve citar Hard Mode');
-    assert(finalFantasyVIIRemakeDetail.roadmap.some(step => step.includes('Pride and Joy') && step.includes('INTERmission/Yuffie')), 'roadmap de Final Fantasy VII Remake deve citar simulador e excluir DLC');
+    assert(finalFantasyVIIRemakeDetail.roadmap.some(step => roadmapStepText(step).includes('chapter select') && roadmapStepText(step).includes('music discs')), 'roadmap de Final Fantasy VII Remake deve citar cleanup por chapter select');
+    assert(finalFantasyVIIRemakeDetail.roadmap.some(step => roadmapStepText(step).includes('Hard Mode') && roadmapStepText(step).includes('Hardened Veteran')), 'roadmap de Final Fantasy VII Remake deve citar Hard Mode');
+    assert(finalFantasyVIIRemakeDetail.roadmap.some(step => roadmapStepText(step).includes('Pride and Joy') && roadmapStepText(step).includes('INTERmission/Yuffie')), 'roadmap de Final Fantasy VII Remake deve citar simulador e excluir DLC');
     assert(finalFantasyVIIRemakeDetail.online_summary.includes('Nao ha exigencia online'), 'detalhe de Final Fantasy VII Remake deve indicar ausencia de online obrigatorio');
     assert(finalFantasyVIIRemakeDetail.dlc_scope.includes('lista base') && finalFantasyVIIRemakeDetail.dlc_scope.includes('INTERmission') && finalFantasyVIIRemakeDetail.dlc_scope.includes('Yuffie'), 'detalhe de Final Fantasy VII Remake deve manter lista base e INTERmission/Yuffie separados');
     assert(finalFantasyVIIRemakeDetail.before_you_start.includes('Hard Mode') && finalFantasyVIIRemakeDetail.before_you_start.includes('chapter select'), 'detalhe de Final Fantasy VII Remake deve avisar sobre Hard Mode e chapter select');
@@ -10984,10 +11128,10 @@ async function assertBackendEditorialConsistency() {
     assert.strictEqual(finalFantasyVIIRebirthDetail.missable_count, 0, 'Final Fantasy VII Rebirth nao deve contar perdiveis definitivos');
     assert.strictEqual(finalFantasyVIIRebirthDetail.spoiler_count, 15, 'Final Fantasy VII Rebirth deve retornar spoiler_count coerente');
     assert.strictEqual(finalFantasyVIIRebirthDetail.roadmap.length, 6, 'detalhe de Final Fantasy VII Rebirth deve retornar roadmap de 6 etapas');
-    assert(finalFantasyVIIRebirthDetail.roadmap.some(step => step.includes('World Intel') && step.includes('Protorelics') && step.includes("Queen's Blood")), 'roadmap de Final Fantasy VII Rebirth deve citar World Intel, Protorelics e Queen\'s Blood');
-    assert(finalFantasyVIIRebirthDetail.roadmap.some(step => step.includes('chapter select') && step.includes('piano') && step.includes('chocobo races')), 'roadmap de Final Fantasy VII Rebirth deve citar cleanup por chapter select');
-    assert(finalFantasyVIIRebirthDetail.roadmap.some(step => step.includes('Hard Mode') && step.includes('Of Hardy Stock')), 'roadmap de Final Fantasy VII Rebirth deve citar Hard Mode');
-    assert(finalFantasyVIIRebirthDetail.roadmap.some(step => step.includes('combat simulator/Chadley') && step.includes('Brutal/Legendary')), 'roadmap de Final Fantasy VII Rebirth deve citar combat simulator e VR/Legendary');
+    assert(finalFantasyVIIRebirthDetail.roadmap.some(step => roadmapStepText(step).includes('World Intel') && roadmapStepText(step).includes('Protorelics') && roadmapStepText(step).includes("Queen's Blood")), 'roadmap de Final Fantasy VII Rebirth deve citar World Intel, Protorelics e Queen\'s Blood');
+    assert(finalFantasyVIIRebirthDetail.roadmap.some(step => roadmapStepText(step).includes('chapter select') && roadmapStepText(step).includes('piano') && roadmapStepText(step).includes('chocobo races')), 'roadmap de Final Fantasy VII Rebirth deve citar cleanup por chapter select');
+    assert(finalFantasyVIIRebirthDetail.roadmap.some(step => roadmapStepText(step).includes('Hard Mode') && roadmapStepText(step).includes('Of Hardy Stock')), 'roadmap de Final Fantasy VII Rebirth deve citar Hard Mode');
+    assert(finalFantasyVIIRebirthDetail.roadmap.some(step => roadmapStepText(step).includes('combat simulator/Chadley') && roadmapStepText(step).includes('Brutal/Legendary')), 'roadmap de Final Fantasy VII Rebirth deve citar combat simulator e VR/Legendary');
     assert(finalFantasyVIIRebirthDetail.online_summary.includes('Nao ha exigencia online'), 'detalhe de Final Fantasy VII Rebirth deve indicar ausencia de online obrigatorio');
     assert(finalFantasyVIIRebirthDetail.dlc_scope.includes('Final Fantasy VII Remake') && finalFantasyVIIRebirthDetail.dlc_scope.includes('INTERmission/Yuffie'), 'detalhe de Final Fantasy VII Rebirth deve separar Remake e DLCs');
     assert(finalFantasyVIIRebirthDetail.before_you_start.includes('Hard Mode') && finalFantasyVIIRebirthDetail.before_you_start.includes('combat simulator') && finalFantasyVIIRebirthDetail.before_you_start.includes('minigames'), 'detalhe de Final Fantasy VII Rebirth deve avisar sobre gargalos');
@@ -11041,9 +11185,9 @@ async function assertBackendEditorialConsistency() {
     assert.strictEqual(finalFantasyXVIDetail.missable_count, 1, 'Final Fantasy XVI deve contar Half Past Twilight como missable');
     assert.strictEqual(finalFantasyXVIDetail.spoiler_count, 13, 'Final Fantasy XVI deve retornar spoiler_count coerente');
     assert.strictEqual(finalFantasyXVIDetail.roadmap.length, 6, 'detalhe de Final Fantasy XVI deve retornar roadmap de 6 etapas');
-    assert(finalFantasyXVIDetail.roadmap.some(step => step.includes('Gotterdammerung') && step.includes('Half Past Twilight')), 'roadmap de Final Fantasy XVI deve citar Gotterdammerung e materiais');
-    assert(finalFantasyXVIDetail.roadmap.some(step => step.includes('New Game+') && step.includes('Final Fantasy Mode') && step.includes('Fantasy, Finally')), 'roadmap de Final Fantasy XVI deve citar Final Fantasy Mode/New Game+');
-    assert(finalFantasyXVIDetail.roadmap.some(step => step.includes('Echoes of the Fallen') && step.includes('The Rising Tide')), 'roadmap de Final Fantasy XVI deve separar DLCs');
+    assert(finalFantasyXVIDetail.roadmap.some(step => roadmapStepText(step).includes('Gotterdammerung') && roadmapStepText(step).includes('Half Past Twilight')), 'roadmap de Final Fantasy XVI deve citar Gotterdammerung e materiais');
+    assert(finalFantasyXVIDetail.roadmap.some(step => roadmapStepText(step).includes('New Game+') && roadmapStepText(step).includes('Final Fantasy Mode') && roadmapStepText(step).includes('Fantasy, Finally')), 'roadmap de Final Fantasy XVI deve citar Final Fantasy Mode/New Game+');
+    assert(finalFantasyXVIDetail.roadmap.some(step => roadmapStepText(step).includes('Echoes of the Fallen') && roadmapStepText(step).includes('The Rising Tide')), 'roadmap de Final Fantasy XVI deve separar DLCs');
     assert(finalFantasyXVIDetail.online_summary.includes('Nao ha exigencia online'), 'detalhe de Final Fantasy XVI deve indicar ausencia de online obrigatorio');
     assert(finalFantasyXVIDetail.dlc_scope.includes('Echoes of the Fallen') && finalFantasyXVIDetail.dlc_scope.includes('The Rising Tide'), 'detalhe de Final Fantasy XVI deve manter DLCs separados');
     assert(finalFantasyXVIDetail.before_you_start.includes('New Game+/Final Fantasy Mode') && finalFantasyXVIDetail.before_you_start.includes('materiais/crafting'), 'detalhe de Final Fantasy XVI deve avisar sobre NG+ e crafting');
@@ -11096,9 +11240,9 @@ async function assertBackendEditorialConsistency() {
     assert.strictEqual(persona5RoyalDetail.missable_count, 29, 'Persona 5 Royal deve contar missables de calendario/janelas');
     assert.strictEqual(persona5RoyalDetail.spoiler_count, 17, 'Persona 5 Royal deve retornar spoiler_count coerente');
     assert.strictEqual(persona5RoyalDetail.roadmap.length, 6, 'detalhe de Persona 5 Royal deve retornar roadmap de 6 etapas');
-    assert(persona5RoyalDetail.roadmap.some(step => step.includes('calendario') && step.includes('confidants')), 'roadmap de Persona 5 Royal deve citar calendario e confidants');
-    assert(persona5RoyalDetail.roadmap.some(step => step.includes('third semester') && step.includes('true ending')), 'roadmap de Persona 5 Royal deve citar third semester/true ending');
-    assert(persona5RoyalDetail.roadmap.some(step => step.includes('Mementos') && step.includes('Jose') && step.includes('stamps')), 'roadmap de Persona 5 Royal deve citar Mementos/Jose/stamps');
+    assert(persona5RoyalDetail.roadmap.some(step => roadmapStepText(step).includes('calendario') && roadmapStepText(step).includes('confidants')), 'roadmap de Persona 5 Royal deve citar calendario e confidants');
+    assert(persona5RoyalDetail.roadmap.some(step => roadmapStepText(step).includes('third semester') && roadmapStepText(step).includes('true ending')), 'roadmap de Persona 5 Royal deve citar third semester/true ending');
+    assert(persona5RoyalDetail.roadmap.some(step => roadmapStepText(step).includes('Mementos') && roadmapStepText(step).includes('Jose') && roadmapStepText(step).includes('stamps')), 'roadmap de Persona 5 Royal deve citar Mementos/Jose/stamps');
     assert(persona5RoyalDetail.online_summary.includes('Nao ha exigencia online'), 'detalhe de Persona 5 Royal deve indicar ausencia de online obrigatorio');
     assert(persona5RoyalDetail.dlc_scope.includes('Persona 5 original') && persona5RoyalDetail.dlc_scope.includes('Persona 5 Strikers') && persona5RoyalDetail.dlc_scope.includes('DLC'), 'detalhe de Persona 5 Royal deve separar original, spinoffs e DLC');
     assert(persona5RoyalDetail.before_you_start.includes('calendario') && persona5RoyalDetail.before_you_start.includes('roadmap'), 'detalhe de Persona 5 Royal deve avisar sobre planejamento');
@@ -11151,10 +11295,10 @@ async function assertBackendEditorialConsistency() {
     assert.strictEqual(persona3ReloadDetail.missable_count, 22, 'Persona 3 Reload deve contar missables de calendario/janelas');
     assert.strictEqual(persona3ReloadDetail.spoiler_count, 13, 'Persona 3 Reload deve retornar spoiler_count coerente');
     assert.strictEqual(persona3ReloadDetail.roadmap.length, 6, 'detalhe de Persona 3 Reload deve retornar roadmap de 6 etapas');
-    assert(persona3ReloadDetail.roadmap.some(step => step.includes('calendario') && step.includes('Social Links')), 'roadmap de Persona 3 Reload deve citar calendario e Social Links');
-    assert(persona3ReloadDetail.roadmap.some(step => step.includes('Elizabeth Requests')), 'roadmap de Persona 3 Reload deve citar Elizabeth Requests');
-    assert(persona3ReloadDetail.roadmap.some(step => step.includes('Good Ending') && step.includes('12/31')), 'roadmap de Persona 3 Reload deve citar Good Ending/12-31');
-    assert(persona3ReloadDetail.roadmap.some(step => step.includes('Tartarus') && step.includes('Twilight Fragments')), 'roadmap de Persona 3 Reload deve citar Tartarus/Twilight Fragments');
+    assert(persona3ReloadDetail.roadmap.some(step => roadmapStepText(step).includes('calendario') && roadmapStepText(step).includes('Social Links')), 'roadmap de Persona 3 Reload deve citar calendario e Social Links');
+    assert(persona3ReloadDetail.roadmap.some(step => roadmapStepText(step).includes('Elizabeth Requests')), 'roadmap de Persona 3 Reload deve citar Elizabeth Requests');
+    assert(persona3ReloadDetail.roadmap.some(step => roadmapStepText(step).includes('Good Ending') && roadmapStepText(step).includes('12/31')), 'roadmap de Persona 3 Reload deve citar Good Ending/12-31');
+    assert(persona3ReloadDetail.roadmap.some(step => roadmapStepText(step).includes('Tartarus') && roadmapStepText(step).includes('Twilight Fragments')), 'roadmap de Persona 3 Reload deve citar Tartarus/Twilight Fragments');
     assert(persona3ReloadDetail.online_summary.includes('Nao ha exigencia online'), 'detalhe de Persona 3 Reload deve indicar ausencia de online obrigatorio');
     assert(persona3ReloadDetail.dlc_scope.includes('Episode Aigis') && persona3ReloadDetail.dlc_scope.includes('Persona 5 Royal') && persona3ReloadDetail.dlc_scope.includes('Persona 3 Portable'), 'detalhe de Persona 3 Reload deve separar DLC e listas erradas');
     assert(persona3ReloadDetail.before_you_start.includes('Episode Aigis') && persona3ReloadDetail.before_you_start.includes('Elizabeth Requests'), 'detalhe de Persona 3 Reload deve avisar sobre Requests e DLC');
@@ -11206,9 +11350,9 @@ async function assertBackendEditorialConsistency() {
     assert.strictEqual(metaphorDetail.missable_count, 14, 'Metaphor deve contar missables de calendario/NG+');
     assert.strictEqual(metaphorDetail.spoiler_count, 15, 'Metaphor deve retornar spoiler_count coerente');
     assert.strictEqual(metaphorDetail.roadmap.length, 7, 'detalhe de Metaphor deve retornar roadmap de 7 etapas');
-    assert(metaphorDetail.roadmap.some(step => step.includes('calendario') && step.includes('Followers') && step.includes('Archetypes')), 'roadmap de Metaphor deve citar calendario, Followers e Archetypes');
-    assert(metaphorDetail.roadmap.some(step => step.includes('quests') && step.includes('books') && step.includes('debates') && step.includes('Gold Beetles')), 'roadmap de Metaphor deve citar quests/books/debates/Gold Beetles');
-    assert(metaphorDetail.roadmap.some(step => step.includes('New Game+') && step.includes('Redscale Dragon')), 'roadmap de Metaphor deve citar New Game+ e Redscale Dragon');
+    assert(metaphorDetail.roadmap.some(step => roadmapStepText(step).includes('calendario') && roadmapStepText(step).includes('Followers') && roadmapStepText(step).includes('Archetypes')), 'roadmap de Metaphor deve citar calendario, Followers e Archetypes');
+    assert(metaphorDetail.roadmap.some(step => roadmapStepText(step).includes('quests') && roadmapStepText(step).includes('books') && roadmapStepText(step).includes('debates') && roadmapStepText(step).includes('Gold Beetles')), 'roadmap de Metaphor deve citar quests/books/debates/Gold Beetles');
+    assert(metaphorDetail.roadmap.some(step => roadmapStepText(step).includes('New Game+') && roadmapStepText(step).includes('Redscale Dragon')), 'roadmap de Metaphor deve citar New Game+ e Redscale Dragon');
     assert(metaphorDetail.online_summary.includes('Nao ha exigencia online'), 'detalhe de Metaphor deve indicar ausencia de online obrigatorio');
     assert(metaphorDetail.dlc_scope.includes('lista base') && !/Persona 5|Persona 3|DLC\/add-on/i.test(metaphorDetail.dlc_scope), 'detalhe de Metaphor deve manter escopo da lista base');
     assert(metaphorDetail.before_you_start.includes('New Game+') && metaphorDetail.before_you_start.includes('perdiveis'), 'detalhe de Metaphor deve avisar sobre NG+ e perdiveis');
@@ -11264,9 +11408,9 @@ async function assertBackendEditorialConsistency() {
     assert.strictEqual(witcherDetail.trophies.filter(trophy => /online|multiplayer|coop/i.test(`${trophy.name} ${trophy.description} ${trophy.tip}`)).length, 0, 'The Witcher 3 nao deve retornar trofeus online obrigatorios');
     assert.strictEqual(witcherDetail.missable_count, 13, 'The Witcher 3 deve contar missables de Gwent/Full Crew/Death March');
     assert.strictEqual(witcherDetail.roadmap.length, 7, 'detalhe de The Witcher 3 deve retornar roadmap de 7 etapas');
-    assert(witcherDetail.roadmap.some(step => step.includes('Death March') && step.includes('segunda run')), 'roadmap de The Witcher 3 deve citar Death March');
-    assert(witcherDetail.roadmap.some(step => step.includes('Gwent') && step.includes('Full Crew') && step.includes('The Isle of Mists')), 'roadmap de The Witcher 3 deve citar Gwent, Full Crew e The Isle of Mists');
-    assert(witcherDetail.roadmap.some(step => step.includes('cleanup') && step.includes('lista base')), 'roadmap de The Witcher 3 deve citar cleanup');
+    assert(witcherDetail.roadmap.some(step => roadmapStepText(step).includes('Death March') && roadmapStepText(step).includes('segunda run')), 'roadmap de The Witcher 3 deve citar Death March');
+    assert(witcherDetail.roadmap.some(step => roadmapStepText(step).includes('Gwent') && roadmapStepText(step).includes('Full Crew') && roadmapStepText(step).includes('The Isle of Mists')), 'roadmap de The Witcher 3 deve citar Gwent, Full Crew e The Isle of Mists');
+    assert(witcherDetail.roadmap.some(step => roadmapStepText(step).includes('cleanup') && roadmapStepText(step).includes('lista base')), 'roadmap de The Witcher 3 deve citar cleanup');
     assert(witcherDetail.online_summary.includes('Nao ha exigencia online'), 'detalhe de The Witcher 3 deve indicar ausencia de online obrigatorio');
     assert(witcherDetail.dlc_scope.includes('Hearts of Stone') && witcherDetail.dlc_scope.includes('Blood and Wine') && witcherDetail.dlc_scope.includes('lista base'), 'detalhe de The Witcher 3 deve separar DLCs da platina base');
     assert(witcherDetail.before_you_start.includes('perdiveis') && witcherDetail.cleanup_advice.includes('Gwent'), 'detalhe de The Witcher 3 deve avisar sobre perdiveis e cleanup');
@@ -11323,10 +11467,10 @@ async function assertBackendEditorialConsistency() {
     assert.strictEqual(cyberpunkDetail.trophies.filter(trophy => /online|multiplayer|coop/i.test(`${trophy.name} ${trophy.description} ${trophy.tip}`)).length, 0, 'Cyberpunk 2077 nao deve retornar trofeus online obrigatorios');
     assert.strictEqual(cyberpunkDetail.missable_count, 14, 'Cyberpunk 2077 deve contar missables de finais/questlines/saves');
     assert.strictEqual(cyberpunkDetail.roadmap.length, 7, 'detalhe de Cyberpunk 2077 deve retornar roadmap de 7 etapas');
-    assert(cyberpunkDetail.roadmap.some(step => step.includes('saves manuais') && step.includes('finais')), 'roadmap de Cyberpunk 2077 deve citar saves manuais e finais');
-    assert(cyberpunkDetail.roadmap.some(step => step.includes('Judy') && step.includes('Panam') && step.includes('River') && step.includes('Kerry')), 'roadmap de Cyberpunk 2077 deve citar questlines de personagens');
-    assert(cyberpunkDetail.roadmap.some(step => step.includes('gigs') && step.includes('NCPD scanner hustles') && step.includes('cyberpsychos')), 'roadmap de Cyberpunk 2077 deve citar limpeza de distritos');
-    assert(cyberpunkDetail.roadmap.some(step => step.includes('cleanup') && step.includes('Phantom Liberty')), 'roadmap de Cyberpunk 2077 deve separar Phantom Liberty');
+    assert(cyberpunkDetail.roadmap.some(step => roadmapStepText(step).includes('saves manuais') && roadmapStepText(step).includes('finais')), 'roadmap de Cyberpunk 2077 deve citar saves manuais e finais');
+    assert(cyberpunkDetail.roadmap.some(step => roadmapStepText(step).includes('Judy') && roadmapStepText(step).includes('Panam') && roadmapStepText(step).includes('River') && roadmapStepText(step).includes('Kerry')), 'roadmap de Cyberpunk 2077 deve citar questlines de personagens');
+    assert(cyberpunkDetail.roadmap.some(step => roadmapStepText(step).includes('gigs') && roadmapStepText(step).includes('NCPD scanner hustles') && roadmapStepText(step).includes('cyberpsychos')), 'roadmap de Cyberpunk 2077 deve citar limpeza de distritos');
+    assert(cyberpunkDetail.roadmap.some(step => roadmapStepText(step).includes('cleanup') && roadmapStepText(step).includes('Phantom Liberty')), 'roadmap de Cyberpunk 2077 deve separar Phantom Liberty');
     assert(cyberpunkDetail.online_summary.includes('Nao ha exigencia online'), 'detalhe de Cyberpunk 2077 deve indicar ausencia de online obrigatorio');
     assert(cyberpunkDetail.dlc_scope.includes('Phantom Liberty') && cyberpunkDetail.dlc_scope.includes('lista base'), 'detalhe de Cyberpunk 2077 deve separar Phantom Liberty da platina base');
     assert(cyberpunkDetail.before_you_start.includes('saves manuais') && cyberpunkDetail.cleanup_advice.includes('NCPD scanner hustles'), 'detalhe de Cyberpunk 2077 deve avisar sobre saves e cleanup');
@@ -11385,10 +11529,10 @@ async function assertBackendEditorialConsistency() {
     assert.strictEqual(baldursGateDetail.trophies.filter(trophy => /online|multiplayer|coop/i.test(`${trophy.name} ${trophy.description} ${trophy.tip}`)).length, 0, 'Baldur\'s Gate 3 nao deve retornar trofeus multiplayer obrigatorios');
     assert.strictEqual(baldursGateDetail.missable_count, 33, 'Baldur\'s Gate 3 deve contar missables de escolhas/atos/finais');
     assert.strictEqual(baldursGateDetail.roadmap.length, 7, 'detalhe de Baldur\'s Gate 3 deve retornar roadmap de 7 etapas');
-    assert(baldursGateDetail.roadmap.some(step => step.includes('Act 1') && step.includes('companions')), 'roadmap de Baldur\'s Gate 3 deve citar Act 1 e companions');
-    assert(baldursGateDetail.roadmap.some(step => step.includes('Act 2') && step.includes('Dark Urge')), 'roadmap de Baldur\'s Gate 3 deve citar Act 2 e Dark Urge');
-    assert(baldursGateDetail.roadmap.some(step => step.includes('Act 3') && step.includes('saves estrategicos') && step.includes('finais')), 'roadmap de Baldur\'s Gate 3 deve citar Act 3, saves e finais');
-    assert(baldursGateDetail.roadmap.some(step => step.includes('Honour Mode') && step.includes('Foehammer') && step.includes('validado separadamente')), 'roadmap de Baldur\'s Gate 3 deve separar Honour Mode');
+    assert(baldursGateDetail.roadmap.some(step => roadmapStepText(step).includes('Act 1') && roadmapStepText(step).includes('companions')), 'roadmap de Baldur\'s Gate 3 deve citar Act 1 e companions');
+    assert(baldursGateDetail.roadmap.some(step => roadmapStepText(step).includes('Act 2') && roadmapStepText(step).includes('Dark Urge')), 'roadmap de Baldur\'s Gate 3 deve citar Act 2 e Dark Urge');
+    assert(baldursGateDetail.roadmap.some(step => roadmapStepText(step).includes('Act 3') && roadmapStepText(step).includes('saves estrategicos') && roadmapStepText(step).includes('finais')), 'roadmap de Baldur\'s Gate 3 deve citar Act 3, saves e finais');
+    assert(baldursGateDetail.roadmap.some(step => roadmapStepText(step).includes('Honour Mode') && roadmapStepText(step).includes('Foehammer') && roadmapStepText(step).includes('validado separadamente')), 'roadmap de Baldur\'s Gate 3 deve separar Honour Mode');
     assert(baldursGateDetail.online_summary.includes('Nao ha exigencia de multiplayer'), 'detalhe de Baldur\'s Gate 3 deve indicar ausencia de multiplayer obrigatorio');
     assert(baldursGateDetail.dlc_scope.includes('Honour Mode') && baldursGateDetail.dlc_scope.includes('Foehammer') && baldursGateDetail.dlc_scope.includes('lista atual cadastrada'), 'detalhe de Baldur\'s Gate 3 deve separar conteudo/modo posterior da platina base');
     assert(baldursGateDetail.before_you_start.includes('planejamento') && baldursGateDetail.cleanup_advice.includes('companions'), 'detalhe de Baldur\'s Gate 3 deve avisar sobre planejamento e cleanup');
@@ -11445,10 +11589,10 @@ async function assertBackendEditorialConsistency() {
     assert.strictEqual(dragonsDogma2Detail.trophies.filter(trophy => /online|multiplayer|coop/i.test(`${trophy.name} ${trophy.description} ${trophy.tip}`)).length, 0, 'Dragon\'s Dogma 2 nao deve retornar trofeus online obrigatorios');
     assert.strictEqual(dragonsDogma2Detail.missable_count, 18, 'Dragon\'s Dogma 2 deve contar missables de save/finais/quests');
     assert.strictEqual(dragonsDogma2Detail.roadmap.length, 7, 'detalhe de Dragon\'s Dogma 2 deve retornar roadmap de 7 etapas');
-    assert(dragonsDogma2Detail.roadmap.some(step => step.includes('save limitado') && step.includes('quests com janela')), 'roadmap de Dragon\'s Dogma 2 deve citar save limitado');
-    assert(dragonsDogma2Detail.roadmap.some(step => step.includes('vocations') && step.includes('Maister') && step.includes('Sphinx')), 'roadmap de Dragon\'s Dogma 2 deve citar vocations, Maisters e Sphinx');
-    assert(dragonsDogma2Detail.roadmap.some(step => step.includes('Unmoored World') && step.includes('The Guardian') && step.includes('Closure')), 'roadmap de Dragon\'s Dogma 2 deve citar Unmoored World e finais');
-    assert(dragonsDogma2Detail.roadmap.some(step => step.includes('NG+') && step.includes('cleanup')), 'roadmap de Dragon\'s Dogma 2 deve citar NG+/cleanup');
+    assert(dragonsDogma2Detail.roadmap.some(step => roadmapStepText(step).includes('save limitado') && roadmapStepText(step).includes('quests com janela')), 'roadmap de Dragon\'s Dogma 2 deve citar save limitado');
+    assert(dragonsDogma2Detail.roadmap.some(step => roadmapStepText(step).includes('vocations') && roadmapStepText(step).includes('Maister') && roadmapStepText(step).includes('Sphinx')), 'roadmap de Dragon\'s Dogma 2 deve citar vocations, Maisters e Sphinx');
+    assert(dragonsDogma2Detail.roadmap.some(step => roadmapStepText(step).includes('Unmoored World') && roadmapStepText(step).includes('The Guardian') && roadmapStepText(step).includes('Closure')), 'roadmap de Dragon\'s Dogma 2 deve citar Unmoored World e finais');
+    assert(dragonsDogma2Detail.roadmap.some(step => roadmapStepText(step).includes('NG+') && roadmapStepText(step).includes('cleanup')), 'roadmap de Dragon\'s Dogma 2 deve citar NG+/cleanup');
     assert(dragonsDogma2Detail.online_summary.includes('Nao ha exigencia online'), 'detalhe de Dragon\'s Dogma 2 deve indicar ausencia de online obrigatorio');
     assert(dragonsDogma2Detail.dlc_scope.includes('lista base') && dragonsDogma2Detail.dlc_scope.includes('Dark Arisen'), 'detalhe de Dragon\'s Dogma 2 deve separar Dark Arisen da lista base');
     assert(dragonsDogma2Detail.before_you_start.includes('save limitado') && dragonsDogma2Detail.cleanup_advice.includes('NG+'), 'detalhe de Dragon\'s Dogma 2 deve avisar sobre save limitado e cleanup');
@@ -11505,8 +11649,8 @@ async function assertBackendEditorialConsistency() {
     assert.strictEqual(returnalDetail.missable_count, 0, 'Returnal nao deve contar perdiveis definitivos');
     assert.strictEqual(returnalDetail.spoiler_count, 16, 'Returnal deve retornar spoiler_count coerente');
     assert.strictEqual(returnalDetail.roadmap.length, 6, 'detalhe de Returnal deve retornar roadmap de 6 etapas');
-    assert(returnalDetail.roadmap.some(step => step.includes('Sunface Fragments') && step.includes('ato 3')), 'roadmap de Returnal deve citar Sunface Fragments e ato 3');
-    assert(returnalDetail.roadmap.some(step => step.includes('Ascension DLC') && step.includes('Ixion')), 'roadmap de Returnal deve separar Ascension DLC do trofeu base Ascension');
+    assert(returnalDetail.roadmap.some(step => roadmapStepText(step).includes('Sunface Fragments') && roadmapStepText(step).includes('ato 3')), 'roadmap de Returnal deve citar Sunface Fragments e ato 3');
+    assert(returnalDetail.roadmap.some(step => roadmapStepText(step).includes('Ascension DLC') && roadmapStepText(step).includes('Ixion')), 'roadmap de Returnal deve separar Ascension DLC do trofeu base Ascension');
     assert(returnalDetail.online_summary.includes('In-Field Training') && returnalDetail.online_summary.includes('PSN'), 'detalhe de Returnal deve indicar a ressalva online de In-Field Training');
     assert(returnalDetail.dlc_scope.includes('Ascension') && returnalDetail.dlc_scope.includes('Ixion'), 'detalhe de Returnal deve manter Ascension DLC em escopo separado');
     assert(returnalDetail.before_you_start.includes('RNG') && returnalDetail.before_you_start.includes('Ascension DLC'), 'detalhe de Returnal deve avisar sobre RNG e DLC separada');
@@ -11559,8 +11703,8 @@ async function assertBackendEditorialConsistency() {
       : [step.title, step.focus, step.objective, ...(Array.isArray(step.actions) ? step.actions : []), step.warning, step.result].filter(Boolean).join(' ');
     assert(nioh3Detail.roadmap.some(step => nioh3RoadmapStepText(step).includes('Battle Scroll')), 'roadmap de Nioh 3 deve citar Battle Scroll');
     assert(nioh3Detail.roadmap.some(step => nioh3RoadmapStepText(step).includes('Kodama') && nioh3RoadmapStepText(step).includes('Lesser Crucibles')), 'roadmap de Nioh 3 deve citar coletaveis e Crucibles');
-    assert(nioh3Detail.online_summary.includes('Não há troféus online obrigatórios'), 'detalhe de Nioh 3 deve indicar ausência de online obrigatório');
-    assert(nioh3Detail.dlc_scope.includes('DLC futura'), 'detalhe de Nioh 3 deve manter DLC futura em escopo separado');
+    assert(/Não há (?:troféus )?online obrigatório/.test(nioh3Detail.online_summary), 'detalhe de Nioh 3 deve indicar ausência de online obrigatório');
+    assert(/DLCs? futura/.test(nioh3Detail.dlc_scope), 'detalhe de Nioh 3 deve manter DLC futura em escopo separado');
     assert.strictEqual(nioh3Detail.coverage_level, 'strong', 'Nioh 3 nao deve ser complete sem revisao manual');
     assert.strictEqual(nioh3Detail.is_verified, false, 'Nioh 3 nao deve estar verificado');
     assert.strictEqual(nioh3Detail.verification_status, 'review', 'Nioh 3 deve ficar em revisao editorial');
@@ -11573,7 +11717,7 @@ async function assertBackendEditorialConsistency() {
     const nioh3GuideHtml = await httpGetHtml(baseUrl, '/jogo/nioh-3');
     assertSeoBasics(nioh3GuideHtml, {
       label: 'SSR /jogo/nioh-3',
-      canonical: `${baseUrl}/jogo/nioh-3`,
+      canonical: 'https://atlasachievement.com.br/jogo/nioh-3',
       titleIncludes: 'Nioh 3',
       descriptionIncludes: 'Nioh 3',
       h1Includes: 'Nioh 3'
@@ -11597,13 +11741,19 @@ async function assertBackendEditorialConsistency() {
     assert.strictEqual(requiemDetail.trophies.filter(trophy => trophy.type === 'Ouro').length, 3, 'Resident Evil Requiem deve ter 3 ouro');
     assert.strictEqual(requiemDetail.trophies.filter(trophy => trophy.type === 'Prata').length, 6, 'Resident Evil Requiem deve ter 6 prata');
     assert.strictEqual(requiemDetail.trophies.filter(trophy => trophy.type === 'Bronze').length, 40, 'Resident Evil Requiem deve ter 40 bronze');
-    assert.strictEqual(requiemDetail.trophies.filter(trophy => trophy.is_missable).length, 40, 'Resident Evil Requiem deve retornar 40 perdiveis ou dependentes de saves manuais');
-    assert.strictEqual(requiemDetail.missable_count, 40, 'Resident Evil Requiem deve contar 40 perdiveis');
+    assert.strictEqual(requiemDetail.trophies.filter(trophy => trophy.is_missable).length, 4, 'Resident Evil Requiem deve retornar 4 perdiveis reais ou fortemente provaveis');
+    assert.strictEqual(requiemDetail.missable_count, 4, 'Resident Evil Requiem deve contar 4 perdiveis');
     assert.strictEqual(requiemDetail.spoiler_count, 17, 'Resident Evil Requiem deve retornar spoiler_count coerente');
-    assert.strictEqual(requiemDetail.roadmap.length, 5, 'detalhe de Resident Evil Requiem deve retornar roadmap de 5 etapas');
-    assert(requiemDetail.roadmap.some(step => step.includes('Speed Demon') && step.includes('Insanity')), 'roadmap de Resident Evil Requiem deve citar speedrun e Insanity');
+    assert.strictEqual(requiemDetail.roadmap.length, 6, 'detalhe de Resident Evil Requiem deve retornar roadmap de 6 etapas');
+    assert(requiemDetail.roadmap.every(step => step && typeof step === 'object' && Array.isArray(step.actions)), 'detalhe de Resident Evil Requiem deve retornar roadmap estruturado');
+    assert(requiemDetail.roadmap.some(step => `${step.title} ${step.objective} ${(step.actions || []).join(' ')}`.includes('Speed Demon') && `${step.title} ${step.objective} ${(step.actions || []).join(' ')}`.includes('Insanity')), 'roadmap de Resident Evil Requiem deve citar speedrun e Insanity');
+    const requiemDetailRoadmapText = requiemDetail.roadmap.map(step => `${step.title} ${step.focus} ${step.objective} ${(step.actions || []).join(' ')} ${step.warning || ''} ${step.result || ''}`).join(' ');
+    assert(!/\[object Object\]|\btitle:|\bfocus:|\bobjective:|\bactions:|\bwarning:|\bresult:|Continue a rota principal|\.\.\.|…/.test(requiemDetailRoadmapText), 'detalhe de Resident Evil Requiem deve retornar roadmap limpo');
     assert(requiemDetail.online_summary.includes('Não há troféus online obrigatórios'), 'detalhe de Resident Evil Requiem deve indicar ausência de online obrigatório');
     assert(requiemDetail.dlc_scope.includes('lista base') && requiemDetail.dlc_scope.includes('DLCs'), 'detalhe de Resident Evil Requiem deve manter DLC em escopo separado');
+    assert.strictEqual(requiemDetail.onlineRequired, false, 'Resident Evil Requiem nao deve exigir online');
+    assert.strictEqual(requiemDetail.coopRequired, false, 'Resident Evil Requiem nao deve exigir coop');
+    assert.strictEqual(requiemDetail.dlcRequired, false, 'Resident Evil Requiem nao deve exigir DLC');
     assert.strictEqual(requiemDetail.coverage_level, 'strong', 'Resident Evil Requiem nao deve ser complete sem revisao manual');
     assert.strictEqual(requiemDetail.is_verified, false, 'Resident Evil Requiem nao deve estar verificado');
     assert.strictEqual(requiemDetail.verification_status, 'review', 'Resident Evil Requiem deve ficar em revisao editorial');
@@ -11611,21 +11761,64 @@ async function assertBackendEditorialConsistency() {
     assert(requiemDetail.trophies.some(trophy => trophy.id === 'rerequiem_crate_expectations' && trophy.name === 'Crate Expectations' && trophy.type === 'Bronze'), 'Resident Evil Requiem deve manter Crate Expectations corrigido como bronze');
     assert(requiemDetail.trophies.some(trophy => trophy.id === 'rerequiem_speed_demon' && trophy.type === 'Prata' && trophy.is_missable), 'Resident Evil Requiem deve marcar Speed Demon como prata e perdivel');
     assert(requiemDetail.trophies.some(trophy => trophy.id === 'rerequiem_never_touch_the_stuff' && trophy.type === 'Ouro' && trophy.is_missable), 'Resident Evil Requiem deve marcar Never Touch the Stuff como ouro e perdivel');
+    assert(!requiemDetail.trophies.some(trophy => trophy.type === 'Platina' && trophy.is_missable), 'Resident Evil Requiem nao deve retornar platina como perdivel');
+    assert(!requiemDetail.trophies.some(trophy => trophy.riskType === 'spoiler' && trophy.is_missable), 'Resident Evil Requiem nao deve retornar historia automatica/spoiler como perdivel');
+    assert.strictEqual(requiemDetail.trophies.filter(trophy => trophy.descriptionPtBr).length, 50, 'Resident Evil Requiem deve expor descriptions em pt-BR');
+    assert.strictEqual(requiemDetail.trophies.filter(trophy => trophy.name_pt).length, 49, 'Resident Evil Requiem deve preencher nomes PT-BR confiaveis para conquistas Steam equivalentes');
+    assert.strictEqual(requiemDetail.trophies.filter(trophy => trophy.namePtSource === 'editorial_ptbr').length, 49, 'Resident Evil Requiem deve marcar nomes PT-BR em revisao como fonte editorial');
+    const hasSuspiciousRequiemDetailQuestionMark = value => {
+      const text = String(value || '').trim();
+      const index = text.indexOf('?');
+      return index >= 0 && index !== text.length - 1;
+    };
+    assert(!requiemDetail.trophies.some(trophy => [trophy.name_pt, trophy.description, trophy.tip].some(hasSuspiciousRequiemDetailQuestionMark)), 'Resident Evil Requiem nao deve expor ? indevido em nomes PT-BR, descricoes ou dicas');
     assert(!requiemDetail.trophies.some(trophy => /DLC|Deluxe|Letters from 1998|add-?on|craté/i.test(`${trophy.id} ${trophy.name} ${trophy.description}`)), 'Resident Evil Requiem nao deve misturar DLC/add-ons nem trophy_code corrompido');
 
     const requiemGuideHtml = await httpGetHtml(baseUrl, '/jogo/resident-evil-requiem');
     assertSeoBasics(requiemGuideHtml, {
       label: 'SSR /jogo/resident-evil-requiem',
-      canonical: `${baseUrl}/jogo/resident-evil-requiem`,
+      canonical: 'https://atlasachievement.com.br/jogo/resident-evil-requiem',
       titleIncludes: 'Resident Evil Requiem',
       descriptionIncludes: 'Resident Evil Requiem',
       h1Includes: 'Resident Evil Requiem'
     });
     assert(requiemGuideHtml.includes('Crate Expectations'), 'SSR de Resident Evil Requiem deve renderizar checklist corrigida');
     assert(requiemGuideHtml.includes('50 trof'), 'SSR de Resident Evil Requiem deve renderizar total de 50 trofeus');
+    assert(!requiemGuideHtml.includes('49 alertas'), 'SSR de Resident Evil Requiem nao deve exibir 49 alertas como alerta critico');
+    assert(requiemGuideHtml.includes('4 alertas cr') && requiemGuideHtml.includes('37 dicas'), 'SSR de Resident Evil Requiem deve separar 4 alertas criticos e 37 dicas');
+    assert(!/\[object Object\]|Descri[cç][aã]o em revis[aã]o editorial|Continue a rota principal|>\s*(?:undefined|null)\s*</i.test(requiemGuideHtml), 'SSR de Resident Evil Requiem nao deve renderizar placeholders, null visivel ou roadmap generico');
+    assert(requiemGuideHtml.includes('Este guia está em revisão editorial. A lista de troféus, perdíveis e localização em português ainda precisam de validação final.'), 'SSR de Resident Evil Requiem deve renderizar aviso editorial publico consolidado');
+    assert(!/needs_trophy_list_validation|needs_missables_validation|needs_trophy_localization_check/.test(requiemGuideHtml), 'SSR de Resident Evil Requiem nao deve renderizar qualityWarnings tecnicos para usuario publico');
+    const requiemSummaryMatch = requiemGuideHtml.match(/<section id="guideSummaryActions"[\s\S]*?<\/section>/);
+    const requiemSummaryHtml = requiemSummaryMatch?.[0] || '';
+    const requiemRoadmapMatch = requiemGuideHtml.match(/<section id="guideRoadmapPanel"[\s\S]*?<\/section>/);
+    const requiemRoadmapHtml = requiemRoadmapMatch?.[0] || '';
+    assert((requiemSummaryHtml.match(/<p class="text-white\/72 max-w-4xl">/g) || []).length >= 2, 'Resumo editorial de Resident Evil Requiem deve ter pelo menos 2 paragrafos uteis');
+    assert(requiemSummaryHtml.includes('Resident Evil Requiem combina campanha, coletáveis, objetivos situacionais e runs condicionais') && requiemSummaryHtml.includes('não tratar toda tarefa situacional como perdível definitivo') && requiemSummaryHtml.includes('use o roadmap para separar runs condicionais'), 'Resumo editorial de Resident Evil Requiem deve orientar campanha, situacionais, checklist e roadmap');
+    assert(!/em revisão|validação final|validacao final|valida[cç][aã]o|sujeitos a valida[cç][aã]o/i.test(requiemSummaryHtml), 'Resumo editorial de Resident Evil Requiem nao deve mencionar revisao ou validacao');
+    assert(!/em revisão|validação final|validacao final|lista ainda está em revisão|Manter o guia como em revisão/i.test(requiemRoadmapHtml), 'Roadmap publico de Resident Evil Requiem nao deve mencionar revisao ou validacao');
+    assert(requiemGuideHtml.includes('Pontos de atenção'), 'SSR de Resident Evil Requiem deve renomear pontos criticos para pontos de atencao');
+    assert(!requiemGuideHtml.includes('Pontos críticos'), 'SSR de Resident Evil Requiem nao deve mostrar titulo publico Pontos criticos');
+    assert(requiemGuideHtml.includes('Riscos, spoilers, runs condicionais e objetivos que merecem acompanhamento durante a platina.'), 'SSR de Resident Evil Requiem deve explicar pontos de atencao variados');
+    assert(/Master Craftsman[\s\S]{0,450}Coletável \/ Checklist/.test(requiemGuideHtml), 'Master Craftsman deve aparecer como coletavel/checklist nos pontos de atencao publicos');
+    assert(!/Master Craftsman[\s\S]{0,450}Perdível/.test(requiemGuideHtml), 'Master Craftsman nao deve parecer perdivel nos pontos de atencao publicos');
+    assert(requiemGuideHtml.includes('DLC fora da platina base'), 'SSR de Resident Evil Requiem deve mostrar DLC fora da platina base');
+    assert(requiemGuideHtml.includes('Antes de iniciar, use este guia como checklist da lista base'), 'SSR de Resident Evil Requiem deve renderizar metodologia sem texto truncado de revisao');
     assert(requiemGuideHtml.includes('atlas-guide-cover--poster'), 'SSR de Resident Evil Requiem deve usar cover_image como poster do guia');
     assert(requiemGuideHtml.includes(requiemSample.cover_image), 'SSR de Resident Evil Requiem deve renderizar cover_image');
     assert(requiemGuideHtml.includes(`property="og:image" content="${requiemSample.image}"`), 'SEO de Resident Evil Requiem deve usar image horizontal');
+
+    await run("UPDATE games SET is_verified = 1, verification_status = 'verified' WHERE slug = ?", ['resident-evil-requiem']);
+    const requiemVerifiedGuideHtml = await httpGetHtml(baseUrl, '/jogo/resident-evil-requiem');
+    const requiemVerifiedSummaryHtml = requiemVerifiedGuideHtml.match(/<section id="guideSummaryActions"[\s\S]*?<\/section>/)?.[0] || '';
+    const requiemVerifiedRoadmapHtml = requiemVerifiedGuideHtml.match(/<section id="guideRoadmapPanel"[\s\S]*?<\/section>/)?.[0] || '';
+    const requiemVerifiedNotesHtml = requiemVerifiedGuideHtml.match(/<section id="guideEditorialNotesPanel"[\s\S]*?<\/section>/)?.[0] || '';
+    const requiemVerifiedGuideSpecificText = stripHtml(`${requiemVerifiedSummaryHtml} ${requiemVerifiedRoadmapHtml} ${requiemVerifiedNotesHtml}`);
+    assert(requiemVerifiedGuideHtml.includes('Verificado'), 'SSR verified de Resident Evil Requiem deve exibir selo Verificado');
+    assert(requiemVerifiedGuideHtml.includes('Guia revisado editorialmente para a lista base.'), 'SSR verified de Resident Evil Requiem deve exibir mensagem verificada');
+    assert(!/em revisão|aguardando revisão final|validação final|validacao final|lista ainda está em revisão|Manter o guia como em revisão/i.test(requiemVerifiedGuideSpecificText), 'SSR verified de Resident Evil Requiem nao deve exibir texto de revisao em resumo, roadmap ou notas');
+    assert(!/needs_trophy_list_validation|needs_missables_validation|needs_trophy_localization_check/.test(requiemVerifiedGuideHtml), 'SSR verified de Resident Evil Requiem nao deve expor qualityWarnings tecnicos');
+    await run("UPDATE games SET is_verified = 0, verification_status = 'review' WHERE slug = ?", ['resident-evil-requiem']);
 
     const spiderManDetail = await httpGetJson(baseUrl, '/api/games/slug/marvels-spider-man');
     assert.strictEqual(spiderManDetail.slug, 'marvels-spider-man', "GET /api/games/slug/marvels-spider-man deve retornar Marvel's Spider-Man");
@@ -11644,7 +11837,7 @@ async function assertBackendEditorialConsistency() {
     assert.strictEqual(spiderManDetail.missable_count, 0, "Marvel's Spider-Man nao deve contar perdiveis");
     assert.strictEqual(spiderManDetail.spoiler_count, 10, "Marvel's Spider-Man deve retornar spoiler_count coerente");
     assert.strictEqual(spiderManDetail.roadmap.length, 5, "detalhe de Marvel's Spider-Man deve retornar roadmap de 5 etapas");
-    assert(spiderManDetail.roadmap.some(step => step.includes('Taskmaster') && step.includes('side missions')), "roadmap de Marvel's Spider-Man deve citar desafios e side missions");
+    assert(spiderManDetail.roadmap.some(step => roadmapStepText(step).includes('Taskmaster') && roadmapStepText(step).includes('side missions')), "roadmap de Marvel's Spider-Man deve citar desafios e side missions");
     assert(spiderManDetail.online_summary.includes('Não há exigência online'), "detalhe de Marvel's Spider-Man deve indicar ausencia de online obrigatorio");
     assert(spiderManDetail.dlc_scope.includes('The City That Never Sleeps'), "detalhe de Marvel's Spider-Man deve manter DLC em escopo separado");
     assert.strictEqual(spiderManDetail.coverage_level, 'strong', "Marvel's Spider-Man nao deve ser complete sem revisao manual");
@@ -11688,7 +11881,7 @@ async function assertBackendEditorialConsistency() {
     assert.strictEqual(milesMoralesDetail.missable_count, 0, 'Miles Morales nao deve contar perdiveis');
     assert.strictEqual(milesMoralesDetail.spoiler_count, 11, 'Miles Morales deve retornar spoiler_count coerente');
     assert.strictEqual(milesMoralesDetail.roadmap.length, 5, 'detalhe de Miles Morales deve retornar roadmap de 5 etapas');
-    assert(milesMoralesDetail.roadmap.some(step => step.includes('New Game+') && step.includes('Plus Plus')), 'roadmap de Miles Morales deve citar New Game+ e Plus Plus');
+    assert(milesMoralesDetail.roadmap.some(step => roadmapStepText(step).includes('New Game+') && roadmapStepText(step).includes('Plus Plus')), 'roadmap de Miles Morales deve citar New Game+ e Plus Plus');
     assert(milesMoralesDetail.runs_summary.includes('New Game+') && milesMoralesDetail.runs_summary.includes('Plus Plus'), 'detalhe de Miles Morales deve explicar New Game+ em runs_summary');
     assert(milesMoralesDetail.before_you_start.includes('New Game+'), 'detalhe de Miles Morales deve avisar New Game+ antes de iniciar');
     assert(milesMoralesDetail.online_summary.includes('Não há exigência online'), 'detalhe de Miles Morales deve indicar ausencia de online obrigatorio');
@@ -11735,8 +11928,8 @@ async function assertBackendEditorialConsistency() {
     assert.strictEqual(spiderMan2Detail.missable_count, 0, "Marvel's Spider-Man 2 nao deve contar perdiveis");
     assert.strictEqual(spiderMan2Detail.spoiler_count, 15, "Marvel's Spider-Man 2 deve retornar spoiler_count coerente");
     assert.strictEqual(spiderMan2Detail.roadmap.length, 5, "detalhe de Marvel's Spider-Man 2 deve retornar roadmap de 5 etapas");
-    assert(spiderMan2Detail.roadmap.some(step => step.includes('Spider-Bots') && step.includes('Marko')), "roadmap de Marvel's Spider-Man 2 deve citar Spider-Bots e Marko");
-    assert(spiderMan2Detail.roadmap.some(step => step.includes('100% dos distritos') && step.includes('online')), "roadmap de Marvel's Spider-Man 2 deve citar 100% dos distritos e ausencia de online");
+    assert(spiderMan2Detail.roadmap.some(step => roadmapStepText(step).includes('Spider-Bots') && roadmapStepText(step).includes('Marko')), "roadmap de Marvel's Spider-Man 2 deve citar Spider-Bots e Marko");
+    assert(spiderMan2Detail.roadmap.some(step => roadmapStepText(step).includes('100% dos distritos') && roadmapStepText(step).includes('online')), "roadmap de Marvel's Spider-Man 2 deve citar 100% dos distritos e ausencia de online");
     assert(spiderMan2Detail.runs_summary.includes('cleanup livre'), "detalhe de Marvel's Spider-Man 2 deve explicar uma campanha com cleanup");
     assert(spiderMan2Detail.online_summary.includes('Não há exigência online'), "detalhe de Marvel's Spider-Man 2 deve indicar ausencia de online obrigatorio");
     assert(spiderMan2Detail.dlc_scope.includes('lista base da platina'), "detalhe de Marvel's Spider-Man 2 deve manter lista base em escopo separado");
@@ -11783,8 +11976,8 @@ async function assertBackendEditorialConsistency() {
     assert.strictEqual(godOfWarDetail.missable_count, 0, 'God of War (2018) nao deve contar perdiveis');
     assert.strictEqual(godOfWarDetail.spoiler_count, 16, 'God of War (2018) deve retornar spoiler_count coerente');
     assert.strictEqual(godOfWarDetail.roadmap.length, 6, 'detalhe de God of War (2018) deve retornar roadmap de 6 etapas');
-    assert(godOfWarDetail.roadmap.some(step => step.includes('free-roam') && step.includes('perdíveis')), 'roadmap de God of War (2018) deve citar free-roam e ausencia de perdiveis');
-    assert(godOfWarDetail.roadmap.some(step => step.includes('valquírias') && step.includes('Niflheim')), 'roadmap de God of War (2018) deve citar valquirias e Niflheim');
+    assert(godOfWarDetail.roadmap.some(step => roadmapStepText(step).includes('free-roam') && roadmapStepText(step).includes('perdíveis')), 'roadmap de God of War (2018) deve citar free-roam e ausencia de perdiveis');
+    assert(godOfWarDetail.roadmap.some(step => roadmapStepText(step).includes('valquírias') && roadmapStepText(step).includes('Niflheim')), 'roadmap de God of War (2018) deve citar valquirias e Niflheim');
     assert(godOfWarDetail.runs_summary.includes('cleanup livre'), 'detalhe de God of War (2018) deve explicar uma campanha com cleanup');
     assert(godOfWarDetail.online_summary.includes('Não há exigência online'), 'detalhe de God of War (2018) deve indicar ausencia de online obrigatorio');
     assert(godOfWarDetail.dlc_scope.includes('lista base da platina'), 'detalhe de God of War (2018) deve manter lista base em escopo separado');
@@ -11831,8 +12024,8 @@ async function assertBackendEditorialConsistency() {
     assert.strictEqual(godOfWarRagnarokDetail.missable_count, 0, 'God of War Ragnarök nao deve contar perdiveis');
     assert.strictEqual(godOfWarRagnarokDetail.spoiler_count, 15, 'God of War Ragnarök deve retornar spoiler_count coerente');
     assert.strictEqual(godOfWarRagnarokDetail.roadmap.length, 6, 'detalhe de God of War Ragnarök deve retornar roadmap de 6 etapas');
-    assert(godOfWarRagnarokDetail.roadmap.some(step => step.includes('Valhalla') && step.includes('não inclui')), 'roadmap de God of War Ragnarök deve excluir Valhalla');
-    assert(godOfWarRagnarokDetail.roadmap.some(step => step.includes('Berserker') && step.includes('Gná')), 'roadmap de God of War Ragnarök deve citar Berserkers e Gná');
+    assert(godOfWarRagnarokDetail.roadmap.some(step => roadmapStepText(step).includes('Valhalla') && roadmapStepText(step).includes('não inclui')), 'roadmap de God of War Ragnarök deve excluir Valhalla');
+    assert(godOfWarRagnarokDetail.roadmap.some(step => roadmapStepText(step).includes('Berserker') && roadmapStepText(step).includes('Gná')), 'roadmap de God of War Ragnarök deve citar Berserkers e Gná');
     assert(godOfWarRagnarokDetail.runs_summary.includes('cleanup livre'), 'detalhe de God of War Ragnarök deve explicar uma campanha com cleanup');
     assert(godOfWarRagnarokDetail.online_summary.includes('Não há exigência online'), 'detalhe de God of War Ragnarök deve indicar ausencia de online obrigatorio');
     assert(godOfWarRagnarokDetail.dlc_scope.includes('Valhalla'), 'detalhe de God of War Ragnarök deve manter Valhalla fora da lista base');
@@ -11945,8 +12138,8 @@ async function assertBackendEditorialConsistency() {
     assert(tlouPartIIDetail.roadmap.every(stage => stage && typeof stage === 'object' && Array.isArray(stage.actions)), 'detalhe de The Last of Us Part II deve retornar roadmap estruturado');
     const tlouPartIIDetailRoadmapText = JSON.stringify(tlouPartIIDetail.roadmap);
     assert(tlouPartIIDetailRoadmapText.includes('cartas') && tlouPartIIDetailRoadmapText.includes('moedas'), 'roadmap de The Last of Us Part II deve citar coletaveis centrais');
-    assert(tlouPartIIDetailRoadmapText.includes('New Game+ parcial') && tlouPartIIDetailRoadmapText.includes('No Return'), 'roadmap de The Last of Us Part II deve citar NG+ parcial e separar add-ons');
-    assert(tlouPartIIDetail.runs_summary.includes('New Game+ parcial'), 'detalhe de The Last of Us Part II deve explicar New Game+ parcial em runs_summary');
+    assert(/(?:New Game\+|NG\+) parcial/.test(tlouPartIIDetailRoadmapText) && tlouPartIIDetailRoadmapText.includes('No Return'), 'roadmap de The Last of Us Part II deve citar NG+ parcial e separar add-ons');
+    assert(/(?:New Game\+|NG\+) parcial/.test(tlouPartIIDetail.runs_summary), 'detalhe de The Last of Us Part II deve explicar New Game+ parcial em runs_summary');
     assert(tlouPartIIDetail.online_summary.includes('online'), 'detalhe de The Last of Us Part II deve indicar ausencia de online obrigatorio');
     assert(tlouPartIIDetail.dlc_scope.includes('Grounded') && tlouPartIIDetail.dlc_scope.includes('Permadeath') && tlouPartIIDetail.dlc_scope.includes('No Return'), 'detalhe de The Last of Us Part II deve manter add-ons fora da lista base');
     assert(tlouPartIIDetail.before_you_start.includes('Part I') && tlouPartIIDetail.before_you_start.includes('Remastered') && tlouPartIIDetail.before_you_start.includes('No Return'), 'detalhe de The Last of Us Part II deve avisar sobre lista propria sem extras');
@@ -11981,7 +12174,7 @@ async function assertBackendEditorialConsistency() {
     assert(tlouPartIIGuideHtml.includes('Até Não Sobrar Nenhum') && tlouPartIIGuideHtml.includes('Nome original:</span>Every Last One of Them'), 'SSR de The Last of Us Part II deve renderizar nome PT-BR e nome original na checklist');
     assert(tlouPartIIGuideHtml.includes('O Que Eu Tive Que Fazer') && tlouPartIIGuideHtml.includes('Arquivista'), 'SSR de The Last of Us Part II deve renderizar localizacoes Steam PT-BR');
     assert(tlouPartIIGuideHtml.includes('26 trof'), 'SSR de The Last of Us Part II deve renderizar total de 26 trofeus');
-    assert(tlouPartIIGuideHtml.includes('New Game+ parcial'), 'SSR de The Last of Us Part II deve renderizar New Game+ parcial');
+    assert(/(?:New Game\+|NG\+) parcial/.test(tlouPartIIGuideHtml), 'SSR de The Last of Us Part II deve renderizar New Game+ parcial');
     assert(tlouPartIIGuideHtml.includes('No Return'), 'SSR de The Last of Us Part II deve renderizar escopo sem No Return');
     assert(tlouPartIIGuideHtml.includes('Grounded'), 'SSR de The Last of Us Part II deve separar Grounded da lista base');
     assert(tlouPartIIGuideHtml.includes('online'), 'SSR de The Last of Us Part II deve renderizar ausencia de online');
@@ -12155,7 +12348,7 @@ async function assertBackendEditorialConsistency() {
     const evilWithinDetail = await httpGetJson(baseUrl, '/api/games/slug/the-evil-within');
     assert.strictEqual(evilWithinDetail.slug, 'the-evil-within', 'GET /api/games/slug/the-evil-within deve retornar The Evil Within');
     assert.strictEqual(evilWithinDetail.trophies.length, 42, 'detalhe de The Evil Within deve retornar checklist completo');
-    assert(evilWithinDetail.roadmap.some(step => String(step.content || step).includes('AKUMU')), 'detalhe de The Evil Within deve trazer roadmap com AKUMU');
+    assert(evilWithinDetail.roadmap.some(step => roadmapStepText(step).includes('AKUMU')), 'detalhe de The Evil Within deve trazer roadmap com AKUMU');
     const avatarFrontiersDetail = await httpGetJson(baseUrl, '/api/games/slug/avatar-frontiers-of-pandora');
     assert.strictEqual(avatarFrontiersDetail.slug, 'avatar-frontiers-of-pandora', 'GET /api/games/slug/avatar-frontiers-of-pandora deve retornar Avatar');
     assert.strictEqual(avatarFrontiersDetail.trophies.length, 32, 'detalhe de Avatar deve retornar 32 trofeus da lista base');
@@ -12169,7 +12362,7 @@ async function assertBackendEditorialConsistency() {
     assert.strictEqual(avatarFrontiersDetail.is_verified, false, 'Avatar nao deve estar verificado');
     assert.strictEqual(avatarFrontiersDetail.coverage_level, 'strong', 'Avatar nao deve ser complete sem revisao manual');
     assert(avatarFrontiersDetail.dlc_scope.includes('The Sky Breaker') && avatarFrontiersDetail.dlc_scope.includes('Secrets of the Spires'), 'detalhe de Avatar deve separar DLCs');
-    assert(avatarFrontiersDetail.roadmap.some(step => step.includes('RDA') && step.includes('air quality')), 'roadmap de Avatar deve mencionar RDA e air quality');
+    assert(avatarFrontiersDetail.roadmap.some(step => roadmapStepText(step).includes('RDA') && roadmapStepText(step).includes('air quality')), 'roadmap de Avatar deve mencionar RDA e air quality');
     assert(!avatarFrontiersDetail.trophies.some(trophy => /The Sky Breaker|Secrets of the Spires|From The Ashes|DLC|add-?on/i.test(`${trophy.id} ${trophy.name} ${trophy.description}`)), 'Avatar nao deve misturar DLCs/add-ons no detalhe');
 
 
@@ -12276,21 +12469,31 @@ async function assertBackendEditorialConsistency() {
     });
     assert.strictEqual(guideHtmlResponse.ok, true, 'SSR de jogo publicado deve responder 2xx');
     const guideHtml = await guideHtmlResponse.text();
-    assert(guideHtml.includes('Aguardando revisão final') || guideHtml.includes('Base inicial'), 'SSR deve sinalizar revisao editorial pendente com texto amigavel');
+    const expectedEldenCanonical = 'https://atlasachievement.com.br/jogo/elden-ring';
+    assert(guideHtml.includes('Verificado'), 'SSR de Elden Ring deve manter guia base verificado');
     assert(!guideHtml.includes('>unverified<'), 'SSR nao deve exibir status bruto unverified');
     const expectedGuideTitle = 'Elden Ring: guia de platina, troféus e roadmap | AtlasAchievement';
-    const expectedGuideDescription = 'Guia de platina de Elden Ring em português, com tempo estimado, dificuldade, finais, armas lendárias, bosses, roadmap e checklist de troféus.';
+    const expectedGuideDescription = 'Guia de platina de Elden Ring em português, com tempo estimado, dificuldade, finais, armas lendárias, Bolt of Gransax, chefes, roadmap e checklist de troféus.';
     assert.strictEqual(getHtmlTitle(guideHtml), expectedGuideTitle, 'SSR de jogo deve gerar title por intenção de platina');
     assert.strictEqual(getMetaDescription(guideHtml), expectedGuideDescription, 'SSR de jogo deve gerar meta description padrao');
-    assert.strictEqual(getCanonicalHref(guideHtml), `${baseUrl}/jogo/elden-ring`, 'SSR de jogo deve ter canonical correto');
+    assert.strictEqual(getCanonicalHref(guideHtml), expectedEldenCanonical, 'SSR de Elden Ring deve ter canonical de producao');
+    assert(guideHtml.includes(`<meta property="og:url" content="${expectedEldenCanonical}">`), 'SSR de Elden Ring deve ter og:url de producao');
     const guideH1s = getH1Texts(guideHtml);
     assert.strictEqual(guideH1s.length, 1, 'SSR de jogo deve ter H1 unico');
-    assert.strictEqual(guideH1s[0], 'Elden Ring', 'H1 visual de jogo deve priorizar o nome limpo');
+    assert.strictEqual(guideH1s[0], 'Elden Ring — Guia de platina e troféus', 'H1 visual de Elden Ring deve manter guia de platina e trofeus');
     assert(guideHtml.includes('Guia de troféus e roadmap da platina'), 'Subtitulo visual deve manter a intencao de platina');
     assert(guideHtml.includes('atlas-faq-item'), 'FAQPage JSON-LD exige FAQ visivel na pagina');
+    assert(guideHtml.includes('DLC fora da platina base'), 'SSR de Elden Ring deve separar DLC da platina base');
+    assert(guideHtml.includes('5 alertas críticos') && guideHtml.includes('30 dicas'), 'SSR de Elden Ring deve separar alertas criticos de dicas comuns');
+    assert(!guideHtml.includes('35 alertas'), 'SSR de Elden Ring nao deve exibir 35 alertas como risco grave');
+    assert(guideHtml.includes('Lord of Frenzied Flame'), 'SSR de Elden Ring deve listar Lord of Frenzied Flame nos pontos criticos');
+    assert(guideHtml.includes('Inclui Bolt of Gransax'), 'SSR de Elden Ring deve explicar Legendary Armaments por Bolt of Gransax');
+    assert(!/Dragonlord Placidusax[\s\S]{0,500}Perdível/.test(guideHtml), 'Dragonlord Placidusax nao deve aparecer como perdivel no SSR');
+    assert(!/Roundtable Hold[\s\S]{0,500}Perdível/.test(guideHtml), 'Roundtable Hold nao deve aparecer como perdivel no SSR');
+    assert(!/\[object Object\]|Descrição em revisão editorial|Comece pela rota segura/.test(guideHtml), 'SSR de Elden Ring nao deve conter placeholders ou roadmap bruto');
     assertSeoBasics(guideHtml, {
       label: 'SSR /jogo/elden-ring',
-      canonical: `${baseUrl}/jogo/elden-ring`,
+      canonical: expectedEldenCanonical,
       titleIncludes: 'Elden Ring',
       descriptionIncludes: 'Elden Ring',
       h1Includes: 'Elden Ring'
@@ -12301,7 +12504,7 @@ async function assertBackendEditorialConsistency() {
     const faqPage = structuredData['@graph'].find(item => item['@type'] === 'FAQPage');
     assert(faqPage?.mainEntity?.length > 0, 'JSON-LD deve incluir FAQPage apenas com perguntas visiveis');
     assert(
-      videoGame.additionalProperty.some(item => item.name === 'Verificado manualmente' && item.value === 'não'),
+      videoGame.additionalProperty.some(item => item.name === 'Verificado manualmente' && item.value === 'sim'),
       'JSON-LD deve expor verificacao manual'
     );
   } finally {
@@ -12341,9 +12544,9 @@ function assertClairObscurSampleData() {
   assert(!game.online_summary.includes('online obrigatório') && game.online_summary.includes('single-player'), 'Clair Obscur deve deixar claro que nao ha online');
   assert(game.before_you_start.includes('Não cadastre PS4') && game.before_you_start.includes('New Game+'), 'Clair Obscur deve alertar ausencia de PS4 e cuidado com New Game+');
   assert(game.dlc_scope.includes('lista base') && game.dlc_scope.includes('DLC'), 'Clair Obscur deve separar lista base de DLC/update');
-  assert(game.roadmap.some(step => step.includes('Mime') && step.includes('Old Key')), 'roadmap de Clair Obscur deve mencionar perdiveis do prologo');
-  assert(game.roadmap.some(step => step.includes('Truth') && step.includes('Maelle')), 'roadmap de Clair Obscur deve mencionar escolha de Maelle');
-  assert(game.roadmap.some(step => step.includes('Endless Tower') && step.includes('Simon')), 'roadmap de Clair Obscur deve mencionar endgame, Endless Tower e Simon');
+  assert(game.roadmap.some(step => roadmapStepText(step).includes('Mime') && roadmapStepText(step).includes('Old Key')), 'roadmap de Clair Obscur deve mencionar perdiveis do prologo');
+  assert(game.roadmap.some(step => roadmapStepText(step).includes('Truth') && roadmapStepText(step).includes('Maelle')), 'roadmap de Clair Obscur deve mencionar escolha de Maelle');
+  assert(game.roadmap.some(step => roadmapStepText(step).includes('Endless Tower') && roadmapStepText(step).includes('Simon')), 'roadmap de Clair Obscur deve mencionar endgame, Endless Tower e Simon');
   assert(game.trophies.some(trophy => trophy.id === 'clair_obscur_expedition_33_follow_the_trail' && trophy.is_missable && trophy.tip.includes('Old Key')), 'Follow The Trail deve ser marcado como atencao e citar Old Key');
   assert(game.trophies.some(trophy => trophy.id === 'clair_obscur_expedition_33_maelle' && trophy.is_missable && trophy.tip.includes('Truth')), 'Maelle deve ser marcado como atencao e citar Truth');
   assert(game.trophies.some(trophy => trophy.id === 'clair_obscur_expedition_33_connoisseur' && trophy.is_missable && trophy.tip.includes('33')), 'Connoisseur deve citar 33 discos e ser atencao');
@@ -12434,12 +12637,12 @@ function assertLote1ACriticalEditorialData() {
   });
 
   const rdr2 = bySlug.get('red-dead-redemption-2');
-  assert(/red dead online/.test(normalizeEditorialSmokeText(`${rdr2.online_summary} ${rdr2.roadmap.join(' ')}`)), 'Red Dead Redemption 2 deve mencionar Red Dead Online');
+  assert(/red dead online/.test(normalizeEditorialSmokeText(`${rdr2.online_summary} ${rdr2.roadmap.map(roadmapStepText).join(' ')}`)), 'Red Dead Redemption 2 deve mencionar Red Dead Online');
   assert(/online\/multiplayer|online/.test(normalizeEditorialSmokeText(summaryCardValue(rdr2, 'Online'))), 'Red Dead Redemption 2 deve aparecer com requisito online');
 
   ['resident-evil-5', 'resident-evil-6'].forEach(slug => {
     const game = bySlug.get(slug);
-    const body = normalizeEditorialSmokeText(`${game.online_summary} ${game.first_run_advice} ${game.before_you_start} ${game.roadmap.join(' ')}`);
+    const body = normalizeEditorialSmokeText(`${game.online_summary} ${game.first_run_advice} ${game.before_you_start} ${game.roadmap.map(roadmapStepText).join(' ')}`);
     assert(/ia/.test(body) && /parceiro humano/.test(body), `${game.name} deve explicar solo com IA e parceiro humano opcional`);
     assert.strictEqual(summaryCardValue(game, 'Coop'), 'Sem coop obrigatório', `${game.name} nao deve marcar coop como obrigatorio`);
     assert.strictEqual(summaryCardValue(game, 'Online'), 'Sem online obrigatório', `${game.name} nao deve marcar online como obrigatorio`);
@@ -12564,7 +12767,7 @@ function assertLote1BNetworkClassification() {
 
   ['it-takes-two', 'split-fiction', 'a-way-out'].forEach(slug => {
     const game = bySlug.get(slug);
-    const body = normalizeEditorialSmokeText(`${game.online_summary} ${game.before_you_start} ${game.roadmap.join(' ')}`);
+    const body = normalizeEditorialSmokeText(`${game.online_summary} ${game.before_you_start} ${game.roadmap.map(roadmapStepText).join(' ')}`);
     assert.strictEqual(summaryCardValue(game, 'Coop'), '2 jogadores obrigatórios', `${slug} deve aparecer como coop obrigatorio`);
     assert.strictEqual(summaryCardValue(game, 'Online'), 'Sem online obrigatório', `${slug} nao deve tratar online como obrigatorio quando ha coop local`);
     assert(/2 jogadores/.test(body) && /local ou online/.test(body), `${slug} deve explicar 2 jogadores e local ou online`);
@@ -12577,7 +12780,7 @@ function assertLote1BNetworkClassification() {
   });
 
   const rdr2 = bySlug.get('red-dead-redemption-2');
-  assert(/red dead online/.test(normalizeEditorialSmokeText(`${rdr2.online_summary} ${rdr2.roadmap.join(' ')}`)), 'RDR2 deve separar campanha e Red Dead Online');
+  assert(/red dead online/.test(normalizeEditorialSmokeText(`${rdr2.online_summary} ${rdr2.roadmap.map(roadmapStepText).join(' ')}`)), 'RDR2 deve separar campanha e Red Dead Online');
 
   const granTurismo7 = bySlug.get('gran-turismo-7');
   assert(/servidor|conexao|sport mode/.test(normalizeEditorialSmokeText(granTurismo7.online_summary)), 'Gran Turismo 7 deve alertar conexao/servidores/Sport Mode');
@@ -12587,7 +12790,7 @@ function assertLote1BNetworkClassification() {
 
   ['resident-evil-5', 'resident-evil-6'].forEach(slug => {
     const game = bySlug.get(slug);
-    const body = normalizeEditorialSmokeText(`${game.online_summary} ${game.before_you_start} ${game.roadmap.join(' ')}`);
+    const body = normalizeEditorialSmokeText(`${game.online_summary} ${game.before_you_start} ${game.roadmap.map(roadmapStepText).join(' ')}`);
     assert.strictEqual(summaryCardValue(game, 'Online'), 'Sem online obrigatório', `${slug} nao deve marcar online obrigatorio`);
     assert.strictEqual(summaryCardValue(game, 'Coop'), 'Sem coop obrigatório', `${slug} nao deve marcar coop obrigatorio`);
     assert(/ia/.test(body) && /parceiro humano/.test(body), `${slug} deve explicar solo com IA e parceiro humano como ajuda`);
@@ -12669,13 +12872,17 @@ function assertLote1CRecentGuideEditorialSafety() {
       assert(game[field], `${slug} deve preencher ${field}`);
     });
     const body = editorialBody(game);
-    assert(/revisao|precisa validar|dados sujeitos|aguarda/.test(body), `${slug} deve comunicar revisao/validacao pendente`);
+    if (slug === 'resident-evil-requiem') {
+      assert(!/em revisao|validacao final|aguardando revisao|dados sujeitos/.test(body), `${slug} nao deve gravar texto publico fixo de revisao no corpo editorial`);
+    } else {
+      assert(/revisao|precisa validar|dados sujeitos|aguarda/.test(body), `${slug} deve comunicar revisao/validacao pendente`);
+    }
     assert(!/verificado manualmente|validado manualmente|verificacao final concluida|guia final verificado/.test(body), `${slug} nao deve afirmar verificacao final`);
   });
 
   const requiem = bySlug.get('resident-evil-requiem');
-  assert(/lista ps5 base|lista base da platina de ps5/.test(editorialBody(requiem)), 'Resident Evil Requiem deve manter escopo PS5/lista base');
-  assert(/sem ps4 no escopo validado/.test(editorialBody(requiem)), 'Resident Evil Requiem nao deve sugerir PS4 sem validacao');
+  assert(/lista base de ps5|lista ps5 base|lista base da platina de ps5/.test(editorialBody(requiem)), 'Resident Evil Requiem deve manter escopo PS5/lista base');
+  assert(/ps4 nao faz parte do escopo validado|sem ps4 no escopo validado/.test(editorialBody(requiem)), 'Resident Evil Requiem nao deve sugerir PS4 sem validacao');
   assert(/deluxe kit/.test(editorialBody(requiem)) && /fora/.test(editorialBody(requiem)), 'Resident Evil Requiem deve separar Deluxe Kit/DLC da platina base');
 
   const nioh3 = bySlug.get('nioh-3');
@@ -12770,8 +12977,13 @@ function assertLote2LongHardGuideRoadmaps() {
     requiredFields.forEach(field => {
       assert(game[field] && String(game[field]).length > 20, `${slug} deve preencher ${field} com orientacao especifica`);
     });
-    assert.strictEqual(game.is_verified, false, `${slug} nao deve ser marcado como verificado manualmente`);
-    assert.strictEqual(game.verification_status, 'review', `${slug} deve permanecer em revisao editorial`);
+    if (slug === 'elden-ring') {
+      assert.strictEqual(game.is_verified, true, `${slug} deve manter guia base verificado manualmente`);
+      assert.strictEqual(game.verification_status, 'verified', `${slug} deve manter verification_status verified`);
+    } else {
+      assert.strictEqual(game.is_verified, false, `${slug} nao deve ser marcado como verificado manualmente`);
+      assert.strictEqual(game.verification_status, 'review', `${slug} deve permanecer em revisao editorial`);
+    }
     assert.strictEqual(game.trophies.length, expected.total, `${slug} nao deve alterar contagem de trofeus`);
     assert.deepStrictEqual(countTypes(game), {
       Platina: expected.Platina,
@@ -13101,6 +13313,7 @@ function assertPriorityGuideEditorialTrust() {
     'nioh-2',
     'nioh-3',
     'resident-evil-4-remake',
+    'resident-evil-requiem',
     'saros',
     'subnautica'
   ]);

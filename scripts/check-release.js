@@ -1,5 +1,6 @@
 const fs = require('fs');
 const path = require('path');
+const { spawnSync } = require('child_process');
 
 const DEFAULT_ROOT = path.resolve(__dirname, '..');
 const SKIPPED_DIRECTORIES = new Set(['.git']);
@@ -198,11 +199,27 @@ function formatBlockedArtifacts(blockedArtifacts) {
     .join('\n');
 }
 
+function isGitIgnoredPackagePath(root, packagePath) {
+  if (!fs.existsSync(path.join(root, '.git'))) return false;
+  const normalized = String(packagePath || '').replace(/\/$/, '');
+  if (!normalized || normalized === '.') return false;
+  const result = spawnSync('git', ['check-ignore', '-q', '--', normalized], {
+    cwd: root,
+    stdio: 'ignore'
+  });
+  return result.status === 0;
+}
+
+function filterIgnoredArtifacts(root, blockedArtifacts) {
+  return blockedArtifacts.filter(item => !isGitIgnoredPackagePath(root, item.packagePath));
+}
+
 function runReleaseCheck(root = DEFAULT_ROOT) {
-  const blockedArtifacts = [
+  const rawBlockedArtifacts = [
     ...scanReleaseTree(root),
     ...scanAstrosPlayroomData(root)
   ].sort((a, b) => a.packagePath.localeCompare(b.packagePath));
+  const blockedArtifacts = filterIgnoredArtifacts(path.resolve(root), rawBlockedArtifacts);
 
   if (blockedArtifacts.length > 0) {
     console.error('Release bloqueado: foram encontrados arquivos locais/sensiveis. Remova os itens abaixo antes de gerar o ZIP.');
@@ -222,5 +239,6 @@ module.exports = {
   scanReleaseTree,
   scanAstrosPlayroomData,
   formatBlockedArtifacts,
+  filterIgnoredArtifacts,
   runReleaseCheck
 };

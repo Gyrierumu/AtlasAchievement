@@ -16,6 +16,7 @@
     hasMissableRiskText,
     getEditorialBadge,
     getEditorialTrustBadge = getEditorialBadge,
+    getEditorialTrustStatus = () => 'in_review',
     getCoverageDisplayLabel,
     getVerificationStatusLabel
   } = editorial;
@@ -58,7 +59,7 @@
     return !negated && /chapter select|selecao de capitulo|selecao de capitulos|selecionar capitulo|selecionar capitulos|collectible mode/.test(text);
   }
 
-  const GUIDE_TROPHY_TAG_PRIORITY = ['missable', 'final', 'boss', 'legendary', 'online', 'coop', 'difficulty', 'grind', 'collectible', 'spoiler', 'cleanup', 'story', 'run'];
+  const GUIDE_TROPHY_TAG_PRIORITY = ['missable', 'final', 'boss', 'legendary', 'online', 'coop', 'difficulty', 'grind', 'collectible', 'spoiler', 'cleanup', 'story', 'progress', 'system', 'run'];
 
   function getGuideTrophySignalText(trophy = {}) {
     return `${trophy?.trophyNameOriginal || trophy?.name || ''} ${trophy?.trophyNamePtBr || trophy?.name_pt || ''} ${trophy?.descriptionPtBr || trophy?.ptDescription || trophy?.localizedDescription?.ptBr || trophy?.description || ''} ${trophy?.tip || ''}`;
@@ -237,6 +238,14 @@
         tags.push({ id: 'legendary', label: 'Lendário', tone: 'partial' });
         ids.add('legendary');
       }
+      if (!ids.has('progress') && /er_roundtable|er_great_rune|er_rennala|historia|progresso|progressao|great rune|grande runa/.test(`${eldenEndingText} ${normalized}`)) {
+        tags.push({ id: 'progress', label: 'Progresso', tone: 'partial' });
+        ids.add('progress');
+      }
+      if (!ids.has('system') && /er_great_rune|great rune|grande runa|respec|restaurou o poder/.test(`${eldenEndingText} ${normalized}`)) {
+        tags.push({ id: 'system', label: 'Sistema', tone: 'partial' });
+        ids.add('system');
+      }
     }
     if (!ids.has('story') && /historia|story|campanha|prologo|ato |chapter|capitulo|finish the game|complete a historia|conclua a historia|reach the|defeat the|derrote/.test(normalized)) {
       tags.push({ id: 'story', label: 'História', tone: 'partial' });
@@ -248,6 +257,16 @@
     }
     if (!ids.has('grind') && /grind|farm|rng|\brank\b|hunter rank|boss stem cell|stem cells|bsc|\blevel\b|\bnivel\b|\bxp\b|coroa|coroas|crown|crowns|100 quests|100 elites|500|50 tempered|50 elder|100,000|1,000,000|blueprints?/.test(normalized)) {
       tags.push({ id: 'grind', label: 'Grind', tone: 'warning' });
+    }
+    if (String(game?.slug || '').trim().toLowerCase() === 'elden-ring') {
+      const trophyId = String(trophy?.id || '').trim();
+      return sortGuideTrophyTags(tags.filter(tag => {
+        if (trophyId === 'er_roundtable') return !['missable', 'run', 'collectible', 'difficulty'].includes(tag?.id);
+        if (trophyId === 'er_placidusax') return !['missable', 'run', 'difficulty'].includes(tag?.id);
+        if (trophyId === 'er_great_rune' || trophyId === 'er_rennala') return !['missable', 'run', 'difficulty', 'collectible'].includes(tag?.id);
+        if (['er_elden_lord', 'er_age_of_stars', 'er_frenzied_flame'].includes(trophyId)) return tag?.id !== 'difficulty';
+        return true;
+      }));
     }
     return sortGuideTrophyTags(tags);
   }
@@ -365,6 +384,13 @@
         value: 'Escopo não informado',
         detail: 'O guia ainda não informa se DLCs entram no escopo.',
         tone: 'atlas-meta-signal--partial'
+      };
+    }
+    if (game?.dlc_status === 'out_of_base_scope' || /shadow of the erdtree/.test(normalized)) {
+      return {
+        value: 'DLC fora da platina base',
+        detail: dlcText,
+        tone: 'atlas-meta-signal--complete'
       };
     }
     if (/fora do escopo|fica fora|ficam fora|entrada separada|validar separadamente|nao tratar como dlc|nao e dlc/.test(normalized)) {
@@ -1158,6 +1184,7 @@
     const total = Number(viewModel?.total || 0);
     const runs = String(game?.runs || '').trim();
     const riskCounts = viewModel.riskCounts || getRiskCounts(viewModel.trophies || []);
+    const guidanceCounts = viewModel.guidanceCounts || buildGuidanceCounts(viewModel.trophies || [], riskCounts);
     const runsPhrase = runs ? `, com ${runs} e ${roadmapSteps} etapa(s) de roadmap` : `, com ${roadmapSteps} etapa(s) de roadmap`;
     const sentence = `Platina de ${timeEstimate}, dificuldade ${difficulty}${runsPhrase}.`;
     const statCards = [
@@ -1167,7 +1194,8 @@
       { label: 'Roadmap', value: `${roadmapSteps}`, detail: 'Etapas disponíveis antes da checklist.' }
     ];
     if (runs) statCards.push({ label: 'Runs recomendadas', value: runs, detail: 'Campo editorial cadastrado.' });
-    if (riskCounts.alertCount) statCards.push({ label: 'Alertas de rota', value: `${riskCounts.alertCount}`, detail: 'Troféus com risco editorial detectado.' });
+    if (guidanceCounts.criticalAlertsCount) statCards.push({ label: 'Alertas críticos', value: `${guidanceCounts.criticalAlertsCount}`, detail: 'Riscos reais de platina detectados.' });
+    if (guidanceCounts.checklistTipsCount) statCards.push({ label: 'Dicas de checklist', value: `${guidanceCounts.checklistTipsCount}`, detail: 'Orientações comuns para progresso e cleanup.' });
     if (riskCounts.missable) statCards.push({ label: 'Perdíveis', value: `${riskCounts.missable}`, detail: 'Marcados ou citados no guia.' });
     if (riskCounts.spoiler) statCards.push({ label: 'Spoilers', value: `${riskCounts.spoiler}`, detail: 'Ocultos até você revelar.' });
     return { sentence, statCards };
@@ -1202,6 +1230,107 @@
   }
 
   function buildRouteChangingTrophies(trophies = []) {
+    const trophyById = new Map((Array.isArray(trophies) ? trophies : []).map(trophy => [trophy?.id, trophy]).filter(([id]) => id));
+    const eldenCriticalIds = ['er_elden_lord', 'er_age_of_stars', 'er_frenzied_flame', 'er_legendary_armaments', 'er_fortissax'];
+    if (eldenCriticalIds.every(id => trophyById.has(id))) {
+      const copyTags = (ids, tone = 'risk') => ids.map(label => ({ id: normalizeGuideSignalText(label).replace(/\s+/g, '-'), label, tone }));
+      return [
+        {
+          id: 'er_elden_lord',
+          name: trophyById.get('er_elden_lord')?.name || 'Elden Lord',
+          type: 'Perdível / Final / Risco de run / Spoiler',
+          text: 'Final com troféu. Planeje backup de save antes da decisão final se quiser reduzir runs.',
+          tags: copyTags(['Perdível / Final / Risco de run / Spoiler']),
+          score: 99
+        },
+        {
+          id: 'er_age_of_stars',
+          name: trophyById.get('er_age_of_stars')?.name || 'Age of the Stars',
+          type: 'Perdível / Final / Spoiler',
+          text: 'Final com troféu ligado à quest da Ranni. Avance a questline antes da decisão final.',
+          tags: copyTags(['Perdível / Final / Spoiler']),
+          score: 98
+        },
+        {
+          id: 'er_frenzied_flame',
+          name: trophyById.get('er_frenzied_flame')?.name || 'Lord of Frenzied Flame',
+          type: 'Perdível / Final / Spoiler',
+          text: 'Final com troféu ligado aos Three Fingers. Pode conflitar com outros finais no mesmo save se você não planejar a rota.',
+          tags: copyTags(['Perdível / Final / Spoiler']),
+          score: 97
+        },
+        {
+          id: 'er_legendary_armaments',
+          name: trophyById.get('er_legendary_armaments')?.name || 'Legendary Armaments',
+          type: 'Perdível / Lendário / Coletável',
+          text: 'Inclui Bolt of Gransax, que deve ser coletado antes da transformação de Leyndell.',
+          tags: copyTags(['Perdível / Lendário / Coletável']),
+          score: 96
+        },
+        {
+          id: 'er_fortissax',
+          name: trophyById.get('er_fortissax')?.name || 'Lichdragon Fortissax',
+          type: 'Perdível / Chefe / Spoiler',
+          text: 'Chefe ligado à quest da Fia. Evite encerrar a linha dela de forma hostil antes da luta.',
+          tags: copyTags(['Perdível / Chefe / Spoiler']),
+          score: 95
+        }
+      ];
+    }
+
+    const requiemAttentionIds = [
+      'rerequiem_speed_demon',
+      'rerequiem_minimalist',
+      'rerequiem_grace_and_goliath',
+      'rerequiem_hope_and_requiem',
+      'rerequiem_master_craftsman'
+    ];
+    if (requiemAttentionIds.every(id => trophyById.has(id))) {
+      const attentionTag = (label, tone = 'warning') => ({ id: normalizeGuideSignalText(label).replace(/\s+/g, '-'), label, tone });
+      return [
+        {
+          id: 'rerequiem_speed_demon',
+          name: trophyById.get('rerequiem_speed_demon')?.name || 'Speed Demon',
+          type: 'Perdível / Risco de run',
+          text: 'Speedrun de campanha. Separe uma run dedicada, use saves manuais e não misture com exploração longa.',
+          tags: [attentionTag('Perdível / Risco de run', 'risk')],
+          score: 99
+        },
+        {
+          id: 'rerequiem_minimalist',
+          name: trophyById.get('rerequiem_minimalist')?.name || 'Minimalist',
+          type: 'Perdível / Risco de run',
+          text: 'Restrição de Blood Collector. Planeje uma campanha dedicada e confirme a regra antes de avançar demais.',
+          tags: [attentionTag('Perdível / Risco de run', 'risk')],
+          score: 98
+        },
+        {
+          id: 'rerequiem_grace_and_goliath',
+          name: trophyById.get('rerequiem_grace_and_goliath')?.name || 'Grace and Goliath',
+          type: 'Spoiler / Risco de run',
+          text: 'Objetivo situacional com spoiler. Acompanhe por janela ou save, sem tratar automaticamente como perdível definitivo.',
+          tags: [attentionTag('Spoiler / Risco de run', 'spoiler')],
+          score: 97
+        },
+        {
+          id: 'rerequiem_hope_and_requiem',
+          name: trophyById.get('rerequiem_hope_and_requiem')?.name || 'Hope and Requiem',
+          type: 'Perdível / Spoiler',
+          text: 'Escolha final sensível. Mantenha save manual antes da decisão para reduzir retrabalho e comparar os desfechos com segurança.',
+          tags: [attentionTag('Perdível / Spoiler', 'risk')],
+          score: 96
+        },
+        {
+          id: 'rerequiem_master_craftsman',
+          name: trophyById.get('rerequiem_master_craftsman')?.name || 'Master Craftsman',
+          type: 'Coletável / Checklist',
+          text: 'Objetivo de crafting/checklist. Use save manual para criar os itens necessários e recarregar se quiser preservar materiais.',
+          tags: [attentionTag('Coletável / Checklist', 'partial')],
+          score: 95
+        }
+      ];
+    }
+
     const weights = { missable: 7, spoiler: 5, difficulty: 5, collectible: 4, grind: 4, run: 4, cleanup: 3, story: 1 };
     return trophies
       .filter(Boolean)
@@ -1220,6 +1349,18 @@
       .filter(item => item.score > 0)
       .sort((a, b) => b.score - a.score || String(a.name).localeCompare(String(b.name), 'pt-BR'))
       .slice(0, 8);
+  }
+
+  function buildGuidanceCounts(trophies = [], riskCounts = null) {
+    const counts = riskCounts || getRiskCounts(trophies);
+    const criticalAlertsCount = countRealMissableTrophies(trophies);
+    const totalGuidanceCount = Number(counts.alertCount || 0);
+    const checklistTipsCount = Math.max(totalGuidanceCount - criticalAlertsCount, 0);
+    return {
+      criticalAlertsCount,
+      checklistTipsCount,
+      totalGuidanceCount
+    };
   }
 
   function buildDecisionRoadmapStages(viewModel = {}) {
@@ -1929,16 +2070,28 @@
           answer: difficulty > 0 ? `A dificuldade cadastrada é ${difficulty}/10. O desafio vem de bosses exigentes e conteúdo opcional da lista base, não de modo difícil obrigatório.` : reviewAnswer
         },
         {
-          question: 'Quantas jogadas são necessárias para platinar Elden Ring?',
+          question: 'Dá para fazer a platina de Elden Ring em uma run?',
           answer: 'A recomendação do guia é uma jogada longa com backup de save antes dos finais. Sem backup, planeje 2-3 jogadas, NG+ ou múltiplos saves para cobrir Elden Lord, Age of the Stars e Lord of Frenzied Flame.'
         },
         {
+          question: 'Precisa de backup de save em Elden Ring?',
+          answer: 'Não é obrigatório, mas é o caminho mais eficiente para obter os três finais com troféu em uma única run planejada.'
+        },
+        {
           question: 'A DLC Shadow of the Erdtree é necessária para a platina?',
-          answer: 'Não. O guia cobre somente a lista base de Elden Ring; Shadow of the Erdtree fica fora do checklist da platina base.'
+          answer: 'Não. Shadow of the Erdtree não é necessária para a platina base. O guia da DLC fica pendente separadamente.'
         },
         {
           question: 'É possível fazer os finais em uma única jogada?',
           answer: 'Sim, se o jogador preparar as rotas e usar backup de save antes da decisão final. Sem backup, cada final com troféu deve ser tratado como outra jogada, NG+ ou save separado.'
+        },
+        {
+          question: 'O que fazer antes da mudança de Leyndell?',
+          answer: 'Pegue Bolt of Gransax e revise os armamentos lendários antes de avançar para a versão Ashen Capital, porque esse é o ponto mais sensível da lista base.'
+        },
+        {
+          question: 'Qual é o maior risco da platina de Elden Ring?',
+          answer: 'O maior risco é deixar Bolt of Gransax para depois da mudança de Leyndell; em seguida vêm finais sem backup e a quest da Fia para Lichdragon Fortissax.'
         }
       ];
     }
@@ -2227,6 +2380,23 @@
       typeof game?.missable === 'string' && game.missable.trim().length > 0,
       missables > 0
     ].filter(Boolean).length;
+    const normalizedSlug = String(game?.slug || '').trim().toLowerCase();
+    const editorialStatus = getEditorialTrustStatus(game);
+
+    if (normalizedSlug === 'resident-evil-requiem') {
+      if (editorialStatus === 'verified') {
+        return {
+          label: 'Confiança alta',
+          detail: 'Guia revisado editorialmente para a lista base. Tempo, roadmap, perdíveis, online, coop e DLC foram organizados para orientar a platina com mais segurança.',
+          tone: 'close'
+        };
+      }
+      return {
+        label: 'Aguardando revisão final',
+        detail: 'Tempo, roadmap e alertas já ajudam na decisão, mas a página ainda não recebeu validação editorial final.',
+        tone: 'partial'
+      };
+    }
 
     if (!game?.is_verified) {
       if (signals >= 3) {
@@ -2400,11 +2570,12 @@
     const runDetail = compactGuideText(inputs.firstRunAdvice, inputs.timeReason || `Baseado em resumo editorial, roadmap (${inputs.roadmapCount}) e lista (${inputs.trophyCount} troféu(s)).`, 180);
     const riskDetail = compactGuideText(inputs.missableSummary || inputs.cleanupAdvice, `${inputs.missableCount} perdível(is), ${inputs.spoilerCount} spoiler(s) e cobertura ${coverageLabel}.`, 180);
     const timeDetail = compactGuideText(inputs.timeReason, `Estimativa cadastrada: ${inputs.timeLabel}.`, 160);
+    const beforeYouStartMaxLength = String(game?.slug || '').trim().toLowerCase() === 'resident-evil-requiem' ? 280 : 180;
 
     return {
-      summary: compactGuideText(inputs.beforeYouStart, defaultSummary, 180),
+      summary: compactGuideText(inputs.beforeYouStart, defaultSummary, beforeYouStartMaxLength),
       cards: [
-        { label: 'Vale abrir agora?', value: openValue, detail: openDetail, tone: openTone },
+        { label: 'Vale abrir agora?', value: openValue, detail: compactGuideText(inputs.beforeYouStart, openDetail, beforeYouStartMaxLength), tone: openTone },
         { label: 'Tempo', value: inputs.timeLabel, detail: timeDetail, tone: 'atlas-tag--time' },
         { label: 'Runs', value: inputs.runs || viewModel.snapshot?.runEstimate || getGuideRunEstimate(game, viewModel.roadmap || [], viewModel.trophies || []), detail: runDetail, tone: 'atlas-tag--time' },
         { label: 'Maior risco', value: riskValue, detail: riskDetail, tone: inputs.missableCount ? 'atlas-tag--risk' : (inputs.spoilerCount ? 'atlas-tag--spoiler' : (inputs.difficulty >= 7 ? 'atlas-tag--warning' : 'atlas-tag--soft')) },
@@ -2460,10 +2631,10 @@
     } else if (game?.coverage_level === 'strong' && game?.is_verified) {
       coverageLabel = 'Guia forte';
       coverageDetail = 'A cobertura está forte, mas ainda não recebeu o selo de guia completo.';
-    } else if (!game?.is_verified || game?.editorial_status === 'review') {
+    } else if (!game?.is_verified || (game?.editorial_status === 'review' && statusBadge.status !== 'verified')) {
       coverageLabel = statusBadge.label;
       coverageDetail = statusBadge.detail;
-      readinessLabel = game?.editorial_status === 'review' ? 'Leia como guia em revisão' : 'Valide antes de confiar';
+      readinessLabel = statusBadge.status === 'in_review' ? 'Leia como guia em revisão' : 'Valide antes de confiar';
       readinessDetail = statusBadge.detail;
     }
 
@@ -2615,6 +2786,7 @@
     const attentionCount = trophies.filter(trophy => trophy && (isRealMissableTrophy(trophy) || trophy.is_spoiler)).length;
     const spoilerCount = trophies.filter(trophy => trophy?.is_spoiler).length;
     const riskCounts = getRiskCounts(trophies);
+    const guidanceCounts = buildGuidanceCounts(trophies, riskCounts);
     const breakdown = getTrophyBreakdown(trophies);
     const breakdownText = breakdown.filter(item => item.count > 0).map(item => `${item.count} ${item.type}`).join(' • ') || 'Sem troféus detalhados';
     const quickNotes = [
@@ -2645,6 +2817,10 @@
       attentionCount,
       spoilerCount,
       riskCounts,
+      guidanceCounts,
+      criticalAlertsCount: guidanceCounts.criticalAlertsCount,
+      checklistTipsCount: guidanceCounts.checklistTipsCount,
+      totalGuidanceCount: guidanceCounts.totalGuidanceCount,
       breakdown,
       breakdownText,
       quickNotes,
@@ -2727,6 +2903,7 @@
     buildEditorialSignals,
     buildPrepCards,
     buildCriticalTrophyAlerts,
+    buildGuidanceCounts,
     buildExecutionProfile,
     buildGuideViewModel
   };

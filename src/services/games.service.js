@@ -11,9 +11,24 @@ const PUBLIC_EDITORIAL_STATUSES = new Set(['review', 'published']);
 const COVERAGE_LEVELS = new Set(['partial', 'strong', 'complete']);
 const VERIFICATION_STATUSES = new Set(['unverified', 'review', 'verified']);
 const EDITORIAL_REVIEW_STATUSES = new Set(Object.keys(editorialModel.EDITORIAL_TRUST_STATUSES || {}));
-const LOCALIZED_TROPHY_SOURCE_SLUGS = new Set(['astro-bot', 'astros-playroom', 'hades-ii', 'nioh-2', 'nioh-3', 'the-last-of-us-part-i', 'the-last-of-us-part-ii', 'subnautica']);
+const LOCALIZED_TROPHY_SOURCE_SLUGS = new Set(['astro-bot', 'astros-playroom', 'hades-ii', 'nioh-2', 'nioh-3', 'resident-evil-requiem', 'the-last-of-us-part-i', 'the-last-of-us-part-ii', 'subnautica']);
 const CATALOG_IMAGE_BY_SLUG = {
   'the-last-of-us-part-ii': 'https://cdn.cloudflare.steamstatic.com/steam/apps/2531310/header.jpg'
+};
+const CANONICAL_MISSABLE_TROPHIES_BY_SLUG = {
+  'elden-ring': new Set([
+    'er_elden_lord',
+    'er_age_of_stars',
+    'er_frenzied_flame',
+    'er_legendary_armaments',
+    'er_fortissax'
+  ]),
+  'resident-evil-requiem': new Set([
+    'rerequiem_hope_and_requiem',
+    'rerequiem_speed_demon',
+    'rerequiem_never_touch_the_stuff',
+    'rerequiem_minimalist'
+  ])
 };
 const TROPHY_TYPE_ALIASES = {
   platinum: 'Platina',
@@ -153,7 +168,7 @@ function buildEditorialReviewFields(row = {}) {
   };
   const badge = editorialModel.getEditorialTrustBadge(trustGame);
   return {
-    editorial_review_status: editorialReviewStatus,
+    editorial_review_status: editorialReviewStatus || badge.status || '',
     editorialReviewStatus: badge.status,
     editorialStatus: badge.status,
     last_reviewed_at: normalizeReviewedDate(row.last_reviewed_at),
@@ -217,6 +232,23 @@ function normalizeGame(row, roadmapRows, trophyRows) {
       || /earn (?:every|all) other trophies|obtenha todos os trofeus|obtenha todos os outros trofeus/.test(description);
   };
   const normalizedSlug = getCanonicalGameSlug(row.slug || row.name);
+  const seedGame = sampleGames.find(item => String(item?.slug || '').trim().toLowerCase() === normalizedSlug) || null;
+  const editorialSource = normalizedSlug === 'resident-evil-requiem' && seedGame
+    ? {
+        ...row,
+        ...seedGame,
+        verification_status: row.verification_status || seedGame.verification_status,
+        editorial_status: row.editorial_status || seedGame.editorial_status,
+        coverage_level: row.coverage_level || seedGame.coverage_level,
+        is_verified: row.is_verified,
+        verification_note: row.verification_note || seedGame.verification_note,
+        editorial_review_status: row.editorial_review_status || seedGame.editorial_review_status,
+        last_reviewed_at: row.last_reviewed_at || seedGame.last_reviewed_at,
+        editorial_notes: row.editorial_notes || seedGame.editorial_notes,
+        quality_warnings: row.quality_warnings || seedGame.quality_warnings,
+        reviewed_by: row.reviewed_by || seedGame.reviewed_by
+      }
+    : row;
   const supportsLocalizedDescriptions = [
     'elden-ring',
     'hades',
@@ -227,89 +259,102 @@ function normalizeGame(row, roadmapRows, trophyRows) {
     'astros-playroom',
     'nioh-2',
     'nioh-3',
+    'resident-evil-requiem',
     'saros',
     'the-last-of-us-part-i',
     'the-last-of-us-part-ii',
     'subnautica'
   ].includes(normalizedSlug);
-  const missableCount = trophyRows.filter(item => item.is_missable && !isPlatinumTrophy(item)).length;
+  const canonicalMissableSet = CANONICAL_MISSABLE_TROPHIES_BY_SLUG[normalizedSlug] || null;
+  const isCanonicalMissableTrophy = item => canonicalMissableSet
+    ? canonicalMissableSet.has(item?.trophy_code)
+    : Boolean(item?.is_missable);
+  const missableCount = trophyRows.filter(item => isCanonicalMissableTrophy(item) && !isPlatinumTrophy(item)).length;
   const spoilerCount = trophyRows.filter(item => item.is_spoiler).length;
 
   return {
     id: row.id,
-    name: row.name,
-    difficulty: row.difficulty,
-    time: row.time,
-    missable: row.missable,
-    image: row.image,
-    cover_image: row.cover_image || null,
+    name: editorialSource.name,
+    difficulty: editorialSource.difficulty,
+    time: editorialSource.time,
+    missable: editorialSource.missable,
+    image: editorialSource.image,
+    cover_image: editorialSource.cover_image || null,
     catalogImage: CATALOG_IMAGE_BY_SLUG[normalizedSlug] || '',
-    runs_summary: firstText(row.runs_summary, row.guide_runs),
-    missable_summary: firstText(row.missable_summary, row.missable),
-    online_summary: firstText(row.online_summary, row.guide_online),
-    grind_summary: firstText(row.grind_summary, row.guide_grind),
-    dlc_scope: firstText(row.dlc_scope, row.guide_dlc),
-    difficulty_reason: row.difficulty_reason || '',
-    time_reason: row.time_reason || '',
-    first_run_advice: row.first_run_advice || '',
-    cleanup_advice: normalizeGuideCleanupAdvice(row),
-    before_you_start: row.before_you_start || '',
-    best_for: firstText(row.best_for, row.guide_ideal),
-    avoid_if: firstText(row.avoid_if, row.guide_avoid),
-    verification_status: normalizeVerificationStatus(row.verification_status, row),
-    runs: firstText(row.runs_summary, row.guide_runs),
-    online: firstText(row.online_summary, row.guide_online),
-    grind: firstText(row.grind_summary, row.guide_grind),
-    dlc: firstText(row.dlc_scope, row.guide_dlc),
-    ideal_for: firstText(row.best_for, row.guide_ideal),
-    avoid_for: firstText(row.avoid_if, row.guide_avoid),
-    best_for_when: row.guide_best_moment || '',
-    editorial_status: normalizeEditorialStatus(row.editorial_status),
-    publication_status: normalizeEditorialStatus(row.editorial_status),
-    ...buildEditorialReviewFields(row),
-    coverage_level: normalizeCoverageLevel(row.coverage_level, row),
-    is_verified: Boolean(row.is_verified),
-    verification_note: row.verification_note || '',
-    slug: getCanonicalGameSlug(row.slug || row.name),
+    runs_summary: firstText(editorialSource.runs_summary, editorialSource.guide_runs),
+    missable_summary: firstText(editorialSource.missable_summary, editorialSource.missable),
+    online_summary: firstText(editorialSource.online_summary, editorialSource.guide_online),
+    grind_summary: firstText(editorialSource.grind_summary, editorialSource.guide_grind),
+    dlc_scope: firstText(editorialSource.dlc_scope, editorialSource.guide_dlc),
+    difficulty_reason: editorialSource.difficulty_reason || '',
+    time_reason: editorialSource.time_reason || '',
+    first_run_advice: editorialSource.first_run_advice || '',
+    cleanup_advice: normalizeGuideCleanupAdvice(editorialSource),
+    before_you_start: editorialSource.before_you_start || '',
+    best_for: firstText(editorialSource.best_for, editorialSource.guide_ideal),
+    avoid_if: firstText(editorialSource.avoid_if, editorialSource.guide_avoid),
+    verification_status: normalizeVerificationStatus(editorialSource.verification_status, editorialSource),
+    runs: firstText(editorialSource.runs_summary, editorialSource.guide_runs),
+    online: firstText(editorialSource.online_summary, editorialSource.guide_online),
+    grind: firstText(editorialSource.grind_summary, editorialSource.guide_grind),
+    dlc: firstText(editorialSource.dlc_scope, editorialSource.guide_dlc),
+    ideal_for: firstText(editorialSource.best_for, editorialSource.guide_ideal),
+    avoid_for: firstText(editorialSource.avoid_if, editorialSource.guide_avoid),
+    best_for_when: editorialSource.guide_best_moment || '',
+    editorial_status: normalizeEditorialStatus(editorialSource.editorial_status),
+    publication_status: normalizeEditorialStatus(editorialSource.editorial_status),
+    ...buildEditorialReviewFields(editorialSource),
+    coverage_level: normalizeCoverageLevel(editorialSource.coverage_level, editorialSource),
+    is_verified: Boolean(editorialSource.is_verified),
+    verification_note: editorialSource.verification_note || '',
+    slug: getCanonicalGameSlug(editorialSource.slug || editorialSource.name),
     chapterSelect: ['the-last-of-us-part-i', 'the-last-of-us-part-ii'].includes(normalizedSlug) ? true : (['nioh-3', 'saros', 'subnautica'].includes(normalizedSlug) ? false : undefined),
     missionReplay: normalizedSlug === 'nioh-3' ? true : undefined,
     openWorldCleanup: normalizedSlug === 'subnautica' ? true : undefined,
-    onlineRequired: ['astro-bot', 'astros-playroom', 'nioh-2', 'nioh-3', 'saros', 'the-last-of-us-part-i', 'the-last-of-us-part-ii', 'subnautica'].includes(normalizedSlug) ? false : undefined,
-    coopRequired: ['astro-bot', 'astros-playroom', 'nioh-2', 'nioh-3', 'saros', 'the-last-of-us-part-i', 'the-last-of-us-part-ii', 'subnautica'].includes(normalizedSlug) ? false : undefined,
-    dlcRequired: ['astro-bot', 'astros-playroom', 'nioh-2', 'nioh-3', 'saros', 'the-last-of-us-part-i', 'the-last-of-us-part-ii', 'subnautica'].includes(normalizedSlug) ? false : undefined,
+    onlineRequired: ['elden-ring', 'astro-bot', 'astros-playroom', 'nioh-2', 'nioh-3', 'resident-evil-requiem', 'saros', 'the-last-of-us-part-i', 'the-last-of-us-part-ii', 'subnautica'].includes(normalizedSlug) ? false : undefined,
+    coopRequired: ['elden-ring', 'astro-bot', 'astros-playroom', 'nioh-2', 'nioh-3', 'resident-evil-requiem', 'saros', 'the-last-of-us-part-i', 'the-last-of-us-part-ii', 'subnautica'].includes(normalizedSlug) ? false : undefined,
+    dlcRequired: ['elden-ring', 'astro-bot', 'astros-playroom', 'nioh-2', 'nioh-3', 'resident-evil-requiem', 'saros', 'the-last-of-us-part-i', 'the-last-of-us-part-ii', 'subnautica'].includes(normalizedSlug) ? false : undefined,
+    dlc_status: normalizedSlug === 'elden-ring' ? 'out_of_base_scope' : undefined,
+    dlcGuideStatus: normalizedSlug === 'elden-ring' ? 'pending' : undefined,
+    extraContentStatus: normalizedSlug === 'elden-ring' ? 'pending' : undefined,
     newGamePlusRequired: normalizedSlug === 'the-last-of-us-part-ii' ? true : (normalizedSlug === 'the-last-of-us-part-i' ? false : undefined),
     difficultyTrophiesRequired: ['the-last-of-us-part-i', 'the-last-of-us-part-ii'].includes(normalizedSlug) ? false : undefined,
-    roadmap: roadmapRows
-      .map(item => deserializeRoadmapStep(item.content))
+    roadmap: (Array.isArray(seedGame?.roadmap) && normalizedSlug === 'resident-evil-requiem'
+      ? seedGame.roadmap
+      : roadmapRows.map(item => deserializeRoadmapStep(item.content)))
       .map((step, index, rows) => guideModel.normalizeRoadmapStep(step, index, rows.length)),
     trophies: trophyRows.map(item => {
-      const description = item.description || '';
-      const isMissable = Boolean(item.is_missable) && !isPlatinumTrophy(item);
+      const isMissable = isCanonicalMissableTrophy(item) && !isPlatinumTrophy(item);
       const seedTrophy = LOCALIZED_TROPHY_SOURCE_SLUGS.has(normalizedSlug) ? getSeedTrophy(normalizedSlug, item.trophy_code) : null;
+      const useSeedEditorialTrophy = normalizedSlug === 'resident-evil-requiem' && seedTrophy;
+      const description = useSeedEditorialTrophy ? (seedTrophy.description || item.description || '') : (item.description || '');
+      const tip = useSeedEditorialTrophy ? (seedTrophy.tip || item.tip || '') : item.tip;
+      const namePt = useSeedEditorialTrophy ? (seedTrophy.name_pt || item.name_pt || '') : (item.name_pt || '');
       return {
         id: item.trophy_code,
         name: item.name,
-        name_pt: item.name_pt || '',
+        name_pt: namePt,
         trophyNameOriginal: item.name,
-        trophyNamePtBr: item.name_pt || '',
-        namePtSource: item.name_pt && LOCALIZED_TROPHY_SOURCE_SLUGS.has(normalizedSlug) ? (seedTrophy?.namePtSource || 'trusted_steam_ptbr') : '',
+        trophyNamePtBr: namePt,
+        namePtSource: namePt && LOCALIZED_TROPHY_SOURCE_SLUGS.has(normalizedSlug) ? (seedTrophy?.namePtSource || 'trusted_steam_ptbr') : '',
         type: item.type,
         description,
         descriptionOriginal: seedTrophy?.descriptionOriginal || '',
         descriptionPtBr: supportsLocalizedDescriptions ? description : '',
         ptDescription: supportsLocalizedDescriptions ? description : '',
         descriptionPtSource: supportsLocalizedDescriptions && LOCALIZED_TROPHY_SOURCE_SLUGS.has(normalizedSlug) ? (seedTrophy?.descriptionPtSource || 'trusted_steam_ptbr') : '',
-        tip: item.tip,
+        tip,
+        riskType: seedTrophy?.riskType || '',
         is_missable: isMissable,
         is_spoiler: Boolean(item.is_spoiler)
       };
     }),
     created_at: row.created_at,
     updated_at: row.updated_at,
-    time_min_hours: row.time_min_hours,
-    time_max_hours: row.time_max_hours,
-    time_sort_hours: row.time_sort_hours,
-    time_bucket: row.time_bucket || null,
+    time_min_hours: editorialSource.time_min_hours,
+    time_max_hours: editorialSource.time_max_hours,
+    time_sort_hours: editorialSource.time_sort_hours,
+    time_bucket: editorialSource.time_bucket || null,
     missable_count: missableCount,
     spoiler_count: spoilerCount,
     attention_count: missableCount + spoilerCount
@@ -336,7 +381,7 @@ function buildListFilters({ search = '', facet = 'all' } = {}) {
   const baseGameSql = `((${dlcText}) LIKE '%lista base%' OR (${dlcText}) LIKE '%jogo base%' OR (${dlcText}) LIKE '%base game%' OR (${dlcText}) LIKE '%sem dlc%' OR (${dlcText}) LIKE '%não inclui%' OR (${dlcText}) LIKE '%nao inclui%' OR (${dlcText}) LIKE '%não é necessária%' OR (${dlcText}) LIKE '%nao e necessaria%' OR (${dlcText}) LIKE '%dlc não necessária%' OR (${dlcText}) LIKE '%dlc nao necessaria%' OR (${dlcText}) LIKE '%não há dlc%' OR (${dlcText}) LIKE '%nao ha dlc%' OR (${dlcText}) LIKE '%platina própria%' OR (${dlcText}) LIKE '%platina propria%')`;
   const chapterSelectSql = `((${chapterText}) LIKE '%chapter select%' OR (${chapterText}) LIKE '%seleção de capítulo%' OR (${chapterText}) LIKE '%selecao de capitulo%' OR (${chapterText}) LIKE '%seleção de capítulos%' OR (${chapterText}) LIKE '%selecao de capitulos%' OR (${chapterText}) LIKE '%selecionar capítulo%' OR (${chapterText}) LIKE '%selecionar capitulo%')`;
 
-  const chapterSelectNegatedSql = `((${chapterText}) LIKE '%não há%chapter select%' OR (${chapterText}) LIKE '%nao ha%chapter select%' OR (${chapterText}) LIKE '%não tem%chapter select%' OR (${chapterText}) LIKE '%nao tem%chapter select%' OR (${chapterText}) LIKE '%sem chapter select%' OR (${chapterText}) LIKE '%não existe%chapter select%' OR (${chapterText}) LIKE '%nao existe%chapter select%' OR (${chapterText}) LIKE '%não há%seleção de capítulo%' OR (${chapterText}) LIKE '%nao ha%selecao de capitulo%' OR (${chapterText}) LIKE '%sem seleção de capítulo%' OR (${chapterText}) LIKE '%sem selecao de capitulo%')`;
+  const chapterSelectNegatedSql = `((${chapterText}) LIKE '%não há chapter select%' OR (${chapterText}) LIKE '%nao ha chapter select%' OR (${chapterText}) LIKE '%não tem chapter select%' OR (${chapterText}) LIKE '%nao tem chapter select%' OR (${chapterText}) LIKE '%sem chapter select%' OR (${chapterText}) LIKE '%não existe chapter select%' OR (${chapterText}) LIKE '%nao existe chapter select%' OR (${chapterText}) LIKE '%não há seleção de capítulo%' OR (${chapterText}) LIKE '%nao ha selecao de capitulo%' OR (${chapterText}) LIKE '%sem seleção de capítulo%' OR (${chapterText}) LIKE '%sem selecao de capitulo%')`;
 
   if (search) {
     const tokens = String(search || '')
@@ -454,13 +499,16 @@ function buildListFilters({ search = '', facet = 'all' } = {}) {
 
 function normalizeListRow(row) {
   const normalizedSlug = String(row.slug || '').trim().toLowerCase();
+  const canonicalMissableCount = CANONICAL_MISSABLE_TROPHIES_BY_SLUG[normalizedSlug]?.size || null;
+  const missableCount = canonicalMissableCount ?? Number(row.missable_count || 0);
+  const spoilerCount = Number(row.spoiler_count || 0);
   return {
     ...row,
     trophy_count: Number(row.trophy_count || 0),
     roadmap_count: Number(row.roadmap_count || 0),
-    missable_count: Number(row.missable_count || 0),
-    spoiler_count: Number(row.spoiler_count || 0),
-    attention_count: Number(row.attention_count || 0),
+    missable_count: missableCount,
+    spoiler_count: spoilerCount,
+    attention_count: canonicalMissableCount ? missableCount + spoilerCount : Number(row.attention_count || 0),
     editorial_status: normalizeEditorialStatus(row.editorial_status),
     publication_status: normalizeEditorialStatus(row.editorial_status),
     ...buildEditorialReviewFields(row),
@@ -886,8 +934,15 @@ function buildEffectiveUpdatePayload(existing = {}, payload = {}) {
   const bestFor = pick(['best_for', 'ideal_for', 'guide_ideal'], payload.best_for, firstText(existing.best_for, existing.guide_ideal));
   const avoidIf = pick(['avoid_if', 'avoid_for', 'guide_avoid'], payload.avoid_if, firstText(existing.avoid_if, existing.guide_avoid));
   const firstRunAdvice = pick(['first_run_advice', 'best_for_when', 'guide_best_moment'], payload.first_run_advice, firstText(existing.first_run_advice, existing.guide_best_moment));
-  const verificationStatus = pick(['verification_status', 'is_verified'], payload.verification_status, existing.verification_status || (existing.is_verified ? 'verified' : 'unverified'));
-  const editorialReviewStatus = pick(['editorial_review_status', 'editorialReviewStatus', 'editorialStatus'], payload.editorial_review_status, existing.editorial_review_status || '');
+  const protectsVerifiedBaseGuide = String(existing.slug || '').trim().toLowerCase() === 'elden-ring'
+    && (existing.is_verified || existing.verification_status === 'verified' || existing.editorial_review_status === 'verified')
+    && payload.is_verified !== false;
+  const verificationStatus = protectsVerifiedBaseGuide
+    ? 'verified'
+    : pick(['verification_status', 'is_verified'], payload.verification_status, existing.verification_status || (existing.is_verified ? 'verified' : 'unverified'));
+  const editorialReviewStatus = protectsVerifiedBaseGuide
+    ? 'verified'
+    : pick(['editorial_review_status', 'editorialReviewStatus', 'editorialStatus'], payload.editorial_review_status, existing.editorial_review_status || '');
 
   return {
     ...payload,
@@ -922,7 +977,9 @@ function buildEffectiveUpdatePayload(existing = {}, payload = {}) {
     quality_warnings: pick(['quality_warnings', 'qualityWarnings'], payload.quality_warnings, existing.quality_warnings || ''),
     reviewed_by: pick(['reviewed_by', 'reviewedBy'], payload.reviewed_by, existing.reviewed_by || ''),
     coverage_level: pick(['coverage_level'], payload.coverage_level, existing.coverage_level || ''),
-    is_verified: hasAnyPayloadField(payload, ['is_verified', 'verification_status', 'editorial_review_status', 'editorialReviewStatus', 'editorialStatus'])
+    is_verified: protectsVerifiedBaseGuide
+      ? true
+      : hasAnyPayloadField(payload, ['is_verified', 'verification_status', 'editorial_review_status', 'editorialReviewStatus', 'editorialStatus'])
       ? payload.is_verified
       : Boolean(existing.is_verified),
     verification_note: pick(['verification_note'], payload.verification_note, existing.verification_note || ''),

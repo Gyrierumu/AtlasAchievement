@@ -57,6 +57,10 @@ function hasManualVerifiedStatus(row = {}) {
     || row?.editorialReviewStatus === 'verified';
 }
 
+function hasManualVerificationMetadata(row = {}) {
+  return Boolean(row?.reviewed_by || row?.reviewedBy || row?.last_reviewed_at || row?.lastReviewedAt || row?.editorial_notes || row?.editorialNotes);
+}
+
 function buildSeedEditorialPersistence(game = {}, existing = null, options = {}) {
   const seedVerificationStatus = normalizeVerificationStatus(game);
   const seedReviewStatus = game.editorial_review_status || game.editorialReviewStatus || null;
@@ -64,7 +68,13 @@ function buildSeedEditorialPersistence(game = {}, existing = null, options = {})
     ? JSON.stringify(game.quality_warnings || game.qualityWarnings)
     : (game.quality_warnings || game.qualityWarnings || '');
 
-  if (existing && hasManualVerifiedStatus(existing) && options.forceEditorialStatus !== true) {
+  const shouldPreserveManualVerification = existing
+    && hasManualVerifiedStatus(existing)
+    && options.forceEditorialStatus !== true
+    && process.env.NODE_ENV === 'production'
+    && hasManualVerificationMetadata(existing);
+
+  if (shouldPreserveManualVerification) {
     return {
       verificationStatus: 'verified',
       isVerified: 1,
@@ -578,6 +588,9 @@ async function shouldSyncSeedGame(seedSlug, options = {}) {
             g.is_verified,
             g.verification_status,
             g.editorial_review_status,
+            g.last_reviewed_at,
+            g.editorial_notes,
+            g.reviewed_by,
             COUNT(DISTINCT t.id) AS trophy_count,
             COUNT(DISTINCT r.id) AS roadmap_count
        FROM games g
@@ -749,6 +762,142 @@ async function syncSeedGameRoadmapFromSeed(seedSlug) {
     await run(
       'INSERT INTO roadmaps (game_id, step_order, content) VALUES (?, ?, ?)',
       [existing.id, index + 1, serializeRoadmapStep(game.roadmap[index], index, game.roadmap.length)]
+    );
+  }
+}
+
+async function syncEldenRingVerifiedGuideFromSeed() {
+  const game = getSeedGameBySlug('elden-ring');
+  if (!game) return;
+
+  const slug = getCanonicalGameSlug(game.slug || game.name);
+  const existing = await get(
+    `SELECT id,
+            is_verified,
+            verification_status,
+            editorial_review_status,
+            verification_note,
+            last_reviewed_at,
+            editorial_notes,
+            quality_warnings,
+            reviewed_by
+       FROM games
+      WHERE slug = ? OR name = ?
+      ORDER BY id ASC
+      LIMIT 1`,
+    [slug, game.name]
+  );
+  if (!existing) return;
+
+  const timeMeta = formatTimeMetadata(game.time);
+  const timeMinHours = Number.isFinite(Number(game.time_min_hours)) ? Number(game.time_min_hours) : timeMeta.time_min_hours;
+  const timeMaxHours = Number.isFinite(Number(game.time_max_hours)) ? Number(game.time_max_hours) : timeMeta.time_max_hours;
+  const timeSortHours = Number.isFinite(Number(game.time_sort_hours)) ? Number(game.time_sort_hours) : timeMeta.time_sort_hours;
+  const timeBucket = game.time_bucket || timeMeta.time_bucket;
+  const editorialPersistence = buildSeedEditorialPersistence(game, existing);
+  const coverageSeed = {
+    ...game,
+    verification_status: editorialPersistence.verificationStatus,
+    is_verified: editorialPersistence.isVerified
+  };
+
+  await run(
+    `UPDATE games
+        SET name = ?,
+            slug = ?,
+            difficulty = ?,
+            time = ?,
+            time_min_hours = ?,
+            time_max_hours = ?,
+            time_sort_hours = ?,
+            time_bucket = ?,
+            missable = ?,
+            runs_summary = ?,
+            missable_summary = ?,
+            online_summary = ?,
+            grind_summary = ?,
+            dlc_scope = ?,
+            difficulty_reason = ?,
+            time_reason = ?,
+            first_run_advice = ?,
+            cleanup_advice = ?,
+            before_you_start = ?,
+            best_for = ?,
+            avoid_if = ?,
+            verification_status = ?,
+            editorial_status = ?,
+            coverage_level = ?,
+            is_verified = ?,
+            verification_note = ?,
+            editorial_review_status = ?,
+            last_reviewed_at = ?,
+            editorial_notes = ?,
+            quality_warnings = ?,
+            reviewed_by = ?,
+            image = ?,
+            cover_image = ?
+      WHERE id = ?`,
+    [
+      game.name,
+      slug,
+      game.difficulty,
+      game.time,
+      timeMinHours,
+      timeMaxHours,
+      timeSortHours,
+      timeBucket,
+      game.missable,
+      game.runs_summary || game.guide_runs || game.runs || '',
+      game.missable_summary || game.missable || '',
+      game.online_summary || game.guide_online || game.online || '',
+      game.grind_summary || game.guide_grind || game.grind || '',
+      game.dlc_scope || game.guide_dlc || game.dlc || '',
+      game.difficulty_reason || '',
+      game.time_reason || '',
+      game.first_run_advice || game.guide_best_moment || game.best_for_when || '',
+      game.cleanup_advice || '',
+      game.before_you_start || '',
+      game.best_for || game.guide_ideal || game.ideal_for || '',
+      game.avoid_if || game.guide_avoid || game.avoid_for || '',
+      editorialPersistence.verificationStatus,
+      game.editorial_status || 'published',
+      normalizeSeedCoverageLevel(coverageSeed),
+      editorialPersistence.isVerified,
+      editorialPersistence.verificationNote,
+      editorialPersistence.editorialReviewStatus,
+      editorialPersistence.lastReviewedAt,
+      editorialPersistence.editorialNotes,
+      editorialPersistence.qualityWarnings,
+      editorialPersistence.reviewedBy,
+      game.image || null,
+      game.cover_image || deriveSteamCoverImage(game.image) || null,
+      existing.id
+    ]
+  );
+
+  for (const trophy of game.trophies || []) {
+    await run(
+      `UPDATE trophies
+          SET name = ?,
+              name_pt = ?,
+              type = ?,
+              description = ?,
+              tip = ?,
+              is_missable = ?,
+              is_spoiler = ?
+        WHERE game_id = ?
+          AND trophy_code = ?`,
+      [
+        trophy.name,
+        trophy.name_pt || null,
+        normalizeTrophyType(trophy.type),
+        trophy.description,
+        trophy.tip,
+        trophy.is_missable ? 1 : 0,
+        trophy.is_spoiler ? 1 : 0,
+        existing.id,
+        trophy.id
+      ]
     );
   }
 }
@@ -1410,6 +1559,7 @@ async function migrate(options = {}) {
     await syncReviewedGuidesFromSeed();
   }
   await syncSeedGameRoadmapFromSeed('elden-ring');
+  await syncEldenRingVerifiedGuideFromSeed();
   await syncSeedGameRoadmapFromSeed('hades');
   await syncSeedGameFromSeed('pragmata', { insertIfMissing: true, forceSync: true });
   await syncSeedGameGuideSummaryAndRoadmapFromSeed('ghost-of-tsushima');

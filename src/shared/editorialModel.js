@@ -13,7 +13,9 @@
     difficulty: { label: 'Dificuldade', tone: 'warning' },
     cleanup: { label: 'Cleanup', tone: 'neutral' },
     grind: { label: 'Grind', tone: 'warning' },
-    run: { label: 'Run específica', tone: 'warning' }
+    run: { label: 'Risco de run', tone: 'warning' },
+    progress: { label: 'Progresso', tone: 'partial' },
+    system: { label: 'Sistema', tone: 'partial' }
   };
   const EDITORIAL_TRUST_STATUSES = {
     verified: {
@@ -172,14 +174,14 @@
     const tags = [];
     const isPlatinum = isCompletionTrophy(trophy);
     if (isPlatinum) return tags;
-    if (!isPlatinum && (trophy?.is_missable || (!hasNegatedMissableRiskTagText(text) && /perdivel|missable|perder|ficar indisponivel|bloqueia|sem chapter|no chapter|janela/.test(text)))) pushRiskTag(tags, 'missable');
+    if (!isPlatinum && (trophy?.is_missable || (!hasNegatedMissableRiskTagText(text) && /perdivel|missable|perder|ficar indisponivel|\bbloqueia|sem chapter|no chapter|janela/.test(text)))) pushRiskTag(tags, 'missable');
     if (trophy?.is_spoiler) pushRiskTag(tags, 'spoiler');
     if (/colet|colecion|collect|todos os|todas as|all |arquivo|files|memoriam|raccoon|lendari|legendary|mapa|cofre|tesouro|modelo|concept art/.test(text)) pushRiskTag(tags, 'collectible');
     if (/historia|story|campanha principal|progresso|automatico|ato |chapter|capitulo|final verdadeiro|finais|ending|conclua a historia|finish the game/.test(text)) pushRiskTag(tags, 'story');
     if (/dificuldade|difficulty|\bhard\b|madhouse|insanity|professional|nightmare|inferno|survival|rank s|s\+|sem cura|sem save|only your knife|faca/.test(text)) pushRiskTag(tags, 'difficulty');
     if (/cleanup|limpeza|pos-jogo|post-game|deixe para o final|volte depois|fast travel|recarregue|reload/.test(text)) pushRiskTag(tags, 'cleanup');
     if (/grind|farm|\brank\b|\bxp\b|\bnivel\b|\blevel\b|acumule|dinheiro|creditos|pontos|300|500|200\.000|mercenaries/.test(text)) pushRiskTag(tags, 'grind');
-    if (/run|campanha dedicada|multiplas campanhas|nova campanha|new game|ng\+|speedrun|sem usar|without|only|finais|final alternativo|backup/.test(text)) pushRiskTag(tags, 'run');
+    if (/\bruns?\b|campanha dedicada|multiplas campanhas|nova campanha|new game|ng\+|speedrun|sem usar|without|only|finais|final alternativo|backup/.test(text)) pushRiskTag(tags, 'run');
     return tags;
   }
 
@@ -254,10 +256,19 @@
       || game.editorialStatus
       || ''
     );
-    if (explicit) return explicit;
     if (game?.is_verified || game?.verification_status === 'verified') return 'verified';
+    if (explicit) return explicit;
     if (String(game?.editorial_status || '').toLowerCase() === 'draft') return 'draft';
     return inferEditorialTrustStatusFromNotes(game) || 'in_review';
+  }
+
+  function getEditorialStatusMessage(game = {}, badge = null) {
+    const status = normalizeEditorialTrustStatus(
+      typeof badge === 'string' ? badge : (badge?.status || getEditorialTrustStatus(game))
+    ) || 'in_review';
+    if (status === 'verified') return 'Guia revisado editorialmente para a lista base.';
+    if (status === 'draft') return EDITORIAL_TRUST_STATUSES.draft.detail;
+    return 'Este guia está em revisão editorial. A lista de troféus, perdíveis e localização em português ainda precisam de validação final.';
   }
 
   function getEditorialTrustBadge(game = {}) {
@@ -366,6 +377,7 @@
     normalizeEditorialTrustStatus,
     parseQualityWarnings,
     getEditorialTrustStatus,
+    getEditorialStatusMessage,
     getEditorialTrustBadge,
     getEditorialBadge,
     getGuideRoadmapCount,

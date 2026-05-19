@@ -26,6 +26,11 @@ window.UIGuide = (() => {
   const sharedCard = window.AtlasCardModel || {};
 
   const CHECKLIST_DENSITY_KEY = 'atlas_checklist_density';
+  const REQUIEM_EDITORIAL_SUMMARY = [
+    'Resident Evil Requiem combina campanha, coletáveis, objetivos situacionais e runs condicionais. A platina gira em torno de acompanhar saves manuais, controlar arquivos e colecionáveis, separar troféus de personagem e planejar restrições como speedrun, cura e uso do Blood Collector.',
+    'O ponto mais importante é não tratar toda tarefa situacional como perdível definitivo. Alguns objetivos exigem atenção em janelas específicas, mas muitos podem ser organizados com saves, nova run ou cleanup. Use a checklist para separar riscos reais, spoilers, coletáveis, dificuldade e objetivos acumuláveis.',
+    'A melhor rota é começar com uma campanha exploratória, mantendo saves manuais e marcando arquivos, Mr. Raccoons, cofres, containers da BSAA, armas, upgrades e eventos situacionais. Depois, use o roadmap para separar runs condicionais, limpeza de bônus, dificuldade e pendências da lista base.'
+  ];
   const CHECKLIST_DENSITIES = new Set(['comfortable', 'compact']);
   const GUIDE_FILTER_LABELS = {
     all: 'Todos',
@@ -57,8 +62,11 @@ window.UIGuide = (() => {
     const badge = viewModel.editorial?.statusBadge || getEditorialBadge(game);
     const reviewedAt = badge.lastReviewedAt || viewModel.editorial?.lastReviewedAt || game.last_reviewed_at || game.lastReviewedAt || '';
     const reviewedLabel = formatGuideReviewDate(reviewedAt);
-    const detail = badge.detail || 'Este guia ainda está passando por revisão editorial.';
-    const warningItems = Array.isArray(viewModel.editorial?.qualityWarnings) ? viewModel.editorial.qualityWarnings : (badge.qualityWarnings || []);
+    const isRequiem = String(game?.slug || '').trim().toLowerCase() === 'resident-evil-requiem';
+    const detail = isRequiem && sharedEditorial.getEditorialStatusMessage
+      ? sharedEditorial.getEditorialStatusMessage(game, badge)
+      : (badge.detail || 'Este guia ainda está passando por revisão editorial.');
+    const warningItems = isRequiem ? [] : (Array.isArray(viewModel.editorial?.qualityWarnings) ? viewModel.editorial.qualityWarnings : (badge.qualityWarnings || []));
     return `
       <div class="atlas-editorial-trust">
         <div class="atlas-editorial-trust__row">
@@ -324,11 +332,15 @@ window.UIGuide = (() => {
         .map(card => ({
           ...card,
           label: labels[card.id] || card.label,
-          value: card.id === 'coop' && /2 jogadores/i.test(String(card.detail || ''))
+          value: card.id === 'dlc' && String(game?.slug || '').trim().toLowerCase() === 'resident-evil-requiem'
+            ? 'DLC fora da platina base'
+            : card.id === 'coop' && /2 jogadores/i.test(String(card.detail || ''))
             ? '2 jogadores obrigatórios'
             : card.id === 'dlc' && /iceborne/i.test(`${card.value || ''} ${card.detail || ''}`)
               ? 'Base game sem Iceborne'
-              : card.id === 'dlc' && /sem dlcs?|base game|não necessária|nao necessaria/i.test(`${card.value || ''} ${card.detail || ''}`)
+              : card.id === 'dlc' && /shadow of the erdtree|fora da platina base|out_of_base_scope/i.test(`${card.value || ''} ${card.detail || ''} ${game?.dlc_status || ''}`)
+                ? 'DLC fora da platina base'
+                : card.id === 'dlc' && /sem dlcs?|base game|não necessária|nao necessaria/i.test(`${card.value || ''} ${card.detail || ''}`)
                 ? 'Base game sem DLCs'
                 : card.value
         }));
@@ -599,7 +611,7 @@ window.UIGuide = (() => {
           <div>
             <div class="atlas-eyebrow">Leia antes de começar</div>
             <h2 class="text-xl md:text-2xl font-extrabold tracking-tight mt-2">Alertas que mudam a rota da platina</h2>
-            <p class="text-white/58 mt-2 max-w-4xl">No máximo cinco pontos críticos antes do roadmap. Leia isso para evitar erro de ordem, DLC fora do escopo, coop esquecido ou cleanup mal planejado.</p>
+            <p class="text-white/58 mt-2 max-w-4xl">No máximo cinco pontos de atenção antes do roadmap. Leia isso para evitar erro de ordem, DLC fora do escopo, coop esquecido ou cleanup mal planejado.</p>
           </div>
           <span class="atlas-tag atlas-tag--soft">${escapeHtml(String(items.length))} alerta(s)</span>
         </div>
@@ -638,12 +650,23 @@ window.UIGuide = (() => {
 
   function renderGuideSummaryPanel(game = {}, viewModel = {}) {
     const nextAction = viewModel.nextActionModel || {};
+    const normalizedSlug = String(game?.slug || '').trim().toLowerCase();
+    const editorialParagraphs = normalizedSlug === 'resident-evil-requiem'
+      ? REQUIEM_EDITORIAL_SUMMARY
+      : normalizedSlug === 'elden-ring'
+      ? [
+          'Este guia de platina de Elden Ring foi pensado para quem quer completar a lista base sem depender apenas da lista crua de troféus. A rota prioriza finais, chefes com troféu, itens lendários e pontos que podem gerar retrabalho se você avançar sem planejamento.',
+          'O maior cuidado está em Bolt of Gransax, que pode ficar indisponível após a mudança de Leyndell, nos finais mutuamente exclusivos por save e na quest da Fia para Lichdragon Fortissax. Com backup de save antes da decisão final, é possível reduzir bastante o número de runs; sem backup, será necessário planejar NG+ ou novas jogadas.',
+          'Shadow of the Erdtree fica fora da platina base. Use primeiro o roadmap para organizar a rota e depois a checklist para acompanhar chefes, finais, lendários e cleanup.'
+        ]
+      : [];
     return `
       <section id="guideSummaryActions" class="atlas-panel atlas-panel--section atlas-guide-summary-actions p-5 md:p-6">
         <div>
           <div class="atlas-eyebrow">Plano rapido</div>
           <h2 class="text-xl md:text-2xl font-extrabold tracking-tight mt-2">Resumo da platina</h2>
           <p class="text-white/62 mt-2 max-w-3xl">${escapeHtml(nextAction.detail || 'Leia o resumo, abra o roadmap quando precisar da ordem completa e use a checklist para acompanhar progresso.')}</p>
+          ${editorialParagraphs.length ? `<div class="atlas-guide-summary-editorial mt-4 space-y-3">${editorialParagraphs.map(paragraph => `<p class="text-white/72 max-w-4xl">${escapeHtml(paragraph)}</p>`).join('')}</div>` : ''}
         </div>
         <div class="atlas-guide-summary-actions__buttons">
           <button type="button" class="atlas-btn atlas-btn-primary" data-guide-action="roadmap"><i class="fas fa-route" aria-hidden="true"></i> Abrir roadmap</button>
@@ -664,6 +687,13 @@ window.UIGuide = (() => {
     const storageLabel = context.storageLabel || 'Salvo neste navegador';
     const libraryLabel = isSaved ? `${storageLabel} • ${getLibraryStatusLabel(libraryEntry?.status, viewModel.progress)}` : 'Ainda não salvo';
     const nextAction = viewModel.nextActionModel || {};
+    const guidanceCounts = viewModel.guidanceCounts || {};
+    const criticalAlertsCount = Number(guidanceCounts.criticalAlertsCount ?? viewModel.criticalAlertsCount ?? 0);
+    const checklistTipsCount = Number(guidanceCounts.checklistTipsCount ?? viewModel.checklistTipsCount ?? 0);
+    const totalGuidanceCount = Number(guidanceCounts.totalGuidanceCount ?? viewModel.totalGuidanceCount ?? viewModel.riskCounts?.alertCount ?? 0);
+    const guidanceCounterHtml = criticalAlertsCount > 0 && checklistTipsCount > 0
+      ? `<span class="atlas-sidebar-counts__risk">${escapeHtml(String(criticalAlertsCount))} alertas críticos</span><span class="atlas-sidebar-counts__pending">${escapeHtml(String(checklistTipsCount))} dicas</span>`
+      : `<span class="atlas-sidebar-counts__risk">${escapeHtml(String(totalGuidanceCount))} dicas e alertas</span>`;
     return `
       <section class="atlas-panel atlas-panel--section atlas-guide-sidebar-card p-5">
         <div class="atlas-guide-sidebar-card__top">
@@ -679,7 +709,7 @@ window.UIGuide = (() => {
         <div class="atlas-sidebar-counts">
           <span class="atlas-sidebar-counts__complete"><strong id="guideCompletedCount" data-guide-completed-count>${escapeHtml(String(viewModel.completed))}</strong> concluídos</span>
           <span class="atlas-sidebar-counts__pending"><strong id="guideRemainingCount" data-guide-remaining-count>${escapeHtml(String(viewModel.pending))}</strong> pendentes</span>
-          <span class="atlas-sidebar-counts__risk">${escapeHtml(String(viewModel.riskCounts?.alertCount || 0))} alertas</span>
+          ${guidanceCounterHtml}
         </div>
         <div class="atlas-sidebar-next">
           <div class="atlas-eyebrow">Próximo passo</div>
@@ -696,7 +726,7 @@ window.UIGuide = (() => {
   }
 
   function renderGuideEditorialNotes(game = {}, viewModel = {}) {
-    const routeTrophies = Array.isArray(viewModel.routeChangingTrophies) ? viewModel.routeChangingTrophies.slice(0, 4) : [];
+    const routeTrophies = Array.isArray(viewModel.routeChangingTrophies) ? viewModel.routeChangingTrophies.slice(0, 5) : [];
     const normalizedSlug = String(game?.slug || '').trim().toLowerCase();
     const faqLimit = normalizedSlug === 'nioh-3' ? 11 : (['saros', 'the-last-of-us-part-i', 'subnautica'].includes(normalizedSlug) ? 10 : (normalizedSlug === 'the-last-of-us-part-ii' ? 11 : 6));
     const faqItems = Array.isArray(viewModel.contextualFaq) ? viewModel.contextualFaq.slice(0, faqLimit) : [];
@@ -715,8 +745,9 @@ window.UIGuide = (() => {
         </div>
         <div class="atlas-editorial-notes__grid">
           <details class="atlas-editorial-note" open>
-            <summary><span>Pontos críticos</span><small>${escapeHtml(String(routeTrophies.length || 0))}</small></summary>
+            <summary><span>Pontos de atenção</span><small>${escapeHtml(String(routeTrophies.length || 0))}</small></summary>
             <div class="atlas-editorial-notes__column">
+            <p class="atlas-muted-copy">Riscos, spoilers, runs condicionais e objetivos que merecem acompanhamento durante a platina.</p>
             ${routeTrophies.length ? routeTrophies.map(item => {
               const badge = Array.isArray(item.tags) && item.tags.length ? item.tags[0] : null;
               return `<article class="atlas-critical-row"><div><strong>${escapeHtml(item.name)}</strong><p>${escapeHtml(item.text)}</p></div><span class="atlas-badge atlas-badge--${escapeAttribute(badge?.tone || 'neutral')}">${escapeHtml(badge?.label || item.type)}</span></article>`;
@@ -843,7 +874,7 @@ window.UIGuide = (() => {
 
   function renderGuideRelatedCards(relatedGames = []) {
     if (!Array.isArray(relatedGames) || !relatedGames.length) {
-      return '<div class="atlas-inline-empty md:col-span-2">Conforme o catálogo crescer, os jogos parecidos e a próxima trilha aparecem aqui.</div>';
+      return '';
     }
 
     return relatedGames.map(item => {
@@ -876,6 +907,7 @@ window.UIGuide = (() => {
   }
 
   function renderGuideRelatedOverview(game, relatedGames = [], comparisonModel = null) {
+    if (!Array.isArray(relatedGames) || !relatedGames.length) return '';
     return `<section class="atlas-related-suggestions md:col-span-2 space-y-4"><div class="atlas-decision-panel__header"><div><span class="atlas-section-kicker">Jogos relacionados</span><h2 class="text-lg md:text-xl font-extrabold mt-2">Guias parecidos para manter o ritmo</h2></div><span class="atlas-tag atlas-tag--soft">Descoberta</span></div><div class="atlas-related-suggestions__grid">${renderGuideRelatedCards(relatedGames)}</div></section>`;
   }
 
