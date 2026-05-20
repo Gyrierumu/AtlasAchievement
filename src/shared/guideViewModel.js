@@ -1229,7 +1229,7 @@
     return cards;
   }
 
-  function buildRouteChangingTrophies(trophies = []) {
+  function buildRouteChangingTrophies(trophies = [], game = {}) {
     const trophyById = new Map((Array.isArray(trophies) ? trophies : []).map(trophy => [trophy?.id, trophy]).filter(([id]) => id));
     const eldenCriticalIds = ['er_elden_lord', 'er_age_of_stars', 'er_frenzied_flame', 'er_legendary_armaments', 'er_fortissax'];
     if (eldenCriticalIds.every(id => trophyById.has(id))) {
@@ -1329,6 +1329,89 @@
           score: 95
         }
       ];
+    }
+
+    const pragmataAttentionIds = [
+      'pragmata_our_promise',
+      'pragmata_lunar_supremacy',
+      'pragmata_the_right_man_for_the_job',
+      'pragmata_its_over_6000',
+      'pragmata_youre_not_getting_away'
+    ];
+    if (String(game?.slug || '').trim().toLowerCase() === 'pragmata' && pragmataAttentionIds.every(id => trophyById.has(id))) {
+      const attentionTag = (label, tone = 'warning') => ({ id: normalizeGuideSignalText(label).replace(/\s+/g, '-'), label, tone });
+      return [
+        {
+          id: 'pragmata_our_promise',
+          name: trophyById.get('pragmata_our_promise')?.name || 'Our Promise',
+          type: 'Spoiler / História',
+          text: 'Relacionado à conclusão da campanha. Mantenha saves, progresso de Diana e checklist organizados antes de avançar para o pós-jogo.',
+          tags: [attentionTag('Spoiler / História', 'spoiler')],
+          score: 99
+        },
+        {
+          id: 'pragmata_lunar_supremacy',
+          name: trophyById.get('pragmata_lunar_supremacy')?.name || 'Lunar Supremacy',
+          type: 'Dificuldade / Risco de run',
+          text: 'Faça em jogada separada na dificuldade Lunatic. Deixe essa run para depois de conhecer combate, hacking, rotas e chefes.',
+          tags: [attentionTag('Dificuldade / Risco de run', 'risk')],
+          score: 98
+        },
+        {
+          id: 'pragmata_the_right_man_for_the_job',
+          name: trophyById.get('pragmata_the_right_man_for_the_job')?.name || 'The Right Man for the Job',
+          type: 'Cleanup / Pós-jogo',
+          text: 'Relacionado ao modo Unknown Signal. Deixe para depois da campanha base e use o checklist para fechar pendências.',
+          tags: [attentionTag('Cleanup / Pós-jogo', 'partial')],
+          score: 97
+        },
+        {
+          id: 'pragmata_its_over_6000',
+          name: trophyById.get('pragmata_its_over_6000')?.name || "IT'S OVER 6000!",
+          type: 'Combate / Situacional',
+          text: 'Objetivo de dano em oportunidade curta. Prepare setup forte e aproveite uma situação favorável antes de avançar demais.',
+          tags: [attentionTag('Combate / Situacional', 'warning')],
+          score: 96
+        },
+        {
+          id: 'pragmata_youre_not_getting_away',
+          name: trophyById.get('pragmata_youre_not_getting_away')?.name || "You're Not Getting Away That Easy",
+          type: 'Perdível / Combate',
+          text: 'Derrote o Sweeper bot quando a oportunidade aparecer. Não deixe esse alerta para o pós-jogo sem confirmar que ele ainda pode ser repetido.',
+          tags: [attentionTag('Perdível / Combate', 'risk')],
+          score: 95
+        }
+      ];
+    }
+
+    const astroAttentionCopy = {
+      astrobot_deep_pocket_dragon: 'Relacionado a uma interação específica no Crash Site. Deixe para o cleanup, quando já tiver mais bots, recompensas e acesso amplo ao hub.',
+      astrobot_lost_and_found: 'Depende de encontrar e concluir fases da Lost Galaxy. Revise saídas secretas e portais escondidos antes de encerrar a platina.',
+      astrobot_monumental_achievement: 'Relacionado ao progresso final de coletáveis e desbloqueios no Crash Site. Resolva depois de avançar bem bots, puzzle pieces e Gatcha Lab.',
+      astrobot_singstars: 'Exige progresso suficiente nas peças da nave e interação no Crash Site. Volte ao hub no cleanup para conferir se todas as condições foram liberadas.',
+      astrobot_the_golden_bot: 'Relacionado ao conteúdo final da lista base. Deixe para depois de limpar bots, puzzle pieces, Lost Galaxy e desafios principais.'
+    };
+    const astroAttentionIds = Object.keys(astroAttentionCopy);
+    if (String(game?.slug || '').trim().toLowerCase() === 'astro-bot' && astroAttentionIds.every(id => trophyById.has(id))) {
+      const orderedIds = [
+        'astrobot_deep_pocket_dragon',
+        'astrobot_lost_and_found',
+        'astrobot_monumental_achievement',
+        'astrobot_singstars',
+        'astrobot_the_golden_bot'
+      ];
+      return orderedIds.map((id, index) => {
+        const trophy = trophyById.get(id);
+        const tags = getTrophyRiskTags(trophy).filter(tag => tag.id !== 'missable');
+        return {
+          id,
+          name: trophy?.name || id,
+          type: trophy?.type || 'Troféu',
+          text: astroAttentionCopy[id],
+          tags,
+          score: 100 - index
+        };
+      });
     }
 
     const weights = { missable: 7, spoiler: 5, difficulty: 5, collectible: 4, grind: 4, run: 4, cleanup: 3, story: 1 };
@@ -2129,43 +2212,27 @@
       return [
         {
           question: 'PRAGMATA tem troféus perdíveis?',
-          answer: 'Até a última revisão editorial, o guia trata 1 troféu como potencialmente perdível: You\'re Not Getting Away That Easy. Esse ponto segue em validação por ser um jogo recente.'
+          answer: 'Sim. O guia trata 1 troféu como perdível ou sensível a janela de oportunidade: You\'re Not Getting Away That Easy. Leia os pontos de atenção antes da primeira campanha para evitar repetir progresso.'
         },
         {
           question: 'PRAGMATA precisa de online para platinar?',
-          answer: 'Não. A lista atual não indica troféus online, servidores ou assinatura obrigatória para a platina.'
+          answer: 'Não. A platina base não exige online, servidores ou assinatura obrigatória.'
         },
         {
           question: 'PRAGMATA tem coop obrigatório?',
-          answer: 'Não. As fontes oficiais descrevem PRAGMATA como single-player, e a lista de troféus não indica coop obrigatório.'
+          answer: 'Não. A platina base é single-player e não exige coop.'
         },
         {
           question: 'Quanto tempo leva para platinar PRAGMATA?',
-          answer: timeLabel ? `O tempo estimado inicial do guia é ${timeLabel}, considerando campanha, coletáveis, Unknown Signal, Training Sims, cleanup e Lunatic.` : reviewAnswer
+          answer: 'O tempo estimado é 30-35 horas, considerando campanha, exploração, coletáveis, Unknown Signal, Training Sims, cleanup e uma jogada em Lunatic.'
         },
         {
           question: 'Qual a dificuldade da platina de PRAGMATA?',
-          answer: difficulty > 0 ? `A dificuldade cadastrada é ${difficulty}/10. O maior peso inicial está na campanha em Lunatic, no possível perdível e em objetivos situacionais de combate/coleta.` : reviewAnswer
+          answer: 'A dificuldade cadastrada é 6/10. O peso vem de Lunatic, objetivos situacionais, combate, hacking, exploração e atenção aos perdíveis.'
         },
         {
           question: 'Quantas jogadas são necessárias para platinar PRAGMATA?',
           answer: 'O guia recomenda 2 jogadas: uma primeira campanha para aprender sistemas e limpar bastante conteúdo, e uma campanha em Lunatic para o troféu de dificuldade.'
-        },
-        {
-          question: 'DLC ou Deluxe Edition são necessárias para a platina?',
-          answer: 'Não. O guia cobre a lista base e não trata DLC, Deluxe Edition, cosméticos ou bônus de pré-venda como requisito da platina.'
-        },
-        {
-          question: 'O modo Lunatic é obrigatório para a platina?',
-          answer: 'Sim, a lista atual inclui Lunar Supremacy, que exige concluir o jogo na dificuldade Lunatic. A relação com New Game+ ainda deve ser revalidada após patches e novas fontes.'
-        },
-        {
-          question: 'Dá para limpar coletáveis depois da história?',
-          answer: 'Este ponto ainda está em validação. O roadmap orienta usar Unknown Signal e cleanup pós-game para revisar setores, mas recomenda acompanhar coletáveis desde a primeira campanha.'
-        },
-        {
-          question: 'O guia já está verificado?',
-          answer: 'Não. PRAGMATA está como guia inicial em revisão editorial, com avisos para checagem de patches, localização de troféus e validação de perdíveis.'
         }
       ];
     }
@@ -2278,6 +2345,35 @@
         },
         {
           question: 'A DLC é necessária para a platina de Hades II?',
+          answer: 'Não. A platina base não exige DLC.'
+        }
+      ];
+    }
+
+    if (String(game?.slug || '').trim().toLowerCase() === 'astro-bot') {
+      return [
+        {
+          question: 'Astro Bot tem troféus perdíveis?',
+          answer: 'Não. A lista base de Astro Bot não tem troféus perdíveis. A platina pode ser finalizada com revisita de fases, seleção de níveis e cleanup.'
+        },
+        {
+          question: 'Astro Bot precisa de online para platinar?',
+          answer: 'Não. A platina base não exige online, servidores, PS+ ou rankings.'
+        },
+        {
+          question: 'Quanto tempo leva para platinar Astro Bot?',
+          answer: 'O tempo estimado é de cerca de 15 horas, variando conforme exploração, desafios, bots, puzzle pieces, Lost Galaxy e cleanup final.'
+        },
+        {
+          question: 'Qual a dificuldade da platina de Astro Bot?',
+          answer: 'A dificuldade cadastrada é 3/10. O desafio vem mais de exploração, fases especiais e alguns objetivos situacionais do que de execução pesada.'
+        },
+        {
+          question: 'Astro Bot tem coop obrigatório?',
+          answer: 'Não. A platina base é single-player e não exige coop.'
+        },
+        {
+          question: 'A DLC é necessária para a platina de Astro Bot?',
           answer: 'Não. A platina base não exige DLC.'
         }
       ];
@@ -2920,7 +3016,7 @@
       roadmapStages: buildDecisionRoadmapStages({ roadmap: roadmapStagesSource }),
       criticalAlerts: buildCriticalTrophyAlerts(game, trophies),
       executionProfile: buildExecutionProfile(game, trophies, roadmap),
-      routeChangingTrophies: buildRouteChangingTrophies(trophies),
+      routeChangingTrophies: buildRouteChangingTrophies(trophies, game),
       spotlightTrophies: trophies
         .filter(trophy => trophy?.is_spoiler || /perd|miss|colet|online|grind|dific/i.test(`${trophy?.name || ''} ${trophy?.description || ''} ${trophy?.tip || ''}`))
         .slice(0, 3)

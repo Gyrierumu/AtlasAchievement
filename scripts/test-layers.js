@@ -307,6 +307,69 @@ async function validateGuide(slug = '') {
       assert(!hades2Text.includes(text), `Hades II nao deve conter texto publico/internal incorreto: ${text}`);
     });
   }
+  if (slug === 'astro-bot') {
+    const astroText = visibleGameText(seedGame);
+    const tagCount = tagId => seedGame.trophies.filter(trophy => guideModel.getGuideTrophyTags(trophy, seedGame).some(tag => tag.id === tagId)).length;
+    assert.strictEqual(seedGame.is_verified, true, 'Astro Bot deve continuar verified no seed');
+    assert.strictEqual(seedGame.verification_status, 'verified', 'Astro Bot deve continuar com verification_status verified');
+    assert.strictEqual(viewModel.trophies.length, 44, 'Astro Bot deve manter 44 trofeus');
+    assert.strictEqual(viewModel.missableCount, 0, 'Astro Bot deve manter missableCount 0');
+    assert.strictEqual(seedGame.trophies.filter(item => item.is_missable).length, 0, 'Astro Bot nao deve marcar trofeus como Perdiveis');
+    assert.strictEqual(tagCount('grind'), 0, 'Astro Bot deve manter Grind 0');
+    assert.strictEqual(tagCount('collectible'), 19, 'Astro Bot deve manter Coletaveis 19');
+    assert.strictEqual(tagCount('difficulty'), 2, 'Astro Bot deve manter Dificuldade 2');
+    assert.strictEqual(tagCount('cleanup'), 0, 'Astro Bot deve manter Cleanup 0');
+    assert.strictEqual(viewModel.roadmapStages.length, 6, 'Astro Bot deve manter roadmap com 6 etapas');
+    assert.strictEqual(seedGame.dlcRequired || seedGame.dlc_required || false, false, 'Astro Bot deve manter DLC nao obrigatoria');
+    ['dados atuais do guia', 'segundo os dados atuais do guia', 'o guia não aponta', 'Base game sem DLCs'].forEach(text => {
+      assert(!astroText.includes(text), `Astro Bot nao deve conter texto publico incorreto: ${text}`);
+    });
+  }
+  if (slug === 'pragmata') {
+    const pragmataText = visibleGameText(seedGame);
+    const realMissables = seedGame.trophies.filter(item => item.is_missable || item.isMissable);
+    const itsOver6000 = seedGame.trophies.find(item => item.id === 'pragmata_its_over_6000');
+    const youreNotGettingAway = seedGame.trophies.find(item => item.id === 'pragmata_youre_not_getting_away');
+    const routeItems = viewModel.routeChangingTrophies || [];
+    assert.strictEqual(seedGame.is_verified, true, 'PRAGMATA deve continuar verified no seed');
+    assert.strictEqual(seedGame.verification_status, 'verified', 'PRAGMATA deve continuar com verification_status verified');
+    assert.strictEqual(viewModel.editorial.statusBadge.label, 'Verificado', 'PRAGMATA deve exibir selo Verificado');
+    assert.strictEqual(viewModel.editorial.statusBadge.detail, 'Guia revisado editorialmente.', 'PRAGMATA deve exibir mensagem publica revisada');
+    assert.strictEqual(viewModel.trophies.length, 36, 'PRAGMATA deve manter 36 trofeus');
+    assert.strictEqual(viewModel.missableCount, realMissables.length, 'PRAGMATA deve alinhar missableCount com trofeus marcados');
+    assert.strictEqual(viewModel.missableCount, 1, 'PRAGMATA deve manter 1 perdivel real no guia');
+    assert.deepStrictEqual(realMissables.map(item => item.name), ["You're Not Getting Away That Easy"], 'PRAGMATA deve marcar apenas Youre Not Getting Away That Easy como perdivel');
+    assert(itsOver6000 && !itsOver6000.is_missable && !itsOver6000.isMissable, "IT'S OVER 6000! nao deve ser perdivel definitivo");
+    assert(youreNotGettingAway && (youreNotGettingAway.is_missable || youreNotGettingAway.isMissable), "You're Not Getting Away That Easy deve permanecer perdivel");
+    assert.strictEqual(viewModel.guidanceCounts.criticalAlertsCount, viewModel.missableCount, 'PRAGMATA deve alinhar alertas criticos e perdiveis');
+    assert(routeItems.some(item => item.id === 'pragmata_youre_not_getting_away' && /Perd/i.test(item.type)), 'Pontos de atencao de PRAGMATA devem incluir o perdivel confirmado');
+    assert(routeItems.some(item => item.id === 'pragmata_its_over_6000' && /Situacional/i.test(item.type)), "IT'S OVER 6000! deve aparecer como situacional");
+    assert.strictEqual(viewModel.roadmapStages.length, 6, 'PRAGMATA deve manter roadmap com 6 etapas');
+    assert.strictEqual(seedGame.dlcRequired || seedGame.dlc_required || false, false, 'PRAGMATA deve manter DLC nao obrigatoria');
+    assert(pragmataText.includes('DLC fora da platina base'), 'PRAGMATA deve padronizar DLC fora da platina base');
+    [
+      'em revisão editorial',
+      'validação editorial',
+      'segue em validação',
+      'potencialmente perdível',
+      'se essa validação',
+      'se essa informação',
+      'mantendo PRAGMATA em revisão editorial',
+      'dados atuais do guia',
+      'lista atual',
+      'o guia não aponta',
+      'needs_patch_check',
+      'needs_missables_validation',
+      'needs_trophy_localization_check',
+      'manual_editorial_verification',
+      'pt_br_localization_check',
+      'bugged_unlock',
+      'Base game sem DLCs',
+      'Descrição em revisão editorial.'
+    ].forEach(text => {
+      assert(!pragmataText.includes(text), `PRAGMATA nao deve conter texto publico/internal incorreto: ${text}`);
+    });
+  }
 
   await withTempApp(async ({ baseUrl, run }) => {
     const apiGame = await fetchJson(`${baseUrl}/api/games/slug/${slug}`);
@@ -393,6 +456,81 @@ async function validateGuide(slug = '') {
       assert(!/Witch of the Clouds[\s\S]{0,500}Perdível/i.test(html), 'Witch of the Clouds nao deve aparecer como Perdivel no HTML');
       assert(!/>\s*null\s*</i.test(html), 'Hades II SSR nao deve exibir null visivel');
       assert.strictEqual(getCanonical(html), 'https://atlasachievement.com.br/jogo/hades-ii', 'canonical de Hades II deve usar dominio de producao');
+    }
+    if (slug === 'astro-bot') {
+      assert.strictEqual(apiGame.is_verified, true, 'API de Astro Bot deve continuar verified');
+      assert.strictEqual(apiGame.verification_status, 'verified', 'API de Astro Bot deve expor verification_status verified');
+      assert.strictEqual(apiGame.trophies.length, 44, 'API de Astro Bot deve manter 44 trofeus');
+      assert.strictEqual(apiGame.missable_count, 0, 'API de Astro Bot deve manter missable_count 0');
+      assert.strictEqual(apiGame.trophies.filter(trophy => trophy.is_missable).length, 0, 'API de Astro Bot nao deve marcar trofeus como Perdiveis');
+      assert.strictEqual(apiGame.dlcRequired || apiGame.dlc_required || false, false, 'API de Astro Bot deve manter DLC nao obrigatoria');
+      assert(html.includes('Astro Bot — Guia de platina e troféus'), 'Astro Bot deve renderizar H1 esperado');
+      assert(html.includes('Verificado'), 'Astro Bot deve renderizar status Verificado');
+      assert(html.includes('DLC fora da platina base'), 'Astro Bot deve exibir DLC fora da platina base');
+      assert(html.includes('Astro Bot é uma platina curta, acessível'), 'Astro Bot deve exibir resumo editorial novo');
+      const astroSummaryHtml = html.match(/<div class="atlas-guide-summary-editorial[\s\S]*?<\/div>/)?.[0] || '';
+      assert((astroSummaryHtml.match(/<p\b/g) || []).length >= 2, 'Resumo de Astro Bot deve ter pelo menos 2 paragrafos editoriais');
+      assert(html.includes('A lista base de Astro Bot não tem troféus perdíveis') && html.includes('A platina base não exige online'), 'FAQ de Astro Bot deve ter respostas diretas');
+      ['dados atuais do guia', 'o guia não aponta', 'segundo os dados atuais do guia', 'Base game sem DLCs', 'Descrição em revisão editorial.', '[object Object]', 'undefined'].forEach(text => {
+        assert(!html.includes(text), `Astro Bot SSR nao deve exibir: ${text}`);
+      });
+      ['Deep-Pocket Dragon', 'Lost And Found', 'Monumental Achievement', 'SingStars', 'The Golden Bot'].forEach(name => {
+        assert(html.includes(name), `Astro Bot deve manter ponto de atencao ${name}`);
+      });
+      assert(html.includes('Relacionado a uma interação específica no Crash Site'), 'Deep-Pocket Dragon deve ter orientacao especifica');
+      assert(html.includes('Depende de encontrar e concluir fases da Lost Galaxy'), 'Lost And Found deve ter orientacao especifica');
+      assert(!/>\s*null\s*</i.test(html), 'Astro Bot SSR nao deve exibir null visivel');
+      assert.strictEqual(getCanonical(html), 'https://atlasachievement.com.br/jogo/astro-bot', 'canonical de Astro Bot deve usar dominio de producao');
+    }
+    if (slug === 'pragmata') {
+      const normalizedHtml = normalizeText(html);
+      const apiMissables = apiGame.trophies.filter(trophy => trophy.is_missable);
+      assert.strictEqual(apiGame.is_verified, true, 'API de PRAGMATA deve continuar verified');
+      assert.strictEqual(apiGame.verification_status, 'verified', 'API de PRAGMATA deve expor verification_status verified');
+      assert.strictEqual(apiGame.trophies.length, 36, 'API de PRAGMATA deve manter 36 trofeus');
+      assert.strictEqual(apiGame.missable_count, apiMissables.length, 'API de PRAGMATA deve alinhar missable_count com checklist');
+      assert.strictEqual(apiGame.missable_count, 1, 'API de PRAGMATA deve manter 1 perdivel');
+      assert.deepStrictEqual(apiMissables.map(trophy => trophy.name), ["You're Not Getting Away That Easy"], 'API de PRAGMATA deve marcar o perdivel esperado');
+      assert.strictEqual(apiGame.onlineRequired || apiGame.online_required || false, false, 'API de PRAGMATA deve manter online 0');
+      assert.strictEqual(apiGame.coopRequired || apiGame.coop_required || false, false, 'API de PRAGMATA deve manter coop 0');
+      assert.strictEqual(apiGame.dlcRequired || apiGame.dlc_required || false, false, 'API de PRAGMATA deve manter DLC nao obrigatoria');
+      assert(html.includes('PRAGMATA'), 'PRAGMATA deve renderizar nome no SSR');
+      assert(html.includes('Verificado'), 'PRAGMATA deve renderizar status Verificado');
+      assert(html.includes('Guia revisado editorialmente.'), 'PRAGMATA deve renderizar mensagem publica revisada');
+      assert(html.includes('Tem perd'), 'PRAGMATA deve renderizar topo com perdivel');
+      assert(html.includes('DLC fora da platina base'), 'PRAGMATA deve exibir DLC fora da platina base');
+      assert(normalizedHtml.includes('pragmata e uma platina sci-fi single-player'), 'PRAGMATA deve exibir resumo editorial novo');
+      const summaryHtml = html.match(/<div class="atlas-guide-summary-editorial[\s\S]*?<\/div>/)?.[0] || '';
+      assert((summaryHtml.match(/<p\b/g) || []).length >= 2, 'Resumo de PRAGMATA deve ter pelo menos 2 paragrafos editoriais');
+      assert(html.includes("You're Not Getting Away That Easy") && html.includes('IT&#39;S OVER 6000!'), 'PRAGMATA deve renderizar pontos/trofeus principais');
+      assert(html.includes('O guia trata 1 trof') && html.includes("You're Not Getting Away That Easy"), 'FAQ de PRAGMATA deve concordar com 1 perdivel');
+      assert(html.includes('Combate / Situacional'), "IT'S OVER 6000! deve aparecer como ponto situacional, nao como perdivel");
+      [
+        'em revisão editorial',
+        'validação editorial',
+        'segue em validação',
+        'potencialmente perdível',
+        'se essa validação',
+        'se essa informação',
+        'mantendo PRAGMATA em revisão editorial',
+        'dados atuais do guia',
+        'lista atual',
+        'o guia não aponta',
+        'needs_patch_check',
+        'needs_missables_validation',
+        'needs_trophy_localization_check',
+        'manual_editorial_verification',
+        'pt_br_localization_check',
+        'bugged_unlock',
+        'Base game sem DLCs',
+        'Descrição em revisão editorial.',
+        '[object Object]',
+        'undefined'
+      ].forEach(text => {
+        assert(!html.includes(text), `PRAGMATA SSR nao deve exibir: ${text}`);
+      });
+      assert(!/>\s*null\s*</i.test(html), 'PRAGMATA SSR nao deve exibir null visivel');
+      assert.strictEqual(getCanonical(html), 'https://atlasachievement.com.br/jogo/pragmata', 'canonical de PRAGMATA deve usar dominio de producao');
     }
   });
 

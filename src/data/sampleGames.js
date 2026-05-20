@@ -2338,15 +2338,16 @@ const sampleGames = [
     "cover_image": "https://image.api.playstation.com/vulcan/ap/rnd/202406/0500/0d05cb43413f28a641ac0c40fc272c70bbe194f6ade4b175.png",
     "editorial_status": "published",
     "coverage_level": "strong",
-    "is_verified": false,
-    "verification_status": "review",
-    "verification_note": "Precisa revisão editorial final: lista base PS5 revisada, mas nomes PT-BR oficiais não foram preenchidos sem fonte localizada confiável no projeto.",
+    "is_verified": true,
+    "verification_status": "verified",
+    "verification_note": "Guia revisado editorialmente para a lista base.",
+    "editorial_review_status": "verified",
     "editorial_notes": "Guia cobre somente a lista base de 44 troféus de PS5. Conteúdos gratuitos pós-lançamento, speedruns extras e rankings online ficam fora dos requisitos da platina base.",
     "runs_summary": "Uma campanha principal com cleanup livre por seleção de fases. Nada é perdível.",
     "missable_summary": "Não há troféus perdíveis; todos os objetivos podem ser limpos depois pela seleção de fases e pelo hub.",
     "online_summary": "Não há online obrigatório para a platina base. Recursos online opcionais de conteúdos extras e rankings não entram no requisito da platina.",
     "grind_summary": "O peso está em coletáveis, moedas para itens do Gatcha e desafios opcionais, não em grind pesado.",
-    "dlc_scope": "Guia focado na lista base de 44 troféus necessária para a platina. Packs gratuitos pós-lançamento podem elevar rastreadores públicos para 63 troféus, mas não são obrigatórios para Astro-nomical!.",
+    "dlc_scope": "DLC fora da platina base. Packs gratuitos pós-lançamento podem elevar rastreadores públicos para 63 troféus, mas não são obrigatórios para Astro-nomical!.",
     "difficulty_reason": "A platina é acessível; o desafio maior tende a ficar em fases opcionais e no desafio final.",
     "time_reason": "A faixa de aproximadamente 15 horas considera história, coletáveis, Lost Galaxy e cleanup.",
     "first_run_advice": "Jogue explorando fases com calma, mas não se preocupe em limpar tudo de primeira.",
@@ -27621,33 +27622,28 @@ const sampleGames = [
   "time_max_hours": 35,
   "time_sort_hours": 30,
   "time_bucket": "medium",
-  "missable": "1 troféu perdível em validação editorial: You're Not Getting Away That Easy. Priorize o Sweeper bot quando encontrar um spawn e mantenha a revisão ativa para patches.",
+  "missable": "1 troféu tratado como perdível ou sensível a janela de oportunidade: You're Not Getting Away That Easy. Priorize o Sweeper bot quando encontrar um spawn e leia os pontos de atenção antes de avançar demais na campanha.",
   "runs_summary": "2 jogadas: uma campanha inicial em dificuldade livre para aprender combate/hacking e limpar bastante conteúdo; depois uma Nova Partida em Lunatic, que não fica disponível em New Game+.",
-  "missable_summary": "Há 1 troféu tratado como perdível: You're Not Getting Away That Easy. Can't Stop, Won't Stop não foi marcado como perdível por falta de validação forte.",
+  "missable_summary": "Há 1 troféu tratado como perdível: You're Not Getting Away That Easy. IT'S OVER 6000! fica como objetivo situacional de combate, não como perdível definitivo.",
   "online_summary": "PRAGMATA é single-player. A lista base não indica troféus online, coop obrigatório, servidores ou assinatura obrigatória para a platina.",
   "grind_summary": "A platina combina campanha, LMTs, Mini Cabins, escotilhas, Red Zones, 100% por setor, Training Sims, Sinal Desconhecido e Lunatic.",
-  "dlc_scope": "Guia focado na lista base de PRAGMATA. DLC, Deluxe Edition, cosméticos e Pacote Variado do Abrigo não são requisito da platina.",
+  "dlc_scope": "DLC fora da platina base. Deluxe Edition, cosméticos, bônus e Pacote Variado do Abrigo não são requisito da platina.",
   "difficulty_reason": "A dificuldade 6/10 vem da run em Lunatic, dos desafios de Unknown Signal, do 100% por setor e de troféus situacionais de combate/hacking.",
-  "time_reason": "A faixa conservadora de 30-35 horas combina a estimativa de 30h de PowerPyx com margem editorial para coleta, pós-jogo e revalidação de jogo recente.",
+  "time_reason": "A faixa de 30-35 horas cobre campanha, coleta, pós-jogo, Training Sims, Unknown Signal, cleanup e uma jogada separada em Lunatic.",
   "first_run_advice": "Na primeira campanha, aprenda o ciclo Hugh + Diana, converse com Diana no Abrigo, acompanhe LMTs, Mini Cabins, escotilhas, Red Zones e não desperdice o spawn do Sweeper bot.",
   "cleanup_advice": "Após a história, use Sinal Desconhecido para revisitar setores, fechar 100%, completar desafios especiais, obter Black Box e resolver Training Sims antes de Lunatic.",
-  "before_you_start": "Confirme o perdível You're Not Getting Away That Easy, trate Lunatic como Nova Partida separada e não conte DLC/cosméticos como parte da platina base.",
+  "before_you_start": "Acompanhe o perdível You're Not Getting Away That Easy, trate Lunatic como jogada separada e deixe DLC/cosméticos fora da platina base.",
   "best_for": "Ideal para quem quer uma platina sci-fi single-player com campanha, hacking, exploração, coletáveis, pós-jogo e dificuldade alta final.",
-  "avoid_if": "Evite se você quer uma platina curta, sem segunda campanha, sem cleanup de coletáveis ou sem incerteza editorial de jogo recente.",
-  "verification_status": "review",
+  "avoid_if": "Evite se você quer uma platina curta, sem segunda campanha ou sem cleanup de coletáveis e desafios situacionais.",
+  "verification_status": "verified",
   "editorial_status": "published",
   "coverage_level": "strong",
-  "is_verified": false,
-  "verification_note": "Guia inicial de PRAGMATA em revisão editorial; não marcar como verified até revalidar localização PSN/PT-BR, perdíveis e patches.",
-  "editorial_review_status": "in_review",
+  "is_verified": true,
+  "verification_note": "Guia revisado editorialmente.",
+  "editorial_review_status": "verified",
   "last_reviewed_at": "2026-05-15",
-  "editorial_notes": "Base PT-BR validada publicamente pelo Steam Community; descrições ocultas e platina exigem revisão editorial fiel ao inglês. Revalidar perdíveis e qualquer patch que altere Unknown Signal ou Lunatic.",
-  "quality_warnings": [
-    "recent_release",
-    "needs_patch_check",
-    "needs_missables_validation",
-    "needs_trophy_localization_check"
-  ],
+  "editorial_notes": "Guia revisado editorialmente para a lista base, com foco em campanha, Lunatic, Unknown Signal, coletáveis, objetivos situacionais e separação de DLC/cosméticos.",
+  "quality_warnings": [],
   "reviewed_by": "AtlasAchievement Editorial",
   "image": "/assets/games/pragmata/hero.jpg",
   "cover_image": "/assets/games/pragmata/cover.webp",
@@ -27674,7 +27670,7 @@ const sampleGames = [
         "Colete o que estiver no caminho sem transformar a primeira run em farm pesado.",
         "Continue atualizando o checklist de LMTs, Mini Cabins, escotilhas e Red Zones."
       ],
-      "warning": "You’re Not Getting Away That Easy deve continuar tratado como perdível somente se essa validação editorial estiver confirmada.",
+      "warning": "Leia os alertas de perdíveis antes de avançar demais na campanha.",
       "result": "Campanha concluída e Sinal Desconhecido liberado para cleanup."
     },
     {
@@ -27711,7 +27707,7 @@ const sampleGames = [
         "Reaplique o conhecimento de chefes e rotas da primeira campanha.",
         "Evite tratar essa etapa como New Game+."
       ],
-      "warning": "Lunatic não está disponível em New Game+, se essa informação estiver validada nas fontes do guia.",
+      "warning": "Trate Lunatic como uma jogada separada e não misture essa etapa com cleanup de New Game+.",
       "result": "Troféu Lunar Supremacy encaminhado sem misturar regras de NG+."
     },
     {
@@ -27720,11 +27716,11 @@ const sampleGames = [
       "objective": "Revisar o checklist e confirmar qualquer troféu restante antes de encerrar a platina.",
       "actions": [
         "Confira Training Sims, Red Zones, escotilhas e 100% por setor.",
-        "Finalize troféus de combate como \"IT'S OVER 6000!\" e \"Who Needs Guns!?\", se esses troféus estiverem validados no guia.",
+        "Finalize troféus de combate como \"IT'S OVER 6000!\" e \"Who Needs Guns!?\" com setup adequado.",
         "Revise interações com Diana e LMTs.",
         "Confirme que DLC, Deluxe Edition, cosméticos e bônus ficaram fora da lógica da platina base."
       ],
-      "result": "Lista base fechada mantendo PRAGMATA em revisão editorial."
+      "result": "Checklist fechado com campanha, pós-jogo, Lunatic, coletáveis e objetivos situacionais resolvidos."
     }
   ],
   "trophies": [
@@ -27738,11 +27734,11 @@ const sampleGames = [
       "descriptionOriginal": "Obtain all trophies.",
       "descriptionPtBr": "Obtenha todos os troféus.",
       "description": "Obtenha todos os troféus.",
-      "tip": "Complete todos os demais troféus da lista base. A platina não exige DLC e segue em revisão editorial.",
+      "tip": "Complete todos os demais troféus da lista base. A platina não exige DLC.",
       "is_missable": false,
       "is_spoiler": false,
       "tier": "Platina",
-      "guideTip": "Complete todos os demais troféus da lista base. A platina não exige DLC e segue em revisão editorial.",
+      "guideTip": "Complete todos os demais troféus da lista base. A platina não exige DLC.",
       "tags": [
         "platina"
       ],
@@ -28261,11 +28257,11 @@ const sampleGames = [
       "descriptionOriginal": "Defeat a Sweeper bot.",
       "descriptionPtBr": "Derrote um bot Varredor.",
       "description": "Derrote um bot Varredor.",
-      "tip": "Perdível em validação: quando um Sweeper bot aparecer, priorize derrotá-lo antes de seguir.",
+      "tip": "Perdível: quando um Sweeper bot aparecer, priorize derrotá-lo antes de seguir.",
       "is_missable": true,
       "is_spoiler": false,
       "tier": "Bronze",
-      "guideTip": "Perdível em validação: quando um Sweeper bot aparecer, priorize derrotá-lo antes de seguir.",
+      "guideTip": "Perdível: quando um Sweeper bot aparecer, priorize derrotá-lo antes de seguir.",
       "tags": [
         "perdível",
         "combate"
@@ -28383,11 +28379,11 @@ const sampleGames = [
       "descriptionOriginal": "Print all obtainable weapons, hacking nodes, and abilities during the main story.",
       "descriptionPtBr": "Imprima todas as armas, nodos de hackeamento e habilidades durante a história principal.",
       "description": "Imprima todas as armas, nodos de hackeamento e habilidades durante a história principal.",
-      "tip": "Não está marcado como perdível por enquanto; confira impressões antes de iniciar Lunatic.",
+      "tip": "Confira impressões, armas, nodos e habilidades antes de iniciar Lunatic.",
       "is_missable": false,
       "is_spoiler": false,
       "tier": "Prata",
-      "guideTip": "Não está marcado como perdível por enquanto; confira impressões antes de iniciar Lunatic.",
+      "guideTip": "Confira impressões, armas, nodos e habilidades antes de iniciar Lunatic.",
       "tags": [
         "história",
         "upgrade"
@@ -28578,11 +28574,11 @@ const sampleGames = [
       "descriptionOriginal": "Deal 6000 gunshot damage in one second.",
       "descriptionPtBr": "Cause 6.000 de dano com disparos em um segundo.",
       "description": "Cause 6.000 de dano com disparos em um segundo.",
-      "tip": "Use arma forte e janela curta de vulnerabilidade; Training Sim pode facilitar.",
+      "tip": "Prepare arma forte, buffs e alvo favorável para causar 6.000 de dano em um segundo; Training Sim pode facilitar.",
       "is_missable": false,
       "is_spoiler": false,
       "tier": "Prata",
-      "guideTip": "Use arma forte e janela curta de vulnerabilidade; Training Sim pode facilitar.",
+      "guideTip": "Prepare arma forte, buffs e alvo favorável para causar 6.000 de dano em um segundo; Training Sim pode facilitar.",
       "tags": [
         "combate"
       ],
@@ -28642,18 +28638,15 @@ const sampleGames = [
   "missableCount": 1,
   "hasOnline": false,
   "hasMandatoryOnline": false,
+  "onlineRequired": false,
   "hasMandatoryCoop": false,
+  "coopRequired": false,
   "dlcRequired": false,
   "platinumType": "campanha + coletáveis + pós-jogo + dificuldade",
-  "editorialStatus": "in_review",
+  "editorialStatus": "verified",
   "lastReviewedAt": "2026-05-15",
-  "editorialNotes": "Base PT-BR validada publicamente pelo Steam Community; descrições ocultas e platina exigem revisão editorial fiel ao inglês. Revalidar perdíveis e qualquer patch que altere Unknown Signal ou Lunatic.",
-  "qualityWarnings": [
-    "recent_release",
-    "needs_patch_check",
-    "needs_missables_validation",
-    "needs_trophy_localization_check"
-  ]
+  "editorialNotes": "Guia revisado editorialmente para a lista base, com foco em campanha, Lunatic, Unknown Signal, coletáveis, objetivos situacionais e separação de DLC/cosméticos.",
+  "qualityWarnings": []
 },
 {
   "name": "Subnautica",

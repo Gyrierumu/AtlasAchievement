@@ -54,6 +54,16 @@ const HADES2_EDITORIAL_SUMMARY = [
   'A melhor rota é usar as primeiras runs para estabilizar a Crossroads, entender os Guardians e abrir sistemas permanentes antes de tentar limpar tudo. Depois que as rotas estiverem mais consistentes, organize armas, aspectos, recursos raros, relacionamentos, Chaos Trials, Oath of the Unseen e objetivos longos sem desperdiçar runs aleatórias.',
   'A platina base não exige online, coop ou DLC. God Mode pode ser usado como recurso opcional sem bloquear troféus. O cleanup final gira em torno de Fated List, Arcana, Incantations, Familiars, Keepsakes, relacionamentos, rotas avançadas, Chronos, Surface e pendências situacionais.'
 ];
+const ASTRO_BOT_EDITORIAL_SUMMARY = [
+  'Astro Bot é uma platina curta, acessível e focada em exploração de fases, resgate de bots, coleta de puzzle pieces, fases secretas da Lost Galaxy e objetivos situacionais no Crash Site. Nada é perdível na lista base, então dá para jogar a campanha com calma e voltar depois para limpar o que ficou pendente.',
+  'A melhor rota é avançar pelos mundos principais explorando bem cada fase, mas sem tentar fazer 100% perfeito logo na primeira passagem. Depois que a seleção de fases estiver mais aberta, revise bots, puzzle pieces, saídas secretas, desafios especiais e atividades do Crash Site com o checklist ao lado.',
+  'O cleanup final gira em torno de completar bots, puzzle pieces, Lost Galaxy, Gatcha Lab, interações no hub e troféus situacionais. A platina base não exige coop obrigatório, não exige online obrigatório e não depende de DLC.'
+];
+const PRAGMATA_EDITORIAL_SUMMARY = [
+  'PRAGMATA é uma platina sci-fi single-player baseada em campanha, exploração, hacking com Diana, progressão no Abrigo, LMTs, Mini Cabins, escotilhas, Red Zones, Training Sims, Unknown Signal e uma jogada separada em Lunatic. A rota exige atenção ao perdível e aos objetivos situacionais, mas não depende de online, coop ou DLC.',
+  'A melhor estratégia é fazer a primeira campanha aprendendo o ciclo Hugh + Diana, conversando com Diana no Abrigo e acompanhando coletáveis desde cedo. Durante essa run, mantenha atenção ao alerta de You\'re Not Getting Away That Easy, além de registrar LMTs, Mini Cabins, escotilhas, Red Zones e objetivos que podem exigir setup específico.',
+  'Depois da campanha, use o pós-jogo e Unknown Signal para limpar setores, Training Sims, upgrades, coletáveis e troféus situacionais. A etapa de Lunatic deve ser tratada como jogada separada, deixando a run de dificuldade para quando você já conhecer bem combate, hacking, chefes e rotas.'
+];
 
 const editorialCollectionPageMap = {
   'primeira-platina': {
@@ -966,7 +976,7 @@ function renderGuideEditorialNotesHtml(game = {}, viewModel = {}) {
   const playerFit = viewModel.playerFit || buildGuidePlayerFit(game, viewModel);
   const methodItems = Array.isArray(viewModel.editorial?.methodItems) ? viewModel.editorial.methodItems : [];
   const statusBadge = viewModel.editorial?.statusBadge || getEditorialBadge(game);
-  const sectionCopy = ['resident-evil-requiem', 'hades', 'ghost-of-tsushima', 'hades-ii'].includes(normalizedSlug)
+  const sectionCopy = ['resident-evil-requiem', 'hades', 'ghost-of-tsushima', 'hades-ii', 'astro-bot', 'pragmata'].includes(normalizedSlug)
     ? 'Respostas rápidas sobre perdíveis, online, coop, tempo, dificuldade e DLC da lista base.'
     : 'Respostas rápidas sobre perdíveis, online, coop, tempo, dificuldade e DLC usando os dados atuais do guia.';
   return `
@@ -1110,7 +1120,7 @@ function buildGuideHeroStats(game = {}, viewModel = {}) {
       .map(card => ({
         ...card,
         label: labels[card.id] || card.label,
-          value: card.id === 'dlc' && ['resident-evil-requiem', 'hades', 'ghost-of-tsushima', 'hades-ii'].includes(String(game?.slug || '').trim().toLowerCase())
+          value: card.id === 'dlc' && ['resident-evil-requiem', 'hades', 'ghost-of-tsushima', 'hades-ii', 'astro-bot', 'pragmata'].includes(String(game?.slug || '').trim().toLowerCase())
             ? 'DLC fora da platina base'
             : card.id === 'coop' && /2 jogadores/i.test(String(card.detail || ''))
             ? '2 jogadores obrigatórios'
@@ -1575,6 +1585,10 @@ function renderGuideSummaryPanelHtml(game = {}, viewModel = {}) {
     ? GHOST_EDITORIAL_SUMMARY
     : normalizedSlug === 'hades-ii'
     ? HADES2_EDITORIAL_SUMMARY
+    : normalizedSlug === 'astro-bot'
+    ? ASTRO_BOT_EDITORIAL_SUMMARY
+    : normalizedSlug === 'pragmata'
+    ? PRAGMATA_EDITORIAL_SUMMARY
     : normalizedSlug === 'elden-ring'
     ? [
         'Este guia de platina de Elden Ring foi pensado para quem quer completar a lista base sem depender apenas da lista crua de troféus. A rota prioriza finais, chefes com troféu, itens lendários e pontos que podem gerar retrabalho se você avançar sem planejamento.',
@@ -1690,7 +1704,7 @@ function prioritizeGuideViewHtml(html = '') {
 async function buildGamePageHtml(game, req) {
   const origin = getPublicOrigin(req);
   const normalizedSlug = String(game?.slug || '').trim().toLowerCase();
-  const canonicalUrl = ['elden-ring', 'ghost-of-tsushima', 'hades', 'hades-ii', 'nioh-2', 'nioh-3', 'resident-evil-requiem', 'saros', 'the-last-of-us-part-i', 'the-last-of-us-part-ii', 'subnautica'].includes(normalizedSlug)
+  const canonicalUrl = ['elden-ring', 'ghost-of-tsushima', 'hades', 'hades-ii', 'astro-bot', 'pragmata', 'nioh-2', 'nioh-3', 'resident-evil-requiem', 'saros', 'the-last-of-us-part-i', 'the-last-of-us-part-ii', 'subnautica'].includes(normalizedSlug)
     ? `https://atlasachievement.com.br/jogo/${normalizedSlug}`
     : buildPublicUrl(req, `/jogo/${game.slug}`);
   const relatedResponse = await gamesService.listGames({ page: 1, limit: 80, sort: 'recommended-desc' });

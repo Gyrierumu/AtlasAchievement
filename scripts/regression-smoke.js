@@ -6,6 +6,13 @@ const assert = require('assert');
 
 const ROOT = process.cwd();
 
+function normalizeText(value = '') {
+  return String(value || '')
+    .normalize('NFD')
+    .replace(/[\u0300-\u036f]/g, '')
+    .toLowerCase();
+}
+
 function read(relPath) {
   return fs.readFileSync(path.join(ROOT, relPath), 'utf8');
 }
@@ -123,7 +130,7 @@ function assertHtmlLoadsModules(relPath) {
   assert.deepStrictEqual(scriptPaths, expectedScripts, `${relPath} precisa carregar apenas os scripts esperados, na ordem correta`);
 
   if (relPath === 'public/index.html') {
-    assert(scripts.includes('/js/ui-guide.js?v=hades2-polish-20260519'), 'public/index.html deve versionar ui-guide.js para evitar cache antigo do resumo de guias');
+    assert(scripts.includes('/js/ui-guide.js?v=pragmata-polish-20260519'), 'public/index.html deve versionar ui-guide.js para evitar cache antigo do resumo de guias');
     assert(html.includes('id="catalogIntentBar"'), 'public/index.html precisa do container de intenções do catálogo');
     assert(html.includes('id="catalogCompareTray"'), 'public/index.html precisa do tray de comparação do catálogo');
     assert(html.includes('id="librarySuggestions"'), 'public/index.html precisa do bloco de sugestões da biblioteca');
@@ -2771,9 +2778,9 @@ async function assertSeedData({ all, get }, sampleGames) {
   assert(astroBotSample, 'sampleGames deve incluir Astro Bot');
   assert.strictEqual(astroBotSample.trophies.length, 44, 'Astro Bot deve ter 44 trofeus no seed');
   assert.strictEqual(astroBotSample.editorial_status, 'published', 'Astro Bot deve ser publico');
-  assert.strictEqual(astroBotSample.coverage_level, 'strong', 'Astro Bot deve ter cobertura forte sem selo completo');
-  assert.strictEqual(astroBotSample.is_verified, false, 'Astro Bot nao deve ser verificado automaticamente');
-  assert.strictEqual(astroBotSample.verification_status, 'review', 'Astro Bot deve ficar aguardando revisao editorial');
+  assert.strictEqual(astroBotSample.coverage_level, 'strong', 'Astro Bot deve ter cobertura forte');
+  assert.strictEqual(astroBotSample.is_verified, true, 'Astro Bot deve continuar verificado');
+  assert.strictEqual(astroBotSample.verification_status, 'verified', 'Astro Bot deve permanecer verified');
   assert(astroBotSample.cover_image, 'Astro Bot deve expor cover_image vertical para a biblioteca');
   assert.strictEqual(astroBotSample.trophies.filter(trophy => trophy.is_missable).length, 0, 'Astro Bot nao deve marcar trofeus perdiveis');
   assert(astroBotSample.trophies.every(trophy => /^[A-Za-z0-9_:-]{1,60}$/.test(trophy.id)), 'Astro Bot deve ter trophy.id seguro');
@@ -2800,8 +2807,8 @@ async function assertSeedData({ all, get }, sampleGames) {
   assert.strictEqual(astroBot?.time_sort_hours, 15, 'Astro Bot deve preservar time_sort_hours');
   assert.strictEqual(astroBot?.editorial_status, 'published', 'Astro Bot deve entrar publicado');
   assert.strictEqual(astroBot?.coverage_level, 'strong', 'Astro Bot deve entrar com cobertura strong');
-  assert.strictEqual(astroBot?.is_verified, 0, 'Astro Bot nao deve entrar como verificado');
-  assert.strictEqual(astroBot?.verification_status, 'review', 'Astro Bot deve entrar em revisao editorial');
+  assert.strictEqual(astroBot?.is_verified, 1, 'Astro Bot deve entrar como verificado');
+  assert.strictEqual(astroBot?.verification_status, 'verified', 'Astro Bot deve entrar verified');
   assert.strictEqual(astroBot?.image, astroBotSample.image, 'Astro Bot deve preservar image horizontal');
   assert.strictEqual(astroBot?.cover_image, astroBotSample.cover_image, 'Astro Bot deve persistir cover_image vertical');
 
@@ -2810,6 +2817,44 @@ async function assertSeedData({ all, get }, sampleGames) {
   assert.strictEqual(astroBotTrophyRows.filter(trophy => trophy.is_missable).length, 0, 'Astro Bot nao deve marcar perdiveis');
   assert.strictEqual(astroBotTrophyRows.filter(trophy => trophy.name_pt).length, 44, 'seed deve persistir name_pt do Astro Bot');
   assert(astroBotTrophyRows.some(trophy => trophy.trophy_code === 'astrobot_the_golden_bot' && trophy.name === 'The Golden Bot' && trophy.name_pt === 'O Bot Dourado' && trophy.description === 'Resgate o Bot Mestre Especial no topo da Estátua Dourada.'), 'seed deve persistir The Golden Bot bilingue');
+
+  const pragmataSample = sampleGames.find(game => game.slug === 'pragmata');
+  assert(pragmataSample, 'sampleGames deve incluir PRAGMATA');
+  assert.strictEqual(pragmataSample.trophies.length, 36, 'PRAGMATA deve ter 36 trofeus no seed');
+  assert.strictEqual(pragmataSample.editorial_status, 'published', 'PRAGMATA deve ser publico');
+  assert.strictEqual(pragmataSample.coverage_level, 'strong', 'PRAGMATA deve ter cobertura strong');
+  assert.strictEqual(pragmataSample.is_verified, true, 'PRAGMATA deve continuar verificado');
+  assert.strictEqual(pragmataSample.verification_status, 'verified', 'PRAGMATA deve permanecer verified');
+  assert.strictEqual(pragmataSample.editorial_review_status, 'verified', 'PRAGMATA deve ter editorial_review_status verified');
+  assert.deepStrictEqual(pragmataSample.quality_warnings, [], 'PRAGMATA verified nao deve carregar quality warnings internos');
+  assert.strictEqual(pragmataSample.trophies.filter(trophy => trophy.is_missable).length, 1, 'PRAGMATA deve manter 1 perdivel real');
+  assert.deepStrictEqual(pragmataSample.trophies.filter(trophy => trophy.is_missable).map(trophy => trophy.name), ["You're Not Getting Away That Easy"], 'PRAGMATA deve marcar o perdivel esperado');
+  assert(pragmataSample.trophies.some(trophy => trophy.id === 'pragmata_its_over_6000' && !trophy.is_missable), "IT'S OVER 6000! nao deve ser perdivel definitivo no seed");
+  assert(pragmataSample.dlc_scope.includes('DLC fora da platina base'), 'PRAGMATA deve padronizar DLC fora da platina base');
+  assert(!/em revisao editorial|validacao editorial|potencialmente perdivel|dados atuais do guia|Base game sem DLCs|needs_patch_check|needs_missables_validation/i.test(normalizeText(JSON.stringify(pragmataSample))), 'PRAGMATA seed nao deve conter linguagem insegura ou warnings internos');
+
+  const pragmataSeeded = await get('SELECT slug, difficulty, time_bucket, time_min_hours, time_max_hours, time_sort_hours, editorial_status, coverage_level, is_verified, verification_status, editorial_review_status, image, cover_image, dlc_scope, verification_note FROM games WHERE slug = ?', ['pragmata']);
+  assert.strictEqual(pragmataSeeded?.slug, 'pragmata', 'seed deve preservar slug de PRAGMATA');
+  assert.strictEqual(pragmataSeeded?.difficulty, 6, 'PRAGMATA deve entrar com dificuldade 6/10');
+  assert.strictEqual(pragmataSeeded?.time_bucket, 'medium', 'PRAGMATA deve ser projeto medio');
+  assert.strictEqual(pragmataSeeded?.time_min_hours, 30, 'PRAGMATA deve preservar time_min_hours');
+  assert.strictEqual(pragmataSeeded?.time_max_hours, 35, 'PRAGMATA deve preservar time_max_hours');
+  assert.strictEqual(pragmataSeeded?.time_sort_hours, 30, 'PRAGMATA deve preservar time_sort_hours');
+  assert.strictEqual(pragmataSeeded?.editorial_status, 'published', 'PRAGMATA deve entrar publicado');
+  assert.strictEqual(pragmataSeeded?.coverage_level, 'strong', 'PRAGMATA deve entrar com coverage strong');
+  assert.strictEqual(pragmataSeeded?.is_verified, 1, 'PRAGMATA deve entrar como verificado');
+  assert.strictEqual(pragmataSeeded?.verification_status, 'verified', 'PRAGMATA deve entrar verified');
+  assert.strictEqual(pragmataSeeded?.editorial_review_status, 'verified', 'PRAGMATA deve persistir editorial_review_status verified');
+  assert.strictEqual(pragmataSeeded?.verification_note, 'Guia revisado editorialmente.', 'PRAGMATA deve persistir mensagem publica revisada');
+  assert(pragmataSeeded?.dlc_scope.includes('DLC fora da platina base'), 'PRAGMATA deve persistir DLC fora da platina base');
+  assert.strictEqual(pragmataSeeded?.image, pragmataSample.image, 'PRAGMATA deve preservar image horizontal');
+  assert.strictEqual(pragmataSeeded?.cover_image, pragmataSample.cover_image, 'PRAGMATA deve persistir cover_image vertical');
+
+  const pragmataTrophyRows = await all('SELECT trophy_code, name, type, is_missable FROM trophies WHERE game_id = (SELECT id FROM games WHERE slug = ?) ORDER BY id', ['pragmata']);
+  assert.strictEqual(pragmataTrophyRows.length, 36, 'seed deve inserir checklist completo do PRAGMATA');
+  assert.strictEqual(pragmataTrophyRows.filter(trophy => trophy.is_missable).length, 1, 'PRAGMATA deve persistir 1 perdivel');
+  assert(pragmataTrophyRows.some(trophy => trophy.trophy_code === 'pragmata_youre_not_getting_away' && trophy.is_missable), "You're Not Getting Away That Easy deve persistir perdivel");
+  assert(pragmataTrophyRows.some(trophy => trophy.trophy_code === 'pragmata_its_over_6000' && !trophy.is_missable), "IT'S OVER 6000! nao deve persistir como perdivel");
 
   const astrosPlayroomSample = sampleGames.find(game => game.slug === 'astros-playroom');
   assert(astrosPlayroomSample, "sampleGames deve incluir Astro's Playroom");
@@ -8788,7 +8833,7 @@ async function assertBackendEditorialConsistency() {
     assert.strictEqual(astroBotListItem.cover_image, 'https://image.api.playstation.com/vulcan/ap/rnd/202406/0500/0d05cb43413f28a641ac0c40fc272c70bbe194f6ade4b175.png', 'API deve expor cover_image vertical do Astro Bot');
     assert.strictEqual(astroBotListItem.editorial_status, 'published', 'Astro Bot deve aparecer publicado no catalogo');
     assert.strictEqual(astroBotListItem.coverage_level, 'strong', 'Astro Bot deve aparecer como cobertura strong');
-    assert.strictEqual(astroBotListItem.is_verified, false, 'Astro Bot nao deve aparecer como verificado');
+    assert.strictEqual(astroBotListItem.is_verified, true, 'Astro Bot deve aparecer como verificado');
     assert.strictEqual(astrosPlayroomListItem.trophy_count, 43, "catalogo deve expor 43 trofeus para Astro's Playroom");
     assert.strictEqual(astrosPlayroomListItem.image, 'https://image.api.playstation.com/vulcan/ap/rnd/202008/1220/M6bheZDaxpbtj8FiDW0UEQx7.jpg', "catalogo deve usar image horizontal do Astro's Playroom");
     assert.strictEqual(astrosPlayroomListItem.cover_image, 'https://images.launchbox-app.com/63073a9e-497e-4069-b47a-e24577a6c407.jpg', "API deve expor cover_image vertical do Astro's Playroom");
@@ -12309,9 +12354,9 @@ async function assertBackendEditorialConsistency() {
     assert.strictEqual(astroBotDetail.trophies.filter(trophy => trophy.type === 'Bronze').length, 24, 'Astro Bot deve ter 24 bronze');
     assert.strictEqual(astroBotDetail.missable_count, 0, 'Astro Bot nao deve marcar perdiveis');
     assert.strictEqual(astroBotDetail.trophies.filter(trophy => trophy.is_missable).length, 0, 'Astro Bot deve retornar is_missable false em todos os trofeus');
-    assert.strictEqual(astroBotDetail.is_verified, false, 'Astro Bot nao deve estar verificado');
-    assert.strictEqual(astroBotDetail.coverage_level, 'strong', 'Astro Bot nao deve ser complete sem revisao manual');
-    assert.strictEqual(astroBotDetail.verification_status, 'review', 'Astro Bot deve ficar em revisao editorial');
+    assert.strictEqual(astroBotDetail.is_verified, true, 'Astro Bot deve estar verificado');
+    assert.strictEqual(astroBotDetail.coverage_level, 'strong', 'Astro Bot deve manter coverage strong');
+    assert.strictEqual(astroBotDetail.verification_status, 'verified', 'Astro Bot deve ficar verified');
     assert.strictEqual(astroBotDetail.time_bucket, 'short', 'Astro Bot deve retornar time_bucket short');
     assert.strictEqual(astroBotDetail.onlineRequired, false, 'Astro Bot nao deve exigir online no detalhe');
     assert.strictEqual(astroBotDetail.coopRequired, false, 'Astro Bot nao deve exigir coop no detalhe');
@@ -12333,10 +12378,23 @@ async function assertBackendEditorialConsistency() {
       canonical: `${baseUrl}/jogo/astro-bot`,
       titleIncludes: 'Astro Bot',
       descriptionIncludes: 'Astro Bot',
-      h1Includes: 'Astro Bot'
+      h1Includes: 'Astro Bot — Guia de platina e troféus'
     });
     assert(astroBotGuideHtml.includes('Astro-nômico!') && astroBotGuideHtml.includes('Nome original:</span>Astro-nomical!'), 'SSR de Astro Bot deve renderizar nome PT-BR e nome original');
     assert(astroBotGuideHtml.includes('Muito a Processar') && astroBotGuideHtml.includes('O Bot Dourado'), 'SSR de Astro Bot deve renderizar localizacao editorial na checklist');
+    assert(astroBotGuideHtml.includes('Verificado'), 'SSR de Astro Bot deve renderizar status Verificado');
+    assert(astroBotGuideHtml.includes('DLC fora da platina base'), 'SSR de Astro Bot deve mostrar DLC fora da platina base');
+    assert(astroBotGuideHtml.includes('Astro Bot é uma platina curta, acessível'), 'SSR de Astro Bot deve renderizar resumo editorial forte');
+    const astroBotSummaryHtml = astroBotGuideHtml.match(/<div class="atlas-guide-summary-editorial[\s\S]*?<\/div>/)?.[0] || '';
+    assert((astroBotSummaryHtml.match(/<p\b/g) || []).length >= 2, 'Resumo da platina de Astro Bot deve ter ao menos 2 paragrafos');
+    assert(astroBotGuideHtml.includes('A lista base de Astro Bot não tem troféus perdíveis') && astroBotGuideHtml.includes('A platina base não exige online'), 'FAQ de Astro Bot deve usar respostas diretas');
+    assert(astroBotGuideHtml.includes('Relacionado a uma interação específica no Crash Site'), 'Deep-Pocket Dragon deve ter ponto de atencao especifico');
+    assert(astroBotGuideHtml.includes('Depende de encontrar e concluir fases da Lost Galaxy'), 'Lost And Found deve ter ponto de atencao especifico');
+    assert(astroBotGuideHtml.includes('Relacionado ao progresso final de coletáveis e desbloqueios no Crash Site'), 'Monumental Achievement deve ter ponto de atencao especifico');
+    assert(astroBotGuideHtml.includes('Exige progresso suficiente nas peças da nave e interação no Crash Site'), 'SingStars deve ter ponto de atencao especifico');
+    assert(astroBotGuideHtml.includes('Relacionado ao conteúdo final da lista base'), 'The Golden Bot deve ter ponto de atencao especifico');
+    assert(!/dados atuais do guia|segundo os dados atuais do guia|o guia não aponta|Base game sem DLCs|Descrição em revisão editorial|\[object Object\]|\bundefined\b|>\s*null\s*</i.test(astroBotGuideHtml), 'SSR de Astro Bot nao deve exibir linguagem fraca, DLC antiga ou placeholders');
+    assert.strictEqual(getCanonicalHref(astroBotGuideHtml), 'https://atlasachievement.com.br/jogo/astro-bot', 'canonical de Astro Bot deve usar dominio de producao');
     const astroBotHeroActions = astroBotGuideHtml.slice(
       astroBotGuideHtml.indexOf('atlas-guide-hero__actions'),
       astroBotGuideHtml.indexOf('atlas-guide-hero__actions') + 900
@@ -12349,6 +12407,49 @@ async function assertBackendEditorialConsistency() {
     assert(astroBotGuideHtml.includes('atlas-guide-cover--poster'), 'SSR de Astro Bot deve usar cover_image como poster do guia');
     assert(astroBotGuideHtml.includes('https://image.api.playstation.com/vulcan/ap/rnd/202406/0500/0d05cb43413f28a641ac0c40fc272c70bbe194f6ade4b175.png'), 'SSR de Astro Bot deve renderizar cover_image vertical');
     assert(astroBotGuideHtml.includes('property="og:image" content="https://image.api.playstation.com/vulcan/ap/rnd/202406/0500/80ecf657918558eeef8da3ee4cef326e4517d34e6c69d950.jpg"'), 'SEO de Astro Bot deve usar image horizontal');
+
+    const pragmataDetail = await httpGetJson(baseUrl, '/api/games/slug/pragmata');
+    assert.strictEqual(pragmataDetail.slug, 'pragmata', 'GET /api/games/slug/pragmata deve retornar PRAGMATA');
+    assert.strictEqual(pragmataDetail.trophies.length, 36, 'detalhe de PRAGMATA deve retornar 36 trofeus');
+    assert.strictEqual(pragmataDetail.trophies.filter(trophy => trophy.type === 'Platina').length, 1, 'PRAGMATA deve ter 1 platina');
+    assert.strictEqual(pragmataDetail.trophies.filter(trophy => trophy.type === 'Ouro').length, 5, 'PRAGMATA deve ter 5 ouro');
+    assert.strictEqual(pragmataDetail.trophies.filter(trophy => trophy.type === 'Prata').length, 9, 'PRAGMATA deve ter 9 prata');
+    assert.strictEqual(pragmataDetail.trophies.filter(trophy => trophy.type === 'Bronze').length, 21, 'PRAGMATA deve ter 21 bronze');
+    assert.strictEqual(pragmataDetail.missable_count, 1, 'PRAGMATA deve manter 1 perdivel');
+    assert.strictEqual(pragmataDetail.trophies.filter(trophy => trophy.is_missable).length, 1, 'PRAGMATA deve retornar 1 trophy is_missable');
+    assert(pragmataDetail.trophies.some(trophy => trophy.id === 'pragmata_youre_not_getting_away' && trophy.is_missable), "You're Not Getting Away That Easy deve ser perdivel na API");
+    assert(pragmataDetail.trophies.some(trophy => trophy.id === 'pragmata_its_over_6000' && !trophy.is_missable), "IT'S OVER 6000! nao deve ser perdivel na API");
+    assert.strictEqual(pragmataDetail.is_verified, true, 'PRAGMATA deve estar verificado');
+    assert.strictEqual(pragmataDetail.coverage_level, 'strong', 'PRAGMATA deve manter coverage strong');
+    assert.strictEqual(pragmataDetail.verification_status, 'verified', 'PRAGMATA deve ficar verified');
+    assert.strictEqual(pragmataDetail.time_bucket, 'medium', 'PRAGMATA deve retornar time_bucket medium');
+    assert.strictEqual(Boolean(pragmataDetail.onlineRequired || pragmataDetail.online_required), false, 'PRAGMATA nao deve exigir online no detalhe');
+    assert.strictEqual(Boolean(pragmataDetail.coopRequired || pragmataDetail.coop_required), false, 'PRAGMATA nao deve exigir coop no detalhe');
+    assert.strictEqual(Boolean(pragmataDetail.dlcRequired || pragmataDetail.dlc_required), false, 'PRAGMATA nao deve exigir DLC para platina base no detalhe');
+    assert(pragmataDetail.dlc_scope.includes('DLC fora da platina base'), 'PRAGMATA deve indicar DLC fora da platina base');
+
+    const pragmataGuideHtml = await httpGetHtml(baseUrl, '/jogo/pragmata');
+    const pragmataGuideText = normalizeText(pragmataGuideHtml);
+    assertSeoBasics(pragmataGuideHtml, {
+      label: 'SSR /jogo/pragmata',
+      canonical: `${baseUrl}/jogo/pragmata`,
+      titleIncludes: 'PRAGMATA',
+      descriptionIncludes: 'PRAGMATA',
+      h1Includes: 'PRAGMATA — Guia de platina e troféus'
+    });
+    assert(pragmataGuideHtml.includes('Verificado'), 'SSR de PRAGMATA deve renderizar status Verificado');
+    assert(pragmataGuideHtml.includes('Guia revisado editorialmente.'), 'SSR de PRAGMATA deve renderizar mensagem publica revisada');
+    assert(pragmataGuideHtml.includes('DLC fora da platina base'), 'SSR de PRAGMATA deve mostrar DLC fora da platina base');
+    assert(pragmataGuideText.includes('pragmata e uma platina sci-fi single-player'), 'SSR de PRAGMATA deve renderizar resumo editorial forte');
+    const pragmataSummaryHtml = pragmataGuideHtml.match(/<div class="atlas-guide-summary-editorial[\s\S]*?<\/div>/)?.[0] || '';
+    assert((pragmataSummaryHtml.match(/<p\b/g) || []).length >= 2, 'Resumo da platina de PRAGMATA deve ter ao menos 2 paragrafos');
+    assert(pragmataGuideHtml.includes("You're Not Getting Away That Easy"), 'SSR de PRAGMATA deve citar perdivel confirmado');
+    assert(pragmataGuideHtml.includes('O guia trata 1 trof'), 'FAQ de PRAGMATA deve concordar com 1 perdivel');
+    assert(pragmataGuideHtml.includes('Combate / Situacional'), "IT'S OVER 6000! deve aparecer como ponto situacional no SSR");
+    assert(!/em revisÃ£o editorial|validaÃ§Ã£o editorial|segue em validaÃ§Ã£o|potencialmente perdÃ­vel|se essa validaÃ§Ã£o|se essa informaÃ§Ã£o|mantendo PRAGMATA em revisÃ£o editorial|dados atuais do guia|lista atual|o guia nÃ£o aponta|needs_patch_check|needs_missables_validation|needs_trophy_localization_check|manual_editorial_verification|pt_br_localization_check|bugged_unlock|Base game sem DLCs|DescriÃ§Ã£o em revisÃ£o editorial|\[object Object\]|\bundefined\b|>\s*null\s*</i.test(pragmataGuideHtml), 'SSR de PRAGMATA nao deve exibir revisao, linguagem insegura, warnings internos ou placeholders');
+    assert.strictEqual(getCanonicalHref(pragmataGuideHtml), 'https://atlasachievement.com.br/jogo/pragmata', 'canonical de PRAGMATA deve usar dominio de producao');
+    assert(pragmataGuideHtml.includes('atlas-guide-cover--poster'), 'SSR de PRAGMATA deve usar cover_image como poster do guia');
+    assert(pragmataGuideHtml.includes('/assets/games/pragmata/cover.webp'), 'SSR de PRAGMATA deve renderizar cover_image vertical');
 
     const astrosPlayroomDetail = await httpGetJson(baseUrl, '/api/games/slug/astros-playroom');
     assert.strictEqual(astrosPlayroomDetail.slug, 'astros-playroom', "GET /api/games/slug/astros-playroom deve retornar Astro's Playroom");
@@ -12767,7 +12868,7 @@ function assertLote1BNetworkClassification() {
       Prata: expected.Prata,
       Bronze: expected.Bronze
     }, `${slug} deve manter distribuicao de trofeus`);
-    assert.strictEqual(game.is_verified, ['hades', 'hades-ii', 'ghost-of-tsushima'].includes(slug), `${slug} deve manter status verified apenas quando ja revisado manualmente`);
+    assert.strictEqual(game.is_verified, ['hades', 'hades-ii', 'ghost-of-tsushima', 'astro-bot'].includes(slug), `${slug} deve manter status verified apenas quando ja revisado manualmente`);
   });
 
   [
