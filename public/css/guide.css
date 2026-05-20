@@ -536,21 +536,19 @@
 }
 
 #view-guide .atlas-editorial-note summary::after {
-  content: '+';
-  width: 22px;
-  height: 22px;
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-  border-radius: 999px;
-  background: rgba(255,255,255,.06);
-  color: rgba(255,255,255,.62);
-  font-size: .82rem;
+  content: '';
+  width: 8px;
+  height: 8px;
+  display: inline-block;
+  border: solid rgba(255,255,255,.62);
+  border-width: 0 2px 2px 0;
+  transform: rotate(45deg);
+  transition: transform .18s ease, border-color .18s ease;
   order: 3;
 }
 
 #view-guide .atlas-editorial-note[open] summary::after {
-  content: '-';
+  transform: rotate(-135deg);
 }
 
 #view-guide .atlas-editorial-note summary small {

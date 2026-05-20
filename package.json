@@ -8,6 +8,11 @@
     "dev": "node server.js",
     "db:setup": "node scripts/setup-database.js",
     "release:check": "node scripts/check-release.js",
+    "test:guide": "node scripts/test-layers.js guide",
+    "test:roadmap": "node scripts/test-layers.js roadmap",
+    "test:data": "node scripts/test-layers.js data",
+    "test:seo": "node scripts/test-layers.js seo",
+    "test:quick": "node scripts/test-layers.js quick",
     "test": "node scripts/regression-smoke.js",
     "check:runtime": "node -e \"const major=Number(process.versions.node.split('.')[0]); if(major!==20){console.warn('Aviso: recomendado Node 20.x; atual = '+process.versions.node)}\""
   },

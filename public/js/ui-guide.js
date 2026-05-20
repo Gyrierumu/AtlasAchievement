@@ -31,6 +31,11 @@ window.UIGuide = (() => {
     'O ponto mais importante é não tratar toda tarefa situacional como perdível definitivo. Alguns objetivos exigem atenção em janelas específicas, mas muitos podem ser organizados com saves, nova run ou cleanup. Use a checklist para separar riscos reais, spoilers, coletáveis, dificuldade e objetivos acumuláveis.',
     'A melhor rota é começar com uma campanha exploratória, mantendo saves manuais e marcando arquivos, Mr. Raccoons, cofres, containers da BSAA, armas, upgrades e eventos situacionais. Depois, use o roadmap para separar runs condicionais, limpeza de bônus, dificuldade e pendências da lista base.'
   ];
+  const HADES_EDITORIAL_SUMMARY = [
+    'Hades é uma platina baseada em progresso acumulado entre runs. O foco não está em troféus perdíveis, mas em transformar cada tentativa em avanço real: evoluir a Mirror of Night, liberar armas, distribuir Nectar, trabalhar relacionamentos, completar profecias da Fated List e avançar a história até o epílogo.',
+    'A melhor estratégia é não tentar limpar tudo nas primeiras fugas. Use as runs iniciais para aprender armas, boons, chefes e padrões de combate. Depois que a primeira fuga estiver consistente, comece a organizar Keepsakes, Companions, Pact of Punishment, Heat e objetivos longos sem desperdiçar runs aleatórias.',
+    'God Mode não bloqueia troféus e pode ser usado como recurso opcional. A platina base é totalmente offline, sem coop obrigatório e sem DLC necessária. O cleanup final gira em torno de relacionamentos, Fated List, Keepsakes no rank máximo, Companions, Heat e pendências de armas ou recursos.'
+  ];
   const CHECKLIST_DENSITIES = new Set(['comfortable', 'compact']);
   const GUIDE_FILTER_LABELS = {
     all: 'Todos',
@@ -332,7 +337,7 @@ window.UIGuide = (() => {
         .map(card => ({
           ...card,
           label: labels[card.id] || card.label,
-          value: card.id === 'dlc' && String(game?.slug || '').trim().toLowerCase() === 'resident-evil-requiem'
+          value: card.id === 'dlc' && ['resident-evil-requiem', 'hades'].includes(String(game?.slug || '').trim().toLowerCase())
             ? 'DLC fora da platina base'
             : card.id === 'coop' && /2 jogadores/i.test(String(card.detail || ''))
             ? '2 jogadores obrigatórios'
@@ -653,6 +658,8 @@ window.UIGuide = (() => {
     const normalizedSlug = String(game?.slug || '').trim().toLowerCase();
     const editorialParagraphs = normalizedSlug === 'resident-evil-requiem'
       ? REQUIEM_EDITORIAL_SUMMARY
+      : normalizedSlug === 'hades'
+      ? HADES_EDITORIAL_SUMMARY
       : normalizedSlug === 'elden-ring'
       ? [
           'Este guia de platina de Elden Ring foi pensado para quem quer completar a lista base sem depender apenas da lista crua de troféus. A rota prioriza finais, chefes com troféu, itens lendários e pontos que podem gerar retrabalho se você avançar sem planejamento.',
@@ -733,13 +740,16 @@ window.UIGuide = (() => {
     const playerFit = viewModel.playerFit || buildGuidePlayerFit(game, viewModel);
     const methodItems = Array.isArray(viewModel.editorial?.methodItems) ? viewModel.editorial.methodItems : [];
     const statusBadge = viewModel.editorial?.statusBadge || getEditorialBadge(game);
+    const sectionCopy = ['resident-evil-requiem', 'hades'].includes(normalizedSlug)
+      ? 'Respostas rápidas sobre perdíveis, online, coop, tempo, dificuldade e DLC da lista base.'
+      : 'Respostas rápidas sobre perdíveis, online, coop, tempo, dificuldade e DLC usando os dados atuais do guia.';
     return `
       <section id="guideEditorialNotesPanel" class="atlas-panel atlas-panel--editorial atlas-editorial-notes p-5 md:p-6">
         <div class="atlas-section-head atlas-section-head--compact">
           <div>
             <span class="atlas-section-kicker">Notas editoriais</span>
             <h2 class="text-xl md:text-2xl font-extrabold tracking-tight mt-2">Perguntas frequentes</h2>
-            <p class="text-white/58 mt-2 max-w-4xl">Respostas rápidas sobre perdíveis, online, coop, tempo, dificuldade e DLC usando os dados atuais do guia.</p>
+            <p class="text-white/58 mt-2 max-w-4xl">${escapeHtml(sectionCopy)}</p>
           </div>
           <span class="atlas-tag atlas-tag--soft">${escapeHtml(statusBadge.label || 'Notas de apoio')}</span>
         </div>

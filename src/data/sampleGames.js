@@ -1508,17 +1508,17 @@ const sampleGames = [
     "cover_image": "https://cdn.cloudflare.steamstatic.com/steam/apps/1145360/library_600x900.jpg",
     "editorial_status": "published",
     "coverage_level": "strong",
-    "is_verified": false,
-    "verification_status": "review",
-    "verification_note": "Guia revisado com lista completa de troféus e dicas editoriais; manter sem verified até validação manual final.",
-    "editorial_review_status": "in_review",
-    "last_reviewed_at": "2026-05-14",
-    "editorial_notes": "Revisão editorial focada na lista base de PlayStation: 50 troféus, distribuição 1 platina/2 ouro/7 prata/40 bronze, sem perdíveis reais, sem online/coop obrigatório e sem DLC necessária. Pode ser candidato a verified após checagem manual final de tempo médio, profecias, relacionamentos e requisitos de Heat.",
+    "is_verified": true,
+    "verification_status": "verified",
+    "verification_note": "Guia revisado editorialmente para a lista base.",
+    "editorial_review_status": "verified",
+    "last_reviewed_at": "2026-05-18",
+    "editorial_notes": "Revisão editorial focada na lista base de PlayStation: 50 troféus, distribuição 1 platina/2 ouro/7 prata/40 bronze, sem perdíveis reais, sem online/coop obrigatório e sem DLC necessária.",
     "runs_summary": "Platina multi-run: espere dezenas de tentativas. O guia considera aprendizado inicial, primeira clear, 10 clears para a história principal e várias runs extras para relações, Fated List, recursos, Keepsakes, Companions, Heat e cleanup.",
     "missable_summary": "Sem perdíveis reais. O risco é atrasar progresso por esquecer diálogos, Nectar/Ambrosia, Fated List, Keepsakes, Companions ou Heat; nada disso bloqueia a platina definitivamente.",
     "online_summary": "Sem online e sem coop obrigatório: a platina é totalmente single-player/offline, sem multiplayer, servidores, PS+ ou parceiro obrigatório.",
     "grind_summary": "Grind/progressão são o centro da platina: recursos, afinidade, diálogos, Keepsakes rank 3, Companions, 15 profecias, pesca, armas/aspectos, Mirror of Night e Pact of Punishment/Heat. RNG pode alongar encontros e diálogos, mas novas runs preservam progresso.",
-    "dlc_scope": "Lista base de PlayStation. Não há DLC necessária ou conteúdo extra obrigatório para a platina.",
+    "dlc_scope": "DLC fora da platina base. A lista de PlayStation não exige DLC nem conteúdo extra obrigatório para a platina.",
     "difficulty_reason": "A dificuldade 5/10 vem de consistência em combate, leitura de builds, primeira clear, Heat 8/16, Extreme Measures e Infernal Gate sem dano. Mirror of Night, armas evoluídas, Keepsakes e God Mode tornam a execução mais controlável.",
     "time_reason": "70 a 100 horas considera aprendizado inicial, primeira clear, 10 clears da história, epílogo, relacionamentos, Fated List, recursos raros, Keepsakes no rank máximo, Heat e cleanup situacional.",
     "first_run_advice": "Nas primeiras runs, foque em aprender armas, melhorar a Mirror of Night e avançar diálogos. Depois acompanhe relacionamentos, Fated List, Keepsakes e Heat pelo checklist.",
@@ -1758,7 +1758,7 @@ const sampleGames = [
         "name": "Blessed by the Gods",
         "name_pt": "Abençoado pelos Deuses",
         "type": "Bronze",
-        "description": "Aceite 100 efeitos de Bençãos diferentes.",
+        "description": "Aceite 100 efeitos de Bênçãos diferentes.",
         "tip": "Grind/progressão. Pegue boons diferentes ao longo das runs; use Keepsakes dos deuses e a Fated List para cobrir lacunas de RNG no cleanup.",
         "is_spoiler": false
       },
@@ -1963,7 +1963,7 @@ const sampleGames = [
       {
         "id": "hades-family-secret",
         "name": "The Family Secret",
-        "name_pt": "O Segredo de Familia",
+        "name_pt": "O Segredo de Família",
         "type": "Ouro",
         "description": "Termine a missão principal da história.",
         "tip": "Troféu de história com spoiler. Complete 10 fugas bem-sucedidas e continue a linha principal até o final verdadeiro.",
@@ -8665,7 +8665,7 @@ const sampleGames = [
           "Verifique quais dificuldades acumulam.",
           "Compre e visualize modelos e concept arts exigidos.",
           "Separe Deluxe Kit, DLCs ou modos futuros da platina base.",
-          "Não marcar DLC como obrigatória sem fonte."
+          "Confirme que DLCs, Deluxe Kit e modos futuros ficam fora da platina base."
         ],
         "result": "Conteúdo da lista base separado de extras externos."
       },
@@ -8676,7 +8676,7 @@ const sampleGames = [
         "actions": [
           "Conferir os 50 troféus da lista atual.",
           "Revisar perdíveis reais, riscos de run, spoilers e coletáveis.",
-          "Corrigir nomes PT-BR quando houver fonte confiável.",
+          "Revise pendências de coletáveis, runs condicionais, dificuldade e cleanup antes de encerrar a lista.",
           "Conferir os 50 troféus da lista base e fechar pendências de coletáveis, runs condicionais, dificuldade e cleanup."
         ],
         "result": "Lista base organizada para fechamento da platina."

@@ -123,7 +123,7 @@ function assertHtmlLoadsModules(relPath) {
   assert.deepStrictEqual(scriptPaths, expectedScripts, `${relPath} precisa carregar apenas os scripts esperados, na ordem correta`);
 
   if (relPath === 'public/index.html') {
-    assert(scripts.includes('/js/ui-guide.js?v=requiem-summary-20260519'), 'public/index.html deve versionar ui-guide.js para evitar cache antigo do resumo do Requiem');
+    assert(scripts.includes('/js/ui-guide.js?v=hades-polish-20260519'), 'public/index.html deve versionar ui-guide.js para evitar cache antigo do resumo de guias');
     assert(html.includes('id="catalogIntentBar"'), 'public/index.html precisa do container de intenções do catálogo');
     assert(html.includes('id="catalogCompareTray"'), 'public/index.html precisa do tray de comparação do catálogo');
     assert(html.includes('id="librarySuggestions"'), 'public/index.html precisa do bloco de sugestões da biblioteca');
@@ -2628,10 +2628,15 @@ async function assertSeedData({ all, get }, sampleGames) {
   assert.strictEqual(hadesSample.roadmap.length, 6, 'Hades deve ter roadmap editorial em 6 etapas');
   assert(hadesSample.roadmap.every(step => step && typeof step === 'object' && Array.isArray(step.actions)), 'roadmap de Hades deve usar etapas estruturadas');
   assert(hadesSample.online_summary.includes('sem coop') && hadesSample.online_summary.includes('offline'), 'Hades deve deixar online/coop como nao obrigatorios');
-  assert(hadesSample.dlc_scope.includes('Não há DLC') || hadesSample.dlc_scope.includes('DLC necessária') || hadesSample.dlc_scope.includes('DLC necessaria'), 'Hades deve separar DLC da platina base');
+  assert(hadesSample.dlc_scope.includes('DLC fora da platina base'), 'Hades deve separar DLC da platina base');
   assert(hadesSample.before_you_start.includes('Pact of Punishment') && hadesSample.before_you_start.includes('Fated List'), 'Hades deve destacar Fated List e Heat na decisao inicial');
-  assert.strictEqual(hadesSample.is_verified, false, 'Hades nao deve ser verificado automaticamente');
-  assert.strictEqual(hadesSample.verification_status, 'review', 'Hades deve permanecer em revisao editorial');
+  assert.strictEqual(hadesSample.is_verified, true, 'Hades deve continuar verificado');
+  assert.strictEqual(hadesSample.verification_status, 'verified', 'Hades deve permanecer com status verified');
+  const hadesVisibleText = JSON.stringify(hadesSample);
+  assert(!hadesVisibleText.includes('Fatéd List'), 'Hades nao deve conter Fatéd List');
+  assert(!hadesVisibleText.includes('condicao'), 'Hades nao deve conter condicao sem acento');
+  assert(!hadesVisibleText.includes('Bençãos'), 'Hades nao deve conter Bencoes com acento incorreto');
+  assert(!hadesVisibleText.includes('O Segredo de Familia'), 'Hades nao deve conter Familia sem acento');
 
   const eldenRing = await get('SELECT slug, difficulty, time, time_bucket, time_min_hours, time_max_hours, time_sort_hours, editorial_status, coverage_level, is_verified, verification_status, editorial_review_status, dlc_scope, quality_warnings, image, cover_image FROM games WHERE name = ?', ['Elden Ring']);
   assert.strictEqual(eldenRing?.slug, 'elden-ring', 'seed deve calcular slug do Elden Ring');
@@ -6262,6 +6267,7 @@ async function assertSeedData({ all, get }, sampleGames) {
   const requiemRoadmapText = requiemSample.roadmap.map(step => `${step.title} ${step.focus} ${step.objective} ${(step.actions || []).join(' ')} ${step.warning || ''} ${step.result || ''}`).join(' ');
   assert(!/\[object Object\]|\btitle:|\bfocus:|\bobjective:|\bactions:|\bwarning:|\bresult:|Comece pela rota segura|Etapa 1 genérico|Continue a rota principal|\s\|\s/.test(requiemRoadmapText), 'roadmap de Resident Evil Requiem nao deve conter serializacao, placeholders ou titulos genericos');
   assert(!/em revisão|validação final|validacao final|lista ainda está em revisão|Manter o guia como em revisão/i.test(requiemRoadmapText), 'roadmap de Resident Evil Requiem nao deve conter texto fixo de revisao');
+  assert(!/Não marcar DLC como obrigatória sem fonte|Corrigir nomes PT-BR quando houver fonte confiável|quando houver fonte confiável|sem fonte/i.test(requiemRoadmapText), 'roadmap de Resident Evil Requiem nao deve conter instrucoes internas de editor');
   assert(!/em revisão|validação final|validacao final|aguardando revisão/i.test(`${requiemSample.missable} ${requiemSample.missable_summary} ${requiemSample.before_you_start} ${requiemSample.dlc_scope}`), 'textos publicos editoriais de Resident Evil Requiem nao devem ficar presos ao status de revisao');
   assert(!requiemSample.roadmap.some(step => (step.actions || []).some(action => /\.\.\.|…/.test(action))), 'roadmap de Resident Evil Requiem nao deve conter reticencias em acoes');
   assert(requiemSample.roadmap.every(step => new Set(step.actions || []).size === (step.actions || []).length), 'roadmap de Resident Evil Requiem nao deve repetir acoes dentro da mesma etapa');
@@ -6354,6 +6360,7 @@ async function assertSeedData({ all, get }, sampleGames) {
   assert(requiemRoadmapRows.some(row => row.content.includes('Speed Demon') && row.content.includes('Insanity')), 'seed deve persistir roadmap de speedrun/dificuldade para Resident Evil Requiem');
   assert(requiemRoadmapRows.every(row => row.content.trim().startsWith('{') && !/\[object Object\]|\btitle:|\bfocus:|\bobjective:|\bactions:|\s\|\s/.test(row.content)), 'seed deve persistir roadmap estruturado sem serializacao textual insegura');
   assert(!/em revisão|validação final|validacao final|lista ainda está em revisão|Manter o guia como em revisão/i.test(requiemRoadmapRows.map(row => row.content).join(' ')), 'seed nao deve persistir roadmap de Resident Evil Requiem preso ao status de revisao');
+  assert(!/Não marcar DLC como obrigatória sem fonte|Corrigir nomes PT-BR quando houver fonte confiável|quando houver fonte confiável|sem fonte/i.test(requiemRoadmapRows.map(row => row.content).join(' ')), 'seed nao deve persistir instrucoes internas no roadmap de Resident Evil Requiem');
 
   const requiemTrophyRows = await all('SELECT trophy_code, name, type, is_missable, is_spoiler FROM trophies WHERE game_id = (SELECT id FROM games WHERE slug = ?) ORDER BY id', ['resident-evil-requiem']);
   assert.strictEqual(requiemTrophyRows.length, 50, 'seed deve inserir checklist base completo do Resident Evil Requiem');
@@ -11789,6 +11796,7 @@ async function assertBackendEditorialConsistency() {
     assert(!requiemGuideHtml.includes('49 alertas'), 'SSR de Resident Evil Requiem nao deve exibir 49 alertas como alerta critico');
     assert(requiemGuideHtml.includes('4 alertas cr') && requiemGuideHtml.includes('37 dicas'), 'SSR de Resident Evil Requiem deve separar 4 alertas criticos e 37 dicas');
     assert(!/\[object Object\]|Descri[cç][aã]o em revis[aã]o editorial|Continue a rota principal|>\s*(?:undefined|null)\s*</i.test(requiemGuideHtml), 'SSR de Resident Evil Requiem nao deve renderizar placeholders, null visivel ou roadmap generico');
+    assert(!/Não marcar DLC como obrigatória sem fonte|Corrigir nomes PT-BR quando houver fonte confiável|quando houver fonte confiável|sem fonte/i.test(requiemGuideHtml), 'SSR de Resident Evil Requiem nao deve renderizar instrucoes internas de editor');
     assert(requiemGuideHtml.includes('Este guia está em revisão editorial. A lista de troféus, perdíveis e localização em português ainda precisam de validação final.'), 'SSR de Resident Evil Requiem deve renderizar aviso editorial publico consolidado');
     assert(!/needs_trophy_list_validation|needs_missables_validation|needs_trophy_localization_check/.test(requiemGuideHtml), 'SSR de Resident Evil Requiem nao deve renderizar qualityWarnings tecnicos para usuario publico');
     const requiemSummaryMatch = requiemGuideHtml.match(/<section id="guideSummaryActions"[\s\S]*?<\/section>/);
@@ -11801,6 +11809,7 @@ async function assertBackendEditorialConsistency() {
     assert(!/em revisão|validação final|validacao final|lista ainda está em revisão|Manter o guia como em revisão/i.test(requiemRoadmapHtml), 'Roadmap publico de Resident Evil Requiem nao deve mencionar revisao ou validacao');
     assert(requiemGuideHtml.includes('Pontos de atenção'), 'SSR de Resident Evil Requiem deve renomear pontos criticos para pontos de atencao');
     assert(!requiemGuideHtml.includes('Pontos críticos'), 'SSR de Resident Evil Requiem nao deve mostrar titulo publico Pontos criticos');
+    assert(!/Pontos de atenção\s*5\s*-|FAQ\s*6\s*-|Confiança editorial\s*Metodologia\s*-/i.test(requiemGuideHtml), 'SSR de Resident Evil Requiem nao deve renderizar hifen textual solto nos titulos de notas');
     assert(requiemGuideHtml.includes('Riscos, spoilers, runs condicionais e objetivos que merecem acompanhamento durante a platina.'), 'SSR de Resident Evil Requiem deve explicar pontos de atencao variados');
     assert(/Master Craftsman[\s\S]{0,450}Coletável \/ Checklist/.test(requiemGuideHtml), 'Master Craftsman deve aparecer como coletavel/checklist nos pontos de atencao publicos');
     assert(!/Master Craftsman[\s\S]{0,450}Perdível/.test(requiemGuideHtml), 'Master Craftsman nao deve parecer perdivel nos pontos de atencao publicos');
@@ -11819,6 +11828,9 @@ async function assertBackendEditorialConsistency() {
     assert(requiemVerifiedGuideHtml.includes('Verificado'), 'SSR verified de Resident Evil Requiem deve exibir selo Verificado');
     assert(requiemVerifiedGuideHtml.includes('Guia revisado editorialmente para a lista base.'), 'SSR verified de Resident Evil Requiem deve exibir mensagem verificada');
     assert(!/em revisão|aguardando revisão final|validação final|validacao final|lista ainda está em revisão|Manter o guia como em revisão/i.test(requiemVerifiedGuideSpecificText), 'SSR verified de Resident Evil Requiem nao deve exibir texto de revisao em resumo, roadmap ou notas');
+    assert(!/Não marcar DLC como obrigatória sem fonte|Corrigir nomes PT-BR quando houver fonte confiável|quando houver fonte confiável|sem fonte|dados atuais do guia/i.test(requiemVerifiedGuideSpecificText), 'SSR verified de Resident Evil Requiem nao deve exibir linguagem interna nas notas ou roadmap');
+    assert(!/Pontos de atenção\s*5\s*-|FAQ\s*6\s*-|Confiança editorial\s*Metodologia\s*-/i.test(requiemVerifiedGuideHtml), 'SSR verified de Resident Evil Requiem nao deve exibir hifen solto nos titulos de notas');
+    assert(!/atlas-editorial-note\[open\]\s+summary::after\s*\{[^}]*content:\s*['"]-['"]/is.test(read('public/css/guide.css')), 'CSS do acordeao editorial nao deve usar hifen textual como indicador aberto');
     assert(!/needs_trophy_list_validation|needs_missables_validation|needs_trophy_localization_check/.test(requiemVerifiedGuideHtml), 'SSR verified de Resident Evil Requiem nao deve expor qualityWarnings tecnicos');
     await run("UPDATE games SET is_verified = 0, verification_status = 'review' WHERE slug = ?", ['resident-evil-requiem']);
 
@@ -12203,9 +12215,9 @@ async function assertBackendEditorialConsistency() {
     }).join(' ');
     assert(hadesRoadmapText.includes('Pact of Punishment') && hadesRoadmapText.includes('Fated List'), 'roadmap de Hades deve citar Pact of Punishment e Fated List');
     assert(hadesDetail.online_summary.includes('Sem online') && hadesDetail.online_summary.includes('sem coop'), 'Hades deve indicar ausencia de online e coop obrigatorios');
-    assert(hadesDetail.dlc_scope.includes('Não há DLC') || hadesDetail.dlc_scope.includes('DLC necessária') || hadesDetail.dlc_scope.includes('DLC necessaria'), 'Hades deve indicar DLC fora da platina base');
-    assert.strictEqual(hadesDetail.is_verified, false, 'Hades nao deve estar verificado');
-    assert.strictEqual(hadesDetail.verification_status, 'review', 'Hades deve ficar em revisao editorial');
+    assert(hadesDetail.dlc_scope.includes('DLC fora da platina base'), 'Hades deve indicar DLC fora da platina base');
+    assert.strictEqual(hadesDetail.is_verified, true, 'Hades deve estar verificado');
+    assert.strictEqual(hadesDetail.verification_status, 'verified', 'Hades deve ficar como verified');
     assert(hadesDetail.trophies.some(trophy => trophy.id === 'hades-harsh-conditions' && /Pact of Punishment|Heat/.test(trophy.tip)), 'Harsh Conditions deve orientar Pact/Heat');
     assert(hadesDetail.trophies.some(trophy => trophy.id === 'hades-complete-set' && /Companions|Ambrosia|Relacionamento/i.test(trophy.tip)), 'Complete Set deve orientar Companions e relacionamento');
 
@@ -12215,10 +12227,23 @@ async function assertBackendEditorialConsistency() {
       canonical: `${baseUrl}/jogo/hades`,
       titleIncludes: 'Hades',
       descriptionIncludes: 'Pact of Punishment',
-      h1Includes: 'Hades'
+      h1Includes: 'Hades — Guia de platina e troféus'
     });
     assert.strictEqual(getHtmlTitle(hadesGuideHtml), 'Hades: guia de platina, troféus e roadmap | AtlasAchievement', 'SSR de Hades deve gerar title editorial exato');
-    assert.strictEqual(getMetaDescription(hadesGuideHtml), 'Guia de platina de Hades em português, com tempo estimado, dificuldade, Pact of Punishment, relacionamentos, grind, roadmap e checklist de troféus.', 'SSR de Hades deve gerar description editorial exata');
+    assert.strictEqual(getMetaDescription(hadesGuideHtml), 'Guia de platina de Hades em português, com tempo estimado, dificuldade, roadmap, checklist, Fated List, Keepsakes, Companions, Pact of Punishment, Heat e dicas para a platina.', 'SSR de Hades deve gerar description editorial exata');
+    assert(hadesGuideHtml.includes('Verificado'), 'SSR de Hades deve exibir status Verificado');
+    assert(hadesGuideHtml.includes('Guia revisado editorialmente para a lista base.'), 'SSR de Hades deve exibir mensagem verified');
+    assert(hadesGuideHtml.includes('Hades é uma platina baseada em progresso acumulado entre runs'), 'SSR de Hades deve exibir resumo editorial forte');
+    const hadesSummaryHtml = hadesGuideHtml.match(/<div class="atlas-guide-summary-editorial[\s\S]*?<\/div>/)?.[0] || '';
+    assert((hadesSummaryHtml.match(/<p\b/g) || []).length >= 2, 'Resumo da platina de Hades deve ter ao menos 2 paragrafos');
+    assert(hadesGuideHtml.includes('DLC fora da platina base'), 'SSR de Hades deve mostrar DLC fora da platina base');
+    ['Aguardando revisão final', 'validação final', 'Fatéd List', 'Bençãos', 'O Segredo de Familia', '[object Object]', 'undefined'].forEach(text => {
+      assert(!hadesGuideHtml.includes(text), `SSR de Hades nao deve exibir: ${text}`);
+    });
+    assert(!/>\s*null\s*</i.test(hadesGuideHtml), 'SSR de Hades nao deve exibir null visivel');
+    assert(!/Pontos de atenção\s*5\s*-/i.test(hadesGuideHtml), 'Pontos de atencao de Hades nao deve ter hifen solto');
+    assert(!/FAQ\s*6\s*-/i.test(hadesGuideHtml), 'FAQ de Hades nao deve ter hifen solto');
+    assert(!/Confiança editorial\s*Metodologia\s*-/i.test(hadesGuideHtml), 'Confianca editorial de Hades nao deve ter hifen solto');
     assert(hadesGuideHtml.includes('God of Blood'), 'SSR de Hades deve renderizar checklist');
     assert(hadesGuideHtml.includes('Pact of Punishment') && hadesGuideHtml.includes('Fated List'), 'SSR de Hades deve renderizar grind/progressao e Heat');
     assert(hadesGuideHtml.includes('Hades tem trof') && hadesGuideHtml.includes('Pact of Punishment/Heat'), 'FAQ de Hades deve cobrir perdiveis e Heat');
@@ -12719,7 +12744,7 @@ function assertLote1BNetworkClassification() {
       Prata: expected.Prata,
       Bronze: expected.Bronze
     }, `${slug} deve manter distribuicao de trofeus`);
-    assert.strictEqual(game.is_verified, false, `${slug} nao deve ser marcado como verificado manualmente`);
+    assert.strictEqual(game.is_verified, slug === 'hades', `${slug} deve manter status verified apenas quando ja revisado manualmente`);
   });
 
   [

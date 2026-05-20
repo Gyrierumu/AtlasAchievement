@@ -2096,6 +2096,35 @@
       ];
     }
 
+    if (String(game?.slug || '').trim().toLowerCase() === 'resident-evil-requiem') {
+      return [
+        {
+          question: 'Resident Evil Requiem tem troféus perdíveis?',
+          answer: 'Sim. O guia destaca 4 perdíveis reais ou fortemente prováveis e separa esses riscos de spoilers, coletáveis, dificuldade e objetivos situacionais.'
+        },
+        {
+          question: 'Resident Evil Requiem precisa de online para platinar?',
+          answer: 'Não. A platina da lista base não exige troféus online obrigatórios.'
+        },
+        {
+          question: 'Quanto tempo leva para platinar Resident Evil Requiem?',
+          answer: 'O tempo estimado para platinar Resident Evil Requiem é 20-25h. Use o roadmap para distribuir campanha, cleanup e checklist.'
+        },
+        {
+          question: 'Qual a dificuldade da platina de Resident Evil Requiem?',
+          answer: 'A dificuldade cadastrada para a platina é 4/10. Leia os alertas para entender onde o desafio pode aumentar.'
+        },
+        {
+          question: 'Resident Evil Requiem tem coop obrigatório?',
+          answer: 'Não. A rota da platina base é solo e não aponta coop obrigatório.'
+        },
+        {
+          question: 'A DLC é necessária para a platina de Resident Evil Requiem?',
+          answer: 'Não. DLCs, Deluxe Kit e modos futuros ficam fora da platina base.'
+        }
+      ];
+    }
+
     if (String(game?.slug || '').trim().toLowerCase() === 'pragmata') {
       return [
         {

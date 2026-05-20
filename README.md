@@ -46,11 +46,27 @@ MAX_UPLOAD_SIZE_BYTES=5242880
 ## Testes e release
 
 ```bash
+npm run test:guide -- resident-evil-requiem
+npm run test:quick
 npm test
 npm run release:check
 ```
 
 `npm test` usa um banco temporario via `DATABASE_PATH`, entao nao depende de `database.sqlite` local.
+
+Fluxo recomendado:
+- durante ajuste de um guia: `npm run test:guide -- slug-do-jogo`;
+- depois de ajustes editoriais pequenos: `npm run test:quick`;
+- antes de commit/deploy: `npm test` e `npm run release:check`.
+
+Camadas disponiveis:
+- `npm run test:guide -- slug-do-jogo`: valida o guia informado, checklist, roadmap, imagens, status editorial, API e SEO basico da pagina;
+- `npm run test:roadmap`: valida roadmaps de todos os jogos contra placeholders, serializacao crua e etapas genericas;
+- `npm run test:data`: valida integridade geral dos dados seed, slugs, imagens, jogos duplicados e trophy ids;
+- `npm run test:seo`: valida canonical, title, meta description e sitemap sem browser pesado;
+- `npm run test:quick`: com slug, roda `test:guide`; sem slug, roda `test:data` e `test:roadmap`.
+
+`npm test` continua sendo a regressao completa obrigatoria antes de deploy. `npm run release:check` continua sendo a auditoria final de artefatos proibidos.
 
 ## Como gerar um release limpo
 
