@@ -130,7 +130,7 @@ function assertHtmlLoadsModules(relPath) {
   assert.deepStrictEqual(scriptPaths, expectedScripts, `${relPath} precisa carregar apenas os scripts esperados, na ordem correta`);
 
   if (relPath === 'public/index.html') {
-    assert(scripts.includes('/js/ui-guide.js?v=pragmata-polish-20260519'), 'public/index.html deve versionar ui-guide.js para evitar cache antigo do resumo de guias');
+    assert(scripts.includes('/js/ui-guide.js?v=re4-polish-20260520'), 'public/index.html deve versionar ui-guide.js para evitar cache antigo do resumo de guias');
     assert(html.includes('id="catalogIntentBar"'), 'public/index.html precisa do container de intenções do catálogo');
     assert(html.includes('id="catalogCompareTray"'), 'public/index.html precisa do tray de comparação do catálogo');
     assert(html.includes('id="librarySuggestions"'), 'public/index.html precisa do bloco de sugestões da biblioteca');
@@ -12774,8 +12774,15 @@ function assertLote1ACriticalEditorialData() {
     });
     assert.strictEqual(game.editorial_status, 'published', `${name} deve permanecer publicado`);
     assert.strictEqual(game.coverage_level, 'strong', `${name} deve ter coverage strong sem selo complete`);
-    assert.strictEqual(game.is_verified, false, `${name} nao deve ser marcado como verificado manualmente`);
-    assert.strictEqual(game.verification_status, 'review', `${name} deve aguardar revisao editorial`);
+    if (game.slug === 'resident-evil-4-remake') {
+      assert.strictEqual(game.is_verified, true, `${name} deve permanecer verificado`);
+      assert.strictEqual(game.verification_status, 'verified', `${name} deve permanecer verified`);
+      assert.strictEqual(game.difficulty, 7, `${name} deve manter dificuldade 7/10`);
+      assert.strictEqual(guideModel.buildGuideViewModel(game, []).missableCount, 16, `${name} deve reduzir perdiveis inflados`);
+    } else {
+      assert.strictEqual(game.is_verified, false, `${name} nao deve ser marcado como verificado manualmente`);
+      assert.strictEqual(game.verification_status, 'review', `${name} deve aguardar revisao editorial`);
+    }
     assert.strictEqual(game.trophies.length, expectedGame.total, `${name} deve manter total de trofeus`);
     assert.strictEqual(new Set(game.trophies.map(trophy => trophy.id)).size, game.trophies.length, `${name} nao deve duplicar trophy_code`);
     assert.deepStrictEqual(countTypes(game), {

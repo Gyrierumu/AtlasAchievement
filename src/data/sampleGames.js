@@ -21,17 +21,8 @@ const missableTrophyIds = new Set([
   're4r_bandit',
   're4r_burglar',
   're4r_raider',
-  're4r_gun_fanatic',
   're4r_jack_of_all_trades',
   're4r_revolution_windup',
-  're4r_mission_accomplished',
-  're4r_splus_investigator',
-  're4r_sprinter',
-  're4r_frugalist',
-  're4r_minimalist',
-  're4r_silent_stranger',
-  're4r_real_deadeye',
-  're4r_trick_shot',
 
   // Resident Evil 2 Remake: campanhas sem chapter select, colecionáveis e restrições.
   're2r_gotcha',
@@ -2756,7 +2747,7 @@ const sampleGames = [
     "developer": "Capcom",
     "publisher": "Capcom",
     "guide_platform": "PS4/PS5",
-    "difficulty": 6,
+    "difficulty": 7,
     "time": "30-40 horas",
     "time_min_hours": 30,
     "time_max_hours": 40,
@@ -2765,7 +2756,7 @@ const sampleGames = [
     "trophy_count": 40,
     "trophy_distribution": { "Platina": 1, "Ouro": 4, "Prata": 10, "Bronze": 25 },
     "hasMissables": true,
-    "missableCount": 25,
+    "missableCount": 16,
     "hasOnline": false,
     "hasCoop": false,
     "hasMandatoryOnline": false,
@@ -2783,13 +2774,13 @@ const sampleGames = [
     "mandatoryCoop": false,
     "multiplayerRequired": false,
     "platinumType": "múltiplas runs + rank + coletáveis + desafios",
-    "missable": "Há muitos troféus perdíveis ou altamente missable por capítulo/run, porque o jogo não tem chapter select nem free-roam final. A platina em si e troféus automáticos de história não entram nessa contagem.",
+    "missable": "Há 16 troféus tratados como perdíveis ou sensíveis a janela de campanha, principalmente por capítulos, tesouros de região, pedidos do Mercador, Castellans e objetivos situacionais sem chapter select tradicional.",
     "runs_summary": "Múltiplas campanhas planejadas: uma primeira run de coleta/aprendizado, runs de rank/speedrun e campanhas separadas para restrições como sem cura, sem Mercador e só pistolas/faca.",
-    "missable_summary": "A contagem considera troféus de capítulo, colecionáveis de área, pedidos do Mercador, armas, estande de tiro e desafios de run/rank que exigem replay se forem ignorados.",
+    "missable_summary": "A contagem prioriza janelas reais de capítulo/campanha. Ranks, restrições voluntárias, speedrun, Shooting Range e Gun Fanatic ficam como risco de run, dificuldade, coletável ou cleanup, não como perdíveis definitivos.",
     "online_summary": "Sem online obrigatório, sem coop e sem PS+ para a platina da lista base do remake.",
     "grind_summary": "O peso está em otimizar rotas, comprar/upgradear armas, juntar dinheiro, completar pedidos do Mercador, limpar coletáveis e repetir campanhas para rank e restrições.",
-    "dlc_scope": "Guia focado nos 40 troféus da lista base de Resident Evil 4 Remake. Separate Ways/Caminhos Distintos, VR Mode, pacote de DLC extra e tickets pagos ficam fora da platina base.",
-    "difficulty_reason": "A dificuldade vem de Professional, ranks S/S+, speedrun, economia de recursos e desafios de restrição que punem improviso.",
+    "dlc_scope": "DLC fora da platina base. Separate Ways/Caminhos Distintos, VR Mode, The Mercenaries, pacote de DLC extra e tickets pagos ficam fora da platina base.",
+    "difficulty_reason": "A dificuldade 7/10 vem de Professional, ranks S/S+, speedrun, economia de recursos e desafios de restrição que punem improviso.",
     "time_reason": "A faixa de 30-40 horas considera várias campanhas, coleta total, pedidos do Mercador, ranks, Professional e runs de restrição.",
     "first_run_advice": "Use a primeira campanha para aprender capítulos, pegar tesouros, castelões, pedidos do Mercador e armas sem tentar combinar todas as restrições de uma vez.",
     "cleanup_advice": "Depois da primeira run, use saves e campanhas dedicadas para completar tesouros, armas, pedidos, rank S/S+, Professional, Minimalist, Frugalist e Silent Stranger.",
@@ -2798,11 +2789,11 @@ const sampleGames = [
     "avoid_if": "Evite se você quer uma platina de uma campanha só, sem speedrun, sem dificuldade alta ou sem repetir trechos para rank.",
     "editorial_status": "published",
     "coverage_level": "strong",
-    "is_verified": false,
-    "verification_status": "review",
-    "editorial_review_status": "in_review",
-    "editorialStatus": "in_review",
-    "verification_note": "Guia da lista base revisado editorialmente; manter sem verified até revisão manual final de requisitos, nomes PT-BR e estratégia de Handcannon/Mercenaries.",
+    "is_verified": true,
+    "verification_status": "verified",
+    "editorial_review_status": "verified",
+    "editorialStatus": "verified",
+    "verification_note": "Guia revisado editorialmente.",
     "editorial_notes": "Escopo PS4/PS5 da platina base com 40 troféus. Cleanup depende de saves, NG+ e múltiplas runs; não tratar como chapter select tradicional. The Mercenaries pode ser citado como rota opcional para Handcannon, mas não é DLC paga obrigatória; Separate Ways/Caminhos Distintos, VR Mode, DLC extra e tickets pagos ficam fora da lista principal.",
     "image": "https://cdn.cloudflare.steamstatic.com/steam/apps/2050650/header.jpg",
     "cover_image": "https://cdn.cloudflare.steamstatic.com/steam/apps/2050650/library_600x900.jpg",
@@ -2814,7 +2805,7 @@ const sampleGames = [
       "ogDescription": "Roadmap completo da platina base de Resident Evil 4 Remake para PS4/PS5, com colecionáveis, S+, armas, restrições e sem DLC obrigatória."
     },
     "quickDecision": {
-      "summary": "Platina média/difícil, offline e de múltiplas runs: 40 troféus base, 30-40h, dificuldade 6/10 e muitos objetivos missable por falta de chapter select/free-roam.",
+      "summary": "Platina média/difícil, offline e de múltiplas runs: 40 troféus base, 30-40h, dificuldade 7/10 e objetivos sensíveis por falta de chapter select/free-roam.",
       "recommendation": "Vale para quem aceita planejar saves, colecionáveis, pedidos do Mercador, runs S+, Professional e desafios de restrição sem depender de DLC paga.",
       "firstAction": "Comece com uma campanha de coleta e preparação, marcando tesouros, Clockwork Castellans, pedidos do Mercador e troféus de capítulo."
     },
@@ -2908,7 +2899,7 @@ const sampleGames = [
           "Confira se há armas faltando para Gun Fanatic.",
           "Use saves manuais para corrigir pendências curtas sem transformar tudo em uma nova campanha."
         ],
-        "warning": "Não venda ou descarte armas de forma que atrapalhe Gun Fanatic sem confirmar se o jogo já registrou a obtenção.",
+        "warning": "Não venda ou descarte armas antes de garantir que o registro de Gun Fanatic foi feito.",
         "result": "Checklist de coletáveis e troféus situacionais praticamente fechado."
       },
       {
@@ -2983,7 +2974,7 @@ const sampleGames = [
         "name": "Knife Basics",
         "name_pt": "Faca Para Principiantes",
         "type": "Bronze",
-        "description": "Apare um inimigo com a faca.",
+        "description": "Apare um ataque inimigo com a faca.",
         "tip": "Sai cedo no jogo; faça um parry em um ataque corpo a corpo assim que puder.",
         "is_spoiler": false
       },
@@ -3154,8 +3145,8 @@ const sampleGames = [
         "name": "Smooth Escape",
         "name_pt": "Fuga Suave",
         "type": "Bronze",
-        "description": "Escape no jet ski sem sofrer dano.",
-        "tip": "Memorize a rota final e reduza erros nas curvas apertadas.",
+        "description": "Fuja na moto aquática sem sofrer dano.",
+        "tip": "Faça save antes da sequência final e repita o trecho se bater em obstáculos ou sofrer dano.",
         "is_spoiler": false
       },
       {
@@ -27718,7 +27709,7 @@ const sampleGames = [
         "Confira Training Sims, Red Zones, escotilhas e 100% por setor.",
         "Finalize troféus de combate como \"IT'S OVER 6000!\" e \"Who Needs Guns!?\" com setup adequado.",
         "Revise interações com Diana e LMTs.",
-        "Confirme que DLC, Deluxe Edition, cosméticos e bônus ficaram fora da lógica da platina base."
+        "Mantenha DLC, Deluxe Edition, cosméticos e bônus fora da lógica da platina base."
       ],
       "result": "Checklist fechado com campanha, pós-jogo, Lunatic, coletáveis e objetivos situacionais resolvidos."
     }

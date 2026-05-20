@@ -156,7 +156,7 @@ async function withTempApp(callback) {
   const baseUrl = `http://127.0.0.1:${server.address().port}`;
 
   try {
-    return await callback({ baseUrl, app, get, run });
+    return await callback({ baseUrl, app, get, run, migrate });
   } finally {
     server.closeIdleConnections?.();
     await new Promise((resolve, reject) => server.close(error => error ? reject(error) : resolve()));
@@ -349,9 +349,13 @@ async function validateGuide(slug = '') {
     assert(pragmataText.includes('DLC fora da platina base'), 'PRAGMATA deve padronizar DLC fora da platina base');
     [
       'em revisão editorial',
+      'sem confirmar',
+      'confirmar que',
       'validação editorial',
       'segue em validação',
+      'em validação',
       'potencialmente perdível',
+      'se estiver validado',
       'se essa validação',
       'se essa informação',
       'mantendo PRAGMATA em revisão editorial',
@@ -370,8 +374,42 @@ async function validateGuide(slug = '') {
       assert(!pragmataText.includes(text), `PRAGMATA nao deve conter texto publico/internal incorreto: ${text}`);
     });
   }
+  if (slug === 'resident-evil-4-remake') {
+    const re4Text = visibleGameText(seedGame);
+    const realMissables = seedGame.trophies.filter(item => item.is_missable || item.isMissable);
+    const removedMissableIds = [
+      're4r_mission_accomplished',
+      're4r_splus_investigator',
+      're4r_sprinter',
+      're4r_frugalist',
+      're4r_minimalist',
+      're4r_silent_stranger',
+      're4r_real_deadeye',
+      're4r_gun_fanatic',
+      're4r_trick_shot'
+    ];
+    assert.strictEqual(seedGame.is_verified, true, 'Resident Evil 4 Remake deve continuar verified no seed');
+    assert.strictEqual(seedGame.verification_status, 'verified', 'Resident Evil 4 Remake deve continuar com verification_status verified');
+    assert.strictEqual(viewModel.trophies.length, 40, 'Resident Evil 4 Remake deve manter 40 trofeus');
+    assert.strictEqual(viewModel.missableCount, realMissables.length, 'Resident Evil 4 Remake deve alinhar missableCount com is_missable');
+    assert.strictEqual(viewModel.missableCount, 16, 'Resident Evil 4 Remake deve reduzir perdiveis inflados para 16');
+    assert(!realMissables.some(trophy => trophy.type === 'Platina'), 'Resident Evil 4 Remake nao deve contar platina como perdivel');
+    removedMissableIds.forEach(id => {
+      const trophy = seedGame.trophies.find(item => item.id === id);
+      const tags = guideModel.getGuideTrophyTags(trophy, seedGame).map(tag => tag.label);
+      assert(trophy && !trophy.is_missable && !trophy.isMissable && !tags.includes('Perdível'), `${id} nao deve ficar como Perdivel`);
+    });
+    assert.strictEqual(seedGame.onlineRequired || seedGame.online_required || false, false, 'Resident Evil 4 Remake deve manter online 0');
+    assert.strictEqual(seedGame.coopRequired || seedGame.coop_required || false, false, 'Resident Evil 4 Remake deve manter coop 0');
+    assert.strictEqual(seedGame.dlcRequired || seedGame.dlc_required || false, false, 'Resident Evil 4 Remake deve manter DLC nao obrigatoria');
+    assert.strictEqual(viewModel.roadmapStages.length, 6, 'Resident Evil 4 Remake deve manter roadmap com 6 etapas');
+    assert(re4Text.includes('DLC fora da platina base'), 'Resident Evil 4 Remake deve padronizar DLC fora da platina base');
+    ['dados atuais do guia', 'segundo os dados atuais do guia', 'o guia não aponta', 'Base game sem DLCs', 'Descrição em revisão editorial.', 'Resgaté', 'Maté', 'faças', 'estrategicos', 'Amatéur Shooter', '[object Object]', 'undefined'].forEach(text => {
+      assert(!re4Text.includes(text), `Resident Evil 4 Remake nao deve conter texto incorreto: ${text}`);
+    });
+  }
 
-  await withTempApp(async ({ baseUrl, run }) => {
+  await withTempApp(async ({ baseUrl, run, migrate }) => {
     const apiGame = await fetchJson(`${baseUrl}/api/games/slug/${slug}`);
     assert.strictEqual(apiGame.slug, slug, 'API deve retornar o slug correto');
     assert.strictEqual(apiGame.trophies.length, seedGame.trophies.length, 'API deve retornar total de trofeus esperado');
@@ -507,9 +545,13 @@ async function validateGuide(slug = '') {
       assert(html.includes('Combate / Situacional'), "IT'S OVER 6000! deve aparecer como ponto situacional, nao como perdivel");
       [
         'em revisão editorial',
+        'sem confirmar',
+        'confirmar que',
         'validação editorial',
         'segue em validação',
+        'em validação',
         'potencialmente perdível',
+        'se estiver validado',
         'se essa validação',
         'se essa informação',
         'mantendo PRAGMATA em revisão editorial',
@@ -531,6 +573,106 @@ async function validateGuide(slug = '') {
       });
       assert(!/>\s*null\s*</i.test(html), 'PRAGMATA SSR nao deve exibir null visivel');
       assert.strictEqual(getCanonical(html), 'https://atlasachievement.com.br/jogo/pragmata', 'canonical de PRAGMATA deve usar dominio de producao');
+    }
+    if (slug === 'resident-evil-4-remake') {
+      const apiMissables = apiGame.trophies.filter(trophy => trophy.is_missable);
+      const summaryHtml = html.match(/<div class="atlas-guide-summary-editorial[\s\S]*?<\/div>/)?.[0] || '';
+      assert.strictEqual(apiGame.is_verified, true, 'API de Resident Evil 4 Remake deve continuar verified');
+      assert.strictEqual(apiGame.verification_status, 'verified', 'API de Resident Evil 4 Remake deve expor verification_status verified');
+      assert.strictEqual(apiGame.trophies.length, 40, 'API de Resident Evil 4 Remake deve manter 40 trofeus');
+      assert.strictEqual(apiGame.missable_count, apiMissables.length, 'API de Resident Evil 4 Remake deve alinhar missable_count com checklist');
+      assert.strictEqual(apiGame.missable_count, 16, 'API de Resident Evil 4 Remake deve reduzir perdiveis inflados para 16');
+      assert(!apiMissables.some(trophy => trophy.type === 'Platina'), 'API de Resident Evil 4 Remake nao deve contar platina como perdivel');
+      ['re4r_mission_accomplished', 're4r_splus_investigator', 're4r_frugalist', 're4r_minimalist', 're4r_silent_stranger', 're4r_sprinter', 're4r_real_deadeye', 're4r_gun_fanatic', 're4r_trick_shot'].forEach(id => {
+        const trophy = apiGame.trophies.find(item => item.id === id);
+        assert(trophy && !trophy.is_missable, `${id} nao deve ficar como Perdivel na API`);
+      });
+      const smoothEscape = apiGame.trophies.find(item => item.id === 're4r_smooth_escape');
+      assert.strictEqual(smoothEscape?.description, 'Fuja na moto aqu\u00e1tica sem sofrer dano.', 'Smooth Escape deve ter descricao corrigida na checklist da API');
+      assert.strictEqual(smoothEscape?.tip, 'Fa\u00e7a save antes da sequ\u00eancia final e repita o trecho se bater em obst\u00e1culos ou sofrer dano.', 'Smooth Escape deve ter dica corrigida na checklist da API');
+      const re4ApiText = apiGame.trophies.map(trophy => `${trophy.name} ${trophy.name_pt} ${trophy.description} ${trophy.tip}`).join(' ');
+      ['Descri\u00e7\u00e3o em revis\u00e3o editorial.', 'Resgat\u00e9', 'Mat\u00e9', 'fa\u00e7as', 'estrategia', 'estrategicos', 'Amat\u00e9ur Shooter', 'Apare um inimigo com a fa\u00e7a.'].forEach(text => {
+        assert(!re4ApiText.includes(text), `Checklist da API de Resident Evil 4 Remake nao deve conter: ${text}`);
+      });
+      assert.strictEqual(Boolean(apiGame.onlineRequired || apiGame.online_required), false, 'API de Resident Evil 4 Remake deve manter online 0');
+      assert.strictEqual(Boolean(apiGame.coopRequired || apiGame.coop_required), false, 'API de Resident Evil 4 Remake deve manter coop 0');
+      assert.strictEqual(Boolean(apiGame.dlcRequired || apiGame.dlc_required), false, 'API de Resident Evil 4 Remake deve manter DLC nao obrigatoria');
+      assert(html.includes('Resident Evil 4 Remake — Guia de platina e troféus'), 'Resident Evil 4 Remake deve renderizar H1 esperado');
+      assert(html.includes('Verificado'), 'Resident Evil 4 Remake deve renderizar status Verificado');
+      assert(html.includes('Guia revisado editorialmente.'), 'Resident Evil 4 Remake deve renderizar mensagem revisada');
+      assert(html.includes('DLC fora da platina base'), 'Resident Evil 4 Remake deve exibir DLC fora da platina base');
+      assert(html.includes('Resident Evil 4 Remake é uma platina baseada em múltiplas campanhas'), 'Resident Evil 4 Remake deve exibir resumo editorial forte');
+      assert((summaryHtml.match(/<p\b/g) || []).length >= 2, 'Resumo de Resident Evil 4 Remake deve ter pelo menos 2 paragrafos editoriais');
+      assert(html.includes('A platina base é totalmente offline') && html.includes('Separate Ways, VR Mode, The Mercenaries, tickets pagos'), 'FAQ de Resident Evil 4 Remake deve ter respostas diretas');
+      assert(html.includes('Dificuldade / Rank / Risco de run') && html.includes('Coletável / Risco de run / Cleanup'), 'Pontos de atencao de Resident Evil 4 Remake devem reclassificar rank e Gun Fanatic');
+      ['dados atuais do guia', 'segundo os dados atuais do guia', 'o guia não aponta', 'Base game sem DLCs', 'Descrição em revisão editorial.', 'Resgaté', 'Maté', 'faças', 'Amatéur Shooter', '[object Object]', 'undefined'].forEach(text => {
+        assert(!html.includes(text), `Resident Evil 4 Remake SSR nao deve exibir: ${text}`);
+      });
+      assert(!/>\s*null\s*</i.test(html), 'Resident Evil 4 Remake SSR nao deve exibir null visivel');
+      assert.strictEqual(getCanonical(html), 'https://atlasachievement.com.br/jogo/resident-evil-4-remake', 'canonical de Resident Evil 4 Remake deve usar dominio de producao');
+
+      const staleMissableIds = [
+        're4r_mission_accomplished',
+        're4r_splus_investigator',
+        're4r_frugalist',
+        're4r_minimalist',
+        're4r_silent_stranger',
+        're4r_sprinter',
+        're4r_real_deadeye',
+        're4r_gun_fanatic',
+        're4r_trick_shot'
+      ];
+      const stalePlaceholders = staleMissableIds.map(() => '?').join(', ');
+      await run(
+        `UPDATE trophies
+            SET is_missable = 1
+          WHERE game_id = (SELECT id FROM games WHERE slug = 'resident-evil-4-remake')
+            AND trophy_code IN (${stalePlaceholders})`,
+        staleMissableIds
+      );
+      await run(
+        `UPDATE trophies
+            SET description = 'Descri\u00e7\u00e3o em revis\u00e3o editorial.',
+                tip = 'Memorize a rota final e reduza erros nas curvas apertadas.'
+          WHERE game_id = (SELECT id FROM games WHERE slug = 'resident-evil-4-remake')
+            AND trophy_code = 're4r_smooth_escape'`
+      );
+      await run(
+        `UPDATE trophies
+            SET description = 'Apare um inimigo com a fa\u00e7a.'
+          WHERE game_id = (SELECT id FROM games WHERE slug = 'resident-evil-4-remake')
+            AND trophy_code = 're4r_knife_basics'`
+      );
+      await run(
+        `UPDATE trophies
+            SET description = 'Resgat\u00e9 Ashley enquanto ela est\u00e1 sendo carregada por um inimigo.'
+          WHERE game_id = (SELECT id FROM games WHERE slug = 'resident-evil-4-remake')
+            AND trophy_code = 're4r_near_death'`
+      );
+      await run(
+        `UPDATE trophies
+            SET description = 'Mat\u00e9 2 parasitas dentro de um Regenerador com uma \u00fanica bala.'
+          WHERE game_id = (SELECT id FROM games WHERE slug = 'resident-evil-4-remake')
+            AND trophy_code = 're4r_two_bugs'`
+      );
+
+      await migrate();
+      const repairedGame = await fetchJson(`${baseUrl}/api/games/slug/${slug}`);
+      const repairedMissables = repairedGame.trophies.filter(trophy => trophy.is_missable);
+      assert.strictEqual(repairedGame.trophies.length, 40, 'Migracao deve manter 40 trofeus de Resident Evil 4 Remake');
+      assert.strictEqual(repairedGame.missable_count, 16, 'Migracao deve reparar Perdiveis 25 para 16');
+      assert.strictEqual(repairedGame.missable_count, repairedMissables.length, 'Migracao deve alinhar contagem com flags reais');
+      staleMissableIds.forEach(id => {
+        const trophy = repairedGame.trophies.find(item => item.id === id);
+        assert(trophy && !trophy.is_missable, `${id} deve ser reparado pela migracao da checklist`);
+      });
+      const repairedSmoothEscape = repairedGame.trophies.find(item => item.id === 're4r_smooth_escape');
+      assert.strictEqual(repairedSmoothEscape?.description, 'Fuja na moto aqu\u00e1tica sem sofrer dano.', 'Migracao deve reparar descricao de Smooth Escape');
+      assert.strictEqual(repairedSmoothEscape?.tip, 'Fa\u00e7a save antes da sequ\u00eancia final e repita o trecho se bater em obst\u00e1culos ou sofrer dano.', 'Migracao deve reparar dica de Smooth Escape');
+      const repairedText = repairedGame.trophies.map(trophy => `${trophy.name} ${trophy.name_pt} ${trophy.description} ${trophy.tip}`).join(' ');
+      ['Descri\u00e7\u00e3o em revis\u00e3o editorial.', 'Resgat\u00e9', 'Mat\u00e9', 'fa\u00e7as', 'estrategia', 'estrategicos', 'Amat\u00e9ur Shooter', 'Apare um inimigo com a fa\u00e7a.'].forEach(text => {
+        assert(!repairedText.includes(text), `Migracao da checklist nao deve deixar texto antigo: ${text}`);
+      });
     }
   });
 

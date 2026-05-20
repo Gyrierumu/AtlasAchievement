@@ -1331,6 +1331,59 @@
       ];
     }
 
+    const re4AttentionIds = [
+      're4r_real_deadeye',
+      're4r_mission_accomplished',
+      're4r_splus_investigator',
+      're4r_frugalist',
+      're4r_gun_fanatic'
+    ];
+    if (String(game?.slug || '').trim().toLowerCase() === 'resident-evil-4-remake' && re4AttentionIds.every(id => trophyById.has(id))) {
+      const attentionTag = (label, tone = 'warning') => ({ id: normalizeGuideSignalText(label).replace(/\s+/g, '-'), label, tone });
+      return [
+        {
+          id: 're4r_real_deadeye',
+          name: trophyById.get('re4r_real_deadeye')?.name || 'Real Deadeye',
+          type: 'Dificuldade / Shooting Range / Skill',
+          text: 'Deixe para uma etapa de limpeza do Shooting Range; algumas provas exigem consistência, mira e repetição.',
+          tags: [attentionTag('Dificuldade / Shooting Range / Skill', 'warning')],
+          score: 99
+        },
+        {
+          id: 're4r_mission_accomplished',
+          name: trophyById.get('re4r_mission_accomplished')?.name || 'Mission Accomplished S+',
+          type: 'Dificuldade / Rank / Risco de run',
+          text: 'Exige New Game e controle de tempo no Standard. Planeje rota, saves e recursos antes de começar.',
+          tags: [attentionTag('Dificuldade / Rank / Risco de run', 'risk')],
+          score: 98
+        },
+        {
+          id: 're4r_splus_investigator',
+          name: trophyById.get('re4r_splus_investigator')?.name || 'S+ Rank Investigator',
+          type: 'Dificuldade / Rank / Risco de run',
+          text: 'Uma das runs centrais da platina. Faça em New Game no Hardcore com rota otimizada e saves planejados.',
+          tags: [attentionTag('Dificuldade / Rank / Risco de run', 'risk')],
+          score: 97
+        },
+        {
+          id: 're4r_frugalist',
+          name: trophyById.get('re4r_frugalist')?.name || 'Frugalist',
+          type: 'Restrição / Risco de run',
+          text: 'Faça em uma run própria, de preferência com armas fortes, acessórios defensivos e controle rígido de cura.',
+          tags: [attentionTag('Restrição / Risco de run', 'risk')],
+          score: 96
+        },
+        {
+          id: 're4r_gun_fanatic',
+          name: trophyById.get('re4r_gun_fanatic')?.name || 'Gun Fanatic',
+          type: 'Coletável / Risco de run / Cleanup',
+          text: 'Exige planejamento de compras, armas vendidas pelo Mercador e possíveis desbloqueios de múltiplas runs.',
+          tags: [attentionTag('Coletável / Risco de run / Cleanup', 'partial')],
+          score: 95
+        }
+      ];
+    }
+
     const pragmataAttentionIds = [
       'pragmata_our_promise',
       'pragmata_lunar_supremacy',
@@ -1377,7 +1430,7 @@
           id: 'pragmata_youre_not_getting_away',
           name: trophyById.get('pragmata_youre_not_getting_away')?.name || "You're Not Getting Away That Easy",
           type: 'Perdível / Combate',
-          text: 'Derrote o Sweeper bot quando a oportunidade aparecer. Não deixe esse alerta para o pós-jogo sem confirmar que ele ainda pode ser repetido.',
+          text: 'Derrote o Sweeper bot quando a oportunidade aparecer e não deixe esse alerta para o pós-jogo.',
           tags: [attentionTag('Perdível / Combate', 'risk')],
           score: 95
         }
@@ -2204,6 +2257,35 @@
         {
           question: 'A DLC é necessária para a platina de Resident Evil Requiem?',
           answer: 'Não. DLCs, Deluxe Kit e modos futuros ficam fora da platina base.'
+        }
+      ];
+    }
+
+    if (String(game?.slug || '').trim().toLowerCase() === 'resident-evil-4-remake') {
+      return [
+        {
+          question: 'Resident Evil 4 Remake tem troféus perdíveis?',
+          answer: 'Sim. A lista base tem troféus que exigem atenção a capítulos, saves, coletáveis por campanha, pedidos do Mercador, tesouros, castelões e objetivos situacionais. Siga o roadmap desde a primeira campanha para evitar repetir runs desnecessárias.'
+        },
+        {
+          question: 'Resident Evil 4 Remake precisa de online para platinar?',
+          answer: 'Não. A platina base é totalmente offline e não exige servidores, PS+ ou troféus online.'
+        },
+        {
+          question: 'Quanto tempo leva para platinar Resident Evil 4 Remake?',
+          answer: 'O tempo estimado é 30-40 horas, variando conforme domínio das rotas, número de runs, S+, Professional, restrições, Shooting Range, coletáveis e cleanup.'
+        },
+        {
+          question: 'Qual a dificuldade da platina de Resident Evil 4 Remake?',
+          answer: 'A dificuldade cadastrada é 7/10. O desafio vem de múltiplas runs, rank S+, Professional, restrições como Minimalist, Frugalist e Silent Stranger, além de troféus situacionais de capítulo.'
+        },
+        {
+          question: 'Resident Evil 4 Remake tem coop obrigatório?',
+          answer: 'Não. A platina base é single-player e não exige coop.'
+        },
+        {
+          question: 'A DLC é necessária para a platina de Resident Evil 4 Remake?',
+          answer: 'Não. Separate Ways, VR Mode, The Mercenaries, tickets pagos e outros extras ficam fora da platina base.'
         }
       ];
     }

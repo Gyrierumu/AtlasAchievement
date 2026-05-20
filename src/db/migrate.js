@@ -766,6 +766,61 @@ async function syncSeedGameRoadmapFromSeed(seedSlug) {
   }
 }
 
+async function syncSeedGameTrophiesFromSeed(seedSlug) {
+  const game = getSeedGameBySlug(seedSlug);
+  if (!game || !Array.isArray(game.trophies) || !game.trophies.length) return;
+
+  const slug = getCanonicalGameSlug(game.slug || game.name);
+  const existing = await get('SELECT id FROM games WHERE slug = ? OR name = ? ORDER BY id ASC LIMIT 1', [slug, game.name]);
+  if (!existing) return;
+
+  const trophyCodes = game.trophies.map(trophy => String(trophy?.id || '').trim()).filter(Boolean);
+  if (!trophyCodes.length) return;
+
+  await exec('BEGIN TRANSACTION');
+  try {
+    for (const trophy of game.trophies) {
+      const trophyCode = String(trophy?.id || '').trim();
+      if (!trophyCode) continue;
+
+      await run(
+        `INSERT INTO trophies (game_id, trophy_code, name, name_pt, type, description, tip, is_missable, is_spoiler)
+         VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?)
+         ON CONFLICT(game_id, trophy_code) DO UPDATE SET
+           name = excluded.name,
+           name_pt = excluded.name_pt,
+           type = excluded.type,
+           description = excluded.description,
+           tip = excluded.tip,
+           is_missable = excluded.is_missable,
+           is_spoiler = excluded.is_spoiler`,
+        [
+          existing.id,
+          trophyCode,
+          String(trophy.name || '').trim(),
+          trophy.name_pt ? String(trophy.name_pt).trim() : null,
+          normalizeTrophyType(trophy.type),
+          String(trophy.description || '').trim(),
+          String(trophy.tip || '').trim(),
+          trophy.is_missable ? 1 : 0,
+          trophy.is_spoiler ? 1 : 0
+        ]
+      );
+    }
+
+    const placeholders = trophyCodes.map(() => '?').join(', ');
+    await run(
+      `DELETE FROM trophies WHERE game_id = ? AND trophy_code NOT IN (${placeholders})`,
+      [existing.id, ...trophyCodes]
+    );
+
+    await exec('COMMIT');
+  } catch (error) {
+    await exec('ROLLBACK').catch(() => {});
+    throw error;
+  }
+}
+
 async function syncEldenRingVerifiedGuideFromSeed() {
   const game = getSeedGameBySlug('elden-ring');
   if (!game) return;
@@ -1567,6 +1622,7 @@ async function migrate(options = {}) {
   await syncSeedGameFromSeed('astro-bot', { insertIfMissing: true, forceSync: true });
   await syncSeedGameFromSeed('astros-playroom', { insertIfMissing: true, forceSync: true });
   await syncSeedGameGuideSummaryAndRoadmapFromSeed('resident-evil-4-remake');
+  await syncSeedGameTrophiesFromSeed('resident-evil-4-remake');
   await syncSeedGameFromSeed('nioh-2', { insertIfMissing: true, forceSync: true });
   await syncSeedGameFromSeed('nioh-3', { insertIfMissing: true, forceSync: true });
   await syncSeedGameFromSeed('saros', { insertIfMissing: true, forceSync: true });

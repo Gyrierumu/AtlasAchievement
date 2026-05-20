@@ -56,6 +56,11 @@ window.UIGuide = (() => {
     'A melhor estratégia é fazer a primeira campanha aprendendo o ciclo Hugh + Diana, conversando com Diana no Abrigo e acompanhando coletáveis desde cedo. Durante essa run, mantenha atenção ao alerta de You\'re Not Getting Away That Easy, além de registrar LMTs, Mini Cabins, escotilhas, Red Zones e objetivos que podem exigir setup específico.',
     'Depois da campanha, use o pós-jogo e Unknown Signal para limpar setores, Training Sims, upgrades, coletáveis e troféus situacionais. A etapa de Lunatic deve ser tratada como jogada separada, deixando a run de dificuldade para quando você já conhecer bem combate, hacking, chefes e rotas.'
   ];
+  const RE4_REMAKE_EDITORIAL_SUMMARY = [
+    'Resident Evil 4 Remake é uma platina baseada em múltiplas campanhas, domínio dos capítulos, saves manuais, coletáveis, pedidos do Mercador, Clockwork Castellans, tesouros, Shooting Range, armas, troféus situacionais e runs de restrição. A lista base não exige online, coop, Separate Ways, VR Mode, The Mercenaries ou tickets pagos.',
+    'A melhor estratégia é usar a primeira campanha para aprender rotas, chefes, economia de recursos e pontos sem volta, enquanto já adianta tesouros, pedidos do Mercador, castelões e armas importantes. Não tente combinar todas as restrições logo de início; separar objetivos reduz o risco de quebrar uma run e evita retrabalho.',
+    'Depois da primeira campanha, organize runs específicas para NG+, Professional, S+, Minimalist, Frugalist, Silent Stranger, Sprinter, Shooting Range e cleanup de troféus situacionais. Como o jogo não tem chapter select tradicional nem free roam final, saves manuais por capítulo e checklist atualizado fazem diferença para evitar repetir campanhas desnecessárias.'
+  ];
   const CHECKLIST_DENSITIES = new Set(['comfortable', 'compact']);
   const GUIDE_FILTER_LABELS = {
     all: 'Todos',
@@ -357,7 +362,7 @@ window.UIGuide = (() => {
         .map(card => ({
           ...card,
           label: labels[card.id] || card.label,
-          value: card.id === 'dlc' && ['resident-evil-requiem', 'hades', 'ghost-of-tsushima', 'hades-ii', 'astro-bot', 'pragmata'].includes(String(game?.slug || '').trim().toLowerCase())
+          value: card.id === 'dlc' && ['resident-evil-requiem', 'resident-evil-4-remake', 'hades', 'ghost-of-tsushima', 'hades-ii', 'astro-bot', 'pragmata'].includes(String(game?.slug || '').trim().toLowerCase())
             ? 'DLC fora da platina base'
             : card.id === 'coop' && /2 jogadores/i.test(String(card.detail || ''))
             ? '2 jogadores obrigatórios'
@@ -688,6 +693,8 @@ window.UIGuide = (() => {
       ? ASTRO_BOT_EDITORIAL_SUMMARY
       : normalizedSlug === 'pragmata'
       ? PRAGMATA_EDITORIAL_SUMMARY
+      : normalizedSlug === 'resident-evil-4-remake'
+      ? RE4_REMAKE_EDITORIAL_SUMMARY
       : normalizedSlug === 'elden-ring'
       ? [
           'Este guia de platina de Elden Ring foi pensado para quem quer completar a lista base sem depender apenas da lista crua de troféus. A rota prioriza finais, chefes com troféu, itens lendários e pontos que podem gerar retrabalho se você avançar sem planejamento.',
@@ -768,7 +775,7 @@ window.UIGuide = (() => {
     const playerFit = viewModel.playerFit || buildGuidePlayerFit(game, viewModel);
     const methodItems = Array.isArray(viewModel.editorial?.methodItems) ? viewModel.editorial.methodItems : [];
     const statusBadge = viewModel.editorial?.statusBadge || getEditorialBadge(game);
-    const sectionCopy = ['resident-evil-requiem', 'hades', 'ghost-of-tsushima', 'hades-ii', 'astro-bot', 'pragmata'].includes(normalizedSlug)
+    const sectionCopy = ['resident-evil-requiem', 'resident-evil-4-remake', 'hades', 'ghost-of-tsushima', 'hades-ii', 'astro-bot', 'pragmata'].includes(normalizedSlug)
       ? 'Respostas rápidas sobre perdíveis, online, coop, tempo, dificuldade e DLC da lista base.'
       : 'Respostas rápidas sobre perdíveis, online, coop, tempo, dificuldade e DLC usando os dados atuais do guia.';
     return `
