@@ -973,7 +973,7 @@ const sampleGames = [
     "newGamePlusRequired": false,
     "platinumType": "campanha + mundo aberto + coletáveis + cleanup",
     "grind_summary": "O peso está em exploração de mundo aberto, atividades, side tales, coletáveis e libertação de áreas.",
-    "dlc_scope": "Guia focado na lista base da platina; Iki Island e Legends devem ficar separados se o projeto suportar DLC.",
+    "dlc_scope": "DLC fora da platina base. Iki Island, Legends e New Game+ ficam fora da platina base.",
     "difficulty_reason": "A platina é acessível; a dificuldade vem mais do volume de atividades e exploração do que de execução extrema.",
     "time_reason": "A faixa de 40-50 horas considera campanha, side content, coletáveis, libertação de áreas e cleanup.",
     "first_run_advice": "Jogue a campanha explorando naturalmente, mas avance side tales e atividades para reduzir o cleanup final.",
@@ -983,11 +983,11 @@ const sampleGames = [
     "avoid_if": "Evite se você não gosta de limpar mapa, coletáveis e atividades repetidas em mundo aberto.",
     "editorial_status": "published",
     "coverage_level": "strong",
-    "is_verified": false,
-    "verification_status": "review",
-    "verification_note": "Lista base revisada com foco em platina; aguarda validação editorial manual final.",
-    "editorial_review_status": "in_review",
-    "last_reviewed_at": "2026-05-15",
+    "is_verified": true,
+    "verification_status": "verified",
+    "verification_note": "Guia revisado editorialmente para a lista base.",
+    "editorial_review_status": "verified",
+    "last_reviewed_at": "2026-05-18",
     "editorial_notes": "Revisão editorial focada na lista base de 52 troféus. Legends/co-op, Iki Island e New Game+ ficam fora da platina base. Nomes PT-BR preenchidos a partir da localização brasileira oficial da Steam; descrições secretas permanecem em tradução editorial fiel quando a fonte pública não exibe o texto localizado.",
     "quality_warnings": [
       "Algumas descrições secretas usam tradução editorial PT-BR porque a página pública da Steam oculta a descrição localizada."
@@ -2091,26 +2091,22 @@ const sampleGames = [
     "cover_image": "https://cdn.cloudflare.steamstatic.com/steam/apps/1145350/library_600x900.jpg",
     "editorial_status": "published",
     "coverage_level": "strong",
-    "is_verified": false,
-    "verification_status": "unverified",
-    "editorial_review_status": "in_review",
-    "editorialStatus": "in_review",
-    "last_reviewed_at": "2026-05-16",
+    "is_verified": true,
+    "verification_status": "verified",
+    "editorial_review_status": "verified",
+    "editorialStatus": "verified",
+    "last_reviewed_at": "2026-05-18",
     "reviewed_by": "AtlasAchievement Editorial",
-    "verification_note": "Guia atualizado para a lista base PS5 de Hades II, mas deve permanecer sem selo verified até revisão manual final de strings, bugs de desbloqueio e patch notes.",
+    "verification_note": "Guia revisado editorialmente para a lista base.",
     "editorial_notes": "Base factual: Hades II está lançado e não deve ser tratado como acesso antecipado; PS5 usa 50 troféus com distribuição 1/2/11/36. A lista Xbox tem 49 achievements e não deve ser usada para contagem de troféus PS5. Nomes oficiais mantidos em inglês; descrições editoriais em português; name_pt omitido por prudência editorial.",
-    "quality_warnings": [
-      "needs_manual_editorial_verification",
-      "needs_pt_br_localization_check",
-      "needs_bugged_unlock_recheck"
-    ],
+    "quality_warnings": [],
     "runs_summary": "Muitas runs no Submundo e na Superfície. A platina exige história, epílogo, profecias, Chaos Trials, familiars, keepsakes, Arcana e vínculos.",
     "missable_summary": "Não há perdíveis reais na lista base. Organize conversas, presentes, profecias e recursos entre runs apenas para reduzir grind e retrabalho.",
     "online_summary": "Sem online obrigatório: a platina base de PS5 é single-player/offline e não exige coop, servidores ou PS+.",
     "grind_summary": "Grind alto de materiais, Kudos, profecias, upgrades de Arcana, familiars, keepsakes, vínculos e Chaos Trials.",
-    "dlc_scope": "Lista base de PS5, sem DLC obrigatória para a platina.",
+    "dlc_scope": "DLC fora da platina base. A lista base de PS5 não exige DLC para a platina.",
     "difficulty_reason": "A execução é moderada a alta sem God Mode, com chefes finais, rotas longas e desafios de endgame. Com God Mode, a pressão editorial cai para aproximadamente 5/10.",
-    "time_reason": "A estimativa de 65-90 horas considera várias clears, progresso de história por diálogos/RNG, farm de materiais e limpeza de profecias, vínculos, Arcana, keepsakes, familiars e Chaos Trials.",
+    "time_reason": "A estimativa de 65-85 horas considera várias clears, progresso de história por diálogos/RNG, farm de materiais e limpeza de profecias, vínculos, Arcana, keepsakes, familiars e Chaos Trials.",
     "first_run_advice": "Priorize liberar armas, ferramentas, acesso à Superfície, incantations centrais e diálogos na Encruzilhada depois de cada run.",
     "cleanup_advice": "Depois da história principal, separe blocos para epílogo, Chaos Trials, keepsakes, familiars, Arcana, vínculos, Kudos e profecias pendentes.",
     "before_you_start": "Hades II está lançado e não é acesso antecipado. Use PS5 como base do guia; a platina não exige online, não exige coop e não exige DLC. Acompanhe a Fated List, converse com NPCs entre runs e use God Mode se quiser reduzir a exigência sem bloquear troféus.",
@@ -2118,9 +2114,9 @@ const sampleGames = [
     "avoid_if": "Evite se você quer uma platina curta, linear ou com checklist fechado em poucas sessões.",
     "seo": {
       "title": "Hades II: guia de platina PS5, troféus e roadmap | AtlasAchievement",
-      "description": "Guia de platina de Hades II no PS5 em português, com 50 troféus, dificuldade 7/10, 65-90h, roadmap, checklist, God Mode, Chronos, epílogo e sem perdíveis.",
+      "description": "Guia de platina de Hades II no PS5 em português, com 50 troféus, dificuldade 7/10, 65-85h, roadmap, checklist, God Mode, Chronos, epílogo e sem perdíveis.",
       "ogTitle": "Hades II: guia de platina PS5, troféus e roadmap | AtlasAchievement",
-      "ogDescription": "Roadmap de Hades II para PS5 com lista base de 50 troféus, sem online, sem coop, sem DLC obrigatória, sem perdíveis reais e guia em revisão editorial."
+      "ogDescription": "Roadmap de Hades II para PS5 com lista base de 50 troféus, sem online, sem coop, sem DLC obrigatória, sem perdíveis reais e guia verificado."
     },
     "quickDecision": {
       "summary": "Platina longa e offline: 50 troféus no PS5, sem perdíveis reais, sem online/coop/DLC obrigatórios, com foco em duas rotas, história, epílogo e cleanup de sistemas persistentes.",
@@ -2145,27 +2141,27 @@ const sampleGames = [
     "faq": [
       {
         "question": "Hades II tem troféus perdíveis?",
-        "answer": "Não. A lista base de PS5 não tem perdíveis reais; o progresso pode ser retomado por runs, diálogos, profecias e sistemas persistentes."
+        "answer": "Não. A lista base não tem perdíveis obrigatórios confirmados. O risco principal está em spoilers, objetivos situacionais e organização de runs, não em travar a platina."
       },
       {
-        "question": "Hades II tem online ou co-op obrigatório?",
-        "answer": "Não. A platina de PS5 é single-player/offline e não exige online, coop, servidores ou PS+."
+        "question": "Hades II precisa de online para platinar?",
+        "answer": "Não. A platina base é totalmente offline e não exige servidores, PS+ ou troféus online."
       },
       {
-        "question": "Hades II ainda é acesso antecipado?",
-        "answer": "Não. Hades II já saiu do acesso antecipado; a versão PS5 foi lançada depois do v1.0."
+        "question": "Quanto tempo leva para platinar Hades II?",
+        "answer": "O tempo estimado é 65-85 horas, variando conforme domínio das runs, progresso na Fated List, recursos raros, relacionamentos, Chaos Trials, Surface, Chronos e cleanup."
       },
       {
-        "question": "God Mode bloqueia troféus?",
-        "answer": "Não há indicação de que God Mode bloqueie troféus. Use como recurso opcional para reduzir a dificuldade."
+        "question": "Qual a dificuldade da platina de Hades II?",
+        "answer": "A dificuldade cadastrada é 7/10. O desafio vem da consistência em runs, bosses, rotas avançadas, grind de recursos e objetivos longos."
       },
       {
-        "question": "Posso usar a lista do Xbox como base?",
-        "answer": "Não para contagem de troféus PS5. A lista Xbox tem 49 achievements; este guia usa a pilha PS5 com 50 troféus."
+        "question": "Hades II tem coop obrigatório?",
+        "answer": "Não. A platina base é single-player e não exige coop."
       },
       {
-        "question": "O que fazer se Soothing Soak ou So Mote It Be não desbloquear?",
-        "answer": "Revalide o requisito no save, continue avançando diálogos/incantations e confira patch notes/hotfixes antes de concluir que é erro permanente. O guia permanece sem verified por essa cautela."
+        "question": "A DLC é necessária para a platina de Hades II?",
+        "answer": "Não. A platina base não exige DLC."
       }
     ],
     "roadmap": [
@@ -2242,10 +2238,10 @@ const sampleGames = [
           "Revise troféus de história, bosses, armas, aspectos, recursos, Keepsakes, Familiars, Arcana e relacionamentos.",
           "Complete qualquer objetivo situacional que não veio naturalmente nas runs.",
           "Confirme se não há troféu online, coop ou DLC sendo contado por engano.",
-          "Verifique se nenhum requisito ficou preso a versão antiga, patch ou informação ainda não validada."
+          "Revalide objetivos sensíveis a patch, desbloqueios recentes e requisitos situacionais antes de encerrar o cleanup."
         ],
-        "warning": "Como o guia está em revisão editorial, revalide patch notes e relatos de desbloqueio antes de marcar qualquer requisito recente como definitivo.",
-        "result": "Checklist completo e platina pronta, mantendo o guia em revisão se houver dado recente ainda pendente."
+        "warning": "",
+        "result": "Checklist completo e platina pronta após fechar pendências de história, recursos, relacionamentos e objetivos situacionais."
       }
     ],
     "trophies": [
@@ -2297,7 +2293,7 @@ const sampleGames = [
       { "id": "hades2_witch_of_the_outskirts", "name": "Witch of the Outskirts", "type": "Bronze", "description": "Conclua City of Ephyra.", "tip": "Libere a Superfície, remova a maldição e complete a primeira área dessa rota.", "is_spoiler": false },
       { "id": "hades2_witch_of_the_waters", "name": "Witch of the Waters", "type": "Bronze", "description": "Conclua Rift of Thessaly.", "tip": "Siga pela segunda área da Superfície e monte uma build com bom alcance e mobilidade.", "is_spoiler": false },
       { "id": "hades2_witch_of_the_mountains", "name": "Witch of the Mountains", "type": "Bronze", "description": "Conclua Mount Olympus.", "tip": "Área avançada da Superfície; entre com recursos defensivos e dano para chefes longos.", "is_spoiler": false },
-      { "id": "hades2_witch_of_the_clouds", "name": "Witch of the Clouds", "type": "Bronze", "description": "Conclua Summit.", "tip": "Final da rota de Superfície; deixe para quando já conhecer bem ataques e janelas de segurança.", "is_spoiler": true },
+      { "id": "hades2_witch_of_the_clouds", "name": "Witch of the Clouds", "type": "Bronze", "description": "Conclua Summit.", "tip": "Final da rota de Superfície; deixe para quando já conhecer bem ataques e momentos seguros.", "is_spoiler": true },
       { "id": "hades2_so_mote_it_be", "name": "So Mote It Be", "type": "Bronze", "description": "Realize 50 incantations no Caldeirão da Encruzilhada.", "tip": "Colete materiais em todas as rotas e use o cauldron sempre que novas receitas aparecerem.", "is_spoiler": false }
     ]
   },
@@ -8664,8 +8660,7 @@ const sampleGames = [
         "actions": [
           "Verifique quais dificuldades acumulam.",
           "Compre e visualize modelos e concept arts exigidos.",
-          "Separe Deluxe Kit, DLCs ou modos futuros da platina base.",
-          "Confirme que DLCs, Deluxe Kit e modos futuros ficam fora da platina base."
+          "Separe Deluxe Kit, DLCs e modos futuros da platina base."
         ],
         "result": "Conteúdo da lista base separado de extras externos."
       },
@@ -8674,10 +8669,9 @@ const sampleGames = [
         "focus": "Cleanup",
         "objective": "Revisar pendências finais antes de considerar a platina encaminhada.",
         "actions": [
-          "Conferir os 50 troféus da lista atual.",
+          "Conferir os 50 troféus da lista base.",
           "Revisar perdíveis reais, riscos de run, spoilers e coletáveis.",
-          "Revise pendências de coletáveis, runs condicionais, dificuldade e cleanup antes de encerrar a lista.",
-          "Conferir os 50 troféus da lista base e fechar pendências de coletáveis, runs condicionais, dificuldade e cleanup."
+          "Fechar pendências de coletáveis, runs condicionais, dificuldade e cleanup."
         ],
         "result": "Lista base organizada para fechamento da platina."
       }

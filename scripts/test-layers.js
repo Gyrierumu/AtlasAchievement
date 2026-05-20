@@ -279,6 +279,34 @@ async function validateGuide(slug = '') {
     const guideCss = fs.readFileSync(path.join(ROOT, 'public/css/guide.css'), 'utf8');
     assert(!/atlas-editorial-note\[open\]\s+summary::after\s*\{[^}]*content:\s*['"]-['"]/is.test(guideCss), 'acordeao de notas nao deve renderizar hifen textual quando aberto');
   }
+  if (slug === 'ghost-of-tsushima') {
+    const ghostText = visibleGameText(seedGame);
+    assert.strictEqual(seedGame.is_verified, true, 'Ghost of Tsushima deve continuar verified no seed');
+    assert.strictEqual(seedGame.verification_status, 'verified', 'Ghost of Tsushima deve continuar com verification_status verified');
+    assert.strictEqual(viewModel.trophies.length, 52, 'Ghost of Tsushima deve manter 52 trofeus');
+    assert.strictEqual(viewModel.missableCount, 0, 'Ghost of Tsushima deve manter missableCount 0');
+    assert.strictEqual(viewModel.roadmapStages.length, 6, 'Ghost of Tsushima deve manter roadmap com 6 etapas');
+    assert.strictEqual(seedGame.dlcRequired || seedGame.dlc_required || false, false, 'Ghost of Tsushima deve manter DLC nao obrigatoria');
+    ['Maté', 'Watér', 'Resgaté', 'Base game sem DLCs'].forEach(text => {
+      assert(!ghostText.includes(text), `Ghost of Tsushima nao deve conter texto incorreto: ${text}`);
+    });
+  }
+  if (slug === 'hades-ii') {
+    const hades2Text = visibleGameText(seedGame);
+    const witch = seedGame.trophies.find(item => item.id === 'hades2_witch_of_the_clouds');
+    const witchTags = guideModel.getGuideTrophyTags(witch, seedGame).map(tag => tag.label);
+    assert.strictEqual(seedGame.is_verified, true, 'Hades II deve continuar verified no seed');
+    assert.strictEqual(seedGame.verification_status, 'verified', 'Hades II deve continuar com verification_status verified');
+    assert.strictEqual(viewModel.trophies.length, 50, 'Hades II deve manter 50 trofeus');
+    assert.strictEqual(viewModel.missableCount, 0, 'Hades II deve manter missableCount 0');
+    assert.strictEqual(seedGame.trophies.filter(item => item.is_missable).length, 0, 'Hades II deve manter checklist com Perdiveis 0');
+    assert.strictEqual(viewModel.roadmapStages.length, 6, 'Hades II deve manter roadmap com 6 etapas');
+    assert.strictEqual(seedGame.dlcRequired || seedGame.dlc_required || false, false, 'Hades II deve manter DLC nao obrigatoria');
+    assert(witch && !witch.is_missable && !witchTags.includes('Perdível'), 'Witch of the Clouds nao deve aparecer como Perdivel com missableCount 0');
+    ['em revisão editorial', 'mantendo o guia em revisão', 'validação final', 'dados atuais do guia', 'segundo os dados atuais do guia', 'o guia não aponta', 'needs_', 'bugged_unlock', 'localization_check', 'manual_editorial_verification', 'Base game sem DLCs'].forEach(text => {
+      assert(!hades2Text.includes(text), `Hades II nao deve conter texto publico/internal incorreto: ${text}`);
+    });
+  }
 
   await withTempApp(async ({ baseUrl, run }) => {
     const apiGame = await fetchJson(`${baseUrl}/api/games/slug/${slug}`);
@@ -322,6 +350,49 @@ async function validateGuide(slug = '') {
       assert.strictEqual(getTitle(html), 'Hades: guia de platina, troféus e roadmap | AtlasAchievement', 'title de Hades deve seguir SEO esperado');
       assert.strictEqual(getMeta(html, 'description'), 'Guia de platina de Hades em português, com tempo estimado, dificuldade, roadmap, checklist, Fated List, Keepsakes, Companions, Pact of Punishment, Heat e dicas para a platina.', 'meta description de Hades deve seguir SEO esperado');
       assert.strictEqual(getCanonical(html), 'https://atlasachievement.com.br/jogo/hades', 'canonical de Hades deve usar dominio de producao');
+    }
+    if (slug === 'ghost-of-tsushima') {
+      assert.strictEqual(apiGame.is_verified, true, 'API de Ghost of Tsushima deve continuar verified');
+      assert.strictEqual(apiGame.verification_status, 'verified', 'API de Ghost of Tsushima deve expor verification_status verified');
+      assert.strictEqual(apiGame.trophies.length, 52, 'API de Ghost of Tsushima deve manter 52 trofeus');
+      assert.strictEqual(apiGame.missable_count, 0, 'API de Ghost of Tsushima deve manter missable_count 0');
+      assert.strictEqual(apiGame.dlcRequired || apiGame.dlc_required || false, false, 'API de Ghost of Tsushima deve manter DLC nao obrigatoria');
+      assert(html.includes('Ghost of Tsushima — Guia de platina e troféus'), 'Ghost of Tsushima deve renderizar H1 esperado');
+      assert(html.includes('Verificado'), 'Ghost of Tsushima deve renderizar status Verificado');
+      assert(html.includes('DLC fora da platina base'), 'Ghost of Tsushima deve exibir DLC fora da platina base');
+      assert(html.includes('Ghost of Tsushima é uma platina de mundo aberto acessível'), 'Ghost of Tsushima deve exibir resumo editorial novo');
+      const ghostSummaryHtml = html.match(/<div class="atlas-guide-summary-editorial[\s\S]*?<\/div>/)?.[0] || '';
+      assert((ghostSummaryHtml.match(/<p\b/g) || []).length >= 2, 'Resumo de Ghost of Tsushima deve ter pelo menos 2 paragrafos editoriais');
+      assert(html.includes('A platina base é totalmente offline') && html.includes('Iki Island, Legends e New Game+ ficam fora da platina base.'), 'FAQ de Ghost of Tsushima deve ter respostas diretas');
+      ['dados atuais do guia', 'o guia não aponta', 'Maté', 'Watér', 'Resgaté', 'Base game sem DLCs', '[object Object]', 'undefined'].forEach(text => {
+        assert(!html.includes(text), `Ghost of Tsushima SSR nao deve exibir: ${text}`);
+      });
+      assert(!/>\s*null\s*</i.test(html), 'Ghost of Tsushima SSR nao deve exibir null visivel');
+      assert.strictEqual(getCanonical(html), 'https://atlasachievement.com.br/jogo/ghost-of-tsushima', 'canonical de Ghost of Tsushima deve usar dominio de producao');
+    }
+    if (slug === 'hades-ii') {
+      assert.strictEqual(apiGame.is_verified, true, 'API de Hades II deve continuar verified');
+      assert.strictEqual(apiGame.verification_status, 'verified', 'API de Hades II deve expor verification_status verified');
+      assert.strictEqual(apiGame.trophies.length, 50, 'API de Hades II deve manter 50 trofeus');
+      assert.strictEqual(apiGame.missable_count, 0, 'API de Hades II deve manter missable_count 0');
+      assert.strictEqual(apiGame.trophies.filter(trophy => trophy.is_missable).length, 0, 'API de Hades II deve manter Perdiveis 0 na checklist');
+      assert.strictEqual(apiGame.dlcRequired || apiGame.dlc_required || false, false, 'API de Hades II deve manter DLC nao obrigatoria');
+      const witch = apiGame.trophies.find(trophy => trophy.id === 'hades2_witch_of_the_clouds');
+      assert(witch && !witch.is_missable, 'Witch of the Clouds nao deve vir como Perdivel na API');
+      assert(html.includes('Hades II — Guia de platina e troféus'), 'Hades II deve renderizar H1 esperado');
+      assert(html.includes('Verificado'), 'Hades II deve renderizar status Verificado');
+      assert(html.includes('Sem perdíveis'), 'Hades II deve renderizar topo Sem perdiveis');
+      assert(html.includes('DLC fora da platina base'), 'Hades II deve exibir DLC fora da platina base');
+      assert(html.includes('Hades II é uma platina longa de roguelite'), 'Hades II deve exibir resumo editorial novo');
+      const hades2SummaryHtml = html.match(/<div class="atlas-guide-summary-editorial[\s\S]*?<\/div>/)?.[0] || '';
+      assert((hades2SummaryHtml.match(/<p\b/g) || []).length >= 2, 'Resumo de Hades II deve ter pelo menos 2 paragrafos editoriais');
+      assert(html.includes('A lista base não tem perdíveis obrigatórios confirmados') && html.includes('A platina base é totalmente offline'), 'FAQ de Hades II deve ter respostas diretas');
+      ['dados atuais do guia', 'o guia não aponta', 'segundo os dados atuais do guia', 'em revisão editorial', 'mantendo o guia em revisão', 'needs_', 'bugged_unlock', 'localization_check', 'manual_editorial_verification', 'Base game sem DLCs', '[object Object]', 'undefined'].forEach(text => {
+        assert(!html.includes(text), `Hades II SSR nao deve exibir: ${text}`);
+      });
+      assert(!/Witch of the Clouds[\s\S]{0,500}Perdível/i.test(html), 'Witch of the Clouds nao deve aparecer como Perdivel no HTML');
+      assert(!/>\s*null\s*</i.test(html), 'Hades II SSR nao deve exibir null visivel');
+      assert.strictEqual(getCanonical(html), 'https://atlasachievement.com.br/jogo/hades-ii', 'canonical de Hades II deve usar dominio de producao');
     }
   });
 

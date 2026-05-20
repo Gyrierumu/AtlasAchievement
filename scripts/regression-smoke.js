@@ -123,7 +123,7 @@ function assertHtmlLoadsModules(relPath) {
   assert.deepStrictEqual(scriptPaths, expectedScripts, `${relPath} precisa carregar apenas os scripts esperados, na ordem correta`);
 
   if (relPath === 'public/index.html') {
-    assert(scripts.includes('/js/ui-guide.js?v=hades-polish-20260519'), 'public/index.html deve versionar ui-guide.js para evitar cache antigo do resumo de guias');
+    assert(scripts.includes('/js/ui-guide.js?v=hades2-polish-20260519'), 'public/index.html deve versionar ui-guide.js para evitar cache antigo do resumo de guias');
     assert(html.includes('id="catalogIntentBar"'), 'public/index.html precisa do container de intenções do catálogo');
     assert(html.includes('id="catalogCompareTray"'), 'public/index.html precisa do tray de comparação do catálogo');
     assert(html.includes('id="librarySuggestions"'), 'public/index.html precisa do bloco de sugestões da biblioteca');
@@ -2739,8 +2739,10 @@ async function assertSeedData({ all, get }, sampleGames) {
   assert(hades2Sample, 'sampleGames deve incluir Hades II');
   assert.strictEqual(hades2Sample.trophies.length, 50, 'Hades II deve ter 50 trofeus no seed');
   assert.strictEqual(hades2Sample.editorial_status, 'published', 'Hades II deve ser publico');
-  assert.strictEqual(hades2Sample.coverage_level, 'strong', 'Hades II nao deve ser marcado como complete sem revisao manual');
-  assert.strictEqual(hades2Sample.is_verified, false, 'Hades II nao deve ser verificado automaticamente');
+  assert.strictEqual(hades2Sample.coverage_level, 'strong', 'Hades II deve manter cobertura strong');
+  assert.strictEqual(hades2Sample.is_verified, true, 'Hades II deve continuar verificado');
+  assert.strictEqual(hades2Sample.verification_status, 'verified', 'Hades II deve permanecer verified');
+  assert.deepStrictEqual(hades2Sample.quality_warnings, [], 'Hades II verified nao deve carregar quality warnings internos');
   assert(hades2Sample.cover_image, 'Hades II deve expor cover_image para a biblioteca');
   const hades2TypeCounts = hades2Sample.trophies.reduce((counts, trophy) => {
     counts[trophy.type] = (counts[trophy.type] || 0) + 1;
@@ -2756,8 +2758,8 @@ async function assertSeedData({ all, get }, sampleGames) {
   assert.strictEqual(hades2?.time_sort_hours, 85, 'Hades II deve preservar time_sort_hours');
   assert.strictEqual(hades2?.editorial_status, 'published', 'Hades II deve entrar publicado');
   assert.strictEqual(hades2?.coverage_level, 'strong', 'Hades II deve entrar com cobertura strong');
-  assert.strictEqual(hades2?.is_verified, 0, 'Hades II nao deve entrar como verificado');
-  assert.strictEqual(hades2?.verification_status, 'unverified', 'Hades II deve entrar como nao verificado');
+  assert.strictEqual(hades2?.is_verified, 1, 'Hades II deve entrar como verificado');
+  assert.strictEqual(hades2?.verification_status, 'verified', 'Hades II deve entrar verified');
   assert.strictEqual(hades2?.image, 'https://cdn.cloudflare.steamstatic.com/steam/apps/1145350/header.jpg', 'Hades II deve preservar banner horizontal em image');
   assert.strictEqual(hades2?.cover_image, hades2Sample.cover_image, 'Hades II deve persistir cover_image vertical');
 
@@ -2884,9 +2886,9 @@ async function assertSeedData({ all, get }, sampleGames) {
   assert.strictEqual(ghostSample.roadmap.length, 6, 'Ghost of Tsushima deve ter roadmap editorial com 6 etapas');
   assert.strictEqual(ghostSample.editorial_status, 'published', 'Ghost of Tsushima deve permanecer publico');
   assert.strictEqual(ghostSample.coverage_level, 'strong', 'Ghost of Tsushima deve ter cobertura forte sem selo complete');
-  assert.strictEqual(ghostSample.is_verified, false, 'Ghost of Tsushima nao deve ser verificado automaticamente');
-  assert.strictEqual(ghostSample.verification_status, 'review', 'Ghost of Tsushima deve aguardar revisao editorial final');
-  assert(ghostSample.dlc_scope.includes('Iki Island') && ghostSample.dlc_scope.includes('Legends'), 'Ghost of Tsushima deve separar DLC da platina base');
+  assert.strictEqual(ghostSample.is_verified, true, 'Ghost of Tsushima deve continuar verificado');
+  assert.strictEqual(ghostSample.verification_status, 'verified', 'Ghost of Tsushima deve permanecer verified');
+  assert(ghostSample.dlc_scope.includes('DLC fora da platina base') && ghostSample.dlc_scope.includes('Iki Island') && ghostSample.dlc_scope.includes('Legends'), 'Ghost of Tsushima deve separar DLC da platina base');
   assert.strictEqual(ghostSample.image, '/assets/games/ghost-of-tsushima/hero.jpg', 'Ghost of Tsushima deve usar image local horizontal valida');
   assert.strictEqual(ghostSample.cover_image, '/assets/games/ghost-of-tsushima/cover.jpg', 'Ghost of Tsushima deve expor cover_image local vertical');
   const ghostSampleRoadmapText = ghostSample.roadmap.map(step => {
@@ -2929,12 +2931,12 @@ async function assertSeedData({ all, get }, sampleGames) {
   assert.strictEqual(ghostSeeded?.time_sort_hours, 50, 'seed deve persistir time_sort_hours do Ghost of Tsushima');
   assert.strictEqual(ghostSeeded?.editorial_status, 'published', 'Ghost of Tsushima deve entrar publicado');
   assert.strictEqual(ghostSeeded?.coverage_level, 'strong', 'Ghost of Tsushima deve entrar com coverage strong');
-  assert.strictEqual(ghostSeeded?.is_verified, 0, 'Ghost of Tsushima nao deve entrar como verificado');
-  assert.strictEqual(ghostSeeded?.verification_status, 'review', 'Ghost of Tsushima deve entrar em revisao editorial');
+  assert.strictEqual(ghostSeeded?.is_verified, 1, 'Ghost of Tsushima deve entrar como verificado');
+  assert.strictEqual(ghostSeeded?.verification_status, 'verified', 'Ghost of Tsushima deve entrar verified');
   assert.strictEqual(ghostSeeded?.image, ghostSample.image, 'Ghost of Tsushima deve persistir image horizontal');
   assert.strictEqual(ghostSeeded?.cover_image, ghostSample.cover_image, 'Ghost of Tsushima deve persistir cover_image vertical');
   assert(ghostSeeded?.online_summary.includes('Não há troféus online'), 'Ghost of Tsushima deve deixar claro que não há online obrigatório');
-  assert(ghostSeeded?.dlc_scope.includes('Iki Island') && ghostSeeded?.dlc_scope.includes('Legends'), 'Ghost of Tsushima deve persistir escopo de DLC separado');
+  assert(ghostSeeded?.dlc_scope.includes('DLC fora da platina base') && ghostSeeded?.dlc_scope.includes('Iki Island') && ghostSeeded?.dlc_scope.includes('Legends'), 'Ghost of Tsushima deve persistir escopo de DLC separado');
 
   const ghostRoadmapRows = await all('SELECT content FROM roadmaps WHERE game_id = (SELECT id FROM games WHERE slug = ?) ORDER BY step_order', ['ghost-of-tsushima']);
   assert.strictEqual(ghostRoadmapRows.length, 6, 'seed deve inserir 6 etapas de roadmap para Ghost of Tsushima');
@@ -8182,8 +8184,8 @@ async function assertBackendEditorialConsistency() {
   assert.strictEqual(ghostAfterSync?.time_sort_hours, 50, 'migration deve corrigir time_sort_hours do Ghost of Tsushima');
   assert.strictEqual(ghostAfterSync?.time_bucket, 'long', 'migration deve corrigir time_bucket do Ghost of Tsushima');
   assert.strictEqual(ghostAfterSync?.coverage_level, 'strong', 'migration nao deve manter Ghost of Tsushima como complete automatico');
-  assert.strictEqual(ghostAfterSync?.is_verified, 0, 'migration nao deve manter Ghost of Tsushima como verificado sem revisao manual');
-  assert.strictEqual(ghostAfterSync?.verification_status, 'review', 'migration deve voltar Ghost of Tsushima para revisao editorial');
+  assert.strictEqual(ghostAfterSync?.is_verified, 1, 'migration deve manter Ghost of Tsushima como verificado');
+  assert.strictEqual(ghostAfterSync?.verification_status, 'verified', 'migration deve manter Ghost of Tsushima verified');
   assert.strictEqual(ghostTrophiesAfterSync.length, 52, 'migration deve substituir checklist antigo do Ghost of Tsushima por 52 trofeus');
   assert(!ghostTrophiesAfterSync.some(trophy => trophy.trophy_code === 'got_legacy_wrong_count'), 'migration deve remover trofeu legado incorreto do Ghost of Tsushima');
   assert.strictEqual(ghostTrophiesAfterSync.filter(trophy => trophy.is_missable).length, 0, 'migration deve limpar perdiveis antigos no Ghost of Tsushima');
@@ -8780,7 +8782,7 @@ async function assertBackendEditorialConsistency() {
     assert.strictEqual(hades2ListItem.cover_image, 'https://cdn.cloudflare.steamstatic.com/steam/apps/1145350/library_600x900.jpg', 'API deve expor cover_image para biblioteca');
     assert.strictEqual(hades2ListItem.editorial_status, 'published', 'Hades II deve aparecer publicado no catalogo');
     assert.strictEqual(hades2ListItem.coverage_level, 'strong', 'Hades II deve aparecer como cobertura strong');
-    assert.strictEqual(hades2ListItem.is_verified, false, 'Hades II nao deve aparecer como verificado');
+    assert.strictEqual(hades2ListItem.is_verified, true, 'Hades II deve aparecer como verificado');
     assert.strictEqual(astroBotListItem.trophy_count, 44, 'catalogo deve expor 44 trofeus para Astro Bot');
     assert.strictEqual(astroBotListItem.image, 'https://image.api.playstation.com/vulcan/ap/rnd/202406/0500/80ecf657918558eeef8da3ee4cef326e4517d34e6c69d950.jpg', 'catalogo deve usar image horizontal do Astro Bot');
     assert.strictEqual(astroBotListItem.cover_image, 'https://image.api.playstation.com/vulcan/ap/rnd/202406/0500/0d05cb43413f28a641ac0c40fc272c70bbe194f6ade4b175.png', 'API deve expor cover_image vertical do Astro Bot');
@@ -8824,8 +8826,8 @@ async function assertBackendEditorialConsistency() {
     assert.strictEqual(ghost.time_bucket, 'long', 'catalogo deve classificar Ghost of Tsushima como acima de 40h');
     assert.strictEqual(ghost.roadmap_count, 6, 'catalogo deve expor roadmap completo do Ghost of Tsushima');
     assert.strictEqual(ghost.coverage_level, 'strong', 'Ghost of Tsushima deve aparecer com coverage strong');
-    assert.strictEqual(ghost.is_verified, false, 'Ghost of Tsushima nao deve aparecer como verificado');
-    assert.strictEqual(ghost.verification_status, 'review', 'Ghost of Tsushima deve aparecer em revisao editorial');
+    assert.strictEqual(ghost.is_verified, true, 'Ghost of Tsushima deve aparecer como verificado');
+    assert.strictEqual(ghost.verification_status, 'verified', 'Ghost of Tsushima deve aparecer verified');
     assert.strictEqual(ghost.image, '/assets/games/ghost-of-tsushima/hero.jpg', 'catalogo deve usar image horizontal local do Ghost of Tsushima');
     assert.strictEqual(ghost.cover_image, '/assets/games/ghost-of-tsushima/cover.jpg', 'API deve expor cover_image vertical local do Ghost of Tsushima');
     assert.strictEqual(ghost.missable_count, 0, 'API não deve contar spoilers como perdíveis');
@@ -10179,10 +10181,10 @@ async function assertBackendEditorialConsistency() {
     assert(ghostDetail.roadmap.some(step => roadmapStepText(step).includes('exploração livre')), 'roadmap de Ghost of Tsushima deve citar exploração livre');
     assert(ghostDetail.roadmap.some(step => roadmapStepText(step).includes('Iki Island') && roadmapStepText(step).includes('New Game+') && roadmapStepText(step).includes('Legends')), 'roadmap de Ghost of Tsushima deve excluir extras da platina base');
     assert(ghostDetail.online_summary.includes('Não há troféus online'), 'detalhe de Ghost of Tsushima deve indicar ausência de online obrigatório');
-    assert(ghostDetail.dlc_scope.includes('Iki Island') && ghostDetail.dlc_scope.includes('Legends'), 'detalhe de Ghost of Tsushima deve manter DLC em escopo separado');
+    assert(ghostDetail.dlc_scope.includes('DLC fora da platina base') && ghostDetail.dlc_scope.includes('Iki Island') && ghostDetail.dlc_scope.includes('Legends'), 'detalhe de Ghost of Tsushima deve manter DLC em escopo separado');
     assert.strictEqual(ghostDetail.coverage_level, 'strong', 'Ghost of Tsushima nao deve ser complete sem revisao manual');
-    assert.strictEqual(ghostDetail.is_verified, false, 'Ghost of Tsushima nao deve estar verificado');
-    assert.strictEqual(ghostDetail.verification_status, 'review', 'Ghost of Tsushima deve ficar em revisao editorial');
+    assert.strictEqual(ghostDetail.is_verified, true, 'Ghost of Tsushima deve estar verificado');
+    assert.strictEqual(ghostDetail.verification_status, 'verified', 'Ghost of Tsushima deve ficar verified');
     assert.strictEqual(ghostDetail.cover_image, '/assets/games/ghost-of-tsushima/cover.jpg', 'detalhe de Ghost of Tsushima deve retornar cover_image local');
     assert(ghostDetail.trophies.some(trophy => trophy.id === 'got_there_can_be_only_one' && trophy.type === 'Bronze'), 'Ghost of Tsushima deve corrigir There Can Be Only One para bronze');
     assert(ghostDetail.trophies.some(trophy => trophy.id === 'got_have_a_nice_fall' && trophy.type === 'Prata'), 'Ghost of Tsushima deve corrigir Have a Nice Fall para prata');
@@ -10196,11 +10198,17 @@ async function assertBackendEditorialConsistency() {
       canonical: `${baseUrl}/jogo/ghost-of-tsushima`,
       titleIncludes: 'Ghost of Tsushima',
       descriptionIncludes: 'Ghost of Tsushima',
-      h1Includes: 'Ghost of Tsushima'
+      h1Includes: 'Ghost of Tsushima — Guia de platina e troféus'
     });
     assert(ghostGuideHtml.includes('Living Legend'), 'SSR de Ghost of Tsushima deve renderizar checklist');
     assert(ghostGuideHtml.includes('Lenda Viva'), 'SSR de Ghost of Tsushima deve renderizar trophyNamePtBr oficial');
     assert(ghostGuideHtml.includes('52 trof'), 'SSR de Ghost of Tsushima deve renderizar total de 52 trofeus');
+    assert(ghostGuideHtml.includes('Verificado'), 'SSR de Ghost of Tsushima deve renderizar status Verificado');
+    assert(ghostGuideHtml.includes('DLC fora da platina base'), 'SSR de Ghost of Tsushima deve mostrar DLC fora da platina base');
+    assert(ghostGuideHtml.includes('Ghost of Tsushima é uma platina de mundo aberto acessível'), 'SSR de Ghost of Tsushima deve renderizar resumo editorial forte');
+    assert(ghostGuideHtml.includes('A platina base é totalmente offline') && ghostGuideHtml.includes('Iki Island, Legends e New Game+ ficam fora da platina base.'), 'FAQ de Ghost of Tsushima deve usar respostas diretas');
+    assert(!/dados atuais do guia|o guia não aponta|Maté|Watér|Resgaté|Base game sem DLCs|\[object Object\]|\bundefined\b|>\s*null\s*</i.test(ghostGuideHtml), 'SSR de Ghost of Tsushima nao deve exibir linguagem fraca, erros ou placeholders');
+    assert.strictEqual(getCanonicalHref(ghostGuideHtml), 'https://atlasachievement.com.br/jogo/ghost-of-tsushima', 'canonical de Ghost of Tsushima deve usar dominio de producao');
     assert(ghostGuideHtml.includes('atlas-guide-cover--poster'), 'SSR de Ghost of Tsushima deve usar cover_image como poster do guia');
     assert(ghostGuideHtml.includes('/assets/games/ghost-of-tsushima/cover.jpg'), 'SSR de Ghost of Tsushima deve renderizar cover_image vertical local no guia');
     assert(ghostGuideHtml.includes('property="og:image" content="') && ghostGuideHtml.includes('/assets/games/ghost-of-tsushima/hero.jpg'), 'SEO de Ghost of Tsushima deve usar image horizontal local');
@@ -12259,10 +12267,15 @@ async function assertBackendEditorialConsistency() {
     assert.strictEqual(hades2Detail.trophies.filter(trophy => trophy.type === 'Prata').length, 11, 'Hades II deve ter 11 prata');
     assert.strictEqual(hades2Detail.trophies.filter(trophy => trophy.type === 'Bronze').length, 36, 'Hades II deve ter 36 bronze');
     assert.strictEqual(hades2Detail.missable_count, 0, 'Hades II nao deve marcar perdiveis sem confirmacao');
-    assert.strictEqual(hades2Detail.is_verified, false, 'Hades II nao deve estar verificado');
-    assert.strictEqual(hades2Detail.coverage_level, 'strong', 'Hades II nao deve ser complete sem revisao manual');
+    assert.strictEqual(hades2Detail.trophies.filter(trophy => trophy.is_missable).length, 0, 'Hades II deve manter checklist com Perdiveis 0');
+    assert.strictEqual(hades2Detail.is_verified, true, 'Hades II deve estar verificado');
+    assert.strictEqual(hades2Detail.verification_status, 'verified', 'Hades II deve ficar verified');
+    assert.strictEqual(hades2Detail.coverage_level, 'strong', 'Hades II deve manter coverage strong');
+    assert(hades2Detail.dlc_scope.includes('DLC fora da platina base'), 'Hades II deve indicar DLC fora da platina base');
     assert.strictEqual(hades2Detail.cover_image, 'https://cdn.cloudflare.steamstatic.com/steam/apps/1145350/library_600x900.jpg', 'detalhe de Hades II deve retornar cover_image');
     assert(hades2Detail.trophies.some(trophy => trophy.id === 'hades2_death_to_chronos' && trophy.is_spoiler), 'Hades II deve marcar spoilers claros de historia');
+    const witchOfTheClouds = hades2Detail.trophies.find(trophy => trophy.id === 'hades2_witch_of_the_clouds');
+    assert(witchOfTheClouds && !witchOfTheClouds.is_missable, 'Witch of the Clouds nao deve ser Perdivel quando missable_count e 0');
 
     const hades2GuideHtml = await httpGetHtml(baseUrl, '/jogo/hades-ii');
     assertSeoBasics(hades2GuideHtml, {
@@ -12270,9 +12283,19 @@ async function assertBackendEditorialConsistency() {
       canonical: `${baseUrl}/jogo/hades-ii`,
       titleIncludes: 'Hades II',
       descriptionIncludes: 'Hades II',
-      h1Includes: 'Hades II'
+      h1Includes: 'Hades II — Guia de platina e troféus'
     });
     assert(hades2GuideHtml.includes('Goddess of Nightmares'), 'SSR de Hades II deve renderizar checklist');
+    assert(hades2GuideHtml.includes('Verificado'), 'SSR de Hades II deve renderizar status Verificado');
+    assert(hades2GuideHtml.includes('Sem perdíveis'), 'SSR de Hades II deve manter topo Sem perdiveis');
+    assert(hades2GuideHtml.includes('DLC fora da platina base'), 'SSR de Hades II deve mostrar DLC fora da platina base');
+    assert(hades2GuideHtml.includes('Hades II é uma platina longa de roguelite'), 'SSR de Hades II deve renderizar resumo editorial forte');
+    const hades2SummaryHtml = hades2GuideHtml.match(/<div class="atlas-guide-summary-editorial[\s\S]*?<\/div>/)?.[0] || '';
+    assert((hades2SummaryHtml.match(/<p\b/g) || []).length >= 2, 'Resumo da platina de Hades II deve ter ao menos 2 paragrafos');
+    assert(hades2GuideHtml.includes('A lista base não tem perdíveis obrigatórios confirmados') && hades2GuideHtml.includes('A platina base é totalmente offline'), 'FAQ de Hades II deve usar respostas diretas');
+    assert(!/dados atuais do guia|segundo os dados atuais do guia|o guia não aponta|em revisão editorial|mantendo o guia em revisão|needs_|bugged_unlock|localization_check|manual_editorial_verification|Base game sem DLCs|\[object Object\]|\bundefined\b|>\s*null\s*</i.test(hades2GuideHtml), 'SSR de Hades II nao deve exibir revisao, linguagem fraca, warnings internos ou placeholders');
+    assert(!/Witch of the Clouds[\s\S]{0,500}Perdível/i.test(hades2GuideHtml), 'Witch of the Clouds nao deve aparecer como Perdivel no SSR');
+    assert.strictEqual(getCanonicalHref(hades2GuideHtml), 'https://atlasachievement.com.br/jogo/hades-ii', 'canonical de Hades II deve usar dominio de producao');
     assert(hades2GuideHtml.includes('atlas-guide-cover--poster'), 'SSR de Hades II deve usar cover_image como poster do guia');
     assert(hades2GuideHtml.includes('https://cdn.cloudflare.steamstatic.com/steam/apps/1145350/library_600x900.jpg'), 'SSR de Hades II deve renderizar cover_image vertical no guia');
     assert(hades2GuideHtml.includes('property="og:image" content="https://cdn.cloudflare.steamstatic.com/steam/apps/1145350/header.jpg"'), 'SEO de Hades II deve continuar usando image horizontal');
@@ -12744,7 +12767,7 @@ function assertLote1BNetworkClassification() {
       Prata: expected.Prata,
       Bronze: expected.Bronze
     }, `${slug} deve manter distribuicao de trofeus`);
-    assert.strictEqual(game.is_verified, slug === 'hades', `${slug} deve manter status verified apenas quando ja revisado manualmente`);
+    assert.strictEqual(game.is_verified, ['hades', 'hades-ii', 'ghost-of-tsushima'].includes(slug), `${slug} deve manter status verified apenas quando ja revisado manualmente`);
   });
 
   [

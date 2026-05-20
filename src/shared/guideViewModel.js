@@ -2223,6 +2223,66 @@
       ];
     }
 
+    if (String(game?.slug || '').trim().toLowerCase() === 'ghost-of-tsushima') {
+      return [
+        {
+          question: 'Ghost of Tsushima tem troféus perdíveis?',
+          answer: 'Não. A lista base não tem troféus perdíveis obrigatórios. A platina pode ser finalizada com cleanup em free roam após a campanha.'
+        },
+        {
+          question: 'Ghost of Tsushima precisa de online para platinar?',
+          answer: 'Não. A platina base é totalmente offline e não exige Legends, servidores, PS+ ou troféus online.'
+        },
+        {
+          question: 'Quanto tempo leva para platinar Ghost of Tsushima?',
+          answer: timeLabel ? `O tempo estimado do guia é ${timeLabel}, considerando campanha, Tales of Tsushima, Mythic Tales, liberação de regiões, coletáveis e cleanup no free roam.` : reviewAnswer
+        },
+        {
+          question: 'Qual a dificuldade da platina de Ghost of Tsushima?',
+          answer: difficulty > 0 ? `A dificuldade cadastrada é ${difficulty}/10. O desafio vem mais do volume de exploração, atividades e limpeza de mapa do que de execução extrema.` : reviewAnswer
+        },
+        {
+          question: 'Ghost of Tsushima tem coop obrigatório?',
+          answer: 'Não. A platina base é single-player e não exige coop.'
+        },
+        {
+          question: 'A DLC é necessária para a platina de Ghost of Tsushima?',
+          answer: 'Não. Iki Island, Legends e New Game+ ficam fora da platina base.'
+        }
+      ];
+    }
+
+    if (String(game?.slug || '').trim().toLowerCase() === 'hades-ii') {
+      return [
+        {
+          question: 'Hades II tem troféus perdíveis?',
+          answer: hasMissable
+            ? 'Sim. A lista base tem 1 perdível relevante no guia. Leia os pontos de atenção antes de avançar para evitar repetir progresso desnecessário.'
+            : 'Não. A lista base não tem perdíveis obrigatórios confirmados. O risco principal está em spoilers, objetivos situacionais e organização de runs, não em travar a platina.'
+        },
+        {
+          question: 'Hades II precisa de online para platinar?',
+          answer: 'Não. A platina base é totalmente offline e não exige servidores, PS+ ou troféus online.'
+        },
+        {
+          question: 'Quanto tempo leva para platinar Hades II?',
+          answer: 'O tempo estimado é 65-85 horas, variando conforme domínio das runs, progresso na Fated List, recursos raros, relacionamentos, Chaos Trials, Surface, Chronos e cleanup.'
+        },
+        {
+          question: 'Qual a dificuldade da platina de Hades II?',
+          answer: 'A dificuldade cadastrada é 7/10. O desafio vem da consistência em runs, bosses, rotas avançadas, grind de recursos e objetivos longos.'
+        },
+        {
+          question: 'Hades II tem coop obrigatório?',
+          answer: 'Não. A platina base é single-player e não exige coop.'
+        },
+        {
+          question: 'A DLC é necessária para a platina de Hades II?',
+          answer: 'Não. A platina base não exige DLC.'
+        }
+      ];
+    }
+
     return [
       {
         question: `${name} tem troféus perdíveis?`,

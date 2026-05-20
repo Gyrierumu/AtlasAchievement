@@ -44,6 +44,16 @@ const HADES_EDITORIAL_SUMMARY = [
   'A melhor estratégia é não tentar limpar tudo nas primeiras fugas. Use as runs iniciais para aprender armas, boons, chefes e padrões de combate. Depois que a primeira fuga estiver consistente, comece a organizar Keepsakes, Companions, Pact of Punishment, Heat e objetivos longos sem desperdiçar runs aleatórias.',
   'God Mode não bloqueia troféus e pode ser usado como recurso opcional. A platina base é totalmente offline, sem coop obrigatório e sem DLC necessária. O cleanup final gira em torno de relacionamentos, Fated List, Keepsakes no rank máximo, Companions, Heat e pendências de armas ou recursos.'
 ];
+const GHOST_EDITORIAL_SUMMARY = [
+  'Ghost of Tsushima é uma platina de mundo aberto acessível, baseada em campanha, exploração, Tales of Tsushima, Mythic Tales, liberação de regiões e limpeza de atividades pelo mapa. A lista base não exige online, coop, Legends, Iki Island ou New Game+, então dá para jogar a campanha com calma e deixar o cleanup para o free roam.',
+  'A melhor rota é avançar a história enquanto desbloqueia ferramentas, posturas, viagem rápida e acesso às regiões. Ao mesmo tempo, vale completar atividades próximas ao caminho, como fontes termais, bambus, haiku, santuários, faróis, acampamentos e contos secundários, para reduzir a limpeza final.',
+  'Depois da campanha, use o free roam para finalizar coletáveis, Tales pendentes, Mythic Tales, atividades regionais, cosméticos e troféus situacionais. Como não há perdíveis obrigatórios na lista base, o foco do guia é organizar o checklist para evitar retrabalho e separar claramente o que pertence à platina base do conteúdo extra.'
+];
+const HADES2_EDITORIAL_SUMMARY = [
+  'Hades II é uma platina longa de roguelite, baseada em progresso acumulado entre runs. O foco está em evoluir Melinoë, liberar armas, ferramentas, Arcana, Incantations, Familiars, Keepsakes, rotas do Submundo e da Superfície, além de avançar diálogos e objetivos da Fated List.',
+  'A melhor rota é usar as primeiras runs para estabilizar a Crossroads, entender os Guardians e abrir sistemas permanentes antes de tentar limpar tudo. Depois que as rotas estiverem mais consistentes, organize armas, aspectos, recursos raros, relacionamentos, Chaos Trials, Oath of the Unseen e objetivos longos sem desperdiçar runs aleatórias.',
+  'A platina base não exige online, coop ou DLC. God Mode pode ser usado como recurso opcional sem bloquear troféus. O cleanup final gira em torno de Fated List, Arcana, Incantations, Familiars, Keepsakes, relacionamentos, rotas avançadas, Chronos, Surface e pendências situacionais.'
+];
 
 const editorialCollectionPageMap = {
   'primeira-platina': {
@@ -956,7 +966,7 @@ function renderGuideEditorialNotesHtml(game = {}, viewModel = {}) {
   const playerFit = viewModel.playerFit || buildGuidePlayerFit(game, viewModel);
   const methodItems = Array.isArray(viewModel.editorial?.methodItems) ? viewModel.editorial.methodItems : [];
   const statusBadge = viewModel.editorial?.statusBadge || getEditorialBadge(game);
-  const sectionCopy = ['resident-evil-requiem', 'hades'].includes(normalizedSlug)
+  const sectionCopy = ['resident-evil-requiem', 'hades', 'ghost-of-tsushima', 'hades-ii'].includes(normalizedSlug)
     ? 'Respostas rápidas sobre perdíveis, online, coop, tempo, dificuldade e DLC da lista base.'
     : 'Respostas rápidas sobre perdíveis, online, coop, tempo, dificuldade e DLC usando os dados atuais do guia.';
   return `
@@ -1100,7 +1110,7 @@ function buildGuideHeroStats(game = {}, viewModel = {}) {
       .map(card => ({
         ...card,
         label: labels[card.id] || card.label,
-          value: card.id === 'dlc' && ['resident-evil-requiem', 'hades'].includes(String(game?.slug || '').trim().toLowerCase())
+          value: card.id === 'dlc' && ['resident-evil-requiem', 'hades', 'ghost-of-tsushima', 'hades-ii'].includes(String(game?.slug || '').trim().toLowerCase())
             ? 'DLC fora da platina base'
             : card.id === 'coop' && /2 jogadores/i.test(String(card.detail || ''))
             ? '2 jogadores obrigatórios'
@@ -1561,6 +1571,10 @@ function renderGuideSummaryPanelHtml(game = {}, viewModel = {}) {
     ? REQUIEM_EDITORIAL_SUMMARY
     : normalizedSlug === 'hades'
     ? HADES_EDITORIAL_SUMMARY
+    : normalizedSlug === 'ghost-of-tsushima'
+    ? GHOST_EDITORIAL_SUMMARY
+    : normalizedSlug === 'hades-ii'
+    ? HADES2_EDITORIAL_SUMMARY
     : normalizedSlug === 'elden-ring'
     ? [
         'Este guia de platina de Elden Ring foi pensado para quem quer completar a lista base sem depender apenas da lista crua de troféus. A rota prioriza finais, chefes com troféu, itens lendários e pontos que podem gerar retrabalho se você avançar sem planejamento.',
@@ -1676,7 +1690,7 @@ function prioritizeGuideViewHtml(html = '') {
 async function buildGamePageHtml(game, req) {
   const origin = getPublicOrigin(req);
   const normalizedSlug = String(game?.slug || '').trim().toLowerCase();
-  const canonicalUrl = ['elden-ring', 'hades', 'nioh-2', 'nioh-3', 'resident-evil-requiem', 'saros', 'the-last-of-us-part-i', 'the-last-of-us-part-ii', 'subnautica'].includes(normalizedSlug)
+  const canonicalUrl = ['elden-ring', 'ghost-of-tsushima', 'hades', 'hades-ii', 'nioh-2', 'nioh-3', 'resident-evil-requiem', 'saros', 'the-last-of-us-part-i', 'the-last-of-us-part-ii', 'subnautica'].includes(normalizedSlug)
     ? `https://atlasachievement.com.br/jogo/${normalizedSlug}`
     : buildPublicUrl(req, `/jogo/${game.slug}`);
   const relatedResponse = await gamesService.listGames({ page: 1, limit: 80, sort: 'recommended-desc' });
