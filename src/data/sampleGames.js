@@ -3808,7 +3808,7 @@ const sampleGames = [
       "missable_summary": "Não há perdíveis reais na lista base; a platina também não é perdível. Use replay de missões para limpar objetivos, coletáveis e proficiências.",
       "online_summary": "Sem online obrigatório: coop/expedições podem ajudar, mas a platina base pode ser feita solo/offline usando NPCs, Acolytes e replay de missões.",
       "grind_summary": "O maior peso está em concluir missões, coletar Kodama e Hot Springs, obter Soul Cores, liberar Mystic Arts/proficiências e fazer cleanup situacional.",
-      "dlc_scope": "Guia focado na lista base de 56 troféus. The Tengu's Disciple, Darkness in the Capital e The First Samurai existem como listas separadas de DLC e não contam para a platina base.",
+      "dlc_scope": "DLC fora da platina base. Guia focado na lista base de 56 troféus; The Tengu's Disciple, Darkness in the Capital e The First Samurai existem como listas separadas de DLC e não contam para a platina base.",
       "difficulty_reason": "A dificuldade vem do combate técnico, gestão de Ki, Burst Counter, bosses, builds e domínio dos sistemas de Nioh.",
       "time_reason": "A faixa conservadora de 100-150 horas considera curva de aprendizado, campanha, todas as missões, coletáveis, proficiências, Soul Cores, Mystic Arts e cleanup.",
       "first_run_advice": "Avance a campanha aprendendo Ki Pulse, Burst Counter, Yokai abilities e gerenciamento de equipamento antes de focar na limpeza completa.",
@@ -3866,43 +3866,27 @@ const sampleGames = [
       "faq": [
         {
           "question": "Nioh 2 tem troféus perdíveis?",
-          "answer": "Não há perdíveis reais confirmados na platina base se você puder repetir missões e limpar pendências depois. O desafio está em campanha, missões, coletáveis, proficiência, Soul Cores, Yokai abilities e cleanup."
+          "answer": "Não. A platina base não tem perdíveis definitivos. A maioria dos objetivos pode ser resolvida retornando a missões, limpando regiões e avançando sistemas acumulativos."
         },
         {
           "question": "Nioh 2 precisa de online para platinar?",
-          "answer": "Não. A platina base não tem troféus online obrigatórios. Coop online pode ajudar em algumas lutas, mas o guia não deve tratar online como requisito."
-        },
-        {
-          "question": "Nioh 2 tem coop obrigatório?",
-          "answer": "Não. A platina base pode ser feita solo. Troféus como Teamwork e Help Wanted têm alternativas com NPCs, Acolytes ou sistemas do próprio jogo."
+          "answer": "Não. A platina base pode ser feita offline. Recursos online podem ajudar em alguns momentos, mas não são requisito obrigatório da platina."
         },
         {
           "question": "Quanto tempo leva para platinar Nioh 2?",
-          "answer": "A faixa do guia é 100-150 horas. Jogadores experientes podem terminar mais rápido, mas a estimativa conservadora considera aprendizado, missões, coletáveis, Soul Cores, proficiência e cleanup."
+          "answer": "O tempo depende do domínio do combate, da build, do uso de missões secundárias e do quanto de cleanup ficar para o final. Use o roadmap para distribuir campanha, coletáveis, proficiência, Soul Cores e missões pendentes."
         },
         {
-          "question": "Qual a dificuldade da platina?",
-          "answer": "O guia usa 6/10. A lista não é complicada por perdíveis ou online, mas o combate de Nioh 2 cobra domínio de Ki Pulse, Burst Counter, equipamentos, chefes e sistemas de build."
+          "question": "Qual a dificuldade da platina de Nioh 2?",
+          "answer": "A dificuldade vem principalmente do combate, chefes, gerenciamento de Ki, Burst Counter, builds, missões opcionais e adaptação aos sistemas de yokai. A platina não é baseada em perdíveis, mas exige consistência."
         },
         {
-          "question": "É necessário jogar DLC para a platina base?",
-          "answer": "Não. The Tengu's Disciple, Darkness in the Capital e The First Samurai são listas separadas e não entram nos 56 troféus da platina base."
+          "question": "Nioh 2 tem coop obrigatório?",
+          "answer": "Não. A platina base não exige coop obrigatório. O jogo pode ter recursos de ajuda/coop, mas eles não devem ser tratados como requisito obrigatório para platinar."
         },
         {
-          "question": "Dá para repetir missões para limpar coletáveis?",
-          "answer": "Sim. A seleção/replay de missões permite voltar para Kodama, Hot Springs, Dark Realms, Soul Cores e objetivos situacionais."
-        },
-        {
-          "question": "NG+ é obrigatório para a platina base?",
-          "answer": "Não como requisito formal da lista base. NG+ pode acelerar proficiência, Amrita e farm, mas a rota da platina deve ser descrita como campanha + pós-game/cleanup."
-        },
-        {
-          "question": "Qual é o maior grind da platina?",
-          "answer": "O maior grind costuma ser proficiência/Mystic Arts, Soul Cores, Tea Utensils e limpeza de missões/coletáveis. A habilidade do jogador também pesa bastante no tempo final."
-        },
-        {
-          "question": "O guia está verificado?",
-          "answer": "Ainda não tem selo manual verified. A revisão validou a contagem da lista base, separou DLCs, preservou nomes oficiais em inglês, deixou nomes PT-BR vazios por falta de fonte oficial/confiável e confirmou sem perdíveis, online, coop ou DLC obrigatórios."
+          "question": "A DLC é necessária para a platina de Nioh 2?",
+          "answer": "Não. As DLCs ficam fora da platina base."
         }
       ],
       "image": "https://cdn.cloudflare.steamstatic.com/steam/apps/1325200/header.jpg",

@@ -408,6 +408,40 @@ async function validateGuide(slug = '') {
       assert(!re4Text.includes(text), `Resident Evil 4 Remake nao deve conter texto incorreto: ${text}`);
     });
   }
+  if (slug === 'nioh-2') {
+    const nioh2Text = [
+      visibleGameText(seedGame),
+      JSON.stringify(seedGame.faq || []),
+      JSON.stringify(viewModel.contextualFaq || []),
+      JSON.stringify(viewModel.routeChangingTrophies || [])
+    ].join(' ');
+    const tagCount = tagId => seedGame.trophies.filter(trophy => guideModel.getGuideTrophyTags(trophy, seedGame).some(tag => tag.id === tagId)).length;
+    const teamwork = seedGame.trophies.find(trophy => trophy.name === 'Teamwork' || trophy.name_pt === 'Trabalho em Equipe');
+    const teamworkTags = guideModel.getGuideTrophyTags(teamwork, seedGame).map(tag => tag.id);
+    assert.strictEqual(seedGame.is_verified, false, 'Nioh 2 nao deve ser promovido automaticamente para verified');
+    assert.strictEqual(seedGame.verification_status, 'review', 'Nioh 2 deve preservar status editorial atual');
+    assert.strictEqual(viewModel.trophies.length, 56, 'Nioh 2 deve manter 56 trofeus');
+    assert.strictEqual(viewModel.missableCount, 0, 'Nioh 2 deve manter missableCount 0');
+    assert.strictEqual(seedGame.trophies.filter(item => item.is_missable || item.isMissable).length, 0, 'Nioh 2 deve manter Perdiveis 0 na checklist');
+    assert.strictEqual(Boolean(seedGame.onlineRequired || seedGame.online_required), false, 'Nioh 2 deve manter online 0');
+    assert.strictEqual(Boolean(seedGame.coopRequired || seedGame.coop_required), false, 'Nioh 2 deve manter coop 0');
+    assert.strictEqual(Boolean(seedGame.dlcRequired || seedGame.dlc_required), false, 'Nioh 2 deve manter DLC nao obrigatoria');
+    assert.strictEqual(tagCount('grind'), 5, 'Nioh 2 deve manter Grind 5');
+    assert.strictEqual(tagCount('collectible'), 17, 'Nioh 2 deve manter Coletaveis 17');
+    assert.strictEqual(tagCount('difficulty'), 1, 'Nioh 2 deve manter Dificuldade 1');
+    assert.strictEqual(tagCount('cleanup'), 2, 'Nioh 2 deve manter Cleanup 2');
+    assert.strictEqual(viewModel.roadmapStages.length, 6, 'Nioh 2 deve manter roadmap com 6 etapas');
+    assert(seedGame.dlc_scope.includes('DLC fora da platina base'), 'Nioh 2 deve padronizar DLC fora da platina base no seed');
+    assert(viewModel.contextualFaq.length >= 6, 'Nioh 2 deve manter FAQ com perguntas essenciais');
+    assert(viewModel.routeChangingTrophies.length <= 5, 'Nioh 2 deve renderizar no maximo 5 pontos de atencao');
+    ['nioh2_kodama_leader', 'nioh2_spa_lover', 'nioh2_soul_searcher', 'nioh2_sword_master', 'nioh2_dream_within_dream'].forEach(id => {
+      assert(viewModel.routeChangingTrophies.some(item => item.id === id), `Nioh 2 deve incluir ponto de atencao ${id}`);
+    });
+    assert(teamwork && !teamworkTags.includes('online') && !teamworkTags.includes('coop'), 'Teamwork nao deve gerar online/coop obrigatorio');
+    ['dados atuais do guia', 'segundo os dados atuais do guia', 'o guia não aponta', 'Este troféu está marcado como spoiler', 'Revele os detalhes na lista completa', 'Base game sem DLCs', 'Descrição em revisão editorial.', '[object Object]', 'undefined'].forEach(text => {
+      assert(!nioh2Text.includes(text), `Nioh 2 nao deve conter texto publico/internal incorreto: ${text}`);
+    });
+  }
 
   await withTempApp(async ({ baseUrl, run, migrate }) => {
     const apiGame = await fetchJson(`${baseUrl}/api/games/slug/${slug}`);
@@ -519,6 +553,34 @@ async function validateGuide(slug = '') {
       assert(html.includes('Depende de encontrar e concluir fases da Lost Galaxy'), 'Lost And Found deve ter orientacao especifica');
       assert(!/>\s*null\s*</i.test(html), 'Astro Bot SSR nao deve exibir null visivel');
       assert.strictEqual(getCanonical(html), 'https://atlasachievement.com.br/jogo/astro-bot', 'canonical de Astro Bot deve usar dominio de producao');
+    }
+    if (slug === 'nioh-2') {
+      const summaryHtml = html.match(/<div class="atlas-guide-summary-editorial[\s\S]*?<\/div>/)?.[0] || '';
+      const apiMissables = apiGame.trophies.filter(trophy => trophy.is_missable);
+      const apiTeamwork = apiGame.trophies.find(trophy => trophy.name === 'Teamwork' || trophy.name_pt === 'Trabalho em Equipe');
+      const normalizedHtml = normalizeText(html);
+      assert.strictEqual(apiGame.is_verified, false, 'API de Nioh 2 deve preservar status sem verified automatico');
+      assert.strictEqual(apiGame.verification_status, 'review', 'API de Nioh 2 deve preservar verification_status review');
+      assert.strictEqual(apiGame.trophies.length, 56, 'API de Nioh 2 deve manter 56 trofeus');
+      assert.strictEqual(apiGame.missable_count, 0, 'API de Nioh 2 deve manter missable_count 0');
+      assert.strictEqual(apiMissables.length, 0, 'API de Nioh 2 deve manter Perdiveis 0 na checklist');
+      assert.strictEqual(Boolean(apiGame.onlineRequired || apiGame.online_required), false, 'API de Nioh 2 deve manter online 0');
+      assert.strictEqual(Boolean(apiGame.coopRequired || apiGame.coop_required), false, 'API de Nioh 2 deve manter coop 0');
+      assert.strictEqual(Boolean(apiGame.dlcRequired || apiGame.dlc_required), false, 'API de Nioh 2 deve manter DLC nao obrigatoria');
+      assert(apiTeamwork && !apiTeamwork.is_online && !apiTeamwork.isOnline && !apiTeamwork.is_coop && !apiTeamwork.isCoop, 'Teamwork nao deve virar trofeu online/coop obrigatorio na API');
+      assert(html.includes('Nioh 2'), 'Nioh 2 deve renderizar nome no SSR');
+      assert(html.includes('DLC fora da platina base'), 'Nioh 2 deve exibir DLC fora da platina base');
+      assert(normalizedHtml.includes('nioh 2 e uma platina de progressao longa'), 'Nioh 2 deve exibir resumo editorial forte');
+      assert((summaryHtml.match(/<p\b/g) || []).length >= 2, 'Resumo de Nioh 2 deve ter pelo menos 2 paragrafos editoriais');
+      assert(html.includes('A platina base não tem perdíveis definitivos') || html.includes('A platina base nÃ£o tem perdÃ­veis definitivos'), 'FAQ de Nioh 2 deve ter resposta direta sobre perdiveis');
+      assert(html.includes('A platina base pode ser feita offline') || html.includes('A platina base pode ser feita offline'), 'FAQ de Nioh 2 deve ter resposta direta sobre online');
+      assert(html.includes('Hot Springs ficam espalhadas pelas missões') || html.includes('Hot Springs ficam espalhadas pelas missÃµes'), 'Pontos de atencao de Nioh 2 devem substituir texto generico por alerta util');
+      assert(html.includes('Kodama Leader') && html.includes('Spa Lover') && html.includes('Soul Searcher') && html.includes('Sword Master') && html.includes('Dream Within a Dream'), 'Nioh 2 deve renderizar pontos de atencao editoriais esperados');
+      ['dados atuais do guia', 'segundo os dados atuais do guia', 'o guia não aponta', 'Este troféu está marcado como spoiler', 'Revele os detalhes na lista completa', 'Base game sem DLCs', 'Descrição em revisão editorial.', '[object Object]', 'undefined'].forEach(text => {
+        assert(!html.includes(text), `Nioh 2 SSR nao deve exibir: ${text}`);
+      });
+      assert(!/>\s*null\s*</i.test(html), 'Nioh 2 SSR nao deve exibir null visivel');
+      assert.strictEqual(getCanonical(html), 'https://atlasachievement.com.br/jogo/nioh-2', 'canonical de Nioh 2 deve usar dominio de producao');
     }
     if (slug === 'pragmata') {
       const normalizedHtml = normalizeText(html);

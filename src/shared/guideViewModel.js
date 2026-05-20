@@ -386,7 +386,7 @@
         tone: 'atlas-meta-signal--partial'
       };
     }
-    if (game?.dlc_status === 'out_of_base_scope' || /shadow of the erdtree/.test(normalized)) {
+    if (game?.dlc_status === 'out_of_base_scope' || /dlc fora da platina base|shadow of the erdtree/.test(normalized)) {
       return {
         value: 'DLC fora da platina base',
         detail: dlcText,
@@ -741,7 +741,9 @@
     let dlcValue = dlcScope.value;
     const normalizedDlc = normalizeGuideSignalText(inputs.dlc);
     if (!inputs.dlc || dlcReview) dlcValue = 'Informação em revisão';
-    else if (/lista base|jogo base|base game|sem dlc|nao inclui|nao foram adicionados|nao foi misturado|dlc nao necessaria|nao e necessaria|fora do escopo|ficam fora|entrada separada/.test(normalizedDlc)) {
+    else if (/dlc fora da platina base/.test(normalizedDlc)) {
+      dlcValue = 'DLC fora da platina base';
+    } else if (/lista base|jogo base|base game|sem dlc|nao inclui|nao foram adicionados|nao foi misturado|dlc nao necessaria|nao e necessaria|fora do escopo|ficam fora|entrada separada/.test(normalizedDlc)) {
       dlcValue = 'DLC não necessária para platina base';
     }
 
@@ -1465,6 +1467,59 @@
           score: 100 - index
         };
       });
+    }
+
+    const nioh2AttentionIds = [
+      'nioh2_kodama_leader',
+      'nioh2_spa_lover',
+      'nioh2_soul_searcher',
+      'nioh2_sword_master',
+      'nioh2_dream_within_dream'
+    ];
+    if (String(game?.slug || '').trim().toLowerCase() === 'nioh-2' && nioh2AttentionIds.every(id => trophyById.has(id))) {
+      const attentionTag = (label, tone = 'warning') => ({ id: normalizeGuideSignalText(label).replace(/\s+/g, '-'), label, tone });
+      return [
+        {
+          id: 'nioh2_kodama_leader',
+          name: trophyById.get('nioh2_kodama_leader')?.name || 'Kodama Leader',
+          type: 'Coletável / Checklist / Cleanup',
+          text: 'Acompanhe Kodama por região para não deixar toda a limpeza para o fim. Como é possível retornar a missões, não é perdível, mas exige organização.',
+          tags: [attentionTag('Coletável / Checklist / Cleanup', 'partial')],
+          score: 100
+        },
+        {
+          id: 'nioh2_spa_lover',
+          name: trophyById.get('nioh2_spa_lover')?.name || 'Spa Lover',
+          type: 'Coletável / Checklist',
+          text: 'Hot Springs ficam espalhadas pelas missões. Marque cada banho no checklist para evitar revisitar missões sem necessidade.',
+          tags: [attentionTag('Coletável / Checklist', 'partial')],
+          score: 99
+        },
+        {
+          id: 'nioh2_soul_searcher',
+          name: trophyById.get('nioh2_soul_searcher')?.name || 'Soul Searcher',
+          type: 'Grind / Yokai / Cleanup',
+          text: 'Soul Cores dependem de derrotar yokai e administrar drops ao longo da campanha. Trabalhe isso naturalmente antes do cleanup final.',
+          tags: [attentionTag('Grind / Yokai / Cleanup', 'warning')],
+          score: 98
+        },
+        {
+          id: 'nioh2_sword_master',
+          name: trophyById.get('nioh2_sword_master')?.name || 'Sword Master',
+          type: 'Grind / Progressão',
+          text: 'Proficiência cresce com uso real das armas. Alterne armas durante a campanha ou separe uma etapa de grind depois.',
+          tags: [attentionTag('Grind / Progressão', 'warning')],
+          score: 97
+        },
+        {
+          id: 'nioh2_dream_within_dream',
+          name: trophyById.get('nioh2_dream_within_dream')?.name || 'Dream Within a Dream',
+          type: 'História / Cleanup',
+          text: 'Complete a campanha e use o pós-jogo para fechar missões, coletáveis e objetivos acumulativos sem pressão de perdíveis.',
+          tags: [attentionTag('História / Cleanup', 'neutral')],
+          score: 96
+        }
+      ];
     }
 
     const weights = { missable: 7, spoiler: 5, difficulty: 5, collectible: 4, grind: 4, run: 4, cleanup: 3, story: 1 };
@@ -2457,6 +2512,35 @@
         {
           question: 'A DLC é necessária para a platina de Astro Bot?',
           answer: 'Não. A platina base não exige DLC.'
+        }
+      ];
+    }
+
+    if (String(game?.slug || '').trim().toLowerCase() === 'nioh-2') {
+      return [
+        {
+          question: 'Nioh 2 tem troféus perdíveis?',
+          answer: 'Não. A platina base não tem perdíveis definitivos. A maioria dos objetivos pode ser resolvida retornando a missões, limpando regiões e avançando sistemas acumulativos.'
+        },
+        {
+          question: 'Nioh 2 precisa de online para platinar?',
+          answer: 'Não. A platina base pode ser feita offline. Recursos online podem ajudar em alguns momentos, mas não são requisito obrigatório da platina.'
+        },
+        {
+          question: 'Quanto tempo leva para platinar Nioh 2?',
+          answer: 'O tempo depende do domínio do combate, da build, do uso de missões secundárias e do quanto de cleanup ficar para o final. Use o roadmap para distribuir campanha, coletáveis, proficiência, Soul Cores e missões pendentes.'
+        },
+        {
+          question: 'Qual a dificuldade da platina de Nioh 2?',
+          answer: 'A dificuldade vem principalmente do combate, chefes, gerenciamento de Ki, Burst Counter, builds, missões opcionais e adaptação aos sistemas de yokai. A platina não é baseada em perdíveis, mas exige consistência.'
+        },
+        {
+          question: 'Nioh 2 tem coop obrigatório?',
+          answer: 'Não. A platina base não exige coop obrigatório. O jogo pode ter recursos de ajuda/coop, mas eles não devem ser tratados como requisito obrigatório para platinar.'
+        },
+        {
+          question: 'A DLC é necessária para a platina de Nioh 2?',
+          answer: 'Não. As DLCs ficam fora da platina base.'
         }
       ];
     }
