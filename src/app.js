@@ -74,6 +74,11 @@ const NIOH2_EDITORIAL_SUMMARY = [
   'A melhor rota é avançar a campanha aprendendo sistemas como Ki Pulse, Burst Counter, Yokai Shift, Guardian Spirits e Soul Cores, enquanto limpa missões secundárias e acompanha coletáveis por região. O jogo permite retornar a missões, então a platina favorece organização, paciência e evolução consistente do personagem.',
   'Depois da história, concentre o cleanup em missões pendentes, proficiência, ferreiro, títulos, yokai, Kodama, Hot Springs e troféus situacionais. Coop e recursos online podem ajudar, mas não são obrigatórios para a platina base.'
 ];
+const NIOH3_EDITORIAL_SUMMARY = [
+  'Nioh 3 é uma platina longa e técnica, focada em avançar a campanha, dominar o combate e limpar missões, coletáveis e sistemas acumulativos da lista base. Online e coop não entram como requisitos obrigatórios: a rota principal pode ser organizada solo, com retorno a missões e cleanup por região.',
+  'A melhor estratégia é usar a campanha para aprender a alternância entre Samurai e Ninja, fortalecer equipamentos, explorar Guardian Spirits, Battle Scroll, Yokai, ferreiro e trackers regionais. Como não há perdíveis definitivos na lista base, o risco principal não é perder troféus, mas acumular Kodama, Hot Springs, missões, Soul Cores, proficiência e objetivos situacionais para o fim.',
+  'Depois da história, concentre o cleanup em missões pendentes, coletáveis por região, proficiência, armas, habilidades, Yokai, Battle Scroll e troféus situacionais. Separar campanha, sistemas e limpeza final deixa a platina mais controlada e reduz retrabalho.'
+];
 
 const editorialCollectionPageMap = {
   'primeira-platina': {
@@ -986,7 +991,7 @@ function renderGuideEditorialNotesHtml(game = {}, viewModel = {}) {
   const playerFit = viewModel.playerFit || buildGuidePlayerFit(game, viewModel);
   const methodItems = Array.isArray(viewModel.editorial?.methodItems) ? viewModel.editorial.methodItems : [];
   const statusBadge = viewModel.editorial?.statusBadge || getEditorialBadge(game);
-  const sectionCopy = ['resident-evil-requiem', 'resident-evil-4-remake', 'hades', 'ghost-of-tsushima', 'hades-ii', 'astro-bot', 'pragmata', 'nioh-2'].includes(normalizedSlug)
+  const sectionCopy = ['resident-evil-requiem', 'resident-evil-4-remake', 'hades', 'ghost-of-tsushima', 'hades-ii', 'astro-bot', 'pragmata', 'nioh-2', 'nioh-3'].includes(normalizedSlug)
     ? 'Respostas rápidas sobre perdíveis, online, coop, tempo, dificuldade e DLC da lista base.'
     : 'Respostas rápidas sobre perdíveis, online, coop, tempo, dificuldade e DLC usando os dados atuais do guia.';
   return `
@@ -1130,7 +1135,7 @@ function buildGuideHeroStats(game = {}, viewModel = {}) {
       .map(card => ({
         ...card,
         label: labels[card.id] || card.label,
-          value: card.id === 'dlc' && ['resident-evil-requiem', 'resident-evil-4-remake', 'hades', 'ghost-of-tsushima', 'hades-ii', 'astro-bot', 'pragmata', 'nioh-2'].includes(String(game?.slug || '').trim().toLowerCase())
+          value: card.id === 'dlc' && ['resident-evil-requiem', 'resident-evil-4-remake', 'hades', 'ghost-of-tsushima', 'hades-ii', 'astro-bot', 'pragmata', 'nioh-2', 'nioh-3'].includes(String(game?.slug || '').trim().toLowerCase())
             ? 'DLC fora da platina base'
             : card.id === 'coop' && /2 jogadores/i.test(String(card.detail || ''))
             ? '2 jogadores obrigatórios'
@@ -1603,6 +1608,8 @@ function renderGuideSummaryPanelHtml(game = {}, viewModel = {}) {
     ? RE4_REMAKE_EDITORIAL_SUMMARY
     : normalizedSlug === 'nioh-2'
     ? NIOH2_EDITORIAL_SUMMARY
+    : normalizedSlug === 'nioh-3'
+    ? NIOH3_EDITORIAL_SUMMARY
     : normalizedSlug === 'elden-ring'
     ? [
         'Este guia de platina de Elden Ring foi pensado para quem quer completar a lista base sem depender apenas da lista crua de troféus. A rota prioriza finais, chefes com troféu, itens lendários e pontos que podem gerar retrabalho se você avançar sem planejamento.',

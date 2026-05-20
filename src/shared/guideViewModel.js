@@ -1522,6 +1522,59 @@
       ];
     }
 
+    const nioh3AttentionIds = [
+      'nioh3_kodama_leader',
+      'nioh3_spa_lover',
+      'nioh3_answering_people',
+      'nioh3_arts_proficiency',
+      'nioh3_yokai_manipulator'
+    ];
+    if (String(game?.slug || '').trim().toLowerCase() === 'nioh-3' && nioh3AttentionIds.every(id => trophyById.has(id))) {
+      const attentionTag = (label, tone = 'warning') => ({ id: normalizeGuideSignalText(label).replace(/\s+/g, '-'), label, tone });
+      return [
+        {
+          id: 'nioh3_kodama_leader',
+          name: trophyById.get('nioh3_kodama_leader')?.name || 'Kodama Leader',
+          type: 'Coletável / Checklist / Cleanup',
+          text: 'Acompanhe coletáveis por região desde a campanha. Como é possível retornar a missões, não é perdível, mas deixar tudo para o final aumenta bastante o cleanup.',
+          tags: [attentionTag('Coletável / Checklist / Cleanup', 'partial')],
+          score: 100
+        },
+        {
+          id: 'nioh3_spa_lover',
+          name: trophyById.get('nioh3_spa_lover')?.name || 'Spa Lover',
+          type: 'Coletável / Checklist',
+          text: 'Marque cada Hot Spring no checklist para evitar revisitar missões sem necessidade durante o cleanup.',
+          tags: [attentionTag('Coletável / Checklist', 'partial')],
+          score: 99
+        },
+        {
+          id: 'nioh3_answering_people',
+          name: trophyById.get('nioh3_answering_people')?.name || 'Answering to the People',
+          type: 'Dificuldade / Progressão / Cleanup',
+          text: 'Battle Scroll entra melhor depois que sua build estiver mais sólida. Use essa etapa para fortalecer o personagem antes de fechar pendências mais exigentes.',
+          tags: [attentionTag('Dificuldade / Progressão / Cleanup', 'warning')],
+          score: 98
+        },
+        {
+          id: 'nioh3_arts_proficiency',
+          name: trophyById.get('nioh3_arts_proficiency')?.name || 'Arts Proficiency',
+          type: 'Grind / Progressão',
+          text: 'Proficiência e habilidades crescem com uso real. Alterne estilos durante a campanha ou separe uma etapa de grind controlado no pós-jogo.',
+          tags: [attentionTag('Grind / Progressão', 'warning')],
+          score: 97
+        },
+        {
+          id: 'nioh3_yokai_manipulator',
+          name: trophyById.get('nioh3_yokai_manipulator')?.name || 'Yokai Manipulator',
+          type: 'História / Cleanup / Yokai',
+          text: 'Use a campanha para aprender chefes, Yokai e sistemas principais; depois volte às missões para fechar registros e troféus situacionais.',
+          tags: [attentionTag('História / Cleanup / Yokai', 'neutral')],
+          score: 96
+        }
+      ];
+    }
+
     const weights = { missable: 7, spoiler: 5, difficulty: 5, collectible: 4, grind: 4, run: 4, cleanup: 3, story: 1 };
     return trophies
       .filter(Boolean)
@@ -2193,39 +2246,39 @@
       return [
         {
           question: 'Nioh 3 tem troféus perdíveis?',
-          answer: 'Não há troféus perdíveis reais confirmados na lista base. O jogo permite limpeza posterior por free roam/replay de missões, então o desafio está em campanha, myths, coletáveis, proficiência, bosses opcionais e cleanup.'
+          answer: 'Não. A platina base não tem perdíveis definitivos. A maioria dos objetivos pode ser resolvida retornando a missões, limpando regiões e avançando sistemas acumulativos.'
         },
         {
           question: 'Nioh 3 precisa de online para platinar?',
-          answer: 'Não. A platina base não deve exigir online obrigatório. Recursos online existem como opção, mas não são tratados como requisito da lista base.'
-        },
-        {
-          question: 'Nioh 3 tem coop obrigatório?',
-          answer: 'Não. O jogo possui coop online opcional, mas a platina base não deve exigir coop obrigatório. Se o troféu Teamwork estiver na lista, ele deve ser tratado como possível via NPCs/Acolytes quando validado.'
+          answer: 'Não. A platina base pode ser feita sem troféus online obrigatórios.'
         },
         {
           question: 'Quanto tempo leva para platinar Nioh 3?',
-          answer: 'O resumo editorial mantém 40-60h, considerando campanha, Myths, coletáveis, proficiência, bosses opcionais, sistemas de combate e cleanup/replay.'
+          answer: 'O tempo depende do domínio do combate, da build, das missões secundárias e do quanto de cleanup ficar para o final. Use o roadmap para distribuir campanha, Battle Scroll, coletáveis, proficiência, Yokai e missões pendentes.'
         },
         {
-          question: 'Qual a dificuldade da platina?',
-          answer: 'A dificuldade cadastrada é 5/10. O peso vem do combate, chefes, exploração, builds e volume de checklist, não de modo difícil obrigatório.'
+          question: 'Qual a dificuldade da platina de Nioh 3?',
+          answer: 'A dificuldade vem principalmente do combate, chefes, gerenciamento de recursos, alternância Samurai/Ninja, builds, missões opcionais e domínio dos sistemas de Yokai. A platina não depende de perdíveis, mas exige consistência.'
         },
         {
-          question: 'É necessário jogar DLC para a platina base?',
-          answer: 'Não. Season Pass, Digital Deluxe, bônus, cosméticos, demo e DLCs futuras ficam fora do escopo da platina base.'
+          question: 'Nioh 3 tem coop obrigatório?',
+          answer: 'Não. A platina base não exige coop obrigatório.'
+        },
+        {
+          question: 'A DLC é necessária para a platina de Nioh 3?',
+          answer: 'Não. DLCs e conteúdos extras ficam fora da platina base.'
         },
         {
           question: 'Dá para repetir missões para limpar coletáveis?',
-          answer: 'Sim. O guia trata Battle Scroll e free roam como caminhos de limpeza para missões, coletáveis, diálogos e condições situacionais.'
+          answer: 'Sim. Battle Scroll e free roam funcionam como caminhos de limpeza para missões, coletáveis, diálogos e condições situacionais.'
         },
         {
           question: 'Nioh 3 tem Chapter Select?',
-          answer: 'Não deve ser marcado como Chapter Select tradicional. O conceito correto para o guia é replay de missões via Battle Scroll.'
+          answer: 'Não como seleção tradicional de capítulos. A limpeza funciona principalmente por replay de missões via Battle Scroll.'
         },
         {
           question: 'Battle Scroll conta como replay de missões?',
-          answer: 'Sim. Battle Scroll é o sistema usado no guia para revisar missões e corrigir pendências sem reiniciar a campanha.'
+          answer: 'Sim. Battle Scroll permite revisar missões e corrigir pendências sem reiniciar a campanha.'
         },
         {
           question: 'Qual é o maior grind da platina?',
@@ -2233,7 +2286,7 @@
         },
         {
           question: 'O guia está verificado?',
-          answer: 'Não. O guia permanece em revisão editorial por ser recente e por exigir validação final de nomes PT-BR oficiais e escopo de DLCs futuras.'
+          answer: 'Sim. Este guia está Verificado e revisado editorialmente para a platina base.'
         }
       ];
     }

@@ -442,6 +442,64 @@ async function validateGuide(slug = '') {
       assert(!nioh2Text.includes(text), `Nioh 2 nao deve conter texto publico/internal incorreto: ${text}`);
     });
   }
+  if (slug === 'nioh-3') {
+    const nioh3Text = [
+      visibleGameText(seedGame),
+      JSON.stringify(seedGame.faq || []),
+      JSON.stringify(viewModel.contextualFaq || []),
+      JSON.stringify(viewModel.routeChangingTrophies || [])
+    ].join(' ');
+    const tagCount = tagId => seedGame.trophies.filter(trophy => guideModel.getGuideTrophyTags(trophy, seedGame).some(tag => tag.id === tagId)).length;
+    const trophyById = Object.fromEntries(seedGame.trophies.map(trophy => [trophy.id, trophy]));
+    const teamwork = trophyById.nioh3_teamwork;
+    const teamworkTags = guideModel.getGuideTrophyTags(teamwork, seedGame).map(tag => tag.id);
+    assert.strictEqual(seedGame.is_verified, true, 'Nioh 3 deve continuar verified no seed');
+    assert.strictEqual(seedGame.verification_status, 'verified', 'Nioh 3 deve continuar com verification_status verified');
+    assert.strictEqual(viewModel.editorial.statusBadge.label, 'Verificado', 'Nioh 3 deve exibir selo Verificado');
+    assert.strictEqual(viewModel.editorial.statusBadge.detail, 'Guia revisado editorialmente.', 'Nioh 3 deve exibir mensagem revisada');
+    assert.strictEqual(viewModel.trophies.length, 51, 'Nioh 3 deve manter 51 trofeus');
+    assert.strictEqual(viewModel.missableCount, 0, 'Nioh 3 deve manter missableCount 0');
+    assert.strictEqual(seedGame.trophies.filter(item => item.is_missable || item.isMissable).length, 0, 'Nioh 3 deve manter Perdiveis 0 na checklist');
+    assert.strictEqual(Boolean(seedGame.onlineRequired || seedGame.online_required), false, 'Nioh 3 deve manter online 0');
+    assert.strictEqual(Boolean(seedGame.coopRequired || seedGame.coop_required), false, 'Nioh 3 deve manter coop 0');
+    assert.strictEqual(Boolean(seedGame.dlcRequired || seedGame.dlc_required), false, 'Nioh 3 deve manter DLC nao obrigatoria');
+    assert.strictEqual(tagCount('grind'), 4, 'Nioh 3 deve manter Grind 4');
+    assert.strictEqual(tagCount('collectible'), 21, 'Nioh 3 deve manter Coletaveis 21');
+    assert.strictEqual(tagCount('difficulty'), 4, 'Nioh 3 deve manter Dificuldade 4');
+    assert.strictEqual(tagCount('cleanup'), 4, 'Nioh 3 deve manter Cleanup 4');
+    assert.strictEqual(viewModel.roadmapStages.length, 6, 'Nioh 3 deve manter roadmap com 6 etapas');
+    assert(seedGame.dlc_scope.includes('DLC fora da platina base'), 'Nioh 3 deve padronizar DLC fora da platina base no seed');
+    assert(viewModel.routeChangingTrophies.length <= 5, 'Nioh 3 deve renderizar no maximo 5 pontos de atencao');
+    ['nioh3_kodama_leader', 'nioh3_spa_lover', 'nioh3_answering_people', 'nioh3_arts_proficiency', 'nioh3_yokai_manipulator'].forEach(id => {
+      assert(viewModel.routeChangingTrophies.some(item => item.id === id), `Nioh 3 deve incluir ponto de atencao ${id}`);
+    });
+    assert(teamwork && !teamworkTags.includes('online') && !teamworkTags.includes('coop'), 'Teamwork nao deve gerar online/coop obrigatorio');
+    assert.strictEqual(trophyById.nioh3_wanderer_time?.name_pt, 'Errante do Tempo', 'Wanderer in Time deve continuar correto');
+    assert.strictEqual(trophyById.nioh3_spa_healer?.descriptionPtBr, 'Você se banhou na fonte termal pela primeira vez.', 'Spa Healer deve continuar correto');
+    assert.strictEqual(trophyById.nioh3_latest_masterpiece?.name, 'Latest Masterpiece', 'Latest Masterpiece deve continuar correto');
+    [
+      'dados atuais do guia',
+      'segundo os dados atuais do guia',
+      'o guia não aponta',
+      'não deve exigir',
+      'não deve ser marcado',
+      'quando validado',
+      'permanece em revisão editorial',
+      'não está verificado',
+      'aguardando revisão',
+      'em revisão editorial',
+      'antes de marcar o guia como verificado',
+      'Finalize o checklist antes de marcar o guia como verificado',
+      'Este troféu está marcado como spoiler',
+      'Revele os detalhes na lista completa',
+      'Base game sem DLCs',
+      'Descrição em revisão editorial.',
+      '[object Object]',
+      'undefined'
+    ].forEach(text => {
+      assert(!nioh3Text.includes(text), `Nioh 3 nao deve conter texto publico/internal incorreto: ${text}`);
+    });
+  }
 
   await withTempApp(async ({ baseUrl, run, migrate }) => {
     const apiGame = await fetchJson(`${baseUrl}/api/games/slug/${slug}`);
@@ -581,6 +639,58 @@ async function validateGuide(slug = '') {
       });
       assert(!/>\s*null\s*</i.test(html), 'Nioh 2 SSR nao deve exibir null visivel');
       assert.strictEqual(getCanonical(html), 'https://atlasachievement.com.br/jogo/nioh-2', 'canonical de Nioh 2 deve usar dominio de producao');
+    }
+    if (slug === 'nioh-3') {
+      const summaryHtml = html.match(/<div class="atlas-guide-summary-editorial[\s\S]*?<\/div>/)?.[0] || '';
+      const apiMissables = apiGame.trophies.filter(trophy => trophy.is_missable);
+      const apiTeamwork = apiGame.trophies.find(trophy => trophy.name === 'Teamwork' || trophy.name_pt === 'Trabalho em Equipe');
+      const apiTrophyById = Object.fromEntries(apiGame.trophies.map(trophy => [trophy.id, trophy]));
+      const normalizedHtml = normalizeText(html);
+      assert.strictEqual(apiGame.is_verified, true, 'API de Nioh 3 deve continuar verified');
+      assert.strictEqual(apiGame.verification_status, 'verified', 'API de Nioh 3 deve expor verification_status verified');
+      assert.strictEqual(apiGame.trophies.length, 51, 'API de Nioh 3 deve manter 51 trofeus');
+      assert.strictEqual(apiGame.missable_count, 0, 'API de Nioh 3 deve manter missable_count 0');
+      assert.strictEqual(apiMissables.length, 0, 'API de Nioh 3 deve manter Perdiveis 0 na checklist');
+      assert.strictEqual(Boolean(apiGame.onlineRequired || apiGame.online_required), false, 'API de Nioh 3 deve manter online 0');
+      assert.strictEqual(Boolean(apiGame.coopRequired || apiGame.coop_required), false, 'API de Nioh 3 deve manter coop 0');
+      assert.strictEqual(Boolean(apiGame.dlcRequired || apiGame.dlc_required), false, 'API de Nioh 3 deve manter DLC nao obrigatoria');
+      assert(apiTeamwork && !apiTeamwork.is_online && !apiTeamwork.isOnline && !apiTeamwork.is_coop && !apiTeamwork.isCoop, 'Teamwork nao deve virar trofeu online/coop obrigatorio na API');
+      assert.strictEqual(apiTrophyById.nioh3_wanderer_time?.name_pt, 'Errante do Tempo', 'Wanderer in Time deve continuar correto na API');
+      assert.strictEqual(apiTrophyById.nioh3_spa_healer?.description, 'Você se banhou na fonte termal pela primeira vez.', 'Spa Healer deve continuar correto na API');
+      assert.strictEqual(apiTrophyById.nioh3_latest_masterpiece?.name, 'Latest Masterpiece', 'Latest Masterpiece deve continuar correto na API');
+      assert(html.includes('Nioh 3'), 'Nioh 3 deve renderizar nome no SSR');
+      assert(html.includes('Verificado'), 'Nioh 3 deve renderizar status Verificado');
+      assert(html.includes('Guia revisado editorialmente.'), 'Nioh 3 deve renderizar mensagem revisada');
+      assert(html.includes('DLC fora da platina base'), 'Nioh 3 deve exibir DLC fora da platina base');
+      assert(normalizedHtml.includes('nioh 3 e uma platina longa e tecnica'), 'Nioh 3 deve exibir resumo editorial forte');
+      assert((summaryHtml.match(/<p\b/g) || []).length >= 2, 'Resumo de Nioh 3 deve ter pelo menos 2 paragrafos editoriais');
+      assert(html.includes('A platina base pode ser feita sem troféus online obrigatórios') || html.includes('A platina base pode ser feita sem trofÃ©us online obrigatÃ³rios'), 'FAQ de Nioh 3 deve ter resposta direta sobre online');
+      assert(html.includes('Sim. Este guia está Verificado') || html.includes('Sim. Este guia estÃ¡ Verificado'), 'FAQ de Nioh 3 deve concordar com status Verificado');
+      assert(html.includes('Kodama Leader') && html.includes('Spa Lover') && html.includes('Answering to the People') && html.includes('Arts Proficiency') && html.includes('Yokai Manipulator'), 'Nioh 3 deve renderizar pontos de atencao editoriais esperados');
+      [
+        'dados atuais do guia',
+        'segundo os dados atuais do guia',
+        'o guia não aponta',
+        'não deve exigir',
+        'não deve ser marcado',
+        'quando validado',
+        'permanece em revisão editorial',
+        'não está verificado',
+        'aguardando revisão',
+        'em revisão editorial',
+        'antes de marcar o guia como verificado',
+        'Finalize o checklist antes de marcar o guia como verificado',
+        'Este troféu está marcado como spoiler',
+        'Revele os detalhes na lista completa',
+        'Base game sem DLCs',
+        'Descrição em revisão editorial.',
+        '[object Object]',
+        'undefined'
+      ].forEach(text => {
+        assert(!html.includes(text), `Nioh 3 SSR nao deve exibir: ${text}`);
+      });
+      assert(!/>\s*null\s*</i.test(html), 'Nioh 3 SSR nao deve exibir null visivel');
+      assert.strictEqual(getCanonical(html), 'https://atlasachievement.com.br/jogo/nioh-3', 'canonical de Nioh 3 deve usar dominio de producao');
     }
     if (slug === 'pragmata') {
       const normalizedHtml = normalizeText(html);

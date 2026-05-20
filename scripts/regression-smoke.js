@@ -6191,8 +6191,8 @@ async function assertSeedData({ all, get }, sampleGames) {
   assert.strictEqual(nioh3Sample.roadmap.length, 6, 'Nioh 3 deve ter roadmap editorial com 6 etapas');
   assert.strictEqual(nioh3Sample.editorial_status, 'published', 'Nioh 3 deve permanecer publico');
   assert(['strong', 'complete'].includes(nioh3Sample.coverage_level), 'Nioh 3 deve ter cobertura editorial forte ou completa');
-  assert.strictEqual(nioh3Sample.is_verified, false, 'Nioh 3 nao deve ser verificado automaticamente');
-  assert.strictEqual(nioh3Sample.verification_status, 'review', 'Nioh 3 deve aguardar revisao editorial final');
+  assert.strictEqual(nioh3Sample.is_verified, true, 'Nioh 3 deve continuar verificado');
+  assert.strictEqual(nioh3Sample.verification_status, 'verified', 'Nioh 3 deve manter verification_status verified');
   assert(/online/.test(normalizeEditorialSmokeText(nioh3Sample.online_summary)) && /obrigatorio/.test(normalizeEditorialSmokeText(nioh3Sample.online_summary)), 'Nioh 3 deve deixar claro que online nao e obrigatorio');
   assert(/dlcs? futura|season pass|fora do escopo/.test(normalizeEditorialSmokeText(nioh3Sample.dlc_scope)), 'Nioh 3 deve separar DLC futura da platina base');
   assert(nioh3Sample.image.includes('/header.jpg'), 'Nioh 3 deve usar image horizontal valida');
@@ -6256,8 +6256,8 @@ async function assertSeedData({ all, get }, sampleGames) {
   assert.strictEqual(nioh3Seeded?.time_sort_hours, 60, 'seed deve persistir time_sort_hours do Nioh 3');
   assert.strictEqual(nioh3Seeded?.editorial_status, 'published', 'Nioh 3 deve entrar publicado');
   assert(['strong', 'complete'].includes(nioh3Seeded?.coverage_level), 'Nioh 3 deve entrar com coverage strong ou complete');
-  assert.strictEqual(nioh3Seeded?.is_verified, 0, 'Nioh 3 nao deve entrar como verificado');
-  assert.strictEqual(nioh3Seeded?.verification_status, 'review', 'Nioh 3 deve entrar em revisao editorial');
+  assert.strictEqual(nioh3Seeded?.is_verified, 1, 'Nioh 3 deve entrar como verificado');
+  assert.strictEqual(nioh3Seeded?.verification_status, 'verified', 'Nioh 3 deve persistir verification_status verified');
   assert.strictEqual(nioh3Seeded?.image, nioh3Sample.image, 'Nioh 3 deve persistir image horizontal');
   assert.strictEqual(nioh3Seeded?.cover_image, nioh3Sample.cover_image, 'Nioh 3 deve persistir cover_image vertical');
   assert(/online/.test(normalizeEditorialSmokeText(nioh3Seeded?.online_summary)) && /obrigatorio/.test(normalizeEditorialSmokeText(nioh3Seeded?.online_summary)), 'Nioh 3 deve persistir ausencia de online obrigatorio');
@@ -7672,7 +7672,7 @@ async function assertSeedSyncPreservesManualVerifiedStatus({ migrate, get, run }
             editorial_review_status = 'in_review',
             is_verified = 0
       WHERE slug = ?`,
-    ['nioh-3']
+    ['saros']
   );
   await run('DELETE FROM games WHERE slug = ?', ['days-gone']);
 
@@ -7697,8 +7697,8 @@ async function assertSeedSyncPreservesManualVerifiedStatus({ migrate, get, run }
     assert.strictEqual(row.reviewed_by, 'admin', `${slug} deve preservar revisor manual`);
   }
 
-  const reviewRow = await get('SELECT verification_status, editorial_review_status, is_verified FROM games WHERE slug = ?', ['nioh-3']);
-  assert(reviewRow, 'nioh-3 deve existir no banco temporario');
+  const reviewRow = await get('SELECT verification_status, editorial_review_status, is_verified FROM games WHERE slug = ?', ['saros']);
+  assert(reviewRow, 'saros deve existir no banco temporario');
   assert.notStrictEqual(reviewRow.verification_status, 'verified', 'jogo em revisao nao deve virar verified sem acao manual');
   assert.notStrictEqual(reviewRow.editorial_review_status, 'verified', 'editorial_review_status em revisao deve continuar sem verified automatico');
   assert.strictEqual(Number(reviewRow.is_verified), 0, 'jogo em revisao deve continuar com is_verified = 0');
@@ -8258,8 +8258,8 @@ async function assertBackendEditorialConsistency() {
   assert.strictEqual(nioh3AfterSync?.time_sort_hours, 60, 'migration deve corrigir time_sort_hours do Nioh 3');
   assert.strictEqual(nioh3AfterSync?.time_bucket, 'long', 'migration deve corrigir time_bucket do Nioh 3');
   assert.strictEqual(nioh3AfterSync?.coverage_level, 'strong', 'migration nao deve manter Nioh 3 como complete automatico');
-  assert.strictEqual(nioh3AfterSync?.is_verified, 0, 'migration nao deve manter Nioh 3 como verificado sem revisao manual');
-  assert.strictEqual(nioh3AfterSync?.verification_status, 'review', 'migration deve voltar Nioh 3 para revisao editorial');
+  assert.strictEqual(nioh3AfterSync?.is_verified, 1, 'migration deve preservar Nioh 3 como verificado');
+  assert.strictEqual(nioh3AfterSync?.verification_status, 'verified', 'migration deve preservar Nioh 3 como verified');
   assert.strictEqual(nioh3TrophiesAfterSync.length, 51, 'migration deve substituir checklist antigo do Nioh 3 por 51 trofeus');
   assert(!nioh3TrophiesAfterSync.some(trophy => trophy.trophy_code === 'nioh3_legacy_wrong_count'), 'migration deve remover trofeu legado incorreto do Nioh 3');
   assert.strictEqual(nioh3TrophiesAfterSync.filter(trophy => trophy.is_missable).length, 0, 'migration deve limpar perdiveis antigos no Nioh 3');
@@ -8916,8 +8916,8 @@ async function assertBackendEditorialConsistency() {
     assert.strictEqual(nioh3.time_bucket, 'long', 'catalogo deve classificar Nioh 3 como jogo longo');
     assert.strictEqual(nioh3.roadmap_count, 6, 'catalogo deve expor roadmap completo do Nioh 3');
     assert.strictEqual(nioh3.coverage_level, 'strong', 'Nioh 3 deve aparecer com coverage strong');
-    assert.strictEqual(nioh3.is_verified, false, 'Nioh 3 nao deve aparecer como verificado');
-    assert.strictEqual(nioh3.verification_status, 'review', 'Nioh 3 deve aparecer em revisao editorial');
+    assert.strictEqual(nioh3.is_verified, true, 'Nioh 3 deve aparecer como verificado');
+    assert.strictEqual(nioh3.verification_status, 'verified', 'Nioh 3 deve aparecer como verified');
     assert.strictEqual(nioh3.image, 'https://shared.fastly.steamstatic.com/store_item_assets/steam/apps/3681010/a21264e9fd476dcb2901c2432b598107d024c5a8/header.jpg?t=1772090941', 'catalogo deve usar image horizontal do Nioh 3');
     assert.strictEqual(nioh3.cover_image, 'https://shared.fastly.steamstatic.com/store_item_assets/steam/apps/3681010/a6c07532fbcfa8c7aeecddc251aa4a6a7156323c/library_capsule.jpg?t=1772090941', 'API deve expor cover_image vertical do Nioh 3');
     assert.strictEqual(nioh3.missable_count, 0, 'API nao deve marcar Nioh 3 como perdivel');
@@ -11766,10 +11766,10 @@ async function assertBackendEditorialConsistency() {
     assert(nioh3Detail.roadmap.some(step => nioh3RoadmapStepText(step).includes('Battle Scroll')), 'roadmap de Nioh 3 deve citar Battle Scroll');
     assert(nioh3Detail.roadmap.some(step => nioh3RoadmapStepText(step).includes('Kodama') && nioh3RoadmapStepText(step).includes('Lesser Crucibles')), 'roadmap de Nioh 3 deve citar coletaveis e Crucibles');
     assert(/Não há (?:troféus )?online obrigatório/.test(nioh3Detail.online_summary), 'detalhe de Nioh 3 deve indicar ausência de online obrigatório');
-    assert(/DLCs? futura/.test(nioh3Detail.dlc_scope), 'detalhe de Nioh 3 deve manter DLC futura em escopo separado');
-    assert.strictEqual(nioh3Detail.coverage_level, 'strong', 'Nioh 3 nao deve ser complete sem revisao manual');
-    assert.strictEqual(nioh3Detail.is_verified, false, 'Nioh 3 nao deve estar verificado');
-    assert.strictEqual(nioh3Detail.verification_status, 'review', 'Nioh 3 deve ficar em revisao editorial');
+    assert(/DLC fora da platina base/.test(nioh3Detail.dlc_scope), 'detalhe de Nioh 3 deve manter DLC fora da platina base');
+    assert.strictEqual(nioh3Detail.coverage_level, 'strong', 'Nioh 3 deve manter coverage strong');
+    assert.strictEqual(nioh3Detail.is_verified, true, 'Nioh 3 deve estar verificado');
+    assert.strictEqual(nioh3Detail.verification_status, 'verified', 'Nioh 3 deve ficar verified');
     assert.strictEqual(nioh3Detail.cover_image, 'https://shared.fastly.steamstatic.com/store_item_assets/steam/apps/3681010/a6c07532fbcfa8c7aeecddc251aa4a6a7156323c/library_capsule.jpg?t=1772090941', 'detalhe de Nioh 3 deve retornar cover_image');
     assert(nioh3Detail.trophies.some(trophy => trophy.id === 'nioh3_grizzled_veteran' && trophy.type === 'Bronze'), 'Nioh 3 deve manter Grizzled Veteran como bronze');
     assert(nioh3Detail.trophies.some(trophy => trophy.id === 'nioh3_delusion' && trophy.type === 'Bronze'), 'Nioh 3 deve manter Delusion Destroyed como bronze');
@@ -12875,7 +12875,7 @@ function assertLote1BNetworkClassification() {
       Prata: expected.Prata,
       Bronze: expected.Bronze
     }, `${slug} deve manter distribuicao de trofeus`);
-    assert.strictEqual(game.is_verified, ['hades', 'hades-ii', 'ghost-of-tsushima', 'astro-bot'].includes(slug), `${slug} deve manter status verified apenas quando ja revisado manualmente`);
+    assert.strictEqual(game.is_verified, ['hades', 'hades-ii', 'ghost-of-tsushima', 'astro-bot', 'nioh-3'].includes(slug), `${slug} deve manter status verified apenas quando ja revisado manualmente`);
   });
 
   [
@@ -13024,13 +13024,18 @@ function assertLote1CRecentGuideEditorialSafety() {
       Prata: expected.Prata,
       Bronze: expected.Bronze
     }, `${slug} deve manter distribuicao de tipos sem mudanca nao documentada`);
-    assert.strictEqual(game.is_verified, false, `${slug} nao deve ser marcado como verificado manualmente`);
-    assert.strictEqual(game.verification_status, 'review', `${slug} deve permanecer em revisao pendente`);
+    if (slug === 'nioh-3') {
+      assert.strictEqual(game.is_verified, true, `${slug} deve permanecer verificado`);
+      assert.strictEqual(game.verification_status, 'verified', `${slug} deve permanecer verified`);
+    } else {
+      assert.strictEqual(game.is_verified, false, `${slug} nao deve ser marcado como verificado manualmente`);
+      assert.strictEqual(game.verification_status, 'review', `${slug} deve permanecer em revisao pendente`);
+    }
     editorialFields.forEach(field => {
       assert(game[field], `${slug} deve preencher ${field}`);
     });
     const body = editorialBody(game);
-    if (slug === 'resident-evil-requiem') {
+    if (['resident-evil-requiem', 'nioh-3'].includes(slug)) {
       assert(!/em revisao|validacao final|aguardando revisao|dados sujeitos/.test(body), `${slug} nao deve gravar texto publico fixo de revisao no corpo editorial`);
     } else {
       assert(/revisao|precisa validar|dados sujeitos|aguarda/.test(body), `${slug} deve comunicar revisao/validacao pendente`);
@@ -13045,8 +13050,8 @@ function assertLote1CRecentGuideEditorialSafety() {
 
   const nioh3 = bySlug.get('nioh-3');
   const nioh3Body = editorialBody(nioh3);
-  assert(/coop online opcional/.test(nioh3Body) && /acolyt/.test(nioh3Body), 'Nioh 3 deve explicar coop opcional e Acolytes/NPC sem obrigatoriedade');
-  assert(!/coop obrigatorio|exige coop/.test(nioh3Body), 'Nioh 3 nao deve afirmar coop obrigatorio sem confirmacao');
+  assert(/coop opcional/.test(nioh3Body) && /acolyt/.test(nioh3Body), 'Nioh 3 deve explicar coop opcional e Acolytes/NPC sem obrigatoriedade');
+  assert(!/coop obrigatorio|exige coop/.test(nioh3Body.replace(/nao exige coop obrigatorio/g, '').replace(/sem coop obrigatorio/g, '')), 'Nioh 3 nao deve afirmar coop obrigatorio');
 
   const reanimal = bySlug.get('reanimal');
   const reanimalBody = editorialBody(reanimal);

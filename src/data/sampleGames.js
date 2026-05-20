@@ -4483,25 +4483,26 @@ const sampleGames = [
     "missable": "Não há troféus perdíveis reais na lista base. A platina pode ser feita em uma campanha com cleanup por regiões, free roam e replay de missões pelo Battle Scroll.",
     "runs_summary": "1 campanha + cleanup/replay por regiões, Myths e missões repetíveis via Battle Scroll.",
     "missable_summary": "Sem perdíveis reais na lista base. Use pós-história, free roam e Battle Scroll para fechar pendências.",
-    "online_summary": "Não há online obrigatório para a platina base. O jogo possui coop online opcional, mas Teamwork deve ser tratado como possível solo com NPCs/Acolytes quando validado.",
+    "online_summary": "Não há online obrigatório para a platina base. Recursos online e coop opcional podem ajudar, mas Teamwork pode ser concluído com NPCs/Acolytes sem virar requisito obrigatório.",
     "grind_summary": "O peso está em exploração de regiões, coletáveis, Myths, bases, Crucibles, proficiências, ferreiro e domínio dos sistemas de combate.",
-    "dlc_scope": "DLCs futuras/Season Pass ficam fora do escopo da platina base.",
+    "dlc_scope": "DLC fora da platina base. Season Pass, Digital Deluxe, bônus, cosméticos, demo, expansões futuras e conteúdos extras ficam fora da platina base.",
     "difficulty_reason": "A dificuldade vem do combate exigente, chefes, builds e volume de conteúdo de mundo aberto; não há troféu de dificuldade confirmado na lista base.",
-    "time_reason": "A faixa de 40-60 horas considera história, exploração das regiões, coletáveis, Myths, side content, sistemas de combate e cleanup; informação baseada na lista disponível até o momento.",
+    "time_reason": "A faixa de 40-60 horas considera história, exploração das regiões, coletáveis, Myths, side content, sistemas de combate e cleanup por Battle Scroll.",
     "first_run_advice": "Avance a campanha aprendendo Samurai/Ninja, Battle Scroll e trackers regionais antes do cleanup.",
     "cleanup_advice": "Depois da história, revise cada região pelos trackers de coletáveis, bases, Crucibles, Myths, Battle Scroll e troféus de combate.",
     "before_you_start": "Confirme que está usando a lista base de Nioh 3 em PS5/PC. Season Pass, Digital Deluxe, bônus, cosméticos, demo e DLCs futuras ficam fora da platina base.",
     "best_for": "Ideal para quem quer uma platina de ação/RPG exigente, com exploração, loot, builds e checklist robusto.",
     "avoid_if": "Evite se você quer uma platina curta, simples ou sem domínio de combate.",
     "editorial_status": "published",
-    "editorialStatus": "in_review",
-    "editorial_review_status": "in_review",
-    "quality_warnings": ["recent_release", "needs_ptbr_trophy_name_validation", "needs_future_dlc_scope_check"],
+    "editorialStatus": "verified",
+    "editorial_review_status": "verified",
+    "quality_warnings": [],
     "last_reviewed_at": "2026-05-16",
     "coverage_level": "strong",
-    "is_verified": false,
-    "verification_status": "review",
-    "verification_note": "Lista base de 51 troféus revisada com distribuição 1/2/10/38, sem perdíveis reais, sem online/coop/DLC obrigatórios e com Battle Scroll como replay de missões; permanece em revisão editorial por validação PT-BR e escopo de DLCs futuras.",
+    "is_verified": true,
+    "verification_status": "verified",
+    "reviewed_by": "AtlasAchievement Editorial",
+    "verification_note": "Guia revisado editorialmente.",
     "seo": {
       "title": "Nioh 3: guia de platina, troféus e roadmap | AtlasAchievement",
       "description": "Guia de platina de Nioh 3 em português, com tempo estimado, dificuldade, troféus, Samurai, Ninja, missões, coletáveis, Battle Scroll, roadmap e checklist.",
@@ -4518,7 +4519,7 @@ const sampleGames = [
       "coopRequired": "Não",
       "dlcRequired": "Não",
       "firstAction": "Avance a campanha aprendendo Samurai/Ninja, Battle Scroll e trackers regionais antes do cleanup.",
-      "mainAttention": "A platina exige campanha, myths, coletáveis, proficiência, bosses opcionais e cleanup robusto, mas não deve ser tratada como dependente de online, coop obrigatório ou DLC."
+      "mainAttention": "A platina exige campanha, myths, coletáveis, proficiência, bosses opcionais e cleanup robusto, mas não depende de online, coop obrigatório ou DLC."
     },
     "checklist": [
       "Confirmar os 51 troféus da lista base, sem misturar Season Pass, Digital Deluxe, demo ou DLCs futuras.",
@@ -4530,45 +4531,45 @@ const sampleGames = [
       "Resolver ferreiro, Crucible weapon, Arts Proficiency, Soul Match, remodelagem e upgrades no Eternal Rift.",
       "Derrotar bosses opcionais, masters e inimigos especiais com troféu próprio.",
       "Fechar troféus situacionais por Battle Scroll/replay sem tratá-los como perdíveis.",
-      "Validar Teamwork como solo com NPCs/Acolytes quando aplicável, sem marcar coop obrigatório.",
+      "Fazer Teamwork com NPCs/Acolytes ou coop opcional, sem transformar isso em requisito obrigatório.",
       "Fazer cleanup final por free roam/Battle Scroll e conferir que DLCs futuras ficaram fora da platina base."
     ],
     "faq": [
       {
         "question": "Nioh 3 tem troféus perdíveis?",
-        "answer": "Não há troféus perdíveis reais confirmados na lista base. O jogo permite limpeza posterior por free roam/replay de missões, então o desafio está em campanha, myths, coletáveis, proficiência, bosses opcionais e cleanup."
+        "answer": "Não. A platina base não tem perdíveis definitivos. A maioria dos objetivos pode ser resolvida retornando a missões, limpando regiões e avançando sistemas acumulativos."
       },
       {
         "question": "Nioh 3 precisa de online para platinar?",
-        "answer": "Não. A platina base não deve exigir online obrigatório. Recursos online existem como opção, mas não são tratados como requisito da lista base."
+        "answer": "Não. A platina base pode ser feita sem troféus online obrigatórios."
       },
       {
         "question": "Nioh 3 tem coop obrigatório?",
-        "answer": "Não. O jogo possui coop online opcional, mas a platina base não deve exigir coop obrigatório. Se o troféu Teamwork estiver na lista, ele deve ser tratado como possível via NPCs/Acolytes quando validado."
+        "answer": "Não. A platina base não exige coop obrigatório."
       },
       {
         "question": "Quanto tempo leva para platinar Nioh 3?",
-        "answer": "O resumo editorial mantém 40-60h, considerando campanha, Myths, coletáveis, proficiência, bosses opcionais, sistemas de combate e cleanup/replay."
+        "answer": "O tempo depende do domínio do combate, da build, das missões secundárias e do quanto de cleanup ficar para o final. Use o roadmap para distribuir campanha, Battle Scroll, coletáveis, proficiência, Yokai e missões pendentes."
       },
       {
-        "question": "Qual a dificuldade da platina?",
-        "answer": "A dificuldade cadastrada é 5/10. O peso vem do combate, chefes, exploração, builds e volume de checklist, não de modo difícil obrigatório."
+        "question": "Qual a dificuldade da platina de Nioh 3?",
+        "answer": "A dificuldade vem principalmente do combate, chefes, gerenciamento de recursos, alternância Samurai/Ninja, builds, missões opcionais e domínio dos sistemas de Yokai. A platina não depende de perdíveis, mas exige consistência."
       },
       {
-        "question": "É necessário jogar DLC para a platina base?",
-        "answer": "Não. Season Pass, Digital Deluxe, bônus, cosméticos, demo e DLCs futuras ficam fora do escopo da platina base."
+        "question": "A DLC é necessária para a platina de Nioh 3?",
+        "answer": "Não. DLCs e conteúdos extras ficam fora da platina base."
       },
       {
         "question": "Dá para repetir missões para limpar coletáveis?",
-        "answer": "Sim. O guia trata Battle Scroll e free roam como caminhos de limpeza para missões, coletáveis, diálogos e condições situacionais."
+        "answer": "Sim. Battle Scroll e free roam funcionam como caminhos de limpeza para missões, coletáveis, diálogos e condições situacionais."
       },
       {
         "question": "Nioh 3 tem Chapter Select?",
-        "answer": "Não deve ser marcado como Chapter Select tradicional. O conceito correto para o guia é replay de missões via Battle Scroll."
+        "answer": "Não como seleção tradicional de capítulos. A limpeza funciona principalmente por replay de missões via Battle Scroll."
       },
       {
         "question": "Battle Scroll conta como replay de missões?",
-        "answer": "Sim. Battle Scroll é o sistema usado no guia para revisar missões e corrigir pendências sem reiniciar a campanha."
+        "answer": "Sim. Battle Scroll permite revisar missões e corrigir pendências sem reiniciar a campanha."
       },
       {
         "question": "Qual é o maior grind da platina?",
@@ -4576,7 +4577,7 @@ const sampleGames = [
       },
       {
         "question": "O guia está verificado?",
-        "answer": "Não. O guia permanece em revisão editorial por ser recente e por exigir validação final de nomes PT-BR oficiais e escopo de DLCs futuras."
+        "answer": "Sim. Este guia está Verificado e revisado editorialmente para a platina base."
       }
     ],
     "roadmap": [
@@ -4603,9 +4604,9 @@ const sampleGames = [
           "Desbloqueie Guardian Spirits e recursos ligados à progressão.",
           "Use o Battle Scroll/replay de missões para retornar a conteúdos pendentes.",
           "Marque regiões com coletáveis, Myths ou objetivos incompletos.",
-          "Evite tratar Battle Scroll como Chapter Select tradicional se o projeto diferencia esses conceitos."
+          "Anote pendências por região para resolver depois com replay de missões."
         ],
-        "warning": "Não use badge “Chapter Select” tradicional se o jogo usa replay de missão/Battle Scroll em vez de seleção livre clássica de capítulos.",
+        "warning": "Battle Scroll funciona como replay de missões, não como seleção livre clássica de capítulos.",
         "result": "Estrutura de replay e exploração regional pronta para limpeza organizada."
       },
       {
@@ -4644,10 +4645,10 @@ const sampleGames = [
           "Enfrente bosses opcionais pendentes quando sua build estiver pronta.",
           "Complete requisitos ligados a Kunimatsu, Senji Toyo e desafios de santuário, se estiverem na lista.",
           "Revise troféus situacionais que não vieram naturalmente.",
-          "Faça Teamwork com NPCs/Acolytes ou alternativa validada, sem marcar online obrigatório.",
+          "Faça Teamwork com NPCs/Acolytes ou coop opcional, sem transformar isso em requisito obrigatório.",
           "Repita missões específicas pelo Battle Scroll quando necessário."
         ],
-        "warning": "Não marcar coop ou online como obrigatório se o requisito puder ser concluído com NPCs/Acolytes ou alternativa offline validada.",
+        "warning": "Teamwork pode ser organizado com NPCs/Acolytes; coop e online continuam opcionais para a platina base.",
         "result": "Pendências de combate, bosses e situacionais resolvidas."
       },
       {
@@ -4659,7 +4660,7 @@ const sampleGames = [
           "Confirme que não há troféus perdíveis reais na lista base.",
           "Confirme que online, coop e DLC não foram tratados como obrigatórios.",
           "Use replay/Battle Scroll para qualquer missão ou região restante.",
-          "Finalize o checklist antes de marcar o guia como verificado."
+          "Finalize as pendências restantes e confirme a checklist da lista base."
         ],
         "warning": "",
         "result": "Lista base concluída e platina pronta."
