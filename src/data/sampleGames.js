@@ -5080,7 +5080,7 @@ const sampleGames = [
   {
     "name": "Saros",
     "slug": "saros",
-    "difficulty": 4,
+    "difficulty": 5,
     "time": "20-30h",
     "time_min_hours": 20,
     "time_max_hours": 30,
@@ -5104,23 +5104,24 @@ const sampleGames = [
     "missable_summary": "Sem perdíveis reais na lista base. Troféus situacionais, bosses e objetivos de combate devem ser tratados como cleanup de runs, não como perda permanente.",
     "online_summary": "Não há online obrigatório para a platina base. A página oficial descreve Saros como jogo single-player, então coop e multiplayer não entram como requisito de platina.",
     "grind_summary": "O grind principal está em 33 expedições bem-sucedidas com Carcosan Modifiers, 1.995 inimigos, armas/variantes, Halcyon, upgrades e desafios de combate.",
-    "dlc_scope": "Guia focado na lista base de PS5. Digital Deluxe, cosméticos, acesso antecipado e qualquer conteúdo futuro ficam fora da platina base.",
-    "difficulty_reason": "A dificuldade estimada fica em 4/10: a lista é direta, mas pede consistência em runs, chefes, Nightmare Gates, um bioma sem dano relevante e desafios de armas.",
+    "dlc_scope": "DLC fora da platina base. Digital Deluxe, cosméticos, acesso antecipado, expansões futuras e extras ficam separados da platina base.",
+    "difficulty_reason": "A dificuldade estimada fica em 5/10: a lista pede consistência em runs, chefes, Nightmare Gates, um bioma sem dano relevante e desafios de armas.",
     "time_reason": "A faixa de 20-30 horas considera campanha, epílogo, bosses, 7 Nightmare Gates, 33 expedições com modificadores, objetivos cumulativos e cleanup de armas/desafios.",
-    "first_run_advice": "Avance pelas primeiras runs aprendendo combate, movimentação, upgrades permanentes e padrões dos chefes antes de tentar limpar tudo.",
+    "first_run_advice": "Use as primeiras runs para aprender movimentação, padrões de inimigos e chefes, armas, upgrades permanentes, salas especiais e objetivos acumulativos antes de mirar no cleanup.",
     "cleanup_advice": "Depois da campanha/epílogo, foque em Nightmare Gates, armas, 33 expedições com modificadores, objetivos cumulativos, desafios situacionais e bioma sem dano.",
-    "before_you_start": "Não trate Saros como Returnal 2 nem copie roadmap de Returnal. O guia cobre Saros como lista própria de PS5, sem online, coop ou DLC obrigatórios.",
+    "before_you_start": "Saros é tratado como guia próprio, com rota baseada em runs, domínio de combate, upgrades permanentes, Nightmare Gates, objetivos acumulativos, epílogo e cleanup, sem online, coop ou DLC obrigatórios.",
     "best_for": "Ideal para quem gosta de roguelite de ação com runs curtas, chefes, upgrades permanentes e desafios de execução.",
     "avoid_if": "Evite se você não curte repetir runs, aprender padrões de chefes ou fazer desafios situacionais de armas e combate.",
     "editorial_status": "published",
-    "editorialStatus": "in_review",
-    "editorial_review_status": "in_review",
-    "quality_warnings": ["recent_release", "needs_trophy_list_validation"],
-    "last_reviewed_at": "2026-05-16",
+    "editorialStatus": "verified",
+    "editorial_review_status": "verified",
+    "quality_warnings": [],
+    "last_reviewed_at": "2026-05-21",
     "coverage_level": "strong",
-    "is_verified": false,
-    "verification_status": "review",
-    "verification_note": "Guia inicial de Saros adicionado com 45 troféus, distribuição 1/2/16/26, sem perdíveis, sem online/coop/DLC obrigatórios e fontes públicas; permanece em revisão editorial por validação final da lista e escopo pós-lançamento.",
+    "is_verified": true,
+    "verification_status": "verified",
+    "verification_note": "Guia revisado editorialmente para a platina base de Saros, com 45 troféus, distribuição 1/2/16/26, sem perdíveis definitivos, sem online obrigatório, sem coop obrigatório e DLC fora da platina base.",
+    "reviewed_by": "AtlasAchievement editorial",
     "seo": {
       "title": "Saros: guia de platina, troféus e roadmap | AtlasAchievement",
       "description": "Guia de platina de Saros em português, com tempo estimado, dificuldade, troféus, roadmap, checklist, coletáveis, bosses e dicas para a platina.",
@@ -5130,7 +5131,7 @@ const sampleGames = [
     "cover_image": "/assets/games/saros/cover.png",
     "quickDecision": {
       "time": "20-30h",
-      "difficulty": "4/10",
+      "difficulty": "5/10",
       "runs": "campanha/runs principais + cleanup",
       "missables": "Não",
       "onlineRequired": "Não",
@@ -5155,43 +5156,47 @@ const sampleGames = [
     "faq": [
       {
         "question": "Saros tem troféus perdíveis?",
-        "answer": "Não há troféus perdíveis reais tratados na lista base. O guia considera bosses, desafios, armas e objetivos cumulativos como cleanup de runs, não como perda permanente."
+        "answer": "Não há perdíveis definitivos na lista base. Alguns objetivos podem exigir uma run específica, boa execução ou planejamento, mas devem ser tratados como risco de run, dificuldade ou cleanup quando puderem ser tentados novamente."
       },
       {
         "question": "Saros precisa de online para platinar?",
-        "answer": "Não. A página oficial descreve Saros como um jogo single-player, e a lista base não deve ser tratada como dependente de online obrigatório."
+        "answer": "Não. A platina base não exige troféus online obrigatórios."
       },
       {
         "question": "Saros tem coop obrigatório?",
-        "answer": "Não. O guia não marca coop obrigatório porque não há requisito de coop validado para a platina base."
+        "answer": "Não. A platina base não exige coop obrigatório."
       },
       {
         "question": "Quanto tempo leva para platinar Saros?",
-        "answer": "A estimativa inicial do guia é 20-30h, considerando campanha, epílogo, Nightmare Gates, 33 expedições com modificadores e cleanup de armas/desafios."
+        "answer": "O tempo depende do domínio das runs, chefes, upgrades permanentes, coletáveis, desafios e cleanup. Use o roadmap para separar campanha, progressão, objetivos acumulativos e limpeza final."
       },
       {
         "question": "Qual a dificuldade da platina?",
-        "answer": "A dificuldade inicial ficou em 4/10. A lista é direta, mas exige consistência em runs, chefes, desafios de armas e um bioma sem dano relevante."
+        "answer": "A dificuldade vem de execução, sobrevivência, leitura de padrões, chefes, objetivos de run e domínio dos sistemas. O guia trata desafios repetíveis como risco de run/dificuldade, não como perdíveis definitivos."
       },
       {
         "question": "Saros exige DLC para platina?",
-        "answer": "Não. Digital Deluxe, cosméticos, acesso antecipado e qualquer conteúdo futuro ficam fora do escopo da platina base."
+        "answer": "Não. DLCs ou extras ficam fora da platina base."
       },
       {
         "question": "Dá para limpar pendências depois da campanha?",
-        "answer": "O guia trata a platina como campanha/runs principais + cleanup. Pendências de armas, desafios, Nightmare Gates e objetivos cumulativos devem ser resolvidas em runs adicionais."
+        "answer": "Sim. Pendências de armas, desafios, Nightmare Gates e objetivos cumulativos entram melhor em runs adicionais depois que a base de combate estiver mais estável."
       },
       {
         "question": "Saros tem chapter select ou replay de áreas?",
-        "answer": "Não há Chapter Select tradicional marcado no guia. Replays, pós-jogo ou seleção de áreas devem continuar em validação editorial antes de virar badge específico."
+        "answer": "Não conte com Chapter Select tradicional para organizar a platina. Planeje por runs, checklist e cleanup final, usando qualquer retorno de área apenas quando o próprio jogo permitir."
       },
       {
         "question": "A platina depende de múltiplas runs?",
-        "answer": "Sim. Como roguelite, a platina depende de várias runs para progressão, bosses, recursos, modificadores, armas e desafios situacionais."
+        "answer": "Sim. Como roguelite de ação, a platina depende de várias runs para progressão, bosses, recursos, modificadores, armas e desafios situacionais."
       },
       {
         "question": "O guia está verificado?",
-        "answer": "Não. Saros foi adicionado como guia inicial em revisão editorial, com avisos para validação final da lista e localização oficial dos troféus."
+        "answer": "Sim. Este guia está Verificado e revisado editorialmente para a platina base."
+      },
+      {
+        "question": "Saros é Returnal 2?",
+        "answer": "Não. Mesmo que possa lembrar outros roguelites de ação, o guia trata Saros como jogo próprio, com roadmap, checklist e alertas específicos da sua lista."
       }
     ],
     "roadmap": [
@@ -5242,7 +5247,7 @@ const sampleGames = [
           "Revise o checklist de coletáveis e recursos por área.",
           "Complete upgrades permanentes ou sistemas de progressão exigidos pelos troféus.",
           "Separe runs de farm das runs focadas em chefes.",
-          "Use replay/free roam/seleção de área somente se esse recurso estiver validado."
+          "Use o checklist para reduzir retrabalho entre runs e separar coleta, upgrades e objetivos acumulativos."
         ],
         "warning": "",
         "result": "Coletáveis, recursos e upgrades avançados antes do cleanup final."
@@ -5266,12 +5271,12 @@ const sampleGames = [
         "objective": "Conferir todos os troféus da lista base sem misturar rede, dupla, DLC ou conteúdo futuro.",
         "actions": [
           "Revise história, bosses, coletáveis, upgrades, desafios e troféus situacionais.",
-          "Confirme que nenhum requisito de rede ou dupla foi marcado como obrigatório sem validação.",
+          "Confirme que nenhum requisito de rede ou dupla entrou na rota da platina base.",
           "Confirme que DLCs ou extras não foram contados como platina base.",
           "Finalize qualquer pendência usando replay, pós-jogo ou runs adicionais, se disponível."
         ],
         "warning": "",
-        "result": "Lista base concluída e platina pronta, mantendo o guia em revisão se algum dado ainda estiver pendente."
+        "result": "Lista base concluída e platina pronta."
       }
     ],
     "trophies": [
@@ -5300,7 +5305,7 @@ const sampleGames = [
       { "id": "saros-eclipses-gift", "name": "Eclipse's Gift", "name_pt": "Dádiva do eclipse", "type": "Prata", "description": "Colete 70 Halcyon.", "tip": "Objetivo cumulativo; mantenha o foco em exploração e sobrevivência.", "is_missable": false, "is_spoiler": false },
       { "id": "saros-carcosan-conqueror", "name": "Carcosan Conqueror", "name_pt": "Conquistador de Carcosa", "type": "Bronze", "description": "Encontre e derrote 10 hostis Alpha.", "tip": "Objetivo de progressão/combate que deve avançar durante runs mais longas.", "is_missable": false, "is_spoiler": false },
       { "id": "saros-catch-and-release", "name": "Catch And Release", "name_pt": "Capture e libere", "type": "Prata", "description": "Use o Shield para absorver 3 barras de Power e depois derrote um hostil com uma Power Weapon.", "tip": "Carregue as barras com o escudo e finalize um inimigo fraco com Power Weapon.", "is_missable": false, "is_spoiler": false },
-      { "id": "saros-untouchable", "name": "Untouchable", "name_pt": "Intocável", "type": "Prata", "description": "Complete um bioma sem sofrer dano direto que não seja de Corruption e sem perder Adrenaline.", "tip": "Deixe para uma run forte em bioma conhecido, priorizando segurança e esquiva.", "is_missable": false, "is_spoiler": false },
+      { "id": "saros-untouchable", "name": "Untouchable", "name_pt": "Intocável", "type": "Prata", "description": "Complete um bioma sem dano direto que não seja de Corruption e mantendo Adrenaline intacta.", "tip": "Dificuldade de execução e risco de run. Deixe para uma run forte em bioma conhecido, priorizando segurança, esquiva e upgrades que aumentem sua margem de erro.", "is_missable": false, "is_spoiler": false },
       { "id": "saros-second-chance", "name": "Second Chance", "name_pt": "Segunda Chance", "type": "Bronze", "description": "Use Second Chance pela primeira vez.", "tip": "Libera ao acionar esse recurso pela primeira vez após desbloqueá-lo.", "is_missable": false, "is_spoiler": false },
       { "id": "saros-approach-vector", "name": "Approach Vector", "name_pt": "Vetor de aproximação", "type": "Bronze", "description": "Elimine um hostil com escudo usando um ataque Melee no ar.", "tip": "Enfraqueça o alvo e finalize com Melee aéreo.", "is_missable": false, "is_spoiler": false },
       { "id": "saros-overdriven", "name": "Overdriven", "name_pt": "Sobrecarregado", "type": "Bronze", "description": "Elimine 30 hostis usando Overdrive durante um único ciclo.", "tip": "Faça uma run dedicada e use Overdrive sempre que houver grupos seguros.", "is_missable": false, "is_spoiler": false },
@@ -10477,40 +10482,119 @@ const sampleGames = [
     "time_max_hours": 40,
     "time_sort_hours": 40,
     "time_bucket": "medium",
+    "onlineRequired": false,
+    "coopRequired": false,
+    "dlcRequired": false,
     "missable": "Não há troféus perdíveis na lista base: há free roam depois da história e todos os coletáveis, favores, upgrades, valquírias e desafios opcionais podem ser concluídos no cleanup. Chefes difíceis e reinos opcionais exigem preparo e continuam disponíveis para revisão após a campanha.",
     "runs_summary": "Uma campanha principal com cleanup livre após a história. Nada da lista base é perdível.",
-    "missable_summary": "Não há troféus perdíveis na lista base; a platina pode ser finalizada em free-roam depois da campanha.",
-    "online_summary": "Não há exigência online para a platina.",
+    "missable_summary": "Sem perdíveis definitivos na lista base. Depois da história, é possível voltar aos reinos para limpar coletáveis, favores, Valkyries, mapas do tesouro, Muspelheim, Niflheim e atividades pendentes.",
+    "online_summary": "Não há exigência online para a platina. A lista base é totalmente single-player e não exige servidores, PS+ ou troféus online.",
     "grind_summary": "O peso está em exploração, coletáveis, favores, melhorias e desafios opcionais, especialmente valquírias, Muspelheim e Niflheim.",
-    "dlc_scope": "Guia focado na lista base da platina; não há DLC obrigatória para a platina base.",
-    "difficulty_reason": "A dificuldade vem mais dos combates opcionais, valquírias e completude do mapa do que de runs múltiplas ou troféus de dificuldade.",
+    "dlc_scope": "DLC fora da platina base. A platina base não exige DLC, God of War Ragnarök, Valhalla ou modos extras de outro jogo.",
+    "difficulty_reason": "A dificuldade vem mais dos combates opcionais, Valkyries, Muspelheim, Niflheim e completude do mapa do que de dificuldade obrigatória ou runs múltiplas.",
     "time_reason": "A faixa de 30-40 horas considera história, exploração, coletáveis, favores, upgrades, valquírias e cleanup em free-roam.",
-    "first_run_advice": "Jogue a história naturalmente e abra baús/coletáveis quando estiverem no caminho, mas não interrompa a campanha para limpar tudo. Nada da lista base é perdível; use o checklist para marcar corvos, Nornir Chests, artefatos, shrines e favores por região conforme explorar.",
-    "cleanup_advice": "Após a história, use o free-roam e o mapa por região para limpar coletáveis, favores, dragões, upgrades, Muspelheim, Niflheim e valquírias. Deixe farm de Mist Echoes, trials finais e Valkyrie Queen para quando Kratos estiver bem equipado.",
-    "before_you_start": "Nada é perdível e não há online obrigatório. A atenção real é organizar coletáveis por região, acompanhar os 51 Odin’s Ravens no checklist e guardar chefes opcionais/reinos de desafio para o pós-game.",
+    "first_run_advice": "Jogue a história em uma dificuldade confortável, explorando naturalmente e abrindo atalhos, baús, favores e áreas secundárias quando estiverem no caminho. Não é necessário limpar tudo logo de início.",
+    "cleanup_advice": "Após a história, use o free roam e o mapa por região para limpar coletáveis, favores, dragões, upgrades, Muspelheim, Niflheim e Valkyries. Deixe Mist Echoes, trials finais e Valkyrie Queen para quando Kratos estiver bem equipado.",
+    "before_you_start": "God of War (2018) é uma platina single-player, sem online, coop, DLC ou dificuldade obrigatória. A atenção real é organizar coletáveis por região, acompanhar os 51 Odin’s Ravens no checklist e guardar Valkyries e reinos de desafio para o pós-história.",
     "best_for": "Ideal para quem quer uma platina narrativa, acessível e com bastante exploração de mundo semiaberto.",
     "avoid_if": "Evite se você não gosta de coletáveis, limpeza de mapa ou chefes opcionais exigentes.",
     "editorial_status": "published",
     "coverage_level": "strong",
-    "is_verified": false,
-    "verification_status": "review",
-    "verification_note": "Guia forte de God of War (2018) com lista base, roadmap, imagens e flags adicionados em abril de 2026; aguardando revisão final manual.",
+    "editorialStatus": "verified",
+    "editorial_review_status": "verified",
+    "last_reviewed_at": "2026-05-21",
+    "reviewed_by": "AtlasAchievement editorial",
+    "is_verified": true,
+    "verification_status": "verified",
+    "verification_note": "Guia revisado editorialmente para a platina base de God of War (2018), com 37 troféus, sem perdíveis definitivos, sem online obrigatório, sem coop obrigatório, sem dificuldade obrigatória e DLC fora da platina base.",
     "image": "https://cdn.cloudflare.steamstatic.com/steam/apps/1593500/header.jpg",
     "cover_image": "https://cdn.cloudflare.steamstatic.com/steam/apps/1593500/library_600x900.jpg",
     "roadmap": [
-      "Etapa 1: avance a história no seu ritmo, aprendendo combate, Atreus, Runic Attacks e upgrades. Não reinicie por medo de perdíveis: a lista base pode ser concluída no free-roam depois da campanha.",
-      "Etapa 2: enquanto a campanha abre novas rotas, resolva favores que aparecerem naturalmente e marque no checklist o que você já pegou: Nornir Chests, artefatos, Jötnar shrines, lore markers, treasure maps e Odin’s Ravens visíveis.",
-      "Etapa 3: depois de liberar bem o Lake of Nine, comece limpezas por região em vez de caçar itens soltos. Priorize Veithurgard, dragões, wayward spirits, favores de Brok/Sindri e áreas que o mapa já mostra quase completas.",
-      "Etapa 4: trate coletáveis longos como checklist, especialmente os 51 Odin’s Ravens. Se um corvo ou baú exigir habilidade/equipamento que ainda não abriu, deixe anotado e volte no cleanup em vez de travar a progressão.",
-      "Etapa 5: fortaleça Kratos antes do endgame: melhore Leviathan Axe, Blades of Chaos, armaduras, Runic Attacks e encantamentos. Entre em Muspelheim e Niflheim quando já tiver build confortável para trials, Mist Echoes e recursos finais.",
-      "Etapa 6: no pós-game/free-roam, feche Muspelheim, Workshop de Niflheim, upgrades restantes e valquírias. A lista base não exige online; deixe a Valkyrie Queen para o fim, pois ela é o maior teste mecânico da platina."
+      {
+        "title": "Etapa 1 — Avance a história em uma dificuldade confortável",
+        "focus": "História / aprendizado",
+        "objective": "Concluir a campanha principal enquanto aprende combate, Atreus, Runic Attacks, exploração e upgrades sem se preocupar com perdíveis definitivos.",
+        "actions": [
+          "Escolha uma dificuldade confortável, porque a platina não exige dificuldade específica.",
+          "Avance a história e abra baús, atalhos, favores e áreas secundárias quando estiverem no caminho.",
+          "Pegue upgrades naturais de vida, fúria, armas, armaduras e runas sem travar a campanha para limpar tudo.",
+          "Use o checklist apenas para marcar o que já apareceu: artefatos, shrines, lore, treasure maps e Odin’s Ravens visíveis."
+        ],
+        "warning": "Não misture a rota com God of War Ragnarök, Valhalla ou conteúdo de outro jogo.",
+        "result": "Campanha avançada com boa base de combate e sem risco de bloquear a platina."
+      },
+      {
+        "title": "Etapa 2 — Explore reinos e abra atividades secundárias",
+        "focus": "Exploração / reinos",
+        "objective": "Liberar rotas, reinos, viagens, favores e marcadores do mapa para deixar o cleanup mais organizado.",
+        "actions": [
+          "Explore o Lake of Nine conforme novas áreas ficarem disponíveis.",
+          "Abra Mystic Gateways, lojas, atalhos e regiões opcionais para facilitar retornos posteriores.",
+          "Faça favores próximos do caminho quando estiver com nível e equipamento adequados.",
+          "Deixe itens travados por habilidade, equipamento ou história para o pós-história/free roam."
+        ],
+        "warning": "História primeiro é seguro: coletáveis e atividades da lista base podem ser limpos depois.",
+        "result": "Reinos principais abertos e mapa preparado para limpeza por região."
+      },
+      {
+        "title": "Etapa 3 — Complete favores, coletáveis e mapas por região",
+        "focus": "Coletáveis / favores",
+        "objective": "Reduzir retrabalho fechando atividades regionais em blocos, em vez de caçar pendências soltas no final.",
+        "actions": [
+          "Limpe regiões usando o mapa e a checklist para artefatos, Jötnar shrines, lore markers e Nornir Chests.",
+          "Acompanhe Odin’s Ravens por região para evitar revisitar áreas sem necessidade.",
+          "Complete favores de Brok, Sindri, wayward spirits e dragões quando estiverem acessíveis.",
+          "Resolva treasure maps junto com a exploração regional."
+        ],
+        "warning": "Coletáveis são recuperáveis, mas deixar tudo para o final aumenta bastante o tempo de busca.",
+        "result": "Favores, mapas do tesouro e coletáveis principais encaminhados antes dos desafios mais pesados."
+      },
+      {
+        "title": "Etapa 4 — Trabalhe Muspelheim e Niflheim em etapas próprias",
+        "focus": "Muspelheim / Niflheim",
+        "objective": "Separar os reinos de desafio e farm para controlar melhor grind, recursos e dificuldade.",
+        "actions": [
+          "Entre em Muspelheim quando sua build estiver forte o bastante para os trials.",
+          "Use Muspelheim para testar runas, armaduras, controle de grupos e dano consistente.",
+          "Trabalhe Niflheim em sessões próprias, focando Mist Echoes, baús, realm tears e rota eficiente.",
+          "Evite misturar farm longo de Niflheim com caça aleatória de coletáveis."
+        ],
+        "warning": "Muspelheim e Niflheim não são perdíveis, mas ficam bem menos cansativos com equipamentos melhores.",
+        "result": "Reinos opcionais avançados com recursos importantes para upgrades finais."
+      },
+      {
+        "title": "Etapa 5 — Derrote Valkyries e finalize upgrades importantes",
+        "focus": "Valkyries / upgrades",
+        "objective": "Enfrentar o maior pico de dificuldade da platina depois que Kratos estiver bem equipado.",
+        "actions": [
+          "Melhore Leviathan Axe, Blades of Chaos, armaduras, Runic Attacks e encantamentos.",
+          "Derrote as Valkyries opcionais antes de enfrentar a Valkyrie Queen.",
+          "Ajuste runas e talismãs para sobrevivência, dano e controle de cooldown.",
+          "Use as lutas para refinar esquiva, parry, leitura de padrões e uso de Atreus."
+        ],
+        "warning": "Valkyries são desafio de execução, não perdíveis. Deixe a Valkyrie Queen para o fim.",
+        "result": "Chefes opcionais e upgrades críticos resolvidos para fechar a platina."
+      },
+      {
+        "title": "Etapa 6 — Cleanup final da platina base",
+        "focus": "Checklist final",
+        "objective": "Conferir todos os troféus da lista base sem misturar online, coop, DLC, Ragnarök ou Valhalla.",
+        "actions": [
+          "Revise história, favores, coletáveis, treasure maps, artefatos, Odin’s Ravens, Nornir Chests e shrines.",
+          "Finalize pendências de Muspelheim, Niflheim, upgrades, armaduras e objetivos acumulativos.",
+          "Confira se nenhum troféu de outro jogo ou modo extra entrou na rota da platina base.",
+          "Use o free roam pós-história para fechar qualquer região incompleta."
+        ],
+        "warning": "",
+        "result": "Lista base concluída e platina pronta."
+      }
     ],
     "trophies": [
       {
         "id": "gow2018_father_and_son",
         "name": "Father and Son",
         "type": "Platina",
-        "description": "Obtain all other trophies",
+        "description": "Obtenha todos os outros troféus.",
         "tip": "Conclua todos os troféus da lista base de God of War (2018) para liberar a platina.",
         "is_spoiler": false
       },
@@ -10518,7 +10602,7 @@ const sampleGames = [
         "id": "gow2018_the_journey_begins",
         "name": "The Journey Begins",
         "type": "Bronze",
-        "description": "Defend your home from The Stranger",
+        "description": "Defenda sua casa contra The Stranger.",
         "tip": "Troféu automático de história no começo da campanha.",
         "is_spoiler": true
       },
@@ -10526,7 +10610,7 @@ const sampleGames = [
         "id": "gow2018_a_new_friend",
         "name": "A New Friend",
         "type": "Bronze",
-        "description": "Survive the Witch’s Woods",
+        "description": "Sobreviva à Witch’s Woods.",
         "tip": "Troféu automático de história durante Path to the Mountain.",
         "is_spoiler": true
       },
@@ -10534,7 +10618,7 @@ const sampleGames = [
         "id": "gow2018_feels_like_home",
         "name": "Feels Like Home",
         "type": "Bronze",
-        "description": "Allow the Light Elves to return home",
+        "description": "Permita que os Light Elves retornem para casa.",
         "tip": "Troféu automático de história em The Light of Alfheim.",
         "is_spoiler": true
       },
@@ -10542,7 +10626,7 @@ const sampleGames = [
         "id": "gow2018_dragon_slayer",
         "name": "Dragon Slayer",
         "type": "Bronze",
-        "description": "Defeat the Dragon of the Mountain",
+        "description": "Derrote o Dragon of the Mountain.",
         "tip": "Troféu automático de história ao derrotar o dragão da montanha.",
         "is_spoiler": true
       },
@@ -10550,7 +10634,7 @@ const sampleGames = [
         "id": "gow2018_troubling_consequences",
         "name": "Troubling Consequences",
         "type": "Bronze",
-        "description": "Defeat Magni and Modi",
+        "description": "Derrote Magni e Modi.",
         "tip": "Troféu automático de história ligado ao chefe Magni e Modi.",
         "is_spoiler": true
       },
@@ -10558,7 +10642,7 @@ const sampleGames = [
         "id": "gow2018_hello_old_friend",
         "name": "Hello, Old Friend",
         "type": "Bronze",
-        "description": "Retrieve the Blades of Chaos",
+        "description": "Recupere as Blades of Chaos.",
         "tip": "Troféu automático de história ligado a uma grande virada de equipamento.",
         "is_spoiler": true
       },
@@ -10566,7 +10650,7 @@ const sampleGames = [
         "id": "gow2018_promise_fulfilled",
         "name": "Promise Fulfilled",
         "type": "Bronze",
-        "description": "Heal Atreus",
+        "description": "Cure Atreus durante a história.",
         "tip": "Troféu automático de história durante The Sickness.",
         "is_spoiler": true
       },
@@ -10574,7 +10658,7 @@ const sampleGames = [
         "id": "gow2018_round_2",
         "name": "Round 2",
         "type": "Bronze",
-        "description": "Rescue Atreus",
+        "description": "Resgate Atreus durante a história.",
         "tip": "Troféu automático de história em Return to the Summit.",
         "is_spoiler": true
       },
@@ -10582,7 +10666,7 @@ const sampleGames = [
         "id": "gow2018_past_haunts",
         "name": "Past Haunts",
         "type": "Bronze",
-        "description": "Ride the ship out of Helheim",
+        "description": "Saia de Helheim usando o navio.",
         "tip": "Troféu automático de história em Escape from Helheim.",
         "is_spoiler": true
       },
@@ -10590,7 +10674,7 @@ const sampleGames = [
         "id": "gow2018_twilight_beckons",
         "name": "Twilight Beckons",
         "type": "Bronze",
-        "description": "Defeat Baldur",
+        "description": "Derrote Baldur.",
         "tip": "Troféu automático de história em encontro avançado da campanha.",
         "is_spoiler": true
       },
@@ -10598,7 +10682,7 @@ const sampleGames = [
         "id": "gow2018_last_wish",
         "name": "Last Wish",
         "type": "Ouro",
-        "description": "Spread the ashes",
+        "description": "Espalhe as cinzas.",
         "tip": "Troféu de conclusão da campanha principal. O free-roam continua disponível depois disso.",
         "is_spoiler": true
       },
@@ -10606,7 +10690,7 @@ const sampleGames = [
         "id": "gow2018_beneath_the_surface",
         "name": "Beneath the Surface",
         "type": "Bronze",
-        "description": "Explore all the Lake of Nine has to offer",
+        "description": "Revele todas as áreas principais do Lake of Nine.",
         "tip": "Revele e visite as áreas principais ao redor do Lake of Nine; o cleanup de coletáveis costuma desbloquear isso naturalmente.",
         "is_spoiler": false
       },
@@ -10614,7 +10698,7 @@ const sampleGames = [
         "id": "gow2018_death_happened_here",
         "name": "Death Happened Here",
         "type": "Bronze",
-        "description": "Fully explore Veithurgard",
+        "description": "Conclua a exploração de Veithurgard.",
         "tip": "Complete os marcadores e coletáveis de Veithurgard até limpar a região.",
         "is_spoiler": false
       },
@@ -10622,7 +10706,7 @@ const sampleGames = [
         "id": "gow2018_trilingual",
         "name": "Trilingual",
         "type": "Bronze",
-        "description": "Learn the languages of Muspelheim and Niflheim",
+        "description": "Aprenda os idiomas de Muspelheim e Niflheim.",
         "tip": "Abra chests de cifras para liberar Muspelheim e Niflheim. Há cifras extras, então a platina não fica perdível.",
         "is_spoiler": true
       },
@@ -10630,7 +10714,7 @@ const sampleGames = [
         "id": "gow2018_dwarven_ingenuity",
         "name": "Dwarven Ingenuity",
         "type": "Bronze",
-        "description": "Upgrade a piece of armor",
+        "description": "Melhore uma peça de armadura.",
         "tip": "Melhore qualquer peça de armadura em uma loja de Brok ou Sindri.",
         "is_spoiler": false
       },
@@ -10638,7 +10722,7 @@ const sampleGames = [
         "id": "gow2018_nice_moves",
         "name": "Nice Moves",
         "type": "Bronze",
-        "description": "Obtain a Runic Attack Gem",
+        "description": "Obtenha uma Runic Attack Gem.",
         "tip": "A primeira Runic Attack Gem vem naturalmente pela história; outras aparecem em baús, chefes e favores.",
         "is_spoiler": false
       },
@@ -10646,7 +10730,7 @@ const sampleGames = [
         "id": "gow2018_idunns_orchard",
         "name": "Iðunn’s Orchard",
         "type": "Prata",
-        "description": "Fully upgrade your Health",
+        "description": "Melhore sua vida ao máximo.",
         "tip": "Colete Idunn Apples em Nornir Chests até melhorar a vida ao máximo.",
         "is_spoiler": false
       },
@@ -10654,7 +10738,7 @@ const sampleGames = [
         "id": "gow2018_quick_tempered",
         "name": "Quick Tempered",
         "type": "Prata",
-        "description": "Fully upgrade your rage",
+        "description": "Melhore sua fúria ao máximo.",
         "tip": "Colete Horns of Blood Mead em Nornir Chests até melhorar a fúria ao máximo.",
         "is_spoiler": false
       },
@@ -10662,7 +10746,7 @@ const sampleGames = [
         "id": "gow2018_best_dressed",
         "name": "Best Dressed",
         "type": "Bronze",
-        "description": "Craft an outfit for Atreus",
+        "description": "Crie uma roupa para Atreus.",
         "tip": "Compre qualquer armadura de Atreus em uma loja.",
         "is_spoiler": false
       },
@@ -10670,7 +10754,7 @@ const sampleGames = [
         "id": "gow2018_enchanted",
         "name": "Enchanted",
         "type": "Bronze",
-        "description": "Slot an Enchantment into your armor",
+        "description": "Equipe um encantamento em sua armadura.",
         "tip": "Equipe um encantamento em uma peça de armadura com espaço liberado.",
         "is_spoiler": false
       },
@@ -10678,7 +10762,7 @@ const sampleGames = [
         "id": "gow2018_all_will_fall",
         "name": "All Will Fall",
         "type": "Prata",
-        "description": "Kill 1,000 Enemies",
+        "description": "Derrote 1.000 inimigos.",
         "tip": "Costuma vir naturalmente durante história, coletáveis, favores, Muspelheim e Niflheim.",
         "is_spoiler": false
       },
@@ -10686,7 +10770,7 @@ const sampleGames = [
         "id": "gow2018_dangerous_skies",
         "name": "Dangerous Skies",
         "type": "Prata",
-        "description": "Free all of the Dragons",
+        "description": "Liberte todos os dragões.",
         "tip": "Complete os três favores de dragões em Midgard: Fafnir, Reginn e Otr.",
         "is_spoiler": false
       },
@@ -10694,7 +10778,7 @@ const sampleGames = [
         "id": "gow2018_like_oil_and_water",
         "name": "Like Oil and Water",
         "type": "Ouro",
-        "description": "Complete all of Brok and Sindri’s Favors",
+        "description": "Conclua todos os favores de Brok e Sindri.",
         "tip": "Finalize os cinco favores principais de Brok e Sindri em Midgard.",
         "is_spoiler": false
       },
@@ -10702,7 +10786,7 @@ const sampleGames = [
         "id": "gow2018_curator",
         "name": "Curator",
         "type": "Prata",
-        "description": "Collect all of the Artifacts",
+        "description": "Colete todos os artefatos.",
         "tip": "Colete todos os artefatos por região; nada é perdido e o mapa ajuda no cleanup.",
         "is_spoiler": false
       },
@@ -10710,7 +10794,7 @@ const sampleGames = [
         "id": "gow2018_allfather_blinded",
         "name": "Allfather Blinded",
         "type": "Prata",
-        "description": "Kill all of Odin’s Ravens",
+        "description": "Elimine todos os Odin’s Ravens.",
         "tip": "Encontre e destrua todos os 51 Odin’s Ravens. Use checklist por região para evitar caça cega no final.",
         "is_spoiler": false
       },
@@ -10718,7 +10802,7 @@ const sampleGames = [
         "id": "gow2018_the_best_moves",
         "name": "The Best Moves",
         "type": "Bronze",
-        "description": "Fully upgrade a Runic Attack",
+        "description": "Melhore uma Runic Attack ao máximo.",
         "tip": "Use XP para melhorar qualquer Runic Attack até o nível máximo.",
         "is_spoiler": false
       },
@@ -10726,7 +10810,7 @@ const sampleGames = [
         "id": "gow2018_worthy",
         "name": "Worthy",
         "type": "Bronze",
-        "description": "Fully upgrade the Leviathan Axe",
+        "description": "Melhore o Leviathan Axe ao máximo.",
         "tip": "Leve o Leviathan Axe ao nível máximo; o último upgrade depende de recurso de Niflheim após avançar bastante.",
         "is_spoiler": false
       },
@@ -10734,7 +10818,7 @@ const sampleGames = [
         "id": "gow2018_why_fight_it",
         "name": "Why Fight It?",
         "type": "Bronze",
-        "description": "Fully upgrade the Blades of Chaos",
+        "description": "Melhore as Blades of Chaos ao máximo.",
         "tip": "Leve as Blades of Chaos ao nível máximo; o último upgrade envolve Muspelheim e uma valquíria.",
         "is_spoiler": true
       },
@@ -10742,7 +10826,7 @@ const sampleGames = [
         "id": "gow2018_path_of_the_zealot",
         "name": "Path of the Zealot",
         "type": "Bronze",
-        "description": "Obtain Traveler armor set",
+        "description": "Obtenha o conjunto de armadura Traveler.",
         "tip": "Derrote Travellers, entregue o material na loja e craft o set completo.",
         "is_spoiler": false
       },
@@ -10750,7 +10834,7 @@ const sampleGames = [
         "id": "gow2018_primordial",
         "name": "Primordial",
         "type": "Bronze",
-        "description": "Obtain Ancient armor set",
+        "description": "Obtenha o conjunto de armadura Ancient.",
         "tip": "Derrote Ancients, entregue o material na loja e craft o set completo.",
         "is_spoiler": false
       },
@@ -10758,7 +10842,7 @@ const sampleGames = [
         "id": "gow2018_unfinished_business",
         "name": "Unfinished Business",
         "type": "Prata",
-        "description": "Assist all of the wayward spirits",
+        "description": "Ajude todos os wayward spirits.",
         "tip": "Complete os favores de wayward spirits em Midgard, incluindo o favor iniciado por scroll.",
         "is_spoiler": false
       },
@@ -10766,7 +10850,7 @@ const sampleGames = [
         "id": "gow2018_treasure_hunter",
         "name": "Treasure Hunter",
         "type": "Prata",
-        "description": "Use treasure maps to find all of the dig spots",
+        "description": "Utilize mapas do tesouro para encontrar todos os pontos de escavação.",
         "tip": "Encontre todos os treasure maps e cave nos 12 locais correspondentes.",
         "is_spoiler": false
       },
@@ -10774,7 +10858,7 @@ const sampleGames = [
         "id": "gow2018_the_truth",
         "name": "The Truth",
         "type": "Prata",
-        "description": "Read all of the Jötnar shrines",
+        "description": "Leia todos os Jötnar shrines.",
         "tip": "Leia todos os 11 Jötnar shrines. Eles não são perdíveis, mas não são todos rastreados do mesmo jeito no mapa.",
         "is_spoiler": false
       },
@@ -10782,7 +10866,7 @@ const sampleGames = [
         "id": "gow2018_fire_and_brimstone",
         "name": "Fire and Brimstone",
         "type": "Ouro",
-        "description": "Complete all of the Trials of Muspelheim",
+        "description": "Conclua todos os Trials of Muspelheim.",
         "tip": "Conclua as provas de Muspelheim e faça as chaves necessárias para fechar o desafio final.",
         "is_spoiler": true
       },
@@ -10790,7 +10874,7 @@ const sampleGames = [
         "id": "gow2018_darkness_and_fog",
         "name": "Darkness and Fog",
         "type": "Ouro",
-        "description": "Retrieve all treasure from the Workshop’s center chamber",
+        "description": "Recupere todos os tesouros da câmara central do Workshop.",
         "tip": "Farme Mist Echoes em Niflheim e abra todos os baús e realm tears da câmara central.",
         "is_spoiler": true
       },
@@ -10798,7 +10882,7 @@ const sampleGames = [
         "id": "gow2018_chooser_of_the_slain",
         "name": "Chooser of the Slain",
         "type": "Ouro",
-        "description": "Defeat the nine Valkyries",
+        "description": "Derrote as nove Valkyries.",
         "tip": "Derrote as oito valquírias e depois a Valkyrie Queen. É o maior pico de execução da platina.",
         "is_spoiler": true
       }

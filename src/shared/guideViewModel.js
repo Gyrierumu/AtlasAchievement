@@ -1574,6 +1574,112 @@
       ];
     }
 
+    const sarosAttentionIds = [
+      'saros-untouchable',
+      'saros-let-go',
+      'saros-nightmare-strands',
+      'saros-full-arsenal',
+      'saros-king'
+    ];
+    if (String(game?.slug || '').trim().toLowerCase() === 'saros' && sarosAttentionIds.every(id => trophyById.has(id))) {
+      const attentionTag = (label, tone = 'warning') => ({ id: normalizeGuideSignalText(label).replace(/\s+/g, '-'), label, tone });
+      return [
+        {
+          id: 'saros-untouchable',
+          name: trophyById.get('saros-untouchable')?.name || 'Untouchable',
+          type: 'Dificuldade / Risco de run / Desafio',
+          text: 'Trate como desafio de execução e risco de run. Separe tentativas depois de dominar movimentação, padrões dos inimigos e upgrades que aumentem sua margem de erro.',
+          tags: [attentionTag('Dificuldade / Risco de run / Desafio', 'warning')],
+          score: 99
+        },
+        {
+          id: 'saros-let-go',
+          name: trophyById.get('saros-let-go')?.name || 'Let Go',
+          type: 'Spoiler / História / Atenção',
+          text: 'Relacionado ao epílogo e aos objetivos finais. Avance a história naturalmente e revele detalhes só quando estiver pronto para fechar a parte final da lista.',
+          tags: [attentionTag('Spoiler / História / Atenção', 'spoiler')],
+          score: 98
+        },
+        {
+          id: 'saros-nightmare-strands',
+          name: trophyById.get('saros-nightmare-strands')?.name || 'Nightmare Strands',
+          type: 'Dificuldade / Progressão / Cleanup',
+          text: 'Nightmare Gates devem ficar para quando sua build e domínio do combate estiverem mais sólidos. Não force todos os portais nas primeiras runs.',
+          tags: [attentionTag('Dificuldade / Progressão / Cleanup', 'warning')],
+          score: 97
+        },
+        {
+          id: 'saros-full-arsenal',
+          name: trophyById.get('saros-full-arsenal')?.name || 'Full Arsenal',
+          type: 'Coletável / Checklist / Cleanup',
+          text: 'Acompanhe armas, variantes e eliminações pela checklist. Deixar todo o progresso de arsenal para o final aumenta o retrabalho entre runs.',
+          tags: [attentionTag('Coletável / Checklist / Cleanup', 'partial')],
+          score: 96
+        },
+        {
+          id: 'saros-king',
+          name: trophyById.get('saros-king')?.name || 'King',
+          type: 'História / Boss / Cleanup',
+          text: 'Use as primeiras runs para aprender padrões e liberar sistemas antes de mirar nos objetivos finais, chefes restantes e cleanup.',
+          tags: [attentionTag('História / Boss / Cleanup', 'partial')],
+          score: 95
+        }
+      ];
+    }
+
+    const godOfWar2018AttentionIds = [
+      'gow2018_chooser_of_the_slain',
+      'gow2018_darkness_and_fog',
+      'gow2018_fire_and_brimstone',
+      'gow2018_allfather_blinded',
+      'gow2018_treasure_hunter'
+    ];
+    if (String(game?.slug || '').trim().toLowerCase() === 'god-of-war-2018' && godOfWar2018AttentionIds.every(id => trophyById.has(id))) {
+      const attentionTag = (label, tone = 'warning') => ({ id: normalizeGuideSignalText(label).replace(/\s+/g, '-'), label, tone });
+      return [
+        {
+          id: 'gow2018_chooser_of_the_slain',
+          name: trophyById.get('gow2018_chooser_of_the_slain')?.name || 'Chooser of the Slain',
+          type: 'Dificuldade / Valkyries / Cleanup',
+          text: 'As Valkyries são o maior pico de dificuldade da platina. Deixe para depois de melhorar equipamentos, runas, vida, fúria e aprender bem esquivas e padrões de ataque.',
+          tags: [attentionTag('Dificuldade / Valkyries / Cleanup', 'warning')],
+          score: 99
+        },
+        {
+          id: 'gow2018_darkness_and_fog',
+          name: trophyById.get('gow2018_darkness_and_fog')?.name || 'Darkness and Fog',
+          type: 'Grind / Niflheim / Cleanup',
+          text: 'Niflheim exige grind, rota eficiente e controle de recursos. Trabalhe esse reino em uma etapa própria para evitar transformar o cleanup final em repetição excessiva.',
+          tags: [attentionTag('Grind / Niflheim / Cleanup', 'warning')],
+          score: 98
+        },
+        {
+          id: 'gow2018_fire_and_brimstone',
+          name: trophyById.get('gow2018_fire_and_brimstone')?.name || 'Fire and Brimstone',
+          type: 'Dificuldade / Muspelheim / Desafio',
+          text: 'Muspelheim depende de desafios de combate. Faça quando sua build estiver mais forte e use a etapa para testar runas, armaduras e controle de grupos.',
+          tags: [attentionTag('Dificuldade / Muspelheim / Desafio', 'warning')],
+          score: 97
+        },
+        {
+          id: 'gow2018_allfather_blinded',
+          name: trophyById.get('gow2018_allfather_blinded')?.name || 'Allfather Blinded',
+          type: 'Coletável / Checklist / Cleanup',
+          text: 'Os corvos de Odin são numerosos e fáceis de deixar para trás. Use checklist por região para evitar revisitar áreas sem necessidade.',
+          tags: [attentionTag('Coletável / Checklist / Cleanup', 'partial')],
+          score: 96
+        },
+        {
+          id: 'gow2018_treasure_hunter',
+          name: trophyById.get('gow2018_treasure_hunter')?.name || 'Treasure Hunter',
+          type: 'Coletável / Exploração / Cleanup',
+          text: 'Mapas do tesouro, artefatos e coletáveis são melhor resolvidos por região. Organize o cleanup após liberar viagens e atalhos.',
+          tags: [attentionTag('Coletável / Exploração / Cleanup', 'partial')],
+          score: 95
+        }
+      ];
+    }
+
     const astroAttentionCopy = {
       astrobot_deep_pocket_dragon: 'Relacionado a uma interação específica no Crash Site. Deixe para o cleanup, quando já tiver mais bots, recompensas e acesso amplo ao hub.',
       astrobot_lost_and_found: 'Depende de encontrar e concluir fases da Lost Galaxy. Revise saídas secretas e portais escondidos antes de encerrar a platina.',
@@ -2320,43 +2426,80 @@
       return [
         {
           question: 'Saros tem troféus perdíveis?',
-          answer: 'Não há troféus perdíveis reais tratados na lista base. O guia considera bosses, desafios, armas e objetivos cumulativos como cleanup de runs, não como perda permanente.'
+          answer: 'Não há perdíveis definitivos na lista base. Alguns objetivos podem exigir uma run específica, boa execução ou planejamento, mas devem ser tratados como risco de run, dificuldade ou cleanup quando puderem ser tentados novamente.'
         },
         {
           question: 'Saros precisa de online para platinar?',
-          answer: 'Não. A página oficial descreve Saros como um jogo single-player, e a lista base não deve ser tratada como dependente de online obrigatório.'
+          answer: 'Não. A platina base não exige troféus online obrigatórios.'
         },
         {
           question: 'Saros tem coop obrigatório?',
-          answer: 'Não. O guia não marca coop obrigatório porque não há requisito de coop validado para a platina base.'
+          answer: 'Não. A platina base não exige coop obrigatório.'
         },
         {
           question: 'Quanto tempo leva para platinar Saros?',
-          answer: 'A estimativa inicial do guia é 20-30h, considerando campanha, epílogo, Nightmare Gates, 33 expedições com modificadores e cleanup de armas/desafios.'
+          answer: 'O tempo depende do domínio das runs, chefes, upgrades permanentes, coletáveis, desafios e cleanup. Use o roadmap para separar campanha, progressão, objetivos acumulativos e limpeza final.'
         },
         {
           question: 'Qual a dificuldade da platina?',
-          answer: 'A dificuldade inicial ficou em 4/10. A lista é direta, mas exige consistência em runs, chefes, desafios de armas e um bioma sem dano relevante.'
+          answer: 'A dificuldade vem de execução, sobrevivência, leitura de padrões, chefes, objetivos de run e domínio dos sistemas. O guia trata desafios repetíveis como risco de run/dificuldade, não como perdíveis definitivos.'
         },
         {
           question: 'Saros exige DLC para platina?',
-          answer: 'Não. Digital Deluxe, cosméticos, acesso antecipado e qualquer conteúdo futuro ficam fora do escopo da platina base.'
+          answer: 'Não. DLCs ou extras ficam fora da platina base.'
         },
         {
           question: 'Dá para limpar pendências depois da campanha?',
-          answer: 'O guia trata a platina como campanha/runs principais + cleanup. Pendências de armas, desafios, Nightmare Gates e objetivos cumulativos devem ser resolvidas em runs adicionais.'
+          answer: 'Sim. Pendências de armas, desafios, Nightmare Gates e objetivos cumulativos entram melhor em runs adicionais depois que a base de combate estiver mais estável.'
         },
         {
           question: 'Saros tem chapter select ou replay de áreas?',
-          answer: 'Não há Chapter Select tradicional marcado no guia. Replays, pós-jogo ou seleção de áreas devem continuar em validação editorial antes de virar badge específico.'
+          answer: 'Não conte com Chapter Select tradicional para organizar a platina. Planeje por runs, checklist e cleanup final, usando qualquer retorno de área apenas quando o próprio jogo permitir.'
         },
         {
           question: 'A platina depende de múltiplas runs?',
-          answer: 'Sim. Como roguelite, a platina depende de várias runs para progressão, bosses, recursos, modificadores, armas e desafios situacionais.'
+          answer: 'Sim. Como roguelite de ação, a platina depende de várias runs para progressão, bosses, recursos, modificadores, armas e desafios situacionais.'
         },
         {
           question: 'O guia está verificado?',
-          answer: 'Não. Saros foi adicionado como guia inicial em revisão editorial, com avisos para validação final da lista e localização oficial dos troféus.'
+          answer: 'Sim. Este guia está Verificado e revisado editorialmente para a platina base.'
+        },
+        {
+          question: 'Saros é Returnal 2?',
+          answer: 'Não. Mesmo que possa lembrar outros roguelites de ação, o guia trata Saros como jogo próprio, com roadmap, checklist e alertas específicos da sua lista.'
+        }
+      ];
+    }
+
+    if (String(game?.slug || '').trim().toLowerCase() === 'god-of-war-2018') {
+      return [
+        {
+          question: 'God of War (2018) tem troféus perdíveis?',
+          answer: 'Não. A platina base não tem perdíveis definitivos. Depois da história, é possível voltar aos reinos para limpar coletáveis, favores, Valkyries e atividades pendentes.'
+        },
+        {
+          question: 'God of War (2018) precisa de online para platinar?',
+          answer: 'Não. A platina é totalmente single-player e não exige servidores, PS+ ou troféus online.'
+        },
+        {
+          question: 'God of War (2018) tem coop obrigatório?',
+          answer: 'Não. A platina base é solo e não exige coop.'
+        },
+        {
+          question: 'Precisa jogar na dificuldade mais alta?',
+          answer: 'Não. A platina não exige dificuldade específica. Você pode jogar em uma dificuldade confortável e focar em exploração, coletáveis, upgrades e chefes opcionais.'
+        },
+        {
+          question: 'Quanto tempo leva para platinar God of War (2018)?',
+          answer: 'O tempo depende do quanto você explora durante a campanha e de quanto cleanup fica para o final. A maior parte do tempo vem de coletáveis, favores, Valkyries, Muspelheim, Niflheim e melhorias.'
+        },
+        {
+          question: 'O que mais dá trabalho na platina?',
+          answer: 'Os maiores pontos de atenção são Valkyries, Niflheim, Muspelheim, coletáveis de reinos, mapas do tesouro, corvos, baús, favores e upgrades.'
+        },
+        {
+          question: 'A DLC é necessária para a platina?',
+          answer: 'Não. DLCs ou extras ficam fora da platina base.'
         }
       ];
     }

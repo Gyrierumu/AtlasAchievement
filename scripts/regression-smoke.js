@@ -6747,15 +6747,16 @@ async function assertSeedData({ all, get }, sampleGames) {
   assert.strictEqual(godOfWarSample.roadmap.length, 6, 'God of War (2018) deve ter roadmap editorial com 6 etapas');
   assert.strictEqual(godOfWarSample.editorial_status, 'published', 'God of War (2018) deve ser publico');
   assert.strictEqual(godOfWarSample.coverage_level, 'strong', 'God of War (2018) deve ter cobertura strong sem selo complete');
-  assert.strictEqual(godOfWarSample.is_verified, false, 'God of War (2018) nao deve ser verificado automaticamente');
-  assert.strictEqual(godOfWarSample.verification_status, 'review', 'God of War (2018) deve aguardar revisao editorial final');
+  assert.strictEqual(godOfWarSample.is_verified, true, 'God of War (2018) deve ficar verificado apos revisao editorial');
+  assert.strictEqual(godOfWarSample.verification_status, 'verified', 'God of War (2018) deve ficar com verification_status verified');
   assert(godOfWarSample.online_summary.includes('Não há exigência online'), 'God of War (2018) deve deixar claro que online nao e obrigatorio');
-  assert(godOfWarSample.missable_summary.includes('Não há troféus perdíveis'), 'God of War (2018) deve deixar claro que nao ha perdiveis');
-  assert(godOfWarSample.dlc_scope.includes('lista base da platina'), 'God of War (2018) deve separar escopo da lista base');
+  assert(normalizeText(godOfWarSample.missable_summary).includes('sem perdiveis definitivos'), 'God of War (2018) deve deixar claro que nao ha perdiveis definitivos');
+  assert(godOfWarSample.dlc_scope.includes('DLC fora da platina base'), 'God of War (2018) deve separar DLC da platina base');
   assert(godOfWarSample.image.includes('/header.jpg'), 'God of War (2018) deve usar image horizontal valida');
   assert(godOfWarSample.cover_image.includes('/library_600x900.jpg'), 'God of War (2018) deve expor cover_image vertical');
-  assert(godOfWarSample.roadmap.some(step => roadmapStepText(step).includes('free-roam') && roadmapStepText(step).includes('perdíveis')), 'roadmap de God of War (2018) deve citar free-roam e ausencia de perdiveis');
-  assert(godOfWarSample.roadmap.some(step => roadmapStepText(step).includes('valquírias') && roadmapStepText(step).includes('Niflheim')), 'roadmap de God of War (2018) deve cobrir valquirias e Niflheim');
+  assert(godOfWarSample.roadmap.some(step => normalizeText(roadmapStepText(step)).includes('dificuldade confortavel')), 'roadmap de God of War (2018) deve orientar historia em dificuldade confortavel');
+  assert(godOfWarSample.roadmap.some(step => roadmapStepText(step).includes('Valkyries')), 'roadmap de God of War (2018) deve cobrir Valkyries');
+  assert(godOfWarSample.roadmap.some(step => roadmapStepText(step).includes('Niflheim')), 'roadmap de God of War (2018) deve cobrir Niflheim');
   assert.strictEqual(godOfWarSample.trophies.filter(trophy => trophy.is_missable).length, 0, 'God of War (2018) nao deve marcar perdiveis');
   assert.strictEqual(godOfWarSample.trophies.filter(trophy => trophy.is_spoiler).length, 16, 'God of War (2018) deve manter spoiler_count coerente');
   assert(!godOfWarSample.trophies.some(trophy => /Ragnar[oö]k|Valhalla|Ascension|God of War III|DLC|add-?on/i.test(`${trophy.name} ${trophy.description}`)), 'God of War (2018) nao deve misturar DLC/add-ons ou outros jogos na checklist base');
@@ -6788,6 +6789,7 @@ async function assertSeedData({ all, get }, sampleGames) {
   assert.strictEqual(godOfWarGuideModel.missableCount, 0, 'view model de God of War deve separar spoilers de perdiveis reais');
   assert.strictEqual(godOfWarGuideModel.missables, 0, 'view model nao deve contar spoilers como perdiveis');
   assert.strictEqual(guideModel.buildGuideQuickDecisionModel(godOfWarSample, godOfWarGuideModel).cards.find(card => card.id === 'missables').value, 'Sem perdíveis', 'badge de perdiveis deve ser coerente com tooltip/resumo');
+  assert(!/dados atuais do guia|segundo os dados atuais do guia|o guia nao aponta|o guia n[aã]o aponta|quando validado|em revisao|base game sem dlcs|descricao em revisao editorial|\[object object\]|\bundefined\b/i.test(normalizeText(JSON.stringify(godOfWarSample))), 'God of War (2018) seed nao deve conter linguagem fraca, revisao pendente ou placeholders');
 
   const godOfWarSeeded = await get('SELECT slug, difficulty, time, time_bucket, time_min_hours, time_max_hours, time_sort_hours, editorial_status, coverage_level, is_verified, verification_status, image, cover_image, online_summary, dlc_scope, missable_summary, runs_summary FROM games WHERE slug = ?', ['god-of-war-2018']);
   assert.strictEqual(godOfWarSeeded?.slug, 'god-of-war-2018', 'seed deve persistir slug de God of War (2018)');
@@ -6799,18 +6801,19 @@ async function assertSeedData({ all, get }, sampleGames) {
   assert.strictEqual(godOfWarSeeded?.time_sort_hours, 40, 'seed deve persistir time_sort_hours de God of War (2018)');
   assert.strictEqual(godOfWarSeeded?.editorial_status, 'published', 'God of War (2018) deve entrar publicado');
   assert.strictEqual(godOfWarSeeded?.coverage_level, 'strong', 'God of War (2018) deve entrar com coverage strong');
-  assert.strictEqual(godOfWarSeeded?.is_verified, 0, 'God of War (2018) nao deve entrar como verificado');
-  assert.strictEqual(godOfWarSeeded?.verification_status, 'review', 'God of War (2018) deve entrar em revisao editorial');
+  assert.strictEqual(godOfWarSeeded?.is_verified, 1, 'God of War (2018) deve entrar como verificado');
+  assert.strictEqual(godOfWarSeeded?.verification_status, 'verified', 'God of War (2018) deve entrar com verification_status verified');
   assert.strictEqual(godOfWarSeeded?.image, godOfWarSample.image, 'God of War (2018) deve persistir image horizontal');
   assert.strictEqual(godOfWarSeeded?.cover_image, godOfWarSample.cover_image, 'God of War (2018) deve persistir cover_image');
   assert(godOfWarSeeded?.online_summary.includes('Não há exigência online'), 'God of War (2018) deve persistir ausencia de online obrigatorio');
-  assert(godOfWarSeeded?.dlc_scope.includes('lista base da platina'), 'God of War (2018) deve persistir escopo base');
-  assert(godOfWarSeeded?.missable_summary.includes('Não há troféus perdíveis'), 'God of War (2018) deve persistir resumo sem perdiveis');
+  assert(godOfWarSeeded?.dlc_scope.includes('DLC fora da platina base'), 'God of War (2018) deve persistir DLC fora da platina base');
+  assert(normalizeText(godOfWarSeeded?.missable_summary).includes('sem perdiveis definitivos'), 'God of War (2018) deve persistir resumo sem perdiveis definitivos');
   assert(godOfWarSeeded?.runs_summary.includes('cleanup livre'), 'God of War (2018) deve persistir runs_summary de uma campanha');
 
   const godOfWarRoadmapRows = await all('SELECT content FROM roadmaps WHERE game_id = (SELECT id FROM games WHERE slug = ?) ORDER BY step_order', ['god-of-war-2018']);
   assert.strictEqual(godOfWarRoadmapRows.length, 6, 'seed deve inserir 6 etapas de roadmap para God of War (2018)');
-  assert(godOfWarRoadmapRows.some(row => row.content.includes('free-roam') && row.content.includes('online')), 'seed deve persistir roadmap com free-roam e sem online para God of War (2018)');
+  assert(godOfWarRoadmapRows.some(row => row.content.includes('Valkyries')), 'seed deve persistir roadmap com Valkyries para God of War (2018)');
+  assert(godOfWarRoadmapRows.some(row => row.content.includes('Niflheim')), 'seed deve persistir roadmap com Niflheim para God of War (2018)');
 
   const godOfWarTrophyRows = await all('SELECT trophy_code, name, type, is_missable, is_spoiler FROM trophies WHERE game_id = (SELECT id FROM games WHERE slug = ?) ORDER BY id', ['god-of-war-2018']);
   assert.strictEqual(godOfWarTrophyRows.length, 37, 'seed deve inserir checklist base completo de God of War (2018)');
@@ -7741,7 +7744,7 @@ async function assertSeedSyncPreservesManualVerifiedStatus({ migrate, get, run }
             editorial_review_status = 'in_review',
             is_verified = 0
       WHERE slug = ?`,
-    ['saros']
+    ['nioh-2']
   );
   await run('DELETE FROM games WHERE slug = ?', ['days-gone']);
 
@@ -7766,8 +7769,8 @@ async function assertSeedSyncPreservesManualVerifiedStatus({ migrate, get, run }
     assert.strictEqual(row.reviewed_by, 'admin', `${slug} deve preservar revisor manual`);
   }
 
-  const reviewRow = await get('SELECT verification_status, editorial_review_status, is_verified FROM games WHERE slug = ?', ['saros']);
-  assert(reviewRow, 'saros deve existir no banco temporario');
+  const reviewRow = await get('SELECT verification_status, editorial_review_status, is_verified FROM games WHERE slug = ?', ['nioh-2']);
+  assert(reviewRow, 'nioh-2 deve existir no banco temporario');
   assert.notStrictEqual(reviewRow.verification_status, 'verified', 'jogo em revisao nao deve virar verified sem acao manual');
   assert.notStrictEqual(reviewRow.editorial_review_status, 'verified', 'editorial_review_status em revisao deve continuar sem verified automatico');
   assert.strictEqual(Number(reviewRow.is_verified), 0, 'jogo em revisao deve continuar com is_verified = 0');
@@ -8487,9 +8490,9 @@ async function assertBackendEditorialConsistency() {
   assert.strictEqual(godOfWarForSync?.difficulty, 4, 'migration deve inserir God of War (2018) com dificuldade 4');
   assert.strictEqual(godOfWarForSync?.time, '30-40h', 'migration deve inserir God of War (2018) com tempo 30-40h');
   assert.strictEqual(godOfWarForSync?.time_bucket, 'medium', 'migration deve inserir God of War (2018) na faixa media');
-  assert.strictEqual(godOfWarForSync?.coverage_level, 'strong', 'migration deve inserir God of War (2018) como guia forte em revisao');
-  assert.strictEqual(godOfWarForSync?.is_verified, 0, 'migration nao deve inserir God of War (2018) como verificado');
-  assert.strictEqual(godOfWarForSync?.verification_status, 'review', 'migration deve inserir God of War (2018) em revisao editorial');
+  assert.strictEqual(godOfWarForSync?.coverage_level, 'strong', 'migration deve inserir God of War (2018) como guia forte verificado');
+  assert.strictEqual(godOfWarForSync?.is_verified, 1, 'migration deve inserir God of War (2018) como verificado');
+  assert.strictEqual(godOfWarForSync?.verification_status, 'verified', 'migration deve inserir God of War (2018) com verification_status verified');
   assert.strictEqual(godOfWarInsertedTrophies.length, 37, 'migration deve inserir checklist de 37 trofeus para God of War (2018) ausente');
   assert.strictEqual(godOfWarInsertedTrophies.filter(trophy => trophy.is_missable).length, 0, 'migration deve inserir God of War (2018) sem perdiveis');
 
@@ -8513,13 +8516,14 @@ async function assertBackendEditorialConsistency() {
   assert.strictEqual(godOfWarAfterSync?.time_sort_hours, 40, 'migration deve corrigir time_sort_hours de God of War (2018)');
   assert.strictEqual(godOfWarAfterSync?.time_bucket, 'medium', 'migration deve corrigir time_bucket de God of War (2018)');
   assert.strictEqual(godOfWarAfterSync?.coverage_level, 'strong', 'migration nao deve manter God of War (2018) como complete automatico');
-  assert.strictEqual(godOfWarAfterSync?.is_verified, 0, 'migration nao deve manter God of War (2018) como verificado sem revisao manual');
-  assert.strictEqual(godOfWarAfterSync?.verification_status, 'review', 'migration deve voltar God of War (2018) para revisao editorial');
+  assert.strictEqual(godOfWarAfterSync?.is_verified, 1, 'migration deve preservar God of War (2018) como verificado');
+  assert.strictEqual(godOfWarAfterSync?.verification_status, 'verified', 'migration deve preservar God of War (2018) como verified');
   assert.strictEqual(godOfWarTrophiesAfterSync.length, 37, 'migration deve substituir checklist antigo de God of War (2018) por 37 trofeus');
   assert(!godOfWarTrophiesAfterSync.some(trophy => trophy.trophy_code === 'gow2018_legacy_wrong_count'), 'migration deve remover trofeu legado incorreto de God of War (2018)');
   assert.strictEqual(godOfWarTrophiesAfterSync.filter(trophy => trophy.is_missable).length, 0, 'migration deve limpar perdiveis antigos em God of War (2018)');
   assert.strictEqual(godOfWarRoadmapAfterSync.length, 6, 'migration deve atualizar roadmap de God of War (2018)');
-  assert(godOfWarRoadmapAfterSync.some(row => row.content.includes('free-roam') && row.content.includes('online')), 'migration deve restaurar roadmap de free-roam/online de God of War (2018)');
+  assert(godOfWarRoadmapAfterSync.some(row => row.content.includes('Valkyries')), 'migration deve restaurar roadmap de Valkyries de God of War (2018)');
+  assert(godOfWarRoadmapAfterSync.some(row => row.content.includes('Niflheim')), 'migration deve restaurar roadmap de Niflheim de God of War (2018)');
 
   let godOfWarRagnarokForSync = await get('SELECT id FROM games WHERE slug = ?', ['god-of-war-ragnarok']);
   assert(godOfWarRagnarokForSync, 'seed deve ter God of War Ragnarök antes do teste de sync');
@@ -9408,8 +9412,8 @@ async function assertBackendEditorialConsistency() {
     assert.strictEqual(godOfWar.time_bucket, 'medium', 'catalogo deve classificar God of War (2018) como jogo medio');
     assert.strictEqual(godOfWar.roadmap_count, 6, 'catalogo deve expor roadmap completo de God of War (2018)');
     assert.strictEqual(godOfWar.coverage_level, 'strong', 'God of War (2018) deve aparecer com coverage strong');
-    assert.strictEqual(godOfWar.is_verified, false, 'God of War (2018) nao deve aparecer como verificado');
-    assert.strictEqual(godOfWar.verification_status, 'review', 'God of War (2018) deve aparecer em revisao editorial');
+    assert.strictEqual(godOfWar.is_verified, true, 'God of War (2018) deve aparecer como verificado');
+    assert.strictEqual(godOfWar.verification_status, 'verified', 'God of War (2018) deve aparecer como verified');
     assert.strictEqual(godOfWar.image, godOfWarSample.image, 'catalogo deve usar image horizontal de God of War (2018)');
     assert.strictEqual(godOfWar.cover_image, godOfWarSample.cover_image, 'API deve expor cover_image de God of War (2018)');
     assert.strictEqual(godOfWar.missable_count, 0, 'API nao deve marcar God of War (2018) como perdivel');
@@ -12145,15 +12149,16 @@ async function assertBackendEditorialConsistency() {
     assert.strictEqual(godOfWarDetail.missable_count, 0, 'God of War (2018) nao deve contar perdiveis');
     assert.strictEqual(godOfWarDetail.spoiler_count, 16, 'God of War (2018) deve retornar spoiler_count coerente');
     assert.strictEqual(godOfWarDetail.roadmap.length, 6, 'detalhe de God of War (2018) deve retornar roadmap de 6 etapas');
-    assert(godOfWarDetail.roadmap.some(step => roadmapStepText(step).includes('free-roam') && roadmapStepText(step).includes('perdíveis')), 'roadmap de God of War (2018) deve citar free-roam e ausencia de perdiveis');
-    assert(godOfWarDetail.roadmap.some(step => roadmapStepText(step).includes('valquírias') && roadmapStepText(step).includes('Niflheim')), 'roadmap de God of War (2018) deve citar valquirias e Niflheim');
+    assert(godOfWarDetail.roadmap.some(step => normalizeText(roadmapStepText(step)).includes('dificuldade confortavel')), 'roadmap de God of War (2018) deve orientar historia em dificuldade confortavel');
+    assert(godOfWarDetail.roadmap.some(step => roadmapStepText(step).includes('Valkyries')), 'roadmap de God of War (2018) deve citar Valkyries');
+    assert(godOfWarDetail.roadmap.some(step => roadmapStepText(step).includes('Niflheim')), 'roadmap de God of War (2018) deve citar Niflheim');
     assert(godOfWarDetail.runs_summary.includes('cleanup livre'), 'detalhe de God of War (2018) deve explicar uma campanha com cleanup');
     assert(godOfWarDetail.online_summary.includes('Não há exigência online'), 'detalhe de God of War (2018) deve indicar ausencia de online obrigatorio');
-    assert(godOfWarDetail.dlc_scope.includes('lista base da platina'), 'detalhe de God of War (2018) deve manter lista base em escopo separado');
-    assert(godOfWarDetail.cleanup_advice.includes('free-roam'), 'detalhe de God of War (2018) deve explicar cleanup em free-roam');
+    assert(godOfWarDetail.dlc_scope.includes('DLC fora da platina base'), 'detalhe de God of War (2018) deve manter DLC fora da platina base');
+    assert(godOfWarDetail.cleanup_advice.includes('free roam'), 'detalhe de God of War (2018) deve explicar cleanup em free roam');
     assert.strictEqual(godOfWarDetail.coverage_level, 'strong', 'God of War (2018) nao deve ser complete sem revisao manual');
-    assert.strictEqual(godOfWarDetail.is_verified, false, 'God of War (2018) nao deve estar verificado');
-    assert.strictEqual(godOfWarDetail.verification_status, 'review', 'God of War (2018) deve ficar em revisao editorial');
+    assert.strictEqual(godOfWarDetail.is_verified, true, 'God of War (2018) deve estar verificado');
+    assert.strictEqual(godOfWarDetail.verification_status, 'verified', 'God of War (2018) deve ficar verified');
     assert.strictEqual(godOfWarDetail.cover_image, godOfWarSample.cover_image, 'detalhe de God of War (2018) deve retornar cover_image');
     assert(godOfWarDetail.trophies.some(trophy => trophy.id === 'gow2018_father_and_son' && trophy.name === 'Father and Son' && trophy.type === 'Platina'), 'God of War (2018) deve manter Father and Son como platina');
     assert(godOfWarDetail.trophies.some(trophy => trophy.id === 'gow2018_last_wish' && trophy.type === 'Ouro'), 'God of War (2018) deve manter Last Wish como ouro');
@@ -12162,6 +12167,7 @@ async function assertBackendEditorialConsistency() {
     assert(!godOfWarDetail.trophies.some(trophy => /Ragnar[oö]k|Valhalla|Ascension|God of War III|DLC|add-?on/i.test(`${trophy.id} ${trophy.name} ${trophy.description}`)), 'God of War (2018) nao deve misturar DLC/add-ons ou outros jogos');
 
     const godOfWarGuideHtml = await httpGetHtml(baseUrl, '/jogo/god-of-war-2018');
+    const godOfWarScopedHtml = godOfWarGuideHtml.replace(/<aside[^>]*atlas-home-beta-notice[\s\S]*?<\/aside>/i, '');
     assertSeoBasics(godOfWarGuideHtml, {
       label: 'SSR /jogo/god-of-war-2018',
       canonical: `${baseUrl}/jogo/god-of-war-2018`,
@@ -12171,8 +12177,12 @@ async function assertBackendEditorialConsistency() {
     });
     assert(godOfWarGuideHtml.includes('Father and Son'), 'SSR de God of War (2018) deve renderizar checklist');
     assert(godOfWarGuideHtml.includes('37 trof'), 'SSR de God of War (2018) deve renderizar total de 37 trofeus');
-    assert(godOfWarGuideHtml.includes('free-roam'), 'SSR de God of War (2018) deve renderizar cleanup em free-roam');
-    assert(godOfWarGuideHtml.includes('Não há exigência online'), 'SSR de God of War (2018) deve renderizar ausencia de online');
+    assert(normalizeText(godOfWarGuideHtml).includes('god of war (2018) tem uma platina focada'), 'SSR de God of War (2018) deve renderizar resumo editorial forte');
+    assert(godOfWarGuideHtml.includes('DLC fora da platina base'), 'SSR de God of War (2018) deve renderizar DLC fora da platina base');
+    assert(normalizeText(godOfWarGuideHtml).includes('nao ha exigencia online'), 'SSR de God of War (2018) deve renderizar ausencia de online');
+    assert(godOfWarGuideHtml.includes('Verificado') && godOfWarGuideHtml.includes('Guia revisado editorialmente.'), 'SSR de God of War (2018) deve renderizar status verificado coerente');
+    assert(godOfWarGuideHtml.includes('Chooser of the Slain') && godOfWarGuideHtml.includes('Darkness and Fog') && godOfWarGuideHtml.includes('Fire and Brimstone') && godOfWarGuideHtml.includes('Allfather Blinded') && godOfWarGuideHtml.includes('Treasure Hunter'), 'SSR de God of War (2018) deve renderizar pontos de atencao editoriais');
+    assert(!/dados atuais do guia|segundo os dados atuais do guia|o guia nao aponta|o guia n[aã]o aponta|quando validado|em revisao|base game sem dlcs|descricao em revisao editorial|\[object object\]|\bundefined\b/i.test(normalizeText(godOfWarScopedHtml)), 'SSR de God of War (2018) nao deve exibir linguagem fraca, revisao pendente ou placeholders');
     assert(godOfWarGuideHtml.includes('atlas-guide-cover--poster'), 'SSR de God of War (2018) deve usar cover_image como poster do guia');
     assert(godOfWarGuideHtml.includes(godOfWarSample.cover_image), 'SSR de God of War (2018) deve renderizar cover_image');
     assert(godOfWarGuideHtml.includes(`property="og:image" content="${godOfWarSample.image}"`), 'SEO de God of War (2018) deve usar image horizontal');
@@ -12883,11 +12893,16 @@ function assertLote1ACriticalEditorialData() {
     });
     assert.strictEqual(game.editorial_status, 'published', `${name} deve permanecer publicado`);
     assert.strictEqual(game.coverage_level, 'strong', `${name} deve ter coverage strong sem selo complete`);
-    if (game.slug === 'resident-evil-4-remake') {
+    if (['god-of-war-2018', 'resident-evil-4-remake'].includes(game.slug)) {
       assert.strictEqual(game.is_verified, true, `${name} deve permanecer verificado`);
       assert.strictEqual(game.verification_status, 'verified', `${name} deve permanecer verified`);
-      assert.strictEqual(game.difficulty, 7, `${name} deve manter dificuldade 7/10`);
-      assert.strictEqual(guideModel.buildGuideViewModel(game, []).missableCount, 16, `${name} deve reduzir perdiveis inflados`);
+      if (game.slug === 'resident-evil-4-remake') {
+        assert.strictEqual(game.difficulty, 7, `${name} deve manter dificuldade 7/10`);
+        assert.strictEqual(guideModel.buildGuideViewModel(game, []).missableCount, 16, `${name} deve reduzir perdiveis inflados`);
+      }
+      if (game.slug === 'god-of-war-2018') {
+        assert.strictEqual(guideModel.buildGuideViewModel(game, []).missableCount, 0, `${name} deve manter sem perdiveis definitivos`);
+      }
     } else {
       assert.strictEqual(game.is_verified, false, `${name} nao deve ser marcado como verificado manualmente`);
       assert.strictEqual(game.verification_status, 'review', `${name} deve aguardar revisao editorial`);
@@ -13598,11 +13613,17 @@ function assertPriorityGuideEditorialTrust() {
   assert(saros, 'sampleGames deve incluir Saros');
   assert.strictEqual(saros.image, '/assets/games/saros/hero.png', 'Saros deve usar hero local dedicado');
   assert.strictEqual(saros.cover_image, '/assets/games/saros/cover.png', 'Saros deve usar capa local dedicada');
+  assert.strictEqual(saros.is_verified, true, 'Saros deve continuar verified no seed');
+  assert.strictEqual(saros.verification_status, 'verified', 'Saros deve continuar com verification_status verified');
+  assert.strictEqual(saros.editorial_review_status, 'verified', 'Saros deve persistir revisao editorial verified');
   assert.strictEqual(saros.trophies.length, 45, 'Saros deve manter 45 trofeus');
   assert.deepStrictEqual(countTypes(saros), { Platina: 1, Ouro: 2, Prata: 16, Bronze: 26 }, 'Saros deve manter distribuicao 1/2/16/26');
   assert.strictEqual(saros.trophies.filter(trophy => trophy.name_pt && trophy.name_pt.trim()).length, 45, 'Saros deve preencher name_pt dos 45 trofeus localizados');
   assert.strictEqual(new Set(saros.trophies.map(trophy => trophy.id)).size, saros.trophies.length, 'Saros nao pode duplicar trophy_code');
   assert(saros.trophies.every(trophy => /^[A-Za-z0-9_:-]{1,60}$/.test(trophy.id)), 'Saros deve usar ids internos seguros');
+  assert.strictEqual(saros.trophies.filter(trophy => trophy.is_missable).length, 0, 'Saros deve manter Perdiveis 0');
+  assert(saros.dlc_scope.includes('DLC fora da platina base'), 'Saros deve padronizar DLC fora da platina base');
+  assert(!/em revisão editorial|mantendo o guia em revisão|dados atuais do guia|Base game sem DLCs|Descrição em revisão editorial/i.test(JSON.stringify(saros)), 'Saros seed nao deve conter revisao, linguagem fraca, DLC antiga ou placeholders');
 
   const subnautica = bySlug.get('subnautica');
   assert(subnautica, 'sampleGames deve incluir Subnautica');

@@ -440,6 +440,114 @@ async function validateGuide(slug = '') {
       assert(!pragmataText.includes(text), `PRAGMATA nao deve conter texto publico/internal incorreto: ${text}`);
     });
   }
+  if (slug === 'saros') {
+    const sarosText = JSON.stringify(seedGame);
+    const realMissables = seedGame.trophies.filter(item => item.is_missable || item.isMissable);
+    const untouchable = seedGame.trophies.find(item => item.id === 'saros-untouchable');
+    const untouchableTags = guideModel.getGuideTrophyTags(untouchable, seedGame).map(tag => tag.label);
+    const routeItems = viewModel.routeChangingTrophies || [];
+    const faqText = JSON.stringify(viewModel.contextualFaq || []);
+    const roadmapText = JSON.stringify(viewModel.roadmapStages || []);
+    assert.strictEqual(seedGame.is_verified, true, 'Saros deve ficar verified no seed');
+    assert.strictEqual(seedGame.verification_status, 'verified', 'Saros deve expor verification_status verified');
+    assert.strictEqual(viewModel.editorial.statusBadge.label, 'Verificado', 'Saros deve exibir selo Verificado');
+    assert.strictEqual(viewModel.editorial.statusBadge.detail, 'Guia revisado editorialmente.', 'Saros deve exibir mensagem publica revisada');
+    assert.strictEqual(viewModel.trophies.length, 45, 'Saros deve manter 45 trofeus');
+    assert.strictEqual(Boolean(seedGame.onlineRequired || seedGame.online_required), false, 'Saros deve manter online 0');
+    assert.strictEqual(Boolean(seedGame.coopRequired || seedGame.coop_required), false, 'Saros deve manter coop 0');
+    assert.strictEqual(seedGame.dlcRequired || seedGame.dlc_required || false, false, 'Saros deve manter DLC nao obrigatoria');
+    assert.strictEqual(viewModel.missableCount, realMissables.length, 'Saros deve alinhar missableCount com trofeus marcados');
+    assert.strictEqual(viewModel.missableCount, 0, 'Saros deve ficar sem perdiveis definitivos');
+    assert(untouchable && !untouchable.is_missable && !untouchable.isMissable && !untouchableTags.includes('Perdível'), 'Untouchable nao deve aparecer como Perdivel');
+    assert(untouchableTags.includes('Dificuldade') && untouchableTags.includes('Risco de run'), 'Untouchable deve ser reclassificado como dificuldade/risco de run');
+    assert.strictEqual(viewModel.roadmapStages.length, 6, 'Saros deve manter roadmap com 6 etapas');
+    assert(sarosText.includes('DLC fora da platina base'), 'Saros deve padronizar DLC fora da platina base');
+    assert(routeItems.length <= 5, 'Saros deve renderizar no maximo 5 pontos de atencao');
+    ['saros-untouchable', 'saros-let-go', 'saros-nightmare-strands', 'saros-full-arsenal', 'saros-king'].forEach(id => {
+      assert(routeItems.some(item => item.id === id), `Saros deve incluir ponto de atencao ${id}`);
+    });
+    [
+      'em revisão editorial',
+      'guia inicial',
+      'quando validado',
+      'aguardando revisão',
+      'validação editorial pendente',
+      'mantendo o guia em revisão',
+      'dados atuais do guia',
+      'segundo os dados atuais do guia',
+      'o guia não aponta',
+      'não há requisito validado',
+      'devem continuar em validação editorial',
+      'Este troféu está marcado como spoiler',
+      'Revele os detalhes na lista completa',
+      'Base game sem DLCs',
+      'Descrição em revisão editorial.',
+      '[object Object]',
+      'undefined'
+    ].forEach(text => {
+      assert(!sarosText.includes(text), `Saros seed nao deve conter texto publico/internal incorreto: ${text}`);
+      assert(!faqText.includes(text), `Saros FAQ nao deve conter texto fraco: ${text}`);
+      assert(!roadmapText.includes(text), `Saros roadmap nao deve conter texto fraco: ${text}`);
+      assert(!JSON.stringify(routeItems).includes(text), `Saros pontos de atencao nao devem conter texto generico: ${text}`);
+    });
+  }
+  if (slug === 'god-of-war-2018') {
+    const gowText = [
+      visibleGameText(seedGame),
+      JSON.stringify(seedGame.faq || []),
+      JSON.stringify(viewModel.contextualFaq || []),
+      JSON.stringify(viewModel.routeChangingTrophies || [])
+    ].join(' ');
+    const normalizedGowText = normalizeText(gowText);
+    const realMissables = seedGame.trophies.filter(item => item.is_missable === true || item.isMissable === true);
+    const routeItems = viewModel.routeChangingTrophies || [];
+    const trophyCount = type => seedGame.trophies.filter(item => item.type === type).length;
+    assert.strictEqual(seedGame.is_verified, true, 'God of War (2018) deve ficar verified no seed');
+    assert.strictEqual(seedGame.verification_status, 'verified', 'God of War (2018) deve expor verification_status verified');
+    assert.strictEqual(viewModel.editorial.statusBadge.label, 'Verificado', 'God of War (2018) deve exibir selo Verificado');
+    assert.strictEqual(viewModel.editorial.statusBadge.detail, 'Guia revisado editorialmente.', 'God of War (2018) deve exibir mensagem publica revisada');
+    assert.strictEqual(viewModel.trophies.length, 37, 'God of War (2018) deve manter 37 trofeus');
+    assert.strictEqual(trophyCount('Platina'), 1, 'God of War (2018) deve manter 1 platina');
+    assert.strictEqual(trophyCount('Ouro'), 5, 'God of War (2018) deve manter 5 ouros');
+    assert.strictEqual(trophyCount('Prata'), 9, 'God of War (2018) deve manter 9 pratas');
+    assert.strictEqual(trophyCount('Bronze'), 22, 'God of War (2018) deve manter 22 bronzes');
+    assert.strictEqual(viewModel.missableCount, realMissables.length, 'God of War (2018) deve alinhar missableCount com is_missable');
+    assert.strictEqual(viewModel.missableCount, 0, 'God of War (2018) deve ficar sem perdiveis definitivos');
+    assert(!realMissables.some(trophy => trophy.type === 'Platina'), 'God of War (2018) nao deve contar platina como perdivel');
+    assert.strictEqual(Boolean(seedGame.onlineRequired || seedGame.online_required), false, 'God of War (2018) deve manter online 0');
+    assert.strictEqual(Boolean(seedGame.coopRequired || seedGame.coop_required), false, 'God of War (2018) deve manter coop 0');
+    assert.strictEqual(seedGame.dlcRequired || seedGame.dlc_required || false, false, 'God of War (2018) deve manter DLC nao obrigatoria');
+    assert.strictEqual(viewModel.roadmapStages.length, 6, 'God of War (2018) deve manter roadmap com 6 etapas');
+    assert(viewModel.roadmapStages.every(step => Array.isArray(step.actions)), 'God of War (2018) deve ter actions reais no roadmap');
+    assert(gowText.includes('DLC fora da platina base'), 'God of War (2018) deve padronizar DLC fora da platina base');
+    assert(routeItems.length <= 5, 'God of War (2018) deve renderizar no maximo 5 pontos de atencao');
+    ['gow2018_chooser_of_the_slain', 'gow2018_darkness_and_fog', 'gow2018_fire_and_brimstone', 'gow2018_allfather_blinded', 'gow2018_treasure_hunter'].forEach(id => {
+      assert(routeItems.some(item => item.id === id), `God of War (2018) deve incluir ponto de atencao ${id}`);
+    });
+    [
+      'dados atuais do guia',
+      'segundo os dados atuais do guia',
+      'o guia nao aponta',
+      'o guia n\u00e3o aponta',
+      'lista atual',
+      'quando validado',
+      'em revisao',
+      'em revis\u00e3o',
+      'Base game sem DLCs',
+      'Este trofeu esta marcado como spoiler',
+      'Este trof\u00e9u est\u00e1 marcado como spoiler',
+      'Revele os detalhes na lista completa',
+      'Descri\u00e7\u00e3o em revis\u00e3o editorial.',
+      '[object Object]',
+      'undefined'
+    ].forEach(text => {
+      assert(!gowText.includes(text), `God of War (2018) nao deve conter texto incorreto: ${text}`);
+      assert(!normalizedGowText.includes(normalizeText(text)), `God of War (2018) nao deve conter texto incorreto normalizado: ${text}`);
+    });
+    ['Obtain all other trophies', 'Defend your home', 'Kill all of Odin', 'Defeat the nine Valkyries'].forEach(text => {
+      assert(!gowText.includes(text), `God of War (2018) nao deve manter descricao em ingles: ${text}`);
+    });
+  }
   if (slug === 'resident-evil-4-remake') {
     const re4Text = visibleGameText(seedGame);
     const realMissables = seedGame.trophies.filter(item => item.is_missable || item.isMissable);
@@ -1044,6 +1152,110 @@ async function validateGuide(slug = '') {
       });
       assert(!/>\s*null\s*</i.test(html), 'PRAGMATA SSR nao deve exibir null visivel');
       assert.strictEqual(getCanonical(html), 'https://atlasachievement.com.br/jogo/pragmata', 'canonical de PRAGMATA deve usar dominio de producao');
+    }
+    if (slug === 'saros') {
+      const normalizedHtml = normalizeText(html);
+      const apiMissables = apiGame.trophies.filter(trophy => trophy.is_missable);
+      const apiUntouchable = apiGame.trophies.find(trophy => trophy.id === 'saros-untouchable');
+      const summaryHtml = html.match(/<div class="atlas-guide-summary-editorial[\s\S]*?<\/div>/)?.[0] || '';
+      assert.strictEqual(apiGame.is_verified, true, 'API de Saros deve continuar verified');
+      assert.strictEqual(apiGame.verification_status, 'verified', 'API de Saros deve expor verification_status verified');
+      assert.strictEqual(apiGame.trophies.length, 45, 'API de Saros deve manter 45 trofeus');
+      assert.strictEqual(apiGame.missable_count, apiMissables.length, 'API de Saros deve alinhar missable_count com checklist');
+      assert.strictEqual(apiGame.missable_count, 0, 'API de Saros deve manter missable_count 0');
+      assert.strictEqual(Boolean(apiGame.onlineRequired || apiGame.online_required), false, 'API de Saros deve manter online 0');
+      assert.strictEqual(Boolean(apiGame.coopRequired || apiGame.coop_required), false, 'API de Saros deve manter coop 0');
+      assert.strictEqual(Boolean(apiGame.dlcRequired || apiGame.dlc_required), false, 'API de Saros deve manter DLC nao obrigatoria');
+      assert(apiUntouchable && !apiUntouchable.is_missable, 'Untouchable nao deve vir como Perdivel na API');
+      assert(html.includes('Saros'), 'Saros deve renderizar nome no SSR');
+      assert(html.includes('Verificado'), 'Saros deve renderizar status Verificado');
+      assert(html.includes('Guia revisado editorialmente.'), 'Saros deve renderizar mensagem publica revisada');
+      assert(html.includes('Sem perdíveis'), 'Saros deve renderizar topo Sem perdiveis');
+      assert(html.includes('DLC fora da platina base'), 'Saros deve exibir DLC fora da platina base');
+      assert(normalizedHtml.includes('saros e uma platina baseada em progressao por runs'), 'Saros deve exibir resumo editorial forte');
+      assert((summaryHtml.match(/<p\b/g) || []).length >= 2, 'Resumo de Saros deve ter pelo menos 2 paragrafos editoriais');
+      assert(html.includes('Sim. Este guia está Verificado') || html.includes('Sim. Este guia est'), 'FAQ de Saros deve confirmar guia verificado');
+      assert(html.includes('Não há perdíveis definitivos') || html.includes('NÃ£o hÃ¡ perdÃ­veis definitivos'), 'FAQ de Saros deve afirmar sem perdiveis definitivos');
+      assert(html.includes('Untouchable') && html.includes('Let Go') && html.includes('Nightmare Strands') && html.includes('Full Arsenal') && html.includes('King'), 'Saros deve renderizar pontos de atencao editoriais esperados');
+      assert(html.includes('Dificuldade / Risco de run / Desafio'), 'Untouchable deve aparecer como desafio de execucao, nao perdivel');
+      assert(!/Untouchable[\s\S]{0,500}Perdível/i.test(html), 'Untouchable nao deve aparecer como Perdivel no HTML');
+      [
+        'em revisão editorial',
+        'guia inicial',
+        'quando validado',
+        'aguardando revisão',
+        'validação editorial pendente',
+        'mantendo o guia em revisão',
+        'dados atuais do guia',
+        'segundo os dados atuais do guia',
+        'o guia não aponta',
+        'não há requisito validado',
+        'devem continuar em validação editorial',
+        'Este troféu está marcado como spoiler',
+        'Revele os detalhes na lista completa',
+        'Base game sem DLCs',
+        'Descrição em revisão editorial.',
+        '[object Object]',
+        'undefined'
+      ].forEach(text => {
+        assert(!html.includes(text), `Saros SSR nao deve exibir: ${text}`);
+      });
+      assert(!/>\s*null\s*</i.test(html), 'Saros SSR nao deve exibir null visivel');
+      assert.strictEqual(getCanonical(html), 'https://atlasachievement.com.br/jogo/saros', 'canonical de Saros deve usar dominio de producao');
+    }
+    if (slug === 'god-of-war-2018') {
+      const guideScopedHtml = html.replace(/<aside[^>]*atlas-home-beta-notice[\s\S]*?<\/aside>/i, '');
+      const normalizedHtml = normalizeText(html);
+      const normalizedScopedHtml = normalizeText(guideScopedHtml);
+      const apiMissables = apiGame.trophies.filter(trophy => trophy.is_missable === true);
+      const summaryHtml = html.match(/<div class="atlas-guide-summary-editorial[\s\S]*?<\/div>/)?.[0] || '';
+      assert.strictEqual(apiGame.is_verified, true, 'API de God of War (2018) deve continuar verified');
+      assert.strictEqual(apiGame.verification_status, 'verified', 'API de God of War (2018) deve expor verification_status verified');
+      assert.strictEqual(apiGame.trophies.length, 37, 'API de God of War (2018) deve manter 37 trofeus');
+      assert.strictEqual(apiGame.trophies.filter(trophy => trophy.type === 'Platina').length, 1, 'API de God of War (2018) deve manter 1 platina');
+      assert.strictEqual(apiGame.trophies.filter(trophy => trophy.type === 'Ouro').length, 5, 'API de God of War (2018) deve manter 5 ouros');
+      assert.strictEqual(apiGame.trophies.filter(trophy => trophy.type === 'Prata').length, 9, 'API de God of War (2018) deve manter 9 pratas');
+      assert.strictEqual(apiGame.trophies.filter(trophy => trophy.type === 'Bronze').length, 22, 'API de God of War (2018) deve manter 22 bronzes');
+      assert.strictEqual(apiGame.missable_count, apiMissables.length, 'API de God of War (2018) deve alinhar missable_count com checklist');
+      assert.strictEqual(apiGame.missable_count, 0, 'API de God of War (2018) deve manter missable_count 0');
+      assert(!apiMissables.some(trophy => trophy.type === 'Platina'), 'API de God of War (2018) nao deve contar platina como perdivel');
+      assert.strictEqual(Boolean(apiGame.onlineRequired || apiGame.online_required), false, 'API de God of War (2018) deve manter online 0');
+      assert.strictEqual(Boolean(apiGame.coopRequired || apiGame.coop_required), false, 'API de God of War (2018) deve manter coop 0');
+      assert.strictEqual(Boolean(apiGame.dlcRequired || apiGame.dlc_required), false, 'API de God of War (2018) deve manter DLC nao obrigatoria');
+      assert.strictEqual(apiGame.roadmap.length, 6, 'API de God of War (2018) deve retornar roadmap de 6 etapas');
+      assert(apiGame.roadmap.every(step => Array.isArray(step.actions)), 'API de God of War (2018) deve retornar actions reais no roadmap');
+      assert(html.includes('God of War'), 'God of War (2018) deve renderizar nome no SSR');
+      assert(html.includes('Verificado'), 'God of War (2018) deve renderizar status Verificado');
+      assert(html.includes('Guia revisado editorialmente.'), 'God of War (2018) deve renderizar mensagem publica revisada');
+      assert(normalizedHtml.includes('sem perdiveis'), 'God of War (2018) deve renderizar topo Sem perdiveis');
+      assert(html.includes('DLC fora da platina base'), 'God of War (2018) deve exibir DLC fora da platina base');
+      assert(normalizedHtml.includes('god of war (2018) tem uma platina focada'), 'God of War (2018) deve exibir resumo editorial forte');
+      assert((summaryHtml.match(/<p\b/g) || []).length >= 2, 'Resumo de God of War (2018) deve ter pelo menos 2 paragrafos editoriais');
+      assert(html.includes('Chooser of the Slain') && html.includes('Darkness and Fog') && html.includes('Fire and Brimstone') && html.includes('Allfather Blinded') && html.includes('Treasure Hunter'), 'God of War (2018) deve renderizar pontos de atencao editoriais esperados');
+      assert(html.includes('Dificuldade / Valkyries / Cleanup'), 'Chooser of the Slain deve aparecer como dificuldade/Valkyries/cleanup');
+      assert(!/Chooser of the Slain[\s\S]{0,500}Perd[ií]vel/i.test(html), 'Chooser of the Slain nao deve aparecer como Perdivel no HTML');
+      [
+        'dados atuais do guia',
+        'segundo os dados atuais do guia',
+        'o guia nao aponta',
+        'o guia n\u00e3o aponta',
+        'lista atual',
+        'quando validado',
+        'em revisao',
+        'em revis\u00e3o',
+        'Base game sem DLCs',
+        'Este trofeu esta marcado como spoiler',
+        'Este trof\u00e9u est\u00e1 marcado como spoiler',
+        'Revele os detalhes na lista completa',
+        'Descri\u00e7\u00e3o em revis\u00e3o editorial.',
+        '[object Object]',
+        'undefined'
+      ].forEach(text => {
+        assert(!guideScopedHtml.includes(text), `God of War (2018) SSR nao deve exibir: ${text}`);
+        assert(!normalizedScopedHtml.includes(normalizeText(text)), `God of War (2018) SSR nao deve exibir texto normalizado: ${text}`);
+      });
+      assert(!/>\s*null\s*</i.test(html), 'God of War (2018) SSR nao deve exibir null visivel');
+      assert.strictEqual(getCanonical(html), 'https://atlasachievement.com.br/jogo/god-of-war-2018', 'canonical de God of War (2018) deve usar dominio de producao');
     }
     if (slug === 'resident-evil-4-remake') {
       const apiMissables = apiGame.trophies.filter(trophy => trophy.is_missable);

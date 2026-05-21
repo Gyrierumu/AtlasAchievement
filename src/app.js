@@ -57,6 +57,11 @@ const GHOST_EDITORIAL_SUMMARY = [
   'A melhor rota é avançar a história enquanto desbloqueia ferramentas, posturas, viagem rápida e acesso às regiões. Ao mesmo tempo, vale completar atividades próximas ao caminho, como fontes termais, bambus, haiku, santuários, faróis, acampamentos e contos secundários, para reduzir a limpeza final.',
   'Depois da campanha, use o free roam para finalizar coletáveis, Tales pendentes, Mythic Tales, atividades regionais, cosméticos e troféus situacionais. Como não há perdíveis obrigatórios na lista base, o foco do guia é organizar o checklist para evitar retrabalho e separar claramente o que pertence à platina base do conteúdo extra.'
 ];
+const GOD_OF_WAR_2018_EDITORIAL_SUMMARY = [
+  'God of War (2018) tem uma platina focada em campanha, exploração dos reinos e cleanup pós-história. A lista base não exige online, coop ou dificuldade específica, então o maior desafio não está em perder troféus, mas em organizar coletáveis, favores, melhorias, Valkyries, Muspelheim, Niflheim e atividades opcionais sem deixar tudo acumulado para o final.',
+  'A melhor estratégia é jogar a história em uma dificuldade confortável, explorando naturalmente e abrindo o máximo possível de atalhos, baús, favores e áreas secundárias. Não é necessário limpar tudo logo de início, porque o jogo permite voltar depois da campanha para resolver pendências com mais recursos, equipamentos e habilidades.',
+  'Depois da história, foque no cleanup dos reinos, mapas do tesouro, artefatos, corvos, baús, favores, Valkyries e objetivos ligados a Muspelheim e Niflheim. Separar história, exploração e limpeza final deixa a platina mais controlada e evita retrabalho.'
+];
 const HADES2_EDITORIAL_SUMMARY = [
   'Hades II é uma platina longa de roguelite, baseada em progresso acumulado entre runs. O foco está em evoluir Melinoë, liberar armas, ferramentas, Arcana, Incantations, Familiars, Keepsakes, rotas do Submundo e da Superfície, além de avançar diálogos e objetivos da Fated List.',
   'A melhor rota é usar as primeiras runs para estabilizar a Crossroads, entender os Guardians e abrir sistemas permanentes antes de tentar limpar tudo. Depois que as rotas estiverem mais consistentes, organize armas, aspectos, recursos raros, relacionamentos, Chaos Trials, Oath of the Unseen e objetivos longos sem desperdiçar runs aleatórias.',
@@ -71,6 +76,11 @@ const PRAGMATA_EDITORIAL_SUMMARY = [
   'PRAGMATA é uma platina sci-fi single-player baseada em campanha, exploração, hacking com Diana, progressão no Abrigo, LMTs, Mini Cabins, escotilhas, Red Zones, Training Sims, Unknown Signal e uma jogada separada em Lunatic. A rota exige atenção ao perdível e aos objetivos situacionais, mas não depende de online, coop ou DLC.',
   'A melhor estratégia é fazer a primeira campanha aprendendo o ciclo Hugh + Diana, conversando com Diana no Abrigo e acompanhando coletáveis desde cedo. Durante essa run, mantenha atenção ao alerta de You\'re Not Getting Away That Easy, além de registrar LMTs, Mini Cabins, escotilhas, Red Zones e objetivos que podem exigir setup específico.',
   'Depois da campanha, use o pós-jogo e Unknown Signal para limpar setores, Training Sims, upgrades, coletáveis e troféus situacionais. A etapa de Lunatic deve ser tratada como jogada separada, deixando a run de dificuldade para quando você já conhecer bem combate, hacking, chefes e rotas.'
+];
+const SAROS_EDITORIAL_SUMMARY = [
+  'Saros é uma platina baseada em progressão por runs, domínio de combate e evolução gradual dos sistemas permanentes. A rota deve ser tratada como guia próprio: use as primeiras tentativas para aprender movimentação, padrões de chefes, armas, upgrades, salas especiais e como o jogo estrutura objetivos acumulativos.',
+  'A melhor estratégia é avançar a campanha sem tentar limpar tudo de uma vez. Priorize sobrevivência, desbloqueios permanentes, familiaridade com biomas, Nightmare Gates, melhorias e objetivos que se acumulam naturalmente entre runs. Como não há online ou coop obrigatório, a platina depende principalmente de consistência, leitura de risco e organização da checklist.',
+  'Depois de estabilizar a base, foque em chefes restantes, coletáveis, desafios, troféus situacionais, epílogo e cleanup final. Objetivos de run sem dano ou execução perfeita devem ser tratados como risco de run/dificuldade, não como perdíveis definitivos, quando puderem ser repetidos.'
 ];
 const RE4_REMAKE_EDITORIAL_SUMMARY = [
   'Resident Evil 4 Remake é uma platina baseada em múltiplas campanhas, domínio dos capítulos, saves manuais, coletáveis, pedidos do Mercador, Clockwork Castellans, tesouros, Shooting Range, armas, troféus situacionais e runs de restrição. A lista base não exige online, coop, Separate Ways, VR Mode, The Mercenaries ou tickets pagos.',
@@ -1040,14 +1050,14 @@ function buildGuideFaqStructuredData(canonicalUrl, viewModel) {
 function renderGuideEditorialNotesHtml(game = {}, viewModel = {}) {
   const routeTrophies = Array.isArray(viewModel.routeChangingTrophies) ? viewModel.routeChangingTrophies.slice(0, 5) : [];
   const normalizedSlug = String(game?.slug || '').trim().toLowerCase();
-  const faqLimit = normalizedSlug === 'nioh-3' ? 11 : (['saros', 'the-last-of-us-part-i', 'subnautica'].includes(normalizedSlug) ? 10 : (normalizedSlug === 'the-last-of-us-part-ii' ? 11 : 6));
+  const faqLimit = ['nioh-3', 'saros', 'the-last-of-us-part-ii'].includes(normalizedSlug) ? 11 : (['the-last-of-us-part-i', 'subnautica'].includes(normalizedSlug) ? 10 : 6);
   const faqItems = Array.isArray(viewModel.contextualFaq) ? viewModel.contextualFaq.slice(0, faqLimit) : [];
   const playerFit = viewModel.playerFit || buildGuidePlayerFit(game, viewModel);
   const methodItems = Array.isArray(viewModel.editorial?.methodItems) ? viewModel.editorial.methodItems : [];
   const statusBadge = viewModel.editorial?.statusBadge || getEditorialBadge(game);
   const sectionCopy = normalizedSlug === 'the-last-of-us-part-ii'
     ? 'Respostas rápidas sobre perdíveis, online, coop, tempo, dificuldade, NG+, Chapter Select e extras fora da platina base.'
-    : ['resident-evil-requiem', 'resident-evil-4-remake', 'hades', 'ghost-of-tsushima', 'hades-ii', 'astro-bot', 'pragmata', 'nioh-2', 'nioh-3', 'the-last-of-us-part-i'].includes(normalizedSlug)
+    : ['resident-evil-requiem', 'resident-evil-4-remake', 'hades', 'ghost-of-tsushima', 'god-of-war-2018', 'hades-ii', 'astro-bot', 'pragmata', 'saros', 'nioh-2', 'nioh-3', 'the-last-of-us-part-i'].includes(normalizedSlug)
       ? 'Respostas rápidas sobre perdíveis, online, coop, tempo, dificuldade e DLC da lista base.'
       : 'Respostas rápidas sobre perdíveis, online, coop, tempo, dificuldade e DLC usando os dados atuais do guia.';
   return `
@@ -1193,7 +1203,7 @@ function buildGuideHeroStats(game = {}, viewModel = {}) {
         label: labels[card.id] || card.label,
           value: card.id === 'dlc' && String(game?.slug || '').trim().toLowerCase() === 'the-last-of-us-part-ii'
             ? 'Extras fora da platina base'
-            : card.id === 'dlc' && ['resident-evil-requiem', 'resident-evil-4-remake', 'hades', 'ghost-of-tsushima', 'hades-ii', 'astro-bot', 'pragmata', 'nioh-2', 'nioh-3'].includes(String(game?.slug || '').trim().toLowerCase())
+            : card.id === 'dlc' && ['resident-evil-requiem', 'resident-evil-4-remake', 'hades', 'ghost-of-tsushima', 'god-of-war-2018', 'hades-ii', 'astro-bot', 'pragmata', 'saros', 'nioh-2', 'nioh-3'].includes(String(game?.slug || '').trim().toLowerCase())
             ? 'DLC fora da platina base'
             : card.id === 'coop' && /2 jogadores/i.test(String(card.detail || ''))
             ? '2 jogadores obrigatórios'
@@ -1656,12 +1666,16 @@ function renderGuideSummaryPanelHtml(game = {}, viewModel = {}) {
     ? HADES_EDITORIAL_SUMMARY
     : normalizedSlug === 'ghost-of-tsushima'
     ? GHOST_EDITORIAL_SUMMARY
+    : normalizedSlug === 'god-of-war-2018'
+    ? GOD_OF_WAR_2018_EDITORIAL_SUMMARY
     : normalizedSlug === 'hades-ii'
     ? HADES2_EDITORIAL_SUMMARY
     : normalizedSlug === 'astro-bot'
     ? ASTRO_BOT_EDITORIAL_SUMMARY
     : normalizedSlug === 'pragmata'
     ? PRAGMATA_EDITORIAL_SUMMARY
+    : normalizedSlug === 'saros'
+    ? SAROS_EDITORIAL_SUMMARY
     : normalizedSlug === 'resident-evil-4-remake'
     ? RE4_REMAKE_EDITORIAL_SUMMARY
     : normalizedSlug === 'nioh-2'
@@ -1788,7 +1802,7 @@ function prioritizeGuideViewHtml(html = '') {
 async function buildGamePageHtml(game, req) {
   const origin = getPublicOrigin(req);
   const normalizedSlug = String(game?.slug || '').trim().toLowerCase();
-  const canonicalUrl = ['elden-ring', 'ghost-of-tsushima', 'hades', 'hades-ii', 'astro-bot', 'pragmata', 'nioh-2', 'nioh-3', 'resident-evil-requiem', 'resident-evil-4-remake', 'saros', 'the-last-of-us-part-i', 'the-last-of-us-part-ii', 'subnautica'].includes(normalizedSlug)
+  const canonicalUrl = ['elden-ring', 'ghost-of-tsushima', 'god-of-war-2018', 'hades', 'hades-ii', 'astro-bot', 'pragmata', 'nioh-2', 'nioh-3', 'resident-evil-requiem', 'resident-evil-4-remake', 'saros', 'the-last-of-us-part-i', 'the-last-of-us-part-ii', 'subnautica'].includes(normalizedSlug)
     ? `https://atlasachievement.com.br/jogo/${normalizedSlug}`
     : buildPublicUrl(req, `/jogo/${game.slug}`);
   const relatedResponse = await gamesService.listGames({ page: 1, limit: 80, sort: 'recommended-desc' });
