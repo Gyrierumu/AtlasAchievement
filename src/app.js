@@ -619,11 +619,34 @@ function shouldShowTrophyDetailsToggle(trophy = {}, description = '', tip = '') 
   return Boolean(String(tip || '').trim() || hasLongTrophyDescription(description));
 }
 
+function cleanTrophyNameCandidate(value = '') {
+  const text = String(value ?? '').replace(/\s+/g, ' ').trim();
+  if (!text || /^(undefined|null|\[object Object\])$/i.test(text)) return '';
+  return text;
+}
+
+function getTrophyOriginalName(trophy = {}) {
+  return cleanTrophyNameCandidate(trophy?.trophyNameOriginal || trophy?.originalName || trophy?.officialName || trophy?.name) || 'Troféu';
+}
+
 function getTrophyEditorialName(trophy = {}) {
-  const officialName = String(trophy?.trophyNameOriginal || trophy?.name || '').trim();
-  const editorialName = String(trophy?.trophyNamePtBr || trophy?.name_pt || '').trim();
-  if (!editorialName || editorialName.toLowerCase() === officialName.toLowerCase()) return '';
-  return editorialName;
+  const officialName = getTrophyOriginalName(trophy);
+  const candidates = [
+    trophy?.trophyNamePtBr,
+    trophy?.localizedNamePt,
+    trophy?.localizedNamePtBr,
+    trophy?.name_pt,
+    trophy?.namePt,
+    trophy?.ptName,
+    trophy?.translatedName
+  ].map(cleanTrophyNameCandidate).filter(Boolean);
+  const editorialName = candidates.find(name => name.toLowerCase() !== officialName.toLowerCase()) || '';
+  if (!editorialName) return '';
+  return editorialName.includes(' / ') ? editorialName.split(' / ').map(cleanTrophyNameCandidate).find(Boolean) || '' : editorialName;
+}
+
+function getTrophyDisplayName(trophy = {}) {
+  return getTrophyEditorialName(trophy) || getTrophyOriginalName(trophy);
 }
 
 function looksLikeEnglishTrophyDescription(value = '') {
@@ -665,9 +688,9 @@ function renderTrophyCardHtml(trophy, completedIds = new Set(), index = 0, game 
   const done = completedIds.has(trophy.id);
   const description = getTrophyDisplayDescription(trophy, game);
   const tip = trophy.tip || '';
-  const officialName = trophy.trophyNameOriginal || trophy.name || 'Troféu';
+  const officialName = getTrophyOriginalName(trophy);
   const editorialName = getTrophyEditorialName(trophy);
-  const primaryName = editorialName || officialName;
+  const primaryName = getTrophyDisplayName(trophy);
   const riskTags = getGuideTrophyTags(trophy, game);
   const displayRiskTags = typeof sharedGuideViewModel.getGuideTrophyDisplayTags === 'function'
     ? sharedGuideViewModel.getGuideTrophyDisplayTags(trophy, game, 4)

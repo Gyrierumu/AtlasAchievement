@@ -537,6 +537,37 @@ async function validateGuide(slug = '') {
     viewModel.roadmapStages.forEach((step, index) => {
       assert(!step.actions.some(action => normalizeText(action) === normalizeText(step.objective)), `God of War (2018) nao deve repetir objetivo literalmente nas actions da etapa ${index + 1}`);
     });
+    const renderedRoadmapText = JSON.stringify(viewModel.roadmapStages);
+    [
+      'Avance a campanha principal',
+      'Limpe regiões e favores',
+      'limpe coletáveis por região, incluindo artefatos, Odin’s Rave',
+      'limpe coletáveis por região, incluindo artefatos, Odin’s Ravens',
+      'Odin’s Rave',
+      'Odin’s Ravens',
+      'Jötnar shrines',
+      'Nornir Chests',
+      'wayward spirits',
+      'Trials of Muspelheim',
+      'Workshop de Niflheim',
+      'Prepare Muspelheim e Niflheim',
+      'Feche valquírias no pós-game',
+      'Feche cleanup e pendências finais',
+      'jogue a história naturalmente, aprendendo combate, Atreus, Runic Attacks'
+    ].forEach(text => {
+      assert(!renderedRoadmapText.includes(text), `Roadmap renderizado de God of War (2018) nao deve conter texto antigo: ${text}`);
+      assert(!normalizeText(renderedRoadmapText).includes(normalizeText(text)), `Roadmap renderizado de God of War (2018) nao deve conter texto antigo normalizado: ${text}`);
+    });
+    ['Avance a história em uma dificuldade confortável', 'Explore reinos e abra atividades secundárias', 'Complete favores, coletáveis e mapas por região', 'Trabalhe Muspelheim e Niflheim em etapas próprias', 'Derrote Valkyries e finalize upgrades importantes', 'Faça o cleanup final da platina base'].forEach(text => {
+      assert(renderedRoadmapText.includes(text), `Roadmap renderizado de God of War (2018) deve conter etapa nova: ${text}`);
+    });
+    seedGame.trophies.forEach(trophy => {
+      assert(trophy.name && !/^(undefined|null|\[object Object\])$/i.test(trophy.name), `${trophy.id} deve manter nome original em ingles`);
+      assert(!String(trophy.name).includes(' / '), `${trophy.id} nao deve concatenar nomes no campo name`);
+      const ptNames = [trophy.name_pt, trophy.namePt, trophy.titlePt, trophy.translatedName, trophy.localizedName, trophy.displayName, trophy.ptName, trophy.trophyNamePtBr]
+        .filter(value => String(value || '').trim());
+      assert(ptNames.length <= 1, `${trophy.id} nao deve ter duas fontes de nome em portugues`);
+    });
     assert(gowText.includes('DLC fora da platina base'), 'God of War (2018) deve padronizar DLC fora da platina base');
     assert(routeItems.length <= 5, 'God of War (2018) deve renderizar no maximo 5 pontos de atencao');
     ['gow2018_chooser_of_the_slain', 'gow2018_darkness_and_fog', 'gow2018_fire_and_brimstone', 'gow2018_allfather_blinded', 'gow2018_treasure_hunter'].forEach(id => {
@@ -1255,6 +1286,44 @@ async function validateGuide(slug = '') {
       apiGame.roadmap.forEach((step, index) => {
         assert(!step.actions.some(action => normalizeText(action) === normalizeText(step.objective)), `API de God of War (2018) nao deve repetir objetivo literalmente nas actions da etapa ${index + 1}`);
       });
+      const apiRoadmapText = JSON.stringify(apiGame.roadmap);
+      const roadmapPanelHtml = html.match(/<section id="guideRoadmapPanel"[\s\S]*?<\/section>/)?.[0] || '';
+      [
+        'Avance a campanha principal',
+        'Limpe regiões e favores',
+        'limpe coletáveis por região, incluindo artefatos, Odin’s Rave',
+        'limpe coletáveis por região, incluindo artefatos, Odin’s Ravens',
+        'Odin’s Rave',
+        'Odin’s Ravens',
+        'Jötnar shrines',
+        'Nornir Chests',
+        'wayward spirits',
+        'Trials of Muspelheim',
+        'Workshop de Niflheim',
+        'Prepare Muspelheim e Niflheim',
+        'Feche valquírias no pós-game',
+        'Feche cleanup e pendências finais',
+        'jogue a história naturalmente, aprendendo combate, Atreus, Runic Attacks'
+      ].forEach(text => {
+        assert(!apiRoadmapText.includes(text), `API roadmap de God of War (2018) nao deve conter texto antigo: ${text}`);
+        assert(!normalizeText(apiRoadmapText).includes(normalizeText(text)), `API roadmap de God of War (2018) nao deve conter texto antigo normalizado: ${text}`);
+        assert(!roadmapPanelHtml.includes(text), `Roadmap SSR de God of War (2018) nao deve conter texto antigo: ${text}`);
+        assert(!normalizeText(roadmapPanelHtml).includes(normalizeText(text)), `Roadmap SSR de God of War (2018) nao deve conter texto antigo normalizado: ${text}`);
+      });
+      ['Avance a história em uma dificuldade confortável', 'Explore reinos e abra atividades secundárias', 'Complete favores, coletáveis e mapas por região', 'Trabalhe Muspelheim e Niflheim em etapas próprias', 'Derrote Valkyries e finalize upgrades importantes', 'Faça o cleanup final da platina base'].forEach(text => {
+        assert(apiRoadmapText.includes(text), `API roadmap de God of War (2018) deve conter etapa nova: ${text}`);
+        assert(roadmapPanelHtml.includes(text), `Roadmap SSR de God of War (2018) deve conter etapa nova: ${text}`);
+      });
+      apiGame.trophies.forEach(trophy => {
+        assert(trophy.name && trophy.trophyNameOriginal === trophy.name, `${trophy.id} deve expor nome original em ingles como fonte canonica`);
+        assert(!/^(undefined|null|\[object Object\])$/i.test(`${trophy.name} ${trophy.trophyNameOriginal}`), `${trophy.id} nao deve expor placeholder no nome`);
+        assert(!String(trophy.name).includes(' / '), `${trophy.id} nao deve concatenar nomes no titulo principal`);
+        const ptNames = [trophy.name_pt, trophy.trophyNamePtBr, trophy.namePt, trophy.titlePt, trophy.localizedName, trophy.translatedName]
+          .filter(value => String(value || '').trim());
+        assert(ptNames.length <= 1, `${trophy.id} nao deve expor duas traducoes em portugues`);
+      });
+      assert(!html.includes('Pai e Filho / Father and Son'), 'Checklist de God of War (2018) nao deve concatenar traducao e original');
+      assert(!html.includes('Father and Son / Father and Son'), 'Checklist de God of War (2018) nao deve duplicar nome original');
       assert(html.includes('God of War'), 'God of War (2018) deve renderizar nome no SSR');
       assert(html.includes('Verificado'), 'God of War (2018) deve renderizar status Verificado');
       assert(html.includes('Guia revisado editorialmente.'), 'God of War (2018) deve renderizar mensagem publica revisada');

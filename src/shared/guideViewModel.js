@@ -2227,11 +2227,11 @@
     if (/coop|co-op|2 jogadores|dois jogadores|dupla|segundo jogador|cody|may/.test(normalized) && !/sos|guild card/.test(normalized)) return index === 0 ? 'Comece a campanha em coop' : 'Coordene a etapa com a dupla';
     if (/prisao|fazenda|parque de trailers|galpao|hospital|the dip|in sync|all the ways out|piano|banjo|baseball|fliperama|moto|helicoptero|balanco|cata-vento/.test(normalized)) return 'Revise eventos opcionais por capítulo';
 
-    if (/lake of nine|veithurgard|drag|wayward spirits|brok|sindri/.test(normalized)) return 'Limpe regiões e favores';
-    if (/checklist/.test(normalized) && /odin|ravens|corvo|corvos|colet|artefatos|shrines|nornir/.test(normalized)) return 'Marque coletáveis no checklist';
-    if (/valquir|valkyrie queen|valkyries/.test(normalized)) return 'Feche valquírias no pós-game';
-    if (/muspelheim|niflheim|mist echoes|trials/.test(normalized) && /build|equip|upgrade|fortaleca|fortaleça|recursos/.test(normalized)) return 'Prepare Muspelheim e Niflheim';
-    if (/limpeza final/.test(normalized)) return 'Feche cleanup e pendências finais';
+    if (/lake of nine|veithurgard|drag|wayward spirits|brok|sindri/.test(normalized)) return 'Organize regiões e favores';
+    if (/checklist/.test(normalized) && /odin|ravens|corvo|corvos|colet|artefatos|shrines|nornir/.test(normalized)) return 'Revise coletáveis no checklist';
+    if (/valquir|valkyrie queen|valkyries/.test(normalized)) return 'Derrote desafios opcionais finais';
+    if (/muspelheim|niflheim|mist echoes|trials/.test(normalized) && /build|equip|upgrade|fortaleca|fortaleça|recursos/.test(normalized)) return 'Organize reinos de desafio';
+    if (/limpeza final/.test(normalized)) return 'Revise pendências finais';
     if (/comece pela campanha|campanha principal/.test(normalized)) return 'Avance campanha e capture cedo';
     if (/primeiras runs|rune|runes|blueprint|collector/.test(normalized)) return 'Aprenda runs e libere runas';
     if (/historia/.test(normalized) && /new game\+|ng\+/.test(normalized)) return 'Termine história antes do NG+';
@@ -2248,7 +2248,7 @@
     if (/journals|journal|discos|lost gestral|nevron|paint cages/.test(normalized)) return 'Complete coletáveis antes do endgame';
     if (/coroa|coroas|crown|crowns/.test(normalized)) return 'Farme coroas miniatura e gigantes';
     if (/desafios especificos|desafio|challenge|cursed sword|equipamento inicial/.test(normalized)) return 'Resolva desafios opcionais';
-    if (/cleanup|limpeza final|limpeza|pendente|pendencias/.test(normalized)) return 'Feche cleanup e pendências finais';
+    if (/cleanup|limpeza final|limpeza|pendente|pendencias/.test(normalized)) return 'Revise pendências finais';
     if (/high rank|pesquisas|investigacoes/.test(normalized) && /monster|hunter|monstro|acampamento|armadura/.test(normalized)) return 'Libere High Rank e pesquisas';
     if (/coroa|coroas|crown|crowns/.test(normalized)) return 'Farme coroas miniatura e gigantes';
     if (/vida endemica|petricanths|crake|hercudrome/.test(normalized)) return 'Capture vida endêmica rara';
@@ -2260,7 +2260,7 @@
     if (/chefes sem dano|sem dano|flawless|boss|chefe/.test(normalized)) return 'Treine chefes sem dano';
     if (/desafio|challenge|cursed sword|equipamento inicial/.test(normalized)) return 'Resolva desafios opcionais';
     if (/farm|grind|rng|\brank\b|\bxp\b|\bnivel\b|\blevel\b/.test(normalized)) return 'Planeje o grind principal';
-    if (/run|campanha|historia|new game|ng\+?/.test(normalized)) return index === 0 ? 'Avance a campanha principal' : 'Continue a rota principal';
+    if (/run|campanha|historia|new game|ng\+?/.test(normalized)) return index === 0 ? 'Avance pela campanha' : 'Prossiga pela rota planejada';
     if (/final|platina|100%|cem por cento/.test(normalized) || index === total - 1) return 'Fechamento e revisão final';
     if (index === 0) return 'Rota inicial da platina';
 

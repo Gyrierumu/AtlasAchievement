@@ -272,6 +272,7 @@ function normalizeGame(row, roadmapRows, trophyRows) {
     : Boolean(item?.is_missable);
   const missableCount = trophyRows.filter(item => isCanonicalMissableTrophy(item) && !isPlatinumTrophy(item)).length;
   const spoilerCount = trophyRows.filter(item => item.is_spoiler).length;
+  const useSeedRoadmap = ['god-of-war', 'resident-evil-requiem'].includes(normalizedSlug) && Array.isArray(seedGame?.roadmap);
 
   return {
     id: row.id,
@@ -320,7 +321,7 @@ function normalizeGame(row, roadmapRows, trophyRows) {
     extraContentStatus: normalizedSlug === 'elden-ring' ? 'pending' : undefined,
     newGamePlusRequired: normalizedSlug === 'the-last-of-us-part-ii' ? true : (normalizedSlug === 'the-last-of-us-part-i' ? false : undefined),
     difficultyTrophiesRequired: ['the-last-of-us-part-i', 'the-last-of-us-part-ii'].includes(normalizedSlug) ? false : undefined,
-    roadmap: (Array.isArray(seedGame?.roadmap) && normalizedSlug === 'resident-evil-requiem'
+    roadmap: (useSeedRoadmap
       ? seedGame.roadmap
       : roadmapRows.map(item => deserializeRoadmapStep(item.content)))
       .map((step, index, rows) => guideModel.normalizeRoadmapStep(step, index, rows.length)),
@@ -330,12 +331,13 @@ function normalizeGame(row, roadmapRows, trophyRows) {
       const useSeedEditorialTrophy = ['god-of-war', 'resident-evil-requiem'].includes(normalizedSlug) && seedTrophy;
       const description = useSeedEditorialTrophy ? (seedTrophy.description || item.description || '') : (item.description || '');
       const tip = useSeedEditorialTrophy ? (seedTrophy.tip || item.tip || '') : item.tip;
-      const namePt = useSeedEditorialTrophy ? (seedTrophy.name_pt || item.name_pt || '') : (item.name_pt || '');
+      const originalName = useSeedEditorialTrophy ? (seedTrophy.name || item.name || '') : (item.name || '');
+      const namePt = useSeedEditorialTrophy ? (seedTrophy.name_pt || '') : (item.name_pt || '');
       return {
         id: item.trophy_code,
-        name: item.name,
+        name: originalName,
         name_pt: namePt,
-        trophyNameOriginal: item.name,
+        trophyNameOriginal: originalName,
         trophyNamePtBr: namePt,
         namePtSource: namePt && LOCALIZED_TROPHY_SOURCE_SLUGS.has(normalizedSlug) ? (seedTrophy?.namePtSource || 'trusted_steam_ptbr') : '',
         type: item.type,
