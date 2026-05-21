@@ -339,7 +339,7 @@ function normalizeGame(row, roadmapRows, trophyRows) {
         name_pt: namePt,
         trophyNameOriginal: originalName,
         trophyNamePtBr: namePt,
-        namePtSource: namePt && LOCALIZED_TROPHY_SOURCE_SLUGS.has(normalizedSlug) ? (seedTrophy?.namePtSource || 'trusted_steam_ptbr') : '',
+        namePtSource: namePt && LOCALIZED_TROPHY_SOURCE_SLUGS.has(normalizedSlug) ? (seedTrophy?.namePtSource || (normalizedSlug === 'god-of-war' ? 'editorial_ptbr' : 'trusted_steam_ptbr')) : '',
         type: item.type,
         description,
         descriptionOriginal: seedTrophy?.descriptionOriginal || '',

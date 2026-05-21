@@ -10589,6 +10589,7 @@ const sampleGames = [
       {
         "id": "gow2018_father_and_son",
         "name": "Father and Son",
+        "name_pt": "Pai e Filho",
         "type": "Platina",
         "description": "Obtenha todos os outros troféus.",
         "tip": "Conclua todos os troféus da lista base de God of War (2018) para liberar a platina.",
@@ -10597,6 +10598,7 @@ const sampleGames = [
       {
         "id": "gow2018_the_journey_begins",
         "name": "The Journey Begins",
+        "name_pt": "A Jornada Começa",
         "type": "Bronze",
         "description": "Defenda sua casa contra The Stranger.",
         "tip": "Troféu automático de história no começo da campanha.",
@@ -10605,6 +10607,7 @@ const sampleGames = [
       {
         "id": "gow2018_a_new_friend",
         "name": "A New Friend",
+        "name_pt": "Um Novo Amigo",
         "type": "Bronze",
         "description": "Sobreviva à Witch’s Woods.",
         "tip": "Troféu automático de história durante Path to the Mountain.",
@@ -10613,6 +10616,7 @@ const sampleGames = [
       {
         "id": "gow2018_feels_like_home",
         "name": "Feels Like Home",
+        "name_pt": "Parece o Lar",
         "type": "Bronze",
         "description": "Permita que os Light Elves retornem para casa.",
         "tip": "Troféu automático de história em The Light of Alfheim.",
@@ -10621,6 +10625,7 @@ const sampleGames = [
       {
         "id": "gow2018_dragon_slayer",
         "name": "Dragon Slayer",
+        "name_pt": "Matador de Dragões",
         "type": "Bronze",
         "description": "Derrote o Dragon of the Mountain.",
         "tip": "Troféu automático de história ao derrotar o dragão da montanha.",
@@ -10629,6 +10634,7 @@ const sampleGames = [
       {
         "id": "gow2018_troubling_consequences",
         "name": "Troubling Consequences",
+        "name_pt": "Consequências Problemáticas",
         "type": "Bronze",
         "description": "Derrote Magni e Modi.",
         "tip": "Troféu automático de história ligado ao chefe Magni e Modi.",
@@ -10637,6 +10643,7 @@ const sampleGames = [
       {
         "id": "gow2018_hello_old_friend",
         "name": "Hello, Old Friend",
+        "name_pt": "Olá, Velho Amigo",
         "type": "Bronze",
         "description": "Recupere as Blades of Chaos.",
         "tip": "Troféu automático de história ligado a uma grande virada de equipamento.",
@@ -10645,6 +10652,7 @@ const sampleGames = [
       {
         "id": "gow2018_promise_fulfilled",
         "name": "Promise Fulfilled",
+        "name_pt": "Promessa Cumprida",
         "type": "Bronze",
         "description": "Cure Atreus durante a história.",
         "tip": "Troféu automático de história durante The Sickness.",
@@ -10653,6 +10661,7 @@ const sampleGames = [
       {
         "id": "gow2018_round_2",
         "name": "Round 2",
+        "name_pt": "Rodada 2",
         "type": "Bronze",
         "description": "Resgate Atreus durante a história.",
         "tip": "Troféu automático de história em Return to the Summit.",
@@ -10661,6 +10670,7 @@ const sampleGames = [
       {
         "id": "gow2018_past_haunts",
         "name": "Past Haunts",
+        "name_pt": "Assombrações do Passado",
         "type": "Bronze",
         "description": "Saia de Helheim usando o navio.",
         "tip": "Troféu automático de história em Escape from Helheim.",
@@ -10669,6 +10679,7 @@ const sampleGames = [
       {
         "id": "gow2018_twilight_beckons",
         "name": "Twilight Beckons",
+        "name_pt": "O Crepúsculo Chama",
         "type": "Bronze",
         "description": "Derrote Baldur.",
         "tip": "Troféu automático de história em encontro avançado da campanha.",
@@ -10677,6 +10688,7 @@ const sampleGames = [
       {
         "id": "gow2018_last_wish",
         "name": "Last Wish",
+        "name_pt": "Último Desejo",
         "type": "Ouro",
         "description": "Conclua a história principal.",
         "tip": "Troféu de conclusão da campanha principal. O free-roam continua disponível depois disso.",
@@ -10685,6 +10697,7 @@ const sampleGames = [
       {
         "id": "gow2018_beneath_the_surface",
         "name": "Beneath the Surface",
+        "name_pt": "Sob a Superfície",
         "type": "Bronze",
         "description": "Revele todas as áreas principais do Lake of Nine.",
         "tip": "Revele e visite as áreas principais ao redor do Lake of Nine; o cleanup de coletáveis costuma desbloquear isso naturalmente.",
@@ -10693,6 +10706,7 @@ const sampleGames = [
       {
         "id": "gow2018_death_happened_here",
         "name": "Death Happened Here",
+        "name_pt": "A Morte Passou por Aqui",
         "type": "Bronze",
         "description": "Conclua a exploração de Veithurgard.",
         "tip": "Complete os marcadores e coletáveis de Veithurgard até limpar a região.",
@@ -10701,6 +10715,7 @@ const sampleGames = [
       {
         "id": "gow2018_trilingual",
         "name": "Trilingual",
+        "name_pt": "Trilíngue",
         "type": "Bronze",
         "description": "Aprenda os idiomas de Muspelheim e Niflheim.",
         "tip": "Abra chests de cifras para liberar Muspelheim e Niflheim. Há cifras extras, então a platina não fica perdível.",
@@ -10709,6 +10724,7 @@ const sampleGames = [
       {
         "id": "gow2018_dwarven_ingenuity",
         "name": "Dwarven Ingenuity",
+        "name_pt": "Engenhosidade Anã",
         "type": "Bronze",
         "description": "Melhore uma peça de armadura.",
         "tip": "Melhore qualquer peça de armadura em uma loja de Brok ou Sindri.",
@@ -10717,6 +10733,7 @@ const sampleGames = [
       {
         "id": "gow2018_nice_moves",
         "name": "Nice Moves",
+        "name_pt": "Bons Movimentos",
         "type": "Bronze",
         "description": "Obtenha uma Runic Attack Gem.",
         "tip": "A primeira Runic Attack Gem vem naturalmente pela história; outras aparecem em baús, chefes e favores.",
@@ -10725,6 +10742,7 @@ const sampleGames = [
       {
         "id": "gow2018_idunns_orchard",
         "name": "Iðunn’s Orchard",
+        "name_pt": "Pomar de Iðunn",
         "type": "Prata",
         "description": "Melhore sua vida ao máximo.",
         "tip": "Colete Idunn Apples em Nornir Chests até melhorar a vida ao máximo.",
@@ -10733,6 +10751,7 @@ const sampleGames = [
       {
         "id": "gow2018_quick_tempered",
         "name": "Quick Tempered",
+        "name_pt": "Temperamento Rápido",
         "type": "Prata",
         "description": "Melhore sua fúria ao máximo.",
         "tip": "Colete Horns of Blood Mead em Nornir Chests até melhorar a fúria ao máximo.",
@@ -10741,6 +10760,7 @@ const sampleGames = [
       {
         "id": "gow2018_best_dressed",
         "name": "Best Dressed",
+        "name_pt": "Bem Vestido",
         "type": "Bronze",
         "description": "Crie uma roupa para Atreus.",
         "tip": "Compre qualquer armadura de Atreus em uma loja.",
@@ -10749,6 +10769,7 @@ const sampleGames = [
       {
         "id": "gow2018_enchanted",
         "name": "Enchanted",
+        "name_pt": "Encantado",
         "type": "Bronze",
         "description": "Equipe um encantamento em sua armadura.",
         "tip": "Equipe um encantamento em uma peça de armadura com espaço liberado.",
@@ -10757,6 +10778,7 @@ const sampleGames = [
       {
         "id": "gow2018_all_will_fall",
         "name": "All Will Fall",
+        "name_pt": "Todos Cairão",
         "type": "Prata",
         "description": "Derrote 1.000 inimigos.",
         "tip": "Costuma vir naturalmente durante história, coletáveis, favores, Muspelheim e Niflheim.",
@@ -10765,6 +10787,7 @@ const sampleGames = [
       {
         "id": "gow2018_dangerous_skies",
         "name": "Dangerous Skies",
+        "name_pt": "Céus Perigosos",
         "type": "Prata",
         "description": "Liberte todos os dragões.",
         "tip": "Complete os três favores de dragões em Midgard: Fafnir, Reginn e Otr.",
@@ -10773,6 +10796,7 @@ const sampleGames = [
       {
         "id": "gow2018_like_oil_and_water",
         "name": "Like Oil and Water",
+        "name_pt": "Como Água e Óleo",
         "type": "Ouro",
         "description": "Conclua todos os favores de Brok e Sindri.",
         "tip": "Finalize os cinco favores principais de Brok e Sindri em Midgard.",
@@ -10781,6 +10805,7 @@ const sampleGames = [
       {
         "id": "gow2018_curator",
         "name": "Curator",
+        "name_pt": "Curador",
         "type": "Prata",
         "description": "Colete todos os artefatos.",
         "tip": "Colete todos os artefatos por região; nada é perdido e o mapa ajuda no cleanup.",
@@ -10789,6 +10814,7 @@ const sampleGames = [
       {
         "id": "gow2018_allfather_blinded",
         "name": "Allfather Blinded",
+        "name_pt": "Pai de Todos Cegado",
         "type": "Prata",
         "description": "Elimine todos os Odin’s Ravens.",
         "tip": "Encontre e destrua todos os 51 Odin’s Ravens. Use checklist por região para evitar caça cega no final.",
@@ -10797,6 +10823,7 @@ const sampleGames = [
       {
         "id": "gow2018_the_best_moves",
         "name": "The Best Moves",
+        "name_pt": "Os Melhores Movimentos",
         "type": "Bronze",
         "description": "Melhore uma Runic Attack ao máximo.",
         "tip": "Use XP para melhorar qualquer Runic Attack até o nível máximo.",
@@ -10805,6 +10832,7 @@ const sampleGames = [
       {
         "id": "gow2018_worthy",
         "name": "Worthy",
+        "name_pt": "Digno",
         "type": "Bronze",
         "description": "Melhore completamente o Leviathan Axe com todos os upgrades.",
         "tip": "Leve o Leviathan Axe ao nível máximo; o último upgrade depende de recurso de Niflheim após avançar bastante.",
@@ -10813,6 +10841,7 @@ const sampleGames = [
       {
         "id": "gow2018_why_fight_it",
         "name": "Why Fight It?",
+        "name_pt": "Por que Lutar Contra Isso?",
         "type": "Bronze",
         "description": "Melhore completamente as Blades of Chaos.",
         "tip": "Leve as Blades of Chaos ao nível máximo; o último upgrade envolve Muspelheim e uma valquíria.",
@@ -10821,6 +10850,7 @@ const sampleGames = [
       {
         "id": "gow2018_path_of_the_zealot",
         "name": "Path of the Zealot",
+        "name_pt": "Caminho do Zelote",
         "type": "Bronze",
         "description": "Obtenha o conjunto de armadura Traveler.",
         "tip": "Derrote Travellers, entregue o material na loja e craft o set completo.",
@@ -10829,6 +10859,7 @@ const sampleGames = [
       {
         "id": "gow2018_primordial",
         "name": "Primordial",
+        "name_pt": "Primordial",
         "type": "Bronze",
         "description": "Obtenha o conjunto de armadura Ancient.",
         "tip": "Derrote Ancients, entregue o material na loja e craft o set completo.",
@@ -10837,6 +10868,7 @@ const sampleGames = [
       {
         "id": "gow2018_unfinished_business",
         "name": "Unfinished Business",
+        "name_pt": "Assuntos Inacabados",
         "type": "Prata",
         "description": "Ajude todos os wayward spirits.",
         "tip": "Complete os favores de wayward spirits em Midgard, incluindo o favor iniciado por scroll.",
@@ -10845,6 +10877,7 @@ const sampleGames = [
       {
         "id": "gow2018_treasure_hunter",
         "name": "Treasure Hunter",
+        "name_pt": "Caçador de Tesouros",
         "type": "Prata",
         "description": "Utilize todos os mapas do tesouro para encontrar os tesouros.",
         "tip": "Encontre todos os treasure maps e cave nos 12 locais correspondentes.",
@@ -10853,6 +10886,7 @@ const sampleGames = [
       {
         "id": "gow2018_the_truth",
         "name": "The Truth",
+        "name_pt": "A Verdade",
         "type": "Prata",
         "description": "Leia todos os Jötnar shrines.",
         "tip": "Leia todos os 11 Jötnar shrines. Eles não são perdíveis, mas não são todos rastreados do mesmo jeito no mapa.",
@@ -10861,6 +10895,7 @@ const sampleGames = [
       {
         "id": "gow2018_fire_and_brimstone",
         "name": "Fire and Brimstone",
+        "name_pt": "Fogo e Enxofre",
         "type": "Ouro",
         "description": "Conclua todos os desafios de Muspelheim.",
         "tip": "Conclua as provas de Muspelheim e faça as chaves necessárias para fechar o desafio final.",
@@ -10869,6 +10904,7 @@ const sampleGames = [
       {
         "id": "gow2018_darkness_and_fog",
         "name": "Darkness and Fog",
+        "name_pt": "Escuridão e Névoa",
         "type": "Ouro",
         "description": "Recupere todos os tesouros da câmara central de Niflheim.",
         "tip": "Farme Mist Echoes em Niflheim e abra todos os baús e realm tears da câmara central.",
@@ -10877,6 +10913,7 @@ const sampleGames = [
       {
         "id": "gow2018_chooser_of_the_slain",
         "name": "Chooser of the Slain",
+        "name_pt": "Escolhedor dos Mortos",
         "type": "Ouro",
         "description": "Derrote as nove Valkyries.",
         "tip": "Derrote as oito valquírias e depois a Valkyrie Queen. É o maior pico de execução da platina.",

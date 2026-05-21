@@ -563,11 +563,15 @@ async function validateGuide(slug = '') {
     });
     seedGame.trophies.forEach(trophy => {
       assert(trophy.name && !/^(undefined|null|\[object Object\])$/i.test(trophy.name), `${trophy.id} deve manter nome original em ingles`);
+      assert(trophy.name_pt && !/^(undefined|null|\[object Object\])$/i.test(trophy.name_pt), `${trophy.id} deve ter nome principal em portugues`);
       assert(!String(trophy.name).includes(' / '), `${trophy.id} nao deve concatenar nomes no campo name`);
       const ptNames = [trophy.name_pt, trophy.namePt, trophy.titlePt, trophy.translatedName, trophy.localizedName, trophy.displayName, trophy.ptName, trophy.trophyNamePtBr]
         .filter(value => String(value || '').trim());
       assert(ptNames.length <= 1, `${trophy.id} nao deve ter duas fontes de nome em portugues`);
     });
+    assert.strictEqual(seedGame.trophies.filter(trophy => trophy.name_pt && trophy.name_pt.trim()).length, 37, 'God of War (2018) deve ter titulo PT-BR nos 37 trofeus');
+    assert(seedGame.trophies.some(trophy => trophy.name === 'Father and Son' && trophy.name_pt === 'Pai e Filho'), 'Father and Son deve exibir Pai e Filho como titulo PT-BR');
+    assert(seedGame.trophies.some(trophy => trophy.name === 'Chooser of the Slain' && trophy.name_pt === 'Escolhedor dos Mortos'), 'Chooser of the Slain deve exibir Escolhedor dos Mortos como titulo PT-BR');
     assert(gowText.includes('DLC fora da platina base'), 'God of War (2018) deve padronizar DLC fora da platina base');
     assert(routeItems.length <= 5, 'God of War (2018) deve renderizar no maximo 5 pontos de atencao');
     ['gow2018_chooser_of_the_slain', 'gow2018_darkness_and_fog', 'gow2018_fire_and_brimstone', 'gow2018_allfather_blinded', 'gow2018_treasure_hunter'].forEach(id => {
@@ -1316,13 +1320,20 @@ async function validateGuide(slug = '') {
       });
       apiGame.trophies.forEach(trophy => {
         assert(trophy.name && trophy.trophyNameOriginal === trophy.name, `${trophy.id} deve expor nome original em ingles como fonte canonica`);
+        assert(trophy.name_pt && trophy.trophyNamePtBr === trophy.name_pt, `${trophy.id} deve expor nome principal em portugues`);
         assert(!/^(undefined|null|\[object Object\])$/i.test(`${trophy.name} ${trophy.trophyNameOriginal}`), `${trophy.id} nao deve expor placeholder no nome`);
         assert(!String(trophy.name).includes(' / '), `${trophy.id} nao deve concatenar nomes no titulo principal`);
         const ptNames = [trophy.name_pt, trophy.trophyNamePtBr, trophy.namePt, trophy.titlePt, trophy.localizedName, trophy.translatedName]
           .filter(value => String(value || '').trim());
-        assert(ptNames.length <= 1, `${trophy.id} nao deve expor duas traducoes em portugues`);
+        assert.strictEqual(new Set(ptNames).size, 1, `${trophy.id} deve expor uma unica traducao em portugues`);
       });
+      assert.strictEqual(apiGame.trophies.filter(trophy => trophy.name_pt && trophy.trophyNamePtBr).length, 37, 'API de God of War (2018) deve retornar titulo PT-BR nos 37 trofeus');
+      assert(html.includes('<h4>Pai e Filho</h4>') && html.includes('NOME ORIGINAL:</span>Father and Son'), 'Checklist de God of War (2018) deve renderizar Pai e Filho com nome original Father and Son');
+      assert(html.includes('<h4>Escolhedor dos Mortos</h4>') && html.includes('NOME ORIGINAL:</span>Chooser of the Slain'), 'Checklist de God of War (2018) deve renderizar Escolhedor dos Mortos com nome original Chooser of the Slain');
+      assert((html.match(/NOME ORIGINAL:<\/span>/g) || []).length >= 2, 'Checklist de God of War (2018) deve exibir NOME ORIGINAL nos trofeus renderizados no SSR');
+      assert(!html.includes('<h4>Father and Son</h4>'), 'Checklist de God of War (2018) nao deve usar ingles como titulo principal quando ha PT-BR');
       assert(!html.includes('Pai e Filho / Father and Son'), 'Checklist de God of War (2018) nao deve concatenar traducao e original');
+      assert(!html.includes('Pai e Filho / Pai e Filho'), 'Checklist de God of War (2018) nao deve duplicar traducao PT-BR');
       assert(!html.includes('Father and Son / Father and Son'), 'Checklist de God of War (2018) nao deve duplicar nome original');
       assert(html.includes('God of War'), 'God of War (2018) deve renderizar nome no SSR');
       assert(html.includes('Verificado'), 'God of War (2018) deve renderizar status Verificado');

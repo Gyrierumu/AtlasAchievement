@@ -6764,6 +6764,9 @@ async function assertSeedData({ all, get }, sampleGames) {
   });
   assert.strictEqual(godOfWarSample.trophies.filter(trophy => trophy.is_missable).length, 0, 'God of War (2018) nao deve marcar perdiveis');
   assert.strictEqual(godOfWarSample.trophies.filter(trophy => trophy.is_spoiler).length, 16, 'God of War (2018) deve manter spoiler_count coerente');
+  assert.strictEqual(godOfWarSample.trophies.filter(trophy => trophy.name_pt && trophy.name_pt.trim()).length, 37, 'God of War (2018) deve ter nomes PT-BR nos 37 trofeus');
+  assert(godOfWarSample.trophies.some(trophy => trophy.name === 'Father and Son' && trophy.name_pt === 'Pai e Filho'), 'God of War (2018) deve renderizar Pai e Filho como titulo PT-BR');
+  assert(godOfWarSample.trophies.some(trophy => trophy.name === 'Chooser of the Slain' && trophy.name_pt === 'Escolhedor dos Mortos'), 'God of War (2018) deve renderizar Escolhedor dos Mortos como titulo PT-BR');
   assert(!godOfWarSample.trophies.some(trophy => /Ragnar[oö]k|Valhalla|Ascension|God of War III|DLC|add-?on/i.test(`${trophy.name} ${trophy.description}`)), 'God of War (2018) nao deve misturar DLC/add-ons ou outros jogos na checklist base');
   const godOfWarTypeCounts = godOfWarSample.trophies.reduce((counts, trophy) => {
     counts[trophy.type] = (counts[trophy.type] || 0) + 1;
@@ -12184,6 +12187,11 @@ async function assertBackendEditorialConsistency() {
       h1Includes: 'God of War'
     });
     assert(godOfWarGuideHtml.includes('Father and Son'), 'SSR de God of War (2018) deve renderizar checklist');
+    assert(godOfWarGuideHtml.includes('<h4>Pai e Filho</h4>') && godOfWarGuideHtml.includes('NOME ORIGINAL:</span>Father and Son'), 'SSR de God of War (2018) deve renderizar Pai e Filho com nome original');
+    assert(godOfWarGuideHtml.includes('<h4>Escolhedor dos Mortos</h4>') && godOfWarGuideHtml.includes('NOME ORIGINAL:</span>Chooser of the Slain'), 'SSR de God of War (2018) deve renderizar Escolhedor dos Mortos com nome original');
+    assert((godOfWarGuideHtml.match(/NOME ORIGINAL:<\/span>/g) || []).length >= 2, 'SSR de God of War (2018) deve exibir NOME ORIGINAL nos trofeus renderizados');
+    assert(!godOfWarGuideHtml.includes('<h4>Father and Son</h4>'), 'SSR de God of War (2018) nao deve usar ingles como titulo principal quando ha PT-BR');
+    assert(!/Pai e Filho\s*\/\s*(?:Father and Son|Pai e Filho)/.test(godOfWarGuideHtml), 'SSR de God of War (2018) nao deve concatenar nomes de trofeu');
     assert(godOfWarGuideHtml.includes('37 trof'), 'SSR de God of War (2018) deve renderizar total de 37 trofeus');
     assert(normalizeText(godOfWarGuideHtml).includes('god of war (2018) tem uma platina focada'), 'SSR de God of War (2018) deve renderizar resumo editorial forte');
     assert(godOfWarGuideHtml.includes('DLC fora da platina base'), 'SSR de God of War (2018) deve renderizar DLC fora da platina base');
@@ -12363,7 +12371,7 @@ async function assertBackendEditorialConsistency() {
       descriptionIncludes: 'The Last of Us Part II',
       h1Includes: 'The Last of Us Part II'
     });
-    assert(tlouPartIIGuideHtml.includes('Até Não Sobrar Nenhum') && tlouPartIIGuideHtml.includes('Nome original:</span>Every Last One of Them'), 'SSR de The Last of Us Part II deve renderizar nome PT-BR e nome original na checklist');
+    assert(tlouPartIIGuideHtml.includes('Até Não Sobrar Nenhum') && tlouPartIIGuideHtml.includes('NOME ORIGINAL:</span>Every Last One of Them'), 'SSR de The Last of Us Part II deve renderizar nome PT-BR e nome original na checklist');
     assert(tlouPartIIGuideHtml.includes('O Que Eu Tive Que Fazer') && tlouPartIIGuideHtml.includes('Arquivista'), 'SSR de The Last of Us Part II deve renderizar localizacoes Steam PT-BR');
     assert(tlouPartIIGuideHtml.includes('26 trof'), 'SSR de The Last of Us Part II deve renderizar total de 26 trofeus');
     assert(tlouPartIIGuideHtml.includes('Verificado'), 'SSR de The Last of Us Part II deve renderizar status Verificado');
@@ -12510,7 +12518,7 @@ async function assertBackendEditorialConsistency() {
       descriptionIncludes: 'Astro Bot',
       h1Includes: 'Astro Bot — Guia de platina e troféus'
     });
-    assert(astroBotGuideHtml.includes('Astro-nômico!') && astroBotGuideHtml.includes('Nome original:</span>Astro-nomical!'), 'SSR de Astro Bot deve renderizar nome PT-BR e nome original');
+    assert(astroBotGuideHtml.includes('Astro-nômico!') && astroBotGuideHtml.includes('NOME ORIGINAL:</span>Astro-nomical!'), 'SSR de Astro Bot deve renderizar nome PT-BR e nome original');
     assert(astroBotGuideHtml.includes('Muito a Processar') && astroBotGuideHtml.includes('O Bot Dourado'), 'SSR de Astro Bot deve renderizar localizacao editorial na checklist');
     assert(astroBotGuideHtml.includes('Verificado'), 'SSR de Astro Bot deve renderizar status Verificado');
     assert(astroBotGuideHtml.includes('DLC fora da platina base'), 'SSR de Astro Bot deve mostrar DLC fora da platina base');
@@ -12619,7 +12627,7 @@ async function assertBackendEditorialConsistency() {
       descriptionIncludes: 'Astro&#39;s Playroom',
       h1Includes: 'Astro&#39;s Playroom'
     });
-    assert(astrosPlayroomGuideHtml.includes('Você Fez Tudo') && astrosPlayroomGuideHtml.includes('Nome original:</span>You&#39;ve Only Done Everything'), "SSR de Astro's Playroom deve renderizar nome PT-BR e nome original");
+    assert(astrosPlayroomGuideHtml.includes('Você Fez Tudo') && astrosPlayroomGuideHtml.includes('NOME ORIGINAL:</span>You&#39;ve Only Done Everything'), "SSR de Astro's Playroom deve renderizar nome PT-BR e nome original");
     assert(astrosPlayroomGuideHtml.includes('Manda Ver!') && astrosPlayroomGuideHtml.includes('Aventureiro de Artefatos') && astrosPlayroomGuideHtml.includes('Um Grande Passeio!'), "SSR de Astro's Playroom deve renderizar localizacao editorial na checklist");
     assert(astrosPlayroomGuideHtml.includes('atlas-guide-cover--poster'), "SSR de Astro's Playroom deve usar cover_image como poster do guia");
     assert(astrosPlayroomGuideHtml.includes('https://images.launchbox-app.com/63073a9e-497e-4069-b47a-e24577a6c407.jpg'), "SSR de Astro's Playroom deve renderizar cover_image vertical");
@@ -13539,6 +13547,7 @@ function assertPriorityGuideEditorialTrust() {
     'the-last-of-us-part-i': { total: 29, Platina: 1, Ouro: 7, Prata: 7, Bronze: 14, namePt: 29 },
     'the-last-of-us-part-ii': { total: 26, Platina: 1, Ouro: 7, Prata: 8, Bronze: 10, namePt: 26 },
     'ghost-of-tsushima': { total: 52, Platina: 1, Ouro: 2, Prata: 9, Bronze: 40 },
+    'god-of-war': { total: 37, Platina: 1, Ouro: 5, Prata: 9, Bronze: 22, namePt: 37 },
     'pragmata': { total: 36, Platina: 1, Ouro: 5, Prata: 9, Bronze: 21, namePt: 35 }
   };
   const bySlug = new Map(sampleGames.map(game => [game.slug, game]));

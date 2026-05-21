@@ -714,7 +714,7 @@ function renderTrophyCardHtml(trophy, completedIds = new Set(), index = 0, game 
           <div class="atlas-trophy-card__headline">
             <div class="atlas-trophy-card__title">
               <h4>${escapeHtml(primaryName)}</h4>
-              ${editorialName ? `<p class="atlas-trophy-card__title-translation"><span>Nome original:</span>${escapeHtml(officialName)}</p>` : ''}
+              ${editorialName ? `<p class="atlas-trophy-card__title-translation"><span>NOME ORIGINAL:</span>${escapeHtml(officialName)}</p>` : ''}
             </div>
             <div class="atlas-trophy-card__meta">
               <span class="atlas-trophy-type">${escapeHtml(trophy.type || 'Bronze')}</span>
