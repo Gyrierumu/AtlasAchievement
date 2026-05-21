@@ -10493,7 +10493,7 @@ const sampleGames = [
     "dlc_scope": "DLC fora da platina base. A platina base não exige DLC, God of War Ragnarök, Valhalla ou modos extras de outro jogo.",
     "difficulty_reason": "A dificuldade vem mais dos combates opcionais, Valkyries, Muspelheim, Niflheim e completude do mapa do que de dificuldade obrigatória ou runs múltiplas.",
     "time_reason": "A faixa de 30-40 horas considera história, exploração, coletáveis, favores, upgrades, valquírias e cleanup em free-roam.",
-    "first_run_advice": "Jogue a história em uma dificuldade confortável, explorando naturalmente e abrindo atalhos, baús, favores e áreas secundárias quando estiverem no caminho. Não é necessário limpar tudo logo de início.",
+    "first_run_advice": "Jogue a campanha naturalmente, explore quando quiser e deixe o cleanup pesado para depois da história.",
     "cleanup_advice": "Após a história, use o free roam e o mapa por região para limpar coletáveis, favores, dragões, upgrades, Muspelheim, Niflheim e Valkyries. Deixe Mist Echoes, trials finais e Valkyrie Queen para quando Kratos estiver bem equipado.",
     "before_you_start": "God of War (2018) é uma platina single-player, sem online, coop, DLC ou dificuldade obrigatória. A atenção real é organizar coletáveis por região, acompanhar os 51 Odin’s Ravens no checklist e guardar Valkyries e reinos de desafio para o pós-história.",
     "best_for": "Ideal para quem quer uma platina narrativa, acessível e com bastante exploração de mundo semiaberto.",
@@ -10512,80 +10512,76 @@ const sampleGames = [
     "roadmap": [
       {
         "title": "Avance a história em uma dificuldade confortável",
-        "focus": "História / aprendizado",
-        "objective": "Concluir a campanha principal enquanto aprende combate, Atreus, Runic Attacks, exploração e upgrades.",
+        "focus": "Campanha / progressão",
+        "objective": "Concluir a história principal enquanto abre recursos, atalhos, habilidades e áreas para o cleanup.",
         "actions": [
-          "Escolha uma dificuldade confortável, porque a platina não exige dificuldade específica.",
-          "Avance a história e abra baús, atalhos, favores e áreas secundárias quando estiverem no caminho.",
-          "Pegue upgrades naturais de vida, fúria, armas, armaduras e runas sem travar a campanha para limpar tudo.",
-          "Use o checklist apenas para marcar o que já apareceu: artefatos, shrines, lore, treasure maps e Odin’s Ravens visíveis."
+          "Jogue em uma dificuldade confortável.",
+          "Explore baús, favores e áreas secundárias quando estiverem no caminho.",
+          "Não tente limpar todos os reinos antes de ter equipamentos melhores.",
+          "Aproveite a campanha para aprender combate, runas, esquivas e uso de Atreus."
         ],
-        "warning": "Não misture a rota com God of War Ragnarök, Valhalla ou conteúdo de outro jogo.",
-        "result": "Campanha avançada com boa base de combate para o cleanup."
+        "result": "História concluída e base preparada para exploração avançada."
       },
       {
         "title": "Explore reinos e abra atividades secundárias",
         "focus": "Exploração / reinos",
-        "objective": "Liberar rotas, reinos, viagens, favores e marcadores do mapa para deixar o cleanup mais organizado.",
+        "objective": "Liberar áreas, viagens, atalhos e atividades opcionais que serão usadas no cleanup.",
         "actions": [
-          "Explore o Lake of Nine conforme novas áreas ficarem disponíveis.",
-          "Abra Mystic Gateways, lojas, atalhos e regiões opcionais para facilitar retornos posteriores.",
-          "Faça favores próximos do caminho quando estiver com nível e equipamento adequados.",
-          "Deixe itens travados por habilidade, equipamento ou história para o pós-história/free roam."
+          "Revisite reinos após ganhar novas habilidades.",
+          "Abra baús, portais e caminhos bloqueados.",
+          "Ative favores e atividades secundárias disponíveis.",
+          "Marque pendências por região para não repetir rotas sem necessidade."
         ],
-        "warning": "História primeiro é seguro: coletáveis e atividades da lista base podem ser limpos depois.",
-        "result": "Reinos principais abertos e mapa preparado para limpeza por região."
+        "result": "Reinos principais abertos e pendências organizadas."
       },
       {
         "title": "Complete favores, coletáveis e mapas por região",
-        "focus": "Coletáveis / favores",
-        "objective": "Reduzir retrabalho fechando atividades regionais em blocos, em vez de caçar pendências soltas no final.",
+        "focus": "Coletáveis / checklist",
+        "objective": "Resolver artefatos, corvos de Odin, mapas do tesouro, favores e coletáveis usando uma ordem por região.",
         "actions": [
-          "Limpe regiões usando o mapa e a checklist para artefatos, Jötnar shrines, lore markers e Nornir Chests.",
-          "Acompanhe Odin’s Ravens por região para evitar revisitar áreas sem necessidade.",
-          "Complete favores de Brok, Sindri, wayward spirits e dragões quando estiverem acessíveis.",
-          "Resolva treasure maps junto com a exploração regional."
+          "Limpe uma região por vez.",
+          "Use checklist para artefatos, corvos, baús e mapas do tesouro.",
+          "Complete favores de Brok, Sindri e atividades secundárias.",
+          "Deixe objetivos mais difíceis para quando a build estiver mais forte."
         ],
-        "warning": "Coletáveis são recuperáveis, mas deixar tudo para o final aumenta bastante o tempo de busca.",
-        "result": "Favores, mapas do tesouro e coletáveis principais encaminhados antes dos desafios mais pesados."
+        "result": "Grande parte dos coletáveis e favores concluída."
       },
       {
         "title": "Trabalhe Muspelheim e Niflheim em etapas próprias",
         "focus": "Muspelheim / Niflheim",
-        "objective": "Separar os reinos de desafio e farm para controlar melhor grind, recursos e dificuldade.",
+        "objective": "Separar os dois reinos mais repetitivos para evitar misturar grind, desafio e exploração comum.",
         "actions": [
-          "Entre em Muspelheim quando sua build estiver forte o bastante para os trials.",
-          "Use Muspelheim para testar runas, armaduras, controle de grupos e dano consistente.",
-          "Trabalhe Niflheim em sessões próprias, focando Mist Echoes, baús, realm tears e rota eficiente.",
-          "Evite misturar farm longo de Niflheim com caça aleatória de coletáveis."
+          "Faça Muspelheim quando sua build estiver pronta para desafios de combate.",
+          "Trabalhe Niflheim com foco em rota, recursos e repetição eficiente.",
+          "Melhore equipamentos antes de insistir em tentativas longas.",
+          "Evite deixar todo o grind para o último momento."
         ],
-        "warning": "Muspelheim e Niflheim não são perdíveis, mas ficam bem menos cansativos com equipamentos melhores.",
-        "result": "Reinos opcionais avançados com recursos importantes para upgrades finais."
+        "warning": "Niflheim pode ser a parte mais repetitiva da platina.",
+        "result": "Troféus e recursos principais de Muspelheim e Niflheim encaminhados ou concluídos."
       },
       {
         "title": "Derrote Valkyries e finalize upgrades importantes",
         "focus": "Valkyries / upgrades",
-        "objective": "Enfrentar o maior pico de dificuldade da platina depois que Kratos estiver bem equipado.",
+        "objective": "Enfrentar os maiores desafios de combate com equipamentos, runas e atributos já fortalecidos.",
         "actions": [
-          "Melhore Leviathan Axe, Blades of Chaos, armaduras, Runic Attacks e encantamentos.",
-          "Derrote as Valkyries opcionais antes de enfrentar a Valkyrie Queen.",
-          "Ajuste runas e talismãs para sobrevivência, dano e controle de cooldown.",
-          "Use as lutas para refinar esquiva, parry, leitura de padrões e uso de Atreus."
+          "Derrote Valkyries depois de melhorar vida, fúria, armadura e runas.",
+          "Aprenda padrões antes de tentar lutas mais difíceis.",
+          "Use upgrades finais para facilitar chefes opcionais.",
+          "Ajuste talismãs, encantamentos e habilidades conforme a luta."
         ],
-        "warning": "Valkyries são desafio de execução, não perdíveis. Deixe a Valkyrie Queen para o fim.",
-        "result": "Chefes opcionais e upgrades críticos resolvidos para fechar a platina."
+        "warning": "As Valkyries são o maior pico de dificuldade da platina.",
+        "result": "Valkyries derrotadas e upgrades importantes finalizados."
       },
       {
         "title": "Cleanup final da platina base",
         "focus": "Checklist final",
-        "objective": "Conferir todos os troféus da lista base sem misturar online, coop, DLC, Ragnarök ou Valhalla.",
+        "objective": "Conferir tudo que restou antes da platina, sem misturar conteúdo de outros jogos.",
         "actions": [
-          "Revise história, favores, coletáveis, treasure maps, artefatos, Odin’s Ravens, Nornir Chests e shrines.",
-          "Finalize pendências de Muspelheim, Niflheim, upgrades, armaduras e objetivos acumulativos.",
-          "Confira se nenhum troféu de outro jogo ou modo extra entrou na rota da platina base.",
-          "Use o free roam pós-história para fechar qualquer região incompleta."
+          "Revise a checklist completa.",
+          "Confirme corvos, artefatos, mapas, favores, baús e upgrades restantes.",
+          "Termine objetivos pendentes por região.",
+          "Confirme que não há online, coop, dificuldade obrigatória ou perdíveis definitivos."
         ],
-        "warning": "",
         "result": "Lista base concluída e platina pronta."
       }
     ],

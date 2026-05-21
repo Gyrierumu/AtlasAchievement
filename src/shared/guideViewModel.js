@@ -1100,6 +1100,17 @@
       const readRoadmapFirst = shouldReadRoadmapFirst(game, trophies, Array.isArray(game.roadmap) ? game.roadmap : []);
       const hasMissableRoadmapRisk = Boolean(missablePending);
       const firstRunAdvice = firstGuideText(game?.first_run_advice, game?.quickDecision?.firstAction);
+      if (['god-of-war', 'god-of-war-2018'].includes(String(game?.slug || '').trim().toLowerCase())) {
+        return {
+          kind: 'roadmap',
+          title: 'Avance a história em uma dificuldade confortável',
+          detail: firstRunAdvice || 'Jogue a campanha naturalmente, explore quando quiser e deixe o cleanup pesado para depois da história.',
+          cta: 'Abrir roadmap',
+          focus: 'roadmap',
+          trophyId: firstPending?.id || '',
+          trophyName: firstPending?.name || ''
+        };
+      }
       if (String(game?.slug || '').trim().toLowerCase() === 'the-last-of-us-part-i') {
         return {
           kind: 'roadmap',

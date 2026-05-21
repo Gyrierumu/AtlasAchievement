@@ -519,6 +519,12 @@ async function validateGuide(slug = '') {
     assert.strictEqual(seedGame.dlcRequired || seedGame.dlc_required || false, false, 'God of War (2018) deve manter DLC nao obrigatoria');
     assert.strictEqual(viewModel.roadmapStages.length, 6, 'God of War (2018) deve manter roadmap com 6 etapas');
     assert(viewModel.roadmapStages.every(step => Array.isArray(step.actions)), 'God of War (2018) deve ter actions reais no roadmap');
+    assert.strictEqual(viewModel.nextActionModel.title, 'Avance a história em uma dificuldade confortável', 'God of War (2018) deve ter primeiro passo recomendado especifico');
+    assert.notStrictEqual(viewModel.nextActionModel.title, 'Comece pelo roadmap', 'God of War (2018) nao deve usar primeiro passo generico');
+    assert.strictEqual(viewModel.roadmapStages[0]?.title, 'Avance a história em uma dificuldade confortável', 'God of War (2018) deve iniciar roadmap pela historia em dificuldade confortavel');
+    viewModel.roadmapStages.forEach((step, index) => {
+      assert(!step.actions.some(action => normalizeText(action) === normalizeText(step.objective)), `God of War (2018) nao deve repetir objetivo literalmente nas actions da etapa ${index + 1}`);
+    });
     assert(gowText.includes('DLC fora da platina base'), 'God of War (2018) deve padronizar DLC fora da platina base');
     assert(routeItems.length <= 5, 'God of War (2018) deve renderizar no maximo 5 pontos de atencao');
     ['gow2018_chooser_of_the_slain', 'gow2018_darkness_and_fog', 'gow2018_fire_and_brimstone', 'gow2018_allfather_blinded', 'gow2018_treasure_hunter'].forEach(id => {
@@ -539,11 +545,20 @@ async function validateGuide(slug = '') {
       'Revele os detalhes na lista completa',
       'Descri\u00e7\u00e3o em revis\u00e3o editorial.',
       '[object Object]',
+      'Comece pelo roadmap',
+      'Comece pela rota segura',
+      'Continue a rota principal',
+      'Passo 2',
+      'title:',
+      'focus:',
+      'objective:',
+      'actions:',
       'undefined'
     ].forEach(text => {
       assert(!gowText.includes(text), `God of War (2018) nao deve conter texto incorreto: ${text}`);
       assert(!normalizedGowText.includes(normalizeText(text)), `God of War (2018) nao deve conter texto incorreto normalizado: ${text}`);
     });
+    assert(!/\bOdin[’']s Rave(?!ns)/.test(gowText), 'God of War (2018) nao deve conter Odin’s Rave truncado');
     ['Obtain all other trophies', 'Defend your home', 'Kill all of Odin', 'Defeat the nine Valkyries'].forEach(text => {
       assert(!gowText.includes(text), `God of War (2018) nao deve manter descricao em ingles: ${text}`);
     });
@@ -1224,6 +1239,10 @@ async function validateGuide(slug = '') {
       assert.strictEqual(Boolean(apiGame.dlcRequired || apiGame.dlc_required), false, 'API de God of War (2018) deve manter DLC nao obrigatoria');
       assert.strictEqual(apiGame.roadmap.length, 6, 'API de God of War (2018) deve retornar roadmap de 6 etapas');
       assert(apiGame.roadmap.every(step => Array.isArray(step.actions)), 'API de God of War (2018) deve retornar actions reais no roadmap');
+      assert.strictEqual(apiGame.roadmap[0]?.title, 'Avance a história em uma dificuldade confortável', 'API de God of War (2018) deve retornar primeiro passo especifico');
+      apiGame.roadmap.forEach((step, index) => {
+        assert(!step.actions.some(action => normalizeText(action) === normalizeText(step.objective)), `API de God of War (2018) nao deve repetir objetivo literalmente nas actions da etapa ${index + 1}`);
+      });
       assert(html.includes('God of War'), 'God of War (2018) deve renderizar nome no SSR');
       assert(html.includes('Verificado'), 'God of War (2018) deve renderizar status Verificado');
       assert(html.includes('Guia revisado editorialmente.'), 'God of War (2018) deve renderizar mensagem publica revisada');
@@ -1249,11 +1268,20 @@ async function validateGuide(slug = '') {
         'Revele os detalhes na lista completa',
         'Descri\u00e7\u00e3o em revis\u00e3o editorial.',
         '[object Object]',
+        'Comece pelo roadmap',
+        'Comece pela rota segura',
+        'Continue a rota principal',
+        'Passo 2',
+        'title:',
+        'focus:',
+        'objective:',
+        'actions:',
         'undefined'
       ].forEach(text => {
         assert(!guideScopedHtml.includes(text), `God of War (2018) SSR nao deve exibir: ${text}`);
         assert(!normalizedScopedHtml.includes(normalizeText(text)), `God of War (2018) SSR nao deve exibir texto normalizado: ${text}`);
       });
+      assert(!/\bOdin[’']s Rave(?!ns)/.test(guideScopedHtml), 'God of War (2018) SSR nao deve exibir Odin’s Rave truncado');
       assert(!/>\s*null\s*</i.test(html), 'God of War (2018) SSR nao deve exibir null visivel');
       assert.strictEqual(getCanonical(html), 'https://atlasachievement.com.br/jogo/god-of-war', 'canonical de God of War (2018) deve usar dominio de producao');
     }

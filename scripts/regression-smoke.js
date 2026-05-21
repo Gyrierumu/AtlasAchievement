@@ -6757,6 +6757,11 @@ async function assertSeedData({ all, get }, sampleGames) {
   assert(godOfWarSample.roadmap.some(step => normalizeText(roadmapStepText(step)).includes('dificuldade confortavel')), 'roadmap de God of War (2018) deve orientar historia em dificuldade confortavel');
   assert(godOfWarSample.roadmap.some(step => roadmapStepText(step).includes('Valkyries')), 'roadmap de God of War (2018) deve cobrir Valkyries');
   assert(godOfWarSample.roadmap.some(step => roadmapStepText(step).includes('Niflheim')), 'roadmap de God of War (2018) deve cobrir Niflheim');
+  assert.strictEqual(godOfWarSample.roadmap[0]?.title, 'Avance a história em uma dificuldade confortável', 'roadmap de God of War (2018) deve ter primeiro passo especifico');
+  assert.strictEqual(godOfWarSample.roadmap[2]?.title, 'Complete favores, coletáveis e mapas por região', 'roadmap de God of War (2018) deve corrigir etapa de coletaveis truncada');
+  godOfWarSample.roadmap.forEach((step, index) => {
+    assert(!step.actions.some(action => normalizeText(action) === normalizeText(step.objective)), `roadmap de God of War (2018) nao deve repetir objetivo literalmente nas actions da etapa ${index + 1}`);
+  });
   assert.strictEqual(godOfWarSample.trophies.filter(trophy => trophy.is_missable).length, 0, 'God of War (2018) nao deve marcar perdiveis');
   assert.strictEqual(godOfWarSample.trophies.filter(trophy => trophy.is_spoiler).length, 16, 'God of War (2018) deve manter spoiler_count coerente');
   assert(!godOfWarSample.trophies.some(trophy => /Ragnar[oö]k|Valhalla|Ascension|God of War III|DLC|add-?on/i.test(`${trophy.name} ${trophy.description}`)), 'God of War (2018) nao deve misturar DLC/add-ons ou outros jogos na checklist base');
@@ -6788,8 +6793,11 @@ async function assertSeedData({ all, get }, sampleGames) {
   const godOfWarGuideModel = guideModel.buildGuideViewModel(godOfWarSample, []);
   assert.strictEqual(godOfWarGuideModel.missableCount, 0, 'view model de God of War deve separar spoilers de perdiveis reais');
   assert.strictEqual(godOfWarGuideModel.missables, 0, 'view model nao deve contar spoilers como perdiveis');
+  assert.strictEqual(godOfWarGuideModel.nextActionModel.title, 'Avance a história em uma dificuldade confortável', 'view model de God of War deve trocar primeiro passo generico por especifico');
+  assert.notStrictEqual(godOfWarGuideModel.nextActionModel.title, 'Comece pelo roadmap', 'view model de God of War nao deve recomendar Comece pelo roadmap');
   assert.strictEqual(guideModel.buildGuideQuickDecisionModel(godOfWarSample, godOfWarGuideModel).cards.find(card => card.id === 'missables').value, 'Sem perdíveis', 'badge de perdiveis deve ser coerente com tooltip/resumo');
-  assert(!/dados atuais do guia|segundo os dados atuais do guia|o guia nao aponta|o guia n[aã]o aponta|quando validado|em revisao|base game sem dlcs|descricao em revisao editorial|\[object object\]|\bundefined\b/i.test(normalizeText(JSON.stringify(godOfWarSample))), 'God of War (2018) seed nao deve conter linguagem fraca, revisao pendente ou placeholders');
+  assert(!/dados atuais do guia|segundo os dados atuais do guia|o guia nao aponta|o guia n[aã]o aponta|quando validado|em revisao|base game sem dlcs|descricao em revisao editorial|comece pelo roadmap|passo 2|\[object object\]|\bundefined\b/i.test(normalizeText(JSON.stringify(godOfWarSample))), 'God of War (2018) seed nao deve conter linguagem fraca, revisao pendente ou placeholders');
+  assert(!/\bOdin[’']s Rave(?!ns)/.test(JSON.stringify(godOfWarSample)), 'God of War (2018) seed nao deve conter Odin’s Rave truncado');
 
   const godOfWarSeeded = await get('SELECT slug, difficulty, time, time_bucket, time_min_hours, time_max_hours, time_sort_hours, editorial_status, coverage_level, is_verified, verification_status, image, cover_image, online_summary, dlc_scope, missable_summary, runs_summary FROM games WHERE slug = ?', ['god-of-war']);
   assert.strictEqual(godOfWarSeeded?.slug, 'god-of-war', 'seed deve persistir slug de God of War (2018)');
@@ -12181,8 +12189,11 @@ async function assertBackendEditorialConsistency() {
     assert(godOfWarGuideHtml.includes('DLC fora da platina base'), 'SSR de God of War (2018) deve renderizar DLC fora da platina base');
     assert(normalizeText(godOfWarGuideHtml).includes('nao ha exigencia online'), 'SSR de God of War (2018) deve renderizar ausencia de online');
     assert(godOfWarGuideHtml.includes('Verificado') && godOfWarGuideHtml.includes('Guia revisado editorialmente.'), 'SSR de God of War (2018) deve renderizar status verificado coerente');
+    assert(godOfWarGuideHtml.includes('Avance a história em uma dificuldade confortável'), 'SSR de God of War (2018) deve renderizar primeiro passo especifico');
+    assert(!godOfWarGuideHtml.includes('Comece pelo roadmap'), 'SSR de God of War (2018) nao deve renderizar primeiro passo generico');
     assert(godOfWarGuideHtml.includes('Chooser of the Slain') && godOfWarGuideHtml.includes('Darkness and Fog') && godOfWarGuideHtml.includes('Fire and Brimstone') && godOfWarGuideHtml.includes('Allfather Blinded') && godOfWarGuideHtml.includes('Treasure Hunter'), 'SSR de God of War (2018) deve renderizar pontos de atencao editoriais');
-    assert(!/dados atuais do guia|segundo os dados atuais do guia|o guia nao aponta|o guia n[aã]o aponta|quando validado|em revisao|base game sem dlcs|descricao em revisao editorial|\[object object\]|\bundefined\b/i.test(normalizeText(godOfWarScopedHtml)), 'SSR de God of War (2018) nao deve exibir linguagem fraca, revisao pendente ou placeholders');
+    assert(!/dados atuais do guia|segundo os dados atuais do guia|o guia nao aponta|o guia n[aã]o aponta|quando validado|em revisao|base game sem dlcs|descricao em revisao editorial|passo 2|\[object object\]|\bundefined\b/i.test(normalizeText(godOfWarScopedHtml)), 'SSR de God of War (2018) nao deve exibir linguagem fraca, revisao pendente ou placeholders');
+    assert(!/\bOdin[’']s Rave(?!ns)/.test(godOfWarScopedHtml), 'SSR de God of War (2018) nao deve exibir Odin’s Rave truncado');
     assert(godOfWarGuideHtml.includes('atlas-guide-cover--poster'), 'SSR de God of War (2018) deve usar cover_image como poster do guia');
     assert(godOfWarGuideHtml.includes(godOfWarSample.cover_image), 'SSR de God of War (2018) deve renderizar cover_image');
     assert(godOfWarGuideHtml.includes(`property="og:image" content="${godOfWarSample.image}"`), 'SEO de God of War (2018) deve usar image horizontal');
