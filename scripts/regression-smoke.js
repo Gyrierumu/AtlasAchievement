@@ -64,12 +64,72 @@ function loadBrowserScripts(relPaths, contextExtras = {}) {
   return context;
 }
 
+async function assertAppVersionCacheCleanupPreservesUserStorage() {
+  const localStorageState = {
+    atlasachievement_app_version: '4.0.0-old',
+    trophy_library_v2: JSON.stringify({
+      'resident-evil-4-remake': {
+        slug: 'resident-evil-4-remake',
+        completed: ['re4r_promising_agent']
+      }
+    }),
+    atlas_library_import_decision_user: 'local',
+    checklist_density: 'comfortable'
+  };
+  const sessionStorageState = {};
+  const deletedCaches = [];
+  let reloadCount = 0;
+
+  const context = loadBrowserScripts(['public/js/app-version.js'], {
+    window: {
+      __APP_VERSION__: '4.0.0-current',
+      setTimeout,
+      clearTimeout,
+      location: { pathname: '/', origin: 'http://localhost', reload() { reloadCount += 1; } },
+      navigator: {
+        serviceWorker: {
+          controller: null,
+          getRegistrations: async () => []
+        }
+      },
+      caches: {
+        keys: async () => ['atlasachievement-runtime-v1', 'unrelated-cache'],
+        delete: async cacheName => {
+          deletedCaches.push(cacheName);
+          return true;
+        }
+      },
+      localStorage: {
+        getItem(key) { return Object.prototype.hasOwnProperty.call(localStorageState, key) ? localStorageState[key] : null; },
+        setItem(key, value) { localStorageState[key] = String(value); },
+        removeItem(key) { delete localStorageState[key]; }
+      },
+      sessionStorage: {
+        getItem(key) { return Object.prototype.hasOwnProperty.call(sessionStorageState, key) ? sessionStorageState[key] : null; },
+        setItem(key, value) { sessionStorageState[key] = String(value); }
+      }
+    }
+  });
+
+  await context.window.AtlasAppVersion.checkVersion();
+
+  assert.strictEqual(localStorageState.atlasachievement_app_version, '4.0.0-current', 'controle de versao do app deve atualizar somente a chave tecnica');
+  assert(localStorageState.trophy_library_v2.includes('resident-evil-4-remake'), 'limpeza tecnica nao deve apagar biblioteca local');
+  assert(localStorageState.trophy_library_v2.includes('re4r_promising_agent'), 'limpeza tecnica nao deve apagar progresso/checklist local');
+  assert.strictEqual(localStorageState.atlas_library_import_decision_user, 'local', 'limpeza tecnica nao deve apagar decisoes de importacao da biblioteca');
+  assert.strictEqual(localStorageState.checklist_density, 'comfortable', 'limpeza tecnica nao deve apagar preferencia de checklist');
+  assert(deletedCaches.includes('atlasachievement-runtime-v1'), 'limpeza tecnica deve remover cache tecnico relacionado ao app');
+  assert(!deletedCaches.includes('unrelated-cache'), 'limpeza tecnica nao deve apagar cache sem relacao com o app');
+  assert(reloadCount <= 1, 'controle de versao deve evitar loop de reload');
+}
+
 function assertHtmlLoadsModules(relPath) {
   const html = read(relPath);
   const scripts = Array.from(html.matchAll(/<script\s+src="([^"]+)"\s+defer><\/script>/g)).map(match => match[1]);
   const scriptPaths = scripts.map(src => src.split('?')[0]);
   const expectedScriptsByPage = {
     'public/index.html': [
+      '/js/app-version.js',
       '/js/api.js',
       '/js/storage.js',
       '/js/ui-shared.js',
@@ -699,6 +759,15 @@ async function httpGetJson(baseUrl, pathName) {
   });
   assert.strictEqual(response.ok, true, `GET ${pathName} deveria retornar 2xx`);
   return response.json();
+}
+
+async function httpGetResponse(baseUrl, pathName, options = {}) {
+  const response = await fetch(`${baseUrl}${pathName}`, {
+    ...options,
+    signal: AbortSignal.timeout(30000)
+  });
+  assert.strictEqual(response.ok, true, `GET ${pathName} deveria retornar 2xx`);
+  return response;
 }
 
 async function httpGetHtml(baseUrl, pathName) {
@@ -6915,10 +6984,10 @@ async function assertSeedData({ all, get }, sampleGames) {
   assert.strictEqual(new Set(tlouPartIISample.trophies.map(trophy => trophy.id)).size, 26, 'The Last of Us Part II nao deve ter trophy_code duplicado');
   assert.strictEqual(tlouPartIISample.editorial_status, 'published', 'The Last of Us Part II deve ser publico');
   assert.strictEqual(tlouPartIISample.coverage_level, 'strong', 'The Last of Us Part II deve ter coverage strong');
-  assert.strictEqual(tlouPartIISample.is_verified, false, 'The Last of Us Part II nao deve ser verificado automaticamente');
-  assert.strictEqual(tlouPartIISample.verification_status, 'review', 'The Last of Us Part II deve aguardar revisao editorial final');
-  assert.strictEqual(tlouPartIISample.editorial_review_status, 'in_review', 'The Last of Us Part II deve ficar em revisao editorial profunda');
-  assert.deepStrictEqual(tlouPartIISample.quality_warnings, ['needs_trophy_localization_check', 'needs_extra_trophies_scope_check'], 'The Last of Us Part II deve registrar pendencias editoriais certas');
+  assert.strictEqual(tlouPartIISample.is_verified, true, 'The Last of Us Part II deve permanecer Verificado');
+  assert.strictEqual(tlouPartIISample.verification_status, 'verified', 'The Last of Us Part II deve manter verification_status verified');
+  assert.strictEqual(tlouPartIISample.editorial_review_status, 'verified', 'The Last of Us Part II deve manter status editorial verified');
+  assert.deepStrictEqual(tlouPartIISample.quality_warnings, [], 'The Last of Us Part II nao deve manter pendencias tecnicas publicas');
   assert.strictEqual(tlouPartIISample.onlineRequired, false, 'The Last of Us Part II nao deve exigir online');
   assert.strictEqual(tlouPartIISample.coopRequired, false, 'The Last of Us Part II nao deve exigir coop');
   assert.strictEqual(tlouPartIISample.dlcRequired, false, 'The Last of Us Part II nao deve exigir DLC para a platina base');
@@ -6928,7 +6997,7 @@ async function assertSeedData({ all, get }, sampleGames) {
   assert(tlouPartIISample.online_summary.includes('Não há troféus online'), 'The Last of Us Part II deve deixar claro que online nao e obrigatorio');
   assert(/(?:New Game\+|NG\+) parcial/.test(tlouPartIISample.runs_summary), 'The Last of Us Part II deve mencionar New Game+ parcial');
   assert(tlouPartIISample.before_you_start.includes('Part I') && tlouPartIISample.before_you_start.includes('Remastered') && tlouPartIISample.before_you_start.includes('No Return'), 'The Last of Us Part II deve diferenciar Part I, Remastered e No Return');
-  assert(tlouPartIISample.dlc_scope.includes('Grounded') && tlouPartIISample.dlc_scope.includes('Permadeath') && tlouPartIISample.dlc_scope.includes('No Return'), 'The Last of Us Part II deve separar add-ons da lista base');
+  assert(tlouPartIISample.dlc_scope.includes('Extras fora da platina base') && tlouPartIISample.dlc_scope.includes('Grounded') && tlouPartIISample.dlc_scope.includes('Permadeath') && tlouPartIISample.dlc_scope.includes('No Return'), 'The Last of Us Part II deve separar add-ons da lista base');
   assert.strictEqual(tlouPartIISample.trophies.filter(trophy => trophy.is_missable).length, 0, 'The Last of Us Part II nao deve marcar perdiveis definitivos');
   assert(tlouPartIISample.trophies.every(trophy => /^[A-Za-z0-9_:-]{1,60}$/.test(trophy.id)), 'The Last of Us Part II deve usar trophy.id seguro');
   assert.strictEqual(tlouPartIISample.trophies.filter(trophy => trophy.name_pt && trophy.name_pt.trim()).length, 26, 'The Last of Us Part II deve usar nomes PT-BR confiaveis da Steam Remastered nos 26 trofeus base');
@@ -6956,12 +7025,12 @@ async function assertSeedData({ all, get }, sampleGames) {
   assert.strictEqual(tlouPartIISeeded?.time_bucket, 'medium', 'seed deve persistir The Last of Us Part II na faixa media');
   assert.strictEqual(tlouPartIISeeded?.editorial_status, 'published', 'The Last of Us Part II deve entrar publicado');
   assert.strictEqual(tlouPartIISeeded?.coverage_level, 'strong', 'The Last of Us Part II deve entrar com coverage strong');
-  assert.strictEqual(tlouPartIISeeded?.is_verified, 0, 'The Last of Us Part II nao deve entrar como verificado');
-  assert.strictEqual(tlouPartIISeeded?.verification_status, 'review', 'The Last of Us Part II deve entrar em revisao editorial');
-  assert.strictEqual(tlouPartIISeeded?.editorial_review_status, 'in_review', 'The Last of Us Part II deve persistir in_review');
-  assert(tlouPartIISeeded?.quality_warnings.includes('needs_trophy_localization_check') && tlouPartIISeeded?.quality_warnings.includes('needs_extra_trophies_scope_check'), 'The Last of Us Part II deve persistir quality warnings');
+  assert.strictEqual(tlouPartIISeeded?.is_verified, 1, 'The Last of Us Part II deve entrar como verificado');
+  assert.strictEqual(tlouPartIISeeded?.verification_status, 'verified', 'The Last of Us Part II deve entrar verified');
+  assert.strictEqual(tlouPartIISeeded?.editorial_review_status, 'verified', 'The Last of Us Part II deve persistir verified');
+  assert.strictEqual(tlouPartIISeeded?.quality_warnings || '', '[]', 'The Last of Us Part II nao deve persistir quality warnings tecnicos');
   assert(tlouPartIISeeded?.online_summary.includes('Não há troféus online'), 'The Last of Us Part II deve persistir ausencia de online');
-  assert(tlouPartIISeeded?.dlc_scope.includes('Grounded') && /(?:New Game\+|NG\+) parcial/.test(tlouPartIISeeded?.runs_summary || ''), 'The Last of Us Part II deve persistir add-ons separados e New Game+ parcial');
+  assert(tlouPartIISeeded?.dlc_scope.includes('Extras fora da platina base') && tlouPartIISeeded?.dlc_scope.includes('Grounded') && /(?:New Game\+|NG\+) parcial/.test(tlouPartIISeeded?.runs_summary || ''), 'The Last of Us Part II deve persistir add-ons separados e New Game+ parcial');
 
   const tlouPartIIRoadmapRows = await all('SELECT content FROM roadmaps WHERE game_id = (SELECT id FROM games WHERE slug = ?) ORDER BY step_order', ['the-last-of-us-part-ii']);
   assert.strictEqual(tlouPartIIRoadmapRows.length, 6, 'seed deve inserir 6 etapas de roadmap para The Last of Us Part II');
@@ -8569,10 +8638,10 @@ async function assertBackendEditorialConsistency() {
   assert.strictEqual(tlouPartIIForSync?.difficulty, 3, 'migration deve inserir The Last of Us Part II com dificuldade 3');
   assert.strictEqual(tlouPartIIForSync?.time, '25-35h', 'migration deve inserir The Last of Us Part II com tempo 25-35h');
   assert.strictEqual(tlouPartIIForSync?.time_bucket, 'medium', 'migration deve inserir The Last of Us Part II na faixa media');
-  assert.strictEqual(tlouPartIIForSync?.coverage_level, 'strong', 'migration deve inserir The Last of Us Part II como guia forte em revisao');
-  assert.strictEqual(tlouPartIIForSync?.is_verified, 0, 'migration nao deve inserir The Last of Us Part II como verificado');
-  assert.strictEqual(tlouPartIIForSync?.verification_status, 'review', 'migration deve inserir The Last of Us Part II em revisao editorial');
-  assert.strictEqual(tlouPartIIForSync?.editorial_review_status, 'in_review', 'migration deve inserir The Last of Us Part II em in_review');
+  assert.strictEqual(tlouPartIIForSync?.coverage_level, 'strong', 'migration deve inserir The Last of Us Part II como guia forte');
+  assert.strictEqual(tlouPartIIForSync?.is_verified, 1, 'migration deve inserir The Last of Us Part II como verificado');
+  assert.strictEqual(tlouPartIIForSync?.verification_status, 'verified', 'migration deve inserir The Last of Us Part II verified');
+  assert.strictEqual(tlouPartIIForSync?.editorial_review_status, 'verified', 'migration deve inserir The Last of Us Part II verified');
   assert.strictEqual(tlouPartIIInsertedTrophies.length, 26, 'migration deve inserir checklist de 26 trofeus para The Last of Us Part II ausente');
   assert.strictEqual(tlouPartIIInsertedTrophies.filter(trophy => trophy.is_missable).length, 0, 'migration deve inserir The Last of Us Part II sem perdiveis definitivos');
 
@@ -8596,9 +8665,9 @@ async function assertBackendEditorialConsistency() {
   assert.strictEqual(tlouPartIIAfterSync?.time_sort_hours, 35, 'migration deve corrigir time_sort_hours de The Last of Us Part II');
   assert.strictEqual(tlouPartIIAfterSync?.time_bucket, 'medium', 'migration deve corrigir time_bucket de The Last of Us Part II');
   assert.strictEqual(tlouPartIIAfterSync?.coverage_level, 'strong', 'migration nao deve manter The Last of Us Part II como complete automatico');
-  assert.strictEqual(tlouPartIIAfterSync?.is_verified, 0, 'migration nao deve manter The Last of Us Part II como verificado sem revisao manual');
-  assert.strictEqual(tlouPartIIAfterSync?.verification_status, 'review', 'migration deve voltar The Last of Us Part II para revisao editorial');
-  assert.strictEqual(tlouPartIIAfterSync?.editorial_review_status, 'in_review', 'migration deve voltar The Last of Us Part II para in_review');
+  assert.strictEqual(tlouPartIIAfterSync?.is_verified, 1, 'migration deve manter The Last of Us Part II como verificado');
+  assert.strictEqual(tlouPartIIAfterSync?.verification_status, 'verified', 'migration deve manter The Last of Us Part II verified');
+  assert.strictEqual(tlouPartIIAfterSync?.editorial_review_status, 'verified', 'migration deve manter The Last of Us Part II verified');
   assert.strictEqual(tlouPartIITrophiesAfterSync.length, 26, 'migration deve substituir checklist antigo de The Last of Us Part II por 26 trofeus');
   assert(!tlouPartIITrophiesAfterSync.some(trophy => /grounded|permadeath|no return|dig two graves|you can.?t stop this|part i/i.test(`${trophy.trophy_code} ${trophy.name}`)), 'migration deve remover add-ons/lista errada de The Last of Us Part II');
   assert.strictEqual(tlouPartIITrophiesAfterSync.filter(trophy => trophy.is_missable).length, 0, 'migration deve limpar perdiveis definitivos antigos em The Last of Us Part II');
@@ -8628,6 +8697,37 @@ async function assertBackendEditorialConsistency() {
     assert(homeHtml.includes('atlas-home-image-shell'), 'home deve renderizar imagens com fallback visual');
     assert(homeHtml.includes('atlas-featured-game__cover atlas-home-image-shell'), 'destaque da home deve usar shell de imagem compacto');
     assert(!/>\s*0 op/i.test(homeHtml), 'home nao deve exibir cards de momento com zero opcoes');
+    assert(/window\.__APP_VERSION__\s*=/.test(homeHtml), 'SSR / deve expor versao publica do app para invalidacao tecnica');
+
+    const homeCache = await httpGetResponse(baseUrl, '/', { headers: { accept: 'text/html' } });
+    assert.strictEqual(homeCache.headers.get('cache-control'), 'no-cache, no-store, must-revalidate', 'HTML da home nao deve usar cache longo');
+    assert.strictEqual(homeCache.headers.get('pragma'), 'no-cache', 'HTML da home deve enviar pragma no-cache');
+    assert.strictEqual(homeCache.headers.get('expires'), '0', 'HTML da home deve expirar imediatamente');
+
+    const re4GuideCache = await httpGetResponse(baseUrl, '/jogo/resident-evil-4-remake', { headers: { accept: 'text/html' } });
+    assert.strictEqual(re4GuideCache.headers.get('cache-control'), 'no-cache, no-store, must-revalidate', 'HTML de guia nao deve usar cache longo');
+
+    const fixedJsCache = await httpGetResponse(baseUrl, '/js/app.js');
+    assert.strictEqual(fixedJsCache.headers.get('cache-control'), 'no-cache', 'JS sem hash no nome nao deve usar cache immutable');
+
+    const fixedCssCache = await httpGetResponse(baseUrl, '/css/styles.css');
+    assert.strictEqual(fixedCssCache.headers.get('cache-control'), 'no-cache', 'CSS sem hash no nome nao deve usar cache immutable');
+
+    const manifestCache = await httpGetResponse(baseUrl, '/site.webmanifest');
+    assert.strictEqual(manifestCache.headers.get('cache-control'), 'no-cache, no-store, must-revalidate', 'manifest deve usar no-store para evitar PWA antigo');
+
+    const serviceWorkerResponse = await httpGetResponse(baseUrl, '/service-worker.js');
+    assert.strictEqual(serviceWorkerResponse.headers.get('cache-control'), 'no-cache, no-store, must-revalidate', 'service-worker.js deve usar no-store');
+    const serviceWorkerJs = await serviceWorkerResponse.text();
+    assert(serviceWorkerJs.includes('registration.unregister'), 'service-worker.js deve neutralizar service workers antigos');
+
+    const imageCache = await httpGetResponse(baseUrl, '/assets/brand/atlasachievement-og.png');
+    assert.strictEqual(imageCache.headers.get('cache-control'), 'no-cache', 'asset sem hash no nome nao deve usar cache immutable');
+
+    const versionResponse = await httpGetResponse(baseUrl, '/version', { headers: { accept: 'application/json' } });
+    assert.strictEqual(versionResponse.headers.get('cache-control'), 'no-cache, no-store, must-revalidate', '/version nao deve ficar preso em cache');
+    const versionPayload = await versionResponse.json();
+    assert(versionPayload.version, '/version deve retornar versao publica do app');
 
     const profileHtml = await httpGetHtml(baseUrl, '/perfil');
     assert(profileHtml.includes('id="view-profile"'), 'SSR /perfil deve servir o painel publico de perfil');
@@ -9351,8 +9451,8 @@ async function assertBackendEditorialConsistency() {
     assert.strictEqual(tlouPartII.time_bucket, 'medium', 'catalogo deve classificar The Last of Us Part II como jogo medio');
     assert.strictEqual(tlouPartII.roadmap_count, 6, 'catalogo deve expor roadmap completo de The Last of Us Part II');
     assert.strictEqual(tlouPartII.coverage_level, 'strong', 'The Last of Us Part II deve aparecer com coverage strong');
-    assert.strictEqual(tlouPartII.is_verified, false, 'The Last of Us Part II nao deve aparecer como verificado');
-    assert.strictEqual(tlouPartII.verification_status, 'review', 'The Last of Us Part II deve aparecer em revisao editorial');
+    assert.strictEqual(tlouPartII.is_verified, true, 'The Last of Us Part II deve aparecer como Verificado');
+    assert.strictEqual(tlouPartII.verification_status, 'verified', 'The Last of Us Part II deve aparecer verified');
     assert.strictEqual(tlouPartII.image, tlouPartIISample.image, 'catalogo deve usar image horizontal de The Last of Us Part II');
     assert.strictEqual(tlouPartII.cover_image, tlouPartIISample.cover_image, 'API deve expor cover_image de The Last of Us Part II');
     assert.strictEqual(tlouPartII.missable_count, 0, 'API nao deve marcar The Last of Us Part II como perdivel definitivo');
@@ -12214,16 +12314,16 @@ async function assertBackendEditorialConsistency() {
     assert(tlouPartIIDetail.online_summary.includes('online'), 'detalhe de The Last of Us Part II deve indicar ausencia de online obrigatorio');
     assert(tlouPartIIDetail.dlc_scope.includes('Grounded') && tlouPartIIDetail.dlc_scope.includes('Permadeath') && tlouPartIIDetail.dlc_scope.includes('No Return'), 'detalhe de The Last of Us Part II deve manter add-ons fora da lista base');
     assert(tlouPartIIDetail.before_you_start.includes('Part I') && tlouPartIIDetail.before_you_start.includes('Remastered') && tlouPartIIDetail.before_you_start.includes('No Return'), 'detalhe de The Last of Us Part II deve avisar sobre lista propria sem extras');
-    assert.strictEqual(tlouPartIIDetail.editorialStatus, 'in_review', 'detalhe de The Last of Us Part II deve expor in_review');
-    assert(tlouPartIIDetail.qualityWarnings.includes('needs_trophy_localization_check') && tlouPartIIDetail.qualityWarnings.includes('needs_extra_trophies_scope_check'), 'detalhe de The Last of Us Part II deve expor pendencias editoriais');
+    assert.strictEqual(tlouPartIIDetail.editorialStatus, 'verified', 'detalhe de The Last of Us Part II deve expor verified');
+    assert.deepStrictEqual(tlouPartIIDetail.qualityWarnings, [], 'detalhe de The Last of Us Part II nao deve expor pendencias editoriais tecnicas');
     assert.strictEqual(tlouPartIIDetail.trophies.filter(trophy => trophy.descriptionPtBr).length, 26, 'The Last of Us Part II deve expor descriptionPtBr nos 26 trofeus');
     assert.strictEqual(tlouPartIIDetail.trophies.filter(trophy => trophy.trophyNamePtBr).length, 26, 'The Last of Us Part II deve expor nomes PT-BR confiaveis da Steam Remastered');
     assert.strictEqual(tlouPartIIDetail.trophies.filter(trophy => trophy.namePtSource === 'trusted_steam_ptbr_remastered').length, 26, 'The Last of Us Part II deve expor fonte Steam PT-BR Remastered para nomes');
     assert.strictEqual(tlouPartIIDetail.trophies.filter(trophy => trophy.descriptionPtSource === 'trusted_steam_ptbr_remastered').length, 23, 'The Last of Us Part II deve expor fonte Steam PT-BR Remastered para descricoes com texto na Steam');
     assert.strictEqual(tlouPartIIDetail.trophies.filter(trophy => trophy.descriptionPtSource === 'editorial_from_existing_requirement').length, 3, 'The Last of Us Part II deve expor fonte editorial para descricoes ausentes na Steam');
-    assert.strictEqual(tlouPartIIDetail.coverage_level, 'strong', 'The Last of Us Part II nao deve ser complete sem revisao manual');
-    assert.strictEqual(tlouPartIIDetail.is_verified, false, 'The Last of Us Part II nao deve estar verificado');
-    assert.strictEqual(tlouPartIIDetail.verification_status, 'review', 'The Last of Us Part II deve ficar em revisao editorial');
+    assert.strictEqual(tlouPartIIDetail.coverage_level, 'strong', 'The Last of Us Part II deve manter coverage strong');
+    assert.strictEqual(tlouPartIIDetail.is_verified, true, 'The Last of Us Part II deve estar Verificado');
+    assert.strictEqual(tlouPartIIDetail.verification_status, 'verified', 'The Last of Us Part II deve ficar verified');
     assert.strictEqual(tlouPartIIDetail.cover_image, tlouPartIISample.cover_image, 'detalhe de The Last of Us Part II deve retornar cover_image');
     assert(tlouPartIIDetail.trophies.some(trophy => trophy.id === 'tlou2_every_last_one_of_them' && trophy.type === 'Platina'), 'The Last of Us Part II deve manter Every Last One of Them como platina');
     assert(tlouPartIIDetail.trophies.some(trophy => trophy.name === 'Every Last One of Them' && trophy.trophyNamePtBr === 'Até Não Sobrar Nenhum' && trophy.descriptionPtBr === 'Obtenha todas as conquistas da história normal'), 'The Last of Us Part II deve corrigir Every Last One of Them');
@@ -12245,6 +12345,10 @@ async function assertBackendEditorialConsistency() {
     assert(tlouPartIIGuideHtml.includes('Até Não Sobrar Nenhum') && tlouPartIIGuideHtml.includes('Nome original:</span>Every Last One of Them'), 'SSR de The Last of Us Part II deve renderizar nome PT-BR e nome original na checklist');
     assert(tlouPartIIGuideHtml.includes('O Que Eu Tive Que Fazer') && tlouPartIIGuideHtml.includes('Arquivista'), 'SSR de The Last of Us Part II deve renderizar localizacoes Steam PT-BR');
     assert(tlouPartIIGuideHtml.includes('26 trof'), 'SSR de The Last of Us Part II deve renderizar total de 26 trofeus');
+    assert(tlouPartIIGuideHtml.includes('Verificado'), 'SSR de The Last of Us Part II deve renderizar status Verificado');
+    assert(tlouPartIIGuideHtml.includes('Guia revisado editorialmente.'), 'SSR de The Last of Us Part II deve renderizar mensagem revisada');
+    assert(tlouPartIIGuideHtml.includes('Extras fora da platina base'), 'SSR de The Last of Us Part II deve renderizar extras fora da platina base');
+    assert(normalizeText(tlouPartIIGuideHtml).includes('the last of us part ii tem uma platina concentrada'), 'SSR de The Last of Us Part II deve renderizar resumo editorial forte');
     assert(/(?:New Game\+|NG\+) parcial/.test(tlouPartIIGuideHtml), 'SSR de The Last of Us Part II deve renderizar New Game+ parcial');
     assert(tlouPartIIGuideHtml.includes('No Return'), 'SSR de The Last of Us Part II deve renderizar escopo sem No Return');
     assert(tlouPartIIGuideHtml.includes('Grounded'), 'SSR de The Last of Us Part II deve separar Grounded da lista base');
@@ -12252,6 +12356,7 @@ async function assertBackendEditorialConsistency() {
     assert(tlouPartIIGuideHtml.includes('atlas-guide-cover--poster'), 'SSR de The Last of Us Part II deve usar cover_image como poster do guia');
     assert(tlouPartIIGuideHtml.includes(tlouPartIISample.cover_image), 'SSR de The Last of Us Part II deve renderizar cover_image');
     assert(tlouPartIIGuideHtml.includes(`property="og:image" content="${tlouPartIISample.image}"`), 'SEO de The Last of Us Part II deve usar image horizontal');
+    assert(!/dados atuais do guia|segundo os dados atuais do guia|o guia aponta|o guia não aponta|Este troféu está marcado como spoiler|Revele os detalhes na lista completa|Base game sem DLCs|Descrição em revisão editorial|\[object Object\]|\bundefined\b|>\s*null\s*</i.test(tlouPartIIGuideHtml), 'SSR de The Last of Us Part II nao deve exibir linguagem fraca ou placeholders');
 
     const hadesDetail = await httpGetJson(baseUrl, '/api/games/slug/hades');
     assert.strictEqual(hadesDetail.slug, 'hades', 'GET /api/games/slug/hades deve retornar Hades');
@@ -14011,6 +14116,7 @@ async function main() {
   assertFileContains('src/db/migrate.js', 'clair-obscur-expedition-33');
   assertSyntax('public/js');
   assertReleaseCheckModule();
+  await assertAppVersionCacheCleanupPreservesUserStorage();
   assertGameImageValidationAcceptsPublicAssets();
   assertClairObscurSampleData();
   assertLote1ACriticalEditorialData();

@@ -3,6 +3,7 @@ const fs = require('fs');
 const http = require('http');
 const os = require('os');
 const path = require('path');
+const vm = require('vm');
 
 const ROOT = path.resolve(__dirname, '..');
 const PLACEHOLDER_RE = /\[object Object\]|\bundefined\b|>\s*null\s<|Descrição em revisão editorial\./i;
@@ -21,6 +22,10 @@ function loadSampleGames() {
 
 function loadGuideModel() {
   return require(path.join(ROOT, 'src/shared/guideViewModel'));
+}
+
+function readProjectFile(relPath = '') {
+  return fs.readFileSync(path.join(ROOT, relPath), 'utf8');
 }
 
 function getSlugArg() {
@@ -130,6 +135,67 @@ function validateRoadmaps() {
   }
 
   console.log(`test:roadmap passed (${sampleGames.length} roadmaps)`);
+}
+
+function validateCacheStrategyStatic() {
+  const appCode = readProjectFile('src/app.js');
+  const indexHtml = readProjectFile('public/index.html');
+  const versionCode = readProjectFile('public/js/app-version.js');
+
+  assert(appCode.includes("NO_STORE_CACHE_CONTROL = 'no-cache, no-store, must-revalidate'"), 'HTML deve ter politica no-store declarada');
+  assert(appCode.includes('setHtmlRouteCacheHeaders'), 'rotas HTML devem aplicar headers de cache fraco');
+  assert(appCode.includes("app.get('/version'"), 'app deve expor endpoint publico de versao');
+  assert(appCode.includes('setPublicStaticCacheHeaders'), 'assets estaticos devem passar por estrategia de cache dedicada');
+  assert(appCode.includes('IMMUTABLE_CACHE_CONTROL'), 'assets com hash devem poder usar cache immutable');
+  assert(appCode.includes("app.get(['/service-worker.js', '/sw.js']"), 'service workers antigos devem receber resposta neutralizadora sem cache');
+  assert(indexHtml.includes('window.__APP_VERSION__=__ATLAS_APP_VERSION__;'), 'HTML deve expor versao publica do app');
+  assert(indexHtml.includes('/js/app-version.js'), 'frontend deve carregar rotina de versao/cache tecnico');
+  assert(versionCode.includes("atlasachievement_app_version"), 'rotina de versao deve usar chave tecnica propria');
+  assert(versionCode.includes('unregisterServiceWorkers'), 'rotina de versao deve desregistrar service workers antigos');
+  assert(versionCode.includes('clearTechnicalCaches'), 'rotina de versao deve limpar CacheStorage tecnico');
+  assert(!/trophy_library_v2|user_trophy_progress|checklist/i.test(versionCode), 'rotina de versao nao deve apagar biblioteca, progresso ou checklist');
+
+  const localStorageState = {
+    atlasachievement_app_version: 'old',
+    trophy_library_v2: JSON.stringify({ 'resident-evil-4-remake': { completed: ['re4r_promising_agent'] } }),
+    checklist_density: 'comfortable'
+  };
+  const sessionStorageState = {};
+  const deletedCaches = [];
+  const context = {
+    window: {
+      __APP_VERSION__: 'new',
+      location: { reload() {} },
+      navigator: { serviceWorker: { controller: null, getRegistrations: async () => [] } },
+      caches: {
+        keys: async () => ['atlasachievement-runtime-v1'],
+        delete: async cacheName => {
+          deletedCaches.push(cacheName);
+          return true;
+        }
+      },
+      localStorage: {
+        getItem(key) { return Object.prototype.hasOwnProperty.call(localStorageState, key) ? localStorageState[key] : null; },
+        setItem(key, value) { localStorageState[key] = String(value); }
+      },
+      sessionStorage: {
+        getItem(key) { return Object.prototype.hasOwnProperty.call(sessionStorageState, key) ? sessionStorageState[key] : null; },
+        setItem(key, value) { sessionStorageState[key] = String(value); }
+      }
+    },
+    console
+  };
+  context.window.window = context.window;
+  context.globalThis = context.window;
+  vm.createContext(context);
+  vm.runInContext(versionCode, context, { filename: 'public/js/app-version.js' });
+
+  assert.strictEqual(localStorageState.atlasachievement_app_version, 'new', 'versao salva deve ser atualizada');
+  assert(localStorageState.trophy_library_v2.includes('re4r_promising_agent'), 'biblioteca/progresso local devem ser preservados');
+  assert.strictEqual(localStorageState.checklist_density, 'comfortable', 'preferencia de checklist deve ser preservada');
+  assert(deletedCaches.length <= 1, 'limpeza tecnica deve ser limitada a caches do app');
+
+  console.log('test:cache passed (headers + app version static)');
 }
 
 async function withTempApp(callback) {
@@ -578,6 +644,55 @@ async function validateGuide(slug = '') {
       assert(!checklistText.includes(text), `Checklist de The Last of Us Part I nao deve exibir descricao em ingles: ${text}`);
     });
   }
+  if (slug === 'the-last-of-us-part-ii') {
+    const guideText = visibleGameText(seedGame);
+    const faqText = JSON.stringify(viewModel.contextualFaq || []);
+    const attentionText = JSON.stringify(viewModel.routeChangingTrophies || []);
+    const tagCount = tagId => seedGame.trophies.filter(trophy => guideModel.getGuideTrophyTags(trophy, seedGame).some(tag => tag.id === tagId)).length;
+    const quickDlc = guideModel.buildGuideQuickDecisionModel(seedGame, viewModel).cards.find(card => card.id === 'dlc');
+    assert.strictEqual(seedGame.is_verified, true, 'The Last of Us Part II deve continuar Verificado');
+    assert.strictEqual(seedGame.verification_status, 'verified', 'The Last of Us Part II deve preservar verification_status verified');
+    assert.strictEqual(seedGame.verification_note, 'Guia revisado editorialmente.', 'The Last of Us Part II deve preservar mensagem revisada');
+    assert.strictEqual(viewModel.editorial.statusBadge.label, 'Verificado', 'The Last of Us Part II deve exibir selo Verificado');
+    assert.strictEqual(viewModel.editorial.statusBadge.detail, 'Guia revisado editorialmente.', 'The Last of Us Part II deve exibir mensagem revisada');
+    assert.strictEqual(viewModel.trophies.length, 26, 'The Last of Us Part II deve manter 26 trofeus');
+    assert.strictEqual(viewModel.missableCount, 0, 'The Last of Us Part II deve manter missableCount 0');
+    assert.strictEqual(seedGame.trophies.filter(item => item.is_missable || item.isMissable).length, 0, 'The Last of Us Part II deve manter Perdiveis 0 na checklist');
+    assert.strictEqual(Boolean(seedGame.onlineRequired || seedGame.online_required), false, 'The Last of Us Part II deve manter online 0');
+    assert.strictEqual(Boolean(seedGame.coopRequired || seedGame.coop_required), false, 'The Last of Us Part II deve manter coop 0');
+    assert.strictEqual(Boolean(seedGame.dlcRequired || seedGame.dlc_required), false, 'The Last of Us Part II deve manter DLC/extras nao obrigatorios');
+    assert.strictEqual(tagCount('grind'), 1, 'The Last of Us Part II deve manter Grind 1');
+    assert.strictEqual(tagCount('collectible'), 16, 'The Last of Us Part II deve manter Coletaveis 16');
+    assert.strictEqual(tagCount('difficulty'), 6, 'The Last of Us Part II deve manter Dificuldade 6');
+    assert.strictEqual(tagCount('cleanup'), 1, 'The Last of Us Part II deve manter Cleanup 1');
+    assert.strictEqual(viewModel.roadmapStages.length, 6, 'The Last of Us Part II deve manter roadmap com 6 etapas');
+    assert.strictEqual(quickDlc?.value, 'Extras fora da platina base', 'The Last of Us Part II deve exibir extras fora da platina base');
+    assert(viewModel.contextualFaq.length >= 10, 'The Last of Us Part II deve manter FAQ completa');
+    ['Grounded', 'Permadeath', 'No Return', 'Remastered'].forEach(text => {
+      assert(guideText.includes(text), `The Last of Us Part II deve manter separacao de escopo para ${text}`);
+    });
+    ['tlou2_survival_expert', 'tlou2_arms_master', 'tlou2_sightseer', 'tlou2_high_caliber', 'tlou2_put_my_name_up'].forEach(id => {
+      assert(viewModel.routeChangingTrophies.some(item => item.id === id), `The Last of Us Part II deve incluir ponto de atencao ${id}`);
+    });
+    [
+      'dados atuais do guia',
+      'segundo os dados atuais do guia',
+      'o guia aponta',
+      'o guia não aponta',
+      'quando validado',
+      'em revisão',
+      'Este troféu está marcado como spoiler',
+      'Revele os detalhes na lista completa',
+      'Base game sem DLCs',
+      'Descrição em revisão editorial.',
+      '[object Object]',
+      'undefined'
+    ].forEach(text => {
+      assert(!faqText.includes(text), `FAQ de The Last of Us Part II nao deve conter texto fraco: ${text}`);
+      assert(!attentionText.includes(text), `Pontos de atencao de The Last of Us Part II nao devem conter texto generico: ${text}`);
+      assert(!guideText.includes(text), `Seed de The Last of Us Part II nao deve conter texto publico/internal incorreto: ${text}`);
+    });
+  }
 
   await withTempApp(async ({ baseUrl, run, migrate }) => {
     const apiGame = await fetchJson(`${baseUrl}/api/games/slug/${slug}`);
@@ -835,6 +950,47 @@ async function validateGuide(slug = '') {
       assert(!/>\s*null\s*</i.test(html), 'The Last of Us Part I SSR nao deve exibir null visivel');
       assert.strictEqual(getCanonical(html), 'https://atlasachievement.com.br/jogo/the-last-of-us-part-i', 'canonical de The Last of Us Part I deve usar dominio de producao');
     }
+    if (slug === 'the-last-of-us-part-ii') {
+      const summaryHtml = html.match(/<div class="atlas-guide-summary-editorial[\s\S]*?<\/div>/)?.[0] || '';
+      const apiMissables = apiGame.trophies.filter(trophy => trophy.is_missable);
+      const normalizedHtml = normalizeText(html);
+      const apiTrophyText = apiGame.trophies.map(trophy => `${trophy.name} ${trophy.trophyNamePtBr || ''} ${trophy.description || ''} ${trophy.descriptionPtBr || ''} ${trophy.tip || ''}`).join(' ');
+      assert.strictEqual(apiGame.is_verified, true, 'API de The Last of Us Part II deve continuar Verificado');
+      assert.strictEqual(apiGame.verification_status, 'verified', 'API de The Last of Us Part II deve expor verification_status verified');
+      assert.strictEqual(apiGame.trophies.length, 26, 'API de The Last of Us Part II deve manter 26 trofeus');
+      assert.strictEqual(apiGame.missable_count, 0, 'API de The Last of Us Part II deve manter missable_count 0');
+      assert.strictEqual(apiMissables.length, 0, 'API de The Last of Us Part II deve manter Perdiveis 0 na checklist');
+      assert.strictEqual(Boolean(apiGame.onlineRequired || apiGame.online_required), false, 'API de The Last of Us Part II deve manter online 0');
+      assert.strictEqual(Boolean(apiGame.coopRequired || apiGame.coop_required), false, 'API de The Last of Us Part II deve manter coop 0');
+      assert.strictEqual(Boolean(apiGame.dlcRequired || apiGame.dlc_required), false, 'API de The Last of Us Part II deve manter extras nao obrigatorios');
+      assert(html.includes('The Last of Us Part II'), 'The Last of Us Part II deve renderizar nome no SSR');
+      assert(normalizedHtml.includes('the last of us part ii') && normalizedHtml.includes('guia de platina e trofeus'), 'The Last of Us Part II deve preservar H1 esperado');
+      assert(html.includes('Verificado'), 'The Last of Us Part II deve renderizar status Verificado');
+      assert(html.includes('Guia revisado editorialmente.'), 'The Last of Us Part II deve renderizar mensagem revisada');
+      assert(html.includes('Extras fora da platina base'), 'The Last of Us Part II deve exibir extras fora da platina base');
+      assert(normalizedHtml.includes('the last of us part ii tem uma platina concentrada'), 'The Last of Us Part II deve exibir resumo editorial forte');
+      assert((summaryHtml.match(/<p\b/g) || []).length >= 2, 'Resumo de The Last of Us Part II deve ter pelo menos 2 paragrafos editoriais');
+      assert(html.includes('Grounded') && html.includes('Permadeath') && html.includes('No Return') && html.includes('Remastered'), 'The Last of Us Part II deve separar extras do escopo base');
+      assert(html.includes('Survival Expert') && html.includes('Arms Master') && html.includes('Sightseer') && html.includes('High Caliber') && html.includes('Put My Name Up'), 'The Last of Us Part II deve renderizar pontos de atencao editoriais esperados');
+      [
+        'dados atuais do guia',
+        'segundo os dados atuais do guia',
+        'o guia aponta',
+        'o guia não aponta',
+        'Este troféu está marcado como spoiler',
+        'Revele os detalhes na lista completa',
+        'Base game sem DLCs',
+        'Descrição em revisão editorial.',
+        '[object Object]',
+        'undefined'
+      ].forEach(text => {
+        assert(!html.includes(text), `The Last of Us Part II SSR nao deve exibir: ${text}`);
+      });
+      assert(!/Complete the story|Find all|Unlock every|Craft every item|Upgrade a weapon|Learn a player upgrade|Earn the high score/i.test(apiTrophyText), 'The Last of Us Part II deve manter descricoes publicas em portugues');
+      assert(normalizedHtml.includes('nao exige online') || normalizedHtml.includes('nao exige servidores, multiplayer, factions'), 'The Last of Us Part II deve deixar Factions/multiplayer fora da obrigacao');
+      assert(!/>\s*null\s*</i.test(html), 'The Last of Us Part II SSR nao deve exibir null visivel');
+      assert.strictEqual(getCanonical(html), 'https://atlasachievement.com.br/jogo/the-last-of-us-part-ii', 'canonical de The Last of Us Part II deve usar dominio de producao');
+    }
     if (slug === 'pragmata') {
       const normalizedHtml = normalizeText(html);
       const apiMissables = apiGame.trophies.filter(trophy => trophy.is_missable);
@@ -1031,7 +1187,8 @@ async function main() {
     if (slug) return validateGuide(slug);
     validateData();
     validateRoadmaps();
-    console.log('test:quick passed (data + roadmap)');
+    validateCacheStrategyStatic();
+    console.log('test:quick passed (data + roadmap + cache)');
     return;
   }
   throw new Error(`Modo desconhecido: ${mode}`);

@@ -76,6 +76,11 @@ window.UIGuide = (() => {
     'A melhor estratégia é jogar a campanha com um checklist de coletáveis aberto desde o início, acompanhando artefatos, pingentes dos Vagalumes, quadrinhos, manuais, cofres, portas abertas com shiv, bancadas, suplementos e peças. Conversas opcionais e piadas da Ellie merecem atenção especial porque são fáceis de deixar passar durante a exploração.',
     'Depois da campanha, use o Chapter Select para fechar capítulos incompletos, completar Left Behind, revisar coletáveis restantes e finalizar troféus situacionais. O guia separa a platina da lista base do Part I de qualquer expectativa de multiplayer antigo, então o foco fica em exploração cuidadosa e cleanup organizado.'
   ];
+  const TLOU_PART_II_EDITORIAL_SUMMARY = [
+    'The Last of Us Part II tem uma platina concentrada na campanha principal, exploração cuidadosa e cleanup de coletáveis. A lista base não exige online, coop, Factions, Grounded, Permadeath, No Return ou a versão Remastered; o foco está em artefatos, cartas colecionáveis, moedas, entradas de diário, cofres, bancadas, manuais de treinamento, armas e troféus situacionais.',
+    'A melhor estratégia é jogar a campanha em uma dificuldade confortável, explorando todos os ambientes e mantendo um checklist de coletáveis aberto desde o início. Não há perdíveis definitivos, porque o Chapter Select permite voltar a capítulos, mas deixar cartas, moedas, cofres, bancadas e interações para o final aumenta bastante o cleanup.',
+    'Depois da história, use Chapter Select para limpar capítulos incompletos e faça NG+ parcial para concluir upgrades de armas e personagens que exigem mais suplementos e peças do que uma campanha normalmente oferece. Mantenha Grounded, Permadeath, Remastered e No Return fora da rota da platina base.'
+  ];
   const CHECKLIST_DENSITIES = new Set(['comfortable', 'compact']);
   const GUIDE_FILTER_LABELS = {
     all: 'Todos',
@@ -377,7 +382,9 @@ window.UIGuide = (() => {
         .map(card => ({
           ...card,
           label: labels[card.id] || card.label,
-          value: card.id === 'dlc' && ['resident-evil-requiem', 'resident-evil-4-remake', 'hades', 'ghost-of-tsushima', 'hades-ii', 'astro-bot', 'pragmata', 'nioh-2', 'nioh-3'].includes(String(game?.slug || '').trim().toLowerCase())
+          value: card.id === 'dlc' && String(game?.slug || '').trim().toLowerCase() === 'the-last-of-us-part-ii'
+            ? 'Extras fora da platina base'
+            : card.id === 'dlc' && ['resident-evil-requiem', 'resident-evil-4-remake', 'hades', 'ghost-of-tsushima', 'hades-ii', 'astro-bot', 'pragmata', 'nioh-2', 'nioh-3'].includes(String(game?.slug || '').trim().toLowerCase())
             ? 'DLC fora da platina base'
             : card.id === 'coop' && /2 jogadores/i.test(String(card.detail || ''))
             ? '2 jogadores obrigatórios'
@@ -716,6 +723,8 @@ window.UIGuide = (() => {
       ? NIOH3_EDITORIAL_SUMMARY
       : normalizedSlug === 'the-last-of-us-part-i'
       ? TLOU_PART_I_EDITORIAL_SUMMARY
+      : normalizedSlug === 'the-last-of-us-part-ii'
+      ? TLOU_PART_II_EDITORIAL_SUMMARY
       : normalizedSlug === 'elden-ring'
       ? [
           'Este guia de platina de Elden Ring foi pensado para quem quer completar a lista base sem depender apenas da lista crua de troféus. A rota prioriza finais, chefes com troféu, itens lendários e pontos que podem gerar retrabalho se você avançar sem planejamento.',
@@ -796,7 +805,9 @@ window.UIGuide = (() => {
     const playerFit = viewModel.playerFit || buildGuidePlayerFit(game, viewModel);
     const methodItems = Array.isArray(viewModel.editorial?.methodItems) ? viewModel.editorial.methodItems : [];
     const statusBadge = viewModel.editorial?.statusBadge || getEditorialBadge(game);
-    const sectionCopy = ['resident-evil-requiem', 'resident-evil-4-remake', 'hades', 'ghost-of-tsushima', 'hades-ii', 'astro-bot', 'pragmata', 'nioh-2', 'nioh-3', 'the-last-of-us-part-i'].includes(normalizedSlug)
+    const sectionCopy = normalizedSlug === 'the-last-of-us-part-ii'
+      ? 'Respostas rápidas sobre perdíveis, online, coop, tempo, dificuldade, NG+, Chapter Select e extras fora da platina base.'
+      : ['resident-evil-requiem', 'resident-evil-4-remake', 'hades', 'ghost-of-tsushima', 'hades-ii', 'astro-bot', 'pragmata', 'nioh-2', 'nioh-3', 'the-last-of-us-part-i'].includes(normalizedSlug)
       ? 'Respostas rápidas sobre perdíveis, online, coop, tempo, dificuldade e DLC da lista base.'
       : 'Respostas rápidas sobre perdíveis, online, coop, tempo, dificuldade e DLC usando os dados atuais do guia.';
     return `

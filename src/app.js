@@ -22,6 +22,7 @@ const sharedCatalogModel = require('./shared/catalogModel');
 const { loginRateLimit, registerRateLimit, registerFailedLoginAttempt } = require('./middleware/loginRateLimit');
 const SqliteSessionStore = require('./services/sqliteSessionStore');
 const AppError = require('./utils/AppError');
+const packageJson = require('../package.json');
 
 const app = express();
 app.set('trust proxy', 1);
@@ -32,6 +33,13 @@ const catalogFacetPageMap = sharedCatalogModel.catalogFacetPageMap;
 const PUBLIC_CATALOG_PAGE_SIZE = 24;
 const PRODUCTION_CANONICAL_ORIGIN = 'https://atlasachievement.com.br';
 const DEFAULT_SOCIAL_IMAGE_PATH = '/assets/brand/atlasachievement-og.png';
+const NO_STORE_CACHE_CONTROL = 'no-cache, no-store, must-revalidate';
+const NO_CACHE_CONTROL = 'no-cache';
+const IMMUTABLE_CACHE_CONTROL = 'public, max-age=31536000, immutable';
+const APP_VERSION = [
+  packageJson.version || '0.0.0',
+  process.env.APP_VERSION || process.env.RENDER_GIT_COMMIT || process.env.COMMIT_SHA || process.env.SOURCE_VERSION || process.env.BUILD_ID || process.env.RENDER_SERVICE_ID || ''
+].filter(Boolean).join('-');
 const HOME_SEO_TITLE = 'AtlasAchievement — Guias de troféus e platina em português';
 const HOME_SEO_DESCRIPTION = 'Escolha sua próxima platina com tempo estimado, dificuldade, roadmap, checklist, troféus perdíveis, online/coop e guias em português.';
 const REQUIEM_EDITORIAL_SUMMARY = [
@@ -83,6 +91,11 @@ const TLOU_PART_I_EDITORIAL_SUMMARY = [
   'The Last of Us Part I tem uma platina concentrada na campanha principal, em Left Behind e na limpeza de coletáveis e interações opcionais. A lista não exige multiplayer/Factions, online ou coop, e também não depende de troféus perdíveis definitivos, já que o Chapter Select permite voltar para capítulos e corrigir pendências.',
   'A melhor estratégia é jogar a campanha com um checklist de coletáveis aberto desde o início, acompanhando artefatos, pingentes dos Vagalumes, quadrinhos, manuais, cofres, portas abertas com shiv, bancadas, suplementos e peças. Conversas opcionais e piadas da Ellie merecem atenção especial porque são fáceis de deixar passar durante a exploração.',
   'Depois da campanha, use o Chapter Select para fechar capítulos incompletos, completar Left Behind, revisar coletáveis restantes e finalizar troféus situacionais. O guia separa a platina da lista base do Part I de qualquer expectativa de multiplayer antigo, então o foco fica em exploração cuidadosa e cleanup organizado.'
+];
+const TLOU_PART_II_EDITORIAL_SUMMARY = [
+  'The Last of Us Part II tem uma platina concentrada na campanha principal, exploração cuidadosa e cleanup de coletáveis. A lista base não exige online, coop, Factions, Grounded, Permadeath, No Return ou a versão Remastered; o foco está em artefatos, cartas colecionáveis, moedas, entradas de diário, cofres, bancadas, manuais de treinamento, armas e troféus situacionais.',
+  'A melhor estratégia é jogar a campanha em uma dificuldade confortável, explorando todos os ambientes e mantendo um checklist de coletáveis aberto desde o início. Não há perdíveis definitivos, porque o Chapter Select permite voltar a capítulos, mas deixar cartas, moedas, cofres, bancadas e interações para o final aumenta bastante o cleanup.',
+  'Depois da história, use Chapter Select para limpar capítulos incompletos e faça NG+ parcial para concluir upgrades de armas e personagens que exigem mais suplementos e peças do que uma campanha normalmente oferece. Mantenha Grounded, Permadeath, Remastered e No Return fora da rota da platina base.'
 ];
 
 const editorialCollectionPageMap = {
@@ -456,7 +469,7 @@ function buildAdminLoginPageHtml() {
 
 function sendAdminPage(req, res) {
   res.setHeader('X-Robots-Tag', 'noindex, nofollow');
-  res.setHeader('Cache-Control', 'no-store');
+  setNoStoreHeaders(res);
 
   if (!req.session?.admin) {
     res.type('html').send(buildAdminLoginPageHtml());
@@ -464,6 +477,42 @@ function sendAdminPage(req, res) {
   }
 
   res.sendFile(path.join(__dirname, '../public/admin.html'));
+}
+
+function setNoStoreHeaders(res) {
+  res.setHeader('Cache-Control', NO_STORE_CACHE_CONTROL);
+  res.setHeader('Pragma', 'no-cache');
+  res.setHeader('Expires', '0');
+}
+
+function setNoCacheHeaders(res) {
+  res.setHeader('Cache-Control', NO_CACHE_CONTROL);
+}
+
+function hasHashedAssetName(filePath = '') {
+  const basename = path.basename(String(filePath || ''));
+  return /(?:[._-])[a-f0-9]{8,}(?=\.)/i.test(basename);
+}
+
+function setPublicStaticCacheHeaders(res, filePath = '') {
+  res.setHeader('X-Content-Type-Options', 'nosniff');
+
+  if (/(?:^|[\\/])(?:service-worker|sw)\.js$/i.test(filePath) || /(?:^|[\\/])(?:site\.webmanifest|manifest\.json)$/i.test(filePath)) {
+    setNoStoreHeaders(res);
+    return;
+  }
+
+  if (hasHashedAssetName(filePath)) {
+    res.setHeader('Cache-Control', IMMUTABLE_CACHE_CONTROL);
+    return;
+  }
+
+  setNoCacheHeaders(res);
+}
+
+function setHtmlRouteCacheHeaders(req, res, next) {
+  setNoStoreHeaders(res);
+  next();
 }
 
 function firstSeoText(...values) {
@@ -996,9 +1045,11 @@ function renderGuideEditorialNotesHtml(game = {}, viewModel = {}) {
   const playerFit = viewModel.playerFit || buildGuidePlayerFit(game, viewModel);
   const methodItems = Array.isArray(viewModel.editorial?.methodItems) ? viewModel.editorial.methodItems : [];
   const statusBadge = viewModel.editorial?.statusBadge || getEditorialBadge(game);
-  const sectionCopy = ['resident-evil-requiem', 'resident-evil-4-remake', 'hades', 'ghost-of-tsushima', 'hades-ii', 'astro-bot', 'pragmata', 'nioh-2', 'nioh-3', 'the-last-of-us-part-i'].includes(normalizedSlug)
-    ? 'Respostas rápidas sobre perdíveis, online, coop, tempo, dificuldade e DLC da lista base.'
-    : 'Respostas rápidas sobre perdíveis, online, coop, tempo, dificuldade e DLC usando os dados atuais do guia.';
+  const sectionCopy = normalizedSlug === 'the-last-of-us-part-ii'
+    ? 'Respostas rápidas sobre perdíveis, online, coop, tempo, dificuldade, NG+, Chapter Select e extras fora da platina base.'
+    : ['resident-evil-requiem', 'resident-evil-4-remake', 'hades', 'ghost-of-tsushima', 'hades-ii', 'astro-bot', 'pragmata', 'nioh-2', 'nioh-3', 'the-last-of-us-part-i'].includes(normalizedSlug)
+      ? 'Respostas rápidas sobre perdíveis, online, coop, tempo, dificuldade e DLC da lista base.'
+      : 'Respostas rápidas sobre perdíveis, online, coop, tempo, dificuldade e DLC usando os dados atuais do guia.';
   return `
     <section id="guideEditorialNotesPanel" class="atlas-panel atlas-panel--editorial atlas-editorial-notes p-5 md:p-6">
       <div class="atlas-section-head atlas-section-head--compact">
@@ -1140,7 +1191,9 @@ function buildGuideHeroStats(game = {}, viewModel = {}) {
       .map(card => ({
         ...card,
         label: labels[card.id] || card.label,
-          value: card.id === 'dlc' && ['resident-evil-requiem', 'resident-evil-4-remake', 'hades', 'ghost-of-tsushima', 'hades-ii', 'astro-bot', 'pragmata', 'nioh-2', 'nioh-3'].includes(String(game?.slug || '').trim().toLowerCase())
+          value: card.id === 'dlc' && String(game?.slug || '').trim().toLowerCase() === 'the-last-of-us-part-ii'
+            ? 'Extras fora da platina base'
+            : card.id === 'dlc' && ['resident-evil-requiem', 'resident-evil-4-remake', 'hades', 'ghost-of-tsushima', 'hades-ii', 'astro-bot', 'pragmata', 'nioh-2', 'nioh-3'].includes(String(game?.slug || '').trim().toLowerCase())
             ? 'DLC fora da platina base'
             : card.id === 'coop' && /2 jogadores/i.test(String(card.detail || ''))
             ? '2 jogadores obrigatórios'
@@ -1617,6 +1670,8 @@ function renderGuideSummaryPanelHtml(game = {}, viewModel = {}) {
     ? NIOH3_EDITORIAL_SUMMARY
     : normalizedSlug === 'the-last-of-us-part-i'
     ? TLOU_PART_I_EDITORIAL_SUMMARY
+    : normalizedSlug === 'the-last-of-us-part-ii'
+    ? TLOU_PART_II_EDITORIAL_SUMMARY
     : normalizedSlug === 'elden-ring'
     ? [
         'Este guia de platina de Elden Ring foi pensado para quem quer completar a lista base sem depender apenas da lista crua de troféus. A rota prioriza finais, chefes com troféu, itens lendários e pontos que podem gerar retrabalho se você avançar sem planejamento.',
@@ -1663,6 +1718,7 @@ function buildSsrGuideMarkup(game, relatedGames = []) {
 function applyTemplateDefaults(template) {
   return template
     .replace(/__ANALYTICS_HEAD__/g, buildAnalyticsHeadHtml())
+    .replace(/__ATLAS_APP_VERSION__/g, safeJsonForHtml(APP_VERSION))
     .replace(/__HOME_VIEW_CLASS__/g, '')
     .replace(/__CATALOG_VIEW_CLASS__/g, 'hidden')
     .replace(/__GUIDE_VIEW_CLASS__/g, 'hidden')
@@ -2444,34 +2500,36 @@ app.use(issueCsrfToken);
 app.use('/uploads', express.static(env.uploadDir, {
   fallthrough: false,
   etag: true,
-  maxAge: env.isProduction ? '30d' : 0,
-  setHeaders: res => {
-    res.setHeader('X-Content-Type-Options', 'nosniff');
-    if (env.isProduction) {
-      res.setHeader('Cache-Control', 'public, max-age=2592000, immutable');
-    }
-  }
+  maxAge: 0,
+  setHeaders: setPublicStaticCacheHeaders
 }));
 app.use('/shared', express.static(path.join(__dirname, 'shared'), {
   index: false,
   etag: true,
-  maxAge: env.isProduction ? '7d' : 0,
-  setHeaders: (res, filePath) => {
-    if (env.isProduction && /\.js$/i.test(filePath)) {
-      res.setHeader('Cache-Control', 'public, max-age=604800, stale-while-revalidate=86400');
-    }
-  }
+  maxAge: 0,
+  setHeaders: setPublicStaticCacheHeaders
 }));
 app.get(['/admin', '/admin.html'], sendAdminPage);
+app.get(['/service-worker.js', '/sw.js'], (req, res) => {
+  setNoStoreHeaders(res);
+  res.type('application/javascript').send(`
+self.addEventListener('install', event => {
+  self.skipWaiting();
+});
+self.addEventListener('activate', event => {
+  event.waitUntil(
+    self.registration.unregister()
+      .then(() => self.clients.matchAll())
+      .then(clients => Promise.all(clients.map(client => client.navigate(client.url))))
+  );
+});
+`);
+});
 app.use(express.static(path.join(__dirname, '../public'), {
   index: false,
   etag: true,
-  maxAge: env.isProduction ? '7d' : 0,
-  setHeaders: (res, filePath) => {
-    if (env.isProduction && /\.(?:css|js|svg|png|jpg|jpeg|webp|woff2?)$/i.test(filePath)) {
-      res.setHeader('Cache-Control', 'public, max-age=604800, stale-while-revalidate=86400');
-    }
-  }
+  maxAge: 0,
+  setHeaders: setPublicStaticCacheHeaders
 }));
 
 app.get('/api/health', (req, res) => {
@@ -2483,8 +2541,17 @@ app.get('/api/health', (req, res) => {
   });
 });
 
+app.get('/version', (req, res) => {
+  setNoStoreHeaders(res);
+  res.json({
+    version: APP_VERSION,
+    packageVersion: packageJson.version || '',
+    environment: env.nodeEnv
+  });
+});
+
 app.get('/favicon.ico', (req, res) => {
-  res.setHeader('Cache-Control', env.isProduction ? 'public, max-age=604800, stale-while-revalidate=86400' : 'no-cache');
+  setNoCacheHeaders(res);
   res.redirect(302, '/favicon.png');
 });
 
@@ -2559,7 +2626,7 @@ app.use('/api/me', requireCsrf, meRoutes);
 app.use('/api/uploads', requireCsrf, uploadsRoutes);
 app.use('/api/games', requireCsrf, gamesRoutes);
 
-app.get('/comece-aqui', async (req, res, next) => {
+app.get('/comece-aqui', setHtmlRouteCacheHeaders, async (req, res, next) => {
   try {
     res.send(await buildStartHerePageHtml(req));
   } catch (error) {
@@ -2568,7 +2635,7 @@ app.get('/comece-aqui', async (req, res, next) => {
 });
 
 Object.values(organicSeoListPageMap).forEach(config => {
-  app.get(config.path, async (req, res, next) => {
+  app.get(config.path, setHtmlRouteCacheHeaders, async (req, res, next) => {
     try {
       res.send(await buildOrganicListPageHtml(req, config));
     } catch (error) {
@@ -2577,7 +2644,7 @@ Object.values(organicSeoListPageMap).forEach(config => {
   });
 });
 
-app.get('/catalogo', async (req, res, next) => {
+app.get('/catalogo', setHtmlRouteCacheHeaders, async (req, res, next) => {
   try {
     res.send(await buildCatalogPageHtml(req));
   } catch (error) {
@@ -2585,7 +2652,7 @@ app.get('/catalogo', async (req, res, next) => {
   }
 });
 
-app.get('/catalogo/:facetSlug', async (req, res, next) => {
+app.get('/catalogo/:facetSlug', setHtmlRouteCacheHeaders, async (req, res, next) => {
   const { facetSlug } = req.params;
   if (!catalogFacetPageMap[facetSlug]) {
     return next();
@@ -2599,7 +2666,7 @@ app.get('/catalogo/:facetSlug', async (req, res, next) => {
 });
 
 
-app.get('/colecoes/:collectionSlug', async (req, res, next) => {
+app.get('/colecoes/:collectionSlug', setHtmlRouteCacheHeaders, async (req, res, next) => {
   const { collectionSlug } = req.params;
   if (!editorialCollectionPageMap[collectionSlug]) {
     return next();
@@ -2612,7 +2679,7 @@ app.get('/colecoes/:collectionSlug', async (req, res, next) => {
   }
 });
 
-app.get('/jogo/:slug', async (req, res, next) => {
+app.get('/jogo/:slug', setHtmlRouteCacheHeaders, async (req, res, next) => {
   try {
     const game = await gamesService.getGameBySlug(req.params.slug);
 
@@ -2626,7 +2693,7 @@ app.get('/jogo/:slug', async (req, res, next) => {
   }
 });
 
-app.get('/biblioteca', async (req, res, next) => {
+app.get('/biblioteca', setHtmlRouteCacheHeaders, async (req, res, next) => {
   try {
     res.setHeader('X-Robots-Tag', 'noindex, follow');
     res.send(await buildStaticPublicPageHtml(req, {
@@ -2640,7 +2707,7 @@ app.get('/biblioteca', async (req, res, next) => {
   }
 });
 
-app.get('/perfil', async (req, res, next) => {
+app.get('/perfil', setHtmlRouteCacheHeaders, async (req, res, next) => {
   try {
     res.setHeader('X-Robots-Tag', 'noindex, follow');
     res.send(await buildStaticPublicPageHtml(req, {
@@ -2654,7 +2721,7 @@ app.get('/perfil', async (req, res, next) => {
   }
 });
 
-app.get('/', async (req, res, next) => {
+app.get('/', setHtmlRouteCacheHeaders, async (req, res, next) => {
   try {
     res.send(await buildDefaultPageHtml(req));
   } catch (error) {

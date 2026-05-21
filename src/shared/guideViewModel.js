@@ -397,6 +397,13 @@
         tone: 'atlas-meta-signal--partial'
       };
     }
+    if (/extras fora da platina base/.test(normalized)) {
+      return {
+        value: 'Extras fora da platina base',
+        detail: dlcText,
+        tone: 'atlas-meta-signal--complete'
+      };
+    }
     if (game?.dlc_status === 'out_of_base_scope' || /dlc fora da platina base|shadow of the erdtree/.test(normalized)) {
       return {
         value: 'DLC fora da platina base',
@@ -759,7 +766,9 @@
     let dlcValue = dlcScope.value;
     const normalizedDlc = normalizeGuideSignalText(inputs.dlc);
     if (!inputs.dlc || dlcReview) dlcValue = 'Informação em revisão';
-    else if (/dlc fora da platina base/.test(normalizedDlc)) {
+    else if (/extras fora da platina base/.test(normalizedDlc)) {
+      dlcValue = 'Extras fora da platina base';
+    } else if (/dlc fora da platina base/.test(normalizedDlc)) {
       dlcValue = 'DLC fora da platina base';
     } else if (/left behind/.test(normalizedDlc) && /lista base|part i|29 trofeus|integra o pacote|incluido no part i|incluso na lista base/.test(normalizedDlc)) {
       dlcValue = 'Left Behind incluso na lista base';
@@ -1454,6 +1463,59 @@
           type: 'Coletável / Cleanup',
           text: 'Colecionáveis como artefatos, pingentes, quadrinhos e outros registros são o núcleo do cleanup. Marque tudo no checklist para evitar revisitar capítulos sem necessidade.',
           tags: [attentionTag('Coletável / Cleanup', 'partial')],
+          score: 95
+        }
+      ];
+    }
+
+    const tlouPartIIAttentionIds = [
+      'tlou2_survival_expert',
+      'tlou2_arms_master',
+      'tlou2_sightseer',
+      'tlou2_high_caliber',
+      'tlou2_put_my_name_up'
+    ];
+    if (String(game?.slug || '').trim().toLowerCase() === 'the-last-of-us-part-ii' && tlouPartIIAttentionIds.every(id => trophyById.has(id))) {
+      const attentionTag = (label, tone = 'partial') => ({ id: normalizeGuideSignalText(label).replace(/\s+/g, '-'), label, tone });
+      return [
+        {
+          id: 'tlou2_survival_expert',
+          name: trophyById.get('tlou2_survival_expert')?.name || 'Survival Expert',
+          type: 'Coletável / Risco de run / NG+',
+          text: 'Exige todas as melhorias de jogador e normalmente pede NG+ parcial para suplementos suficientes. Planeje a coleta de recursos e não trate como objetivo de uma única campanha.',
+          tags: [attentionTag('Coletável / Risco de run / NG+', 'warning')],
+          score: 99
+        },
+        {
+          id: 'tlou2_arms_master',
+          name: trophyById.get('tlou2_arms_master')?.name || 'Arms Master',
+          type: 'Coletável / Risco de run / NG+',
+          text: 'Melhorar todas as armas exige peças em quantidade alta. Use a campanha para explorar bem e finalize o restante em NG+ parcial.',
+          tags: [attentionTag('Coletável / Risco de run / NG+', 'warning')],
+          score: 98
+        },
+        {
+          id: 'tlou2_sightseer',
+          name: trophyById.get('tlou2_sightseer')?.name || 'Sightseer',
+          type: 'Coletável / Checklist / Cleanup',
+          text: 'Visite todos os locais do centro de Seattle antes de sair da área. O Chapter Select ajuda no cleanup, mas acompanhar a região evita retrabalho.',
+          tags: [attentionTag('Coletável / Checklist / Cleanup', 'partial')],
+          score: 97
+        },
+        {
+          id: 'tlou2_high_caliber',
+          name: trophyById.get('tlou2_high_caliber')?.name || 'High Caliber',
+          type: 'Coletável / História / Checklist',
+          text: 'As armas ficam espalhadas pela campanha e algumas dependem de exploração cuidadosa. Revise capítulos com calma antes de avançar.',
+          tags: [attentionTag('Coletável / História / Checklist', 'partial')],
+          score: 96
+        },
+        {
+          id: 'tlou2_put_my_name_up',
+          name: trophyById.get('tlou2_put_my_name_up')?.name || 'Put My Name Up',
+          type: 'Situacional / Dificuldade / Cleanup',
+          text: 'É um troféu situacional de pontuação no arco. Use Chapter Select se não fizer na primeira passagem.',
+          tags: [attentionTag('Situacional / Dificuldade / Cleanup', 'warning')],
           score: 95
         }
       ];
