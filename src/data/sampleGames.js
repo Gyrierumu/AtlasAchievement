@@ -979,10 +979,8 @@ const sampleGames = [
     "verification_note": "Guia revisado editorialmente para a lista base.",
     "editorial_review_status": "verified",
     "last_reviewed_at": "2026-05-18",
-    "editorial_notes": "Revisão editorial focada na lista base de 52 troféus. Legends/co-op, Iki Island e New Game+ ficam fora da platina base. Nomes PT-BR preenchidos a partir da localização brasileira oficial da Steam; descrições secretas permanecem em tradução editorial fiel quando a fonte pública não exibe o texto localizado.",
-    "quality_warnings": [
-      "Algumas descrições secretas usam tradução editorial PT-BR porque a página pública da Steam oculta a descrição localizada."
-    ],
+    "editorial_notes": "Revisão editorial focada na lista base de 52 troféus. Legends/co-op, Iki Island e New Game+ ficam fora da platina base. Nomes PT-BR preenchidos a partir da localização brasileira oficial da Steam.",
+    "quality_warnings": [],
     "image": "/assets/games/ghost-of-tsushima/hero.jpg",
     "cover_image": "/assets/games/ghost-of-tsushima/cover.jpg",
     "roadmap": [
@@ -10485,17 +10483,17 @@ const sampleGames = [
     "onlineRequired": false,
     "coopRequired": false,
     "dlcRequired": false,
-    "missable": "Não há troféus perdíveis na lista base: há free roam depois da história e todos os coletáveis, favores, upgrades, Valkyries e desafios opcionais podem ser concluídos no cleanup.",
+    "missable": "Não há troféus perdíveis na lista base: há exploração livre depois da história e todos os coletáveis, favores, upgrades, Valkyries e desafios opcionais podem ser concluídos no cleanup.",
     "runs_summary": "Uma campanha principal com cleanup livre após a história. Nada da lista base é perdível.",
     "missable_summary": "Sem perdíveis definitivos na lista base. Depois da história, é possível voltar aos reinos para limpar coletáveis, favores, Valkyries, mapas do tesouro, Muspelheim, Niflheim e atividades pendentes.",
     "online_summary": "Não há exigência online para a platina. A lista base é totalmente single-player e não exige servidores, PS+ ou troféus online.",
     "grind_summary": "O peso está em exploração, coletáveis, favores, melhorias e desafios opcionais, especialmente valquírias, Muspelheim e Niflheim.",
     "dlc_scope": "DLC fora da platina base. A platina base não exige DLC, God of War Ragnarök, Valhalla ou modos extras de outro jogo.",
     "difficulty_reason": "A dificuldade vem mais dos combates opcionais, Valkyries, Muspelheim, Niflheim e completude do mapa do que de dificuldade obrigatória ou runs múltiplas.",
-    "time_reason": "A faixa de 30-40 horas considera história, exploração, coletáveis, favores, upgrades, valquírias e cleanup em free-roam.",
+    "time_reason": "A faixa de 30-40 horas considera história, exploração, coletáveis, favores, upgrades, valquírias e limpeza em exploração livre.",
     "first_run_advice": "Jogue a campanha naturalmente, explore quando quiser e deixe o cleanup pesado para depois da história.",
-    "cleanup_advice": "Após a história, use o free roam e o mapa por região para limpar coletáveis, favores, dragões, upgrades, Muspelheim, Niflheim e Valkyries. Deixe Mist Echoes, trials finais e Valkyrie Queen para quando Kratos estiver bem equipado.",
-    "before_you_start": "God of War (2018) é uma platina single-player, sem online, coop, DLC ou dificuldade obrigatória. A atenção real é organizar coletáveis por região, acompanhar os 51 Odin’s Ravens no checklist e guardar Valkyries e reinos de desafio para o pós-história.",
+    "cleanup_advice": "Após a história, use a exploração livre e o mapa por região para limpar coletáveis, favores, dragões, upgrades, Muspelheim, Niflheim e Valkyries. Deixe ecos de névoa, desafios finais e Rainha das Valkyries para quando Kratos estiver bem equipado.",
+    "before_you_start": "God of War (2018) é uma platina single-player, sem online, coop, DLC ou dificuldade obrigatória. A atenção real é organizar coletáveis por região, acompanhar os 51 corvos de Odin no checklist e guardar Valkyries e reinos de desafio para o pós-história.",
     "best_for": "Ideal para quem quer uma platina narrativa, acessível e com bastante exploração de mundo semiaberto.",
     "avoid_if": "Evite se você não gosta de coletáveis, limpeza de mapa ou chefes opcionais exigentes.",
     "editorial_status": "published",
@@ -10600,7 +10598,7 @@ const sampleGames = [
         "name": "The Journey Begins",
         "name_pt": "A Jornada Começa",
         "type": "Bronze",
-        "description": "Defenda sua casa contra The Stranger.",
+        "description": "Defenda sua casa contra o Estranho.",
         "tip": "Troféu automático de história no começo da campanha.",
         "is_spoiler": true
       },
@@ -10609,8 +10607,8 @@ const sampleGames = [
         "name": "A New Friend",
         "name_pt": "Um Novo Amigo",
         "type": "Bronze",
-        "description": "Sobreviva à Witch’s Woods.",
-        "tip": "Troféu automático de história durante Path to the Mountain.",
+        "description": "Sobreviva ao Bosque da Bruxa.",
+        "tip": "Troféu automático de história durante Caminho para a Montanha.",
         "is_spoiler": true
       },
       {
@@ -10619,7 +10617,7 @@ const sampleGames = [
         "name_pt": "Parece o Lar",
         "type": "Bronze",
         "description": "Permita que os Light Elves retornem para casa.",
-        "tip": "Troféu automático de história em The Light of Alfheim.",
+        "tip": "Troféu automático de história em A Luz de Alfheim.",
         "is_spoiler": true
       },
       {
@@ -10627,7 +10625,7 @@ const sampleGames = [
         "name": "Dragon Slayer",
         "name_pt": "Matador de Dragões",
         "type": "Bronze",
-        "description": "Derrote o Dragon of the Mountain.",
+        "description": "Derrote o Dragão da Montanha.",
         "tip": "Troféu automático de história ao derrotar o dragão da montanha.",
         "is_spoiler": true
       },
@@ -10655,7 +10653,7 @@ const sampleGames = [
         "name_pt": "Promessa Cumprida",
         "type": "Bronze",
         "description": "Cure Atreus durante a história.",
-        "tip": "Troféu automático de história durante The Sickness.",
+        "tip": "Troféu automático de história durante A Doença.",
         "is_spoiler": true
       },
       {
@@ -10664,7 +10662,7 @@ const sampleGames = [
         "name_pt": "Rodada 2",
         "type": "Bronze",
         "description": "Resgate Atreus durante a história.",
-        "tip": "Troféu automático de história em Return to the Summit.",
+        "tip": "Troféu automático de história em Retorno ao Cume.",
         "is_spoiler": true
       },
       {
@@ -10673,7 +10671,7 @@ const sampleGames = [
         "name_pt": "Assombrações do Passado",
         "type": "Bronze",
         "description": "Saia de Helheim usando o navio.",
-        "tip": "Troféu automático de história em Escape from Helheim.",
+        "tip": "Troféu automático de história em Fuga de Helheim.",
         "is_spoiler": true
       },
       {
@@ -10691,7 +10689,7 @@ const sampleGames = [
         "name_pt": "Último Desejo",
         "type": "Ouro",
         "description": "Conclua a história principal.",
-        "tip": "Troféu de conclusão da campanha principal. O free-roam continua disponível depois disso.",
+        "tip": "Troféu de conclusão da campanha principal. A exploração livre continua disponível depois disso.",
         "is_spoiler": true
       },
       {
@@ -10699,8 +10697,8 @@ const sampleGames = [
         "name": "Beneath the Surface",
         "name_pt": "Sob a Superfície",
         "type": "Bronze",
-        "description": "Revele todas as áreas principais do Lake of Nine.",
-        "tip": "Revele e visite as áreas principais ao redor do Lake of Nine; o cleanup de coletáveis costuma desbloquear isso naturalmente.",
+        "description": "Revele todas as áreas principais do Lago dos Nove.",
+        "tip": "Revele e visite as áreas principais ao redor do Lago dos Nove; a limpeza de coletáveis costuma desbloquear isso naturalmente.",
         "is_spoiler": false
       },
       {
@@ -10718,7 +10716,7 @@ const sampleGames = [
         "name_pt": "Trilíngue",
         "type": "Bronze",
         "description": "Aprenda os idiomas de Muspelheim e Niflheim.",
-        "tip": "Abra chests de cifras para liberar Muspelheim e Niflheim. Há cifras extras, então a platina não fica perdível.",
+        "tip": "Abra baús de cifras para liberar Muspelheim e Niflheim. Há cifras extras, então a platina não fica perdível.",
         "is_spoiler": true
       },
       {
@@ -10735,8 +10733,8 @@ const sampleGames = [
         "name": "Nice Moves",
         "name_pt": "Bons Movimentos",
         "type": "Bronze",
-        "description": "Obtenha uma Runic Attack Gem.",
-        "tip": "A primeira Runic Attack Gem vem naturalmente pela história; outras aparecem em baús, chefes e favores.",
+        "description": "Obtenha uma gema de ataque rúnico.",
+        "tip": "A primeira gema de ataque rúnico vem naturalmente pela história; outras aparecem em baús, chefes e favores.",
         "is_spoiler": false
       },
       {
@@ -10816,8 +10814,8 @@ const sampleGames = [
         "name": "Allfather Blinded",
         "name_pt": "Pai de Todos Cegado",
         "type": "Prata",
-        "description": "Elimine todos os Odin’s Ravens.",
-        "tip": "Encontre e destrua todos os 51 Odin’s Ravens. Use checklist por região para evitar caça cega no final.",
+        "description": "Elimine todos os corvos de Odin.",
+        "tip": "Encontre e destrua todos os 51 corvos de Odin. Use checklist por região para evitar caça cega no final.",
         "is_spoiler": false
       },
       {
@@ -10825,8 +10823,8 @@ const sampleGames = [
         "name": "The Best Moves",
         "name_pt": "Os Melhores Movimentos",
         "type": "Bronze",
-        "description": "Melhore uma Runic Attack ao máximo.",
-        "tip": "Use XP para melhorar qualquer Runic Attack até o nível máximo.",
+        "description": "Melhore um ataque rúnico ao máximo.",
+        "tip": "Use experiência para melhorar qualquer ataque rúnico até o nível máximo.",
         "is_spoiler": false
       },
       {
@@ -10852,8 +10850,8 @@ const sampleGames = [
         "name": "Path of the Zealot",
         "name_pt": "Caminho do Zelote",
         "type": "Bronze",
-        "description": "Obtenha o conjunto de armadura Traveler.",
-        "tip": "Derrote Travellers, entregue o material na loja e craft o set completo.",
+        "description": "Obtenha o conjunto de armadura dos Viajantes.",
+        "tip": "Derrote Viajantes, entregue o material na loja e crie o conjunto completo.",
         "is_spoiler": false
       },
       {
@@ -10861,8 +10859,8 @@ const sampleGames = [
         "name": "Primordial",
         "name_pt": "Primordial",
         "type": "Bronze",
-        "description": "Obtenha o conjunto de armadura Ancient.",
-        "tip": "Derrote Ancients, entregue o material na loja e craft o set completo.",
+        "description": "Obtenha o conjunto de armadura dos Ancestrais.",
+        "tip": "Derrote Ancestrais, entregue o material na loja e crie o conjunto completo.",
         "is_spoiler": false
       },
       {
@@ -10870,8 +10868,8 @@ const sampleGames = [
         "name": "Unfinished Business",
         "name_pt": "Assuntos Inacabados",
         "type": "Prata",
-        "description": "Ajude todos os wayward spirits.",
-        "tip": "Complete os favores de wayward spirits em Midgard, incluindo o favor iniciado por scroll.",
+        "description": "Ajude todos os espíritos errantes.",
+        "tip": "Complete os favores de espíritos errantes em Midgard, incluindo o favor iniciado por pergaminho.",
         "is_spoiler": false
       },
       {
@@ -10880,7 +10878,7 @@ const sampleGames = [
         "name_pt": "Caçador de Tesouros",
         "type": "Prata",
         "description": "Utilize todos os mapas do tesouro para encontrar os tesouros.",
-        "tip": "Encontre todos os treasure maps e cave nos 12 locais correspondentes.",
+        "tip": "Encontre todos os mapas do tesouro e cave nos 12 locais correspondentes.",
         "is_spoiler": false
       },
       {
@@ -10888,8 +10886,8 @@ const sampleGames = [
         "name": "The Truth",
         "name_pt": "A Verdade",
         "type": "Prata",
-        "description": "Leia todos os Jötnar shrines.",
-        "tip": "Leia todos os 11 Jötnar shrines. Eles não são perdíveis, mas não são todos rastreados do mesmo jeito no mapa.",
+        "description": "Leia todos os santuários Jötnar.",
+        "tip": "Leia todos os 11 santuários Jötnar. Eles não são perdíveis, mas não são todos rastreados do mesmo jeito no mapa.",
         "is_spoiler": false
       },
       {
@@ -10907,7 +10905,7 @@ const sampleGames = [
         "name_pt": "Escuridão e Névoa",
         "type": "Ouro",
         "description": "Recupere todos os tesouros da câmara central de Niflheim.",
-        "tip": "Farme Mist Echoes em Niflheim e abra todos os baús e realm tears da câmara central.",
+        "tip": "Farme ecos de névoa em Niflheim e abra todos os baús e rasgos de reino da câmara central.",
         "is_spoiler": true
       },
       {

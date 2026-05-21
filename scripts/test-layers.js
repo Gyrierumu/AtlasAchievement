@@ -352,8 +352,11 @@ async function validateGuide(slug = '') {
     assert.strictEqual(viewModel.trophies.length, 52, 'Ghost of Tsushima deve manter 52 trofeus');
     assert.strictEqual(viewModel.missableCount, 0, 'Ghost of Tsushima deve manter missableCount 0');
     assert.strictEqual(viewModel.roadmapStages.length, 6, 'Ghost of Tsushima deve manter roadmap com 6 etapas');
+    assert.strictEqual(Boolean(seedGame.onlineRequired || seedGame.online_required), false, 'Ghost of Tsushima deve manter online 0');
+    assert.strictEqual(Boolean(seedGame.coopRequired || seedGame.coop_required), false, 'Ghost of Tsushima deve manter coop 0');
     assert.strictEqual(seedGame.dlcRequired || seedGame.dlc_required || false, false, 'Ghost of Tsushima deve manter DLC nao obrigatoria');
-    ['Maté', 'Watér', 'Resgaté', 'Base game sem DLCs'].forEach(text => {
+    assert.deepStrictEqual(seedGame.quality_warnings || seedGame.qualityWarnings || [], [], 'Ghost of Tsushima nao deve ter quality warning publico no seed');
+    ['Maté', 'Watér', 'Resgaté', 'Base game sem DLCs', 'Algumas descrições secretas usam tradução editorial PT-BR', 'Steam oculta', 'descrição localizada'].forEach(text => {
       assert(!ghostText.includes(text), `Ghost of Tsushima nao deve conter texto incorreto: ${text}`);
     });
   }
@@ -572,6 +575,21 @@ async function validateGuide(slug = '') {
     assert.strictEqual(seedGame.trophies.filter(trophy => trophy.name_pt && trophy.name_pt.trim()).length, 37, 'God of War (2018) deve ter titulo PT-BR nos 37 trofeus');
     assert(seedGame.trophies.some(trophy => trophy.name === 'Father and Son' && trophy.name_pt === 'Pai e Filho'), 'Father and Son deve exibir Pai e Filho como titulo PT-BR');
     assert(seedGame.trophies.some(trophy => trophy.name === 'Chooser of the Slain' && trophy.name_pt === 'Escolhedor dos Mortos'), 'Chooser of the Slain deve exibir Escolhedor dos Mortos como titulo PT-BR');
+    assert(seedGame.trophies.some(trophy => trophy.name === 'Primordial' && trophy.name_pt === 'Primordial'), 'Primordial deve manter titulo PT-BR e nome original Primordial');
+    [
+      'Odin’s Ravens',
+      "Odin's Ravens",
+      'Jötnar shrines',
+      'wayward spirits',
+      'Witch’s Woods',
+      "Witch's Woods",
+      'Dragon of the Mountain',
+      'Runic Attack Gem',
+      'Runic Attack',
+      'Descrição em revisão editorial.'
+    ].forEach(text => {
+      assert(!gowText.includes(text), `Checklist de God of War (2018) nao deve conter termo em ingles ou placeholder: ${text}`);
+    });
     assert(gowText.includes('DLC fora da platina base'), 'God of War (2018) deve padronizar DLC fora da platina base');
     assert(routeItems.length <= 5, 'God of War (2018) deve renderizar no maximo 5 pontos de atencao');
     ['gow2018_chooser_of_the_slain', 'gow2018_darkness_and_fog', 'gow2018_fire_and_brimstone', 'gow2018_allfather_blinded', 'gow2018_treasure_hunter'].forEach(id => {
@@ -912,15 +930,18 @@ async function validateGuide(slug = '') {
       assert.strictEqual(apiGame.verification_status, 'verified', 'API de Ghost of Tsushima deve expor verification_status verified');
       assert.strictEqual(apiGame.trophies.length, 52, 'API de Ghost of Tsushima deve manter 52 trofeus');
       assert.strictEqual(apiGame.missable_count, 0, 'API de Ghost of Tsushima deve manter missable_count 0');
+      assert.strictEqual(Boolean(apiGame.onlineRequired || apiGame.online_required), false, 'API de Ghost of Tsushima deve manter online 0');
+      assert.strictEqual(Boolean(apiGame.coopRequired || apiGame.coop_required), false, 'API de Ghost of Tsushima deve manter coop 0');
       assert.strictEqual(apiGame.dlcRequired || apiGame.dlc_required || false, false, 'API de Ghost of Tsushima deve manter DLC nao obrigatoria');
       assert(html.includes('Ghost of Tsushima — Guia de platina e troféus'), 'Ghost of Tsushima deve renderizar H1 esperado');
       assert(html.includes('Verificado'), 'Ghost of Tsushima deve renderizar status Verificado');
+      assert(html.includes('Guia revisado editorialmente.'), 'Ghost of Tsushima deve renderizar mensagem publica revisada');
       assert(html.includes('DLC fora da platina base'), 'Ghost of Tsushima deve exibir DLC fora da platina base');
       assert(html.includes('Ghost of Tsushima é uma platina de mundo aberto acessível'), 'Ghost of Tsushima deve exibir resumo editorial novo');
       const ghostSummaryHtml = html.match(/<div class="atlas-guide-summary-editorial[\s\S]*?<\/div>/)?.[0] || '';
       assert((ghostSummaryHtml.match(/<p\b/g) || []).length >= 2, 'Resumo de Ghost of Tsushima deve ter pelo menos 2 paragrafos editoriais');
       assert(html.includes('A platina base é totalmente offline') && html.includes('Iki Island, Legends e New Game+ ficam fora da platina base.'), 'FAQ de Ghost of Tsushima deve ter respostas diretas');
-      ['dados atuais do guia', 'o guia não aponta', 'Maté', 'Watér', 'Resgaté', 'Base game sem DLCs', '[object Object]', 'undefined'].forEach(text => {
+      ['dados atuais do guia', 'o guia não aponta', 'Maté', 'Watér', 'Resgaté', 'Base game sem DLCs', 'Algumas descrições secretas usam tradução editorial PT-BR', 'Steam oculta', 'descrição localizada', '[object Object]', 'undefined'].forEach(text => {
         assert(!html.includes(text), `Ghost of Tsushima SSR nao deve exibir: ${text}`);
       });
       assert(!/>\s*null\s*</i.test(html), 'Ghost of Tsushima SSR nao deve exibir null visivel');
@@ -1330,11 +1351,15 @@ async function validateGuide(slug = '') {
       assert.strictEqual(apiGame.trophies.filter(trophy => trophy.name_pt && trophy.trophyNamePtBr).length, 37, 'API de God of War (2018) deve retornar titulo PT-BR nos 37 trofeus');
       assert(html.includes('<h4>Pai e Filho</h4>') && html.includes('NOME ORIGINAL:</span>Father and Son'), 'Checklist de God of War (2018) deve renderizar Pai e Filho com nome original Father and Son');
       assert(html.includes('<h4>Escolhedor dos Mortos</h4>') && html.includes('NOME ORIGINAL:</span>Chooser of the Slain'), 'Checklist de God of War (2018) deve renderizar Escolhedor dos Mortos com nome original Chooser of the Slain');
+      assert(html.includes('<h4>Primordial</h4>') && html.includes('NOME ORIGINAL:</span>Primordial'), 'Checklist de God of War (2018) deve renderizar Primordial com NOME ORIGINAL');
       assert((html.match(/NOME ORIGINAL:<\/span>/g) || []).length >= 2, 'Checklist de God of War (2018) deve exibir NOME ORIGINAL nos trofeus renderizados no SSR');
       assert(!html.includes('<h4>Father and Son</h4>'), 'Checklist de God of War (2018) nao deve usar ingles como titulo principal quando ha PT-BR');
       assert(!html.includes('Pai e Filho / Father and Son'), 'Checklist de God of War (2018) nao deve concatenar traducao e original');
       assert(!html.includes('Pai e Filho / Pai e Filho'), 'Checklist de God of War (2018) nao deve duplicar traducao PT-BR');
       assert(!html.includes('Father and Son / Father and Son'), 'Checklist de God of War (2018) nao deve duplicar nome original');
+      ['Odin’s Ravens', "Odin's Ravens", 'Jötnar shrines', 'wayward spirits', 'Witch’s Woods', "Witch's Woods", 'Dragon of the Mountain', 'Runic Attack Gem', 'Runic Attack', 'Descrição em revisão editorial.'].forEach(text => {
+        assert(!html.includes(text), `HTML publico de God of War (2018) nao deve conter termo em ingles ou placeholder: ${text}`);
+      });
       assert(html.includes('God of War'), 'God of War (2018) deve renderizar nome no SSR');
       assert(html.includes('Verificado'), 'God of War (2018) deve renderizar status Verificado');
       assert(html.includes('Guia revisado editorialmente.'), 'God of War (2018) deve renderizar mensagem publica revisada');

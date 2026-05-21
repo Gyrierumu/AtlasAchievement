@@ -640,7 +640,7 @@ function getTrophyEditorialName(trophy = {}) {
     trophy?.ptName,
     trophy?.translatedName
   ].map(cleanTrophyNameCandidate).filter(Boolean);
-  const editorialName = candidates.find(name => name.toLowerCase() !== officialName.toLowerCase()) || '';
+  const editorialName = candidates[0] || '';
   if (!editorialName) return '';
   return editorialName.includes(' / ') ? editorialName.split(' / ').map(cleanTrophyNameCandidate).find(Boolean) || '' : editorialName;
 }

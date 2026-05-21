@@ -3002,6 +3002,8 @@ async function assertSeedData({ all, get }, sampleGames) {
   assert.strictEqual(ghostSample.coverage_level, 'strong', 'Ghost of Tsushima deve ter cobertura forte sem selo complete');
   assert.strictEqual(ghostSample.is_verified, true, 'Ghost of Tsushima deve continuar verificado');
   assert.strictEqual(ghostSample.verification_status, 'verified', 'Ghost of Tsushima deve permanecer verified');
+  assert.deepStrictEqual(ghostSample.quality_warnings || ghostSample.qualityWarnings || [], [], 'Ghost of Tsushima nao deve carregar aviso publico de traducao no seed');
+  assert(!/Algumas descri[cç][oõ]es secretas usam tradu[cç][aã]o editorial PT-BR|Steam oculta|descri[cç][aã]o localizada/i.test(JSON.stringify(ghostSample)), 'Ghost of Tsushima seed nao deve conter aviso publico de traducao');
   assert(ghostSample.dlc_scope.includes('DLC fora da platina base') && ghostSample.dlc_scope.includes('Iki Island') && ghostSample.dlc_scope.includes('Legends'), 'Ghost of Tsushima deve separar DLC da platina base');
   assert.strictEqual(ghostSample.image, '/assets/games/ghost-of-tsushima/hero.jpg', 'Ghost of Tsushima deve usar image local horizontal valida');
   assert.strictEqual(ghostSample.cover_image, '/assets/games/ghost-of-tsushima/cover.jpg', 'Ghost of Tsushima deve expor cover_image local vertical');
@@ -3035,7 +3037,7 @@ async function assertSeedData({ all, get }, sampleGames) {
   assert.strictEqual(ghostTypeById.got_ghost_of_legend, 'Bronze', 'The Ghost of Legend deve ser bronze');
   assert.strictEqual(ghostTypeById.got_cooper_clan_cosplayer, 'Prata', 'Cooper Clan Cosplayer deve ser prata');
 
-  const ghostSeeded = await get('SELECT slug, difficulty, time, time_bucket, time_min_hours, time_max_hours, time_sort_hours, editorial_status, coverage_level, is_verified, verification_status, image, cover_image, online_summary, dlc_scope FROM games WHERE slug = ?', ['ghost-of-tsushima']);
+  const ghostSeeded = await get('SELECT slug, difficulty, time, time_bucket, time_min_hours, time_max_hours, time_sort_hours, editorial_status, coverage_level, is_verified, verification_status, image, cover_image, online_summary, dlc_scope, quality_warnings FROM games WHERE slug = ?', ['ghost-of-tsushima']);
   assert.strictEqual(ghostSeeded?.slug, 'ghost-of-tsushima', 'seed deve persistir slug do Ghost of Tsushima');
   assert.strictEqual(ghostSeeded?.difficulty, 4, 'seed deve persistir dificuldade 4/10 do Ghost of Tsushima');
   assert.strictEqual(ghostSeeded?.time, '40-50h', 'seed deve persistir tempo 40-50h do Ghost of Tsushima');
@@ -3047,6 +3049,7 @@ async function assertSeedData({ all, get }, sampleGames) {
   assert.strictEqual(ghostSeeded?.coverage_level, 'strong', 'Ghost of Tsushima deve entrar com coverage strong');
   assert.strictEqual(ghostSeeded?.is_verified, 1, 'Ghost of Tsushima deve entrar como verificado');
   assert.strictEqual(ghostSeeded?.verification_status, 'verified', 'Ghost of Tsushima deve entrar verified');
+  assert(!/Algumas descri[cç][oõ]es secretas usam tradu[cç][aã]o editorial PT-BR|Steam oculta|descri[cç][aã]o localizada/i.test(String(ghostSeeded?.quality_warnings || '')), 'seed nao deve persistir aviso publico de traducao em Ghost of Tsushima');
   assert.strictEqual(ghostSeeded?.image, ghostSample.image, 'Ghost of Tsushima deve persistir image horizontal');
   assert.strictEqual(ghostSeeded?.cover_image, ghostSample.cover_image, 'Ghost of Tsushima deve persistir cover_image vertical');
   assert(ghostSeeded?.online_summary.includes('Não há troféus online'), 'Ghost of Tsushima deve deixar claro que não há online obrigatório');
@@ -10366,10 +10369,11 @@ async function assertBackendEditorialConsistency() {
     assert(ghostGuideHtml.includes('Lenda Viva'), 'SSR de Ghost of Tsushima deve renderizar trophyNamePtBr oficial');
     assert(ghostGuideHtml.includes('52 trof'), 'SSR de Ghost of Tsushima deve renderizar total de 52 trofeus');
     assert(ghostGuideHtml.includes('Verificado'), 'SSR de Ghost of Tsushima deve renderizar status Verificado');
+    assert(ghostGuideHtml.includes('Guia revisado editorialmente.'), 'SSR de Ghost of Tsushima deve renderizar mensagem publica revisada');
     assert(ghostGuideHtml.includes('DLC fora da platina base'), 'SSR de Ghost of Tsushima deve mostrar DLC fora da platina base');
     assert(ghostGuideHtml.includes('Ghost of Tsushima é uma platina de mundo aberto acessível'), 'SSR de Ghost of Tsushima deve renderizar resumo editorial forte');
     assert(ghostGuideHtml.includes('A platina base é totalmente offline') && ghostGuideHtml.includes('Iki Island, Legends e New Game+ ficam fora da platina base.'), 'FAQ de Ghost of Tsushima deve usar respostas diretas');
-    assert(!/dados atuais do guia|o guia não aponta|Maté|Watér|Resgaté|Base game sem DLCs|\[object Object\]|\bundefined\b|>\s*null\s*</i.test(ghostGuideHtml), 'SSR de Ghost of Tsushima nao deve exibir linguagem fraca, erros ou placeholders');
+    assert(!/dados atuais do guia|o guia não aponta|Maté|Watér|Resgaté|Base game sem DLCs|Algumas descri[cç][oõ]es secretas usam tradu[cç][aã]o editorial PT-BR|Steam oculta|descri[cç][aã]o localizada|\[object Object\]|\bundefined\b|>\s*null\s*</i.test(ghostGuideHtml), 'SSR de Ghost of Tsushima nao deve exibir linguagem fraca, aviso antigo, erros ou placeholders');
     assert.strictEqual(getCanonicalHref(ghostGuideHtml), 'https://atlasachievement.com.br/jogo/ghost-of-tsushima', 'canonical de Ghost of Tsushima deve usar dominio de producao');
     assert(ghostGuideHtml.includes('atlas-guide-cover--poster'), 'SSR de Ghost of Tsushima deve usar cover_image como poster do guia');
     assert(ghostGuideHtml.includes('/assets/games/ghost-of-tsushima/cover.jpg'), 'SSR de Ghost of Tsushima deve renderizar cover_image vertical local no guia');
@@ -12166,7 +12170,7 @@ async function assertBackendEditorialConsistency() {
     assert(godOfWarDetail.runs_summary.includes('cleanup livre'), 'detalhe de God of War (2018) deve explicar uma campanha com cleanup');
     assert(godOfWarDetail.online_summary.includes('Não há exigência online'), 'detalhe de God of War (2018) deve indicar ausencia de online obrigatorio');
     assert(godOfWarDetail.dlc_scope.includes('DLC fora da platina base'), 'detalhe de God of War (2018) deve manter DLC fora da platina base');
-    assert(godOfWarDetail.cleanup_advice.includes('free roam'), 'detalhe de God of War (2018) deve explicar cleanup em free roam');
+    assert(godOfWarDetail.cleanup_advice.includes('exploração livre'), 'detalhe de God of War (2018) deve explicar cleanup em exploração livre');
     assert.strictEqual(godOfWarDetail.coverage_level, 'strong', 'God of War (2018) nao deve ser complete sem revisao manual');
     assert.strictEqual(godOfWarDetail.is_verified, true, 'God of War (2018) deve estar verificado');
     assert.strictEqual(godOfWarDetail.verification_status, 'verified', 'God of War (2018) deve ficar verified');

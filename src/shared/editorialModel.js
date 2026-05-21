@@ -220,18 +220,23 @@
   }
 
   function parseQualityWarnings(value = []) {
-    if (Array.isArray(value)) return value.map(item => String(item || '').trim()).filter(Boolean);
+    const isDeprecatedPublicWarning = item => /Algumas descri[cç][oõ]es secretas usam tradu[cç][aã]o editorial PT-BR|Steam oculta|descri[cç][aã]o localizada/i.test(String(item || ''));
+    const cleanWarnings = items => items
+      .map(item => String(item || '').trim())
+      .filter(Boolean)
+      .filter(item => !isDeprecatedPublicWarning(item));
+    if (Array.isArray(value)) return cleanWarnings(value);
     const raw = String(value || '').trim();
     if (!raw) return [];
     if (/^\s*\[/.test(raw)) {
       try {
         const parsed = JSON.parse(raw);
-        if (Array.isArray(parsed)) return parsed.map(item => String(item || '').trim()).filter(Boolean);
+        if (Array.isArray(parsed)) return cleanWarnings(parsed);
       } catch (error) {
         // Legacy free-text values are parsed line by line below.
       }
     }
-    return raw.split(/\r?\n|;/).map(item => item.trim()).filter(Boolean);
+    return cleanWarnings(raw.split(/\r?\n|;/));
   }
 
   function inferEditorialTrustStatusFromNotes(game = {}) {

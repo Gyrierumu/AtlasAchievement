@@ -3,6 +3,7 @@ const sampleGames = require('../data/sampleGames');
 const { slugifyGameName, getCanonicalGameSlug, buildSlugVariant } = require('../utils/slug');
 const { formatTimeMetadata, getTimeBucketFromHours } = require('../utils/time');
 const guideModel = require('../shared/guideViewModel');
+const editorialModel = require('../shared/editorialModel');
 
 const GAME_SLUG_ALIASES = {
   'astros-playroom': [
@@ -65,9 +66,14 @@ function hasManualVerificationMetadata(row = {}) {
 function buildSeedEditorialPersistence(game = {}, existing = null, options = {}) {
   const seedVerificationStatus = normalizeVerificationStatus(game);
   const seedReviewStatus = game.editorial_review_status || game.editorialReviewStatus || null;
-  const seedQualityWarnings = Array.isArray(game.quality_warnings || game.qualityWarnings)
-    ? JSON.stringify(game.quality_warnings || game.qualityWarnings)
-    : (game.quality_warnings || game.qualityWarnings || '');
+  const sanitizeQualityWarningsForPersistence = value => {
+    const warnings = editorialModel.parseQualityWarnings(value);
+    return warnings.length ? JSON.stringify(warnings) : '[]';
+  };
+  const seedQualityWarnings = sanitizeQualityWarningsForPersistence(game.quality_warnings || game.qualityWarnings || []);
+  const existingQualityWarnings = existing?.quality_warnings
+    ? sanitizeQualityWarningsForPersistence(existing.quality_warnings)
+    : '';
 
   const shouldPreserveManualVerification = existing
     && hasManualVerifiedStatus(existing)
@@ -83,7 +89,7 @@ function buildSeedEditorialPersistence(game = {}, existing = null, options = {})
       verificationNote: existing.verification_note || game.verification_note || '',
       lastReviewedAt: existing.last_reviewed_at || game.last_reviewed_at || game.lastReviewedAt || '',
       editorialNotes: existing.editorial_notes || game.editorial_notes || game.editorialNotes || '',
-      qualityWarnings: existing.quality_warnings || seedQualityWarnings,
+      qualityWarnings: existingQualityWarnings || seedQualityWarnings,
       reviewedBy: existing.reviewed_by || game.reviewed_by || game.reviewedBy || ''
     };
   }
