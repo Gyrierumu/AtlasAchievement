@@ -500,6 +500,53 @@ async function validateGuide(slug = '') {
       assert(!nioh3Text.includes(text), `Nioh 3 nao deve conter texto publico/internal incorreto: ${text}`);
     });
   }
+  if (slug === 'the-last-of-us-part-i') {
+    const checklistText = seedGame.trophies
+      .map(trophy => `${trophy.description || ''} ${trophy.descriptionPtBr || ''} ${trophy.ptDescription || ''} ${trophy.tip || ''}`)
+      .join(' ');
+    const faqText = JSON.stringify(viewModel.contextualFaq || []);
+    const attentionText = JSON.stringify(viewModel.routeChangingTrophies || []);
+    const tagCount = tagId => seedGame.trophies.filter(trophy => guideModel.getGuideTrophyTags(trophy, seedGame).some(tag => tag.id === tagId)).length;
+    assert.strictEqual(seedGame.is_verified, false, 'The Last of Us Part I deve preservar status atual sem verified automatico');
+    assert.strictEqual(seedGame.verification_status, 'review', 'The Last of Us Part I deve preservar verification_status atual');
+    assert.strictEqual(viewModel.trophies.length, 29, 'The Last of Us Part I deve manter 29 trofeus');
+    assert.strictEqual(viewModel.missableCount, 0, 'The Last of Us Part I deve manter missableCount 0');
+    assert.strictEqual(seedGame.trophies.filter(item => item.is_missable || item.isMissable).length, 0, 'The Last of Us Part I deve manter Perdiveis 0 na checklist');
+    assert.strictEqual(Boolean(seedGame.onlineRequired || seedGame.online_required), false, 'The Last of Us Part I deve manter online 0');
+    assert.strictEqual(Boolean(seedGame.coopRequired || seedGame.coop_required), false, 'The Last of Us Part I deve manter coop 0');
+    assert.strictEqual(Boolean(seedGame.dlcRequired || seedGame.dlc_required), false, 'The Last of Us Part I deve manter DLC separada nao obrigatoria');
+    assert.strictEqual(tagCount('grind'), 0, 'The Last of Us Part I deve manter Grind 0');
+    assert.strictEqual(tagCount('collectible'), 14, 'The Last of Us Part I deve manter Coletaveis 14');
+    assert.strictEqual(tagCount('difficulty'), 2, 'The Last of Us Part I deve manter Dificuldade 2');
+    assert.strictEqual(tagCount('cleanup'), 1, 'The Last of Us Part I deve manter Cleanup 1');
+    assert.strictEqual(viewModel.roadmapStages.length, 6, 'The Last of Us Part I deve manter roadmap com 6 etapas');
+    assert(seedGame.dlc_scope.includes('Left Behind incluso na lista base'), 'The Last of Us Part I deve explicar Left Behind no escopo da lista base');
+    assert(guideModel.buildGuideQuickDecisionModel(seedGame, viewModel).cards.some(card => card.value === 'Left Behind incluso na lista base'), 'The Last of Us Part I deve exibir Left Behind incluso na decisao rapida');
+    assert(viewModel.contextualFaq.length >= 6, 'The Last of Us Part I deve manter FAQ com perguntas essenciais');
+    assert(viewModel.routeChangingTrophies.length <= 5, 'The Last of Us Part I deve renderizar no maximo 5 pontos de atencao');
+    ['tlou1_no_matter_what', 'tlou1_getting_to_know_you', 'tlou1_thats_all_i_got', 'tlou1_dont_go', 'tlou1_in_memorium'].forEach(id => {
+      assert(viewModel.routeChangingTrophies.some(item => item.id === id), `The Last of Us Part I deve incluir ponto de atencao ${id}`);
+    });
+    [
+      'dados atuais do guia',
+      'segundo os dados atuais do guia',
+      'o guia não aponta',
+      'quando validado',
+      'em revisão',
+      'Este troféu está marcado como spoiler',
+      'Revele os detalhes na lista completa',
+      'Descrição em revisão editorial.',
+      '[object Object]',
+      'undefined'
+    ].forEach(text => {
+      assert(!faqText.includes(text), `FAQ de The Last of Us Part I nao deve conter texto fraco: ${text}`);
+      assert(!attentionText.includes(text), `Pontos de atencao de The Last of Us Part I nao devem conter texto generico: ${text}`);
+    });
+    assert(!/\bdeve\b/i.test(faqText), 'FAQ de The Last of Us Part I nao deve usar linguagem insegura com "deve"');
+    ['Collect all trophies', 'Find all notes and artifacts', 'Complete Left Behind', 'Collect all comics', 'Find all Firefly pendants', 'Complete Part 1', 'Open All Safes', 'Craft every item'].forEach(text => {
+      assert(!checklistText.includes(text), `Checklist de The Last of Us Part I nao deve exibir descricao em ingles: ${text}`);
+    });
+  }
 
   await withTempApp(async ({ baseUrl, run, migrate }) => {
     const apiGame = await fetchJson(`${baseUrl}/api/games/slug/${slug}`);
@@ -691,6 +738,48 @@ async function validateGuide(slug = '') {
       });
       assert(!/>\s*null\s*</i.test(html), 'Nioh 3 SSR nao deve exibir null visivel');
       assert.strictEqual(getCanonical(html), 'https://atlasachievement.com.br/jogo/nioh-3', 'canonical de Nioh 3 deve usar dominio de producao');
+    }
+    if (slug === 'the-last-of-us-part-i') {
+      const summaryHtml = html.match(/<div class="atlas-guide-summary-editorial[\s\S]*?<\/div>/)?.[0] || '';
+      const apiMissables = apiGame.trophies.filter(trophy => trophy.is_missable);
+      const normalizedHtml = normalizeText(html);
+      assert.strictEqual(apiGame.is_verified, false, 'API de The Last of Us Part I deve preservar status atual sem verified automatico');
+      assert.strictEqual(apiGame.verification_status, 'review', 'API de The Last of Us Part I deve preservar verification_status atual');
+      assert.strictEqual(apiGame.trophies.length, 29, 'API de The Last of Us Part I deve manter 29 trofeus');
+      assert.strictEqual(apiGame.missable_count, 0, 'API de The Last of Us Part I deve manter missable_count 0');
+      assert.strictEqual(apiMissables.length, 0, 'API de The Last of Us Part I deve manter Perdiveis 0 na checklist');
+      assert.strictEqual(Boolean(apiGame.onlineRequired || apiGame.online_required), false, 'API de The Last of Us Part I deve manter online 0');
+      assert.strictEqual(Boolean(apiGame.coopRequired || apiGame.coop_required), false, 'API de The Last of Us Part I deve manter coop 0');
+      assert.strictEqual(Boolean(apiGame.dlcRequired || apiGame.dlc_required), false, 'API de The Last of Us Part I deve manter DLC separada nao obrigatoria');
+      assert(html.includes('The Last of Us Part I'), 'The Last of Us Part I deve renderizar nome no SSR');
+      assert(html.includes('Left Behind incluso na lista base'), 'The Last of Us Part I deve exibir Left Behind incluso na lista base');
+      assert(normalizedHtml.includes('the last of us part i tem uma platina concentrada'), 'The Last of Us Part I deve exibir resumo editorial forte');
+      assert((summaryHtml.match(/<p\b/g) || []).length >= 2, 'Resumo de The Last of Us Part I deve ter pelo menos 2 paragrafos editoriais');
+      assert(html.includes('A lista permite cleanup por Chapter Select'), 'FAQ de The Last of Us Part I deve ter resposta direta sobre perdiveis');
+      assert(html.includes('não exige multiplayer') || html.includes('nÃ£o exige multiplayer'), 'FAQ de The Last of Us Part I deve deixar multiplayer/Factions fora da obrigacao');
+      assert(html.includes('No Matter What') && html.includes('Getting to Know You') && html.includes("That's All I Got") && html.includes("Don't Go") && html.includes('In Memoriam'), 'The Last of Us Part I deve renderizar pontos de atencao editoriais esperados');
+      [
+        'dados atuais do guia',
+        'segundo os dados atuais do guia',
+        'o guia não aponta',
+        'Este troféu está marcado como spoiler',
+        'Revele os detalhes na lista completa',
+        'Collect all trophies',
+        'Find all notes and artifacts',
+        'Complete Left Behind',
+        'Collect all comics',
+        'Find all Firefly pendants',
+        'Complete Part 1',
+        'Open All Safes',
+        'Craft every item',
+        'Descrição em revisão editorial.',
+        '[object Object]',
+        'undefined'
+      ].forEach(text => {
+        assert(!html.includes(text), `The Last of Us Part I SSR nao deve exibir: ${text}`);
+      });
+      assert(!/>\s*null\s*</i.test(html), 'The Last of Us Part I SSR nao deve exibir null visivel');
+      assert.strictEqual(getCanonical(html), 'https://atlasachievement.com.br/jogo/the-last-of-us-part-i', 'canonical de The Last of Us Part I deve usar dominio de producao');
     }
     if (slug === 'pragmata') {
       const normalizedHtml = normalizeText(html);

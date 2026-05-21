@@ -11154,7 +11154,7 @@ const sampleGames = [
     "missable_summary": "Sem perdíveis definitivos; use Chapter Select para cleanup de coletáveis, conversas, piadas e troféus situacionais.",
     "online_summary": "Não há exigência online, multiplayer ou PS+ para a platina de The Last of Us Part I. Também não há coop obrigatório.",
     "grind_summary": "O peso está em coletáveis, conversas opcionais, piadas da Ellie, portas com shiv, safes, ferramentas, manuais, crafting, upgrades e ações situacionais, não em grind repetitivo.",
-    "dlc_scope": "Base game. Left Behind integra o pacote e a lista de 29 troféus de The Last of Us Part I; não trate como DLC paga separada obrigatória e não use a lista de The Last of Us Remastered.",
+    "dlc_scope": "Left Behind incluso na lista base. O conteúdo integra o pacote e a lista de 29 troféus de The Last of Us Part I; não trate como DLC paga separada obrigatória e não use a lista de The Last of Us Remastered.",
     "difficulty_reason": "A platina é acessível porque não exige multiplayer, coop, dificuldade alta, Survivor/Grounded ou New Game+. A atenção maior está em coletáveis, interações e ações situacionais.",
     "time_reason": "A faixa de 20-30 horas considera campanha, coletáveis, upgrades, Left Behind integrado e cleanup por capítulos.",
     "first_run_advice": "Jogue a campanha coletando o máximo possível e salve o cleanup de coletáveis, conversas e situacionais para a seleção de capítulos.",
@@ -11167,11 +11167,8 @@ const sampleGames = [
     "is_verified": false,
     "verification_status": "review",
     "editorial_review_status": "in_review",
-    "editorial_notes": "Contagem e distribuição validadas em PowerPyx, PlayStationTrophies, Fandom/Steam e fontes agregadoras. Nomes oficiais em inglês preservados; nomes PT-BR não preenchidos por falta de fonte oficial/confiável localizada. Left Behind tratado como parte da lista base de 29 troféus.",
-    "quality_warnings": [
-      "needs_trophy_localization_check",
-      "needs_left_behind_scope_check"
-    ],
+    "editorial_notes": "Contagem e distribuição validadas em PowerPyx, PlayStationTrophies, Fandom/Steam e fontes agregadoras. Nomes oficiais em inglês preservados; descrições públicas em português. Left Behind tratado como parte da lista base de 29 troféus.",
+    "quality_warnings": [],
     "verification_note": "Guia forte de The Last of Us Part I em revisão editorial: lista base validada, mas sem selo verified até checagem final de localização oficial PT-BR.",
     "chapterSelect": true,
     "hasChapterSelect": true,
@@ -11191,7 +11188,7 @@ const sampleGames = [
         "actions": [
           "Jogue a campanha em qualquer dificuldade confortável.",
           "Explore ambientes antes de avançar para áreas sem volta.",
-          "Pegue artefatos, Firefly pendants, comics, manuais de treinamento e ferramentas sempre que possível.",
+          "Pegue artefatos, pingentes dos Vagalumes, quadrinhos, manuais de treinamento e ferramentas sempre que possível.",
           "Abra portas com shiv e safes conforme encontrar combinações e recursos.",
           "Faça conversas opcionais e piadas da Ellie quando surgirem."
         ],
@@ -11203,7 +11200,7 @@ const sampleGames = [
         "focus": "Left Behind / história",
         "objective": "Finalizar a campanha extra Left Behind e resolver os troféus próprios desse conteúdo incluído no Part I.",
         "actions": [
-          "Complete Left Behind depois da campanha principal ou quando preferir.",
+          "Conclua Left Behind depois da campanha principal ou quando preferir.",
           "Faça os troféus situacionais de Left Behind durante a jogada, se possível.",
           "Preste atenção em interações específicas, minigames e desafios próprios da Ellie.",
           "Use seleção de capítulos para corrigir qualquer pendência depois."
@@ -11216,8 +11213,8 @@ const sampleGames = [
         "focus": "Coletáveis / Chapter Select",
         "objective": "Usar a seleção de capítulos para buscar tudo que ficou faltando sem reiniciar a campanha inteira.",
         "actions": [
-          "Revise Firefly pendants, artifacts, notes, comics, manuais de treinamento e ferramentas.",
-          "Confira bancadas, safes e portas com shiv.",
+          "Revise pingentes dos Vagalumes, artefatos, notas, quadrinhos, manuais de treinamento e ferramentas.",
+          "Confira bancadas, cofres e portas com shiv.",
           "Limpe um capítulo por vez para evitar retrabalho.",
           "Use checklist para marcar exatamente o que falta."
         ],
@@ -11229,7 +11226,7 @@ const sampleGames = [
         "focus": "Conversas / situacionais",
         "objective": "Finalizar interações específicas que dependem de momentos concretos da campanha.",
         "actions": [
-          "Revise todas as optional conversations pendentes.",
+          "Revise todas as conversas opcionais pendentes.",
           "Complete todas as piadas da Ellie nos capítulos corretos.",
           "Use Chapter Select para voltar aos pontos necessários.",
           "Evite avançar rápido demais quando houver área com diálogo opcional."
@@ -11269,7 +11266,7 @@ const sampleGames = [
         "id": "tlou1_it_cant_be_for_nothing",
         "name": "It Can't Be For Nothing",
         "type": "Platina",
-        "description": "Colete todos os troféus.",
+        "description": "Obtenha todos os outros troféus.",
         "tip": "Conclua todos os troféus da lista oficial de The Last of Us Part I.",
         "is_spoiler": false
       },
@@ -11278,7 +11275,7 @@ const sampleGames = [
         "name": "No Matter What",
         "type": "Ouro",
         "description": "Conclua a campanha principal.",
-        "tip": "Complete a campanha principal no modo que preferir.",
+        "tip": "Conclua a campanha principal no modo que preferir.",
         "is_spoiler": true
       },
       {
@@ -11286,15 +11283,15 @@ const sampleGames = [
         "name": "Don't Go",
         "type": "Ouro",
         "description": "Conclua Left Behind.",
-        "tip": "Complete Left Behind, que faz parte da lista oficial de Part I.",
+        "tip": "Conclua Left Behind, que faz parte da lista oficial de Part I.",
         "is_spoiler": true
       },
       {
         "id": "tlou1_look_for_the_light",
         "name": "Look for the Light",
         "type": "Ouro",
-        "description": "Encontre todos os pingentes dos Vaga-lumes.",
-        "tip": "Colete todos os Firefly pendants da campanha principal.",
+        "description": "Encontre todos os pingentes dos Vagalumes.",
+        "tip": "Colete todos os pingentes dos Vagalumes da campanha principal.",
         "is_spoiler": false
       },
       {
@@ -11302,7 +11299,7 @@ const sampleGames = [
         "name": "Endure and Survive",
         "type": "Ouro",
         "description": "Colete todos os quadrinhos.",
-        "tip": "Colete todos os comics Savage Starlight.",
+        "tip": "Colete todos os quadrinhos Savage Starlight.",
         "is_spoiler": false
       },
       {
@@ -11310,7 +11307,7 @@ const sampleGames = [
         "name": "Chronicles",
         "type": "Ouro",
         "description": "Encontre todas as notas e artefatos.",
-        "tip": "Colete todos os notes e artefacts da campanha e de Left Behind.",
+        "tip": "Colete todas as notas e artefatos da campanha e de Left Behind.",
         "is_spoiler": false
       },
       {
@@ -11325,7 +11322,7 @@ const sampleGames = [
         "id": "tlou1_thats_all_i_got",
         "name": "That's All I Got",
         "type": "Ouro",
-        "description": "Sobreviva a todas as piadas da Ellie.",
+        "description": "Ouça todos os conjuntos de piadas da Ellie.",
         "tip": "Acione todos os conjuntos de piadas da Ellie na campanha e em Left Behind.",
         "is_spoiler": true
       },
@@ -11334,7 +11331,7 @@ const sampleGames = [
         "name": "Something to Fight For",
         "type": "Prata",
         "description": "Encontre todos os manuais de treinamento.",
-        "tip": "Colete todos os training manuals para completar essa linha de coletáveis.",
+        "tip": "Colete todos os manuais de treinamento para completar essa linha de coletáveis.",
         "is_spoiler": false
       },
       {
@@ -11350,7 +11347,7 @@ const sampleGames = [
         "name": "Master of Unlocking",
         "type": "Prata",
         "description": "Abra todas as portas trancadas usando shivs.",
-        "tip": "Abra todas as shiv doors; evite gastar shivs em stealth kills antes de conferir portas.",
+        "tip": "Abra todas as portas com shiv; evite gastar shivs em eliminações furtivas antes de conferir portas.",
         "is_spoiler": false
       },
       {
@@ -11358,7 +11355,7 @@ const sampleGames = [
         "name": "Prepared For the Worst",
         "type": "Prata",
         "description": "Encontre todas as bancadas.",
-        "tip": "Interaja com todas as workbenches da campanha principal.",
+        "tip": "Interaja com todas as bancadas da campanha principal.",
         "is_spoiler": false
       },
       {
@@ -11382,15 +11379,15 @@ const sampleGames = [
         "name": "Build Em Up, Break Em Down",
         "type": "Prata",
         "description": "Melhore e depois quebre uma de cada arma corpo a corpo.",
-        "tip": "Melhore e quebre cada tipo de arma corpo a corpo; encounter select ajuda no cleanup.",
+        "tip": "Melhore e quebre cada tipo de arma corpo a corpo; a seleção de encontros ajuda no cleanup.",
         "is_spoiler": false
       },
       {
         "id": "tlou1_fallen_firefly",
         "name": "Fallen Firefly",
         "type": "Bronze",
-        "description": "Encontre um pingente dos Vaga-lumes.",
-        "tip": "Colete qualquer Firefly pendant.",
+        "description": "Encontre um pingente dos Vagalumes.",
+        "tip": "Colete qualquer pingente dos Vagalumes.",
         "is_spoiler": false
       },
       {
@@ -11398,7 +11395,7 @@ const sampleGames = [
         "name": "Self Help",
         "type": "Bronze",
         "description": "Encontre um manual de treinamento.",
-        "tip": "Colete qualquer training manual.",
+        "tip": "Colete qualquer manual de treinamento.",
         "is_spoiler": false
       },
       {
@@ -11406,15 +11403,15 @@ const sampleGames = [
         "name": "Savage Starlight Fan",
         "type": "Bronze",
         "description": "Encontre um quadrinho.",
-        "tip": "Colete qualquer comic Savage Starlight.",
+        "tip": "Colete qualquer quadrinho Savage Starlight.",
         "is_spoiler": false
       },
       {
         "id": "tlou1_geared_up",
         "name": "Geared Up",
         "type": "Bronze",
-        "description": "Crie todos os itens.",
-        "tip": "Crie health kit, molotov, shiv, melee upgrade, bomb e smoke bomb.",
+        "description": "Fabrique todos os tipos de item.",
+        "tip": "Fabrique kit médico, molotov, shiv, melhoria corpo a corpo, bomba e bomba de fumaça.",
         "is_spoiler": false
       },
       {
@@ -11446,7 +11443,7 @@ const sampleGames = [
         "name": "Left Hanging",
         "type": "Bronze",
         "description": "Deixe Ellie no vácuo depois de um trabalho bem feito.",
-        "tip": "Em Tommy’s Dam, ignore o pedido de high five da Ellie.",
+        "tip": "Em Tommy’s Dam, ignore o pedido de toque de mãos da Ellie.",
         "is_spoiler": true
       },
       {
@@ -29950,35 +29947,35 @@ const hadesIITrustedSteamPtBrByName = {
 };
 
 const tlouPartITrustedSteamPtBrByName = {
-  "Fallen Firefly": { name_pt: "Vaga-lume Caído", descriptionOriginal: "Find a Firefly pendant", descriptionPtBr: "Encontre um pingente Vaga-lume" },
-  "Self-Help": { name_pt: "Auto-ajuda", descriptionOriginal: "Find one training manual", descriptionPtBr: "Encontre um manual de treinamento" },
-  "Savage Starlight Fan": { name_pt: "Fã de Savage Starlight", descriptionOriginal: "Find a comic", descriptionPtBr: "Encontre um gibi" },
-  "No Matter What": { name_pt: "Não Importa Como", descriptionOriginal: "Complete Part 1", descriptionPtBr: "Conclua a Parte 1" },
-  "Who's A Good Boy?": { name_pt: "Quem É um Bom Garoto?", descriptionOriginal: "Pet Buckley the dog", descriptionPtBr: "Faça carinho em Buckley, o cão" },
-  "Geared Up": { name_pt: "Todo Equipado", descriptionOriginal: "Craft every item", descriptionPtBr: "Monte todos os itens" },
-  "Sharpest Tool in the Shed": { name_pt: "Ferramenta Certa para o Trabalho", descriptionOriginal: "Find all workbench tools", descriptionPtBr: "Encontre todas as ferramentas da bancada" },
-  "Combat Ready": { name_pt: "De Prontidão para o Combate", descriptionOriginal: "Fully upgrade a weapon", descriptionPtBr: "Melhore totalmente uma arma" },
-  "Lights Out": { name_pt: "Apagando as Luzes", descriptionOriginal: "While in stealth, turn off the spotlight generator in Pittsburgh", descriptionPtBr: "De modo furtivo, desligue o gerador dos holofotes em Pittsburgh" },
-  "Brick Master": { name_pt: "Mestra dos Tijolos", descriptionOriginal: "Win the brick throwing contest", descriptionPtBr: "Vença a competição de arremesso de tijolos" },
-  "Don't Go": { name_pt: "Não Vá", descriptionOriginal: "Complete Left Behind", descriptionPtBr: "Conclua Left Behind" },
-  "Live Bait": { name_pt: "Isca Viva", descriptionOriginal: "Use bricks or bottles to lure an infected into attacking a human", descriptionPtBr: "Use tijolos ou garrafas para instigar um infectado a atacar um humano" },
-  "Skillz": { name_pt: "Rápida no Gatilho", descriptionOriginal: "Win the water gun fight", descriptionPtBr: "Vença a batalha com armas de água" },
-  "Sticky Fingers": { name_pt: "Mãos Leves", descriptionOriginal: "Open all safes", descriptionPtBr: "Abra todos os cofres" },
-  "Prepared For the Worst": { name_pt: "Preparado para o Pior", descriptionOriginal: "Find all workbenches", descriptionPtBr: "Encontre todas as bancadas" },
-  "In Memoriam": { name_pt: "Em Memória", descriptionOriginal: "Pick up Frank's note after it's discarded", descriptionPtBr: "Pegue o bilhete de Frank após ele ser descartado" },
-  "Left Hanging": { name_pt: "No Vácuo", descriptionOriginal: "Leave Ellie hanging after a job well done", descriptionPtBr: "Deixe Ellie no vácuo após um trabalho bem-feito" },
-  "Build Em Up, Break Em Down": { name_pt: "Construção e Destruição", descriptionOriginal: "Upgrade and then break one of every melee weapon", descriptionPtBr: "Melhore e quebre uma de cada arma branca" },
-  "Waterlogged": { name_pt: "Que Mergulho", descriptionOriginal: "Ride the sewer contraption with Henry and Sam", descriptionPtBr: "Navegue pelo Aparato do Esgoto com Henry e Sam" },
-  "Nobody's Perfect": { name_pt: "Ninguém é perfeito", descriptionOriginal: "Play the Jak X game in Left Behind", descriptionPtBr: "Jogou Jak X em Left Behind" },
-  "Angel Knives": { name_pt: "Angel Knives", descriptionOriginal: "Defeat Black Fang without getting hit", descriptionPtBr: "Derrote Blackfang sem ser atingido" },
-  "Master of Unlocking": { name_pt: "Mestre da Abertura", descriptionOriginal: "Break into every locked door using shivs", descriptionPtBr: "Arrombe todas as portas trancadas à faca" },
-  "Something to Fight For": { name_pt: "Algo Pelo Qual Lutar", descriptionOriginal: "Find all training manuals", descriptionPtBr: "Encontre todos os manuais de treinamento" },
-  "Endure and Survive": { name_pt: "Resistir e Sobreviver", descriptionOriginal: "Collect all comics", descriptionPtBr: "Colete todos os gibis" },
-  "Look for the Light": { name_pt: "Procure a Luz", descriptionOriginal: "Find all Firefly pendants", descriptionPtBr: "Encontre todos os pingentes Vaga-lume" },
-  "That's All I Got": { name_pt: "É só isso que eu tenho", descriptionOriginal: "Survive all of Ellie's jokes", descriptionPtBr: "Sobreviva a todas as piadas da Ellie" },
-  "Chronicles": { name_pt: "Crônicas", descriptionOriginal: "Find all notes and artifacts", descriptionPtBr: "Encontre todos os bilhetes e artefatos" },
-  "Getting to Know You": { name_pt: "Conhecendo Você Melhor", descriptionOriginal: "Engage in all optional conversations", descriptionPtBr: "Inicie todas as conversas opcionais" },
-  "It Can't Be For Nothing": { name_pt: "Não pode ser em vão", descriptionOriginal: "Collect all the achievements", descriptionPtBr: "Conquiste todas as conquistas" }
+  "Fallen Firefly": { name_pt: "Vaga-lume Caído", descriptionOriginal: "", descriptionPtBr: "Encontre um pingente dos Vagalumes." },
+  "Self-Help": { name_pt: "Auto-ajuda", descriptionOriginal: "", descriptionPtBr: "Encontre um manual de treinamento." },
+  "Savage Starlight Fan": { name_pt: "Fã de Savage Starlight", descriptionOriginal: "", descriptionPtBr: "Encontre um quadrinho." },
+  "No Matter What": { name_pt: "Não Importa Como", descriptionOriginal: "", descriptionPtBr: "Conclua a campanha principal." },
+  "Who's A Good Boy?": { name_pt: "Quem É um Bom Garoto?", descriptionOriginal: "", descriptionPtBr: "Faça carinho em Buckley, o cão." },
+  "Geared Up": { name_pt: "Todo Equipado", descriptionOriginal: "", descriptionPtBr: "Fabrique todos os tipos de item." },
+  "Sharpest Tool in the Shed": { name_pt: "Ferramenta Certa para o Trabalho", descriptionOriginal: "", descriptionPtBr: "Encontre todas as ferramentas de bancada." },
+  "Combat Ready": { name_pt: "De Prontidão para o Combate", descriptionOriginal: "", descriptionPtBr: "Melhore totalmente uma arma." },
+  "Lights Out": { name_pt: "Apagando as Luzes", descriptionOriginal: "", descriptionPtBr: "Enquanto estiver furtivo, desligue o gerador do holofote em Pittsburgh." },
+  "Brick Master": { name_pt: "Mestra dos Tijolos", descriptionOriginal: "", descriptionPtBr: "Vença o concurso de arremesso de tijolos." },
+  "Don't Go": { name_pt: "Não Vá", descriptionOriginal: "", descriptionPtBr: "Conclua Left Behind." },
+  "Live Bait": { name_pt: "Isca Viva", descriptionOriginal: "", descriptionPtBr: "Use tijolos ou garrafas para atrair um infectado e fazê-lo atacar um humano." },
+  "Skillz": { name_pt: "Rápida no Gatilho", descriptionOriginal: "", descriptionPtBr: "Vença a luta de pistolas d’água." },
+  "Sticky Fingers": { name_pt: "Mãos Leves", descriptionOriginal: "", descriptionPtBr: "Abra todos os cofres." },
+  "Prepared For the Worst": { name_pt: "Preparado para o Pior", descriptionOriginal: "", descriptionPtBr: "Encontre todas as bancadas." },
+  "In Memoriam": { name_pt: "Em Memória", descriptionOriginal: "", descriptionPtBr: "Pegue a nota de Frank depois que ela for descartada." },
+  "Left Hanging": { name_pt: "No Vácuo", descriptionOriginal: "", descriptionPtBr: "Deixe Ellie no vácuo depois de um trabalho bem feito." },
+  "Build Em Up, Break Em Down": { name_pt: "Construção e Destruição", descriptionOriginal: "", descriptionPtBr: "Melhore e depois quebre uma de cada arma corpo a corpo." },
+  "Waterlogged": { name_pt: "Que Mergulho", descriptionOriginal: "", descriptionPtBr: "Ande na engenhoca do esgoto com Henry e Sam." },
+  "Nobody's Perfect": { name_pt: "Ninguém é perfeito", descriptionOriginal: "", descriptionPtBr: "Jogue o jogo Jak X em Left Behind." },
+  "Angel Knives": { name_pt: "Angel Knives", descriptionOriginal: "", descriptionPtBr: "Derrote Black Fang sem ser atingido." },
+  "Master of Unlocking": { name_pt: "Mestre da Abertura", descriptionOriginal: "", descriptionPtBr: "Abra todas as portas trancadas usando shivs." },
+  "Something to Fight For": { name_pt: "Algo Pelo Qual Lutar", descriptionOriginal: "", descriptionPtBr: "Encontre todos os manuais de treinamento." },
+  "Endure and Survive": { name_pt: "Resistir e Sobreviver", descriptionOriginal: "", descriptionPtBr: "Colete todos os quadrinhos." },
+  "Look for the Light": { name_pt: "Procure a Luz", descriptionOriginal: "", descriptionPtBr: "Encontre todos os pingentes dos Vagalumes." },
+  "That's All I Got": { name_pt: "É só isso que eu tenho", descriptionOriginal: "", descriptionPtBr: "Ouça todos os conjuntos de piadas da Ellie." },
+  "Chronicles": { name_pt: "Crônicas", descriptionOriginal: "", descriptionPtBr: "Encontre todas as notas e artefatos." },
+  "Getting to Know You": { name_pt: "Conhecendo Você Melhor", descriptionOriginal: "", descriptionPtBr: "Acione todas as conversas opcionais." },
+  "It Can't Be For Nothing": { name_pt: "Não pode ser em vão", descriptionOriginal: "", descriptionPtBr: "Obtenha todos os outros troféus." }
 };
 
 const tlouPartITrustedSteamNameAliases = {

@@ -71,6 +71,11 @@ window.UIGuide = (() => {
     'A melhor estratégia é usar a campanha para aprender a alternância entre Samurai e Ninja, fortalecer equipamentos, explorar Guardian Spirits, Battle Scroll, Yokai, ferreiro e trackers regionais. Como não há perdíveis definitivos na lista base, o risco principal não é perder troféus, mas acumular Kodama, Hot Springs, missões, Soul Cores, proficiência e objetivos situacionais para o fim.',
     'Depois da história, concentre o cleanup em missões pendentes, coletáveis por região, proficiência, armas, habilidades, Yokai, Battle Scroll e troféus situacionais. Separar campanha, sistemas e limpeza final deixa a platina mais controlada e reduz retrabalho.'
   ];
+  const TLOU_PART_I_EDITORIAL_SUMMARY = [
+    'The Last of Us Part I tem uma platina concentrada na campanha principal, em Left Behind e na limpeza de coletáveis e interações opcionais. A lista não exige multiplayer/Factions, online ou coop, e também não depende de troféus perdíveis definitivos, já que o Chapter Select permite voltar para capítulos e corrigir pendências.',
+    'A melhor estratégia é jogar a campanha com um checklist de coletáveis aberto desde o início, acompanhando artefatos, pingentes dos Vagalumes, quadrinhos, manuais, cofres, portas abertas com shiv, bancadas, suplementos e peças. Conversas opcionais e piadas da Ellie merecem atenção especial porque são fáceis de deixar passar durante a exploração.',
+    'Depois da campanha, use o Chapter Select para fechar capítulos incompletos, completar Left Behind, revisar coletáveis restantes e finalizar troféus situacionais. O guia separa a platina da lista base do Part I de qualquer expectativa de multiplayer antigo, então o foco fica em exploração cuidadosa e cleanup organizado.'
+  ];
   const CHECKLIST_DENSITIES = new Set(['comfortable', 'compact']);
   const GUIDE_FILTER_LABELS = {
     all: 'Todos',
@@ -709,6 +714,8 @@ window.UIGuide = (() => {
       ? NIOH2_EDITORIAL_SUMMARY
       : normalizedSlug === 'nioh-3'
       ? NIOH3_EDITORIAL_SUMMARY
+      : normalizedSlug === 'the-last-of-us-part-i'
+      ? TLOU_PART_I_EDITORIAL_SUMMARY
       : normalizedSlug === 'elden-ring'
       ? [
           'Este guia de platina de Elden Ring foi pensado para quem quer completar a lista base sem depender apenas da lista crua de troféus. A rota prioriza finais, chefes com troféu, itens lendários e pontos que podem gerar retrabalho se você avançar sem planejamento.',
@@ -789,7 +796,7 @@ window.UIGuide = (() => {
     const playerFit = viewModel.playerFit || buildGuidePlayerFit(game, viewModel);
     const methodItems = Array.isArray(viewModel.editorial?.methodItems) ? viewModel.editorial.methodItems : [];
     const statusBadge = viewModel.editorial?.statusBadge || getEditorialBadge(game);
-    const sectionCopy = ['resident-evil-requiem', 'resident-evil-4-remake', 'hades', 'ghost-of-tsushima', 'hades-ii', 'astro-bot', 'pragmata', 'nioh-2', 'nioh-3'].includes(normalizedSlug)
+    const sectionCopy = ['resident-evil-requiem', 'resident-evil-4-remake', 'hades', 'ghost-of-tsushima', 'hades-ii', 'astro-bot', 'pragmata', 'nioh-2', 'nioh-3', 'the-last-of-us-part-i'].includes(normalizedSlug)
       ? 'Respostas rápidas sobre perdíveis, online, coop, tempo, dificuldade e DLC da lista base.'
       : 'Respostas rápidas sobre perdíveis, online, coop, tempo, dificuldade e DLC usando os dados atuais do guia.';
     return `

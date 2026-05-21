@@ -268,6 +268,17 @@
         return true;
       }));
     }
+    if (String(game?.slug || '').trim().toLowerCase() === 'the-last-of-us-part-i') {
+      const trophyId = String(trophy?.id || '').trim();
+      if (trophyId === 'tlou1_master_of_unlocking' && !ids.has('difficulty')) {
+        tags.push({ id: 'difficulty', label: 'Dificuldade', tone: 'warning' });
+        ids.add('difficulty');
+      }
+      return sortGuideTrophyTags(tags.filter(tag => {
+        if (['tlou1_no_matter_what', 'tlou1_geared_up'].includes(trophyId)) return tag?.id !== 'collectible';
+        return true;
+      }));
+    }
     return sortGuideTrophyTags(tags);
   }
 
@@ -389,6 +400,13 @@
     if (game?.dlc_status === 'out_of_base_scope' || /dlc fora da platina base|shadow of the erdtree/.test(normalized)) {
       return {
         value: 'DLC fora da platina base',
+        detail: dlcText,
+        tone: 'atlas-meta-signal--complete'
+      };
+    }
+    if (/left behind/.test(normalized) && /lista base|part i|29 trofeus|integra o pacote|incluido no part i|incluso na lista base/.test(normalized)) {
+      return {
+        value: 'Left Behind incluso na lista base',
         detail: dlcText,
         tone: 'atlas-meta-signal--complete'
       };
@@ -743,6 +761,8 @@
     if (!inputs.dlc || dlcReview) dlcValue = 'Informação em revisão';
     else if (/dlc fora da platina base/.test(normalizedDlc)) {
       dlcValue = 'DLC fora da platina base';
+    } else if (/left behind/.test(normalizedDlc) && /lista base|part i|29 trofeus|integra o pacote|incluido no part i|incluso na lista base/.test(normalizedDlc)) {
+      dlcValue = 'Left Behind incluso na lista base';
     } else if (/lista base|jogo base|base game|sem dlc|nao inclui|nao foram adicionados|nao foi misturado|dlc nao necessaria|nao e necessaria|fora do escopo|ficam fora|entrada separada/.test(normalizedDlc)) {
       dlcValue = 'DLC não necessária para platina base';
     }
@@ -1381,6 +1401,59 @@
           type: 'Coletável / Risco de run / Cleanup',
           text: 'Exige planejamento de compras, armas vendidas pelo Mercador e possíveis desbloqueios de múltiplas runs.',
           tags: [attentionTag('Coletável / Risco de run / Cleanup', 'partial')],
+          score: 95
+        }
+      ];
+    }
+
+    const tlouPartIAttentionIds = [
+      'tlou1_no_matter_what',
+      'tlou1_getting_to_know_you',
+      'tlou1_thats_all_i_got',
+      'tlou1_dont_go',
+      'tlou1_in_memorium'
+    ];
+    if (String(game?.slug || '').trim().toLowerCase() === 'the-last-of-us-part-i' && tlouPartIAttentionIds.every(id => trophyById.has(id))) {
+      const attentionTag = (label, tone = 'partial') => ({ id: normalizeGuideSignalText(label).replace(/\s+/g, '-'), label, tone });
+      return [
+        {
+          id: 'tlou1_no_matter_what',
+          name: trophyById.get('tlou1_no_matter_what')?.name || 'No Matter What',
+          type: 'História / Cleanup',
+          text: 'Concluir a campanha principal libera parte central da lista, mas não fecha automaticamente coletáveis e interações opcionais. Use o Chapter Select para revisar capítulos incompletos.',
+          tags: [attentionTag('História / Cleanup', 'partial')],
+          score: 99
+        },
+        {
+          id: 'tlou1_getting_to_know_you',
+          name: trophyById.get('tlou1_getting_to_know_you')?.name || 'Getting to Know You',
+          type: 'Coletável / Checklist / Cleanup',
+          text: 'Conversas opcionais são fáceis de deixar passar durante a exploração. Acompanhe por capítulo e revise pelo Chapter Select se alguma interação ficar pendente.',
+          tags: [attentionTag('Coletável / Checklist / Cleanup', 'partial')],
+          score: 98
+        },
+        {
+          id: 'tlou1_thats_all_i_got',
+          name: trophyById.get('tlou1_thats_all_i_got')?.name || "That's All I Got",
+          type: 'Coletável / Checklist / Atenção',
+          text: 'As piadas da Ellie exigem momentos específicos de espera e exploração. Não avance rápido demais pelos capítulos com interações opcionais.',
+          tags: [attentionTag('Coletável / Checklist / Atenção', 'warning')],
+          score: 97
+        },
+        {
+          id: 'tlou1_dont_go',
+          name: trophyById.get('tlou1_dont_go')?.name || "Don't Go",
+          type: 'Left Behind / História',
+          text: 'Left Behind faz parte do escopo da lista do Part I. Separe uma etapa própria para concluir a campanha extra e seus objetivos relacionados.',
+          tags: [attentionTag('Left Behind / História', 'partial')],
+          score: 96
+        },
+        {
+          id: 'tlou1_in_memorium',
+          name: trophyById.get('tlou1_in_memorium')?.name || 'In Memoriam',
+          type: 'Coletável / Cleanup',
+          text: 'Colecionáveis como artefatos, pingentes, quadrinhos e outros registros são o núcleo do cleanup. Marque tudo no checklist para evitar revisitar capítulos sem necessidade.',
+          tags: [attentionTag('Coletável / Cleanup', 'partial')],
           score: 95
         }
       ];
@@ -2062,43 +2135,27 @@
       return [
         {
           question: 'The Last of Us Part I tem troféus perdíveis?',
-          answer: 'Não há perdíveis definitivos no guia. Coletáveis, conversas opcionais, piadas da Ellie, portas com shiv, safes e ações situacionais podem passar batido em uma jogada, mas podem ser limpos por Chapter Select.'
+          answer: 'Não. A lista permite cleanup por Chapter Select. Ainda assim, é recomendável acompanhar coletáveis, conversas opcionais e piadas desde a primeira campanha para reduzir retrabalho.'
         },
         {
-          question: 'Precisa jogar no Survivor/Grounded para platinar?',
-          answer: 'Não. A platina de The Last of Us Part I não exige dificuldade alta; você pode jogar em qualquer dificuldade confortável.'
+          question: 'The Last of Us Part I precisa de online para platinar?',
+          answer: 'Não. A platina do Part I não exige multiplayer, Factions, servidores ou troféus online.'
         },
         {
-          question: 'The Last of Us Part I tem troféus online?',
-          answer: 'Não. A lista de The Last of Us Part I não exige online, multiplayer, Factions, servidores ou PS+ para a platina.'
+          question: 'Quanto tempo leva para platinar The Last of Us Part I?',
+          answer: 'O tempo depende do quanto você acompanha coletáveis durante a campanha. Usar checklist desde o início reduz bastante o cleanup por Chapter Select.'
         },
         {
-          question: 'Precisa de coop ou multiplayer?',
-          answer: 'Não. O guia trata a platina como totalmente solo, sem coop obrigatório e sem troféus de multiplayer.'
+          question: 'Qual a dificuldade da platina de The Last of Us Part I?',
+          answer: 'A dificuldade é baixa a moderada. O desafio principal está em organização de coletáveis, conversas opcionais, piadas, cofres, portas com shiv e cleanup, não em online ou dificuldade extrema.'
         },
         {
-          question: 'Left Behind conta para a platina?',
-          answer: 'Sim. Em The Last of Us Part I, Left Behind faz parte do pacote e da lista base de 29 troféus; não foi tratado como DLC paga separada obrigatória.'
+          question: 'The Last of Us Part I tem coop obrigatório?',
+          answer: 'Não. A platina é single-player e não exige coop.'
         },
         {
-          question: 'Quanto tempo leva para platinar?',
-          answer: 'A estimativa editorial ficou em 20-30h, considerando campanha principal, Left Behind, coletáveis e cleanup por seleção de capítulos.'
-        },
-        {
-          question: 'Qual a dificuldade da platina?',
-          answer: 'A dificuldade ficou em 3/10. O desafio é mais organização de checklist do que execução difícil.'
-        },
-        {
-          question: 'Dá para usar Chapter Select para limpar coletáveis?',
-          answer: 'Sim. Use a seleção de capítulos para revisar coletáveis, conversas opcionais, piadas, safes, portas com shiv, ferramentas, bancadas e troféus situacionais.'
-        },
-        {
-          question: 'Precisa de New Game+?',
-          answer: 'Não. New Game+ não é obrigatório para a platina; uma campanha, Left Behind e cleanup por Chapter Select bastam para a rota editorial.'
-        },
-        {
-          question: 'O que mais dá trabalho na platina?',
-          answer: 'O maior cuidado está em coletáveis, conversas opcionais, piadas da Ellie, portas com shiv, safes, ferramentas, manuais, workbenches e troféus situacionais.'
+          question: 'Left Behind é necessário para a platina?',
+          answer: 'Sim. No The Last of Us Part I, Left Behind faz parte do escopo da lista de troféus acompanhada pelo guia. Conclua esse conteúdo e seus objetivos relacionados para fechar a platina.'
         }
       ];
     }

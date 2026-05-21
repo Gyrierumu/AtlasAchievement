@@ -6867,7 +6867,7 @@ async function assertSeedData({ all, get }, sampleGames) {
   assert.strictEqual(tlouPartISample.trophies.filter(trophy => trophy.name_pt).length, 29, 'The Last of Us Part I deve preencher nomes PT-BR via Steam confiavel');
   assert.strictEqual(tlouPartISample.trophies.filter(trophy => trophy.namePtSource === 'trusted_steam_ptbr').length, 29, 'The Last of Us Part I deve registrar fonte Steam PT-BR para name_pt');
   assert.strictEqual(tlouPartISample.trophies.filter(trophy => trophy.descriptionPtSource === 'trusted_steam_ptbr').length, 29, 'The Last of Us Part I deve registrar fonte Steam PT-BR para descricoes');
-  assert.strictEqual(tlouPartISample.trophies.filter(trophy => /[áàâãéêíóôõúç]/i.test(trophy.description) || /\b(Colete|Conclua|Conquiste|Encontre|Inicie|Participe|Sobreviva|Melhore|Monte|Abra|Crie|Pegue|Enquanto|Ande|Deixe|Desligue|Acaricie|Jogue|Jogou|Navegue|Vença|Derrote|Use)\b/i.test(trophy.description)).length, 29, 'The Last of Us Part I deve ter descricoes em portugues nos 29 trofeus');
+  assert.strictEqual(tlouPartISample.trophies.filter(trophy => /[áàâãéêíóôõúç]/i.test(trophy.description) || /\b(Colete|Conclua|Conquiste|Obtenha|Encontre|Acione|Inicie|Participe|Sobreviva|Ouça|Melhore|Monte|Abra|Crie|Fabrique|Pegue|Enquanto|Ande|Deixe|Desligue|Acaricie|Faça|Jogue|Jogou|Navegue|Vença|Derrote|Use)\b/i.test(trophy.description)).length, 29, 'The Last of Us Part I deve ter descricoes em portugues nos 29 trofeus');
 
   const tlouPartISeeded = await get('SELECT slug, difficulty, time, time_bucket, editorial_status, editorial_review_status, coverage_level, is_verified, verification_status, online_summary, dlc_scope, missable_summary, quality_warnings FROM games WHERE slug = ?', ['the-last-of-us-part-i']);
   assert.strictEqual(tlouPartISeeded?.slug, 'the-last-of-us-part-i', 'seed deve persistir slug de The Last of Us Part I');
@@ -6881,7 +6881,7 @@ async function assertSeedData({ all, get }, sampleGames) {
   assert.strictEqual(tlouPartISeeded?.verification_status, 'review', 'The Last of Us Part I deve entrar em revisao editorial');
   assert(tlouPartISeeded?.online_summary.includes('Não há exigência online'), 'The Last of Us Part I deve persistir ausencia de online');
   assert(tlouPartISeeded?.dlc_scope.includes('Left Behind'), 'The Last of Us Part I deve persistir Left Behind integrado');
-  assert(tlouPartISeeded?.quality_warnings.includes('needs_trophy_localization_check'), 'The Last of Us Part I deve persistir aviso de localizacao');
+  assert(!tlouPartISeeded?.quality_warnings.includes('needs_trophy_localization_check'), 'The Last of Us Part I nao deve persistir aviso tecnico de localizacao resolvida');
 
   const tlouPartIRoadmapRows = await all('SELECT content FROM roadmaps WHERE game_id = (SELECT id FROM games WHERE slug = ?) ORDER BY step_order', ['the-last-of-us-part-i']);
   assert.strictEqual(tlouPartIRoadmapRows.length, 6, 'seed deve inserir 6 etapas de roadmap para The Last of Us Part I');
@@ -12148,7 +12148,7 @@ async function assertBackendEditorialConsistency() {
     assert(tlouPartIDetail.trophies.every(trophy => /^[A-Za-z0-9_:-]{1,60}$/.test(trophy.id)), 'The Last of Us Part I deve retornar trophy.id validos');
     assert.strictEqual(tlouPartIDetail.roadmap.length, 6, 'detalhe de The Last of Us Part I deve retornar roadmap de 6 etapas');
     assert(tlouPartIDetail.roadmap.every(step => step && typeof step === 'object' && step.title && step.focus && step.objective && Array.isArray(step.actions) && step.result), 'roadmap de The Last of Us Part I deve retornar etapas estruturadas');
-    assert(tlouPartIDetail.roadmap.some(step => step.objective.includes('coletáveis') && step.actions.some(action => action.includes('Firefly pendants'))), 'roadmap de The Last of Us Part I deve citar coletaveis e conversas opcionais');
+    assert(tlouPartIDetail.roadmap.some(step => step.objective.includes('coletáveis') && step.actions.some(action => action.includes('pingentes dos Vagalumes'))), 'roadmap de The Last of Us Part I deve citar coletaveis e conversas opcionais em portugues');
     const tlouPartIDetailRoadmapText = tlouPartIDetail.roadmap.map(step => `${step.title} ${step.focus} ${step.objective} ${(step.actions || []).join(' ')} ${step.result || ''}`).join(' ');
     assert(tlouPartIDetailRoadmapText.includes('Left Behind') && !tlouPartIDetailRoadmapText.includes('Factions'), 'roadmap de The Last of Us Part I deve integrar Left Behind e excluir Factions');
     assert(tlouPartIDetail.runs_summary.includes('seleção de capítulos') || tlouPartIDetail.runs_summary.includes('chapter'), 'detalhe de The Last of Us Part I deve explicar cleanup por capitulos');
@@ -12159,7 +12159,7 @@ async function assertBackendEditorialConsistency() {
     assert.strictEqual(tlouPartIDetail.is_verified, false, 'The Last of Us Part I nao deve estar verificado');
     assert.strictEqual(tlouPartIDetail.verification_status, 'review', 'The Last of Us Part I deve ficar em revisao editorial');
     assert.strictEqual(tlouPartIDetail.editorialReviewStatus, 'in_review', 'The Last of Us Part I deve ficar com editorialStatus in_review');
-    assert(tlouPartIDetail.qualityWarnings.includes('needs_trophy_localization_check'), 'The Last of Us Part I deve expor quality warning de localizacao');
+    assert(!tlouPartIDetail.qualityWarnings.includes('needs_trophy_localization_check'), 'The Last of Us Part I nao deve expor quality warning tecnico de localizacao resolvida');
     assert.strictEqual(tlouPartIDetail.cover_image, tlouPartISample.cover_image, 'detalhe de The Last of Us Part I deve retornar cover_image');
     assert(tlouPartIDetail.trophies.some(trophy => trophy.id === 'tlou1_it_cant_be_for_nothing' && trophy.type === 'Platina'), 'The Last of Us Part I deve manter It can be for nothing como platina');
     assert(tlouPartIDetail.trophies.some(trophy => trophy.id === 'tlou1_no_matter_what' && trophy.type === 'Ouro'), 'The Last of Us Part I deve manter No Matter What como ouro');
