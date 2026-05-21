@@ -507,8 +507,10 @@ async function validateGuide(slug = '') {
     const faqText = JSON.stringify(viewModel.contextualFaq || []);
     const attentionText = JSON.stringify(viewModel.routeChangingTrophies || []);
     const tagCount = tagId => seedGame.trophies.filter(trophy => guideModel.getGuideTrophyTags(trophy, seedGame).some(tag => tag.id === tagId)).length;
-    assert.strictEqual(seedGame.is_verified, false, 'The Last of Us Part I deve preservar status atual sem verified automatico');
-    assert.strictEqual(seedGame.verification_status, 'review', 'The Last of Us Part I deve preservar verification_status atual');
+    assert.strictEqual(seedGame.is_verified, true, 'The Last of Us Part I deve continuar Verificado');
+    assert.strictEqual(seedGame.verification_status, 'verified', 'The Last of Us Part I deve preservar verification_status verified');
+    assert.strictEqual(viewModel.editorial.statusBadge.label, 'Verificado', 'The Last of Us Part I deve exibir selo Verificado');
+    assert.strictEqual(viewModel.editorial.statusBadge.detail, 'Guia revisado editorialmente.', 'The Last of Us Part I deve exibir mensagem revisada');
     assert.strictEqual(viewModel.trophies.length, 29, 'The Last of Us Part I deve manter 29 trofeus');
     assert.strictEqual(viewModel.missableCount, 0, 'The Last of Us Part I deve manter missableCount 0');
     assert.strictEqual(seedGame.trophies.filter(item => item.is_missable || item.isMissable).length, 0, 'The Last of Us Part I deve manter Perdiveis 0 na checklist');
@@ -543,7 +545,36 @@ async function validateGuide(slug = '') {
       assert(!attentionText.includes(text), `Pontos de atencao de The Last of Us Part I nao devem conter texto generico: ${text}`);
     });
     assert(!/\bdeve\b/i.test(faqText), 'FAQ de The Last of Us Part I nao deve usar linguagem insegura com "deve"');
-    ['Collect all trophies', 'Find all notes and artifacts', 'Complete Left Behind', 'Collect all comics', 'Find all Firefly pendants', 'Complete Part 1', 'Open All Safes', 'Craft every item'].forEach(text => {
+    [
+      'Collect all trophies',
+      'Find all notes and artifacts',
+      'Complete Left Behind',
+      'Collect all comics',
+      'Engage in all optional conversations',
+      'Find all Firefly pendants',
+      'Complete Part 1',
+      'Survive all of Ellie',
+      'Upgrade and then break one of every melee weapon',
+      'Fully upgrade a weapon',
+      'Break into every locked door using shivs',
+      'Find all workbenches',
+      'Find all workbench tools',
+      'Find all training manuals',
+      'Open All Safes',
+      'Defeat Black Fang without getting hit',
+      'Win the brick throwing contest',
+      'Craft every item',
+      'Pick up Frank',
+      'Leave Ellie hanging after a job well done',
+      'While in stealth, turn off the spotlight generator in Pittsburgh',
+      'Use bricks or bottles to lure an infected into attacking a human',
+      'Played the Jak X game in Left Behind',
+      'Find a comic',
+      'Find one training manual',
+      'Win the water gun fight',
+      'Ride the sewer contraption with Henry and Sam',
+      'Pet Buckley the dog'
+    ].forEach(text => {
       assert(!checklistText.includes(text), `Checklist de The Last of Us Part I nao deve exibir descricao em ingles: ${text}`);
     });
   }
@@ -743,8 +774,8 @@ async function validateGuide(slug = '') {
       const summaryHtml = html.match(/<div class="atlas-guide-summary-editorial[\s\S]*?<\/div>/)?.[0] || '';
       const apiMissables = apiGame.trophies.filter(trophy => trophy.is_missable);
       const normalizedHtml = normalizeText(html);
-      assert.strictEqual(apiGame.is_verified, false, 'API de The Last of Us Part I deve preservar status atual sem verified automatico');
-      assert.strictEqual(apiGame.verification_status, 'review', 'API de The Last of Us Part I deve preservar verification_status atual');
+      assert.strictEqual(apiGame.is_verified, true, 'API de The Last of Us Part I deve continuar Verificado');
+      assert.strictEqual(apiGame.verification_status, 'verified', 'API de The Last of Us Part I deve expor verification_status verified');
       assert.strictEqual(apiGame.trophies.length, 29, 'API de The Last of Us Part I deve manter 29 trofeus');
       assert.strictEqual(apiGame.missable_count, 0, 'API de The Last of Us Part I deve manter missable_count 0');
       assert.strictEqual(apiMissables.length, 0, 'API de The Last of Us Part I deve manter Perdiveis 0 na checklist');
@@ -752,6 +783,9 @@ async function validateGuide(slug = '') {
       assert.strictEqual(Boolean(apiGame.coopRequired || apiGame.coop_required), false, 'API de The Last of Us Part I deve manter coop 0');
       assert.strictEqual(Boolean(apiGame.dlcRequired || apiGame.dlc_required), false, 'API de The Last of Us Part I deve manter DLC separada nao obrigatoria');
       assert(html.includes('The Last of Us Part I'), 'The Last of Us Part I deve renderizar nome no SSR');
+      assert(html.includes('The Last of Us Part I — Guia de platina e troféus') || html.includes('The Last of Us Part I â€” Guia de platina e trofÃ©us'), 'The Last of Us Part I deve preservar H1 esperado');
+      assert(html.includes('Verificado'), 'The Last of Us Part I deve renderizar status Verificado');
+      assert(html.includes('Guia revisado editorialmente.'), 'The Last of Us Part I deve renderizar mensagem revisada');
       assert(html.includes('Left Behind incluso na lista base'), 'The Last of Us Part I deve exibir Left Behind incluso na lista base');
       assert(normalizedHtml.includes('the last of us part i tem uma platina concentrada'), 'The Last of Us Part I deve exibir resumo editorial forte');
       assert((summaryHtml.match(/<p\b/g) || []).length >= 2, 'Resumo de The Last of Us Part I deve ter pelo menos 2 paragrafos editoriais');
@@ -768,10 +802,30 @@ async function validateGuide(slug = '') {
         'Find all notes and artifacts',
         'Complete Left Behind',
         'Collect all comics',
+        'Engage in all optional conversations',
         'Find all Firefly pendants',
         'Complete Part 1',
+        'Survive all of Ellie',
+        'Upgrade and then break one of every melee weapon',
+        'Fully upgrade a weapon',
+        'Break into every locked door using shivs',
+        'Find all workbenches',
+        'Find all workbench tools',
+        'Find all training manuals',
         'Open All Safes',
+        'Defeat Black Fang without getting hit',
+        'Win the brick throwing contest',
         'Craft every item',
+        'Pick up Frank',
+        'Leave Ellie hanging after a job well done',
+        'While in stealth, turn off the spotlight generator in Pittsburgh',
+        'Use bricks or bottles to lure an infected into attacking a human',
+        'Played the Jak X game in Left Behind',
+        'Find a comic',
+        'Find one training manual',
+        'Win the water gun fight',
+        'Ride the sewer contraption with Henry and Sam',
+        'Pet Buckley the dog',
         'Descrição em revisão editorial.',
         '[object Object]',
         'undefined'
