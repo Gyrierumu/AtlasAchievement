@@ -10475,7 +10475,7 @@ const sampleGames = [
   {
     "id": 16,
     "name": "God of War",
-    "slug": "god-of-war-2018",
+    "slug": "god-of-war",
     "difficulty": 4,
     "time": "30-40h",
     "time_min_hours": 30,
@@ -10485,7 +10485,7 @@ const sampleGames = [
     "onlineRequired": false,
     "coopRequired": false,
     "dlcRequired": false,
-    "missable": "Não há troféus perdíveis na lista base: há free roam depois da história e todos os coletáveis, favores, upgrades, valquírias e desafios opcionais podem ser concluídos no cleanup. Chefes difíceis e reinos opcionais exigem preparo e continuam disponíveis para revisão após a campanha.",
+    "missable": "Não há troféus perdíveis na lista base: há free roam depois da história e todos os coletáveis, favores, upgrades, Valkyries e desafios opcionais podem ser concluídos no cleanup.",
     "runs_summary": "Uma campanha principal com cleanup livre após a história. Nada da lista base é perdível.",
     "missable_summary": "Sem perdíveis definitivos na lista base. Depois da história, é possível voltar aos reinos para limpar coletáveis, favores, Valkyries, mapas do tesouro, Muspelheim, Niflheim e atividades pendentes.",
     "online_summary": "Não há exigência online para a platina. A lista base é totalmente single-player e não exige servidores, PS+ ou troféus online.",
@@ -10511,9 +10511,9 @@ const sampleGames = [
     "cover_image": "https://cdn.cloudflare.steamstatic.com/steam/apps/1593500/library_600x900.jpg",
     "roadmap": [
       {
-        "title": "Etapa 1 — Avance a história em uma dificuldade confortável",
+        "title": "Avance a história em uma dificuldade confortável",
         "focus": "História / aprendizado",
-        "objective": "Concluir a campanha principal enquanto aprende combate, Atreus, Runic Attacks, exploração e upgrades sem se preocupar com perdíveis definitivos.",
+        "objective": "Concluir a campanha principal enquanto aprende combate, Atreus, Runic Attacks, exploração e upgrades.",
         "actions": [
           "Escolha uma dificuldade confortável, porque a platina não exige dificuldade específica.",
           "Avance a história e abra baús, atalhos, favores e áreas secundárias quando estiverem no caminho.",
@@ -10521,10 +10521,10 @@ const sampleGames = [
           "Use o checklist apenas para marcar o que já apareceu: artefatos, shrines, lore, treasure maps e Odin’s Ravens visíveis."
         ],
         "warning": "Não misture a rota com God of War Ragnarök, Valhalla ou conteúdo de outro jogo.",
-        "result": "Campanha avançada com boa base de combate e sem risco de bloquear a platina."
+        "result": "Campanha avançada com boa base de combate para o cleanup."
       },
       {
-        "title": "Etapa 2 — Explore reinos e abra atividades secundárias",
+        "title": "Explore reinos e abra atividades secundárias",
         "focus": "Exploração / reinos",
         "objective": "Liberar rotas, reinos, viagens, favores e marcadores do mapa para deixar o cleanup mais organizado.",
         "actions": [
@@ -10537,7 +10537,7 @@ const sampleGames = [
         "result": "Reinos principais abertos e mapa preparado para limpeza por região."
       },
       {
-        "title": "Etapa 3 — Complete favores, coletáveis e mapas por região",
+        "title": "Complete favores, coletáveis e mapas por região",
         "focus": "Coletáveis / favores",
         "objective": "Reduzir retrabalho fechando atividades regionais em blocos, em vez de caçar pendências soltas no final.",
         "actions": [
@@ -10550,7 +10550,7 @@ const sampleGames = [
         "result": "Favores, mapas do tesouro e coletáveis principais encaminhados antes dos desafios mais pesados."
       },
       {
-        "title": "Etapa 4 — Trabalhe Muspelheim e Niflheim em etapas próprias",
+        "title": "Trabalhe Muspelheim e Niflheim em etapas próprias",
         "focus": "Muspelheim / Niflheim",
         "objective": "Separar os reinos de desafio e farm para controlar melhor grind, recursos e dificuldade.",
         "actions": [
@@ -10563,7 +10563,7 @@ const sampleGames = [
         "result": "Reinos opcionais avançados com recursos importantes para upgrades finais."
       },
       {
-        "title": "Etapa 5 — Derrote Valkyries e finalize upgrades importantes",
+        "title": "Derrote Valkyries e finalize upgrades importantes",
         "focus": "Valkyries / upgrades",
         "objective": "Enfrentar o maior pico de dificuldade da platina depois que Kratos estiver bem equipado.",
         "actions": [
@@ -10576,7 +10576,7 @@ const sampleGames = [
         "result": "Chefes opcionais e upgrades críticos resolvidos para fechar a platina."
       },
       {
-        "title": "Etapa 6 — Cleanup final da platina base",
+        "title": "Cleanup final da platina base",
         "focus": "Checklist final",
         "objective": "Conferir todos os troféus da lista base sem misturar online, coop, DLC, Ragnarök ou Valhalla.",
         "actions": [
@@ -10682,7 +10682,7 @@ const sampleGames = [
         "id": "gow2018_last_wish",
         "name": "Last Wish",
         "type": "Ouro",
-        "description": "Espalhe as cinzas.",
+        "description": "Conclua a história principal.",
         "tip": "Troféu de conclusão da campanha principal. O free-roam continua disponível depois disso.",
         "is_spoiler": true
       },
@@ -10810,7 +10810,7 @@ const sampleGames = [
         "id": "gow2018_worthy",
         "name": "Worthy",
         "type": "Bronze",
-        "description": "Melhore o Leviathan Axe ao máximo.",
+        "description": "Melhore completamente o Leviathan Axe com todos os upgrades.",
         "tip": "Leve o Leviathan Axe ao nível máximo; o último upgrade depende de recurso de Niflheim após avançar bastante.",
         "is_spoiler": false
       },
@@ -10818,7 +10818,7 @@ const sampleGames = [
         "id": "gow2018_why_fight_it",
         "name": "Why Fight It?",
         "type": "Bronze",
-        "description": "Melhore as Blades of Chaos ao máximo.",
+        "description": "Melhore completamente as Blades of Chaos.",
         "tip": "Leve as Blades of Chaos ao nível máximo; o último upgrade envolve Muspelheim e uma valquíria.",
         "is_spoiler": true
       },
@@ -10850,7 +10850,7 @@ const sampleGames = [
         "id": "gow2018_treasure_hunter",
         "name": "Treasure Hunter",
         "type": "Prata",
-        "description": "Utilize mapas do tesouro para encontrar todos os pontos de escavação.",
+        "description": "Utilize todos os mapas do tesouro para encontrar os tesouros.",
         "tip": "Encontre todos os treasure maps e cave nos 12 locais correspondentes.",
         "is_spoiler": false
       },
@@ -10866,7 +10866,7 @@ const sampleGames = [
         "id": "gow2018_fire_and_brimstone",
         "name": "Fire and Brimstone",
         "type": "Ouro",
-        "description": "Conclua todos os Trials of Muspelheim.",
+        "description": "Conclua todos os desafios de Muspelheim.",
         "tip": "Conclua as provas de Muspelheim e faça as chaves necessárias para fechar o desafio final.",
         "is_spoiler": true
       },
@@ -10874,7 +10874,7 @@ const sampleGames = [
         "id": "gow2018_darkness_and_fog",
         "name": "Darkness and Fog",
         "type": "Ouro",
-        "description": "Recupere todos os tesouros da câmara central do Workshop.",
+        "description": "Recupere todos os tesouros da câmara central de Niflheim.",
         "tip": "Farme Mist Echoes em Niflheim e abra todos os baús e realm tears da câmara central.",
         "is_spoiler": true
       },

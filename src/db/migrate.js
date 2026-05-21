@@ -16,6 +16,7 @@ const GAME_SLUG_ALIASES = {
     'astro-s-playrrom'
   ],
   'little-nightmares-ii': ['little-nightmares'],
+  'god-of-war': ['god-of-war-2018'],
   'monster-hunter-world': ['monster-hunter-world-iceborne']
 };
 
@@ -1091,7 +1092,7 @@ async function syncReviewedGuidesFromSeed() {
   await syncSeedGameFromSeed('marvels-spider-man', syncOptions);
   await syncSeedGameFromSeed('marvels-spider-man-miles-morales', syncOptions);
   await syncSeedGameFromSeed('marvels-spider-man-2', syncOptions);
-  await syncSeedGameFromSeed('god-of-war-2018', syncOptions);
+  await syncSeedGameFromSeed('god-of-war', syncOptions);
   await syncSeedGameFromSeed('god-of-war-ragnarok', syncOptions);
   await syncSeedGameFromSeed('the-last-of-us-part-i', syncOptions);
   await syncSeedGameFromSeed('the-last-of-us-part-ii', syncOptions);

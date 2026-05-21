@@ -12,7 +12,8 @@ const CANONICAL_GAME_SLUG_ALIASES = Object.freeze({
   'astro-s-playroom': 'astros-playroom',
   'astro-playroom': 'astros-playroom',
   'astros-playrrom': 'astros-playroom',
-  'astro-s-playrrom': 'astros-playroom'
+  'astro-s-playrrom': 'astros-playroom',
+  'god-of-war-2018': 'god-of-war'
 });
 
 function getCanonicalGameSlug(value) {

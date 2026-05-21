@@ -394,7 +394,7 @@ window.UIGuide = (() => {
           label: labels[card.id] || card.label,
           value: card.id === 'dlc' && String(game?.slug || '').trim().toLowerCase() === 'the-last-of-us-part-ii'
             ? 'Extras fora da platina base'
-            : card.id === 'dlc' && ['resident-evil-requiem', 'resident-evil-4-remake', 'hades', 'ghost-of-tsushima', 'god-of-war-2018', 'hades-ii', 'astro-bot', 'pragmata', 'saros', 'nioh-2', 'nioh-3'].includes(String(game?.slug || '').trim().toLowerCase())
+            : card.id === 'dlc' && ['resident-evil-requiem', 'resident-evil-4-remake', 'hades', 'ghost-of-tsushima', 'god-of-war', 'god-of-war-2018', 'hades-ii', 'astro-bot', 'pragmata', 'saros', 'nioh-2', 'nioh-3'].includes(String(game?.slug || '').trim().toLowerCase())
             ? 'DLC fora da platina base'
             : card.id === 'coop' && /2 jogadores/i.test(String(card.detail || ''))
             ? '2 jogadores obrigatórios'
@@ -719,7 +719,7 @@ window.UIGuide = (() => {
       ? HADES_EDITORIAL_SUMMARY
       : normalizedSlug === 'ghost-of-tsushima'
       ? GHOST_EDITORIAL_SUMMARY
-      : normalizedSlug === 'god-of-war-2018'
+      : ['god-of-war', 'god-of-war-2018'].includes(normalizedSlug)
       ? GOD_OF_WAR_2018_EDITORIAL_SUMMARY
       : normalizedSlug === 'hades-ii'
       ? HADES2_EDITORIAL_SUMMARY
@@ -821,7 +821,7 @@ window.UIGuide = (() => {
     const statusBadge = viewModel.editorial?.statusBadge || getEditorialBadge(game);
     const sectionCopy = normalizedSlug === 'the-last-of-us-part-ii'
       ? 'Respostas rápidas sobre perdíveis, online, coop, tempo, dificuldade, NG+, Chapter Select e extras fora da platina base.'
-      : ['resident-evil-requiem', 'resident-evil-4-remake', 'hades', 'ghost-of-tsushima', 'god-of-war-2018', 'hades-ii', 'astro-bot', 'pragmata', 'saros', 'nioh-2', 'nioh-3', 'the-last-of-us-part-i'].includes(normalizedSlug)
+      : ['resident-evil-requiem', 'resident-evil-4-remake', 'hades', 'ghost-of-tsushima', 'god-of-war', 'god-of-war-2018', 'hades-ii', 'astro-bot', 'pragmata', 'saros', 'nioh-2', 'nioh-3', 'the-last-of-us-part-i'].includes(normalizedSlug)
       ? 'Respostas rápidas sobre perdíveis, online, coop, tempo, dificuldade e DLC da lista base.'
       : 'Respostas rápidas sobre perdíveis, online, coop, tempo, dificuldade e DLC usando os dados atuais do guia.';
     return `

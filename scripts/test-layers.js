@@ -491,7 +491,7 @@ async function validateGuide(slug = '') {
       assert(!JSON.stringify(routeItems).includes(text), `Saros pontos de atencao nao devem conter texto generico: ${text}`);
     });
   }
-  if (slug === 'god-of-war-2018') {
+  if (slug === 'god-of-war') {
     const gowText = [
       visibleGameText(seedGame),
       JSON.stringify(seedGame.faq || []),
@@ -1203,7 +1203,7 @@ async function validateGuide(slug = '') {
       assert(!/>\s*null\s*</i.test(html), 'Saros SSR nao deve exibir null visivel');
       assert.strictEqual(getCanonical(html), 'https://atlasachievement.com.br/jogo/saros', 'canonical de Saros deve usar dominio de producao');
     }
-    if (slug === 'god-of-war-2018') {
+    if (slug === 'god-of-war') {
       const guideScopedHtml = html.replace(/<aside[^>]*atlas-home-beta-notice[\s\S]*?<\/aside>/i, '');
       const normalizedHtml = normalizeText(html);
       const normalizedScopedHtml = normalizeText(guideScopedHtml);
@@ -1255,7 +1255,7 @@ async function validateGuide(slug = '') {
         assert(!normalizedScopedHtml.includes(normalizeText(text)), `God of War (2018) SSR nao deve exibir texto normalizado: ${text}`);
       });
       assert(!/>\s*null\s*</i.test(html), 'God of War (2018) SSR nao deve exibir null visivel');
-      assert.strictEqual(getCanonical(html), 'https://atlasachievement.com.br/jogo/god-of-war-2018', 'canonical de God of War (2018) deve usar dominio de producao');
+      assert.strictEqual(getCanonical(html), 'https://atlasachievement.com.br/jogo/god-of-war', 'canonical de God of War (2018) deve usar dominio de producao');
     }
     if (slug === 'resident-evil-4-remake') {
       const apiMissables = apiGame.trophies.filter(trophy => trophy.is_missable);

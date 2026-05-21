@@ -11,7 +11,7 @@ const PUBLIC_EDITORIAL_STATUSES = new Set(['review', 'published']);
 const COVERAGE_LEVELS = new Set(['partial', 'strong', 'complete']);
 const VERIFICATION_STATUSES = new Set(['unverified', 'review', 'verified']);
 const EDITORIAL_REVIEW_STATUSES = new Set(Object.keys(editorialModel.EDITORIAL_TRUST_STATUSES || {}));
-const LOCALIZED_TROPHY_SOURCE_SLUGS = new Set(['astro-bot', 'astros-playroom', 'hades-ii', 'nioh-2', 'nioh-3', 'resident-evil-requiem', 'the-last-of-us-part-i', 'the-last-of-us-part-ii', 'subnautica']);
+const LOCALIZED_TROPHY_SOURCE_SLUGS = new Set(['astro-bot', 'astros-playroom', 'god-of-war', 'hades-ii', 'nioh-2', 'nioh-3', 'resident-evil-requiem', 'the-last-of-us-part-i', 'the-last-of-us-part-ii', 'subnautica']);
 const CATALOG_IMAGE_BY_SLUG = {
   'the-last-of-us-part-ii': 'https://cdn.cloudflare.steamstatic.com/steam/apps/2531310/header.jpg'
 };
@@ -251,6 +251,7 @@ function normalizeGame(row, roadmapRows, trophyRows) {
     : row;
   const supportsLocalizedDescriptions = [
     'elden-ring',
+    'god-of-war',
     'hades',
     'pragmata',
     'ghost-of-tsushima',
@@ -311,9 +312,9 @@ function normalizeGame(row, roadmapRows, trophyRows) {
     chapterSelect: ['the-last-of-us-part-i', 'the-last-of-us-part-ii'].includes(normalizedSlug) ? true : (['nioh-3', 'saros', 'subnautica'].includes(normalizedSlug) ? false : undefined),
     missionReplay: normalizedSlug === 'nioh-3' ? true : undefined,
     openWorldCleanup: normalizedSlug === 'subnautica' ? true : undefined,
-    onlineRequired: ['elden-ring', 'astro-bot', 'astros-playroom', 'nioh-2', 'nioh-3', 'resident-evil-requiem', 'saros', 'the-last-of-us-part-i', 'the-last-of-us-part-ii', 'subnautica'].includes(normalizedSlug) ? false : undefined,
-    coopRequired: ['elden-ring', 'astro-bot', 'astros-playroom', 'nioh-2', 'nioh-3', 'resident-evil-requiem', 'saros', 'the-last-of-us-part-i', 'the-last-of-us-part-ii', 'subnautica'].includes(normalizedSlug) ? false : undefined,
-    dlcRequired: ['elden-ring', 'astro-bot', 'astros-playroom', 'nioh-2', 'nioh-3', 'resident-evil-requiem', 'saros', 'the-last-of-us-part-i', 'the-last-of-us-part-ii', 'subnautica'].includes(normalizedSlug) ? false : undefined,
+    onlineRequired: ['elden-ring', 'astro-bot', 'astros-playroom', 'god-of-war', 'nioh-2', 'nioh-3', 'resident-evil-requiem', 'saros', 'the-last-of-us-part-i', 'the-last-of-us-part-ii', 'subnautica'].includes(normalizedSlug) ? false : undefined,
+    coopRequired: ['elden-ring', 'astro-bot', 'astros-playroom', 'god-of-war', 'nioh-2', 'nioh-3', 'resident-evil-requiem', 'saros', 'the-last-of-us-part-i', 'the-last-of-us-part-ii', 'subnautica'].includes(normalizedSlug) ? false : undefined,
+    dlcRequired: ['elden-ring', 'astro-bot', 'astros-playroom', 'god-of-war', 'nioh-2', 'nioh-3', 'resident-evil-requiem', 'saros', 'the-last-of-us-part-i', 'the-last-of-us-part-ii', 'subnautica'].includes(normalizedSlug) ? false : undefined,
     dlc_status: normalizedSlug === 'elden-ring' ? 'out_of_base_scope' : undefined,
     dlcGuideStatus: normalizedSlug === 'elden-ring' ? 'pending' : undefined,
     extraContentStatus: normalizedSlug === 'elden-ring' ? 'pending' : undefined,
@@ -326,7 +327,7 @@ function normalizeGame(row, roadmapRows, trophyRows) {
     trophies: trophyRows.map(item => {
       const isMissable = isCanonicalMissableTrophy(item) && !isPlatinumTrophy(item);
       const seedTrophy = LOCALIZED_TROPHY_SOURCE_SLUGS.has(normalizedSlug) ? getSeedTrophy(normalizedSlug, item.trophy_code) : null;
-      const useSeedEditorialTrophy = normalizedSlug === 'resident-evil-requiem' && seedTrophy;
+      const useSeedEditorialTrophy = ['god-of-war', 'resident-evil-requiem'].includes(normalizedSlug) && seedTrophy;
       const description = useSeedEditorialTrophy ? (seedTrophy.description || item.description || '') : (item.description || '');
       const tip = useSeedEditorialTrophy ? (seedTrophy.tip || item.tip || '') : item.tip;
       const namePt = useSeedEditorialTrophy ? (seedTrophy.name_pt || item.name_pt || '') : (item.name_pt || '');

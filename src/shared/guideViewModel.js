@@ -1634,14 +1634,14 @@
       'gow2018_allfather_blinded',
       'gow2018_treasure_hunter'
     ];
-    if (String(game?.slug || '').trim().toLowerCase() === 'god-of-war-2018' && godOfWar2018AttentionIds.every(id => trophyById.has(id))) {
+    if (['god-of-war', 'god-of-war-2018'].includes(String(game?.slug || '').trim().toLowerCase()) && godOfWar2018AttentionIds.every(id => trophyById.has(id))) {
       const attentionTag = (label, tone = 'warning') => ({ id: normalizeGuideSignalText(label).replace(/\s+/g, '-'), label, tone });
       return [
         {
           id: 'gow2018_chooser_of_the_slain',
           name: trophyById.get('gow2018_chooser_of_the_slain')?.name || 'Chooser of the Slain',
           type: 'Dificuldade / Valkyries / Cleanup',
-          text: 'As Valkyries são o maior pico de dificuldade da platina. Deixe para depois de melhorar equipamentos, runas, vida, fúria e aprender bem esquivas e padrões de ataque.',
+          text: 'As Valkyries são o maior pico de dificuldade da platina. Deixe esse objetivo para depois de melhorar equipamentos, runas, vida, fúria e aprender bem esquivas e padrões de ataque.',
           tags: [attentionTag('Dificuldade / Valkyries / Cleanup', 'warning')],
           score: 99
         },
@@ -2471,7 +2471,7 @@
       ];
     }
 
-    if (String(game?.slug || '').trim().toLowerCase() === 'god-of-war-2018') {
+    if (['god-of-war', 'god-of-war-2018'].includes(String(game?.slug || '').trim().toLowerCase())) {
       return [
         {
           question: 'God of War (2018) tem troféus perdíveis?',
@@ -2491,15 +2491,15 @@
         },
         {
           question: 'Quanto tempo leva para platinar God of War (2018)?',
-          answer: 'O tempo depende do quanto você explora durante a campanha e de quanto cleanup fica para o final. A maior parte do tempo vem de coletáveis, favores, Valkyries, Muspelheim, Niflheim e melhorias.'
+          answer: 'O tempo estimado é 30-40 horas, variando conforme exploração durante a campanha e quanto cleanup ficar para o final.'
         },
         {
           question: 'O que mais dá trabalho na platina?',
-          answer: 'Os maiores pontos de atenção são Valkyries, Niflheim, Muspelheim, coletáveis de reinos, mapas do tesouro, corvos, baús, favores e upgrades.'
+          answer: 'Os maiores pontos de atenção são Valkyries, Niflheim, Muspelheim, coletáveis de reinos, mapas do tesouro, corvos de Odin, baús, favores e upgrades.'
         },
         {
           question: 'A DLC é necessária para a platina?',
-          answer: 'Não. DLCs ou extras ficam fora da platina base.'
+          answer: 'Não. DLCs ou extras ficam fora da platina base. Este guia não mistura God of War Ragnarök, Valhalla ou conteúdo de outro jogo.'
         }
       ];
     }

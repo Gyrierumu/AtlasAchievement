@@ -6732,7 +6732,7 @@ async function assertSeedData({ all, get }, sampleGames) {
   assert.strictEqual(spiderMan2PersistedTypeCounts.Prata, 17, "seed deve persistir 17 prata em Marvel's Spider-Man 2");
   assert.strictEqual(spiderMan2PersistedTypeCounts.Bronze, 22, "seed deve persistir 22 bronze em Marvel's Spider-Man 2");
 
-  const godOfWarSample = sampleGames.find(game => game.slug === 'god-of-war-2018');
+  const godOfWarSample = sampleGames.find(game => game.slug === 'god-of-war');
   assert(godOfWarSample, 'sampleGames deve incluir God of War (2018)');
   assert.strictEqual(godOfWarSample.name, 'God of War', 'God of War (2018) deve manter nome oficial');
   assert.strictEqual(godOfWarSample.difficulty, 4, 'God of War (2018) deve usar dificuldade 4/10');
@@ -6791,8 +6791,8 @@ async function assertSeedData({ all, get }, sampleGames) {
   assert.strictEqual(guideModel.buildGuideQuickDecisionModel(godOfWarSample, godOfWarGuideModel).cards.find(card => card.id === 'missables').value, 'Sem perdíveis', 'badge de perdiveis deve ser coerente com tooltip/resumo');
   assert(!/dados atuais do guia|segundo os dados atuais do guia|o guia nao aponta|o guia n[aã]o aponta|quando validado|em revisao|base game sem dlcs|descricao em revisao editorial|\[object object\]|\bundefined\b/i.test(normalizeText(JSON.stringify(godOfWarSample))), 'God of War (2018) seed nao deve conter linguagem fraca, revisao pendente ou placeholders');
 
-  const godOfWarSeeded = await get('SELECT slug, difficulty, time, time_bucket, time_min_hours, time_max_hours, time_sort_hours, editorial_status, coverage_level, is_verified, verification_status, image, cover_image, online_summary, dlc_scope, missable_summary, runs_summary FROM games WHERE slug = ?', ['god-of-war-2018']);
-  assert.strictEqual(godOfWarSeeded?.slug, 'god-of-war-2018', 'seed deve persistir slug de God of War (2018)');
+  const godOfWarSeeded = await get('SELECT slug, difficulty, time, time_bucket, time_min_hours, time_max_hours, time_sort_hours, editorial_status, coverage_level, is_verified, verification_status, image, cover_image, online_summary, dlc_scope, missable_summary, runs_summary FROM games WHERE slug = ?', ['god-of-war']);
+  assert.strictEqual(godOfWarSeeded?.slug, 'god-of-war', 'seed deve persistir slug de God of War (2018)');
   assert.strictEqual(godOfWarSeeded?.difficulty, 4, 'seed deve persistir dificuldade 4/10 de God of War (2018)');
   assert.strictEqual(godOfWarSeeded?.time, '30-40h', 'seed deve persistir tempo 30-40h de God of War (2018)');
   assert.strictEqual(godOfWarSeeded?.time_bucket, 'medium', 'seed deve persistir God of War (2018) na faixa media');
@@ -6810,12 +6810,12 @@ async function assertSeedData({ all, get }, sampleGames) {
   assert(normalizeText(godOfWarSeeded?.missable_summary).includes('sem perdiveis definitivos'), 'God of War (2018) deve persistir resumo sem perdiveis definitivos');
   assert(godOfWarSeeded?.runs_summary.includes('cleanup livre'), 'God of War (2018) deve persistir runs_summary de uma campanha');
 
-  const godOfWarRoadmapRows = await all('SELECT content FROM roadmaps WHERE game_id = (SELECT id FROM games WHERE slug = ?) ORDER BY step_order', ['god-of-war-2018']);
+  const godOfWarRoadmapRows = await all('SELECT content FROM roadmaps WHERE game_id = (SELECT id FROM games WHERE slug = ?) ORDER BY step_order', ['god-of-war']);
   assert.strictEqual(godOfWarRoadmapRows.length, 6, 'seed deve inserir 6 etapas de roadmap para God of War (2018)');
   assert(godOfWarRoadmapRows.some(row => row.content.includes('Valkyries')), 'seed deve persistir roadmap com Valkyries para God of War (2018)');
   assert(godOfWarRoadmapRows.some(row => row.content.includes('Niflheim')), 'seed deve persistir roadmap com Niflheim para God of War (2018)');
 
-  const godOfWarTrophyRows = await all('SELECT trophy_code, name, type, is_missable, is_spoiler FROM trophies WHERE game_id = (SELECT id FROM games WHERE slug = ?) ORDER BY id', ['god-of-war-2018']);
+  const godOfWarTrophyRows = await all('SELECT trophy_code, name, type, is_missable, is_spoiler FROM trophies WHERE game_id = (SELECT id FROM games WHERE slug = ?) ORDER BY id', ['god-of-war']);
   assert.strictEqual(godOfWarTrophyRows.length, 37, 'seed deve inserir checklist base completo de God of War (2018)');
   assert.strictEqual(new Set(godOfWarTrophyRows.map(trophy => trophy.trophy_code)).size, 37, 'seed nao deve inserir trophy_code duplicado em God of War (2018)');
   assert.strictEqual(godOfWarTrophyRows.filter(trophy => trophy.is_missable).length, 0, 'seed nao deve marcar perdiveis em God of War (2018)');
@@ -7302,7 +7302,7 @@ async function assertUserSyncFlow({ baseUrl, get }) {
   const spiderMan = await get('SELECT id, slug FROM games WHERE slug = ?', ['marvels-spider-man']);
   const milesMorales = await get('SELECT id, slug FROM games WHERE slug = ?', ['marvels-spider-man-miles-morales']);
   const spiderMan2 = await get('SELECT id, slug FROM games WHERE slug = ?', ['marvels-spider-man-2']);
-  const godOfWar = await get('SELECT id, slug FROM games WHERE slug = ?', ['god-of-war-2018']);
+  const godOfWar = await get('SELECT id, slug FROM games WHERE slug = ?', ['god-of-war']);
   const godOfWarRagnarok = await get('SELECT id, slug FROM games WHERE slug = ?', ['god-of-war-ragnarok']);
   const tlouPartI = await get('SELECT id, slug FROM games WHERE slug = ?', ['the-last-of-us-part-i']);
   const tlouPartII = await get('SELECT id, slug FROM games WHERE slug = ?', ['the-last-of-us-part-ii']);
@@ -7466,8 +7466,8 @@ async function assertUserSyncFlow({ baseUrl, get }) {
     body: JSON.stringify({ game_id: godOfWar.id, status: 'want_to_play' })
   });
   assert.strictEqual(userBAddGodOfWar.response.status, 201, 'segundo usuario deve adicionar God of War (2018) na biblioteca');
-  assert(userBAddGodOfWar.payload.library['god-of-war-2018'], 'biblioteca deve conseguir salvar God of War (2018)');
-  assert.strictEqual(userBAddGodOfWar.payload.library['god-of-war-2018'].status, 'saved', 'status de God of War (2018) deve ser preservado');
+  assert(userBAddGodOfWar.payload.library['god-of-war'], 'biblioteca deve conseguir salvar God of War (2018)');
+  assert.strictEqual(userBAddGodOfWar.payload.library['god-of-war'].status, 'saved', 'status de God of War (2018) deve ser preservado');
   assert(userBAddGodOfWar.payload.library['marvels-spider-man-2'], 'segundo usuario deve manter Spider-Man 2 salvo');
 
   const userBAddGodOfWarRagnarok = await userB.request('/api/me/library', {
@@ -7478,7 +7478,7 @@ async function assertUserSyncFlow({ baseUrl, get }) {
   assert.strictEqual(userBAddGodOfWarRagnarok.response.status, 201, 'segundo usuario deve adicionar God of War Ragnarök na biblioteca');
   assert(userBAddGodOfWarRagnarok.payload.library['god-of-war-ragnarok'], 'biblioteca deve conseguir salvar God of War Ragnarök');
   assert.strictEqual(userBAddGodOfWarRagnarok.payload.library['god-of-war-ragnarok'].status, 'saved', 'status de God of War Ragnarök deve ser preservado');
-  assert(userBAddGodOfWarRagnarok.payload.library['god-of-war-2018'], 'segundo usuario deve manter God of War (2018) salvo');
+  assert(userBAddGodOfWarRagnarok.payload.library['god-of-war'], 'segundo usuario deve manter God of War (2018) salvo');
 
   const userBAddTLOUPartI = await userB.request('/api/me/library', {
     method: 'POST',
@@ -8475,7 +8475,7 @@ async function assertBackendEditorialConsistency() {
   assert.strictEqual(spiderMan2RoadmapAfterSync.length, 5, 'migration deve atualizar roadmap de Spider-Man 2');
   assert(spiderMan2RoadmapAfterSync.some(row => row.content.includes('100% dos distritos') && row.content.includes('online')), 'migration deve restaurar roadmap de distritos/online de Spider-Man 2');
 
-  let godOfWarForSync = await get('SELECT id FROM games WHERE slug = ?', ['god-of-war-2018']);
+  let godOfWarForSync = await get('SELECT id FROM games WHERE slug = ?', ['god-of-war']);
   assert(godOfWarForSync, 'seed deve ter God of War (2018) antes do teste de sync');
   await run('DELETE FROM user_trophy_progress WHERE game_id = ?', [godOfWarForSync.id]);
   await run('DELETE FROM user_library WHERE game_id = ?', [godOfWarForSync.id]);
@@ -8484,7 +8484,7 @@ async function assertBackendEditorialConsistency() {
   await run('DELETE FROM trophies WHERE game_id = ?', [godOfWarForSync.id]);
   await run('DELETE FROM games WHERE id = ?', [godOfWarForSync.id]);
   await migrate();
-  godOfWarForSync = await get('SELECT id, difficulty, time, time_bucket, coverage_level, is_verified, verification_status FROM games WHERE slug = ?', ['god-of-war-2018']);
+  godOfWarForSync = await get('SELECT id, difficulty, time, time_bucket, coverage_level, is_verified, verification_status FROM games WHERE slug = ?', ['god-of-war']);
   assert(godOfWarForSync, 'migration deve inserir God of War (2018) em banco existente quando o seed novo ainda nao existir');
   const godOfWarInsertedTrophies = await all('SELECT trophy_code, type, is_missable FROM trophies WHERE game_id = ? ORDER BY id', [godOfWarForSync.id]);
   assert.strictEqual(godOfWarForSync?.difficulty, 4, 'migration deve inserir God of War (2018) com dificuldade 4');
@@ -8508,7 +8508,7 @@ async function assertBackendEditorialConsistency() {
     [godOfWarForSync.id, 'gow2018_legacy_wrong_count', 'Wrong God Count', 'Bronze', 'Old bad seed row.', 'Must be replaced by migrate sync.', 1, 0]
   );
   await migrate();
-  const godOfWarAfterSync = await get('SELECT difficulty, time, time_sort_hours, time_bucket, coverage_level, is_verified, verification_status FROM games WHERE slug = ?', ['god-of-war-2018']);
+  const godOfWarAfterSync = await get('SELECT difficulty, time, time_sort_hours, time_bucket, coverage_level, is_verified, verification_status FROM games WHERE slug = ?', ['god-of-war']);
   const godOfWarTrophiesAfterSync = await all('SELECT trophy_code, type, is_missable FROM trophies WHERE game_id = ? ORDER BY id', [godOfWarForSync.id]);
   const godOfWarRoadmapAfterSync = await all('SELECT content FROM roadmaps WHERE game_id = ? ORDER BY step_order', [godOfWarForSync.id]);
   assert.strictEqual(godOfWarAfterSync?.difficulty, 4, 'migration deve corrigir God of War (2018) se banco preservar dificuldade antiga');
@@ -8799,7 +8799,7 @@ async function assertBackendEditorialConsistency() {
     const spiderMan = items.find(game => game.slug === 'marvels-spider-man');
     const milesMorales = items.find(game => game.slug === 'marvels-spider-man-miles-morales');
     const spiderMan2 = items.find(game => game.slug === 'marvels-spider-man-2');
-    const godOfWar = items.find(game => game.slug === 'god-of-war-2018');
+    const godOfWar = items.find(game => game.slug === 'god-of-war');
     const godOfWarRagnarok = items.find(game => game.slug === 'god-of-war-ragnarok');
     const tlouPartI = items.find(game => game.slug === 'the-last-of-us-part-i');
     const tlouPartII = items.find(game => game.slug === 'the-last-of-us-part-ii');
@@ -8837,7 +8837,7 @@ async function assertBackendEditorialConsistency() {
     const spiderManSample = sampleGames.find(game => game.slug === 'marvels-spider-man');
     const milesMoralesSample = sampleGames.find(game => game.slug === 'marvels-spider-man-miles-morales');
     const spiderMan2Sample = sampleGames.find(game => game.slug === 'marvels-spider-man-2');
-    const godOfWarSample = sampleGames.find(game => game.slug === 'god-of-war-2018');
+    const godOfWarSample = sampleGames.find(game => game.slug === 'god-of-war');
     const godOfWarRagnarokSample = sampleGames.find(game => game.slug === 'god-of-war-ragnarok');
     const tlouPartISample = sampleGames.find(game => game.slug === 'the-last-of-us-part-i');
     const tlouPartIISample = sampleGames.find(game => game.slug === 'the-last-of-us-part-ii');
@@ -9525,7 +9525,7 @@ async function assertBackendEditorialConsistency() {
     const spiderMan2Search = await httpGetJson(baseUrl, '/api/games?q=spider-man%202&limit=10&sort=name-asc');
     assert((spiderMan2Search.items || []).some(game => game.slug === 'marvels-spider-man-2'), "busca publica deve encontrar Marvel's Spider-Man 2");
     const godOfWarSearch = await httpGetJson(baseUrl, '/api/games?q=god%20of%20war&limit=10&sort=name-asc');
-    assert((godOfWarSearch.items || []).some(game => game.slug === 'god-of-war-2018'), 'busca publica deve encontrar God of War (2018)');
+    assert((godOfWarSearch.items || []).some(game => game.slug === 'god-of-war'), 'busca publica deve encontrar God of War (2018)');
     const godOfWarRagnarokSearch = await httpGetJson(baseUrl, '/api/games?q=ragnarok&limit=10&sort=name-asc');
     assert((godOfWarRagnarokSearch.items || []).some(game => game.slug === 'god-of-war-ragnarok'), 'busca publica deve encontrar God of War Ragnarök');
     const tlouPartISearch = await httpGetJson(baseUrl, '/api/games?q=last%20of%20us%20part%20i&limit=10&sort=name-asc');
@@ -9621,7 +9621,7 @@ async function assertBackendEditorialConsistency() {
     assert(midSlugs.has('horizon-forbidden-west'), 'filtro difficulty-mid deve incluir Horizon Forbidden West');
     assert(midSlugs.has('nioh-3'), 'filtro difficulty-mid deve incluir Nioh 3');
     assert(midSlugs.has('resident-evil-requiem'), 'filtro difficulty-mid deve incluir Resident Evil Requiem');
-    assert(midSlugs.has('god-of-war-2018'), 'filtro difficulty-mid deve incluir God of War (2018)');
+    assert(midSlugs.has('god-of-war'), 'filtro difficulty-mid deve incluir God of War (2018)');
     assert(midSlugs.has('god-of-war-ragnarok'), 'filtro difficulty-mid deve incluir God of War Ragnarök');
     assert(midSlugs.has('uncharted-legacy-of-thieves-collection'), 'filtro difficulty-mid deve incluir Uncharted Legacy of Thieves');
     assert(midSlugs.has('demons-souls'), "filtro difficulty-mid deve incluir Demon's Souls");
@@ -9696,7 +9696,7 @@ async function assertBackendEditorialConsistency() {
     assert(mediumSlugs.has('marvels-spider-man'), "filtro time-medium deve incluir Marvel's Spider-Man");
     assert(mediumSlugs.has('marvels-spider-man-miles-morales'), 'filtro time-medium deve incluir Miles Morales');
     assert(mediumSlugs.has('marvels-spider-man-2'), "filtro time-medium deve incluir Marvel's Spider-Man 2");
-    assert(mediumSlugs.has('god-of-war-2018'), 'filtro time-medium deve incluir God of War (2018)');
+    assert(mediumSlugs.has('god-of-war'), 'filtro time-medium deve incluir God of War (2018)');
     assert(mediumSlugs.has('the-last-of-us-part-i'), 'filtro time-medium deve incluir The Last of Us Part I');
     assert(mediumSlugs.has('the-last-of-us-part-ii'), 'filtro time-medium deve incluir The Last of Us Part II');
     assert(mediumSlugs.has('uncharted-legacy-of-thieves-collection'), 'filtro time-medium deve incluir Uncharted Legacy of Thieves');
@@ -9728,7 +9728,7 @@ async function assertBackendEditorialConsistency() {
     assert(trophyMediumSlugs.has('marvels-spider-man'), "filtro trophies-medium deve incluir Marvel's Spider-Man");
     assert(trophyMediumSlugs.has('marvels-spider-man-miles-morales'), 'filtro trophies-medium deve incluir Miles Morales');
     assert(trophyMediumSlugs.has('marvels-spider-man-2'), "filtro trophies-medium deve incluir Marvel's Spider-Man 2");
-    assert(trophyMediumSlugs.has('god-of-war-2018'), 'filtro trophies-medium deve incluir God of War (2018)');
+    assert(trophyMediumSlugs.has('god-of-war'), 'filtro trophies-medium deve incluir God of War (2018)');
     assert(trophyMediumSlugs.has('god-of-war-ragnarok'), 'filtro trophies-medium deve incluir God of War Ragnarök');
     assert(trophyMediumSlugs.has('gran-turismo-7'), 'filtro trophies-medium deve incluir Gran Turismo 7');
     assert(trophyMediumSlugs.has('final-fantasy-vii-remake'), 'filtro trophies-medium deve incluir Final Fantasy VII Remake');
@@ -9782,7 +9782,7 @@ async function assertBackendEditorialConsistency() {
     assert(lowMissableRiskHtml.includes('/jogo/marvels-spider-man'), "colecao de baixo risco de perdiveis deve incluir Marvel's Spider-Man");
     assert(lowMissableRiskHtml.includes('/jogo/marvels-spider-man-miles-morales'), 'colecao de baixo risco de perdiveis deve incluir Miles Morales');
     assert(lowMissableRiskHtml.includes('/jogo/marvels-spider-man-2'), "colecao de baixo risco de perdiveis deve incluir Marvel's Spider-Man 2");
-    assert(lowMissableRiskHtml.includes('/jogo/god-of-war-2018'), 'colecao de baixo risco de perdiveis deve incluir God of War (2018)');
+    assert(lowMissableRiskHtml.includes('/jogo/god-of-war'), 'colecao de baixo risco de perdiveis deve incluir God of War (2018)');
     assert(lowMissableRiskHtml.includes('/jogo/god-of-war-ragnarok'), 'colecao de baixo risco de perdiveis deve incluir God of War Ragnarök');
     assert(lowMissableRiskHtml.includes('/jogo/the-last-of-us-part-i'), 'colecao de baixo risco de perdiveis deve incluir The Last of Us Part I');
     assert(lowMissableRiskHtml.includes('/jogo/the-last-of-us-part-ii'), 'colecao de baixo risco de perdiveis deve incluir The Last of Us Part II');
@@ -12131,8 +12131,8 @@ async function assertBackendEditorialConsistency() {
     assert(spiderMan2GuideHtml.includes(spiderMan2Sample.cover_image), "SSR de Marvel's Spider-Man 2 deve renderizar cover_image");
     assert(spiderMan2GuideHtml.includes(`property="og:image" content="${spiderMan2Sample.image}"`), "SEO de Marvel's Spider-Man 2 deve usar image horizontal");
 
-    const godOfWarDetail = await httpGetJson(baseUrl, '/api/games/slug/god-of-war-2018');
-    assert.strictEqual(godOfWarDetail.slug, 'god-of-war-2018', 'GET /api/games/slug/god-of-war-2018 deve retornar God of War (2018)');
+    const godOfWarDetail = await httpGetJson(baseUrl, '/api/games/slug/god-of-war');
+    assert.strictEqual(godOfWarDetail.slug, 'god-of-war', 'GET /api/games/slug/god-of-war deve retornar God of War (2018)');
     assert.strictEqual(godOfWarDetail.name, 'God of War', 'detalhe de God of War (2018) deve retornar nome oficial');
     assert.strictEqual(godOfWarDetail.difficulty, 4, 'detalhe de God of War (2018) deve retornar dificuldade 4/10');
     assert.strictEqual(godOfWarDetail.time, '30-40h', 'detalhe de God of War (2018) deve retornar tempo 30-40h');
@@ -12166,11 +12166,11 @@ async function assertBackendEditorialConsistency() {
     assert(godOfWarDetail.trophies.some(trophy => trophy.id === 'gow2018_the_journey_begins' && trophy.type === 'Bronze'), 'God of War (2018) deve manter The Journey Begins como bronze');
     assert(!godOfWarDetail.trophies.some(trophy => /Ragnar[oö]k|Valhalla|Ascension|God of War III|DLC|add-?on/i.test(`${trophy.id} ${trophy.name} ${trophy.description}`)), 'God of War (2018) nao deve misturar DLC/add-ons ou outros jogos');
 
-    const godOfWarGuideHtml = await httpGetHtml(baseUrl, '/jogo/god-of-war-2018');
+    const godOfWarGuideHtml = await httpGetHtml(baseUrl, '/jogo/god-of-war');
     const godOfWarScopedHtml = godOfWarGuideHtml.replace(/<aside[^>]*atlas-home-beta-notice[\s\S]*?<\/aside>/i, '');
     assertSeoBasics(godOfWarGuideHtml, {
-      label: 'SSR /jogo/god-of-war-2018',
-      canonical: `${baseUrl}/jogo/god-of-war-2018`,
+      label: 'SSR /jogo/god-of-war',
+      canonical: `${baseUrl}/jogo/god-of-war`,
       titleIncludes: 'God of War',
       descriptionIncludes: 'God of War',
       h1Includes: 'God of War'
@@ -12716,7 +12716,7 @@ async function assertBackendEditorialConsistency() {
     assert(sitemap.includes(`<loc>${baseUrl}/jogo/marvels-spider-man</loc>`), "sitemap deve incluir Marvel's Spider-Man publicado");
     assert(sitemap.includes(`<loc>${baseUrl}/jogo/marvels-spider-man-miles-morales</loc>`), 'sitemap deve incluir Miles Morales publicado');
     assert(sitemap.includes(`<loc>${baseUrl}/jogo/marvels-spider-man-2</loc>`), "sitemap deve incluir Marvel's Spider-Man 2 publicado");
-    assert(sitemap.includes(`<loc>${baseUrl}/jogo/god-of-war-2018</loc>`), 'sitemap deve incluir God of War (2018) publicado');
+    assert(sitemap.includes(`<loc>${baseUrl}/jogo/god-of-war</loc>`), 'sitemap deve incluir God of War (2018) publicado');
     assert(sitemap.includes(`<loc>${baseUrl}/jogo/god-of-war-ragnarok</loc>`), 'sitemap deve incluir God of War Ragnarök publicado');
     assert(sitemap.includes(`<loc>${baseUrl}/jogo/the-last-of-us-part-i</loc>`), 'sitemap deve incluir The Last of Us Part I publicado');
     assert(sitemap.includes(`<loc>${baseUrl}/jogo/the-last-of-us-part-ii</loc>`), 'sitemap deve incluir The Last of Us Part II publicado');
@@ -12893,14 +12893,14 @@ function assertLote1ACriticalEditorialData() {
     });
     assert.strictEqual(game.editorial_status, 'published', `${name} deve permanecer publicado`);
     assert.strictEqual(game.coverage_level, 'strong', `${name} deve ter coverage strong sem selo complete`);
-    if (['god-of-war-2018', 'resident-evil-4-remake'].includes(game.slug)) {
+    if (['god-of-war', 'resident-evil-4-remake'].includes(game.slug)) {
       assert.strictEqual(game.is_verified, true, `${name} deve permanecer verificado`);
       assert.strictEqual(game.verification_status, 'verified', `${name} deve permanecer verified`);
       if (game.slug === 'resident-evil-4-remake') {
         assert.strictEqual(game.difficulty, 7, `${name} deve manter dificuldade 7/10`);
         assert.strictEqual(guideModel.buildGuideViewModel(game, []).missableCount, 16, `${name} deve reduzir perdiveis inflados`);
       }
-      if (game.slug === 'god-of-war-2018') {
+      if (game.slug === 'god-of-war') {
         assert.strictEqual(guideModel.buildGuideViewModel(game, []).missableCount, 0, `${name} deve manter sem perdiveis definitivos`);
       }
     } else {

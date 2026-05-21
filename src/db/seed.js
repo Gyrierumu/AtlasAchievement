@@ -16,6 +16,7 @@ const GAME_SLUG_ALIASES = {
     'astro-s-playrrom'
   ],
   'little-nightmares-ii': ['little-nightmares'],
+  'god-of-war': ['god-of-war-2018'],
   'monster-hunter-world': ['monster-hunter-world-iceborne']
 };
 
