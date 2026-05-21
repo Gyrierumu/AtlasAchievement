@@ -10512,31 +10512,31 @@ const sampleGames = [
     "roadmap": [
       {
         "title": "Avance a história em uma dificuldade confortável",
-        "focus": "Campanha / progressão",
-        "objective": "Concluir a história principal enquanto abre recursos, atalhos, habilidades e áreas para o cleanup.",
+        "focus": "Campanha principal",
+        "objective": "Concluir a história principal enquanto libera recursos, habilidades, atalhos e acesso gradual aos reinos.",
         "actions": [
           "Jogue em uma dificuldade confortável.",
           "Explore baús, favores e áreas secundárias quando estiverem no caminho.",
-          "Não tente limpar todos os reinos antes de ter equipamentos melhores.",
-          "Aproveite a campanha para aprender combate, runas, esquivas e uso de Atreus."
+          "Use a campanha para aprender combate, esquivas, runas e comandos de Atreus.",
+          "Não tente limpar todos os reinos antes de ter equipamentos melhores."
         ],
-        "result": "História concluída e base preparada para exploração avançada."
+        "result": "História concluída e Kratos preparado para exploração avançada."
       },
       {
         "title": "Explore reinos e abra atividades secundárias",
-        "focus": "Exploração / reinos",
+        "focus": "Exploração",
         "objective": "Liberar áreas, viagens, atalhos e atividades opcionais que serão usadas no cleanup.",
         "actions": [
           "Revisite reinos após ganhar novas habilidades.",
           "Abra baús, portais e caminhos bloqueados.",
           "Ative favores e atividades secundárias disponíveis.",
-          "Marque pendências por região para não repetir rotas sem necessidade."
+          "Marque pendências por região para evitar repetir rotas sem necessidade."
         ],
         "result": "Reinos principais abertos e pendências organizadas."
       },
       {
         "title": "Complete favores, coletáveis e mapas por região",
-        "focus": "Coletáveis / checklist",
+        "focus": "Coletáveis",
         "objective": "Resolver artefatos, corvos de Odin, mapas do tesouro, favores e coletáveis usando uma ordem por região.",
         "actions": [
           "Limpe uma região por vez.",
@@ -10549,7 +10549,7 @@ const sampleGames = [
       {
         "title": "Trabalhe Muspelheim e Niflheim em etapas próprias",
         "focus": "Muspelheim / Niflheim",
-        "objective": "Separar os dois reinos mais repetitivos para evitar misturar grind, desafio e exploração comum.",
+        "objective": "Separar os dois reinos mais exigentes para controlar grind, desafios de combate e repetição.",
         "actions": [
           "Faça Muspelheim quando sua build estiver pronta para desafios de combate.",
           "Trabalhe Niflheim com foco em rota, recursos e repetição eficiente.",
@@ -10561,21 +10561,21 @@ const sampleGames = [
       },
       {
         "title": "Derrote Valkyries e finalize upgrades importantes",
-        "focus": "Valkyries / upgrades",
+        "focus": "Valkyries",
         "objective": "Enfrentar os maiores desafios de combate com equipamentos, runas e atributos já fortalecidos.",
         "actions": [
           "Derrote Valkyries depois de melhorar vida, fúria, armadura e runas.",
           "Aprenda padrões antes de tentar lutas mais difíceis.",
           "Use upgrades finais para facilitar chefes opcionais.",
-          "Ajuste talismãs, encantamentos e habilidades conforme a luta."
+          "Ajuste talismãs, encantamentos e habilidades conforme cada luta."
         ],
         "warning": "As Valkyries são o maior pico de dificuldade da platina.",
         "result": "Valkyries derrotadas e upgrades importantes finalizados."
       },
       {
-        "title": "Cleanup final da platina base",
+        "title": "Faça o cleanup final da platina base",
         "focus": "Checklist final",
-        "objective": "Conferir tudo que restou antes da platina, sem misturar conteúdo de outros jogos.",
+        "objective": "Conferir todos os requisitos restantes antes de liberar a platina.",
         "actions": [
           "Revise a checklist completa.",
           "Confirme corvos, artefatos, mapas, favores, baús e upgrades restantes.",

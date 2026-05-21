@@ -502,6 +502,7 @@ async function validateGuide(slug = '') {
     const realMissables = seedGame.trophies.filter(item => item.is_missable === true || item.isMissable === true);
     const routeItems = viewModel.routeChangingTrophies || [];
     const trophyCount = type => seedGame.trophies.filter(item => item.type === type).length;
+    assert.strictEqual(seedGame.slug, 'god-of-war', 'God of War (2018) deve preservar slug god-of-war');
     assert.strictEqual(seedGame.is_verified, true, 'God of War (2018) deve ficar verified no seed');
     assert.strictEqual(seedGame.verification_status, 'verified', 'God of War (2018) deve expor verification_status verified');
     assert.strictEqual(viewModel.editorial.statusBadge.label, 'Verificado', 'God of War (2018) deve exibir selo Verificado');
@@ -522,6 +523,17 @@ async function validateGuide(slug = '') {
     assert.strictEqual(viewModel.nextActionModel.title, 'Avance a história em uma dificuldade confortável', 'God of War (2018) deve ter primeiro passo recomendado especifico');
     assert.notStrictEqual(viewModel.nextActionModel.title, 'Comece pelo roadmap', 'God of War (2018) nao deve usar primeiro passo generico');
     assert.strictEqual(viewModel.roadmapStages[0]?.title, 'Avance a história em uma dificuldade confortável', 'God of War (2018) deve iniciar roadmap pela historia em dificuldade confortavel');
+    [
+      ['Avance a história em uma dificuldade confortável', 'Campanha principal'],
+      ['Explore reinos e abra atividades secundárias', 'Exploração'],
+      ['Complete favores, coletáveis e mapas por região', 'Coletáveis'],
+      ['Trabalhe Muspelheim e Niflheim em etapas próprias', 'Muspelheim / Niflheim'],
+      ['Derrote Valkyries e finalize upgrades importantes', 'Valkyries'],
+      ['Faça o cleanup final da platina base', 'Checklist final']
+    ].forEach(([title, focus], index) => {
+      assert.strictEqual(viewModel.roadmapStages[index]?.title, title, `God of War (2018) deve manter titulo editorial da etapa ${index + 1}`);
+      assert.strictEqual(viewModel.roadmapStages[index]?.focus, focus, `God of War (2018) deve manter focus curto da etapa ${index + 1}`);
+    });
     viewModel.roadmapStages.forEach((step, index) => {
       assert(!step.actions.some(action => normalizeText(action) === normalizeText(step.objective)), `God of War (2018) nao deve repetir objetivo literalmente nas actions da etapa ${index + 1}`);
     });
