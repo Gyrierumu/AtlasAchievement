@@ -10929,320 +10929,439 @@ const sampleGames = [
     "time_max_hours": 60,
     "time_sort_hours": 60,
     "time_bucket": "long",
-    "missable": "Não há troféus perdíveis na lista base: há free roam no pós-jogo e todos os coletáveis, favores, equipamentos, Berserkers, Muspelheim, Gná e chefes opcionais podem ser concluídos no cleanup. Chefes difíceis exigem preparo e continuam disponíveis para revisão após a campanha.",
+    "missable": "Não há troféus perdíveis definitivos na lista base: depois da história, é possível voltar aos reinos para limpar coletáveis, favores, equipamentos, Berserkers, Muspelheim, Gná e chefes opcionais. Chefes difíceis exigem preparo, mas continuam disponíveis para revisão após a campanha.",
     "runs_summary": "Uma campanha principal com cleanup livre no pós-jogo. Nada da lista base é perdível.",
-    "missable_summary": "Não há troféus perdíveis na lista base; a platina pode ser finalizada em free-roam depois da campanha.",
-    "online_summary": "Não há exigência online para a platina.",
-    "grind_summary": "O peso está em favores, coletáveis, completude dos reinos, equipamentos, Muspelheim, Berserkers e chefes opcionais.",
-    "dlc_scope": "Guia focado na lista base da platina; Valhalla deve ficar separado se o projeto suportar DLC.",
-    "difficulty_reason": "A dificuldade vem mais dos chefes opcionais, Berserkers, Gná e completude dos reinos do que de múltiplas runs ou troféus de dificuldade.",
-    "time_reason": "A faixa de 40-60 horas considera história, favores, coletáveis, chefes opcionais, upgrades e cleanup em free-roam.",
-    "first_run_advice": "Jogue a história naturalmente, explore quando quiser e não se preocupe com perdíveis.",
-    "cleanup_advice": "Após a história, use o free-roam para limpar reinos, favores, coletáveis, equipamentos, Muspelheim, Berserkers e chefes opcionais.",
-    "before_you_start": "Nada é perdível e não há online/coop obrigatório; aproveite a campanha e deixe a limpeza pesada dos reinos para o pós-jogo. Valhalla é DLC separada e não interfere na platina base.",
+    "missable_summary": "Não há troféus perdíveis definitivos na lista base. A platina pode ser finalizada com exploração pós-história e cleanup por reino.",
+    "online_summary": "Não há exigência online para a platina. A lista base é totalmente single-player e não exige servidores, PS+ ou troféus online.",
+    "grind_summary": "O peso está em favores, coletáveis, completude dos reinos, equipamentos, Muspelheim, The Crater, Berserkers, Gná e chefes opcionais.",
+    "dlc_scope": "Valhalla fora da platina base. A platina base não exige Valhalla, New Game+, God of War (2018) ou conteúdo extra separado.",
+    "difficulty_reason": "A dificuldade vem mais dos chefes opcionais, Berserkers, Gná, Muspelheim e completude dos reinos do que de múltiplas runs ou troféus de dificuldade.",
+    "time_reason": "A faixa de 40-60 horas considera história, favores, coletáveis, chefes opcionais, upgrades, Muspelheim, The Crater e cleanup pós-história.",
+    "first_run_advice": "Jogue a história em uma dificuldade confortável, explore naturalmente e deixe a limpeza pesada dos reinos para depois da campanha.",
+    "cleanup_advice": "Após a história, limpe reinos por região: favores, coletáveis, equipamentos, Muspelheim, The Crater, Berserkers, Gná e chefes opcionais.",
+    "before_you_start": "A platina base não tem online, coop, dificuldade obrigatória ou perdíveis definitivos. Valhalla e New Game+ ficam fora da rota principal da lista base.",
     "best_for": "Ideal para quem quer uma platina narrativa, robusta e com bastante exploração, mas sem risco de perder troféus.",
     "avoid_if": "Evite se você não gosta de coletáveis, limpeza de mapa, favores e chefes opcionais exigentes.",
     "editorial_status": "published",
     "coverage_level": "strong",
-    "is_verified": false,
-    "verification_status": "review",
-    "verification_note": "Lista base revisada sem Valhalla; aguarda validação editorial manual final.",
+    "is_verified": true,
+    "verification_status": "verified",
+    "editorial_review_status": "verified",
+    "last_reviewed_at": "2026-05-21",
+    "editorial_notes": "Guia revisado editorialmente para a lista base de 36 troféus. Valhalla, New Game+ e extras ficam fora da platina base.",
+    "quality_warnings": [],
+    "verification_note": "Guia revisado editorialmente.",
+    "onlineRequired": false,
+    "coopRequired": false,
+    "dlcRequired": false,
+    "newGamePlusRequired": false,
+    "difficultyTrophiesRequired": false,
+    "platinumType": "campanha + exploração dos reinos + favores + coletáveis + chefes opcionais + cleanup",
     "image": "https://cdn.cloudflare.steamstatic.com/steam/apps/2322010/header.jpg",
     "cover_image": "https://cdn.cloudflare.steamstatic.com/steam/apps/2322010/library_600x900.jpg",
     "roadmap": [
-      "Etapa 1: faça uma única campanha naturalmente, desbloqueando reinos, companheiros, ferramentas, habilidades, equipamentos e sistemas sem se preocupar com perdíveis.",
-      "Etapa 2: avance favores e atividades secundárias conforme os reinos abrirem, incluindo quests de personagens, áreas opcionais e trackers de cada região; coletáveis podem ser acompanhados sem pressão.",
-      "Etapa 3: após ganhar acesso amplo aos reinos, limpe coletáveis e completude por reino: Artefacts, Lore, Odin's Ravens, Nornir Chests, Legendary Chests, Remnants, Lindwyrms, Stags e Flowers.",
-      "Etapa 4: complete desafios opcionais, Trials of Muspelheim, upgrades, armaduras, relics, sword hilts e preparação de equipamentos para os combates de dificuldade alta.",
-      "Etapa 5: enfrente Berserkers, Berserker King Hrolf e Gná com build forte; eles são os maiores picos de execução da lista base e podem ficar para o pós-game.",
-      "Etapa 6: faça o cleanup final no free-roam pós-jogo até fechar a lista base. O guia não inclui troféus de Valhalla; não há online/coop e não são necessárias múltiplas runs."
+      {
+        "title": "Avance a história em uma dificuldade confortável",
+        "focus": "Campanha principal",
+        "objective": "Concluir a história principal enquanto libera reinos, habilidades, equipamentos e atividades para o pós-jogo.",
+        "actions": [
+          "Jogue em uma dificuldade confortável.",
+          "Explore baús, favores e áreas secundárias quando estiverem no caminho.",
+          "Use a campanha para aprender combate, runas, escudos, companheiros e habilidades.",
+          "Não tente limpar todos os reinos antes de ter acesso completo e equipamentos melhores."
+        ],
+        "warning": "",
+        "result": "História concluída e base preparada para o cleanup."
+      },
+      {
+        "title": "Explore reinos e abra atividades secundárias",
+        "focus": "Exploração",
+        "objective": "Liberar caminhos, viagens, atalhos e atividades opcionais que serão usadas na platina.",
+        "actions": [
+          "Revisite reinos após ganhar novas habilidades.",
+          "Abra baús, áreas bloqueadas e rotas secundárias.",
+          "Ative favores e atividades regionais disponíveis.",
+          "Marque pendências por reino para evitar retrabalho."
+        ],
+        "warning": "",
+        "result": "Reinos principais abertos e pendências organizadas."
+      },
+      {
+        "title": "Complete favores e coletáveis por reino",
+        "focus": "Coletáveis",
+        "objective": "Resolver artefatos, lore, flores, corvos de Odin, baús Nornir, favores e atividades regionais em ordem controlada.",
+        "actions": [
+          "Limpe um reino por vez.",
+          "Use checklist para artefatos, lore, flores, corvos e baús.",
+          "Complete favores e objetivos regionais antes de trocar de área.",
+          "Deixe chefes difíceis para quando a build estiver mais forte."
+        ],
+        "warning": "",
+        "result": "Grande parte dos coletáveis e favores concluída."
+      },
+      {
+        "title": "Trabalhe Muspelheim, Crater e objetivos longos",
+        "focus": "Muspelheim / Crater",
+        "objective": "Separar as áreas mais extensas e repetitivas para controlar desafios, exploração e grind.",
+        "actions": [
+          "Faça Muspelheim quando sua build estiver pronta para desafios de combate.",
+          "Organize The Crater em Vanaheim por áreas e atividades.",
+          "Resolva objetivos longos com checklist aberto.",
+          "Evite deixar todo o grind e exploração extensa para o último momento."
+        ],
+        "warning": "Muspelheim e The Crater podem concentrar boa parte do cleanup da platina.",
+        "result": "Atividades longas e regiões mais exigentes encaminhadas."
+      },
+      {
+        "title": "Derrote Berserkers, Gná e finalize upgrades",
+        "focus": "Bosses opcionais",
+        "objective": "Enfrentar os maiores desafios de combate com equipamentos e atributos já fortalecidos.",
+        "actions": [
+          "Derrote Berserkers no pós-jogo ou quando sua build estiver forte.",
+          "Deixe Gná para depois de dominar esquivas, runas, escudo e padrões de ataque.",
+          "Finalize upgrades importantes antes dos combates mais difíceis.",
+          "Ajuste armaduras, encantamentos, Relics e habilidades conforme cada luta."
+        ],
+        "warning": "Gná e alguns Berserkers são os maiores picos de dificuldade da platina.",
+        "result": "Chefes opcionais derrotados e build final consolidada."
+      },
+      {
+        "title": "Faça o cleanup final da platina base",
+        "focus": "Checklist final",
+        "objective": "Conferir todos os requisitos restantes sem misturar Valhalla ou extras fora da lista base.",
+        "actions": [
+          "Revise a checklist completa.",
+          "Confirme coletáveis, favores, baús, Relics, Hilts, upgrades e bosses restantes.",
+          "Termine objetivos pendentes por reino.",
+          "Confirme que não há online, coop, dificuldade obrigatória ou perdíveis definitivos.",
+          "Não conte Valhalla como requisito da platina base."
+        ],
+        "warning": "",
+        "result": "Lista base concluída e platina pronta."
+      }
     ],
     "trophies": [
       {
         "id": "gowr_the_bear_and_the_wolf",
         "name": "The Bear and the Wolf",
+        "name_pt": "O Urso e o Lobo",
         "type": "Platina",
-        "description": "Collect all Trophies",
+        "description": "Obtenha todos os troféus.",
         "tip": "Conclua todos os troféus da lista base de God of War Ragnarök para liberar a platina.",
         "is_spoiler": false
       },
       {
         "id": "gowr_the_florist",
         "name": "The Florist",
+        "name_pt": "Florista",
         "type": "Bronze",
-        "description": "Collect one flower from each of the nine realms",
+        "description": "Colete uma flor de cada um dos nove reinos.",
         "tip": "Colete uma flor em cada reino; deixe para o pós-jogo se quiser limpar tudo com acesso completo.",
         "is_spoiler": false
       },
       {
         "id": "gowr_the_librarian",
         "name": "The Librarian",
+        "name_pt": "Bibliotecário",
         "type": "Bronze",
-        "description": "Collect all of the Books",
-        "tip": "Encontre todos os livros de Kvasir’s Poems marcados como coletáveis.",
+        "description": "Colete todos os livros.",
+        "tip": "Encontre todos os livros ligados aos poemas de Kvasir marcados como coletáveis.",
         "is_spoiler": false
       },
       {
         "id": "gowr_the_curator",
         "name": "The Curator",
+        "name_pt": "Curador",
         "type": "Bronze",
-        "description": "Collect all of the Artifacts",
-        "tip": "Colete todos os artefatos por reino usando os trackers de região.",
+        "description": "Colete todos os artefatos.",
+        "tip": "Colete todos os artefatos por reino usando os rastreadores de região.",
         "is_spoiler": false
       },
       {
         "id": "gowr_how_it_started",
         "name": "How it Started",
+        "name_pt": "Como Começou",
         "type": "Bronze",
-        "description": "Equip an Enchantment",
+        "description": "Equipe um encantamento.",
         "tip": "Equipe qualquer encantamento quando o sistema de amuletos ficar disponível.",
         "is_spoiler": false
       },
       {
         "id": "gowr_spit_shine",
         "name": "Spit Shine",
+        "name_pt": "Brilho Impecável",
         "type": "Bronze",
-        "description": "Upgrade one piece of armor",
+        "description": "Melhore uma peça de armadura.",
         "tip": "Melhore qualquer peça de armadura em uma loja dos ferreiros.",
         "is_spoiler": false
       },
       {
         "id": "gowr_spartan_ways",
         "name": "Spartan Ways",
+        "name_pt": "Caminhos Espartanos",
         "type": "Prata",
-        "description": "Remember the Spartan teachings",
+        "description": "Lembre-se dos ensinamentos espartanos.",
         "tip": "Troféu ligado a progresso narrativo e habilidades especiais.",
         "is_spoiler": true
       },
       {
         "id": "gowr_full_belly",
         "name": "Full Belly",
+        "name_pt": "Barriga Cheia",
         "type": "Prata",
-        "description": "Obtain all of the Apples of Idunn and Horns of Blood Mead",
-        "tip": "Colete Nornir Chests suficientes para maximizar vida e rage; acompanhe por reino durante campanha e cleanup.",
+        "description": "Obtenha todas as maçãs de Idunn e chifres de hidromel sangrento.",
+        "tip": "Colete baús Nornir suficientes para maximizar vida e fúria; acompanhe por reino durante campanha e cleanup.",
         "is_spoiler": false
       },
       {
         "id": "gowr_knock_off_the_rust",
         "name": "Knock off the Rust",
+        "name_pt": "Tirando a Ferrugem",
         "type": "Bronze",
-        "description": "Purchase a Skill",
-        "tip": "Compre qualquer habilidade em uma árvore de skills.",
+        "description": "Compre uma habilidade.",
+        "tip": "Compre qualquer habilidade em uma árvore de habilidades.",
         "is_spoiler": false
       },
       {
         "id": "gowr_a_grizzly_encounter",
         "name": "A Grizzly Encounter",
+        "name_pt": "Um Encontro Feroz",
         "type": "Bronze",
-        "description": "Battle the Bear",
+        "description": "Enfrente o urso.",
         "tip": "Troféu automático de história no primeiro grande combate.",
         "is_spoiler": true
       },
       {
         "id": "gowr_blood_debt",
         "name": "Blood Debt",
+        "name_pt": "Dívida de Sangue",
         "type": "Bronze",
-        "description": "Battle the God of Thunder",
+        "description": "Enfrente o Deus do Trovão.",
         "tip": "Troféu automático de história ligado ao encontro com Thor.",
         "is_spoiler": true
       },
       {
         "id": "gowr_backyard_brawl",
         "name": "Backyard Brawl",
+        "name_pt": "Briga no Quintal",
         "type": "Bronze",
-        "description": "Battle the Mysterious Valkyrie",
+        "description": "Enfrente a valquíria misteriosa.",
         "tip": "Troféu automático de história em encontro de chefe relevante.",
         "is_spoiler": true
       },
       {
         "id": "gowr_root_of_the_problem",
         "name": "Root of the Problem",
+        "name_pt": "Raiz do Problema",
         "type": "Bronze",
-        "description": "Battle Níðhögg",
+        "description": "Enfrente Níðhögg.",
         "tip": "Troféu automático de história em chefe avançado.",
         "is_spoiler": true
       },
       {
         "id": "gowr_the_cauldron",
         "name": "The Cauldron",
+        "name_pt": "O Caldeirão",
         "type": "Bronze",
-        "description": "Destroy Gryla’s cauldron",
+        "description": "Destrua o caldeirão de Gryla.",
         "tip": "Troféu automático de história durante o arco de Gryla.",
         "is_spoiler": true
       },
       {
         "id": "gowr_off_the_leash",
         "name": "Off the Leash",
+        "name_pt": "Fora da Coleira",
         "type": "Bronze",
-        "description": "Battle Garm",
+        "description": "Enfrente Garm.",
         "tip": "Troféu automático de história ligado ao combate com Garm.",
         "is_spoiler": true
       },
       {
         "id": "gowr_comeuppance",
         "name": "Comeuppance",
+        "name_pt": "Punição Merecida",
         "type": "Bronze",
-        "description": "Battle Heimdall",
+        "description": "Enfrente Heimdall.",
         "tip": "Troféu automático de história em chefe de reta avançada.",
         "is_spoiler": true
       },
       {
         "id": "gowr_better_together",
         "name": "Better Together",
+        "name_pt": "Melhor Juntos",
         "type": "Bronze",
-        "description": "Battle Hrist and Mist",
+        "description": "Enfrente Hrist e Mist.",
         "tip": "Troféu automático de história em combate avançado contra duas valquírias.",
         "is_spoiler": true
       },
       {
         "id": "gowr_phalanx",
         "name": "Phalanx",
+        "name_pt": "Falange",
         "type": "Prata",
-        "description": "Obtain all Shields",
-        "tip": "Obtenha todos os escudos, comprando/craftando os que faltarem no cleanup.",
+        "description": "Obtenha todos os escudos.",
+        "tip": "Obtenha todos os escudos, comprando ou criando os que faltarem no cleanup.",
         "is_spoiler": false
       },
       {
         "id": "gowr_collector",
         "name": "Collector",
+        "name_pt": "Colecionador",
         "type": "Prata",
-        "description": "Obtain all Relics and Sword Hilts",
-        "tip": "Colete e craft todos os relics e sword hilts; alguns dependem de Lost Pages e chefes opcionais.",
+        "description": "Obtenha todas as relíquias e empunhaduras de espada.",
+        "tip": "Colete e crie todas as relíquias e empunhaduras de espada; algumas dependem de páginas perdidas e chefes opcionais.",
         "is_spoiler": false
       },
       {
         "id": "gowr_dragon_slayer",
         "name": "Dragon Slayer",
+        "name_pt": "Matador de Dragões",
         "type": "Prata",
-        "description": "Craft the Dragon Scaled Armor Set",
-        "tip": "Complete caçadas e atividades do Crater para obter materiais e craftar o set Dragon Scaled.",
+        "description": "Crie o conjunto de armadura Escama de Dragão.",
+        "tip": "Complete caçadas e atividades de The Crater para obter materiais e criar o conjunto Escama de Dragão.",
         "is_spoiler": false
       },
       {
         "id": "gowr_how_its_going",
         "name": "How it’s Going",
+        "name_pt": "Como Está Indo",
         "type": "Prata",
-        "description": "Fully repair the Amulet of Yggdrasil",
-        "tip": "Colete Jewels of Yggdrasil suficientes para reparar todos os slots do amuleto.",
+        "description": "Repare completamente o Amuleto de Yggdrasil.",
+        "tip": "Colete joias de Yggdrasil suficientes para reparar todos os espaços do amuleto.",
         "is_spoiler": false
       },
       {
         "id": "gowr_funeral_for_a_friend",
         "name": "Funeral for a Friend",
+        "name_pt": "Funeral de um Amigo",
         "type": "Prata",
-        "description": "Attend the Funeral",
+        "description": "Compareça ao funeral.",
         "tip": "Troféu de pós-jogo ligado a uma cena narrativa importante.",
         "is_spoiler": true
       },
       {
         "id": "gowr_rebel_leader",
         "name": "Rebel Leader",
+        "name_pt": "Líder Rebelde",
         "type": "Bronze",
-        "description": "Return the Hammer of the Rebellion",
+        "description": "Devolva o Martelo da Rebelião.",
         "tip": "Complete o favor associado em Svartalfheim quando estiver disponível.",
         "is_spoiler": false
       },
       {
         "id": "gowr_new_friends",
         "name": "New Friends",
+        "name_pt": "Novos Amigos",
         "type": "Bronze",
-        "description": "Fetch Lunda’s orb",
-        "tip": "Complete o favor de Lunda e recupere a orb.",
+        "description": "Busque a orbe de Lunda.",
+        "tip": "Complete o favor de Lunda e recupere a orbe.",
         "is_spoiler": false
       },
       {
         "id": "gowr_full_gufa",
         "name": "Full Gufa",
+        "name_pt": "Gufa Completo",
         "type": "Prata",
-        "description": "Free the Hafgufas",
+        "description": "Liberte os Hafgufas.",
         "tip": "Complete os favores dos Hafgufas em Alfheim.",
         "is_spoiler": false
       },
       {
         "id": "gowr_making_amends",
         "name": "Making Amends",
+        "name_pt": "Fazendo as Pazes",
         "type": "Prata",
-        "description": "Free the Lyngbakr",
-        "tip": "Complete o favor The Weight of Chains em Svartalfheim.",
+        "description": "Liberte o Lyngbakr.",
+        "tip": "Complete o favor O Peso das Correntes em Svartalfheim.",
         "is_spoiler": false
       },
       {
         "id": "gowr_it_was_a_good_day",
         "name": "It Was a Good Day",
+        "name_pt": "Foi um Bom Dia",
         "type": "Prata",
-        "description": "Retrieve Mardöll",
+        "description": "Recupere Mardöll.",
         "tip": "Complete o favor ligado a Mardöll.",
         "is_spoiler": true
       },
       {
         "id": "gowr_invasive_species",
         "name": "Invasive Species",
+        "name_pt": "Espécies Invasoras",
         "type": "Prata",
-        "description": "Complete all of the Crater Hunts",
-        "tip": "Finalize todas as Hunts no Crater em Vanaheim.",
+        "description": "Complete todas as caçadas de The Crater.",
+        "tip": "Finalize todas as caçadas de The Crater em Vanaheim.",
         "is_spoiler": false
       },
       {
         "id": "gowr_besties",
         "name": "Besties",
+        "name_pt": "Melhores Amigos",
         "type": "Prata",
-        "description": "Pet Speki and Svanna",
+        "description": "Faça carinho em Speki e Svanna.",
         "tip": "Troféu de pós-jogo ligado aos lobos Speki e Svanna.",
         "is_spoiler": true
       },
       {
         "id": "gowr_rightful_place",
         "name": "Rightful Place",
+        "name_pt": "Lugar de Direito",
         "type": "Prata",
-        "description": "Return all of the Lindwyrms to Ratatoskr",
+        "description": "Devolva todos os Lindwyrms a Ratatoskr.",
         "tip": "Capture todos os Lindwyrms e retorne-os a Ratatoskr.",
         "is_spoiler": false
       },
       {
         "id": "gowr_pure_of_hart",
         "name": "Pure of Hart",
+        "name_pt": "Coração Puro",
         "type": "Prata",
-        "description": "Return the Stags of the Four Seasons",
-        "tip": "Encontre todos os Stags of the Four Seasons e conclua o favor.",
+        "description": "Devolva os cervos das Quatro Estações.",
+        "tip": "Encontre todos os cervos das Quatro Estações e conclua o favor.",
         "is_spoiler": false
       },
       {
         "id": "gowr_trials_by_fire",
         "name": "Trials by Fire",
+        "name_pt": "Prova de Fogo",
         "type": "Prata",
-        "description": "Complete the Trials of Muspelheim",
+        "description": "Complete os desafios de Muspelheim.",
         "tip": "Conclua os desafios de Muspelheim exigidos pela lista base.",
         "is_spoiler": false
       },
       {
         "id": "gowr_ready_for_commitment",
         "name": "Ready for Commitment",
+        "name_pt": "Pronto para Compromisso",
         "type": "Ouro",
-        "description": "Fully upgrade one armor set",
-        "tip": "Melhore as três peças de um mesmo set de armadura até o nível máximo.",
+        "description": "Melhore completamente um conjunto de armadura.",
+        "tip": "Melhore as três peças de um mesmo conjunto de armadura até o nível máximo.",
         "is_spoiler": false
       },
       {
         "id": "gowr_ragnarok",
         "name": "Ragnarök",
+        "name_pt": "Ragnarök",
         "type": "Ouro",
-        "description": "Battle the All-Father",
+        "description": "Enfrente o Pai de Todos.",
         "tip": "Troféu de reta final da campanha principal.",
         "is_spoiler": true
       },
       {
         "id": "gowr_grave_mistake",
         "name": "Grave Mistake",
+        "name_pt": "Erro Grave",
         "type": "Ouro",
-        "description": "Battle King Hrolf",
-        "tip": "Derrote todos os Berserkers e finalize King Hrolf. É troféu de chefe e dificuldade alta, melhor deixado para build de pós-game.",
+        "description": "Enfrente o Rei Hrólf.",
+        "tip": "Derrote todos os Berserkers e finalize o Rei Hrólf. É troféu de chefe e dificuldade alta, melhor deixado para uma build de pós-jogo.",
         "is_spoiler": true
       },
       {
         "id": "gowr_the_true_queen",
         "name": "The True Queen",
+        "name_pt": "A Verdadeira Rainha",
         "type": "Ouro",
-        "description": "Battle Gná",
+        "description": "Enfrente Gná.",
         "tip": "Derrote Gná no pós-jogo. É troféu de chefe e dificuldade alta, um dos encontros opcionais mais exigentes da platina.",
         "is_spoiler": true
       }

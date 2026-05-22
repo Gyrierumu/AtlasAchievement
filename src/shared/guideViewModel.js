@@ -1638,6 +1638,59 @@
       ];
     }
 
+    const godOfWarRagnarokAttentionIds = [
+      'gowr_the_true_queen',
+      'gowr_grave_mistake',
+      'gowr_trials_by_fire',
+      'gowr_collector',
+      'gowr_the_florist'
+    ];
+    if (String(game?.slug || '').trim().toLowerCase() === 'god-of-war-ragnarok' && godOfWarRagnarokAttentionIds.every(id => trophyById.has(id))) {
+      const attentionTag = (label, tone = 'warning') => ({ id: normalizeGuideSignalText(label).replace(/\s+/g, '-'), label, tone });
+      return [
+        {
+          id: 'gowr_the_true_queen',
+          name: trophyById.get('gowr_the_true_queen')?.name || 'The True Queen',
+          type: 'Dificuldade / Boss / Cleanup',
+          text: 'Gná é um dos maiores picos de dificuldade da platina. Deixe esse combate para depois de melhorar equipamentos, runas, vida, fúria e aprender bem padrões de ataque.',
+          tags: [attentionTag('Dificuldade / Boss / Cleanup', 'warning')],
+          score: 99
+        },
+        {
+          id: 'gowr_grave_mistake',
+          name: trophyById.get('gowr_grave_mistake')?.name || 'Grave Mistake',
+          type: 'Dificuldade / Berserker / Cleanup',
+          text: 'Os Berserkers exigem boa build e leitura de padrões. Trabalhe esse objetivo no pós-jogo, quando Kratos estiver mais forte.',
+          tags: [attentionTag('Dificuldade / Berserker / Cleanup', 'warning')],
+          score: 98
+        },
+        {
+          id: 'gowr_trials_by_fire',
+          name: trophyById.get('gowr_trials_by_fire')?.name || 'Trials by Fire',
+          type: 'Dificuldade / Muspelheim / Desafio',
+          text: 'Muspelheim depende de desafios de combate e organização de tentativas. Faça quando sua build estiver mais sólida.',
+          tags: [attentionTag('Dificuldade / Muspelheim / Desafio', 'warning')],
+          score: 97
+        },
+        {
+          id: 'gowr_collector',
+          name: trophyById.get('gowr_collector')?.name || 'Collector',
+          type: 'Coletável / Relic / Checklist',
+          text: 'As Relics e Sword Hilts exigem atenção a chefes, exploração e recompensas específicas. Use checklist para não deixar peças soltas no cleanup.',
+          tags: [attentionTag('Coletável / Relic / Checklist', 'partial')],
+          score: 96
+        },
+        {
+          id: 'gowr_the_florist',
+          name: trophyById.get('gowr_the_florist')?.name || 'The Florist',
+          type: 'Coletável / Exploração / Cleanup',
+          text: 'Coletáveis são melhor resolvidos por reino. Organize artefatos, livros, flores, lore e corvos de Odin por região para evitar revisitas desnecessárias.',
+          tags: [attentionTag('Coletável / Exploração / Cleanup', 'partial')],
+          score: 95
+        }
+      ];
+    }
+
     const godOfWar2018AttentionIds = [
       'gow2018_chooser_of_the_slain',
       'gow2018_darkness_and_fog',
@@ -2511,6 +2564,43 @@
         {
           question: 'A DLC é necessária para a platina?',
           answer: 'Não. DLCs ou extras ficam fora da platina base. Este guia não mistura God of War Ragnarök, Valhalla ou conteúdo de outro jogo.'
+        }
+      ];
+    }
+
+    if (String(game?.slug || '').trim().toLowerCase() === 'god-of-war-ragnarok') {
+      return [
+        {
+          question: 'God of War Ragnarök tem troféus perdíveis?',
+          answer: 'Não. A platina base não tem perdíveis definitivos. Depois da história, é possível voltar aos reinos para limpar coletáveis, favores, Berserkers, Muspelheim, Crater/Vanaheim e atividades pendentes.'
+        },
+        {
+          question: 'God of War Ragnarök precisa de online para platinar?',
+          answer: 'Não. A platina é totalmente single-player e não exige servidores, PS+ ou troféus online.'
+        },
+        {
+          question: 'God of War Ragnarök tem coop obrigatório?',
+          answer: 'Não. A platina base é solo e não exige coop.'
+        },
+        {
+          question: 'Precisa jogar na dificuldade mais alta?',
+          answer: 'Não. A platina não exige dificuldade específica. Você pode jogar em uma dificuldade confortável e focar em exploração, coletáveis, upgrades e chefes opcionais.'
+        },
+        {
+          question: 'Quanto tempo leva para platinar God of War Ragnarök?',
+          answer: 'O tempo depende do quanto você explora durante a campanha e de quanto cleanup fica para o final. A maior parte do tempo vem de favores, coletáveis, Berserkers, Gná, Muspelheim, Crater/Vanaheim, upgrades e atividades opcionais.'
+        },
+        {
+          question: 'O que mais dá trabalho na platina?',
+          answer: 'Os maiores pontos de atenção são Berserkers, Gná, Muspelheim Trials, The Crater, coletáveis dos reinos, corvos de Odin, baús Nornir, Relics, Hilts, favores e upgrades.'
+        },
+        {
+          question: 'Valhalla é necessário para a platina?',
+          answer: 'Não. Valhalla é conteúdo separado e fica fora da platina base de God of War Ragnarök.'
+        },
+        {
+          question: 'New Game+ é obrigatório para a platina?',
+          answer: 'Não. A rota principal considera campanha, pós-jogo e cleanup da lista base. New Game+ fica fora dos requisitos da platina base.'
         }
       ];
     }

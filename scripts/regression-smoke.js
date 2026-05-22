@@ -6859,15 +6859,22 @@ async function assertSeedData({ all, get }, sampleGames) {
   assert.strictEqual(godOfWarRagnarokSample.roadmap.length, 6, 'God of War Ragnarök deve ter roadmap editorial com 6 etapas');
   assert.strictEqual(godOfWarRagnarokSample.editorial_status, 'published', 'God of War Ragnarök deve ser publico');
   assert.strictEqual(godOfWarRagnarokSample.coverage_level, 'strong', 'God of War Ragnarök deve ter cobertura strong sem selo complete');
-  assert.strictEqual(godOfWarRagnarokSample.is_verified, false, 'God of War Ragnarök nao deve ser verificado automaticamente');
-  assert.strictEqual(godOfWarRagnarokSample.verification_status, 'review', 'God of War Ragnarök deve aguardar revisao editorial final');
+  assert.strictEqual(godOfWarRagnarokSample.is_verified, true, 'God of War Ragnarök deve ficar verificado');
+  assert.strictEqual(godOfWarRagnarokSample.verification_status, 'verified', 'God of War Ragnarök deve ficar verified');
+  assert.strictEqual(godOfWarRagnarokSample.verification_note, 'Guia revisado editorialmente.', 'God of War Ragnarök deve manter mensagem publica revisada');
   assert(godOfWarRagnarokSample.online_summary.includes('Não há exigência online'), 'God of War Ragnarök deve deixar claro que online nao e obrigatorio');
   assert(godOfWarRagnarokSample.missable_summary.includes('Não há troféus perdíveis'), 'God of War Ragnarök deve deixar claro que nao ha perdiveis');
-  assert(godOfWarRagnarokSample.dlc_scope.includes('Valhalla'), 'God of War Ragnarök deve separar Valhalla da lista base');
-  assert(godOfWarRagnarokSample.roadmap.some(step => roadmapStepText(step).includes('Valhalla') && roadmapStepText(step).includes('não inclui')), 'roadmap de God of War Ragnarök deve excluir Valhalla da lista base');
+  assert(godOfWarRagnarokSample.dlc_scope.includes('Valhalla fora da platina base'), 'God of War Ragnarök deve separar Valhalla da lista base');
+  assert(godOfWarRagnarokSample.roadmap.every(step => Array.isArray(step.actions)), 'roadmap de God of War Ragnarök deve usar actions estruturadas');
+  assert(godOfWarRagnarokSample.roadmap.some(step => roadmapStepText(step).includes('Valhalla') && roadmapStepText(step).includes('fora')), 'roadmap de God of War Ragnarök deve excluir Valhalla da lista base');
   assert.strictEqual(godOfWarRagnarokSample.trophies.filter(trophy => trophy.is_missable).length, 0, 'God of War Ragnarök nao deve marcar perdiveis');
   assert.strictEqual(godOfWarRagnarokSample.trophies.filter(trophy => trophy.is_spoiler).length, 15, 'God of War Ragnarök deve manter spoiler_count coerente');
+  assert.strictEqual(godOfWarRagnarokSample.trophies.filter(trophy => trophy.name_pt && trophy.name_pt.trim()).length, 36, 'God of War Ragnarök deve ter titulo PT-BR nos 36 trofeus');
+  assert(godOfWarRagnarokSample.trophies.every(trophy => /^[A-Za-z0-9_:-]{1,60}$/.test(trophy.id)), 'God of War Ragnarök deve manter ids internos validos');
   assert(!godOfWarRagnarokSample.trophies.some(trophy => /Valhalla|No Kratos|Scry|Forum|Fleeting Echoes/i.test(`${trophy.name} ${trophy.description}`)), 'God of War Ragnarök nao deve misturar trofeus de Valhalla na checklist base');
+  ['Collect all Trophies', 'Collect one flower', 'Collect all of the Books', 'Collect all of the Artifacts', 'Equip an Enchantment', 'Upgrade one piece of armor', 'Remember the Spartan teachings', 'Purchase a Skill', 'Descrição em revisão editorial.', '[object Object]', 'undefined'].forEach(text => {
+    assert(!JSON.stringify(godOfWarRagnarokSample).includes(text), `God of War Ragnarök seed nao deve conter texto fraco/ingles cru: ${text}`);
+  });
   const godOfWarRagnarokTypeCounts = godOfWarRagnarokSample.trophies.reduce((counts, trophy) => {
     counts[trophy.type] = (counts[trophy.type] || 0) + 1;
     return counts;
@@ -6891,15 +6898,16 @@ async function assertSeedData({ all, get }, sampleGames) {
   assert.strictEqual(godOfWarRagnarokSeeded?.time_sort_hours, 60, 'seed deve persistir time_sort_hours de God of War Ragnarök');
   assert.strictEqual(godOfWarRagnarokSeeded?.editorial_status, 'published', 'God of War Ragnarök deve entrar publicado');
   assert.strictEqual(godOfWarRagnarokSeeded?.coverage_level, 'strong', 'God of War Ragnarök deve entrar com coverage strong');
-  assert.strictEqual(godOfWarRagnarokSeeded?.is_verified, 0, 'God of War Ragnarök nao deve entrar como verificado');
-  assert.strictEqual(godOfWarRagnarokSeeded?.verification_status, 'review', 'God of War Ragnarök deve entrar em revisao editorial');
+  assert.strictEqual(godOfWarRagnarokSeeded?.is_verified, 1, 'God of War Ragnarök deve entrar como verificado');
+  assert.strictEqual(godOfWarRagnarokSeeded?.verification_status, 'verified', 'God of War Ragnarök deve entrar verified');
   assert(godOfWarRagnarokSeeded?.online_summary.includes('Não há exigência online'), 'God of War Ragnarök deve persistir ausencia de online obrigatorio');
-  assert(godOfWarRagnarokSeeded?.dlc_scope.includes('Valhalla'), 'God of War Ragnarök deve persistir escopo sem Valhalla na lista base');
+  assert(godOfWarRagnarokSeeded?.dlc_scope.includes('Valhalla fora da platina base'), 'God of War Ragnarök deve persistir escopo sem Valhalla na lista base');
   assert(godOfWarRagnarokSeeded?.missable_summary.includes('Não há troféus perdíveis'), 'God of War Ragnarök deve persistir resumo sem perdiveis');
 
   const godOfWarRagnarokRoadmapRows = await all('SELECT content FROM roadmaps WHERE game_id = (SELECT id FROM games WHERE slug = ?) ORDER BY step_order', ['god-of-war-ragnarok']);
   assert.strictEqual(godOfWarRagnarokRoadmapRows.length, 6, 'seed deve inserir 6 etapas de roadmap para God of War Ragnarök');
-  assert(godOfWarRagnarokRoadmapRows.some(row => row.content.includes('Valhalla') && row.content.includes('online')), 'seed deve persistir roadmap sem Valhalla e sem online para God of War Ragnarök');
+  assert(godOfWarRagnarokRoadmapRows.some(row => row.content.includes('Valhalla') && row.content.includes('fora')), 'seed deve persistir roadmap sem Valhalla para God of War Ragnarök');
+  assert(!godOfWarRagnarokRoadmapRows.some(row => /Etapa 1:|free-roam|free roam|Odin's Ravens|Nornir Chests|Trials of Muspelheim|\[object Object\]|title:|focus:|objective:|actions:/i.test(row.content)), 'seed nao deve persistir roadmap cru/antigo de God of War Ragnarök');
 
   const godOfWarRagnarokTrophyRows = await all('SELECT trophy_code, name, type, is_missable, is_spoiler FROM trophies WHERE game_id = (SELECT id FROM games WHERE slug = ?) ORDER BY id', ['god-of-war-ragnarok']);
   assert.strictEqual(godOfWarRagnarokTrophyRows.length, 36, 'seed deve inserir checklist base completo de God of War Ragnarök');
@@ -8554,9 +8562,9 @@ async function assertBackendEditorialConsistency() {
   assert.strictEqual(godOfWarRagnarokForSync?.difficulty, 4, 'migration deve inserir God of War Ragnarök com dificuldade 4');
   assert.strictEqual(godOfWarRagnarokForSync?.time, '40-60h', 'migration deve inserir God of War Ragnarök com tempo 40-60h');
   assert.strictEqual(godOfWarRagnarokForSync?.time_bucket, 'long', 'migration deve inserir God of War Ragnarök na faixa longa');
-  assert.strictEqual(godOfWarRagnarokForSync?.coverage_level, 'strong', 'migration deve inserir God of War Ragnarök como guia forte em revisao');
-  assert.strictEqual(godOfWarRagnarokForSync?.is_verified, 0, 'migration nao deve inserir God of War Ragnarök como verificado');
-  assert.strictEqual(godOfWarRagnarokForSync?.verification_status, 'review', 'migration deve inserir God of War Ragnarök em revisao editorial');
+  assert.strictEqual(godOfWarRagnarokForSync?.coverage_level, 'strong', 'migration deve inserir God of War Ragnarök como guia forte');
+  assert.strictEqual(godOfWarRagnarokForSync?.is_verified, 1, 'migration deve inserir God of War Ragnarök como verificado');
+  assert.strictEqual(godOfWarRagnarokForSync?.verification_status, 'verified', 'migration deve inserir God of War Ragnarök verified');
   assert.strictEqual(godOfWarRagnarokInsertedTrophies.length, 36, 'migration deve inserir checklist de 36 trofeus para God of War Ragnarök ausente');
   assert.strictEqual(godOfWarRagnarokInsertedTrophies.filter(trophy => trophy.is_missable).length, 0, 'migration deve inserir God of War Ragnarök sem perdiveis');
 
@@ -8580,13 +8588,13 @@ async function assertBackendEditorialConsistency() {
   assert.strictEqual(godOfWarRagnarokAfterSync?.time_sort_hours, 60, 'migration deve corrigir time_sort_hours de God of War Ragnarök');
   assert.strictEqual(godOfWarRagnarokAfterSync?.time_bucket, 'long', 'migration deve corrigir time_bucket de God of War Ragnarök');
   assert.strictEqual(godOfWarRagnarokAfterSync?.coverage_level, 'strong', 'migration nao deve manter God of War Ragnarök como complete automatico');
-  assert.strictEqual(godOfWarRagnarokAfterSync?.is_verified, 0, 'migration nao deve manter God of War Ragnarök como verificado sem revisao manual');
-  assert.strictEqual(godOfWarRagnarokAfterSync?.verification_status, 'review', 'migration deve voltar God of War Ragnarök para revisao editorial');
+  assert.strictEqual(godOfWarRagnarokAfterSync?.is_verified, 1, 'migration deve manter God of War Ragnarök como verificado');
+  assert.strictEqual(godOfWarRagnarokAfterSync?.verification_status, 'verified', 'migration deve restaurar God of War Ragnarök verified');
   assert.strictEqual(godOfWarRagnarokTrophiesAfterSync.length, 36, 'migration deve substituir checklist antigo de God of War Ragnarök por 36 trofeus');
   assert(!godOfWarRagnarokTrophiesAfterSync.some(trophy => trophy.trophy_code === 'gowr_valhalla_wrong_count'), 'migration deve remover trofeu legado incorreto de Valhalla em God of War Ragnarök');
   assert.strictEqual(godOfWarRagnarokTrophiesAfterSync.filter(trophy => trophy.is_missable).length, 0, 'migration deve limpar perdiveis antigos em God of War Ragnarök');
   assert.strictEqual(godOfWarRagnarokRoadmapAfterSync.length, 6, 'migration deve atualizar roadmap de God of War Ragnarök');
-  assert(godOfWarRagnarokRoadmapAfterSync.some(row => row.content.includes('Valhalla') && row.content.includes('online')), 'migration deve restaurar roadmap de Valhalla/online de God of War Ragnarök');
+  assert(godOfWarRagnarokRoadmapAfterSync.some(row => row.content.includes('Valhalla') && row.content.includes('fora')), 'migration deve restaurar roadmap sem Valhalla de God of War Ragnarök');
 
   let tlouPartIForSync = await get('SELECT id FROM games WHERE slug = ?', ['the-last-of-us-part-i']);
   assert(tlouPartIForSync, 'seed deve ter The Last of Us Part I antes do teste de sync');
@@ -9439,8 +9447,8 @@ async function assertBackendEditorialConsistency() {
     assert.strictEqual(godOfWarRagnarok.time_bucket, 'long', 'catalogo deve classificar God of War Ragnarök como jogo longo');
     assert.strictEqual(godOfWarRagnarok.roadmap_count, 6, 'catalogo deve expor roadmap completo de God of War Ragnarök');
     assert.strictEqual(godOfWarRagnarok.coverage_level, 'strong', 'God of War Ragnarök deve aparecer com coverage strong');
-    assert.strictEqual(godOfWarRagnarok.is_verified, false, 'God of War Ragnarök nao deve aparecer como verificado');
-    assert.strictEqual(godOfWarRagnarok.verification_status, 'review', 'God of War Ragnarök deve aparecer em revisao editorial');
+    assert.strictEqual(godOfWarRagnarok.is_verified, true, 'God of War Ragnarök deve aparecer como verificado');
+    assert.strictEqual(godOfWarRagnarok.verification_status, 'verified', 'God of War Ragnarök deve aparecer verified');
     assert.strictEqual(godOfWarRagnarok.image, godOfWarRagnarokSample.image, 'catalogo deve usar image horizontal de God of War Ragnarök');
     assert.strictEqual(godOfWarRagnarok.cover_image, godOfWarRagnarokSample.cover_image, 'API deve expor cover_image de God of War Ragnarök');
     assert.strictEqual(godOfWarRagnarok.missable_count, 0, 'API nao deve marcar God of War Ragnarök como perdivel');
@@ -12226,20 +12234,22 @@ async function assertBackendEditorialConsistency() {
     assert.strictEqual(godOfWarRagnarokDetail.missable_count, 0, 'God of War Ragnarök nao deve contar perdiveis');
     assert.strictEqual(godOfWarRagnarokDetail.spoiler_count, 15, 'God of War Ragnarök deve retornar spoiler_count coerente');
     assert.strictEqual(godOfWarRagnarokDetail.roadmap.length, 6, 'detalhe de God of War Ragnarök deve retornar roadmap de 6 etapas');
-    assert(godOfWarRagnarokDetail.roadmap.some(step => roadmapStepText(step).includes('Valhalla') && roadmapStepText(step).includes('não inclui')), 'roadmap de God of War Ragnarök deve excluir Valhalla');
+    assert(godOfWarRagnarokDetail.roadmap.some(step => roadmapStepText(step).includes('Valhalla') && roadmapStepText(step).includes('fora')), 'roadmap de God of War Ragnarök deve excluir Valhalla');
     assert(godOfWarRagnarokDetail.roadmap.some(step => roadmapStepText(step).includes('Berserker') && roadmapStepText(step).includes('Gná')), 'roadmap de God of War Ragnarök deve citar Berserkers e Gná');
     assert(godOfWarRagnarokDetail.runs_summary.includes('cleanup livre'), 'detalhe de God of War Ragnarök deve explicar uma campanha com cleanup');
     assert(godOfWarRagnarokDetail.online_summary.includes('Não há exigência online'), 'detalhe de God of War Ragnarök deve indicar ausencia de online obrigatorio');
     assert(godOfWarRagnarokDetail.dlc_scope.includes('Valhalla'), 'detalhe de God of War Ragnarök deve manter Valhalla fora da lista base');
-    assert(godOfWarRagnarokDetail.cleanup_advice.includes('free-roam'), 'detalhe de God of War Ragnarök deve explicar cleanup em free-roam');
+    assert(normalizeText(godOfWarRagnarokDetail.cleanup_advice).includes('apos a historia'), 'detalhe de God of War Ragnarök deve explicar cleanup pós-história');
     assert.strictEqual(godOfWarRagnarokDetail.coverage_level, 'strong', 'God of War Ragnarök nao deve ser complete sem revisao manual');
-    assert.strictEqual(godOfWarRagnarokDetail.is_verified, false, 'God of War Ragnarök nao deve estar verificado');
-    assert.strictEqual(godOfWarRagnarokDetail.verification_status, 'review', 'God of War Ragnarök deve ficar em revisao editorial');
+    assert.strictEqual(godOfWarRagnarokDetail.is_verified, true, 'God of War Ragnarök deve estar verificado');
+    assert.strictEqual(godOfWarRagnarokDetail.verification_status, 'verified', 'God of War Ragnarök deve ficar verified');
+    assert.strictEqual(godOfWarRagnarokDetail.verification_note, 'Guia revisado editorialmente.', 'God of War Ragnarök deve expor mensagem publica revisada');
     assert.strictEqual(godOfWarRagnarokDetail.cover_image, godOfWarRagnarokSample.cover_image, 'detalhe de God of War Ragnarök deve retornar cover_image');
     assert(godOfWarRagnarokDetail.trophies.some(trophy => trophy.id === 'gowr_the_bear_and_the_wolf' && trophy.name === 'The Bear and the Wolf' && trophy.type === 'Platina'), 'God of War Ragnarök deve manter The Bear and the Wolf como platina');
     assert(godOfWarRagnarokDetail.trophies.some(trophy => trophy.id === 'gowr_ragnarok' && trophy.type === 'Ouro'), 'God of War Ragnarök deve manter Ragnarök como ouro');
     assert(godOfWarRagnarokDetail.trophies.some(trophy => trophy.id === 'gowr_phalanx' && trophy.type === 'Prata'), 'God of War Ragnarök deve manter Phalanx como prata');
     assert(godOfWarRagnarokDetail.trophies.some(trophy => trophy.id === 'gowr_the_florist' && trophy.type === 'Bronze'), 'God of War Ragnarök deve manter The Florist como bronze');
+    assert.strictEqual(godOfWarRagnarokDetail.trophies.filter(trophy => trophy.name_pt && trophy.trophyNamePtBr).length, 36, 'God of War Ragnarök deve expor titulo PT-BR nos 36 trofeus');
     assert(!godOfWarRagnarokDetail.trophies.some(trophy => /Valhalla|No Kratos|Scry|Forum|Fleeting Echoes/i.test(`${trophy.id} ${trophy.name} ${trophy.description}`)), 'God of War Ragnarök nao deve misturar trofeus de Valhalla');
 
     const godOfWarRagnarokGuideHtml = await httpGetHtml(baseUrl, '/jogo/god-of-war-ragnarok');
@@ -12250,11 +12260,18 @@ async function assertBackendEditorialConsistency() {
       descriptionIncludes: 'God of War Ragnarök',
       h1Includes: 'God of War Ragnarök'
     });
-    assert(godOfWarRagnarokGuideHtml.includes('The Bear and the Wolf'), 'SSR de God of War Ragnarök deve renderizar checklist');
+    assert(godOfWarRagnarokGuideHtml.includes('The Bear and the Wolf'), 'SSR de God of War Ragnarök deve renderizar nome original na checklist');
+    assert(godOfWarRagnarokGuideHtml.includes('<h4>O Urso e o Lobo</h4>') && godOfWarRagnarokGuideHtml.includes('NOME ORIGINAL:</span>The Bear and the Wolf'), 'SSR de God of War Ragnarök deve renderizar titulo PT-BR e nome original');
+    assert(godOfWarRagnarokGuideHtml.includes('<h4>A Verdadeira Rainha</h4>') && godOfWarRagnarokGuideHtml.includes('NOME ORIGINAL:</span>The True Queen'), 'SSR de God of War Ragnarök deve renderizar The True Queen no padrao editorial');
     assert(godOfWarRagnarokGuideHtml.includes('36 trof'), 'SSR de God of War Ragnarök deve renderizar total de 36 trofeus');
-    assert(godOfWarRagnarokGuideHtml.includes('free roam') || godOfWarRagnarokGuideHtml.includes('free-roam'), 'SSR de God of War Ragnarök deve renderizar cleanup em free roam');
+    assert(godOfWarRagnarokGuideHtml.includes('cleanup pós-história') || godOfWarRagnarokGuideHtml.includes('cleanup por região'), 'SSR de God of War Ragnarök deve renderizar cleanup editorial');
     assert(godOfWarRagnarokGuideHtml.includes('Valhalla'), 'SSR de God of War Ragnarök deve renderizar escopo sem Valhalla');
     assert(godOfWarRagnarokGuideHtml.includes('Não há exigência online'), 'SSR de God of War Ragnarök deve renderizar ausencia de online');
+    assert(godOfWarRagnarokGuideHtml.includes('Verificado') && godOfWarRagnarokGuideHtml.includes('Guia revisado editorialmente.'), 'SSR de God of War Ragnarök deve renderizar status verificado coerente');
+    assert(godOfWarRagnarokGuideHtml.includes('Avance a história em uma dificuldade confortável'), 'SSR de God of War Ragnarök deve renderizar primeiro passo especifico');
+    assert(godOfWarRagnarokGuideHtml.includes('The True Queen') && godOfWarRagnarokGuideHtml.includes('Grave Mistake') && godOfWarRagnarokGuideHtml.includes('Trials by Fire') && godOfWarRagnarokGuideHtml.includes('Collector') && godOfWarRagnarokGuideHtml.includes('The Florist'), 'SSR de God of War Ragnarök deve renderizar pontos de atencao editoriais');
+    const godOfWarRagnarokScopedHtml = godOfWarRagnarokGuideHtml.replace(/<aside[^>]*atlas-home-beta-notice[\s\S]*?<\/aside>/i, '');
+    assert(!/dados atuais do guia|segundo os dados atuais do guia|o guia nao aponta|o guia n[aã]o aponta|quando validado|em revisao|base game sem dlcs|descricao em revisao editorial|passo 2|free roam|free-roam|\[object object\]|\bundefined\b/i.test(normalizeText(godOfWarRagnarokScopedHtml)), 'SSR de God of War Ragnarök nao deve exibir linguagem fraca, ingles antigo ou placeholders');
     assert(godOfWarRagnarokGuideHtml.includes('atlas-guide-cover--poster'), 'SSR de God of War Ragnarök deve usar cover_image como poster do guia');
     assert(godOfWarRagnarokGuideHtml.includes(godOfWarRagnarokSample.cover_image), 'SSR de God of War Ragnarök deve renderizar cover_image');
     assert(godOfWarRagnarokGuideHtml.includes(`property="og:image" content="${godOfWarRagnarokSample.image}"`), 'SEO de God of War Ragnarök deve usar image horizontal');
@@ -13626,7 +13643,8 @@ function assertPriorityGuideEditorialTrust() {
     'resident-evil-4-remake',
     'resident-evil-requiem',
     'saros',
-    'subnautica'
+    'subnautica',
+    'god-of-war-ragnarok'
   ]);
   const translatedOutsidePilot = sampleGames
     .filter(game => !localizedNameAllowedSlugs.has(game.slug))

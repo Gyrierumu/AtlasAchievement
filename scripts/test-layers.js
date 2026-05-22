@@ -890,7 +890,8 @@ async function validateGuide(slug = '') {
 
     const html = await fetchText(`${baseUrl}/jogo/${slug}`, { headers: { accept: 'text/html' } });
     assertSeoHtml(html, { slug, name: seedGame.name, baseUrl });
-    assert(!PLACEHOLDER_RE.test(html), `${slug} SSR nao deve renderizar placeholders`);
+    const placeholderMatch = html.match(PLACEHOLDER_RE);
+    assert(!placeholderMatch, `${slug} SSR nao deve renderizar placeholders: ${placeholderMatch?.[0] || ''} ${placeholderMatch ? html.slice(Math.max(0, placeholderMatch.index - 120), placeholderMatch.index + 160) : ''}`);
     assert(!/needs_trophy_list_validation|needs_missables_validation|needs_trophy_localization_check/.test(html), `${slug} nao deve expor warnings tecnicos publicamente`);
     assert(html.includes(seedGame.name), `${slug} SSR deve renderizar o nome do jogo`);
     if (seedGame.cover_image) assert(html.includes(seedGame.cover_image), `${slug} SSR deve renderizar cover_image`);
@@ -1401,6 +1402,91 @@ async function validateGuide(slug = '') {
       assert(!/\bOdin[’']s Rave(?!ns)/.test(guideScopedHtml), 'God of War (2018) SSR nao deve exibir Odin’s Rave truncado');
       assert(!/>\s*null\s*</i.test(html), 'God of War (2018) SSR nao deve exibir null visivel');
       assert.strictEqual(getCanonical(html), 'https://atlasachievement.com.br/jogo/god-of-war', 'canonical de God of War (2018) deve usar dominio de producao');
+    }
+    if (slug === 'god-of-war-ragnarok') {
+      const guideScopedHtml = html.replace(/<aside[^>]*atlas-home-beta-notice[\s\S]*?<\/aside>/i, '');
+      const normalizedHtml = normalizeText(html);
+      const normalizedScopedHtml = normalizeText(guideScopedHtml);
+      const apiMissables = apiGame.trophies.filter(trophy => trophy.is_missable === true);
+      const summaryHtml = html.match(/<div class="atlas-guide-summary-editorial[\s\S]*?<\/div>/)?.[0] || '';
+      const apiRoadmapText = JSON.stringify(apiGame.roadmap);
+      const roadmapPanelHtml = html.match(/<section id="guideRoadmapPanel"[\s\S]*?<\/section>/)?.[0] || '';
+      assert.strictEqual(apiGame.slug, 'god-of-war-ragnarok', 'API de God of War Ragnarök deve usar slug real');
+      assert.strictEqual(apiGame.is_verified, true, 'API de God of War Ragnarök deve ficar verified');
+      assert.strictEqual(apiGame.verification_status, 'verified', 'API de God of War Ragnarök deve expor verification_status verified');
+      assert.strictEqual(apiGame.trophies.length, 36, 'API de God of War Ragnarök deve manter 36 trofeus');
+      assert.strictEqual(apiGame.trophies.filter(trophy => trophy.type === 'Platina').length, 1, 'API de God of War Ragnarök deve manter 1 platina');
+      assert.strictEqual(apiGame.trophies.filter(trophy => trophy.type === 'Ouro').length, 4, 'API de God of War Ragnarök deve manter 4 ouros');
+      assert.strictEqual(apiGame.trophies.filter(trophy => trophy.type === 'Prata').length, 15, 'API de God of War Ragnarök deve manter 15 pratas');
+      assert.strictEqual(apiGame.trophies.filter(trophy => trophy.type === 'Bronze').length, 16, 'API de God of War Ragnarök deve manter 16 bronzes');
+      assert.strictEqual(apiGame.missable_count, apiMissables.length, 'API de God of War Ragnarök deve alinhar missable_count com checklist');
+      assert.strictEqual(apiGame.missable_count, 0, 'API de God of War Ragnarök deve manter missable_count 0');
+      assert(!apiMissables.some(trophy => trophy.type === 'Platina'), 'API de God of War Ragnarök nao deve contar platina como perdivel');
+      assert.strictEqual(Boolean(apiGame.onlineRequired || apiGame.online_required), false, 'API de God of War Ragnarök deve manter online 0');
+      assert.strictEqual(Boolean(apiGame.coopRequired || apiGame.coop_required), false, 'API de God of War Ragnarök deve manter coop 0');
+      assert.strictEqual(Boolean(apiGame.dlcRequired || apiGame.dlc_required), false, 'API de God of War Ragnarök deve manter DLC nao obrigatoria');
+      assert.strictEqual(Boolean(apiGame.difficultyTrophiesRequired || apiGame.difficulty_trophies_required), false, 'API de God of War Ragnarök nao deve exigir dificuldade obrigatoria');
+      assert(apiGame.dlc_scope.includes('Valhalla fora da platina base'), 'God of War Ragnarök deve padronizar Valhalla fora da platina base');
+      assert(!/Valhalla[\s\S]{0,80}(obrigat|necess)/i.test(apiGame.dlc_scope), 'Valhalla nao deve aparecer como requisito obrigatorio');
+      assert.strictEqual(apiGame.roadmap.length, 6, 'API de God of War Ragnarök deve retornar roadmap de 6 etapas');
+      assert(apiGame.roadmap.every(step => Array.isArray(step.actions)), 'API de God of War Ragnarök deve retornar actions reais no roadmap');
+      assert.strictEqual(apiGame.roadmap[0]?.title, 'Avance a história em uma dificuldade confortável', 'API de God of War Ragnarök deve retornar primeiro passo especifico');
+      ['Avance a história em uma dificuldade confortável', 'Explore reinos e abra atividades secundárias', 'Complete favores e coletáveis por reino', 'Trabalhe Muspelheim, Crater e objetivos longos', 'Derrote Berserkers, Gná e finalize upgrades', 'Faça o cleanup final da platina base'].forEach(text => {
+        assert(apiRoadmapText.includes(text), `API roadmap de God of War Ragnarök deve conter etapa nova: ${text}`);
+        assert(roadmapPanelHtml.includes(text), `Roadmap SSR de God of War Ragnarök deve conter etapa nova: ${text}`);
+      });
+      ['[object Object]', 'title:', 'focus:', 'objective:', 'actions:', 'Comece pela rota segura', 'Continue a rota principal', 'Passo 2', 'em revisão editorial', 'dados atuais do guia', 'Etapa 1:', "Odin's Ravens", 'Nornir Chests', 'Trials of Muspelheim', 'free-roam', 'free roam'].forEach(text => {
+        assert(!apiRoadmapText.includes(text), `API roadmap de God of War Ragnarök nao deve conter texto cru/antigo: ${text}`);
+        assert(!roadmapPanelHtml.includes(text), `Roadmap SSR de God of War Ragnarök nao deve conter texto cru/antigo: ${text}`);
+      });
+      apiGame.trophies.forEach(trophy => {
+        assert(trophy.id && /^[A-Za-z0-9_:-]{1,60}$/.test(trophy.id), `${trophy.id} deve ter id interno valido`);
+        assert(trophy.name && trophy.trophyNameOriginal === trophy.name, `${trophy.id} deve expor nome original em ingles`);
+        assert(trophy.name_pt && trophy.trophyNamePtBr === trophy.name_pt, `${trophy.id} deve expor titulo PT-BR`);
+        assert(!String(trophy.name_pt).includes(' / '), `${trophy.id} nao deve concatenar titulo PT-BR`);
+        assert(!/Descri[cç][aã]o em revis[aã]o editorial\.|null|undefined|\[object Object\]/i.test(`${trophy.name_pt} ${trophy.name} ${trophy.description}`), `${trophy.id} nao deve expor placeholder`);
+      });
+      assert.strictEqual(apiGame.trophies.filter(trophy => trophy.name_pt && trophy.trophyNamePtBr).length, 36, 'API de God of War Ragnarök deve retornar titulo PT-BR nos 36 trofeus');
+      assert(html.includes('<h4>O Urso e o Lobo</h4>') && html.includes('NOME ORIGINAL:</span>The Bear and the Wolf'), 'Checklist de God of War Ragnarök deve renderizar O Urso e o Lobo com nome original');
+      assert(html.includes('<h4>A Verdadeira Rainha</h4>') && html.includes('NOME ORIGINAL:</span>The True Queen'), 'Checklist de God of War Ragnarök deve renderizar A Verdadeira Rainha com nome original');
+      assert(html.includes('<h4>Erro Grave</h4>') && html.includes('NOME ORIGINAL:</span>Grave Mistake'), 'Checklist de God of War Ragnarök deve renderizar Erro Grave com nome original');
+      assert((html.match(/NOME ORIGINAL:<\/span>/g) || []).length >= 2, 'Checklist de God of War Ragnarök deve exibir NOME ORIGINAL nos trofeus renderizados no SSR');
+      assert(!html.includes('<h4>The Bear and the Wolf</h4>'), 'Checklist de God of War Ragnarök nao deve usar ingles como titulo principal quando ha PT-BR');
+      ['Collect all Trophies', 'Collect one flower', 'Collect all of the Books', 'Collect all of the Artifacts', 'Equip an Enchantment', 'Upgrade one piece of armor', 'Remember the Spartan teachings', 'Purchase a Skill', 'Descrição em revisão editorial.'].forEach(text => {
+        assert(!html.includes(text), `HTML publico de God of War Ragnarök nao deve conter descrição em ingles ou placeholder: ${text}`);
+      });
+      assert(html.includes('God of War Ragnarök'), 'God of War Ragnarök deve renderizar nome no SSR');
+      assert(html.includes('Verificado'), 'God of War Ragnarök deve renderizar status Verificado');
+      assert(html.includes('Guia revisado editorialmente.'), 'God of War Ragnarök deve renderizar mensagem publica revisada');
+      assert(normalizedHtml.includes('sem perdiveis'), 'God of War Ragnarök deve renderizar topo Sem perdiveis');
+      assert(html.includes('Valhalla fora da platina base'), 'God of War Ragnarök deve exibir Valhalla fora da platina base');
+      assert(normalizedHtml.includes('god of war ragnarok tem uma platina focada'), 'God of War Ragnarök deve exibir resumo editorial forte');
+      assert((summaryHtml.match(/<p\b/g) || []).length >= 2, 'Resumo de God of War Ragnarök deve ter pelo menos 2 paragrafos editoriais');
+      assert(html.includes('The True Queen') && html.includes('Grave Mistake') && html.includes('Trials by Fire') && html.includes('Collector') && html.includes('The Florist'), 'God of War Ragnarök deve renderizar pontos de atencao editoriais esperados');
+      assert(html.includes('Dificuldade / Boss / Cleanup'), 'The True Queen deve aparecer como dificuldade/boss/cleanup');
+      assert(!/The True Queen[\s\S]{0,500}Perd[ií]vel/i.test(html), 'The True Queen nao deve aparecer como Perdivel no HTML');
+      [
+        'dados atuais do guia',
+        'segundo os dados atuais do guia',
+        'o guia nao aponta',
+        'o guia não aponta',
+        'lista atual',
+        'quando validado',
+        'em revisao',
+        'em revisão',
+        'Base game sem DLCs',
+        'Este trofeu esta marcado como spoiler',
+        'Este troféu está marcado como spoiler',
+        'Revele os detalhes na lista completa',
+        'Descrição em revisão editorial.',
+        '[object Object]',
+        'undefined'
+      ].forEach(text => {
+        assert(!guideScopedHtml.includes(text), `God of War Ragnarök SSR nao deve exibir: ${text}`);
+        assert(!normalizedScopedHtml.includes(normalizeText(text)), `God of War Ragnarök SSR nao deve exibir texto normalizado: ${text}`);
+      });
+      assert(!/>\s*null\s*</i.test(html), 'God of War Ragnarök SSR nao deve exibir null visivel');
+      assert.strictEqual(getCanonical(html), 'https://atlasachievement.com.br/jogo/god-of-war-ragnarok', 'canonical de God of War Ragnarök deve usar dominio de producao');
     }
     if (slug === 'resident-evil-4-remake') {
       const apiMissables = apiGame.trophies.filter(trophy => trophy.is_missable);
