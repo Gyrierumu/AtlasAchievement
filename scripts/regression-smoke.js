@@ -2396,19 +2396,19 @@ async function assertSeedData({ all, get }, sampleGames) {
   assert(deadCellsSample, 'sampleGames deve incluir Dead Cells');
   assert.strictEqual(deadCellsSample.name, 'Dead Cells', 'Dead Cells deve manter nome publico');
   assert.strictEqual(deadCellsSample.difficulty, 8, 'Dead Cells deve usar dificuldade editorial 8/10');
-  assert.strictEqual(deadCellsSample.time, '40-70h', 'Dead Cells deve preservar tempo 40-70h');
+  assert.strictEqual(deadCellsSample.time, '60-100h', 'Dead Cells deve usar tempo editorial 60-100h');
   assert.strictEqual(deadCellsSample.time_bucket, 'long', 'Dead Cells deve ter time_bucket long');
-  assert.strictEqual(deadCellsSample.time_min_hours, 40, 'Dead Cells deve preservar time_min_hours');
-  assert.strictEqual(deadCellsSample.time_max_hours, 70, 'Dead Cells deve preservar time_max_hours');
-  assert.strictEqual(deadCellsSample.time_sort_hours, 55, 'Dead Cells deve preservar time_sort_hours');
+  assert.strictEqual(deadCellsSample.time_min_hours, 60, 'Dead Cells deve preservar time_min_hours revisado');
+  assert.strictEqual(deadCellsSample.time_max_hours, 100, 'Dead Cells deve preservar time_max_hours revisado');
+  assert.strictEqual(deadCellsSample.time_sort_hours, 80, 'Dead Cells deve preservar time_sort_hours revisado');
   assert.strictEqual(deadCellsSample.editorial_status, 'published', 'Dead Cells deve entrar publicado');
   assert.strictEqual(deadCellsSample.coverage_level, 'strong', 'Dead Cells deve ter cobertura forte sem selo complete');
-  assert.strictEqual(deadCellsSample.is_verified, false, 'Dead Cells nao deve ser verificado automaticamente');
-  assert.strictEqual(deadCellsSample.verification_status, 'review', 'Dead Cells deve aguardar revisao editorial');
+  assert.strictEqual(deadCellsSample.is_verified, true, 'Dead Cells deve ficar verificado apos revisao editorial');
+  assert.strictEqual(deadCellsSample.verification_status, 'verified', 'Dead Cells deve expor verification_status verified');
   assert.strictEqual(deadCellsSample.trophies.length, 54, 'Dead Cells deve ter 54 trofeus da lista base');
   assert.strictEqual(new Set(deadCellsSample.trophies.map(trophy => trophy.id)).size, 54, 'Dead Cells nao deve ter trophy_code duplicado');
   assert.strictEqual(deadCellsSample.trophies.filter(trophy => trophy.is_missable).length, 0, 'Dead Cells nao deve marcar perdiveis permanentes');
-  assert(deadCellsSample.dlc_scope.includes('54 troféus') && deadCellsSample.dlc_scope.includes('Return to Castlevania'), 'Dead Cells deve separar lista base dos DLCs');
+  assert(deadCellsSample.dlc_scope.includes('DLC fora da platina base') && deadCellsSample.dlc_scope.includes('54 troféus'), 'Dead Cells deve separar lista base dos DLCs');
   assert(deadCellsSample.online_summary.includes('Não há exigência online'), 'Dead Cells deve explicar ausencia de online');
   assert(deadCellsSample.grind_summary.includes('Boss Stem Cells') && deadCellsSample.grind_summary.includes('chefes sem dano'), 'Dead Cells deve mencionar Boss Stem Cells e chefes sem dano');
   assert(deadCellsSample.roadmap.some(step => roadmapStepText(step).includes('runas') || roadmapStepText(step).includes('Vine Rune')), 'roadmap de Dead Cells deve mencionar runas');
@@ -2431,21 +2431,21 @@ async function assertSeedData({ all, get }, sampleGames) {
   const deadCells = await get('SELECT slug, difficulty, time, time_bucket, time_min_hours, time_max_hours, time_sort_hours, editorial_status, coverage_level, is_verified, verification_status, image, cover_image, online_summary, before_you_start, cleanup_advice, dlc_scope FROM games WHERE slug = ?', ['dead-cells']);
   assert.strictEqual(deadCells?.slug, 'dead-cells', 'seed deve persistir slug de Dead Cells');
   assert.strictEqual(deadCells?.difficulty, 8, 'seed deve persistir dificuldade 8/10 de Dead Cells');
-  assert.strictEqual(deadCells?.time, '40-70h', 'seed deve persistir tempo 40-70h de Dead Cells');
+  assert.strictEqual(deadCells?.time, '60-100h', 'seed deve persistir tempo 60-100h de Dead Cells');
   assert.strictEqual(deadCells?.time_bucket, 'long', 'seed deve persistir Dead Cells como long');
-  assert.strictEqual(deadCells?.time_min_hours, 40, 'seed deve persistir time_min_hours de Dead Cells');
-  assert.strictEqual(deadCells?.time_max_hours, 70, 'seed deve persistir time_max_hours de Dead Cells');
-  assert.strictEqual(deadCells?.time_sort_hours, 55, 'seed deve persistir time_sort_hours de Dead Cells');
+  assert.strictEqual(deadCells?.time_min_hours, 60, 'seed deve persistir time_min_hours de Dead Cells');
+  assert.strictEqual(deadCells?.time_max_hours, 100, 'seed deve persistir time_max_hours de Dead Cells');
+  assert.strictEqual(deadCells?.time_sort_hours, 80, 'seed deve persistir time_sort_hours de Dead Cells');
   assert.strictEqual(deadCells?.editorial_status, 'published', 'Dead Cells deve aparecer publicado');
   assert.strictEqual(deadCells?.coverage_level, 'strong', 'Dead Cells deve entrar com coverage strong');
-  assert.strictEqual(deadCells?.is_verified, 0, 'Dead Cells nao deve entrar como verificado');
-  assert.strictEqual(deadCells?.verification_status, 'review', 'Dead Cells deve entrar em revisao editorial');
+  assert.strictEqual(deadCells?.is_verified, 1, 'Dead Cells deve entrar como verificado');
+  assert.strictEqual(deadCells?.verification_status, 'verified', 'Dead Cells deve entrar verificado');
   assert.strictEqual(deadCells?.image, deadCellsSample.image, 'Dead Cells deve persistir image horizontal');
   assert.strictEqual(deadCells?.cover_image, deadCellsSample.cover_image, 'Dead Cells deve persistir cover_image vertical');
   assert(deadCells?.online_summary.includes('Não há exigência online'), 'Dead Cells deve persistir ausencia de online');
   assert(deadCells?.before_you_start.includes('54 troféus') && deadCells?.before_you_start.includes('expansões'), 'Dead Cells deve persistir separacao de DLCs');
   assert(deadCells?.cleanup_advice.includes('Boss Stem Cells') && deadCells?.cleanup_advice.includes('Cursed Sword'), 'Dead Cells deve persistir cleanup de Boss Stem Cells e desafios');
-  assert(deadCells?.dlc_scope.includes('jogo base') && deadCells?.dlc_scope.includes('Return to Castlevania'), 'Dead Cells deve persistir escopo da lista base');
+  assert(deadCells?.dlc_scope.includes('DLC fora da platina base') && deadCells?.dlc_scope.includes('jogo base'), 'Dead Cells deve persistir escopo da lista base');
 
   const deadCellsRoadmapRows = await all('SELECT content FROM roadmaps WHERE game_id = (SELECT id FROM games WHERE slug = ?) ORDER BY step_order', ['dead-cells']);
   assert.strictEqual(deadCellsRoadmapRows.length, 6, 'seed deve inserir 6 etapas de roadmap para Dead Cells');
@@ -10283,7 +10283,7 @@ async function assertBackendEditorialConsistency() {
     assert(priorityGuideText['monster-hunter-world'].includes('mestre das coroas gigantes'), 'Monster Hunter: World deve renderizar name_pt no SSR');
     assert(priorityGuideText['monster-hunter-world'].includes('iceborne') && priorityGuideText['monster-hunter-world'].includes('base game'), 'Monster Hunter: World deve separar Iceborne do jogo base');
     assert(!priorityGuideText['monster-hunter-world'].includes('2 jogadores obrigatorios'), 'Monster Hunter: World nao deve virar coop obrigatorio de 2 jogadores');
-    assert(priorityGuideText['dead-cells'].includes('base game') && priorityGuideText['dead-cells'].includes('sem dlcs'), 'Dead Cells deve mostrar guia base game sem DLCs');
+    assert(priorityGuideText['dead-cells'].includes('dlc fora da platina base') && priorityGuideText['dead-cells'].includes('jogo base'), 'Dead Cells deve mostrar DLC fora da platina base');
     assert(priorityGuideText['dead-cells'].includes('precisa de uma mao'), 'Dead Cells deve renderizar name_pt no SSR');
     assert(priorityGuideText['little-nightmares-ii'].includes('chapter select'), 'Little Nightmares II deve destacar Chapter Select');
     assert(priorityGuideText['little-nightmares-ii'].includes('pipoca'), 'Little Nightmares II deve renderizar name_pt no SSR');
@@ -12935,9 +12935,13 @@ function assertLote1ACriticalEditorialData() {
     });
     assert.strictEqual(game.editorial_status, 'published', `${name} deve permanecer publicado`);
     assert.strictEqual(game.coverage_level, 'strong', `${name} deve ter coverage strong sem selo complete`);
-    if (['god-of-war', 'resident-evil-4-remake'].includes(game.slug)) {
+    if (['god-of-war', 'resident-evil', 'resident-evil-4-remake'].includes(game.slug)) {
       assert.strictEqual(game.is_verified, true, `${name} deve permanecer verificado`);
       assert.strictEqual(game.verification_status, 'verified', `${name} deve permanecer verified`);
+      if (game.slug === 'resident-evil') {
+        assert.strictEqual(game.difficulty, 5, `${name} deve manter dificuldade 5/10`);
+        assert.strictEqual(guideModel.buildGuideViewModel(game, []).missableCount, 17, `${name} deve manter perdiveis por run validados`);
+      }
       if (game.slug === 'resident-evil-4-remake') {
         assert.strictEqual(game.difficulty, 7, `${name} deve manter dificuldade 7/10`);
         assert.strictEqual(guideModel.buildGuideViewModel(game, []).missableCount, 16, `${name} deve reduzir perdiveis inflados`);
@@ -13041,7 +13045,7 @@ function assertLote1BNetworkClassification() {
       Prata: expected.Prata,
       Bronze: expected.Bronze
     }, `${slug} deve manter distribuicao de trofeus`);
-    assert.strictEqual(game.is_verified, ['hades', 'hades-ii', 'ghost-of-tsushima', 'astro-bot', 'nioh-3'].includes(slug), `${slug} deve manter status verified apenas quando ja revisado manualmente`);
+    assert.strictEqual(game.is_verified, ['hades', 'hades-ii', 'ghost-of-tsushima', 'astro-bot', 'nioh-3', 'dead-cells'].includes(slug), `${slug} deve manter status verified apenas quando ja revisado manualmente`);
   });
 
   [
@@ -13306,7 +13310,7 @@ function assertLote2LongHardGuideRoadmaps() {
     requiredFields.forEach(field => {
       assert(game[field] && String(game[field]).length > 20, `${slug} deve preencher ${field} com orientacao especifica`);
     });
-    if (slug === 'elden-ring') {
+    if (slug === 'elden-ring' || slug === 'dead-cells') {
       assert.strictEqual(game.is_verified, true, `${slug} deve manter guia base verificado manualmente`);
       assert.strictEqual(game.verification_status, 'verified', `${slug} deve manter verification_status verified`);
     } else {
@@ -13642,6 +13646,7 @@ function assertPriorityGuideEditorialTrust() {
     ...Object.keys(expectedCounts),
     'nioh-2',
     'nioh-3',
+    'resident-evil',
     'resident-evil-4-remake',
     'resident-evil-requiem',
     'saros',
@@ -13746,9 +13751,9 @@ function assertPriorityGuideEditorialTrust() {
   assert.strictEqual(deadCellsProgress.completed, 1, 'marcar trofeu deve atualizar progresso do view model');
   assert.strictEqual(deadCellsProgress.pending, deadCells.trophies.length - 1, 'marcar trofeu deve atualizar pendentes do view model');
   assert(/sem online obrigatorio|sem online/.test(normalizeEditorialSmokeText(summaryOnlineValue(deadCells))), 'Dead Cells deve aparecer sem online');
-  assert(/54 trofeus|jogo base/.test(normalizeEditorialSmokeText(deadCells.dlc_scope)), 'Dead Cells deve declarar base game com 54 trofeus');
-  assert(/base game|boss stem|sem dano|dlc/.test(normalizeEditorialSmokeText(guideModel.buildGuideViewModel(deadCells, []).beforeStartItems.map(item => `${item.title} ${item.detail}`).join(' '))), 'Dead Cells deve destacar base game, Boss Stem Cells ou chefes sem dano antes do checklist');
-  assert(!/castlevania|bad seed|fatal falls|queen and the sea|the bank|derelict distillery|rise of the giant/.test(editorialBody(deadCells)), 'Dead Cells nao deve misturar DLCs no roadmap ou checklist');
+  assert(/dlc fora da platina base/.test(normalizeEditorialSmokeText(deadCells.dlc_scope)) && /54 trofeus|jogo base/.test(normalizeEditorialSmokeText(deadCells.dlc_scope)), 'Dead Cells deve declarar base game com 54 trofeus e DLC fora');
+  assert(/jogo base|boss stem|sem dano|dlc/.test(normalizeEditorialSmokeText(guideModel.buildGuideViewModel(deadCells, []).beforeStartItems.map(item => `${item.title} ${item.detail}`).join(' '))), 'Dead Cells deve destacar jogo base, Boss Stem Cells ou chefes sem dano antes do checklist');
+  assert(!/castlevania|bad seed|fatal falls|queen and the sea|the bank|derelict distillery|rise of the giant/.test(normalizeEditorialSmokeText(JSON.stringify([deadCells.roadmap, deadCells.trophies]))), 'Dead Cells nao deve misturar DLCs no roadmap ou checklist');
 
   const monsterHunterWorld = bySlug.get('monster-hunter-world');
   assert(/online\/multiplayer/.test(summaryOnlineValue(monsterHunterWorld)), 'Monster Hunter: World deve aparecer como online/multiplayer');

@@ -198,6 +198,36 @@ function validateCacheStrategyStatic() {
   console.log('test:cache passed (headers + app version static)');
 }
 
+async function validateHome() {
+  await withTempApp(async ({ baseUrl }) => {
+    const html = await fetchText(`${baseUrl}/`, { headers: { accept: 'text/html' } });
+    const featuredSection = html.match(/<section class="atlas-home-section atlas-home-featured-section"[\s\S]*?<section id="homeRecentGuides"/)?.[0] || '';
+    const discoverySection = html.match(/<span class="atlas-section-kicker">Destaques reais<\/span>[\s\S]*?<section class="atlas-home-feed atlas-home-feed--history"/)?.[0] || '';
+    const historySection = html.match(/<span class="atlas-section-kicker">Histórico editorial<\/span>[\s\S]*?<\/section>\s*<\/div>\s*<\/section>/)?.[0] || '';
+    const littleNightmares = await fetchJson(`${baseUrl}/api/games/slug/little-nightmares-ii`);
+
+    assert(html.includes('Melhor primeiro clique agora'), 'Home deve renderizar Melhor primeiro clique agora');
+    assert(html.includes('Destaques reais'), 'Home deve renderizar Destaques reais');
+    assert(html.includes('Últimas revisões'), 'Home deve renderizar Ultimas revisoes');
+    assert(html.includes('Explorar guias'), 'Home deve manter CTA Explorar guias');
+    assert(html.includes('Ver destaques'), 'Home deve manter CTA Ver destaques');
+    assert(html.includes('Abrir guia'), 'Home deve manter links Abrir guia');
+    assert(featuredSection.includes('Astro Bot'), 'Melhor primeiro clique agora deve usar Astro Bot como guia verificado de entrada');
+    assert(featuredSection.includes('Verificado'), 'Melhor primeiro clique agora deve exibir guia Verificado');
+    assert(!featuredSection.includes('Em revisão'), 'Melhor primeiro clique agora nao deve exibir guia Em revisao');
+    assert(!featuredSection.includes('Little Nightmares II'), 'Melhor primeiro clique agora nao deve promover Little Nightmares II em revisao');
+    assert(discoverySection.includes('Astro Bot') && discoverySection.includes('Resident Evil 2 Remake'), 'Destaques reais devem usar vitrine de guias verificados');
+    assert((discoverySection.match(/Verificado/g) || []).length >= 6, 'Destaques reais devem preencher cards principais com Verificados');
+    assert(!discoverySection.includes('Em revisão'), 'Destaques reais nao deve misturar Em revisao quando ha Verificados suficientes');
+    assert(!discoverySection.includes('Little Nightmares II'), 'Destaques reais nao deve promover Little Nightmares II em revisao');
+    assert(historySection.includes('Guia verificado') || historySection.includes('roadmap'), 'Historico editorial deve manter nota contextual sem prometer revisao falsa');
+    assert.strictEqual(Boolean(littleNightmares.is_verified), false, 'Home nao deve promover Little Nightmares II alterando status');
+    assert.notStrictEqual(littleNightmares.verification_status, 'verified', 'Home nao deve alterar verification_status de Little Nightmares II');
+  });
+
+  console.log('test:home passed (featured + destaques verificados)');
+}
+
 async function withTempApp(callback) {
   const tempDir = fs.mkdtempSync(path.join(os.tmpdir(), 'atlas-layer-test-'));
   process.env.NODE_ENV = 'test';
@@ -326,6 +356,192 @@ async function validateGuide(slug = '') {
     assert(!visibleGameText(seedGame).includes('Corrigir nomes PT-BR quando houver fonte confiável'), 'Resident Evil Requiem nao deve manter instrucao interna de localizacao no seed');
     const guideCss = fs.readFileSync(path.join(ROOT, 'public/css/guide.css'), 'utf8');
     assert(!/atlas-editorial-note\[open\]\s+summary::after\s*\{[^}]*content:\s*['"]-['"]/is.test(guideCss), 'acordeao de notas nao deve renderizar hifen textual quando aberto');
+  }
+  if (slug === 'resident-evil') {
+    const residentText = visibleGameText(seedGame);
+    const normalizedResidentText = normalizeText(residentText);
+    const trophyText = seedGame.trophies.map(trophy => `${trophy.name} ${trophy.name_pt} ${trophy.description} ${trophy.tip}`).join(' ');
+    const tagCount = tagId => seedGame.trophies.filter(trophy => guideModel.getGuideTrophyTags(trophy, seedGame).some(tag => tag.id === tagId)).length;
+    const roadmapTitles = viewModel.roadmapStages.map(step => step.title);
+    assert.strictEqual(seedGame.is_verified, true, 'Resident Evil deve ficar Verificado no seed');
+    assert.strictEqual(seedGame.verification_status, 'verified', 'Resident Evil deve ficar com verification_status verified');
+    assert.strictEqual(viewModel.editorial.statusBadge.label, 'Verificado', 'Resident Evil deve exibir selo Verificado');
+    assert.strictEqual(viewModel.editorial.statusBadge.detail, 'Guia revisado editorialmente.', 'Resident Evil deve exibir mensagem revisada');
+    assert.strictEqual(viewModel.trophies.length, 45, 'Resident Evil deve manter 45 trofeus da lista base');
+    assert.strictEqual(viewModel.trophies.filter(trophy => trophy.type === 'Platina').length, 1, 'Resident Evil deve manter 1 platina');
+    assert.strictEqual(viewModel.trophies.filter(trophy => trophy.type === 'Ouro').length, 1, 'Resident Evil deve manter 1 ouro');
+    assert.strictEqual(viewModel.trophies.filter(trophy => trophy.type === 'Prata').length, 15, 'Resident Evil deve manter 15 pratas');
+    assert.strictEqual(viewModel.trophies.filter(trophy => trophy.type === 'Bronze').length, 28, 'Resident Evil deve manter 28 bronzes');
+    assert.strictEqual(viewModel.missableCount, 17, 'Resident Evil deve manter 17 perdiveis por run');
+    assert.strictEqual(seedGame.onlineRequired, false, 'Resident Evil deve manter online 0 explicito');
+    assert.strictEqual(seedGame.coopRequired, false, 'Resident Evil deve manter coop 0 explicito');
+    assert.strictEqual(seedGame.dlcRequired, false, 'Resident Evil deve manter DLC fora da platina base');
+    assert.strictEqual(seedGame.newGamePlusRequired, false, 'Resident Evil nao deve exigir NG+');
+    assert.strictEqual(seedGame.difficultyTrophiesRequired, true, 'Resident Evil deve marcar dificuldade/modos obrigatorios');
+    assert.strictEqual(viewModel.roadmapStages.length, 6, 'Resident Evil deve ter roadmap com 6 etapas');
+    assert(viewModel.roadmapStages.every(step => Array.isArray(step.actions) && step.actions.length >= 4), 'Resident Evil deve ter acoes estruturadas no roadmap');
+    ['Faça uma primeira run segura aprendendo a mansão', 'Complete as rotas de Jill e Chris', 'Trabalhe Hard, Real Survival e Invisible Enemy', 'Faça runs condicionais: sem salvar, faca-only e speedrun', 'Limpe armas, roupas, mapas e objetivos específicos', 'Finalize a checklist da platina base'].forEach(title => {
+      assert(roadmapTitles.includes(title), `Resident Evil deve conter etapa: ${title}`);
+    });
+    assert(seedGame.dlc_scope.includes('DLC fora da platina base'), 'Resident Evil deve separar DLC da platina base');
+    assert(Array.isArray(seedGame.editorial_summary) && seedGame.editorial_summary.length >= 3, 'Resident Evil deve ter resumo editorial completo da platina');
+    assert(seedGame.editorial_summary.join(' ').includes('DLCs e extras ficam fora da platina base'), 'Resumo editorial de Resident Evil deve separar DLC da platina base');
+    assert(viewModel.contextualFaq.length >= 8, 'Resident Evil deve ter FAQ especifica');
+    assert(viewModel.contextualFaq.some(item => `${item.question} ${item.answer}`.includes('Real Survival') && `${item.question} ${item.answer}`.includes('Invisible Enemy')), 'FAQ de Resident Evil deve explicar modos obrigatorios');
+    assert(viewModel.nextActionModel.title === 'Faça uma primeira run segura aprendendo a mansão', 'Resident Evil nao deve usar primeiro passo generico');
+    assert(tagCount('difficulty') > 0, 'Resident Evil deve manter tags de Dificuldade');
+    assert(tagCount('run') > 0, 'Resident Evil deve manter tags de Risco de run');
+    assert(tagCount('spoiler') > 0, 'Resident Evil deve manter tags de Spoiler');
+    assert.strictEqual(seedGame.trophies.filter(trophy => trophy.name_pt && trophy.name_pt.trim()).length, 45, 'Resident Evil deve ter titulo PT-BR nos 45 trofeus');
+    assert(!/Finish the game|Complete the game|Defeat|Save Chris|Save Jill|Get killed|Obtain all|Burn up two zombies/i.test(trophyText), 'Resident Evil nao deve manter descricoes em ingles na checklist');
+    [
+      'dados atuais do guia',
+      'segundo os dados atuais do guia',
+      'o guia não aponta',
+      'quando validado',
+      'em revisão editorial',
+      'guia aguardando validação',
+      'informação pendente',
+      'Comece pelo roadmap',
+      'Avance pela campanha',
+      'Prossiga pela rota planejada',
+      'Base game sem DLCs',
+      'Descrição em revisão editorial.',
+      '[object Object]',
+      'undefined',
+      'só faça',
+      'resgaté'
+    ].forEach(text => {
+      assert(!residentText.includes(text), `Resident Evil seed nao deve conter texto fraco: ${text}`);
+      if (!['só faça', 'resgaté'].includes(text)) {
+        assert(!normalizedResidentText.includes(normalizeText(text)), `Resident Evil seed nao deve conter texto fraco normalizado: ${text}`);
+      }
+    });
+  }
+  if (slug === 'dead-cells') {
+    const deadCellsText = visibleGameText(seedGame);
+    const normalizedDeadCellsText = normalizeText(deadCellsText);
+    const trophyText = seedGame.trophies.map(trophy => `${trophy.name} ${trophy.name_pt} ${trophy.description} ${trophy.tip}`).join(' ');
+    const tagCount = tagId => seedGame.trophies.filter(trophy => guideModel.getGuideTrophyTags(trophy, seedGame).some(tag => tag.id === tagId)).length;
+    const roadmapTitles = viewModel.roadmapStages.map(step => step.title);
+    assert.strictEqual(seedGame.is_verified, true, 'Dead Cells deve ficar Verificado no seed');
+    assert.strictEqual(seedGame.verification_status, 'verified', 'Dead Cells deve ficar com verification_status verified');
+    assert.strictEqual(viewModel.editorial.statusBadge.label, 'Verificado', 'Dead Cells deve exibir selo Verificado');
+    assert.strictEqual(viewModel.editorial.statusBadge.detail, 'Guia revisado editorialmente.', 'Dead Cells deve exibir mensagem revisada');
+    assert.strictEqual(viewModel.trophies.length, 54, 'Dead Cells deve manter 54 trofeus da lista base');
+    assert.strictEqual(viewModel.missableCount, 0, 'Dead Cells deve manter missableCount 0');
+    assert.strictEqual(seedGame.trophies.filter(item => item.is_missable || item.isMissable).length, 0, 'Dead Cells nao deve inflar perdiveis permanentes');
+    assert.strictEqual(seedGame.trophies.filter(trophy => guideModel.getGuideTrophyTags(trophy, seedGame).some(tag => tag.id === 'missable')).length, 0, 'Dead Cells nao deve renderizar tag Perdivel em desafios repetiveis');
+    assert.strictEqual(seedGame.onlineRequired, false, 'Dead Cells deve manter online 0 explicito');
+    assert.strictEqual(seedGame.coopRequired, false, 'Dead Cells deve manter coop 0 explicito');
+    assert.strictEqual(seedGame.dlcRequired, false, 'Dead Cells deve manter DLC fora da platina base');
+    assert.strictEqual(seedGame.newGamePlusRequired, false, 'Dead Cells nao deve exigir NG+');
+    assert.strictEqual(seedGame.difficultyTrophiesRequired, true, 'Dead Cells deve marcar dificuldade obrigatoria por Boss Stem Cells');
+    assert.strictEqual(viewModel.roadmapStages.length, 6, 'Dead Cells deve ter roadmap com 6 etapas');
+    assert(viewModel.roadmapStages.every(step => step.actions.length >= 4), 'Dead Cells deve ter acoes estruturadas no roadmap');
+    ['Aprenda o ciclo de runs e desbloqueie upgrades permanentes', 'Abra rotas, biomas e chefes principais', 'Trabalhe troféus de chefes e objetivos de execução', 'Avance pelas Boss Stem Cells e dificuldade crescente', 'Limpe blueprints, desafios e objetivos específicos', 'Finalize a checklist da platina base'].forEach(title => {
+      assert(roadmapTitles.includes(title), `Dead Cells deve conter etapa: ${title}`);
+    });
+    assert(seedGame.dlc_scope.includes('DLC fora da platina base') && seedGame.dlc_scope.includes('54 troféus'), 'Dead Cells deve separar DLC da platina base');
+    assert(Array.isArray(seedGame.editorial_summary) && seedGame.editorial_summary.length >= 4, 'Dead Cells deve ter resumo editorial completo da platina');
+    assert(seedGame.editorial_summary.join(' ').includes('DLCs e expansões ficam fora da platina base'), 'Resumo editorial de Dead Cells deve separar DLC da platina base');
+    assert(viewModel.contextualFaq.length >= 8, 'Dead Cells deve ter FAQ especifica');
+    assert(viewModel.contextualFaq.some(item => item.question.includes('dificuldade alta') && item.answer.includes('Boss Stem Cells')), 'FAQ de Dead Cells deve explicar dificuldade obrigatoria');
+    assert(viewModel.nextActionModel.title === 'Aprenda o ciclo de runs e desbloqueie upgrades permanentes', 'Dead Cells nao deve usar primeiro passo generico');
+    assert(tagCount('grind') > 0, 'Dead Cells deve manter tags de Grind');
+    assert(tagCount('difficulty') > 0, 'Dead Cells deve manter tags de Dificuldade');
+    assert(tagCount('cleanup') > 0, 'Dead Cells deve manter tags de Cleanup');
+    assert.strictEqual(seedGame.trophies.filter(trophy => trophy.name_pt && trophy.name_pt.trim()).length, 54, 'Dead Cells deve ter titulo PT-BR nos 54 trofeus');
+    assert(!/Unlock all trophies|Beat the|Reach the|Finish the game|Absorb your|Open your|Complete a Daily|Kill an enemy|Suicide by elevator|Cheat Death|Unlock 10|Find your first|Find a secret/i.test(trophyText), 'Dead Cells nao deve manter descricoes em ingles na checklist');
+    [
+      'dados atuais do guia',
+      'segundo os dados atuais do guia',
+      'o guia não aponta',
+      'quando validado',
+      'em revisão editorial',
+      'guia aguardando validação',
+      'informação pendente',
+      'aguarda validação',
+      'Comece pelo roadmap',
+      'Avance pela campanha',
+      'Prossiga pela rota planejada',
+      'Base game sem DLCs',
+      'Descrição em revisão editorial.',
+      '[object Object]',
+      'undefined'
+    ].forEach(text => {
+      assert(!deadCellsText.includes(text), `Dead Cells seed nao deve conter texto fraco: ${text}`);
+      assert(!normalizedDeadCellsText.includes(normalizeText(text)), `Dead Cells seed nao deve conter texto fraco normalizado: ${text}`);
+    });
+  }
+  if (slug === 'resident-evil-2-remake') {
+    const re2Text = visibleGameText(seedGame);
+    const normalizedRe2Text = normalizeText(re2Text);
+    const trophyText = seedGame.trophies.map(trophy => `${trophy.name} ${trophy.name_pt} ${trophy.description} ${trophy.tip}`).join(' ');
+    const tagCount = tagId => seedGame.trophies.filter(trophy => guideModel.getGuideTrophyTags(trophy, seedGame).some(tag => tag.id === tagId)).length;
+    const roadmapTitles = viewModel.roadmapStages.map(step => step.title);
+    assert.strictEqual(seedGame.slug, 'resident-evil-2-remake', 'Resident Evil 2 Remake deve manter slug correto');
+    assert.strictEqual(seedGame.is_verified, true, 'Resident Evil 2 Remake deve ficar Verificado no seed');
+    assert.strictEqual(seedGame.verification_status, 'verified', 'Resident Evil 2 Remake deve ficar com verification_status verified');
+    assert.strictEqual(viewModel.editorial.statusBadge.label, 'Verificado', 'Resident Evil 2 Remake deve exibir selo Verificado');
+    assert.strictEqual(viewModel.trophies.length, 42, 'Resident Evil 2 Remake deve manter 42 trofeus da lista base');
+    assert.strictEqual(viewModel.trophies.filter(trophy => trophy.type === 'Platina').length, 1, 'Resident Evil 2 Remake deve manter 1 platina');
+    assert.strictEqual(viewModel.trophies.filter(trophy => trophy.type === 'Ouro').length, 4, 'Resident Evil 2 Remake deve manter 4 ouros');
+    assert.strictEqual(viewModel.trophies.filter(trophy => trophy.type === 'Prata').length, 9, 'Resident Evil 2 Remake deve manter 9 pratas');
+    assert.strictEqual(viewModel.trophies.filter(trophy => trophy.type === 'Bronze').length, 28, 'Resident Evil 2 Remake deve manter 28 bronzes');
+    assert.strictEqual(seedGame.onlineRequired, false, 'Resident Evil 2 Remake deve manter online 0 explicito');
+    assert.strictEqual(seedGame.coopRequired, false, 'Resident Evil 2 Remake deve manter coop 0 explicito');
+    assert.strictEqual(seedGame.dlcRequired, false, 'Resident Evil 2 Remake deve manter DLC fora da platina base');
+    assert.strictEqual(seedGame.difficultyTrophiesRequired, true, 'Resident Evil 2 Remake deve marcar dificuldade obrigatoria');
+    assert.strictEqual(viewModel.missableCount, 16, 'Resident Evil 2 Remake deve manter 16 perdiveis por run na checklist');
+    assert.strictEqual(tagCount('online'), 0, 'Resident Evil 2 Remake nao deve ter tag Online');
+    assert.strictEqual(tagCount('coop'), 0, 'Resident Evil 2 Remake nao deve ter tag Coop');
+    assert.strictEqual(tagCount('grind'), 0, 'Resident Evil 2 Remake nao deve inflar Grind por rankings');
+    assert(tagCount('collectible') >= 8, 'Resident Evil 2 Remake deve marcar coletaveis reais');
+    assert(tagCount('difficulty') >= 8, 'Resident Evil 2 Remake deve marcar dificuldade/ranking/restricoes');
+    assert(tagCount('run') >= 8, 'Resident Evil 2 Remake deve marcar risco de run');
+    assert.strictEqual(viewModel.roadmapStages.length, 6, 'Resident Evil 2 Remake deve ter roadmap com 6 etapas');
+    assert(viewModel.roadmapStages.every(step => step.isStructured && step.actions.length >= 4), 'Resident Evil 2 Remake deve ter acoes estruturadas no roadmap');
+    ['Faça uma primeira campanha segura aprendendo o R.P.D.', 'Complete Leon, Claire e a rota complementar', 'Limpe coletáveis, arquivos, Mr. Raccoons e upgrades', 'Trabalhe Hardcore, rankings e runs rápidas', 'Faça runs condicionais sem cura, sem baú e limite de passos', 'Finalize a checklist da platina base'].forEach(title => {
+      assert(roadmapTitles.includes(title), `Resident Evil 2 Remake deve conter etapa: ${title}`);
+    });
+    assert(seedGame.dlc_scope.includes('DLC fora da platina base') && seedGame.dlc_scope.includes('The Ghost Survivors'), 'Resident Evil 2 Remake deve separar DLC/extras da platina base');
+    assert(Array.isArray(seedGame.editorial_summary) && seedGame.editorial_summary.length >= 4, 'Resident Evil 2 Remake deve ter resumo editorial completo da platina');
+    assert(seedGame.editorial_summary.join(' ').includes('múltiplas campanhas com Leon e Claire') && seedGame.editorial_summary.join(' ').includes('Conteúdo extra e modos fora da lista base'), 'Resumo editorial de Resident Evil 2 Remake deve explicar rota e extras');
+    assert.strictEqual(viewModel.contextualFaq.length, 8, 'Resident Evil 2 Remake deve ter FAQ objetiva com limite visual');
+    assert(viewModel.contextualFaq.some(item => item.question.includes('2nd Run') && item.answer.includes('2ª jornada')), 'FAQ de Resident Evil 2 Remake deve explicar 2nd Run');
+    assert(viewModel.contextualFaq.some(item => item.question.includes('DLCs ou modos extras') && item.answer.includes('lista base da platina')), 'FAQ de Resident Evil 2 Remake deve separar DLC/extras');
+    assert(viewModel.contextualFaq.some(item => item.question.includes('Hardcore, rank S e speedrun') && item.answer.includes('rank depende principalmente de tempo')), 'FAQ de Resident Evil 2 Remake deve explicar Hardcore/rank');
+    assert(viewModel.contextualFaq.some(item => item.question.includes('sem cura, sem baú ou limite de passos') && item.answer.includes('Frugalist')), 'FAQ de Resident Evil 2 Remake deve explicar runs condicionais');
+    assert.strictEqual(viewModel.nextActionModel.title, 'Faça uma primeira campanha segura aprendendo o R.P.D.', 'Resident Evil 2 Remake deve ter primeiro passo recomendado especifico');
+    assert(viewModel.nextActionModel.detail.includes('Comece com uma campanha segura'), 'Resident Evil 2 Remake deve preservar descricao do primeiro passo recomendado');
+    assert.deepStrictEqual(viewModel.routeChangingTrophies.slice(0, 5).map(item => item.name), ['Peguei Você!', 'Num Piscar de Olhos', 'Leon "S." Kennedy', 'Uma Superespiã Eficiente', 'Heroína Escarlate Flamejante'], 'Pontos de atencao de Resident Evil 2 Remake devem usar titulos PT-BR');
+    assert(viewModel.routeChangingTrophies.every(item => !/Este troféu está marcado como spoiler|Revele os detalhes/i.test(item.text)), 'Pontos de atencao de Resident Evil 2 Remake nao devem usar texto generico de spoiler');
+    assert.strictEqual(seedGame.trophies.find(trophy => trophy.id === 're2r_eat_this')?.tip, 'Use faca, granada ou flash ao ser agarrado.', 'Resident Evil 2 Remake deve corrigir dica de Eat This');
+    assert.strictEqual(seedGame.trophies.filter(trophy => trophy.name_pt && trophy.name_pt.trim()).length, 42, 'Resident Evil 2 Remake deve ter titulo PT-BR nos 42 trofeus');
+    assert(!/Obtain all trophies|Reach the police station|Complete Leon|Complete Claire|Complete the game without|Open all of the safes|Destroy all Mr\. Raccoons/i.test(trophyText), 'Resident Evil 2 Remake nao deve manter descricoes em ingles na checklist');
+    [
+      'dados atuais do guia',
+      'segundo os dados atuais do guia',
+      'o guia não aponta',
+      'quando validado',
+      'em revisão editorial',
+      'guia aguardando validação',
+      'informação pendente',
+      'Comece pelo roadmap',
+      'Avance pela campanha',
+      'Prossiga pela rota planejada',
+      'Base game sem DLCs',
+      'Descrição em revisão editorial.',
+      '[object Object]',
+      'undefined',
+      'Maté'
+    ].forEach(text => {
+      assert(!re2Text.includes(text), `Resident Evil 2 Remake seed nao deve conter texto fraco: ${text}`);
+      if (text !== 'Maté') {
+        assert(!normalizedRe2Text.includes(normalizeText(text)), `Resident Evil 2 Remake seed nao deve conter texto fraco normalizado: ${text}`);
+      }
+    });
   }
   if (slug === 'hades') {
     const hadesText = visibleGameText(seedGame);
@@ -904,6 +1120,222 @@ async function validateGuide(slug = '') {
       assert(verifiedHtml.includes('Verificado'), 'Resident Evil Requiem verified deve exibir Verificado');
       assert(verifiedHtml.includes('Guia revisado editorialmente para a lista base.'), 'Resident Evil Requiem verified deve exibir mensagem revisada');
       assertNoRequiemInternalCopy(verifiedHtml, { verified: true });
+    }
+    if (slug === 'resident-evil') {
+      const guideScopedHtml = html.replace(/<aside[^>]*atlas-home-beta-notice[\s\S]*?<\/aside>/i, '');
+      const normalizedScopedHtml = normalizeText(guideScopedHtml);
+      const apiMissables = apiGame.trophies.filter(trophy => trophy.is_missable === true);
+      const apiRoadmapText = JSON.stringify(apiGame.roadmap);
+      const roadmapPanelHtml = html.match(/<section id="guideRoadmapPanel"[\s\S]*?<\/section>/)?.[0] || '';
+      const summaryHtml = html.match(/<section id="guideSummaryActions"[\s\S]*?<\/section>/)?.[0] || '';
+      assert.strictEqual(apiGame.slug, 'resident-evil', 'API de Resident Evil deve usar slug real');
+      assert.strictEqual(apiGame.is_verified, true, 'API de Resident Evil deve ficar verified');
+      assert.strictEqual(apiGame.verification_status, 'verified', 'API de Resident Evil deve expor verification_status verified');
+      assert.strictEqual(apiGame.trophies.length, 45, 'API de Resident Evil deve manter 45 trofeus');
+      assert.strictEqual(apiGame.trophies.filter(trophy => trophy.type === 'Platina').length, 1, 'API de Resident Evil deve manter 1 platina');
+      assert.strictEqual(apiGame.trophies.filter(trophy => trophy.type === 'Ouro').length, 1, 'API de Resident Evil deve manter 1 ouro');
+      assert.strictEqual(apiGame.trophies.filter(trophy => trophy.type === 'Prata').length, 15, 'API de Resident Evil deve manter 15 pratas');
+      assert.strictEqual(apiGame.trophies.filter(trophy => trophy.type === 'Bronze').length, 28, 'API de Resident Evil deve manter 28 bronzes');
+      assert.strictEqual(apiGame.missable_count, apiMissables.length, 'API de Resident Evil deve alinhar missable_count com checklist');
+      assert.strictEqual(apiGame.missable_count, 17, 'API de Resident Evil deve manter 17 perdiveis por run');
+      assert(!apiMissables.some(trophy => trophy.type === 'Platina'), 'API de Resident Evil nao deve contar platina como perdivel');
+      assert.strictEqual(apiGame.onlineRequired, false, 'API de Resident Evil deve manter online 0 explicito');
+      assert.strictEqual(apiGame.coopRequired, false, 'API de Resident Evil deve manter coop 0 explicito');
+      assert.strictEqual(apiGame.dlcRequired, false, 'API de Resident Evil deve manter DLC nao obrigatoria explicita');
+      assert.strictEqual(apiGame.newGamePlusRequired, false, 'API de Resident Evil nao deve exigir NG+');
+      assert.strictEqual(apiGame.difficultyTrophiesRequired, true, 'API de Resident Evil deve marcar dificuldade/modos obrigatorios');
+      assert(apiGame.dlc_scope.includes('DLC fora da platina base'), 'Resident Evil deve padronizar DLC fora da platina base');
+      assert.strictEqual(apiGame.roadmap.length, 6, 'API de Resident Evil deve retornar roadmap de 6 etapas');
+      assert(apiGame.roadmap.every(step => Array.isArray(step.actions) && step.actions.length >= 4), 'API de Resident Evil deve retornar actions reais no roadmap');
+      ['Faça uma primeira run segura aprendendo a mansão', 'Complete as rotas de Jill e Chris', 'Trabalhe Hard, Real Survival e Invisible Enemy', 'Faça runs condicionais: sem salvar, faca-only e speedrun', 'Limpe armas, roupas, mapas e objetivos específicos', 'Finalize a checklist da platina base'].forEach(text => {
+        assert(apiRoadmapText.includes(text), `API roadmap de Resident Evil deve conter etapa nova: ${text}`);
+        assert(roadmapPanelHtml.includes(text), `Roadmap SSR de Resident Evil deve conter etapa nova: ${text}`);
+      });
+      assert(html.includes('Resident Evil'), 'Resident Evil deve renderizar nome no SSR');
+      assert(html.includes('Verificado'), 'Resident Evil deve renderizar status Verificado');
+      assert(html.includes('Guia revisado editorialmente.'), 'Resident Evil deve renderizar mensagem publica revisada');
+      assert(html.includes('DLC fora da platina base'), 'Resident Evil deve exibir DLC fora da platina base');
+      assert((summaryHtml.match(/<p\b/g) || []).length >= 4, 'Resumo da platina de Resident Evil deve ter mais de um paragrafo');
+      assert(summaryHtml.includes('Este guia de platina de Resident Evil foi pensado') && summaryHtml.includes('DLCs e extras ficam fora da platina base'), 'Resumo da platina de Resident Evil deve renderizar texto editorial completo');
+      assert(summaryHtml.includes('Faça uma primeira run segura aprendendo a mansão, usando saves e entendendo puzzles, inventário, rotas e resgates antes de otimizar.'), 'Resumo da platina de Resident Evil deve preservar primeiro passo recomendado');
+      assert(html.includes('<h4>Platina Ensanguentada!</h4>') && html.includes('NOME ORIGINAL:</span>Platinum'), 'Checklist de Resident Evil deve renderizar titulo PT-BR com nome original');
+      assert((html.match(/NOME ORIGINAL:<\/span>/g) || []).length >= 45, 'Checklist de Resident Evil deve exibir NOME ORIGINAL nos 45 trofeus');
+      apiGame.trophies.forEach(trophy => {
+        assert(trophy.name && trophy.trophyNameOriginal === trophy.name, `${trophy.id} deve expor nome original`);
+        assert(trophy.name_pt && trophy.trophyNamePtBr === trophy.name_pt, `${trophy.id} deve expor titulo PT-BR`);
+        assert(!String(trophy.name_pt).includes(' / '), `${trophy.id} nao deve concatenar titulo PT-BR`);
+        assert(!/Descrição em revisão editorial\.|null|undefined|\[object Object\]/i.test(`${trophy.name_pt} ${trophy.name} ${trophy.description}`), `${trophy.id} nao deve expor placeholder`);
+      });
+      ['Finish the game', 'Complete the game', 'Defeat a zombie', 'Save Chris', 'Save Jill', 'Get killed', 'Obtain all weapons', 'Burn up two zombies', 'Descrição em revisão editorial.'].forEach(text => {
+        assert(!html.includes(text), `HTML publico de Resident Evil nao deve conter descricao em ingles ou placeholder: ${text}`);
+      });
+      [
+        'dados atuais do guia',
+        'segundo os dados atuais do guia',
+        'o guia não aponta',
+        'quando validado',
+        'em revisão editorial',
+        'guia aguardando validação',
+        'informação pendente',
+        'Comece pelo roadmap',
+        'Avance pela campanha',
+        'Prossiga pela rota planejada',
+        'Base game sem DLCs',
+        '[object Object]',
+        'undefined',
+        'só faça',
+        'resgaté'
+      ].forEach(text => {
+        assert(!guideScopedHtml.includes(text), `Resident Evil SSR nao deve exibir: ${text}`);
+        if (!['só faça', 'resgaté'].includes(text)) {
+          assert(!normalizedScopedHtml.includes(normalizeText(text)), `Resident Evil SSR nao deve exibir texto normalizado: ${text}`);
+        }
+      });
+      assert(!/>\s*null\s*</i.test(html), 'Resident Evil SSR nao deve exibir null visivel');
+      assert([`${baseUrl}/jogo/resident-evil`, 'https://atlasachievement.com.br/jogo/resident-evil'].includes(getCanonical(html)), 'canonical de Resident Evil deve manter slug publico correto');
+    }
+    if (slug === 'dead-cells') {
+      const guideScopedHtml = html.replace(/<aside[^>]*atlas-home-beta-notice[\s\S]*?<\/aside>/i, '');
+      const normalizedScopedHtml = normalizeText(guideScopedHtml);
+      const apiMissables = apiGame.trophies.filter(trophy => trophy.is_missable === true);
+      const apiRoadmapText = JSON.stringify(apiGame.roadmap);
+      const roadmapPanelHtml = html.match(/<section id="guideRoadmapPanel"[\s\S]*?<\/section>/)?.[0] || '';
+      const summaryHtml = html.match(/<section id="guideSummaryActions"[\s\S]*?<\/section>/)?.[0] || '';
+      assert.strictEqual(apiGame.slug, 'dead-cells', 'API de Dead Cells deve usar slug real');
+      assert.strictEqual(apiGame.is_verified, true, 'API de Dead Cells deve ficar verified');
+      assert.strictEqual(apiGame.verification_status, 'verified', 'API de Dead Cells deve expor verification_status verified');
+      assert.strictEqual(apiGame.trophies.length, 54, 'API de Dead Cells deve manter 54 trofeus');
+      assert.strictEqual(apiGame.trophies.filter(trophy => trophy.type === 'Platina').length, 1, 'API de Dead Cells deve manter 1 platina');
+      assert.strictEqual(apiGame.trophies.filter(trophy => trophy.type === 'Ouro').length, 1, 'API de Dead Cells deve manter 1 ouro');
+      assert.strictEqual(apiGame.trophies.filter(trophy => trophy.type === 'Prata').length, 11, 'API de Dead Cells deve manter 11 pratas');
+      assert.strictEqual(apiGame.trophies.filter(trophy => trophy.type === 'Bronze').length, 41, 'API de Dead Cells deve manter 41 bronzes');
+      assert.strictEqual(apiGame.missable_count, apiMissables.length, 'API de Dead Cells deve alinhar missable_count com checklist');
+      assert.strictEqual(apiGame.missable_count, 0, 'API de Dead Cells deve manter missable_count 0');
+      assert.strictEqual(apiGame.onlineRequired, false, 'API de Dead Cells deve manter online 0 explicito');
+      assert.strictEqual(apiGame.coopRequired, false, 'API de Dead Cells deve manter coop 0 explicito');
+      assert.strictEqual(apiGame.dlcRequired, false, 'API de Dead Cells deve manter DLC nao obrigatoria explicita');
+      assert.strictEqual(apiGame.newGamePlusRequired, false, 'API de Dead Cells nao deve exigir NG+');
+      assert.strictEqual(apiGame.difficultyTrophiesRequired, true, 'API de Dead Cells deve marcar dificuldade obrigatoria por BSC');
+      assert(apiGame.dlc_scope.includes('DLC fora da platina base'), 'Dead Cells deve padronizar DLC fora da platina base');
+      assert.strictEqual(apiGame.roadmap.length, 6, 'API de Dead Cells deve retornar roadmap de 6 etapas');
+      assert(apiGame.roadmap.every(step => Array.isArray(step.actions) && step.actions.length >= 4), 'API de Dead Cells deve retornar actions reais no roadmap');
+      ['Aprenda o ciclo de runs e desbloqueie upgrades permanentes', 'Abra rotas, biomas e chefes principais', 'Trabalhe troféus de chefes e objetivos de execução', 'Avance pelas Boss Stem Cells e dificuldade crescente', 'Limpe blueprints, desafios e objetivos específicos', 'Finalize a checklist da platina base'].forEach(text => {
+        assert(apiRoadmapText.includes(text), `API roadmap de Dead Cells deve conter etapa nova: ${text}`);
+        assert(roadmapPanelHtml.includes(text), `Roadmap SSR de Dead Cells deve conter etapa nova: ${text}`);
+      });
+      assert(html.includes('Dead Cells'), 'Dead Cells deve renderizar nome no SSR');
+      assert(html.includes('Verificado'), 'Dead Cells deve renderizar status Verificado');
+      assert(html.includes('Guia revisado editorialmente.'), 'Dead Cells deve renderizar mensagem publica revisada');
+      assert(html.includes('DLC fora da platina base'), 'Dead Cells deve exibir DLC fora da platina base');
+      assert((summaryHtml.match(/<p\b/g) || []).length >= 5, 'Resumo da platina de Dead Cells deve ter mais de um paragrafo');
+      assert(summaryHtml.includes('A platina de Dead Cells é baseada em repetição de runs') && summaryHtml.includes('DLCs e expansões ficam fora da platina base'), 'Resumo da platina de Dead Cells deve renderizar texto editorial completo');
+      assert(summaryHtml.includes('Comece com runs exploratórias: aprenda inimigos, libere runas, melhore frascos, entregue blueprints úteis ao Collector e não force chefes sem dano ou Cursed Sword cedo.'), 'Resumo da platina de Dead Cells deve preservar primeiro passo recomendado');
+      assert(html.includes('<h4>Precisa de uma Mão?? Bahaha!</h4>') && html.includes('NOME ORIGINAL:</span>Do You Need... A Hand?? Bahaha!'), 'Checklist de Dead Cells deve renderizar titulo PT-BR com nome original');
+      assert((html.match(/NOME ORIGINAL:<\/span>/g) || []).length >= 54, 'Checklist de Dead Cells deve exibir NOME ORIGINAL nos 54 trofeus');
+      ['Unlock all trophies', 'Beat the Hand of the King', 'Finish the game with', 'Reach the Ramparts', 'Absorb your', 'Complete a Daily Challenge', 'Descrição em revisão editorial.'].forEach(text => {
+        assert(!html.includes(text), `HTML publico de Dead Cells nao deve conter descricao em ingles ou placeholder: ${text}`);
+      });
+      [
+        'dados atuais do guia',
+        'segundo os dados atuais do guia',
+        'o guia não aponta',
+        'quando validado',
+        'em revisão editorial',
+        'guia aguardando validação',
+        'informação pendente',
+        'Comece pelo roadmap',
+        'Avance pela campanha',
+        'Prossiga pela rota planejada',
+        'Base game sem DLCs',
+        '[object Object]',
+        'undefined'
+      ].forEach(text => {
+        assert(!guideScopedHtml.includes(text), `Dead Cells SSR nao deve exibir: ${text}`);
+        assert(!normalizedScopedHtml.includes(normalizeText(text)), `Dead Cells SSR nao deve exibir texto normalizado: ${text}`);
+      });
+      assert(!/>\s*null\s*</i.test(html), 'Dead Cells SSR nao deve exibir null visivel');
+      assert([`${baseUrl}/jogo/dead-cells`, 'https://atlasachievement.com.br/jogo/dead-cells'].includes(getCanonical(html)), 'canonical de Dead Cells deve manter slug publico correto');
+    }
+    if (slug === 'resident-evil-2-remake') {
+      const guideScopedHtml = html.replace(/<aside[^>]*atlas-home-beta-notice[\s\S]*?<\/aside>/i, '');
+      const normalizedScopedHtml = normalizeText(guideScopedHtml);
+      const apiMissables = apiGame.trophies.filter(trophy => trophy.is_missable === true);
+      const apiRoadmapText = JSON.stringify(apiGame.roadmap);
+      const roadmapPanelHtml = html.match(/<section id="guideRoadmapPanel"[\s\S]*?<\/section>/)?.[0] || '';
+      const summaryHtml = html.match(/<section id="guideSummaryActions"[\s\S]*?<\/section>/)?.[0] || '';
+      assert.strictEqual(apiGame.slug, 'resident-evil-2-remake', 'API de Resident Evil 2 Remake deve usar slug real');
+      assert.strictEqual(apiGame.is_verified, true, 'API de Resident Evil 2 Remake deve ficar verified');
+      assert.strictEqual(apiGame.verification_status, 'verified', 'API de Resident Evil 2 Remake deve expor verification_status verified');
+      assert.strictEqual(apiGame.trophies.length, 42, 'API de Resident Evil 2 Remake deve manter 42 trofeus');
+      assert.strictEqual(apiGame.trophies.filter(trophy => trophy.type === 'Platina').length, 1, 'API de Resident Evil 2 Remake deve manter 1 platina');
+      assert.strictEqual(apiGame.trophies.filter(trophy => trophy.type === 'Ouro').length, 4, 'API de Resident Evil 2 Remake deve manter 4 ouros');
+      assert.strictEqual(apiGame.trophies.filter(trophy => trophy.type === 'Prata').length, 9, 'API de Resident Evil 2 Remake deve manter 9 pratas');
+      assert.strictEqual(apiGame.trophies.filter(trophy => trophy.type === 'Bronze').length, 28, 'API de Resident Evil 2 Remake deve manter 28 bronzes');
+      assert.strictEqual(apiGame.missable_count, apiMissables.length, 'API de Resident Evil 2 Remake deve alinhar missable_count com checklist');
+      assert.strictEqual(apiGame.missable_count, 16, 'API de Resident Evil 2 Remake deve manter 16 perdiveis por run');
+      assert.strictEqual(apiGame.onlineRequired, false, 'API de Resident Evil 2 Remake deve manter online 0 explicito');
+      assert.strictEqual(apiGame.coopRequired, false, 'API de Resident Evil 2 Remake deve manter coop 0 explicito');
+      assert.strictEqual(apiGame.dlcRequired, false, 'API de Resident Evil 2 Remake deve manter DLC nao obrigatoria explicita');
+      assert.strictEqual(apiGame.newGamePlusRequired, false, 'Resident Evil 2 Remake nao deve exigir NG+');
+      assert.strictEqual(apiGame.difficultyTrophiesRequired, true, 'API de Resident Evil 2 Remake deve marcar dificuldade obrigatoria');
+      assert(apiGame.dlc_scope.includes('DLC fora da platina base') && apiGame.dlc_scope.includes('The Ghost Survivors'), 'Resident Evil 2 Remake deve padronizar DLC/extras fora da platina base');
+      assert.strictEqual(apiGame.roadmap.length, 6, 'API de Resident Evil 2 Remake deve retornar roadmap de 6 etapas');
+      assert(apiGame.roadmap.every(step => Array.isArray(step.actions) && step.actions.length >= 4), 'API de Resident Evil 2 Remake deve retornar actions reais no roadmap');
+      ['Faça uma primeira campanha segura aprendendo o R.P.D.', 'Complete Leon, Claire e a rota complementar', 'Limpe coletáveis, arquivos, Mr. Raccoons e upgrades', 'Trabalhe Hardcore, rankings e runs rápidas', 'Faça runs condicionais sem cura, sem baú e limite de passos', 'Finalize a checklist da platina base'].forEach(text => {
+        assert(apiRoadmapText.includes(text), `API roadmap de Resident Evil 2 Remake deve conter etapa nova: ${text}`);
+        assert(roadmapPanelHtml.includes(text), `Roadmap SSR de Resident Evil 2 Remake deve conter etapa nova: ${text}`);
+      });
+      assert(html.includes('Resident Evil 2 Remake'), 'Resident Evil 2 Remake deve renderizar nome no SSR');
+      assert(html.includes('Verificado'), 'Resident Evil 2 Remake deve renderizar status Verificado');
+      assert(html.includes('Guia revisado editorialmente.'), 'Resident Evil 2 Remake deve renderizar mensagem publica revisada');
+      assert(html.includes('DLC fora da platina base'), 'Resident Evil 2 Remake deve exibir DLC fora da platina base');
+      assert((summaryHtml.match(/<p\b/g) || []).length >= 5, 'Resumo da platina de Resident Evil 2 Remake deve ter mais de um paragrafo');
+      assert(summaryHtml.includes('múltiplas campanhas com Leon e Claire') && summaryHtml.includes('Conteúdo extra e modos fora da lista base'), 'Resumo da platina de Resident Evil 2 Remake deve renderizar texto editorial completo');
+      assert(summaryHtml.includes('Comece com uma campanha segura para aprender o Departamento de Polícia'), 'Resumo da platina de Resident Evil 2 Remake deve preservar primeiro passo recomendado');
+      assert(html.includes('Faça uma primeira campanha segura aprendendo o R.P.D.'), 'Resident Evil 2 Remake deve renderizar primeiro passo recomendado especifico');
+      assert(html.includes('Peguei Você!') && html.includes('Exige derrotar a forma 2 do G usando o guindaste apenas uma vez'), 'Pontos de atencao de Resident Evil 2 Remake devem explicar Peguei Voce');
+      assert(html.includes('Num Piscar de Olhos') && html.includes('Guarde munição pesada para o final do Leon'), 'Pontos de atencao de Resident Evil 2 Remake devem explicar Num Piscar de Olhos');
+      assert(html.includes('Uma Superespiã Eficiente') && html.includes('Não dispare a pistola'), 'Pontos de atencao de Resident Evil 2 Remake devem explicar Ada');
+      assert(html.includes('Heroína Escarlate Flamejante') && html.includes('Não misture essa tentativa com coleta completa'), 'Pontos de atencao de Resident Evil 2 Remake devem explicar Claire rank S');
+      assert(html.includes('<h4>Nativo de Raccoon City</h4>') && html.includes('NOME ORIGINAL:</span>Raccoon City Native'), 'Checklist de Resident Evil 2 Remake deve renderizar titulo PT-BR com nome original');
+      assert(html.includes('Use faca, granada ou flash ao ser agarrado.'), 'Checklist de Resident Evil 2 Remake deve renderizar dica corrigida de Eat This');
+      assert((html.match(/NOME ORIGINAL:<\/span>/g) || []).length >= 42, 'Checklist de Resident Evil 2 Remake deve exibir NOME ORIGINAL nos 42 trofeus');
+      apiGame.trophies.forEach(trophy => {
+        assert(trophy.name && trophy.trophyNameOriginal === trophy.name, `${trophy.id} deve expor nome original`);
+        assert(trophy.name_pt && trophy.trophyNamePtBr === trophy.name_pt, `${trophy.id} deve expor titulo PT-BR`);
+        assert(!String(trophy.name_pt).includes(' / '), `${trophy.id} nao deve concatenar titulo PT-BR`);
+        assert(!/Descrição em revisão editorial\.|null|undefined|\[object Object\]/i.test(`${trophy.name_pt} ${trophy.name} ${trophy.description}`), `${trophy.id} nao deve expor placeholder`);
+      });
+      ['Obtain all trophies', 'Reach the police station', "Complete Leon's story", "Complete Claire's story", 'Complete the game without', 'Open all of the safes', 'Destroy all Mr. Raccoons', 'Descrição em revisão editorial.'].forEach(text => {
+        assert(!html.includes(text), `HTML publico de Resident Evil 2 Remake nao deve conter descricao em ingles ou placeholder: ${text}`);
+      });
+      [
+        'dados atuais do guia',
+        'segundo os dados atuais do guia',
+        'o guia não aponta',
+        'quando validado',
+        'em revisão editorial',
+        'guia aguardando validação',
+        'informação pendente',
+        'Comece pelo roadmap',
+        'Ler alertas antes do checklist',
+        'Avance pela campanha',
+        'Prossiga pela rota planejada',
+        'Base game sem DLCs',
+        '[object Object]',
+        'undefined',
+        'Maté',
+        'Use faça',
+        'Este troféu está marcado como spoiler',
+        'Revele os detalhes na lista completa'
+      ].forEach(text => {
+        assert(!guideScopedHtml.includes(text), `Resident Evil 2 Remake SSR nao deve exibir: ${text}`);
+        if (!['Maté', 'Use faça'].includes(text)) {
+          assert(!normalizedScopedHtml.includes(normalizeText(text)), `Resident Evil 2 Remake SSR nao deve exibir texto normalizado: ${text}`);
+        }
+      });
+      assert(!/>\s*null\s*</i.test(html), 'Resident Evil 2 Remake SSR nao deve exibir null visivel');
+      assert([`${baseUrl}/jogo/resident-evil-2-remake`, 'https://atlasachievement.com.br/jogo/resident-evil-2-remake'].includes(getCanonical(html)), 'canonical de Resident Evil 2 Remake deve manter slug publico correto');
     }
     if (slug === 'hades') {
       assert.strictEqual(apiGame.is_verified, true, 'API de Hades deve continuar verified');
@@ -1629,6 +2061,7 @@ async function main() {
   if (mode === 'data') return validateData();
   if (mode === 'roadmap') return validateRoadmaps();
   if (mode === 'guide') return validateGuide(getSlugArg());
+  if (mode === 'home') return validateHome();
   if (mode === 'seo') return validateSeo();
   if (mode === 'quick') {
     const slug = getSlugArg();

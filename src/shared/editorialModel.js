@@ -17,6 +17,45 @@
     progress: { label: 'Progresso', tone: 'partial' },
     system: { label: 'Sistema', tone: 'partial' }
   };
+  const RESIDENT_EVIL_NON_COLLECTIBLE_IDS = new Set([
+    're1r_ghost_chance',
+    're1r_cqc_ftw',
+    're1r_dont_stop_running',
+    're1r_take_that_zombies',
+    're1r_that_was_nice',
+    're1r_great_guy'
+  ]);
+  const RESIDENT_EVIL_RUN_RISK_IDS = new Set([
+    're1r_ghost_chance',
+    're1r_cqc_ftw',
+    're1r_dont_stop_running',
+    're1r_that_was_nice',
+    're1r_great_guy'
+  ]);
+  const RESIDENT_EVIL_2_TAG_FIXES_BY_ID = {
+    re2r_basics_survival: { remove: ['difficulty'] },
+    re2r_hip_squares: { add: ['collectible'] },
+    re2r_customizer: { remove: ['story'], add: ['collectible'] },
+    re2r_no_stinkin_gun: { remove: ['difficulty', 'story'] },
+    re2r_eat_this: { remove: ['difficulty'] },
+    re2r_hold_em: { remove: ['missable', 'collectible'] },
+    re2r_hats_off: { remove: ['collectible'] },
+    re2r_gotcha: { add: ['difficulty', 'run'] },
+    re2r_treasure_hunter: { add: ['collectible'] },
+    re2r_super_spy: { add: ['difficulty', 'run'] },
+    re2r_young_escapee: { add: ['difficulty', 'run'] },
+    re2r_time_spare: { add: ['difficulty', 'run'] },
+    re2r_blink_eye: { add: ['difficulty', 'run'] },
+    re2r_lore_explorer: { remove: ['story'], add: ['collectible'] },
+    re2r_complete_vermin: { remove: ['story'], add: ['collectible'] },
+    re2r_leon_s: { remove: ['grind', 'cleanup'], add: ['difficulty', 'run'] },
+    re2r_scarlet_hero: { remove: ['grind'], add: ['difficulty', 'run'] },
+    re2r_hardcore_rookie: { add: ['difficulty', 'run'] },
+    re2r_hardcore_college: { add: ['difficulty', 'run'] },
+    re2r_minimalist: { remove: ['collectible'], add: ['difficulty', 'run'] },
+    re2r_small_footprint: { remove: ['collectible', 'story'], add: ['difficulty', 'run'] },
+    re2r_grim_reaper: { add: ['difficulty', 'run'] }
+  };
   const EDITORIAL_TRUST_STATUSES = {
     verified: {
       label: 'Verificado',
@@ -172,6 +211,7 @@
   function getTrophyRiskTags(trophy = {}) {
     const text = normalizeRiskText(`${trophy?.name || ''} ${trophy?.description || ''} ${trophy?.tip || ''}`);
     const tags = [];
+    const trophyId = String(trophy?.id || '').trim();
     const isPlatinum = isCompletionTrophy(trophy);
     if (isPlatinum) return tags;
     if (!isPlatinum && (trophy?.is_missable || (!hasNegatedMissableRiskTagText(text) && /perdivel|missable|perder|ficar indisponivel|\bbloqueia|sem chapter|no chapter|janela/.test(text)))) pushRiskTag(tags, 'missable');
@@ -182,6 +222,16 @@
     if (/cleanup|limpeza|pos-jogo|post-game|deixe para o final|volte depois|fast travel|recarregue|reload/.test(text)) pushRiskTag(tags, 'cleanup');
     if (/grind|farm|\brank\b|\bxp\b|\bnivel\b|\blevel\b|acumule|dinheiro|creditos|pontos|300|500|200\.000|mercenaries/.test(text)) pushRiskTag(tags, 'grind');
     if (/\bruns?\b|campanha dedicada|multiplas campanhas|nova campanha|new game|ng\+|speedrun|sem usar|without|only|finais|final alternativo|backup/.test(text)) pushRiskTag(tags, 'run');
+    if (RESIDENT_EVIL_RUN_RISK_IDS.has(trophyId)) pushRiskTag(tags, 'run');
+    if (RESIDENT_EVIL_NON_COLLECTIBLE_IDS.has(trophyId)) {
+      return tags.filter(tag => tag.id !== 'collectible');
+    }
+    if (RESIDENT_EVIL_2_TAG_FIXES_BY_ID[trophyId]) {
+      const fix = RESIDENT_EVIL_2_TAG_FIXES_BY_ID[trophyId];
+      const filtered = tags.filter(tag => !(fix.remove || []).includes(tag.id));
+      (fix.add || []).forEach(id => pushRiskTag(filtered, id));
+      return filtered;
+    }
     return tags;
   }
 

@@ -801,9 +801,55 @@
     return 'Tempo, dificuldade e rota em bom equilíbrio.';
   }
 
+  function getHomeVerifiedPriorityIndex(game = {}) {
+    const slug = String(game?.slug || '').trim().toLowerCase();
+    const prioritySlugs = [
+      'astro-bot',
+      'resident-evil-2-remake',
+      'resident-evil',
+      'ghost-of-tsushima',
+      'god-of-war',
+      'the-last-of-us-part-i',
+      'the-last-of-us-part-ii',
+      'saros',
+      'pragmata',
+      'dead-cells',
+      'elden-ring',
+      'resident-evil-4-remake',
+      'god-of-war-ragnarok',
+      'nioh-3',
+      'hades',
+      'hades-ii'
+    ];
+    const index = prioritySlugs.indexOf(slug);
+    return index >= 0 ? index : Number.MAX_SAFE_INTEGER;
+  }
+
+  function getHomeGuideReadinessScore(game = {}) {
+    let score = 0;
+    if (isCatalogVerified(game)) score += 1000;
+    if (String(game?.coverage_level || '').trim().toLowerCase() === 'complete') score += 80;
+    if (getRoadmapCount(game) >= 6) score += 60;
+    if (Array.isArray(game?.trophies) && game.trophies.length) score += 35;
+    if (Array.isArray(game?.editorial_summary) && game.editorial_summary.filter(Boolean).length >= 3) score += 30;
+    if (!hasCatalogOnlineRequired(game)) score += 20;
+    if (!hasCatalogCoopRequired(game)) score += 15;
+    score += getHomeRecommendationScore(game);
+    return score;
+  }
+
+  function compareHomeVerifiedShowcase(a = {}, b = {}) {
+    return (getHomeVerifiedPriorityIndex(a) - getHomeVerifiedPriorityIndex(b))
+      || (getHomeGuideReadinessScore(b) - getHomeGuideReadinessScore(a))
+      || String(a?.name || '').localeCompare(String(b?.name || ''), 'pt-BR');
+  }
+
   function getHomeRevisionNote(game = {}) {
     const roadmapCount = getRoadmapCount(game);
     const hasRisk = hasGuideRisk(game);
+    if (isCatalogVerified(game)) return roadmapCount >= 3
+      ? 'Guia verificado com roadmap pronto para orientar o próximo clique.'
+      : 'Guia verificado editorialmente para consulta segura.';
     if (hasRisk && roadmapCount >= 3) return 'Riscos e roadmap merecem leitura antes do primeiro save.';
     if (roadmapCount >= 3) return 'Roadmap revisado para orientar a ordem da platina.';
     return 'Leitura editorial recente para validar o próximo clique.';
@@ -811,38 +857,16 @@
 
   function selectHomeShowcaseGames(games = [], limit = 6) {
     const list = Array.isArray(games) ? games.filter(game => game?.slug) : [];
-    const showcaseList = list.filter(game => !hasCatalogCriticalEditorialStatus(game));
-    const candidateList = showcaseList.length ? showcaseList : list;
-    const bySlug = new Map(candidateList.map(game => [game.slug, game]));
-    const prioritySlugs = [
-      'little-nightmares-ii',
-      'monster-hunter-world',
-      'it-takes-two',
-      'hollow-knight',
-      'dead-cells',
-      'clair-obscur-expedition-33',
-      'a-way-out'
-    ];
-    const selected = [];
-    const seen = new Set();
+    const requestedLimit = Math.max(Number(limit || 0), 0);
+    if (!requestedLimit) return [];
 
-    prioritySlugs.forEach(slug => {
-      const game = bySlug.get(slug);
-      if (!game || seen.has(slug)) return;
-      selected.push(game);
-      seen.add(slug);
-    });
+    const verifiedList = list.filter(game => isCatalogVerified(game) && !hasCatalogCriticalEditorialStatus(game));
+    const candidateList = verifiedList.length ? verifiedList : list.filter(game => !hasCatalogCriticalEditorialStatus(game));
 
-    candidateList
+    return candidateList
       .slice()
-      .sort((a, b) => getHomeRecommendationScore(b) - getHomeRecommendationScore(a))
-      .forEach(game => {
-        if (seen.has(game.slug) || selected.length >= limit) return;
-        selected.push(game);
-        seen.add(game.slug);
-      });
-
-    return selected.slice(0, Math.max(Number(limit || 0), 0));
+      .sort(verifiedList.length ? compareHomeVerifiedShowcase : ((a, b) => getHomeRecommendationScore(b) - getHomeRecommendationScore(a)))
+      .slice(0, requestedLimit);
   }
 
   function buildHomeIntentCardsModel(games = []) {

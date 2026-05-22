@@ -5334,33 +5334,114 @@ const sampleGames = [
     "time_max_hours": 35,
     "time_sort_hours": 35,
     "time_bucket": "medium",
-    "missable": "A platina é mais limpa em múltiplas runs. Há troféus de rank S, runs sem cura, sem baú, poucos passos e objetivos específicos em trechos de Leon, Claire, Ada e Sherry.",
-    "runs_summary": "Múltiplas campanhas com Leon e Claire, incluindo 1ª e 2ª jornada, runs de rank S, Hardcore e desafios de restrição.",
-    "missable_summary": "Sem chapter select livre durante a campanha; arquivos, Mr. Raccoons, cofres, upgrades, seções de Ada/Sherry e restrições precisam ser planejados por run.",
-    "online_summary": "Não há exigência online, coop, multiplayer ou PS+ para a platina da lista base do remake.",
-    "grind_summary": "Não é um grind numérico longo, mas exige repetição de campanhas para rank S, Hardcore, colecionáveis, 4th Survivor e desafios de restrição.",
-    "dlc_scope": "Guia focado em Resident Evil 2 Remake e na lista base de platina. Não mistura o Resident Evil 2 original, ports antigos ou DLCs/modos extras fora da lista base.",
-    "difficulty_reason": "A dificuldade vem de rotas eficientes, rank S, Hardcore, administração de recursos e desafios como sem cura, sem baú e poucos passos.",
-    "time_reason": "A faixa de 25-35 horas considera campanhas de Leon/Claire, 2ª jornada, Hardcore, rank S, coletáveis e cleanup de desafios pontuais.",
-    "first_run_advice": "Escolha Leon A ou Claire A e aprenda a delegacia sem pressa, acompanhando arquivos, Mr. Raccoons e upgrades para reduzir retrabalho.",
-    "cleanup_advice": "Use runs dedicadas para rank S, Hardcore, sem cura, sem baú, 14.000 passos, Ada sem atirar, Sherry em 60 segundos e The 4th Survivor.",
-    "before_you_start": "Planeje saves manuais e não conte com chapter select para corrigir tudo depois. O guia é do remake, não da versão clássica.",
+    "missable": "A platina tem perdíveis por run. Arquivos, Mr. Raccoons, cofres, armas, upgrades, bolsas, eventos de Ada/Sherry e condições como rank, sem cura, sem baú e poucos passos exigem campanhas planejadas.",
+    "runs_summary": "Planeje múltiplas campanhas com Leon e Claire: uma primeira campanha segura, uma 2ª jornada para fechar rotas/final verdadeiro, runs de rank S, Hardcore e desafios dedicados de restrição.",
+    "missable_summary": "Sem chapter select livre durante a campanha; arquivos, Mr. Raccoons, cofres, upgrades, seções de Ada/Sherry e restrições podem exigir nova run se forem ignorados ou quebrados.",
+    "online_summary": "Sem online obrigatório. A platina da lista base é single-player, offline e não exige coop, servidores, multiplayer ou PS+.",
+    "grind_summary": "Não há grind numérico longo; o trabalho vem de repetir campanhas curtas para Leon, Claire, 2nd Run, rank S, Hardcore, coletáveis, The 4th Survivor e condições especiais.",
+    "dlc_scope": "DLC fora da platina base. O guia cobre a lista base de Resident Evil 2 Remake e separa The Ghost Survivors, modos extras adicionais e conteúdos fora da lista principal.",
+    "difficulty_reason": "A dificuldade vem de rotas eficientes, rank S, Hardcore, administração de recursos, 4th Survivor e desafios como sem cura, sem baú e 14.000 passos ou menos.",
+    "time_reason": "A faixa de 25-35 horas considera campanhas de Leon e Claire, 2ª jornada, Hardcore, rank S, coletáveis e cleanup de desafios pontuais.",
+    "first_run_advice": "Comece com uma campanha segura para aprender o Departamento de Polícia, puzzles, inventário, rotas, chefes e recursos antes de tentar rankings ou condições especiais.",
+    "editorial_summary": [
+      "A platina de Resident Evil 2 Remake gira em torno de múltiplas campanhas com Leon e Claire, incluindo rotas complementares, objetivos de história, coletáveis e condições de execução. A lista base não exige online nem coop, mas pede organização para não misturar campanhas, personagens, arquivos, Mr. Raccoons, armas, upgrades, cofres, bolsas, finais e objetivos condicionais.",
+      "O maior risco está nos perdíveis por run. Arquivos, Mr. Raccoons, itens de inventário, cofres, upgrades, armas, bolsas e eventos específicos podem exigir uma nova campanha se forem ignorados. Além disso, troféus de ranking, Hardcore, limite de passos, sem cura ou sem abrir o baú devem ser feitos em runs planejadas, porque quebrar a condição pode invalidar a tentativa.",
+      "A melhor rota é primeiro concluir campanhas normais para entender mapas, inimigos, puzzles e chefes. Depois, separe runs dedicadas para Leon, Claire, 2nd Run, Hardcore, rankings, coletáveis e condições especiais.",
+      "Conteúdo extra e modos fora da lista base ficam separados da platina. Use o roadmap para organizar a ordem das campanhas e a checklist para controlar arquivos, Mr. Raccoons, upgrades, armas, bolsas, cofres, rankings e cleanup."
+    ],
+    "cleanup_advice": "Use runs dedicadas para rank S, Hardcore, sem cura, sem baú, 14.000 passos, Ada sem atirar, Sherry em 60 segundos, chefes com limite de tempo e The 4th Survivor.",
+    "before_you_start": "Planeje saves manuais e não conte com chapter select para corrigir tudo depois. O guia é do remake de 2019, não da versão clássica.",
     "best_for": "Ideal para quem gosta de memorizar rotas, otimizar recursos e repetir campanhas curtas com objetivos diferentes.",
     "avoid_if": "Evite se você não quer repetir campanhas, lidar com restrições ou aprender rotas de speedrun/rank.",
     "editorial_status": "published",
-    "coverage_level": "strong",
-    "is_verified": false,
-    "verification_status": "review",
-    "verification_note": "Guia normalizado a partir do dado seed com checklist e roadmap; aguardando revisão editorial manual final.",
+    "coverage_level": "complete",
+    "is_verified": true,
+    "verification_status": "verified",
+    "verification_note": "Guia revisado editorialmente para a lista base de Resident Evil 2 Remake.",
+    "onlineRequired": false,
+    "coopRequired": false,
+    "dlcRequired": false,
+    "newGamePlusRequired": false,
+    "difficultyTrophiesRequired": true,
     "image": "https://cdn.cloudflare.steamstatic.com/steam/apps/883710/header.jpg",
     "cover_image": "https://cdn.cloudflare.steamstatic.com/steam/apps/883710/library_600x900.jpg",
     "roadmap": [
-      "1ª run com Leon A ou Claire A no remake: jogue no seu ritmo, aprenda a rota da delegacia, pegue upgrades e familiarize-se com cofres, Mr. Raccoons e arquivos. A lista base não exige online.",
-      "2ª run com o outro personagem: avance a história paralela, conclua o true ending e limpe boa parte dos colecionáveis que faltarem.",
-      "Separe runs de rank S para Leon e Claire no Standard, priorizando rota curta, poucos desvios e recarga manual de save após mortes.",
-      "Faça as campanhas no Hardcore quando já tiver domínio da rota; a Samurai Edge infinita e a faça indestrutível ajudam bastante.",
-      "Deixe os desafios de restrição para runs dedicadas: sem cura, sem abrir o baú e com 14.000 passos ou menos.",
-      "No fim, limpe troféus pontuais como Ada sem atirar, fuga da Sherry em 60 segundos, chefes com limite de tempo e o modo The 4th Survivor."
+      {
+        "title": "Faça uma primeira campanha segura aprendendo o R.P.D.",
+        "focus": "Fundamentos / exploração",
+        "objective": "Conhecer mapas, puzzles, inventário, saves, cofres, chefes e rotas sem tentar otimizar tudo cedo.",
+        "actions": [
+          "Escolha uma campanha inicial confortável com Leon ou Claire.",
+          "Aprenda a lógica do Departamento de Polícia, esgotos, laboratório e áreas principais.",
+          "Use saves sem medo nesta primeira run.",
+          "Observe arquivos, cofres, armas, upgrades, bolsas e Mr. Raccoons encontrados."
+        ],
+        "result": "Primeira campanha concluída e base criada para runs planejadas."
+      },
+      {
+        "title": "Complete Leon, Claire e a rota complementar",
+        "focus": "Campanhas / final verdadeiro",
+        "objective": "Cobrir campanhas principais, personagens e 2nd Run/final verdadeiro quando aplicável.",
+        "actions": [
+          "Faça campanhas separadas para Leon e Claire.",
+          "Organize o que será coletado em cada rota.",
+          "Marque troféus de história, chefes, Ada, Sherry e eventos específicos.",
+          "Não misture objetivos incompatíveis com runs de ranking ou restrição."
+        ],
+        "warning": "Alguns troféus dependem de personagem, cenário ou rota específica.",
+        "result": "Rotas principais concluídas e final verdadeiro encaminhado."
+      },
+      {
+        "title": "Limpe coletáveis, arquivos, Mr. Raccoons e upgrades",
+        "focus": "Coletáveis / checklist",
+        "objective": "Resolver pendências de arquivos, Mr. Raccoons, armas, upgrades, bolsas, cofres e itens importantes.",
+        "actions": [
+          "Use a checklist para separar arquivos por área.",
+          "Marque Mr. Raccoons por campanha e personagem.",
+          "Complete cofres, armários, armas, upgrades e bolsas.",
+          "Faça coletas em runs dedicadas se algum item ficou para trás."
+        ],
+        "warning": "Muitos coletáveis são perdíveis dentro da run.",
+        "result": "Coletáveis e upgrades principais concluídos ou quase concluídos."
+      },
+      {
+        "title": "Trabalhe Hardcore, rankings e runs rápidas",
+        "focus": "Dificuldade / execução",
+        "objective": "Resolver troféus ligados a dificuldade, ranking e tempo.",
+        "actions": [
+          "Planeje rotas antes de tentar ranking.",
+          "Use saves estratégicos conforme a exigência do troféu.",
+          "Memorize puzzles, chefes e deslocamentos.",
+          "Evite coleta desnecessária em runs de tempo."
+        ],
+        "warning": "Ranking e Hardcore exigem rota limpa, boa gestão de recursos e execução consistente.",
+        "result": "Troféus de dificuldade e ranking vencidos ou encaminhados."
+      },
+      {
+        "title": "Faça runs condicionais sem cura, sem baú e limite de passos",
+        "focus": "Risco de run / condições especiais",
+        "objective": "Cumprir restrições que podem invalidar a tentativa se forem quebradas.",
+        "actions": [
+          "Separe essas condições em runs dedicadas.",
+          "Planeje inventário, cura, baú e deslocamento antes de começar.",
+          "Evite desvios desnecessários.",
+          "Confirme a condição antes de salvar ou avançar demais."
+        ],
+        "warning": "Usar cura, abrir baú ou andar demais pode quebrar a tentativa.",
+        "result": "Objetivos condicionais concluídos."
+      },
+      {
+        "title": "Finalize a checklist da platina base",
+        "focus": "Checklist final",
+        "objective": "Conferir todos os troféus restantes sem misturar DLCs ou modos extras fora da lista base.",
+        "actions": [
+          "Revise todos os troféus pendentes.",
+          "Confirme Leon, Claire, 2nd Run, Hardcore, rankings, coletáveis e condições especiais.",
+          "Verifique se há troféus marcados incorretamente como online, coop ou coletável.",
+          "Confirme que a página pública não mostra placeholders ou aviso de revisão."
+        ],
+        "result": "Lista base concluída e guia pronto para platina."
+      }
     ],
     "trophies": [
       {
@@ -5480,7 +5561,7 @@ const sampleGames = [
         "name": "Eat This!",
         "type": "Bronze",
         "description": "Contra-ataque com uma arma secundária.",
-        "tip": "Use faça, granada ou flash ao ser agarrado.",
+        "tip": "Use faca, granada ou flash ao ser agarrado.",
         "is_spoiler": false
       },
       {
@@ -6162,10 +6243,10 @@ const sampleGames = [
     "id": 8,
     "name": "Resident Evil 3 Remake",
     "slug": "resident-evil-3-remake",
-    "difficulty": 4,
-    "time": "20-30 horas",
-    "time_min_hours": 20,
-    "time_max_hours": 30,
+    "difficulty": 5,
+    "time": "25-35 horas",
+    "time_min_hours": 25,
+    "time_max_hours": 35,
     "time_sort_hours": 30,
     "time_bucket": "medium",
     "missable": "Os troféus de história saem naturalmente, mas o jogo não tem chapter select nem free roam, então trate collectibles, armas, cofres e runs especiais como planejamento de múltiplas campanhas. A boa notícia é que o progresso de loja e o domínio da rota reduzem muito a dificuldade do cleanup.",
@@ -6466,10 +6547,10 @@ const sampleGames = [
     "id": 9,
     "name": "Resident Evil 7 Biohazard",
     "slug": "resident-evil-7-biohazard",
-    "difficulty": 4,
-    "time": "20-30 horas",
-    "time_min_hours": 20,
-    "time_max_hours": 30,
+    "difficulty": 5,
+    "time": "25-35 horas",
+    "time_min_hours": 25,
+    "time_max_hours": 35,
     "time_sort_hours": 30,
     "time_bucket": "medium",
     "missable": "Quase tudo fora dos troféus de história é potencialmente perdível em uma campanha, então trate RE7 como platina de múltiplas runs. A rota mais segura é fazer uma primeira run em Fácil para collectibles, vídeos e troféus situacionais, depois fechar o final alternativo e por último reservar uma campanha focada em Madhouse, speedrun e restrições.",
@@ -6810,38 +6891,122 @@ const sampleGames = [
     "id": 10,
     "name": "Resident Evil",
     "slug": "resident-evil",
-    "difficulty": 4,
-    "time": "20-30 horas",
-    "time_min_hours": 20,
-    "time_max_hours": 30,
+    "difficulty": 5,
+    "time": "25-35 horas",
+    "time_min_hours": 25,
+    "time_max_hours": 35,
     "time_sort_hours": 30,
     "time_bucket": "medium",
-    "missable": "A platina deste remake pede planejamento pesado: há finais bons e ruins com Jill e Chris, speedruns, run sem save, run só de faça, Real Survival e Invisible Enemy. O caminho mais eficiente é dividir em múltiplas campanhas, alternar protagonistas e usar as runs iniciais para missables e memorização de rota.",
-    "runs_summary": "Múltiplas campanhas com Jill e Chris para finais bons/ruins, speedruns, sem save, só faca, Real Survival e Invisible Enemy.",
-    "missable_summary": "Finais, resgates, decisões de rota, mapa completo e objetivos de execução podem ser perdidos por campanha. Planeje saves e protagonistas antes de avançar.",
+    "missable": "A platina do HD Remaster depende de múltiplas runs planejadas: finais bons e ruins com Jill e Chris, Hard, Real Survival, Invisible Enemy, speedruns, run sem salvar e faca-only. Há vários perdíveis por campanha, mas nenhum perdível definitivo porque tudo pode ser refeito em outra run.",
+    "runs_summary": "Múltiplas campanhas com Jill e Chris para finais bons/ruins, Hard, Real Survival, Invisible Enemy, speedruns, sem salvar e faca-only.",
+    "missable_summary": "Há perdíveis por run ligados a personagem, final, resgate, mapa completo, tempo, save e restrição de arma. Planeje cada campanha antes de avançar.",
     "online_summary": "Não há exigência online, coop, multiplayer ou PS+ para a platina desta lista.",
     "grind_summary": "Não há grind tradicional; a repetição vem de campanhas, finais alternativos, speedruns e modos especiais.",
-    "dlc_scope": "Guia focado em Resident Evil HD Remaster/remake clássico usado na lista PlayStation do site. Não mistura o jogo original de 1996, outros remakes ou DLCs/listas extras.",
-    "difficulty_reason": "A dificuldade vem de roteirização da mansão, inventário limitado, finais, speedruns, run sem save, só faca, Real Survival e Invisible Enemy.",
-    "time_reason": "A faixa de 20-30 horas considera múltiplas campanhas curtas, finais com Jill/Chris, armas infinitas, modos especiais e cleanup.",
-    "first_run_advice": "Comece aprendendo a mansão e salvando personagens-chave para um final bom, sem tentar empilhar todos os desafios difíceis.",
-    "cleanup_advice": "Depois de memorizar rotas, faça finais ruins, speedruns abaixo de 5h/3h, Hard, Real Survival, Invisible Enemy, sem save e só faca.",
-    "before_you_start": "Defina se a run é de Jill ou Chris e qual final busca. Este guia é do HD Remaster/remake clássico, não do Resident Evil original de 1996.",
+    "dlc_scope": "DLC fora da platina base. Guia focado em Resident Evil HD Remaster/remake clássico usado na lista PlayStation do site; não mistura Resident Evil 2/3/4 Remake, Resident Evil 7, Village ou outros jogos da série.",
+    "difficulty_reason": "A dificuldade vem de roteirização da mansão, inventário limitado, finais, speedruns, run sem salvar, faca-only, Hard, Real Survival e Invisible Enemy.",
+    "time_reason": "A faixa de 25-35 horas considera múltiplas campanhas curtas, finais com Jill/Chris, armas infinitas, modos especiais e cleanup.",
+    "first_run_advice": "Faça uma primeira run segura aprendendo a mansão, usando saves e entendendo puzzles, inventário, rotas e resgates antes de otimizar.",
+    "editorial_summary": [
+      "Este guia de platina de Resident Evil foi pensado para quem quer completar a lista base do HD Remaster sem se perder entre múltiplas campanhas, personagens, finais e condições especiais. A rota prioriza primeiro entender a mansão, depois separar as runs de Jill e Chris, finais bons e ruins, resgates, modos de dificuldade e objetivos de execução.",
+      "O maior cuidado está nos perdíveis por run: escolhas de personagem, salvamento de Barry, Rebecca, Jill ou Chris, finais específicos, mapa completo, restrições de arma, tempo de conclusão e campanha sem salvar. Nada é perdido definitivamente, mas misturar objetivos incompatíveis pode obrigar você a repetir uma campanha inteira.",
+      "Depois de conhecer rotas, puzzles, chefes e gerenciamento de inventário, deixe para runs dedicadas os troféus mais sensíveis: Hard, Real Survival, Invisible Enemy, speedrun abaixo de 3 horas, campanha sem salvar e faca-only. DLCs e extras ficam fora da platina base. Use primeiro o roadmap para organizar as campanhas e depois a checklist para acompanhar finais, modos, resgates, condições de run e cleanup."
+    ],
+    "cleanup_advice": "Depois de memorizar rotas, faça finais ruins, speedruns abaixo de 5h/3h, Hard, Real Survival, Invisible Enemy, sem salvar e faca-only.",
+    "before_you_start": "Defina se a run é de Jill ou Chris, qual final busca e quais personagens serão salvos. Este guia é do HD Remaster/remake clássico, não de outros Resident Evil.",
     "best_for": "Ideal para quem gosta de survival horror clássico, rotas de mansão, gerenciamento de inventário e múltiplos finais.",
     "avoid_if": "Evite se você não quer repetir campanhas, decorar mapa, lidar com inventário restrito ou fazer desafios sem save/só faca.",
     "editorial_status": "published",
     "coverage_level": "strong",
-    "is_verified": false,
-    "verification_status": "review",
-    "verification_note": "Guia normalizado a partir do dado seed com checklist e roadmap; aguardando revisão editorial manual final.",
+    "is_verified": true,
+    "verification_status": "verified",
+    "editorial_review_status": "verified",
+    "last_reviewed_at": "2026-05-22",
+    "editorial_notes": "Guia revisado editorialmente para a lista base de Resident Evil HD Remaster.",
+    "quality_warnings": "",
+    "verification_note": "Guia revisado editorialmente.",
+    "onlineRequired": false,
+    "coopRequired": false,
+    "dlcRequired": false,
+    "newGamePlusRequired": false,
+    "difficultyTrophiesRequired": true,
     "image": "https://cdn.cloudflare.steamstatic.com/steam/apps/304240/header.jpg",
     "cover_image": "https://cdn.cloudflare.steamstatic.com/steam/apps/304240/library_600x900.jpg",
     "roadmap": [
-      "Comece no HD Remaster/remake com Jill em dificuldade Normal ou Very Easy focando em aprender a mansão, pegar missables simples e fechar um final bom salvando Barry e Chris. Essa run serve para mapear salas, senhas e janelas de resgate.",
-      "Faça uma campanha com Chris buscando o final bom com Rebecca e Jill. Como Chris tem menos espaço de inventário, essa run ajuda a consolidar rotas mais limpas para os troféus de execução.",
-      "Reserve uma run de final ruim com cada personagem para completar as variações de encerramento sem deixar pendências de resgates. Aproveite essas campanhas para costumes, mapa completo e armas que faltarem.",
-      "Quando a rota estiver decorada, faça as runs de tempo: primeiro abaixo de 5 horas e depois abaixo de 3 horas para destravar as armas infinitas que facilitam o restante da platina.",
-      "Deixe as campanhas mais duras para o fim: sem save, só faça, Real Survival e Invisible Enemy. A ordem mais segura é entrar nesses modos apenas depois de dominar inimigos, salas críticas e caminhos de chefes."
+      {
+        "title": "Faça uma primeira run segura aprendendo a mansão",
+        "focus": "Fundamentos / exploração",
+        "objective": "Conhecer rotas, puzzles, inventário, baús, salvamentos, inimigos e chefes sem tentar otimizar tudo cedo.",
+        "actions": [
+          "Escolha um personagem inicial confortável.",
+          "Aprenda a lógica da mansão, chaves, portas, puzzles e rotas.",
+          "Use saves sem medo nesta primeira run.",
+          "Observe quais eventos dependem de personagem, rota ou decisão."
+        ],
+        "result": "Primeira conclusão encaminhada e base criada para runs otimizadas."
+      },
+      {
+        "title": "Complete as rotas de Jill e Chris",
+        "focus": "Personagens / finais",
+        "objective": "Cobrir troféus específicos de personagem, finais e personagens salvos ou não salvos.",
+        "actions": [
+          "Faça runs separadas para Jill e Chris.",
+          "Planeje quem será salvo em cada run.",
+          "Marque troféus condicionais de Barry, Rebecca, Chris, Jill e outros personagens.",
+          "Evite misturar objetivos incompatíveis na mesma run."
+        ],
+        "warning": "Alguns troféus dependem de escolhas e eventos que só valem naquela run.",
+        "result": "Rotas principais de personagem concluídas ou organizadas."
+      },
+      {
+        "title": "Trabalhe Hard, Real Survival e Invisible Enemy",
+        "focus": "Dificuldade / modos extras",
+        "objective": "Resolver modos e dificuldades exigidos pela lista depois de conhecer bem o jogo.",
+        "actions": [
+          "Deixe modos mais difíceis para quando já souber rotas e puzzles.",
+          "Use rotas seguras e econômicas.",
+          "Controle munição, cura e saves.",
+          "Separe runs de dificuldade das runs de speedrun ou condição especial quando necessário."
+        ],
+        "warning": "Hard, Real Survival e Invisible Enemy são grandes filtros da platina.",
+        "result": "Modos e dificuldades obrigatórios vencidos ou encaminhados."
+      },
+      {
+        "title": "Faça runs condicionais: sem salvar, faca-only e speedrun",
+        "focus": "Execução / risco de run",
+        "objective": "Cumprir troféus que exigem rota limpa, tempo baixo ou restrição de equipamento.",
+        "actions": [
+          "Faça a run sem salvar somente quando estiver confortável.",
+          "Planeje a rota de speedrun antes de começar.",
+          "Separe faca-only de outros objetivos que atrapalhem.",
+          "Evite riscos desnecessários e memorize puzzles, chefes e deslocamentos."
+        ],
+        "warning": "Esses objetivos podem exigir repetir a run se a condição for quebrada.",
+        "result": "Troféus de execução resolvidos."
+      },
+      {
+        "title": "Limpe armas, roupas, mapas e objetivos específicos",
+        "focus": "Cleanup / coletáveis",
+        "objective": "Resolver pendências de exploração, armas, roupas, mapas completos e troféus situacionais.",
+        "actions": [
+          "Use a checklist para separar o que falta.",
+          "Revise salas não visitadas e objetivos de mapa completo.",
+          "Complete armas, roupas e desbloqueios necessários.",
+          "Faça troféus situacionais em runs curtas quando possível."
+        ],
+        "result": "Pendências longas reduzidas e lista quase completa."
+      },
+      {
+        "title": "Finalize a checklist da platina base",
+        "focus": "Checklist final",
+        "objective": "Conferir todos os troféus restantes sem misturar outros jogos ou conteúdo fora da lista base.",
+        "actions": [
+          "Revise todos os troféus pendentes.",
+          "Confirme personagens, finais, chefes, dificuldades, modos, speedrun, run sem salvar e faca-only.",
+          "Verifique se há troféus marcados incorretamente como online ou coop.",
+          "Confirme que a página pública não mostra placeholders ou aviso de revisão."
+        ],
+        "result": "Lista base concluída e guia pronto para platina."
+      }
     ],
     "trophies": [
       {
@@ -6849,7 +7014,7 @@ const sampleGames = [
         "name": "Platinum Splattin' 'Em!",
         "type": "Platina",
         "description": "Earn all trophies.",
-        "tip": "A platina exige múltiplas campanhas: finais bons e ruins, speedruns, sem save, só faça, Real Survival e Invisible Enemy.",
+        "tip": "A platina exige múltiplas campanhas: finais bons e ruins, speedruns, sem salvar, faca-only, Real Survival e Invisible Enemy.",
         "is_spoiler": false
       },
       {
@@ -7073,7 +7238,7 @@ const sampleGames = [
         "name": "Sorry About the Wait",
         "type": "Bronze",
         "description": "Save Chris from confinement using Jill.",
-        "tip": "Exige campanha da Jill com a rota certa até o resgaté final.",
+        "tip": "Exige campanha da Jill com a rota certa até o resgate final.",
         "is_spoiler": true
       },
       {
@@ -7097,7 +7262,7 @@ const sampleGames = [
         "name": "Every Man for Himself",
         "type": "Prata",
         "description": "Finish the game without saving anyone using Chris.",
-        "tip": "Planeje uma run ruim do Chris sem cumprir os gatilhos de resgaté.",
+        "tip": "Planeje uma run ruim do Chris sem cumprir os gatilhos de resgate.",
         "is_spoiler": true
       },
       {
@@ -21809,7 +21974,7 @@ const sampleGames = [
                   "id": "stray_all_done",
                   "name": "All Done",
                   "type": "Platina",
-                  "description": "Unlock all trophies.",
+                  "description": "Obtenha todos os troféus da lista base.",
                   "tip": "Desbloqueie todos os outros 24 troféus da lista base de Stray. Não há online, multiplayer ou DLC obrigatório.",
                   "is_missable": false,
                   "is_spoiler": false
@@ -25611,7 +25776,7 @@ const sampleGames = [
                   "id": "little_nightmares_ii_primetime_content_consumer",
                   "name": "Primetime Content Consumer",
                   "type": "Platina",
-                  "description": "Unlock all trophies.",
+                  "description": "Obtenha todos os troféus da lista base.",
                   "tip": "Complete a história, pegue todos os Glitching Remains, todos os chapéus necessários e faça todas as ações opcionais por capítulo.",
                   "is_missable": false,
                   "is_spoiler": false
@@ -26257,46 +26422,133 @@ const sampleGames = [
       "name": "Dead Cells",
       "slug": "dead-cells",
       "difficulty": 8,
-      "time": "40-70h",
-      "time_min_hours": 40,
-      "time_max_hours": 70,
-      "time_sort_hours": 55,
+      "time": "60-100h",
+      "time_min_hours": 60,
+      "time_max_hours": 100,
+      "time_sort_hours": 80,
       "time_bucket": "long",
-      "missable": "Não há troféus permanentemente perdíveis, porque a estrutura em runs permite repetir requisitos. A dificuldade está em Boss Stem Cells, chefes sem dano e desafios de execução.",
-      "runs_summary": "Múltiplas runs são necessárias para obter runas, completar o jogo, avançar pelas Boss Stem Cells, derrotar chefes sem dano e limpar desafios específicos.",
-      "missable_summary": "Não há perda permanente. Qualquer requisito do jogo base pode ser tentado novamente em novas runs, inclusive biomas, runas, chefes e desafios.",
-      "online_summary": "Não há exigência online para a platina do jogo base.",
-      "grind_summary": "O peso está em Boss Stem Cells, chefes sem dano, runas, blueprints, 100 elites, Daily Challenge, Challenge Rift e desafios como Cursed Sword ou equipamento inicial.",
-      "dlc_scope": "Guia focado somente nos 54 troféus do jogo base. Não inclui Rise of the Giant, Derelict Distillery, The Bad Seed, Fatal Falls, The Queen and the Sea, The Bank ou Return to Castlevania.",
-      "difficulty_reason": "A dificuldade vem da progressão em 1-4 Boss Stem Cells, chefes sem dano, Cursed Sword, equipamento inicial e domínio consistente de combate, parry, esquiva e builds.",
-      "time_reason": "A faixa de 40-70 horas considera desbloqueio de runas e blueprints, múltiplas runs, Boss Stem Cells, chefes sem dano e grande variação por habilidade.",
-      "first_run_advice": "Nas primeiras runs, foque em aprender inimigos, obter runas, liberar rotas, melhorar frascos e entregar blueprints úteis ao Collector.",
-      "cleanup_advice": "Depois da primeira conclusão, avance pelas Boss Stem Cells, treine chefes sem dano e deixe Cursed Sword, equipamento inicial e desafios opcionais para quando tiver domínio do jogo.",
-    "before_you_start": "Não misture DLCs: a lista de platina do jogo base tem 54 troféus. As expansões ficam fora do roadmap e aparecem apenas no campo de escopo.",
+      "missable": "Não há troféus permanentemente perdíveis na lista base. Dead Cells é estruturado em runs repetíveis, então biomas, runas, chefes, desafios e objetivos de execução podem ser tentados novamente.",
+      "runs_summary": "Múltiplas runs são parte central da platina: primeiro para aprender o ciclo e liberar runas/upgrades, depois para vencer o jogo, avançar pelas Boss Stem Cells, treinar chefes sem dano e limpar desafios específicos.",
+      "missable_summary": "Sem perdíveis definitivos. A atenção deve ir para execução, dificuldade e organização de runs, não para perda permanente de troféus.",
+      "online_summary": "Não há exigência online, multiplayer, coop ou PS+ para a platina da lista base.",
+      "grind_summary": "O peso está em Boss Stem Cells, chefes sem dano, runas, blueprints, 100 elites, Daily Challenge, Challenge Rift, Cursed Sword, equipamento inicial e repetição de rotas até dominar o combate.",
+      "dlc_scope": "DLC fora da platina base. Este guia cobre os 54 troféus do jogo base; expansões e listas adicionais ficam fora da rota principal.",
+      "difficulty_reason": "A dificuldade vem da progressão com Boss Stem Cells ativas, chefes sem dano, Cursed Sword, equipamento inicial e domínio consistente de esquiva, parry, posicionamento, mutações e builds.",
+      "time_reason": "A faixa de 60-100 horas considera aprendizado de roguelite, runas, upgrades permanentes, blueprints, múltiplas vitórias, Boss Stem Cells, chefes sem dano e grande variação por habilidade.",
+      "first_run_advice": "Comece com runs exploratórias: aprenda inimigos, libere runas, melhore frascos, entregue blueprints úteis ao Collector e não force chefes sem dano ou Cursed Sword cedo.",
+      "editorial_summary": [
+            "A platina de Dead Cells é baseada em repetição de runs, domínio de combate e progressão gradual de habilidade. A lista base não tem perdíveis definitivos, online ou coop obrigatório, mas exige consistência em biomas, chefes, Boss Stem Cells, objetivos de execução, blueprints e desafios específicos.",
+            "A melhor rota é primeiro liberar runas, upgrades permanentes, frascos, armas úteis e caminhos principais. Depois, trabalhe chefes, rotas alternativas, Challenge Rift, Daily Challenge, objetivos de equipamento inicial e troféus ligados a biomas. Como quase tudo pode ser tentado novamente em runs futuras, o risco principal não é perder troféus para sempre, e sim desperdiçar tempo tentando objetivos difíceis cedo demais.",
+            "Os maiores filtros da platina são as Boss Stem Cells, chefes sem dano, Cursed Sword, terminar com equipamento inicial, completar uma run sem depender de Ygdar Orus Li Ox e manter consistência em rotas avançadas. Deixe esses objetivos para depois de dominar padrões de inimigos, chefes, esquiva, parry, mutações e builds seguras.",
+            "DLCs e expansões ficam fora da platina base. Use o roadmap para organizar a progressão por fases: fundamentos, rotas, chefes, Boss Stem Cells, cleanup e checklist final. Depois acompanhe cada troféu pela checklist para separar objetivos de dificuldade, grind, coletáveis, execução e cleanup."
+      ],
+      "cleanup_advice": "No cleanup, avance pelas Boss Stem Cells, treine chefes sem dano e deixe Cursed Sword, equipamento inicial, Challenge Rift, Daily Challenge e 100 elites para quando tiver rotas e builds confiáveis.",
+      "before_you_start": "A lista base tem 54 troféus, sem online, sem coop e sem perdíveis definitivos, mas exige dificuldade alta por Boss Stem Cells e objetivos de execução. DLCs e expansões ficam fora da platina base.",
       "best_for": "Ideal para quem quer uma platina roguelike difícil, técnica e baseada em repetição de runs, domínio de combate e progressão real de habilidade.",
       "avoid_if": "Evite se você não gosta de roguelike, runs repetidas, dificuldade crescente, chefes sem dano ou desafios de execução de alto risco.",
       "editorial_status": "published",
       "coverage_level": "strong",
-      "is_verified": false,
-      "verification_status": "review",
-      "verification_note": "Lista base adicionada por fontes públicas; aguarda validação editorial manual.",
+      "is_verified": true,
+      "verification_status": "verified",
+      "editorial_review_status": "verified",
+      "last_reviewed_at": "2026-05-22",
+      "editorial_notes": "Guia revisado editorialmente para a lista base de 54 troféus de Dead Cells. DLCs e expansões ficam fora da platina base.",
+      "quality_warnings": [],
+      "verification_note": "Guia revisado editorialmente.",
+      "onlineRequired": false,
+      "coopRequired": false,
+      "dlcRequired": false,
+      "newGamePlusRequired": false,
+      "difficultyTrophiesRequired": true,
       "image": "https://cdn.cloudflare.steamstatic.com/steam/apps/588650/header.jpg",
       "cover_image": "https://cdn.cloudflare.steamstatic.com/steam/apps/588650/library_600x900.jpg",
       "roadmap": [
-            "Comece pelas primeiras runs para aprender combate, esquiva, parry, armas e biomas. Priorize Vine Rune, Teleportation Rune, Ram Rune, Spider Rune e Challenger's Rune, além de blueprints entregues ao Collector.",
-            "Monte uma build confortável, avance por High Peak Castle e Throne Room e derrote The Hand of the King para The Last Rampart Falls e Surgical Extraction. A partir daí começa a progressão por Boss Stem Cells.",
-            "Termine o jogo com 1, 2, 3 e 4 Boss Stem Cells ativas para Up, Guards, And At Them Again!, Finished, Without Fear, Harder, Better, Faster, Stronger e Let's Get Down to the Nitty Gritty....",
-            "Treine chefes sem dano para Steam Rolled, Flawless Victory, The Dance e Do You Need... A Hand?? Bahaha!. Entre nas lutas com dano alto, habilidades seguras e padrões bem decorados.",
-            "Faça os desafios específicos: terminar com Cursed Sword, terminar com equipamento inicial, finalizar sem usar Ygdar Orus Li Ox, completar Daily Challenge, Challenge Rift, portas temporizadas, áreas secretas e troféus opcionais de elevador/espinhos.",
-      "Na limpeza final, desbloqueie 10 armas e 10 habilidades, mate 100 elites, visite biomas restantes e confirme que nenhum troféu de DLC entrou na lista base. Com os 54 troféus base concluídos, Platinum será liberado; expansões ficam fora do roadmap."
+            {
+                  "title": "Aprenda o ciclo de runs e desbloqueie upgrades permanentes",
+                  "focus": "Fundamentos / progressão inicial",
+                  "objective": "Entender combate, biomas, frascos, mutações, armas, armadilhas e rotas sem forçar troféus difíceis cedo.",
+                  "actions": [
+                        "Jogue runs exploratórias para aprender ritmo, esquiva, parry e posicionamento.",
+                        "Priorize frascos, upgrades permanentes e blueprints úteis entregues ao Collector.",
+                        "Teste armas, escudos, habilidades e mutações até encontrar combinações confortáveis.",
+                        "Aprenda padrões de inimigos, elites e chefes iniciais antes de mirar execução perfeita."
+                  ],
+                  "warning": "",
+                  "result": "Base de progressão criada e jogador preparado para rotas mais consistentes."
+            },
+            {
+                  "title": "Abra rotas, biomas e chefes principais",
+                  "focus": "Exploração / rotas",
+                  "objective": "Liberar caminhos, runas, biomas e chefes necessários para ampliar as opções de run.",
+                  "actions": [
+                        "Busque Vine Rune, Teleportation Rune, Ram Rune, Spider Rune e Challenger's Rune.",
+                        "Explore biomas alternativos para abrir opções de rota e troféus de chegada.",
+                        "Experimente caminhos diferentes até Black Bridge, Insufferable Crypt, Clock Room, High Peak Castle e Throne Room.",
+                        "Registre chefes, biomas e desafios que ainda precisam de troféus específicos."
+                  ],
+                  "warning": "",
+                  "result": "Rotas principais abertas e checklist organizada."
+            },
+            {
+                  "title": "Trabalhe troféus de chefes e objetivos de execução",
+                  "focus": "Bosses / execução",
+                  "objective": "Começar a mirar troféus ligados a chefes, vitórias específicas e desafios de combate.",
+                  "actions": [
+                        "Treine Concierge, Conjunctivius, Time Keeper e Hand of the King separadamente.",
+                        "Separe tentativas de progressão de tentativas sem dano.",
+                        "Ajuste build para sobrevivência ou dano conforme o objetivo.",
+                        "Deixe chefes sem dano para quando já souber ler padrões e janelas de ataque."
+                  ],
+                  "warning": "Dead Cells pune erro de execução; objetivos sem dano ficam muito mais consistentes depois de dominar a luta.",
+                  "result": "Chefes principais e objetivos de combate encaminhados."
+            },
+            {
+                  "title": "Avance pelas Boss Stem Cells e dificuldade crescente",
+                  "focus": "Dificuldade / Boss Stem Cells",
+                  "objective": "Progredir nas dificuldades superiores exigidas pela lista base.",
+                  "actions": [
+                        "Finalize runs com 1, 2, 3 e 4 Boss Stem Cells ativas derrotando The Hand of the King.",
+                        "Use builds consistentes e priorize sobrevivência, posicionamento e conhecimento dos inimigos.",
+                        "Refaça rotas mais seguras em vez de assumir riscos desnecessários em biomas avançados.",
+                        "Ajuste mutações, escudos e habilidades para cada etapa da curva de dificuldade."
+                  ],
+                  "warning": "Boss Stem Cells são o principal filtro da platina.",
+                  "result": "Dificuldades necessárias vencidas ou encaminhadas."
+            },
+            {
+                  "title": "Limpe blueprints, desafios e objetivos específicos",
+                  "focus": "Cleanup / coletáveis / grind",
+                  "objective": "Resolver troféus ligados a desbloqueios, blueprints, rotas, kills específicas e condições de run.",
+                  "actions": [
+                        "Use checklist para separar armas, habilidades, elites, áreas secretas e Challenge Rift.",
+                        "Faça Daily Challenge após liberar a Challenger's Rune.",
+                        "Reserve Cursed Sword, equipamento inicial e Ygdar Orus Li Ox para tentativas dedicadas.",
+                        "Confirme se qualquer objetivo citado pertence à lista base antes de contar na platina."
+                  ],
+                  "warning": "",
+                  "result": "Pendências longas reduzidas e lista base quase completa."
+            },
+            {
+                  "title": "Finalize a checklist da platina base",
+                  "focus": "Checklist final",
+                  "objective": "Conferir todos os troféus restantes sem misturar DLCs ou expansões.",
+                  "actions": [
+                        "Revise todos os 54 troféus do jogo base.",
+                        "Separe jogo base de DLCs e expansões antes de contar pendências para a platina.",
+                        "Confira chefes, Boss Stem Cells, blueprints, rotas, kills específicas e objetivos de execução.",
+                        "Ajuste a rota final conforme os troféus de dificuldade, grind e cleanup que ainda faltarem."
+                  ],
+                  "warning": "",
+                  "result": "Lista base concluída e platina pronta."
+            }
       ],
       "trophies": [
             {
                   "id": "dead_cells_platinum",
                   "name": "Platinum",
                   "type": "Platina",
-                  "description": "Unlock all trophies.",
-                  "tip": "Complete todos os troféus do jogo base, incluindo Boss Stem Cells, chefes sem dano e desafios específicos.",
+                  "description": "Obtenha todos os troféus da lista base.",
+                  "tip": "Use a checklist para concluir todos os 54 troféus da lista base. DLCs e expansões ficam fora da platina base.",
                   "is_missable": false,
                   "is_spoiler": false
             },
@@ -26304,7 +26556,7 @@ const sampleGames = [
                   "id": "dead_cells_the_last_rampart_falls",
                   "name": "The Last Rampart Falls...",
                   "type": "Ouro",
-                  "description": "Beat the Hand of the King.",
+                  "description": "Derrote a Mão do Rei.",
                   "tip": "Chegue ao Throne Room e derrote The Hand of the King. Priorize builds seguras com dano consistente e boa mobilidade.",
                   "is_missable": false,
                   "is_spoiler": true
@@ -26313,7 +26565,7 @@ const sampleGames = [
                   "id": "dead_cells_do_you_need_a_hand",
                   "name": "Do You Need... A Hand?? Bahaha!",
                   "type": "Prata",
-                  "description": "Beat the Hand of the King without taking a single hit.",
+                  "description": "Derrote a Mão do Rei sem sofrer dano.",
                   "tip": "Deixe para quando já conhecer bem os padrões do chefe. Use uma build forte, treine esquivas/parries e evite riscos desnecessários.",
                   "is_missable": false,
                   "is_spoiler": true
@@ -26322,7 +26574,7 @@ const sampleGames = [
                   "id": "dead_cells_finished_without_fear",
                   "name": "Finished, Without Fear",
                   "type": "Prata",
-                  "description": "Finish the game with two Boss Stem Cells active.",
+                  "description": "Termine o jogo com duas Boss Stem Cells ativas.",
                   "tip": "Ative 2 BSC no início da run e finalize derrotando The Hand of the King.",
                   "is_missable": false,
                   "is_spoiler": true
@@ -26331,7 +26583,7 @@ const sampleGames = [
                   "id": "dead_cells_flawless_victory",
                   "name": "Flawless Victory",
                   "type": "Prata",
-                  "description": "Beat Conjunctivius without taking a single hit.",
+                  "description": "Derrote Conjunctivius sem sofrer dano.",
                   "tip": "Aprenda os padrões de Conjunctivius e entre na luta com dano alto. Cuidado especial com a fase dos tentáculos.",
                   "is_missable": false,
                   "is_spoiler": true
@@ -26340,7 +26592,7 @@ const sampleGames = [
                   "id": "dead_cells_harder_better_faster_stronger",
                   "name": "Harder, Better, Faster, Stronger",
                   "type": "Prata",
-                  "description": "Finish the game with three Boss Stem Cells active.",
+                  "description": "Termine o jogo com três Boss Stem Cells ativas.",
                   "tip": "A dificuldade aumenta bastante. Invista em upgrades permanentes, frascos de cura e uma build bem escalada.",
                   "is_missable": false,
                   "is_spoiler": true
@@ -26349,8 +26601,8 @@ const sampleGames = [
                   "id": "dead_cells_i_like_to_live_dangerously",
                   "name": "I Like to Live Dangerously...",
                   "type": "Prata",
-                  "description": "Finish the game with the Cursed Sword in your inventory.",
-                  "tip": "A Cursed Sword mata você com um único golpe recebido. Tente levar a espada apenas no final da run e jogue de forma extremamente segura.",
+                  "description": "Termine o jogo com a Cursed Sword no inventário.",
+                  "tip": "A Cursed Sword mata você com um único golpe recebido. Trate como cleanup avançado: tente levar a espada apenas no final da run e jogue de forma extremamente segura.",
                   "is_missable": false,
                   "is_spoiler": false
             },
@@ -26358,7 +26610,7 @@ const sampleGames = [
                   "id": "dead_cells_lets_get_down_to_the_nitty_gritty",
                   "name": "Let's Get Down to the Nitty Gritty...",
                   "type": "Prata",
-                  "description": "Finish the game with four Boss Stem Cells active.",
+                  "description": "Termine o jogo com quatro Boss Stem Cells ativas.",
                   "tip": "Um dos maiores desafios da platina. Use uma build confortável, maximize dano/sobrevivência e jogue com paciência.",
                   "is_missable": false,
                   "is_spoiler": true
@@ -26367,7 +26619,7 @@ const sampleGames = [
                   "id": "dead_cells_never_fallen",
                   "name": "Never Fallen",
                   "type": "Prata",
-                  "description": "Finish the game without using the Ygdar Orus Li Ox mutation.",
+                  "description": "Termine o jogo sem usar a mutação Ygdar Orus Li Ox.",
                   "tip": "Finalize uma run sem depender da mutação que salva da morte. Faça depois de dominar chefes, biomas e rotas.",
                   "is_missable": false,
                   "is_spoiler": false
@@ -26376,8 +26628,8 @@ const sampleGames = [
                   "id": "dead_cells_steam_rolled",
                   "name": "Steam Rolled",
                   "type": "Prata",
-                  "description": "Beat the Concierge without taking a single hit.",
-                  "tip": "O Concierge é o chefe sem dano mais simples. Mantenha distância, pule as ondas de fogo e ataque nas janelas seguras.",
+                  "description": "Derrote o Concierge sem sofrer dano.",
+                  "tip": "O Concierge é o chefe sem dano mais simples. Mantenha distância, pule as ondas de fogo e ataque nos momentos seguros.",
                   "is_missable": false,
                   "is_spoiler": true
             },
@@ -26385,7 +26637,7 @@ const sampleGames = [
                   "id": "dead_cells_the_dance",
                   "name": "The Dance",
                   "type": "Prata",
-                  "description": "Beat the Time Keeper without taking a single hit.",
+                  "description": "Derrote a Time Keeper sem sofrer dano.",
                   "tip": "Treine o timing de dash e parry. A luta é rápida, então priorize controle e dano explosivo.",
                   "is_missable": false,
                   "is_spoiler": true
@@ -26394,7 +26646,7 @@ const sampleGames = [
                   "id": "dead_cells_up_guards_and_at_them_again",
                   "name": "Up, Guards, And At Them Again!",
                   "type": "Prata",
-                  "description": "Finish the game with one Boss Stem Cell active.",
+                  "description": "Termine o jogo com uma Boss Stem Cell ativa.",
                   "tip": "Depois de obter a primeira Boss Stem Cell, ative-a no início da run e derrote The Hand of the King novamente.",
                   "is_missable": false,
                   "is_spoiler": true
@@ -26403,8 +26655,8 @@ const sampleGames = [
                   "id": "dead_cells_what_theres_nothing_wrong_with_these",
                   "name": "What? There's Nothing Wrong With These...",
                   "type": "Prata",
-                  "description": "Finish the game with a starter sword, bow or shield.",
-                  "tip": "Mantenha um equipamento inicial em um dos slots principais até o fim. Compense usando boas habilidades e mutações.",
+                  "description": "Termine o jogo com a espada, arco ou escudo inicial.",
+                  "tip": "Mantenha um equipamento inicial em um dos slots principais até o fim. Deixe para cleanup e compense usando boas habilidades e mutações.",
                   "is_missable": false,
                   "is_spoiler": false
             },
@@ -26412,7 +26664,7 @@ const sampleGames = [
                   "id": "dead_cells_a_room_with_a_view",
                   "name": "A Room with a View!",
                   "type": "Bronze",
-                  "description": "Reach the Ramparts for the first time.",
+                  "description": "Chegue às Ramparts pela primeira vez.",
                   "tip": "Siga pela Promenade of the Condemned até encontrar a saída para Ramparts.",
                   "is_missable": false,
                   "is_spoiler": false
@@ -26421,7 +26673,7 @@ const sampleGames = [
                   "id": "dead_cells_absolution",
                   "name": "Absolution",
                   "type": "Bronze",
-                  "description": "Survive a curse.",
+                  "description": "Sobreviva a uma maldição.",
                   "tip": "Abra um baú amaldiçoado ou receba uma maldição e mate a quantidade necessária de inimigos sem levar dano.",
                   "is_missable": false,
                   "is_spoiler": false
@@ -26430,8 +26682,8 @@ const sampleGames = [
                   "id": "dead_cells_afraid_of_the_dark",
                   "name": "Afraid of the Dark?",
                   "type": "Bronze",
-                  "description": "Reach the Forgotten Sepulcher for the first time.",
-                  "tip": "Use rotas que exigem runas avançadas e prepare-se para lidar com a mecânica de escuridão do bioma.",
+                  "description": "Chegue ao Forgotten Sepulcher pela primeira vez.",
+                  "tip": "Chegue ao Forgotten Sepulcher por uma rota compatível com as runas necessárias. Prepare-se para a mecânica de escuridão e avance com calma.",
                   "is_missable": false,
                   "is_spoiler": false
             },
@@ -26439,7 +26691,7 @@ const sampleGames = [
                   "id": "dead_cells_arriba_arriba_andale_andale",
                   "name": "Arriba, Arriba! Andale, Andale!",
                   "type": "Bronze",
-                  "description": "Open your first timed door.",
+                  "description": "Abra sua primeira porta temporizada.",
                   "tip": "Complete os primeiros biomas rapidamente para alcançar uma porta de tempo antes que ela feche.",
                   "is_missable": false,
                   "is_spoiler": false
@@ -26448,7 +26700,7 @@ const sampleGames = [
                   "id": "dead_cells_artful_extraction",
                   "name": "Artful Extraction",
                   "type": "Bronze",
-                  "description": "Absorb your third Boss Stem Cell.",
+                  "description": "Absorva sua terceira Boss Stem Cell.",
                   "tip": "Termine o jogo com 2 BSC ativas e derrote The Hand of the King para obter a próxima célula.",
                   "is_missable": false,
                   "is_spoiler": true
@@ -26457,7 +26709,7 @@ const sampleGames = [
                   "id": "dead_cells_bend_the_knee_i_think_not",
                   "name": "Bend the Knee? I Think Not...",
                   "type": "Bronze",
-                  "description": "Reach the Throne Room for the first time.",
+                  "description": "Chegue ao Throne Room pela primeira vez.",
                   "tip": "Avance até High Peak Castle, colete as chaves necessárias e entre na sala do chefe final.",
                   "is_missable": false,
                   "is_spoiler": true
@@ -26466,7 +26718,7 @@ const sampleGames = [
                   "id": "dead_cells_blade_master",
                   "name": "Blade Master",
                   "type": "Bronze",
-                  "description": "Beat the Time Keeper.",
+                  "description": "Derrote a Time Keeper.",
                   "tip": "A Time Keeper fica na Clock Room. Foque em esquivas rápidas e ataque quando ela finalizar os combos.",
                   "is_missable": false,
                   "is_spoiler": true
@@ -26475,7 +26727,7 @@ const sampleGames = [
                   "id": "dead_cells_clock_room",
                   "name": "Clock Room",
                   "type": "Bronze",
-                  "description": "Reach the Clock Room for the first time.",
+                  "description": "Chegue à Clock Room pela primeira vez.",
                   "tip": "Normalmente acessível pela Clock Tower ou Forgotten Sepulcher.",
                   "is_missable": false,
                   "is_spoiler": false
@@ -26484,7 +26736,7 @@ const sampleGames = [
                   "id": "dead_cells_deft_extraction",
                   "name": "Deft Extraction",
                   "type": "Bronze",
-                  "description": "Absorb your fourth Boss Stem Cell.",
+                  "description": "Absorva sua quarta Boss Stem Cell.",
                   "tip": "Termine o jogo com 3 BSC ativas e derrote The Hand of the King para obter a quarta célula.",
                   "is_missable": false,
                   "is_spoiler": true
@@ -26493,8 +26745,8 @@ const sampleGames = [
                   "id": "dead_cells_even_the_rats_avoid_the_place",
                   "name": "Even the Rats Avoid the Place...",
                   "type": "Bronze",
-                  "description": "Reach the Insufferable Crypt for the first time.",
-                  "tip": "Acesse a rota pelos Toxic Sewers e Ancient Sewers após obter as runas necessárias.",
+                  "description": "Chegue à Insufferable Crypt pela primeira vez.",
+                  "tip": "Acesse a Insufferable Crypt pela rota dos esgotos, normalmente passando por Toxic Sewers e Ancient Sewers após liberar as runas necessárias.",
                   "is_missable": false,
                   "is_spoiler": false
             },
@@ -26502,8 +26754,8 @@ const sampleGames = [
                   "id": "dead_cells_faster_than_light",
                   "name": "Faster Than Light",
                   "type": "Bronze",
-                  "description": "Complete a Daily Challenge.",
-                  "tip": "Libere os desafios diários com a Challenger's Rune e conclua qualquer tentativa diária.",
+                  "description": "Complete um Daily Challenge.",
+                  "tip": "Libere os desafios diários com a Challenger's Rune e faça no cleanup se ainda estiver pendente.",
                   "is_missable": false,
                   "is_spoiler": false
             },
@@ -26511,7 +26763,7 @@ const sampleGames = [
                   "id": "dead_cells_finally_a_moment_to_rest",
                   "name": "Finally, A Moment to Rest...",
                   "type": "Bronze",
-                  "description": "Reach the Black Bridge for the first time.",
+                  "description": "Chegue à Black Bridge pela primeira vez.",
                   "tip": "A Black Bridge é a arena do Concierge e pode ser acessada após biomas iniciais como Ramparts.",
                   "is_missable": false,
                   "is_spoiler": true
@@ -26520,7 +26772,7 @@ const sampleGames = [
                   "id": "dead_cells_fortune_and_glory_kid",
                   "name": "Fortune and Glory, Kid. Fortune and Glory...",
                   "type": "Bronze",
-                  "description": "Reach the Slumbering Sanctuary for the first time.",
+                  "description": "Chegue ao Slumbering Sanctuary pela primeira vez.",
                   "tip": "Use as runas corretas para acessar a rota por Ancient Sewers e Insufferable Crypt.",
                   "is_missable": false,
                   "is_spoiler": false
@@ -26529,7 +26781,7 @@ const sampleGames = [
                   "id": "dead_cells_going_down",
                   "name": "Going Down!",
                   "type": "Bronze",
-                  "description": "Kill an enemy with an elevator.",
+                  "description": "Mate um inimigo com um elevador.",
                   "tip": "Atraia um inimigo para baixo de um elevador e acione-o para esmagá-lo.",
                   "is_missable": false,
                   "is_spoiler": false
@@ -26538,8 +26790,8 @@ const sampleGames = [
                   "id": "dead_cells_here_comes_a_new_challenger",
                   "name": "Here Comes a New Challenger!",
                   "type": "Bronze",
-                  "description": "Obtain the Challenger's Rune.",
-                  "tip": "Derrote The Concierge e pegue a runa liberada na Black Bridge.",
+                  "description": "Obtenha a Challenger's Rune.",
+                  "tip": "Derrote o Concierge na Black Bridge para obter a Challenger's Rune e liberar o Daily Challenge.",
                   "is_missable": false,
                   "is_spoiler": true
             },
@@ -26547,7 +26799,7 @@ const sampleGames = [
                   "id": "dead_cells_incy_wincy",
                   "name": "Incy Wincy...",
                   "type": "Bronze",
-                  "description": "Obtain the Spider Rune.",
+                  "description": "Obtenha a Spider Rune.",
                   "tip": "Procure a rota até Slumbering Sanctuary e derrote o elite responsável pela runa.",
                   "is_missable": false,
                   "is_spoiler": false
@@ -26556,7 +26808,7 @@ const sampleGames = [
                   "id": "dead_cells_is_there_something_in_your_eye",
                   "name": "Is There Something in Your Eye?",
                   "type": "Bronze",
-                  "description": "Beat Conjunctivius.",
+                  "description": "Derrote Conjunctivius.",
                   "tip": "Acesse a Insufferable Crypt e derrote o chefe alternativo. Cuidado com os tentáculos.",
                   "is_missable": false,
                   "is_spoiler": true
@@ -26565,7 +26817,7 @@ const sampleGames = [
                   "id": "dead_cells_it_rubs_the_lotion_on_its_skin",
                   "name": "It Rubs the Lotion on Its Skin",
                   "type": "Bronze",
-                  "description": "Reach the Prison Depths for the first time.",
+                  "description": "Chegue às Prison Depths pela primeira vez.",
                   "tip": "Use a Spider Rune para acessar a área a partir da Promenade of the Condemned.",
                   "is_missable": false,
                   "is_spoiler": false
@@ -26574,7 +26826,7 @@ const sampleGames = [
                   "id": "dead_cells_la_brute",
                   "name": "La Brute",
                   "type": "Bronze",
-                  "description": "Obtain the Ram Rune.",
+                  "description": "Obtenha a Ram Rune.",
                   "tip": "Encontre e derrote o elite que concede a runa. Ela permite quebrar pisos marcados.",
                   "is_missable": false,
                   "is_spoiler": false
@@ -26583,7 +26835,7 @@ const sampleGames = [
                   "id": "dead_cells_love_the_serenity",
                   "name": "Love the Serenity",
                   "type": "Bronze",
-                  "description": "Reach the Promenade of the Condemned for the first time.",
+                  "description": "Chegue à Promenade of the Condemned pela primeira vez.",
                   "tip": "Saia dos Prisoners' Quarters pela rota inicial mais comum.",
                   "is_missable": false,
                   "is_spoiler": false
@@ -26592,7 +26844,7 @@ const sampleGames = [
                   "id": "dead_cells_masterful_extraction",
                   "name": "Masterful Extraction",
                   "type": "Bronze",
-                  "description": "Absorb your second Boss Stem Cell.",
+                  "description": "Absorva sua segunda Boss Stem Cell.",
                   "tip": "Termine o jogo com 1 BSC ativa e derrote The Hand of the King.",
                   "is_missable": false,
                   "is_spoiler": true
@@ -26601,7 +26853,7 @@ const sampleGames = [
                   "id": "dead_cells_my_only_wish_to_catch_a_fish",
                   "name": "My Only Wish, To Catch a Fish...",
                   "type": "Bronze",
-                  "description": "Reach the Stilt Village for the first time.",
+                  "description": "Chegue à Stilt Village pela primeira vez.",
                   "tip": "Avance após derrotar o Concierge e escolha a rota para Stilt Village.",
                   "is_missable": false,
                   "is_spoiler": false
@@ -26610,7 +26862,7 @@ const sampleGames = [
                   "id": "dead_cells_not_so_tough",
                   "name": "Not So Tough",
                   "type": "Bronze",
-                  "description": "Kill 100 elite enemies.",
+                  "description": "Mate 100 inimigos de elite.",
                   "tip": "O progresso vem naturalmente em várias runs. Enfrente elites quando estiver com uma build segura.",
                   "is_missable": false,
                   "is_spoiler": false
@@ -26619,7 +26871,7 @@ const sampleGames = [
                   "id": "dead_cells_ohhhhhh_that_hurt",
                   "name": "Ohhhhhh! That Hurt!",
                   "type": "Bronze",
-                  "description": "Die with at least 100 cells in your possession.",
+                  "description": "Morra carregando pelo menos 100 células.",
                   "tip": "Acumule células sem gastá-las no Collector e morra carregando 100 ou mais.",
                   "is_missable": false,
                   "is_spoiler": false
@@ -26628,8 +26880,8 @@ const sampleGames = [
                   "id": "dead_cells_pimp_my_ride",
                   "name": "Pimp My Ride",
                   "type": "Bronze",
-                  "description": "Unlock 10 skills.",
-                  "tip": "Colete blueprints de habilidades e entregue ao Collector. O troféu vem com a progressão natural.",
+                  "description": "Desbloqueie 10 habilidades.",
+                  "tip": "Colete blueprints de habilidades e entregue ao Collector. O troféu vem com a progressão natural e pode ficar para o cleanup.",
                   "is_missable": false,
                   "is_spoiler": false
             },
@@ -26637,7 +26889,7 @@ const sampleGames = [
                   "id": "dead_cells_please_leave_your_shoes_at_the_entrance",
                   "name": "Please Leave Your Shoes at the Entrance",
                   "type": "Bronze",
-                  "description": "Reach the High Peak Castle for the first time.",
+                  "description": "Chegue ao High Peak Castle pela primeira vez.",
                   "tip": "Avance até o bioma final antes do Throne Room.",
                   "is_missable": false,
                   "is_spoiler": true
@@ -26646,7 +26898,7 @@ const sampleGames = [
                   "id": "dead_cells_quit_tickling",
                   "name": "Quit Tickling!",
                   "type": "Bronze",
-                  "description": "Obtain the Vine Rune.",
+                  "description": "Obtenha a Vine Rune.",
                   "tip": "Derrote o elite nos primeiros biomas para liberar a habilidade de criar vinhas.",
                   "is_missable": false,
                   "is_spoiler": false
@@ -26655,7 +26907,7 @@ const sampleGames = [
                   "id": "dead_cells_see_that_wasnt_so_hard_now_was_it",
                   "name": "See, That Wasn't So Hard Now, Was It?",
                   "type": "Bronze",
-                  "description": "Successfully complete a Challenge Rift.",
+                  "description": "Complete uma Challenge Rift com sucesso.",
                   "tip": "Ao encontrar uma entrada de fenda secreta, complete a sala de desafio sem morrer.",
                   "is_missable": false,
                   "is_spoiler": false
@@ -26664,7 +26916,7 @@ const sampleGames = [
                   "id": "dead_cells_shrewd_sleuth",
                   "name": "Shrewd Sleuth",
                   "type": "Bronze",
-                  "description": "Find a secret area.",
+                  "description": "Encontre uma área secreta.",
                   "tip": "Investigue paredes, cantos e passagens escondidas. A Promenade tem uma área secreta fácil de acessar.",
                   "is_missable": false,
                   "is_spoiler": false
@@ -26673,8 +26925,8 @@ const sampleGames = [
                   "id": "dead_cells_slash_slash_roll",
                   "name": "Slash! Slash! Roll!",
                   "type": "Bronze",
-                  "description": "Unlock 10 weapons.",
-                  "tip": "Colete blueprints de armas e entregue ao Collector ao longo das runs.",
+                  "description": "Desbloqueie 10 armas.",
+                  "tip": "Colete blueprints de armas e entregue ao Collector ao longo das runs. Se faltar, resolva no cleanup com rotas dedicadas.",
                   "is_missable": false,
                   "is_spoiler": false
             },
@@ -26682,7 +26934,7 @@ const sampleGames = [
                   "id": "dead_cells_smells_like_burned_flesh",
                   "name": "Smells Like Burned Flesh",
                   "type": "Bronze",
-                  "description": "Reach the Ossuary for the first time.",
+                  "description": "Chegue ao Ossuary pela primeira vez.",
                   "tip": "Use a Teleportation Rune para acessar a rota a partir da Promenade of the Condemned.",
                   "is_missable": false,
                   "is_spoiler": false
@@ -26691,7 +26943,7 @@ const sampleGames = [
                   "id": "dead_cells_surgical_extraction",
                   "name": "Surgical Extraction",
                   "type": "Bronze",
-                  "description": "Absorb your first Boss Stem Cell.",
+                  "description": "Absorva sua primeira Boss Stem Cell.",
                   "tip": "Derrote The Hand of the King pela primeira vez para liberar a primeira Boss Stem Cell.",
                   "is_missable": false,
                   "is_spoiler": true
@@ -26700,7 +26952,7 @@ const sampleGames = [
                   "id": "dead_cells_the_dead_center_of_the_island",
                   "name": "The Dead Center of the Island",
                   "type": "Bronze",
-                  "description": "Reach the Graveyard for the first time.",
+                  "description": "Chegue ao Graveyard pela primeira vez.",
                   "tip": "Use a Spider Rune e rotas avançadas após derrotar Conjunctivius.",
                   "is_missable": false,
                   "is_spoiler": false
@@ -26709,7 +26961,7 @@ const sampleGames = [
                   "id": "dead_cells_the_fat_and_the_furious",
                   "name": "The Fat and the Furious",
                   "type": "Bronze",
-                  "description": "Beat the Concierge.",
+                  "description": "Derrote o Concierge.",
                   "tip": "Primeiro chefe principal. Aprenda o timing das ondas de fogo e ataque com segurança.",
                   "is_missable": false,
                   "is_spoiler": true
@@ -26718,7 +26970,7 @@ const sampleGames = [
                   "id": "dead_cells_they_came_from_behind",
                   "name": "They Came From Behind!",
                   "type": "Bronze",
-                  "description": "Die by using an elevator.",
+                  "description": "Morra usando um elevador.",
                   "tip": "Fique no caminho de um elevador em movimento até ser esmagado.",
                   "is_missable": false,
                   "is_spoiler": false
@@ -26727,8 +26979,8 @@ const sampleGames = [
                   "id": "dead_cells_tic_toc",
                   "name": "Tic... Toc...",
                   "type": "Bronze",
-                  "description": "Reach the Clock Tower for the first time.",
-                  "tip": "Normalmente acessível a partir de Stilt Village.",
+                  "description": "Chegue à Clock Tower pela primeira vez.",
+                  "tip": "Chegue à Clock Tower por uma rota compatível após avançar pelos biomas intermediários. Use a checklist para separar esse objetivo dos troféus de chefe.",
                   "is_missable": false,
                   "is_spoiler": false
             },
@@ -26736,7 +26988,7 @@ const sampleGames = [
                   "id": "dead_cells_weve_all_been_there_before",
                   "name": "We've All Been There Before...",
                   "type": "Bronze",
-                  "description": "Do a downward smash attack and fall on spikes.",
+                  "description": "Use um ataque descendente e caia em espinhos.",
                   "tip": "Em uma área com espinhos, pule e use o ataque para baixo diretamente sobre eles.",
                   "is_missable": false,
                   "is_spoiler": false
@@ -26745,7 +26997,7 @@ const sampleGames = [
                   "id": "dead_cells_what_are_you_rubbing_at_anyway",
                   "name": "What Are You Rubbing at Anyway?",
                   "type": "Bronze",
-                  "description": "Obtain the Teleportation Rune.",
+                  "description": "Obtenha a Teleportation Rune.",
                   "tip": "Derrote o elite responsável pela runa para liberar o uso dos sarcófagos de teletransporte.",
                   "is_missable": false,
                   "is_spoiler": false
@@ -26754,7 +27006,7 @@ const sampleGames = [
                   "id": "dead_cells_whats_that_funky_smell",
                   "name": "What's That Funky Smell?",
                   "type": "Bronze",
-                  "description": "Reach the Toxic Sewers for the first time.",
+                  "description": "Chegue aos Toxic Sewers pela primeira vez.",
                   "tip": "Use a Vine Rune nos Prisoners' Quarters para acessar a rota dos esgotos.",
                   "is_missable": false,
                   "is_spoiler": false
@@ -26763,7 +27015,7 @@ const sampleGames = [
                   "id": "dead_cells_who_needs_an_italian_plumber",
                   "name": "Who Needs an Italian Plumber?",
                   "type": "Bronze",
-                  "description": "Reach the Ancient Sewers for the first time.",
+                  "description": "Chegue aos Ancient Sewers pela primeira vez.",
                   "tip": "Use a Ram Rune nos pisos marcados dentro dos Toxic Sewers.",
                   "is_missable": false,
                   "is_spoiler": false
@@ -26772,7 +27024,7 @@ const sampleGames = [
                   "id": "dead_cells_yolo_or_not",
                   "name": "YOLO! Or Not?",
                   "type": "Bronze",
-                  "description": "Cheat death.",
+                  "description": "Engane a morte.",
                   "tip": "Use a mutação Ygdar Orus Li Ox para sobreviver a uma morte durante uma run.",
                   "is_missable": false,
                   "is_spoiler": false
@@ -30317,6 +30569,118 @@ const nioh3TrustedSteamPtBrById = {
   nioh3_nothing_left: { name_pt: "Nada mais para Aprender", descriptionOriginal: "", descriptionPtBr: "Conclua as veteran missions com Yagyu Munenori e Hattori Hanzo.", descriptionPtSource: "editorial_from_existing_requirement" }
 };
 
+const residentEvilEditorialPtBrById = {
+  re1r_platinum: { name_pt: "Platina Ensanguentada!", descriptionPtBr: "Obtenha todos os troféus da lista base." },
+  re1r_like_taking_candy: { name_pt: "Como Tirar Doce de Criança", descriptionPtBr: "Termine o jogo na dificuldade Muito Fácil ou superior." },
+  re1r_not_in_mood_to_die: { name_pt: "Sem Vontade de Morrer", descriptionPtBr: "Termine o jogo na dificuldade Fácil ou superior." },
+  re1r_take_that_zombies: { name_pt: "Tomem Essa, Zumbis!", descriptionPtBr: "Termine o jogo na dificuldade Normal ou superior." },
+  re1r_oh_the_horror: { name_pt: "Ah, o Horror", descriptionPtBr: "Termine o jogo na dificuldade Difícil." },
+  re1r_together: { name_pt: "Estamos Nessa Juntos", descriptionPtBr: "Termine o jogo com Jill e Chris." },
+  re1r_survival_horror: { name_pt: "O Survival Horror", descriptionPtBr: "Termine o jogo no modo Real Survival." },
+  re1r_ghost_chance: { name_pt: "Chance Fantasma", descriptionPtBr: "Termine o jogo no modo Invisible Enemy." },
+  re1r_not_just_any_object: { name_pt: "Não É Qualquer Objeto", descriptionPtBr: "Obtenha o Stone & Metal Object usando Chris." },
+  re1r_herbicide: { name_pt: "Herbicida", descriptionPtBr: "Derrote Plant 42 usando Chris." },
+  re1r_written_word_dead: { name_pt: "A Palavra Escrita Morreu", descriptionPtBr: "Obtenha o Last Book Vol. 2 usando Chris." },
+  re1r_poor_girl_misery: { name_pt: "Fim do Sofrimento de uma Garota", descriptionPtBr: "Derrote Lisa Trevor usando Chris." },
+  re1r_you_da_man_chris: { name_pt: "Você É o Cara, Chris", descriptionPtBr: "Termine o jogo usando Chris." },
+  re1r_grave_digger: { name_pt: "Coveiro", descriptionPtBr: "Derrote um protótipo Crimson Head 1 usando Jill." },
+  re1r_key_master: { name_pt: "Mestra das Chaves", descriptionPtBr: "Obtenha a Helmet Key usando Jill." },
+  re1r_giant_snake: { name_pt: "Cobra Gigante Não É Nada", descriptionPtBr: "Derrote Yawn usando Jill." },
+  re1r_magic_happens: { name_pt: "Onde a Mágica Acontece", descriptionPtBr: "Entre no laboratório usando Jill." },
+  re1r_alpha_teams_finest: { name_pt: "A Melhor da Equipe Alpha", descriptionPtBr: "Termine o jogo usando Jill." },
+  re1r_get_used_to_it: { name_pt: "Acostume-se", descriptionPtBr: "Morra pela primeira vez." },
+  re1r_first_kills: { name_pt: "Primeiras Mortes São Especiais", descriptionPtBr: "Derrote um zumbi." },
+  re1r_not_taking_chances: { name_pt: "Sem Correr Riscos", descriptionPtBr: "Queime um zumbi." },
+  re1r_hunter_now: { name_pt: "Quem É o Caçador Agora?", descriptionPtBr: "Derrote um Hunter." },
+  re1r_bravo_rebecca: { name_pt: "Bravo, Rebecca", descriptionPtBr: "Salve Chris usando Rebecca." },
+  re1r_great_guy: { name_pt: "Que Grande Cara", descriptionPtBr: "Salve Jill usando Barry." },
+  re1r_delaying_inevitable: { name_pt: "Adiando o Inevitável", descriptionPtBr: "Salve Richard com o soro." },
+  re1r_that_was_nice: { name_pt: "Isso Foi Gentil da Sua Parte", descriptionPtBr: "Salve Rebecca de um Hunter." },
+  re1r_trust_him: { name_pt: "Confie Nele", descriptionPtBr: "Salve Barry de Lisa Trevor." },
+  re1r_sorry_i_made_you_wait: { name_pt: "Desculpe Fazer Você Esperar", descriptionPtBr: "Salve Jill da prisão usando Chris." },
+  re1r_sorry_about_wait: { name_pt: "Desculpe a Demora", descriptionPtBr: "Salve Chris da prisão usando Jill." },
+  re1r_nightmare_ends: { name_pt: "O Pesadelo Acaba", descriptionPtBr: "Termine o jogo salvando Rebecca e Jill usando Chris." },
+  re1r_member_stars: { name_pt: "Sou Membro dos S.T.A.R.S.", descriptionPtBr: "Termine o jogo salvando Chris e Barry usando Jill." },
+  re1r_every_man: { name_pt: "Cada Homem por Si", descriptionPtBr: "Termine o jogo sem salvar ninguém usando Chris." },
+  re1r_every_woman: { name_pt: "Cada Mulher por Si", descriptionPtBr: "Termine o jogo sem salvar ninguém usando Jill." },
+  re1r_seeing_red: { name_pt: "Vendo Vermelho", descriptionPtBr: "Derrote um Crimson Head." },
+  re1r_not_waiting_exhale: { name_pt: "Sem Esperar Para Respirar", descriptionPtBr: "Sobreviva ao primeiro encontro com Yawn." },
+  re1r_deep_sixed: { name_pt: "Afundado", descriptionPtBr: "Derrote Mother Neptune." },
+  re1r_spider_sense: { name_pt: "Sentido Aranha", descriptionPtBr: "Derrote Black Tiger." },
+  re1r_dont_stop_running: { name_pt: "Não Pare de Correr", descriptionPtBr: "Termine o jogo em até 3 horas." },
+  re1r_racing_pacing: { name_pt: "Ritmo de Corrida", descriptionPtBr: "Termine o jogo em até 5 horas." },
+  re1r_cqc_ftw: { name_pt: "CQC Para a Vitória", descriptionPtBr: "Termine o jogo usando apenas a faca." },
+  re1r_ink_is_for_squids: { name_pt: "Tinta É Para Lulas", descriptionPtBr: "Termine o jogo sem salvar." },
+  re1r_break_out_marshmallows: { name_pt: "Traga os Marshmallows!", descriptionPtBr: "Queime dois zumbis ao mesmo tempo com o isqueiro." },
+  re1r_starsenal: { name_pt: "Arsenal S.T.A.R.S.", descriptionPtBr: "Obtenha todas as armas." },
+  re1r_passion_fashion: { name_pt: "Paixão por Moda", descriptionPtBr: "Obtenha todas as roupas." },
+  re1r_every_nook_cranny: { name_pt: "Cada Canto e Recanto", descriptionPtBr: "Visite todos os lugares em todos os mapas." }
+};
+
+const residentEvil2EditorialPtBrById = {
+  re2r_platinum: { name_pt: "Nativo de Raccoon City", descriptionPtBr: "Obtenha todos os outros troféus da lista base." },
+  re2r_welcome_dead: { name_pt: "Bem-vindo à Cidade dos Mortos", descriptionPtBr: "Chegue à delegacia." },
+  re2r_path_goddess: { name_pt: "Caminho até a Deusa", descriptionPtBr: "Resolva o enigma da Estátua da Deusa." },
+  re2r_never_ending_rain: { name_pt: "Chuva Sem Fim", descriptionPtBr: "Escape da delegacia." },
+  re2r_hack_complete: { name_pt: "Hack Concluído", descriptionPtBr: "Complete a seção da Ada." },
+  re2r_hide_seek: { name_pt: "Esconde-Esconde", descriptionPtBr: "Complete a seção da Sherry." },
+  re2r_need_shower: { name_pt: "Preciso Muito de um Banho", descriptionPtBr: "Escape dos esgotos." },
+  re2r_hero_emerges: { name_pt: "Surge um Herói", descriptionPtBr: "Complete a história do Leon." },
+  re2r_heroine_emerges: { name_pt: "Surge uma Heroína", descriptionPtBr: "Complete a história da Claire." },
+  re2r_broken_umbrella: { name_pt: "Umbrella Quebrada", descriptionPtBr: "Complete qualquer campanha na 2ª jornada." },
+  re2r_basics_survival: { name_pt: "O Básico da Sobrevivência", descriptionPtBr: "Combine dois itens." },
+  re2r_hip_squares: { name_pt: "Mais Espaço no Inventário", descriptionPtBr: "Aumente o espaço do inventário." },
+  re2r_customizer: { name_pt: "Personalizador", descriptionPtBr: "Customize uma arma." },
+  re2r_no_stinkin_gun: { name_pt: "Não Preciso de Arma", descriptionPtBr: "Derrote um inimigo com a faca." },
+  re2r_eat_this: { name_pt: "Toma Essa!", descriptionPtBr: "Contra-ataque com uma arma secundária." },
+  re2r_hold_em: { name_pt: "Isso Deve Segurá-los", descriptionPtBr: "Use tábuas de madeira para vedar uma janela." },
+  re2r_vermin_extermination: { name_pt: "Extermínio de Pragas", descriptionPtBr: "Destrua um Mr. Raccoon." },
+  re2r_vault_mind: { name_pt: "Mente de Cofre", descriptionPtBr: "Abra um cofre portátil." },
+  re2r_first_breakin: { name_pt: "Primeira Invasão", descriptionPtBr: "Abra um cofre mecânico." },
+  re2r_bon_appetit: { name_pt: "Bon Appétit", descriptionPtBr: "Atire em uma granada que esteja na boca de um inimigo." },
+  re2r_zombie_roundup: { name_pt: "Ajuntamento de Zumbis", descriptionPtBr: "Mate 3 inimigos de uma vez com uma arma secundária." },
+  re2r_skeet: { name_pt: "Como Tiro ao Prato", descriptionPtBr: "Atire em um cão zumbi ou Licker enquanto ele estiver no ar." },
+  re2r_heads_ringin: { name_pt: "Cabeças Zumbindo", descriptionPtBr: "Atordoe um Licker com uma granada de luz." },
+  re2r_hats_off: { name_pt: "Tire o Chapéu!", descriptionPtBr: "Derrube o chapéu do Tyrant." },
+  re2r_gotcha: { name_pt: "Peguei Você!", descriptionPtBr: "Derrote a forma 2 do G usando o guindaste apenas uma vez." },
+  re2r_treasure_hunter: { name_pt: "Caçador de Tesouros", descriptionPtBr: "Use os dois rolos de filme escondidos para encontrar dois itens." },
+  re2r_waist_space: { name_pt: "Espaço de Sobra", descriptionPtBr: "Maximize o espaço do inventário." },
+  re2r_super_spy: { name_pt: "Uma Superespiã Eficiente", descriptionPtBr: "Complete a seção da Ada usando apenas o EMF Visualizer." },
+  re2r_young_escapee: { name_pt: "Jovem Fugitiva", descriptionPtBr: "Escape do quarto da Sherry em 60 segundos." },
+  re2r_time_spare: { name_pt: "Com Tempo de Sobra", descriptionPtBr: "Derrote a forma 4 do G com 4 minutos ou mais restantes." },
+  re2r_blink_eye: { name_pt: "Num Piscar de Olhos", descriptionPtBr: "Derrote o Super Tyrant com 5 minutos ou mais restantes." },
+  re2r_lore_explorer: { name_pt: "Explorador da História", descriptionPtBr: "Leia todos os arquivos." },
+  re2r_complete_vermin: { name_pt: "Extermínio Completo de Pragas", descriptionPtBr: "Destrua todos os Mr. Raccoons." },
+  re2r_master_unlocking: { name_pt: "Mestre das Aberturas", descriptionPtBr: "Abra todos os cofres e fechaduras do jogo." },
+  re2r_leon_s: { name_pt: "Leon \"S.\" Kennedy", descriptionPtBr: "Consiga rank S com Leon no Standard ou Hardcore." },
+  re2r_scarlet_hero: { name_pt: "Heroína Escarlate Flamejante", descriptionPtBr: "Consiga rank S com Claire no Standard ou Hardcore." },
+  re2r_hardcore_rookie: { name_pt: "Novato Hardcore", descriptionPtBr: "Complete a história do Leon no Hardcore." },
+  re2r_hardcore_college: { name_pt: "Universitária Hardcore", descriptionPtBr: "Complete a história da Claire no Hardcore." },
+  re2r_frugalist: { name_pt: "Frugalista", descriptionPtBr: "Complete o jogo sem usar nenhum item de recuperação." },
+  re2r_minimalist: { name_pt: "Minimalista", descriptionPtBr: "Complete o jogo sem abrir o baú." },
+  re2r_small_footprint: { name_pt: "Pegada de Carbono Pequena", descriptionPtBr: "Dê 14.000 passos ou menos em uma campanha." },
+  re2r_grim_reaper: { name_pt: "Ceifador", descriptionPtBr: "Complete o modo extra The 4th Survivor." }
+};
+
+const residentEvil2MissableTrophyIds = new Set([
+  're2r_hats_off',
+  're2r_gotcha',
+  're2r_treasure_hunter',
+  're2r_waist_space',
+  're2r_super_spy',
+  're2r_young_escapee',
+  're2r_time_spare',
+  're2r_blink_eye',
+  're2r_lore_explorer',
+  're2r_complete_vermin',
+  're2r_master_unlocking',
+  're2r_leon_s',
+  're2r_scarlet_hero',
+  're2r_frugalist',
+  're2r_minimalist',
+  're2r_small_footprint'
+]);
+
 const localizedChecklistGuideSlugs = new Set([
   'hades-ii',
   'astro-bot',
@@ -30325,7 +30689,9 @@ const localizedChecklistGuideSlugs = new Set([
   'the-last-of-us-part-ii',
   'subnautica',
   'nioh-2',
-  'nioh-3'
+  'nioh-3',
+  'resident-evil',
+  'resident-evil-2-remake'
 ]);
 
 for (const game of sampleGames) {
@@ -30348,6 +30714,60 @@ for (const game of sampleGames) {
       trophy.tags = Array.isArray(trophy.tags)
         ? trophy.tags.filter(tag => !/online|coop|co-?op/i.test(String(tag?.id || tag?.label || tag)))
         : [];
+    }
+    if (game.slug === 'resident-evil') {
+      const editorialPtBr = residentEvilEditorialPtBrById[trophy.id];
+      if (editorialPtBr) {
+        const descriptionPtBr = editorialPtBr.descriptionPtBr;
+        trophy.trophyNameOriginal = trophy.name;
+        trophy.name_pt = editorialPtBr.name_pt;
+        trophy.trophyNamePtBr = editorialPtBr.name_pt;
+        trophy.namePtSource = 'editorial_ptbr';
+        trophy.descriptionOriginal = trophy.descriptionOriginal || trophy.description || '';
+        trophy.descriptionPtBr = descriptionPtBr;
+        trophy.ptDescription = descriptionPtBr;
+        trophy.localizedDescription = { ...(trophy.localizedDescription || {}), ptBr: descriptionPtBr };
+        trophy.description = descriptionPtBr;
+        trophy.descriptionPtSource = 'editorial_ptbr';
+        trophy.tier = trophy.type;
+        trophy.guideTip = trophy.tip || '';
+        trophy.is_missable = Boolean(trophy.is_missable || missableTrophyIds.has(trophy.id));
+        trophy.isMissable = trophy.is_missable;
+        trophy.is_online = false;
+        trophy.isOnline = false;
+        trophy.is_coop = false;
+        trophy.isCoop = false;
+        trophy.tags = Array.isArray(trophy.tags)
+          ? trophy.tags.filter(tag => !/online|coop|co-?op/i.test(String(tag?.id || tag?.label || tag)))
+          : [];
+      }
+    }
+    if (game.slug === 'resident-evil-2-remake') {
+      const editorialPtBr = residentEvil2EditorialPtBrById[trophy.id];
+      if (editorialPtBr) {
+        const descriptionPtBr = editorialPtBr.descriptionPtBr;
+        trophy.trophyNameOriginal = trophy.name;
+        trophy.name_pt = editorialPtBr.name_pt;
+        trophy.trophyNamePtBr = editorialPtBr.name_pt;
+        trophy.namePtSource = 'editorial_ptbr';
+        trophy.descriptionOriginal = trophy.descriptionOriginal || trophy.description || '';
+        trophy.descriptionPtBr = descriptionPtBr;
+        trophy.ptDescription = descriptionPtBr;
+        trophy.localizedDescription = { ...(trophy.localizedDescription || {}), ptBr: descriptionPtBr };
+        trophy.description = descriptionPtBr;
+        trophy.descriptionPtSource = 'editorial_ptbr';
+        trophy.tier = trophy.type;
+        trophy.guideTip = trophy.tip || '';
+        trophy.is_missable = Boolean(trophy.is_missable || residentEvil2MissableTrophyIds.has(trophy.id));
+        trophy.isMissable = trophy.is_missable;
+        trophy.is_online = false;
+        trophy.isOnline = false;
+        trophy.is_coop = false;
+        trophy.isCoop = false;
+        trophy.tags = Array.isArray(trophy.tags)
+          ? trophy.tags.filter(tag => !/online|coop|co-?op/i.test(String(tag?.id || tag?.label || tag)))
+          : [];
+      }
     }
     if (game.slug === 'astro-bot') {
       const editorialPtBr = astroBotEditorialPtBrByName[trophy.name];

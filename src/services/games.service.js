@@ -11,7 +11,7 @@ const PUBLIC_EDITORIAL_STATUSES = new Set(['review', 'published']);
 const COVERAGE_LEVELS = new Set(['partial', 'strong', 'complete']);
 const VERIFICATION_STATUSES = new Set(['unverified', 'review', 'verified']);
 const EDITORIAL_REVIEW_STATUSES = new Set(Object.keys(editorialModel.EDITORIAL_TRUST_STATUSES || {}));
-const LOCALIZED_TROPHY_SOURCE_SLUGS = new Set(['astro-bot', 'astros-playroom', 'god-of-war', 'god-of-war-ragnarok', 'hades-ii', 'nioh-2', 'nioh-3', 'resident-evil-requiem', 'the-last-of-us-part-i', 'the-last-of-us-part-ii', 'subnautica']);
+const LOCALIZED_TROPHY_SOURCE_SLUGS = new Set(['astro-bot', 'astros-playroom', 'dead-cells', 'god-of-war', 'god-of-war-ragnarok', 'hades-ii', 'nioh-2', 'nioh-3', 'resident-evil', 'resident-evil-2-remake', 'resident-evil-requiem', 'the-last-of-us-part-i', 'the-last-of-us-part-ii', 'subnautica']);
 const CATALOG_IMAGE_BY_SLUG = {
   'the-last-of-us-part-ii': 'https://cdn.cloudflare.steamstatic.com/steam/apps/2531310/header.jpg'
 };
@@ -28,6 +28,24 @@ const CANONICAL_MISSABLE_TROPHIES_BY_SLUG = {
     'rerequiem_speed_demon',
     'rerequiem_never_touch_the_stuff',
     'rerequiem_minimalist'
+  ]),
+  'resident-evil-2-remake': new Set([
+    're2r_hats_off',
+    're2r_gotcha',
+    're2r_treasure_hunter',
+    're2r_waist_space',
+    're2r_super_spy',
+    're2r_young_escapee',
+    're2r_time_spare',
+    're2r_blink_eye',
+    're2r_lore_explorer',
+    're2r_complete_vermin',
+    're2r_master_unlocking',
+    're2r_leon_s',
+    're2r_scarlet_hero',
+    're2r_frugalist',
+    're2r_minimalist',
+    're2r_small_footprint'
   ])
 };
 const TROPHY_TYPE_ALIASES = {
@@ -233,20 +251,21 @@ function normalizeGame(row, roadmapRows, trophyRows) {
   };
   const normalizedSlug = getCanonicalGameSlug(row.slug || row.name);
   const seedGame = sampleGames.find(item => String(item?.slug || '').trim().toLowerCase() === normalizedSlug) || null;
-  const editorialSource = normalizedSlug === 'resident-evil-requiem' && seedGame
+  const useResidentEvilSeedEditorial = ['resident-evil', 'resident-evil-2-remake'].includes(normalizedSlug) && seedGame;
+  const editorialSource = ['resident-evil', 'resident-evil-2-remake', 'resident-evil-requiem'].includes(normalizedSlug) && seedGame
     ? {
         ...row,
         ...seedGame,
-        verification_status: row.verification_status || seedGame.verification_status,
-        editorial_status: row.editorial_status || seedGame.editorial_status,
-        coverage_level: row.coverage_level || seedGame.coverage_level,
-        is_verified: row.is_verified,
-        verification_note: row.verification_note || seedGame.verification_note,
-        editorial_review_status: row.editorial_review_status || seedGame.editorial_review_status,
-        last_reviewed_at: row.last_reviewed_at || seedGame.last_reviewed_at,
-        editorial_notes: row.editorial_notes || seedGame.editorial_notes,
-        quality_warnings: row.quality_warnings || seedGame.quality_warnings,
-        reviewed_by: row.reviewed_by || seedGame.reviewed_by
+        verification_status: useResidentEvilSeedEditorial ? seedGame.verification_status : (row.verification_status || seedGame.verification_status),
+        editorial_status: useResidentEvilSeedEditorial ? seedGame.editorial_status : (row.editorial_status || seedGame.editorial_status),
+        coverage_level: useResidentEvilSeedEditorial ? seedGame.coverage_level : (row.coverage_level || seedGame.coverage_level),
+        is_verified: useResidentEvilSeedEditorial ? seedGame.is_verified : row.is_verified,
+        verification_note: useResidentEvilSeedEditorial ? seedGame.verification_note : (row.verification_note || seedGame.verification_note),
+        editorial_review_status: useResidentEvilSeedEditorial ? seedGame.editorial_review_status : (row.editorial_review_status || seedGame.editorial_review_status),
+        last_reviewed_at: useResidentEvilSeedEditorial ? seedGame.last_reviewed_at : (row.last_reviewed_at || seedGame.last_reviewed_at),
+        editorial_notes: useResidentEvilSeedEditorial ? seedGame.editorial_notes : (row.editorial_notes || seedGame.editorial_notes),
+        quality_warnings: useResidentEvilSeedEditorial ? seedGame.quality_warnings : (row.quality_warnings || seedGame.quality_warnings),
+        reviewed_by: useResidentEvilSeedEditorial ? seedGame.reviewed_by : (row.reviewed_by || seedGame.reviewed_by)
       }
     : row;
   const supportsLocalizedDescriptions = [
@@ -258,9 +277,12 @@ function normalizeGame(row, roadmapRows, trophyRows) {
     'hades-ii',
     'astro-bot',
     'astros-playroom',
+    'dead-cells',
     'nioh-2',
     'nioh-3',
     'god-of-war-ragnarok',
+    'resident-evil',
+    'resident-evil-2-remake',
     'resident-evil-requiem',
     'saros',
     'the-last-of-us-part-i',
@@ -273,8 +295,11 @@ function normalizeGame(row, roadmapRows, trophyRows) {
     : Boolean(item?.is_missable);
   const missableCount = trophyRows.filter(item => isCanonicalMissableTrophy(item) && !isPlatinumTrophy(item)).length;
   const spoilerCount = trophyRows.filter(item => item.is_spoiler).length;
-  const useSeedRoadmap = ['god-of-war', 'god-of-war-ragnarok', 'resident-evil-requiem'].includes(normalizedSlug) && Array.isArray(seedGame?.roadmap);
-  const explicitOfflineBaseSlugs = ['elden-ring', 'astro-bot', 'astros-playroom', 'god-of-war', 'god-of-war-ragnarok', 'nioh-2', 'nioh-3', 'resident-evil-requiem', 'saros', 'the-last-of-us-part-i', 'the-last-of-us-part-ii', 'subnautica'];
+  const useSeedRoadmap = ['dead-cells', 'god-of-war', 'god-of-war-ragnarok', 'resident-evil', 'resident-evil-2-remake', 'resident-evil-requiem'].includes(normalizedSlug) && Array.isArray(seedGame?.roadmap);
+  const explicitOfflineBaseSlugs = ['elden-ring', 'astro-bot', 'astros-playroom', 'dead-cells', 'god-of-war', 'god-of-war-ragnarok', 'nioh-2', 'nioh-3', 'resident-evil', 'resident-evil-2-remake', 'resident-evil-requiem', 'saros', 'the-last-of-us-part-i', 'the-last-of-us-part-ii', 'subnautica'];
+  const seedEditorialSummary = Array.isArray(seedGame?.editorial_summary)
+    ? seedGame.editorial_summary.filter(item => String(item || '').trim())
+    : [];
 
   return {
     id: row.id,
@@ -293,6 +318,11 @@ function normalizeGame(row, roadmapRows, trophyRows) {
     difficulty_reason: editorialSource.difficulty_reason || '',
     time_reason: editorialSource.time_reason || '',
     first_run_advice: editorialSource.first_run_advice || '',
+    editorial_summary: seedEditorialSummary.length
+      ? seedEditorialSummary
+      : Array.isArray(editorialSource.editorial_summary)
+      ? editorialSource.editorial_summary.filter(item => String(item || '').trim())
+      : [],
     cleanup_advice: normalizeGuideCleanupAdvice(editorialSource),
     before_you_start: editorialSource.before_you_start || '',
     best_for: firstText(editorialSource.best_for, editorialSource.guide_ideal),
@@ -321,8 +351,8 @@ function normalizeGame(row, roadmapRows, trophyRows) {
     dlc_status: normalizedSlug === 'elden-ring' ? 'out_of_base_scope' : undefined,
     dlcGuideStatus: normalizedSlug === 'elden-ring' ? 'pending' : undefined,
     extraContentStatus: normalizedSlug === 'elden-ring' ? 'pending' : undefined,
-    newGamePlusRequired: normalizedSlug === 'the-last-of-us-part-ii' ? true : (['god-of-war-ragnarok', 'the-last-of-us-part-i'].includes(normalizedSlug) ? false : undefined),
-    difficultyTrophiesRequired: ['god-of-war-ragnarok', 'the-last-of-us-part-i', 'the-last-of-us-part-ii'].includes(normalizedSlug) ? false : undefined,
+    newGamePlusRequired: normalizedSlug === 'the-last-of-us-part-ii' ? true : (['dead-cells', 'god-of-war-ragnarok', 'resident-evil', 'resident-evil-2-remake', 'the-last-of-us-part-i'].includes(normalizedSlug) ? false : undefined),
+    difficultyTrophiesRequired: ['dead-cells', 'resident-evil', 'resident-evil-2-remake'].includes(normalizedSlug) ? true : (['god-of-war-ragnarok', 'the-last-of-us-part-i', 'the-last-of-us-part-ii'].includes(normalizedSlug) ? false : undefined),
     roadmap: (useSeedRoadmap
       ? seedGame.roadmap
       : roadmapRows.map(item => deserializeRoadmapStep(item.content)))
@@ -330,7 +360,7 @@ function normalizeGame(row, roadmapRows, trophyRows) {
     trophies: trophyRows.map(item => {
       const isMissable = isCanonicalMissableTrophy(item) && !isPlatinumTrophy(item);
       const seedTrophy = LOCALIZED_TROPHY_SOURCE_SLUGS.has(normalizedSlug) ? getSeedTrophy(normalizedSlug, item.trophy_code) : null;
-      const useSeedEditorialTrophy = ['god-of-war', 'god-of-war-ragnarok', 'resident-evil-requiem'].includes(normalizedSlug) && seedTrophy;
+      const useSeedEditorialTrophy = ['dead-cells', 'god-of-war', 'god-of-war-ragnarok', 'resident-evil', 'resident-evil-2-remake', 'resident-evil-requiem'].includes(normalizedSlug) && seedTrophy;
       const description = useSeedEditorialTrophy ? (seedTrophy.description || item.description || '') : (item.description || '');
       const tip = useSeedEditorialTrophy ? (seedTrophy.tip || item.tip || '') : item.tip;
       const originalName = useSeedEditorialTrophy ? (seedTrophy.name || item.name || '') : (item.name || '');
@@ -341,13 +371,13 @@ function normalizeGame(row, roadmapRows, trophyRows) {
         name_pt: namePt,
         trophyNameOriginal: originalName,
         trophyNamePtBr: namePt,
-        namePtSource: namePt && LOCALIZED_TROPHY_SOURCE_SLUGS.has(normalizedSlug) ? (seedTrophy?.namePtSource || (normalizedSlug === 'god-of-war' ? 'editorial_ptbr' : 'trusted_steam_ptbr')) : '',
+        namePtSource: namePt && LOCALIZED_TROPHY_SOURCE_SLUGS.has(normalizedSlug) ? (seedTrophy?.namePtSource || (['dead-cells', 'god-of-war', 'resident-evil', 'resident-evil-2-remake'].includes(normalizedSlug) ? 'editorial_ptbr' : 'trusted_steam_ptbr')) : '',
         type: item.type,
         description,
-        descriptionOriginal: seedTrophy?.descriptionOriginal || '',
+        descriptionOriginal: ['resident-evil', 'resident-evil-2-remake'].includes(normalizedSlug) ? '' : (seedTrophy?.descriptionOriginal || ''),
         descriptionPtBr: supportsLocalizedDescriptions ? description : '',
         ptDescription: supportsLocalizedDescriptions ? description : '',
-        descriptionPtSource: supportsLocalizedDescriptions && LOCALIZED_TROPHY_SOURCE_SLUGS.has(normalizedSlug) ? (seedTrophy?.descriptionPtSource || 'trusted_steam_ptbr') : '',
+        descriptionPtSource: supportsLocalizedDescriptions && LOCALIZED_TROPHY_SOURCE_SLUGS.has(normalizedSlug) ? (seedTrophy?.descriptionPtSource || (['dead-cells', 'resident-evil', 'resident-evil-2-remake'].includes(normalizedSlug) ? 'editorial_ptbr' : 'trusted_steam_ptbr')) : '',
         tip,
         riskType: seedTrophy?.riskType || '',
         is_missable: isMissable,

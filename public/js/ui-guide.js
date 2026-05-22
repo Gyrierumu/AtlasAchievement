@@ -743,7 +743,12 @@ window.UIGuide = (() => {
   function renderGuideSummaryPanel(game = {}, viewModel = {}) {
     const nextAction = viewModel.nextActionModel || {};
     const normalizedSlug = String(game?.slug || '').trim().toLowerCase();
-    const editorialParagraphs = normalizedSlug === 'resident-evil-requiem'
+    const explicitEditorialParagraphs = Array.isArray(game?.editorial_summary)
+      ? game.editorial_summary.map(paragraph => String(paragraph || '').trim()).filter(Boolean)
+      : [];
+    const editorialParagraphs = explicitEditorialParagraphs.length
+      ? explicitEditorialParagraphs
+      : normalizedSlug === 'resident-evil-requiem'
       ? REQUIEM_EDITORIAL_SUMMARY
       : normalizedSlug === 'hades'
       ? HADES_EDITORIAL_SUMMARY
@@ -846,7 +851,7 @@ window.UIGuide = (() => {
   function renderGuideEditorialNotes(game = {}, viewModel = {}) {
     const routeTrophies = Array.isArray(viewModel.routeChangingTrophies) ? viewModel.routeChangingTrophies.slice(0, 5) : [];
     const normalizedSlug = String(game?.slug || '').trim().toLowerCase();
-    const faqLimit = ['nioh-3', 'saros', 'the-last-of-us-part-ii'].includes(normalizedSlug) ? 11 : (['the-last-of-us-part-i', 'subnautica'].includes(normalizedSlug) ? 10 : (normalizedSlug === 'god-of-war-ragnarok' ? 8 : 6));
+    const faqLimit = ['nioh-3', 'saros', 'the-last-of-us-part-ii'].includes(normalizedSlug) ? 11 : (['the-last-of-us-part-i', 'subnautica'].includes(normalizedSlug) ? 10 : (['god-of-war-ragnarok', 'resident-evil-2-remake'].includes(normalizedSlug) ? 8 : 6));
     const faqItems = Array.isArray(viewModel.contextualFaq) ? viewModel.contextualFaq.slice(0, faqLimit) : [];
     const playerFit = viewModel.playerFit || buildGuidePlayerFit(game, viewModel);
     const methodItems = Array.isArray(viewModel.editorial?.methodItems) ? viewModel.editorial.methodItems : [];

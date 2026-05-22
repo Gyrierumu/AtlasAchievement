@@ -736,23 +736,27 @@ async function syncSeedGameFromSeed(seedSlug, options = {}) {
     );
   }
 
-  await run('DELETE FROM trophies WHERE game_id = ?', [gameId]);
-  for (const trophy of game.trophies) {
-    await run(
-      `INSERT INTO trophies (game_id, trophy_code, name, name_pt, type, description, tip, is_missable, is_spoiler)
-       VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?)`,
-      [
-        gameId,
-        trophy.id,
-        trophy.name,
-        trophy.name_pt || null,
-        normalizeTrophyType(trophy.type),
-        trophy.description,
-        trophy.tip,
-        trophy.is_missable ? 1 : 0,
-        trophy.is_spoiler ? 1 : 0
-      ]
-    );
+  if (options.preserveTrophyRows === true) {
+    await syncSeedGameTrophiesFromSeed(seedSlug);
+  } else {
+    await run('DELETE FROM trophies WHERE game_id = ?', [gameId]);
+    for (const trophy of game.trophies) {
+      await run(
+        `INSERT INTO trophies (game_id, trophy_code, name, name_pt, type, description, tip, is_missable, is_spoiler)
+         VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?)`,
+        [
+          gameId,
+          trophy.id,
+          trophy.name,
+          trophy.name_pt || null,
+          normalizeTrophyType(trophy.type),
+          trophy.description,
+          trophy.tip,
+          trophy.is_missable ? 1 : 0,
+          trophy.is_spoiler ? 1 : 0
+        ]
+      );
+    }
   }
 }
 
@@ -1069,6 +1073,7 @@ async function syncReviewedGuidesFromSeed() {
   await syncSeedGameFromSeed('the-evil-within', syncOptions);
   await syncSeedGameFromSeed('nioh-2', syncOptions);
   await syncSeedGameFromSeed('nioh-3', syncOptions);
+  await syncSeedGameFromSeed('resident-evil', { ...syncOptions, preserveTrophyRows: true });
   await syncSeedGameFromSeed('resident-evil-requiem', syncOptions);
   await syncSeedGameFromSeed('demons-souls', syncOptions);
   await syncSeedGameFromSeed('dark-souls-remastered', syncOptions);
@@ -1122,7 +1127,7 @@ async function syncReviewedGuidesFromSeed() {
   await syncSeedGameFromSeed('disney-epic-mickey-rebrushed', syncOptions);
   await syncSeedGameFromSeed('little-nightmares-ii', syncOptions);
   await syncSeedGameFromSeed('reanimal', syncOptions);
-  await syncSeedGameFromSeed('dead-cells', syncOptions);
+  await syncSeedGameFromSeed('dead-cells', { ...syncOptions, preserveTrophyRows: true });
   await syncSeedGameFromSeed('monster-hunter-world', syncOptions);
   await syncSeedGameFromSeed('pragmata', syncOptions);
   await syncSeedGameFromSeed('clair-obscur-expedition-33', syncOptions);

@@ -84,6 +84,84 @@
     });
   }
 
+  const RESIDENT_EVIL_NON_COLLECTIBLE_IDS = new Set([
+    're1r_ghost_chance',
+    're1r_cqc_ftw',
+    're1r_dont_stop_running',
+    're1r_take_that_zombies',
+    're1r_that_was_nice',
+    're1r_great_guy'
+  ]);
+  const RESIDENT_EVIL_FORCED_TAGS_BY_ID = {
+    re1r_ghost_chance: [
+      { id: 'difficulty', label: 'Dificuldade', tone: 'warning' },
+      { id: 'run', label: 'Risco de run', tone: 'warning' }
+    ],
+    re1r_cqc_ftw: [
+      { id: 'difficulty', label: 'Dificuldade', tone: 'warning' },
+      { id: 'run', label: 'Risco de run', tone: 'warning' }
+    ],
+    re1r_dont_stop_running: [
+      { id: 'difficulty', label: 'Dificuldade', tone: 'warning' },
+      { id: 'run', label: 'Risco de run', tone: 'warning' }
+    ],
+    re1r_take_that_zombies: [
+      { id: 'difficulty', label: 'Dificuldade', tone: 'warning' },
+      { id: 'story', label: 'História', tone: 'partial' }
+    ],
+    re1r_that_was_nice: [
+      { id: 'run', label: 'Risco de run', tone: 'warning' }
+    ],
+    re1r_great_guy: [
+      { id: 'run', label: 'Risco de run', tone: 'warning' }
+    ]
+  };
+  const RESIDENT_EVIL_2_TAG_FIXES_BY_ID = {
+    re2r_basics_survival: { remove: ['difficulty'] },
+    re2r_hip_squares: { add: [{ id: 'collectible', label: 'Coletável', tone: 'partial' }] },
+    re2r_customizer: { remove: ['story'], add: [{ id: 'collectible', label: 'Coletável', tone: 'partial' }] },
+    re2r_no_stinkin_gun: { remove: ['difficulty', 'story'] },
+    re2r_eat_this: { remove: ['difficulty'] },
+    re2r_hold_em: { remove: ['missable', 'collectible'] },
+    re2r_hats_off: { remove: ['collectible'] },
+    re2r_gotcha: { add: [{ id: 'difficulty', label: 'Dificuldade', tone: 'warning' }, { id: 'run', label: 'Risco de run', tone: 'warning' }] },
+    re2r_treasure_hunter: { add: [{ id: 'collectible', label: 'Coletável', tone: 'partial' }] },
+    re2r_super_spy: { add: [{ id: 'difficulty', label: 'Dificuldade', tone: 'warning' }, { id: 'run', label: 'Risco de run', tone: 'warning' }] },
+    re2r_young_escapee: { add: [{ id: 'difficulty', label: 'Dificuldade', tone: 'warning' }, { id: 'run', label: 'Risco de run', tone: 'warning' }] },
+    re2r_time_spare: { add: [{ id: 'difficulty', label: 'Dificuldade', tone: 'warning' }, { id: 'run', label: 'Risco de run', tone: 'warning' }] },
+    re2r_blink_eye: { add: [{ id: 'difficulty', label: 'Dificuldade', tone: 'warning' }, { id: 'run', label: 'Risco de run', tone: 'warning' }] },
+    re2r_lore_explorer: { remove: ['story'], add: [{ id: 'collectible', label: 'Coletável', tone: 'partial' }] },
+    re2r_complete_vermin: { remove: ['story'], add: [{ id: 'collectible', label: 'Coletável', tone: 'partial' }] },
+    re2r_leon_s: { remove: ['grind', 'cleanup'], add: [{ id: 'difficulty', label: 'Dificuldade', tone: 'warning' }, { id: 'run', label: 'Risco de run', tone: 'warning' }] },
+    re2r_scarlet_hero: { remove: ['grind'], add: [{ id: 'difficulty', label: 'Dificuldade', tone: 'warning' }, { id: 'run', label: 'Risco de run', tone: 'warning' }] },
+    re2r_hardcore_rookie: { add: [{ id: 'difficulty', label: 'Dificuldade', tone: 'warning' }, { id: 'run', label: 'Risco de run', tone: 'warning' }] },
+    re2r_hardcore_college: { add: [{ id: 'difficulty', label: 'Dificuldade', tone: 'warning' }, { id: 'run', label: 'Risco de run', tone: 'warning' }] },
+    re2r_minimalist: { remove: ['collectible'], add: [{ id: 'difficulty', label: 'Dificuldade', tone: 'warning' }, { id: 'run', label: 'Risco de run', tone: 'warning' }] },
+    re2r_small_footprint: { remove: ['collectible', 'story'], add: [{ id: 'difficulty', label: 'Dificuldade', tone: 'warning' }, { id: 'run', label: 'Risco de run', tone: 'warning' }] },
+    re2r_grim_reaper: { add: [{ id: 'difficulty', label: 'Dificuldade', tone: 'warning' }, { id: 'run', label: 'Risco de run', tone: 'warning' }] }
+  };
+
+  function applyResidentEvilTagOverrides(tags = [], trophy = {}, game = {}) {
+    const slug = String(game?.slug || '').trim().toLowerCase();
+    const trophyId = String(trophy?.id || '').trim();
+    let nextTags = Array.isArray(tags) ? tags.slice() : [];
+    if (slug === 'resident-evil' && RESIDENT_EVIL_NON_COLLECTIBLE_IDS.has(trophyId)) {
+      nextTags = nextTags.filter(tag => tag?.id !== 'collectible');
+    }
+    if (slug === 'resident-evil-2-remake' && RESIDENT_EVIL_2_TAG_FIXES_BY_ID[trophyId]) {
+      const fix = RESIDENT_EVIL_2_TAG_FIXES_BY_ID[trophyId];
+      nextTags = nextTags.filter(tag => !(fix.remove || []).includes(tag?.id));
+      (fix.add || []).forEach(tag => {
+        if (!nextTags.some(item => item?.id === tag.id)) nextTags.push(tag);
+      });
+    }
+    if (slug !== 'resident-evil') return nextTags;
+    (RESIDENT_EVIL_FORCED_TAGS_BY_ID[trophyId] || []).forEach(tag => {
+      if (!nextTags.some(item => item?.id === tag.id)) nextTags.push(tag);
+    });
+    return nextTags;
+  }
+
   function getGuideRoadmapStepText(step = {}) {
     const normalized = normalizeRoadmapStep(step);
     if (normalized?.isStructured) {
@@ -279,7 +357,7 @@
         return true;
       }));
     }
-    return sortGuideTrophyTags(tags);
+    return sortGuideTrophyTags(applyResidentEvilTagOverrides(tags, trophy, game));
   }
 
   function getGuideTrophyDisplayTags(trophy = {}, game = {}, limit = 4) {
@@ -1153,6 +1231,39 @@
           trophyName: firstPending?.name || ''
         };
       }
+      if (String(game?.slug || '').trim().toLowerCase() === 'dead-cells') {
+        return {
+          kind: 'roadmap',
+          title: 'Aprenda o ciclo de runs e desbloqueie upgrades permanentes',
+          detail: firstRunAdvice || 'Faça runs exploratórias para aprender inimigos, liberar runas, melhorar frascos e entregar blueprints úteis ao Collector.',
+          cta: 'Abrir roadmap',
+          focus: 'roadmap',
+          trophyId: firstPending?.id || '',
+          trophyName: firstPending?.name || ''
+        };
+      }
+      if (String(game?.slug || '').trim().toLowerCase() === 'resident-evil') {
+        return {
+          kind: 'roadmap',
+          title: 'Faça uma primeira run segura aprendendo a mansão',
+          detail: firstRunAdvice || 'Use a primeira campanha para entender rotas, inventário, puzzles, saves e resgates antes de tentar speedrun, sem salvar ou faca-only.',
+          cta: 'Abrir roadmap',
+          focus: 'roadmap',
+          trophyId: firstPending?.id || '',
+          trophyName: firstPending?.name || ''
+        };
+      }
+      if (String(game?.slug || '').trim().toLowerCase() === 'resident-evil-2-remake') {
+        return {
+          kind: 'roadmap',
+          title: 'Faça uma primeira campanha segura aprendendo o R.P.D.',
+          detail: firstRunAdvice || 'Comece com uma campanha segura para aprender o Departamento de Polícia, puzzles, inventário, rotas, chefes e recursos antes de tentar rankings ou condições especiais.',
+          cta: 'Abrir roadmap',
+          focus: 'roadmap',
+          trophyId: firstPending?.id || '',
+          trophyName: firstPending?.name || ''
+        };
+      }
       if (String(game?.slug || '').trim().toLowerCase() === 'hades') {
         return {
           kind: 'roadmap',
@@ -1282,6 +1393,120 @@
 
   function buildRouteChangingTrophies(trophies = [], game = {}) {
     const trophyById = new Map((Array.isArray(trophies) ? trophies : []).map(trophy => [trophy?.id, trophy]).filter(([id]) => id));
+    const residentEvilAttentionIds = [
+      're1r_nightmare_ends',
+      're1r_cqc_ftw',
+      're1r_dont_stop_running',
+      're1r_every_man',
+      're1r_every_woman'
+    ];
+    if (String(game?.slug || '').trim().toLowerCase() === 'resident-evil' && residentEvilAttentionIds.every(id => trophyById.has(id))) {
+      const attentionTag = (label, tone = 'warning') => ({ id: normalizeGuideSignalText(label).replace(/\s+/g, '-'), label, tone });
+      return [
+        {
+          id: 're1r_nightmare_ends',
+          name: trophyById.get('re1r_nightmare_ends')?.name_pt || 'O Pesadelo Acaba',
+          originalName: trophyById.get('re1r_nightmare_ends')?.name || 'The Nightmare Ends',
+          type: 'Perdível / Final / Spoiler',
+          text: 'Final bom do Chris. Planeje a rota salvando Rebecca e Jill para não transformar a campanha em uma run de final ruim.',
+          tags: [attentionTag('Perdível / Final / Spoiler', 'risk')],
+          score: 99
+        },
+        {
+          id: 're1r_cqc_ftw',
+          name: trophyById.get('re1r_cqc_ftw')?.name_pt || 'CQC Para a Vitória',
+          originalName: trophyById.get('re1r_cqc_ftw')?.name || 'CQC FTW',
+          type: 'Perdível / Dificuldade / Risco de run',
+          text: 'Run usando apenas a faca. Separe uma campanha própria e evite objetivos que possam quebrar a condição.',
+          tags: [attentionTag('Perdível / Dificuldade / Risco de run', 'risk')],
+          score: 98
+        },
+        {
+          id: 're1r_dont_stop_running',
+          name: trophyById.get('re1r_dont_stop_running')?.name_pt || 'Não Pare de Correr',
+          originalName: trophyById.get('re1r_dont_stop_running')?.name || "Don't Stop Running",
+          type: 'Perdível / Dificuldade / Risco de run',
+          text: 'Speedrun abaixo de 3 horas. Tente depois de memorizar rotas, puzzles, chefes e inventário.',
+          tags: [attentionTag('Perdível / Dificuldade / Risco de run', 'risk')],
+          score: 97
+        },
+        {
+          id: 're1r_every_man',
+          name: trophyById.get('re1r_every_man')?.name_pt || 'Cada Homem por Si',
+          originalName: trophyById.get('re1r_every_man')?.name || 'Every Man for Himself',
+          type: 'Perdível / Final / Spoiler',
+          text: 'Final ruim do Chris. Faça uma run planejada sem cumprir os resgates para não conflitar com o final bom.',
+          tags: [attentionTag('Perdível / Final / Spoiler', 'risk')],
+          score: 96
+        },
+        {
+          id: 're1r_every_woman',
+          name: trophyById.get('re1r_every_woman')?.name_pt || 'Cada Mulher por Si',
+          originalName: trophyById.get('re1r_every_woman')?.name || 'Every Woman for Herself',
+          type: 'Perdível / Final / Spoiler',
+          text: 'Final ruim da Jill. Reserve uma campanha sem salvar Barry nem Chris para fechar essa variação.',
+          tags: [attentionTag('Perdível / Final / Spoiler', 'risk')],
+          score: 95
+        }
+      ];
+    }
+    const residentEvil2AttentionIds = [
+      're2r_gotcha',
+      're2r_blink_eye',
+      're2r_leon_s',
+      're2r_super_spy',
+      're2r_scarlet_hero'
+    ];
+    if (String(game?.slug || '').trim().toLowerCase() === 'resident-evil-2-remake' && residentEvil2AttentionIds.every(id => trophyById.has(id))) {
+      const attentionTag = (label, tone = 'warning') => ({ id: normalizeGuideSignalText(label).replace(/\s+/g, '-'), label, tone });
+      return [
+        {
+          id: 're2r_gotcha',
+          name: trophyById.get('re2r_gotcha')?.name_pt || 'Peguei Você!',
+          originalName: trophyById.get('re2r_gotcha')?.name || 'Gotcha!',
+          type: 'Perdível / Dificuldade / Boss / Risco de run',
+          text: 'Exige derrotar a forma 2 do G usando o guindaste apenas uma vez. Mantenha um save antes da luta, cause bastante dano antes de acionar o guindaste e trate como objetivo perdível por run.',
+          tags: [attentionTag('Perdível / Dificuldade / Boss / Risco de run', 'risk')],
+          score: 99
+        },
+        {
+          id: 're2r_blink_eye',
+          name: trophyById.get('re2r_blink_eye')?.name_pt || 'Num Piscar de Olhos',
+          originalName: trophyById.get('re2r_blink_eye')?.name || 'In the Blink of an Eye',
+          type: 'Perdível / Dificuldade / Boss / Risco de run',
+          text: 'Exige derrotar o Super Tyrant com 5 minutos ou mais restantes. Guarde munição pesada para o final do Leon e evite chegar à luta sem recursos.',
+          tags: [attentionTag('Perdível / Dificuldade / Boss / Risco de run', 'risk')],
+          score: 98
+        },
+        {
+          id: 're2r_leon_s',
+          name: trophyById.get('re2r_leon_s')?.name_pt || 'Leon "S." Kennedy',
+          originalName: trophyById.get('re2r_leon_s')?.name || 'Leon "S." Kennedy',
+          type: 'Perdível / Dificuldade / Risco de run',
+          text: 'Rank S com Leon depende principalmente de tempo. Planeje rota curta, evite desvios, recarregue saves ao morrer e deixe coletáveis para outra campanha.',
+          tags: [attentionTag('Perdível / Dificuldade / Risco de run', 'risk')],
+          score: 97
+        },
+        {
+          id: 're2r_super_spy',
+          name: trophyById.get('re2r_super_spy')?.name_pt || 'Uma Superespiã Eficiente',
+          originalName: trophyById.get('re2r_super_spy')?.name || 'One Slick Super-spy',
+          type: 'Perdível / Dificuldade / Spoiler / Risco de run',
+          text: 'A seção da Ada precisa ser concluída usando apenas o EMF Visualizer. Não dispare a pistola e mantenha um save antes da sequência para repetir se errar.',
+          tags: [attentionTag('Perdível / Dificuldade / Spoiler / Risco de run', 'risk')],
+          score: 96
+        },
+        {
+          id: 're2r_scarlet_hero',
+          name: trophyById.get('re2r_scarlet_hero')?.name_pt || 'Heroína Escarlate Flamejante',
+          originalName: trophyById.get('re2r_scarlet_hero')?.name || 'Sizzling Scarlet Hero',
+          type: 'Perdível / Dificuldade / Risco de run',
+          text: 'Rank S com Claire exige rota rápida e controle de recursos. Não misture essa tentativa com coleta completa, exploração longa ou objetivos que atrasem a campanha.',
+          tags: [attentionTag('Perdível / Dificuldade / Risco de run', 'risk')],
+          score: 95
+        }
+      ];
+    }
     const eldenCriticalIds = ['er_elden_lord', 'er_age_of_stars', 'er_frenzied_flame', 'er_legendary_armaments', 'er_fortissax'];
     if (eldenCriticalIds.every(id => trophyById.has(id))) {
       const copyTags = (ids, tone = 'risk') => ids.map(label => ({ id: normalizeGuideSignalText(label).replace(/\s+/g, '-'), label, tone }));
@@ -2372,6 +2597,80 @@
     const dlcRequired = /necessaria|obrigatoria|dlc no escopo|expansao|expansoes/.test(dlcNormalized) && !dlcNotRequired;
     const reviewAnswer = 'Essa informação ainda está em revisão editorial. Consulte os alertas do guia antes de começar.';
 
+    if (String(game?.slug || '').trim().toLowerCase() === 'resident-evil') {
+      return [
+        {
+          question: 'Resident Evil tem troféus perdíveis?',
+          answer: 'Sim, há perdíveis por run ligados a personagem, final, resgate, mapa completo, tempo, save e restrição de arma. Não há perda definitiva: se algo escapar, refaça em outra campanha planejada.'
+        },
+        {
+          question: 'Resident Evil precisa de online para platinar?',
+          answer: 'Não. A platina é totalmente offline e não exige servidores, multiplayer, ranking online ou PS+.'
+        },
+        {
+          question: 'Resident Evil tem coop obrigatório?',
+          answer: 'Não. A lista é single-player e não tem coop obrigatório.'
+        },
+        {
+          question: 'DLC é necessária para a platina?',
+          answer: 'Não. A rota considera a lista base de Resident Evil HD Remaster. Não há online, coop ou conteúdo extra obrigatório para a platina.'
+        },
+        {
+          question: 'Quantas runs são necessárias?',
+          answer: 'Planeje múltiplas campanhas. O caminho mais limpo separa Jill, Chris, finais bons e ruins, Hard, Real Survival, Invisible Enemy, speedrun, sem salvar e faca-only.'
+        },
+        {
+          question: 'Tem troféu de speedrun, sem salvar e faca-only?',
+          answer: 'Sim. A platina exige runs condicionais, incluindo terminar rápido, terminar sem salvar e terminar usando apenas a faca. Deixe esses objetivos para quando já conhecer rotas, puzzles, chefes e inventário.'
+        },
+        {
+          question: 'Real Survival e Invisible Enemy entram na platina?',
+          answer: 'Sim. Hard, Real Survival e Invisible Enemy fazem parte da rota de platina e devem ficar para depois que você conhecer bem a mansão.'
+        },
+        {
+          question: 'Qual é o melhor primeiro passo?',
+          answer: 'Faça uma primeira run segura aprendendo a mansão, usando saves e entendendo puzzles, inventário, rotas e resgates antes de otimizar.'
+        }
+      ];
+    }
+
+    if (String(game?.slug || '').trim().toLowerCase() === 'resident-evil-2-remake') {
+      return [
+        {
+          question: 'Resident Evil 2 Remake tem troféus perdíveis?',
+          answer: 'Sim. Há perdíveis por run. Arquivos, Mr. Raccoons, cofres, upgrades, bolsas, eventos específicos e condições como rank, sem cura, sem baú e poucos passos podem exigir outra campanha se forem ignorados ou quebrados.'
+        },
+        {
+          question: 'Resident Evil 2 Remake precisa de online ou coop?',
+          answer: 'Não. A lista base é single-player, offline e não exige coop, servidores, multiplayer, ranking online ou PS+.'
+        },
+        {
+          question: 'Quantas runs são necessárias?',
+          answer: 'Planeje múltiplas campanhas. A rota mais limpa separa aprendizado, Leon, Claire, 2nd Run, Hardcore, rank S, coletáveis e desafios de restrição.'
+        },
+        {
+          question: 'Precisa jogar com Leon e Claire?',
+          answer: 'Sim. A platina exige campanhas dos dois personagens e troféus específicos ligados a cada rota.'
+        },
+        {
+          question: 'Precisa fazer 2nd Run?',
+          answer: 'Sim. A 2ª jornada entra na rota para cobrir campanha complementar e final verdadeiro quando aplicável.'
+        },
+        {
+          question: 'Existem troféus de Hardcore, rank S e speedrun?',
+          answer: 'Sim. A platina exige campanhas planejadas para Hardcore e rank S. O rank depende principalmente de tempo, então deixe essas tentativas para depois de conhecer mapas, puzzles, chefes e rotas.'
+        },
+        {
+          question: 'Existem troféus de sem cura, sem baú ou limite de passos?',
+          answer: 'Sim. Frugalist, Minimalist e A Small Carbon Footprint exigem condições específicas. Faça essas runs separadas ou combine apenas quando já tiver uma rota segura.'
+        },
+        {
+          question: 'DLCs ou modos extras são necessários para a platina?',
+          answer: 'Não. A rota considera a lista base da platina. DLCs, modos extras ou conteúdos fora da lista base devem ficar separados da platina.'
+        }
+      ];
+    }
+
     if (String(game?.slug || '').trim().toLowerCase() === 'the-last-of-us-part-i') {
       return [
         {
@@ -2610,6 +2909,43 @@
         {
           question: 'New Game+ é obrigatório para a platina?',
           answer: 'Não. A rota principal considera campanha, pós-jogo e cleanup da lista base. New Game+ fica fora dos requisitos da platina base.'
+        }
+      ];
+    }
+
+    if (String(game?.slug || '').trim().toLowerCase() === 'dead-cells') {
+      return [
+        {
+          question: 'Dead Cells tem troféus perdíveis?',
+          answer: 'Não. A lista base não tem perdíveis definitivos. Como o jogo é estruturado em runs, biomas, chefes, runas e desafios podem ser tentados novamente.'
+        },
+        {
+          question: 'Dead Cells precisa de online para platinar?',
+          answer: 'Não. A platina da lista base não exige online, servidores, multiplayer, coop ou PS+.'
+        },
+        {
+          question: 'Dead Cells tem coop obrigatório?',
+          answer: 'Não. A rota da platina base é solo e não exige segundo jogador.'
+        },
+        {
+          question: 'Dead Cells exige dificuldade alta?',
+          answer: 'Sim. A lista base exige terminar o jogo com Boss Stem Cells ativas, incluindo 4 BSC, então a curva de dificuldade faz parte da platina.'
+        },
+        {
+          question: 'Dead Cells depende de múltiplas runs?',
+          answer: 'Sim. A progressão depende de várias runs para liberar runas, upgrades, blueprints, rotas, vitórias com Boss Stem Cells e tentativas de chefes sem dano.'
+        },
+        {
+          question: 'O que mais dá trabalho na platina?',
+          answer: 'Os maiores filtros são Boss Stem Cells, chefes sem dano, Cursed Sword, equipamento inicial, Challenge Rift, Daily Challenge, 100 elites e consistência em combate.'
+        },
+        {
+          question: 'DLCs são necessárias para a platina base?',
+          answer: 'Não. DLCs e expansões ficam fora da platina base; este guia cobre os 54 troféus do jogo base.'
+        },
+        {
+          question: 'Qual é o melhor primeiro passo?',
+          answer: 'Faça runs exploratórias para aprender inimigos, liberar runas, melhorar frascos e entregar blueprints úteis ao Collector antes de forçar objetivos difíceis.'
         }
       ];
     }
