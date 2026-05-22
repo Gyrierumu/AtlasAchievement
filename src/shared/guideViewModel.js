@@ -140,6 +140,28 @@
     re2r_small_footprint: { remove: ['collectible', 'story'], add: [{ id: 'difficulty', label: 'Dificuldade', tone: 'warning' }, { id: 'run', label: 'Risco de run', tone: 'warning' }] },
     re2r_grim_reaper: { add: [{ id: 'difficulty', label: 'Dificuldade', tone: 'warning' }, { id: 'run', label: 'Risco de run', tone: 'warning' }] }
   };
+  const RESIDENT_EVIL_3_TAG_FIXES_BY_ID = {
+    re3r_dominator: { add: [{ id: 'difficulty', label: 'Dificuldade', tone: 'warning' }, { id: 'run', label: 'Risco de run', tone: 'warning' }] },
+    re3r_nemesis_down: { add: [{ id: 'boss', label: 'Boss', tone: 'warning' }, { id: 'run', label: 'Risco de run', tone: 'warning' }] },
+    re3r_nemesis_down_rooftop: { add: [{ id: 'boss', label: 'Boss', tone: 'warning' }, { id: 'spoiler', label: 'Spoiler', tone: 'warning' }] },
+    re3r_power_stones: { add: [{ id: 'collectible', label: 'Coletável', tone: 'partial' }] },
+    re3r_unfortunaté_end: { add: [{ id: 'spoiler', label: 'Spoiler', tone: 'warning' }] },
+    re3r_jill_valentine: { remove: ['grind', 'cleanup'], add: [{ id: 'difficulty', label: 'Dificuldade', tone: 'warning' }, { id: 'run', label: 'Risco de run', tone: 'warning' }] },
+    re3r_electric_slide: { add: [{ id: 'difficulty', label: 'Dificuldade', tone: 'warning' }, { id: 'run', label: 'Risco de run', tone: 'warning' }] },
+    re3r_nemesis_stage2: { add: [{ id: 'boss', label: 'Boss', tone: 'warning' }, { id: 'spoiler', label: 'Spoiler', tone: 'warning' }] },
+    re3r_nemesis_stage3: { add: [{ id: 'boss', label: 'Boss', tone: 'warning' }, { id: 'spoiler', label: 'Spoiler', tone: 'warning' }] },
+    re3r_hello_charlie: { add: [{ id: 'collectible', label: 'Coletável', tone: 'partial' }] },
+    re3r_bookworm: { add: [{ id: 'collectible', label: 'Coletável', tone: 'partial' }] },
+    re3r_goodbye_charlie: { add: [{ id: 'collectible', label: 'Coletável', tone: 'partial' }] },
+    re3r_kendos_armory: { add: [{ id: 'collectible', label: 'Coletável', tone: 'partial' }] },
+    re3r_master_unlocking: { add: [{ id: 'collectible', label: 'Coletável', tone: 'partial' }] },
+    re3r_veteran: { add: [{ id: 'difficulty', label: 'Dificuldade', tone: 'warning' }] },
+    re3r_conqueror: { add: [{ id: 'difficulty', label: 'Dificuldade', tone: 'warning' }, { id: 'run', label: 'Risco de run', tone: 'warning' }] },
+    re3r_sensational_work: { remove: ['grind'], add: [{ id: 'difficulty', label: 'Dificuldade', tone: 'warning' }, { id: 'run', label: 'Risco de run', tone: 'warning' }] },
+    re3r_minimalist: { remove: ['collectible'], add: [{ id: 'difficulty', label: 'Dificuldade', tone: 'warning' }, { id: 'run', label: 'Risco de run', tone: 'warning' }] },
+    re3r_need_these_latér: { remove: ['collectible'], add: [{ id: 'difficulty', label: 'Dificuldade', tone: 'warning' }, { id: 'run', label: 'Risco de run', tone: 'warning' }] },
+    re3r_sprinter: { remove: ['grind'], add: [{ id: 'difficulty', label: 'Dificuldade', tone: 'warning' }, { id: 'run', label: 'Risco de run', tone: 'warning' }] }
+  };
 
   function applyResidentEvilTagOverrides(tags = [], trophy = {}, game = {}) {
     const slug = String(game?.slug || '').trim().toLowerCase();
@@ -150,6 +172,13 @@
     }
     if (slug === 'resident-evil-2-remake' && RESIDENT_EVIL_2_TAG_FIXES_BY_ID[trophyId]) {
       const fix = RESIDENT_EVIL_2_TAG_FIXES_BY_ID[trophyId];
+      nextTags = nextTags.filter(tag => !(fix.remove || []).includes(tag?.id));
+      (fix.add || []).forEach(tag => {
+        if (!nextTags.some(item => item?.id === tag.id)) nextTags.push(tag);
+      });
+    }
+    if (slug === 'resident-evil-3-remake' && RESIDENT_EVIL_3_TAG_FIXES_BY_ID[trophyId]) {
+      const fix = RESIDENT_EVIL_3_TAG_FIXES_BY_ID[trophyId];
       nextTags = nextTags.filter(tag => !(fix.remove || []).includes(tag?.id));
       (fix.add || []).forEach(tag => {
         if (!nextTags.some(item => item?.id === tag.id)) nextTags.push(tag);
@@ -1264,6 +1293,17 @@
           trophyName: firstPending?.name || ''
         };
       }
+      if (String(game?.slug || '').trim().toLowerCase() === 'resident-evil-3-remake') {
+        return {
+          kind: 'roadmap',
+          title: 'Faça uma primeira campanha segura aprendendo rotas, Nemesis e coletáveis',
+          detail: firstRunAdvice || 'Comece em uma dificuldade confortável para aprender mapas, puzzles, perseguições, chefes, recursos, arquivos, Charlie Dolls, cofres e upgrades antes de tentar rank, Inferno ou runs com restrição.',
+          cta: 'Abrir roadmap',
+          focus: 'roadmap',
+          trophyId: firstPending?.id || '',
+          trophyName: firstPending?.name || ''
+        };
+      }
       if (String(game?.slug || '').trim().toLowerCase() === 'hades') {
         return {
           kind: 'roadmap',
@@ -1503,6 +1543,63 @@
           type: 'Perdível / Dificuldade / Risco de run',
           text: 'Rank S com Claire exige rota rápida e controle de recursos. Não misture essa tentativa com coleta completa, exploração longa ou objetivos que atrasem a campanha.',
           tags: [attentionTag('Perdível / Dificuldade / Risco de run', 'risk')],
+          score: 95
+        }
+      ];
+    }
+    const residentEvil3AttentionIds = [
+      're3r_jill_valentine',
+      're3r_sprinter',
+      're3r_minimalist',
+      're3r_goodbye_charlie',
+      're3r_dominator'
+    ];
+    if (String(game?.slug || '').trim().toLowerCase() === 'resident-evil-3-remake' && residentEvil3AttentionIds.every(id => trophyById.has(id))) {
+      const attentionTag = (label, tone = 'warning') => ({ id: normalizeGuideSignalText(label).replace(/\s+/g, '-'), label, tone });
+      return [
+        {
+          id: 're3r_dominator',
+          name: 'Inferno / dificuldade máxima',
+          originalName: trophyById.get('re3r_dominator')?.name || 'Dominator',
+          type: 'Dificuldade / Risco de run / Boss',
+          text: 'Deixe a dificuldade máxima para depois de conhecer a campanha e desbloquear recursos úteis da loja. Nemesis e chefes punem erro de rota e gestão ruim de itens.',
+          tags: [attentionTag('Dificuldade / Risco de run / Boss', 'risk')],
+          score: 99
+        },
+        {
+          id: 're3r_jill_valentine',
+          name: 'Rank alto / run rápida',
+          originalName: trophyById.get('re3r_jill_valentine')?.name || 'Jill Valentine',
+          type: 'Dificuldade / Risco de run / Cleanup',
+          text: 'Runs de rank exigem tempo baixo, rota limpa e pouca coleta. Não misture com coletáveis completos ou exploração longa.',
+          tags: [attentionTag('Dificuldade / Risco de run / Cleanup', 'risk')],
+          score: 98
+        },
+        {
+          id: 're3r_minimalist',
+          name: 'Pouca cura ou sem baú',
+          originalName: trophyById.get('re3r_minimalist')?.name || 'Minimalist',
+          type: 'Perdível / Risco de run',
+          text: 'Objetivos com restrição devem ser feitos em run planejada. Usar cura além do limite ou abrir o baú pode quebrar a tentativa.',
+          tags: [attentionTag('Perdível / Risco de run', 'risk')],
+          score: 97
+        },
+        {
+          id: 're3r_goodbye_charlie',
+          name: 'Charlie Dolls e arquivos',
+          originalName: trophyById.get('re3r_goodbye_charlie')?.name || 'Goodbye, Charlie!',
+          type: 'Coletável / Perdível / Checklist',
+          text: 'Coletáveis podem ser perdidos dentro da campanha. Use checklist por área para evitar repetir uma run inteira por um item esquecido.',
+          tags: [attentionTag('Coletável / Perdível / Checklist', 'risk')],
+          score: 96
+        },
+        {
+          id: 're3r_sprinter',
+          name: 'Nemesis e chefes',
+          originalName: trophyById.get('re3r_sprinter')?.name || 'Sprinter',
+          type: 'Boss / Dificuldade / Spoiler',
+          text: 'Lutas e perseguições podem travar runs de dificuldade alta. Guarde recursos, granadas e munição forte para momentos críticos.',
+          tags: [attentionTag('Boss / Dificuldade / Spoiler', 'risk')],
           score: 95
         }
       ];
@@ -2667,6 +2764,43 @@
         {
           question: 'DLCs ou modos extras são necessários para a platina?',
           answer: 'Não. A rota considera a lista base da platina. DLCs, modos extras ou conteúdos fora da lista base devem ficar separados da platina.'
+        }
+      ];
+    }
+
+    if (String(game?.slug || '').trim().toLowerCase() === 'resident-evil-3-remake') {
+      return [
+        {
+          question: 'Resident Evil 3 Remake tem troféus perdíveis?',
+          answer: 'Sim. Há perdíveis por run, principalmente coletáveis, arquivos, Charlie Dolls, cofres, travas, upgrades, itens importantes e condições especiais. Nada é perdido definitivamente, mas pode ser necessário repetir campanha.'
+        },
+        {
+          question: 'Resident Evil 3 Remake precisa de online ou coop para platinar?',
+          answer: 'Não. A platina base de Resident Evil 3 Remake é single-player e não exige online, coop, servidores, multiplayer ou PS+.'
+        },
+        {
+          question: 'Resident Evil Resistance entra na platina?',
+          answer: 'Não. Resistance tem lista separada e fica fora da rota da platina base de Resident Evil 3 Remake.'
+        },
+        {
+          question: 'Quantas runs são necessárias?',
+          answer: 'Planeje múltiplas runs. A rota mais segura separa aprendizado, coletáveis/records, dificuldades altas, rank e objetivos com restrição.'
+        },
+        {
+          question: 'Precisa terminar em dificuldades altas?',
+          answer: 'Sim. Hardcore, Nightmare e Inferno entram na rota da platina. Deixe essas runs para depois de conhecer rotas, inimigos, chefes e recursos.'
+        },
+        {
+          question: 'Existem troféus de rank ou speedrun?',
+          answer: 'Sim. Runs de rank e Sprinter exigem tempo baixo, rota limpa e pouca exploração, então não combine com coleta completa.'
+        },
+        {
+          question: 'Existem troféus de pouca cura ou sem baú?',
+          answer: 'Sim. Pode ser útil mais tarde e Minimalista exigem condições específicas. Faça esses objetivos em runs dedicadas ou combine apenas quando já tiver uma rota segura.'
+        },
+        {
+          question: 'O que mais dá trabalho na platina?',
+          answer: 'Dificuldades altas, Inferno, rank, gerenciamento de recursos, Nemesis, coletáveis perdíveis por run e objetivos condicionais são os principais filtros.'
         }
       ];
     }

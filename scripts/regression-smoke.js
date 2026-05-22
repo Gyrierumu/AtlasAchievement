@@ -12934,8 +12934,12 @@ function assertLote1ACriticalEditorialData() {
       assert(hasValue, `${name} deve preencher ${field}`);
     });
     assert.strictEqual(game.editorial_status, 'published', `${name} deve permanecer publicado`);
-    assert.strictEqual(game.coverage_level, 'strong', `${name} deve ter coverage strong sem selo complete`);
-    if (['god-of-war', 'resident-evil', 'resident-evil-4-remake'].includes(game.slug)) {
+    if (game.slug === 'resident-evil-3-remake') {
+      assert.strictEqual(game.coverage_level, 'complete', `${name} deve ter coverage complete apos revisao editorial`);
+    } else {
+      assert.strictEqual(game.coverage_level, 'strong', `${name} deve ter coverage strong sem selo complete`);
+    }
+    if (['god-of-war', 'resident-evil', 'resident-evil-3-remake', 'resident-evil-4-remake'].includes(game.slug)) {
       assert.strictEqual(game.is_verified, true, `${name} deve permanecer verificado`);
       assert.strictEqual(game.verification_status, 'verified', `${name} deve permanecer verified`);
       if (game.slug === 'resident-evil') {

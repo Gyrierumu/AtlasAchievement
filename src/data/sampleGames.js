@@ -6249,37 +6249,119 @@ const sampleGames = [
     "time_max_hours": 35,
     "time_sort_hours": 30,
     "time_bucket": "medium",
-    "missable": "Os troféus de história saem naturalmente, mas o jogo não tem chapter select nem free roam, então trate collectibles, armas, cofres e runs especiais como planejamento de múltiplas campanhas. A boa notícia é que o progresso de loja e o domínio da rota reduzem muito a dificuldade do cleanup.",
-    "runs_summary": "Múltiplas campanhas curtas: primeira run para coleta e loja, depois rank S, dificuldades altas, Minimalista e Pode ser útil mais tarde.",
-    "missable_summary": "Não há chapter select/free roam após avançar pontos da campanha. Arquivos, bonecos Charlie, armas, upgrades, cofres e objetivos situacionais devem ser acompanhados por run.",
+    "missable": "A platina tem perdíveis por run. Arquivos, Charlie Dolls, cofres, travas, armas, upgrades, itens importantes, rank, speedrun, pouca cura e sem baú exigem campanhas planejadas, mas nada é perdido definitivamente.",
+    "runs_summary": "Múltiplas runs curtas: uma campanha segura para aprendizado e coletáveis, cleanup de records e loja, depois dificuldades altas, rank S, speedrun, Minimalista e Pode ser útil mais tarde.",
+    "missable_summary": "Arquivos, Charlie Dolls, armas, upgrades, cofres, travas e objetivos condicionais podem ser perdidos dentro de uma campanha. Sem chapter select livre, use checklist por área.",
     "online_summary": "Não há exigência online, coop, multiplayer ou PS+ para a platina da lista base de Resident Evil 3 Remake.",
-    "grind_summary": "Grind moderado de pontos da loja e repetição de campanhas curtas para liberar itens, completar dificuldades e limpar restrições.",
-    "dlc_scope": "Guia focado na lista base de Resident Evil 3 Remake. Resident Evil Resistance não é tratado como parte obrigatória da platina deste guia.",
-    "difficulty_reason": "A dificuldade é controlada pelos itens da loja, mas Inferno com rank S e rotas sem desperdício ainda exigem execução.",
-    "time_reason": "A faixa de 20-30 horas considera primeira campanha, farm de pontos, dificuldades até Inferno, rank S e runs de restrição.",
-    "first_run_advice": "Faça a primeira campanha em Assistido ou Padrão coletando arquivos, bonecos Charlie, upgrades e cofres, sem tentar rank alto.",
-    "cleanup_advice": "Use pontos da loja e runs dedicadas para S rank, Hardcore/Nightmare/Inferno, Minimalista e Pode ser útil mais tarde.",
-    "before_you_start": "Como não há chapter select livre, acompanhe coletáveis desde a primeira run. Resistance fica fora do escopo obrigatório desta platina.",
+    "grind_summary": "Grind moderado de records/pontos da loja e repetição de campanhas curtas para liberar itens, completar dificuldades e limpar restrições.",
+    "dlc_scope": "DLC fora da platina base. O guia cobre a lista base single-player de Resident Evil 3 Remake; Resident Evil Resistance tem lista separada e fica fora da rota desta platina.",
+    "difficulty_reason": "A dificuldade vem de Inferno, rank S, speedrun abaixo de 2 horas, gestão de recursos contra Nemesis e runs com pouca cura ou sem abrir o baú.",
+    "time_reason": "A faixa de 25-35 horas considera primeira campanha, coletáveis, records/pontos da loja, dificuldades até Inferno, rank S, speedrun e runs de restrição.",
+    "first_run_advice": "Comece em uma dificuldade confortável para aprender mapas, puzzles, perseguições, chefes, recursos, arquivos, Charlie Dolls, cofres e upgrades antes de tentar rank, Inferno ou runs com restrição.",
+    "editorial_summary": [
+      "Faça uma primeira campanha segura aprendendo rotas, Nemesis, puzzles, chefes, recursos e coletáveis antes de tentar rank, Inferno ou restrições de run.",
+      "A platina de Resident Evil 3 Remake é mais curta que outros jogos da série, mas exige organização por causa de múltiplas runs, dificuldades superiores, coletáveis, records e objetivos condicionais. A lista base não exige online nem coop, mas pede domínio da campanha, boa gestão de recursos e rotas planejadas para reduzir repetição desnecessária.",
+      "O maior risco está nos perdíveis por run: arquivos, Charlie Dolls, cofres, travas, armas, upgrades, itens importantes e objetivos condicionais podem exigir uma nova campanha se forem ignorados. Além disso, tentativas de rank, pouca cura, sem baú ou dificuldade alta devem ser separadas quando necessário, porque quebrar uma condição pode invalidar a run.",
+      "A melhor rota é primeiro concluir uma campanha confortável coletando o máximo possível e entendendo perseguições, chefes e mapas. Depois, use o cleanup para completar coletáveis e records, desbloquear recursos da loja e só então partir para dificuldades mais altas, rank S, Nightmare, Inferno e restrições.",
+      "Resident Evil Resistance, DLCs e extras fora da lista base ficam separados da platina. Use o roadmap para organizar as runs e a checklist para controlar coletáveis, dificuldades, records, condições especiais e cleanup."
+    ],
+    "cleanup_advice": "Use records/pontos da loja e runs dedicadas para rank S, Hardcore/Nightmare/Inferno, Minimalista, Pode ser útil mais tarde e Sprinter.",
+    "before_you_start": "Como não há chapter select livre, acompanhe coletáveis desde a primeira run. Resistance e extras ficam fora do escopo obrigatório desta platina.",
     "best_for": "Ideal para quem gosta de campanha curta, repetição rápida, rank S e otimização com itens desbloqueáveis.",
     "avoid_if": "Evite se você não quer repetir a campanha, fazer speedrun ou lidar com dificuldade alta mesmo com itens da loja.",
     "editorial_status": "published",
-    "coverage_level": "strong",
-    "is_verified": false,
-    "verification_status": "review",
-    "verification_note": "Guia normalizado a partir do dado seed com checklist e roadmap; aguardando revisão editorial manual final.",
+    "coverage_level": "complete",
+    "is_verified": true,
+    "verification_status": "verified",
+    "verification_note": "Guia revisado editorialmente para a lista base de Resident Evil 3 Remake.",
+    "onlineRequired": false,
+    "coopRequired": false,
+    "dlcRequired": false,
+    "newGamePlusRequired": false,
+    "difficultyTrophiesRequired": true,
     "image": "https://cdn.cloudflare.steamstatic.com/steam/apps/952060/header.jpg",
     "cover_image": "https://cdn.cloudflare.steamstatic.com/steam/apps/952060/library_600x900.jpg",
     "roadmap": [
-      "Faça uma primeira campanha da lista base/remake em Assistido ou Padrão priorizando arquivos, bonecos Charlie, armas, upgrades de inventário e todas as trancas/cofres. Resident Evil Resistance não entra como requisito desta platina.",
-      "Use os pontos da loja para liberar itens fortes e acelerar as runs seguintes. O Infinite Rocket Launcher e moedas defensivas/recuperação diminuem muito a pressão do jogo.",
-      "Feche uma run com rank S e speedrun abaixo de 2 horas. O domínio da rota em Downtown, Hospital e NEST 2 faz a maior diferença aqui.",
-      "Depois complete as dificuldades que faltarem: Hardcore, Nightmare e Inferno. O rank S no Inferno é o grande pico da platina.",
-      "Deixe runs dedicadas para Minimalista e Pode ser útil mais tarde se preferir não misturar restrições com as campanhas de dificuldade alta."
+      {
+        "title": "Faça uma primeira campanha segura",
+        "focus": "Fundamentos / história",
+        "objective": "Aprender mapas, puzzles, inventário, perseguições, Nemesis, chefes e recursos sem forçar rank ou restrições.",
+        "actions": [
+          "Jogue em uma dificuldade confortável.",
+          "Use saves sem medo.",
+          "Aprenda rotas principais, cofres, travas e áreas importantes.",
+          "Colete arquivos, Charlie Dolls e upgrades quando estiverem no caminho."
+        ],
+        "result": "Primeira campanha concluída e base criada para runs planejadas."
+      },
+      {
+        "title": "Limpe coletáveis, arquivos, Charlie Dolls e upgrades",
+        "focus": "Coletáveis / checklist",
+        "objective": "Resolver pendências de exploração antes das runs difíceis.",
+        "actions": [
+          "Use checklist para arquivos e Charlie Dolls.",
+          "Complete cofres, travas, armas, upgrades e itens importantes.",
+          "Faça coleta por área para evitar retrabalho.",
+          "Não misture coleta completa com run de rank."
+        ],
+        "warning": "Muitos coletáveis são perdíveis dentro da campanha.",
+        "result": "Coletáveis e upgrades principais concluídos ou encaminhados."
+      },
+      {
+        "title": "Complete records e desbloqueios úteis",
+        "focus": "Cleanup / preparação",
+        "objective": "Acumular recursos, records e desbloqueios que facilitem dificuldades altas.",
+        "actions": [
+          "Revise objetivos pendentes da checklist.",
+          "Priorize records que liberem recursos úteis na loja.",
+          "Faça troféus situacionais em runs curtas.",
+          "Separe objetivos incompatíveis em campanhas diferentes."
+        ],
+        "result": "Base preparada para runs de dificuldade e rank."
+      },
+      {
+        "title": "Trabalhe dificuldades altas",
+        "focus": "Dificuldade / execução",
+        "objective": "Vencer Hardcore, Nightmare, Inferno e dificuldades equivalentes exigidas pela lista.",
+        "actions": [
+          "Planeje saves e rotas.",
+          "Guarde munição forte para Nemesis e chefes.",
+          "Evite exploração desnecessária.",
+          "Use desbloqueios permitidos se forem válidos para os troféus."
+        ],
+        "warning": "Inferno e chefes podem ser o maior filtro da platina.",
+        "result": "Dificuldades obrigatórias vencidas ou encaminhadas."
+      },
+      {
+        "title": "Faça runs de rank, tempo e restrições",
+        "focus": "Risco de run / condições especiais",
+        "objective": "Cumprir rank alto, speedrun, pouca cura, sem baú e outras condições exigidas.",
+        "actions": [
+          "Separe runs de rank das runs de coleta.",
+          "Memorize puzzles, rotas e chefes.",
+          "Evite abrir baú ou usar cura se a condição proibir.",
+          "Recarregue saves ao quebrar a condição."
+        ],
+        "result": "Objetivos condicionais concluídos."
+      },
+      {
+        "title": "Finalize a checklist da platina base",
+        "focus": "Checklist final",
+        "objective": "Conferir todos os troféus restantes sem misturar Resistance, DLCs ou extras.",
+        "actions": [
+          "Revise todos os troféus pendentes.",
+          "Confirme coletáveis, dificuldades, rank, records, chefes e restrições.",
+          "Verifique se há tags incorretas de online, coop, coletável ou perdível.",
+          "Confirme que a página pública não mostra placeholders ou aviso de revisão."
+        ],
+        "result": "Lista base concluída e guia pronto para platina."
+      }
     ],
     "trophies": [
       {
         "id": "re3r_platinum",
-        "name": "Até mais, Raccoon",
+        "name": "So Long, RC",
+        "name_pt": "Até mais, Raccoon",
         "type": "Platina",
         "description": "Desbloqueie todos os troféus.",
         "tip": "A platina gira em torno de collectibles, dificuldades altas, rank S e algumas runs especiais bem curtas.",
@@ -6287,7 +6369,8 @@ const sampleGames = [
       },
       {
         "id": "re3r_first_escape",
-        "name": "Primeira Fuga",
+        "name": "First Escape",
+        "name_pt": "Primeira Fuga",
         "type": "Bronze",
         "description": "Fuja do prédio da Jill.",
         "tip": "Troféu automático dos primeiros minutos.",
@@ -6295,7 +6378,8 @@ const sampleGames = [
       },
       {
         "id": "re3r_somebody_to_lean_on",
-        "name": "Precisando de uma força",
+        "name": "Somebody to Lean On",
+        "name_pt": "Precisando de uma força",
         "type": "Bronze",
         "description": "Fuja da área residencial de Raccoon City.",
         "tip": "Sai naturalmente ao avançar pelo começo da campanha.",
@@ -6303,7 +6387,8 @@ const sampleGames = [
       },
       {
         "id": "re3r_escape_city",
-        "name": "Fuja da cidade",
+        "name": "Escape from the City",
+        "name_pt": "Fuja da cidade",
         "type": "Bronze",
         "description": "Fuja do centro de Raccoon City.",
         "tip": "Automático de história.",
@@ -6311,7 +6396,8 @@ const sampleGames = [
       },
       {
         "id": "re3r_dont_feel_good",
-        "name": "Não tô muito bem",
+        "name": "I Don't Feel So Good",
+        "name_pt": "Não tô muito bem",
         "type": "Bronze",
         "description": "Saia da praça da torre do relógio.",
         "tip": "Automático de história.",
@@ -6319,7 +6405,8 @@ const sampleGames = [
       },
       {
         "id": "re3r_dominator",
-        "name": "Dominador",
+        "name": "Dominator",
+        "name_pt": "Dominador",
         "type": "Ouro",
         "description": "Complete o jogo no modo “Inferno”.",
         "tip": "Vem junto da run mais dura da platina. Use itens de loja e conheça bem os checkpoints.",
@@ -6327,7 +6414,8 @@ const sampleGames = [
       },
       {
         "id": "re3r_basic_chemistry",
-        "name": "Química básica",
+        "name": "Basic Chemistry",
+        "name_pt": "Química básica",
         "type": "Bronze",
         "description": "Crie um item.",
         "tip": "Misture qualquer munição, erva ou recurso logo no início.",
@@ -6335,7 +6423,8 @@ const sampleGames = [
       },
       {
         "id": "re3r_gunsmith",
-        "name": "Armeiro",
+        "name": "Gunsmith",
+        "name_pt": "Armeiro",
         "type": "Bronze",
         "description": "Aprimore uma arma.",
         "tip": "Basta instalar qualquer upgrade de arma.",
@@ -6343,7 +6432,8 @@ const sampleGames = [
       },
       {
         "id": "re3r_get_organized",
-        "name": "Organize-se",
+        "name": "Get Organized",
+        "name_pt": "Organize-se",
         "type": "Bronze",
         "description": "Amplie o inventário.",
         "tip": "Pegue uma pochete.",
@@ -6351,7 +6441,8 @@ const sampleGames = [
       },
       {
         "id": "re3r_nemesis_down",
-        "name": "Nemesis Abatido",
+        "name": "Nemesis Down",
+        "name_pt": "Nemesis Abatido",
         "type": "Prata",
         "description": "Faça o Nemesis deixar um item.",
         "tip": "Derrube o Nemesis com dano suficiente em um encontro de perseguição para forçar o drop.",
@@ -6359,7 +6450,8 @@ const sampleGames = [
       },
       {
         "id": "re3r_nemesis_down_rooftop",
-        "name": "Nemesis Abatido?",
+        "name": "Nemesis Down?",
+        "name_pt": "Nemesis Abatido?",
         "type": "Bronze",
         "description": "Derrote o Nemesis no telhado.",
         "tip": "Automático de história no confronto da cobertura.",
@@ -6367,7 +6459,8 @@ const sampleGames = [
       },
       {
         "id": "re3r_power_stones",
-        "name": "Pedras do Poder",
+        "name": "Power Stones",
+        "name_pt": "Pedras do Poder",
         "type": "Prata",
         "description": "Guarde todas as gemas no monumento da torre do relógio.",
         "tip": "Resolva a parte opcional de Downtown antes de seguir para a estação.",
@@ -6375,7 +6468,8 @@ const sampleGames = [
       },
       {
         "id": "re3r_carlos_express",
-        "name": "O Expresso Carlos",
+        "name": "The Carlos Express",
+        "name_pt": "O Expresso Carlos",
         "type": "Bronze",
         "description": "Saia do R.P.D.",
         "tip": "Automático na seção do Carlos.",
@@ -6383,7 +6477,8 @@ const sampleGames = [
       },
       {
         "id": "re3r_unfortunaté_end",
-        "name": "Um final triste",
+        "name": "An Unfortunate End",
+        "name_pt": "Um final triste",
         "type": "Bronze",
         "description": "Derrote o Brad zumbi.",
         "tip": "Atire no Brad com o rifle do Carlos na primeira chance para já garantir o troféu cedo.",
@@ -6392,6 +6487,7 @@ const sampleGames = [
       {
         "id": "re3r_jill_valentine",
         "name": "Jill Valentine",
+        "name_pt": "Jill Valentine",
         "type": "Ouro",
         "description": "Complete o jogo com uma nota S no modo “Inferno”.",
         "tip": "O requisito principal é fechar em menos de 2 horas e com menos de 5 saves manuais no Inferno.",
@@ -6399,7 +6495,8 @@ const sampleGames = [
       },
       {
         "id": "re3r_i_need_a_hero",
-        "name": "Preciso de um herói",
+        "name": "I Need a Hero",
+        "name_pt": "Preciso de um herói",
         "type": "Bronze",
         "description": "Resista ao cerco de zumbis.",
         "tip": "Automático de história na defesa do hospital.",
@@ -6407,7 +6504,8 @@ const sampleGames = [
       },
       {
         "id": "re3r_pursuer",
-        "name": "No encalço dele",
+        "name": "The Pursuer",
+        "name_pt": "No encalço dele",
         "type": "Bronze",
         "description": "Siga o Nicholai mais a fundo no subsolo.",
         "tip": "Automático de história.",
@@ -6415,7 +6513,8 @@ const sampleGames = [
       },
       {
         "id": "re3r_electric_slide",
-        "name": "Corrida eletrizante",
+        "name": "Electric Slide",
+        "name_pt": "Corrida eletrizante",
         "type": "Prata",
         "description": "Junte os fusíveis no armazém em 5 minutos.",
         "tip": "Depois de aprender a rota, esse troféu costuma sair naturalmente.",
@@ -6423,7 +6522,8 @@ const sampleGames = [
       },
       {
         "id": "re3r_nemesis_stage2",
-        "name": "Nemesis Abatido?!?",
+        "name": "Nemesis Down!?",
+        "name_pt": "Nemesis Abatido?!?",
         "type": "Bronze",
         "description": "Derrote o Nemesis do Estágio 2.",
         "tip": "Automático de história no NEST 2.",
@@ -6431,7 +6531,8 @@ const sampleGames = [
       },
       {
         "id": "re3r_nemesis_stage3",
-        "name": "Nemesis Abatido!!!",
+        "name": "Nemesis Down!!!",
+        "name_pt": "Nemesis Abatido!!!",
         "type": "Bronze",
         "description": "Derrote o Nemesis do Estágio 3.",
         "tip": "Automático de história no confronto final.",
@@ -6439,7 +6540,8 @@ const sampleGames = [
       },
       {
         "id": "re3r_hello_charlie",
-        "name": "Oi, Charlie!",
+        "name": "Hello, Charlie!",
+        "name_pt": "Oi, Charlie!",
         "type": "Bronze",
         "description": "Destrua um boneco Charlie.",
         "tip": "Sai no primeiro boneco colecionável que você quebrar.",
@@ -6447,7 +6549,8 @@ const sampleGames = [
       },
       {
         "id": "re3r_two_for_one",
-        "name": "Promoção Dois por um",
+        "name": "Two For One Deal",
+        "name_pt": "Promoção Dois por um",
         "type": "Prata",
         "description": "Derrote dois inimigos com um único tiro.",
         "tip": "A shotgun em grupos de inimigos costuma resolver isso sem esforço.",
@@ -6455,7 +6558,8 @@ const sampleGames = [
       },
       {
         "id": "re3r_bookworm",
-        "name": "Rato de biblioteca",
+        "name": "Bookworm",
+        "name_pt": "Rato de biblioteca",
         "type": "Prata",
         "description": "Leia todos os documentos.",
         "tip": "São 56 arquivos. Combine com a run de collectibles.",
@@ -6463,7 +6567,8 @@ const sampleGames = [
       },
       {
         "id": "re3r_goodbye_charlie",
-        "name": "Tchau, Charlie!",
+        "name": "Goodbye, Charlie!",
+        "name_pt": "Tchau, Charlie!",
         "type": "Prata",
         "description": "Destrua todos os bonecos Charlie.",
         "tip": "Use uma checklist porque alguns ficam em áreas que passam muito rápido.",
@@ -6471,7 +6576,8 @@ const sampleGames = [
       },
       {
         "id": "re3r_kendos_armory",
-        "name": "Arsenal do Kendo",
+        "name": "Kendo's Armory",
+        "name_pt": "Arsenal do Kendo",
         "type": "Bronze",
         "description": "Colete todas as armas da campanha.",
         "tip": "Parte delas vem por história e parte por exploração/cofres.",
@@ -6479,7 +6585,8 @@ const sampleGames = [
       },
       {
         "id": "re3r_master_unlocking",
-        "name": "Chaveiro Mestre",
+        "name": "RE: Master of Unlocking",
+        "name_pt": "Chaveiro Mestre",
         "type": "Prata",
         "description": "Abra todos os cofres, armários, caixas fortes e trancas.",
         "tip": "Feche isso na run de collectibles para não sobrar cleanup disperso.",
@@ -6487,7 +6594,8 @@ const sampleGames = [
       },
       {
         "id": "re3r_survivor",
-        "name": "Sobrevivente",
+        "name": "Survivor",
+        "name_pt": "Sobrevivente",
         "type": "Prata",
         "description": "Conclua o jogo em “Padrão” ou num mais difícil.",
         "tip": "Sai em qualquer campanha acima do modo assistido.",
@@ -6495,7 +6603,8 @@ const sampleGames = [
       },
       {
         "id": "re3r_veteran",
-        "name": "Veterano",
+        "name": "Veteran",
+        "name_pt": "Veterano",
         "type": "Prata",
         "description": "Conclua o jogo no modo “Intenso” ou num mais difícil.",
         "tip": "Pode ser substituído naturalmente pelas runs de Nightmare/Inferno.",
@@ -6503,7 +6612,8 @@ const sampleGames = [
       },
       {
         "id": "re3r_conqueror",
-        "name": "Conquistador",
+        "name": "Conqueror",
+        "name_pt": "Conquistador",
         "type": "Prata",
         "description": "Conclua o jogo no modo “Pesadelo” ou num mais difícil.",
         "tip": "O jogo já fica bem mais agressivo aqui; use shop items sem culpa.",
@@ -6511,7 +6621,8 @@ const sampleGames = [
       },
       {
         "id": "re3r_sensational_work",
-        "name": "Mandou muito!",
+        "name": "Sensational Work!",
+        "name_pt": "Mandou muito!",
         "type": "Ouro",
         "description": "Conclua o jogo com uma nota S.",
         "tip": "Esse troféu costuma vir antes do rank S no Inferno.",
@@ -6519,7 +6630,8 @@ const sampleGames = [
       },
       {
         "id": "re3r_minimalist",
-        "name": "Minimalista",
+        "name": "Minimalist",
+        "name_pt": "Minimalista",
         "type": "Prata",
         "description": "Complete o jogo sem abrir o baú.",
         "tip": "Faça em Assistido quando já souber a rota e o uso do inventário.",
@@ -6527,7 +6639,8 @@ const sampleGames = [
       },
       {
         "id": "re3r_need_these_latér",
-        "name": "Pode ser útil mais tarde",
+        "name": "I Might Need These Later!",
+        "name_pt": "Pode ser útil mais tarde",
         "type": "Prata",
         "description": "Complete o jogo usando 1 ou menos itens de cura.",
         "tip": "Recovery Coins da loja ajudam muito e não invalidam a conquista.",
@@ -6535,7 +6648,8 @@ const sampleGames = [
       },
       {
         "id": "re3r_sprinter",
-        "name": "Campeão de corrida",
+        "name": "Sprinter",
+        "name_pt": "Campeão de corrida",
         "type": "Ouro",
         "description": "Conclua o jogo em menos de 2 horas.",
         "tip": "Sai junto da rota de S rank quando a execução estiver limpa.",
@@ -30691,7 +30805,8 @@ const localizedChecklistGuideSlugs = new Set([
   'nioh-2',
   'nioh-3',
   'resident-evil',
-  'resident-evil-2-remake'
+  'resident-evil-2-remake',
+  'resident-evil-3-remake'
 ]);
 
 for (const game of sampleGames) {
