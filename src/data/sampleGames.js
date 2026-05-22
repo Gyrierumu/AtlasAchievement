@@ -11055,7 +11055,7 @@ const sampleGames = [
         "name": "The Florist",
         "name_pt": "A Florista",
         "type": "Bronze",
-        "description": "Colete uma flor de cada um dos nove reinos.",
+        "description": "Colete uma flor em cada um dos nove reinos.",
         "tip": "Colete uma flor em cada reino; deixe para o pós-jogo se quiser limpar tudo com acesso completo.",
         "is_spoiler": false
       },
@@ -11145,7 +11145,7 @@ const sampleGames = [
         "name": "Backyard Brawl",
         "name_pt": "Briga no Quintal",
         "type": "Bronze",
-        "description": "Enfrente a valquíria misteriosa.",
+        "description": "Enfrente a Valquíria misteriosa.",
         "tip": "Troféu automático de história em encontro de chefe relevante.",
         "is_spoiler": true
       },

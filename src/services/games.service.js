@@ -11,7 +11,7 @@ const PUBLIC_EDITORIAL_STATUSES = new Set(['review', 'published']);
 const COVERAGE_LEVELS = new Set(['partial', 'strong', 'complete']);
 const VERIFICATION_STATUSES = new Set(['unverified', 'review', 'verified']);
 const EDITORIAL_REVIEW_STATUSES = new Set(Object.keys(editorialModel.EDITORIAL_TRUST_STATUSES || {}));
-const LOCALIZED_TROPHY_SOURCE_SLUGS = new Set(['astro-bot', 'astros-playroom', 'god-of-war', 'hades-ii', 'nioh-2', 'nioh-3', 'resident-evil-requiem', 'the-last-of-us-part-i', 'the-last-of-us-part-ii', 'subnautica']);
+const LOCALIZED_TROPHY_SOURCE_SLUGS = new Set(['astro-bot', 'astros-playroom', 'god-of-war', 'god-of-war-ragnarok', 'hades-ii', 'nioh-2', 'nioh-3', 'resident-evil-requiem', 'the-last-of-us-part-i', 'the-last-of-us-part-ii', 'subnautica']);
 const CATALOG_IMAGE_BY_SLUG = {
   'the-last-of-us-part-ii': 'https://cdn.cloudflare.steamstatic.com/steam/apps/2531310/header.jpg'
 };
@@ -260,6 +260,7 @@ function normalizeGame(row, roadmapRows, trophyRows) {
     'astros-playroom',
     'nioh-2',
     'nioh-3',
+    'god-of-war-ragnarok',
     'resident-evil-requiem',
     'saros',
     'the-last-of-us-part-i',
@@ -272,7 +273,8 @@ function normalizeGame(row, roadmapRows, trophyRows) {
     : Boolean(item?.is_missable);
   const missableCount = trophyRows.filter(item => isCanonicalMissableTrophy(item) && !isPlatinumTrophy(item)).length;
   const spoilerCount = trophyRows.filter(item => item.is_spoiler).length;
-  const useSeedRoadmap = ['god-of-war', 'resident-evil-requiem'].includes(normalizedSlug) && Array.isArray(seedGame?.roadmap);
+  const useSeedRoadmap = ['god-of-war', 'god-of-war-ragnarok', 'resident-evil-requiem'].includes(normalizedSlug) && Array.isArray(seedGame?.roadmap);
+  const explicitOfflineBaseSlugs = ['elden-ring', 'astro-bot', 'astros-playroom', 'god-of-war', 'god-of-war-ragnarok', 'nioh-2', 'nioh-3', 'resident-evil-requiem', 'saros', 'the-last-of-us-part-i', 'the-last-of-us-part-ii', 'subnautica'];
 
   return {
     id: row.id,
@@ -313,14 +315,14 @@ function normalizeGame(row, roadmapRows, trophyRows) {
     chapterSelect: ['the-last-of-us-part-i', 'the-last-of-us-part-ii'].includes(normalizedSlug) ? true : (['nioh-3', 'saros', 'subnautica'].includes(normalizedSlug) ? false : undefined),
     missionReplay: normalizedSlug === 'nioh-3' ? true : undefined,
     openWorldCleanup: normalizedSlug === 'subnautica' ? true : undefined,
-    onlineRequired: ['elden-ring', 'astro-bot', 'astros-playroom', 'god-of-war', 'nioh-2', 'nioh-3', 'resident-evil-requiem', 'saros', 'the-last-of-us-part-i', 'the-last-of-us-part-ii', 'subnautica'].includes(normalizedSlug) ? false : undefined,
-    coopRequired: ['elden-ring', 'astro-bot', 'astros-playroom', 'god-of-war', 'nioh-2', 'nioh-3', 'resident-evil-requiem', 'saros', 'the-last-of-us-part-i', 'the-last-of-us-part-ii', 'subnautica'].includes(normalizedSlug) ? false : undefined,
-    dlcRequired: ['elden-ring', 'astro-bot', 'astros-playroom', 'god-of-war', 'nioh-2', 'nioh-3', 'resident-evil-requiem', 'saros', 'the-last-of-us-part-i', 'the-last-of-us-part-ii', 'subnautica'].includes(normalizedSlug) ? false : undefined,
+    onlineRequired: explicitOfflineBaseSlugs.includes(normalizedSlug) ? false : undefined,
+    coopRequired: explicitOfflineBaseSlugs.includes(normalizedSlug) ? false : undefined,
+    dlcRequired: explicitOfflineBaseSlugs.includes(normalizedSlug) ? false : undefined,
     dlc_status: normalizedSlug === 'elden-ring' ? 'out_of_base_scope' : undefined,
     dlcGuideStatus: normalizedSlug === 'elden-ring' ? 'pending' : undefined,
     extraContentStatus: normalizedSlug === 'elden-ring' ? 'pending' : undefined,
-    newGamePlusRequired: normalizedSlug === 'the-last-of-us-part-ii' ? true : (normalizedSlug === 'the-last-of-us-part-i' ? false : undefined),
-    difficultyTrophiesRequired: ['the-last-of-us-part-i', 'the-last-of-us-part-ii'].includes(normalizedSlug) ? false : undefined,
+    newGamePlusRequired: normalizedSlug === 'the-last-of-us-part-ii' ? true : (['god-of-war-ragnarok', 'the-last-of-us-part-i'].includes(normalizedSlug) ? false : undefined),
+    difficultyTrophiesRequired: ['god-of-war-ragnarok', 'the-last-of-us-part-i', 'the-last-of-us-part-ii'].includes(normalizedSlug) ? false : undefined,
     roadmap: (useSeedRoadmap
       ? seedGame.roadmap
       : roadmapRows.map(item => deserializeRoadmapStep(item.content)))
@@ -328,7 +330,7 @@ function normalizeGame(row, roadmapRows, trophyRows) {
     trophies: trophyRows.map(item => {
       const isMissable = isCanonicalMissableTrophy(item) && !isPlatinumTrophy(item);
       const seedTrophy = LOCALIZED_TROPHY_SOURCE_SLUGS.has(normalizedSlug) ? getSeedTrophy(normalizedSlug, item.trophy_code) : null;
-      const useSeedEditorialTrophy = ['god-of-war', 'resident-evil-requiem'].includes(normalizedSlug) && seedTrophy;
+      const useSeedEditorialTrophy = ['god-of-war', 'god-of-war-ragnarok', 'resident-evil-requiem'].includes(normalizedSlug) && seedTrophy;
       const description = useSeedEditorialTrophy ? (seedTrophy.description || item.description || '') : (item.description || '');
       const tip = useSeedEditorialTrophy ? (seedTrophy.tip || item.tip || '') : item.tip;
       const originalName = useSeedEditorialTrophy ? (seedTrophy.name || item.name || '') : (item.name || '');

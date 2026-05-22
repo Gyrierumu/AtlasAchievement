@@ -1422,10 +1422,11 @@ async function validateGuide(slug = '') {
       assert.strictEqual(apiGame.missable_count, apiMissables.length, 'API de God of War Ragnarök deve alinhar missable_count com checklist');
       assert.strictEqual(apiGame.missable_count, 0, 'API de God of War Ragnarök deve manter missable_count 0');
       assert(!apiMissables.some(trophy => trophy.type === 'Platina'), 'API de God of War Ragnarök nao deve contar platina como perdivel');
-      assert.strictEqual(Boolean(apiGame.onlineRequired || apiGame.online_required), false, 'API de God of War Ragnarök deve manter online 0');
-      assert.strictEqual(Boolean(apiGame.coopRequired || apiGame.coop_required), false, 'API de God of War Ragnarök deve manter coop 0');
-      assert.strictEqual(Boolean(apiGame.dlcRequired || apiGame.dlc_required), false, 'API de God of War Ragnarök deve manter DLC nao obrigatoria');
-      assert.strictEqual(Boolean(apiGame.difficultyTrophiesRequired || apiGame.difficulty_trophies_required), false, 'API de God of War Ragnarök nao deve exigir dificuldade obrigatoria');
+      assert.strictEqual(apiGame.onlineRequired, false, 'API de God of War Ragnarök deve manter online 0 explícito');
+      assert.strictEqual(apiGame.coopRequired, false, 'API de God of War Ragnarök deve manter coop 0 explícito');
+      assert.strictEqual(apiGame.dlcRequired, false, 'API de God of War Ragnarök deve manter DLC nao obrigatoria explícita');
+      assert.strictEqual(apiGame.newGamePlusRequired, false, 'API de God of War Ragnarök nao deve exigir New Game+');
+      assert.strictEqual(apiGame.difficultyTrophiesRequired, false, 'API de God of War Ragnarök nao deve exigir dificuldade obrigatoria');
       assert(apiGame.dlc_scope.includes('Valhalla fora da platina base'), 'God of War Ragnarök deve padronizar Valhalla fora da platina base');
       assert(!/Valhalla[\s\S]{0,80}(obrigat|necess)/i.test(apiGame.dlc_scope), 'Valhalla nao deve aparecer como requisito obrigatorio');
       assert.strictEqual(apiGame.roadmap.length, 6, 'API de God of War Ragnarök deve retornar roadmap de 6 etapas');

@@ -404,6 +404,13 @@
         tone: 'atlas-meta-signal--complete'
       };
     }
+    if (/valhalla fora da platina base/.test(normalized)) {
+      return {
+        value: 'Valhalla fora da platina base',
+        detail: dlcText,
+        tone: 'atlas-meta-signal--complete'
+      };
+    }
     if (game?.dlc_status === 'out_of_base_scope' || /dlc fora da platina base|shadow of the erdtree/.test(normalized)) {
       return {
         value: 'DLC fora da platina base',
@@ -768,6 +775,8 @@
     if (!inputs.dlc || dlcReview) dlcValue = 'Informação em revisão';
     else if (/extras fora da platina base/.test(normalizedDlc)) {
       dlcValue = 'Extras fora da platina base';
+    } else if (/valhalla fora da platina base/.test(normalizedDlc)) {
+      dlcValue = 'Valhalla fora da platina base';
     } else if (/dlc fora da platina base/.test(normalizedDlc)) {
       dlcValue = 'DLC fora da platina base';
     } else if (/left behind/.test(normalizedDlc) && /lista base|part i|29 trofeus|integra o pacote|incluido no part i|incluso na lista base/.test(normalizedDlc)) {
