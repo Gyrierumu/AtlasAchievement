@@ -10933,12 +10933,12 @@ const sampleGames = [
     "runs_summary": "Uma campanha principal com cleanup livre no pós-jogo. Nada da lista base é perdível.",
     "missable_summary": "Não há troféus perdíveis definitivos na lista base. A platina pode ser finalizada com exploração pós-história e cleanup por reino.",
     "online_summary": "Não há exigência online para a platina. A lista base é totalmente single-player e não exige servidores, PS+ ou troféus online.",
-    "grind_summary": "O peso está em favores, coletáveis, completude dos reinos, equipamentos, Muspelheim, The Crater, Berserkers, Gná e chefes opcionais.",
+    "grind_summary": "O peso está em favores, coletáveis, completude dos reinos, equipamentos, Muspelheim, Cratera/Vanaheim, Berserkers, Gná e chefes opcionais.",
     "dlc_scope": "Valhalla fora da platina base. A platina base não exige Valhalla, New Game+, God of War (2018) ou conteúdo extra separado.",
     "difficulty_reason": "A dificuldade vem mais dos chefes opcionais, Berserkers, Gná, Muspelheim e completude dos reinos do que de múltiplas runs ou troféus de dificuldade.",
-    "time_reason": "A faixa de 40-60 horas considera história, favores, coletáveis, chefes opcionais, upgrades, Muspelheim, The Crater e cleanup pós-história.",
+    "time_reason": "A faixa de 40-60 horas considera história, favores, coletáveis, chefes opcionais, upgrades, Muspelheim, Cratera/Vanaheim e cleanup pós-história.",
     "first_run_advice": "Jogue a história em uma dificuldade confortável, explore naturalmente e deixe a limpeza pesada dos reinos para depois da campanha.",
-    "cleanup_advice": "Após a história, limpe reinos por região: favores, coletáveis, equipamentos, Muspelheim, The Crater, Berserkers, Gná e chefes opcionais.",
+    "cleanup_advice": "Após a história, limpe reinos por região: favores, coletáveis, equipamentos, Muspelheim, Cratera/Vanaheim, Berserkers, Gná e chefes opcionais.",
     "before_you_start": "A platina base não tem online, coop, dificuldade obrigatória ou perdíveis definitivos. Valhalla e New Game+ ficam fora da rota principal da lista base.",
     "best_for": "Ideal para quem quer uma platina narrativa, robusta e com bastante exploração, mas sem risco de perder troféus.",
     "avoid_if": "Evite se você não gosta de coletáveis, limpeza de mapa, favores e chefes opcionais exigentes.",
@@ -11020,7 +11020,7 @@ const sampleGames = [
           "Derrote Berserkers no pós-jogo ou quando sua build estiver forte.",
           "Deixe Gná para depois de dominar esquivas, runas, escudo e padrões de ataque.",
           "Finalize upgrades importantes antes dos combates mais difíceis.",
-          "Ajuste armaduras, encantamentos, Relics e habilidades conforme cada luta."
+          "Ajuste armaduras, encantamentos, relíquias e habilidades conforme cada luta."
         ],
         "warning": "Gná e alguns Berserkers são os maiores picos de dificuldade da platina.",
         "result": "Chefes opcionais derrotados e build final consolidada."
@@ -11031,7 +11031,7 @@ const sampleGames = [
         "objective": "Conferir todos os requisitos restantes sem misturar Valhalla ou extras fora da lista base.",
         "actions": [
           "Revise a checklist completa.",
-          "Confirme coletáveis, favores, baús, Relics, Hilts, upgrades e bosses restantes.",
+          "Confirme coletáveis, favores, baús, relíquias, punhos de espada, upgrades e bosses restantes.",
           "Termine objetivos pendentes por reino.",
           "Confirme que não há online, coop, dificuldade obrigatória ou perdíveis definitivos.",
           "Não conte Valhalla como requisito da platina base."
@@ -11053,7 +11053,7 @@ const sampleGames = [
       {
         "id": "gowr_the_florist",
         "name": "The Florist",
-        "name_pt": "Florista",
+        "name_pt": "A Florista",
         "type": "Bronze",
         "description": "Colete uma flor de cada um dos nove reinos.",
         "tip": "Colete uma flor em cada reino; deixe para o pós-jogo se quiser limpar tudo com acesso completo.",
@@ -11062,7 +11062,7 @@ const sampleGames = [
       {
         "id": "gowr_the_librarian",
         "name": "The Librarian",
-        "name_pt": "Bibliotecário",
+        "name_pt": "O Bibliotecário",
         "type": "Bronze",
         "description": "Colete todos os livros.",
         "tip": "Encontre todos os livros ligados aos poemas de Kvasir marcados como coletáveis.",
@@ -11071,7 +11071,7 @@ const sampleGames = [
       {
         "id": "gowr_the_curator",
         "name": "The Curator",
-        "name_pt": "Curador",
+        "name_pt": "O Curador",
         "type": "Bronze",
         "description": "Colete todos os artefatos.",
         "tip": "Colete todos os artefatos por reino usando os rastreadores de região.",
@@ -11089,10 +11089,10 @@ const sampleGames = [
       {
         "id": "gowr_spit_shine",
         "name": "Spit Shine",
-        "name_pt": "Brilho Impecável",
+        "name_pt": "Polimento",
         "type": "Bronze",
-        "description": "Melhore uma peça de armadura.",
-        "tip": "Melhore qualquer peça de armadura em uma loja dos ferreiros.",
+        "description": "Aprimore uma peça de armadura.",
+        "tip": "Aprimore qualquer peça de armadura em uma loja dos ferreiros.",
         "is_spoiler": false
       },
       {
@@ -11109,14 +11109,14 @@ const sampleGames = [
         "name": "Full Belly",
         "name_pt": "Barriga Cheia",
         "type": "Prata",
-        "description": "Obtenha todas as maçãs de Idunn e chifres de hidromel sangrento.",
+        "description": "Obtenha todas as Maçãs de Iðunn e Chifres de Hidromel Sangrento.",
         "tip": "Colete baús Nornir suficientes para maximizar vida e fúria; acompanhe por reino durante campanha e cleanup.",
         "is_spoiler": false
       },
       {
         "id": "gowr_knock_off_the_rust",
         "name": "Knock off the Rust",
-        "name_pt": "Tirando a Ferrugem",
+        "name_pt": "Tire a Ferrugem",
         "type": "Bronze",
         "description": "Compre uma habilidade.",
         "tip": "Compre qualquer habilidade em uma árvore de habilidades.",
@@ -11125,7 +11125,7 @@ const sampleGames = [
       {
         "id": "gowr_a_grizzly_encounter",
         "name": "A Grizzly Encounter",
-        "name_pt": "Um Encontro Feroz",
+        "name_pt": "Um Encontro com o Urso",
         "type": "Bronze",
         "description": "Enfrente o urso.",
         "tip": "Troféu automático de história no primeiro grande combate.",
@@ -11152,9 +11152,9 @@ const sampleGames = [
       {
         "id": "gowr_root_of_the_problem",
         "name": "Root of the Problem",
-        "name_pt": "Raiz do Problema",
+        "name_pt": "A Raiz do Problema",
         "type": "Bronze",
-        "description": "Enfrente Níðhögg.",
+        "description": "Derrote Níðhögg.",
         "tip": "Troféu automático de história em chefe avançado.",
         "is_spoiler": true
       },
@@ -11163,8 +11163,8 @@ const sampleGames = [
         "name": "The Cauldron",
         "name_pt": "O Caldeirão",
         "type": "Bronze",
-        "description": "Destrua o caldeirão de Gryla.",
-        "tip": "Troféu automático de história durante o arco de Gryla.",
+        "description": "Destrua o caldeirão de Grýla.",
+        "tip": "Troféu automático de história durante o arco de Grýla.",
         "is_spoiler": true
       },
       {
@@ -11179,7 +11179,7 @@ const sampleGames = [
       {
         "id": "gowr_comeuppance",
         "name": "Comeuppance",
-        "name_pt": "Punição Merecida",
+        "name_pt": "Acerto de Contas",
         "type": "Bronze",
         "description": "Enfrente Heimdall.",
         "tip": "Troféu automático de história em chefe de reta avançada.",
@@ -11208,8 +11208,8 @@ const sampleGames = [
         "name": "Collector",
         "name_pt": "Colecionador",
         "type": "Prata",
-        "description": "Obtenha todas as relíquias e empunhaduras de espada.",
-        "tip": "Colete e crie todas as relíquias e empunhaduras de espada; algumas dependem de páginas perdidas e chefes opcionais.",
+        "description": "Obtenha todas as relíquias e punhos de espada.",
+        "tip": "Colete e crie todas as relíquias e punhos de espada; algumas dependem de páginas perdidas e chefes opcionais.",
         "is_spoiler": false
       },
       {
@@ -11218,7 +11218,7 @@ const sampleGames = [
         "name_pt": "Matador de Dragões",
         "type": "Prata",
         "description": "Crie o conjunto de armadura Escama de Dragão.",
-        "tip": "Complete caçadas e atividades de The Crater para obter materiais e criar o conjunto Escama de Dragão.",
+        "tip": "Complete caçadas e atividades da Cratera em Vanaheim para obter materiais e criar o conjunto Escama de Dragão.",
         "is_spoiler": false
       },
       {
@@ -11233,9 +11233,9 @@ const sampleGames = [
       {
         "id": "gowr_funeral_for_a_friend",
         "name": "Funeral for a Friend",
-        "name_pt": "Funeral de um Amigo",
+        "name_pt": "Funeral para um Amigo",
         "type": "Prata",
-        "description": "Compareça ao funeral.",
+        "description": "Participe do funeral.",
         "tip": "Troféu de pós-jogo ligado a uma cena narrativa importante.",
         "is_spoiler": true
       },
@@ -11253,23 +11253,23 @@ const sampleGames = [
         "name": "New Friends",
         "name_pt": "Novos Amigos",
         "type": "Bronze",
-        "description": "Busque a orbe de Lunda.",
-        "tip": "Complete o favor de Lunda e recupere a orbe.",
+        "description": "Recupere a orbe de Lúnda.",
+        "tip": "Complete o favor de Lúnda e recupere a orbe.",
         "is_spoiler": false
       },
       {
         "id": "gowr_full_gufa",
         "name": "Full Gufa",
-        "name_pt": "Gufa Completo",
+        "name_pt": "Gufa Completa",
         "type": "Prata",
-        "description": "Liberte os Hafgufas.",
-        "tip": "Complete os favores dos Hafgufas em Alfheim.",
+        "description": "Liberte as Hafgufas.",
+        "tip": "Complete os favores das Hafgufas em Alfheim.",
         "is_spoiler": false
       },
       {
         "id": "gowr_making_amends",
         "name": "Making Amends",
-        "name_pt": "Fazendo as Pazes",
+        "name_pt": "Reparando Erros",
         "type": "Prata",
         "description": "Liberte o Lyngbakr.",
         "tip": "Complete o favor O Peso das Correntes em Svartalfheim.",
@@ -11289,8 +11289,8 @@ const sampleGames = [
         "name": "Invasive Species",
         "name_pt": "Espécies Invasoras",
         "type": "Prata",
-        "description": "Complete todas as caçadas de The Crater.",
-        "tip": "Finalize todas as caçadas de The Crater em Vanaheim.",
+        "description": "Complete todas as caçadas da Cratera.",
+        "tip": "Finalize todas as caçadas da Cratera em Vanaheim.",
         "is_spoiler": false
       },
       {
@@ -11316,8 +11316,8 @@ const sampleGames = [
         "name": "Pure of Hart",
         "name_pt": "Coração Puro",
         "type": "Prata",
-        "description": "Devolva os cervos das Quatro Estações.",
-        "tip": "Encontre todos os cervos das Quatro Estações e conclua o favor.",
+        "description": "Devolva os cervos das quatro estações.",
+        "tip": "Encontre todos os cervos das quatro estações e conclua o favor.",
         "is_spoiler": false
       },
       {
@@ -11332,10 +11332,10 @@ const sampleGames = [
       {
         "id": "gowr_ready_for_commitment",
         "name": "Ready for Commitment",
-        "name_pt": "Pronto para Compromisso",
+        "name_pt": "Pronto para o Compromisso",
         "type": "Ouro",
-        "description": "Melhore completamente um conjunto de armadura.",
-        "tip": "Melhore as três peças de um mesmo conjunto de armadura até o nível máximo.",
+        "description": "Aprimore completamente um conjunto de armadura.",
+        "tip": "Aprimore as três peças de um mesmo conjunto de armadura até o nível máximo.",
         "is_spoiler": false
       },
       {
@@ -11361,7 +11361,7 @@ const sampleGames = [
         "name": "The True Queen",
         "name_pt": "A Verdadeira Rainha",
         "type": "Ouro",
-        "description": "Enfrente Gná.",
+        "description": "Derrote Gná.",
         "tip": "Derrote Gná no pós-jogo. É troféu de chefe e dificuldade alta, um dos encontros opcionais mais exigentes da platina.",
         "is_spoiler": true
       }

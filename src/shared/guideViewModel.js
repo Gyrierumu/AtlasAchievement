@@ -1100,7 +1100,7 @@
       const readRoadmapFirst = shouldReadRoadmapFirst(game, trophies, Array.isArray(game.roadmap) ? game.roadmap : []);
       const hasMissableRoadmapRisk = Boolean(missablePending);
       const firstRunAdvice = firstGuideText(game?.first_run_advice, game?.quickDecision?.firstAction);
-      if (['god-of-war', 'god-of-war-2018'].includes(String(game?.slug || '').trim().toLowerCase())) {
+      if (['god-of-war', 'god-of-war-2018', 'god-of-war-ragnarok'].includes(String(game?.slug || '').trim().toLowerCase())) {
         return {
           kind: 'roadmap',
           title: 'Avance a história em uma dificuldade confortável',
@@ -1676,7 +1676,7 @@
           id: 'gowr_collector',
           name: trophyById.get('gowr_collector')?.name || 'Collector',
           type: 'Coletável / Relic / Checklist',
-          text: 'As Relics e Sword Hilts exigem atenção a chefes, exploração e recompensas específicas. Use checklist para não deixar peças soltas no cleanup.',
+          text: 'As relíquias e punhos de espada exigem atenção a chefes, exploração e recompensas específicas. Use checklist para não deixar peças soltas no cleanup.',
           tags: [attentionTag('Coletável / Relic / Checklist', 'partial')],
           score: 96
         },
@@ -1684,7 +1684,7 @@
           id: 'gowr_the_florist',
           name: trophyById.get('gowr_the_florist')?.name || 'The Florist',
           type: 'Coletável / Exploração / Cleanup',
-          text: 'Coletáveis são melhor resolvidos por reino. Organize artefatos, livros, flores, lore e corvos de Odin por região para evitar revisitas desnecessárias.',
+          text: 'Coletáveis são melhor resolvidos por reino. Organize baús, artefatos, livros, flores, lore e corvos de Odin por região para evitar revisitas desnecessárias.',
           tags: [attentionTag('Coletável / Exploração / Cleanup', 'partial')],
           score: 95
         }
@@ -2592,7 +2592,7 @@
         },
         {
           question: 'O que mais dá trabalho na platina?',
-          answer: 'Os maiores pontos de atenção são Berserkers, Gná, Muspelheim Trials, The Crater, coletáveis dos reinos, corvos de Odin, baús Nornir, Relics, Hilts, favores e upgrades.'
+          answer: 'Os maiores pontos de atenção são Berserkers, Gná, desafios de Muspelheim, Crater/Vanaheim, coletáveis dos reinos, corvos de Odin, baús Nornir, relíquias, punhos de espada, favores e upgrades.'
         },
         {
           question: 'Valhalla é necessário para a platina?',

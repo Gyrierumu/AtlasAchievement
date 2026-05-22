@@ -6872,7 +6872,7 @@ async function assertSeedData({ all, get }, sampleGames) {
   assert.strictEqual(godOfWarRagnarokSample.trophies.filter(trophy => trophy.name_pt && trophy.name_pt.trim()).length, 36, 'God of War Ragnarök deve ter titulo PT-BR nos 36 trofeus');
   assert(godOfWarRagnarokSample.trophies.every(trophy => /^[A-Za-z0-9_:-]{1,60}$/.test(trophy.id)), 'God of War Ragnarök deve manter ids internos validos');
   assert(!godOfWarRagnarokSample.trophies.some(trophy => /Valhalla|No Kratos|Scry|Forum|Fleeting Echoes/i.test(`${trophy.name} ${trophy.description}`)), 'God of War Ragnarök nao deve misturar trofeus de Valhalla na checklist base');
-  ['Collect all Trophies', 'Collect one flower', 'Collect all of the Books', 'Collect all of the Artifacts', 'Equip an Enchantment', 'Upgrade one piece of armor', 'Remember the Spartan teachings', 'Purchase a Skill', 'Descrição em revisão editorial.', '[object Object]', 'undefined'].forEach(text => {
+  ['Collect all Trophies', 'Collect one flower', 'Collect all of the Books', 'Collect all of the Artifacts', 'Equip an Enchantment', 'Upgrade one piece of armor', 'Remember the Spartan teachings', 'Purchase a Skill', 'Battle Gná', 'Complete all of the Crater Hunts', 'Complete the Trials of Muspelheim', 'Battle Níðhögg', 'Descrição em revisão editorial.', '[object Object]', 'undefined'].forEach(text => {
     assert(!JSON.stringify(godOfWarRagnarokSample).includes(text), `God of War Ragnarök seed nao deve conter texto fraco/ingles cru: ${text}`);
   });
   const godOfWarRagnarokTypeCounts = godOfWarRagnarokSample.trophies.reduce((counts, trophy) => {
@@ -6906,12 +6906,14 @@ async function assertSeedData({ all, get }, sampleGames) {
 
   const godOfWarRagnarokRoadmapRows = await all('SELECT content FROM roadmaps WHERE game_id = (SELECT id FROM games WHERE slug = ?) ORDER BY step_order', ['god-of-war-ragnarok']);
   assert.strictEqual(godOfWarRagnarokRoadmapRows.length, 6, 'seed deve inserir 6 etapas de roadmap para God of War Ragnarök');
+  assert(godOfWarRagnarokRoadmapRows[0]?.content.includes('Avance a história em uma dificuldade confortável'), 'seed deve persistir primeiro passo especifico de God of War Ragnarök');
   assert(godOfWarRagnarokRoadmapRows.some(row => row.content.includes('Valhalla') && row.content.includes('fora')), 'seed deve persistir roadmap sem Valhalla para God of War Ragnarök');
-  assert(!godOfWarRagnarokRoadmapRows.some(row => /Etapa 1:|free-roam|free roam|Odin's Ravens|Nornir Chests|Trials of Muspelheim|\[object Object\]|title:|focus:|objective:|actions:/i.test(row.content)), 'seed nao deve persistir roadmap cru/antigo de God of War Ragnarök');
+  assert(!godOfWarRagnarokRoadmapRows.some(row => /Comece pelo roadmap|Avance pela campanha|Prossiga pela rota planejada|Etapa 1:|free-roam|free roam|Artefacts|Odin['’]s Ravens|Nornir Chests|Legendary Chests|Trials of Muspelheim|\[object Object\]|title:|focus:|objective:|actions:/i.test(row.content)), 'seed nao deve persistir roadmap cru/antigo de God of War Ragnarök');
 
-  const godOfWarRagnarokTrophyRows = await all('SELECT trophy_code, name, type, is_missable, is_spoiler FROM trophies WHERE game_id = (SELECT id FROM games WHERE slug = ?) ORDER BY id', ['god-of-war-ragnarok']);
+  const godOfWarRagnarokTrophyRows = await all('SELECT trophy_code, name, name_pt, type, description, is_missable, is_spoiler FROM trophies WHERE game_id = (SELECT id FROM games WHERE slug = ?) ORDER BY id', ['god-of-war-ragnarok']);
   assert.strictEqual(godOfWarRagnarokTrophyRows.length, 36, 'seed deve inserir checklist base completo de God of War Ragnarök');
   assert.strictEqual(new Set(godOfWarRagnarokTrophyRows.map(trophy => trophy.trophy_code)).size, 36, 'seed nao deve inserir trophy_code duplicado em God of War Ragnarök');
+  assert.strictEqual(godOfWarRagnarokTrophyRows.filter(trophy => trophy.name_pt && trophy.name_pt.trim()).length, 36, 'seed deve persistir nome PT-BR nos 36 trofeus de God of War Ragnarök');
   assert.strictEqual(godOfWarRagnarokTrophyRows.filter(trophy => trophy.is_missable).length, 0, 'seed nao deve marcar perdiveis em God of War Ragnarök');
   assert.strictEqual(godOfWarRagnarokTrophyRows.filter(trophy => trophy.is_spoiler).length, 15, 'seed deve persistir spoiler_count coerente em God of War Ragnarök');
   assert(!godOfWarRagnarokTrophyRows.some(trophy => /Valhalla|No Kratos|Scry|Forum|Fleeting Echoes/i.test(`${trophy.trophy_code} ${trophy.name}`)), 'seed nao deve persistir trofeus de Valhalla em God of War Ragnarök');

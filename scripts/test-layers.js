@@ -1431,11 +1431,13 @@ async function validateGuide(slug = '') {
       assert.strictEqual(apiGame.roadmap.length, 6, 'API de God of War Ragnarök deve retornar roadmap de 6 etapas');
       assert(apiGame.roadmap.every(step => Array.isArray(step.actions)), 'API de God of War Ragnarök deve retornar actions reais no roadmap');
       assert.strictEqual(apiGame.roadmap[0]?.title, 'Avance a história em uma dificuldade confortável', 'API de God of War Ragnarök deve retornar primeiro passo especifico');
+      assert(html.includes('<strong>Avance a história em uma dificuldade confortável</strong>'), 'SSR de God of War Ragnarök deve corrigir o primeiro passo recomendado');
+      assert(!guideScopedHtml.includes('Comece pelo roadmap'), 'SSR de God of War Ragnarök nao deve renderizar primeiro passo generico');
       ['Avance a história em uma dificuldade confortável', 'Explore reinos e abra atividades secundárias', 'Complete favores e coletáveis por reino', 'Trabalhe Muspelheim, Crater e objetivos longos', 'Derrote Berserkers, Gná e finalize upgrades', 'Faça o cleanup final da platina base'].forEach(text => {
         assert(apiRoadmapText.includes(text), `API roadmap de God of War Ragnarök deve conter etapa nova: ${text}`);
         assert(roadmapPanelHtml.includes(text), `Roadmap SSR de God of War Ragnarök deve conter etapa nova: ${text}`);
       });
-      ['[object Object]', 'title:', 'focus:', 'objective:', 'actions:', 'Comece pela rota segura', 'Continue a rota principal', 'Passo 2', 'em revisão editorial', 'dados atuais do guia', 'Etapa 1:', "Odin's Ravens", 'Nornir Chests', 'Trials of Muspelheim', 'free-roam', 'free roam'].forEach(text => {
+      ['[object Object]', 'title:', 'focus:', 'objective:', 'actions:', 'Comece pelo roadmap', 'Comece pela rota segura', 'Continue a rota principal', 'Avance pela campanha', 'Prossiga pela rota planejada', 'Passo 2', 'em revisão editorial', 'dados atuais do guia', 'Etapa 1:', 'Artefacts', "Odin's Ravens", 'Odin’s Ravens', 'Nornir Chests', 'Legendary Chests', 'Trials of Muspelheim', 'free-roam', 'free roam'].forEach(text => {
         assert(!apiRoadmapText.includes(text), `API roadmap de God of War Ragnarök nao deve conter texto cru/antigo: ${text}`);
         assert(!roadmapPanelHtml.includes(text), `Roadmap SSR de God of War Ragnarök nao deve conter texto cru/antigo: ${text}`);
       });
@@ -1450,9 +1452,9 @@ async function validateGuide(slug = '') {
       assert(html.includes('<h4>O Urso e o Lobo</h4>') && html.includes('NOME ORIGINAL:</span>The Bear and the Wolf'), 'Checklist de God of War Ragnarök deve renderizar O Urso e o Lobo com nome original');
       assert(html.includes('<h4>A Verdadeira Rainha</h4>') && html.includes('NOME ORIGINAL:</span>The True Queen'), 'Checklist de God of War Ragnarök deve renderizar A Verdadeira Rainha com nome original');
       assert(html.includes('<h4>Erro Grave</h4>') && html.includes('NOME ORIGINAL:</span>Grave Mistake'), 'Checklist de God of War Ragnarök deve renderizar Erro Grave com nome original');
-      assert((html.match(/NOME ORIGINAL:<\/span>/g) || []).length >= 2, 'Checklist de God of War Ragnarök deve exibir NOME ORIGINAL nos trofeus renderizados no SSR');
+      assert((html.match(/NOME ORIGINAL:<\/span>/g) || []).length >= 36, 'Checklist de God of War Ragnarök deve exibir NOME ORIGINAL nos 36 trofeus renderizados no SSR');
       assert(!html.includes('<h4>The Bear and the Wolf</h4>'), 'Checklist de God of War Ragnarök nao deve usar ingles como titulo principal quando ha PT-BR');
-      ['Collect all Trophies', 'Collect one flower', 'Collect all of the Books', 'Collect all of the Artifacts', 'Equip an Enchantment', 'Upgrade one piece of armor', 'Remember the Spartan teachings', 'Purchase a Skill', 'Descrição em revisão editorial.'].forEach(text => {
+      ['Collect all Trophies', 'Collect one flower', 'Collect all of the Books', 'Collect all of the Artifacts', 'Equip an Enchantment', 'Upgrade one piece of armor', 'Remember the Spartan teachings', 'Purchase a Skill', 'Battle Gná', 'Complete all of the Crater Hunts', 'Complete the Trials of Muspelheim', 'Battle Níðhögg', 'Descrição em revisão editorial.'].forEach(text => {
         assert(!html.includes(text), `HTML publico de God of War Ragnarök nao deve conter descrição em ingles ou placeholder: ${text}`);
       });
       assert(html.includes('God of War Ragnarök'), 'God of War Ragnarök deve renderizar nome no SSR');
@@ -1470,6 +1472,8 @@ async function validateGuide(slug = '') {
         'segundo os dados atuais do guia',
         'o guia nao aponta',
         'o guia não aponta',
+        'Comece pelo roadmap',
+        'Este guia ainda está passando por revisão editorial',
         'lista atual',
         'quando validado',
         'em revisao',
