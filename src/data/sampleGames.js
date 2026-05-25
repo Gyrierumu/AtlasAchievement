@@ -6364,7 +6364,7 @@ const sampleGames = [
         "name_pt": "Até mais, Raccoon",
         "type": "Platina",
         "description": "Desbloqueie todos os troféus.",
-        "tip": "A platina gira em torno de collectibles, dificuldades altas, rank S e algumas runs especiais bem curtas.",
+        "tip": "A platina gira em torno de coletáveis, dificuldades altas, rank S e algumas runs especiais bem curtas.",
         "is_spoiler": false
       },
       {
@@ -6562,7 +6562,7 @@ const sampleGames = [
         "name_pt": "Rato de biblioteca",
         "type": "Prata",
         "description": "Leia todos os documentos.",
-        "tip": "São 56 arquivos. Combine com a run de collectibles.",
+        "tip": "São 56 arquivos. Combine com a run de coletáveis.",
         "is_spoiler": false
       },
       {
@@ -6589,7 +6589,7 @@ const sampleGames = [
         "name_pt": "Chaveiro Mestre",
         "type": "Prata",
         "description": "Abra todos os cofres, armários, caixas fortes e trancas.",
-        "tip": "Feche isso na run de collectibles para não sobrar cleanup disperso.",
+        "tip": "Feche isso na run de coletáveis para não sobrar cleanup disperso.",
         "is_spoiler": false
       },
       {
@@ -6616,7 +6616,7 @@ const sampleGames = [
         "name_pt": "Conquistador",
         "type": "Prata",
         "description": "Conclua o jogo no modo “Pesadelo” ou num mais difícil.",
-        "tip": "O jogo já fica bem mais agressivo aqui; use shop items sem culpa.",
+        "tip": "O jogo já fica bem mais agressivo aqui; use itens da loja sem culpa.",
         "is_spoiler": false
       },
       {
@@ -6643,7 +6643,7 @@ const sampleGames = [
         "name_pt": "Pode ser útil mais tarde",
         "type": "Prata",
         "description": "Complete o jogo usando 1 ou menos itens de cura.",
-        "tip": "Recovery Coins da loja ajudam muito e não invalidam a conquista.",
+        "tip": "As Moedas de Recuperação da loja ajudam muito e não invalidam a conquista.",
         "is_spoiler": false
       },
       {
@@ -9495,32 +9495,33 @@ const sampleGames = [
     "time_max_hours": 35,
     "time_sort_hours": 35,
     "time_bucket": "medium",
-    "missable": "Nada da lista base é perdível: há free roam e cleanup por distritos após a campanha. Use o mapa para fechar crimes, bases, desafios, coletáveis, trajes, upgrades e side missions sem misturar DLC.",
-    "runs_summary": "Uma campanha principal com cleanup livre por distritos. Nada da lista base é perdível.",
-    "missable_summary": "Não há troféus perdíveis na lista base; todo cleanup pode ser feito no pós-campanha/free roam.",
+    "missable": "Nada da lista base é perdível: há pós-jogo com pendências finais por distritos após a campanha. Use o mapa para fechar crimes, bases, desafios, coletáveis, trajes, upgrades e missões secundárias sem misturar DLC.",
+    "runs_summary": "Uma campanha principal com pendências finais livres por distritos. Nada da lista base é perdível.",
+    "missable_summary": "Não há troféus perdíveis na lista base; todas as pendências podem ser feitas no pós-campanha.",
     "online_summary": "Não há exigência online para a platina.",
     "grind_summary": "O peso está em completar distritos, coletáveis, crimes, bases, desafios, trajes e upgrades.",
     "dlc_scope": "Guia focado na lista base da platina; The City That Never Sleeps deve ficar separado se o projeto suportar DLC.",
     "difficulty_reason": "A platina é acessível; o desafio maior está em completar atividades, desafios e 100% dos distritos.",
-    "time_reason": "A faixa de 25-35 horas considera história, atividades de mundo aberto, coletáveis, desafios e cleanup.",
-    "first_run_advice": "Jogue a história naturalmente e vá limpando atividades próximas sem se preocupar com perdíveis.",
+    "time_reason": "A faixa de 25-35 horas considera história, atividades de mundo aberto, coletáveis, desafios e limpeza final.",
+    "first_run_advice": "Jogue em uma dificuldade confortável, desbloqueie habilidades, gadgets, torres e atividades de distrito, coletando o que estiver no caminho. Deixe crimes, desafios, trajes e 100% dos distritos para a limpeza final quando o mapa estiver mais aberto.",
     "cleanup_advice": "Depois da campanha, use o mapa para fechar distritos, crimes restantes, desafios, bases, trajes e upgrades.",
-    "before_you_start": "Nada é perdível na lista base; aproveite a campanha e deixe o cleanup para depois.",
+    "before_you_start": "Nada é perdível na lista base; aproveite a campanha e deixe a limpeza final para depois.",
     "best_for": "Ideal para quem quer uma platina acessível de mundo aberto, com boa mobilidade, checklist claro e baixo risco de retrabalho.",
     "avoid_if": "Evite se você não gosta de limpar mapa, crimes repetidos, coletáveis e atividades de distrito.",
     "editorial_status": "published",
-    "coverage_level": "strong",
-    "is_verified": false,
-    "verification_status": "review",
-    "verification_note": "Guia forte com lista base, roadmap, imagens e flags adicionados em abril de 2026; aguardando revisão final manual.",
+    "coverage_level": "complete",
+    "is_verified": true,
+    "verification_status": "verified",
+    "verification_note": "Guia revisado editorialmente para a lista base de 51 troféus.",
     "image": "https://cdn.cloudflare.steamstatic.com/steam/apps/1817070/header.jpg",
     "cover_image": "https://cdn.cloudflare.steamstatic.com/steam/apps/1817070/library_600x900.jpg",
     "roadmap": [
-      "Etapa 1: jogue a campanha naturalmente, desbloqueando torres, trajes, gadgets, habilidades e atividades de mundo aberto sem se preocupar com troféus perdíveis.",
-      "Etapa 2: complete distritos, crimes de facção e atividades do mapa conforme aparecem, aproveitando o free roam para voltar depois da história.",
-      "Etapa 3: limpe bases, desafios do Taskmaster, landmarks, backpacks, research stations, Black Cat collectibles, pigeons e side missions.",
-      "Etapa 4: compre todos os trajes, habilidades e upgrades necessários usando tokens de atividades, deixando desafios mais exigentes para quando estiver confortável.",
-      "Etapa 5: faça o cleanup final de objetivos específicos, benchmarks, troféus de movimentação/combate e 100% dos distritos. DLC The City That Never Sleeps fica fora da platina base."
+      "Etapa 1: avance a campanha e abra a cidade antes do 100% dos distritos, desbloqueando torres, gadgets, habilidades e atividades.",
+      "Etapa 2: libere habilidades, gadgets e melhorias importantes antes de insistir nos desafios mais exigentes.",
+      "Etapa 3: trabalhe coletáveis e atividades por distrito, priorizando mochilas, marcos, pesquisas, Black Cat Stakeouts e pombos próximos.",
+      "Etapa 4: complete bases, crimes e desafios do Taskmaster com mais recursos liberados.",
+      "Etapa 5: finalize campanha, chefes e troféus específicos sem misturar DLC, New Game+ ou Ultimate com a lista base.",
+      "Etapa 6: faça a limpeza final da platina base, conferindo 100% dos distritos, trajes, upgrades, coletáveis e pendências restantes."
     ],
     "trophies": [
       {
@@ -9943,432 +9944,572 @@ const sampleGames = [
     "time_max_hours": 20,
     "time_sort_hours": 20,
     "time_bucket": "medium",
-    "missable": "Nada da lista base é perdível: há free roam, replay de missões e replay de atividades após a história. A platina exige New Game+ para o troféu Plus Plus e para habilidades finais; isso é uma segunda passagem obrigatória, sem janela de perda.",
-    "runs_summary": "Uma campanha principal com cleanup livre e uma passagem em New Game+ para fechar o troféu Plus Plus.",
-    "missable_summary": "Não há troféus perdíveis na lista base; New Game+ é obrigatório para Plus Plus e habilidades finais, mas não cria risco de perda.",
-    "online_summary": "Não há exigência online para a platina.",
-    "grind_summary": "O peso está em completar distritos, coletáveis, crimes, desafios, bases, trajes, mods e habilidades.",
-    "dlc_scope": "Guia focado na lista base da platina; DLCs ou add-ons separados devem ficar fora deste checklist.",
-    "difficulty_reason": "A platina é bem acessível; o maior compromisso é limpar o mapa e fazer New Game+.",
-    "time_reason": "A faixa de 10-20 horas considera campanha, atividades de mundo aberto, colecionáveis, cleanup e New Game+.",
-    "first_run_advice": "Jogue a história naturalmente e vá limpando atividades de distrito quando passar por elas.",
-    "cleanup_advice": "Depois da campanha, feche distritos, colecionáveis, desafios, bases e prepare o New Game+ para Plus Plus.",
-    "before_you_start": "Nada é perdível, mas lembre que a platina exige New Game+.",
-    "best_for": "Ideal para quem quer uma platina curta, acessível, com mundo aberto compacto e baixo risco de retrabalho.",
-    "avoid_if": "Evite apenas se você não quer repetir a campanha em New Game+.",
+    "missable": "Não há troféus perdíveis definitivos na lista base: o jogo tem mundo livre depois da campanha, replay de missões e repetição de atividades. Ainda assim, ações como o shopping com Rhino, o minijogo da Phin, o feed social, o barco, o túmulo de Jefferson Davis, Modo Foto, abates situacionais e objetivos bônus de crimes devem ser acompanhadas para evitar retrabalho.",
+    "runs_summary": "A platina exige 2 jogadas: uma campanha principal para abrir mapa, atividades, colecionáveis e 100% dos distritos, seguida de New Game+ para concluir Plus Plus, trajes e habilidades restantes.",
+    "missable_summary": "Não há perdível definitivo, pois missões podem ser repetidas. O cuidado real é não deixar ações específicas e contadores situacionais escondidos para o fim sem controle pela checklist.",
+    "online_summary": "Não há exigência online, coop, multiplayer, servidores ou PS+ para a platina.",
+    "grind_summary": "O volume está em 100% dos distritos, objetivos bônus de crimes, pedidos do app SMAV/FNSM, habilidades, trajes, aprimoramentos, bases, Spider-Treino e contadores de combate/furtividade.",
+    "dlc_scope": "Guia focado na lista base da platina; DLCs e conteúdos extras separados ficam fora desta checklist.",
+    "difficulty_reason": "A dificuldade não afeta troféus. O desafio acima do normal fica concentrado em combo de 100 golpes, base sem detecção, notas Espetacular do Spider-Treino e objetivos bônus de crimes.",
+    "time_reason": "A faixa de 10-20 horas considera campanha, limpeza final do mapa, colecionáveis, atividades, recursos, contadores situacionais e uma segunda passagem em New Game+.",
+    "first_run_advice": "Na primeira campanha, avance a história, abra distritos, use Venom e camuflagem desde cedo, conclua atividades quando estiverem no caminho e guarde recursos para trajes, aprimoramentos e habilidades.",
+    "cleanup_advice": "Depois da campanha, feche 100% dos distritos, cartões-postais, pedidos do app, crimes com objetivos bônus, Spider-Treino, bases, colecionáveis e troféus específicos antes ou durante o New Game+.",
+    "before_you_start": "New Game+ é obrigatório. Dificuldade não importa, não há online/coop e missões podem ser repetidas, mas acompanhe objetivos bônus de crimes, recursos, abates do teto/parede, barco, feed social, túmulo, Modo Foto e minijogo da Phin.",
+    "best_for": "Ideal para quem quer uma platina curta, acessível e bem guiada, com mapa compacto, 100% dos distritos e uma segunda jogada objetiva em New Game+.",
+    "avoid_if": "Evite apenas se você não quer repetir a campanha em New Game+ ou seguir checklist de crimes, recursos, trajes e ações situacionais.",
     "editorial_status": "published",
-    "coverage_level": "strong",
-    "is_verified": false,
-    "verification_status": "review",
-    "verification_note": "Guia forte com lista base, roadmap, imagens e flags adicionados em abril de 2026; aguardando revisão final manual.",
+    "coverage_level": "complete",
+    "is_verified": true,
+    "verification_status": "verified",
+    "verification_note": "Guia revisado editorialmente para a lista base de Marvel’s Spider-Man: Miles Morales, com 50 troféus, New Game+ obrigatório, nomes PT-BR conferidos e rota sem DLC ou listas de outros jogos.",
+    "editorial_review_status": "verified",
+    "last_reviewed_at": "2026-05-24",
+    "editorial_notes": "Lista base PS4/PS5 validada com 50 troféus. Guia usa nomes PT-BR quando há fonte brasileira confiável e preserva o nome original em inglês em trophyNameOriginal/name.",
+    "reviewed_by": "AtlasAchievement editorial",
     "image": "https://cdn.cloudflare.steamstatic.com/steam/apps/1817190/header.jpg",
     "cover_image": "https://cdn.cloudflare.steamstatic.com/steam/apps/1817190/library_600x900.jpg",
+    "editorial_summary": [
+      "A platina de Marvel’s Spider-Man: Miles Morales é curta e acessível, mas não é de uma jogada só. A lista base exige New Game+ para terminar Plus Plus e fechar habilidades/trajes restantes; dificuldade, online e coop não entram como requisitos.",
+      "Não há perdíveis definitivos porque missões e atividades podem ser repetidas. O maior risco prático é esquecer ações específicas, objetivos bônus de crimes, recursos para trajes/aprimoramentos e contadores de combate/furtividade, então o roadmap e a checklist devem guiar a ordem para reduzir retrabalho.",
+      "A primeira jogada deve abrir campanha, mapa, Spider-Treino, app SMAV/FNSM, bases, colecionáveis e 100% dos distritos. A segunda jogada em New Game+ fecha Plus Plus, habilidades restantes e qualquer pendência final."
+    ],
     "roadmap": [
-      "Etapa 1: jogue a campanha naturalmente, desbloqueando Venom, camouflage, gadgets, Spider-Training e atividades de distrito sem se preocupar com perdíveis.",
-      "Etapa 2: complete distritos, crimes, Underground Caches, Time Capsules, Postcards, Sound Samples, FNSM App Requests e side activities quando estiverem liberados.",
-      "Etapa 3: limpe Spider-Training Challenges, Roxxon Labs, Underground Hideouts, trajes, mods, upgrades, crimes com objetivos bônus e troféus específicos de combate/exploração.",
-      "Etapa 4: inicie New Game+ para destravar habilidades e traje restantes, comprar todas as skills e concluir o troféu Plus Plus. Isso é obrigatório, mas não é perdível.",
-      "Etapa 5: faça o cleanup final de troféus específicos e 100% dos distritos. O guia cobre apenas a lista base da platina."
+      {
+        "title": "Campanha inicial e desbloqueio natural do mapa",
+        "focus": "História, mecânicas do Miles, habilidades iniciais, app SMAV/FNSM e abertura de atividades",
+        "objective": "Avançar a campanha sem mirar 100% imediato, desbloqueando sistemas, distritos, Spider-Treino e atividades.",
+        "actions": [
+          "Jogue a história normalmente e abra o mapa conforme a campanha permitir.",
+          "Teste ataques Venom e camuflagem desde cedo para já acumular prática e contadores.",
+          "Comece a usar o app SMAV/FNSM quando os pedidos e crimes ficarem disponíveis.",
+          "Ative atividades próximas, mas não transforme a primeira metade em limpeza completa.",
+          "Evite gastar recursos de forma aleatória se ainda houver trajes, habilidades ou aprimoramentos pendentes."
+        ],
+        "warning": "Alguns troféus exigem ações em missões específicas, mas podem ser recuperados repetindo missões. Ainda assim, sinalize shopping com Rhino e minijogo da Phin para reduzir retrabalho.",
+        "result": "Campanha avançada, mapa mais aberto e principais sistemas desbloqueados."
+      },
+      {
+        "title": "Spider-Treino, habilidades e domínio de combate/furtividade",
+        "focus": "Desafios de Travessia, Combate e Furtividade; habilidades; Teste Final",
+        "objective": "Concluir o Spider-Treino, buscar nível Espetacular onde exigido e liberar habilidades ligadas aos treinos.",
+        "actions": [
+          "Conclua todos os desafios do Spider-Treino ao menos uma vez.",
+          "Busque Espetacular ou melhor em um desafio de Travessia, um de Combate e um de Furtividade.",
+          "Faça o Teste Final depois dos nove desafios.",
+          "Use os treinos para praticar camuflagem, ataques Venom, movimentação e abordagens sem alerta.",
+          "Compre habilidades liberadas por treino e acompanhe as que ficam para o New Game+."
+        ],
+        "warning": "Use Dificuldade apenas para os desafios que pedem Espetacular ou execução acima do normal; completar todos uma vez é simples.",
+        "result": "Spider-Treino resolvido e Miles mais preparado para bases, crimes e limpeza final."
+      },
+      {
+        "title": "Colecionáveis e atividades de distrito",
+        "focus": "Cápsulas do Tempo, Reservas do Underground, Amostras de Som, Laboratórios Roxxon, Esconderijos Underground e progresso dos distritos",
+        "objective": "Avançar o 100% dos distritos sem tratar bases, laboratórios e crimes como simples colecionáveis.",
+        "actions": [
+          "Colete todas as Cápsulas do Tempo quando forem reveladas.",
+          "Abra todas as Reservas do Underground, incluindo as que ficam dentro de bases.",
+          "Conclua Laboratórios da Roxxon e Esconderijos do Underground.",
+          "Faça todas as Amostras de Som e recrie o Davis Brothers Mix.",
+          "Marque atividades restantes por distrito e deixe cartões-postais para depois da campanha se ainda não apareceram."
+        ],
+        "warning": "Laboratórios e esconderijos são atividades de mapa/combate/limpeza, não colecionáveis puros.",
+        "result": "Grande parte do mapa concluída e caminho aberto para 100% em todos os distritos."
+      },
+      {
+        "title": "Crimes, pedidos do app e objetivos bônus",
+        "focus": "App SMAV/FNSM, crimes, objetivos bônus, abates furtivos e ações repetíveis",
+        "objective": "Resolver as pendências que mais costumam gerar repetição no final.",
+        "actions": [
+          "Conclua todos os pedidos do app SMAV/FNSM.",
+          "Complete crimes e acompanhe os objetivos bônus de cada tipo.",
+          "Rejogue crimes pelo app quando faltar objetivo bônus específico.",
+          "Faça abates furtivos, abates do teto e abates da parede em bases ou crimes.",
+          "Use camuflagem, ataques Venom, Minas Remotas, Pulo Venom + Impulso Venom e Impulso Venom contra grupo para fechar contadores."
+        ],
+        "warning": "O risco aqui não é perda definitiva; é grind e retrabalho por ignorar objetivos bônus e contadores situacionais.",
+        "result": "Crimes, pedidos e principais contadores de combate/furtividade encaminhados."
+      },
+      {
+        "title": "Fechamento da campanha, cartões-postais e troféus escondidos",
+        "focus": "Final da história, cartões-postais, homenagem, barco, feed social, Modo Foto e ações específicas",
+        "objective": "Concluir a campanha e tirar do caminho os troféus que ficam fáceis de esquecer.",
+        "actions": [
+          "Conclua a história principal.",
+          "Faça a cadeia de cartões-postais liberada após a campanha.",
+          "Visite o túmulo de Jefferson Davis no cemitério de Harlem.",
+          "Encontre o barco abandonado no sul de Chinatown.",
+          "Role o feed social até o fim após a história.",
+          "Use o Modo Foto com sticker e iluminação.",
+          "Confira o minijogo da Phin e ações específicas de missão, repetindo missões se necessário."
+        ],
+        "warning": "Esses troféus não são perdíveis definitivos, mas precisam aparecer com destaque para não virarem busca solta no fim.",
+        "result": "História concluída e troféus específicos fora do caminho principal resolvidos."
+      },
+      {
+        "title": "New Game+ e fechamento da platina",
+        "focus": "Terminar em New Game+, liberar habilidades restantes e conferir checklist final",
+        "objective": "Cumprir a exigência do New Game+, fechar todas as habilidades e confirmar a platina.",
+        "actions": [
+          "Inicie New Game+ depois de concluir a primeira campanha.",
+          "Avance a campanha no New Game+ em qualquer dificuldade.",
+          "Desbloqueie habilidades restantes exclusivas/ligadas ao New Game+.",
+          "Compre o traje e recursos que dependem da segunda jogada.",
+          "Conclua Plus Plus e revise trajes, aprimoramentos, distritos, crimes, app e colecionáveis."
+        ],
+        "warning": "Não trate a platina como uma jogada só. New Game+ é obrigatório.",
+        "result": "New Game+ concluído, habilidades fechadas e platina liberada."
+      }
     ],
     "trophies": [
       {
         "id": "msmm_be_yourself",
         "name": "Be Yourself",
+        "name_pt": "Seja Você Mesmo",
         "type": "Platina",
-        "description": "Collect all Trophies",
-        "tip": "Conclua todos os troféus da lista base para liberar a platina.",
+        "description": "Conquiste todos os troféus da lista base de Marvel’s Spider-Man: Miles Morales.",
+        "tip": "Libera ao concluir os outros 49 troféus. A lista exige New Game+, 100% dos distritos, colecionáveis, Spider-Treino, crimes, pedidos do app, trajes, habilidades e ações específicas.",
         "is_spoiler": false
       },
       {
         "id": "msmm_just_the_beginning",
         "name": "Just the Beginning",
+        "name_pt": "Só o Começo",
         "type": "Ouro",
-        "description": "Unlock all Skills",
-        "tip": "Compre todas as habilidades. Algumas só ficam disponíveis em New Game+, então combine com Plus Plus.",
+        "description": "Desbloqueie todas as habilidades do Miles.",
+        "tip": "Exige as habilidades compradas com pontos, as habilidades liberadas pelo Spider-Treino e as habilidades restantes do New Game+. Combine com Plus Plus e não ignore os nove treinos.",
         "is_spoiler": false
       },
       {
         "id": "msmm_a_new_home",
         "name": "A New Home",
+        "name_pt": "Um Novo Lar",
         "type": "Ouro",
-        "description": "100% complete all districts",
-        "tip": "Use o checklist do mapa por distrito e deixe Postcards para depois da história.",
+        "description": "Alcance 100% de conclusão em todos os distritos.",
+        "tip": "Feche atividades de distrito, bases, pedidos, crimes, colecionáveis e pendências do mapa. Não é apenas coletável; trate como limpeza geral do mapa. Cartões-postais só aparecem após a campanha.",
         "is_spoiler": false
       },
       {
         "id": "msmm_urban_explorers",
         "name": "Urban Explorers",
+        "name_pt": "Exploradores Urbanos",
         "type": "Prata",
-        "description": "Collect all Time Capsules",
-        "tip": "Colete as 16 Time Capsules reveladas no mapa.",
+        "description": "Colete todas as Cápsulas do Tempo.",
+        "tip": "Depois da primeira cápsula, siga os ícones no mapa e colete as 16. Pode ficar para a limpeza final e conta para o 100% dos distritos.",
         "is_spoiler": false
       },
       {
         "id": "msmm_memory_lane",
         "name": "Memory Lane",
+        "name_pt": "Túnel do Tempo",
         "type": "Prata",
-        "description": "Collect all Postcards",
-        "tip": "Postcards só liberam após a história. Volte ao apartamento do Miles e siga as pistas.",
+        "description": "Colete todos os Cartões-Postais.",
+        "tip": "Disponível após concluir a campanha. Volte ao apartamento do Miles para iniciar a cadeia e siga as pistas até o último cartão.",
         "is_spoiler": false
       },
       {
         "id": "msmm_salvager",
         "name": "Salvager",
+        "name_pt": "Catador",
         "type": "Prata",
-        "description": "Open all Underground Caches",
-        "tip": "Abra todos os caches, incluindo os que ficam dentro de Roxxon Labs e Underground Hideouts.",
+        "description": "Abra todas as Reservas do Underground.",
+        "tip": "Use o mapa e o pulso de varredura para achar as reservas. Algumas ficam dentro de Laboratórios da Roxxon e Esconderijos do Underground; pegue-as antes de sair ou repita a base.",
         "is_spoiler": false
       },
       {
         "id": "msmm_under_their_noses",
         "name": "Under Their Noses",
+        "name_pt": "Debaixo do Nariz Deles",
         "type": "Prata",
-        "description": "Shut down all Roxxon Labs",
-        "tip": "Conclua os três Roxxon Labs e pegue os caches internos antes de finalizar cada replay.",
+        "description": "Desative todos os Laboratórios da Roxxon.",
+        "tip": "Complete todos os laboratórios quando forem liberados. Aproveite para farmar abates do teto/parede, camuflagem, Venom e pegar a Reserva do Underground dentro de cada local.",
         "is_spoiler": false
       },
       {
         "id": "msmm_underground_undone",
         "name": "Underground Undone",
+        "name_pt": "Underground Desfeito",
         "type": "Prata",
-        "description": "Shut down all Underground Hideouts",
-        "tip": "Conclua os três Underground Hideouts e confira o cache de cada base.",
+        "description": "Desative todos os Esconderijos do Underground.",
+        "tip": "Complete todos os esconderijos no mapa. Eles são ótimos para base sem detecção, abates furtivos e Reservas do Underground internas.",
         "is_spoiler": false
       },
       {
         "id": "msmm_ready_for_anything",
         "name": "Ready for Anything",
+        "name_pt": "Pronto pra Tudo",
         "type": "Prata",
-        "description": "Purchase all suits",
-        "tip": "Compre todos os trajes; o último exige iniciar New Game+.",
+        "description": "Adquira todos os trajes.",
+        "tip": "Guarde recursos de atividades e fichas tecnológicas. Alguns trajes dependem de missões/atividades e pelo menos um fica ligado ao New Game+, então este troféu não fecha em uma única jogada comum.",
         "is_spoiler": false
       },
       {
         "id": "msmm_come_at_the_king",
         "name": "Come at the King",
+        "name_pt": "Venha até o Rei",
         "type": "Prata",
-        "description": "Unravel a criminal conspiracy in Harlem",
-        "tip": "Complete as missões secundárias de Harlem até liberar e concluir a missão final da cadeia.",
+        "description": "Desvende uma conspiração criminosa no Harlem.",
+        "tip": "Complete a cadeia de missões secundárias do Harlem pelo mapa/app até concluir a missão final. Ela também contribui para o 100% dos distritos.",
         "is_spoiler": false
       },
       {
         "id": "msmm_never_saw_it_coming",
         "name": "Never Saw It Coming",
+        "name_pt": "Ninguém Viu",
         "type": "Prata",
-        "description": "Complete an Enemy Base without being detected",
-        "tip": "Use camouflage e takedowns seguros em um Roxxon Lab ou Underground Hideout. Dá para repetir bases.",
+        "description": "Complete uma base inimiga sem ser detectado.",
+        "tip": "Faça em Laboratório da Roxxon ou Esconderijo do Underground. Use camuflagem, análise de alvo seguro, teias e Minas Remotas. Se for visto, repita a base depois.",
         "is_spoiler": false
       },
       {
         "id": "msmm_100x_combo",
         "name": "100x Combo!!!",
+        "name_pt": "Combo de 100x!!!",
         "type": "Prata",
-        "description": "Perform a 100x Combo",
-        "tip": "Faça em base com muitos inimigos, de preferência em dificuldade baixa para manter o combo com mais segurança.",
+        "description": "Faça um combo de 100 golpes.",
+        "tip": "Tente em uma base com muitos inimigos ou no New Game+. Dificuldade baixa ajuda a manter o combo; esquive, use ataques aéreos e não finalize o encontro rápido demais.",
         "is_spoiler": false
       },
       {
         "id": "msmm_deep_cuts",
         "name": "Deep Cuts",
+        "name_pt": "Cortes Profundos",
         "type": "Prata",
-        "description": "Collect all Sound Samples and recreate the Davis Brothers Mix",
-        "tip": "Colete todos os Sound Samples quando esse tipo de atividade liberar na campanha.",
+        "description": "Colete todas as Amostras de Som e recrie o Davis Brothers Mix.",
+        "tip": "As amostras aparecem após progresso de história com o Prowler. Use as pistas sonoras por distrito e conclua a mixagem final depois de coletar todas.",
         "is_spoiler": false
       },
       {
         "id": "msmm_launch_swing_and_dive",
         "name": "Launch, Swing and Dive",
+        "name_pt": "Lançar, Balançar e Mergulhar",
         "type": "Bronze",
-        "description": "Get Spectacular or better in a Spider-Training Traversal Challenge",
-        "tip": "Pegue Spectacular em qualquer desafio de traversal; o Challenge 1.0 costuma ser o mais simples.",
+        "description": "Atinja Espetacular ou melhor em um desafio de Travessia do Spider-Treino.",
+        "tip": "Escolha o desafio de travessia mais confortável, memorize a rota e refaça até bater o tempo. Pode ser feito a qualquer momento após liberar Spider-Treino.",
         "is_spoiler": false
       },
       {
         "id": "msmm_punching_pixels",
         "name": "Punching Pixels",
+        "name_pt": "Socando Pixels",
         "type": "Bronze",
-        "description": "Get Spectacular or better in a Spider-Training Combat Challenge",
-        "tip": "Use Venom e gadgets para pontuar rápido em um desafio de combate.",
+        "description": "Atinja Espetacular ou melhor em um desafio de Combate do Spider-Treino.",
+        "tip": "Use Venom para encerrar ondas rápido, mantenha variedade de ataques e evite dano. Repetir o desafio não tem penalidade.",
         "is_spoiler": false
       },
       {
         "id": "msmm_dodging_light",
         "name": "Dodging Light",
+        "name_pt": "Desviando da Luz",
         "type": "Bronze",
-        "description": "Get Spectacular or better in a Spider-Training Stealth Challenge",
-        "tip": "Memorize a rota de takedowns e use camouflage para acelerar.",
+        "description": "Atinja Espetacular ou melhor em um desafio de Furtividade do Spider-Treino.",
+        "tip": "Memorize a ordem de alvos seguros, use camuflagem para atravessar áreas abertas e reinicie se a rota ficar lenta.",
         "is_spoiler": false
       },
       {
         "id": "msmm_spider_training_complete",
         "name": "Spider-Training: Complete",
+        "name_pt": "Spider-Treino: Concluído",
         "type": "Bronze",
-        "description": "Complete every Spider-Training Challenge once",
-        "tip": "Complete os nove desafios uma vez; a nota não importa para este troféu.",
+        "description": "Complete todos os desafios do Spider-Treino uma vez.",
+        "tip": "São nove desafios no total, divididos entre Travessia, Combate e Furtividade. A nota não importa para este troféu, mas as habilidades ligadas aos treinos contam para Só o Começo.",
         "is_spoiler": false
       },
       {
         "id": "msmm_petes_first_villain",
         "name": "Pete's First Villain",
+        "name_pt": "Primeiro Vilão do Pete",
         "type": "Bronze",
-        "description": "Complete the Final Test",
-        "tip": "Depois dos nove Spider-Training Challenges, conclua a side mission Final Test.",
+        "description": "Complete o Teste Final.",
+        "tip": "Depois de concluir os nove desafios do Spider-Treino, aceite a missão liberada e vença o confronto virtual final do Peter.",
         "is_spoiler": false
       },
       {
         "id": "msmm_kitbash",
         "name": "Kitbash",
+        "name_pt": "Modelismo",
         "type": "Bronze",
-        "description": "Craft 10 Upgrades",
-        "tip": "Use tokens e tech parts para criar 10 upgrades no menu de gadgets.",
+        "description": "Crie 10 aprimoramentos.",
+        "tip": "Gaste fichas de atividade e peças tecnológicas em aprimoramentos de dispositivos. Há recursos suficientes, mas priorize trajes e habilidades se ainda estiver organizando a primeira jogada.",
         "is_spoiler": false
       },
       {
         "id": "msmm_rhino_rodeo",
         "name": "Rhino Rodeo",
+        "name_pt": "Rodeio do Rhino",
         "type": "Bronze",
-        "description": "Ride Rhino through the mall",
-        "tip": "Troféu de progresso da história na sequência inicial.",
+        "description": "Monte no Rhino durante a sequência do shopping.",
+        "tip": "Troféu automático da história no início da campanha. Aproveite essa missão para mirar também Como um Rhino em uma Loja de Porcelana; se perder, repita a missão.",
         "is_spoiler": true
       },
       {
         "id": "msmm_hanging_by_a_thread",
         "name": "Hanging By A Thread",
+        "name_pt": "Por um Fio",
         "type": "Bronze",
-        "description": "Keep the bridge together",
-        "tip": "Troféu de progresso da história durante o grande evento da ponte.",
+        "description": "Mantenha a ponte unida durante a campanha.",
+        "tip": "Troféu automático de história. Continue a missão principal; não exige ação extra além de concluir a sequência.",
         "is_spoiler": true
       },
       {
         "id": "msmm_the_core_of_the_problem",
         "name": "The Core of the Problem",
+        "name_pt": "O Núcleo do Problema",
         "type": "Bronze",
-        "description": "Investigate Roxxon's underground lab",
-        "tip": "Troféu de progresso da campanha ligado à investigação da Roxxon.",
+        "description": "Investigue o laboratório subterrâneo da Roxxon.",
+        "tip": "Troféu automático de campanha ligado à investigação da Roxxon. Marque como história e spoiler.",
         "is_spoiler": true
       },
       {
         "id": "msmm_true_deception",
         "name": "True Deception",
+        "name_pt": "Verdadeira Enganação",
         "type": "Bronze",
-        "description": "Complete the vault sequence in Underground Undercover",
-        "tip": "Troféu de progresso de missão avançada da história.",
+        "description": "Complete a sequência do cofre em Underground Undercover.",
+        "tip": "Troféu automático de missão avançada da história. Pode ser recuperado por repetição de missão se necessário para conferir pendências.",
         "is_spoiler": true
       },
       {
         "id": "msmm_the_harlem_express",
         "name": "The Harlem Express",
+        "name_pt": "O Expresso do Harlem",
         "type": "Bronze",
-        "description": "Get the trains running again",
-        "tip": "Troféu de progresso da história em Harlem.",
+        "description": "Faça os trens voltarem a funcionar.",
+        "tip": "Troféu automático de história em Harlem. Avance a campanha principal.",
         "is_spoiler": true
       },
       {
         "id": "msmm_veloci_skates",
         "name": "Veloci-Skates",
+        "name_pt": "Velocipatins",
         "type": "Bronze",
-        "description": "Chase Tinkerer through the city",
-        "tip": "Troféu de história ligado à perseguição da Tinkerer.",
+        "description": "Persiga a Tinkerer pela cidade.",
+        "tip": "Troféu automático de história ligado à perseguição da Tinkerer. Marque como spoiler.",
         "is_spoiler": true
       },
       {
         "id": "msmm_shared_history",
         "name": "Shared History",
+        "name_pt": "História Compartilhada",
         "type": "Bronze",
-        "description": "Walk through Miles and Phin's past",
-        "tip": "Troféu de evento narrativo avançado envolvendo Miles e Phin.",
+        "description": "Reviva o passado de Miles e Phin.",
+        "tip": "Troféu automático de uma missão narrativa avançada. Durante essa parte, procure também o minijogo do foguete para Espírito Competitivo.",
         "is_spoiler": true
       },
       {
         "id": "msmm_exploding_bulldozer",
         "name": "Exploding Bulldozer",
+        "name_pt": "Trator Explosivo",
         "type": "Bronze",
-        "description": "Defeat Roxxon Rhino",
-        "tip": "Troféu de chefe da campanha principal.",
+        "description": "Derrote o Rhino da Roxxon.",
+        "tip": "Troféu de chefe da campanha. Use esquivas, ataques Venom e objetos do cenário conforme a luta ensina.",
         "is_spoiler": true
       },
       {
         "id": "msmm_family_drama",
         "name": "Family Drama",
+        "name_pt": "Drama Familiar",
         "type": "Bronze",
-        "description": "Defeat Prowler",
-        "tip": "Troféu de chefe e revelação de personagem.",
+        "description": "Derrote o Prowler.",
+        "tip": "Troféu de chefe e evento narrativo. Use Venom para quebrar vantagem do inimigo e mantenha atenção aos ataques surpresa.",
         "is_spoiler": true
       },
       {
         "id": "msmm_ultimate_sacrifice",
         "name": "Ultimate Sacrifice",
+        "name_pt": "O Grande Sacrifício",
         "type": "Bronze",
-        "description": "Save Harlem",
-        "tip": "Troféu de conclusão da campanha principal.",
+        "description": "Salve Harlem.",
+        "tip": "Troféu automático ao concluir a campanha principal. Depois dele, cartões-postais e feed social ficam no radar da limpeza final.",
         "is_spoiler": true
       },
       {
         "id": "msmm_from_the_rafters",
         "name": "From the Rafters",
+        "name_pt": "Ataque de Cima",
         "type": "Bronze",
-        "description": "Perform 25 Ceiling Takedowns",
-        "tip": "Farmável em bases; fique no teto e faça takedowns quando o alvo estiver seguro.",
+        "description": "Faça 25 abates do teto.",
+        "tip": "Farmável em bases e replays. Fique no teto, analise se o alvo está seguro e faça abates furtivos antes de alertar a área.",
         "is_spoiler": false
       },
       {
         "id": "msmm_climbing_the_walls",
         "name": "Climbing the Walls",
+        "name_pt": "Subindo pelas Paredes",
         "type": "Bronze",
-        "description": "Perform 25 Wall Takedowns",
-        "tip": "Use paredes em Roxxon Labs ou Underground Hideouts para acumular takedowns.",
+        "description": "Faça 25 abates da parede.",
+        "tip": "Use paredes em Laboratórios da Roxxon, Esconderijos do Underground ou crimes. Aproxime inimigos da parede com distrações se necessário.",
         "is_spoiler": false
       },
       {
         "id": "msmm_invisible_spider",
         "name": "Invisible Spider",
+        "name_pt": "Spider Invisível",
         "type": "Bronze",
-        "description": "Defeat 50 enemies while Camouflaged",
-        "tip": "Ative camouflage antes de derrotar inimigos; vale em combate e furtividade.",
+        "description": "Derrote 50 inimigos enquanto estiver camuflado.",
+        "tip": "Ative camuflagem antes do golpe final. Vale em furtividade e combate aberto; bases, crimes e replays são os melhores locais para acumular.",
         "is_spoiler": false
       },
       {
         "id": "msmm_overcharge",
         "name": "Overcharge",
+        "name_pt": "Sobrecarga",
         "type": "Bronze",
-        "description": "Defeat 100 enemies with Venom attacks",
-        "tip": "Use ataques Venom sempre que a barra encher durante crimes, bases e missões.",
+        "description": "Derrote 100 inimigos com ataques Venom.",
+        "tip": "Use ataques Venom sempre que a barra encher durante história, bases e crimes. Não deixe para farmar tudo no fim; ele vem naturalmente se você usar o kit do Miles.",
         "is_spoiler": false
       },
       {
         "id": "msmm_up_and_over",
         "name": "Up and Over",
+        "name_pt": "Pula e Vai",
         "type": "Bronze",
-        "description": "Perform a Venom Jump, then a Venom Dash on a single enemy",
-        "tip": "Quando tiver as duas habilidades, use Venom Jump e em seguida Venom Dash no mesmo inimigo.",
+        "description": "Use Pulo Venom e depois Impulso Venom no mesmo inimigo.",
+        "tip": "Após liberar as duas habilidades, use Pulo Venom para lançar o alvo e, antes de ele cair, aplique Impulso Venom no mesmo inimigo. Pode ser feito em crimes ou bases.",
         "is_spoiler": false
       },
       {
         "id": "msmm_from_downtown",
         "name": "From Downtown",
+        "name_pt": "Desde Downtown",
         "type": "Bronze",
-        "description": "Use Venom Dash to throw an enemy into a group of three or more",
-        "tip": "Faça em base com grupos juntos para acertar três inimigos com o arremesso.",
+        "description": "Use Impulso Venom para arremessar um inimigo contra um grupo de três ou mais.",
+        "tip": "Espere inimigos se agruparem em base/crime e use Impulso Venom mirando o alvo em direção ao grupo. Minas gravitacionais/distrações ajudam no posicionamento.",
         "is_spoiler": false
       },
       {
         "id": "msmm_like_a_rhino_in_a_china_shop",
         "name": "Like a Rhino In A China Shop",
+        "name_pt": "Como um Rhino em uma Loja de Porcelana",
         "type": "Bronze",
-        "description": "Smash into 15 breakable objects while steering Rhino through the shopping mall",
-        "tip": "Na sequência do shopping, direcione Rhino para vitrines, mesas e objetos quebráveis.",
+        "description": "Quebre 15 objetos enquanto conduz o Rhino pelo shopping.",
+        "tip": "Na primeira missão, durante a sequência do shopping, mire vitrines, mesas e objetos quebráveis em vez de desviar. Se perder, repita a missão ou faça no New Game+.",
         "is_spoiler": false
       },
       {
         "id": "msmm_competitive_spirit",
         "name": "Competitive Spirit",
+        "name_pt": "Espírito Competitivo",
         "type": "Bronze",
-        "description": "Beat Phin at the rocket launch mini-game",
-        "tip": "Na missão de flashback no Science Center, vença o minigame do foguete.",
+        "description": "Vença Phin no minijogo de lançamento de foguete.",
+        "tip": "Durante o flashback no Science Center, procure os foguetes na área de exposição e vença o minijogo. Se Phin ganhar ou você passar batido, repita a missão.",
         "is_spoiler": true
       },
       {
         "id": "msmm_best_fries_in_town",
         "name": "Best Fries in Town",
+        "name_pt": "Melhores Fritas da Cidade",
         "type": "Bronze",
-        "description": "Pay your respects to a legend in the Upper West Side",
-        "tip": "Interaja com a estátua de Stan Lee no Upper West Side.",
+        "description": "Preste homenagem a uma lenda no Upper West Side.",
+        "tip": "Vá até a homenagem a Stan Lee no Upper West Side e interaja. É um troféu de exploração simples, bom para a limpeza final.",
         "is_spoiler": false
       },
       {
         "id": "msmm_jjj_would_be_proud",
         "name": "JJJ Would Be Proud",
+        "name_pt": "O JJJ Ficaria Orgulhoso",
         "type": "Bronze",
-        "description": "Apply a sticker and customize lighting while in Photo Mode",
-        "tip": "Abra o Photo Mode, aplique um sticker e altere a iluminação.",
+        "description": "Aplique um sticker e personalize a iluminação no Modo Foto.",
+        "tip": "Abra o Modo Foto pelo menu, adicione um sticker e altere qualquer opção de iluminação. Pode ser feito a qualquer momento no mundo livre.",
         "is_spoiler": false
       },
       {
         "id": "msmm_trapped",
         "name": "Trapped",
+        "name_pt": "Preso",
         "type": "Bronze",
-        "description": "Defeat 50 enemies with Remote Mine gadget",
-        "tip": "Compre o gadget Remote Mine e use-o em bases ou crimes até acumular 50 derrotas.",
+        "description": "Derrote 50 inimigos com Minas Remotas.",
+        "tip": "Use Minas Remotas em bases, crimes e furtividade. Elas funcionam bem para separar grupos e ainda ajudam em Ninguém Viu.",
         "is_spoiler": false
       },
       {
         "id": "msmm_five_star_review",
         "name": "Five Star Review",
+        "name_pt": "Cinco Estrelas",
         "type": "Bronze",
-        "description": "Complete all FNSM app requests",
-        "tip": "Conclua os 10 pedidos do app FNSM quando estiverem disponíveis.",
+        "description": "Conclua todos os pedidos do app SMAV/FNSM.",
+        "tip": "Faça todos os pedidos do aplicativo quando ficarem disponíveis. Eles contam para progresso do mapa e ajudam com recursos para trajes/aprimoramentos.",
         "is_spoiler": false
       },
       {
         "id": "msmm_mod_that_suit",
         "name": "Mod that Suit",
+        "name_pt": "Modifique o Traje",
         "type": "Bronze",
-        "description": "Craft a Suit Mod",
-        "tip": "Crie qualquer Suit Mod no menu de trajes.",
+        "description": "Crie uma modificação de traje.",
+        "tip": "No menu de trajes, fabrique qualquer modificação de traje usando recursos. É simples e pode ser feito assim que o sistema estiver liberado.",
         "is_spoiler": false
       },
       {
         "id": "msmm_look_with_better_eyes",
         "name": "Look with Better Eyes",
+        "name_pt": "Visão Melhorada",
         "type": "Bronze",
-        "description": "Craft a Visor Mod",
-        "tip": "Crie qualquer Visor Mod no menu de trajes.",
+        "description": "Crie uma modificação de visor.",
+        "tip": "No menu de trajes, fabrique qualquer modificação de visor. Aproveite recursos de atividades e Reservas do Underground.",
         "is_spoiler": false
       },
       {
         "id": "msmm_never_give_up",
         "name": "Never Give Up",
+        "name_pt": "Nunca Desista",
         "type": "Bronze",
-        "description": "Pay respects at Jefferson Davis' grave in Harlem",
-        "tip": "Vá ao cemitério no norte de Harlem e interaja com o túmulo de Jefferson Davis.",
+        "description": "Preste homenagem no túmulo de Jefferson Davis em Harlem.",
+        "tip": "Vá ao cemitério no norte de Harlem e interaja com o túmulo. É fácil esquecer, então deixe marcado na limpeza final.",
         "is_spoiler": false
       },
       {
         "id": "msmm_a_gift_from_pete",
         "name": "A Gift From Pete",
+        "name_pt": "Um Presente do Pete",
         "type": "Bronze",
-        "description": "Receive the Gift Suit",
-        "tip": "Troféu de progresso inicial da história ao receber o traje de presente.",
+        "description": "Receba o traje de presente do Pete.",
+        "tip": "Troféu automático no início da história ao receber o traje. Não exige ação extra.",
         "is_spoiler": false
       },
       {
         "id": "msmm_crime_master",
         "name": "Crime Master",
+        "name_pt": "Mestre do Crime",
         "type": "Bronze",
-        "description": "Complete all Bonus Objectives for every crime type",
-        "tip": "Rejogue crimes pelo app se precisar fechar objetivos bônus restantes.",
+        "description": "Conclua todos os objetivos bônus de todos os tipos de crime.",
+        "tip": "Abra o app SMAV/FNSM e acompanhe o contador de objetivos bônus por tipo de crime. Eles não precisam ser feitos todos na mesma ocorrência; repita crimes pelo app até fechar tudo.",
         "is_spoiler": false
       },
       {
         "id": "msmm_nowhere_to_hide",
         "name": "Nowhere to Hide",
+        "name_pt": "Não Há Onde se Esconder",
         "type": "Bronze",
-        "description": "Perform 100 Stealth Takedowns",
-        "tip": "Faça takedowns seguros em bases, crimes e replays até chegar a 100.",
+        "description": "Faça 100 abates furtivos.",
+        "tip": "Abates do teto, parede, poleiro e aproximação contam. Use bases e crimes repetíveis para acumular sem transformar isso em grind no fim.",
         "is_spoiler": false
       },
       {
         "id": "msmm_im_on_a_boat",
         "name": "I'm On A Boat",
+        "name_pt": "Tô num Barco",
         "type": "Bronze",
-        "description": "Ride the derelict boat in southern Chinatown",
-        "tip": "Suba no barco abandonado no sul de Chinatown; há uma Time Capsule ali perto.",
+        "description": "Suba no barco abandonado no sul de Chinatown.",
+        "tip": "Procure o barco na orla sul de Chinatown, perto de uma Cápsula do Tempo. Suba nele para destravar o troféu.",
         "is_spoiler": false
       },
       {
         "id": "msmm_socially_acceptable",
         "name": "Socially Acceptable",
+        "name_pt": "Socialmente Aceitável",
         "type": "Bronze",
-        "description": "Scroll through the entire Social Feed at the end of the story",
-        "tip": "Depois da história, abra o Social Feed e role até o fim.",
+        "description": "Role todo o feed social no fim da história.",
+        "tip": "Após concluir a campanha, abra a aba social pelo menu/inventário e role até o fim da timeline. É simples, mas fácil de esquecer.",
         "is_spoiler": false
       },
       {
         "id": "msmm_plus_plus",
         "name": "Plus Plus",
+        "name_pt": "Mais e Mais",
         "type": "Bronze",
-        "description": "Complete the game on New Game+",
-        "tip": "Após terminar a campanha, crie um save de New Game+ e conclua a história novamente.",
+        "description": "Conclua o jogo em New Game+.",
+        "tip": "Depois da primeira campanha, crie um save de New Game+ e termine a história novamente em qualquer dificuldade. Use essa jogada para fechar habilidades, traje restante e pendências finais.",
         "is_spoiler": false
       }
     ]
@@ -24439,17 +24580,23 @@ const sampleGames = [
       "time_bucket": "long",
       "missable": "Sim, com prioridade alta: o final básico The Hollow Knight pode ser bloqueado no mesmo save depois de obter Void Heart. Não há Chapter Select, então faça esse final antes de avançar para Void Heart.",
       "runs_summary": "Um save principal bem planejado cobre quase tudo, mas garanta o final The Hollow Knight antes de obter Void Heart e prepare-se para 112% e Pantheon of Hallownest.",
-      "missable_summary": "Perdível crítico: faça o final The Hollow Knight antes de obter Void Heart. O restante é majoritariamente cleanup/free-roam, mas 112%, Godhome e finais exigem planejamento.",
+      "missable_summary": "Perdível crítico: faça o final The Hollow Knight antes de obter Void Heart. O restante é majoritariamente limpeza final e exploração livre, mas 112%, Godhome e finais exigem planejamento.",
       "online_summary": "Não há exigência online, troféus online, multiplayer obrigatório ou PS+ para a platina da lista PlayStation.",
-      "grind_summary": "O peso está em 112%, Charms, Grubs, Essence, Hunter’s Journal, Trials, Grimm Troupe, bosses opcionais e principalmente Pantheon of Hallownest.",
-      "dlc_scope": "Guia focado na lista PlayStation de Hollow Knight: Voidheart Edition. Conteúdos como Grimm Troupe e Godmaster já fazem parte da lista integrada; não misturar conquistas extras de PC/Xbox.",
-      "difficulty_reason": "A dificuldade vem da execução em bosses, Trial of the Fool, Nightmare’s End, 112%, Godhome e Pantheon of Hallownest; não há seletor de dificuldade tradicional.",
-      "time_reason": "A faixa de 60-100 horas considera exploração, coletáveis, 112%, bosses opcionais, Trials, Godhome e grande variação por habilidade.",
-      "first_run_advice": "Explore com calma e priorize mapas, Stag Stations, movement abilities, Nail upgrades, spells e Charms. Antes de obter Void Heart, faça o final básico The Hollow Knight.",
-      "cleanup_advice": "Depois dos finais principais, limpe Charms, Grubs, Essence, Hunter’s Journal, Delicate Flower, Trials, Grimm Troupe e 112% antes de focar no Pantheon of Hallownest.",
+      "grind_summary": "O peso está em 112%, amuletos, larvas, Essência, Diário do Caçador, Trials, Grimm Troupe, chefes opcionais e principalmente Pantheon of Hallownest.",
+      "dlc_scope": "Conteúdo Voidheart integrado à lista PlayStation. Grimm Troupe e Godmaster fazem parte da lista usada pelo guia; conquistas extras de PC/Xbox não entram nesta platina.",
+      "difficulty_reason": "A dificuldade vem da execução em chefes, Trial of the Fool, Nightmare’s End, 112%, Godhome e Pantheon of Hallownest; não há seletor de dificuldade tradicional.",
+      "time_reason": "A faixa de 60-100 horas considera exploração, coletáveis, 112%, chefes opcionais, Trials, Godhome e grande variação por habilidade.",
+      "first_run_advice": "Explore com calma e priorize mapas, estações de viagem, habilidades de movimento, melhorias do Ferrão, feitiços e amuletos. Antes de obter Void Heart, faça o final básico The Hollow Knight.",
+      "cleanup_advice": "Depois dos finais principais, limpe amuletos, larvas, Essência, Diário do Caçador, Delicate Flower, Trials, Grimm Troupe e 112% antes de focar no Pantheon of Hallownest.",
       "before_you_start": "Esta entrada usa a lista PlayStation de Hollow Knight: Voidheart Edition. Antes de pegar Void Heart, faça o final The Hollow Knight no mesmo save. Não inclui Speedrun, Steel Soul, Steel Heart ou outras conquistas extras de PC/Xbox.",
+      "editorial_summary": [
+            "Explore Hallownest com calma antes de mirar Void Heart, 112% e Godhome. A primeira run deve servir para aprender mapas, chefes, amuletos, habilidades e rotas sem transformar cada sala em tentativa perfeita.",
+            "A platina de Hollow Knight é longa, técnica e exige domínio real de combate e movimentação. A lista PlayStation é single-player, sem online e sem coop obrigatório, com Voidheart Edition integrada.",
+            "O maior risco não é perder tudo definitivamente, e sim misturar objetivos incompatíveis cedo demais. O final básico The Hollow Knight precisa sair antes de Void Heart no mesmo save, e objetivos longos como 112%, Essência, Diário do Caçador e Godhome pedem planejamento.",
+            "A melhor rota é concluir a campanha de aprendizado, depois limpar coletáveis, melhorias, chefes, finais e 112%, e só então partir para Godhome e Panteões. Use o roadmap e a checklist para controlar cada pendência."
+      ],
       "best_for": "Ideal para quem quer uma platina metroidvania difícil, longa, técnica e altamente recompensadora.",
-      "avoid_if": "Evite se você não quer bosses muito difíceis, Trial of the Fool, 112%, Pantheon of Hallownest ou longas sessões de prática.",
+      "avoid_if": "Evite se você não quer chefes muito difíceis, Trial of the Fool, 112%, Pantheon of Hallownest ou longas sessões de prática.",
       "editorial_status": "published",
       "coverage_level": "strong",
       "is_verified": false,
@@ -24458,21 +24605,85 @@ const sampleGames = [
       "image": "https://cdn.cloudflare.steamstatic.com/steam/apps/367520/header.jpg",
       "cover_image": "https://cdn.cloudflare.steamstatic.com/steam/apps/367520/library_600x900.jpg",
       "roadmap": [
-            "Jogue a campanha naturalmente, desbloqueando mapa, movement abilities, Nail upgrades, spells, Dream Nail, Stag Stations e áreas principais de Hallownest.",
-            "Antes de obter Void Heart, derrote o Hollow Knight e complete o jogo para garantir o troféu The Hollow Knight. Trate esta etapa como obrigatória, pois esse final básico pode ficar bloqueado no mesmo save depois.",
-            "Avance para Void Heart, Dreamers e finais/rotas principais da lista PlayStation, sem misturar conquistas extras de Steam/Xbox como Speedrun, Steel Soul ou Steel Heart.",
-            "Limpe progressão e coletáveis: todos os Charms e Salubra’s Blessing, Mask Shards, Vessel Fragments, Stag Stations, Grubs, mapas, Essence, Hunter’s Journal e Delicate Flower/Solace.",
-            "Complete os Trials do Colosseum, bosses opcionais, Dream Bosses, Grimm Troupe e Nightmare’s End antes de mirar 112%.",
-            "Alcance 112% e finalize o jogo para Pure Completion, conferindo cada porcentagem de bosses, upgrades, charms, dream content, Grimm Troupe e Godmaster.",
-            "Pratique Godhome/Hall of Gods, complete os Pantheons anteriores e conclua Pantheon of Hallownest para Embrace the Void; esse é o maior bloqueio técnico da platina.",
-            "Faça cleanup final de Journal, Essence, charms, mapas, Stag Stations, grubs, finais ou troféus restantes e desbloqueie Heart of Hallownest."
+            {
+                  "title": "Explore Hallownest e aprenda a base do jogo",
+                  "focus": "Fundamentos / exploração",
+                  "objective": "Conhecer movimentação, mapas, chefes, amuletos, habilidades e rotas antes de tentar objetivos avançados.",
+                  "actions": [
+                        "Jogue a primeira run com calma.",
+                        "Compre mapas e marque áreas importantes.",
+                        "Aprenda padrões de inimigos e chefes.",
+                        "Priorize habilidades, melhorias do Ferrão, feitiços e amuletos úteis."
+                  ],
+                  "result": "Base de exploração criada e jogador preparado para a limpeza final."
+            },
+            {
+                  "title": "Abra rotas, habilidades e upgrades importantes",
+                  "focus": "Progressão / upgrades",
+                  "objective": "Liberar mobilidade, recursos e acesso às áreas necessárias para coletáveis, chefes e finais.",
+                  "actions": [
+                        "Busque habilidades de movimento.",
+                        "Melhore o Ferrão, máscaras, Fragmentos de Vaso e amuletos.",
+                        "Abra estações de viagem, atalhos e rotas de retorno.",
+                        "Organize áreas pendentes por região."
+                  ],
+                  "result": "Hallownest aberto e rotas principais encaminhadas."
+            },
+            {
+                  "title": "Limpe coletáveis, amuletos, larvas e progresso de 112%",
+                  "focus": "Coletáveis / pendências",
+                  "objective": "Resolver coletáveis e progresso antes dos desafios mais pesados.",
+                  "actions": [
+                        "Use checklist para amuletos, larvas, Fragmentos de Máscara, Fragmentos de Vaso e melhorias.",
+                        "Complete áreas por região.",
+                        "Trabalhe Essência, Diário do Caçador e objetivos longos se estiverem na lista.",
+                        "Evite deixar toda a limpeza final para depois dos desafios difíceis."
+                  ],
+                  "result": "Grande parte da lista de exploração concluída."
+            },
+            {
+                  "title": "Resolva chefes, finais e desafios avançados",
+                  "focus": "Chefes / finais",
+                  "objective": "Concluir chefes, finais e desafios de combate da run principal.",
+                  "actions": [
+                        "Treine chefes difíceis antes de tentativas decisivas.",
+                        "Separe finais e escolhas de rota conforme a lista.",
+                        "Prepare amuletos e melhorias para lutas avançadas.",
+                        "Deixe Trial of the Fool, Grimm Troupe e chefes mais duros para depois de fortalecer o personagem."
+                  ],
+                  "warning": "Alguns finais e eventos exigem atenção para não travar uma rota específica.",
+                  "result": "Chefes, finais e desafios principais encaminhados."
+            },
+            {
+                  "title": "Separe extras e riscos fora da platina PlayStation",
+                  "focus": "Escopo / extras",
+                  "objective": "Manter Steel Soul, Speedrun, Steel Heart e outras conquistas extras fora da rota principal da Voidheart Edition.",
+                  "actions": [
+                        "Siga a lista PlayStation usada pelo guia sem misturar extras de PC/Xbox.",
+                        "Deixe Steel Soul e Speedrun para uma leitura separada se a lista do projeto mudar.",
+                        "Não combine objetivos incompatíveis com coleta completa ou limpeza final longa."
+                  ],
+                  "result": "Riscos isolados da rota base e checklist mais limpa."
+            },
+            {
+                  "title": "Finalize Godhome e a checklist da platina",
+                  "focus": "Godhome / checklist final",
+                  "objective": "Resolver os maiores desafios restantes e conferir a lista completa.",
+                  "actions": [
+                        "Treine chefes individualmente quando possível.",
+                        "Ajuste amuletos para cada desafio.",
+                        "Revise todos os troféus pendentes.",
+                        "Confirme coletáveis, finais, chefes, melhorias e limpeza final."
+                  ],
+                  "result": "Lista base concluída e guia pronto para platina."
+            }
       ],
       "trophies": [
             {
                   "id": "hollow_heart_of_hallownest",
                   "name": "Heart of Hallownest",
                   "type": "Platina",
-                  "description": "Acquire all other trophies.",
+                  "description": "Conquiste todos os demais trof?us.",
                   "tip": "Desbloqueie todos os demais troféus da lista PlayStation de Voidheart Edition.",
                   "is_missable": false,
                   "is_spoiler": false
@@ -24481,7 +24692,7 @@ const sampleGames = [
                   "id": "hollow_falsehood",
                   "name": "Falsehood",
                   "type": "Bronze",
-                  "description": "Defeat the False Knight.",
+                  "description": "Derrote o Falso Cavaleiro.",
                   "tip": "Derrote o False Knight no começo da campanha. Troféu de progressão de boss.",
                   "is_missable": false,
                   "is_spoiler": false
@@ -24490,7 +24701,7 @@ const sampleGames = [
                   "id": "hollow_test_of_resolve",
                   "name": "Test of Resolve",
                   "type": "Bronze",
-                  "description": "Defeat Hornet in Greenpath.",
+                  "description": "Derrote Hornet em Greenpath.",
                   "tip": "Derrote Hornet em Greenpath para abrir progressão essencial de movimento.",
                   "is_missable": false,
                   "is_spoiler": true
@@ -24499,7 +24710,7 @@ const sampleGames = [
                   "id": "hollow_proof_of_resolve",
                   "name": "Proof of Resolve",
                   "type": "Bronze",
-                  "description": "Defeat Hornet in Kingdom's Edge.",
+                  "description": "Derrote Hornet pela segunda vez em Kingdom's Edge.",
                   "tip": "Derrote Hornet pela segunda vez em Kingdom's Edge; necessário para avançar rumo ao Abyss/Void Heart.",
                   "is_missable": false,
                   "is_spoiler": true
@@ -24508,7 +24719,7 @@ const sampleGames = [
                   "id": "hollow_watcher",
                   "name": "Watcher",
                   "type": "Bronze",
-                  "description": "Destroy Lurien the Watcher.",
+                  "description": "Destrua Lurien, o Vidente.",
                   "tip": "Destrua Lurien, um dos três Dreamers. Necessário para abrir o Black Egg.",
                   "is_missable": false,
                   "is_spoiler": true
@@ -24517,8 +24728,8 @@ const sampleGames = [
                   "id": "hollow_beast",
                   "name": "Beast",
                   "type": "Bronze",
-                  "description": "Destroy Herrah the Beast.",
-                  "tip": "Destrua Herrah, um dos três Dreamers. Planeje a rota por Deepnest com upgrades adequados.",
+                  "description": "Destrua Herrah, a Fera.",
+                  "tip": "Destrua Herrah, uma das três Sonhadoras/Dreamers. Planeje a rota por Deepnest com upgrades adequados.",
                   "is_missable": false,
                   "is_spoiler": true
             },
@@ -24526,8 +24737,8 @@ const sampleGames = [
                   "id": "hollow_teacher",
                   "name": "Teacher",
                   "type": "Bronze",
-                  "description": "Destroy Monomon the Teacher.",
-                  "tip": "Destrua Monomon, um dos três Dreamers. Exige progressão em Fog Canyon/Teacher's Archives.",
+                  "description": "Destrua Monomon, a Mestra.",
+                  "tip": "Destrua Monomon, uma das três Sonhadoras/Dreamers. Exige progressão em Fog Canyon/Teacher's Archives.",
                   "is_missable": false,
                   "is_spoiler": true
             },
@@ -24535,7 +24746,7 @@ const sampleGames = [
                   "id": "hollow_the_hollow_knight",
                   "name": "The Hollow Knight",
                   "type": "Ouro",
-                  "description": "Defeat the Hollow Knight and complete the game.",
+                  "description": "Derrote o Hollow Knight e conclua o jogo.",
                   "tip": "Faça este final antes de obter Void Heart. Depois de Void Heart, o final básico pode ficar bloqueado nesse save.",
                   "is_missable": true,
                   "is_spoiler": true
@@ -24544,7 +24755,7 @@ const sampleGames = [
                   "id": "hollow_charmed",
                   "name": "Charmed",
                   "type": "Bronze",
-                  "description": "Acquire your first Charm.",
+                  "description": "Adquira seu primeiro Amuleto.",
                   "tip": "Pegue qualquer Charm. É um troféu simples e parte natural da exploração.",
                   "is_missable": false,
                   "is_spoiler": false
@@ -24553,8 +24764,8 @@ const sampleGames = [
                   "id": "hollow_enchanted",
                   "name": "Enchanted",
                   "type": "Bronze",
-                  "description": "Acquire half of Hallownest's Charms.",
-                  "tip": "Colete metade dos Charms. Use mapa/checklist para não esquecer vendedores, quests e bosses opcionais.",
+                  "description": "Adquira metade dos Amuletos de Hallownest.",
+                  "tip": "Colete metade dos amuletos. Use mapa e checklist para não esquecer vendedores, missões e chefes opcionais.",
                   "is_missable": false,
                   "is_spoiler": false
             },
@@ -24562,7 +24773,7 @@ const sampleGames = [
                   "id": "hollow_blessed",
                   "name": "Blessed",
                   "type": "Prata",
-                  "description": "Acquire all Charms and receive Salubra's blessing.",
+                  "description": "Adquira todos os amuletos e receba a bênção de Salubra.",
                   "tip": "Colete todos os Charms necessários da lista PlayStation e compre/receba a bênção de Salubra.",
                   "is_missable": false,
                   "is_spoiler": false
@@ -24571,7 +24782,7 @@ const sampleGames = [
                   "id": "hollow_protected",
                   "name": "Protected",
                   "type": "Bronze",
-                  "description": "Acquire 4 Mask Shards.",
+                  "description": "Adquira 4 Fragmentos de Máscara.",
                   "tip": "Colete 4 Mask Shards para ganhar uma máscara extra. Há muito mais shards para o troféu Masked.",
                   "is_missable": false,
                   "is_spoiler": false
@@ -24580,8 +24791,8 @@ const sampleGames = [
                   "id": "hollow_masked",
                   "name": "Masked",
                   "type": "Prata",
-                  "description": "Acquire all Mask Shards.",
-                  "tip": "Colete todos os Mask Shards. Alguns exigem bosses, áreas avançadas, quests ou compras.",
+                  "description": "Adquira todos os Fragmentos de Máscara.",
+                  "tip": "Colete todos os Fragmentos de Máscara. Alguns exigem chefes, áreas avançadas, missões ou compras.",
                   "is_missable": false,
                   "is_spoiler": false
             },
@@ -24589,7 +24800,7 @@ const sampleGames = [
                   "id": "hollow_soulful",
                   "name": "Soulful",
                   "type": "Bronze",
-                  "description": "Acquire 3 Vessel Fragments.",
+                  "description": "Adquira 3 Fragmentos de Vaso.",
                   "tip": "Colete 3 Vessel Fragments para aumentar o Soul Vessel. Progride naturalmente com exploração.",
                   "is_missable": false,
                   "is_spoiler": false
@@ -24598,7 +24809,7 @@ const sampleGames = [
                   "id": "hollow_worldsoul",
                   "name": "Worldsoul",
                   "type": "Prata",
-                  "description": "Acquire all Vessel Fragments.",
+                  "description": "Adquira todos os Fragmentos de Vaso.",
                   "tip": "Colete todos os Vessel Fragments, incluindo recompensas de áreas opcionais, shops e desafios.",
                   "is_missable": false,
                   "is_spoiler": false
@@ -24607,8 +24818,8 @@ const sampleGames = [
                   "id": "hollow_connection",
                   "name": "Connection",
                   "type": "Bronze",
-                  "description": "Open half of Hallownest's Stag Stations.",
-                  "tip": "Abra metade das Stag Stations. Elas aceleram muito o cleanup.",
+                  "description": "Abra metade das estações de viagem de Hallownest.",
+                  "tip": "Abra metade das estações de viagem (Stag Stations). Elas aceleram muito a limpeza final.",
                   "is_missable": false,
                   "is_spoiler": false
             },
@@ -24616,7 +24827,7 @@ const sampleGames = [
                   "id": "hollow_hope",
                   "name": "Hope",
                   "type": "Prata",
-                  "description": "Open all of Hallownest's Stag Stations and discover the Stag Nest.",
+                  "description": "Abra todas as estações de viagem de Hallownest e descubra o Ninho do Stag.",
                   "tip": "Abra todas as Stag Stations e visite o Stag Nest para concluir a linha.",
                   "is_missable": false,
                   "is_spoiler": false
@@ -24625,7 +24836,7 @@ const sampleGames = [
                   "id": "hollow_grubfriend",
                   "name": "Grubfriend",
                   "type": "Bronze",
-                  "description": "Rescue half of the imprisoned grubs.",
+                  "description": "Resgate metade dos Grubs aprisionados.",
                   "tip": "Resgate metade dos Grubs. Marque no mapa para facilitar o Metamorphosis depois.",
                   "is_missable": false,
                   "is_spoiler": false
@@ -24634,7 +24845,7 @@ const sampleGames = [
                   "id": "hollow_metamorphosis",
                   "name": "Metamorphosis",
                   "type": "Prata",
-                  "description": "Rescue all of the imprisoned grubs.",
+                  "description": "Resgate todos os Grubs aprisionados.",
                   "tip": "Resgate todos os Grubs. Exige explorar praticamente todo Hallownest e derrotar/achar o Collector.",
                   "is_missable": false,
                   "is_spoiler": false
@@ -24643,7 +24854,7 @@ const sampleGames = [
                   "id": "hollow_cartographer",
                   "name": "Cartographer",
                   "type": "Prata",
-                  "description": "Acquire a map of each area.",
+                  "description": "Adquira um mapa de cada área.",
                   "tip": "Compre/obtenha mapa de cada área com Cornifer/Iselda. Não confunda com completar todos os detalhes do mapa.",
                   "is_missable": false,
                   "is_spoiler": false
@@ -24652,8 +24863,8 @@ const sampleGames = [
                   "id": "hollow_attunement",
                   "name": "Attunement",
                   "type": "Bronze",
-                  "description": "Collect 600 Essence.",
-                  "tip": "Colete 600 Essence com Dream Warriors, Whispering Roots e Dream Bosses.",
+                  "description": "Colete 600 de Essence.",
+                  "tip": "Colete 600 de Essência com Dream Warriors, Whispering Roots e chefes dos sonhos.",
                   "is_missable": false,
                   "is_spoiler": true
             },
@@ -24661,7 +24872,7 @@ const sampleGames = [
                   "id": "hollow_awakening",
                   "name": "Awakening",
                   "type": "Bronze",
-                  "description": "Collect 1800 Essence and awaken the Dream Nail.",
+                  "description": "Colete 1800 de Essence e desperte o Dream Nail.",
                   "tip": "Chegue a 1800 Essence para despertar o Dream Nail. Necessário para conteúdo avançado e finais.",
                   "is_missable": false,
                   "is_spoiler": true
@@ -24670,7 +24881,7 @@ const sampleGames = [
                   "id": "hollow_ascension",
                   "name": "Ascension",
                   "type": "Prata",
-                  "description": "Collect 2400 Essence and hear the Seer's final words.",
+                  "description": "Colete 2400 de Essência e ouça as palavras finais da Seer.",
                   "tip": "Colete 2400 Essence e retorne à Seer para encerrar essa linha.",
                   "is_missable": false,
                   "is_spoiler": true
@@ -24679,8 +24890,8 @@ const sampleGames = [
                   "id": "hollow_keen_hunter",
                   "name": "Keen Hunter",
                   "type": "Bronze",
-                  "description": "Record all of Hallownest's creatures in the Hunter's Journal.",
-                  "tip": "Registre as entradas exigidas no Hunter's Journal; alguns inimigos têm janelas/locais específicos, mas a lista PS permite cleanup amplo.",
+                  "description": "Registre todas as criaturas de Hallownest no Hunter's Journal.",
+                  "tip": "Registre as entradas exigidas no Diário do Caçador (Hunter's Journal). A lista PlayStation permite limpeza ampla, mas controle as entradas pela checklist.",
                   "is_missable": false,
                   "is_spoiler": false
             },
@@ -24688,7 +24899,7 @@ const sampleGames = [
                   "id": "hollow_true_hunter",
                   "name": "True Hunter",
                   "type": "Prata",
-                  "description": "Receive the Hunter's Mark.",
+                  "description": "Receba a Marca do Caçador.",
                   "tip": "Complete o Hunter's Journal exigido e fale com o Hunter para receber a marca.",
                   "is_missable": false,
                   "is_spoiler": false
@@ -24697,7 +24908,7 @@ const sampleGames = [
                   "id": "hollow_solace",
                   "name": "Solace",
                   "type": "Bronze",
-                  "description": "Bring peace to the Grey Mourner.",
+                  "description": "Leve paz ? Grey Mourner.",
                   "tip": "Complete a entrega da Delicate Flower sem dano. Faça com rota limpa e bancos/atalhos planejados.",
                   "is_missable": false,
                   "is_spoiler": true
@@ -24706,7 +24917,7 @@ const sampleGames = [
                   "id": "hollow_warrior",
                   "name": "Warrior",
                   "type": "Bronze",
-                  "description": "Complete the Trial of the Warrior.",
+                  "description": "Conclua o Trial of the Warrior.",
                   "tip": "Complete o primeiro Trial no Colosseum of Fools.",
                   "is_missable": false,
                   "is_spoiler": false
@@ -24715,7 +24926,7 @@ const sampleGames = [
                   "id": "hollow_conqueror",
                   "name": "Conqueror",
                   "type": "Prata",
-                  "description": "Complete the Trial of the Conqueror.",
+                  "description": "Conclua o Trial of the Conqueror.",
                   "tip": "Complete o segundo Trial no Colosseum of Fools; pratique ondas aéreas e use charms defensivos/ofensivos.",
                   "is_missable": false,
                   "is_spoiler": false
@@ -24724,7 +24935,7 @@ const sampleGames = [
                   "id": "hollow_fool",
                   "name": "Fool",
                   "type": "Ouro",
-                  "description": "Complete the Trial of the Fool.",
+                  "description": "Conclua o Trial of the Fool.",
                   "tip": "Complete o Trial of the Fool. É um dos maiores picos de dificuldade fora de Godhome.",
                   "is_missable": false,
                   "is_spoiler": false
@@ -24733,7 +24944,7 @@ const sampleGames = [
                   "id": "hollow_grand_performance",
                   "name": "Grand Performance",
                   "type": "Bronze",
-                  "description": "Defeat Troupe Leader Grimm.",
+                  "description": "Derrote Troupe Leader Grimm.",
                   "tip": "Derrote Troupe Leader Grimm na linha da Grimm Troupe integrada à Voidheart Edition.",
                   "is_missable": false,
                   "is_spoiler": true
@@ -24742,7 +24953,7 @@ const sampleGames = [
                   "id": "hollow_nightmares_end",
                   "name": "Nightmare's End",
                   "type": "Ouro",
-                  "description": "Complete the tale of the Grimm Troupe.",
+                  "description": "Conclua a história da Grimm Troupe.",
                   "tip": "Conclua a Grimm Troupe. Planeje a rota escolhida e pratique Nightmare King Grimm/alternativa conforme a linha.",
                   "is_missable": false,
                   "is_spoiler": true
@@ -24751,7 +24962,7 @@ const sampleGames = [
                   "id": "hollow_soul_and_shade",
                   "name": "Soul & Shade",
                   "type": "Prata",
-                  "description": "Complete the Pantheon of the Knight.",
+                  "description": "Conclua o Pantheon of the Knight.",
                   "tip": "Complete o quarto Pantheon em Godhome. Isso libera acesso ao Pantheon of Hallownest.",
                   "is_missable": false,
                   "is_spoiler": true
@@ -24760,8 +24971,8 @@ const sampleGames = [
                   "id": "hollow_embrace_the_void",
                   "name": "Embrace the Void",
                   "type": "Ouro",
-                  "description": "Ascend the Pantheon of Hallownest and take your place at its peak.",
-                  "tip": "Conclua o Pantheon of Hallownest. É o maior desafio da platina e exige domínio de praticamente todos os bosses.",
+                  "description": "Suba o Pantheon of Hallownest e alcance o topo.",
+                  "tip": "Conclua o Pantheon of Hallownest. É o maior desafio da platina e exige domínio de praticamente todos os chefes.",
                   "is_missable": false,
                   "is_spoiler": true
             },
@@ -24769,7 +24980,7 @@ const sampleGames = [
                   "id": "hollow_pure_completion",
                   "name": "Pure Completion",
                   "type": "Ouro",
-                  "description": "Achieve 112% game completion and finish the game.",
+                  "description": "Atinga 112% de conclusão e conclua o jogo.",
                   "tip": "Alcance 112% de conclusão e finalize o jogo. Não trate como checklist curto: envolve conteúdo base, Grimm Troupe e Godmaster.",
                   "is_missable": false,
                   "is_spoiler": true
@@ -24778,7 +24989,7 @@ const sampleGames = [
                   "id": "hollow_passing_of_the_age",
                   "name": "Passing of the Age",
                   "type": "Prata",
-                  "description": "Aid the Herald in moving on.",
+                  "description": "Ajude o Herald a seguir em frente.",
                   "tip": "Siga a rota de Mister Mushroom/Herald depois dos Dreamers, com o Charm correto quando necessário.",
                   "is_missable": false,
                   "is_spoiler": true
@@ -31231,6 +31442,472 @@ for (const game of sampleGames) {
     trophy.is_missable = game.slug === 'hades' ? false : Boolean(trophy.is_missable || missableTrophyIds.has(trophy.id));
     if (game.slug === 'hades') trophy.isMissable = false;
     if (game.slug === 'resident-evil-requiem') trophy.isMissable = trophy.is_missable;
+  }
+}
+
+const marvelsSpiderManGuide = sampleGames.find(game => game.slug === 'marvels-spider-man');
+if (marvelsSpiderManGuide) {
+  Object.assign(marvelsSpiderManGuide, {
+    difficulty: 3,
+    time: '25-35h',
+    time_min_hours: 25,
+    time_max_hours: 35,
+    time_sort_hours: 35,
+    time_bucket: 'medium',
+    missable: 'Não há perdíveis definitivos na lista base. A platina permite concluir atividades, crimes, coletáveis, trajes, upgrades e 100% dos distritos no pós-jogo.',
+    runs_summary: 'Uma campanha principal em dificuldade confortável com pendências finais livres por distritos. New Game+ não entra na rota da platina base.',
+    missable_summary: 'Sem perdíveis definitivos: o maior risco é deixar crimes, desafios e atividades de distrito acumularem e transformar o pós-jogo em retrabalho.',
+    online_summary: 'A platina base é single-player e não exige online, coop, servidores, multiplayer ou PS+.',
+    grind_summary: 'O maior volume está em 100% dos distritos, crimes por região, bases, desafios do Taskmaster, mochilas, marcos, pesquisas, Black Cat Stakeouts, pombos, trajes, tokens e upgrades.',
+    dlc_scope: 'DLC fora da platina base; NG+ e Ultimate fora da rota principal. The City That Never Sleeps, New Game+, Ultimate e troféus extras do Remastered ficam separados da lista base de 51 troféus usada pelo guia.',
+    difficulty_reason: 'A dificuldade é baixa a moderada: não há dificuldade obrigatória, mas alguns desafios do Taskmaster, bases e pontuações ficam mais fáceis com upgrades, gadgets e mobilidade melhores.',
+    time_reason: 'A faixa de 25-35 horas considera campanha, abertura de distritos, coletáveis, crimes, bases, desafios, trajes, upgrades, pesquisas, atividades de mapa e limpeza final.',
+    first_run_advice: 'Jogue em uma dificuldade confortável, desbloqueie habilidades, gadgets, torres e atividades de distrito, coletando o que estiver no caminho. Deixe crimes, desafios, trajes e 100% dos distritos para a limpeza final quando o mapa estiver mais aberto.',
+    cleanup_advice: 'Depois da campanha, use o mapa e a checklist para fechar 100% dos distritos, crimes restantes, bases, desafios do Taskmaster, mochilas, marcos, pesquisas, Black Cat Stakeouts, pombos, trajes, upgrades e troféus situacionais.',
+    before_you_start: 'A lista base não exige online, coop, dificuldade específica, DLC, New Game+ ou Ultimate. A melhor rota é avançar a história, liberar recursos e alternar campanha com atividades próximas para reduzir repetição no final.',
+    editorial_summary: [
+      'A platina de Marvel’s Spider-Man é direta, acessível e focada em campanha, exploração urbana e conclusão das atividades de Manhattan. A lista base não exige online, coop, dificuldade específica, DLC, New Game+ ou Ultimate, então o desafio principal está em organizar distritos, crimes, bases, desafios, trajes, upgrades e coletáveis sem transformar o final em uma limpeza repetitiva.',
+      'A melhor rota é usar a campanha para abrir a cidade, liberar torres, habilidades, gadgets e atividades de distrito. Pegue mochilas, marcos, pesquisas, Black Cat Stakeouts, pombos e objetivos próximos quando estiverem no caminho, mas não tente limpar tudo cedo demais, porque várias tarefas ficam mais rápidas com mobilidade, combate e gadgets melhores.',
+      'O maior risco é retrabalho, não perda definitiva. 100% dos distritos, crimes, bases, desafios do Taskmaster, tokens, trajes e upgrades podem ser concluídos depois da história, mas acumulam bastante volume se forem todos deixados para o fim. Alterne campanha, atividades próximas e limpeza por distrito para manter ritmo.',
+      'DLCs de história, The City That Never Sleeps, New Game+, Ultimate e extras do Remastered ficam separados da platina base. Use o roadmap para organizar campanha, distritos, atividades, desafios e limpeza final, e depois acompanhe cada pendência pela checklist.'
+    ],
+    best_for: 'Ideal para quem quer uma platina acessível de mundo aberto, com campanha forte, mobilidade fluida e checklist claro de distritos.',
+    avoid_if: 'Evite se você não gosta de limpar mapa, repetir crimes por distrito, perseguir coletáveis e completar atividades de mundo aberto.',
+    editorial_status: 'published',
+    coverage_level: 'complete',
+    is_verified: true,
+    verification_status: 'verified',
+    verification_note: 'Guia revisado editorialmente para a lista base de 51 troféus.',
+    editorial_review_status: 'verified',
+    editorialStatus: 'verified',
+    last_reviewed_at: '2026-05-24',
+    lastReviewedAt: '2026-05-24T00:00:00.000-03:00',
+    editorial_notes: 'Guia revisado editorialmente para a lista base de Marvel’s Spider-Man/Remastered. The City That Never Sleeps, New Game+, Ultimate e extras do Remastered ficam fora da rota da platina base.',
+    editorialNotes: 'Guia revisado editorialmente para a lista base de Marvel’s Spider-Man/Remastered. The City That Never Sleeps, New Game+, Ultimate e extras do Remastered ficam fora da rota da platina base.',
+    quality_warnings: [],
+    qualityWarnings: [],
+    onlineRequired: false,
+    online_required: false,
+    hasOnline: false,
+    hasMandatoryOnline: false,
+    coopRequired: false,
+    coop_required: false,
+    hasMandatoryCoop: false,
+    dlcRequired: false,
+    dlc_required: false,
+    dlcRequiredForPlatinum: false,
+    newGamePlusRequired: false,
+    difficultyTrophiesRequired: false
+  });
+
+  marvelsSpiderManGuide.roadmap = [
+    {
+      title: 'Avance a campanha e abra a cidade antes do 100% dos distritos',
+      focus: 'Campanha / fundamentos',
+      objective: 'Desbloquear habilidades, gadgets, distritos e atividades sem forçar 100% cedo.',
+      actions: [
+        'Jogue em uma dificuldade confortável.',
+        'Ative torres e abra o mapa conforme avança.',
+        'Pegue coletáveis próximos quando estiverem no caminho.',
+        'Use a campanha para aprender combate, furtividade e mobilidade.'
+      ],
+      result: 'História encaminhada e cidade preparada para a limpeza final.'
+    },
+    {
+      title: 'Libere habilidades, gadgets e melhorias importantes',
+      focus: 'Progressão / upgrades',
+      objective: 'Fortalecer o Homem-Aranha antes de desafios, bases e limpeza completa.',
+      actions: [
+        'Invista em habilidades úteis de combate e travessia.',
+        'Melhore gadgets usados com frequência.',
+        'Complete atividades que rendem tokens necessários.',
+        'Evite gastar recursos sem conferir trajes e upgrades pendentes.'
+      ],
+      result: 'Personagem mais forte e checklist de upgrades encaminhada.'
+    },
+    {
+      title: 'Trabalhe coletáveis e atividades por distrito',
+      focus: 'Coletáveis / mapa',
+      objective: 'Reduzir retrabalho controlando mochilas, marcos, pesquisas, fotos, bases e atividades regionais.',
+      actions: [
+        'Limpe um distrito por vez quando possível.',
+        'Marque mochilas, marcos, pesquisas, Black Cat Stakeouts e pombos.',
+        'Faça atividades próximas durante deslocamentos.',
+        'Não deixe todos os crimes para o final.'
+      ],
+      result: 'Distritos parcialmente ou totalmente encaminhados.'
+    },
+    {
+      title: 'Complete bases, crimes e desafios',
+      focus: 'Pendências finais / execução',
+      objective: 'Resolver atividades repetitivas e objetivos de pontuação com mais recursos liberados.',
+      actions: [
+        'Faça crimes por distrito até completar os requisitos.',
+        'Complete bases com atenção aos objetivos bônus quando precisar de tokens.',
+        'Volte aos desafios do Taskmaster depois de melhorar mobilidade e gadgets.',
+        'Use checklist para separar o que ainda falta.'
+      ],
+      warning: 'Crimes e desafios podem cansar se acumularem todos no fim.',
+      result: 'Atividades principais da cidade concluídas ou quase concluídas.'
+    },
+    {
+      title: 'Finalize campanha, chefes e troféus específicos',
+      focus: 'História / chefes',
+      objective: 'Concluir a história e resolver troféus ligados a eventos, chefes ou ações específicas.',
+      actions: [
+        'Termine a campanha principal.',
+        'Revise troféus de história e eventos específicos.',
+        'Faça troféus situacionais em mundo aberto.',
+        'Evite misturar DLC, New Game+ ou Ultimate com a lista base.'
+      ],
+      result: 'História concluída e pendências específicas reduzidas.'
+    },
+    {
+      title: 'Faça a limpeza final da platina base',
+      focus: 'Checklist final',
+      objective: 'Conferir 100% dos distritos, trajes, upgrades, coletáveis e pendências restantes.',
+      actions: [
+        'Revise todos os troféus pendentes.',
+        'Confirme distritos, crimes, bases, desafios, mochilas, marcos, pesquisas, trajes e upgrades.',
+        'Separe The City That Never Sleeps, New Game+, Ultimate e extras do Remastered como pacotes fora da platina base.',
+        'Confirme que não há online, coop ou dificuldade obrigatória na platina base.'
+      ],
+      result: 'Lista base concluída e guia pronto para platina.'
+    }
+  ];
+
+  const spiderManTrophyFixes = {
+    msm_be_greater: { name_pt: 'Seja Maior', description: 'Conquiste todos os troféus da lista base.', tip: 'Conclua os outros 50 troféus da lista base. DLC, New Game+ e extras do Remastered não entram nesta platina.' },
+    msm_superior_spider_man: { name_pt: 'Homem-Aranha Superior', description: 'Desbloqueie todas as habilidades.', tip: 'Chegue ao nível máximo e compre todas as habilidades. Atividades de mapa e campanha fornecem XP suficiente ao longo da rota.' },
+    msm_i_heart_manhattan: { name_pt: 'Eu Amo Manhattan', description: 'Alcance 100% de conclusão em todos os distritos.', tip: 'Feche distritos pelo mapa: crimes, bases, desafios, mochilas, marcos, pesquisas e atividades regionais. Pode ficar para o pós-jogo.' },
+    msm_master_of_masters: { name_pt: 'Mestre dos Mestres', description: 'Derrote o Taskmaster.', tip: 'Complete a cadeia de desafios do Taskmaster e vença o confronto final. Deixe para quando estiver confortável com combate e gadgets.' },
+    msm_backpacker: { name_pt: 'Mochileiro', description: 'Colete todas as mochilas.', tip: 'Ative torres e siga o mapa para coletar todas as mochilas por distrito.' },
+    msm_cat_prints: { name_pt: 'Pegadas da Gata', description: 'Rastreie a Black Cat.', tip: 'Complete todos os Black Cat Stakeouts revelados no mapa.' },
+    msm_inner_sanctuary: { name_pt: 'Santuário Interior', description: 'Elimine todos os Demon Warehouses.', tip: 'Conclua todos os Demon Warehouses quando esse tipo de base aparecer na campanha.' },
+    msm_all_the_kings_men: { name_pt: 'Todos os Homens do Rei', description: 'Elimine todos os Fisk Hideouts.', tip: 'Limpe todos os Fisk Hideouts e faça objetivos bônus se precisar de mais tokens.' },
+    msm_mercenary_tactics: { name_pt: 'Táticas Mercenárias', description: 'Elimine todos os Sable Outposts.', tip: 'Conclua todos os Sable Outposts liberados na reta avançada da campanha.' },
+    msm_back_in_the_slammer: { name_pt: 'De Volta à Prisão', description: 'Elimine todos os Prisoner Camps.', tip: 'Limpe todos os Prisoner Camps quando eles surgirem no mapa.' },
+    msm_neighborhood_watch: { name_pt: 'Vigilância de Bairro', description: 'Conclua todos os crimes de facção em um distrito.', tip: 'Escolha um distrito e conclua todos os crimes de facção listados nele. Crimes restantes podem ser limpos depois da campanha.' },
+    msm_a_suit_for_all_seasons: { name_pt: 'Um Traje para Todas as Estações', description: 'Compre todos os trajes.', tip: 'Guarde tokens suficientes para comprar os trajes exigidos antes de gastar demais em upgrades.' },
+    msm_schooled: { name_pt: 'Lição Dada', description: 'Conclua todas as missões dos estudantes corrompidos.', tip: 'Conclua a sequência de missões secundárias dos estudantes corrompidos quando ficar disponível.' },
+    msm_amazing_coverage: { name_pt: 'Cobertura Espetacular', description: 'Ative todas as torres de vigilância.', tip: 'Ative todas as torres para revelar atividades e coletáveis por distrito.' },
+    msm_short_fuse: { name_pt: 'Pavio Curto', description: 'Consiga Spectacular ou melhor em um desafio de bomba do Taskmaster.', tip: 'Otimize a rota de balanço e mire em Spectacular em um desafio de bomba.' },
+    msm_fists_of_fury: { name_pt: 'Punhos de Fúria', description: 'Consiga Spectacular ou melhor em um desafio de combate do Taskmaster.', tip: 'Use finalizações, gadgets e multiplicador alto para pontuar em um desafio de combate.' },
+    msm_ninja: { name_pt: 'Ninja', description: 'Consiga Spectacular ou melhor em um desafio de furtividade do Taskmaster.', tip: 'Memorize a rota e faça quedas rápidas sem alertar inimigos.' },
+    msm_spy_hunter: { name_pt: 'Caçador de Espiões', description: 'Consiga Spectacular ou melhor em um desafio de drone do Taskmaster.', tip: 'Siga os anéis com velocidade e use lançamentos pontuais para manter tempo baixo.' },
+    msm_challenge_finder: { name_pt: 'Caçador de Desafios', description: 'Conclua uma vez todos os desafios do Taskmaster na cidade.', tip: 'Faça todos os desafios do Taskmaster ao menos uma vez; medalhas melhores ajudam nos tokens.' },
+    msm_r_and_d: { name_pt: 'P&D', description: 'Conclua todas as Research Stations.', tip: 'Conclua todas as Research Stations liberadas no mapa.' },
+    msm_demons_emerge: { name_pt: 'Demônios Surgem', description: 'Conclua o Ato 1.', tip: 'Troféu de progresso da história; continue a campanha principal.' },
+    msm_the_six_assemble: { name_pt: 'Os Seis se Reúnem', description: 'Conclua o Ato 2.', tip: 'Troféu de progresso de ato avançado da campanha.' },
+    msm_end_game: { name_pt: 'Fim de Jogo', description: 'Conclua o Ato 3.', tip: 'Troféu de conclusão da campanha principal.' },
+    msm_science_ftw: { name_pt: 'Ciência FTW!', description: 'Crie 15 upgrades.', tip: 'Compre upgrades usando tokens de atividades; acompanhe o custo antes de comprar todos os trajes.' },
+    msm_knocking_down_kingpin: { name_pt: 'Derrubando o Rei do Crime', description: 'Derrote Fisk.', tip: 'Troféu de chefe ligado à campanha principal.' },
+    msm_staying_positive: { name_pt: 'Mantendo a Positividade', description: 'Derrote Li.', tip: 'Troféu de chefe ligado a evento avançado da história.' },
+    msm_grounded: { name_pt: 'Aterrados', description: 'Derrote Electro e Vulture.', tip: 'Troféu de chefe da reta final; prepare upgrades e gadgets.' },
+    msm_sting_and_smash: { name_pt: 'Ferrão e Esmagamento', description: 'Derrote Scorpion e Rhino.', tip: 'Troféu de chefe da reta final; controle arena e recursos.' },
+    msm_tombstone_takedown: { name_pt: 'Queda do Tombstone', description: 'Derrote Tombstone.', tip: 'Conclua a cadeia de missões secundárias do Tombstone até o confronto.' },
+    msm_shock_and_awe: { name_pt: 'Choque e Pavor', description: 'Derrote Shocker.', tip: 'Troféu de chefe ligado à campanha principal.' },
+    msm_wing_it: { name_pt: 'Improvisando nas Alturas', description: 'Atravesse os telhados da cidade.', tip: 'Continue se deslocando pelos telhados; tende a vir naturalmente durante a exploração.' },
+    msm_king_of_swing: { name_pt: 'Rei do Balanço', description: 'Conclua um benchmark de travessia nível 1.', tip: 'Faça qualquer benchmark de travessia nível 1 no menu de benchmarks.' },
+    msm_and_stay_down: { name_pt: 'E Fique no Chão!', description: 'Conclua um benchmark de combate nível 1.', tip: 'Conclua qualquer benchmark de combate nível 1 durante encontros ou bases.' },
+    msm_pigeon_hunter: { name_pt: 'Caçador de Pombos', description: 'Capture todos os pombos do Howard.', tip: 'Depois da missão secundária inicial de Howard, siga os ícones de pombos no mapa.' },
+    msm_hug_it_out: { name_pt: 'Abraço Explosivo', description: 'Junte 10 pares de inimigos usando Trip Mines.', tip: 'Use Trip Mines em bases com grupos próximos para puxar pares de inimigos.' },
+    msm_friendly_neighborhood_spider_man: { name_pt: 'Amigo da Vizinhança', description: 'Conclua todas as missões secundárias.', tip: 'Conclua todas as missões secundárias marcadas no mapa; nenhuma é perdível.' },
+    msm_the_scientific_method: { name_pt: 'O Método Científico', description: 'Crie seu primeiro upgrade.', tip: 'Compre qualquer primeiro upgrade quando o sistema ficar disponível.' },
+    msm_spider_sensible: { name_pt: 'Sentido-Aranha Apurado', description: 'Faça 10 Perfect Dodges.', tip: 'Esquive no último instante quando o alerta ficar azul/branco para acumular Perfect Dodges.' },
+    msm_overdrive: { name_pt: 'Sobrecarga', description: 'Faça 10 Vehicle Takedowns.', tip: 'Faça perseguições de crimes de veículo e conclua dez takedowns.' },
+    msm_with_great_power: { name_pt: 'Com Grandes Poderes...', description: 'Preste respeito no túmulo de Ben Parker.', tip: 'Visite o cemitério no noroeste do mapa e interaja com o túmulo de Ben Parker.' },
+    msm_hero_for_higher: { name_pt: 'Herói nas Alturas', description: 'Pouse no topo da Avengers Tower.', tip: 'Suba ao topo da Avengers Tower e pouse na ponta mais alta.' },
+    msm_sightseeing: { name_pt: 'Passeio Turístico', description: 'Fotografe todos os marcos no mapa.', tip: 'Fotografe todos os marcos revelados no mapa após ativar torres.' },
+    msm_born_to_ride: { name_pt: 'Nascido para Viajar', description: 'Use o metrô 5 vezes.', tip: 'Use fast travel cinco vezes; pode repetir o mesmo ponto se quiser limpar rápido.' },
+    msm_sticky_and_tricky: { name_pt: 'Grudento e Estiloso', description: 'Faça uma sequência de 4 manobras diferentes antes de pousar.', tip: 'Durante uma queda longa, segure o comando de tricks e alterne quatro manobras antes de pousar.' },
+    msm_snappy_dresser: { name_pt: 'Bem Vestido', description: 'Use 5 Spider-Suits novos.', tip: 'Equipe cinco trajes diferentes após comprá-los ou desbloqueá-los.' },
+    msm_arachnophobia: { name_pt: 'Aracnofobia', description: 'Faça 75 Stealth Takedowns.', tip: 'Use encontros e bases para acumular takedowns furtivos de poleiro, parede ou aproximação.' },
+    msm_lost_and_found: { name_pt: 'Achados e Perdidos', description: 'Colete 5 mochilas.', tip: 'Colete as primeiras cinco mochilas reveladas no mapa.' },
+    msm_spider_man_about_town: { name_pt: 'Homem-Aranha pela Cidade', description: 'Cumprimente 10 cidadãos.', tip: 'Ande pela rua e cumprimente dez civis quando o prompt aparecer.' },
+    msm_cats_out_of_the_bag: { name_pt: 'A Gata Saiu do Saco', description: 'Colete um item da Black Cat.', tip: 'Pegue o primeiro colecionável da Black Cat durante a missão inicial de stakeout.' },
+    msm_a_bit_of_a_fixer_upper: { name_pt: 'Uma Pequena Reforma', description: 'Conclua todos os projetos opcionais no laboratório.', tip: 'Volte ao laboratório no free roam e conclua todos os puzzles opcionais liberados.' },
+    msm_ace_the_base: { name_pt: 'Base Impecável', description: 'Conclua todos os objetivos em uma base.', tip: 'Escolha uma base com objetivos bônus fáceis e cumpra todos antes de finalizar o encontro.' }
+  };
+
+  for (const trophy of marvelsSpiderManGuide.trophies || []) {
+    const fix = spiderManTrophyFixes[trophy.id] || {};
+    Object.assign(trophy, fix);
+    trophy.trophyNameOriginal = trophy.name;
+    trophy.trophyNamePtBr = trophy.name_pt || '';
+    trophy.namePtSource = trophy.name_pt ? 'editorial_ptbr' : '';
+    trophy.descriptionPtBr = trophy.description;
+    trophy.ptDescription = trophy.description;
+    trophy.localizedDescription = { ...(trophy.localizedDescription || {}), ptBr: trophy.description };
+    trophy.descriptionPtSource = 'editorial_ptbr';
+    trophy.is_missable = false;
+    trophy.isMissable = false;
+    trophy.is_online = false;
+    trophy.isOnline = false;
+    trophy.is_coop = false;
+    trophy.isCoop = false;
+  }
+}
+
+const hollowKnightGuide = sampleGames.find(game => game.slug === 'hollow-knight');
+if (hollowKnightGuide) {
+  Object.assign(hollowKnightGuide, {
+    time_reason: 'A faixa de 60-100 horas considera exploração, coletáveis, 112%, chefes opcionais, Trials, Godhome e grande variação por habilidade.',
+    first_run_advice: 'Faça uma primeira run de aprendizado para abrir mapas, atalhos, habilidades, amuletos, melhorias do Ferrão e chefes. Antes de obter Void Heart, conclua o final básico The Hollow Knight no mesmo save.',
+    runs_summary: 'Recomendado: uma run principal de exploração e limpeza final, com atenção ao final básico antes de Void Heart, seguida de prática dedicada para 112%, Godhome e Pantheon of Hallownest.',
+    missable_summary: 'Tem perdível por rota/save: faça o final básico The Hollow Knight antes de obter Void Heart. O restante é majoritariamente limpeza final e prática, mas 112%, Godhome e finais exigem planejamento.',
+    grind_summary: 'O peso está em 112%, amuletos, larvas, Essência, Diário do Caçador, Trials, Grimm Troupe, chefes opcionais e principalmente Pantheon of Hallownest.',
+    difficulty_reason: 'A dificuldade vem da execução em chefes, Trial of the Fool, Nightmare’s End, 112%, Godhome e Pantheon of Hallownest; não há seletor de dificuldade tradicional.',
+    cleanup_advice: 'Depois dos finais principais, limpe amuletos, larvas, Essência, Diário do Caçador, Delicate Flower, Trials, Grimm Troupe e 112% antes de focar no Pantheon of Hallownest.',
+    before_you_start: 'Esta entrada usa a lista PlayStation de Hollow Knight: Voidheart Edition. Antes de pegar Void Heart, faça o final The Hollow Knight no mesmo save. Steel Soul, Speedrun, Steel Heart e outras conquistas extras de PC/Xbox ficam fora da platina PlayStation usada por este guia.',
+    dlc_scope: 'Conteúdo Voidheart integrado à lista PlayStation. Grimm Troupe e Godmaster fazem parte da lista usada pelo guia; conquistas extras de PC/Xbox não entram nesta platina.',
+    editorial_summary: [
+      'Explore Hallownest com calma antes de mirar Void Heart, 112% e Godhome. A primeira run deve servir para aprender mapas, chefes, amuletos, habilidades, melhorias do Ferrão e rotas sem transformar cada sala em tentativa perfeita.',
+      'A platina de Hollow Knight usa a lista PlayStation de Voidheart Edition, com 35 troféus, totalmente single-player, sem online obrigatório e sem coop obrigatório. O conteúdo integrado, incluindo Grimm Troupe e Godmaster, faz parte da rota quando aparece na checklist.',
+      'Tem perdível por rota/save: o final básico The Hollow Knight deve ser concluído antes de obter Void Heart no mesmo save. Steel Soul, Speedrun, Steel Heart e conquistas extras de PC/Xbox ficam fora da platina PlayStation usada por este guia.',
+      'Os maiores filtros são 112%, Godhome, Pantheon of Hallownest, Trial of the Fool, Nightmare’s End, chefes avançados, Essência, Diário do Caçador e coletáveis extensos. Use o roadmap para separar exploração, finais, limpeza final e prática, e use a checklist para controlar cada pendência.'
+    ],
+    best_for: 'Ideal para quem quer uma platina metroidvania difícil, longa, técnica e altamente recompensadora.',
+    avoid_if: 'Evite se você não quer chefes muito difíceis, Trial of the Fool, 112%, Pantheon of Hallownest ou longas sessões de prática.',
+    onlineRequired: false,
+    online_required: false,
+    hasOnline: false,
+    hasMandatoryOnline: false,
+    coopRequired: false,
+    coop_required: false,
+    hasMandatoryCoop: false,
+    dlcRequired: false,
+    dlc_required: false,
+    dlcRequiredForPlatinum: false,
+    is_verified: true,
+    verification_status: 'verified',
+    verification_note: 'Guia revisado editorialmente.',
+    editorial_review_status: 'verified',
+    editorialStatus: 'verified',
+    last_reviewed_at: '2026-05-24',
+    lastReviewedAt: '2026-05-24T00:00:00.000-03:00',
+    editorial_notes: 'Guia revisado editorialmente para a lista PlayStation de Hollow Knight: Voidheart Edition. Steel Soul, Speedrun, Steel Heart e extras de PC/Xbox ficam fora da platina PlayStation usada por este guia.',
+    editorialNotes: 'Guia revisado editorialmente para a lista PlayStation de Hollow Knight: Voidheart Edition. Steel Soul, Speedrun, Steel Heart e extras de PC/Xbox ficam fora da platina PlayStation usada por este guia.',
+    quality_warnings: [],
+    qualityWarnings: []
+  });
+
+  hollowKnightGuide.roadmap = [
+    {
+      title: 'Explore Hallownest e aprenda a base do jogo',
+      focus: 'Fundamentos / exploração',
+      objective: 'Conhecer movimentação, mapas, chefes, amuletos, habilidades e rotas antes de tentar objetivos avançados.',
+      actions: [
+        'Jogue a primeira run com calma.',
+        'Compre mapas e marque áreas importantes.',
+        'Aprenda padrões de inimigos e chefes.',
+        'Priorize habilidades, melhorias do Ferrão, feitiços e amuletos úteis.'
+      ],
+      result: 'Base de exploração criada e jogador preparado para a limpeza final.'
+    },
+    {
+      title: 'Abra rotas, habilidades e upgrades importantes',
+      focus: 'Progressão / upgrades',
+      objective: 'Liberar mobilidade, recursos e acesso às áreas necessárias para coletáveis, chefes e finais.',
+      actions: [
+        'Busque habilidades de movimento.',
+        'Melhore o Ferrão, máscaras, Fragmentos de Vaso e amuletos.',
+        'Abra estações de viagem, atalhos e rotas de retorno.',
+        'Organize áreas pendentes por região.'
+      ],
+      result: 'Hallownest aberto e rotas principais encaminhadas.'
+    },
+    {
+      title: 'Limpe coletáveis, amuletos, larvas e progresso de 112%',
+      focus: 'Coletáveis / pendências',
+      objective: 'Resolver coletáveis e progresso antes dos desafios mais pesados.',
+      actions: [
+        'Use checklist para amuletos, larvas, Fragmentos de Máscara, Fragmentos de Vaso e melhorias.',
+        'Complete áreas por região.',
+        'Trabalhe Essência, Diário do Caçador e objetivos longos se estiverem na lista.',
+        'Evite deixar toda a limpeza final para depois dos desafios difíceis.'
+      ],
+      result: 'Grande parte da lista de exploração concluída.'
+    },
+    {
+      title: 'Resolva chefes, finais e desafios avançados',
+      focus: 'Chefes / finais',
+      objective: 'Concluir chefes, finais e desafios de combate da run principal.',
+      actions: [
+        'Treine chefes difíceis antes de tentativas decisivas.',
+        'Separe finais e escolhas de rota conforme a lista.',
+        'Prepare amuletos e melhorias para lutas avançadas.',
+        'Deixe Trial of the Fool, Grimm Troupe e chefes mais duros para depois de fortalecer o personagem.'
+      ],
+      warning: 'Alguns finais e eventos exigem atenção para não travar uma rota específica.',
+      result: 'Chefes, finais e desafios principais encaminhados.'
+    },
+    {
+      title: 'Separe extras e riscos fora da platina PlayStation',
+      focus: 'Escopo / extras',
+      objective: 'Manter Steel Soul, Speedrun, Steel Heart e outras conquistas extras fora da rota principal da Voidheart Edition.',
+      actions: [
+        'Siga a lista PlayStation usada pelo guia sem misturar extras de PC/Xbox.',
+        'Deixe Steel Soul e Speedrun para uma leitura separada se a lista do projeto mudar.',
+        'Não combine objetivos incompatíveis com coleta completa ou limpeza final longa.'
+      ],
+      result: 'Riscos isolados da rota base e checklist mais limpa.'
+    },
+    {
+      title: 'Finalize Godhome e a checklist da platina',
+      focus: 'Godhome / checklist final',
+      objective: 'Resolver os maiores desafios restantes e conferir a lista completa.',
+      actions: [
+        'Treine chefes individualmente quando possível.',
+        'Ajuste amuletos para cada desafio.',
+        'Revise todos os troféus pendentes.',
+        'Confirme coletáveis, finais, chefes, melhorias e limpeza final.'
+      ],
+      result: 'Lista base concluída e guia pronto para platina.'
+    }
+  ];
+
+  const hollowKnightTrophyFixes = {
+    hollow_heart_of_hallownest: {
+      description: 'Conquiste todos os demais troféus.',
+      tip: 'Desbloqueie todos os demais troféus da lista PlayStation de Voidheart Edition.'
+    },
+    hollow_falsehood: {
+      tip: 'Derrote o Falso Cavaleiro no começo da campanha. Troféu de progressão de chefe.'
+    },
+    hollow_test_of_resolve: {
+      tip: 'Derrote Hornet em Greenpath para abrir progressão essencial de movimento.'
+    },
+    hollow_proof_of_resolve: {
+      tip: 'Derrote Hornet pela segunda vez em Kingdom’s Edge; necessário para avançar rumo ao Abyss e Void Heart.'
+    },
+    hollow_watcher: {
+      description: 'Destrua Lurien, o Vigia.',
+      tip: 'Destrua Lurien, um dos três Dreamers. Necessário para abrir o Black Egg.'
+    },
+    hollow_beast: {
+      tip: 'Destrua Herrah, uma das três Sonhadoras/Dreamers. Planeje a rota por Deepnest com melhorias adequadas.'
+    },
+    hollow_teacher: {
+      tip: 'Destrua Monomon, uma das três Sonhadoras/Dreamers. Exige progressão em Fog Canyon e Teacher’s Archives.'
+    },
+    hollow_charmed: {
+      description: 'Adquira seu primeiro amuleto.',
+      tip: 'Pegue qualquer amuleto. É um troféu simples e parte natural da exploração.'
+    },
+    hollow_enchanted: {
+      description: 'Adquira metade dos amuletos de Hallownest.',
+      tip: 'Colete metade dos amuletos. Use mapa e checklist para não esquecer vendedores, missões e chefes opcionais.'
+    },
+    hollow_blessed: {
+      description: 'Adquira todos os amuletos e receba a bênção de Salubra.',
+      tip: 'Colete todos os amuletos necessários da lista PlayStation e compre ou receba a bênção de Salubra.'
+    },
+    hollow_protected: {
+      description: 'Adquira 4 Fragmentos de Máscara.',
+      tip: 'Colete 4 Fragmentos de Máscara para ganhar uma máscara extra. Há muitos outros fragmentos para o troféu Mascarado.'
+    },
+    hollow_masked: {
+      description: 'Adquira todos os Fragmentos de Máscara.',
+      tip: 'Colete todos os Fragmentos de Máscara. Alguns exigem chefes, áreas avançadas, missões ou compras.'
+    },
+    hollow_soulful: {
+      tip: 'Colete 3 Fragmentos de Vaso para aumentar o reservatório de Alma. Progride naturalmente com exploração.'
+    },
+    hollow_worldsoul: {
+      tip: 'Colete todos os Fragmentos de Vaso, incluindo recompensas de áreas opcionais, lojas e desafios.'
+    },
+    hollow_connection: {
+      description: 'Abra metade das estações de viagem de Hallownest.',
+      tip: 'Abra metade das estações de viagem (Stag Stations). Elas aceleram muito a limpeza final.'
+    },
+    hollow_hope: {
+      description: 'Abra todas as estações de viagem de Hallownest e descubra o Ninho do Stag.',
+      tip: 'Abra todas as estações de viagem (Stag Stations) e visite o Ninho do Stag para concluir essa linha.'
+    },
+    hollow_grubfriend: {
+      description: 'Resgate metade das larvas aprisionadas.',
+      tip: 'Resgate metade das larvas. Marque no mapa para facilitar Metamorfose depois.'
+    },
+    hollow_metamorphosis: {
+      description: 'Resgate todas as larvas aprisionadas.',
+      tip: 'Resgate todas as larvas. Exige explorar praticamente todo Hallownest e encontrar o Collector.'
+    },
+    hollow_cartographer: {
+      description: 'Adquira um mapa de cada área.',
+      tip: 'Compre ou obtenha o mapa de cada área com Cornifer ou Iselda. Não confunda com completar todos os detalhes do mapa.'
+    },
+    hollow_attunement: {
+      description: 'Colete 600 de Essência.',
+      tip: 'Colete 600 de Essência com Dream Warriors, Whispering Roots e Dream Bosses.'
+    },
+    hollow_awakening: {
+      description: 'Colete 1800 de Essência e desperte o Dream Nail.',
+      tip: 'Chegue a 1800 de Essência para despertar o Dream Nail. Necessário para conteúdo avançado e finais.'
+    },
+    hollow_ascension: {
+      description: 'Colete 2400 de Essência e ouça as palavras finais da Seer.',
+      tip: 'Colete 2400 de Essência e retorne à Seer para encerrar essa linha.'
+    },
+    hollow_keen_hunter: {
+      description: 'Registre todas as criaturas de Hallownest no Diário do Caçador.',
+      tip: 'Registre as entradas exigidas no Diário do Caçador (Hunter’s Journal). A lista PlayStation permite limpeza ampla, mas controle as entradas pela checklist.'
+    },
+    hollow_true_hunter: {
+      description: 'Receba a Marca do Caçador.',
+      tip: 'Complete o Diário do Caçador exigido e fale com o Hunter para receber a marca.'
+    },
+    hollow_solace: {
+      description: 'Leve paz à Grey Mourner.',
+      tip: 'Complete a entrega da Delicate Flower sem sofrer dano. Faça com rota limpa e bancos/atalhos planejados.'
+    },
+    hollow_warrior: {
+      description: 'Conclua o Trial of the Warrior.',
+      tip: 'Complete o primeiro Trial no Colosseum of Fools.'
+    },
+    hollow_conqueror: {
+      description: 'Conclua o Trial of the Conqueror.',
+      tip: 'Complete o segundo Trial no Colosseum of Fools; pratique ondas aéreas e use amuletos defensivos ou ofensivos.'
+    },
+    hollow_fool: {
+      description: 'Conclua o Trial of the Fool.',
+      tip: 'Complete o Trial of the Fool. É um dos maiores picos de dificuldade fora de Godhome.'
+    },
+    hollow_grand_performance: {
+      tip: 'Derrote Troupe Leader Grimm na linha da Grimm Troupe integrada à Voidheart Edition.'
+    },
+    hollow_nightmares_end: {
+      description: 'Conclua a história da Grimm Troupe.',
+      tip: 'Conclua a Grimm Troupe. Planeje a rota escolhida e pratique Nightmare King Grimm ou a alternativa correspondente.'
+    },
+    hollow_soul_and_shade: {
+      tip: 'Conclua o quarto Panteão em Godhome. Isso libera acesso ao Pantheon of Hallownest.'
+    },
+    hollow_embrace_the_void: {
+      tip: 'Conclua o Pantheon of Hallownest. É o maior desafio da platina e exige domínio de praticamente todos os chefes.'
+    },
+    hollow_pure_completion: {
+      description: 'Atinga 112% de conclusão e conclua o jogo.',
+      tip: 'Alcance 112% de conclusão e finalize o jogo. Envolve conteúdo base, Grimm Troupe, Godmaster, chefes, melhorias, amuletos, Essência e limpeza final extensa.'
+    },
+    hollow_passing_of_the_age: {
+      tip: 'Siga a rota de Mister Mushroom/Herald depois dos Dreamers, com o amuleto correto quando necessário.'
+    }
+  };
+
+  for (const trophy of hollowKnightGuide.trophies || []) {
+    Object.assign(trophy, hollowKnightTrophyFixes[trophy.id] || {});
+    trophy.trophyNameOriginal = trophy.name;
+    trophy.trophyNamePtBr = trophy.name_pt || '';
+    trophy.namePtSource = trophy.name_pt ? 'editorial_ptbr' : '';
+    trophy.descriptionPtBr = trophy.description;
+    trophy.ptDescription = trophy.description;
+    trophy.localizedDescription = { ...(trophy.localizedDescription || {}), ptBr: trophy.description };
+    trophy.descriptionPtSource = 'editorial_ptbr';
+    trophy.is_online = false;
+    trophy.isOnline = false;
+    trophy.is_coop = false;
+    trophy.isCoop = false;
   }
 }
 

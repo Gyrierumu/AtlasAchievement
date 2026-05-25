@@ -141,6 +141,8 @@
     re2r_grim_reaper: { add: [{ id: 'difficulty', label: 'Dificuldade', tone: 'warning' }, { id: 'run', label: 'Risco de run', tone: 'warning' }] }
   };
   const RESIDENT_EVIL_3_TAG_FIXES_BY_ID = {
+    re3r_somebody_to_lean_on: { remove: ['collectible'], add: [{ id: 'spoiler', label: 'Spoiler', tone: 'warning' }, { id: 'story', label: 'História', tone: 'partial' }] },
+    re3r_escape_city: { remove: ['collectible'], add: [{ id: 'spoiler', label: 'Spoiler', tone: 'warning' }, { id: 'story', label: 'História', tone: 'partial' }] },
     re3r_dominator: { add: [{ id: 'difficulty', label: 'Dificuldade', tone: 'warning' }, { id: 'run', label: 'Risco de run', tone: 'warning' }] },
     re3r_nemesis_down: { add: [{ id: 'boss', label: 'Boss', tone: 'warning' }, { id: 'run', label: 'Risco de run', tone: 'warning' }] },
     re3r_nemesis_down_rooftop: { add: [{ id: 'boss', label: 'Boss', tone: 'warning' }, { id: 'spoiler', label: 'Spoiler', tone: 'warning' }] },
@@ -375,6 +377,210 @@
         return true;
       }));
     }
+    if (String(game?.slug || '').trim().toLowerCase() === 'hollow-knight') {
+      const trophyId = String(trophy?.id || '').trim();
+      const hkTag = (id, label, tone = 'warning') => ({ id, label, tone });
+      const fixes = {
+        hollow_charmed: { add: [hkTag('collectible', 'Coletável', 'partial')] },
+        hollow_enchanted: { add: [hkTag('collectible', 'Coletável', 'partial')] },
+        hollow_blessed: { add: [hkTag('collectible', 'Coletável', 'partial'), hkTag('cleanup', 'Cleanup', 'neutral')] },
+        hollow_protected: { add: [hkTag('collectible', 'Coletável', 'partial')] },
+        hollow_masked: { add: [hkTag('collectible', 'Coletável', 'partial'), hkTag('cleanup', 'Cleanup', 'neutral')] },
+        hollow_soulful: { add: [hkTag('collectible', 'Coletável', 'partial')] },
+        hollow_worldsoul: { add: [hkTag('collectible', 'Coletável', 'partial'), hkTag('cleanup', 'Cleanup', 'neutral')] },
+        hollow_connection: { add: [hkTag('collectible', 'Coletável', 'partial'), hkTag('cleanup', 'Cleanup', 'neutral')] },
+        hollow_hope: { add: [hkTag('collectible', 'Coletável', 'partial'), hkTag('cleanup', 'Cleanup', 'neutral')] },
+        hollow_grubfriend: { add: [hkTag('collectible', 'Coletável', 'partial')] },
+        hollow_metamorphosis: { add: [hkTag('collectible', 'Coletável', 'partial'), hkTag('cleanup', 'Cleanup', 'neutral')] },
+        hollow_cartographer: { add: [hkTag('collectible', 'Coletável', 'partial'), hkTag('cleanup', 'Cleanup', 'neutral')] },
+        hollow_attunement: { remove: ['run'], add: [hkTag('collectible', 'Coletável', 'partial'), hkTag('cleanup', 'Cleanup', 'neutral')] },
+        hollow_awakening: { remove: ['run', 'story'], add: [hkTag('collectible', 'Coletável', 'partial'), hkTag('cleanup', 'Cleanup', 'neutral')] },
+        hollow_ascension: { remove: ['run', 'story'], add: [hkTag('collectible', 'Coletável', 'partial'), hkTag('cleanup', 'Cleanup', 'neutral')] },
+        hollow_keen_hunter: { remove: ['missable'], add: [hkTag('collectible', 'Coletável', 'partial'), hkTag('cleanup', 'Cleanup', 'neutral')] },
+        hollow_true_hunter: { remove: ['missable'], add: [hkTag('collectible', 'Coletável', 'partial'), hkTag('cleanup', 'Cleanup', 'neutral')] },
+        hollow_fool: { add: [hkTag('difficulty', 'Dificuldade', 'warning')] },
+        hollow_grand_performance: { add: [hkTag('boss', 'Boss', 'warning'), hkTag('difficulty', 'Dificuldade', 'warning')] },
+        hollow_nightmares_end: { remove: ['story'], add: [hkTag('boss', 'Boss', 'warning'), hkTag('difficulty', 'Dificuldade', 'warning')] },
+        hollow_soul_and_shade: { add: [hkTag('difficulty', 'Dificuldade', 'warning'), hkTag('boss', 'Boss', 'warning')] },
+        hollow_embrace_the_void: { remove: ['collectible'], add: [hkTag('difficulty', 'Dificuldade', 'warning'), hkTag('boss', 'Boss', 'warning')] },
+        hollow_pure_completion: { add: [hkTag('collectible', 'Coletável', 'partial'), hkTag('difficulty', 'Dificuldade', 'warning'), hkTag('cleanup', 'Cleanup', 'neutral')] }
+      };
+      const fix = fixes[trophyId];
+      if (fix) {
+        const nextTags = tags.filter(tag => !(fix.remove || []).includes(tag?.id));
+        (fix.add || []).forEach(tag => {
+          if (!nextTags.some(item => item?.id === tag.id)) nextTags.push(tag);
+        });
+        return sortGuideTrophyTags(nextTags);
+      }
+      return sortGuideTrophyTags(tags);
+    }
+    if (String(game?.slug || '').trim().toLowerCase() === 'marvels-spider-man') {
+      const trophyId = String(trophy?.id || '').trim();
+      const msmTag = (id, label, tone = 'warning') => ({ id, label, tone });
+      const collectibleIds = new Set([
+        'msm_i_heart_manhattan',
+        'msm_backpacker',
+        'msm_cat_prints',
+        'msm_amazing_coverage',
+        'msm_r_and_d',
+        'msm_pigeon_hunter',
+        'msm_sightseeing',
+        'msm_lost_and_found',
+        'msm_cats_out_of_the_bag'
+      ]);
+      const cleanupIds = new Set([
+        'msm_superior_spider_man',
+        'msm_i_heart_manhattan',
+        'msm_master_of_masters',
+        'msm_backpacker',
+        'msm_cat_prints',
+        'msm_inner_sanctuary',
+        'msm_all_the_kings_men',
+        'msm_mercenary_tactics',
+        'msm_back_in_the_slammer',
+        'msm_neighborhood_watch',
+        'msm_a_suit_for_all_seasons',
+        'msm_schooled',
+        'msm_amazing_coverage',
+        'msm_challenge_finder',
+        'msm_r_and_d',
+        'msm_science_ftw',
+        'msm_pigeon_hunter',
+        'msm_friendly_neighborhood_spider_man',
+        'msm_overdrive',
+        'msm_sightseeing',
+        'msm_arachnophobia',
+        'msm_with_great_power',
+        'msm_a_bit_of_a_fixer_upper',
+        'msm_ace_the_base'
+      ]);
+      const difficultyIds = new Set([
+        'msm_master_of_masters',
+        'msm_inner_sanctuary',
+        'msm_all_the_kings_men',
+        'msm_mercenary_tactics',
+        'msm_back_in_the_slammer',
+        'msm_short_fuse',
+        'msm_fists_of_fury',
+        'msm_ninja',
+        'msm_spy_hunter',
+        'msm_challenge_finder',
+        'msm_ace_the_base'
+      ]);
+      const storyIds = new Set([
+        'msm_demons_emerge',
+        'msm_the_six_assemble',
+        'msm_end_game',
+        'msm_inner_sanctuary',
+        'msm_mercenary_tactics',
+        'msm_knocking_down_kingpin',
+        'msm_staying_positive',
+        'msm_grounded',
+        'msm_sting_and_smash',
+        'msm_tombstone_takedown',
+        'msm_shock_and_awe'
+      ]);
+      const bossIds = new Set([
+        'msm_master_of_masters',
+        'msm_knocking_down_kingpin',
+        'msm_staying_positive',
+        'msm_grounded',
+        'msm_sting_and_smash',
+        'msm_tombstone_takedown',
+        'msm_shock_and_awe'
+      ]);
+      const grindIds = new Set(['msm_superior_spider_man', 'msm_neighborhood_watch', 'msm_science_ftw', 'msm_overdrive', 'msm_arachnophobia']);
+      const nextTags = tags.filter(tag => !['missable', 'online', 'coop', 'run', 'collectible', 'story', 'difficulty', 'grind', 'cleanup', 'boss'].includes(tag?.id));
+      const add = tag => {
+        if (!nextTags.some(item => item?.id === tag.id)) nextTags.push(tag);
+      };
+      if (collectibleIds.has(trophyId)) add(msmTag('collectible', 'Coletável', 'partial'));
+      if (cleanupIds.has(trophyId)) add(msmTag('cleanup', 'Cleanup', 'neutral'));
+      if (difficultyIds.has(trophyId)) add(msmTag('difficulty', 'Dificuldade', 'warning'));
+      if (storyIds.has(trophyId)) add(msmTag('story', 'História', 'partial'));
+      if (bossIds.has(trophyId)) add(msmTag('boss', 'Boss', 'warning'));
+      if (grindIds.has(trophyId)) add(msmTag('grind', 'Grind', 'warning'));
+      return sortGuideTrophyTags(nextTags);
+    }
+    if (String(game?.slug || '').trim().toLowerCase() === 'marvels-spider-man-miles-morales') {
+      const trophyId = String(trophy?.id || '').trim();
+      const msmmTag = (id, label, tone = 'warning') => ({ id, label, tone });
+      const storyIds = new Set([
+        'msmm_rhino_rodeo',
+        'msmm_hanging_by_a_thread',
+        'msmm_the_core_of_the_problem',
+        'msmm_true_deception',
+        'msmm_the_harlem_express',
+        'msmm_veloci_skates',
+        'msmm_shared_history',
+        'msmm_exploding_bulldozer',
+        'msmm_family_drama',
+        'msmm_ultimate_sacrifice',
+        'msmm_a_gift_from_pete'
+      ]);
+      const collectibleIds = new Set([
+        'msmm_urban_explorers',
+        'msmm_memory_lane',
+        'msmm_salvager',
+        'msmm_deep_cuts'
+      ]);
+      const cleanupIds = new Set([
+        'msmm_just_the_beginning',
+        'msmm_a_new_home',
+        'msmm_salvager',
+        'msmm_under_their_noses',
+        'msmm_underground_undone',
+        'msmm_ready_for_anything',
+        'msmm_come_at_the_king',
+        'msmm_spider_training_complete',
+        'msmm_petes_first_villain',
+        'msmm_kitbash',
+        'msmm_deep_cuts',
+        'msmm_best_fries_in_town',
+        'msmm_jjj_would_be_proud',
+        'msmm_five_star_review',
+        'msmm_mod_that_suit',
+        'msmm_look_with_better_eyes',
+        'msmm_never_give_up',
+        'msmm_crime_master',
+        'msmm_im_on_a_boat',
+        'msmm_socially_acceptable',
+        'msmm_plus_plus'
+      ]);
+      const difficultyIds = new Set([
+        'msmm_never_saw_it_coming',
+        'msmm_100x_combo',
+        'msmm_launch_swing_and_dive',
+        'msmm_punching_pixels',
+        'msmm_dodging_light',
+        'msmm_crime_master'
+      ]);
+      const grindIds = new Set([
+        'msmm_from_the_rafters',
+        'msmm_climbing_the_walls',
+        'msmm_invisible_spider',
+        'msmm_overcharge',
+        'msmm_trapped',
+        'msmm_crime_master',
+        'msmm_nowhere_to_hide'
+      ]);
+      const bossIds = new Set([
+        'msmm_exploding_bulldozer',
+        'msmm_family_drama'
+      ]);
+      const nextTags = tags.filter(tag => !['missable', 'online', 'coop', 'run', 'collectible', 'story', 'difficulty', 'grind', 'cleanup', 'boss'].includes(tag?.id));
+      const add = tag => {
+        if (!nextTags.some(item => item?.id === tag.id)) nextTags.push(tag);
+      };
+      if (collectibleIds.has(trophyId)) add(msmmTag('collectible', 'Coletável', 'partial'));
+      if (cleanupIds.has(trophyId)) add(msmmTag('cleanup', 'Cleanup', 'neutral'));
+      if (difficultyIds.has(trophyId)) add(msmmTag('difficulty', 'Dificuldade', 'warning'));
+      if (storyIds.has(trophyId)) add(msmmTag('story', 'História', 'partial'));
+      if (bossIds.has(trophyId)) add(msmmTag('boss', 'Boss', 'warning'));
+      if (grindIds.has(trophyId)) add(msmmTag('grind', 'Grind', 'warning'));
+      return sortGuideTrophyTags(nextTags);
+    }
     if (String(game?.slug || '').trim().toLowerCase() === 'the-last-of-us-part-i') {
       const trophyId = String(trophy?.id || '').trim();
       if (trophyId === 'tlou1_master_of_unlocking' && !ids.has('difficulty')) {
@@ -417,6 +623,21 @@
   function countGuideTrophyTag(trophies = [], tagId = '') {
     if (tagId === 'missable') return countRealMissableTrophies(trophies);
     return (Array.isArray(trophies) ? trophies : []).filter(trophy => getGuideTrophyTags(trophy).some(tag => tag.id === tagId)).length;
+  }
+
+  function getGuideRiskCounts(trophies = [], game = {}) {
+    const keys = GUIDE_TROPHY_TAG_PRIORITY.concat(['boss']);
+    const counts = keys.reduce((acc, key) => ({ ...acc, [key]: 0 }), {});
+    let alertCount = 0;
+    (Array.isArray(trophies) ? trophies : []).forEach(trophy => {
+      const tags = getGuideTrophyTags(trophy, game);
+      if (tags.length) alertCount += 1;
+      tags.forEach(tag => {
+        if (!tag?.id) return;
+        counts[tag.id] = Number(counts[tag.id] || 0) + 1;
+      });
+    });
+    return { ...counts, missable: countRealMissableTrophies(trophies), alertCount };
   }
 
   function formatGuideCount(value = 0, singular = '', plural = '') {
@@ -744,7 +965,9 @@
 
   function shouldReadRoadmapFirst(game = {}, trophies = [], roadmap = []) {
     const inputs = getGuideVerdictInputs(game, { trophies, roadmap, total: trophies.length });
-    const riskCounts = getRiskCounts(trophies);
+    const riskCounts = String(game?.slug || '').trim().toLowerCase() === 'marvels-spider-man'
+      ? getGuideRiskCounts(trophies, game)
+      : getRiskCounts(trophies);
     const onlineCount = countGuideTrophyTag(trophies, 'online');
     const coopCount = countGuideTrophyTag(trophies, 'coop');
     const hasOnline = hasAffirmativeOnlineRequirement(inputs.online, onlineCount);
@@ -1304,6 +1527,39 @@
           trophyName: firstPending?.name || ''
         };
       }
+      if (String(game?.slug || '').trim().toLowerCase() === 'hollow-knight') {
+        return {
+          kind: 'roadmap',
+          title: 'Explore Hallownest antes de mirar Void Heart, 112% e Godhome',
+          detail: firstRunAdvice || 'Faça uma primeira run de aprendizado para abrir mapas, atalhos, habilidades, amuletos, melhorias do Ferrão e chefes. Antes de obter Void Heart, conclua o final básico The Hollow Knight no mesmo save.',
+          cta: 'Abrir roadmap',
+          focus: 'roadmap',
+          trophyId: firstPending?.id || '',
+          trophyName: firstPending?.name || ''
+        };
+      }
+      if (String(game?.slug || '').trim().toLowerCase() === 'marvels-spider-man') {
+        return {
+          kind: 'roadmap',
+          title: 'Avance a campanha e abra a cidade antes do 100% dos distritos',
+          detail: firstRunAdvice || 'Jogue em uma dificuldade confortável, desbloqueie habilidades, gadgets, torres e atividades de distrito, coletando o que estiver no caminho. Deixe crimes, desafios, trajes e 100% dos distritos para a limpeza final quando o mapa estiver mais aberto.',
+          cta: 'Abrir roadmap',
+          focus: 'roadmap',
+          trophyId: firstPending?.id || '',
+          trophyName: firstPending?.name || ''
+        };
+      }
+      if (String(game?.slug || '').trim().toLowerCase() === 'marvels-spider-man-miles-morales') {
+        return {
+          kind: 'roadmap',
+          title: 'Avance a campanha e prepare o New Game+',
+          detail: firstRunAdvice || 'Na primeira campanha, abra distritos, libere Spider-Treino, use Venom e camuflagem, faça atividades próximas e guarde recursos para trajes, habilidades e aprimoramentos.',
+          cta: 'Abrir roadmap',
+          focus: 'roadmap',
+          trophyId: firstPending?.id || '',
+          trophyName: firstPending?.name || ''
+        };
+      }
       if (String(game?.slug || '').trim().toLowerCase() === 'hades') {
         return {
           kind: 'roadmap',
@@ -1414,10 +1670,19 @@
     const missableText = firstGuideText(game?.missable, game?.missable_summary);
     const missableNegated = hasNegatedGuideRequirement(missableText);
     const hasMissableRisk = Boolean(missableCount || riskCounts.missable || (!missableNegated && /perdivel|missable|perder|sem chapter|no chapter/.test(guideText)));
+    const currentSlug = String(game?.slug || '').trim().toLowerCase();
     const cards = [];
 
     if (runs || /multiplas|varias|multi-run|run|campanha dedicada|speedrun/.test(guideText) || riskCounts.run) {
-      cards.push({ tag: 'Runs', title: runs || 'O guia menciona runs ou campanhas específicas', text: runs ? 'Use esta estrutura antes de misturar história, cleanup e restrições.' : 'Há sinais no roadmap, alerta ou troféus de que a ordem das runs muda o esforço.' });
+      cards.push({
+        tag: 'Runs',
+        title: runs || 'O guia menciona runs ou campanhas específicas',
+        text: runs
+          ? (currentSlug === 'marvels-spider-man'
+            ? 'Use esta estrutura antes de misturar história, pendências finais e restrições.'
+            : 'Use esta estrutura antes de misturar história, cleanup e restrições.')
+          : 'Há sinais no roadmap, alerta ou troféus de que a ordem das runs muda o esforço.'
+      });
     }
     if (hasMissableRisk) {
       cards.push({ tag: 'Perdíveis', title: `${missableCount || riskCounts.missable || 1} ponto(s) com risco de perda`, text: game?.missable || 'Revise os troféus marcados antes de avançar demais na campanha.' });
@@ -1425,7 +1690,11 @@
     if (riskCounts.spoiler) cards.push({ tag: 'Spoiler', title: `${riskCounts.spoiler} troféu(s) escondem informação sensível`, text: 'Revele detalhes só quando fizer sentido para sua run atual.' });
     if (riskCounts.collectible) cards.push({ tag: 'Coletáveis', title: `${riskCounts.collectible} troféu(s) com sinal de coleta ou checklist`, text: 'Marque progresso desde cedo para evitar varrer áreas sem contexto no final.' });
     if (difficulty >= 7 || riskCounts.difficulty) cards.push({ tag: 'Dificuldade', title: difficulty >= 7 ? `Dificuldade ${difficulty}/10` : `${riskCounts.difficulty} troféu(s) exigem atenção mecânica`, text: 'Separe tempo para treino, rotas seguras e leitura dos pontos mais exigentes antes da execução.' });
-    if (riskCounts.cleanup || /cleanup|limpeza|pos-jogo|post-game|deixe para o final/.test(guideText)) cards.push({ tag: 'Cleanup', title: `${riskCounts.cleanup || 1} sinal(is) de limpeza planejada`, text: 'Deixe o cleanup para o momento indicado pelo roadmap em vez de caçar pendências cedo demais.' });
+    if (riskCounts.cleanup || /cleanup|limpeza|pos-jogo|post-game|deixe para o final/.test(guideText)) {
+      cards.push(currentSlug === 'marvels-spider-man'
+        ? { tag: 'Limpeza final', title: `${riskCounts.cleanup || 1} sinal(is) de limpeza planejada`, text: 'Deixe a limpeza final para o momento indicado pelo roadmap em vez de caçar pendências cedo demais.' }
+        : { tag: 'Cleanup', title: `${riskCounts.cleanup || 1} sinal(is) de limpeza planejada`, text: 'Deixe o cleanup para o momento indicado pelo roadmap em vez de caçar pendências cedo demais.' });
+    }
     if (String(game?.grind || '').trim() || riskCounts.grind) cards.push({ tag: 'Grind', title: String(game?.grind || '').trim() || `${riskCounts.grind} troféu(s) parecem envolver repetição`, text: 'Planeje farm, rank, recursos ou repetição para não descobrir esse custo só no fim.' });
     if (!cards.length) cards.push({ tag: 'Leitura inicial', title: 'Sem alerta forte cadastrado antes da checklist', text: 'O guia não aponta um grande bloqueio editorial, mas o roadmap ainda deve vir antes da lista completa.' });
     return cards;
@@ -1433,6 +1702,104 @@
 
   function buildRouteChangingTrophies(trophies = [], game = {}) {
     const trophyById = new Map((Array.isArray(trophies) ? trophies : []).map(trophy => [trophy?.id, trophy]).filter(([id]) => id));
+    if (String(game?.slug || '').trim().toLowerCase() === 'marvels-spider-man') {
+      const attentionTag = (label, tone = 'warning') => ({ id: normalizeGuideSignalText(label).replace(/\s+/g, '-'), label, tone });
+      return [
+        {
+          id: 'msm_attention_districts',
+          name: '100% dos distritos',
+          type: 'Coletável / Limpeza final',
+          text: 'O maior volume da platina está em limpar distritos: crimes, bases, desafios, coletáveis e atividades de mapa. Alterne com a campanha para não deixar tudo repetitivo no final.',
+          tags: [attentionTag('Coletável / Limpeza final', 'partial')],
+          score: 100
+        },
+        {
+          id: 'msm_attention_crimes',
+          name: 'Crimes por distrito',
+          type: 'Grind / Pendências finais',
+          text: 'Crimes aparecem por região e podem virar grind se acumularem. Resolva parte deles enquanto atravessa a cidade.',
+          tags: [attentionTag('Grind / Pendências finais', 'warning')],
+          score: 99
+        },
+        {
+          id: 'msm_attention_challenges',
+          name: 'Desafios e pontuações',
+          type: 'Dificuldade / Pendências finais',
+          text: 'Alguns desafios exigem boa mobilidade, gadgets e execução. Deixe pontuações melhores para depois de liberar upgrades.',
+          tags: [attentionTag('Dificuldade / Pendências finais', 'warning')],
+          score: 98
+        },
+        {
+          id: 'msm_attention_upgrades',
+          name: 'Trajes, gadgets e upgrades',
+          type: 'Recursos / Pendências finais',
+          text: 'Tokens e recursos de atividades alimentam trajes e melhorias. Evite gastar sem olhar o que ainda será necessário para a checklist.',
+          tags: [attentionTag('Recursos / Pendências finais', 'partial')],
+          score: 97
+        },
+        {
+          id: 'msm_attention_extras',
+          name: 'DLC, NG+ e extras',
+          type: 'DLC / Checklist',
+          text: 'The City That Never Sleeps, New Game+, Ultimate e extras do Remastered ficam separados da platina base. Não misture esses pacotes com a rota principal.',
+          tags: [attentionTag('DLC / Checklist', 'neutral')],
+          score: 96
+        }
+      ];
+    }
+    if (String(game?.slug || '').trim().toLowerCase() === 'hollow-knight') {
+      const attentionTag = (label, tone = 'warning') => ({ id: normalizeGuideSignalText(label).replace(/\s+/g, '-'), label, tone });
+      const read = (id, fallbackName, fallbackOriginal) => {
+        const trophy = trophyById.get(id) || {};
+        return {
+          name: trophy.name_pt || trophy.trophyNamePtBr || fallbackName,
+          originalName: trophy.name || trophy.trophyNameOriginal || fallbackOriginal
+        };
+      };
+      const hollowKnightAttention = [
+        {
+          id: 'hollow_the_hollow_knight',
+          ...read('hollow_the_hollow_knight', 'O Cavaleiro Vazio', 'The Hollow Knight'),
+          type: 'Perdível / Spoiler / História',
+          text: 'Faça o final básico antes de obter Void Heart. Depois disso, esse final pode ficar bloqueado no mesmo save e exigir outra run.',
+          tags: [attentionTag('Perdível', 'risk'), attentionTag('Spoiler', 'spoiler'), attentionTag('História', 'partial')],
+          score: 100
+        },
+        {
+          id: 'hollow_embrace_the_void',
+          ...read('hollow_embrace_the_void', 'Abrace o Vazio', 'Embrace the Void'),
+          type: 'Dificuldade / Boss / Spoiler',
+          text: 'Pantheon of Hallownest é o maior filtro da platina. Deixe para depois de dominar chefes, amuletos, cura, movimentação e rotas de Godhome.',
+          tags: [attentionTag('Dificuldade', 'warning'), attentionTag('Boss', 'warning'), attentionTag('Spoiler', 'spoiler')],
+          score: 99
+        },
+        {
+          id: 'hollow_pure_completion',
+          ...read('hollow_pure_completion', 'Conclusão Pura', 'Pure Completion'),
+          type: 'Coletável / Dificuldade / Cleanup / Spoiler',
+          text: '112% exige conteúdo base, Grimm Troupe, Godmaster, chefes, upgrades, amuletos, Essência e limpeza final extensa. Use checklist para não transformar o final em retrabalho.',
+          tags: [attentionTag('Coletável', 'partial'), attentionTag('Dificuldade', 'warning'), attentionTag('Cleanup', 'partial'), attentionTag('Spoiler', 'spoiler')],
+          score: 98
+        },
+        {
+          id: 'hollow_keen_hunter',
+          ...read('hollow_keen_hunter', 'Caçador Atento', 'Keen Hunter'),
+          type: 'Coletável / Cleanup',
+          text: 'Diário do Caçador exige controle de inimigos e entradas específicas. Use a checklist para validar entradas antes de avançar demais.',
+          tags: [attentionTag('Coletável', 'partial'), attentionTag('Cleanup', 'partial')],
+          score: 97
+        },
+        {
+          id: 'hollow_nightmares_end',
+          ...read('hollow_nightmares_end', 'Fim do Pesadelo', 'Nightmare’s End'),
+          type: 'Dificuldade / Boss / Spoiler',
+          text: 'Grimm Troupe envolve rota, escolha e combate avançado. Planeje a linha antes do final e pratique Nightmare King Grimm ou a alternativa correspondente.',
+          tags: [attentionTag('Dificuldade', 'warning'), attentionTag('Boss', 'warning'), attentionTag('Spoiler', 'spoiler')],
+          score: 96
+        }
+      ];
+      return hollowKnightAttention.filter(item => trophyById.has(item.id));
+    }
     const residentEvilAttentionIds = [
       're1r_nightmare_ends',
       're1r_cqc_ftw',
@@ -2694,6 +3061,80 @@
     const dlcRequired = /necessaria|obrigatoria|dlc no escopo|expansao|expansoes/.test(dlcNormalized) && !dlcNotRequired;
     const reviewAnswer = 'Essa informação ainda está em revisão editorial. Consulte os alertas do guia antes de começar.';
 
+    if (String(game?.slug || '').trim().toLowerCase() === 'marvels-spider-man-miles-morales') {
+      return [
+        {
+          question: 'Precisa jogar no difícil?',
+          answer: 'Não. A dificuldade não afeta a platina; escolha qualquer dificuldade nas duas jogadas.'
+        },
+        {
+          question: 'Tem troféu perdível?',
+          answer: 'Não há perdível definitivo, pois missões e atividades podem ser repetidas. Mesmo assim, acompanhe ações específicas para evitar retrabalho.'
+        },
+        {
+          question: 'Precisa de New Game+?',
+          answer: 'Sim. New Game+ é obrigatório para concluir Plus Plus e fechar habilidades/trajes ligados à segunda jogada.'
+        },
+        {
+          question: 'Dá para platinar em uma jogada?',
+          answer: 'Não. A platina exige pelo menos 2 jogadas por causa do New Game+.'
+        },
+        {
+          question: 'Precisa jogar online ou coop?',
+          answer: 'Não. A platina é totalmente offline e solo, sem servidores, multiplayer, coop ou PS+ obrigatório.'
+        },
+        {
+          question: 'O que mais costuma atrasar a platina?',
+          answer: 'Objetivos bônus de crimes, 100% dos distritos, habilidades, trajes, aprimoramentos e ações esquecidas como barco, feed social, túmulo, Modo Foto e troféus de combate/furtividade.'
+        },
+        {
+          question: 'Posso deixar os colecionáveis para depois?',
+          answer: 'Sim. A maioria pode ser feita na limpeza final, e os cartões-postais aparecem somente após a campanha.'
+        },
+        {
+          question: 'PS4 e PS5 têm lista diferente?',
+          answer: 'A lista base usada pelo guia tem os mesmos 50 troféus em PS4 e PS5. Transferência de save/autopop é observação externa, não requisito da platina.'
+        }
+      ];
+    }
+
+    if (String(game?.slug || '').trim().toLowerCase() === 'marvels-spider-man') {
+      return [
+        {
+          question: 'Marvel’s Spider-Man tem troféus perdíveis?',
+          answer: 'Não. A platina base permite limpar atividades, crimes, coletáveis e 100% dos distritos no pós-jogo. O maior cuidado é organizar a limpeza final para evitar retrabalho.'
+        },
+        {
+          question: 'Marvel’s Spider-Man precisa de online ou coop para platinar?',
+          answer: 'Não. A platina base é single-player e não exige online, coop, servidores, multiplayer ou PS+.'
+        },
+        {
+          question: 'Quantas runs são necessárias?',
+          answer: 'A platina base pode ser planejada em uma campanha com limpeza final pós-história. New Game+ só entra como pacote extra separado, fora da rota principal.'
+        },
+        {
+          question: 'Precisa jogar em dificuldade específica?',
+          answer: 'Não. A platina base não exige dificuldade específica. Jogue em uma dificuldade confortável e deixe desafios, bases e pontuações para depois de liberar mais recursos.'
+        },
+        {
+          question: 'O que mais toma tempo na platina?',
+          answer: '100% dos distritos, crimes, bases, desafios do Taskmaster, mochilas, marcos, pesquisas, Black Cat Stakeouts, pombos, trajes, tokens, upgrades e atividades de mapa concentram a maior parte do tempo.'
+        },
+        {
+          question: 'DLCs, New Game+ ou Ultimate são necessários?',
+          answer: 'Não para a platina base. The City That Never Sleeps, New Game+, Ultimate e troféus extras do Remastered ficam separados da lista base acompanhada por este guia.'
+        },
+        {
+          question: 'Qual é o melhor primeiro passo?',
+          answer: 'Avance a campanha, abra distritos, desbloqueie habilidades e gadgets, colete o que estiver no caminho e deixe a limpeza completa para quando a cidade estiver mais aberta.'
+        },
+        {
+          question: '100% dos distritos é perdível?',
+          answer: 'Não. Trate 100% dos distritos como objetivo de mapa e limpeza final. Ele pode ser resolvido depois da história com a cidade aberta.'
+        }
+      ];
+    }
+
     if (String(game?.slug || '').trim().toLowerCase() === 'resident-evil') {
       return [
         {
@@ -2796,11 +3237,48 @@
         },
         {
           question: 'Existem troféus de pouca cura ou sem baú?',
-          answer: 'Sim. Pode ser útil mais tarde e Minimalista exigem condições específicas. Faça esses objetivos em runs dedicadas ou combine apenas quando já tiver uma rota segura.'
+          answer: 'Sim. Os troféus ligados a usar pouca cura e não abrir o baú exigem condições específicas. Faça esses objetivos em runs dedicadas ou combine apenas quando já tiver uma rota segura.'
         },
         {
           question: 'O que mais dá trabalho na platina?',
           answer: 'Dificuldades altas, Inferno, rank, gerenciamento de recursos, Nemesis, coletáveis perdíveis por run e objetivos condicionais são os principais filtros.'
+        }
+      ];
+    }
+
+    if (String(game?.slug || '').trim().toLowerCase() === 'hollow-knight') {
+      return [
+        {
+          question: 'Hollow Knight tem troféus perdíveis?',
+          answer: 'Sim, há objetivos que podem exigir rota ou save específico, especialmente o final básico antes de Void Heart, escolhas de progresso e eventos avançados. Nada deve ser tratado como perda definitiva sem validação, mas alguns erros podem obrigar uma nova run.'
+        },
+        {
+          question: 'Hollow Knight precisa de online ou coop para platinar?',
+          answer: 'Não. A platina da lista PlayStation é single-player e não exige online, coop, servidores, multiplayer ou PS+.'
+        },
+        {
+          question: 'Quantas runs são necessárias?',
+          answer: 'Planeje mais de uma run. A rota mais segura separa aprendizado, cleanup, finais, Godhome e a conferência final da checklist.'
+        },
+        {
+          question: 'Steel Soul entra na platina base?',
+          answer: 'Não na lista base desta entrada. Steel Soul fica fora do escopo da platina PlayStation usada pelo guia.'
+        },
+        {
+          question: 'Existem troféus de speedrun ou 100% em tempo?',
+          answer: 'Não na platina base desta entrada. Esses desafios ficam fora do escopo da lista PlayStation e não devem ser misturados com o cleanup da Voidheart Edition.'
+        },
+        {
+          question: 'Godhome e os Panteões entram na platina?',
+          answer: 'Sim. Se estiverem na lista do jogo usada pelo guia, eles entram e são um dos maiores filtros de dificuldade, especialmente Pantheon of Hallownest.'
+        },
+        {
+          question: 'O que mais dá trabalho na platina?',
+          answer: 'Final básico antes de Void Heart, 112%, Godhome, Pantheon of Hallownest, Trial of the Fool, bosses difíceis e coletáveis extensos são os principais filtros.'
+        },
+        {
+          question: 'DLCs ou extras fazem parte da lista?',
+          answer: 'Os conteúdos integrados da Voidheart Edition, como Grimm Troupe e Godmaster, já fazem parte da lista usada pelo guia. Extras de PC/Xbox ficam separados.'
         }
       ];
     }
@@ -4031,7 +4509,9 @@
     const missableCount = countRealMissableTrophies(trophies);
     const attentionCount = trophies.filter(trophy => trophy && (isRealMissableTrophy(trophy) || trophy.is_spoiler)).length;
     const spoilerCount = trophies.filter(trophy => trophy?.is_spoiler).length;
-    const riskCounts = getRiskCounts(trophies);
+    const riskCounts = String(game?.slug || '').trim().toLowerCase() === 'marvels-spider-man'
+      ? getGuideRiskCounts(trophies, game)
+      : getRiskCounts(trophies);
     const guidanceCounts = buildGuidanceCounts(trophies, riskCounts);
     const breakdown = getTrophyBreakdown(trophies);
     const breakdownText = breakdown.filter(item => item.count > 0).map(item => `${item.count} ${item.type}`).join(' • ') || 'Sem troféus detalhados';

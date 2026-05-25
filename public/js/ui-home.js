@@ -106,22 +106,25 @@ window.UIHome = (() => {
     if (!homeView || homeView.classList.contains('hidden') || document.querySelector('[data-home-update-popup]')) return;
 
     const gamesBySlug = new Map((Array.isArray(games) ? games : []).map(game => [normalizeSlug(game.slug), game]));
-    if (!gamesBySlug.has('saros')) return;
+    const requiredCatalogSlug = normalizeSlug(update.requiredCatalogSlug || update.sections?.[0]?.items?.[0]?.slug || '');
+    if (requiredCatalogSlug && !gamesBySlug.has(requiredCatalogSlug)) return;
 
     const sections = (Array.isArray(update.sections) ? update.sections : []).map(section => {
       const items = resolveUpdateItems(section.items || [], gamesBySlug);
       if (!items.length) return null;
-      const allVerified = !section.requiresVerifiedStatus || items.every(item => item.verified);
+      const displayItems = section.requiresVerifiedStatus ? items.filter(item => item.verified) : items;
+      if (!displayItems.length) return null;
+      const allVerified = !section.requiresVerifiedStatus || displayItems.every(item => item.verified);
       return {
         ...section,
         title: section.requiresVerifiedStatus && !allVerified ? (section.fallbackTitle || 'Guias revisados recentemente') : section.title,
         allVerified,
-        items
+        items: displayItems
       };
     }).filter(Boolean);
 
-    const addedSection = sections.find(section => /Novos jogos adicionados/i.test(section.title));
-    if (!addedSection || !addedSection.items.some(item => item.slug === 'saros')) return;
+    const addedSection = sections.find(section => /Novo(?:s)? jogo(?:s)? adicionado(?:s)?/i.test(section.title));
+    if (!addedSection || (requiredCatalogSlug && !addedSection.items.some(item => item.slug === requiredCatalogSlug))) return;
 
     const usesConservativeCopy = sections.some(section => section.requiresVerifiedStatus && !section.allVerified);
     const subtitle = usesConservativeCopy ? (update.conservativeSubtitle || update.subtitle) : update.subtitle;

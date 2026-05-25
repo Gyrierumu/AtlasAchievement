@@ -1,15 +1,16 @@
 window.AtlasSiteUpdates = (() => {
-  const sarosPragmataUpdate = {
-    id: '2026-saros-pragmata-verified-guides',
+  const editorialBatchUpdate = {
+    id: '2026-subnautica-verified-batch',
     active: true,
     type: 'catalog_update',
-    title: 'Novidades no AtlasAchievement',
-    subtitle: 'Saros e Pragmata chegaram ao catálogo, e uma nova leva de guias foi verificada.',
-    conservativeSubtitle: 'Saros e Pragmata chegaram ao catálogo, e uma nova leva de guias foi revisada.',
-    description: 'Confira os guias em português com roadmap, checklist e informações editoriais revisadas para planejar sua próxima platina.',
-    localStorageKey: 'atlas_update_popup_seen_2026_saros_pragmata_verified_guides',
+    requiredCatalogSlug: 'subnautica',
+    title: 'Novos guias e verificações no AtlasAchievement',
+    subtitle: 'Subnautica entrou no catálogo, e uma nova leva de guias recebeu revisão editorial para ajudar você a escolher a próxima platina com mais confiança.',
+    conservativeSubtitle: 'Subnautica entrou no catálogo, e uma nova leva de guias recebeu revisão editorial para ajudar você a escolher a próxima platina com mais confiança.',
+    description: 'Confira o novo jogo adicionado e os guias em português que já estão marcados como verificados na base editorial.',
+    localStorageKey: 'atlas_update_popup_seen_2026_subnautica_verified_batch',
     primaryCta: {
-      label: 'Ver novidades',
+      label: 'Ver guias verificados',
       href: '/catalogo'
     },
     secondaryCta: {
@@ -18,32 +19,26 @@ window.AtlasSiteUpdates = (() => {
     },
     sections: [
       {
-        title: 'Novos jogos adicionados',
+        title: 'Novo jogo adicionado',
         items: [
-          { label: 'Saros', href: '/jogo/saros', slug: 'saros' },
-          { label: 'Pragmata', href: '/jogo/pragmata', slug: 'pragmata' }
+          { label: 'Subnautica', href: '/jogo/subnautica', slug: 'subnautica' }
         ]
       },
       {
-        title: 'Guias verificados',
+        title: 'Nova leva de guias verificados',
         fallbackTitle: 'Guias revisados recentemente',
         requiresVerifiedStatus: true,
         items: [
-          { label: 'Elden Ring', href: '/jogo/elden-ring', slug: 'elden-ring' },
-          { label: 'Hades', href: '/jogo/hades', slug: 'hades' },
-          { label: 'Hades II', href: '/jogo/hades-ii', slug: 'hades-ii' },
-          { label: 'Ghost of Tsushima', href: '/jogo/ghost-of-tsushima', slug: 'ghost-of-tsushima' },
-          { label: 'Astro Bot', href: '/jogo/astro-bot', slug: 'astro-bot' },
-          { label: 'Astro’s Playroom', href: '/jogo/astros-playroom', slug: 'astros-playroom' },
-          { label: 'Resident Evil 4 Remake', href: '/jogo/resident-evil-4-remake', slug: 'resident-evil-4-remake' },
-          { label: 'Nioh 2', href: '/jogo/nioh-2', slug: 'nioh-2' },
-          { label: 'Nioh 3', href: '/jogo/nioh-3', slug: 'nioh-3' }
+          { label: 'Resident Evil', href: '/jogo/resident-evil', slug: 'resident-evil' },
+          { label: 'Hollow Knight', href: '/jogo/hollow-knight', slug: 'hollow-knight' },
+          { label: 'Dead Cells', href: '/jogo/dead-cells', slug: 'dead-cells' },
+          { label: 'God of War Ragnarök', href: '/jogo/god-of-war-ragnarok', slug: 'god-of-war-ragnarok' }
         ]
       }
     ]
   };
 
   return {
-    activeHomeUpdate: sarosPragmataUpdate
+    activeHomeUpdate: editorialBatchUpdate
   };
 })();

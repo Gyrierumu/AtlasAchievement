@@ -1975,7 +1975,7 @@ async function assertSeedData({ all, get }, sampleGames) {
   assert(hollowKnight?.dlc_scope.includes('Voidheart Edition') && hollowKnight?.dlc_scope.includes('Grimm Troupe') && hollowKnight?.dlc_scope.includes('Godmaster'), 'Hollow Knight deve persistir escopo integrado da Voidheart Edition');
 
   const hollowKnightRoadmapRows = await all('SELECT content FROM roadmaps WHERE game_id = (SELECT id FROM games WHERE slug = ?) ORDER BY step_order', ['hollow-knight']);
-  assert.strictEqual(hollowKnightRoadmapRows.length, 8, 'seed deve inserir 8 etapas de roadmap para Hollow Knight');
+  assert.strictEqual(hollowKnightRoadmapRows.length, 6, 'seed deve inserir 6 etapas de roadmap para Hollow Knight');
   const hollowKnightRoadmapText = hollowKnightRoadmapRows.map(row => row.content).join(' ');
   assert(hollowKnightRoadmapText.includes('Void Heart') && hollowKnightRoadmapText.includes('The Hollow Knight'), 'seed deve persistir alerta de final basico antes de Void Heart');
   assert(hollowKnightRoadmapText.includes('112%') && hollowKnightRoadmapText.includes('Pure Completion'), 'seed deve persistir 112% e Pure Completion');
