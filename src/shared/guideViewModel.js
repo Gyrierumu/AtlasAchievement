@@ -59,7 +59,7 @@
     return !negated && /chapter select|selecao de capitulo|selecao de capitulos|selecionar capitulo|selecionar capitulos|collectible mode/.test(text);
   }
 
-  const GUIDE_TROPHY_TAG_PRIORITY = ['missable', 'final', 'boss', 'legendary', 'online', 'coop', 'difficulty', 'grind', 'collectible', 'spoiler', 'cleanup', 'story', 'progress', 'system', 'run'];
+  const GUIDE_TROPHY_TAG_PRIORITY = ['missable', 'final', 'boss', 'legendary', 'online', 'social', 'coop', 'difficulty', 'delivery', 'premium', 'rank-s', 'animals', 'attention', 'delivery-bot', 'likes', 'facilities', 'uca', 'structure', 'construction', 'crafting', 'routes', 'infrastructure', 'mines', 'monorail', 'side-quest', 'grind', 'collectible', 'memory', 'spoiler', 'cleanup', 'story', 'progress', 'progression', 'system', 'run'];
 
   function getGuideTrophySignalText(trophy = {}) {
     return `${trophy?.trophyNameOriginal || trophy?.name || ''} ${trophy?.trophyNamePtBr || trophy?.name_pt || ''} ${trophy?.descriptionPtBr || trophy?.ptDescription || trophy?.localizedDescription?.ptBr || trophy?.description || ''} ${trophy?.tip || ''}`;
@@ -377,6 +377,7 @@
         return true;
       }));
     }
+
     if (String(game?.slug || '').trim().toLowerCase() === 'hollow-knight') {
       const trophyId = String(trophy?.id || '').trim();
       const hkTag = (id, label, tone = 'warning') => ({ id, label, tone });
@@ -501,7 +502,78 @@
       if (storyIds.has(trophyId)) add(msmTag('story', 'História', 'partial'));
       if (bossIds.has(trophyId)) add(msmTag('boss', 'Boss', 'warning'));
       if (grindIds.has(trophyId)) add(msmTag('grind', 'Grind', 'warning'));
-      return sortGuideTrophyTags(nextTags);
+      return nextTags;
+    }
+    if (String(game?.slug || '').trim().toLowerCase() === 'marvels-spider-man-2') {
+      const trophyId = String(trophy?.id || '').trim();
+      const msm2Tag = (id, label, tone = 'partial') => ({ id, label, tone });
+      const customTagsById = {
+        msm2_amazing: [
+          msm2Tag('progress', 'Progressão', 'partial')
+        ],
+        msm2_armed_and_dangerous: [
+          msm2Tag('combat', 'Combate', 'warning'),
+          msm2Tag('peter', 'Peter', 'partial')
+        ],
+        msm2_evolved: [
+          msm2Tag('combat', 'Combate', 'warning'),
+          msm2Tag('miles', 'Miles', 'partial')
+        ],
+        msm2_surge: [
+          msm2Tag('combat', 'Combate', 'warning'),
+          msm2Tag('peter', 'Peter', 'partial')
+        ],
+        msm2_kitted_out: [
+          msm2Tag('progress', 'Progressão', 'partial'),
+          msm2Tag('suits', 'Trajes', 'partial')
+        ],
+        msm2_to_the_max: [
+          msm2Tag('progress', 'Progressão', 'partial'),
+          msm2Tag('gadgets', 'Gadgets', 'partial')
+        ],
+        msm2_fully_loaded: [
+          msm2Tag('progress', 'Progressão', 'partial'),
+          msm2Tag('suit-tech', 'Suit Tech', 'partial')
+        ],
+        msm2_superior: [
+          msm2Tag('map-completion', 'Coleta de mapa', 'partial'),
+          msm2Tag('attention', 'Atenção', 'warning')
+        ],
+        msm2_funky_wireless_protocols: [
+          msm2Tag('collectible', 'Coletável', 'partial'),
+          msm2Tag('spider-bots', 'Spider-Bots', 'warning'),
+          msm2Tag('attention', 'Atenção', 'warning')
+        ],
+        msm2_home_run: [
+          msm2Tag('specific-location', 'Local específico', 'warning')
+        ],
+        msm2_soar: [
+          msm2Tag('traversal', 'Travessia', 'partial'),
+          msm2Tag('attention', 'Atenção', 'warning')
+        ],
+        msm2_hang_ten: [
+          msm2Tag('traversal', 'Travessia', 'partial'),
+          msm2Tag('tricks', 'Tricks', 'partial')
+        ],
+        msm2_splat: [
+          msm2Tag('traversal', 'Travessia', 'partial'),
+          msm2Tag('attention', 'Atenção', 'warning')
+        ],
+        msm2_just_let_go: [
+          msm2Tag('specific-location', 'Local específico', 'warning'),
+          msm2Tag('miles', 'Miles', 'partial')
+        ],
+        msm2_you_know_what_to_do: [
+          msm2Tag('specific-location', 'Local específico', 'warning'),
+          msm2Tag('peter', 'Peter', 'partial')
+        ]
+      };
+      const nextTags = tags.filter(tag => !['missable', 'online', 'coop', 'run', 'collectible', 'story', 'difficulty', 'grind', 'cleanup', 'boss', 'spoiler'].includes(tag?.id));
+      const add = tag => {
+        if (!nextTags.some(item => item?.id === tag.id)) nextTags.push(tag);
+      };
+      (customTagsById[trophyId] || []).forEach(add);
+      return nextTags;
     }
     if (String(game?.slug || '').trim().toLowerCase() === 'marvels-spider-man-miles-morales') {
       const trophyId = String(trophy?.id || '').trim();
@@ -569,16 +641,83 @@
         'msmm_exploding_bulldozer',
         'msmm_family_drama'
       ]);
+      const customTagsById = {
+        msmm_just_the_beginning: [
+          msmmTag('progress', 'Progressão', 'partial'),
+          msmmTag('new-game-plus', 'New Game+', 'warning'),
+          msmmTag('cleanup', 'Cleanup', 'neutral')
+        ],
+        msmm_five_star_review: [
+          msmmTag('app-fnsm', 'App FNSM', 'partial'),
+          msmmTag('activities', 'Atividades', 'partial'),
+          msmmTag('cleanup', 'Cleanup', 'neutral')
+        ],
+        msmm_like_a_rhino_in_a_china_shop: [
+          msmmTag('attention', 'Atenção', 'warning'),
+          msmmTag('mission-specific', 'Missão específica', 'warning'),
+          msmmTag('replay', 'Replay', 'neutral')
+        ],
+        msmm_rhino_rodeo: [
+          msmmTag('story', 'História', 'partial'),
+          msmmTag('mission-specific', 'Missão específica', 'warning'),
+          msmmTag('spoiler', 'Spoiler', 'warning')
+        ],
+        msmm_plus_plus: [
+          msmmTag('new-game-plus', 'New Game+', 'warning'),
+          msmmTag('story', 'História', 'partial')
+        ]
+      };
       const nextTags = tags.filter(tag => !['missable', 'online', 'coop', 'run', 'collectible', 'story', 'difficulty', 'grind', 'cleanup', 'boss'].includes(tag?.id));
       const add = tag => {
         if (!nextTags.some(item => item?.id === tag.id)) nextTags.push(tag);
       };
+      (customTagsById[trophyId] || []).forEach(add);
       if (collectibleIds.has(trophyId)) add(msmmTag('collectible', 'Coletável', 'partial'));
       if (cleanupIds.has(trophyId)) add(msmmTag('cleanup', 'Cleanup', 'neutral'));
       if (difficultyIds.has(trophyId)) add(msmmTag('difficulty', 'Dificuldade', 'warning'));
       if (storyIds.has(trophyId)) add(msmmTag('story', 'História', 'partial'));
       if (bossIds.has(trophyId)) add(msmmTag('boss', 'Boss', 'warning'));
       if (grindIds.has(trophyId)) add(msmmTag('grind', 'Grind', 'warning'));
+      return sortGuideTrophyTags(nextTags);
+    }
+    if (String(game?.slug || '').trim().toLowerCase() === 'red-dead-redemption-2') {
+      const nextTags = tags.filter(tag => !['missable', 'online', 'coop', 'run', 'collectible', 'story', 'difficulty', 'grind', 'cleanup', 'boss', 'spoiler'].includes(tag?.id));
+      const add = tag => {
+        if (!tag?.id || nextTags.some(item => item?.id === tag.id)) return;
+        nextTags.push(tag);
+      };
+      (Array.isArray(trophy?.tags) ? trophy.tags : []).forEach(tag => {
+        if (typeof tag === 'string') {
+          const normalizedTag = normalizeGuideSignalText(tag).replace(/\s+/g, '-');
+          add({ id: normalizedTag, label: tag, tone: /online|posse|pvp|multiplayer|aten/i.test(tag) ? 'warning' : 'partial' });
+          return;
+        }
+        add({
+          id: String(tag?.id || '').trim(),
+          label: String(tag?.label || tag?.id || '').trim(),
+          tone: tag?.tone || (/online|posse|pvp|multiplayer|aten/i.test(`${tag?.id || ''} ${tag?.label || ''}`) ? 'warning' : 'partial')
+        });
+      });
+      return nextTags;
+    }
+    if (['death-stranding', 'death-stranding-2-on-the-beach'].includes(String(game?.slug || '').trim().toLowerCase())) {
+      const nextTags = tags.filter(tag => !['missable', 'online', 'coop', 'run', 'collectible', 'story', 'difficulty', 'grind', 'cleanup', 'boss', 'spoiler'].includes(tag?.id));
+      const add = tag => {
+        if (!tag?.id || nextTags.some(item => item?.id === tag.id)) return;
+        nextTags.push(tag);
+      };
+      (Array.isArray(trophy?.tags) ? trophy.tags : []).forEach(tag => {
+        if (typeof tag === 'string') {
+          const normalizedTag = normalizeGuideSignalText(tag).replace(/\s+/g, '-');
+          add({ id: normalizedTag, label: tag, tone: /online|social|grind|dificuldade/i.test(tag) ? 'warning' : 'partial' });
+          return;
+        }
+        add({
+          id: String(tag?.id || '').trim(),
+          label: String(tag?.label || tag?.id || '').trim(),
+          tone: tag?.tone || (/online|social|grind|dificuldade/i.test(`${tag?.id || ''} ${tag?.label || ''}`) ? 'warning' : 'partial')
+        });
+      });
       return sortGuideTrophyTags(nextTags);
     }
     if (String(game?.slug || '').trim().toLowerCase() === 'the-last-of-us-part-i') {
@@ -690,7 +829,8 @@
     const inputs = getGuideVerdictInputs(game, { ...viewModel, trophies });
     const combinedText = getGuideCombinedPlanningText(game, { ...viewModel, trophies });
     const onlineCount = countGuideTrophyTag(trophies, 'online');
-    const explicitCoopCount = countGuideExplicitCoop(trophies);
+    const explicitCoopCount = countGuideExplicitCoop(trophies)
+      || trophies.filter(trophy => trophy?.is_coop || trophy?.isCoop || (Array.isArray(trophy?.tags) && trophy.tags.some(tag => /coop|posse|multiplayer|pvp/i.test(`${tag?.id || tag} ${tag?.label || ''}`)))).length;
     const hasOnline = hasAffirmativeOnlineRequirement(inputs.online, onlineCount);
     const hasCoop = hasAffirmativeCoopRequirement(`${inputs.online || ''} ${combinedText}`, explicitCoopCount);
     const normalizedOnline = normalizeGuideSignalText(inputs.online);
@@ -954,18 +1094,20 @@
     const total = Number(viewModel.total || trophies.length || game?.trophy_count || 0);
     const hasPlatinum = trophies.some(trophy => String(trophy?.type || '').toLowerCase() === 'platina');
     const dlcScope = buildGuideDlcScopeModel(game, getGuideVerdictInputs(game, viewModel));
+    const network = getGuideNetworkRequirementModel(game, { ...viewModel, trophies });
     return {
       kind: hasPlatinum ? 'platinum' : 'completion',
       label: hasPlatinum ? 'Platina' : '100%',
       value: hasPlatinum ? 'Platina base' : '100%',
       subtitle: hasPlatinum ? 'Guia de troféus e roadmap da platina' : 'Guia de troféus e roadmap de 100%',
-      detail: total ? `${total} troféu(s) no escopo atual. ${dlcScope.detail}` : dlcScope.detail
+      detail: total ? `${total} troféu(s) no escopo atual. ${dlcScope.detail}` : dlcScope.detail,
+      network
     };
   }
 
   function shouldReadRoadmapFirst(game = {}, trophies = [], roadmap = []) {
     const inputs = getGuideVerdictInputs(game, { trophies, roadmap, total: trophies.length });
-    const riskCounts = String(game?.slug || '').trim().toLowerCase() === 'marvels-spider-man'
+    const riskCounts = ['marvels-spider-man', 'marvels-spider-man-miles-morales', 'red-dead-redemption-2'].includes(String(game?.slug || '').trim().toLowerCase())
       ? getGuideRiskCounts(trophies, game)
       : getRiskCounts(trophies);
     const onlineCount = countGuideTrophyTag(trophies, 'online');
@@ -1702,6 +1844,299 @@
 
   function buildRouteChangingTrophies(trophies = [], game = {}) {
     const trophyById = new Map((Array.isArray(trophies) ? trophies : []).map(trophy => [trophy?.id, trophy]).filter(([id]) => id));
+    if (String(game?.slug || '').trim().toLowerCase() === 'death-stranding') {
+      const trophyByName = new Map((Array.isArray(trophies) ? trophies : [])
+        .map(trophy => [String(trophy?.trophyNameOriginal || trophy?.originalName || trophy?.officialName || trophy?.name || '').trim().toLowerCase(), trophy])
+        .filter(([name]) => name));
+      const attentionTag = (id, label, tone = 'warning') => ({ id, label, tone });
+      const read = (id, fallbackName) => {
+        const trophy = trophyById.get(id) || trophyByName.get(String(fallbackName || '').trim().toLowerCase()) || {};
+        return {
+          name: trophy.trophyNameOriginal || trophy.originalName || trophy.officialName || trophy.name || fallbackName,
+          originalName: trophy.trophyNamePtBr || trophy.name_pt || trophy.localizedNamePtBr || ''
+        };
+      };
+      return [
+        {
+          id: 'ds_growth_of_a_legend',
+          ...read('ds_growth_of_a_legend', 'Growth of a Legend'),
+          type: 'Dificuldade / Entregas / Grind',
+          text: 'Exige Premium Deliveries com avaliação Legend of Legends na dificuldade Hard. Acompanhe categorias e evite repetir entregas sem progresso.',
+          tags: [attentionTag('difficulty', 'Dificuldade'), attentionTag('delivery', 'Entregas'), attentionTag('grind', 'Grind')],
+          score: 100
+        },
+        {
+          id: 'ds_best_beloved',
+          ...read('ds_best_beloved', 'Best Beloved'),
+          type: 'Instalações / Grind',
+          text: 'Leve todas as instalações a 5 estrelas. É um dos maiores blocos de trabalho e fica muito melhor com rotas e ziplines no pós-game.',
+          tags: [attentionTag('facilities', 'Instalações'), attentionTag('grind', 'Grind')],
+          score: 99
+        },
+        {
+          id: 'ds_fount_of_knowledge',
+          ...read('ds_fount_of_knowledge', 'Fount of Knowledge'),
+          type: 'Coletáveis / Memory Chips',
+          text: 'Restaure todos os 56 Memory Chips. Alguns dependem de e-mails e conexões, então use checklist antes da varredura final.',
+          tags: [attentionTag('collectible', 'Coletáveis', 'partial'), attentionTag('memory', 'Memory Chips', 'partial')],
+          score: 98
+        },
+        {
+          id: 'ds_homo_faber',
+          ...read('ds_homo_faber', 'Homo Faber'),
+          type: 'Crafting / Grind',
+          text: 'Fabrique todos os equipamentos, armas e veículos da lista base. Alguns planos dependem de instalações, história e Memory Chips.',
+          tags: [attentionTag('crafting', 'Crafting', 'partial'), attentionTag('grind', 'Grind')],
+          score: 97
+        },
+        {
+          id: 'ds_trail_blazer',
+          ...read('ds_trail_blazer', 'Trail-Blazer'),
+          type: 'Estruturas / Grind',
+          text: 'Atualize todos os tipos de estrutura exigidos. Deixe para quando tiver materiais e instalações maximizadas para reduzir viagens extras.',
+          tags: [attentionTag('structure', 'Estruturas', 'partial'), attentionTag('grind', 'Grind')],
+          score: 96
+        },
+        {
+          id: 'ds_a_helping_hand',
+          ...read('ds_a_helping_hand', 'A Helping Hand'),
+          type: 'Online / Social',
+          text: 'Emita uma supply request conectado aos servidores. É online assíncrono/social, sem coop direto.',
+          tags: [attentionTag('online', 'Online'), attentionTag('social', 'Social')],
+          score: 95
+        },
+        {
+          id: 'ds_a_shout_in_the_dark',
+          ...read('ds_a_shout_in_the_dark', 'A Shout in the Dark'),
+          type: 'Online / Social',
+          text: 'Use shout e receba resposta assíncrona. Planeje junto do cleanup online/social.',
+          tags: [attentionTag('online', 'Online'), attentionTag('social', 'Social')],
+          score: 94
+        },
+        {
+          id: 'ds_building_bridges',
+          ...read('ds_building_bridges', 'Building Bridges'),
+          type: 'Online / Social',
+          text: 'Bridge Link depende de estruturas, likes e servidores online assíncronos. Não exige coop tradicional.',
+          tags: [attentionTag('online', 'Online'), attentionTag('social', 'Social')],
+          score: 93
+        },
+        {
+          id: 'ds_great_deliverer',
+          ...read('ds_great_deliverer', 'Great Deliverer'),
+          type: 'Online / Social / Grind',
+          text: 'A categoria Bridge Link entra no grind das avaliações de entrega e se beneficia de likes e interação assíncrona.',
+          tags: [attentionTag('online', 'Online'), attentionTag('social', 'Social'), attentionTag('grind', 'Grind')],
+          score: 92
+        }
+      ].filter(item => trophyById.has(item.id) || trophyByName.has(String(item.name || '').trim().toLowerCase()));
+    }
+    if (String(game?.slug || '').trim().toLowerCase() === 'death-stranding-2-on-the-beach') {
+      const trophyByName = new Map((Array.isArray(trophies) ? trophies : [])
+        .map(trophy => [String(trophy?.trophyNameOriginal || trophy?.originalName || trophy?.officialName || trophy?.name || '').trim().toLowerCase(), trophy])
+        .filter(([name]) => name));
+      const attentionTag = (id, label, tone = 'warning') => ({ id, label, tone });
+      const read = (id, fallbackName) => {
+        const trophy = trophyById.get(id) || trophyByName.get(String(fallbackName || '').trim().toLowerCase()) || {};
+        return {
+          name: trophy.trophyNameOriginal || trophy.originalName || trophy.officialName || trophy.name || fallbackName,
+          originalName: trophy.trophyNamePtBr || trophy.name_pt || trophy.localizedNamePtBr || ''
+        };
+      };
+      return [
+        {
+          id: 'ds2_seasoned_porter',
+          ...read('ds2_seasoned_porter', 'Seasoned Porter'),
+          type: 'Entregas / Rank S / Atenção',
+          text: 'Exige 10 entregas, 10 recuperações e 10 pedidos de eliminação/destruição com rank S em Casual ou superior.',
+          tags: [attentionTag('delivery', 'Entregas'), attentionTag('rank-s', 'Rank S'), attentionTag('attention', 'Atenção')],
+          score: 100
+        },
+        {
+          id: 'ds2_connecting_hearts_and_minds',
+          ...read('ds2_connecting_hearts_and_minds', 'Connecting Hearts and Minds'),
+          type: 'Instalações / Grind',
+          text: 'Maximize o nível de conexão com todas as instalações. É um dos maiores blocos de trabalho da platina.',
+          tags: [attentionTag('facilities', 'Instalações'), attentionTag('grind', 'Grind')],
+          score: 99
+        },
+        {
+          id: 'ds2_a_porter_at_peak_popularity',
+          ...read('ds2_a_porter_at_peak_popularity', 'A Porter at Peak Popularity'),
+          type: 'Likes / Grind',
+          text: 'Receba 50.000 curtidas por pedidos. Rotas eficientes, conexões altas e infraestrutura reduzem bastante o tempo.',
+          tags: [attentionTag('likes', 'Likes'), attentionTag('grind', 'Grind')],
+          score: 98
+        },
+        {
+          id: 'ds2_master_builder',
+          ...read('ds2_master_builder', 'Master Builder'),
+          type: 'Estruturas / Construção',
+          text: 'Construa todos os tipos de estrutura e confirme itens especiais liberados pela campanha.',
+          tags: [attentionTag('structure', 'Estruturas', 'partial'), attentionTag('construction', 'Construção', 'partial')],
+          score: 97
+        },
+        {
+          id: 'ds2_road_restorer',
+          ...read('ds2_road_restorer', 'Road Restorer'),
+          type: 'Infraestrutura',
+          text: 'Restaure uma seção de estrada usando materiais nos Auto-Pavers. Combine com rotas de entregas frequentes.',
+          tags: [attentionTag('infrastructure', 'Infraestrutura', 'partial')],
+          score: 96
+        },
+        {
+          id: 'ds2_rail_restorer',
+          ...read('ds2_rail_restorer', 'Rail Restorer'),
+          type: 'Monotrilho / Infraestrutura',
+          text: 'Restaure e reabra uma linha completa de monotrilho. Planeje materiais e instalações conectadas antes de fechar.',
+          tags: [attentionTag('monorail', 'Monotrilho', 'partial'), attentionTag('infrastructure', 'Infraestrutura', 'partial')],
+          score: 95
+        },
+        {
+          id: 'ds2_dig_dig_dig',
+          ...read('ds2_dig_dig_dig', 'Dig, Dig, Dig!'),
+          type: 'Minas / Infraestrutura',
+          text: 'Restaure três minas. Deixe para uma etapa de infraestrutura para aproveitar materiais e rotas já abertas.',
+          tags: [attentionTag('mines', 'Minas', 'partial'), attentionTag('infrastructure', 'Infraestrutura', 'partial')],
+          score: 94
+        },
+        {
+          id: 'ds2_rare_specimen_rescuer',
+          ...read('ds2_rare_specimen_rescuer', 'Rare Specimen Rescuer'),
+          type: 'Animais / Atenção',
+          text: 'Entregue um animal albino ao abrigo. Marque no checklist quando encontrar oportunidade para evitar busca solta no fim.',
+          tags: [attentionTag('animals', 'Animais', 'partial'), attentionTag('attention', 'Atenção')],
+          score: 93
+        },
+        {
+          id: 'ds2_promising_signs',
+          ...read('ds2_promising_signs', 'Promising Signs'),
+          type: 'Online / Social',
+          text: 'Construa uma placa online de pedido de ajuda. Exige conexão social/assíncrona, sem coop direto.',
+          tags: [attentionTag('online', 'Online'), attentionTag('social', 'Social')],
+          score: 92
+        },
+        {
+          id: 'ds2_emergency_worker',
+          ...read('ds2_emergency_worker', 'Emergency Worker'),
+          type: 'Online / Social',
+          text: 'Forneça apoio emergencial conectado aos servidores. Planeje junto dos outros troféus sociais.',
+          tags: [attentionTag('online', 'Online'), attentionTag('social', 'Social')],
+          score: 91
+        },
+        {
+          id: 'ds2_porters_make_the_world_go_round',
+          ...read('ds2_porters_make_the_world_go_round', 'Porters Make the World Go Round'),
+          type: 'Online / Social',
+          text: 'Faça uma troca com outro portador. É interação social/assíncrona e não transforma o guia em coop.',
+          tags: [attentionTag('online', 'Online'), attentionTag('social', 'Social')],
+          score: 90
+        }
+      ].filter(item => trophyById.has(item.id) || trophyByName.has(String(item.name || '').trim().toLowerCase()));
+    }
+    if (String(game?.slug || '').trim().toLowerCase() === 'red-dead-redemption-2') {
+      const trophyByName = new Map((Array.isArray(trophies) ? trophies : [])
+        .map(trophy => [String(trophy?.name || trophy?.trophyNameOriginal || trophy?.originalName || trophy?.officialName || '').trim().toLowerCase(), trophy])
+        .filter(([name]) => name));
+      const attentionTag = (label, tone = 'warning') => ({ id: normalizeGuideSignalText(label).replace(/\s+/g, '-'), label, tone });
+      const read = (id, fallbackName) => {
+        const trophy = trophyById.get(id) || trophyByName.get(String(fallbackName || '').trim().toLowerCase()) || {};
+        return {
+          name: trophy.name || trophy.trophyNameOriginal || fallbackName,
+          originalName: trophy.name_pt || trophy.trophyNamePtBr || ''
+        };
+      };
+      return [
+        {
+          id: 'rdr2_lending_a_hand',
+          ...read('rdr2_lending_a_hand', 'Lending a Hand'),
+          type: 'Perdível / Honra',
+          text: 'Complete as missões opcionais de honra da campanha antes de avançar demais, especialmente no Capítulo 6.',
+          tags: [attentionTag('Perdível', 'risk'), attentionTag('Honra', 'warning')],
+          score: 100
+        },
+        {
+          id: 'rdr2_friends_with_benefits',
+          ...read('rdr2_friends_with_benefits', 'Friends With Benefits'),
+          type: 'Perdível / Acampamento',
+          text: 'Faça pelo menos uma atividade com companheiro em cada acampamento relevante enquanto ele ainda estiver ativo.',
+          tags: [attentionTag('Perdível', 'risk'), attentionTag('Acampamento', 'warning')],
+          score: 99
+        },
+        {
+          id: 'rdr2_give_to_the_poor',
+          ...read('rdr2_give_to_the_poor', 'Give to the Poor'),
+          type: 'Perdível / Acampamento',
+          text: 'Doe US$ 250 à caixa da gangue antes de perder acesso normal ao cofre do acampamento.',
+          tags: [attentionTag('Perdível', 'risk'), attentionTag('Acampamento', 'warning')],
+          score: 98
+        },
+        {
+          id: 'rdr2_errand_boy',
+          ...read('rdr2_errand_boy', 'Errand Boy'),
+          type: 'Perdível / Acampamento',
+          text: 'Aceite e entregue pedidos de itens de companheiros enquanto os capítulos e personagens ainda permitem.',
+          tags: [attentionTag('Perdível', 'risk'), attentionTag('Acampamento', 'warning')],
+          score: 97
+        },
+        {
+          id: 'rdr2_gold_rush',
+          ...read('rdr2_gold_rush', 'Gold Rush'),
+          type: 'Grind / Medalhas',
+          text: 'Use replay de missões para buscar 70 medalhas de ouro. Não é perdível, mas é um dos maiores grinds da platina.',
+          tags: [attentionTag('Grind', 'warning'), attentionTag('Medalhas', 'warning')],
+          score: 96
+        },
+        {
+          id: 'rdr2_skin_deep',
+          ...read('rdr2_skin_deep', 'Skin Deep'),
+          type: 'Animais / Grind',
+          text: 'Organize espécies por checklist e bioma para não repetir áreas. Trate como grind longo, não como perdível principal.',
+          tags: [attentionTag('Animais', 'warning'), attentionTag('Grind', 'warning')],
+          score: 95
+        },
+        {
+          id: 'rdr2_zoologist',
+          ...read('rdr2_zoologist', 'Zoologist'),
+          type: 'Animais / Grind',
+          text: 'Estude espécies com controle por região e avance em blocos para reduzir retrabalho no pós-game.',
+          tags: [attentionTag('Animais', 'warning'), attentionTag('Grind', 'warning')],
+          score: 94
+        },
+        {
+          id: 'rdr2_notorious',
+          ...read('rdr2_notorious', 'Notorious'),
+          type: 'Online / Grind',
+          text: 'Rank 50 em Red Dead Online é a maior barreira de progresso online. Separe uma etapa própria para XP, eventos e missões.',
+          tags: [attentionTag('Online', 'warning'), attentionTag('Grind', 'warning')],
+          score: 93
+        },
+        {
+          id: 'rdr2_the_real_deal',
+          ...read('rdr2_the_real_deal', 'The Real Deal'),
+          type: 'Online / PvP',
+          text: 'Exige MVP 3 vezes em partidas com pelo menos 4 jogadores. Modos objetivos e playlists favoráveis reduzem a fricção.',
+          tags: [attentionTag('Online', 'warning'), attentionTag('PvP', 'warning')],
+          score: 92
+        },
+        {
+          id: 'rdr2_alls_fair',
+          ...read('rdr2_alls_fair', "All's Fair"),
+          type: 'Online / Posse',
+          text: 'Depende de interferir em missão Free Roam de uma Posse rival. Costuma ser mais simples organizar com outro jogador.',
+          tags: [attentionTag('Online', 'warning'), attentionTag('Posse', 'warning')],
+          score: 91
+        },
+        {
+          id: 'rdr2_strength_in_numbers',
+          ...read('rdr2_strength_in_numbers', 'Strength in Numbers'),
+          type: 'Online / Posse',
+          text: 'Complete uma Free Roam Mission em Posse com pelo menos 2 membros. Planeje junto dos outros troféus de Posse.',
+          tags: [attentionTag('Online', 'warning'), attentionTag('Posse', 'warning')],
+          score: 90
+        }
+      ].filter(item => trophyById.has(item.id) || trophyByName.has(String(item.name || '').trim().toLowerCase()));
+    }
     if (String(game?.slug || '').trim().toLowerCase() === 'marvels-spider-man') {
       const attentionTag = (label, tone = 'warning') => ({ id: normalizeGuideSignalText(label).replace(/\s+/g, '-'), label, tone });
       return [
@@ -1747,6 +2182,135 @@
         }
       ];
     }
+    if (String(game?.slug || '').trim().toLowerCase() === 'marvels-spider-man-2') {
+      const attentionTag = (label, tone = 'warning') => ({ id: normalizeGuideSignalText(label).replace(/\s+/g, '-'), label, tone });
+      const read = (id, fallbackName) => {
+        const trophy = trophyById.get(id) || {};
+        return {
+          name: trophy.name || trophy.trophyNameOriginal || fallbackName,
+          originalName: trophy.name_pt || trophy.trophyNamePtBr || ''
+        };
+      };
+      return [
+        {
+          id: 'msm2_superior',
+          ...read('msm2_superior', 'Superior'),
+          type: 'Coleta de mapa / Atenção',
+          text: 'Exige 100% de todos os distritos. Acompanhe contadores do mapa e use saves manuais antes de limpezas grandes se algum contador parecer preso.',
+          tags: [attentionTag('Coleta de mapa', 'partial'), attentionTag('Atenção', 'warning')],
+          score: 100
+        },
+        {
+          id: 'msm2_funky_wireless_protocols',
+          ...read('msm2_funky_wireless_protocols', 'Funky Wireless Protocols'),
+          type: 'Coletável / Spider-Bots / Atenção',
+          text: 'Spider-Bots não seguem o mesmo padrão de marcação do mapa. Use checklist próprio para não transformar o final em varredura cega.',
+          tags: [attentionTag('Coletável', 'partial'), attentionTag('Spider-Bots', 'warning')],
+          score: 99
+        },
+        {
+          id: 'msm2_soar',
+          ...read('msm2_soar', 'Soar'),
+          type: 'Travessia / Atenção',
+          text: 'Plane do Financial District até Astoria com Web Wings e túneis de vento. Faça em rota longa e sem pousar antes de cruzar a região.',
+          tags: [attentionTag('Travessia', 'partial'), attentionTag('Atenção', 'warning')],
+          score: 98
+        },
+        {
+          id: 'msm2_hang_ten',
+          ...read('msm2_hang_ten', 'Hang Ten'),
+          type: 'Travessia / Tricks',
+          text: 'Requer 30 manobras aéreas seguidas sem tocar o chão. Ganhe altura e use uma avenida longa para manter a sequência.',
+          tags: [attentionTag('Travessia', 'partial'), attentionTag('Tricks', 'partial')],
+          score: 97
+        },
+        {
+          id: 'msm2_splat',
+          ...read('msm2_splat', 'Splat'),
+          type: 'Travessia / Atenção',
+          text: 'Faça uma trick no ar e deixe o personagem cair no chão antes de recuperar o balanço. É simples, mas fácil de esquecer no cleanup.',
+          tags: [attentionTag('Travessia', 'partial'), attentionTag('Atenção', 'warning')],
+          score: 96
+        },
+        {
+          id: 'msm2_home_run',
+          ...read('msm2_home_run', 'Home Run!'),
+          type: 'Local específico',
+          text: 'Vá ao Big Apple Ballers Stadium em Downtown Brooklyn e percorra as quatro bases no campo.',
+          tags: [attentionTag('Local específico', 'warning')],
+          score: 95
+        },
+        {
+          id: 'msm2_just_let_go',
+          ...read('msm2_just_let_go', 'Just Let Go'),
+          type: 'Local específico / Miles',
+          text: 'Use Miles e visite a torre da igreja no Financial District para encontrar o troféu de ciências de Miles e Phin.',
+          tags: [attentionTag('Local específico', 'warning'), attentionTag('Miles', 'partial')],
+          score: 94
+        },
+        {
+          id: 'msm2_you_know_what_to_do',
+          ...read('msm2_you_know_what_to_do', 'You Know What to Do'),
+          type: 'Local específico / Peter',
+          text: 'Use Peter e visite o túmulo da Tia May no cemitério ao norte do mapa.',
+          tags: [attentionTag('Local específico', 'warning'), attentionTag('Peter', 'partial')],
+          score: 93
+        }
+      ];
+    }
+    if (String(game?.slug || '').trim().toLowerCase() === 'marvels-spider-man-miles-morales') {
+      const attentionTag = (label, tone = 'warning') => ({ id: normalizeGuideSignalText(label).replace(/\s+/g, '-'), label, tone });
+      const read = (id, fallbackName) => {
+        const trophy = trophyById.get(id) || {};
+        return {
+          name: trophy.name || trophy.trophyNameOriginal || fallbackName,
+          originalName: trophy.name_pt || trophy.trophyNamePtBr || ''
+        };
+      };
+      return [
+        {
+          id: 'msmm_just_the_beginning',
+          ...read('msmm_just_the_beginning', 'Just the Beginning'),
+          type: 'Progressão / New Game+ / Cleanup',
+          text: 'Todas as habilidades exigem progresso da campanha, Spider-Treino e habilidades restantes do New Game+. Combine com Plus Plus antes de fechar o checklist.',
+          tags: [attentionTag('Progressão', 'partial'), attentionTag('New Game+', 'warning'), attentionTag('Cleanup', 'neutral')],
+          score: 100
+        },
+        {
+          id: 'msmm_five_star_review',
+          ...read('msmm_five_star_review', 'Five Star Review'),
+          type: 'App FNSM / Atividades / Cleanup',
+          text: 'Complete todos os pedidos do app FNSM enquanto limpa os distritos. Eles ajudam com recursos e evitam pendências soltas no fim.',
+          tags: [attentionTag('App FNSM', 'partial'), attentionTag('Atividades', 'partial'), attentionTag('Cleanup', 'neutral')],
+          score: 99
+        },
+        {
+          id: 'msmm_like_a_rhino_in_a_china_shop',
+          ...read('msmm_like_a_rhino_in_a_china_shop', 'Like a Rhino In A China Shop'),
+          type: 'Atenção / Missão específica / Replay',
+          text: 'Quebre objetos no shopping durante a sequência do Rhino. Se passar sem fazer, repita a missão ou resolva no New Game+; não é perdível real.',
+          tags: [attentionTag('Atenção', 'warning'), attentionTag('Missão específica', 'warning'), attentionTag('Replay', 'neutral')],
+          score: 98
+        },
+        {
+          id: 'msmm_rhino_rodeo',
+          ...read('msmm_rhino_rodeo', 'Rhino Rodeo'),
+          type: 'História / Missão específica / Spoiler',
+          text: 'Troféu ligado à sequência inicial com Rhino. Não marque como perdível: a história e o replay de missão cobrem essa pendência.',
+          tags: [attentionTag('História', 'partial'), attentionTag('Missão específica', 'warning'), attentionTag('Spoiler', 'spoiler')],
+          score: 97
+        },
+        {
+          id: 'msmm_plus_plus',
+          ...read('msmm_plus_plus', 'Plus Plus'),
+          type: 'New Game+ / História',
+          text: 'New Game+ é obrigatório para a platina. Planeje uma segunda campanha objetiva depois de limpar o que for conveniente na primeira.',
+          tags: [attentionTag('New Game+', 'warning'), attentionTag('História', 'partial')],
+          score: 96
+        }
+      ].filter(item => trophyById.has(item.id));
+    }
+
     if (String(game?.slug || '').trim().toLowerCase() === 'hollow-knight') {
       const attentionTag = (label, tone = 'warning') => ({ id: normalizeGuideSignalText(label).replace(/\s+/g, '-'), label, tone });
       const read = (id, fallbackName, fallbackOriginal) => {
@@ -3040,6 +3604,14 @@
 
   function buildContextualFaq(game = {}, viewModel = {}) {
     const name = String(game?.name || 'este jogo').trim() || 'este jogo';
+    if (Array.isArray(game?.faq) && game.faq.length) {
+      return game.faq
+        .map(item => ({
+          question: firstGuideText(item?.question),
+          answer: firstGuideText(item?.answer)
+        }))
+        .filter(item => item.question && item.answer);
+    }
     const trophies = Array.isArray(viewModel.trophies) ? viewModel.trophies : (Array.isArray(game?.trophies) ? game.trophies : []);
     const roadmap = Array.isArray(viewModel.roadmap) ? viewModel.roadmap : (Array.isArray(game?.roadmap) ? game.roadmap : []);
     const riskCounts = viewModel.riskCounts || getRiskCounts(trophies);
@@ -4014,6 +4586,24 @@
   }
 
   function buildGuideDecisionModel(game, trophies = [], roadmap = []) {
+    if (String(game?.slug || '').trim().toLowerCase() === 'marvels-spider-man-miles-morales') {
+      return {
+        fitLabel: 'Platina curta e acessível',
+        fitDetail: 'Boa para quem gosta de campanha compacta, limpeza de mapa e checklist objetivo.',
+        riskLabel: 'Sem perdíveis reais',
+        riskDetail: 'Não exige online, coop ou DLC; free roam e replay de missões cobrem pendências.',
+        paceLabel: 'Exige New Game+',
+        paceDetail: 'Não é uma platina de uma campanha só: reserve a segunda campanha para Plus Plus e habilidades finais.',
+        verdict: 'Vale abrir se você curte cleanup',
+        verdictDetail: 'A rota é amigável, mas combina melhor com quem aceita limpar distritos, atividades, colecionáveis e repetir a história em New Game+.',
+        chips: [
+          '10-20h',
+          'New Game+ obrigatório',
+          'Sem online/coop/DLC'
+        ]
+      };
+    }
+
     const difficulty = Number(game?.difficulty || 0);
     const total = Array.isArray(trophies) ? trophies.length : 0;
     const missables = trophies.filter(trophy => trophy && (isRealMissableTrophy(trophy) || trophy.is_spoiler)).length;
@@ -4509,7 +5099,7 @@
     const missableCount = countRealMissableTrophies(trophies);
     const attentionCount = trophies.filter(trophy => trophy && (isRealMissableTrophy(trophy) || trophy.is_spoiler)).length;
     const spoilerCount = trophies.filter(trophy => trophy?.is_spoiler).length;
-    const riskCounts = String(game?.slug || '').trim().toLowerCase() === 'marvels-spider-man'
+    const riskCounts = ['marvels-spider-man', 'marvels-spider-man-miles-morales', 'red-dead-redemption-2'].includes(String(game?.slug || '').trim().toLowerCase())
       ? getGuideRiskCounts(trophies, game)
       : getRiskCounts(trophies);
     const guidanceCounts = buildGuidanceCounts(trophies, riskCounts);

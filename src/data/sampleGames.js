@@ -40,7 +40,6 @@ const missableTrophyIds = new Set([
   // Red Dead Redemption 2: conteúdo de campanha com janela real de perda.
   'rdr2_lending_a_hand',
   'rdr2_friends_with_benefits',
-  'rdr2_breaking_and_entering',
   'rdr2_give_to_the_poor',
   'rdr2_errand_boy',
 
@@ -5786,39 +5785,223 @@ const sampleGames = [
     "id": 7,
     "name": "Red Dead Redemption 2",
     "slug": "red-dead-redemption-2",
-    "difficulty": 10,
-    "time": "240-300 horas",
-    "time_min_hours": 240,
+    "developer": "Rockstar Games",
+    "publisher": "Rockstar Games",
+    "primary_platform": "PS4",
+    "guide_platform": "PS4",
+    "platforms": ["PS4", "Xbox One", "PC"],
+    "trophy_count": 52,
+    "difficulty": 6,
+    "time": "200-300h",
+    "time_min_hours": 200,
     "time_max_hours": 300,
     "time_sort_hours": 300,
     "time_bucket": "long",
-    "missable": "A platina exige online e tem missables relevantes no modo história, principalmente nos capítulos 2 a 6. Priorize Friends With Benefits, Errand Boy, Give to the Poor e Lending a Hand assim que surgirem, e faça Breaking and Entering ainda durante a campanha para evitar cleanup ruim ou progresso inconsistente.",
-    "runs_summary": "Uma campanha longa com atenção pesada a missables, 100% e colecionáveis, seguida de um bloco separado de Red Dead Online para rank, eventos e troféus multiplayer.",
-    "missable_summary": "Missables importantes ficam nos capítulos 2 a 6 e no acampamento. Friends With Benefits, Errand Boy, Give to the Poor, Lending a Hand e Breaking and Entering devem ser tratados antes do epílogo.",
-    "online_summary": "A lista base inclui troféus de Red Dead Online/multiplayer, como rank 50, MVPs, posse, eventos, missões free roam, counter rival posse e upgrades de acampamento. Planeje acesso online/PS+.",
+    "missable": "A platina exige online e tem quatro perdíveis reais no modo história: Lending a Hand, Friends With Benefits, Give to the Poor e Errand Boy. Todos dependem de conteúdo de campanha, honra, pedidos ou acampamento que pode ficar indisponível conforme os capítulos avançam.",
+    "runs_summary": "Uma campanha longa com atenção aos perdíveis de capítulos/acampamento, cleanup pesado de 100%, animais, colecionáveis e Gold Rush, seguida de uma etapa separada de Red Dead Online.",
+    "missable_summary": "Os quatro perdíveis principais são Lending a Hand, Friends With Benefits, Give to the Poor e Errand Boy. Legend of the West, Gold Rush, Best in the West, Skin Deep e Zoologist não devem ser tratados como perdíveis neste guia.",
+    "online_summary": "A lista base exige Red Dead Online, incluindo rank 50, MVP, Posse, eventos, missões Free Roam, Awards, melhorias e outros troféus multiplayer. Planeje acesso online/PS+ antes de prometer a platina.",
     "grind_summary": "Grind muito alto: 100%, 70 medalhas de ouro, animais, estudos/skins, colecionáveis, desafios, dinheiro e progressão até rank 50 no Red Dead Online.",
-    "dlc_scope": "Guia focado na lista base de Red Dead Redemption 2, separando campanha e Red Dead Online. DLCs, conteúdos sazonais ou modos extras não são tratados como requisito adicional da platina base.",
-    "difficulty_reason": "A dificuldade vem do volume extremo, missables, 70 medalhas de ouro, RNG/animais, 100% e dependência de troféus online.",
-    "time_reason": "A faixa de 240-300 horas considera campanha, 100%, colecionáveis, animais, medalhas de ouro, desafios e progresso online até rank 50.",
-    "first_run_advice": "Durante a campanha, faça atividades de acampamento e missões opcionais assim que aparecerem. Não deixe pedidos de companheiros, doações e missões de honra para depois.",
-    "cleanup_advice": "Após a história, separe blocos para 100%, animais, colecionáveis, 70 medalhas e Red Dead Online. Use checklist porque muitos objetivos são longos e fáceis de perder de vista.",
-    "before_you_start": "Confirme disponibilidade online/PS+ antes de investir na platina. No modo história, priorize missables dos capítulos 2 a 6, pedidos de companheiros, doações e honra antes de avançar demais.",
+    "dlc_scope": "Guia focado na lista base da platina de Red Dead Redemption 2. DLC, Ultimate Edition, Special Edition, conteúdos sazonais e compra de Gold Bars não são requisitos da platina base.",
+    "difficulty_reason": "A dificuldade 6/10 vem menos de execução pura e mais do volume, dos perdíveis de campanha, de Gold Rush, animais, 100% e dependência de Red Dead Online.",
+    "time_reason": "A faixa de 200-300h considera campanha, 100%, colecionáveis, animais, 70 medalhas de ouro, desafios e progresso online até rank 50.",
+    "first_run_advice": "Comece a campanha com atenção aos troféus de capítulo e acampamento. Antes de avançar demais na história, confira missões opcionais de honra, pedidos de companheiros, doações e atividades de acampamento; depois use o roadmap para separar 100%, Gold Rush, animais e Red Dead Online.",
+    "editorial_summary": [
+      "Red Dead Redemption 2 é uma platina longa e exigente, focada em completar a história, controlar troféus perdíveis de acampamento/honra, fazer 100% de conclusão, obter 70 medalhas de ouro, concluir colecionáveis extensos, estudar e esfolar animais e ainda avançar bastante em Red Dead Online. A lista base exige online, multiplayer/Posse e muito grind, mas não exige DLC, edição especial ou compra de Gold Bars.",
+      "A ordem mais segura é jogar a campanha com atenção aos perdíveis de capítulos, completar atividades opcionais de honra, pedidos de companheiros, doações e atividades de acampamento enquanto ainda estão disponíveis, depois fazer 100%, Gold Rush, colecionáveis e animais no modo história. Deixe Red Dead Online para uma etapa própria, focando rank 50, eventos, posses, MVP e progresso de awards. O principal cuidado é não avançar capítulos sem revisar os perdíveis do acampamento e não subestimar o tempo necessário para Zoologist, Skin Deep, Gold Rush e Notorious."
+    ],
+    "cleanup_advice": "Após a história, separe blocos para 100%, Gold Rush, animais, colecionáveis, crafting, pesca, cavalo e Red Dead Online. Use checklist porque muitos objetivos são longos e fáceis de perder de vista.",
+    "before_you_start": "Confirme disponibilidade de Red Dead Online/PS+ antes de investir na platina. No modo história, priorize Lending a Hand, Friends With Benefits, Give to the Poor e Errand Boy antes de avançar demais.",
     "best_for": "Ideal para quem quer uma platina longa, metódica e completa, com campanha, mundo aberto, checklist extenso e Red Dead Online.",
-    "avoid_if": "Evite se você não quer depender de online, farm longo, animais/RNG, medalhas de ouro ou centenas de horas de checklist.",
+    "avoid_if": "Evite se você quer uma platina curta, offline, sem multiplayer ou sem grind pesado de animais, medalhas de ouro e rank online.",
+    "onlineRequired": true,
+    "coopRequired": true,
+    "dlcRequired": false,
+    "hasMissables": true,
+    "missableCount": 4,
+    "newGamePlusRequired": false,
     "editorial_status": "published",
-    "coverage_level": "strong",
-    "is_verified": false,
-    "verification_status": "review",
-    "verification_note": "Guia normalizado a partir do dado seed com checklist e roadmap; aguardando revisão editorial manual final.",
+    "coverage_level": "complete",
+    "is_verified": true,
+    "verification_status": "verified",
+    "editorial_review_status": "verified",
+    "verification_note": "Guia revisado editorialmente para roadmap, resumo, flags, online, perdíveis, checklist, FAQ, SEO e exibição inglês + PT-BR dos troféus.",
     "image": "https://cdn.cloudflare.steamstatic.com/steam/apps/1174180/header.jpg",
     "cover_image": "https://cdn.cloudflare.steamstatic.com/steam/apps/1174180/library_600x900.jpg",
+    "seo": {
+      "title": "Red Dead Redemption 2: guia de troféus e platina",
+      "description": "Roadmap completo da platina de Red Dead Redemption 2, com troféus perdíveis, Red Dead Online, 100%, Gold Rush, animais, checklist e dicas para evitar retrabalho.",
+      "keywords": "Red Dead Redemption 2 troféus, Red Dead Redemption 2 platina, Red Dead Redemption 2 guia, Red Dead Redemption 2 roadmap, Red Dead Redemption 2 perdíveis, Red Dead Redemption 2 online, Red Dead Redemption 2 Gold Rush, Red Dead Redemption 2 Zoologist, Red Dead Redemption 2 Skin Deep, Red Dead Redemption 2 checklist",
+      "ogTitle": "Red Dead Redemption 2: guia de troféus e platina",
+      "ogDescription": "Roadmap da platina de Red Dead Redemption 2 com perdíveis, 100%, Gold Rush, animais, Red Dead Online e checklist."
+    },
+    "quickDecision": {
+      "summary": "Platina longa, com 52 troféus, online obrigatório, quatro perdíveis reais de campanha/acampamento, 100%, 70 medalhas de ouro, animais e rank 50 em Red Dead Online.",
+      "recommendation": "Só entre se você aceitar uma checklist pesada offline e online. Controle os perdíveis durante a campanha, separe Gold Rush e animais em blocos próprios e deixe Red Dead Online como etapa dedicada.",
+      "firstAction": "Antes de avançar capítulos, confira missões opcionais de honra, atividades com companheiros, pedidos de itens e doações à caixa da gangue."
+    },
+    "checklist": [
+      "Concluir os capítulos da história principal.",
+      "Concluir o epílogo.",
+      "Completar missões opcionais de honra necessárias para Lending a Hand.",
+      "Fazer atividade com companheiro em cada acampamento necessário para Friends With Benefits.",
+      "Entregar 5 pedidos de itens de companheiros para Errand Boy.",
+      "Doar US$ 250 à caixa da gangue para Give to the Poor antes de ela ficar indisponível.",
+      "Acompanhar 100% de conclusão pelo tracker do jogo.",
+      "Obter 70 medalhas de ouro em missões da história.",
+      "Concluir linhas de Stranger necessárias.",
+      "Jogar todos os minigames.",
+      "Recuperar saques de homesteads exigidos.",
+      "Encontrar túmulos de companheiros caídos.",
+      "Completar colecionáveis exigidos, como cigarette cards, rock carvings, dinosaur bones e dreamcatchers.",
+      "Estudar animais necessários para Zoologist.",
+      "Esfolar animais necessários para Skin Deep.",
+      "Criar itens diferentes no modo história.",
+      "Sobreviver a ataques de urso e matar o urso para Grin and Bear It.",
+      "Pescar um peixe de pelo menos 7,7 kg.",
+      "Alcançar vínculo máximo com um cavalo.",
+      "Alcançar honra máxima ou mínima.",
+      "Completar a introdução de Red Dead Online.",
+      "Subir ao rank 50 em Red Dead Online.",
+      "Participar de Series e Free Roam Events.",
+      "Aceitar Free Roam Missions de personagens.",
+      "Criar ou usar Posse para Posse Up, Strength in Numbers e All's Fair.",
+      "Conseguir MVP 3 vezes em partidas com pelo menos 4 jogadores.",
+      "Obter 5 belt buckles de ouro em Awards.",
+      "Comprar melhorias de acampamento online.",
+      "Comprar 5 cavalos no online.",
+      "Criar itens, munição especial, vender ao Butcher e coletar ervas no online.",
+      "Revisar checklist final e confirmar que DLC, edições especiais e Gold Bars não foram tratados como obrigatórios."
+    ],
+    "faq": [
+      {
+        "question": "Red Dead Redemption 2 tem troféus perdíveis?",
+        "answer": "Sim. Os principais perdíveis são Lending a Hand, Friends With Benefits, Give to the Poor e Errand Boy. Todos dependem de conteúdo de campanha/acampamento que pode ficar indisponível se você avançar demais."
+      },
+      {
+        "question": "Red Dead Redemption 2 precisa de online para platinar?",
+        "answer": "Sim. A lista base exige troféus de Red Dead Online, incluindo rank, eventos, posses, MVP e atividades multiplayer."
+      },
+      {
+        "question": "Red Dead Redemption 2 precisa jogar com outras pessoas?",
+        "answer": "Sim. Alguns troféus online dependem de outros jogadores, partidas públicas ou Posse, como The Real Deal, All's Fair e Strength in Numbers."
+      },
+      {
+        "question": "Red Dead Redemption 2 precisa de DLC ou Gold Bars?",
+        "answer": "Não. A platina base não exige DLC, edição especial, Ultimate Edition ou compra de Gold Bars."
+      },
+      {
+        "question": "Quanto tempo leva para platinar Red Dead Redemption 2?",
+        "answer": "A estimativa segura é 200-300h, dependendo do ritmo no modo história, Gold Rush, animais e Red Dead Online."
+      },
+      {
+        "question": "Gold Rush é perdível?",
+        "answer": "Não. As missões podem ser repetidas para buscar medalhas de ouro, mas o troféu é um dos maiores grinds da platina."
+      },
+      {
+        "question": "Skin Deep e Zoologist são perdíveis?",
+        "answer": "Não devem ser tratados como perdíveis no guia base. Eles são longos e exigem checklist, mas não entram na contagem principal de troféus perdíveis."
+      }
+    ],
     "roadmap": [
-      "Avance pela história com atenção total aos missables de acampamento e às missões opcionais de honra. Faça atividades em cada acampamento, complete pedidos de companheiros e doe dinheiro ao cofre da gangue antes do fim do Capítulo 4.",
-      "Ainda durante a campanha, já tente medalhas de ouro quando a missão for curta ou favorável. O replay existe, mas costuma ser menos confortável por impor loadout e checkpoints.",
-      "Depois da história, feche 100% de conclusão, desafios, colecionáveis, estranhos, minigames, homesteads, honra, armas e vínculos com cavalo.",
-      "Reserve um cleanup longo para Zoologist, Skin Deep, It's Art, colecionáveis, animais e 70 medalhas de ouro.",
-      "Deixe Red Dead Online para uma etapa separada: Rank 50, MVPs, eventos, posse, missões free roam, counter rival posse, upgrades de acampamento e dinheiro para comprar o que os troféus pedem. Essa parte depende de acesso online/PS+.",
-      "Use checklist para animais, missões opcionais, camp requests e 100% de conclusão. Em RDR2, organização pesa tanto quanto execução."
+      {
+        "title": "Jogue a campanha controlando os perdíveis",
+        "focus": "História e acampamento",
+        "objective": "Avançar pela história sem perder missões opcionais de honra, pedidos de companheiros, doações e atividades de acampamento.",
+        "actions": [
+          "Antes de avançar cada capítulo, confira missões opcionais de Honra disponíveis.",
+          "Faça pelo menos uma atividade com companheiro em cada acampamento enquanto ainda houver acampamento ativo.",
+          "Aceite e conclua pedidos de itens de companheiros sempre que aparecerem.",
+          "Doe dinheiro à caixa da gangue antes de ela ficar indisponível.",
+          "Use saves manuais em capítulos importantes para evitar retrabalho em troféus sensíveis à história."
+        ],
+        "warning": "Lending a Hand, Friends With Benefits, Give to the Poor e Errand Boy são os principais riscos de perda da campanha.",
+        "result": "Campanha encaminhada com os perdíveis principais controlados antes do pós-game."
+      },
+      {
+        "title": "Conclua a história e prepare o pós-game",
+        "focus": "Progresso da campanha",
+        "objective": "Finalizar capítulos, epílogo e troféus automáticos enquanto organiza a limpeza de mundo aberto.",
+        "actions": [
+          "Conclua os capítulos da história e o epílogo.",
+          "Mantenha atenção a missões de Stranger e atividades secundárias que contam para 100%.",
+          "Comece a registrar colecionáveis, desafios, animais e requisitos longos no checklist.",
+          "Não tente fechar 100% cedo demais; muitos requisitos ficam mais práticos no pós-game.",
+          "Separe o grind de Gold Rush para uma etapa própria."
+        ],
+        "warning": "",
+        "result": "História concluída, epílogo liberado e mundo pronto para a limpeza longa da platina."
+      },
+      {
+        "title": "Faça 100% de conclusão do modo história",
+        "focus": "100% e colecionáveis",
+        "objective": "Completar os requisitos de Best in the West, colecionáveis, strangers, desafios e atividades do mundo.",
+        "actions": [
+          "Complete os requisitos do tracker de 100% do jogo.",
+          "Conclua linhas de Stranger necessárias e atividades de mundo aberto.",
+          "Finalize colecionáveis exigidos, como cigarette cards, rock carvings, dinosaur bones, dreamcatchers e outros strands necessários.",
+          "Complete desafios, minijogos, homesteads, túmulos e tarefas relacionadas ao mundo.",
+          "Use o checklist para separar o que conta para 100% do que é apenas extra."
+        ],
+        "warning": "Best in the West é demorado; não confunda 100% do jogo com fazer literalmente todo conteúdo opcional existente.",
+        "result": "100% de conclusão encaminhado ou concluído, reduzindo a maior parte da limpeza offline."
+      },
+      {
+        "title": "Trabalhe Gold Rush e troféus de missões",
+        "focus": "Medalhas de ouro",
+        "objective": "Obter 70 medalhas de ouro em missões da história sem misturar esse grind com a campanha casual.",
+        "actions": [
+          "Use replay de missões para buscar objetivos de medalha.",
+          "Priorize missões curtas e com requisitos mais simples.",
+          "Estude objetivos antes de iniciar cada replay para evitar tentativas desperdiçadas.",
+          "Não trate Gold Rush como perdível, pois as missões podem ser repetidas.",
+          "Faça esse grind em blocos para evitar fadiga."
+        ],
+        "warning": "Gold Rush é um dos grinds mais cansativos da platina; planeje sessões separadas para ele.",
+        "result": "70 medalhas de ouro concluídas ou bem encaminhadas."
+      },
+      {
+        "title": "Complete animais, crafting e desafios de mundo",
+        "focus": "Animais e grind offline",
+        "objective": "Finalizar Zoologist, Skin Deep, crafting, caça, pesca, urso, cavalo e demais troféus longos do modo história.",
+        "actions": [
+          "Estude e esfole os animais necessários para Zoologist e Skin Deep.",
+          "Use listas/checklist para marcar animais já estudados e esfolados.",
+          "Trabalhe Self Sufficient, Grin and Bear it, Trusty Steed, It was THIS Big! e Locked and Loaded.",
+          "Resolva troféus de dinheiro, honra, minijogos e ações específicas que ainda faltarem.",
+          "Evite depender apenas da memória; use o checklist para não repetir áreas e espécies."
+        ],
+        "warning": "Zoologist e Skin Deep são demorados e exigem organização, mas não devem ser tratados como perdíveis sem justificativa real.",
+        "result": "Grind offline principal concluído e modo história praticamente fechado."
+      },
+      {
+        "title": "Avance em Red Dead Online",
+        "focus": "Online e multiplayer",
+        "objective": "Concluir todos os troféus de Red Dead Online, incluindo rank, eventos, posses, awards, MVP e progresso de mundo online.",
+        "actions": [
+          "Complete a introdução de Red Dead Online para Breakout.",
+          "Suba até rank 50 para Notorious.",
+          "Participe de Series, Free Roam Events e missões de Free Roam.",
+          "Organize uma Posse para Posse Up, Strength in Numbers e atividades relacionadas.",
+          "Trabalhe awards, crafting, butcher, herbs, camp improvements, horses e demais troféus online em paralelo."
+        ],
+        "warning": "A platina exige online e atividades com outros jogadores; confirme que Red Dead Online está acessível antes de prometer guia verificado.",
+        "result": "Troféus online concluídos e maior barreira externa da platina removida."
+      },
+      {
+        "title": "Faça o cleanup final da platina",
+        "focus": "Cleanup",
+        "objective": "Revisar pendências restantes e garantir que as flags do guia refletem a platina real.",
+        "actions": [
+          "Abra o checklist e revise todos os troféus restantes.",
+          "Confirme que Legend of the West não está marcado como perdível.",
+          "Confirme que os quatro perdíveis reais estão marcados corretamente.",
+          "Confirme que onlineRequired e coopRequired refletem Red Dead Online e Posse/multiplayer.",
+          "Confirme que DLC, edições especiais e compras de Gold Bars não aparecem como obrigatórias."
+        ],
+        "warning": "",
+        "result": "Todos os requisitos da platina base concluídos."
+      }
     ],
     "trophies": [
       {
@@ -5953,7 +6136,7 @@ const sampleGames = [
         "id": "rdr2_breaking_and_entering",
         "name": "Breaking and Entering",
         "type": "Bronze",
-        "description": "Recupere o saque escondido em 4 homesteads.",
+        "description": "Recupere o saque escondido em 4 propriedades rurais.",
         "tip": "Faça ainda na campanha principal. É mais fácil encaixar esse progresso cedo do que deixar tudo para o pós-jogo.",
         "is_spoiler": false
       },
@@ -6073,7 +6256,7 @@ const sampleGames = [
         "id": "rdr2_grin_and_bear_it",
         "name": "Grin and Bear It",
         "type": "Bronze",
-        "description": "Sobreviva a 18 ataques de urso e maté o urso a cada vez no modo História.",
+        "description": "Sobreviva a 18 ataques de urso e mate o urso a cada vez no modo História.",
         "tip": "Use tônicos fortes, deixe o urso derrubar Arthur/John e finalize logo depois. Saves perto de spawns ajudam muito.",
         "is_spoiler": false
       },
@@ -6145,7 +6328,7 @@ const sampleGames = [
         "id": "rdr2_buckle_up",
         "name": "Buckle Up",
         "type": "Bronze",
-        "description": "Red Dead Online: obtenha 5 belt buckles de ouro em Awards.",
+        "description": "Red Dead Online: obtenha 5 fivelas de ouro em prêmios.",
         "tip": "Escolha awards simples e repetíveis, como vendas, coleta e ações básicas de combate.",
         "is_spoiler": false
       },
@@ -6153,7 +6336,7 @@ const sampleGames = [
         "id": "rdr2_butchered",
         "name": "Butchered",
         "type": "Bronze",
-        "description": "Red Dead Online: venda 20 itens ao Butcher.",
+        "description": "Red Dead Online: venda 20 itens ao açougueiro.",
         "tip": "Acumule carne, peles e partes de animais durante o grind.",
         "is_spoiler": false
       },
@@ -6169,7 +6352,7 @@ const sampleGames = [
         "id": "rdr2_strength_in_numbers",
         "name": "Strength in Numbers",
         "type": "Bronze",
-        "description": "Red Dead Online: complete uma Free Roam mission como parte de uma Posse com pelo menos 2 membros.",
+        "description": "Red Dead Online: complete uma missão Free Roam como parte de uma Posse com pelo menos 2 membros.",
         "tip": "Combine com amigos ou matchmaking/social.",
         "is_spoiler": false
       },
@@ -6217,7 +6400,7 @@ const sampleGames = [
         "id": "rdr2_gun_for_hire",
         "name": "Gun For Hire",
         "type": "Bronze",
-        "description": "Red Dead Online: aceite 10 Free Roam missions de personagens no mundo.",
+        "description": "Red Dead Online: aceite 10 missões Free Roam de personagens no mundo.",
         "tip": "Sai naturalmente enquanto sobe de nível.",
         "is_spoiler": false
       },
@@ -6273,6 +6456,7 @@ const sampleGames = [
     "coverage_level": "complete",
     "is_verified": true,
     "verification_status": "verified",
+    "editorial_review_status": "verified",
     "verification_note": "Guia revisado editorialmente para a lista base de Resident Evil 3 Remake.",
     "onlineRequired": false,
     "coopRequired": false,
@@ -10532,359 +10716,610 @@ const sampleGames = [
     "dlc_scope": "Guia focado na lista base da platina; DLCs, add-ons ou listas separadas devem ficar fora deste checklist.",
     "difficulty_reason": "A platina é bem acessível; o maior compromisso é limpar o mapa e completar 100% dos distritos.",
     "time_reason": "A faixa de 25-35 horas considera campanha, atividades de mundo aberto, coletáveis, upgrades e cleanup.",
-    "first_run_advice": "Jogue a história naturalmente e vá fazendo atividades próximas quando quiser reduzir o cleanup final.",
+    "first_run_advice": "Avance pela campanha enquanto libera habilidades, gadgets, Web Wings e atividades do mapa; deixe a limpeza completa de distritos, upgrades e troféus situacionais para o cleanup.",
+    "editorial_summary": [
+      "Marvel’s Spider-Man 2 é uma platina curta e acessível, focada em concluir a campanha, limpar 100% dos distritos e finalizar atividades secundárias, colecionáveis, upgrades e troféus situacionais no free roam. Não há troféus perdíveis, online, coop, DLC obrigatória, New Game+ obrigatório ou troféus de dificuldade na lista base.",
+      "A ordem mais segura é jogar a história primeiro enquanto libera habilidades, gadgets, Web Wings e atividades do mapa, depois limpar distritos e side stories, comprar trajes/upgrades e deixar troféus de combate, travessia e locais específicos para o cleanup. O principal cuidado é acompanhar os contadores do mapa durante o troféu Superior, especialmente Spider-Bots e atividades de distrito, para evitar retrabalho caso algum progresso não atualize corretamente."
+    ],
     "cleanup_advice": "Depois da campanha, use o mapa para fechar distritos, coletáveis, side stories, upgrades e troféus específicos.",
     "before_you_start": "Nada é perdível e não há online obrigatório; dá para jogar sem medo de travar a platina.",
     "best_for": "Ideal para quem quer uma platina acessível, moderna, com mundo aberto compacto e baixo risco de retrabalho.",
     "avoid_if": "Evite apenas se você não gosta de limpar mapa, coletáveis e atividades de distrito.",
+    "onlineRequired": false,
+    "coopRequired": false,
+    "dlcRequired": false,
+    "dlcRequiredForPlatinum": false,
+    "hasMissables": false,
+    "missableCount": 0,
+    "newGamePlusRequired": false,
     "editorial_status": "published",
-    "coverage_level": "strong",
-    "is_verified": false,
-    "verification_status": "review",
-    "verification_note": "Guia forte com lista base, roadmap, imagens e flags adicionados em abril de 2026; aguardando revisão final manual.",
+    "coverage_level": "complete",
+    "is_verified": true,
+    "verification_status": "verified",
+    "editorial_review_status": "verified",
+    "editorialStatus": "verified",
+    "last_reviewed_at": "2026-05-26",
+    "reviewed_by": "AtlasAchievement editorial",
+    "verification_note": "Guia revisado editorialmente para a platina base de Marvel’s Spider-Man 2, com 42 troféus, roadmap estruturado, descrições PT-BR, sem perdíveis, sem online obrigatório, sem coop obrigatório, sem DLC obrigatória e sem New Game+ obrigatório.",
     "image": "https://cdn.cloudflare.steamstatic.com/steam/apps/2651280/header.jpg",
     "cover_image": "https://cdn.cloudflare.steamstatic.com/steam/apps/2651280/library_600x900.jpg",
     "roadmap": [
-      "Etapa 1: jogue a campanha naturalmente, alternando Peter e Miles, desbloqueando habilidades, gadgets, Web Wings, Symbiote Surge e atividades do mapa sem se preocupar com perdíveis.",
-      "Etapa 2: complete distritos e atividades de mundo aberto conforme quiser, priorizando 100% de distrito, FNSM requests, crimes, Mysteriums, Hunter Blinds, Hunter Bases e Symbiote Nests.",
-      "Etapa 3: limpe coletáveis e atividades específicas, incluindo Spider-Bots, Marko’s Memories, Prowler Stashes, Photo Ops, EMF Experiments, Unidentified Targets e Tech Stashes.",
-      "Etapa 4: complete side stories como The Flame, Brooklyn Visions, Cultural Museum e Howard, além de trajes, gadget upgrades, Suit Tech e materiais necessários.",
-      "Etapa 5: faça o cleanup final de troféus específicos, habilidades de Peter/Miles, Air Tricks, Web Wings, túmulos, ciência da Phin e 100% dos distritos. A lista base não exige online nem múltiplas runs."
+      {
+        "title": "Conclua a campanha e libere todo o mapa",
+        "focus": "História",
+        "objective": "Avançar pela história principal enquanto libera atividades, habilidades, gadgets, Web Wings e recursos básicos dos dois Spider-Men.",
+        "actions": [
+          "Jogue a campanha naturalmente, alternando entre Peter e Miles conforme a história permitir.",
+          "Aprenda a usar Spider Arms, habilidades simbiontes, Evolved Venom, gadgets e Web Wings.",
+          "Pegue atividades próximas quando quiser ganhar XP e recursos, mas não tente limpar tudo antes da hora.",
+          "Use saves manuais antes de limpezas grandes se quiser se proteger de problemas de contador.",
+          "Não se preocupe com perdíveis, porque a platina base não tem troféus perdíveis."
+        ],
+        "warning": "",
+        "result": "História concluída ou encaminhada, principais sistemas liberados e mapa pronto para a limpeza."
+      },
+      {
+        "title": "Faça 100% dos distritos",
+        "focus": "Coleta de mapa",
+        "objective": "Completar todas as atividades necessárias para Superior e liberar recursos suficientes para trajes, gadgets e Suit Tech.",
+        "actions": [
+          "Complete Marko’s Memories, Photo Ops, FNSM Requests, Prowler Stashes e Brooklyn Visions.",
+          "Conclua EMF Experiments, Hunter Blinds, Hunter Bases, Mysteriums, Cultural Museum e Unidentified Targets.",
+          "Limpe Symbiote Nests quando ficarem disponíveis na reta final.",
+          "Colete Spider-Bots com atenção, pois eles não seguem o mesmo padrão de marcação do mapa.",
+          "Use o checklist para conferir cada distrito antes de considerar o 100% concluído."
+        ],
+        "warning": "Confira os contadores do mapa durante a coleta. Se algo parecer não contar corretamente, volte a um save manual anterior.",
+        "result": "Distritos completos, Superior encaminhado e a maioria dos recursos da platina garantida."
+      },
+      {
+        "title": "Finalize side stories e missões especiais",
+        "focus": "Atividades finais",
+        "objective": "Concluir as cadeias de atividades que liberam missões finais e troféus específicos.",
+        "actions": [
+          "Complete todos os Mysteriums para liberar Grand Finale e Behind the Masks.",
+          "Complete The Flame para liberar It Was Meant for Me e Crimson Hour.",
+          "Complete Unidentified Targets para liberar Target Identified e Data Collector.",
+          "Finalize Brooklyn Visions, Cultural Museum, Howard e demais FNSM Requests.",
+          "Resolva EMF Experiments restantes após a campanha, se algum só ficar disponível no pós-game."
+        ],
+        "warning": "",
+        "result": "Side stories finalizadas e troféus de atividades especiais resolvidos."
+      },
+      {
+        "title": "Compre trajes, gadgets e Suit Tech",
+        "focus": "Progressão",
+        "objective": "Usar os recursos obtidos no 100% dos distritos para fechar upgrades e compras necessárias.",
+        "actions": [
+          "Compre todos os trajes necessários para Kitted Out.",
+          "Compre todos os upgrades de gadgets para To the Max.",
+          "Compre todas as melhorias de Suit Tech para Fully Loaded.",
+          "Farme Tech Parts em crimes apenas se ainda faltar recurso depois do 100% dos distritos.",
+          "Lembre que estilos de traje extras não devem ser tratados como requisito se o troféu não exigir."
+        ],
+        "warning": "",
+        "result": "Progressão de compras e upgrades concluída."
+      },
+      {
+        "title": "Resolva troféus de combate e travessia",
+        "focus": "Ações específicas",
+        "objective": "Finalizar troféus que dependem de habilidades, técnicas de combate, Web Wings ou locais específicos.",
+        "actions": [
+          "Use Peter para Armed and Dangerous e Surge.",
+          "Use Miles para Evolved e Overdrive.",
+          "Faça Slack Line em áreas furtivas usando Web Line.",
+          "Faça Hang Ten, Soar e Splat em locais adequados para travessia e tricks.",
+          "Resolva Home Run!, Just Let Go e You Know What to Do nos locais corretos do mapa."
+        ],
+        "warning": "",
+        "result": "Troféus situacionais resolvidos sem necessidade de nova campanha."
+      },
+      {
+        "title": "Faça o cleanup final da platina",
+        "focus": "Cleanup",
+        "objective": "Revisar pendências da lista base e garantir que nenhum requisito externo foi tratado como obrigatório.",
+        "actions": [
+          "Abra o checklist e revise os troféus restantes.",
+          "Use free roam pós-história para voltar aos distritos e pontos de interesse.",
+          "Confirme que Dedicated não está marcada como perdível.",
+          "Confirme que onlineRequired, coopRequired, dlcRequired e hasMissables estão como false.",
+          "Confirme que o guia não exige New Game+, DLC ou múltiplas runs para a platina base."
+        ],
+        "warning": "",
+        "result": "Todos os requisitos da platina base concluídos."
+      }
+    ],
+    "faq": [
+      {
+        "question": "Marvel’s Spider-Man 2 tem troféus perdíveis?",
+        "answer": "Não. A platina base não tem troféus perdíveis. Você pode continuar em free roam depois da história para concluir distritos, atividades, colecionáveis e troféus situacionais."
+      },
+      {
+        "question": "Marvel’s Spider-Man 2 precisa de online para platinar?",
+        "answer": "Não. A platina base é offline e não exige troféus online."
+      },
+      {
+        "question": "Marvel’s Spider-Man 2 precisa de coop?",
+        "answer": "Não. O jogo é single-player e a platina não exige coop."
+      },
+      {
+        "question": "A DLC é necessária para a platina de Marvel’s Spider-Man 2?",
+        "answer": "Não. A platina base não exige DLC nem New Game+."
+      },
+      {
+        "question": "Quanto tempo leva para platinar Marvel’s Spider-Man 2?",
+        "answer": "A estimativa é 25-35h, dependendo de quanto você limpa durante a campanha e de quanto deixa para o cleanup."
+      },
+      {
+        "question": "Qual a dificuldade da platina de Marvel’s Spider-Man 2?",
+        "answer": "A dificuldade estimada é 2/10. A dificuldade do jogo não afeta troféus, então você pode jogar na configuração que preferir."
+      },
+      {
+        "question": "O troféu Superior pode dar problema?",
+        "answer": "Raramente, algum contador de distrito ou coletável pode não atualizar corretamente. Use saves manuais antes de limpezas grandes e confira os contadores do mapa durante a coleta."
+      }
     ],
     "trophies": [
       {
         "id": "msm2_dedicated",
         "name": "Dedicated",
+        "name_pt": "Dedicação",
+        "namePtSource": "trusted_psn_ptbr",
         "type": "Platina",
-        "description": "Collect all Trophies",
+        "description": "Colete todos os troféus.",
+        "descriptionPtSource": "trusted_psn_ptbr",
         "tip": "Conclua todos os troféus da lista base para liberar a platina; DLC não entra neste checklist.",
+        "is_missable": false,
         "is_spoiler": false
       },
       {
         "id": "msm2_superior",
         "name": "Superior",
+        "name_pt": "Superior",
+        "namePtSource": "trusted_psn_ptbr",
         "type": "Ouro",
-        "description": "100% complete all districts",
+        "description": "Faça 100% de conclusão em todos os distritos.",
+        "descriptionPtSource": "trusted_psn_ptbr",
         "tip": "Feche todos os distritos pelo mapa, incluindo coletáveis, side stories, bases e atividades de mundo aberto.",
         "is_spoiler": false
       },
       {
         "id": "msm2_heal_the_world",
         "name": "Heal the World",
+        "name_pt": "Cure o Mundo",
+        "namePtSource": "trusted_psn_ptbr",
         "type": "Ouro",
-        "description": "Finish the main story",
+        "description": "Conclua a história principal.",
+        "descriptionPtSource": "trusted_psn_ptbr",
         "tip": "Troféu de conclusão da campanha principal.",
         "is_spoiler": true
       },
       {
         "id": "msm2_to_the_max",
         "name": "To the Max",
+        "name_pt": "Ao Máximo",
+        "namePtSource": "trusted_psn_ptbr",
         "type": "Prata",
-        "description": "Purchase all Gadget upgrades",
+        "description": "Compre todos os aprimoramentos de gadgets.",
+        "descriptionPtSource": "trusted_psn_ptbr",
         "tip": "Compre todas as melhorias dos gadgets usando materiais obtidos em 100% dos distritos.",
         "is_spoiler": false
       },
       {
         "id": "msm2_kitted_out",
         "name": "Kitted Out",
+        "name_pt": "Arrasando no Visual",
+        "namePtSource": "trusted_psn_ptbr",
         "type": "Prata",
-        "description": "Purchase all available Suits",
+        "description": "Compre todos os trajes disponíveis.",
+        "descriptionPtSource": "trusted_psn_ptbr",
         "tip": "Compre todos os trajes disponíveis; estilos de traje não são necessários para este troféu.",
         "is_spoiler": false
       },
       {
         "id": "msm2_behind_the_masks",
         "name": "Behind the Masks",
+        "name_pt": "Por Trás das Máscaras",
+        "namePtSource": "trusted_psn_ptbr",
         "type": "Prata",
-        "description": "Complete “Grand Finale”",
+        "description": "Conclua Grand Finale.",
+        "descriptionPtSource": "trusted_psn_ptbr",
         "tip": "Conclua todos os Mysteriums para liberar e finalizar Grand Finale.",
         "is_spoiler": true
       },
       {
         "id": "msm2_amazing",
         "name": "Amazing",
+        "name_pt": "Incrível",
+        "namePtSource": "trusted_psn_ptbr",
         "type": "Prata",
-        "description": "Reach max level",
+        "description": "Alcance o nível máximo.",
+        "descriptionPtSource": "trusted_psn_ptbr",
         "tip": "Você deve alcançar o nível 60 naturalmente enquanto limpa distritos e coletáveis.",
         "is_spoiler": false
       },
       {
         "id": "msm2_data_collector",
         "name": "Data Collector",
+        "name_pt": "Coletor de Dados",
+        "namePtSource": "trusted_psn_ptbr",
         "type": "Prata",
-        "description": "Complete “Target Identified”",
+        "description": "Conclua Target Identified.",
+        "descriptionPtSource": "trusted_psn_ptbr",
         "tip": "Colete todos os Unidentified Targets para liberar a missão final dessa cadeia.",
         "is_spoiler": true
       },
       {
         "id": "msm2_crimson_hour",
         "name": "Crimson Hour",
+        "name_pt": "Hora Escarlate",
+        "namePtSource": "trusted_psn_ptbr",
         "type": "Prata",
-        "description": "Complete “It Was Meant for Me”",
+        "description": "Conclua It Was Meant for Me.",
+        "descriptionPtSource": "trusted_psn_ptbr",
         "tip": "Conclua todas as missões The Flame para liberar e finalizar It Was Meant for Me.",
         "is_spoiler": true
       },
       {
         "id": "msm2_exterminator",
         "name": "Exterminator",
+        "name_pt": "Exterminador",
+        "namePtSource": "trusted_psn_ptbr",
         "type": "Prata",
-        "description": "Complete all Symbiote Nests",
+        "description": "Conclua todos os Ninhos de Simbiontes.",
+        "descriptionPtSource": "trusted_psn_ptbr",
         "tip": "Limpe todos os Symbiote Nests quando eles ficarem disponíveis na reta final.",
         "is_spoiler": false
       },
       {
         "id": "msm2_grains_of_sand",
         "name": "Grains of Sand",
+        "name_pt": "Grãos de Areia",
+        "namePtSource": "trusted_psn_ptbr",
         "type": "Prata",
-        "description": "Piece together broken memories",
+        "description": "Junte memórias partidas.",
+        "descriptionPtSource": "trusted_psn_ptbr",
         "tip": "Colete todas as Marko’s Memories e conclua a atividade final da cadeia.",
         "is_spoiler": false
       },
       {
         "id": "msm2_leave_us_alone",
         "name": "Leave Us Alone",
+        "name_pt": "Nos Deixe em Paz",
+        "namePtSource": "trusted_psn_ptbr",
         "type": "Prata",
-        "description": "Complete “Don’t Be Scared”",
+        "description": "Conclua Don’t Be Scared.",
+        "descriptionPtSource": "trusted_psn_ptbr",
         "tip": "Troféu de progresso da história em missão avançada.",
         "is_spoiler": true
       },
       {
         "id": "msm2_the_great_hunt",
         "name": "The Great Hunt",
+        "name_pt": "A Grande Caçada",
+        "namePtSource": "trusted_psn_ptbr",
         "type": "Prata",
-        "description": "Complete “Anything Can Be Broken”",
+        "description": "Conclua Anything Can Be Broken.",
+        "descriptionPtSource": "trusted_psn_ptbr",
         "tip": "Troféu de progresso da campanha ligado à reta dos Hunters.",
         "is_spoiler": true
       },
       {
         "id": "msm2_seek_and_destroy",
         "name": "Seek and Destroy",
+        "name_pt": "Procurar e Destruir",
+        "namePtSource": "trusted_psn_ptbr",
         "type": "Prata",
-        "description": "Complete all Hunter Bases",
+        "description": "Conclua todas as Bases de Caçadores.",
+        "descriptionPtSource": "trusted_psn_ptbr",
         "tip": "Complete todos os Hunter Blinds para liberar as Hunter Bases e finalize as quatro bases.",
         "is_spoiler": false
       },
       {
         "id": "msm2_friendly_neighborhood_spider_man",
         "name": "Friendly Neighborhood Spider-Man",
+        "name_pt": "Amigo da Vizinhança Spider-Man",
+        "namePtSource": "trusted_psn_ptbr",
         "type": "Prata",
-        "description": "Complete all FNSM requests",
+        "description": "Conclua todos os pedidos do AVSM.",
+        "descriptionPtSource": "trusted_psn_ptbr",
         "tip": "Conclua todos os pedidos do app FNSM, incluindo Howard.",
         "is_spoiler": false
       },
       {
         "id": "msm2_medicine",
         "name": "Medicine",
+        "name_pt": "Remédio",
+        "namePtSource": "trusted_psn_ptbr",
         "type": "Prata",
-        "description": "Complete “It Chose You”",
+        "description": "Conclua It Chose You.",
+        "descriptionPtSource": "trusted_psn_ptbr",
         "tip": "Troféu de progresso da história em missão de grande revelação.",
         "is_spoiler": true
       },
       {
         "id": "msm2_surge",
         "name": "Surge",
+        "name_pt": "Surto",
+        "namePtSource": "trusted_psn_ptbr",
         "type": "Prata",
-        "description": "Use Symbiote Abilities 25 times during Symbiote Surge",
+        "description": "Use habilidades de simbionte 25 vezes durante um Surto de Simbionte.",
+        "descriptionPtSource": "trusted_psn_ptbr",
         "tip": "Com Peter, ative Symbiote Surge e use habilidades simbiontes durante o efeito.",
         "is_spoiler": false
       },
       {
         "id": "msm2_foundational",
         "name": "Foundational",
+        "name_pt": "Fundacional",
+        "namePtSource": "trusted_psn_ptbr",
         "type": "Prata",
-        "description": "Complete all EMF Experiments",
+        "description": "Conclua todos os Experimentos da FEM.",
+        "descriptionPtSource": "trusted_psn_ptbr",
         "tip": "Finalize todos os EMF Experiments; alguns só fecham após a campanha.",
         "is_spoiler": false
       },
       {
         "id": "msm2_evolved",
         "name": "Evolved",
+        "name_pt": "Evolução",
+        "namePtSource": "trusted_psn_ptbr",
         "type": "Prata",
-        "description": "Defeat 100 enemies with Evolved Venom abilities",
+        "description": "Derrote 100 inimigos com habilidades de Venom Evoluído.",
+        "descriptionPtSource": "trusted_psn_ptbr",
         "tip": "Com Miles, finalize inimigos usando habilidades Evolved Venom. Crimes e Mysteriums ajudam no acúmulo.",
         "is_spoiler": false
       },
       {
         "id": "msm2_armed_and_dangerous",
         "name": "Armed and Dangerous",
+        "name_pt": "Armado e Perigoso",
+        "namePtSource": "trusted_psn_ptbr",
         "type": "Prata",
-        "description": "Defeat 100 enemies with Spider Arm abilities",
+        "description": "Derrote 100 inimigos com habilidades de Braços-Aranha.",
+        "descriptionPtSource": "trusted_psn_ptbr",
         "tip": "Com Peter, derrote inimigos usando Spider Arm abilities até acumular 100.",
         "is_spoiler": false
       },
       {
         "id": "msm2_another_way",
         "name": "Another Way",
+        "name_pt": "Outro Jeito",
+        "namePtSource": "trusted_psn_ptbr",
         "type": "Bronze",
-        "description": "Complete “No Escape”",
+        "description": "Conclua No Escape.",
+        "descriptionPtSource": "trusted_psn_ptbr",
         "tip": "Troféu automático de história durante No Escape.",
         "is_spoiler": true
       },
       {
         "id": "msm2_fully_loaded",
         "name": "Fully Loaded",
+        "name_pt": "Carregamento Completo",
+        "namePtSource": "trusted_psn_ptbr",
         "type": "Bronze",
-        "description": "Purchase all of Spider-Man’s Suit Tech upgrades",
+        "description": "Compre todos os aprimoramentos da tecnologia de traje do Spider-Man.",
+        "descriptionPtSource": "trusted_psn_ptbr",
         "tip": "Compre todas as melhorias de Suit Tech usando recursos de atividades e coletáveis.",
         "is_spoiler": false
       },
       {
         "id": "msm2_brooklyn_pride",
         "name": "Brooklyn Pride",
+        "name_pt": "Orgulho do Brooklyn",
+        "namePtSource": "trusted_psn_ptbr",
         "type": "Bronze",
-        "description": "Complete “A Gift”",
+        "description": "Conclua A Gift.",
+        "descriptionPtSource": "trusted_psn_ptbr",
         "tip": "Conclua a cadeia Brooklyn Visions para liberar e finalizar A Gift.",
         "is_spoiler": false
       },
       {
         "id": "msm2_my_community",
         "name": "My Community",
+        "name_pt": "Minha Comunidade",
+        "namePtSource": "trusted_psn_ptbr",
         "type": "Bronze",
-        "description": "Complete “Hard Bop”",
+        "description": "Conclua Hard Bop.",
+        "descriptionPtSource": "trusted_psn_ptbr",
         "tip": "Finalize as missões Cultural Museum até concluir Hard Bop.",
         "is_spoiler": false
       },
       {
         "id": "msm2_i_quit",
         "name": "I Quit",
+        "name_pt": "Estou Fora",
+        "namePtSource": "trusted_psn_ptbr",
         "type": "Bronze",
-        "description": "Complete “This Isn’t You”",
+        "description": "Conclua This Isn’t You.",
+        "descriptionPtSource": "trusted_psn_ptbr",
         "tip": "Troféu de progresso da história em missão avançada.",
         "is_spoiler": true
       },
       {
         "id": "msm2_funky_wireless_protocols",
         "name": "Funky Wireless Protocols",
+        "name_pt": "Protocolos Sem Fio Descolados",
+        "namePtSource": "trusted_psn_ptbr",
         "type": "Bronze",
-        "description": "Solve the mystery of the Spider-Bots’ origin",
+        "description": "Resolva o mistério da origem dos Spider-Bots.",
+        "descriptionPtSource": "trusted_psn_ptbr",
         "tip": "Encontre todos os Spider-Bots, que não ficam marcados automaticamente no mapa.",
         "is_spoiler": true
       },
       {
         "id": "msm2_stylish",
         "name": "Stylish",
+        "name_pt": "Estiloso",
+        "namePtSource": "trusted_psn_ptbr",
         "type": "Bronze",
-        "description": "Equip a suit style",
+        "description": "Equipe um estilo de traje.",
+        "descriptionPtSource": "trusted_psn_ptbr",
         "tip": "Equipe qualquer suit style quando o tutorial de trajes liberar o sistema.",
         "is_spoiler": false
       },
       {
         "id": "msm2_slack_line",
         "name": "Slack Line",
+        "name_pt": "Bamba",
+        "namePtSource": "trusted_psn_ptbr",
         "type": "Bronze",
-        "description": "Stealth takedown 25 enemies in stealth from the Web Line",
+        "description": "Derrote furtivamente 25 inimigos a partir da Linha de Teia.",
+        "descriptionPtSource": "trusted_psn_ptbr",
         "tip": "Use Web Line em áreas furtivas e faça takedowns seguros a partir dela.",
         "is_spoiler": false
       },
       {
         "id": "msm2_hang_ten",
         "name": "Hang Ten",
+        "name_pt": "Dez Dedos no Ar",
+        "namePtSource": "trusted_psn_ptbr",
         "type": "Bronze",
-        "description": "Perform 30 Air Tricks in a row without touching the ground",
+        "description": "Faça 30 manobras aéreas em sequência sem tocar o chão.",
+        "descriptionPtSource": "trusted_psn_ptbr",
         "tip": "Use uma avenida longa ou ganho de altura para encadear 30 tricks antes de tocar o chão.",
         "is_spoiler": false
       },
       {
         "id": "msm2_overdrive",
         "name": "Overdrive",
+        "name_pt": "Overdrive",
+        "namePtSource": "trusted_psn_ptbr",
         "type": "Bronze",
-        "description": "As Miles, use Reverse Flux to pull 6 or more enemies together simultaneously",
+        "description": "Como Miles, use Fluxo Reverso para puxar 6 ou mais inimigos ao mesmo tempo.",
+        "descriptionPtSource": "trusted_psn_ptbr",
         "tip": "Junte inimigos em uma base ou crime e use Reverse Flux com Miles.",
         "is_spoiler": false
       },
       {
         "id": "msm2_home_run",
         "name": "Home Run!",
+        "name_pt": "Home Run!",
+        "namePtSource": "trusted_psn_ptbr",
         "type": "Bronze",
-        "description": "Round the bases at the Big Apple Ballers Stadium",
+        "description": "Dê uma volta completa pelas bases no estádio Big Apple Ballers.",
+        "descriptionPtSource": "trusted_psn_ptbr",
         "tip": "Vá ao estádio em Downtown Brooklyn e corra pelas quatro bases no campo.",
         "is_spoiler": false
       },
       {
         "id": "msm2_just_let_go",
         "name": "Just Let Go",
+        "name_pt": "Apenas Deixe Ir",
+        "namePtSource": "trusted_psn_ptbr",
         "type": "Bronze",
-        "description": "As Miles, find the science trophy Miles and Phin won together",
+        "description": "Como Miles, encontre o troféu de ciências que Miles e Phin ganharam juntos.",
+        "descriptionPtSource": "trusted_psn_ptbr",
         "tip": "Com Miles, visite a torre da igreja no Financial District para encontrar o troféu de ciência.",
         "is_spoiler": true
       },
       {
         "id": "msm2_you_know_what_to_do",
         "name": "You Know What to Do",
+        "name_pt": "Você Sabe o Que Fazer",
+        "namePtSource": "trusted_psn_ptbr",
         "type": "Bronze",
-        "description": "As Peter, visit Aunt May’s grave",
+        "description": "Como Peter, visite o túmulo da Tia May.",
+        "descriptionPtSource": "trusted_psn_ptbr",
         "tip": "Com Peter, visite o túmulo da May no cemitério ao norte do mapa.",
         "is_spoiler": true
       },
       {
         "id": "msm2_soar",
         "name": "Soar",
+        "name_pt": "Voando",
+        "namePtSource": "trusted_psn_ptbr",
         "type": "Bronze",
-        "description": "Using only your Web Wings, glide from the Financial District to Astoria (Wind Tunnels are okay!)",
+        "description": "Usando apenas as Web Wings, plane do Financial District até Astoria; túneis de vento são permitidos.",
+        "descriptionPtSource": "trusted_psn_ptbr",
         "tip": "Use Web Wings e túneis de vento para cruzar da Financial District até Astoria sem pousar.",
         "is_spoiler": false
       },
       {
         "id": "msm2_splat",
         "name": "Splat",
+        "name_pt": "Espatifado",
+        "namePtSource": "trusted_psn_ptbr",
         "type": "Bronze",
-        "description": "Attempt and fail a trick before “landing” on the ground",
+        "description": "Tente e falhe uma manobra antes de aterrissar no chão.",
+        "descriptionPtSource": "trusted_psn_ptbr",
         "tip": "Faça um trick no ar e deixe o personagem bater no chão antes de recuperar o balanço.",
         "is_spoiler": false
       },
       {
         "id": "msm2_a_new_adventure",
         "name": "A New Adventure",
+        "name_pt": "Uma Nova Aventura",
+        "namePtSource": "trusted_psn_ptbr",
         "type": "Bronze",
-        "description": "Help Howard",
+        "description": "Ajude Howard.",
+        "descriptionPtSource": "trusted_psn_ptbr",
         "tip": "Complete o FNSM Request do Howard quando aparecer no Financial District.",
         "is_spoiler": false
       },
       {
         "id": "msm2_resourceful",
         "name": "Resourceful",
+        "name_pt": "Habilidoso",
+        "namePtSource": "trusted_psn_ptbr",
         "type": "Bronze",
-        "description": "Collect a total of 10,000 Tech Parts",
+        "description": "Colete um total de 10.000 Peças Tecnológicas.",
+        "descriptionPtSource": "trusted_psn_ptbr",
         "tip": "Acumula ao longo do jogo; 100% dos distritos fornece Tech Parts suficientes.",
         "is_spoiler": false
       },
       {
         "id": "msm2_co_signing",
         "name": "Co-Signing",
+        "name_pt": "Parceria",
+        "namePtSource": "trusted_psn_ptbr",
         "type": "Bronze",
-        "description": "Complete all Tech Stashes",
+        "description": "Conclua todos os Esconderijos Prowler.",
+        "descriptionPtSource": "trusted_psn_ptbr",
         "tip": "Complete todos os Prowler Stashes espalhados pelos distritos.",
         "is_spoiler": false
       },
       {
         "id": "msm2_youre_gonna_need_help",
         "name": "You’re Gonna Need Help",
+        "name_pt": "Você Vai Precisar de Ajuda",
+        "namePtSource": "trusted_psn_ptbr",
         "type": "Bronze",
-        "description": "Complete “Surface Tension”",
+        "description": "Conclua Surface Tension.",
+        "descriptionPtSource": "trusted_psn_ptbr",
         "tip": "Primeiro troféu de progresso da história.",
         "is_spoiler": true
       },
       {
         "id": "msm2_new_york_new_york",
         "name": "New York, New York",
+        "name_pt": "Nova York, Nova York",
+        "namePtSource": "trusted_psn_ptbr",
         "type": "Bronze",
-        "description": "Complete all Photo Ops",
+        "description": "Conclua todas as Photo Ops.",
+        "descriptionPtSource": "trusted_psn_ptbr",
         "tip": "Fotografe todos os Photo Ops marcados pelo mapa.",
         "is_spoiler": false
       },
       {
         "id": "msm2_antidote",
         "name": "Antidote",
+        "name_pt": "Antídoto",
+        "namePtSource": "trusted_psn_ptbr",
         "type": "Bronze",
-        "description": "Defeat a Symbiote that is under the effect of Anti-Venom status",
+        "description": "Derrote um simbionte sob o efeito do status Anti-Venom.",
+        "descriptionPtSource": "trusted_psn_ptbr",
         "tip": "Troféu de história ligado ao tutorial de Anti-Venom.",
         "is_spoiler": true
       },
       {
         "id": "msm2_a_new_suit",
         "name": "A New Suit",
+        "name_pt": "Um Novo Traje",
+        "namePtSource": "trusted_psn_ptbr",
         "type": "Bronze",
-        "description": "Acquire the Black Suit",
+        "description": "Adquira o Traje Preto.",
+        "descriptionPtSource": "trusted_psn_ptbr",
         "tip": "Troféu automático de história ao adquirir o Black Suit.",
         "is_spoiler": true
       }
@@ -31439,9 +31874,1358 @@ for (const game of sampleGames) {
       trophy.is_coop = false;
       trophy.isCoop = false;
     }
+    if (game.slug === 'marvels-spider-man-2') {
+      trophy.trophyNameOriginal = trophy.name;
+      trophy.trophyNamePtBr = trophy.name_pt || '';
+      trophy.descriptionPtBr = trophy.description;
+      trophy.ptDescription = trophy.description;
+      trophy.localizedDescription = { ...(trophy.localizedDescription || {}), ptBr: trophy.description };
+      trophy.tier = trophy.type;
+      trophy.guideTip = trophy.tip || '';
+      trophy.is_missable = false;
+      trophy.isMissable = false;
+      trophy.is_online = false;
+      trophy.isOnline = false;
+      trophy.is_coop = false;
+      trophy.isCoop = false;
+      trophy.tags = Array.isArray(trophy.tags)
+        ? trophy.tags.filter(tag => !/perd[ií]vel|missable|online|coop|co-?op/i.test(String(tag?.id || tag?.label || tag)))
+        : [];
+    }
     trophy.is_missable = game.slug === 'hades' ? false : Boolean(trophy.is_missable || missableTrophyIds.has(trophy.id));
     if (game.slug === 'hades') trophy.isMissable = false;
     if (game.slug === 'resident-evil-requiem') trophy.isMissable = trophy.is_missable;
+  }
+}
+
+const deathStrandingGuide = sampleGames.find(game => game.slug === 'death-stranding');
+if (deathStrandingGuide) {
+  const dsTag = (id, label, tone = 'partial') => ({ id, label, tone });
+  const dsOnlineTrophyIds = new Set([
+    'ds_a_helping_hand',
+    'ds_like_and_be_liked',
+    'ds_giver_of_gifts',
+    'ds_great_deliverer',
+    'ds_a_shout_in_the_dark',
+    'ds_building_bridges'
+  ]);
+  const dsStoryTrophyIds = new Set([
+    'ds_delivering_is_what_i_do',
+    'ds_rebuilding_america',
+    'ds_we_need_you',
+    'ds_i_wont_break',
+    'ds_bb',
+    'ds_were_whole_again',
+    'ds_bbs_bridge_between_worlds',
+    'ds_quote_bb',
+    'ds_sixty_deaths_sixty_births',
+    'ds_particle_of_god',
+    'ds_im_your_die_hardman',
+    'ds_bring_back_my_baby',
+    'ds_shes_waiting_for_you_on_the_beach',
+    'ds_thank_you_sam',
+    'ds_thanks_for_everything'
+  ]);
+  const dsNamePtById = {
+    ds_greatest_of_great_deliverers: 'O melhor dos Grandes Entregadores',
+    ds_delivering_is_what_i_do: 'Entregar é o que eu faço',
+    ds_rebuilding_america: 'Reconstruindo a América',
+    ds_we_need_you: 'Nós precisamos de você',
+    ds_i_wont_break: 'Eu vou resistir',
+    ds_bb: 'BB...',
+    ds_were_whole_again: 'Estamos Unidas',
+    ds_bbs_bridge_between_worlds: 'BBs: as pontes entre este e o outro mundo',
+    ds_quote_bb: '"BB"',
+    ds_sixty_deaths_sixty_births: 'Sessenta morreram e sessenta nasceram em um dia',
+    ds_particle_of_god: 'A partícula de Deus',
+    ds_im_your_die_hardman: 'Die-Hardman ao seu dispor',
+    ds_bring_back_my_baby: 'Devolva o meu bebê',
+    ds_shes_waiting_for_you_on_the_beach: 'Ela está te esperando na Praia',
+    ds_thank_you_sam: 'Obrigado, Sam',
+    ds_thanks_for_everything: 'Obrigado por tudo',
+    ds_everyday_delivery: 'A entrega de todo dia',
+    ds_deliveries_done: 'Entregas feitas',
+    ds_birth_of_a_legend: 'Nasce uma lenda',
+    ds_growth_of_a_legend: 'Cresce uma lenda',
+    ds_a_helping_hand: 'Uma mão amiga',
+    ds_automation_revolution: 'A revolução automatizada',
+    ds_apprentice_builder: 'Aprendiz de construtor',
+    ds_master_builder: 'Mestre construtor',
+    ds_a_new_day_for_the_uca: 'Um novo dia para a UCA',
+    ds_in_sam_we_trust: 'No Sam nós confiamos',
+    ds_well_connected: 'Bem conectado',
+    ds_best_beloved: 'Mais amado',
+    ds_like_and_be_liked: 'Curta e seja curtido',
+    ds_the_peoples_porter: 'O portador do povo',
+    ds_worlds_most_popular_porter: 'O portador mais popular do mundo',
+    ds_good_samaritan: 'Bom samaritano',
+    ds_giver_of_gifts: 'Entregador de presentes',
+    ds_chiral_crafter: 'Artesão quiral',
+    ds_a_thirst_for_knowledge: 'Sede de conhecimento',
+    ds_fount_of_knowledge: 'A fonte do conhecimento',
+    ds_the_custom_kid: 'Um garoto personalizado',
+    ds_soak_and_sigh: 'Mergulhe e relaxe',
+    ds_the_post_guides_the_present: 'O correio guia o presente',
+    ds_the_past_guides_the_present: 'O passado guia o presente',
+    ds_pathfinder: 'Desbravador',
+    ds_childminder: 'Babá',
+    ds_a_baby_blessing: 'A benção do bebê',
+    ds_prominent_porter: 'Portador notável',
+    ds_great_deliverer: 'Grande Entregador',
+    ds_catcher_crusher: 'Apanhando o apanhador',
+    ds_snooze_n_soothe: 'Sonequinha relaxante',
+    ds_boots_are_a_porters_best_friend: 'Botas são as melhores amigas de um portador',
+    ds_hooked_on_delivering: 'Está viciado em entregar!?',
+    ds_pumped_porter: 'Musculação de portador',
+    ds_well_traveled: 'Viajante',
+    ds_god_particle_go_getter: 'Guerreiro das partículas de Deus',
+    ds_rest_in_pieces: 'Descanse em pedaços',
+    ds_any_porter_in_a_storm: 'O ombro de um amigo portador',
+    ds_sleep_tight_little_bb: 'Durma bem, pequeno BB',
+    ds_a_shout_in_the_dark: 'Um grito no escuro',
+    ds_public_service_porter: 'Lugar de lixo é no alcatrão',
+    ds_trail_blazer: 'Grande herança',
+    ds_i_couldnt_hold_it_in: 'Não consegui segurar!',
+    ds_all_roads_lead_to_the_uca: 'Todos os caminhos levam para a UCA',
+    ds_soothing_sounds: 'Música relaxante',
+    ds_building_bridges: 'Formando eixos',
+    ds_homo_faber: 'Homo Faber'
+  };
+  const dsDescriptionPtById = {
+    ds_greatest_of_great_deliverers: 'Obtenha todos os troféus de Death Stranding.',
+    ds_delivering_is_what_i_do: 'Conclua o Prólogo: Porter.',
+    ds_rebuilding_america: 'Conclua o Episódio 1: Bridget.',
+    ds_we_need_you: 'Conclua o Episódio 2: Amelie.',
+    ds_i_wont_break: 'Conclua o Episódio 3: Fragile.',
+    ds_bb: 'Conclua o Episódio 4: Unger.',
+    ds_were_whole_again: 'Conclua o Episódio 5: Mama.',
+    ds_bbs_bridge_between_worlds: 'Conclua o Episódio 6: Deadman.',
+    ds_quote_bb: 'Conclua o Episódio 7: Clifford.',
+    ds_sixty_deaths_sixty_births: 'Conclua o Episódio 8: Heartman.',
+    ds_particle_of_god: 'Conclua o Episódio 9: Higgs.',
+    ds_im_your_die_hardman: 'Conclua o Episódio 10: Die-Hardman.',
+    ds_bring_back_my_baby: 'Conclua o Episódio 11: Clifford Unger.',
+    ds_shes_waiting_for_you_on_the_beach: 'Conclua o Episódio 12: Bridges.',
+    ds_thank_you_sam: 'Conclua o Episódio 13: Sam Strand.',
+    ds_thanks_for_everything: 'Conclua o Episódio 14: Lou.',
+    ds_everyday_delivery: 'Conclua um pedido padrão.',
+    ds_deliveries_done: 'Conclua 36 pedidos padrão.',
+    ds_birth_of_a_legend: 'Conclua 10 Premium Deliveries em cada categoria com avaliação Legend ou Legend of Legends.',
+    ds_growth_of_a_legend: 'Conclua 20 Premium Deliveries diferentes em cada categoria com avaliação Legend of Legends na dificuldade Hard.',
+    ds_a_helping_hand: 'Emita sua primeira solicitação de suprimentos.',
+    ds_automation_revolution: 'Conclua um pedido padrão usando um delivery bot.',
+    ds_apprentice_builder: 'Construa sua primeira estrutura; placas, escadas e âncoras de escalada também contam.',
+    ds_master_builder: 'Construa ao menos uma estrutura de cada tipo, incluindo placas, escadas e âncoras de escalada.',
+    ds_a_new_day_for_the_uca: 'Conecte seu primeiro novo afiliado à UCA.',
+    ds_in_sam_we_trust: 'Conecte todas as instalações à UCA.',
+    ds_well_connected: 'Alcance nível de conexão 3 com uma instalação.',
+    ds_best_beloved: 'Alcance o nível máximo de conexão com todas as instalações.',
+    ds_like_and_be_liked: 'Dê seu primeiro Like.',
+    ds_the_peoples_porter: 'Alcance um total de 2.400 Likes na tela de resultados.',
+    ds_worlds_most_popular_porter: 'Alcance um total de 50.000 Likes na tela de resultados.',
+    ds_good_samaritan: 'Entregue sua primeira carga perdida.',
+    ds_giver_of_gifts: 'Faça sua primeira doação de armas, equipamentos ou itens.',
+    ds_chiral_crafter: 'Recicle cristais quirais pela primeira vez.',
+    ds_a_thirst_for_knowledge: 'Restaure seu primeiro Memory Chip.',
+    ds_fount_of_knowledge: 'Restaure todos os Memory Chips.',
+    ds_the_custom_kid: 'Obtenha seu primeiro dado de personalização.',
+    ds_soak_and_sigh: 'Tome seu primeiro banho em uma fonte termal.',
+    ds_the_post_guides_the_present: 'Leia 100 e-mails.',
+    ds_the_past_guides_the_present: 'Leia 100 entrevistas.',
+    ds_pathfinder: 'Ajude portadores a passarem por uma área de MULAs ou terroristas pela primeira vez.',
+    ds_childminder: 'Alcance o nível máximo de conexão com BB.',
+    ds_a_baby_blessing: 'Receba um Like de BB.',
+    ds_prominent_porter: 'Alcance nível 10 em qualquer categoria de avaliação de entrega.',
+    ds_great_deliverer: 'Alcance nível 60 em todas as categorias de avaliação de entrega.',
+    ds_catcher_crusher: 'Derrote um Catcher.',
+    ds_snooze_n_soothe: 'Cure-se dormindo pela primeira vez.',
+    ds_boots_are_a_porters_best_friend: 'Troque de calçado pela primeira vez.',
+    ds_hooked_on_delivering: 'Entregue 700 itens de carga.',
+    ds_pumped_porter: 'Entregue 3.000 kg de carga.',
+    ds_well_traveled: 'Percorra 80 km e conclua um pedido.',
+    ds_god_particle_go_getter: 'Encontre a casa de Higgs.',
+    ds_rest_in_pieces: 'Em uma área de BTs, corte um cordão umbilical pela primeira vez sem que o BT perceba.',
+    ds_any_porter_in_a_storm: 'Faça uma troca com outro portador pela primeira vez.',
+    ds_sleep_tight_little_bb: 'Acalme um BB chorando e faça-o parar de chorar pela primeira vez.',
+    ds_a_shout_in_the_dark: 'Envie um chamado e receba uma resposta pela primeira vez.',
+    ds_public_service_porter: 'Descarte uma carga contaminada por quiralium no lago de cratera pela primeira vez.',
+    ds_trail_blazer: 'Aprimore todos os tipos de estrutura até o nível máximo.',
+    ds_i_couldnt_hold_it_in: 'Urine ao ar livre pela primeira vez.',
+    ds_all_roads_lead_to_the_uca: 'Conclua sua primeira estrada.',
+    ds_soothing_sounds: 'Use o reprodutor de música pela primeira vez.',
+    ds_building_bridges: 'Alcance nível 1 de Bridge Link/elo social.',
+    ds_homo_faber: 'Fabrique todas as armas e equipamentos disponíveis.'
+  };
+  const dsTipById = {
+    ds_greatest_of_great_deliverers: 'Conclua os outros 62 troféus da lista base de PS4. Director\'s Cut e Death Stranding 2 ficam fora deste guia.',
+    ds_growth_of_a_legend: 'Legend of Legends só conta em Hard. Use Hard para aceitar e concluir as entregas premium; combates e chefes podem ser jogados em dificuldade menor fora desse requisito.',
+    ds_birth_of_a_legend: 'Acompanhe as quatro categorias de entrega para não repetir pedidos sem necessidade.',
+    ds_a_helping_hand: 'Requer conexão aos servidores para publicar o supply request. É online assíncrono/social, sem coop direto.',
+    ds_like_and_be_liked: 'Pode ser feito em objetos de NPCs, mas conta como troféu social/online nas referências por envolver estruturas e likes do Strand System.',
+    ds_giver_of_gifts: 'Doe qualquer item no Share Locker conectado aos servidores. É online assíncrono/social, sem coop direto.',
+    ds_great_deliverer: 'A categoria Bridge Link/elos sociais depende de likes e servidores online assíncronos. Não exige coop direto.',
+    ds_a_shout_in_the_dark: 'Requer conexão aos servidores para receber resposta assíncrona de outro jogador.',
+    ds_building_bridges: 'Bridge Link depende de estruturas, likes e servidores online assíncronos. Não exige coop direto.',
+    ds_best_beloved: 'Leve todas as instalações a 5 estrelas. É um dos maiores grinds da platina e fica melhor no pós-game.',
+    ds_in_sam_we_trust: 'Inclui instalações opcionais que não aparecem naturalmente na rota principal. Não misture com conteúdo do Director\'s Cut.',
+    ds_fount_of_knowledge: 'São 56 Memory Chips na lista base. Alguns dependem de e-mails/conexões para aparecer.',
+    ds_homo_faber: 'Na lista base, fabrique os 72 itens disponíveis. Alguns planos dependem de história, instalações, conexões e Memory Chips.',
+    ds_trail_blazer: 'Deixe para o fim, quando instalações maximizadas fornecerem materiais suficientes. Estradas não entram como estrutura atualizável desse requisito.',
+    ds_master_builder: 'Confira estruturas de PCC Lv. 1 e Lv. 2, estradas, pontes, ziplines, caixa postal, abrigo e itens simples.'
+  };
+  const dsTagsById = {
+    ds_greatest_of_great_deliverers: [dsTag('platinum', 'Platina', 'complete')],
+    ds_birth_of_a_legend: [dsTag('delivery', 'Entregas'), dsTag('premium', 'Premium'), dsTag('grind', 'Grind', 'warning')],
+    ds_growth_of_a_legend: [dsTag('delivery', 'Entregas'), dsTag('difficulty', 'Dificuldade', 'warning'), dsTag('grind', 'Grind', 'warning')],
+    ds_a_helping_hand: [dsTag('online', 'Online', 'warning'), dsTag('social', 'Social', 'warning')],
+    ds_like_and_be_liked: [dsTag('online', 'Online', 'warning'), dsTag('social', 'Social', 'warning')],
+    ds_giver_of_gifts: [dsTag('online', 'Online', 'warning'), dsTag('social', 'Social', 'warning')],
+    ds_great_deliverer: [dsTag('online', 'Online', 'warning'), dsTag('social', 'Social', 'warning'), dsTag('grind', 'Grind', 'warning')],
+    ds_a_shout_in_the_dark: [dsTag('online', 'Online', 'warning'), dsTag('social', 'Social', 'warning')],
+    ds_building_bridges: [dsTag('online', 'Online', 'warning'), dsTag('social', 'Social', 'warning')],
+    ds_automation_revolution: [dsTag('delivery-bot', 'Delivery Bot', 'partial'), dsTag('progress', 'Progressão', 'partial')],
+    ds_the_peoples_porter: [dsTag('likes', 'Likes', 'partial'), dsTag('progress', 'Progressão', 'partial')],
+    ds_worlds_most_popular_porter: [dsTag('likes', 'Likes', 'partial'), dsTag('grind', 'Grind', 'warning')],
+    ds_best_beloved: [dsTag('facilities', 'Instalações'), dsTag('grind', 'Grind', 'warning')],
+    ds_fount_of_knowledge: [dsTag('collectible', 'Coletáveis'), dsTag('memory', 'Memory Chips')],
+    ds_homo_faber: [dsTag('crafting', 'Crafting'), dsTag('grind', 'Grind', 'warning')],
+    ds_master_builder: [dsTag('structure', 'Estruturas')],
+    ds_trail_blazer: [dsTag('structure', 'Estruturas'), dsTag('routes', 'Rotas'), dsTag('grind', 'Grind', 'warning')],
+    ds_in_sam_we_trust: [dsTag('uca', 'UCA'), dsTag('facilities', 'Instalações')],
+    ds_well_connected: [dsTag('facilities', 'Instalações')],
+    ds_childminder: [dsTag('bb', 'BB')],
+    ds_a_baby_blessing: [dsTag('bb', 'BB')],
+    ds_sleep_tight_little_bb: [dsTag('bb', 'BB')],
+    ds_boots_are_a_porters_best_friend: [dsTag('equipment', 'Equipamento')],
+    ds_god_particle_go_getter: [dsTag('spoiler', 'Spoiler', 'warning'), dsTag('location', 'Local específico')],
+    ds_rest_in_pieces: [dsTag('spoiler', 'Spoiler', 'warning'), dsTag('bt', 'BT')]
+  };
+
+  Object.assign(deathStrandingGuide, {
+    title: 'Death Stranding',
+    developer: 'Kojima Productions',
+    publisher: 'Sony Interactive Entertainment',
+    platforms: ['PS4'],
+    genre: ['Ação', 'aventura', 'mundo aberto'],
+    estimatedTime: '70-130 horas',
+    time: '70-130 horas',
+    time_min_hours: 70,
+    time_max_hours: 130,
+    time_sort_hours: 70,
+    time_bucket: 'long',
+    runs: '1 campanha + pós-game/free roam',
+    hasMissables: false,
+    missableCount: 0,
+    hasOnline: true,
+    hasMandatoryOnline: true,
+    hasMandatoryCoop: false,
+    onlineRequired: true,
+    coopRequired: false,
+    dlcRequired: false,
+    dlcRequiredForPlatinum: false,
+    difficultyTrophiesRequired: true,
+    platinumType: 'lista base PS4 + online assíncrono + entregas premium + 5 estrelas + coletáveis + crafting',
+    missable: 'Não há troféus perdíveis na platina base. Há free roam após a história e todos os requisitos podem ser concluídos no pós-game.',
+    runs_summary: 'Uma campanha longa com cleanup livre no pós-game. A maior parte da platina fica em conexões 5 estrelas, Premium Deliveries, Memory Chips, estruturas, fabricação e troféus sociais online.',
+    missable_summary: 'Não há troféus perdíveis. A platina Greatest of Great Deliverers também não deve ser contada como perdível.',
+    online_summary: 'Online obrigatório: a lista base tem troféus sociais/assíncronos de supply request, doação, shout, Like e Bridge Link. Não é coop direto e não deve ativar coopRequired.',
+    grind_summary: 'O maior grind é maximizar todas as instalações, fazer Premium Deliveries com Legend of Legends em Hard, restaurar 56 Memory Chips, atualizar estruturas e fabricar todos os itens.',
+    dlc_scope: 'Guia focado na lista base de PS4 de Death Stranding. Director\'s Cut, Death Stranding 2 e DLCs devem ficar separados se existirem como outros guias/slugs.',
+    difficulty_reason: 'A dificuldade sugerida é 3/10: a execução é baixa, mas Growth of a Legend exige Premium Deliveries com avaliação Legend of Legends na dificuldade Hard.',
+    time_reason: 'A estimativa de 70-130 horas varia conforme eficiência de ziplines, rotas, 5 estrelas, entregas premium, Memory Chips e cleanup online/social. Tempo ocioso de bots/espera não entra como base.',
+    first_run_advice: 'Jogue a história primeiro, priorizando desbloqueios, instalações e ziplines. Depois use o pós-game para maximizar conexões, fazer Legend of Legends em Hard, restaurar Memory Chips e concluir o cleanup online/social.',
+    cleanup_advice: 'No pós-game, monte uma rede eficiente de ziplines, eleve todas as instalações a 5 estrelas, acompanhe as quatro categorias de Premium Deliveries, restaure Memory Chips e finalize crafting, estruturas e troféus sociais.',
+    before_you_start: 'Death Stranding é uma platina longa, mas pouco difícil: não tem perdíveis, coop direto ou DLC obrigatória, mas exige online assíncrono/social e Hard para as entregas Legend of Legends de Growth of a Legend.',
+    best_for: 'Recomendada para quem gosta de checklist, logística, rotas de mundo aberto, ziplines, infraestrutura e grind metódico.',
+    avoid_if: 'Evite se você quer uma platina rápida, totalmente offline ou sem organização extensa de entregas e instalações.',
+    editorial_status: 'published',
+    coverage_level: 'strong',
+    is_verified: false,
+    verification_status: 'review',
+    editorial_review_status: 'in_review',
+    editorialStatus: 'in_review',
+    last_reviewed_at: '2026-05-27',
+    lastReviewedAt: '2026-05-27T00:00:00.000-03:00',
+    reviewed_by: 'AtlasAchievement Editorial',
+    verification_note: 'Guia revisado para a lista base PS4: 63 troféus, roadmap estruturado, resumo, flags, online assíncrono, sem perdíveis, checklist, FAQ, SEO e troféus EN/PT-BR. Mantido em revisão porque a suite global npm test falhou em dado de outro guia.',
+    editorial_notes: 'Fontes de apoio: PSX Brasil para traduções PT-BR, contagem, online, ausência de perdíveis e Hard/Legend of Legends; Fandom/PowerPyx como apoio para descrições oficiais e requisitos. Escopo: lista base PS4, sem Director\'s Cut.',
+    quality_warnings: [],
+    editorial_summary: [
+      'Death Stranding é uma platina longa, mas pouco difícil, focada em concluir a história, conectar instalações à UCA, maximizar todas as conexões, fazer Premium Deliveries com avaliação Legend of Legends, restaurar Memory Chips, fabricar equipamentos/estruturas e resolver troféus sociais online. Não há troféus perdíveis, coop obrigatório ou DLC obrigatória, mas há troféus online/assíncronos e Growth of a Legend exige entregas premium na dificuldade Hard.',
+      'A ordem mais segura é avançar a história enquanto libera regiões, equipamentos, veículos e ziplines, depois usar o pós-game para montar uma rede eficiente de ziplines, elevar todas as instalações a 5 estrelas e cumprir as entregas premium por categoria. Deixe Memory Chips, fabricação completa, estruturas e troféus sociais para o cleanup, sempre acompanhando o checklist para não repetir entregas ou esquecer instalações opcionais.'
+    ],
+    seo: {
+      title: 'Death Stranding: guia de troféus e platina',
+      description: 'Roadmap completo da platina de Death Stranding, com troféus online, Growth of a Legend, Legend of Legends, instalações 5 estrelas, Memory Chips, ziplines, checklist e dicas para reduzir o grind.',
+      keywords: 'Death Stranding troféus, Death Stranding platina, Death Stranding guia, Death Stranding roadmap, Death Stranding online, Death Stranding Growth of a Legend, Death Stranding Legend of Legends, Death Stranding Memory Chips, Death Stranding Best Beloved, Death Stranding checklist',
+      ogTitle: 'Death Stranding: guia de troféus e platina',
+      ogDescription: 'Guia PT-BR da platina base de Death Stranding no PS4, com 63 troféus, online assíncrono, sem perdíveis, Legend of Legends em Hard, Memory Chips, 5 estrelas e checklist.'
+    },
+    quickDecision: {
+      summary: 'Platina longa, mas fácil: exige online assíncrono/social, não exige coop direto, não tem perdíveis e cobra Hard apenas nas entregas Legend of Legends de Growth of a Legend.',
+      recommendation: 'Boa para quem gosta de checklist, logística, ziplines, instalações e grind de mundo aberto; ruim para quem quer platina rápida ou totalmente offline.',
+      firstAction: 'Jogue a história primeiro, priorizando desbloqueios, instalações e ziplines. Depois use o pós-game para 5 estrelas, Legend of Legends em Hard, Memory Chips e cleanup social.'
+    },
+    checklist: [
+      'Concluir o prólogo e os episódios 1 a 14.',
+      'Confirmar que o guia está na lista base PS4 e não mistura Director\'s Cut.',
+      'Conectar todas as instalações à UCA.',
+      'Encontrar instalações opcionais que não aparecem naturalmente na rota principal.',
+      'Montar rede de ziplines, principalmente em áreas montanhosas e rotas de entregas frequentes.',
+      'Maximizar todas as instalações para 5 estrelas.',
+      'Fazer 10 Premium Deliveries por categoria para Birth of a Legend.',
+      'Fazer 20 Premium Deliveries por categoria com Legend of Legends para Growth of a Legend.',
+      'Confirmar dificuldade Hard nas entregas Legend of Legends.',
+      'Restaurar os 56 Memory Chips em um terminal.',
+      'Fabricar todos os itens exigidos por Homo Faber.',
+      'Construir ao menos um tipo de cada estrutura para Master Builder.',
+      'Atualizar todos os tipos de estrutura exigidos por Trail-Blazer.',
+      'Emitir uma supply request para A Helping Hand.',
+      'Fazer uma doação online no Share Locker para Giver of Gifts.',
+      'Usar shout e receber resposta para A Shout in the Dark.',
+      'Atingir os níveis de avaliação de entrega, incluindo Bridge Link.',
+      'Atingir os totais de Likes necessários.',
+      'Ler 100 e-mails e 100 entrevistas.',
+      'Maximizar conexão com BB e receber Like de BB.',
+      'Tomar banho em fonte termal.',
+      'Trocar botas pela primeira vez.',
+      'Derrotar um Catcher.',
+      'Cortar o cordão umbilical de um BT sem ser percebido.',
+      'Trocar item com um NPC porter.',
+      'Acalmar BB chorando até ele parar.',
+      'Concluir cleanup final sem marcar nenhum troféu como perdível.'
+    ],
+    faq: [
+      { question: 'Death Stranding tem troféus perdíveis?', answer: 'Não. A platina base não tem troféus perdíveis. Tudo pode ser concluído no pós-game/free roam.' },
+      { question: 'Death Stranding precisa de online para platinar?', answer: 'Sim. A lista base tem troféus sociais/online, como supply request, doações, shout, likes/estruturas e conexões online. Não é coop direto, mas exige conexão online para esses requisitos.' },
+      { question: 'Precisa de coop?', answer: 'Não há coop direto obrigatório. O online de Death Stranding é assíncrono/social, com estruturas, likes, doações e solicitações envolvendo outros jogadores.' },
+      { question: 'Precisa de DLC ou Director\'s Cut?', answer: 'Não. Este guia trata a lista base de PS4. Director\'s Cut deve ser separado se existir como outro guia.' },
+      { question: 'A dificuldade afeta troféus?', answer: 'Sim. Growth of a Legend exige entregas premium com avaliação Legend of Legends na dificuldade Hard. Fora disso, você pode ajustar a dificuldade para facilitar combates e chefes.' },
+      { question: 'Quanto tempo leva para platinar?', answer: 'A estimativa é 70-130h, variando conforme a eficiência da rede de ziplines, entregas, 5 estrelas e cleanup.' },
+      { question: 'Qual é o maior grind?', answer: 'Maximizar todas as instalações, cumprir entregas premium por categoria, restaurar Memory Chips e fabricar tudo são os maiores blocos de trabalho.' },
+      { question: 'Dá para continuar depois da história?', answer: 'Sim. Há free roam após a história, com regiões, instalações, entregas, coletáveis e troféus ainda acessíveis.' }
+    ],
+    roadmap: [
+      {
+        title: 'Avance a história e libere as ferramentas principais',
+        focus: 'História e desbloqueios',
+        objective: 'Concluir a campanha enquanto libera regiões, instalações, veículos, equipamentos e ziplines para facilitar o grind posterior.',
+        actions: [
+          'Jogue a história normalmente e complete os Orders for Sam necessários para abrir novas instalações.',
+          'Use veículos sempre que possível nas primeiras regiões para reduzir deslocamentos longos.',
+          'Quando desbloquear PCC Lv. 2 e ziplines, comece a montar rotas úteis entre instalações importantes.',
+          'Não tente maximizar todas as instalações cedo demais; muitos recursos ficam mais eficientes no pós-game.',
+          'Use Hard nas entregas premium quando estiver buscando Legend of Legends, mas reduza a dificuldade em chefes se quiser.'
+        ],
+        warning: 'Growth of a Legend exige avaliações Legend of Legends em Premium Deliveries na dificuldade Hard; dificuldade menor não serve para esse requisito.',
+        result: 'História concluída ou encaminhada, sistemas principais liberados e base pronta para a limpeza.'
+      },
+      {
+        title: 'Conecte instalações e monte a rede de ziplines',
+        focus: 'UCA e infraestrutura',
+        objective: 'Conectar todas as instalações à UCA e criar uma estrutura de deslocamento eficiente para entregas, likes e 5 estrelas.',
+        actions: [
+          'Localize instalações opcionais que não aparecem naturalmente na rota principal.',
+          'Conecte todos os preppers e centros à rede quiral.',
+          'Construa ziplines entre regiões de entrega frequente, principalmente áreas montanhosas.',
+          'Use estruturas online quando disponíveis para economizar banda quiral e materiais.',
+          'Mantenha materiais e PCCs preparados para completar trechos faltantes da rede.'
+        ],
+        warning: '',
+        result: 'Todas as instalações encaminhadas e rede de transporte pronta para acelerar o grind principal.'
+      },
+      {
+        title: 'Maximize instalações e faça Legend of Legends',
+        focus: '5 estrelas e entregas premium',
+        objective: 'Elevar todas as instalações ao nível máximo e cumprir as entregas premium necessárias em todas as categorias.',
+        actions: [
+          'Suba todas as instalações para 5 estrelas para Best Beloved.',
+          'Faça Premium Deliveries diferentes com avaliação Legend of Legends.',
+          'Acompanhe as quatro categorias de entrega para não repetir progresso desnecessariamente.',
+          'Priorize entregas grandes e rotas com ziplines para ganhar mais likes por viagem.',
+          'Confira no menu Bridge Links o progresso das categorias de entregas premium.'
+        ],
+        warning: 'Growth of a Legend exige progresso nas quatro categorias; repetir a mesma entrega não substitui entregas diferentes.',
+        result: '5 estrelas e entregas premium resolvidas, removendo o maior grind da platina.'
+      },
+      {
+        title: 'Restaure Memory Chips e planos de fabricação',
+        focus: 'Coletáveis',
+        objective: 'Coletar e restaurar todos os Memory Chips necessários para Fount of Knowledge e para completar planos de fabricação.',
+        actions: [
+          'Leia e-mails que fazem Memory Chips aparecerem no mapa.',
+          'Use o pós-game e a rede de ziplines para revisitar regiões com rapidez.',
+          'Colete os 56 Memory Chips e restaure todos em um terminal.',
+          'Confirme se algum chip desbloqueia plano necessário para Homo Faber.',
+          'Use o checklist para evitar revisitar áreas já limpas.'
+        ],
+        warning: '',
+        result: 'Memory Chips concluídos e planos importantes liberados para o cleanup de fabricação.'
+      },
+      {
+        title: 'Complete fabricação, estruturas e troféus sociais',
+        focus: 'Crafting e online',
+        objective: 'Fabricar equipamentos, construir/atualizar estruturas e resolver troféus sociais/online restantes.',
+        actions: [
+          'Fabrique todos os itens necessários para Homo Faber.',
+          'Construa todos os tipos de estrutura exigidos por Master Builder.',
+          'Atualize estruturas necessárias usando materiais obtidos nas instalações maximizadas.',
+          'Faça supply request, doação, shout e demais troféus sociais online.',
+          'Resolva troféus de likes, mensagens, entrevistas, BB, fontes termais, botas e ações específicas.'
+        ],
+        warning: 'Alguns troféus sociais exigem conexão online aos servidores, mas não exigem coop direto.',
+        result: 'Crafting, estruturas e troféus online/sociais concluídos.'
+      },
+      {
+        title: 'Faça o cleanup final da platina',
+        focus: 'Cleanup',
+        objective: 'Revisar pendências da lista base e confirmar que flags, checklist e troféus estão coerentes.',
+        actions: [
+          'Abra o checklist e revise os troféus restantes.',
+          'Confirme que não há troféus perdíveis marcados indevidamente.',
+          'Confirme que os 6 troféus online/sociais estão identificados.',
+          'Confirme que DLC e Director\'s Cut não foram misturados com a lista PS4 base.',
+          'Revise se todos os 63 troféus têm nome inglês principal e PT-BR abaixo quando confirmado.'
+        ],
+        warning: '',
+        result: 'Todos os requisitos da platina base concluídos.'
+      }
+    ]
+  });
+
+  for (const trophy of deathStrandingGuide.trophies || []) {
+    const descriptionPtBr = dsDescriptionPtById[trophy.id] || trophy.description || '';
+    trophy.trophyNameOriginal = trophy.name;
+    trophy.trophyNamePtBr = dsNamePtById[trophy.id] || '';
+    trophy.name_pt = dsNamePtById[trophy.id] || null;
+    trophy.namePtSource = dsNamePtById[trophy.id] ? 'psxbrasil_ptbr' : '';
+    trophy.descriptionOriginal = trophy.descriptionOriginal || trophy.description || '';
+    trophy.description = descriptionPtBr;
+    trophy.descriptionPtBr = descriptionPtBr;
+    trophy.ptDescription = descriptionPtBr;
+    trophy.localizedDescription = { ...(trophy.localizedDescription || {}), ptBr: descriptionPtBr };
+    trophy.descriptionPtSource = 'editorial_ptbr';
+    trophy.tip = dsTipById[trophy.id] || trophy.tip;
+    trophy.tier = trophy.type;
+    trophy.guideTip = trophy.tip || '';
+    trophy.is_missable = false;
+    trophy.isMissable = false;
+    trophy.missable = false;
+    trophy.is_online = dsOnlineTrophyIds.has(trophy.id);
+    trophy.isOnline = trophy.is_online;
+    trophy.is_coop = false;
+    trophy.isCoop = false;
+    trophy.dlcRequired = false;
+    trophy.tags = dsTagsById[trophy.id] || (dsStoryTrophyIds.has(trophy.id) ? [dsTag('story', 'História')] : []);
+  }
+}
+
+const deathStranding2Guide = sampleGames.find(game => game.slug === 'death-stranding-2-on-the-beach');
+if (deathStranding2Guide) {
+  const ds2Tag = (id, label, tone = 'partial') => ({ id, label, tone });
+  const ds2OfficialNames = [
+    'Homo Liberans: The Savior of Humanity',
+    '"Lou? Can you hear me? Can you see me?"',
+    '"Time to Start a New Journey"',
+    '"Help us Bring Australia into the Network"',
+    '"We\'ll Show the World the Hope in Your Rain"',
+    '"Did He Say Nirvana?"',
+    '"To Our Little Family"',
+    '"Sam the Man\u2014In the Dark About Everything"',
+    '"His Name is Neil. Neil Vana"',
+    '"I Don\'t Break That Easily"',
+    '"You Will Never, Ever Be Alone"',
+    '"Keep Lou Safe..."',
+    '"To Help You Find the Strength to Carry On"',
+    '"To Forsake Our Flesh and Our Freedom"',
+    '"We Have to Get Tomorrow Back"',
+    '"I\'ll Always Be With You"',
+    '"Death Can\'t Tear Us Apart"',
+    'Standard Porter',
+    'Seasoned Porter',
+    'Helping People to Connect',
+    'Promising Signs',
+    'My First Structure',
+    'Master Builder',
+    'Starting Point',
+    'Keep on Connecting',
+    'Connecting Hearts and Minds',
+    'Self-Improvement',
+    'It\'s Like That',
+    'A Life Well Liked',
+    'A Porter at Peak Popularity',
+    'My First Training Session',
+    'A First Glimpse of the SSS',
+    'Making It Your Own',
+    'Creature Comforter',
+    'Rare Specimen Rescuer',
+    'Road Restorer',
+    'Dig, Dig, Dig!',
+    'Rail Restorer',
+    'Emergency Worker',
+    'Spring into Life',
+    'Written in the Stars',
+    'Porters Make the World Go Round',
+    'A Private Show!',
+    'So YOU\'RE the Pizza Chef!',
+    'Showdown at the Tar Lake',
+    'The Headless Riders Unmasked',
+    'Savior of Terminal Fort Knot',
+    'The Scars Left by the Giants',
+    'The Real Story of the Ghost Hunter',
+    'BT\'s Best Friend',
+    'Conqueror of the Golden CC',
+    'A Premier Porter',
+    'Compulsive Cargo Carrier',
+    'Heavy Lifter',
+    'Long-Distance Lugger'
+  ];
+  const ds2NamePtBr = [
+    'Homo Liberans: A Pessoa que Salvou a Humanidade',
+    '"Lou? Pode me ouvir? Consegue me ver?"',
+    '"Hora de Começar uma Nova Etapa"',
+    '"Ajude a Gente a Colocar a Austrália na Rede"',
+    '"Mostraremos ao Mundo a Esperança na sua Chuva"',
+    '"Ele Disse Nirvana?"',
+    '"Nossa Pequena Família"',
+    '"Sam, o Cara... no Escuro. Em Relação a Tudo"',
+    '"O Nome Dele é Neil. Neil Vana"',
+    '"Eu Não Quebro Tão Fácil Assim"',
+    '"Você Nunca Vai Tá Sozinho"',
+    '"Protege Lou..."',
+    '"Achar Força pra Seguir em Frente"',
+    '"Abandonar Nosso Corpo e Nossa Liberdade"',
+    '"A Gente Tem que Salvar a Tomorrow"',
+    '"Sempre Vou Tá com Você"',
+    '"A Morte Não Pode Nos Separar"',
+    'Portador Padrão',
+    'Portador Experiente',
+    'Ajudando Pessoas a se Conectarem',
+    'Sinais Promissores',
+    'Minha Primeira Estrutura',
+    'Mestre Construtor',
+    'Ponto de Partida',
+    'Conectando sem Parar',
+    'Conectando Corações e Mentes',
+    'Autodesenvolvimento',
+    'Só Curtindo',
+    'Uma Vida de Curtição',
+    'Um Portador Popular',
+    'Minha Primeira Sessão de Treino',
+    'Uma Olhadinha no SCS',
+    'Deixando com a Sua Cara',
+    'Protetor de Criaturas',
+    'Resgatador de Espécimes Raras',
+    'Restaurador de Estradas',
+    'Cavar, cavar, cavar!',
+    'Restaurador de Ferrovias',
+    'Profissional de Emergência',
+    'Brotar da Fonte',
+    'Escrito nas Estrelas',
+    'Portadores Fazem o Mundo Girar',
+    'Um show particular!',
+    'Então VOCÊ é o Pizzaiolo!',
+    'Confronto no Lago de Alcatrão',
+    'Os Indivíduos sem Cabeça Desmascarados',
+    'Salvador de Terminal Fort Knot',
+    'As Cicatrizes Deixadas pelos Gigantes',
+    'A Verdadeira História do Caça-Fantasmas',
+    'Amigão das EPs',
+    'Conquistador da CQ Dourada',
+    'Um Portador de Primeira',
+    'Portador de Carga Compulsivo',
+    'Levantamento de Peso',
+    'Longa Viagem'
+  ];
+  const ds2DescriptionPtById = {
+    ds2_homo_liberans: 'Obtenha todos os troféus de Death Stranding 2.',
+    ds2_lou_can_you_hear_me: 'Conclua o Episódio 1: Sam.',
+    ds2_time_to_start_a_new_journey: 'Conclua o Episódio 2: Lou.',
+    ds2_help_us_bring_australia: 'Conclua o Episódio 3: Drawbridge.',
+    ds2_show_the_world_hope: 'Conclua o Episódio 4: Raindrops.',
+    ds2_did_he_say_nirvana: 'Conclua o Episódio 5: Conflagration.',
+    ds2_to_our_little_family: 'Conclua o Episódio 6: Chrysalis.',
+    ds2_sam_the_man: 'Conclua o Episódio 7: Pod.',
+    ds2_his_name_is_neil: 'Conclua o Episódio 8: Deluge.',
+    ds2_i_dont_break_that_easily: 'Conclua o Episódio 9: Puppets.',
+    ds2_you_will_never_be_alone: 'Conclua o Episódio 10: Isolation.',
+    ds2_keep_lou_safe: 'Conclua o Episódio 11: Quake.',
+    ds2_to_help_you_find_strength: 'Conclua o Episódio 12: Fragile.',
+    ds2_forsake_our_flesh: 'Conclua o Episódio 13: Die Hard.',
+    ds2_get_tomorrow_back: 'Conclua o Episódio 14: Last Stranding.',
+    ds2_ill_always_be_with_you: 'Conclua o Episódio 15: On the Beach.',
+    ds2_death_cant_tear_us_apart: 'Conclua o Episódio 16: Tomorrow.',
+    ds2_standard_porter: 'Conclua um pedido padrão pela primeira vez.',
+    ds2_seasoned_porter: 'Conclua 10 entregas, 10 recuperações e 10 pedidos padrão de eliminação/destruição com rank S na dificuldade Casual ou superior.',
+    ds2_helping_people_to_connect: 'Conclua um aid request pela primeira vez.',
+    ds2_promising_signs: 'Construa uma placa online de aid request pela primeira vez.',
+    ds2_my_first_structure: 'Construa sua primeira estrutura.',
+    ds2_master_builder: 'Construa todos os tipos de estrutura.',
+    ds2_starting_point: 'Conecte seu Q-pid pela primeira vez.',
+    ds2_keep_on_connecting: 'Conecte todas as instalações usando o Q-pid.',
+    ds2_connecting_hearts_and_minds: 'Maximize o nível de conexão com todas as instalações.',
+    ds2_self_improvement: 'Ative um aprimoramento APAS pela primeira vez.',
+    ds2_its_like_that: 'Envie uma curtida pela primeira vez.',
+    ds2_a_life_well_liked: 'Receba 2.400 ou mais curtidas por concluir pedidos.',
+    ds2_a_porter_at_peak_popularity: 'Receba 50.000 ou mais curtidas por concluir pedidos.',
+    ds2_my_first_training_session: 'Conclua um programa de VR Training pela primeira vez.',
+    ds2_first_glimpse_of_sss: 'Leia uma postagem no SCS pela primeira vez.',
+    ds2_making_it_your_own: 'Use uma captura feita no Photo Mode para decorar seu quarto privado.',
+    ds2_creature_comforter: 'Entregue um animal selvagem ao Animal Shelter pela primeira vez. Animais exigidos por pedidos não contam.',
+    ds2_rare_specimen_rescuer: 'Entregue um animal albino ao Animal Shelter pela primeira vez.',
+    ds2_road_restorer: 'Restaure uma seção de estrada.',
+    ds2_dig_dig_dig: 'Restaure três minas.',
+    ds2_rail_restorer: 'Restaure e reabra completamente uma linha de monotrilho.',
+    ds2_emergency_worker: 'Forneça apoio emergencial pela primeira vez.',
+    ds2_spring_into_life: 'Escave uma fonte termal pela primeira vez.',
+    ds2_written_in_the_stars: 'Estude o céu noturno pela primeira vez.',
+    ds2_porters_make_the_world_go_round: 'Faça uma troca com outro portador pela primeira vez.',
+    ds2_a_private_show: 'Assista a uma apresentação ao vivo no seu quarto privado.',
+    ds2_pizza_chef: 'Descubra a verdade sobre o Pizzaiolo.',
+    ds2_showdown_at_the_tar_lake: 'Derrote o Lord of the Tar Lake.',
+    ds2_headless_riders_unmasked: 'Resolva o mistério dos indivíduos sem cabeça.',
+    ds2_savior_of_terminal_fort_knot: 'Impeça Terminal Fort Knot de sofrer um voidout.',
+    ds2_scars_left_by_the_giants: 'Chegue ao nexo de EPs na cratera F3.',
+    ds2_real_story_of_the_ghost_hunter: 'Revele a verdade sobre o Ghost Hunter.',
+    ds2_bts_best_friend: 'Capture um BT grande pela primeira vez.',
+    ds2_conqueror_of_the_golden_cc: 'Derrote a criatura quiral dourada.',
+    ds2_a_premier_porter: 'Alcance nota de portador 40 ou superior em todas as categorias.',
+    ds2_compulsive_cargo_carrier: 'Entregue um total de 500 cargas.',
+    ds2_heavy_lifter: 'Entregue um total de duas toneladas de carga.',
+    ds2_long_distance_lugger: 'Alcance 80 km de distância total percorrida ao concluir um pedido.'
+  };
+  const ds2TipById = {
+    ds2_homo_liberans: 'Conclua os outros 54 troféus da lista base PS5. Não misture com Death Stranding, Director\'s Cut, Digital Deluxe, upgrade pago ou DLC futura.',
+    ds2_lou_can_you_hear_me: 'Troféu automático de história ao concluir o Episódio 1.',
+    ds2_time_to_start_a_new_journey: 'Troféu automático de história ao concluir o Episódio 2.',
+    ds2_help_us_bring_australia: 'Troféu automático de história ao concluir o Episódio 3.',
+    ds2_show_the_world_hope: 'Troféu automático de história ao concluir o Episódio 4.',
+    ds2_did_he_say_nirvana: 'Troféu automático de história ao concluir o Episódio 5.',
+    ds2_to_our_little_family: 'Troféu automático de história ao concluir o Episódio 6.',
+    ds2_sam_the_man: 'Troféu automático de história ao concluir o Episódio 7.',
+    ds2_his_name_is_neil: 'Troféu automático de história ao concluir o Episódio 8.',
+    ds2_i_dont_break_that_easily: 'Troféu automático de história ao concluir o Episódio 9.',
+    ds2_you_will_never_be_alone: 'Troféu automático de história ao concluir o Episódio 10.',
+    ds2_keep_lou_safe: 'Troféu automático de história ao concluir o Episódio 11.',
+    ds2_to_help_you_find_strength: 'Troféu automático de história ao concluir o Episódio 12.',
+    ds2_forsake_our_flesh: 'Troféu automático de história ao concluir o Episódio 13.',
+    ds2_get_tomorrow_back: 'Troféu automático de história ao concluir o Episódio 14.',
+    ds2_ill_always_be_with_you: 'Troféu automático de história ao concluir o Episódio 15.',
+    ds2_death_cant_tear_us_apart: 'Troféu automático de conclusão da história. Depois, use o pós-game/free roam para a limpeza.',
+    ds2_standard_porter: 'Complete qualquer pedido padrão depois que o sistema for liberado.',
+    ds2_seasoned_porter: 'Separe as três categorias exigidas e confirme rank S em Casual ou superior. Não conte apenas entregas comuns.',
+    ds2_helping_people_to_connect: 'Pedidos de ajuda entram no bloco social/online do guia. Exige interação assíncrona, sem coop direto.',
+    ds2_promising_signs: 'Construa uma placa online de pedido de ajuda. Mantenha o jogo conectado aos servidores para cumprir o requisito.',
+    ds2_my_first_structure: 'Construa qualquer estrutura quando o sistema estiver disponível.',
+    ds2_master_builder: 'Inclua todos os tipos de estrutura, placas, ferramentas e estruturas especiais liberadas pela campanha.',
+    ds2_starting_point: 'Troféu ligado à primeira conexão feita com o Q-pid.',
+    ds2_keep_on_connecting: 'Conecte todas as instalações da lista base. Procure também instalações opcionais fora da rota principal.',
+    ds2_connecting_hearts_and_minds: 'Maximizar todas as instalações é um dos maiores grinds; deixe boa parte para o pós-game.',
+    ds2_self_improvement: 'Ative qualquer aprimoramento APAS quando o sistema estiver disponível.',
+    ds2_its_like_that: 'Envie uma curtida em estrutura, carga, sinal ou elemento elegível quando o sistema estiver liberado.',
+    ds2_a_life_well_liked: 'Vem naturalmente ao fazer pedidos, conexões e infraestrutura, mas acompanhe o total para evitar limpeza solta.',
+    ds2_a_porter_at_peak_popularity: 'Maximizar instalações e repetir rotas eficientes acelera bastante as 50.000 curtidas.',
+    ds2_my_first_training_session: 'Complete qualquer programa de VR Training quando ele estiver disponível.',
+    ds2_first_glimpse_of_sss: 'Abra o SCS e leia uma postagem pela primeira vez.',
+    ds2_making_it_your_own: 'Tire uma captura de tela no Photo Mode e use-a para decorar o quarto privado.',
+    ds2_creature_comforter: 'Entregue um animal selvagem ao Animal Shelter. Animais exigidos por pedidos não contam.',
+    ds2_rare_specimen_rescuer: 'Animal albino pode exigir atenção extra; marque no checklist quando encontrar oportunidade.',
+    ds2_road_restorer: 'Contribua materiais a um Auto-Paver até restaurar uma seção de estrada.',
+    ds2_dig_dig_dig: 'Restaure três minas. Deixe materiais preparados para evitar viagens extras.',
+    ds2_rail_restorer: 'Reabrir uma linha completa de monotrilho costuma exigir materiais e rotas já estabilizadas.',
+    ds2_emergency_worker: 'Apoio emergencial entra no bloco online/assíncrono. Mantenha conexão aos servidores.',
+    ds2_spring_into_life: 'Use o Hot Spring Digger em um local válido para escavar uma fonte termal.',
+    ds2_written_in_the_stars: 'Use uma fonte termal à noite e observe o céu quando a ação estiver disponível.',
+    ds2_porters_make_the_world_go_round: 'Troque com outro portador quando encontrar um portador NPC elegível; o guia trata como social, sem coop direto.',
+    ds2_a_private_show: 'Assista à apresentação ao vivo no quarto privado quando a opção estiver disponível.',
+    ds2_pizza_chef: 'Missão opcional: não confundir com requisito de edição especial ou DLC.',
+    ds2_showdown_at_the_tar_lake: 'Chefe opcional. Volte no pós-game com equipamentos melhores se preferir.',
+    ds2_headless_riders_unmasked: 'Objetivo opcional com spoiler. Deixe para a limpeza se quiser priorizar a história primeiro.',
+    ds2_savior_of_terminal_fort_knot: 'Objetivo opcional avançado; volte com bons equipamentos se a luta estiver pesada.',
+    ds2_scars_left_by_the_giants: 'Local específico com spoiler. Use o pós-game para visitar a cratera F3 sem pressa.',
+    ds2_real_story_of_the_ghost_hunter: 'Objetivo opcional ligado ao Ghost Hunter. Acompanhe mensagens e pedidos relacionados.',
+    ds2_bts_best_friend: 'Capture um BT grande quando o sistema e os itens necessários estiverem liberados.',
+    ds2_conqueror_of_the_golden_cc: 'Chefe/criatura opcional; deixe para quando tiver recursos de combate suficientes.',
+    ds2_a_premier_porter: 'Bridge Link e notas de portador podem depender de recursos sociais/online. Planeje junto das curtidas e entregas.',
+    ds2_compulsive_cargo_carrier: 'Total acumulado de cargas entregues; vem junto de conexões, rank S e pedidos de limpeza.',
+    ds2_heavy_lifter: 'Total acumulado de peso entregue; pedidos grandes e rotas com veículos ajudam bastante.',
+    ds2_long_distance_lugger: 'Distância acumulada. Conclua um pedido depois de atingir o total exigido.'
+  };
+  const ds2OnlineSocialIds = new Set([
+    'ds2_helping_people_to_connect',
+    'ds2_promising_signs',
+    'ds2_its_like_that',
+    'ds2_a_life_well_liked',
+    'ds2_a_porter_at_peak_popularity',
+    'ds2_emergency_worker',
+    'ds2_porters_make_the_world_go_round',
+    'ds2_a_premier_porter'
+  ]);
+  const ds2StoryIds = new Set([
+    'ds2_lou_can_you_hear_me',
+    'ds2_time_to_start_a_new_journey',
+    'ds2_help_us_bring_australia',
+    'ds2_show_the_world_hope',
+    'ds2_did_he_say_nirvana',
+    'ds2_to_our_little_family',
+    'ds2_sam_the_man',
+    'ds2_his_name_is_neil',
+    'ds2_i_dont_break_that_easily',
+    'ds2_you_will_never_be_alone',
+    'ds2_keep_lou_safe',
+    'ds2_to_help_you_find_strength',
+    'ds2_forsake_our_flesh',
+    'ds2_get_tomorrow_back',
+    'ds2_ill_always_be_with_you',
+    'ds2_death_cant_tear_us_apart'
+  ]);
+  const ds2TagsById = {
+    ds2_homo_liberans: [ds2Tag('platinum', 'Platina', 'complete')],
+    ds2_standard_porter: [ds2Tag('delivery', 'Entregas')],
+    ds2_seasoned_porter: [ds2Tag('delivery', 'Entregas'), ds2Tag('rank-s', 'Rank S', 'warning'), ds2Tag('attention', 'Atenção', 'warning')],
+    ds2_helping_people_to_connect: [ds2Tag('online', 'Online', 'warning'), ds2Tag('social', 'Social', 'warning')],
+    ds2_promising_signs: [ds2Tag('online', 'Online', 'warning'), ds2Tag('social', 'Social', 'warning')],
+    ds2_my_first_structure: [ds2Tag('structure', 'Estruturas')],
+    ds2_master_builder: [ds2Tag('structure', 'Estruturas'), ds2Tag('construction', 'Construção')],
+    ds2_keep_on_connecting: [ds2Tag('facilities', 'Instalações'), ds2Tag('uca', 'UCA')],
+    ds2_connecting_hearts_and_minds: [ds2Tag('facilities', 'Instalações'), ds2Tag('grind', 'Grind', 'warning')],
+    ds2_self_improvement: [ds2Tag('system', 'Sistema')],
+    ds2_its_like_that: [ds2Tag('online', 'Online', 'warning'), ds2Tag('likes', 'Likes'), ds2Tag('social', 'Social', 'warning')],
+    ds2_a_life_well_liked: [ds2Tag('online', 'Online', 'warning'), ds2Tag('likes', 'Likes'), ds2Tag('progression', 'Progressão')],
+    ds2_a_porter_at_peak_popularity: [ds2Tag('online', 'Online', 'warning'), ds2Tag('likes', 'Likes'), ds2Tag('grind', 'Grind', 'warning')],
+    ds2_creature_comforter: [ds2Tag('animals', 'Animais')],
+    ds2_rare_specimen_rescuer: [ds2Tag('animals', 'Animais'), ds2Tag('attention', 'Atenção', 'warning')],
+    ds2_road_restorer: [ds2Tag('infrastructure', 'Infraestrutura')],
+    ds2_dig_dig_dig: [ds2Tag('mines', 'Minas'), ds2Tag('infrastructure', 'Infraestrutura')],
+    ds2_rail_restorer: [ds2Tag('monorail', 'Monotrilho'), ds2Tag('infrastructure', 'Infraestrutura')],
+    ds2_emergency_worker: [ds2Tag('online', 'Online', 'warning'), ds2Tag('social', 'Social', 'warning')],
+    ds2_porters_make_the_world_go_round: [ds2Tag('online', 'Online', 'warning'), ds2Tag('social', 'Social', 'warning'), ds2Tag('attention', 'Atenção', 'warning')],
+    ds2_pizza_chef: [ds2Tag('side-quest', 'Side quest'), ds2Tag('attention', 'Atenção', 'warning')],
+    ds2_showdown_at_the_tar_lake: [ds2Tag('boss', 'Chefe', 'warning'), ds2Tag('attention', 'Atenção', 'warning')],
+    ds2_headless_riders_unmasked: [ds2Tag('side-quest', 'Side quest'), ds2Tag('spoiler', 'Spoiler', 'spoiler')],
+    ds2_savior_of_terminal_fort_knot: [ds2Tag('side-quest', 'Side quest'), ds2Tag('spoiler', 'Spoiler', 'spoiler')],
+    ds2_scars_left_by_the_giants: [ds2Tag('spoiler', 'Spoiler', 'spoiler'), ds2Tag('location', 'Local específico')],
+    ds2_real_story_of_the_ghost_hunter: [ds2Tag('side-quest', 'Side quest'), ds2Tag('spoiler', 'Spoiler', 'spoiler')],
+    ds2_bts_best_friend: [ds2Tag('boss', 'Chefe', 'warning'), ds2Tag('attention', 'Atenção', 'warning')],
+    ds2_conqueror_of_the_golden_cc: [ds2Tag('boss', 'Chefe', 'warning'), ds2Tag('attention', 'Atenção', 'warning')],
+    ds2_a_premier_porter: [ds2Tag('online', 'Online', 'warning'), ds2Tag('social', 'Social', 'warning'), ds2Tag('rank', 'Rank')],
+    ds2_compulsive_cargo_carrier: [ds2Tag('grind', 'Grind', 'warning'), ds2Tag('delivery', 'Entregas')],
+    ds2_heavy_lifter: [ds2Tag('grind', 'Grind', 'warning'), ds2Tag('delivery', 'Entregas')],
+    ds2_long_distance_lugger: [ds2Tag('grind', 'Grind', 'warning'), ds2Tag('delivery', 'Entregas')]
+  };
+
+  Object.assign(deathStranding2Guide, {
+    title: 'Death Stranding 2: On the Beach',
+    developer: 'Kojima Productions',
+    publisher: 'Sony Interactive Entertainment',
+    primary_platform: 'PS5',
+    guide_platform: 'PS5',
+    platforms: ['PS5'],
+    trophy_count: 55,
+    difficulty: 3,
+    time: '70-100h',
+    time_min_hours: 70,
+    time_max_hours: 100,
+    time_sort_hours: 100,
+    time_bucket: 'long',
+    runs: '1 campanha + pós-game/free roam',
+    hasMissables: false,
+    missableCount: 0,
+    hasOnline: true,
+    hasMandatoryOnline: true,
+    hasMandatoryCoop: false,
+    onlineRequired: true,
+    coopRequired: false,
+    dlcRequired: false,
+    dlcRequiredForPlatinum: false,
+    difficultyTrophiesRequired: true,
+    missable: 'Não há troféus perdíveis confirmados na platina base. A limpeza pode ser planejada para o pós-game/free roam, sem marcar Homo Liberans como perdível.',
+    runs_summary: 'Uma campanha longa com 16 episódios e limpeza livre depois da história, focada em conexões, pedidos padrão com rank S, infraestrutura, likes, eventos opcionais e troféus sociais/online.',
+    missable_summary: 'Sem perdíveis confirmados na lista base PS5. A platina Homo Liberans: The Savior of Humanity não conta como perdível.',
+    online_summary: 'Online obrigatório no guia por causa de troféus sociais/assíncronos de aid requests, sinais online, likes, apoio emergencial, troca social e Bridge Link. Não há coop direto obrigatório.',
+    grind_summary: 'O maior peso está em conectar e maximizar instalações, completar pedidos padrão com rank S, restaurar infraestrutura, acumular likes, fechar eventos opcionais e concluir a limpeza de carga.',
+    dlc_scope: 'Guia focado na lista base PS5 de Death Stranding 2: On the Beach. Digital Deluxe, upgrade pago, itens bônus, DLC futura, Death Stranding original e Director\'s Cut ficam fora do escopo.',
+    difficulty_reason: 'A dificuldade sugerida é 3/10: a execução é baixa/moderada, mas Seasoned Porter exige rank S em Casual ou superior e a platina cobra organização extensa.',
+    time_reason: 'A estimativa de 70-100h segue fonte externa atual e considera campanha, conexões, S-ranks, infraestrutura, likes, online social e limpeza opcional.',
+    first_run_advice: 'Jogue os episódios principais primeiro, liberando instalações, estruturas e rotas de transporte. Depois use o roadmap para fechar conexões, pedidos padrão com rank S, infraestrutura, troféus sociais/online e limpeza de objetivos opcionais.',
+    cleanup_advice: 'No pós-game, revise instalações, pedidos padrão por categoria, infraestrutura, likes, animais, fontes termais, eventos opcionais, chefes e carga acumulada pelo checklist.',
+    before_you_start: 'Death Stranding 2: On the Beach é uma platina longa e organizada. Exige online assíncrono/social no guia, não exige coop direto, DLC, Deluxe Edition ou upgrade pago, e não deve ser misturada com Death Stranding 1.',
+    best_for: 'Recomendada para quem gosta de logística, mundo aberto, checklist, rotas de transporte, infraestrutura e tarefas de conexão.',
+    avoid_if: 'Evite se você quer uma platina rápida, direta, sem limpeza extensa ou totalmente desconectada de recursos sociais/online.',
+    editorial_status: 'published',
+    coverage_level: 'strong',
+    is_verified: false,
+    verification_status: 'review',
+    editorial_review_status: 'in_review',
+    editorialStatus: 'in_review',
+    last_reviewed_at: '2026-05-27',
+    lastReviewedAt: '2026-05-27T00:00:00.000-03:00',
+    reviewed_by: 'AtlasAchievement Editorial',
+    verification_note: 'Guia revisado para lista base PS5 com 55 troféus, EN/PT-BR, roadmap estruturado, resumo, tags, checklist, FAQ e SEO. Mantido em revisão até a validação completa do render e da suite global.',
+    editorial_notes: 'Base editorial cruzada com lista PT-BR fornecida, página oficial PlayStation para PS5/PT-BR/1 jogador e PowerPyx para contagem, dificuldade, tempo e online estrito. O Atlas agrupa um conjunto mais amplo de troféus sociais/online no filtro do guia.',
+    quality_warnings: [],
+    editorial_summary: [
+      'Death Stranding 2: On the Beach é uma platina longa e organizada em torno de concluir os 16 episódios, conectar todas as instalações, maximizar níveis de conexão, completar pedidos padrão com rank S, restaurar infraestrutura, construir estruturas, trabalhar likes, animais, eventos opcionais e troféus sociais/online. A lista base tem 55 troféus no PS5, não deve ser misturada com o primeiro Death Stranding nem com Director\'s Cut, e não exige DLC, edição especial ou upgrade pago.',
+      'A ordem mais segura é avançar a história liberando regiões, Q-pid, APAS, estruturas, estradas, minas, monotrilho e recursos de transporte; depois usar o pós-game para fechar instalações, pedidos padrão, likes, estruturas e objetivos opcionais. Deixe troféus de online social, animais, infraestrutura, lutas opcionais, pizzaiolo e limpeza de ações específicas para a reta final, sempre usando checklist para evitar repetir entregas ou esquecer instalações e eventos secundários.'
+    ],
+    seo: {
+      title: 'Death Stranding 2: On the Beach: guia de troféus e platina',
+      description: 'Roadmap completo da platina de Death Stranding 2: On the Beach, com troféus, pedidos padrão, conexões, likes, estruturas, infraestrutura, eventos opcionais, checklist e dicas para reduzir retrabalho.',
+      keywords: 'Death Stranding 2 troféus, Death Stranding 2 platina, Death Stranding 2 guia, Death Stranding 2 roadmap, Death Stranding 2 On the Beach troféus, Death Stranding 2 checklist, Death Stranding 2 Seasoned Porter, Death Stranding 2 Connecting Hearts and Minds, Death Stranding 2 Master Builder, Death Stranding 2 likes',
+      ogTitle: 'Death Stranding 2: On the Beach: guia de troféus e platina',
+      ogDescription: 'Guia PT-BR da platina base PS5 de Death Stranding 2: On the Beach, com 55 troféus, online social, pedidos padrão, conexões, infraestrutura, likes e checklist.'
+    },
+    quickDecision: {
+      summary: 'Platina longa, mas organizada: 55 troféus, checklist pesado, online assíncrono/social, sem coop direto, sem DLC obrigatória e sem perdíveis confirmados.',
+      recommendation: 'Boa para quem gosta de logística, mundo aberto, tarefas de conexão, infraestrutura e limpeza metódica; ruim para quem quer platina rápida ou totalmente offline.',
+      firstAction: 'Jogue os episódios principais primeiro, liberando instalações, estruturas e rotas de transporte; depois feche conexões, rank S, likes, infraestrutura e eventos opcionais.'
+    },
+    checklist: [
+      'Concluir os episódios 1 a 16.',
+      'Confirmar que o guia é da lista base PS5, sem Death Stranding 1, Director\'s Cut, Digital Deluxe, upgrade pago ou DLC.',
+      'Completar um pedido padrão pela primeira vez.',
+      'Completar 10 entregas, 10 recuperações e 10 pedidos de eliminação/destruição com rank S em Casual ou superior.',
+      'Completar um aid request.',
+      'Construir uma placa online de aid request.',
+      'Construir a primeira estrutura.',
+      'Construir todos os tipos de estrutura.',
+      'Conectar o Q-pid pela primeira vez.',
+      'Conectar todas as instalações.',
+      'Maximizar conexão com todas as instalações.',
+      'Ativar um aprimoramento APAS.',
+      'Enviar uma curtida.',
+      'Receber 2.400 likes por pedidos.',
+      'Receber 50.000 likes por pedidos.',
+      'Completar um treino VR.',
+      'Ler uma postagem no SCS.',
+      'Usar uma foto no quarto privado.',
+      'Entregar animal selvagem ao abrigo.',
+      'Entregar animal albino ao abrigo.',
+      'Restaurar uma estrada.',
+      'Restaurar três minas.',
+      'Restaurar uma linha de monotrilho.',
+      'Fornecer apoio emergencial.',
+      'Escavar uma fonte termal.',
+      'Estudar o céu noturno.',
+      'Trocar com outro portador.',
+      'Assistir apresentação ao vivo no quarto.',
+      'Descobrir a verdade sobre o Pizzaiolo.',
+      'Derrotar o Lord of the Tar Lake.',
+      'Resolver os indivíduos sem cabeça.',
+      'Salvar Terminal Fort Knot.',
+      'Ir ao nexo de EPs na cratera F3.',
+      'Revelar a verdade sobre o Ghost Hunter.',
+      'Capturar um BT grande.',
+      'Derrotar a criatura quiral dourada.',
+      'Obter nota de portador 40 ou superior em todas as categorias.',
+      'Entregar 500 cargas.',
+      'Entregar duas toneladas de carga.',
+      'Alcançar 80 km percorridos ao concluir um pedido.',
+      'Fazer limpeza final sem marcar nenhum troféu como perdível.'
+    ],
+    faq: [
+      { question: 'Death Stranding 2 tem troféus perdíveis?', answer: 'Não. A platina base não tem troféus perdíveis confirmados. A limpeza pode ser planejada para o pós-game/free roam.' },
+      { question: 'Death Stranding 2 precisa de online para platinar?', answer: 'Sim. O guia marca online obrigatório por causa de interações sociais/assíncronas como aid requests, sinais online, likes, apoio emergencial, troca social e Bridge Link.' },
+      { question: 'Precisa de coop?', answer: 'Não. Não há coop direto obrigatório. O online de Death Stranding 2 é social/assíncrono, com interações indiretas com outros jogadores.' },
+      { question: 'Precisa de DLC ou Deluxe Edition?', answer: 'Não. A platina base não exige Digital Deluxe, upgrade pago, edição especial, itens bônus ou DLC futura.' },
+      { question: 'Quanto tempo leva para platinar?', answer: 'A estimativa atual é 70-100h, variando conforme eficiência de rotas, conexões, pedidos padrão com rank S, infraestrutura, likes e limpeza.' },
+      { question: 'A dificuldade afeta troféus?', answer: 'Sim. Seasoned Porter exige rank S em pedidos padrão na dificuldade Casual ou superior. Fora esse requisito, ajuste a dificuldade conforme preferir, desde que os troféus específicos mantenham suas condições.' },
+      { question: 'Dá para continuar depois da história?', answer: 'Sim. O guia assume limpeza no pós-game/free roam para instalações, pedidos, infraestrutura, likes, eventos opcionais e troféus restantes.' },
+      { question: 'O que mais demora?', answer: 'Conectar e maximizar instalações, completar pedidos padrão com rank S, restaurar infraestrutura, acumular likes e fechar eventos opcionais são os maiores blocos de trabalho.' }
+    ],
+    roadmap: [
+      {
+        title: 'Avance os episódios e libere as regiões principais',
+        focus: 'História e desbloqueios',
+        objective: 'Concluir os episódios principais enquanto libera Q-pid, APAS, estruturas, veículos, infraestrutura e instalações essenciais.',
+        actions: [
+          'Jogue os episódios da história no ritmo normal, priorizando Orders for Sam e desbloqueios principais.',
+          'Conecte instalações novas sempre que a rota principal permitir.',
+          'Use veículos, estradas, minas e monotrilho conforme forem liberados para reduzir deslocamentos longos.',
+          'Não tente maximizar todas as instalações cedo demais; muitos recursos ficam mais eficientes no pós-game.',
+          'Marque no checklist instalações, estruturas, pedidos padrão e eventos opcionais encontrados durante a campanha.'
+        ],
+        warning: '',
+        result: 'História encaminhada, principais sistemas liberados e mapa pronto para a limpeza longa da platina.'
+      },
+      {
+        title: 'Conecte todas as instalações e fortaleça a rede',
+        focus: 'Q-pid e conexões',
+        objective: 'Usar o Q-pid para conectar todas as instalações e preparar o grind de conexão máxima.',
+        actions: [
+          'Procure instalações opcionais que não aparecem naturalmente na rota principal.',
+          'Conecte todos os pontos necessários à rede.',
+          'Aumente o nível de conexão enquanto faz entregas úteis para cada instalação.',
+          'Use rotas com estrada, monotrilho e estruturas para acelerar entregas repetidas.',
+          'Acompanhe o progresso de Keep on Connecting e Connecting Hearts and Minds.'
+        ],
+        warning: '',
+        result: 'Rede de instalações montada e caminho preparado para maximizar conexões.'
+      },
+      {
+        title: 'Faça pedidos padrão com rank S',
+        focus: 'Entregas',
+        objective: 'Completar entregas, recuperações e pedidos de eliminação/destruição com rank S conforme os requisitos da lista.',
+        actions: [
+          'Complete pedidos padrão suficientes para Standard Porter e Seasoned Porter.',
+          'Separe entregas, recuperações e pedidos de eliminação/destruição para não repetir categorias sem necessidade.',
+          'Use rotas seguras e equipamentos adequados para preservar carga e cumprir tempo quando necessário.',
+          'Aproveite infraestrutura restaurada para reduzir risco e deslocamento.',
+          'Registre no checklist quais categorias já atingiram a meta.'
+        ],
+        warning: 'Seasoned Porter exige tipos específicos de pedidos com rank S em dificuldade Casual ou superior; não conte apenas entregas comuns.',
+        result: 'Pedidos padrão e ranks principais concluídos ou bem encaminhados.'
+      },
+      {
+        title: 'Restaure infraestrutura e construa estruturas',
+        focus: 'Construção',
+        objective: 'Fechar troféus de estruturas, estradas, minas, monotrilho e recursos de apoio ao mapa.',
+        actions: [
+          'Construa todos os tipos de estrutura necessários para Master Builder.',
+          'Restaure pelo menos uma seção de estrada para Road Restorer.',
+          'Restaure três minas para Dig, Dig, Dig!.',
+          'Restaure e reabra por completo uma linha do monotrilho para Rail Restorer.',
+          'Use materiais acumulados nas instalações para reduzir viagens extras.'
+        ],
+        warning: '',
+        result: 'Infraestrutura essencial restaurada e troféus de construção concluídos.'
+      },
+      {
+        title: 'Resolva troféus sociais, likes e ações opcionais',
+        focus: 'Online social e atividades',
+        objective: 'Concluir troféus ligados a aid requests, sinais online, curtidas, SCS, trocas, quarto privado, animais e eventos opcionais.',
+        actions: [
+          'Conclua um aid request e construa uma placa de pedido de ajuda online.',
+          'Envie curtidas e acompanhe o progresso de likes recebidos por pedidos.',
+          'Leia uma postagem no SCS e use foto no quarto privado.',
+          'Faça trocas com portadores, entregue animais ao abrigo e resolva tarefas opcionais como pizzaiolo, BTs e eventos de mapa.',
+          'Confirme quais troféus sociais exigem conexão online e marque-os corretamente no guia.'
+        ],
+        warning: 'O online é assíncrono/social; ele não exige coop direto, mas pode ser necessário para alguns troféus de interação online.',
+        result: 'Troféus sociais, opcionais e de atividades específicas resolvidos.'
+      },
+      {
+        title: 'Faça a limpeza final da platina',
+        focus: 'Limpeza',
+        objective: 'Revisar pendências da lista base, confirmar flags e finalizar qualquer troféu restante.',
+        actions: [
+          'Abra o checklist e revise todos os 55 troféus.',
+          'Confirme que não há troféus perdíveis marcados indevidamente.',
+          'Confirme que troféus online/sociais estão identificados no filtro correto.',
+          'Confirme que Digital Deluxe, upgrade pago e itens de edição não foram tratados como obrigatórios.',
+          'Revise se todos os cards têm nome inglês principal e PT-BR abaixo quando confirmado.'
+        ],
+        warning: '',
+        result: 'Todos os requisitos da platina base concluídos.'
+      }
+    ]
+  });
+
+  for (const [index, trophy] of (deathStranding2Guide.trophies || []).entries()) {
+    const officialName = ds2OfficialNames[index] || trophy.name || '';
+    const namePtBr = ds2NamePtBr[index] || null;
+    const descriptionPtBr = ds2DescriptionPtById[trophy.id] || trophy.description || '';
+    trophy.name = officialName;
+    trophy.trophyNameOriginal = officialName;
+    trophy.originalName = officialName;
+    trophy.officialName = officialName;
+    trophy.name_pt = namePtBr;
+    trophy.trophyNamePtBr = namePtBr;
+    trophy.namePtSource = namePtBr ? 'trusted_ptbr_reference' : '';
+    trophy.descriptionOriginal = trophy.descriptionOriginal || trophy.description || '';
+    trophy.description = descriptionPtBr;
+    trophy.descriptionPtBr = descriptionPtBr;
+    trophy.ptDescription = descriptionPtBr;
+    trophy.localizedDescription = { ...(trophy.localizedDescription || {}), ptBr: descriptionPtBr };
+    trophy.descriptionPtSource = 'editorial_ptbr';
+    trophy.tip = ds2TipById[trophy.id] || trophy.tip || '';
+    trophy.guideTip = trophy.tip;
+    trophy.tier = trophy.type;
+    trophy.is_missable = false;
+    trophy.isMissable = false;
+    trophy.missable = false;
+    trophy.is_online = ds2OnlineSocialIds.has(trophy.id);
+    trophy.isOnline = trophy.is_online;
+    trophy.is_coop = false;
+    trophy.isCoop = false;
+    trophy.dlcRequired = false;
+    trophy.tags = ds2TagsById[trophy.id] || (ds2StoryIds.has(trophy.id) ? [ds2Tag('story', 'História'), ds2Tag('spoiler', 'Spoiler', 'spoiler')] : []);
+  }
+}
+
+const redDeadRedemption2Guide = sampleGames.find(game => game.slug === 'red-dead-redemption-2');
+if (redDeadRedemption2Guide) {
+  const rdr2NamePtByName = {
+    'Legend of the West': 'Lenda do Oeste',
+    'Back in the Mud': 'Na Lama Outra Vez',
+    'Just a Scratch': 'Só um Arranhão',
+    'To Greener Pastures': 'Por uma Grama Mais Verde',
+    'Settling Feuds': 'Acertando Contas',
+    'Washed Ashore': 'Dia de Ressaca',
+    'No Traitors': 'Nada de Traidores',
+    'Third Time Lucky': 'Melhor de Três',
+    Redemption: 'Redenção',
+    'Cowboy Builder': 'Faroeste Reboco',
+    'Endless Summer': 'Verão Sem Fim',
+    'Lending a Hand': 'Dando uma Mãozinha',
+    'Best in the West': 'O Melhor do Oeste',
+    'Gold Rush': 'Corrida do Ouro',
+    'Friends With Benefits': 'Amigo do Peito',
+    'Hobby Horse': 'Só Mais uma Rodada',
+    'Breaking and Entering': 'Invasão de Domicílio',
+    'Artificial Intelligence': 'Inteligência Artificial',
+    'Take From the Rich': 'Roube dos Ricos',
+    'Give to the Poor': 'Doe aos Pobres',
+    'Pony Up': 'Pagando a Conta',
+    'Extreme Personality': 'Personalidade Extrema',
+    'Western Stranger': 'Um Estranho no Oeste',
+    Bountiful: 'O Queridinho da América',
+    "Collector's Item": 'Item de Colecionador',
+    'Paying Respects': 'Condolências',
+    'Errand Boy': 'Garoto de Recados',
+    "It's Art": 'É Arte',
+    'Self Sufficient': 'Autossuficiente',
+    'Skin Deep': 'Arrancando o Couro',
+    Zoologist: 'Zoólogo',
+    'It was THIS Big!': 'Era DESSE Tamanho!',
+    'Locked and Loaded': 'Aprimorado para Matar',
+    'Grin and Bear It': 'Ursopador',
+    'Trusty Steed': 'Corcel Fiel',
+    Breakout: 'Fuga',
+    'Series Major': 'Mestre em Série',
+    'Gun For Hire': 'Pistoleiro de Aluguel',
+    Eventful: 'Agenda Cheia',
+    'Buckle Up': 'Apertem os cintos',
+    'The Real Deal': 'O Melhor Que Há',
+    'Horses for Courses': 'Cavalo para Cada Dia',
+    'Getting Started': 'Apenas Começando',
+    Notorious: 'Notório',
+    "All's Fair": 'Vale Tudo',
+    'Home Comforts': 'Confortos do Lar',
+    'Non-Regulation': 'Sem Regulação',
+    'Posse Up': 'Em Bando',
+    'Master Craftsman': 'Mestre Artesão',
+    Butchered: 'Em Pedaços',
+    'Picked to Perfection': 'Colheita Perfeita',
+    'Strength in Numbers': 'Unidos Venceremos'
+  };
+  const rdr2IdByName = {
+    'Legend of the West': 'rdr2_legend_of_the_west',
+    'It was THIS Big!': 'rdr2_it_was_this_big',
+    'Getting Started': 'rdr2_getting_started',
+    'The Real Deal': 'rdr2_the_real_deal'
+  };
+  const rdr2MissableNames = new Set([
+    'Lending a Hand',
+    'Friends With Benefits',
+    'Give to the Poor',
+    'Errand Boy'
+  ]);
+  const rdr2OnlineNames = new Set([
+    'Legend of the West',
+    'Breakout',
+    'Series Major',
+    'Gun For Hire',
+    'Eventful',
+    'Buckle Up',
+    'The Real Deal',
+    'Horses for Courses',
+    'Getting Started',
+    'Notorious',
+    "All's Fair",
+    'Home Comforts',
+    'Non-Regulation',
+    'Posse Up',
+    'Master Craftsman',
+    'Butchered',
+    'Picked to Perfection',
+    'Strength in Numbers'
+  ]);
+  const rdr2MultiplayerAttentionNames = new Set([
+    'Series Major',
+    'Eventful',
+    'The Real Deal',
+    "All's Fair",
+    'Posse Up',
+    'Strength in Numbers'
+  ]);
+  const rdr2Tag = (id, label, tone = 'partial') => ({ id, label, tone });
+  const rdr2TagsByName = {
+    'Back in the Mud': [rdr2Tag('story', 'História')],
+    'Just a Scratch': [rdr2Tag('story', 'História')],
+    'To Greener Pastures': [rdr2Tag('story', 'História')],
+    'Settling Feuds': [rdr2Tag('story', 'História')],
+    'Washed Ashore': [rdr2Tag('story', 'História')],
+    'No Traitors': [rdr2Tag('story', 'História')],
+    'Third Time Lucky': [rdr2Tag('story', 'História'), rdr2Tag('spoiler', 'Spoiler', 'spoiler')],
+    Redemption: [rdr2Tag('story', 'História'), rdr2Tag('spoiler', 'Spoiler', 'spoiler')],
+    'Cowboy Builder': [rdr2Tag('story', 'História'), rdr2Tag('spoiler', 'Spoiler', 'spoiler')],
+    'Endless Summer': [rdr2Tag('story', 'História'), rdr2Tag('spoiler', 'Spoiler', 'spoiler')],
+    'Lending a Hand': [rdr2Tag('missable', 'Perdível', 'risk'), rdr2Tag('honor', 'Honra', 'warning'), rdr2Tag('spoiler', 'Spoiler', 'spoiler')],
+    'Friends With Benefits': [rdr2Tag('missable', 'Perdível', 'risk'), rdr2Tag('camp', 'Acampamento', 'warning')],
+    'Give to the Poor': [rdr2Tag('missable', 'Perdível', 'risk'), rdr2Tag('camp', 'Acampamento', 'warning')],
+    'Errand Boy': [rdr2Tag('missable', 'Perdível', 'risk'), rdr2Tag('camp', 'Acampamento', 'warning')],
+    'Best in the West': [rdr2Tag('completion-100', '100%', 'warning'), rdr2Tag('grind', 'Grind', 'warning')],
+    Bountiful: [rdr2Tag('attention', 'Atenção', 'warning'), rdr2Tag('open-world', 'Mundo aberto', 'partial')],
+    'Gold Rush': [rdr2Tag('grind', 'Grind', 'warning'), rdr2Tag('gold-medals', 'Medalhas', 'warning')],
+    'Breaking and Entering': [rdr2Tag('homesteads', 'Homesteads', 'warning'), rdr2Tag('attention', 'Atenção', 'warning'), rdr2Tag('cleanup', 'Cleanup', 'neutral')],
+    "It's Art": [rdr2Tag('side-quest', 'Side quest', 'partial'), rdr2Tag('cleanup', 'Cleanup', 'neutral'), rdr2Tag('attention', 'Atenção', 'warning')],
+    'Skin Deep': [rdr2Tag('animals', 'Animais', 'warning'), rdr2Tag('grind', 'Grind', 'warning')],
+    Zoologist: [rdr2Tag('animals', 'Animais', 'warning'), rdr2Tag('grind', 'Grind', 'warning')],
+    Notorious: [rdr2Tag('online', 'Online', 'warning'), rdr2Tag('grind', 'Grind', 'warning')],
+    'The Real Deal': [rdr2Tag('online', 'Online', 'warning'), rdr2Tag('pvp', 'PvP', 'warning'), rdr2Tag('attention', 'Atenção', 'warning')],
+    "All's Fair": [rdr2Tag('online', 'Online', 'warning'), rdr2Tag('posse', 'Posse', 'warning'), rdr2Tag('attention', 'Atenção', 'warning')],
+    'Strength in Numbers': [rdr2Tag('online', 'Online', 'warning'), rdr2Tag('posse', 'Posse', 'warning'), rdr2Tag('multiplayer', 'Multiplayer', 'warning')],
+    'Posse Up': [rdr2Tag('online', 'Online', 'warning'), rdr2Tag('posse', 'Posse', 'warning')]
+  };
+  const rdr2TipByName = {
+    'Legend of the West': 'Inclui os troféus de Red Dead Online da lista base. A platina nunca deve ser marcada como perdível.',
+    'Lending a Hand': 'Perdível. Faça todas as missões opcionais de honra da campanha antes de avançar demais, especialmente no Capítulo 6.',
+    'Gold Rush': 'Não é perdível. Use replay de missões para buscar 70 medalhas de ouro e priorize missões curtas ou com objetivos simples.',
+    'Friends With Benefits': 'Perdível. Faça pelo menos uma atividade de companheiro em cada acampamento relevante enquanto ele ainda estiver ativo.',
+    'Breaking and Entering': 'Não trate como perdível principal. Organize os homesteads pelo checklist e resolva antes do cleanup final para evitar confusão.',
+    'Give to the Poor': 'Perdível. Doe US$ 250 à caixa da gangue antes de ela ficar indisponível na campanha.',
+    'Errand Boy': 'Perdível. Aceite e entregue pedidos de itens de companheiros quando aparecerem no acampamento; eles dependem de capítulos e presença dos companheiros.',
+    'Best in the West': 'Não é perdível no guia base. Use o tracker de 100% do jogo e separe o que conta para a conclusão do que é apenas extra.',
+    'Skin Deep': 'Grind longo de animais. Use checklist por espécie e bioma; não trate como perdível sem justificativa editorial específica.',
+    Zoologist: 'Grind longo de animais. Estude espécies com checklist por região para não repetir varreduras.',
+    Breakout: 'Red Dead Online. Complete a introdução do modo online.',
+    'Series Major': 'Red Dead Online. Entre e conclua uma Série pública.',
+    'Getting Started': 'Red Dead Online. Alcance o rank 10 enquanto libera atividades, XP e dinheiro inicial.',
+    Eventful: 'Red Dead Online. Participe de 5 Free Roam Events quando os convites aparecerem.',
+    'The Real Deal': 'Red Dead Online/PvP. Seja MVP 3 vezes em partidas com pelo menos 4 jogadores; modos objetivos costumam facilitar.',
+    Notorious: 'Red Dead Online. Alcance o rank 50; é o maior grind online da lista base.',
+    "All's Fair": 'Red Dead Online/Posse. Intercepte uma missão Free Roam de uma Posse rival; costuma ser mais simples combinar com outro jogador.',
+    'Posse Up': 'Red Dead Online/Posse. Forme uma Posse permanente quando tiver dinheiro suficiente.',
+    'Strength in Numbers': 'Red Dead Online/Posse. Complete uma Free Roam Mission como parte de uma Posse com pelo menos 2 membros.'
+  };
+
+  Object.assign(redDeadRedemption2Guide, {
+    onlineRequired: true,
+    coopRequired: true,
+    dlcRequired: false,
+    hasMissables: true,
+    missableCount: 4,
+    coverage_level: 'complete',
+    is_verified: true,
+    verification_status: 'verified',
+    editorial_review_status: 'verified'
+  });
+
+  for (const trophy of redDeadRedemption2Guide.trophies || []) {
+    const officialName = trophy.name || '';
+    if (rdr2IdByName[officialName]) trophy.id = rdr2IdByName[officialName];
+    const namePtBr = rdr2NamePtByName[officialName] || trophy.name_pt || null;
+    trophy.trophyNameOriginal = officialName;
+    trophy.originalName = officialName;
+    trophy.officialName = officialName;
+    trophy.name_pt = namePtBr;
+    trophy.trophyNamePtBr = namePtBr;
+    trophy.namePtSource = namePtBr ? 'editorial_confirmed_ptbr' : '';
+    trophy.descriptionPtBr = trophy.description;
+    trophy.ptDescription = trophy.description;
+    trophy.localizedDescription = { ...(trophy.localizedDescription || {}), ptBr: trophy.description };
+    trophy.descriptionPtSource = trophy.description ? 'editorial_ptbr' : '';
+    trophy.tip = rdr2TipByName[officialName] || trophy.tip || '';
+    trophy.guideTip = trophy.tip;
+    trophy.is_missable = rdr2MissableNames.has(officialName);
+    trophy.isMissable = trophy.is_missable;
+    trophy.is_online = rdr2OnlineNames.has(officialName);
+    trophy.isOnline = trophy.is_online;
+    trophy.is_coop = rdr2MultiplayerAttentionNames.has(officialName);
+    trophy.isCoop = trophy.is_coop;
+    trophy.tags = (rdr2TagsByName[officialName] || [])
+      .concat(trophy.is_online && !rdr2TagsByName[officialName]?.some(tag => tag.id === 'online') ? [rdr2Tag('online', 'Online', 'warning')] : [])
+      .filter((tag, index, list) => list.findIndex(item => item.id === tag.id) === index);
+  }
+}
+
+const marvelsSpiderManMilesMoralesGuide = sampleGames.find(game => game.slug === 'marvels-spider-man-miles-morales');
+if (marvelsSpiderManMilesMoralesGuide) {
+  Object.assign(marvelsSpiderManMilesMoralesGuide, {
+    name: 'Marvel’s Spider-Man: Miles Morales',
+    title: 'Marvel’s Spider-Man: Miles Morales',
+    developer: 'Insomniac Games',
+    publisher: 'Sony Interactive Entertainment',
+    primary_platform: 'PS4/PS5',
+    guide_platform: 'PS4/PS5',
+    platforms: ['PS4', 'PS5', 'PC'],
+    difficulty: 2,
+    time: '10-20h',
+    time_min_hours: 10,
+    time_max_hours: 20,
+    time_sort_hours: 20,
+    time_bucket: 'medium',
+    trophy_count: 50,
+    missable: 'Não há troféus perdíveis reais na lista base. A campanha tem free roam depois da história, atividades repetíveis e replay de missões para recuperar ações específicas.',
+    runs_summary: 'Duas campanhas: uma primeira jogada para história, mapa, colecionáveis e atividades, seguida de New Game+ obrigatório para Plus Plus e habilidades restantes.',
+    missable_summary: 'Sem perdíveis reais. Rhino Rodeo, Like a Rhino In A China Shop e outros troféus de missão podem exigir replay, mas não bloqueiam a platina definitivamente.',
+    online_summary: 'Não há online obrigatório, coop, multiplayer, servidores ou PS+ para a platina.',
+    grind_summary: 'Grind leve de recursos, crimes, objetivos bônus e contadores de combate/furtividade. O New Game+ é obrigatório, mas curto se você focar a história.',
+    dlc_scope: 'DLC não é necessária para a platina da lista base. O guia cobre os 50 troféus base de PS4/PS5.',
+    difficulty_reason: 'A dificuldade 2/10 vem de combate acessível, mapa pequeno, free roam pós-história, replay de missões e ausência de troféu de dificuldade.',
+    time_reason: 'A faixa de 10-20 horas considera campanha, limpeza dos distritos, colecionáveis, atividades, troféus situacionais e uma segunda campanha objetiva em New Game+.',
+    first_run_advice: 'Avance a história no ritmo normal, libere Manhattan, aprenda Venom Powers e camuflagem, faça atividades próximas e guarde recursos para trajes, mods, gadgets e habilidades.',
+    cleanup_advice: 'Depois da campanha, use free roam, replay de missões e o app FNSM para fechar distritos, crimes, colecionáveis, bases, desafios, trajes, upgrades e troféus situacionais antes ou durante o New Game+.',
+    before_you_start: 'New Game+ é obrigatório. Não há online, coop, DLC obrigatória, dificuldade obrigatória ou perdíveis reais, mas a platina exige limpar mapa, atividades e troféus específicos.',
+    best_for: 'Ideal para quem quer uma platina curta, acessível e guiada por checklist, com campanha forte, mapa compacto e limpeza objetiva.',
+    avoid_if: 'Evite se você quer uma platina de uma única campanha ou não gosta de repetir a história em New Game+.',
+    hasMissables: false,
+    missableCount: 0,
+    missable_count: 0,
+    hasOnline: false,
+    hasMandatoryOnline: false,
+    onlineRequired: false,
+    online_required: false,
+    hasMandatoryCoop: false,
+    coopRequired: false,
+    coop_required: false,
+    dlcRequired: false,
+    dlc_required: false,
+    dlcRequiredForPlatinum: false,
+    newGamePlusRequired: true,
+    difficultyTrophiesRequired: false,
+    freeRoamAfterStory: true,
+    missionReplay: true,
+    platinumType: 'lista base PS4/PS5 + New Game+ obrigatório',
+    guideFocus: 'história, New Game+, distritos, app FNSM, colecionáveis, bases, desafios, trajes, habilidades e troféus situacionais',
+    seo: {
+      title: 'Marvel’s Spider-Man: Miles Morales: guia de troféus e platina',
+      description: 'Roadmap completo da platina de Marvel’s Spider-Man: Miles Morales, com New Game+, colecionáveis, atividades do mapa, troféus de combate, checklist e dicas para concluir tudo sem perder tempo.',
+      keywords: 'Marvel’s Spider-Man Miles Morales troféus, Marvel’s Spider-Man Miles Morales platina, Miles Morales guia de troféus, Miles Morales roadmap, Miles Morales New Game+, Miles Morales checklist, Miles Morales colecionáveis'
+    },
+    faq: [
+      { question: 'A platina tem online?', answer: 'Não. A platina da lista base é offline e não exige servidores, multiplayer, ranking online ou PS+.' },
+      { question: 'Precisa de coop?', answer: 'Não. A lista é single-player e não tem coop obrigatório.' },
+      { question: 'Precisa de DLC?', answer: 'Não. O guia cobre os 50 troféus da lista base de PS4/PS5; DLC não é necessária para a platina.' },
+      { question: 'Tem troféus perdíveis?', answer: 'Não há perdíveis reais. Missões, atividades e situações específicas podem ser refeitas, então o risco é retrabalho, não perda definitiva.' },
+      { question: 'New Game+ é obrigatório?', answer: 'Sim. New Game+ é obrigatório para concluir Plus Plus e comprar habilidades restantes necessárias para Just the Beginning.' },
+      { question: 'Dá para continuar em free roam depois da história?', answer: 'Sim. Após a campanha, você pode continuar em Manhattan para limpar distritos, colecionáveis, crimes, app FNSM e troféus situacionais.' },
+      { question: 'Dá para repetir missões?', answer: 'Sim. Use replay de missões quando precisar recuperar ações específicas ou repetir momentos como o shopping com Rhino.' },
+      { question: 'Rhino Rodeo é perdível?', answer: 'Não. Ele é ligado à história e pode ser recuperado por replay de missão ou em New Game+ se necessário.' },
+      { question: 'Like a Rhino In A China Shop é perdível?', answer: 'Não. Ele exige atenção na sequência do shopping, mas pode ser repetido por replay de missão ou em New Game+.' },
+      { question: 'Quanto tempo leva a platina?', answer: 'A estimativa editorial é de 10 a 20 horas, variando conforme cleanup, recursos, crimes e ritmo no New Game+.' },
+      { question: 'A dificuldade afeta troféus?', answer: 'Não. A dificuldade não afeta a platina; jogue em uma configuração confortável nas duas campanhas.' },
+      { question: 'Quais atividades contam para a platina?', answer: 'História, New Game+, 100% dos distritos, app FNSM, crimes, cápsulas do tempo, cartões-postais, amostras de som, caches do Underground, laboratórios Roxxon, esconderijos Underground, desafios, trajes, mods, habilidades e troféus de combate.' }
+    ],
+    editorial_summary: [
+      'A platina de Marvel’s Spider-Man: Miles Morales é curta e acessível, mas não é de uma campanha só. A lista base exige New Game+ para Plus Plus e para fechar habilidades restantes.',
+      'Não há online, coop, DLC obrigatória, troféu de dificuldade ou perdíveis reais. O cuidado prático é organizar colecionáveis, crimes, objetivos bônus, recursos e ações específicas para evitar retrabalho.',
+      'Use a primeira campanha para abrir Manhattan, aprender Venom Powers e camuflagem, limpar atividades próximas e preparar recursos. Depois faça cleanup e conclua o New Game+ obrigatório.'
+    ]
+  });
+
+  marvelsSpiderManMilesMoralesGuide.roadmap = [
+    {
+      title: 'Avance a história e desbloqueie Manhattan',
+      focus: 'História e exploração',
+      objective: 'Concluir a campanha inicial enquanto aprende os poderes de Miles, libera atividades no mapa e coleta o que estiver no caminho.',
+      actions: [
+        'Jogue a história no ritmo normal sem se preocupar em limpar todos os distritos de primeira.',
+        'Aprenda a usar Venom Powers, camuflagem, gadgets e habilidades de travessia.',
+        'Ative atividades do app FNSM, crimes, desafios e colecionáveis conforme forem surgindo.',
+        'Pegue cápsulas do tempo, caches e recursos quando estiverem próximos da rota.',
+        'Faça upgrades úteis para facilitar combate, stealth e travessia.'
+      ],
+      warning: '',
+      result: 'Campanha encaminhada, mapa liberado e Miles preparado para a limpeza dos distritos.'
+    },
+    {
+      title: 'Limpe distritos, colecionáveis e atividades',
+      focus: 'Coleta e distritos',
+      objective: 'Completar o mapa de Manhattan com colecionáveis, crimes, desafios, bases e atividades necessárias para a platina.',
+      actions: [
+        'Complete cápsulas do tempo, cartões-postais, amostras de som e caches do Underground.',
+        'Resolva crimes e atividades do app FNSM em cada distrito.',
+        'Conclua laboratórios da Roxxon, esconderijos do Underground e desafios de treinamento.',
+        'Use o mapa e o checklist para separar o que já foi feito em cada região.',
+        'Aproveite o free roam pós-história para terminar qualquer distrito pendente.'
+      ],
+      warning: '',
+      result: 'Mapa praticamente completo e a maior parte dos troféus de coleta e atividades resolvida.'
+    },
+    {
+      title: 'Resolva troféus de combate e ações específicas',
+      focus: 'Troféus específicos',
+      objective: 'Buscar troféus ligados a técnicas, combos, stealth, habilidades e momentos específicos que podem não vir naturalmente.',
+      actions: [
+        'Revise troféus de combate ligados a Venom Attacks, camuflagem, arremessos e finalizações.',
+        'Use crimes, bases e replay de missões para repetir situações específicas.',
+        'Faça troféus de missão como Rhino Rodeo e Like a Rhino In A China Shop sem marcá-los como perdíveis.',
+        'Confira troféus de travessia, queda livre, teto e interações específicas.',
+        'Abra o checklist e marque os troféus situacionais conforme forem concluídos.'
+      ],
+      warning: 'Troféus de missão específica podem exigir replay da missão, mas não devem ser tratados como perdíveis se o jogo permite refazer o conteúdo.',
+      result: 'Troféus situacionais e de combate encaminhados antes do New Game+.'
+    },
+    {
+      title: 'Feche habilidades, trajes e upgrades',
+      focus: 'Progressão',
+      objective: 'Usar tokens e recursos para completar upgrades, trajes, mods e habilidades disponíveis antes da segunda campanha.',
+      actions: [
+        'Compre habilidades disponíveis na primeira campanha.',
+        'Desbloqueie trajes, mods de traje, mods de visor e gadgets necessários.',
+        'Complete desafios com desempenho suficiente para obter recursos.',
+        'Revise se ainda faltam tokens de atividades, bases, desafios ou crimes.',
+        'Guarde o que depende de New Game+ para a próxima etapa.'
+      ],
+      warning: '',
+      result: 'Miles fortalecido, recursos usados e progresso preparado para fechar os requisitos de New Game+.'
+    },
+    {
+      title: 'Complete o New Game+ obrigatório',
+      focus: 'New Game+',
+      objective: 'Finalizar a campanha em New Game+ para liberar os troféus e habilidades restantes exigidos pela platina.',
+      actions: [
+        'Inicie New Game+ após concluir a campanha principal.',
+        'Avance a história novamente focando apenas no que ainda falta para a platina.',
+        'Compre as habilidades exclusivas de New Game+ necessárias para Just the Beginning.',
+        'Use a experiência da primeira campanha para acelerar chefes e missões principais.',
+        'Finalize o New Game+ para concluir Plus Plus.'
+      ],
+      warning: 'Não trate a platina como uma única campanha; New Game+ é obrigatório.',
+      result: 'New Game+ concluído, habilidades fechadas e principais requisitos finais liberados.'
+    },
+    {
+      title: 'Faça o cleanup final da platina',
+      focus: 'Cleanup',
+      objective: 'Revisar qualquer pendência restante da lista base e garantir que o guia não marque perdíveis incorretamente.',
+      actions: [
+        'Abra o checklist e revise os troféus restantes.',
+        'Use free roam, replay de missões ou atividades do mapa para terminar pendências.',
+        'Confirme que Like a Rhino In A China Shop e Rhino Rodeo não estão marcados como perdíveis.',
+        'Confirme que a platina Be Yourself não está marcada como perdível.',
+        'Revise se online, coop, DLC e perdíveis continuam como false/zero.'
+      ],
+      warning: '',
+      result: 'Todos os requisitos da platina base concluídos.'
+    }
+  ];
+
+  const milesMoralesTrophyPtBrFixes = {
+    msmm_just_the_beginning: 'Apenas o Começo',
+    msmm_memory_lane: 'Caminho da Memória',
+    msmm_salvager: 'Sucateiro',
+    msmm_ready_for_anything: 'Pronto Para Tudo',
+    msmm_come_at_the_king: 'Enfrente o Rei',
+    msmm_never_saw_it_coming: 'Nem Viu Chegando'
+  };
+
+  for (const trophy of marvelsSpiderManMilesMoralesGuide.trophies || []) {
+    if (milesMoralesTrophyPtBrFixes[trophy.id]) trophy.name_pt = milesMoralesTrophyPtBrFixes[trophy.id];
+    trophy.trophyNameOriginal = trophy.name;
+    trophy.trophyNamePtBr = trophy.name_pt || '';
+    trophy.namePtSource = trophy.name_pt ? 'editorial_ptbr' : '';
+    trophy.descriptionPtBr = trophy.description;
+    trophy.ptDescription = trophy.description;
+    trophy.localizedDescription = { ...(trophy.localizedDescription || {}), ptBr: trophy.description };
+    trophy.descriptionPtSource = 'editorial_ptbr';
+    trophy.is_missable = false;
+    trophy.isMissable = false;
+    trophy.is_online = false;
+    trophy.isOnline = false;
+    trophy.is_coop = false;
+    trophy.isCoop = false;
   }
 }
 

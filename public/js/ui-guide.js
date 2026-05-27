@@ -368,6 +368,10 @@ window.UIGuide = (() => {
     return getTrophyEditorialName(trophy) || getTrophyOriginalName(trophy);
   }
 
+  function shouldUseOfficialTrophyNameFirst(game = {}) {
+    return ['death-stranding', 'death-stranding-2-on-the-beach', 'marvels-spider-man-2', 'marvels-spider-man-miles-morales', 'red-dead-redemption-2'].includes(String(game?.slug || '').trim().toLowerCase());
+  }
+
   function looksLikeEnglishTrophyDescription(value = '') {
     return /\b(Obtained|Reached|Achieved|Defeated|Acquired|Upgraded|Arrived|Restored|Used|Clear|Earn|Complete|Unlock|Max-rank|Equip|Choose|Purge|Forge|Trade|Pay|Fulfill|Catch|Compel|Have|Buy|Get|Beat|Slay|Pet)\b/i.test(String(value || ''));
   }
@@ -849,9 +853,10 @@ window.UIGuide = (() => {
   }
 
   function renderGuideEditorialNotes(game = {}, viewModel = {}) {
-    const routeTrophies = Array.isArray(viewModel.routeChangingTrophies) ? viewModel.routeChangingTrophies.slice(0, 5) : [];
     const normalizedSlug = String(game?.slug || '').trim().toLowerCase();
-    const faqLimit = ['nioh-3', 'saros', 'the-last-of-us-part-ii'].includes(normalizedSlug) ? 11 : (['the-last-of-us-part-i', 'subnautica'].includes(normalizedSlug) ? 10 : (['god-of-war-ragnarok', 'resident-evil-2-remake', 'resident-evil-3-remake', 'hollow-knight', 'marvels-spider-man', 'marvels-spider-man-miles-morales'].includes(normalizedSlug) ? 8 : 6));
+    const routeTrophyLimit = normalizedSlug === 'red-dead-redemption-2' ? 11 : (normalizedSlug === 'death-stranding-2-on-the-beach' ? 11 : (normalizedSlug === 'death-stranding' ? 9 : (normalizedSlug === 'marvels-spider-man-2' ? 8 : 5)));
+    const routeTrophies = Array.isArray(viewModel.routeChangingTrophies) ? viewModel.routeChangingTrophies.slice(0, routeTrophyLimit) : [];
+    const faqLimit = normalizedSlug === 'marvels-spider-man-miles-morales' ? 12 : (['nioh-3', 'saros', 'the-last-of-us-part-ii'].includes(normalizedSlug) ? 11 : (['the-last-of-us-part-i', 'subnautica'].includes(normalizedSlug) ? 10 : (['god-of-war-ragnarok', 'resident-evil-2-remake', 'resident-evil-3-remake', 'hollow-knight', 'marvels-spider-man'].includes(normalizedSlug) ? 8 : (normalizedSlug === 'red-dead-redemption-2' ? 7 : 6))));
     const faqItems = Array.isArray(viewModel.contextualFaq) ? viewModel.contextualFaq.slice(0, faqLimit) : [];
     const playerFit = viewModel.playerFit || buildGuidePlayerFit(game, viewModel);
     const methodItems = Array.isArray(viewModel.editorial?.methodItems) ? viewModel.editorial.methodItems : [];
@@ -1110,7 +1115,10 @@ window.UIGuide = (() => {
             const tip = trophy.tip || '';
             const officialName = getTrophyOriginalName(trophy);
             const editorialName = getTrophyEditorialName(trophy);
-            const primaryName = getTrophyDisplayName(trophy);
+            const officialNameFirst = shouldUseOfficialTrophyNameFirst(game);
+            const primaryName = officialNameFirst ? officialName : getTrophyDisplayName(trophy);
+            const translationLabel = officialNameFirst ? 'PT-BR' : 'Original';
+            const secondaryName = officialNameFirst ? editorialName : officialName;
             const riskTags = typeof getGuideTrophyTags === 'function' ? getGuideTrophyTags(trophy, game) : getTrophyRiskTags(trophy);
             const displayRiskTags = typeof getGuideTrophyDisplayTags === 'function' ? getGuideTrophyDisplayTags(trophy, game, 4) : riskTags.slice(0, 4);
             const riskTokens = riskTags.map(tag => tag.id).join(' ');
@@ -1131,7 +1139,7 @@ window.UIGuide = (() => {
                     <div class="atlas-trophy-card__headline">
                       <div class="atlas-trophy-card__title">
                         <h4>${escapeHtml(primaryName)}</h4>
-                        ${editorialName ? `<p class="atlas-trophy-card__title-translation"><span>NOME ORIGINAL:</span>${escapeHtml(officialName)}</p>` : ''}
+                        ${editorialName ? `<p class="atlas-trophy-card__title-translation"><span>${escapeHtml(translationLabel)}</span>${escapeHtml(secondaryName)}</p>` : ''}
                       </div>
                       <div class="atlas-trophy-card__meta">
                         <span class="atlas-trophy-type">${escapeHtml(trophy.type || 'Bronze')}</span>
