@@ -1844,6 +1844,184 @@
 
   function buildRouteChangingTrophies(trophies = [], game = {}) {
     const trophyById = new Map((Array.isArray(trophies) ? trophies : []).map(trophy => [trophy?.id, trophy]).filter(([id]) => id));
+    if (String(game?.slug || '').trim().toLowerCase() === 'clair-obscur-expedition-33') {
+      const trophyByName = new Map((Array.isArray(trophies) ? trophies : [])
+        .map(trophy => [String(trophy?.trophyNameOriginal || trophy?.originalName || trophy?.officialName || trophy?.name || '').trim().toLowerCase(), trophy])
+        .filter(([name]) => name));
+      const attentionTag = (label, tone = 'warning') => ({ id: normalizeGuideSignalText(label).replace(/\s+/g, '-'), label, tone });
+      const read = (ids, fallbackName, fallbackText) => {
+        const idList = Array.isArray(ids) ? ids : [ids];
+        const trophy = idList.map(id => trophyById.get(id)).find(Boolean)
+          || trophyByName.get(String(fallbackName || '').trim().toLowerCase())
+          || {};
+        return {
+          name: trophy.trophyNameOriginal || trophy.originalName || trophy.officialName || trophy.name || fallbackName,
+          originalName: trophy.trophyNamePtBr || trophy.name_pt || trophy.localizedNamePtBr || '',
+          text: trophy.tip || trophy.descriptionPtBr || trophy.description || fallbackText
+        };
+      };
+      return [
+        {
+          id: 'clair-obscur-follow-the-trail',
+          ...read(['clair-obscur-follow-the-trail', 'clair_obscur_expedition_33_follow_the_trail'], 'Follow The Trail', 'Controle Old Key e diários desde o prólogo.'),
+          type: 'Perdível / Diários',
+          tags: [attentionTag('Perdível', 'risk'), attentionTag('Diários', 'partial')],
+          score: 100
+        },
+        {
+          id: 'clair-obscur-a-peculiar-encounter',
+          ...read(['clair-obscur-a-peculiar-encounter', 'clair_obscur_expedition_33_a_peculiar_encounter'], 'A Peculiar Encounter', 'Derrote o mímico específico de Lumière no prólogo.'),
+          type: 'Perdível / Prólogo / Mímico',
+          tags: [attentionTag('Perdível', 'risk'), attentionTag('Prólogo', 'warning'), attentionTag('Mímico', 'warning')],
+          score: 99
+        },
+        {
+          id: 'clair-obscur-maelle',
+          ...read(['clair-obscur-maelle', 'clair_obscur_expedition_33_maelle'], 'Maelle', 'Acompanhe interações de relacionamento e a escolha Truth.'),
+          type: 'Perdível / Relacionamento',
+          tags: [attentionTag('Perdível', 'risk'), attentionTag('Relacionamento', 'warning')],
+          score: 98
+        },
+        {
+          id: 'clair-obscur-connoisseur',
+          ...read(['clair-obscur-connoisseur', 'clair_obscur_expedition_33_connoisseur'], 'Connoisseur', 'Controle as 33 canções e interações sensíveis à campanha.'),
+          type: 'Perdível / Canções',
+          tags: [attentionTag('Perdível', 'risk'), attentionTag('Canções', 'partial')],
+          score: 97
+        },
+        {
+          id: 'clair-obscur-professional',
+          ...read(['clair-obscur-professional', 'clair_obscur_expedition_33_professional'], 'Professional', 'Derrote um chefe sem tomar dano antes de eliminar todas as oportunidades controláveis.'),
+          type: 'Perdível / Combate',
+          tags: [attentionTag('Perdível', 'risk'), attentionTag('Combate', 'warning')],
+          score: 96
+        },
+        {
+          id: 'clair-obscur-peace-at-last',
+          ...read(['clair-obscur-peace-at-last', 'clair_obscur_expedition_33_peace_at_last'], 'Peace At Last', 'Simon é um dos maiores testes opcionais da platina.'),
+          type: 'Chefe / Endgame',
+          tags: [attentionTag('Chefe', 'warning'), attentionTag('Endgame', 'warning')],
+          score: 95
+        },
+        {
+          id: 'clair-obscur-endless',
+          ...read(['clair-obscur-endless', 'clair_obscur_expedition_33_endless'], '“Endless”', 'Complete a Torre Eterna quando a build estiver pronta.'),
+          type: 'Desafio / Torre Eterna',
+          tags: [attentionTag('Desafio', 'warning'), attentionTag('Torre Eterna', 'warning')],
+          score: 94
+        },
+        {
+          id: 'clair-obscur-lost-gestrals',
+          ...read(['clair-obscur-lost-gestrals', 'clair_obscur_expedition_33_lost_gestrals'], 'Lost Gestrals', 'Use habilidades de Esquie para encontrar todos os Gestrais perdidos.'),
+          type: 'Coletáveis / Gestrais',
+          tags: [attentionTag('Coletáveis', 'partial'), attentionTag('Gestrais', 'partial')],
+          score: 93
+        },
+        {
+          id: 'clair-obscur-gestral-games',
+          ...read(['clair-obscur-gestral-games', 'clair_obscur_expedition_33_gestral_games'], 'Gestral Games', 'Vença todos os minigames Gestrais durante o cleanup.'),
+          type: 'Minigames / Atenção',
+          tags: [attentionTag('Minigames', 'warning'), attentionTag('Atenção', 'warning')],
+          score: 92
+        },
+        {
+          id: 'clair-obscur-survivor',
+          ...read(['clair-obscur-survivor', 'clair_obscur_expedition_33_survivor'], 'Survivor', 'Suba ao nível 99 no endgame.'),
+          type: 'Grind / Nível 99',
+          tags: [attentionTag('Grind', 'warning'), attentionTag('Nível 99', 'warning')],
+          score: 91
+        }
+      ];
+    }
+    if (String(game?.slug || '').trim().toLowerCase() === 'detroit-become-human') {
+      const trophyByName = new Map((Array.isArray(trophies) ? trophies : [])
+        .map(trophy => [String(trophy?.trophyNameOriginal || trophy?.originalName || trophy?.officialName || trophy?.name || '').trim().toLowerCase(), trophy])
+        .filter(([name]) => name));
+      const attentionTag = (label, tone = 'warning') => ({ id: normalizeGuideSignalText(label).replace(/\s+/g, '-'), label, tone });
+      const read = (ids, fallbackName, fallbackText) => {
+        const idList = Array.isArray(ids) ? ids : [ids];
+        const trophy = idList.map(id => trophyById.get(id)).find(Boolean)
+          || trophyByName.get(String(fallbackName || '').trim().toLowerCase())
+          || {};
+        return {
+          name: trophy.trophyNameOriginal || trophy.originalName || trophy.officialName || trophy.name || fallbackName,
+          originalName: trophy.trophyNamePtBr || trophy.name_pt || trophy.localizedNamePtBr || '',
+          text: trophy.tip || trophy.descriptionPtBr || trophy.description || fallbackText
+        };
+      };
+      return [
+        {
+          id: 'detroit-survivors',
+          ...read(['detroit-survivors', 'detroit_survivors'], 'SURVIVORS', 'Mantenha todos os personagens exigidos vivos até o final.'),
+          type: 'Rota / Final / Atenção',
+          tags: [attentionTag('Rota', 'warning'), attentionTag('Final', 'warning'), attentionTag('Atenção', 'warning')],
+          score: 100
+        },
+        {
+          id: 'detroit-ill-be-back',
+          ...read(['detroit-ill-be-back', 'detroit_ill_be_back'], 'I’LL BE BACK', 'Faça a rota completa das mortes de Connor sem quebrar a continuidade.'),
+          type: 'Connor / Rota / Atenção',
+          tags: [attentionTag('Connor', 'warning'), attentionTag('Rota', 'warning'), attentionTag('Atenção', 'warning')],
+          score: 99
+        },
+        {
+          id: 'detroit-bookworm',
+          ...read(['detroit-bookworm', 'detroit_bookworm'], 'BOOKWORM', 'Controle revistas condicionadas por escolhas e rotas anteriores.'),
+          type: 'Revistas / Coletáveis',
+          tags: [attentionTag('Revistas', 'partial'), attentionTag('Coletáveis', 'partial')],
+          score: 98
+        },
+        {
+          id: 'detroit-partners',
+          ...read(['detroit-partners', 'detroit_partners'], 'PARTNERS', 'Mantenha Hank e Connor amigos até o final.'),
+          type: 'Connor / Hank / Relacionamento',
+          tags: [attentionTag('Connor', 'warning'), attentionTag('Hank', 'warning'), attentionTag('Relacionamento', 'warning')],
+          score: 97
+        },
+        {
+          id: 'detroit-happy-family',
+          ...read(['detroit-happy-family', 'detroit_happy_family'], 'HAPPY FAMILY', 'Mantenha Kara, Alice e Luther vivos e juntos até o final.'),
+          type: 'Kara / Final',
+          tags: [attentionTag('Kara', 'warning'), attentionTag('Final', 'warning')],
+          score: 96
+        },
+        {
+          id: 'detroit-undefeated',
+          ...read(['detroit-undefeated', 'detroit_undefeated'], 'UNDEFEATED', 'Não perca lutas/QTEs importantes antes do fim.'),
+          type: 'QTE / Combate',
+          tags: [attentionTag('QTE', 'warning'), attentionTag('Combate', 'warning')],
+          score: 95
+        },
+        {
+          id: 'detroit-three-at-jericho',
+          ...read(['detroit-three-at-jericho', 'detroit_three_at_jericho'], 'THREE AT JERICHO', 'Leve Connor, Markus e Kara vivos até Crossroads.'),
+          type: 'Rota / História',
+          tags: [attentionTag('Rota', 'warning'), attentionTag('História', 'partial')],
+          score: 94
+        },
+        {
+          id: 'detroit-safe-harbor',
+          ...read(['detroit-safe-harbor', 'detroit_safe_harbor'], 'SAFE HARBOR', 'Leve Kara e Alice até a fronteira e atravesse com sucesso.'),
+          type: 'Kara / Final',
+          tags: [attentionTag('Kara', 'warning'), attentionTag('Final', 'warning')],
+          score: 93
+        },
+        {
+          id: 'detroit-moral-victory',
+          ...read(['detroit-moral-victory', 'detroit_moral_victory'], 'MORAL VICTORY', 'Siga a rota pacífica de Markus até o recuo dos soldados.'),
+          type: 'Markus / Pacífico',
+          tags: [attentionTag('Markus', 'warning'), attentionTag('Pacífico', 'warning')],
+          score: 92
+        },
+        {
+          id: 'detroit-these-are-our-stories',
+          ...read(['detroit-these-are-our-stories', 'detroit_these_are_our_stories'], 'THESE ARE OUR STORIES', 'Gaste 20.000 pontos de bônus no menu Extras.'),
+          type: 'Extras / Pontos de bônus',
+          tags: [attentionTag('Extras', 'partial'), attentionTag('Pontos de bônus', 'partial')],
+          score: 91
+        }
+      ].filter(item => trophyById.has(item.id) || trophyByName.has(String(item.name || '').trim().toLowerCase()));
+    }
     if (String(game?.slug || '').trim().toLowerCase() === 'death-stranding') {
       const trophyByName = new Map((Array.isArray(trophies) ? trophies : [])
         .map(trophy => [String(trophy?.trophyNameOriginal || trophy?.originalName || trophy?.officialName || trophy?.name || '').trim().toLowerCase(), trophy])

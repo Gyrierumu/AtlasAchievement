@@ -22912,19 +22912,242 @@ const sampleGames = [
       "avoid_if": "Evite se você não gosta de repetir capítulos, seguir decisões específicas ou refazer rotas longas por consequências anteriores.",
       "editorial_status": "published",
       "coverage_level": "strong",
-      "is_verified": false,
-      "verification_status": "review",
-      "verification_note": "Lista base adicionada por fontes públicas; aguarda validação editorial final.",
+      "is_verified": true,
+      "verification_status": "verified",
+      "verification_note": "Guia verificado editorialmente para a lista base PS4 de 49 troféus, com 46 troféus sensíveis a escolhas, rotas, capítulos ou replays parciais.",
+      "title": "Detroit: Become Human",
+      "published": true,
+      "developer": "Quantic Dream",
+      "publisher": "Sony Interactive Entertainment",
+      "platforms": [
+            "PS4"
+      ],
+      "guide_platform": "PS4",
+      "estimatedTime": "20h",
+      "time": "20h",
+      "time_min_hours": 20,
+      "time_max_hours": 20,
+      "time_sort_hours": 20,
+      "time_bucket": "medium",
+      "runs": "2 jogadas completas/parciais + replays por Chapter Select",
+      "hasMissables": true,
+      "missableCount": 46,
+      "hasOnline": false,
+      "hasMandatoryOnline": false,
+      "requiresOnline": false,
+      "onlineTrophies": 0,
+      "onlineRequired": false,
+      "hasCoop": false,
+      "hasMandatoryCoop": false,
+      "coopTrophies": 0,
+      "coopRequired": false,
+      "dlcRequired": false,
+      "dlcRequiredForPlatinum": false,
+      "difficultyTrophiesRequired": false,
+      "chapterSelect": true,
+      "platinumType": "história + escolhas + rotas + revistas + cleanup por Chapter Select",
+      "trophyCount": 49,
+      "trophyDistribution": {
+            "platinum": 1,
+            "gold": 3,
+            "silver": 5,
+            "bronze": 40
+      },
+      "editorial_summary": [
+            "Detroit: Become Human é uma platina curta e fácil em execução, mas muito dependente de escolhas. A lista base tem 49 troféus offline, não exige online, coop ou DLC, e pode ser feita com uma primeira campanha cuidadosa, uma rota para todos sobreviverem, uma rota para as mortes de Connor e replays parciais por seleção de capítulo. O maior cuidado é entender que o Chapter Select só salva mudanças se você continuar jogando os capítulos seguintes a partir da alteração; refazer um capítulo isolado e pular para o final não atualiza consequências futuras.",
+            "A ordem mais segura é fazer uma primeira campanha acompanhando troféus de capítulo, mantendo personagens importantes vivos e coletando revistas quando possível, depois fazer a rota de SURVIVORS, a rota de I’LL BE BACK com Connor morrendo em todas as oportunidades, e por fim limpar revistas e troféus de escolhas opostas. Use o flowchart e o checklist para controlar rotas, personagens vivos, revistas condicionais e capítulos que precisam ser continuados com salvamento ativado."
+      ],
+      "missable": "Alta atenção por escolhas, capítulos e rotas. Neste guia, Perdível significa troféu sensível a escolha/capítulo que pode exigir replay ou Chapter Select com continuidade; a platina, THANK YOU e THIS IS MY STORY não entram nessa contagem.",
+      "runs_summary": "Mínimo recomendado: uma campanha guiada, uma rota para SURVIVORS, uma rota para I’LL BE BACK e replays parciais por Chapter Select para revistas e escolhas opostas.",
+      "missable_summary": "46 troféus ficam marcados como perdíveis/atenção por dependerem de escolhas, capítulos, personagens vivos, finais, revistas, extras ou rotas persistentes. Chapter Select ajuda, mas escolhas só afetam capítulos futuros se você continuar jogando a partir do ponto alterado com salvamento ativado.",
+      "online_summary": "Não há exigência online, troféus online, multiplayer obrigatório, coop ou PS+ para a platina base.",
+      "grind_summary": "O esforço está em decisões, rotas, sobreviventes, mortes de Connor, relação Hank/Connor, finais de Kara e Markus, revistas condicionais e pontos de bônus.",
+      "dlc_scope": "Guia focado na lista base PS4 de 49 troféus de Detroit: Become Human; não há DLC/add-on obrigatório para a platina.",
+      "difficulty_reason": "A dificuldade 2/10 vem de execução simples, ausência de troféus de dificuldade e possibilidade de jogar no Casual para reduzir falhas de QTE. O desafio real é planejamento de escolhas.",
+      "time_reason": "A estimativa de cerca de 20h considera uma campanha guiada, rotas específicas para SURVIVORS e I’LL BE BACK, limpeza de revistas e replays por Chapter Select.",
+      "first_run_advice": "Comece por uma campanha guiada, mantendo todos vivos sempre que possível e pegando revistas no caminho. Depois use Chapter Select com salvamento ativado para rotas específicas como SURVIVORS, I’LL BE BACK e cleanup de escolhas opostas.",
+      "cleanup_advice": "Use Chapter Select com cuidado: se uma escolha precisa afetar capítulos futuros, ative o salvamento e continue jogando todos os capítulos seguintes a partir dessa alteração. Refazer um capítulo isolado e pular direto para o final não atualiza consequências futuras.",
+      "before_you_start": "Detroit: Become Human é uma platina curta e fácil em execução, mas muito dependente de escolhas. A lista base tem 49 troféus offline, não exige online, coop ou DLC, e pode ser feita com uma primeira campanha cuidadosa, uma rota para todos sobreviverem, uma rota para as mortes de Connor e replays parciais por seleção de capítulo. O maior cuidado é entender que o Chapter Select só salva mudanças se você continuar jogando os capítulos seguintes a partir da alteração; refazer um capítulo isolado e pular para o final não atualiza consequências futuras.\n\nA ordem mais segura é fazer uma primeira campanha acompanhando troféus de capítulo, mantendo personagens importantes vivos e coletando revistas quando possível, depois fazer a rota de SURVIVORS, a rota de I’LL BE BACK com Connor morrendo em todas as oportunidades, e por fim limpar revistas e troféus de escolhas opostas. Use o flowchart e o checklist para controlar rotas, personagens vivos, revistas condicionais e capítulos que precisam ser continuados com salvamento ativado.",
+      "best_for": "Recomendada para quem gosta de narrativa ramificada, escolhas consequentes e replay por capítulos.",
+      "avoid_if": "Não recomendada para quem quer uma platina linear, sem guia ou sem repetir capítulos para escolhas opostas.",
+      "editorial_review_status": "verified",
+      "last_reviewed_at": "2026-05-28",
+      "lastReviewedAt": "2026-05-28T00:00:00.000-03:00",
+      "editorial_notes": "Revisão editorial aplicada à lista base PS4 de 49 troféus. Critério de perdível do guia: troféus sensíveis a escolhas/capítulos/rotas/extras que podem exigir replay, pontos de bônus ou Chapter Select com continuidade. DETROIT MASTER, THANK YOU e THIS IS MY STORY ficam fora da contagem de perdíveis.",
+      "quality_warnings": [],
+      "reviewed_by": "AtlasAchievement Editorial",
+      "seo": {
+            "title": "Detroit: Become Human: guia de troféus e platina",
+            "description": "Roadmap completo da platina de Detroit: Become Human, com escolhas, troféus perdíveis, SURVIVORS, I’LL BE BACK, revistas, Chapter Select, checklist e dicas para evitar replays desnecessários.",
+            "keywords": "Detroit Become Human troféus, Detroit Become Human platina, Detroit Become Human guia, Detroit Become Human roadmap, Detroit Become Human perdíveis, Detroit Become Human Survivors, Detroit Become Human I’ll Be Back, Detroit Become Human revistas, Detroit Become Human chapter select, Detroit Become Human checklist"
+      },
+      "quickDecision": {
+            "recommendation": "Platina curta e fácil em execução, mas dependente de planejamento de escolhas.",
+            "fit": "Boa para quem gosta de narrativa ramificada, replay por capítulos e checklist de rotas.",
+            "avoid": "Evite se você quer uma platina linear sem guia ou sem repetir capítulos.",
+            "attention": "Não há online, coop, DLC ou bloqueio por dificuldade; o cuidado real é a persistência das escolhas pelo Chapter Select."
+      },
+      "checklist": [
+            "Concluir The Hostage e obter THANK YOU.",
+            "Resolver os troféus de The Hostage, incluindo MISSION ACCOMPLISHED.",
+            "Concluir A New Home e abrir a caixa de Alice para SECRETS.",
+            "Investigar Partners e localizar o divergente.",
+            "Escapar com Kara e Alice em Stormy Night.",
+            "Resolver as escolhas opostas de Broken.",
+            "Controlar The Interrogation e obter CONFESSION.",
+            "Planejar Fugitives, On the Run e a rota de Kara.",
+            "Investigar pistas de Hank e manter a relação Connor/Hank quando necessário.",
+            "Resolver The Nest com CATCH IT ou SAVE HANK.",
+            "Escapar de Zlatko com Kara, Alice e Luther vivos.",
+            "Resolver The Eden Club com Ruthless ou Doubts.",
+            "Conseguir peças suficientes em Spare Parts.",
+            "Executar The Stratford Tower sem alarme ou baixas para a rota limpa.",
+            "Planejar Public Enemy para Simon e A GLIMPSE OF JERICHO quando necessário.",
+            "Resolver Capitol Park nas rotas pacífica e violenta.",
+            "Controlar Freedom March e suas escolhas de confronto.",
+            "Planejar Meet Kamski para PRIORITIES ou KINSHIP.",
+            "Usar evidências para BLOODHOUND em Last Chance, Connor.",
+            "Chegar a Crossroads com Connor, Markus e Kara para THREE AT JERICHO.",
+            "Planejar Battle for Detroit para finais de Kara, Markus e Connor.",
+            "Concluir a rota de SURVIVORS.",
+            "Concluir a rota de I’LL BE BACK com todas as mortes de Connor.",
+            "Manter Hank e Connor amigos para PARTNERS.",
+            "Manter Kara, Alice e Luther juntos para HAPPY FAMILY.",
+            "Resolver Markus pacífico e Markus violento conforme troféus.",
+            "Resolver Connor máquina, Connor divergente e MY TURN TO DECIDE.",
+            "Coletar todas as revistas/magazines para BOOKWORM.",
+            "Gastar pontos de bônus para THESE ARE OUR STORIES.",
+            "Fazer o cleanup final dos 49 troféus da lista base."
+      ],
+      "faq": [
+            {
+                  "question": "Detroit: Become Human tem troféus perdíveis?",
+                  "answer": "Sim. Muitos troféus dependem de escolhas e capítulos específicos. O Chapter Select permite corrigir rotas, mas mudanças só valem para capítulos futuros se você continuar jogando a partir do ponto alterado com salvamento ativado."
+            },
+            {
+                  "question": "Por que o guia mostra tantos troféus perdíveis?",
+                  "answer": "Porque Detroit: Become Human depende de escolhas, rotas e capítulos específicos. A maioria dos troféus pode exigir replay parcial se você tomar outra decisão, mas o Chapter Select permite corrigir muita coisa. O cuidado é continuar jogando a partir da alteração com salvamento ativado, porque pular direto para capítulos futuros não propaga as consequências."
+            },
+            {
+                  "question": "A platina exige online?",
+                  "answer": "Não. A lista base é totalmente offline."
+            },
+            {
+                  "question": "Precisa de coop?",
+                  "answer": "Não. Detroit: Become Human é single-player e a platina não exige coop."
+            },
+            {
+                  "question": "Precisa de DLC?",
+                  "answer": "Não. A platina base não exige DLC."
+            },
+            {
+                  "question": "Quanto tempo leva para platinar?",
+                  "answer": "A estimativa é cerca de 20h, dependendo de quantos replays parciais forem necessários para escolhas, revistas, SURVIVORS e I’LL BE BACK."
+            },
+            {
+                  "question": "A dificuldade afeta troféus?",
+                  "answer": "Não. A dificuldade não bloqueia troféus. Jogar no Casual é recomendado para reduzir risco de falhar QTEs e perder personagens por acidente."
+            },
+            {
+                  "question": "Posso usar Chapter Select?",
+                  "answer": "Sim, mas com cuidado. Se uma escolha precisa afetar capítulos futuros, ative o salvamento e continue jogando todos os capítulos seguintes a partir dessa alteração."
+            },
+            {
+                  "question": "Quantas jogadas são necessárias?",
+                  "answer": "O mínimo recomendado é uma campanha guiada, uma rota para SURVIVORS, uma rota para I’LL BE BACK e replays parciais para revistas e escolhas opostas."
+            },
+            {
+                  "question": "O que mais dá trabalho?",
+                  "answer": "SURVIVORS, I’LL BE BACK, BOOKWORM e troféus que dependem de escolhas acumuladas são os maiores blocos de planejamento."
+            }
+      ],
       "image": "https://cdn.cloudflare.steamstatic.com/steam/apps/1222140/header.jpg",
       "cover_image": "https://cdn.cloudflare.steamstatic.com/steam/apps/1222140/library_600x900.jpg",
       "roadmap": [
-            "Faça uma primeira campanha focada em manter todos vivos e seguir uma rota pacífica/positiva, preservando Connor, Hank, Kara, Alice, Luther, Markus, North, Josh, Simon e Jerry quando necessário.",
-            "Durante essa rota, colete revistas possíveis, fortaleça a amizade de Connor com Hank, poupe Chloe para KINSHIP, mantenha Kara/Alice/Luther vivos e escolha protestos pacíficos com Markus.",
-            "Complete a campanha para THIS IS MY STORY, avance para SURVIVORS/HAPPY FAMILY/PARTNERS quando a rota estiver preparada e registre decisões que mudam revistas/magazines.",
-            "Faça uma segunda rota/playthrough para I’LL BE BACK, JUST A MACHINE, mortes de Connor, decisões opostas e caminhos incompatíveis com a primeira campanha.",
-            "Use Chapter Select para troféus específicos de capítulos, mas continue jogando a partir do ponto alterado quando a consequência precisar persistir; não trate Chapter Select como cleanup simples até o final.",
-            "Limpe BOOKWORM com as revistas/magazines restantes, lembrando que muitas aparecem apenas se escolhas anteriores mudarem a linha do tempo.",
-            "Revise rotas de Connor, Markus e Kara, múltiplos finais, sobreviventes, mortes, relações e troféus pendentes antes de fechar DETROIT MASTER."
+            {
+                  "title": "Faça a primeira campanha guiada",
+                  "focus": "História e escolhas",
+                  "objective": "Concluir a história pela primeira vez enquanto pega troféus de capítulo, mantém personagens importantes vivos e começa a coletar revistas.",
+                  "actions": [
+                        "Jogue no Casual para reduzir o risco de falhar QTEs e perder personagens por acidente.",
+                        "Siga os troféus de capítulo em ordem cronológica sempre que possível.",
+                        "Mantenha Connor, Hank, Kara, Alice, Luther, Markus, Simon, North e Josh vivos se estiver mirando uma base boa para SURVIVORS.",
+                        "Leia todas as revistas que encontrar e confira as duas capas/assuntos quando houver revista dupla.",
+                        "Use o flowchart para entender escolhas, mas evite alterar capítulos isolados sem continuar a história a partir deles."
+                  ],
+                  "warning": "Mudanças feitas pelo Chapter Select só afetam capítulos futuros se você continuar jogando a partir do ponto alterado com salvamento ativado.",
+                  "result": "Primeira campanha concluída, boa parte dos troféus de capítulo encaminhada e rotas futuras preparadas."
+            },
+            {
+                  "title": "Prepare a rota de todos sobrevivendo",
+                  "focus": "SURVIVORS",
+                  "objective": "Garantir que todos os personagens exigidos permaneçam vivos até o final para o troféu SURVIVORS.",
+                  "actions": [
+                        "Se alguém morreu na primeira campanha, volte ao capítulo em que o erro aconteceu.",
+                        "Continue jogando todos os capítulos seguintes a partir desse ponto para que a mudança seja salva.",
+                        "Mantenha Connor, Hank, Kara, Alice, Luther, Jerry, Markus, Simon, North e Josh vivos.",
+                        "Escolha rotas pacíficas sempre que isso reduzir risco para aliados importantes.",
+                        "Aproveite a rota para pegar revistas alternativas que aparecem conforme suas escolhas."
+                  ],
+                  "warning": "Não basta salvar um personagem em um capítulo e pular para o final; o jogo precisa propagar a alteração pelos capítulos seguintes.",
+                  "result": "Rota de sobreviventes concluída ou pronta para finalizar SURVIVORS e troféus relacionados."
+            },
+            {
+                  "title": "Faça a rota das mortes de Connor",
+                  "focus": "I’LL BE BACK",
+                  "objective": "Completar a rota em que Connor morre em todas as oportunidades necessárias antes do final.",
+                  "actions": [
+                        "Planeje a rota completa de I’LL BE BACK antes de iniciar.",
+                        "Inclua a morte opcional ligada ao capítulo The Interrogation se ela estiver disponível no seu flowchart.",
+                        "Deteriore a relação com Hank para liberar JUST A MACHINE quando necessário.",
+                        "Considere encurtar a rota deixando Kara e Markus morrerem nas oportunidades adequadas, se o guia seguir essa estratégia.",
+                        "Use o checklist para marcar cada morte de Connor já concluída."
+                  ],
+                  "warning": "Pular uma morte de Connor pode obrigar replay longo; acompanhe a rota capítulo por capítulo.",
+                  "result": "I’LL BE BACK e JUST A MACHINE resolvidos ou encaminhados sem perder a sequência."
+            },
+            {
+                  "title": "Limpe escolhas opostas por Chapter Select",
+                  "focus": "Capítulos e rotas",
+                  "objective": "Buscar troféus alternativos de capítulos que exigem escolhas opostas ou finais diferentes.",
+                  "actions": [
+                        "Rejogue capítulos com pares de troféus opostos, como DEFEND YOURSELF e SELF-CONTROL.",
+                        "Use Chapter Select com salvamento quando a escolha precisar afetar capítulos futuros.",
+                        "Faça rotas específicas de Connor, Kara e Markus para troféus de finais e decisões.",
+                        "Marque no checklist quais troféus dependem só de um capítulo e quais exigem continuar a história.",
+                        "Evite sobrescrever uma rota útil antes de terminar troféus dependentes dela."
+                  ],
+                  "warning": "Alguns troféus parecem isolados, mas dependem de escolhas acumuladas; revise o flowchart antes de alterar uma rota.",
+                  "result": "Troféus de escolhas alternativas e finais específicos resolvidos."
+            },
+            {
+                  "title": "Finalize revistas e extras",
+                  "focus": "Coletáveis",
+                  "objective": "Encontrar revistas restantes, gastar pontos de bônus e fechar pendências de extras.",
+                  "actions": [
+                        "Abra o menu de extras para conferir revistas já encontradas.",
+                        "Revise revistas/magazines que dependem de escolhas específicas e rotas alternativas.",
+                        "Ao encontrar uma revista, leia todos os assuntos/capas disponíveis.",
+                        "Use Chapter Select com salvamento ativado quando a revista depender de consequências futuras.",
+                        "Gaste os pontos de bônus necessários para THESE ARE OUR STORIES."
+                  ],
+                  "warning": "BOOKWORM pode exigir replays parciais porque revistas mudam conforme eventos e escolhas da história.",
+                  "result": "Revistas, pontos de bônus e extras finalizados."
+            },
+            {
+                  "title": "Faça o cleanup final da platina",
+                  "focus": "Cleanup",
+                  "objective": "Revisar a lista completa e confirmar que todas as rotas, escolhas e flags do guia estão corretas.",
+                  "actions": [
+                        "Abra o checklist e revise os 49 troféus.",
+                        "Confirme que DETROIT MASTER não está marcado como perdível.",
+                        "Confirme que THANK YOU e THIS IS MY STORY não estão marcados como perdíveis.",
+                        "Confirme que onlineRequired, coopRequired e dlcRequired estão como false.",
+                        "Revise se todos os cards têm nome inglês principal e PT-BR abaixo quando confirmado."
+                  ],
+                  "warning": "",
+                  "result": "Todos os requisitos da platina base concluídos."
+            }
       ],
       "trophies": [
             {
@@ -28287,40 +28510,268 @@ const sampleGames = [
 {
       "name": "Clair Obscur: Expedition 33",
       "slug": "clair-obscur-expedition-33",
+      "title": "Clair Obscur: Expedition 33",
+      "published": true,
+      "developer": "Sandfall Interactive",
+      "publisher": "Kepler Interactive",
+      "platforms": [
+            "PS5"
+      ],
+      "guide_platform": "PS5",
+      "release_date": "2025-04-24",
+      "genre": [
+            "RPG por turnos",
+            "ação em tempo real",
+            "QTE"
+      ],
       "difficulty": 3,
       "time": "50-70h",
       "time_min_hours": 50,
       "time_max_hours": 70,
       "time_sort_hours": 60,
       "time_bucket": "long",
-      "missable": "Sim, precisa revisão editorial final. Há atenção para perdíveis do prólogo, journals, discos de música, relacionamento da Maelle, cenas opcionais de acampamento e chefe sem dano. Complete tudo antes de iniciar New Game+.",
-      "runs_summary": "Uma campanha completa pode cobrir a platina, desde que você acompanhe perdíveis, coletáveis, relações, chefes opcionais, Endless Tower, Monoco skills e Level 99 antes do New Game+.",
-      "missable_summary": "Follow The Trail, Maelle, Connoisseur, Professional, A Peculiar Encounter e Curious exigem atenção e ainda precisam revisão final. Use a primeira campanha para pegar Old Key, Mime do prólogo, discos, journals e cenas de acampamento.",
-      "online_summary": "Não há troféus online. Clair Obscur: Expedition 33 é single-player e a platina não exige conexão, coop ou multiplayer.",
-      "grind_summary": "O peso está em journals, 33 discos de música, Lost Gestrals, Nevron quests, relações nível 7, todas as habilidades de Monoco, Level 99, Endless Tower, Clea, Simon e chefes opcionais.",
-      "dlc_scope": "Guia focado somente na lista base de 56 troféus de Clair Obscur: Expedition 33. Não foram adicionados troféus de DLC, updates, conteúdo futuro ou listas extras.",
-      "difficulty_reason": "A dificuldade é baixa para um RPG se você usar builds fortes e deixar superbosses para o endgame. O maior cuidado está em perdíveis, organização de coletáveis e lutas opcionais como Simon.",
-      "time_reason": "A faixa de 50-70 horas considera a campanha, exploração, coletáveis, relações, Endless Tower, chefes opcionais, habilidades de Monoco, upgrades e grind até o nível 99.",
-      "first_run_advice": "No prólogo, derrote o Mime de Lumière e pegue a Old Key. Depois explore tudo, fale no acampamento, acompanhe journals, discos, Nevrons, Lost Gestrals e relações antes de avançar demais.",
-      "cleanup_advice": "Após a história, continue o mesmo save para limpar áreas opcionais, relações, Painting Workshop, Endless Tower, Simon, Clea, Monoco skills, Level 99 e qualquer coletável restante. Evite iniciar New Game+ antes da limpeza.",
-      "before_you_start": "Não cadastre PS4: a lista é de PS5. A platina não tem online nem dificuldade obrigatória, mas New Game+ pode resetar progresso de coletáveis relevantes; finalize tudo na primeira campanha e trate perdíveis como precisa revisão.",
-      "best_for": "Ideal para quem quer uma platina de RPG moderna, elegante, com boa exploração, side content, relações de personagens e chefes opcionais de endgame.",
-      "avoid_if": "Evite se você não gosta de RPGs longos, coletáveis perdíveis, interações opcionais de acampamento, superbosses ou grind de nível/endgame.",
+      "missable": "Sim. A rota conservadora trata Follow The Trail, Maelle, Connoisseur, Professional e A Peculiar Encounter como perd?veis ou sens?veis ? campanha. A platina em si nunca deve ser marcada como perd?vel.",
+      "runs_summary": "1 jogada completa com cleanup no Act 3/p?s-game. New Game+ existe, mas n?o ? obrigat?rio para a platina; use apenas se quiser repetir a campanha ou corrigir algo que ficou bloqueado.",
+      "missable_summary": "Os 5 trof?us sens?veis da rota s?o Follow The Trail, Maelle, Connoisseur, Professional e A Peculiar Encounter. Eles dependem de itens, intera??es ou condi??es espec?ficas durante a campanha.",
+      "online_summary": "N?o h? trof?us online. Clair Obscur: Expedition 33 ? single-player e a platina base n?o exige conex?o, servidores, PS+, coop ou multiplayer.",
+      "grind_summary": "O peso est? em di?rios, 33 can??es, Gestrais perdidos, miss?es de Nevrons, relacionamentos n?vel 7, habilidades de Monoco, n?vel 99, Endless Tower, Clea, Simon e chefes opcionais.",
+      "dlc_scope": "Guia focado somente na lista base PS5 de 56 trof?us de Clair Obscur: Expedition 33. Conte?do extra, update e eventual DLC ficam fora da platina base, salvo se a lista PSN base mudar oficialmente.",
+      "difficulty_reason": "A dificuldade 3/10 vem de uma campanha acess?vel com builds fortes, op??es de acessibilidade e aus?ncia de trof?u de dificuldade. O pico real est? em chefes opcionais, organiza??o de colecion?veis e poucos perd?veis.",
+      "time_reason": "A faixa de 50-70h considera hist?ria, explora??o, colecion?veis, relacionamentos, Endless Tower, chefes opcionais, habilidades de Monoco, upgrades e grind at? o n?vel 99.",
+      "first_run_advice": "Comece a campanha acompanhando os perd?veis principais, especialmente itens/intera??es do pr?logo e relacionamentos. Depois use o roadmap para separar hist?ria, colecion?veis, chefes opcionais, relacionamentos, n?vel 99 e cleanup no Act 3/p?s-game.",
+      "cleanup_advice": "Ap?s o chefe final, carregar o save retorna para a Expedition Flag antes do chefe final. Continue no mesmo save para limpar ?reas opcionais, relacionamentos, chefes, colecion?veis, n?vel 99 e trof?us de combate antes de considerar New Game+.",
+      "before_you_start": "N?o cadastre PS4: a lista base deste guia ? de PS5. Clair Obscur: Expedition 33 ? uma platina de RPG relativamente acess?vel, focada em concluir a hist?ria, controlar poucos perd?veis, revisitar ?reas no p?s-game, derrotar chefes opcionais, completar relacionamentos, coletar di?rios, can??es e Gestrais perdidos, vencer jogos Gestrais, concluir miss?es de Nevrons e finalizar trof?us de combate/personagem. A lista base tem 56 trof?us, ? totalmente offline, n?o exige coop, n?o exige DLC e pode ser feita em uma jogada, mas h? trof?us sens?veis a intera??es/itens espec?ficos durante a campanha.\n\nA ordem mais segura ? avan?ar a hist?ria com aten??o aos perd?veis do pr?logo, atos intermedi?rios e relacionamentos, depois usar o Act 3/p?s-game para limpar ?reas opcionais, chefes, colecion?veis, relacionamentos, n?vel 99 e desafios de combate. N?o ? necess?rio New Game+ para a platina, mas ele pode servir como rota de corre??o se algum perd?vel ou colet?vel for ignorado na primeira campanha.",
+      "best_for": "Recomendada para quem gosta de RPG por turnos, a??es em tempo real, chefes opcionais, explora??o e checklist de colecion?veis.",
+      "avoid_if": "N?o recomendada para quem quer platina curta, sem controle de perd?veis ou sem cleanup de colecion?veis, relacionamentos e endgame.",
       "editorial_status": "published",
       "coverage_level": "strong",
-      "is_verified": false,
-      "verification_status": "review",
-      "verification_note": "Precisa revisão editorial final: guia recente, com perdíveis sensíveis de prólogo, Maelle, Old Key, Mime, journals e discos ainda marcados para conferência manual.",
+      "is_verified": true,
+      "verification_status": "verified",
+      "verification_note": "Guia verificado editorialmente para a lista base PS5 de 56 trof?us, com 5 perd?veis consolidados e rota offline sem coop, DLC, New Game+ ou dificuldade obrigat?ria.",
+      "runs": "1 jogada + cleanup no Act 3/pós-game",
+      "hasMissables": true,
+      "missableCount": 5,
+      "hasOnline": false,
+      "hasMandatoryOnline": false,
+      "requiresOnline": false,
+      "onlineTrophies": 0,
+      "onlineRequired": false,
+      "hasCoop": false,
+      "hasMandatoryCoop": false,
+      "coopTrophies": 0,
+      "coopRequired": false,
+      "dlcRequired": false,
+      "dlcRequiredForPlatinum": false,
+      "newGamePlusRequired": false,
+      "difficultyTrophiesRequired": false,
+      "trophyCount": 56,
+      "trophyDistribution": {
+            "platinum": 1,
+            "gold": 2,
+            "silver": 5,
+            "bronze": 48
+      },
+      "platinumType": "história + perdíveis controlados + colecionáveis + relacionamentos + chefes opcionais + cleanup",
+      "editorial_summary": [
+            "Clair Obscur: Expedition 33 é uma platina de RPG relativamente acessível, focada em concluir a história, controlar poucos perdíveis, revisitar áreas no pós-game, derrotar chefes opcionais, completar relacionamentos, coletar diários, canções e Gestrais perdidos, vencer jogos Gestrais, concluir missões de Nevrons e finalizar troféus de combate/personagem. A lista base tem 56 troféus, é totalmente offline, não exige coop, não exige DLC e pode ser feita em uma jogada, mas há troféus sensíveis a interações/itens específicos durante a campanha.",
+            "A ordem mais segura é avançar a história com atenção aos perdíveis do prólogo, atos intermediários e relacionamentos, depois usar o Act 3/pós-game para limpar áreas opcionais, chefes, colecionáveis, relacionamentos, nível 99 e desafios de combate. Não é necessário New Game+ para a platina, mas ele pode servir como rota de correção se algum perdível ou coletável for ignorado na primeira campanha."
+      ],
+      "missable": "Sim. A rota conservadora trata Follow The Trail, Maelle, Connoisseur, Professional e A Peculiar Encounter como perdíveis ou sensíveis à campanha. A platina em si nunca deve ser marcada como perdível.",
+      "runs_summary": "1 jogada completa com cleanup no Act 3/pós-game. New Game+ existe, mas não é obrigatório para a platina; use apenas se quiser repetir a campanha ou corrigir algo que ficou bloqueado.",
+      "missable_summary": "Os 5 troféus sensíveis da rota são Follow The Trail, Maelle, Connoisseur, Professional e A Peculiar Encounter. Eles dependem de itens, interações ou condições específicas durante a campanha.",
+      "online_summary": "Não há troféus online. Clair Obscur: Expedition 33 é single-player e a platina base não exige conexão, servidores, PS+, coop ou multiplayer.",
+      "grind_summary": "O peso está em diários, 33 canções, Gestrais perdidos, missões de Nevrons, relacionamentos nível 7, habilidades de Monoco, nível 99, Endless Tower, Clea, Simon e chefes opcionais.",
+      "dlc_scope": "Guia focado somente na lista base PS5 de 56 troféus de Clair Obscur: Expedition 33. Conteúdo extra, update e eventual DLC ficam fora da platina base, salvo se a lista PSN base mudar oficialmente.",
+      "difficulty_reason": "A dificuldade 3/10 vem de uma campanha acessível com builds fortes, opções de acessibilidade e ausência de troféu de dificuldade. O pico real está em chefes opcionais, organização de colecionáveis e poucos perdíveis.",
+      "time_reason": "A faixa de 50-70h considera história, exploração, colecionáveis, relacionamentos, Endless Tower, chefes opcionais, habilidades de Monoco, upgrades e grind até o nível 99.",
+      "first_run_advice": "Comece a campanha acompanhando os perdíveis principais, especialmente itens/interações do prólogo e relacionamentos. Depois use o roadmap para separar história, colecionáveis, chefes opcionais, relacionamentos, nível 99 e cleanup no Act 3/pós-game.",
+      "cleanup_advice": "Após o chefe final, carregar o save retorna para a Expedition Flag antes do chefe final. Continue no mesmo save para limpar áreas opcionais, relacionamentos, chefes, colecionáveis, nível 99 e troféus de combate antes de considerar New Game+.",
+      "before_you_start": "Não cadastre PS4: a lista base deste guia é de PS5. Clair Obscur: Expedition 33 é uma platina de RPG relativamente acessível, focada em concluir a história, controlar poucos perdíveis, revisitar áreas no pós-game, derrotar chefes opcionais, completar relacionamentos, coletar diários, canções e Gestrais perdidos, vencer jogos Gestrais, concluir missões de Nevrons e finalizar troféus de combate/personagem. A lista base tem 56 troféus, é totalmente offline, não exige coop, não exige DLC e pode ser feita em uma jogada, mas há troféus sensíveis a interações/itens específicos durante a campanha.\n\nA ordem mais segura é avançar a história com atenção aos perdíveis do prólogo, atos intermediários e relacionamentos, depois usar o Act 3/pós-game para limpar áreas opcionais, chefes, colecionáveis, relacionamentos, nível 99 e desafios de combate. Não é necessário New Game+ para a platina, mas ele pode servir como rota de correção se algum perdível ou coletável for ignorado na primeira campanha.",
+      "best_for": "Recomendada para quem gosta de RPG por turnos, ações em tempo real, chefes opcionais, exploração e checklist de colecionáveis.",
+      "avoid_if": "Não recomendada para quem quer platina curta, sem controle de perdíveis ou sem cleanup de colecionáveis, relacionamentos e endgame.",
+      "coverage_level": "strong",
+      "is_verified": true,
+      "verification_status": "verified",
+      "verification_note": "Guia verificado editorialmente para a lista base PS5 de 56 troféus, com 5 perdíveis consolidados e rota offline sem coop, DLC, New Game+ ou dificuldade obrigatória.",
+      "editorial_review_status": "verified",
+      "last_reviewed_at": "2026-05-28",
+      "lastReviewedAt": "2026-05-28T00:00:00.000-03:00",
+      "editorial_notes": "Lista base PS5 de 56 troféus organizada com dificuldade 3/10, 50-70h, offline, sem coop, sem DLC obrigatória e 1 jogada + cleanup. Mantidos 5 perdíveis de referência: Follow The Trail, Maelle, Connoisseur, Professional e A Peculiar Encounter. Curious foi removido da contagem de perdíveis. New Game+ e dificuldade não são requisitos.",
+      "quality_warnings": [],
+      "reviewed_by": "AtlasAchievement Editorial",
+      "seo": {
+            "title": "Clair Obscur: Expedition 33: guia de troféus e platina",
+            "description": "Roadmap completo da platina de Clair Obscur: Expedition 33, com troféus perdíveis, colecionáveis, relacionamentos, chefes opcionais, Gestrais, canções, diários, checklist e dicas para evitar retrabalho.",
+            "keywords": "Clair Obscur Expedition 33 troféus, Clair Obscur Expedition 33 platina, Clair Obscur Expedition 33 guia, Clair Obscur Expedition 33 roadmap, Clair Obscur Expedition 33 perdíveis, Clair Obscur Expedition 33 Follow The Trail, Clair Obscur Expedition 33 Connoisseur, Clair Obscur Expedition 33 Gestrais Perdidos, Clair Obscur Expedition 33 Simon, Clair Obscur Expedition 33 checklist"
+      },
+      "quickDecision": {
+            "recommendation": "Platina de RPG longa, mas acessível, para jogar com checklist ao lado desde o prólogo.",
+            "fit": "Boa para quem gosta de RPG por turnos, chefes opcionais, exploração e colecionáveis.",
+            "avoid": "Evite se você quer uma platina curta sem controle de perdíveis.",
+            "attention": "Não há online, coop, DLC obrigatória, New Game+ obrigatório nem bloqueio por dificuldade; o cuidado real está nos 5 perdíveis e no cleanup."
+      },
+      "checklist": [
+                "Concluir o prólogo.",
+                "Derrotar o mímico específico de Lumière para A Peculiar Encounter.",
+                "Obter o Old Key e os itens únicos ligados a Follow The Trail no prólogo.",
+                "Concluir as áreas principais da história.",
+                "Derrotar o Primeiro Axon.",
+                "Derrotar o Segundo Axon.",
+                "Chegar ao Monólito.",
+                "Derrotar Paintress/Artífice.",
+                "Retornar a Lumière.",
+                "Chegar ao final da campanha.",
+                "Liberar todas as habilidades de Esquie.",
+                "Encontrar todos os diários.",
+                "Concluir todas as missões dos Nevrons.",
+                "Derrotar Simon.",
+                "Vencer todos os jogos Gestrais.",
+                "Derrotar Clea.",
+                "Chegar ao topo da Endless Tower.",
+                "Encontrar todos os Gestrais perdidos.",
+                "Derrotar Serpenphare, Sprong, Chromatic Pétank e demais chefes relevantes.",
+                "Resolver Noir et Blanc.",
+                "Elevar relacionamentos de Sciel, Monoco, Maelle, Lune e Esquie ao nível 7.",
+                "Aprimorar uma arma uma vez.",
+                "Aprimorar uma arma totalmente.",
+                "Usar um ponto de Lumina.",
+                "Alcançar os níveis 33, 66 e 99.",
+                "Concluir troféus específicos de Gustave, Lune, Maelle, Sciel, Verso e Monoco.",
+                "Obter todas as habilidades de Monoco.",
+                "Habilitar todos os personagens jogáveis.",
+                "Usar um Gradient Attack de nível 3.",
+                "Encontrar as 33 canções.",
+                "Quebrar uma Paint Cage.",
+                "Quebrar um inimigo.",
+                "Derrotar um chefe sem tomar dano.",
+                "Ver uma cena opcional no acampamento.",
+                "Fazer o cleanup final dos 56 troféus da lista base."
+      ],
+      "faq": [
+                {
+                          "question": "Clair Obscur: Expedition 33 tem troféus perdíveis?",
+                          "answer": "Sim. Os perdíveis principais são Follow The Trail, Maelle, Connoisseur, Professional e A Peculiar Encounter. Eles dependem de itens, interações ou condições específicas durante a campanha. Use o checklist antes de avançar prólogo, atos intermediários e relacionamentos."
+                },
+                {
+                          "question": "A platina exige online?",
+                          "answer": "Não. A lista base de Clair Obscur: Expedition 33 é totalmente offline."
+                },
+                {
+                          "question": "Precisa de coop?",
+                          "answer": "Não. O jogo é single-player e a platina não exige coop."
+                },
+                {
+                          "question": "Precisa de DLC ou update pago?",
+                          "answer": "Não. A platina base não exige DLC. Não misture conteúdo extra/update com a lista base de 56 troféus."
+                },
+                {
+                          "question": "Quanto tempo leva para platinar?",
+                          "answer": "A estimativa segura é 50–70h, dependendo de quanto você explora durante a história e de quanto deixa para o cleanup."
+                },
+                {
+                          "question": "A dificuldade afeta troféus?",
+                          "answer": "Não. A dificuldade não bloqueia troféus; você pode jogar na configuração que preferir. As opções de acessibilidade também não impedem a platina, mas podem alterar a eficiência de alguns ataques/QTEs."
+                },
+                {
+                          "question": "New Game+ é obrigatório?",
+                          "answer": "Não. New Game+ existe, mas não é obrigatório para a platina. Ele só deve ser considerado se você quiser repetir a campanha ou corrigir algum perdível/coletável que não possa mais ser obtido no save atual."
+                },
+                {
+                          "question": "Dá para continuar depois da história?",
+                          "answer": "Sim. Ao carregar o save após o chefe final, o jogo retorna para a Expedition Flag antes do chefe final e permite continuar explorando as áreas disponíveis."
+                },
+                {
+                          "question": "Qual é o maior desafio?",
+                          "answer": "Os chefes opcionais e o cleanup de colecionáveis/relacionamentos são os blocos mais exigentes. Simon, Clea, Endless Tower, Gestral Games e nível 99 merecem atenção no roadmap."
+                }
+      ],
       "image": "https://cdn.cloudflare.steamstatic.com/steam/apps/1903340/header.jpg",
       "cover_image": "https://cdn.cloudflare.steamstatic.com/steam/apps/1903340/library_600x900.jpg",
       "roadmap": [
-            "Comece pelo prólogo com atenção aos perdíveis que precisam revisão final: derrote o Mime em Lumière para A Peculiar Encounter, pegue a Old Key para Follow The Trail e tente fazer Overcharge com Gustave antes de avançar diálogos de confirmação.",
-            "Nos Atos 1 e 2, avance por Spring Meadows, Flying Waters, Ancient Sanctuary, Gestral Village, Esquie's Nest, Stone Wave Cliffs, Forgotten Battlefield, Monoco's Station e Old Lumière coletando journals, discos, Lost Gestrals e Nevron quests.",
-            "Use o acampamento sempre que novas cenas aparecerem, suba relações de Sciel, Monoco, Maelle, Lune e Esquie até o nível 7 e escolha Truth na interação final de Maelle para evitar perder o troféu dela.",
-            "Faça os troféus de mecânica dos personagens: Perfect Flow, Synergy, Maximisation, Perfection, Wheel Control, Chroma Proficiency e mantenha Monoco ativo para adiantar Feet Collection.",
-            "Conclua a história até Monolith, Paintress, Back to Lumière e The End. Depois continue o mesmo save para limpar side content; não inicie New Game+ antes dos coletáveis e relações.",
-            "Complete todos os journals, 33 discos, Lost Gestrals, Nevron quests, Gestral Games, Painting Workshop, Paint Cages e exploração pendente antes de partir para o endgame pesado.",
-            "No endgame, derrote Serpenphare, Sprong, Chromatic Pétank, Clea, complete a Endless Tower, derrote Simon, faça Professional sem dano em um chefe seguro, finalize Weapon Mastery, Feet Collection e suba ao nível 99 para liberar a platina."
+                {
+                          "title": "Avance o prólogo sem perder itens únicos",
+                          "focus": "Prólogo e perdíveis",
+                          "objective": "Começar a campanha aprendendo o combate e garantindo os itens/interações que podem bloquear troféus depois.",
+                          "actions": [
+                                    "Explore Lumière com calma antes de sair do prólogo.",
+                                    "Derrote o Mime/mímico específico de Lumière para A Peculiar Encounter.",
+                                    "Pegue o Old Key e outros itens únicos do festival ligados a Follow The Trail.",
+                                    "Teste esquiva, parry, QTEs, Break e uso de AP desde os primeiros combates.",
+                                    "Evite avançar se ainda houver interação ou item único marcado no checklist do prólogo."
+                          ],
+                          "warning": "O prólogo concentra riscos de perda importantes; pegue o Old Key e derrote o mímico específico de Lumière antes de avançar.",
+                          "result": "Base da campanha iniciada com os principais riscos do prólogo controlados."
+                },
+                {
+                          "title": "Complete os atos iniciais acompanhando interações",
+                          "focus": "História e relacionamentos",
+                          "objective": "Avançar pelos atos 1 e 2 enquanto controla interações de acampamento, registros, canções e evolução do grupo.",
+                          "actions": [
+                                    "Progrida por Spring Meadows, Flying Waters, Ancient Sanctuary, Gestral Village, Esquie's Nest e demais áreas principais.",
+                                    "Assista cenas opcionais no acampamento quando ficarem disponíveis.",
+                                    "Acompanhe registros, canções e interações que alimentam Follow The Trail, Connoisseur e relacionamentos, incluindo a escolha Truth da rota de Maelle.",
+                                    "Evite enfrentar todos os chefes/Chromatic enemies tomando dano se ainda não tiver Professional.",
+                                    "Mantenha personagens, armas, Pictos e Luminas atualizados para reduzir dificuldade nos chefes."
+                          ],
+                          "warning": "Interações de relacionamento e canções específicas podem ser sensíveis ao avanço da história; use o checklist antes de trocar de ato.",
+                          "result": "História avançada, grupo fortalecido e perdíveis intermediários controlados."
+                },
+                {
+                          "title": "Abra o Act 3 e libere a exploração completa",
+                          "focus": "Exploração e Esquie",
+                          "objective": "Usar as habilidades de Esquie para acessar áreas opcionais, chefes e colecionáveis antes do cleanup pesado.",
+                          "actions": [
+                                    "Continue a campanha até liberar as habilidades de exploração de Esquie.",
+                                    "Revisite áreas com nado, voo e mergulho quando essas opções estiverem disponíveis.",
+                                    "Colete Gestrais perdidos, diários, canções e recursos que antes estavam bloqueados.",
+                                    "Acompanhe relacionamentos até o nível 7 com os personagens necessários.",
+                                    "Não inicie New Game+ para resolver pendências que ainda podem ser feitas no save atual."
+                          ],
+                          "warning": "",
+                          "result": "Mapa aberto para limpeza, Esquie com habilidades principais e acesso às áreas opcionais liberado."
+                },
+                {
+                          "title": "Derrote chefes opcionais e conclua desafios",
+                          "focus": "Chefes e desafios",
+                          "objective": "Resolver os troféus de bosses opcionais, jogos Gestrais, Torre Eterna e missões de Nevrons.",
+                          "actions": [
+                                    "Derrote Simon para Peace At Last.",
+                                    "Derrote Clea, Sprong, Serpenphare, Chromatic Pétank e outros chefes opcionais da lista.",
+                                    "Vença todos os jogos Gestrais para Gestral Games.",
+                                    "Chegue ao topo da Endless Tower.",
+                                    "Conclua todas as missões dos Nevrons para Aiding the Enemy."
+                          ],
+                          "warning": "Alguns chefes opcionais são o pico de dificuldade da platina; ajuste builds, Luminas, armas e Pictos antes de insistir.",
+                          "result": "Principais desafios opcionais resolvidos e o maior bloco de combate concluído."
+                },
+                {
+                          "title": "Finalize colecionáveis, relacionamentos e progressão",
+                          "focus": "Coleta e evolução",
+                          "objective": "Completar diários, canções, Gestrais perdidos, relacionamentos, nível 99, armas e habilidades específicas.",
+                          "actions": [
+                                    "Encontre todos os diários das expedições anteriores para Follow The Trail.",
+                                    "Encontre todas as 33 canções para Connoisseur.",
+                                    "Encontre todos os Gestrais perdidos.",
+                                    "Eleve relacionamentos necessários ao nível 7.",
+                                    "Suba ao nível 99, aprimore totalmente uma arma e complete habilidades específicas de personagens."
+                          ],
+                          "warning": "Se um coletável de troféu foi perdido e não houver correção por patch, pode ser necessário usar NG+ e recoletar os itens relacionados.",
+                          "result": "Colecionáveis, progressão de personagens e grind principal encaminhados para a platina."
+                },
+                {
+                          "title": "Faça o cleanup final da platina",
+                          "focus": "Cleanup",
+                          "objective": "Revisar pendências da lista base e confirmar que flags e troféus estão corretos.",
+                          "actions": [
+                                    "Abra o checklist e revise os 56 troféus.",
+                                    "Revise os 5 perdíveis finais no checklist.",
+                                    "Confirme que onlineRequired, coopRequired e dlcRequired estão como false.",
+                                    "Confirme que o guia não trata New Game+ como obrigatório.",
+                                    "Revise se todos os cards têm nome inglês principal e PT-BR abaixo quando confirmado."
+                          ],
+                          "warning": "",
+                          "result": "Todos os requisitos da platina base concluídos."
+                }
       ],
       "trophies": [
             {
@@ -28669,7 +29120,7 @@ const sampleGames = [
                   "id": "clair_obscur_expedition_33_trailbreaker",
                   "name": "Trailbreaker",
                   "type": "Bronze",
-                  "description": "Reach level 66.",
+                  "description": "Alcance o nível 66.",
                   "tip": "Deve vir perto do final da campanha ou durante conteúdos opcionais.",
                   "is_missable": false,
                   "is_spoiler": false
@@ -31047,6 +31498,152 @@ const nioh2TrustedSteamPtBrById = {
   nioh2_peal_ten_thousand_bells: { name_pt: "Repique de Dez Mil Sinos", descriptionOriginal: "Rang all the bells in \"Ruin Draws Near\".", descriptionPtBr: "Tocou todos os sinos em \"A Destruição se Avizinha\"." }
 };
 
+const detroitTrophyEditorialRows = [
+  ['DETROIT MASTER', 'detroit-master', 'MESTRE DE DETROIT', 'Colete todos os troféus.', 'Conclua os 48 troféus restantes da lista base. A platina não exige online, coop, DLC nem dificuldade específica.', false, false, ['platina']],
+  ['THANK YOU', 'detroit-thank-you', 'OBRIGADO', 'Jogue o primeiro capítulo.', 'Troféu de história por concluir The Hostage. Não é perdível.', false, false, ['história']],
+  ['MISSION ACCOMPLISHED', 'detroit-mission-accomplished', 'MISSÃO CUMPRIDA', 'Connor salvou Emma.', 'Em The Hostage, investigue bem a cena e conduza a negociação para salvar Emma.', true, true, ['perdível', 'capítulo', 'escolha']],
+  ['SECRETS', 'detroit-secrets', 'SEGREDOS', 'Kara descobriu o conteúdo da caixa de Alice.', 'Em A New Home, melhore a relação com Alice, receba a chave e abra a caixa dela antes de encerrar o capítulo.', true, true, ['perdível', 'capítulo', 'Kara']],
+  ['DEVIANT LOCATED', 'detroit-deviant-located', 'DIVERGENTE LOCALIZADO', 'Connor encontrou o divergente no sótão.', 'Em Partners, investigue as pistas do crime e localize o divergente no sótão.', true, true, ['perdível', 'capítulo', 'Connor']],
+  ['WE ARE FREE', 'detroit-we-are-free', 'ESTAMOS LIVRES', 'Kara e Alice escaparam da casa de Todd.', 'Em Stormy Night, desobedeça Todd, chegue até Alice e fuja da casa com as duas vivas.', true, true, ['perdível', 'capítulo', 'Kara']],
+  ['DEFEND YOURSELF', 'detroit-defend-yourself', 'LEGÍTIMA DEFESA', 'Markus empurrou Leo.', 'Em Broken, escolha empurrar Leo. É uma escolha oposta a SELF-CONTROL.', true, true, ['perdível', 'capítulo', 'escolha']],
+  ['SELF-CONTROL', 'detroit-self-control', 'AUTOCONTROLE', 'Markus deixou Leo vencer.', 'Em Broken, não revide contra Leo. Use Chapter Select se precisar do troféu oposto.', true, true, ['perdível', 'capítulo', 'escolha']],
+  ['CONFESSION', 'detroit-confession', 'CONFISSÃO', 'Connor fez o androide confessar.', 'Em The Interrogation, controle o estresse do androide e conduza o interrogatório até a confissão.', true, true, ['perdível', 'capítulo', 'Connor']],
+  ['SHELTER', 'detroit-shelter', 'ABRIGO', 'Kara e Alice dormiram no motel ou no prédio abandonado.', 'Em Fugitives, consiga dinheiro/roupas para o motel ou entre no squat e passe a noite em segurança.', true, true, ['perdível', 'capítulo', 'Kara']],
+  ['KNOW YOUR PARTNER', 'detroit-know-your-partner', 'CONHEÇA SEU PARCEIRO', 'Connor encontrou todas as pistas sobre Hank.', 'Em Waiting for Hank..., investigue todos os itens na mesa de Hank antes de falar com ele.', true, false, ['perdível', 'capítulo', 'Connor', 'Hank']],
+  ['RUN KARA RUN', 'detroit-run-kara-run', 'CORRA, KARA!', 'Kara e Alice escaparam da polícia.', 'Em On the Run, vença a perseguição e mantenha Kara e Alice vivas.', true, true, ['perdível', 'capítulo', 'Kara']],
+  ['CATCH IT', 'detroit-catch-it', 'CAPTURE', 'Connor alcançou Rupert.', 'Em The Nest, escolha continuar perseguindo Rupert em vez de salvar Hank.', true, true, ['perdível', 'capítulo', 'Connor']],
+  ['SAVE HANK', 'detroit-save-hank', 'SALVE O HANK', 'Connor salvou Hank.', 'Em The Nest, escolha salvar Hank no fim da perseguição. Isso ajuda a relação com ele.', true, true, ['perdível', 'capítulo', 'Connor', 'Hank']],
+  ['ESCAPE THE MANOR', 'detroit-escape-the-manor', 'FUGA DA CASA', 'Kara e Alice escaparam da casa de Zlatko.', 'Em Zlatko, encontre Alice, evite ser capturada de vez e fuja da mansão.', true, true, ['perdível', 'capítulo', 'Kara']],
+  ['RUTHLESS', 'detroit-ruthless', 'IMPLACÁVEL', 'As Tracis foram mortas.', 'Em The Eden Club, encontre as Tracis e escolha matá-las.', true, true, ['perdível', 'capítulo', 'Connor']],
+  ['DOUBTS', 'detroit-doubts', 'DÚVIDAS', 'As Tracis escaparam.', 'Em The Eden Club, encontre as Tracis e escolha poupá-las.', true, true, ['perdível', 'capítulo', 'Connor']],
+  ["JERICHO'S HERO", 'detroit-jerichos-hero', 'HERÓI DE JERICHO', 'Markus conseguiu peças suficientes.', 'Em Spare Parts, colete peças suficientes para Jericho e escape sem falhar o objetivo.', true, true, ['perdível', 'capítulo', 'Markus']],
+  ['JUST A MACHINE', 'detroit-just-a-machine', 'É SÓ UMA MÁQUINA', 'Hank matou Connor.', 'No capítulo The Bridge, Connor precisa estar com Hank hostil. Combine com a rota de I’LL BE BACK.', true, true, ['perdível', 'Connor', 'Hank', 'rota']],
+  ['A SMILE ON HER FACE', 'detroit-a-smile-on-her-face', 'SORRISO NO ROSTO', 'Alice se divertiu no carrossel.', 'Em The Pirates’ Cove, avance a cena do parque com Kara e Alice vivas.', true, true, ['perdível', 'capítulo', 'Kara']],
+  ['WHEN A PLAN COMES TOGETHER', 'detroit-plan-comes-together', 'QUANDO O PLANO DÁ CERTO', 'Markus transmitiu sua mensagem sem disparar alarme nem perder alguém da equipe.', 'Em The Stratford Tower, execute a infiltração sem alarme e sem baixa na equipe.', true, true, ['perdível', 'capítulo', 'Markus']],
+  ['A GLIMPSE OF JERICHO', 'detroit-a-glimpse-of-jericho', 'VISLUMBRE JERICHO', 'Connor se conectou a Simon.', 'Prepare Simon ferido/abandonado em The Stratford Tower e investigue-o depois em Public Enemy.', true, true, ['perdível', 'Connor', 'investigação']],
+  ['SEND A MESSAGE', 'detroit-send-a-message', 'DÊ O RECADO', 'Markus conduziu um motim pacifista.', 'Em Capitol Park, mantenha a rota pacífica e poupe os policiais.', true, true, ['perdível', 'Markus', 'pacífico']],
+  ['BURN THE PLACE', 'detroit-burn-the-place', 'QUEIMEM TUDO', 'Markus conduziu um motim violento.', 'Em Capitol Park, siga a rota violenta e escolha ações agressivas.', true, true, ['perdível', 'Markus', 'violento']],
+  ['NOTHING TO SEE HERE', 'detroit-nothing-to-see-here', 'NÃO TEM NADA AQUI', 'Kara conseguiu fazer o policial ir embora.', 'Em Midnight Train, esconda evidências e responda ao policial sem levantar suspeita.', true, true, ['perdível', 'capítulo', 'Kara']],
+  ['CONFRONTATION', 'detroit-confrontation', 'CONFRONTO', 'Markus atacou a polícia.', 'Em Freedom March, escolha atacar a polícia e vença o confronto.', true, true, ['perdível', 'Markus', 'capítulo']],
+  ['STAND YOUR GROUND', 'detroit-stand-your-ground', 'RESISTIR É PRECISO', 'Markus resistiu diante da polícia.', 'Em Freedom March, escolha resistir. Use com cuidado porque a consequência pode afetar a rota.', true, true, ['perdível', 'Markus', 'capítulo']],
+  ['PRIORITIES', 'detroit-priorities', 'PRIORIDADES', 'Connor matou Chloe.', 'Em Meet Kamski, escolha atirar em Chloe.', true, true, ['perdível', 'Connor', 'escolha']],
+  ['KINSHIP', 'detroit-kinship', 'EMPATIA', 'Connor se recusou a matar Chloe.', 'Em Meet Kamski, recuse atirar em Chloe.', true, true, ['perdível', 'Connor', 'escolha']],
+  ['BLOODHOUND', 'detroit-bloodhound', 'CÃO DE CAÇA', 'Connor descobriu sozinho a localização de Jericho.', 'Em Last Chance, Connor, use evidências suficientes para descobrir Jericho sem depender de Kamski.', true, true, ['perdível', 'Connor', 'investigação']],
+  ['THREE AT JERICHO', 'detroit-three-at-jericho', 'OS TRÊS DE JERICHO', 'Leve os três personagens até Crossroads.', 'Faça Connor, Markus e Kara chegarem vivos ao capítulo Crossroads.', true, true, ['perdível', 'rota', 'história', 'spoiler']],
+  ['SCORCHED EARTH', 'detroit-scorched-earth', 'TERRA ARRASADA', 'Markus ou Connor detonou o cargueiro.', 'Em Crossroads, detone Jericho/cargueiro com Markus ou Connor.', true, true, ['perdível', 'Markus', 'final', 'spoiler']],
+  ['LIBERATION', 'detroit-liberation', 'LIBERDADE', 'Markus chegou ao acampamento e libertou os androides.', 'Em Battle for Detroit, siga a rota de revolução com Markus até libertar os androides.', true, true, ['perdível', 'Markus', 'final']],
+  ['MORAL VICTORY', 'detroit-moral-victory', 'VITÓRIA MORAL', 'Markus fez os soldados recuarem.', 'Siga uma rota pacífica, mantenha boa opinião pública e escolha demonstração no final.', true, true, ['perdível', 'Markus', 'pacífico', 'final']],
+  ['ESCAPE DEATH', 'detroit-escape-death', 'EVASÃO DA MORTE', 'Kara e Alice escaparam do centro de reciclagem.', 'No final de Kara capturada, escape do centro de desativação com Alice.', true, true, ['perdível', 'Kara', 'final']],
+  ['SAFE HARBOR', 'detroit-safe-harbor', 'PORTO SEGURO', 'Kara e Alice passaram pela fronteira.', 'Leve Kara e Alice até a fronteira e atravesse com sucesso.', true, true, ['perdível', 'Kara', 'final']],
+  ['AN ARMY OF ME', 'detroit-an-army-of-me', 'UM EXÉRCITO DE MIM', 'Connor converteu os androides.', 'Com Connor divergente, conclua CyberLife Tower e converta os androides.', true, true, ['perdível', 'Connor', 'final']],
+  ['MISSION COMPLETE', 'detroit-mission-complete', 'MISSÃO COMPLETA', 'Connor matou o líder dos divergentes.', 'No final, mantenha Connor como máquina ou na rota adequada para cumprir a missão contra o líder divergente.', true, true, ['perdível', 'Connor', 'final']],
+  ['MY TURN TO DECIDE', 'detroit-my-turn-to-decide', 'MINHA VEZ DE DECIDIR', 'Connor resistiu à tentativa de hack da CyberLife.', 'No final com Connor divergente, encontre o ponto de saída no jardim de Amanda e resista ao controle.', true, true, ['perdível', 'Connor', 'final']],
+  ['COMPLIANT', 'detroit-compliant', 'OBEDIENTE', 'Connor continuou sendo uma máquina.', 'Em Crossroads, escolha permanecer máquina.', true, true, ['perdível', 'Connor', 'máquina']],
+  ['ONE OF US', 'detroit-one-of-us', 'UM DE NÓS', 'Connor se tornou divergente.', 'Em Crossroads, tenha instabilidade suficiente e escolha tornar Connor divergente.', true, true, ['perdível', 'Connor', 'divergente']],
+  ['UNDEFEATED', 'detroit-undefeated', 'INCÓLUME', 'Não perca nenhuma luta até chegar ao fim.', 'Jogue no Casual e reinicie checkpoints se falhar QTEs importantes. O troféu depende de manter vitórias até o final.', true, true, ['perdível', 'QTE', 'combate', 'atenção']],
+  ['BOOKWORM', 'detroit-bookworm', 'LEITOR ASSÍDUO', 'Encontre todas as revistas do jogo.', 'Colete as 46 revistas/magazines. Muitas dependem de escolhas anteriores, então use o flowchart e replays com continuidade.', true, false, ['perdível', 'coletáveis', 'revistas', 'atenção']],
+  ['PARTNERS', 'detroit-partners', 'PARCEIROS', 'Hank e Connor foram amigos até o fim.', 'Salve Hank, faça escolhas empáticas com Connor e mantenha a relação positiva até o final.', true, true, ['perdível', 'Connor', 'Hank', 'relacionamento']],
+  ['HAPPY FAMILY', 'detroit-happy-family', 'FAMÍLIA FELIZ', 'Kara, Alice e Luther ficaram juntos no final.', 'Mantenha Kara, Alice e Luther vivos e juntos até o final.', true, true, ['perdível', 'Kara', 'final']],
+  ['I’LL BE BACK', 'detroit-ill-be-back', 'EU VOLTAREI', 'Connor morreu e retornou em todas as oportunidades antes de chegar ao fim.', 'Faça uma rota dedicada em que Connor morre em todas as oportunidades necessárias. A continuidade da rota importa.', true, true, ['perdível', 'Connor', 'rota', 'atenção', 'spoiler']],
+  ['THIS IS MY STORY', 'detroit-this-is-my-story', 'ESSA É A MINHA HISTÓRIA', 'Termine o jogo uma vez.', 'Complete qualquer rota da campanha. Não é perdível.', false, true, ['história']],
+  ['THESE ARE OUR STORIES', 'detroit-these-are-our-stories', 'ESSAS SÃO AS NOSSAS HISTÓRIAS', 'Gaste 20.000 pontos de bônus.', 'Gaste pontos de bônus no menu Extras. Replays e caminhos novos ajudam a acumular pontos suficientes.', true, false, ['perdível', 'extras', 'pontos de bônus', 'grind']],
+  ['SURVIVORS', 'detroit-survivors', 'SOBREVIVENTES', 'Todos estão vivos no final.', 'Mantenha vivos Connor, Hank, Kara, Alice, Luther, Jerry, Markus, Simon, North e Josh até o final.', true, true, ['perdível', 'rota', 'final', 'atenção', 'spoiler']]
+];
+
+function normalizeDetroitTrophyKey(value = '') {
+  return String(value || '')
+    .normalize('NFD')
+    .replace(/[\u0300-\u036f]/g, '')
+    .replace(/[’']/g, '')
+    .replace(/[“”"'.!,;:()]/g, '')
+    .replace(/\s+/g, ' ')
+    .trim()
+    .toLowerCase();
+}
+
+const detroitTrophyEditorialByName = Object.fromEntries(
+  detroitTrophyEditorialRows.map(([name, id, namePt, descriptionPtBr, tip, isMissable, isSpoiler, tags]) => [
+    normalizeDetroitTrophyKey(name),
+    { name, id, namePt, descriptionPtBr, tip, isMissable, isSpoiler, tags }
+  ])
+);
+
+const clairObscurTrophyEditorialRows = [
+  ['The Greatest Expedition in History', 'clair-obscur-greatest-expedition', 'A Maior Expedição da História', 'Obtenha todos os troféus.', 'Conclua os 55 troféus restantes da lista base PS5. A platina não exige online, coop, DLC, New Game+ ou dificuldade específica.', false, false, ['platina']],
+  ['Lumière', 'clair-obscur-lumiere', 'Lumière', 'Embarque na Expedição.', 'Troféu de história do prólogo, liberado ao iniciar a expedição.', false, false, ['história']],
+  ['Spring Meadows', 'clair-obscur-spring-meadows', 'Prados Primaveris', 'Encontre seu caminho por Spring Meadows.', 'Troféu de história; avance pela área principal normalmente.', false, false, ['história']],
+  ['Flying Waters', 'clair-obscur-flying-waters', 'Águas Flutuantes', 'Encontre seu caminho por Flying Waters.', 'Troféu de história; conclua a área durante a campanha.', false, false, ['história']],
+  ['Ancient Sanctuary', 'clair-obscur-ancient-sanctuary', 'Santuário Ancestral', 'Encontre seu caminho por Ancient Sanctuary.', 'Troféu de história; explore a área e avance até a próxima região.', false, false, ['história']],
+  ['Gestral Village', 'clair-obscur-gestral-village', 'Vilarejo Gestral', 'Encontre seu caminho por Gestral Village.', 'Troféu de história ligado à chegada e progressão no Vilarejo Gestral.', false, false, ['história']],
+  ["Esquie's Nest", 'clair-obscur-esquies-nest', 'Berço de Esquie', "Encontre seu caminho por Esquie's Nest.", 'Troféu de história; avance até concluir a sequência de Esquie.', false, false, ['história']],
+  ['Stone Wave Cliffs', 'clair-obscur-stone-wave-cliffs', 'Falésias Quebraondas', 'Encontre seu caminho por Stone Wave Cliffs.', 'Troféu de história; conclua a área principal.', false, false, ['história']],
+  ['Forgotten Battlefield', 'clair-obscur-forgotten-battlefield', 'Campo de Batalha Esquecido', 'Encontre seu caminho por Forgotten Battlefield.', 'Troféu de história; siga a campanha até sair do campo de batalha.', false, false, ['história']],
+  ["Monoco's Station", 'clair-obscur-monocos-station', 'Estação de Monoco', "Encontre seu caminho por Monoco's Station.", 'Troféu de história ligado à progressão pela estação.', false, false, ['história']],
+  ['Old Lumière', 'clair-obscur-old-lumiere', 'Velha Lumière', 'Encontre seu caminho por Old Lumière.', 'Troféu de história; avance pela região sem tratá-lo como perdível.', false, false, ['história']],
+  ['First Axon', 'clair-obscur-first-axon', 'O Primeiro Axon', 'Derrote o Primeiro Axon.', 'Troféu de história com spoiler de chefe; avance a campanha normalmente.', false, true, ['história', 'spoiler']],
+  ['Second Axon', 'clair-obscur-second-axon', 'O Segundo Axon', 'Derrote o Segundo Axon.', 'Troféu de história com spoiler de chefe; avance a campanha normalmente.', false, true, ['história', 'spoiler']],
+  ['Monolith', 'clair-obscur-monolith', 'Monólito', 'Chegue ao Monólito.', 'Troféu de história da reta final; não depende de dificuldade.', false, true, ['história', 'spoiler']],
+  ['Paintress', 'clair-obscur-paintress', 'Artífice', 'Derrote a Artífice.', 'Troféu de história com spoiler; prepare o grupo e siga a campanha.', false, true, ['história', 'spoiler']],
+  ['Back to Lumière', 'clair-obscur-back-to-lumiere', 'Retorno a Lumière', 'Retorne a Lumière.', 'Troféu de história da reta final.', false, true, ['história', 'spoiler']],
+  ['The End', 'clair-obscur-the-end', 'O Fim', 'Chegue ao fim.', 'Troféu de história por concluir a campanha. Depois, carregue o save para retornar à Expedition Flag antes do chefe final e fazer cleanup.', false, true, ['história', 'spoiler']],
+  ['Plane, Train, and Submarine', 'clair-obscur-plane-train-submarine', 'Avião, Trem e Submarino', 'Descubra todas as habilidades de Esquie.', 'Continue a história e avance o relacionamento de Esquie para liberar as habilidades de travessia necessárias.', false, false, ['exploração', 'Esquie']],
+  ['Follow The Trail', 'clair_obscur_expedition_33_follow_the_trail', 'Siga a Trilha', 'Encontre todos os diários das expedições anteriores.', 'Perdível/sensível: controle o Old Key e os diários desde o prólogo para não perder o journal relacionado.', true, false, ['perdível', 'coletáveis', 'diários']],
+  ['Aiding the Enemy', 'clair-obscur-aiding-the-enemy', 'Aminimigos', 'Conclua todas as missões dos Nevrons.', 'Complete as missões dos Nevrons brancos e volte a falar com eles até esgotar recompensas e diálogos.', false, false, ['side quests', 'Nevrons']],
+  ['Peace At Last', 'clair-obscur-peace-at-last', 'Finalmente, a Paz.', 'Derrote Simon.', 'Chefe opcional de endgame e um dos maiores testes da platina. Deixe para quando estiver com builds, armas, Pictos e Luminas fortes.', false, true, ['chefe', 'endgame', 'atenção']],
+  ['Gestral Games', 'clair-obscur-gestral-games', 'Gestrolimpíadas', 'Vença todos os jogos Gestrais.', 'Complete todos os minigames Gestrais. Eles exigem atenção, mas não são troféus online.', false, false, ['minigames', 'atenção']],
+  ['Clea', 'clair-obscur-clea', 'Clea', 'Derrote Clea.', 'Chefe opcional de endgame; volte com grupo fortalecido se a luta estiver travando.', false, true, ['chefe', 'endgame']],
+  ['“Endless”', 'clair-obscur-endless', 'Eterna', 'Chegue ao topo da Endless Tower.', 'Complete a Torre Eterna. Deixe para o endgame, quando sua composição já estiver estável.', false, false, ['desafio', 'Torre Eterna']],
+  ['Lost Gestrals', 'clair-obscur-lost-gestrals', 'Gestrais Perdidos', 'Encontre todos os Gestrais perdidos.', 'Use as habilidades de Esquie para revisitar o mapa e encontrar todos os Gestrais perdidos.', false, false, ['coletáveis', 'Gestrais']],
+  ['À On', 'clair-obscur-a-on', 'À On', 'Derrote Serpenphare.', 'Chefe opcional; enfrente no endgame se ainda faltar dano ou sobrevivência.', false, true, ['chefe', 'endgame']],
+  ['Sprong', 'clair-obscur-sprong', 'Sprong', 'Derrote Sprong.', 'Chefe opcional; ajuste build e volte mais tarde se necessário.', false, true, ['chefe', 'endgame']],
+  ['Noir et Blanc', 'clair-obscur-noir-et-blanc', 'Noir et Blanc', 'Resolva o mistério da Painting Workshop.', 'Explore a Painting Workshop e resolva a sequência necessária para concluir o mistério.', false, false, ['exploração', 'mistério']],
+  ['Sciel', 'clair-obscur-sciel', 'Sciel', 'Alcance o nível 7 de relacionamento com Sciel.', 'Assista às interações de acampamento de Sciel conforme forem liberadas.', false, false, ['relacionamento']],
+  ['Monoco', 'clair-obscur-monoco', 'Monoco', 'Alcance o nível 7 de relacionamento com Monoco.', 'Avance as conversas e cenas de Monoco no acampamento até o nível 7.', false, false, ['relacionamento']],
+  ['Maelle', 'clair_obscur_expedition_33_maelle', 'Maelle', 'Alcance o nível 7 de relacionamento com Maelle.', 'Perdível/sensível: acompanhe as interações de Maelle e a escolha Truth de relacionamento antes de avançar demais na campanha.', true, true, ['perdível', 'relacionamento', 'spoiler']],
+  ['Lune', 'clair-obscur-lune', 'Lune', 'Alcance o nível 7 de relacionamento com Lune.', 'Complete as interações de Lune no acampamento até o nível 7.', false, false, ['relacionamento']],
+  ['Esquie', 'clair-obscur-esquie', 'Esquie', 'Alcance o nível 7 de relacionamento com Esquie.', 'Avance o relacionamento de Esquie; isso também ajuda a liberar travessias importantes.', false, false, ['relacionamento', 'Esquie']],
+  ['Weapon Upgrade', 'clair-obscur-weapon-upgrade', 'Aprimoramento de Arma', 'Aprimore uma arma uma vez.', 'Use materiais para melhorar qualquer arma pela primeira vez.', false, false, ['progressão', 'armas']],
+  ['Weapon Mastery', 'clair-obscur-weapon-mastery', 'Maestria Bélica', 'Aprimore totalmente uma arma.', 'Escolha uma arma principal e concentre materiais raros nela até o nível máximo.', false, false, ['progressão', 'armas']],
+  ['Lumina', 'clair-obscur-lumina', 'Lumina', 'Consuma um ponto de Lumina.', 'Use um ponto de Lumina em qualquer personagem.', false, false, ['progressão', 'Lumina']],
+  ['Expeditioner', 'clair-obscur-expeditioner', 'Expedicionário', 'Alcance o nível 33.', 'Virá naturalmente durante a campanha se você enfrentar encontros e chefes opcionais.', false, false, ['progressão']],
+  ['Trailbreaker', 'clair-obscur-trailbreaker', 'Desbravador', 'Alcance o nível 66.', 'Normalmente vem perto do fim da campanha ou durante o conteúdo opcional.', false, false, ['progressão']],
+  ['Survivor', 'clair-obscur-survivor', 'Sobrevivente', 'Alcance o nível 99.', 'Grind de endgame; deixe para depois de chefes opcionais, Torre Eterna e cleanup principal.', false, false, ['grind', 'nível 99']],
+  ['Overcharge', 'clair-obscur-overcharge', 'Sobrecarga', 'Com Gustave, use um Overcharge totalmente carregado que quebre um inimigo.', 'Carregue Overcharge ao máximo e use contra um inimigo com barra de Break preparada.', false, false, ['combate', 'Gustave']],
+  ['Perfect Flow', 'clair-obscur-perfect-flow', 'Fluxo Perfeito', 'Com Lune, consuma Stains por 4 turnos seguidos.', 'Monte uma rotação de Lune que gere e consuma Stains em sequência.', false, false, ['combate', 'Lune']],
+  ['Synergy', 'clair-obscur-synergy', 'Sinergia', 'Com Maelle, use Percée em um inimigo marcado enquanto estiver em Virtuose Stance.', 'Marque o alvo, entre em Virtuose Stance e use Percée com Maelle.', false, false, ['combate', 'Maelle']],
+  ['Maximisation', 'clair-obscur-maximisation', 'Cruz Celta', 'Com Sciel, consuma 20 Foretell em um único alvo durante Twilight.', 'Acumule Foretell em um alvo e consuma 20 durante Twilight.', false, false, ['combate', 'Sciel']],
+  ['Perfection', 'clair-obscur-perfection', 'Perfeição', 'Com Verso, alcance Rank S.', 'Use Verso evitando dano e mantendo boa sequência de ações até chegar ao Rank S.', false, false, ['combate', 'Verso']],
+  ['Wheel Control', 'clair-obscur-wheel-control', 'Controle Bestial', 'Com Monoco, lance uma habilidade aprimorada por 4 turnos seguidos.', 'Prepare AP e rotação para usar habilidades aprimoradas de Monoco em sequência.', false, false, ['combate', 'Monoco']],
+  ['Carreau Parfait', 'clair-obscur-carreau-parfait', 'Carreau Parfait', 'Derrote o Chromatic Pétank.', 'Chefe opcional; impeça fugas e use dano alto para encerrar a luta com segurança.', false, true, ['chefe', 'endgame']],
+  ['Feet Collection', 'clair-obscur-feet-collection', 'Podolatria', 'Adquira todas as habilidades de Monoco.', 'Derrote os inimigos necessários com Monoco disponível para aprender todas as habilidades.', false, false, ['Monoco', 'habilidades']],
+  ['Expedition 33', 'clair-obscur-expedition-33-trophy', 'Expedição 33', 'Desbloqueie todos os personagens jogáveis.', 'Troféu de história por reunir o grupo jogável completo.', false, false, ['história']],
+  ['Chroma Proficiency', 'clair-obscur-chroma-proficiency', 'Proficiente em Chroma', 'Use um Gradient Attack de nível 3.', 'Carregue a barra até o nível 3 e use o Gradient Attack em uma luta longa.', false, false, ['combate', 'Gradient Attack']],
+  ['Connoisseur', 'clair_obscur_expedition_33_connoisseur', 'Connoisseur', 'Encontre todas as 33 canções.', 'Perdível/sensível: acompanhe as 33 canções e interações desde cedo, especialmente as que podem depender de progresso de campanha.', true, false, ['perdível', 'coletáveis', 'canções']],
+  ['Paint Cage', 'clair-obscur-paint-cage', 'Prisão Cromática', 'Quebre uma Paint Cage.', 'Encontre uma Paint Cage e destrua os nós de tinta relacionados para abri-la.', false, false, ['exploração', 'coletável']],
+  ['Time to Spill Some Ink', 'clair-obscur-time-to-spill-ink', 'Derramamento de Tintas', 'Quebre um inimigo.', 'Encha a barra de Break de um inimigo e use uma habilidade para quebrá-lo.', false, false, ['combate', 'Break']],
+  ['Professional', 'clair_obscur_expedition_33_professional', 'Profissional', 'Derrote um chefe sem tomar dano.', 'Perdível/sensível: deixe um chefe controlável para voltar mais tarde, ou garanta o troféu antes de eliminar todos os chefes disponíveis.', true, false, ['perdível', 'combate', 'atenção']],
+  ['Curious', 'clair-obscur-curious', 'Curiosidade', 'Veja uma cena opcional no acampamento.', 'Interaja no acampamento quando cenas opcionais aparecerem. Não entra na contagem conservadora de 5 perdíveis.', false, false, ['acampamento', 'cena opcional']],
+  ['Legend', 'clair-obscur-legend', 'Lenda Viva', 'Desbloqueie Esquie.', 'Troféu de história por liberar Esquie.', false, false, ['história', 'Esquie']],
+  ['A Peculiar Encounter', 'clair_obscur_expedition_33_a_peculiar_encounter', 'Um Encontro Peculiar', 'Derrote o mímico em Lumière.', 'Perdível/sensível: derrote o mímico específico de Lumière durante o prólogo antes de avançar a campanha.', true, false, ['perdível', 'prólogo', 'mímico']]
+];
+
+function normalizeClairObscurTrophyKey(value = '') {
+  return String(value || '')
+    .normalize('NFD')
+    .replace(/[\u0300-\u036f]/g, '')
+    .replace(/[“”"'.!,;:()]/g, '')
+    .replace(/\s+/g, ' ')
+    .trim()
+    .toLowerCase();
+}
+
+const clairObscurTrophyEditorialByName = Object.fromEntries(
+  clairObscurTrophyEditorialRows.map(([name, id, namePt, descriptionPtBr, tip, isMissable, isSpoiler, tags]) => [
+    normalizeClairObscurTrophyKey(name),
+    { name, id, namePt, descriptionPtBr, tip, isMissable, isSpoiler, tags }
+  ])
+);
+
 const nioh2TagsById = {
   nioh2_you_are_nioh: ["platina"],
   nioh2_samurai_of_legend: ["missão", "cleanup"],
@@ -31726,6 +32323,75 @@ for (const game of sampleGames) {
     }
     if (trophyNamePtById[trophy.id]) {
       trophy.name_pt = trophyNamePtById[trophy.id];
+    }
+    if (game.slug === 'detroit-become-human') {
+      const editorial = detroitTrophyEditorialByName[normalizeDetroitTrophyKey(trophy.name)];
+      if (editorial) {
+        trophy.id = editorial.id;
+        trophy.name = editorial.name;
+        trophy.trophyNameOriginal = editorial.name;
+        trophy.officialName = editorial.name;
+        trophy.originalName = editorial.name;
+        trophy.name_pt = editorial.namePt;
+        trophy.trophyNamePtBr = editorial.namePt;
+        trophy.localizedNamePtBr = editorial.namePt;
+        trophy.namePtSource = 'trusted_ptbr_reference';
+        trophy.descriptionOriginal = trophy.descriptionOriginal || trophy.description || '';
+        trophy.description = editorial.descriptionPtBr;
+        trophy.descriptionPtBr = editorial.descriptionPtBr;
+        trophy.ptDescription = editorial.descriptionPtBr;
+        trophy.localizedDescription = { ...(trophy.localizedDescription || {}), ptBr: editorial.descriptionPtBr, 'pt-BR': editorial.descriptionPtBr };
+        trophy.descriptionPtSource = 'editorial_ptbr';
+        trophy.tip = editorial.tip;
+        trophy.guideTip = editorial.tip;
+        trophy.tier = trophy.type;
+        trophy.is_missable = Boolean(editorial.isMissable);
+        trophy.isMissable = Boolean(editorial.isMissable);
+        trophy.is_spoiler = Boolean(editorial.isSpoiler);
+        trophy.isSpoiler = Boolean(editorial.isSpoiler);
+        trophy.is_online = false;
+        trophy.isOnline = false;
+        trophy.is_coop = false;
+        trophy.isCoop = false;
+        trophy.is_dlc = false;
+        trophy.isDlc = false;
+        trophy.tags = [...new Set(editorial.tags || [])];
+      }
+    }
+    if (game.slug === 'clair-obscur-expedition-33') {
+      const editorial = clairObscurTrophyEditorialByName[normalizeClairObscurTrophyKey(trophy.name)];
+      if (editorial) {
+        trophy.id = editorial.id;
+        trophy.name = editorial.name;
+        trophy.trophyNameOriginal = editorial.name;
+        trophy.officialName = editorial.name;
+        trophy.originalName = editorial.name;
+        trophy.name_pt = editorial.namePt;
+        trophy.trophyNamePtBr = editorial.namePt;
+        trophy.localizedNamePtBr = editorial.namePt;
+        trophy.namePtSource = 'trusted_ptbr_reference';
+        trophy.descriptionOriginal = trophy.descriptionOriginal || trophy.description || '';
+        trophy.description = editorial.descriptionPtBr;
+        trophy.descriptionPtBr = editorial.descriptionPtBr;
+        trophy.ptDescription = editorial.descriptionPtBr;
+        trophy.localizedDescription = { ...(trophy.localizedDescription || {}), ptBr: editorial.descriptionPtBr, 'pt-BR': editorial.descriptionPtBr };
+        trophy.descriptionPtSource = 'editorial_ptbr';
+        trophy.tip = editorial.tip;
+        trophy.guideTip = editorial.tip;
+        trophy.type = trophy.type;
+        trophy.tier = trophy.type;
+        trophy.is_missable = Boolean(editorial.isMissable);
+        trophy.isMissable = Boolean(editorial.isMissable);
+        trophy.is_spoiler = Boolean(editorial.isSpoiler);
+        trophy.isSpoiler = Boolean(editorial.isSpoiler);
+        trophy.is_online = false;
+        trophy.isOnline = false;
+        trophy.is_coop = false;
+        trophy.isCoop = false;
+        trophy.is_dlc = false;
+        trophy.isDlc = false;
+        trophy.tags = [...new Set(editorial.tags || [])];
+      }
     }
     if (game.slug === 'nioh-2') {
       const steamPtBr = nioh2TrustedSteamPtBrById[trophy.id];

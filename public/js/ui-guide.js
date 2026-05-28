@@ -369,7 +369,7 @@ window.UIGuide = (() => {
   }
 
   function shouldUseOfficialTrophyNameFirst(game = {}) {
-    return ['death-stranding', 'death-stranding-2-on-the-beach', 'marvels-spider-man-2', 'marvels-spider-man-miles-morales', 'red-dead-redemption-2'].includes(String(game?.slug || '').trim().toLowerCase());
+    return ['clair-obscur-expedition-33', 'death-stranding', 'death-stranding-2-on-the-beach', 'detroit-become-human', 'marvels-spider-man-2', 'marvels-spider-man-miles-morales', 'red-dead-redemption-2'].includes(String(game?.slug || '').trim().toLowerCase());
   }
 
   function looksLikeEnglishTrophyDescription(value = '') {
@@ -404,7 +404,7 @@ window.UIGuide = (() => {
     const description = cleanTrophyDescriptionCandidate(trophy.description);
     if (description && looksLikePortugueseTrophyDescription(description) && !looksLikeEnglishTrophyDescription(description)) return description;
     if (description && looksLikePortugueseTrophyDescription(description)) return description;
-    return 'Descrição em revisão editorial.';
+    return 'Descrição não informada.';
   }
 
   function buildGuideHeroStats(game = {}, viewModel = {}) {
@@ -790,10 +790,10 @@ window.UIGuide = (() => {
     return `
       <section id="guideSummaryActions" class="atlas-panel atlas-panel--section atlas-guide-summary-actions p-5 md:p-6">
         <div>
-          <div class="atlas-eyebrow">Plano rapido</div>
-          <h2 class="text-xl md:text-2xl font-extrabold tracking-tight mt-2">Resumo da platina</h2>
+          <div class="atlas-eyebrow">Plano rápido</div>
           <p class="text-white/62 mt-2 max-w-3xl">${escapeHtml(nextAction.detail || 'Leia o resumo, abra o roadmap quando precisar da ordem completa e use a checklist para acompanhar progresso.')}</p>
-          ${editorialParagraphs.length ? `<div class="atlas-guide-summary-editorial mt-4 space-y-3">${editorialParagraphs.map(paragraph => `<p class="text-white/72 max-w-4xl">${escapeHtml(paragraph)}</p>`).join('')}</div>` : ''}
+          <h2 class="text-xl md:text-2xl font-extrabold tracking-tight mt-5">Resumo da platina</h2>
+          ${editorialParagraphs.length ? `<div class="atlas-guide-summary-editorial mt-3 space-y-3">${editorialParagraphs.map(paragraph => `<p class="text-white/72 max-w-4xl">${escapeHtml(paragraph)}</p>`).join('')}</div>` : ''}
         </div>
         <div class="atlas-guide-summary-actions__buttons">
           <button type="button" class="atlas-btn atlas-btn-primary" data-guide-action="roadmap"><i class="fas fa-route" aria-hidden="true"></i> Abrir roadmap</button>
@@ -854,7 +854,7 @@ window.UIGuide = (() => {
 
   function renderGuideEditorialNotes(game = {}, viewModel = {}) {
     const normalizedSlug = String(game?.slug || '').trim().toLowerCase();
-    const routeTrophyLimit = normalizedSlug === 'red-dead-redemption-2' ? 11 : (normalizedSlug === 'death-stranding-2-on-the-beach' ? 11 : (normalizedSlug === 'death-stranding' ? 9 : (normalizedSlug === 'marvels-spider-man-2' ? 8 : 5)));
+    const routeTrophyLimit = normalizedSlug === 'red-dead-redemption-2' ? 11 : (normalizedSlug === 'death-stranding-2-on-the-beach' ? 11 : (['clair-obscur-expedition-33', 'detroit-become-human'].includes(normalizedSlug) ? 10 : (normalizedSlug === 'death-stranding' ? 9 : (normalizedSlug === 'marvels-spider-man-2' ? 8 : 5))));
     const routeTrophies = Array.isArray(viewModel.routeChangingTrophies) ? viewModel.routeChangingTrophies.slice(0, routeTrophyLimit) : [];
     const faqLimit = normalizedSlug === 'marvels-spider-man-miles-morales' ? 12 : (['nioh-3', 'saros', 'the-last-of-us-part-ii'].includes(normalizedSlug) ? 11 : (['the-last-of-us-part-i', 'subnautica'].includes(normalizedSlug) ? 10 : (['god-of-war-ragnarok', 'resident-evil-2-remake', 'resident-evil-3-remake', 'hollow-knight', 'marvels-spider-man'].includes(normalizedSlug) ? 8 : (normalizedSlug === 'red-dead-redemption-2' ? 7 : 6))));
     const faqItems = Array.isArray(viewModel.contextualFaq) ? viewModel.contextualFaq.slice(0, faqLimit) : [];
@@ -883,7 +883,7 @@ window.UIGuide = (() => {
             <p class="atlas-muted-copy">Riscos, spoilers, runs condicionais e objetivos que merecem acompanhamento durante a platina.</p>
             ${routeTrophies.length ? routeTrophies.map(item => {
               const badge = Array.isArray(item.tags) && item.tags.length ? item.tags[0] : null;
-              return `<article class="atlas-critical-row"><div><strong>${escapeHtml(item.name)}</strong><p>${escapeHtml(item.text)}</p></div><span class="atlas-badge atlas-badge--${escapeAttribute(badge?.tone || 'neutral')}">${escapeHtml(badge?.label || item.type)}</span></article>`;
+              return `<article class="atlas-critical-row"><div><strong>${escapeHtml(item.name)}</strong><p>${escapeHtml(item.text)}</p></div><span class="atlas-badge atlas-badge--${escapeAttribute(badge?.tone || 'neutral')}">${escapeHtml(item.type || badge?.label || '')}</span></article>`;
             }).join('') : '<p class="atlas-muted-copy">Nenhum troféu com risco editorial alto foi detectado nos dados atuais.</p>'}
             </div>
           </details>
