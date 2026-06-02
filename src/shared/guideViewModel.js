@@ -147,7 +147,7 @@
     re3r_nemesis_down: { add: [{ id: 'boss', label: 'Boss', tone: 'warning' }, { id: 'run', label: 'Risco de run', tone: 'warning' }] },
     re3r_nemesis_down_rooftop: { add: [{ id: 'boss', label: 'Boss', tone: 'warning' }, { id: 'spoiler', label: 'Spoiler', tone: 'warning' }] },
     re3r_power_stones: { add: [{ id: 'collectible', label: 'Coletável', tone: 'partial' }] },
-    re3r_unfortunaté_end: { add: [{ id: 'spoiler', label: 'Spoiler', tone: 'warning' }] },
+    re3r_unfortunate_end: { add: [{ id: 'spoiler', label: 'Spoiler', tone: 'warning' }] },
     re3r_jill_valentine: { remove: ['grind', 'cleanup'], add: [{ id: 'difficulty', label: 'Dificuldade', tone: 'warning' }, { id: 'run', label: 'Risco de run', tone: 'warning' }] },
     re3r_electric_slide: { add: [{ id: 'difficulty', label: 'Dificuldade', tone: 'warning' }, { id: 'run', label: 'Risco de run', tone: 'warning' }] },
     re3r_nemesis_stage2: { add: [{ id: 'boss', label: 'Boss', tone: 'warning' }, { id: 'spoiler', label: 'Spoiler', tone: 'warning' }] },
@@ -161,7 +161,7 @@
     re3r_conqueror: { add: [{ id: 'difficulty', label: 'Dificuldade', tone: 'warning' }, { id: 'run', label: 'Risco de run', tone: 'warning' }] },
     re3r_sensational_work: { remove: ['grind'], add: [{ id: 'difficulty', label: 'Dificuldade', tone: 'warning' }, { id: 'run', label: 'Risco de run', tone: 'warning' }] },
     re3r_minimalist: { remove: ['collectible'], add: [{ id: 'difficulty', label: 'Dificuldade', tone: 'warning' }, { id: 'run', label: 'Risco de run', tone: 'warning' }] },
-    re3r_need_these_latér: { remove: ['collectible'], add: [{ id: 'difficulty', label: 'Dificuldade', tone: 'warning' }, { id: 'run', label: 'Risco de run', tone: 'warning' }] },
+    re3r_need_these_later: { remove: ['collectible'], add: [{ id: 'difficulty', label: 'Dificuldade', tone: 'warning' }, { id: 'run', label: 'Risco de run', tone: 'warning' }] },
     re3r_sprinter: { remove: ['grind'], add: [{ id: 'difficulty', label: 'Dificuldade', tone: 'warning' }, { id: 'run', label: 'Risco de run', tone: 'warning' }] }
   };
 
@@ -314,7 +314,76 @@
     return /\bco-?op\b|\bcoop\b|2 jogadores|dois jogadores|segundo jogador|segundo controle|duo mode/.test(text);
   }
 
+  const EDITORIAL_TAG_OVERRIDES = {
+    perdivel: { id: 'missable', label: 'Perdível', tone: 'risk' },
+    coletavel: { id: 'collectible', label: 'Coletável', tone: 'partial' },
+    coletaveis: { id: 'collectible', label: 'Coletáveis', tone: 'partial' },
+    historia: { id: 'story', label: 'História', tone: 'partial' },
+    spoiler: { id: 'spoiler', label: 'Spoiler', tone: 'spoiler' },
+    dificuldade: { id: 'difficulty', label: 'Dificuldade', tone: 'warning' },
+    combate: { id: 'combat', label: 'Combate', tone: 'warning' },
+    atencao: { id: 'attention', label: 'Atenção', tone: 'warning' },
+    diarios: { id: 'diaries', label: 'Diários', tone: 'partial' },
+    cancoes: { id: 'songs', label: 'Canções', tone: 'partial' },
+    prologo: { id: 'prologue', label: 'Prólogo', tone: 'partial' },
+    mimico: { id: 'mime', label: 'Mímico', tone: 'partial' },
+    relacionamento: { id: 'relationship', label: 'Relacionamento', tone: 'partial' },
+    grind: { id: 'grind', label: 'Grind', tone: 'warning' },
+    'nivel 99': { id: 'level-99', label: 'Nível 99', tone: 'warning' },
+    gestrais: { id: 'gestrals', label: 'Gestrais', tone: 'partial' },
+    minigames: { id: 'minigames', label: 'Minigames', tone: 'partial' },
+    desafio: { id: 'challenge', label: 'Desafio', tone: 'warning' },
+    'torre eterna': { id: 'endless-tower', label: 'Torre Eterna', tone: 'warning' },
+    connor: { id: 'connor', label: 'Connor', tone: 'partial' },
+    kara: { id: 'kara', label: 'Kara', tone: 'partial' },
+    hank: { id: 'hank', label: 'Hank', tone: 'partial' },
+    rota: { id: 'routes', label: 'Rota', tone: 'warning' },
+    final: { id: 'final', label: 'Final', tone: 'spoiler' },
+    extras: { id: 'extras', label: 'Extras', tone: 'partial' },
+    'pontos de bonus': { id: 'bonus-points', label: 'Pontos de bônus', tone: 'warning' },
+    qte: { id: 'qte', label: 'QTE', tone: 'warning' },
+    revistas: { id: 'magazines', label: 'Revistas', tone: 'partial' },
+    platina: { id: 'platinum', label: 'Platina', tone: 'neutral' }
+  };
+
+  function toGuideTagLabel(value = '') {
+    return String(value || '')
+      .trim()
+      .split(/\s+/)
+      .map(part => part ? `${part.charAt(0).toUpperCase()}${part.slice(1)}` : '')
+      .join(' ');
+  }
+
+  function normalizeExplicitGuideTag(tag) {
+    const raw = typeof tag === 'string' ? tag : firstGuideText(tag?.label, tag?.id);
+    const normalized = normalizeGuideSignalText(raw).replace(/\s+/g, ' ').trim();
+    if (!normalized) return null;
+    const override = EDITORIAL_TAG_OVERRIDES[normalized];
+    if (override) return { ...override };
+    return {
+      id: normalized.replace(/\s+/g, '-'),
+      label: toGuideTagLabel(raw),
+      tone: 'neutral'
+    };
+  }
+
+  function getExplicitGuideTrophyTags(trophy = {}, game = {}) {
+    const slug = String(game?.slug || '').trim().toLowerCase();
+    if (!['clair-obscur-expedition-33', 'detroit-become-human'].includes(slug)) return [];
+    if (!Array.isArray(trophy?.tags) || !trophy.tags.length) return [];
+    const tags = [];
+    const ids = new Set();
+    trophy.tags.map(normalizeExplicitGuideTag).filter(Boolean).forEach(tag => {
+      if (ids.has(tag.id)) return;
+      ids.add(tag.id);
+      tags.push(tag);
+    });
+    return tags;
+  }
+
   function getGuideTrophyTags(trophy = {}, game = {}) {
+    const explicitTags = getExplicitGuideTrophyTags(trophy, game);
+    if (explicitTags.length) return explicitTags;
     if (isCompletionTrophy(trophy)) return [];
     const tags = Array.isArray(getTrophyRiskTags(trophy)) ? getTrophyRiskTags(trophy).slice() : [];
     const ids = new Set(tags.map(tag => tag?.id).filter(Boolean));
@@ -736,6 +805,10 @@
 
   function getGuideTrophyDisplayTags(trophy = {}, game = {}, limit = 4) {
     const tags = getGuideTrophyTags(trophy, game);
+    const slug = String(game?.slug || '').trim().toLowerCase();
+    if (['clair-obscur-expedition-33', 'detroit-become-human'].includes(slug)) {
+      return tags;
+    }
     const max = Number(limit || 0);
     return max > 0 ? tags.slice(0, max) : tags;
   }
@@ -795,6 +868,9 @@
     if (/nao (?:indica|aponta|lista|tem).{0,80}(?:trofeus? )?(?:online|multiplayer|servidor|servidores)/.test(text)) {
       return false;
     }
+    if (/local ou online|online opcional|online ajud|online pode facilitar|offline.*online|sem depender de online|nao.*online|nao.*multiplayer/.test(text)) {
+      return false;
+    }
     if (/atencao tecnica/.test(text) && /nao.*multiplayer|nao.*online obrigatorio|ps\+ nao|nao.*ps\+/.test(text)) {
       return false;
     }
@@ -831,8 +907,10 @@
     const onlineCount = countGuideTrophyTag(trophies, 'online');
     const explicitCoopCount = countGuideExplicitCoop(trophies)
       || trophies.filter(trophy => trophy?.is_coop || trophy?.isCoop || (Array.isArray(trophy?.tags) && trophy.tags.some(tag => /coop|posse|multiplayer|pvp/i.test(`${tag?.id || tag} ${tag?.label || ''}`)))).length;
-    const hasOnline = hasAffirmativeOnlineRequirement(inputs.online, onlineCount);
-    const hasCoop = hasAffirmativeCoopRequirement(`${inputs.online || ''} ${combinedText}`, explicitCoopCount);
+    const explicitNoOnline = game?.onlineRequired === false || game?.requiresOnline === false || game?.hasMandatoryOnline === false;
+    const explicitNoCoop = game?.coopRequired === false || game?.requiresCoop === false || game?.hasMandatoryCoop === false;
+    const hasOnline = explicitNoOnline ? false : hasAffirmativeOnlineRequirement(inputs.online, onlineCount);
+    const hasCoop = explicitNoCoop ? false : hasAffirmativeCoopRequirement(`${inputs.online || ''} ${combinedText}`, explicitCoopCount);
     const normalizedOnline = normalizeGuideSignalText(inputs.online);
     const localCoop = /coop local|co-op local|local/.test(normalizedOnline);
     const onlineCoop = /coop online|co-op online|online/.test(normalizedOnline) && hasCoop;
@@ -1084,7 +1162,7 @@
       icon: 'fa-circle-check',
       label: 'Leitura inicial',
       title: 'Sem alerta critico antes da checklist',
-      detail: 'Comece pelo roadmap para entender a ordem e depois use a checklist para marcar progresso.',
+      detail: 'Abra o roadmap para entender a ordem e depois use a checklist para marcar progresso.',
       tone: 'soft'
     }];
   }
@@ -1107,7 +1185,7 @@
 
   function shouldReadRoadmapFirst(game = {}, trophies = [], roadmap = []) {
     const inputs = getGuideVerdictInputs(game, { trophies, roadmap, total: trophies.length });
-    const riskCounts = ['marvels-spider-man', 'marvels-spider-man-miles-morales', 'red-dead-redemption-2'].includes(String(game?.slug || '').trim().toLowerCase())
+    const riskCounts = ['clair-obscur-expedition-33', 'detroit-become-human', 'marvels-spider-man', 'marvels-spider-man-miles-morales', 'red-dead-redemption-2'].includes(String(game?.slug || '').trim().toLowerCase())
       ? getGuideRiskCounts(trophies, game)
       : getRiskCounts(trophies);
     const onlineCount = countGuideTrophyTag(trophies, 'online');
@@ -1217,6 +1295,23 @@
     };
   }
 
+  function isGenericFirstActionTitle(value = '') {
+    const text = normalizeGuideSignalText(value);
+    return !text
+      || text === 'comece pelo roadmap'
+      || text === 'ler alertas antes do checklist'
+      || text === 'ir direto para o checklist'
+      || text === 'marcar o primeiro trofeu';
+  }
+
+  function deriveFirstActionTitleFromRoadmap(roadmap = []) {
+    const firstStep = (Array.isArray(roadmap) ? roadmap : [])
+      .map(normalizeRoadmapStep)
+      .find(step => firstGuideText(step?.title, step?.focus, step?.objective));
+    if (!firstStep) return '';
+    return firstGuideText(firstStep.title, firstStep.focus, firstStep.objective);
+  }
+
   function buildGuideQuickDecisionModel(game = {}, viewModel = {}) {
     const trophies = Array.isArray(viewModel.trophies) ? viewModel.trophies : (Array.isArray(game?.trophies) ? game.trophies : []);
     const roadmap = Array.isArray(viewModel.roadmap) ? viewModel.roadmap : (Array.isArray(game?.roadmap) ? game.roadmap : []);
@@ -1318,6 +1413,9 @@
 
     const firstRoadmapStep = roadmap.map(getGuideRoadmapStepText).find(Boolean);
     const firstActionDetail = firstGuideText(inputs.firstRunAdvice, nextAction.detail, firstRoadmapStep, 'Abra o roadmap antes da checklist para entender a ordem da platina.');
+    const firstActionTitle = isGenericFirstActionTitle(nextAction.title)
+      ? firstGuideText(deriveFirstActionTitleFromRoadmap(roadmap), inputs.firstRunAdvice, nextAction.title, 'Abra o roadmap antes da checklist')
+      : nextAction.title;
     const primaryAlert = beforeItems.find(item => ['risk', 'warning'].includes(item?.tone)) || beforeItems[0] || null;
     const reviewAlert = !inputs.isVerified ? {
       title: 'Informação em revisão',
@@ -1338,7 +1436,7 @@
       cards,
       firstAction: {
         label: 'Primeiro passo recomendado',
-        title: nextAction.title || 'Comece pelo roadmap',
+        title: compactGuideText(firstActionTitle, 'Abra o roadmap antes da checklist', 96),
         detail: compactGuideText(firstActionDetail, 'Abra o roadmap antes da checklist para entender a ordem da platina.', 180),
         icon: nextAction.focus === 'trophies' ? 'fa-list-check' : 'fa-route',
         focus: nextAction.focus || 'roadmap'
@@ -1713,11 +1811,10 @@
           trophyName: firstPending?.name || ''
         };
       }
+      const roadmapActionTitle = deriveFirstActionTitleFromRoadmap(game.roadmap) || (hasMissableRoadmapRisk ? 'Revise alertas criticos antes do checklist' : 'Abra o roadmap antes da checklist');
       return {
         kind: readRoadmapFirst ? 'roadmap' : 'checklist',
-        title: readRoadmapFirst
-          ? (hasMissableRoadmapRisk ? 'Ler alertas antes do checklist' : 'Comece pelo roadmap')
-          : 'Ir direto para o checklist',
+        title: readRoadmapFirst ? roadmapActionTitle : 'Ir direto para o checklist',
         detail: readRoadmapFirst
           ? (firstRunAdvice || `Use as ${roadmapCount} etapa(s) do roadmap para iniciar sem retrabalho e evitar ordem errada logo no começo.`)
           : 'Este guia não aponta um bloqueio crítico forte no topo; abra a checklist e avance marcando o progresso.',
@@ -2022,6 +2119,88 @@
         }
       ].filter(item => trophyById.has(item.id) || trophyByName.has(String(item.name || '').trim().toLowerCase()));
     }
+    if (String(game?.slug || '').trim().toLowerCase() === 'bloodborne') {
+      const trophyByName = new Map((Array.isArray(trophies) ? trophies : [])
+        .map(trophy => [String(trophy?.trophyNameOriginal || trophy?.originalName || trophy?.officialName || trophy?.name || '').trim().toLowerCase(), trophy])
+        .filter(([name]) => name));
+      const attentionTag = (id, label, tone = 'warning') => ({ id, label, tone });
+      const read = (id, fallbackName) => {
+        const trophy = trophyById.get(id) || trophyByName.get(String(fallbackName || '').trim().toLowerCase()) || {};
+        return {
+          name: trophy.trophyNameOriginal || trophy.originalName || trophy.officialName || trophy.name || fallbackName,
+          originalName: trophy.trophyNamePtBr || trophy.name_pt || trophy.localizedNamePtBr || ''
+        };
+      };
+      return [
+        {
+          id: 'bb_attention_point_of_no_return',
+          name: 'Ponto de não retorno',
+          originalName: '',
+          type: 'Final / Risco de run',
+          text: 'Depois de Mergo\'s Wet Nurse, pare antes de falar com Gehrman se ainda faltarem finais, armas, ferramentas, áreas opcionais ou Cálices.',
+          tags: [attentionTag('run', 'Risco de run'), attentionTag('final', 'Final'), attentionTag('spoiler', 'Spoiler', 'spoiler')],
+          score: 100
+        },
+        {
+          id: 'bb_yharnam_sunrise',
+          ...read('bb_yharnam_sunrise', 'Yharnam Sunrise'),
+          type: 'Final / Backup',
+          text: 'Os três finais são mutuamente exclusivos sem backup. Salve antes da decisão final ou planeje NG+/NG++.',
+          tags: [attentionTag('missable', 'Perdível', 'risk'), attentionTag('final', 'Final'), attentionTag('run', 'Risco de run')],
+          score: 99
+        },
+        {
+          id: 'bb_childhoods_beginning',
+          ...read('bb_childhoods_beginning', 'Childhood\'s Beginning'),
+          type: 'Final / Condição',
+          text: 'Para Childhood\'s Beginning, consuma três One Third of Umbilical Cord antes da luta final correta.',
+          tags: [attentionTag('missable', 'Perdível', 'risk'), attentionTag('final', 'Final'), attentionTag('spoiler', 'Spoiler', 'spoiler')],
+          score: 98
+        },
+        {
+          id: 'bb_hunters_essence',
+          ...read('bb_hunters_essence', 'Hunter\'s Essence'),
+          type: 'Armas / Risco de run',
+          text: 'Acompanhe as armas da lista base desde cedo, com atenção especial a Blade of Mercy, Burial Blade, badges e Cainhurst.',
+          tags: [attentionTag('missable', 'Perdível', 'risk'), attentionTag('collectible', 'Coletável', 'partial'), attentionTag('run', 'Risco de run')],
+          score: 97
+        },
+        {
+          id: 'bb_hunters_craft',
+          ...read('bb_hunters_craft', 'Hunter\'s Craft'),
+          type: 'Ferramentas / Coletável',
+          text: 'Colete as ferramentas especiais antes de encerrar o ciclo. Upper Cathedral Ward e áreas opcionais concentram parte importante da lista.',
+          tags: [attentionTag('collectible', 'Coletável', 'partial'), attentionTag('run', 'Risco de run')],
+          score: 96
+        },
+        {
+          id: 'bb_yharnam_pthumerian_queen',
+          ...read('bb_yharnam_pthumerian_queen', 'Yharnam, Pthumerian Queen'),
+          type: 'Cálices / Grind / Dificuldade',
+          text: 'Yharnam, Pthumerian Queen é o maior bloco de grind e desafio da platina base. Entre nos Cálices com arma forte, bom nível e recursos suficientes.',
+          tags: [attentionTag('chalices', 'Cálices'), attentionTag('grind', 'Grind'), attentionTag('difficulty', 'Dificuldade')],
+          score: 95
+        },
+        {
+          id: 'bb_attention_old_hunters',
+          name: 'The Old Hunters',
+          originalName: '',
+          type: 'DLC fora do escopo',
+          text: 'The Old Hunters tem troféus próprios, mas não é requisito para a platina base. Mantenha a DLC separada dos 34 troféus principais.',
+          tags: [attentionTag('dlc', 'DLC'), attentionTag('outside-platinum', 'Fora da platina', 'partial')],
+          score: 94
+        },
+        {
+          id: 'bb_attention_online',
+          name: 'Online opcional',
+          originalName: '',
+          type: 'Offline / Sem coop obrigatório',
+          text: 'O online pode ajudar com mensagens, ecos e coop opcional, mas a platina base pode ser feita offline.',
+          tags: [attentionTag('online-optional', 'Online opcional', 'partial'), attentionTag('offline', 'Offline')],
+          score: 93
+        }
+      ];
+    }
     if (String(game?.slug || '').trim().toLowerCase() === 'death-stranding') {
       const trophyByName = new Map((Array.isArray(trophies) ? trophies : [])
         .map(trophy => [String(trophy?.trophyNameOriginal || trophy?.originalName || trophy?.officialName || trophy?.name || '').trim().toLowerCase(), trophy])
@@ -2211,6 +2390,147 @@
           score: 90
         }
       ].filter(item => trophyById.has(item.id) || trophyByName.has(String(item.name || '').trim().toLowerCase()));
+    }
+    if (String(game?.slug || '').trim().toLowerCase() === 'dark-souls-iii') {
+      const trophyByName = new Map((Array.isArray(trophies) ? trophies : [])
+        .map(trophy => [String(trophy?.trophyNameOriginal || trophy?.originalName || trophy?.officialName || trophy?.name || '').trim().toLowerCase(), trophy])
+        .filter(([name]) => name));
+      const attentionTag = (id, label, tone = 'warning') => ({ id, label, tone });
+      const read = (id, fallbackName) => {
+        const trophy = trophyById.get(id) || trophyByName.get(String(fallbackName || '').trim().toLowerCase()) || {};
+        return {
+          name: trophy.trophyNameOriginal || trophy.originalName || trophy.officialName || trophy.name || fallbackName,
+          originalName: trophy.trophyNamePtBr || trophy.name_pt || trophy.localizedNamePtBr || ''
+        };
+      };
+      return [
+        {
+          id: 'ds3_the_usurpation_of_fire',
+          ...read('ds3_the_usurpation_of_fire', 'The Usurpation of Fire'),
+          type: 'Final perdível / NPCs',
+          text: 'Siga Yoel, Yuria e Anri sem curar o Dark Sigil. Quebrar essa rota costuma empurrar o final para NG+.',
+          tags: [attentionTag('missable', 'Perdível', 'risk'), attentionTag('final', 'Final'), attentionTag('npc', 'NPCs')],
+          score: 100
+        },
+        {
+          id: 'ds3_covenant_mound_makers',
+          ...read('ds3_covenant_mound_makers', 'Covenant: Mound-makers'),
+          type: 'Juramento / Rota sensível',
+          text: 'Entre em Mound-makers cedo, antes de matar Curse-rotted Greatwood pela rota comum, para evitar depender de alternativa ou NG+.',
+          tags: [attentionTag('covenant', 'Juramento'), attentionTag('missable', 'Perdível', 'risk')],
+          score: 99
+        },
+        {
+          id: 'ds3_covenant_watchdogs_of_farron',
+          ...read('ds3_covenant_watchdogs_of_farron', 'Covenant: Watchdogs of Farron'),
+          type: 'Juramento / Farm',
+          text: 'Obtenha Watchdogs of Farron cedo em Farron Keep e trate a descoberta do juramento e o farm de recompensa como objetivos diferentes.',
+          tags: [attentionTag('covenant', 'Juramento'), attentionTag('grind', 'Grind')],
+          score: 98
+        },
+        {
+          id: 'ds3_covenant_blade_of_the_darkmoon',
+          ...read('ds3_covenant_blade_of_the_darkmoon', 'Covenant: Blade of the Darkmoon'),
+          type: 'Juramento / NPCs',
+          text: 'Blade of the Darkmoon depende da rota de Sirris e do gesto correto. Evite hostilizar a linha antes de desbloquear o juramento.',
+          tags: [attentionTag('covenant', 'Juramento'), attentionTag('npc', 'NPCs'), attentionTag('missable', 'Perdível', 'risk')],
+          score: 97
+        },
+        {
+          id: 'ds3_master_of_rings',
+          ...read('ds3_master_of_rings', 'Master of Rings'),
+          type: 'Anéis / NG++',
+          text: 'Master of Rings normalmente exige anéis do jogo base em NG, NG+ e NG++. Não inclua anéis de DLC e não descarte anéis antes do troféu.',
+          tags: [attentionTag('rings', 'Anéis'), attentionTag('ng-plus-plus', 'NG++'), attentionTag('collectible', 'Coletáveis', 'partial')],
+          score: 96
+        },
+        {
+          id: 'ds3_master_of_sorceries',
+          ...read('ds3_master_of_sorceries', 'Master of Sorceries'),
+          type: 'Magias / Boss souls',
+          text: 'Feitiçarias podem depender de NPCs, pergaminhos, boss souls e recompensas de juramento. Não consuma almas antes de conferir transposições.',
+          tags: [attentionTag('spells', 'Magias'), attentionTag('boss-souls', 'Boss souls'), attentionTag('collectible', 'Coletáveis', 'partial')],
+          score: 95
+        },
+        {
+          id: 'ds3_master_of_miracles',
+          ...read('ds3_master_of_miracles', 'Master of Miracles'),
+          type: 'Milagres / Juramentos',
+          text: 'Milagres passam por Irina, Karla, Sirris, boss souls e recompensas de juramento. Planeje o farm offline desde cedo.',
+          tags: [attentionTag('miracles', 'Milagres'), attentionTag('covenant', 'Juramento'), attentionTag('grind', 'Grind')],
+          score: 94
+        },
+        {
+          id: 'ds3_master_of_pyromancies',
+          ...read('ds3_master_of_pyromancies', 'Master of Pyromancies'),
+          type: 'Piromancias / NPCs',
+          text: 'Piromancias exigem tomos, NPCs, boss souls e recompensas. Resolva Cornyx, Karla e transposições antes do fim da jornada.',
+          tags: [attentionTag('pyromancies', 'Piromancias'), attentionTag('npc', 'NPCs'), attentionTag('collectible', 'Coletáveis', 'partial')],
+          score: 93
+        },
+        {
+          id: 'ds3_master_of_expression',
+          ...read('ds3_master_of_expression', 'Master of Expression'),
+          type: 'Gestos / NPCs',
+          text: 'Master of Expression depende de gestos ligados a NPCs e decisões de rota. Esgote diálogos e confira gestos antes de avançar marcos grandes.',
+          tags: [attentionTag('gestures', 'Gestos'), attentionTag('npc', 'NPCs'), attentionTag('missable', 'Perdível', 'risk')],
+          score: 92
+        },
+        {
+          id: 'ds3_attention_boss_souls',
+          name: 'Boss souls',
+          originalName: '',
+          type: 'Transposição / Coleções',
+          text: 'Não consuma boss souls antes de conferir magias, milagres e piromancias. Algumas almas são necessárias para troféus de mestre e podem empurrar a correção para outra jornada.',
+          tags: [attentionTag('boss-souls', 'Boss souls'), attentionTag('collectible', 'Coletáveis', 'partial'), attentionTag('run', 'Risco de run')],
+          score: 91
+        },
+        {
+          id: 'ds3_attention_master_spells',
+          name: 'Master of Miracles, Sorceries e Pyromancies',
+          originalName: '',
+          type: 'Magias / NPCs / Coletáveis',
+          text: 'Os troféus de mestre dependem de NPCs, tomos, pergaminhos, boss souls e recompensas de covenant. Use checklist antes de avançar ciclos.',
+          tags: [attentionTag('spells', 'Magias'), attentionTag('npc', 'NPCs'), attentionTag('collectible', 'Coletáveis', 'partial')],
+          score: 90
+        },
+        {
+          id: 'ds3_attention_covenant_farm',
+          name: 'Farm de juramentos',
+          originalName: '',
+          type: 'Grind / Recompensas',
+          text: 'Proof of a Concord Kept, Vertebra Shackle, Sunlight Medal, Wolf\'s Blood Swordgrass, Pale Tongue e Human Dregs podem transformar a platina em um grind longo, especialmente offline.',
+          tags: [attentionTag('covenant', 'Juramentos'), attentionTag('farm', 'Farm'), attentionTag('grind', 'Grind')],
+          score: 89
+        },
+        {
+          id: 'ds3_attention_online_optional',
+          name: 'Online opcional',
+          originalName: '',
+          type: 'Offline / Sem coop obrigatório',
+          text: 'O online pode acelerar farm e boost, mas não é requisito obrigatório da platina. A rota offline continua válida, só mais demorada.',
+          tags: [attentionTag('online-optional', 'Online opcional', 'partial'), attentionTag('farm', 'Farm')],
+          score: 88
+        },
+        {
+          id: 'ds3_base_scope',
+          name: 'Escopo da platina base',
+          originalName: '',
+          type: 'DLC fora do escopo',
+          text: 'Ashes of Ariandel e The Ringed City têm conteúdo próprio, mas não entram nos 43 troféus da lista base.',
+          tags: [attentionTag('dlc', 'DLC'), attentionTag('outside-platinum', 'Fora da platina', 'partial')],
+          score: 87
+        },
+        {
+          id: 'ds3_attention_ng_plus_plus',
+          name: 'NG++',
+          originalName: '',
+          type: 'Novas jornadas / Anéis',
+          text: 'A rota padrão usa NG+ e NG++ para finais restantes e versões de anéis da lista base. Entre em cada ciclo com checklist de pendências.',
+          tags: [attentionTag('ng-plus-plus', 'NG++'), attentionTag('rings', 'Anéis')],
+          score: 86
+        }
+      ];
     }
     if (String(game?.slug || '').trim().toLowerCase() === 'red-dead-redemption-2') {
       const trophyByName = new Map((Array.isArray(trophies) ? trophies : [])
@@ -5277,7 +5597,7 @@
     const missableCount = countRealMissableTrophies(trophies);
     const attentionCount = trophies.filter(trophy => trophy && (isRealMissableTrophy(trophy) || trophy.is_spoiler)).length;
     const spoilerCount = trophies.filter(trophy => trophy?.is_spoiler).length;
-    const riskCounts = ['marvels-spider-man', 'marvels-spider-man-miles-morales', 'red-dead-redemption-2'].includes(String(game?.slug || '').trim().toLowerCase())
+    const riskCounts = ['clair-obscur-expedition-33', 'detroit-become-human', 'marvels-spider-man', 'marvels-spider-man-miles-morales', 'red-dead-redemption-2'].includes(String(game?.slug || '').trim().toLowerCase())
       ? getGuideRiskCounts(trophies, game)
       : getRiskCounts(trophies);
     const guidanceCounts = buildGuidanceCounts(trophies, riskCounts);

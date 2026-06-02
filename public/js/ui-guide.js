@@ -369,7 +369,7 @@ window.UIGuide = (() => {
   }
 
   function shouldUseOfficialTrophyNameFirst(game = {}) {
-    return ['clair-obscur-expedition-33', 'death-stranding', 'death-stranding-2-on-the-beach', 'detroit-become-human', 'marvels-spider-man-2', 'marvels-spider-man-miles-morales', 'red-dead-redemption-2'].includes(String(game?.slug || '').trim().toLowerCase());
+    return true;
   }
 
   function looksLikeEnglishTrophyDescription(value = '') {
@@ -404,7 +404,9 @@ window.UIGuide = (() => {
     const description = cleanTrophyDescriptionCandidate(trophy.description);
     if (description && looksLikePortugueseTrophyDescription(description) && !looksLikeEnglishTrophyDescription(description)) return description;
     if (description && looksLikePortugueseTrophyDescription(description)) return description;
-    return 'Descrição não informada.';
+    const tip = cleanTrophyDescriptionCandidate(trophy.tip || trophy.guideTip || '');
+    if (tip && looksLikePortugueseTrophyDescription(tip)) return tip;
+    return 'Objetivo registrado no checklist da platina; acompanhe este troféu pelo roadmap e pelos pontos de atenção do guia.';
   }
 
   function buildGuideHeroStats(game = {}, viewModel = {}) {
@@ -553,7 +555,7 @@ window.UIGuide = (() => {
     const visibleCards = decisionCards.length ? decisionCards : cards.slice(0, 4);
     const firstAction = quickDecision?.firstAction || {
       label: 'Primeiro passo recomendado',
-      title: viewModel.nextActionModel?.title || 'Comece pelo roadmap',
+      title: viewModel.nextActionModel?.title || 'Abra o roadmap antes da checklist',
       detail: viewModel.nextActionModel?.detail || 'Abra o roadmap antes da checklist para entender a ordem da platina.',
       icon: 'fa-route',
       focus: 'roadmap'
@@ -575,7 +577,7 @@ window.UIGuide = (() => {
             <i class="fas ${escapeAttribute(firstAction.icon || 'fa-route')}" aria-hidden="true"></i>
             <div>
               <span>${escapeHtml(firstAction.label || 'Primeiro passo recomendado')}</span>
-              <strong>${escapeHtml(firstAction.title || 'Comece pelo roadmap')}</strong>
+              <strong>${escapeHtml(firstAction.title || 'Abra o roadmap antes da checklist')}</strong>
               <p>${escapeHtml(firstAction.detail || '')}</p>
               <button type="button" class="atlas-btn atlas-btn-primary atlas-btn-compact" data-guide-action="${escapeAttribute(firstAction.focus || 'roadmap')}">Ir para este ponto</button>
             </div>
@@ -1049,6 +1051,9 @@ window.UIGuide = (() => {
     const panelTarget = requested === 'trophies' ? 'checklist' : requested;
     const panels = qsa('[data-guide-tab-panel]');
     if (!panels.length) return panelTarget;
+    if (typeof document !== 'undefined' && document.body) {
+      document.body.dataset.guideActiveTab = panelTarget;
+    }
     panels.forEach(panel => {
       const active = panel.dataset.guideTabPanel === panelTarget;
       panel.hidden = !active;
@@ -1064,6 +1069,9 @@ window.UIGuide = (() => {
     if (options.scroll) {
       const element = qs(`#guideTab-${panelTarget}`) || qs('#guideContent');
       element?.scrollIntoView({ behavior: 'smooth', block: 'start' });
+    }
+    if (panelTarget === 'details') {
+      setGuideQuickDockState({ enabled: false, visible: false });
     }
     return panelTarget;
   }
@@ -1117,7 +1125,7 @@ window.UIGuide = (() => {
             const editorialName = getTrophyEditorialName(trophy);
             const officialNameFirst = shouldUseOfficialTrophyNameFirst(game);
             const primaryName = officialNameFirst ? officialName : getTrophyDisplayName(trophy);
-            const translationLabel = officialNameFirst ? 'PT-BR' : 'Original';
+            const translationLabel = 'PT-BR';
             const secondaryName = officialNameFirst ? editorialName : officialName;
             const riskTags = typeof getGuideTrophyTags === 'function' ? getGuideTrophyTags(trophy, game) : getTrophyRiskTags(trophy);
             const displayRiskTags = typeof getGuideTrophyDisplayTags === 'function' ? getGuideTrophyDisplayTags(trophy, game, 4) : riskTags.slice(0, 4);
@@ -1238,23 +1246,26 @@ window.UIGuide = (() => {
   function setGuideQuickDockState({ enabled = visible, visible = false, collapsed = false } = {}) {
     const dock = qs('#guideQuickDock');
     const body = typeof document !== 'undefined' ? document.body : null;
-    const isCollapsed = Boolean(visible && collapsed);
+    const forceHiddenForDetails = body?.dataset.guideActiveTab === 'details';
+    const nextVisible = forceHiddenForDetails ? false : Boolean(visible);
+    const nextEnabled = forceHiddenForDetails ? false : Boolean(enabled);
+    const isCollapsed = Boolean(nextVisible && collapsed);
     if (!dock) {
-      body?.classList.toggle('atlas-guide-dock-active', Boolean(visible));
-      body?.classList.toggle('atlas-guide-dock-enabled', Boolean(enabled));
+      body?.classList.toggle('atlas-guide-dock-active', nextVisible);
+      body?.classList.toggle('atlas-guide-dock-enabled', nextEnabled);
       body?.classList.toggle('atlas-guide-dock-collapsed', isCollapsed);
       return;
     }
-    dock.setAttribute('aria-hidden', visible ? 'false' : 'true');
-    dock.classList.toggle('hidden', !visible);
-    dock.classList.toggle('is-enabled', Boolean(enabled));
+    dock.setAttribute('aria-hidden', nextVisible ? 'false' : 'true');
+    dock.classList.toggle('hidden', !nextVisible);
+    dock.classList.toggle('is-enabled', nextEnabled);
     dock.classList.toggle('is-collapsed', isCollapsed);
     const toggleButton = dock.querySelector('[data-quick-dock-toggle]');
     if (toggleButton) {
       toggleButton.setAttribute('aria-expanded', isCollapsed ? 'false' : 'true');
     }
-    body?.classList.toggle('atlas-guide-dock-active', Boolean(visible));
-    body?.classList.toggle('atlas-guide-dock-enabled', Boolean(enabled));
+    body?.classList.toggle('atlas-guide-dock-active', nextVisible);
+    body?.classList.toggle('atlas-guide-dock-enabled', nextEnabled);
     body?.classList.toggle('atlas-guide-dock-collapsed', isCollapsed);
   }
 

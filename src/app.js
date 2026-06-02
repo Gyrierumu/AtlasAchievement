@@ -655,7 +655,7 @@ function getTrophyDisplayName(trophy = {}) {
 }
 
 function shouldUseOfficialTrophyNameFirst(game = {}) {
-  return ['marvels-spider-man-2', 'marvels-spider-man-miles-morales', 'red-dead-redemption-2'].includes(String(game?.slug || '').trim().toLowerCase());
+  return true;
 }
 
 function looksLikeEnglishTrophyDescription(value = '') {
@@ -690,7 +690,9 @@ function getTrophyDisplayDescription(trophy = {}, game = {}) {
   const description = cleanTrophyDescriptionCandidate(trophy.description);
   if (description && looksLikePortugueseTrophyDescription(description) && !looksLikeEnglishTrophyDescription(description)) return description;
   if (description && looksLikePortugueseTrophyDescription(description)) return description;
-  return 'Descrição em revisão editorial.';
+  const tip = cleanTrophyDescriptionCandidate(trophy.tip || trophy.guideTip || '');
+  if (tip && looksLikePortugueseTrophyDescription(tip)) return tip;
+  return 'Objetivo registrado no checklist da platina; acompanhe este troféu pelo roadmap e pelos pontos de atenção do guia.';
 }
 
 function renderTrophyCardHtml(trophy, completedIds = new Set(), index = 0, game = {}) {
@@ -701,7 +703,7 @@ function renderTrophyCardHtml(trophy, completedIds = new Set(), index = 0, game 
   const editorialName = getTrophyEditorialName(trophy);
   const officialNameFirst = shouldUseOfficialTrophyNameFirst(game);
   const primaryName = officialNameFirst ? officialName : getTrophyDisplayName(trophy);
-  const translationLabel = officialNameFirst ? 'PT-BR' : 'Original';
+  const translationLabel = 'PT-BR';
   const secondaryName = officialNameFirst ? editorialName : officialName;
   const riskTags = getGuideTrophyTags(trophy, game);
   const displayRiskTags = typeof sharedGuideViewModel.getGuideTrophyDisplayTags === 'function'
@@ -1568,7 +1570,7 @@ function renderGuidePlatinumSummaryPanelHtml(game = {}, viewModel = {}) {
   const visibleCards = decisionCards.length ? decisionCards : cards.slice(0, 4);
   const firstAction = quickDecision?.firstAction || {
     label: 'Primeiro passo recomendado',
-    title: viewModel.nextActionModel?.title || 'Comece pelo roadmap',
+    title: viewModel.nextActionModel?.title || 'Abra o roadmap antes da checklist',
     detail: viewModel.nextActionModel?.detail || 'Abra o roadmap antes da checklist para entender a ordem da platina.',
     icon: 'fa-route',
     focus: 'roadmap'
@@ -1590,7 +1592,7 @@ function renderGuidePlatinumSummaryPanelHtml(game = {}, viewModel = {}) {
           <i class="fas ${escapeHtml(firstAction.icon || 'fa-route')}" aria-hidden="true"></i>
           <div>
             <span>${escapeHtml(firstAction.label || 'Primeiro passo recomendado')}</span>
-            <strong>${escapeHtml(firstAction.title || 'Comece pelo roadmap')}</strong>
+            <strong>${escapeHtml(firstAction.title || 'Abra o roadmap antes da checklist')}</strong>
             <p>${escapeHtml(firstAction.detail || '')}</p>
             <button type="button" class="atlas-btn atlas-btn-primary atlas-btn-compact" data-guide-action="${escapeHtml(firstAction.focus || 'roadmap')}">Ir para este ponto</button>
           </div>

@@ -46,7 +46,7 @@ const missableTrophyIds = new Set([
   // Resident Evil 3 Remake: campanha linear sem chapter select.
   're3r_nemesis_down',
   're3r_power_stones',
-  're3r_unfortunaté_end',
+  're3r_unfortunate_end',
   're3r_jill_valentine',
   're3r_electric_slide',
   're3r_bookworm',
@@ -54,7 +54,7 @@ const missableTrophyIds = new Set([
   're3r_kendos_armory',
   're3r_master_unlocking',
   're3r_minimalist',
-  're3r_need_these_latér',
+  're3r_need_these_later',
   're3r_sprinter',
 
   // Resident Evil 7 Biohazard: escolhas, fitas, colecionáveis e restrições por run.
@@ -132,24 +132,11 @@ const missableTrophyIds = new Set([
   'demons_saints_trophy',
   'demons_king_of_rings',
 
-  // Bloodborne: finais, armas/ferramentas, areas opcionais e Chalice Dungeons pedem controle antes do fim.
+  // Bloodborne: finais mutuamente exclusivos e Hunter's Essence pedem controle antes do fim.
   'bb_yharnam_sunrise',
   'bb_honoring_wishes',
   'bb_childhoods_beginning',
-  'bb_yharnam_pthumerian_queen',
   'bb_hunters_essence',
-  'bb_hunters_craft',
-  'bb_cainhurst',
-  'bb_the_choir',
-  'bb_the_source_of_the_dream',
-  'bb_nightmare_lecture_building',
-  'bb_darkbeast_paarl',
-  'bb_amygdala',
-  'bb_martyr_logarius',
-  'bb_celestial_emissary',
-  'bb_ebrietas_daughter_of_the_cosmos',
-  'bb_chalice_of_ailing_loran',
-  'bb_chalice_of_isz',
 
   // Sekiro: Shadows Die Twice: finais, escolhas, bosses/areas bloqueaveis, Prayer Beads e Lapis Lazuli pedem planejamento.
   'sekiro_man_without_equal',
@@ -6660,7 +6647,7 @@ const sampleGames = [
         "is_spoiler": true
       },
       {
-        "id": "re3r_unfortunaté_end",
+        "id": "re3r_unfortunate_end",
         "name": "An Unfortunate End",
         "name_pt": "Um final triste",
         "type": "Bronze",
@@ -6822,7 +6809,7 @@ const sampleGames = [
         "is_spoiler": false
       },
       {
-        "id": "re3r_need_these_latér",
+        "id": "re3r_need_these_later",
         "name": "I Might Need These Later!",
         "name_pt": "Pode ser útil mais tarde",
         "type": "Prata",
@@ -8644,7 +8631,7 @@ const sampleGames = [
         "is_spoiler": true
       },
       {
-        "id": "revillage_fish_out_of_watér",
+        "id": "revillage_fish_out_of_water",
         "name": "Fish Out of Watér",
         "type": "Bronze",
         "description": "Derrote a forma transformada de Moreau.",
@@ -13533,13 +13520,76 @@ const sampleGames = [
     "image": "https://image.api.playstation.com/vulcan/img/rnd/202010/2614/KKLEVc2SIIgrFVjsZChZJk1d.jpg",
     "cover_image": "https://images.launchbox-app.com/e0e95929-d63d-4dbf-99bd-46a08df44778.jpg",
     "roadmap": [
-      "Etapa 1: comece a cacada consolidando build, arma principal, frascos e upgrades. Derrote bosses obrigatorios iniciais como Father Gascoigne e Vicar Amelia e libere os caminhos principais sem correr para o fim.",
-      "Etapa 2: explore areas opcionais importantes, incluindo Old Yharnam, Hemwick Charnel Lane, Cainhurst, Upper Cathedral Ward, Nightmare Frontier e Nightmare Lecture Building. Mantenha controle de Hunter Weapons e Special Hunter Tools.",
-      "Etapa 3: avance a historia ate antes do final, depois de Mergo's Wet Nurse, e prepare backup de save se quiser resolver os finais em uma run. Sem backup, planeje multiplas runs ou NG+.",
-      "Etapa 4: resolva os finais Yharnam Sunrise, Honoring Wishes e Childhood's Beginning com backup ou em runs/NG+ separados. Revise os Umbilical Cords antes de buscar Childhood's Beginning.",
-      "Etapa 5: complete Hunter's Essence, Hunter's Craft, chefes opcionais e trofeus de areas. Revise Cainhurst, The Choir, The Source of the Dream, Nightmare Lecture Building, Martyr Logarius, Amygdala, Celestial Emissary e Ebrietas.",
-      "Etapa 6: avance Chalice Dungeons sem tratar isso como DLC. Progrida pela rota ate Pthumeru Ihyll e derrote Yharnam, Pthumerian Queen.",
-      "Etapa 7: faca cleanup final da lista base: armas, ferramentas, runas, blood gems, calices, chefes opcionais e finais pendentes. The Old Hunters nao e necessario para a platina base."
+      {
+        "title": "Cacada principal com exploracao completa",
+        "focus": "Campanha e areas opcionais",
+        "objective": "Avancar pela historia abrindo o maximo de areas, chefes opcionais e atalhos antes do fim.",
+        "actions": [
+          "Progrida por Central Yharnam, Cathedral Ward, Forbidden Woods, Byrgenwerth, Yahargul, Nightmare of Mensis e demais areas principais.",
+          "Derrote chefes obrigatorios e opcionais sempre que liberar uma nova regiao.",
+          "Abra areas importantes como Cainhurst Castle, Upper Cathedral Ward, Nightmare Frontier e Abandoned Old Workshop.",
+          "Colete armas, ferramentas de cacador, runas e materiais de upgrade durante a exploracao.",
+          "Evite falar com Gehrman para finalizar o jogo antes de concluir o cleanup do jogo base."
+        ],
+        "warning": "Depois do final, Bloodborne inicia New Game+ automaticamente. Antes de falar com Gehrman, resolva os opcionais e prepare os finais.",
+        "result": "A campanha ficara praticamente concluida, com as principais areas e chefes opcionais disponiveis para cleanup."
+      },
+      {
+        "title": "Armas, ferramentas e trofeus de exploracao",
+        "focus": "Coletaveis da platina",
+        "objective": "Garantir Hunter's Essence, Hunter's Craft e trofeus ligados a areas opcionais antes do ponto final.",
+        "actions": [
+          "Confirme todas as armas de cacador necessarias para Hunter's Essence.",
+          "De atencao especial a Blade of Mercy e Burial Blade, pois dependem de condicoes especificas e podem exigir NG+ se forem perdidas.",
+          "Colete as ferramentas especiais de cacador necessarias para Hunter's Craft.",
+          "Finalize Cainhurst, The Choir, The Source of the Dream e Nightmare Frontier.",
+          "Faca o upgrade de uma arma ate +10 e confirme Blood Gem Master e Rune Master."
+        ],
+        "warning": "Nem todo coletavel e perdivel permanente, mas alguns itens podem exigir nova jogada se o jogador avancar sem planejamento.",
+        "result": "Os trofeus de exploracao, armas e ferramentas ficam encaminhados antes dos finais."
+      },
+      {
+        "title": "Preparacao dos tres finais",
+        "focus": "Finais",
+        "objective": "Organizar Yharnam Sunrise, Honoring Wishes e Childhood's Beginning com backup ou multiplas jogadas.",
+        "actions": [
+          "Apos Mergo's Wet Nurse, pare antes de concluir a escolha final com Gehrman.",
+          "Para Childhood's Beginning, obtenha e consuma tres One Third of Umbilical Cord antes da luta final correspondente.",
+          "Use backup de save antes de falar com Gehrman se quiser obter os tres finais em uma unica jogada.",
+          "Explique tambem a alternativa limpa de fazer NG+ e NG++ sem depender de backup.",
+          "Garanta que o texto deixe claro que os finais sao mutuamente exclusivos sem backup."
+        ],
+        "warning": "Se o jogador finalizar sem backup e sem preparar os cordoes umbilicais, tera de buscar os finais restantes em outra jogada.",
+        "result": "Os tres finais ficam planejados sem exigir repeticao desnecessaria da campanha."
+      },
+      {
+        "title": "Calices e Yharnam, Pthumerian Queen",
+        "focus": "Grind e desafio",
+        "objective": "Completar a cadeia necessaria de Chalice Dungeons ate derrotar Yharnam, Pthumerian Queen.",
+        "actions": [
+          "Explique a progressao dos Calices necessarios para chegar a rainha pthumeriana.",
+          "Separe essa etapa da campanha principal, pois ela e o maior bloco de grind e desafio da platina.",
+          "Oriente o jogador a entrar nos Calices com arma forte, bom nivel e recursos suficientes.",
+          "Destaque que a dificuldade vem mais da sequencia e dos chefes dos Calices do que de trofeus online.",
+          "Evite confundir Calices do jogo base com DLC."
+        ],
+        "warning": "A etapa dos Calices pode ser o maior bloqueio da platina e deve ser explicada como preparacao de longo prazo, nao como cleanup simples.",
+        "result": "Com Yharnam, Pthumerian Queen derrotada, a parte mais exigente da platina fica resolvida."
+      },
+      {
+        "title": "Cleanup final e verificacao da platina",
+        "focus": "Conferencia",
+        "objective": "Conferir trofeus restantes, finais, armas, ferramentas, chefes e flags antes de marcar o guia como completo.",
+        "actions": [
+          "Revise a checklist do guia contra todos os trofeus do jogo base.",
+          "Confirme que The Old Hunters nao esta marcado como requisito da platina.",
+          "Confirme que onlineRequired, coopRequired e dlcRequired estao false.",
+          "Confirme se os trofeus marcados como perdiveis sao realmente perdiveis ou se apenas exigem planejamento/NG+.",
+          "Corrija FAQ, decisao rapida, SEO e pontos de atencao com linguagem firme."
+        ],
+        "warning": "",
+        "result": "O guia fica pronto para revisao final e possivel marcacao como verificado."
+      }
     ],
     "trophies": [
       { "id": "bb_bloodborne", "name": "Bloodborne", "type": "Platina", "description": "All trophies acquired. Hats off!", "tip": "Conclua os outros 33 trofeus da lista base. The Old Hunters nao e necessario para esta platina.", "is_missable": false, "is_spoiler": false },
@@ -13680,7 +13730,7 @@ const sampleGames = [
       { "id": "ds_all_roads_lead_to_the_uca", "name": "All Roads Lead to the UCA", "type": "Bronze", "description": "Complete your first road.", "tip": "Reconstrua qualquer trecho de estrada, inclusive o trecho tutorial se contar no save.", "is_missable": false, "is_spoiler": false },
       { "id": "ds_soothing_sounds", "name": "Soothing Sounds", "type": "Bronze", "description": "Use the music player for the first time.", "tip": "Use o music player em um private room.", "is_missable": false, "is_spoiler": false },
       { "id": "ds_building_bridges", "name": "Building Bridges", "type": "Bronze", "description": "Reach Bridge Link Grade 1.", "tip": "Bridge Link depende dos servidores/likes online assincronos. Nao exige PS Plus nem multiplayer tradicional.", "is_missable": false, "is_spoiler": false },
-      { "id": "ds_homo_faber", "name": "Homo Faber", "type": "Bronze", "description": "Fabricate all available weapons and equipment.", "tip": "Fabrique todos os equipamentos/armas/veiculos disponiveis na lista original; alguns planos dependem de facilities, historia e memory chips.", "is_missable": false, "is_spoiler": false }
+      { "id": "ds_homo_faber", "name": "Homo Faber", "type": "Bronze", "description": "Fabricate all available weapons and equipment.", "tip": "Fabrique todos os equipamentos/armas/veiculos disponiveis na lista base; alguns planos dependem de facilities, historia e memory chips.", "is_missable": false, "is_spoiler": false }
     ]
   },
   {
@@ -30336,7 +30386,7 @@ const sampleGames = [
   "missable_summary": "1 risco real/conservador: Man's Best Friend. Faça esse troféu antes do final e evite descartar ou perder todos os ovos de Cuddlefish.",
   "online_summary": "Não há online, coop ou multiplayer obrigatório; Subnautica é uma platina single-player.",
   "grind_summary": "O esforço está em exploração, profundidade, veículos, base, recursos e preparação, não em grind repetitivo.",
-  "dlc_scope": "Guia focado na lista base de Subnautica original; não inclui Below Zero, Subnautica 2, versões mobile ou ports futuros.",
+  "dlc_scope": "Guia focado na lista base de Subnautica; não inclui Below Zero, Subnautica 2, versões mobile ou ports futuros.",
   "difficulty_reason": "A dificuldade é baixa/média: o desafio vem de sobrevivência, navegação, profundidade e planejamento, sem online, coop ou dificuldade obrigatória.",
   "time_reason": "A faixa de 20-30h considera campanha, exploração, veículos, base, história, Cuddlefish e cleanup antes do lançamento final.",
   "first_run_advice": "Explore com calma, construa uma base funcional e avance a história enquanto cria veículos, equipamentos e saves manuais antes de grandes marcos.",
@@ -31543,7 +31593,7 @@ const detroitTrophyEditorialRows = [
   ['UNDEFEATED', 'detroit-undefeated', 'INCÓLUME', 'Não perca nenhuma luta até chegar ao fim.', 'Jogue no Casual e reinicie checkpoints se falhar QTEs importantes. O troféu depende de manter vitórias até o final.', true, true, ['perdível', 'QTE', 'combate', 'atenção']],
   ['BOOKWORM', 'detroit-bookworm', 'LEITOR ASSÍDUO', 'Encontre todas as revistas do jogo.', 'Colete as 46 revistas/magazines. Muitas dependem de escolhas anteriores, então use o flowchart e replays com continuidade.', true, false, ['perdível', 'coletáveis', 'revistas', 'atenção']],
   ['PARTNERS', 'detroit-partners', 'PARCEIROS', 'Hank e Connor foram amigos até o fim.', 'Salve Hank, faça escolhas empáticas com Connor e mantenha a relação positiva até o final.', true, true, ['perdível', 'Connor', 'Hank', 'relacionamento']],
-  ['HAPPY FAMILY', 'detroit-happy-family', 'FAMÍLIA FELIZ', 'Kara, Alice e Luther ficaram juntos no final.', 'Mantenha Kara, Alice e Luther vivos e juntos até o final.', true, true, ['perdível', 'Kara', 'final']],
+  ['HAPPY FAMILY', 'detroit-happy-family', 'FAMÍLIA FELIZ', 'Kara, Alice e Luther ficaram juntos no final.', 'Mantenha Kara, Alice e Luther vivos e juntos até o final.', true, true, ['perdível', 'Kara', 'final', 'spoiler']],
   ['I’LL BE BACK', 'detroit-ill-be-back', 'EU VOLTAREI', 'Connor morreu e retornou em todas as oportunidades antes de chegar ao fim.', 'Faça uma rota dedicada em que Connor morre em todas as oportunidades necessárias. A continuidade da rota importa.', true, true, ['perdível', 'Connor', 'rota', 'atenção', 'spoiler']],
   ['THIS IS MY STORY', 'detroit-this-is-my-story', 'ESSA É A MINHA HISTÓRIA', 'Termine o jogo uma vez.', 'Complete qualquer rota da campanha. Não é perdível.', false, true, ['história']],
   ['THESE ARE OUR STORIES', 'detroit-these-are-our-stories', 'ESSAS SÃO AS NOSSAS HISTÓRIAS', 'Gaste 20.000 pontos de bônus.', 'Gaste pontos de bônus no menu Extras. Replays e caminhos novos ajudam a acumular pontos suficientes.', true, false, ['perdível', 'extras', 'pontos de bônus', 'grind']],
@@ -32562,6 +32612,29 @@ for (const game of sampleGames) {
     if (game.slug === 'hades') trophy.isMissable = false;
     if (game.slug === 'resident-evil-requiem') trophy.isMissable = trophy.is_missable;
   }
+}
+
+const marvelsSpiderMan2Guide = sampleGames.find(game => game.slug === 'marvels-spider-man-2');
+if (marvelsSpiderMan2Guide) {
+  Object.assign(marvelsSpiderMan2Guide, {
+    onlineRequired: false,
+    coopRequired: false,
+    dlcRequired: false,
+    editorial_review_status: 'verified',
+    editorialStatus: 'verified',
+    verification_status: 'verified',
+    is_verified: true,
+    quickDecision: {
+      firstAction: 'Conclua a campanha liberando distritos, atividades e recursos antes da limpeza do mapa.',
+      mainRisk: 'Nao ha perdivel, online ou coop obrigatorio; o cuidado e nao transformar a limpeza de distritos em checklist solto.',
+      verdict: 'Platina direta e offline, com campanha primeiro e cleanup de atividades, trajes, habilidades e colecionaveis depois.'
+    },
+    seo: {
+      title: 'Marvels Spider-Man 2 trofeus: guia da platina',
+      description: 'Guia da platina de Marvels Spider-Man 2 com roadmap offline, checklist de distritos, atividades, trajes, habilidades e limpeza sem perdivel.',
+      keywords: ['Spider-Man 2 trofeus', 'Marvels Spider-Man 2 platina', 'Spider-Man 2 guia trofeus']
+    }
+  });
 }
 
 const deathStrandingGuide = sampleGames.find(game => game.slug === 'death-stranding');
@@ -34359,6 +34432,753 @@ if (hollowKnightGuide) {
     trophy.is_coop = false;
     trophy.isCoop = false;
   }
+}
+
+const bloodborneGuide = sampleGames.find(game => game.slug === 'bloodborne');
+if (bloodborneGuide) {
+  const bloodborneMissableIds = new Set([
+    'bb_yharnam_sunrise',
+    'bb_honoring_wishes',
+    'bb_childhoods_beginning',
+    'bb_hunters_essence'
+  ]);
+  const bloodborneNamePtById = {
+    bb_bloodborne: 'Bloodborne',
+    bb_yharnam_sunrise: 'Nascer do Sol de Yharnam',
+    bb_honoring_wishes: 'Honrando Desejos',
+    bb_childhoods_beginning: 'Início da Infância',
+    bb_yharnam_pthumerian_queen: 'Yharnam, Rainha Pthumeriana',
+    bb_hunters_essence: 'Essência do Caçador',
+    bb_hunters_craft: 'Arte do Caçador',
+    bb_weapon_master: 'Mestre das Armas',
+    bb_blood_gem_master: 'Mestre das Gemas de Sangue',
+    bb_rune_master: 'Mestre das Runas',
+    bb_cainhurst: 'Cainhurst',
+    bb_the_choir: 'O Coro',
+    bb_the_source_of_the_dream: 'A Fonte do Sonho',
+    bb_nightmare_lecture_building: 'Prédio de Conferências do Pesadelo',
+    bb_father_gascoigne: 'Padre Gascoigne',
+    bb_vicar_amelia: 'Vigária Amelia',
+    bb_shadow_of_yharnam: 'Sombra de Yharnam',
+    bb_rom_the_vacuous_spider: 'Rom, a Aranha Vácua',
+    bb_the_one_reborn: 'O Renascido',
+    bb_micolash_host_of_the_nightmare: 'Micolash, Anfitrião do Pesadelo',
+    bb_mergos_wet_nurse: 'Ama de Leite de Mergo',
+    bb_cleric_beast: 'Fera Clerical',
+    bb_blood_starved_beast: 'Fera Sedenta de Sangue',
+    bb_the_witch_of_hemwick: 'A Bruxa de Hemwick',
+    bb_darkbeast_paarl: 'Fera Negra Paarl',
+    bb_amygdala: 'Amygdala',
+    bb_martyr_logarius: 'Mártir Logarius',
+    bb_celestial_emissary: 'Emissário Celestial',
+    bb_ebrietas_daughter_of_the_cosmos: 'Ebrietas, Filha do Cosmos',
+    bb_blood_gem_contact: 'Contato com Gema de Sangue',
+    bb_rune_contact: 'Contato com Runa',
+    bb_chalice_of_pthumeru: 'Cálice de Pthumeru',
+    bb_chalice_of_ailing_loran: 'Cálice de Ailing Loran',
+    bb_chalice_of_isz: 'Cálice de Isz'
+  };
+  const bloodborneDescriptionById = {
+    bb_bloodborne: 'Obtenha todos os troféus.',
+    bb_yharnam_sunrise: 'Sobreviva à caçada e veja outro dia nascer.',
+    bb_honoring_wishes: 'Fique cativo da Presença da Lua e prometa vigiar o Sonho do Caçador.',
+    bb_childhoods_beginning: 'Torne-se um Grande e eleve a humanidade à sua próxima infância.',
+    bb_yharnam_pthumerian_queen: 'Derrote Yharnam, Rainha de Sangue do Antigo Labirinto.',
+    bb_hunters_essence: 'Obtenha todas as armas de caçador.',
+    bb_hunters_craft: 'Obtenha todas as ferramentas especiais de caçador.',
+    bb_weapon_master: 'Obtenha uma arma no nível máximo.',
+    bb_blood_gem_master: 'Obtenha uma gema de sangue extremamente preciosa.',
+    bb_rune_master: 'Obtenha uma Runa Caryll extremamente preciosa.',
+    bb_cainhurst: 'Entre em Cainhurst, o castelo perdido e arruinado.',
+    bb_the_choir: 'Entre no domínio do Coro, o alto estrato da Igreja da Cura.',
+    bb_the_source_of_the_dream: 'Descubra a oficina abandonada, fonte do Sonho do Caçador.',
+    bb_nightmare_lecture_building: 'Entre no prédio de conferências de Byrgenwerth, que flutua no reino do pesadelo.',
+    bb_father_gascoigne: 'Derrote a fera que um dia foi Padre Gascoigne.',
+    bb_vicar_amelia: 'Derrote a fera que um dia foi Vigária Amelia.',
+    bb_shadow_of_yharnam: 'Derrote a Sombra de Yharnam.',
+    bb_rom_the_vacuous_spider: 'Derrote o Grande: Rom, a Aranha Vácua.',
+    bb_the_one_reborn: 'Derrote o Renascido.',
+    bb_micolash_host_of_the_nightmare: 'Derrote Micolash, Anfitrião do Pesadelo.',
+    bb_mergos_wet_nurse: 'Derrote o Grande: Ama de Leite de Mergo.',
+    bb_cleric_beast: 'Derrote a Fera Clerical.',
+    bb_blood_starved_beast: 'Derrote a Fera Sedenta de Sangue.',
+    bb_the_witch_of_hemwick: 'Derrote a Bruxa de Hemwick.',
+    bb_darkbeast_paarl: 'Derrote a Fera Negra Paarl.',
+    bb_amygdala: 'Derrote o Grande: Amygdala.',
+    bb_martyr_logarius: 'Derrote Mártir Logarius.',
+    bb_celestial_emissary: 'Derrote o Grande: Emissário Celestial.',
+    bb_ebrietas_daughter_of_the_cosmos: 'Derrote o Grande: Ebrietas, Filha do Cosmos.',
+    bb_blood_gem_contact: 'Obtenha uma gema de sangue que fortalece armas de caçador.',
+    bb_rune_contact: 'Obtenha uma Runa Caryll que concede força especial aos caçadores.',
+    bb_chalice_of_pthumeru: 'Obtenha o Cálice de Pthumeru, que sela as catacumbas profundas sob Yharnam.',
+    bb_chalice_of_ailing_loran: 'Obtenha o Cálice de Ailing Loran, que sela a terra trágica perdida nas areias.',
+    bb_chalice_of_isz: 'Obtenha o Grande Cálice de Isz, que sela o lar dos parentes cósmicos.'
+  };
+  const bloodborneTipById = {
+    bb_bloodborne: 'Conclua os outros 33 troféus da lista base. The Old Hunters tem troféus próprios e não entra na platina.',
+    bb_yharnam_sunrise: 'Final mutuamente exclusivo sem backup: aceite a proposta de Gehrman no fim da campanha. Faça backup antes de falar com ele se quiser resolver os três finais na mesma jogada.',
+    bb_honoring_wishes: 'Final mutuamente exclusivo sem backup: recuse a proposta de Gehrman sem ativar a condição de Childhood\'s Beginning. Use backup ou deixe para NG+.',
+    bb_childhoods_beginning: 'Consuma três One Third of Umbilical Cord antes da luta final correta. Sem backup e sem os cordões, será preciso nova jogada para corrigir.',
+    bb_yharnam_pthumerian_queen: 'Complete a cadeia de Chalice Dungeons até Pthumeru Ihyll e derrote a rainha. Não é DLC; costuma ser o maior gargalo da platina base.',
+    bb_hunters_essence: 'Controle as armas da lista base desde cedo. Diante de Blade of Mercy, Burial Blade, Cainhurst e badges, avance com planejamento para evitar NG+ desnecessário.',
+    bb_hunters_craft: 'Colete as ferramentas especiais de caçador antes de encerrar o ciclo. Upper Cathedral Ward, Cainhurst e áreas opcionais concentram parte importante da lista.',
+    bb_weapon_master: 'Leve uma arma a +10 com Blood Rock. Escolha uma arma principal antes de gastar materiais raros.',
+    bb_blood_gem_master: 'Uma gema preciosa pode vir em conteúdo avançado e Cálices. O troféu não exige online.',
+    bb_rune_master: 'Explore áreas opcionais e equipe runas quando o sistema estiver liberado. Não deixe tudo para depois do final.',
+    bb_cainhurst: 'Área opcional essencial para Martyr Logarius, armas e checklist. Pegue o convite e visite Cainhurst antes de falar com Gehrman.',
+    bb_the_choir: 'Use a Upper Cathedral Key para acessar Upper Cathedral Ward. A área liga ferramentas, Celestial Emissary e Ebrietas.',
+    bb_the_source_of_the_dream: 'Desça pela Healing Church Workshop com cuidado para encontrar a Abandoned Old Workshop.',
+    bb_nightmare_lecture_building: 'Área de transição para pesadelos e conteúdo importante. Confirme o acesso antes de fechar a campanha.',
+    bb_father_gascoigne: 'Chefe obrigatório inicial. Aprenda parry, uso de caixas de música e controle de espaço para estabilizar a run.',
+    bb_vicar_amelia: 'Chefe obrigatório de Cathedral Ward que abre a próxima fase da história. Revise recursos antes de avançar demais.',
+    bb_shadow_of_yharnam: 'Chefe obrigatório em Forbidden Woods. Divida os alvos e use o cenário para reduzir pressão.',
+    bb_rom_the_vacuous_spider: 'Chefe obrigatório e ponto narrativo importante. Depois dele, algumas áreas mudam de estado; revise pendências opcionais.',
+    bb_the_one_reborn: 'Chefe obrigatório de Yahargul na fase Blood Moon. Elimine primeiro as Bell-ringing Women nas laterais.',
+    bb_micolash_host_of_the_nightmare: 'Chefe obrigatório no Nightmare of Mensis. Cuidado com A Call Beyond na fase final.',
+    bb_mergos_wet_nurse: 'Chefe que libera a decisão final. Depois dela, pare, faça backup se for usar e conclua cleanup antes de falar com Gehrman.',
+    bb_cleric_beast: 'Chefe opcional inicial em Central Yharnam. Ajuda a abrir progresso e treino de combate contra feras grandes.',
+    bb_blood_starved_beast: 'Chefe opcional de Old Yharnam que libera o Chalice of Pthumeru. Antídotos e papel de fogo ajudam bastante.',
+    bb_the_witch_of_hemwick: 'Chefe opcional de Hemwick Charnel Lane. Importante para liberar uso de runas.',
+    bb_darkbeast_paarl: 'Chefe opcional ligado a Hypogean Gaol/Yahargul. Resolva antes do final para manter a rota limpa.',
+    bb_amygdala: 'Chefe opcional de Nightmare Frontier e fonte do Chalice of Ailing Loran. Entre preparado para dano alto.',
+    bb_martyr_logarius: 'Chefe opcional de Cainhurst. Necessário para fechar a área e encaminhar armas ligadas a Cainhurst.',
+    bb_celestial_emissary: 'Chefe opcional de Upper Cathedral Ward, no caminho para Ebrietas e ferramentas importantes.',
+    bb_ebrietas_daughter_of_the_cosmos: 'Chefe opcional de Upper Cathedral Ward e fonte do Chalice of Isz. Um dos testes fortes fora da campanha principal.',
+    bb_blood_gem_contact: 'Vem naturalmente ao pegar uma Blood Gem. Marque e siga para gemas melhores depois.',
+    bb_rune_contact: 'Vem ao obter uma Caryll Rune. A Bruxa de Hemwick libera o uso pratico das runas.',
+    bb_chalice_of_pthumeru: 'Obtido com Blood-starved Beast. Inicia a rota dos Cálices da platina base.',
+    bb_chalice_of_ailing_loran: 'Obtido com Amygdala. É parte da preparação para materiais e progresso rumo à rainha pthumeriana.',
+    bb_chalice_of_isz: 'Obtido com Ebrietas. Não misture esse requisito da lista base com The Old Hunters.'
+  };
+  const bloodborneTagsById = {
+    bb_bloodborne: ['platina'],
+    bb_yharnam_sunrise: ['perdível', 'final', 'spoiler', 'risco de run'],
+    bb_honoring_wishes: ['perdível', 'final', 'spoiler', 'risco de run'],
+    bb_childhoods_beginning: ['perdível', 'final', 'spoiler', 'risco de run'],
+    bb_yharnam_pthumerian_queen: ['cálices', 'grind', 'dificuldade', 'spoiler'],
+    bb_hunters_essence: ['coletável', 'perdível', 'risco de run'],
+    bb_hunters_craft: ['coletável', 'risco de run'],
+    bb_weapon_master: ['upgrade', 'grind'],
+    bb_blood_gem_master: ['cálices', 'coletável'],
+    bb_rune_master: ['coletável'],
+    bb_cainhurst: ['opcional', 'coletável', 'spoiler', 'risco de run'],
+    bb_the_choir: ['opcional', 'spoiler'],
+    bb_the_source_of_the_dream: ['opcional', 'coletável', 'spoiler'],
+    bb_nightmare_lecture_building: ['história', 'spoiler'],
+    bb_father_gascoigne: ['boss', 'história', 'spoiler'],
+    bb_vicar_amelia: ['boss', 'história', 'spoiler'],
+    bb_shadow_of_yharnam: ['boss', 'história', 'spoiler'],
+    bb_rom_the_vacuous_spider: ['boss', 'história', 'spoiler'],
+    bb_the_one_reborn: ['boss', 'história', 'spoiler'],
+    bb_micolash_host_of_the_nightmare: ['boss', 'história', 'dificuldade', 'spoiler'],
+    bb_mergos_wet_nurse: ['boss', 'história', 'spoiler', 'risco de run'],
+    bb_cleric_beast: ['boss', 'opcional', 'spoiler'],
+    bb_blood_starved_beast: ['boss', 'cálices', 'spoiler'],
+    bb_the_witch_of_hemwick: ['boss', 'opcional', 'spoiler'],
+    bb_darkbeast_paarl: ['boss', 'opcional', 'spoiler'],
+    bb_amygdala: ['boss', 'opcional', 'dificuldade', 'spoiler'],
+    bb_martyr_logarius: ['boss', 'opcional', 'dificuldade', 'spoiler'],
+    bb_celestial_emissary: ['boss', 'opcional', 'spoiler'],
+    bb_ebrietas_daughter_of_the_cosmos: ['boss', 'opcional', 'dificuldade', 'spoiler'],
+    bb_blood_gem_contact: ['coletável'],
+    bb_rune_contact: ['coletável'],
+    bb_chalice_of_pthumeru: ['cálices', 'spoiler'],
+    bb_chalice_of_ailing_loran: ['cálices', 'spoiler'],
+    bb_chalice_of_isz: ['cálices', 'spoiler']
+  };
+
+  Object.assign(bloodborneGuide, {
+    title: 'Bloodborne',
+    platforms: ['PS4'],
+    release_date: '2015-03-24',
+    genre: ['ação', 'RPG', 'soulslike'],
+    estimatedTime: '50-70 horas',
+    time: '50-70 horas',
+    time_min_hours: 50,
+    time_max_hours: 70,
+    time_sort_hours: 50,
+    time_bucket: 'long',
+    runs: '1 com backup de save; 2-3 runs/NG+ sem backup',
+    hasMissables: true,
+    missableCount: bloodborneMissableIds.size,
+    missable_count: bloodborneMissableIds.size,
+    hasOnline: false,
+    hasMandatoryOnline: false,
+    hasMandatoryCoop: false,
+    onlineRequired: false,
+    coopRequired: false,
+    dlcRequired: false,
+    dlcRequiredForPlatinum: false,
+    platinumType: 'lista base PS4 + finais + armas/ferramentas + áreas opcionais + Cálices',
+    tags: ['soulslike', 'ação', 'RPG', 'chefes', 'coletáveis', 'finais', 'grind', 'cálices', 'offline', 'sem DLC obrigatória'],
+    missable: 'Bloodborne tem riscos reais de retrabalho nos três finais e em Hunter\'s Essence. Chefes opcionais, áreas opcionais e Cálices exigem planejamento, mas não devem inflar a contagem de perdíveis.',
+    runs_summary: 'Rota eficiente: uma jogada com backup de save antes de falar com Gehrman. Sem backup, organize NG+ e NG++ para os finais restantes.',
+    missable_summary: 'Os perdíveis editoriais são os três finais e Hunter\'s Essence. Hunter\'s Craft, áreas opcionais, chefes opcionais e Cálices entram como coleta, spoiler, dificuldade, grind ou risco de run.',
+    online_summary: 'O online é opcional. A platina base pode ser feita offline, sem servidores, invasões, mensagens, cooperação ou PS+.',
+    grind_summary: 'O maior bloco de grind e desafio está nos Chalice Dungeons até Yharnam, Pthumerian Queen, além de armas, ferramentas e cleanup de chefes opcionais.',
+    dlc_scope: 'The Old Hunters tem 6 troféus adicionais e fica fora da platina base. O guia cobre os 34 troféus do jogo base de PS4.',
+    difficulty_reason: 'A dificuldade 7/10 vem do combate, chefes opcionais, execução em áreas avançadas e da rota dos Cálices, especialmente Defiled Chalice e o caminho até Yharnam, Pthumerian Queen.',
+    time_reason: 'A estimativa de 50-70 horas considera campanha, exploração completa, finais com backup ou NG+, armas, ferramentas, chefes opcionais, Cálices e cleanup.',
+    first_run_advice: 'Avance pela campanha explorando áreas opcionais, coletando armas e ferramentas e mantendo os finais sob controle. Depois de Mergo\'s Wet Nurse, pare antes de falar com Gehrman.',
+    cleanup_advice: 'Antes do final, confira Cainhurst, Upper Cathedral Ward, Abandoned Old Workshop, Nightmare Frontier, armas, ferramentas, runas, gemas, chefes opcionais e Cálices pendentes.',
+    before_you_start: 'Planeje os finais desde cedo e não trate The Old Hunters como requisito. O ponto crítico é falar com Gehrman depois de Mergo\'s Wet Nurse, pois o jogo entra em New Game+ após o final.',
+    best_for: 'Vale platinar Bloodborne se você gosta de soulslike, exploração densa e chefes exigentes. A platina é justa quando a rota está organizada.',
+    avoid_if: 'Evite se você quer uma platina curta, simples, sem Cálices ou sem planejamento de finais e coletáveis.',
+    editorial_status: 'published',
+    coverage_level: 'strong',
+    is_verified: false,
+    verification_status: 'review',
+    editorial_review_status: 'in_review',
+    editorialStatus: 'in_review',
+    last_reviewed_at: '2026-06-01',
+    lastReviewedAt: '2026-06-01T00:00:00.000-03:00',
+    reviewed_by: 'AtlasAchievement Editorial',
+    verification_note: 'Guia revisado para a lista base PS4: 34 troféus, roadmap estruturado, flags offline/sem DLC obrigatória e EN/PT-BR editorial. Mantido em revisão até validação final completa.',
+    editorial_notes: 'Escopo: platina base PS4 de Bloodborne, sem The Old Hunters. Política de perdíveis: contar apenas finais e Hunter\'s Essence como riscos editoriais fortes; a platina não entra na contagem.',
+    quality_warnings: [],
+    editorial_summary: [
+      'Bloodborne é uma platina difícil, mas direta para quem planeja os finais e não deixa opcionais para depois do chefe final. A rota segura é avançar pela campanha explorando áreas opcionais, reunir armas e ferramentas de caçador, preparar os três finais com backup de save ou múltiplas jogadas e deixar os Cálices para a etapa de grind e desafio.',
+      'O principal cuidado é o ponto de não retorno no Hunter\'s Dream: após o final, o jogo entra em New Game+ automaticamente. Por isso, antes de falar com Gehrman, resolva áreas opcionais, colete ferramentas, confirme armas importantes e deixe os finais organizados.',
+      'The Old Hunters não é necessária para a platina base. A DLC tem 6 troféus adicionais e deve ficar separada dos 34 troféus do jogo base.'
+    ],
+    seo: {
+      title: 'Guia de Platina Bloodborne - Troféus, Roadmap e Dicas',
+      description: 'Guia de platina de Bloodborne com roadmap em português, troféus perdíveis, finais, armas, ferramentas de caçador, Cálices e dicas para conquistar a platina no PS4.',
+      keywords: 'Bloodborne, guia de platina Bloodborne, troféus Bloodborne, roadmap Bloodborne, Bloodborne PS4, Yharnam Pthumerian Queen, Hunter\'s Essence, Childhood\'s Beginning',
+      ogTitle: 'Guia de Platina Bloodborne - Troféus, Roadmap e Dicas',
+      ogDescription: 'Guia PT-BR da platina base de Bloodborne no PS4, com 34 troféus, finais, armas, ferramentas, Cálices, offline e sem The Old Hunters como requisito.'
+    },
+    quickDecision: {
+      summary: 'Platina difícil e justa: offline, sem coop, sem DLC obrigatória, com finais, armas/ferramentas e Cálices como gargalos principais.',
+      recommendation: 'Vale platinar Bloodborne se você gosta de soulslike exigente, exploração densa e chefes opcionais marcantes. A platina não exige online nem The Old Hunters, mas cobra planejamento para os três finais, atenção a armas e ferramentas de caçador e paciência nos Cálices até Yharnam, Pthumerian Queen. É uma platina justa e memorável, porém pouco indicada para quem não quer desafio, backup de save ou grind.',
+      firstAction: 'Jogue a campanha explorando áreas opcionais e pare depois de Mergo\'s Wet Nurse antes de falar com Gehrman.'
+    },
+    checklist: [
+      'Confirmar os 34 troféus do jogo base.',
+      'Não contar The Old Hunters na platina.',
+      'Explorar áreas opcionais antes do final.',
+      'Coletar todas as armas de caçador necessárias para Hunter\'s Essence.',
+      'Coletar todas as ferramentas especiais de caçador para Hunter\'s Craft.',
+      'Preparar os três finais com backup de save ou múltiplas jogadas.',
+      'Obter e consumir três One Third of Umbilical Cord para Childhood\'s Beginning.',
+      'Derrotar chefes opcionais do jogo base.',
+      'Completar os Cálices necessários até Yharnam, Pthumerian Queen.',
+      'Fazer cleanup antes de falar com Gehrman.',
+      'Conferir flags: onlineRequired false, coopRequired false, dlcRequired false e perdíveis alinhados.'
+    ],
+    faq: [
+      { question: 'Bloodborne exige online para platinar?', answer: 'Não. O online é opcional; a platina base pode ser feita offline.' },
+      { question: 'The Old Hunters é necessário para a platina?', answer: 'Não. A DLC tem troféus próprios, mas não é requisito da platina base.' },
+      { question: 'Bloodborne tem troféus perdíveis?', answer: 'Sim. Os perdíveis editoriais são os três finais e Hunter\'s Essence, por causa de armas que podem exigir planejamento de rota ou NG+.' },
+      { question: 'Dá para fazer os três finais em uma jogada?', answer: 'Sim, usando backup de save antes da decisão final. Sem backup, será necessário fazer novas jogadas para os finais restantes.' },
+      { question: 'Qual é o maior desafio da platina?', answer: 'A combinação de dificuldade do combate, chefes opcionais e progressão dos Cálices até Yharnam, Pthumerian Queen.' },
+      { question: 'A dificuldade do jogo afeta troféus?', answer: 'Não há seletor tradicional de dificuldade. A dificuldade vem da execução, build, exploração e Cálices.' },
+      { question: 'Posso deixar os Cálices para depois?', answer: 'Sim, mas não trate como cleanup simples. A rota até Yharnam, Pthumerian Queen exige preparação, materiais e chefes fortes, então é melhor entrar nos Cálices com arma evoluída e bom nível.' },
+      { question: 'Dá para platinar sem The Old Hunters?', answer: 'Sim. The Old Hunters tem troféus próprios, mas não é requisito para a platina base de Bloodborne.' }
+    ],
+    roadmap: [
+      {
+        title: 'Caçada principal com exploração completa',
+        focus: 'Campanha e áreas opcionais',
+        objective: 'Avançar pela história abrindo o máximo de áreas, chefes opcionais e atalhos antes do fim.',
+        actions: [
+          'Progrida por Central Yharnam, Cathedral Ward, Forbidden Woods, Byrgenwerth, Yahargul, Nightmare of Mensis e demais áreas principais.',
+          'Derrote chefes obrigatórios e opcionais sempre que liberar uma nova região.',
+          'Abra áreas importantes como Cainhurst Castle, Upper Cathedral Ward, Nightmare Frontier e Abandoned Old Workshop.',
+          'Colete armas, ferramentas de caçador, runas e materiais de upgrade durante a exploração.',
+          'Evite falar com Gehrman para finalizar o jogo antes de concluir o cleanup do jogo base.'
+        ],
+        warning: 'Depois do final, Bloodborne inicia New Game+ automaticamente. Antes de falar com Gehrman, resolva os opcionais e prepare os finais.',
+        result: 'A campanha ficará praticamente concluída, com as principais áreas e chefes opcionais disponíveis para cleanup.'
+      },
+      {
+        title: 'Armas, ferramentas e troféus de exploração',
+        focus: 'Coletáveis da platina',
+        objective: 'Garantir Hunter\'s Essence, Hunter\'s Craft e troféus ligados a áreas opcionais antes do ponto final.',
+        actions: [
+          'Confira todas as armas de caçador necessárias para Hunter\'s Essence.',
+          'Dê atenção especial a Blade of Mercy e Burial Blade, pois dependem de condições específicas e podem exigir NG+ se forem perdidas.',
+          'Colete as ferramentas especiais de caçador necessárias para Hunter\'s Craft.',
+          'Finalize Cainhurst, The Choir, The Source of the Dream e Nightmare Frontier.',
+          'Faça o upgrade de uma arma até +10 e conclua Blood Gem Master e Rune Master.'
+        ],
+        warning: 'Hunter\'s Essence é o principal risco de coleta. Algumas armas dependem de rota, badges, finais ou NG+ se forem deixadas para trás.',
+        result: 'Os troféus de exploração, armas e ferramentas ficam encaminhados antes dos finais.'
+      },
+      {
+        title: 'Preparação dos três finais',
+        focus: 'Finais',
+        objective: 'Organizar Yharnam Sunrise, Honoring Wishes e Childhood\'s Beginning com backup ou múltiplas jogadas.',
+        actions: [
+          'Após Mergo\'s Wet Nurse, pare antes de concluir a escolha final com Gehrman.',
+          'Para Childhood\'s Beginning, obtenha e consuma três One Third of Umbilical Cord antes da luta final correspondente.',
+          'Use backup de save antes de falar com Gehrman se quiser obter os três finais em uma única jogada.',
+          'Sem backup, deixe finais restantes para NG+ e NG++.',
+          'Resolva armas, ferramentas, áreas opcionais e Cálices pendentes antes de acionar o final.'
+        ],
+        warning: 'Se você finalizar sem backup e sem preparar os cordões umbilicais, terá de buscar os finais restantes em outra jogada.',
+        result: 'Os três finais ficam planejados sem repetição desnecessária da campanha.'
+      },
+      {
+        title: 'Cálices e Yharnam, Pthumerian Queen',
+        focus: 'Grind e desafio',
+        objective: 'Completar a cadeia necessária de Chalice Dungeons até derrotar Yharnam, Pthumerian Queen.',
+        actions: [
+          'Complete os Cálices necessários em sequência até liberar a rota para Yharnam, Pthumerian Queen.',
+          'Deixe os Cálices para uma etapa dedicada, com arma forte, bom nível e recursos suficientes.',
+          'Junte materiais e avance pelos dungeons sem tratar essa etapa como cleanup simples.',
+          'Prepare-se para chefes fortes e para a dificuldade alta de trechos como o Defiled Chalice.',
+          'Use apenas os Cálices exigidos pela lista base; The Old Hunters não entra na platina.'
+        ],
+        warning: 'A etapa dos Cálices pode ser o maior bloqueio da platina e deve ser tratada como preparação de longo prazo, não como limpeza rápida.',
+        result: 'Com Yharnam, Pthumerian Queen derrotada, a parte mais exigente da platina fica resolvida.'
+      },
+      {
+        title: 'Cleanup final e verificação da platina',
+        focus: 'Conferência',
+        objective: 'Conferir troféus restantes, finais, armas, ferramentas, chefes e flags antes de encerrar a rota.',
+        actions: [
+          'Confira no checklist se todos os 34 troféus da lista base foram concluídos.',
+          'Verifique que The Old Hunters ficou fora da platina base.',
+          'Mantenha onlineRequired, coopRequired e dlcRequired como false.',
+          'Finalize armas, ferramentas, chefes opcionais, Cálices e finais pendentes.',
+          'Antes de encerrar a rota, confira flags, checklist e separação da DLC.'
+        ],
+        warning: '',
+        result: 'A rota fica pronta para revisão final sem misturar DLC, online obrigatório ou coop obrigatório.'
+      }
+    ]
+  });
+
+  for (const trophy of bloodborneGuide.trophies || []) {
+    const namePt = bloodborneNamePtById[trophy.id] || trophy.name;
+    const descriptionPt = bloodborneDescriptionById[trophy.id] || trophy.description || '';
+    const tip = bloodborneTipById[trophy.id] || trophy.tip || '';
+    trophy.name_pt = namePt;
+    trophy.trophyNameOriginal = trophy.name;
+    trophy.trophyNamePtBr = namePt;
+    trophy.namePtSource = 'editorial_ptbr';
+    trophy.description = descriptionPt;
+    trophy.descriptionPtBr = descriptionPt;
+    trophy.ptDescription = descriptionPt;
+    trophy.localizedDescription = { ...(trophy.localizedDescription || {}), ptBr: descriptionPt };
+    trophy.descriptionPtSource = 'editorial_ptbr';
+    trophy.tip = tip;
+    trophy.is_missable = trophy.type === 'Platina' ? false : bloodborneMissableIds.has(trophy.id);
+    trophy.isMissable = trophy.is_missable;
+    trophy.missable = trophy.is_missable;
+    trophy.riskType = trophy.is_missable ? 'missable' : '';
+    trophy.is_spoiler = Boolean(trophy.is_spoiler);
+    trophy.is_online = false;
+    trophy.isOnline = false;
+    trophy.is_coop = false;
+    trophy.isCoop = false;
+    trophy.tags = bloodborneTagsById[trophy.id] || [];
+  }
+}
+
+const darkSouls3Guide = sampleGames.find(game => game.slug === 'dark-souls-iii');
+if (darkSouls3Guide) {
+  const ds3NamePtById = {
+    ds3_the_dark_soul: 'A Alma Sombria',
+    ds3_to_link_the_first_flame: 'Ligar a Primeira Chama',
+    ds3_the_end_of_fire: 'O Fim do Fogo',
+    ds3_the_usurpation_of_fire: 'A Usurpação do Fogo',
+    ds3_lords_of_cinder_abyss_watchers: 'Senhores das Cinzas: Vigilantes do Abismo',
+    ds3_lord_of_cinder_yhorm_the_giant: 'Senhor das Cinzas: Yhorm, o Gigante',
+    ds3_lord_of_cinder_aldrich_devourer_of_gods: 'Senhor das Cinzas: Aldrich, Devorador de Deuses',
+    ds3_lord_of_cinder_lothric_younger_prince: 'Senhor das Cinzas: Lothric, Príncipe Mais Novo',
+    ds3_supreme_weapon_reinforcement: 'Reforço Supremo de Arma',
+    ds3_master_of_infusion: 'Mestre da Infusão',
+    ds3_master_of_sorceries: 'Mestre das Feitiçarias',
+    ds3_master_of_pyromancies: 'Mestre das Piromancias',
+    ds3_master_of_miracles: 'Mestre dos Milagres',
+    ds3_master_of_rings: 'Mestre dos Anéis',
+    ds3_master_of_expression: 'Mestre das Expressões',
+    ds3_ultimate_bonfire: 'Fogueira Suprema',
+    ds3_ultimate_estus: 'Estus Supremo',
+    ds3_covenant_warrior_of_sunlight: 'Juramento: Guerreiro da Luz Solar',
+    ds3_covenant_way_of_blue: 'Juramento: Caminho Azul',
+    ds3_covenant_blue_sentinels: 'Juramento: Sentinelas Azuis',
+    ds3_covenant_blade_of_the_darkmoon: 'Juramento: Lâmina da Lua Negra',
+    ds3_covenant_rosarias_fingers: 'Juramento: Dedos de Rosaria',
+    ds3_covenant_mound_makers: 'Juramento: Criadores de Montes',
+    ds3_covenant_watchdogs_of_farron: 'Juramento: Cães de Guarda de Farron',
+    ds3_covenant_aldrich_faithful: 'Juramento: Fiéis de Aldrich',
+    ds3_untended_graves: 'Túmulos Abandonados',
+    ds3_archdragon_peak: 'Pico do Arquidragão',
+    ds3_iudex_gundyr: 'Iudex Gundyr',
+    ds3_vordt_of_the_boreal_valley: 'Vordt do Vale Boreal',
+    ds3_curse_rotted_greatwood: 'Grande Árvore Apodrecida pela Maldição',
+    ds3_crystal_sage: 'Sábio de Cristal',
+    ds3_deacons_of_the_deep: 'Diáconos das Profundezas',
+    ds3_high_lord_wolnir: 'Alto Lorde Wolnir',
+    ds3_pontiff_sulyvahn: 'Pontífice Sulyvahn',
+    ds3_dancer_of_the_boreal_valley: 'Dançarina do Vale Boreal',
+    ds3_dragonslayer_armour: 'Armadura do Matador de Dragões',
+    ds3_old_demon_king: 'Velho Rei Demônio',
+    ds3_oceiros_the_consumed_king: 'Oceiros, o Rei Consumido',
+    ds3_champion_gundyr: 'Campeão Gundyr',
+    ds3_ancient_wyvern: 'Wyvern Antiga',
+    ds3_the_nameless_king: 'O Rei Sem Nome',
+    ds3_enkindle: 'Acender',
+    ds3_embrace_the_flame: 'Abraçar a Chama'
+  };
+  const ds3TagsById = {
+    ds3_the_dark_soul: ['platina'],
+    ds3_to_link_the_first_flame: ['final', 'spoiler', 'NG++', 'perdível'],
+    ds3_the_end_of_fire: ['final', 'spoiler', 'NG++', 'perdível'],
+    ds3_the_usurpation_of_fire: ['perdível', 'final', 'spoiler', 'risco de run'],
+    ds3_supreme_weapon_reinforcement: ['upgrade', 'cleanup'],
+    ds3_master_of_infusion: ['infusão', 'coletável', 'cleanup'],
+    ds3_master_of_sorceries: ['coletável', 'risco de run', 'magias', 'boss souls', 'juramentos', 'perdível'],
+    ds3_master_of_pyromancies: ['coletável', 'risco de run', 'piromancias', 'boss souls', 'juramentos', 'perdível'],
+    ds3_master_of_miracles: ['coletável', 'risco de run', 'milagres', 'boss souls', 'juramentos', 'perdível'],
+    ds3_master_of_rings: ['perdível', 'coletável', 'risco de run', 'NG++'],
+    ds3_master_of_expression: ['gestos', 'NPCs', 'risco de run', 'perdível'],
+    ds3_ultimate_bonfire: ['upgrade', 'coletável', 'cleanup'],
+    ds3_ultimate_estus: ['upgrade', 'coletável', 'cleanup'],
+    ds3_covenant_warrior_of_sunlight: ['juramento', 'farm offline'],
+    ds3_covenant_blade_of_the_darkmoon: ['juramento', 'NPCs', 'farm offline', 'perdível'],
+    ds3_covenant_rosarias_fingers: ['juramento', 'farm offline'],
+    ds3_covenant_mound_makers: ['juramento', 'risco de run', 'farm offline', 'perdível'],
+    ds3_covenant_watchdogs_of_farron: ['juramento', 'risco de run', 'farm offline'],
+    ds3_covenant_aldrich_faithful: ['juramento', 'spoiler'],
+    ds3_untended_graves: ['área opcional', 'spoiler'],
+    ds3_archdragon_peak: ['área opcional', 'spoiler'],
+    ds3_old_demon_king: ['chefe opcional', 'cleanup'],
+    ds3_champion_gundyr: ['chefe opcional', 'dificuldade', 'cleanup'],
+    ds3_the_nameless_king: ['história', 'dificuldade', 'spoiler'],
+    ds3_enkindle: ['história', 'inicial'],
+    ds3_embrace_the_flame: ['história', 'sistema']
+  };
+  const ds3DescriptionPtById = {
+    ds3_the_dark_soul: 'Obtenha todos os troféus da lista base de Dark Souls III.',
+    ds3_to_link_the_first_flame: 'Alcance o final To Link the First Flame.',
+    ds3_the_end_of_fire: 'Alcance o final The End of Fire.',
+    ds3_the_usurpation_of_fire: 'Alcance o final The Usurpation of Fire.',
+    ds3_lords_of_cinder_abyss_watchers: 'Derrote os Abyss Watchers, Senhores das Cinzas.',
+    ds3_lord_of_cinder_yhorm_the_giant: 'Derrote Yhorm the Giant, Senhor das Cinzas.',
+    ds3_lord_of_cinder_aldrich_devourer_of_gods: 'Derrote Aldrich, Devourer of Gods, Senhor das Cinzas.',
+    ds3_lord_of_cinder_lothric_younger_prince: 'Derrote Lothric, Younger Prince, Senhor das Cinzas.',
+    ds3_supreme_weapon_reinforcement: 'Reforce uma arma até o nível máximo.',
+    ds3_master_of_infusion: 'Realize todos os tipos de infusão.',
+    ds3_master_of_sorceries: 'Obtenha todas as feitiçarias da lista base.',
+    ds3_master_of_pyromancies: 'Obtenha todas as piromancias da lista base.',
+    ds3_master_of_miracles: 'Obtenha todos os milagres da lista base.',
+    ds3_master_of_rings: 'Obtenha todos os anéis exigidos pela lista base, incluindo NG+ e NG++.',
+    ds3_master_of_expression: 'Aprenda todos os gestos exigidos pela lista base.',
+    ds3_ultimate_bonfire: 'Reforce a fogueira até o nível máximo.',
+    ds3_ultimate_estus: 'Reforce o Estus Flask até o nível máximo.',
+    ds3_covenant_warrior_of_sunlight: 'Descubra o covenant Warrior of Sunlight.',
+    ds3_covenant_way_of_blue: 'Descubra o covenant Way of Blue.',
+    ds3_covenant_blue_sentinels: 'Descubra o covenant Blue Sentinels.',
+    ds3_covenant_blade_of_the_darkmoon: 'Descubra o covenant Blade of the Darkmoon.',
+    ds3_covenant_rosarias_fingers: 'Descubra o covenant Rosaria\'s Fingers.',
+    ds3_covenant_mound_makers: 'Descubra o covenant Mound-makers.',
+    ds3_covenant_watchdogs_of_farron: 'Descubra o covenant Watchdogs of Farron.',
+    ds3_covenant_aldrich_faithful: 'Descubra o covenant Aldrich Faithful.',
+    ds3_untended_graves: 'Alcance a área Untended Graves.',
+    ds3_archdragon_peak: 'Alcance a área Archdragon Peak.',
+    ds3_iudex_gundyr: 'Derrote Iudex Gundyr.',
+    ds3_vordt_of_the_boreal_valley: 'Derrote Vordt of the Boreal Valley.',
+    ds3_curse_rotted_greatwood: 'Derrote Curse-rotted Greatwood.',
+    ds3_crystal_sage: 'Derrote Crystal Sage.',
+    ds3_deacons_of_the_deep: 'Derrote Deacons of the Deep.',
+    ds3_high_lord_wolnir: 'Derrote High Lord Wolnir.',
+    ds3_pontiff_sulyvahn: 'Derrote Pontiff Sulyvahn.',
+    ds3_dancer_of_the_boreal_valley: 'Derrote Dancer of the Boreal Valley.',
+    ds3_dragonslayer_armour: 'Derrote Dragonslayer Armour.',
+    ds3_old_demon_king: 'Derrote Old Demon King.',
+    ds3_oceiros_the_consumed_king: 'Derrote Oceiros, the Consumed King.',
+    ds3_champion_gundyr: 'Derrote Champion Gundyr.',
+    ds3_ancient_wyvern: 'Derrote Ancient Wyvern.',
+    ds3_the_nameless_king: 'Derrote The Nameless King.',
+    ds3_enkindle: 'Acenda uma bonfire pela primeira vez.',
+    ds3_embrace_the_flame: 'Torne-se Host of Embers pela primeira vez.'
+  };
+  const ds3TipPtById = {
+    ds3_the_dark_soul: 'Conclua os outros 42 troféus da lista base. Ashes of Ariandel e The Ringed City ficam fora desta platina.',
+    ds3_to_link_the_first_flame: 'Final mutuamente exclusivo sem backup. Planeje junto de The End of Fire e The Usurpation of Fire.',
+    ds3_the_end_of_fire: 'Final dependente de rota e decisão final. Use backup ou deixe para uma jornada dedicada.',
+    ds3_the_usurpation_of_fire: 'Siga Yoel, Yuria e Anri sem curar o Dark Sigil. Quebrar a rota normalmente empurra o final para NG+.',
+    ds3_lords_of_cinder_abyss_watchers: 'Chefe principal de Farron Keep. Confira Watchdogs of Farron e NPCs da região antes de avançar demais.',
+    ds3_lord_of_cinder_aldrich_devourer_of_gods: 'Chefe principal de Anor Londo. Confira Aldrich Faithful e Blade of the Darkmoon antes de encerrar pendências da área.',
+    ds3_supreme_weapon_reinforcement: 'Leve uma arma ao máximo com Titanite Slab. Não é online nem perdível, mas slabs limitadas por run pedem controle.',
+    ds3_master_of_infusion: 'Realize todas as infusões com Andre usando carvões e gemas. Organize recursos antes do cleanup final.',
+    ds3_master_of_sorceries: 'Feitiçarias podem depender de NPCs, pergaminhos, boss souls e recompensas de juramento. Guarde almas de chefes até fechar a lista.',
+    ds3_master_of_pyromancies: 'Piromancias passam por Cornyx, Karla, tomos, boss souls e recompensas de juramento. Planeje antes do fim do ciclo.',
+    ds3_master_of_miracles: 'Milagres dependem de NPCs, tomos, boss souls e recompensas de juramento, especialmente Blade of the Darkmoon.',
+    ds3_master_of_rings: 'Exige anéis do jogo base em NG, NG+ e NG++. Não inclua anéis de DLC e não descarte anéis antes do troféu.',
+    ds3_master_of_expression: 'Gestos vêm de NPCs, invocações e decisões de rota. Esgote diálogos e acompanhe janelas sensíveis.',
+    ds3_ultimate_bonfire: 'Colete Undead Bone Shards e reforce a fogueira ao máximo. Use checklist por área para não deixar limpeza cega.',
+    ds3_ultimate_estus: 'Colete Estus Shards e entregue ao ferreiro. É cleanup de exploração, não requisito online.',
+    ds3_covenant_warrior_of_sunlight: 'Descubra o juramento em Undead Settlement. Importa para recompensas de juramento, mas online não é obrigatório.',
+    ds3_covenant_blade_of_the_darkmoon: 'Depende da rota de Sirris e do gesto correto. Evite quebrar a questline antes de desbloquear o juramento.',
+    ds3_covenant_mound_makers: 'Entre cedo pela rota de Undead Settlement antes de matar Curse-rotted Greatwood pela rota comum.',
+    ds3_covenant_watchdogs_of_farron: 'Pegue o juramento cedo em Farron Keep. O troféu é simples, mas as recompensas podem virar farm longo.',
+    ds3_covenant_aldrich_faithful: 'Juramento ligado a Anor Londo e ao escopo de recompensas. Trate a descoberta do juramento e o farm como objetivos diferentes.',
+    ds3_untended_graves: 'Área opcional importante para chefes e cleanup. Entre quando a build estiver pronta.',
+    ds3_archdragon_peak: 'Área opcional ligada a Ancient Wyvern e The Nameless King. Prepare-se para desafio alto.',
+    ds3_crystal_sage: 'Chefe de Road of Sacrifices. Avance com atenção a Orbeck e aos pergaminhos de feitiçaria.',
+    ds3_deacons_of_the_deep: 'Chefe de Cathedral of the Deep. Confira Rosaria, Patches, Siegward e questlines da área.',
+    ds3_old_demon_king: 'Chefe opcional de Smouldering Lake. Faça no cleanup antes de avançar ciclos, se ainda faltar.',
+    ds3_champion_gundyr: 'Chefe opcional exigente em Untended Graves. Volte com build estável se travar.',
+    ds3_the_nameless_king: 'Um dos chefes mais difíceis da lista base. Deixe para quando a build e os upgrades estiverem fortes.',
+    ds3_enkindle: 'Acenda sua primeira fogueira. Troféu inicial e sem requisito online.',
+    ds3_embrace_the_flame: 'Use uma Ember e torne-se Host of Embers pela primeira vez. Não depende de coop.'
+  };
+  const ds3MissableIds = new Set([
+    'ds3_to_link_the_first_flame',
+    'ds3_the_end_of_fire',
+    'ds3_the_usurpation_of_fire',
+    'ds3_master_of_sorceries',
+    'ds3_master_of_pyromancies',
+    'ds3_master_of_miracles',
+    'ds3_master_of_rings',
+    'ds3_master_of_expression',
+    'ds3_covenant_blade_of_the_darkmoon',
+    'ds3_covenant_mound_makers'
+  ]);
+
+  Object.assign(darkSouls3Guide, {
+    title: 'Dark Souls III',
+    developer: 'FromSoftware',
+    publisher: 'Bandai Namco Entertainment',
+    genre: 'Ação/RPG/soulslike',
+    primary_platform: 'PS4',
+    guide_platform: 'PS4',
+    platforms: ['PS4'],
+    release_date: '2016-04-12',
+    releaseDate: '2016-04-12',
+    trophy_count: 43,
+    time: '80-100h',
+    time_min_hours: 80,
+    time_max_hours: 100,
+    time_sort_hours: 100,
+    time_bucket: 'long',
+    runs: '1 jornada completa + NG+ + NG++',
+    hasMissables: true,
+    missableCount: 10,
+    missable_count: 10,
+    onlineRequired: false,
+    requiresOnline: false,
+    hasMandatoryOnline: false,
+    coopRequired: false,
+    requiresCoop: false,
+    hasMandatoryCoop: false,
+    dlcRequired: false,
+    dlcRequiredForPlatinum: false,
+    difficulty_reason: 'A dificuldade 7/10 vem do combate soulslike, chefes exigentes, rotas de NPC, finais, Master of Rings, listas de magias e farm de juramentos.',
+    time_reason: 'A estimativa de 80-100 horas considera uma jornada completa, NG+, NG++, coleta de anéis, finais, gestos, magias, milagres, piromancias e farm de juramentos.',
+    missable: 'Tem riscos reais em finais, questlines de NPC, Mound-makers, Blade of the Darkmoon, gestos, recompensas de juramento e troféus de coleção ligados a magias, milagres, piromancias e anéis.',
+    missable_summary: 'Os principais perdíveis estão em The Usurpation of Fire, finais mutuamente exclusivos, Mound-makers, Blade of the Darkmoon, Master of Expression e coleções afetadas por NPCs, boss souls e juramentos.',
+    online_summary: 'Online existe e pode acelerar o farm de itens de juramento, mas é opcional. A platina base pode ser feita offline com farm.',
+    runs_summary: 'A rota normal usa uma primeira jornada completa, depois NG+ e NG++ para finais restantes, anéis, questlines perdidas e cleanup.',
+    grind_summary: 'O maior grind está nos itens de juramento e nas recompensas ligadas a magias, milagres, piromancias e anéis.',
+    dlc_scope: 'Guia focado na lista base de Dark Souls III no PS4. Ashes of Ariandel e The Ringed City ficam fora da platina base.',
+    first_run_advice: 'Comece a primeira jornada acompanhando NPCs, juramentos e gestos desde o início. Entre nos juramentos assim que forem liberados, não cure o Dark Sigil se for fazer The Usurpation of Fire e não consuma almas de chefes antes de confirmar magias, milagres e piromancias.',
+    cleanup_advice: 'Use NG+ e NG++ para anéis, finais restantes, questlines pendentes, farm de juramentos e revisão de magias, milagres, piromancias, gestos, infusões, Estus, fogueira e arma máxima.',
+    before_you_start: 'Leia o roadmap antes de jogar: Dark Souls III pune falta de planejamento com questlines quebradas, finais perdidos, juramentos atrasados, boss souls gastas errado e farm extra.',
+    best_for: 'Ideal para quem gosta de soulslike exigente, chefes fortes, rotas de NPC complexas, múltiplas jornadas e checklist profundo de colecionáveis.',
+    avoid_if: 'Evite se você não quer NG++, farm de juramentos, controle de NPCs, múltiplos finais e limpeza longa de anéis, gestos e magias.',
+    editorial_review_status: 'in_review',
+    editorialStatus: 'in_review',
+    verification_note: 'Guia revisado para lista base PS4 com 43 troféus, roadmap estruturado, flags offline/sem coop/sem DLC, EN/PT-BR e conteúdo editorial forte. Mantido em revisão até a suíte global deixar de falhar por pendência externa.',
+    editorial_notes: 'Platina base de Dark Souls III separada de Ashes of Ariandel e The Ringed City. Online tratado como opcional para acelerar farm de juramentos, nunca como requisito.',
+    quality_warnings: [],
+    tags: ['soulslike', 'ação', 'RPG', 'chefes', 'finais', 'coletáveis', 'juramentos', 'grind', 'NG++', 'offline', 'sem DLC obrigatória'],
+    editorial_summary: [
+      'Dark Souls III é uma platina longa e exigente, focada em completar a campanha, planejar três finais, avançar até NG++ para os anéis e resolver uma grande quantidade de colecionáveis ligados a magias, milagres, piromancias, gestos, infusões e juramentos. O online é opcional e pode reduzir bastante o farm dos itens de juramento, mas a platina continua possível offline com mais grind.',
+      'A rota mais segura é fazer uma primeira jornada completa acompanhando NPCs, juramentos e gestos, preparar The Usurpation of Fire sem curar o Dark Sigil, coletar tudo que for possível antes do final e usar NG+/NG++ para finais restantes, anéis e limpeza. O principal cuidado é não quebrar questlines, não perder juramentos temporários e não consumir almas de chefes necessárias para magias, milagres ou piromancias.'
+    ],
+    quickDecision: {
+      firstAction: 'Comece a primeira jornada acompanhando NPCs, juramentos e gestos desde o início. Entre nos juramentos assim que forem liberados, não cure o Dark Sigil se for fazer The Usurpation of Fire e não consuma almas de chefes antes de confirmar magias, milagres e piromancias.',
+      mainRisk: 'O maior risco é quebrar questlines, perder Mound-makers ou Blade of the Darkmoon, gastar boss souls importantes e subestimar o farm de juramentos.',
+      verdict: 'Vale platinar Dark Souls III se você gosta de soulslike exigente, rotas de NPC complexas e checklist de coleção. A platina não exige online nem DLC, mas cobra planejamento para finais, juramentos, gestos, anéis até NG++ e um farm pesado de recompensas.'
+    },
+    seo: {
+      title: 'Guia de Platina Dark Souls III - Troféus, Roadmap e Dicas',
+      description: 'Guia de platina de Dark Souls III com roadmap em português, finais, juramentos, anéis, gestos, magias, milagres, piromancias, NG++ e dicas para conquistar todos os troféus no PS4.',
+      keywords: ['Dark Souls III', 'Dark Souls 3', 'guia de platina Dark Souls III', 'troféus Dark Souls III', 'roadmap Dark Souls III', 'Master of Rings', 'The Usurpation of Fire', 'Mound-makers', 'Watchdogs of Farron', 'Blade of the Darkmoon']
+    },
+    checklist: [
+      'Confirmar os 43 troféus da lista base de PS4.',
+      'Não contar Ashes of Ariandel nem The Ringed City como requisito da platina.',
+      'Entrar nos juramentos no momento seguro, especialmente Mound-makers e Watchdogs of Farron.',
+      'Garantir Mound-makers antes de quebrar a rota inicial.',
+      'Garantir Watchdogs of Farron cedo em Farron Keep.',
+      'Não curar o Dark Sigil durante a rota de The Usurpation of Fire.',
+      'Seguir Yoel, Yuria e Anri na ordem correta.',
+      'Não consumir almas de chefes necessárias para magias, milagres ou piromancias.',
+      'Coletar todos os gestos necessários para Master of Expression.',
+      'Coletar todos os anéis do jogo base, incluindo versões de NG+ e NG++.',
+      'Fazer todos os finais com backup de save ou múltiplas jornadas.',
+      'Farmar recompensas de juramento necessárias para coleções.',
+      'Fazer todas as infusões para Master of Infusion.',
+      'Maximizar Estus, bonfire e uma arma.',
+      'Confirmar que a rota continua sem online obrigatório, sem coop obrigatório e sem DLC exigida.',
+      'Conferir se cada troféu marcado como perdível depende de final, decisão irreversível, NPC, juramento ou questline.',
+      'Conferir SEO, FAQ, decisão rápida, tags e pontos de atenção antes da revisão final.'
+    ],
+    faq: [
+      {
+        question: 'Dark Souls III exige online para platinar?',
+        answer: 'Não. A platina pode ser feita offline. O online é opcional e pode acelerar itens de juramento, mas não deve ser tratado como obrigatório.'
+      },
+      {
+        question: 'Dark Souls III exige coop para platinar?',
+        answer: 'Não. Coop e boost podem ajudar no farm, mas a platina não depende de coop obrigatório.'
+      },
+      {
+        question: 'As DLCs Ashes of Ariandel e The Ringed City são necessárias para a platina?',
+        answer: 'Não. A platina considera a lista base de troféus; DLC não deve ser marcada como requisito da platina. Anéis, magias e chefes de DLC ficam fora do escopo da lista base.'
+      },
+      {
+        question: 'Dark Souls III tem troféus perdíveis?',
+        answer: 'Sim. O principal risco está em questlines de NPCs, juramentos, gestos e finais, especialmente The Usurpation of Fire, Mound-makers, Blade of the Darkmoon e rotas de Anri, Yuria e Yoel.'
+      },
+      {
+        question: 'Precisa jogar até NG++?',
+        answer: 'Na rota normal, sim. Master of Rings exige anéis que aparecem em ciclos posteriores, então o guia deve planejar NG+ e NG++.'
+      },
+      {
+        question: 'Dá para fazer os finais em uma jogada?',
+        answer: 'É possível reduzir repetição com backup de save, mas a rota sem backup exige múltiplas jornadas para finais diferentes.'
+      },
+      {
+        question: 'Qual é o maior grind da platina?',
+        answer: 'O maior grind está nos itens de juramento usados para recompensas ligadas a milagres, piromancias, magias e anéis. O online pode acelerar parte desse processo, mas a rota offline continua possível com farm.'
+      },
+      {
+        question: 'Posso consumir almas de chefes?',
+        answer: 'Não consuma boss souls sem conferir o checklist. Algumas almas são necessárias para obter magias, milagres ou piromancias usados nos troféus de mestre.'
+      },
+      {
+        question: 'Os anéis de DLC contam para Master of Rings?',
+        answer: 'Não. O guia considera os anéis da lista base. Ashes of Ariandel e The Ringed City ficam fora da platina.'
+      }
+    ],
+    roadmap: [
+      {
+        title: 'Primeira jornada com NPCs e juramentos sob controle',
+        focus: 'Campanha e planejamento',
+        objective: 'Completar a maior parte da campanha protegendo questlines, juramentos, gestos e itens importantes.',
+        actions: [
+          'Avance pela campanha explorando áreas principais e opcionais sem ignorar NPCs.',
+          'Entre nos juramentos assim que forem liberados, especialmente Mound-makers e Watchdogs of Farron.',
+          'Colete Estus Shards, Undead Bone Shards, tomos, carvões, anéis, gestos e itens importantes de NPC.',
+          'Não consuma almas de chefes antes de confirmar se elas serão necessárias para magias, milagres ou piromancias.',
+          'Não cure o Dark Sigil se estiver seguindo a rota de The Usurpation of Fire.'
+        ],
+        warning: 'Avançar chefes cedo demais, quebrar questlines, curar o Dark Sigil ou ignorar juramentos pode empurrar troféus para NG+.',
+        result: 'A primeira jornada fica preparada para finais, colecionáveis, juramentos e cleanup sem perda desnecessária de tempo.'
+      },
+      {
+        title: 'Rota de The Usurpation of Fire',
+        focus: 'Final perdível',
+        objective: 'Executar a questline de Yoel, Yuria e Anri para garantir o final mais sensível da platina.',
+        actions: [
+          'Recrute Yoel e receba os níveis gratuitos necessários antes de avançar demais.',
+          'Não cure o Dark Sigil durante essa rota.',
+          'Siga os encontros de Anri e Yuria na ordem correta.',
+          'Resolva a etapa de Irithyll e Anor Londo conforme o requisito do final.',
+          'Depois do Soul of Cinder, escolha a interação correta para ativar The Usurpation of Fire.'
+        ],
+        warning: 'Este é um dos pontos mais perdíveis do guia. Se a questline for quebrada, o jogador normalmente precisará tentar novamente em NG+.',
+        result: 'O final The Usurpation of Fire fica garantido ou corretamente documentado para uma nova jornada.'
+      },
+      {
+        title: 'Coletáveis de build e troféus de mestre',
+        focus: 'Magias e upgrades',
+        objective: 'Completar os troféus ligados a magias, milagres, piromancias, anéis, gestos, infusões, Estus, fogueira e reforço de arma.',
+        actions: [
+          'Antes de consumir boss souls, confira quais magias, milagres e piromancias ainda dependem de almas de chefes, tomos, NPCs ou recompensas de juramento.',
+          'Mantenha uma lista de anéis do jogo base por ciclo, incluindo versões de NG+ e NG++.',
+          'Pegue gestos ligados a NPCs e interações específicas antes de avançar marcos grandes.',
+          'Faça todas as infusões com os carvões e gemas necessários.',
+          'Maximize Estus, fogueira e uma arma antes da conferência final.'
+        ],
+        warning: 'Não inclua itens de DLC como requisito da platina base. Também não deixe almas de chefes serem consumidas se forem necessárias para feitiços, milagres ou piromancias.',
+        result: 'Os troféus de coleção e progressão ficam organizados por categoria, com riscos reais destacados.'
+      },
+      {
+        title: 'Farm de juramentos',
+        focus: 'Grind',
+        objective: 'Obter as recompensas de juramento necessárias para magias, milagres, piromancias e anéis.',
+        actions: [
+          'Acompanhe os juramentos que entregam recompensas necessárias para magias, milagres, piromancias ou anéis.',
+          'Use o online apenas como atalho opcional; se preferir offline, prepare-se para farmar os itens de juramento nos inimigos correspondentes.',
+          'Farme Proof of a Concord Kept, Vertebra Shackle, Sunlight Medal, Wolf\'s Blood Swordgrass, Pale Tongue e Human Dregs quando a recompensa do troféu depender deles.',
+          'Trate a descoberta do juramento e o farm das recompensas como objetivos diferentes para não confundir troféus simples com grind longo.',
+          'Não trate o farm online como obrigatório: ele acelera a platina, mas a rota offline continua válida.'
+        ],
+        warning: 'Este é o maior grind da platina. Se o guia prometer platina rápida sem explicar os juramentos, a expectativa do jogador ficará errada.',
+        result: 'O jogador entende por que a platina pode passar de 80 horas e sabe quando usar farm offline ou ajuda online opcional.'
+      },
+      {
+        title: 'NG+ e NG++ para anéis e finais restantes',
+        focus: 'Novas jornadas',
+        objective: 'Usar os ciclos seguintes para coletar anéis de NG+/NG++, finais restantes e pendências de NPC.',
+        actions: [
+          'Após terminar a primeira jornada, avance para NG+ mantendo checklist de anéis, finais e gestos pendentes.',
+          'Colete os anéis exclusivos de NG+ e depois os de NG++ necessários para Master of Rings.',
+          'Faça To Link the First Flame e The End of Fire se ainda não tiver obtido.',
+          'Resolva questlines quebradas ou juramentos perdidos na jornada anterior.',
+          'Mantenha Ashes of Ariandel e The Ringed City fora do checklist da platina base.'
+        ],
+        warning: 'Master of Rings normalmente exige planejamento até NG++. Não venda, descarte ou ignore anéis antes de confirmar o troféu.',
+        result: 'Com NG++ e os finais resolvidos, o guia entra na etapa final de conferência da platina.'
+      },
+      {
+        title: 'Cleanup final e conferência da platina',
+        focus: 'Conferência',
+        objective: 'Fechar os 43 troféus da lista base sem misturar DLC, online opcional ou coop opcional com requisitos da platina.',
+        actions: [
+          'Conclua a conferência dos 43 troféus da lista base.',
+          'Mantenha Ashes of Ariandel e The Ringed City fora dos requisitos da platina.',
+          'Confira se a rota continua sem online obrigatório, sem coop obrigatório e sem DLC exigida.',
+          'Separe perdíveis reais de objetivos que apenas exigem NG+, NG++ ou cleanup.',
+          'Revise finais, juramentos, anéis, gestos, magias, milagres, piromancias e boss souls antes de encerrar.'
+        ],
+        warning: '',
+        result: 'A rota fica pronta para a conferência final da platina base.'
+      }
+    ]
+  });
+
+  for (const trophy of darkSouls3Guide.trophies || []) {
+    const namePt = ds3NamePtById[trophy.id] || trophy.name || '';
+    const descriptionPt = ds3DescriptionPtById[trophy.id] || trophy.tip || trophy.description || '';
+    const tipPt = ds3TipPtById[trophy.id] || descriptionPt;
+    trophy.name_pt = namePt;
+    trophy.trophyNameOriginal = trophy.name;
+    trophy.trophyNamePtBr = namePt;
+    trophy.namePtSource = 'editorial_ptbr';
+    trophy.description = descriptionPt;
+    trophy.descriptionPtBr = descriptionPt;
+    trophy.ptDescription = descriptionPt;
+    trophy.localizedDescription = { ...(trophy.localizedDescription || {}), ptBr: descriptionPt };
+    trophy.descriptionPtSource = 'editorial_ptbr';
+    trophy.tip = tipPt;
+    trophy.tipPtBr = tipPt;
+    trophy.localizedTip = { ...(trophy.localizedTip || {}), ptBr: tipPt };
+    trophy.is_missable = trophy.type === 'Platina' ? false : ds3MissableIds.has(trophy.id);
+    trophy.isMissable = trophy.is_missable;
+    trophy.missable = trophy.is_missable;
+    trophy.is_online = false;
+    trophy.isOnline = false;
+    trophy.is_coop = false;
+    trophy.isCoop = false;
+    trophy.dlcRequired = false;
+    trophy.tags = ds3TagsById[trophy.id] || trophy.tags || [];
+  }
+}
+
+const atlasGuideViewModel = require('../shared/guideViewModel');
+for (const game of sampleGames) {
+  if (!Array.isArray(game.roadmap)) continue;
+  game.roadmap = atlasGuideViewModel.normalizeRoadmapForSave(game.roadmap);
 }
 
 module.exports = sampleGames;

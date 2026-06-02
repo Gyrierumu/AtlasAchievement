@@ -18,7 +18,10 @@ const CATALOG_SEED_EDITORIAL_STATUS_SLUGS = new Set([
   'marvels-spider-man-2',
   'marvels-spider-man-miles-morales'
 ]);
-const LOCALIZED_TROPHY_SOURCE_SLUGS = new Set(['astro-bot', 'astros-playroom', 'clair-obscur-expedition-33', 'dead-cells', 'death-stranding', 'death-stranding-2-on-the-beach', 'detroit-become-human', 'god-of-war', 'god-of-war-ragnarok', 'hades-ii', 'hollow-knight', 'marvels-spider-man', 'marvels-spider-man-2', 'marvels-spider-man-miles-morales', 'nioh-2', 'nioh-3', 'red-dead-redemption-2', 'resident-evil', 'resident-evil-2-remake', 'resident-evil-3-remake', 'resident-evil-requiem', 'the-last-of-us-part-i', 'the-last-of-us-part-ii', 'subnautica']);
+sampleGames
+  .filter(game => game?.is_verified || game?.verification_status === 'verified' || game?.editorial_review_status === 'verified')
+  .forEach(game => CATALOG_SEED_EDITORIAL_STATUS_SLUGS.add(String(game?.slug || '').trim().toLowerCase()));
+const LOCALIZED_TROPHY_SOURCE_SLUGS = new Set(['astro-bot', 'astros-playroom', 'bloodborne', 'clair-obscur-expedition-33', 'dark-souls-iii', 'dead-cells', 'death-stranding', 'death-stranding-2-on-the-beach', 'detroit-become-human', 'god-of-war', 'god-of-war-ragnarok', 'hades-ii', 'hollow-knight', 'marvels-spider-man', 'marvels-spider-man-2', 'marvels-spider-man-miles-morales', 'nioh-2', 'nioh-3', 'red-dead-redemption-2', 'resident-evil', 'resident-evil-2-remake', 'resident-evil-3-remake', 'resident-evil-requiem', 'the-last-of-us-part-i', 'the-last-of-us-part-ii', 'subnautica']);
 const CATALOG_IMAGE_BY_SLUG = {
   'the-last-of-us-part-ii': 'https://cdn.cloudflare.steamstatic.com/steam/apps/2531310/header.jpg'
 };
@@ -80,6 +83,7 @@ const CANONICAL_MISSABLE_TROPHIES_BY_SLUG = {
     'detroit-partners',
     'detroit-happy-family',
     'detroit-ill-be-back',
+    'detroit-these-are-our-stories',
     'detroit-survivors'
   ]),
   'elden-ring': new Set([
@@ -122,7 +126,7 @@ const CANONICAL_MISSABLE_TROPHIES_BY_SLUG = {
   'resident-evil-3-remake': new Set([
     're3r_nemesis_down',
     're3r_power_stones',
-    're3r_unfortunaté_end',
+    're3r_unfortunate_end',
     're3r_jill_valentine',
     're3r_electric_slide',
     're3r_bookworm',
@@ -130,7 +134,7 @@ const CANONICAL_MISSABLE_TROPHIES_BY_SLUG = {
     're3r_kendos_armory',
     're3r_master_unlocking',
     're3r_minimalist',
-    're3r_need_these_latér',
+    're3r_need_these_later',
     're3r_sprinter'
   ])
 };
@@ -360,10 +364,14 @@ function normalizeGame(row, roadmapRows, trophyRows) {
   const useSpiderMan2SeedEditorial = normalizedSlug === 'marvels-spider-man-2' && seedGame;
   const useMilesMoralesSeedEditorial = normalizedSlug === 'marvels-spider-man-miles-morales' && seedGame;
   const useRedDeadRedemption2SeedEditorial = normalizedSlug === 'red-dead-redemption-2' && seedGame;
+  const useDarkSouls3SeedEditorial = normalizedSlug === 'dark-souls-iii' && seedGame;
   const useDeathStrandingSeedEditorial = normalizedSlug === 'death-stranding' && seedGame;
   const useDeathStranding2SeedEditorial = normalizedSlug === 'death-stranding-2-on-the-beach' && seedGame;
-  const useStrictSeedEditorial = useDeathStrandingSeedEditorial || useDeathStranding2SeedEditorial || useResidentEvilSeedEditorial || useSpiderManSeedEditorial || useSpiderMan2SeedEditorial || useMilesMoralesSeedEditorial || useRedDeadRedemption2SeedEditorial;
-  const editorialSource = ['clair-obscur-expedition-33', 'death-stranding', 'death-stranding-2-on-the-beach', 'detroit-become-human', 'marvels-spider-man', 'marvels-spider-man-2', 'marvels-spider-man-miles-morales', 'red-dead-redemption-2', 'resident-evil', 'resident-evil-2-remake', 'resident-evil-3-remake', 'resident-evil-requiem'].includes(normalizedSlug) && seedGame
+  const useBloodborneSeedEditorial = normalizedSlug === 'bloodborne' && seedGame;
+  const useClairObscurSeedEditorial = normalizedSlug === 'clair-obscur-expedition-33' && seedGame;
+  const useDetroitSeedEditorial = normalizedSlug === 'detroit-become-human' && seedGame;
+  const useStrictSeedEditorial = useBloodborneSeedEditorial || useClairObscurSeedEditorial || useDarkSouls3SeedEditorial || useDetroitSeedEditorial || useDeathStrandingSeedEditorial || useDeathStranding2SeedEditorial || useResidentEvilSeedEditorial || useSpiderManSeedEditorial || useSpiderMan2SeedEditorial || useMilesMoralesSeedEditorial || useRedDeadRedemption2SeedEditorial;
+  const editorialSource = ['bloodborne', 'clair-obscur-expedition-33', 'dark-souls-iii', 'death-stranding', 'death-stranding-2-on-the-beach', 'detroit-become-human', 'marvels-spider-man', 'marvels-spider-man-2', 'marvels-spider-man-miles-morales', 'red-dead-redemption-2', 'resident-evil', 'resident-evil-2-remake', 'resident-evil-3-remake', 'resident-evil-requiem'].includes(normalizedSlug) && seedGame
     ? {
         ...row,
         ...seedGame,
@@ -381,6 +389,8 @@ function normalizeGame(row, roadmapRows, trophyRows) {
     : row;
   const supportsLocalizedDescriptions = [
     'clair-obscur-expedition-33',
+    'bloodborne',
+    'dark-souls-iii',
     'detroit-become-human',
     'elden-ring',
     'death-stranding',
@@ -415,9 +425,11 @@ function normalizeGame(row, roadmapRows, trophyRows) {
     ? canonicalMissableSet.has(item?.trophy_code) || canonicalMissableSet.has(normalizeTrophyLookupCode(item?.trophy_code))
     : Boolean(item?.is_missable);
   const missableCount = trophyRows.filter(item => isCanonicalMissableTrophy(item) && !isPlatinumTrophy(item)).length;
+  const seedMissableCount = Number(editorialSource.missableCount ?? editorialSource.missable_count);
+  const resolvedMissableCount = Number.isFinite(seedMissableCount) ? seedMissableCount : missableCount;
   const spoilerCount = trophyRows.filter(item => item.is_spoiler).length;
-  const useSeedRoadmap = ['clair-obscur-expedition-33', 'dead-cells', 'death-stranding', 'death-stranding-2-on-the-beach', 'detroit-become-human', 'god-of-war', 'god-of-war-ragnarok', 'marvels-spider-man', 'marvels-spider-man-2', 'marvels-spider-man-miles-morales', 'red-dead-redemption-2', 'resident-evil', 'resident-evil-2-remake', 'resident-evil-3-remake', 'resident-evil-requiem'].includes(normalizedSlug) && Array.isArray(seedGame?.roadmap);
-  const explicitOfflineBaseSlugs = ['clair-obscur-expedition-33', 'detroit-become-human', 'elden-ring', 'astro-bot', 'astros-playroom', 'dead-cells', 'god-of-war', 'god-of-war-ragnarok', 'hollow-knight', 'marvels-spider-man', 'marvels-spider-man-2', 'marvels-spider-man-miles-morales', 'nioh-2', 'nioh-3', 'resident-evil', 'resident-evil-2-remake', 'resident-evil-3-remake', 'resident-evil-requiem', 'saros', 'the-last-of-us-part-i', 'the-last-of-us-part-ii', 'subnautica'];
+  const useSeedRoadmap = ['bloodborne', 'clair-obscur-expedition-33', 'dark-souls-iii', 'dead-cells', 'death-stranding', 'death-stranding-2-on-the-beach', 'detroit-become-human', 'god-of-war', 'god-of-war-ragnarok', 'marvels-spider-man', 'marvels-spider-man-2', 'marvels-spider-man-miles-morales', 'red-dead-redemption-2', 'resident-evil', 'resident-evil-2-remake', 'resident-evil-3-remake', 'resident-evil-requiem'].includes(normalizedSlug) && Array.isArray(seedGame?.roadmap);
+  const explicitOfflineBaseSlugs = ['bloodborne', 'clair-obscur-expedition-33', 'dark-souls-iii', 'detroit-become-human', 'elden-ring', 'astro-bot', 'astros-playroom', 'dead-cells', 'god-of-war', 'god-of-war-ragnarok', 'hollow-knight', 'marvels-spider-man', 'marvels-spider-man-2', 'marvels-spider-man-miles-morales', 'nioh-2', 'nioh-3', 'resident-evil', 'resident-evil-2-remake', 'resident-evil-3-remake', 'resident-evil-requiem', 'saros', 'the-last-of-us-part-i', 'the-last-of-us-part-ii', 'subnautica'];
   const seedEditorialSummary = Array.isArray(seedGame?.editorial_summary)
     ? seedGame.editorial_summary.filter(item => String(item || '').trim())
     : [];
@@ -487,8 +499,8 @@ function normalizeGame(row, roadmapRows, trophyRows) {
     onlineRequired: explicitOfflineBaseSlugs.includes(normalizedSlug) ? false : (editorialSource.onlineRequired ?? editorialSource.online_required),
     coopRequired: explicitOfflineBaseSlugs.includes(normalizedSlug) ? false : (editorialSource.coopRequired ?? editorialSource.coop_required),
     dlcRequired: explicitOfflineBaseSlugs.includes(normalizedSlug) ? false : (editorialSource.dlcRequired ?? editorialSource.dlc_required),
-    hasMissables: editorialSource.hasMissables ?? Boolean(missableCount),
-    missableCount: editorialSource.missableCount ?? missableCount,
+    hasMissables: editorialSource.hasMissables ?? Boolean(resolvedMissableCount),
+    missableCount: resolvedMissableCount,
     dlc_status: normalizedSlug === 'elden-ring' ? 'out_of_base_scope' : undefined,
     dlcGuideStatus: normalizedSlug === 'elden-ring' ? 'pending' : undefined,
     extraContentStatus: normalizedSlug === 'elden-ring' ? 'pending' : undefined,
@@ -499,9 +511,12 @@ function normalizeGame(row, roadmapRows, trophyRows) {
       : roadmapRows.map(item => deserializeRoadmapStep(item.content)))
       .map((step, index, rows) => guideModel.normalizeRoadmapStep(step, index, rows.length)),
     trophies: trophyRows.map(item => {
-      const isMissable = isCanonicalMissableTrophy(item) && !isPlatinumTrophy(item);
+      const canonicalIsMissable = isCanonicalMissableTrophy(item) && !isPlatinumTrophy(item);
       const seedTrophy = LOCALIZED_TROPHY_SOURCE_SLUGS.has(normalizedSlug) ? getSeedTrophy(normalizedSlug, item.trophy_code, item.name) : null;
-      const useSeedEditorialTrophy = ['clair-obscur-expedition-33', 'dead-cells', 'death-stranding', 'death-stranding-2-on-the-beach', 'detroit-become-human', 'god-of-war', 'god-of-war-ragnarok', 'marvels-spider-man', 'marvels-spider-man-2', 'marvels-spider-man-miles-morales', 'red-dead-redemption-2', 'resident-evil', 'resident-evil-2-remake', 'resident-evil-3-remake', 'resident-evil-requiem'].includes(normalizedSlug) && seedTrophy;
+      const useSeedEditorialTrophy = ['bloodborne', 'clair-obscur-expedition-33', 'dark-souls-iii', 'dead-cells', 'death-stranding', 'death-stranding-2-on-the-beach', 'detroit-become-human', 'god-of-war', 'god-of-war-ragnarok', 'marvels-spider-man', 'marvels-spider-man-2', 'marvels-spider-man-miles-morales', 'red-dead-redemption-2', 'resident-evil', 'resident-evil-2-remake', 'resident-evil-3-remake', 'resident-evil-requiem'].includes(normalizedSlug) && seedTrophy;
+      const isMissable = useSeedEditorialTrophy
+        ? Boolean(seedTrophy.is_missable || seedTrophy.isMissable || seedTrophy.missable)
+        : canonicalIsMissable;
       const description = useSeedEditorialTrophy ? (seedTrophy.description || item.description || '') : (item.description || '');
       const tip = useSeedEditorialTrophy ? (seedTrophy.tip || item.tip || '') : item.tip;
       const originalName = useSeedEditorialTrophy ? (seedTrophy.name || item.name || '') : (item.name || '');
@@ -539,9 +554,9 @@ function normalizeGame(row, roadmapRows, trophyRows) {
     time_max_hours: editorialSource.time_max_hours,
     time_sort_hours: editorialSource.time_sort_hours,
     time_bucket: editorialSource.time_bucket || null,
-    missable_count: missableCount,
+    missable_count: resolvedMissableCount,
     spoiler_count: spoilerCount,
-    attention_count: missableCount + spoilerCount
+    attention_count: resolvedMissableCount + spoilerCount
   };
 }
 
@@ -690,8 +705,9 @@ function buildListFilters({ search = '', facet = 'all' } = {}) {
 
 function normalizeListRow(row) {
   const normalizedSlug = String(row.slug || '').trim().toLowerCase();
+  const listSeedGame = sampleGames.find(item => String(item?.slug || '').trim().toLowerCase() === normalizedSlug) || null;
   const seedGame = CATALOG_SEED_EDITORIAL_STATUS_SLUGS.has(normalizedSlug)
-    ? sampleGames.find(item => String(item?.slug || '').trim().toLowerCase() === normalizedSlug)
+    ? listSeedGame
     : null;
   const editorialSource = seedGame
     ? {
@@ -708,7 +724,10 @@ function normalizeListRow(row) {
         reviewed_by: seedGame.reviewed_by
       }
     : row;
-  const canonicalMissableCount = CANONICAL_MISSABLE_TROPHIES_BY_SLUG[normalizedSlug]?.size || null;
+  const seedMissableCount = ['bloodborne', 'dark-souls-iii'].includes(normalizedSlug)
+    ? Number(listSeedGame?.missableCount ?? listSeedGame?.missable_count)
+    : NaN;
+  const canonicalMissableCount = Number.isFinite(seedMissableCount) ? seedMissableCount : (CANONICAL_MISSABLE_TROPHIES_BY_SLUG[normalizedSlug]?.size || null);
   const missableCount = canonicalMissableCount ?? Number(row.missable_count || 0);
   const spoilerCount = Number(row.spoiler_count || 0);
   return {
@@ -716,6 +735,11 @@ function normalizeListRow(row) {
     trophy_count: Number(row.trophy_count || 0),
     roadmap_count: Number(row.roadmap_count || 0),
     missable_count: missableCount,
+    missableCount,
+    hasMissables: ['bloodborne', 'dark-souls-iii'].includes(normalizedSlug) ? Boolean(listSeedGame?.hasMissables) : Boolean(missableCount),
+    onlineRequired: ['bloodborne', 'dark-souls-iii'].includes(normalizedSlug) ? false : row.onlineRequired,
+    coopRequired: ['bloodborne', 'dark-souls-iii'].includes(normalizedSlug) ? false : row.coopRequired,
+    dlcRequired: ['bloodborne', 'dark-souls-iii'].includes(normalizedSlug) ? false : row.dlcRequired,
     spoiler_count: spoilerCount,
     attention_count: canonicalMissableCount ? missableCount + spoilerCount : Number(row.attention_count || 0),
     editorial_status: normalizeEditorialStatus(editorialSource.editorial_status),
