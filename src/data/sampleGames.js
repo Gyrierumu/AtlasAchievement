@@ -30401,12 +30401,16 @@ const sampleGames = [
   "verification_status": "review",
   "verification_note": "Guia inicial de Subnautica adicionado com lista PlayStation base; distribuição e risco de Cuddlefish requerem revisão editorial final.",
   "editorial_notes": "Lista PlayStation validada como 18 troféus, distribuição 1 platina, 9 ouro, 7 prata e 1 bronze. Fontes divergem sobre perdíveis: PowerPyx trata 0 missables, mas guias de apoio apontam risco no Cuddlefish por recursos finitos; dado conservador aplicado.",
-  "quality_warnings": [
-    "needs_trophy_list_validation",
-    "needs_trophy_distribution_validation",
-    "needs_trophy_localization_check",
-    "needs_missables_validation"
+  "editorial_summary": [
+    "A platina de Subnautica é focada em sobrevivência, exploração e progressão natural pela história. A lista base não exige online, coop, DLC ou dificuldade específica; o desafio principal é se orientar no mapa, preparar expedições profundas, construir veículos e manter recursos suficientes para não transformar a reta final em retrabalho.",
+    "A rota mais segura é estabilizar oxigênio, água, comida e base cedo, avançar para Seamoth, Prawn Suit e Cyclops, investigar a Aurora e as instalações alienígenas e deixar o cleanup para antes do lançamento do foguete Neptune. Man's Best Friend fica como risco conservador por causa dos ovos finitos de Cuddlefish, então faça esse troféu antes do final e mantenha saves manuais."
   ],
+  "quickDecision": {
+    "summary": "Platina acessível e single-player: sobrevivência, veículos, exploração profunda, história e cleanup antes do final.",
+    "recommendation": "Vale platinar Subnautica se você gosta de exploração subaquática, sobrevivência leve e progressão por descoberta. A platina não exige online, coop nem DLC, mas pede planejamento para expedições profundas, veículos, recursos, Aurora, instalações alienígenas e Man's Best Friend antes do lançamento final.",
+    "firstAction": "Estabilize recursos básicos, construa uma base funcional e avance a exploração marcando biomas, destroços e rotas profundas com beacons."
+  },
+  "quality_warnings": [],
   "trophyCount": 18,
   "trophyDistribution": {
     "platinum": 1,
