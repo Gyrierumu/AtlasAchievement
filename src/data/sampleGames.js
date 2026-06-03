@@ -8099,7 +8099,24 @@ const sampleGames = [
     "time_max_hours": 45,
     "time_sort_hours": 45,
     "time_bucket": "long",
+    "runs": "2 jogadas principais + cleanup por Seleção de Capítulos",
+    "hasMissables": false,
+    "missableCount": 0,
     "missable_count": 0,
+    "hasOnline": false,
+    "hasMandatoryOnline": false,
+    "hasMandatoryCoop": false,
+    "onlineRequired": false,
+    "online_required": false,
+    "coopRequired": false,
+    "coop_required": false,
+    "dlcRequired": false,
+    "dlc_required": false,
+    "dlcRequiredForPlatinum": false,
+    "newGamePlusRequired": false,
+    "difficultyTrophiesRequired": true,
+    "chapterSelect": true,
+    "platinumType": "lista base + Professional + coletáveis + grind de armas + rank S",
     "missable": "Não há troféus perdíveis definitivos na lista base de Resident Evil 5. A Seleção de Capítulos permite repetir qualquer capítulo para limpar emblemas BSAA, tesouros, armas, ranks S, dificuldades e troféus situacionais. O risco real é de retrabalho: alguns tesouros e objetivos têm janela dentro do capítulo, mas se passar do ponto basta repetir o capítulo correspondente.",
     "runs_summary": "1 campanha em Normal ou Veteran, limpeza por Seleção de Capítulos, ranks S/farm/upgrades/figuras e 1 campanha em Professional com inventário preparado.",
     "missable_summary": "Sem perdíveis definitivos. Tudo da platina base pode ser limpo por Seleção de Capítulos; trate emblemas, tesouros e situações específicas como checklist para evitar repetir capítulos no escuro.",
@@ -8119,8 +8136,28 @@ const sampleGames = [
     "verification_status": "verified",
     "editorial_review_status": "verified",
     "verification_note": "Guia revisado com foco na lista base, ausência de perdíveis definitivos, Seleção de Capítulos, coletáveis, armas, upgrades, ranks S e Professional.",
+    "last_reviewed_at": "2026-06-03",
+    "lastReviewedAt": "2026-06-03T00:00:00.000-03:00",
+    "editorial_notes": "Escopo verificado: lista base de 51 troféus de Resident Evil 5. Lost in Nightmares, Desperate Escape e Versus ficam fora da platina. Política de perdíveis: 0 perdíveis definitivos, pois Seleção de Capítulos permite repetir capítulos para coletáveis, dificuldades, ranks e situacionais. They Belong in a Museum não deve ser marcado como perdível; o risco é apenas repetir capítulos para tesouros com janela interna.",
+    "editorialNotes": "Escopo verificado: lista base de 51 troféus de Resident Evil 5. Lost in Nightmares, Desperate Escape e Versus ficam fora da platina. Política de perdíveis: 0 perdíveis definitivos, pois Seleção de Capítulos permite repetir capítulos para coletáveis, dificuldades, ranks e situacionais. They Belong in a Museum não deve ser marcado como perdível; o risco é apenas repetir capítulos para tesouros com janela interna.",
+    "quality_warnings": [],
+    "qualityWarnings": [],
     "image": "https://cdn.cloudflare.steamstatic.com/steam/apps/21690/header.jpg",
     "cover_image": "https://cdn.cloudflare.steamstatic.com/steam/apps/21690/library_600x900.jpg",
+    "seo": {
+      "title": "Resident Evil 5: guia de troféus e platina",
+      "description": "Guia completo da platina de Resident Evil 5 em português, com roadmap, Professional, emblemas BSAA, tesouros, armas, upgrades, rank S, farm de dinheiro e troféus situacionais.",
+      "keywords": "Resident Evil 5 troféus, Resident Evil 5 platina, Resident Evil 5 guia, RE5 trophy guide, Resident Evil 5 BSAA emblems, Resident Evil 5 treasures, Resident Evil 5 Professional, Resident Evil 5 Stockpile, Resident Evil 5 Take It to the Max",
+      "ogTitle": "Resident Evil 5: guia de troféus e platina",
+      "ogDescription": "Roadmap seguro para platinar Resident Evil 5: sem perdíveis definitivos, com Seleção de Capítulos, coletáveis, armas, upgrades, rank S, Professional e cleanup."
+    },
+    "quickDecision": {
+      "summary": "Platina de ação/coletáveis com 0 perdíveis definitivos, coop opcional, Professional obrigatório, grind moderado/alto e cleanup forte por Seleção de Capítulos.",
+      "recommendation": "Comece em Normal ou Veteran, colete o que encontrar, destrave Professional, limpe coletáveis e ranks S por Seleção de Capítulos, farme dinheiro e só então faça War Hero com arsenal preparado.",
+      "firstAction": "Abra a campanha em Normal se for sua primeira vez ou Veteran se já conhece RE5. Marque emblemas, tesouros e armas desde o início, mas deixe a limpeza perfeita para depois.",
+      "mainRisk": "O risco não é perder troféus permanentemente; é repetir capítulos por tesouros de janela interna, emblemas distantes, rank S mal planejado e dinheiro gasto em upgrades sem prioridade.",
+      "verdict": "Boa platina para quem aceita repetir capítulos, farmar dinheiro e preparar inventário para Professional."
+    },
     "editorial_summary": [
       "Visão geral da platina: Resident Evil 5 é uma platina de campanha + cleanup. A lista base tem 51 troféus, não exige online, não exige DLC e pode ser concluída solo com a IA ou em coop opcional. O núcleo é terminar todos os capítulos, destravar e vencer Professional, coletar 30 emblemas BSAA, registrar todos os 50 tesouros, obter e evoluir todas as armas, comprar figuras e limpar troféus situacionais.",
       "Perdíveis e pontos de não retorno: não há perdíveis definitivos. A Seleção de Capítulos mantém inventário/progresso e permite voltar para qualquer capítulo. O que existe são janelas internas de capítulo, como Soul Gem em 4-1, Heart of Africa em 5-3, o emblema explosivo de 6-1 e o Diamond Marquise de 6-3. Se passar por uma dessas janelas, repita o capítulo específico; a platina não fica bloqueada.",
@@ -8128,6 +8165,42 @@ const sampleGames = [
       "Checklist por capítulo: emblemas BSAA por capítulo: 1-1: 0, 1-2: 3, 2-1: 5, 2-2: 3, 2-3: 0, 3-1: 4, 3-2: 2, 3-3: 1, 4-1: 3, 4-2: 1, 5-1: 1, 5-2: 1, 5-3: 3, 6-1: 3, 6-2: 0, 6-3: 0. Use rifle com zoom para os distantes e leve explosivo para o emblema dentro do container em 6-1.",
       "Checklist de tesouros: registre os 50 tipos ao menos uma vez; você pode vendê-los depois. Dê atenção a Gold Ring/Topaz Marquise em 1-1, Ivory Relief/Antique Clock em 1-2, Ruby Marquise em 2-1, diamantes e Venom Fang em 2-2, Ceremonial Mask/Idol Silver/Blue Enigma em 3-1, Emerald Marquise em 3-3, Soul Gem em 4-1, Idol Gold/Beetle Gold/Diamond Trilliant em 4-2, Lion Heart em 5-1, Power Stone em 5-2, Royal Necklace/Heart of Africa/gemas Brilliant/Oval/Marquise em 5-3 e Diamond Marquise em 6-3.",
       "Farm e upgrades: venda tesouros sem medo depois que o tipo entrar no registro. Priorize uma Magnum, um rifle e uma shotgun para Professional; depois evolua M92F, Ithaca, S&W M29, VZ61 e S75 para liberar M93R, Hydra, S&W M500, Gatling Gun e Longbow. Para dinheiro, repita 4-1 pegando gemas/tesouros, 5-1 pelo corredor de Lickers e 5-2 por Power Stones dos Reapers."
+    ],
+    "checklist": [
+      "Visão geral: confirmar 51 troféus da lista base, 0 perdíveis definitivos, 0 online obrigatório, 0 coop obrigatório e DLCs fora da platina.",
+      "Requisitos especiais: Professional obrigatório; Amateur/Normal/Veteran por conclusão de capítulos; Seleção de Capítulos disponível para cleanup; grind de dinheiro e pontos de Bonus Features; rank S em todos os capítulos para figuras.",
+      "Capítulo 1-1: sem emblemas BSAA; coletar Gold Ring do Executioner e Topaz (Marquise) se for farmar tesouros; usar a arena para Ride the Lightning, Stop, Drop, & Roll, Baptism by Fire, Meat Shower, A Cut Above, Gatling Gun, Longbow e headshots.",
+      "Capítulo 1-2: 3 emblemas BSAA: varanda após o Majini sair das caixas, suportes da torre d'água no prédio da Alpha Team e parede vista pela cerca após usar a Furnace Key. Pegar Antique Clock na varanda, Ivory Relief do Cephalo e tesouros do prédio/furnace.",
+      "Capítulo 2-1: 5 emblemas BSAA: garagem inicial perto da saída, suporte da ponte após o caminhão, barraca verde do porto, janela do prédio na área do helicóptero e telhado visto no segundo assist jump. Pegar H&K MP5, Jewel Bangle, Ruby (Marquise) com explosivo nos estandes e usar arqueiros/containers para Be the Knife.",
+      "Capítulo 2-2: 3 emblemas BSAA: torre metálica distante no início dos trens, cachoeira dentro da mina com lanterna e telhado/silos após Irving fugir. Pegar S75, Dragunov SVD, diamantes da mina/penhasco, Venom Fang do chefe e usar dinamiteiros para Fireworks.",
+      "Capítulo 2-3: sem emblemas; fazer Drive By mirando no motorista do caminhão blindado; treinar o capítulo em Veteran porque Professional não é resolvido por armas infinitas.",
+      "Capítulo 3-1: 4 emblemas BSAA: pilar sob a cabana da ilha central, poste de energia visto do início, prateleira na fish farm noroeste e parte inferior da plataforma após abrir a porta das placas. Coletar Rocket Launcher, S&W M29, Chalice (Silver), Idol (Silver), Ceremonial Mask, Blue Enigma e ovos White/Brown/Gold na ilha das galinhas.",
+      "Capítulo 3-2: 2 emblemas BSAA: atrás das tendas Tricell após a ponte e dentro da cabana depois que o timer do barco começa. Pegar tesouros da refinaria e usar Big Man Majini para The Works com parceiro humano ou IA sem arma forte.",
+      "Capítulo 3-3: 1 emblema BSAA na lateral da ponte após o primeiro floodgate. Pegar Emerald (Marquise) na sala entre metralhadoras e revisar tesouros antes de sair de barco.",
+      "Capítulo 4-1: 3 emblemas BSAA: rocha perto da cachoeira após a primeira escada, ruínas distantes após a porta de pedra e parede acima da estátua verde. Farmar gemas, pegar Ruby (Oval), Ruby (Trilliant) e Soul Gem matando Popokarimu antes de fugir; bom capítulo para Stun Rod e Go into the Light.",
+      "Capítulo 4-2: 1 emblema BSAA acima da porta na sala pequena atrás da estátua/esqueleto do terceiro puzzle de laser. Pegar Idol (Gold), Beetle (Gold), Diamond (Trilliant) e gemas do templo; revisar salas de lasers antes de encerrar.",
+      "Capítulo 5-1: 1 emblema BSAA sob a ponte perto do jardim de flores, acima da água. Pegar Lion Hearts de Lickers, fazer Heart Stopper derrubando um Licker e finalizar no coração; bom farm de dinheiro quando o dano já estiver alto.",
+      "Capítulo 5-2: 1 emblema BSAA dentro da lixeira após a segunda esteira. Pegar Dead Bride's Necklace e Power Stones dos Reapers; bom farm se você mata Reapers com Magnum/Rifle de forma consistente.",
+      "Capítulo 5-3: 3 emblemas BSAA: turbina direita no início, plataforma distante antes de ativar o elevador circular e poço do elevador na sala das ruínas. Pegar H&K PSG-1, Royal Necklace, Chalice (Gold), Sapphire (Marquise), gemas Brilliant/Oval e Heart of Africa após causar dano suficiente a Wesker; fazer Bad Blood e Masters of Removing.",
+      "Capítulo 6-1: 3 emblemas BSAA: topo do mastro distante, container norte que exige explosivo/dinamite e armário com vidro após Excella. Levar granada/proximity bomb; pegar Topaz (Oval), Jail Breaker e tesouros do navio.",
+      "Capítulo 6-2: sem emblemas; repetir com Rocket Launcher para pontos rápidos de Bonus Features e rank S quando estiver limpando figuras.",
+      "Capítulo 6-3: sem emblemas; pegar Lightning Hawk se faltou, Diamond (Marquise) na arena final e concluir a campanha; cuidado com ataque de morte instantânea de Wesker.",
+      "Armas para Stockpile: M92F, H&K P8, SIG P226, M93R, Ithaca M37, M3, Jail Breaker, Hydra, VZ61, AK-74, H&K MP5, SIG 556, S75, Dragunov SVD, H&K PSG-1, S&W M29, L. Hawk, S&W M500, Grenade Launcher, Rocket Launcher, Stun Rod, Gatling Gun, Longbow e Proximity Bomb.",
+      "Desbloqueios de armas especiais: M92F maximizada libera M93R; Ithaca M37 maximizada libera Hydra; S&W M29 maximizada libera S&W M500; VZ61 maximizada libera Gatling Gun; S75 maximizada libera Longbow.",
+      "Rank S: observar tempo, precisão, inimigos derrotados e mortes. A rota segura é Amateur com arma infinita, precisão acima de 70%, zero deaths, capítulos rápidos e kills suficientes.",
+      "Farm final: vender tesouros já registrados, repetir 4-1 por gemas, 5-1 por Lion Hearts, 5-2 por Power Stones e 6-2 por pontos de Bonus Features."
+    ],
+    "attentionPoints": [
+      { "title": "Sem perdíveis definitivos", "type": "Perdíveis / Chapter Select", "tip": "They Belong in a Museum, Badge of Honor, ranks S e situacionais podem ser limpos por Seleção de Capítulos. Nenhum troféu da lista base deve ficar marcado como perdível real." },
+      { "title": "Soul Gem", "type": "Tesouro / Capítulo 4-1", "tip": "Matar Popokarimu antes de fugir no 4-1. Se fugir sem matar, repita o capítulo para registrar o tesouro." },
+      { "title": "Heart of Africa", "type": "Tesouro / Capítulo 5-3", "tip": "Causar dano suficiente a Wesker no primeiro confronto de 5-3; depois pegar o tesouro antes/depois da seção de Jill conforme a rota. Se não aparecer, repita 5-3 preparado." },
+      { "title": "Emblema de 6-1", "type": "BSAA / Explosivo", "tip": "Um emblema dentro de container exige explosivo ou dinamite inimiga. Entre com granada ou proximity bomb para evitar repetir." },
+      { "title": "Diamond (Marquise)", "type": "Tesouro / Capítulo 6-3", "tip": "Fica na arena final. Pegue com Chris e cuidado com Wesker, porque o risco é morrer ou precisar repetir a luta." },
+      { "title": "Professional", "type": "Dificuldade", "tip": "Não iniciar cedo. Priorize Magnum/Rifle/shotgun evoluídos, munição infinita, sprays e rota conhecida; parceiro humano facilita 2-3, 5-3 e resgates." },
+      { "title": "Take It to the Max", "type": "Grind / Upgrades", "tip": "É o maior consumo de dinheiro. Venda tesouros registrados e evolua armas-chave antes de completar armas menos úteis." },
+      { "title": "They’re ACTION Figures!", "type": "Rank S / Emblemas", "tip": "Depende de campanha concluída, todos os emblemas BSAA e rank S em todos os capítulos. Faça ranks em Amateur com arma infinita." },
+      { "title": "The Works", "type": "Coop opcional / Situacional", "tip": "Parceiro humano facilita muito a cadeia de melee. Com IA, tire armas fortes dela para não matar o alvo antes do combo." },
+      { "title": "Egg Hunt e Egg on Your Face", "type": "Ovos / RNG", "tip": "Guarde White, Brown, Gold e Rotten Egg. Use o Rotten Egg em Majini fraco no 1-1 Amateur e não venda o primeiro antes do troféu." }
     ],
     "roadmap": [
       {
@@ -35928,6 +36001,103 @@ if (darkSouls3Guide) {
     trophy.isCoop = false;
     trophy.dlcRequired = false;
     trophy.tags = ds3TagsById[trophy.id] || trophy.tags || [];
+  }
+}
+
+const re5Guide = sampleGames.find(game => game.slug === 'resident-evil-5');
+if (re5Guide) {
+  const re5NamePtById = {
+    re5_platinum: 'Troféu de Platina de Resident Evil 5',
+    re5_ch1_1: 'Capítulo 1-1 Concluído',
+    re5_ch1_2: 'Capítulo 1-2 Concluído',
+    re5_ch2_1: 'Capítulo 2-1 Concluído',
+    re5_ch2_2: 'Capítulo 2-2 Concluído',
+    re5_ch2_3: 'Capítulo 2-3 Concluído',
+    re5_ch3_1: 'Capítulo 3-1 Concluído',
+    re5_ch3_2: 'Capítulo 3-2 Concluído',
+    re5_ch3_3: 'Capítulo 3-3 Concluído',
+    re5_ch4_1: 'Capítulo 4-1 Concluído',
+    re5_ch4_2: 'Capítulo 4-2 Concluído',
+    re5_ch5_1: 'Capítulo 5-1 Concluído',
+    re5_ch5_2: 'Capítulo 5-2 Concluído',
+    re5_ch5_3: 'Capítulo 5-3 Concluído',
+    re5_ch6_1: 'Capítulo 6-1 Concluído',
+    re5_ch6_2: 'Capítulo 6-2 Concluído',
+    re5_ch6_3: 'Capítulo 6-3 Concluído',
+    re5_recruit: 'Recruta',
+    re5_soldier: 'Soldado',
+    re5_veteran: 'Veterano',
+    re5_war_hero: 'Herói de Guerra',
+    re5_egg_hunt: 'Caça aos Ovos',
+    re5_all_dressed_up: 'Todo Produzido',
+    re5_stockpile: 'Arsenal Completo',
+    re5_take_it_to_the_max: 'No Máximo',
+    re5_museum: 'Eles Pertencem a um Museu',
+    re5_badge_of_honor: 'Medalha de Honra',
+    re5_action_figures: 'São Figuras de Ação!',
+    re5_friend_in_need: 'Um Amigo em Apuros',
+    re5_lifeguard: 'Salva-vidas',
+    re5_exploding_heads: 'Cabeças Explosivas',
+    re5_cut_above: 'Um Corte Acima',
+    re5_cattle_prod: 'Aguilhão Elétrico',
+    re5_crowd_control: 'Controle de Multidão',
+    re5_bulls_eye: 'Na Mosca',
+    re5_get_physical: 'Na Mão',
+    re5_the_works: 'Combo Completo',
+    re5_lead_aspirin: 'Aspirina de Chumbo',
+    re5_fireworks: 'Fogos de Artifício',
+    re5_be_the_knife: 'Seja a Faca',
+    re5_meat_shower: 'Chuva de Carne',
+    re5_go_into_the_light: 'Vá para a Luz',
+    re5_ride_the_lightning: 'Cavalgando o Relâmpago',
+    re5_stop_drop_roll: 'Pare, Deite e Role',
+    re5_baptism_by_fire: 'Batismo de Fogo',
+    re5_masters_of_removing: 'Mestres da Remoção',
+    re5_bad_blood: 'Sangue Ruim',
+    re5_drive_by: 'Tiro em Movimento',
+    re5_egg_on_your_face: 'Ovo na Cara',
+    re5_heart_stopper: 'Parada Cardíaca',
+    re5_who_do_you_trust: 'Em Quem Você Confia?'
+  };
+
+  const re5TagsById = {
+    re5_war_hero: ['Dificuldade', 'Professional', 'Atenção'],
+    re5_stockpile: ['Armas', 'Grind'],
+    re5_take_it_to_the_max: ['Upgrades', 'Farm', 'Grind'],
+    re5_museum: ['Coletáveis', 'Tesouros', 'Chapter Select'],
+    re5_badge_of_honor: ['Coletáveis', 'BSAA', 'Chapter Select'],
+    re5_action_figures: ['Rank S', 'Figuras', 'Bonus Features'],
+    re5_egg_hunt: ['Ovos', 'RNG'],
+    re5_egg_on_your_face: ['Ovos', 'Situacional'],
+    re5_bad_blood: ['Chefe', 'Capítulo 5-3', 'Spoiler'],
+    re5_drive_by: ['Capítulo 2-3', 'Situacional'],
+    re5_be_the_knife: ['Capítulo 2-1', 'Situacional'],
+    re5_bulls_eye: ['Longbow', 'Arma especial'],
+    re5_crowd_control: ['Gatling Gun', 'Arma especial'],
+    re5_the_works: ['Melee', 'Coop opcional'],
+    re5_heart_stopper: ['Licker', 'Capítulo 5-1']
+  };
+
+  for (const trophy of re5Guide.trophies || []) {
+    const namePt = re5NamePtById[trophy.id] || trophy.name || '';
+    trophy.name_pt = namePt;
+    trophy.trophyNameOriginal = trophy.name;
+    trophy.trophyNamePtBr = namePt;
+    trophy.namePtSource = 'editorial_ptbr';
+    trophy.descriptionPtBr = trophy.description;
+    trophy.ptDescription = trophy.description;
+    trophy.descriptionPtSource = 'official_en_with_editorial_ptbr_name';
+    trophy.tipPtBr = trophy.tip;
+    trophy.localizedTip = { ...(trophy.localizedTip || {}), ptBr: trophy.tip };
+    trophy.is_missable = false;
+    trophy.isMissable = false;
+    trophy.missable = false;
+    trophy.is_online = false;
+    trophy.isOnline = false;
+    trophy.is_coop = false;
+    trophy.isCoop = false;
+    trophy.dlcRequired = false;
+    trophy.tags = re5TagsById[trophy.id] || trophy.tags || [];
   }
 }
 

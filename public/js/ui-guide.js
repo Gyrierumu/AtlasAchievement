@@ -857,7 +857,7 @@ window.UIGuide = (() => {
   function renderGuideEditorialNotes(game = {}, viewModel = {}) {
     const normalizedSlug = String(game?.slug || '').trim().toLowerCase();
     const routeTrophyLimit = normalizedSlug === 'red-dead-redemption-2' ? 11 : (normalizedSlug === 'death-stranding-2-on-the-beach' ? 11 : (['clair-obscur-expedition-33', 'detroit-become-human'].includes(normalizedSlug) ? 10 : (normalizedSlug === 'death-stranding' ? 9 : (normalizedSlug === 'marvels-spider-man-2' ? 8 : 5))));
-    const explicitAttentionPoints = ['dark-souls-remastered', 'hollow-knight-silksong'].includes(normalizedSlug) && Array.isArray(game?.attentionPoints)
+    const explicitAttentionPoints = ['dark-souls-remastered', 'hollow-knight-silksong', 'resident-evil-5'].includes(normalizedSlug) && Array.isArray(game?.attentionPoints)
       ? game.attentionPoints.map(item => ({
         name: item?.title || item?.name || '',
         text: item?.tip || item?.text || item?.description || '',
@@ -875,7 +875,7 @@ window.UIGuide = (() => {
     const statusBadge = viewModel.editorial?.statusBadge || getEditorialBadge(game);
     const sectionCopy = normalizedSlug === 'the-last-of-us-part-ii'
       ? 'Respostas rápidas sobre perdíveis, online, coop, tempo, dificuldade, NG+, Chapter Select e extras fora da platina base.'
-      : ['resident-evil-requiem', 'resident-evil-4-remake', 'hades', 'ghost-of-tsushima', 'god-of-war', 'god-of-war-2018', 'hades-ii', 'astro-bot', 'pragmata', 'saros', 'nioh-2', 'nioh-3', 'the-last-of-us-part-i'].includes(normalizedSlug)
+      : ['resident-evil-requiem', 'resident-evil-4-remake', 'resident-evil-5', 'hades', 'ghost-of-tsushima', 'god-of-war', 'god-of-war-2018', 'hades-ii', 'astro-bot', 'pragmata', 'saros', 'nioh-2', 'nioh-3', 'the-last-of-us-part-i'].includes(normalizedSlug)
       ? 'Respostas rápidas sobre perdíveis, online, coop, tempo, dificuldade e DLC da lista base.'
       : 'Respostas rápidas sobre perdíveis, online, coop, tempo, dificuldade e DLC da platina base.';
     return `
