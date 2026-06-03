@@ -1640,6 +1640,7 @@ async function migrate(options = {}) {
   await syncSeedGameFromSeed('nioh-3', { insertIfMissing: true, forceSync: true });
   await syncSeedGameFromSeed('saros', { insertIfMissing: true, forceSync: true });
   await syncSeedGameFromSeed('subnautica', { insertIfMissing: true, forceSync: true });
+  await syncSeedGameFromSeed('hollow-knight-silksong', { insertIfMissing: true, forceSync: true });
   await syncSeedGameTrophiesFromSeed('the-last-of-us-part-i');
   await syncSeedGameRoadmapFromSeed('the-last-of-us-part-i');
   await syncSeedGameRoadmapFromSeed('the-last-of-us-part-ii');
