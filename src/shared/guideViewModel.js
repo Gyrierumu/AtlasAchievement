@@ -329,6 +329,31 @@
     mimico: { id: 'mime', label: 'Mímico', tone: 'partial' },
     relacionamento: { id: 'relationship', label: 'Relacionamento', tone: 'partial' },
     grind: { id: 'grind', label: 'Grind', tone: 'warning' },
+    'risco de run': { id: 'run', label: 'Risco de run', tone: 'warning' },
+    restricao: { id: 'restriction', label: 'Restrição', tone: 'warning' },
+    'village of shadows': { id: 'village-of-shadows', label: 'Village of Shadows', tone: 'warning' },
+    campanha: { id: 'campaign', label: 'Campanha', tone: 'partial' },
+    exploracao: { id: 'exploration', label: 'Exploração', tone: 'partial' },
+    upgrade: { id: 'upgrade', label: 'Upgrade', tone: 'partial' },
+    cleanup: { id: 'cleanup', label: 'Cleanup', tone: 'neutral' },
+    crafting: { id: 'crafting', label: 'Crafting', tone: 'partial' },
+    'criacao de itens': { id: 'crafting', label: 'Criação de itens', tone: 'partial' },
+    'limpeza final': { id: 'cleanup', label: 'Limpeza final', tone: 'neutral' },
+    furtividade: { id: 'stealth', label: 'Furtividade', tone: 'warning' },
+    speedrun: { id: 'speedrun', label: 'Speedrun', tone: 'warning' },
+    economia: { id: 'economy', label: 'Economia', tone: 'warning' },
+    mercenaries: { id: 'mercenaries', label: 'Mercenaries', tone: 'warning' },
+    extras: { id: 'extras', label: 'Extras', tone: 'partial' },
+    loja: { id: 'shop', label: 'Loja', tone: 'partial' },
+    madhouse: { id: 'madhouse', label: 'Madhouse', tone: 'warning' },
+    vhs: { id: 'vhs', label: 'VHS', tone: 'partial' },
+    stealth: { id: 'stealth', label: 'Stealth', tone: 'warning' },
+    situacional: { id: 'situational', label: 'Situacional', tone: 'warning' },
+    puzzle: { id: 'puzzle', label: 'Puzzle', tone: 'partial' },
+    item: { id: 'item', label: 'Item', tone: 'partial' },
+    offline: { id: 'offline', label: 'Offline', tone: 'neutral' },
+    'sem coop': { id: 'no-coop', label: 'Sem coop', tone: 'neutral' },
+    'fora da platina': { id: 'out-of-platinum', label: 'Fora da platina', tone: 'neutral' },
     'nivel 99': { id: 'level-99', label: 'Nível 99', tone: 'warning' },
     gestrais: { id: 'gestrals', label: 'Gestrais', tone: 'partial' },
     minigames: { id: 'minigames', label: 'Minigames', tone: 'partial' },
@@ -369,7 +394,7 @@
 
   function getExplicitGuideTrophyTags(trophy = {}, game = {}) {
     const slug = String(game?.slug || '').trim().toLowerCase();
-    if (!['clair-obscur-expedition-33', 'dark-souls-remastered', 'detroit-become-human', 'hollow-knight-silksong'].includes(slug)) return [];
+    if (!['clair-obscur-expedition-33', 'dark-souls-remastered', 'detroit-become-human', 'hollow-knight-silksong', 'resident-evil-7-biohazard', 'resident-evil-village'].includes(slug)) return [];
     if (!Array.isArray(trophy?.tags) || !trophy.tags.length) return [];
     const tags = [];
     const ids = new Set();
