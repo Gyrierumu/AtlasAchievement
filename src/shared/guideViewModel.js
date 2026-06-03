@@ -369,7 +369,7 @@
 
   function getExplicitGuideTrophyTags(trophy = {}, game = {}) {
     const slug = String(game?.slug || '').trim().toLowerCase();
-    if (!['clair-obscur-expedition-33', 'detroit-become-human'].includes(slug)) return [];
+    if (!['clair-obscur-expedition-33', 'dark-souls-remastered', 'detroit-become-human', 'hollow-knight-silksong'].includes(slug)) return [];
     if (!Array.isArray(trophy?.tags) || !trophy.tags.length) return [];
     const tags = [];
     const ids = new Set();
@@ -1113,7 +1113,7 @@
         priority: 65,
         icon: 'fa-rotate',
         label: 'NG+',
-        title: hasNgPlus ? 'Nao entre em NG+ cedo' : 'NG+ nao e eixo principal',
+        title: hasNgPlus ? 'Não entre em NG+ cedo' : 'NG+ não é eixo principal',
         detail: ngPlusSnippet,
         tone: hasNgPlus ? 'risk' : 'neutral'
       },

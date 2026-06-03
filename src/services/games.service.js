@@ -11,6 +11,9 @@ const PUBLIC_EDITORIAL_STATUSES = new Set(['review', 'published']);
 const COVERAGE_LEVELS = new Set(['partial', 'strong', 'complete']);
 const VERIFICATION_STATUSES = new Set(['unverified', 'review', 'verified']);
 const EDITORIAL_REVIEW_STATUSES = new Set(Object.keys(editorialModel.EDITORIAL_TRUST_STATUSES || {}));
+const HOME_HIGHLIGHT_TIME_ZONE = 'America/Sao_Paulo';
+const HOME_NEW_DATE_FIELDS = ['added_at', 'addedAt', 'created_at', 'createdAt', 'published_at', 'publishedAt', 'guide_added_at'];
+const HOME_VERIFIED_DATE_FIELDS = ['verified_at', 'verifiedAt', 'last_reviewed_at', 'lastReviewedAt'];
 const CATALOG_SEED_EDITORIAL_STATUS_SLUGS = new Set([
   'red-dead-redemption-2',
   'resident-evil-3-remake',
@@ -21,7 +24,7 @@ const CATALOG_SEED_EDITORIAL_STATUS_SLUGS = new Set([
 sampleGames
   .filter(game => game?.is_verified || game?.verification_status === 'verified' || game?.editorial_review_status === 'verified')
   .forEach(game => CATALOG_SEED_EDITORIAL_STATUS_SLUGS.add(String(game?.slug || '').trim().toLowerCase()));
-const LOCALIZED_TROPHY_SOURCE_SLUGS = new Set(['astro-bot', 'astros-playroom', 'bloodborne', 'clair-obscur-expedition-33', 'dark-souls-iii', 'dead-cells', 'death-stranding', 'death-stranding-2-on-the-beach', 'detroit-become-human', 'god-of-war', 'god-of-war-ragnarok', 'hades-ii', 'hollow-knight', 'marvels-spider-man', 'marvels-spider-man-2', 'marvels-spider-man-miles-morales', 'nioh-2', 'nioh-3', 'red-dead-redemption-2', 'resident-evil', 'resident-evil-2-remake', 'resident-evil-3-remake', 'resident-evil-requiem', 'the-last-of-us-part-i', 'the-last-of-us-part-ii', 'subnautica']);
+const LOCALIZED_TROPHY_SOURCE_SLUGS = new Set(['astro-bot', 'astros-playroom', 'bloodborne', 'clair-obscur-expedition-33', 'dark-souls-iii', 'dark-souls-remastered', 'dead-cells', 'death-stranding', 'death-stranding-2-on-the-beach', 'detroit-become-human', 'god-of-war', 'god-of-war-ragnarok', 'hades-ii', 'hollow-knight', 'hollow-knight-silksong', 'marvels-spider-man', 'marvels-spider-man-2', 'marvels-spider-man-miles-morales', 'nioh-2', 'nioh-3', 'red-dead-redemption-2', 'resident-evil', 'resident-evil-2-remake', 'resident-evil-3-remake', 'resident-evil-requiem', 'the-last-of-us-part-i', 'the-last-of-us-part-ii', 'subnautica']);
 const CATALOG_IMAGE_BY_SLUG = {
   'the-last-of-us-part-ii': 'https://cdn.cloudflare.steamstatic.com/steam/apps/2531310/header.jpg'
 };
@@ -365,13 +368,15 @@ function normalizeGame(row, roadmapRows, trophyRows) {
   const useMilesMoralesSeedEditorial = normalizedSlug === 'marvels-spider-man-miles-morales' && seedGame;
   const useRedDeadRedemption2SeedEditorial = normalizedSlug === 'red-dead-redemption-2' && seedGame;
   const useDarkSouls3SeedEditorial = normalizedSlug === 'dark-souls-iii' && seedGame;
+  const useDarkSoulsRemasteredSeedEditorial = normalizedSlug === 'dark-souls-remastered' && seedGame;
   const useDeathStrandingSeedEditorial = normalizedSlug === 'death-stranding' && seedGame;
   const useDeathStranding2SeedEditorial = normalizedSlug === 'death-stranding-2-on-the-beach' && seedGame;
   const useBloodborneSeedEditorial = normalizedSlug === 'bloodborne' && seedGame;
   const useClairObscurSeedEditorial = normalizedSlug === 'clair-obscur-expedition-33' && seedGame;
   const useDetroitSeedEditorial = normalizedSlug === 'detroit-become-human' && seedGame;
-  const useStrictSeedEditorial = useBloodborneSeedEditorial || useClairObscurSeedEditorial || useDarkSouls3SeedEditorial || useDetroitSeedEditorial || useDeathStrandingSeedEditorial || useDeathStranding2SeedEditorial || useResidentEvilSeedEditorial || useSpiderManSeedEditorial || useSpiderMan2SeedEditorial || useMilesMoralesSeedEditorial || useRedDeadRedemption2SeedEditorial;
-  const editorialSource = ['bloodborne', 'clair-obscur-expedition-33', 'dark-souls-iii', 'death-stranding', 'death-stranding-2-on-the-beach', 'detroit-become-human', 'marvels-spider-man', 'marvels-spider-man-2', 'marvels-spider-man-miles-morales', 'red-dead-redemption-2', 'resident-evil', 'resident-evil-2-remake', 'resident-evil-3-remake', 'resident-evil-requiem'].includes(normalizedSlug) && seedGame
+  const useSilksongSeedEditorial = normalizedSlug === 'hollow-knight-silksong' && seedGame;
+  const useStrictSeedEditorial = useBloodborneSeedEditorial || useClairObscurSeedEditorial || useDarkSouls3SeedEditorial || useDarkSoulsRemasteredSeedEditorial || useDetroitSeedEditorial || useDeathStrandingSeedEditorial || useDeathStranding2SeedEditorial || useResidentEvilSeedEditorial || useSpiderManSeedEditorial || useSpiderMan2SeedEditorial || useMilesMoralesSeedEditorial || useRedDeadRedemption2SeedEditorial || useSilksongSeedEditorial;
+  const editorialSource = ['bloodborne', 'clair-obscur-expedition-33', 'dark-souls-iii', 'dark-souls-remastered', 'death-stranding', 'death-stranding-2-on-the-beach', 'detroit-become-human', 'hollow-knight-silksong', 'marvels-spider-man', 'marvels-spider-man-2', 'marvels-spider-man-miles-morales', 'red-dead-redemption-2', 'resident-evil', 'resident-evil-2-remake', 'resident-evil-3-remake', 'resident-evil-requiem'].includes(normalizedSlug) && seedGame
     ? {
         ...row,
         ...seedGame,
@@ -391,6 +396,7 @@ function normalizeGame(row, roadmapRows, trophyRows) {
     'clair-obscur-expedition-33',
     'bloodborne',
     'dark-souls-iii',
+    'dark-souls-remastered',
     'detroit-become-human',
     'elden-ring',
     'death-stranding',
@@ -401,6 +407,7 @@ function normalizeGame(row, roadmapRows, trophyRows) {
     'ghost-of-tsushima',
     'hades-ii',
     'hollow-knight',
+    'hollow-knight-silksong',
     'marvels-spider-man',
     'marvels-spider-man-2',
     'marvels-spider-man-miles-morales',
@@ -428,8 +435,8 @@ function normalizeGame(row, roadmapRows, trophyRows) {
   const seedMissableCount = Number(editorialSource.missableCount ?? editorialSource.missable_count);
   const resolvedMissableCount = Number.isFinite(seedMissableCount) ? seedMissableCount : missableCount;
   const spoilerCount = trophyRows.filter(item => item.is_spoiler).length;
-  const useSeedRoadmap = ['bloodborne', 'clair-obscur-expedition-33', 'dark-souls-iii', 'dead-cells', 'death-stranding', 'death-stranding-2-on-the-beach', 'detroit-become-human', 'god-of-war', 'god-of-war-ragnarok', 'marvels-spider-man', 'marvels-spider-man-2', 'marvels-spider-man-miles-morales', 'red-dead-redemption-2', 'resident-evil', 'resident-evil-2-remake', 'resident-evil-3-remake', 'resident-evil-requiem'].includes(normalizedSlug) && Array.isArray(seedGame?.roadmap);
-  const explicitOfflineBaseSlugs = ['bloodborne', 'clair-obscur-expedition-33', 'dark-souls-iii', 'detroit-become-human', 'elden-ring', 'astro-bot', 'astros-playroom', 'dead-cells', 'god-of-war', 'god-of-war-ragnarok', 'hollow-knight', 'marvels-spider-man', 'marvels-spider-man-2', 'marvels-spider-man-miles-morales', 'nioh-2', 'nioh-3', 'resident-evil', 'resident-evil-2-remake', 'resident-evil-3-remake', 'resident-evil-requiem', 'saros', 'the-last-of-us-part-i', 'the-last-of-us-part-ii', 'subnautica'];
+  const useSeedRoadmap = ['bloodborne', 'clair-obscur-expedition-33', 'dark-souls-iii', 'dark-souls-remastered', 'dead-cells', 'death-stranding', 'death-stranding-2-on-the-beach', 'detroit-become-human', 'god-of-war', 'god-of-war-ragnarok', 'hollow-knight-silksong', 'marvels-spider-man', 'marvels-spider-man-2', 'marvels-spider-man-miles-morales', 'red-dead-redemption-2', 'resident-evil', 'resident-evil-2-remake', 'resident-evil-3-remake', 'resident-evil-requiem'].includes(normalizedSlug) && Array.isArray(seedGame?.roadmap);
+  const explicitOfflineBaseSlugs = ['bloodborne', 'clair-obscur-expedition-33', 'dark-souls-iii', 'dark-souls-remastered', 'detroit-become-human', 'elden-ring', 'astro-bot', 'astros-playroom', 'dead-cells', 'god-of-war', 'god-of-war-ragnarok', 'hollow-knight', 'hollow-knight-silksong', 'marvels-spider-man', 'marvels-spider-man-2', 'marvels-spider-man-miles-morales', 'nioh-2', 'nioh-3', 'resident-evil', 'resident-evil-2-remake', 'resident-evil-3-remake', 'resident-evil-requiem', 'saros', 'the-last-of-us-part-i', 'the-last-of-us-part-ii', 'subnautica'];
   const seedEditorialSummary = Array.isArray(seedGame?.editorial_summary)
     ? seedGame.editorial_summary.filter(item => String(item || '').trim())
     : [];
@@ -464,6 +471,10 @@ function normalizeGame(row, roadmapRows, trophyRows) {
       : Array.isArray(editorialSource.editorial_summary)
       ? editorialSource.editorial_summary.filter(item => String(item || '').trim())
       : [],
+    seo: editorialSource.seo && typeof editorialSource.seo === 'object' ? { ...editorialSource.seo } : {},
+    quickDecision: editorialSource.quickDecision && typeof editorialSource.quickDecision === 'object' ? { ...editorialSource.quickDecision } : null,
+    checklist: Array.isArray(editorialSource.checklist) ? editorialSource.checklist.slice() : [],
+    attentionPoints: Array.isArray(editorialSource.attentionPoints) ? editorialSource.attentionPoints.map(item => ({ ...item })) : [],
     faq: seedFaq.length
       ? seedFaq
       : Array.isArray(editorialSource.faq)
@@ -513,7 +524,7 @@ function normalizeGame(row, roadmapRows, trophyRows) {
     trophies: trophyRows.map(item => {
       const canonicalIsMissable = isCanonicalMissableTrophy(item) && !isPlatinumTrophy(item);
       const seedTrophy = LOCALIZED_TROPHY_SOURCE_SLUGS.has(normalizedSlug) ? getSeedTrophy(normalizedSlug, item.trophy_code, item.name) : null;
-      const useSeedEditorialTrophy = ['bloodborne', 'clair-obscur-expedition-33', 'dark-souls-iii', 'dead-cells', 'death-stranding', 'death-stranding-2-on-the-beach', 'detroit-become-human', 'god-of-war', 'god-of-war-ragnarok', 'marvels-spider-man', 'marvels-spider-man-2', 'marvels-spider-man-miles-morales', 'red-dead-redemption-2', 'resident-evil', 'resident-evil-2-remake', 'resident-evil-3-remake', 'resident-evil-requiem'].includes(normalizedSlug) && seedTrophy;
+      const useSeedEditorialTrophy = ['bloodborne', 'clair-obscur-expedition-33', 'dark-souls-iii', 'dark-souls-remastered', 'dead-cells', 'death-stranding', 'death-stranding-2-on-the-beach', 'detroit-become-human', 'god-of-war', 'god-of-war-ragnarok', 'hollow-knight-silksong', 'marvels-spider-man', 'marvels-spider-man-2', 'marvels-spider-man-miles-morales', 'red-dead-redemption-2', 'resident-evil', 'resident-evil-2-remake', 'resident-evil-3-remake', 'resident-evil-requiem'].includes(normalizedSlug) && seedTrophy;
       const isMissable = useSeedEditorialTrophy
         ? Boolean(seedTrophy.is_missable || seedTrophy.isMissable || seedTrophy.missable)
         : canonicalIsMissable;
@@ -557,6 +568,202 @@ function normalizeGame(row, roadmapRows, trophyRows) {
     missable_count: resolvedMissableCount,
     spoiler_count: spoilerCount,
     attention_count: resolvedMissableCount + spoilerCount
+  };
+}
+
+function getSaoPauloDateParts(date = new Date()) {
+  const parts = new Intl.DateTimeFormat('en-US', {
+    timeZone: HOME_HIGHLIGHT_TIME_ZONE,
+    year: 'numeric',
+    month: '2-digit',
+    day: '2-digit'
+  }).formatToParts(date);
+  const read = type => Number(parts.find(part => part.type === type)?.value || 0);
+  return {
+    year: read('year'),
+    month: read('month'),
+    day: read('day')
+  };
+}
+
+function formatDateKeyFromParts(parts = {}) {
+  const year = String(parts.year || '').padStart(4, '0');
+  const month = String(parts.month || '').padStart(2, '0');
+  const day = String(parts.day || '').padStart(2, '0');
+  return `${year}-${month}-${day}`;
+}
+
+function shiftDateKey(dateKey = '', offsetDays = 0) {
+  const match = String(dateKey || '').match(/^(\d{4})-(\d{2})-(\d{2})$/);
+  if (!match) return '';
+  const date = new Date(Date.UTC(Number(match[1]), Number(match[2]) - 1, Number(match[3]) + offsetDays));
+  return formatDateKeyFromParts({
+    year: date.getUTCFullYear(),
+    month: date.getUTCMonth() + 1,
+    day: date.getUTCDate()
+  });
+}
+
+function getWeeklyHomeHighlightWindow(now = new Date()) {
+  const nowKey = formatDateKeyFromParts(getSaoPauloDateParts(now));
+  const nowDate = new Date(Date.UTC(
+    Number(nowKey.slice(0, 4)),
+    Number(nowKey.slice(5, 7)) - 1,
+    Number(nowKey.slice(8, 10))
+  ));
+  const weekKey = shiftDateKey(nowKey, -nowDate.getUTCDay());
+  return { weekKey, nowKey };
+}
+
+function getFirstDateFieldValue(game = {}, fields = []) {
+  for (const field of fields) {
+    const value = game?.[field];
+    if (value) return { field, value };
+  }
+  return { field: '', value: '' };
+}
+
+function normalizeHomeHighlightDateKey(value = '') {
+  const raw = String(value || '').trim();
+  if (!raw) return '';
+  const dateOnly = raw.match(/^(\d{4})-(\d{2})-(\d{2})/);
+  if (dateOnly) return `${dateOnly[1]}-${dateOnly[2]}-${dateOnly[3]}`;
+  const parsed = new Date(raw);
+  if (Number.isNaN(parsed.getTime())) return '';
+  return formatDateKeyFromParts(getSaoPauloDateParts(parsed));
+}
+
+function isDateKeyInCurrentHomeWeek(dateKey = '', weekKey = '', nowKey = '') {
+  return /^\d{4}-\d{2}-\d{2}$/.test(dateKey)
+    && dateKey >= weekKey
+    && dateKey <= nowKey;
+}
+
+function isHomeHighlightVerifiedGame(game = {}) {
+  const verificationStatus = String(game.verification_status || game.verificationStatus || '').trim().toLowerCase();
+  const reviewStatus = String(game.editorial_review_status || game.editorialReviewStatus || game.editorialStatus || '').trim().toLowerCase();
+  const coverage = String(game.coverage_level || game.coverageLevel || '').trim().toLowerCase();
+  const hasVerifiedStatus = game.is_verified === true || verificationStatus === 'verified';
+  const hasTrustedCoverage = coverage === 'strong' || coverage === 'complete';
+  return hasVerifiedStatus && reviewStatus === 'verified' && hasTrustedCoverage;
+}
+
+function buildHomeHighlightItem(game = {}, dateField = '', dateValue = '') {
+  const slug = String(game.slug || '').trim().toLowerCase();
+  const platforms = Array.isArray(game.platforms) ? game.platforms.filter(Boolean) : [];
+  const isVerified = isHomeHighlightVerifiedGame(game);
+  return {
+    title: game.title || game.name || slug,
+    name: game.name || game.title || slug,
+    slug,
+    href: slug ? `/jogo/${slug}` : '',
+    image: game.image || game.cover_image || game.coverImage || '',
+    cover: game.cover_image || game.coverImage || game.image || '',
+    platform: game.platform_base || game.platformBase || platforms.join('/') || '',
+    difficulty: game.difficulty ?? '',
+    time: game.time || game.estimatedTime || '',
+    is_verified: isVerified,
+    status: isVerified ? 'verified' : 'in_review',
+    date: normalizeHomeHighlightDateKey(dateValue),
+    dateField
+  };
+}
+
+function getWeeklyHomeHighlights(games = sampleGames, now = new Date()) {
+  const { weekKey, nowKey } = getWeeklyHomeHighlightWindow(now);
+  const sourceGames = Array.isArray(games) ? games : [];
+  const newGames = sourceGames
+    .map(game => {
+      const { field, value } = getFirstDateFieldValue(game, HOME_NEW_DATE_FIELDS);
+      const dateKey = normalizeHomeHighlightDateKey(value);
+      if (!isDateKeyInCurrentHomeWeek(dateKey, weekKey, nowKey)) return null;
+      return buildHomeHighlightItem(game, field, value);
+    })
+    .filter(item => item?.slug && item.href)
+    .sort((a, b) => String(b.date || '').localeCompare(String(a.date || '')) || String(a.title || '').localeCompare(String(b.title || ''), 'pt-BR'))
+    .slice(0, 5);
+
+  const newSlugs = new Set(newGames.map(item => item.slug));
+  const verifiedGames = sourceGames
+    .map(game => {
+      if (!isHomeHighlightVerifiedGame(game)) return null;
+      const { field, value } = getFirstDateFieldValue(game, HOME_VERIFIED_DATE_FIELDS);
+      const dateKey = normalizeHomeHighlightDateKey(value);
+      if (!isDateKeyInCurrentHomeWeek(dateKey, weekKey, nowKey)) return null;
+      const item = buildHomeHighlightItem(game, field, value);
+      return newSlugs.has(item.slug) ? null : item;
+    })
+    .filter(item => item?.slug && item.href)
+    .sort((a, b) => String(b.date || '').localeCompare(String(a.date || '')) || String(a.title || '').localeCompare(String(b.title || ''), 'pt-BR'))
+    .slice(0, 5);
+
+  return {
+    weekKey,
+    newGames,
+    verifiedGames,
+    hasHighlights: Boolean(newGames.length || verifiedGames.length)
+  };
+}
+
+function getWeeklyHomeUpdatePopup(now = new Date()) {
+  const highlights = getWeeklyHomeHighlights(sampleGames, now);
+  const localStorageKey = `atlas-home-news-popup-seen-${highlights.weekKey}`;
+
+  if (!highlights.hasHighlights) {
+    return {
+      id: `weekly-home-highlights-${highlights.weekKey}`,
+      active: false,
+      weekKey: highlights.weekKey,
+      localStorageKey,
+      sections: []
+    };
+  }
+
+  const sections = [
+    highlights.newGames.length
+      ? {
+          title: 'Novos guias',
+          items: highlights.newGames.map(item => ({
+            label: item.name || item.title,
+            href: item.href,
+            slug: item.slug,
+            verified: item.is_verified
+          }))
+        }
+      : null,
+    highlights.verifiedGames.length
+      ? {
+          title: 'Guias verificados',
+          items: highlights.verifiedGames.map(item => ({
+            label: item.name || item.title,
+            href: item.href,
+            slug: item.slug,
+            verified: true
+          }))
+        }
+      : null
+  ].filter(Boolean);
+
+  return {
+    id: `weekly-home-highlights-${highlights.weekKey}`,
+    active: true,
+    type: 'weekly_home_highlights',
+    weekKey: highlights.weekKey,
+    title: 'Novidades da semana',
+    subtitle: 'Guias adicionados e verificados recentemente no AtlasAchievement.',
+    conservativeSubtitle: 'Guias adicionados e verificados recentemente no AtlasAchievement.',
+    description: 'Confira os guias que entraram no catálogo e as revisões editoriais mais recentes desta semana.',
+    localStorageKey,
+    primaryCta: {
+      label: 'Ver catálogo',
+      href: '/catalogo'
+    },
+    secondaryCta: {
+      label: 'Explorar guias',
+      href: '/catalogo'
+    },
+    sections,
+    highlights
   };
 }
 
@@ -724,7 +931,7 @@ function normalizeListRow(row) {
         reviewed_by: seedGame.reviewed_by
       }
     : row;
-  const seedMissableCount = ['bloodborne', 'dark-souls-iii'].includes(normalizedSlug)
+  const seedMissableCount = ['bloodborne', 'dark-souls-iii', 'dark-souls-remastered'].includes(normalizedSlug)
     ? Number(listSeedGame?.missableCount ?? listSeedGame?.missable_count)
     : NaN;
   const canonicalMissableCount = Number.isFinite(seedMissableCount) ? seedMissableCount : (CANONICAL_MISSABLE_TROPHIES_BY_SLUG[normalizedSlug]?.size || null);
@@ -736,10 +943,10 @@ function normalizeListRow(row) {
     roadmap_count: Number(row.roadmap_count || 0),
     missable_count: missableCount,
     missableCount,
-    hasMissables: ['bloodborne', 'dark-souls-iii'].includes(normalizedSlug) ? Boolean(listSeedGame?.hasMissables) : Boolean(missableCount),
-    onlineRequired: ['bloodborne', 'dark-souls-iii'].includes(normalizedSlug) ? false : row.onlineRequired,
-    coopRequired: ['bloodborne', 'dark-souls-iii'].includes(normalizedSlug) ? false : row.coopRequired,
-    dlcRequired: ['bloodborne', 'dark-souls-iii'].includes(normalizedSlug) ? false : row.dlcRequired,
+    hasMissables: ['bloodborne', 'dark-souls-iii', 'dark-souls-remastered'].includes(normalizedSlug) ? Boolean(listSeedGame?.hasMissables) : Boolean(missableCount),
+    onlineRequired: ['bloodborne', 'dark-souls-iii', 'dark-souls-remastered'].includes(normalizedSlug) ? false : row.onlineRequired,
+    coopRequired: ['bloodborne', 'dark-souls-iii', 'dark-souls-remastered'].includes(normalizedSlug) ? false : row.coopRequired,
+    dlcRequired: ['bloodborne', 'dark-souls-iii', 'dark-souls-remastered'].includes(normalizedSlug) ? false : row.dlcRequired,
     spoiler_count: spoilerCount,
     attention_count: canonicalMissableCount ? missableCount + spoilerCount : Number(row.attention_count || 0),
     editorial_status: normalizeEditorialStatus(editorialSource.editorial_status),
@@ -1437,5 +1644,7 @@ module.exports = {
   getAdminDashboardSummary,
   getCatalogFacetCounts,
   reserveUniqueSlug,
-  duplicateGame
+  duplicateGame,
+  getWeeklyHomeHighlights,
+  getWeeklyHomeUpdatePopup
 };

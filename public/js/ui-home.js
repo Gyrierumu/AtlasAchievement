@@ -56,19 +56,22 @@ window.UIHome = (() => {
   function isGuideVerified(game = {}) {
     const reviewStatus = normalizeSlug(game.editorial_review_status || game.editorialReviewStatus || game.editorialStatus);
     const verificationStatus = normalizeSlug(game.verification_status || game.verificationStatus || game.qualityStatus);
-    return game.is_verified === true || game.verified === true || reviewStatus === 'verified' || verificationStatus === 'verified';
+    const coverage = normalizeSlug(game.coverage_level || game.coverageLevel);
+    return (game.is_verified === true || verificationStatus === 'verified')
+      && reviewStatus === 'verified'
+      && (coverage === 'strong' || coverage === 'complete');
   }
 
   function resolveUpdateItems(items = [], gamesBySlug = new Map()) {
     return items.map(item => {
       const slug = normalizeSlug(item.slug);
       const game = gamesBySlug.get(slug);
-      if (!slug || !game || !item.href) return null;
+      if (!slug || !item.href) return null;
       return {
         ...item,
         slug,
-        label: item.label || game.name || slug,
-        verified: isGuideVerified(game)
+        label: item.label || game?.name || slug,
+        verified: typeof item.verified === 'boolean' ? item.verified : (game ? isGuideVerified(game) : false)
       };
     }).filter(Boolean);
   }
@@ -123,8 +126,8 @@ window.UIHome = (() => {
       };
     }).filter(Boolean);
 
-    const addedSection = sections.find(section => /Novo(?:s)? jogo(?:s)? adicionado(?:s)?/i.test(section.title));
-    if (!addedSection || (requiredCatalogSlug && !addedSection.items.some(item => item.slug === requiredCatalogSlug))) return;
+    if (!sections.length) return;
+    if (requiredCatalogSlug && !sections.some(section => section.items.some(item => item.slug === requiredCatalogSlug))) return;
 
     const usesConservativeCopy = sections.some(section => section.requiresVerifiedStatus && !section.allVerified);
     const subtitle = usesConservativeCopy ? (update.conservativeSubtitle || update.subtitle) : update.subtitle;
@@ -149,7 +152,7 @@ window.UIHome = (() => {
               <h3>${escapeHtml(section.title)}</h3>
               <div class="atlas-update-popup__chips">
                 ${section.items.map(item => `
-                  <a href="${escapeAttribute(item.href)}" class="atlas-update-popup__chip" data-update-popup-game="${escapeAttribute(item.slug)}" data-home-game="${escapeAttribute(item.label)}" data-open-guide-card="${escapeAttribute(item.slug)}">${escapeHtml(item.label)}</a>
+                  <a href="${escapeAttribute(item.href)}" class="atlas-update-popup__chip" data-update-popup-game="${escapeAttribute(item.slug)}" data-home-game="${escapeAttribute(item.label)}" data-open-guide-card="${escapeAttribute(item.slug)}">${escapeHtml(item.label)}${item.verified && /novo/i.test(section.title || '') ? ' · Verificado' : ''}</a>
                 `).join('')}
               </div>
             </article>

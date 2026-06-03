@@ -1074,6 +1074,7 @@ async function syncReviewedGuidesFromSeed() {
   await syncSeedGameFromSeed('nioh-2', syncOptions);
   await syncSeedGameFromSeed('nioh-3', syncOptions);
   await syncSeedGameFromSeed('resident-evil', { ...syncOptions, preserveTrophyRows: true });
+  await syncSeedGameFromSeed('resident-evil-5', syncOptions);
   await syncSeedGameFromSeed('resident-evil-requiem', syncOptions);
   await syncSeedGameFromSeed('demons-souls', syncOptions);
   await syncSeedGameFromSeed('dark-souls-remastered', syncOptions);

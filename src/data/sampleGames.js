@@ -399,6 +399,439 @@ const nioh2BaseRoadmap = [
   }
 ];
 
+const silksongRoadmap = [
+  {
+    title: "Explore Pharloom e fortaleça Hornet",
+    focus: "Campanha inicial",
+    objective: "Avançar pela campanha aprendendo combate, movimento, cura, Ferramentas, Habilidades de Seda, Brasões e rotas principais.",
+    actions: [
+      "Jogue a primeira campanha sem tentar speedrun ou 100% cedo demais.",
+      "Adquira ferramentas, Habilidades de Seda, Brasões e upgrades de Máscara, Carretel e Corações de Seda conforme explorar.",
+      "Compre mapas de cada área e abra atalhos sempre que possível.",
+      "Abra Vias Campanárias e Estações Ventrícula para facilitar deslocamento.",
+      "Marque no checklist chefes, mapas, ferramentas, desejos e upgrades obtidos."
+    ],
+    warning: "",
+    result: "Campanha encaminhada, Hornet fortalecida e mapa pronto para exploração avançada."
+  },
+  {
+    title: "Complete desejos, pulgas e sistemas de exploração",
+    focus: "Coletáveis e desejos",
+    objective: "Resolver desejos importantes, resgatar pulgas, completar mapas e preparar os requisitos longos da platina.",
+    actions: [
+      "Conceda desejos enquanto avança pelas regiões de Pharloom.",
+      "Conceda o desejo de Nuu para Keen Hunter e avance até True Hunter.",
+      "Resgate metade das pulgas para Flea Finder e depois todas para Fleafriend.",
+      "Continue abrindo Vias Campanárias, Estações Ventrícula e rotas úteis.",
+      "Use o checklist para separar ferramentas, upgrades e colecionáveis restantes."
+    ],
+    warning: "",
+    result: "Desejos, pulgas e rotas principais bem encaminhados para o 100%."
+  },
+  {
+    title: "Avance os finais e o conteúdo de Act 3",
+    focus: "Finais e endgame",
+    objective: "Concluir os requisitos de finais, derrotar chefes importantes e liberar o conteúdo avançado necessário para 100%.",
+    actions: [
+      "Derrote chefes principais como a Besta dos Sinos, Tessela e a Grande Mãe Seda conforme a progressão exigir.",
+      "Resolva requisitos de finais ligados a Weaver Queen, Snared Silk, Twisted Child e Sister of the Void.",
+      "Conceda o desejo do Arauto para Passing of the Age.",
+      "Conclua objetivos avançados como Entwined, Harmonious e Remembrance quando estiverem disponíveis.",
+      "Evite misturar conteúdo futuro de expansão com a platina base."
+    ],
+    warning: "Troféus de finais e Act 3 podem exigir rotas específicas; antes de alterar uma rota, confirme se o save atual ainda serve para 100%, finais e speedrun.",
+    result: "Finais principais, Act 3 e chefes relevantes concluídos ou mapeados."
+  },
+  {
+    title: "Feche 100% de conclusão",
+    focus: "100% e cleanup",
+    objective: "Completar todos os requisitos de Completion antes de partir para rotas cronometradas.",
+    actions: [
+      "Adquira todas as Ferramentas, Habilidades de Seda e Brasões.",
+      "Complete todos os Fragmentos de Máscara, Fragmentos de Carretel e Corações de Seda.",
+      "Confirme mapas, Bellways, Ventrica Stations, desejos e pulgas.",
+      "Derrote chefes e conclua objetivos restantes que contam para 100%.",
+      "Finalize o jogo com 100% para liberar Completion."
+    ],
+    warning: "Use checklist detalhado; tentar lembrar todos os requisitos de 100% aumenta muito o risco de retrabalho.",
+    result: "100% concluído e base de conhecimento pronta para Speed Completion."
+  },
+  {
+    title: "Faça a rota de Speedrunner",
+    focus: "Speedrun 5h",
+    objective: "Completar o jogo em menos de 5 horas usando uma rota direta e sem desviar para coleta desnecessária.",
+    actions: [
+      "Planeje uma run separada focada apenas em terminar o jogo rapidamente.",
+      "Use conhecimento da primeira campanha para cortar desvios, compras e chefes opcionais.",
+      "Treine chefes e trechos de movimento que mais causam mortes.",
+      "Pausas e menus devem ser usados com cuidado conforme o sistema de tempo do jogo.",
+      "Não tente aprender a rota durante a tentativa válida."
+    ],
+    warning: "Speedrunner é um dos troféus mais técnicos da platina e deve ser feito depois de conhecer bem Pharloom.",
+    result: "Jogo concluído em menos de 5 horas."
+  },
+  {
+    title: "Planeje o 100% em menos de 30 horas",
+    focus: "Speed Completion",
+    objective: "Fazer uma rota otimizada para conseguir 100% de conclusão e terminar o jogo em menos de 30 horas.",
+    actions: [
+      "Use a experiência do 100% casual para montar uma rota eficiente.",
+      "Priorize upgrades e ferramentas que reduzem tempo de travessia e chefes.",
+      "Evite backtracking desnecessário agrupando objetivos por região.",
+      "Acompanhe o progresso de 100% no checklist para não esquecer requisitos obrigatórios.",
+      "Finalize a run antes de 30 horas para Speed Completion."
+    ],
+    warning: "Speed Completion combina 100% e limite de tempo; não comece essa etapa sem conhecer todos os requisitos de Completion.",
+    result: "Speed Completion concluído e maior barreira da platina resolvida."
+  },
+  {
+    title: "Faça o cleanup final da platina",
+    focus: "Cleanup",
+    objective: "Revisar pendências da lista base e confirmar que flags, troféus e status editorial estão corretos.",
+    actions: [
+      "Abra o checklist e revise os 34 troféus.",
+      "Confirme que Pharloom's Heart está tratado apenas como platina.",
+      "Confirme que onlineRequired, coopRequired e dlcRequired estão como false.",
+      "Confirme que Sea of Sorrow e outros updates futuros não foram incluídos na platina base.",
+      "Revise se todos os cards têm nome inglês principal e PT-BR abaixo quando confirmado."
+    ],
+    warning: "",
+    result: "Todos os requisitos da platina base concluídos."
+  }
+];
+
+const silksongTrophyRows = [
+  ["silksong-pharlooms-heart", "Pharloom's Heart", "Coração de Fiarlongo", "Platina", "Adquira todos os outros troféus.", "Desbloqueie os 33 troféus restantes da lista PSN base.", false, false, ["Platina"]],
+  ["silksong-equipped", "Equipped", "Equipada", "Bronze", "Adquira sua primeira Ferramenta.", "Vem cedo ao obter a primeira Ferramenta. Marque no checklist e siga explorando Pharloom.", false, false, ["Ferramentas"]],
+  ["silksong-arsenal", "Arsenal", "Arsenal", "Prata", "Adquira todas as Ferramentas.", "Use checklist por região para não deixar Ferramentas soltas na limpeza final.", false, false, ["Ferramentas", "Coletáveis"]],
+  ["silksong-bound", "Bound", "Vínculo", "Bronze", "Vincule sua primeira Habilidade de Seda.", "Troféu de progressão inicial ligado ao primeiro vínculo de Silk Skill.", false, false, ["Habilidades de Seda"]],
+  ["silksong-woven", "Woven", "Tecido", "Prata", "Vincule todas as Habilidades de Seda.", "Controle as Silk Skills no checklist e conclua a coleção antes do 100%.", false, false, ["Habilidades de Seda", "Coletáveis"]],
+  ["silksong-claimed", "Claimed", "Reivindicado", "Bronze", "Reivindique seu primeiro Brasão.", "Vem ao obter o primeiro Crest e começar a ajustar o estilo de Hornet.", false, false, ["Brasões"]],
+  ["silksong-consumed", "Consumed", "Consumida", "Prata", "Reivindique todos os Brasões.", "Colete todos os Crests da lista base e confirme cada um antes do cleanup final.", false, false, ["Brasões", "Coletáveis"]],
+  ["silksong-protected", "Protected", "Protegida", "Bronze", "Adquira 4 Fragmentos de Máscara.", "Colete quatro Mask Shards para aumentar a sobrevivência durante a campanha.", false, false, ["Upgrades", "Máscara"]],
+  ["silksong-masked", "Masked", "Mascarada", "Prata", "Adquira todos os Fragmentos de Máscara.", "Use checklist de upgrades para completar todos os Mask Shards antes do 100%.", false, false, ["Upgrades", "Máscara"]],
+  ["silksong-restored", "Restored", "Restaurado", "Bronze", "Adquira 2 Fragmentos de Carretel.", "Os primeiros Spool Fragments ajudam a estabilizar recursos para combate e exploração.", false, false, ["Upgrades", "Carretel"]],
+  ["silksong-extended", "Extended", "Estendido", "Prata", "Adquira todos os Fragmentos de Carretel.", "Complete todos os Spool Fragments usando checklist por área.", false, false, ["Upgrades", "Carretel"]],
+  ["silksong-regenerated", "Regenerated", "Regenerada", "Bronze", "Adquira todos os Corações de Seda.", "Feche os Silk Hearts antes de tentar rotas de 100% cronometrado.", false, false, ["Upgrades", "Corações de Seda"]],
+  ["silksong-cartographer", "Cartographer", "Cartógrafa", "Bronze", "Adquira um mapa de cada área.", "Compre ou obtenha mapas de todas as áreas para reduzir retrabalho na exploração.", false, false, ["Mapas", "Exploração"]],
+  ["silksong-connected", "Connected", "Conectadas", "Bronze", "Abra todas as Vias Campanárias de Fiarlongo.", "Abra Bellways conforme avançar; elas economizam muito tempo no cleanup.", false, false, ["Bellways", "Exploração"]],
+  ["silksong-transported", "Transported", "Transportada", "Bronze", "Abra todas as Estações Ventrícula da Cidadela.", "Confirme todas as Ventrica Stations da Cidadela antes do fechamento de 100%.", false, false, ["Ventrica Stations", "Exploração"]],
+  ["silksong-keen-hunter", "Keen Hunter", "Caçadora Habilidosa", "Bronze", "Conceda o desejo de Nuu.", "Siga o desejo de Nuu assim que a rota estiver disponível.", false, false, ["Desejo", "Nuu"]],
+  ["silksong-true-hunter", "True Hunter", "Verdadeira Caçadora", "Prata", "Receba o Memento de Nuu.", "Avance a linha de Nuu até receber o Memento. Trate como objetivo de atenção, não como perdível confirmado.", false, false, ["Memento", "Nuu", "Atenção"]],
+  ["silksong-flea-finder", "Flea Finder", "Localizadora de Pulgas", "Bronze", "Resgate metade das pulgas perdidas de Fiarlongo.", "Marque as pulgas resgatadas por região para facilitar o troféu Fleafriend.", false, false, ["Coletáveis", "Pulgas"]],
+  ["silksong-fleafriend", "Fleafriend", "Pulgófila", "Prata", "Resgate todas as pulgas perdidas de Fiarlongo e receba o presente final delas.", "Complete todas as pulgas e confirme o presente final antes do 100%.", false, false, ["Coletáveis", "Pulgas"]],
+  ["silksong-liberated", "Liberated", "Liberada", "Bronze", "Derrote a Besta dos Sinos.", "Chefe de progressão da lista base.", false, true, ["História", "Chefe"]],
+  ["silksong-pharlooms-welcome", "Pharloom's Welcome", "Boas-vindas de Fiarlongo", "Bronze", "Derrote Tessela nas Docas Profundas.", "Luta contra Tessela em Deep Docks; aprenda o ritmo para encontros posteriores.", false, true, ["História", "Chefe"]],
+  ["silksong-white-knight", "White Knight", "Cavaleira Branca", "Bronze", "Derrote Tessela no Berço.", "Revanche de história com spoiler; entre com upgrades e ferramentas confortáveis.", false, true, ["História", "Chefe"]],
+  ["silksong-granted", "Granted", "Concedido", "Bronze", "Conceda seu primeiro Desejo.", "Conclua o primeiro Wish e comece a controlar desejos no checklist.", false, false, ["Desejos"]],
+  ["silksong-entwined", "Entwined", "Entrelaçada", "Prata", "Vincule Eva.", "Objetivo avançado com spoiler; conclua quando a progressão liberar a rota.", false, true, ["História", "Spoiler"]],
+  ["silksong-harmonious", "Harmonious", "Harmoniosa", "Bronze", "Aprenda a canção Tríplice da Cidadela.", "Objetivo de história ligado à Citadel; registre no checklist quando aprender a canção.", false, true, ["Canção", "História"]],
+  ["silksong-remembrance", "Remembrance", "Lembrança", "Prata", "Reivindique a Flor-da-Eternidade de uma memória distante.", "Coletável avançado com spoiler; deixe anotado para o cleanup de endgame.", false, true, ["Coletável", "Memória", "Spoiler"]],
+  ["silksong-weaver-queen", "Weaver Queen", "Rainha Tecelã", "Ouro", "Derrote a Grande Mãe Seda e vincule o poder dela.", "Final/chefe com spoiler; confirme a rota antes de encerrar a run.", false, true, ["Final", "Chefe", "Rota", "Spoiler"]],
+  ["silksong-snared-silk", "Snared Silk", "Seda Entrelaçada", "Ouro", "Derrote a Grande Mãe Seda e entrelace-a com a Teia de Almas.", "Final/chefe com spoiler e rota própria; planeje junto aos demais finais.", false, true, ["Final", "Chefe", "Rota", "Spoiler"]],
+  ["silksong-twisted-child", "Twisted Child", "Criança Deturpada", "Ouro", "Derrote a Grande Mãe Seda enquanto estiver amaldiçoada.", "Final/chefe com condição especial. Trate como Atenção e rota planejada.", false, true, ["Final", "Chefe", "Rota", "Atenção", "Spoiler"]],
+  ["silksong-sister-of-the-void", "Sister of the Void", "Irmã do Vazio", "Ouro", "Derrote a Tessela Perdida e liberte Fiarlongo.", "Final de Act 3 com spoiler; confirme requisitos antes de avançar.", false, true, ["Final", "Act 3", "Spoiler"]],
+  ["silksong-passing-of-the-age", "Passing of the Age", "Passagem da Era", "Prata", "Conceda o desejo do Arauto.", "Conceda o desejo do Herald e finalize a rota correspondente.", false, true, ["Desejo", "Arauto", "Act 3"]],
+  ["silksong-completion", "Completion", "Conclusão", "Ouro", "Consiga 100% de conclusão e termine o jogo.", "Use checklist detalhado para confirmar todos os requisitos de 100% antes de finalizar a run.", false, true, ["100%", "Grind", "Atenção"]],
+  ["silksong-speedrunner", "Speedrunner", "Velocista", "Prata", "Complete o jogo em menos de 5 horas.", "Faça uma rota separada e treinada para terminar o jogo abaixo de 5h.", false, false, ["Speedrun", "Tempo", "Atenção"]],
+  ["silksong-speed-completion", "Speed Completion", "Conclusão Rápida", "Prata", "Consiga 100% de conclusão e termine o jogo em menos de 30 horas.", "Combine 100% e rota otimizada abaixo de 30h; deixe para depois de conhecer bem todos os requisitos.", false, false, ["100%", "Speedrun", "Tempo", "Atenção"]]
+];
+
+const silksongTrophies = silksongTrophyRows.map(([id, name, namePt, type, descriptionPt, tip, isMissable, isSpoiler, tags]) => ({
+  id,
+  name,
+  name_pt: namePt,
+  trophyNameOriginal: name,
+  trophyNamePtBr: namePt,
+  namePtSource: "editorial_ptbr_reference",
+  type,
+  tier: type,
+  description: descriptionPt,
+  descriptionPtBr: descriptionPt,
+  ptDescription: descriptionPt,
+  localizedDescription: { ptBr: descriptionPt },
+  descriptionPtSource: "editorial_ptbr_reference",
+  tip,
+  guideTip: tip,
+  is_missable: isMissable,
+  isMissable,
+  missable: isMissable,
+  is_spoiler: isSpoiler,
+  isSpoiler,
+  is_online: false,
+  isOnline: false,
+  is_coop: false,
+  isCoop: false,
+  dlcRequired: false,
+  tags
+}));
+
+const darkSoulsRemasteredRoadmap = [
+  {
+    title: "Explore Lordran e prepare a primeira run",
+    focus: "Campanha inicial",
+    objective: "Avançar pela história aprendendo rotas, chefes, pactos e sistemas de upgrade sem desperdiçar recursos importantes.",
+    actions: [
+      "Jogue a primeira run explorando com calma e abrindo atalhos importantes.",
+      "Entre nos pactos disponíveis quando encontrá-los para evitar voltar depois sem necessidade.",
+      "Guarde todas as almas de chefes até confirmar quais armas raras serão criadas.",
+      "Colete embers, titanites, slabs, magias, milagres e piromancias conforme avança.",
+      "Mantenha um checklist separado para pactos, NPCs, armas de cauda e armas raras."
+    ],
+    warning: "Não consuma almas de chefes sem conferir Knight's Honor; algumas almas são necessárias para armas específicas e podem exigir NG+ ou NG++.",
+    result: "Primeira run encaminhada com recursos importantes preservados e pactos iniciais mapeados."
+  },
+  {
+    title: "Controle pactos, NPCs e magias",
+    focus: "Pactos e coleções",
+    objective: "Garantir que magias, milagres, piromancias e pactos sensíveis não sejam bloqueados por escolhas ou NPCs perdidos.",
+    actions: [
+      "Siga as rotas de NPCs importantes como Big Hat Logan, Rhea, Laurentius, Quelana e Eingyi.",
+      "Descubra pactos como Way of White, Forest Hunter, Chaos Servant, Gravelord Servant e Path of the Dragon.",
+      "Planeje Darkwraith antes de entregar ou usar o Lordvessel da forma errada para essa rota.",
+      "Evite matar Gwyndolin ou Gwynevere antes de resolver Blade of the Darkmoon, se ainda precisar do pacto.",
+      "Registre quais magias, milagres e piromancias já foram comprados ou recebidos."
+    ],
+    warning: "Alguns pactos e NPCs podem ficar indisponíveis na run atual se você avançar eventos na ordem errada.",
+    result: "Pactos principais descobertos e coleções de magia encaminhadas sem perda de rota."
+  },
+  {
+    title: "Finalize chefes opcionais e escolha o primeiro final",
+    focus: "Chefes e final",
+    objective: "Derrotar chefes obrigatórios e opcionais importantes e concluir uma das duas terminações necessárias.",
+    actions: [
+      "Derrote chefes de Lord Soul e chefes opcionais com troféu, como Gwyndolin e Priscilla.",
+      "Adquira Rite of Kindling, Art of Abysswalking, Lordvessel e demais troféus de progressão.",
+      "Escolha um dos finais: To Link the Fire ou The Dark Lord.",
+      "Se usar backup de save para finais, trate como estratégia opcional e não como requisito do guia.",
+      "Antes de finalizar a run, confira se ainda há NPC, pacto, magia ou item raro acessível."
+    ],
+    warning: "Sem backup de save, o outro final exige NG+ ou nova run.",
+    result: "Primeiro final concluído e chefes/troféus principais da primeira campanha resolvidos."
+  },
+  {
+    title: "Faça upgrades de armas e coleções principais",
+    focus: "Upgrades e colecionáveis",
+    objective: "Trabalhar caminhos de reforço, magias, milagres, piromancias e armas raras antes de avançar demais em NG+.",
+    actions: [
+      "Complete os caminhos de reforço padrão, cristal, relâmpago, rústico, mágico, encantado, divino, oculto, ígneo e caótico.",
+      "Separe slabs e materiais raros para não desperdiçar upgrades.",
+      "Compre ou obtenha todas as magias, piromancias e milagres possíveis na run atual.",
+      "Crie armas de chefes necessárias para Knight's Honor somente depois de conferir a lista.",
+      "Use o checklist para marcar armas raras e itens de pacto já obtidos."
+    ],
+    warning: "Slabs e materiais raros são limitados por run; planeje antes de criar upgrades finais.",
+    result: "Caminhos de upgrade e coleções principais concluídos ou bem encaminhados."
+  },
+  {
+    title: "Use NG+ para segundo final e almas de chefes restantes",
+    focus: "NG+",
+    objective: "Avançar na segunda run para obter o final oposto e novas almas de chefes necessárias para armas raras.",
+    actions: [
+      "Avance NG+ com foco nos requisitos que faltaram da primeira run.",
+      "Faça o final oposto ao escolhido anteriormente.",
+      "Colete almas de chefes novamente para criar armas alternativas.",
+      "Corrija pactos, NPCs ou magias que foram perdidos na primeira run.",
+      "Evite consumir almas de chefes que ainda têm uso em Knight's Honor."
+    ],
+    warning: "Algumas armas raras exigem múltiplas cópias da mesma alma de chefe; planeje antes de transformar almas em armas.",
+    result: "Segundo final concluído e progresso de Knight's Honor avançado para a etapa final."
+  },
+  {
+    title: "Avance até NG++ para fechar Knight's Honor",
+    focus: "NG++ e armas raras",
+    objective: "Obter os últimos materiais, almas de chefes e armas raras exigidos pela platina.",
+    actions: [
+      "Avance apenas até o ponto necessário para obter as almas de chefes restantes.",
+      "Crie as últimas armas de chefes e armas raras pendentes.",
+      "Revise se armas de cauda, drops, pactos e tesouros únicos foram coletados.",
+      "Confira Knight's Honor antes de considerar a platina travada por falta de item.",
+      "Resolva qualquer upgrade, pacto ou magia restante."
+    ],
+    warning: "Knight's Honor é o maior risco de retrabalho; uma alma usada errado pode empurrar a platina para outra run.",
+    result: "Armas raras concluídas e maior grind da platina resolvido."
+  },
+  {
+    title: "Faça o cleanup final da platina",
+    focus: "Cleanup",
+    objective: "Revisar pendências finais e garantir que flags, troféus e status editorial estão corretos.",
+    actions: [
+      "Abra o checklist e revise os 41 troféus.",
+      "Confirme que The Dark Soul não está marcado como perdível.",
+      "Confirme que onlineRequired, coopRequired e dlcRequired estão como false.",
+      "Confirme que o guia não trata coop ou PvP como obrigatório.",
+      "Revise se todos os cards têm nome inglês principal e PT-BR abaixo quando confirmado."
+    ],
+    warning: "",
+    result: "Todos os requisitos da platina base concluídos."
+  }
+];
+
+const darkSoulsRemasteredChecklist = [
+  "Acender a primeira fogueira.",
+  "Adquirir o Frasco de Estus.",
+  "Chegar a Lordran.",
+  "Tocar o sino da Undead Church.",
+  "Tocar o sino de Quelaag's Domain.",
+  "Adquirir Rite of Kindling.",
+  "Adquirir Art of Abysswalking.",
+  "Chegar a Anor Londo.",
+  "Adquirir Lordvessel.",
+  "Derrotar Gravelord Nito.",
+  "Derrotar Bed of Chaos.",
+  "Derrotar Four Kings.",
+  "Derrotar Seath the Scaleless.",
+  "Derrotar Dark Sun Gwyndolin.",
+  "Derrotar Crossbreed Priscilla.",
+  "Descobrir todos os pactos da lista PSN.",
+  "Obter todas as magias.",
+  "Obter todas as piromancias.",
+  "Obter todos os milagres.",
+  "Criar uma arma padrão máxima.",
+  "Criar uma arma cristal máxima.",
+  "Criar uma arma relâmpago máxima.",
+  "Criar uma arma raw/rústica máxima.",
+  "Criar uma arma mágica máxima.",
+  "Criar uma arma encantada máxima.",
+  "Criar uma arma divina máxima.",
+  "Criar uma arma oculta máxima.",
+  "Criar uma arma fogo/ígnea máxima.",
+  "Criar uma arma caos máxima.",
+  "Escolher o primeiro final.",
+  "Escolher o segundo final.",
+  "Coletar almas de chefes necessárias.",
+  "Criar armas de chefes.",
+  "Coletar armas raras de drops, baús, caudas, pactos e NPCs.",
+  "Avançar NG+.",
+  "Avançar NG++ até o ponto necessário.",
+  "Fazer cleanup final e liberar The Dark Soul."
+];
+
+const darkSoulsRemasteredFaq = [
+  {
+    question: "Dark Souls Remastered tem troféus online?",
+    answer: "Não. A platina pode ser feita offline. Online, coop ou PvP pode facilitar alguns itens de pacto ou chefes, mas não é obrigatório."
+  },
+  {
+    question: "Precisa de coop?",
+    answer: "Não. Coop pode ajudar, especialmente em chefes ou no pacto Warrior of Sunlight, mas a platina não exige coop."
+  },
+  {
+    question: "Precisa de DLC?",
+    answer: "Não há DLC separada obrigatória para a lista PSN base. Não adicione troféus extras fora da lista de 41 troféus."
+  },
+  {
+    question: "Quantas jogadas são necessárias?",
+    answer: "A rota segura exige uma primeira campanha, NG+ para o segundo final e avanço até NG++ para fechar armas raras e almas de chefes de Knight's Honor."
+  },
+  {
+    question: "A dificuldade afeta troféus?",
+    answer: "Não. Dark Souls Remastered não tem seleção tradicional de dificuldade nem troféu ligado a dificuldade."
+  },
+  {
+    question: "A platina tem perdíveis?",
+    answer: "Sim, se você considerar requisitos sensíveis à run. Alguns troféus ligados a NPCs, pactos, almas de chefes e armas raras podem exigir outra run se forem ignorados. Use o checklist para evitar consumir almas de chefes, perder pactos ou avançar eventos de NPC na ordem errada."
+  },
+  {
+    question: "Posso usar backup de save para os finais?",
+    answer: "Pode ser usado como estratégia opcional para reduzir runs de finais, mas o guia explica a rota normal por NG+/NG++ sem depender disso."
+  },
+  {
+    question: "O que mais dá trabalho?",
+    answer: "Knight's Honor, todos os feitiços, todos os milagres, todas as piromancias e os caminhos de upgrade de armas são os maiores blocos de organização."
+  },
+  {
+    question: "Posso consumir almas de chefes?",
+    answer: "Não consuma almas de chefes antes de conferir a lista de armas raras. Algumas almas são necessárias para armas de chefes e podem exigir outra run se forem usadas errado."
+  }
+];
+
+const darkSoulsRemasteredAttentionPoints = [
+  { title: "Knight's Honor", type: "Armas raras / Almas de chefes / NG++", tip: "Não consuma almas de chefes antes de conferir todas as armas raras; algumas almas exigem NG+ ou NG++." },
+  { title: "Wisdom of a Sage", type: "Feitiços / NPCs", tip: "Acompanhe Big Hat Logan e compre todos os feitiços antes de avançar eventos irreversíveis." },
+  { title: "Bond of a Pyromancer", type: "Piromancias / NPCs", tip: "Controle Laurentius, Quelana, Eingyi e piromancias ligadas a pactos/NPCs." },
+  { title: "Prayer of a Maiden", type: "Milagres / Pactos", tip: "Revise Rhea, pactos e Soul of Gwyn para não deixar milagres para outra run." },
+  { title: "Covenant: Darkwraith", type: "Pacto / Rota / Atenção", tip: "Planeje a rota antes de entregar o Lordvessel de forma incompatível com o pacto." },
+  { title: "Covenant: Blade of the Darkmoon", type: "Pacto / Atenção", tip: "Evite bloquear o pacto antes de resolver seus requisitos." },
+  { title: "Covenant: Warrior of Sunlight", type: "Pacto / Atenção", tip: "Pode ser feito offline, mas requer planejamento de Fé ou coop opcional." },
+  { title: "To Link the Fire / The Dark Lord", type: "Finais", tip: "Sem backup de save, os dois finais exigem NG+ ou nova run." },
+  { title: "Weapon upgrade paths", type: "Upgrades / Slabs", tip: "Slabs e materiais raros são limitados por run; planeje os caminhos de reforço." },
+  { title: "Defeat Dark Sun Gwyndolin", type: "Chefe opcional / Pacto", tip: "Chefe opcional que pode afetar pacto; deixe para o momento correto." }
+];
+
+const darkSoulsRemasteredTrophyRows = [
+  ["dsr_the_dark_soul", "The Dark Soul", "A Alma Negra", "Platina", "Obtenha todos os troféus.", "Conclua os outros 40 troféus da lista PlayStation de Dark Souls Remastered. The Dark Soul nunca deve ser tratado como perdível e Artorias of the Abyss não é grupo separado de DLC nesta platina.", false, false, ["Platina"]],
+  ["dsr_to_link_the_fire", "To Link the Fire", "O Acender do Fogo", "Ouro", "Alcance o final \"To Link the Fire\".", "Final oposto a The Dark Lord na mesma conclusão de run. Use NG+ ou backup opcional se quiser reduzir retrabalho.", false, true, ["Final", "Rota", "Spoiler"]],
+  ["dsr_dark_lord", "The Dark Lord", "O Lorde Negro", "Ouro", "Alcance o final \"The Dark Lord\".", "Final oposto a To Link the Fire. Planeje junto de NG+ e NG++ para almas de chefes e armas raras.", false, true, ["Final", "Rota", "Spoiler"]],
+  ["dsr_knights_honor", "Knight's Honor", "Honra de cavaleiro", "Prata", "Adquira todas as armas raras.", "Troféu central da platina: acompanhe armas raras, armas de chefes, armas de cauda, armas de pacto e drops. Não consuma almas de chefes; a alma de Sif exige três usos e normalmente empurra para NG++.", true, false, ["Perdível", "Armas raras", "Almas de chefes", "NG++", "Atenção"]],
+  ["dsr_wisdom_of_a_sage", "Wisdom of a Sage", "Erudição de sábio", "Prata", "Adquira todos os feitiços.", "Compre e colete todos os feitiços, cuidando de Big Hat Logan, vendedores, rotas de NPC e compras avançadas.", true, false, ["Perdível", "Feitiços", "NPCs", "Coletáveis"]],
+  ["dsr_bond_of_a_pyromancer", "Bond of a Pyromancer", "Vínculo de piromante", "Prata", "Adquira todas as piromancias.", "Acompanhe Laurentius, Eingyi, Quelana, Chaos Servant e piromancias de áreas avançadas. Janelas de NPC podem gerar retrabalho.", true, false, ["Perdível", "Piromancias", "NPCs", "Atenção"]],
+  ["dsr_prayer_of_a_maiden", "Prayer of a Maiden", "Prece de donzela", "Prata", "Adquira todos os milagres.", "Planeje Rhea, pactos, Sunlight Medals, Gravelord Servant, Princess's Guard e Soul of Gwyn para Sunlight Spear em NG+.", true, false, ["Perdível", "Milagres", "Pactos", "NPCs"]],
+  ["dsr_covenant_way_of_white", "Covenant: Way of White", "Pacto: Caminho Branco", "Bronze", "Descubra o pacto Way of White.", "Entre pelo clérigo em Firelink Shrine ou por NPCs relacionados enquanto a questline ainda estiver acessível.", false, false, ["Pacto"]],
+  ["dsr_covenant_princesss_guard", "Covenant: Princess's Guard", "Pacto: Guarda da Princesa", "Prata", "Descubra o pacto Princess's Guard.", "Descubra o pacto em Anor Londo antes de tomar decisões hostis contra Gwynevere ou a rota da Princess's Guard.", false, true, ["Pacto", "Atenção"]],
+  ["dsr_covenant_blade_of_the_darkmoon", "Covenant: Blade of the Darkmoon", "Pacto: Lâmina da Lua Negra", "Prata", "Descubra o pacto Blade of the Darkmoon.", "Exige acesso ao altar de Dark Sun Gwyndolin e cuidado para não invalidar o pacto antes de descobri-lo.", true, true, ["Perdível", "Pacto", "Atenção"]],
+  ["dsr_covenant_warrior_of_sunlight", "Covenant: Warrior of Sunlight", "Pacto: Guerreiro da Luz Solar", "Prata", "Descubra o pacto Warrior of Sunlight.", "Planeje Fé ou redução opcional por cooperação. Online ajuda, mas não é obrigatório para a platina.", false, false, ["Pacto", "Atenção"]],
+  ["dsr_covenant_forest_hunter", "Covenant: Forest Hunter", "Pacto: Caçador da Floresta", "Prata", "Descubra o pacto Forest Hunter.", "Fale com Alvina em Darkroot Garden e evite hostilizar NPCs do pacto antes de entrar se estiver seguindo a checklist.", false, false, ["Pacto", "Atenção"]],
+  ["dsr_covenant_darkwraith", "Covenant: Darkwraith", "Pacto: Aparição Negra", "Prata", "Descubra o pacto Darkwraith.", "Um dos pactos mais sensíveis: derrote Four Kings antes de entregar o Lordvessel a Frampt para falar com Kaathe.", true, true, ["Perdível", "Pacto", "Rota", "Atenção"]],
+  ["dsr_covenant_path_of_the_dragon", "Covenant: Path of the Dragon", "Pacto: Caminho do Dragão", "Prata", "Descubra o pacto Path of the Dragon.", "Chegue a Ash Lake e fale com o Stone Dragon. Planeje a rota opcional sem depender de online.", false, true, ["Pacto"]],
+  ["dsr_covenant_gravelord_servant", "Covenant: Gravelord Servant", "Pacto: Servo do Lorde das Tumbas", "Prata", "Descubra o pacto Gravelord Servant.", "Entre antes de derrotar Gravelord Nito se ainda precisar do pacto, de Eye of Death ou de recompensas ligadas a milagres.", true, true, ["Perdível", "Pacto", "Atenção"]],
+  ["dsr_covenant_chaos_servant", "Covenant: Chaos Servant", "Pacto: Servo do Caos", "Prata", "Descubra o pacto Chaos Servant.", "Descubra com Quelaag's Sister e evite matá-la se ainda precisar do pacto, piromancias ou atalhos.", true, true, ["Perdível", "Pacto", "Atenção"]],
+  ["dsr_strongest_weapon", "Strongest Weapon", "Arma excepcional", "Bronze", "Adquira a melhor arma através do reforço padrão.", "Leve uma arma padrão até +15. Controle Large Ember, Very Large Ember, titanites e slab.", false, false, ["Upgrades", "Farm", "Slabs"]],
+  ["dsr_crystal_weapon", "Crystal Weapon", "Arma cristalizada", "Bronze", "Adquira a melhor arma através do reforço cristal.", "Use o caminho Crystal até +5 com o ember correto. Revise recursos antes de gastar slabs raras.", false, false, ["Upgrades", "Farm", "Slabs"]],
+  ["dsr_lightning_weapon", "Lightning Weapon", "Arma elétrica", "Bronze", "Adquira a melhor arma através do reforço relâmpago.", "Leve uma arma Lightning até +5. Guarde titanites e slabs para não atrasar outros caminhos de upgrade.", false, false, ["Upgrades", "Farm", "Slabs"]],
+  ["dsr_raw_weapon", "Raw Weapon", "Arma rústica", "Bronze", "Adquira a melhor arma através do reforço raw.", "Use o caminho Raw até +5. É um upgrade simples, mas entra na checklist de embers e titanites.", false, false, ["Upgrades", "Farm"]],
+  ["dsr_magic_weapon", "Magic Weapon", "Arma mágica", "Bronze", "Adquira a melhor arma através do reforço mágico.", "Leve uma arma Magic até +10 com Rickert e o ember necessário. Planeje blue titanite para não travar o cleanup.", false, false, ["Upgrades", "Farm"]],
+  ["dsr_enchanted_weapon", "Enchanted Weapon", "Arma encantada", "Bronze", "Adquira a melhor arma através do reforço encantado.", "Leve uma arma Enchanted até +5. O ember e recursos específicos ficam em áreas avançadas.", false, false, ["Upgrades", "Farm"]],
+  ["dsr_divine_weapon", "Divine Weapon", "Arma divina", "Bronze", "Adquira a melhor arma através do reforço divino.", "Leve uma arma Divine até +10 com Andre e os embers corretos. Também ajuda em Tomb of the Giants.", false, false, ["Upgrades", "Farm"]],
+  ["dsr_occult_weapon", "Occult Weapon", "Arma oculta", "Bronze", "Adquira a melhor arma através do reforço oculto.", "Leve uma arma Occult até +5. Planeje Dark Ember e white titanite para não depender de retrabalho tardio.", false, false, ["Upgrades", "Farm"]],
+  ["dsr_fire_weapon", "Fire Weapon", "Arma ígnea", "Bronze", "Adquira a melhor arma através do reforço de fogo.", "Leve uma arma Fire até +10 com Vamos. Separe red titanite para Fire e Chaos.", false, false, ["Upgrades", "Farm", "Slabs"]],
+  ["dsr_chaos_weapon", "Chaos Weapon", "Arma caótica", "Bronze", "Adquira a melhor arma através do reforço caos.", "Leve uma arma Chaos até +5 com Vamos e o ember correto. Organize red slabs antes do cleanup.", false, false, ["Upgrades", "Farm", "Slabs"]],
+  ["dsr_enkindle", "Enkindle", "Acendendo", "Bronze", "Acenda a chama de uma fogueira.", "Troféu inicial ao acender uma bonfire.", false, false, ["História"]],
+  ["dsr_estus_flask", "Estus Flask", "Frasco de Estus", "Bronze", "Adquira o Frasco de Estus.", "Obtido no tutorial em Undead Asylum.", false, false, ["História"]],
+  ["dsr_reach_lordran", "Reach Lordran", "Chegada a Lordran", "Bronze", "Chegue a Lordran.", "Troféu automático ao concluir o tutorial e chegar a Lordran.", false, true, ["História", "Spoiler"]],
+  ["dsr_ring_the_bell_undead_church", "Ring the Bell (Undead Church)", "Soar do sino (Igreja dos Mortos-vivos)", "Bronze", "Toque o Bell of Awakening na Undead Church.", "Progresso principal ligado a Undead Parish e Bell Gargoyles.", false, true, ["História", "Spoiler"]],
+  ["dsr_ring_the_bell_quelaags_domain", "Ring the Bell (Quelaag's Domain)", "Soar do sino (Domínio de Quelaag)", "Bronze", "Toque o Bell of Awakening em Quelaag's Domain.", "Progresso principal em Quelaag's Domain. Revise Chaos Servant depois da luta.", false, true, ["História", "Spoiler"]],
+  ["dsr_rite_of_kindling", "Rite of Kindling", "Rito de Acendimento", "Bronze", "Adquira o Rite of Kindling.", "Obtido ao derrotar Pinwheel nas Catacombs; ajuda a fortalecer bonfires para áreas posteriores.", false, true, ["História", "Spoiler"]],
+  ["dsr_art_of_abysswalking", "Art of Abysswalking", "Arte de Trilhar o Abismo", "Bronze", "Adquira a Art of Abysswalking.", "Obtido com Great Grey Wolf Sif e necessário para The Abyss/Four Kings. A alma de Sif também entra em Knight's Honor.", false, true, ["História", "Spoiler"]],
+  ["dsr_reach_anor_londo", "Reach Anor Londo", "Chegada a Anor Londo", "Prata", "Chegue a Anor Londo.", "Troféu de progresso ao chegar em Anor Londo, ponto importante para Lordvessel, pactos e armas raras.", false, true, ["História", "Spoiler"]],
+  ["dsr_lordvessel", "Lordvessel", "Urna do Lorde", "Prata", "Adquira o Lordvessel.", "Antes de entregar o Lordvessel, revise Darkwraith e Kaathe se quiser evitar perder esse pacto nesta run.", false, true, ["História", "Spoiler"]],
+  ["dsr_defeat_gravelord_nito", "Defeat Gravelord Nito", "Derrota de Nito Lorde das Tumbas", "Prata", "Derrote Gravelord Nito.", "Chefe principal de Lord Soul. Entre em Gravelord Servant antes se ainda precisar do pacto ou milagre.", false, true, ["História", "Spoiler"]],
+  ["dsr_defeat_bed_of_chaos", "Defeat Bed of Chaos", "Derrota do Berço do Caos", "Prata", "Derrote Bed of Chaos.", "Chefe principal de Lost Izalith. Chaos Servant pode reduzir uma parte importante da rota e ajudar no planejamento.", false, true, ["História", "Spoiler"]],
+  ["dsr_defeat_the_four_kings", "Defeat the Four Kings", "Derrota dos Quatro Reis", "Prata", "Derrote Four Kings.", "Necessário para progresso e Darkwraith. Se quiser o pacto, faça Four Kings antes de entregar o Lordvessel a Frampt.", false, true, ["História", "Spoiler"]],
+  ["dsr_defeat_seath_the_scaleless", "Defeat Seath the Scaleless", "Derrota de Seath, o Descamado", "Prata", "Derrote Seath the Scaleless.", "Chefe principal de Duke's Archives/Crystal Cave. Revise sorceries e o Moonlight Greatsword de tail cut antes de finalizar.", false, true, ["História", "Spoiler"]],
+  ["dsr_defeat_the_dark_sun_gwyndolin", "Defeat Dark Sun Gwyndolin", "Derrota de Gwyndolin Sol Negro", "Prata", "Derrote Dark Sun Gwyndolin.", "Chefe opcional ligado a Anor Londo, pacto Blade of the Darkmoon e milagres. Revise o pacto antes de hostilizar.", false, true, ["Chefe opcional", "Pacto", "Spoiler"]],
+  ["dsr_defeat_crossbreed_priscilla", "Defeat Crossbreed Priscilla", "Derrota de Priscilla Mestiça", "Prata", "Derrote Crossbreed Priscilla.", "Chefe opcional de Painted World. Corte a cauda para Priscilla's Dagger antes de matar, pois ela entra em Knight's Honor.", false, true, ["Chefe opcional", "Mundo pintado", "Spoiler"]]
+];
+
+const darkSoulsRemasteredTrophies = darkSoulsRemasteredTrophyRows.map(([id, name, namePt, type, descriptionPt, tip, isMissable, isSpoiler, tags]) => ({
+  id,
+  name,
+  name_pt: namePt,
+  trophyNameOriginal: name,
+  trophyNamePtBr: namePt,
+  namePtSource: "editorial_ptbr_reference",
+  type,
+  tier: type,
+  description: descriptionPt,
+  descriptionPtBr: descriptionPt,
+  ptDescription: descriptionPt,
+  localizedDescription: { ptBr: descriptionPt },
+  descriptionPtSource: "editorial_ptbr_reference",
+  tip,
+  guideTip: tip,
+  is_missable: isMissable,
+  isMissable,
+  missable: isMissable,
+  is_spoiler: isSpoiler,
+  isSpoiler,
+  is_online: false,
+  isOnline: false,
+  is_coop: false,
+  isCoop: false,
+  dlcRequired: false,
+  tags
+}));
+
 const sampleGames = [
   {
     "id": 1,
@@ -7666,32 +8099,165 @@ const sampleGames = [
     "time_max_hours": 45,
     "time_sort_hours": 45,
     "time_bucket": "long",
-    "missable": "A lista base não tem troféus tecnicamente perdíveis porque chapter select resolve quase tudo, mas a platina fica muito mais limpa se você tratar a primeira campanha como preparação para Professional, emblemas BSAA, tesouros, armas e ranks S.",
-    "runs_summary": "Uma campanha inicial, cleanup por chapter select, ranks S, upgrades/figuras/tesouros e uma run em Professional com inventário preparado.",
-    "missable_summary": "A lista base não tem perdíveis definitivos porque chapter select permite voltar. Ainda assim, emblemas BSAA, tesouros e objetivos situacionais ficam melhores com checklist desde a primeira run.",
+    "missable_count": 0,
+    "missable": "Não há troféus perdíveis definitivos na lista base de Resident Evil 5. A Seleção de Capítulos permite repetir qualquer capítulo para limpar emblemas BSAA, tesouros, armas, ranks S, dificuldades e troféus situacionais. O risco real é de retrabalho: alguns tesouros e objetivos têm janela dentro do capítulo, mas se passar do ponto basta repetir o capítulo correspondente.",
+    "runs_summary": "1 campanha em Normal ou Veteran, limpeza por Seleção de Capítulos, ranks S/farm/upgrades/figuras e 1 campanha em Professional com inventário preparado.",
+    "missable_summary": "Sem perdíveis definitivos. Tudo da platina base pode ser limpo por Seleção de Capítulos; trate emblemas, tesouros e situações específicas como checklist para evitar repetir capítulos no escuro.",
     "online_summary": "Não há exigência online, multiplayer ou PS+ para a platina base. A campanha aceita parceiro humano, mas a lista pode ser planejada solo com a IA; trate companhia humana como ajuda, não requisito.",
-    "grind_summary": "Grind moderado/alto para dinheiro, upgrades de todas as armas, compra de figuras, ranks S, tesouros e preparação de munição infinita.",
+    "grind_summary": "Grind moderado/alto para dinheiro, upgrades de todas as armas, compra de armas especiais, pontos de Bonus Features, figuras, ranks S e preparação de munição infinita.",
     "dlc_scope": "Guia focado na lista base de Resident Evil 5. DLCs/listas extras como Lost in Nightmares, Desperate Escape e Versus ficam fora da platina base neste guia.",
-    "difficulty_reason": "A dificuldade vem de Professional, gestão do parceiro/IA, chefes, ranks S e custo de upgrade completo das armas.",
-    "time_reason": "A faixa de 35-45 horas considera campanha, chapter select, coleta, ranks S, dinheiro, upgrades, figuras e Professional.",
-    "first_run_advice": "Feche a campanha em Normal ou Veteran coletando emblemas, tesouros e armas. Jogue solo com IA se preferir; parceiro humano ajuda, mas não é requisito editorial da platina base.",
-    "cleanup_advice": "Use chapter select para emblemas BSAA, tesouros, ranks S, troféus situacionais, dinheiro e upgrades antes de entrar no Professional.",
-    "before_you_start": "Não confunda parceiro humano disponível com requisito obrigatório. Organize inventário e upgrades para reduzir a pressão da IA/parceiro no Professional.",
-    "best_for": "Ideal para quem gosta de ação com parceiro opcional, chapter select, coleta e preparação de build/inventário.",
+    "difficulty_reason": "Dificuldade 6/10: a campanha normal é administrável, mas Professional pune qualquer erro, a IA pode atrapalhar resgates, 2-3 não aceita munição infinita, alguns chefes pedem rota conhecida e o grind de upgrades exige planejamento.",
+    "time_reason": "35-45 horas: 8-12h na primeira campanha, 5-8h para emblemas/tesouros/armas, 4-6h para ranks S e troféus situacionais, 6-10h de farm/upgrades/figuras e 5-8h para Professional preparado.",
+    "first_run_advice": "Comece em Normal se for sua primeira vez ou em Veteran se já conhece RE5 e quer destravar Professional mais cedo. Em qualquer caso, colete emblemas BSAA, tesouros e armas desde o início, mas não reinicie capítulos longos por um item isolado: deixe o cleanup para a Seleção de Capítulos.",
+    "cleanup_advice": "Depois da campanha, use Seleção de Capítulos em Amateur ou Normal para fechar emblemas, tesouros, ovos, armas, ranks S, troféus situacionais e farm. Só entre no Professional quando tiver ao menos uma Magnum/Rifle forte com munição infinita, sprays e rota conhecida.",
+    "before_you_start": "Não há ponto de não retorno permanente. Pontos de atenção por capítulo: Soul Gem exige matar Popokarimu em 4-1 antes de fugir; Heart of Africa exige causar dano suficiente a Wesker em 5-3 antes da luta contra Jill; um emblema de 6-1 exige explosivo; Diamond Marquise fica na arena final de 6-3. Se perder qualquer um, repita o capítulo.",
+    "best_for": "Ideal para quem gosta de ação cooperativa opcional, Seleção de Capítulos, checklist de coletáveis, farm controlável e preparação de arsenal para uma dificuldade alta.",
     "avoid_if": "Evite se você não quer farm de dinheiro, repetir capítulos para rank S ou lidar com Professional solo/IA.",
     "editorial_status": "published",
-    "coverage_level": "strong",
-    "is_verified": false,
-    "verification_status": "review",
-    "verification_note": "Guia normalizado a partir do dado seed com checklist e roadmap; aguardando revisão editorial manual final.",
+    "coverage_level": "complete",
+    "is_verified": true,
+    "verification_status": "verified",
+    "editorial_review_status": "verified",
+    "verification_note": "Guia revisado com foco na lista base, ausência de perdíveis definitivos, Seleção de Capítulos, coletáveis, armas, upgrades, ranks S e Professional.",
     "image": "https://cdn.cloudflare.steamstatic.com/steam/apps/21690/header.jpg",
     "cover_image": "https://cdn.cloudflare.steamstatic.com/steam/apps/21690/library_600x900.jpg",
+    "editorial_summary": [
+      "Visão geral da platina: Resident Evil 5 é uma platina de campanha + cleanup. A lista base tem 51 troféus, não exige online, não exige DLC e pode ser concluída solo com a IA ou em coop opcional. O núcleo é terminar todos os capítulos, destravar e vencer Professional, coletar 30 emblemas BSAA, registrar todos os 50 tesouros, obter e evoluir todas as armas, comprar figuras e limpar troféus situacionais.",
+      "Perdíveis e pontos de não retorno: não há perdíveis definitivos. A Seleção de Capítulos mantém inventário/progresso e permite voltar para qualquer capítulo. O que existe são janelas internas de capítulo, como Soul Gem em 4-1, Heart of Africa em 5-3, o emblema explosivo de 6-1 e o Diamond Marquise de 6-3. Se passar por uma dessas janelas, repita o capítulo específico; a platina não fica bloqueada.",
+      "Roadmap recomendado: faça a primeira campanha em Normal ou Veteran, colete o que vier sem perfeccionismo, destrave Professional via Veteran, limpe emblemas/tesouros/armas/ranks S por Seleção de Capítulos, farme dinheiro, evolua armas-chave, compre figuras e só então finalize Professional. Essa ordem evita repetir Professional por falta de dano, repetir capítulos sem checklist e gastar dinheiro cedo em armas ruins.",
+      "Checklist por capítulo: emblemas BSAA por capítulo: 1-1: 0, 1-2: 3, 2-1: 5, 2-2: 3, 2-3: 0, 3-1: 4, 3-2: 2, 3-3: 1, 4-1: 3, 4-2: 1, 5-1: 1, 5-2: 1, 5-3: 3, 6-1: 3, 6-2: 0, 6-3: 0. Use rifle com zoom para os distantes e leve explosivo para o emblema dentro do container em 6-1.",
+      "Checklist de tesouros: registre os 50 tipos ao menos uma vez; você pode vendê-los depois. Dê atenção a Gold Ring/Topaz Marquise em 1-1, Ivory Relief/Antique Clock em 1-2, Ruby Marquise em 2-1, diamantes e Venom Fang em 2-2, Ceremonial Mask/Idol Silver/Blue Enigma em 3-1, Emerald Marquise em 3-3, Soul Gem em 4-1, Idol Gold/Beetle Gold/Diamond Trilliant em 4-2, Lion Heart em 5-1, Power Stone em 5-2, Royal Necklace/Heart of Africa/gemas Brilliant/Oval/Marquise em 5-3 e Diamond Marquise em 6-3.",
+      "Farm e upgrades: venda tesouros sem medo depois que o tipo entrar no registro. Priorize uma Magnum, um rifle e uma shotgun para Professional; depois evolua M92F, Ithaca, S&W M29, VZ61 e S75 para liberar M93R, Hydra, S&W M500, Gatling Gun e Longbow. Para dinheiro, repita 4-1 pegando gemas/tesouros, 5-1 pelo corredor de Lickers e 5-2 por Power Stones dos Reapers."
+    ],
     "roadmap": [
-      "Feche a primeira campanha da lista base em Normal ou Veteran coletando o máximo possível de emblemas BSAA, tesouros e armas. Aproveite para se acostumar com Chris e Sheva; solo com IA é viável, e parceiro humano apenas ajuda.",
-      "Depois limpe chapter completions por dificuldade até destravar Professional. Se já tiver munição infinita em uma arma forte, a segunda campanha fica bem mais controlável.",
-      "Use chapter select em Amatéur para fechar ranks S, emblemas BSAA, tesouros, figuras e todos os troféus de ações específicas como explosivos, armadilhas de cenário e mortes com armas especiais.",
-      "Deixe para o fim a compra e o upgrade completo de todas as armas. Esse é o bloco mais caro da platina, então venda tesouros com critério e repita capítulos rentáveis quando faltar dinheiro.",
-      "Professional é a reta final de execução. Entre nessa run com inventário forte, rota conhecida e, de preferência, um parceiro confiável ou um setup seguro para o modo solo."
+      {
+        "title": "Primeira campanha: Normal ou Veteran",
+        "focus": "Campanha e preparação",
+        "objective": "Termine a história uma vez, aprenda arenas/chefes e comece os checklists sem tentar perfeição.",
+        "actions": [
+          "Escolha Normal se estiver jogando pela primeira vez; escolha Veteran se já conhece o jogo e quer desbloquear Professional mais cedo.",
+          "Pegue armas encontradas em baús/cenários, atire em emblemas visíveis e colete tesouros naturais, mas não reinicie capítulos longos por um único item.",
+          "Guarde ovos diferentes, primeiros sprays e munição de Magnum/Rifle. Venda tesouros duplicados para melhorar uma arma principal.",
+          "Use a campanha para adiantar A Friend in Need, Lifeguard, Exploding Heads, Get Physical, A Cut Above e Who Do You Trust?"
+        ],
+        "warning": "Não gaste todo o dinheiro em muitas armas medianas. Uma arma forte bem evoluída ajuda mais que cinco armas parcialmente melhoradas.",
+        "result": "Campanha concluída, capítulos abertos na Seleção de Capítulos e base de inventário para cleanup."
+      },
+      {
+        "title": "Desbloqueie Professional e prepare o arsenal",
+        "focus": "Dificuldade",
+        "objective": "Complete todos os capítulos no Veteran se ainda não tiver Professional liberado, depois evolua armas-chave antes da run final.",
+        "actions": [
+          "Para War Hero, Professional precisa estar disponível; normalmente isso vem ao terminar todos os capítulos em Veteran.",
+          "Priorize Magnum L. Hawk ou S&W M29/M500, Rifle PSG-1 ou S75 e uma shotgun forte. Munição infinita em uma arma de alto dano reduz muito o risco.",
+          "Leve First Aid Sprays nos dois inventários e não dê armas fracas demais à IA; ela desperdiça munição e pode morrer fora de posição."
+        ],
+        "warning": "O capítulo 2-3 é feito em turret e continua perigoso mesmo com arsenal forte. Treine em Veteran antes de insistir no Professional.",
+        "result": "Professional pronto para ser enfrentado sem transformar a run em tentativa e erro."
+      },
+      {
+        "title": "Limpeza de emblemas BSAA e tesouros",
+        "focus": "Coletáveis",
+        "objective": "Use Seleção de Capítulos em Amateur/Normal para fechar Badge of Honor e They Belong in a Museum.",
+        "actions": [
+          "Emblemas BSAA: 1-2 tem 3; 2-1 tem 5; 2-2 tem 3; 3-1 tem 4; 3-2 tem 2; 3-3 tem 1; 4-1 tem 3; 4-2 tem 1; 5-1 tem 1; 5-2 tem 1; 5-3 tem 3; 6-1 tem 3.",
+          "Capítulos sem emblemas: 1-1, 2-3, 6-2 e 6-3.",
+          "Tesouros críticos: Soul Gem em 4-1, Heart of Africa em 5-3, Diamond Marquise em 6-3, Ruby Marquise em 2-1, Emerald Marquise em 3-3 e gemas Brilliant/Oval de 5-3.",
+          "Você só precisa registrar cada tipo de tesouro; depois pode vender para financiar upgrades."
+        ],
+        "warning": "Em 6-1, um emblema dentro de container só quebra com explosivo ou dinamite inimiga. Entre com granada/proximity bomb para não repetir.",
+        "result": "Badge of Honor, grande parte de They Belong in a Museum e dinheiro extra para upgrades."
+      },
+      {
+        "title": "Ranks S e Bonus Features",
+        "focus": "Rank S e figuras",
+        "objective": "Garanta rank S em todos os capítulos em qualquer dificuldade e compre tudo que libera figuras/costumes.",
+        "actions": [
+          "Faça S rank em Amateur com munição infinita: priorize tempo baixo, alta precisão, muitas mortes e zero deaths.",
+          "Capítulos curtos podem ser repetidos para pontos de Bonus Features; 6-2 com Rocket Launcher é uma rota rápida para pontos.",
+          "Compre costumes em Bonus Features conforme forem liberados e deixe figuras para depois de todos os emblemas + ranks S."
+        ],
+        "warning": "O S rank não precisa ser todo na mesma dificuldade. Se um capítulo já tem S em qualquer dificuldade, siga para o próximo.",
+        "result": "Base de They’re ACTION Figures!, All Dressed Up e pontuação suficiente para comprar extras."
+      },
+      {
+        "title": "Farm de dinheiro e upgrades",
+        "focus": "Grind",
+        "objective": "Comprar todas as armas, liberar armas especiais e evoluir todas as armas com upgrade.",
+        "actions": [
+          "Farm seguro: 4-1 com rota completa de gemas rende muito por run; 5-1 é bom para Lion Hearts dos Lickers; 5-2 rende Power Stones dos Reapers se você os mata rápido.",
+          "Prioridade de desbloqueio: M92F libera M93R; Ithaca M37 libera Hydra; S&W M29 libera S&W M500; VZ61 libera Gatling Gun; S75 libera Longbow.",
+          "Para Take It to the Max, evolua todos os handguns, shotguns, machine guns, rifles e magnums. Stun Rod, Rocket Launcher, Grenade Launcher, Gatling Gun e Longbow não têm upgrades tradicionais."
+        ],
+        "warning": "Não segure tesouros por apego: depois que o tipo foi registrado, vender é correto. O troféu de tesouros não exige inventário cheio.",
+        "result": "Stockpile, Take It to the Max e arsenal pronto para War Hero."
+      },
+      {
+        "title": "Troféus situacionais",
+        "focus": "Cleanup",
+        "objective": "Limpe objetivos técnicos em capítulos fáceis antes de fechar a platina.",
+        "actions": [
+          "Faça Be the Knife em 2-1 contra arqueiros, Drive By em 2-3, Bad Blood/Heart of Africa em 5-3, Heart Stopper em 5-1, Egg Hunt em 3-1 + drops e Egg on Your Face em 1-1 Amateur.",
+          "Use 1-1 Amateur para Gatling Gun, Longbow, Stun Rod, headshots, melee e explosivos em grupo.",
+          "Use 3-2 para The Works contra Big Man Majini com parceiro humano ou IA bem posicionada."
+        ],
+        "warning": "Para troféus que dependem de parceiro, remova armas da IA quando ela estiver matando inimigos cedo demais.",
+        "result": "Lista situacional limpa sem misturar objetivos técnicos com Professional."
+      },
+      {
+        "title": "Professional e revisão final",
+        "focus": "War Hero",
+        "objective": "Complete todos os capítulos no Professional e revise qualquer pendência pela Seleção de Capítulos.",
+        "actions": [
+          "Entre com armas infinitas, sprays, colete de proteção se quiser segurança e rota conhecida de chefes.",
+          "Jogue devagar em arenas com instant kill, priorize resgatar o parceiro e deixe a IA com itens de cura.",
+          "Depois de 6-3, confira checklist: 30 emblemas, 50 tesouros registrados, todas as armas, todos os upgrades, S rank por capítulo, figuras/costumes comprados e ovos."
+        ],
+        "warning": "Professional é o último bloco ideal porque qualquer falta de dano, cura ou conhecimento vira retrabalho. Preparar antes economiza horas.",
+        "result": "War Hero e platina/100% da lista base."
+      }
+    ],
+    "faq": [
+      {
+        "question": "Resident Evil 5 tem troféus perdíveis?",
+        "answer": "Não há perdíveis definitivos na lista base. A Seleção de Capítulos permite repetir qualquer capítulo para limpar emblemas, tesouros, ranks S, dificuldades, armas e troféus situacionais."
+      },
+      {
+        "question": "Posso vender tesouros ou preciso guardar todos?",
+        "answer": "Pode vender. They Belong in a Museum exige registrar cada tipo de tesouro ao menos uma vez, não manter todos no inventário."
+      },
+      {
+        "question": "Qual a melhor primeira dificuldade?",
+        "answer": "Normal é a rota mais confortável para aprender. Veteran é melhor se você já conhece o jogo, porque adianta o desbloqueio de Professional."
+      },
+      {
+        "question": "Precisa de coop online para platinar?",
+        "answer": "Não. Coop ajuda muito em Professional, The Works e resgates, mas a platina base pode ser feita offline com a IA."
+      },
+      {
+        "question": "Quando devo fazer Professional?",
+        "answer": "Depois do cleanup principal, com pelo menos uma arma de alto dano bem evoluída ou infinita, sprays e capítulos treinados. Fazer Professional cedo aumenta muito o retrabalho."
+      },
+      {
+        "question": "S rank precisa ser em uma dificuldade específica?",
+        "answer": "Não. Para figuras, o importante é ter S em cada capítulo; pode misturar dificuldades. Amateur com munição infinita é a rota mais limpa."
+      },
+      {
+        "question": "O que costuma atrasar mais a platina?",
+        "answer": "Take It to the Max, Stockpile, They’re ACTION Figures!, tesouros específicos e Professional. Resolva farm, armas e ranks S antes da run final."
+      },
+      {
+        "question": "Qual farm de dinheiro é melhor?",
+        "answer": "4-1 é consistente para gemas/tesouros; 5-1 é rápido se você mata Lickers por Lion Hearts; 5-2 funciona bem quando você já mata Reapers com segurança."
+      },
+      {
+        "question": "Os DLCs contam para a platina?",
+        "answer": "Não. Este guia cobre a lista base. Lost in Nightmares, Desperate Escape e Versus são listas extras separadas."
+      },
+      {
+        "question": "Devo limpar tudo durante a primeira campanha?",
+        "answer": "Não. Colete o que for natural, mas deixe perfeccionismo para Seleção de Capítulos. Isso evita reiniciar capítulos longos e mantém a primeira run fluida."
+      }
     ],
     "trophies": [
       {
@@ -7699,7 +8265,7 @@ const sampleGames = [
         "name": "RESIDENT EVIL 5 Platinum Trophy",
         "type": "Platina",
         "description": "Earn all trophies.",
-        "tip": "A platina pede a lista base completa: capítulos, dificuldades, coleta, upgrades, troféus situacionais e uma run em Professional.",
+        "tip": "Visão geral da platina: termine a campanha, complete todas as dificuldades, colete 30 emblemas BSAA e 50 tesouros, obtenha todas as armas, evolua todas as armas com upgrade, compre figuras/costumes e limpe situacionais. Não há perdíveis definitivos: tudo pode ser revisitado por Seleção de Capítulos.",
         "is_spoiler": false
       },
       {
@@ -7803,7 +8369,7 @@ const sampleGames = [
         "name": "Completed Chapter 5 - 3",
         "type": "Bronze",
         "description": "Complete Chapter 5 - 3 on any difficulty setting.",
-        "tip": "Trofeu de progresso próximo ao fim.",
+        "tip": "Troféu de progresso próximo ao fim. Aproveite este capítulo para Bad Blood, Heart of Africa, Masters of Removing, Royal Necklace e vários tesouros/gemas antes de seguir para a reta final.",
         "is_spoiler": true
       },
       {
@@ -7834,8 +8400,8 @@ const sampleGames = [
         "id": "re5_recruit",
         "name": "Recruit",
         "type": "Bronze",
-        "description": "Complete all chapters on Amatéur.",
-        "tip": "Pode ser limpo depois via chapter select, mas normalmente sai em uma run dedicada mais tranquila.",
+        "description": "Complete all chapters on Amateur.",
+        "tip": "Pode ser limpo depois via Seleção de Capítulos. Se você começou no Normal/Veteran, use Amateur para ranks S, emblemas, tesouros, ovos e situacionais; assim este troféu vem junto sem uma run separada.",
         "is_spoiler": false
       },
       {
@@ -7843,7 +8409,7 @@ const sampleGames = [
         "name": "Soldier",
         "type": "Bronze",
         "description": "Complete all chapters on Normal.",
-        "tip": "Bom ponto de partida para aprender as rotas sem a pressão do Professional.",
+        "tip": "Melhor primeira campanha para a maioria dos jogadores: dano administrável, recursos suficientes e espaço para aprender chefes, posicionamento da IA e rotas de tesouros sem a pressão do Veteran/Professional.",
         "is_spoiler": false
       },
       {
@@ -7851,7 +8417,7 @@ const sampleGames = [
         "name": "Veteran",
         "type": "Prata",
         "description": "Complete all chapters on Veteran.",
-        "tip": "Veteran já prepara para os picos de dano do Professional.",
+        "tip": "Complete todos os capítulos em Veteran para preparar e normalmente liberar Professional. Se começou no Normal, faça Veteran depois de melhorar uma Magnum/Rifle; a experiência de dano alto e resgate rápido da IA é o treino real para War Hero.",
         "is_spoiler": false
       },
       {
@@ -7859,7 +8425,7 @@ const sampleGames = [
         "name": "War Hero",
         "type": "Ouro",
         "description": "Complete all chapters on Professional.",
-        "tip": "Entre nessa run com inventário forte, armas evoluídas e, se possível, munição infinita em uma arma de alto impacto.",
+        "tip": "Melhor momento: depois de Veteran, farm e upgrades. Preparação: Magnum ou Rifle de alto dano com munição infinita, shotgun para controle, sprays nos dois inventários e colete se quiser segurança. Método: complete capítulo por capítulo, resgate o parceiro imediatamente, não deixe a IA com armas que desperdiçam munição e treine 2-3 no Veteran porque é turret e não depende do arsenal. Riscos comuns: tentar cedo demais, entrar sem curas, deixar Sheva isolada e subestimar chefes/instant kills.",
         "is_spoiler": false
       },
       {
@@ -7867,7 +8433,7 @@ const sampleGames = [
         "name": "Egg Hunt",
         "type": "Bronze",
         "description": "Find all 4 types of eggs.",
-        "tip": "Guarde pelo menos um White, Brown, Gold e Rotten Egg antes de vender o restante.",
+        "tip": "Você precisa registrar White Egg, Brown Egg, Gold Egg e Rotten Egg. Melhor rota: em 3-1, vá à ilha das galinhas, espere ovos e saia salvando quando conseguir White/Brown/Gold; o Rotten Egg é drop raro de inimigos e também pode aparecer mais rápido em sessões de Mercenaries. Guarde um de cada até o troféu cair. Risco comum: vender o primeiro Rotten Egg antes de fazer Egg on Your Face.",
         "is_spoiler": false
       },
       {
@@ -7875,7 +8441,7 @@ const sampleGames = [
         "name": "All Dressed Up",
         "type": "Prata",
         "description": "Purchase all available alternative costumes in Bonus Features.",
-        "tip": "Depende de terminar o jogo e também de pegar todos os emblemas BSAA para liberar o conjunto completo.",
+        "tip": "Compre todos os trajes liberados em Bonus Features. Termine a campanha e colete emblemas BSAA suficientes para liberar os trajes extras de Chris e Sheva; se algum não aparecer, revise Badge of Honor e avance a campanha/dificuldade pendente. Custa pontos de Bonus Features, não dinheiro da campanha.",
         "is_spoiler": false
       },
       {
@@ -7883,7 +8449,7 @@ const sampleGames = [
         "name": "Stockpile",
         "type": "Prata",
         "description": "Obtain all available weapons.",
-        "tip": "Inclui armas compradas, evoluções destravadas e armas especiais de Chris e Sheva.",
+        "tip": "Checklist de armas: Handguns M92F, H&K P8, SIG P226, M93R; Shotguns Ithaca M37, M3, Jail Breaker, Hydra; Machine guns VZ61, AK-74, H&K MP5, SIG 556; Rifles S75, Dragunov SVD, H&K PSG-1; Magnums S&W M29, L. Hawk, S&W M500; especiais/itens de arma como Grenade Launcher, Rocket Launcher, Stun Rod, Gatling Gun, Longbow e Proximity Bomb. Desbloqueios: evolua M92F, Ithaca M37, S&W M29, VZ61 e S75 para liberar M93R, Hydra, S&W M500, Gatling Gun e Longbow. Compre/pegue tudo e mantenha no inventário/estoque até o troféu cair.",
         "is_spoiler": false
       },
       {
@@ -7891,7 +8457,7 @@ const sampleGames = [
         "name": "Take It to the Max",
         "type": "Prata",
         "description": "Completely upgrade all weapons.",
-        "tip": "É um dos maiores grinds da platina; deixe para quando já tiver bastante dinheiro e tesouros acumulados.",
+        "tip": "Maior grind da platina. Evolua completamente todos os handguns, shotguns, machine guns, rifles e magnums, incluindo M93R, Hydra e S&W M500 depois de comprados. Não há upgrade tradicional para Stun Rod, Grenade Launcher, Rocket Launcher, Gatling Gun e Longbow. Farm recomendado: 4-1 pegando gemas/tesouros, 5-1 matando Lickers por Lion Hearts e 5-2 matando Reapers por Power Stones. Venda tesouros já registrados e priorize primeiro uma Magnum/Rifle forte para facilitar Professional.",
         "is_spoiler": false
       },
       {
@@ -7899,7 +8465,7 @@ const sampleGames = [
         "name": "They Belong in a Museum",
         "type": "Prata",
         "description": "Obtain all treasures in the game.",
-        "tip": "Checklist por capítulo ajuda muito, porque são muitos itens espalhados e fáceis de ignorar sem chapter select.",
+        "tip": "São 50 tipos de tesouro registrados ao menos uma vez; pode vender depois. Checklist prático: 1-1 Gold Ring/Topaz Marquise; 1-2 Ivory Relief/Antique Clock; 2-1 Ruby Marquise; 2-2 Venom Fang/Jewel Beetle/Diamonds Pear-Square-Oval-Brilliant; 3-1 Chalice Silver/Idol Silver/Ceremonial Mask/Beetle Brown/Blue Enigma; 3-3 Emerald Marquise; 4-1 Ruby Oval/Trilliant gems/Soul Gem; 4-2 Idol Gold/Beetle Gold/Diamond Trilliant; 5-1 Lion Heart; 5-2 Dead Bride's Necklace/Power Stone; 5-3 Royal Necklace/Chalice Gold/Oval-Brilliant gems/Sapphire Marquise/Heart of Africa; 6-1 Topaz Oval; 6-3 Diamond Marquise. Riscos: Soul Gem exige matar Popokarimu em 4-1; Heart of Africa exige dano suficiente em Wesker no 5-3; Diamond Marquise fica na arena final.",
         "is_spoiler": false
       },
       {
@@ -7907,7 +8473,7 @@ const sampleGames = [
         "name": "Badge of Honor",
         "type": "Prata",
         "description": "Find all the BSAA emblems.",
-        "tip": "São 30 emblemas. Melhor limpar com guia por capítulo para não repetir busca no escuro.",
+        "tip": "São 30 emblemas e nenhum é perdível permanente. Checklist por capítulo: 1-1: 0; 1-2: 3; 2-1: 5; 2-2: 3; 2-3: 0; 3-1: 4; 3-2: 2; 3-3: 1; 4-1: 3; 4-2: 1; 5-1: 1; 5-2: 1; 5-3: 3; 6-1: 3; 6-2: 0; 6-3: 0. Use rifle com zoom para emblemas distantes. Em 6-1, um emblema dentro de container precisa de explosivo ou dinamite inimiga.",
         "is_spoiler": false
       },
       {
@@ -7915,7 +8481,7 @@ const sampleGames = [
         "name": "They’re ACTION Figures!",
         "type": "Prata",
         "description": "Collect all the figurines.",
-        "tip": "Exige terminar o jogo, pegar todos os BSAA emblems e conseguir rank S em todos os capítulos.",
+        "tip": "Exige comprar todas as figuras em Bonus Features. Preparação: termine a campanha, destrua os 30 emblemas BSAA, consiga S rank em todos os capítulos em qualquer dificuldade e junte pontos. Método: repita capítulos em Amateur com arma infinita, buscando tempo baixo, boa precisão, muitas mortes e zero deaths; o S não precisa estar todo na mesma dificuldade. Se faltar ponto, 6-2 com Rocket Launcher é rápido para farmar Bonus Features.",
         "is_spoiler": false
       },
       {
@@ -7923,7 +8489,7 @@ const sampleGames = [
         "name": "A Friend in Need",
         "type": "Bronze",
         "description": "Save your partner 10 times when HELP is displayed.",
-        "tip": "Vem naturalmente se você jogar com parceiro humano ou deixar Sheva se expor em alguns encontros.",
+        "tip": "HELP aparece quando o parceiro é agarrado. Melhor farm: 1-1 ou 2-1 em Amateur/Normal, remova armas fortes da IA, deixe Majini agarrarem Sheva/Chris e solte o parceiro com o comando de ajuda. Faça 10 vezes. Risco comum: matar todos os inimigos antes de permitir o agarrão.",
         "is_spoiler": false
       },
       {
@@ -7931,7 +8497,7 @@ const sampleGames = [
         "name": "Lifeguard",
         "type": "Bronze",
         "description": "Save your partner 10 times when DYING is displayed.",
-        "tip": "Também costuma sair naturalmente em dificuldades mais altas.",
+        "tip": "DYING aparece quando o parceiro perde toda a vida e entra em contagem regressiva. Pode vir naturalmente em Veteran/Professional, mas o farm seguro é em Amateur/Normal deixando a IA tomar dano controlado e revivendo imediatamente. Leve sprays e não tente isso em áreas com instant kill.",
         "is_spoiler": false
       },
       {
@@ -7939,7 +8505,7 @@ const sampleGames = [
         "name": "Exploding Heads",
         "type": "Bronze",
         "description": "Defeat 20 enemies with headshots.",
-        "tip": "Shotgun e pistolas precisas ajudam a acumular isso cedo.",
+        "tip": "Vem cedo se você mirar na cabeça de Majini básicos. Melhor local: 1-1/2-1 em Amateur ou Normal. Pistola precisa abre headshots limpos; shotgun de perto também estoura cabeças com frequência. Evite armas explosivas se quiser acumular a contagem.",
         "is_spoiler": false
       },
       {
@@ -7947,7 +8513,7 @@ const sampleGames = [
         "name": "A Cut Above",
         "type": "Bronze",
         "description": "Defeat 5 enemies with the knife.",
-        "tip": "Amatéur é perfeito para limpar esse troféu sem risco.",
+        "tip": "Faça em Amateur no 1-1. Enfraqueça Majini com tiros na perna ou deixe inimigos básicos isolados, então finalize com a faca. Remova arma forte da IA para ela não roubar as mortes. Não tente em Professional: o risco não compensa.",
         "is_spoiler": false
       },
       {
@@ -7955,7 +8521,7 @@ const sampleGames = [
         "name": "Cattle Prod",
         "type": "Bronze",
         "description": "Defeat 30 enemies with the Stun Rod.",
-        "tip": "Repita trechos com inimigos frágeis para acelerar a contagem.",
+        "tip": "Compre o Stun Rod quando aparecer na loja e faça em Amateur. Melhor local: início de 4-1 contra Bui Kichwa, que morrem rápido e vêm em grupo; alternativa é 1-1 com Majini básicos. Leve cura, aproxime com calma e reinicie o capítulo quando limpar a primeira leva.",
         "is_spoiler": false
       },
       {
@@ -7963,7 +8529,7 @@ const sampleGames = [
         "name": "Crowd Control",
         "type": "Bronze",
         "description": "Defeat 30 enemies with the Gatling Gun.",
-        "tip": "Limpe esse troféu depois de destravar a arma especial do Chris.",
+        "tip": "Desbloqueie para Chris ao evoluir completamente a VZ61 e comprar a Gatling Gun. Melhor local: 1-1 em Amateur, porque há muitos Majini e pouco risco. Jogue como Chris, equipe a Gatling e limpe ondas até 30 mortes. Risco comum: tentar antes de comprar a arma especial em Bonus/loja.",
         "is_spoiler": false
       },
       {
@@ -7971,7 +8537,7 @@ const sampleGames = [
         "name": "Bull’s-eye",
         "type": "Bronze",
         "description": "Defeat 30 enemies with the Longbow.",
-        "tip": "Faça com Sheva após liberar a arma especial dela.",
+        "tip": "Desbloqueie para Sheva ao evoluir completamente o S75 e comprar o Longbow. Melhor local: 1-1 em Amateur. Selecione Sheva, mantenha distância média e conte 30 mortes; o Longbow é forte, mas exige mira manual e não tem laser, então inimigos parados/aglomerados ajudam.",
         "is_spoiler": false
       },
       {
@@ -7979,7 +8545,7 @@ const sampleGames = [
         "name": "Get Physical",
         "type": "Bronze",
         "description": "Defeat 20 enemies with physical attacks.",
-        "tip": "Use melee sempre que abrir stun em inimigos básicos para adiantar a conta sem esforço.",
+        "tip": "Faça naturalmente na campanha: atire na cabeça, braço ou joelho para abrir comando de melee e finalize com socos/chutes/stomps. Melhor farm: 1-1 Amateur, com pistola fraca para não matar antes do stun. Conta apenas morte por ataque físico, não por tiro anterior.",
         "is_spoiler": false
       },
       {
@@ -7987,7 +8553,7 @@ const sampleGames = [
         "name": "The Works",
         "type": "Bronze",
         "description": "Chain the maximum number of combos in one attack.",
-        "tip": "Agrupe inimigos ou use uma sequência de melee em cadeia para garantir o combo máximo.",
+        "tip": "Melhor local: 3-2, no trecho final com Big Man Majini perto da corrida para o barco, ou 1-1 com um Majini resistente. Preparação: Amateur/Normal, parceiro humano facilita muito; com IA, remova armas fortes. Passo a passo: atordoe o inimigo com tiro no braço/joelho, faça o primeiro melee, deixe o parceiro encaixar o segundo e finalize com o terceiro golpe. Risco comum: dano alto demais matar antes do combo completo.",
         "is_spoiler": false
       },
       {
@@ -7995,7 +8561,7 @@ const sampleGames = [
         "name": "Lead Aspirin",
         "type": "Prata",
         "description": "Defeat a Majini with a headshot while it’s jumping.",
-        "tip": "Um ponto clássico é esperar um inimigo saltar entre telhado e ônibus no começo do jogo.",
+        "tip": "Melhor local: final do 1-1 em Amateur, quando Majini pulam de telhados/ônibus/cercas para a arena. Use shotgun ou rifle, mire onde o inimigo vai cruzar no ar e atire na cabeça durante o salto. Munição infinita ajuda. Risco comum: acertar o corpo; espere um salto claro e fique em posição baixa olhando para a trajetória.",
         "is_spoiler": false
       },
       {
@@ -8003,7 +8569,7 @@ const sampleGames = [
         "name": "Fireworks",
         "type": "Bronze",
         "description": "Shoot an enemy Molotov cocktail, dynamite stick, or hand grenade.",
-        "tip": "Troféu rápido em vários capítulos; basta mirar no explosivo antes de ele ser lançado.",
+        "tip": "Melhor local: 2-2, na área externa com Majini usando dinamite. Leve rifle, mantenha distância e mire no explosivo na mão antes do arremesso. Também funciona com Molotov/granada em outros capítulos. Risco comum: matar o inimigo em vez de acertar o explosivo; use mira precisa e espere ele levantar o braço.",
         "is_spoiler": false
       },
       {
@@ -8011,7 +8577,7 @@ const sampleGames = [
         "name": "Be the Knife",
         "type": "Prata",
         "description": "Deflect a bow gun arrow with your knife.",
-        "tip": "Faça em Amatéur para treinar o timing sem morrer por erro bobo.",
+        "tip": "Melhor local: 2-1, nos containers com arqueiros. Faça em Amateur, remova armas da IA, deixe um arqueiro vivo e fique a distância média. Segure a faca e golpeie quando a flecha estiver chegando ao peito do personagem. Riscos comuns: ficar longe demais para ver o timing, deixar a IA matar o arqueiro ou tentar em dificuldade alta.",
         "is_spoiler": false
       },
       {
@@ -8019,7 +8585,7 @@ const sampleGames = [
         "name": "Meat Shower",
         "type": "Bronze",
         "description": "Defeat 3 Majini with one grenade or proximity bomb.",
-        "tip": "Espere um grupo fechar distância e use explosivo num corredor ou spawn previsível.",
+        "tip": "Melhor local: 1-1 na grande arena ou 2-1 em corredores. Faça em Amateur, agrupe três Majini, jogue uma Hand Grenade no centro ou plante Proximity Bomb e atraia o grupo. Risco comum: usar explosivo fraco longe demais; espere os três entrarem no raio.",
         "is_spoiler": false
       },
       {
@@ -8027,7 +8593,7 @@ const sampleGames = [
         "name": "Go into the Light",
         "type": "Bronze",
         "description": "Defeat 2 enemies with one flash grenade.",
-        "tip": "Aranhas e inimigos sensíveis a flash resolvem isso com facilidade.",
+        "tip": "Mais fácil em 4-1 contra Bui Kichwa ou em grupos de parasitas sensíveis a flash. Leve Flash Grenade, espere dois inimigos próximos e arremesse no meio. Em Majini comuns, flash pode atordoar sem matar; prefira inimigos parasitas/aranhas para garantir.",
         "is_spoiler": false
       },
       {
@@ -8035,7 +8601,7 @@ const sampleGames = [
         "name": "Ride the Lightning",
         "type": "Bronze",
         "description": "Defeat a Majini using the electric current from a transformer.",
-        "tip": "Capítulos com cenário industrial são ótimos para puxar o inimigo para a armadilha elétrica.",
+        "tip": "Melhor local: 1-1 na área pública com transformadores pendurados. Atire no transformador quando Majini estiverem embaixo; se necessário, enfraqueça antes em Amateur para a eletricidade finalizar. Risco comum: explodir cedo demais sem inimigo no raio.",
         "is_spoiler": false
       },
       {
@@ -8043,7 +8609,7 @@ const sampleGames = [
         "name": "Stop, Drop, & Roll",
         "type": "Bronze",
         "description": "Defeat 3 Majini at once by setting oil canisters on fire.",
-        "tip": "O final do capítulo 1-1 é um dos melhores lugares para resolver isso.",
+        "tip": "Melhor local: final do 1-1, na arena com latas/poças de óleo. Agrupe três Majini, derrube ou atraia o grupo para perto do óleo e atire na lata para incendiar. Faça em Amateur para eles morrerem com mais facilidade.",
         "is_spoiler": false
       },
       {
@@ -8051,7 +8617,7 @@ const sampleGames = [
         "name": "Baptism by Fire",
         "type": "Bronze",
         "description": "Defeat 3 Majini at once with a drum or gas tank explosion.",
-        "tip": "Agrupe três inimigos perto de um cilindro explosivo e dispare quando todos estiverem no raio.",
+        "tip": "Melhor local: 1-1/2-1 com barris ou cilindros explosivos. Junte três Majini, espere todos entrarem no raio e atire no tambor/cilindro. Se falhar, reinicie o checkpoint ou repita o capítulo em Amateur.",
         "is_spoiler": false
       },
       {
@@ -8059,15 +8625,15 @@ const sampleGames = [
         "name": "Masters of Removing",
         "type": "Bronze",
         "description": "Work together to save someone special.",
-        "tip": "Relacionado ao clímax do capítulo 5-3.",
+        "tip": "Capítulo 5-3. Durante a luta contra Jill, aproxime-se, segure-a com um personagem e use o outro para tentar remover o dispositivo. Não use dano excessivo nela. Com parceiro humano fica mais simples; solo, mantenha curas e repita a sequência de agarrar/remover até a cena concluir.",
         "is_spoiler": true
       },
       {
         "id": "re5_bad_blood",
         "name": "Bad Blood",
         "type": "Bronze",
-        "description": "Inflict a set amount of damage to your greatést enemy.",
-        "tip": "No primeiro encontro com Wesker, dano alto ou lança-foguetes aceleram muito esse troféu.",
+        "description": "Inflict a set amount of damage to your greatest enemy.",
+        "tip": "Capítulo 5-3, primeiro confronto contra Wesker. Preparação: Rocket Launcher ou Magnum forte, sprays e distância. Método seguro: apague as luzes, faça Wesker perder você de vista, dispare um foguete; quando ele segurar o foguete, atire nele para explodir e depois descarregue dano até ele recuar. Isso também prepara Heart of Africa. Riscos comuns: gastar munição enquanto ele está desviando, não apagar luzes e avançar para Jill sem causar dano suficiente.",
         "is_spoiler": true
       },
       {
@@ -8075,7 +8641,7 @@ const sampleGames = [
         "name": "Drive By",
         "type": "Prata",
         "description": "Stop an armored truck by taking out the driver.",
-        "tip": "Resolve-se no capítulo 2-3 mirando no motorista do caminhão blindado.",
+        "tip": "Capítulo 2-3. Durante o trecho do veículo, mire no motorista do caminhão blindado pela janela/para-brisa em vez de destruir o caminhão por dano geral. Use rajadas curtas para não perder precisão. Faça em Amateur se estiver limpando; em Professional, sobreviver já é prioridade.",
         "is_spoiler": false
       },
       {
@@ -8083,7 +8649,7 @@ const sampleGames = [
         "name": "Egg on Your Face",
         "type": "Bronze",
         "description": "Defeat a Majini with a rotten egg.",
-        "tip": "Mercenaries costuma ser a forma mais rápida de achar um Rotten Egg e resolver isso em minutos.",
+        "tip": "Guarde um Rotten Egg de Egg Hunt. Melhor execução: 1-1 em Amateur, encontre um Majini básico isolado, equipe o Rotten Egg e arremesse diretamente nele. Normalmente mata na hora. Riscos comuns: errar o arremesso ou gastar o único Rotten Egg; se quiser segurança, fique perto e mire no tronco.",
         "is_spoiler": false
       },
       {
@@ -8091,7 +8657,7 @@ const sampleGames = [
         "name": "Heart Stopper",
         "type": "Bronze",
         "description": "Defeat a certain enemy by stabbing it in the heart.",
-        "tip": "O jeito mais seguro é derrubar um Licker e finalizar quando o ponto fraco estiver exposto.",
+        "tip": "Melhor local: 5-1, corredor/laboratório com Lickers. Faça em Amateur, leve shotgun ou Magnum fraca o bastante para derrubar sem matar. Derrube um Licker de barriga para cima, corra até o corpo e use o comando de ataque/finalização no coração exposto. Riscos comuns: matar com tiro antes do prompt, deixar vários Lickers cercarem você e usar dificuldade alta.",
         "is_spoiler": false
       },
       {
@@ -8099,7 +8665,7 @@ const sampleGames = [
         "name": "Who Do You Trust?",
         "type": "Prata",
         "description": "Build up a certain level of trust with your partner.",
-        "tip": "Agradeça curas e itens recebidos várias vezes durante a campanha para fortalecer o vínculo com o parceiro.",
+        "tip": "Aumente a confiança agradecendo o parceiro após curas, salvamentos e itens recebidos. Método de farm: equipe a IA com itens de cura, tome dano controlado em Amateur, deixe ela curar você e pressione o botão de agradecer logo depois; também agradeça quando ela entregar munição/itens ou salvar de DYING/HELP. Faça isso durante a primeira campanha para reduzir grind. Risco comum: ignorar o comando de agradecimento e chegar ao fim com a afinidade baixa.",
         "is_spoiler": false
       }
     ]
@@ -14951,84 +15517,84 @@ const sampleGames = [
     "id": 46,
     "name": "Dark Souls Remastered",
     "slug": "dark-souls-remastered",
+    "title": "Dark Souls Remastered",
+    "published": true,
+    "developer": "QLOC",
+    "publisher": "Bandai Namco Entertainment",
+    "platforms": ["PS4"],
+    "platform_base": "PS4",
+    "platformBase": "PS4",
+    "guideScope": "Lista PSN base de 41 troféus",
+    "genre": ["RPG de ação", "soulslike"],
+    "mode": "single-player",
     "difficulty": 7,
     "time": "60-80h",
+    "estimatedTime": "60-80h",
     "time_min_hours": 60,
     "time_max_hours": 80,
     "time_sort_hours": 80,
     "time_bucket": "long",
-    "missable": "A platina nao tem online obrigatorio, mas tem muito retrabalho por boss souls, finais, NPC questlines, covenants, tail cuts, armas raras, magias, milagres, piromancias e upgrade paths. Planeje multiplas runs e normalmente avance ate NG++ para boss souls e Knight's Honor.",
-    "runs_summary": "A platina exige multiplas passagens ou avanco ate NG++ para finais, boss souls, armas raras, magias, milagres e piromancias.",
-    "missable_summary": "Os riscos principais estao em boss souls consumidas sem planejamento, finais, covenants, NPC questlines, tail cuts, armas raras, magias, milagres e piromancias.",
-    "online_summary": "Nao ha exigencia online para a platina; covenants e itens podem ser planejados offline, embora online possa ajudar em alguns casos.",
-    "grind_summary": "O peso esta em boss souls, armas raras, covenants, magias, milagres, piromancias, tail cuts e NG+/NG++.",
-    "dlc_scope": "Guia focado na lista base de Dark Souls Remastered. Nao ha grupo separado de DLC/add-ons na lista oficial da platina.",
-    "difficulty_reason": "A dificuldade vem do combate Soulslike, chefes, punicao por erro, planejamento de boss souls e volume de itens especificos.",
-    "time_reason": "A faixa de 60-80 horas considera run principal, NG+, NG++, armas raras, magias, milagres, piromancias, covenants e cleanup.",
-    "first_run_advice": "Nao consuma boss souls sem verificar usos de armas/magias e acompanhe NPCs, covenants e tail cuts desde cedo.",
-    "cleanup_advice": "Use NG+ e NG++ para finais, boss souls, armas raras, magias, milagres, piromancias e itens que ficaram pendentes.",
-    "before_you_start": "Leia o roadmap antes de jogar; Dark Souls Remastered pune decisoes mal planejadas com muito retrabalho.",
-    "best_for": "Ideal para quem quer uma platina Soulslike classica, exigente e baseada em dominio de combate e planejamento.",
-    "avoid_if": "Evite se voce nao quer multiplas runs, NG++, boss souls, covenants, armas raras e checklist pesado.",
+    "runs": "Uma campanha cuidadosa, NG+ para o segundo final e avanço até NG++ para almas de chefes e Knight's Honor.",
+    "hasMissables": true,
+    "missableCount": 8,
+    "missable_count": 8,
+    "hasOnline": false,
+    "hasMandatoryOnline": false,
+    "hasMandatoryCoop": false,
+    "onlineRequired": false,
+    "online_required": false,
+    "coopRequired": false,
+    "coop_required": false,
+    "dlcRequired": false,
+    "dlc_required": false,
+    "dlcRequiredForPlatinum": false,
+    "onlineTrophyCount": 0,
+    "platinumType": "lista PSN base + finais + pactos + armas raras + magias + NG++",
+    "missable": "A platina tem perdíveis pelo critério de risco de run: alguns troféus ligados a NPCs, pactos, almas de chefes e armas raras podem exigir outra passagem se forem ignorados. Finais normais, chefes obrigatórios e The Dark Soul não entram nessa contagem.",
+    "runs_summary": "A platina exige múltiplas passagens ou avanço até NG++ para finais, almas de chefes, armas raras, magias, milagres e piromancias.",
+    "missable_summary": "Há 8 perdíveis pelo critério de risco de run: armas raras, feitiços, piromancias, milagres e pactos sensíveis. The Dark Soul, finais normais e chefes obrigatórios não contam como perdíveis.",
+    "online_summary": "Não há exigência online para a platina; pactos e itens podem ser planejados offline, embora online possa ajudar em alguns casos.",
+    "grind_summary": "O peso está em almas de chefes, armas raras, pactos, magias, milagres, piromancias, armas de cauda e NG+/NG++.",
+    "dlc_scope": "Guia focado na lista base de Dark Souls Remastered. Não há grupo separado de DLC/add-ons na lista oficial da platina.",
+    "difficulty_reason": "A dificuldade vem do combate Soulslike, chefes, punição por erro, planejamento de almas de chefes e volume de itens específicos.",
+    "time_reason": "A faixa de 60-80 horas considera run principal, NG+, NG++, armas raras, magias, milagres, piromancias, pactos e cleanup.",
+    "first_run_advice": "Explore Lordran e prepare a primeira run. Comece uma campanha cuidadosa, explorando Lordran, entrando nos pactos disponíveis e guardando almas de chefes. Depois use o roadmap para separar finais, armas raras, feitiços, milagres, piromancias, upgrades e avanço em NG+/NG++.",
+    "cleanup_advice": "Use NG+ e NG++ para finais, almas de chefes, armas raras, magias, milagres, piromancias e itens que ficaram pendentes.",
+    "before_you_start": "Leia o roadmap antes de jogar; Dark Souls Remastered pune decisões mal planejadas com muito retrabalho.",
+    "best_for": "Ideal para quem quer uma platina Soulslike clássica, exigente e baseada em domínio de combate e planejamento.",
+    "avoid_if": "Evite se você não quer múltiplas runs, NG++, almas de chefes, pactos, armas raras e checklist pesado.",
     "editorial_status": "published",
     "coverage_level": "strong",
-    "is_verified": false,
-    "verification_status": "review",
-    "verification_note": "Lista PlayStation de Dark Souls Remastered adicionada com checklist e roadmap completos; aguarda revisao editorial manual final.",
+    "is_verified": true,
+    "verification_status": "verified",
+    "editorial_review_status": "verified",
+    "verification_note": "Lista PlayStation de Dark Souls Remastered revisada com roadmap estruturado, 41 troféus EN/PT-BR, descrições PT-BR, flags offline/sem coop/sem DLC, FAQ, pontos de atenção, tags e checklist completo; validada para publicação.",
+    "quality_warnings": [],
     "image": "https://cdn.cloudflare.steamstatic.com/steam/apps/570940/header.jpg",
     "cover_image": "https://cdn.cloudflare.steamstatic.com/steam/apps/570940/library_600x900.jpg",
-    "roadmap": [
-      "Etapa 1: comece a run principal com build consistente e entenda upgrades, covenants, NPC questlines e boss souls. Nao consuma boss souls sem saber usos em armas, magias ou milagres.",
-      "Etapa 2: avance areas principais controlando NPC questlines, tail cuts, covenants e itens raros. Corte caudas importantes antes de matar chefes ligados a armas raras.",
-      "Etapa 3: antes de consumir boss souls, verifique armas, magias e milagres necessarios. Knight's Honor exige armas de boss souls, tail weapons e outras armas raras, com destaque para a alma de Sif.",
-      "Etapa 4: colete magias, milagres, piromancias, embers, armas raras e itens de covenant. Planeje Wisdom of a Sage, Prayer of a Maiden, Bond of a Pyromancer e covenant rewards offline.",
-      "Etapa 5: finalize a primeira run com atencao ao final escolhido e prepare NG+. Revise Lordvessel, Art of Abysswalking, chefes opcionais, covenants e boss souls antes de seguir.",
-      "Etapa 6: use NG+ para boss souls, finais, armas raras e trofeus pendentes. Nao prometa platina em uma run: finais e boss soul weapons pedem passagens extras.",
-      "Etapa 7: avance ate NG++/cleanup final para completar Knight's Honor, magias, milagres, piromancias, covenants, tail cuts e a platina The Dark Soul."
+    "editorial_summary": [
+      "Dark Souls Remastered é uma platina clássica de RPG de ação, focada em concluir a campanha, obter os dois finais, descobrir pactos, derrotar chefes opcionais, coletar todos os feitiços, milagres e piromancias, fazer todos os caminhos principais de reforço de arma e completar Knight’s Honor com todas as armas raras. A lista PSN tem 41 troféus, pode ser feita offline, não exige coop, não exige DLC separada e não possui troféu de dificuldade, mas exige planejamento de NPCs, pactos, almas de chefes e múltiplas runs até NG+ ou NG++.",
+      "A ordem mais segura é fazer uma primeira campanha completa controlando NPCs, pactos, magias e almas de chefes, escolher um final, depois usar NG+ para o segundo final e avançar o suficiente em NG++ para fechar as armas raras restantes. O maior cuidado é não consumir almas de chefes necessárias para armas, não perder pactos sensíveis como Darkwraith e Blade of the Darkmoon, e acompanhar no checklist todos os feitiços, milagres, piromancias, upgrades e armas raras."
     ],
-    "trophies": [
-      { "id": "dsr_the_dark_soul", "name": "The Dark Soul", "type": "Platina", "description": "All trophies obtained. Congratulations!", "tip": "Conclua os outros 40 trofeus da lista PlayStation de Dark Souls Remastered. Nao trate Artorias of the Abyss como grupo separado de DLC nesta platina.", "is_missable": false, "is_spoiler": false },
-      { "id": "dsr_to_link_the_fire", "name": "To Link the Fire", "type": "Ouro", "description": "Reach \"To Link the Fire\" ending.", "tip": "Final mutuamente exclusivo por conclusao de run. Use NG+/backup se quiser reduzir retrabalho entre este final e Dark Lord.", "is_missable": true, "is_spoiler": true },
-      { "id": "dsr_dark_lord", "name": "Dark Lord", "type": "Ouro", "description": "Reach \"The Dark Lord\" ending.", "tip": "Final mutuamente exclusivo por conclusao de run. Planeje junto de NG+ e NG++ para boss souls e armas raras.", "is_missable": true, "is_spoiler": true },
-      { "id": "dsr_knights_honor", "name": "Knight's Honor", "type": "Prata", "description": "Acquire all rare weapons.", "tip": "Trofeu central da platina: acompanhe armas raras, boss soul weapons, tail weapons, covenant weapons e drops. Nao consuma boss souls; a alma de Sif exige tres usos e normalmente empurra para NG++.", "is_missable": true, "is_spoiler": false },
-      { "id": "dsr_wisdom_of_a_sage", "name": "Wisdom of a Sage", "type": "Prata", "description": "Acquire all sorceries.", "tip": "Compre e colete todas as sorceries, cuidando de Big Hat Logan, NPC questlines, vendedores e recursos de boss souls quando aplicavel.", "is_missable": true, "is_spoiler": false },
-      { "id": "dsr_bond_of_a_pyromancer", "name": "Bond of a Pyromancer", "type": "Prata", "description": "Acquire all pyromancies.", "tip": "Acompanhe Laurentius, Eingyi, Quelana, Chaos Servant e piromancias de areas avancadas. Algumas janelas de NPC podem gerar retrabalho se ignoradas.", "is_missable": true, "is_spoiler": false },
-      { "id": "dsr_prayer_of_a_maiden", "name": "Prayer of a Maiden", "type": "Prata", "description": "Acquire all miracles.", "tip": "Planeje Rhea, covenants, Sunlight Medals, Gravelord Servant, Princess's Guard e a Soul of Gwyn para Sunlight Spear em NG+.", "is_missable": true, "is_spoiler": false },
-      { "id": "dsr_covenant_way_of_white", "name": "Covenant: Way of White", "type": "Bronze", "description": "Discover Way of White covenant.", "tip": "Entre pelo clerigo em Firelink Shrine ou por NPCs relacionados enquanto a questline ainda estiver acessivel.", "is_missable": true, "is_spoiler": false },
-      { "id": "dsr_covenant_princesss_guard", "name": "Covenant: Princess's Guard", "type": "Prata", "description": "Discover Princess's Guard covenant.", "tip": "Descubra o covenant em Anor Londo antes de tomar decisoes hostis contra a Princess's Guard/Princess of Sunlight.", "is_missable": true, "is_spoiler": true },
-      { "id": "dsr_covenant_blade_of_the_darkmoon", "name": "Covenant: Blade of the Darkmoon", "type": "Prata", "description": "Discover Blade of the Darkmoon covenant.", "tip": "Exige acesso ao altar de Dark Sun Gwyndolin e cuidado para nao invalidar o covenant antes de descobri-lo.", "is_missable": true, "is_spoiler": true },
-      { "id": "dsr_covenant_warrior_of_sunlight", "name": "Covenant: Warrior of Sunlight", "type": "Prata", "description": "Discover the Warrior of Sunlight covenant.", "tip": "Planeje Faith ou reducao de requisito por cooperacao/Solaire. Tambem importa para milagres e Sunlight Medals.", "is_missable": true, "is_spoiler": false },
-      { "id": "dsr_covenant_forest_hunter", "name": "Covenant: Forest Hunter", "type": "Prata", "description": "Discover the Forest Hunter covenant.", "tip": "Fale com Alvina em Darkroot Garden e evite hostilizar NPCs do covenant antes de entrar se estiver seguindo a checklist.", "is_missable": true, "is_spoiler": false },
-      { "id": "dsr_covenant_darkwraith", "name": "Covenant: Darkwraith", "type": "Prata", "description": "Discover Darkwraith covenant.", "tip": "Um dos covenants mais sensiveis: derrote Four Kings antes de entregar o Lordvessel a Frampt para falar com Kaathe.", "is_missable": true, "is_spoiler": true },
-      { "id": "dsr_covenant_path_of_the_dragon", "name": "Covenant: Path of the Dragon", "type": "Prata", "description": "Discover Path of the Dragon covenant.", "tip": "Chegue a Ash Lake e fale com o Stone Dragon. Planeje a rota opcional sem depender de online.", "is_missable": false, "is_spoiler": true },
-      { "id": "dsr_covenant_gravelord_servant", "name": "Covenant: Gravelord Servant", "type": "Prata", "description": "Discover Gravelord Servant covenant.", "tip": "Entre antes de matar Gravelord Nito. Tambem importa para milagres e Eye of Death.", "is_missable": true, "is_spoiler": true },
-      { "id": "dsr_covenant_chaos_servant", "name": "Covenant: Chaos Servant", "type": "Prata", "description": "Discover Chaos Servant covenant.", "tip": "Descubra com Quelaag's Sister e evite mata-la se ainda precisar do covenant, piromancias ou atalhos.", "is_missable": true, "is_spoiler": true },
-      { "id": "dsr_strongest_weapon", "name": "Strongest Weapon", "type": "Bronze", "description": "Acquire the best weapon through standard reinforcement.", "tip": "Leve uma arma padrao ate +15. Controle Large/Very Large Ember, titanites e slabs para evitar farm ou NG+ desnecessario.", "is_missable": false, "is_spoiler": false },
-      { "id": "dsr_crystal_weapon", "name": "Crystal Weapon", "type": "Bronze", "description": "Acquire the best weapon through crystal reinforcement.", "tip": "Use o caminho Crystal ate +5 com o ember correto. Revise recursos antes de gastar slabs raras.", "is_missable": false, "is_spoiler": false },
-      { "id": "dsr_lightning_weapon", "name": "Lightning Weapon", "type": "Bronze", "description": "Acquire the best weapon through lightning reinforcement.", "tip": "Leve uma arma Lightning ate +5. Guarde titanites e slabs para nao atrasar outros upgrade paths.", "is_missable": false, "is_spoiler": false },
-      { "id": "dsr_raw_weapon", "name": "Raw Weapon", "type": "Bronze", "description": "Acquire the best weapon through raw reinforcement.", "tip": "Use o caminho Raw ate +5. E um upgrade simples, mas entra na checklist de embers e titanites.", "is_missable": false, "is_spoiler": false },
-      { "id": "dsr_magic_weapon", "name": "Magic Weapon", "type": "Bronze", "description": "Acquire the best weapon through magic reinforcement.", "tip": "Leve uma arma Magic ate +10 com Rickert e o ember necessario. Planeje blue titanite para nao travar cleanup.", "is_missable": false, "is_spoiler": false },
-      { "id": "dsr_enchanted_weapon", "name": "Enchanted Weapon", "type": "Bronze", "description": "Acquire the best weapon through enchanted reinforcement.", "tip": "Leve uma arma Enchanted ate +5. O ember e recursos especificos ficam em areas avancadas.", "is_missable": false, "is_spoiler": false },
-      { "id": "dsr_divine_weapon", "name": "Divine Weapon", "type": "Bronze", "description": "Acquire the best weapon through divine reinforcement.", "tip": "Leve uma arma Divine ate +10 com Andre e os embers corretos. Util para Tomb of the Giants e checklist de upgrades.", "is_missable": false, "is_spoiler": false },
-      { "id": "dsr_occult_weapon", "name": "Occult Weapon", "type": "Bronze", "description": "Acquire the best weapon through occult reinforcement.", "tip": "Leve uma arma Occult ate +5. Planeje Dark Ember e white titanite para nao depender de retrabalho tardio.", "is_missable": false, "is_spoiler": false },
-      { "id": "dsr_fire_weapon", "name": "Fire Weapon", "type": "Bronze", "description": "Acquire the best weapon through fire reinforcement.", "tip": "Leve uma arma Fire ate +10 com Vamos. Separe red titanite para Fire e Chaos.", "is_missable": false, "is_spoiler": false },
-      { "id": "dsr_chaos_weapon", "name": "Chaos Weapon", "type": "Bronze", "description": "Acquire the best weapon through chaos reinforcement.", "tip": "Leve uma arma Chaos ate +5 com Vamos e o ember correto. Organize red slabs antes do cleanup.", "is_missable": false, "is_spoiler": false },
-      { "id": "dsr_enkindle", "name": "Enkindle", "type": "Bronze", "description": "Light bonfire flame.", "tip": "Trofeu inicial ao acender uma bonfire.", "is_missable": false, "is_spoiler": false },
-      { "id": "dsr_estus_flask", "name": "Estus Flask", "type": "Bronze", "description": "Acquire Estus Flask.", "tip": "Obtido no tutorial em Undead Asylum.", "is_missable": false, "is_spoiler": false },
-      { "id": "dsr_reach_lordran", "name": "Reach Lordran", "type": "Bronze", "description": "Arrive in Lordran.", "tip": "Trofeu automatico ao concluir o tutorial e chegar a Lordran.", "is_missable": false, "is_spoiler": true },
-      { "id": "dsr_ring_the_bell_undead_church", "name": "Ring the Bell (Undead Church)", "type": "Bronze", "description": "Ring Bell of Awakening at Undead Church.", "tip": "Progresso principal ligado a Undead Parish e Bell Gargoyles.", "is_missable": false, "is_spoiler": true },
-      { "id": "dsr_ring_the_bell_quelaags_domain", "name": "Ring the Bell (Quelaag's Domain)", "type": "Bronze", "description": "Ring Bell of Awakening in Quelaag's domain.", "tip": "Progresso principal em Quelaag's Domain. Revise Chaos Servant apos a luta.", "is_missable": false, "is_spoiler": true },
-      { "id": "dsr_rite_of_kindling", "name": "Rite of Kindling", "type": "Bronze", "description": "Acquire the Rite of Kindling.", "tip": "Obtido ao derrotar Pinwheel nas Catacombs; ajuda a fortalecer bonfires para areas posteriores.", "is_missable": false, "is_spoiler": true },
-      { "id": "dsr_art_of_abysswalking", "name": "Art of Abysswalking", "type": "Bronze", "description": "Acquire the Art of Abysswalking.", "tip": "Obtido com Great Grey Wolf Sif e necessario para The Abyss/Four Kings. A alma de Sif tambem entra em Knight's Honor.", "is_missable": false, "is_spoiler": true },
-      { "id": "dsr_reach_anor_londo", "name": "Reach Anor Londo", "type": "Prata", "description": "Arrive in Anor Londo.", "tip": "Trofeu de progresso ao chegar em Anor Londo, ponto importante para Lordvessel, covenants e armas raras.", "is_missable": false, "is_spoiler": true },
-      { "id": "dsr_lordvessel", "name": "Lordvessel", "type": "Prata", "description": "Acquire the Lordvessel.", "tip": "Antes de entregar o Lordvessel, revise Darkwraith/Kaathe se quiser evitar perder o covenant nesta run.", "is_missable": false, "is_spoiler": true },
-      { "id": "dsr_defeat_gravelord_nito", "name": "Defeat Gravelord Nito", "type": "Prata", "description": "Defeat the Soul Lord Gravelord Nito.", "tip": "Chefe principal de Lord Soul. Entre em Gravelord Servant antes se ainda precisar do covenant/milagre.", "is_missable": false, "is_spoiler": true },
-      { "id": "dsr_defeat_bed_of_chaos", "name": "Defeat Bed of Chaos", "type": "Prata", "description": "Defeat the Soul Lord Bed of Chaos.", "tip": "Chefe principal de Lost Izalith. Chaos Servant pode reduzir uma parte importante da rota e ajudar no planejamento.", "is_missable": false, "is_spoiler": true },
-      { "id": "dsr_defeat_the_four_kings", "name": "Defeat the Four Kings", "type": "Prata", "description": "Defeat the Four Kings, inheritors of souls.", "tip": "Necessario para progresso e Darkwraith. Se quiser o covenant, faca Four Kings antes de entregar o Lordvessel a Frampt.", "is_missable": false, "is_spoiler": true },
-      { "id": "dsr_defeat_seath_the_scaleless", "name": "Defeat Seath the Scaleless", "type": "Prata", "description": "Defeat Seath the Scaleless, inheritors of souls.", "tip": "Chefe principal de Duke's Archives/Crystal Cave. Revise sorceries e o Moonlight Greatsword de tail cut antes de finalizar.", "is_missable": false, "is_spoiler": true },
-      { "id": "dsr_defeat_the_dark_sun_gwyndolin", "name": "Defeat the Dark Sun Gwyndolin", "type": "Prata", "description": "Defeat Dark Sun Gwyndolin, the Darkmoon God.", "tip": "Chefe opcional ligado a Anor Londo, covenant Blade of the Darkmoon e milagres. Revise o covenant antes de hostilizar.", "is_missable": true, "is_spoiler": true },
-      { "id": "dsr_defeat_crossbreed_priscilla", "name": "Defeat Crossbreed Priscilla", "type": "Prata", "description": "Defeat Crossbreed Priscilla, the Lifehunter.", "tip": "Chefe opcional de Painted World. Corte a cauda para Priscilla's Dagger antes de matar, pois ela entra em Knight's Honor.", "is_missable": true, "is_spoiler": true }
-    ]
+    "seo": {
+      "title": "Dark Souls Remastered: guia de troféus e platina",
+      "description": "Roadmap completo da platina de Dark Souls Remastered, com finais, pactos, Knight's Honor, armas raras, feitiços, milagres, piromancias, upgrades, NG+/NG++ e checklist para evitar retrabalho.",
+      "keywords": "Dark Souls Remastered troféus, Dark Souls Remastered platina, Dark Souls Remastered guia, Dark Souls Remastered roadmap, Dark Souls Remastered Knight's Honor, Dark Souls Remastered armas raras, Dark Souls Remastered pactos, Dark Souls Remastered piromancias, Dark Souls Remastered milagres, Dark Souls Remastered feitiços, Dark Souls Remastered NG++",
+      "ogTitle": "Dark Souls Remastered: guia de troféus e platina",
+      "ogDescription": "Guia PT-BR da platina PSN base de Dark Souls Remastered, com 41 troféus, finais, pactos, Knight's Honor, almas de chefes, armas raras e NG++."
+    },
+    "quickDecision": {
+      "summary": "Platina clássica e trabalhosa: offline, sem coop obrigatório, sem DLC separada, com almas de chefes, pactos, NPCs, upgrades, Knight's Honor e avanço até NG+/NG++.",
+      "recommendation": "Dark Souls Remastered é recomendado para quem gosta de soulslike, exploração, builds e checklist de colecionáveis. Não é indicado para quem busca platina rápida ou quer evitar múltiplas runs.",
+      "firstAction": "Explore Lordran e prepare a primeira run. Comece uma campanha cuidadosa, explorando Lordran, entrando nos pactos disponíveis e guardando almas de chefes. Depois use o roadmap para separar finais, armas raras, feitiços, milagres, piromancias, upgrades e avanço em NG+/NG++.",
+      "mainRisk": "O maior risco é Knight's Honor: consumir almas de chefes, perder armas de cauda ou ignorar armas raras pode empurrar a platina para outra run.",
+      "verdict": "Boa platina para fãs de Souls; exige organização, NG+/NG++ e paciência com farm."
+    },
+    "checklist": darkSoulsRemasteredChecklist,
+    "faq": darkSoulsRemasteredFaq,
+    "attentionPoints": darkSoulsRemasteredAttentionPoints,
+    "roadmap": darkSoulsRemasteredRoadmap,
+    "trophies": darkSoulsRemasteredTrophies
   },
   {
     "id": 47,
@@ -25275,6 +25841,192 @@ const sampleGames = [
                   "is_spoiler": true
             }
       ]
+}
+,
+{
+      "name": "Hollow Knight: Silksong",
+      "slug": "hollow-knight-silksong",
+      "title": "Hollow Knight: Silksong",
+      "published": true,
+      "developer": "Team Cherry",
+      "publisher": "Team Cherry",
+      "platforms": [
+            "PS4",
+            "PS5"
+      ],
+      "platform_base": "PS4/PS5",
+      "platformBase": "PS4/PS5",
+      "guideScope": "Lista PSN base de 34 troféus",
+      "added_at": "2026-06-02",
+      "release_date": "2025-09-04",
+      "releaseDate": "2025-09-04",
+      "genre": [
+            "metroidvania",
+            "ação",
+            "plataforma 2D"
+      ],
+      "mode": "single-player",
+      "difficulty": 8,
+      "estimatedTime": "70-100 horas",
+      "time": "70-100 horas",
+      "time_min_hours": 70,
+      "time_max_hours": 100,
+      "time_sort_hours": 70,
+      "time_bucket": "long",
+      "runs": "Uma campanha de exploração e 100%, uma rota de Speedrunner e uma rota otimizada de Speed Completion; combinações dependem de validação editorial.",
+      "hasMissables": false,
+      "missableCount": 0,
+      "missable_count": 0,
+      "hasOnline": false,
+      "hasMandatoryOnline": false,
+      "hasMandatoryCoop": false,
+      "onlineRequired": false,
+      "online_required": false,
+      "coopRequired": false,
+      "coop_required": false,
+      "dlcRequired": false,
+      "dlc_required": false,
+      "dlcRequiredForPlatinum": false,
+      "onlineTrophyCount": 0,
+      "platinumType": "lista PSN base + 100% + finais + speedrun",
+      "missable": "Não há troféus perdíveis confirmados na lista PSN base usada por este guia. Finais, Act 3, Speedrunner e Speed Completion exigem rotas, planejamento ou novas runs, mas são tratados como Rota, Speedrun ou Atenção, não como perda permanente.",
+      "runs_summary": "A rota editorial mais segura separa uma primeira campanha de exploração e 100%, uma run de Speedrunner abaixo de 5h e uma rota otimizada para Speed Completion abaixo de 30h.",
+      "missable_summary": "Sem perdíveis confirmados: rotas, finais, 100%, Speedrunner e Speed Completion exigem planejamento, mas não entram como perda permanente. Pharloom's Heart nunca entra na contagem de perdíveis.",
+      "online_summary": "A lista PSN base é totalmente offline, sem troféus online, coop obrigatório ou PS+ necessário para a platina.",
+      "grind_summary": "O peso está em 100%, ferramentas, Silk Skills, Crests, upgrades, mapas, Bellways, Ventrica Stations, desejos, pulgas, finais e rotas cronometradas.",
+      "dlc_scope": "Sea of Sorrow foi anunciada como expansão gratuita para 2026 e fica fora da platina base. Este guia não inclui troféus de expansão, update futuro, Steel Soul de outras plataformas ou extras fora da lista PSN base.",
+      "difficulty_reason": "A dificuldade 8/10 vem de combate, plataforma, chefes, exploração completa, 100%, Speedrunner em menos de 5h e Speed Completion em menos de 30h.",
+      "time_reason": "A estimativa de 70-100 horas considera aprendizado de Pharloom, 100%, cleanup, prática de chefes e rotas cronometradas.",
+      "first_run_advice": "Comece por uma campanha de exploração, aprendendo Pharloom e coletando upgrades, ferramentas, Silk Skills, Crests, mapas e desejos. Depois use o roadmap para separar 100%, Act 3, chefes/finais e as rotas de speedrun.",
+      "cleanup_advice": "Depois da campanha de aprendizado, revise ferramentas, Silk Skills, Crests, upgrades, mapas, Bellways, Ventrica Stations, desejos, pulgas, finais e requisitos de 100% antes das runs cronometradas.",
+      "before_you_start": "Este guia representa a lista PSN base de 34 troféus de Hollow Knight: Silksong para PS4/PS5. Não misture Steam/Xbox, Steel Soul, Sea of Sorrow ou qualquer expansão futura na platina base.",
+      "best_for": "Recomendada para quem gosta de metroidvania difícil, exploração densa, chefes fortes, execução de plataforma e rotas de speedrun.",
+      "avoid_if": "Evite se você quer uma platina rápida, simples ou sem 100%, sem limite de tempo e sem múltiplas rotas planejadas.",
+      "image": "https://cdn.cloudflare.steamstatic.com/steam/apps/1030300/header.jpg",
+      "cover_image": "https://cdn.cloudflare.steamstatic.com/steam/apps/1030300/library_600x900.jpg",
+      "editorial_status": "published",
+      "coverage_level": "strong",
+      "is_verified": true,
+      "verification_status": "verified",
+      "verification_note": "Guia verificado para a lista PSN base de 34 troféus: EN/PT-BR, descrições PT-BR, roadmap estruturado, flags offline/sem coop/sem DLC, sem perdíveis confirmados e rotas de 100%/speedrun documentadas.",
+      "editorial_review_status": "verified",
+      "editorialStatus": "verified",
+      "last_reviewed_at": "2026-06-02",
+      "lastReviewedAt": "2026-06-02T00:00:00.000-03:00",
+      "editorial_notes": "Escopo verificado: lista PSN base de 34 troféus de Hollow Knight: Silksong em PS4/PS5. Steel Soul, Steel Heart, listas Steam/Xbox, Sea of Sorrow e updates futuros ficam fora da platina base. Política de rotas: finais, Act 3, 100%, Speedrunner e Speed Completion exigem planejamento, mas não foram marcados como perdíveis sem confirmação de perda permanente.",
+      "editorialNotes": "Escopo verificado: lista PSN base de 34 troféus de Hollow Knight: Silksong em PS4/PS5. Steel Soul, Steel Heart, listas Steam/Xbox, Sea of Sorrow e updates futuros ficam fora da platina base. Política de rotas: finais, Act 3, 100%, Speedrunner e Speed Completion exigem planejamento, mas não foram marcados como perdíveis sem confirmação de perda permanente.",
+      "quality_warnings": [],
+      "qualityWarnings": [],
+      "editorial_summary": [
+            "Hollow Knight: Silksong é uma platina exigente de metroidvania, focada em explorar Pharloom, derrotar chefes principais e opcionais, completar desejos, resgatar pulgas, adquirir ferramentas, Habilidades de Seda, Brasões, upgrades, mapas e estações, alcançar 100% de conclusão e ainda fazer rotas de velocidade para terminar o jogo em menos de 5h e fazer 100% em menos de 30h. A lista PSN tem 34 troféus, é totalmente offline, não exige coop nem DLC, e não possui perdíveis confirmados neste guia, mas exige domínio de combate, plataforma, exploração e planejamento de rotas.",
+            "A ordem mais segura é fazer uma primeira campanha de exploração, aprendendo as áreas, chefes, habilidades de Hornet e requisitos de 100%, depois limpar ferramentas, upgrades, desejos, pulgas, mapas, Bellways, Ventrica Stations, mementos, finais necessários e chefes de Act 3. Deixe Speedrunner e Speed Completion para rotas separadas ou muito bem planejadas, porque os limites de 5h e 30h exigem conhecimento do mapa, movimentação eficiente e pouca perda de tempo."
+      ],
+      "seo": {
+            "title": "Hollow Knight: Silksong: guia de troféus e platina",
+            "description": "Roadmap completo da platina de Hollow Knight: Silksong, com lista PSN de 34 troféus, 100%, Speedrunner, Speed Completion, ferramentas, Habilidades de Seda, Brasões, pulgas, desejos, chefes, finais e checklist para reduzir retrabalho.",
+            "keywords": "Hollow Knight Silksong troféus, Hollow Knight Silksong platina, Hollow Knight Silksong guia, Hollow Knight Silksong roadmap, Hollow Knight Silksong 100%, Hollow Knight Silksong Speedrunner, Hollow Knight Silksong Speed Completion, Hollow Knight Silksong Pharloom's Heart, Hollow Knight Silksong checklist, Hollow Knight Silksong pulgas, Hollow Knight Silksong PSN, Hollow Knight Silksong troféus PS5",
+            "ogTitle": "Hollow Knight: Silksong: guia de troféus e platina",
+            "ogDescription": "Guia PT-BR da platina base PSN de Hollow Knight: Silksong, com 34 troféus, 100%, speedrun, Speed Completion, pulgas, desejos, chefes e checklist."
+      },
+      "quickDecision": {
+            "summary": "Platina longa e exigente: totalmente offline, sem coop, sem DLC obrigatória, sem perdíveis confirmados, com 100%, finais, exploração completa e duas metas cronometradas fortes.",
+            "recommendation": "Hollow Knight: Silksong é recomendado para quem gosta de metroidvania difícil, exploração completa, chefes exigentes e rotas cronometradas. A platina é totalmente offline, não exige coop nem DLC, mas exige 100%, Speedrunner em menos de 5h e Speed Completion com 100% em menos de 30h. Não é uma platina rápida nem casual; o maior desafio está em dominar Pharloom e planejar rotas eficientes.",
+            "firstAction": "Comece por uma campanha de exploração, aprendendo Pharloom e coletando upgrades, ferramentas, Silk Skills, Crests, mapas e desejos.",
+            "mainRisk": "As maiores barreiras são Completion, Speedrunner e Speed Completion; trate finais e Act 3 como rotas planejadas, não como perdíveis confirmados. Steel Soul fica fora da lista PSN base.",
+            "verdict": "Recomendada para fãs de metroidvania técnico e pouco indicada para busca de platina rápida."
+      },
+      "checklist": [
+            "Adquirir a primeira Ferramenta.",
+            "Adquirir todas as Ferramentas.",
+            "Vincular a primeira Habilidade de Seda.",
+            "Vincular todas as Habilidades de Seda.",
+            "Reivindicar o primeiro Brasão.",
+            "Reivindicar todos os Brasões.",
+            "Adquirir 4 Fragmentos de Máscara.",
+            "Adquirir todos os Fragmentos de Máscara.",
+            "Adquirir 2 Fragmentos de Carretel.",
+            "Adquirir todos os Fragmentos de Carretel.",
+            "Adquirir todos os Corações de Seda.",
+            "Adquirir mapa de cada área.",
+            "Abrir todas as Vias Campanárias.",
+            "Abrir todas as Estações Ventrícula da Cidadela.",
+            "Conceder o desejo de Nuu.",
+            "Receber o Memento de Nuu.",
+            "Resgatar metade das pulgas.",
+            "Resgatar todas as pulgas e receber o presente final.",
+            "Derrotar a Besta dos Sinos.",
+            "Derrotar Tessela nas Docas Profundas.",
+            "Derrotar Tessela no Berço.",
+            "Conceder o primeiro Desejo.",
+            "Vincular Eva.",
+            "Aprender a canção Tríplice da Cidadela.",
+            "Reivindicar a Flor-da-Eternidade.",
+            "Derrotar a Grande Mãe Seda e vincular o poder dela.",
+            "Derrotar a Grande Mãe Seda e entrelaçar com a Teia de Almas.",
+            "Derrotar a Grande Mãe Seda enquanto amaldiçoada.",
+            "Derrotar Tessela Perdida e libertar Fiarlongo.",
+            "Conceder o desejo do Arauto.",
+            "Conseguir 100% e terminar o jogo.",
+            "Completar o jogo em menos de 5h.",
+            "Conseguir 100% e terminar o jogo em menos de 30h.",
+            "Fazer cleanup final e confirmar os 34 troféus da lista PSN base."
+      ],
+      "faq": [
+            {
+                  "question": "Hollow Knight: Silksong tem troféus perdíveis?",
+                  "answer": "Não há troféus perdíveis confirmados na lista PSN base usada por este guia. Alguns troféus exigem rotas, finais, nova run, 100% ou limites de tempo, mas eles devem ser tratados como Rota, Speedrun ou Atenção, não como perda permanente."
+            },
+            {
+                  "question": "Hollow Knight: Silksong tem troféus online?",
+                  "answer": "Não. A lista PSN base é totalmente offline."
+            },
+            {
+                  "question": "Precisa de coop?",
+                  "answer": "Não. Hollow Knight: Silksong é single-player e a platina não exige coop."
+            },
+            {
+                  "question": "Precisa de DLC ou expansão?",
+                  "answer": "Não. A platina base não exige DLC. Sea of Sorrow e expansões futuras devem ficar separadas se receberem conteúdo ou troféus próprios."
+            },
+            {
+                  "question": "Quantos troféus tem Hollow Knight: Silksong?",
+                  "answer": "A lista PSN base tem 34 troféus, incluindo a platina Pharloom's Heart."
+            },
+            {
+                  "question": "Steel Soul conta para a platina PSN?",
+                  "answer": "Não neste guia. A lista PSN base usada aqui tem 34 troféus e não inclui troféus de Steel Soul. Não misture listas de outras plataformas com a platina PSN."
+            },
+            {
+                  "question": "Quanto tempo leva para platinar Hollow Knight: Silksong?",
+                  "answer": "A estimativa editorial é 70–100h, variando conforme habilidade em chefes, exploração, 100%, Speedrunner em menos de 5h e Speed Completion com 100% em menos de 30h."
+            },
+            {
+                  "question": "Qual é a dificuldade da platina?",
+                  "answer": "A dificuldade estimada é 8/10. A platina exige domínio de combate, plataforma, exploração, chefes, 100%, Speedrunner e Speed Completion."
+            },
+            {
+                  "question": "Speedrunner e Speed Completion podem ser feitos na mesma run?",
+                  "answer": "Até pode ser possível com uma rota muito otimizada, mas a rota mais segura do guia é separar uma campanha de exploração/100%, uma run de Speedrunner e uma rota planejada para Speed Completion."
+            },
+            {
+                  "question": "Dá para continuar depois da história?",
+                  "answer": "Use o save atual para cleanup quando o jogo permitir continuar explorando após finais. Se algum final ou rota exigir nova campanha, trate como rota planejada, não como perdível."
+            }
+      ],
+      "attentionPoints": [
+            { "title": "Completion", "type": "100% / Grind", "tip": "Use checklist detalhado para confirmar todos os requisitos de 100% antes de finalizar a run." },
+            { "title": "Speedrunner", "type": "Speedrun / 5h", "tip": "Deixe para uma run separada depois de conhecer chefes, atalhos e rotas principais." },
+            { "title": "Speed Completion", "type": "100% / Speedrun / 30h", "tip": "Combine 100% e rota otimizada abaixo de 30h; não tente improvisar essa run." },
+            { "title": "True Hunter", "type": "Memento / Nuu", "tip": "Acompanhe o desejo de Nuu até receber o Memento." },
+            { "title": "Fleafriend", "type": "Coletáveis / Pulgas", "tip": "Marque pulgas por área para evitar revisitar regiões sem necessidade." },
+            { "title": "Arsenal", "type": "Ferramentas", "tip": "Confira ferramentas por região antes do cleanup final." },
+            { "title": "Woven", "type": "Habilidades de Seda", "tip": "Revise todas as Habilidades de Seda antes de iniciar rotas cronometradas." },
+            { "title": "Consumed", "type": "Brasões", "tip": "Confirme todos os Brasões antes de fechar 100%." },
+            { "title": "Sister of the Void", "type": "Act 3 / Final", "tip": "Trate como rota/final de Act 3 e acompanhe no plano de finais." },
+            { "title": "Twisted Child", "type": "Final / Atenção", "tip": "Planeje a rota do final antes de alterar o estado da run." }
+      ],
+      "roadmap": silksongRoadmap,
+      "trophies": silksongTrophies
 }
 ,
 {

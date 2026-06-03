@@ -1088,7 +1088,7 @@ function renderGuideEditorialNotesHtml(game = {}, viewModel = {}) {
   const normalizedSlug = String(game?.slug || '').trim().toLowerCase();
   const routeTrophyLimit = normalizedSlug === 'red-dead-redemption-2' ? 11 : (normalizedSlug === 'marvels-spider-man-2' ? 8 : 5);
   const routeTrophies = Array.isArray(viewModel.routeChangingTrophies) ? viewModel.routeChangingTrophies.slice(0, routeTrophyLimit) : [];
-  const faqLimit = normalizedSlug === 'marvels-spider-man-miles-morales' ? 12 : (['nioh-3', 'saros', 'the-last-of-us-part-ii'].includes(normalizedSlug) ? 11 : (['the-last-of-us-part-i', 'subnautica'].includes(normalizedSlug) ? 10 : (['god-of-war-ragnarok', 'resident-evil-2-remake', 'resident-evil-3-remake', 'hollow-knight', 'marvels-spider-man'].includes(normalizedSlug) ? 8 : (normalizedSlug === 'red-dead-redemption-2' ? 7 : 6))));
+  const faqLimit = normalizedSlug === 'marvels-spider-man-miles-morales' ? 12 : (['nioh-3', 'saros', 'the-last-of-us-part-ii'].includes(normalizedSlug) ? 11 : (['the-last-of-us-part-i', 'subnautica'].includes(normalizedSlug) ? 10 : (normalizedSlug === 'dark-souls-remastered' ? 9 : (['god-of-war-ragnarok', 'resident-evil-2-remake', 'resident-evil-3-remake', 'hollow-knight', 'marvels-spider-man'].includes(normalizedSlug) ? 8 : (normalizedSlug === 'red-dead-redemption-2' ? 7 : 6)))));
   const faqItems = Array.isArray(viewModel.contextualFaq) ? viewModel.contextualFaq.slice(0, faqLimit) : [];
   const playerFit = viewModel.playerFit || buildGuidePlayerFit(game, viewModel);
   const methodItems = Array.isArray(viewModel.editorial?.methodItems) ? viewModel.editorial.methodItems : [];
@@ -1927,6 +1927,7 @@ async function buildGamePageHtml(game, req) {
 async function buildDefaultPageHtml(req) {
   const origin = getPublicOrigin(req);
   const games = await listAllHomeGames();
+  const homeUpdate = gamesService.getWeeklyHomeUpdatePopup();
   const byRecent = [...games].sort((a, b) => String(b.created_at || '').localeCompare(String(a.created_at || '')));
   const byUpdated = [...games].sort((a, b) => String(b.updated_at || '').localeCompare(String(a.updated_at || '')));
   const totalTrophies = games.reduce((sum, game) => sum + getHomeTotal(game), 0);
@@ -1951,7 +1952,7 @@ async function buildDefaultPageHtml(req) {
     .replace(/__HOME_FEATURED_NOW__/g, renderHomeFeaturedGameHtml(games))
     .replace(/__HOME_RECENT_GUIDES__/g, renderHomeDiscoveryGuidesHtml(byRecent))
     .replace(/__HOME_UPDATED_GUIDES__/g, renderHomeEditorialHistoryHtml(byUpdated))
-    .replace(/__INITIAL_STATE_SCRIPT__/g, buildInitialStateScript({ page: 'home' })));
+    .replace(/__INITIAL_STATE_SCRIPT__/g, buildInitialStateScript({ page: 'home', homeUpdate })));
 }
 
 async function buildStaticPublicPageHtml(req, pageConfig = {}) {
@@ -1961,6 +1962,7 @@ async function buildStaticPublicPageHtml(req, pageConfig = {}) {
   const title = pageConfig.title || 'AtlasAchievement';
   const description = pageConfig.description || 'AtlasAchievement';
   const activeView = pageConfig.view || 'home';
+  const homeUpdate = activeView === 'home' ? gamesService.getWeeklyHomeUpdatePopup() : null;
   const structuredData = {
     '@context': 'https://schema.org',
     '@type': 'WebPage',
@@ -1981,7 +1983,7 @@ async function buildStaticPublicPageHtml(req, pageConfig = {}) {
     .replace(/__HOME_HERO_HEADING_TAG__/g, activeView === 'home' ? 'h1' : 'h2')
     .replace(/__LIBRARY_HEADING_TAG__/g, activeView === 'library' ? 'h1' : 'h2')
     .replace(/__PROFILE_HEADING_TAG__/g, activeView === 'profile' ? 'h1' : 'h2')
-    .replace(/__INITIAL_STATE_SCRIPT__/g, buildInitialStateScript({ page: activeView })));
+    .replace(/__INITIAL_STATE_SCRIPT__/g, buildInitialStateScript({ page: activeView, homeUpdate })));
 
   if (activeView === 'library') {
     html = html.replace(
