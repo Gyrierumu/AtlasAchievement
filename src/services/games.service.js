@@ -17,8 +17,6 @@ const HOME_VERIFIED_DATE_FIELDS = ['verified_at', 'verifiedAt', 'last_reviewed_a
 const CATALOG_SEED_EDITORIAL_STATUS_SLUGS = new Set([
   'red-dead-redemption-2',
   'resident-evil-3-remake',
-  'resident-evil-7-biohazard',
-  'resident-evil-village',
   'marvels-spider-man',
   'marvels-spider-man-2',
   'marvels-spider-man-miles-morales'

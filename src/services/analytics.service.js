@@ -1,4 +1,5 @@
 const { all, run, get } = require('../db/db');
+const sampleGames = require('../data/sampleGames');
 
 const PUBLIC_EVENT_TYPES = new Set([
   'guide_view',
@@ -26,6 +27,11 @@ const PENDING_EDITORIAL_STATUSES = [
   'dlc_pending',
   'outdated'
 ];
+
+const SEED_VERIFIED_GUIDE_SLUGS = Array.from(new Set(sampleGames
+  .filter(game => game?.is_verified || game?.verification_status === 'verified' || game?.editorial_review_status === 'verified')
+  .map(game => normalizeSlug(game?.slug || game?.name))
+  .filter(Boolean)));
 
 function compactText(value = '', maxLength = 160) {
   return String(value || '')
@@ -265,6 +271,9 @@ async function getFeedbackMetrics() {
 }
 
 async function getGuideMetrics() {
+  const seedVerifiedPlaceholders = SEED_VERIFIED_GUIDE_SLUGS.map(() => '?').join(',');
+  const seedVerifiedSql = seedVerifiedPlaceholders ? ` OR slug IN (${seedVerifiedPlaceholders})` : '';
+  const excludeSeedVerifiedSql = seedVerifiedPlaceholders ? ` AND slug NOT IN (${seedVerifiedPlaceholders})` : '';
   const [
     totalRow,
     publishedRow,
@@ -275,8 +284,8 @@ async function getGuideMetrics() {
   ] = await Promise.all([
     get('SELECT COUNT(*) AS total FROM games'),
     get("SELECT COUNT(*) AS total FROM games WHERE COALESCE(editorial_status, 'published') != 'draft'"),
-    get("SELECT COUNT(*) AS total FROM games WHERE COALESCE(editorial_review_status, 'in_review') = 'in_review'"),
-    get("SELECT COUNT(*) AS total FROM games WHERE editorial_review_status = 'verified' OR is_verified = 1"),
+    get(`SELECT COUNT(*) AS total FROM games WHERE COALESCE(editorial_review_status, 'in_review') = 'in_review'${excludeSeedVerifiedSql}`, SEED_VERIFIED_GUIDE_SLUGS),
+    get(`SELECT COUNT(*) AS total FROM games WHERE editorial_review_status = 'verified' OR is_verified = 1 OR verification_status = 'verified'${seedVerifiedSql}`, SEED_VERIFIED_GUIDE_SLUGS),
     all(`SELECT name, slug, editorial_review_status, quality_warnings, last_reviewed_at
            FROM games
           WHERE editorial_review_status IN (${PENDING_EDITORIAL_STATUSES.map(() => '?').join(',')})
@@ -284,9 +293,9 @@ async function getGuideMetrics() {
           LIMIT 20`, PENDING_EDITORIAL_STATUSES),
     all(`SELECT name, slug, editorial_review_status, quality_warnings, last_reviewed_at
            FROM games
-          WHERE COALESCE(editorial_review_status, 'in_review') = 'in_review'
+          WHERE COALESCE(editorial_review_status, 'in_review') = 'in_review'${excludeSeedVerifiedSql}
           ORDER BY updated_at DESC, name ASC
-          LIMIT 20`)
+          LIMIT 20`, SEED_VERIFIED_GUIDE_SLUGS)
   ]);
 
   return {
