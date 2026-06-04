@@ -26,6 +26,13 @@ const CATALOG_SEED_EDITORIAL_STATUS_SLUGS = new Set([
 sampleGames
   .filter(game => game?.is_verified || game?.verification_status === 'verified' || game?.editorial_review_status === 'verified')
   .forEach(game => CATALOG_SEED_EDITORIAL_STATUS_SLUGS.add(String(game?.slug || '').trim().toLowerCase()));
+
+function hasVerifiedEditorialStatus(game = {}) {
+  return Boolean(game?.is_verified)
+    || game?.verification_status === 'verified'
+    || game?.editorial_review_status === 'verified';
+}
+
 const LOCALIZED_TROPHY_SOURCE_SLUGS = new Set(['astro-bot', 'astros-playroom', 'bloodborne', 'clair-obscur-expedition-33', 'dark-souls-iii', 'dark-souls-remastered', 'days-gone', 'dead-cells', 'death-stranding', 'death-stranding-2-on-the-beach', 'detroit-become-human', 'god-of-war', 'god-of-war-ragnarok', 'hades-ii', 'hogwarts-legacy', 'hollow-knight', 'hollow-knight-silksong', 'marvels-spider-man', 'marvels-spider-man-2', 'marvels-spider-man-miles-morales', 'nioh-2', 'nioh-3', 'red-dead-redemption-2', 'resident-evil', 'resident-evil-2-remake', 'resident-evil-3-remake', 'resident-evil-5', 'resident-evil-7-biohazard', 'resident-evil-village', 'resident-evil-requiem', 'the-last-of-us-part-i', 'the-last-of-us-part-ii', 'subnautica']);
 const CATALOG_IMAGE_BY_SLUG = {
   'the-last-of-us-part-ii': 'https://cdn.cloudflare.steamstatic.com/steam/apps/2531310/header.jpg'
@@ -344,7 +351,7 @@ function normalizeTrophyType(value) {
 }
 
 function isVerifiedEditorialPayload(payload = {}) {
-  return payload.is_verified || payload.verification_status === 'verified';
+  return hasVerifiedEditorialStatus(payload);
 }
 
 function normalizeCoverageLevel(value, fallbackPayload = null) {
@@ -400,7 +407,10 @@ function normalizeGame(row, roadmapRows, trophyRows) {
   const useDetroitSeedEditorial = normalizedSlug === 'detroit-become-human' && seedGame;
   const useHogwartsLegacySeedEditorial = normalizedSlug === 'hogwarts-legacy' && seedGame;
   const useSilksongSeedEditorial = normalizedSlug === 'hollow-knight-silksong' && seedGame;
-  const useStrictSeedEditorial = useBloodborneSeedEditorial || useClairObscurSeedEditorial || useDarkSouls3SeedEditorial || useDarkSoulsRemasteredSeedEditorial || useDaysGoneSeedEditorial || useDetroitSeedEditorial || useDeathStrandingSeedEditorial || useDeathStranding2SeedEditorial || useHogwartsLegacySeedEditorial || useResidentEvilSeedEditorial || useSpiderManSeedEditorial || useSpiderMan2SeedEditorial || useMilesMoralesSeedEditorial || useRedDeadRedemption2SeedEditorial || useSilksongSeedEditorial;
+  const seedHasVerifiedEditorialStatus = hasVerifiedEditorialStatus(seedGame);
+  const rowHasVerifiedEditorialStatus = hasVerifiedEditorialStatus(row);
+  const preferManualVerifiedEditorial = rowHasVerifiedEditorialStatus && !seedHasVerifiedEditorialStatus;
+  const useStrictSeedEditorial = !preferManualVerifiedEditorial && (useBloodborneSeedEditorial || useClairObscurSeedEditorial || useDarkSouls3SeedEditorial || useDarkSoulsRemasteredSeedEditorial || useDaysGoneSeedEditorial || useDetroitSeedEditorial || useDeathStrandingSeedEditorial || useDeathStranding2SeedEditorial || useHogwartsLegacySeedEditorial || useResidentEvilSeedEditorial || useSpiderManSeedEditorial || useSpiderMan2SeedEditorial || useMilesMoralesSeedEditorial || useRedDeadRedemption2SeedEditorial || useSilksongSeedEditorial);
   const editorialSource = ['bloodborne', 'clair-obscur-expedition-33', 'dark-souls-iii', 'dark-souls-remastered', 'days-gone', 'death-stranding', 'death-stranding-2-on-the-beach', 'detroit-become-human', 'hogwarts-legacy', 'hollow-knight-silksong', 'marvels-spider-man', 'marvels-spider-man-2', 'marvels-spider-man-miles-morales', 'red-dead-redemption-2', 'resident-evil', 'resident-evil-2-remake', 'resident-evil-3-remake', 'resident-evil-5', 'resident-evil-7-biohazard', 'resident-evil-village', 'resident-evil-requiem'].includes(normalizedSlug) && seedGame
     ? {
         ...row,
@@ -954,7 +964,8 @@ function buildListFilters({ search = '', facet = 'all' } = {}) {
 function normalizeListRow(row) {
   const normalizedSlug = String(row.slug || '').trim().toLowerCase();
   const listSeedGame = sampleGames.find(item => String(item?.slug || '').trim().toLowerCase() === normalizedSlug) || null;
-  const seedGame = (CATALOG_SEED_EDITORIAL_STATUS_SLUGS.has(normalizedSlug) || normalizedSlug === 'clair-obscur-expedition-33' || normalizedSlug === 'days-gone' || normalizedSlug === 'hogwarts-legacy')
+  const preferManualVerifiedEditorial = hasVerifiedEditorialStatus(row) && !hasVerifiedEditorialStatus(listSeedGame);
+  const seedGame = (!preferManualVerifiedEditorial && (CATALOG_SEED_EDITORIAL_STATUS_SLUGS.has(normalizedSlug) || normalizedSlug === 'clair-obscur-expedition-33' || normalizedSlug === 'days-gone' || normalizedSlug === 'hogwarts-legacy'))
     ? listSeedGame
     : null;
   const editorialSource = seedGame
