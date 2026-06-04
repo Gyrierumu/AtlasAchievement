@@ -750,7 +750,7 @@ function renderTrophyCardHtml(trophy, completedIds = new Set(), index = 0, game 
         </div>
         <div class="atlas-trophy-card__actions">
           <button type="button" class="atlas-btn ${done ? 'atlas-btn-secondary' : 'atlas-btn-primary'} atlas-trophy-toggle" data-trophy-toggle="${escapeHtml(trophy.id || '')}" aria-pressed="${done ? 'true' : 'false'}" aria-label="${escapeHtml(toggleAria)}"><i class="fas ${done ? 'fa-rotate-left' : 'fa-check'}"></i><span>${escapeHtml(toggleLabel)}</span></button>
-          ${youtubeSearchUrl ? `<a class="atlas-btn atlas-btn-secondary atlas-btn-compact atlas-trophy-youtube-link" href="${escapeHtml(youtubeSearchUrl)}" target="_blank" rel="noopener noreferrer" aria-label="${escapeHtml(youtubeAriaLabel)}"><i class="fas fa-video" aria-hidden="true"></i><span>Ver no YouTube</span></a>` : ''}
+          ${youtubeSearchUrl ? `<a class="atlas-btn atlas-btn-secondary atlas-btn-compact atlas-trophy-youtube-link" href="${escapeHtml(youtubeSearchUrl)}" target="_blank" rel="noopener noreferrer" aria-label="${escapeHtml(youtubeAriaLabel)}"><i class="fas fa-video" aria-hidden="true"></i><span>YouTube</span></a>` : ''}
         </div>
       </div>
     </article>`;

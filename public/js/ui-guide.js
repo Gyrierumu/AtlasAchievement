@@ -1189,7 +1189,7 @@ window.UIGuide = (() => {
                   </div>
                   <div class="atlas-trophy-card__actions">
                     <button type="button" class="atlas-btn ${done ? 'atlas-btn-secondary' : 'atlas-btn-primary'} atlas-trophy-toggle" data-trophy-toggle="${escapeAttribute(trophy.id || '')}" aria-pressed="${done ? 'true' : 'false'}" aria-label="${escapeAttribute(toggleAria)}"><i class="fas ${done ? 'fa-rotate-left' : 'fa-check'}"></i><span>${escapeHtml(toggleLabel)}</span></button>
-                    ${youtubeSearchUrl ? `<a class="atlas-btn atlas-btn-secondary atlas-btn-compact atlas-trophy-youtube-link" href="${escapeAttribute(youtubeSearchUrl)}" target="_blank" rel="noopener noreferrer" aria-label="${escapeAttribute(youtubeAriaLabel)}"><i class="fas fa-video" aria-hidden="true"></i><span>Ver no YouTube</span></a>` : ''}
+                    ${youtubeSearchUrl ? `<a class="atlas-btn atlas-btn-secondary atlas-btn-compact atlas-trophy-youtube-link" href="${escapeAttribute(youtubeSearchUrl)}" target="_blank" rel="noopener noreferrer" aria-label="${escapeAttribute(youtubeAriaLabel)}"><i class="fas fa-video" aria-hidden="true"></i><span>YouTube</span></a>` : ''}
                   </div>
                 </div>
               </article>
