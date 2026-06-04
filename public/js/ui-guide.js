@@ -15,6 +15,8 @@ window.UIGuide = (() => {
     getGuideTrophyTags,
     getGuideTrophyDisplayTags,
     getGuideTrophySearchText,
+    buildTrophyYoutubeSearchUrl,
+    buildTrophyYoutubeSearchAriaLabel,
     buildGuideQuickDecisionModel,
     buildGuideShortcutModel,
     buildGuideStartContextModel,
@@ -857,7 +859,7 @@ window.UIGuide = (() => {
   function renderGuideEditorialNotes(game = {}, viewModel = {}) {
     const normalizedSlug = String(game?.slug || '').trim().toLowerCase();
     const routeTrophyLimit = normalizedSlug === 'red-dead-redemption-2' ? 11 : (normalizedSlug === 'death-stranding-2-on-the-beach' ? 11 : (['clair-obscur-expedition-33', 'detroit-become-human'].includes(normalizedSlug) ? 10 : (normalizedSlug === 'death-stranding' ? 9 : (normalizedSlug === 'marvels-spider-man-2' ? 8 : 5))));
-    const explicitAttentionPoints = ['dark-souls-remastered', 'hollow-knight-silksong', 'resident-evil-5', 'resident-evil-7-biohazard', 'resident-evil-village'].includes(normalizedSlug) && Array.isArray(game?.attentionPoints)
+    const explicitAttentionPoints = ['dark-souls-remastered', 'hollow-knight-silksong', 'days-gone', 'hogwarts-legacy', 'resident-evil-5', 'resident-evil-7-biohazard', 'resident-evil-village'].includes(normalizedSlug) && Array.isArray(game?.attentionPoints)
       ? game.attentionPoints.map(item => {
         const tags = Array.isArray(item?.tags)
           ? item.tags.map(tag => {
@@ -876,7 +878,7 @@ window.UIGuide = (() => {
     const routeTrophies = explicitAttentionPoints.length
       ? explicitAttentionPoints
       : (Array.isArray(viewModel.routeChangingTrophies) ? viewModel.routeChangingTrophies.slice(0, routeTrophyLimit) : []);
-    const faqLimit = normalizedSlug === 'marvels-spider-man-miles-morales' ? 12 : (['nioh-3', 'saros', 'the-last-of-us-part-ii'].includes(normalizedSlug) ? 11 : (['hollow-knight-silksong', 'the-last-of-us-part-i', 'subnautica', 'resident-evil-5', 'resident-evil-7-biohazard', 'resident-evil-village'].includes(normalizedSlug) ? 10 : (normalizedSlug === 'dark-souls-remastered' ? 9 : (['god-of-war-ragnarok', 'resident-evil-2-remake', 'resident-evil-3-remake', 'hollow-knight', 'marvels-spider-man'].includes(normalizedSlug) ? 8 : (normalizedSlug === 'red-dead-redemption-2' ? 7 : 6)))));
+    const faqLimit = normalizedSlug === 'marvels-spider-man-miles-morales' ? 12 : (['nioh-3', 'saros', 'the-last-of-us-part-ii'].includes(normalizedSlug) ? 11 : (['days-gone', 'hogwarts-legacy', 'hollow-knight-silksong', 'the-last-of-us-part-i', 'subnautica', 'resident-evil-5', 'resident-evil-7-biohazard', 'resident-evil-village'].includes(normalizedSlug) ? 10 : (normalizedSlug === 'dark-souls-remastered' ? 9 : (['god-of-war-ragnarok', 'resident-evil-2-remake', 'resident-evil-3-remake', 'hollow-knight', 'marvels-spider-man'].includes(normalizedSlug) ? 8 : (normalizedSlug === 'red-dead-redemption-2' ? 7 : 6)))));
     const faqItems = Array.isArray(viewModel.contextualFaq) ? viewModel.contextualFaq.slice(0, faqLimit) : [];
     const playerFit = viewModel.playerFit || buildGuidePlayerFit(game, viewModel);
     const methodItems = Array.isArray(viewModel.editorial?.methodItems) ? viewModel.editorial.methodItems : [];
@@ -1158,6 +1160,12 @@ window.UIGuide = (() => {
               : '';
             const toggleLabel = done ? 'Desmarcar' : 'Concluir';
             const toggleAria = `${toggleLabel} ${primaryName}`;
+            const youtubeSearchUrl = typeof buildTrophyYoutubeSearchUrl === 'function'
+              ? buildTrophyYoutubeSearchUrl(game?.name || game?.title || '', trophy)
+              : '';
+            const youtubeAriaLabel = typeof buildTrophyYoutubeSearchAriaLabel === 'function'
+              ? buildTrophyYoutubeSearchAriaLabel(game?.name || game?.title || '', trophy)
+              : `Buscar vídeo no YouTube para o troféu ${primaryName}`;
             return `
               <article class="trophy-card atlas-trophy-card atlas-panel atlas-panel--quiet ${done ? 'completed' : ''} ${hasDetailsToggle ? 'has-details-toggle' : ''}" data-trophy-id="${escapeAttribute(trophy.id || '')}" data-type="${escapeAttribute(trophy.type || 'Bronze')}" data-risks="${escapeAttribute(riskTokens)}" data-status="${done ? 'completed' : 'pending'}" data-search="${escapeAttribute(search)}" ${!done && trophy.id === viewModel.nextActionModel.trophyId ? 'data-next-focus="true"' : ''}>
                 <div class="atlas-trophy-card__layout">
@@ -1181,6 +1189,7 @@ window.UIGuide = (() => {
                   </div>
                   <div class="atlas-trophy-card__actions">
                     <button type="button" class="atlas-btn ${done ? 'atlas-btn-secondary' : 'atlas-btn-primary'} atlas-trophy-toggle" data-trophy-toggle="${escapeAttribute(trophy.id || '')}" aria-pressed="${done ? 'true' : 'false'}" aria-label="${escapeAttribute(toggleAria)}"><i class="fas ${done ? 'fa-rotate-left' : 'fa-check'}"></i><span>${escapeHtml(toggleLabel)}</span></button>
+                    ${youtubeSearchUrl ? `<a class="atlas-btn atlas-btn-secondary atlas-btn-compact atlas-trophy-youtube-link" href="${escapeAttribute(youtubeSearchUrl)}" target="_blank" rel="noopener noreferrer" aria-label="${escapeAttribute(youtubeAriaLabel)}"><i class="fas fa-video" aria-hidden="true"></i><span>Ver no YouTube</span></a>` : ''}
                   </div>
                 </div>
               </article>

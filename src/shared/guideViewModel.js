@@ -394,7 +394,7 @@
 
   function getExplicitGuideTrophyTags(trophy = {}, game = {}) {
     const slug = String(game?.slug || '').trim().toLowerCase();
-    if (!['clair-obscur-expedition-33', 'dark-souls-remastered', 'detroit-become-human', 'hollow-knight-silksong', 'resident-evil-7-biohazard', 'resident-evil-village'].includes(slug)) return [];
+    if (!['clair-obscur-expedition-33', 'dark-souls-remastered', 'days-gone', 'detroit-become-human', 'hogwarts-legacy', 'hollow-knight-silksong', 'resident-evil-7-biohazard', 'resident-evil-village'].includes(slug)) return [];
     if (!Array.isArray(trophy?.tags) || !trophy.tags.length) return [];
     const tags = [];
     const ids = new Set();
@@ -855,6 +855,90 @@
       trophy?.type,
       tagText
     ].filter(Boolean).join(' '));
+  }
+
+  function cleanTrophyYoutubeSearchPart(value = '') {
+    if (value && typeof value === 'object') return '';
+    const text = String(value ?? '')
+      .replace(/<[^>]*>/g, ' ')
+      .replace(/\s+/g, ' ')
+      .trim();
+    if (!text || /^(undefined|null|\[object Object\])$/i.test(text)) return '';
+    return text.slice(0, 90).trim();
+  }
+
+  function getTrophyYoutubeOfficialName(trophy = {}) {
+    return cleanTrophyYoutubeSearchPart(
+      trophy?.trophyNameOriginal
+        || trophy?.originalName
+        || trophy?.officialName
+        || trophy?.name
+    );
+  }
+
+  function getTrophyYoutubePtName(trophy = {}) {
+    const candidates = [
+      trophy?.trophyNamePtBr,
+      trophy?.localizedNamePt,
+      trophy?.localizedNamePtBr,
+      trophy?.name_pt,
+      trophy?.namePt,
+      trophy?.ptName,
+      trophy?.translatedName
+    ];
+    return candidates.map(cleanTrophyYoutubeSearchPart).find(Boolean) || '';
+  }
+
+  function normalizeTrophyYoutubeSearchKey(value = '') {
+    return String(value || '')
+      .normalize('NFD')
+      .replace(/[\u0300-\u036f]/g, '')
+      .replace(/[^\w\s]/g, '')
+      .replace(/\s+/g, ' ')
+      .trim()
+      .toLowerCase();
+  }
+
+  function buildTrophyYoutubeSearchParts(gameTitle = '', trophy = {}) {
+    const parts = [
+      cleanTrophyYoutubeSearchPart(gameTitle),
+      getTrophyYoutubeOfficialName(trophy),
+      getTrophyYoutubePtName(trophy),
+      'troféu',
+      'trophy guide'
+    ];
+    const seen = new Set();
+    return parts.filter(part => {
+      const key = normalizeTrophyYoutubeSearchKey(part);
+      if (!key || seen.has(key)) return false;
+      seen.add(key);
+      return true;
+    });
+  }
+
+  function encodeTrophyYoutubeQuery(value = '') {
+    return encodeURIComponent(value).replace(/[!'()*]/g, char => `%${char.charCodeAt(0).toString(16).toUpperCase()}`);
+  }
+
+  function buildTrophyYoutubeSearchUrl(gameTitle = '', trophy = {}) {
+    const query = buildTrophyYoutubeSearchParts(gameTitle, trophy).join(' ');
+    return query
+      ? `https://www.youtube.com/results?search_query=${encodeTrophyYoutubeQuery(query)}`
+      : 'https://www.youtube.com/results';
+  }
+
+  function buildTrophyYoutubeSearchAriaLabel(gameTitle = '', trophy = {}) {
+    const seen = new Set();
+    const names = [getTrophyYoutubeOfficialName(trophy), getTrophyYoutubePtName(trophy)]
+      .filter(name => {
+        const key = normalizeTrophyYoutubeSearchKey(name);
+        if (!key || seen.has(key)) return false;
+        seen.add(key);
+        return true;
+      })
+      .join(' / ');
+    const suffix = names || cleanTrophyYoutubeSearchPart(gameTitle) || 'este troféu';
+    return `Buscar vídeo no YouTube para o troféu ${suffix}`;
   }
 
   function countGuideTrophyTag(trophies = [], tagId = '') {
@@ -5708,6 +5792,9 @@
     getGuideTrophyTags,
     getGuideTrophyDisplayTags,
     getGuideTrophySearchText,
+    buildTrophyYoutubeSearchParts,
+    buildTrophyYoutubeSearchUrl,
+    buildTrophyYoutubeSearchAriaLabel,
     buildGuideQuickDecisionModel,
     buildGuideShortcutModel,
     buildGuideStartContextModel,

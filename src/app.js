@@ -720,6 +720,12 @@ function renderTrophyCardHtml(trophy, completedIds = new Set(), index = 0, game 
     : '';
   const toggleLabel = done ? 'Desmarcar' : 'Concluir';
   const toggleAria = `${toggleLabel} ${primaryName}`;
+  const youtubeSearchUrl = typeof sharedGuideViewModel.buildTrophyYoutubeSearchUrl === 'function'
+    ? sharedGuideViewModel.buildTrophyYoutubeSearchUrl(game?.name || game?.title || '', trophy)
+    : '';
+  const youtubeAriaLabel = typeof sharedGuideViewModel.buildTrophyYoutubeSearchAriaLabel === 'function'
+    ? sharedGuideViewModel.buildTrophyYoutubeSearchAriaLabel(game?.name || game?.title || '', trophy)
+    : `Buscar vídeo no YouTube para o troféu ${primaryName}`;
 
   return `
     <article class="trophy-card atlas-trophy-card atlas-panel atlas-panel--quiet ${done ? 'completed' : ''} ${hasDetailsToggle ? 'has-details-toggle' : ''}" data-trophy-id="${escapeHtml(trophy.id || '')}" data-type="${escapeHtml(trophy.type || 'Bronze')}" data-risks="${escapeHtml(riskTokens)}" data-status="${done ? 'completed' : 'pending'}" data-search="${escapeHtml(search)}">
@@ -744,6 +750,7 @@ function renderTrophyCardHtml(trophy, completedIds = new Set(), index = 0, game 
         </div>
         <div class="atlas-trophy-card__actions">
           <button type="button" class="atlas-btn ${done ? 'atlas-btn-secondary' : 'atlas-btn-primary'} atlas-trophy-toggle" data-trophy-toggle="${escapeHtml(trophy.id || '')}" aria-pressed="${done ? 'true' : 'false'}" aria-label="${escapeHtml(toggleAria)}"><i class="fas ${done ? 'fa-rotate-left' : 'fa-check'}"></i><span>${escapeHtml(toggleLabel)}</span></button>
+          ${youtubeSearchUrl ? `<a class="atlas-btn atlas-btn-secondary atlas-btn-compact atlas-trophy-youtube-link" href="${escapeHtml(youtubeSearchUrl)}" target="_blank" rel="noopener noreferrer" aria-label="${escapeHtml(youtubeAriaLabel)}"><i class="fas fa-video" aria-hidden="true"></i><span>Ver no YouTube</span></a>` : ''}
         </div>
       </div>
     </article>`;
@@ -1087,8 +1094,26 @@ function buildGuideFaqStructuredData(canonicalUrl, viewModel) {
 function renderGuideEditorialNotesHtml(game = {}, viewModel = {}) {
   const normalizedSlug = String(game?.slug || '').trim().toLowerCase();
   const routeTrophyLimit = normalizedSlug === 'red-dead-redemption-2' ? 11 : (normalizedSlug === 'marvels-spider-man-2' ? 8 : 5);
-  const routeTrophies = Array.isArray(viewModel.routeChangingTrophies) ? viewModel.routeChangingTrophies.slice(0, routeTrophyLimit) : [];
-  const faqLimit = normalizedSlug === 'marvels-spider-man-miles-morales' ? 12 : (['nioh-3', 'saros', 'the-last-of-us-part-ii'].includes(normalizedSlug) ? 11 : (['the-last-of-us-part-i', 'subnautica'].includes(normalizedSlug) ? 10 : (normalizedSlug === 'dark-souls-remastered' ? 9 : (['god-of-war-ragnarok', 'resident-evil-2-remake', 'resident-evil-3-remake', 'hollow-knight', 'marvels-spider-man'].includes(normalizedSlug) ? 8 : (normalizedSlug === 'red-dead-redemption-2' ? 7 : 6)))));
+  const explicitAttentionPoints = ['days-gone', 'hogwarts-legacy'].includes(normalizedSlug) && Array.isArray(game?.attentionPoints)
+    ? game.attentionPoints.map(item => {
+      const tags = Array.isArray(item?.tags)
+        ? item.tags.map(tag => {
+          if (typeof tag === 'string') return { label: tag, tone: 'neutral' };
+          return tag?.label ? tag : null;
+        }).filter(Boolean)
+        : [];
+      return {
+        name: item?.title || item?.name || '',
+        text: item?.detail || item?.tip || item?.text || item?.description || '',
+        type: item?.type || tags[0]?.label || '',
+        tags
+      };
+    }).filter(item => item.name && item.text)
+    : [];
+  const routeTrophies = explicitAttentionPoints.length
+    ? explicitAttentionPoints
+    : (Array.isArray(viewModel.routeChangingTrophies) ? viewModel.routeChangingTrophies.slice(0, routeTrophyLimit) : []);
+  const faqLimit = normalizedSlug === 'marvels-spider-man-miles-morales' ? 12 : (['nioh-3', 'saros', 'the-last-of-us-part-ii'].includes(normalizedSlug) ? 11 : (['days-gone', 'hogwarts-legacy', 'the-last-of-us-part-i', 'subnautica'].includes(normalizedSlug) ? 10 : (normalizedSlug === 'dark-souls-remastered' ? 9 : (['god-of-war-ragnarok', 'resident-evil-2-remake', 'resident-evil-3-remake', 'hollow-knight', 'marvels-spider-man'].includes(normalizedSlug) ? 8 : (normalizedSlug === 'red-dead-redemption-2' ? 7 : 6)))));
   const faqItems = Array.isArray(viewModel.contextualFaq) ? viewModel.contextualFaq.slice(0, faqLimit) : [];
   const playerFit = viewModel.playerFit || buildGuidePlayerFit(game, viewModel);
   const methodItems = Array.isArray(viewModel.editorial?.methodItems) ? viewModel.editorial.methodItems : [];

@@ -444,6 +444,27 @@
     return String(value || '').toLowerCase().normalize('NFD').replace(/[\u0300-\u036f]/g, '');
   }
 
+  function normalizeCatalogBoolean(value) {
+    if (typeof value === 'boolean') return value;
+    if (typeof value === 'number') {
+      if (value === 1) return true;
+      if (value === 0) return false;
+    }
+    const text = normalizeCatalogSignalText(value);
+    if (!text) return undefined;
+    if (['true', '1', 'sim', 'yes', 'y', 'on'].includes(text)) return true;
+    if (['false', '0', 'nao', 'não', 'no', 'n', 'off'].includes(text)) return false;
+    return undefined;
+  }
+
+  function resolveCatalogBoolean(...values) {
+    for (const value of values) {
+      const normalized = normalizeCatalogBoolean(value);
+      if (normalized !== undefined) return normalized;
+    }
+    return undefined;
+  }
+
   function getCatalogText(game = {}, keys = []) {
     return normalizeCatalogSignalText(keys.map(key => game?.[key]).filter(Boolean).join(' '));
   }
@@ -465,11 +486,8 @@
   }
 
   function hasCatalogCoopRequired(game = {}) {
-    if (game?.coopRequired === false || game?.requiresCoop === false || game?.hasMandatoryCoop === false) {
-      const explicitText = getCatalogText(game, ['online_summary', 'guide_online', 'online', 'before_you_start']);
-      const explicitStrong = /exige 2 jogadores|2 jogadores|dois jogadores|nao pode ser platinado solo|nao pode ser feito solo|campanha em coop|segundo jogador|dupla obrigatoria/.test(explicitText);
-      if (!explicitStrong) return false;
-    }
+    const explicitCoopRequired = resolveCatalogBoolean(game?.coopRequired, game?.coop_required, game?.requiresCoop, game?.hasMandatoryCoop);
+    if (explicitCoopRequired !== undefined) return explicitCoopRequired;
     const text = getCatalogText(game, ['online_summary', 'guide_online', 'online', 'before_you_start']);
     if (!text) return false;
     const soloCapable = /pode ser (feito|feita|concluido|concluida|platinado|platinada|jogado|jogada) solo/.test(text)
@@ -480,6 +498,8 @@
   }
 
   function hasCatalogMissables(game = {}) {
+    const explicitHasMissables = resolveCatalogBoolean(game?.hasMissables, game?.has_missables);
+    if (explicitHasMissables === false) return false;
     const count = Number(game?.missable_count || game?.missableCount || 0);
     const text = getCatalogText(game, ['missable_summary', 'missable']);
     if (count > 0) return true;
@@ -536,10 +556,11 @@
     const baseGame = hasCatalogBaseGameScope(game);
     const chapterSelect = hasCatalogChapterSelect(game);
     const text = getCatalogText(game, ['online_summary', 'guide_online', 'online', 'before_you_start', 'missable_summary', 'missable', 'cleanup_advice', 'grind_summary', 'runs_summary', 'dlc_scope', 'difficulty_reason', 'time_reason']);
-    const explicitNoCoop = !coopRequired && /nao ha .*coop obrigatorio|sem coop obrigatorio|coop ou multiplayer obrigatorios?|nao exige coop|tambem nao ha coop obrigatorio/.test(text);
+    const explicitNoCoop = !coopRequired && /nao ha .*coop obrigatorio|sem coop obrigatorio|sem .*coop obrigatorio|coop ou multiplayer obrigatorios?|nao exige coop|tambem nao ha coop obrigatorio/.test(text);
     const hasCollectibles = /colet|colecion|cartas|trading cards|moedas|coins|artefatos|firefly pendants|comics|artifacts|notes|di[aá]rio|journal entries|manuais|manuals|ferramentas|tools|safes|cofres|shiv doors|bancadas|workbenches|conversas opcionais|piadas/.test(text);
     const hasCleanup = /cleanup|limpar|sele[cç]ao de cap[ií]tulos|chapter select/.test(text);
-    const hasNewGamePlus = /ng\+|new game\+/.test(text);
+    const explicitNewGamePlusRequired = resolveCatalogBoolean(game?.newGamePlusRequired, game?.requiresNewGamePlus);
+    const hasNewGamePlus = explicitNewGamePlusRequired === false ? false : /ng\+|new game\+/.test(text);
     const hasPartialNewGamePlus = /ng\+ parcial|new game\+ parcial/.test(text);
     const hasUpgrades = /upgrade|upgrades|melhoria|melhorias|suplementos|pe[cç]as/.test(text);
     const noMissableLabel = /definitiv|permanente|chapter select|sele[cç]ao de cap[ií]tulos/.test(text) ? 'Sem perdíveis definitivos' : 'Sem perdíveis';

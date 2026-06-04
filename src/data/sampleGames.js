@@ -31141,9 +31141,9 @@ const sampleGames = [
       "avoid_if": "N?o recomendada para quem quer platina curta, sem controle de perd?veis ou sem cleanup de colecion?veis, relacionamentos e endgame.",
       "editorial_status": "published",
       "coverage_level": "strong",
-      "is_verified": true,
-      "verification_status": "verified",
-      "verification_note": "Guia verificado editorialmente para a lista base PS5 de 56 trof?us, com 5 perd?veis consolidados e rota offline sem coop, DLC, New Game+ ou dificuldade obrigat?ria.",
+      "is_verified": false,
+      "verification_status": "review",
+      "verification_note": "Guia publicado com cobertura forte, aguardando revisão editorial final para selo Verificado.",
       "runs": "1 jogada + cleanup no Act 3/pós-game",
       "hasMissables": true,
       "missableCount": 5,
@@ -31186,10 +31186,10 @@ const sampleGames = [
       "best_for": "Recomendada para quem gosta de RPG por turnos, ações em tempo real, chefes opcionais, exploração e checklist de colecionáveis.",
       "avoid_if": "Não recomendada para quem quer platina curta, sem controle de perdíveis ou sem cleanup de colecionáveis, relacionamentos e endgame.",
       "coverage_level": "strong",
-      "is_verified": true,
-      "verification_status": "verified",
-      "verification_note": "Guia verificado editorialmente para a lista base PS5 de 56 troféus, com 5 perdíveis consolidados e rota offline sem coop, DLC, New Game+ ou dificuldade obrigatória.",
-      "editorial_review_status": "verified",
+      "is_verified": false,
+      "verification_status": "review",
+      "verification_note": "Guia publicado com cobertura forte, aguardando revisão editorial final para selo Verificado.",
+      "editorial_review_status": "in_review",
       "last_reviewed_at": "2026-05-28",
       "lastReviewedAt": "2026-05-28T00:00:00.000-03:00",
       "editorial_notes": "Lista base PS5 de 56 troféus organizada com dificuldade 3/10, 50-70h, offline, sem coop, sem DLC obrigatória e 1 jogada + cleanup. Mantidos 5 perdíveis de referência: Follow The Trail, Maelle, Connoisseur, Professional e A Peculiar Encounter. Curious foi removido da contagem de perdíveis. New Game+ e dificuldade não são requisitos.",
@@ -38094,6 +38094,759 @@ if (re5Guide) {
     trophy.dlcRequired = false;
     trophy.tags = re5TagsById[trophy.id] || trophy.tags || [];
   }
+}
+
+const hogwartsGuide = sampleGames.find(game => game.slug === 'hogwarts-legacy');
+if (hogwartsGuide) {
+  Object.assign(hogwartsGuide, {
+    title: 'Hogwarts Legacy',
+    published: true,
+    developer: 'Avalanche Software',
+    publisher: 'Warner Bros. Games',
+    platforms: ['PS4', 'PS5'],
+    platform_base: 'PS4/PS5',
+    platformBase: 'PS4/PS5',
+    guideScope: 'Lista base PS4/PS5 de 46 troféus',
+    release_date: '2023-02-10',
+    releaseDate: '2023-02-10',
+    genre: ['RPG de ação', 'mundo aberto'],
+    tags: ['mundo aberto', 'RPG', 'campanha', 'colecionáveis', 'challenges', 'exploração', 'cleanup', 'grind', 'quatro casas', 'offline', 'sem coop', 'sem DLC obrigatória'],
+    difficulty: 3,
+    estimatedTime: '60-80 horas',
+    time: '60-80 horas',
+    time_min_hours: 60,
+    time_max_hours: 80,
+    time_sort_hours: 60,
+    time_bucket: 'long',
+    runs: 'Uma campanha principal completa e três runs parciais de casas até a Câmara do Mapa',
+    hasMissables: false,
+    missableCount: 0,
+    missable_count: 0,
+    hasOnline: false,
+    hasMandatoryOnline: false,
+    hasMandatoryCoop: false,
+    onlineRequired: false,
+    online_required: false,
+    coopRequired: false,
+    coop_required: false,
+    dlcRequired: false,
+    dlc_required: false,
+    dlcRequiredForPlatinum: false,
+    newGamePlusRequired: false,
+    difficultyTrophiesRequired: false,
+    platinumType: 'lista base + campanha + mundo aberto + colecionáveis + quatro casas',
+    missable: 'Não há perdíveis rígidos na lista base se o jogador usar o free roam e fizer cleanup. O risco real está em deixar colecionáveis, challenges, camps e atividades por região acumularem demais, especialmente Collector\'s Edition.',
+    runs_summary: 'A platina completa fica no personagem principal, mas é necessário criar personagens das outras casas e avançar cada um até a Câmara do Mapa para os troféus específicos de casa.',
+    missable_summary: '0 perdíveis rígidos. Os quatro troféus de casa são runs parciais até a Câmara do Mapa, não perda definitiva de colecionáveis.',
+    online_summary: 'Não há online obrigatório, coop obrigatório, multiplayer, servidores ou PS+ para a platina da lista base. Hogwarts Legacy é uma platina single-player/offline.',
+    grind_summary: 'O grind principal está em Collector\'s Edition, coleções, Field Guide Pages, Merlin Trials, Demiguise Statues, challenges, side quests, Floo Flames, camps, Room of Requirement e três runs parciais de casas.',
+    dlc_scope: 'DLC fora da platina base: Dark Arts Pack, cosméticos, montarias extras, itens de edição Deluxe, bônus de pré-venda e conteúdo adicional não entram nos 46 troféus da lista base.',
+    difficulty_reason: 'A dificuldade 3/10 vem do baixo risco mecânico e da ausência de dificuldade obrigatória. O compromisso real é tempo, checklist longo, colecionáveis e organização por região.',
+    time_reason: 'A estimativa de 60-80 horas considera campanha, mundo aberto, side quests, challenges, Merlin Trials, colecionáveis, Room of Requirement, cleanup e quatro casas até a Câmara do Mapa.',
+    first_run_advice: 'Comece a campanha explorando com calma, desbloqueando Floo Flames, feitiços, talentos e atividades do mapa. Faça side quests quando surgirem e já acompanhe colecionáveis importantes, mas deixe o cleanup pesado de Collector\'s Edition, Merlin Trials, challenges e quatro casas até a Câmara do Mapa para etapas dedicadas.',
+    cleanup_advice: 'Depois da história, use o free roam para limpar Field Guide Pages, Demiguise Statues, Collection Chests, Ancient Magic Hotspots, Landing Platforms, Infamous Foes, Balloons, beasts, conjurations, traits, side quests, challenges e atividades restantes por região.',
+    before_you_start: 'Confirme que o guia cobre a lista base PS4/PS5 de 46 troféus. Dark Arts Pack, cosméticos, montarias extras e conteúdos adicionais ficam fora da platina base. Planeje Collector\'s Edition e as quatro casas até a Câmara do Mapa desde cedo.',
+    best_for: 'Vale platinar Hogwarts Legacy se você gosta de mundo aberto, exploração, colecionáveis e checklist longo. A platina não exige online, coop nem DLC, mas cobra paciência para Collector\'s Edition, Merlin Trials, challenges, side quests, atividades por região e quatro runs parciais até a Câmara do Mapa. É uma platina acessível e pouco difícil, porém longa e pouco indicada para quem não gosta de cleanup extenso.',
+    avoid_if: 'Evite se você não gosta de coletáveis extensos, limpeza de mapa, checklists por região ou repetir o começo do jogo com outras casas.',
+    editorial_summary: [
+      'Hogwarts Legacy é uma platina longa, mas acessível, focada em completar a campanha, explorar Hogwarts e o mundo aberto, finalizar side quests, cumprir challenges, resolver Merlin Trials e fechar uma lista grande de colecionáveis. A platina base é single-player, não exige online, coop nem DLC obrigatória.',
+      'A rota mais segura é jogar a campanha com exploração constante, desbloquear feitiços e talentos, ativar Floo Flames, limpar camps, completar Merlin Trials e acompanhar colecionáveis desde cedo. Depois da história, o free roam permite cleanup de Field Guide Pages, Demiguise Statues, Collection Chests, Ancient Magic Hotspots, Landing Platforms, Infamous Foes, Balloons, beasts, conjurations, traits e demais challenges. O principal cuidado é não subestimar Collector\'s Edition, que transforma o pós-game em um checklist longo se o jogador deixar tudo para o final.'
+    ],
+    quickDecision: {
+      recommendation: 'Vale platinar Hogwarts Legacy se você gosta de mundo aberto, exploração, colecionáveis e checklist longo. A platina não exige online, coop nem DLC, mas cobra paciência para Collector\'s Edition, Merlin Trials, challenges, side quests, atividades por região e quatro runs parciais até a Câmara do Mapa. É uma platina acessível e pouco difícil, porém longa e pouco indicada para quem não gosta de cleanup extenso.',
+      bestFor: 'Jogadores que gostam de explorar Hogwarts, limpar mapa, completar coleções e acompanhar checklist por região.',
+      avoidIf: 'Quem não gosta de cleanup extenso, colecionáveis numerosos ou repetir a introdução com outras casas pode achar a platina cansativa.',
+      firstStep: 'Comece pela campanha, ativando Floo Flames, liberando feitiços/talentos e fazendo side quests sem transformar a primeira run em checklist exaustivo.'
+    },
+    attentionPoints: [
+      { title: 'Collector\'s Edition', detail: 'É o maior gargalo da platina, porque envolve muitas categorias de coleção, challenges, recompensas e atividades espalhadas pelo mapa.', tags: ['COLETÁVEL', 'GRIND', 'CLEANUP'] },
+      { title: 'Quatro casas', detail: 'Não exige quatro campanhas completas. Crie personagens das outras casas e avance cada um apenas até a Câmara do Mapa.', tags: ['CASA', 'RUN PARCIAL'] },
+      { title: 'Merlin Trials', detail: 'Complete os Merlin Trials necessários com checklist por região, Mallowsweet e feitiços adequados para cada tipo de puzzle.', tags: ['MERLIN TRIALS', 'COLETÁVEL', 'EXPLORAÇÃO'] },
+      { title: 'Demiguise Statues', detail: 'As estátuas exigem horário noturno e ficam mais simples com checklist por região antes do cleanup final.', tags: ['COLETÁVEL', 'NOITE'] },
+      { title: 'Floo Flames e mapa por região', detail: 'Ative fast travel cedo e limpe pendências por região para evitar uma busca confusa no pós-game.', tags: ['EXPLORAÇÃO', 'COLETÁVEL', 'CLEANUP'] },
+      { title: 'Finishing Touches', detail: 'Use Ancient Magic nos tipos de inimigo exigidos e acompanhe o progresso para não precisar caçar inimigos específicos no fim.', tags: ['COMBATE', 'ATENÇÃO'] },
+      { title: 'Room of Requirement', detail: 'Poções, plantas, beasts, loom e upgrades entram em vários troféus. Compre receitas, mesas e cuide dos materiais.', tags: ['ROOM OF REQUIREMENT', 'UPGRADES'] },
+      { title: 'DLC fora da platina', detail: 'Dark Arts Pack, cosméticos, montarias extras e bônus de edição não entram nos 46 troféus base.', tags: ['DLC', 'FORA DA PLATINA'] },
+      { title: 'Online e coop', detail: 'A platina base é single-player, sem online obrigatório e sem coop obrigatório.', tags: ['OFFLINE', 'SEM COOP'] }
+    ],
+    checklist: [
+      'Confirmar 46 troféus da lista base PS4/PS5.',
+      'Confirmar onlineRequired false.',
+      'Confirmar coopRequired false.',
+      'Confirmar dlcRequired false.',
+      'Não contar Dark Arts Pack, cosméticos, montarias extras ou bônus de edição como requisito.',
+      'Completar a campanha principal.',
+      'Completar side quests e relationship quests.',
+      'Aprender todos os feitiços exigidos.',
+      'Gastar Talent Points conforme os troféus.',
+      'Completar Merlin Trials.',
+      'Completar Cairn Dungeons.',
+      'Ativar todas as Floo Flames.',
+      'Coletar Demiguise Statues.',
+      'Fechar Collector\'s Edition.',
+      'Completar challenges e resgatar recompensas.',
+      'Resolver Room of Requirement, beasts, poções, plantas e loom/upgrades.',
+      'Usar Ancient Magic nos tipos de inimigo exigidos.',
+      'Criar personagens das quatro casas e chegar à Câmara do Mapa.',
+      'Fazer cleanup final por região usando o mapa.',
+      'Conferir que Collector\'s Edition é checklist/grind, não perdível rígido.'
+    ],
+    faq: [
+      { question: 'Hogwarts Legacy exige online para platinar?', answer: 'Não. A platina base é single-player e não exige online.' },
+      { question: 'Hogwarts Legacy exige coop para platinar?', answer: 'Não. Hogwarts Legacy não tem coop obrigatório para a platina.' },
+      { question: 'Hogwarts Legacy exige DLC para platinar?', answer: 'Não. Dark Arts Pack, cosméticos, montarias extras e conteúdos adicionais não devem ser tratados como requisito da platina base.' },
+      { question: 'Hogwarts Legacy tem troféus perdíveis?', answer: 'Não há perdíveis rígidos se o jogador usar o free roam e fizer cleanup. O risco real é deixar colecionáveis e challenges acumularem demais, especialmente Collector\'s Edition.' },
+      { question: 'Quantas runs são necessárias?', answer: 'A platina completa fica no personagem principal, mas é necessário criar personagens das outras casas e avançar cada um até a Câmara do Mapa para os troféus específicos de casa.' },
+      { question: 'Preciso completar quatro campanhas?', answer: 'Não. Os troféus de casa exigem apenas chegar à Câmara do Mapa com cada casa, não repetir a campanha inteira quatro vezes.' },
+      { question: 'Qual é o maior grind da platina?', answer: 'Collector\'s Edition é o maior grind, porque envolve muitas coleções, challenges, recompensas e atividades espalhadas pelo mapa.' },
+      { question: 'Preciso pegar todos os colecionáveis do jogo?', answer: 'Siga a lista exigida por Collector\'s Edition e pelos challenges. O guia diferencia coleções necessárias, recompensas de challenge e itens que não contam para a platina.' },
+      { question: 'Dá para fazer cleanup depois da história?', answer: 'Sim. O free roam permite voltar para limpar colecionáveis, Merlin Trials, Demiguise Statues, Floo Flames, camps, challenges e atividades restantes.' },
+      { question: 'A escolha da casa muda a platina?', answer: 'Sim, mas apenas parcialmente. Cada casa tem um troféu por chegar à Câmara do Mapa, então o jogador precisa de runs parciais nas quatro casas.' }
+    ],
+    seo: {
+      title: 'Guia de Platina Hogwarts Legacy - Troféus, Roadmap e Dicas',
+      description: 'Guia de platina de Hogwarts Legacy com roadmap em português, troféus da lista base, Collector\'s Edition, Merlin Trials, Demiguise Statues, Floo Flames, quatro casas, side quests, challenges e dicas para conquistar a platina no PS4 e PS5.',
+      keywords: 'Hogwarts Legacy, guia de platina Hogwarts Legacy, troféus Hogwarts Legacy, roadmap Hogwarts Legacy, Collector\'s Edition, Merlin\'s Beard, Demiguise Dread, Floo Flames, quatro casas Hogwarts Legacy, Câmara do Mapa',
+      ogTitle: 'Hogwarts Legacy: guia de platina, troféus e roadmap',
+      ogDescription: 'Roadmap da platina base PS4/PS5 de Hogwarts Legacy com Collector\'s Edition, Merlin Trials, Demiguise, Floo Flames, quatro casas, side quests e cleanup.'
+    },
+    dlc_status: 'out_of_base_scope',
+    dlcGuideStatus: 'out_of_base_scope',
+    extraContentStatus: 'out_of_base_scope',
+    editorial_status: 'published',
+    coverage_level: 'strong',
+    is_verified: true,
+    verification_status: 'verified',
+    editorial_review_status: 'verified',
+    editorialStatus: 'verified',
+    last_reviewed_at: '2026-06-04',
+    lastReviewedAt: '2026-06-04T00:00:00.000-03:00',
+    verification_note: 'Guia verificado: lista base PS4/PS5 de 46 troféus, roadmap estruturado, checklist, FAQ, flags offline/sem coop/sem DLC, sem perdíveis rígidos, troféus EN + PT-BR e descrições em português.',
+    editorial_notes: 'Escopo revisado: Hogwarts Legacy lista base de 46 troféus. Dark Arts Pack, cosméticos, montarias extras, Deluxe/preorder e conteúdos adicionais ficam fora da platina base. Collector\'s Edition é grind/checklist, não perdível rígido.',
+    editorialNotes: 'Escopo revisado: Hogwarts Legacy lista base de 46 troféus. Dark Arts Pack, cosméticos, montarias extras, Deluxe/preorder e conteúdos adicionais ficam fora da platina base. Collector\'s Edition é grind/checklist, não perdível rígido.',
+    quality_warnings: [],
+    qualityWarnings: [],
+    roadmap: [
+      {
+        title: 'Campanha com exploração constante',
+        focus: 'História e desbloqueios',
+        objective: 'Avançar pela história liberando feitiços, talentos, Floo Flames e atividades essenciais do mundo aberto.',
+        actions: [
+          'Progrida pela campanha principal até desbloquear os principais sistemas de Hogwarts e do mapa.',
+          'Ative Floo Flames sempre que passar por uma nova região para facilitar o cleanup.',
+          'Faça side quests e assignments que liberam feitiços, especialmente os necessários para exploração e combate.',
+          'Colete páginas, baús e itens próximos sem transformar a primeira run em checklist exaustivo.',
+          'Use Ancient Magic, plantas, poções e diferentes feitiços para adiantar troféus de combate e challenges.'
+        ],
+        warning: 'A platina não é difícil, mas é longa. Se o jogador ignorar colecionáveis e atividades por muitas horas, Collector\'s Edition vira um cleanup pesado.',
+        result: 'A campanha avança com boa base de mapa, feitiços, talentos, Floo Flames e atividades abertas.'
+      },
+      {
+        title: 'Side quests, assignments e desafios de Hogwarts',
+        focus: 'Missões e escola',
+        objective: 'Completar side quests, assignments, feitiços e desafios ligados à progressão do personagem.',
+        actions: [
+          'Finalize assignments de professores para liberar todos os feitiços necessários.',
+          'Complete side quests e relationship quests conforme forem aparecendo.',
+          'Acompanhe os troféus ligados a Poppy, Natsai e Sebastian sem confundir side quest com conteúdo DLC.',
+          'Use a Room of Requirement para poções, plantas, beasts e upgrades quando necessário.',
+          'Invista talentos até resolver os troféus ligados a gasto de Talent Points.'
+        ],
+        warning: '',
+        result: 'A maior parte da progressão escolar, feitiços, side quests e evolução do personagem fica encaminhada.'
+      },
+      {
+        title: 'Mundo aberto e atividades de mapa',
+        focus: 'Exploração',
+        objective: 'Limpar as atividades principais do mapa antes do checklist final de colecionáveis.',
+        actions: [
+          'Complete todos os Merlin Trials da lista base para fechar Merlin\'s Beard!',
+          'Resolva Ancient Magic Hotspots, Astronomy Tables, Landing Platforms e Balloon Challenges conforme o checklist do projeto.',
+          'Limpe Bandit Camps, Spider Lairs, Troll Lairs, Infamous Foes e demais atividades relevantes.',
+          'Abra Collection Chests e colete itens de conjuration, traits e appearances quando surgirem.',
+          'Use o mapa por região para evitar deixar atividades espalhadas demais para o final.'
+        ],
+        warning: 'Muitas atividades contam para coleções ou challenges. Não trate como perdíveis, mas mantenha checklist por região para evitar retrabalho.',
+        result: 'O mundo aberto fica pronto para um cleanup final mais controlado.'
+      },
+      {
+        title: 'Collector\'s Edition e checklist de colecionáveis',
+        focus: 'Colecionáveis',
+        objective: 'Fechar a grande lista de coleções exigida pela platina.',
+        actions: [
+          'Revise Collection Chests, Field Guide Pages, Demiguise Statues, conjurations, traits, appearances, wand handles, beasts e demais categorias usadas pelo jogo.',
+          'Confira challenges concluídos e recompensas resgatadas, pois algumas coleções dependem de recompensas de desafio.',
+          'Complete Merlin Trials e outras atividades que alimentam progresso de collections.',
+          'Use a contagem por região do mapa para localizar pendências.',
+          'Priorize Collector\'s Edition como o principal bloco de cleanup da platina.'
+        ],
+        warning: 'Collector\'s Edition é o maior gargalo da platina. O problema não é dificuldade, mas rastrear muitas categorias e recompensas diferentes.',
+        result: 'Com as coleções fechadas, o maior checklist da platina fica resolvido.'
+      },
+      {
+        title: 'Quatro casas até a Câmara do Mapa',
+        focus: 'Runs parciais',
+        objective: 'Criar personagens das outras casas e chegar à Câmara do Mapa para os troféus específicos.',
+        actions: [
+          'Use o personagem principal para a platina completa e deixe as outras casas apenas para a etapa exigida.',
+          'Crie personagens nas casas restantes conforme os troféus pendentes.',
+          'Avance cada personagem só até alcançar a Câmara do Mapa.',
+          'Evite repetir colecionáveis ou side quests desnecessárias nessas runs parciais.',
+          'Confirme os quatro troféus de casa antes de encerrar a etapa.'
+        ],
+        warning: 'Os troféus de casa não exigem quatro platinas nem quatro campanhas completas. São apenas runs parciais até a Câmara do Mapa.',
+        result: 'Os troféus The Toast of the Town, The Auror\'s Apprentice, The Gryffindor in the Graveyard e The Wise Owl ficam resolvidos.'
+      },
+      {
+        title: 'Cleanup final e conferência da platina',
+        focus: 'Checklist',
+        objective: 'Conferir troféus restantes, challenges, colecionáveis e requisitos antes de fechar a lista base.',
+        actions: [
+          'Confira se os 46 troféus da lista base foram considerados.',
+          'Finalize combate contra inimigos restantes, Ancient Magic em todos os tipos de inimigo e desafios pendentes.',
+          'Resolva Demiguise, Merlin Trials, Floo Flames, Landing Platforms, Balloons e coleções restantes.',
+          'Garanta que Dark Arts Pack, cosméticos e conteúdos adicionais não foram marcados como requisitos da platina.',
+          'Confirme que a rota continua sem online obrigatório, sem coop obrigatório e sem DLC obrigatória.'
+        ],
+        warning: '',
+        result: 'A lista base de Hogwarts Legacy fica pronta para a platina.'
+      }
+    ]
+  });
+
+  const hogwartsTrophies = [
+    { id: 'hogwarts_trophy_triumph', name: 'Trophy Triumph', name_pt: 'Triunfo dos Troféus', type: 'Platina', description: 'Conquiste todos os outros troféus de Hogwarts Legacy.', tip: 'Complete os outros 45 troféus da lista base PS4/PS5. Dark Arts Pack e cosméticos ficam fora da platina.', tags: ['Platina'] },
+    { id: 'hogwarts_the_sort_who_makes_an_entrance', name: 'The Sort Who Makes an Entrance', name_pt: 'O tipo que faz uma entrada', type: 'Bronze', description: 'Complete a introdução e finalize a Cerimônia de Seleção.', tip: 'Troféu automático de história no início da campanha.', is_spoiler: true, tags: ['História'] },
+    { id: 'hogwarts_the_toast_of_the_town', name: 'The Toast of the Town', name_pt: 'O brinde da cidade', type: 'Bronze', description: 'Encontre a Câmara do Mapa como Slytherin.', tip: 'Crie ou use um personagem Slytherin e avance só até a Câmara do Mapa.', tags: ['Casa', 'Run parcial'] },
+    { id: 'hogwarts_the_aurors_apprentice', name: "The Auror's Apprentice", name_pt: 'Aprendiz de Auror', type: 'Bronze', description: 'Encontre a Câmara do Mapa como Hufflepuff.', tip: 'Crie ou use um personagem Hufflepuff e avance só até a Câmara do Mapa.', tags: ['Casa', 'Run parcial'] },
+    { id: 'hogwarts_the_gryffindor_in_the_graveyard', name: 'The Gryffindor in the Graveyard', name_pt: 'O Gryffindor no cemitério', type: 'Bronze', description: 'Encontre a Câmara do Mapa como Gryffindor.', tip: 'Crie ou use um personagem Gryffindor e avance só até a Câmara do Mapa.', tags: ['Casa', 'Run parcial'] },
+    { id: 'hogwarts_the_wise_owl', name: 'The Wise Owl', name_pt: 'A coruja sábia', type: 'Bronze', description: 'Encontre a Câmara do Mapa como Ravenclaw.', tip: 'Crie ou use um personagem Ravenclaw e avance só até a Câmara do Mapa.', tags: ['Casa', 'Run parcial'] },
+    { id: 'hogwarts_first_class_student', name: 'First Class Student', name_pt: 'Aluno da primeira aula', type: 'Bronze', description: 'Frequente sua primeira aula.', tip: 'Troféu automático de história ao frequentar a primeira aula.', is_spoiler: true, tags: ['História'] },
+    { id: 'hogwarts_troll_with_the_punches', name: 'Troll with the Punches', name_pt: 'Trollando com os golpes', type: 'Bronze', description: 'Sobreviva ao ataque do troll em Hogsmeade.', tip: 'Troféu automático de história em Hogsmeade.', is_spoiler: true, tags: ['História', 'Combate'] },
+    { id: 'hogwarts_thats_a_keeper', name: "That's a Keeper", name_pt: 'Esse é um Guardião', type: 'Bronze', description: 'Encontre Charles Rookwood na Câmara do Mapa.', tip: 'Troféu automático de história ligado à Câmara do Mapa.', is_spoiler: true, tags: ['História'] },
+    { id: 'hogwarts_rising_from_the_ashes', name: 'Rising From the Ashes', name_pt: 'Ressurgindo das cinzas', type: 'Prata', description: 'Resgate a fênix.', tip: 'Complete a linha de quests de Deek ligada à fênix. Pode ficar para o cleanup.', is_spoiler: true, tags: ['Side quests', 'Beasts'] },
+    { id: 'hogwarts_grappling_with_a_graphorn', name: 'Grappling with a Graphorn', name_pt: 'Lidando com um Graphorn', type: 'Bronze', description: 'Subjugue o Lord of the Shore.', tip: 'Troféu de história avançada envolvendo o Graphorn.', is_spoiler: true, tags: ['História', 'Beasts'] },
+    { id: 'hogwarts_the_one_who_mastered_memories', name: 'The One Who Mastered Memories', name_pt: 'Quem dominou as memórias', type: 'Bronze', description: 'Veja todas as memórias da Penseira.', tip: 'Avance a campanha principal para ver todas as memórias da Penseira.', is_spoiler: true, tags: ['História'] },
+    { id: 'hogwarts_the_hallowed_hero', name: 'The Hallowed Hero', name_pt: 'O herói das Relíquias', type: 'Bronze', description: 'Empunhe uma Relíquia da Morte.', tip: 'Troféu automático de história ligado a uma sequência narrativa importante.', is_spoiler: true, tags: ['História', 'Spoiler'] },
+    { id: 'hogwarts_the_hero_of_hogwarts', name: 'The Hero of Hogwarts', name_pt: 'O herói de Hogwarts', type: 'Prata', description: 'Derrote Ranrok.', tip: 'Complete o confronto final da campanha.', is_spoiler: true, tags: ['História', 'Boss'] },
+    { id: 'hogwarts_the_seeker_of_knowledge', name: 'The Seeker of Knowledge', name_pt: 'O buscador do conhecimento', type: 'Ouro', description: 'Ganhe a House Cup.', tip: 'Depois da história, conclua a quest da House Cup quando atingir o nível exigido.', is_spoiler: true, tags: ['História', 'Pós-game'] },
+    { id: 'hogwarts_the_avenging_gazelle', name: 'The Avenging Gazelle', name_pt: 'A gazela vingadora', type: 'Bronze', description: 'Complete a linha de relacionamento de Natsai Onai.', tip: 'Complete toda a relationship questline de Natsai Onai/Natty.', is_spoiler: true, tags: ['Side quests', 'Relacionamento'] },
+    { id: 'hogwarts_the_defender_of_dragons', name: 'The Defender of Dragons', name_pt: 'O defensor dos dragões', type: 'Bronze', description: 'Salve um dragão.', tip: 'Troféu de história ligado a uma missão envolvendo um dragão.', is_spoiler: true, tags: ['História', 'Side quests'] },
+    { id: 'hogwarts_beast_friends', name: 'Beast Friends', name_pt: 'Amigos das feras', type: 'Bronze', description: 'Complete a linha de relacionamento de Poppy Sweeting.', tip: 'Complete toda a relationship questline de Poppy Sweeting.', is_spoiler: true, tags: ['Side quests', 'Beasts'] },
+    { id: 'hogwarts_a_sallow_grave', name: 'A Sallow Grave', name_pt: 'Um túmulo Sallow', type: 'Bronze', description: 'Complete a linha de relacionamento de Sebastian Sallow.', tip: 'Complete toda a relationship questline de Sebastian Sallow.', is_spoiler: true, tags: ['Side quests', 'Relacionamento'] },
+    { id: 'hogwarts_flight_the_good_flight', name: 'Flight the Good Flight', name_pt: 'Voe o bom voo', type: 'Prata', description: 'Supere o tempo de Imelda em todas as corridas de vassoura.', tip: 'Avance as corridas de vassoura de Imelda e vença os tempos exigidos.', tags: ['Vassoura', 'Side quests'] },
+    { id: 'hogwarts_the_good_samaritan', name: 'The Good Samaritan', name_pt: 'O bom samaritano', type: 'Prata', description: 'Complete todas as side quests.', tip: 'Complete todas as side quests disponíveis. Elas podem ser limpas depois da história.', tags: ['Side quests', 'Cleanup'] },
+    { id: 'hogwarts_challenge_accepted', name: 'Challenge Accepted', name_pt: 'Desafio aceito', type: 'Bronze', description: 'Complete todos os níveis de um challenge.', tip: 'Complete todos os tiers de qualquer challenge. Isso costuma vir no caminho para 100%.', tags: ['Challenges', 'Progressão'] },
+    { id: 'hogwarts_collectors_edition', name: "Collector's Edition", name_pt: 'Edição de colecionador', type: 'Prata', description: 'Complete todas as coleções.', tip: 'O maior gargalo da platina: exige coleções, conjurations, traits, appearances, recompensas e checklist por região.', tags: ['Coletável', 'Grind', 'Cleanup'] },
+    { id: 'hogwarts_a_keen_sense_of_spell', name: 'A Keen Sense of Spell', name_pt: 'Um sentido aguçado de feitiço', type: 'Bronze', description: 'Use Ancient Magic pela primeira vez.', tip: 'Use Ancient Magic em combate quando o medidor estiver cheio.', tags: ['Combate', 'Progressão'] },
+    { id: 'hogwarts_loom_for_improvement', name: 'Loom for Improvement', name_pt: 'Tear para melhorar', type: 'Bronze', description: 'Melhore uma peça de equipamento.', tip: 'Use o Loom na Room of Requirement para melhorar uma peça de equipamento.', tags: ['Upgrades', 'Room of Requirement'] },
+    { id: 'hogwarts_the_root_of_the_problem', name: 'The Root of the Problem', name_pt: 'A raiz do problema', type: 'Bronze', description: 'Atordoe 10 inimigos diferentes usando uma Mandrake.', tip: 'Cultive ou compre Mandrakes e use-as contra 10 inimigos diferentes.', tags: ['Plantas', 'Room of Requirement', 'Combate'] },
+    { id: 'hogwarts_the_nature_of_the_beast', name: 'The Nature of the Beast', name_pt: 'A natureza das feras', type: 'Prata', description: 'Reproduza todos os tipos de fera.', tip: 'Capture e reproduza todos os tipos de fera necessários nos vivariums.', tags: ['Beasts', 'Room of Requirement'] },
+    { id: 'hogwarts_going_through_the_potions', name: 'Going Through the Potions', name_pt: 'Passando pelas poções', type: 'Prata', description: 'Prepare todos os tipos de poção.', tip: 'Compre receitas, reúna ingredientes e prepare todos os tipos de poção.', tags: ['Poções', 'Room of Requirement'] },
+    { id: 'hogwarts_put_down_roots', name: 'Put Down Roots', name_pt: 'Crie raízes', type: 'Prata', description: 'Cultive todos os tipos de planta.', tip: 'Compre sementes e mesas de cultivo para plantar todos os tipos necessários.', tags: ['Plantas', 'Room of Requirement'] },
+    { id: 'hogwarts_third_times_a_charm', name: "Third Time's a Charm", name_pt: 'A terceira é a certa', type: 'Prata', description: 'Melhore uma peça de equipamento 3 vezes.', tip: 'Melhore uma peça três vezes no Loom. Materiais de beasts serão necessários.', tags: ['Upgrades', 'Room of Requirement'] },
+    { id: 'hogwarts_a_talent_for_spending', name: 'A Talent for Spending', name_pt: 'Talento para gastar', type: 'Bronze', description: 'Gaste 5 Talent Points.', tip: 'Gaste 5 Talent Points após desbloquear talentos na campanha.', tags: ['Talentos', 'Progressão'] },
+    { id: 'hogwarts_savvy_spender', name: 'Savvy Spender', name_pt: 'Gastador esperto', type: 'Prata', description: 'Gaste todos os Talent Points.', tip: 'Alcance o nível 40 e gaste todos os Talent Points disponíveis.', tags: ['Talentos', 'Progressão'] },
+    { id: 'hogwarts_room_with_a_view', name: 'Room with a View', name_pt: 'Quarto com vista', type: 'Bronze', description: 'Alcance o ponto mais alto do castelo, o escritório superior do diretor.', tip: 'Desbloqueie Alohomora no nível necessário e alcance o upper study do Headmaster.', tags: ['Exploração', 'Hogwarts', 'Cleanup'] },
+    { id: 'hogwarts_spilled_milk', name: 'Spilled Milk', name_pt: 'Leite derramado', type: 'Bronze', description: 'Use Flipendo dez vezes para virar uma vaca ou várias.', tip: 'Após aprender Flipendo, use o feitiço 10 vezes em uma ou mais vacas.', tags: ['Feitiços', 'Situacional'] },
+    { id: 'hogwarts_floo_around_the_world', name: 'Floo Around the World', name_pt: 'Floo pelo mundo', type: 'Bronze', description: 'Desbloqueie todas as Floo Flames.', tip: 'Ative todas as Floo Flames para completar a rede de viagem rápida.', tags: ['Exploração', 'Coletável', 'Cleanup'] },
+    { id: 'hogwarts_followed_the_butterflies', name: 'Followed the Butterflies', name_pt: 'Seguiu as borboletas', type: 'Bronze', description: 'Siga borboletas até um tesouro.', tip: 'Siga um grupo de borboletas até o tesouro e abra o baú de collection.', tags: ['Exploração', 'Coletável'] },
+    { id: 'hogwarts_rise_to_the_challenges', name: 'Rise to the Challenges', name_pt: 'À altura dos desafios', type: 'Prata', description: 'Derrote inimigos em todas as battle arenas.', tip: 'Conclua todas as battle arenas exigidas pela lista base.', tags: ['Challenges', 'Grind', 'Cleanup'] },
+    { id: 'hogwarts_merlins_beard', name: "Merlin's Beard!", name_pt: 'Pelas barbas de Merlin!', type: 'Prata', description: 'Complete todos os Merlin Trials.', tip: 'Complete todos os Merlin Trials do mapa. Tenha Mallowsweet para iniciar os trials.', tags: ['Merlin Trials', 'Coletável', 'Exploração', 'Cleanup'] },
+    { id: 'hogwarts_the_intrepid_explorer', name: 'The Intrepid Explorer', name_pt: 'O explorador intrépido', type: 'Bronze', description: 'Descubra todos os Cairn Dungeons.', tip: 'Descubra todos os Cairn Dungeons e use o mapa para conferir regiões pendentes.', tags: ['Exploração', 'Dungeons', 'Coletável', 'Cleanup'] },
+    { id: 'hogwarts_coasting_along', name: 'Coasting Along', name_pt: 'Seguindo pela costa', type: 'Bronze', description: 'Visite Poidsear Coast.', tip: 'Avance a história ou explore o caminho sul até chegar a Poidsear Coast.', tags: ['História', 'Exploração'] },
+    { id: 'hogwarts_demiguise_dread', name: 'Demiguise Dread', name_pt: 'Pavor de Demiguise', type: 'Bronze', description: 'Encontre todas as Demiguise Statues.', tip: 'Colete todas as Demiguise Statues à noite e avance Alohomora com a quest correspondente.', tags: ['Coletável', 'Exploração', 'Cleanup'] },
+    { id: 'hogwarts_the_ends_petrify_the_means', name: 'The Ends Petrify the Means', name_pt: 'Os fins petrificam os meios', type: 'Prata', description: 'Derrote 50 inimigos usando Petrificus Totalus.', tip: 'Use Disillusionment e finalize 50 inimigos com Petrificus Totalus.', tags: ['Stealth', 'Combate'] },
+    { id: 'hogwarts_raising_expectations', name: 'Raising Expectations', name_pt: 'Elevando expectativas', type: 'Bronze', description: 'Alcance um combo de 100.', tip: 'Use uma battle arena ou inimigos resistentes para manter um combo de 100 sem ser atingido.', tags: ['Combate', 'Skill'] },
+    { id: 'hogwarts_finishing_touches', name: 'Finishing Touches', name_pt: 'Toques finais', type: 'Prata', description: 'Use Ancient Magic em todos os tipos de inimigo exigidos.', tip: 'Use Ancient Magic nos tipos de inimigo exigidos e acompanhe o progresso para evitar caça específica no final.', tags: ['Combate', 'Atenção', 'Cleanup'] },
+    { id: 'hogwarts_the_spell_master', name: 'The Spell Master', name_pt: 'Mestre dos feitiços', type: 'Prata', description: 'Aprenda todos os feitiços aplicáveis ao troféu.', tip: 'Complete assignments e quests necessários para aprender todos os feitiços exigidos.', tags: ['Feitiços', 'Progressão'] },
+    { id: 'hogwarts_a_forte_for_achievement', name: 'A Forte for Achievement', name_pt: 'Um forte para conquistas', type: 'Ouro', description: 'Alcance o nível 40.', tip: 'Chegue ao nível 40 completando challenges, side quests e conteúdo de mundo aberto.', tags: ['Progressão', 'Level'] }
+  ];
+
+  hogwartsGuide.trophies = hogwartsTrophies.map(trophy => ({
+    ...trophy,
+    trophyNameOriginal: trophy.name,
+    originalName: trophy.name,
+    officialName: trophy.name,
+    trophyNamePtBr: trophy.name_pt,
+    namePtSource: 'editorial_ptbr',
+    descriptionPtBr: trophy.description,
+    ptDescription: trophy.description,
+    localizedDescription: { ptBr: trophy.description },
+    descriptionPtSource: 'editorial_ptbr',
+    guideTip: trophy.tip,
+    tipPtBr: trophy.tip,
+    localizedTip: { ptBr: trophy.tip },
+    is_missable: false,
+    isMissable: false,
+    missable: false,
+    is_spoiler: Boolean(trophy.is_spoiler),
+    is_online: false,
+    isOnline: false,
+    is_coop: false,
+    isCoop: false,
+    dlcRequired: false
+  }));
+}
+
+const daysGoneGuide = sampleGames.find(game => game.slug === 'days-gone');
+if (daysGoneGuide) {
+  Object.assign(daysGoneGuide, {
+    title: 'Days Gone',
+    published: true,
+    developer: 'Bend Studio',
+    publisher: 'Sony Interactive Entertainment',
+    platforms: ['PS4'],
+    platform_base: 'PS4',
+    platformBase: 'PS4',
+    guideScope: 'Lista base PS4 de 46 trofeus',
+    release_date: '2019-04-26',
+    releaseDate: '2019-04-26',
+    genre: ['acao-aventura', 'mundo aberto', 'sobrevivencia'],
+    tags: ['mundo aberto', 'acao', 'sobrevivencia', 'campanha', 'hordas', 'coletaveis', 'grind', 'cleanup', 'offline', 'sem coop', 'sem DLC obrigatoria'],
+    difficulty: 4,
+    estimatedTime: '60-80 horas',
+    time: '60-80 horas',
+    time_min_hours: 60,
+    time_max_hours: 80,
+    time_sort_hours: 60,
+    time_bucket: 'long',
+    runs: 'Uma run com cleanup em free roam depois da historia',
+    hasMissables: false,
+    missableCount: 0,
+    missable_count: 0,
+    hasOnline: false,
+    hasMandatoryOnline: false,
+    hasMandatoryCoop: false,
+    onlineRequired: false,
+    online_required: false,
+    coopRequired: false,
+    coop_required: false,
+    dlcRequired: false,
+    dlc_required: false,
+    dlcRequiredForPlatinum: false,
+    newGamePlusRequired: false,
+    difficultyTrophiesRequired: false,
+    platinumType: 'lista base PS4 + campanha + storylines + hordas + cleanup',
+    missable: "Nao ha trofeus perdiveis rigidos na lista base de Days Gone: o free roam depois da historia permite voltar para hordas, acampamentos, NERO checkpoints, infestations, colecionaveis e trofeus acumulativos. O cuidado real e You've Got Red on You, que nao e perdivel, mas fica bem mais lento se voce ignorar loot de cadaveres humanos durante a campanha.",
+    runs_summary: "Uma run e suficiente para a platina base. Complete a campanha, adiante storylines e atividades do mapa, depois use o free roam pos-historia para cleanup de hordas, NERO, acampamentos, colecionaveis, moto, skills e grind restante.",
+    missable_summary: "Sem perdiveis rigidos: a lista base permite cleanup depois da historia. You've Got Red on You e tratado como grind/atencao, nao como trofeu perdivel.",
+    online_summary: "Nao ha exigencia online, coop, multiplayer, servidores ou PS+ para a platina da lista base. Days Gone e uma platina single-player/offline.",
+    grind_summary: "O grind principal esta em You've Got Red on You, Freaker Ears, trust dos acampamentos, hordas, storylines, skills, upgrades da moto, NERO injectors e colecionaveis exigidos.",
+    dlc_scope: 'DLC fora da platina base: Survival Mode, Challenge Mode e New Game+ ficam em listas adicionais e nao entram nos 46 trofeus da platina base PS4. Days Gone Remastered/PS5, Broken Road DLC, Horde Assault, Permadeath e Speedrun Mode ficam fora da lista base PS4.',
+    difficulty_reason: 'A dificuldade 4/10 vem do volume de mundo aberto, hordas e cleanup, nao de dificuldade alta obrigatoria. A platina base pode ser feita em qualquer dificuldade.',
+    time_reason: 'A estimativa de 60-80 horas considera campanha, storylines, hordas, acampamentos, NERO checkpoints, infestations, colecionaveis, trust, skills, moto e cleanup pos-historia.',
+    first_run_advice: "Comece a campanha explorando com calma, saqueando cadaveres humanos sempre que possivel e completando acampamentos, NERO checkpoints, infestations e missoes secundarias quando surgirem. Nao precisa jogar em dificuldade alta para a platina base; o mais importante e adiantar You've Got Red on You e deixar o cleanup pos-historia mais leve.",
+    cleanup_advice: "Depois da historia, use o free roam para fechar hordas, ambush camps, marauder camps, infestation zones, NERO checkpoints, camp jobs, storylines, colecionaveis, skills, upgrades da moto, Burnout Apocalypse e qualquer acumulativo restante.",
+    before_you_start: "Confirme que o guia cobre a lista base PS4 de 46 trofeus. Survival Mode, Challenge Mode, New Game+, Days Gone Remastered/PS5, Broken Road DLC, Horde Assault, Permadeath e Speedrun Mode ficam fora da platina base. Saqueie cadaveres humanos desde cedo para You've Got Red on You.",
+    best_for: "Vale platinar Days Gone se voce gosta de mundo aberto, exploracao, sobrevivencia leve, moto e combate contra hordas. E uma platina longa, mas tranquila, sem online, sem coop, sem DLC obrigatoria e sem perdiveis rigidos. O principal cuidado e adiantar You've Got Red on You durante a campanha para nao transformar o pos-game em um grind desnecessario.",
+    avoid_if: 'Evite se voce quer uma platina curta, linear ou sem cleanup de mapa, trust de acampamentos, colecionaveis e grind acumulativo.',
+    editorial_summary: [
+      "Days Gone e uma platina longa, mas acessivel, focada em completar a campanha, avancar storylines, limpar acampamentos, hordas, NERO checkpoints, infestations e colecionaveis. A platina base e single-player, nao exige online, coop, DLC, Survival Mode, Challenge Mode nem New Game+.",
+      "A rota mais segura e jogar a historia enquanto saqueia cadaveres humanos para You've Got Red on You, completa acampamentos e libera upgrades de Deacon e da moto. Depois da campanha, o free roam permite cleanup das hordas, storylines, colecionaveis, NERO injectors, drift com nitro e trofeus restantes. O principal cuidado e nao deixar todo o loot de inimigos humanos para o final, porque esse grind pode ficar bem mais lento no pos-game."
+    ],
+    quickDecision: {
+      recommendation: "Vale platinar Days Gone se voce gosta de mundo aberto, exploracao, sobrevivencia leve, moto e combate contra hordas. E uma platina longa, mas tranquila, sem online, sem coop, sem DLC obrigatoria e sem perdiveis rigidos. O principal cuidado e adiantar You've Got Red on You durante a campanha para nao transformar o pos-game em um grind desnecessario.",
+      bestFor: 'Jogadores que gostam de limpar mapa, evoluir personagem/moto e fazer cleanup metodico.',
+      avoidIf: 'Quem quer uma platina curta ou sem grind de mundo aberto pode achar a rota cansativa.',
+      firstStep: "Comece pela campanha, saqueando cadaveres humanos desde cedo e limpando atividades regionais conforme elas aparecem."
+    },
+    attentionPoints: [
+      { title: "You've Got Red on You", detail: 'Saqueie cadaveres humanos desde o inicio. O trofeu nao e perdivel, mas deixar os 541 itens para o pos-game transforma a platina em um grind bem mais lento.', tags: ['GRIND', 'LOOT', 'ATENCAO'] },
+      { title: 'Free roam pos-historia', detail: 'Depois da campanha, o mapa volta a ficar disponivel para cleanup. Use esse momento para hordas, acampamentos, NERO checkpoints, colecionaveis e trofeus acumulativos.', tags: ['FREE ROAM', 'CLEANUP'] },
+      { title: 'Hordas', detail: 'Deixe as maiores hordas para quando Deacon tiver armas melhores, mais stamina, focus, municao e itens explosivos.', tags: ['HORDAS', 'COMBATE', 'DIFICULDADE'] },
+      { title: 'NERO checkpoints e injectors', detail: 'NERO checkpoints e injectors aceleram a evolucao de Deacon e facilitam combate, exploracao e hordas.', tags: ['NERO', 'PROGRESSAO'] },
+      { title: 'Burnout Apocalypse', detail: 'Burnout Apocalypse exige drift com nitro por pelo menos 5 segundos. Invista em upgrades da moto e teste em uma area aberta.', tags: ['MOTO', 'SKILL', 'CLEANUP'] },
+      { title: 'Camp Trust e skills', detail: 'Best Friends Forever, Make it Rain e Mr. Fahrenheit dependem de confianca, creditos, skills e atividades do mapa. Avance acampamentos e hordas para reduzir grind.', tags: ['ACAMPAMENTOS', 'GRIND', 'PROGRESSAO'] },
+      { title: 'DLC fora da platina', detail: 'Survival Mode, Challenge Mode e New Game+ tem trofeus adicionais, mas nao entram nos 46 trofeus da platina base.', tags: ['DLC', 'FORA DA PLATINA'] },
+      { title: 'Online e coop opcionais', detail: 'A platina base e single-player, sem online obrigatorio e sem coop obrigatorio.', tags: ['OFFLINE', 'SEM COOP'] }
+    ],
+    checklist: [
+      'Confirmar 46 trofeus da lista base PS4.',
+      'Nao contar Survival Mode como requisito da platina.',
+      'Nao contar Challenge Mode como requisito da platina.',
+      'Nao contar New Game+ como requisito da platina.',
+      'Nao misturar Days Gone Remastered/PS5, Horde Assault, Permadeath, Speedrun Mode ou Broken Road DLC com a lista base PS4.',
+      'Completar a campanha principal.',
+      "Saquear cadaveres humanos desde cedo para You've Got Red on You.",
+      'Completar ambush camps.',
+      'Completar infestation zones.',
+      'Completar marauder camps.',
+      'Completar NERO checkpoints e coletar injectors.',
+      'Avancar storylines exigidas pelos trofeus.',
+      'Derrotar hordas necessarias e usar hordas para recursos e ears.',
+      'Coletar Freaker Ears suficientes para Lend Me Your Ears.',
+      'Comprar skills ate fechar Mr. Fahrenheit.',
+      'Melhorar Deacon com NERO injectors.',
+      'Melhorar a moto, incluindo nitro.',
+      'Fazer drift com nitro para Burnout Apocalypse.',
+      'Completar colecionaveis exigidos pela lista base.',
+      'Fazer cleanup pos-historia em free roam.',
+      'Conferir que a platina segue offline, sem coop obrigatório, sem DLC obrigatória e sem perdíveis rígidos.'
+    ],
+    faq: [
+      { question: 'Days Gone exige online para platinar?', answer: 'Nao. A platina base e single-player e pode ser feita offline.' },
+      { question: 'Days Gone exige coop para platinar?', answer: 'Nao. A platina nao depende de coop.' },
+      { question: 'Survival Mode, Challenge Mode ou New Game+ sao necessarios para a platina?', answer: 'Nao. Esses trofeus ficam em listas adicionais e nao entram nos 46 trofeus da platina base.' },
+      { question: 'Days Gone tem trofeus perdiveis?', answer: "Nao ha perdiveis rigidos na lista base, pois ha free roam apos a historia. Ainda assim, e melhor saquear cadaveres humanos desde cedo para nao deixar You've Got Red on You virar um grind chato no pos-game." },
+      { question: 'Quantas runs sao necessarias?', answer: 'Uma run e suficiente para a platina base, com cleanup depois da historia.' },
+      { question: 'Preciso jogar em dificuldade alta?', answer: 'Nao. A platina base pode ser feita em qualquer dificuldade. Survival Mode e New Game+ pertencem a listas adicionais.' },
+      { question: 'Qual e o maior grind da platina?', answer: "You've Got Red on You e o grind mais sensivel, porque exige coletar muitos itens de cadaveres humanos. Hordas, colecionaveis e storylines tambem consomem tempo, mas sao bem controlaveis no cleanup." },
+      { question: 'Preciso matar todas as hordas?', answer: 'Siga os requisitos reais dos trofeus e storylines da lista base. Muitas hordas ajudam no progresso, Freaker Ears e recompensas, mas conteudo de DLC ou remaster nao entra como requisito da platina PS4.' },
+      { question: 'Da para fazer cleanup depois da historia?', answer: 'Sim. O free roam pos-historia permite voltar para limpar hordas, acampamentos, infestations, NERO checkpoints, colecionaveis e trofeus acumulativos.' },
+      { question: 'Days Gone Remastered muda a platina?', answer: 'Se houver guia separado do remaster, trate como lista propria. No guia base de Days Gone PS4, nao misture Horde Assault, Permadeath, Speedrun Mode ou Broken Road DLC com a platina base.' }
+    ],
+    seo: {
+      title: 'Guia de Platina Days Gone - Trofeus, Roadmap e Dicas',
+      description: "Guia de platina de Days Gone com roadmap em portugues, trofeus da lista base, hordas, NERO checkpoints, acampamentos, colecionaveis, You've Got Red on You, cleanup pos-historia e dicas para conquistar a platina no PS4.",
+      keywords: "Days Gone, guia de platina Days Gone, trofeus Days Gone, roadmap Days Gone, Days Gone PS4, One Percenter, You've Got Red on You, hordas Days Gone, NERO checkpoints, Burnout Apocalypse",
+      ogTitle: 'Days Gone: guia de platina, trofeus e roadmap',
+      ogDescription: "Roadmap da platina base PS4 de Days Gone com hordas, NERO, acampamentos, colecionaveis, You've Got Red on You e cleanup pos-historia."
+    },
+    dlc_status: 'out_of_base_scope',
+    dlcGuideStatus: 'out_of_base_scope',
+    extraContentStatus: 'out_of_base_scope',
+    editorial_status: 'published',
+    coverage_level: 'partial',
+    is_verified: false,
+    verification_status: 'review',
+    editorial_review_status: 'in_review',
+    editorialStatus: 'in_review',
+    last_reviewed_at: '2026-06-04',
+    lastReviewedAt: '2026-06-04T00:00:00.000-03:00',
+    verification_note: 'Guia em revisao editorial apos render PDF/ZIP: lista base PS4 de 46 trofeus, roadmap estruturado, checklist, FAQ, flags offline/sem coop/sem DLC, sem perdiveis rigidos, trofeus EN + PT-BR e descricoes em portugues.',
+    editorial_notes: "Escopo verificado: Days Gone PS4 lista base de 46 trofeus. Survival Mode, Challenge Mode, New Game+, Days Gone Remastered/PS5, Broken Road DLC, Horde Assault, Permadeath e Speedrun Mode ficam fora da platina base. You've Got Red on You e grind/atencao, nao perdivel rigido.",
+    editorialNotes: "Escopo verificado: Days Gone PS4 lista base de 46 trofeus. Survival Mode, Challenge Mode, New Game+, Days Gone Remastered/PS5, Broken Road DLC, Horde Assault, Permadeath e Speedrun Mode ficam fora da platina base. You've Got Red on You e grind/atencao, nao perdivel rigido.",
+    quality_warnings: [],
+    qualityWarnings: [],
+    roadmap: [
+      {
+        title: 'Campanha com saque constante e progresso natural',
+        focus: 'Historia e base da platina',
+        objective: 'Completar a historia enquanto avanca storylines, coleta recursos e reduz o grind de loot humano.',
+        actions: [
+          'Avance pela campanha principal e conclua missoes secundarias dos acampamentos quando surgirem.',
+          "Saqueie cadaveres humanos sempre que possivel para adiantar You've Got Red on You.",
+          'Complete Ambush Camps, Infestation Zones e NERO Checkpoints ao explorar novas regioes.',
+          'Use NERO Injectors para melhorar saude, stamina e focus conforme sua preferencia de combate.',
+          'Invista em upgrades da moto e de armas para facilitar deslocamento, hordas e cleanup.'
+        ],
+        warning: "You've Got Red on You nao e tecnicamente perdivel, mas fica mais demorado se o jogador ignorar cadaveres humanos durante a historia.",
+        result: 'A campanha avanca com boa parte das storylines, recursos, confianca dos acampamentos e grind de loot ja encaminhados.'
+      },
+      {
+        title: 'Storylines, acampamentos e atividades do mapa',
+        focus: 'Mundo aberto',
+        objective: 'Concluir as principais atividades paralelas necessarias para a platina base.',
+        actions: [
+          'Finalize Ambush Camps para liberar mapas e facilitar deslocamento.',
+          'Limpe Infestation Zones para reduzir ameacas e melhorar fast travel.',
+          'Complete NERO Checkpoints e colete Injectors restantes.',
+          'Avance camp jobs, bounty jobs e outras missoes ligadas as storylines.',
+          'Acompanhe o progresso de storylines ate as porcentagens exigidas pelos trofeus.'
+        ],
+        warning: '',
+        result: 'O mapa fica mais limpo, com atividades essenciais resolvidas e storylines proximas da conclusao.'
+      },
+      {
+        title: 'Hordas e combate avancado',
+        focus: 'Hordas e upgrades',
+        objective: 'Preparar Deacon para enfrentar hordas e limpar trofeus ligados a combate e progressao.',
+        actions: [
+          'Priorize armas, municao, stamina, focus e itens explosivos antes de enfrentar hordas maiores.',
+          'Use o ambiente, gargalos, molotovs, bombas e armadilhas para controlar os Freakers.',
+          'Derrote hordas necessarias para avancar storylines e liberar recompensas importantes.',
+          'Aproveite hordas e combate para acumular Freaker Ears para Lend Me Your Ears.',
+          'Complete trofeus de combate, stealth, crafting e uso de armas durante o cleanup.'
+        ],
+        warning: 'As hordas nao tornam a platina online ou coop. Elas sao um bloco single-player de preparacao, rota e controle de recursos.',
+        result: 'A parte mais intensa de combate fica controlada, com Deacon preparado para o cleanup final.'
+      },
+      {
+        title: 'Colecionaveis e progresso de Deacon',
+        focus: 'Coletaveis e evolucao',
+        objective: 'Completar colecionaveis, skills, upgrades e trofeus de progresso acumulado.',
+        actions: [
+          'Colete itens suficientes para cumprir o percentual necessario de colecionaveis da lista base.',
+          'Finalize NERO Intel, Tourism Collectibles, Historical Markers, Character Collectibles e demais categorias exigidas pelo guia.',
+          'Compre skills ate liberar Mr. Fahrenheit.',
+          'Complete upgrades relevantes da moto, incluindo nitro quando necessario.',
+          'Resolva trofeus especificos como drift com nitro, reparos, crafting, camp trust e uso de recursos.'
+        ],
+        warning: 'A platina nao exige 100% absoluto de todos os colecionaveis, mas o guia separa os percentuais que importam para os trofeus.',
+        result: 'Os blocos de evolucao, colecionaveis e trofeus acumulativos ficam prontos para a conferencia final.'
+      },
+      {
+        title: 'Cleanup pos-historia',
+        focus: 'Free roam',
+        objective: 'Usar o free roam depois da campanha para fechar hordas, storylines, colecionaveis e trofeus restantes.',
+        actions: [
+          'Apos a historia, volte as regioes abertas para concluir atividades pendentes.',
+          'Finalize hordas, Ambush Camps, Infestation Zones, NERO Checkpoints e camp jobs restantes.',
+          "Complete You've Got Red on You se ainda faltar loot de cadaveres humanos.",
+          'Resolva trofeus acumulativos, de moto, skills, crafting e combate que ficaram para tras.',
+          'Confira se Survival Mode, Challenge Mode e New Game+ continuam fora da checklist da platina base.'
+        ],
+        warning: '',
+        result: 'Com o cleanup concluido, a lista base de 46 trofeus fica pronta para a platina.'
+      }
+    ]
+  });
+
+  const daysGoneTrophies = [
+    { id: 'days_one_percenter', name: 'One Percenter', name_pt: 'Um por cento', type: 'Platina', description: 'Desbloqueie todos os outros trofeus de Days Gone.', tip: 'Conclua os outros 45 trofeus da lista base PS4. Survival Mode, Challenge Mode, New Game+ e Remastered ficam fora desta platina.', tags: ['Platina'] },
+    { id: 'days_just_a_flesh_wound', name: 'Just a Flesh Wound', name_pt: 'Foi so um arranhao', type: 'Bronze', description: "Saia de Crazy Willie's.", tip: 'Trofeu automatico de historia no inicio da campanha.', is_spoiler: true, tags: ['Historia'] },
+    { id: 'days_special_delivery', name: 'Special Delivery', name_pt: 'Entrega especial', type: 'Bronze', description: 'Faca uma entrega para Tucker ou Copeland.', tip: 'Trofeu automatico ligado aos primeiros acampamentos.', is_spoiler: true, tags: ['Historia'] },
+    { id: 'days_the_ends_and_the_means', name: 'The Ends and the Means', name_pt: 'Os fins e os meios', type: 'Bronze', description: 'Descubra o que aconteceu com a NERO.', tip: 'Trofeu automatico de historia/NERO.', is_spoiler: true, tags: ['Historia', 'NERO'] },
+    { id: 'days_lost_and_found', name: 'Lost and Found', name_pt: 'Achados e perdidos', type: 'Bronze', description: 'Siga para o sul com Boozer.', tip: 'Trofeu automatico de historia.', is_spoiler: true, tags: ['Historia'] },
+    { id: 'days_brothers_in_arm', name: 'Brothers in Arm', name_pt: 'Irmaos de armas', type: 'Bronze', description: 'Verifique como Boozer esta.', tip: 'Trofeu automatico ligado a Boozer.', is_spoiler: true, tags: ['Historia'] },
+    { id: 'days_take_back_your_name', name: 'Take Back Your Name', name_pt: 'Recupere seu nome', type: 'Bronze', description: 'Retribua o favor.', tip: 'Trofeu automatico de historia.', is_spoiler: true, tags: ['Historia'] },
+    { id: 'days_riding_nomad', name: 'Riding NOMAD', name_pt: 'Na estrada NOMAD', type: 'Bronze', description: 'Pegue a estrada sozinho.', tip: 'Trofeu automatico de transicao de regiao.', is_spoiler: true, tags: ['Historia'] },
+    { id: 'days_hold_on_tight', name: 'Hold on Tight', name_pt: 'Segure firme', type: 'Bronze', description: 'Veja um rosto familiar.', tip: 'Trofeu automatico de historia.', is_spoiler: true, tags: ['Historia'] },
+    { id: 'days_its_getting_cold_outside', name: "It's Getting Cold Outside", name_pt: 'Esta ficando frio la fora', type: 'Bronze', description: 'Reconecte-se com o que voce perdeu.', tip: 'Trofeu automatico em regiao avancada.', is_spoiler: true, tags: ['Historia'] },
+    { id: 'days_morior_invictus', name: 'Morior Invictus', name_pt: 'Morior Invictus', type: 'Prata', description: 'Siga para recuperar o que e seu.', tip: 'Trofeu automatico da reta final da historia.', is_spoiler: true, tags: ['Historia', 'Spoiler'] },
+    { id: 'days_ive_been_waiting_for_this', name: "I've Been Waiting for This", name_pt: 'Eu esperei por isso', type: 'Bronze', description: 'Consiga vinganca de uma vez por todas.', tip: 'Trofeu automatico de fechamento narrativo.', is_spoiler: true, tags: ['Historia', 'Spoiler'] },
+    { id: 'days_days_done', name: 'Days Done', name_pt: 'Dias concluidos', type: 'Ouro', description: 'Complete a historia de Days Gone.', tip: 'Conclua a campanha principal. O free roam pos-historia libera cleanup de regioes, jobs, trust e colecionaveis.', is_spoiler: true, tags: ['Historia', 'Spoiler'] },
+    { id: 'days_ambush_camp_hunter', name: 'Ambush Camp Hunter', name_pt: 'Cacador de acampamentos de emboscada', type: 'Prata', description: 'Complete a storyline Ambush Camp Hunter.', tip: 'Limpe Ambush Camps e entre nos bunkers para revelar atividades e colecionaveis da regiao.', tags: ['Mundo aberto', 'Cleanup', 'Acampamentos'] },
+    { id: 'days_infestation_exterminator', name: 'Infestation Exterminator', name_pt: 'Exterminador de infestacoes', type: 'Prata', description: 'Complete a storyline Infestation Exterminator.', tip: 'Queime os ninhos das Infestation Zones da lista base.', tags: ['Mundo aberto', 'Cleanup', 'Infestations'] },
+    { id: 'days_marauder_camp_hunter', name: 'Marauder Camp Hunter', name_pt: 'Cacador de acampamentos de saqueadores', type: 'Prata', description: 'Complete a storyline Marauder Camp Hunter.', tip: 'Complete os Marauder Camp jobs e feche a storyline correspondente.', tags: ['Mundo aberto', 'Cleanup', 'Acampamentos'] },
+    { id: 'days_worlds_end', name: "World's End", name_pt: 'Fim do mundo', type: 'Prata', description: "Complete a storyline World's End.", tip: 'Complete NERO Checkpoints. NERO Research Sites ajudam nos upgrades, mas mantenha o foco nos checkpoints exigidos.', tags: ['NERO', 'Cleanup', 'Mundo aberto'] },
+    { id: 'days_one_down', name: 'One Down', name_pt: 'Uma a menos', type: 'Prata', description: 'Derrote sua primeira horda.', tip: 'Derrote qualquer horda. Se quiser facilitar, espere armas melhores, explosivos, stamina e focus.', tags: ['Hordas', 'Combate'] },
+    { id: 'days_farewell_drift', name: 'Farewell Drift', name_pt: 'Drift de Farewell', type: 'Bronze', description: 'Acumule 10 minutos de drift com a moto.', tip: 'Faca drift em uma area segura e reabasteca quando precisar. O progresso e acumulativo.', tags: ['Moto', 'Skill', 'Acumulativo'] },
+    { id: 'days_this_is_a_knife', name: 'This is a Knife', name_pt: 'Isto e uma faca', type: 'Prata', description: 'Mate um Breaker, Reacher ou Rager com a faca.', tip: 'Enfraqueca o inimigo com armas e finalize com a Boot Knife. Ha oportunidades na historia e no free roam.', is_spoiler: false, tags: ['Combate', 'Situacional', 'Dificuldade'] },
+    { id: 'days_ghost_of_farewell', name: 'Ghost of Farewell', name_pt: 'Fantasma de Farewell', type: 'Bronze', description: 'Consiga 100 mortes furtivas.', tip: 'Use stealth em camps e inimigos humanos desde cedo; o progresso acumula naturalmente.', tags: ['Stealth', 'Combate'] },
+    { id: 'days_old_reliable', name: 'Old Reliable', name_pt: 'Velha confiavel', type: 'Bronze', description: 'Mate 200 inimigos com uma arma fabricada.', tip: 'Use armas melee fabricadas e outros recursos de crafting durante a campanha e cleanup.', tags: ['Combate', 'Armas'] },
+    { id: 'days_variety_is_the_spice_of_life', name: 'Variety is the Spice of Life', name_pt: 'Variedade e o tempero da vida', type: 'Prata', description: 'Mate um inimigo com cada tipo de virote da besta.', tip: 'Use virotes normal, residue, incendiary, explosive e poison quando forem liberados.', tags: ['Combate', 'Armas'] },
+    { id: 'days_farewell_original', name: 'Farewell Original', name_pt: 'Original de Farewell', type: 'Prata', description: 'Compre um upgrade nas categorias Performance, Visual e Paint da moto.', tip: 'Compre ao menos um item de cada categoria em um mechanic de acampamento.', tags: ['Moto', 'Upgrade'] },
+    { id: 'days_first_time_buyer', name: 'First Time Buyer', name_pt: 'Comprador de primeira viagem', type: 'Bronze', description: 'Melhore sua moto pela primeira vez.', tip: 'Compre qualquer upgrade de moto em um acampamento.', tags: ['Moto', 'Upgrade'] },
+    { id: 'days_burnout_apocalypse', name: 'Burnout Apocalypse', name_pt: 'Apocalipse de burnout', type: 'Bronze', description: 'Use nitro e drift ao mesmo tempo na moto por pelo menos 5 segundos.', tip: 'Fica mais facil com nitro melhorado, pneus melhores e uma area aberta para manter a derrapagem.', tags: ['Moto', 'Skill', 'Cleanup', 'Dificuldade'] },
+    { id: 'days_the_art_of_bike_repair', name: 'The Art of Bike Repair', name_pt: 'A arte do conserto da moto', type: 'Bronze', description: 'Use 100 scrap para reparar sua moto.', tip: 'Repare a moto com scrap sempre que sofrer dano. O total acumula.', tags: ['Moto', 'Recursos'] },
+    { id: 'days_youve_got_red_on_you', name: "You've Got Red on You", name_pt: 'Voce esta sujo de sangue', type: 'Bronze', description: 'Colete 541 itens de cadaveres.', tip: 'Saqueie cadaveres humanos desde o comeco. Nao e perdivel, mas vira grind cansativo se voce ignorar esse habito por muitas horas.', tags: ['Grind', 'Coletavel', 'Loot', 'Atencao'] },
+    { id: 'days_lend_me_your_ears', name: 'Lend Me Your Ears', name_pt: 'Empreste-me seus ouvidos', type: 'Bronze', description: 'Colete 989 Freaker Ears.', tip: 'Pegue ears de Freakers mortos, especialmente ao limpar hordas.', tags: ['Grind', 'Hordas', 'Acumulativo'] },
+    { id: 'days_finders_keepers', name: 'Finders Keepers', name_pt: 'Achado nao e roubado', type: 'Bronze', description: 'Desbloqueie seu primeiro colecionavel.', tip: 'Pegue qualquer colecionavel; muitos aparecem no caminho da historia e atividades.', tags: ['Coletavel', 'Cleanup', 'Exploracao'] },
+    { id: 'days_wannabe_fortune_hunter', name: 'Wannabe Fortune Hunter', name_pt: 'Aspirante a cacador de fortunas', type: 'Bronze', description: 'Desbloqueie mais de 50% dos colecionaveis.', tip: 'A lista base exige percentual, nao 100%. Ambush Camps ajudam a revelar pontos no mapa.', tags: ['Coletavel', 'Cleanup', 'Exploracao'] },
+    { id: 'days_the_broken_roadshow', name: 'The Broken Roadshow', name_pt: 'Show da estrada quebrada', type: 'Prata', description: 'Desbloqueie mais de 75% dos colecionaveis.', tip: 'Combine colecionaveis com camps, NERO, historia e cleanup por regiao.', tags: ['Coletavel', 'Cleanup', 'Exploracao'] },
+    { id: 'days_surviving_isnt_living', name: "Surviving Isn't Living", name_pt: 'Sobreviver nao e viver', type: 'Bronze', description: 'Resgate 10 sobreviventes.', tip: 'Resgate survivors encontrados em eventos aleatorios e envie-os para acampamentos.', tags: ['Storylines', 'Cleanup'] },
+    { id: 'days_better_living_through_chemistry', name: 'Better Living through Chemistry', name_pt: 'Vida melhor pela quimica', type: 'Bronze', description: 'Melhore saude, stamina ou focus pela primeira vez.', tip: 'Use um NERO Injector em qualquer atributo.', tags: ['NERO', 'Progressao'] },
+    { id: 'days_performance_enhanced', name: 'Performance Enhanced', name_pt: 'Performance aprimorada', type: 'Prata', description: 'Maximize saude, stamina ou focus.', tip: 'Use NERO Injectors ate maximizar um atributo; stamina ou focus ajudam bastante contra hordas.', tags: ['NERO', 'Progressao'] },
+    { id: 'days_best_friends_forever', name: 'Best Friends Forever', name_pt: 'Melhores amigos para sempre', type: 'Prata', description: 'Alcance Allied Trust em um acampamento.', tip: 'Chegue ao Trust Level 3 em qualquer acampamento.', tags: ['Acampamentos', 'Grind', 'Confianca'] },
+    { id: 'days_best_friends_forever_for_life', name: 'Best Friends Forever (For Life)', name_pt: 'Melhores amigos para sempre (para a vida toda)', type: 'Ouro', description: 'Alcance Allied Trust em tres acampamentos diferentes.', tip: 'Chegue ao Trust Level 3 em tres acampamentos. Jobs, hordas, ears, carne e plantas ajudam no grind.', tags: ['Acampamentos', 'Grind', 'Confianca'] },
+    { id: 'days_make_it_rain', name: 'Make it Rain', name_pt: 'Faz chover', type: 'Prata', description: 'Gaste 20.000 creditos em um acampamento.', tip: 'Gaste tudo no mesmo acampamento, normalmente com armas, municao ou upgrades da moto.', tags: ['Acampamentos', 'Grind', 'Creditos'] },
+    { id: 'days_welcome_to_the_party_pal', name: 'Welcome to the Party, Pal', name_pt: 'Bem-vindo a festa, parceiro', type: 'Prata', description: 'Limpe todos os Ambush Camps, Infestations e NERO Checkpoints de uma unica regiao.', tip: 'Escolha uma regiao e feche esses tres blocos de mapa para completar o requisito.', tags: ['Mundo aberto', 'Cleanup'] },
+    { id: 'days_kitchen_courier', name: 'Kitchen Courier', name_pt: 'Entregador de cozinha', type: 'Bronze', description: 'Venda carne de animal ou plantas para qualquer acampamento.', tip: 'Venda recursos na cozinha de qualquer acampamento.', tags: ['Acampamentos', 'Recursos'] },
+    { id: 'days_dont_stop_me_now', name: "Don't Stop Me Now", name_pt: 'Nao me pare agora', type: 'Bronze', description: 'Desbloqueie sua primeira skill.', tip: 'Compre qualquer skill ao ganhar pontos de experiencia.', tags: ['Skills', 'Progressao'] },
+    { id: 'days_im_out_of_control', name: "I'm Out of Control", name_pt: 'Estou fora de controle', type: 'Bronze', description: 'Desbloqueie 15 skills.', tip: 'Compre 15 skills no total.', tags: ['Skills', 'Progressao'] },
+    { id: 'days_theres_no_stopping_me', name: "There's No Stopping Me", name_pt: 'Ninguem me para', type: 'Bronze', description: 'Desbloqueie 30 skills.', tip: 'Compre 30 skills no total.', tags: ['Skills', 'Progressao'] },
+    { id: 'days_mr_fahrenheit', name: 'Mr. Fahrenheit', name_pt: 'Sr. Fahrenheit', type: 'Prata', description: 'Desbloqueie 45 skills.', tip: 'Compre todas as 45 skills da lista base.', tags: ['Skills', 'Progressao', 'Grind'] },
+    { id: 'days_go_kick_rocks', name: 'Go Kick Rocks', name_pt: 'Va chutar pedras', type: 'Bronze', description: 'Derrube 12 Anarchist Cairns.', tip: 'Derrube 12 pilhas de pedras em pontos opcionais do mapa.', tags: ['Coletavel', 'Cleanup'] },
+    { id: 'days_diy_oregonian', name: 'D.I.Y. Oregonian', name_pt: 'Faca voce mesmo, Oregoniano', type: 'Bronze', description: 'Fabrique 50 itens.', tip: 'Use crafting durante campanha e cleanup; qualquer item fabricado conta para o total.', tags: ['Crafting', 'Cleanup'] }
+  ];
+
+  daysGoneGuide.trophies = daysGoneTrophies.map(trophy => ({
+    ...trophy,
+    trophyNameOriginal: trophy.name,
+    originalName: trophy.name,
+    officialName: trophy.name,
+    trophyNamePtBr: trophy.name_pt,
+    namePtSource: 'editorial_ptbr',
+    descriptionPtBr: trophy.description,
+    ptDescription: trophy.description,
+    localizedDescription: { ptBr: trophy.description },
+    descriptionPtSource: 'editorial_ptbr',
+    guideTip: trophy.tip,
+    tipPtBr: trophy.tip,
+    localizedTip: { ptBr: trophy.tip },
+    is_missable: false,
+    isMissable: false,
+    missable: false,
+    is_spoiler: Boolean(trophy.is_spoiler),
+    is_online: false,
+    isOnline: false,
+    is_coop: false,
+    isCoop: false,
+    dlcRequired: false
+  }));
+
+  const daysGoneOfficialTextKeys = new Set([
+    'id',
+    'slug',
+    'name',
+    'trophyNameOriginal',
+    'originalName',
+    'officialName',
+    'image',
+    'cover_image',
+    'release_date',
+    'releaseDate',
+    'lastReviewedAt'
+  ]);
+  const accentDaysGoneText = value => String(value)
+    .replace(/\bNao\b/g, 'Não')
+    .replace(/\bnao\b/g, 'não')
+    .replace(/\bha\b/g, 'há')
+    .replace(/\bHa\b/g, 'Há')
+    .replace(/\bexigencia\b/g, 'exigência')
+    .replace(/\bnão e\b/g, 'não é')
+    .replace(/\bNão e\b/g, 'Não é')
+    .replace(/\bvoce\b/g, 'você')
+    .replace(/\bVoce\b/g, 'Você')
+    .replace(/\bQual e\b/g, 'Qual é')
+    .replace(/\bqual e\b/g, 'qual é')
+    .replace(/\bDa para\b/g, 'Dá para')
+    .replace(/\bda para\b/g, 'dá para')
+    .replace(/\best[aá]\b/g, 'está')
+    .replace(/\bEsta\b/g, 'Está')
+    .replace(/\bla fora\b/g, 'lá fora')
+    .replace(/\bBem-vindo a festa\b/g, 'Bem-vindo à festa')
+    .replace(/\bnao e\b/g, 'não é')
+    .replace(/\bNão e\b/g, 'Não é')
+    .replace(/\be single-player\b/g, 'é single-player')
+    .replace(/\bE uma\b/g, 'É uma')
+    .replace(/\be uma faca\b/g, 'é uma faca')
+    .replace(/\be uma platina\b/g, 'é uma platina')
+    .replace(/\be acessivel\b/g, 'é acessível')
+    .replace(/\be suficiente\b/g, 'é suficiente')
+    .replace(/\be tratado\b/g, 'é tratado')
+    .replace(/\be melhor\b/g, 'é melhor')
+    .replace(/\be adiantar\b/g, 'é adiantar')
+    .replace(/\be o grind\b/g, 'é o grind')
+    .replace(/\bO cuidado real e\b/g, 'O cuidado real é')
+    .replace(/\bO grind principal esta\b/g, 'O grind principal está')
+    .replace(/\bA dificuldade e\b/g, 'A dificuldade é')
+    .replace(/\bA estimativa de\b/g, 'A estimativa de')
+    .replace(/\bA platina base e\b/g, 'A platina base é')
+    .replace(/\bA rota mais segura e\b/g, 'A rota mais segura é')
+    .replace(/\bO principal cuidado e\b/g, 'O principal cuidado é')
+    .replace(/\bO trofeu\b/g, 'O troféu')
+    .replace(/\bTrofeu\b/g, 'Troféu')
+    .replace(/\btrofeu automatico\b/g, 'troféu automático')
+    .replace(/\bTroféu automatico\b/g, 'Troféu automático')
+    .replace(/\btrofeus\b/g, 'troféus')
+    .replace(/\bTrofeus\b/g, 'Troféus')
+    .replace(/\btrofeu\b/g, 'troféu')
+    .replace(/\bperdiveis\b/g, 'perdíveis')
+    .replace(/\bperdivel\b/g, 'perdível')
+    .replace(/\brigidos\b/g, 'rígidos')
+    .replace(/\bcadaveres\b/g, 'cadáveres')
+    .replace(/\bpossivel\b/g, 'possível')
+    .replace(/\bdisponivel\b/g, 'disponível')
+    .replace(/\bmissoes\b/g, 'missões')
+    .replace(/\bsecundarias\b/g, 'secundárias')
+    .replace(/\bhistoria\b/g, 'história')
+    .replace(/\bHistoria\b/g, 'História')
+    .replace(/\bpos-historia\b/g, 'pós-história')
+    .replace(/\bpos-história\b/g, 'pós-história')
+    .replace(/\bpos-game\b/g, 'pós-game')
+    .replace(/\bdesnecessario\b/g, 'desnecessário')
+    .replace(/\bcomeco\b/g, 'começo')
+    .replace(/\binicio\b/g, 'início')
+    .replace(/\bavanca\b/g, 'avança')
+    .replace(/\bavancar\b/g, 'avançar')
+    .replace(/\bAvancar\b/g, 'Avançar')
+    .replace(/\bavancado\b/g, 'avançado')
+    .replace(/\bavancada\b/g, 'avançada')
+    .replace(/\bregioes\b/g, 'regiões')
+    .replace(/\bregiao\b/g, 'região')
+    .replace(/\bnecessarias\b/g, 'necessárias')
+    .replace(/\bsao necessárias\b/g, 'são necessárias')
+    .replace(/\bsao necessários\b/g, 'são necessários')
+    .replace(/\bnecessarios\b/g, 'necessários')
+    .replace(/\bnecessario\b/g, 'necessário')
+    .replace(/\bsao\b/g, 'são')
+    .replace(/\bSao\b/g, 'São')
+    .replace(/\bameacas\b/g, 'ameaças')
+    .replace(/\bproximas\b/g, 'próximas')
+    .replace(/\bja\b/g, 'já')
+    .replace(/\bJa\b/g, 'Já')
+    .replace(/\bsaude\b/g, 'saúde')
+    .replace(/\bpreferencia\b/g, 'preferência')
+    .replace(/\bmunicao\b/g, 'munição')
+    .replace(/\bpreparacao\b/g, 'preparação')
+    .replace(/\btransicao\b/g, 'transição')
+    .replace(/\bconfianca\b/g, 'confiança')
+    .replace(/\bConfianca\b/g, 'Confiança')
+    .replace(/\bconclusao\b/g, 'conclusão')
+    .replace(/\bconcluido\b/g, 'concluído')
+    .replace(/\bconcluidos\b/g, 'concluídos')
+    .replace(/\bevolucao\b/g, 'evolução')
+    .replace(/\bEVOLUCAO\b/g, 'EVOLUÇÃO')
+    .replace(/\bProgressao\b/g, 'Progressão')
+    .replace(/\bPROGRESSAO\b/g, 'PROGRESSÃO')
+    .replace(/\bprogressao\b/g, 'progressão')
+    .replace(/\bespecificos\b/g, 'específicos')
+    .replace(/\bconferencia\b/g, 'conferência')
+    .replace(/\btras\b/g, 'trás')
+    .replace(/\batras\b/g, 'atrás')
+    .replace(/\bunica\b/g, 'única')
+    .replace(/\bcreditos\b/g, 'créditos')
+    .replace(/\bCreditos\b/g, 'Créditos')
+    .replace(/\bexperiencia\b/g, 'experiência')
+    .replace(/\bquimica\b/g, 'química')
+    .replace(/\bautomatico\b/g, 'automático')
+    .replace(/\bhabito\b/g, 'hábito')
+    .replace(/\bsensivel\b/g, 'sensível')
+    .replace(/\btambem\b/g, 'também')
+    .replace(/\bpropria\b/g, 'própria')
+    .replace(/\bcontrolaveis\b/g, 'controláveis')
+    .replace(/\birmaos\b/g, 'irmãos')
+    .replace(/\bIrmaos\b/g, 'Irmãos')
+    .replace(/\bvinganca\b/g, 'vingança')
+    .replace(/\bso\b/g, 'só')
+    .replace(/\barranhao\b/g, 'arranhão')
+    .replace(/\bcacador\b/g, 'caçador')
+    .replace(/\bCacador\b/g, 'Caçador')
+    .replace(/\bcolecionaveis\b/g, 'colecionáveis')
+    .replace(/\bcolecionavel\b/g, 'colecionável')
+    .replace(/\bColecionaveis\b/g, 'Colecionáveis')
+    .replace(/\bColetaveis\b/g, 'Coletáveis')
+    .replace(/\bColetavel\b/g, 'Coletável')
+    .replace(/\bExploracao\b/g, 'Exploração')
+    .replace(/\bexploracao\b/g, 'exploração')
+    .replace(/\bAtencao\b/g, 'Atenção')
+    .replace(/\bATENCAO\b/g, 'ATENÇÃO')
+    .replace(/\bAcao\b/g, 'Ação')
+    .replace(/\bacao\b/g, 'ação')
+    .replace(/\bsobrevivencia\b/g, 'sobrevivência')
+    .replace(/\bobrigatoria\b/g, 'obrigatória')
+    .replace(/\bobrigatorio\b/g, 'obrigatório')
+    .replace(/\bmetodico\b/g, 'metódico')
+    .replace(/\bacessivel\b/g, 'acessível')
+    .replace(/\bconteudo\b/g, 'conteúdo')
+    .replace(/\baleatorios\b/g, 'aleatórios')
+    .replace(/\brevisao\b/g, 'revisão')
+    .replace(/\bdescricoes\b/g, 'descrições')
+    .replace(/\bportugues\b/g, 'português')
+    .replace(/\bproprio\b/g, 'próprio')
+    .replace(/\bate\b/g, 'até')
+    .replace(/\bAte\b/g, 'Até')
+    .replace(/\bapos\b/g, 'após')
+    .replace(/\bApos\b/g, 'Após')
+    .replace(/\btres\b/g, 'três')
+    .replace(/\btem troféus\b/g, 'têm troféus')
+    .replace(/\bDays Gone têm troféus\b/g, 'Days Gone tem troféus')
+    .replace(/\barea\b/g, 'área')
+    .replace(/\bfacil\b/g, 'fácil')
+    .replace(/\bFacil\b/g, 'Fácil')
+    .replace(/\bFaca uma\b/g, 'Faça uma')
+    .replace(/\bFaca drift\b/g, 'Faça drift')
+    .replace(/\bFaca voce\b/g, 'Faça você')
+    .replace(/Faca você/g, 'Faça você')
+    .replace(/\bEnfraqueca\b/g, 'Enfraqueça')
+    .replace(/\bVa chutar\b/g, 'Vá chutar')
+    .replace(/\bprogresso e acumulativo\b/g, 'progresso é acumulativo')
+    .replace(/\bligadas as storylines\b/g, 'ligadas às storylines')
+    .replace(/\bvolte as regioes\b/g, 'volte às regiões');
+  const accentDaysGonePayload = (value, key = '') => {
+    if (typeof value === 'string') return daysGoneOfficialTextKeys.has(key) ? value : accentDaysGoneText(value);
+    if (Array.isArray(value)) return value.map(item => accentDaysGonePayload(item, key));
+    if (value && typeof value === 'object') {
+      Object.keys(value).forEach(childKey => {
+        value[childKey] = accentDaysGonePayload(value[childKey], childKey);
+      });
+    }
+    return value;
+  };
+  accentDaysGonePayload(daysGoneGuide);
 }
 
 const atlasGuideViewModel = require('../shared/guideViewModel');
