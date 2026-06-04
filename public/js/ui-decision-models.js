@@ -326,6 +326,8 @@ window.UIDecisionModels = (() => {
     getGuideTrophyTags: sharedGuide.getGuideTrophyTags,
     getGuideTrophyDisplayTags: sharedGuide.getGuideTrophyDisplayTags,
     getGuideTrophySearchText: sharedGuide.getGuideTrophySearchText,
+    buildTrophyYoutubeSearchUrl: sharedGuide.buildTrophyYoutubeSearchUrl,
+    buildTrophyYoutubeSearchAriaLabel: sharedGuide.buildTrophyYoutubeSearchAriaLabel,
     buildBeforeStartCards: sharedGuide.buildBeforeStartCards,
     buildRouteChangingTrophies: sharedGuide.buildRouteChangingTrophies,
     buildEditorialSignals: sharedGuide.buildEditorialSignals,
