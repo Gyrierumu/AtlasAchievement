@@ -1,7 +1,7 @@
 window.AtlasAnalytics = (() => {
   const config = window.AtlasAnalyticsConfig || {};
   const measurementId = String(config.measurementId || '').trim();
-  let lastPagePath = '';
+  let lastPagePath = config.initialPageViewSent ? getPublicPath(window.location.pathname) : '';
   let catalogSearchTimer = null;
 
   const seoPageMap = {
@@ -142,6 +142,11 @@ window.AtlasAnalytics = (() => {
   function send(eventName, params = {}) {
     const cleanParams = normalizeParams(params);
     postInternalEvent(eventName, cleanParams);
+    return sendGoogleEvent(eventName, cleanParams);
+  }
+
+  function sendGoogleEvent(eventName, params = {}) {
+    const cleanParams = normalizeParams(params);
     if (!isEnabled()) return false;
     try {
       window.gtag('event', eventName, cleanParams);
@@ -229,13 +234,28 @@ window.AtlasAnalytics = (() => {
     if (!term) return false;
     if (catalogSearchTimer) window.clearTimeout(catalogSearchTimer);
     catalogSearchTimer = window.setTimeout(() => {
-      send('catalog_search', {
+      const params = {
         search_term: term,
         results_count: getResultsCount(resultsCount),
         has_results: getResultsCount(resultsCount) > 0
+      };
+      send('catalog_search', params);
+      sendGoogleEvent('game_search', {
+        ...params,
+        source: 'catalog'
       });
     }, 700);
     return true;
+  }
+
+  function trackGameSearch({ searchTerm = '', source = 'home' } = {}) {
+    const term = cleanSearchTerm(searchTerm);
+    const cleanSource = cleanString(source, 40) || 'home';
+    if (!term) return false;
+    return sendGoogleEvent('game_search', {
+      search_term: term,
+      source: cleanSource
+    });
   }
 
   function trackCatalogFilterUsed({ facet = '', filterName = '', filterValue = '', resultsCount = 0 } = {}) {
@@ -304,6 +324,7 @@ window.AtlasAnalytics = (() => {
     trackPageView,
     trackGuideView,
     trackGameCardClick,
+    trackGameSearch,
     trackCatalogSearch,
     trackCatalogFilterUsed,
     trackChecklistToggle,

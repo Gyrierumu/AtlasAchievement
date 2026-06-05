@@ -38849,6 +38849,815 @@ if (daysGoneGuide) {
   accentDaysGonePayload(daysGoneGuide);
 }
 
+const horizonZeroDawnGuide = sampleGames.find(game => game.slug === 'horizon-zero-dawn');
+if (horizonZeroDawnGuide) {
+  const hzdTag = (id, label, tone = 'partial') => ({ id, label, tone });
+  const hzdTrophyEditorialById = {
+    hzd_all_trophies_obtained: {
+      namePt: 'Todos os trofeus obtidos',
+      descriptionPtBr: 'Obtenha todos os trofeus de Horizon Zero Dawn.',
+      tip: 'Conclua os outros 55 trofeus da lista base de PS4. The Frozen Wilds, New Game+, Ultra Hard e Remastered/PS5 ficam fora desta platina base.',
+      tags: [hzdTag('platina', 'Platina', 'complete')]
+    },
+    hzd_stealth_killed_10_machines: {
+      namePt: '10 maquinas mortas furtivamente',
+      descriptionPtBr: 'Realize um abate furtivo em 10 maquinas.',
+      tags: [hzdTag('combat', 'Combate'), hzdTag('stealth', 'Stealth'), hzdTag('cleanup', 'Cleanup')]
+    },
+    hzd_3_strikes_from_above: {
+      namePt: '3 Ataques de Cima',
+      descriptionPtBr: 'Mate 3 inimigos usando a habilidade Strike from Above.',
+      tags: [hzdTag('combat', 'Combate'), hzdTag('skills', 'Skills'), hzdTag('cleanup', 'Cleanup')]
+    },
+    hzd_tore_off_10_components: {
+      namePt: '10 componentes arrancados',
+      descriptionPtBr: 'Arranque 10 componentes de maquinas durante combate.',
+      tags: [hzdTag('combat', 'Combate'), hzdTag('machines', 'Machines'), hzdTag('cleanup', 'Cleanup')]
+    },
+    hzd_10_vulnerable_machine_kills: {
+      namePt: '10 maquinas vulneraveis abatidas',
+      descriptionPtBr: 'Mate 10 maquinas fracas contra Fogo enquanto queimam, ou fracas contra Gelo enquanto congeladas.',
+      tags: [hzdTag('combat', 'Combate'), hzdTag('machines', 'Machines'), hzdTag('elemental', 'Elementos')]
+    },
+    hzd_tore_off_5_heavy_weapons: {
+      namePt: '5 armas pesadas arrancadas',
+      descriptionPtBr: 'Arranque 5 armas pesadas de maquinas durante combate.',
+      tags: [hzdTag('combat', 'Combate'), hzdTag('machines', 'Machines'), hzdTag('cleanup', 'Cleanup')]
+    },
+    hzd_7_types_of_machine_overridden: {
+      namePt: '7 tipos de maquinas sobrescritos',
+      descriptionPtBr: 'Desbloqueie e use overrides em 7 tipos diferentes de maquinas.',
+      tags: [hzdTag('cauldrons', 'Cauldrons'), hzdTag('machines', 'Machines'), hzdTag('progression', 'Progressao')]
+    },
+    hzd_headshot_30_human_enemies: {
+      namePt: '30 inimigos humanos mortos com headshot',
+      descriptionPtBr: 'Mate 30 inimigos humanos acertando headshots.',
+      tags: [hzdTag('combat', 'Combate'), hzdTag('camps', 'Camps'), hzdTag('cleanup', 'Cleanup')]
+    },
+    hzd_downed_23_grazer_dummies: {
+      namePt: '23 bonecos Grazer derrubados',
+      descriptionPtBr: 'Encontre e derrube todos os bonecos de treino Grazer na regiao Nora.',
+      tags: [hzdTag('collectible', 'Coletavel'), hzdTag('attention', 'Atencao'), hzdTag('cleanup', 'Cleanup')]
+    },
+    hzd_first_modification: {
+      namePt: 'Primeira modificacao',
+      descriptionPtBr: 'Use uma Weapon Coil ou Outfit Weave em uma arma ou roupa modificavel.',
+      tags: [hzdTag('crafting', 'Crafting'), hzdTag('progression', 'Progressao')]
+    },
+    hzd_all_acquisition_machines_killed: {
+      namePt: 'Todas as maquinas de aquisicao mortas',
+      descriptionPtBr: 'Mate pelo menos uma maquina de cada tipo de Acquisition.',
+      tags: [hzdTag('machines', 'Machines'), hzdTag('combat', 'Combate'), hzdTag('cleanup', 'Cleanup')]
+    },
+    hzd_all_recon_machines_killed: {
+      namePt: 'Todas as maquinas de reconhecimento mortas',
+      descriptionPtBr: 'Mate pelo menos uma maquina de cada tipo de Reconnaissance.',
+      tags: [hzdTag('machines', 'Machines'), hzdTag('combat', 'Combate'), hzdTag('cleanup', 'Cleanup')]
+    },
+    hzd_all_combat_machines_killed: {
+      namePt: 'Todas as maquinas de combate mortas',
+      descriptionPtBr: 'Mate pelo menos uma maquina de cada tipo de Combat.',
+      tags: [hzdTag('machines', 'Machines'), hzdTag('combat', 'Combate'), hzdTag('cleanup', 'Cleanup')]
+    },
+    hzd_all_transport_machines_killed: {
+      namePt: 'Todas as maquinas de transporte mortas',
+      descriptionPtBr: 'Mate pelo menos uma maquina de cada tipo de Transport.',
+      tags: [hzdTag('machines', 'Machines'), hzdTag('combat', 'Combate'), hzdTag('cleanup', 'Cleanup')]
+    },
+    hzd_reached_level_10: {
+      namePt: 'Nivel 10 alcancado',
+      descriptionPtBr: 'Alcance o nivel de jogador 10.',
+      tags: [hzdTag('progression', 'Progressao'), hzdTag('level', 'Nivel')]
+    },
+    hzd_reached_level_25: {
+      namePt: 'Nivel 25 alcancado',
+      descriptionPtBr: 'Alcance o nivel de jogador 25.',
+      tags: [hzdTag('progression', 'Progressao'), hzdTag('level', 'Nivel')]
+    },
+    hzd_reached_level_40: {
+      namePt: 'Nivel 40 alcancado',
+      descriptionPtBr: 'Alcance o nivel de jogador 40.',
+      tags: [hzdTag('progression', 'Progressao'), hzdTag('level', 'Nivel')]
+    },
+    hzd_reached_level_50: {
+      namePt: 'Nivel 50 alcancado',
+      descriptionPtBr: 'Alcance o nivel de jogador 50.',
+      tags: [hzdTag('progression', 'Progressao'), hzdTag('grind', 'Grind')]
+    },
+    hzd_all_skills_learned: {
+      namePt: 'Todas as habilidades aprendidas',
+      descriptionPtBr: 'Aprenda todas as habilidades disponiveis.',
+      tags: [hzdTag('progression', 'Progressao'), hzdTag('skills', 'Skills')]
+    },
+    hzd_first_tallneck_overridden: {
+      namePt: 'Primeiro Tallneck sobrescrito',
+      descriptionPtBr: 'Escale um Tallneck e acesse suas informacoes.',
+      tags: [hzdTag('exploration', 'Exploracao'), hzdTag('map', 'Mapa')]
+    },
+    hzd_first_bandit_camp_cleared: {
+      namePt: 'Primeiro Bandit Camp limpo',
+      descriptionPtBr: 'Recupere um assentamento de um cla de bandidos.',
+      tags: [hzdTag('open-world', 'Mundo aberto'), hzdTag('camps', 'Camps')]
+    },
+    hzd_first_core_overridden: {
+      namePt: 'Primeiro Core sobrescrito',
+      descriptionPtBr: 'Chegue ao Core de um Cauldron e acesse suas informacoes.',
+      tags: [hzdTag('cauldrons', 'Cauldrons'), hzdTag('progression', 'Progressao')]
+    },
+    hzd_all_suns_at_one_ground: {
+      namePt: 'Todos os Suns em um Ground',
+      descriptionPtBr: 'Ganhe pelo menos uma marca Half Sun nas tres trials de um Hunting Ground.',
+      tags: [hzdTag('hunting-grounds', 'Hunting Grounds'), hzdTag('cleanup', 'Cleanup')]
+    },
+    hzd_blazing_suns_at_one_ground: {
+      namePt: 'Blazing Suns em um Ground',
+      descriptionPtBr: 'Ganhe uma marca Blazing Sun nas tres trials de um Hunting Ground.',
+      tags: [hzdTag('hunting-grounds', 'Hunting Grounds'), hzdTag('challenge', 'Desafio'), hzdTag('cleanup', 'Cleanup')]
+    },
+    hzd_first_corrupted_zone_cleared: {
+      namePt: 'Primeira Corrupted Zone limpa',
+      descriptionPtBr: 'Mate todas as maquinas corrompidas em uma Corrupted Zone.',
+      tags: [hzdTag('open-world', 'Mundo aberto'), hzdTag('combat', 'Combate')]
+    },
+    hzd_all_tallnecks_overridden: {
+      namePt: 'Todos os Tallnecks sobrescritos',
+      descriptionPtBr: 'Escale todos os Tallnecks e acesse suas informacoes.',
+      tags: [hzdTag('exploration', 'Exploracao'), hzdTag('map', 'Mapa'), hzdTag('cleanup', 'Cleanup')]
+    },
+    hzd_cleared_all_the_bandit_camps: {
+      namePt: 'Todos os Bandit Camps limpos',
+      descriptionPtBr: 'Recupere todos os assentamentos dos clas de bandidos.',
+      tags: [hzdTag('open-world', 'Mundo aberto'), hzdTag('camps', 'Camps'), hzdTag('cleanup', 'Cleanup')]
+    },
+    hzd_all_cores_overridden: {
+      namePt: 'Todos os Cores sobrescritos',
+      descriptionPtBr: 'Chegue ao Core de todos os Cauldrons e acesse as informacoes neles.',
+      tags: [hzdTag('cauldrons', 'Cauldrons'), hzdTag('progression', 'Progressao'), hzdTag('cleanup', 'Cleanup')]
+    },
+    hzd_all_suns_at_all_grounds: {
+      namePt: 'Todos os Suns em todos os Grounds',
+      descriptionPtBr: 'Ganhe pelo menos uma marca Half Sun em todas as trials de todos os Hunting Grounds.',
+      tags: [hzdTag('hunting-grounds', 'Hunting Grounds'), hzdTag('cleanup', 'Cleanup')]
+    },
+    hzd_blazing_suns_at_all_grounds: {
+      namePt: 'Blazing Suns em todos os Grounds',
+      descriptionPtBr: 'Ganhe uma marca Blazing Sun em todas as trials de todos os Hunting Grounds.',
+      tags: [hzdTag('hunting-grounds', 'Hunting Grounds'), hzdTag('challenge', 'Desafio'), hzdTag('cleanup', 'Cleanup')]
+    },
+    hzd_all_corrupted_zones_cleared: {
+      namePt: 'Todas as Corrupted Zones limpas',
+      descriptionPtBr: 'Mate todas as maquinas corrompidas em todas as Corrupted Zones.',
+      tags: [hzdTag('open-world', 'Mundo aberto'), hzdTag('combat', 'Combate'), hzdTag('cleanup', 'Cleanup')]
+    },
+    hzd_all_machines_catalogued: {
+      namePt: 'Todas as maquinas catalogadas',
+      descriptionPtBr: 'Encontre e escaneie com o Focus todos os tipos de maquinas.',
+      tags: [hzdTag('machines', 'Machines'), hzdTag('collectible', 'Coletavel'), hzdTag('cleanup', 'Cleanup')]
+    },
+    hzd_first_vantage_found: {
+      namePt: 'Primeiro Vantage encontrado',
+      descriptionPtBr: 'Encontre e acesse um datapoint Vantage.',
+      tags: [hzdTag('collectible', 'Coletavel'), hzdTag('exploration', 'Exploracao')]
+    },
+    hzd_first_metal_flower_found: {
+      namePt: 'Primeira Metal Flower encontrada',
+      descriptionPtBr: 'Descubra uma estranha Metal Flower.',
+      tags: [hzdTag('collectible', 'Coletavel'), hzdTag('exploration', 'Exploracao')]
+    },
+    hzd_first_banuk_figure_found: {
+      namePt: 'Primeira Banuk Figure encontrada',
+      descriptionPtBr: 'Encontre uma efigie de madeira deixada por um viajante Banuk.',
+      tags: [hzdTag('collectible', 'Coletavel'), hzdTag('exploration', 'Exploracao')]
+    },
+    hzd_first_ancient_vessel_found: {
+      namePt: 'Primeiro Ancient Vessel encontrado',
+      descriptionPtBr: 'Encontre um Ancient Vessel usado pelos Old Ones.',
+      tags: [hzdTag('collectible', 'Coletavel'), hzdTag('exploration', 'Exploracao')]
+    },
+    hzd_all_vantages_found: {
+      namePt: 'Todos os Vantages encontrados',
+      descriptionPtBr: 'Encontre e acesse todos os datapoints Vantage.',
+      tags: [hzdTag('collectible', 'Coletavel'), hzdTag('exploration', 'Exploracao'), hzdTag('cleanup', 'Cleanup')]
+    },
+    hzd_all_metal_flowers_found: {
+      namePt: 'Todas as Metal Flowers encontradas',
+      descriptionPtBr: 'Encontre todas as Metal Flowers.',
+      tags: [hzdTag('collectible', 'Coletavel'), hzdTag('exploration', 'Exploracao'), hzdTag('cleanup', 'Cleanup')]
+    },
+    hzd_all_banuk_figures_found: {
+      namePt: 'Todas as Banuk Figures encontradas',
+      descriptionPtBr: 'Encontre todas as figuras de Arnak.',
+      tags: [hzdTag('collectible', 'Coletavel'), hzdTag('exploration', 'Exploracao'), hzdTag('cleanup', 'Cleanup')]
+    },
+    hzd_all_ancient_vessels_found: {
+      namePt: 'Todos os Ancient Vessels encontrados',
+      descriptionPtBr: 'Encontre todos os Ancient Vessels.',
+      tags: [hzdTag('collectible', 'Coletavel'), hzdTag('exploration', 'Exploracao'), hzdTag('cleanup', 'Cleanup')]
+    },
+    hzd_got_the_shield_weaver_outfit: {
+      namePt: 'Traje Shield-Weaver obtido',
+      descriptionPtBr: 'Recupere uma tecnologia antiga e coloque-a em uso.',
+      tags: [hzdTag('exploration', 'Exploracao'), hzdTag('equipment', 'Equipamento'), hzdTag('cleanup', 'Cleanup')]
+    },
+    hzd_followed_rosts_teachings: {
+      namePt: 'Ensinamentos de Rost seguidos',
+      descriptionPtBr: 'Aprenda a cacar e lutar ao lado de Rost.',
+      tags: [hzdTag('story', 'Historia'), hzdTag('campaign', 'Campanha')]
+    },
+    hzd_defeated_the_sawtooth: {
+      namePt: 'Sawtooth derrotado',
+      descriptionPtBr: 'Derrote o Sawtooth que ameacava os Nora.',
+      tags: [hzdTag('story', 'Historia'), hzdTag('campaign', 'Campanha'), hzdTag('machines', 'Machines')]
+    },
+    hzd_triumphed_in_the_proving: {
+      namePt: 'Triunfo no Proving',
+      descriptionPtBr: 'Supere a adversidade e fique em primeiro lugar no Proving.',
+      tags: [hzdTag('story', 'Historia'), hzdTag('campaign', 'Campanha')]
+    },
+    hzd_fought_back_the_corruption: {
+      namePt: 'Corrupcao combatida',
+      descriptionPtBr: 'Destrua a corrupcao dentro do vale Nora.',
+      tags: [hzdTag('story', 'Historia'), hzdTag('campaign', 'Campanha')]
+    },
+    hzd_learned_of_the_ancient_past: {
+      namePt: 'Passado antigo descoberto',
+      descriptionPtBr: 'Descubra o passado antigo em Maker\'s End.',
+      tags: [hzdTag('story', 'Historia'), hzdTag('campaign', 'Campanha')]
+    },
+    hzd_crashed_the_eclipse_network: {
+      namePt: 'Rede Eclipse derrubada',
+      descriptionPtBr: 'Infiltre-se no campo de batalha Eclipse e derrube a rede deles.',
+      tags: [hzdTag('story', 'Historia'), hzdTag('campaign', 'Campanha')]
+    },
+    hzd_discovered_the_truth: {
+      namePt: 'Verdade descoberta',
+      descriptionPtBr: 'Descubra a verdade sobre Zero Dawn.',
+      tags: [hzdTag('story', 'Historia'), hzdTag('campaign', 'Campanha')]
+    },
+    hzd_broke_the_siege_of_all_mother: {
+      namePt: 'Cerco de All-Mother rompido',
+      descriptionPtBr: 'Derrote os invasores e entre na montanha sagrada.',
+      tags: [hzdTag('story', 'Historia'), hzdTag('campaign', 'Campanha')]
+    },
+    hzd_recovered_a_powerful_weapon: {
+      namePt: 'Arma poderosa recuperada',
+      descriptionPtBr: 'Explore The Mountain That Fell e recupere uma arma poderosa.',
+      tags: [hzdTag('story', 'Historia'), hzdTag('campaign', 'Campanha')]
+    },
+    hzd_all_allies_joined: {
+      namePt: 'Todos os aliados se juntaram',
+      descriptionPtBr: 'Com base nas acoes de Aloy, todos os aliados opcionais possiveis se juntaram a defesa.',
+      tip: 'Complete as side quests e errands relevantes antes da reta final. A missao final pode ser repetida, entao trate como ponto de planejamento, nao como perdivel rigido.',
+      tags: [hzdTag('side-quests', 'Side quests'), hzdTag('attention', 'Atencao'), hzdTag('story', 'Historia')]
+    },
+    hzd_ended_the_war_machine_threat: {
+      namePt: 'Ameaca das maquinas de guerra encerrada',
+      descriptionPtBr: 'Encerre a ameaca das maquinas de guerra antigas.',
+      tags: [hzdTag('story', 'Historia'), hzdTag('campaign', 'Campanha')]
+    },
+    hzd_victorious_with_the_war_chief: {
+      namePt: 'Vitoria com a War-Chief',
+      descriptionPtBr: 'Encontre a War-Chief Nora e derrote os assassinos no Ring of Metal.',
+      tags: [hzdTag('story', 'Historia'), hzdTag('side-quests', 'Side quests')]
+    },
+    hzd_saved_meridian_from_its_foe: {
+      namePt: 'Meridian salva de seu inimigo',
+      descriptionPtBr: 'Ajude Erend a investigar o destino de Ersa e impeça uma conspiracao contra Meridian.',
+      tags: [hzdTag('story', 'Historia'), hzdTag('side-quests', 'Side quests')]
+    },
+    hzd_aided_the_defectors: {
+      namePt: 'Desertores ajudados',
+      descriptionPtBr: 'Ajude Uthid e o rei-crianca Itamen a escaparem dos Shadow Carja.',
+      tags: [hzdTag('story', 'Historia'), hzdTag('side-quests', 'Side quests')]
+    },
+    hzd_hunted_redmaw_with_talanah: {
+      namePt: 'Redmaw cacado com Talanah',
+      descriptionPtBr: 'Suba nas fileiras da Hunters Lodge e ajude Talanah a derrotar Redmaw.',
+      tags: [hzdTag('hunting-grounds', 'Hunting Grounds'), hzdTag('side-quests', 'Side quests'), hzdTag('story', 'Historia')]
+    }
+  };
+
+  Object.assign(horizonZeroDawnGuide, {
+    title: 'Horizon Zero Dawn',
+    published: true,
+    platforms: ['PS4'],
+    genre: ['acao/RPG', 'mundo aberto'],
+    estimatedTime: '40-50 horas',
+    time: '40-50 horas',
+    time_min_hours: 40,
+    time_max_hours: 50,
+    time_sort_hours: 40,
+    time_bucket: 'long',
+    runs: '1 campanha + cleanup em free roam',
+    hasMissables: false,
+    missableCount: 0,
+    missable_count: 0,
+    hasOnline: false,
+    hasMandatoryOnline: false,
+    hasMandatoryCoop: false,
+    onlineRequired: false,
+    coopRequired: false,
+    dlcRequired: false,
+    dlcRequiredForPlatinum: false,
+    dlc_status: 'out_of_base_scope',
+    platinumType: 'lista base PS4 + campanha + mundo aberto + collectibles',
+    missable: 'Nao ha trofeus perdiveis rigidos na lista base. A campanha libera free roam e cleanup depois da historia, entao side quests, collectibles, machines e atividades do mapa podem ser organizados sem tratar a platina como perdivel.',
+    runs_summary: 'Uma run e suficiente para a platina base, com cleanup em free roam depois da historia.',
+    missable_summary: 'Nao ha perdiveis rigidos na lista base; All Allies Joined pede planejamento de side quests, mas nao deve inflar a contagem de perdiveis.',
+    online_summary: 'A platina base e single-player/offline, sem online obrigatorio, sem coop obrigatorio e sem PS+ necessario.',
+    grind_summary: 'O maior checklist esta em Hunting Grounds, collectibles, machines, Cauldrons, Tallnecks, Bandit Camps, Corrupted Zones, side quests e cleanup regional.',
+    dlc_scope: 'The Frozen Wilds, New Game+, Ultra Hard e Horizon Zero Dawn Remastered/PS5 ficam fora da platina base de PS4. Complete Edition nao transforma DLC em requisito da platina.',
+    difficulty_reason: 'A dificuldade editorial fica em 3/10: a lista base nao exige dificuldade alta, Ultra Hard, New Game+ ou online; o desafio vem de organizar mapa, combate e Hunting Grounds.',
+    time_reason: 'A estimativa de 40-50 horas considera campanha, side quests importantes, aliados opcionais, Hunting Grounds, Cauldrons, Tallnecks, camps, zones, collectibles, machines e cleanup.',
+    first_run_advice: 'Comece a campanha explorando por regiao, ativando Tallnecks, comprando mapas de collectibles com comerciantes e completando side quests quando surgirem. Nao precisa jogar em dificuldade alta para a platina base; o mais importante e adiantar aliados opcionais, Hunting Grounds, Cauldrons, camps e collectibles para deixar o cleanup pos-historia mais leve.',
+    cleanup_advice: 'Depois da historia, use o free roam para fechar collectibles, machines, Hunting Grounds, Cauldrons, Tallnecks, Bandit Camps, Corrupted Zones, dummies, Shield-Weaver e trofeus acumulativos restantes.',
+    before_you_start: 'Separe a lista base de PS4 dos conteudos adicionais. The Frozen Wilds, New Game+, Ultra Hard e Remastered/PS5 nao entram nos 56 trofeus da platina base.',
+    best_for: 'Vale platinar Horizon Zero Dawn se voce gosta de mundo aberto, exploracao, combate contra maquinas e checklist de atividades.',
+    avoid_if: 'Evite se voce nao quer limpar mapa, collectibles, Hunting Grounds, side quests e atividades de mundo aberto depois da campanha.',
+    editorial_status: 'published',
+    coverage_level: 'complete',
+    is_verified: true,
+    verification_status: 'verified',
+    verification_note: 'Guia revisado para a lista base PS4 com 56 trofeus; The Frozen Wilds, New Game+, Ultra Hard e Remastered/PS5 ficam fora da platina base.',
+    editorial_review_status: 'verified',
+    editorialStatus: 'verified',
+    last_reviewed_at: '2026-06-05',
+    lastReviewedAt: '2026-06-05T00:00:00.000-03:00',
+    editorial_notes: 'Escopo editorial: Horizon Zero Dawn lista base PS4, 56 trofeus. Platina single-player/offline, sem coop, sem DLC obrigatoria, sem New Game+ e sem Ultra Hard. The Frozen Wilds e listas Remastered/PS5 nao foram misturadas.',
+    editorialNotes: 'Escopo editorial: Horizon Zero Dawn lista base PS4, 56 trofeus. Platina single-player/offline, sem coop, sem DLC obrigatoria, sem New Game+ e sem Ultra Hard. The Frozen Wilds e listas Remastered/PS5 nao foram misturadas.',
+    quality_warnings: [],
+    qualityWarnings: [],
+    editorial_summary: [
+      'Horizon Zero Dawn e uma platina acessivel de mundo aberto, focada em completar a campanha, limpar atividades do mapa, concluir side quests, reunir aliados opcionais, explorar Cauldrons, Tallnecks, Bandit Camps, Corrupted Zones, Hunting Grounds e coletar os principais collectibles da lista base. A platina e single-player, offline, sem coop, sem DLC obrigatoria e sem trofeus perdiveis rigidos.',
+      'A rota mais segura e avancar pela historia enquanto ativa Tallnecks, libera fast travel, completa side quests relevantes e faz atividades por regiao. Depois da campanha, o free roam permite cleanup de collectibles, machines, Hunting Grounds, Cauldrons e trofeus acumulativos.',
+      'O principal cuidado e nao confundir a platina base com The Frozen Wilds, New Game+ ou Ultra Hard. Complete Edition pode incluir conteudo adicional, mas a platina continua ligada aos 56 trofeus da lista base de PS4.'
+    ],
+    quickDecision: {
+      summary: 'Vale platinar Horizon Zero Dawn se voce gosta de mundo aberto, exploracao, combate contra maquinas e checklist de atividades. A platina base e acessivel, offline, sem coop, sem DLC obrigatoria, sem New Game+ e sem Ultra Hard.',
+      mainRisk: 'Organize side quests, aliados opcionais, Hunting Grounds, Cauldrons, Tallnecks, collectibles e machines para o cleanup nao ficar cansativo.',
+      firstAction: 'Comece a campanha explorando por regiao, ativando Tallnecks, comprando mapas de collectibles e completando side quests quando surgirem.'
+    },
+    seo: {
+      title: 'Guia de Platina Horizon Zero Dawn - Trofeus, Roadmap e Dicas',
+      description: 'Guia de platina de Horizon Zero Dawn com roadmap em portugues, trofeus da lista base, machines, Hunting Grounds, Cauldrons, Tallnecks, Bandit Camps, Corrupted Zones, collectibles, aliados opcionais e cleanup para conquistar a platina no PS4.',
+      keywords: ['Horizon Zero Dawn', 'guia de platina Horizon Zero Dawn', 'trofeus Horizon Zero Dawn', 'roadmap Horizon Zero Dawn', 'Horizon Zero Dawn PS4', 'All Allies Joined', 'All machines catalogued', 'Blazing Suns at all Grounds', 'The Frozen Wilds', 'New Game+']
+    },
+    tags: ['mundo aberto', 'acao/RPG', 'campanha', 'machines', 'hunting grounds', 'cauldrons', 'collectibles', 'exploracao', 'cleanup', 'offline', 'sem coop', 'sem DLC obrigatoria'],
+    checklist: [
+      'Confirmar os 56 trofeus da lista base de PS4.',
+      'Nao contar The Frozen Wilds, New Game+, Ultra Hard ou Remastered/PS5 como requisito da platina base.',
+      'Completar a campanha principal em qualquer dificuldade.',
+      'Completar side quests importantes para All Allies Joined.',
+      'Ativar todos os Tallnecks.',
+      'Limpar Bandit Camps e Corrupted Zones.',
+      'Completar todos os Cauldrons e usar os overrides exigidos.',
+      'Completar Hunting Grounds, All Suns e Blazing Suns.',
+      'Catalogar todos os tipos de machines da lista base.',
+      'Coletar Vantage Points, Metal Flowers, Banuk Figures e Ancient Vessels da lista base.',
+      'Obter Shield-Weaver outfit e derrubar os 23 Grazer dummies.',
+      'Completar trofeus de combate, level, skills e progressao.',
+      'Fazer cleanup pos-historia em free roam.',
+      'Conferir flags finais: sem online, sem coop, sem DLC obrigatoria e sem perdiveis rigidos.'
+    ],
+    faq: [
+      { question: 'Horizon Zero Dawn exige online para platinar?', answer: 'Nao. A platina base e single-player e pode ser feita offline.' },
+      { question: 'Horizon Zero Dawn exige coop para platinar?', answer: 'Nao. A platina nao depende de coop.' },
+      { question: 'The Frozen Wilds e necessario para a platina?', answer: 'Nao. The Frozen Wilds tem trofeus proprios, mas nao entra nos 56 trofeus da platina base.' },
+      { question: 'New Game+ ou Ultra Hard sao necessarios para a platina?', answer: 'Nao. New Game+ e Ultra Hard pertencem a trofeus adicionais e nao sao exigidos pela platina base.' },
+      { question: 'Horizon Zero Dawn tem trofeus perdiveis?', answer: 'Nao ha perdiveis rigidos na lista base. O free roam depois da historia permite cleanup das atividades e colecionaveis.' },
+      { question: 'Quantas runs sao necessarias?', answer: 'Uma run e suficiente para a platina base, com cleanup depois da historia.' },
+      { question: 'Preciso jogar em dificuldade alta?', answer: 'Nao. A dificuldade nao afeta a platina base.' },
+      { question: 'Qual e o maior grind ou checklist da platina?', answer: 'O maior checklist fica em Hunting Grounds, collectibles, machines, Cauldrons, Tallnecks, Bandit Camps, Corrupted Zones e side quests para aliados.' },
+      { question: 'Da para fazer cleanup depois da historia?', answer: 'Sim. Depois da campanha, o free roam permite voltar para limpar atividades, collectibles e trofeus acumulativos.' },
+      { question: 'Complete Edition muda a platina?', answer: 'Nao para a platina base. Complete Edition inclui The Frozen Wilds, mas a platina continua ligada aos trofeus da lista base.' }
+    ],
+    attentionPoints: [
+      { title: 'The Frozen Wilds fora da platina', detail: 'A DLC tem trofeus proprios e nao entra nos 56 trofeus da lista base.', tags: [hzdTag('dlc', 'DLC fora da platina', 'complete')] },
+      { title: 'New Game+ e Ultra Hard fora da platina', detail: 'Sao trofeus adicionais, nao requisito da platina base.', tags: [hzdTag('extra', 'Conteudo adicional', 'complete')] },
+      { title: 'All Allies Joined', detail: 'Complete as side quests relevantes antes da reta final para garantir todos os aliados.', tags: [hzdTag('side-quests', 'Side quests'), hzdTag('attention', 'Atencao', 'warning')] },
+      { title: 'Hunting Grounds', detail: 'Blazing Suns at all Grounds pode ser deixado para depois, com armas e upgrades melhores.', tags: [hzdTag('hunting-grounds', 'Hunting Grounds'), hzdTag('challenge', 'Desafio')] },
+      { title: 'Collectibles da lista base', detail: 'Compre mapas de comerciantes e organize Vantage Points, Metal Flowers, Banuk Figures e Ancient Vessels por regiao.', tags: [hzdTag('collectibles', 'Collectibles'), hzdTag('cleanup', 'Cleanup')] },
+      { title: 'Machines catalogued', detail: 'Escaneie todos os tipos de machines da lista base com o Focus.', tags: [hzdTag('machines', 'Machines'), hzdTag('cleanup', 'Cleanup')] },
+      { title: 'Cauldrons e overrides', detail: 'Conclua todos os Cauldrons para liberar overrides e trofeus relacionados.', tags: [hzdTag('cauldrons', 'Cauldrons'), hzdTag('progression', 'Progressao')] },
+      { title: 'Free roam pos-historia', detail: 'A platina permite cleanup depois da campanha, sem perdiveis rigidos.', tags: [hzdTag('free-roam', 'Free roam'), hzdTag('cleanup', 'Cleanup')] },
+      { title: 'Online e coop', detail: 'A platina base e single-player, sem online obrigatorio e sem coop obrigatorio.', tags: [hzdTag('offline', 'Offline', 'complete')] }
+    ],
+    roadmap: [
+      {
+        title: 'Campanha com exploracao por regiao',
+        focus: 'Historia e mapa',
+        objective: 'Avancar pela historia enquanto libera o mapa e reduz o cleanup da platina.',
+        actions: [
+          'Progrida pela campanha principal sem se preocupar com dificuldade alta, pois a platina base nao exige Ultra Hard.',
+          'Ative Tallnecks para revelar regioes do mapa e facilitar o planejamento.',
+          'Compre mapas de collectibles com comerciantes quando possivel.',
+          'Complete side quests, errands e atividades proximas antes de trocar de regiao.',
+          'Catalogue machines e use diferentes armas, elementos e estrategias para adiantar trofeus de combate.'
+        ],
+        warning: 'A platina nao tem perdiveis rigidos, mas deixar todo o mapa para o final transforma o cleanup em um checklist longo.',
+        result: 'A campanha avanca com o mapa aberto, atividades encaminhadas e boa parte dos requisitos naturais ja resolvidos.'
+      },
+      {
+        title: 'Aliados opcionais e side quests importantes',
+        focus: 'Side quests e aliados',
+        objective: 'Concluir as missoes necessarias para reunir aliados e fortalecer o final da campanha.',
+        actions: [
+          'Complete side quests e errands relevantes antes da missao final.',
+          'Garanta os aliados opcionais necessarios para All Allies Joined.',
+          'Resolva missoes de personagens importantes conforme aparecerem no mapa.',
+          'Use o free roam para voltar a regioes antigas se alguma missao ficar pendente.',
+          'Antes da reta final, confira se os aliados opcionais foram encaminhados.'
+        ],
+        warning: 'All Allies Joined exige atencao as side quests certas. Nao e um perdivel rigido, mas e um ponto importante de planejamento.',
+        result: 'Os aliados e missoes opcionais ficam preparados para a conclusao da historia.'
+      },
+      {
+        title: 'Atividades principais do mundo aberto',
+        focus: 'Cauldrons e camps',
+        objective: 'Limpar as atividades estruturais do mapa que alimentam a platina.',
+        actions: [
+          'Complete todos os Cauldrons exigidos para liberar overrides e trofeus relacionados.',
+          'Limpe Bandit Camps e Corrupted Zones conforme o mapa abrir.',
+          'Complete Tallnecks restantes para revelar areas pendentes.',
+          'Faca os Hunting Grounds buscando Blazing Suns quando estiver com equipamento adequado.',
+          'Use upgrades e armas melhores antes de enfrentar desafios mais exigentes.'
+        ],
+        warning: 'Hunting Grounds podem ser deixados para depois, com Aloy mais forte e equipamentos melhores.',
+        result: 'Cauldrons, camps, Corrupted Zones, Tallnecks e Hunting Grounds ficam prontos para o checklist final.'
+      },
+      {
+        title: 'Machines, combate e trofeus acumulativos',
+        focus: 'Combate',
+        objective: 'Finalizar trofeus ligados a maquinas, overrides, catalogo e acoes de combate.',
+        actions: [
+          'Catalogue todos os tipos de machines exigidos pela lista base.',
+          'Derrube, quebre componentes e use fraquezas elementais para adiantar trofeus de combate.',
+          'Use stealth, headshots e diferentes armas conforme os trofeus pedirem.',
+          'Complete overrides ligados aos Cauldrons ja concluidos.',
+          'Revise trofeus acumulativos antes de terminar o cleanup final.'
+        ],
+        warning: '',
+        result: 'Os trofeus de combate, machines e progressao acumulativa ficam resolvidos.'
+      },
+      {
+        title: 'Collectibles da lista base',
+        focus: 'Colecionaveis',
+        objective: 'Coletar os itens necessarios da lista base sem misturar The Frozen Wilds.',
+        actions: [
+          'Use os mapas comprados com comerciantes para localizar Vantage Points, Metal Flowers, Banuk Figures e Ancient Vessels.',
+          'Colete os sets necessarios de collectibles da lista base.',
+          'Complete areas antigas usando fast travel para reduzir deslocamento.',
+          'Confira se nenhum collectible da DLC The Frozen Wilds foi misturado com a platina base.',
+          'Use o mapa por regiao para fechar pendencias antes da conferencia final.'
+        ],
+        warning: 'Complete Edition pode mostrar conteudos adicionais, mas The Frozen Wilds nao e requisito da platina base.',
+        result: 'Os collectibles principais ficam concluidos sem confundir base game com DLC.'
+      },
+      {
+        title: 'Cleanup final e conferencia da platina',
+        focus: 'Free roam',
+        objective: 'Usar o free roam pos-historia para fechar trofeus restantes da lista base.',
+        actions: [
+          'Depois da historia, volte ao mapa para concluir side quests, activities, collectibles e machines pendentes.',
+          'Confira se os 56 trofeus da lista base foram considerados.',
+          'Garanta que The Frozen Wilds, New Game+ e Ultra Hard continuam fora dos requisitos da platina.',
+          'Revise Hunting Grounds, Cauldrons, Tallnecks, Bandit Camps, Corrupted Zones e allies.',
+          'Confirme que a rota continua sem online obrigatorio, sem coop obrigatorio e sem DLC exigida.'
+        ],
+        warning: '',
+        result: 'A lista base de Horizon Zero Dawn fica pronta para a platina.'
+      }
+    ]
+  });
+
+  for (const trophy of horizonZeroDawnGuide.trophies || []) {
+    const editorial = hzdTrophyEditorialById[trophy.id] || {};
+    const descriptionPtBr = editorial.descriptionPtBr || trophy.descriptionPtBr || trophy.ptDescription || trophy.tip || trophy.description || '';
+    trophy.trophyNameOriginal = trophy.name;
+    trophy.officialName = trophy.name;
+    trophy.originalName = trophy.name;
+    trophy.name_pt = editorial.namePt || trophy.name_pt || trophy.name;
+    trophy.trophyNamePtBr = trophy.name_pt;
+    trophy.localizedNamePtBr = trophy.name_pt;
+    trophy.namePtSource = editorial.namePt ? 'editorial_ptbr' : 'fallback_official_name';
+    trophy.descriptionOriginal = trophy.descriptionOriginal || trophy.description || '';
+    trophy.description = descriptionPtBr;
+    trophy.descriptionPtBr = descriptionPtBr;
+    trophy.ptDescription = descriptionPtBr;
+    trophy.localizedDescription = { ...(trophy.localizedDescription || {}), ptBr: descriptionPtBr, 'pt-BR': descriptionPtBr };
+    trophy.descriptionPtSource = 'editorial_ptbr';
+    trophy.tip = editorial.tip || trophy.tip || '';
+    trophy.guideTip = trophy.tip;
+    trophy.tier = trophy.type;
+    trophy.is_missable = false;
+    trophy.isMissable = false;
+    trophy.is_online = false;
+    trophy.isOnline = false;
+    trophy.is_coop = false;
+    trophy.isCoop = false;
+    trophy.is_dlc = false;
+    trophy.isDlc = false;
+    trophy.tags = [...new Set((editorial.tags || []).map(tag => (typeof tag === 'string' ? tag : tag)))];
+  }
+}
+
+const horizonForbiddenWestGuide = sampleGames.find(game => game.slug === 'horizon-forbidden-west');
+if (horizonForbiddenWestGuide) {
+  const hfwTag = (id, label, tone = 'partial') => ({ id, label, tone });
+  const hfwRiskScanTags = [hfwTag('attention', 'Atencao', 'warning'), hfwTag('machines', 'Machines'), hfwTag('scan', 'Scan'), hfwTag('run-risk', 'Risco de run', 'warning')];
+  const hfwTrophyEditorialById = {
+    hfw_all_trophies_obtained: ['Todos os trofeus obtidos', 'Obtenha todos os trofeus de Horizon Forbidden West.', [hfwTag('platina', 'Platina', 'complete')]],
+    hfw_discovered_nemesis: ['Nemesis descoberta', 'Coloque fim a ameaca Zenith e descubra Nemesis.', [hfwTag('story', 'Historia'), hfwTag('campaign', 'Campanha')]],
+    hfw_reached_level_50: ['Nivel 50 alcancado', 'Alcance o nivel de jogador 50.', [hfwTag('progression', 'Progressao'), hfwTag('grind', 'Grind')]],
+    hfw_all_tallnecks_overridden: ['Todos os Tallnecks sobrescritos', 'Chegue ao topo de todos os Tallnecks e acesse suas informacoes.', [hfwTag('exploration', 'Exploracao'), hfwTag('map', 'Mapa'), hfwTag('cleanup', 'Cleanup')]],
+    hfw_defeated_asera: ['Asera derrotada', 'Investigue todos os Rebel Camps e ajude Erend a derrotar Asera.', [hfwTag('rebel-camps', 'Rebel Camps'), hfwTag('side-quest', 'Side Quest'), hfwTag('cleanup', 'Cleanup')]],
+    hfw_all_cores_overridden: ['Todos os Cores sobrescritos', 'Chegue ao Core de todos os Cauldrons e acesse suas informacoes.', [hfwTag('cauldrons', 'Cauldrons'), hfwTag('progression', 'Progressao'), hfwTag('cleanup', 'Cleanup')]],
+    hfw_three_stripes_all_hunting_grounds: ['3 Stripes em todos os Hunting Grounds', 'Ganhe pelo menos uma marca Quarter Stripe nas tres trials de todos os Hunting Grounds.', [hfwTag('hunting-grounds', 'Hunting Grounds'), hfwTag('challenge', 'Desafio'), hfwTag('cleanup', 'Cleanup')]],
+    hfw_all_machine_types_scanned: ['Todos os tipos de machines escaneados', 'Encontre e escaneie com o Focus todos os tipos de machines.', hfwRiskScanTags],
+    hfw_skill_tree_learned: ['Arvore de skills aprendida', 'Aprenda todas as skills disponiveis em uma arvore.', [hfwTag('progression', 'Progressao'), hfwTag('skills', 'Skills')]],
+    hfw_reached_level_20: ['Nivel 20 alcancado', 'Alcance o nivel de jogador 20.', [hfwTag('progression', 'Progressao'), hfwTag('level', 'Nivel')]],
+    hfw_reached_level_30: ['Nivel 30 alcancado', 'Alcance o nivel de jogador 30.', [hfwTag('progression', 'Progressao'), hfwTag('level', 'Nivel')]],
+    hfw_reached_the_daunt: ['The Daunt alcancado', 'Chegue a The Daunt em busca de passagem para o Forbidden West.', [hfwTag('story', 'Historia'), hfwTag('campaign', 'Campanha')]],
+    hfw_secured_passage_to_embassy: ['Passagem para a Embassy garantida', 'Abra caminho ate a Embassy e reabra The Daunt.', [hfwTag('story', 'Historia'), hfwTag('campaign', 'Campanha')]],
+    hfw_attended_the_embassy: ['Embassy concluida', 'Sobreviva a emboscada na Embassy e consiga passagem para o Forbidden West.', [hfwTag('story', 'Historia'), hfwTag('campaign', 'Campanha')]],
+    hfw_established_the_base: ['Base estabelecida', 'Garanta uma base de operacoes e reinicie GAIA.', [hfwTag('story', 'Historia'), hfwTag('campaign', 'Campanha')]],
+    hfw_recovered_aether: ['AETHER recuperado', 'Defenda o Kulrut e recupere AETHER.', [hfwTag('story', 'Historia'), hfwTag('campaign', 'Campanha')]],
+    hfw_recovered_poseidon: ['POSEIDON recuperado', 'Drene Las Vegas e recupere POSEIDON.', [hfwTag('story', 'Historia'), hfwTag('campaign', 'Campanha')]],
+    hfw_recovered_demeter: ['DEMETER recuperado', 'Encontre os Quen e recupere DEMETER.', [hfwTag('story', 'Historia'), hfwTag('campaign', 'Campanha')]],
+    hfw_recovered_beta: ['Beta recuperada', 'Siga o sinal de emergencia de Beta e leve-a de volta a base.', [hfwTag('story', 'Historia'), hfwTag('campaign', 'Campanha')]],
+    hfw_discovered_faros_fate: ['Destino de Faro descoberto', 'Sobreviva a Thebes e faca amizade com os Quen.', [hfwTag('story', 'Historia'), hfwTag('campaign', 'Campanha')]],
+    hfw_flew_on_wings_of_ten: ['Voou nas Wings of the Ten', 'Voe para a batalha e derrote Regalla.', [hfwTag('story', 'Historia'), hfwTag('campaign', 'Campanha')]],
+    hfw_chose_desert_commander: ['Desert Commander escolhido', 'Ajude Drakka e Yarra e escolha o melhor candidato.', [hfwTag('side-quest', 'Side Quest'), hfwTag('story', 'Historia')]],
+    hfw_saved_the_daunt: ['The Daunt salva', 'Resolva todos os problemas que afligem The Daunt.', [hfwTag('side-quest', 'Side Quest'), hfwTag('story', 'Historia')]],
+    hfw_aided_kotallo: ['Kotallo ajudado', 'Ajude Kotallo a construir e testar um braco mecanizado.', [hfwTag('side-quest', 'Side Quest'), hfwTag('story', 'Historia')]],
+    hfw_healed_land_gods: ['Land-gods curados', 'Ajude Zo a reiniciar os land-gods para salvar Plainsong.', [hfwTag('side-quest', 'Side Quest'), hfwTag('story', 'Historia')]],
+    hfw_recovered_alvas_data: ['Dados de Alva recuperados', 'Ajude Alva a recuperar dados para ajudar os Quen.', [hfwTag('side-quest', 'Side Quest'), hfwTag('story', 'Historia')]],
+    hfw_first_tallneck_overridden: ['Primeiro Tallneck sobrescrito', 'Chegue ao topo de um Tallneck e acesse suas informacoes.', [hfwTag('exploration', 'Exploracao'), hfwTag('map', 'Mapa')]],
+    hfw_first_rebel_camp_completed: ['Primeiro Rebel Camp concluido', 'Conclua objetivos principais em 1 Rebel Camp.', [hfwTag('rebel-camps', 'Rebel Camps'), hfwTag('cleanup', 'Cleanup')]],
+    hfw_first_core_overridden: ['Primeiro Core sobrescrito', 'Chegue ao Core de um Cauldron e acesse suas informacoes.', [hfwTag('cauldrons', 'Cauldrons'), hfwTag('progression', 'Progressao')]],
+    hfw_three_stripes_hunting_ground: ['3 Stripes em um Hunting Ground', 'Ganhe pelo menos uma marca Quarter Stripe nas tres trials de um Hunting Ground.', [hfwTag('hunting-grounds', 'Hunting Grounds'), hfwTag('challenge', 'Desafio')]],
+    hfw_all_acquisition_machines_killed: ['Todas as machines de aquisicao mortas', 'Mate pelo menos uma machine de cada tipo de Acquisition.', [hfwTag('machines', 'Machines'), hfwTag('combat', 'Combate'), hfwTag('cleanup', 'Cleanup')]],
+    hfw_all_recon_machines_killed: ['Todas as machines de reconhecimento mortas', 'Mate pelo menos uma machine de cada tipo de Reconnaissance.', [hfwTag('machines', 'Machines'), hfwTag('combat', 'Combate'), hfwTag('cleanup', 'Cleanup')]],
+    hfw_all_combat_machines_killed: ['Todas as machines de combate mortas', 'Mate pelo menos uma machine de cada tipo de Combat.', [hfwTag('machines', 'Machines'), hfwTag('combat', 'Combate'), hfwTag('cleanup', 'Cleanup')]],
+    hfw_all_transport_machines_killed: ['Todas as machines de transporte mortas', 'Mate pelo menos uma machine de cada tipo de Transport.', [hfwTag('machines', 'Machines'), hfwTag('combat', 'Combate'), hfwTag('cleanup', 'Cleanup')]],
+    hfw_rode_all_regular_mounts: ['Todas as montarias regulares montadas', 'Monte um Charger, um Bristleback e um Clawstrider.', [hfwTag('machines', 'Machines'), hfwTag('mounts', 'Mounts'), hfwTag('cleanup', 'Cleanup')]],
+    hfw_completed_long_glide: ['Planagem longa concluida', 'Plane por 60 segundos sem interrupcao.', [hfwTag('exploration', 'Exploracao'), hfwTag('cleanup', 'Cleanup')]],
+    hfw_completed_two_flying_mount_quests: ['2 quests de flying mount concluidas', 'Conclua 2 quests que exigem uma flying mount.', [hfwTag('side-quest', 'Side Quest'), hfwTag('flying-mount', 'Flying Mount')]],
+    hfw_won_two_gauntlet_runs: ['2 Gauntlet Runs vencidas', 'Fique em primeiro lugar em duas Gauntlet Runs diferentes.', [hfwTag('gauntlet-runs', 'Gauntlet Runs'), hfwTag('activity', 'Atividade'), hfwTag('cleanup', 'Cleanup')]],
+    hfw_completed_salvage_contracts: ['Set de Salvage Contracts concluido', 'Conclua todos os contratos de um Salvage Contractor.', [hfwTag('salvage-contracts', 'Salvage Contracts'), hfwTag('side-quest', 'Side Quest'), hfwTag('cleanup', 'Cleanup')]],
+    hfw_completed_four_rebel_outposts: ['4 Rebel Outposts concluidos', 'Derrote o lider do outpost e recupere as tags em 4 Rebel Outposts.', [hfwTag('rebel-outposts', 'Rebel Outposts'), hfwTag('cleanup', 'Cleanup')]],
+    hfw_completed_three_relic_ruins: ['3 Relic Ruins concluidas', 'Descubra e conclua 3 Relic Ruins.', [hfwTag('relic-ruins', 'Relic Ruins'), hfwTag('collectible', 'Coletavel'), hfwTag('puzzle', 'Puzzle')]],
+    hfw_completed_arena_challenge_set: ['Arena Challenge Set concluido', 'Conclua 1 conjunto de desafios da Arena.', [hfwTag('arena', 'Arena'), hfwTag('challenge', 'Desafio'), hfwTag('cleanup', 'Cleanup')]],
+    hfw_defeated_machine_strike_challengers: ['Machine Strike Challengers derrotados', 'Venca uma partida contra 2 desafiantes diferentes de Machine Strike.', [hfwTag('machine-strike', 'Machine Strike'), hfwTag('activity', 'Atividade')]],
+    hfw_obtained_all_weapon_classes: ['Todas as classes de armas obtidas', 'Obtenha 1 arma de cada classe.', [hfwTag('equipment', 'Equipamento'), hfwTag('cleanup', 'Cleanup')]],
+    hfw_used_all_elemental_states: ['Todos os estados elementais usados', 'Aplique cada estado elemental em um inimigo pelo menos uma vez.', [hfwTag('combat', 'Combate'), hfwTag('elemental', 'Elementos')]],
+    hfw_performed_three_melee_combos: ['3 combos melee executados', 'Execute com sucesso 3 combos melee desbloqueaveis diferentes.', [hfwTag('melee-pits', 'Melee Pits'), hfwTag('skills', 'Skills')]],
+    hfw_stealth_killed_ten_machines: ['10 machines mortas furtivamente', 'Realize um abate furtivo em 10 machines.', [hfwTag('combat', 'Combate'), hfwTag('stealth', 'Stealth'), hfwTag('cleanup', 'Cleanup')]],
+    hfw_tore_off_100_components: ['100 componentes arrancados', 'Arranque 100 componentes de machines.', [hfwTag('combat', 'Combate'), hfwTag('machines', 'Machines'), hfwTag('cleanup', 'Cleanup')]],
+    hfw_picked_up_five_heavy_weapons: ['5 armas pesadas coletadas', 'Pegue 5 armas pesadas diferentes.', [hfwTag('combat', 'Combate'), hfwTag('machines', 'Machines'), hfwTag('cleanup', 'Cleanup')]],
+    hfw_ten_machine_types_overridden: ['10 tipos de machines sobrescritos', 'Desbloqueie e use overrides em 10 tipos diferentes de machines.', [hfwTag('cauldrons', 'Cauldrons'), hfwTag('machines', 'Machines'), hfwTag('progression', 'Progressao')]],
+    hfw_defeated_the_enduring: ['The Enduring derrotada', 'Derrote a mestre melee Tenakth conhecida como The Enduring.', [hfwTag('melee-pits', 'Melee Pits'), hfwTag('difficulty', 'Dificuldade', 'warning'), hfwTag('skills', 'Skills')]],
+    hfw_fully_upgraded_valor_surge: ['Valor Surge totalmente aprimorado', 'Aprimore um Valor Surge ate o nivel maximo.', [hfwTag('progression', 'Progressao'), hfwTag('skills', 'Skills')]],
+    hfw_upgraded_three_weapons: ['3 armas aprimoradas', 'Aprimore totalmente 3 armas.', [hfwTag('equipment', 'Equipamento'), hfwTag('upgrades', 'Upgrades')]],
+    hfw_upgraded_three_outfits: ['3 outfits aprimorados', 'Aprimore totalmente 3 outfits diferentes.', [hfwTag('equipment', 'Equipamento'), hfwTag('upgrades', 'Upgrades')]],
+    hfw_upgraded_every_pouch_type: ['Todos os tipos de pouch aprimorados', 'Aprimore Food Pouch, Potion Pouch, Resource Pouch, Trap Pouch e qualquer ammo pouch pelo menos uma vez.', [hfwTag('crafting', 'Crafting'), hfwTag('upgrades', 'Upgrades'), hfwTag('cleanup', 'Cleanup')]],
+    hfw_enhanced_weapon_with_coils: ['Arma melhorada com coils', 'Equipe uma arma de qualquer tier com 2 coils.', [hfwTag('equipment', 'Equipamento'), hfwTag('crafting', 'Crafting')]],
+    hfw_unlocked_three_weapon_techniques: ['3 Weapon Techniques desbloqueadas', 'Desbloqueie uma Weapon Technique para 3 classes de armas diferentes.', [hfwTag('skills', 'Skills'), hfwTag('progression', 'Progressao')]],
+    hfw_recovered_five_different_collectables: ['5 collectibles diferentes recuperados', 'Conclua 1 Survey Drone, 1 Black Box, 1 Relic Ruin, 1 Vista Point e 1 Signal Tower.', [hfwTag('collectible', 'Coletavel'), hfwTag('exploration', 'Exploracao'), hfwTag('cleanup', 'Cleanup')]],
+    hfw_used_dye_flowers: ['Dye Flowers usadas', 'Use dye flowers para desbloquear e aplicar uma nova tintura.', [hfwTag('collectible', 'Coletavel'), hfwTag('customization', 'Customizacao'), hfwTag('cleanup', 'Cleanup')]]
+  };
+
+  Object.assign(horizonForbiddenWestGuide, {
+    title: 'Horizon Forbidden West',
+    published: true,
+    platforms: ['PS4', 'PS5'],
+    genre: ['acao/RPG', 'mundo aberto'],
+    difficulty: 3,
+    estimatedTime: '35-50 horas',
+    time: '35-50 horas',
+    time_min_hours: 35,
+    time_max_hours: 50,
+    time_sort_hours: 35,
+    time_bucket: 'long',
+    runs: '1 campanha + cleanup em free roam',
+    hasMissables: true,
+    missableCount: 1,
+    missable_count: 1,
+    hasOnline: false,
+    hasMandatoryOnline: false,
+    hasMandatoryCoop: false,
+    onlineRequired: false,
+    coopRequired: false,
+    dlcRequired: false,
+    dlcRequiredForPlatinum: false,
+    dlc_status: 'out_of_base_scope',
+    platinumType: 'lista base PS4/PS5 + campanha + mundo aberto + scan de machines',
+    missable: 'O unico ponto tratado como perdivel/risco forte e All Machine Types Scanned por causa de Specter e Specter Prime na missao final Singularity. O restante da lista base permite cleanup em free roam depois da historia.',
+    runs_summary: 'Uma run e suficiente para a platina base, com cleanup depois da historia. New Game+ nao e obrigatorio.',
+    missable_summary: 'All Machine Types Scanned e o principal risco: escaneie Specter e Specter Prime durante Singularity e repita o scan se morrer antes de concluir o combate.',
+    online_summary: 'A platina base e single-player/offline, sem online obrigatorio, sem coop obrigatorio e sem PS+ necessario.',
+    grind_summary: 'O maior checklist fica em scans de machines, Melee Pits, Hunting Grounds, Rebel Camps, Cauldrons, Arena, Gauntlet Runs, side quests especificas, upgrades e collectibles controlados.',
+    dlc_scope: 'Burning Shores, New Game+, Ultra Hard e conteudos de Complete Edition/PC ficam fora dos requisitos da platina base de 59 trofeus.',
+    difficulty_reason: 'A dificuldade editorial fica em 3/10: a lista base nao exige dificuldade alta, Ultra Hard, New Game+ ou online; o cuidado maior e o scan de Specter/Specter Prime e a organizacao das atividades.',
+    time_reason: 'A estimativa de 35-50 horas considera campanha, free roam, scans, Tallnecks, Cauldrons, Hunting Grounds, Melee Pits, Rebel Camps, Arena, side quests, collectibles e upgrades.',
+    first_run_advice: 'Comece a campanha avancando pela historia e abrindo o mapa com Tallnecks, mas ja escaneie toda machine nova com o Focus. Priorize skills da arvore Warrior para evitar grind nos Melee Pits e, antes da missao final Singularity, garanta o scan de Specter e Specter Prime para All Machine Types Scanned.',
+    cleanup_advice: 'Depois da historia, use o free roam para fechar side quests, collectibles, activities, Gauntlet Runs, Salvage Contracts, Rebel Outposts, Arena, Hunting Grounds, upgrades, combat trophies e machines pendentes.',
+    before_you_start: 'Separe a platina base dos conteudos adicionais: Burning Shores, New Game+, Ultra Hard e Complete Edition/PC nao entram nos 59 trofeus base. O scan de Specter e Specter Prime em Singularity e o ponto que merece atencao maxima.',
+    best_for: 'Vale platinar Horizon Forbidden West se voce gosta de mundo aberto, combate contra machines, exploracao e checklist moderado.',
+    avoid_if: 'Evite se voce nao quer acompanhar scan de machines, Melee Pits, Hunting Grounds, Rebel Camps, Arena, side quests e cleanup de mundo aberto.',
+    editorial_status: 'published',
+    coverage_level: 'complete',
+    is_verified: true,
+    verification_status: 'verified',
+    verification_note: 'Guia revisado para a lista base PS4/PS5 com 59 trofeus; Burning Shores, New Game+, Ultra Hard e Complete Edition/PC ficam fora da platina base.',
+    editorial_review_status: 'verified',
+    editorialStatus: 'verified',
+    last_reviewed_at: '2026-06-05',
+    lastReviewedAt: '2026-06-05T00:00:00.000-03:00',
+    editorial_notes: 'Escopo editorial: Horizon Forbidden West lista base PS4/PS5, 59 trofeus. Platina single-player/offline, sem coop, sem DLC obrigatoria, sem New Game+ e sem Ultra Hard. All Machine Types Scanned fica como unico risco por Specter/Specter Prime em Singularity.',
+    editorialNotes: 'Escopo editorial: Horizon Forbidden West lista base PS4/PS5, 59 trofeus. Platina single-player/offline, sem coop, sem DLC obrigatoria, sem New Game+ e sem Ultra Hard. All Machine Types Scanned fica como unico risco por Specter/Specter Prime em Singularity.',
+    quality_warnings: [],
+    qualityWarnings: [],
+    editorial_summary: [
+      'Horizon Forbidden West e uma platina acessivel de mundo aberto, focada em completar a campanha, limpar atividades principais do mapa, escanear machines, concluir Cauldrons, Tallnecks, Hunting Grounds, Melee Pits, Rebel Camps, Arena e algumas side quests especificas. A platina base e single-player, offline, sem coop, sem DLC obrigatoria, sem New Game+ e sem Ultra Hard.',
+      'A rota mais segura e avancar pela campanha com exploracao moderada, priorizar skills da arvore Warrior para os Melee Pits, escanear todas as machines e ter atencao maxima a Specter e Specter Prime na missao final Singularity. Depois da historia, o free roam permite cleanup de collectibles, side quests, Gauntlet Runs, Salvage Contracts, Rebel Outposts, Arena, Hunting Grounds e trofeus acumulativos.',
+      'O principal cuidado e nao confundir a platina base com Burning Shores ou New Game+. Horizon Forbidden West nao exige 100% absoluto do mapa para a platina; o guia foca apenas nos 59 trofeus da lista base.'
+    ],
+    quickDecision: {
+      summary: 'Vale platinar Horizon Forbidden West se voce gosta de mundo aberto, combate contra machines, exploracao e checklist moderado. A platina base e acessivel, offline, sem coop, sem DLC obrigatoria, sem New Game+ e sem Ultra Hard.',
+      mainRisk: 'O principal cuidado e escanear Specter e Specter Prime na missao final Singularity e organizar Cauldrons, Hunting Grounds, Melee Pits, Rebel Camps, Arena, side quests especificas e cleanup sem transformar o guia em 100% com DLC.',
+      firstAction: 'Comece pela campanha abrindo o mapa com Tallnecks e escaneando toda machine nova com o Focus; antes de Singularity, confirme Specter e Specter Prime.'
+    },
+    seo: {
+      title: 'Guia de Platina Horizon Forbidden West - Trofeus, Roadmap e Dicas',
+      description: 'Guia de platina de Horizon Forbidden West com roadmap em portugues, trofeus da lista base, machines, Specter, Cauldrons, Tallnecks, Hunting Grounds, Melee Pits, Rebel Camps, Arena, collectibles, side quests e cleanup para conquistar a platina no PS4 e PS5.',
+      keywords: ['Horizon Forbidden West', 'guia de platina Horizon Forbidden West', 'trofeus Horizon Forbidden West', 'roadmap Horizon Forbidden West', 'All Machine Types Scanned', 'Specter', 'Specter Prime', 'Singularity', 'Cauldrons', 'Hunting Grounds', 'Melee Pits', 'Burning Shores', 'New Game+']
+    },
+    tags: ['mundo aberto', 'acao/RPG', 'campanha', 'machines', 'scan', 'cauldrons', 'hunting grounds', 'melee pits', 'rebel camps', 'arena', 'gauntlet runs', 'collectibles', 'exploracao', 'cleanup', 'offline', 'sem coop', 'sem DLC obrigatoria'],
+    checklist: [
+      'Confirmar os 59 trofeus da lista base PS4/PS5.',
+      'Nao contar Burning Shores, New Game+, Ultra Hard, Complete Edition/PC ou DLC como requisito da platina.',
+      'Completar a campanha principal.',
+      'Escanear todas as machines da lista base, com atencao maxima a Specter e Specter Prime durante Singularity.',
+      'Ativar Tallnecks e completar Cauldrons.',
+      'Completar Hunting Grounds necessarios com 3 Stripes.',
+      'Completar Melee Pits e derrotar The Enduring.',
+      'Completar Rebel Camps e derrotar Asera.',
+      'Completar o Arena Challenge Set necessario.',
+      'Vencer 2 Gauntlet Runs e completar 4 Rebel Outposts.',
+      'Completar um set de Salvage Contracts e 2 Flying Mount Quests.',
+      'Completar side quests ligadas a Kotallo, Zo, Alva, The Daunt e Desert Commander.',
+      'Recuperar 5 tipos diferentes de collectibles e completar 3 Relic Ruins.',
+      'Resolver upgrades, pouches, coils, dye flowers, glide, mounts, overrides e combat trophies.',
+      'Fazer cleanup pos-historia em free roam e conferir flags online/coop/DLC/perdiveis.'
+    ],
+    faq: [
+      { question: 'Horizon Forbidden West exige online para platinar?', answer: 'Nao. A platina base e single-player e pode ser feita offline.' },
+      { question: 'Horizon Forbidden West exige coop para platinar?', answer: 'Nao. A platina nao depende de coop.' },
+      { question: 'Burning Shores e necessario para a platina?', answer: 'Nao. Burning Shores tem trofeus proprios e nao entra nos 59 trofeus da platina base.' },
+      { question: 'New Game+ ou Ultra Hard sao necessarios para a platina?', answer: 'Nao. New Game+ e Ultra Hard pertencem a trofeus adicionais e nao sao exigidos pela platina base.' },
+      { question: 'Horizon Forbidden West tem trofeus perdiveis?', answer: 'O ponto de atencao principal e All Machine Types Scanned, por causa de Specter e Specter Prime na missao final Singularity. O restante da lista base pode ser resolvido no free roam.' },
+      { question: 'Quantas runs sao necessarias?', answer: 'Uma run e suficiente para a platina base, com cleanup depois da historia. New Game+ nao e obrigatorio.' },
+      { question: 'Preciso jogar em dificuldade alta?', answer: 'Nao. A dificuldade nao afeta a platina base.' },
+      { question: 'Preciso fazer 100% do mapa?', answer: 'Nao. A platina exige varias atividades, mas nao 100% absoluto de todos os collectibles e atividades. O guia foca so no que entra nos 59 trofeus base.' },
+      { question: 'Qual e o maior cuidado da platina?', answer: 'Escanear Specter e Specter Prime durante Singularity e organizar Melee Pits, Hunting Grounds, Rebel Camps, Cauldrons e side quests especificas.' },
+      { question: 'Da para fazer cleanup depois da historia?', answer: 'Sim. O free roam pos-historia permite resolver quase tudo, incluindo side quests, collectibles, activities, upgrades e combat trophies.' }
+    ],
+    attentionPoints: [
+      { title: 'All Machine Types Scanned', detail: 'Escaneie Specter e Specter Prime em Singularity; se morrer no boss, escaneie novamente antes de concluir a luta.', tags: hfwRiskScanTags },
+      { title: 'Burning Shores fora da platina', detail: 'O DLC tem trofeus proprios e nao entra nos 59 trofeus base.', tags: [hfwTag('dlc', 'DLC fora da platina', 'complete')] },
+      { title: 'New Game+ e Ultra Hard fora da platina', detail: 'Sao trofeus adicionais, nao requisitos da platina base.', tags: [hfwTag('extra', 'Conteudo adicional', 'complete')] },
+      { title: 'Melee Pits e The Enduring', detail: 'Priorize skills Warrior para liberar combos e evitar grind no final.', tags: [hfwTag('melee-pits', 'Melee Pits'), hfwTag('skills', 'Skills')] },
+      { title: 'Hunting Grounds', detail: 'Exigem 3 Stripes; nao confunda com Blazing Suns de Horizon Zero Dawn.', tags: [hfwTag('hunting-grounds', 'Hunting Grounds'), hfwTag('challenge', 'Desafio')] },
+      { title: 'Rebel Camps e Asera', detail: 'Complete a linha dos camps para fechar Defeated Asera.', tags: [hfwTag('rebel-camps', 'Rebel Camps'), hfwTag('side-quest', 'Side Quest')] },
+      { title: 'Collectibles controlados', detail: 'A platina exige tipos especificos, nao 100% absoluto de todos os collectibles.', tags: [hfwTag('collectibles', 'Collectibles'), hfwTag('cleanup', 'Cleanup')] },
+      { title: 'Free roam pos-historia', detail: 'Quase tudo pode ser feito depois da campanha.', tags: [hfwTag('free-roam', 'Free roam'), hfwTag('cleanup', 'Cleanup')] },
+      { title: 'Online e coop', detail: 'A platina base e single-player, sem online obrigatorio e sem coop obrigatorio.', tags: [hfwTag('offline', 'Offline', 'complete')] }
+    ],
+    roadmap: [
+      {
+        title: 'Campanha com scan de machines desde o inicio',
+        focus: 'Historia e machines',
+        objective: 'Avancar pela historia enquanto escaneia machines, libera sistemas principais e prepara os trofeus acumulativos.',
+        actions: [
+          'Progrida pela campanha principal sem se preocupar com dificuldade alta, pois a platina base nao exige Ultra Hard.',
+          'Use o Focus em toda machine nova para adiantar All Machine Types Scanned.',
+          'Priorize skills da arvore Warrior para liberar combos exigidos nos Melee Pits.',
+          'Ative Tallnecks quando possivel para abrir o mapa e facilitar o cleanup.',
+          'Faca side quests e atividades proximas quando ajudarem a ganhar XP, skill points e equipamentos.'
+        ],
+        warning: 'Specter e Specter Prime exigem atencao especial na missao final Singularity. Faca scan manual dos dois e confirme o registro no Machine Catalogue.',
+        result: 'A campanha avanca com machines catalogadas, mapa aberto e base solida para atividades e cleanup.'
+      },
+      {
+        title: 'Singularity e All Machine Types Scanned',
+        focus: 'Risco de scan',
+        objective: 'Evitar a principal pendencia sensivel da platina base: o scan de machines ligadas a reta final.',
+        actions: [
+          'Antes de entrar na missao final Singularity, confira o Machine Catalogue.',
+          'Durante a missao, escaneie Specter e Specter Prime com o Focus.',
+          'Se morrer durante o combate final, escaneie novamente antes de concluir a luta.',
+          'Depois da historia, confira se todos os tipos de machines da lista base aparecem no catalogo.',
+          'Use save anterior apenas se o scan nao tiver sido registrado corretamente.'
+        ],
+        warning: 'All Machine Types Scanned e o ponto mais sensivel da platina. Quase tudo pode ser feito no free roam, mas Specter/Specter Prime exigem atencao na historia.',
+        result: 'O principal risco de checklist da platina fica resolvido antes do cleanup.'
+      },
+      {
+        title: 'Atividades principais do mapa',
+        focus: 'Open world',
+        objective: 'Limpar as atividades estruturais exigidas pela lista base.',
+        actions: [
+          'Complete todos os Tallnecks da lista base para revelar o mapa.',
+          'Conclua Cauldrons para liberar overrides e trofeus relacionados.',
+          'Limpe Rebel Camps e a questline de Asera.',
+          'Complete Hunting Grounds buscando pelo menos o requisito necessario da lista base.',
+          'Complete Melee Pits e prepare-se para Defeated the Enduring.'
+        ],
+        warning: 'Melee Pits exigem combos especificos. Ter a arvore Warrior adiantada evita grind de skill points no final.',
+        result: 'Tallnecks, Cauldrons, Rebel Camps, Hunting Grounds e Melee Pits ficam prontos para a reta final.'
+      },
+      {
+        title: 'Arena, Gauntlet Runs e side quests especificas',
+        focus: 'Atividades e quests',
+        objective: 'Completar atividades e side quests ligadas diretamente aos trofeus da platina base.',
+        actions: [
+          'Complete a Arena pelo menos no requisito necessario para o trofeu da lista base.',
+          'Venca duas Gauntlet Runs para o trofeu correspondente.',
+          'Complete um conjunto de Salvage Contracts.',
+          'Finalize side quests ligadas a Kotallo, Zo, Alva, The Daunt e Desert Commander.',
+          'Complete duas quests que exigem flying mount depois que ele for liberado pela historia.'
+        ],
+        warning: '',
+        result: 'As side quests e atividades especificas da platina ficam resolvidas sem exigir 100% absoluto do jogo.'
+      },
+      {
+        title: 'Collectibles e exploracao controlada',
+        focus: 'Colecionaveis',
+        objective: 'Coletar apenas o necessario para os trofeus da lista base, sem confundir com 100% completo.',
+        actions: [
+          'Complete tres Relic Ruins para o trofeu correspondente.',
+          'Recupere cinco tipos diferentes de collectibles conforme a lista base pedir.',
+          'Use o mapa e o flying mount para reduzir deslocamento no cleanup.',
+          'Revise Vista Points, Black Boxes, Signal Lenses, Survey Drones e demais categorias apenas conforme exigencia da lista base.',
+          'Nao inclua collectibles de Burning Shores como requisito da platina base.'
+        ],
+        warning: 'Horizon Forbidden West nao exige 100% absoluto de todos os collectibles para a platina base. Evite transformar o guia em rota de 100% com DLC.',
+        result: 'Os collectibles necessarios ficam concluidos sem misturar base game com DLC.'
+      },
+      {
+        title: 'Cleanup final em free roam',
+        focus: 'Conferencia',
+        objective: 'Fechar trofeus acumulativos, combate, machines e pendencias depois da historia.',
+        actions: [
+          'Use o free roam pos-historia para concluir atividades restantes.',
+          'Finalize trofeus de combate, mount, glide, override e machines que ficaram pendentes.',
+          'Confira se os 59 trofeus da lista base foram considerados.',
+          'Garanta que Burning Shores, New Game+ e Ultra Hard continuam fora dos requisitos da platina.',
+          'Confirme que a rota continua sem online obrigatorio, sem coop obrigatorio e sem DLC exigida.'
+        ],
+        warning: '',
+        result: 'A lista base de Horizon Forbidden West fica pronta para a platina.'
+      }
+    ]
+  });
+
+  for (const trophy of horizonForbiddenWestGuide.trophies || []) {
+    const editorialRow = hfwTrophyEditorialById[trophy.id] || [];
+    const [namePt, descriptionPtBr, tags] = editorialRow;
+    const finalDescriptionPtBr = descriptionPtBr || trophy.descriptionPtBr || trophy.ptDescription || trophy.tip || trophy.description || '';
+    trophy.trophyNameOriginal = trophy.name;
+    trophy.officialName = trophy.name;
+    trophy.originalName = trophy.name;
+    trophy.name_pt = namePt || trophy.name_pt || trophy.name;
+    trophy.trophyNamePtBr = trophy.name_pt;
+    trophy.localizedNamePtBr = trophy.name_pt;
+    trophy.namePtSource = namePt ? 'editorial_ptbr' : 'fallback_official_name';
+    trophy.descriptionOriginal = trophy.descriptionOriginal || trophy.description || '';
+    trophy.description = finalDescriptionPtBr;
+    trophy.descriptionPtBr = finalDescriptionPtBr;
+    trophy.ptDescription = finalDescriptionPtBr;
+    trophy.localizedDescription = { ...(trophy.localizedDescription || {}), ptBr: finalDescriptionPtBr, 'pt-BR': finalDescriptionPtBr };
+    trophy.descriptionPtSource = 'editorial_ptbr';
+    trophy.tip = trophy.id === 'hfw_all_machine_types_scanned'
+      ? 'Use o Focus em toda machine nova e escaneie manualmente Specter e Specter Prime durante Singularity. Se morrer no boss, repita o scan antes de finalizar a luta.'
+      : trophy.tip || '';
+    trophy.guideTip = trophy.tip;
+    trophy.tier = trophy.type;
+    trophy.is_missable = trophy.id === 'hfw_all_machine_types_scanned';
+    trophy.isMissable = trophy.is_missable;
+    trophy.is_spoiler = Boolean(trophy.is_spoiler);
+    trophy.isSpoiler = trophy.is_spoiler;
+    trophy.is_online = false;
+    trophy.isOnline = false;
+    trophy.is_coop = false;
+    trophy.isCoop = false;
+    trophy.is_dlc = false;
+    trophy.isDlc = false;
+    trophy.tags = Array.isArray(tags) ? tags.map(tag => (typeof tag === 'string' ? tag : { ...tag })) : [];
+  }
+}
+
 const atlasGuideViewModel = require('../shared/guideViewModel');
 for (const game of sampleGames) {
   if (!Array.isArray(game.roadmap)) continue;

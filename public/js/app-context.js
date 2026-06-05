@@ -370,6 +370,10 @@ window.AppContextFactory = (() => {
         UI.setSearchFeedback('Digite o nome de um jogo para continuar.', 'error');
         return UI.showToast('Digite o nome de um jogo.', 'error');
       }
+      window.AtlasAnalytics?.trackGameSearch?.({
+        searchTerm: query,
+        source: options.analyticsSource || 'home'
+      });
 
       const normalizedQuery = normalizeSearchText(query);
       let currentSuggestion = state.searchSuggestions[state.activeSuggestionIndex] || getBestSuggestion(query);
