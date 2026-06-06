@@ -349,11 +349,15 @@ function buildAnalyticsHeadHtml() {
     function gtag(){dataLayer.push(arguments);}
     gtag('js', new Date());
     gtag('config', ${safeJsonId}, { send_page_view: false });
-    gtag('event', 'page_view', {
+    const atlasAnalyticsDebug = new URLSearchParams(window.location.search).has('ga_debug');
+    const atlasPageViewParams = {
+      send_to: ${safeJsonId},
       page_title: document.title || 'AtlasAchievement',
       page_location: window.location.href,
       page_path: window.location.pathname
-    });
+    };
+    if (atlasAnalyticsDebug) atlasPageViewParams.debug_mode = true;
+    gtag('event', 'page_view', atlasPageViewParams);
   </script>`;
 }
 
@@ -541,11 +545,23 @@ function firstSeoText(...values) {
 
 function buildGameSeoTitle(game = {}) {
   const name = String(game?.name || 'Jogo').trim() || 'Jogo';
+  if (String(game?.slug || '').trim().toLowerCase() === 'lords-of-the-fallen') {
+    return 'Guia de Platina Lords of the Fallen — Troféus, Roadmap e Dicas';
+  }
+  if (String(game?.slug || '').trim().toLowerCase() === 'until-dawn') {
+    return 'Guia de Platina Until Dawn — Troféus, Roadmap e Dicas';
+  }
   return `${name}: guia de platina, troféus e roadmap | AtlasAchievement`;
 }
 
 function buildGameSeoDescription(game = {}) {
   const name = String(game?.name || 'este jogo').trim() || 'este jogo';
+  if (String(game?.slug || '').trim().toLowerCase() === 'lords-of-the-fallen') {
+    return 'Guia de platina de Lords of the Fallen 2023 com roadmap em português, troféus online, co-op, PvP, finais Adyr, Radiant e Umbral, New Game+, questlines, bosses, collectibles e dicas para conquistar todos os troféus no PS5.';
+  }
+  if (String(game?.slug || '').trim().toLowerCase() === 'until-dawn') {
+    return 'Guia de platina de Until Dawn com roadmap em português, troféus da lista base, todos vivos, todos mortos, Totens, pistas, cluelines, chapter select e dicas para conquistar a platina no PS4.';
+  }
   if (String(game?.slug || '').trim().toLowerCase() === 'elden-ring') {
     return 'Guia de platina de Elden Ring em português, com tempo estimado, dificuldade, finais, armas lendárias, Bolt of Gransax, chefes, roadmap e checklist de troféus.';
   }
@@ -1099,7 +1115,7 @@ function buildGuideFaqStructuredData(canonicalUrl, viewModel) {
 function renderGuideEditorialNotesHtml(game = {}, viewModel = {}) {
   const normalizedSlug = String(game?.slug || '').trim().toLowerCase();
   const routeTrophyLimit = normalizedSlug === 'red-dead-redemption-2' ? 11 : (normalizedSlug === 'marvels-spider-man-2' ? 8 : 5);
-  const explicitAttentionPoints = ['days-gone', 'hogwarts-legacy', 'horizon-forbidden-west', 'horizon-zero-dawn'].includes(normalizedSlug) && Array.isArray(game?.attentionPoints)
+  const explicitAttentionPoints = ['days-gone', 'hogwarts-legacy', 'horizon-forbidden-west', 'horizon-zero-dawn', 'lords-of-the-fallen', 'until-dawn'].includes(normalizedSlug) && Array.isArray(game?.attentionPoints)
     ? game.attentionPoints.map(item => {
       const tags = Array.isArray(item?.tags)
         ? item.tags.map(tag => {
@@ -1118,7 +1134,7 @@ function renderGuideEditorialNotesHtml(game = {}, viewModel = {}) {
   const routeTrophies = explicitAttentionPoints.length
     ? explicitAttentionPoints
     : (Array.isArray(viewModel.routeChangingTrophies) ? viewModel.routeChangingTrophies.slice(0, routeTrophyLimit) : []);
-  const faqLimit = normalizedSlug === 'marvels-spider-man-miles-morales' ? 12 : (['nioh-3', 'saros', 'the-last-of-us-part-ii'].includes(normalizedSlug) ? 11 : (['days-gone', 'hogwarts-legacy', 'horizon-forbidden-west', 'horizon-zero-dawn', 'the-last-of-us-part-i', 'subnautica'].includes(normalizedSlug) ? 10 : (normalizedSlug === 'dark-souls-remastered' ? 9 : (['god-of-war-ragnarok', 'resident-evil-2-remake', 'resident-evil-3-remake', 'hollow-knight', 'marvels-spider-man'].includes(normalizedSlug) ? 8 : (normalizedSlug === 'red-dead-redemption-2' ? 7 : 6)))));
+  const faqLimit = normalizedSlug === 'marvels-spider-man-miles-morales' ? 12 : (['lords-of-the-fallen', 'nioh-3', 'saros', 'the-last-of-us-part-ii'].includes(normalizedSlug) ? 11 : (['days-gone', 'hogwarts-legacy', 'horizon-forbidden-west', 'horizon-zero-dawn', 'the-last-of-us-part-i', 'subnautica', 'until-dawn'].includes(normalizedSlug) ? 10 : (normalizedSlug === 'dark-souls-remastered' ? 9 : (['god-of-war-ragnarok', 'resident-evil-2-remake', 'resident-evil-3-remake', 'hollow-knight', 'marvels-spider-man'].includes(normalizedSlug) ? 8 : (normalizedSlug === 'red-dead-redemption-2' ? 7 : 6)))));
   const faqItems = Array.isArray(viewModel.contextualFaq) ? viewModel.contextualFaq.slice(0, faqLimit) : [];
   const playerFit = viewModel.playerFit || buildGuidePlayerFit(game, viewModel);
   const methodItems = Array.isArray(viewModel.editorial?.methodItems) ? viewModel.editorial.methodItems : [];
@@ -1879,7 +1895,7 @@ function prioritizeGuideViewHtml(html = '') {
 async function buildGamePageHtml(game, req) {
   const origin = getPublicOrigin(req);
   const normalizedSlug = String(game?.slug || '').trim().toLowerCase();
-  const canonicalUrl = ['elden-ring', 'ghost-of-tsushima', 'god-of-war', 'god-of-war-2018', 'god-of-war-ragnarok', 'hades', 'hades-ii', 'astro-bot', 'pragmata', 'nioh-2', 'nioh-3', 'resident-evil-requiem', 'resident-evil-4-remake', 'saros', 'the-last-of-us-part-i', 'the-last-of-us-part-ii', 'subnautica'].includes(normalizedSlug)
+  const canonicalUrl = ['elden-ring', 'ghost-of-tsushima', 'god-of-war', 'god-of-war-2018', 'god-of-war-ragnarok', 'hades', 'hades-ii', 'astro-bot', 'lords-of-the-fallen', 'pragmata', 'nioh-2', 'nioh-3', 'resident-evil-requiem', 'resident-evil-4-remake', 'saros', 'the-last-of-us-part-i', 'the-last-of-us-part-ii', 'subnautica', 'until-dawn'].includes(normalizedSlug)
     ? `https://atlasachievement.com.br/jogo/${normalizedSlug}`
     : buildPublicUrl(req, `/jogo/${game.slug}`);
   const relatedResponse = await gamesService.listGames({ page: 1, limit: 80, sort: 'recommended-desc' });

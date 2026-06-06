@@ -146,7 +146,13 @@ window.AtlasAnalytics = (() => {
   }
 
   function sendGoogleEvent(eventName, params = {}) {
-    const cleanParams = normalizeParams(params);
+    const cleanParams = {
+      send_to: measurementId,
+      ...normalizeParams(params)
+    };
+    if (new URLSearchParams(window.location.search).has('ga_debug')) {
+      cleanParams.debug_mode = true;
+    }
     if (!isEnabled()) return false;
     try {
       window.gtag('event', eventName, cleanParams);

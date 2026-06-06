@@ -320,6 +320,11 @@
     coletaveis: { id: 'collectible', label: 'Coletáveis', tone: 'partial' },
     historia: { id: 'story', label: 'História', tone: 'partial' },
     spoiler: { id: 'spoiler', label: 'Spoiler', tone: 'spoiler' },
+    online: { id: 'online', label: 'Online', tone: 'warning' },
+    coop: { id: 'coop', label: 'Co-op', tone: 'warning' },
+    'co-op': { id: 'coop', label: 'Co-op', tone: 'warning' },
+    multiplayer: { id: 'multiplayer', label: 'Multiplayer', tone: 'warning' },
+    pvp: { id: 'pvp', label: 'PvP', tone: 'warning' },
     dificuldade: { id: 'difficulty', label: 'Dificuldade', tone: 'warning' },
     combate: { id: 'combat', label: 'Combate', tone: 'warning' },
     atencao: { id: 'attention', label: 'Atenção', tone: 'warning' },
@@ -394,7 +399,7 @@
 
   function getExplicitGuideTrophyTags(trophy = {}, game = {}) {
     const slug = String(game?.slug || '').trim().toLowerCase();
-    if (!['clair-obscur-expedition-33', 'dark-souls-remastered', 'days-gone', 'detroit-become-human', 'hogwarts-legacy', 'hollow-knight-silksong', 'resident-evil-7-biohazard', 'resident-evil-village'].includes(slug)) return [];
+    if (!['clair-obscur-expedition-33', 'dark-souls-remastered', 'days-gone', 'detroit-become-human', 'hogwarts-legacy', 'hollow-knight-silksong', 'lords-of-the-fallen', 'resident-evil-7-biohazard', 'resident-evil-village', 'until-dawn'].includes(slug)) return [];
     if (!Array.isArray(trophy?.tags) || !trophy.tags.length) return [];
     const tags = [];
     const ids = new Set();

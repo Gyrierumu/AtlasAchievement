@@ -12,6 +12,30 @@
   isolation: isolate;
 }
 
+@media print {
+  body[data-page="public"] > header.atlas-topbar,
+  body[data-page="public"] > footer,
+  body[data-page="public"] > .atlas-bg-orb,
+  body[data-page="public"] .atlas-guide-layer-nav {
+    display: none !important;
+  }
+
+  body[data-page="public"] [data-guide-action],
+  body[data-page="public"] [data-toggle-save-game],
+  body[data-page="public"] [data-copy-game-link] {
+    display: none !important;
+  }
+
+  body[data-page="public"] .atlas-main-shell {
+    padding-top: 0 !important;
+  }
+
+  body[data-page="public"] .atlas-guide-sidebar-card {
+    position: static !important;
+    top: auto !important;
+  }
+}
+
 /* Compact public guide pass */
 #view-guide,
 #guideHeader,

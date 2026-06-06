@@ -38997,12 +38997,12 @@ if (horizonZeroDawnGuide) {
     hzd_all_suns_at_all_grounds: {
       namePt: 'Todos os Suns em todos os Grounds',
       descriptionPtBr: 'Ganhe pelo menos uma marca Half Sun em todas as trials de todos os Hunting Grounds.',
-      tags: [hzdTag('hunting-grounds', 'Hunting Grounds'), hzdTag('cleanup', 'Cleanup')]
+      tags: [hzdTag('hunting-grounds', 'Hunting Grounds'), hzdTag('challenge', 'Desafio'), hzdTag('cleanup', 'Cleanup')]
     },
     hzd_blazing_suns_at_all_grounds: {
       namePt: 'Blazing Suns em todos os Grounds',
       descriptionPtBr: 'Ganhe uma marca Blazing Sun em todas as trials de todos os Hunting Grounds.',
-      tags: [hzdTag('hunting-grounds', 'Hunting Grounds'), hzdTag('challenge', 'Desafio'), hzdTag('cleanup', 'Cleanup')]
+      tags: [hzdTag('hunting-grounds', 'Hunting Grounds'), hzdTag('challenge', 'Desafio'), hzdTag('grind', 'Grind'), hzdTag('cleanup', 'Cleanup')]
     },
     hzd_all_corrupted_zones_cleared: {
       namePt: 'Todas as Corrupted Zones limpas',
@@ -39108,12 +39108,12 @@ if (horizonZeroDawnGuide) {
       namePt: 'Todos os aliados se juntaram',
       descriptionPtBr: 'Com base nas acoes de Aloy, todos os aliados opcionais possiveis se juntaram a defesa.',
       tip: 'Complete as side quests e errands relevantes antes da reta final. A missao final pode ser repetida, entao trate como ponto de planejamento, nao como perdivel rigido.',
-      tags: [hzdTag('side-quests', 'Side quests'), hzdTag('attention', 'Atencao'), hzdTag('story', 'Historia')]
+      tags: [hzdTag('side-quests', 'Side quests'), hzdTag('attention', 'Atencao'), hzdTag('story', 'Historia'), hzdTag('spoiler', 'Spoiler')]
     },
     hzd_ended_the_war_machine_threat: {
       namePt: 'Ameaca das maquinas de guerra encerrada',
       descriptionPtBr: 'Encerre a ameaca das maquinas de guerra antigas.',
-      tags: [hzdTag('story', 'Historia'), hzdTag('campaign', 'Campanha')]
+      tags: [hzdTag('story', 'Historia'), hzdTag('spoiler', 'Spoiler')]
     },
     hzd_victorious_with_the_war_chief: {
       namePt: 'Vitoria com a War-Chief',
@@ -39172,7 +39172,7 @@ if (horizonZeroDawnGuide) {
     first_run_advice: 'Comece a campanha explorando por regiao, ativando Tallnecks, comprando mapas de collectibles com comerciantes e completando side quests quando surgirem. Nao precisa jogar em dificuldade alta para a platina base; o mais importante e adiantar aliados opcionais, Hunting Grounds, Cauldrons, camps e collectibles para deixar o cleanup pos-historia mais leve.',
     cleanup_advice: 'Depois da historia, use o free roam para fechar collectibles, machines, Hunting Grounds, Cauldrons, Tallnecks, Bandit Camps, Corrupted Zones, dummies, Shield-Weaver e trofeus acumulativos restantes.',
     before_you_start: 'Separe a lista base de PS4 dos conteudos adicionais. The Frozen Wilds, New Game+, Ultra Hard e Remastered/PS5 nao entram nos 56 trofeus da platina base.',
-    best_for: 'Vale platinar Horizon Zero Dawn se voce gosta de mundo aberto, exploracao, combate contra maquinas e checklist de atividades.',
+    best_for: 'Vale platinar Horizon Zero Dawn se voce gosta de mundo aberto, exploracao, combate contra maquinas e checklist de atividades. A platina base e acessivel, offline, sem coop, sem DLC obrigatoria, sem New Game+ e sem Ultra Hard. O principal cuidado e organizar side quests, aliados opcionais, Hunting Grounds, Cauldrons, Tallnecks, collectibles e machines para o cleanup nao ficar cansativo.',
     avoid_if: 'Evite se voce nao quer limpar mapa, collectibles, Hunting Grounds, side quests e atividades de mundo aberto depois da campanha.',
     editorial_status: 'published',
     coverage_level: 'complete',
@@ -39193,10 +39193,11 @@ if (horizonZeroDawnGuide) {
       'O principal cuidado e nao confundir a platina base com The Frozen Wilds, New Game+ ou Ultra Hard. Complete Edition pode incluir conteudo adicional, mas a platina continua ligada aos 56 trofeus da lista base de PS4.'
     ],
     quickDecision: {
-      summary: 'Vale platinar Horizon Zero Dawn se voce gosta de mundo aberto, exploracao, combate contra maquinas e checklist de atividades. A platina base e acessivel, offline, sem coop, sem DLC obrigatoria, sem New Game+ e sem Ultra Hard.',
+      summary: 'Vale platinar Horizon Zero Dawn se voce gosta de mundo aberto, exploracao, combate contra maquinas e checklist de atividades. A platina base e acessivel, offline, sem coop, sem DLC obrigatoria, sem New Game+ e sem Ultra Hard. O principal cuidado e organizar side quests, aliados opcionais, Hunting Grounds, Cauldrons, Tallnecks, collectibles e machines para o cleanup nao ficar cansativo.',
       mainRisk: 'Organize side quests, aliados opcionais, Hunting Grounds, Cauldrons, Tallnecks, collectibles e machines para o cleanup nao ficar cansativo.',
       firstAction: 'Comece a campanha explorando por regiao, ativando Tallnecks, comprando mapas de collectibles e completando side quests quando surgirem.'
     },
+    methodology: 'Separe a lista base de PS4 dos conteudos adicionais. The Frozen Wilds, New Game+, Ultra Hard e Remastered/PS5 nao entram nos 56 trofeus da platina base.',
     seo: {
       title: 'Guia de Platina Horizon Zero Dawn - Trofeus, Roadmap e Dicas',
       description: 'Guia de platina de Horizon Zero Dawn com roadmap em portugues, trofeus da lista base, machines, Hunting Grounds, Cauldrons, Tallnecks, Bandit Camps, Corrupted Zones, collectibles, aliados opcionais e cleanup para conquistar a platina no PS4.',
@@ -39234,7 +39235,7 @@ if (horizonZeroDawnGuide) {
     attentionPoints: [
       { title: 'The Frozen Wilds fora da platina', detail: 'A DLC tem trofeus proprios e nao entra nos 56 trofeus da lista base.', tags: [hzdTag('dlc', 'DLC fora da platina', 'complete')] },
       { title: 'New Game+ e Ultra Hard fora da platina', detail: 'Sao trofeus adicionais, nao requisito da platina base.', tags: [hzdTag('extra', 'Conteudo adicional', 'complete')] },
-      { title: 'All Allies Joined', detail: 'Complete as side quests relevantes antes da reta final para garantir todos os aliados.', tags: [hzdTag('side-quests', 'Side quests'), hzdTag('attention', 'Atencao', 'warning')] },
+      { title: 'All Allies Joined', detail: 'Complete as side quests relevantes antes da reta final para garantir todos os aliados. Trate como atencao de rota, nao como perdivel rigido.', tags: [hzdTag('side-quests', 'Side quests'), hzdTag('attention', 'Atencao', 'warning')] },
       { title: 'Hunting Grounds', detail: 'Blazing Suns at all Grounds pode ser deixado para depois, com armas e upgrades melhores.', tags: [hzdTag('hunting-grounds', 'Hunting Grounds'), hzdTag('challenge', 'Desafio')] },
       { title: 'Collectibles da lista base', detail: 'Compre mapas de comerciantes e organize Vantage Points, Metal Flowers, Banuk Figures e Ancient Vessels por regiao.', tags: [hzdTag('collectibles', 'Collectibles'), hzdTag('cleanup', 'Cleanup')] },
       { title: 'Machines catalogued', detail: 'Escaneie todos os tipos de machines da lista base com o Focus.', tags: [hzdTag('machines', 'Machines'), hzdTag('cleanup', 'Cleanup')] },
@@ -39359,37 +39360,180 @@ if (horizonZeroDawnGuide) {
     trophy.isDlc = false;
     trophy.tags = [...new Set((editorial.tags || []).map(tag => (typeof tag === 'string' ? tag : tag)))];
   }
+
+  const accentHorizonZeroDawnText = value => {
+    if (typeof value !== 'string') return value;
+    return [
+      [/\bNao\b/g, 'Não'],
+      [/\bnao\b/g, 'não'],
+      [/\bSao\b/g, 'São'],
+      [/\bsao\b/g, 'são'],
+      [/\bHa\b/g, 'Há'],
+      [/\bha\b/g, 'há'],
+      [/\bDa para\b/g, 'Dá para'],
+      [/\bvoce\b/g, 'você'],
+      [/\bVoce\b/g, 'Você'],
+      [/\bja\b/g, 'já'],
+      [/\bate\b/g, 'até'],
+      [/\bAte\b/g, 'Até'],
+      [/\bFaca\b/g, 'Faça'],
+      [/\bfaca\b/g, 'faça'],
+      [/\btres\b/g, 'três'],
+      [/\bHistoria\b/g, 'História'],
+      [/\bhistoria\b/g, 'história'],
+      [/\bexploracao\b/g, 'exploração'],
+      [/\bExploracao\b/g, 'Exploração'],
+      [/\bregiao\b/g, 'região'],
+      [/\bregioes\b/g, 'regiões'],
+      [/\bproximas\b/g, 'próximas'],
+      [/\bproximo\b/g, 'próximo'],
+      [/\bacoes\b/g, 'ações'],
+      [/\bacoes\b/g, 'ações'],
+      [/\bacao\/RPG\b/g, 'ação/RPG'],
+      [/\bAcao\b/g, 'Ação'],
+      [/\bameaca\b/g, 'ameaça'],
+      [/\bAmeaca\b/g, 'Ameaça'],
+      [/\bameacava\b/g, 'ameaçava'],
+      [/\bmaquinas\b/g, 'máquinas'],
+      [/\bMaquinas\b/g, 'Máquinas'],
+      [/\bvulneraveis\b/g, 'vulneráveis'],
+      [/\bremoviveis\b/g, 'removíveis'],
+      [/\bmodificavel\b/g, 'modificável'],
+      [/\bdisponiveis\b/g, 'disponíveis'],
+      [/\bpossiveis\b/g, 'possíveis'],
+      [/\bpossivel\b/g, 'possível'],
+      [/\bPossivel\b/g, 'Possível'],
+      [/\bcla\b/g, 'clã'],
+      [/\bclas\b/g, 'clãs'],
+      [/\bpos-historia\b/g, 'pós-história'],
+      [/\bpos-história\b/g, 'pós-história'],
+      [/\bapos\b/g, 'após'],
+      [/\bApos\b/g, 'Após'],
+      [/\bobrigatoria\b/g, 'obrigatória'],
+      [/\bobrigatorio\b/g, 'obrigatório'],
+      [/\bnecessaria\b/g, 'necessária'],
+      [/\bnecessario\b/g, 'necessário'],
+      [/\bnecessarias\b/g, 'necessárias'],
+      [/\bnecessarios\b/g, 'necessários'],
+      [/\bperdiveis\b/g, 'perdíveis'],
+      [/\bperdivel\b/g, 'perdível'],
+      [/\brigidos\b/g, 'rígidos'],
+      [/\brigido\b/g, 'rígido'],
+      [/\bacessivel\b/g, 'acessível'],
+      [/\bcoletaveis\b/g, 'coletáveis'],
+      [/\bColetavel\b/g, 'Coletável'],
+      [/\bcolecionaveis\b/g, 'colecionáveis'],
+      [/\btrofeus\b/g, 'troféus'],
+      [/\bTrofeus\b/g, 'Troféus'],
+      [/\btrofeu\b/g, 'troféu'],
+      [/\bTrofeu\b/g, 'Troféu'],
+      [/\bautomatico\b/g, 'automático'],
+      [/\bautomaticos\b/g, 'automáticos'],
+      [/\bdisponivel\b/g, 'disponível'],
+      [/\bconteudo\b/g, 'conteúdo'],
+      [/\bConteudo\b/g, 'Conteúdo'],
+      [/\bconteudos\b/g, 'conteúdos'],
+      [/\bproprios\b/g, 'próprios'],
+      [/\bportugues\b/g, 'português'],
+      [/\batencao\b/g, 'atenção'],
+      [/\bAtencao\b/g, 'Atenção'],
+      [/\bProgressao\b/g, 'Progressão'],
+      [/\bprogressao\b/g, 'progressão'],
+      [/\bNivel\b/g, 'Nível'],
+      [/\bnivel\b/g, 'nível'],
+      [/\bniveis\b/g, 'níveis'],
+      [/\bcatalogo\b/g, 'catálogo'],
+      [/\bconclusao\b/g, 'conclusão'],
+      [/\bconcluidos\b/g, 'concluídos'],
+      [/\bpendencias\b/g, 'pendências'],
+      [/\bconferencia\b/g, 'conferência'],
+      [/\bestrategias\b/g, 'estratégias'],
+      [/\brevelacoes\b/g, 'revelações'],
+      [/\bmissao\b/g, 'missão'],
+      [/\bmissoes\b/g, 'missões'],
+      [/\bcrianca\b/g, 'criança'],
+      [/\bcacar\b/g, 'caçar'],
+      [/\bcacado\b/g, 'caçado'],
+      [/\bCorrupcao\b/g, 'Corrupção'],
+      [/\bcorrupcao\b/g, 'corrupção'],
+      [/\bavancar\b/g, 'avançar'],
+      [/\bAvancar\b/g, 'Avançar'],
+      [/\bavanca\b/g, 'avança'],
+      [/\bavancada\b/g, 'avançada'],
+      [/\bavancado\b/g, 'avançado'],
+      [/\bareas\b/g, 'áreas'],
+      [/\bentao\b/g, 'então'],
+      [/\bproximo\b/g, 'próximo'],
+      [/\btraje quando tiver todas\b/g, 'traje quando tiver todas'],
+      [/\b e single-player\b/g, ' é single-player'],
+      [/\bUma run e suficiente\b/g, 'Uma run é suficiente'],
+      [/\bA platina base e acessível\b/g, 'A platina base é acessível'],
+      [/\bA platina base e acessivel\b/g, 'A platina base é acessível'],
+      [/\bA platina base e single-player\b/g, 'A platina base é single-player'],
+      [/\bA platina e single-player\b/g, 'A platina é single-player'],
+      [/\bA platina e acessível\b/g, 'A platina é acessível'],
+      [/\bA platina e acessivel\b/g, 'A platina é acessível'],
+      [/\bA platina e\b/g, 'A platina é'],
+      [/\bNada e\b/g, 'Nada é'],
+      [/\bO peso esta\b/g, 'O peso está'],
+      [/\bA dificuldade editorial fica em\b/g, 'A dificuldade editorial fica em'],
+      [/\bO maior checklist esta\b/g, 'O maior checklist está'],
+      [/\bO principal cuidado e\b/g, 'O principal cuidado é'],
+      [/\bA rota mais segura e\b/g, 'A rota mais segura é'],
+      [/\bHorizon Zero Dawn e uma\b/g, 'Horizon Zero Dawn é uma'],
+      [/\bThe Frozen Wilds e necessário\b/g, 'The Frozen Wilds é necessário'],
+      [/\bThe Frozen Wilds e necessario\b/g, 'The Frozen Wilds é necessário'],
+      [/\bNew Game\+ e Ultra Hard pertencem\b/g, 'New Game+ e Ultra Hard pertencem'],
+      [/\bNew Game\+ ou Ultra Hard sao\b/g, 'New Game+ ou Ultra Hard são'],
+      [/\bQuantas runs sao\b/g, 'Quantas runs são'],
+      [/\bQual e o maior\b/g, 'Qual é o maior'],
+      [/\ba defesa\b/g, 'à defesa']
+    ].reduce((text, [pattern, replacement]) => text.replace(pattern, replacement), value);
+  };
+
+  const accentHorizonZeroDawnPayload = value => {
+    if (typeof value === 'string') return accentHorizonZeroDawnText(value);
+    if (Array.isArray(value)) return value.map(item => accentHorizonZeroDawnPayload(item));
+    if (value && typeof value === 'object') {
+      Object.keys(value).forEach(key => {
+        value[key] = accentHorizonZeroDawnPayload(value[key]);
+      });
+    }
+    return value;
+  };
+
+  accentHorizonZeroDawnPayload(horizonZeroDawnGuide);
 }
 
 const horizonForbiddenWestGuide = sampleGames.find(game => game.slug === 'horizon-forbidden-west');
 if (horizonForbiddenWestGuide) {
   const hfwTag = (id, label, tone = 'partial') => ({ id, label, tone });
-  const hfwRiskScanTags = [hfwTag('attention', 'Atencao', 'warning'), hfwTag('machines', 'Machines'), hfwTag('scan', 'Scan'), hfwTag('run-risk', 'Risco de run', 'warning')];
+  const hfwRiskScanTags = [hfwTag('missable', 'Perdivel', 'warning'), hfwTag('machines', 'Machines'), hfwTag('scan', 'Scan'), hfwTag('attention', 'Atencao', 'warning'), hfwTag('run-risk', 'Risco de run', 'warning')];
   const hfwTrophyEditorialById = {
     hfw_all_trophies_obtained: ['Todos os trofeus obtidos', 'Obtenha todos os trofeus de Horizon Forbidden West.', [hfwTag('platina', 'Platina', 'complete')]],
-    hfw_discovered_nemesis: ['Nemesis descoberta', 'Coloque fim a ameaca Zenith e descubra Nemesis.', [hfwTag('story', 'Historia'), hfwTag('campaign', 'Campanha')]],
+    hfw_discovered_nemesis: ['Nemesis descoberta', 'Coloque fim a ameaca Zenith e descubra Nemesis.', [hfwTag('story', 'Historia'), hfwTag('spoiler', 'Spoiler')]],
     hfw_reached_level_50: ['Nivel 50 alcancado', 'Alcance o nivel de jogador 50.', [hfwTag('progression', 'Progressao'), hfwTag('grind', 'Grind')]],
     hfw_all_tallnecks_overridden: ['Todos os Tallnecks sobrescritos', 'Chegue ao topo de todos os Tallnecks e acesse suas informacoes.', [hfwTag('exploration', 'Exploracao'), hfwTag('map', 'Mapa'), hfwTag('cleanup', 'Cleanup')]],
-    hfw_defeated_asera: ['Asera derrotada', 'Investigue todos os Rebel Camps e ajude Erend a derrotar Asera.', [hfwTag('rebel-camps', 'Rebel Camps'), hfwTag('side-quest', 'Side Quest'), hfwTag('cleanup', 'Cleanup')]],
+    hfw_defeated_asera: ['Asera derrotada', 'Investigue todos os Rebel Camps e ajude Erend a derrotar Asera.', [hfwTag('rebel-camps', 'Rebel Camps'), hfwTag('side-quest', 'Side Quest'), hfwTag('spoiler', 'Spoiler'), hfwTag('cleanup', 'Cleanup')]],
     hfw_all_cores_overridden: ['Todos os Cores sobrescritos', 'Chegue ao Core de todos os Cauldrons e acesse suas informacoes.', [hfwTag('cauldrons', 'Cauldrons'), hfwTag('progression', 'Progressao'), hfwTag('cleanup', 'Cleanup')]],
     hfw_three_stripes_all_hunting_grounds: ['3 Stripes em todos os Hunting Grounds', 'Ganhe pelo menos uma marca Quarter Stripe nas tres trials de todos os Hunting Grounds.', [hfwTag('hunting-grounds', 'Hunting Grounds'), hfwTag('challenge', 'Desafio'), hfwTag('cleanup', 'Cleanup')]],
     hfw_all_machine_types_scanned: ['Todos os tipos de machines escaneados', 'Encontre e escaneie com o Focus todos os tipos de machines.', hfwRiskScanTags],
-    hfw_skill_tree_learned: ['Arvore de skills aprendida', 'Aprenda todas as skills disponiveis em uma arvore.', [hfwTag('progression', 'Progressao'), hfwTag('skills', 'Skills')]],
+    hfw_skill_tree_learned: ['Arvore de skills aprendida', 'Aprenda todas as skills disponiveis em uma arvore.', [hfwTag('skills', 'Skills'), hfwTag('progression', 'Progressao'), hfwTag('grind', 'Grind')]],
     hfw_reached_level_20: ['Nivel 20 alcancado', 'Alcance o nivel de jogador 20.', [hfwTag('progression', 'Progressao'), hfwTag('level', 'Nivel')]],
     hfw_reached_level_30: ['Nivel 30 alcancado', 'Alcance o nivel de jogador 30.', [hfwTag('progression', 'Progressao'), hfwTag('level', 'Nivel')]],
     hfw_reached_the_daunt: ['The Daunt alcancado', 'Chegue a The Daunt em busca de passagem para o Forbidden West.', [hfwTag('story', 'Historia'), hfwTag('campaign', 'Campanha')]],
     hfw_secured_passage_to_embassy: ['Passagem para a Embassy garantida', 'Abra caminho ate a Embassy e reabra The Daunt.', [hfwTag('story', 'Historia'), hfwTag('campaign', 'Campanha')]],
-    hfw_attended_the_embassy: ['Embassy concluida', 'Sobreviva a emboscada na Embassy e consiga passagem para o Forbidden West.', [hfwTag('story', 'Historia'), hfwTag('campaign', 'Campanha')]],
+    hfw_attended_the_embassy: ['Embassy concluida', 'Sobreviva a emboscada na Embassy e consiga passagem para o Forbidden West.', [hfwTag('story', 'Historia'), hfwTag('spoiler', 'Spoiler')]],
     hfw_established_the_base: ['Base estabelecida', 'Garanta uma base de operacoes e reinicie GAIA.', [hfwTag('story', 'Historia'), hfwTag('campaign', 'Campanha')]],
     hfw_recovered_aether: ['AETHER recuperado', 'Defenda o Kulrut e recupere AETHER.', [hfwTag('story', 'Historia'), hfwTag('campaign', 'Campanha')]],
     hfw_recovered_poseidon: ['POSEIDON recuperado', 'Drene Las Vegas e recupere POSEIDON.', [hfwTag('story', 'Historia'), hfwTag('campaign', 'Campanha')]],
     hfw_recovered_demeter: ['DEMETER recuperado', 'Encontre os Quen e recupere DEMETER.', [hfwTag('story', 'Historia'), hfwTag('campaign', 'Campanha')]],
     hfw_recovered_beta: ['Beta recuperada', 'Siga o sinal de emergencia de Beta e leve-a de volta a base.', [hfwTag('story', 'Historia'), hfwTag('campaign', 'Campanha')]],
-    hfw_discovered_faros_fate: ['Destino de Faro descoberto', 'Sobreviva a Thebes e faca amizade com os Quen.', [hfwTag('story', 'Historia'), hfwTag('campaign', 'Campanha')]],
+    hfw_discovered_faros_fate: ['Destino de Faro descoberto', 'Sobreviva a Thebes e faca amizade com os Quen.', [hfwTag('story', 'Historia'), hfwTag('spoiler', 'Spoiler')]],
     hfw_flew_on_wings_of_ten: ['Voou nas Wings of the Ten', 'Voe para a batalha e derrote Regalla.', [hfwTag('story', 'Historia'), hfwTag('campaign', 'Campanha')]],
-    hfw_chose_desert_commander: ['Desert Commander escolhido', 'Ajude Drakka e Yarra e escolha o melhor candidato.', [hfwTag('side-quest', 'Side Quest'), hfwTag('story', 'Historia')]],
+    hfw_chose_desert_commander: ['Desert Commander escolhido', 'Ajude Drakka e Yarra e escolha o melhor candidato.', [hfwTag('side-quest', 'Side Quest'), hfwTag('story', 'Historia'), hfwTag('spoiler', 'Spoiler')]],
     hfw_saved_the_daunt: ['The Daunt salva', 'Resolva todos os problemas que afligem The Daunt.', [hfwTag('side-quest', 'Side Quest'), hfwTag('story', 'Historia')]],
-    hfw_aided_kotallo: ['Kotallo ajudado', 'Ajude Kotallo a construir e testar um braco mecanizado.', [hfwTag('side-quest', 'Side Quest'), hfwTag('story', 'Historia')]],
+    hfw_aided_kotallo: ['Kotallo ajudado', 'Ajude Kotallo a construir e testar um braco mecanizado.', [hfwTag('side-quest', 'Side Quest'), hfwTag('story', 'Historia'), hfwTag('spoiler', 'Spoiler')]],
     hfw_healed_land_gods: ['Land-gods curados', 'Ajude Zo a reiniciar os land-gods para salvar Plainsong.', [hfwTag('side-quest', 'Side Quest'), hfwTag('story', 'Historia')]],
     hfw_recovered_alvas_data: ['Dados de Alva recuperados', 'Ajude Alva a recuperar dados para ajudar os Quen.', [hfwTag('side-quest', 'Side Quest'), hfwTag('story', 'Historia')]],
     hfw_first_tallneck_overridden: ['Primeiro Tallneck sobrescrito', 'Chegue ao topo de um Tallneck e acesse suas informacoes.', [hfwTag('exploration', 'Exploracao'), hfwTag('map', 'Mapa')]],
@@ -39402,26 +39546,26 @@ if (horizonForbiddenWestGuide) {
     hfw_all_transport_machines_killed: ['Todas as machines de transporte mortas', 'Mate pelo menos uma machine de cada tipo de Transport.', [hfwTag('machines', 'Machines'), hfwTag('combat', 'Combate'), hfwTag('cleanup', 'Cleanup')]],
     hfw_rode_all_regular_mounts: ['Todas as montarias regulares montadas', 'Monte um Charger, um Bristleback e um Clawstrider.', [hfwTag('machines', 'Machines'), hfwTag('mounts', 'Mounts'), hfwTag('cleanup', 'Cleanup')]],
     hfw_completed_long_glide: ['Planagem longa concluida', 'Plane por 60 segundos sem interrupcao.', [hfwTag('exploration', 'Exploracao'), hfwTag('cleanup', 'Cleanup')]],
-    hfw_completed_two_flying_mount_quests: ['2 quests de flying mount concluidas', 'Conclua 2 quests que exigem uma flying mount.', [hfwTag('side-quest', 'Side Quest'), hfwTag('flying-mount', 'Flying Mount')]],
+    hfw_completed_two_flying_mount_quests: ['2 quests de flying mount concluidas', 'Conclua 2 quests que exigem uma flying mount.', [hfwTag('side-quest', 'Side Quest'), hfwTag('flying-mount', 'Flying Mount'), hfwTag('spoiler', 'Spoiler'), hfwTag('cleanup', 'Cleanup')]],
     hfw_won_two_gauntlet_runs: ['2 Gauntlet Runs vencidas', 'Fique em primeiro lugar em duas Gauntlet Runs diferentes.', [hfwTag('gauntlet-runs', 'Gauntlet Runs'), hfwTag('activity', 'Atividade'), hfwTag('cleanup', 'Cleanup')]],
     hfw_completed_salvage_contracts: ['Set de Salvage Contracts concluido', 'Conclua todos os contratos de um Salvage Contractor.', [hfwTag('salvage-contracts', 'Salvage Contracts'), hfwTag('side-quest', 'Side Quest'), hfwTag('cleanup', 'Cleanup')]],
     hfw_completed_four_rebel_outposts: ['4 Rebel Outposts concluidos', 'Derrote o lider do outpost e recupere as tags em 4 Rebel Outposts.', [hfwTag('rebel-outposts', 'Rebel Outposts'), hfwTag('cleanup', 'Cleanup')]],
-    hfw_completed_three_relic_ruins: ['3 Relic Ruins concluidas', 'Descubra e conclua 3 Relic Ruins.', [hfwTag('relic-ruins', 'Relic Ruins'), hfwTag('collectible', 'Coletavel'), hfwTag('puzzle', 'Puzzle')]],
+    hfw_completed_three_relic_ruins: ['3 Relic Ruins concluidas', 'Descubra e conclua 3 Relic Ruins.', [hfwTag('relic-ruins', 'Relic Ruins'), hfwTag('collectible', 'Coletavel'), hfwTag('puzzle', 'Puzzle'), hfwTag('cleanup', 'Cleanup')]],
     hfw_completed_arena_challenge_set: ['Arena Challenge Set concluido', 'Conclua 1 conjunto de desafios da Arena.', [hfwTag('arena', 'Arena'), hfwTag('challenge', 'Desafio'), hfwTag('cleanup', 'Cleanup')]],
-    hfw_defeated_machine_strike_challengers: ['Machine Strike Challengers derrotados', 'Venca uma partida contra 2 desafiantes diferentes de Machine Strike.', [hfwTag('machine-strike', 'Machine Strike'), hfwTag('activity', 'Atividade')]],
+    hfw_defeated_machine_strike_challengers: ['Machine Strike Challengers derrotados', 'Venca uma partida contra 2 desafiantes diferentes de Machine Strike.', [hfwTag('machine-strike', 'Machine Strike'), hfwTag('minigame', 'Minigame'), hfwTag('cleanup', 'Cleanup')]],
     hfw_obtained_all_weapon_classes: ['Todas as classes de armas obtidas', 'Obtenha 1 arma de cada classe.', [hfwTag('equipment', 'Equipamento'), hfwTag('cleanup', 'Cleanup')]],
     hfw_used_all_elemental_states: ['Todos os estados elementais usados', 'Aplique cada estado elemental em um inimigo pelo menos uma vez.', [hfwTag('combat', 'Combate'), hfwTag('elemental', 'Elementos')]],
     hfw_performed_three_melee_combos: ['3 combos melee executados', 'Execute com sucesso 3 combos melee desbloqueaveis diferentes.', [hfwTag('melee-pits', 'Melee Pits'), hfwTag('skills', 'Skills')]],
     hfw_stealth_killed_ten_machines: ['10 machines mortas furtivamente', 'Realize um abate furtivo em 10 machines.', [hfwTag('combat', 'Combate'), hfwTag('stealth', 'Stealth'), hfwTag('cleanup', 'Cleanup')]],
     hfw_tore_off_100_components: ['100 componentes arrancados', 'Arranque 100 componentes de machines.', [hfwTag('combat', 'Combate'), hfwTag('machines', 'Machines'), hfwTag('cleanup', 'Cleanup')]],
     hfw_picked_up_five_heavy_weapons: ['5 armas pesadas coletadas', 'Pegue 5 armas pesadas diferentes.', [hfwTag('combat', 'Combate'), hfwTag('machines', 'Machines'), hfwTag('cleanup', 'Cleanup')]],
-    hfw_ten_machine_types_overridden: ['10 tipos de machines sobrescritos', 'Desbloqueie e use overrides em 10 tipos diferentes de machines.', [hfwTag('cauldrons', 'Cauldrons'), hfwTag('machines', 'Machines'), hfwTag('progression', 'Progressao')]],
-    hfw_defeated_the_enduring: ['The Enduring derrotada', 'Derrote a mestre melee Tenakth conhecida como The Enduring.', [hfwTag('melee-pits', 'Melee Pits'), hfwTag('difficulty', 'Dificuldade', 'warning'), hfwTag('skills', 'Skills')]],
+    hfw_ten_machine_types_overridden: ['10 tipos de machines sobrescritos', 'Desbloqueie e use overrides em 10 tipos diferentes de machines.', [hfwTag('machines', 'Machines'), hfwTag('overrides', 'Overrides'), hfwTag('progression', 'Progressao')]],
+    hfw_defeated_the_enduring: ['The Enduring derrotada', 'Derrote a mestre melee Tenakth conhecida como The Enduring.', [hfwTag('melee-pits', 'Melee Pits'), hfwTag('difficulty', 'Dificuldade', 'warning'), hfwTag('skills', 'Skills'), hfwTag('spoiler', 'Spoiler')]],
     hfw_fully_upgraded_valor_surge: ['Valor Surge totalmente aprimorado', 'Aprimore um Valor Surge ate o nivel maximo.', [hfwTag('progression', 'Progressao'), hfwTag('skills', 'Skills')]],
     hfw_upgraded_three_weapons: ['3 armas aprimoradas', 'Aprimore totalmente 3 armas.', [hfwTag('equipment', 'Equipamento'), hfwTag('upgrades', 'Upgrades')]],
     hfw_upgraded_three_outfits: ['3 outfits aprimorados', 'Aprimore totalmente 3 outfits diferentes.', [hfwTag('equipment', 'Equipamento'), hfwTag('upgrades', 'Upgrades')]],
     hfw_upgraded_every_pouch_type: ['Todos os tipos de pouch aprimorados', 'Aprimore Food Pouch, Potion Pouch, Resource Pouch, Trap Pouch e qualquer ammo pouch pelo menos uma vez.', [hfwTag('crafting', 'Crafting'), hfwTag('upgrades', 'Upgrades'), hfwTag('cleanup', 'Cleanup')]],
-    hfw_enhanced_weapon_with_coils: ['Arma melhorada com coils', 'Equipe uma arma de qualquer tier com 2 coils.', [hfwTag('equipment', 'Equipamento'), hfwTag('crafting', 'Crafting')]],
+    hfw_enhanced_weapon_with_coils: ['Arma melhorada com coils', 'Equipe uma arma de qualquer tier com 2 coils.', [hfwTag('upgrade', 'Upgrade'), hfwTag('equipment', 'Equipamento')]],
     hfw_unlocked_three_weapon_techniques: ['3 Weapon Techniques desbloqueadas', 'Desbloqueie uma Weapon Technique para 3 classes de armas diferentes.', [hfwTag('skills', 'Skills'), hfwTag('progression', 'Progressao')]],
     hfw_recovered_five_different_collectables: ['5 collectibles diferentes recuperados', 'Conclua 1 Survey Drone, 1 Black Box, 1 Relic Ruin, 1 Vista Point e 1 Signal Tower.', [hfwTag('collectible', 'Coletavel'), hfwTag('exploration', 'Exploracao'), hfwTag('cleanup', 'Cleanup')]],
     hfw_used_dye_flowers: ['Dye Flowers usadas', 'Use dye flowers para desbloquear e aplicar uma nova tintura.', [hfwTag('collectible', 'Coletavel'), hfwTag('customization', 'Customizacao'), hfwTag('cleanup', 'Cleanup')]]
@@ -39463,7 +39607,7 @@ if (horizonForbiddenWestGuide) {
     first_run_advice: 'Comece a campanha avancando pela historia e abrindo o mapa com Tallnecks, mas ja escaneie toda machine nova com o Focus. Priorize skills da arvore Warrior para evitar grind nos Melee Pits e, antes da missao final Singularity, garanta o scan de Specter e Specter Prime para All Machine Types Scanned.',
     cleanup_advice: 'Depois da historia, use o free roam para fechar side quests, collectibles, activities, Gauntlet Runs, Salvage Contracts, Rebel Outposts, Arena, Hunting Grounds, upgrades, combat trophies e machines pendentes.',
     before_you_start: 'Separe a platina base dos conteudos adicionais: Burning Shores, New Game+, Ultra Hard e Complete Edition/PC nao entram nos 59 trofeus base. O scan de Specter e Specter Prime em Singularity e o ponto que merece atencao maxima.',
-    best_for: 'Vale platinar Horizon Forbidden West se voce gosta de mundo aberto, combate contra machines, exploracao e checklist moderado.',
+    best_for: 'Vale platinar Horizon Forbidden West se voce gosta de mundo aberto, combate contra machines, exploracao e checklist moderado. A platina base e acessivel, offline, sem coop, sem DLC obrigatoria, sem New Game+ e sem Ultra Hard. O principal cuidado e escanear Specter e Specter Prime em Singularity e organizar Melee Pits, Hunting Grounds, Rebel Camps, Cauldrons, Arena, collectibles e side quests sem transformar o guia em 100% com DLC.',
     avoid_if: 'Evite se voce nao quer acompanhar scan de machines, Melee Pits, Hunting Grounds, Rebel Camps, Arena, side quests e cleanup de mundo aberto.',
     editorial_status: 'published',
     coverage_level: 'complete',
@@ -39484,10 +39628,11 @@ if (horizonForbiddenWestGuide) {
       'O principal cuidado e nao confundir a platina base com Burning Shores ou New Game+. Horizon Forbidden West nao exige 100% absoluto do mapa para a platina; o guia foca apenas nos 59 trofeus da lista base.'
     ],
     quickDecision: {
-      summary: 'Vale platinar Horizon Forbidden West se voce gosta de mundo aberto, combate contra machines, exploracao e checklist moderado. A platina base e acessivel, offline, sem coop, sem DLC obrigatoria, sem New Game+ e sem Ultra Hard.',
+      summary: 'Vale platinar Horizon Forbidden West se voce gosta de mundo aberto, combate contra machines, exploracao e checklist moderado. A platina base e acessivel, offline, sem coop, sem DLC obrigatoria, sem New Game+ e sem Ultra Hard. O principal cuidado e escanear Specter e Specter Prime em Singularity e organizar Melee Pits, Hunting Grounds, Rebel Camps, Cauldrons, Arena, collectibles e side quests sem transformar o guia em 100% com DLC.',
       mainRisk: 'O principal cuidado e escanear Specter e Specter Prime na missao final Singularity e organizar Cauldrons, Hunting Grounds, Melee Pits, Rebel Camps, Arena, side quests especificas e cleanup sem transformar o guia em 100% com DLC.',
       firstAction: 'Comece pela campanha abrindo o mapa com Tallnecks e escaneando toda machine nova com o Focus; antes de Singularity, confirme Specter e Specter Prime.'
     },
+    methodology: 'Separe a platina base dos conteudos adicionais. Burning Shores, New Game+, Ultra Hard e Complete Edition/PC nao entram nos 59 trofeus base. O scan de Specter e Specter Prime em Singularity e o ponto que merece atencao maxima.',
     seo: {
       title: 'Guia de Platina Horizon Forbidden West - Trofeus, Roadmap e Dicas',
       description: 'Guia de platina de Horizon Forbidden West com roadmap em portugues, trofeus da lista base, machines, Specter, Cauldrons, Tallnecks, Hunting Grounds, Melee Pits, Rebel Camps, Arena, collectibles, side quests e cleanup para conquistar a platina no PS4 e PS5.',
@@ -39640,7 +39785,7 @@ if (horizonForbiddenWestGuide) {
     trophy.localizedDescription = { ...(trophy.localizedDescription || {}), ptBr: finalDescriptionPtBr, 'pt-BR': finalDescriptionPtBr };
     trophy.descriptionPtSource = 'editorial_ptbr';
     trophy.tip = trophy.id === 'hfw_all_machine_types_scanned'
-      ? 'Use o Focus em toda machine nova e escaneie manualmente Specter e Specter Prime durante Singularity. Se morrer no boss, repita o scan antes de finalizar a luta.'
+      ? 'Escaneie todas as machines com o Focus, com atencao especial a Specter e Specter Prime na missao final Singularity. Se morrer no combate final, escaneie novamente antes de concluir a luta.'
       : trophy.tip || '';
     trophy.guideTip = trophy.tip;
     trophy.tier = trophy.type;
@@ -39656,6 +39801,997 @@ if (horizonForbiddenWestGuide) {
     trophy.isDlc = false;
     trophy.tags = Array.isArray(tags) ? tags.map(tag => (typeof tag === 'string' ? tag : { ...tag })) : [];
   }
+
+  const accentHorizonForbiddenWestText = value => {
+    if (typeof value !== 'string') return value;
+    return [
+      [/\bNao\b/g, 'Não'],
+      [/\bnao\b/g, 'não'],
+      [/\bSao\b/g, 'São'],
+      [/\bsao\b/g, 'são'],
+      [/\bDa para\b/g, 'Dá para'],
+      [/\bvoce\b/g, 'você'],
+      [/\bVoce\b/g, 'Você'],
+      [/\bja\b/g, 'já'],
+      [/\bate\b/g, 'até'],
+      [/\bAte\b/g, 'Até'],
+      [/\bFaca\b/g, 'Faça'],
+      [/\bfaca\b/g, 'faça'],
+      [/\bVenca\b/g, 'Vença'],
+      [/\bvenca\b/g, 'vença'],
+      [/\btres\b/g, 'três'],
+      [/\binicio\b/g, 'início'],
+      [/\bInicio\b/g, 'Início'],
+      [/\bavancando\b/g, 'avançando'],
+      [/\bavancar\b/g, 'avançar'],
+      [/\bAvancar\b/g, 'Avançar'],
+      [/\bavanca\b/g, 'avança'],
+      [/\bHistoria\b/g, 'História'],
+      [/\bhistoria\b/g, 'história'],
+      [/\bexploracao\b/g, 'exploração'],
+      [/\bExploracao\b/g, 'Exploração'],
+      [/\bTrofeus\b/g, 'Troféus'],
+      [/\btrofeus\b/g, 'troféus'],
+      [/\bTrofeu\b/g, 'Troféu'],
+      [/\btrofeu\b/g, 'troféu'],
+      [/\bproprios\b/g, 'próprios'],
+      [/\bproprio\b/g, 'próprio'],
+      [/\bconteudos\b/g, 'conteúdos'],
+      [/\bconteudo\b/g, 'conteúdo'],
+      [/\bConteudo\b/g, 'Conteúdo'],
+      [/\bnecessaria\b/g, 'necessária'],
+      [/\bnecessario\b/g, 'necessário'],
+      [/\bnecessarias\b/g, 'necessárias'],
+      [/\bnecessarios\b/g, 'necessários'],
+      [/\bsensivel\b/g, 'sensível'],
+      [/\bpendencias\b/g, 'pendências'],
+      [/\bpendencia\b/g, 'pendência'],
+      [/\bvarias\b/g, 'várias'],
+      [/\bcatalogo\b/g, 'catálogo'],
+      [/\bsolida\b/g, 'sólida'],
+      [/\bespecificas\b/g, 'específicas'],
+      [/\bespecificos\b/g, 'específicos'],
+      [/\bconcluida\b/g, 'concluída'],
+      [/\bconcluidas\b/g, 'concluídas'],
+      [/\bconcluido\b/g, 'concluído'],
+      [/\bconcluidos\b/g, 'concluídos'],
+      [/\binformacoes\b/g, 'informações'],
+      [/\baquisicao\b/g, 'aquisição'],
+      [/\bbraco\b/g, 'braço'],
+      [/\boperacoes\b/g, 'operações'],
+      [/\binterrupcao\b/g, 'interrupção'],
+      [/\blideres\b/g, 'líderes'],
+      [/\blider\b/g, 'líder'],
+      [/\bniveis\b/g, 'níveis'],
+      [/\bnivel\b/g, 'nível'],
+      [/\bNivel\b/g, 'Nível'],
+      [/\barvore\b/g, 'árvore'],
+      [/\bArvore\b/g, 'Árvore'],
+      [/\bpos-historia\b/g, 'pós-história'],
+      [/\bpos-história\b/g, 'pós-história'],
+      [/\batencao\b/g, 'atenção'],
+      [/\bAtencao\b/g, 'Atenção'],
+      [/\bATENCAO\b/g, 'ATENÇÃO'],
+      [/\bmaxima\b/g, 'máxima'],
+      [/\bmaximo\b/g, 'máximo'],
+      [/\bperdiveis\b/g, 'perdíveis'],
+      [/\bperdivel\b/g, 'perdível'],
+      [/\bPerdivel\b/g, 'Perdível'],
+      [/\bacessivel\b/g, 'acessível'],
+      [/\bobrigatoria\b/g, 'obrigatória'],
+      [/\bobrigatorio\b/g, 'obrigatório'],
+      [/\bportugues\b/g, 'português'],
+      [/\bColetavel\b/g, 'Coletável'],
+      [/\bCustomizacao\b/g, 'Customização'],
+      [/\bProgressao\b/g, 'Progressão'],
+      [/\bprogressao\b/g, 'progressão'],
+      [/\bdesbloqueaveis\b/g, 'desbloqueáveis'],
+      [/\bautomatico\b/g, 'automático'],
+      [/\bautomaticos\b/g, 'automáticos'],
+      [/\bdisponivel\b/g, 'disponível'],
+      [/\bdisponiveis\b/g, 'disponíveis'],
+      [/\bemergencia\b/g, 'emergência'],
+      [/\brevelacao\b/g, 'revelação'],
+      [/\bmissao\b/g, 'missão'],
+      [/\bmissoes\b/g, 'missões'],
+      [/\bexigencia\b/g, 'exigência'],
+      [/\bConferencia\b/g, 'Conferência'],
+      [/\bconferencia\b/g, 'conferência'],
+      [/\brecupere as tags em\b/g, 'recupere as tags em'],
+      [/\bde volta a base\b/g, 'de volta à base'],
+      [/\b e single-player\b/g, ' é single-player'],
+      [/\bUma run e suficiente\b/g, 'Uma run é suficiente'],
+      [/\bAll Machine Types Scanned e\b/g, 'All Machine Types Scanned é'],
+      [/\bA platina base e acessível\b/g, 'A platina base é acessível'],
+      [/\bA platina base e acessivel\b/g, 'A platina base é acessível'],
+      [/\bA platina base e single-player\b/g, 'A platina base é single-player'],
+      [/\bA platina nao\b/g, 'A platina não'],
+      [/\bA platina não\b/g, 'A platina não'],
+      [/\bA dificuldade nao\b/g, 'A dificuldade não'],
+      [/\bA dificuldade não\b/g, 'A dificuldade não'],
+      [/\bNew Game\+ não e obrigatório\b/g, 'New Game+ não é obrigatório'],
+      [/\bO principal cuidado e\b/g, 'O principal cuidado é'],
+      [/\bO ponto de atenção principal e\b/g, 'O ponto de atenção principal é'],
+      [/\bO unico ponto tratado como\b/g, 'O único ponto tratado como'],
+      [/\bO restante da lista base pode\b/g, 'O restante da lista base pode'],
+      [/\bO maior checklist fica\b/g, 'O maior checklist fica'],
+      [/\bHorizon Forbidden West e uma\b/g, 'Horizon Forbidden West é uma'],
+      [/\bHorizon Forbidden West nao\b/g, 'Horizon Forbidden West não'],
+      [/\bHorizon Forbidden West não\b/g, 'Horizon Forbidden West não'],
+      [/\bBurning Shores e necessario\b/g, 'Burning Shores é necessário'],
+      [/\bBurning Shores e necessário\b/g, 'Burning Shores é necessário'],
+      [/\bNew Game\+ ou Ultra Hard sao\b/g, 'New Game+ ou Ultra Hard são'],
+      [/\bQuantas runs sao\b/g, 'Quantas runs são'],
+      [/\bQual e o maior\b/g, 'Qual é o maior'],
+      [/\bComplete Edition\/PC nao\b/g, 'Complete Edition/PC não'],
+      [/\bO scan de Specter e Specter Prime em Singularity e\b/g, 'O scan de Specter e Specter Prime em Singularity é'],
+      [/\bfoca so\b/g, 'foca só'],
+      [/\bfocar so\b/g, 'focar só']
+    ].reduce((text, [pattern, replacement]) => text.replace(pattern, replacement), value);
+  };
+
+  const accentHorizonForbiddenWestPayload = value => {
+    if (typeof value === 'string') return accentHorizonForbiddenWestText(value);
+    if (Array.isArray(value)) return value.map(item => accentHorizonForbiddenWestPayload(item));
+    if (value && typeof value === 'object') {
+      Object.keys(value).forEach(key => {
+        value[key] = accentHorizonForbiddenWestPayload(value[key]);
+      });
+    }
+    return value;
+  };
+
+  accentHorizonForbiddenWestPayload(horizonForbiddenWestGuide);
+}
+
+const untilDawnGuide = sampleGames.find(game => game.slug === 'until-dawn');
+if (untilDawnGuide) {
+  const untilTag = (id, label, tone = 'partial') => ({ id, label, tone });
+  const untilTrophyEditorial = {
+    until_dawn_a_symphony_of_horror_trophies: {
+      pt: 'Sinfonia de Troféus de Horror',
+      description: 'Colete todos os troféus de ouro, prata e bronze em Until Dawn.',
+      missable: false,
+      spoiler: false,
+      tags: ['platinum']
+    },
+    until_dawn_you_opened_their_eyes: {
+      pt: 'Você Abriu os Olhos Deles',
+      description: 'O grupo encontrou todas as pistas da clueline Mystery Man.',
+      tip: 'Use o checklist da lista PS4 para acompanhar as pistas da clueline Mystery Man por capítulo.',
+      missable: false,
+      spoiler: true,
+      tags: ['collectible', 'clueline', 'mystery-man', 'cleanup']
+    },
+    until_dawn_this_is_the_end: {
+      pt: 'Este É O Fim',
+      description: 'Ninguém sobreviveu até o amanhecer.',
+      missable: true,
+      spoiler: true,
+      tags: ['missable', 'final', 'everyone-dies', 'choice', 'run']
+    },
+    until_dawn_they_all_live: {
+      pt: 'Todos Viveram',
+      description: 'Todos os oito amigos sobreviveram até o amanhecer.',
+      missable: true,
+      spoiler: true,
+      tags: ['missable', 'final', 'everyone-lives', 'survival', 'choice', 'run']
+    },
+    until_dawn_the_tale_of_the_two_sisters: {
+      pt: 'O Conto das Duas Irmãs',
+      description: 'O grupo encontrou todas as pistas da clueline The Twins.',
+      missable: false,
+      spoiler: true,
+      tags: ['collectible', 'clueline', 'twins', 'cleanup']
+    },
+    until_dawn_the_skillful_wolf_man: {
+      pt: 'O Homem-Lobo Habilidoso',
+      description: 'Mike manteve o lobo vivo durante toda a sequência do Sanatorium.',
+      missable: true,
+      spoiler: true,
+      tags: ['missable', 'choice', 'attention', 'sanatorium']
+    },
+    until_dawn_the_quicker_man: {
+      pt: 'Os Rapazes Escaparam',
+      description: 'Todos os garotos escaparam da morte.',
+      missable: true,
+      spoiler: true,
+      tags: ['missable', 'survival', 'choice']
+    },
+    until_dawn_the_fateful_descent: {
+      pt: 'A Descida Fatídica',
+      description: 'O grupo encontrou todas as pistas da clueline 1952.',
+      missable: false,
+      spoiler: true,
+      tags: ['collectible', 'clueline', 'nineteen-fifty-two', 'cleanup']
+    },
+    until_dawn_night_of_the_totem_hunter: {
+      pt: 'Noite do Caçador de Totens',
+      description: 'O grupo encontrou todos os Totems na montanha.',
+      tip: 'Use o checklist da lista PS4 para acompanhar os Totens por capítulo.',
+      missable: false,
+      spoiler: false,
+      tags: ['collectible', 'totems', 'cleanup']
+    },
+    until_dawn_four_daughters_of_darkness: {
+      pt: 'Quatro Filhas da Escuridão',
+      description: 'Todas as garotas sobreviveram até o amanhecer.',
+      missable: true,
+      spoiler: true,
+      tags: ['missable', 'survival', 'choice']
+    },
+    until_dawn_the_psycho_path: {
+      pt: 'O Caminho do Psicopata',
+      description: 'Sam ou Ashley atacou o Psycho com uma arma.',
+      missable: false,
+      spoiler: true,
+      tags: ['choice', 'chapter-select', 'situational']
+    },
+    until_dawn_scream_too: {
+      pt: 'Grite Também!',
+      description: 'Mike cortou os próprios dedos para se libertar da armadilha de urso.',
+      missable: false,
+      spoiler: true,
+      tags: ['choice', 'chapter-select', 'cleanup']
+    },
+    until_dawn_instant_inferno: {
+      pt: 'Inferno Instantâneo',
+      description: 'Sam acionou imediatamente o interruptor para incendiar o lodge.',
+      missable: true,
+      spoiler: true,
+      tags: ['missable', 'choice', 'final', 'run']
+    },
+    until_dawn_dont_scare_jessica_to_death: {
+      pt: 'Não Assuste Jessica Até a Morte',
+      description: 'Jessica sobreviveu à noite de terror.',
+      missable: true,
+      spoiler: true,
+      tags: ['missable', 'choice', 'survival', 'run']
+    },
+    until_dawn_ashley_snaps: {
+      pt: 'Ashley Perde o Controle',
+      description: 'Ashley perdeu o controle e deixou Chris morrer.',
+      missable: true,
+      spoiler: true,
+      tags: ['missable', 'choice', 'character', 'run']
+    },
+    until_dawn_you_let_the_wrong_one_in: {
+      pt: 'Você Deixou o Errado Entrar!',
+      description: 'Ashley ou Chris abriu o alçapão e deixou o monstro entrar.',
+      missable: true,
+      spoiler: true,
+      tags: ['missable', 'choice', 'character', 'run']
+    },
+    until_dawn_the_exorcism_of_emily: {
+      pt: 'O Exorcismo de Emily',
+      description: 'Mike atirou em Emily.',
+      missable: true,
+      spoiler: true,
+      tags: ['missable', 'choice', 'character', 'run']
+    },
+    until_dawn_let_em_in: {
+      pt: 'Deixe eM Entrar',
+      description: 'Mike permitiu que Emily ficasse no porão.',
+      missable: true,
+      spoiler: true,
+      tags: ['missable', 'choice', 'character', 'run']
+    },
+    until_dawn_fatal_grudge: {
+      pt: 'Rancor Fatal',
+      description: 'Chris escolheu atirar em Ashley.',
+      missable: true,
+      spoiler: true,
+      tags: ['missable', 'choice', 'character', 'run']
+    }
+  };
+  const untilTagDefinitions = {
+    platinum: untilTag('platinum', 'Platina', 'complete'),
+    missable: untilTag('missable', 'Perdível', 'risk'),
+    spoiler: untilTag('spoiler', 'Spoiler', 'spoiler'),
+    final: untilTag('final', 'Final', 'risk'),
+    'everyone-lives': untilTag('everyone-lives', 'Todos vivos', 'risk'),
+    'everyone-dies': untilTag('everyone-dies', 'Todos mortos', 'risk'),
+    survival: untilTag('survival', 'Sobrevivência', 'risk'),
+    choice: untilTag('choice', 'Escolha', 'warning'),
+    character: untilTag('character', 'Personagem', 'warning'),
+    run: untilTag('run', 'Risco de run', 'warning'),
+    attention: untilTag('attention', 'Atenção', 'warning'),
+    sanatorium: untilTag('sanatorium', 'Sanatorium', 'warning'),
+    situational: untilTag('situational', 'Situacional', 'warning'),
+    collectible: untilTag('collectible', 'Coletável', 'partial'),
+    totems: untilTag('totems', 'Totens', 'partial'),
+    clueline: untilTag('clueline', 'Clueline', 'partial'),
+    'mystery-man': untilTag('mystery-man', 'Mystery Man', 'partial'),
+    twins: untilTag('twins', 'The Twins', 'partial'),
+    'nineteen-fifty-two': untilTag('1952', '1952', 'partial'),
+    cleanup: untilTag('cleanup', 'Cleanup', 'neutral'),
+    story: untilTag('story', 'História', 'partial'),
+    'chapter-select': untilTag('chapter-select', 'Chapter select', 'warning')
+  };
+
+  Object.assign(untilDawnGuide, {
+    title: 'Until Dawn',
+    published: true,
+    developer: 'Supermassive Games',
+    publisher: 'Sony Computer Entertainment',
+    releaseDate: '2015-08-25',
+    platforms: ['PS4'],
+    platform_base: 'PS4',
+    platformBase: 'PS4',
+    guideScope: 'Until Dawn PS4 original de 2015, lista base com 19 troféus',
+    genre: ['horror interativo', 'narrativa', 'escolhas'],
+    difficulty: 3,
+    time: '15-20h',
+    time_min_hours: 15,
+    time_max_hours: 20,
+    time_sort_hours: 18,
+    time_bucket: 'medium',
+    estimatedTime: '15-20 horas',
+    runs: '1 run completa + chapter select ou run parcial para finais e escolhas incompatíveis',
+    hasMissables: true,
+    missableCount: 12,
+    missable_count: 12,
+    onlineRequired: false,
+    coopRequired: false,
+    dlcRequired: false,
+    dlcRequiredForPlatinum: false,
+    hasOnline: false,
+    hasMandatoryOnline: false,
+    hasMandatoryCoop: false,
+    newGamePlusRequired: false,
+    difficultyTrophiesRequired: false,
+    chapterSelect: true,
+    missable: 'Until Dawn PS4 tem atenção alta por escolhas e continuidade de capítulos, mas não é uma lista com perda absoluta em todos os objetivos. O guia marca como perdíveis apenas troféus de final, sobrevivência ou decisão que podem exigir repetir blocos longos se a consequência errada for consolidada. Totens e cluelines ficam tratados como coletáveis de cleanup com chapter select.',
+    runs_summary: 'A rota segura usa uma run completa salvando todos, seguida de chapter select ou run parcial para todos mortos, mortes específicas, escolhas incompatíveis e colecionáveis faltantes.',
+    missable_summary: 'Há 12 troféus marcados como perdíveis por risco de rota, escolha e continuidade de chapter select, não por perda absoluta em todos os casos. Totens, The Twins, 1952 e Mystery Man exigem checklist, mas entram como coletáveis e cleanup.',
+    online_summary: 'A platina é totalmente single-player: não exige online, co-op, multiplayer ou PS Plus.',
+    grind_summary: 'Não há grind tradicional. O peso está em escolhas, chapter select, QTEs, todos vivos, todos mortos, Totens e cluelines.',
+    dlc_scope: 'A lista base do Until Dawn PS4 original tem 19 troféus e não exige DLC. Rush of Blood, The Inpatient e a versão PS5/PC de 2024 não entram neste guia.',
+    difficulty_reason: 'A dificuldade 3/10 vem de QTEs, decisões sob pressão e continuidade de capítulos, não de combate ou dificuldade selecionável.',
+    time_reason: 'A estimativa de 15-20 horas considera uma campanha completa, coleta ampla, chapter select e rotas alternativas para todos vivos, todos mortos e escolhas incompatíveis.',
+    first_run_advice: 'Comece com uma run focada em manter todos vivos, explorando cada cenário com calma para coletar Totens e pistas. Evite pular exploração e anote decisões importantes, porque vários troféus dependem de escolhas específicas e o chapter select precisa ser usado com cuidado para manter a continuidade das consequências.',
+    cleanup_advice: 'Depois da primeira conclusão, use chapter select para mortes específicas, todos mortos, decisões incompatíveis e colecionáveis pendentes. Quando uma escolha precisar gerar consequência posterior, continue jogando a partir do capítulo escolhido até o ponto em que o troféu ou final realmente destrava.',
+    before_you_start: 'Este guia é da versão PS4 original de 2015, com 19 troféus. Não use a lista PS5/PC de 2024, não misture Rush of Blood ou The Inpatient, e trate chapter select como uma ferramenta de continuidade, não como correção instantânea.',
+    best_for: 'Vale platinar Until Dawn se você gosta de horror narrativo, escolhas com consequências e uma platina curta baseada em rotas alternativas. A platina não exige online, co-op nem DLC, mas cobra atenção a Totens, pistas, todos vivos, todos mortos e troféus de decisões específicas.',
+    avoid_if: 'Evite se você não gosta de repetir capítulos, acompanhar colecionáveis por checklist ou refazer escolhas para ver finais e mortes incompatíveis.',
+    editorial_status: 'published',
+    coverage_level: 'strong',
+    is_verified: true,
+    verification_status: 'verified',
+    editorial_review_status: 'verified',
+    editorialStatus: 'verified',
+    verification_note: 'Guia PS4 original de 2015 revisado com 19 troféus, roadmap estruturado, escopo single-player e separação explícita da versão PS5/PC de 2024.',
+    last_reviewed_at: '2026-06-06',
+    lastReviewedAt: '2026-06-06T00:00:00.000-03:00',
+    reviewed_by: 'Equipe editorial AtlasAchievement',
+    editorial_notes: 'Escopo confirmado pelo objeto atual do projeto: slug until-dawn, 19 troféus e lista da versão PS4 original. A versão PS5/PC de 2024, Rush of Blood e The Inpatient ficam fora deste guia.',
+    editorialNotes: 'Escopo confirmado pelo objeto atual do projeto: slug until-dawn, 19 troféus e lista da versão PS4 original. A versão PS5/PC de 2024, Rush of Blood e The Inpatient ficam fora deste guia.',
+    quality_warnings: [],
+    qualityWarnings: [],
+    editorial_summary: [
+      'Until Dawn é uma platina curta, mas muito dependente de escolhas, colecionáveis e resultados narrativos. A lista base do PS4 original tem 19 troféus, é single-player, não exige online, co-op nem DLC, e gira em torno de salvar todos, matar todos, encontrar Totens e pistas/cluelines, além de executar decisões específicas em capítulos-chave.',
+      'A rota mais segura é fazer uma primeira run completa salvando todos os personagens e coletando o máximo possível de Totens e pistas. Depois, use chapter select com cuidado para buscar finais alternativos, mortes específicas e troféus incompatíveis, lembrando que mudanças feitas em um capítulo normalmente precisam ser carregadas até capítulos seguintes para surtirem efeito.',
+      'Não misture este guia com a versão PS5/PC de 2024, Rush of Blood ou The Inpatient. O foco aqui é a lista PS4 original: todos vivos, todos mortos, The Twins, 1952, Mystery Man, Night of the Totem Hunter e escolhas críticas envolvendo Chris, Ashley, Emily, Mike, Jessica e Sam.'
+    ],
+    quickDecision: {
+      summary: 'Vale platinar Until Dawn se você gosta de horror narrativo, escolhas com consequências e uma platina curta baseada em rotas alternativas. A platina não exige online, co-op nem DLC, mas cobra atenção a Totens, pistas, todos vivos, todos mortos e troféus de decisões específicas. É acessível, porém exige cuidado com chapter select para não repetir capítulos além do necessário.',
+      recommendation: 'Faça primeiro uma run de todos vivos com coleta ampla e deixe mortes, todos mortos e escolhas incompatíveis para chapter select ou run parcial.',
+      firstAction: 'Comece salvando todos os personagens e coletando Totens e pistas em cada cenário antes de avançar.',
+      mainRisk: 'Usar chapter select como correção instantânea pode falhar, porque muitas consequências precisam ser jogadas até capítulos posteriores.',
+      verdict: 'Ótima platina curta para quem gosta de narrativa ramificada; ruim para quem quer jogar sem checklist ou sem repetir cenas.'
+    },
+    methodology: 'Este guia é da versão PS4 original, com 19 troféus. Não use a lista PS5/PC de 2024, não misture Rush of Blood ou The Inpatient, e trate chapter select como ferramenta de continuidade, não como correção instantânea.',
+    seo: {
+      title: 'Guia de Platina Until Dawn — Troféus, Roadmap e Dicas',
+      description: 'Guia de platina de Until Dawn com roadmap em português, troféus da lista base, todos vivos, todos mortos, Totens, pistas, cluelines, chapter select e dicas para conquistar a platina no PS4.',
+      keywords: 'Until Dawn, guia de platina Until Dawn, troféus Until Dawn, roadmap Until Dawn, They All Live, This Is THE End, Night of the Totem Hunter, The Tale of The Two Sisters, The Fateful Descent, You Opened Their Eyes',
+      canonical: 'https://atlasachievement.com.br/jogo/until-dawn',
+      ogTitle: 'Guia de Platina Until Dawn — Troféus, Roadmap e Dicas',
+      ogDescription: 'Roadmap de Until Dawn PS4 com 19 troféus, todos vivos, todos mortos, Totens, cluelines e chapter select.'
+    },
+    checklist: [
+      'Confirmar que o guia é do Until Dawn PS4 original de 2015.',
+      'Confirmar a lista base com 19 troféus.',
+      'Manter online, co-op e DLC fora dos requisitos da platina.',
+      'Não misturar Until Dawn PS4 com a versão PS5/PC de 2024.',
+      'Não misturar Rush of Blood ou The Inpatient com o guia principal.',
+      'Completar uma run salvando todos os oito personagens.',
+      'Coletar todos os Totens da lista PS4.',
+      'Completar as cluelines The Twins, 1952 e Mystery Man.',
+      'Planejar a rota de todos mortos ou mortes específicas separadamente.',
+      'Resolver escolhas incompatíveis de Chris, Ashley, Emily, Mike, Jessica e Sam.',
+      'Usar chapter select continuando até a consequência necessária.',
+      'Fazer backup save ou cloud save antes de rotas finais, quando possível.',
+      'Conferir os 12 troféus marcados como perdíveis antes de encerrar o cleanup.',
+      'Validar que os cards mantêm inglês principal, PT-BR abaixo e botão de YouTube.'
+    ],
+    attentionPoints: [
+      { title: 'Versão correta', detail: 'Este guia é do Until Dawn PS4 original de 2015, com 19 troféus. A lista PS5/PC de 2024 é diferente e não entra aqui.', tags: [untilTag('scope', 'PS4 original', 'complete')] },
+      { title: 'Todos vivos', detail: 'They All Live exige manter os oito amigos vivos até o amanhecer. Faça esta rota em uma run limpa antes de buscar mortes específicas.', tags: [untilTag('everyone-lives', 'Todos vivos', 'risk')] },
+      { title: 'Todos mortos', detail: 'This Is THE End deve ficar em rota separada, porque conflita com todos vivos e depende de mortes em momentos certos.', tags: [untilTag('everyone-dies', 'Todos mortos', 'risk')] },
+      { title: 'Chapter select', detail: 'Chapter select ajuda, mas não é correção instantânea: várias escolhas precisam ser jogadas até capítulos seguintes ou até o final para consolidar consequências.', tags: [untilTag('chapter-select', 'Chapter select', 'warning')] },
+      { title: 'Totens', detail: 'Night of the Totem Hunter exige todos os Totens da lista PS4. Acompanhe por capítulo para evitar cleanup confuso.', tags: [untilTag('totems', 'Totens', 'partial')] },
+      { title: 'Cluelines', detail: 'Separe The Twins, 1952 e Mystery Man. Cada linha de pistas tem troféu próprio e pede exploração cuidadosa.', tags: [untilTag('clueline', 'Cluelines', 'partial')] },
+      { title: 'Escolhas incompatíveis', detail: 'Fatal Grudge, Ashley Snaps, The Exorcism of Emily, Let eM In e Instant Inferno podem conflitar com rotas de sobrevivência.', tags: [untilTag('choice', 'Escolhas', 'warning')] },
+      { title: 'QTEs e sobrevivência', detail: 'Jessica, Matt, Chris, Ashley, Emily, Sam, Mike e Josh dependem de decisões, QTEs e cenas de pressão em capítulos específicos.', tags: [untilTag('survival', 'Sobrevivência', 'risk')] },
+      { title: 'Backup save', detail: 'Quando a plataforma permitir, backup save ou cloud save ajuda antes de rotas finais e escolhas críticas.', tags: [untilTag('backup', 'Backup save', 'warning')] },
+      { title: 'Sem online, co-op ou DLC', detail: 'A platina é single-player, sem online obrigatório, sem co-op obrigatório e sem DLC. Rush of Blood e The Inpatient são listas separadas e não entram aqui.', tags: [untilTag('offline', 'Offline', 'complete')] }
+    ],
+    faq: [
+      { question: 'Until Dawn exige online para platinar?', answer: 'Não. A platina é single-player e não exige online, multiplayer ou PS Plus.' },
+      { question: 'Until Dawn exige co-op para platinar?', answer: 'Não. A platina não depende de co-op e pode ser feita por uma pessoa.' },
+      { question: 'Until Dawn exige DLC para platinar?', answer: 'Não. A lista base do PS4 não exige DLC. Também não misture Rush of Blood ou The Inpatient com o guia principal.' },
+      { question: 'Until Dawn tem troféus perdíveis?', answer: 'Sim, no padrão editorial deste guia. Eles são perdíveis por rota/escolha, porque podem exigir repetir capítulos longos se o jogador avançar sem cumprir a condição. Chapter select ajuda, mas não corrige tudo instantaneamente.' },
+      { question: 'Quantas runs são necessárias?', answer: 'Normalmente uma run completa salvando todos e cleanup por chapter select ou run parcial bastam. Separar todos vivos, todos mortos, colecionáveis e escolhas específicas evita repetição desnecessária.' },
+      { question: 'Posso usar chapter select para corrigir escolhas?', answer: 'Sim, mas com cuidado. Muitas consequências exigem continuar do capítulo escolhido até capítulos seguintes ou até o final, então chapter select não deve ser tratado como correção instantânea.' },
+      { question: 'Qual é a melhor primeira run?', answer: 'A rota mais segura é salvar todos os personagens e coletar o máximo possível de Totens e pistas.' },
+      { question: 'O que mais costuma dar problema?', answer: 'Troféus incompatíveis entre si, mortes específicas, QTEs, Totens esquecidos e cluelines incompletas.' },
+      { question: 'Preciso coletar todas as pistas?', answer: 'Sim, para os troféus de cluelines. Separe The Twins, 1952 e Mystery Man por capítulo e confira antes do cleanup final.' },
+      { question: 'A versão PS5/PC de 2024 tem a mesma lista da PS4?', answer: 'Não necessariamente. Este guia usa a lista PS4 original com 19 troféus; a versão PS5/PC de 2024 tem lista própria e não deve ser misturada aqui.' }
+    ],
+    roadmap: [
+      {
+        title: 'Primeira run salvando todos',
+        focus: 'Todos vivos e exploração',
+        objective: 'Completar a história mantendo todos os personagens vivos e coletando o máximo possível de Totens e pistas.',
+        actions: [
+          'Explore cada área antes de avançar para a próxima cena importante.',
+          'Colete Totens e pistas das cluelines conforme surgirem.',
+          'Evite decisões agressivas ou arriscadas quando o objetivo for manter todos vivos.',
+          'Tenha atenção a QTEs e escolhas de diálogo que afetam sobrevivência.',
+          'Anote capítulos em que decisões importantes foram tomadas para facilitar o cleanup.'
+        ],
+        warning: 'A run de todos vivos pode ser comprometida por escolhas aparentemente pequenas. Use atenção extra em cenas com chase, QTEs, armas, portas e decisões sob pressão.',
+        result: 'A base da platina fica pronta, com personagens vivos, história concluída e boa parte dos colecionáveis resolvida.'
+      },
+      {
+        title: 'Colecionáveis, Totens e cluelines',
+        focus: 'Coletáveis',
+        objective: 'Completar os colecionáveis e linhas de pistas necessários para os troféus de investigação.',
+        actions: [
+          'Cheque Totens pendentes por capítulo.',
+          'Complete as pistas da clueline The Twins.',
+          'Complete as pistas da clueline 1952.',
+          'Complete as pistas da clueline Mystery Man.',
+          'Use chapter select com cuidado, mantendo a continuidade quando uma pista depender de consequência posterior.'
+        ],
+        warning: 'Chapter select ajuda, mas não deve ser tratado como seleção livre sem consequência. Algumas mudanças precisam ser jogadas até capítulos seguintes.',
+        result: 'Os troféus de colecionáveis e investigação ficam prontos para a limpeza de escolhas.'
+      },
+      {
+        title: 'Escolhas incompatíveis e mortes específicas',
+        focus: 'Troféus de decisão',
+        objective: 'Usar chapter select ou nova run parcial para resolver troféus que entram em conflito com todos vivos.',
+        actions: [
+          'Planeje os troféus que exigem ferir, trair ou matar personagens específicos.',
+          'Separe escolhas incompatíveis para não quebrar a run de todos vivos.',
+          'Use chapter select a partir do ponto correto e continue até o capítulo necessário para validar a consequência.',
+          'Faça backup save ou cloud save quando a plataforma permitir.',
+          'Evite sobrescrever progresso limpo sem ter certeza da rota.'
+        ],
+        warning: 'Muitos troféus dependem de consequências acumuladas. Começar no capítulo errado pode fazer você repetir mais tempo do que o necessário.',
+        result: 'Os troféus incompatíveis com todos vivos ficam resolvidos sem bagunçar a rota principal.'
+      },
+      {
+        title: 'Run ou sequência de todos mortos',
+        focus: 'Final alternativo',
+        objective: 'Obter os troféus ligados a mortes de personagens e finais negativos.',
+        actions: [
+          'Siga uma rota planejada para matar todos os personagens exigidos.',
+          'Use decisões e QTEs específicos para garantir cada morte possível.',
+          'Mantenha vivos até o momento certo os personagens que só podem morrer em capítulos finais.',
+          'Se usar chapter select, continue a partir do capítulo escolhido até o final necessário.',
+          'Não misture esta rota com a run de todos vivos.'
+        ],
+        warning: 'Alguns personagens só podem morrer em momentos específicos. Errar uma morte pode obrigar a repetir capítulos finais.',
+        result: 'A rota de todos mortos ou mortes específicas fecha os troféus narrativos restantes.'
+      },
+      {
+        title: 'Cleanup final e conferência da lista',
+        focus: 'Conferência',
+        objective: 'Validar troféus restantes, versão correta do jogo e consistência do guia.',
+        actions: [
+          'Cheque o total de 19 troféus da versão PS4 original.',
+          'Garanta que PS4 e PS5/PC de 2024 não foram misturados.',
+          'Cheque Totens, cluelines, todos vivos, todos mortos e troféus de escolhas específicas.',
+          'Mantenha a rota sem online obrigatório, sem co-op obrigatório e sem DLC exigida.',
+          'Use o checklist final para identificar qualquer capítulo que precise de cleanup.'
+        ],
+        warning: '',
+        result: 'A lista de Until Dawn PS4 fica pronta para a platina da versão correta.'
+      }
+    ]
+  });
+
+  untilDawnGuide.trophies.forEach(trophy => {
+    const editorial = untilTrophyEditorial[trophy.id];
+    if (!editorial) return;
+    trophy.name_pt = editorial.pt;
+    trophy.namePt = editorial.pt;
+    trophy.trophyNameOriginal = trophy.name;
+    trophy.officialName = trophy.name;
+    trophy.originalName = trophy.name;
+    trophy.trophyNamePtBr = editorial.pt;
+    trophy.localizedNamePtBr = editorial.pt;
+    trophy.namePtSource = 'editorial_ptbr';
+    trophy.descriptionOriginal = trophy.description;
+    trophy.description = editorial.description;
+    trophy.descriptionPtBr = editorial.description;
+    trophy.ptDescription = editorial.description;
+    trophy.localizedDescription = { ptBr: editorial.description, 'pt-BR': editorial.description };
+    trophy.descriptionPtSource = 'editorial_ptbr';
+    trophy.is_missable = Boolean(editorial.missable);
+    trophy.isMissable = trophy.is_missable;
+    trophy.is_spoiler = Boolean(editorial.spoiler);
+    trophy.isSpoiler = trophy.is_spoiler;
+    trophy.is_online = false;
+    trophy.isOnline = false;
+    trophy.is_coop = false;
+    trophy.isCoop = false;
+    trophy.tip = String(editorial.tip || trophy.tip || '')
+      .replace(/PS5\/PC de 2024[^.]*\./g, 'PS5/PC de 2024 fica fora deste guia.')
+      .replace(/36 Totems[^.]*\./g, 'Use somente a lista PS4 original de Totens.')
+      .replace(/Interactables?/g, 'colecionáveis')
+      .replace(/\bEpisode Select\b/g, 'chapter select')
+      .replace(/\bChapter\/Episode Select\b/g, 'chapter select');
+    trophy.guideTip = trophy.tip;
+    trophy.tier = trophy.type;
+    const tagIds = [
+      ...(editorial.spoiler ? ['spoiler'] : []),
+      ...editorial.tags
+    ];
+    trophy.tags = [...new Set(tagIds)]
+      .map(tagId => untilTagDefinitions[tagId])
+      .filter(Boolean)
+      .map(tag => ({ ...tag }));
+  });
+  const untilFinalMissableCount = untilDawnGuide.trophies.filter(trophy => trophy?.is_missable && trophy?.type !== 'Platina').length;
+  untilDawnGuide.missableCount = untilFinalMissableCount;
+  untilDawnGuide.missable_count = untilFinalMissableCount;
+}
+
+const lordsOfTheFallenGuide = sampleGames.find(game => game.slug === 'lords-of-the-fallen');
+if (lordsOfTheFallenGuide) {
+  const lotfTag = (id, label, tone = 'partial') => ({ id, label, tone });
+  const lotfTrophyEditorial = {
+    lotf2023_lord_of_the_fallen: ['Lorde dos Caídos', 'Obtenha todos os troféus da lista base.', ['platina']],
+    lotf2023_a_veil_lifted: ['Um Véu Descoberto', 'Morra em Axiom pela primeira vez.', ['story']],
+    lotf2023_lost_and_found: ['Achados e Perdidos', 'Recupere o vigor perdido após morrer.', ['progression']],
+    lotf2023_weapon_collector: ['Coleção de Armas', 'Colete todas as weapons e shields exigidas pela lista base.', ['collectible', 'weapons', 'grind', 'run']],
+    lotf2023_ironclad: ['Blindagem', 'Colete todas as peças de armour exigidas pela lista base.', ['collectible', 'armour', 'grind', 'run']],
+    lotf2023_what_sights_contained_within: ['As Visões Contidas', 'Colete todos os Umbral Eyes.', ['collectible', 'umbral', 'questline']],
+    lotf2023_trinket_collector: ['Coleção de Berloques', 'Colete todos os rings e pendants.', ['collectible', 'rings', 'pendants', 'grind', 'run']],
+    lotf2023_ammunition_collector: ['Coleção de Munições', 'Colete todos os tipos de munição.', ['collectible', 'ammo', 'cleanup']],
+    lotf2023_inferno_adept: ['Apego Infernal', 'Colete todos os spells de Inferno.', ['spells', 'collectible', 'inferno', 'run']],
+    lotf2023_radiant_adept: ['Apego Radiante', 'Colete todos os spells de Radiance.', ['spells', 'collectible', 'radiance', 'run']],
+    lotf2023_umbral_adept: ['Apego ao Umbral', 'Colete todos os spells de Umbral.', ['spells', 'collectible', 'umbral', 'run']],
+    lotf2023_throwable_collector: ['Coleção de Arremessáveis', 'Colete todos os itens arremessáveis.', ['collectible', 'throwables', 'cleanup']],
+    lotf2023_gesture_collector: ['Coleção de Gestos', 'Colete todos os gestures.', ['gestures', 'collectible', 'online', 'run']],
+    lotf2023_salvation_in_blood: ['Salvação no Sangue', 'Melhore totalmente o Sanguinarix.', ['upgrade', 'collectible']],
+    lotf2023_honed_in_perfection: ['Auge da Perfeição', 'Melhore totalmente uma weapon.', ['upgrade']],
+    lotf2023_rune_novice: ['Iniciante das Runas', 'Encaixe uma rune pela primeira vez.', ['runes', 'progression']],
+    lotf2023_rune_master: ['Mestre das Runas', 'Preencha uma weapon ou shield com três runes.', ['runes', 'upgrade']],
+    lotf2023_carving_out_victory: ['Esculpindo a Vitória', 'Melhore totalmente a Umbral Lamp.', ['upgrade', 'umbral']],
+    lotf2023_utmost_insight: ['Visão Extrema', 'Preencha a Umbral Lamp com três Umbral Eyes.', ['upgrade', 'umbral']],
+    lotf2023_comrades: ['Camaradas', 'Convoque um parceiro de co-op.', ['online', 'multiplayer', 'attention']],
+    lotf2023_shared_triumph: ['Triunfo Compartilhado', 'Derrote um boss ao lado de um parceiro de co-op.', ['online', 'coop', 'multiplayer']],
+    lotf2023_vengeance_for_the_fallen: ['Vingança pelos Caídos', 'Vingue um lampbearer caído.', ['online', 'vengeance', 'multiplayer', 'attention']],
+    lotf2023_no_mercy: ['Sem Piedade', 'Derrote outro jogador no PvP.', ['online', 'pvp', 'multiplayer']],
+    lotf2023_infernal_offerings: ['Oferendas Infernais', 'Doe um total de 10 Severed Hands.', ['online', 'pvp', 'shrine', 'grind']],
+    lotf2023_radiant_offerings: ['Oferendas Radiantes', 'Doe um total de 10 Pilfered Coins.', ['online', 'coop', 'shrine', 'grind']],
+    lotf2023_umbral_offerings: ['Oferendas Umbrais', 'Doe um total de 10 Plucked Eyeballs.', ['online', 'vengeance', 'shrine', 'grind']],
+    lotf2023_shades_of_violence: ['Tons de Violência', 'Aplique uma tinct a uma peça de equipamento.', ['customization', 'tinct', 'cleanup']],
+    lotf2023_rise_and_fall: ['Ascensão e Queda', 'Derrote Pieta, She of Blessed Renewal.', ['boss', 'story']],
+    lotf2023_together_in_death: ['União na Morte', 'Derrote o Congregator of Flesh.', ['boss', 'story']],
+    lotf2023_burying_the_past: ['Enterrando o Passado', 'Derrote o Hushed Saint.', ['boss', 'story']],
+    lotf2023_unwanted: ['Indesejado', 'Derrote o Spurned Progeny.', ['boss', 'story']],
+    lotf2023_unbroken_to_the_end: ['Mantida até o Fim', 'Derrote a Unbroken Promise.', ['boss', 'story']],
+    lotf2023_wings_of_grief: ['Asas de Tristeza', 'Derrote o Hollow Crow.', ['boss', 'story']],
+    lotf2023_twin_faces_of_sin: ['Faces Gêmeas do Pecado', 'Derrote Reinhold the Immured.', ['boss', 'story']],
+    lotf2023_judgement: ['Julgamento', 'Derrote Judge Cleric, the Radiant Sentinel.', ['boss', 'story']],
+    lotf2023_hunts_end: ['Fim da Caçada', 'Derrote o Lightreaper.', ['boss', 'run']],
+    lotf2023_the_king_is_dead: ['O Rei Está Morto', 'Derrote o Sundered Monarch.', ['boss', 'story']],
+    lotf2023_a_hunger_sated: ['Fome Saciada', 'Derrote Elianne the Starved.', ['boss', 'final', 'umbral']],
+    lotf2023_fallen: ['Caído', 'Derrote Adyr, the Bereft Exile.', ['boss', 'final', 'radiance']],
+    lotf2023_none_shall_be_spared: ['Ninguém Será Poupado', 'Derrote todos os bosses.', ['boss', 'checklist', 'run']],
+    lotf2023_the_price_of_knowledge: ['O Preço do Conhecimento', 'Exacter Dunmire obtém o conhecimento que procura.', ['questline', 'npc', 'run']],
+    lotf2023_part_of_the_divine: ['Parte do Divino', 'Damarose the Marked recebe sua recompensa divina.', ['questline', 'npc', 'adyr']],
+    lotf2023_travels_resumed: ['De Volta às Viagens', 'Liberte Sparky.', ['questline', 'npc', 'run']],
+    lotf2023_moving_on: ['Seguindo em Frente', 'Byron encontra um novo propósito.', ['questline', 'npc', 'run']],
+    lotf2023_hero_worship: ['Adoração do Herói', 'Mantenha firme a fé de Drustan em seu irmão.', ['questline', 'npc']],
+    lotf2023_antanas_legacy: ['O Legado de Antanas', 'Descubra o verdadeiro valor da amizade de Andreas of Ebb.', ['questline', 'npc', 'run']],
+    lotf2023_faithful: ['Fiel', 'Faça Stomund, Captain of the Fidelis, chegar ao Empyrean.', ['questline', 'npc']],
+    lotf2023_without_purpose: ['Sem Propósito', 'Faça Thehk-Ihir deixar Mournstead.', ['questline', 'npc']],
+    lotf2023_a_queens_rest: ['Um Descanso de Rainha', 'Receba o favor final de Sophesia.', ['questline', 'npc']],
+    lotf2023_the_last_step: ['O Último Passo', 'Conclua a jornada do Iron Wayfarer.', ['questline', 'npc', 'umbral']],
+    lotf2023_vengeful_reflection: ['Reflexo Vingativo', 'Faça um imprint Umbral de Isaac enfrentar o Lightreaper.', ['questline', 'npc', 'boss']],
+    lotf2023_lord_of_the_risen: ['Lorde dos Revividos', 'Alcance o final de Adyr.', ['final', 'adyr', 'run']],
+    lotf2023_in_light_we_walk: ['Na Luz, Caminhamos', 'Alcance o final Radiant.', ['final', 'radiance', 'run']],
+    lotf2023_back_to_the_void: ['De Volta ao Vazio', 'Alcance o final Umbral.', ['final', 'umbral', 'run']],
+    lotf2023_a_shadow_dispelled: ['Uma Sombra Dissipada', 'Derrote o Scarlet Shadow.', ['boss', 'difficulty', 'umbral']],
+    lotf2023_essence_of_death: ['Essência da Morte', 'Derrote um inimigo com um Umbral finisher.', ['combat', 'umbral']],
+    lotf2023_thriving_in_darkness: ['Prosperando na Escuridão', 'Use uma Vestige Seed.', ['progression', 'umbral']],
+    lotf2023_seasoned: ['Experiente', 'Alcance o nível 100.', ['progression', 'grind']],
+    lotf2023_wayfarer: ['Viajante', 'Visite todas as áreas do jogo.', ['exploration', 'checklist', 'run']],
+    lotf2023_the_past_shapes_the_present: ['O Passado Molda o Presente', 'Ofereça a Molhu o Bowl of Revelations.', ['progression', 'umbral']],
+    lotf2023_lingering_moments: ['Momentos Prolongados', 'Visualize todos os Umbral Stigmas.', ['collectible', 'umbral', 'run']],
+    lotf2023_a_rest_among_the_dead: ['Um Descanso na Morte', 'Alcance o interior de Skyrest Bridge.', ['story']],
+    lotf2023_a_trace_of_venom: ['Um Rastro de Veneno', 'Conclua os negócios de Kukajin em Mournstead.', ['questline', 'npc', 'run']]
+  };
+  const lotfTagDefinitions = {
+    platina: lotfTag('platinum', 'Platina', 'complete'),
+    missable: lotfTag('missable', 'Perdível', 'risk'),
+    spoiler: lotfTag('spoiler', 'Spoiler', 'spoiler'),
+    online: lotfTag('online', 'Online', 'warning'),
+    coop: lotfTag('coop', 'Co-op', 'warning'),
+    multiplayer: lotfTag('multiplayer', 'Multiplayer', 'warning'),
+    pvp: lotfTag('pvp', 'PvP', 'warning'),
+    vengeance: lotfTag('vengeance', 'Vingança', 'warning'),
+    shrine: lotfTag('shrine', 'Shrine', 'warning'),
+    attention: lotfTag('attention', 'Atenção', 'warning'),
+    final: lotfTag('final', 'Final', 'risk'),
+    adyr: lotfTag('adyr', 'Adyr', 'warning'),
+    radiance: lotfTag('radiance', 'Radiance', 'warning'),
+    inferno: lotfTag('inferno', 'Inferno', 'warning'),
+    umbral: lotfTag('umbral', 'Umbral', 'warning'),
+    boss: lotfTag('boss', 'Boss', 'warning'),
+    questline: lotfTag('questline', 'Questline', 'warning'),
+    npc: lotfTag('npc', 'NPC', 'partial'),
+    collectible: lotfTag('collectible', 'Coletável', 'partial'),
+    weapons: lotfTag('weapons', 'Weapons', 'partial'),
+    armour: lotfTag('armour', 'Armour', 'partial'),
+    rings: lotfTag('rings', 'Rings', 'partial'),
+    pendants: lotfTag('pendants', 'Pendants', 'partial'),
+    ammo: lotfTag('ammo', 'Ammo', 'partial'),
+    throwables: lotfTag('throwables', 'Throwables', 'partial'),
+    gestures: lotfTag('gestures', 'Gestures', 'partial'),
+    tinct: lotfTag('tinct', 'Tinct', 'partial'),
+    grind: lotfTag('grind', 'Grind', 'warning'),
+    run: lotfTag('run', 'Risco de run', 'warning'),
+    checklist: lotfTag('checklist', 'Checklist', 'partial'),
+    spells: lotfTag('spells', 'Spells', 'partial'),
+    upgrade: lotfTag('upgrade', 'Upgrade', 'partial'),
+    runes: lotfTag('runes', 'Runes', 'partial'),
+    progression: lotfTag('progression', 'Progressão', 'partial'),
+    story: lotfTag('story', 'História', 'partial'),
+    cleanup: lotfTag('cleanup', 'Cleanup', 'neutral'),
+    customization: lotfTag('customization', 'Customização', 'partial'),
+    combat: lotfTag('combat', 'Combate', 'warning'),
+    difficulty: lotfTag('difficulty', 'Dificuldade', 'warning'),
+    exploration: lotfTag('exploration', 'Exploração', 'partial')
+  };
+  const lotfOnlineIds = new Set([
+    'lotf2023_comrades',
+    'lotf2023_shared_triumph',
+    'lotf2023_vengeance_for_the_fallen',
+    'lotf2023_no_mercy',
+    'lotf2023_infernal_offerings',
+    'lotf2023_radiant_offerings',
+    'lotf2023_umbral_offerings',
+    'lotf2023_gesture_collector'
+  ]);
+  const lotfCoopIds = new Set(['lotf2023_comrades', 'lotf2023_shared_triumph', 'lotf2023_radiant_offerings']);
+  const lotfForcedMissableIds = new Set(['lotf2023_the_price_of_knowledge', 'lotf2023_antanas_legacy', 'lotf2023_wayfarer']);
+
+  Object.assign(lordsOfTheFallenGuide, {
+    title: 'Lords of the Fallen',
+    published: true,
+    developer: 'Hexworks',
+    publisher: 'CI Games',
+    releaseDate: '2023-10-13',
+    platforms: ['PS5'],
+    genre: ['soulslike', 'ação RPG'],
+    estimatedTime: '100-150 horas',
+    runs: '3 runs no mesmo personagem',
+    hasMissables: true,
+    missableCount: 29,
+    missable_count: 29,
+    hasOnline: true,
+    hasMandatoryOnline: true,
+    hasMandatoryCoop: true,
+    onlineRequired: true,
+    coopRequired: true,
+    dlcRequired: false,
+    dlcRequiredForPlatinum: false,
+    newGamePlusRequired: true,
+    difficultyTrophiesRequired: false,
+    platinumType: 'lista base de PS5 + três finais + online + coleções',
+    missable: 'Este guia cobre Lords of the Fallen de 2023, desenvolvido pela Hexworks, e não o jogo de 2014. A platina é longa, exige online, co-op, PvP e pelo menos três runs no mesmo personagem. Os troféus perdíveis marcados envolvem finais, beacons, questlines de NPCs, bosses opcionais, exploração, itens vinculados à rota e coleções que podem exigir outra run.',
+    runs_summary: 'A rota segura exige pelo menos 3 playthroughs no mesmo personagem: primeiro Adyr, depois Radiant e, por fim, Umbral em New Game+.',
+    missable_summary: 'Há muitos perdíveis reais no checklist, ligados a finais, beacons, NPC questlines, bosses, exploração, itens de rota, spells, gestures e coleções sensíveis.',
+    online_summary: 'A platina tem troféus online obrigatórios: Shared Triumph e Comrades usam co-op; No Mercy exige PvP; Vengeance for the Fallen e as offerings usam sistemas multiplayer e shrines.',
+    grind_summary: 'O maior grind está em weapons, armour, rings, pendants, spells, ammo, throwables, tincts, gestures, Umbral Eyes, Umbral Stigmas e drops aleatórios. Trocas e drops de outros jogadores podem reduzir parte do farm, mas não substituem o checklist.',
+    dlc_scope: 'A platina considera somente os 63 troféus da lista base de PS5. Patches, modifiers e conquistas adicionais de outras plataformas não são DLC obrigatória e ficam fora deste checklist.',
+    difficulty_reason: 'A dificuldade 7/10 combina combate soulslike, bosses, NG+, online/PvP, autosave e alto risco de quebrar questlines ou finais.',
+    time_reason: 'A estimativa de 100-150 horas considera três runs, New Game+, coleções extensas, drops, co-op, PvP e cleanup; troca de itens, habilidade e patches podem alterar bastante o tempo.',
+    first_run_advice: 'Comece planejando a platina como uma rota de três runs no mesmo personagem. Na primeira run, siga um checklist completo, não purifique beacons se estiver mirando o final de Adyr, colete tudo que puder, faça backup em cloud quando possível e não avance questlines de NPCs sem confirmar o impacto nos finais, itens e bosses.',
+    cleanup_advice: 'Antes de encerrar cada run, compare inventário e questlines com o checklist. Deixe o cleanup final para weapons, armour, rings, pendants, spells, ammo, throwables, tincts, gestures, Umbral Eyes, Umbral Stigmas, upgrades, bosses e offerings pendentes.',
+    before_you_start: 'Lords of the Fallen usa autosave e não oferece save manual tradicional. Planeje três finais no mesmo personagem, mantenha backup em cloud quando possível e trate online, co-op, PvP, beacons e questlines como partes obrigatórias da rota.',
+    best_for: 'Vale platinar Lords of the Fallen se você gosta de soulslike longo, checklist pesado, múltiplas runs, finais sensíveis e coleções extensas. A platina tem online, co-op e PvP obrigatórios, além de muitos perdíveis ligados a beacons, questlines, bosses e itens. É indicada para quem aceita planejamento rigoroso, backup em cloud e grind.',
+    avoid_if: 'Não é recomendada para quem busca uma experiência solo simples, uma platina rápida ou uma rota sem grind, online e acompanhamento rigoroso de NPCs.',
+    editorial_status: 'published',
+    coverage_level: 'strong',
+    is_verified: true,
+    verification_status: 'verified',
+    editorial_review_status: 'verified',
+    editorialStatus: 'verified',
+    verification_note: 'Guia da lista base de PS5 de Lords of the Fallen 2023 revisado com 63 troféus, roadmap estruturado, localização PT-BR e escopo online validados.',
+    last_reviewed_at: '2026-06-06',
+    lastReviewedAt: '2026-06-06T00:00:00.000-03:00',
+    reviewed_by: 'Equipe editorial AtlasAchievement',
+    editorial_notes: 'Escopo: Lords of the Fallen de 2023, desenvolvido pela Hexworks, lista base de PS5 com 63 troféus. A lista atual do Steam tem conquistas adicionais de modifiers, mas elas não foram misturadas à platina base. Os nomes PT-BR foram conferidos na localização brasileira da Steam. Resposta de desenvolvedor publicada em 27 de novembro de 2025 confirma que armour de shrines, sets PvP e equipamentos adicionados depois não são necessários para Ironclad ou Weapon Collector.',
+    editorialNotes: 'Escopo: Lords of the Fallen de 2023, desenvolvido pela Hexworks, lista base de PS5 com 63 troféus. A lista atual do Steam tem conquistas adicionais de modifiers, mas elas não foram misturadas à platina base. Os nomes PT-BR foram conferidos na localização brasileira da Steam. Resposta de desenvolvedor publicada em 27 de novembro de 2025 confirma que armour de shrines, sets PvP e equipamentos adicionados depois não são necessários para Ironclad ou Weapon Collector.',
+    quality_warnings: [],
+    qualityWarnings: [],
+    editorial_summary: [
+      'Lords of the Fallen é uma platina longa e exigente: dificuldade 7/10, estimativa de 100-150 horas e 63 troféus na lista base de PS5. O peso vem mais do checklist, das questlines, dos finais e do online do que da dificuldade pura. Shared Triumph exige co-op, No Mercy exige PvP, e vingança e offerings também dependem de sistemas multiplayer. Nenhuma DLC é necessária para a platina base.',
+      'A rota mais segura usa pelo menos três runs no mesmo personagem para os finais Adyr, Radiant e Umbral. Esse planejamento também protege itens soul-bound e o progresso de weapons, armour, spells, rings, pendants, gestures, bosses e collectibles. Na primeira run, não purifique beacons se estiver seguindo Adyr; use New Game+ para Radiant e Umbral.',
+      'O jogo usa autosave e não tem save manual tradicional. Faça backup em cloud quando possível, confira NPCs antes de derrotar bosses ou avançar áreas críticas e mantenha um checklist ativo para Umbral Eyes, Umbral Stigmas, ammo, throwables, tincts, upgrades e drops. Muitos itens podem ser recebidos por troca ou drop de outros jogadores, mas isso não substitui uma rota editorial clara.'
+    ],
+    quickDecision: {
+      summary: 'Vale platinar Lords of the Fallen se você gosta de soulslike longo, checklist pesado, múltiplas runs, finais sensíveis e coleções extensas. A platina tem online, co-op e PvP obrigatórios, além de muitos perdíveis ligados a beacons, questlines, bosses e itens. É uma platina indicada para quem aceita planejamento rigoroso, backup em cloud e grind; não é recomendada para quem busca uma experiência solo simples ou uma platina rápida.',
+      recommendation: 'Planeje Adyr, Radiant e Umbral desde o início, use checklist por categoria e faça backup em cloud antes de decisões sensíveis.',
+      firstAction: 'Comece pela rota de Adyr sem purificar beacons e acompanhe NPCs, bosses, itens e requisitos online desde a primeira run.',
+      mainRisk: 'Avançar a história sem validar beacons e questlines pode bloquear finais, NPCs, bosses e coleções até a run seguinte.',
+      verdict: 'É uma platina forte para quem aceita planejamento rigoroso, backup em cloud e grind; não combina com uma experiência solo simples ou rápida.'
+    },
+    methodology: 'O guia separa a lista base de PS5 das conquistas posteriores de modifiers, conta somente os troféus marcados como perdíveis no checklist e mantém online, co-op, PvP, New Game+ e três finais como requisitos explícitos.',
+    seo: {
+      title: 'Guia de Platina Lords of the Fallen — Troféus, Roadmap e Dicas',
+      description: 'Guia de platina de Lords of the Fallen 2023 com roadmap em português, troféus online, co-op, PvP, finais Adyr, Radiant e Umbral, New Game+, questlines, bosses, collectibles e dicas para conquistar todos os troféus no PS5.',
+      keywords: 'Lords of the Fallen, Lords of the Fallen 2023, guia de platina Lords of the Fallen, troféus Lords of the Fallen, roadmap Lords of the Fallen, Shared Triumph, No Mercy, Adyr Ending, Radiant Ending, Umbral Ending, Weapon Collector, Ironclad, None Shall be Spared',
+      canonical: 'https://atlasachievement.com.br/jogo/lords-of-the-fallen',
+      ogTitle: 'Guia de Platina Lords of the Fallen — Troféus, Roadmap e Dicas',
+      ogDescription: 'Roadmap de Lords of the Fallen 2023 no PS5 com 63 troféus, online, co-op, PvP, três finais, New Game+, questlines, bosses e collectibles.'
+    },
+    checklist: [
+      'Confirmar os 63 troféus da lista base de PS5 e o jogo de 2023 da Hexworks.',
+      'Confirmar online obrigatório, co-op obrigatório e DLC fora da platina base.',
+      'Planejar 3 runs no mesmo personagem para Adyr, Radiant e Umbral.',
+      'Não purificar beacons na rota de Adyr e purificá-los na rota Radiant.',
+      'Seguir os passos rígidos da rota Umbral e fazer backup em cloud quando possível.',
+      'Resolver Shared Triumph em co-op, No Mercy em PvP e Vengeance for the Fallen online.',
+      'Doar Severed Hands, Pilfered Coins e Plucked Eyeballs nos shrines correspondentes.',
+      'Coletar weapons, armour, rings, pendants e spells de Inferno, Radiance e Umbral.',
+      'Coletar ammo, throwables, tincts, gestures, Umbral Eyes e Umbral Stigmas.',
+      'Completar upgrades do Sanguinarix e da Umbral Lamp.',
+      'Completar bosses, None Shall be Spared e as questlines de NPCs relevantes.',
+      'Conferir os troféus perdíveis marcados antes de encerrar cada run.'
+    ],
+    attentionPoints: [
+      { title: 'Online obrigatório', detail: 'A campanha pode ser solo, mas a platina não é offline: há requisitos de co-op, PvP, vingança e offerings.', tags: [lotfTag('online', 'Online', 'warning')] },
+      { title: 'Co-op obrigatório', detail: 'Shared Triumph exige derrotar um boss em co-op. Resolva cedo para não deixar dependência online para o fim.', tags: [lotfTag('coop', 'Co-op', 'warning')] },
+      { title: 'PvP obrigatório', detail: 'No Mercy exige derrotar outro jogador. Infernal Offerings também envolve Severed Hands obtidos por invasões/PvP.', tags: [lotfTag('pvp', 'PvP', 'warning')] },
+      { title: 'Três finais no mesmo personagem', detail: 'Adyr, Radiant e Umbral formam a base estrutural da platina e preservam itens soul-bound no mesmo personagem.', tags: [lotfTag('finals', 'Finais', 'risk')] },
+      { title: 'Beacons', detail: 'Não purifique beacons na rota de Adyr; purifique-os na rota Radiant.', tags: [lotfTag('beacons', 'Beacons', 'risk')] },
+      { title: 'Rota Umbral', detail: 'A rota exige passos rígidos e pode quebrar NPCs e questlines quando feita sem checklist.', tags: [lotfTag('umbral', 'Umbral', 'risk')] },
+      { title: 'Autosave e backup', detail: 'Não há save manual tradicional. Use backup em cloud quando possível antes de decisões, finais e questlines sensíveis.', tags: [lotfTag('save', 'Autosave', 'warning')] },
+      { title: 'Muitos perdíveis', detail: 'Os troféus perdíveis marcados incluem finais, questlines, bosses e coleções que podem exigir outra run se forem ignorados.', tags: [lotfTag('missable', 'Perdíveis', 'risk')] },
+      { title: 'Collectibles e drops', detail: 'Weapons, armour, spells, rings, pendants, gestures e Umbral items formam o maior checklist e podem exigir farm.', tags: [lotfTag('collectible', 'Coletáveis', 'partial')] },
+      { title: 'Armour e equipamentos online', detail: 'Armour de shrines, sets PvP e equipamentos adicionados depois não devem ser tratados como requisito de Ironclad ou Weapon Collector se patches atuais removeram essa exigência. Confirme antes de verificar.', tags: [lotfTag('patches', 'Patches', 'complete')] },
+      { title: 'Versão correta', detail: 'Este guia é do Lords of the Fallen de 2023, desenvolvido pela Hexworks, e não do jogo de 2014.', tags: [lotfTag('scope', 'Versão 2023', 'complete')] }
+    ],
+    faq: [
+      { question: 'Lords of the Fallen exige online para platinar?', answer: 'Sim. A campanha pode ser jogada solo, mas a platina base tem troféus online ligados a co-op, PvP, vingança e offerings. Portanto o requisito online deve ficar marcado como obrigatório.' },
+      { question: 'Lords of the Fallen exige co-op para platinar?', answer: 'Sim. Shared Triumph exige derrotar um boss em co-op. Como o projeto trata qualquer co-op/multiplayer obrigatório como requisito de platina, o co-op deve ficar marcado como obrigatório.' },
+      { question: 'Lords of the Fallen exige PvP?', answer: 'Sim. No Mercy exige derrotar outro jogador no PvP, e Infernal Offerings usa Severed Hands obtidas pelo sistema de invasões.' },
+      { question: 'Lords of the Fallen tem troféus perdíveis?', answer: 'Sim. Os perdíveis estão ligados principalmente a finais, beacons, questlines de NPCs, bosses e coleções dependentes de rota. Use checklist por run e backup em cloud quando possível.' },
+      { question: 'Quantas runs são necessárias?', answer: 'A rota segura exige pelo menos três runs no mesmo personagem, cobrindo os finais Adyr, Radiant e Umbral.' },
+      { question: 'Posso fazer os finais com personagens diferentes?', answer: 'Não para a rota de platina recomendada. Itens soul-bound e coleções exigem progressão no mesmo personagem, então planeje as três runs no mesmo save.' },
+      { question: 'O jogo tem save manual?', answer: 'Não há save manual tradicional; o jogo usa autosave. Backup em cloud pode proteger decisões, finais e questlines sensíveis.' },
+      { question: 'Qual é o maior grind da platina?', answer: 'O maior grind está nas coleções e nos drops de weapons, armour, rings, pendants, spells, ammo, throwables, tincts, gestures, Umbral Eyes, Umbral Stigmas e bosses.' },
+      { question: 'Preciso de DLC para a platina?', answer: 'Não. A platina usa os 63 troféus da lista base. Patches, modifiers, armour de shrine pós-patch ou conteúdos adicionais não devem ser tratados como DLC obrigatória sem confirmação.' },
+      { question: 'A platina é difícil ou só longa?', answer: 'As duas coisas. A dificuldade vem do combate soulslike, bosses, NG+, online/PvP e autosave; o tempo vem de três runs, collectibles, drops e questlines sensíveis.' },
+      { question: 'A versão de 2023 é a mesma de 2014?', answer: 'Não. Este guia trata exclusivamente Lords of the Fallen de 2023, desenvolvido pela Hexworks. Troféus e rotas do jogo de 2014 não entram aqui.' }
+    ],
+    roadmap: [
+      {
+        title: 'Preparação da platina e rota de checklist',
+        focus: 'Planejamento',
+        objective: 'Tratar Lords of the Fallen como uma platina de 3 finais no mesmo personagem, com online obrigatório, muitos perdíveis e checklist de itens.',
+        actions: [
+          'Confirme que o guia usa Lords of the Fallen de 2023, desenvolvido pela Hexworks, e não o jogo de 2014.',
+          'Planeje 3 runs no mesmo personagem para cobrir Adyr, Radiant e Umbral.',
+          'Ative um método seguro de backup em cloud quando possível, pois o jogo usa autosave e não tem save manual tradicional.',
+          'Acompanhe desde o início weapons, armour, spells, rings, pendants, gestures, Umbral Eyes, Umbral Stigmas, bosses e NPC questlines.',
+          'Separe troféus online, co-op e PvP para não tratar a platina como offline.'
+        ],
+        warning: 'Avançar sem checklist pode quebrar questlines, finais e itens vinculados à rota, empurrando troféus para outra run.',
+        result: 'A rota começa com expectativas corretas: 63 troféus base, online e co-op obrigatórios, 3 finais e alto risco de perda de questline.'
+      },
+      {
+        title: 'Primeira run com final de Adyr e coleta ampla',
+        focus: 'Adyr e collectibles',
+        objective: 'Fazer a primeira campanha maximizando collectibles, questlines compatíveis e preparação para as runs seguintes.',
+        actions: [
+          'Siga a rota do final de Adyr e não purifique beacons.',
+          'Colete o máximo possível de weapons, armour, rings, pendants, spells, ammo, throwables, tincts, gestures e Umbral items.',
+          'Confira NPCs e questlines antes de derrotar bosses ou avançar áreas críticas.',
+          'Faça backup em cloud antes de decisões sensíveis quando possível.',
+          'Farme drops aleatórios que sejam mais práticos nesta run do que em New Game+.'
+        ],
+        warning: 'Purificar beacons ou avançar a história sem confirmar questlines pode bloquear o final de Adyr e troféus de NPCs.',
+        result: 'O final de Adyr fica concluído e o personagem entra em New Game+ com grande parte das coleções encaminhada.'
+      },
+      {
+        title: 'Troféus online, co-op e PvP',
+        focus: 'Online obrigatório',
+        objective: 'Resolver os troféus que dependem de multiplayer, co-op, PvP, vingança e offerings.',
+        actions: [
+          'Convoque um parceiro para Comrades e derrote um boss em co-op para Shared Triumph.',
+          'Derrote outro jogador no PvP para No Mercy.',
+          'Vingue um fallen lampbearer por uma red lamp para Vengeance for the Fallen.',
+          'Doe Severed Hands, Pilfered Coins e Plucked Eyeballs nos shrines correspondentes.',
+          'Não inclua armour de shrines, sets PvP ou equipamentos adicionados depois nos requisitos de Ironclad e Weapon Collector.'
+        ],
+        warning: 'A platina não é offline. Mesmo que a campanha seja jogável solo, estes troféus exigem sistemas online e multiplayer.',
+        result: 'Os requisitos online ficam concluídos e coerentes com o topo do guia: online e co-op obrigatórios.'
+      },
+      {
+        title: 'Segunda run com final Radiant',
+        focus: 'Radiant Ending',
+        objective: 'Usar New Game+ para fazer o final Radiant e recuperar questlines ou itens incompatíveis com a rota anterior.',
+        actions: [
+          'Purifique os beacons conforme a rota Radiant.',
+          'Use esta run para questlines bloqueadas ou incompatíveis com a rota de Adyr.',
+          'Continue o checklist de spells, weapons, armour, rings, pendants, gestures e bosses.',
+          'Revise Kukajin, Damarose, Byron, Iron Wayfarer e os demais NPCs antes de áreas finais.',
+          'Compare pendências de itens soul-bound antes de iniciar a próxima run.'
+        ],
+        warning: 'Questlines são sensíveis à ordem, aos bosses e às decisões. Faça backup em cloud quando possível.',
+        result: 'O final Radiant e uma nova camada de itens e questlines ficam resolvidos no mesmo personagem.'
+      },
+      {
+        title: 'Terceira run com final Umbral',
+        focus: 'Umbral Ending',
+        objective: 'Completar o final Umbral e fechar itens soul-bound, bosses e questlines restantes.',
+        actions: [
+          'Siga a rota Umbral com atenção aos passos específicos do final.',
+          'Conclua Paladin Isaac, Iron Wayfarer e as questlines compatíveis com esta rota.',
+          'Garanta bosses e NPCs necessários para None Shall be Spared e troféus de questline.',
+          'Finalize itens soul-bound e collectibles vinculados aos finais.',
+          'Compare o inventário com checklists por categoria antes de encerrar a run.'
+        ],
+        warning: 'A rota Umbral pode exigir mortes de NPCs e uma sequência rígida. Errar a ordem pode exigir outra run.',
+        result: 'Com Adyr, Radiant e Umbral no mesmo personagem, o maior bloco estrutural da platina fica concluído.'
+      },
+      {
+        title: 'Cleanup de coleções, bosses e troféus acumulativos',
+        focus: 'Checklist final',
+        objective: 'Fechar todas as categorias restantes antes de concluir a platina.',
+        actions: [
+          'Compare o inventário com checklists de weapons, shields, armour, rings, pendants, spells, ammo, throwables, tincts e gestures.',
+          'Confirme Umbral Eyes, Umbral Stigmas, Sanguinarix, Umbral Lamp e bosses restantes.',
+          'Finalize upgrades, runes, shrine donations, collectibles e farming.',
+          'Verifique se todos os 63 troféus da lista base foram considerados e se os perdíveis marcados estão resolvidos.',
+          'Confirme que o jogo de 2014, modifiers, patches e conquistas adicionais não foram misturados à lista base.'
+        ],
+        warning: '',
+        result: 'A lista base de Lords of the Fallen 2023 fica pronta para a platina, com online, co-op, PvP, finais e checklist devidamente cobertos.'
+      }
+    ]
+  });
+
+  const accentLordsOfTheFallenText = value => {
+    if (typeof value !== 'string') return value;
+    return [
+      [/\bNao\b/g, 'Não'],
+      [/\bnao\b/g, 'não'],
+      [/\bvoce\b/g, 'você'],
+      [/\bVoce\b/g, 'Você'],
+      [/\btrofeus\b/g, 'troféus'],
+      [/\bTrofeus\b/g, 'Troféus'],
+      [/\btrofeu\b/g, 'troféu'],
+      [/\bTrofeu\b/g, 'Troféu'],
+      [/\bcolecao\b/g, 'coleção'],
+      [/\bcolecoes\b/g, 'coleções'],
+      [/\bColecoes\b/g, 'Coleções'],
+      [/\bcolecionaveis\b/g, 'colecionáveis'],
+      [/\bColecionaveis\b/g, 'Colecionáveis'],
+      [/\bperdiveis\b/g, 'perdíveis'],
+      [/\bperdivel\b/g, 'perdível'],
+      [/\bPerdivel\b/g, 'Perdível'],
+      [/\bhistoria\b/g, 'história'],
+      [/\bHistoria\b/g, 'História'],
+      [/\bexploracao\b/g, 'exploração'],
+      [/\bExploracao\b/g, 'Exploração'],
+      [/\barea\b/g, 'área'],
+      [/\bareas\b/g, 'áreas'],
+      [/\bapos\b/g, 'após'],
+      [/\bApos\b/g, 'Após'],
+      [/\bate\b/g, 'até'],
+      [/\bAte\b/g, 'Até'],
+      [/\btres\b/g, 'três'],
+      [/\bTres\b/g, 'Três'],
+      [/\bmaximo\b/g, 'máximo'],
+      [/\bnecessario\b/g, 'necessário'],
+      [/\bnecessaria\b/g, 'necessária'],
+      [/\bnecessarias\b/g, 'necessárias'],
+      [/\bobrigatorio\b/g, 'obrigatório'],
+      [/\bobrigatoria\b/g, 'obrigatória'],
+      [/\bespecifico\b/g, 'específico'],
+      [/\bespecifica\b/g, 'específica'],
+      [/\bespecificas\b/g, 'específicas'],
+      [/\bsensiveis\b/g, 'sensíveis'],
+      [/\bsensivel\b/g, 'sensível'],
+      [/\bpossivel\b/g, 'possível'],
+      [/\bPossivel\b/g, 'Possível'],
+      [/\bentao\b/g, 'então'],
+      [/\bEntao\b/g, 'Então'],
+      [/\bpeca\b/g, 'peça'],
+      [/\bcustomizacao\b/g, 'customização'],
+      [/\bdoacoes\b/g, 'doações'],
+      [/\bmecanica\b/g, 'mecânica'],
+      [/\bMecanica\b/g, 'Mecânica'],
+      [/\btemporarios\b/g, 'temporários'],
+      [/\bavancadas\b/g, 'avançadas'],
+      [/\bavancado\b/g, 'avançado'],
+      [/\bavanco\b/g, 'avanço'],
+      [/\bavancar\b/g, 'avançar'],
+      [/\bultima\b/g, 'última'],
+      [/\bultimo\b/g, 'último'],
+      [/\bvarias\b/g, 'várias'],
+      [/\bpratico\b/g, 'prático'],
+      [/\baleatorios\b/g, 'aleatórios'],
+      [/\baleatorio\b/g, 'aleatório'],
+      [/\bfarmaveis\b/g, 'farmáveis'],
+      [/\bsao\b/g, 'são'],
+      [/\bSao\b/g, 'São'],
+      [/\bHa\b/g, 'Há'],
+      [/\bha\b/g, 'há'],
+      [/\bTambem\b/g, 'Também'],
+      [/\btambem\b/g, 'também'],
+      [/\bsuficiente\b/g, 'suficiente'],
+      [/\bE uma\b/g, 'É uma'],
+      [/\bE requisito\b/g, 'É requisito'],
+      [/\bEste e\b/g, 'Este é'],
+      [/\bA platina e\b/g, 'A platina é'],
+      [/\bA rota e\b/g, 'A rota é'],
+      [/\bO peso esta\b/g, 'O peso está'],
+      [/\bnao podem\b/g, 'não podem'],
+      [/\bnao pode\b/g, 'não pode']
+    ].reduce((text, [pattern, replacement]) => text.replace(pattern, replacement), value);
+  };
+
+  lordsOfTheFallenGuide.trophies.forEach(trophy => {
+    const editorial = lotfTrophyEditorial[trophy.id];
+    if (!editorial) return;
+    const [namePt, descriptionPtBr, tagIds] = editorial;
+    if (trophy.id === 'lotf2023_antanas_legacy') trophy.name = "Antanas' Legacy";
+    if (lotfForcedMissableIds.has(trophy.id)) trophy.is_missable = true;
+    trophy.name_pt = namePt;
+    trophy.trophyNameOriginal = trophy.name;
+    trophy.officialName = trophy.name;
+    trophy.originalName = trophy.name;
+    trophy.trophyNamePtBr = namePt;
+    trophy.localizedNamePtBr = namePt;
+    trophy.namePtSource = 'trusted_steam_ptbr';
+    trophy.descriptionOriginal = trophy.description;
+    trophy.description = descriptionPtBr;
+    trophy.descriptionPtBr = descriptionPtBr;
+    trophy.ptDescription = descriptionPtBr;
+    trophy.localizedDescription = { ptBr: descriptionPtBr, 'pt-BR': descriptionPtBr };
+    trophy.descriptionPtSource = 'trusted_steam_ptbr';
+    trophy.tip = accentLordsOfTheFallenText(trophy.tip || '');
+    trophy.guideTip = trophy.tip;
+    trophy.tier = trophy.type;
+    trophy.is_online = lotfOnlineIds.has(trophy.id);
+    trophy.isOnline = trophy.is_online;
+    trophy.is_coop = lotfCoopIds.has(trophy.id);
+    trophy.isCoop = trophy.is_coop;
+    const finalTagIds = [
+      ...(trophy.is_missable ? ['missable'] : []),
+      ...(trophy.is_spoiler ? ['spoiler'] : []),
+      ...tagIds
+    ];
+    trophy.tags = [...new Set(finalTagIds)]
+      .map(tagId => lotfTagDefinitions[tagId])
+      .filter(Boolean)
+      .map(tag => ({ ...tag }));
+  });
+  const lotfFinalMissableCount = lordsOfTheFallenGuide.trophies.filter(trophy => trophy?.is_missable && trophy?.type !== 'Platina').length;
+  lordsOfTheFallenGuide.missableCount = lotfFinalMissableCount;
+  lordsOfTheFallenGuide.missable_count = lotfFinalMissableCount;
 }
 
 const atlasGuideViewModel = require('../shared/guideViewModel');
