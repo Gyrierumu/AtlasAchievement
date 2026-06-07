@@ -1951,7 +1951,7 @@ async function buildGamePageHtml(game, req) {
     .replace(/__HOME_VIEW_CLASS__/g, 'hidden')
     .replace(/__HOME_HERO_HEADING_TAG__/g, 'h2')
     .replace(/__CATALOG_HEADING_TAG__/g, 'h2')
-    .replace(/__GUIDE_VIEW_CLASS__/g, '')
+    .replace(/__GUIDE_VIEW_CLASS__/g, normalizedSlug === 'resident-evil-6' ? 'atlas-guide--resident-evil-6' : '')
     .replace(/__GUIDE_BREADCRUMBS__/g, buildBreadcrumbsHtml([{ label: 'Início', href: '/' }, { label: 'Catálogo', href: '/catalogo' }, { label: game.name }]))
     .replace(/__GUIDE_COLLECTION_LINKS__/g, guideCollections.collectionLinks.map(item => `<a href="${escapeHtml(item.path)}" class="atlas-card atlas-card--minimal atlas-related-collection"><div class="atlas-card__body"><strong class="atlas-card__title">${escapeHtml(item.label)}</strong><span class="atlas-card__reason">${escapeHtml(item.reason)}</span><span class="atlas-card__link">Abrir coleção</span></div></a>`).join(''))
     .replace(/__GUIDE_CONTENT_CLASS__/g, '')

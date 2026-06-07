@@ -1097,6 +1097,10 @@ window.UIGuide = (() => {
   }
 
   function renderGuide(game, state = {}) {
+    const guideViewEl = qs('#view-guide');
+    if (guideViewEl) {
+      guideViewEl.classList.toggle('atlas-guide--resident-evil-6', String(game?.slug || '').trim().toLowerCase() === 'resident-evil-6');
+    }
     const headerEl = qs('#guideHeader');
     const decisionEl = qs('#guideDecisionStack');
     const sidebarEl = qs('#sidebarInfo');

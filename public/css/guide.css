@@ -34,6 +34,34 @@
     position: static !important;
     top: auto !important;
   }
+
+  body[data-page="public"] #view-guide.atlas-guide--resident-evil-6 #guideRelatedPanel,
+  body[data-page="public"] #view-guide.atlas-guide--resident-evil-6 #guideShortcutPanel,
+  body[data-page="public"] #view-guide.atlas-guide--resident-evil-6 .atlas-section-toggle,
+  body[data-page="public"] #view-guide.atlas-guide--resident-evil-6 .atlas-density-toggle,
+  body[data-page="public"] #view-guide.atlas-guide--resident-evil-6 .atlas-trophy-toggle,
+  body[data-page="public"] #view-guide.atlas-guide--resident-evil-6 .atlas-trophy-details-toggle,
+  body[data-page="public"] #guideQuickDock {
+    display: none !important;
+  }
+
+  body[data-page="public"] #view-guide.atlas-guide--resident-evil-6 .atlas-roadmap-step,
+  body[data-page="public"] #view-guide.atlas-guide--resident-evil-6 .atlas-trophy-card,
+  body[data-page="public"] #view-guide.atlas-guide--resident-evil-6 .atlas-faq-item,
+  body[data-page="public"] #view-guide.atlas-guide--resident-evil-6 .atlas-critical-row {
+    break-inside: avoid-page;
+    page-break-inside: avoid;
+  }
+
+  body[data-page="public"] #view-guide.atlas-guide--resident-evil-6 #guideEditorialNotesPanel details > :not(summary) {
+    display: block !important;
+  }
+
+  body[data-page="public"] #view-guide.atlas-guide--resident-evil-6 p,
+  body[data-page="public"] #view-guide.atlas-guide--resident-evil-6 li {
+    orphans: 3;
+    widows: 3;
+  }
 }
 
 /* Compact public guide pass */

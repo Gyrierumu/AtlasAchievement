@@ -5367,6 +5367,14 @@
       };
     }
 
+    if (normalizedSlug === 'resident-evil-6') {
+      return {
+        label: 'Rota editorial definida',
+        detail: 'A lista base de 51 troféus está organizada por campanhas, Professional, Serpent Emblems, grind e cleanup por chapter select; o status permanece Em revisão até a conferência final do render/PDF.',
+        tone: 'soft'
+      };
+    }
+
     if (!game?.is_verified) {
       if (signals >= 3) {
         return {
@@ -5554,6 +5562,7 @@
   }
 
   function buildEditorialSignals(game, viewModel) {
+    const normalizedSlug = String(game?.slug || '').trim().toLowerCase();
     const total = Number(viewModel?.total || 0);
     const roadmapCount = Number(viewModel?.roadmap?.length || 0);
     const missables = Number(viewModel?.missables || 0);
@@ -5572,6 +5581,9 @@
     const customBeforeStart = firstGuideText(game?.before_you_start);
     const customFirstRun = firstGuideText(game?.first_run_advice, game?.guide_best_moment, game?.best_for_when);
     const customCleanup = firstGuideText(game?.cleanup_advice);
+    const customMethodology = normalizedSlug === 'resident-evil-6'
+      ? firstGuideText(game?.methodology)
+      : '';
 
     let coverageLabel = 'Base inicial';
     let coverageDetail = 'O guia ainda precisa ganhar mais camadas para transmitir confiança total.';
@@ -5616,6 +5628,7 @@
     ].filter(Boolean);
 
     const methodItems = [
+      customMethodology,
       customBeforeStart || 'Dificuldade, tempo e perdíveis apresentados no topo para decisão rápida.',
       customDifficultyReason ? `Dificuldade: ${customDifficultyReason}` : '',
       customTimeReason ? `Tempo: ${customTimeReason}` : '',
@@ -5644,7 +5657,7 @@
       readinessLabel,
       readinessDetail,
       scopeSummary: scopeItems.join(' • '),
-      methodSummary: customBeforeStart || 'Dificuldade, tempo, roadmap e alertas são consolidados na própria página para reduzir retrabalho.',
+      methodSummary: customMethodology || customBeforeStart || 'Dificuldade, tempo, roadmap e alertas são consolidados na própria página para reduzir retrabalho.',
       scopeItems,
       methodItems,
       runsLabel: customRuns || null,
