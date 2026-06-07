@@ -30,6 +30,20 @@
     padding-top: 0 !important;
   }
 
+  body[data-page="public"]:has(#view-guide.atlas-guide--resident-evil-6) {
+    min-height: 0 !important;
+    padding-bottom: 0 !important;
+  }
+
+  body[data-page="public"]:has(#view-guide.atlas-guide--resident-evil-6) .atlas-main-shell,
+  body[data-page="public"] #view-guide.atlas-guide--resident-evil-6,
+  body[data-page="public"] #view-guide.atlas-guide--resident-evil-6 #guideDecisionStack,
+  body[data-page="public"] #view-guide.atlas-guide--resident-evil-6 #guideContent {
+    min-height: 0 !important;
+    margin-bottom: 0 !important;
+    padding-bottom: 0 !important;
+  }
+
   body[data-page="public"] .atlas-guide-sidebar-card {
     position: static !important;
     top: auto !important;
@@ -41,8 +55,19 @@
   body[data-page="public"] #view-guide.atlas-guide--resident-evil-6 .atlas-density-toggle,
   body[data-page="public"] #view-guide.atlas-guide--resident-evil-6 .atlas-trophy-toggle,
   body[data-page="public"] #view-guide.atlas-guide--resident-evil-6 .atlas-trophy-details-toggle,
+  body[data-page="public"] #view-guide.atlas-guide--resident-evil-6 [hidden],
+  body[data-page="public"] #view-guide.atlas-guide--resident-evil-6 .hidden:empty,
+  body[data-page="public"] #view-guide.atlas-guide--resident-evil-6 .atlas-guide-tab-panel[hidden],
   body[data-page="public"] #guideQuickDock {
     display: none !important;
+  }
+
+  body[data-page="public"] #view-guide.atlas-guide--resident-evil-6 > :last-child,
+  body[data-page="public"] #view-guide.atlas-guide--resident-evil-6 #guideDecisionStack > :last-child,
+  body[data-page="public"] #view-guide.atlas-guide--resident-evil-6 #guideContent > :last-child,
+  body[data-page="public"] #view-guide.atlas-guide--resident-evil-6 #guideEditorialNotesPanel:last-child {
+    margin-bottom: 0 !important;
+    padding-bottom: 0 !important;
   }
 
   body[data-page="public"] #view-guide.atlas-guide--resident-evil-6 .atlas-roadmap-step,
@@ -59,6 +84,61 @@
 
   body[data-page="public"] #view-guide.atlas-guide--resident-evil-6 p,
   body[data-page="public"] #view-guide.atlas-guide--resident-evil-6 li {
+    orphans: 3;
+    widows: 3;
+  }
+
+  body[data-page="public"]:has(#view-guide.atlas-guide--lego-batman-legacy-of-the-dark-knight) {
+    min-height: 0 !important;
+    padding-bottom: 0 !important;
+  }
+
+  body[data-page="public"]:has(#view-guide.atlas-guide--lego-batman-legacy-of-the-dark-knight) .atlas-main-shell,
+  body[data-page="public"] #view-guide.atlas-guide--lego-batman-legacy-of-the-dark-knight,
+  body[data-page="public"] #view-guide.atlas-guide--lego-batman-legacy-of-the-dark-knight #guideDecisionStack,
+  body[data-page="public"] #view-guide.atlas-guide--lego-batman-legacy-of-the-dark-knight #guideContent {
+    min-height: 0 !important;
+    margin-bottom: 0 !important;
+    padding-bottom: 0 !important;
+  }
+
+  body[data-page="public"] #view-guide.atlas-guide--lego-batman-legacy-of-the-dark-knight #guideRelatedPanel,
+  body[data-page="public"] #view-guide.atlas-guide--lego-batman-legacy-of-the-dark-knight #guideRelatedOverview,
+  body[data-page="public"] #view-guide.atlas-guide--lego-batman-legacy-of-the-dark-knight .atlas-related-suggestions,
+  body[data-page="public"] #view-guide.atlas-guide--lego-batman-legacy-of-the-dark-knight #guideShortcutPanel,
+  body[data-page="public"] #view-guide.atlas-guide--lego-batman-legacy-of-the-dark-knight .atlas-section-toggle,
+  body[data-page="public"] #view-guide.atlas-guide--lego-batman-legacy-of-the-dark-knight .atlas-density-toggle,
+  body[data-page="public"] #view-guide.atlas-guide--lego-batman-legacy-of-the-dark-knight .atlas-trophy-toggle,
+  body[data-page="public"] #view-guide.atlas-guide--lego-batman-legacy-of-the-dark-knight .atlas-trophy-details-toggle,
+  body[data-page="public"] #view-guide.atlas-guide--lego-batman-legacy-of-the-dark-knight [hidden],
+  body[data-page="public"] #view-guide.atlas-guide--lego-batman-legacy-of-the-dark-knight .hidden:empty,
+  body[data-page="public"] #view-guide.atlas-guide--lego-batman-legacy-of-the-dark-knight .atlas-guide-tab-panel[hidden],
+  body[data-page="public"] #view-guide.atlas-guide--lego-batman-legacy-of-the-dark-knight #guideQuickDock {
+    display: none !important;
+  }
+
+  body[data-page="public"] #view-guide.atlas-guide--lego-batman-legacy-of-the-dark-knight > :last-child,
+  body[data-page="public"] #view-guide.atlas-guide--lego-batman-legacy-of-the-dark-knight #guideDecisionStack > :last-child,
+  body[data-page="public"] #view-guide.atlas-guide--lego-batman-legacy-of-the-dark-knight #guideContent > :last-child,
+  body[data-page="public"] #view-guide.atlas-guide--lego-batman-legacy-of-the-dark-knight #guideEditorialNotesPanel:last-child {
+    margin-bottom: 0 !important;
+    padding-bottom: 0 !important;
+  }
+
+  body[data-page="public"] #view-guide.atlas-guide--lego-batman-legacy-of-the-dark-knight .atlas-roadmap-step,
+  body[data-page="public"] #view-guide.atlas-guide--lego-batman-legacy-of-the-dark-knight .atlas-trophy-card,
+  body[data-page="public"] #view-guide.atlas-guide--lego-batman-legacy-of-the-dark-knight .atlas-faq-item,
+  body[data-page="public"] #view-guide.atlas-guide--lego-batman-legacy-of-the-dark-knight .atlas-critical-row {
+    break-inside: avoid-page;
+    page-break-inside: avoid;
+  }
+
+  body[data-page="public"] #view-guide.atlas-guide--lego-batman-legacy-of-the-dark-knight #guideEditorialNotesPanel details > :not(summary) {
+    display: block !important;
+  }
+
+  body[data-page="public"] #view-guide.atlas-guide--lego-batman-legacy-of-the-dark-knight p,
+  body[data-page="public"] #view-guide.atlas-guide--lego-batman-legacy-of-the-dark-knight li {
     orphans: 3;
     widows: 3;
   }

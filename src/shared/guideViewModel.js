@@ -926,7 +926,13 @@
       .toLowerCase();
   }
 
+  function isPlaceholderTrophy(trophy = {}) {
+    const type = normalizeTrophyYoutubeSearchKey(trophy?.type || '');
+    return Boolean(trophy?.is_placeholder || trophy?.isPlaceholder || trophy?.placeholder || type === 'informativo');
+  }
+
   function buildTrophyYoutubeSearchParts(gameTitle = '', trophy = {}) {
+    if (isPlaceholderTrophy(trophy)) return [];
     const parts = [
       cleanTrophyYoutubeSearchPart(gameTitle),
       getTrophyYoutubeOfficialName(trophy),
@@ -951,7 +957,7 @@
     const query = buildTrophyYoutubeSearchParts(gameTitle, trophy).join(' ');
     return query
       ? `https://www.youtube.com/results?search_query=${encodeTrophyYoutubeQuery(query)}`
-      : 'https://www.youtube.com/results';
+      : '';
   }
 
   function buildTrophyYoutubeSearchAriaLabel(gameTitle = '', trophy = {}) {
@@ -1786,6 +1792,7 @@
     const missablePending = pendingTrophies.find(isRealMissableTrophy);
     const spoilerPending = pendingTrophies.find(trophy => trophy && trophy.is_spoiler);
     const roadmapCount = Array.isArray(game.roadmap) ? game.roadmap.length : Number(game.roadmap_count || 0);
+    const normalizedSlug = String(game?.slug || '').trim().toLowerCase();
 
     if (!total) {
       return {
@@ -1815,6 +1822,17 @@
       const readRoadmapFirst = shouldReadRoadmapFirst(game, trophies, Array.isArray(game.roadmap) ? game.roadmap : []);
       const hasMissableRoadmapRisk = Boolean(missablePending);
       const firstRunAdvice = firstGuideText(game?.first_run_advice, game?.quickDecision?.firstAction);
+      if (normalizedSlug === 'lego-batman-legacy-of-the-dark-knight') {
+        return {
+          kind: 'roadmap',
+          title: 'Comece pela campanha e exploração de Gotham',
+          detail: firstRunAdvice || 'Avance pela história principal, desbloqueie personagens, veículos, gadgets e atividades do mundo aberto, e deixe colecionáveis, Red Bricks, Batcave, AR Trials e cleanup para etapas dedicadas.',
+          cta: 'Abrir roadmap',
+          focus: 'roadmap',
+          trophyId: firstPending?.id || '',
+          trophyName: firstPending?.name || ''
+        };
+      }
       if (['god-of-war', 'god-of-war-2018', 'god-of-war-ragnarok'].includes(String(game?.slug || '').trim().toLowerCase())) {
         return {
           kind: 'roadmap',
@@ -5384,7 +5402,7 @@
         };
       }
       return {
-        label: 'Aguardando revisao final',
+        label: 'Aguardando revisão final',
         detail: 'Use como triagem e valide com cautela antes de investir muitas horas, porque a revisão final ainda está pendente.',
         tone: 'warm'
       };
@@ -5757,21 +5775,22 @@
 
   function buildGuideViewModel(game, completedSource = [], options = {}) {
     const trophies = Array.isArray(game?.trophies) ? game.trophies : [];
+    const trackableTrophies = trophies.filter(trophy => !isPlaceholderTrophy(trophy));
     const roadmap = Array.isArray(game?.roadmap) ? game.roadmap : [];
     const roadmapStagesSource = Array.isArray(game?.roadmapStages) ? game.roadmapStages : roadmap;
     const completedIds = new Set(Array.isArray(completedSource) ? completedSource : []);
-    const completed = trophies.filter(trophy => completedIds.has(trophy.id)).length;
-    const total = trophies.length;
+    const completed = trackableTrophies.filter(trophy => completedIds.has(trophy.id)).length;
+    const total = trackableTrophies.length;
     const progress = total ? Math.round((completed / total) * 100) : 0;
     const pending = Math.max(total - completed, 0);
-    const missableCount = countRealMissableTrophies(trophies);
-    const attentionCount = trophies.filter(trophy => trophy && (isRealMissableTrophy(trophy) || trophy.is_spoiler)).length;
-    const spoilerCount = trophies.filter(trophy => trophy?.is_spoiler).length;
+    const missableCount = countRealMissableTrophies(trackableTrophies);
+    const attentionCount = trackableTrophies.filter(trophy => trophy && (isRealMissableTrophy(trophy) || trophy.is_spoiler)).length;
+    const spoilerCount = trackableTrophies.filter(trophy => trophy?.is_spoiler).length;
     const riskCounts = ['clair-obscur-expedition-33', 'detroit-become-human', 'marvels-spider-man', 'marvels-spider-man-miles-morales', 'red-dead-redemption-2'].includes(String(game?.slug || '').trim().toLowerCase())
-      ? getGuideRiskCounts(trophies, game)
-      : getRiskCounts(trophies);
-    const guidanceCounts = buildGuidanceCounts(trophies, riskCounts);
-    const breakdown = getTrophyBreakdown(trophies);
+      ? getGuideRiskCounts(trackableTrophies, game)
+      : getRiskCounts(trackableTrophies);
+    const guidanceCounts = buildGuidanceCounts(trackableTrophies, riskCounts);
+    const breakdown = getTrophyBreakdown(trackableTrophies);
     const breakdownText = breakdown.filter(item => item.count > 0).map(item => `${item.count} ${item.type}`).join(' • ') || 'Sem troféus detalhados';
     const quickNotes = [
       game?.missable ? game.missable : 'Revise os alertas editoriais antes de iniciar a campanha.',
@@ -5786,8 +5805,8 @@
     const collectionClassifier = typeof options.classifyGameCollections === 'function' ? options.classifyGameCollections : () => ({ collectionLinks: [], badges: [] });
     const imageResolver = typeof options.resolveImage === 'function' ? options.resolveImage : value => value || '/og-default.svg';
     const guideCover = buildGuideCoverModel(game, imageResolver);
-    const editorialSignals = buildEditorialSignals(game, { trophies, roadmap, total, missables: missableCount });
-    const scopeModel = buildGuideScopeModel(game, { trophies, roadmap, total });
+    const editorialSignals = buildEditorialSignals(game, { trophies: trackableTrophies, roadmap, total, missables: missableCount });
+    const scopeModel = buildGuideScopeModel(game, { trophies: trackableTrophies, roadmap, total });
     const viewModel = {
       trophies,
       roadmap,
@@ -5809,14 +5828,15 @@
       breakdownText,
       quickNotes,
       prepChecklist,
-      beforeStartItems: buildGuideBeforeStartItems(game, { trophies, roadmap, total, riskCounts }),
-      prepCards: buildPrepCards(game, { trophies, roadmap }),
-      beforeStartCards: buildBeforeStartCards(game, { trophies, roadmap, total, riskCounts }),
+      beforeStartItems: buildGuideBeforeStartItems(game, { trophies: trackableTrophies, roadmap, total, riskCounts }),
+      prepCards: buildPrepCards(game, { trophies: trackableTrophies, roadmap }),
+      beforeStartCards: buildBeforeStartCards(game, { trophies: trackableTrophies, roadmap, total, riskCounts }),
       roadmapStages: buildDecisionRoadmapStages({ roadmap: roadmapStagesSource }),
-      criticalAlerts: buildCriticalTrophyAlerts(game, trophies),
-      executionProfile: buildExecutionProfile(game, trophies, roadmap),
-      routeChangingTrophies: buildRouteChangingTrophies(trophies, game),
+      criticalAlerts: buildCriticalTrophyAlerts(game, trackableTrophies),
+      executionProfile: buildExecutionProfile(game, trackableTrophies, roadmap),
+      routeChangingTrophies: buildRouteChangingTrophies(trackableTrophies, game),
       spotlightTrophies: trophies
+        .filter(trophy => !isPlaceholderTrophy(trophy))
         .filter(trophy => trophy?.is_spoiler || /perd|miss|colet|online|grind|dific/i.test(`${trophy?.name || ''} ${trophy?.description || ''} ${trophy?.tip || ''}`))
         .slice(0, 3)
         .map(trophy => ({
@@ -5825,7 +5845,7 @@
           text: trophy?.tip || trophy?.description || 'Revise este troféu antes de começar.'
         })),
       nextActionModel: deriveNextAction(game, completedSource),
-      decisionModel: buildGuideDecisionModel(game, trophies, roadmap),
+      decisionModel: buildGuideDecisionModel(game, trackableTrophies, roadmap),
       difficultyLabel: getDifficultyProfileLabel(game?.difficulty),
       image: guideCover.image || imageResolver(game?.image),
       guideCover,
@@ -5833,10 +5853,10 @@
       heroImageMode: guideCover.mode,
       scopeModel,
       editorial: editorialSignals,
-      snapshot: buildGuideSnapshot(game, trophies, roadmap, editorialSignals),
+      snapshot: buildGuideSnapshot(game, trackableTrophies, roadmap, editorialSignals),
       isSaved: Boolean(options?.isSaved),
       libraryEntry: options?.libraryEntry || null,
-      collectionModel: collectionClassifier(game, trophies)
+      collectionModel: collectionClassifier(game, trackableTrophies)
     };
     viewModel.contextualFaq = buildContextualFaq(game, viewModel);
     viewModel.playerFit = buildGuidePlayerFit(game, viewModel);

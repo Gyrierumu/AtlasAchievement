@@ -1099,7 +1099,9 @@ window.UIGuide = (() => {
   function renderGuide(game, state = {}) {
     const guideViewEl = qs('#view-guide');
     if (guideViewEl) {
-      guideViewEl.classList.toggle('atlas-guide--resident-evil-6', String(game?.slug || '').trim().toLowerCase() === 'resident-evil-6');
+      const normalizedSlug = String(game?.slug || '').trim().toLowerCase();
+      guideViewEl.classList.toggle('atlas-guide--resident-evil-6', normalizedSlug === 'resident-evil-6');
+      guideViewEl.classList.toggle('atlas-guide--lego-batman-legacy-of-the-dark-knight', normalizedSlug === 'lego-batman-legacy-of-the-dark-knight');
     }
     const headerEl = qs('#guideHeader');
     const decisionEl = qs('#guideDecisionStack');
