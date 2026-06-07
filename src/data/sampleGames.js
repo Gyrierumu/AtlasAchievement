@@ -1898,99 +1898,245 @@ const sampleGames = [
     "time_max_hours": 100,
     "time_sort_hours": 100,
     "time_bucket": "long",
+    "missableCount": 0,
+    "missable_count": 0,
+    "hasMissables": false,
+    "hasOnline": false,
+    "hasCoop": false,
+    "hasMandatoryOnline": false,
+    "hasMandatoryCoop": false,
+    "requiresOnline": false,
+    "requiresCoop": false,
+    "onlineRequired": false,
+    "coopRequired": false,
+    "dlcRequired": false,
+    "dlcRequiredForPlatinum": false,
+    "platinumType": "lista base PlayStation offline",
+    "guideFocus": "Primeira fuga, história, epílogo, Fated List, afinidade, Keepsakes, Companions, armas, pesca, Pact of Punishment, Heat e cleanup",
     "missable": "Sem perdíveis reais na lista base. A platina de Hades exige muitas runs, recursos, diálogos e progressão, mas não há perda definitiva de troféus: se uma condição do Pact, diálogo, peixe, boon ou profecia não aparecer agora, continue fazendo tentativas e retome depois.",
     "image": "https://cdn.cloudflare.steamstatic.com/steam/apps/1145360/header.jpg",
     "cover_image": "https://cdn.cloudflare.steamstatic.com/steam/apps/1145360/library_600x900.jpg",
     "editorial_status": "published",
-    "coverage_level": "strong",
+    "coverage_level": "complete",
     "is_verified": true,
     "verification_status": "verified",
     "verification_note": "Guia revisado editorialmente para a lista base.",
     "editorial_review_status": "verified",
-    "last_reviewed_at": "2026-05-18",
-    "editorial_notes": "Revisão editorial focada na lista base de PlayStation: 50 troféus, distribuição 1 platina/2 ouro/7 prata/40 bronze, sem perdíveis reais, sem online/coop obrigatório e sem DLC necessária.",
+    "last_reviewed_at": "2026-06-07",
+    "reviewed_by": "AtlasAchievement Editorial",
+    "editorial_notes": "Revisão editorial focada exclusivamente em Hades e na lista base de PlayStation: 50 troféus, distribuição 1 platina/2 ouro/7 prata/40 bronze, sem perdíveis reais, sem online, sem coop e sem DLC obrigatória. Hades II e listas de achievements de PC/Steam ficam fora deste guia.",
+    "quality_warnings": [],
     "runs_summary": "Platina multi-run: espere dezenas de tentativas. O guia considera aprendizado inicial, primeira clear, 10 clears para a história principal e várias runs extras para relações, Fated List, recursos, Keepsakes, Companions, Heat e cleanup.",
     "missable_summary": "Sem perdíveis reais. O risco é atrasar progresso por esquecer diálogos, Nectar/Ambrosia, Fated List, Keepsakes, Companions ou Heat; nada disso bloqueia a platina definitivamente.",
     "online_summary": "Sem online e sem coop obrigatório: a platina é totalmente single-player/offline, sem multiplayer, servidores, PS+ ou parceiro obrigatório.",
     "grind_summary": "Grind/progressão são o centro da platina: recursos, afinidade, diálogos, Keepsakes rank 3, Companions, 15 profecias, pesca, armas/aspectos, Mirror of Night e Pact of Punishment/Heat. RNG pode alongar encontros e diálogos, mas novas runs preservam progresso.",
-    "dlc_scope": "DLC fora da platina base. A lista de PlayStation não exige DLC nem conteúdo extra obrigatório para a platina.",
+    "dlc_scope": "Sem DLC obrigatória. O guia cobre somente a lista base de PlayStation; Hades II é outro jogo e fica fora deste guia.",
     "difficulty_reason": "A dificuldade 5/10 vem de consistência em combate, leitura de builds, primeira clear, Heat 8/16, Extreme Measures e Infernal Gate sem dano. Mirror of Night, armas evoluídas, Keepsakes e God Mode tornam a execução mais controlável.",
     "time_reason": "70 a 100 horas considera aprendizado inicial, primeira clear, 10 clears da história, epílogo, relacionamentos, Fated List, recursos raros, Keepsakes no rank máximo, Heat e cleanup situacional.",
-    "first_run_advice": "Nas primeiras runs, foque em aprender armas, melhorar a Mirror of Night e avançar diálogos. Depois acompanhe relacionamentos, Fated List, Keepsakes e Heat pelo checklist.",
+    "first_run_advice": "Nas primeiras runs, teste as seis armas, invista Darkness na Mirror of Night, converse com todos na House of Hades e compre a Fated List assim que possível. Não tente limpar tudo antes da primeira fuga.",
     "cleanup_advice": "No fim, use a Fated List e o checklist como painel de controle: feche profecias, relacionamentos, Companions, Keepsakes rank 3, pesca por região, Charon, Thanatos/Hermes, Bad Call, Skelly e Heat pendente.",
-    "before_you_start": "A platina não depende de online, mas exige muitas runs, progressão de relacionamentos, Fated List e domínio gradual do Pact of Punishment/Heat.",
+    "before_you_start": "A platina é single-player, offline, sem coop, sem DLC obrigatória e sem perdíveis reais. God Mode não bloqueia troféus. O custo está em muitas runs, progressão de relacionamentos, Fated List, recursos e domínio gradual do Pact of Punishment/Heat.",
     "best_for": "Excelente para quem gosta de progresso incremental, builds variadas, ação responsiva e uma platina longa em que quase toda tentativa avança algum sistema.",
     "avoid_if": "Evite se você quer uma platina curta, linear, sem repetição de runs ou sem depender de diálogos, RNG e grind de recursos.",
+    "editorial_summary": [
+      "Hades é uma platina baseada em progresso acumulado entre runs, longa para os padrões de roguelite. A lista base de PlayStation tem 50 troféus e pode ser concluída inteiramente em single-player, sem online, coop ou DLC obrigatória.",
+      "Não há troféus perdíveis reais. O progresso continua no mesmo save, então diálogos, profecias, afinidade, pesca, boons, armas e condições do Pact podem ser retomados em novas tentativas. O planejamento serve para reduzir grind, não para evitar um bloqueio permanente.",
+      "A rota mais eficiente começa pela Mirror of Night, armas, primeira fuga e história principal. Depois, distribua o pós-game entre Heat 8/16, Extreme Measures, Erebus, Fated List, Keepsakes rank 3, Companions, questlines, Codex, pesca e recursos raros.",
+      "A dificuldade percebida varia bastante. Sem God Mode, Heat e objetivos sem dano cobram consistência; com God Mode, a execução fica mais acessível sem bloquear troféus. A faixa editorial de 70 a 100 horas considera dezenas de runs, diálogos sujeitos a RNG e cleanup amplo."
+    ],
+    "seo": {
+      "title": "Hades: guia de platina, troféus e roadmap | AtlasAchievement",
+      "description": "Guia de platina de Hades em português, com tempo estimado, dificuldade, roadmap, checklist, Fated List, Keepsakes, Companions, Pact of Punishment, Heat e dicas para a platina.",
+      "ogTitle": "Hades: guia de platina PlayStation com 50 troféus | AtlasAchievement",
+      "ogDescription": "Roadmap de Hades para a lista base de PlayStation: 50 troféus, sem perdíveis reais, sem online, sem coop, sem DLC obrigatória e com God Mode permitido."
+    },
+    "quickDecision": {
+      "summary": "Vale platinar Hades se você gosta de roguelite, runs repetidas, builds variadas e progressão de longo prazo. A platina não exige online, coop nem DLC e não tem perdíveis reais, mas cobra muitas runs, afinidade, Fated List, Keepsakes, Companions, Pact of Punishment, pesca e recursos raros.",
+      "recommendation": "É uma platina excelente para quem gosta de progressão constante e pouco indicada para quem não tolera grind, repetição ou objetivos sujeitos a diálogos e RNG.",
+      "firstAction": "Comece pela Mirror of Night, teste as armas, converse com todos após cada run e compre a Fated List cedo."
+    },
+    "attentionPoints": [
+      {
+        "title": "Sem perdíveis reais",
+        "detail": "Nenhum troféu da lista base fica bloqueado definitivamente. Continue no mesmo save e retome diálogos, profecias, boons, pesca ou condições do Pact em novas runs.",
+        "tags": ["Sem perdíveis", "Mesmo save"]
+      },
+      {
+        "title": "God Mode e dificuldade",
+        "detail": "God Mode reduz bastante a dificuldade percebida e não bloqueia troféus. Use-o se a execução estiver impedindo o progresso da platina.",
+        "tags": ["God Mode", "Dificuldade"]
+      },
+      {
+        "title": "Heat 8, Heat 16 e Pact of Punishment",
+        "detail": "Os dois prêmios de Skelly exigem clears em Heat 8 e Heat 16. Suba o Heat gradualmente e escolha condições compatíveis com sua arma e build.",
+        "tags": ["Heat", "Pact", "Atenção"]
+      },
+      {
+        "title": "Extreme Measures e Erebus",
+        "detail": "Champion of Elysium depende de Extreme Measures, enquanto Hold the Onions exige uma Infernal Gate de Erebus sem sofrer dano. Prepare esses objetivos depois de estabilizar suas clears.",
+        "tags": ["Extreme Measures", "Erebus", "Dificuldade"]
+      },
+      {
+        "title": "Keepsakes e Companions",
+        "detail": "Leve todas as Keepsakes padrão ao rank 3 e avance afinidade para liberar os seis Companions. Nectar abre vínculos; Ambrosia conclui os favores elegíveis.",
+        "tags": ["Keepsakes", "Companions", "Grind"]
+      },
+      {
+        "title": "Fated List e recursos",
+        "detail": "Use a Fated List como checklist central. Preserve Titan Blood, Diamonds, Ambrosia, Nectar, Darkness e Gemstones até entender quais armas, contratos e relacionamentos ainda faltam.",
+        "tags": ["Fated List", "Recursos", "Grind"]
+      },
+      {
+        "title": "Pesca em todas as regiões",
+        "detail": "Compre a Rod of Fishing e aproveite pontos em Tartarus, Asphodel, Elysium, Styx, Chaos e Greece. River Denizens depende de cobertura regional e pode alongar o cleanup por RNG.",
+        "tags": ["Fishing", "RNG", "Cleanup"]
+      },
+      {
+        "title": "Online, coop e DLC",
+        "detail": "A lista base é totalmente offline e single-player. Não há troféu online, coop obrigatório ou DLC necessária para a platina.",
+        "tags": ["Offline", "Sem coop", "Sem DLC"]
+      },
+      {
+        "title": "Hades II fora do guia",
+        "detail": "Hades II é outro jogo e não entra como DLC, sequência de troféus ou extensão desta checklist.",
+        "tags": ["Escopo", "Hades II"]
+      },
+      {
+        "title": "Lista PlayStation",
+        "detail": "Este guia usa a lista base de PlayStation com 50 troféus. Não misture contagens ou requisitos de achievements de PC/Steam.",
+        "tags": ["PlayStation", "50 troféus"]
+      }
+    ],
+    "faq": [
+      {
+        "question": "Hades exige online?",
+        "answer": "Não. A platina base é totalmente offline e não exige servidores, multiplayer, PS+ ou qualquer recurso online."
+      },
+      {
+        "question": "Hades exige coop?",
+        "answer": "Não. A lista base é single-player e não exige segundo jogador ou modo cooperativo."
+      },
+      {
+        "question": "Hades tem DLC obrigatória?",
+        "answer": "Não. A platina usa apenas a lista base de PlayStation e não exige DLC ou conteúdo extra."
+      },
+      {
+        "question": "Hades tem troféus perdíveis?",
+        "answer": "Não. Nenhum troféu fica bloqueado definitivamente; objetivos pendentes podem ser retomados no mesmo save em novas runs."
+      },
+      {
+        "question": "Quanto tempo leva para platinar Hades?",
+        "answer": "A estimativa editorial é de 70 a 100 horas. O tempo varia com a primeira fuga, diálogos sujeitos a RNG, afinidade, Fated List, Keepsakes, Companions, pesca, Heat e cleanup."
+      },
+      {
+        "question": "God Mode bloqueia troféus?",
+        "answer": "Não. God Mode pode ser ativado para reduzir a dificuldade percebida sem invalidar os troféus da lista base."
+      },
+      {
+        "question": "Qual é o maior grind?",
+        "answer": "O maior volume está em afinidade e questlines, Keepsakes rank 3, Companions, Fated List, recursos raros, armas/aspectos, pesca e diálogos entre runs."
+      },
+      {
+        "question": "Preciso completar Heat alto?",
+        "answer": "Sim, mas o teto relevante para a platina é Heat 16 por causa do segundo prêmio de Skelly. Outros troféus também usam Pact, Extreme Measures e Erebus."
+      },
+      {
+        "question": "Preciso maximizar todos os aspectos?",
+        "answer": "Não. Blood Bound exige maximizar um aspecto, enquanto Infernal Arms exige desbloquear todos os aspectos. Não é necessário maximizar cada aspecto disponível."
+      },
+      {
+        "question": "O que focar nas primeiras runs?",
+        "answer": "Aprenda as armas, invista Darkness na Mirror of Night, converse com todos, distribua Nectar com intenção e compre a Fated List cedo. Deixe Heat alto e cleanup para depois da primeira fuga."
+      },
+      {
+        "question": "Hades II entra neste guia?",
+        "answer": "Não. Hades II é outro jogo, não é DLC de Hades e possui guia e lista de troféus separados."
+      }
+    ],
     "roadmap": [
       {
-        "title": "Aprenda as armas e fortaleça Zagreus",
-        "focus": "Primeiras runs",
-        "objective": "Usar as primeiras tentativas para aprender combate, chefes, boons e melhorias permanentes.",
+        "title": "Aprenda as runs, armas e Mirror of Night",
+        "focus": "Primeiras runs e progressão permanente",
+        "objective": "Criar uma base segura para a primeira fuga sem tentar limpar a checklist cedo demais.",
         "actions": [
-          "Teste armas diferentes para descobrir qual combina com seu estilo.",
-          "Invista recursos na Mirror of Night para melhorar consistência nas runs.",
-          "Observe padrões dos chefes sem tentar fazer 100% logo no início.",
-          "Comece a acompanhar profecias da Fated List quando forem liberadas."
+          "Teste as seis armas e identifique quais ataques, especiais e Casts combinam com seu estilo.",
+          "Invista Darkness na Mirror of Night e use Chthonic Keys para abrir talentos e armas.",
+          "Converse com todos na House of Hades depois de cada tentativa e distribua Nectar com intenção.",
+          "Compre a Fated List e a Rod of Fishing assim que os contratos aparecerem.",
+          "Use God Mode se quiser reduzir a dificuldade sem bloquear troféus."
         ],
-        "result": "Base de progressão criada para escapar com mais frequência."
+        "warning": "Não gaste Titan Blood, Diamonds ou Ambrosia sem entender as prioridades da platina.",
+        "result": "Mirror, armas, diálogos e sistemas permanentes preparados para runs mais consistentes."
       },
       {
-        "title": "Faça a primeira fuga e avance a história",
-        "focus": "História e consistência",
-        "objective": "Conseguir completar runs e destravar mais diálogos, recursos e sistemas.",
+        "title": "Faça a primeira fuga e conclua a história principal",
+        "focus": "Primeira fuga, 10 clears e narrativa",
+        "objective": "Transformar runs consistentes em progresso de história até The Family Secret.",
         "actions": [
-          "Foque em builds consistentes até conseguir a primeira fuga.",
-          "Continue evoluindo a Mirror of Night.",
-          "Distribua Nectar com intenção, priorizando personagens ligados a troféus e lembranças.",
-          "Use Keepsakes para facilitar builds e acelerar progresso."
+          "Monte builds simples e consistentes até concluir a primeira fuga.",
+          "Continue fazendo clears e avançando diálogos até completar a missão principal.",
+          "Use Keepsakes dos deuses para direcionar boons e cobrir lacunas da Fated List.",
+          "Pesque sempre que o ponto aparecer e continue investindo na Mirror of Night.",
+          "Avance contratos do Contractor que liberam sistemas, Erebus e questlines."
         ],
-        "result": "Primeira fuga concluída e progresso narrativo avançando."
+        "warning": "A primeira fuga não encerra a história; a missão principal exige 10 fugas bem-sucedidas.",
+        "result": "História principal concluída, Pact of Punishment aberto e pós-game disponível."
       },
       {
-        "title": "Trabalhe relacionamentos e coleções",
-        "focus": "Relacionamentos e coletáveis",
-        "objective": "Avançar troféus ligados a Nectar, Ambrosia, Keepsakes, Companions e personagens.",
+        "title": "Suba Heat, Pact, Extreme Measures e Erebus",
+        "focus": "Heat 8/16 e desafios de execução",
+        "objective": "Resolver os troféus de Pact of Punishment sem transformar cada run em uma tentativa excessivamente difícil.",
         "actions": [
-          "Continue conversando com personagens entre as runs.",
-          "Acompanhe quem ainda precisa de Nectar ou Ambrosia.",
-          "Evolua Keepsakes e desbloqueie Companions conforme os requisitos aparecerem.",
-          "Use o checklist para evitar perder controle do grind."
+          "Aumente Heat gradualmente com condições que você controla bem.",
+          "Conclua runs em Heat 8 e Heat 16 para liberar os dois prêmios de Skelly.",
+          "Use Extreme Measures no nível necessário para Champion of Elysium.",
+          "Ative Benefits Package e outras condições exigidas pela Fated List.",
+          "Entre em Erebus com Heat suficiente e complete uma Infernal Gate sem sofrer dano."
         ],
-        "result": "Relacionamentos e coleções principais encaminhados."
+        "warning": "Heat 16 é o teto relevante para a platina; não há motivo editorial para forçar Heat maior.",
+        "result": "Prêmios de Skelly, Extreme Measures, Erebus e profecias do Pact encaminhados."
       },
       {
-        "title": "Complete Fated List e objetivos longos",
-        "focus": "Grind e profecias",
-        "objective": "Reduzir pendências de longo prazo ligadas à Fated List, armas, boons e tarefas específicas.",
+        "title": "Feche afinidades, Keepsakes, Companions e questlines",
+        "focus": "Relacionamentos e recursos raros",
+        "objective": "Avançar vínculos sem desperdiçar Nectar, Ambrosia, Diamonds ou diálogos entre runs.",
         "actions": [
-          "Consulte a Fated List com frequência para priorizar objetivos pendentes.",
-          "Varie armas, aspectos e deuses para completar requisitos diferentes.",
-          "Separe troféus de grind dos troféus de história para não repetir runs sem foco."
+          "Converse com todos após cada run e acompanhe corações bloqueados no Codex.",
+          "Distribua Nectar para obter todas as Keepsakes padrão.",
+          "Equipe e alterne Keepsakes até todas chegarem ao rank 3.",
+          "Conclua os favores elegíveis e use Ambrosia para liberar os seis Companions.",
+          "Finalize as questlines de Sisyphus, Orpheus/Eurydice, Achilles/Patroclus, Nyx/Chaos e o epílogo."
         ],
-        "result": "Grande parte do grind estrutural concluída."
+        "warning": "Diálogos e aparições dependem de RNG; continue fazendo runs e evite interpretar atraso como perdível.",
+        "result": "Afinidades, Keepsakes, Companions, questlines e epílogo próximos da conclusão."
       },
       {
-        "title": "Suba Heat com Pact of Punishment",
-        "focus": "Dificuldade e progressão",
-        "objective": "Cumprir requisitos ligados ao Pact of Punishment sem tentar Heat alto cedo demais.",
+        "title": "Complete Fated List, boons, armas, aspectos e Codex",
+        "focus": "Checklist estrutural e grind",
+        "objective": "Usar cada run para fechar categorias específicas em vez de depender de tentativas aleatórias.",
         "actions": [
-          "Comece a aumentar Heat gradualmente depois de ter builds mais consistentes.",
-          "Escolha modificadores que você consegue controlar.",
-          "Use armas confortáveis para troféus ligados a dificuldade."
+          "Revise a Fated List antes de cada run e escolha uma profecia como foco principal.",
+          "Use Keepsakes dos deuses para buscar boons ainda não registrados.",
+          "Desbloqueie todas as armas e aspectos, incluindo os aspectos ocultos.",
+          "Varie armas e Daedalus Hammers para fechar Tools of the Architect e Master of Arms.",
+          "Complete as entradas dos Olimpianos no Codex e as profecias pendentes."
         ],
-        "warning": "Heat não é online nem coop; é progressão/dificuldade dentro das runs."
+        "warning": "Infernal Arms exige desbloquear todos os aspectos, mas Blood Bound exige maximizar apenas um.",
+        "result": "Fated List, boons, armas, aspectos, Hammers e Codex sob controle."
       },
       {
-        "title": "Cleanup final da platina",
-        "focus": "Limpeza",
-        "objective": "Finalizar troféus restantes de relacionamentos, profecias, Companions, Keepsakes e runs.",
+        "title": "Faça pesca, economia e cleanup final",
+        "focus": "Fishing, Charon, Broker, Contractor e situacionais",
+        "objective": "Fechar pendências de RNG, recursos e ações específicas sem confundir risco de run com perdível.",
         "actions": [
-          "Revise o checklist completo antes de continuar fazendo runs aleatórias.",
-          "Finalize pendências de personagens e recursos raros.",
-          "Complete objetivos restantes da Fated List.",
-          "Feche qualquer troféu de Heat, arma ou progressão que ainda faltar."
+          "Pesque em Tartarus, Asphodel, Elysium, Styx, Chaos e Greece até cobrir todas as regiões.",
+          "Faça 20 trocas com o Broker e compre 50 trabalhos do Contractor.",
+          "Resolva To Charon's Credit, Well Stocked, Bad Call, Death Dealer, Thorn of Thanatos e Haste of Hermes.",
+          "Revise Skelly, Cérbero, Pool of Purging e qualquer profecia ainda aberta.",
+          "Confirme os 50 troféus da lista base de PlayStation antes de encerrar o checklist."
         ],
-        "result": "Checklist completo e platina pronta."
+        "warning": "Hades II e achievements de PC/Steam não entram na contagem ou nos requisitos desta lista.",
+        "result": "Checklist da lista base concluído e platina liberada."
       }
     ],
     "trophies": [
@@ -1999,7 +2145,7 @@ const sampleGames = [
         "name": "God of Blood",
         "name_pt": "Deus do Sangue",
         "type": "Platina",
-        "description": "Obtenha todos os Troféus.",
+        "description": "Obtenha todos os troféus.",
         "tip": "Surge automaticamente ao concluir o restante da lista base. Use o checklist para controlar grind, relacionamentos, Fated List, Heat e limpeza final.",
         "is_missable": false,
         "is_spoiler": false
@@ -2162,7 +2308,7 @@ const sampleGames = [
         "name": "Thanks, But No Thanks",
         "name_pt": "Obrigado, Só Que Não",
         "type": "Bronze",
-        "description": "Expurgue uma Benção Lendária.",
+        "description": "Expurgue uma Bênção Lendária.",
         "tip": "Limpeza com RNG. Quando conseguir um boon Legendary, procure um Pool of Purging e venda esse boon; deixe para cleanup se não aparecer naturalmente.",
         "is_spoiler": false
       },
@@ -2196,7 +2342,7 @@ const sampleGames = [
       {
         "id": "hades-well-versed",
         "name": "Well Versed",
-        "name_pt": "Bem versado",
+        "name_pt": "Bem Versado",
         "type": "Bronze",
         "description": "Desbloqueie totalmente as entradas de Codex do Olimpo.",
         "tip": "Progressão de Codex. Aceite boons de todos os olimpianos até completar as entradas; use Keepsakes para forçar deuses que faltam.",
@@ -2232,7 +2378,7 @@ const sampleGames = [
       {
         "id": "hades-river-denizens",
         "name": "River Denizens",
-        "name_pt": "Habitantes do rio",
+        "name_pt": "Habitantes do Rio",
         "type": "Bronze",
         "description": "Pesque um peixe de cada região.",
         "tip": "Coletável/limpeza com RNG. Compre a Rod of Fishing e pesque em Tartarus, Asphodel, Elysium, Styx, Chaos e Greece quando os pontos aparecerem.",
@@ -2367,7 +2513,7 @@ const sampleGames = [
       {
         "id": "hades-one-for-the-ages",
         "name": "One for the Ages",
-        "name_pt": "Entrar pra História",
+        "name_pt": "Entrar para a História",
         "type": "Bronze",
         "description": "Chegue ao Epílogo da História.",
         "tip": "Pós-game, história e relacionamento. Depois do final principal, avance favores e diálogos com os Olimpianos e Persephone até abrir o epílogo.",
@@ -2421,7 +2567,7 @@ const sampleGames = [
       {
         "id": "hades-bad-call",
         "name": "Bad Call",
-        "name_pt": "Péssima escolha",
+        "name_pt": "Péssima Escolha",
         "type": "Bronze",
         "description": "Use o Grande Chamado de alguém do Olimpo contra eles em uma Provação.",
         "tip": "Limpeza com RNG. Em uma Trial of the Gods, tenha a Call de um deus, escolha o outro boon e use a Greater Call contra o deus irritado.",
@@ -2439,10 +2585,10 @@ const sampleGames = [
       {
         "id": "hades-three-headed-boy",
         "name": "Three-Headed Boy",
-        "name_pt": "Garoto de três cabeças",
+        "name_pt": "Garoto de Três Cabeças",
         "type": "Bronze",
         "description": "Acaricie Cérbero 10 vezes.",
-        "tip": "Limpeza/relacionamento. Faça carinho em Cerberus no House of Hades sempre que puder até acumular 10 interações.",
+        "tip": "Limpeza/relacionamento. Faça carinho em Cérbero na House of Hades sempre que puder até acumular 10 interações.",
         "is_spoiler": false
       }
     ]
@@ -8815,37 +8961,228 @@ const sampleGames = [
     "name": "Resident Evil 6",
     "slug": "resident-evil-6",
     "difficulty": 5,
-    "time": "40-60 horas",
-    "time_min_hours": 40,
-    "time_max_hours": 60,
-    "time_sort_hours": 60,
+    "time": "50-70 horas",
+    "time_min_hours": 50,
+    "time_max_hours": 70,
+    "time_sort_hours": 70,
     "time_bucket": "long",
-    "missable": "A platina base não tem troféus realmente perdíveis, porque chapter select permite voltar aos capítulos. O ideal é tratar a primeira passada pelas quatro campanhas como aprendizado, coleta de serpent emblems e acúmulo de skill points antes do Professional e do grind de skills.",
-    "runs_summary": "Quatro campanhas completas, coleta de serpent emblems, cleanup por chapter select, Professional e grind de skills/títulos/medalhas.",
-    "missable_summary": "Sem perdíveis definitivos na lista base graças ao chapter select, mas serpent emblems e objetivos situacionais devem ser acompanhados por capítulo/personagem.",
-    "online_summary": "Não há exigência online, multiplayer ou PS+ para a platina base. As campanhas aceitam parceiro humano, mas a lista pode ser planejada solo com IA; trate companhia humana como ajuda, não requisito.",
-    "grind_summary": "Grind alto para skill points, Mad Skillz, títulos, medalhas, 500 zombies, 500 J'avo, chrysalids e kills por arma.",
-    "dlc_scope": "Guia focado na lista base de Resident Evil 6. DLCs/modos extras e listas adicionais ficam fora da platina base deste guia.",
+    "missable": "A platina base não tem troféus definitivamente perdíveis, porque chapter select permite voltar aos capítulos. O risco real é perder tempo: Serpent Emblems, objetivos situacionais, skill points, Mad Skillz, 150 medals e kills por arma ficam muito mais fáceis com checklist desde a primeira campanha.",
+    "runs_summary": "Quatro campaigns completas, uma passagem em Professional, cleanup por chapter select e grind final de skills, títulos, medals, kills e emblemas.",
+    "missable_summary": "Sem perdíveis rígidos na lista base graças ao chapter select, mas Serpent Emblems e objetivos situacionais devem ser acompanhados por capítulo e personagem.",
+    "online_summary": "Sem online obrigatório: não há exigência de PS+, multiplayer ou Agent Hunt para a platina base. As campaigns aceitam parceiro humano, mas tudo pode ser planejado solo com IA.",
+    "grind_summary": "Grind alto para skill points, Mad Skillz, 150 medals, títulos, 500 zombies, 500 J'avo, chrysalids e dez kills com cada arma.",
+    "dlc_scope": "Guia focado na lista base da platina de Resident Evil 6, com 51 troféus. DLCs e modos extras como Agent Hunt, Survivors, Predator, Onslaught, Siege e listas adicionais ficam fora da platina base deste guia.",
     "difficulty_reason": "A dificuldade vem do volume das quatro campanhas, Professional, QTEs, objetivos situacionais e grind final de skills/medalhas.",
-    "time_reason": "A faixa de 40-60 horas considera quatro campanhas, chapter select, serpent emblems, Professional, cleanup e grind de skills/títulos.",
-    "first_run_advice": "Complete Leon, Chris, Jake e Ada em Amateur ou Normal, coletando serpent emblems e acumulando skill points antes de subir a dificuldade.",
-    "cleanup_advice": "Use chapter select para troféus situacionais, emblemas restantes, Professional e grind de Mad Skillz, kills, títulos e medalhas.",
-    "before_you_start": "Não trate parceiro humano disponível como requisito obrigatório. Use checklist por capítulo/personagem para serpent emblems e não gaste skill points sem plano.",
-    "best_for": "Ideal para quem quer uma platina de ação longa, com várias campanhas, parceiro opcional e muito cleanup por capítulo.",
-    "avoid_if": "Evite se você não quer repetir capítulos, farmar skills/medalhas ou jogar quatro campanhas completas.",
+    "time_reason": "A faixa de 50-70 horas considera quatro campaigns, chapter select, Serpent Emblems, Professional, cleanup e grind de Mad Skillz, títulos e medals.",
+    "first_run_advice": "Comece por Leon, Chris, Jake e Ada em Amateur ou Normal, jogando solo com IA se preferir, coletando Serpent Emblems e acumulando skill points antes do Professional.",
+    "cleanup_advice": "Use chapter select para limpar troféus situacionais, emblemas restantes, Professional e grind de Mad Skillz, kills, títulos e medals.",
+    "before_you_start": "Não trate parceiro humano como requisito obrigatório. Use checklist por capítulo/personagem para Serpent Emblems, guarde skill points para as habilidades que sobem de nível e separe o cleanup por chapter select.",
+    "best_for": "Vale para quem gosta de campanha longa de ação, múltiplos personagens, co-op opcional e checklist de cleanup após fechar a história.",
+    "avoid_if": "Não é recomendada para quem busca platina rápida: as quatro campaigns, o Professional e o grind de skills/medals pesam mais do que a dificuldade pura.",
+    "guide_version": "Lista base da platina, 51 troféus, sem DLC.",
+    "platform_scope": "Compatível com a lista base usada no projeto; o relançamento de PS4 inclui listas extras/DLC fora do escopo da platina base.",
+    "total_trophies": 51,
+    "trophy_distribution": {
+      "platinum": 1,
+      "gold": 2,
+      "silver": 7,
+      "bronze": 41
+    },
+    "missableCount": 0,
+    "missable_count": 0,
+    "hasMissables": false,
+    "onlineRequired": false,
+    "online_required": false,
+    "coopRequired": false,
+    "coop_required": false,
+    "dlcRequired": false,
+    "dlc_required": false,
+    "chapterSelect": true,
+    "difficultyTrophiesRequired": true,
+    "newGamePlusRequired": false,
+    "editorial_summary": [
+      "Resident Evil 6 é uma platina longa de campanha e cleanup, não uma platina de online. A lista base tem 51 troféus e pode ser feita solo/offline com IA, embora co-op humano ajude em combate e resgates.",
+      "O caminho mais seguro é completar Leon, Chris, Jake e Ada em dificuldade baixa ou Normal, coletando Serpent Emblems e acumulando skill points. Depois, use chapter select para troféus situacionais e entre no Professional já com skills úteis.",
+      "O maior tempo da platina fica no grind: Mad Skillz, 150 medals, títulos, kills por arma, 500 zombies, 500 J'avo e inimigos vindos de chrysalid. O guia separa esses objetivos para não misturar história simples com farm final.",
+      "DLCs e modos extras do relançamento, como Agent Hunt e modos multiplayer, não fazem parte da platina base coberta aqui. No Hope também não é requisito da platina base nesta lista."
+    ],
+    "seo": {
+      "title": "Guia de Platina Resident Evil 6 — Troféus, Roadmap e Dicas",
+      "description": "Guia completo da platina base de Resident Evil 6 com roadmap, checklist, Professional, Serpent Emblems, Mad Skillz, grind, co-op opcional e diferenças entre base game e DLC.",
+      "keywords": [
+        "Resident Evil 6 troféus",
+        "Resident Evil 6 platina",
+        "Resident Evil 6 roadmap",
+        "Resident Evil 6 Serpent Emblems",
+        "Resident Evil 6 Mad Skillz",
+        "Resident Evil 6 Professional",
+        "Resident Evil 6 DLC"
+      ]
+    },
+    "quickDecision": {
+      "summary": "Platina longa e repetitiva: 50-70 horas, quatro campaigns, Professional obrigatório e grind pesado, mas sem online, co-op ou DLC obrigatórios.",
+      "recommendation": "Boa para fãs de Resident Evil 6 e de listas grandes com checklist; fraca para quem procura uma platina rápida ou com pouco farm.",
+      "firstAction": "Comece em Amateur ou Normal, jogue as quatro campaigns, marque Serpent Emblems por capítulo e guarde skill points para o Professional e Mad Skillz.",
+      "risk": "O principal risco é deixar Serpent Emblems, medals, weapons e skill points sem controle e transformar o cleanup em repetição cega."
+    },
+    "checklist": [
+      "Planejar a lista base da platina com 51 troféus, sem incluir DLC.",
+      "Completar o prólogo e as campaigns de Leon, Chris, Jake e Ada em Amateur ou Normal.",
+      "Marcar Serpent Emblems por capítulo e personagem desde a primeira passagem.",
+      "Guardar skill points para as skills que sobem de nível e para o troféu Mad Skillz.",
+      "Preparar uma run em Professional com skills de dano/defesa e armas familiares.",
+      "Usar chapter select para VTOL sem dano, cathedral survivors, stealth da Ada, Magnum no helicóptero e outros objetivos específicos.",
+      "Fazer checklist de weapons para garantir dez kills com cada arma.",
+      "Fechar 500 zombies, 500 J'avo e 100 inimigos vindos de chrysalid no grind final.",
+      "Completar 150 medals e títulos restantes antes da platina.",
+      "Manter Agent Hunt, Mercenaries e DLC fora do planejamento da platina base."
+    ],
+    "attentionPoints": [
+      {
+        "title": "Quatro campaigns completas",
+        "detail": "Leon, Chris, Jake e Ada têm cinco capítulos cada. A platina só anda de verdade quando todas as campaigns estão fechadas.",
+        "tags": ["Campanha", "Tempo"]
+      },
+      {
+        "title": "Professional obrigatório",
+        "detail": "Professional é requisito da lista base. Entre com skill points, skills defensivas/ofensivas e conhecimento dos QTEs para reduzir mortes.",
+        "tags": ["Professional", "Dificuldade"]
+      },
+      {
+        "title": "Serpent Emblems",
+        "detail": "Heirlooms exige todos os Serpent Emblems. Use checklist por capítulo e personagem para evitar voltar sem saber o que falta.",
+        "tags": ["Coletável", "Serpent Emblems"]
+      },
+      {
+        "title": "Mad Skillz e skill points",
+        "detail": "Mad Skillz é um dos maiores grinds da platina. Não gaste skill points sem plano e deixe a compra final para depois das campaigns.",
+        "tags": ["Grind", "Skill Points"]
+      },
+      {
+        "title": "150 medals",
+        "detail": "Covered in Brass pede 150 medals diferentes. Varie personagens, armas, ações e capítulos para não repetir sempre as mesmas medals.",
+        "tags": ["Medals", "Grind"]
+      },
+      {
+        "title": "Weapons Master",
+        "detail": "Dez kills com cada arma precisam de controle manual. Faça checklist de weapons, especialmente armas exclusivas de personagem.",
+        "tags": ["Armas", "Checklist"]
+      },
+      {
+        "title": "Capítulos específicos",
+        "detail": "VTOL sem dano, cathedral survivors, helicóptero com Magnum e ponte do aircraft carrier exigem trechos específicos e podem ser limpos por chapter select.",
+        "tags": ["Capítulo específico", "Atenção"]
+      },
+      {
+        "title": "Co-op é opcional",
+        "detail": "A campanha aceita parceiro humano, mas a platina base pode ser feita solo com IA. Co-op ajuda, não muda as flags obrigatórias do guia.",
+        "tags": ["Offline", "Sem coop"]
+      },
+      {
+        "title": "DLC e Agent Hunt fora da platina",
+        "detail": "Agent Hunt, Mercenaries e modos extras do relançamento não entram na platina base coberta por este guia.",
+        "tags": ["DLC", "Fora da platina"]
+      },
+      {
+        "title": "Cleanup por chapter select",
+        "detail": "A ausência de perdíveis rígidos não elimina planejamento. Chapter select corrige pendências, mas sem checklist o cleanup fica longo.",
+        "tags": ["Cleanup", "Chapter Select"]
+      }
+    ],
+    "faq": [
+      {
+        "question": "Resident Evil 6 tem troféu online obrigatório para a platina?",
+        "answer": "Não. A platina base pode ser feita offline e não exige PS+, multiplayer, Agent Hunt ou modos extras."
+      },
+      {
+        "question": "Preciso jogar em co-op?",
+        "answer": "Não. Co-op humano pode facilitar resgates e combate, mas a lista base pode ser planejada solo com IA."
+      },
+      {
+        "question": "DLC é necessário para a platina?",
+        "answer": "Não. Este guia cobre a lista base de 51 troféus; DLCs e modos extras ficam fora da platina base."
+      },
+      {
+        "question": "Há troféus perdíveis?",
+        "answer": "Não há perdíveis rígidos na lista base porque chapter select permite voltar aos capítulos. O ideal é usar checklist para não perder tempo."
+      },
+      {
+        "question": "Quantas runs são necessárias?",
+        "answer": "Você precisa completar as quatro campaigns e uma passagem em Professional. Os troféus de dificuldade acumulam, mas uma primeira campanha em dificuldade baixa ajuda a aprender rotas e juntar recursos."
+      },
+      {
+        "question": "Professional é obrigatório?",
+        "answer": "Sim. Leave It to the Pro exige completar o jogo inteiro em Professional, e isso cobre as dificuldades inferiores se todas as campaigns forem concluídas nessa dificuldade."
+      },
+      {
+        "question": "No Hope é obrigatório para a platina base?",
+        "answer": "Não nesta lista base. O foco da platina é Professional; No Hope não entra como requisito do guia."
+      },
+      {
+        "question": "Qual é o maior grind da platina?",
+        "answer": "Mad Skillz costuma ser o maior peso, junto de 150 medals, títulos, kills por arma, 500 zombies, 500 J'avo e chrysalids."
+      },
+      {
+        "question": "Como lidar com Serpent Emblems?",
+        "answer": "Use checklist por capítulo e personagem desde a primeira passagem. Alguns emblemas dependem de rota ou personagem, então controlar cedo economiza replay."
+      },
+      {
+        "question": "Chapter select ajuda no cleanup?",
+        "answer": "Sim. Ele permite voltar para troféus situacionais, emblemas restantes, kills específicas e trechos como VTOL, cathedral survivors e stealth no aircraft carrier."
+      },
+      {
+        "question": "Qual a diferença entre base game e DLC no PS4?",
+        "answer": "O relançamento de PS4 inclui conteúdo extra e listas adicionais, mas a platina base coberta aqui continua separada desses troféus de DLC/modos extras."
+      }
+    ],
     "editorial_status": "published",
     "coverage_level": "strong",
     "is_verified": false,
     "verification_status": "review",
-    "verification_note": "Guia normalizado a partir do dado seed com checklist e roadmap; aguardando revisão editorial manual final.",
+    "editorial_review_status": "in_review",
+    "last_reviewed_at": "2026-06-07",
+    "reviewed_by": "Codex",
+    "quality_warnings": [],
+    "verification_note": "Guia revisado para a lista base de 51 troféus; pendente apenas de validação visual final antes do selo verificado.",
     "image": "https://cdn.cloudflare.steamstatic.com/steam/apps/221040/header.jpg",
     "cover_image": "https://cdn.cloudflare.steamstatic.com/steam/apps/221040/library_600x900.jpg",
     "roadmap": [
-      "Complete o prólogo e jogue as campanhas de Leon, Chris, Jake e Ada em Amateur ou Normal. A lista base pode ser planejada solo com IA; parceiro humano ajuda, mas não é tratado aqui como requisito obrigatório.",
-      "Durante as campanhas, já colete serpent emblems com checklist por capítulo e personagem. Alguns emblemas dependem de rotas/personagens específicos, então marcar o que já foi pego economiza muito retrabalho.",
-      "Depois de concluir as quatro campanhas, compre uma munição infinita útil e prepare skills de dano/defesa para a run em Professional. Os troféus de dificuldade acumulam.",
-      "Use chapter select para limpar troféus situacionais: stealth kills, coup de grâce, counters, VTOL sem dano, cathedral survivors, aircraft carrier sem ser visto e ações com armas/personagens específicos.",
-      "Finalize o grind de Mad Skillz, títulos, medalhas, 500 zombies, 500 J'avo, chrysalids e kills por arma. Essa é a parte mais longa e fica melhor quando o restante já está fechado."
+      {
+        "title": "1. Feche o prólogo e as quatro campaigns",
+        "description": "Jogue Leon, Chris, Jake e Ada em Amateur ou Normal para aprender rotas, QTEs, chefes e capítulos. A lista base pode ser feita solo com IA; parceiro humano é ajuda opcional, não requisito.",
+        "focus": ["História", "Campanha", "Offline"],
+        "estimated_time": "18-25 horas"
+      },
+      {
+        "title": "2. Colete Serpent Emblems desde a primeira passagem",
+        "description": "Marque os emblemas por capítulo e personagem enquanto avança nas campaigns. Isso evita voltar sem direção depois que a história terminar.",
+        "focus": ["Coletáveis", "Serpent Emblems", "Checklist"],
+        "estimated_time": "Durante as campaigns"
+      },
+      {
+        "title": "3. Acumule skill points e prepare o Professional",
+        "description": "Guarde pontos para skills que aumentam dano, defesa e consistência. Depois das quatro campaigns, entre no Professional com recursos e rotas conhecidas.",
+        "focus": ["Skill Points", "Professional", "Dificuldade"],
+        "estimated_time": "12-18 horas"
+      },
+      {
+        "title": "4. Limpe troféus situacionais por chapter select",
+        "description": "Volte para stealth kills, coup de grâce, counters, VTOL sem dano, survivors da catedral, Magnum no helicóptero, ponte do aircraft carrier e objetivos de armas/personagens específicos.",
+        "focus": ["Chapter Select", "Cleanup", "Atenção"],
+        "estimated_time": "6-10 horas"
+      },
+      {
+        "title": "5. Feche weapons, kills e objetivos repetitivos",
+        "description": "Controle dez kills com cada arma, 500 zombies, 500 J'avo e 100 inimigos vindos de chrysalid. Faça essa etapa depois de abrir chapter select para escolher os melhores trechos.",
+        "focus": ["Weapons", "Grind", "Kills"],
+        "estimated_time": "8-12 horas"
+      },
+      {
+        "title": "6. Termine Mad Skillz, títulos e 150 medals",
+        "description": "Use o progresso acumulado para comprar as skills restantes, completar títulos e alcançar 150 medals diferentes. Essa é a parte mais longa do cleanup final.",
+        "focus": ["Mad Skillz", "Medals", "Grind"],
+        "estimated_time": "10-15 horas"
+      }
     ],
     "trophies": [
       {
@@ -33672,107 +34009,183 @@ const hadesDescriptionOriginalById = {
   "hades-three-headed-boy": "Pet Cerberus 10 times."
 };
 
-const hadesStoryTrophyIds = new Set([
-  'hades-escaped-tartarus',
-  'hades-escaped-asphodel',
-  'hades-escaped-elysium',
-  'hades-is-there-no-escape',
-  'hades-back-to-work',
-  'hades-family-secret',
-  'hades-one-for-the-ages'
-]);
+const residentEvil6EditorialPtBrById = {
+  re6_platinum: {
+    name_pt: "Troféu de Platina de RESIDENT EVIL 6",
+    descriptionPtBr: "Parabéns! Você superou todos os seus medos em RESIDENT EVIL 6.",
+    tip: "A platina exige fechar as quatro campaigns, limpar dificuldades, Serpent Emblems, skills, títulos, medals e troféus situacionais."
+  },
+  re6_longest_night: {
+    name_pt: "A Noite Mais Longa",
+    descriptionPtBr: "Complete o tutorial.",
+    tip: "Troféu automático ao concluir o prólogo."
+  },
+  re6_gone_to_hell: { name_pt: "Foi para o Inferno", descriptionPtBr: "Complete o capítulo 1 da campanha de Leon.", tip: "Relacionado à história da campanha de Leon." },
+  re6_buried_secrets: { name_pt: "Segredos Enterrados", descriptionPtBr: "Complete o capítulo 2 da campanha de Leon.", tip: "Relacionado à história da campanha de Leon." },
+  re6_get_on_plane: { name_pt: "Entre no Avião", descriptionPtBr: "Complete o capítulo 3 da campanha de Leon.", tip: "Relacionado à história da campanha de Leon." },
+  re6_big_trouble_china: { name_pt: "Grande Confusão na China", descriptionPtBr: "Complete o capítulo 4 da campanha de Leon.", tip: "Relacionado à história da campanha de Leon." },
+  re6_trouble_with_women: { name_pt: "Problemas com Mulheres", descriptionPtBr: "Complete o capítulo 5 da campanha de Leon.", tip: "Relacionado à conclusão da campanha de Leon." },
+  re6_rescue_hostages: { name_pt: "Resgate os Reféns", descriptionPtBr: "Complete o capítulo 1 da campanha de Chris.", tip: "Relacionado à história da campanha de Chris." },
+  re6_tragedy_europe: { name_pt: "Tragédia na Europa", descriptionPtBr: "Complete o capítulo 2 da campanha de Chris.", tip: "Relacionado à história da campanha de Chris." },
+  re6_after_her: { name_pt: "Atrás Dela!", descriptionPtBr: "Complete o capítulo 3 da campanha de Chris.", tip: "Relacionado à história da campanha de Chris." },
+  re6_always_hope: { name_pt: "Sempre Há Esperança", descriptionPtBr: "Complete o capítulo 4 da campanha de Chris.", tip: "Relacionado à reta final da campanha de Chris." },
+  re6_duty_calls: { name_pt: "O Dever Chama", descriptionPtBr: "Complete o capítulo 5 da campanha de Chris.", tip: "Relacionado à conclusão da campanha de Chris." },
+  re6_money_talks: { name_pt: "Dinheiro Fala", descriptionPtBr: "Complete o capítulo 1 da campanha de Jake.", tip: "Relacionado à história da campanha de Jake." },
+  re6_revolting_development: { name_pt: "Um Desenvolvimento Revoltante", descriptionPtBr: "Complete o capítulo 2 da campanha de Jake.", tip: "Relacionado à história da campanha de Jake." },
+  re6_blow_joint: { name_pt: "Vamos Sair Daqui", descriptionPtBr: "Complete o capítulo 3 da campanha de Jake.", tip: "Relacionado à história da campanha de Jake." },
+  re6_still_run: { name_pt: "Ainda em Fuga", descriptionPtBr: "Complete o capítulo 4 da campanha de Jake.", tip: "Relacionado à reta final da campanha de Jake." },
+  re6_see_you_around: { name_pt: "Vejo Você por Aí", descriptionPtBr: "Complete o capítulo 5 da campanha de Jake.", tip: "Relacionado à conclusão da campanha de Jake." },
+  re6_i_spy: { name_pt: "Eu Espiono", descriptionPtBr: "Complete o capítulo 1 da campanha de Ada.", tip: "Relacionado à campanha de Ada." },
+  re6_counterintelligence: { name_pt: "Contrainteligência", descriptionPtBr: "Complete o capítulo 2 da campanha de Ada.", tip: "Relacionado à campanha de Ada." },
+  re6_takes_me_back: { name_pt: "Isso Me Traz Lembranças", descriptionPtBr: "Complete o capítulo 3 da campanha de Ada.", tip: "Relacionado à campanha de Ada." },
+  re6_ada_demise: { name_pt: "A Derrota de Ada", descriptionPtBr: "Complete o capítulo 4 da campanha de Ada.", tip: "Relacionado à campanha de Ada." },
+  re6_whats_next: { name_pt: "E Agora?", descriptionPtBr: "Complete o capítulo 5 da campanha de Ada.", tip: "Relacionado à conclusão da campanha de Ada." },
+  re6_green_ears: { name_pt: "Verde Atrás das Orelhas", descriptionPtBr: "Complete o jogo inteiro no Amateur.", tip: "Os troféus de dificuldade acumulam; Professional cobre os inferiores se todas as campaigns forem concluídas nessa dificuldade." },
+  re6_normal_good: { name_pt: "Normal é Bom", descriptionPtBr: "Complete o jogo inteiro no Normal.", tip: "Pode ser sua primeira passagem completa para aprender rotas e juntar skill points." },
+  re6_back_my_day: { name_pt: "No Meu Tempo", descriptionPtBr: "Complete o jogo inteiro no Veteran.", tip: "Boa etapa antes do Professional se quiser progressão gradual." },
+  re6_leave_pro: { name_pt: "Deixe com o Profissional", descriptionPtBr: "Complete o jogo inteiro no Professional.", tip: "Entre com skill points, skills de dano/defesa, armas familiares e checkpoints já conhecidos." },
+  re6_check_dogs: { name_pt: "Olhe Minhas Dog Tags", descriptionPtBr: "Personalize suas dog tags.", tip: "Entre no menu de dog tags e altere template, emblema ou título." },
+  re6_titular: { name_pt: "Conquista Titular", descriptionPtBr: "Ganhe 10 títulos diferentes.", tip: "Vem naturalmente com progresso e ações variadas; depois abra a customização para acompanhar os títulos." },
+  re6_one_skill: { name_pt: "Um é Melhor que Nenhum", descriptionPtBr: "Compre uma skill.", tip: "Compre qualquer skill após um capítulo." },
+  re6_mad_skillz: { name_pt: "Habilidades no Máximo", descriptionPtBr: "Maximize todas as skills que permitem subir de nível.", tip: "É o maior grind da platina. Guarde skill points e deixe a compra final para depois das campaigns." },
+  re6_silent_killer: { name_pt: "Assassino Silencioso", descriptionPtBr: "Use um ataque furtivo para derrubar cinco inimigos.", tip: "Ada e trechos com inimigos distraídos facilitam bastante." },
+  re6_finish_start: { name_pt: "Termine o que Começou", descriptionPtBr: "Execute um coup de grâce em dez inimigos.", tip: "Atire nas pernas para ajoelhar inimigos e finalize com ataque corpo a corpo." },
+  re6_bob_weave: { name_pt: "Esquiva e Contra-ataque", descriptionPtBr: "Faça counter em ataques inimigos três vezes seguidas.", tip: "Treine contra inimigos previsíveis em dificuldade baixa." },
+  re6_down_not_out: { name_pt: "Caído, Mas Não Fora", descriptionPtBr: "Derrote um inimigo enquanto estiver morrendo e se recupere sem ajuda.", tip: "Faça em dificuldade baixa, deixando um inimigo fraco perto para finalizar no estado dying." },
+  re6_lifesaver: { name_pt: "Salva-vidas", descriptionPtBr: "Ajude ou resgate seu parceiro dez vezes.", tip: "Sai naturalmente com parceiro humano ou deixando o parceiro controlado pela IA entrar em perigo controlado." },
+  re6_weapons_master: { name_pt: "Mestre das Armas", descriptionPtBr: "Use todas as armas do jogo e mate dez inimigos com cada uma.", tip: "Faça checklist por arma para não perder tempo sem saber qual ainda falta." },
+  re6_little_push: { name_pt: "Dê um Empurrãozinho", descriptionPtBr: "Derrube dez inimigos de lugares altos.", tip: "Procure varandas, escadas e bordas nas campaigns para adiantar a contagem." },
+  re6_rising_up: { name_pt: "Ascensão", descriptionPtBr: "Ganhe um título de nível 4.", tip: "Repita ações específicas até evoluir um título ao nível 4." },
+  re6_action_figures: { name_pt: "Elas São Figures de Ação!", descriptionPtBr: "Colete 3 figures.", tip: "As figures vêm com emblemas e medals; pegue três para destravar rápido." },
+  re6_stuntman: { name_pt: "Dublê", descriptionPtBr: "Derrote 20 inimigos com a Hydra usando quick shot.", tip: "Faça com Helena usando quick shot em grupos de inimigos fracos." },
+  re6_bring_heat: { name_pt: "Traga o Calor", descriptionPtBr: "Derrube um inimigo a 50 metros com um headshot usando a mira térmica.", tip: "Use o rifle com thermal scope em um trecho aberto e mantenha distância real." },
+  re6_high_voltage: { name_pt: "Alta Voltagem", descriptionPtBr: "Derrote dez inimigos com um ataque carregado do stun rod.", tip: "Use Sherry e repita encontros com inimigos frágeis." },
+  re6_zombie_massacre: { name_pt: "Massacre de Zumbis", descriptionPtBr: "Derrote 500 zombies.", tip: "A campanha de Leon ajuda a acumular essa contagem naturalmente." },
+  re6_javo_genocide: { name_pt: "Genocídio J'avo", descriptionPtBr: "Derrote 500 J'avo.", tip: "Chris e Jake concentram muitos J'avo; use replays de capítulos para fechar o grind." },
+  re6_bows_ugly: { name_pt: "B.O.W.s São Feios", descriptionPtBr: "Derrote 100 inimigos que saíram de um chrysalid.", tip: "Repita capítulos com chrysalids para acelerar esse grind específico." },
+  re6_prefer_alive: { name_pt: "Prefiro Elas Vivas", descriptionPtBr: "Resgate duas sobreviventes na catedral.", tip: "Troféu situacional da campanha de Leon; use chapter select se alguma sobrevivente morrer." },
+  re6_flying_ace: { name_pt: "Ás Voador", descriptionPtBr: "Pilote o VTOL sem sofrer nenhum arranhão.", tip: "Faça em dificuldade baixa e reinicie checkpoint se tomar dano." },
+  re6_hard_choice: { name_pt: "Escolha Difícil", descriptionPtBr: "Atire no piloto do helicóptero com uma Magnum à queima-roupa.", tip: "Troféu situacional da campanha de Jake; posicione-se perto antes de disparar." },
+  re6_sneaking: { name_pt: "Passando de Fininho", descriptionPtBr: "Atravesse a área da ponte do porta-aviões sem ser notado.", tip: "Troféu situacional da campanha de Ada; avance devagar e memorize patrulhas." },
+  re6_covered_brass: { name_pt: "Coberto de Bronze", descriptionPtBr: "Ganhe 150 medals diferentes.", tip: "Diversifique ações, personagens e capítulos para não repetir sempre as mesmas medals." },
+  re6_heirlooms: { name_pt: "Heranças", descriptionPtBr: "Colete todos os Serpent Emblems.", tip: "São os principais coletáveis. Use checklist por capítulo e personagem." }
+};
 
-const hadesRelationshipTrophyIds = new Set([
-  'hades-grown-close',
-  'hades-rare-collectible',
-  'hades-complete-set',
-  'hades-urge-to-sing',
-  'hades-night-and-darkness',
-  'hades-chthonic-colleagues',
-  'hades-war-gods-bloodlust',
-  'hades-end-to-torment',
-  'hades-musician-and-muse',
-  'hades-divided-by-death',
-  'hades-family-secret',
-  'hades-one-for-the-ages'
-]);
+const residentEvil6TrophyTagsById = {
+  re6_platinum: ['Platina'],
+  re6_longest_night: ['História', 'Prólogo'],
+  re6_gone_to_hell: ['História', 'Leon'],
+  re6_buried_secrets: ['História', 'Leon'],
+  re6_get_on_plane: ['História', 'Leon'],
+  re6_big_trouble_china: ['História', 'Leon'],
+  re6_trouble_with_women: ['História', 'Leon', 'Spoiler'],
+  re6_rescue_hostages: ['História', 'Chris'],
+  re6_tragedy_europe: ['História', 'Chris'],
+  re6_after_her: ['História', 'Chris'],
+  re6_always_hope: ['História', 'Chris', 'Spoiler'],
+  re6_duty_calls: ['História', 'Chris', 'Spoiler'],
+  re6_money_talks: ['História', 'Jake'],
+  re6_revolting_development: ['História', 'Jake'],
+  re6_blow_joint: ['História', 'Jake'],
+  re6_still_run: ['História', 'Jake', 'Spoiler'],
+  re6_see_you_around: ['História', 'Jake', 'Spoiler'],
+  re6_i_spy: ['História', 'Ada', 'Spoiler'],
+  re6_counterintelligence: ['História', 'Ada', 'Spoiler'],
+  re6_takes_me_back: ['História', 'Ada', 'Spoiler'],
+  re6_ada_demise: ['História', 'Ada', 'Spoiler'],
+  re6_whats_next: ['História', 'Ada', 'Spoiler'],
+  re6_green_ears: ['Dificuldade', 'Campanha'],
+  re6_normal_good: ['Dificuldade', 'Campanha'],
+  re6_back_my_day: ['Dificuldade', 'Campanha'],
+  re6_leave_pro: ['Professional', 'Dificuldade'],
+  re6_check_dogs: ['Customização', 'Cleanup'],
+  re6_titular: ['Títulos', 'Cleanup'],
+  re6_one_skill: ['Skill Points', 'Skills'],
+  re6_mad_skillz: ['Grind', 'Skill Points', 'Skills'],
+  re6_silent_killer: ['Stealth', 'Combate', 'Situacional'],
+  re6_finish_start: ['Combate', 'Situacional'],
+  re6_bob_weave: ['Counter', 'Combate', 'Situacional'],
+  re6_down_not_out: ['Combate', 'Situacional'],
+  re6_lifesaver: ['Parceiro', 'Situacional'],
+  re6_weapons_master: ['Armas', 'Combate', 'Grind'],
+  re6_little_push: ['Combate', 'Situacional', 'Cleanup'],
+  re6_rising_up: ['Títulos', 'Grind'],
+  re6_action_figures: ['Figures', 'Cleanup'],
+  re6_stuntman: ['Helena', 'Armas', 'Situacional'],
+  re6_bring_heat: ['Armas', 'Capítulo específico', 'Situacional'],
+  re6_high_voltage: ['Sherry', 'Armas', 'Situacional'],
+  re6_zombie_massacre: ['Grind', 'Kills'],
+  re6_javo_genocide: ['Grind', 'Kills'],
+  re6_bows_ugly: ['Grind', 'Chrysalid'],
+  re6_prefer_alive: ['Capítulo específico', 'Atenção'],
+  re6_flying_ace: ['Veículo', 'Capítulo específico', 'Atenção'],
+  re6_hard_choice: ['Capítulo específico', 'Atenção'],
+  re6_sneaking: ['Stealth', 'Capítulo específico', 'Atenção'],
+  re6_covered_brass: ['Medals', 'Grind', 'Cleanup'],
+  re6_heirlooms: ['Coletável', 'Serpent Emblems', 'Cleanup']
+};
 
-const hadesCollectibleTrophyIds = new Set([
-  'hades-something-from-everyone',
-  'hades-friends-forever',
-  'hades-rare-collectible',
-  'hades-complete-set',
-  'hades-infernal-arms',
-  'hades-arms-collector',
-  'hades-blessed-by-the-gods',
-  'hades-tools-of-the-architect',
-  'hades-well-versed',
-  'hades-river-denizens'
-]);
+function buildResidentEvil6TrophyTags(trophy = {}) {
+  return (residentEvil6TrophyTagsById[trophy.id] || ['Progressão'])
+    .filter(tag => !/perd[ií]vel|online|coop|co-?op|dlc/i.test(tag));
+}
 
-const hadesDifficultyTrophyIds = new Set([
-  'hades-champion-of-elysium',
-  'hades-hold-the-onions',
-  'hades-useless-trinket',
-  'hades-skellys-last-lamentations',
-  'hades-harsh-conditions',
-  'hades-slashed-benefits',
-  'hades-thorn-of-thanatos',
-  'hades-haste-of-hermes',
-  'hades-death-dealer',
-  'hades-bad-call'
-]);
-
-const hadesPostGameTrophyIds = new Set([
-  'hades-useless-trinket',
-  'hades-skellys-last-lamentations',
-  'hades-complete-set',
-  'hades-friends-forever',
-  'hades-had-to-happen',
-  'hades-dark-reflections',
-  'hades-harsh-conditions',
-  'hades-master-of-arms',
-  'hades-slashed-benefits',
-  'hades-family-secret',
-  'hades-one-for-the-ages',
-  'hades-night-and-darkness',
-  'hades-chthonic-colleagues',
-  'hades-war-gods-bloodlust',
-  'hades-end-to-torment',
-  'hades-musician-and-muse',
-  'hades-divided-by-death'
-]);
-
-const hadesGrindTrophyIds = new Set([
-  'hades-something-from-everyone',
-  'hades-friends-forever',
-  'hades-complete-set',
-  'hades-blessed-by-the-gods',
-  'hades-tools-of-the-architect',
-  'hades-day-or-night-trader',
-  'hades-home-makeover',
-  'hades-had-to-happen',
-  'hades-river-denizens',
-  'hades-dark-reflections',
-  'hades-harsh-conditions',
-  'hades-master-of-arms',
-  'hades-slashed-benefits',
-  'hades-well-stocked',
-  'hades-skelly-slayer',
-  'hades-three-headed-boy'
-]);
+const hadesTrophyTagsById = {
+  'hades-god-of-blood': ['Platina'],
+  'hades-escaped-tartarus': ['História', 'Bioma'],
+  'hades-escaped-asphodel': ['História', 'Bioma'],
+  'hades-escaped-elysium': ['História', 'Bioma'],
+  'hades-champion-of-elysium': ['Pact', 'Extreme Measures', 'Dificuldade', 'História'],
+  'hades-hold-the-onions': ['Erebus', 'Dificuldade', 'Sem dano', 'Heat'],
+  'hades-is-there-no-escape': ['História', 'Spoiler', 'Primeira fuga'],
+  'hades-weapon-of-fate': ['Hidden Aspect', 'Weapons', 'Atenção'],
+  'hades-to-charons-credit': ['Charon', 'Boss opcional', 'Atenção'],
+  'hades-useless-trinket': ['Heat', 'Pact', 'Atenção'],
+  'hades-skellys-last-lamentations': ['Heat', 'Pact', 'Dificuldade', 'Atenção'],
+  'hades-something-from-everyone': ['Keepsakes', 'Coletável', 'Nectar'],
+  'hades-friends-forever': ['Keepsakes', 'Grind', 'Coletável', 'Cleanup'],
+  'hades-rare-collectible': ['Companion', 'Coletável', 'Affinity'],
+  'hades-complete-set': ['Companions', 'Coletável', 'Affinity', 'Grind'],
+  'hades-blood-bound': ['Weapons', 'Aspects', 'Progressão'],
+  'hades-infernal-arms': ['Weapons', 'Aspects', 'Coletável', 'Grind'],
+  'hades-blessed-by-the-gods': ['Boons', 'Fated List', 'Grind'],
+  'hades-thanks-but-no-thanks': ['Legendary Boon', 'Pool of Purging', 'Cleanup', 'Atenção'],
+  'hades-tools-of-the-architect': ['Daedalus Hammer', 'Grind', 'Weapons'],
+  'hades-arms-collector': ['Weapons', 'Coletável'],
+  'hades-grown-close': ['Affinity', 'Nectar', 'Relacionamento'],
+  'hades-well-versed': ['Codex', 'Olympians', 'Coletável'],
+  'hades-day-or-night-trader': ['Broker', 'Recursos', 'Cleanup'],
+  'hades-home-makeover': ['Contractor', 'Gemstones', 'Grind'],
+  'hades-had-to-happen': ['Fated List', 'Profecias', 'Grind'],
+  'hades-river-denizens': ['Fishing', 'Grind', 'RNG'],
+  'hades-urge-to-sing': ['Questline', 'Orpheus', 'História'],
+  'hades-nyxs-mirror': ['Mirror', 'Progressão', 'Darkness'],
+  'hades-night-and-darkness': ['Questline', 'Nyx', 'Chaos', 'História'],
+  'hades-chthonic-colleagues': ['Fated List', 'NPCs', 'Coletável'],
+  'hades-war-gods-bloodlust': ['Ares', 'Profecia', 'Grind'],
+  'hades-end-to-torment': ['Questline', 'Sisyphus', 'História'],
+  'hades-musician-and-muse': ['Questline', 'Orpheus', 'Eurydice', 'História'],
+  'hades-divided-by-death': ['Questline', 'Achilles', 'Patroclus', 'História'],
+  'hades-dark-reflections': ['Mirror', 'Profecia', 'Atenção'],
+  'hades-harsh-conditions': ['Pact', 'Profecia', 'Atenção', 'Cleanup'],
+  'hades-master-of-arms': ['Weapons', 'Runs', 'Atenção'],
+  'hades-slashed-benefits': ['Pact', 'Benefits Package', 'Profecia', 'Atenção'],
+  'hades-back-to-work': ['História', 'Spoiler', 'Contractor'],
+  'hades-family-secret': ['História', 'Spoiler'],
+  'hades-one-for-the-ages': ['História', 'Epílogo', 'Spoiler'],
+  'hades-well-stocked': ['Charon', 'Obol', 'Cleanup', 'Atenção'],
+  'hades-thorn-of-thanatos': ['Keepsake', 'Thanatos', 'Grind', 'Atenção'],
+  'hades-haste-of-hermes': ['Keepsake', 'Hermes', 'Grind', 'Atenção'],
+  'hades-death-dealer': ['Thanatos', 'Combate', 'Situacional'],
+  'hades-friends-in-high-places': ['Call', 'Boons', 'Situacional'],
+  'hades-bad-call': ['Boons', 'Call', 'Situacional', 'Atenção'],
+  'hades-skelly-slayer': ['Skelly', 'Situacional'],
+  'hades-three-headed-boy': ['Cerberus', 'Interação', 'Cleanup']
+};
 
 function buildHadesTrophyTags(trophy = {}) {
-  const id = trophy.id || '';
-  const tags = trophy.type === 'Platina' ? ['platina'] : [];
-  if (hadesStoryTrophyIds.has(id)) tags.push('história');
-  if (hadesRelationshipTrophyIds.has(id)) tags.push('relacionamento');
-  if (hadesCollectibleTrophyIds.has(id)) tags.push('coletável');
-  if (hadesDifficultyTrophyIds.has(id)) tags.push('dificuldade');
-  if (hadesPostGameTrophyIds.has(id)) tags.push('pós-jogo');
-  if (hadesGrindTrophyIds.has(id)) tags.push('grind');
-  if (!tags.length) tags.push('progressão');
-  return [...new Set(tags)].filter(tag => !/perd[ií]vel|online|coop/i.test(tag));
+  return (hadesTrophyTagsById[trophy.id] || ['Progressão'])
+    .filter(tag => !/perd[ií]vel|online|coop|risco de run/i.test(tag));
 }
 
 const ghostDescriptionOriginalById = {
@@ -35166,6 +35579,34 @@ for (const game of sampleGames) {
       trophy.is_coop = false;
       trophy.isCoop = false;
       trophy.tags = buildHadesTrophyTags(trophy);
+    }
+    if (game.slug === 'resident-evil-6') {
+      const editorialPtBr = residentEvil6EditorialPtBrById[trophy.id];
+      if (editorialPtBr) {
+        const descriptionPtBr = editorialPtBr.descriptionPtBr;
+        trophy.trophyNameOriginal = trophy.name;
+        trophy.name_pt = editorialPtBr.name_pt;
+        trophy.trophyNamePtBr = editorialPtBr.name_pt;
+        trophy.namePtSource = 'editorial_ptbr';
+        trophy.descriptionOriginal = trophy.descriptionOriginal || trophy.description || '';
+        trophy.descriptionPtBr = descriptionPtBr;
+        trophy.ptDescription = descriptionPtBr;
+        trophy.localizedDescription = { ...(trophy.localizedDescription || {}), ptBr: descriptionPtBr };
+        trophy.description = descriptionPtBr;
+        trophy.descriptionPtSource = 'editorial_ptbr';
+        trophy.tier = trophy.type;
+        trophy.tip = editorialPtBr.tip || trophy.tip || '';
+        trophy.guideTip = trophy.tip;
+        trophy.is_missable = false;
+        trophy.isMissable = false;
+        trophy.is_online = false;
+        trophy.isOnline = false;
+        trophy.is_coop = false;
+        trophy.isCoop = false;
+        trophy.is_dlc = false;
+        trophy.isDlc = false;
+        trophy.tags = buildResidentEvil6TrophyTags(trophy);
+      }
     }
     if (game.slug === 'ghost-of-tsushima') {
       trophy.descriptionPtBr = trophy.description;

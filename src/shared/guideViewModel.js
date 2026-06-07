@@ -373,6 +373,28 @@
     'pontos de bonus': { id: 'bonus-points', label: 'Pontos de bônus', tone: 'warning' },
     qte: { id: 'qte', label: 'QTE', tone: 'warning' },
     revistas: { id: 'magazines', label: 'Revistas', tone: 'partial' },
+    professional: { id: 'professional', label: 'Professional', tone: 'warning' },
+    'serpent emblems': { id: 'serpent-emblems', label: 'Serpent Emblems', tone: 'partial' },
+    'skill points': { id: 'skill-points', label: 'Skill Points', tone: 'warning' },
+    skills: { id: 'skills', label: 'Skills', tone: 'warning' },
+    medals: { id: 'medals', label: 'Medals', tone: 'warning' },
+    weapons: { id: 'weapons', label: 'Weapons', tone: 'warning' },
+    armas: { id: 'weapons', label: 'Armas', tone: 'warning' },
+    kills: { id: 'kills', label: 'Kills', tone: 'warning' },
+    'chapter select': { id: 'chapter-select', label: 'Chapter Select', tone: 'neutral' },
+    'capitulo especifico': { id: 'chapter-specific', label: 'Capítulo específico', tone: 'warning' },
+    counter: { id: 'counter', label: 'Counter', tone: 'warning' },
+    veiculo: { id: 'vehicle', label: 'Veículo', tone: 'warning' },
+    titulos: { id: 'titles', label: 'Títulos', tone: 'partial' },
+    figuras: { id: 'figures', label: 'Figures', tone: 'partial' },
+    figures: { id: 'figures', label: 'Figures', tone: 'partial' },
+    parceiro: { id: 'partner', label: 'Parceiro', tone: 'partial' },
+    customizacao: { id: 'customization', label: 'Customização', tone: 'partial' },
+    chrysalid: { id: 'chrysalid', label: 'Chrysalid', tone: 'warning' },
+    leon: { id: 'leon', label: 'Leon', tone: 'partial' },
+    chris: { id: 'chris', label: 'Chris', tone: 'partial' },
+    jake: { id: 'jake', label: 'Jake', tone: 'partial' },
+    ada: { id: 'ada', label: 'Ada', tone: 'partial' },
     platina: { id: 'platinum', label: 'Platina', tone: 'neutral' }
   };
 
@@ -399,7 +421,7 @@
 
   function getExplicitGuideTrophyTags(trophy = {}, game = {}) {
     const slug = String(game?.slug || '').trim().toLowerCase();
-    if (!['clair-obscur-expedition-33', 'dark-souls-remastered', 'days-gone', 'detroit-become-human', 'hogwarts-legacy', 'hollow-knight-silksong', 'lords-of-the-fallen', 'resident-evil-7-biohazard', 'resident-evil-village', 'until-dawn'].includes(slug)) return [];
+    if (!['clair-obscur-expedition-33', 'dark-souls-remastered', 'days-gone', 'detroit-become-human', 'hades', 'hogwarts-legacy', 'hollow-knight-silksong', 'lords-of-the-fallen', 'resident-evil-6', 'resident-evil-7-biohazard', 'resident-evil-village', 'until-dawn'].includes(slug)) return [];
     if (!Array.isArray(trophy?.tags) || !trophy.tags.length) return [];
     const tags = [];
     const ids = new Set();
@@ -2055,6 +2077,27 @@
 
   function buildRouteChangingTrophies(trophies = [], game = {}) {
     const trophyById = new Map((Array.isArray(trophies) ? trophies : []).map(trophy => [trophy?.id, trophy]).filter(([id]) => id));
+    const attentionSlug = String(game?.slug || '').trim().toLowerCase();
+    if (['hades', 'resident-evil-6'].includes(attentionSlug) && Array.isArray(game?.attentionPoints)) {
+      return game.attentionPoints.map((item, index) => {
+        const tags = (Array.isArray(item?.tags) ? item.tags : []).map(tag => {
+          const label = typeof tag === 'string' ? tag : firstGuideText(tag?.label, tag?.id);
+          return {
+            id: normalizeGuideSignalText(label).replace(/\s+/g, '-'),
+            label,
+            tone: /dificuldade|professional|heat|pact|atencao|rng|grind|medals|skill|arma|weapon|capitulo/i.test(normalizeGuideSignalText(label)) ? 'warning' : 'partial'
+          };
+        }).filter(tag => tag.label);
+        return {
+          id: `${attentionSlug}-attention-${index + 1}`,
+          name: firstGuideText(item?.title, item?.name, `Ponto de atenção ${index + 1}`),
+          text: firstGuideText(item?.detail, item?.tip, item?.text, item?.description),
+          type: firstGuideText(item?.type, tags[0]?.label, 'Atenção'),
+          tags,
+          score: 100 - index
+        };
+      }).filter(item => item.name && item.text);
+    }
     if (String(game?.slug || '').trim().toLowerCase() === 'clair-obscur-expedition-33') {
       const trophyByName = new Map((Array.isArray(trophies) ? trophies : [])
         .map(trophy => [String(trophy?.trophyNameOriginal || trophy?.originalName || trophy?.officialName || trophy?.name || '').trim().toLowerCase(), trophy])
