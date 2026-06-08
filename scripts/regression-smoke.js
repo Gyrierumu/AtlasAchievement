@@ -245,6 +245,7 @@ function assertUIModules() {
   const securityHeadersCode = read('src/middleware/securityHeaders.js');
   assert(securityHeadersCode.includes('https://www.googletagmanager.com'), 'CSP deve permitir script-src do Google Tag Manager');
   assert(securityHeadersCode.includes('https://www.google-analytics.com'), 'CSP deve permitir connect-src do Google Analytics');
+  assert(securityHeadersCode.includes('https://analytics.google.com'), 'CSP deve permitir connect-src do endpoint atual do GA4');
   const analyticsCode = read('public/js/app-analytics.js');
   assert(analyticsCode.includes('trackGuideView') && analyticsCode.includes('guide_view'), 'front precisa enviar evento guide_view sem dados sensiveis');
   assert(analyticsCode.includes('trackFeedbackSubmit') && analyticsCode.includes('feedback_submit'), 'front precisa enviar evento feedback_submit sem mensagem ou contato');
