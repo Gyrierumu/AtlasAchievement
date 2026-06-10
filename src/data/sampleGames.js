@@ -17978,17 +17978,17 @@ const sampleGames = [
       "Etapa 7: revise finais, Man Without Equal, Ashina Traveler, Prayer Beads, Gourd Seeds, Prosthetic Tools, Lapis Lazuli, Great Colored Carp, skills e bosses antes da platina Sekiro."
     ],
     "trophies": [
-      { "id": "sekiro_sekiro", "name": "Sekiro", "type": "Platina", "description": "All trophies have been unlocked.", "tip": "Conclua os outros 33 trofeus da lista base de Sekiro: Shadows Die Twice. O guia cobre apenas a lista base da platina.", "is_missable": false, "is_spoiler": false },
+      { "id": "sekiro_sekiro", "name": "Sekiro", "type": "Platina", "description": "All trophies have been unlocked.", "tip": "Conclua os outros 33 trofeus da lista base. Gauntlets, Reflections, skins e conteudo de update ficam fora da platina.", "is_missable": false, "is_spoiler": false },
       { "id": "sekiro_man_without_equal", "name": "Man Without Equal", "type": "Ouro", "description": "Defeated all bosses", "tip": "Exige bosses de rotas diferentes, incluindo Shura e nao-Shura. Nao da para fechar em uma unica passagem sem usar saves/NG+.", "is_missable": true, "is_spoiler": true },
       { "id": "sekiro_ashina_traveler", "name": "Ashina Traveler", "type": "Ouro", "description": "Traveled to all areas of the game", "tip": "Fountainhead Palace fica bloqueado se voce escolher Shura. Visite todas as areas principais antes de encerrar a run.", "is_missable": true, "is_spoiler": true },
-      { "id": "sekiro_master_of_the_prosthetic", "name": "Master of the Prosthetic", "type": "Ouro", "description": "Upgraded all Prosthetic Tools to their limit", "tip": "Exige todas as ferramentas, materiais raros e Lapis Lazuli em quantidade de multiplas passagens. Shura bloqueia parte do caminho e pode empurrar o cleanup para NG+.", "is_missable": false, "is_spoiler": false },
-      { "id": "sekiro_height_of_technique", "name": "Height of Technique", "type": "Ouro", "description": "Acquired all skills", "tip": "O maior grind da lista. Farm de XP nao e perdivel; deixe para endgame/NG+ quando os inimigos rendem mais experiencia.", "is_missable": false, "is_spoiler": false },
+      { "id": "sekiro_master_of_the_prosthetic", "name": "Master of the Prosthetic", "type": "Ouro", "description": "Upgraded all Prosthetic Tools to their limit", "tip": "Planeje ferramentas, materiais raros e Lapis Lazuli. Shura bloqueia Fountainhead Palace, entao deixe upgrades finais para rota de Kuro/NG+.", "is_missable": false, "is_spoiler": false },
+      { "id": "sekiro_height_of_technique", "name": "Height of Technique", "type": "Ouro", "description": "Acquired all skills", "tip": "Farm de XP nao e perdivel. Guarde para endgame/NG+ e evite gastar skill points sem conferir as arvores necessarias.", "is_missable": false, "is_spoiler": false },
       { "id": "sekiro_all_prosthetic_tools", "name": "All Prosthetic Tools", "type": "Prata", "description": "Acquired all Prosthetic Tools", "tip": "Colete todas as ferramentas antes de avancar demais. Se alguma ficar bloqueada por progresso, recupere em NG+, mas isso gera retrabalho.", "is_missable": false, "is_spoiler": false },
       { "id": "sekiro_all_ninjutsu_techniques", "name": "All Ninjutsu Techniques", "type": "Prata", "description": "Acquired all Ninjutsu Techniques", "tip": "Feche Bloodsmoke, Puppeteer e Bestowal seguindo bosses e eventos principais; revise antes de iniciar NG+.", "is_missable": false, "is_spoiler": true },
-      { "id": "sekiro_peak_physical_strength", "name": "Peak Physical Strength", "type": "Prata", "description": "Upgraded Vitality and Posture to their limit", "tip": "Exige todas as Prayer Beads, incluindo minibosses e rotas que podem mudar com escolhas e progresso de historia.", "is_missable": true, "is_spoiler": true },
+      { "id": "sekiro_peak_physical_strength", "name": "Peak Physical Strength", "type": "Prata", "description": "Upgraded Vitality and Posture to their limit", "tip": "Exige todas as Prayer Beads. Derrote mini-bosses sensiveis antes de avancos de historia e revise pendencias antes de NG+.", "is_missable": true, "is_spoiler": true },
       { "id": "sekiro_ultimate_healing_gourd", "name": "Ultimate Healing Gourd", "type": "Prata", "description": "Fully upgraded the \"Healing Gourd\"", "tip": "Colete todos os Gourd Seeds e entregue a Emma. Mantenha checklist por area para nao transformar o fim em busca cega.", "is_missable": false, "is_spoiler": false },
       { "id": "sekiro_immortal_severance", "name": "Immortal Severance", "type": "Prata", "description": "Attained the \"Immortal Severance\" ending", "tip": "Final mutuamente exclusivo por conclusao. Use backup antes da escolha final ou deixe para NG+.", "is_missable": true, "is_spoiler": true },
-      { "id": "sekiro_purification", "name": "Purification", "type": "Prata", "description": "Attained the \"Purification\" ending", "tip": "Final com requisitos especificos ligados a Kuro, Emma e Hirata Estate revisitado. Planeje antes de derrotar o chefe final.", "is_missable": true, "is_spoiler": true },
+      { "id": "sekiro_purification", "name": "Purification", "type": "Prata", "description": "Attained the \"Purification\" ending", "tip": "Prepare Kuro, Emma e Hirata Estate revisitado antes de derrotar o chefe final; se faltar, deixe para backup ou NG+.", "is_missable": true, "is_spoiler": true },
       { "id": "sekiro_dragons_homecoming", "name": "Dragon's Homecoming", "type": "Prata", "description": "Attained the \"Return\" ending", "tip": "Final tambem conhecido como Return/Dragon's Homecoming. Exige cadeia de eventos propria antes do fim.", "is_missable": true, "is_spoiler": true },
       { "id": "sekiro_shura", "name": "Shura", "type": "Prata", "description": "Attained the \"Shura\" ending", "tip": "Escolher Shura encerra a rota cedo e bloqueia areas, bosses e Lapis Lazuli daquela passagem. Melhor separar em NG+ ou save dedicado.", "is_missable": true, "is_spoiler": true },
       { "id": "sekiro_sword_saint_isshin_ashina", "name": "Sword Saint, Isshin Ashina", "type": "Prata", "description": "Defeated \"Sword Saint Isshin Ashina\"", "tip": "Chefe final da rota nao-Shura. Se escolher Shura, fica para outra passagem/backup.", "is_missable": true, "is_spoiler": true },
@@ -18009,9 +18009,9 @@ const sampleGames = [
       { "id": "sekiro_corrupted_monk", "name": "Corrupted Monk", "type": "Bronze", "description": "Defeated the \"Corrupted Monk\"", "tip": "A lista cobra a luta verdadeira em Fountainhead Palace, bloqueada se voce escolher Shura.", "is_missable": true, "is_spoiler": true },
       { "id": "sekiro_gracious_gift_of_tears", "name": "Gracious Gift of Tears", "type": "Bronze", "description": "Defeated the \"Divine Dragon\" and obtained the \"Divine Dragon's Tears\"", "tip": "Marco de historia da rota nao-Shura em Fountainhead Palace.", "is_missable": true, "is_spoiler": true },
       { "id": "sekiro_isshin_ashina", "name": "Isshin Ashina", "type": "Bronze", "description": "Defeated \"Isshin Ashina\"", "tip": "Boss especifico do final Shura. Se ficar leal a Kuro, deixe para NG+ ou save separado.", "is_missable": true, "is_spoiler": true },
-      { "id": "sekiro_demon_of_hatred", "name": "Demon of Hatred", "type": "Bronze", "description": "Defeated the \"Demon of Hatred\"", "tip": "Boss opcional de endgame. Pode ser perdido por escolha/progresso na passagem, mas e recuperavel em NG+.", "is_missable": true, "is_spoiler": true },
-      { "id": "sekiro_great_serpent", "name": "Great Serpent", "type": "Bronze", "description": "Defeated the \"Great Serpent\".", "tip": "Evento opcional de exploracao ligado a rota e cleanup. Feche antes de ir para NG+.", "is_missable": true, "is_spoiler": true },
-      { "id": "sekiro_great_colored_carp", "name": "Great Colored Carp", "type": "Bronze", "description": "Defeated the \"Great Colored Carp\".", "tip": "Evento opcional de Fountainhead Palace. Shura impede acesso a area nesta passagem; recupere em NG+ se perder.", "is_missable": true, "is_spoiler": true }
+      { "id": "sekiro_demon_of_hatred", "name": "Demon of Hatred", "type": "Bronze", "description": "Defeated the \"Demon of Hatred\"", "tip": "Boss opcional de endgame e parte de Man Without Equal. Derrote antes de iniciar NG+ se ele ainda faltar na rota atual.", "is_missable": true, "is_spoiler": true },
+      { "id": "sekiro_great_serpent", "name": "Great Serpent", "type": "Bronze", "description": "Defeated the \"Great Serpent\".", "tip": "Evento opcional de exploracao com passos especificos. Use checklist no cleanup; se ficar pendente, resolva em nova passagem sem tratar como perda permanente.", "is_missable": false, "is_spoiler": true },
+      { "id": "sekiro_great_colored_carp", "name": "Great Colored Carp", "type": "Bronze", "description": "Defeated the \"Great Colored Carp\".", "tip": "Evento opcional de Fountainhead Palace. Garanta acesso pela rota de Kuro antes de Shura ou deixe o evento para NG+.", "is_missable": true, "is_spoiler": true }
     ]
   },
   {
@@ -18113,14 +18113,14 @@ const sampleGames = [
     "dlcGuideStatus": "pending",
     "extraContentStatus": "pending",
     "platinumType": "lista base + finais + coleções + NG+",
-    "missable": "A platina base de Lies of P é offline, mas pede plano: os três finais, os records de NG+, as quests de NPC, os gestos, os cryptic vessels, as armas especiais e os itens de boss Ergo podem gerar retrabalho se você tocar a campanha no automático. O guia cobre só a lista base de 43 troféus; Overture fica fora do escopo.",
-    "runs_summary": "Com backup de save, a rota pode fechar os três finais em 2 runs e deixar o resto para o cleanup. Sem backup, planeje 3 finais separados e use NG+ para records, armas e pendências de colecionáveis.",
+    "missable": "A platina base de Lies of P é offline, mas pede plano: os três finais, os Records de NG+, as histórias de NPC, os gestos, os Cryptic Vessels, as armas especiais e os itens de Ergo de chefe podem gerar retrabalho se você tocar a campanha no automático. O guia cobre só a lista base de 43 troféus; Overture fica fora do escopo.",
+    "runs_summary": "Com backup de save, a rota pode fechar os três finais em 2 runs e deixar o resto para o cleanup. Sem backup, planeje 3 finais separados e use NG+ para Records, armas e pendências de colecionáveis.",
     "missable_summary": "Os troféus perdíveis marcados ficam nos finais, The First Puppet, Pianist of Krat, Special Weapon Collector, Golden Melody, Learning about Emotions, Veteran Explorer, End of Riddles e nas histórias de Venigni, Antonia, Geppetto, Eugenie e Sophia.",
-    "online_summary": "Não há troféus online obrigatórios, coop obrigatório nem exigência de PS+ para a platina base.",
-    "grind_summary": "O peso está em múltiplos finais, records, gestos, cryptic vessels, Trinity Sanctums, armas especiais, boss Ergo, P-Organ e NG+.",
-    "dlc_scope": "Overture fica fora da platina base e não é necessário para fechar os 43 troféus desta lista.",
-    "difficulty_reason": "A nota 6/10 vem do combate soulslike, dos bosses finais, do parry/perfect guard e da disciplina exigida nas escolhas e nos colecionáveis, mas a dificuldade acessível reduz a pressão geral.",
-    "time_reason": "A faixa de 50-70 horas considera campanha, 2 runs com backup ou 3 sem backup, records de NG+, gestos, coleções, armas e cleanup.",
+    "online_summary": "A platina base não exige online, coop nem PS+.",
+    "grind_summary": "O peso está em múltiplos finais, Records, gestos, Cryptic Vessels, Trinity Sanctums, armas especiais, Ergo de chefe, P-Organ e NG+.",
+    "dlc_scope": "Overture fica fora da platina base; DLC não necessária para fechar os 43 troféus desta lista.",
+    "difficulty_reason": "A nota 6/10 considera o padrão atual do guia: o modo original continua exigente por chefes, parry/defesa perfeita e NG+, mas Butterfly's Guidance ou Awakened Puppet reduzem a barreira sem bloquear troféus.",
+    "time_reason": "A faixa de 50-70 horas considera campanha, 2 runs com backup ou 3 sem backup, Records de NG+, gestos, coleções, armas e cleanup.",
     "first_run_advice": "Faça a primeira run com o checklist aberto e backup planejado. Explore cada área antes de avançar, fale com NPCs no Hotel Krat, colete Records, gestos, Cryptic Vessels e armas, e anote as escolhas de mentira/verdade. Antes das decisões finais, faça backup do save ou da cloud save para reduzir o número de runs dos finais.",
     "cleanup_advice": "Antes de entrar em NG+, volte ao Hotel Krat para o piano, as cartas e os itens pós-final; depois use a segunda run para records, escolhas alternativas e as coleções que faltarem.",
     "before_you_start": "Planeje os finais desde o começo. Lies of P pune decisões mal encaixadas com retrabalho, mas tudo continua offline e a platina base não exige Overture.",
@@ -18128,21 +18128,25 @@ const sampleGames = [
     "avoid_if": "Evite se você quer uma platina simples, curta ou sem múltiplas runs e coleta cuidadosa.",
     "editorial_summary": [
       "Lies of P tem 43 troféus offline, três finais e uma rota de platina que fica bem mais limpa com backup de save. Overture fica fora da lista base e não entra no planejamento da platina aqui.",
-      "O maior risco está nos records, gestos, cryptic vessels, armas especiais e nas histórias de Venigni, Antonia, Geppetto, Eugenie e Sophia. Se a campanha for feita no automático, o retrabalho aparece no fim.",
+      "O maior risco está nos finais, Records, Golden Records, gestos, Cryptic Vessels, armas especiais e nas histórias de Venigni, Antonia, Geppetto, Eugenie, Alidoro e Sophia. Se a campanha for feita no automático, o retrabalho aparece no fim.",
       "Com backup, dá para resolver os três finais em duas runs e usar NG+ para comprar Golden Records e fechar os colecionáveis restantes. Sem backup, planeje três finais separados e um cleanup mais longo.",
-      "A dificuldade é moderada-alta por causa dos bosses e do parry, mas a platina é mais sobre organização do que sobre online ou coop."
+      "A dificuldade depende bastante do modo escolhido: o padrão original continua exigente por chefes e parry/defesa perfeita; com as dificuldades mais fáceis adicionadas por update, a platina fica mais acessível. Em ambos os casos, a lista é mais sobre planejamento, escolhas e checklist do que sobre online ou coop."
     ],
     "seo": {
       "title": "Lies of P: guia de platina, troféus e roadmap | AtlasAchievement",
       "description": "Guia de platina de Lies of P em português com 43 troféus, perdíveis marcados, finais, Records, gestos, Cryptic Vessels, armas especiais, roadmap e checklist.",
-      "keywords": "Lies of P, guia de platina Lies of P, troféus Lies of P, roadmap Lies of P, records Lies of P, gestos Lies of P, cryptic vessels, special weapons, PS5",
+      "keywords": "Lies of P guia de platina, troféus Lies of P, roadmap Lies of P, Lies of P finais, Lies of P Real Boy, Lies of P Rise of P, Lies of P Free from the Puppet String, Lies of P Golden Melody, Lies of P Records, Lies of P Golden Records, Lies of P boss Ergo, Lies of P Nameless Puppet, Lies of P sem online, Lies of P sem coop, Lies of P Overture fora da platina base, Lies of P dificuldade fácil troféus",
       "ogTitle": "Lies of P — guia de platina, troféus e roadmap | AtlasAchievement",
       "ogDescription": "Checklist da platina base de Lies of P com 43 troféus, perdíveis marcados, 2 runs com backup e Overture fora do escopo."
     },
     "faq": [
       {
+        "question": "Quantos troféus Lies of P tem na platina base?",
+        "answer": "A lista base tem 43 troféus. Overture possui lista separada e não entra na platina base."
+      },
+      {
         "question": "Quantas runs eu preciso?",
-        "answer": "Com backup de save, a rota mais limpa fecha em 2 runs. Sem backup, planeje 3 finais separados e use NG+ para records e cleanup."
+        "answer": "Com backup de save, a rota mais limpa fecha em 2 runs. Sem backup, planeje 3 finais separados e use NG+ para Records e cleanup."
       },
       {
         "question": "A platina exige online ou coop?",
@@ -18158,31 +18162,31 @@ const sampleGames = [
       },
       {
         "question": "Records e Golden Records cabem em uma campanha só?",
-        "answer": "Não. Há records em NG+ e dois deles dependem de escolhas exclusivas em Eugénie, então a rota pede pelo menos uma segunda passada."
+        "answer": "Não. Há Records em NG+ e dois deles dependem de escolhas exclusivas em Eugenie, então a rota pede pelo menos uma segunda passada."
       },
       {
-        "question": "Quando devo gastar boss Ergo?",
-        "answer": "Só depois de checar as special weapons. Se você consumir Ergo cedo demais, pode atrapalhar o collector da arma especial."
+        "question": "Quando devo gastar Ergo de chefe?",
+        "answer": "Só depois de checar as armas especiais. Se você consumir Ergo de chefe cedo demais ou trocar por amuletos, pode atrapalhar Special Weapon Collector e Strongest Special Weapon."
       },
       {
-        "question": "Lies of P tem troféus perdíveis?",
-        "answer": "Sim. Neste guia, os troféus marcados como perdíveis estão ligados principalmente a finais, Records, histórias de NPC, gestos e armas especiais ligadas a boss Ergo. A contagem do filtro deve bater com os troféus realmente marcados como Perdível."
-      },
-      {
-        "question": "Preciso usar backup save?",
-        "answer": "Não é obrigatório, mas é altamente recomendado antes das decisões finais para reduzir runs e retrabalho."
+        "question": "Lies of P tem troféus perdíveis? O filtro está correto?",
+        "answer": "Sim. Neste guia, os 16 perdíveis estão ligados a finais, Records, histórias de NPC, gestos, Trinity Sanctums, Cryptic Vessels e armas especiais ligadas a Ergo de chefe. Chefes obrigatórios e upgrades gerais não contam como perdíveis."
       },
       {
         "question": "New Game+ é necessário?",
         "answer": "Para a rota limpa, sim. NG+ ajuda com Golden Records, escolhas alternativas, finais e coleções pendentes."
       },
       {
-        "question": "Qual é o maior risco da platina?",
-        "answer": "Os finais, Golden Melody, Special Weapon Collector, histórias de NPC e decisões de Sophia/Geppetto/Eugenie/Alidoro."
+        "question": "As novas dificuldades bloqueiam troféus?",
+        "answer": "Não. A platina base não tem troféus específicos por dificuldade, então as dificuldades mais fáceis adicionadas por update podem ser usadas para reduzir a exigência. Battle Memories e Death March também não são requisitos da platina base."
       },
       {
-        "question": "As novas dificuldades, Battle Memories ou Death March entram na platina?",
-        "answer": "Não para a lista base, salvo se o projeto tiver uma lista separada. Esses recursos vieram com updates/Overture e não devem ser tratados como requisito da platina base."
+        "question": "Qual dificuldade usar no guia?",
+        "answer": "Se jogar no padrão original/Legendary Stalker, a platina continua exigente por causa de chefes, parry/defesa perfeita e NG+. Com Butterfly's Guidance ou Awakened Puppet, a dificuldade cai, mas o checklist de finais, Records, armas especiais e NPCs continua importante."
+      },
+      {
+        "question": "Qual é o maior risco da platina?",
+        "answer": "Os finais, Golden Melody, Special Weapon Collector, histórias de NPC e decisões de Sophia/Geppetto/Eugenie/Alidoro."
       }
     ],
     "tags": [
@@ -18195,16 +18199,18 @@ const sampleGames = [
       "Overture fora da platina base"
     ],
     "attentionPoints": [
-      { "title": "Finais e backup save", "detail": "Real Boy, Free from the Puppet String e Rise of P dependem de humanidade, mentira/verdade, Sophia e Geppetto. Backup save antes das decisões finais reduz retrabalho.", "tags": ["Final", "Backup save", "Risco de run"] },
-      { "title": "Boss Ergo e armas especiais", "detail": "Não consuma boss Ergo nem compre amuletos antes de confirmar Special Weapon Collector. Algumas armas especiais dependem desses recursos.", "tags": ["Boss Ergo", "Special Weapons", "Atenção"] },
-      { "title": "Golden Melody e Records", "detail": "Golden Melody exige Records e Golden Records, incluindo NG+ e escolhas específicas de NPC.", "tags": ["Records", "Golden Records", "NG+"] },
-      { "title": "Eugenie, Alidoro e Venigni", "detail": "As escolhas envolvendo Alidoro, Eugenie, Cryptic Vessel e Venigni podem afetar Records e histórias de NPC.", "tags": ["NPC", "Records", "Cryptic Vessels"] },
-      { "title": "Pianist of Krat", "detail": "Depois de um final, volte ao Hotel Krat e toque o piano antes de entrar em NG+.", "tags": ["Pós-final", "NG+", "Atenção"] },
-      { "title": "Sophia e Geppetto", "detail": "As decisões finais com Sophia e Geppetto determinam finais e troféus pós-créditos.", "tags": ["Sophia", "Geppetto", "Final"] },
-      { "title": "Overture fora da platina", "detail": "Overture, Battle Memories e Death March não entram nos 43 troféus da lista base.", "tags": ["Overture", "Fora da platina", "DLC"] },
-      { "title": "Sem online/co-op", "detail": "A platina base é single-player, sem online obrigatório e sem coop obrigatório.", "tags": ["Offline", "Sem coop", "Sem online"] }
+      { "title": "Finais e backup de save", "detail": "Os três finais dependem de escolhas no endgame; backup reduz runs e retrabalho.", "tags": ["Final", "Backup", "Risco de run"] },
+      { "title": "Não entregue o coração sem planejar", "detail": "Dar o coração a Geppetto fecha Real Boy, mas bloqueia Nameless Puppet e The First Puppet nessa rota.", "tags": ["Geppetto", "Final", "Perdível"] },
+      { "title": "Não inicie NG+ cedo demais", "detail": "Pianist of Krat, cartas pós-final e histórias de NPC podem exigir ações antes de avançar.", "tags": ["NG+", "Pós-final", "Atenção"] },
+      { "title": "Ergo de chefe deve ser preservado", "detail": "Consumir Ergo de chefe ou trocar por amuletos pode atrapalhar armas especiais.", "tags": ["Ergo de chefe", "Armas especiais", "Atenção"] },
+      { "title": "Golden Melody exige NG+", "detail": "Records e Golden Records dependem de segunda passada e escolhas exclusivas.", "tags": ["Records", "Golden Records", "NG+"] },
+      { "title": "Eugenie e Alidoro exigem cuidado", "detail": "A história de Eugenie e Records ligados a ela podem exigir escolhas alternativas.", "tags": ["Eugenie", "Alidoro", "Risco de run"] },
+      { "title": "Sophia e humanidade definem finais", "detail": "Rise of P e Free from the Puppet String dependem de humanidade e decisão sobre Sophia.", "tags": ["Sophia", "Humanidade", "Final"] },
+      { "title": "Gestos, Vessels e Sanctums cedo", "detail": "Ignorar gestos, Cryptic Vessels e Trinity Sanctums aumenta o retrabalho no cleanup.", "tags": ["Gestos", "Cryptic Vessels", "Trinity Sanctums"] },
+      { "title": "Overture fica fora da platina base", "detail": "Não misture DLC ou update com os 43 troféus da lista base.", "tags": ["Overture", "Fora da platina", "DLC"] },
+      { "title": "Dificuldade atual depende do modo", "detail": "O modo original continua exigente, mas as dificuldades adicionadas por patch podem reduzir a barreira da platina.", "tags": ["Dificuldade", "Update", "Acessibilidade"] }
     ],
-    "editorial_notes": "Fonte-base: PowerPyx Trophy Guide & Roadmap, All Endings Guide, Collectibles Guide, All Records, All Gestures, All Normal Weapon Locations e All Special Weapon Locations. Decisão editorial: lista base de 43 troféus, perdíveis alinhados ao checklist, Overture fora do escopo e backup de save recomendado para reduzir retrabalho.",
+    "editorial_notes": "Fonte-base: PowerPyx Trophy Guide & Roadmap, guia de finais, guia de colecionáveis, guia de Records, guia de gestos, guia de armas normais e guia de armas especiais. Decisão editorial: lista base de 43 troféus, perdíveis alinhados ao checklist, Overture fora do escopo e backup de save recomendado para reduzir retrabalho.",
     "last_reviewed_at": "2026-06-08",
     "lastReviewedAt": "2026-06-08T00:00:00.000-03:00",
     "reviewed_by": "Codex",
@@ -18214,129 +18220,125 @@ const sampleGames = [
     "coverage_level": "strong",
     "is_verified": false,
     "verification_status": "review",
-    "verification_note": "Lista base revisada sem Overture; finais, records e NG+ reorganizados, ainda em revisão editorial até a validação final do render/PDF.",
+    "editorial_review_status": "in_review",
+    "verification_note": "Lista base revisada sem Overture; finais, Records e NG+ reorganizados, ainda em revisão editorial até a validação final do render/PDF.",
     "image": "https://cdn.cloudflare.steamstatic.com/steam/apps/1627720/header.jpg",
     "cover_image": "https://cdn.cloudflare.steamstatic.com/steam/apps/1627720/library_600x900.jpg",
     "roadmap": [
       {
-        "title": "Primeira run e humanidade",
-        "focus": "Campanha inicial",
-        "objective": "Avançar a história enquanto já controla escolhas, humanidade, records, gestos, cryptic vessels e quests de NPC.",
+        "title": "Faça a primeira run com checklist ativo",
+        "focus": "Campanha e coletáveis",
+        "objective": "Avançar pela história acompanhando escolhas, NPCs, Records, gestos, Cryptic Vessels, Trinity Sanctums e Ergo de chefe.",
         "actions": [
-          "Acompanhe escolhas de mentira/verdade e sinais de Humanity desde o começo.",
-          "Complete side quests quando surgirem e registre Records, gestos, Trinity Keys e Cryptic Vessels.",
-          "Converse no Hotel Krat depois de grandes eventos para não perder cartas, Records ou respostas de NPC.",
-          "Não gaste boss Ergo antes de comparar armas especiais e amuletos."
+          "Jogue a campanha sem consumir Ergo de chefe antes de comprar as armas especiais necessárias.",
+          "Acompanhe Records, gestos, Cryptic Vessels, Trinity Keys, Trinity Sanctums e histórias de NPC desde cedo.",
+          "Registre decisões importantes envolvendo Sophia, Geppetto, Eugenie, Alidoro, Antonia e Venigni."
         ],
-        "warning": "Jogar no automático costuma empurrar Records, gestos e histórias de NPC para uma nova run.",
-        "result": "Campanha avançada com os principais riscos mapeados antes da reta final."
+        "warning": "Algumas missões, escolhas e colecionáveis podem gerar retrabalho se forem ignorados até o fim da campanha.",
+        "result": "Você chega ao endgame com a maior parte dos requisitos sensíveis controlada."
       },
       {
-        "title": "Prepare Sophia, Geppetto e os finais",
-        "focus": "Finais",
-        "objective": "Planejar Real Boy, Free from the Puppet String, Rise of P e The First Puppet sem repetir mais campanhas do que o necessário.",
+        "title": "Prepare os finais antes de Under the Abyss",
+        "focus": "Finais e backup",
+        "objective": "Organizar humanidade, Sophia, Geppetto e o ponto de backup para reduzir runs.",
         "actions": [
-          "Faça backup de save antes das decisões finais se essa for sua estratégia.",
-          "Confirme a escolha de Sophia e a condição de Humanity antes de Simon Manus e Geppetto.",
-          "Recuse Geppetto quando precisar enfrentar Nameless Puppet.",
-          "Depois de um final, volte ao Hotel Krat antes de iniciar NG+."
+          "Antes de Under the Abyss, confirme o estado de humanidade e as escolhas ligadas a Sophia.",
+          "Prepare backup de save se for usar estratégia de múltiplos finais.",
+          "Planeje Real Boy, Free from the Puppet String, Rise of P e The First Puppet antes da decisão final."
         ],
-        "warning": "Sem backup, os três finais exigem rotas separadas.",
-        "result": "Finais controlados e risco de perder The First Puppet reduzido."
+        "warning": "Dar o coração a Geppetto encerra a rota sem a luta contra Nameless Puppet e pode bloquear The First Puppet nessa run.",
+        "result": "Os finais ficam organizados e o risco de repetir campanha por decisão errada diminui."
       },
       {
-        "title": "Records, gestos, riddles e vessels",
-        "focus": "Colecionáveis",
-        "objective": "Fechar os colecionáveis mais sensíveis, incluindo Records de NG+, gestos, Trinity Sanctums e Cryptic Vessels.",
+        "title": "Resolva pendências antes de iniciar NG+",
+        "focus": "Pós-final",
+        "objective": "Conferir troféus que podem ser perdidos ao entrar em NG+ cedo demais.",
         "actions": [
-          "Use checklist para os Records e toque todos no Hotel Krat.",
-          "Separe as escolhas de Eugénie para cobrir os Records mutuamente exclusivos.",
-          "Resolva riddles, Trinity Keys e Trinity Sanctums antes de avançar demais.",
-          "Entregue Cryptic Vessels a Venigni e resgate as recompensas."
+          "Depois do final, não inicie NG+ imediatamente.",
+          "Volte ao Hotel Krat para Pianist of Krat e cartas/histórias pendentes.",
+          "Revise The Story of One Father, The Story of the Blue Butterfly, The Story of the Prince e outras histórias de NPC."
         ],
-        "warning": "Golden Melody não fecha na primeira campanha; NG+ faz parte da rota.",
-        "result": "Golden Melody, Learning about Emotions, Veteran Explorer e End of Riddles ficam sob controle."
+        "warning": "Iniciar NG+ cedo demais pode causar retrabalho em troféus de história, piano, cartas e finais.",
+        "result": "A run atual fica limpa antes de avançar para NG+."
       },
       {
-        "title": "Armas, Legion Arms e P-Organ",
-        "focus": "Progressão",
-        "objective": "Organizar upgrades e coleções sem desperdiçar recursos únicos.",
+        "title": "Use NG+ para Records e escolhas alternativas",
+        "focus": "NG+",
+        "objective": "Fechar Golden Records, escolhas exclusivas e coleções que dependem de segunda passada.",
         "actions": [
-          "Maximize uma arma normal para Strongest Normal Weapon.",
-          "Maximize uma arma especial apenas depois de garantir os materiais e boss Ergo necessários.",
-          "Complete Legion Arms com Legion Plugs e Legion Calibers.",
-          "Invista Quartz até liberar Phase 5 do P-Organ."
+          "Compre os Golden Records dos mercadores em NG+.",
+          "Faça a escolha alternativa da missão de Eugenie para obter o Record oposto.",
+          "Complete Records, gestos, Cryptic Vessels, armas normais, armas especiais e Legion Arms restantes."
         ],
-        "warning": "Special Weapon Collector e Strongest Special Weapon sofrem se boss Ergo for consumido cedo demais.",
-        "result": "Sistemas de upgrade fechados sem depender de online ou coop."
+        "warning": "Golden Melody não fecha em uma única campanha, porque há Records ligados a NG+ e escolhas exclusivas.",
+        "result": "Os colecionáveis mais sensíveis da platina ficam resolvidos."
       },
       {
-        "title": "NG+ e escolhas alternativas",
-        "focus": "Cleanup / NG+",
-        "objective": "Usar a segunda run para Golden Records, escolhas alternativas, armas restantes e pendências de NPC.",
+        "title": "Finalize armas, upgrades e P-Organ",
+        "focus": "Cleanup",
+        "objective": "Concluir upgrades, armas especiais/normais, Legion Arms, Quartz e P-Organ.",
         "actions": [
-          "Compre Golden Records dos merchants de NG+ assim que aparecerem.",
-          "Faça a rota alternativa de Eugénie para o Record e a história restante.",
-          "Revise Antonia, Venigni, Alidoro, Geppetto e Sophia antes da reta final.",
-          "Use o checklist para não misturar Overture com a lista base."
+          "Revise armas normais e especiais antes de gastar recursos finais.",
+          "Use Ergo de chefe apenas depois de garantir as armas especiais necessárias.",
+          "Finalize Legion Arm, P-Organ Phase 5 e upgrades de arma."
         ],
-        "warning": "Não entre em NG+ antes de tocar o piano, ler cartas pós-final e revisar o Hotel Krat.",
-        "result": "Segunda run cobre o que a primeira não podia resolver."
+        "warning": "Consumir Ergo de chefe cedo demais pode atrasar ou bloquear Special Weapon Collector e Strongest Special Weapon na run atual.",
+        "result": "Os troféus de coleção e melhoria ficam prontos para a conferência final."
       },
       {
-        "title": "Checklist final da platina base",
-        "focus": "Limpeza",
-        "objective": "Fechar bosses, histórias, coleções e troféus situacionais restantes.",
+        "title": "Faça a conferência final da platina",
+        "focus": "Checklist",
+        "objective": "Confirmar todos os 43 troféus da lista base sem misturar DLC ou update.",
         "actions": [
-          "Confirme que os 43 troféus da lista base estão no checklist.",
-          "Revise finais, troféus de história, Records, armas, gestos, Cryptic Vessels e Trinity Sanctums.",
-          "Limpe bosses obrigatórios ou troféus de combate que tenham ficado para trás.",
-          "Não inclua Overture no checklist da platina base."
+          "Confirme os 43 troféus da lista base.",
+          "Revise finais, Nameless Puppet, Records, Golden Melody, gestos, Cryptic Vessels, Trinity Sanctums e histórias de NPC.",
+          "Confirme que Overture, Battle Memories e Death March não foram tratados como requisito da platina base."
         ],
-        "result": "Platina base concluída com escopo claro e sem dependência de online."
+        "warning": "",
+        "result": "A platina base deve ficar pronta sem online, coop ou DLC obrigatório."
       }
     ],
     "trophies": [
-      { "id": "lop_lies_of_p", "name": "Lies of P", "name_pt": "Lies of P", "type": "Platina", "description": "Obtenha todos os troféus.", "tip": "Complete os outros 42 troféus da lista base. Overture não é necessário para esta platina.", "is_missable": false, "is_spoiler": false, "tags": ["Platina", "Conclusão"] },
+      { "id": "lop_lies_of_p", "name": "Lies of P", "name_pt": "Lies of P", "type": "Platina", "description": "Obtenha todos os troféus.", "tip": "Complete os outros 42 troféus da lista base. Overture, Battle Memories e Death March não entram nesta platina.", "is_missable": false, "is_spoiler": false, "tags": ["Platina", "Conclusão"] },
       { "id": "lop_real_boy", "name": "Real Boy: They All Lived Happily Ever After", "name_pt": "Menino de Verdade: Viveram Felizes para Sempre", "type": "Ouro", "description": "Alcance o final Real Boy.", "tip": "Final ligado a dar o coração a Geppetto no fim. Use backup de save se quiser reduzir retrabalho entre finais.", "is_missable": true, "is_spoiler": true, "tags": ["Final", "Perdível", "Spoiler", "Risco de run"] },
       { "id": "lop_free_from_the_puppet_string", "name": "Free from the Puppet String", "name_pt": "Livre dos Fios da Marionete", "type": "Ouro", "description": "Alcance o final Free from the Puppet String.", "tip": "Exige recusar Geppetto e cumprir condições de humanidade/escolha de Sophia. Planeje antes de Under the Abyss.", "is_missable": true, "is_spoiler": true, "tags": ["Final", "Perdível", "Spoiler", "Risco de run"] },
       { "id": "lop_rise_of_p", "name": "Rise of P", "name_pt": "Ascensão de P", "type": "Ouro", "description": "Alcance o final Rise of P.", "tip": "Final de alta humanidade ligado a Sophia e a recusar Geppetto. Confirme requisitos antes de fechar Arche Abbey.", "is_missable": true, "is_spoiler": true, "tags": ["Final", "Perdível", "Spoiler", "Risco de run"] },
-      { "id": "lop_the_first_puppet", "name": "The First Puppet", "name_pt": "O Primeiro Fantoche", "type": "Prata", "description": "Derrote Nameless Puppet.", "tip": "Perdido se você der o coração a Geppetto. Recuse a proposta final para enfrentar este boss.", "is_missable": true, "is_spoiler": true, "tags": ["Boss", "Final", "Perdível", "Spoiler"] },
-      { "id": "lop_strongest_normal_weapon", "name": "Strongest Normal Weapon", "name_pt": "Arma Normal Mais Forte", "type": "Prata", "description": "Melhore uma arma normal até o nível máximo.", "tip": "Melhore uma arma normal até +10. É gasto de materiais/upgrades, não de online.", "is_missable": false, "is_spoiler": false, "tags": ["Weapons", "Upgrade", "Cleanup"] },
-      { "id": "lop_strongest_special_weapon", "name": "Strongest Special Weapon", "name_pt": "Arma Especial Mais Forte", "type": "Prata", "description": "Melhore uma arma especial até o nível máximo.", "tip": "Não consuma boss Ergo nem compre amuletos se precisar das special weapons. Leve uma arma especial até +5.", "is_missable": true, "is_spoiler": true, "tags": ["Special Weapons", "Boss Ergo", "Perdível", "Spoiler", "Risco de run"] },
-      { "id": "lop_strongest_legion_arm", "name": "Strongest Legion Arm", "name_pt": "Braço Legionário Mais Forte", "type": "Prata", "description": "Modifique um Legion Arm até o nível máximo.", "tip": "Use Legion Calibers para maximizar um Legion Arm. Pode ser planejado no cleanup/NG+.", "is_missable": false, "is_spoiler": false, "tags": ["Legion Arm", "Upgrade", "Cleanup"] },
-      { "id": "lop_extreme_potential", "name": "Extreme Potential", "name_pt": "Potencial Extremo", "type": "Prata", "description": "Ative o P-Organ até a Phase 5.", "tip": "Invista Quartz até liberar a Phase 5 do P-Organ. O gargalo é exploração e progresso, não um perdível direto.", "is_missable": false, "is_spoiler": false, "tags": ["P-Organ", "Quartz", "Progressão", "Cleanup"] },
+      { "id": "lop_the_first_puppet", "name": "The First Puppet", "name_pt": "O Primeiro Fantoche", "type": "Prata", "description": "Derrote Nameless Puppet.", "tip": "Depende de recusar Geppetto na decisão final e lutar contra Nameless Puppet. Dar o coração bloqueia esta luta nessa rota.", "is_missable": true, "is_spoiler": true, "tags": ["Chefe", "Final", "Perdível", "Spoiler"] },
+      { "id": "lop_strongest_normal_weapon", "name": "Strongest Normal Weapon", "name_pt": "Arma Normal Mais Forte", "type": "Prata", "description": "Melhore uma arma normal até o nível máximo.", "tip": "Melhore uma arma normal até +10. É gasto de materiais/upgrades, não de online.", "is_missable": false, "is_spoiler": false, "tags": ["Armas", "Upgrade", "Grind", "Cleanup"] },
+      { "id": "lop_strongest_special_weapon", "name": "Strongest Special Weapon", "name_pt": "Arma Especial Mais Forte", "type": "Prata", "description": "Melhore uma arma especial até o nível máximo.", "tip": "Preserve Ergo de chefe e compre a arma especial antes de trocar o recurso por amuleto. Depois leve uma arma especial até +5.", "is_missable": true, "is_spoiler": true, "tags": ["Armas especiais", "Ergo de chefe", "Grind", "Perdível", "Spoiler", "Risco de run"] },
+      { "id": "lop_strongest_legion_arm", "name": "Strongest Legion Arm", "name_pt": "Braço Legionário Mais Forte", "type": "Prata", "description": "Modifique um Legion Arm até o nível máximo.", "tip": "Use Legion Calibers para maximizar um Legion Arm. Pode ser planejado no cleanup/NG+.", "is_missable": false, "is_spoiler": false, "tags": ["Legion Arm", "Upgrade", "Grind", "Cleanup"] },
+      { "id": "lop_extreme_potential", "name": "Extreme Potential", "name_pt": "Potencial Extremo", "type": "Prata", "description": "Ative o P-Organ até a Phase 5.", "tip": "Invista Quartz até liberar a Phase 5 do P-Organ. O gargalo é exploração e progresso, não um perdível direto.", "is_missable": false, "is_spoiler": false, "tags": ["P-Organ", "Quartz", "Progressão", "Grind", "Cleanup"] },
       { "id": "lop_pianist_of_krat", "name": "Pianist of Krat", "name_pt": "Pianista de Krat", "type": "Prata", "description": "Toque uma melodia perfeita no piano do Hotel Krat.", "tip": "Depois de um final, não entre em NG+ imediatamente. Volte ao Hotel Krat e toque o piano.", "is_missable": true, "is_spoiler": true, "tags": ["Pós-final", "Atenção", "Risco de run", "Perdível"] },
       { "id": "lop_legion_arm_collector", "name": "Legion Arm Collector", "name_pt": "Colecionador de Braços Legionários", "type": "Prata", "description": "Colete todos os Legion Arms.", "tip": "Colete/crafte todos os Legion Arms usando Legion Plugs. Revise antes do cleanup final.", "is_missable": false, "is_spoiler": false, "tags": ["Legion Arm", "Coletável", "Cleanup"] },
-      { "id": "lop_special_weapon_collector", "name": "Special Weapon Collector", "name_pt": "Colecionador de Armas Especiais", "type": "Prata", "description": "Colete todas as armas especiais.", "tip": "Exige boss Ergo, lojas de Alidoro/Hugo e a Golden Lie. Não consuma Ergos de chefes e planeje finais/Records.", "is_missable": true, "is_spoiler": true, "tags": ["Special Weapons", "Boss Ergo", "Golden Lie", "Coletável", "Risco de run", "Perdível"] },
-      { "id": "lop_normal_weapon_collector", "name": "Normal Weapon Collector", "name_pt": "Colecionador de Armas Normais", "type": "Prata", "description": "Colete todas as armas normais.", "tip": "Colete/compre as 29 armas normais. Alguns vendedores e janelas de área podem causar retrabalho se ignorados.", "is_missable": false, "is_spoiler": false, "tags": ["Weapons", "Coletável", "Cleanup"] },
-      { "id": "lop_golden_melody", "name": "Golden Melody", "name_pt": "Melodia Dourada", "type": "Prata", "description": "Colete e toque todos os Records.", "tip": "Exige todos os Records e Golden Records, incluindo NG+ e escolhas de questline. Toque todos no Hotel Krat.", "is_missable": true, "is_spoiler": true, "tags": ["Records", "Golden Records", "Coletável", "NG+", "Perdível", "Risco de run"] },
-      { "id": "lop_learning_about_emotions", "name": "Learning about Emotions", "name_pt": "Aprendendo sobre Emoções", "type": "Prata", "description": "Aprenda todos os gestos.", "tip": "Gestures vêm de história, cartas e side quests. Acompanhe desde cedo porque há janelas perdíveis.", "is_missable": true, "is_spoiler": true, "tags": ["Gestures", "Coletável", "Risco de run", "Perdível"] },
+      { "id": "lop_special_weapon_collector", "name": "Special Weapon Collector", "name_pt": "Colecionador de Armas Especiais", "type": "Prata", "description": "Colete todas as armas especiais.", "tip": "Exige Ergo de chefe, lojas de Alidoro/Explorer Hugo e a Golden Lie. Não consuma Ergos de chefes e planeje finais/Records antes das trocas.", "is_missable": true, "is_spoiler": true, "tags": ["Armas especiais", "Ergo de chefe", "Golden Lie", "Coletável", "Risco de run", "Perdível"] },
+      { "id": "lop_normal_weapon_collector", "name": "Normal Weapon Collector", "name_pt": "Colecionador de Armas Normais", "type": "Prata", "description": "Colete todas as armas normais.", "tip": "Colete ou compre as 29 armas normais. Revise vendedores, baús e áreas antes de iniciar NG+ para evitar retrabalho.", "is_missable": false, "is_spoiler": false, "tags": ["Armas", "Coletável", "Cleanup"] },
+      { "id": "lop_golden_melody", "name": "Golden Melody", "name_pt": "Melodia Dourada", "type": "Prata", "description": "Colete e toque todos os Records.", "tip": "Exige Records, Golden Records, NG+ e a escolha exclusiva de Eugenie. Toque todos no Hotel Krat e confira a lista antes de avançar.", "is_missable": true, "is_spoiler": true, "tags": ["Records", "Golden Records", "Coletável", "NG+", "Grind", "Perdível", "Risco de run"] },
+      { "id": "lop_learning_about_emotions", "name": "Learning about Emotions", "name_pt": "Aprendendo sobre Emoções", "type": "Prata", "description": "Aprenda todos os gestos.", "tip": "Gestos vêm de história, cartas e missões secundárias. Acompanhe desde cedo porque algumas janelas de NPC podem fechar.", "is_missable": true, "is_spoiler": true, "tags": ["Gestos", "Coletável", "Risco de run", "Perdível"] },
       { "id": "lop_veteran_explorer", "name": "Veteran Explorer", "name_pt": "Explorador Veterano", "type": "Prata", "description": "Decifre todos os Cryptic Vessels e receba as recompensas.", "tip": "Entregue todos os Cryptic Vessels a Venigni e pegue as recompensas. Decisões com Alidoro podem bloquear progresso.", "is_missable": true, "is_spoiler": true, "tags": ["Cryptic Vessels", "Coletável", "Puzzle", "Risco de run", "Perdível"] },
-      { "id": "lop_end_of_riddles", "name": "End of Riddles", "name_pt": "Fim dos Enigmas", "type": "Prata", "description": "Descubra todos os Trinity Sanctums.", "tip": "Responda corretamente aos riddles e use as Trinity Keys. Erros e itens usados em outras quests podem causar retrabalho.", "is_missable": true, "is_spoiler": true, "tags": ["Trinity Sanctums", "Riddles", "Puzzle", "Coletável", "Risco de run", "Perdível"] },
+      { "id": "lop_end_of_riddles", "name": "End of Riddles", "name_pt": "Fim dos Enigmas", "type": "Prata", "description": "Descubra todos os Trinity Sanctums.", "tip": "Responda aos enigmas por telefone, use as Trinity Keys nos Sanctums e conclua a sala final antes de encerrar a rota.", "is_missable": true, "is_spoiler": true, "tags": ["Trinity Sanctums", "Enigmas", "Puzzle", "Coletável", "Risco de run", "Perdível"] },
       { "id": "lop_first_lie", "name": "First Lie", "name_pt": "Primeira Mentira", "type": "Bronze", "description": "Conte uma mentira diante da entrada do Hotel Krat.", "tip": "Troféu de progresso inicial: mentir na entrada do Hotel Krat é necessário para avançar.", "is_missable": false, "is_spoiler": false, "tags": ["História", "Progressão"] },
       { "id": "lop_stargazers_guide", "name": "Stargazer's Guide", "name_pt": "Guia do Stargazer", "type": "Bronze", "description": "Repare um Stargazer.", "tip": "Repare o primeiro Stargazer em Krat Central Plaza. Vem naturalmente no início.", "is_missable": false, "is_spoiler": false, "tags": ["Sistema", "Progressão"] },
-      { "id": "lop_exploring_possibilities", "name": "Exploring Possibilities", "name_pt": "Explorando Possibilidades", "type": "Bronze", "description": "Tente montar uma arma.", "tip": "Use o sistema de montar armas depois de receber a ferramenta de montagem.", "is_missable": false, "is_spoiler": false, "tags": ["Sistema", "Weapons"] },
+      { "id": "lop_exploring_possibilities", "name": "Exploring Possibilities", "name_pt": "Explorando Possibilidades", "type": "Bronze", "description": "Tente montar uma arma.", "tip": "Use o sistema de montar armas depois de receber a ferramenta de montagem.", "is_missable": false, "is_spoiler": false, "tags": ["Sistema", "Armas"] },
       { "id": "lop_the_ultimate_defense_technique", "name": "The Ultimate Defense Technique", "name_pt": "Técnica Suprema de Defesa", "type": "Bronze", "description": "Destrua a arma de um inimigo com Perfect Guard.", "tip": "Use Perfect Guard repetidamente contra inimigos armados até quebrar a arma; exige execução de dificuldade moderada.", "is_missable": false, "is_spoiler": false, "tags": ["Combate", "Dificuldade", "Atenção"] },
       { "id": "lop_fatal_blow", "name": "Fatal Blow", "name_pt": "Golpe Fatal", "type": "Bronze", "description": "Execute um Fatal Attack com sucesso.", "tip": "Aplique um Fatal Attack pelas costas ou em inimigo em estado groggy.", "is_missable": false, "is_spoiler": false, "tags": ["Combate", "Sistema"] },
       { "id": "lop_the_bastards_and_the_sweepers", "name": "The Bastards and the Sweepers", "name_pt": "Os Bastardos e os Varredores", "type": "Bronze", "description": "Derrote um Stalker.", "tip": "Sai na rota principal ao derrotar um Stalker de história, como Mad Donkey.", "is_missable": false, "is_spoiler": true, "tags": ["História", "Spoiler"] },
-      { "id": "lop_parade_master", "name": "Parade Master", "name_pt": "Mestre do Desfile", "type": "Bronze", "description": "Derrote Parade Master.", "tip": "Boss obrigatório inicial. Não é perdível.", "is_missable": false, "is_spoiler": true, "tags": ["Boss", "História", "Spoiler"] },
-      { "id": "lop_scrapped_watchman", "name": "Scrapped Watchman", "name_pt": "Vigia Sucateado", "type": "Bronze", "description": "Derrote Scrapped Watchman.", "tip": "Boss obrigatório de história em Krat City Hall. Treine Perfect Guard e uso de Specter se precisar.", "is_missable": false, "is_spoiler": true, "tags": ["Boss", "História", "Spoiler"] },
-      { "id": "lop_kings_flame", "name": "King's Flame", "name_pt": "Chama do Rei", "type": "Bronze", "description": "Derrote King's Flame, Fuoco.", "tip": "Boss obrigatório de Venigni Works. Não marque como perdível; ele faz parte da história.", "is_missable": false, "is_spoiler": true, "tags": ["Boss", "História", "Spoiler"] },
-      { "id": "lop_fallen_archbishop", "name": "Fallen Archbishop", "name_pt": "Arcebispo Caído", "type": "Bronze", "description": "Derrote Fallen Archbishop Andreus.", "tip": "Boss obrigatório da Catedral. Prepare cura de status e aprenda a segunda fase.", "is_missable": false, "is_spoiler": true, "tags": ["Boss", "História", "Spoiler"] },
-      { "id": "lop_the_delayed_match", "name": "The Delayed Match", "name_pt": "O Combate Adiado", "type": "Bronze", "description": "Derrote o Eldest of the Black Rabbit Brotherhood.", "tip": "Boss obrigatório de Malum District. Controle adds e foque janelas seguras.", "is_missable": false, "is_spoiler": true, "tags": ["Boss", "História", "Spoiler", "Atenção"] },
-      { "id": "lop_king_of_puppets", "name": "King of Puppets", "name_pt": "Rei das Marionetes", "type": "Bronze", "description": "Derrote Romeo, King of Puppets.", "tip": "Boss obrigatório de história e grande muro de dificuldade da campanha. Ajuste build antes de insistir.", "is_missable": false, "is_spoiler": true, "tags": ["Boss", "História", "Spoiler", "Dificuldade"] },
-      { "id": "lop_the_champion_of_evolution", "name": "The Champion of Evolution", "name_pt": "O Campeão da Evolução", "type": "Bronze", "description": "Derrote Champion Victor.", "tip": "Boss obrigatório do Grand Exhibition. Depois dele, questlines de NPC ficam mais sensíveis.", "is_missable": false, "is_spoiler": true, "tags": ["Boss", "História", "Spoiler", "Atenção"] },
-      { "id": "lop_puppet_devouring_green_monster", "name": "Puppet-Devouring Green Monster", "name_pt": "Monstro Verde Devorador de Marionetes", "type": "Bronze", "description": "Derrote Puppet-Devouring Green Monster.", "tip": "Boss obrigatório de Barren Swamp. Prepare-se para duas fases e status.", "is_missable": false, "is_spoiler": true, "tags": ["Boss", "História", "Spoiler"] },
-      { "id": "lop_corrupted_parade_master", "name": "Corrupted Parade Master", "name_pt": "Mestre do Desfile Corrompido", "type": "Bronze", "description": "Derrote Corrupted Parade Master.", "tip": "Boss obrigatório de retorno a Krat. Não é perdível.", "is_missable": false, "is_spoiler": true, "tags": ["Boss", "História", "Spoiler"] },
-      { "id": "lop_revenge_of_black", "name": "Revenge of Black", "name_pt": "Vingança Negra", "type": "Bronze", "description": "Derrote a Black Rabbit Brotherhood.", "tip": "Boss obrigatório em Relic of Trismegistus. Após essa parte, Alidoro/Eugenie ficam críticos.", "is_missable": false, "is_spoiler": true, "tags": ["Boss", "História", "Spoiler"] },
-      { "id": "lop_the_complete_one", "name": "The Complete One", "name_pt": "O Completo", "type": "Bronze", "description": "Derrote Laxasia, a Completa, em Arche Abbey.", "tip": "Boss obrigatório em Arche Abbey. Antes de avançar para a reta final, revise Sophia, Records e histórias de NPC.", "is_missable": false, "is_spoiler": true, "tags": ["Boss", "História", "Spoiler", "Dificuldade"] },
-      { "id": "lop_the_awakened_god", "name": "The Awakened God", "name_pt": "O Deus Desperto", "type": "Bronze", "description": "Derrote Awakened God Simon Manus.", "tip": "Boss obrigatório de fim de jogo. Depois dele, as escolhas finais definem endings e boss opcional.", "is_missable": false, "is_spoiler": true, "tags": ["Boss", "História", "Spoiler", "Atenção"] },
-      { "id": "lop_bear_gold_coin_fruit", "name": "Bear Gold Coin Fruit", "name_pt": "Fruta de Moeda de Ouro", "type": "Bronze", "description": "Colha Gold Coin Fruit.", "tip": "Desbloqueia pela história ao acessar a Gold Coin Tree. Use frutos com cuidado em quests.", "is_missable": false, "is_spoiler": true, "tags": ["História", "Sistema", "Spoiler"] },
+      { "id": "lop_parade_master", "name": "Parade Master", "name_pt": "Mestre do Desfile", "type": "Bronze", "description": "Derrote Parade Master.", "tip": "Chefe obrigatório inicial. Não é perdível.", "is_missable": false, "is_spoiler": true, "tags": ["Chefe", "História", "Spoiler"] },
+      { "id": "lop_scrapped_watchman", "name": "Scrapped Watchman", "name_pt": "Vigia Sucateado", "type": "Bronze", "description": "Derrote Scrapped Watchman.", "tip": "Chefe obrigatório de história em Krat City Hall. Treine Perfect Guard e uso de Specter se precisar.", "is_missable": false, "is_spoiler": true, "tags": ["Chefe", "História", "Spoiler"] },
+      { "id": "lop_kings_flame", "name": "King's Flame", "name_pt": "Chama do Rei", "type": "Bronze", "description": "Derrote King's Flame, Fuoco.", "tip": "Chefe obrigatório de Venigni Works. Não marque como perdível; ele faz parte da história.", "is_missable": false, "is_spoiler": true, "tags": ["Chefe", "História", "Spoiler"] },
+      { "id": "lop_fallen_archbishop", "name": "Fallen Archbishop", "name_pt": "Arcebispo Caído", "type": "Bronze", "description": "Derrote Fallen Archbishop Andreus.", "tip": "Chefe obrigatório da Catedral. Prepare cura de status e aprenda a segunda fase.", "is_missable": false, "is_spoiler": true, "tags": ["Chefe", "História", "Spoiler"] },
+      { "id": "lop_the_delayed_match", "name": "The Delayed Match", "name_pt": "O Combate Adiado", "type": "Bronze", "description": "Derrote o Eldest of the Black Rabbit Brotherhood.", "tip": "Chefe obrigatório de Malum District. Controle inimigos adicionais e foque janelas seguras.", "is_missable": false, "is_spoiler": true, "tags": ["Chefe", "História", "Spoiler", "Atenção"] },
+      { "id": "lop_king_of_puppets", "name": "King of Puppets", "name_pt": "Rei das Marionetes", "type": "Bronze", "description": "Derrote Romeo, King of Puppets.", "tip": "Chefe obrigatório de história e grande muro de dificuldade da campanha. Ajuste build antes de insistir.", "is_missable": false, "is_spoiler": true, "tags": ["Chefe", "História", "Spoiler", "Dificuldade"] },
+      { "id": "lop_the_champion_of_evolution", "name": "The Champion of Evolution", "name_pt": "O Campeão da Evolução", "type": "Bronze", "description": "Derrote Champion Victor.", "tip": "Chefe obrigatório do Grand Exhibition. Depois dele, histórias de NPC ficam mais sensíveis.", "is_missable": false, "is_spoiler": true, "tags": ["Chefe", "História", "Spoiler", "Atenção"] },
+      { "id": "lop_puppet_devouring_green_monster", "name": "Puppet-Devouring Green Monster", "name_pt": "Monstro Verde Devorador de Marionetes", "type": "Bronze", "description": "Derrote Puppet-Devouring Green Monster.", "tip": "Chefe obrigatório de Barren Swamp. Prepare-se para duas fases e status.", "is_missable": false, "is_spoiler": true, "tags": ["Chefe", "História", "Spoiler"] },
+      { "id": "lop_corrupted_parade_master", "name": "Corrupted Parade Master", "name_pt": "Mestre do Desfile Corrompido", "type": "Bronze", "description": "Derrote Corrupted Parade Master.", "tip": "Chefe obrigatório de retorno a Krat. Não é perdível.", "is_missable": false, "is_spoiler": true, "tags": ["Chefe", "História", "Spoiler"] },
+      { "id": "lop_revenge_of_black", "name": "Revenge of Black", "name_pt": "Vingança Negra", "type": "Bronze", "description": "Derrote a Black Rabbit Brotherhood.", "tip": "Chefe obrigatório em Relic of Trismegistus. Após essa parte, Alidoro/Eugenie ficam críticos.", "is_missable": false, "is_spoiler": true, "tags": ["Chefe", "História", "Spoiler"] },
+      { "id": "lop_the_complete_one", "name": "The Complete One", "name_pt": "O Completo", "type": "Bronze", "description": "Derrote Laxasia, a Completa, em Arche Abbey.", "tip": "Chefe obrigatório em Arche Abbey. Antes de avançar para a reta final, revise Sophia, Records e histórias de NPC.", "is_missable": false, "is_spoiler": true, "tags": ["Chefe", "História", "Spoiler", "Dificuldade"] },
+      { "id": "lop_the_awakened_god", "name": "The Awakened God", "name_pt": "O Deus Desperto", "type": "Bronze", "description": "Derrote Awakened God Simon Manus.", "tip": "Chefe obrigatório de fim de jogo. Depois dele, as escolhas finais definem finais e chefe opcional.", "is_missable": false, "is_spoiler": true, "tags": ["Chefe", "História", "Spoiler", "Atenção"] },
+      { "id": "lop_bear_gold_coin_fruit", "name": "Bear Gold Coin Fruit", "name_pt": "Fruta de Moeda de Ouro", "type": "Bronze", "description": "Colha Gold Coin Fruit.", "tip": "Desbloqueia pela história ao acessar a Gold Coin Tree. Use frutos com cuidado em missões de NPC.", "is_missable": false, "is_spoiler": true, "tags": ["História", "Sistema", "Spoiler"] },
       { "id": "lop_from_across_the_rift", "name": "From Across the Rift", "name_pt": "Do Outro Lado da Fenda", "type": "Bronze", "description": "Derrote todos os tipos de Dimensional Butterflies.", "tip": "Mate os quatro tipos de Dimensional Butterflies. Normalmente fecha ao explorar até Lorenzini Arcade.", "is_missable": false, "is_spoiler": false, "tags": ["Coletável", "Exploração", "Cleanup"] },
-      { "id": "lop_the_story_of_the_prince", "name": "The Story of the Prince", "name_pt": "A História do Príncipe", "type": "Bronze", "description": "Descubra a última história de Venigni.", "tip": "Quest ligada a Venigni, Arlecchino, riddles e Trinity Sanctum final. Resolva antes de Simon Manus.", "is_missable": true, "is_spoiler": true, "tags": ["NPC", "Venigni", "Arlecchino", "Trinity Sanctum", "Perdível", "Spoiler"] },
-      { "id": "lop_the_story_of_the_refined_old_lady", "name": "The Story of the Refined Old Lady", "name_pt": "A História da Senhora Refinada", "type": "Bronze", "description": "Descubra a última história de Antonia.", "tip": "Depende da cura de Antonia e de falar com Polendina no momento certo. Também afeta Record.", "is_missable": true, "is_spoiler": true, "tags": ["NPC", "Antonia", "Polendina", "Perdível", "Spoiler"] },
-      { "id": "lop_the_story_of_the_one_who_dreamed", "name": "The Story of the One Who Dreamed", "name_pt": "A História de Quem Sonhou", "type": "Bronze", "description": "Descubra a última história de Simon Manus.", "tip": "Troféu de história ligado ao fim de Arche Abbey e Simon Manus.", "is_missable": false, "is_spoiler": true, "tags": ["História", "Boss", "Spoiler"] },
+      { "id": "lop_the_story_of_the_prince", "name": "The Story of the Prince", "name_pt": "A História do Príncipe", "type": "Bronze", "description": "Descubra a última história de Venigni.", "tip": "História ligada a Venigni, Arlecchino, enigmas e Trinity Sanctum final. Resolva antes de Simon Manus.", "is_missable": true, "is_spoiler": true, "tags": ["NPC", "Venigni", "Arlecchino", "Trinity Sanctum", "Perdível", "Spoiler"] },
+      { "id": "lop_the_story_of_the_refined_old_lady", "name": "The Story of the Refined Old Lady", "name_pt": "A História da Senhora Refinada", "type": "Bronze", "description": "Descubra a última história de Antonia.", "tip": "Depende da cura de Antonia, de falar com Polendina no momento certo e de acompanhar o progresso da história.", "is_missable": true, "is_spoiler": true, "tags": ["NPC", "Antonia", "Polendina", "Perdível", "Spoiler"] },
+      { "id": "lop_the_story_of_the_one_who_dreamed", "name": "The Story of the One Who Dreamed", "name_pt": "A História de Quem Sonhou", "type": "Bronze", "description": "Descubra a última história de Simon Manus.", "tip": "Troféu de história ligado ao fim de Arche Abbey e Simon Manus.", "is_missable": false, "is_spoiler": true, "tags": ["História", "Chefe", "Spoiler"] },
       { "id": "lop_the_story_of_one_father", "name": "The Story of One Father", "name_pt": "A História de Um Pai", "type": "Bronze", "description": "Descubra a última história de Geppetto.", "tip": "Exige o final Real Boy e ler a carta em Hotel Krat depois dos créditos sem iniciar NG+.", "is_missable": true, "is_spoiler": true, "tags": ["NPC", "Geppetto", "Pós-final", "Perdível", "Spoiler"] },
       { "id": "lop_the_story_of_a_stranger_girl", "name": "The Story of a Stranger Girl", "name_pt": "A História de uma Garota Estranha", "type": "Bronze", "description": "Descubra a última história de Eugenie.", "tip": "Depende de Alidoro, Cryptic Vessel, Venigni e escolha de diálogo de Eugenie. Uma segunda run ajuda nos Records.", "is_missable": true, "is_spoiler": true, "tags": ["NPC", "Eugenie", "Alidoro", "Perdível", "Spoiler", "Risco de run"] },
       { "id": "lop_the_story_of_the_blue_butterfly", "name": "The Story of the Blue Butterfly", "name_pt": "A História da Borboleta Azul", "type": "Bronze", "description": "Descubra a última história de Sophia.", "tip": "Exige rota Rise of P, escolha de Sophia, recusar Geppetto e ler a carta depois dos créditos.", "is_missable": true, "is_spoiler": true, "tags": ["NPC", "Sophia", "Final", "Perdível", "Spoiler"] }
@@ -42143,8 +42145,8 @@ if (sekiroGuide) {
     estimatedTime: '50-70 horas',
     runs: '2 com backup de save; 3-4 sem backup',
     hasMissables: true,
-    missableCount: 16,
-    missable_count: 16,
+    missableCount: 15,
+    missable_count: 15,
     hasOnline: false,
     hasMandatoryOnline: false,
     hasMandatoryCoop: false,
@@ -42159,7 +42161,7 @@ if (sekiroGuide) {
     platinumType: 'Lista base PS4: 34 troféus',
     missable: 'A platina base é single-player, sem online, sem coop e sem DLC obrigatória, mas exige planejamento por causa da escolha com Owl, dos finais, de bosses opcionais, de Prayer Beads, Gourd Seeds, Prosthetic Tools, Lapis Lazuli e do grind de XP para todas as skills. Com backup save, é possível reduzir runs; sem backup, planeje várias passagens.',
     runs_summary: 'A rota mais segura usa 2 runs com backup de save. Sem backup, planeje 3-4 runs para cobrir Shura, finais e cleanup de rota.',
-    missable_summary: 'Os riscos principais estão em finais, escolha com Owl, Shura, Fountainhead Palace, Great Serpent, Prayer Beads, Lapis Lazuli, Great Colored Carp e bosses opcionais.',
+    missable_summary: 'Os riscos principais estão em finais, escolha com Owl, Shura, Fountainhead Palace, Prayer Beads, Lapis Lazuli, Great Colored Carp e bosses opcionais. Great Serpent fica como evento opcional de exploração/cleanup, não como perdível permanente.',
     online_summary: 'Não há exigência online para a platina base. O jogo é single-player e não usa coop obrigatório.',
     grind_summary: 'O peso está em bosses, finais, upgrades de Prosthetic Tools, Prayer Beads, Lapis Lazuli e farm de XP para todas as skills.',
     dlc_scope: 'Gauntlets of Strength, Reflections of Strength, skins de update e conteúdo extra ficam fora da platina base.',
@@ -42175,12 +42177,12 @@ if (sekiroGuide) {
       'A rota mais segura é fazer uma primeira run completa pela rota de Kuro, preparar Purification e Dragon’s Homecoming/Return antes da decisão final, usar backup save se quiser reduzir runs, deixar Shura para NG+ e finalizar o grind de skills, Lapis Lazuli e upgrades no cleanup final. O principal cuidado é não escolher Shura cedo demais nem iniciar NG+ antes de revisar Fountainhead Palace, Demon of Hatred, Great Colored Carp, Prayer Beads, Gourd Seeds, Lapis Lazuli e chefes pendentes.'
     ],
     editorial_status: 'published',
-    coverage_level: 'strong',
-    is_verified: false,
-    verification_status: 'needs_review',
-    editorial_review_status: 'in_review',
+    coverage_level: 'complete',
+    is_verified: true,
+    verification_status: 'verified',
+    editorial_review_status: 'verified',
     editorialStatus: 'verified',
-    verification_note: 'Lista base PS4 com 34 troféus revisada: resumo da platina, roadmap estruturado, dicas críticas, FAQ, flags offline/sem coop/sem DLC e contagem de 16 riscos/perdíveis conferidos.',
+    verification_note: 'Guia verificado: lista base PS4 com 34 troféus, 15 riscos/perdíveis conferidos, Great Serpent tratado como cleanup opcional, roadmap estruturado, FAQ, flags offline/sem coop/sem DLC e escopo Gauntlets/Reflections fora da platina base.',
     editorial_notes: 'Escopo confirmado: lista base PS4, 34 troféus, finais, Shura, Purification, Return/Dragon\'s Homecoming, NG+, backup save, sem online/co-op e Gauntlets/Reflections fora da platina base.',
     methodology: 'Este guia cobre os 34 troféus da lista base. Gauntlets of Strength, Reflections of Strength, skins e conteúdo de update ficam fora da platina. A rota considera backup save como ferramenta opcional para reduzir runs entre finais.',
     quality_warnings: [],
@@ -42356,8 +42358,7 @@ if (sekiroGuide) {
     'sekiro_gracious_gift_of_tears',
     'sekiro_isshin_ashina',
     'sekiro_demon_of_hatred',
-    'sekiro_great_colored_carp',
-    'sekiro_great_serpent'
+    'sekiro_great_colored_carp'
   ]);
 
   for (const trophy of sekiroGuide.trophies || []) {
@@ -42703,6 +42704,535 @@ if (lifeIsStrangeRemasteredGuide) {
     trophy.localizedDescription = { ...(trophy.localizedDescription || {}), ptBr: trophy.description, 'pt-BR': trophy.description };
     trophy.descriptionPtSource = 'editorial_ptbr';
     trophy.guideTip = trophy.tip || '';
+  }
+}
+
+const lifeIsStrangeDoubleExposureGuide = sampleGames.find(game => game.slug === 'life-is-strange-double-exposure');
+if (lifeIsStrangeDoubleExposureGuide) {
+  const lisdeTag = (id, label, tone = 'neutral') => ({ id, label, tone });
+  const lisdeEnglishDescriptions = {
+    lis_de_picture_perfect: 'Collected all trophies in Life is Strange: Double Exposure',
+    lis_de_split_decision: 'Completed Chapter 1: Still Life',
+    lis_de_a_trick_of_the_light: 'Found all photos in Chapter 1',
+    lis_de_bullet_proof: 'Completed Chapter 2: Penumbra',
+    lis_de_further_developments: 'Found all photos in Chapter 2',
+    lis_de_face_to_facade: 'Completed Chapter 3: Spin',
+    lis_de_selfie_care: 'Found all photos in Chapter 3',
+    lis_de_fade_to_white: 'Completed Chapter 4: Diptych',
+    lis_de_picture_taking: 'Found all photos in Chapter 4',
+    lis_de_tempest_fugit: 'Completed Chapter 5: Decoherence',
+    lis_de_viewfinding: 'Found all photos in Chapter 5',
+    lis_de_archival_footage: 'Found all photos in Life is Strange: Double Exposure',
+    lis_de_commencement: 'Finished Life is Strange: Double Exposure',
+    lis_de_bay_or_bae: 'Played through Life is Strange: Double Exposure with both outcomes from Life is Strange',
+    lis_de_art_restoration: 'Fixed all the paintings',
+    lis_de_loyal_flush: 'Helped timid guy get to the bathroom',
+    lis_de_home_sweet_home: 'Helped Moses finish the gingerbread house',
+    lis_de_the_mail_gaze: 'Retrieved the package for Vinh',
+    lis_de_frame_fatale: 'Took all possible photos',
+    lis_de_a_nice_girl_who_runs_a_bar: 'Romanced only Amanda',
+    lis_de_only_eyes_for_the_bad_boy: 'Romanced only Vinh',
+    lis_de_romantically_disentangled: 'Romanced neither Amanda nor Vinh',
+    lis_de_its_complicated: 'Romanced both Amanda and Vinh',
+    lis_de_be_great_do_crime: 'Committed the crimes',
+    lis_de_clutterbug: 'Found everything to decorate Hellerton with',
+    lis_de_thirst_trip: 'Watered both plants',
+    lis_de_page_turner: 'Read all staff books',
+    lis_de_patronizing_the_good_kind: 'Interacted with everyone\'s project',
+    lis_de_clue_me_in: 'Collected all possible clues for the evidence box',
+    lis_de_thinking_outside_the_box: 'Solved the puzzle box',
+    lis_de_favor_saver: 'Never cashed in your favor from Vinh',
+    lis_de_putting_the_cap_in_caper: 'Successfully slipped Safi the bottle cap',
+    lis_de_platypus_genius: 'Read all messages from Platypus Facts'
+  };
+  const lisdeTrophyEdits = {
+    lis_de_picture_perfect: {
+      name_pt: 'Retrato perfeito',
+      description: 'Desbloqueie todos os outros troféus da lista base de Life is Strange: Double Exposure.',
+      tip: 'Conclua os 32 troféus restantes da lista base. Conteúdo extra fica fora da rota da platina.',
+      tags: [lisdeTag('platinum', 'Platina')]
+    },
+    lis_de_split_decision: {
+      name_pt: 'Decisão dividida',
+      description: 'Complete o Capítulo 1: Still Life.',
+      tip: 'Troféu automático de história. Use este capítulo para definir o primeiro destino Bay/Bae e começar o checklist de cenas.',
+      tags: [lisdeTag('story', 'História', 'partial'), lisdeTag('chapter', 'Capítulo', 'partial')],
+      is_spoiler: true
+    },
+    lis_de_a_trick_of_the_light: {
+      name_pt: 'Um truque da luz',
+      description: 'Encontre todas as fotos do Capítulo 1.',
+      tip: 'Use checklist de Polaroids no Capítulo 1. Se faltar alguma, volte por Chapter Select e prefira Explore Scene.',
+      tags: [lisdeTag('collectible', 'Coletável', 'partial'), lisdeTag('cleanup', 'Cleanup')],
+      riskType: 'cleanup'
+    },
+    lis_de_bullet_proof: {
+      name_pt: 'À prova de bala',
+      description: 'Complete o Capítulo 2: Penumbra.',
+      tip: 'Troféu automático de história. Aproveite o capítulo para resolver escolhas de cena como Favor Saver e Be Great, Do Crime!.',
+      tags: [lisdeTag('story', 'História', 'partial'), lisdeTag('chapter', 'Capítulo', 'partial')],
+      is_spoiler: true
+    },
+    lis_de_further_developments: {
+      name_pt: 'Revelações adicionais',
+      description: 'Encontre todas as fotos do Capítulo 2.',
+      tip: 'Confira as Polaroids do Capítulo 2 antes de encerrar as cenas principais. Explore Scene ajuda no cleanup sem sobrescrever progresso.',
+      tags: [lisdeTag('collectible', 'Coletável', 'partial'), lisdeTag('cleanup', 'Cleanup')],
+      riskType: 'cleanup'
+    },
+    lis_de_face_to_facade: {
+      name: 'Face to Façade',
+      name_pt: 'Face à fachada',
+      description: 'Complete o Capítulo 3: Spin.',
+      tip: 'Troféu automático de história. Este capítulo concentra escolhas de romance com Amanda e Vinh.',
+      tags: [lisdeTag('story', 'História', 'partial'), lisdeTag('chapter', 'Capítulo', 'partial')],
+      is_spoiler: true
+    },
+    lis_de_selfie_care: {
+      name_pt: 'Cuidado com selfie',
+      description: 'Encontre todas as fotos do Capítulo 3.',
+      tip: 'Revise as fotos do Capítulo 3 com checklist. Se usar Chapter Select, escolha Explore Scene para cleanup seguro.',
+      tags: [lisdeTag('collectible', 'Coletável', 'partial'), lisdeTag('cleanup', 'Cleanup')],
+      riskType: 'cleanup'
+    },
+    lis_de_fade_to_white: {
+      name_pt: 'Fade para branco',
+      description: 'Complete o Capítulo 4: Diptych.',
+      tip: 'Troféu automático de história. Antes de avançar, confira pendências de festa, Moses e interações opcionais.',
+      tags: [lisdeTag('story', 'História', 'partial'), lisdeTag('chapter', 'Capítulo', 'partial')],
+      is_spoiler: true
+    },
+    lis_de_picture_taking: {
+      name_pt: 'Tirando fotos',
+      description: 'Encontre todas as fotos do Capítulo 4.',
+      tip: 'Acompanhe as fotos do Capítulo 4 durante as cenas de festa e exploração. Pendências podem ser limpas por Explore Scene.',
+      tags: [lisdeTag('collectible', 'Coletável', 'partial'), lisdeTag('cleanup', 'Cleanup')],
+      riskType: 'cleanup'
+    },
+    lis_de_tempest_fugit: {
+      name_pt: 'Tempest Fugit',
+      description: 'Complete o Capítulo 5: Decoherence.',
+      tip: 'Troféu automático de história ao concluir o último capítulo. Revise fotos e Snapshots antes do cleanup final.',
+      tags: [lisdeTag('story', 'História', 'partial'), lisdeTag('chapter', 'Capítulo', 'partial')],
+      is_spoiler: true
+    },
+    lis_de_viewfinding: {
+      name_pt: 'Enquadramento',
+      description: 'Encontre todas as fotos do Capítulo 5.',
+      tip: 'Feche o checklist de fotos do Capítulo 5 antes de considerar a campanha encerrada; se faltar algo, volte por Explore Scene.',
+      tags: [lisdeTag('collectible', 'Coletável', 'partial'), lisdeTag('cleanup', 'Cleanup'), lisdeTag('spoiler', 'Spoiler', 'spoiler')],
+      riskType: 'cleanup',
+      is_spoiler: true
+    },
+    lis_de_archival_footage: {
+      name_pt: 'Imagens de arquivo',
+      description: 'Encontre todas as fotos de Life is Strange: Double Exposure.',
+      tip: 'Requer todas as fotos/Polaroids dos 5 capítulos. Use Chapter Select com Explore Scene para buscar apenas as cenas pendentes.',
+      tags: [lisdeTag('collectible', 'Coletável', 'partial'), lisdeTag('cleanup', 'Cleanup')],
+      riskType: 'cleanup'
+    },
+    lis_de_commencement: {
+      name_pt: 'Conclusão',
+      description: 'Termine Life is Strange: Double Exposure.',
+      tip: 'Troféu automático por concluir a campanha principal da lista base.',
+      tags: [lisdeTag('story', 'História', 'partial'), lisdeTag('chapter', 'Capítulo', 'partial')],
+      is_spoiler: true
+    },
+    lis_de_bay_or_bae: {
+      name_pt: 'Bay ou Bae',
+      description: 'Complete Life is Strange: Double Exposure com os dois destinos de Life is Strange.',
+      tip: 'Exige duas runs: uma escolhendo Bay e outra escolhendo Bae quando o jogo perguntar sobre Chloe. Planeje a segunda rota desde o início.',
+      tags: [lisdeTag('route', 'Rota', 'warning'), lisdeTag('choice', 'Escolha', 'warning'), lisdeTag('run', 'Risco de run', 'warning'), lisdeTag('spoiler', 'Spoiler', 'spoiler')],
+      riskType: 'route',
+      is_spoiler: true
+    },
+    lis_de_art_restoration: {
+      name_pt: 'Restauração de arte',
+      description: 'Corrija todas as pinturas.',
+      tip: 'No Capítulo 1, subcapítulo A Drink to Remember, corrija as três pinturas do Turtle Bar antes de sair da cena.',
+      tags: [lisdeTag('scene-risk', 'Risco de cena', 'warning'), lisdeTag('cleanup', 'Cleanup')],
+      riskType: 'cleanup'
+    },
+    lis_de_loyal_flush: {
+      name_pt: 'Descarga fiel',
+      description: 'Ajude o rapaz tímido a chegar ao banheiro.',
+      tip: 'No Capítulo 2, Table for Three, resolva a chave do banheiro alternando timelines antes de avançar a história.',
+      tags: [lisdeTag('scene-risk', 'Risco de cena', 'warning'), lisdeTag('cleanup', 'Cleanup')],
+      riskType: 'cleanup'
+    },
+    lis_de_home_sweet_home: {
+      name_pt: 'Lar doce lar',
+      description: 'Ajude Moses a terminar a casa de gengibre.',
+      tip: 'No Capítulo 4, No Party Like a Krampus Party, peça a chaminé quebrada para Safi e entregue a Moses antes de seguir.',
+      tags: [lisdeTag('scene-risk', 'Risco de cena', 'warning'), lisdeTag('cleanup', 'Cleanup')],
+      riskType: 'cleanup'
+    },
+    lis_de_the_mail_gaze: {
+      name_pt: 'O olhar do correio',
+      description: 'Recupere o pacote de Vinh.',
+      tip: 'No Capítulo 1, Back to School Blues, pegue o pacote na sala de correspondência e entregue a Vinh. Isso prepara Favor Saver.',
+      tags: [lisdeTag('scene-risk', 'Risco de cena', 'warning'), lisdeTag('choice', 'Escolha', 'warning'), lisdeTag('cleanup', 'Cleanup')],
+      riskType: 'cleanup'
+    },
+    lis_de_frame_fatale: {
+      name_pt: 'Frame fatal',
+      description: 'Tire todas as fotos possíveis.',
+      tip: 'Acompanhe todos os Snapshots possíveis por rota/save. Explore Scene pode ajudar no cleanup, mas seguir checklist reduz retrabalho.',
+      tags: [lisdeTag('collectible', 'Coletável', 'partial'), lisdeTag('snapshot', 'Snapshots', 'partial'), lisdeTag('cleanup', 'Cleanup'), lisdeTag('run', 'Risco de run', 'warning')],
+      riskType: 'cleanup'
+    },
+    lis_de_a_nice_girl_who_runs_a_bar: {
+      name_pt: 'Uma garota legal que administra um bar',
+      description: 'Tenha romance apenas com Amanda.',
+      tip: 'Planeje a combinação de romance no Capítulo 3: escolha Amanda e não avance romance com Vinh nessa variação.',
+      tags: [lisdeTag('romance', 'Romance', 'warning'), lisdeTag('choice', 'Escolha', 'warning'), lisdeTag('cleanup', 'Cleanup')],
+      riskType: 'route'
+    },
+    lis_de_only_eyes_for_the_bad_boy: {
+      name_pt: 'Só olhos para o bad boy',
+      description: 'Tenha romance apenas com Vinh.',
+      tip: 'No Capítulo 3, escolha Vinh e não avance romance com Amanda nessa variação. Use Chapter Select se precisar repetir combinações.',
+      tags: [lisdeTag('romance', 'Romance', 'warning'), lisdeTag('choice', 'Escolha', 'warning'), lisdeTag('cleanup', 'Cleanup')],
+      riskType: 'route'
+    },
+    lis_de_romantically_disentangled: {
+      name_pt: 'Romanticamente desembaraçada',
+      description: 'Não tenha romance com Amanda nem com Vinh.',
+      tip: 'Evite as opções de romance com Amanda e Vinh no Capítulo 3. É uma das quatro combinações possíveis.',
+      tags: [lisdeTag('romance', 'Romance', 'warning'), lisdeTag('choice', 'Escolha', 'warning'), lisdeTag('cleanup', 'Cleanup')],
+      riskType: 'route'
+    },
+    lis_de_its_complicated: {
+      name: 'It’s Complicated',
+      name_pt: 'É complicado',
+      description: 'Tenha romance com Amanda e Vinh.',
+      tip: 'No Capítulo 3, avance romance com Amanda e Vinh na mesma rota. As quatro variações podem exigir Chapter Select ou repetição de cena.',
+      tags: [lisdeTag('romance', 'Romance', 'warning'), lisdeTag('choice', 'Escolha', 'warning'), lisdeTag('cleanup', 'Cleanup')],
+      riskType: 'route'
+    },
+    lis_de_be_great_do_crime: {
+      name_pt: 'Seja grande, cometa crimes!',
+      description: 'Cometa os crimes.',
+      tip: 'No Capítulo 2, aceite a proposta de Alderman em Avoiding Detection e depois escolha não cooperar na sequência com Moses em Photo Finished.',
+      tags: [lisdeTag('choice', 'Escolha', 'warning'), lisdeTag('scene-risk', 'Risco de cena', 'warning'), lisdeTag('spoiler', 'Spoiler', 'spoiler')],
+      riskType: 'route',
+      is_spoiler: true
+    },
+    lis_de_clutterbug: {
+      name_pt: 'Bagunceira',
+      description: 'Encontre tudo para decorar Hellerton.',
+      tip: 'Colete as decorações de Hellerton ao longo dos capítulos. Use checklist, pois são interações opcionais de cena.',
+      tags: [lisdeTag('collectible', 'Coletável', 'partial'), lisdeTag('cleanup', 'Cleanup')],
+      riskType: 'cleanup'
+    },
+    lis_de_thirst_trip: {
+      name_pt: 'Viagem de sede',
+      description: 'Regue as duas plantas.',
+      tip: 'Regue a planta no escritório de Gwen no Capítulo 2 e a planta grande na casa de Max em Photo Finished.',
+      tags: [lisdeTag('scene-risk', 'Risco de cena', 'warning'), lisdeTag('cleanup', 'Cleanup')],
+      riskType: 'cleanup'
+    },
+    lis_de_page_turner: {
+      name_pt: 'Vira-páginas',
+      description: 'Leia todos os livros dos funcionários.',
+      tip: 'Confira os livros dos funcionários durante as visitas aos escritórios e salas de Caledon. Use checklist por capítulo.',
+      tags: [lisdeTag('collectible', 'Coletável', 'partial'), lisdeTag('cleanup', 'Cleanup')],
+      riskType: 'cleanup'
+    },
+    lis_de_patronizing_the_good_kind: {
+      name_pt: 'Apoiando projetos',
+      description: 'Interaja com todos os projetos.',
+      tip: 'Interaja com os projetos opcionais de Caledon quando eles aparecerem. Explore Scene ajuda a buscar interações esquecidas.',
+      tags: [lisdeTag('collectible', 'Coletável', 'partial'), lisdeTag('cleanup', 'Cleanup')],
+      riskType: 'cleanup'
+    },
+    lis_de_clue_me_in: {
+      name_pt: 'Me dê uma pista',
+      description: 'Colete todas as pistas possíveis para a caixa de evidências.',
+      tip: 'Use checklist nas cenas de investigação para não deixar pistas fora da evidence box. Algumas dependem de exploração atenta.',
+      tags: [lisdeTag('collectible', 'Coletável', 'partial'), lisdeTag('investigation', 'Investigação', 'warning'), lisdeTag('cleanup', 'Cleanup'), lisdeTag('spoiler', 'Spoiler', 'spoiler')],
+      riskType: 'cleanup',
+      is_spoiler: true
+    },
+    lis_de_thinking_outside_the_box: {
+      name_pt: 'Pensando fora da caixa',
+      description: 'Resolva a puzzle box.',
+      tip: 'Pegue a puzzle box no Capítulo 1 com Reggie e conclua a solução no Capítulo 2, na casa de Max.',
+      tags: [lisdeTag('puzzle', 'Puzzle', 'partial'), lisdeTag('scene-risk', 'Risco de cena', 'warning'), lisdeTag('cleanup', 'Cleanup')],
+      riskType: 'cleanup'
+    },
+    lis_de_favor_saver: {
+      name_pt: 'Guardadora de favor',
+      description: 'Nunca use o favor de Vinh.',
+      tip: 'Depois de entregar o pacote a Vinh no Capítulo 1, escolha guardar o favor no Capítulo 2 em vez de usá-lo.',
+      tags: [lisdeTag('choice', 'Escolha', 'warning'), lisdeTag('scene-risk', 'Risco de cena', 'warning'), lisdeTag('cleanup', 'Cleanup')],
+      riskType: 'route'
+    },
+    lis_de_putting_the_cap_in_caper: {
+      name: 'Putting the “Cap” in “Caper”',
+      name_pt: 'Colocando a tampinha na travessura',
+      description: 'Consiga entregar a tampinha para Safi.',
+      tip: 'No Capítulo 1, Things Are Looking Up, coloque a tampinha no doce azedo e ofereça a Safi antes de avançar.',
+      tags: [lisdeTag('scene-risk', 'Risco de cena', 'warning'), lisdeTag('spoiler', 'Spoiler', 'spoiler'), lisdeTag('cleanup', 'Cleanup')],
+      riskType: 'cleanup',
+      is_spoiler: true
+    },
+    lis_de_platypus_genius: {
+      name_pt: 'Gênio ornitorrinco',
+      description: 'Leia todas as mensagens de Platypus Facts.',
+      tip: 'Inscreva-se no Platypus Facts e leia todas as mensagens recebidas ao longo da campanha.',
+      tags: [lisdeTag('collectible', 'Coletável', 'partial'), lisdeTag('cleanup', 'Cleanup')],
+      riskType: 'cleanup'
+    }
+  };
+
+  Object.assign(lifeIsStrangeDoubleExposureGuide, {
+    platforms: ['PS5'],
+    estimatedTime: '15-20 horas',
+    time: '15-20h',
+    time_min_hours: 15,
+    time_max_hours: 20,
+    time_sort_hours: 15,
+    time_bucket: 'short',
+    hasOnline: false,
+    hasMandatoryOnline: false,
+    onlineRequired: false,
+    hasMandatoryCoop: false,
+    coopRequired: false,
+    dlcRequired: false,
+    dlc_required: false,
+    dlcRequiredForPlatinum: false,
+    dlc_status: 'out_of_base_scope',
+    dlcGuideStatus: 'not_required',
+    extraContentStatus: 'optional',
+    hasChapterSelect: true,
+    chapterSelect: true,
+    hasMissables: false,
+    missableCount: 0,
+    missable_count: 0,
+    base_trophy_count: 33,
+    total_trophies_with_dlc: 35,
+    dlc_trophy_count: 2,
+    platinumType: 'Lista base PS5: 33 troféus + 2 DLC opcionais fora da platina',
+    missable: 'Não há troféu permanentemente perdível na lista base. Life is Strange: Double Exposure tem riscos de cena, coletáveis e escolhas específicas, mas a maioria pode ser recuperada por Chapter Select/Explore Scene.',
+    runs_summary: 'A rota segura usa duas runs: uma com o destino Bay e outra com o destino Bae de Life is Strange. Use Chapter Select/Explore Scene para cleanup de Polaroids, Snapshots e troféus de cena.',
+    missable_summary: 'Nada é permanentemente perdível na lista base: fotos, Snapshots, romance, escolhas e interações opcionais são riscos de cena/rota recuperáveis por Chapter Select/Explore Scene. Troféus de história e a platina não entram como perdíveis.',
+    online_summary: 'Não há exigência online, troféus online, coop obrigatório, multiplayer obrigatório nem PS+ para a platina da lista base.',
+    grind_summary: 'Não há grind mecânico. O trabalho está em checklist de Polaroids, Snapshots, decorações, pistas, livros, projetos, Platypus Facts, romances e duas runs para Bay or Bae.',
+    dlc_scope: 'A lista pública soma 35 troféus: 33 da lista base e 2 do DLC Exclusive Cat Content. Nothing Lasts Fur-Ever e Heavy Petting ficam fora da platina base e não tornam DLC obrigatório.',
+    difficulty_reason: 'A dificuldade é baixa, sem combate, sem troféu de dificuldade e sem execução mecânica exigente. O desafio é organização de checklist e cuidado com escolhas de cena.',
+    time_reason: 'A faixa de 15-20 horas considera uma campanha completa, uma segunda run para o outro destino Bay/Bae, leitura em ritmo normal e cleanup por Chapter Select/Explore Scene.',
+    first_run_advice: 'Faça a primeira run com checklist de cenas. Escolha um destino de Life is Strange, acompanhe Polaroids, Snapshots, decorações, pistas, livros, projetos, Platypus Facts, romance e troféus de cena.',
+    cleanup_advice: 'Depois de concluir capítulos, use Chapter Select com Explore Scene para buscar pendências. Evite Restart Scene no cleanup seguro, porque pode sobrescrever progresso posterior.',
+    before_you_start: 'A platina base é narrativa, offline, single-player e de baixa dificuldade, mas exige duas runs para Bay or Bae. Não misture Exclusive Cat Content com a platina base.',
+    best_for: 'Vale para quem quer uma platina narrativa, offline e fácil, com foco em Max, Caledon, escolhas, exploração de cenas e checklist de colecionáveis.',
+    avoid_if: 'Evite se você não quer repetir a campanha com o outro destino de Life is Strange ou acompanhar muitos coletáveis por capítulo.',
+    editorial_summary: [
+      'Life is Strange: Double Exposure é uma platina narrativa, offline e de baixa dificuldade, mas mais trabalhosa que os jogos clássicos da série por exigir duas runs para Bay or Bae e vários coletáveis/miscellaneous ligados a cenas específicas.',
+      'A lista base não exige online, coop nem DLC. O projeto mantém o checklist da platina com 33 troféus; os 2 troféus do Exclusive Cat Content ficam documentados no escopo, mas fora da lista base.',
+      'O cleanup deve ser feito por Chapter Select usando Explore Scene sempre que possível. Restart Scene pode sobrescrever progresso posterior, então não é a rota segura para limpeza de pendências.'
+    ],
+    roadmap: [
+      {
+        title: 'Faça a primeira run com checklist de cenas',
+        focus: 'Campanha e coletáveis',
+        objective: 'Concluir os Capítulos 1 a 5 acompanhando fotos/Polaroids, Snapshots e troféus de cena.',
+        actions: [
+          'Escolha um dos destinos originais de Life is Strange quando o jogo perguntar sobre Chloe.',
+          'Avance pelos capítulos Still Life, Penumbra, Spin, Diptych e Decoherence.',
+          'Use checklist para fotos/Polaroids, Snapshots, decorações, pistas, livros, projetos e interações específicas.',
+          'Resolva troféus de cena como Art Restoration, The Mail Gaze, Thinking Outside the Box, Favor Saver e outros quando aparecerem.'
+        ],
+        warning: 'Vários troféus são perdíveis dentro da cena, mas podem ser recuperados por Chapter Select/Explore Scene. Não use Restart Scene sem entender que ele pode sobrescrever progresso.',
+        result: 'Ao final da primeira run, a história estará concluída e a maior parte dos coletáveis/miscellaneous estará resolvida.'
+      },
+      {
+        title: 'Conclua a história dos 5 capítulos',
+        focus: 'História',
+        objective: 'Garantir Split Decision, Bullet, Proof, Face to Façade, Fade to White, Tempest Fugit e Commencement.',
+        actions: [
+          'Complete o Capítulo 1: Still Life.',
+          'Complete o Capítulo 2: Penumbra.',
+          'Complete o Capítulo 3: Spin.',
+          'Complete o Capítulo 4: Diptych.',
+          'Complete o Capítulo 5: Decoherence.'
+        ],
+        warning: 'Os troféus de capítulo são automáticos; não marque história como perda permanente.',
+        result: 'A campanha principal fica concluída e o Chapter Select passa a sustentar o cleanup.'
+      },
+      {
+        title: 'Use Explore Scene para cleanup seguro',
+        focus: 'Cleanup',
+        objective: 'Recuperar troféus esquecidos sem apagar a run principal.',
+        actions: [
+          'Depois de completar um capítulo, use Chapter Select para voltar a cenas específicas.',
+          'Prefira Explore Scene para buscar itens ou troféus pendentes.',
+          'Confira Polaroids, Snapshots, decorações, pistas, livros, projetos e interações por capítulo.'
+        ],
+        warning: 'Restart Scene pode sobrescrever progresso posterior. Para cleanup, Explore Scene é a opção mais segura.',
+        result: 'Os troféus de cena e coletáveis pendentes serão resolvidos sem repetir a campanha inteira.'
+      },
+      {
+        title: 'Feche Archival Footage e Frame Fatale',
+        focus: 'Fotos e Snapshots',
+        objective: 'Completar fotos/Polaroids da lista base e todos os Snapshots possíveis.',
+        actions: [
+          'Revise A Trick of the Light, Further Developments, Selfie Care, Picture Taking e Viewfinding.',
+          'Confirme Archival Footage depois de coletar todas as fotos dos 5 capítulos.',
+          'Acompanhe Frame Fatale com checklist de Snapshots possíveis por rota/save.'
+        ],
+        warning: 'Frame Fatale merece atenção de consistência no save/run. Explore Scene ajuda, mas seguir checklist evita retrabalho.',
+        result: 'Os principais coletáveis fotográficos ficam resolvidos.'
+      },
+      {
+        title: 'Resolva escolhas e romances',
+        focus: 'Amanda, Vinh e cenas específicas',
+        objective: 'Cobrir romance, escolhas de cena e troféus de rota sem confundir com online/coop.',
+        actions: [
+          'Planeje A Nice Girl Who Runs a Bar, Only Eyes for the Bad Boy, Romantically Disentangled e It’s Complicated.',
+          'Resolva Be Great, Do Crime! no Capítulo 2 seguindo as escolhas de Alderman e Moses.',
+          'Pegue o favor de Vinh em The Mail Gaze e guarde-o para Favor Saver.',
+          'Resolva Thinking Outside the Box com a puzzle box entre os Capítulos 1 e 2.'
+        ],
+        warning: 'Algumas escolhas são incompatíveis na mesma variação. Use Chapter Select ou uma segunda run quando aplicável.',
+        result: 'Romances e troféus de escolha deixam de bloquear a reta final.'
+      },
+      {
+        title: 'Faça a segunda run para Bay or Bae',
+        focus: 'Segunda run',
+        objective: 'Completar o jogo com o outro destino original de Life is Strange.',
+        actions: [
+          'Na segunda run, escolha o destino oposto ao da primeira run.',
+          'Use o destino oposto na segunda run, fazendo Bae depois de Bay ou Bay depois de Bae.',
+          'Aproveite a segunda run para pegar qualquer coletável ou troféu de cena que ainda faltar.'
+        ],
+        warning: 'Bay or Bae exige as duas variações. Chapter Select isolado pode não ser suficiente se o jogo exigir uma run completa com cada escolha.',
+        result: 'Bay or Bae fica resolvido e a platina base entra na reta final.'
+      },
+      {
+        title: 'Confira a lista base sem misturar DLC',
+        focus: 'Checklist final',
+        objective: 'Confirmar a platina base sem exigir Exclusive Cat Content.',
+        actions: [
+          'Revise os troféus de conclusão dos 5 capítulos.',
+          'Revise Polaroids, Snapshots, decorações de Hellerton, pistas, livros, projetos, Platypus Facts, romances e troféus de cena.',
+          'Confirme que Nothing Lasts Fur-Ever e Heavy Petting pertencem ao Exclusive Cat Content e não foram tratados como requisito da platina base.',
+          'Revise o total: 33 troféus na lista base e 2 troféus DLC opcionais fora da platina.'
+        ],
+        warning: '',
+        result: 'A platina deve desbloquear com a lista base concluída, sem online, coop ou DLC obrigatório.'
+      }
+    ],
+    checklist: [
+      'Completar o Capítulo 1: Still Life.',
+      'Completar o Capítulo 2: Penumbra.',
+      'Completar o Capítulo 3: Spin.',
+      'Completar o Capítulo 4: Diptych.',
+      'Completar o Capítulo 5: Decoherence.',
+      'Escolher um destino de Life is Strange na primeira run.',
+      'Escolher o destino oposto na segunda run.',
+      'Fechar Bay or Bae.',
+      'Encontrar todas as fotos/Polaroids por capítulo.',
+      'Fechar Archival Footage.',
+      'Fechar Frame Fatale.',
+      'Conferir decorações de Hellerton.',
+      'Conferir pistas da caixa de evidências.',
+      'Conferir livros dos funcionários.',
+      'Conferir projetos de Caledon.',
+      'Conferir mensagens de Platypus Facts.',
+      'Conferir troféus de romance com Amanda e Vinh.',
+      'Conferir troféus de cena/miscellaneous.',
+      'Usar Explore Scene para cleanup seguro.',
+      'Confirmar que Exclusive Cat Content não entrou como requisito da platina base.'
+    ],
+    attentionPoints: [
+      { title: 'Bay or Bae exige duas runs', detail: 'A platina base exige completar o jogo com os dois destinos originais de Life is Strange.', tags: ['Bay or Bae', 'Rota', 'Segunda run'] },
+      { title: 'Explore Scene é o cleanup seguro', detail: 'Para buscar troféus esquecidos, prefira Explore Scene. Restart Scene pode sobrescrever progresso.', tags: ['Chapter Select', 'Explore Scene', 'Cleanup'] },
+      { title: 'Troféus de cena são riscos recuperáveis', detail: 'Muitos objetivos podem ser ignorados na cena, mas podem ser recuperados por Chapter Select/Explore Scene.', tags: ['Risco de cena', 'Cleanup'] },
+      { title: 'Exclusive Cat Content fica fora da platina', detail: 'Nothing Lasts Fur-Ever e Heavy Petting são DLC/opcionais e não contam para a platina base.', tags: ['DLC fora da base', 'Exclusive Cat Content'] },
+      { title: 'Frame Fatale merece atenção', detail: 'Tirar todos os Snapshots possíveis pode exigir consistência no save/run; checklist reduz retrabalho.', tags: ['Frame Fatale', 'Snapshots'] },
+      { title: 'Amanda e Vinh têm quatro variações', detail: 'Há troféus para Amanda, Vinh, ambos e nenhum; planeje ou use Chapter Select quando aplicável.', tags: ['Romance', 'Escolha'] },
+      { title: 'Coletáveis são variados', detail: 'Além de fotos, há decorações, pistas, livros, projetos e mensagens de Platypus Facts.', tags: ['Coletáveis', 'Checklist'] },
+      { title: 'Dicas evitam spoilers fortes', detail: 'O guia orienta cena e requisito sem revelar grandes viradas narrativas.', tags: ['Narrativo', 'Spoiler leve'] },
+      { title: 'Sem online, coop ou dificuldade', detail: 'A platina é offline, single-player e não possui troféu de dificuldade.', tags: ['Offline', 'Sem coop'] },
+      { title: 'Guias públicos podem misturar DLC', detail: 'Algumas listas mostram 35 troféus totais, mas a platina base não exige os 2 troféus do Exclusive Cat Content.', tags: ['35 total', '33 base'] }
+    ],
+    faq: [
+      { question: 'Life is Strange: Double Exposure tem troféus online?', answer: 'Não. A platina base é totalmente offline e single-player.' },
+      { question: 'Precisa de coop para platinar?', answer: 'Não. Não há requisito de coop.' },
+      { question: 'DLC é necessária para a platina?', answer: 'Não. Os troféus do Exclusive Cat Content são DLC/opcionais e não entram como requisito da platina base.' },
+      { question: 'Quantos troféus contam para a platina base?', answer: 'A lista pública mostra 35 troféus totais, mas a platina base separa 33 troféus do jogo base e 2 troféus do DLC Exclusive Cat Content. Para a platina base, não trate os troféus do DLC como obrigatórios.' },
+      { question: 'Life is Strange: Double Exposure tem perdíveis?', answer: 'Não há perdível permanente tratado como bloqueio da platina base. Há vários riscos de cena, coletáveis e escolhas específicas, mas muitos podem ser recuperados por Chapter Select/Explore Scene.' },
+      { question: 'Precisa jogar duas vezes?', answer: 'Sim. Bay or Bae exige completar o jogo com os dois destinos originais de Life is Strange, então planeje duas runs ou uma rota equivalente validada pelo save.' },
+      { question: 'Chapter Select resolve troféus esquecidos?', answer: 'Sim, para muitos troféus. Use Explore Scene para cleanup seguro. Evite Restart Scene sem necessidade, porque pode sobrescrever progresso posterior.' },
+      { question: 'Existe troféu de dificuldade?', answer: 'Não. O jogo não tem troféu de dificuldade.' },
+      { question: 'Quanto tempo leva para platinar?', answer: 'A estimativa segura é 15-20 horas, dependendo do ritmo de leitura, checklist e retrabalho com Bay or Bae e coletáveis.' },
+      { question: 'Qual é a dificuldade da platina?', answer: 'A dificuldade é baixa, cerca de 2/10. O desafio principal é organização de checklist, não execução mecânica.' },
+      { question: 'O que mais causa retrabalho?', answer: 'Bay or Bae, Frame Fatale, romance com Amanda/Vinh, escolhas de cena, Snapshots, Polaroids, decorações, pistas, livros, projetos e mensagens de Platypus Facts.' },
+      { question: 'Preciso comprar o Exclusive Cat Content para platinar?', answer: 'Não. Nothing Lasts Fur-Ever e Heavy Petting são troféus DLC/opcionais e não entram como requisito da platina base no PlayStation.' }
+    ],
+    quickDecision: {
+      summary: 'Vale platinar Life is Strange: Double Exposure se você quer uma platina narrativa, offline e de baixa dificuldade, mas com bastante checklist. O jogo exige Bay or Bae, Polaroids, Snapshots, decorações, pistas, livros, projetos, romance e troféus de cena. O cleanup é administrável por Chapter Select/Explore Scene, e o Exclusive Cat Content fica fora da platina base.',
+      recommendation: 'Vale platinar se você aceita repetir a campanha com o outro destino de Life is Strange e acompanhar coletáveis por capítulo. Evite apenas se não quer fazer segunda run ou revisar cenas com checklist.',
+      firstAction: 'Comece a primeira run escolhendo um destino Bay/Bae e mantendo checklist de cenas aberto.',
+      risk: 'O maior retrabalho vem de Bay or Bae, Frame Fatale, romances Amanda/Vinh e uso errado de Restart Scene no cleanup.'
+    },
+    seo: {
+      title: 'Life is Strange: Double Exposure: guia de platina, troféus e roadmap | AtlasAchievement',
+      description: 'Guia de platina de Life is Strange: Double Exposure com roadmap, troféus, Bay or Bae, Polaroids, Snapshots, Chapter Select, DLC fora da platina, flags e checklist da lista base.',
+      keywords: 'Life is Strange Double Exposure guia de platina, troféus Life is Strange Double Exposure, roadmap Life is Strange Double Exposure, Life is Strange Double Exposure Bay or Bae, Life is Strange Double Exposure Polaroids, Life is Strange Double Exposure Snapshots, Life is Strange Double Exposure Frame Fatale, Life is Strange Double Exposure Chapter Select, Life is Strange Double Exposure Explore Scene, Life is Strange Double Exposure Exclusive Cat Content, Life is Strange Double Exposure DLC fora da platina, Life is Strange Double Exposure sem online, Life is Strange Double Exposure sem coop, Life is Strange Double Exposure platina fácil',
+      ogTitle: 'Life is Strange: Double Exposure — guia de platina e troféus | AtlasAchievement',
+      ogDescription: 'Roadmap da platina base de Life is Strange: Double Exposure com 33 troféus, Bay or Bae, Chapter Select e Exclusive Cat Content fora da platina.'
+    },
+    tags: ['Life is Strange', 'Double Exposure', 'PS5', 'Platina', 'Narrativo', 'Single-player', 'Offline', 'Chapter Select', 'Bay or Bae', 'Sem online', 'Sem coop', 'DLC fora da platina base'],
+    editorial_status: 'published',
+    coverage_level: 'strong',
+    is_verified: true,
+    verification_status: 'verified',
+    editorial_review_status: 'verified',
+    verification_note: 'Guia verificado para a lista base PS5: 33 troféus da platina, 2 troféus do Exclusive Cat Content fora da base, flags offline/sem coop/sem DLC, roadmap estruturado, FAQ, checklist, SEO, atenção editorial e descrições PT-BR.',
+    editorial_notes: 'Fontes públicas conferidas para lista base, Bay or Bae, Chapter Select/Explore Scene, Restart Scene e Exclusive Cat Content. Decisão editorial: manter apenas 33 troféus no checklist da platina base.',
+    reviewed_by: 'Codex',
+    last_reviewed_at: '2026-06-10',
+    optionalDlcTrophies: [
+      { id: 'lis_de_dlc_nothing_lasts_fur_ever', name: 'Nothing Lasts Fur-Ever', type: 'Prata', description: 'Found the cat\'s owner', scope: 'Exclusive Cat Content', requiredForPlatinum: false },
+      { id: 'lis_de_dlc_heavy_petting', name: 'Heavy Petting', type: 'Bronze', description: 'Petted the cat', scope: 'Exclusive Cat Content', requiredForPlatinum: false }
+    ]
+  });
+
+  const lisdeStoryIds = new Set(['lis_de_split_decision', 'lis_de_bullet_proof', 'lis_de_face_to_facade', 'lis_de_fade_to_white', 'lis_de_tempest_fugit', 'lis_de_commencement']);
+  for (const trophy of lifeIsStrangeDoubleExposureGuide.trophies || []) {
+    const edit = lisdeTrophyEdits[trophy.id] || {};
+    const englishDescription = lisdeEnglishDescriptions[trophy.id] || trophy.description || '';
+    const isMissable = false;
+    if (edit.name) trophy.name = edit.name;
+    trophy.trophyNameOriginal = trophy.name;
+    trophy.officialName = trophy.name;
+    trophy.name_pt = edit.name_pt || trophy.name;
+    trophy.trophyNamePtBr = trophy.name_pt;
+    trophy.namePtSource = 'editorial_ptbr';
+    trophy.descriptionOriginal = englishDescription;
+    trophy.description = edit.description || trophy.description || '';
+    trophy.descriptionPtBr = trophy.description;
+    trophy.ptDescription = trophy.description;
+    trophy.localizedDescription = { ...(trophy.localizedDescription || {}), ptBr: trophy.description, 'pt-BR': trophy.description };
+    trophy.descriptionPtSource = 'editorial_ptbr';
+    trophy.tip = edit.tip || trophy.tip || '';
+    trophy.guideTip = trophy.tip;
+    trophy.type = trophy.type;
+    trophy.tier = trophy.type;
+    trophy.is_missable = isMissable;
+    trophy.isMissable = isMissable;
+    trophy.missable = isMissable;
+    trophy.is_online = false;
+    trophy.isOnline = false;
+    trophy.is_coop = false;
+    trophy.isCoop = false;
+    trophy.is_dlc = false;
+    trophy.isDlc = false;
+    trophy.is_spoiler = Boolean(edit.is_spoiler ?? trophy.is_spoiler);
+    trophy.tags = edit.tags || [];
+    trophy.riskType = edit.riskType || (isMissable ? 'cleanup' : '');
   }
 }
 

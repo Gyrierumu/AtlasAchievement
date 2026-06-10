@@ -421,7 +421,7 @@
 
   function getExplicitGuideTrophyTags(trophy = {}, game = {}) {
     const slug = String(game?.slug || '').trim().toLowerCase();
-    if (!['celeste', 'clair-obscur-expedition-33', 'dark-souls-remastered', 'days-gone', 'detroit-become-human', 'hades', 'hogwarts-legacy', 'hollow-knight-silksong', 'lies-of-p', 'life-is-strange-remastered', 'lords-of-the-fallen', 'resident-evil-6', 'resident-evil-7-biohazard', 'resident-evil-village', 'sekiro-shadows-die-twice', 'until-dawn'].includes(slug)) return [];
+    if (!['celeste', 'clair-obscur-expedition-33', 'dark-souls-remastered', 'days-gone', 'detroit-become-human', 'hades', 'hogwarts-legacy', 'hollow-knight-silksong', 'lies-of-p', 'life-is-strange-double-exposure', 'life-is-strange-remastered', 'lords-of-the-fallen', 'resident-evil-6', 'resident-evil-7-biohazard', 'resident-evil-village', 'sekiro-shadows-die-twice', 'until-dawn'].includes(slug)) return [];
     if (!Array.isArray(trophy?.tags) || !trophy.tags.length) return [];
     const tags = [];
     const ids = new Set();
@@ -484,6 +484,15 @@
     if (!ids.has('difficulty') && /dificuldade|difficulty|\bhard\b|boss stem cell|stem cells|bsc|sem dano|no damage|flawless|professional|challenge rift|cursed sword|equipamento inicial|starter sword|sem usar|without|valquir|valkyr/.test(normalized)) {
       tags.push({ id: 'difficulty', label: 'Dificuldade', tone: 'warning' });
       ids.add('difficulty');
+    }
+    if (String(game?.slug || '').trim().toLowerCase() === 'life-is-strange-double-exposure') {
+      const trophyId = String(trophy?.id || '').trim();
+      const storyIds = new Set(['lis_de_split_decision', 'lis_de_bullet_proof', 'lis_de_face_to_facade', 'lis_de_fade_to_white', 'lis_de_tempest_fugit', 'lis_de_commencement']);
+      const filteredTags = tags.filter(tag => tag?.id !== 'difficulty' && (tag?.id !== 'story' || storyIds.has(trophyId)));
+      ids.delete('difficulty');
+      if (!storyIds.has(trophyId)) ids.delete('story');
+      tags.length = 0;
+      tags.push(...filteredTags);
     }
     if (!ids.has('grind') && /grind|farm|rng|\brank\b|hunter rank|boss stem cell|stem cells|bsc|\blevel\b|\bnivel\b|\bxp\b|coroa|coroas|crown|crowns|100 quests|100 elites|500|50 tempered|50 elder|100,000|1,000,000|blueprints?/.test(normalized)) {
       tags.push({ id: 'grind', label: 'Grind', tone: 'warning' });
@@ -1328,7 +1337,7 @@
 
   function shouldReadRoadmapFirst(game = {}, trophies = [], roadmap = []) {
     const inputs = getGuideVerdictInputs(game, { trophies, roadmap, total: trophies.length });
-    const riskCounts = ['clair-obscur-expedition-33', 'detroit-become-human', 'lies-of-p', 'life-is-strange-remastered', 'marvels-spider-man', 'marvels-spider-man-miles-morales', 'red-dead-redemption-2', 'sekiro-shadows-die-twice'].includes(String(game?.slug || '').trim().toLowerCase())
+    const riskCounts = ['clair-obscur-expedition-33', 'detroit-become-human', 'lies-of-p', 'life-is-strange-double-exposure', 'life-is-strange-remastered', 'marvels-spider-man', 'marvels-spider-man-miles-morales', 'red-dead-redemption-2', 'sekiro-shadows-die-twice'].includes(String(game?.slug || '').trim().toLowerCase())
       ? getGuideRiskCounts(trophies, game)
       : getRiskCounts(trophies);
     const onlineCount = countGuideTrophyTag(trophies, 'online');
@@ -2102,7 +2111,7 @@
   function buildRouteChangingTrophies(trophies = [], game = {}) {
     const trophyById = new Map((Array.isArray(trophies) ? trophies : []).map(trophy => [trophy?.id, trophy]).filter(([id]) => id));
     const attentionSlug = String(game?.slug || '').trim().toLowerCase();
-    if (['hades', 'life-is-strange-remastered', 'resident-evil-6', 'sekiro-shadows-die-twice'].includes(attentionSlug) && Array.isArray(game?.attentionPoints)) {
+    if (['hades', 'life-is-strange-double-exposure', 'life-is-strange-remastered', 'resident-evil-6', 'sekiro-shadows-die-twice'].includes(attentionSlug) && Array.isArray(game?.attentionPoints)) {
       return game.attentionPoints.map((item, index) => {
         const tags = (Array.isArray(item?.tags) ? item.tags : []).map(tag => {
           const label = typeof tag === 'string' ? tag : firstGuideText(tag?.label, tag?.id);
@@ -5793,7 +5802,7 @@
     let missableCount = countRealMissableTrophies(trackableTrophies);
     let attentionCount = trackableTrophies.filter(trophy => trophy && (isRealMissableTrophy(trophy) || trophy.is_spoiler)).length;
     let spoilerCount = trackableTrophies.filter(trophy => trophy?.is_spoiler).length;
-    let riskCounts = ['clair-obscur-expedition-33', 'detroit-become-human', 'lies-of-p', 'life-is-strange-remastered', 'marvels-spider-man', 'marvels-spider-man-miles-morales', 'red-dead-redemption-2', 'sekiro-shadows-die-twice'].includes(String(game?.slug || '').trim().toLowerCase())
+    let riskCounts = ['clair-obscur-expedition-33', 'detroit-become-human', 'lies-of-p', 'life-is-strange-double-exposure', 'life-is-strange-remastered', 'marvels-spider-man', 'marvels-spider-man-miles-morales', 'red-dead-redemption-2', 'sekiro-shadows-die-twice'].includes(String(game?.slug || '').trim().toLowerCase())
       ? getGuideRiskCounts(trackableTrophies, game)
       : getRiskCounts(trackableTrophies);
     let guidanceCounts = buildGuidanceCounts(trackableTrophies, riskCounts);
@@ -5852,6 +5861,32 @@
         sekiro_great_serpent: { name_pt: 'Grande Serpente', tip: 'Evento opcional de exploração com passos específicos; resolva a cadeia antes de fechar a rota ou empurre para NG+.', is_missable: true, is_spoiler: true, tags: [{ id: 'exploration', label: 'Exploração', tone: 'partial' }, { id: 'event', label: 'Evento opcional', tone: 'partial' }, { id: 'cleanup', label: 'Cleanup', tone: 'neutral' }, { id: 'missable', label: 'Perdível', tone: 'risk' }, { id: 'run', label: 'Risco de run', tone: 'warning' }, { id: 'spoiler', label: 'Spoiler', tone: 'spoiler' }] },
         sekiro_great_colored_carp: { name_pt: 'Grande Carpa Colorida', tip: 'Depende de Fountainhead Palace; resolva o evento antes de encerrar a rota ou iniciar NG+.', is_missable: true, is_spoiler: true, tags: [{ id: 'fountainhead-palace', label: 'Fountainhead Palace', tone: 'partial' }, { id: 'event', label: 'Evento opcional', tone: 'partial' }, { id: 'cleanup', label: 'Cleanup', tone: 'neutral' }, { id: 'missable', label: 'Perdível', tone: 'risk' }, { id: 'run', label: 'Risco de run', tone: 'warning' }, { id: 'exploration', label: 'Exploração', tone: 'partial' }, { id: 'spoiler', label: 'Spoiler', tone: 'spoiler' }] }
       };
+      Object.assign(sekiroEditorialById.sekiro_sekiro, {
+        tip: 'Conclua os outros 33 trofeus da lista base. Gauntlets, Reflections, skins e conteudo de update ficam fora da platina.'
+      });
+      Object.assign(sekiroEditorialById.sekiro_master_of_the_prosthetic, {
+        tip: 'Planeje materiais raros e Lapis Lazuli; Shura bloqueia Fountainhead Palace, entao deixe upgrades finais para rota de Kuro/NG+ e confira antes do cleanup.'
+      });
+      Object.assign(sekiroEditorialById.sekiro_height_of_technique, {
+        tip: 'Farm de XP nao e perdivel. Guarde para areas finais ou NG+ e evite gastar skill points sem conferir as arvores necessarias.'
+      });
+      Object.assign(sekiroEditorialById.sekiro_peak_physical_strength, {
+        tip: 'Exige todas as Prayer Beads: derrote mini-bosses sensiveis antes de avancos de historia e revise pendencias antes de NG+.'
+      });
+      Object.assign(sekiroEditorialById.sekiro_purification, {
+        tip: 'Prepare Kuro, Emma e Hirata Estate revisitado antes de derrotar o chefe final; se faltar, deixe para backup ou NG+.'
+      });
+      Object.assign(sekiroEditorialById.sekiro_demon_of_hatred, {
+        tip: 'Chefe opcional de endgame e parte de Man Without Equal; derrote antes de iniciar NG+ se ele ainda faltar na rota atual.'
+      });
+      Object.assign(sekiroEditorialById.sekiro_great_serpent, {
+        tip: 'Evento opcional de exploracao com passos especificos. Use checklist no cleanup; se ficar pendente, resolva em nova passagem sem tratar como perda permanente.',
+        is_missable: false,
+        tags: [{ id: 'exploration', label: 'Exploracao', tone: 'partial' }, { id: 'event', label: 'Evento opcional', tone: 'partial' }, { id: 'cleanup', label: 'Cleanup', tone: 'neutral' }, { id: 'spoiler', label: 'Spoiler', tone: 'spoiler' }]
+      });
+      Object.assign(sekiroEditorialById.sekiro_great_colored_carp, {
+        tip: 'Depende de Fountainhead Palace: garanta acesso pela rota de Kuro antes de Shura ou deixe o evento para NG+.'
+      });
       trackableTrophies.forEach(trophy => {
         const edit = sekiroEditorialById[trophy.id];
         if (!edit) return;
