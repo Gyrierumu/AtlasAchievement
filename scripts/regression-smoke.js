@@ -1,4 +1,4 @@
-const fs = require('fs');
+﻿const fs = require('fs');
 const path = require('path');
 const os = require('os');
 const vm = require('vm');
@@ -3818,10 +3818,10 @@ async function assertSeedData({ all, get }, sampleGames) {
     return counts;
   }, {});
   assert.deepStrictEqual(sekiroTypeCounts, { Platina: 1, Ouro: 4, Prata: 11, Bronze: 18 }, 'Sekiro deve manter distribuicao oficial 1/4/11/18');
-  assert.strictEqual(sekiroSample.trophies.filter(trophy => trophy.is_missable).length, 18, 'Sekiro deve marcar missables coerentes para finais, bosses, areas, Prayer Beads, Prosthetic Tools e Lapis Lazuli');
+  assert.strictEqual(sekiroSample.trophies.filter(trophy => trophy.is_missable).length, 16, 'Sekiro deve marcar missables coerentes para finais, bosses, areas, Prayer Beads, Prosthetic Tools, Great Serpent e Lapis Lazuli');
   assert(sekiroSample.trophies.some(trophy => trophy.id === 'sekiro_man_without_equal' && trophy.type === 'Ouro' && trophy.is_missable), 'Man Without Equal deve ser ouro e sensivel a rotas');
   assert(sekiroSample.trophies.some(trophy => trophy.id === 'sekiro_height_of_technique' && trophy.type === 'Ouro' && !trophy.is_missable && trophy.tip.includes('Farm de XP nao e perdivel')), 'Height of Technique deve ser ouro e nao missable');
-  assert(sekiroSample.trophies.some(trophy => trophy.id === 'sekiro_lazuline_upgrade' && trophy.type === 'Prata' && trophy.is_missable), 'Lazuline Upgrade deve ser prata e sensivel a Lapis Lazuli');
+  assert(sekiroSample.trophies.some(trophy => trophy.id === 'sekiro_lazuline_upgrade' && trophy.type === 'Prata' && !trophy.is_missable), 'Lazuline Upgrade nao deve inflar perdiveis');
   assert(sekiroSample.trophies.some(trophy => trophy.id === 'sekiro_great_colored_carp' && trophy.type === 'Bronze' && trophy.is_missable), 'Great Colored Carp deve ser bronze e sensivel a Fountainhead Palace');
 
   const sekiroSeeded = await get('SELECT slug, difficulty, time, time_bucket, time_min_hours, time_max_hours, time_sort_hours, editorial_status, coverage_level, is_verified, verification_status, image, cover_image, online_summary, dlc_scope, before_you_start, cleanup_advice, grind_summary FROM games WHERE slug = ?', ['sekiro-shadows-die-twice']);
@@ -3855,7 +3855,7 @@ async function assertSeedData({ all, get }, sampleGames) {
   assert.strictEqual(sekiroTrophyRows.length, 34, 'seed deve inserir checklist completo de Sekiro');
   assert.strictEqual(new Set(sekiroTrophyRows.map(trophy => trophy.trophy_code)).size, 34, 'seed nao deve inserir trophy_code duplicado em Sekiro');
   assert.strictEqual(sekiroTrophyRows.filter(trophy => /online obrigatorio|trofeu online|multiplayer obrigatorio/i.test(`${trophy.name} ${trophy.tip}`)).length, 0, 'seed nao deve persistir trofeus online obrigatorios em Sekiro');
-  assert.strictEqual(sekiroTrophyRows.filter(trophy => trophy.is_missable).length, 18, 'seed deve persistir missables coerentes em Sekiro');
+  assert.strictEqual(sekiroTrophyRows.filter(trophy => trophy.is_missable).length, 16, 'seed deve persistir missables coerentes em Sekiro');
   assert.strictEqual(sekiroTrophyRows.filter(trophy => trophy.is_spoiler).length, 23, 'seed deve persistir spoiler_count coerente em Sekiro');
   assert(sekiroTrophyRows.some(trophy => trophy.trophy_code === 'sekiro_height_of_technique' && !trophy.is_missable && trophy.tip.includes('nao e perdivel')), 'seed deve persistir Height of Technique como farm nao perdivel');
   assert(sekiroTrophyRows.some(trophy => trophy.trophy_code === 'sekiro_father_surpassed' && trophy.is_missable && trophy.tip.includes('recuperado em NG+')), 'seed deve explicar boss opcional recuperavel em NG+');
@@ -9171,7 +9171,7 @@ async function assertBackendEditorialConsistency() {
     assert.strictEqual(sekiro.verification_status, 'review', 'Sekiro deve aparecer em revisao editorial');
     assert.strictEqual(sekiro.image, sekiroSample.image, 'catalogo deve usar image horizontal de Sekiro');
     assert.strictEqual(sekiro.cover_image, sekiroSample.cover_image, 'API deve expor cover_image de Sekiro');
-    assert.strictEqual(sekiro.missable_count, 18, 'API deve contar missables coerentes em Sekiro');
+    assert.strictEqual(sekiro.missable_count, 16, 'API deve contar missables coerentes em Sekiro');
     assert.strictEqual(sekiro.spoiler_count, 23, 'API deve contar spoilers coerentes em Sekiro');
     assert.strictEqual(armoredCore.trophy_count, 30, 'catalogo deve expor 30 trofeus para Armored Core VI');
     assert.strictEqual(armoredCore.difficulty, 7, 'catalogo deve expor dificuldade 7/10 para Armored Core VI');
@@ -10832,8 +10832,8 @@ async function assertBackendEditorialConsistency() {
     assert.strictEqual(sekiroDetail.trophies.filter(trophy => trophy.type === 'Prata').length, 11, 'Sekiro deve ter 11 prata');
     assert.strictEqual(sekiroDetail.trophies.filter(trophy => trophy.type === 'Bronze').length, 18, 'Sekiro deve ter 18 bronze');
     assert.strictEqual(sekiroDetail.trophies.filter(trophy => /online obrigatorio|trofeu online|multiplayer obrigatorio/i.test(`${trophy.name} ${trophy.description} ${trophy.tip}`)).length, 0, 'Sekiro nao deve ter trofeus online obrigatorios');
-    assert.strictEqual(sekiroDetail.trophies.filter(trophy => trophy.is_missable).length, 18, 'Sekiro deve retornar missables coerentes');
-    assert.strictEqual(sekiroDetail.missable_count, 18, 'Sekiro deve contar 18 missables coerentes');
+    assert.strictEqual(sekiroDetail.trophies.filter(trophy => trophy.is_missable).length, 16, 'Sekiro deve retornar missables coerentes');
+    assert.strictEqual(sekiroDetail.missable_count, 16, 'Sekiro deve contar 16 missables coerentes');
     assert.strictEqual(sekiroDetail.spoiler_count, 23, 'Sekiro deve retornar spoiler_count coerente');
     assert.strictEqual(sekiroDetail.roadmap.length, 7, 'detalhe de Sekiro deve retornar roadmap de 7 etapas');
     const sekiroDetailRoadmap = sekiroDetail.roadmap.map(roadmapStepText).join(' ');
@@ -10852,7 +10852,7 @@ async function assertBackendEditorialConsistency() {
     assert(sekiroDetail.trophies.some(trophy => trophy.id === 'sekiro_sekiro' && trophy.name === 'Sekiro' && trophy.type === 'Platina'), 'Sekiro deve manter Sekiro como platina');
     assert(sekiroDetail.trophies.some(trophy => trophy.id === 'sekiro_man_without_equal' && trophy.type === 'Ouro' && trophy.is_missable), 'Sekiro deve marcar Man Without Equal como ouro missable');
     assert(sekiroDetail.trophies.some(trophy => trophy.id === 'sekiro_height_of_technique' && trophy.type === 'Ouro' && !trophy.is_missable), 'Sekiro nao deve marcar farm de XP como missable');
-    assert(sekiroDetail.trophies.some(trophy => trophy.id === 'sekiro_lazuline_upgrade' && trophy.type === 'Prata' && trophy.is_missable), 'Sekiro deve marcar Lazuline Upgrade como prata sensivel');
+    assert(sekiroDetail.trophies.some(trophy => trophy.id === 'sekiro_lazuline_upgrade' && trophy.type === 'Prata' && !trophy.is_missable), 'Sekiro nao deve marcar Lazuline Upgrade como perdivel');
     assert(!sekiroDetail.trophies.some(trophy => /Dark Souls|Elden Ring|Bloodborne|Demon's Souls|Old Hunters|Ashes of Ariandel|The Ringed City/i.test(`${trophy.id} ${trophy.name} ${trophy.description}`)), 'Sekiro nao deve misturar outro Soulsborne ou DLC');
 
     const sekiroSearch = await httpGetJson(baseUrl, '/api/games?q=sekiro&limit=10&sort=name-asc');

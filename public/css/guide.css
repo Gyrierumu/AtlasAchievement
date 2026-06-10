@@ -88,6 +88,93 @@
     widows: 3;
   }
 
+  body[data-page="public"]:has(#view-guide.atlas-guide--sekiro-shadows-die-twice) {
+    min-height: 0 !important;
+    padding-bottom: 0 !important;
+  }
+
+  body[data-page="public"]:has(#view-guide.atlas-guide--sekiro-shadows-die-twice) .atlas-main-shell,
+  body[data-page="public"] #view-guide.atlas-guide--sekiro-shadows-die-twice,
+  body[data-page="public"] #view-guide.atlas-guide--sekiro-shadows-die-twice #guideDecisionStack,
+  body[data-page="public"] #view-guide.atlas-guide--sekiro-shadows-die-twice #guideContent {
+    min-height: 0 !important;
+    margin-bottom: 0 !important;
+    padding-bottom: 0 !important;
+  }
+
+  body[data-page="public"] #view-guide.atlas-guide--sekiro-shadows-die-twice #guideRelatedPanel,
+  body[data-page="public"] #view-guide.atlas-guide--sekiro-shadows-die-twice #guideRelatedOverview,
+  body[data-page="public"] #view-guide.atlas-guide--sekiro-shadows-die-twice #guideRelatedBody,
+  body[data-page="public"] #view-guide.atlas-guide--sekiro-shadows-die-twice .atlas-related-suggestions,
+  body[data-page="public"] #view-guide.atlas-guide--sekiro-shadows-die-twice [data-guide-section-toggle],
+  body[data-page="public"] #view-guide.atlas-guide--sekiro-shadows-die-twice .atlas-guide-sidebar-card .text-white\\/45,
+  body[data-page="public"] #view-guide.atlas-guide--sekiro-shadows-die-twice .atlas-guide-sidebar-card .atlas-sidebar-actions > div:first-child {
+    display: none !important;
+  }
+
+  body[data-page="public"] #view-guide.atlas-guide--sekiro-shadows-die-twice > :last-child,
+  body[data-page="public"] #view-guide.atlas-guide--sekiro-shadows-die-twice #guideDecisionStack > :last-child,
+  body[data-page="public"] #view-guide.atlas-guide--sekiro-shadows-die-twice #guideContent > :last-child {
+    margin-bottom: 0 !important;
+    padding-bottom: 0 !important;
+  }
+
+  body[data-page="public"]:has(#view-guide.atlas-guide--lies-of-p) {
+    min-height: 0 !important;
+    padding-bottom: 0 !important;
+  }
+
+  body[data-page="public"]:has(#view-guide.atlas-guide--lies-of-p) .atlas-main-shell,
+  body[data-page="public"] #view-guide.atlas-guide--lies-of-p,
+  body[data-page="public"] #view-guide.atlas-guide--lies-of-p #guideDecisionStack,
+  body[data-page="public"] #view-guide.atlas-guide--lies-of-p #guideContent {
+    min-height: 0 !important;
+    margin-bottom: 0 !important;
+    padding-bottom: 0 !important;
+  }
+
+  body[data-page="public"] #view-guide.atlas-guide--lies-of-p #guideRelatedPanel,
+  body[data-page="public"] #view-guide.atlas-guide--lies-of-p #guideRelatedOverview,
+  body[data-page="public"] #view-guide.atlas-guide--lies-of-p .atlas-related-suggestions,
+  body[data-page="public"] #view-guide.atlas-guide--lies-of-p #guideShortcutPanel,
+  body[data-page="public"] #view-guide.atlas-guide--lies-of-p .atlas-sidebar-actions,
+  body[data-page="public"] #view-guide.atlas-guide--lies-of-p .atlas-section-toggle,
+  body[data-page="public"] #view-guide.atlas-guide--lies-of-p .atlas-density-toggle,
+  body[data-page="public"] #view-guide.atlas-guide--lies-of-p .atlas-trophy-toggle,
+  body[data-page="public"] #view-guide.atlas-guide--lies-of-p .atlas-trophy-details-toggle,
+  body[data-page="public"] #view-guide.atlas-guide--lies-of-p [hidden],
+  body[data-page="public"] #view-guide.atlas-guide--lies-of-p .hidden:empty,
+  body[data-page="public"] #view-guide.atlas-guide--lies-of-p .atlas-guide-tab-panel[hidden],
+  body[data-page="public"] #guideQuickDock {
+    display: none !important;
+  }
+
+  body[data-page="public"] #view-guide.atlas-guide--lies-of-p > :last-child,
+  body[data-page="public"] #view-guide.atlas-guide--lies-of-p #guideDecisionStack > :last-child,
+  body[data-page="public"] #view-guide.atlas-guide--lies-of-p #guideContent > :last-child,
+  body[data-page="public"] #view-guide.atlas-guide--lies-of-p #guideEditorialNotesPanel:last-child {
+    margin-bottom: 0 !important;
+    padding-bottom: 0 !important;
+  }
+
+  body[data-page="public"] #view-guide.atlas-guide--lies-of-p .atlas-roadmap-step,
+  body[data-page="public"] #view-guide.atlas-guide--lies-of-p .atlas-trophy-card,
+  body[data-page="public"] #view-guide.atlas-guide--lies-of-p .atlas-faq-item,
+  body[data-page="public"] #view-guide.atlas-guide--lies-of-p .atlas-critical-row {
+    break-inside: avoid-page;
+    page-break-inside: avoid;
+  }
+
+  body[data-page="public"] #view-guide.atlas-guide--lies-of-p #guideEditorialNotesPanel details > :not(summary) {
+    display: block !important;
+  }
+
+  body[data-page="public"] #view-guide.atlas-guide--lies-of-p p,
+  body[data-page="public"] #view-guide.atlas-guide--lies-of-p li {
+    orphans: 3;
+    widows: 3;
+  }
+
   body[data-page="public"]:has(#view-guide.atlas-guide--lego-batman-legacy-of-the-dark-knight) {
     min-height: 0 !important;
     padding-bottom: 0 !important;

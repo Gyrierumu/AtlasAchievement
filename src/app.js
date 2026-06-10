@@ -551,6 +551,9 @@ function buildGameSeoTitle(game = {}) {
   if (String(game?.slug || '').trim().toLowerCase() === 'until-dawn') {
     return 'Guia de Platina Until Dawn — Troféus, Roadmap e Dicas';
   }
+  if (String(game?.slug || '').trim().toLowerCase() === 'sekiro-shadows-die-twice') {
+    return 'Guia de Platina Sekiro: Shadows Die Twice — Troféus, Roadmap e Dicas';
+  }
   return `${name}: guia de platina, troféus e roadmap | AtlasAchievement`;
 }
 
@@ -591,6 +594,9 @@ function buildGameSeoDescription(game = {}) {
   }
   if (String(game?.slug || '').trim().toLowerCase() === 'subnautica') {
     return 'Guia de platina de Subnautica em português, com tempo estimado, dificuldade, troféus, exploração, veículos, base, história, roadmap e checklist.';
+  }
+  if (String(game?.slug || '').trim().toLowerCase() === 'sekiro-shadows-die-twice') {
+    return 'Guia de platina de Sekiro: Shadows Die Twice em português, com tempo estimado, dificuldade, finais, Shura, Purification, Dragon\'s Homecoming, Immortal Severance, Prayer Beads, Gourd Seeds, Prosthetic Tools, Lapis Lazuli, bosses, NG+, backup save e checklist da lista base de PS4.';
   }
   const parts = [];
   const time = String(game?.time || '').trim();
@@ -1115,7 +1121,7 @@ function buildGuideFaqStructuredData(canonicalUrl, viewModel) {
 function renderGuideEditorialNotesHtml(game = {}, viewModel = {}) {
   const normalizedSlug = String(game?.slug || '').trim().toLowerCase();
   const routeTrophyLimit = normalizedSlug === 'red-dead-redemption-2' ? 11 : (normalizedSlug === 'marvels-spider-man-2' ? 8 : 5);
-  const explicitAttentionPoints = ['days-gone', 'hogwarts-legacy', 'horizon-forbidden-west', 'horizon-zero-dawn', 'lords-of-the-fallen', 'until-dawn'].includes(normalizedSlug) && Array.isArray(game?.attentionPoints)
+  const explicitAttentionPoints = ['days-gone', 'hogwarts-legacy', 'horizon-forbidden-west', 'horizon-zero-dawn', 'lies-of-p', 'lords-of-the-fallen', 'sekiro-shadows-die-twice', 'until-dawn'].includes(normalizedSlug) && Array.isArray(game?.attentionPoints)
     ? game.attentionPoints.map(item => {
       const tags = Array.isArray(item?.tags)
         ? item.tags.map(tag => {
@@ -1134,7 +1140,7 @@ function renderGuideEditorialNotesHtml(game = {}, viewModel = {}) {
   const routeTrophies = explicitAttentionPoints.length
     ? explicitAttentionPoints
     : (Array.isArray(viewModel.routeChangingTrophies) ? viewModel.routeChangingTrophies.slice(0, routeTrophyLimit) : []);
-  const faqLimit = normalizedSlug === 'marvels-spider-man-miles-morales' ? 12 : (['lords-of-the-fallen', 'nioh-3', 'saros', 'the-last-of-us-part-ii'].includes(normalizedSlug) ? 11 : (['days-gone', 'hogwarts-legacy', 'horizon-forbidden-west', 'horizon-zero-dawn', 'the-last-of-us-part-i', 'subnautica', 'until-dawn'].includes(normalizedSlug) ? 10 : (normalizedSlug === 'dark-souls-remastered' ? 9 : (['god-of-war-ragnarok', 'resident-evil-2-remake', 'resident-evil-3-remake', 'hollow-knight', 'marvels-spider-man'].includes(normalizedSlug) ? 8 : (normalizedSlug === 'red-dead-redemption-2' ? 7 : 6)))));
+  const faqLimit = normalizedSlug === 'marvels-spider-man-miles-morales' ? 12 : (['lies-of-p', 'lords-of-the-fallen', 'nioh-3', 'saros', 'sekiro-shadows-die-twice', 'the-last-of-us-part-ii'].includes(normalizedSlug) ? 12 : (['days-gone', 'hogwarts-legacy', 'horizon-forbidden-west', 'horizon-zero-dawn', 'the-last-of-us-part-i', 'subnautica', 'until-dawn'].includes(normalizedSlug) ? 10 : (normalizedSlug === 'dark-souls-remastered' ? 9 : (['god-of-war-ragnarok', 'resident-evil-2-remake', 'resident-evil-3-remake', 'hollow-knight', 'marvels-spider-man'].includes(normalizedSlug) ? 8 : (normalizedSlug === 'red-dead-redemption-2' ? 7 : 6)))));
   const faqItems = Array.isArray(viewModel.contextualFaq) ? viewModel.contextualFaq.slice(0, faqLimit) : [];
   const playerFit = viewModel.playerFit || buildGuidePlayerFit(game, viewModel);
   const methodItems = Array.isArray(viewModel.editorial?.methodItems) ? viewModel.editorial.methodItems : [];
@@ -1951,7 +1957,7 @@ async function buildGamePageHtml(game, req) {
     .replace(/__HOME_VIEW_CLASS__/g, 'hidden')
     .replace(/__HOME_HERO_HEADING_TAG__/g, 'h2')
     .replace(/__CATALOG_HEADING_TAG__/g, 'h2')
-    .replace(/__GUIDE_VIEW_CLASS__/g, normalizedSlug === 'resident-evil-6' ? 'atlas-guide--resident-evil-6' : (normalizedSlug === 'lego-batman-legacy-of-the-dark-knight' ? 'atlas-guide--lego-batman-legacy-of-the-dark-knight' : ''))
+    .replace(/__GUIDE_VIEW_CLASS__/g, normalizedSlug === 'resident-evil-6' ? 'atlas-guide--resident-evil-6' : (normalizedSlug === 'lego-batman-legacy-of-the-dark-knight' ? 'atlas-guide--lego-batman-legacy-of-the-dark-knight' : (normalizedSlug === 'lies-of-p' ? 'atlas-guide--lies-of-p' : '')))
     .replace(/__GUIDE_BREADCRUMBS__/g, buildBreadcrumbsHtml([{ label: 'Início', href: '/' }, { label: 'Catálogo', href: '/catalogo' }, { label: game.name }]))
     .replace(/__GUIDE_COLLECTION_LINKS__/g, guideCollections.collectionLinks.map(item => `<a href="${escapeHtml(item.path)}" class="atlas-card atlas-card--minimal atlas-related-collection"><div class="atlas-card__body"><strong class="atlas-card__title">${escapeHtml(item.label)}</strong><span class="atlas-card__reason">${escapeHtml(item.reason)}</span><span class="atlas-card__link">Abrir coleção</span></div></a>`).join(''))
     .replace(/__GUIDE_CONTENT_CLASS__/g, '')
