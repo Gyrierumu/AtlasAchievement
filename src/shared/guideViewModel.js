@@ -326,6 +326,7 @@
     multiplayer: { id: 'multiplayer', label: 'Multiplayer', tone: 'warning' },
     pvp: { id: 'pvp', label: 'PvP', tone: 'warning' },
     dificuldade: { id: 'difficulty', label: 'Dificuldade', tone: 'warning' },
+    's rank': { id: 'rank-s', label: 'S Rank', tone: 'warning' },
     combate: { id: 'combat', label: 'Combate', tone: 'warning' },
     atencao: { id: 'attention', label: 'Atenção', tone: 'warning' },
     diarios: { id: 'diaries', label: 'Diários', tone: 'partial' },
@@ -335,11 +336,20 @@
     relacionamento: { id: 'relationship', label: 'Relacionamento', tone: 'partial' },
     grind: { id: 'grind', label: 'Grind', tone: 'warning' },
     'risco de run': { id: 'run', label: 'Risco de run', tone: 'warning' },
+    'risco de oportunidade': { id: 'opportunity', label: 'Risco de oportunidade', tone: 'warning' },
     restricao: { id: 'restriction', label: 'Restrição', tone: 'warning' },
     'village of shadows': { id: 'village-of-shadows', label: 'Village of Shadows', tone: 'warning' },
     campanha: { id: 'campaign', label: 'Campanha', tone: 'partial' },
     exploracao: { id: 'exploration', label: 'Exploração', tone: 'partial' },
     upgrade: { id: 'upgrade', label: 'Upgrade', tone: 'partial' },
+    sistema: { id: 'system', label: 'Sistema', tone: 'partial' },
+    progressao: { id: 'progress', label: 'Progressão', tone: 'partial' },
+    ferramentas: { id: 'tools', label: 'Ferramentas', tone: 'partial' },
+    equipamento: { id: 'equipment', label: 'Equipamento', tone: 'partial' },
+    habilidades: { id: 'skills', label: 'Habilidades', tone: 'warning' },
+    contratos: { id: 'contracts', label: 'Contratos', tone: 'partial' },
+    atividade: { id: 'activity', label: 'Atividade', tone: 'partial' },
+    notoriedade: { id: 'notoriety', label: 'Notoriedade', tone: 'warning' },
     cleanup: { id: 'cleanup', label: 'Cleanup', tone: 'neutral' },
     crafting: { id: 'crafting', label: 'Crafting', tone: 'partial' },
     'criacao de itens': { id: 'crafting', label: 'Criação de itens', tone: 'partial' },
@@ -369,6 +379,8 @@
     hank: { id: 'hank', label: 'Hank', tone: 'partial' },
     rota: { id: 'routes', label: 'Rota', tone: 'warning' },
     final: { id: 'final', label: 'Final', tone: 'spoiler' },
+    arena: { id: 'arena', label: 'Arena', tone: 'partial' },
+    boss: { id: 'boss', label: 'Boss', tone: 'warning' },
     extras: { id: 'extras', label: 'Extras', tone: 'partial' },
     'pontos de bonus': { id: 'bonus-points', label: 'Pontos de bônus', tone: 'warning' },
     qte: { id: 'qte', label: 'QTE', tone: 'warning' },
@@ -421,7 +433,7 @@
 
   function getExplicitGuideTrophyTags(trophy = {}, game = {}) {
     const slug = String(game?.slug || '').trim().toLowerCase();
-    if (!['celeste', 'clair-obscur-expedition-33', 'dark-souls-remastered', 'days-gone', 'detroit-become-human', 'hades', 'hogwarts-legacy', 'hollow-knight-silksong', 'lies-of-p', 'life-is-strange-double-exposure', 'life-is-strange-remastered', 'lords-of-the-fallen', 'resident-evil-6', 'resident-evil-7-biohazard', 'resident-evil-village', 'sekiro-shadows-die-twice', 'until-dawn'].includes(slug)) return [];
+    if (!['armored-core-vi-fires-of-rubicon', 'assassins-creed-mirage', 'celeste', 'clair-obscur-expedition-33', 'dark-souls-remastered', 'days-gone', 'detroit-become-human', 'hades', 'hogwarts-legacy', 'hollow-knight-silksong', 'lies-of-p', 'life-is-strange-double-exposure', 'life-is-strange-remastered', 'lords-of-the-fallen', 'resident-evil-6', 'resident-evil-7-biohazard', 'resident-evil-village', 'sekiro-shadows-die-twice', 'until-dawn'].includes(slug)) return [];
     if (!Array.isArray(trophy?.tags) || !trophy.tags.length) return [];
     const tags = [];
     const ids = new Set();
@@ -1345,7 +1357,7 @@
 
   function shouldReadRoadmapFirst(game = {}, trophies = [], roadmap = []) {
     const inputs = getGuideVerdictInputs(game, { trophies, roadmap, total: trophies.length });
-    const riskCounts = ['clair-obscur-expedition-33', 'detroit-become-human', 'lies-of-p', 'life-is-strange-double-exposure', 'life-is-strange-remastered', 'marvels-spider-man', 'marvels-spider-man-miles-morales', 'red-dead-redemption-2', 'sekiro-shadows-die-twice'].includes(String(game?.slug || '').trim().toLowerCase())
+    const riskCounts = ['armored-core-vi-fires-of-rubicon', 'assassins-creed-mirage', 'clair-obscur-expedition-33', 'detroit-become-human', 'lies-of-p', 'life-is-strange-double-exposure', 'life-is-strange-remastered', 'marvels-spider-man', 'marvels-spider-man-miles-morales', 'red-dead-redemption-2', 'sekiro-shadows-die-twice'].includes(String(game?.slug || '').trim().toLowerCase())
       ? getGuideRiskCounts(trophies, game)
       : getRiskCounts(trophies);
     const onlineCount = countGuideTrophyTag(trophies, 'online');
@@ -2119,7 +2131,7 @@
   function buildRouteChangingTrophies(trophies = [], game = {}) {
     const trophyById = new Map((Array.isArray(trophies) ? trophies : []).map(trophy => [trophy?.id, trophy]).filter(([id]) => id));
     const attentionSlug = String(game?.slug || '').trim().toLowerCase();
-    if (['hades', 'life-is-strange-double-exposure', 'life-is-strange-remastered', 'resident-evil-6', 'sekiro-shadows-die-twice'].includes(attentionSlug) && Array.isArray(game?.attentionPoints)) {
+    if (['armored-core-vi-fires-of-rubicon', 'assassins-creed-mirage', 'hades', 'life-is-strange-double-exposure', 'life-is-strange-remastered', 'resident-evil-6', 'sekiro-shadows-die-twice'].includes(attentionSlug) && Array.isArray(game?.attentionPoints)) {
       return game.attentionPoints.map((item, index) => {
         const tags = (Array.isArray(item?.tags) ? item.tags : []).map(tag => {
           const label = typeof tag === 'string' ? tag : firstGuideText(tag?.label, tag?.id);
@@ -5810,7 +5822,7 @@
     let missableCount = countRealMissableTrophies(trackableTrophies);
     let attentionCount = trackableTrophies.filter(trophy => trophy && (isRealMissableTrophy(trophy) || trophy.is_spoiler)).length;
     let spoilerCount = trackableTrophies.filter(trophy => trophy?.is_spoiler).length;
-    let riskCounts = ['clair-obscur-expedition-33', 'detroit-become-human', 'lies-of-p', 'life-is-strange-double-exposure', 'life-is-strange-remastered', 'marvels-spider-man', 'marvels-spider-man-miles-morales', 'red-dead-redemption-2', 'sekiro-shadows-die-twice'].includes(String(game?.slug || '').trim().toLowerCase())
+    let riskCounts = ['armored-core-vi-fires-of-rubicon', 'assassins-creed-mirage', 'clair-obscur-expedition-33', 'detroit-become-human', 'lies-of-p', 'life-is-strange-double-exposure', 'life-is-strange-remastered', 'marvels-spider-man', 'marvels-spider-man-miles-morales', 'red-dead-redemption-2', 'sekiro-shadows-die-twice'].includes(String(game?.slug || '').trim().toLowerCase())
       ? getGuideRiskCounts(trackableTrophies, game)
       : getRiskCounts(trackableTrophies);
     let guidanceCounts = buildGuidanceCounts(trackableTrophies, riskCounts);

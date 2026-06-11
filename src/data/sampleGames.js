@@ -42177,11 +42177,11 @@ if (sekiroGuide) {
       'A rota mais segura é fazer uma primeira run completa pela rota de Kuro, preparar Purification e Dragon’s Homecoming/Return antes da decisão final, usar backup save se quiser reduzir runs, deixar Shura para NG+ e finalizar o grind de skills, Lapis Lazuli e upgrades no cleanup final. O principal cuidado é não escolher Shura cedo demais nem iniciar NG+ antes de revisar Fountainhead Palace, Demon of Hatred, Great Colored Carp, Prayer Beads, Gourd Seeds, Lapis Lazuli e chefes pendentes.'
     ],
     editorial_status: 'published',
-    coverage_level: 'complete',
-    is_verified: true,
-    verification_status: 'verified',
-    editorial_review_status: 'verified',
-    editorialStatus: 'verified',
+    coverage_level: 'strong',
+    is_verified: false,
+    verification_status: 'review',
+    editorial_review_status: 'in_review',
+    editorialStatus: 'in_review',
     verification_note: 'Guia verificado: lista base PS4 com 34 troféus, 15 riscos/perdíveis conferidos, Great Serpent tratado como cleanup opcional, roadmap estruturado, FAQ, flags offline/sem coop/sem DLC e escopo Gauntlets/Reflections fora da platina base.',
     editorial_notes: 'Escopo confirmado: lista base PS4, 34 troféus, finais, Shura, Purification, Return/Dragon\'s Homecoming, NG+, backup save, sem online/co-op e Gauntlets/Reflections fora da platina base.',
     methodology: 'Este guia cobre os 34 troféus da lista base. Gauntlets of Strength, Reflections of Strength, skins e conteúdo de update ficam fora da platina. A rota considera backup save como ferramenta opcional para reduzir runs entre finais.',
@@ -43233,6 +43233,1155 @@ if (lifeIsStrangeDoubleExposureGuide) {
     trophy.is_spoiler = Boolean(edit.is_spoiler ?? trophy.is_spoiler);
     trophy.tags = edit.tags || [];
     trophy.riskType = edit.riskType || (isMissable ? 'cleanup' : '');
+  }
+}
+
+const armoredCoreViGuide = sampleGames.find(game => game.slug === 'armored-core-vi-fires-of-rubicon');
+if (armoredCoreViGuide) {
+  const armoredCoreViRunRiskIds = new Set([
+    'ac6_the_perfect_mercenary',
+    'ac6_stargazer',
+    'ac6_master_of_arena',
+    'ac6_asset_holder',
+    'ac6_the_fires_of_raven',
+    'ac6_liberator_of_rubicon',
+    'ac6_alea_iacta_est',
+    'ac6_weapon_collector',
+    'ac6_external_parts_collector',
+    'ac6_internal_parts_collector',
+    'ac6_combat_log_collector'
+  ]);
+
+  const armoredCoreViTrophyEdits = {
+    ac6_armored_core: {
+      name_pt: 'Armored Core',
+      description: 'Conquiste todos os outros troféus.',
+      tip: 'Desbloqueia após os outros 29 troféus da lista base. Online, PvP e DLC não entram.',
+      tags: ['Platina']
+    },
+    ac6_the_perfect_mercenary: {
+      name_pt: 'O Mercenário Perfeito',
+      description: 'Conclua todas as missões com classificação S Rank.',
+      tip: 'Use Mission Replay depois de liberar todas as missões. O foco é S Rank com builds específicas, rotas rápidas, pouco dano e boa eficiência.',
+      tags: ['Perdível', 'Dificuldade', 'S Rank', 'Cleanup', 'Grind', 'Risco de run']
+    },
+    ac6_stargazer: {
+      name_pt: 'Observador de Estrelas',
+      description: 'Conclua todas as missões.',
+      tip: 'Exige todas as missões. Priorize missões novas em NG+ e NG++; repetir decisões antigas pode forçar outra run.',
+      tags: ['Perdível', 'Missões', 'Cleanup', 'Spoiler', 'Risco de run']
+    },
+    ac6_master_of_arena: {
+      name_pt: 'Mestre da Arena',
+      description: 'Complete todos os programas da Arena.',
+      tip: 'Complete Arena/Analysis conforme liberar e finalize os últimos programas antes de concluir NG++.',
+      tags: ['Perdível', 'Arena', 'Analysis', 'Cleanup', 'Spoiler', 'Risco de run']
+    },
+    ac6_asset_holder: {
+      name_pt: 'Detentor do Ativo',
+      description: 'Obtenha todas as peças.',
+      tip: 'Fecha após armas, partes externas, internas e expansões. Revise loja, containers, combat logs e Arena.',
+      tags: ['Perdível', 'Coletável', 'Grind', 'Cleanup', 'Spoiler', 'Risco de run']
+    },
+    ac6_tuning_expert: {
+      name_pt: 'Expert em Ajuste',
+      description: 'Realize todos os upgrades de OS.',
+      tip: 'Exige todos os OS upgrades. Complete Arena/Analysis e use OST Chips para fechar o menu.',
+      tags: ['Upgrade', 'OS Tuning', 'Cleanup', 'Grind']
+    },
+    ac6_the_fires_of_raven: {
+      name_pt: 'Os Incêndios do Corvo',
+      description: 'Alcance o final The Fires of Raven.',
+      tip: 'Final de rota diferente. Planeje NG, NG+ e NG++ sem repetir decisões.',
+      tags: ['Perdível', 'Final', 'Rota', 'Spoiler', 'Risco de run']
+    },
+    ac6_liberator_of_rubicon: {
+      name_pt: 'Libertador de Rubicon',
+      description: 'Alcance o final Liberator of Rubicon.',
+      tip: 'Final de rota diferente. Planeje NG, NG+ e NG++ sem repetir decisões.',
+      tags: ['Perdível', 'Final', 'Rota', 'Spoiler', 'Risco de run']
+    },
+    ac6_alea_iacta_est: {
+      name: 'Alea Iacta Est',
+      name_pt: 'Alea Iacta Est',
+      description: 'Alcance o final Alea Iacta Est.',
+      tip: 'Final exclusivo de NG++ com Decision Missions e missões novas. Priorize a rota correta para não atrasar a platina.',
+      tags: ['Perdível', 'Final', 'Rota', 'NG++', 'Spoiler', 'Risco de run']
+    },
+    ac6_weapon_collector: {
+      name_pt: 'Colecionador de Armas',
+      description: 'Obtenha todas as armas.',
+      tip: 'Depende de loja, containers, combat logs e missões desbloqueadas. Use checklist por capítulo/missão.',
+      tags: ['Perdível', 'Coletável', 'Partes', 'Cleanup', 'Risco de run']
+    },
+    ac6_external_parts_collector: {
+      name_pt: 'Colecionador de Peças Externas',
+      description: 'Obtenha todas as peças externas.',
+      tip: 'Depende de loja, containers, combat logs e missões desbloqueadas. Use checklist por capítulo/missão.',
+      tags: ['Perdível', 'Coletável', 'Partes', 'Cleanup', 'Risco de run']
+    },
+    ac6_internal_parts_collector: {
+      name_pt: 'Colecionador de Peças Internas',
+      description: 'Obtenha todas as peças internas.',
+      tip: 'Depende de loja, containers, combat logs e missões desbloqueadas. Use checklist por capítulo/missão.',
+      tags: ['Perdível', 'Coletável', 'Partes', 'Cleanup', 'Risco de run']
+    },
+    ac6_expansion_collector: {
+      name_pt: 'Colecionador de Expansão',
+      description: 'Obtenha todas as Core Expansions.',
+      tip: 'Compre todas as Core Expansions no OS Tuning. O reset de OS ajuda a reorganizar upgrades, mas a platina exige fechar tudo.',
+      tags: ['Coletável', 'Upgrade', 'OS Tuning', 'Cleanup']
+    },
+    ac6_combat_log_collector: {
+      name_pt: 'Colecionador de Registro de Combate',
+      description: 'Obtenha todos os combat logs.',
+      tip: 'Revise inimigos com combat log por missão. Se a missão não foi desbloqueada por decisão, pode precisar de outra run.',
+      tags: ['Perdível', 'Coletável', 'Combat logs', 'Cleanup', 'Spoiler', 'Risco de run']
+    },
+    ac6_data_log_collector: {
+      name_pt: 'Colecionador de Registro de Dados',
+      description: 'Obtenha dez data logs.',
+      tip: 'Exige 10 data logs. Normalmente vem antes da platina se o jogador explora missões e replays.',
+      tags: ['Coletável', 'Data logs', 'Cleanup']
+    },
+    ac6_testing_complete: {
+      name_pt: 'Teste Concluído',
+      description: 'Complete todos os programas de avaliação de aptidão de combate na Arena.',
+      tip: 'Complete os programas da Arena inicial. Isso libera OST Chips e prepara o caminho para Master of Arena.',
+      tags: ['Arena', 'Sistema', 'Progressão', 'Cleanup']
+    },
+    ac6_illegal_entry: {
+      name_pt: 'Entrada Ilegal',
+      description: 'Complete a missão Illegal Entry.',
+      tip: 'Troféu automático de história da primeira missão. Use para aprender movimento, Assault Boost, lock-on e stagger.',
+      tags: ['História']
+    },
+    ac6_operation_wallclimber: {
+      name_pt: 'Operação Alpinista',
+      description: 'Complete a missão Operation Wallclimber.',
+      tip: 'Marco inicial de campanha e boss. Ainda não transforme a run em tentativa de S Rank.',
+      tags: ['História', 'Spoiler']
+    },
+    ac6_contact: {
+      name_pt: 'Contato',
+      description: 'Complete a missão Attack the Watchpoint.',
+      tip: 'Chefe importante do Capítulo 1. Ajustar build e trocar armas faz parte da progressão.',
+      tags: ['História', 'Boss', 'Spoiler']
+    },
+    ac6_ocean_crossing: {
+      name_pt: 'Travessia do Oceano',
+      description: 'Complete a missão Ocean Crossing.',
+      tip: 'Marco do Capítulo 2. Use a missão para treinar mobilidade, cobertura e controle de dano.',
+      tags: ['História', 'Spoiler']
+    },
+    ac6_a_new_threat: {
+      name_pt: 'Uma Nova Ameaça',
+      description: 'Complete a missão Attack the Old Spaceport.',
+      tip: 'Marco do Capítulo 3. Decision Missions anteriores afetam Stargazer, mas este troféu de história vem na rota normal.',
+      tags: ['História', 'Spoiler']
+    },
+    ac6_ayre_and_the_coral: {
+      name_pt: 'Ayre e o Coral',
+      description: 'Complete a missão Destroy the Ice Worm.',
+      tip: 'Missão principal do Capítulo 3. O boss ensina punição de janelas curtas e execução limpa.',
+      tags: ['História', 'Boss', 'Spoiler']
+    },
+    ac6_into_unknown_territory: {
+      name_pt: 'Em Território Desconhecido',
+      description: 'Complete a missão Underground Exploration - Depth 3.',
+      tip: 'Marco do Capítulo 4 e ponto relevante para desbloqueios de Arena. Revise progresso antes de acelerar para o fim.',
+      tags: ['História', 'Spoiler']
+    },
+    ac6_re_education: {
+      name_pt: 'Reeducação',
+      description: 'Complete a missão Reach the Coral Convergence.',
+      tip: 'Marco avançado de campanha. As decisões finais começam a importar para finais e missões restantes.',
+      tags: ['História', 'Spoiler']
+    },
+    ac6_the_floating_city: {
+      name_pt: 'A Cidade Flutuante',
+      description: 'Complete a missão Take the Uninhabited Floating City.',
+      tip: 'Missão do Capítulo 5 ligada ao fim da campanha. Depois, acompanhe decisões finais para liberar endings diferentes.',
+      tags: ['História', 'Spoiler']
+    },
+    ac6_mia: {
+      name_pt: 'Desaparecido',
+      description: 'Complete a missão MIA.',
+      tip: 'Missão exclusiva de NG++; depende de escolhas e rota correta.',
+      tags: ['História', 'NG++', 'Rota', 'Spoiler']
+    },
+    ac6_training_complete: {
+      name_pt: 'Treinamento Concluído',
+      description: 'Complete todos os programas de treinamento.',
+      tip: 'Troféu simples de sistema/garagem; resolver cedo ajuda a limpar checklist.',
+      tags: ['Sistema', 'Garagem']
+    },
+    ac6_hardware_engineer: {
+      name_pt: 'Engenheiro de Hardware',
+      description: 'Monte um AC.',
+      tip: 'Troféu simples de sistema/garagem; resolver cedo ajuda a limpar checklist.',
+      tags: ['Sistema', 'Garagem']
+    },
+    ac6_software_engineer: {
+      name_pt: 'Engenheiro de Software',
+      description: 'Atualize o OS do seu AC.',
+      tip: 'Troféu simples de sistema/garagem; resolver cedo ajuda a limpar checklist.',
+      tags: ['Sistema', 'Garagem', 'OS Tuning']
+    },
+    ac6_graphic_designer: {
+      name_pt: 'Designer Gráfico',
+      description: 'Altere a coloração do seu AC.',
+      tip: 'Troféu simples de sistema/garagem; resolver cedo ajuda a limpar checklist.',
+      tags: ['Sistema', 'Garagem']
+    }
+  };
+
+  Object.assign(armoredCoreViGuide, {
+    difficulty: 8,
+    estimatedDifficulty: '8/10',
+    time: '50-70h',
+    estimatedTime: '50-70h',
+    time_min_hours: 50,
+    time_max_hours: 70,
+    time_sort_hours: 70,
+    time_bucket: 'long',
+    runs: '3 playthroughs completos: NG, NG+ e NG++',
+    guideScope: 'Lista base PlayStation de 30 troféus',
+    platform_base: 'PS4/PS5',
+    platformBase: 'PS4/PS5',
+    platinumType: 'offline, 3 rotas, Mission Replay, S Rank e coleções',
+    hasMissables: true,
+    missableCount: 11,
+    missable_count: 11,
+    hasOnline: false,
+    hasMandatoryOnline: false,
+    hasMandatoryCoop: false,
+    onlineRequired: false,
+    online_required: false,
+    coopRequired: false,
+    coop_required: false,
+    dlcRequired: false,
+    dlc_required: false,
+    dlcRequiredForPlatinum: false,
+    difficultyTrophiesRequired: false,
+    newGamePlusRequired: true,
+    offlineTrophies: 30,
+    onlineTrophies: 0,
+    missable: 'Não há perdíveis permanentes simples por causa de Mission Replay e NG+, mas o AtlasAchievement marca 11 riscos de run/decisão: finais, todas as missões, S Rank, combat logs, Arena/Analysis e coletores de partes podem exigir outra passagem se as Decision Missions ou o NG++ forem mal planejados.',
+    runs_summary: 'O mínimo prático são 3 playthroughs completos: NG, NG+ e NG++. Save scum de finais não substitui as 3 runs, porque há missões, Arena/Analysis e final exclusivos de NG++.',
+    missable_summary: 'Decisão editorial: tratar como risco de run/decisão, não como perda permanente absoluta. Topo, filtro, FAQ e cards usam 11 riscos marcados, sem contar a platina nem troféus de história obrigatória.',
+    online_summary: 'A platina tem 30 troféus offline e 0 online. PvP/multiplayer existe no jogo, mas não é requisito.',
+    grind_summary: 'O maior muro é The Perfect Mercenary: S Rank em todas as missões via Mission Replay. O cleanup também inclui combat logs, partes, Arena/Analysis, OS Tuning e todos os finais.',
+    dlc_scope: 'Guia focado na lista base de Armored Core VI: Fires of Rubicon. DLC, update e PvP não entram como requisito da platina.',
+    difficulty_reason: 'A dificuldade 8/10 vem de execução, domínio de builds, rotas de missão e S Rank em todas as missões, não de seletor de dificuldade.',
+    time_reason: 'A estimativa de 50-70h considera NG, NG+, NG++, todos os finais, todas as missões, combat logs, partes, Arena/Analysis, OS Tuning e S Rank por Mission Replay.',
+    first_run_advice: 'Jogue a primeira campanha aprendendo builds, mobilidade, stagger e bosses. Não tente transformar a campanha inicial em grind de S Rank.',
+    cleanup_advice: 'Depois de liberar todas as missões, use Mission Replay para S Rank, combat logs, containers, partes e ajustes finais do checklist.',
+    before_you_start: 'Entre sabendo que Decision Missions definem rotas. Em NG+ escolha decisões opostas; em NG++ priorize missões novas para Alea Iacta Est e finalize Arena/Analysis antes de avançar demais.',
+    best_for: 'Vale platinar se você quer uma platina offline, difícil e focada em domínio de builds, Mission Replay, S Rank, coleções de partes e três rotas completas.',
+    avoid_if: 'Evite se você não quer repetir missões várias vezes ou depender de execução precisa para S Rank.',
+    editorial_summary: [
+      'Armored Core VI: Fires of Rubicon é uma platina offline, exigente e muito dependente de execução, repetição de missões e planejamento de rotas. A lista não exige online, coop nem DLC, mas pede 3 playthroughs mínimos para liberar todas as missões, finais e conteúdo de NG/NG+/NG++. O maior muro da platina é The Perfect Mercenary, que exige S Rank em todas as missões via Mission Replay.',
+      'A ordem mais segura é jogar a primeira run normalmente, escolher decisões opostas no NG+, priorizar missões novas no NG++ para liberar Alea Iacta Est, completar Arena/Analysis antes de avançar demais, coletar combat logs e partes por Mission Replay, e só então focar no grind de S Rank. O principal cuidado é não repetir escolhas antigas quando houver Decision Missions, porque isso pode atrasar Stargazer, Combat Log Collector, coletores de partes e o acesso a todas as missões.'
+    ],
+    quickDecision: {
+      summary: 'Vale platinar Armored Core VI: Fires of Rubicon se você quer uma platina offline, difícil e focada em domínio de builds, Mission Replay, S Rank, coleções de partes e três rotas completas.',
+      recommendation: 'O maior desafio é The Perfect Mercenary, que exige S Rank em todas as missões; o maior risco de planejamento é repetir decisões e atrasar missões/finais de NG+ e NG++.',
+      firstAction: 'Comece pela primeira campanha aprendendo builds e deixe S Rank pesado para Mission Replay depois de liberar todas as missões.',
+      risk: 'Evite apenas se você não quer repetir missões várias vezes ou depender de execução precisa para S Rank.'
+    },
+    attentionPoints: [
+      { title: 'Três playthroughs são obrigatórios', detail: 'NG, NG+ e NG++ são necessários para liberar todos os finais, missões e conteúdo exclusivo.', tags: ['RUNS', 'NG++'] },
+      { title: 'Decision Missions definem a rota', detail: 'Escolher missões repetidas pode atrasar Stargazer e forçar outra run.', tags: ['ROTA', 'ATENÇÃO'] },
+      { title: 'Alea Iacta Est depende de NG++', detail: 'A terceira rota exige escolhas específicas e missões exclusivas de NG++.', tags: ['FINAL', 'NG++'] },
+      { title: 'The Perfect Mercenary é o pico da platina', detail: 'S Rank em todas as missões é o principal desafio de execução.', tags: ['S RANK', 'DIFICULDADE'] },
+      { title: 'Mission Replay e o centro do cleanup', detail: 'Use replay para S Rank, combat logs, containers e aprendizado de rotas.', tags: ['MISSION REPLAY', 'CLEANUP'] },
+      { title: 'Arena/Analysis não deve ficar para depois', detail: 'Master of Arena pode exigir atenção antes de encerrar NG++.', tags: ['ARENA', 'RISCO'] },
+      { title: 'Combat logs dependem de missões desbloqueadas', detail: 'Se uma missão com log não foi liberada por decisão, pode ser preciso outra run.', tags: ['COMBAT LOGS', 'ROTA'] },
+      { title: 'Peças dependem de loja, logs, containers e Arena', detail: 'Asset Holder e coletores exigem checklist de equipamento.', tags: ['PEÇAS', 'CHECKLIST'] },
+      { title: 'Não há troféu online', detail: 'PvP/multiplayer não é requisito da platina.', tags: ['OFFLINE'] },
+      { title: 'Não existe troféu de dificuldade', detail: 'O jogo tem dificuldade fixa; o 8/10 vem dos S Ranks, não de seletor de dificuldade.', tags: ['DIFICULDADE'] }
+    ],
+    faq: [
+      { question: 'Armored Core VI tem troféus online?', answer: 'Não. A lista de platina tem 30 troféus offline e 0 online. PvP/multiplayer não é necessário para a platina.' },
+      { question: 'Precisa de coop para platinar?', answer: 'Não. Não há requisito de coop.' },
+      { question: 'DLC é necessária para a platina?', answer: 'Não. A platina base não exige DLC.' },
+      { question: 'Quantos troféus Armored Core VI tem?', answer: 'A lista PlayStation tem 30 troféus.' },
+      { question: 'Quantas runs são necessárias?', answer: 'O mínimo prático é 3 playthroughs: NG, NG+ e NG++. Isso é necessário para liberar todos os finais, missões e conteúdo exclusivo.' },
+      { question: 'Save scum resolve os finais?', answer: 'Não substitui as 3 runs. Há missões e final exclusivos de NG++, então o planejamento de rota continua obrigatório.' },
+      { question: 'Armored Core VI tem troféus perdíveis?', answer: 'Depende do critério. Não há perda permanente simples por causa de Mission Replay e NG+, mas há riscos de run/decisão: escolher missões erradas, não desbloquear conteúdo ou deixar Arena/Analysis de NG++ pode exigir outra run. O guia trata isso como risco de run.' },
+      { question: 'Qual é o troféu mais difícil?', answer: 'The Perfect Mercenary, porque exige S Rank em todas as missões.' },
+      { question: 'Mission Replay conta para S Rank?', answer: 'Sim. S Rank deve ser buscado via Mission Replay depois de liberar as missões.' },
+      { question: 'A dificuldade afeta troféus?', answer: 'Não há seletor de dificuldade tradicional. A dificuldade da platina vem da execução, builds e S Ranks.' },
+      { question: 'Quanto tempo leva para platinar?', answer: 'Uma estimativa segura é 50-70h, dependendo da habilidade do jogador e da quantidade de tentativas em S Rank.' },
+      { question: 'O que mais causa retrabalho?', answer: 'Repetir Decision Missions antigas, deixar missões exclusivas de NG++ passarem, não finalizar Arena/Analysis, ignorar combat logs e não usar checklist de partes.' }
+    ],
+    seo: {
+      title: 'Armored Core VI: Fires of Rubicon: guia de platina, troféus e roadmap | AtlasAchievement',
+      description: 'Guia de platina de Armored Core VI: Fires of Rubicon com roadmap, 30 troféus, três runs, finais, Mission Replay, S Rank, combat logs, peças, flags e dicas para The Perfect Mercenary.',
+      keywords: 'Armored Core VI guia de platina, Armored Core 6 guia de platina, Armored Core VI Fires of Rubicon troféus, Armored Core VI roadmap, Armored Core VI S Rank, Armored Core VI The Perfect Mercenary, Armored Core VI Stargazer, Armored Core VI finais, Armored Core VI Alea Iacta Est, Armored Core VI Mission Replay, Armored Core VI combat logs, Armored Core VI peças, Armored Core VI sem online, Armored Core VI sem coop, Armored Core VI 30 troféus',
+      ogTitle: 'Armored Core VI: guia de platina, troféus e roadmap',
+      ogDescription: 'Roadmap da platina offline de Armored Core VI com 30 troféus, NG, NG+, NG++, S Rank, Mission Replay, combat logs, partes e finais.'
+    },
+    tags: ['Armored Core VI', 'Fires of Rubicon', 'Platina', 'Offline', 'Sem online', 'Sem coop', 'Sem DLC obrigatória', 'NG+', 'NG++', 'Mission Replay', 'S Rank', 'Combat logs', 'Partes'],
+    editorial_status: 'published',
+    coverage_level: 'strong',
+    is_verified: false,
+    verification_status: 'review',
+    editorial_review_status: 'in_review',
+    editorialStatus: 'in_review',
+    last_reviewed_at: '2026-06-11',
+    lastReviewedAt: '2026-06-11T00:00:00.000-03:00',
+    reviewed_by: 'Codex',
+    verification_note: 'Guia revisado para a lista base PlayStation de Armored Core VI: Fires of Rubicon: 30 troféus offline, roadmap estruturado, 11 riscos de run/decisão, sem online/coop/DLC obrigatórios, EN/PT-BR, FAQ, SEO e foco em The Perfect Mercenary via Mission Replay. Mantido em revisão porque npm test falhou em dado fora deste guia.',
+    editorial_notes: 'Decisão editorial: usar missableCount 11 como risco de run/decisão, não perda permanente absoluta. A platina e os troféus de história obrigatória não foram marcados como perdíveis.',
+    quality_warnings: [],
+    qualityWarnings: [],
+    roadmap: [
+      {
+        title: 'Complete a primeira campanha aprendendo builds',
+        focus: 'Primeira run',
+        objective: 'Finalizar a campanha inicial, liberar sistemas principais e aprender como adaptar o AC para cada missão.',
+        actions: [
+          'Avance pelos capítulos sem se preocupar ainda com S Rank.',
+          'Teste armas, pernas, geradores, FCS e expansões para entender o estilo que funciona melhor para você.',
+          'Complete Training, Arena inicial e OS Tuning conforme forem liberados.',
+          'Pegue combat logs e containers quando forem fáceis, mas deixe otimização pesada para Mission Replay.'
+        ],
+        warning: 'Não transforme a primeira run em tentativa de S Rank. O rank deve ser trabalhado depois, com missões liberadas e builds melhores.',
+        result: 'Você termina a primeira rota com base de peças, Arena, OS Tuning e conhecimento suficiente para NG+.'
+      },
+      {
+        title: 'Use NG+ para decisões opostas',
+        focus: 'NG+ e final alternativo',
+        objective: 'Escolher missões diferentes da primeira run para liberar novas rotas, missões e final alternativo.',
+        actions: [
+          'Quando aparecerem Decision Missions, escolha a opção que você não fez na primeira run.',
+          'Continue comprando peças e concluindo Arena/Analysis quando novas lutas aparecerem.',
+          'Use Mission Replay para pegar combat logs, containers e partes que ficaram para trás.',
+          'Finalize o segundo final sem repetir a rota anterior.'
+        ],
+        warning: 'Repetir decisões antigas pode atrasar Stargazer e forçar uma run extra para liberar todas as missões.',
+        result: 'A segunda rota fica concluída e o guia avança para a preparação do conteúdo exclusivo de NG++.'
+      },
+      {
+        title: 'Faça NG++ mirando Alea Iacta Est',
+        focus: 'NG++',
+        objective: 'Liberar o conteúdo exclusivo de NG++ e concluir o terceiro final.',
+        actions: [
+          'No NG++, priorize missões novas e escolhas ligadas à rota Alea Iacta Est.',
+          'Aceite opções novas quando o jogo oferecer variações de missão.',
+          'Conclua Arena/Analysis e não deixe os programas finais para depois.',
+          'Acompanhe missões exclusivas como MIA e outras rotas de NG++ conforme o dado do guia.'
+        ],
+        warning: 'Os últimos programas de Arena/Analysis podem ficar indisponíveis após concluir NG++. Resolva Master of Arena antes de avançar demais.',
+        result: 'As três rotas ficam concluídas e todas as missões necessárias devem estar disponíveis para replay.'
+      },
+      {
+        title: 'Feche missões, logs e coleções',
+        focus: 'Coletáveis e partes',
+        objective: 'Completar todas as missões, combat logs, data logs úteis, peças e coleções de equipamento.',
+        actions: [
+          'Use Mission Replay para conferir missões faltantes.',
+          'Colete todos os combat logs necessários para Combat Log Collector.',
+          'Pegue containers de partes e compre equipamentos desbloqueados na loja.',
+          'Finalize Weapon Collector, External Parts Collector, Internal Parts Collector, Expansion Collector e Asset Holder.'
+        ],
+        warning: 'Algumas partes dependem de missões específicas, combat logs, containers ou Arena. Se a missão não foi desbloqueada nas runs, pode ser necessário outro ciclo.',
+        result: 'A base de coleções fica pronta antes do foco total nos S Ranks.'
+      },
+      {
+        title: 'Faça S Rank em todas as missões',
+        focus: 'S Rank',
+        objective: 'Concluir The Perfect Mercenary usando Mission Replay e builds específicas por missão.',
+        actions: [
+          'Refaça cada missão pelo Mission Replay mirando tempo, dano recebido, munição e eficiência.',
+          'Troque build sem apego: tetrapod, tanque, reverse-joint, lightweight, armas explosivas, stagger e burst podem variar por missão.',
+          'Priorize missões mais difíceis depois de já dominar o arsenal e conhecer rotas curtas.',
+          'Use checkpoints apenas para aprendizado; S Rank real exige execução limpa da missão.'
+        ],
+        warning: 'The Perfect Mercenary é o pico da platina. Algumas missões podem exigir várias tentativas e builds muito específicas.',
+        result: 'Com todos os S Ranks concluídos, a parte mais difícil da platina fica resolvida.'
+      },
+      {
+        title: 'Faça a conferência final da platina',
+        focus: 'Checklist',
+        objective: 'Confirmar os 30 troféus sem misturar online, PvP ou requisitos inexistentes.',
+        actions: [
+          'Revise os três finais: The Fires of Raven, Liberator of Rubicon e Alea Iacta Est.',
+          'Confirme Stargazer, The Perfect Mercenary, Combat Log Collector, Master of Arena e coletores de partes.',
+          'Revise Training, OS Tuning, Arena, montagem/cores do AC e troféus automáticos de história.',
+          'Confirme que nenhum troféu online, coop ou DLC foi tratado como obrigatório.'
+        ],
+        warning: '',
+        result: 'A platina deve desbloquear após todos os demais 29 troféus da lista base.'
+      }
+    ]
+  });
+
+  for (const trophy of armoredCoreViGuide.trophies || []) {
+    const edit = armoredCoreViTrophyEdits[trophy.id] || {};
+    const originalName = edit.name || trophy.name;
+    const originalDescription = trophy.descriptionOriginal || trophy.description || '';
+    const isMissable = armoredCoreViRunRiskIds.has(trophy.id);
+    trophy.name = originalName;
+    trophy.trophyNameOriginal = originalName;
+    trophy.originalName = originalName;
+    trophy.officialName = originalName;
+    trophy.name_pt = edit.name_pt || originalName;
+    trophy.trophyNamePtBr = trophy.name_pt;
+    trophy.namePtSource = 'trusted_steam_ptbr';
+    trophy.descriptionOriginal = originalDescription;
+    trophy.description = edit.description || trophy.description || '';
+    trophy.descriptionPtBr = trophy.description;
+    trophy.ptDescription = trophy.description;
+    trophy.localizedDescription = { ...(trophy.localizedDescription || {}), ptBr: trophy.description, 'pt-BR': trophy.description };
+    trophy.descriptionPtSource = 'editorial_ptbr_from_official_requirement';
+    trophy.tip = edit.tip || trophy.tip || '';
+    trophy.guideTip = trophy.tip;
+    trophy.tipPtBr = trophy.tip;
+    trophy.localizedTip = { ptBr: trophy.tip };
+    trophy.type = trophy.type;
+    trophy.tier = trophy.type;
+    trophy.is_missable = isMissable;
+    trophy.isMissable = isMissable;
+    trophy.missable = isMissable;
+    trophy.is_online = false;
+    trophy.isOnline = false;
+    trophy.is_coop = false;
+    trophy.isCoop = false;
+    trophy.is_dlc = false;
+    trophy.isDlc = false;
+    trophy.dlcRequired = false;
+    trophy.is_spoiler = Boolean(trophy.is_spoiler || /final|rota|ng\+\+|historia/i.test((edit.tags || []).join(' ')));
+    trophy.tags = edit.tags || [];
+    trophy.riskType = isMissable ? 'run_decision_risk' : '';
+  }
+}
+
+const assassinsCreedMirageGuide = sampleGames.find(game => game.slug === 'assassins-creed-mirage');
+if (assassinsCreedMirageGuide) {
+  const acMirageMissableIds = new Set(['acm_you_snooze_you_lose']);
+  const acMirageStoryIds = new Set([
+    'acm_the_master_thief_of_anbar',
+    'acm_la_shaya_waqiun_mutlaq',
+    'acm_the_blood_of_a_ghoul',
+    'acm_the_blood_of_a_demon',
+    'acm_the_blood_of_an_enchantress',
+    'acm_the_blood_of_a_spymaster',
+    'acm_the_head_of_the_snake',
+    'acm_bal_kullun_mumkin',
+    'acm_serving_the_light'
+  ]);
+  const acMirageCollectibleIds = new Set([
+    'acm_explorer',
+    'acm_scholar',
+    'acm_riddle_me_this',
+    'acm_curio_collector',
+    'acm_treasure_seeker',
+    'acm_fearless'
+  ]);
+
+  const acMirageTrophyEdits = {
+    acm_master_of_his_fate: {
+      name_pt: 'Master of His Fate',
+      description: 'Conquiste todos os outros trofeus da lista base.',
+      tip: 'Desbloqueia apos os outros 50 trofeus da lista base. Valley of Memory e Discovery Tour nao entram.',
+      tags: ['Platina']
+    },
+    acm_the_master_thief_of_anbar: {
+      name_pt: 'Mestre dos Ladroes de Anbar',
+      description: 'Complete o prologo.',
+      tip: 'Automatico da campanha; jogue em qualquer dificuldade.',
+      tags: ['Historia']
+    },
+    acm_la_shaya_waqiun_mutlaq: {
+      name: "La shay'a waqi'un mutlaq",
+      name_pt: "La shay'a waqi'un mutlaq",
+      description: 'Torne-se um iniciado dos Hidden Ones.',
+      tip: 'Automatico da campanha; jogue em qualquer dificuldade.',
+      tags: ['Historia']
+    },
+    acm_the_blood_of_a_ghoul: {
+      name_pt: 'Sangue de um Monstro',
+      description: 'Elimine Al-Ghul.',
+      tip: 'Automatico da campanha; jogue em qualquer dificuldade.',
+      tags: ['Historia', 'Spoiler']
+    },
+    acm_the_blood_of_a_demon: {
+      name_pt: 'Sangue de um Demonio',
+      description: 'Elimine Al-Rabisu.',
+      tip: 'Automatico da campanha; jogue em qualquer dificuldade.',
+      tags: ['Historia', 'Spoiler']
+    },
+    acm_the_blood_of_an_enchantress: {
+      name_pt: 'Sangue de uma Feiticeira',
+      description: 'Elimine Al-Pairika.',
+      tip: 'Automatico da campanha; jogue em qualquer dificuldade.',
+      tags: ['Historia', 'Spoiler']
+    },
+    acm_the_blood_of_a_spymaster: {
+      name_pt: 'Sangue do Mestre dos Espioes',
+      description: 'Elimine Al-Mardikhwar.',
+      tip: 'Automatico da campanha; jogue em qualquer dificuldade.',
+      tags: ['Historia', 'Spoiler']
+    },
+    acm_the_head_of_the_snake: {
+      name_pt: 'A Cabeca da Cobra',
+      description: 'Elimine o lider da Order.',
+      tip: 'Automatico da campanha; jogue em qualquer dificuldade.',
+      tags: ['Historia', 'Spoiler']
+    },
+    acm_bal_kullun_mumkin: {
+      name_pt: 'Bal kullun mumkin',
+      description: 'Descubra o passado de Basim.',
+      tip: 'Automatico da campanha; jogue em qualquer dificuldade.',
+      tags: ['Historia', 'Spoiler']
+    },
+    acm_serving_the_light: {
+      name_pt: 'A Servico da Luz',
+      description: 'Alcance o maior rank dos Hidden Ones.',
+      tip: 'Avance casos e alvos da campanha para subir o rank de Basim. Nao depende de dificuldade.',
+      tags: ['Historia', 'Progressao']
+    },
+    acm_self_improvement: {
+      name_pt: 'Autoaperfeicoamento',
+      description: 'Desbloqueie todas as habilidades.',
+      tip: 'Complete missoes, contratos e atividades para obter skill points suficientes.',
+      tags: ['Upgrades', 'Cleanup']
+    },
+    acm_cutting_edge: {
+      name_pt: 'Arma de Ponta',
+      description: 'Melhore uma arma completamente.',
+      tip: 'Use schematics de Gear Chests e materiais. Pode ficar para o cleanup de equipamentos.',
+      tags: ['Upgrades', 'Equipamento']
+    },
+    acm_thick_skin: {
+      name_pt: 'Casca-grossa',
+      description: 'Melhore um outfit completamente.',
+      tip: 'Use schematics e materiais no Tailor. Planeje junto dos Gear Chests.',
+      tags: ['Upgrades', 'Equipamento']
+    },
+    acm_fashion_statement: {
+      name_pt: 'Estilo Unico',
+      description: 'Aplique tintura a um outfit.',
+      tip: 'Compre ou encontre uma tintura compativel e aplique em um outfit no inventario.',
+      tags: ['Equipamento', 'Sistema']
+    },
+    acm_masquerader: {
+      name_pt: 'Mestre dos Disfarces',
+      description: 'Obtenha os dois disfarces em Bagda.',
+      tip: 'Resolva durante as missoes ligadas aos disfarces. Confirme antes de encerrar o arco correspondente.',
+      tags: ['Historia', 'Atencao']
+    },
+    acm_treasure_seeker: {
+      name_pt: 'Cacador de Tesouros',
+      description: 'Abra um bau de fichas.',
+      tip: 'Use Merchant Favor Token em um token chest. Vem cedo se voce explorar mercados e areas restritas.',
+      tags: ['Coletavel', 'Sistema']
+    },
+    acm_potion_collector: {
+      name_pt: 'Colecionador de Pocoes',
+      description: 'Obtenha 10 elixires.',
+      tip: 'Compre ou encontre elixires durante a campanha. Deve vir naturalmente se voce saqueia baus.',
+      tags: ['Recursos']
+    },
+    acm_fearless: {
+      name_pt: 'Destemido',
+      description: 'Sincronize todos os viewpoints da regiao de Bagda.',
+      tip: 'Sincronize viewpoints por distrito para revelar mapa, viagens rapidas e cleanup.',
+      tags: ['Exploracao', 'Coletavel']
+    },
+    acm_bird_of_prey: {
+      name_pt: 'Ave de Rapina',
+      description: 'Marque 100 guardas usando Enkidu.',
+      tip: 'Use Enkidu em fortalezas, contratos e distritos com muitos guardas antes de entrar.',
+      tags: ['Sistema', 'Stealth']
+    },
+    acm_explorer: {
+      name_pt: 'Explorador',
+      description: 'Explore todos os territorios da regiao de Bagda.',
+      tip: 'Organize por distrito e use o progresso regional do mapa.',
+      tags: ['Coletavel', 'Exploracao', 'Cleanup']
+    },
+    acm_defender_of_the_people: {
+      name_pt: 'Defensor do Povo',
+      description: 'Complete 10 contratos de faccao.',
+      tip: 'Pegue contratos nos bureaus dos Hidden Ones. Eles tambem ajudam com recursos, tokens e trofeus situacionais.',
+      tags: ['Contratos', 'Cleanup']
+    },
+    acm_crossing_paths: {
+      name_pt: 'Caminhos Cruzados',
+      description: 'Complete um Tale of Baghdad.',
+      tip: 'Complete um conto de Bagda quando aparecer no mapa. Os demais ajudam no progresso regional.',
+      tags: ['Atividade', 'Exploracao']
+    },
+    acm_scholar: {
+      name_pt: 'Academico',
+      description: 'Leve todos os 7 Lost Books a Al-Jahiz.',
+      tip: 'Use checklist por tipo de coletavel e distrito.',
+      tags: ['Coletavel', 'Lost Books', 'Cleanup']
+    },
+    acm_riddle_me_this: {
+      name_pt: 'Enigma da Esfinge',
+      description: 'Obtenha um tesouro solucionando um enigma.',
+      tip: 'Coletar o enigma nao basta; siga a pista e pegue o tesouro correspondente.',
+      tags: ['Coletavel', 'Enigmas', 'Cleanup']
+    },
+    acm_tools_of_the_trade: {
+      name_pt: 'Ferramentas de Trabalho',
+      description: 'Melhore todas as ferramentas completamente.',
+      tip: 'Desbloqueie e melhore ferramentas conforme a historia e recursos permitirem.',
+      tags: ['Ferramentas', 'Upgrades', 'Cleanup']
+    },
+    acm_eagles_eye: {
+      name: "Eagle's Eye",
+      name_pt: 'Olho de Aguia',
+      description: 'Mate 75 guardas com throwing knives.',
+      tip: 'Resolva antes de esvaziar demais areas com guardas; upgrades de faca ajudam.',
+      tags: ['Combate', 'Ferramentas', 'Cleanup']
+    },
+    acm_headhunter: {
+      name_pt: 'Cacador de Cabecas',
+      description: 'Acerte 20 guardas na cabeca com throwing knives.',
+      tip: "Use areas restritas e mira calma. Pode ser combinado com Eagle's Eye.",
+      tags: ['Combate', 'Ferramentas']
+    },
+    acm_sleep_tight: {
+      name_pt: 'Bons Sonhos',
+      description: 'Ponha 10 guardas para dormir com blowdarts.',
+      tip: 'Use blowdarts em patrulhas e areas restritas; combine cedo com You Snooze, You Lose.',
+      tags: ['Ferramentas', 'Stealth']
+    },
+    acm_ambush: {
+      name_pt: 'Emboscada',
+      description: 'Faca 10 guardas ativarem traps.',
+      tip: 'Use distritos com patrulhas para repetir situacoes antes de limpar demais o mapa.',
+      tags: ['Ferramentas', 'Stealth']
+    },
+    acm_up_in_smoke: {
+      name_pt: 'Defumado',
+      description: 'Afete 20 guardas com smoke bombs.',
+      tip: 'Use grupos de guardas em areas restritas para acelerar o progresso.',
+      tags: ['Ferramentas', 'Stealth']
+    },
+    acm_attention_seeker: {
+      name_pt: 'Centro das Atencoes',
+      description: 'Distraia 10 guardas com noisemakers.',
+      tip: 'Use noisemakers perto de patrulhas e objetivos de contratos.',
+      tags: ['Ferramentas', 'Stealth']
+    },
+    acm_the_hands_of_a_thief: {
+      name_pt: 'Maos-leves',
+      description: 'Furte 50 pessoas.',
+      tip: 'Faca pickpocket em areas movimentadas. Guaranteed Pickpocket pode reduzir erro e repeticao.',
+      tags: ['Pickpocket', 'Grind']
+    },
+    acm_you_snooze_you_lose: {
+      name_pt: 'Piscou, Ja Era',
+      description: 'Furte um guarda afetado por um blowdart.',
+      tip: 'Faca cedo. Use blowdart/dardo sonifero em um guarda e saqueie enquanto ele dorme; nao deixe para depois de limpar todas as areas.',
+      tags: ['Perdivel', 'Risco de oportunidade', 'Ferramentas']
+    },
+    acm_curio_collector: {
+      name_pt: 'Colecionador de Raridades',
+      description: 'Furte todos os 18 Dervis Artifacts e entregue-os a Dervis.',
+      tip: 'Use checklist por tipo de coletavel e distrito.',
+      tags: ['Coletavel', 'Pickpocket', 'Cleanup']
+    },
+    acm_hoarder: {
+      name_pt: 'Acumulador',
+      description: 'Junte 2007 dirhams.',
+      tip: 'Guarde recursos suficientes para upgrades e coletas; vem naturalmente se fizer 100%.',
+      tags: ['Recursos', 'Grind']
+    },
+    acm_dawn_and_dusk: {
+      name_pt: 'Alvorecer e Anoitecer',
+      description: 'Use bancos para passar o tempo 5 vezes.',
+      tip: 'Use qualquer banco disponivel em Bagda para alternar o horario.',
+      tags: ['Sistema']
+    },
+    acm_patron_of_the_arts: {
+      name_pt: 'Patrocinador das Artes',
+      description: 'Pague musicos 5 vezes.',
+      tip: 'Use Scholar Favor Tokens em musicos. Pickpocket e contratos ajudam a obter tokens.',
+      tags: ['Tokens', 'Sistema']
+    },
+    acm_patron_of_sell_swords: {
+      name_pt: 'Patrocinador de Mercenarios',
+      description: 'Pague mercenarios 5 vezes.',
+      tip: 'Use Power Favor Tokens em mercenarios, de preferencia enquanto limpa notoriedade e contratos.',
+      tags: ['Tokens', 'Sistema']
+    },
+    acm_patron_of_industry: {
+      name_pt: 'Patrocinador da Industria',
+      description: 'Pague grupos de mercadores 5 vezes.',
+      tip: 'Use Merchant Favor Tokens com grupos de comerciantes para entrar em areas ou distrair guardas.',
+      tags: ['Tokens', 'Sistema']
+    },
+    acm_blade_in_the_crowd: {
+      name_pt: 'Uma Lamina entre a Multidao',
+      description: 'Assassine 10 guardas enquanto se mistura a multidao.',
+      tip: 'Use grupos de civis perto de rotas de patrulha e evite iniciar combate aberto.',
+      tags: ['Stealth', 'Situacional']
+    },
+    acm_surprise: {
+      name_pt: 'Surpresa!',
+      description: 'Assassine 10 guardas a partir de esconderijos.',
+      tip: 'Use feno, folhas, bancos e outros esconderijos em areas com patrulhas.',
+      tags: ['Stealth', 'Situacional']
+    },
+    acm_the_shadow_and_the_flame: {
+      name_pt: 'A Sombra e a Chama',
+      description: 'Derrote um Shakiriyya em combate.',
+      tip: 'Aumente a notoriedade para atrair um Shakiriyya e lute preparado com ferramentas e elixires.',
+      tags: ['Combate', 'Notoriedade']
+    },
+    acm_silencer: {
+      name_pt: 'Silenciador',
+      description: 'Destrua o chifre de um Horn Bearer com uma throwing knife.',
+      tip: 'Procure Horn Bearers em areas restritas e mire no chifre antes de ser detectado.',
+      tags: ['Combate', 'Ferramentas', 'Situacional']
+    },
+    acm_notorious: {
+      name_pt: 'Notorio',
+      description: 'Permaneça com notoriedade maxima por 10 minutos.',
+      tip: 'Controle o sistema de notoriedade e evite arrancar cartazes ou usar Munadi ate o tempo completar.',
+      tags: ['Notoriedade', 'Situacional']
+    },
+    acm_poster_boy: {
+      name_pt: 'Voce Viu Este Assassino?',
+      description: 'No maximo de notoriedade, torne-se anonimo arrancando cartazes de procurado.',
+      tip: 'Use o sistema de notoriedade de forma controlada e deixe cartazes disponiveis para baixar o alerta.',
+      tags: ['Notoriedade', 'Situacional']
+    },
+    acm_spread_the_news: {
+      name_pt: 'Espalhe as Boas-novas',
+      description: 'Use os servicos de um Munadi 3 vezes.',
+      tip: 'Use sistema de notoriedade de forma controlada para precisar do Munadi e gastar tokens.',
+      tags: ['Notoriedade', 'Tokens']
+    },
+    acm_unstoppable: {
+      name_pt: 'Imbativel',
+      description: "Mate 5 guardas com um unico uso de Assassin's Focus.",
+      tip: 'Faca em grupos de guardas quando tiver barras suficientes e upgrades adequados.',
+      tags: ['Assassins Focus', 'Execucao']
+    },
+    acm_eagles_will: {
+      name: "Eagle's Will",
+      name_pt: 'A Forca de uma Aguia',
+      description: 'Sobreviva 10 minutos em combate aberto.',
+      tip: 'Use dificuldade baixa se quiser simplificar e mantenha elixires prontos durante um conflito controlado.',
+      tags: ['Combate', 'Situacional']
+    },
+    acm_gifted_escapist: {
+      name_pt: 'Escapista Talentoso',
+      description: 'Derrube 20 estruturas de andaime.',
+      tip: 'Use scaffolds em distritos com guardas restantes; algumas estruturas podem ser repetidas apos viagem rapida.',
+      tags: ['Exploracao', 'Situacional']
+    },
+    acm_a_true_hidden_one: {
+      name_pt: 'Um Verdadeiro Oculto',
+      description: 'Assassine 10 guardas em sequencia sem desencadear combate aberto.',
+      tip: 'Faca em uma area com guardas isolados, assobios e rotas de fuga; reinicie se entrar em conflito.',
+      tags: ['Stealth', 'Execucao']
+    },
+    acm_street_cleaner: {
+      name_pt: 'Mantendo as Estradas Limpas',
+      description: 'Esconda 5 corpos em montes de feno.',
+      tip: 'Arraste corpos para montes de feno proximos em areas restritas.',
+      tags: ['Stealth', 'Situacional']
+    }
+  };
+
+  Object.assign(assassinsCreedMirageGuide, {
+    title: "Assassin's Creed Mirage",
+    difficulty: 3,
+    estimatedDifficulty: '3/10',
+    time: '20-30h',
+    estimatedTime: '20-30h',
+    time_min_hours: 20,
+    time_max_hours: 30,
+    time_sort_hours: 20,
+    time_bucket: 'medium',
+    runs: '1 playthrough com cleanup pos-jogo',
+    guideScope: 'Lista base PlayStation de 51 trofeus',
+    platform_base: 'PS4/PS5',
+    platformBase: 'PS4/PS5',
+    platinumType: 'single-player, historia, contratos, coletaveis e cleanup',
+    hasMissables: true,
+    missableCount: 1,
+    missable_count: 1,
+    hasOnline: false,
+    hasMandatoryOnline: false,
+    hasMandatoryCoop: false,
+    onlineRequired: false,
+    online_required: false,
+    coopRequired: false,
+    coop_required: false,
+    dlcRequired: false,
+    dlc_required: false,
+    dlcRequiredForPlatinum: false,
+    difficultyTrophiesRequired: false,
+    newGamePlusRequired: false,
+    offlineTrophies: 51,
+    onlineTrophies: 0,
+    missable: 'Decisao editorial: tratar You Snooze, You Lose como o unico perdivel/risco real de oportunidade da lista base. A platina, os trofeus de historia e coletaveis recuperaveis no pos-jogo nao contam como perdiveis.',
+    runs_summary: 'Uma run e suficiente para a platina base. Jogue a campanha em qualquer dificuldade, resolva You Snooze, You Lose cedo e depois use o pos-jogo para contratos, coletaveis, ferramentas, upgrades e cleanup.',
+    missable_summary: 'Somente You Snooze, You Lose esta marcado como perdivel/risco de oportunidade: use blowdart em um guarda e furte enquanto ele dorme antes de esgotar boas oportunidades.',
+    online_summary: 'A lista base tem 51 trofeus offline e 0 online. Multiplayer, coop e recursos online nao sao necessarios para a platina.',
+    grind_summary: 'O tempo esta em coletaveis por distrito, enigmas, contratos, ferramentas, upgrades, equipamentos, notoriedade e trofeus situacionais de stealth/combate.',
+    dlc_scope: "Guia focado na platina base de Assassin's Creed Mirage. Valley of Memory, Animus Sequence challenges, Title Update e Discovery Tour App ficam fora do checklist da platina base.",
+    difficulty_reason: 'A dificuldade 3/10 vem de uma lista curta e acessivel para a serie. A dificuldade do jogo nao afeta trofeus e pode ser reduzida.',
+    time_reason: 'A estimativa de 20-30h considera campanha, investigacoes, contratos, coletaveis, enigmas, ferramentas, upgrades, equipamentos e cleanup por distrito.',
+    first_run_advice: 'Jogue a campanha normalmente enquanto desbloqueia Bagda, ferramentas, habilidades, contratos e areas. Resolva You Snooze, You Lose assim que tiver blowdart.',
+    cleanup_advice: 'Depois da historia, limpe contratos, Tales of Baghdad, Gear Chests, Lost Books, Historical Sites, Dervis Artifacts, Mysterious Shards, Enigmas, ferramentas, equipamentos e trofeus situacionais.',
+    before_you_start: 'A platina base nao exige online, coop, DLC nem dificuldade alta. O cuidado real e fazer You Snooze, You Lose cedo com blowdart/dardo sonifero e furto em guarda adormecido.',
+    best_for: 'Vale platinar se voce quer uma platina curta, offline e acessivel dentro da serie, com foco em historia, contratos, coletaveis, enigmas, ferramentas e cleanup por distrito.',
+    avoid_if: 'Evite se voce nao gosta de checklist de coletaveis, enigmas, contratos e trofeus situacionais de stealth.',
+    editorial_summary: [
+      "Assassin's Creed Mirage e uma platina curta e acessivel para a serie, totalmente single-player e sem trofeus online, coop ou DLC obrigatorios. A lista base tem 51 trofeus e gira em torno de concluir a historia, resolver investigacoes, contratos, coletaveis, enigmas, equipamentos, upgrades, ferramentas e atividades de Bagda. A dificuldade nao bloqueia trofeus, entao a platina pode ser feita em dificuldade baixa.",
+      'A rota mais segura e jogar a campanha normalmente enquanto desbloqueia ferramentas e habilidades, fazer contratos e atividades conforme aparecem, resolver coletaveis por distrito e deixar a limpeza final para o pos-jogo. O principal cuidado e garantir You Snooze, You Lose cedo, porque e o unico trofeu com risco real de oportunidade; o restante da platina e majoritariamente checklist e cleanup.'
+    ],
+    quickDecision: {
+      summary: "Vale platinar Assassin's Creed Mirage se voce quer uma platina curta, offline e acessivel dentro da serie, com foco em historia, contratos, coletaveis, enigmas, ferramentas e cleanup por distrito.",
+      recommendation: 'A dificuldade nao bloqueia trofeus, e a lista base nao exige online, coop nem DLC.',
+      firstAction: 'Avance a campanha ate desbloquear ferramentas e resolva You Snooze, You Lose assim que tiver blowdart.',
+      risk: 'O unico cuidado real e fazer You Snooze, You Lose cedo; depois disso, a platina vira principalmente checklist de Bagda.'
+    },
+    attentionPoints: [
+      { title: 'You Snooze, You Lose deve ser feito cedo', detail: 'E o principal risco de oportunidade. Use blowdart/dardo sonifero e saqueie o guarda adormecido antes de limpar demais o mapa.', tags: ['PERDIVEL', 'BLOWDART'] },
+      { title: 'A dificuldade nao afeta trofeus', detail: 'A platina pode ser feita em dificuldade baixa.', tags: ['DIFICULDADE'] },
+      { title: 'A lista base nao exige online', detail: 'Multiplayer/online nao entra na platina.', tags: ['OFFLINE'] },
+      { title: 'Valley of Memory fica fora da platina base', detail: 'Trofeus de DLC/update devem ficar separados ou opcionais.', tags: ['DLC FORA'] },
+      { title: 'Coletaveis sao o centro do cleanup', detail: 'Organize Bagda por distrito e tipo de coletavel.', tags: ['COLETAVEIS'] },
+      { title: 'Contratos e atividades ajudam nos recursos', detail: 'Eles alimentam upgrades, skill points e trofeus de sistema.', tags: ['CONTRATOS'] },
+      { title: 'Trofeus situacionais precisam de guardas restantes', detail: "Notoriedade, stealth, ferramentas e Assassin's Focus ficam mais faceis antes de esvaziar o mapa.", tags: ['STEALTH', 'ATENCAO'] },
+      { title: 'Enigmas exigem solucao alem da coleta', detail: 'Coletar o enigma nao basta; e preciso resolver o tesouro correspondente quando aplicavel.', tags: ['ENIGMAS'] },
+      { title: 'Ferramentas e upgrades devem ser planejados', detail: 'Recursos e componentes precisam ser usados para trofeus de ferramentas/equipamentos.', tags: ['UPGRADES'] },
+      { title: 'Nao misturar Discovery Tour App', detail: 'Discovery Tour e experiencia separada e nao requisito da platina base.', tags: ['ESCOPO'] }
+    ],
+    faq: [
+      { question: "Assassin's Creed Mirage tem trofeus online?", answer: 'Nao. A lista base tem 51 trofeus offline e 0 online. Multiplayer ou recursos online nao sao necessarios para a platina.' },
+      { question: 'Precisa de coop para platinar?', answer: 'Nao. Nao ha requisito de coop.' },
+      { question: 'DLC e necessaria para a platina?', answer: 'Nao. A platina base nao exige DLC. Valley of Memory/update fica separado ou opcional se estiver cadastrado no projeto.' },
+      { question: "Quantos trofeus Assassin's Creed Mirage tem?", answer: 'A lista base PlayStation tem 51 trofeus.' },
+      { question: "Assassin's Creed Mirage tem trofeus perdiveis?", answer: 'O principal risco e You Snooze, You Lose. O restante da lista base e majoritariamente recuperavel por cleanup/pos-jogo.' },
+      { question: 'Qual e o trofeu perdivel?', answer: 'You Snooze, You Lose. Faca cedo usando blowdart/dardo sonifero em um guarda e saqueando enquanto ele esta dormindo.' },
+      { question: 'A dificuldade afeta trofeus?', answer: 'Nao. Pode jogar em dificuldade baixa sem bloquear a platina.' },
+      { question: 'Quantas runs sao necessarias?', answer: 'Uma run e suficiente, desde que o jogador faca o cleanup e resolva You Snooze, You Lose antes de perder oportunidades boas.' },
+      { question: 'Quanto tempo leva para platinar?', answer: 'Uma estimativa segura e 20-30 horas, dependendo do uso de guia para coletaveis e da quantidade de cleanup.' },
+      { question: 'O que mais toma tempo?', answer: 'Coletaveis, enigmas, contratos, upgrades, ferramentas, equipamentos e atividades por distrito.' },
+      { question: 'Valley of Memory conta para a platina?', answer: 'Nao para a platina base. Se o projeto listar Valley of Memory, os trofeus devem ficar como DLC/update/opcionais.' },
+      { question: 'Discovery Tour App conta para a platina?', answer: 'Nao. Discovery Tour App: Medieval Baghdad nao deve entrar como requisito da platina base.' }
+    ],
+    seo: {
+      title: "Assassin's Creed Mirage: guia de platina, trofeus e roadmap | AtlasAchievement",
+      description: "Guia de platina de Assassin's Creed Mirage com roadmap, 51 trofeus, You Snooze You Lose, coletaveis, enigmas, contratos, ferramentas, flags e DLC fora da platina base.",
+      keywords: "Assassin's Creed Mirage guia de platina, Assassin's Creed Mirage trofeus, AC Mirage guia de platina, AC Mirage roadmap, Assassin's Creed Mirage You Snooze You Lose, Assassin's Creed Mirage coletaveis, Assassin's Creed Mirage enigmas, Assassin's Creed Mirage contratos, Assassin's Creed Mirage ferramentas, Assassin's Creed Mirage sem online, Assassin's Creed Mirage sem coop, Assassin's Creed Mirage Valley of Memory fora da platina base, Assassin's Creed Mirage 51 trofeus, Assassin's Creed Mirage platina facil",
+      ogTitle: "Assassin's Creed Mirage: guia de platina e trofeus",
+      ogDescription: "Roadmap da platina base de Assassin's Creed Mirage com 51 trofeus, You Snooze You Lose, coletaveis, contratos, ferramentas e DLC fora da platina."
+    },
+    tags: ["Assassin's Creed Mirage", 'AC Mirage', 'Platina', 'Offline', 'Sem online', 'Sem coop', 'DLC fora da platina base', 'Coletaveis', 'Contratos', 'Enigmas', 'Bagda'],
+    editorial_status: 'published',
+    coverage_level: 'strong',
+    is_verified: false,
+    verification_status: 'review',
+    editorial_review_status: 'in_review',
+    editorialStatus: 'in_review',
+    last_reviewed_at: '2026-06-11',
+    lastReviewedAt: '2026-06-11T00:00:00.000-03:00',
+    reviewed_by: 'Codex',
+    verification_note: "Guia revisado para a lista base PlayStation de Assassin's Creed Mirage: 51 trofeus offline, roadmap estruturado, You Snooze You Lose como risco de oportunidade, sem online/coop/DLC obrigatorios, Valley of Memory e Discovery Tour fora da platina base. Mantido em revisao porque a suite global npm test falha em dado fora deste guia.",
+    editorial_notes: 'Decisao editorial: marcar You Snooze, You Lose como unico perdivel/risco de oportunidade. Coletaveis recuperaveis, historia, Valley of Memory e Discovery Tour nao entram como perdiveis ou requisitos da platina base.',
+    quality_warnings: [],
+    qualityWarnings: [],
+    roadmap: [
+      {
+        title: 'Avance pela historia desbloqueando Bagda',
+        focus: 'Campanha',
+        objective: 'Concluir a historia principal, liberar distritos, ferramentas, investigacoes e recursos centrais.',
+        actions: [
+          'Jogue a campanha em qualquer dificuldade.',
+          'Use a historia para desbloquear ferramentas, habilidades, contratos e areas de Bagda.',
+          'Faca atividades proximas quando forem rapidas, mas nao transforme a primeira passagem em 100% obrigatorio.',
+          'Aproveite para comecar contratos, pickpocket, stealth kills e upgrades quando surgirem naturalmente.'
+        ],
+        warning: '',
+        result: 'Ao final da campanha, a maior parte do mapa e dos sistemas estara liberada para cleanup.'
+      },
+      {
+        title: 'Resolva You Snooze, You Lose cedo',
+        focus: 'Risco de oportunidade',
+        objective: 'Garantir o unico trofeu com risco real antes de limpar demais o mundo.',
+        actions: [
+          'Equipe ou desbloqueie a ferramenta blowdart/dardo sonifero.',
+          'Use o dardo em um guarda e saqueie o corpo enquanto ele ainda esta adormecido.',
+          'Faca isso antes de concluir todas as areas e reduzir demais as oportunidades com guardas.'
+        ],
+        warning: 'You Snooze, You Lose e o principal risco do guia. Nao deixe para o fim absoluto da platina.',
+        result: 'O unico risco relevante fica resolvido e o restante da lista pode ser feito com mais tranquilidade.'
+      },
+      {
+        title: 'Limpe contratos, casos e atividades',
+        focus: 'Mundo aberto',
+        objective: 'Fechar contratos, investigacoes, Tales of Baghdad e atividades secundarias necessarias.',
+        actions: [
+          'Complete contratos mantendo atencao aos requisitos opcionais quando forem ligados a trofeus.',
+          'Resolva Tales of Baghdad e atividades regionais.',
+          'Use Enkidu, mapa e marcadores para organizar distritos.',
+          'Aproveite oportunidades de stealth, notoriedade e ferramentas durante essa etapa.'
+        ],
+        warning: '',
+        result: 'As atividades de mundo aberto ficam quase todas resolvidas antes dos coletaveis finais.'
+      },
+      {
+        title: 'Faca os coletaveis por distrito',
+        focus: 'Coletaveis',
+        objective: 'Concluir livros perdidos, locais historicos, enigmas, artefatos de Dervis, baus de equipamento e demais colecoes.',
+        actions: [
+          'Organize o cleanup por distrito para evitar idas e vindas.',
+          'Pegue Gear Chests, Lost Books, Historical Sites, Dervis Artifacts, Mysterious Shards e Enigmas conforme o checklist do guia.',
+          'Resolva enigmas e tesouros depois de liberar pontos de viagem rapida.',
+          'Use marcadores do mapa e progresso regional para conferir pendencias.'
+        ],
+        warning: 'Nao confunda coletaveis da platina base com conteudo de Valley of Memory ou update separado.',
+        result: 'Os trofeus de coleta e exploracao da lista base ficam concluidos.'
+      },
+      {
+        title: 'Finalize upgrades, ferramentas e combate',
+        focus: 'Cleanup',
+        objective: 'Fechar upgrades, ferramentas, habilidades e trofeus de combate/stealth restantes.',
+        actions: [
+          'Compre e melhore ferramentas conforme necessario.',
+          'Finalize habilidades e upgrades de equipamento.',
+          'Resolva trofeus de combate, assassinato, notoriedade e stealth que ainda faltarem.',
+          'Use areas com guardas restantes para trofeus situacionais.'
+        ],
+        warning: '',
+        result: 'A lista entra na conferencia final com historia, coletas e sistemas fechados.'
+      },
+      {
+        title: 'Confira a platina base sem DLC',
+        focus: 'Checklist final',
+        objective: 'Confirmar os 51 trofeus da lista base sem misturar Valley of Memory.',
+        actions: [
+          'Revise historia, contratos, investigacoes, Tales of Baghdad, ferramentas, equipamentos, upgrades e colecionaveis.',
+          'Confirme que You Snooze, You Lose foi desbloqueado.',
+          'Confira se Valley of Memory, Animus Sequence challenges ou trofeus de update nao foram tratados como requisito da platina base.',
+          'Confirme que online, coop e DLC obrigatorio continuam falsos.'
+        ],
+        warning: '',
+        result: 'A platina base deve desbloquear apos todos os demais trofeus da lista principal.'
+      }
+    ]
+  });
+
+  Object.assign(acMirageTrophyEdits, {
+    acm_master_of_his_fate: { name_pt: 'Mestre do Seu Destino', description: 'Conquiste todos os outros troféus da lista base.', tip: 'Desbloqueia após os outros 50 troféus da lista base. Valley of Memory e Discovery Tour App não entram.', tags: ['Platina'] },
+    acm_the_master_thief_of_anbar: { name_pt: 'Mestre dos Ladrões de Anbar', description: 'Complete o prólogo.', tip: 'Automático da campanha; jogue em qualquer dificuldade.', tags: ['História', 'Spoiler'] },
+    acm_la_shaya_waqiun_mutlaq: { name: "La shay'a waqi'un mutlaq", name_pt: "La shay'a waqi'un mutlaq", description: 'Torne-se um iniciado dos Hidden Ones.', tip: 'Automático da campanha; jogue em qualquer dificuldade.', tags: ['História', 'Spoiler'] },
+    acm_the_blood_of_a_ghoul: { name_pt: 'Sangue de um Monstro', description: 'Elimine Al-Ghul.', tip: 'Automático da campanha; jogue em qualquer dificuldade.', tags: ['História', 'Spoiler'] },
+    acm_the_blood_of_a_demon: { name_pt: 'Sangue de um Demônio', description: 'Elimine Al-Rabisu.', tip: 'Automático da campanha; jogue em qualquer dificuldade.', tags: ['História', 'Spoiler'] },
+    acm_the_blood_of_an_enchantress: { name_pt: 'Sangue de uma Feiticeira', description: 'Elimine Al-Pairika.', tip: 'Automático da campanha; jogue em qualquer dificuldade.', tags: ['História', 'Spoiler'] },
+    acm_the_blood_of_a_spymaster: { name_pt: 'Sangue do Mestre dos Espiões', description: 'Elimine Al-Mardikhwar.', tip: 'Automático da campanha; jogue em qualquer dificuldade.', tags: ['História', 'Spoiler'] },
+    acm_the_head_of_the_snake: { name_pt: 'A Cabeça da Cobra', description: 'Elimine o líder da Order.', tip: 'Automático da campanha; jogue em qualquer dificuldade.', tags: ['História', 'Spoiler'] },
+    acm_bal_kullun_mumkin: { name_pt: 'Bal kullun mumkin', description: 'Descubra o passado de Basim.', tip: 'Automático da campanha; jogue em qualquer dificuldade.', tags: ['História', 'Spoiler'] },
+    acm_serving_the_light: { name_pt: 'A Serviço da Luz', description: 'Alcance o maior rank dos Hidden Ones.', tip: 'Avance casos e alvos da campanha para subir o rank de Basim. Não depende de dificuldade.', tags: ['História', 'Progressão', 'Spoiler'] },
+    acm_self_improvement: { name_pt: 'Autoaperfeiçoamento', description: 'Desbloqueie todas as habilidades.', tip: 'Complete missões, contratos e atividades para obter skill points suficientes.', tags: ['Upgrade', 'Habilidades', 'Grind', 'Cleanup'] },
+    acm_cutting_edge: { name_pt: 'Arma de Ponta', description: 'Melhore uma arma completamente.', tip: 'Use schematics de Gear Chests e materiais. Pode ficar para o cleanup de equipamentos.', tags: ['Upgrade', 'Equipamento', 'Cleanup'] },
+    acm_thick_skin: { name_pt: 'Casca-grossa', description: 'Melhore um outfit completamente.', tip: 'Use schematics e materiais no Tailor. Planeje junto dos Gear Chests.', tags: ['Upgrade', 'Equipamento', 'Cleanup'] },
+    acm_fashion_statement: { name_pt: 'Estilo Único', description: 'Aplique tintura a um outfit.', tip: 'Compre ou encontre uma tintura compatível e aplique em um outfit no inventário.', tags: ['Equipamento', 'Sistema', 'Cleanup'] },
+    acm_masquerader: { name_pt: 'Mestre dos Disfarces', description: 'Obtenha os dois disfarces em Bagdá.', tip: 'Resolva durante as missões ligadas aos disfarces. Confirme antes de encerrar o arco correspondente.', tags: ['História', 'Atenção', 'Spoiler'] },
+    acm_treasure_seeker: { name_pt: 'Caçador de Tesouros', description: 'Abra um baú de fichas.', tip: 'Use Merchant Favor Token em um token chest. Vem cedo se você explorar mercados e áreas restritas.', tags: ['Coletável', 'Sistema', 'Cleanup'] },
+    acm_potion_collector: { name_pt: 'Colecionador de Poções', description: 'Obtenha 10 elixires.', tip: 'Compre ou encontre elixires durante a campanha. Deve vir naturalmente se você saqueia baús.', tags: ['Item', 'Suprimento', 'Coletável', 'Cleanup'] },
+    acm_fearless: { name_pt: 'Destemido', description: 'Sincronize todos os viewpoints da região de Bagdá.', tip: 'Sincronize viewpoints por distrito para revelar mapa, viagens rápidas e cleanup.', tags: ['Exploração', 'Coletável', 'Cleanup'] },
+    acm_bird_of_prey: { name_pt: 'Ave de Rapina', description: 'Marque 100 guardas usando Enkidu.', tip: 'Use Enkidu em fortalezas, contratos e distritos com muitos guardas antes de entrar.', tags: ['Sistema', 'Stealth', 'Cleanup'] },
+    acm_explorer: { name_pt: 'Explorador', description: 'Explore todos os territórios da região de Bagdá.', tip: 'Organize por distrito e use o progresso regional do mapa.', tags: ['Exploração', 'Coletável', 'Cleanup'] },
+    acm_defender_of_the_people: { name_pt: 'Defensor do Povo', description: 'Complete 10 contratos de facção.', tip: 'Pegue contratos nos bureaus dos Hidden Ones. Eles também ajudam com recursos, tokens e troféus situacionais.', tags: ['Contratos', 'Cleanup'] },
+    acm_crossing_paths: { name_pt: 'Caminhos Cruzados', description: 'Complete um Tale of Baghdad.', tip: 'Complete um conto de Bagdá quando aparecer no mapa. Os demais ajudam no progresso regional.', tags: ['Atividade', 'Side quest', 'Cleanup'] },
+    acm_scholar: { name_pt: 'Acadêmico', description: 'Leve todos os 7 Lost Books a Al-Jahiz.', tip: 'Use checklist por tipo de coletável e distrito.', tags: ['Coletável', 'Lost Books', 'Cleanup'] },
+    acm_riddle_me_this: { name_pt: 'Enigma da Esfinge', description: 'Obtenha um tesouro solucionando um enigma.', tip: 'Coletar o enigma não basta; siga a pista e pegue o tesouro correspondente.', tags: ['Coletável', 'Enigmas', 'Cleanup'] },
+    acm_tools_of_the_trade: { name_pt: 'Ferramentas de Trabalho', description: 'Melhore todas as ferramentas completamente.', tip: 'Desbloqueie e melhore ferramentas conforme a história e recursos permitirem.', tags: ['Ferramentas', 'Upgrade', 'Cleanup'] },
+    acm_eagles_eye: { name: "Eagle's Eye", name_pt: 'Olho de Águia', description: 'Mate 75 guardas com throwing knives.', tip: 'Resolva antes de esvaziar demais áreas com guardas; upgrades de faca ajudam.', tags: ['Combate', 'Ferramentas', 'Cleanup'] },
+    acm_headhunter: { name_pt: 'Caçador de Cabeças', description: 'Acerte 20 guardas na cabeça com throwing knives.', tip: "Use áreas restritas e mira calma. Pode ser combinado com Eagle's Eye.", tags: ['Combate', 'Ferramentas', 'Cleanup'] },
+    acm_sleep_tight: { name_pt: 'Bons Sonhos', description: 'Ponha 10 guardas para dormir com blowdarts.', tip: 'Use blowdarts em patrulhas e áreas restritas; combine cedo com You Snooze, You Lose.', tags: ['Ferramentas', 'Stealth', 'Cleanup'] },
+    acm_ambush: { name_pt: 'Emboscada', description: 'Faça 10 guardas ativarem traps.', tip: 'Use distritos com patrulhas para repetir situações antes de limpar demais o mapa.', tags: ['Ferramentas', 'Stealth', 'Situacional', 'Cleanup'] },
+    acm_up_in_smoke: { name_pt: 'Defumado', description: 'Afete 20 guardas com smoke bombs.', tip: 'Use grupos de guardas em áreas restritas para acelerar o progresso.', tags: ['Ferramentas', 'Stealth', 'Situacional', 'Cleanup'] },
+    acm_attention_seeker: { name_pt: 'Centro das Atenções', description: 'Distraia 10 guardas com noisemakers.', tip: 'Use noisemakers perto de patrulhas e objetivos de contratos.', tags: ['Ferramentas', 'Stealth', 'Situacional', 'Cleanup'] },
+    acm_the_hands_of_a_thief: { name_pt: 'Mãos-leves', description: 'Furte 50 pessoas.', tip: 'Faça pickpocket em áreas movimentadas. Guaranteed Pickpocket pode reduzir erro e repetição.', tags: ['Pickpocket', 'Grind', 'Cleanup'] },
+    acm_you_snooze_you_lose: { name_pt: 'Piscou, Já Era', description: 'Furte um guarda afetado por um blowdart.', tip: 'Faça cedo. Use blowdart/dardo sonífero em um guarda com chave ou Mysterious Shard e saqueie enquanto ele dorme. Não deixe para depois de limpar todas as áreas.', tags: ['Perdível', 'Risco de oportunidade', 'Ferramentas', 'Stealth', 'Cleanup'] },
+    acm_curio_collector: { name_pt: 'Colecionador de Raridades', description: 'Furte todos os 18 Dervis Artifacts e entregue-os a Dervis.', tip: 'Use checklist por tipo de coletável e distrito.', tags: ['Coletável', 'Pickpocket', 'Cleanup'] },
+    acm_hoarder: { name_pt: 'Acumulador', description: 'Junte 2007 dirhams.', tip: 'Guarde recursos suficientes para upgrades e coletas; vem naturalmente se fizer 100%.', tags: ['Recursos', 'Grind', 'Cleanup'] },
+    acm_dawn_and_dusk: { name_pt: 'Alvorecer e Anoitecer', description: 'Use bancos para passar o tempo 5 vezes.', tip: 'Use qualquer banco disponível em Bagdá para alternar o horário.', tags: ['Sistema', 'Cleanup'] },
+    acm_patron_of_the_arts: { name_pt: 'Patrocinador das Artes', description: 'Pague músicos 5 vezes.', tip: 'Use Scholar Favor Tokens em músicos. Pickpocket e contratos ajudam a obter tokens.', tags: ['Tokens', 'Sistema', 'Cleanup'] },
+    acm_patron_of_sell_swords: { name_pt: 'Patrocinador de Mercenários', description: 'Pague mercenários 5 vezes.', tip: 'Use Power Favor Tokens em mercenários, de preferência enquanto limpa notoriedade e contratos.', tags: ['Tokens', 'Sistema', 'Cleanup'] },
+    acm_patron_of_industry: { name_pt: 'Patrocinador da Indústria', description: 'Pague grupos de mercadores 5 vezes.', tip: 'Use Merchant Favor Tokens com grupos de comerciantes para entrar em áreas ou distrair guardas.', tags: ['Tokens', 'Sistema', 'Cleanup'] },
+    acm_blade_in_the_crowd: { name_pt: 'Uma Lâmina entre a Multidão', description: 'Assassine 10 guardas enquanto se mistura à multidão.', tip: 'Use grupos de civis perto de rotas de patrulha e evite iniciar combate aberto.', tags: ['Stealth', 'Situacional', 'Cleanup'] },
+    acm_surprise: { name_pt: 'Surpresa!', description: 'Assassine 10 guardas a partir de esconderijos.', tip: 'Use feno, folhas, bancos e outros esconderijos em áreas com patrulhas.', tags: ['Stealth', 'Situacional', 'Cleanup'] },
+    acm_the_shadow_and_the_flame: { name_pt: 'A Sombra e a Chama', description: 'Derrote um Shakiriyya em combate.', tip: 'Aumente a notoriedade para atrair um Shakiriyya e lute preparado com ferramentas e elixires.', tags: ['Combate', 'Notoriedade', 'Situacional', 'Dificuldade', 'Cleanup'] },
+    acm_silencer: { name_pt: 'Silenciador', description: 'Destrua o chifre de um Horn Bearer com uma throwing knife.', tip: 'Procure Horn Bearers em áreas restritas e mire no chifre antes de ser detectado.', tags: ['Combate', 'Ferramentas', 'Situacional', 'Cleanup'] },
+    acm_notorious: { name_pt: 'Notório', description: 'Permaneça com notoriedade máxima por 10 minutos.', tip: 'Controle o sistema de notoriedade e evite arrancar cartazes ou usar Munadi até o tempo completar.', tags: ['Notoriedade', 'Situacional', 'Cleanup'] },
+    acm_poster_boy: { name_pt: 'Você Viu Este Assassino?', description: 'No máximo de notoriedade, torne-se anônimo arrancando cartazes de procurado.', tip: 'Use o sistema de notoriedade de forma controlada e deixe cartazes disponíveis para baixar o alerta.', tags: ['Notoriedade', 'Situacional', 'Cleanup'] },
+    acm_spread_the_news: { name_pt: 'Espalhe as Boas-novas', description: 'Use os serviços de um Munadi 3 vezes.', tip: 'Use sistema de notoriedade de forma controlada para precisar do Munadi e gastar tokens.', tags: ['Notoriedade', 'Tokens', 'Cleanup'] },
+    acm_unstoppable: { name_pt: 'Imbatível', description: "Mate 5 guardas com um único uso de Assassin's Focus.", tip: 'Faça em grupos de guardas quando tiver barras suficientes e upgrades adequados.', tags: ["Assassin's Focus", 'Execução', 'Dificuldade', 'Cleanup'] },
+    acm_eagles_will: { name: "Eagle's Will", name_pt: 'A Força de uma Águia', description: 'Sobreviva 10 minutos em combate aberto.', tip: 'Use dificuldade baixa se quiser simplificar e mantenha elixires prontos durante um conflito controlado.', tags: ['Combate', 'Situacional', 'Dificuldade', 'Cleanup'] },
+    acm_gifted_escapist: { name_pt: 'Escapista Talentoso', description: 'Derrube 20 estruturas de andaime.', tip: 'Use scaffolds em distritos com guardas restantes; algumas estruturas podem ser repetidas após viagem rápida.', tags: ['Exploração', 'Situacional', 'Cleanup'] },
+    acm_a_true_hidden_one: { name_pt: 'Um Verdadeiro Oculto', description: 'Assassine 10 guardas em sequência sem desencadear combate aberto.', tip: 'Faça em uma área com guardas isolados, assobios e rotas de fuga; reinicie se entrar em conflito.', tags: ['Stealth', 'Execução', 'Dificuldade', 'Cleanup'] },
+    acm_street_cleaner: { name_pt: 'Mantendo as Estradas Limpas', description: 'Esconda 5 corpos em montes de feno.', tip: 'Arraste corpos para montes de feno próximos em áreas restritas.', tags: ['Stealth', 'Situacional', 'Cleanup'] }
+  });
+
+  Object.assign(assassinsCreedMirageGuide, {
+    runs: '1 playthrough com cleanup pós-jogo',
+    guideScope: 'Lista base PlayStation de 51 troféus',
+    platinumType: 'single-player, história, contratos, coletáveis e cleanup',
+    missable: 'Decisão editorial: tratar You Snooze, You Lose como o único perdível/risco real de oportunidade da lista base. A platina, os troféus de história e coletáveis recuperáveis no pós-jogo não contam como perdíveis.',
+    runs_summary: 'Uma run é suficiente para a platina base. Jogue a campanha em qualquer dificuldade, resolva You Snooze, You Lose cedo e depois use o pós-jogo para contratos, coletáveis, ferramentas, upgrades e cleanup.',
+    missable_summary: 'Somente You Snooze, You Lose está marcado como perdível/risco de oportunidade: use blowdart/dardo sonífero em um guarda com chave ou Mysterious Shard e furte enquanto ele dorme antes de esgotar boas oportunidades.',
+    online_summary: 'A lista base tem 51 troféus offline e 0 online. Multiplayer, coop e recursos online não são necessários para a platina.',
+    grind_summary: 'O tempo está em coletáveis por distrito, enigmas, contratos, ferramentas, upgrades, equipamentos, notoriedade e troféus situacionais de stealth/combate.',
+    dlc_scope: "Guia focado na platina base de Assassin's Creed Mirage. Valley of Memory, Animus Sequence challenges, Title Update e Discovery Tour App ficam fora do checklist da platina base.",
+    difficulty_reason: 'A dificuldade 3/10 vem de uma lista curta e acessível para a série. A dificuldade do jogo não afeta troféus e pode ser reduzida.',
+    time_reason: 'A estimativa de 20-30h considera campanha, investigações, contratos, coletáveis, enigmas, ferramentas, upgrades, equipamentos e cleanup por distrito.',
+    first_run_advice: 'Jogue a campanha normalmente enquanto desbloqueia Bagdá, ferramentas, habilidades, contratos e áreas. Resolva You Snooze, You Lose assim que tiver blowdart.',
+    cleanup_advice: 'Depois da história, limpe contratos, Tales of Baghdad, Gear Chests, Lost Books, Historical Sites, Dervis Artifacts, Mysterious Shards, Enigmas, ferramentas, equipamentos e troféus situacionais.',
+    before_you_start: 'A platina base não exige online, coop, DLC nem dificuldade alta. O cuidado real é fazer You Snooze, You Lose cedo com blowdart/dardo sonífero e furto em guarda adormecido.',
+    best_for: 'Vale platinar se você quer uma platina curta, offline e acessível dentro da série, com foco em história, contratos, coletáveis, enigmas, ferramentas e cleanup por distrito.',
+    avoid_if: 'Evite se você não gosta de checklist de coletáveis, enigmas, contratos e troféus situacionais de stealth.',
+    editorial_summary: [
+      "Assassin's Creed Mirage é uma platina curta e acessível para a série, totalmente single-player e sem troféus online, coop ou DLC obrigatórios. A lista base tem 51 troféus e gira em torno de concluir a história, resolver investigações, contratos, coletáveis, enigmas, equipamentos, upgrades, ferramentas e atividades de Bagdá. A dificuldade não bloqueia troféus, então a platina pode ser feita em dificuldade baixa.",
+      'A rota mais segura é jogar a campanha normalmente enquanto desbloqueia ferramentas e habilidades, fazer contratos e atividades conforme aparecem, resolver coletáveis por distrito e deixar a limpeza final para o pós-jogo. O principal cuidado é garantir You Snooze, You Lose cedo, porque é o único troféu com risco real de oportunidade; o restante da platina é majoritariamente checklist e cleanup.'
+    ],
+    quickDecision: {
+      summary: "Vale platinar Assassin's Creed Mirage se você quer uma platina curta, offline e acessível dentro da série, com foco em história, contratos, coletáveis, enigmas, ferramentas e cleanup por distrito.",
+      recommendation: 'A platina base não exige online, coop, DLC nem dificuldade alta.',
+      firstAction: 'Avance a campanha até desbloquear ferramentas e resolva You Snooze, You Lose assim que tiver blowdart/dardo sonífero.',
+      risk: 'O cuidado real é fazer You Snooze, You Lose cedo com blowdart/dardo sonífero e saque em guarda adormecido.'
+    },
+    attentionPoints: [
+      { title: 'You Snooze, You Lose deve ser feito cedo', detail: 'É o principal risco de oportunidade. Use blowdart/dardo sonífero e saqueie o guarda adormecido antes de limpar demais o mapa.', tags: ['PERDÍVEL', 'BLOWDART'] },
+      { title: 'A dificuldade não afeta troféus', detail: 'A platina pode ser feita em dificuldade baixa.', tags: ['DIFICULDADE'] },
+      { title: 'A lista base não exige online', detail: 'Multiplayer/online não entra na platina.', tags: ['OFFLINE'] },
+      { title: 'Valley of Memory fica fora da platina base', detail: 'Troféus de DLC/update devem ficar separados ou opcionais.', tags: ['DLC FORA'] },
+      { title: 'Coletáveis são o centro do cleanup', detail: 'Organize Bagdá por distrito e tipo de coletável.', tags: ['COLETÁVEIS'] },
+      { title: 'Contratos e atividades ajudam nos recursos', detail: 'Eles alimentam upgrades, skill points e troféus de sistema.', tags: ['CONTRATOS'] },
+      { title: 'Troféus situacionais precisam de guardas restantes', detail: "Notoriedade, stealth, ferramentas e Assassin's Focus ficam mais fáceis antes de esvaziar o mapa.", tags: ['STEALTH', 'ATENÇÃO'] },
+      { title: 'Enigmas exigem solução além da coleta', detail: 'Coletar o enigma não basta; é preciso resolver o tesouro correspondente quando aplicável.', tags: ['ENIGMAS'] },
+      { title: 'Ferramentas e upgrades devem ser planejados', detail: 'Recursos e componentes precisam ser usados para troféus de ferramentas/equipamentos.', tags: ['UPGRADES'] },
+      { title: 'Não misturar Discovery Tour App', detail: 'Discovery Tour é experiência separada e não requisito da platina base.', tags: ['ESCOPO'] }
+    ],
+    faq: [
+      { question: "Assassin's Creed Mirage tem troféus online?", answer: 'Não. A lista base tem 51 troféus offline e 0 online. Multiplayer ou recursos online não são necessários para a platina.' },
+      { question: 'Precisa de coop para platinar?', answer: 'Não. Não há requisito de coop.' },
+      { question: 'DLC é necessária para a platina?', answer: 'Não. A platina base não exige DLC. Valley of Memory/update fica separado ou opcional se estiver cadastrado no projeto.' },
+      { question: "Quantos troféus Assassin's Creed Mirage tem?", answer: 'A lista base PlayStation tem 51 troféus.' },
+      { question: "Assassin's Creed Mirage tem troféus perdíveis?", answer: 'O principal risco é You Snooze, You Lose. O restante da lista base é majoritariamente recuperável por cleanup/pós-jogo.' },
+      { question: 'Qual é o troféu perdível?', answer: 'You Snooze, You Lose. Faça cedo usando blowdart/dardo sonífero em um guarda com chave ou Mysterious Shard e saqueando enquanto ele está dormindo.' },
+      { question: 'A dificuldade afeta troféus?', answer: 'Não. Pode jogar em dificuldade baixa sem bloquear a platina.' },
+      { question: 'Quantas runs são necessárias?', answer: 'Uma run é suficiente, desde que o jogador faça o cleanup e resolva You Snooze, You Lose antes de perder oportunidades boas.' },
+      { question: 'Quanto tempo leva para platinar?', answer: 'Uma estimativa segura é 20-30 horas, dependendo do uso de guia para coletáveis e da quantidade de cleanup.' },
+      { question: 'O que mais toma tempo?', answer: 'Coletáveis, enigmas, contratos, upgrades, ferramentas, equipamentos e atividades por distrito.' },
+      { question: 'Valley of Memory conta para a platina?', answer: 'Não para a platina base. Se o projeto listar Valley of Memory, os troféus devem ficar como DLC/update/opcionais.' },
+      { question: 'Discovery Tour App conta para a platina?', answer: 'Não. Discovery Tour App: Medieval Baghdad não deve entrar como requisito da platina base.' }
+    ],
+    seo: {
+      title: "Assassin's Creed Mirage: guia de platina, troféus e roadmap | AtlasAchievement",
+      description: "Guia de platina de Assassin's Creed Mirage com roadmap, 51 troféus, You Snooze You Lose, coletáveis, enigmas, contratos, ferramentas, flags e DLC fora da platina base.",
+      keywords: "Assassin's Creed Mirage guia de platina, Assassin's Creed Mirage troféus, AC Mirage guia de platina, AC Mirage roadmap, Assassin's Creed Mirage You Snooze You Lose, Assassin's Creed Mirage coletáveis, Assassin's Creed Mirage enigmas, Assassin's Creed Mirage contratos, Assassin's Creed Mirage ferramentas, Assassin's Creed Mirage sem online, Assassin's Creed Mirage sem coop, Assassin's Creed Mirage Valley of Memory fora da platina base, Assassin's Creed Mirage 51 troféus, Assassin's Creed Mirage platina fácil",
+      ogTitle: "Assassin's Creed Mirage: guia de platina e troféus",
+      ogDescription: "Roadmap da platina base de Assassin's Creed Mirage com 51 troféus, You Snooze You Lose, coletáveis, contratos, ferramentas e DLC fora da platina."
+    },
+    tags: ["Assassin's Creed Mirage", 'AC Mirage', 'Platina', 'Offline', 'Sem online', 'Sem coop', 'DLC fora da platina base', 'Coletáveis', 'Contratos', 'Enigmas', 'Bagdá'],
+    verification_note: "Guia revisado para a lista base PlayStation de Assassin's Creed Mirage: 51 troféus offline, roadmap estruturado, You Snooze You Lose como risco de oportunidade, sem online/coop/DLC obrigatórios, Valley of Memory e Discovery Tour App fora da platina base. Mantido em revisão porque a suíte global npm test falha em dado fora deste guia.",
+    editorial_notes: 'Decisão editorial: marcar You Snooze, You Lose como único perdível/risco de oportunidade. Coletáveis recuperáveis, história, Valley of Memory e Discovery Tour App não entram como perdíveis ou requisitos da platina base.',
+    roadmap: [
+      {
+        title: 'Avance pela história desbloqueando Bagdá',
+        focus: 'Campanha',
+        objective: 'Concluir a história principal, liberar distritos, ferramentas, investigações e recursos centrais.',
+        actions: ['Jogue a campanha em qualquer dificuldade.', 'Use a história para desbloquear ferramentas, habilidades, contratos e áreas de Bagdá.', 'Faça atividades próximas quando forem rápidas, mas não transforme a primeira passagem em 100% obrigatório.', 'Aproveite para começar contratos, pickpocket, stealth kills e upgrades quando surgirem naturalmente.'],
+        warning: '',
+        result: 'Ao final da campanha, a maior parte do mapa e dos sistemas estará liberada para cleanup.'
+      },
+      {
+        title: 'Resolva You Snooze, You Lose cedo',
+        focus: 'Risco de oportunidade',
+        objective: 'Garantir o único troféu com risco real antes de limpar demais o mundo.',
+        actions: ['Equipe ou desbloqueie a ferramenta blowdart/dardo sonífero.', 'Use o dardo em um guarda com chave ou Mysterious Shard e saqueie o corpo enquanto ele ainda está adormecido.', 'Faça isso antes de concluir todas as áreas e reduzir demais as oportunidades com guardas.'],
+        warning: 'You Snooze, You Lose é o principal risco do guia. Não deixe para o fim absoluto da platina.',
+        result: 'O único risco relevante fica resolvido e o restante da lista pode ser feito com mais tranquilidade.'
+      },
+      {
+        title: 'Limpe contratos, casos e atividades',
+        focus: 'Mundo aberto',
+        objective: 'Fechar contratos, investigações, Tales of Baghdad e atividades secundárias necessárias.',
+        actions: ['Complete contratos mantendo atenção aos requisitos opcionais quando forem ligados a troféus.', 'Resolva Tales of Baghdad e atividades regionais.', 'Use Enkidu, mapa e marcadores para organizar distritos.', 'Aproveite oportunidades de stealth, notoriedade e ferramentas durante essa etapa.'],
+        warning: '',
+        result: 'As atividades de mundo aberto ficam quase todas resolvidas antes dos coletáveis finais.'
+      },
+      {
+        title: 'Faça os coletáveis por distrito',
+        focus: 'Coletáveis',
+        objective: 'Concluir livros perdidos, locais históricos, enigmas, artefatos de Dervis, baús de equipamento e demais coleções.',
+        actions: ['Organize o cleanup por distrito para evitar idas e vindas.', 'Pegue Gear Chests, Lost Books, Historical Sites, Dervis Artifacts, Mysterious Shards e Enigmas conforme o checklist do guia.', 'Resolva enigmas e tesouros depois de liberar pontos de viagem rápida.', 'Use marcadores do mapa e progresso regional para conferir pendências.'],
+        warning: 'Não confunda coletáveis da platina base com conteúdo de Valley of Memory ou update separado.',
+        result: 'Os troféus de coleta e exploração da lista base ficam concluídos.'
+      },
+      {
+        title: 'Finalize upgrades, ferramentas e combate',
+        focus: 'Cleanup',
+        objective: 'Fechar upgrades, ferramentas, habilidades e troféus de combate/stealth restantes.',
+        actions: ['Compre e melhore ferramentas conforme necessário.', 'Finalize habilidades e upgrades de equipamento.', 'Resolva troféus de combate, assassinato, notoriedade e stealth que ainda faltarem.', 'Use áreas com guardas restantes para troféus situacionais.'],
+        warning: '',
+        result: 'A lista entra na conferência final com história, coletas e sistemas fechados.'
+      },
+      {
+        title: 'Confira a platina base sem DLC',
+        focus: 'Checklist final',
+        objective: 'Confirmar os 51 troféus da lista base sem misturar Valley of Memory.',
+        actions: ['Revise história, contratos, investigações, Tales of Baghdad, ferramentas, equipamentos, upgrades e colecionáveis.', 'Confirme que You Snooze, You Lose foi desbloqueado.', 'Confira se Valley of Memory, Animus Sequence challenges ou troféus de update não foram tratados como requisito da platina base.', 'Confirme que online, coop e DLC obrigatório continuam falsos.'],
+        warning: '',
+        result: 'A platina base deve desbloquear após todos os demais troféus da lista principal.'
+      }
+    ]
+  });
+
+  for (const trophy of assassinsCreedMirageGuide.trophies || []) {
+    const edit = acMirageTrophyEdits[trophy.id] || {};
+    const originalName = edit.name || trophy.name;
+    const originalDescription = trophy.descriptionOriginal || trophy.description || '';
+    const isMissable = acMirageMissableIds.has(trophy.id);
+    trophy.name = originalName;
+    trophy.trophyNameOriginal = originalName;
+    trophy.originalName = originalName;
+    trophy.officialName = originalName;
+    trophy.name_pt = edit.name_pt || originalName;
+    trophy.trophyNamePtBr = trophy.name_pt;
+    trophy.namePtSource = trophy.id === 'acm_master_of_his_fate' ? 'same_as_official_name_no_ptbr_source' : 'trusted_steam_ptbr';
+    trophy.descriptionOriginal = originalDescription;
+    trophy.description = edit.description || trophy.description || '';
+    trophy.descriptionPtBr = trophy.description;
+    trophy.ptDescription = trophy.description;
+    trophy.localizedDescription = { ...(trophy.localizedDescription || {}), ptBr: trophy.description, 'pt-BR': trophy.description };
+    trophy.descriptionPtSource = 'editorial_ptbr_from_official_requirement';
+    trophy.tip = edit.tip || trophy.tip || '';
+    trophy.guideTip = trophy.tip;
+    trophy.tipPtBr = trophy.tip;
+    trophy.localizedTip = { ptBr: trophy.tip };
+    trophy.tier = trophy.type;
+    trophy.is_missable = isMissable;
+    trophy.isMissable = isMissable;
+    trophy.missable = isMissable;
+    trophy.is_online = false;
+    trophy.isOnline = false;
+    trophy.is_coop = false;
+    trophy.isCoop = false;
+    trophy.is_dlc = false;
+    trophy.isDlc = false;
+    trophy.dlcRequired = false;
+    trophy.is_spoiler = Boolean(trophy.is_spoiler || acMirageStoryIds.has(trophy.id));
+    trophy.tags = edit.tags || (acMirageStoryIds.has(trophy.id) ? ['Historia'] : (acMirageCollectibleIds.has(trophy.id) ? ['Coletavel', 'Cleanup'] : []));
+    trophy.riskType = isMissable ? 'opportunity_risk' : '';
   }
 }
 
