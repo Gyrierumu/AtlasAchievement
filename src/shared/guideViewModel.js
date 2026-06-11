@@ -871,6 +871,14 @@
       return tags;
     }
     const max = Number(limit || 0);
+    if (slug === 'lies-of-p' && max > 0 && isRealMissableTrophy(trophy)) {
+      const visibleTags = tags.slice(0, max);
+      const missableTag = tags.find(tag => tag?.id === 'missable');
+      if (missableTag && !visibleTags.some(tag => tag?.id === 'missable')) {
+        return [...visibleTags.slice(0, Math.max(0, max - 1)), missableTag];
+      }
+      return visibleTags;
+    }
     return max > 0 ? tags.slice(0, max) : tags;
   }
 

@@ -1630,6 +1630,7 @@ async function migrate(options = {}) {
   await syncEldenRingVerifiedGuideFromSeed();
   await syncSeedGameRoadmapFromSeed('hades');
   await syncSeedGameFromSeed('pragmata', { insertIfMissing: true, forceSync: true });
+  await syncSeedGameFromSeed('celeste', { insertIfMissing: true, forceSync: true });
   await syncSeedGameGuideSummaryAndRoadmapFromSeed('ghost-of-tsushima');
   await syncSeedGameFromSeed('hades-ii', { insertIfMissing: true, forceSync: true });
   await syncSeedGameFromSeed('astro-bot', { insertIfMissing: true, forceSync: true });
