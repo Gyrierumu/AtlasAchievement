@@ -45399,6 +45399,1086 @@ if (assassinsCreedMirageGuide) {
   }
 }
 
+const assassinsCreedShadowsGuide = sampleGames.find(game => game.slug === 'assassins-creed-shadows');
+if (assassinsCreedShadowsGuide) {
+  const acShadowsRoadmap = [
+    {
+      title: 'Comece com Guided Exploration desligado',
+      focus: 'Configuracao critica',
+      objective: 'Garantir Scouting Mission cedo e evitar o unico bloqueio de configuracao relevante para trofeus.',
+      actions: [
+        'Inicie o jogo com Guided Exploration Mode desligado.',
+        'Avance pelo prologo ate liberar o uso de scouts.',
+        'Use um scout para reunir informacao e desbloquear Scouting Mission.',
+        'Depois de desbloquear o trofeu, ligue Guided Exploration Mode se quiser waypoints mais claros.',
+        'Mantenha conexao estavel com os servidores Ubisoft/Animus Hub durante a sessao.'
+      ],
+      warning: 'Scouting Mission nao e perdivel, mas so pode ser obtido com Guided Exploration Mode desligado. Resolva isso cedo para nao esquecer.',
+      result: 'O principal alerta de configuracao da platina fica resolvido logo no comeco.'
+    },
+    {
+      title: 'Avance pela historia e desbloqueie Yasuke',
+      focus: 'Campanha',
+      objective: 'Completar a estrutura principal da historia enquanto libera sistemas, personagens e objetivos necessarios para a platina.',
+      actions: [
+        'Complete o prologo e o Ato 1.',
+        'Desbloqueie Yasuke e a troca entre protagonistas.',
+        'Continue a campanha ate derrotar os alvos principais da historia.',
+        'Faca saves manuais antes e depois de grandes marcos da historia.',
+        'Se um trofeu de historia nao aparecer, aguarde a sincronizacao, reinicie o Animus Hub ou recarregue um save anterior.'
+      ],
+      warning: 'Os trofeus dependem de conexao. Atrasos ou falhas de sincronizacao podem afetar trofeus de historia.',
+      result: 'A campanha fica encaminhada, os dois protagonistas ficam disponiveis e o cleanup ganha mais liberdade.'
+    },
+    {
+      title: 'Derrote os Shinbakufu e conclua as linhas principais',
+      focus: 'Alvos e questlines',
+      objective: 'Resolver os principais alvos e as linhas obrigatorias ligadas a conclusao da historia.',
+      actions: [
+        'Derrote todos os 12 Onryo/Shinbakufu.',
+        'Complete as linhas principais de Naoe.',
+        'Complete as linhas principais de Yasuke.',
+        'Complete as quests necessarias de Junjiro.',
+        'Use o quadro de objetivos para acompanhar alvos e questlines relevantes.'
+      ],
+      warning: 'Quests nao devem ser tratadas como replayaveis. Use saves manuais para seguranca antes de conclusoes importantes.',
+      result: 'Os trofeus de historia, alvos e encerramento ficam resolvidos.'
+    },
+    {
+      title: 'Evolua Naoe, Yasuke, aliados e equipamento',
+      focus: 'Progressao',
+      objective: 'Completar os requisitos de habilidades, ferramentas, aliados e equipamentos lendarios.',
+      actions: [
+        'Recrute o primeiro aliado para Build Your League.',
+        'Treine totalmente um aliado para Front of the Pack.',
+        'Evolua os caminhos de Shinobi e Samurai para Art of Ninjutsu e Art of Kenjutsu.',
+        'Grave uma arma para Make it Personal.',
+        'Equipe lendarios em todos os slots para Better than a Bucket.',
+        'Encontre uma peca lendaria de cada tipo para Limitless.',
+        'Melhore ferramentas, municoes e racoes para In Case of Trouble e Suture Self.'
+      ],
+      warning: 'Limitless e In Case of Trouble podem ser afetados por atraso de sincronizacao. Faca saves manuais e confira se o Animus Hub registrou o progresso.',
+      result: 'A parte de progressao, build e equipamento fica concluida.'
+    },
+    {
+      title: 'Complete atividades e coletaveis necessarios',
+      focus: 'Exploracao seletiva',
+      objective: 'Fazer apenas os coletaveis e atividades necessarios para trofeus, sem transformar a platina em 100% total do mapa.',
+      actions: [
+        'Complete 5 Legendary Sumi-e para A Rare Occurrence.',
+        'Complete todos os Kuji-kiri para Zen Master.',
+        'Complete ao menos um Kofun para Kofun Raider.',
+        'Complete ao menos uma Kata para Good Form.',
+        'Complete uma colecao para Collector.',
+        'Visite todas as provincias para Pathfinder.',
+        'Alcance o ponto mais alto do mapa para Happy Place.'
+      ],
+      warning: 'A platina nao exige 100% de todos os tipos de coletaveis. Nao infle o guia com atividades opcionais que nao contam para trofeus.',
+      result: 'Os requisitos reais de exploracao e coletaveis da lista base ficam resolvidos.'
+    },
+    {
+      title: 'Melhore o esconderijo e resolva contratos',
+      focus: 'Hideout e provincias',
+      objective: 'Finalizar requisitos ligados ao esconderijo, contratos e interacoes especificas.',
+      actions: [
+        'Desbloqueie o Hideout para Sole Sanctum.',
+        'Adicione um sumi-e ao Hideout para Chase the Morning.',
+        'Melhore totalmente um predio para Against Wood and Stone.',
+        'Adote um pet para Everybody Benefits!',
+        'Complete um contrato em cada provincia para Would You Kindly?',
+        'Procure o tesouro atras da cachoeira no esconderijo para Made You Look!'
+      ],
+      warning: 'Would You Kindly? exige atencao por provincia. Use checklist para nao perder controle de onde ja fez contrato.',
+      result: 'Os requisitos de hideout, contratos e interacoes finais ficam concluidos.'
+    },
+    {
+      title: 'Faca os trofeus misc de combate e movimento',
+      focus: 'Misc e combate',
+      objective: 'Resolver trofeus especificos de Naoe, Yasuke, stealth, combate e travessia.',
+      actions: [
+        'Faca os trofeus de movimento de Naoe, como landing roll, grappling hook e Leap of Faith pelo gancho.',
+        'Faca Leap of Fail com Yasuke.',
+        'Complete os trofeus de stealth de Naoe, como assassinato por shoji door e 5 assassinatos sem ser visto.',
+        'Complete os trofeus de combate de Yasuke, como Finisher, parry de projetil e Samurai Stand.',
+        'Faca acoes especificas como chutar inimigo de lugar alto, flecha no joelho, Overdesign III e Final Hearing.'
+      ],
+      warning: 'Alguns trofeus exigem protagonista especifico. A dica de cada trofeu deve deixar claro se e Naoe, Yasuke ou qualquer personagem.',
+      result: 'Os trofeus diversos deixam de ficar espalhados e a platina entra no cleanup final.'
+    },
+    {
+      title: 'Conferencia final da platina base',
+      focus: 'Cleanup',
+      objective: 'Verificar se todos os 55 trofeus da lista base foram concluidos sem misturar DLCs ou packs extras.',
+      actions: [
+        'Confirme se a lista usada no guia tem 55 trofeus base.',
+        'Confira se Claws of Awaji e outros DLCs nao foram incluidos como requisito da platina.',
+        'Reinicie o Animus Hub ou recarregue save se algum trofeu estiver atrasado.',
+        'Verifique se Scouting Mission ja foi desbloqueado.',
+        'Compare flags do topo, filtros e cards antes de marcar como Verificado.'
+      ],
+      warning: 'Nao confunda trofeus base com DLCs/post-launch. A platina da lista base nao exige Claws of Awaji.',
+      result: 'Com os 55 trofeus base registrados, Assassin’s Creed Shadows sera platinado.'
+    }
+  ];
+
+  const acShadowsAttentionPoints = [
+    { title: 'Conexao com Ubisoft servers', detail: 'Os trofeus dependem de conexao com o Animus Hub/servidores Ubisoft. Se a conexao cair, trofeus podem atrasar ou nao registrar corretamente.', tags: ['Conexao', 'Atencao'] },
+    { title: 'PS Plus nao obrigatorio', detail: 'Apesar da conexao obrigatoria para trofeus, a platina nao exige multiplayer nem PS Plus.', tags: ['Conexao', 'Sem PS Plus'] },
+    { title: 'Scouting Mission cedo', detail: 'Faca Scouting Mission cedo com Guided Exploration Mode desligado. Depois disso, o modo guiado pode ser ligado se o jogador quiser.', tags: ['Scouting Mission', 'Atencao'] },
+    { title: 'Guided Exploration Mode', detail: 'O aviso do jogo sobre trofeus desabilitados pode ser enganoso. O cuidado real da platina base e Scouting Mission.', tags: ['Guided Exploration', 'Atencao'] },
+    { title: 'Saves manuais', detail: 'Faca saves manuais distribuidos pela campanha e antes de marcos importantes, especialmente por causa de possiveis atrasos de sincronizacao.', tags: ['Saves manuais', 'Sincronizacao'] },
+    { title: 'DLC fora da platina', detail: 'A platina base usa 55 trofeus. Nao misture Claws of Awaji ou outros packs post-launch com os requisitos da platina.', tags: ['DLC fora da platina'] },
+    { title: 'Legendary Sumi-e', detail: 'A Rare Occurrence exige Legendary Sumi-e; alguns estao ligados a estacoes, entao vale observar esse requisito durante a campanha.', tags: ['Sumi-e', 'Coletavel'] },
+    { title: 'Would You Kindly?', detail: 'Controle as provincias em que ja completou contrato para evitar cleanup confuso.', tags: ['Contratos', 'Checklist'] },
+    { title: 'Naoe e Yasuke', detail: 'Alguns trofeus exigem protagonista especifico. A dica do trofeu deve indicar claramente se e Naoe, Yasuke ou qualquer personagem.', tags: ['Naoe', 'Yasuke'] },
+    { title: 'Platina nao e 100%', detail: 'A platina nao exige 100% de todos os coletaveis e atividades do mapa; foque no que tem trofeu.', tags: ['Cleanup', 'Escopo'] }
+  ];
+
+  const acShadowsFaq = [
+    { question: 'Assassin’s Creed Shadows tem trofeus perdiveis?', answer: 'Nao. A platina base nao tem perdiveis reais. O cuidado principal e fazer Scouting Mission com Guided Exploration Mode desligado, mas essa opcao pode ser alterada nas configuracoes.' },
+    { question: 'Precisa jogar online para platinar?', answer: 'Precisa de conexao para que os trofeus desbloqueiem e sincronizem com o Animus Hub/servidores Ubisoft. Porem, isso nao significa multiplayer obrigatorio.' },
+    { question: 'Precisa de PS Plus?', answer: 'Nao. A platina exige conexao, mas nao exige PS Plus nem modo multiplayer.' },
+    { question: 'Precisa de cooperacao?', answer: 'Nao. Assassin’s Creed Shadows e uma platina single-player.' },
+    { question: 'Precisa de DLC para a platina?', answer: 'Nao. A platina base exige os 55 trofeus principais. Claws of Awaji e outros conteudos post-launch nao sao necessarios para a platina base.' },
+    { question: 'A dificuldade afeta trofeus?', answer: 'Nao. E possivel buscar a platina na dificuldade que preferir.' },
+    { question: 'Guided Exploration Mode desativa trofeus?', answer: 'Para a platina base, o cuidado real e Scouting Mission, que exige Guided Exploration Mode desligado para usar scout. Depois desse trofeu, o jogador pode ligar o modo guiado se quiser.' },
+    { question: 'Os trofeus podem atrasar?', answer: 'Sim. Como os desbloqueios dependem de sincronizacao online, alguns trofeus podem demorar, aparecer depois de reiniciar o Animus Hub ou apos recarregar um save.' },
+    { question: 'Preciso fazer 100% do mapa?', answer: 'Nao. A platina exige atividades e coletaveis especificos, mas nao 100% de tudo no mapa.' },
+    { question: 'Qual e o maior cuidado da platina?', answer: 'Manter conexao estavel, fazer Scouting Mission cedo com Guided Exploration desligado e usar saves manuais para se proteger contra falhas de sincronizacao.' }
+  ];
+
+  const acShadowsChecklist = [
+    'Conferir se o guia tem 55 trofeus da lista base.',
+    'Conferir se Assassin’s Creed Shadows e a platina.',
+    'Conferir distribuicao: 1 platina, 1 ouro, 10 prata, 43 bronze.',
+    'Conferir se DLCs/post-launch nao foram misturados.',
+    'Conferir onlineRequired true para conexao obrigatoria.',
+    'Conferir coopRequired false.',
+    'Conferir dlcRequired false.',
+    'Conferir hasMissables false.',
+    'Conferir missableCount 0.',
+    'Conferir se nenhum trofeu esta marcado como perdivel.',
+    'Conferir se Scouting Mission esta como ponto de atencao, nao perdivel.',
+    'Conferir se Guided Exploration Mode esta explicado corretamente.',
+    'Conferir se PS Plus/multiplayer nao sao tratados como obrigatorios.',
+    'Conferir se dificuldade nao afeta trofeus.',
+    'Conferir se filtros nao estao inflados por tags erradas.',
+    'Conferir se todos os trofeus tem nome oficial em ingles como principal.',
+    'Conferir se todos tem PT-BR abaixo quando houver traducao confiavel/oficial.',
+    'Conferir se descricoes estao em portugues.',
+    'Conferir se nao aparece NOME ORIGINAL, ORIGINAL ou Descricao em revisao editorial.',
+    'Conferir se roadmap esta estruturado como array/objeto.',
+    'Conferir se FAQ, decisao rapida, SEO e pontos de atencao estao coerentes.',
+    'Conferir se pagina individual e catalogo exibem o mesmo status editorial.',
+    'Conferir se flags do topo batem com filtros do catalogo.'
+  ];
+
+  const acShadowsPtBrNames = {
+    'Assassin’s Creed Shadows': 'Assassin’s Creed Shadows',
+    Prologue: 'Prólogo',
+    'A New League Rises': 'O Nascer de uma Nova Liga',
+    'An Oath Fulfilled': 'Um Juramento Cumprido',
+    'Fall of the Shinbakufu': 'A Queda dos Shinbakufu',
+    Epilogue: 'Epílogo',
+    'Death Blossom': 'O Florescer da Morte',
+    'The Thief': 'O Ladrão',
+    'The Toxin Master': 'A Mestra das Toxinas',
+    'The Eager Assassin': 'O Assassino Ávido',
+    'The Ronin': 'Ê Ronin',
+    'The Warrior Monk': 'A Monja Guerreira',
+    'The Sharpshooter': 'A Atiradora',
+    'Build Your League': 'Monte sua Liga',
+    'Front of the Pack': 'À Frente da Matilha',
+    'Art of Ninjutsu': 'A Arte do Ninjutsu',
+    'Art of Kenjutsu': 'A Arte do Kenjutsu',
+    'Make it Personal': 'É Bem a sua Cara',
+    'Better than a Bucket': 'Melhor que Nada',
+    Limitless: 'Sem Limites',
+    'In Case of Trouble': 'Melhor Prevenir',
+    'Suture Self': 'De Barrinha Cheia',
+    Sometimes: 'Será que Rola?',
+    'Reeding is Fundamental': 'Isso me Caule Bem',
+    'Just Your Shadow': 'É Só a Sombra',
+    'Hook, Line, and Swinger': 'Em Suspensão',
+    Acrobatics: 'Acrobacia',
+    'Leap of Fail': 'Salto sem Fé',
+    'Adept Shinobi': 'Shinobi Apta',
+    'Master Shinobi': 'Mestra Shinobi',
+    Unseen: 'Nas Sombras',
+    'Giant Slayer': 'Você É Grande, Mas Não É Dois',
+    'Adept Samurai': 'Samurai Apto',
+    'Master Samurai': 'Mestre Samurai',
+    Unstoppable: 'Imbatível',
+    'This is Japan, Actually': 'Isso é Japão!',
+    'Overdesign III': 'Exagero III',
+    'Final Hearing': 'Audiência Final',
+    Adventurer: 'Aventureiro',
+    'Mortal Reminder': 'Lembrete Mortal',
+    'Test Your Might': 'Teste a sua Força',
+    'Kofun Raider': 'Invasão ao Kofun',
+    'Good Form': 'Boa Forma',
+    'Zen Master': 'Zen',
+    'A Rare Occurrence': 'Uma Ocorrência Rara',
+    Collector: 'Coleção',
+    'Sole Sanctum': 'Santuário',
+    'Chase the Morning': 'Projeto Artístico',
+    'Against Wood and Stone': 'Madeira, Pedra e Suor',
+    'Everybody Benefits!': 'Quem É um Fofinho?',
+    'Happy Place': 'Pura Paz',
+    Pathfinder: 'Desbravando o Japão',
+    'Scouting Mission': 'Missão de Reconhecimento',
+    'Would You Kindly?': 'Ajuda Aqui?',
+    'Made You Look!': 'Olhou Que Eu Vi!'
+  };
+
+  const acShadowsTrophies = [
+    ['ac-shadows-platinum', 'Assassin’s Creed Shadows', 'Platina', 'Desbloqueie todos os trofeus.', 'Conquiste todos os outros trofeus da lista base. DLCs, Claws of Awaji e trophy sets post-launch nao entram nesta platina.', ['Platina']],
+    ['ac-shadows-prologue', 'Prologue', 'Bronze', 'Complete o Prologo.', 'Trofeu de historia. Mantenha conexao ativa com o Animus Hub/servidores Ubisoft para reduzir risco de atraso no desbloqueio.', ['Historia'], true],
+    ['ac-shadows-a-new-league-rises', 'A New League Rises', 'Bronze', 'Complete o Ato 1 da historia principal.', 'Avance a campanha ate concluir o Ato 1 e liberar sistemas importantes, incluindo a troca posterior entre protagonistas.', ['Historia'], true],
+    ['ac-shadows-an-oath-fulfilled', 'An Oath Fulfilled', 'Bronze', 'Complete o Ato 2 da historia principal.', 'Complete o Ato 2 e faca saves manuais antes e depois de grandes marcos por seguranca contra atraso de sincronizacao.', ['Historia'], true],
+    ['ac-shadows-fall-of-the-shinbakufu', 'Fall of the Shinbakufu', 'Bronze', 'Complete o Ato 3 da historia principal.', 'Complete o Ato 3 apos avancar nos alvos Shinbakufu/Onryo e nas linhas principais de Naoe, Yasuke e Junjiro.', ['Historia', 'Shinbakufu'], true],
+    ['ac-shadows-epilogue', 'Epilogue', 'Ouro', 'Complete o Epilogo.', 'Depois do Ato 3, conclua a quest de epilogo no hideout para fechar a historia da lista base.', ['Historia'], true],
+    ['ac-shadows-death-blossom', 'Death Blossom', 'Prata', 'Derrote todos os Shinbakufu.', 'Derrote todos os 12 Onryo/Shinbakufu ligados aos alvos principais da historia.', ['Historia', 'Alvos', 'Shinbakufu'], true],
+    ['ac-shadows-the-thief', 'The Thief', 'Bronze', 'Conheca Gennojo.', 'Avance a questline ligada a Gennojo quando ela ficar disponivel pela progressao.', ['Questline', 'Aliados'], true],
+    ['ac-shadows-the-toxin-master', 'The Toxin Master', 'Bronze', 'Conheca Oni-yuri.', 'Complete a questline de Oni-yuri quando ela aparecer no quadro de objetivos.', ['Questline', 'Aliados'], true],
+    ['ac-shadows-the-eager-assassin', 'The Eager Assassin', 'Bronze', 'Conheca Yagoro.', 'Complete a questline de Yagoro quando ela ficar disponivel.', ['Questline', 'Aliados'], true],
+    ['ac-shadows-the-ronin', 'The Ronin', 'Bronze', 'Conheca Ibuki.', 'Avance a questline de Ibuki, normalmente com Yasuke, quando ela aparecer no mapa/quadro.', ['Questline', 'Aliados', 'Yasuke'], true],
+    ['ac-shadows-warrior-monk', 'The Warrior Monk', 'Bronze', 'Conheca Yaya.', 'Avance a linha de Yaya durante a progressao do Ato 1.', ['Questline', 'Aliados'], true],
+    ['ac-shadows-sharpshooter', 'The Sharpshooter', 'Bronze', 'Conheca Katsuhime.', 'Avance a linha de Katsuhime dentro dos objetivos relacionados ao Shinbakufu.', ['Questline', 'Aliados', 'Shinbakufu'], true],
+    ['ac-shadows-build-your-league', 'Build Your League', 'Bronze', 'Recrute seu primeiro aliado.', 'Complete uma quest de aliado na objective board The League para recrutar o primeiro aliado.', ['Aliados', 'Progressao']],
+    ['ac-shadows-front-of-the-pack', 'Front of the Pack', 'Bronze', 'Treine totalmente um aliado.', 'Construa e evolua o Dojo no Hideout, depois compre os upgrades de um aliado ate o treinamento completo.', ['Aliados', 'Progressao', 'Grind']],
+    ['ac-shadows-art-of-ninjutsu', 'Art of Ninjutsu', 'Bronze', 'Domine o caminho do shinobi.', 'Com Naoe, evolua a arvore Shinobi ate cumprir o requisito do trofeu. Knowledge Rank alto ajuda a liberar tudo.', ['Naoe', 'Shinobi', 'Habilidade', 'Progressao', 'Grind']],
+    ['ac-shadows-art-of-kenjutsu', 'Art of Kenjutsu', 'Bronze', 'Domine o caminho do samurai.', 'Com Yasuke, evolua a arvore Samurai ate cumprir o requisito do trofeu. Algumas habilidades dependem de progressao e quests.', ['Yasuke', 'Samurai', 'Habilidade', 'Progressao', 'Grind']],
+    ['ac-shadows-make-it-personal', 'Make it Personal', 'Bronze', 'Grave sua primeira arma.', 'Construa ou evolua o Blacksmith no Hideout e aplique uma engraving em qualquer arma.', ['Equipamento', 'Hideout', 'Upgrade']],
+    ['ac-shadows-better-than-a-bucket', 'Better than a Bucket', 'Bronze', 'Equipe equipamento lendario em todos os slots.', 'Equipe pecas lendarias em todos os slots de um personagem.', ['Equipamento', 'Progressao']],
+    ['ac-shadows-limitless', 'Limitless', 'Prata', 'Encontre uma peca lendaria de equipamento de cada tipo.', 'Obtenha uma peca lendaria de cada tipo exigido. Se o trofeu atrasar, confira a sincronizacao do Animus Hub e mantenha save manual.', ['Equipamento', 'Grind']],
+    ['ac-shadows-in-case-of-trouble', 'In Case of Trouble', 'Prata', 'Melhore totalmente suas ferramentas e municoes.', 'Compre todos os upgrades de ferramentas de Naoe e municoes de Yasuke; alguns dependem de Knowledge Rank e progressao.', ['Ferramentas', 'Upgrade', 'Progressao', 'Grind']],
+    ['ac-shadows-suture-self', 'Suture Self', 'Bronze', 'Melhore totalmente suas racoes.', 'Complete requisitos de comida e edificios no Hideout para maximizar as racoes.', ['Upgrade', 'Hideout', 'Progressao']],
+    ['ac-shadows-sometimes', 'Sometimes', 'Bronze', 'Execute um landing roll.', 'Com Naoe, compre Igan Roll e role ao cair de um telhado ou altura pequena.', ['Naoe', 'Movimento', 'Acao especifica']],
+    ['ac-shadows-reeding-is-fundamental', 'Reeding is Fundamental', 'Bronze', 'Escape de conflito usando um breathing reed para se esconder em agua rasa.', 'Com Naoe, use Shallow Water Breathing para fugir de conflito ficando imovel em agua rasa.', ['Naoe', 'Stealth', 'Acao especifica']],
+    ['ac-shadows-just-your-shadow', 'Just Your Shadow', 'Bronze', 'Distraia o mesmo inimigo 3 vezes com shinobi bells.', 'Com Naoe, use Shinobi Bells tres vezes no mesmo inimigo sem jogar varias ao mesmo tempo.', ['Naoe', 'Stealth', 'Ferramentas', 'Acao especifica']],
+    ['ac-shadows-hook-line-swinger', 'Hook, Line, and Swinger', 'Bronze', 'Fique no ar balancando de um ponto de grappling hook para outro.', 'Com Naoe, use dois pontos de grappling hook em sequencia sem tocar o chao.', ['Naoe', 'Movimento', 'Acao especifica']],
+    ['ac-shadows-acrobatics', 'Acrobatics', 'Bronze', 'Execute um Leap of Faith a partir de um balanco de grappling hook.', 'Com Naoe, balance em um grappling hook e salte para um feno alto o suficiente para ativar Leap of Faith.', ['Naoe', 'Movimento', 'Acao especifica']],
+    ['ac-shadows-leap-of-fail', 'Leap of Fail', 'Bronze', 'Execute um Leap of Faith como Yasuke.', 'Depois de liberar Yasuke, salte de um viewpoint para um haystack.', ['Yasuke', 'Movimento', 'Acao especifica']],
+    ['ac-shadows-adept-shinobi', 'Adept Shinobi', 'Bronze', 'Execute sua primeira assassinacao.', 'Faca sua primeira assassination com Naoe; normalmente vem no prologo.', ['Naoe', 'Shinobi', 'Stealth']],
+    ['ac-shadows-master-shinobi', 'Master Shinobi', 'Bronze', 'Assassine um inimigo atraves de uma porta shoji.', 'Com Naoe, compre Shoji Door Assassin e mate um inimigo atraves de uma porta shoji.', ['Naoe', 'Shinobi', 'Stealth', 'Acao especifica']],
+    ['ac-shadows-unseen', 'Unseen', 'Prata', 'Execute 5 assassinacoes seguidas sem ser notado nem entrar em combate.', 'Com Naoe, escolha um local com varios inimigos isolados e faca cinco assassinatos seguidos sem ser vista.', ['Naoe', 'Stealth']],
+    ['ac-shadows-giant-slayer', 'Giant Slayer', 'Bronze', 'Assassine um guardian poderoso de uma so vez.', 'Com Naoe, gere ou encontre um Guardian e faca uma assassination de surpresa; Guaranteed Assassination facilita.', ['Naoe', 'Stealth', 'Combate']],
+    ['ac-shadows-adept-samurai', 'Adept Samurai', 'Bronze', 'Execute seu primeiro Finisher como Yasuke.', 'Use Yasuke em combate e finalize o ultimo inimigo de um encontro.', ['Yasuke', 'Samurai', 'Combate']],
+    ['ac-shadows-master-samurai', 'Master Samurai', 'Bronze', 'Apare um projetil vindo em sua direcao.', 'Com Yasuke, faca parry de uma flecha ou projetil no momento correto.', ['Yasuke', 'Samurai', 'Combate']],
+    ['ac-shadows-unstoppable', 'Unstoppable', 'Prata', 'Use Samurai Stand antes de executar um Finisher em um inimigo.', 'Com Yasuke, desbloqueie Samurai Stand e faca um Finisher enquanto a habilidade esta ativa.', ['Yasuke', 'Samurai', 'Combate']],
+    ['ac-shadows-this-is-japan-actually', 'This is Japan, Actually', 'Bronze', 'Chute um inimigo de um lugar alto.', 'Com Yasuke, use War Kick ou acao equivalente perto de um penhasco/altura suficiente.', ['Yasuke', 'Combate', 'Acao especifica']],
+    ['ac-shadows-overdesign-iii', 'Overdesign III', 'Bronze', 'Execute um Finisher em um inimigo que esteja Poisoned e Dazed ao mesmo tempo.', 'Aplique Poison e Daze no mesmo inimigo resistente e execute um Finisher enquanto os dois status estao ativos.', ['Combate', 'Acao especifica']],
+    ['ac-shadows-final-hearing', 'Final Hearing', 'Bronze', 'Guarde sua arma imediatamente depois que um inimigo morrer por Bleed.', 'Use uma arma que aplique Bleed e guarde a arma assim que o inimigo morrer pelo status.', ['Combate', 'Acao especifica']],
+    ['ac-shadows-adventurer', 'Adventurer', 'Bronze', 'Acerte uma flecha no joelho de um inimigo.', 'Com Yasuke e um arco equipado, mire no joelho de um inimigo.', ['Yasuke', 'Combate', 'Acao especifica']],
+    ['ac-shadows-mortal-reminder', 'Mortal Reminder', 'Prata', 'Complete uma Objective Board.', 'Complete todos os objetivos de uma board. Use o quadro para acompanhar o grupo escolhido ate fechar.', ['Alvos', 'Questline', 'Progressao'], true],
+    ['ac-shadows-test-your-might', 'Test Your Might', 'Prata', 'Derrote o inimigo final no torneio.', 'Complete a quest The Tournament e venca os oponentes ate derrotar o inimigo final.', ['Yasuke', 'Combate', 'Questline']],
+    ['ac-shadows-kofun-raider', 'Kofun Raider', 'Bronze', 'Complete seu primeiro kofun.', 'Entre em um Kofun, resolva a exploracao e abra o bau principal. Alguns Kofun podem ser mais confortaveis com personagem/habilidade especifica.', ['Exploracao', 'Kofun']],
+    ['ac-shadows-good-form', 'Good Form', 'Bronze', 'Complete sua primeira kata.', 'Complete uma Kata com Yasuke.', ['Yasuke', 'Kata', 'Atividade']],
+    ['ac-shadows-zen-master', 'Zen Master', 'Prata', 'Complete todos os Kuji-kiri.', 'Complete todos os Kuji-kiri da lista base com Naoe.', ['Naoe', 'Kuji-kiri', 'Atividade', 'Coletavel']],
+    ['ac-shadows-rare-occurrence', 'A Rare Occurrence', 'Prata', 'Complete todos os Legendary Sumi-e.', 'Complete os 5 Legendary Sumi-e. Alguns dependem de estacoes, entao acompanhe esse requisito durante a campanha.', ['Sumi-e', 'Coletavel', 'Atividade']],
+    ['ac-shadows-collector', 'Collector', 'Prata', 'Complete uma colecao.', 'Complete uma colecao inteira, como Tea Bowls of Rikyu, e entregue se a quest pedir.', ['Colecao', 'Coletavel']],
+    ['ac-shadows-sole-sanctum', 'Sole Sanctum', 'Bronze', 'Desbloqueie o Hideout.', 'Desbloqueie o Hideout durante o Ato 1.', ['Hideout', 'Historia'], true],
+    ['ac-shadows-chase-the-morning', 'Chase the Morning', 'Bronze', 'Adicione um sumi-e ao Hideout.', 'Colete um Sumi-e e coloque-o como decoracao no Hideout.', ['Hideout', 'Sumi-e']],
+    ['ac-shadows-against-wood-and-stone', 'Against Wood and Stone', 'Bronze', 'Melhore totalmente um predio no Hideout.', 'Melhore completamente qualquer predio principal do Hideout.', ['Hideout', 'Upgrade']],
+    ['ac-shadows-everybody-benefits', 'Everybody Benefits!', 'Bronze', 'Adote um pet.', 'Desbloqueie um pet e coloque-o no Hideout.', ['Hideout', 'Acao especifica']],
+    ['ac-shadows-happy-place', 'Happy Place', 'Bronze', 'Alcance o ponto mais alto do mapa.', 'Va ao ponto mais alto do mapa e alcance/sincronize o topo.', ['Exploracao', 'Mapa']],
+    ['ac-shadows-pathfinder', 'Pathfinder', 'Bronze', 'Visite todas as provincias do mapa.', 'Visite todas as provincias principais e marque progresso se estiver fazendo por etapas.', ['Exploracao', 'Mapa']],
+    ['ac-shadows-scouting-mission', 'Scouting Mission', 'Bronze', 'Reuna informacao usando um scout.', 'Faca cedo com Guided Exploration Mode desligado. Use um scout para reunir informacao; depois disso, o modo guiado pode ser ligado se voce quiser.', ['Scouting Mission', 'Atencao']],
+    ['ac-shadows-would-you-kindly', 'Would You Kindly?', 'Bronze', 'Complete um contrato em cada provincia.', 'Complete um contrato por provincia e controle no checklist quais provincias ja foram concluídas.', ['Contratos', 'Exploracao', 'Checklist']],
+    ['ac-shadows-made-you-look', 'Made You Look!', 'Bronze', 'Procure o tesouro atras da cachoeira no Hideout.', 'No Hideout, atravesse a area atras da cachoeira e interaja com o tesouro escondido.', ['Hideout', 'Acao especifica', 'Cleanup']]
+  ].map(([id, name, type, description, tip, tags, isSpoiler = false]) => {
+    const namePtBr = acShadowsPtBrNames[name] || name;
+    return {
+      id,
+      name,
+      trophyNameOriginal: name,
+      originalName: name,
+      officialName: name,
+      name_pt: namePtBr,
+      trophyNamePtBr: namePtBr,
+      namePtSource: namePtBr === name ? 'same_as_official_name_no_ptbr_source' : 'trusted_ptbr_localized_name',
+      type,
+      tier: type,
+      description,
+      descriptionPtBr: description,
+      ptDescription: description,
+      localizedDescription: { ptBr: description, 'pt-BR': description },
+      descriptionPtSource: 'editorial_ptbr_from_official_requirement',
+      tip,
+      guideTip: tip,
+      tipPtBr: tip,
+      localizedTip: { ptBr: tip },
+      tags,
+      is_missable: false,
+      isMissable: false,
+      missable: false,
+      is_spoiler: Boolean(isSpoiler),
+      is_online: false,
+      isOnline: false,
+      is_coop: false,
+      isCoop: false,
+      is_dlc: false,
+      isDlc: false,
+      dlcRequired: false,
+      riskType: ''
+    };
+  });
+
+  const accentShadowsPortuguese = value => String(value || '')
+    .replace(/\bNao\b/g, 'Não')
+    .replace(/\bnao\b/g, 'não')
+    .replace(/\bNão ha\b/g, 'Não há')
+    .replace(/\bnão ha\b/g, 'não há')
+    .replace(/\bHa\b/g, 'Há')
+    .replace(/\btrofeus\b/g, 'troféus')
+    .replace(/\btrofeu\b/g, 'troféu')
+    .replace(/\bTrofeus\b/g, 'Troféus')
+    .replace(/\bperdiveis\b/g, 'perdíveis')
+    .replace(/\bperdivel\b/g, 'perdível')
+    .replace(/\bConexao\b/g, 'Conexão')
+    .replace(/\bconexao\b/g, 'conexão')
+    .replace(/\bSincronizacao\b/g, 'Sincronização')
+    .replace(/\bsincronizacao\b/g, 'sincronização')
+    .replace(/\bConfiguracao\b/g, 'Configuração')
+    .replace(/\bopcao\b/g, 'opção')
+    .replace(/\bopcoes\b/g, 'opções')
+    .replace(/\bconfiguracao\b/g, 'configuração')
+    .replace(/\binformacao\b/g, 'informação')
+    .replace(/\bprologo\b/g, 'prólogo')
+    .replace(/\bhistoria\b/g, 'história')
+    .replace(/\bate\b/g, 'até')
+    .replace(/\bFaca\b/g, 'Faça')
+    .replace(/\bfaca\b/g, 'faça')
+    .replace(/\bReuna\b/g, 'Reúna')
+    .replace(/\breuna\b/g, 'reúna')
+    .replace(/\bcomeco\b/g, 'começo')
+    .replace(/\bestavel\b/g, 'estável')
+    .replace(/\bsessao\b/g, 'sessão')
+    .replace(/\bfrequencia\b/g, 'frequência')
+    .replace(/\bacessivel\b/g, 'acessível')
+    .replace(/\bavancar\b/g, 'avançar')
+    .replace(/\bunico\b/g, 'único')
+    .replace(/\bcritica\b/g, 'crítica')
+    .replace(/\bcriticas\b/g, 'críticas')
+    .replace(/\bprincipais\b/g, 'principais')
+    .replace(/\bnecessarias\b/g, 'necessárias')
+    .replace(/\bnecessarios\b/g, 'necessários')
+    .replace(/\bnecessario\b/g, 'necessário')
+    .replace(/\bnecessaria\b/g, 'necessária')
+    .replace(/\bobrigatorias\b/g, 'obrigatórias')
+    .replace(/\bobrigatorios\b/g, 'obrigatórios')
+    .replace(/\bobrigatorio\b/g, 'obrigatório')
+    .replace(/\bobrigatoria\b/g, 'obrigatória')
+    .replace(/\bseguranca\b/g, 'segurança')
+    .replace(/\bpossivel\b/g, 'possível')
+    .replace(/\bpossiveis\b/g, 'possíveis')
+    .replace(/\bconclusao\b/g, 'conclusão')
+    .replace(/\bconclusoes\b/g, 'conclusões')
+    .replace(/\bdisponivel\b/g, 'disponível')
+    .replace(/\bdisponiveis\b/g, 'disponíveis')
+    .replace(/\barvore\b/g, 'árvore')
+    .replace(/\barvores\b/g, 'árvores')
+    .replace(/\blendario\b/g, 'lendário')
+    .replace(/\blendarios\b/g, 'lendários')
+    .replace(/\blendarias\b/g, 'lendárias')
+    .replace(/\bpeca\b/g, 'peça')
+    .replace(/\bmunicoes\b/g, 'munições')
+    .replace(/\bracoes\b/g, 'rações')
+    .replace(/\bexigidos\b/g, 'exigidos')
+    .replace(/\bcolecao\b/g, 'coleção')
+    .replace(/\bprovincia\b/g, 'província')
+    .replace(/\bprovincias\b/g, 'províncias')
+    .replace(/\bpredio\b/g, 'prédio')
+    .replace(/\batras\b/g, 'atrás')
+    .replace(/\bespecificas\b/g, 'específicas')
+    .replace(/\bespecificos\b/g, 'específicos')
+    .replace(/\bespecifico\b/g, 'específico')
+    .replace(/\bcoletaveis\b/g, 'coletáveis')
+    .replace(/\bColetavel\b/g, 'Coletável')
+    .replace(/\bAtencao\b/g, 'Atenção')
+    .replace(/\batencao\b/g, 'atenção')
+    .replace(/\bacao\b/g, 'ação')
+    .replace(/\bacoes\b/g, 'ações')
+    .replace(/\bAcao\b/g, 'Ação')
+    .replace(/\bpublicacao\b/g, 'publicação')
+    .replace(/\brevisao\b/g, 'revisão')
+    .replace(/\btecnico\b/g, 'técnico')
+    .replace(/\bcritico\b/g, 'crítico')
+    .replace(/\bproxima\b/g, 'próxima')
+    .replace(/\bprojetil\b/g, 'projétil')
+    .replace(/\bagua\b/g, 'água')
+    .replace(/\bchao\b/g, 'chão')
+    .replace(/\bsequencia\b/g, 'sequência')
+    .replace(/\bjoelho\b/g, 'joelho')
+    .replace(/\bvença\b/g, 'vença')
+    .replace(/\bVoce\b/g, 'Você')
+    .replace(/\bvoce\b/g, 'você')
+    .replace(/\bConteudos\b/g, 'Conteúdos')
+    .replace(/\bconteudos\b/g, 'conteúdos')
+    .replace(/\bapos\b/g, 'após')
+    .replace(/\bja\b/g, 'já')
+    .replace(/\bJapao\b/g, 'Japão')
+    .replace(/\barea\b/g, 'área')
+    .replace(/\bbaú\b/g, 'baú')
+    .replace(/\bbau\b/g, 'baú')
+    .replace(/\bvehiculos\b/g, 'veículos')
+    .replace(/\bmissoes\b/g, 'missões')
+    .replace(/\bdialogos\b/g, 'diálogos')
+    .replace(/\bprimeira\b/g, 'primeira')
+    .replace(/\bconcluido\b/g, 'concluído')
+    .replace(/\bconcluidos\b/g, 'concluídos')
+    .replace(/\bconcluida\b/g, 'concluída')
+    .replace(/\bconcluidas\b/g, 'concluídas')
+    .replace(/\bcompativel\b/g, 'compatível')
+    .replace(/\bvisivel\b/g, 'visível')
+    .replace(/\bProgressao\b/g, 'Progressão')
+    .replace(/\bprogressao\b/g, 'progressão')
+    .replace(/\bExploracao\b/g, 'Exploração')
+    .replace(/\bexploracao\b/g, 'exploração')
+    .replace(/\bdistribuicao\b/g, 'distribuição')
+    .replace(/\btraducao\b/g, 'tradução')
+    .replace(/\bdescricoes\b/g, 'descrições')
+    .replace(/\bpagina\b/g, 'página')
+    .replace(/\bcatalogo\b/g, 'catálogo')
+    .replace(/\bdecisao\b/g, 'decisão')
+    .replace(/\bcooperacao\b/g, 'cooperação')
+    .replace(/\breplayaveis\b/g, 'replayáveis')
+    .replace(/\bpos-/g, 'pós-')
+    .replace(/Shadows e uma/g, 'Shadows é uma')
+    .replace(/segura e comecar/g, 'segura é começar')
+    .replace(/segura e começar/g, 'segura é começar')
+    .replace(/cuidado real da platina base e Scouting Mission/g, 'cuidado real da platina base é Scouting Mission')
+    .replace(/cuidado principal e fazer/g, 'cuidado principal é fazer')
+    .replace(/Qual e o maior/g, 'Qual é o maior')
+    .replace(/O maior cuidado e/g, 'O maior cuidado é')
+    .replace(/conexão e um ponto crítico/g, 'conexão é um ponto crítico')
+    .replace(/A dificuldade escolhida nao afeta trofeus/g, 'A dificuldade escolhida não afeta troféus')
+    .replace(/E possivel/g, 'É possível');
+
+  const accentShadowsTextFields = (value, key = '') => {
+    const rawKeys = new Set([
+      'id',
+      'slug',
+      'image',
+      'cover_image',
+      'catalogImage',
+      'name',
+      'trophyNameOriginal',
+      'originalName',
+      'officialName',
+      'type',
+      'tier',
+      'namePtSource',
+      'descriptionPtSource',
+      'riskType'
+    ]);
+    if (typeof value === 'string') return rawKeys.has(key) ? value : accentShadowsPortuguese(value);
+    if (Array.isArray(value)) return value.map(item => accentShadowsTextFields(item, key));
+    if (!value || typeof value !== 'object') return value;
+    return Object.fromEntries(Object.entries(value).map(([entryKey, entryValue]) => [entryKey, accentShadowsTextFields(entryValue, entryKey)]));
+  };
+
+  Object.assign(assassinsCreedShadowsGuide, accentShadowsTextFields({
+    difficulty: 4,
+    time: '50-75h',
+    time_min_hours: 50,
+    time_max_hours: 75,
+    time_sort_hours: 50,
+    time_bucket: 'long',
+    missable: 'Não há troféus perdíveis reais na platina base. Scouting Mission exige Guided Exploration Mode desligado, mas essa opção pode ser alterada nas configurações.',
+    runs_summary: 'Uma campanha principal com cleanup livre apos a historia. A platina base nao exige 100% do mapa, DLC, coop ou multiplayer.',
+    missable_summary: 'Sem troféus perdíveis reais na lista base. Scouting Mission é ponto de atenção de configuração, não troféu perdível.',
+    online_summary: 'A lista base exige conexao com o Animus Hub/servidores Ubisoft para desbloquear e sincronizar trofeus, mas nao exige multiplayer, cooperacao nem PS Plus.',
+    grind_summary: 'O peso esta em historia, 12 Onryo/Shinbakufu, aliados, habilidades de Naoe/Yasuke, ferramentas, equipamentos lendarios, atividades especificas, contratos por provincia e cleanup.',
+    dlc_scope: 'Guia focado na platina base de PS5 com 55 trofeus. Claws of Awaji e outros packs post-launch ficam fora dos requisitos da platina.',
+    difficulty_reason: 'A dificuldade nao afeta trofeus. A nota 4/10 reflete uma platina longa, mas acessivel, com risco maior em sincronizacao online, organizacao do cleanup e requisitos especificos de protagonistas.',
+    time_reason: 'A faixa de 50-75 horas considera campanha, 12 Onryo/Shinbakufu, linhas de Naoe e Yasuke, aliados, habilidades, ferramentas, hideout, contratos, atividades e coletaveis especificos.',
+    first_run_advice: 'Comece com Guided Exploration Mode desligado ate desbloquear Scouting Mission, mantenha conexao estavel com Ubisoft/Animus Hub e faca saves manuais com frequencia.',
+    cleanup_advice: 'Depois da historia, limpe aliados, habilidades, equipamentos, ferramentas, hideout, contratos por provincia, atividades, coletaveis especificos e trofeus misc de combate/movimento.',
+    before_you_start: 'Nao trate a platina como offline total: os trofeus dependem de conexao com servidores Ubisoft/Animus Hub. Isso nao e multiplayer, nao exige PS Plus e nao exige coop.',
+    best_for: 'Ideal para quem gosta de Assassin’s Creed moderno e aceita uma platina longa com foco em historia, exploracao seletiva e cleanup.',
+    avoid_if: 'Evite se voce quer uma platina totalmente offline ou nao quer depender de sincronizacao com servidores para desbloqueio de trofeus.',
+    editorial_summary: [
+      'Assassin’s Creed Shadows e uma platina longa, mas acessivel, focada em concluir a campanha, derrotar os alvos principais, avancar nas linhas de Naoe e Yasuke, recrutar e treinar aliados, evoluir arvores de habilidades, melhorar ferramentas, completar atividades especificas e resolver alguns coletaveis selecionados.',
+      'A rota mais segura e comecar com Guided Exploration Mode desligado ate desbloquear Scouting Mission, fazer saves manuais com frequencia e manter o jogo conectado ao Animus Hub/servidores Ubisoft, ja que os trofeus dependem de sincronizacao online para aparecer. Nao ha trofeus perdiveis reais, cooperacao obrigatoria ou DLC necessaria para a platina base, mas a conexao e um ponto critico: se o launcher ou os servidores falharem, trofeus podem atrasar ou nao registrar corretamente.'
+    ],
+    quickDecision: {
+      worthIt: 'Sim, se voce gosta de Assassin’s Creed moderno e aceita uma platina longa com foco em historia, exploracao seletiva e cleanup.',
+      difficulty: 'Baixa a moderada.',
+      time: 'Longo, cerca de 50 a 75 horas.',
+      mainAlert: 'Conexao com servidores Ubisoft/Animus Hub e Scouting Mission com Guided Exploration Mode desligado.',
+      risk: 'Risco tecnico de sincronizacao, mas sem perdiveis reais.',
+      onlineCoop: 'Exige conexao para trofeus, mas nao exige cooperacao, multiplayer nem PS Plus.',
+      dlc: 'Nao exige DLC para a platina base.'
+    },
+    seo: {
+      title: 'Assassin’s Creed Shadows: Guia de Trofeus e Platina',
+      description: 'Guia de trofeus de Assassin’s Creed Shadows com roadmap da platina, tempo estimado, dificuldade, conexao obrigatoria, Scouting Mission, Guided Exploration Mode, Naoe, Yasuke e dicas para os 55 trofeus da lista base.',
+      metaDescription: 'Guia de trofeus de Assassin’s Creed Shadows com roadmap da platina, tempo estimado, dificuldade, conexao obrigatoria, Scouting Mission, Guided Exploration Mode, Naoe, Yasuke e dicas para os 55 trofeus da lista base.',
+      keywords: 'Assassin’s Creed Shadows trofeus, Assassin’s Creed Shadows platina, guia Assassin’s Creed Shadows, AC Shadows trofeus, AC Shadows platina, Scouting Mission, Guided Exploration Mode, Naoe, Yasuke, Shinbakufu, Claws of Awaji DLC, Assassin’s Creed Shadows online trophies',
+      ogTitle: 'Assassin’s Creed Shadows: Guia de Trofeus e Platina',
+      ogDescription: 'Roadmap da platina base de Assassin’s Creed Shadows com 55 trofeus, conexao obrigatoria para desbloqueio, Scouting Mission, Guided Exploration Mode, Naoe e Yasuke.'
+    },
+    checklist: acShadowsChecklist,
+    attentionPoints: acShadowsAttentionPoints,
+    faq: acShadowsFaq,
+    tags: ['Assassin’s Creed Shadows', 'AC Shadows', 'PS5', 'Platina', 'Conexao obrigatoria', 'Sem multiplayer', 'Sem PS Plus', 'Sem coop', 'DLC fora da platina base', 'Scouting Mission', 'Guided Exploration Mode', 'Naoe', 'Yasuke', 'Shinbakufu'],
+    onlineRequired: true,
+    coopRequired: false,
+    dlcRequired: false,
+    hasMissables: false,
+    missableCount: 0,
+    missable_count: 0,
+    newGamePlusRequired: false,
+    difficultyTrophiesRequired: false,
+    editorial_status: 'published',
+    coverage_level: 'strong',
+    is_verified: false,
+    verification_status: 'review',
+    editorial_review_status: 'in_review',
+    last_reviewed_at: '2026-06-12',
+    editorial_notes: 'Revisao editorial focada na platina base de Assassin’s Creed Shadows: 55 trofeus, conexao obrigatoria para sincronizacao, sem multiplayer/coop/PS Plus, sem DLC e sem perdiveis reais. Scouting Mission tratado como ponto de atencao por Guided Exploration Mode.',
+    quality_warnings: [],
+    verification_note: 'Guia revisado para publicação: lista base PS5 com 55 troféus, roadmap estruturado, FAQ firme, tags controladas e flags coerentes para conexão obrigatória sem multiplayer. Mantido em revisão porque npm test falha em dado fora deste guia.',
+    roadmap: acShadowsRoadmap,
+    trophies: acShadowsTrophies
+  }));
+}
+
+const assassinsCreedValhallaGuide = sampleGames.find(game => game.slug === 'assassins-creed-valhalla');
+if (assassinsCreedValhallaGuide) {
+  const acValhallaRoadmap = [
+    {
+      title: 'Comece a saga e organize seus saves',
+      focus: 'Prologo e seguranca',
+      objective: 'Concluir o inicio da campanha e preparar uma rotina segura para uma platina longa.',
+      actions: [
+        'Complete o prologo na Noruega e avance ate chegar a Inglaterra.',
+        'Jogue na dificuldade que preferir, pois ela nao afeta trofeus.',
+        'Crie saves manuais antes de iniciar cada novo arco ou regiao no mapa de aliancas.',
+        'Sincronize viewpoints e revele pontos de Wealth, Mysteries e Artifacts.',
+        'Evite limpar regioes as pressas sem conferir se tudo registrou corretamente.'
+      ],
+      warning: 'O jogo teve muitos relatos de bugs em Mysteries e World Events. Isso nao torna trofeus perdiveis, mas saves manuais reduzem muito o risco de retrabalho.',
+      result: 'A base da campanha fica aberta e o jogador comeca a platina com seguranca.'
+    },
+    {
+      title: 'Complete os arcos da historia e aliancas',
+      focus: 'Campanha',
+      objective: 'Avancar pela historia principal e concluir os arcos que liberam trofeus automaticos.',
+      actions: [
+        'Complete os arcos principais da Inglaterra conforme o mapa de aliancas.',
+        'Finalize os arcos que liberam trofeus como Hard Choices, The Order is Revealed, The Good Saxon, Take My Hand, Calling in a Favor e The Enemy of My Enemy.',
+        'Complete as quests de Asgard e Jotunheim para In the Footsteps of the Gods.',
+        'Complete The Prophecy storyline para As It Was Foretold.',
+        'Finalize Hamtunscire para England Subdued.'
+      ],
+      warning: 'Escolhas de historia nao devem ser tratadas como bloqueio da platina base. O cuidado real e manter saves por seguranca contra bugs.',
+      result: 'Os trofeus principais de campanha ficam resolvidos e o mapa fica pronto para limpeza completa.'
+    },
+    {
+      title: 'Limpe cada territorio para Completionist All the Way!',
+      focus: '100% dos territorios',
+      objective: 'Completar todos os territorios da lista base com Wealth, Mysteries e Artifacts.',
+      actions: [
+        'Complete todos os Wealth de cada regiao.',
+        'Complete todos os Mysteries, incluindo World Events, Cairns, Standing Stones, Flytings, Daughters of Lerion, Alpha Animals e Animus Anomalies.',
+        'Complete todos os Artifacts, incluindo Roman Artifacts, Curse Symbols, Flying Papers, Treasure Hoard Maps e outros tipos exigidos.',
+        'Use checklist por regiao para nao perder nenhum marcador.',
+        'Confirme se a regiao recebeu check ou contagem completa antes de avancar definitivamente.'
+      ],
+      warning: 'Completionist All the Way! e o maior gargalo da platina. Se um World Event ou Mystery bugar, recarregue save anterior, viaje para outra regiao ou reinicie o jogo antes de continuar por muitas horas.',
+      result: 'O requisito mais demorado da platina fica encaminhado e varios trofeus secundarios serao liberados naturalmente.'
+    },
+    {
+      title: 'Elimine a Order of the Ancients e busque os lendarios',
+      focus: 'Order e equipamentos',
+      objective: 'Derrotar a Order of the Ancients e concluir os requisitos ligados a equipamentos lendarios.',
+      actions: [
+        'Elimine todos os membros da Order of the Ancients para Disorder of the Ancients.',
+        'Derrote as Daughters of Lerion necessarias para Godly Reward.',
+        'Obtenha Thor\'s Helmet.',
+        'Complete os requisitos de Thor e empunhe Mjolnir para Worthy.',
+        'Colete os Treasures of Britain necessarios e retire Excalibur da pedra para Caladfwlch.'
+      ],
+      warning: 'Mjolnir e Thor\'s Helmet exigem progresso avancado e limpeza especifica. Deixe para o endgame se estiver abaixo do nivel recomendado.',
+      result: 'Os trofeus de Order, Thor, Mjolnir e Excalibur ficam concluidos.'
+    },
+    {
+      title: 'Evolua Ravensthorpe e conclua atividades estruturadas',
+      focus: 'Settlement e atividades',
+      objective: 'Resolver requisitos de assentamento, Orlog, pesca, raids, settlement e atividades longas.',
+      actions: [
+        'Faca raids e colete recursos para evoluir Ravensthorpe.',
+        'Alcance settlement level 3 para Builder.',
+        'Alcance settlement level 6 para Home Sweet Home.',
+        'Crie um Jomsviking para It\'s Alive!',
+        'Coloque decoracao em todos os pontos cosmeticos do assentamento para Home Decor.',
+        'Venca todos os jogadores de Orlog para Orlog Champion.',
+        'Pesque todos os tipos de peixe com a fishing line para Good Catch!'
+      ],
+      warning: 'Good Catch! exige usar a linha de pesca. Matar peixes com armas ou explosivos nao deve contar para o trofeu.',
+      result: 'A parte de assentamento, minigames e pesca fica resolvida.'
+    },
+    {
+      title: 'Faca os trofeus misc de combate e exploracao',
+      focus: 'Misc e combate',
+      objective: 'Limpar trofeus especificos que podem nao vir naturalmente durante a campanha.',
+      actions: [
+        'Faca Overdesign II com tres soldados de tipo dificil enquanto Eivor esta em chamas.',
+        'Faca Silent Viking assassinando 10 inimigos seguidos sem iniciar combate.',
+        'Faca Equine Attack assassinando um inimigo do cavalo.',
+        'Faca Row Rage destruindo 5 barcos em menos de 2 minutos com o longship.',
+        'Faca A Picture of Grace correndo por 30 objetos quebraveis.',
+        'Faca Skadi\'s Hobby com um slide de 150 metros na neve.',
+        'Faca Seahorse apos comprar Swimming Lessons no estabulo.'
+      ],
+      warning: 'Overdesign II nao e trofeu de dificuldade da campanha. A tag correta deve indicar combate e acao especifica, nao Dificuldade.',
+      result: 'Os trofeus diversos deixam de ficar espalhados e o cleanup final fica menor.'
+    },
+    {
+      title: 'Conferencia final da platina base',
+      focus: 'Cleanup',
+      objective: 'Garantir que todos os 51 trofeus da lista base foram concluidos sem misturar DLCs.',
+      actions: [
+        'Confirme se a lista usada no guia tem 51 trofeus base.',
+        'Confira se Wrath of the Druids, The Siege of Paris, Dawn of Ragnarok e outros DLCs nao foram incluidos como requisitos.',
+        'Revise se Completionist All the Way! registrou apos completar todos os territorios.',
+        'Confira se Orlog, pesca, settlement level 6, Order, Mjolnir e Excalibur foram concluidos.',
+        'Compare flags do topo, filtros e cards antes de marcar como Verificado.'
+      ],
+      warning: 'Nao misture listas completas com DLCs na platina base. Viking Legend exige apenas os trofeus principais.',
+      result: 'Com os 51 trofeus da lista base concluidos, Viking Legend sera desbloqueado.'
+    }
+  ];
+
+  const acValhallaAttentionPoints = [
+    { title: 'Completionist All the Way!', detail: 'E o maior gargalo da platina. Complete Wealth, Mysteries e Artifacts de todos os territorios da lista base.', tags: ['Completionist', 'Mapa', 'Grind'] },
+    { title: 'Saves manuais por regiao', detail: 'Faca um save manual ao iniciar cada novo arco/regiao no mapa de aliancas e antes de World Events. Isso reduz o risco de retrabalho em caso de bug.', tags: ['Saves manuais', 'Risco tecnico'] },
+    { title: 'Bugs nao sao perdiveis', detail: 'Relatos de bugs em Mysteries/World Events devem ser tratados como risco tecnico, nao como trofeus perdiveis reais.', tags: ['Risco tecnico', 'Sem perdiveis'] },
+    { title: 'DLC nao necessaria', detail: 'A platina base usa 51 trofeus. Nao misture Wrath of the Druids, The Siege of Paris, Dawn of Ragnarok, The Forgotten Saga ou outros DLCs com Viking Legend.', tags: ['DLC fora da platina'] },
+    { title: 'Dificuldade', detail: 'A dificuldade escolhida nao afeta trofeus. Overdesign II fala de soldados dificeis/tipo de inimigo, nao dificuldade da campanha.', tags: ['Dificuldade livre'] },
+    { title: 'Good Catch!', detail: 'Use a fishing line para pegar cada tipo de peixe. Matar peixes com armas ou explosivos nao conta.', tags: ['Pesca', 'Checklist'] },
+    { title: 'Settlement level 6', detail: 'Home Sweet Home exige settlement level 6; raids e recursos sao parte importante do cleanup.', tags: ['Settlement', 'Raids'] },
+    { title: 'Orlog Champion', detail: 'Vencer todos os jogadores de Orlog pode ficar para o final, mas deve ser rastreado em checklist.', tags: ['Orlog', 'Cleanup'] },
+    { title: 'Mjolnir e Thor', detail: 'Worthy e Godly Reward dependem de progressao avancada, Daughters of Lerion e requisitos de Thor.', tags: ['Thor', 'Endgame'] },
+    { title: 'PS4 e PS5', detail: 'PS4 e PS5 podem ter stacks separadas. Nao prometa autopop ou progresso compartilhado sem confirmacao no projeto/fonte.', tags: ['PS4', 'PS5'] }
+  ];
+
+  const acValhallaFaq = [
+    { question: 'Assassin’s Creed Valhalla tem trofeus perdiveis?', answer: 'Nao. A platina base nao tem perdiveis reais. O cuidado principal e manter saves manuais por regiao por causa de possiveis bugs em Mysteries ou World Events.' },
+    { question: 'Precisa jogar online para platinar?', answer: 'Nao. A platina base e offline e nao exige trofeus online.' },
+    { question: 'Precisa de cooperacao?', answer: 'Nao. Assassin’s Creed Valhalla e uma platina single-player.' },
+    { question: 'Precisa de DLC para a platina?', answer: 'Nao. Viking Legend exige apenas os 51 trofeus da lista base. DLCs como Wrath of the Druids, The Siege of Paris, Dawn of Ragnarok e The Forgotten Saga nao sao necessarios para a platina.' },
+    { question: 'A dificuldade afeta trofeus?', answer: 'Nao. A dificuldade escolhida nao afeta a platina. Overdesign II envolve inimigos dificeis, mas nao exige jogar em uma dificuldade especifica da campanha.' },
+    { question: 'Quanto tempo leva para platinar?', answer: 'Em media, cerca de 120 horas ou mais, dependendo do ritmo de exploracao e da organizacao do cleanup.' },
+    { question: 'Preciso completar todos os territorios?', answer: 'Sim. Completionist All the Way! exige completar os territorios da lista base com Wealth, Mysteries e Artifacts.' },
+    { question: 'O que fazer para evitar bugs?', answer: 'Faca saves manuais ao iniciar cada regiao/arco e antes de World Events. Se algum evento nao avancar, tente viajar para outra regiao, reiniciar o jogo ou recarregar um save anterior.' },
+    { question: 'Good Catch! aceita matar peixe com arma?', answer: 'Nao. O trofeu exige pegar cada tipo de peixe usando a fishing line.' },
+    { question: 'Qual e o maior cuidado da platina?', answer: 'Completionist All the Way!. Ele exige 100% dos territorios e e o principal motivo da platina ser tao longa.' }
+  ];
+
+  const acValhallaChecklist = [
+    'Conferir se o guia tem 51 trofeus da lista base.',
+    'Conferir se Viking Legend e a platina.',
+    'Conferir distribuicao: 1 platina, 1 ouro, 14 prata, 35 bronze.',
+    'Conferir se DLCs nao foram misturadas.',
+    'Conferir onlineRequired false.',
+    'Conferir coopRequired false.',
+    'Conferir dlcRequired false.',
+    'Conferir hasMissables false.',
+    'Conferir missableCount 0.',
+    'Conferir se nenhum trofeu esta marcado como perdivel.',
+    'Conferir se Completionist All the Way! nao esta como perdivel.',
+    'Conferir se bugs sao tratados como risco tecnico, nao perdivel.',
+    'Conferir se Overdesign II nao esta marcado como dificuldade de campanha.',
+    'Conferir se dificuldade nao afeta trofeus.',
+    'Conferir se filtros nao estao inflados por tags erradas.',
+    'Conferir se todos os trofeus tem nome oficial em ingles como principal.',
+    'Conferir se todos tem PT-BR abaixo quando houver traducao confiavel/oficial.',
+    'Conferir se descricoes estao em portugues.',
+    'Conferir se nao aparecem placeholders editoriais nos cards.',
+    'Conferir se roadmap esta estruturado como array/objeto.',
+    'Conferir se roadmap nao renderiza placeholder de objeto.',
+    'Conferir FAQ, decisao rapida, SEO e pontos de atencao.',
+    'Conferir se pagina individual e catalogo exibem o mesmo status editorial.',
+    'Conferir se flags do topo batem com filtros do catalogo.'
+  ];
+
+  const acValhallaPtBrNames = {
+    'Viking Legend': 'Lenda Viking',
+    'The Saga Begins': 'A Saga Começa',
+    'To England!': 'À Inglaterra!',
+    'Hard Choices': 'Escolhas Difíceis',
+    'The Order is Revealed': 'A Ordem É Revelada',
+    'The Good Saxon': 'O Bom Saxão',
+    'Take My Hand': 'Pegue Minha Mão',
+    'Calling in a Favor': 'Cobrando um Favor',
+    'The Enemy of My Enemy': 'O Inimigo do Meu Inimigo',
+    'In the Footsteps of the Gods': 'Nas Pegadas dos Deuses',
+    'As It Was Foretold': 'Conforme o Previsto',
+    'England Subdued': 'Inglaterra Subjugada',
+    'Disorder of the Ancients': 'Desordem dos Anciões',
+    Rampage: 'Tumulto',
+    'It\'s Alive!': 'Está Vivo!',
+    Tranquility: 'Tranquilidade',
+    Equilibrium: 'Equilíbrio',
+    'Old School Treasure Hunt': 'Caça ao Tesouro às Antigas',
+    'Skadi\'s Hobby': 'Hobby de Skadi',
+    'Witch Hunter': 'Caça às Bruxas',
+    'Equine Attack': 'Ataque Equino',
+    'Silent Viking': 'Viking Silencioso',
+    'Everyday Life': 'Vida Cotidiana',
+    'Overdesign II': 'Abate Intrincado II',
+    'Completionist All the Way!': 'Concluinte Até o Fim!',
+    'Row Rage': 'Fúria Naval',
+    'We\'re in the End Game Now': 'Agora Estamos no Estágio Final',
+    'A Picture of Grace': 'Uma Imagem de Encanto',
+    Builder: 'Edificando',
+    'Home Sweet Home': 'Lar Doce Lar',
+    Pioneer: 'Pioneirismo',
+    'Home Decor': 'Casa Decorada',
+    'Not the Norse You\'re Looking For': 'Não Sou Quem Você Procura',
+    'Face My Might!': 'Encare Meu Poder!',
+    'Ultimate Refinement': 'Refinamento Supremo',
+    'Flying Eivor': 'Eivor em Voo Livre',
+    'Twinkle Twinkle': 'Brilha Brilha',
+    Archaeologist: 'Arqueólogo',
+    'Orlog Champion': 'Campeão de Orlog',
+    'Good Catch!': 'Boa Pescaria!',
+    'Full Mastery': 'Maestria Total',
+    'Is There Anybody Out There?': 'Tem Alguém Aí?',
+    'Slam Master': 'Mestre da Afronta',
+    Caladfwlch: 'Caledfwlch',
+    'It\'s Not a Bug, It\'s a Feature!': 'Não É um Bug, É um Recurso!',
+    Seahorse: 'Cavalo-marinho',
+    'The Hidden Truth': 'A Verdade Oculta',
+    'Master Hunter': 'Mestre da Caça',
+    Dreamcatcher: 'Filtro dos Sonhos',
+    'Godly Reward': 'Recompensa Divina',
+    Worthy: 'Digno'
+  };
+
+  const acValhallaTrophies = [
+    ['ac-valhalla-viking-legend', 'Viking Legend', 'Platina', 'Conquiste todos os trofeus.', 'Conquiste todos os outros trofeus da lista base para liberar a platina. DLCs nao sao necessarias.', ['Platina']],
+    ['ac-valhalla-the-saga-begins', 'The Saga Begins', 'Bronze', 'Complete o prologo.', 'Trofeu de historia. Complete o prologo na Noruega.', ['Historia'], true],
+    ['ac-valhalla-to-england', 'To England!', 'Bronze', 'Deixe a Noruega.', 'Trofeu de historia. Avance ate deixar a Noruega e chegar a Inglaterra.', ['Historia'], true],
+    ['ac-valhalla-hard-choices', 'Hard Choices', 'Bronze', 'Complete o arco de Grantebridgescire.', 'Trofeu de historia. Complete o arco de Grantebridgescire.', ['Historia'], true],
+    ['ac-valhalla-order-is-revealed', 'The Order is Revealed', 'Bronze', 'Complete o arco de Lunden.', 'Trofeu de historia. Complete o arco de Lunden e avance a trama da Order of the Ancients.', ['Historia', 'Order'], true],
+    ['ac-valhalla-good-saxon', 'The Good Saxon', 'Bronze', 'Complete o arco de East Anglia.', 'Trofeu de historia. Complete o arco de East Anglia.', ['Historia'], true],
+    ['ac-valhalla-take-my-hand', 'Take My Hand', 'Bronze', 'Complete o arco de Cent.', 'Trofeu de historia. Complete o arco de Cent.', ['Historia'], true],
+    ['ac-valhalla-calling-in-a-favor', 'Calling in a Favor', 'Bronze', 'Complete o arco de Suthsexe.', 'Trofeu de historia. Complete o arco de Suthsexe.', ['Historia'], true],
+    ['ac-valhalla-enemy-of-my-enemy', 'The Enemy of My Enemy', 'Bronze', 'Complete o arco de Wincestre.', 'Trofeu de historia. Complete o arco de Wincestre.', ['Historia'], true],
+    ['ac-valhalla-footsteps-of-the-gods', 'In the Footsteps of the Gods', 'Prata', 'Complete as quests de Asgard e Jotunheim.', 'Complete as linhas de Asgard e Jotunheim da lista base. Isso nao e DLC.', ['Historia', 'Questline'], true],
+    ['ac-valhalla-as-it-was-foretold', 'As It Was Foretold', 'Prata', 'Complete a storyline The Prophecy.', 'Complete The Prophecy storyline.', ['Historia', 'Questline'], true],
+    ['ac-valhalla-england-subdued', 'England Subdued', 'Prata', 'Complete o arco de Hamtunscire.', 'Complete o arco de Hamtunscire, ligado ao final da campanha inglesa.', ['Historia'], true],
+    ['ac-valhalla-disorder-of-the-ancients', 'Disorder of the Ancients', 'Ouro', 'Elimine todos os alvos da Order of the Ancients.', 'Elimine todos os membros da Order of the Ancients, incluindo Zealots e alvos finais.', ['Order', 'Alvos', 'Endgame', 'Combate'], true],
+    ['ac-valhalla-rampage', 'Rampage', 'Bronze', 'Complete seu primeiro raid na Inglaterra.', 'Complete o primeiro raid na Inglaterra.', ['Raids', 'Progressao']],
+    ['ac-valhalla-its-alive', 'It\'s Alive!', 'Bronze', 'Crie um Jomsviking.', 'Crie um Jomsviking em Ravensthorpe.', ['Settlement']],
+    ['ac-valhalla-tranquility', 'Tranquility', 'Bronze', 'Complete um puzzle de Standing Stones.', 'Complete qualquer puzzle de Standing Stones.', ['Mysteries', 'Mapa', 'Exploracao']],
+    ['ac-valhalla-equilibrium', 'Equilibrium', 'Bronze', 'Complete 3 desafios de Cairn.', 'Complete tres desafios de Cairn.', ['Mysteries', 'Mapa', 'Exploracao']],
+    ['ac-valhalla-old-school-treasure-hunt', 'Old School Treasure Hunt', 'Bronze', 'Colete 5 recompensas de Treasure Hoard.', 'Colete cinco recompensas de Treasure Hoard Maps.', ['Artifacts', 'Coletavel', 'Mapa']],
+    ['ac-valhalla-skadis-hobby', 'Skadi\'s Hobby', 'Bronze', 'Execute um slide de 150 m na neve.', 'Faca uma descida de 150 metros na neve.', ['Exploracao', 'Acao especifica']],
+    ['ac-valhalla-witch-hunter', 'Witch Hunter', 'Bronze', 'Derrote uma Daughter of Lerion.', 'Derrote uma Daughter of Lerion.', ['Daughters of Lerion', 'Combate', 'Endgame'], true],
+    ['ac-valhalla-equine-attack', 'Equine Attack', 'Bronze', 'Assassine um inimigo a partir do cavalo.', 'Assassine um inimigo a partir do cavalo.', ['Stealth', 'Acao especifica']],
+    ['ac-valhalla-silent-viking', 'Silent Viking', 'Bronze', 'Assassine 10 inimigos seguidos sem iniciar conflito.', 'Faca 10 assassinatos seguidos sem iniciar combate aberto.', ['Stealth', 'Acao especifica']],
+    ['ac-valhalla-everyday-life', 'Everyday Life', 'Bronze', 'Complete 10 World Events.', 'Complete 10 World Events/Mysteries. Bugs eventuais devem ser tratados com save manual, nao como perdivel real.', ['Mysteries', 'Exploracao']],
+    ['ac-valhalla-overdesign-ii', 'Overdesign II', 'Prata', 'Enquanto estiver em chamas durante uma luta, mate 3 soldados de elite sem quebrar os escudos deles.', 'Mate tres soldados de tipo dificil enquanto Eivor esta em chamas. Isso nao e trofeu de dificuldade da campanha.', ['Combate', 'Acao especifica']],
+    ['ac-valhalla-completionist-all-the-way', 'Completionist All the Way!', 'Prata', 'Complete todos os territorios.', 'Maior gargalo da platina: complete Wealth, Mysteries e Artifacts de todos os territorios da lista base. Use checklist por regiao e saves manuais.', ['Exploracao', 'Mapa', 'Territory Completion', 'Wealth', 'Mysteries', 'Artifacts', 'Coletavel', 'Grind', 'Cleanup']],
+    ['ac-valhalla-row-rage', 'Row Rage', 'Bronze', 'Destrua 5 barcos em menos de 2 minutos com seu longship.', 'Destrua cinco barcos em menos de dois minutos usando o longship.', ['Exploracao', 'Acao especifica']],
+    ['ac-valhalla-end-game-now', 'We\'re in the End Game Now', 'Prata', 'Alcance Power 280.', 'Chegue ao Power 280 com progressao, habilidades e atividades.', ['Progressao', 'Grind']],
+    ['ac-valhalla-picture-of-grace', 'A Picture of Grace', 'Bronze', 'Corra atraves de 30 objetos quebraveis.', 'Corra atraves de 30 objetos quebraveis.', ['Acao especifica']],
+    ['ac-valhalla-builder', 'Builder', 'Bronze', 'Alcance settlement level 3.', 'Eleve Ravensthorpe ao nivel 3.', ['Settlement', 'Raids', 'Recursos']],
+    ['ac-valhalla-home-sweet-home', 'Home Sweet Home', 'Prata', 'Alcance settlement level 6.', 'Eleve Ravensthorpe ao nivel 6 construindo e melhorando o settlement com recursos de raids, arcos e baus menores.', ['Settlement', 'Raids', 'Recursos', 'Grind']],
+    ['ac-valhalla-pioneer', 'Pioneer', 'Bronze', 'Chegue a Vinland.', 'Chegue a Vinland pela campanha/lista base.', ['Historia', 'Questline'], true],
+    ['ac-valhalla-home-decor', 'Home Decor', 'Bronze', 'Coloque um item em cada ponto cosmetico do settlement.', 'Coloque um item em cada ponto cosmetico do settlement.', ['Settlement', 'Acao especifica']],
+    ['ac-valhalla-not-the-norse-youre-looking-for', 'Not the Norse You\'re Looking For', 'Bronze', 'Passe perto de um guarda em uma distrust area misturado a um grupo de monges.', 'Passe perto de um guarda em area de desconfiança misturado a um grupo de monges.', ['Stealth', 'Acao especifica']],
+    ['ac-valhalla-face-my-might', 'Face My Might!', 'Bronze', 'Equipe 8 habilidades.', 'Equipe oito habilidades ao mesmo tempo.', ['Habilidade', 'Progressao']],
+    ['ac-valhalla-ultimate-refinement', 'Ultimate Refinement', 'Prata', 'Melhore e aprimore totalmente uma peca de equipamento.', 'Melhore e aprimore completamente uma peca de equipamento.', ['Equipamento', 'Upgrade']],
+    ['ac-valhalla-flying-eivor', 'Flying Eivor', 'Bronze', 'Seja arremessado 30 metros por um destroyer ou housecarl.', 'Seja arremessado 30 metros por um Destroyer ou Housecarl.', ['Combate', 'Acao especifica']],
+    ['ac-valhalla-twinkle-twinkle', 'Twinkle Twinkle', 'Bronze', 'Solte um vaga-lume em seu settlement.', 'Solte um vaga-lume no settlement.', ['Settlement', 'Acao especifica']],
+    ['ac-valhalla-archaeologist', 'Archaeologist', 'Bronze', 'Complete todos os desafios do Roman Collector.', 'Colete e entregue os Roman Artifacts necessarios ao Roman Collector.', ['Artifacts', 'Roman Artifacts', 'Coletavel', 'Mapa']],
+    ['ac-valhalla-orlog-champion', 'Orlog Champion', 'Bronze', 'Venca todos os jogadores de Orlog.', 'Venca todos os jogadores de Orlog. Controle os adversarios vencidos em checklist.', ['Orlog', 'Minigame', 'Grind', 'Cleanup']],
+    ['ac-valhalla-good-catch', 'Good Catch!', 'Bronze', 'Pegue um peixe de cada tipo usando a fishing line.', 'Pesque cada tipo de peixe usando a fishing line. Matar peixes com armas ou explosivos nao conta.', ['Pesca', 'Coletavel', 'Grind', 'Cleanup']],
+    ['ac-valhalla-full-mastery', 'Full Mastery', 'Prata', 'Gaste seu primeiro Mastery Point.', 'Gaste seu primeiro Mastery Point apos atingir a progressao necessaria.', ['Progressao']],
+    ['ac-valhalla-is-there-anybody-out-there', 'Is There Anybody Out There?', 'Bronze', 'Acenda os braseiros apagados na Hadrian\'s Wall.', 'Acenda os braseiros apagados na Muralha de Adriano.', ['Exploracao', 'Acao especifica']],
+    ['ac-valhalla-slam-master', 'Slam Master', 'Prata', 'Complete todos os flytings.', 'Complete todos os Flytings, que contam como Mysteries no mapa.', ['Flyting', 'Mysteries', 'Mapa', 'Cleanup']],
+    ['ac-valhalla-caladfwlch', 'Caladfwlch', 'Prata', 'Retire Excalibur da pedra.', 'Colete os Treasures of Britain necessarios e retire Excalibur da pedra.', ['Treasures of Britain', 'Equipamento', 'Exploracao', 'Endgame'], true],
+    ['ac-valhalla-its-not-a-bug', 'It\'s Not a Bug, It\'s a Feature!', 'Bronze', 'Complete sua primeira Animus Anomaly.', 'Complete sua primeira Animus Anomaly.', ['Animus Anomaly', 'Mysteries', 'Exploracao'], true],
+    ['ac-valhalla-seahorse', 'Seahorse', 'Bronze', 'Nade um total de 3 km com o cavalo.', 'Compre Swimming Lessons no estabulo e nade 3 km no total com o cavalo.', ['Acao especifica']],
+    ['ac-valhalla-hidden-truth', 'The Hidden Truth', 'Prata', 'Obtenha todos os video fragments e assista ao video secreto.', 'Complete todas as Animus Anomalies, obtenha os fragmentos de video e assista ao video final.', ['Animus Anomaly', 'Mysteries', 'Exploracao', 'Cleanup'], true],
+    ['ac-valhalla-master-hunter', 'Master Hunter', 'Prata', 'Derrote todos os Alpha Animals.', 'Derrote todos os Alpha Animals da lista base.', ['Alpha Animal', 'Mysteries', 'Combate', 'Endgame']],
+    ['ac-valhalla-dreamcatcher', 'Dreamcatcher', 'Bronze', 'Destrua 10 Curse Symbols.', 'Destrua 10 Curse Symbols.', ['Artifacts', 'Exploracao', 'Coletavel']],
+    ['ac-valhalla-godly-reward', 'Godly Reward', 'Prata', 'Obtenha Thor\'s Helmet.', 'Derrote as Daughters of Lerion e cumpra os requisitos para obter Thor\'s Helmet.', ['Daughters of Lerion', 'Equipamento', 'Thor', 'Endgame'], true],
+    ['ac-valhalla-worthy', 'Worthy', 'Bronze', 'Empunhe Mjolnir.', 'Empunhe Mjolnir apos cumprir os requisitos de Thor na lista base.', ['Equipamento', 'Thor', 'Endgame'], true]
+  ].map(([id, name, type, description, tip, tags, isSpoiler = false]) => {
+    const namePtBr = acValhallaPtBrNames[name] || name;
+    return {
+      id,
+      name,
+      trophyNameOriginal: name,
+      originalName: name,
+      officialName: name,
+      name_pt: namePtBr,
+      trophyNamePtBr: namePtBr,
+      namePtSource: namePtBr === name ? 'same_as_official_name_no_ptbr_source' : 'trusted_ptbr_localized_name',
+      type,
+      tier: type,
+      description,
+      descriptionPtBr: description,
+      ptDescription: description,
+      localizedDescription: { ptBr: description, 'pt-BR': description },
+      descriptionPtSource: 'editorial_ptbr_from_official_requirement',
+      tip,
+      guideTip: tip,
+      tipPtBr: tip,
+      localizedTip: { ptBr: tip },
+      tags,
+      is_missable: false,
+      isMissable: false,
+      missable: false,
+      is_spoiler: Boolean(isSpoiler),
+      is_online: false,
+      isOnline: false,
+      is_coop: false,
+      isCoop: false,
+      is_dlc: false,
+      isDlc: false,
+      dlcRequired: false,
+      riskType: ''
+    };
+  });
+
+  const accentValhallaPortuguese = value => String(value || '')
+    .replace(/\bNao\b/g, 'Não')
+    .replace(/\bnao\b/g, 'não')
+    .replace(/\bNão ha\b/g, 'Não há')
+    .replace(/\bnão ha\b/g, 'não há')
+    .replace(/\bsao\b/g, 'são')
+    .replace(/\btrofeus\b/g, 'troféus')
+    .replace(/\btrofeu\b/g, 'troféu')
+    .replace(/\bTrofeus\b/g, 'Troféus')
+    .replace(/\bperdiveis\b/g, 'perdíveis')
+    .replace(/\bperdivel\b/g, 'perdível')
+    .replace(/\bPrologo\b/g, 'Prólogo')
+    .replace(/\bprologo\b/g, 'prólogo')
+    .replace(/\bHistoria\b/g, 'História')
+    .replace(/\bhistoria\b/g, 'história')
+    .replace(/\bate\b/g, 'até')
+    .replace(/\bFaca\b/g, 'Faça')
+    .replace(/\bfaca\b/g, 'faça')
+    .replace(/\bregiao\b/g, 'região')
+    .replace(/\bregioes\b/g, 'regiões')
+    .replace(/\baliancas\b/g, 'alianças')
+    .replace(/\bas pressas\b/g, 'às pressas')
+    .replace(/\bcomeca\b/g, 'começa')
+    .replace(/\bseguranca\b/g, 'segurança')
+    .replace(/\bautomaticos\b/g, 'automáticos')
+    .replace(/\bvarios\b/g, 'vários')
+    .replace(/\bsecundarios\b/g, 'secundários')
+    .replace(/\bserao\b/g, 'serão')
+    .replace(/\bterritorio\b/g, 'território')
+    .replace(/\bterritorios\b/g, 'territórios')
+    .replace(/\blendarios\b/g, 'lendários')
+    .replace(/\bavancada\b/g, 'avançada')
+    .replace(/\bavancado\b/g, 'avançado')
+    .replace(/\bAvancar\b/g, 'Avançar')
+    .replace(/\bavancar\b/g, 'avançar')
+    .replace(/\bdificil\b/g, 'difícil')
+    .replace(/\bdificeis\b/g, 'difíceis')
+    .replace(/\bnecessarias\b/g, 'necessárias')
+    .replace(/\bnecessarios\b/g, 'necessários')
+    .replace(/\bnecessaria\b/g, 'necessária')
+    .replace(/\bnecessario\b/g, 'necessário')
+    .replace(/\bespecifica\b/g, 'específica')
+    .replace(/\bespecificas\b/g, 'específicas')
+    .replace(/\bespecifico\b/g, 'específico')
+    .replace(/\bespecificos\b/g, 'específicos')
+    .replace(/\bExploracao\b/g, 'Exploração')
+    .replace(/\bexploracao\b/g, 'exploração')
+    .replace(/\bAcao\b/g, 'Ação')
+    .replace(/\bacao\b/g, 'ação')
+    .replace(/\bacoes\b/g, 'ações')
+    .replace(/\bColetavel\b/g, 'Coletável')
+    .replace(/\bcoletaveis\b/g, 'coletáveis')
+    .replace(/\bProgressao\b/g, 'Progressão')
+    .replace(/\bprogressao\b/g, 'progressão')
+    .replace(/\bdecoracao\b/g, 'decoração')
+    .replace(/\bcosmeticos\b/g, 'cosméticos')
+    .replace(/\bVenca\b/g, 'Vença')
+    .replace(/\bvencidos\b/g, 'vencidos')
+    .replace(/\bTrofeu\b/g, 'Troféu')
+    .replace(/\batencao\b/g, 'atenção')
+    .replace(/\bAtencao\b/g, 'Atenção')
+    .replace(/\brapida\b/g, 'rápida')
+    .replace(/\btecnico\b/g, 'técnico')
+    .replace(/\bpublicacao\b/g, 'publicação')
+    .replace(/\brevisao\b/g, 'revisão')
+    .replace(/\bconfiavel\b/g, 'confiável')
+    .replace(/\bconfirmacao\b/g, 'confirmação')
+    .replace(/\bdescricoes\b/g, 'descrições')
+    .replace(/\bDescricao\b/g, 'Descrição')
+    .replace(/\bportugues\b/g, 'português')
+    .replace(/\bingles\b/g, 'inglês')
+    .replace(/\bdistribuicao\b/g, 'distribuição')
+    .replace(/\bcatalogo\b/g, 'catálogo')
+    .replace(/\bpagina\b/g, 'página')
+    .replace(/\bdecisao\b/g, 'decisão')
+    .replace(/\bconcluidos\b/g, 'concluídos')
+    .replace(/\bconcluido\b/g, 'concluído')
+    .replace(/\bconcluidas\b/g, 'concluídas')
+    .replace(/\bincluidos\b/g, 'incluídos')
+    .replace(/\bapos\b/g, 'após')
+    .replace(/\bja\b/g, 'já')
+    .replace(/\besta\b/g, 'está')
+    .replace(/\bestao\b/g, 'estão')
+    .replace(/\bmedia\b/g, 'média')
+    .replace(/\borganizacao\b/g, 'organização')
+    .replace(/\bproxima\b/g, 'próxima')
+    .replace(/\binicio\b/g, 'início')
+    .replace(/\bpossiveis\b/g, 'possíveis')
+    .replace(/\bcompativel\b/g, 'compatível')
+    .replace(/\bvisivel\b/g, 'visível')
+    .replace(/\bnivel\b/g, 'nível')
+    .replace(/\bbaus\b/g, 'baús')
+    .replace(/\btres\b/g, 'três')
+    .replace(/\batraves\b/g, 'através')
+    .replace(/\bquebraveis\b/g, 'quebráveis')
+    .replace(/\bpeca\b/g, 'peça')
+    .replace(/\bestabulo\b/g, 'estábulo')
+    .replace(/\bvideo\b/g, 'vídeo')
+    .replace(/\bVoce\b/g, 'Você')
+    .replace(/\bvoce\b/g, 'você')
+    .replace(/\bcooperacao\b/g, 'cooperação')
+    .replace(/\bobrigatorio\b/g, 'obrigatório')
+    .replace(/\bobrigatoria\b/g, 'obrigatória')
+    .replace(/\bacessivel\b/g, 'acessível')
+    .replace(/\bexecucao\b/g, 'execução')
+    .replace(/\bperiodicos\b/g, 'periódicos')
+    .replace(/\btao\b/g, 'tão')
+    .replace(/Assassin’s Creed Valhalla e uma/g, 'Assassin’s Creed Valhalla é uma')
+    .replace(/Assassinâ€™s Creed Valhalla e uma/g, 'Assassinâ€™s Creed Valhalla é uma')
+    .replace(/Viking Legend e a platina/g, 'Viking Legend é a platina')
+    .replace(/O cuidado real e manter/g, 'O cuidado real é manter')
+    .replace(/O cuidado principal e manter/g, 'O cuidado principal é manter')
+    .replace(/A rota mais segura e avançar/g, 'A rota mais segura é avançar')
+    .replace(/All the Way! e o maior/g, 'All the Way! é o maior')
+    .replace(/E o maior gargalo/g, 'É o maior gargalo')
+    .replace(/Isso não e DLC/g, 'Isso não é DLC')
+    .replace(/Isso não e troféu/g, 'Isso não é troféu')
+    .replace(/Overdesign II não e troféu/g, 'Overdesign II não é troféu')
+    .replace(/platina base e offline/g, 'platina base é offline')
+    .replace(/Valhalla e uma platina/g, 'Valhalla é uma platina')
+    .replace(/Qual e o maior/g, 'Qual é o maior')
+    .replace(/O maior cuidado e Completionist/g, 'O maior cuidado é Completionist')
+    .replace(/territórios e e o principal/g, 'territórios e é o principal')
+    .replace(/O compromisso real e Completionist/g, 'O compromisso real é Completionist')
+    .replace(/vídeo fragments/g, 'fragmentos de vídeo')
+    .replace(/O peso está/g, 'O peso está')
+    .replace(/Completionist All the Way! é saves/g, 'Completionist All the Way! e saves')
+    .replace(/Thor's Helmet/g, 'Thor\'s Helmet')
+    .replace(/Order é the Ancients/g, 'Order of the Ancients')
+    .replace(/Daughters é Lerion/g, 'Daughters of Lerion')
+    .replace(/Treasures é Britain/g, 'Treasures of Britain')
+    .replace(/World Events é Mysteries/g, 'World Events e Mysteries');
+
+  const accentValhallaTextFields = (value, key = '') => {
+    const rawKeys = new Set([
+      'id',
+      'slug',
+      'image',
+      'cover_image',
+      'catalogImage',
+      'name',
+      'trophyNameOriginal',
+      'originalName',
+      'officialName',
+      'type',
+      'tier',
+      'namePtSource',
+      'descriptionPtSource',
+      'riskType'
+    ]);
+
+    if (Array.isArray(value)) return value.map(item => accentValhallaTextFields(item, key));
+    if (value && typeof value === 'object') {
+      return Object.fromEntries(Object.entries(value).map(([childKey, childValue]) => [
+        childKey,
+        accentValhallaTextFields(childValue, childKey)
+      ]));
+    }
+    if (typeof value === 'string') return rawKeys.has(key) ? value : accentValhallaPortuguese(value);
+    return value;
+  };
+
+  Object.assign(assassinsCreedValhallaGuide, accentValhallaTextFields({
+    difficulty: 4,
+    time: '120h+',
+    time_min_hours: 120,
+    time_max_hours: 150,
+    time_sort_hours: 120,
+    time_bucket: 'long',
+    missable: 'Não há troféus perdíveis reais na platina base. Bugs históricos em Mysteries ou World Events devem ser tratados como risco técnico e mitigados com saves manuais por região.',
+    runs_summary: 'Uma campanha principal com free roam e cleanup completo apos a historia. A lista base nao exige online, coop, DLC nem dificuldade especifica.',
+    missable_summary: 'Sem troféus perdíveis reais na lista base. Completionist All the Way! é muito longo e entra como grind/cleanup, não como perda permanente.',
+    online_summary: 'Nao ha exigencia online para a platina da lista base.',
+    grind_summary: 'O peso esta em Completionist All the Way!, 100% dos territorios com Wealth, Mysteries e Artifacts, settlement level 6, Orlog, pesca, Order of the Ancients, Mjolnir, Excalibur e cleanup.',
+    dlc_scope: 'Guia focado na platina base com 51 trofeus. Wrath of the Druids, The Siege of Paris, Dawn of Ragnarok, The Forgotten Saga e outros DLCs ficam fora dos requisitos da platina.',
+    difficulty_reason: 'A dificuldade escolhida nao afeta trofeus. A nota 4/10 reflete uma platina acessivel em execucao, mas muito longa por exigir 100% dos territorios da lista base.',
+    time_reason: 'A estimativa de 120h+ considera campanha, arcos de territorio, Wealth, Mysteries, Artifacts, Order of the Ancients, settlement, raids, Orlog, pesca, Excalibur, Mjolnir e cleanup.',
+    first_run_advice: 'Avance pela historia limpando cada regiao com calma e faca saves manuais ao iniciar cada arco/regiao, especialmente antes de World Events.',
+    cleanup_advice: 'Depois da historia, finalize Wealth, Mysteries e Artifacts por territorio, Order of the Ancients, Orlog, pesca, settlement level 6, Excalibur, Mjolnir e trofeus situacionais.',
+    before_you_start: 'A platina base nao tem perdiveis reais, online, coop, DLC ou dificuldade obrigatoria. O compromisso real e Completionist All the Way!, que exige 100% dos territorios.',
+    best_for: 'Ideal para quem gosta de mundo aberto e aceita uma platina muito longa de exploracao completa.',
+    avoid_if: 'Evite se voce nao gosta de limpar mapa, completar todos os territorios, rastrear coletaveis, fazer minigames e lidar com risco tecnico de bugs antigos.',
+    editorial_summary: [
+      'Assassin’s Creed Valhalla e uma platina muito longa, mas acessivel, focada em concluir a campanha, formar aliancas na Inglaterra, eliminar a Order of the Ancients, evoluir Ravensthorpe e completar todos os territorios da lista base com Wealth, Mysteries e Artifacts.',
+      'A rota mais segura e avancar pela historia limpando cada regiao antes de seguir para a proxima, mantendo saves manuais no inicio de cada arco para evitar problemas com World Events ou Mysteries bugados. Nao ha trofeus perdiveis reais, online obrigatorio, cooperacao ou DLC necessaria para a platina base. O maior cuidado e Completionist All the Way!, que exige 100% dos territorios e transforma a platina em uma jornada de 120 horas ou mais.'
+    ],
+    quickDecision: {
+      worthIt: 'Sim, se voce gosta de mundo aberto e aceita uma platina muito longa de exploracao completa.',
+      difficulty: 'Baixa a moderada.',
+      time: 'Muito longo, cerca de 120h+.',
+      mainAlert: 'Completionist All the Way! e saves manuais por regiao.',
+      risk: 'Sem perdiveis reais, mas com risco tecnico de bugs em Mysteries/World Events.',
+      onlineCoop: 'Nao exige online nem cooperacao.',
+      dlc: 'Nao exige DLC para a platina base.'
+    },
+    seo: {
+      title: 'Assassin’s Creed Valhalla: Guia de Trofeus e Platina',
+      description: 'Guia de trofeus de Assassin’s Creed Valhalla com roadmap da platina, tempo estimado, dificuldade, Completionist All the Way, Order of the Ancients, Orlog, pesca, Mjolnir, Excalibur e dicas para os 51 trofeus da lista base.',
+      metaDescription: 'Guia de trofeus de Assassin’s Creed Valhalla com roadmap da platina, tempo estimado, dificuldade, Completionist All the Way, Order of the Ancients, Orlog, pesca, Mjolnir, Excalibur e dicas para os 51 trofeus da lista base.',
+      keywords: 'Assassin’s Creed Valhalla trofeus, Assassin’s Creed Valhalla platina, guia Assassin’s Creed Valhalla, AC Valhalla trofeus, AC Valhalla platina, Viking Legend, Completionist All the Way, Order of the Ancients, Good Catch, Orlog Champion, Mjolnir, Excalibur, Worthy, Godly Reward',
+      ogTitle: 'Assassin’s Creed Valhalla: Guia de Trofeus e Platina',
+      ogDescription: 'Roadmap da platina base de Assassin’s Creed Valhalla com 51 trofeus, Completionist All the Way, Order of the Ancients, Orlog, pesca, Mjolnir e Excalibur.'
+    },
+    checklist: acValhallaChecklist,
+    attentionPoints: acValhallaAttentionPoints,
+    faq: acValhallaFaq,
+    tags: ['Assassin’s Creed Valhalla', 'AC Valhalla', 'PS4', 'PS5', 'Platina', 'Offline', 'Sem online', 'Sem coop', 'DLC fora da platina base', 'Completionist All the Way', 'Order of the Ancients', 'Mjolnir', 'Excalibur', 'Orlog'],
+    onlineRequired: false,
+    coopRequired: false,
+    dlcRequired: false,
+    hasMissables: false,
+    missableCount: 0,
+    missable_count: 0,
+    newGamePlusRequired: false,
+    difficultyTrophiesRequired: false,
+    editorial_status: 'published',
+    coverage_level: 'strong',
+    is_verified: false,
+    verification_status: 'review',
+    editorial_review_status: 'in_review',
+    last_reviewed_at: '2026-06-12',
+    editorial_notes: 'Revisao editorial focada na platina base de Assassin’s Creed Valhalla: 51 trofeus, sem perdiveis reais, sem online/coop/DLC, bugs tratados como risco tecnico e Completionist All the Way! como maior gargalo.',
+    quality_warnings: [],
+    verification_note: 'Guia revisado para publicação: lista base PS4/PS5 com 51 troféus, roadmap estruturado, FAQ firme, tags controladas e flags coerentes. Mantido em revisão porque npm test falha em dado fora deste guia.',
+    roadmap: acValhallaRoadmap,
+    trophies: acValhallaTrophies
+  }));
+}
+
 const atlasGuideViewModel = require('../shared/guideViewModel');
 for (const game of sampleGames) {
   if (!Array.isArray(game.roadmap)) continue;
