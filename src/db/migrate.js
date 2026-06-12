@@ -18,6 +18,7 @@ const GAME_SLUG_ALIASES = {
   ],
   'little-nightmares-ii': ['little-nightmares'],
   'god-of-war': ['god-of-war-2018'],
+  'assassins-creed-valhalla': ['assassin-s-creed-valhalla'],
   'monster-hunter-world': ['monster-hunter-world-iceborne']
 };
 
@@ -1069,6 +1070,7 @@ async function syncReviewedGuidesFromSeed() {
   await syncSeedGameFromSeed('hogwarts-legacy', syncOptions);
   await syncSeedGameFromSeed('assassins-creed-origins', syncOptions);
   await syncSeedGameFromSeed('assassins-creed-shadows', syncOptions);
+  await syncSeedGameFromSeed('assassins-creed-valhalla', syncOptions);
   await syncSeedGameFromSeed('prince-of-persia-the-lost-crown', syncOptions);
   await syncSeedGameFromSeed('the-evil-within', syncOptions);
   await syncSeedGameFromSeed('nioh-2', syncOptions);

@@ -17,6 +17,7 @@ const GAME_SLUG_ALIASES = {
   ],
   'little-nightmares-ii': ['little-nightmares'],
   'god-of-war': ['god-of-war-2018'],
+  'assassins-creed-valhalla': ['assassin-s-creed-valhalla'],
   'monster-hunter-world': ['monster-hunter-world-iceborne']
 };
 
