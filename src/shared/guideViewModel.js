@@ -2131,7 +2131,7 @@
   function buildRouteChangingTrophies(trophies = [], game = {}) {
     const trophyById = new Map((Array.isArray(trophies) ? trophies : []).map(trophy => [trophy?.id, trophy]).filter(([id]) => id));
     const attentionSlug = String(game?.slug || '').trim().toLowerCase();
-    if (['armored-core-vi-fires-of-rubicon', 'assassins-creed-mirage', 'hades', 'life-is-strange-double-exposure', 'life-is-strange-remastered', 'resident-evil-6', 'sekiro-shadows-die-twice'].includes(attentionSlug) && Array.isArray(game?.attentionPoints)) {
+    if (['a-way-out', 'armored-core-vi-fires-of-rubicon', 'assassins-creed-mirage', 'assassins-creed-odyssey', 'hades', 'life-is-strange-double-exposure', 'life-is-strange-remastered', 'resident-evil-6', 'sekiro-shadows-die-twice'].includes(attentionSlug) && Array.isArray(game?.attentionPoints)) {
       return game.attentionPoints.map((item, index) => {
         const tags = (Array.isArray(item?.tags) ? item.tags : []).map(tag => {
           const label = typeof tag === 'string' ? tag : firstGuideText(tag?.label, tag?.id);

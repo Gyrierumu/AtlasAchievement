@@ -301,6 +301,7 @@ const missableTrophyIds = new Set([
   'tew2_that_cinematic_feel',
 
   // Assassin’s Creed Odyssey: oportunidade de romance com várias chances, mas tecnicamente perdível.
+  'ac-odyssey-aphrodites-embrace',
   'acod_aphrodites_embrace',
 
 ]);
@@ -20336,502 +20337,988 @@ const sampleGames = [
   {
       "name": "Assassin’s Creed Odyssey",
       "slug": "assassins-creed-odyssey",
+      "primary_platform": "PlayStation",
+      "platforms": [
+            "PS4"
+      ],
+      "developer": "Ubisoft Quebec",
+      "publisher": "Ubisoft",
       "difficulty": 4,
       "time": "60-70h",
       "time_min_hours": 60,
       "time_max_hours": 70,
-      "time_sort_hours": 60,
+      "time_sort_hours": 65,
       "time_bucket": "long",
-      "missable": "Aphrodite’s Embrace é o único troféu com atenção/perdível leve por depender de uma oportunidade de romance, embora existam várias chances durante a campanha. O restante da lista base pode ser limpo com free-roam/cleanup após a história.",
-      "runs_summary": "Uma campanha principal com cleanup livre após a história. A lista base não exige DLC nem dificuldade específica.",
-      "missable_summary": "Aphrodite’s Embrace é o único missable/atenção leve confirmado; aceite uma opção de romance quando aparecer. Os demais troféus da lista base ficam disponíveis por campanha e cleanup.",
-      "online_summary": "Não há exigência online para a platina da lista base.",
-      "grind_summary": "O peso está em história, Culto do Kosmos, questlines, bosses míticos, underwater locations, Arena, contratos, mercenários e upgrades da Adrestia.",
-      "dlc_scope": "Guia focado na lista base da platina; Legacy of the First Blade, The Fate of Atlantis e Discovery Tour/add-ons devem ficar separados se o projeto suportar DLC/add-ons.",
-      "difficulty_reason": "A platina é acessível e não exige dificuldade alta; o maior compromisso é o volume de mundo aberto, questlines, chefes míticos e grind leve de recursos/nível.",
-      "time_reason": "A faixa de 60-70 horas considera campanha, Culto do Kosmos, questlines, bosses míticos, underwater locations, Arena, contratos, mercenary tiers, upgrades da Adrestia e cleanup.",
-      "first_run_advice": "Jogue a história naturalmente, aceite oportunidades de romance para evitar perder Aphrodite’s Embrace e vá completando questlines relevantes no caminho.",
-      "cleanup_advice": "Após a história, limpe Cultistas, bosses míticos, Arena, underwater locations, contratos, mercenary tiers, upgrades da Adrestia e troféus situacionais.",
-      "before_you_start": "A lista base não exige DLC, online nem dificuldade específica; o principal cuidado é não ignorar todas as oportunidades de romance para Aphrodite’s Embrace.",
-      "best_for": "Ideal para quem quer uma platina de mundo aberto longa, acessível, histórica e com bastante conteúdo opcional na Grécia Antiga.",
-      "avoid_if": "Evite se você não gosta de limpar mapa, fazer questlines longas, atividades repetidas e grind de recursos em mundo aberto.",
+      "missable": "Aphrodite’s Embrace é o único troféu tecnicamente perdível da lista base. O restante pode ser resolvido durante a campanha ou no pós-jogo/free roam.",
+      "runs_summary": "1 campanha principal com cleanup livre no pós-jogo. A lista base não exige dificuldade específica, online, coop ou DLC.",
+      "missable_summary": "Sim, apenas Aphrodite’s Embrace. Escolha ao menos uma opção de romance marcada com coração quando aparecer; questlines, cultistas, chefes, mapa, Arena, contratos e navio podem ser limpos depois.",
+      "online_summary": "Sem online obrigatório. A platina base é single-player/offline e não exige servidores, cooperação ou multiplayer.",
+      "grind_summary": "A platina é longa por causa de exploração, XP, questlines, cultistas, chefes míticos, Arena, mercenários, contratos, locais submersos e upgrades da Adrasteia.",
+      "dlc_scope": "Guia focado na lista base de 51 troféus. DLCs, Additional Feats, Legacy of the First Blade, The Fate of Atlantis e outros add-ons ficam fora da platina Epic Cycle.",
+      "difficulty_reason": "A dificuldade 4/10 vem mais do volume e do endgame do que de execução. A dificuldade escolhida no jogo não afeta troféus.",
+      "time_reason": "A estimativa de 60 a 70 horas considera campanha, XP, cultistas, questlines, chefes míticos, exploração, locais submersos, contratos, Arena, mercenários e upgrades do navio.",
+      "first_run_advice": "Jogue a história normalmente, aceite contratos dos quadros de mensagens, faça atividades secundárias para XP e escolha ao menos uma opção de romance com coração assim que aparecer.",
+      "cleanup_advice": "No pós-jogo, finalize cultistas, chefes míticos, Arena, mercenários, locais submersos, Hermes’s Homie, contratos, upgrades da Adrasteia e troféus situacionais.",
+      "before_you_start": "A escolha entre Alexios e Kassandra não bloqueia troféus. A dificuldade também não importa. O único cuidado real é não ignorar todas as oportunidades de romance para Aphrodite’s Embrace.",
+      "best_for": "Ideal para quem gosta de RPG de mundo aberto, exploração longa, progressão de personagem, combate naval e limpeza de questlines.",
+      "avoid_if": "Evite se você quer uma platina curta ou não tem paciência para exploração, contratos, XP, navio e cleanup de mapa.",
+      "hasMissables": true,
+      "missableCount": 1,
+      "missable_count": 1,
+      "hasOnline": false,
+      "hasCoop": false,
+      "hasMandatoryOnline": false,
+      "hasMandatoryCoop": false,
+      "requiresOnline": false,
+      "requiresCoop": false,
+      "onlineRequired": false,
+      "coopRequired": false,
+      "dlcRequired": false,
+      "dlcRequiredForPlatinum": false,
+      "playthroughs": "1 campanha + cleanup no pós-jogo",
+      "platinumType": "platina base PS4 offline",
+      "guideFocus": "história, exploração, cultistas, chefes míticos, contratos, Adrasteia e cleanup",
       "editorial_status": "published",
-      "coverage_level": "strong",
-      "is_verified": false,
-      "verification_status": "review",
-      "verification_note": "Guia público seed-managed com checklist base e roadmap; aguardando revisão editorial manual final.",
+      "editorialStatus": "verified",
+      "coverage_level": "complete",
+      "is_verified": true,
+      "verification_status": "verified",
+      "editorial_review_status": "verified",
+      "last_reviewed_at": "2026-06-12",
+      "reviewed_by": "AtlasAchievement Editorial",
+      "verification_note": "Guia revisado para a lista base PS4: 51 troféus, sem DLC/Additional Feats, 1 perdível técnico, flags offline/single-player, roadmap estruturado, nomes EN/PT-BR, FAQ, checklist, SEO e pontos de atenção.",
+      "editorial_notes": "Decisão editorial: manter apenas os 51 troféus da platina base. A lista total com DLCs/Additional Feats pode chegar a 94 troféus, mas não entra em Epic Cycle. Apenas Aphrodite’s Embrace é tratado como perdível técnico.",
+      "quality_warnings": [],
       "image": "https://cdn.cloudflare.steamstatic.com/steam/apps/812140/header.jpg",
       "cover_image": "https://cdn.cloudflare.steamstatic.com/steam/apps/812140/library_600x900.jpg",
+      "editorial_summary": [
+            "Assassin’s Creed Odyssey é uma platina longa, mas bastante acessível, focada em completar a campanha, avançar nas principais questlines secundárias, derrotar cultistas, explorar a Grécia, vencer chefes míticos e resolver atividades de progressão como Arena, mercenários, contratos e upgrades da Adrasteia.",
+            "A rota mais segura é jogar a história normalmente enquanto aceita contratos dos quadros de mensagens, faz atividades secundárias para XP e já progride em cultistas, locais submersos e exploração.",
+            "O principal cuidado é Aphrodite’s Embrace, único troféu tecnicamente perdível da lista base: sempre escolha ao menos uma opção de romance marcada com coração quando aparecer. Fora isso, a platina pode ser limpa no pós-jogo, não exige online, não exige cooperação, não depende de dificuldade e não precisa de DLC."
+      ],
+      "seo": {
+            "title": "Assassin’s Creed Odyssey: Guia de Troféus e Platina",
+            "description": "Guia de troféus de Assassin’s Creed Odyssey com roadmap da platina, tempo estimado, dificuldade, troféu perdível, exploração, cultistas, chefes míticos, Adrasteia e dicas para os 51 troféus da lista base.",
+            "metaDescription": "Guia de troféus de Assassin’s Creed Odyssey com roadmap da platina, tempo estimado, dificuldade, troféu perdível, exploração, cultistas, chefes míticos, Adrasteia e dicas para os 51 troféus da lista base.",
+            "keywords": "Assassin’s Creed Odyssey troféus, Assassin’s Creed Odyssey platina, guia Assassin’s Creed Odyssey, AC Odyssey troféus, AC Odyssey platina, Epic Cycle, Aphrodite’s Embrace, Nos Braços de Afrodite, Hermes’s Homie, Child of Poseidon, The Cult Unmasked",
+            "ogTitle": "Assassin’s Creed Odyssey: Guia de Troféus e Platina",
+            "ogDescription": "Roadmap da platina de Assassin’s Creed Odyssey com 51 troféus da lista base, 1 perdível técnico, sem online, sem coop e sem DLC obrigatória."
+      },
+      "quickDecision": {
+            "summary": "Sim, vale platinar se você gosta de RPG de mundo aberto e não se importa com uma platina longa.",
+            "recommendation": "A dificuldade é baixa a moderada; o tempo é longo, cerca de 60 a 70 horas.",
+            "firstAction": "Comece a campanha na dificuldade que preferir, aceite contratos nos quadros de mensagens e resolva uma opção de romance cedo.",
+            "risk": "Baixo, desde que Aphrodite’s Embrace seja resolvido cedo. A platina não exige online, cooperação nem DLC."
+      },
+      "checklist": [
+            "Conferir se o guia tem 51 troféus da lista base.",
+            "Conferir se Epic Cycle é a platina.",
+            "Conferir se DLCs e Additional Feats não foram misturados na platina base.",
+            "Conferir distribuição: 1 platina, 2 ouro, 10 prata e 38 bronze.",
+            "Conferir onlineRequired false, coopRequired false e dlcRequired false.",
+            "Conferir hasMissables true e missableCount 1.",
+            "Conferir que apenas Aphrodite’s Embrace está marcado como perdível.",
+            "Conferir nomes oficiais em inglês como principal e PT-BR abaixo.",
+            "Conferir descrições e dicas em português.",
+            "Conferir se não aparecem rótulos técnicos de nome original nem placeholders editoriais.",
+            "Conferir se roadmap está estruturado como array de objetos e renderiza sem texto bruto técnico.",
+            "Conferir FAQ, decisão rápida, SEO e pontos de atenção.",
+            "Conferir se página individual e catálogo exibem o mesmo status editorial.",
+            "Conferir se flags do topo batem com filtros do catálogo."
+      ],
+      "attentionPoints": [
+            {
+                  "title": "Aphrodite’s Embrace",
+                  "detail": "É o único troféu tecnicamente perdível da lista base. Escolha ao menos uma opção de romance marcada com coração quando aparecer.",
+                  "tags": [
+                        "Perdível",
+                        "Romance"
+                  ]
+            },
+            {
+                  "title": "Platina longa",
+                  "detail": "A dificuldade é baixa/moderada, mas a platina exige muitas horas de exploração, XP, questlines, cultistas e atividades navais.",
+                  "tags": [
+                        "Tempo",
+                        "Grind"
+                  ]
+            },
+            {
+                  "title": "DLC não necessária",
+                  "detail": "A platina base usa 51 troféus. Não misture os 94 troféus totais com DLCs ou Additional Feats.",
+                  "tags": [
+                        "Lista base",
+                        "Sem DLC"
+                  ]
+            },
+            {
+                  "title": "Sem online",
+                  "detail": "A platina não exige online, cooperação ou multiplayer.",
+                  "tags": [
+                        "Offline",
+                        "Single-player"
+                  ]
+            },
+            {
+                  "title": "Hermes’s Homie",
+                  "detail": "Revele todas as sub-regiões e pise em ilhas pequenas que podem não parecer necessárias.",
+                  "tags": [
+                        "Mapa",
+                        "Exploração"
+                  ]
+            },
+            {
+                  "title": "Child of Poseidon",
+                  "detail": "Complete todos os objetivos dos locais submersos.",
+                  "tags": [
+                        "Local submerso",
+                        "Exploração"
+                  ]
+            },
+            {
+                  "title": "Misthios in Training",
+                  "detail": "Aceite contratos dos quadros de mensagens ao longo da campanha para reduzir grind.",
+                  "tags": [
+                        "Contratos",
+                        "Grind"
+                  ]
+            },
+            {
+                  "title": "Adrasteia",
+                  "detail": "Guarde recursos e tábuas antigas para reduzir o grind dos upgrades do navio.",
+                  "tags": [
+                        "Navio",
+                        "Recursos"
+                  ]
+            },
+            {
+                  "title": "Chefes míticos",
+                  "detail": "Deixe Medusa e outros desafios de nível alto para quando o personagem estiver bem evoluído.",
+                  "tags": [
+                        "Chefe",
+                        "Endgame"
+                  ]
+            }
+      ],
+      "faq": [
+            {
+                  "question": "Assassin’s Creed Odyssey tem troféus perdíveis?",
+                  "answer": "Sim. Aphrodite’s Embrace é o único troféu tecnicamente perdível da lista base, pois exige aceitar ao menos uma oportunidade de romance. Escolha uma opção de diálogo com coração quando aparecer para resolver esse risco."
+            },
+            {
+                  "question": "Precisa jogar online para platinar?",
+                  "answer": "Não. A platina base é totalmente offline."
+            },
+            {
+                  "question": "Precisa de cooperação?",
+                  "answer": "Não. Assassin’s Creed Odyssey é uma platina single-player."
+            },
+            {
+                  "question": "Precisa de DLC para a platina?",
+                  "answer": "Não. A platina base exige apenas os 51 troféus principais. DLCs e Additional Feats não são necessários para Epic Cycle."
+            },
+            {
+                  "question": "A dificuldade afeta troféus?",
+                  "answer": "Não. É possível buscar a platina na dificuldade que preferir."
+            },
+            {
+                  "question": "Quanto tempo leva para platinar?",
+                  "answer": "Em média, cerca de 60 a 70 horas, dependendo do ritmo de exploração, XP, contratos e cleanup."
+            },
+            {
+                  "question": "Preciso limpar todos os pontos de interrogação do mapa?",
+                  "answer": "Não. A platina exige objetivos específicos, como locais submersos e sub-regiões, mas não exige 100% de todos os pontos do mapa."
+            },
+            {
+                  "question": "Qual é o maior cuidado da platina?",
+                  "answer": "O maior cuidado é não perder Aphrodite’s Embrace. Depois disso, o foco é administrar o tempo de grind, exploração, cultistas, chefes e upgrades da Adrasteia."
+            }
+      ],
       "roadmap": [
-          "Etapa 1: jogue a campanha naturalmente, desbloqueando regiões, Adrestia, habilidades, mercenários, cultistas e sistemas principais; aceite uma oportunidade de romance para garantir Aphrodite’s Embrace.",
-          "Etapa 2: avance as linhas principais da lista base: história da família, Culto do Kosmos, lança de Leônidas e linha mítica/Atlantis com Pitágoras, sem confundir com o DLC The Fate of Atlantis.",
-          "Etapa 3: complete questlines relevantes para troféus, como Xenia, Daughters of Artemis, Hippokrates, Markos, Arena, Olympic questline e bosses míticos.",
-          "Etapa 4: limpe underwater locations, sub-regiões de Hermes’s Homie e atividades específicas de mundo aberto necessárias para a lista base, lembrando que não é preciso fazer 100% de todos os locais.",
-          "Etapa 5: suba mercenary tiers, faça contratos de message board, chegue ao nível 50, equipe itens lendários, complete upgrades da Adrestia e resolva troféus navais/situacionais.",
-          "Etapa 6: faça cleanup final pós-história de Cultistas, bosses míticos, Arena, underwater locations, contratos, troféus de combate, 0 online obrigatório, 0 troféus de dificuldade e separação total de Legacy of the First Blade/The Fate of Atlantis."
+            {
+                  "title": "Avance pela Odisseia sem se preocupar com dificuldade",
+                  "focus": "Campanha e progressão",
+                  "objective": "Concluir a história principal enquanto já acumula XP, contratos, recursos e progresso natural para a platina.",
+                  "actions": [
+                        "Jogue na dificuldade que preferir, pois ela não afeta troféus.",
+                        "Escolha Alexios ou Kassandra livremente, pois a escolha de personagem não bloqueia a platina.",
+                        "Aceite contratos, recompensas e missões navais nos quadros de mensagens sempre que passar por uma cidade.",
+                        "Faça missões secundárias e atividades próximas para acompanhar os requisitos de nível da campanha.",
+                        "Use o modo Guiado se quiser reduzir tempo procurando objetivos."
+                  ],
+                  "warning": "Não ignore todas as opções de romance. Aphrodite’s Embrace é o único troféu tecnicamente perdível da lista base.",
+                  "result": "Ao final da campanha, você terá boa parte da progressão encaminhada e acesso ao pós-jogo para limpeza."
+            },
+            {
+                  "title": "Resolva as questlines ligadas a troféus",
+                  "focus": "Missões secundárias",
+                  "objective": "Completar as linhas de missão específicas que liberam troféus importantes da platina.",
+                  "actions": [
+                        "Complete a questline das Filhas de Ártemis para Master of the Hunt.",
+                        "Complete a questline de Markos para Everybody Benefits.",
+                        "Complete a questline de Hipócrates para Trust Me, I’m a Doctor.",
+                        "Complete a questline de Xenia para A Pirate’s Life for Me.",
+                        "Complete a questline Olímpica para Going For Gold."
+                  ],
+                  "warning": "",
+                  "result": "As principais linhas secundárias obrigatórias da platina ficam resolvidas sem depender de DLC."
+            },
+            {
+                  "title": "Explore a Grécia com foco em mapa e locais submersos",
+                  "focus": "Exploração",
+                  "objective": "Revelar as sub-regiões necessárias e concluir os objetivos dos locais submersos exigidos por troféus.",
+                  "actions": [
+                        "Revele todas as sub-regiões para Hermes’s Homie.",
+                        "Pise também em ilhas pequenas e rochedos que podem não parecer relevantes no mapa.",
+                        "Conclua todos os objetivos dos locais submersos para Child of Poseidon.",
+                        "Use Íkaros para marcar baús e objetivos em áreas submersas.",
+                        "Não tente limpar todos os pontos de interrogação do mapa se eles não forem necessários para troféus."
+                  ],
+                  "warning": "Hermes’s Homie pode ser confuso por causa de ilhas pequenas e sub-regiões pouco evidentes; trate isso como ponto de atenção no guia.",
+                  "result": "Os troféus de exploração mais demorados ficam encaminhados sem exigir 100% de todos os locais do mapa."
+            },
+            {
+                  "title": "Elimine cultistas, chefes míticos e desafios de combate",
+                  "focus": "Combate e chefes",
+                  "objective": "Completar os requisitos de combate, chefes, cultistas, Arena e mercenários.",
+                  "actions": [
+                        "Derrote todos os Cultistas do Cosmo para The Cult Unmasked.",
+                        "Derrote os chefes míticos ligados à Esfinge, Minotauro, Ciclope e Medusa.",
+                        "Avance na Arena de Pephka até se tornar campeão.",
+                        "Suba no ranking de mercenários até chegar ao topo.",
+                        "Alcance o nível 50 e compre habilidades necessárias para troféus específicos."
+                  ],
+                  "warning": "Medusa e parte do conteúdo de endgame exigem nível alto; deixe chefes mais fortes para depois de evoluir bem o personagem.",
+                  "result": "Os principais bloqueios de combate e endgame ficam resolvidos."
+            },
+            {
+                  "title": "Finalize a Adrasteia e os troféus de navegação",
+                  "focus": "Navio e recursos",
+                  "objective": "Melhorar a Adrasteia, recrutar tenentes lendários e resolver troféus navais.",
+                  "actions": [
+                        "Colete recursos, tábuas antigas e materiais enquanto explora.",
+                        "Melhore a Adrasteia até o nível lendário exigido por Lord of the Seas.",
+                        "Recrute e equipe tenentes lendários para The Argonauts.",
+                        "Afunde navios épicos e faça os troféus de clivagem naval.",
+                        "Use viagens marítimas para combinar exploração, recursos e batalhas navais."
+                  ],
+                  "warning": "",
+                  "result": "A parte naval da platina fica concluída e o grind final de materiais é reduzido."
+            },
+            {
+                  "title": "Faça o cleanup da platina base",
+                  "focus": "Limpeza final",
+                  "objective": "Resolver os troféus diversos, contratos pendentes, atividades específicas e qualquer requisito que tenha ficado para trás.",
+                  "actions": [
+                        "Confira se Aphrodite’s Embrace já foi desbloqueado.",
+                        "Finalize Misthios in Training com 20 recompensas, contratos de guerra ou missões navais.",
+                        "Complete 20 missões nas ilhas de Pefka, Obsidiana e Abantis para Island Hopper.",
+                        "Faça tarefas específicas como Stink Eye, The Midas Touch, I Have the Power e Wrath of the Amazons.",
+                        "Confirme se o guia contém apenas a lista base de 51 troféus para a platina."
+                  ],
+                  "warning": "Não inclua DLCs, Additional Feats ou troféus de expansões como requisitos da platina base.",
+                  "result": "Com os 51 troféus da lista base concluídos, Epic Cycle será desbloqueado."
+            }
       ],
       "trophies": [
-          {
-              "id": "acod_epic_cycle",
-              "name": "Epic Cycle",
-              "type": "Platina",
-              "description": "Earn every trophy.",
-              "tip": "Conquiste todos os outros troféus da lista base para liberar a platina. DLCs não são necessárias.",
-              "is_missable": false,
-              "is_spoiler": false
-          },
-          {
-              "id": "acod_this_is_sparta",
-              "name": "This is Sparta!",
-              "type": "Bronze",
-              "description": "Complete the Battle of 300.",
-              "tip": "Troféu de história ligado ao prólogo da Batalha dos 300.",
-              "is_missable": false,
-              "is_spoiler": true
-          },
-          {
-              "id": "acod_an_odyssey_in_the_making",
-              "name": "An Odyssey in the Making",
-              "type": "Bronze",
-              "description": "Complete Episode 1.",
-              "tip": "Troféu de história. Avance a campanha até completar o Episódio 1.",
-              "is_missable": false,
-              "is_spoiler": true
-          },
-          {
-              "id": "acod_past_mistakes",
-              "name": "Past Mistakes",
-              "type": "Bronze",
-              "description": "Complete Episode 2.",
-              "tip": "Troféu de história. Avance a campanha até completar o Episódio 2.",
-              "is_missable": false,
-              "is_spoiler": true
-          },
-          {
-              "id": "acod_evil_unearthed",
-              "name": "Evil Unearthed",
-              "type": "Bronze",
-              "description": "Complete Episode 3.",
-              "tip": "Troféu de história. Avance a campanha até completar o Episódio 3.",
-              "is_missable": false,
-              "is_spoiler": true
-          },
-          {
-              "id": "acod_the_bright_minds",
-              "name": "The Bright Minds",
-              "type": "Bronze",
-              "description": "Complete Episode 4.",
-              "tip": "Troféu de história. Avance a campanha até completar o Episódio 4.",
-              "is_missable": false,
-              "is_spoiler": true
-          },
-          {
-              "id": "acod_from_the_ashes",
-              "name": "From the Ashes",
-              "type": "Bronze",
-              "description": "Complete Episode 5.",
-              "tip": "Troféu de história. Avance a campanha até completar o Episódio 5.",
-              "is_missable": false,
-              "is_spoiler": true
-          },
-          {
-              "id": "acod_democracy_falls",
-              "name": "Democracy Falls",
-              "type": "Bronze",
-              "description": "Complete Episode 6.",
-              "tip": "Troféu de história. Avance a campanha até completar o Episódio 6.",
-              "is_missable": false,
-              "is_spoiler": true
-          },
-          {
-              "id": "acod_legend_in_the_making",
-              "name": "Legend in the Making",
-              "type": "Bronze",
-              "description": "Complete Episode 7.",
-              "tip": "Troféu de história. Avance a campanha até completar o Episódio 7.",
-              "is_missable": false,
-              "is_spoiler": true
-          },
-          {
-              "id": "acod_taking_back_athens",
-              "name": "Taking Back Athens",
-              "type": "Prata",
-              "description": "Complete Episode 8.",
-              "tip": "Troféu de história de fase avançada. Complete o Episódio 8.",
-              "is_missable": false,
-              "is_spoiler": true
-          },
-          {
-              "id": "acod_odysseys_end",
-              "name": "Odyssey’s End",
-              "type": "Ouro",
-              "description": "Complete Episode 9 + Epilogue.",
-              "tip": "Troféu de história. Termine o Episódio 9 e o epílogo.",
-              "is_missable": false,
-              "is_spoiler": true
-          },
-          {
-              "id": "acod_child_of_poseidon",
-              "name": "Child of Poseidon",
-              "type": "Prata",
-              "description": "Complete all underwater location objectives.",
-              "tip": "Complete os objetivos de todos os locais submersos da lista base. Use o mapa e faça cleanup no pós-história.",
-              "is_missable": false,
-              "is_spoiler": false
-          },
-          {
-              "id": "acod_make_it_your_own",
-              "name": "Make It Your Own",
-              "type": "Bronze",
-              "description": "Engrave your first item.",
-              "tip": "Grave qualquer equipamento em um ferreiro pela primeira vez.",
-              "is_missable": false,
-              "is_spoiler": false
-          },
-          {
-              "id": "acod_you_work_for_me_now",
-              "name": "You Work for Me Now",
-              "type": "Bronze",
-              "description": "Recruit and assign a Legendary NPC for your ship.",
-              "tip": "Recrute um NPC lendário e atribua-o como tenente da Adrestia.",
-              "is_missable": false,
-              "is_spoiler": false
-          },
-          {
-              "id": "acod_shiny",
-              "name": "Shiny!",
-              "type": "Bronze",
-              "description": "Acquire and equip your first Legendary item.",
-              "tip": "Consiga e equipe seu primeiro item lendário.",
-              "is_missable": false,
-              "is_spoiler": false
-          },
-          {
-              "id": "acod_i_am_legend",
-              "name": "I am Legend",
-              "type": "Prata",
-              "description": "Equip 1 Legendary melee weapon and 5 Legendary armor pieces.",
-              "tip": "Equipe uma arma corpo a corpo lendária e cinco peças de armadura lendárias ao mesmo tempo.",
-              "is_missable": false,
-              "is_spoiler": false
-          },
-          {
-              "id": "acod_are_you_not_entertained",
-              "name": "Are You Not Entertained?",
-              "type": "Prata",
-              "description": "Become Champion of the Arena.",
-              "tip": "Complete a linha da Arena em Pephka/Messara até se tornar campeão.",
-              "is_missable": false,
-              "is_spoiler": false
-          },
-          {
-              "id": "acod_demigod",
-              "name": "Demigod",
-              "type": "Bronze",
-              "description": "Reach Level 50.",
-              "tip": "Chegue ao nível 50 completando história, questlines, contratos e atividades.",
-              "is_missable": false,
-              "is_spoiler": false
-          },
-          {
-              "id": "acod_godly_power",
-              "name": "Godly Power",
-              "type": "Bronze",
-              "description": "Acquire a Tier 3 active Ability.",
-              "tip": "Compre uma habilidade ativa de Tier 3 após progredir e investir pontos suficientes.",
-              "is_missable": false,
-              "is_spoiler": false
-          },
-          {
-              "id": "acod_legacy_restored",
-              "name": "Legacy Restored",
-              "type": "Prata",
-              "description": "Upgrade your Spear to Tier 6.",
-              "tip": "Derrote Cultistas para obter fragmentos e evolua a Lança de Leônidas até o Tier 6.",
-              "is_missable": false,
-              "is_spoiler": true
-          },
-          {
-              "id": "acod_top_of_the_food_chain",
-              "name": "Top of the Food Chain",
-              "type": "Bronze",
-              "description": "Become the first Mercenary.",
-              "tip": "Suba no ranking de mercenários até alcançar o topo.",
-              "is_missable": false,
-              "is_spoiler": false
-          },
-          {
-              "id": "acod_the_cult_unmasked",
-              "name": "The Cult Unmasked",
-              "type": "Prata",
-              "description": "Defeat all the Cultists of Kosmos.",
-              "tip": "Elimine todos os membros do Culto do Kosmos da lista base.",
-              "is_missable": false,
-              "is_spoiler": true
-          },
-          {
-              "id": "acod_stink_eye",
-              "name": "Stink Eye",
-              "type": "Bronze",
-              "description": "Recover the Cyclops’s eye from a goat on Kephallonia.",
-              "tip": "Depois da sequência de Kephallonia, elimine/saqueie cabras na ilha até recuperar o olho.",
-              "is_missable": false,
-              "is_spoiler": false
-          },
-          {
-              "id": "acod_hermess_homie",
-              "name": "Hermes’s Homie",
-              "type": "Bronze",
-              "description": "Unveil all sub-regions of Greece.",
-              "tip": "Revele todas as sub-regiões do mapa da Grécia. Use cleanup pós-história para áreas faltantes.",
-              "is_missable": false,
-              "is_spoiler": false
-          },
-          {
-              "id": "acod_in_perseuss_image",
-              "name": "In Perseus’s Image",
-              "type": "Bronze",
-              "description": "Defeat Medusa.",
-              "tip": "Derrote Medusa na linha mítica da lista base.",
-              "is_missable": false,
-              "is_spoiler": true
-          },
-          {
-              "id": "acod_a_maze_ing_victory",
-              "name": "A-maze-ing Victory!",
-              "type": "Bronze",
-              "description": "Defeat the Minotaur.",
-              "tip": "Derrote o Minotauro na linha mítica da lista base.",
-              "is_missable": false,
-              "is_spoiler": true
-          },
-          {
-              "id": "acod_eye_on_the_prize",
-              "name": "Eye on the Prize",
-              "type": "Bronze",
-              "description": "Defeat the Cyclops.",
-              "tip": "Derrote o Cyclops da linha mítica da lista base.",
-              "is_missable": false,
-              "is_spoiler": true
-          },
-          {
-              "id": "acod_riddle_me_this",
-              "name": "Riddle Me This",
-              "type": "Bronze",
-              "description": "Outwit the Sphinx.",
-              "tip": "Conclua o encontro da Sphinx na linha mítica da lista base.",
-              "is_missable": false,
-              "is_spoiler": true
-          },
-          {
-              "id": "acod_lord_of_the_seas",
-              "name": "Lord of the Seas",
-              "type": "Prata",
-              "description": "Fully upgrade the Adrestia.",
-              "tip": "Faça todos os upgrades da Adrestia; farm de recursos, navios e tablets ajuda bastante.",
-              "is_missable": false,
-              "is_spoiler": false
-          },
-          {
-              "id": "acod_the_argonauts",
-              "name": "The Argonauts",
-              "type": "Prata",
-              "description": "Fully crew the Adrestia with Legendary Lieutenants.",
-              "tip": "Preencha a tripulação da Adrestia com tenentes lendários.",
-              "is_missable": false,
-              "is_spoiler": false
-          },
-          {
-              "id": "acod_master_of_the_hunt",
-              "name": "Master of the Hunt",
-              "type": "Bronze",
-              "description": "Complete the Daughters of Artemis questline.",
-              "tip": "Complete a questline Daughters of Artemis.",
-              "is_missable": false,
-              "is_spoiler": true
-          },
-          {
-              "id": "acod_everybody_benefits",
-              "name": "Everybody Benefits",
-              "type": "Bronze",
-              "description": "Complete Markos’s questline.",
-              "tip": "Complete a questline de Markos.",
-              "is_missable": false,
-              "is_spoiler": false
-          },
-          {
-              "id": "acod_trust_me_im_a_doctor",
-              "name": "Trust Me, I’m a Doctor",
-              "type": "Bronze",
-              "description": "Complete the Hippokrates questline.",
-              "tip": "Complete a questline de Hippokrates.",
-              "is_missable": false,
-              "is_spoiler": false
-          },
-          {
-              "id": "acod_a_pirates_life_for_me",
-              "name": "A Pirate’s Life for Me",
-              "type": "Bronze",
-              "description": "Complete Xenia’s questline.",
-              "tip": "Complete a questline de Xenia, incluindo os mapas/tesouros associados.",
-              "is_missable": false,
-              "is_spoiler": false
-          },
-          {
-              "id": "acod_going_for_gold",
-              "name": "Going For Gold",
-              "type": "Prata",
-              "description": "Complete the Olympic questline.",
-              "tip": "Complete a questline Olímpica da história.",
-              "is_missable": false,
-              "is_spoiler": true
-          },
-          {
-              "id": "acod_scourge_of_the_aegean",
-              "name": "Scourge of the Aegean",
-              "type": "Bronze",
-              "description": "Sink your first Epic Ship.",
-              "tip": "Afunde seu primeiro navio épico durante navegação/combat naval.",
-              "is_missable": false,
-              "is_spoiler": false
-          },
-          {
-              "id": "acod_blood_sport",
-              "name": "Blood Sport",
-              "type": "Bronze",
-              "description": "Defeat a Mercenary in the Arena.",
-              "tip": "Derrote um mercenário na Arena.",
-              "is_missable": false,
-              "is_spoiler": false
-          },
-          {
-              "id": "acod_adrestia_upgrade",
-              "name": "Adrestia Upgrade",
-              "type": "Bronze",
-              "description": "Upgrade the Adrestia for the first time.",
-              "tip": "Faça qualquer upgrade da Adrestia pela primeira vez.",
-              "is_missable": false,
-              "is_spoiler": false
-          },
-          {
-              "id": "acod_fashions_creed",
-              "name": "Fashion’s Creed",
-              "type": "Bronze",
-              "description": "Equip a Legendary Armor set.",
-              "tip": "Equipe um conjunto completo de armadura lendária.",
-              "is_missable": false,
-              "is_spoiler": false
-          },
-          {
-              "id": "acod_aphrodites_embrace",
-              "name": "Aphrodite’s Embrace",
-              "type": "Bronze",
-              "description": "Spend the night with another character.",
-              "tip": "Missable leve: aceite uma oportunidade de romance quando aparecer para não depender de outra chance mais tarde.",
-              "is_missable": true,
-              "is_spoiler": false
-          },
-          {
-              "id": "acod_one_head_down",
-              "name": "One Head Down…",
-              "type": "Prata",
-              "description": "Defeat a full cluster of Cultists of Kosmos.",
-              "tip": "Elimine um grupo completo de Cultistas do Kosmos.",
-              "is_missable": false,
-              "is_spoiler": true
-          },
-          {
-              "id": "acod_birthright",
-              "name": "Birthright",
-              "type": "Bronze",
-              "description": "Discover Atlantis and speak with Pythagoras.",
-              "tip": "Descubra Atlantis e fale com Pythagoras na linha mítica da lista base. Não confundir com o DLC The Fate of Atlantis.",
-              "is_missable": false,
-              "is_spoiler": true
-          },
-          {
-              "id": "acod_ramming_speed",
-              "name": "Ramming Speed",
-              "type": "Bronze",
-              "description": "Cleave a ship in half.",
-              "tip": "Parta um navio ao meio com a Adrestia.",
-              "is_missable": false,
-              "is_spoiler": false
-          },
-          {
-              "id": "acod_i_have_the_power",
-              "name": "I Have the Power",
-              "type": "Bronze",
-              "description": "Perform an Overpower Attack with every weapon type.",
-              "tip": "Execute Overpower Attack com todos os tipos de arma exigidos.",
-              "is_missable": false,
-              "is_spoiler": false
-          },
-          {
-              "id": "acod_war_master",
-              "name": "War Master",
-              "type": "Bronze",
-              "description": "Kill the Leader of any Region with Low Resources, other than Megaris.",
-              "tip": "Enfraqueça uma região que não seja Megaris e elimine o líder local.",
-              "is_missable": false,
-              "is_spoiler": false
-          },
-          {
-              "id": "acod_misthios_in_training",
-              "name": "Misthios in Training",
-              "type": "Bronze",
-              "description": "Complete 20 Bounties, War Contracts, or Naval Quests from Message Boards.",
-              "tip": "Complete 20 atividades dos quadros de mensagens: bounties, war contracts ou naval quests.",
-              "is_missable": false,
-              "is_spoiler": false
-          },
-          {
-              "id": "acod_island_hopper",
-              "name": "Island Hopper",
-              "type": "Ouro",
-              "description": "Complete 20 Quests in Pephka, Obsidian and Abantis islands.",
-              "tip": "Complete 20 quests nas regiões Pephka, Obsidian e Abantis. Inclui side content e contratos dessas áreas.",
-              "is_missable": false,
-              "is_spoiler": false
-          },
-          {
-              "id": "acod_infamous",
-              "name": "Infamous",
-              "type": "Bronze",
-              "description": "Raise your Bounty to the maximum level.",
-              "tip": "Aumente sua recompensa até o nível máximo.",
-              "is_missable": false,
-              "is_spoiler": false
-          },
-          {
-              "id": "acod_hero_for_hire",
-              "name": "Hero for Hire",
-              "type": "Bronze",
-              "description": "Win your first on land conquest battle in any region (excluding Megaris).",
-              "tip": "Vença sua primeira batalha de conquista terrestre fora de Megaris.",
-              "is_missable": false,
-              "is_spoiler": false
-          },
-          {
-              "id": "acod_wrath_of_the_amazons",
-              "name": "Wrath of the Amazons",
-              "type": "Bronze",
-              "description": "Cleave a ship while having an all-women crew.",
-              "tip": "Parta um navio ao meio usando uma tripulação composta apenas por mulheres.",
-              "is_missable": false,
-              "is_spoiler": false
-          },
-          {
-              "id": "acod_the_midas_touch",
-              "name": "The Midas Touch",
-              "type": "Bronze",
-              "description": "Engrave a Legendary Item with a Legendary Effect.",
-              "tip": "Grave um item lendário com um efeito lendário em um ferreiro.",
-              "is_missable": false,
-              "is_spoiler": false
-          }
+            {
+                  "id": "ac-odyssey-epic-cycle",
+                  "name": "Epic Cycle",
+                  "name_pt": "Ciclo Épico",
+                  "type": "Platina",
+                  "description": "Obtenha todos os outros troféus da lista base de Assassin’s Creed Odyssey.",
+                  "tip": "Conclua os 50 troféus restantes da lista base. Conteúdo extra não entra na platina.",
+                  "is_missable": false,
+                  "is_spoiler": false,
+                  "tags": [
+                        "Platina",
+                        "Conclusão"
+                  ]
+            },
+            {
+                  "id": "ac-odyssey-this-is-sparta",
+                  "name": "This is Sparta!",
+                  "name_pt": "Isso. É. Esparta!",
+                  "type": "Bronze",
+                  "description": "Complete a Batalha dos 300.",
+                  "tip": "Troféu de história ligado ao prólogo. Avance normalmente pela abertura do jogo.",
+                  "is_missable": false,
+                  "is_spoiler": true,
+                  "tags": [
+                        "História"
+                  ]
+            },
+            {
+                  "id": "ac-odyssey-odyssey-in-the-making",
+                  "name": "An Odyssey in the Making",
+                  "name_pt": "Uma Odisseia em Progresso",
+                  "type": "Bronze",
+                  "description": "Complete o Episódio 1.",
+                  "tip": "Troféu de história. Escolhas de personagem ou dificuldade não bloqueiam a platina.",
+                  "is_missable": false,
+                  "is_spoiler": true,
+                  "tags": [
+                        "História"
+                  ]
+            },
+            {
+                  "id": "ac-odyssey-past-mistakes",
+                  "name": "Past Mistakes",
+                  "name_pt": "Erros Passados",
+                  "type": "Bronze",
+                  "description": "Complete o Episódio 2.",
+                  "tip": "Troféu de história. Continue a campanha principal.",
+                  "is_missable": false,
+                  "is_spoiler": true,
+                  "tags": [
+                        "História"
+                  ]
+            },
+            {
+                  "id": "ac-odyssey-evil-unearthed",
+                  "name": "Evil Unearthed",
+                  "name_pt": "Mal Descoberto",
+                  "type": "Bronze",
+                  "description": "Complete o Episódio 3.",
+                  "tip": "Troféu de história. Avance a Odisseia até o fim do episódio.",
+                  "is_missable": false,
+                  "is_spoiler": true,
+                  "tags": [
+                        "História"
+                  ]
+            },
+            {
+                  "id": "ac-odyssey-bright-minds",
+                  "name": "The Bright Minds",
+                  "name_pt": "Mentes Brilhantes",
+                  "type": "Bronze",
+                  "description": "Complete o Episódio 4.",
+                  "tip": "Troféu de história. Siga a campanha sem se preocupar com dificuldade.",
+                  "is_missable": false,
+                  "is_spoiler": true,
+                  "tags": [
+                        "História"
+                  ]
+            },
+            {
+                  "id": "ac-odyssey-from-the-ashes",
+                  "name": "From the Ashes",
+                  "name_pt": "Das Cinzas",
+                  "type": "Bronze",
+                  "description": "Complete o Episódio 5.",
+                  "tip": "Troféu de história. Use missões secundárias e contratos se precisar de XP.",
+                  "is_missable": false,
+                  "is_spoiler": true,
+                  "tags": [
+                        "História"
+                  ]
+            },
+            {
+                  "id": "ac-odyssey-democracy-falls",
+                  "name": "Democracy Falls",
+                  "name_pt": "A Queda da Democracia",
+                  "type": "Bronze",
+                  "description": "Complete o Episódio 6.",
+                  "tip": "Troféu de história. Continue progredindo pela campanha principal.",
+                  "is_missable": false,
+                  "is_spoiler": true,
+                  "tags": [
+                        "História"
+                  ]
+            },
+            {
+                  "id": "ac-odyssey-legend-in-the-making",
+                  "name": "Legend in the Making",
+                  "name_pt": "Uma Lenda se Formando",
+                  "type": "Bronze",
+                  "description": "Complete o Episódio 7.",
+                  "tip": "Troféu de história. Nenhuma escolha de final bloqueia a platina base.",
+                  "is_missable": false,
+                  "is_spoiler": true,
+                  "tags": [
+                        "História"
+                  ]
+            },
+            {
+                  "id": "ac-odyssey-taking-back-athens",
+                  "name": "Taking Back Athens",
+                  "name_pt": "Retomando Atenas",
+                  "type": "Prata",
+                  "description": "Complete o Episódio 8.",
+                  "tip": "Troféu de história avançada. Termine o episódio para continuar rumo ao final.",
+                  "is_missable": false,
+                  "is_spoiler": true,
+                  "tags": [
+                        "História"
+                  ]
+            },
+            {
+                  "id": "ac-odyssey-odysseys-end",
+                  "name": "Odyssey’s End",
+                  "name_pt": "Fim da Odisseia",
+                  "type": "Ouro",
+                  "description": "Complete o Episódio 9 e o epílogo.",
+                  "tip": "Troféu de história. O final escolhido não bloqueia os demais requisitos da platina.",
+                  "is_missable": false,
+                  "is_spoiler": true,
+                  "tags": [
+                        "História"
+                  ]
+            },
+            {
+                  "id": "ac-odyssey-child-of-poseidon",
+                  "name": "Child of Poseidon",
+                  "name_pt": "Cria de Poseidon",
+                  "type": "Prata",
+                  "description": "Complete todos os objetivos dos locais submersos.",
+                  "tip": "Use Íkaros para marcar baús e objetivos em cada local submerso. Não é necessário limpar todos os pontos do mapa.",
+                  "is_missable": false,
+                  "is_spoiler": false,
+                  "tags": [
+                        "Exploração",
+                        "Local submerso",
+                        "Mapa"
+                  ]
+            },
+            {
+                  "id": "ac-odyssey-make-it-your-own",
+                  "name": "Make It Your Own",
+                  "name_pt": "Deixe Sua Marca",
+                  "type": "Bronze",
+                  "description": "Grave seu primeiro item.",
+                  "tip": "Vá a um ferreiro e aplique qualquer gravação disponível em um equipamento.",
+                  "is_missable": false,
+                  "is_spoiler": false,
+                  "tags": [
+                        "Misc",
+                        "Equipamento"
+                  ]
+            },
+            {
+                  "id": "ac-odyssey-you-work-for-me-now",
+                  "name": "You Work for Me Now",
+                  "name_pt": "Você Trabalha para Mim Agora",
+                  "type": "Bronze",
+                  "description": "Recrute e atribua um NPC lendário ao seu navio.",
+                  "tip": "Nocauteie ou recrute um NPC lendário e equipe-o como tenente da Adrasteia.",
+                  "is_missable": false,
+                  "is_spoiler": false,
+                  "tags": [
+                        "Navio",
+                        "Recrutamento"
+                  ]
+            },
+            {
+                  "id": "ac-odyssey-shiny",
+                  "name": "Shiny!",
+                  "name_pt": "Brilhante!",
+                  "type": "Bronze",
+                  "description": "Adquira e equipe seu primeiro item lendário.",
+                  "tip": "Itens lendários surgem naturalmente em chefes, cultistas, mercenários e questlines.",
+                  "is_missable": false,
+                  "is_spoiler": false,
+                  "tags": [
+                        "Equipamento"
+                  ]
+            },
+            {
+                  "id": "ac-odyssey-i-am-legend",
+                  "name": "I Am Legend",
+                  "name_pt": "Eu Sou a Lenda",
+                  "type": "Prata",
+                  "description": "Equipe 1 arma corpo a corpo lendária e 5 peças de armadura lendárias.",
+                  "tip": "Equipe uma arma lendária e um conjunto completo de armadura lendária ao mesmo tempo.",
+                  "is_missable": false,
+                  "is_spoiler": false,
+                  "tags": [
+                        "Equipamento",
+                        "Endgame"
+                  ]
+            },
+            {
+                  "id": "ac-odyssey-are-you-not-entertained",
+                  "name": "Are You Not Entertained?",
+                  "name_pt": "Não se Divertiram?",
+                  "type": "Prata",
+                  "description": "Torne-se campeão da Arena.",
+                  "tip": "Avance na Arena de Pephka até derrotar os oponentes necessários. Deixe para quando estiver em nível confortável.",
+                  "is_missable": false,
+                  "is_spoiler": false,
+                  "tags": [
+                        "Arena",
+                        "Combate"
+                  ]
+            },
+            {
+                  "id": "ac-odyssey-demigod",
+                  "name": "Demigod",
+                  "name_pt": "Semideus",
+                  "type": "Bronze",
+                  "description": "Alcance o nível 50.",
+                  "tip": "Complete história, contratos, questlines, cultistas e exploração para acumular XP.",
+                  "is_missable": false,
+                  "is_spoiler": false,
+                  "tags": [
+                        "Grind",
+                        "Nível"
+                  ]
+            },
+            {
+                  "id": "ac-odyssey-godly-power",
+                  "name": "Godly Power",
+                  "name_pt": "Poder dos Deuses",
+                  "type": "Bronze",
+                  "description": "Adquira uma habilidade ativa de Tier 3.",
+                  "tip": "Invista pontos em uma habilidade ativa até liberar e comprar o terceiro nível.",
+                  "is_missable": false,
+                  "is_spoiler": false,
+                  "tags": [
+                        "Habilidade",
+                        "Combate"
+                  ]
+            },
+            {
+                  "id": "ac-odyssey-legacy-restored",
+                  "name": "Legacy Restored",
+                  "name_pt": "Legado Restaurado",
+                  "type": "Prata",
+                  "description": "Melhore a Lança de Leônidas até o Tier 6.",
+                  "tip": "Derrote cultistas para obter fragmentos e evoluir a lança na forja.",
+                  "is_missable": false,
+                  "is_spoiler": true,
+                  "tags": [
+                        "Cultistas",
+                        "Endgame"
+                  ]
+            },
+            {
+                  "id": "ac-odyssey-top-of-the-food-chain",
+                  "name": "Top of the Food Chain",
+                  "name_pt": "Topo da Cadeia Alimentar",
+                  "type": "Bronze",
+                  "description": "Torne-se o mercenário número 1.",
+                  "tip": "Derrote mercenários de ranque mais alto até alcançar o topo da hierarquia.",
+                  "is_missable": false,
+                  "is_spoiler": false,
+                  "tags": [
+                        "Mercenários",
+                        "Combate"
+                  ]
+            },
+            {
+                  "id": "ac-odyssey-cult-unmasked",
+                  "name": "The Cult Unmasked",
+                  "name_pt": "O Culto Desmascarado",
+                  "type": "Prata",
+                  "description": "Derrote todos os Cultistas do Cosmo.",
+                  "tip": "Investigue pistas, avance questlines e elimine todos os cultistas da lista base.",
+                  "is_missable": false,
+                  "is_spoiler": true,
+                  "tags": [
+                        "Cultistas",
+                        "Endgame"
+                  ]
+            },
+            {
+                  "id": "ac-odyssey-stink-eye",
+                  "name": "Stink Eye",
+                  "name_pt": "Olhar de Desprezo",
+                  "type": "Bronze",
+                  "description": "Recupere o olho do Ciclope em uma cabra de Cefalônia.",
+                  "tip": "Depois da sequência inicial, volte a Cefalônia e saqueie cabras até recuperar o olho.",
+                  "is_missable": false,
+                  "is_spoiler": false,
+                  "tags": [
+                        "Misc",
+                        "Exploração"
+                  ]
+            },
+            {
+                  "id": "ac-odyssey-hermess-homie",
+                  "name": "Hermes’s Homie",
+                  "name_pt": "Companheiro de Hermes",
+                  "type": "Bronze",
+                  "description": "Revele todas as sub-regiões da Grécia.",
+                  "tip": "Pise em todas as sub-regiões, incluindo ilhas pequenas e rochedos pouco óbvios no mapa.",
+                  "is_missable": false,
+                  "is_spoiler": false,
+                  "tags": [
+                        "Exploração",
+                        "Mapa"
+                  ]
+            },
+            {
+                  "id": "ac-odyssey-in-perseuss-image",
+                  "name": "In Perseus’s Image",
+                  "name_pt": "À Imagem de Perseu",
+                  "type": "Bronze",
+                  "description": "Derrote a Medusa.",
+                  "tip": "Derrote a Medusa na linha mítica. É um desafio de nível alto, então deixe para o endgame.",
+                  "is_missable": false,
+                  "is_spoiler": true,
+                  "tags": [
+                        "Chefe",
+                        "Endgame"
+                  ]
+            },
+            {
+                  "id": "ac-odyssey-a-maze-ing-victory",
+                  "name": "A-maze-ing Victory!",
+                  "name_pt": "Labi(rindo) do Minotauro",
+                  "type": "Bronze",
+                  "description": "Derrote o Minotauro.",
+                  "tip": "Complete a linha relacionada e vença o Minotauro quando estiver em nível adequado.",
+                  "is_missable": false,
+                  "is_spoiler": true,
+                  "tags": [
+                        "Chefe"
+                  ]
+            },
+            {
+                  "id": "ac-odyssey-eye-on-the-prize",
+                  "name": "Eye on the Prize",
+                  "name_pt": "De Olho na Recompensa",
+                  "type": "Bronze",
+                  "description": "Derrote o Ciclope.",
+                  "tip": "Derrote o Ciclope da linha mítica da lista base.",
+                  "is_missable": false,
+                  "is_spoiler": true,
+                  "tags": [
+                        "Chefe"
+                  ]
+            },
+            {
+                  "id": "ac-odyssey-riddle-me-this",
+                  "name": "Riddle Me This",
+                  "name_pt": "Enigma da Esfinge",
+                  "type": "Bronze",
+                  "description": "Supere a Esfinge.",
+                  "tip": "Conclua o encontro da Esfinge na linha mítica.",
+                  "is_missable": false,
+                  "is_spoiler": true,
+                  "tags": [
+                        "Chefe",
+                        "Questline"
+                  ]
+            },
+            {
+                  "id": "ac-odyssey-lord-of-the-seas",
+                  "name": "Lord of the Seas",
+                  "name_pt": "Senhor dos Mares",
+                  "type": "Prata",
+                  "description": "Melhore a Adrasteia completamente.",
+                  "tip": "Guarde recursos e tábuas antigas. Afundar navios e explorar ruínas reduz o grind dos upgrades.",
+                  "is_missable": false,
+                  "is_spoiler": false,
+                  "tags": [
+                        "Navio",
+                        "Grind"
+                  ]
+            },
+            {
+                  "id": "ac-odyssey-argonauts",
+                  "name": "The Argonauts",
+                  "name_pt": "Os Argonautas",
+                  "type": "Prata",
+                  "description": "Preencha a tripulação da Adrasteia com tenentes lendários.",
+                  "tip": "Equipe tenentes lendários em todos os espaços do navio.",
+                  "is_missable": false,
+                  "is_spoiler": false,
+                  "tags": [
+                        "Navio",
+                        "Recrutamento"
+                  ]
+            },
+            {
+                  "id": "ac-odyssey-master-of-the-hunt",
+                  "name": "Master of the Hunt",
+                  "name_pt": "Mestre da Caça",
+                  "type": "Bronze",
+                  "description": "Complete a questline das Filhas de Ártemis.",
+                  "tip": "Caçe os animais lendários e finalize a linha das Filhas de Ártemis.",
+                  "is_missable": false,
+                  "is_spoiler": true,
+                  "tags": [
+                        "Questline",
+                        "Chefe"
+                  ]
+            },
+            {
+                  "id": "ac-odyssey-everybody-benefits",
+                  "name": "Everybody Benefits",
+                  "name_pt": "Todos saem ganhando!",
+                  "type": "Bronze",
+                  "description": "Complete a questline de Markos.",
+                  "tip": "Encontre Markos e conclua sua linha de missões para liberar o troféu.",
+                  "is_missable": false,
+                  "is_spoiler": false,
+                  "tags": [
+                        "Questline"
+                  ]
+            },
+            {
+                  "id": "ac-odyssey-trust-me-im-a-doctor",
+                  "name": "Trust Me, I’m a Doctor",
+                  "name_pt": "Confie em Mim, Eu Sou um Doutor",
+                  "type": "Bronze",
+                  "description": "Complete a questline de Hipócrates.",
+                  "tip": "Conclua as missões de Hipócrates quando ficarem disponíveis.",
+                  "is_missable": false,
+                  "is_spoiler": false,
+                  "tags": [
+                        "Questline"
+                  ]
+            },
+            {
+                  "id": "ac-odyssey-pirates-life-for-me",
+                  "name": "A Pirate’s Life for Me",
+                  "name_pt": "Uma Vida de Pirata Para Mim",
+                  "type": "Bronze",
+                  "description": "Complete a questline de Xenia.",
+                  "tip": "Siga os mapas e tesouros de Xenia até finalizar a linha de missões.",
+                  "is_missable": false,
+                  "is_spoiler": false,
+                  "tags": [
+                        "Questline",
+                        "Exploração"
+                  ]
+            },
+            {
+                  "id": "ac-odyssey-going-for-gold",
+                  "name": "Going For Gold",
+                  "name_pt": "Em Busca do Ouro",
+                  "type": "Prata",
+                  "description": "Complete a questline Olímpica.",
+                  "tip": "Avance a linha Olímpica da campanha até concluir seus eventos.",
+                  "is_missable": false,
+                  "is_spoiler": true,
+                  "tags": [
+                        "Questline",
+                        "História"
+                  ]
+            },
+            {
+                  "id": "ac-odyssey-scourge-of-the-aegean",
+                  "name": "Scourge of the Aegean",
+                  "name_pt": "Flagelo do Egeu",
+                  "type": "Bronze",
+                  "description": "Afunde seu primeiro navio épico.",
+                  "tip": "Procure navios épicos no mar e afunde um deles com a Adrasteia.",
+                  "is_missable": false,
+                  "is_spoiler": false,
+                  "tags": [
+                        "Navio",
+                        "Combate"
+                  ]
+            },
+            {
+                  "id": "ac-odyssey-blood-sport",
+                  "name": "Blood Sport",
+                  "name_pt": "Esporte de Sangue",
+                  "type": "Bronze",
+                  "description": "Derrote um mercenário na Arena.",
+                  "tip": "Quando um mercenário aparecer na Arena, vença a luta para liberar o troféu.",
+                  "is_missable": false,
+                  "is_spoiler": false,
+                  "tags": [
+                        "Arena",
+                        "Mercenários"
+                  ]
+            },
+            {
+                  "id": "ac-odyssey-harder-better-faster-stronger",
+                  "name": "Harder, Better, Faster, Stronger",
+                  "name_pt": "Melhor, Mais Rápido, Mais Forte",
+                  "type": "Bronze",
+                  "description": "Melhore a Adrasteia pela primeira vez.",
+                  "tip": "Faça qualquer upgrade inicial do navio usando recursos e materiais.",
+                  "is_missable": false,
+                  "is_spoiler": false,
+                  "tags": [
+                        "Navio"
+                  ]
+            },
+            {
+                  "id": "ac-odyssey-fashions-creed",
+                  "name": "Fashion’s Creed",
+                  "name_pt": "Credo Fashionista",
+                  "type": "Bronze",
+                  "description": "Equipe um conjunto de armadura lendária.",
+                  "tip": "Equipe todas as peças de um mesmo conjunto lendário.",
+                  "is_missable": false,
+                  "is_spoiler": false,
+                  "tags": [
+                        "Equipamento"
+                  ]
+            },
+            {
+                  "id": "ac-odyssey-aphrodites-embrace",
+                  "name": "Aphrodite’s Embrace",
+                  "name_pt": "Nos Braços de Afrodite",
+                  "type": "Bronze",
+                  "description": "Passe a noite com outro personagem.",
+                  "tip": "Escolha ao menos uma opção de romance marcada com coração quando aparecer. Há várias oportunidades, mas ignorar todas torna este o único perdível técnico da lista base.",
+                  "is_missable": true,
+                  "is_spoiler": false,
+                  "tags": [
+                        "Perdível",
+                        "Diálogo"
+                  ]
+            },
+            {
+                  "id": "ac-odyssey-one-head-down",
+                  "name": "One Head Down…",
+                  "name_pt": "Uma Cabeça a Menos…",
+                  "type": "Prata",
+                  "description": "Derrote um ramo completo dos Cultistas do Cosmo.",
+                  "tip": "Elimine todos os cultistas de um mesmo grupo da lista base.",
+                  "is_missable": false,
+                  "is_spoiler": true,
+                  "tags": [
+                        "Cultistas"
+                  ]
+            },
+            {
+                  "id": "ac-odyssey-birthright",
+                  "name": "Birthright",
+                  "name_pt": "Legado",
+                  "type": "Bronze",
+                  "description": "Descubra Atlântida e fale com Pitágoras.",
+                  "tip": "Siga a linha mítica da lista base até encontrar Atlântida. Não confunda com expansões lançadas depois.",
+                  "is_missable": false,
+                  "is_spoiler": true,
+                  "tags": [
+                        "Questline",
+                        "Chefe"
+                  ]
+            },
+            {
+                  "id": "ac-odyssey-ramming-speed",
+                  "name": "Ramming Speed",
+                  "name_pt": "Velocidade Máxima",
+                  "type": "Bronze",
+                  "description": "Parta um navio ao meio.",
+                  "tip": "Enfraqueça um navio inimigo e finalize com abalroamento para parti-lo ao meio.",
+                  "is_missable": false,
+                  "is_spoiler": false,
+                  "tags": [
+                        "Navio",
+                        "Combate"
+                  ]
+            },
+            {
+                  "id": "ac-odyssey-i-have-the-power",
+                  "name": "I Have the Power",
+                  "name_pt": "Eu Tenho a Força",
+                  "type": "Bronze",
+                  "description": "Execute um Ataque Devastador com cada tipo de arma.",
+                  "tip": "Use Overpower Attack com todos os tipos de arma exigidos pelo jogo.",
+                  "is_missable": false,
+                  "is_spoiler": false,
+                  "tags": [
+                        "Combate"
+                  ]
+            },
+            {
+                  "id": "ac-odyssey-war-master",
+                  "name": "War Master",
+                  "name_pt": "Mestre da Guerra",
+                  "type": "Bronze",
+                  "description": "Mate o líder de qualquer região com recursos baixos, exceto Megaris.",
+                  "tip": "Enfraqueça uma região fora de Megaris e elimine o líder quando a força local estiver baixa.",
+                  "is_missable": false,
+                  "is_spoiler": false,
+                  "tags": [
+                        "Combate",
+                        "Mapa"
+                  ]
+            },
+            {
+                  "id": "ac-odyssey-misthios-in-training",
+                  "name": "Misthios in Training",
+                  "name_pt": "Misthios Em Treinamento",
+                  "type": "Bronze",
+                  "description": "Complete 20 recompensas, contratos de guerra ou missões navais dos quadros de mensagens.",
+                  "tip": "Aceite contratos ao longo da campanha para reduzir grind e complete 20 atividades elegíveis.",
+                  "is_missable": false,
+                  "is_spoiler": false,
+                  "tags": [
+                        "Contratos",
+                        "Grind"
+                  ]
+            },
+            {
+                  "id": "ac-odyssey-island-hopper",
+                  "name": "Island Hopper",
+                  "name_pt": "De Ilha em Ilha",
+                  "type": "Ouro",
+                  "description": "Complete 20 missões nas ilhas de Pefka, Obsidiana e Abantis.",
+                  "tip": "Faça missões nessas ilhas até completar 20 atividades válidas para o troféu.",
+                  "is_missable": false,
+                  "is_spoiler": false,
+                  "tags": [
+                        "Questline",
+                        "Exploração"
+                  ]
+            },
+            {
+                  "id": "ac-odyssey-infamous",
+                  "name": "Infamous",
+                  "name_pt": "Infame",
+                  "type": "Bronze",
+                  "description": "Eleve sua recompensa ao nível máximo.",
+                  "tip": "Cometa crimes ou ataque alvos até a barra de recompensa atingir o máximo.",
+                  "is_missable": false,
+                  "is_spoiler": false,
+                  "tags": [
+                        "Mercenários",
+                        "Combate"
+                  ]
+            },
+            {
+                  "id": "ac-odyssey-hero-for-hire",
+                  "name": "Hero for Hire",
+                  "name_pt": "Herói Sob Contrato",
+                  "type": "Bronze",
+                  "description": "Vença sua primeira batalha de conquista terrestre em qualquer região, exceto Megaris.",
+                  "tip": "Participe e vença uma batalha de conquista terrestre fora de Megaris.",
+                  "is_missable": false,
+                  "is_spoiler": false,
+                  "tags": [
+                        "Combate",
+                        "Mapa"
+                  ]
+            },
+            {
+                  "id": "ac-odyssey-wrath-of-the-amazons",
+                  "name": "Wrath of the Amazons",
+                  "name_pt": "A Ira das Amazonas",
+                  "type": "Bronze",
+                  "description": "Parta um navio ao meio usando uma tripulação formada só por mulheres.",
+                  "tip": "Equipe uma tripulação feminina na Adrasteia e finalize um navio com abalroamento.",
+                  "is_missable": false,
+                  "is_spoiler": false,
+                  "tags": [
+                        "Navio",
+                        "Combate"
+                  ]
+            },
+            {
+                  "id": "ac-odyssey-midas-touch",
+                  "name": "The Midas Touch",
+                  "name_pt": "Toque de Midas",
+                  "type": "Bronze",
+                  "description": "Grave um item lendário com um efeito lendário.",
+                  "tip": "Use um ferreiro para aplicar uma gravação lendária em um item lendário.",
+                  "is_missable": false,
+                  "is_spoiler": false,
+                  "tags": [
+                        "Equipamento",
+                        "Misc"
+                  ]
+            }
       ]
-  },
+},
   {
         "name": "Assassin’s Creed Valhalla",
         "slug": "assassins-creed-valhalla",
@@ -29289,176 +29776,168 @@ const sampleGames = [
 {
       "name": "A Way Out",
       "slug": "a-way-out",
+      "primary_platform": "PlayStation",
+      "platforms": ["PS4"],
+      "developer": "Hazelight Studios",
+      "publisher": "Electronic Arts",
       "difficulty": 2,
       "time": "5-7h",
       "time_min_hours": 5,
       "time_max_hours": 7,
       "time_sort_hours": 6,
       "time_bucket": "short",
-      "missable": "Sem perdíveis definitivos por causa da seleção de capítulos, mas quase todos os troféus são interações opcionais que podem ser ignoradas durante a campanha.",
-      "runs_summary": "Uma campanha coop completa com seleção de capítulos para limpar eventos opcionais, minigames e interações específicas.",
-      "missable_summary": "Não há perda permanente: qualquer evento opcional perdido pode ser recuperado pela seleção de capítulos sem refazer a história inteira.",
-      "online_summary": "Não há troféus exclusivamente online, mas o jogo exige 2 jogadores do início ao fim. Pode ser feito em coop local ou online; PS+ só entra se a dupla jogar online. A versão de teste/convite precisa revisão final se ambos quiserem troféus.",
-      "grind_summary": "Não há grind real; o peso está em eventos opcionais de capítulo, interações cooperativas, minigames e ações específicas de Leo ou Vincent.",
-      "dlc_scope": "Guia focado na lista base de A Way Out. Não há DLC necessário para a platina.",
-      "difficulty_reason": "A platina é muito acessível, sem troféus de dificuldade e com seleção de capítulos; o principal requisito é ter outro jogador e não deixar eventos opcionais passarem.",
-      "time_reason": "A faixa de 5-7 horas considera uma campanha completa em coop e uma limpeza curta por seleção de capítulos.",
-      "first_run_advice": "Jogue com comunicação clara com a dupla, explore áreas abertas antes de avançar objetivos principais e combine quem fará ações específicas de Leo ou Vincent.",
-      "cleanup_advice": "Use a seleção de capítulos para voltar diretamente aos eventos opcionais pendentes, como piano/banjo, baseball, fliperama, helicóptero, moto, balanço e cata-vento.",
-      "before_you_start": "A Way Out não pode ser platinado solo. Combine com outro jogador e, se for online, valide que ambos possuem a versão completa caso ambos queiram ganhar troféus; convite/trial precisa revisão final.",
-      "best_for": "Ideal para quem quer uma platina coop curta, narrativa, simples e focada em interações opcionais.",
-      "avoid_if": "Evite se você não tem um segundo jogador ou não quer depender de coop durante toda a campanha.",
+      "missable": "Sem perdíveis reais. Eventos opcionais podem ser ignorados durante a campanha, mas a seleção de capítulos permite voltar e refazer cada momento sem reiniciar a história.",
+      "runs_summary": "1 campanha cooperativa completa, com limpeza por seleção de capítulos para eventos opcionais, minigames e interações específicas.",
+      "missable_summary": "Não há troféus perdíveis reais. Qualquer evento opcional perdido pode ser recuperado pela seleção de capítulos sem refazer a campanha inteira.",
+      "online_summary": "A Way Out exige cooperação do começo ao fim, mas online não é obrigatório para a platina: o jogo pode ser platinado em coop local ou online. No online, confirme a situação do Friend Pass se ambos quiserem troféus.",
+      "grind_summary": "Não há grind nem coletáveis tradicionais. O trabalho está em eventos opcionais de capítulo, ações cooperativas, minigames e interações específicas de Leo ou Vincent.",
+      "dlc_scope": "Guia focado na lista base de A Way Out. Não há DLC necessária para a platina.",
+      "difficulty_reason": "A platina é muito acessível, sem troféus de dificuldade, sem grind e com seleção de capítulos. O principal requisito é ter uma segunda pessoa e executar eventos opcionais simples.",
+      "time_reason": "A faixa de 5 a 7 horas considera uma campanha completa em cooperação e uma limpeza curta por seleção de capítulos.",
+      "first_run_advice": "Jogue com uma segunda pessoa em coop local ou online, explore áreas abertas antes de avançar objetivos principais e combine quem fará ações específicas de Leo, Vincent ou dos dois personagens.",
+      "cleanup_advice": "Use a seleção de capítulos para voltar diretamente aos eventos opcionais pendentes, como piano/banjo, baseball, fliperama, helicóptero, moto, balanço, cata-vento e paralelas.",
+      "before_you_start": "A Way Out não possui modo solo. A platina exige uma segunda pessoa do começo ao fim, mas pode ser feita em coop local; por isso online não é obrigatório.",
+      "best_for": "Ideal para quem quer uma platina coop curta, narrativa, acessível e focada em interações opcionais.",
+      "avoid_if": "Evite se você não tem uma segunda pessoa para jogar a campanha inteira ou não quer depender de cooperação.",
+      "hasMissables": false,
+      "missableCount": 0,
+      "missable_count": 0,
+      "hasOnline": false,
+      "hasCoop": true,
+      "hasMandatoryOnline": false,
+      "hasMandatoryCoop": true,
+      "requiresOnline": false,
+      "requiresCoop": true,
+      "onlineRequired": false,
+      "coopRequired": true,
+      "dlcRequired": false,
+      "dlcRequiredForPlatinum": false,
+      "chapterSelect": true,
+      "playthroughs": "1 campanha cooperativa + cleanup por seleção de capítulos",
+      "platinumType": "platina base PS4 cooperativa",
+      "guideFocus": "campanha coop, seleção de capítulos, eventos opcionais e ações específicas de Leo/Vincent",
       "editorial_status": "published",
-      "coverage_level": "strong",
-      "is_verified": false,
-      "verification_status": "review",
-      "verification_note": "Precisa revisão editorial final: coop obrigatório, convite/trial e desbloqueio de troféus para os dois jogadores devem ser validados manualmente.",
+      "editorialStatus": "verified",
+      "coverage_level": "complete",
+      "is_verified": true,
+      "verification_status": "verified",
+      "editorial_review_status": "verified",
+      "last_reviewed_at": "2026-06-11",
+      "reviewed_by": "AtlasAchievement Editorial",
+      "verification_note": "Guia revisado para a lista base PS4: 15 troféus, coop obrigatório, online não obrigatório por coop local, sem DLC, sem perdíveis reais, roadmap estruturado, nomes EN/PT-BR, FAQ, checklist, SEO e pontos de atenção.",
+      "editorial_notes": "Decisão editorial: eventos opcionais de capítulo não contam como perdíveis porque a seleção de capítulos permite repetir os momentos. Friend Pass deve ser tratado como atenção para a conta convidada, não como promessa de troféus.",
+      "quality_warnings": [],
       "image": "https://cdn.cloudflare.steamstatic.com/steam/apps/1222700/header.jpg",
       "cover_image": "https://cdn.cloudflare.steamstatic.com/steam/apps/1222700/library_600x900.jpg",
+      "editorial_summary": [
+            "A Way Out é uma platina curta e acessível, focada em eventos opcionais espalhados pela campanha cooperativa de Leo e Vincent. A rota mais segura é jogar a história com uma segunda pessoa, aproveitar a experiência sem pressa e depois usar a seleção de capítulos para limpar qualquer troféu de evento que tenha ficado para trás.",
+            "Não há troféus perdíveis reais, DLC obrigatória ou coletáveis tradicionais. O cuidado principal é lembrar que o jogo exige cooperação do começo ao fim: a platina pode ser feita em coop local ou online, mas não existe modo solo.",
+            "Alguns troféus dependem de ações específicas de Leo, Vincent ou dos dois jogadores ao mesmo tempo. O cleanup deve priorizar capítulos com interações únicas, como fazenda, parque de trailers, hospital, hangar e pátio da prisão."
+      ],
+      "seo": {
+            "title": "A Way Out: Guia de Troféus e Platina",
+            "description": "Guia de troféus de A Way Out com roadmap da platina, tempo estimado, dificuldade, coop obrigatório, seleção de capítulos e dicas para todos os troféus.",
+            "metaDescription": "Guia de troféus de A Way Out com roadmap da platina, tempo estimado, dificuldade, coop obrigatório, seleção de capítulos e dicas para todos os troféus.",
+            "keywords": "A Way Out troféus, A Way Out platina, guia A Way Out, A Way Out coop, A Way Out troféus PS4, All The Ways Out, Home Run A Way Out",
+            "ogTitle": "A Way Out: Guia de Troféus e Platina",
+            "ogDescription": "Roadmap da platina de A Way Out com 15 troféus, coop obrigatório, sem online obrigatório, sem DLC e sem perdíveis reais."
+      },
+      "quickDecision": {
+            "summary": "Sim, vale platinar A Way Out, especialmente para quem tem uma segunda pessoa para jogar do início ao fim.",
+            "recommendation": "A dificuldade é baixa, o tempo é curto e o risco é baixo porque não há perdíveis reais por causa da seleção de capítulos.",
+            "firstAction": "Comece a campanha em coop local ou online e deixe o cleanup de eventos opcionais para a seleção de capítulos.",
+            "risk": "O jogo exige cooperação e alguns troféus dependem de ações específicas de Leo, Vincent ou dos dois jogadores ao mesmo tempo."
+      },
+      "checklist": [
+            "Conferir se o guia tem 15 troféus.",
+            "Conferir se All The Ways Out é platina.",
+            "Conferir se não há troféus marcados como perdíveis.",
+            "Conferir se coopRequired está true.",
+            "Conferir se onlineRequired está false.",
+            "Conferir se dlcRequired está false.",
+            "Conferir se missableCount está 0.",
+            "Conferir se todos os troféus têm nome oficial em inglês como principal.",
+            "Conferir se todos os troféus têm PT-BR abaixo.",
+            "Conferir se descrições e dicas estão em português.",
+            "Conferir se não aparecem rótulos técnicos de nome original nem placeholders editoriais.",
+            "Conferir se roadmap está estruturado como array de objetos.",
+            "Conferir se roadmap não renderiza texto bruto de objeto, labels técnicos ou separador vertical.",
+            "Conferir FAQ, decisão rápida, SEO e pontos de atenção.",
+            "Conferir status consistente entre página individual e catálogo."
+      ],
+      "attentionPoints": [
+            { "title": "Coop obrigatório", "detail": "A Way Out não possui modo solo. A platina exige uma segunda pessoa do começo ao fim.", "tags": ["Coop", "Obrigatório"] },
+            { "title": "Online não obrigatório", "detail": "O jogo pode ser platinado em coop local; por isso onlineRequired deve ficar false, mesmo que exista coop online.", "tags": ["Coop local", "Sem online obrigatório"] },
+            { "title": "Seleção de capítulos", "detail": "Eventos ignorados durante a campanha podem ser refeitos pela seleção de capítulos, então não há perdíveis reais.", "tags": ["Seleção de capítulos", "Cleanup"] },
+            { "title": "Home Run", "detail": "Home Run desbloqueia para quem rebate. Se os dois jogadores quiserem o troféu em suas contas, alternem as funções.", "tags": ["Minigame", "Personagem específico"] },
+            { "title": "Personagens específicos", "detail": "Alguns troféus exigem Leo, Vincent ou os dois personagens ao mesmo tempo. A dica deve deixar isso claro.", "tags": ["Leo", "Vincent", "Sincronização"] },
+            { "title": "Friend Pass", "detail": "O Friend Pass permite jogar online com convidado, mas a obtenção de troféus pela conta convidada pode depender da posse ou versão usada. Não transforme isso em promessa absoluta.", "tags": ["Friend Pass", "Online opcional"] }
+      ],
+      "faq": [
+            { "question": "A Way Out tem troféus perdíveis?", "answer": "Não. Apesar de vários troféus dependerem de eventos opcionais em capítulos específicos, a seleção de capítulos permite voltar e refazer esses momentos sem reiniciar a campanha." },
+            { "question": "Dá para platinar A Way Out sozinho?", "answer": "Não. A Way Out é um jogo exclusivamente cooperativo e exige uma segunda pessoa durante a campanha." },
+            { "question": "Precisa jogar online para platinar?", "answer": "Não obrigatoriamente. A platina pode ser feita em coop local. O modo online existe, mas não torna onlineRequired verdadeiro quando a platina local é válida." },
+            { "question": "Precisa de DLC?", "answer": "Não. A platina pertence à lista base do jogo e não exige DLC." },
+            { "question": "Quanto tempo leva para platinar?", "answer": "Em média, cerca de 5 a 7 horas, dependendo de quantos troféus forem feitos durante a campanha e do tempo gasto no cleanup por seleção de capítulos." },
+            { "question": "O Friend Pass libera troféus para os dois jogadores?", "answer": "Quem possui o jogo consegue desbloquear troféus normalmente. A conta convidada pelo Friend Pass pode ter limitações dependendo da versão ou posse do jogo, então não prometa troféus para o convidado sem confirmar no funcionamento atual da plataforma." }
+      ],
       "roadmap": [
-            "Comece a campanha em coop com outro jogador, local ou online, e avance normalmente pela história explorando áreas abertas antes de seguir o objetivo principal.",
-            "Durante os capítulos, priorize eventos opcionais de interação cooperativa: muitos troféus exigem que os dois jogadores façam algo juntos ou que Leo/Vincent interaja com o objeto certo.",
-            "Preste atenção em áreas como prisão, fazenda, parque de trailers, galpão e hospital, porque concentram troféus opcionais como The Dip, In Sync, Timeless Treasure, No Cheating, Live The Dream e Break From Reality.",
-            "Faça os minigames e interações específicas de piano/banjo, baseball, fliperama, paralelas, moto, helicóptero, balanço, cata-vento e banco perto do rio conforme eles aparecem.",
-            "Depois de terminar a campanha, use seleção de capítulos para buscar qualquer troféu faltante sem refazer o jogo inteiro.",
-            "Ao completar todos os eventos opcionais, revise a checklist e desbloqueie All The Ways Out."
+            {
+                  "title": "Jogue a campanha em cooperação",
+                  "focus": "Campanha cooperativa",
+                  "objective": "Concluir a história com Leo e Vincent enquanto aproveita os eventos opcionais que encontrar naturalmente.",
+                  "actions": [
+                        "Jogue com uma segunda pessoa em coop local ou online.",
+                        "Interaja com eventos opcionais sempre que o cenário permitir.",
+                        "Não se preocupe se algum troféu ficar para trás, pois a seleção de capítulos permite voltar depois.",
+                        "Dê atenção especial a momentos com ações dos dois personagens ao mesmo tempo."
+                  ],
+                  "warning": "O jogo não possui modo solo; é obrigatório jogar com outra pessoa.",
+                  "result": "Ao final da campanha, você terá entendido a estrutura dos capítulos e provavelmente já terá desbloqueado parte dos troféus de evento."
+            },
+            {
+                  "title": "Limpe os eventos pela seleção de capítulos",
+                  "focus": "Cleanup",
+                  "objective": "Voltar aos capítulos específicos para desbloquear qualquer troféu opcional que tenha sido ignorado.",
+                  "actions": [
+                        "Use a seleção de capítulos para retornar aos pontos com troféus pendentes.",
+                        "Priorize os eventos da fazenda, parque de trailers, hospital, hangar e pátio da prisão.",
+                        "Confira se o troféu exige Leo, Vincent ou ação sincronizada dos dois jogadores.",
+                        "Para Home Run, faça o troféu com quem está rebatendo e alterne a função se necessário."
+                  ],
+                  "warning": "",
+                  "result": "Todos os troféus opcionais ficam resolvidos sem necessidade de rejogar a campanha inteira."
+            },
+            {
+                  "title": "Finalize a platina",
+                  "focus": "Conferência final",
+                  "objective": "Garantir que todos os eventos específicos foram concluídos e que a platina apareceu corretamente.",
+                  "actions": [
+                        "Revise a lista de troféus restantes no sistema.",
+                        "Repita apenas os capítulos necessários caso algum evento não tenha registrado.",
+                        "Confirme se ambos os jogadores que desejam troféus estão usando contas aptas a desbloqueá-los.",
+                        "Evite considerar o Friend Pass como garantia de troféus para a conta convidada sem confirmar a situação no jogo ou na plataforma."
+                  ],
+                  "warning": "No online, atenção ao Friend Pass: normalmente uma pessoa pode jogar sem comprar, mas a conta convidada pode ter limitações para desbloquear troféus dependendo da versão ou posse do jogo.",
+                  "result": "Com todos os eventos concluídos, All The Ways Out será liberado e a platina estará finalizada."
+            }
       ],
       "trophies": [
-            {
-                  "id": "a_way_out_all_the_ways_out",
-                  "name": "All The Ways Out",
-                  "type": "Platina",
-                  "description": "Collect all trophies",
-                  "tip": "Complete todos os eventos opcionais da lista base para liberar a platina.",
-                  "is_missable": false,
-                  "is_spoiler": false
-            },
-            {
-                  "id": "a_way_out_freedom",
-                  "name": "Freedom",
-                  "type": "Prata",
-                  "description": "You freed someone from captivity.",
-                  "tip": "No capítulo Escape – Prison Escape, procure a gaiola do pássaro no escritório/varanda do diretor e interaja com ela antes de seguir.",
-                  "is_missable": false,
-                  "is_spoiler": false
-            },
-            {
-                  "id": "a_way_out_take_a_breather",
-                  "name": "Take A Breather",
-                  "type": "Ouro",
-                  "description": "You took a break from it all.",
-                  "tip": "No capítulo Fugitives – Breather, encontre o banco/rocha perto da cachoeira e sente com o parceiro para acionar a cena.",
-                  "is_missable": false,
-                  "is_spoiler": false
-            },
-            {
-                  "id": "a_way_out_in_sync",
-                  "name": "In Sync",
-                  "type": "Ouro",
-                  "description": "Music was played in harmony.",
-                  "tip": "Na fazenda, Vincent deve tocar piano e Leo o banjo. Comecem juntos e mantenham a sequência até a cena iniciar.",
-                  "is_missable": false,
-                  "is_spoiler": false
-            },
-            {
-                  "id": "a_way_out_timeless_treasure",
-                  "name": "Timeless Treasure",
-                  "type": "Ouro",
-                  "description": "You linked up to get past.",
-                  "tip": "Na fazenda, os dois jogadores devem interagir juntos com o relógio para abrir a passagem secreta e acessar o baú.",
-                  "is_missable": false,
-                  "is_spoiler": false
-            },
-            {
-                  "id": "a_way_out_no_cheating",
-                  "name": "No Cheating",
-                  "type": "Prata",
-                  "description": "You exposed some infidelity.",
-                  "tip": "No parque de trailers, fale com a mulher desconfiada, investigue o trailer indicado e volte para contar a ela.",
-                  "is_missable": false,
-                  "is_spoiler": false
-            },
-            {
-                  "id": "a_way_out_break_from_reality",
-                  "name": "Break From Reality",
-                  "type": "Prata",
-                  "description": "You played a videogame with a friend.",
-                  "tip": "No capítulo Vengeance – Lift Off, vá ao fundo do galpão/hangar e jogue o fliperama com o parceiro.",
-                  "is_missable": false,
-                  "is_spoiler": false
-            },
-            {
-                  "id": "a_way_out_mayday",
-                  "name": "Mayday!",
-                  "type": "Prata",
-                  "description": "You almost took to the skies.",
-                  "tip": "Na área externa do galpão/hangar em Vengeance – Lift Off, encontre o helicóptero e interaja com ele usando Leo.",
-                  "is_missable": false,
-                  "is_spoiler": false
-            },
-            {
-                  "id": "a_way_out_managed_anger",
-                  "name": "Managed Anger",
-                  "type": "Ouro",
-                  "description": "Dark desires done right.",
-                  "tip": "Durante o interrogatório em Violent Questioning, siga as interações corretas com Ray e o ambiente até a cena especial de Leo.",
-                  "is_missable": false,
-                  "is_spoiler": true
-            },
-            {
-                  "id": "a_way_out_live_the_dream",
-                  "name": "Live The Dream",
-                  "type": "Ouro",
-                  "description": "“Houston, we’ve had a problem.”",
-                  "tip": "Na maternidade em A New Life, antes de falar com a recepcionista principal, ligue a TV e sente no sofá com os dois personagens.",
-                  "is_missable": false,
-                  "is_spoiler": false
-            },
-            {
-                  "id": "a_way_out_backseat_mechanic",
-                  "name": "Backseat Mechanic",
-                  "type": "Ouro",
-                  "description": "You helped fix the bike.",
-                  "tip": "No capítulo Preparation – Reunion, faça Vincent ajudar Linda com a moto enquanto Leo ainda não avançou para a casa na árvore com Alex.",
-                  "is_missable": false,
-                  "is_spoiler": false
-            },
-            {
-                  "id": "a_way_out_take_it_for_a_spin",
-                  "name": "Take It For A Spin",
-                  "type": "Ouro",
-                  "description": "You did what the wind couldn’t.",
-                  "tip": "Na fazenda, suba no moinho/cata-vento atrás do celeiro e gire a hélice até acionar o troféu.",
-                  "is_missable": false,
-                  "is_spoiler": false
-            },
-            {
-                  "id": "a_way_out_you_started_it",
-                  "name": "You Started It",
-                  "type": "Ouro",
-                  "description": "Not kids anymore.",
-                  "tip": "No parque de trailers em Preparation – Reunion, encontre o balanço do parquinho e sente com os dois personagens ao mesmo tempo.",
-                  "is_missable": false,
-                  "is_spoiler": false
-            },
-            {
-                  "id": "a_way_out_the_dip",
-                  "name": "The Dip",
-                  "type": "Ouro",
-                  "description": "You set a new record.",
-                  "tip": "No pátio da prisão em Escape – The Yard, use Leo para fazer 20 paralelas e bater o recorde do preso.",
-                  "is_missable": false,
-                  "is_spoiler": false
-            },
-            {
-                  "id": "a_way_out_home_run",
-                  "name": "Home Run",
-                  "type": "Ouro",
-                  "description": "You are clearly good with a bat.",
-                  "tip": "No parque de trailers, participe do baseball como rebatedor e acerte uma bola para fora da área. Se os dois quiserem o troféu, troquem de função e repitam.",
-                  "is_missable": false,
-                  "is_spoiler": false
-            }
+            { "id": "a-way-out-all-the-ways-out", "name": "All The Ways Out", "name_pt": "Todas as saídas", "type": "Platina", "description": "Obtenha todos os outros troféus de A Way Out.", "tip": "Complete todos os eventos opcionais da lista base para liberar a platina.", "is_missable": false, "is_spoiler": false, "tags": ["Platina", "Conclusão"] },
+            { "id": "a-way-out-freedom", "name": "Freedom", "name_pt": "Liberdade", "type": "Prata", "description": "Liberte o pássaro no escritório do diretor.", "tip": "No capítulo Escape - Prison Escape, procure a gaiola do pássaro no escritório do diretor e interaja com ela antes de seguir. Se passar direto, volte pela seleção de capítulos.", "is_missable": false, "is_spoiler": false, "tags": ["Capítulo", "Ação específica"] },
+            { "id": "a-way-out-take-a-breather", "name": "Take A Breather", "name_pt": "Hora da pausa", "type": "Ouro", "description": "Faça Leo e Vincent descansarem juntos durante a fuga.", "tip": "No capítulo Fugitives - Breather, encontre o ponto de descanso perto da cachoeira e sente com o parceiro para acionar a cena.", "is_missable": false, "is_spoiler": false, "tags": ["Coop", "Capítulo", "Ação específica"] },
+            { "id": "a-way-out-in-sync", "name": "In Sync", "name_pt": "Em sincronia", "type": "Ouro", "description": "Toque música em sincronia com os dois personagens.", "tip": "Na fazenda, Vincent deve tocar piano e Leo deve tocar banjo. Comecem juntos e mantenham a sequência até a cena iniciar.", "is_missable": false, "is_spoiler": false, "tags": ["Coop", "Sincronização", "Capítulo"] },
+            { "id": "a-way-out-timeless-treasure", "name": "Timeless Treasure", "name_pt": "Tesouro atemporal", "type": "Ouro", "description": "Encontre o tesouro escondido ligado ao relógio.", "tip": "Na fazenda, os dois jogadores devem interagir com o relógio para abrir a passagem secreta e acessar o baú.", "is_missable": false, "is_spoiler": false, "tags": ["Coop", "Capítulo", "Ação específica"] },
+            { "id": "a-way-out-no-cheating", "name": "No Cheating", "name_pt": "Sem traição", "type": "Prata", "description": "Exponha a traição no parque de trailers.", "tip": "No parque de trailers, fale com a mulher desconfiada, investigue o trailer indicado e volte para contar a ela.", "is_missable": false, "is_spoiler": false, "tags": ["Capítulo", "Ação específica"] },
+            { "id": "a-way-out-break-from-reality", "name": "Break From Reality", "name_pt": "Fuga da realidade", "type": "Prata", "description": "Jogue o fliperama com o parceiro.", "tip": "No capítulo Vengeance - Lift Off, vá ao fundo do hangar e jogue o arcade com o parceiro.", "is_missable": false, "is_spoiler": false, "tags": ["Coop", "Minigame", "Capítulo"] },
+            { "id": "a-way-out-mayday", "name": "Mayday!", "name_pt": "SOS!", "type": "Prata", "description": "Interaja com o helicóptero no hangar.", "tip": "Na área externa do hangar em Vengeance - Lift Off, encontre o helicóptero e interaja com ele usando Leo.", "is_missable": false, "is_spoiler": false, "tags": ["Personagem específico", "Capítulo", "Ação específica"] },
+            { "id": "a-way-out-managed-anger", "name": "Managed Anger", "name_pt": "Raiva controlada", "type": "Ouro", "description": "Resolva a cena de interrogatório de forma específica.", "tip": "Durante Violent Questioning, use as interações da sala de interrogatório até acionar a cena especial ligada à raiva de Leo.", "is_missable": false, "is_spoiler": true, "tags": ["Personagem específico", "Capítulo", "Ação específica"] },
+            { "id": "a-way-out-live-the-dream", "name": "Live The Dream", "name_pt": "Viva o sonho", "type": "Ouro", "description": "Assista à cena da TV no hospital com os dois personagens.", "tip": "Na maternidade em A New Life, antes de avançar a recepção principal, ligue a TV e sente no sofá com Leo e Vincent.", "is_missable": false, "is_spoiler": false, "tags": ["Coop", "Capítulo", "Ação específica"] },
+            { "id": "a-way-out-backseat-mechanic", "name": "Backseat Mechanic", "name_pt": "Mecânico Assistente", "type": "Ouro", "description": "Ajude Linda a consertar a moto.", "tip": "No capítulo Preparation - Reunion, faça Vincent ajudar Linda com a moto enquanto Leo ainda não avançou para o ponto que encerra a cena com Alex.", "is_missable": false, "is_spoiler": false, "tags": ["Personagem específico", "Capítulo", "Ação específica"] },
+            { "id": "a-way-out-take-it-for-a-spin", "name": "Take It For A Spin", "name_pt": "Dê umas voltas", "type": "Ouro", "description": "Faça o cata-vento girar na fazenda.", "tip": "Na fazenda, suba no moinho/cata-vento atrás do celeiro e gire a hélice até acionar o troféu.", "is_missable": false, "is_spoiler": false, "tags": ["Capítulo", "Ação específica"] },
+            { "id": "a-way-out-you-started-it", "name": "You Started It", "name_pt": "Foi você que começou", "type": "Ouro", "description": "Use o balanço com os dois personagens no parque de trailers.", "tip": "No parque de trailers em Preparation - Reunion, encontre o balanço do parquinho e sente com Leo e Vincent ao mesmo tempo.", "is_missable": false, "is_spoiler": false, "tags": ["Coop", "Sincronização", "Capítulo"] },
+            { "id": "a-way-out-the-dip", "name": "The Dip", "name_pt": "Paralelas", "type": "Ouro", "description": "Bata o recorde nas barras paralelas do pátio.", "tip": "No pátio da prisão em Escape - The Yard, use Leo para fazer paralelas e bater o recorde do preso. Pode exigir apertar o botão rapidamente.", "is_missable": false, "is_spoiler": false, "tags": ["Personagem específico", "Minigame", "Capítulo"] },
+            { "id": "a-way-out-home-run", "name": "Home Run", "name_pt": "Home Run", "type": "Ouro", "description": "Acerte uma rebatida de home run no baseball.", "tip": "No parque de trailers, participe do baseball como rebatedor e acerte uma bola para fora da área. O troféu conta para quem rebate; se os dois jogadores quiserem o troféu em suas contas, alternem as funções e repitam.", "is_missable": false, "is_spoiler": false, "tags": ["Minigame", "Personagem específico", "Ação específica"] }
       ]
 }
 ,

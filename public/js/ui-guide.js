@@ -859,7 +859,7 @@ window.UIGuide = (() => {
   function renderGuideEditorialNotes(game = {}, viewModel = {}) {
     const normalizedSlug = String(game?.slug || '').trim().toLowerCase();
     const routeTrophyLimit = normalizedSlug === 'red-dead-redemption-2' ? 11 : (normalizedSlug === 'death-stranding-2-on-the-beach' ? 11 : (['clair-obscur-expedition-33', 'detroit-become-human'].includes(normalizedSlug) ? 10 : (normalizedSlug === 'death-stranding' ? 9 : (normalizedSlug === 'marvels-spider-man-2' ? 8 : 5))));
-    const explicitAttentionPoints = ['armored-core-vi-fires-of-rubicon', 'assassins-creed-mirage', 'dark-souls-remastered', 'hollow-knight-silksong', 'days-gone', 'hades', 'hogwarts-legacy', 'horizon-forbidden-west', 'horizon-zero-dawn', 'lies-of-p', 'life-is-strange-double-exposure', 'life-is-strange-remastered', 'lords-of-the-fallen', 'resident-evil-5', 'resident-evil-6', 'resident-evil-7-biohazard', 'resident-evil-village', 'sekiro-shadows-die-twice', 'until-dawn'].includes(normalizedSlug) && Array.isArray(game?.attentionPoints)
+    const explicitAttentionPoints = ['a-way-out', 'armored-core-vi-fires-of-rubicon', 'assassins-creed-mirage', 'assassins-creed-odyssey', 'dark-souls-remastered', 'hollow-knight-silksong', 'days-gone', 'hades', 'hogwarts-legacy', 'horizon-forbidden-west', 'horizon-zero-dawn', 'lies-of-p', 'life-is-strange-double-exposure', 'life-is-strange-remastered', 'lords-of-the-fallen', 'resident-evil-5', 'resident-evil-6', 'resident-evil-7-biohazard', 'resident-evil-village', 'sekiro-shadows-die-twice', 'until-dawn'].includes(normalizedSlug) && Array.isArray(game?.attentionPoints)
       ? game.attentionPoints.map(item => {
         const tags = Array.isArray(item?.tags)
           ? item.tags.map(tag => {
