@@ -46104,7 +46104,7 @@ if (assassinsCreedValhallaGuide) {
     { title: 'Completionist All the Way!', detail: 'E o maior gargalo da platina. Complete Wealth, Mysteries e Artifacts de todos os territorios da lista base.', tags: ['Completionist', 'Mapa', 'Grind'] },
     { title: 'Saves manuais por regiao', detail: 'Faca um save manual ao iniciar cada novo arco/regiao no mapa de aliancas e antes de World Events. Isso reduz o risco de retrabalho em caso de bug.', tags: ['Saves manuais', 'Risco tecnico'] },
     { title: 'Bugs nao sao perdiveis', detail: 'Relatos de bugs em Mysteries/World Events devem ser tratados como risco tecnico, nao como trofeus perdiveis reais.', tags: ['Risco tecnico', 'Sem perdiveis'] },
-    { title: 'DLC nao necessaria', detail: 'A platina base usa 51 trofeus. Nao misture Wrath of the Druids, The Siege of Paris, Dawn of Ragnarok, The Forgotten Saga ou outros DLCs com Viking Legend.', tags: ['DLC fora da platina'] },
+    { title: 'DLC nao necessaria', detail: 'A platina base usa 51 trofeus. Nao misture Wrath of the Druids, The Siege of Paris, Dawn of Ragnarök, The Forgotten Saga ou outros DLCs com Viking Legend.', tags: ['DLC fora da platina'] },
     { title: 'Dificuldade', detail: 'A dificuldade escolhida nao afeta trofeus. Overdesign II fala de soldados dificeis/tipo de inimigo, nao dificuldade da campanha.', tags: ['Dificuldade livre'] },
     { title: 'Good Catch!', detail: 'Use a fishing line para pegar cada tipo de peixe. Matar peixes com armas ou explosivos nao conta.', tags: ['Pesca', 'Checklist'] },
     { title: 'Settlement level 6', detail: 'Home Sweet Home exige settlement level 6; raids e recursos sao parte importante do cleanup.', tags: ['Settlement', 'Raids'] },
@@ -46117,7 +46117,7 @@ if (assassinsCreedValhallaGuide) {
     { question: 'Assassin’s Creed Valhalla tem trofeus perdiveis?', answer: 'Nao. A platina base nao tem perdiveis reais. O cuidado principal e manter saves manuais por regiao por causa de possiveis bugs em Mysteries ou World Events.' },
     { question: 'Precisa jogar online para platinar?', answer: 'Nao. A platina base e offline e nao exige trofeus online.' },
     { question: 'Precisa de cooperacao?', answer: 'Nao. Assassin’s Creed Valhalla e uma platina single-player.' },
-    { question: 'Precisa de DLC para a platina?', answer: 'Nao. Viking Legend exige apenas os 51 trofeus da lista base. DLCs como Wrath of the Druids, The Siege of Paris, Dawn of Ragnarok e The Forgotten Saga nao sao necessarios para a platina.' },
+    { question: 'Precisa de DLC para a platina?', answer: 'Nao. Viking Legend exige apenas os 51 trofeus da lista base. DLCs como Wrath of the Druids, The Siege of Paris, Dawn of Ragnarök e The Forgotten Saga nao sao necessarios para a platina.' },
     { question: 'A dificuldade afeta trofeus?', answer: 'Nao. A dificuldade escolhida nao afeta a platina. Overdesign II envolve inimigos dificeis, mas nao exige jogar em uma dificuldade especifica da campanha.' },
     { question: 'Quanto tempo leva para platinar?', answer: 'Em media, cerca de 120 horas ou mais, dependendo do ritmo de exploracao e da organizacao do cleanup.' },
     { question: 'Preciso completar todos os territorios?', answer: 'Sim. Completionist All the Way! exige completar os territorios da lista base com Wealth, Mysteries e Artifacts.' },
@@ -46251,10 +46251,10 @@ if (assassinsCreedValhallaGuide) {
     ['ac-valhalla-full-mastery', 'Full Mastery', 'Prata', 'Gaste seu primeiro Mastery Point.', 'Gaste seu primeiro Mastery Point apos atingir a progressao necessaria.', ['Progressao']],
     ['ac-valhalla-is-there-anybody-out-there', 'Is There Anybody Out There?', 'Bronze', 'Acenda os braseiros apagados na Hadrian\'s Wall.', 'Acenda os braseiros apagados na Muralha de Adriano.', ['Exploracao', 'Acao especifica']],
     ['ac-valhalla-slam-master', 'Slam Master', 'Prata', 'Complete todos os flytings.', 'Complete todos os Flytings, que contam como Mysteries no mapa.', ['Flyting', 'Mysteries', 'Mapa', 'Cleanup']],
-    ['ac-valhalla-caladfwlch', 'Caladfwlch', 'Prata', 'Retire Excalibur da pedra.', 'Colete os Treasures of Britain necessarios e retire Excalibur da pedra.', ['Treasures of Britain', 'Equipamento', 'Exploracao', 'Endgame'], true],
+    ['ac-valhalla-caladfwlch', 'Caladfwlch', 'Prata', 'Retire Excalibur da pedra.', 'Colete os Treasures of Britain necessarios e retire Excalibur da pedra.', ['Treasures of Britain', 'Equipamento', 'Exploracao', 'Coletavel', 'Endgame'], true],
     ['ac-valhalla-its-not-a-bug', 'It\'s Not a Bug, It\'s a Feature!', 'Bronze', 'Complete sua primeira Animus Anomaly.', 'Complete sua primeira Animus Anomaly.', ['Animus Anomaly', 'Mysteries', 'Exploracao'], true],
     ['ac-valhalla-seahorse', 'Seahorse', 'Bronze', 'Nade um total de 3 km com o cavalo.', 'Compre Swimming Lessons no estabulo e nade 3 km no total com o cavalo.', ['Acao especifica']],
-    ['ac-valhalla-hidden-truth', 'The Hidden Truth', 'Prata', 'Obtenha todos os video fragments e assista ao video secreto.', 'Complete todas as Animus Anomalies, obtenha os fragmentos de video e assista ao video final.', ['Animus Anomaly', 'Mysteries', 'Exploracao', 'Cleanup'], true],
+    ['ac-valhalla-hidden-truth', 'The Hidden Truth', 'Prata', 'Obtenha todos os video fragments e assista ao video secreto.', 'Complete todas as Animus Anomalies, obtenha os fragmentos de video e assista ao video final.', ['Animus Anomaly', 'Mysteries', 'Exploracao', 'Coletavel', 'Cleanup'], true],
     ['ac-valhalla-master-hunter', 'Master Hunter', 'Prata', 'Derrote todos os Alpha Animals.', 'Derrote todos os Alpha Animals da lista base.', ['Alpha Animal', 'Mysteries', 'Combate', 'Endgame']],
     ['ac-valhalla-dreamcatcher', 'Dreamcatcher', 'Bronze', 'Destrua 10 Curse Symbols.', 'Destrua 10 Curse Symbols.', ['Artifacts', 'Exploracao', 'Coletavel']],
     ['ac-valhalla-godly-reward', 'Godly Reward', 'Prata', 'Obtenha Thor\'s Helmet.', 'Derrote as Daughters of Lerion e cumpra os requisitos para obter Thor\'s Helmet.', ['Daughters of Lerion', 'Equipamento', 'Thor', 'Endgame'], true],
@@ -46459,6 +46459,93 @@ if (assassinsCreedValhallaGuide) {
     return value;
   };
 
+  const acValhallaEditorialRoadmap = [
+    {
+      title: 'Avance pela campanha e abra os sistemas principais',
+      focus: 'Campanha e sistemas',
+      objective: 'Chegar à Inglaterra, liberar Ravensthorpe, raids, alianças, Order of the Ancients e as principais linhas da lista base.',
+      actions: [
+        'Complete o prólogo na Noruega e avance até chegar à Inglaterra.',
+        'Jogue na dificuldade que preferir, pois ela não afeta troféus.',
+        'Siga os arcos principais pelo mapa de alianças.',
+        'Crie saves manuais antes de iniciar novos arcos e regiões.',
+        'Libere viewpoints, raids, settlement, Order of the Ancients e atividades de mapa.'
+      ],
+      warning: 'Escolhas de história não devem ser tratadas como perdíveis da platina base. O cuidado real é manter saves manuais para se proteger contra bugs em eventos e marcadores.',
+      result: 'A campanha fica encaminhada, os sistemas principais ficam abertos e a rota para o cleanup longo começa organizada.'
+    },
+    {
+      title: 'Limpe territórios com saves manuais por região',
+      focus: 'Territórios e segurança',
+      objective: 'Criar uma rotina segura para limpar regiões sem carregar bugs ou marcadores incompletos por dezenas de horas.',
+      actions: [
+        'Faça um save manual ao iniciar cada região ou arco.',
+        'Complete atividades locais antes de avançar definitivamente para outra região.',
+        'Confira se a contagem da região fechou corretamente.',
+        'Se um World Event ou Mystery não avançar, recarregue save anterior antes de continuar por muito tempo.',
+        'Use fast travel, reinício do jogo ou mudança de região apenas como tentativa de correção, não como substituto para save manual.'
+      ],
+      warning: 'Bugs em Mysteries e World Events são risco técnico, não perdível real. Saves manuais reduzem retrabalho e protegem a rota de 120h+.',
+      result: 'O mapa fica sob controle e o risco técnico deixa de se acumular no final da platina.'
+    },
+    {
+      title: 'Complete Wealth, Mysteries e Artifacts',
+      focus: 'Completionist All the Way!',
+      objective: 'Concluir o maior gargalo da platina: todos os territórios da lista base com Wealth, Mysteries e Artifacts.',
+      actions: [
+        'Complete todos os Wealth exigidos em cada território.',
+        'Complete Mysteries como World Events, Cairns, Standing Stones, Flytings, Daughters of Lerion, Alpha Animals e Animus Anomalies.',
+        'Complete Artifacts como Roman Artifacts, Curse Symbols, Flying Papers e Treasure Hoard Maps.',
+        'Use checklist por região para evitar marcadores esquecidos.',
+        'Não misture requisitos de DLC com os territórios da lista base.'
+      ],
+      warning: 'Completionist All the Way! é o motivo principal da duração da platina. Trate como grind/cleanup de mapa, não como perdível.',
+      result: 'A maior parte do trabalho pesado da platina fica concluída e vários troféus secundários vêm junto.'
+    },
+    {
+      title: 'Resolva atividades especiais e minigames',
+      focus: 'Atividades e checklist',
+      objective: 'Fechar atividades específicas que podem ficar espalhadas pelo mapa se não forem rastreadas.',
+      actions: [
+        'Vença todos os jogadores de Orlog para Orlog Champion.',
+        'Pesque cada tipo de peixe com a fishing line para Good Catch!.',
+        'Complete todos os Flytings para Slam Master.',
+        'Colete Roman Artifacts, Treasure Hoard rewards, Curse Symbols e fragmentos de Animus Anomaly quando estiverem na rota.',
+        'Resolva ações específicas como Silent Viking, Equine Attack, Row Rage, Seahorse e A Picture of Grace.'
+      ],
+      warning: 'Good Catch! exige a fishing line. Matar peixes com armas ou explosivos não conta para o troféu.',
+      result: 'Os minigames, atividades e troféus situacionais deixam de ficar como pendências soltas.'
+    },
+    {
+      title: 'Finalize settlement, lendários e requisitos de endgame',
+      focus: 'Endgame e equipamentos',
+      objective: 'Resolver Order of the Ancients, Ravensthorpe, Thor, Mjolnir, Excalibur e objetivos de progressão longa.',
+      actions: [
+        'Elimine todos os membros da Order of the Ancients para Disorder of the Ancients.',
+        'Faça raids e use recursos para elevar Ravensthorpe até settlement level 6.',
+        'Derrote Daughters of Lerion e cumpra os requisitos de Thor para Godly Reward.',
+        'Empunhe Mjolnir para Worthy depois de cumprir os requisitos da lista base.',
+        'Colete os Treasures of Britain necessários e retire Excalibur da pedra para Caladfwlch.'
+      ],
+      warning: 'Mjolnir, Thor e Excalibur exigem progresso avançado. Deixe esses objetivos para quando Eivor estiver forte e o mapa já estiver bem limpo.',
+      result: 'Os objetivos de endgame e equipamentos lendários ficam fechados sem misturar DLCs.'
+    },
+    {
+      title: 'Faça o cleanup final da lista base',
+      focus: 'Conferência final',
+      objective: 'Confirmar todos os 51 troféus da lista base sem incluir DLCs, desafios extras ou conteúdo separado.',
+      actions: [
+        'Confira se Viking Legend é a platina e se a lista tem 51 troféus.',
+        'Confirme se Wrath of the Druids, The Siege of Paris, Dawn of Ragnarök, The Forgotten Saga, Tombs of the Fallen e Mastery Challenge não foram tratados como requisitos da platina base.',
+        'Revise Completionist All the Way!, Order of the Ancients, Orlog, pesca, settlement level 6, Mjolnir e Excalibur.',
+        'Faça os troféus situacionais restantes em áreas controladas.',
+        'Revise flags, filtros e cards antes de marcar a rota como concluída.'
+      ],
+      warning: 'Não misture listas completas com DLCs. Viking Legend exige apenas a lista base.',
+      result: 'Com todos os 51 troféus base concluídos, Viking Legend é desbloqueado.'
+    }
+  ];
+
   Object.assign(assassinsCreedValhallaGuide, accentValhallaTextFields({
     difficulty: 4,
     time: '120h+',
@@ -46521,7 +46608,7 @@ if (assassinsCreedValhallaGuide) {
     editorial_notes: 'Revisao editorial focada na platina base de Assassin’s Creed Valhalla: 51 trofeus, sem perdiveis reais, sem online/coop/DLC, bugs tratados como risco tecnico e Completionist All the Way! como maior gargalo.',
     quality_warnings: [],
     verification_note: 'Guia verificado para publicacao: lista base PS4/PS5 com 51 trofeus, roadmap estruturado, FAQ firme, tags controladas, filtros coerentes e flags offline/sem coop/sem DLC.',
-    roadmap: acValhallaRoadmap,
+    roadmap: acValhallaEditorialRoadmap,
     trophies: acValhallaTrophies
   }));
 }
