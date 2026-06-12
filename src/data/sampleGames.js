@@ -46514,13 +46514,13 @@ if (assassinsCreedValhallaGuide) {
     difficultyTrophiesRequired: false,
     editorial_status: 'published',
     coverage_level: 'strong',
-    is_verified: false,
-    verification_status: 'review',
-    editorial_review_status: 'in_review',
+    is_verified: true,
+    verification_status: 'verified',
+    editorial_review_status: 'verified',
     last_reviewed_at: '2026-06-12',
     editorial_notes: 'Revisao editorial focada na platina base de Assassin’s Creed Valhalla: 51 trofeus, sem perdiveis reais, sem online/coop/DLC, bugs tratados como risco tecnico e Completionist All the Way! como maior gargalo.',
     quality_warnings: [],
-    verification_note: 'Guia revisado para publicação: lista base PS4/PS5 com 51 troféus, roadmap estruturado, FAQ firme, tags controladas e flags coerentes. Mantido em revisão porque npm test falha em dado fora deste guia.',
+    verification_note: 'Guia verificado para publicacao: lista base PS4/PS5 com 51 trofeus, roadmap estruturado, FAQ firme, tags controladas, filtros coerentes e flags offline/sem coop/sem DLC.',
     roadmap: acValhallaRoadmap,
     trophies: acValhallaTrophies
   }));
