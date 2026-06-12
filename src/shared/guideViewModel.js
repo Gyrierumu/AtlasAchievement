@@ -433,7 +433,7 @@
 
   function getExplicitGuideTrophyTags(trophy = {}, game = {}) {
     const slug = String(game?.slug || '').trim().toLowerCase();
-    if (!['a-way-out', 'armored-core-vi-fires-of-rubicon', 'assassins-creed-mirage', 'assassins-creed-origins', 'assassins-creed-odyssey', 'assassins-creed-shadows', 'assassins-creed-valhalla', 'celeste', 'clair-obscur-expedition-33', 'dark-souls-remastered', 'days-gone', 'detroit-become-human', 'hades', 'hogwarts-legacy', 'hollow-knight-silksong', 'lies-of-p', 'life-is-strange-double-exposure', 'life-is-strange-remastered', 'lords-of-the-fallen', 'resident-evil-6', 'resident-evil-7-biohazard', 'resident-evil-village', 'sekiro-shadows-die-twice', 'until-dawn'].includes(slug)) return [];
+    if (!['a-way-out', 'armored-core-vi-fires-of-rubicon', 'assassins-creed-mirage', 'assassins-creed-origins', 'assassins-creed-odyssey', 'assassins-creed-shadows', 'assassins-creed-valhalla', 'celeste', 'clair-obscur-expedition-33', 'dark-souls-remastered', 'days-gone', 'detroit-become-human', 'hades', 'hogwarts-legacy', 'hollow-knight-silksong', 'it-takes-two', 'lies-of-p', 'life-is-strange-double-exposure', 'life-is-strange-remastered', 'lords-of-the-fallen', 'resident-evil-6', 'resident-evil-7-biohazard', 'resident-evil-village', 'sekiro-shadows-die-twice', 'stray', 'until-dawn'].includes(slug)) return [];
     if (!Array.isArray(trophy?.tags) || !trophy.tags.length) return [];
     const tags = [];
     const ids = new Set();

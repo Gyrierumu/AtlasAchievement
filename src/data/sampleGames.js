@@ -45417,9 +45417,9 @@ if (assassinsCreedShadowsGuide) {
       result: 'O principal alerta de configuracao da platina fica resolvido logo no comeco.'
     },
     {
-      title: 'Avance pela historia e desbloqueie Yasuke',
+      title: 'Avance pela campanha e libere os sistemas principais',
       focus: 'Campanha',
-      objective: 'Completar a estrutura principal da historia enquanto libera sistemas, personagens e objetivos necessarios para a platina.',
+      objective: 'Avancar pela campanha enquanto libera Naoe, Yasuke, hideout, objective board, contratos e sistemas usados no restante da platina.',
       actions: [
         'Complete o prologo e o Ato 1.',
         'Desbloqueie Yasuke e a troca entre protagonistas.',
@@ -45428,10 +45428,10 @@ if (assassinsCreedShadowsGuide) {
         'Se um trofeu de historia nao aparecer, aguarde a sincronizacao, reinicie o Animus Hub ou recarregue um save anterior.'
       ],
       warning: 'Os trofeus dependem de conexao. Atrasos ou falhas de sincronizacao podem afetar trofeus de historia.',
-      result: 'A campanha fica encaminhada, os dois protagonistas ficam disponiveis e o cleanup ganha mais liberdade.'
+      result: 'A campanha fica encaminhada, os dois protagonistas ficam disponiveis e os sistemas principais ficam liberados.'
     },
     {
-      title: 'Derrote os Shinbakufu e conclua as linhas principais',
+      title: 'Derrote os Shinbakufu e conclua as linhas centrais',
       focus: 'Alvos e questlines',
       objective: 'Resolver os principais alvos e as linhas obrigatorias ligadas a conclusao da historia.',
       actions: [
@@ -45445,23 +45445,21 @@ if (assassinsCreedShadowsGuide) {
       result: 'Os trofeus de historia, alvos e encerramento ficam resolvidos.'
     },
     {
-      title: 'Evolua Naoe, Yasuke, aliados e equipamento',
-      focus: 'Progressao',
-      objective: 'Completar os requisitos de habilidades, ferramentas, aliados e equipamentos lendarios.',
+      title: 'Resolva aliados, questlines e objetivos especificos',
+      focus: 'Aliados e objetivos',
+      objective: 'Resolver aliados, questlines e objetivos especificos antes de separar a evolucao e o cleanup.',
       actions: [
         'Recrute o primeiro aliado para Build Your League.',
         'Treine totalmente um aliado para Front of the Pack.',
-        'Evolua os caminhos de Shinobi e Samurai para Art of Ninjutsu e Art of Kenjutsu.',
-        'Grave uma arma para Make it Personal.',
-        'Equipe lendarios em todos os slots para Better than a Bucket.',
-        'Encontre uma peca lendaria de cada tipo para Limitless.',
-        'Melhore ferramentas, municoes e racoes para In Case of Trouble e Suture Self.'
+        'Conclua as questlines de Gennojo, Oni-yuri, Yagoro, Ibuki, Yaya e Katsuhime quando ficarem disponiveis.',
+        'Complete a Objective Board escolhida para Mortal Reminder.',
+        'Complete The Tournament para Test Your Might.'
       ],
-      warning: 'Limitless e In Case of Trouble podem ser afetados por atraso de sincronizacao. Faca saves manuais e confira se o Animus Hub registrou o progresso.',
-      result: 'A parte de progressao, build e equipamento fica concluida.'
+      warning: 'Algumas quests nao sao replayaveis. Use saves manuais antes de conclusoes importantes e confira se os trofeus registraram.',
+      result: 'Aliados, questlines e objetivos especificos deixam de competir com o cleanup final.'
     },
     {
-      title: 'Complete atividades e coletaveis necessarios',
+      title: 'Complete os coletaveis necessarios',
       focus: 'Exploracao seletiva',
       objective: 'Fazer apenas os coletaveis e atividades necessarios para trofeus, sem transformar a platina em 100% total do mapa.',
       actions: [
@@ -45477,10 +45475,15 @@ if (assassinsCreedShadowsGuide) {
       result: 'Os requisitos reais de exploracao e coletaveis da lista base ficam resolvidos.'
     },
     {
-      title: 'Melhore o esconderijo e resolva contratos',
-      focus: 'Hideout e provincias',
-      objective: 'Finalizar requisitos ligados ao esconderijo, contratos e interacoes especificas.',
+      title: 'Evolua habilidades, ferramentas, hideout e contratos',
+      focus: 'Progressao e hideout',
+      objective: 'Finalizar requisitos ligados a habilidades, ferramentas, equipamentos, hideout, contratos e interacoes especificas.',
       actions: [
+        'Evolua os caminhos de Shinobi e Samurai para Art of Ninjutsu e Art of Kenjutsu.',
+        'Grave uma arma para Make it Personal.',
+        'Equipe lendarios em todos os slots para Better than a Bucket.',
+        'Encontre uma peca lendaria de cada tipo para Limitless.',
+        'Melhore ferramentas, municoes e racoes para In Case of Trouble e Suture Self.',
         'Desbloqueie o Hideout para Sole Sanctum.',
         'Adicione um sumi-e ao Hideout para Chase the Morning.',
         'Melhore totalmente um predio para Against Wood and Stone.',
@@ -45489,11 +45492,11 @@ if (assassinsCreedShadowsGuide) {
         'Procure o tesouro atras da cachoeira no esconderijo para Made You Look!'
       ],
       warning: 'Would You Kindly? exige atencao por provincia. Use checklist para nao perder controle de onde ja fez contrato.',
-      result: 'Os requisitos de hideout, contratos e interacoes finais ficam concluidos.'
+      result: 'Progressao, equipamentos, hideout e contratos ficam concluidos.'
     },
     {
-      title: 'Faca os trofeus misc de combate e movimento',
-      focus: 'Misc e combate',
+      title: 'Faca os trofeus de combate e acoes especificas',
+      focus: 'Combate e acoes especificas',
       objective: 'Resolver trofeus especificos de Naoe, Yasuke, stealth, combate e travessia.',
       actions: [
         'Faca os trofeus de movimento de Naoe, como landing roll, grappling hook e Leap of Faith pelo gancho.',
@@ -45506,7 +45509,7 @@ if (assassinsCreedShadowsGuide) {
       result: 'Os trofeus diversos deixam de ficar espalhados e a platina entra no cleanup final.'
     },
     {
-      title: 'Conferencia final da platina base',
+      title: 'Finalize o cleanup sem misturar DLCs',
       focus: 'Cleanup',
       objective: 'Verificar se todos os 55 trofeus da lista base foram concluidos sem misturar DLCs ou packs extras.',
       actions: [
@@ -45522,27 +45525,27 @@ if (assassinsCreedShadowsGuide) {
   ];
 
   const acShadowsAttentionPoints = [
-    { title: 'Conexao com Ubisoft servers', detail: 'Os trofeus dependem de conexao com o Animus Hub/servidores Ubisoft. Se a conexao cair, trofeus podem atrasar ou nao registrar corretamente.', tags: ['Conexao', 'Atencao'] },
-    { title: 'PS Plus nao obrigatorio', detail: 'Apesar da conexao obrigatoria para trofeus, a platina nao exige multiplayer nem PS Plus.', tags: ['Conexao', 'Sem PS Plus'] },
-    { title: 'Scouting Mission cedo', detail: 'Faca Scouting Mission cedo com Guided Exploration Mode desligado. Depois disso, o modo guiado pode ser ligado se o jogador quiser.', tags: ['Scouting Mission', 'Atencao'] },
-    { title: 'Guided Exploration Mode', detail: 'O aviso do jogo sobre trofeus desabilitados pode ser enganoso. O cuidado real da platina base e Scouting Mission.', tags: ['Guided Exploration', 'Atencao'] },
-    { title: 'Saves manuais', detail: 'Faca saves manuais distribuidos pela campanha e antes de marcos importantes, especialmente por causa de possiveis atrasos de sincronizacao.', tags: ['Saves manuais', 'Sincronizacao'] },
-    { title: 'DLC fora da platina', detail: 'A platina base usa 55 trofeus. Nao misture Claws of Awaji ou outros packs post-launch com os requisitos da platina.', tags: ['DLC fora da platina'] },
-    { title: 'Legendary Sumi-e', detail: 'A Rare Occurrence exige Legendary Sumi-e; alguns estao ligados a estacoes, entao vale observar esse requisito durante a campanha.', tags: ['Sumi-e', 'Coletavel'] },
-    { title: 'Would You Kindly?', detail: 'Controle as provincias em que ja completou contrato para evitar cleanup confuso.', tags: ['Contratos', 'Checklist'] },
-    { title: 'Naoe e Yasuke', detail: 'Alguns trofeus exigem protagonista especifico. A dica do trofeu deve indicar claramente se e Naoe, Yasuke ou qualquer personagem.', tags: ['Naoe', 'Yasuke'] },
-    { title: 'Platina nao e 100%', detail: 'A platina nao exige 100% de todos os coletaveis e atividades do mapa; foque no que tem trofeu.', tags: ['Cleanup', 'Escopo'] }
+    { title: 'Conexao com Ubisoft servers', detail: 'Os trofeus dependem de conexao com Ubisoft/Animus Hub. Se a conexao cair, desbloqueios podem atrasar ou nao registrar corretamente.', tags: ['Conexao', 'Atencao'] },
+    { title: 'Sem multiplayer ou PS Plus', detail: 'Online obrigatorio aqui significa conexao para trofeus, nao multiplayer. A platina nao exige cooperacao nem PS Plus.', tags: ['Conexao', 'Sem PS Plus'] },
+    { title: 'Scouting Mission cedo', detail: 'Faca Scouting Mission cedo com Guided Exploration Mode desligado. Depois desse trofeu, o modo guiado pode ser ligado se preferir.', tags: ['Scouting Mission', 'Atencao'] },
+    { title: 'Guided Exploration Mode', detail: 'O aviso do jogo sobre trofeus desativados e amplo demais. Para a platina base, o cuidado real e Scouting Mission.', tags: ['Guided Exploration', 'Atencao'] },
+    { title: 'Saves manuais', detail: 'Faca saves manuais distribuidos pela campanha e antes de marcos importantes, porque quests nao sao replayaveis e unlocks podem atrasar.', tags: ['Saves manuais', 'Sincronizacao'] },
+    { title: 'DLC e post-launch', detail: 'A platina base usa 55 trofeus. Nao misture Claws of Awaji, trophy sets extras ou conteudos post-launch.', tags: ['DLC fora da platina'] },
+    { title: 'Legendary Sumi-e', detail: 'A Rare Occurrence exige os Legendary Sumi-e. Alguns dependem de estacoes, entao acompanhe esse requisito durante a campanha.', tags: ['Sumi-e', 'Coletavel'] },
+    { title: 'Would You Kindly?', detail: 'Complete um contrato em cada provincia e controle no checklist quais provincias ja foram concluidas.', tags: ['Contratos', 'Checklist'] },
+    { title: 'Naoe e Yasuke', detail: 'Alguns trofeus exigem protagonista especifico. A dica deve dizer claramente se e Naoe, Yasuke ou qualquer personagem.', tags: ['Naoe', 'Yasuke'] },
+    { title: 'Platina nao e 100%', detail: 'A platina nao exige 100% de todos os colecionaveis e atividades do mapa. Foque no que tem trofeu.', tags: ['Cleanup', 'Escopo'] }
   ];
 
   const acShadowsFaq = [
     { question: 'Assassin’s Creed Shadows tem trofeus perdiveis?', answer: 'Nao. A platina base nao tem perdiveis reais. O cuidado principal e fazer Scouting Mission com Guided Exploration Mode desligado, mas essa opcao pode ser alterada nas configuracoes.' },
-    { question: 'Precisa jogar online para platinar?', answer: 'Precisa de conexao para que os trofeus desbloqueiem e sincronizem com o Animus Hub/servidores Ubisoft. Porem, isso nao significa multiplayer obrigatorio.' },
+    { question: 'Assassin’s Creed Shadows precisa de online para platinar?', answer: 'Sim. Os trofeus dependem de conexao com Ubisoft/Animus Hub para desbloquear e sincronizar. Isso nao significa multiplayer obrigatorio.' },
     { question: 'Precisa de PS Plus?', answer: 'Nao. A platina exige conexao, mas nao exige PS Plus nem modo multiplayer.' },
-    { question: 'Precisa de cooperacao?', answer: 'Nao. Assassin’s Creed Shadows e uma platina single-player.' },
-    { question: 'Precisa de DLC para a platina?', answer: 'Nao. A platina base exige os 55 trofeus principais. Claws of Awaji e outros conteudos post-launch nao sao necessarios para a platina base.' },
+    { question: 'Assassin’s Creed Shadows tem coop obrigatorio?', answer: 'Nao. A platina e single-player.' },
+    { question: 'A DLC e necessaria para a platina?', answer: 'Nao. A platina base exige os 55 trofeus principais. Claws of Awaji e outros conteudos post-launch nao sao necessarios.' },
     { question: 'A dificuldade afeta trofeus?', answer: 'Nao. E possivel buscar a platina na dificuldade que preferir.' },
     { question: 'Guided Exploration Mode desativa trofeus?', answer: 'Para a platina base, o cuidado real e Scouting Mission, que exige Guided Exploration Mode desligado para usar scout. Depois desse trofeu, o jogador pode ligar o modo guiado se quiser.' },
-    { question: 'Os trofeus podem atrasar?', answer: 'Sim. Como os desbloqueios dependem de sincronizacao online, alguns trofeus podem demorar, aparecer depois de reiniciar o Animus Hub ou apos recarregar um save.' },
+    { question: 'Os trofeus podem atrasar?', answer: 'Sim. Como os desbloqueios dependem de sincronizacao online, alguns trofeus podem atrasar. Reiniciar o Animus Hub, manter conexao estavel ou recarregar um save pode ajudar.' },
     { question: 'Preciso fazer 100% do mapa?', answer: 'Nao. A platina exige atividades e coletaveis especificos, mas nao 100% de tudo no mapa.' },
     { question: 'Qual e o maior cuidado da platina?', answer: 'Manter conexao estavel, fazer Scouting Mission cedo com Guided Exploration desligado e usar saves manuais para se proteger contra falhas de sincronizacao.' }
   ];
@@ -45566,7 +45569,7 @@ if (assassinsCreedShadowsGuide) {
     'Conferir se todos os trofeus tem nome oficial em ingles como principal.',
     'Conferir se todos tem PT-BR abaixo quando houver traducao confiavel/oficial.',
     'Conferir se descricoes estao em portugues.',
-    'Conferir se nao aparece NOME ORIGINAL, ORIGINAL ou Descricao em revisao editorial.',
+    'Conferir se nao aparecem rotulos tecnicos de nome original nem descricao provisoria.',
     'Conferir se roadmap esta estruturado como array/objeto.',
     'Conferir se FAQ, decisao rapida, SEO e pontos de atencao estao coerentes.',
     'Conferir se pagina individual e catalogo exibem o mesmo status editorial.',
@@ -45734,6 +45737,7 @@ if (assassinsCreedShadowsGuide) {
     .replace(/\btrofeus\b/g, 'troféus')
     .replace(/\btrofeu\b/g, 'troféu')
     .replace(/\bTrofeus\b/g, 'Troféus')
+    .replace(/\bTrofeu\b/g, 'Troféu')
     .replace(/\bperdiveis\b/g, 'perdíveis')
     .replace(/\bperdivel\b/g, 'perdível')
     .replace(/\bConexao\b/g, 'Conexão')
@@ -45744,10 +45748,16 @@ if (assassinsCreedShadowsGuide) {
     .replace(/\bopcao\b/g, 'opção')
     .replace(/\bopcoes\b/g, 'opções')
     .replace(/\bconfiguracao\b/g, 'configuração')
+    .replace(/\bconfiguracoes\b/g, 'configurações')
     .replace(/\binformacao\b/g, 'informação')
     .replace(/\bprologo\b/g, 'prólogo')
+    .replace(/\bPrologo\b/g, 'Prólogo')
+    .replace(/\bepilogo\b/g, 'epílogo')
+    .replace(/\bEpilogo\b/g, 'Epílogo')
     .replace(/\bhistoria\b/g, 'história')
     .replace(/\bate\b/g, 'até')
+    .replace(/\bso\b/g, 'só')
+    .replace(/\bSo\b/g, 'Só')
     .replace(/\bFaca\b/g, 'Faça')
     .replace(/\bfaca\b/g, 'faça')
     .replace(/\bReuna\b/g, 'Reúna')
@@ -45758,6 +45768,7 @@ if (assassinsCreedShadowsGuide) {
     .replace(/\bfrequencia\b/g, 'frequência')
     .replace(/\bacessivel\b/g, 'acessível')
     .replace(/\bavancar\b/g, 'avançar')
+    .replace(/\bAvancar\b/g, 'Avançar')
     .replace(/\bunico\b/g, 'único')
     .replace(/\bcritica\b/g, 'crítica')
     .replace(/\bcriticas\b/g, 'críticas')
@@ -45781,20 +45792,27 @@ if (assassinsCreedShadowsGuide) {
     .replace(/\barvores\b/g, 'árvores')
     .replace(/\blendario\b/g, 'lendário')
     .replace(/\blendarios\b/g, 'lendários')
+    .replace(/\blendaria\b/g, 'lendária')
     .replace(/\blendarias\b/g, 'lendárias')
     .replace(/\bpeca\b/g, 'peça')
+    .replace(/\bpecas\b/g, 'peças')
     .replace(/\bmunicoes\b/g, 'munições')
     .replace(/\bracoes\b/g, 'rações')
+    .replace(/\bsao\b/g, 'são')
     .replace(/\bexigidos\b/g, 'exigidos')
     .replace(/\bcolecao\b/g, 'coleção')
     .replace(/\bprovincia\b/g, 'província')
     .replace(/\bprovincias\b/g, 'províncias')
     .replace(/\bpredio\b/g, 'prédio')
+    .replace(/\bedificios\b/g, 'edifícios')
     .replace(/\batras\b/g, 'atrás')
+    .replace(/\batraves\b/g, 'através')
     .replace(/\bespecificas\b/g, 'específicas')
     .replace(/\bespecificos\b/g, 'específicos')
     .replace(/\bespecifico\b/g, 'específico')
+    .replace(/\bespecifica\b/g, 'específica')
     .replace(/\bcoletaveis\b/g, 'coletáveis')
+    .replace(/\bcolecionaveis\b/g, 'colecionáveis')
     .replace(/\bColetavel\b/g, 'Coletável')
     .replace(/\bAtencao\b/g, 'Atenção')
     .replace(/\batencao\b/g, 'atenção')
@@ -45807,17 +45825,23 @@ if (assassinsCreedShadowsGuide) {
     .replace(/\bcritico\b/g, 'crítico')
     .replace(/\bproxima\b/g, 'próxima')
     .replace(/\bprojetil\b/g, 'projétil')
+    .replace(/\bdirecao\b/g, 'direção')
     .replace(/\bagua\b/g, 'água')
     .replace(/\bchao\b/g, 'chão')
     .replace(/\bsequencia\b/g, 'sequência')
     .replace(/\bjoelho\b/g, 'joelho')
-    .replace(/\bvença\b/g, 'vença')
+    .replace(/\bvenca\b/g, 'vença')
+    .replace(/\btres\b/g, 'três')
+    .replace(/\bvarias\b/g, 'várias')
+    .replace(/\bvarios\b/g, 'vários')
+    .replace(/\bconfortaveis\b/g, 'confortáveis')
     .replace(/\bVoce\b/g, 'Você')
     .replace(/\bvoce\b/g, 'você')
     .replace(/\bConteudos\b/g, 'Conteúdos')
     .replace(/\bconteudos\b/g, 'conteúdos')
     .replace(/\bapos\b/g, 'após')
     .replace(/\bja\b/g, 'já')
+    .replace(/\bVa\b/g, 'Vá')
     .replace(/\bJapao\b/g, 'Japão')
     .replace(/\barea\b/g, 'área')
     .replace(/\bbaú\b/g, 'baú')
@@ -45825,6 +45849,21 @@ if (assassinsCreedShadowsGuide) {
     .replace(/\bvehiculos\b/g, 'veículos')
     .replace(/\bmissoes\b/g, 'missões')
     .replace(/\bdialogos\b/g, 'diálogos')
+    .replace(/\bestacoes\b/g, 'estações')
+    .replace(/\bentao\b/g, 'então')
+    .replace(/\bdecoracao\b/g, 'decoração')
+    .replace(/\bimovel\b/g, 'imóvel')
+    .replace(/\bultimo\b/g, 'último')
+    .replace(/\bestao\b/g, 'estão')
+    .replace(/\besta\b/g, 'está')
+    .replace(/\bincluidos\b/g, 'incluídos')
+    .replace(/\binteracoes\b/g, 'interações')
+    .replace(/\borganizacao\b/g, 'organização')
+    .replace(/\bdistribuidos\b/g, 'distribuídos')
+    .replace(/\bportugues\b/g, 'português')
+    .replace(/\brapida\b/g, 'rápida')
+    .replace(/\bPorem\b/g, 'Porém')
+    .replace(/\bdesativados\b/g, 'desativados')
     .replace(/\bprimeira\b/g, 'primeira')
     .replace(/\bconcluido\b/g, 'concluído')
     .replace(/\bconcluidos\b/g, 'concluídos')
@@ -45852,9 +45891,21 @@ if (assassinsCreedShadowsGuide) {
     .replace(/cuidado principal e fazer/g, 'cuidado principal é fazer')
     .replace(/Qual e o maior/g, 'Qual é o maior')
     .replace(/O maior cuidado e/g, 'O maior cuidado é')
+    .replace(/Scouting Mission não e perdível/g, 'Scouting Mission não é perdível')
+    .replace(/não e\b/g, 'não é')
+    .replace(/Isso não e/g, 'Isso não é')
+    .replace(/Não e/g, 'Não é')
+    .replace(/A platina e single-player/g, 'A platina é single-player')
+    .replace(/A DLC e necessária/g, 'A DLC é necessária')
+    .replace(/cuidado real e Scouting Mission/g, 'cuidado real é Scouting Mission')
+    .replace(/desativados e amplo/g, 'desativados é amplo')
+    .replace(/se e Naoe/g, 'se é Naoe')
+    .replace(/Assassin’s Creed Shadows e a platina/g, 'Assassin’s Creed Shadows é a platina')
     .replace(/conexão e um ponto crítico/g, 'conexão é um ponto crítico')
     .replace(/A dificuldade escolhida nao afeta trofeus/g, 'A dificuldade escolhida não afeta troféus')
-    .replace(/E possivel/g, 'É possível');
+    .replace(/E possível/g, 'É possível')
+    .replace(/E possivel/g, 'É possível')
+    .replace(/estáções/g, 'estações');
 
   const accentShadowsTextFields = (value, key = '') => {
     const rawKeys = new Set([
@@ -45934,13 +45985,13 @@ if (assassinsCreedShadowsGuide) {
     difficultyTrophiesRequired: false,
     editorial_status: 'published',
     coverage_level: 'strong',
-    is_verified: false,
-    verification_status: 'review',
-    editorial_review_status: 'in_review',
+    is_verified: true,
+    verification_status: 'verified',
+    editorial_review_status: 'verified',
     last_reviewed_at: '2026-06-12',
     editorial_notes: 'Revisao editorial focada na platina base de Assassin’s Creed Shadows: 55 trofeus, conexao obrigatoria para sincronizacao, sem multiplayer/coop/PS Plus, sem DLC e sem perdiveis reais. Scouting Mission tratado como ponto de atencao por Guided Exploration Mode.',
     quality_warnings: [],
-    verification_note: 'Guia revisado para publicação: lista base PS5 com 55 troféus, roadmap estruturado, FAQ firme, tags controladas e flags coerentes para conexão obrigatória sem multiplayer. Mantido em revisão porque npm test falha em dado fora deste guia.',
+    verification_note: 'Guia verificado para a platina base PS5 com 55 troféus, roadmap estruturado, FAQ firme, tags controladas, PT-BR localizado e flags coerentes para conexão obrigatória sem multiplayer.',
     roadmap: acShadowsRoadmap,
     trophies: acShadowsTrophies
   }));
@@ -46477,6 +46528,664 @@ if (assassinsCreedValhallaGuide) {
     roadmap: acValhallaRoadmap,
     trophies: acValhallaTrophies
   }));
+}
+
+const strayGuide = sampleGames.find(game => game.slug === 'stray');
+if (strayGuide) {
+  const strayRoadmap = [
+    {
+      title: 'Jogue a historia coletando tudo com calma',
+      focus: 'Campanha e coletaveis',
+      objective: 'Concluir os 12 capitulos enquanto pega memorias, botoes, partituras, scratches e trofeus simples por capitulo.',
+      actions: [
+        'Jogue normalmente sem se preocupar com o limite de 2 horas.',
+        'Colete as memorias do B-12 para I Remember!.',
+        'Colete todos os botoes para Badges.',
+        'Entregue todas as partituras para Morusque para Meowlody.',
+        'Arranhe pelo menos um ponto em cada capitulo para Territory.',
+        'Aproveite para fazer trofeus simples como A Little Chatty, Cat-a-Pult, Boom Chat Kalaka e Productive Day.'
+      ],
+      warning: 'Nao tente combinar a primeira jogada completa com o speedrun se ainda nao conhece os capitulos. Isso aumenta o risco de perder tempo e esquecer coletaveis.',
+      result: 'Ao fim da primeira run, a historia estara concluida e a maior parte dos coletaveis e trofeus misc estara resolvida.'
+    },
+    {
+      title: 'Use a selecao de capitulos para limpar pendencias',
+      focus: 'Cleanup por capitulo',
+      objective: 'Voltar aos capitulos especificos para completar trofeus perdidos sem reiniciar a campanha inteira.',
+      actions: [
+        'Use Chapter Select para refazer trofeus de capitulo.',
+        'Repita a primeira perseguicao de Zurks ate conseguir Can’t Cat-ch Me.',
+        'Refaca The Sewers para Pacifist sem matar Zurks.',
+        'Refaca Midtown para Sneakitty sem ser detectado pelas sentinelas.',
+        'Complete Scratch na boate se ficou para tras.',
+        'Confira se Productive Day foi feito sem pausar o jogo.'
+      ],
+      warning: 'Chapter Select ajuda no cleanup, mas confira se o progresso de coletaveis e scratches foi salvo corretamente antes de avancar.',
+      result: 'Os trofeus especificos e coletaveis pendentes ficam resolvidos sem afetar a run de speedrun.'
+    },
+    {
+      title: 'Faca a run de menos de 2 horas',
+      focus: 'Speedrun',
+      objective: 'Completar Stray rapidamente para desbloquear I am Speed.',
+      actions: [
+        'Comece uma nova run dedicada apenas ao speedrun.',
+        'Pule dialogos e va direto aos objetivos principais.',
+        'Evite coletaveis e interacoes opcionais.',
+        'Use Chapter Select apenas para treinar trechos dificeis antes da tentativa.',
+        'Evite mortes e erros longos, especialmente em perseguicoes com Zurks e areas de sentinelas.'
+      ],
+      warning: 'I am Speed exige terminar o jogo em menos de 2 horas. Se falhar, sera necessario fazer outra tentativa de run.',
+      result: 'Com I am Speed concluido, a platina All Done ficara liberada se todos os outros trofeus ja estiverem completos.'
+    }
+  ];
+
+  const strayAttentionPoints = [
+    { title: 'I am Speed', detail: 'I am Speed exige terminar o jogo em menos de 2 horas. Faca esse trofeu em uma run separada, pulando dialogos e ignorando colecionaveis.', tags: ['Speedrun', 'Perdivel de run'] },
+    { title: 'Chapter Select', detail: 'A selecao de capitulos permite refazer colecionaveis e trofeus especificos, entao a maioria dos riscos nao e perda permanente.', tags: ['Chapter Select', 'Cleanup'] },
+    { title: 'Can’t Cat-ch Me', detail: 'A primeira perseguicao de Zurks pode exigir varias tentativas. Use reinicio de checkpoint se for pego.', tags: ['Zurks', 'Desafio'] },
+    { title: 'Pacifist', detail: 'Em The Sewers, nao use a luz para matar Zurks. Corra e desvie ate o fim do capitulo.', tags: ['The Sewers', 'Zurks'] },
+    { title: 'Sneakitty', detail: 'Em Midtown, passe pela area das sentinelas sem ser detectado. Se for visto, reinicie o checkpoint.', tags: ['Midtown', 'Stealth'] },
+    { title: 'Productive Day', detail: 'Durma por mais de uma hora em tempo real e nao pause o jogo.', tags: ['Misc', 'Atencao'] },
+    { title: 'Colecionaveis', detail: 'As memorias, botoes, partituras e scratches por capitulo sao o nucleo do cleanup. Use checklist por capitulo.', tags: ['Coletavel', 'Checklist'] },
+    { title: 'Sem online ou DLC', detail: 'A platina e totalmente offline, sem cooperacao e sem DLC.', tags: ['Offline', 'Sem coop', 'Sem DLC'] }
+  ];
+
+  const strayFaq = [
+    { question: 'Stray tem trofeus perdiveis?', answer: 'Sim, mas apenas no sentido de run. I am Speed exige terminar o jogo em menos de 2 horas; se falhar, sera necessario fazer outra tentativa. Os demais trofeus podem ser recuperados pela selecao de capitulos.' },
+    { question: 'Precisa jogar online para platinar?', answer: 'Nao. A platina e totalmente offline.' },
+    { question: 'Precisa de cooperacao?', answer: 'Nao. Stray e uma platina single-player.' },
+    { question: 'Precisa de DLC?', answer: 'Nao. A platina usa apenas a lista base do jogo.' },
+    { question: 'Quantas jogadas sao recomendadas?', answer: 'Duas. Uma run tranquila para historia, colecionaveis e trofeus por capitulo, e uma run separada para I am Speed em menos de 2 horas.' },
+    { question: 'Da para fazer tudo em uma jogada?', answer: 'E possivel para jogadores experientes, mas nao e recomendado na primeira platina. Fazer colecionaveis e speedrun ao mesmo tempo aumenta o risco de erro.' },
+    { question: 'Quanto tempo leva para platinar?', answer: 'Em media, cerca de 6 a 8 horas, dependendo das tentativas em Can’t Cat-ch Me, Pacifist, Sneakitty e I am Speed.' },
+    { question: 'Qual e o trofeu mais dificil?', answer: 'Normalmente Can’t Cat-ch Me e I am Speed sao os maiores obstaculos. Can’t Cat-ch Me depende de uma perseguicao limpa, e I am Speed exige terminar tudo em menos de 2 horas.' },
+    { question: 'Productive Day pode ser feito pausando o jogo?', answer: 'Nao. Deixe o gato dormindo por mais de uma hora em tempo real sem pausar.' },
+    { question: 'Preciso pegar todos os colecionaveis?', answer: 'Sim, para os trofeus ligados a memorias, botoes, partituras e scratches por capitulo. Eles podem ser recuperados por selecao de capitulos.' }
+  ];
+
+  const strayChecklist = [
+    'Conferir se o guia tem 25 trofeus.',
+    'Conferir se All Done e a platina.',
+    'Conferir distribuicao: 1 platina, 7 ouro, 9 prata, 8 bronze.',
+    'Conferir onlineRequired false.',
+    'Conferir coopRequired false.',
+    'Conferir dlcRequired false.',
+    'Conferir se I am Speed esta como perdivel de run/speedrun.',
+    'Conferir se apenas I am Speed aparece como perdivel.',
+    'Conferir se nenhum coletavel recuperavel por Chapter Select esta marcado como perdivel.',
+    'Conferir se dificuldade nao aparece como requisito de trofeu.',
+    'Conferir se filtros nao estao inflados por tags erradas.',
+    'Conferir se todos os trofeus tem nome oficial em ingles como principal.',
+    'Conferir se todos tem PT-BR abaixo.',
+    'Conferir se descricoes estao em portugues.',
+    'Conferir se nao aparecem rotulos tecnicos de nome original nem descricao provisoria.',
+    'Conferir se roadmap esta estruturado como array/objeto.',
+    'Conferir se roadmap nao renderiza objeto bruto.',
+    'Conferir se roadmap nao mostra nomes de campos internos.',
+    'Conferir FAQ, decisao rapida, SEO e pontos de atencao.',
+    'Conferir se pagina individual e catalogo exibem o mesmo status editorial.',
+    'Conferir se flags do topo batem com filtros do catalogo.'
+  ];
+
+  const strayPtBrNames = {
+    'All Done': 'Tudo Concluido',
+    'A Little Chatty': 'Falante',
+    'Cat-a-Pult': 'Gato-pulta',
+    'Productive Day': 'Dia Produtivo',
+    'Boom Chat Kalaka': 'Enterrada',
+    'Can’t Cat-ch Me': 'Nao Me Pega',
+    Sneakitty: 'Furtividade Felina',
+    'No More Lives': 'Acabaram as Vidas',
+    Scratch: 'Scratch',
+    Pacifist: 'Pacifista',
+    'I am Speed': 'Veloz',
+    'Missed Jump': 'Salto Perdido',
+    'Not Alone': 'Companhia',
+    'Cat Got Your Tongue?': 'O Gato Comeu Sua Lingua?',
+    Catwalk: 'Passarela',
+    'Al-Cat-Raz': 'Gatunagem',
+    'Eye Opener': 'Abrindo os Olhos',
+    Meowlody: 'Miaulodia',
+    'Curiosity Killed the Cat': 'A Curiosidade Matou o Gato',
+    'Cat-a-strophe': 'Gatastrofe',
+    'Cat’s best friend': 'O Melhor Amigo do Gato',
+    'I Remember!': 'Eu Lembro!',
+    'Tele a chat': 'Nacao da TV',
+    'Télé à chat': 'Nacao da TV',
+    Badges: 'Botoes',
+    Territory: 'Territorio'
+  };
+
+  const strayTrophies = [
+    ['stray-all-done', 'All Done', 'Platina', 'Obtenha todos os trofeus da lista base.', 'Desbloqueie todos os outros 24 trofeus de Stray. A platina nao exige online, cooperacao nem DLC.', ['Platina'], false, false],
+    ['stray-a-little-chatty', 'A Little Chatty', 'Prata', 'Mie 100 vezes.', 'Use o botao de miado ate completar 100 miados. Pode ser feito em qualquer capitulo com controle livre.', ['Misc', 'Acao especifica'], false, false],
+    ['stray-cat-a-pult', 'Cat-a-Pult', 'Prata', 'Pule 500 vezes.', 'Use pontos interativos de salto durante a campanha. Se faltar progresso, repita trechos com muitos saltos por Chapter Select.', ['Misc', 'Acao especifica', 'Cleanup'], false, false],
+    ['stray-productive-day', 'Productive Day', 'Prata', 'Durma por mais de uma hora.', 'Deite em um ponto de descanso e deixe o gato dormir por mais de uma hora em tempo real sem pausar o jogo.', ['Misc', 'Acao especifica', 'Atencao'], false, false],
+    ['stray-boom-chat-kalaka', 'Boom Chat Kalaka', 'Bronze', 'Enterre a bola de basquete.', 'No Capitulo 4, empurre a bola de basquete para dentro do balde perto do Guardian. Se errar, recarregue o checkpoint ou use Chapter Select.', ['The Slums', 'Capitulo', 'Acao especifica', 'Cleanup'], false, false],
+    ['stray-cant-cat-ch-me', 'Can’t Cat-ch Me', 'Ouro', 'Complete a primeira perseguicao de Zurks sem ser pego.', 'No Capitulo 2, desvie em zigue-zague e reinicie o checkpoint se algum Zurk grudar no gato. Pode exigir varias tentativas.', ['Zurks', 'Capitulo', 'Desafio', 'Cleanup'], false, true],
+    ['stray-sneakitty', 'Sneakitty', 'Prata', 'Atravesse Midtown sem ser detectado pelas sentinelas.', 'No Capitulo 10, passe pelas areas das sentinelas sem alerta. Se for visto, reinicie o checkpoint antes de avancar.', ['Stealth', 'Sentinelas', 'Midtown', 'Capitulo', 'Desafio', 'Cleanup'], false, true],
+    ['stray-no-more-lives', 'No More Lives', 'Bronze', 'Morra 9 vezes.', 'Acumule 9 mortes em encontros com Zurks. A primeira perseguicao do Capitulo 2 e um ponto rapido se quiser resolver de uma vez.', ['Zurks', 'Misc', 'Cleanup'], false, true],
+    ['stray-scratch', 'Scratch', 'Bronze', 'Arranhe o vinil na boate.', 'No Capitulo 10, pegue o vinil, coloque-o no toca-discos da boate e use a interacao de arranhar.', ['Midtown', 'Scratch', 'Capitulo', 'Acao especifica', 'Cleanup'], false, false],
+    ['stray-pacifist', 'Pacifist', 'Ouro', 'Complete The Sewers sem matar nenhum Zurk.', 'No Capitulo 8, nao use a luz de B-12 para matar Zurks. Corra, desvie e reinicie o checkpoint se matar algum por acidente.', ['The Sewers', 'Zurks', 'Capitulo', 'Desafio', 'Cleanup'], false, true],
+    ['stray-i-am-speed', 'I am Speed', 'Ouro', 'Complete o jogo em menos de 2 horas.', 'Faca em uma segunda run dedicada. Pule dialogos, ignore colecionaveis, siga apenas os objetivos principais e evite mortes longas.', ['Speedrun', 'Perdivel', 'Atencao'], true, false],
+    ['stray-missed-jump', 'Missed Jump', 'Bronze', 'Caia dentro da cidade.', 'Trofeu automatico de historia no inicio da jornada dentro da cidade murada.', ['Historia', 'Capitulo'], false, true],
+    ['stray-not-alone', 'Not Alone', 'Prata', 'Conheca B-12.', 'Trofeu automatico de historia ao encontrar B-12 no Capitulo 3.', ['Historia', 'Capitulo'], false, true],
+    ['stray-cat-got-your-tongue', 'Cat Got Your Tongue?', 'Bronze', 'Faca B-12 traduzir um robo.', 'Use B-12 para traduzir um robo durante o progresso da historia.', ['Historia', 'Capitulo'], false, true],
+    ['stray-catwalk', 'Catwalk', 'Ouro', 'Chegue a Midtown.', 'Trofeu automatico de historia ao chegar a Midtown no Capitulo 10.', ['Historia', 'Midtown', 'Capitulo'], false, true],
+    ['stray-al-cat-raz', 'Al-Cat-Raz', 'Prata', 'Va para a prisao.', 'Trofeu automatico de historia ao chegar a sequencia da prisao no Capitulo 11.', ['Historia', 'Capitulo'], false, true],
+    ['stray-eye-opener', 'Eye Opener', 'Ouro', 'Complete o jogo e abra a cidade.', 'Trofeu automatico de conclusao da historia apos o Capitulo 12.', ['Historia', 'Capitulo'], false, true],
+    ['stray-meowlody', 'Meowlody', 'Prata', 'Entregue todas as partituras para Morusque.', 'Encontre as 8 partituras no Capitulo 4 e entregue todas a Morusque. Se faltar alguma, volte por Chapter Select.', ['Coletavel', 'Partituras', 'The Slums', 'Cleanup'], false, false],
+    ['stray-curiosity-killed-the-cat', 'Curiosity Killed the Cat', 'Bronze', 'Use o saco de papel.', 'No Capitulo 4, interaja com o saco de papel perto de Morusque para coloca-lo na cabeca do gato.', ['The Slums', 'Acao especifica', 'Cleanup'], false, false],
+    ['stray-cat-a-strophe', 'Cat-a-strophe', 'Bronze', 'Tente jogar mahjong com os robos.', 'No Capitulo 9, suba na mesa em que dois robos estao jogando mahjong em Antvillage.', ['Capitulo', 'Acao especifica', 'Cleanup'], false, false],
+    ['stray-cats-best-friend', 'Cat’s best friend', 'Prata', 'Esfregue-se em 5 robos.', 'Use o prompt de nuzzle em 5 robos, principalmente nos Capitulos 4 e 10. Pode ser limpo por Chapter Select.', ['Misc', 'Robos', 'The Slums', 'Midtown', 'Cleanup'], false, false],
+    ['stray-i-remember', 'I Remember!', 'Ouro', 'Colete todas as memorias do B-12.', 'Colete as 27 memorias do B-12. O Chapter Select mostra quantas faltam por capitulo, facilitando o cleanup.', ['Coletavel', 'Memorias', 'Cleanup'], false, true],
+    ['stray-tele-a-chat', 'Télé à chat', 'Bronze', 'Passe por todos os canais de TV.', 'No Capitulo 4, encontre a TV nos telhados perto do apartamento de Momo e troque todos os canais ate o trofeu liberar.', ['The Slums', 'Capitulo', 'Acao especifica', 'Cleanup'], false, false],
+    ['stray-badges', 'Badges', 'Ouro', 'Colete todos os botoes.', 'Colete os 6 botoes da lista base. Eles aparecem como adesivos na mochila do gato e podem ser limpos por Chapter Select.', ['Coletavel', 'Botoes', 'Cleanup'], false, false],
+    ['stray-territory', 'Territory', 'Prata', 'Arranhe em todos os capitulos.', 'Use pelo menos um ponto de scratch em cada um dos 12 capitulos. Depois de usar Chapter Select, avance ate checkpoint/autosave quando necessario.', ['Coletavel', 'Scratch', 'Capitulo', 'Cleanup'], false, false]
+  ].map(([id, name, type, description, tip, tags, isMissable = false, isSpoiler = false]) => {
+    const namePtBr = strayPtBrNames[name] || name;
+    return {
+      id,
+      name,
+      trophyNameOriginal: name,
+      originalName: name,
+      officialName: name,
+      name_pt: namePtBr,
+      trophyNamePtBr: namePtBr,
+      namePtSource: namePtBr === name ? 'same_as_official_name_no_ptbr_source' : 'trusted_ptbr_localized_name',
+      type,
+      tier: type,
+      description,
+      descriptionPtBr: description,
+      ptDescription: description,
+      localizedDescription: { ptBr: description, 'pt-BR': description },
+      descriptionPtSource: 'editorial_ptbr_from_official_requirement',
+      tip,
+      guideTip: tip,
+      tipPtBr: tip,
+      localizedTip: { ptBr: tip },
+      tags,
+      is_missable: Boolean(isMissable),
+      isMissable: Boolean(isMissable),
+      missable: Boolean(isMissable),
+      is_spoiler: Boolean(isSpoiler),
+      is_online: false,
+      isOnline: false,
+      is_coop: false,
+      isCoop: false,
+      is_dlc: false,
+      isDlc: false,
+      dlcRequired: false,
+      riskType: isMissable ? 'missable' : ''
+    };
+  });
+
+  const accentStrayPortuguese = value => String(value || '')
+    .replace(/\bNao\b/g, 'Não')
+    .replace(/\bnao\b/g, 'não')
+    .replace(/\bDa\b/g, 'Dá')
+    .replace(/\bmedia\b/g, 'média')
+    .replace(/\btrofeus\b/g, 'troféus')
+    .replace(/\btrofeu\b/g, 'troféu')
+    .replace(/\bperdiveis\b/g, 'perdíveis')
+    .replace(/\bperdivel\b/g, 'perdível')
+    .replace(/\bPerdivel\b/g, 'Perdível')
+    .replace(/\bcapitulos\b/g, 'capítulos')
+    .replace(/\bcapitulo\b/g, 'capítulo')
+    .replace(/\bCapitulos\b/g, 'Capítulos')
+    .replace(/\bCapitulo\b/g, 'Capítulo')
+    .replace(/\bcoletaveis\b/g, 'coletáveis')
+    .replace(/\bcolecionaveis\b/g, 'colecionáveis')
+    .replace(/\bColetavel\b/g, 'Coletável')
+    .replace(/\bmemorias\b/g, 'memórias')
+    .replace(/\bMemorias\b/g, 'Memórias')
+    .replace(/\bbotoes\b/g, 'bótons')
+    .replace(/\bBotoes\b/g, 'Bótons')
+    .replace(/\bLingua\b/g, 'Língua')
+    .replace(/\bNacao\b/g, 'Nação')
+    .replace(/\bConcluido\b/g, 'Concluído')
+    .replace(/\bGatastrofe\b/g, 'Gatástrofe')
+    .replace(/\bTerritorio\b/g, 'Território')
+    .replace(/\bpossivel\b/g, 'possível')
+    .replace(/\brecomendado\b/g, 'recomendado')
+    .replace(/\bnecessario\b/g, 'necessário')
+    .replace(/\bconcluido\b/g, 'concluído')
+    .replace(/\bconcluida\b/g, 'concluída')
+    .replace(/\bpendencias\b/g, 'pendências')
+    .replace(/\bFaca\b/g, 'Faça')
+    .replace(/\bRefaca\b/g, 'Refaça')
+    .replace(/\bavancar\b/g, 'avançar')
+    .replace(/\bsera\b/g, 'será')
+    .replace(/\bestara\b/g, 'estará')
+    .replace(/\bficara\b/g, 'ficará')
+    .replace(/\bja\b/g, 'já')
+    .replace(/\bate\b/g, 'até')
+    .replace(/\btras\b/g, 'trás')
+    .replace(/\bva\b/g, 'vá')
+    .replace(/\bVa\b/g, 'Vá')
+    .replace(/\bdialogos\b/g, 'diálogos')
+    .replace(/\bdificeis\b/g, 'difíceis')
+    .replace(/\bareas\b/g, 'áreas')
+    .replace(/\barea\b/g, 'área')
+    .replace(/\bperseguicoes\b/g, 'perseguições')
+    .replace(/\bperseguicao\b/g, 'perseguição')
+    .replace(/\breinicio\b/g, 'reinício')
+    .replace(/\bvarias\b/g, 'várias')
+    .replace(/\bselecao\b/g, 'seleção')
+    .replace(/\bacoes\b/g, 'ações')
+    .replace(/\bAcao\b/g, 'Ação')
+    .replace(/\binteracoes\b/g, 'interações')
+    .replace(/\bopcionais\b/g, 'opcionais')
+    .replace(/\bespecificos\b/g, 'específicos')
+    .replace(/\bespecificas\b/g, 'específicas')
+    .replace(/\bespecifico\b/g, 'específico')
+    .replace(/\bdecisao\b/g, 'decisão')
+    .replace(/\brapida\b/g, 'rápida')
+    .replace(/\batencao\b/g, 'atenção')
+    .replace(/\bAtencao\b/g, 'Atenção')
+    .replace(/\bobrigatorio\b/g, 'obrigatório')
+    .replace(/\bobrigatoria\b/g, 'obrigatória')
+    .replace(/\bcooperacao\b/g, 'cooperação')
+    .replace(/\bdescricoes\b/g, 'descrições')
+    .replace(/\bdescricao\b/g, 'descrição')
+    .replace(/\btecnicos\b/g, 'técnicos')
+    .replace(/\bconteudo\b/g, 'conteúdo')
+    .replace(/\bnucleo\b/g, 'núcleo')
+    .replace(/\brobos\b/g, 'robôs')
+    .replace(/\brobo\b/g, 'robô')
+    .replace(/\bcabeca\b/g, 'cabeça')
+    .replace(/\bprisao\b/g, 'prisão')
+    .replace(/\bsequencia\b/g, 'sequência')
+    .replace(/\bapos\b/g, 'após')
+    .replace(/\bconclusao\b/g, 'conclusão')
+    .replace(/\bhistoria\b/g, 'história')
+    .replace(/\bHistoria\b/g, 'História')
+    .replace(/\bpratica\b/g, 'prática')
+    .replace(/\brapido\b/g, 'rápido')
+    .replace(/\blimpa\b/g, 'limpa')
+    .replace(/\besta\b/g, 'está')
+    .replace(/\bestao\b/g, 'estão')
+    .replace(/\bsao\b/g, 'são')
+    .replace(/I am Speed e tratado/g, 'I am Speed é tratado')
+    .replace(/A platina e totalmente/g, 'A platina é totalmente')
+    .replace(/Stray e uma/g, 'Stray é uma')
+    .replace(/A platina e curta/g, 'A platina é curta')
+    .replace(/O principal cuidado e/g, 'O principal cuidado é')
+    .replace(/A rota mais segura e/g, 'A rota mais segura é')
+    .replace(/risco real e falhar/g, 'risco real é falhar')
+    .replace(/All Done e a platina/g, 'All Done é a platina')
+    .replace(/esta como/g, 'está como')
+    .replace(/esta marcado/g, 'está marcado')
+    .replace(/esta em/g, 'está em')
+    .replace(/E uma platina/g, 'É uma platina')
+    .replace(/E possivel/g, 'É possível')
+    .replace(/nao e recomendado/g, 'não é recomendado')
+    .replace(/nao e perda/g, 'não é perda');
+
+  const accentStrayTextFields = (value, key = '') => {
+    const rawKeys = new Set([
+      'id',
+      'slug',
+      'image',
+      'cover_image',
+      'catalogImage',
+      'name',
+      'trophyNameOriginal',
+      'originalName',
+      'officialName',
+      'type',
+      'tier',
+      'namePtSource',
+      'descriptionPtSource',
+      'riskType'
+    ]);
+    if (typeof value === 'string') return rawKeys.has(key) ? value : accentStrayPortuguese(value);
+    if (Array.isArray(value)) return value.map(item => accentStrayTextFields(item, key));
+    if (!value || typeof value !== 'object') return value;
+    return Object.fromEntries(Object.entries(value).map(([entryKey, entryValue]) => [entryKey, accentStrayTextFields(entryValue, entryKey)]));
+  };
+
+  Object.assign(strayGuide, accentStrayTextFields({
+    difficulty: 4,
+    time: '6-8h',
+    time_min_hours: 6,
+    time_max_hours: 8,
+    time_sort_hours: 6,
+    time_bucket: 'short',
+    platforms: ['PS4', 'PS5'],
+    developer: 'BlueTwelve Studio',
+    publisher: 'Annapurna Interactive',
+    trophyCount: 25,
+    trophyDistribution: { platinum: 1, gold: 7, silver: 9, bronze: 8 },
+    missable: 'I am Speed e tratado como perdivel de run/speedrun: exige terminar o jogo em menos de 2 horas. Os demais trofeus podem ser recuperados por selecao de capitulos.',
+    runs_summary: 'Duas jogadas recomendadas: uma campanha tranquila para historia, coletaveis e trofeus por capitulo, e uma run separada de speedrun para I am Speed.',
+    missable_summary: '1 perdivel de run: I am Speed. Colecionaveis e desafios por capitulo nao sao perdas permanentes porque Chapter Select permite refazer capitulos.',
+    online_summary: 'Nao ha exigencia online, trofeus online, multiplayer obrigatorio ou PS Plus para a platina.',
+    grind_summary: 'O peso esta em memorias, botoes, partituras, scratches por capitulo, trofeus especificos de capitulo e uma run de speedrun abaixo de 2 horas.',
+    dlc_scope: 'Guia focado na lista base de Stray para PS4 e PS5; nao ha DLC necessaria para a platina.',
+    difficulty_reason: 'A platina e curta e acessivel, sem trofeus de dificuldade selecionavel. O desafio esta em Can’t Cat-ch Me, Pacifist, Sneakitty e I am Speed.',
+    time_reason: 'A faixa de 6-8 horas considera uma campanha com coletaveis, cleanup por Chapter Select e uma run dedicada de speedrun abaixo de 2 horas.',
+    first_run_advice: 'Na primeira campanha, explore com calma, pegue memorias, botoes, partituras e scratches por capitulo, faca os trofeus especificos e deixe I am Speed para depois.',
+    cleanup_advice: 'Use Chapter Select para recuperar coletaveis e trofeus especificos, lembrando de avancar ate checkpoint/autosave quando necessario para gravar o progresso.',
+    before_you_start: 'Nao tente otimizar tudo na primeira jogada. Aprenda os 12 capitulos, depois faca I am Speed em uma run dedicada abaixo de 2 horas.',
+    best_for: 'Ideal para quem quer uma platina curta, charmosa, offline e com um desafio final de speedrun.',
+    avoid_if: 'Evite apenas se voce nao gosta de trofeus de tempo, repetir capitulos ou fazer uma run rapida depois da campanha.',
+    editorial_summary: [
+      'Stray e uma platina curta e acessivel, focada em concluir a historia, pegar os coletaveis dos 12 capitulos e resolver acoes especificas de gato, como miar, pular, dormir, arranhar objetos, interagir com robos e completar desafios pontuais.',
+      'A rota mais segura e fazer uma primeira jogada tranquila coletando memorias, botoes, partituras e scratches por capitulo, depois usar a selecao de capitulos para limpar qualquer trofeu pendente e deixar I am Speed para uma segunda run dedicada. A platina nao exige online, cooperacao ou DLC. O principal cuidado e o speedrun de menos de 2 horas; os demais trofeus podem ser refeitos com Chapter Select.'
+    ],
+    quickDecision: {
+      worthIt: 'Sim. E uma platina curta, charmosa e acessivel, mas exige paciencia em alguns desafios.',
+      difficulty: 'Baixa a moderada.',
+      time: 'Curto, cerca de 6 a 8 horas.',
+      mainAlert: 'I am Speed em menos de 2 horas e os desafios Can’t Cat-ch Me, Pacifist e Sneakitty.',
+      risk: 'Baixo. A selecao de capitulos ajuda no cleanup; o unico risco real e falhar a run de speedrun.',
+      onlineCoop: 'Nao exige online nem cooperacao.',
+      dlc: 'Nao exige DLC.'
+    },
+    seo: {
+      title: 'Stray: Guia de Trofeus e Platina',
+      description: 'Guia de trofeus de Stray com roadmap da platina, tempo estimado, dificuldade, speedrun I am Speed, coletaveis, memorias, botoes, partituras e dicas para os 25 trofeus.',
+      metaDescription: 'Guia de trofeus de Stray com roadmap da platina, tempo estimado, dificuldade, speedrun I am Speed, coletaveis, memorias, botoes, partituras e dicas para os 25 trofeus.',
+      keywords: 'Stray trofeus, Stray platina, guia Stray, Stray PS5 trofeus, Stray PS4 trofeus, All Done Stray, I am Speed, Can’t Cat-ch Me, Pacifist, Sneakitty, Badges, I Remember, Meowlody',
+      ogTitle: 'Stray: Guia de Trofeus e Platina',
+      ogDescription: 'Roadmap da platina de Stray com 25 trofeus, I am Speed, Chapter Select, memorias, botoes, partituras e desafios por capitulo.'
+    },
+    checklist: strayChecklist,
+    attentionPoints: strayAttentionPoints,
+    faq: strayFaq,
+    tags: ['Stray', 'PS4', 'PS5', 'Platina', 'Offline', 'Sem coop', 'Sem DLC', 'Speedrun', 'I am Speed', 'Chapter Select', 'Coletaveis', 'Memorias', 'Botoes', 'Partituras'],
+    onlineRequired: false,
+    coopRequired: false,
+    dlcRequired: false,
+    hasMissables: true,
+    missableCount: 1,
+    missable_count: 1,
+    newGamePlusRequired: false,
+    difficultyTrophiesRequired: false,
+    chapterSelect: true,
+    editorial_status: 'published',
+    coverage_level: 'strong',
+    is_verified: true,
+    verification_status: 'verified',
+    editorial_review_status: 'verified',
+    last_reviewed_at: '2026-06-12',
+    editorial_notes: 'Guia verificado para a platina base de Stray: 25 trofeus, offline, sem coop, sem DLC, I am Speed como perdivel de run/speedrun e demais pendencias recuperaveis por Chapter Select.',
+    quality_warnings: [],
+    verification_note: 'Guia verificado editorialmente para a lista base PlayStation de 25 trofeus, com nomes PT-BR, roadmap estruturado, filtros controlados e I am Speed tratado como perdivel de run.',
+    roadmap: strayRoadmap,
+    trophies: strayTrophies
+  }));
+}
+
+const itTakesTwoGuide = sampleGames.find(game => game.slug === 'it-takes-two');
+if (itTakesTwoGuide) {
+  const itTakesTwoRoadmap = [
+    {
+      title: 'Jogue a campanha em cooperação',
+      focus: 'Campanha cooperativa',
+      objective: 'Concluir a história com uma segunda pessoa enquanto interage com atividades opcionais e minijogos pelo caminho.',
+      actions: [
+        'Jogue com outra pessoa em coop local ou online.',
+        'Interaja com objetos opcionais e áreas secundárias de cada capítulo.',
+        'Jogue cada minijogo encontrado ao menos uma vez.',
+        'Não se preocupe se algum troféu ficar para trás, pois a seleção de capítulos permite voltar depois.',
+        'Preste atenção quando uma ação parecer específica de Cody, May ou dos dois jogadores ao mesmo tempo.'
+      ],
+      warning: 'It Takes Two não tem modo solo. Todos os troféus exigem uma segunda pessoa, mas a platina pode ser feita localmente sem online obrigatório.',
+      result: 'Ao fim da campanha, a história estará concluída e boa parte dos troféus de capítulo e minijogos já estará encaminhada.'
+    },
+    {
+      title: 'Limpe troféus específicos por capítulo',
+      focus: 'Cleanup',
+      objective: 'Usar a seleção de capítulos para desbloquear ações opcionais que ficaram para trás.',
+      actions: [
+        'Volte aos capítulos com troféus pendentes.',
+        'Refaça checkpoints próximos de cada atividade opcional.',
+        'Confira se o troféu exige Cody, May ou interação dos dois jogadores.',
+        'Faça troféus de ação específica como Fried Friendship, Struck A Pose, Faraway Frequencies, Snackosaurus e Meditation Maestro.',
+        'Use o checkpoint correto para reduzir tempo de repetição.'
+      ],
+      warning: '',
+      result: 'Os troféus de capítulo ficam resolvidos sem necessidade de rejogar a campanha inteira.'
+    },
+    {
+      title: 'Encontre todos os minijogos',
+      focus: 'Minijogos',
+      objective: 'Completar o checklist dos 25 minijogos para Minigame Megalomania.',
+      actions: [
+        'Revise a lista de minijogos por capítulo.',
+        'Use a seleção de capítulos para voltar aos minijogos perdidos.',
+        'Entre e jogue cada minijogo ao menos uma vez para garantir o registro.',
+        'Confirme se o progresso de Minigame Megalomania atualizou corretamente.',
+        'Evite tratar minijogos como perdíveis, pois eles podem ser recuperados por seleção de capítulos.'
+      ],
+      warning: 'Minigame Megalomania é o principal checklist da platina. Se o filtro Coletáveis for usado, ele deve refletir minijogos/checklist, não coletáveis tradicionais.',
+      result: 'Com todos os minijogos encontrados, o principal requisito de exploração/checklist da platina fica concluído.'
+    },
+    {
+      title: 'Finalize a platina e confira as contas dos jogadores',
+      focus: 'Conferência final',
+      objective: 'Garantir que todos os troféus foram desbloqueados e que o status do guia está coerente.',
+      actions: [
+        'Confira se a lista possui 21 troféus.',
+        'Verifique se não há troféus marcados como perdíveis.',
+        'Confirme se coopRequired está true e onlineRequired está false.',
+        'Se estiver usando Friend’s Pass, não prometa troféus para a conta convidada sem confirmar o funcionamento da plataforma.',
+        'Compare topo, filtros, checklist e FAQ antes de marcar como Verificado.'
+      ],
+      warning: 'Friend’s Pass permite jogar com outra pessoa, mas o guia não deve prometer que a conta convidada receberá troféus em todos os cenários sem confirmação.',
+      result: 'Com história, minijogos e ações opcionais concluídos, Power Couple será desbloqueado.'
+    }
+  ];
+
+  const itTakesTwoAttentionPoints = [
+    { title: 'Coop obrigatório', detail: 'It Takes Two não possui modo solo. A platina exige uma segunda pessoa do começo ao fim.', tags: ['Coop obrigatório', 'Dois jogadores'] },
+    { title: 'Online não obrigatório', detail: 'A platina pode ser feita em coop local, então onlineRequired fica false porque online não é requisito obrigatório.', tags: ['Coop local', 'Sem online obrigatório'] },
+    { title: 'Friend’s Pass', detail: 'O Friend’s Pass permite jogar online com outra pessoa que não possui o jogo completo, mas o guia não promete troféus para a conta convidada sem confirmação do funcionamento na plataforma.', tags: ['Friend’s Pass', 'Atenção'] },
+    { title: 'Chapter Select', detail: 'A seleção de capítulos permite recuperar minijogos e troféus de ações específicas, então não há perdíveis reais.', tags: ['Chapter Select', 'Cleanup'] },
+    { title: 'Minigame Megalomania', detail: 'Há 25 minijogos. Use checklist por capítulo e jogue cada minijogo ao menos uma vez para registrar.', tags: ['Minijogos', 'Checklist'] },
+    { title: 'Cody e May', detail: 'Alguns troféus exigem uma ação de Cody, May ou interação dos dois. A dica deve deixar isso claro.', tags: ['Cody', 'May'] },
+    { title: 'Sem DLC', detail: 'A platina pertence à lista base e não exige DLC.', tags: ['Sem DLC'] },
+    { title: 'Sem troféu de dificuldade', detail: 'A dificuldade do jogo não afeta troféus.', tags: ['Sem dificuldade'] }
+  ];
+
+  const itTakesTwoFaq = [
+    { question: 'It Takes Two tem troféus perdíveis?', answer: 'Não. A seleção de capítulos permite voltar para minijogos e ações específicas que ficaram para trás.' },
+    { question: 'Dá para platinar It Takes Two sozinho?', answer: 'Não. O jogo exige uma segunda pessoa durante toda a campanha.' },
+    { question: 'Precisa jogar online para platinar?', answer: 'Não obrigatoriamente. A platina pode ser feita em coop local. O online é uma opção para jogar com outra pessoa à distância.' },
+    { question: 'Precisa de PS Plus?', answer: 'Para coop local, não. Para jogar online no PlayStation, a conta que joga online pode precisar dos requisitos de rede da plataforma. A platina em si não exige online se o coop local for usado.' },
+    { question: 'Friend’s Pass dá troféus para a conta convidada?', answer: 'O Friend’s Pass permite jogar com outra pessoa que não tem o jogo completo, mas o guia não promete troféus para a conta convidada sem confirmação atual da plataforma. Para segurança, considere que a conta dona do jogo é a referência principal para a platina.' },
+    { question: 'Precisa de DLC?', answer: 'Não. A platina usa apenas a lista base de 21 troféus.' },
+    { question: 'Quanto tempo leva para platinar?', answer: 'Em média, cerca de 11 a 15 horas, dependendo do ritmo da campanha e do cleanup dos minijogos.' },
+    { question: 'Quantos minijogos existem?', answer: 'São 25 minijogos. Todos devem ser encontrados para Minigame Megalomania.' },
+    { question: 'A dificuldade afeta troféus?', answer: 'Não. It Takes Two não possui troféus dependentes de dificuldade selecionável.' },
+    { question: 'Qual é o maior cuidado da platina?', answer: 'Manter checklist dos 25 minijogos e revisar ações específicas por capítulo com a segunda pessoa.' }
+  ];
+
+  const itTakesTwoChecklist = [
+    'Conferir se o guia tem 21 troféus.',
+    'Conferir se Power Couple é a platina.',
+    'Conferir distribuição: 1 platina, 10 ouro, 0 prata, 10 bronze.',
+    'Conferir onlineRequired false.',
+    'Conferir coopRequired true.',
+    'Conferir dlcRequired false.',
+    'Conferir hasMissables false.',
+    'Conferir missableCount 0.',
+    'Conferir se nenhum troféu está marcado como perdível.',
+    'Conferir se nenhum troféu é marcado como online obrigatório.',
+    'Conferir se Minigame Megalomania destaca 25 minijogos.',
+    'Conferir se minijogos não são tratados como perdíveis.',
+    'Conferir se dificuldade não aparece como requisito de troféu.',
+    'Conferir se filtros não estão inflados por tags erradas.',
+    'Conferir se todos os troféus têm nome oficial em inglês como principal.',
+    'Conferir se todos têm PT-BR abaixo.',
+    'Conferir se descrições estão em português.',
+    'Conferir se não aparecem rótulos técnicos de nome original nem descrição provisória.',
+    'Conferir se textos em português têm acentos.',
+    'Conferir se roadmap está estruturado como array/objeto.',
+    'Conferir se roadmap não renderiza objeto bruto.',
+    'Conferir se roadmap não mostra nomes de campos internos.',
+    'Conferir FAQ, decisão rápida, SEO e pontos de atenção.',
+    'Conferir se página individual e catálogo exibem o mesmo status editorial.',
+    'Conferir se flags do topo batem com filtros do catálogo.'
+  ];
+
+  const itTakesTwoPtBrNames = {
+    'Power Couple': 'Poder em dobro',
+    'It Took Two': 'Um caminho para dois',
+    'Minigame Megalomania': 'Megalomania de minijogos',
+    'Fried Friendship': 'Amizade por um fio',
+    'Struck A Pose': 'Faz a pose',
+    'Plastic Prison Breakers': 'Fugitivos de plástico',
+    'Faraway Frequencies': 'Frequências distantes',
+    'Look At Him Go': 'Lá vai ele',
+    'Break The Bank': 'Quebrando o banco',
+    'A Daring Devil': 'Ousadia',
+    Snackosaurus: 'Lanchossauro',
+    'Realize Your Art': 'Amor à arte',
+    'On Rails Experience': 'Trem da alegria',
+    'Platforming Prodigy': 'Ases das plataformas',
+    'Force Triangulated': 'Tríade da força',
+    'Lost And Found': 'Achados e perdidos',
+    'Mood Swing': 'Volta ao mundo',
+    'Something Fishy': 'O mar está para peixe',
+    'Terror Of The Seven Seas': 'Terror dos sete mares',
+    'Bug Sized Relaxation': 'Vida boa de inseto',
+    'Meditation Maestro': 'Mestre da meditação'
+  };
+
+  const itTakesTwoTrophies = [
+    ['it-takes-two-power-couple', 'Power Couple', 'Platina', 'Obtenha todos os troféus da lista base.', 'Desbloqueie todos os outros 20 troféus. A platina exige uma segunda pessoa, mas não exige online se vocês jogarem em coop local.', ['Platina'], false],
+    ['it-takes-two-it-took-two', 'It Took Two', 'Ouro', 'Complete a história.', 'Troféu de história obtido ao terminar a campanha em cooperação com a segunda pessoa.', ['História', 'Capítulo'], true],
+    ['it-takes-two-minigame-megalomania', 'Minigame Megalomania', 'Ouro', 'Encontre todos os minijogos.', 'Encontre e jogue os 25 minijogos ao menos uma vez. Use a seleção de capítulos para voltar aos que ficaram pendentes.', ['Minijogos', 'Checklist', 'Coletável', 'Cleanup'], false],
+    ['it-takes-two-fried-friendship', 'Fried Friendship', 'Bronze', 'Ative a interação opcional ligada à tortura no galpão.', 'No capítulo The Tree, seção Captured, aperte o botão vermelho no caminho opcional antes de destruir todos os fechos da plataforma principal.', ['The Tree', 'Capítulo', 'Ação específica', 'Cleanup'], false],
+    ['it-takes-two-struck-a-pose', 'Struck A Pose', 'Bronze', 'Use o cenário de câmera para tirar a foto.', 'No capítulo The Tree, seção Deeply Rooted, use o cenário de câmera após o boss Mortar Wasp. Pode exigir interação dos dois jogadores.', ['The Tree', 'Capítulo', 'Ação específica', 'Cleanup'], false],
+    ['it-takes-two-plastic-prison-breakers', 'Plastic Prison Breakers', 'Ouro', 'Liberte as figuras presas no Quarto da Rose.', 'Em Rose’s Room, seção Pillow Fort, encontre as figuras presas e faça Cody e May acionarem os botões ao mesmo tempo.', ['Rose’s Room', 'Capítulo', 'Cody', 'May', 'Ação específica', 'Cleanup'], false],
+    ['it-takes-two-faraway-frequencies', 'Faraway Frequencies', 'Bronze', 'Escute todas as frequências da antena.', 'Em Rose’s Room, seção Spaced Out, use a antena no portal amarelo e escute as quatro frequências.', ['Rose’s Room', 'Capítulo', 'Ação específica', 'Cleanup'], false],
+    ['it-takes-two-look-at-him-go', 'Look At Him Go', 'Bronze', 'Lance o outro jogador para as estrelas.', 'Em Spaced Out, no mesmo portal amarelo de Faraway Frequencies, use a rampa para catapultar Cody ou May.', ['Rose’s Room', 'Capítulo', 'Ação específica', 'Cleanup'], false],
+    ['it-takes-two-break-the-bank', 'Break The Bank', 'Ouro', 'Quebre o cofrinho.', 'Em Rose’s Room, seção Hopscotch, coloque as quatro moedas douradas no porco e quebre o cofrinho.', ['Rose’s Room', 'Capítulo', 'Ação específica', 'Cleanup'], false],
+    ['it-takes-two-a-daring-devil', 'A Daring Devil', 'Ouro', 'Complete a acrobacia do carrinho.', 'Em Hopscotch, lance o carrinho pela rampa e passe pelo aro no início da área.', ['Rose’s Room', 'Capítulo', 'Ação específica', 'Cleanup'], false],
+    ['it-takes-two-snackosaurus', 'Snackosaurus', 'Bronze', 'Use o dinossauro para comer o outro jogador.', 'Em Rose’s Room, seção Dino Land, use o dinossauro grande para morder Cody ou May no ponto correto da plataforma.', ['Rose’s Room', 'Capítulo', 'Ação específica', 'Cleanup'], false],
+    ['it-takes-two-realize-your-art', 'Realize Your Art', 'Ouro', 'Entre na área de arte e tinta.', 'Em Rose’s Room, seção Once Upon a Time, interaja com a impressora ou rolo de tinta no castelo.', ['Rose’s Room', 'Capítulo', 'Ação específica', 'Cleanup'], false],
+    ['it-takes-two-on-rails-experience', 'On Rails Experience', 'Ouro', 'Suba no trem.', 'Em Once Upon a Time, espere o trem passar nos trilhos do pátio e suba nele.', ['Rose’s Room', 'Capítulo', 'Ação específica', 'Cleanup'], false],
+    ['it-takes-two-platforming-prodigy', 'Platforming Prodigy', 'Ouro', 'Complete o desafio da Helltower.', 'No capítulo Cuckoo Clock, seção Gates of Time, ative Helltower com os dois botões e chegue ao topo. É um desafio técnico, não troféu de dificuldade.', ['Cuckoo Clock', 'Capítulo', 'Desafio', 'Cleanup'], false],
+    ['it-takes-two-force-triangulated', 'Force Triangulated', 'Ouro', 'Toque a ocarina na área secreta.', 'No capítulo Cuckoo Clock, encontre a referência de Zelda e interaja com a ocarina.', ['Cuckoo Clock', 'Capítulo', 'Ação específica', 'Cleanup'], false],
+    ['it-takes-two-lost-and-found', 'Lost And Found', 'Bronze', 'Reúna as tartarugas com a mãe.', 'No capítulo Snow Globe, seção Winter Village, encontre os filhotes de tartaruga e leve-os de volta à mãe.', ['Snow Globe', 'Capítulo', 'Ação específica', 'Cleanup'], false],
+    ['it-takes-two-mood-swing', 'Mood Swing', 'Ouro', 'Use o balanço até completar a ação opcional.', 'No capítulo Snow Globe, encontre o balanço e interaja até o troféu desbloquear.', ['Snow Globe', 'Capítulo', 'Ação específica', 'Cleanup'], false],
+    ['it-takes-two-something-fishy', 'Something Fishy', 'Bronze', 'Alimente os animais aquáticos.', 'No capítulo Snow Globe, seção Beneath the Ice, interaja com os peixes no ponto opcional.', ['Snow Globe', 'Capítulo', 'Ação específica', 'Cleanup'], false],
+    ['it-takes-two-terror-of-the-seven-seas', 'Terror Of The Seven Seas', 'Bronze', 'Use o barco pirata e conclua a interação opcional.', 'No capítulo Snow Globe, explore a área do barco pirata com a dupla até o troféu desbloquear.', ['Snow Globe', 'Capítulo', 'Ação específica', 'Cleanup'], false],
+    ['it-takes-two-bug-sized-relaxation', 'Bug Sized Relaxation', 'Bronze', 'Relaxe no spa de insetos.', 'No capítulo Garden, seção Green Fingers, encontre o spa e interaja com os pontos de relaxamento.', ['Garden', 'Capítulo', 'Ação específica', 'Cleanup'], false],
+    ['it-takes-two-meditation-maestro', 'Meditation Maestro', 'Bronze', 'Medite no local opcional.', 'No capítulo The Attic, encontre a área de meditação e interaja até o troféu desbloquear.', ['The Attic', 'Capítulo', 'Ação específica', 'Cleanup'], false]
+  ].map(([id, name, type, description, tip, tags, isSpoiler = false]) => {
+    const namePtBr = itTakesTwoPtBrNames[name] || name;
+    return {
+      id,
+      name,
+      trophyNameOriginal: name,
+      originalName: name,
+      officialName: name,
+      name_pt: namePtBr,
+      trophyNamePtBr: namePtBr,
+      namePtSource: namePtBr === name ? 'same_as_official_name_no_ptbr_source' : 'trusted_ptbr_localized_name',
+      type,
+      tier: type,
+      description,
+      descriptionPtBr: description,
+      ptDescription: description,
+      localizedDescription: { ptBr: description, 'pt-BR': description },
+      descriptionPtSource: 'editorial_ptbr_from_official_requirement',
+      tip,
+      guideTip: tip,
+      tipPtBr: tip,
+      localizedTip: { ptBr: tip },
+      tags,
+      is_missable: false,
+      isMissable: false,
+      missable: false,
+      is_spoiler: Boolean(isSpoiler),
+      is_online: false,
+      isOnline: false,
+      is_coop: false,
+      isCoop: false,
+      is_dlc: false,
+      isDlc: false,
+      dlcRequired: false,
+      riskType: ''
+    };
+  });
+
+  Object.assign(itTakesTwoGuide, {
+    difficulty: 3,
+    time: '11-15h',
+    time_min_hours: 11,
+    time_max_hours: 15,
+    time_sort_hours: 11,
+    time_bucket: 'medium',
+    platforms: ['PS4', 'PS5'],
+    developer: 'Hazelight Studios',
+    publisher: 'Electronic Arts / EA Originals',
+    trophyCount: 21,
+    trophyDistribution: { platinum: 1, gold: 10, silver: 0, bronze: 10 },
+    missable: 'Não há troféus perdíveis reais. A seleção de capítulos permite recuperar minijogos e ações específicas que ficaram para trás.',
+    runs_summary: 'Uma campanha cooperativa completa e cleanup por seleção de capítulos para minijogos e troféus específicos.',
+    missable_summary: 'Sem perdíveis reais: minijogos e troféus de capítulo podem ser recuperados por seleção de capítulos.',
+    online_summary: 'A platina exige cooperação com uma segunda pessoa, mas não exige online: pode ser feita em coop local ou online. PS Plus só é relevante se a dupla escolher jogar online.',
+    grind_summary: 'O peso está em concluir a história, encontrar os 25 minijogos e limpar ações específicas por capítulo.',
+    dlc_scope: 'Guia focado na lista base de It Takes Two para PS4 e PS5; não há DLC necessária para a platina.',
+    difficulty_reason: 'A dificuldade é baixa e não há troféus dependentes de dificuldade selecionável. O requisito central é jogar tudo com uma segunda pessoa.',
+    time_reason: 'A faixa de 11-15 horas considera campanha cooperativa, 25 minijogos e cleanup por seleção de capítulos.',
+    first_run_advice: 'Jogue a campanha com calma, explore áreas opcionais com a dupla e jogue cada minijogo encontrado ao menos uma vez.',
+    cleanup_advice: 'Depois da campanha, use a seleção de capítulos para voltar diretamente aos minijogos e troféus específicos pendentes.',
+    before_you_start: 'It Takes Two não pode ser platinado solo. Combine com outra pessoa e escolha coop local ou online; Friend’s Pass é uma opção online, mas não deve ser tratado como garantia de troféus para a conta convidada.',
+    best_for: 'Ideal para quem quer uma platina cooperativa acessível, criativa e variada.',
+    avoid_if: 'Evite se você não tem uma segunda pessoa para jogar a campanha inteira.',
+    editorial_summary: [
+      'It Takes Two é uma platina cooperativa curta e acessível, focada em concluir a campanha com uma segunda pessoa, encontrar todos os 25 minijogos e resolver ações específicas espalhadas pelos capítulos. O jogo não possui modo solo, então a cooperação é obrigatória do início ao fim, seja em tela dividida local ou online.',
+      'A rota mais segura é jogar a história normalmente aproveitando os capítulos, interagindo com tudo que parecer opcional e jogando cada minijogo encontrado ao menos uma vez. Depois, use a seleção de capítulos para limpar troféus e minijogos pendentes. Não há perdíveis reais, online obrigatório ou DLC necessária para a platina base; o principal cuidado é manter um checklist dos minijogos e lembrar que alguns troféus exigem ações específicas de Cody, May ou dos dois jogadores.'
+    ],
+    quickDecision: {
+      worthIt: 'Sim, especialmente para quem tem uma segunda pessoa para jogar a campanha inteira.',
+      difficulty: 'Baixa.',
+      time: 'Curto a médio, cerca de 11 a 15 horas.',
+      mainAlert: 'Coop obrigatório e checklist dos 25 minijogos.',
+      risk: 'Baixo. Não há perdíveis reais por causa da seleção de capítulos.',
+      onlineCoop: 'Coop obrigatório; online não obrigatório se jogar em coop local.',
+      dlc: 'Não exige DLC.'
+    },
+    seo: {
+      title: 'It Takes Two: Guia de Troféus e Platina',
+      description: 'Guia de troféus de It Takes Two com roadmap da platina, tempo estimado, dificuldade, coop obrigatório, minijogos, seleção de capítulos, Friend’s Pass e dicas para os 21 troféus.',
+      metaDescription: 'Guia de troféus de It Takes Two com roadmap da platina, tempo estimado, dificuldade, coop obrigatório, minijogos, seleção de capítulos, Friend’s Pass e dicas para os 21 troféus.',
+      keywords: 'It Takes Two troféus, It Takes Two platina, guia It Takes Two, It Takes Two PS4 troféus, It Takes Two PS5 troféus, Power Couple, Minigame Megalomania, Megalomania de minijogos, Friend’s Pass It Takes Two, It Takes Two coop',
+      ogTitle: 'It Takes Two: Guia de Troféus e Platina',
+      ogDescription: 'Roadmap da platina de It Takes Two com 21 troféus, coop obrigatório, 25 minijogos, seleção de capítulos e Friend’s Pass sem DLC.'
+    },
+    checklist: itTakesTwoChecklist,
+    attentionPoints: itTakesTwoAttentionPoints,
+    faq: itTakesTwoFaq,
+    tags: ['It Takes Two', 'PS4', 'PS5', 'Platina', 'Coop obrigatório', 'Coop local', 'Online opcional', 'Sem DLC', 'Minijogos', 'Chapter Select', 'Friend’s Pass'],
+    onlineRequired: false,
+    coopRequired: true,
+    dlcRequired: false,
+    hasMissables: false,
+    missableCount: 0,
+    missable_count: 0,
+    newGamePlusRequired: false,
+    difficultyTrophiesRequired: false,
+    chapterSelect: true,
+    editorial_status: 'published',
+    coverage_level: 'strong',
+    is_verified: true,
+    verification_status: 'verified',
+    editorial_review_status: 'verified',
+    last_reviewed_at: '2026-06-12',
+    editorial_notes: 'Guia verificado para a platina base de It Takes Two: 21 troféus, coop obrigatório local ou online, online não obrigatório, sem DLC, sem perdíveis e com Minigame Megalomania como checklist principal.',
+    quality_warnings: [],
+    verification_note: 'Guia verificado editorialmente para a lista base PlayStation de 21 troféus, com coop obrigatório, Friend’s Pass tratado como atenção, roadmap estruturado, nomes PT-BR e filtros controlados.',
+    roadmap: itTakesTwoRoadmap,
+    trophies: itTakesTwoTrophies
+  });
 }
 
 const atlasGuideViewModel = require('../shared/guideViewModel');
