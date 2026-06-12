@@ -45565,7 +45565,7 @@ if (assassinsCreedShadowsGuide) {
     'Conferir se todos os trofeus tem nome oficial em ingles como principal.',
     'Conferir se todos tem PT-BR abaixo quando houver traducao confiavel/oficial.',
     'Conferir se descricoes estao em portugues.',
-    'Conferir se nao aparecem rotulos tecnicos de nome original nem descricao provisoria.',
+    'Conferir se nao aparecem rotulos tecnicos de nomes internos nem descricao provisoria.',
     'Conferir se roadmap esta estruturado como array/objeto.',
     'Conferir se FAQ, decisao rapida, SEO e pontos de atencao estao coerentes.',
     'Conferir se pagina individual e catalogo exibem o mesmo status editorial.',
@@ -46576,27 +46576,27 @@ if (strayGuide) {
   ];
 
   const strayAttentionPoints = [
-    { title: 'I am Speed', detail: 'I am Speed exige terminar o jogo em menos de 2 horas. Faca esse trofeu em uma run separada, pulando dialogos e ignorando colecionaveis.', tags: ['Speedrun', 'Perdivel de run'] },
-    { title: 'Chapter Select', detail: 'A selecao de capitulos permite refazer colecionaveis e trofeus especificos, entao a maioria dos riscos nao e perda permanente.', tags: ['Chapter Select', 'Cleanup'] },
-    { title: 'Can’t Cat-ch Me', detail: 'A primeira perseguicao de Zurks pode exigir varias tentativas. Use reinicio de checkpoint se for pego.', tags: ['Zurks', 'Desafio'] },
-    { title: 'Pacifist', detail: 'Em The Sewers, nao use a luz para matar Zurks. Corra e desvie ate o fim do capitulo.', tags: ['The Sewers', 'Zurks'] },
-    { title: 'Sneakitty', detail: 'Em Midtown, passe pela area das sentinelas sem ser detectado. Se for visto, reinicie o checkpoint.', tags: ['Midtown', 'Stealth'] },
-    { title: 'Productive Day', detail: 'Durma por mais de uma hora em tempo real e nao pause o jogo.', tags: ['Misc', 'Atencao'] },
-    { title: 'Colecionaveis', detail: 'As memorias, botoes, partituras e scratches por capitulo sao o nucleo do cleanup. Use checklist por capitulo.', tags: ['Coletavel', 'Checklist'] },
-    { title: 'Sem online ou DLC', detail: 'A platina e totalmente offline, sem cooperacao e sem DLC.', tags: ['Offline', 'Sem coop', 'Sem DLC'] }
+    { title: 'I am Speed', detail: 'Faça I am Speed em uma segunda run dedicada. Pule diálogos, ignore colecionáveis, siga apenas os objetivos principais e evite mortes longas.', tags: ['Speedrun', 'Perdível de run'] },
+    { title: 'Chapter Select e checkpoints', detail: 'A seleção de capítulos permite recuperar colecionáveis e troféus específicos, mas avance até um checkpoint/autosave depois de pegar itens para garantir o registro.', tags: ['Chapter Select', 'Cleanup'] },
+    { title: 'Can’t Cat-ch Me', detail: 'A primeira perseguição de Zurks pode exigir várias tentativas. Se algum Zurk grudar no gato, reinicie o checkpoint e tente uma rota em zigue-zague.', tags: ['Zurks', 'Desafio'] },
+    { title: 'Pacifist', detail: 'Em The Sewers, não use a luz de B-12 para matar Zurks. Corra e desvie até o fim do capítulo.', tags: ['The Sewers', 'Zurks'] },
+    { title: 'Sneakitty', detail: 'Em Midtown, passe pela área das sentinelas sem ser detectado. Se for visto, reinicie o checkpoint antes de avançar.', tags: ['Midtown', 'Stealth'] },
+    { title: 'Productive Day', detail: 'Durma por mais de uma hora em tempo real. Não pause o jogo durante a espera.', tags: ['Misc', 'Atenção'] },
+    { title: 'Colecionáveis', detail: 'As memórias, bótons, partituras e scratches por capítulo são o núcleo do cleanup. Use checklist por capítulo.', tags: ['Coletável', 'Checklist'] },
+    { title: 'Sem online/DLC', detail: 'A platina é totalmente offline, single-player e não exige DLC.', tags: ['Offline', 'Sem coop', 'Sem DLC'] }
   ];
 
   const strayFaq = [
-    { question: 'Stray tem trofeus perdiveis?', answer: 'Sim, mas apenas no sentido de run. I am Speed exige terminar o jogo em menos de 2 horas; se falhar, sera necessario fazer outra tentativa. Os demais trofeus podem ser recuperados pela selecao de capitulos.' },
-    { question: 'Precisa jogar online para platinar?', answer: 'Nao. A platina e totalmente offline.' },
-    { question: 'Precisa de cooperacao?', answer: 'Nao. Stray e uma platina single-player.' },
-    { question: 'Precisa de DLC?', answer: 'Nao. A platina usa apenas a lista base do jogo.' },
-    { question: 'Quantas jogadas sao recomendadas?', answer: 'Duas. Uma run tranquila para historia, colecionaveis e trofeus por capitulo, e uma run separada para I am Speed em menos de 2 horas.' },
-    { question: 'Da para fazer tudo em uma jogada?', answer: 'E possivel para jogadores experientes, mas nao e recomendado na primeira platina. Fazer colecionaveis e speedrun ao mesmo tempo aumenta o risco de erro.' },
-    { question: 'Quanto tempo leva para platinar?', answer: 'Em media, cerca de 6 a 8 horas, dependendo das tentativas em Can’t Cat-ch Me, Pacifist, Sneakitty e I am Speed.' },
-    { question: 'Qual e o trofeu mais dificil?', answer: 'Normalmente Can’t Cat-ch Me e I am Speed sao os maiores obstaculos. Can’t Cat-ch Me depende de uma perseguicao limpa, e I am Speed exige terminar tudo em menos de 2 horas.' },
-    { question: 'Productive Day pode ser feito pausando o jogo?', answer: 'Nao. Deixe o gato dormindo por mais de uma hora em tempo real sem pausar.' },
-    { question: 'Preciso pegar todos os colecionaveis?', answer: 'Sim, para os trofeus ligados a memorias, botoes, partituras e scratches por capitulo. Eles podem ser recuperados por selecao de capitulos.' }
+    { question: 'Stray tem troféus perdíveis?', answer: 'Sim, mas apenas no sentido de run. I am Speed exige terminar o jogo em menos de 2 horas; se falhar, será necessário fazer outra tentativa. Os demais troféus podem ser recuperados pela seleção de capítulos.' },
+    { question: 'Precisa jogar online para platinar?', answer: 'Não. A platina é totalmente offline.' },
+    { question: 'Precisa de cooperação?', answer: 'Não. Stray é uma platina single-player.' },
+    { question: 'Precisa de DLC?', answer: 'Não. A platina usa apenas a lista base do jogo.' },
+    { question: 'Quantas jogadas são recomendadas?', answer: 'Duas. Uma run tranquila para história, colecionáveis e troféus por capítulo, e uma run separada para I am Speed em menos de 2 horas.' },
+    { question: 'Dá para fazer tudo em uma jogada?', answer: 'É possível para jogadores experientes, mas não é recomendado na primeira platina. Fazer colecionáveis e speedrun ao mesmo tempo aumenta o risco de erro.' },
+    { question: 'Quanto tempo leva para platinar?', answer: 'Em média, cerca de 6 a 8 horas, dependendo das tentativas em Can’t Cat-ch Me, Pacifist, Sneakitty e I am Speed.' },
+    { question: 'Qual é o troféu mais difícil?', answer: 'Normalmente Can’t Cat-ch Me e I am Speed são os maiores obstáculos. Can’t Cat-ch Me depende de uma perseguição limpa, e I am Speed exige terminar tudo em menos de 2 horas.' },
+    { question: 'Productive Day pode ser feito pausando o jogo?', answer: 'Não. Deixe o gato dormindo por mais de uma hora em tempo real sem pausar.' },
+    { question: 'Preciso pegar todos os colecionáveis?', answer: 'Sim, para os troféus ligados a memórias, bótons, partituras e scratches por capítulo. Eles podem ser recuperados pela seleção de capítulos.' }
   ];
 
   const strayChecklist = [
@@ -46614,7 +46614,7 @@ if (strayGuide) {
     'Conferir se todos os trofeus tem nome oficial em ingles como principal.',
     'Conferir se todos tem PT-BR abaixo.',
     'Conferir se descricoes estao em portugues.',
-    'Conferir se nao aparecem rotulos tecnicos de nome original nem descricao provisoria.',
+    'Conferir se nao aparecem rotulos tecnicos de nomes internos nem descricao provisoria.',
     'Conferir se roadmap esta estruturado como array/objeto.',
     'Conferir se roadmap nao renderiza objeto bruto.',
     'Conferir se roadmap nao mostra nomes de campos internos.',
@@ -46719,8 +46719,22 @@ if (strayGuide) {
   const accentStrayPortuguese = value => String(value || '')
     .replace(/\bNao\b/g, 'Não')
     .replace(/\bnao\b/g, 'não')
+    .replace(/\bHa\b/g, 'Há')
+    .replace(/\bha\b/g, 'há')
     .replace(/\bDa\b/g, 'Dá')
     .replace(/\bmedia\b/g, 'média')
+    .replace(/\bexigencia\b/g, 'exigência')
+    .replace(/\bConheca\b/g, 'Conheça')
+    .replace(/\bfaca\b/g, 'faça')
+    .replace(/\binicio\b/g, 'início')
+    .replace(/\bbotao\b/g, 'botão')
+    .replace(/\binteracao\b/g, 'interação')
+    .replace(/\bcoloca-lo\b/g, 'colocá-lo')
+    .replace(/\bautomatico\b/g, 'automático')
+    .replace(/\bautomaticos\b/g, 'automáticos')
+    .replace(/\bautomaticas\b/g, 'automáticas')
+    .replace(/\bTrofeu automatico\b/g, 'Troféu automático')
+    .replace(/\bTrofeu\b/g, 'Troféu')
     .replace(/\btrofeus\b/g, 'troféus')
     .replace(/\btrofeu\b/g, 'troféu')
     .replace(/\bperdiveis\b/g, 'perdíveis')
@@ -46731,6 +46745,7 @@ if (strayGuide) {
     .replace(/\bCapitulos\b/g, 'Capítulos')
     .replace(/\bCapitulo\b/g, 'Capítulo')
     .replace(/\bcoletaveis\b/g, 'coletáveis')
+    .replace(/\bColecionaveis\b/g, 'Colecionáveis')
     .replace(/\bcolecionaveis\b/g, 'colecionáveis')
     .replace(/\bColetavel\b/g, 'Coletável')
     .replace(/\bmemorias\b/g, 'memórias')
@@ -46787,6 +46802,7 @@ if (strayGuide) {
     .replace(/\btecnicos\b/g, 'técnicos')
     .replace(/\bconteudo\b/g, 'conteúdo')
     .replace(/\bnucleo\b/g, 'núcleo')
+    .replace(/\bRobos\b/g, 'Robôs')
     .replace(/\brobos\b/g, 'robôs')
     .replace(/\brobo\b/g, 'robô')
     .replace(/\bcabeca\b/g, 'cabeça')
@@ -46802,6 +46818,9 @@ if (strayGuide) {
     .replace(/\besta\b/g, 'está')
     .replace(/\bestao\b/g, 'estão')
     .replace(/\bsao\b/g, 'são')
+    .replace(/\bvoce\b/g, 'você')
+    .replace(/\brotulos\b/g, 'rótulos')
+    .replace(/\bprovisoria\b/g, 'provisória')
     .replace(/I am Speed e tratado/g, 'I am Speed é tratado')
     .replace(/A platina e totalmente/g, 'A platina é totalmente')
     .replace(/Stray e uma/g, 'Stray é uma')
@@ -46977,13 +46996,13 @@ if (itTakesTwoGuide) {
 
   const itTakesTwoAttentionPoints = [
     { title: 'Coop obrigatório', detail: 'It Takes Two não possui modo solo. A platina exige uma segunda pessoa do começo ao fim.', tags: ['Coop obrigatório', 'Dois jogadores'] },
-    { title: 'Online não obrigatório', detail: 'A platina pode ser feita em coop local, então onlineRequired fica false porque online não é requisito obrigatório.', tags: ['Coop local', 'Sem online obrigatório'] },
-    { title: 'Friend’s Pass', detail: 'O Friend’s Pass permite jogar online com outra pessoa que não possui o jogo completo, mas o guia não promete troféus para a conta convidada sem confirmação do funcionamento na plataforma.', tags: ['Friend’s Pass', 'Atenção'] },
-    { title: 'Chapter Select', detail: 'A seleção de capítulos permite recuperar minijogos e troféus de ações específicas, então não há perdíveis reais.', tags: ['Chapter Select', 'Cleanup'] },
-    { title: 'Minigame Megalomania', detail: 'Há 25 minijogos. Use checklist por capítulo e jogue cada minijogo ao menos uma vez para registrar.', tags: ['Minijogos', 'Checklist'] },
-    { title: 'Cody e May', detail: 'Alguns troféus exigem uma ação de Cody, May ou interação dos dois. A dica deve deixar isso claro.', tags: ['Cody', 'May'] },
-    { title: 'Sem DLC', detail: 'A platina pertence à lista base e não exige DLC.', tags: ['Sem DLC'] },
-    { title: 'Sem troféu de dificuldade', detail: 'A dificuldade do jogo não afeta troféus.', tags: ['Sem dificuldade'] }
+    { title: 'Online não obrigatório', detail: 'A platina pode ser feita em coop local, então onlineRequired deve continuar false. O online é apenas uma opção para jogar à distância.', tags: ['Coop local', 'Sem online obrigatório'] },
+    { title: 'Friend’s Pass', detail: 'O Friend’s Pass permite jogar online com outra pessoa que não tem o jogo completo, mas o guia não deve prometer troféus para a conta convidada sem confirmação atual da plataforma.', tags: ['Friend’s Pass', 'Atenção'] },
+    { title: 'Seleção de capítulos', detail: 'A seleção de capítulos permite recuperar minijogos e troféus de ações específicas. Por isso, não há perdíveis reais.', tags: ['Chapter Select', 'Cleanup'] },
+    { title: 'Minigame Megalomania', detail: 'Há 25 minijogos. Use checklist por capítulo e jogue cada minijogo ao menos uma vez para garantir o registro.', tags: ['Minijogos', 'Checklist'] },
+    { title: 'Cody/May', detail: 'Alguns troféus exigem ação de Cody, May ou interação dos dois jogadores ao mesmo tempo. A dica do troféu deve deixar isso claro.', tags: ['Cody', 'May'] },
+    { title: 'Sem troféu de dificuldade', detail: 'A dificuldade do jogo não afeta troféus. Desafios como Platforming Prodigy não devem inflar o filtro Dificuldade.', tags: ['Sem dificuldade'] },
+    { title: 'Sem DLC', detail: 'A platina usa apenas a lista base de 21 troféus e não exige DLC.', tags: ['Sem DLC'] }
   ];
 
   const itTakesTwoFaq = [
@@ -46994,9 +47013,9 @@ if (itTakesTwoGuide) {
     { question: 'Friend’s Pass dá troféus para a conta convidada?', answer: 'O Friend’s Pass permite jogar com outra pessoa que não tem o jogo completo, mas o guia não promete troféus para a conta convidada sem confirmação atual da plataforma. Para segurança, considere que a conta dona do jogo é a referência principal para a platina.' },
     { question: 'Precisa de DLC?', answer: 'Não. A platina usa apenas a lista base de 21 troféus.' },
     { question: 'Quanto tempo leva para platinar?', answer: 'Em média, cerca de 11 a 15 horas, dependendo do ritmo da campanha e do cleanup dos minijogos.' },
-    { question: 'Quantos minijogos existem?', answer: 'São 25 minijogos. Todos devem ser encontrados para Minigame Megalomania.' },
+    { question: 'Quantos minijogos existem?', answer: 'São 25 minijogos. Todos devem ser encontrados e jogados ao menos uma vez para Minigame Megalomania.' },
     { question: 'A dificuldade afeta troféus?', answer: 'Não. It Takes Two não possui troféus dependentes de dificuldade selecionável.' },
-    { question: 'Qual é o maior cuidado da platina?', answer: 'Manter checklist dos 25 minijogos e revisar ações específicas por capítulo com a segunda pessoa.' }
+    { question: 'Qual é o maior cuidado da platina?', answer: 'Ter uma segunda pessoa disponível para jogar tudo e manter checklist dos 25 minijogos.' }
   ];
 
   const itTakesTwoChecklist = [
@@ -47017,7 +47036,7 @@ if (itTakesTwoGuide) {
     'Conferir se todos os troféus têm nome oficial em inglês como principal.',
     'Conferir se todos têm PT-BR abaixo.',
     'Conferir se descrições estão em português.',
-    'Conferir se não aparecem rótulos técnicos de nome original nem descrição provisória.',
+    'Conferir se não aparecem rótulos técnicos de nomes internos nem descrição provisória.',
     'Conferir se textos em português têm acentos.',
     'Conferir se roadmap está estruturado como array/objeto.',
     'Conferir se roadmap não renderiza objeto bruto.',
@@ -47186,225 +47205,225 @@ if (itTakesTwoGuide) {
 
 const witcher3Guide = sampleGames.find(game => game.slug === 'the-witcher-3-wild-hunt');
 if (witcher3Guide) {
-  const witcher3Roadmap = [
+  const witcher3AccentRoadmap = [
     {
-      title: 'Comece em Marcha da Morte e nao reduza a dificuldade',
-      focus: 'Dificuldade obrigatoria',
-      objective: 'Garantir os trofeus de dificuldade em uma unica campanha sem precisar rejogar a historia.',
+      title: 'Comece em Marcha da Morte e não reduza a dificuldade',
+      focus: 'Dificuldade obrigatória',
+      objective: 'Garantir os troféus de dificuldade em uma única campanha sem precisar rejogar a história.',
       actions: [
         'Inicie um novo jogo em Death March/Marcha da Morte.',
-        'Nao reduza a dificuldade ate terminar a historia principal.',
-        'Use Quen, oleos, bombas, pocoes, sinais e equipamentos de bruxo para compensar a dificuldade.',
-        'Faca saves manuais frequentes, especialmente antes de lutas dificeis e escolhas importantes.',
-        'Jogue com paciencia no inicio, pois a dificuldade fica mais administravel depois que Geralt evolui.'
+        'Não reduza a dificuldade até terminar a história principal.',
+        'Use Quen, óleos, bombas, poções, sinais e equipamentos de bruxo para compensar a dificuldade.',
+        'Faça saves manuais frequentes, especialmente antes de lutas difíceis e escolhas importantes.',
+        'Jogue com paciência no início, pois a dificuldade fica mais administrável depois que Geralt evolui.'
       ],
-      warning: 'Se reduzir a dificuldade antes de terminar a historia, Walked the Path pode ser perdido e sera necessario repetir a campanha na dificuldade correta.',
-      result: 'A base da platina fica segura para liberar Passed the Trial, Ran the Gauntlet e Walked the Path ao concluir a historia.'
+      warning: 'Se reduzir a dificuldade antes de terminar a história, Walked the Path pode ser perdido e será necessário repetir a campanha na dificuldade correta.',
+      result: 'A base da platina fica segura para liberar Passed the Trial, Ran the Gauntlet e Walked the Path ao concluir a história.'
     },
     {
-      title: 'Controle os perdiveis antes de Isle of Mists',
-      focus: 'Perdiveis de historia',
-      objective: 'Resolver questlines e decisoes que bloqueiam trofeus importantes antes do ponto de corte da campanha.',
+      title: 'Controle os perdíveis antes de Isle of Mists',
+      focus: 'Perdíveis de história',
+      objective: 'Resolver questlines e decisões que bloqueiam troféus importantes antes do ponto de corte da campanha.',
       actions: [
         'Crie um save manual antes de Isle of Mists.',
         'Complete a questline de Keira Metz e envie Keira para Kaer Morhen.',
-        'Complete as quests de Triss em Novigrad e garanta sua participacao em Kaer Morhen.',
+        'Complete as quests de Triss em Novigrad e garanta sua participação em Kaer Morhen.',
         'Complete a questline do governante de Skellige e ajude Cerys ou Hjalmar.',
-        'Complete as quests necessarias para Assassin of Kings e Reason of State.',
-        'Nao avance para Isle of Mists sem revisar Full Crew e Assassin of Kings.'
+        'Complete as quests necessárias para Assassin of Kings e Reason of State.',
+        'Não avance para Isle of Mists sem revisar Full Crew e Assassin of Kings.'
       ],
-      warning: 'Isle of Mists e um ponto de corte critico. Avancar sem preparar aliados e questlines pode bloquear Full Crew e Assassin of Kings.',
-      result: 'Os maiores riscos de historia ficam controlados antes da reta final.'
+      warning: 'Isle of Mists é um ponto de corte crítico. Avançar sem preparar aliados e questlines pode bloquear Full Crew e Assassin of Kings.',
+      result: 'Os maiores riscos de história ficam controlados antes da reta final.'
     },
     {
-      title: 'Colete cartas de Gwent desde o inicio',
+      title: 'Colete cartas de Gwent desde o início',
       focus: 'Gwent e cartas',
-      objective: 'Evitar perder cartas unicas e preparar o deck para Card Collector e Gwent Master.',
+      objective: 'Evitar perder cartas únicas e preparar o deck para Card Collector e Gwent Master.',
       actions: [
-        'Compre cartas de todos os vendedores, estalajadeiros e comerciantes disponiveis.',
-        'Jogue Gwent contra NPCs unicos sempre que possivel.',
+        'Compre cartas de todos os vendedores, estalajadeiros e comerciantes disponíveis.',
+        'Jogue Gwent contra NPCs únicos sempre que possível.',
         'Acompanhe cartas ligadas a quests, torneios e personagens que podem desaparecer.',
         'Monte um deck forte antes de iniciar High Stakes no Passiflora.',
         'Crie saves manuais antes de cada partida importante do torneio.'
       ],
-      warning: 'Card Collector e Gwent Master sao perdiveis. Perder cartas unicas ou falhar High Stakes sem save anterior pode bloquear a platina.',
+      warning: 'Card Collector e Gwent Master são perdíveis. Perder cartas únicas ou falhar High Stakes sem save anterior pode bloquear a platina.',
       result: 'O caminho para Card Collector, Gwent Master, Geralt and Friends e All In fica encaminhado.'
     },
     {
-      title: 'Finalize historia, aliados e decisoes politicas',
+      title: 'Finalize história, aliados e decisões políticas',
       focus: 'Campanha e questlines',
-      objective: 'Concluir a historia principal e liberar os trofeus ligados a personagens, aliados e decisoes.',
+      objective: 'Concluir a história principal e liberar os troféus ligados a personagens, aliados e decisões.',
       actions: [
-        'Complete os trofeus automaticos de historia ate The King is Dead.',
-        'Traga todos os aliados possiveis para Kaer Morhen para Full Crew.',
+        'Complete os troféus automáticos de história até The King is Dead.',
+        'Traga todos os aliados possíveis para Kaer Morhen para Full Crew.',
         'Complete a trama de Keira Metz para Friends With Benefits.',
         'Complete a trama do governante de Skellige para Kingmaker.',
         'Participe do assassinato de Radovid para Assassin of Kings.',
         'Termine a campanha mantendo Marcha da Morte ativa.'
       ],
-      warning: 'Alguns trofeus dependem de cadeias de quests longas e escolhas especificas. Use saves manuais antes de decisoes importantes.',
-      result: 'A campanha e os principais trofeus de historia, dificuldade e aliados ficam concluidos.'
+      warning: 'Alguns troféus dependem de cadeias de quests longas e escolhas específicas. Use saves manuais antes de decisões importantes.',
+      result: 'A campanha e os principais troféus de história, dificuldade e aliados ficam concluídos.'
     },
     {
       title: 'Conclua contratos, lutas e corridas',
-      focus: 'Contratos e competicoes',
-      objective: 'Resolver os trofeus ligados a contratos de bruxo, lutas, corridas e desafios especificos.',
+      focus: 'Contratos e competições',
+      objective: 'Resolver os troféus ligados a contratos de bruxo, lutas, corridas e desafios específicos.',
       actions: [
         'Complete todos os contratos de bruxo para Geralt: The Professional.',
-        'Planeje Even Odds em dois contratos adequados, sem usar sinais, pocoes, mutagenicos, oleos ou bombas no combate final.',
+        'Planeje Even Odds em dois contratos adequados, sem usar sinais, poções, mutagênicos, óleos ou bombas no combate final.',
         'Complete todas as lutas corpo a corpo para Brawl Master.',
-        'Venca todas as corridas de cavalo para Fast and Furious.',
-        'Resolva contratos especificos como Shrieker, Fearless Vampire Slayer, Woodland Spirit, Fiend or Foe?, Ashes to Ashes e The Doppler Effect.',
-        'Faca saves antes de contratos e competicoes com risco de falha.'
+        'Vença todas as corridas de cavalo para Fast and Furious.',
+        'Resolva contratos específicos como Shrieker, Fearless Vampire Slayer, Woodland Spirit, Fiend or Foe?, Ashes to Ashes e The Doppler Effect.',
+        'Faça saves antes de contratos e competições com risco de falha.'
       ],
-      warning: 'Even Odds, Brawl Master, Fast and Furious, Fist of the South Star e Woodland Spirit podem ser perdidos dependendo da ordem, falhas ou decisoes. Trate esses trofeus como checklist prioritario.',
-      result: 'Os trofeus de contratos, competicoes e riscos secundarios ficam resolvidos.'
+      warning: 'Even Odds, Brawl Master, Fast and Furious, Fist of the South Star e Woodland Spirit podem ser perdidos dependendo da ordem, falhas ou decisões. Trate esses troféus como checklist prioritário.',
+      result: 'Os troféus de contratos, competições e riscos secundários ficam resolvidos.'
     },
     {
-      title: 'Faca os trofeus diversos de combate',
+      title: 'Faça os troféus diversos de combate',
       focus: 'Combate e misc',
-      objective: 'Limpar trofeus especificos de combate, sinais, bombas, besta, mutagenicos e acoes pontuais.',
+      objective: 'Limpar troféus específicos de combate, sinais, bombas, besta, mutagênicos e ações pontuais.',
       actions: [
-        'Faca Humpty Dumpty com Aard em inimigos proximos a quedas.',
-        'Faca The Enemy of My Enemy usando Axii para forcar inimigos a matar outros.',
-        'Faca Overkill aplicando sangramento, veneno e queimadura ao mesmo tempo.',
-        'Faca Master Marksman com tiros na cabeca usando a besta.',
-        'Faca What Was That?, Triple Threat, Butcher of Blaviken e Can\'t Touch This! em locais controlados.',
+        'Faça Humpty Dumpty com Aard em inimigos próximos a quedas.',
+        'Faça The Enemy of My Enemy usando Axii para forçar inimigos a matar outros.',
+        'Faça Overkill aplicando sangramento, veneno e queimadura ao mesmo tempo.',
+        'Faça Master Marksman com tiros na cabeça usando a besta.',
+        "Faça What Was That?, Triple Threat, Butcher of Blaviken e Can't Touch This! em locais controlados.",
         'Complete Mutant, Dendrologist, Armed and Dangerous e Power Overwhelming quando tiver recursos suficientes.'
       ],
-      warning: 'Alguns trofeus misc sao chatos por rastreamento ou execucao. Use saves e locais de farm conhecidos para evitar retrabalho.',
-      result: 'A maior parte do cleanup de combate e progressao fica concluida.'
+      warning: 'Alguns troféus misc são chatos por rastreamento ou execução. Use saves e locais de farm conhecidos para evitar retrabalho.',
+      result: 'A maior parte do cleanup de combate e progressão fica concluída.'
     },
     {
-      title: 'Finalize exploracao, formulas e colecoes da lista base',
+      title: 'Finalize exploração, fórmulas e coleções da lista base',
       focus: 'Cleanup final',
       objective: 'Concluir os requisitos restantes da lista base sem misturar DLCs.',
       actions: [
-        'Descubra 100 pontos de viagem rapida para Globetrotter.',
+        'Descubra 100 pontos de viagem rápida para Globetrotter.',
         'Destrua ninhos de monstros para Pest Control e Fire in the Hole.',
-        'Aprenda formulas de pocoes para Let\'s Cook!.',
-        'Colete formulas de bombas para Bombardier.',
+        "Aprenda fórmulas de poções para Let's Cook!.",
+        'Colete fórmulas de bombas para Bombardier.',
         'Leia livros/documentos para Bookworm.',
         'Equipe um conjunto completo de equipamentos de bruxo para Armed and Dangerous.',
-        'Confirme se todos os 53 trofeus da lista base foram concluidos.'
+        'Confirme se todos os 53 troféus da lista base foram concluídos.'
       ],
-      warning: 'Nao inclua Hearts of Stone ou Blood and Wine como requisitos da platina base.',
-      result: 'Com todos os 53 trofeus base concluidos, The Limits of the Possible sera desbloqueado.'
+      warning: 'Não inclua Hearts of Stone ou Blood and Wine como requisitos da platina base.',
+      result: 'Com todos os 53 troféus base concluídos, The Limits of the Possible será desbloqueado.'
     }
   ];
 
-  const witcher3AttentionPoints = [
-    { title: 'Marcha da Morte', detail: 'Comece em Marcha da Morte e nao reduza a dificuldade ate concluir a historia principal. Isso garante Walked the Path e os trofeus de dificuldade inferiores.', tags: ['Dificuldade', 'Marcha da Morte'] },
-    { title: 'Isle of Mists', detail: 'Faca um save manual antes de Isle of Mists. Esse e um ponto de corte importante para Full Crew, Assassin of Kings e varias questlines.', tags: ['Perdivel', 'Ponto de corte'] },
-    { title: 'Full Crew', detail: 'Envie Keira para Kaer Morhen, resolva Triss, Roche/Ves, Zoltan, Ermion e o governante de Skellige antes da batalha.', tags: ['Perdivel', 'Aliados'] },
-    { title: 'Assassin of Kings', detail: 'Siga a cadeia de quests de Radovid e Reason of State. Perder etapas antes da reta final pode bloquear Regicida.', tags: ['Perdivel', 'Questline'] },
-    { title: 'Gwent', detail: 'Compre cartas, jogue com NPCs unicos e acompanhe as cartas de quests. Card Collector e um dos maiores riscos da platina.', tags: ['Gwent', 'Cartas'] },
+  const witcher3AccentAttentionPoints = [
+    { title: 'Marcha da Morte', detail: 'Comece em Marcha da Morte e não reduza a dificuldade até concluir a história principal. Isso protege Walked the Path e os troféus de dificuldade inferiores.', tags: ['Dificuldade', 'Marcha da Morte'] },
+    { title: 'Isle of Mists', detail: 'Faça um save manual antes de Isle of Mists. Esse é um ponto de corte importante para Full Crew, Assassin of Kings e várias questlines.', tags: ['Perdível', 'Ponto de corte'] },
+    { title: 'Full Crew', detail: 'Envie Keira para Kaer Morhen, resolva Triss, Roche/Ves, Zoltan, Ermion e Hjalmar antes da batalha. Não trate Full Crew como coop; é troféu de aliados.', tags: ['Perdível', 'Aliados', 'Kaer Morhen'] },
+    { title: 'Assassin of Kings', detail: 'Siga a cadeia de quests de Radovid e Reason of State. Perder etapas antes da reta final pode bloquear Regicida.', tags: ['Perdível', 'Questline'] },
+    { title: 'Gwent/Card Collector', detail: 'Compre cartas, jogue contra NPCs únicos e acompanhe cartas de quests e torneios. Card Collector é um dos maiores riscos da platina.', tags: ['Gwent', 'Cartas'] },
     { title: 'High Stakes', detail: 'Crie saves antes e entre as partidas do torneio High Stakes para Gwent Master.', tags: ['Gwent', 'Torneio'] },
-    { title: 'Even Odds', detail: 'Escolha contratos adequados e nao use sinais, pocoes, mutagenicos, oleos ou bombas no combate final.', tags: ['Perdivel', 'Contrato'] },
-    { title: 'Woodland Spirit', detail: 'Contrato com decisao especifica. Faca save antes e siga a rota correta para o trofeu.', tags: ['Perdivel', 'Contrato'] },
-    { title: 'DLC nao necessaria', detail: 'A platina base usa 53 trofeus. Nao misture Hearts of Stone e Blood and Wine com os requisitos de The Limits of the Possible.', tags: ['Base game', 'Sem DLC'] },
-    { title: 'Saves manuais', detail: 'Use saves manuais antes de decisoes, torneios, contratos e finais de questlines. Isso reduz o risco de perder dezenas de horas.', tags: ['Checklist', 'Saves'] }
+    { title: 'Even Odds', detail: 'Escolha contratos adequados e não use sinais, poções, mutagênicos, óleos ou bombas no combate final.', tags: ['Perdível', 'Contrato'] },
+    { title: 'Woodland Spirit', detail: 'Contrato com decisão específica. Faça save antes e siga a rota correta para o troféu.', tags: ['Perdível', 'Contrato'] },
+    { title: 'DLC não necessária', detail: 'A platina base usa 53 troféus. Não misture Hearts of Stone e Blood and Wine com os requisitos de The Limits of the Possible.', tags: ['Base game', 'Sem DLC'] },
+    { title: 'Saves manuais', detail: 'Use saves manuais antes de decisões, torneios, contratos e finais de questlines. Isso reduz o risco de perder dezenas de horas.', tags: ['Checklist', 'Saves'] }
   ];
 
-  const witcher3Faq = [
-    { question: 'The Witcher 3 tem trofeus perdiveis?', answer: 'Sim. A platina base tem varios perdiveis importantes, especialmente Card Collector, Gwent Master, Full Crew, Assassin of Kings, Even Odds, Brawl Master, Fast and Furious, Fist of the South Star e Woodland Spirit.' },
-    { question: 'Precisa jogar em Marcha da Morte?', answer: 'Sim, para Walked the Path. A rota mais segura e comecar a campanha em Marcha da Morte e nao reduzir a dificuldade ate terminar a historia principal.' },
-    { question: 'Os trofeus de dificuldade empilham?', answer: 'Sim. Concluir a historia em Marcha da Morte tambem libera os trofeus das dificuldades inferiores.' },
-    { question: 'Precisa jogar online?', answer: 'Nao. A platina base e totalmente offline.' },
-    { question: 'Precisa de cooperacao?', answer: 'Nao. The Witcher 3 e uma platina single-player.' },
-    { question: 'Precisa de DLC para a platina?', answer: 'Nao. A platina base exige apenas os 53 trofeus principais. Hearts of Stone e Blood and Wine nao sao necessarios.' },
-    { question: 'Qual e o ponto de corte mais importante?', answer: 'Isle of Mists. Faca um save manual antes de avancar e revise Full Crew, Assassin of Kings, Triss, Keira, Skellige e Gwent.' },
-    { question: 'Gwent e obrigatorio?', answer: 'Sim. Card Collector e Gwent Master exigem jogar Gwent e acompanhar cartas da versao base.' },
-    { question: 'Quanto tempo leva para platinar?', answer: 'Em media, cerca de 100 a 150 horas, dependendo da experiencia na Marcha da Morte, Gwent, contratos e cleanup.' },
-    { question: 'Qual e o maior cuidado da platina?', answer: 'Manter a dificuldade Marcha da Morte ativa e controlar os perdiveis com saves manuais e checklist desde o comeco.' }
+  const witcher3AccentFaq = [
+    { question: 'The Witcher 3 tem troféus perdíveis?', answer: 'Sim. A platina base tem vários perdíveis importantes, especialmente Card Collector, Gwent Master, Full Crew, Assassin of Kings, Even Odds, Brawl Master, Fast and Furious, Fist of the South Star e Woodland Spirit.' },
+    { question: 'Precisa jogar em Marcha da Morte?', answer: 'Sim, para Walked the Path. A rota mais segura é começar a campanha em Marcha da Morte e não reduzir a dificuldade até terminar a história principal.' },
+    { question: 'Os troféus de dificuldade empilham?', answer: 'Sim. Concluir a história em Marcha da Morte também libera os troféus das dificuldades inferiores.' },
+    { question: 'Precisa jogar online?', answer: 'Não. A platina base é totalmente offline.' },
+    { question: 'Precisa de cooperação?', answer: 'Não. The Witcher 3 é uma platina single-player. Full Crew envolve aliados da história, não coop.' },
+    { question: 'Precisa de DLC para a platina?', answer: 'Não. A platina base exige apenas os 53 troféus principais. Hearts of Stone e Blood and Wine não são necessários.' },
+    { question: 'Qual é o ponto de corte mais importante?', answer: 'Isle of Mists. Faça um save manual antes de avançar e revise Full Crew, Assassin of Kings, Triss, Keira, Skellige e Gwent.' },
+    { question: 'Gwent é obrigatório?', answer: 'Sim. Card Collector e Gwent Master exigem jogar Gwent e acompanhar cartas da versão base.' },
+    { question: 'Quanto tempo leva para platinar?', answer: 'Em média, cerca de 100 a 150 horas, dependendo da experiência na Marcha da Morte, Gwent, contratos e cleanup.' },
+    { question: 'Qual é o maior cuidado da platina?', answer: 'Manter a dificuldade Marcha da Morte ativa e controlar os perdíveis com saves manuais e checklist desde o começo.' }
   ];
 
-  const witcher3Checklist = [
-    'Conferir se o guia tem 53 trofeus da lista base.',
-    'Conferir se The Limits of the Possible e a platina.',
-    'Conferir distribuicao: 1 platina, 2 ouro, 8 prata, 42 bronze.',
+  const witcher3AccentChecklist = [
+    'Conferir se o guia tem 53 troféus da lista base.',
+    'Conferir se The Limits of the Possible é a platina.',
+    'Conferir distribuição: 1 platina, 2 ouro, 8 prata, 42 bronze.',
     'Conferir onlineRequired false.',
     'Conferir coopRequired false.',
     'Conferir dlcRequired false.',
     'Conferir hasMissables true.',
     'Conferir missableCount 9.',
-    'Conferir se DLCs nao foram misturadas.',
-    'Conferir se Walked the Path esta como Dificuldade.',
-    'Conferir se Passed the Trial, Ran the Gauntlet e Walked the Path estao coerentes.',
-    'Conferir se Card Collector esta como Perdivel/Coletavel/Gwent.',
-    'Conferir se Full Crew esta como Perdivel.',
-    'Conferir se Assassin of Kings esta como Perdivel.',
-    'Conferir se Gwent Master esta como Perdivel.',
-    'Conferir se Even Odds esta como Perdivel.',
-    'Conferir se Brawl Master, Fast and Furious, Fist of the South Star e Woodland Spirit estao como Perdiveis.',
-    'Conferir se Friends With Benefits/Kingmaker aparecem como pontos de atencao sem inflar a contagem.',
-    'Conferir se todos os trofeus tem nome oficial em ingles como principal.',
-    'Conferir se todos tem PT-BR abaixo.',
-    'Conferir se descricoes estao em portugues.',
-    'Conferir se nao aparecem rotulos tecnicos de nome original nem descricao provisoria.',
-    'Conferir se roadmap esta estruturado como array/objeto.',
-    'Conferir FAQ, decisao rapida, SEO e pontos de atencao.',
-    'Conferir se pagina individual e catalogo exibem o mesmo status editorial.',
-    'Conferir se flags do topo batem com filtros do catalogo.'
+    'Conferir se DLCs não foram misturadas.',
+    'Conferir se Walked the Path está como Dificuldade.',
+    'Conferir se Passed the Trial, Ran the Gauntlet e Walked the Path estão coerentes.',
+    'Conferir se Card Collector está como Perdível/Coletável/Gwent.',
+    'Conferir se Full Crew está como Perdível, Aliados e Kaer Morhen, não como Coop.',
+    'Conferir se Assassin of Kings está como Perdível.',
+    'Conferir se Gwent Master está como Perdível.',
+    'Conferir se Even Odds está como Perdível.',
+    'Conferir se Brawl Master, Fast and Furious, Fist of the South Star e Woodland Spirit estão como Perdíveis.',
+    'Conferir se Friends With Benefits/Kingmaker aparecem como pontos de atenção sem inflar a contagem.',
+    'Conferir se todos os troféus têm nome oficial em inglês como principal.',
+    'Conferir se todos têm PT-BR abaixo.',
+    'Conferir se descrições estão em português.',
+    'Conferir se não aparecem rótulos técnicos de nome original nem descrição provisória.',
+    'Conferir se roadmap está estruturado como array/objeto.',
+    'Conferir FAQ, decisão rápida, SEO e pontos de atenção.',
+    'Conferir se página individual e catálogo exibem o mesmo status editorial.',
+    'Conferir se flags do topo batem com filtros do catálogo.'
   ];
 
-  const witcher3TrophyRows = [
-    ['tw3_the_limits_of_the_possible', 'The Limits of the Possible', 'O limite das possibilidades', 'Platina', 'Obtenha todos os trofeus.', 'Conclua os outros 52 trofeus da lista base seguindo o roadmap e o checklist de perdiveis.', ['Platina'], false, false],
-    ['tw3_lilac_and_gooseberries', 'Lilac and Gooseberries', 'Lilas e groselha', 'Bronze', 'Encontre Yennefer de Vengerberg.', 'Trofeu de historia inicial. Avance pela campanha principal em White Orchard.', ['Historia'], false, true],
-    ['tw3_a_friend_in_need', 'A Friend in Need', 'Amigo e para essas coisas', 'Bronze', 'Encontre e liberte Dandelion.', 'Trofeu de historia em Novigrad. Revise cartas e quests paralelas antes de avancar demais.', ['Historia'], false, true],
-    ['tw3_necromancer', 'Necromancer', 'Necromante', 'Bronze', 'Ajude Yennefer a extrair informacoes do corpo de Skjall.', 'Trofeu de historia em Skellige.', ['Historia'], false, true],
-    ['tw3_family_counselor', 'Family Counselor', 'Terapeuta da familia', 'Bronze', 'Encontre a esposa e a filha do Barao.', 'Trofeu de progresso da questline do Barao.', ['Historia'], false, true],
-    ['tw3_something_more', 'Something More', 'Algo mais', 'Bronze', 'Encontre Ciri.', 'Trofeu de progresso avancado da historia principal.', ['Historia'], false, true],
-    ['tw3_xenonaut', 'Xenonaut', 'Marionete', 'Bronze', 'Visite Tir na Lia e convença Ge\'els a trair Eredin.', 'Trofeu de historia da reta final.', ['Historia'], false, true],
-    ['tw3_the_king_is_dead', 'The King is Dead', 'O rei esta morto', 'Prata', 'Derrote Eredin.', 'Trofeu de conclusao da historia principal. Mantenha Marcha da Morte ativa ate esse ponto.', ['Historia'], false, true],
-    ['tw3_passed_the_trial', 'Passed the Trial', 'Passou no Teste', 'Bronze', 'Termine o jogo em qualquer dificuldade.', 'Os trofeus de dificuldade empilham. Se concluir em Marcha da Morte, este tambem sera liberado.', ['Dificuldade', 'Historia'], false, false],
-    ['tw3_ran_the_gauntlet', 'Ran the Gauntlet', 'Superou o Desafio', 'Prata', 'Termine o jogo na dificuldade Blood and Broken Bones! ou Death March!.', 'Comece em Marcha da Morte e nao reduza a dificuldade; isso cobre este trofeu e Walked the Path.', ['Dificuldade', 'Historia'], false, false],
-    ['tw3_walked_the_path', 'Walked the Path', 'Seguiu o Caminho', 'Ouro', 'Termine o jogo na dificuldade Death March!.', 'Comece diretamente em Marcha da Morte e nao reduza a dificuldade ate concluir a historia principal. Depois do trofeu, voce pode reduzir para cleanup se quiser.', ['Dificuldade', 'Marcha da Morte'], false, false],
+  const witcher3AccentTrophyRows = [
+    ['tw3_the_limits_of_the_possible', 'The Limits of the Possible', 'O limite das possibilidades', 'Platina', 'Obtenha todos os troféus.', 'Conclua os outros 52 troféus da lista base seguindo o roadmap e o checklist de perdíveis.', ['Platina'], false, false],
+    ['tw3_lilac_and_gooseberries', 'Lilac and Gooseberries', 'Lilás e groselha', 'Bronze', 'Encontre Yennefer de Vengerberg.', 'Troféu de história inicial. Avance pela campanha principal em White Orchard.', ['História'], false, true],
+    ['tw3_a_friend_in_need', 'A Friend in Need', 'Amigo é para essas coisas', 'Bronze', 'Encontre e liberte Dandelion.', 'Troféu de história em Novigrad. Revise cartas e quests paralelas antes de avançar demais.', ['História'], false, true],
+    ['tw3_necromancer', 'Necromancer', 'Necromante', 'Bronze', 'Ajude Yennefer a extrair informações do corpo de Skjall.', 'Troféu de história em Skellige.', ['História'], false, true],
+    ['tw3_family_counselor', 'Family Counselor', 'Terapeuta da família', 'Bronze', 'Encontre a esposa e a filha do Barão.', 'Troféu de progresso da questline do Barão.', ['História'], false, true],
+    ['tw3_something_more', 'Something More', 'Algo mais', 'Bronze', 'Encontre Ciri.', 'Troféu de progresso avançado da história principal.', ['História'], false, true],
+    ['tw3_xenonaut', 'Xenonaut', 'Marionete', 'Bronze', "Visite Tir na Lia e convença Ge'els a trair Eredin.", 'Troféu de história da reta final.', ['História'], false, true],
+    ['tw3_the_king_is_dead', 'The King is Dead', 'O rei está morto', 'Prata', 'Derrote Eredin.', 'Troféu de conclusão da história principal. Mantenha Marcha da Morte ativa até esse ponto.', ['História'], false, true],
+    ['tw3_passed_the_trial', 'Passed the Trial', 'Passou no Teste', 'Bronze', 'Termine o jogo em qualquer dificuldade.', 'Os troféus de dificuldade empilham. Se concluir em Marcha da Morte, este também será liberado.', ['Dificuldade', 'História'], false, false],
+    ['tw3_ran_the_gauntlet', 'Ran the Gauntlet', 'Superou o Desafio', 'Prata', 'Termine o jogo na dificuldade Blood and Broken Bones! ou Death March!.', 'Comece em Marcha da Morte e não reduza a dificuldade; isso cobre este troféu e Walked the Path.', ['Dificuldade', 'História'], false, false],
+    ['tw3_walked_the_path', 'Walked the Path', 'Seguiu o Caminho', 'Ouro', 'Termine o jogo na dificuldade Death March!.', 'Comece diretamente em Marcha da Morte e não reduza a dificuldade até concluir a história principal. Depois do troféu, você pode reduzir para cleanup se quiser.', ['Dificuldade', 'Marcha da Morte'], false, false],
     ['tw3_geralt_the_professional', 'Geralt: The Professional', 'Geralt: bruxo profissional', 'Bronze', 'Complete todos os contratos de bruxo.', 'Use checklist de contratos da lista base. Planeje Even Odds e Woodland Spirit antes de limpar todos.', ['Contrato', 'Checklist', 'Grind'], false, false],
-    ['tw3_kingmaker', 'Kingmaker', 'Realeza', 'Bronze', 'Complete a trama sobre a escolha do governante de Skellige.', 'Complete Possession, The Lord of Undvik, King\'s Gambit e Coronation. Isso tambem ajuda a proteger Full Crew.', ['Questline', 'Skellige', 'Atencao'], false, true],
-    ['tw3_assassin_of_kings', 'Assassin of Kings', 'Regicida', 'Bronze', 'Participe do assassinato do rei Radovid.', 'Perdivel. Acompanhe Redania\'s Most Wanted, An Eye for an Eye, A Matter of Life and Death, Now or Never, A Deadly Plot, Blindingly Obvious e Reason of State.', ['Perdivel', 'Questline', 'Politica'], true, true],
-    ['tw3_friends_with_benefits', 'Friends With Benefits', 'Amizade colorida', 'Bronze', 'Complete a trama envolvendo Keira Metz.', 'Complete a questline de Keira. Para Full Crew, escolha o desfecho que permite envia-la para Kaer Morhen.', ['Questline', 'Aliados', 'Atencao'], false, true],
-    ['tw3_full_crew', 'Full Crew', 'Rapaziada', 'Bronze', 'Traga todos os aliados possiveis para Kaer Morhen para a batalha contra a Hunt.', 'Perdivel. Antes de Isle of Mists, confirme Keira, Triss, Roche, Ves, Zoltan, Ermion, Hjalmar e as questlines necessarias.', ['Perdivel', 'Aliados', 'Kaer Morhen'], true, true],
-    ['tw3_dendrologist', 'Dendrologist', 'Dendrologo', 'Bronze', 'Adquira todas as habilidades de uma arvore.', 'Invista pontos suficientes para completar uma unica arvore de habilidades.', ['Progressao', 'Habilidades', 'Cleanup'], false, false],
+    ['tw3_kingmaker', 'Kingmaker', 'Realeza', 'Bronze', 'Complete a trama sobre a escolha do governante de Skellige.', "Complete Possession, The Lord of Undvik, King's Gambit e Coronation. Isso também ajuda a proteger Full Crew.", ['Questline', 'Skellige', 'Atenção'], false, true],
+    ['tw3_assassin_of_kings', 'Assassin of Kings', 'Regicida', 'Bronze', 'Participe do assassinato do rei Radovid.', "Perdível. Acompanhe Redania's Most Wanted, An Eye for an Eye, A Matter of Life and Death, Now or Never, A Deadly Plot, Blindingly Obvious e Reason of State.", ['Perdível', 'Questline', 'Política'], true, true],
+    ['tw3_friends_with_benefits', 'Friends With Benefits', 'Amizade colorida', 'Bronze', 'Complete a trama envolvendo Keira Metz.', 'Complete a questline de Keira. Para Full Crew, escolha o desfecho que permite enviá-la para Kaer Morhen.', ['Questline', 'Aliados', 'Atenção'], false, true],
+    ['tw3_full_crew', 'Full Crew', 'Rapaziada', 'Bronze', 'Traga todos os aliados possíveis para Kaer Morhen para a batalha contra a Hunt.', 'Perdível. Antes de Isle of Mists, confirme Keira, Triss, Roche, Ves, Zoltan, Ermion, Hjalmar e as questlines necessárias. É troféu de aliados, não coop.', ['Perdível', 'Aliados', 'Kaer Morhen'], true, true],
+    ['tw3_dendrologist', 'Dendrologist', 'Dendrólogo', 'Bronze', 'Adquira todas as habilidades de uma árvore.', 'Invista pontos suficientes para completar uma única árvore de habilidades.', ['Progressão', 'Habilidades', 'Cleanup'], false, false],
     ['tw3_the_enemy_of_my_enemy', 'The Enemy of My Enemy', 'O inimigo do meu inimigo', 'Bronze', 'Use o sinal Axii para fazer um oponente matar outro. Repita 20 vezes.', 'Invista em Puppet/Axii, controle inimigos em grupos e deixe-os matar aliados vinte vezes.', ['Combate', 'Sinais', 'Cleanup'], false, false],
-    ['tw3_humpty_dumpty', 'Humpty Dumpty', 'Sai de baixo', 'Bronze', 'Mate 10 oponentes derrubando-os de lugares altos com o sinal Aard.', 'Use Aard perto de beiradas, pontes, muralhas e plataformas altas ate acumular dez quedas fatais.', ['Combate', 'Sinais', 'Acao especifica', 'Cleanup'], false, false],
-    ['tw3_environmentally_unfriendly', 'Environmentally Unfriendly', 'Complo contra a natureza', 'Bronze', 'Mate 50 oponentes usando o ambiente, como gas de pantano, insetos ou objetos.', 'Use gases, colmeias, barris e objetos ambientais em grupos de inimigos sempre que possivel.', ['Combate', 'Ambiente', 'Cleanup'], false, false],
-    ['tw3_kaer_morhen_trained', 'Kaer Morhen Trained', 'Treinado em Kaer Morhen', 'Bronze', 'Execute 10 contra-ataques efetivos seguidos sem ser atingido nem aparar.', 'Treine contra inimigos humanos fracos e conte apenas contra-ataques efetivos, sem tomar dano.', ['Combate', 'Acao especifica', 'Cleanup'], false, false],
-    ['tw3_cant_touch_this', 'Can\'t Touch This!', 'Elegancia', 'Bronze', 'Mate 5 inimigos em uma luta sem sofrer dano e sem usar o sinal Quen.', 'Use inimigos fracos, controle de grupo e esquiva. Nao use Quen durante a luta.', ['Combate', 'Acao especifica', 'Cleanup'], false, false],
-    ['tw3_that_is_the_evilest_thing', 'That Is the Evilest Thing...', 'Maldade pouca e bobagem...', 'Bronze', 'Incendeie o gas produzido por uma bomba Dragon\'s Dream usando um oponente em chamas. Repita 10 vezes.', 'Use Dragon\'s Dream e uma fonte de fogo em inimigos resistentes, repetindo o combo dez vezes.', ['Combate', 'Bombas', 'Cleanup'], false, false],
-    ['tw3_mutant', 'Mutant', 'Mutante', 'Bronze', 'Preencha todos os espacos de mutagenicos.', 'Desbloqueie os quatro slots de mutagenicos e equipe mutagenicos em todos eles.', ['Mutagenicos', 'Progressao', 'Cleanup'], false, false],
-    ['tw3_butcher_of_blaviken', 'Butcher of Blaviken', 'O carniceiro de Blaviken', 'Prata', 'Mate pelo menos 5 oponentes em menos de 10 segundos.', 'Use grupos fracos, Igni, bombas ou inimigos de nivel baixo para matar cinco rapidamente.', ['Combate', 'Acao especifica', 'Cleanup'], false, false],
-    ['tw3_triple_threat', 'Triple Threat', 'Ameaca tripla', 'Bronze', 'Mate 3 oponentes em uma luta usando 3 metodos diferentes.', 'Em uma mesma luta, mate inimigos com tres metodos diferentes, como espada, bomba e sinal.', ['Combate', 'Acao especifica', 'Cleanup'], false, false],
-    ['tw3_brawler', 'Brawler', 'Encrenqueiro', 'Prata', 'Derrote Olaf, o campeao de combate desarmado de Skellige.', 'Avance a cadeia de lutas de Skellige ate Olaf. Faz parte do caminho para Brawl Master.', ['Lutas', 'Checklist'], false, false],
-    ['tw3_overkill', 'Overkill', 'Exagero', 'Prata', 'Faca um oponente sofrer sangramento, envenenamento e queimadura simultaneamente. Repita 10 vezes.', 'Combine uma fonte de sangramento, uma de veneno e fogo. E um trofeu chato de execucao e repeticao.', ['Combate', 'Grind', 'Cleanup'], false, false],
-    ['tw3_master_marksman', 'Master Marksman', 'Atirador de elite', 'Bronze', 'Mate 50 oponentes humanos ou nao humanos acertando-os na cabeca com a besta.', 'Enfraqueca inimigos humanos/nonhumanos e finalize com tiro na cabeca de besta. E um dos trofeus mais demorados de combate.', ['Combate', 'Besta', 'Grind', 'Cleanup'], false, false],
-    ['tw3_what_was_that', 'What Was That?', 'Pode isso, Arnaldo?', 'Bronze', 'Ataque, contra-ataque, use um sinal e arremesse uma bomba em menos de 4 segundos.', 'Prepare uma bomba no atalho e execute ataque, contra-ataque, sinal e bomba rapidamente contra inimigo humano.', ['Combate', 'Acao especifica', 'Cleanup'], false, false],
-    ['tw3_even_odds', 'Even Odds', 'O que e justo, e justo', 'Prata', 'Mate 2 monstros de contratos sem usar sinais, pocoes, mutagenicos, oleos ou bombas.', 'Perdivel por contratos limitados. Crie save antes do contrato e use apenas espada, esquiva e preparo defensivo que nao quebre a regra no combate final.', ['Perdivel', 'Contrato', 'Acao especifica'], true, false],
-    ['tw3_globetrotter', 'Globetrotter', 'Andarilho', 'Bronze', 'Descubra 100 pontos de viagem rapida.', 'Interaja com placas de viagem rapida em Velen/Novigrad, Skellige, Kaer Morhen e areas de historia.', ['Exploracao', 'Viagem rapida', 'Coletavel', 'Grind', 'Cleanup'], false, false],
-    ['tw3_pest_control', 'Pest Control', 'Dedetizacao', 'Prata', 'Destrua todos os ninhos de monstros em Velen/Novigrad ou em Skellige.', 'Skellige costuma ser uma rota eficiente. Leve bombas destrutivas e limpe todos os ninhos da regiao escolhida.', ['Ninhos de monstros', 'Exploracao', 'Grind', 'Cleanup'], false, false],
-    ['tw3_card_collector', 'Card Collector', 'Colecionador de cartas', 'Bronze', 'Adquira todas as cartas de Gwent disponiveis na versao base do jogo.', 'Perdivel. Compre cartas, venca NPCs unicos, acompanhe cartas de quests e torneios e nao misture cartas de DLC com a platina base.', ['Perdivel', 'Gwent', 'Coletavel', 'Cartas', 'Grind'], true, false],
-    ['tw3_gwent_master', 'Gwent Master', 'Mestre do gwent', 'Bronze', 'Derrote Tybalt e venca o torneio de Gwent no Passiflora.', 'Perdivel. Entre em High Stakes com deck forte e crie saves antes e entre as partidas.', ['Perdivel', 'Gwent', 'Torneio'], true, false],
-    ['tw3_lets_cook', 'Let\'s Cook!', 'Vamos Cozinhar!', 'Bronze', 'Aprenda 12 formulas de pocoes.', 'Compre ou encontre formulas de pocoes com alquimistas e herbalistas durante a exploracao.', ['Formulas', 'Coletavel', 'Cleanup'], false, false],
-    ['tw3_bombardier', 'Bombardier', 'Carga explosiva', 'Bronze', 'Colete as formulas de 6 tipos diferentes de bombas.', 'Compre ou encontre seis formulas de bombas diferentes; herbalistas e alquimistas ajudam bastante.', ['Bombas', 'Formulas', 'Coletavel', 'Cleanup'], false, false],
-    ['tw3_bookworm', 'Bookworm', 'Rato de biblioteca', 'Bronze', 'Leia 30 livros, diarios ou outros documentos.', 'Abra livros, cartas, notas e documentos pelo inventario conforme os encontrar.', ['Coletavel', 'Documentos', 'Cleanup'], false, false],
-    ['tw3_armed_and_dangerous', 'Armed and Dangerous', 'Armado e perigoso', 'Prata', 'Encontre e equipe todos os elementos de um conjunto de equipamentos de bruxo.', 'Escolha uma escola, encontre os diagramas, fabrique todas as pecas e equipe o conjunto completo.', ['Equipamento', 'Coletavel', 'Cleanup'], false, false],
-    ['tw3_power_overwhelming', 'Power Overwhelming', 'Poder para dar e vender', 'Bronze', 'Tenha todos os bonus possiveis de Locais de Poder ativos ao mesmo tempo.', 'Ative todos os Locais de Poder de White Orchard em sequencia para facilitar o controle dos buffs.', ['Exploracao', 'Locais de Poder', 'Cleanup'], false, false],
-    ['tw3_brawl_master', 'Brawl Master', 'Encrenqueiro de primeira', 'Bronze', 'Complete todas as quests de luta corpo a corpo em Velen, Skellige e Novigrad.', 'Perdivel tecnico. Complete todos os circuitos de lutas antes de avancar demais a historia.', ['Perdivel', 'Lutas', 'Checklist'], true, false],
-    ['tw3_fast_and_furious', 'Fast and Furious', 'A todo gas', 'Bronze', 'Venca todas as corridas de cavalo do jogo.', 'Perdivel tecnico. Venca as corridas de Velen, Novigrad e Skellige conforme elas aparecem.', ['Perdivel', 'Corridas', 'Checklist'], true, false],
-    ['tw3_munchkin', 'Munchkin', 'Que gracinha!', 'Ouro', 'Alcance o nivel 35 de desenvolvimento do personagem.', 'Complete historia, contratos e side quests suficientes para chegar ao nivel 35 antes ou durante o cleanup final.', ['Progressao', 'Grind'], false, false],
+    ['tw3_humpty_dumpty', 'Humpty Dumpty', 'Sai de baixo', 'Bronze', 'Mate 10 oponentes derrubando-os de lugares altos com o sinal Aard.', 'Use Aard perto de beiradas, pontes, muralhas e plataformas altas até acumular dez quedas fatais.', ['Combate', 'Sinais', 'Ação específica', 'Cleanup'], false, false],
+    ['tw3_environmentally_unfriendly', 'Environmentally Unfriendly', 'Complô contra a natureza', 'Bronze', 'Mate 50 oponentes usando o ambiente, como gás de pântano, insetos ou objetos.', 'Use gases, colmeias, barris e objetos ambientais em grupos de inimigos sempre que possível.', ['Combate', 'Ambiente', 'Cleanup'], false, false],
+    ['tw3_kaer_morhen_trained', 'Kaer Morhen Trained', 'Treinado em Kaer Morhen', 'Bronze', 'Execute 10 contra-ataques efetivos seguidos sem ser atingido nem aparar.', 'Treine contra inimigos humanos fracos e conte apenas contra-ataques efetivos, sem tomar dano.', ['Combate', 'Ação específica', 'Cleanup'], false, false],
+    ['tw3_cant_touch_this', "Can't Touch This!", 'Elegância', 'Bronze', 'Mate 5 inimigos em uma luta sem sofrer dano e sem usar o sinal Quen.', 'Use inimigos fracos, controle de grupo e esquiva. Não use Quen durante a luta.', ['Combate', 'Ação específica', 'Cleanup'], false, false],
+    ['tw3_that_is_the_evilest_thing', 'That Is the Evilest Thing...', 'Maldade pouca é bobagem...', 'Bronze', "Incendeie o gás produzido por uma bomba Dragon's Dream usando um oponente em chamas. Repita 10 vezes.", "Use Dragon's Dream e uma fonte de fogo em inimigos resistentes, repetindo o combo dez vezes.", ['Combate', 'Bombas', 'Cleanup'], false, false],
+    ['tw3_mutant', 'Mutant', 'Mutante', 'Bronze', 'Preencha todos os espaços de mutagênicos.', 'Desbloqueie os quatro slots de mutagênicos e equipe mutagênicos em todos eles.', ['Mutagênicos', 'Progressão', 'Cleanup'], false, false],
+    ['tw3_butcher_of_blaviken', 'Butcher of Blaviken', 'O carniceiro de Blaviken', 'Prata', 'Mate pelo menos 5 oponentes em menos de 10 segundos.', 'Use grupos fracos, Igni, bombas ou inimigos de nível baixo para matar cinco rapidamente.', ['Combate', 'Ação específica', 'Cleanup'], false, false],
+    ['tw3_triple_threat', 'Triple Threat', 'Ameaça tripla', 'Bronze', 'Mate 3 oponentes em uma luta usando 3 métodos diferentes.', 'Em uma mesma luta, mate inimigos com três métodos diferentes, como espada, bomba e sinal.', ['Combate', 'Ação específica', 'Cleanup'], false, false],
+    ['tw3_brawler', 'Brawler', 'Encrenqueiro', 'Prata', 'Derrote Olaf, o campeão de combate desarmado de Skellige.', 'Avance a cadeia de lutas de Skellige até Olaf. Faz parte do caminho para Brawl Master.', ['Lutas', 'Checklist'], false, false],
+    ['tw3_overkill', 'Overkill', 'Exagero', 'Prata', 'Faça um oponente sofrer sangramento, envenenamento e queimadura simultaneamente. Repita 10 vezes.', 'Combine uma fonte de sangramento, uma de veneno e fogo. É um troféu chato de execução e repetição.', ['Combate', 'Grind', 'Cleanup'], false, false],
+    ['tw3_master_marksman', 'Master Marksman', 'Atirador de elite', 'Bronze', 'Mate 50 oponentes humanos ou não humanos acertando-os na cabeça com a besta.', 'Enfraqueça inimigos humanos/nonhumanos e finalize com tiro na cabeça de besta. É um dos troféus mais demorados de combate.', ['Combate', 'Besta', 'Grind', 'Cleanup'], false, false],
+    ['tw3_what_was_that', 'What Was That?', 'Pode isso, Arnaldo?', 'Bronze', 'Ataque, contra-ataque, use um sinal e arremesse uma bomba em menos de 4 segundos.', 'Prepare uma bomba no atalho e execute ataque, contra-ataque, sinal e bomba rapidamente contra inimigo humano.', ['Combate', 'Ação específica', 'Cleanup'], false, false],
+    ['tw3_even_odds', 'Even Odds', 'O que é justo, é justo', 'Prata', 'Mate 2 monstros de contratos sem usar sinais, poções, mutagênicos, óleos ou bombas.', 'Perdível por contratos limitados. Crie save antes do contrato e use apenas espada, esquiva e preparo defensivo que não quebre a regra no combate final.', ['Perdível', 'Contrato', 'Ação específica'], true, false],
+    ['tw3_globetrotter', 'Globetrotter', 'Andarilho', 'Bronze', 'Descubra 100 pontos de viagem rápida.', 'Interaja com placas de viagem rápida em Velen/Novigrad, Skellige, Kaer Morhen e áreas de história.', ['Exploração', 'Viagem rápida', 'Coletável', 'Grind', 'Cleanup'], false, false],
+    ['tw3_pest_control', 'Pest Control', 'Dedetização', 'Prata', 'Destrua todos os ninhos de monstros em Velen/Novigrad ou em Skellige.', 'Skellige costuma ser uma rota eficiente. Leve bombas destrutivas e limpe todos os ninhos da região escolhida.', ['Ninhos de monstros', 'Exploração', 'Grind', 'Cleanup'], false, false],
+    ['tw3_card_collector', 'Card Collector', 'Colecionador de cartas', 'Bronze', 'Adquira todas as cartas de Gwent disponíveis na versão base do jogo.', 'Perdível. Compre cartas, vença NPCs únicos, acompanhe cartas de quests e torneios e não misture cartas de DLC com a platina base.', ['Perdível', 'Gwent', 'Coletável', 'Cartas', 'Grind'], true, false],
+    ['tw3_gwent_master', 'Gwent Master', 'Mestre do gwent', 'Bronze', 'Derrote Tybalt e vença o torneio de Gwent no Passiflora.', 'Perdível. Entre em High Stakes com deck forte e crie saves antes e entre as partidas.', ['Perdível', 'Gwent', 'Torneio'], true, false],
+    ['tw3_lets_cook', "Let's Cook!", 'Vamos Cozinhar!', 'Bronze', 'Aprenda 12 fórmulas de poções.', 'Compre ou encontre fórmulas de poções com alquimistas e herbalistas durante a exploração.', ['Fórmulas', 'Coletável', 'Cleanup'], false, false],
+    ['tw3_bombardier', 'Bombardier', 'Carga explosiva', 'Bronze', 'Colete as fórmulas de 6 tipos diferentes de bombas.', 'Compre ou encontre seis fórmulas de bombas diferentes; herbalistas e alquimistas ajudam bastante.', ['Bombas', 'Fórmulas', 'Coletável', 'Cleanup'], false, false],
+    ['tw3_bookworm', 'Bookworm', 'Rato de biblioteca', 'Bronze', 'Leia 30 livros, diários ou outros documentos.', 'Abra livros, cartas, notas e documentos pelo inventário conforme os encontrar.', ['Coletável', 'Documentos', 'Cleanup'], false, false],
+    ['tw3_armed_and_dangerous', 'Armed and Dangerous', 'Armado e perigoso', 'Prata', 'Encontre e equipe todos os elementos de um conjunto de equipamentos de bruxo.', 'Escolha uma escola, encontre os diagramas, fabrique todas as peças e equipe o conjunto completo.', ['Equipamento', 'Coletável', 'Cleanup'], false, false],
+    ['tw3_power_overwhelming', 'Power Overwhelming', 'Poder para dar e vender', 'Bronze', 'Tenha todos os bônus possíveis de Locais de Poder ativos ao mesmo tempo.', 'Ative todos os Locais de Poder de White Orchard em sequência para facilitar o controle dos buffs.', ['Exploração', 'Locais de Poder', 'Cleanup'], false, false],
+    ['tw3_brawl_master', 'Brawl Master', 'Encrenqueiro de primeira', 'Bronze', 'Complete todas as quests de luta corpo a corpo em Velen, Skellige e Novigrad.', 'Perdível técnico. Complete todos os circuitos de lutas antes de avançar demais a história.', ['Perdível', 'Lutas', 'Checklist'], true, false],
+    ['tw3_fast_and_furious', 'Fast and Furious', 'A todo gás', 'Bronze', 'Vença todas as corridas de cavalo do jogo.', 'Perdível técnico. Vença as corridas de Velen, Novigrad e Skellige conforme elas aparecem.', ['Perdível', 'Corridas', 'Checklist'], true, false],
+    ['tw3_munchkin', 'Munchkin', 'Que gracinha!', 'Ouro', 'Alcance o nível 35 de desenvolvimento do personagem.', 'Complete história, contratos e side quests suficientes para chegar ao nível 35 antes ou durante o cleanup final.', ['Progressão', 'Grind'], false, false],
     ['tw3_fire_in_the_hole', 'Fire in the Hole', 'Bomba, bomba, olha a bomba!', 'Bronze', 'Destrua 10 ninhos de monstros usando bombas.', 'Leve bombas e destrua ninhos marcados no mapa. Combina bem com Pest Control.', ['Bombas', 'Ninhos de monstros', 'Cleanup'], false, false],
-    ['tw3_fist_of_the_south_star', 'Fist of the South Star', 'Na raca', 'Bronze', 'Derrote um oponente em uma luta corpo a corpo sem sofrer dano.', 'Perdivel tecnico se voce consumir todas as oportunidades. Faca em uma luta inicial e use bloqueio/esquiva.', ['Perdivel', 'Lutas', 'Acao especifica'], true, false],
-    ['tw3_geralt_and_friends', 'Geralt and Friends', 'Geralt e Cia.', 'Bronze', 'Venca uma rodada de Gwent usando apenas cartas neutras.', 'Monte uma rodada com cartas neutras suficientes e venca. O risco principal e sua colecao de Gwent, nao o trofeu em si.', ['Gwent', 'Cartas', 'Cleanup'], false, false],
-    ['tw3_all_in', 'All In', 'Apostar tudo', 'Bronze', 'Jogue tres cartas de heroi em uma rodada de Gwent e venca a partida.', 'Monte um deck forte com pelo menos tres cartas de heroi e venca a partida depois de joga-las na mesma rodada.', ['Gwent', 'Cartas', 'Cleanup'], false, false],
-    ['tw3_shrieker', 'Shrieker', 'A plenos pulmoes', 'Bronze', 'Complete o contrato do Shrieker.', 'Conclua o contrato Shrieker em Velen.', ['Contrato', 'Cleanup'], false, false],
-    ['tw3_fearless_vampire_slayer', 'Fearless Vampire Slayer', 'O caca-vampiros', 'Bronze', 'Complete o contrato de Sarasti.', 'Conclua o contrato The Mystery of the Byways Murders ligado a Sarasti.', ['Contrato', 'Cleanup'], false, false],
-    ['tw3_woodland_spirit', 'Woodland Spirit', 'Espirito do bosque', 'Bronze', 'Complete o contrato do espirito do bosque.', 'Perdivel por decisao no contrato. Faca save antes de Woodland Spirit e siga a rota que libera o trofeu.', ['Perdivel', 'Contrato'], true, true],
+    ['tw3_fist_of_the_south_star', 'Fist of the South Star', 'Na raça', 'Bronze', 'Derrote um oponente em uma luta corpo a corpo sem sofrer dano.', 'Perdível técnico se você consumir todas as oportunidades. Faça em uma luta inicial e use bloqueio/esquiva.', ['Perdível', 'Lutas', 'Ação específica'], true, false],
+    ['tw3_geralt_and_friends', 'Geralt and Friends', 'Geralt e Cia.', 'Bronze', 'Vença uma rodada de Gwent usando apenas cartas neutras.', 'Monte uma rodada com cartas neutras suficientes e vença. O risco principal é sua coleção de Gwent, não o troféu em si.', ['Gwent', 'Cartas', 'Cleanup'], false, false],
+    ['tw3_all_in', 'All In', 'Apostar tudo', 'Bronze', 'Jogue três cartas de herói em uma rodada de Gwent e vença a partida.', 'Monte um deck forte com pelo menos três cartas de herói e vença a partida depois de jogá-las na mesma rodada.', ['Gwent', 'Cartas', 'Cleanup'], false, false],
+    ['tw3_shrieker', 'Shrieker', 'A plenos pulmões', 'Bronze', 'Complete o contrato do Shrieker.', 'Conclua o contrato Shrieker em Velen.', ['Contrato', 'Cleanup'], false, false],
+    ['tw3_fearless_vampire_slayer', 'Fearless Vampire Slayer', 'O caça-vampiros', 'Bronze', 'Complete o contrato de Sarasti.', 'Conclua o contrato The Mystery of the Byways Murders ligado a Sarasti.', ['Contrato', 'Cleanup'], false, false],
+    ['tw3_woodland_spirit', 'Woodland Spirit', 'Espírito do bosque', 'Bronze', 'Complete o contrato do espírito do bosque.', 'Perdível por decisão no contrato. Faça save antes de Woodland Spirit e siga a rota que libera o troféu.', ['Perdível', 'Contrato'], true, true],
     ['tw3_fiend_or_foe', 'Fiend or Foe?', 'Amizade dolorida', 'Bronze', 'Complete o contrato de Morvudd.', 'Conclua o contrato Missing Son em Skellige para enfrentar Morvudd.', ['Contrato', 'Cleanup'], false, false],
-    ['tw3_ashes_to_ashes', 'Ashes to Ashes', 'Do po ao po', 'Bronze', 'Complete o contrato de Therazane.', 'Conclua o contrato especifico de Therazane quando ele estiver disponivel.', ['Contrato', 'Cleanup'], false, false],
-    ['tw3_the_doppler_effect', 'The Doppler Effect', 'Dois e demais', 'Bronze', 'Resolva o problema do doppler em Novigrad.', 'Siga Contract: An Elusive Thief com atencao ao desfecho correto. Use save antes da decisao para evitar retrabalho.', ['Contrato', 'Questline', 'Atencao'], false, true]
+    ['tw3_ashes_to_ashes', 'Ashes to Ashes', 'Do pó ao pó', 'Bronze', 'Complete o contrato de Therazane.', 'Conclua o contrato específico de Therazane quando ele estiver disponível.', ['Contrato', 'Cleanup'], false, false],
+    ['tw3_the_doppler_effect', 'The Doppler Effect', 'Dois é demais', 'Bronze', 'Resolva o problema do doppler em Novigrad.', 'Siga Contract: An Elusive Thief com atenção ao desfecho correto. Use save antes da decisão para evitar retrabalho.', ['Contrato', 'Questline', 'Atenção'], false, true]
   ];
 
-  const witcher3Trophies = witcher3TrophyRows.map(([id, name, namePt, type, description, tip, tags, isMissable, isSpoiler]) => ({
+  const witcher3AccentTrophies = witcher3AccentTrophyRows.map(([id, name, namePt, type, description, tip, tags, isMissable, isSpoiler]) => ({
     id,
     name,
     trophyNameOriginal: name,
@@ -47446,70 +47465,59 @@ if (witcher3Guide) {
     time_max_hours: 150,
     time_sort_hours: 100,
     time_bucket: 'long',
-    platforms: ['PS4', 'PS5'],
-    developer: 'CD Projekt RED',
-    publisher: 'CD Projekt RED',
-    trophyCount: 53,
-    trophyDistribution: { platinum: 1, gold: 2, silver: 8, bronze: 42 },
-    missable: 'The Witcher 3: Wild Hunt tem 9 perdiveis principais na platina base: Card Collector, Gwent Master, Brawl Master, Fast and Furious, Fist of the South Star, Even Odds, Assassin of Kings, Full Crew e Woodland Spirit. Isle of Mists, High Stakes, Gwent e contratos especificos devem ser tratados com saves manuais.',
-    runs_summary: 'A rota mais segura e uma unica campanha em Marcha da Morte, sem reduzir a dificuldade, com saves manuais e checklist de Gwent, aliados, questlines, contratos, lutas e corridas.',
-    missable_summary: 'Controle os 9 perdiveis principais antes de pontos criticos: Gwent/Card Collector, High Stakes, Full Crew, Assassin of Kings, Even Odds, Brawl Master, Fast and Furious, Fist of the South Star e Woodland Spirit.',
-    online_summary: 'Nao ha exigencia online para a platina base.',
-    grind_summary: 'O peso esta em Marcha da Morte, Gwent, cartas, contratos, lutas, corridas, exploracao, nivel 35 e trofeus misc de combate.',
-    dlc_scope: 'Guia focado nos 53 trofeus da lista base. Hearts of Stone e Blood and Wine podem aparecer na lista completa, mas nao sao requisitos da platina base.',
-    difficulty_reason: 'A dificuldade vem de terminar a historia em Marcha da Morte sem reduzir a dificuldade, alem de controlar Gwent, questlines e varios perdiveis reais em uma campanha longa.',
-    time_reason: 'A faixa de 100-150 horas considera campanha em Marcha da Morte, Gwent, contratos, corridas, lutas, exploracao, nivel 35 e cleanup da lista base.',
-    first_run_advice: 'Comece diretamente em Marcha da Morte, nao reduza a dificuldade ate o final da historia e mantenha saves manuais antes de Isle of Mists, High Stakes, Reason of State, questlines criticas e contratos especificos.',
-    cleanup_advice: 'Depois de controlar os perdiveis, limpe contratos, cartas restantes, lutas, corridas, ninhos de monstros, pontos de viagem rapida, formulas, equipamentos de bruxo e trofeus misc de combate.',
-    before_you_start: 'The Witcher 3 e uma platina longa. Comece em Marcha da Morte, nao reduza a dificuldade, acompanhe Gwent desde cedo e faca saves manuais antes de Isle of Mists, High Stakes, Reason of State, questlines de aliados e contratos especificos.',
-    best_for: 'Ideal para quem quer uma platina RPG enorme, narrativa e de mundo aberto, aceitando checklist desde o inicio.',
-    avoid_if: 'Evite se voce nao quer jogar em Marcha da Morte, acompanhar Gwent ou controlar perdiveis em uma campanha longa.',
-    editorial_summary: [
-      'The Witcher 3: Wild Hunt e uma platina longa e exigente, focada em terminar a historia na dificuldade Marcha da Morte, controlar varios trofeus perdiveis, coletar todas as cartas de Gwent da versao base, concluir contratos, corridas, lutas, questlines importantes e limpar trofeus diversos de combate e exploracao.',
-      'A rota mais segura e comecar a campanha diretamente em Marcha da Morte, nunca reduzir a dificuldade ate o final da historia e manter saves manuais antes de pontos criticos como Isle of Mists, High Stakes, Reason of State, questlines de Keira/Triss/Skellige e contratos especificos. A platina nao exige online, cooperacao ou DLC, mas exige planejamento: Gwent, Full Crew, Assassin of Kings e os trofeus de competicao/contratos sao os maiores riscos editoriais.'
-    ],
-    quickDecision: {
-      worthIt: 'Sim, mas e uma platina longa e exigente, indicada para quem quer jogar com checklist desde o inicio.',
-      difficulty: 'Alta.',
-      time: 'Muito longo, cerca de 100 a 150 horas.',
-      mainAlert: 'Marcha da Morte, Gwent, Full Crew, Assassin of Kings e Isle of Mists.',
-      risk: 'Alto, por causa de varios perdiveis reais e cartas de Gwent.',
-      onlineCoop: 'Nao exige online nem cooperacao.',
-      dlc: 'Nao exige DLC para a platina base.'
-    },
-    seo: {
-      title: 'The Witcher 3: Wild Hunt: Guia de Trofeus e Platina',
-      description: 'Guia de trofeus de The Witcher 3: Wild Hunt com roadmap da platina, Marcha da Morte, trofeus perdiveis, Gwent, Full Crew, Assassin of Kings, contratos, cartas e dicas para os 53 trofeus da lista base.',
-      metaDescription: 'Guia de trofeus de The Witcher 3: Wild Hunt com roadmap da platina, Marcha da Morte, trofeus perdiveis, Gwent, Full Crew, Assassin of Kings, contratos, cartas e dicas para os 53 trofeus da lista base.',
-      keywords: 'The Witcher 3 trofeus, The Witcher 3 platina, guia The Witcher 3, The Witcher 3 Wild Hunt trofeus, The Witcher 3 Death March, Marcha da Morte, Walked the Path, Seguiu o Caminho, Card Collector, Colecionador de cartas, Full Crew, Rapaziada, Assassin of Kings, Regicida, Gwent Master, Mestre do gwent',
-      ogTitle: 'The Witcher 3: Wild Hunt: Guia de Trofeus e Platina',
-      ogDescription: 'Roadmap da platina base de The Witcher 3 com Marcha da Morte, 9 perdiveis principais, Gwent, Full Crew, Assassin of Kings e 53 trofeus sem DLC.'
-    },
-    checklist: witcher3Checklist,
-    attentionPoints: witcher3AttentionPoints,
-    faq: witcher3Faq,
-    tags: ['The Witcher 3', 'PS4', 'PS5', 'Platina', 'Marcha da Morte', 'Death March', 'Gwent', 'Perdiveis', 'Base game', 'Sem online', 'Sem coop', 'Sem DLC'],
     onlineRequired: false,
     coopRequired: false,
     dlcRequired: false,
     hasMissables: true,
     missableCount: 9,
-    missable_count: 9,
-    newGamePlusRequired: false,
-    difficultyTrophiesRequired: true,
-    chapterSelect: false,
     editorial_status: 'published',
     coverage_level: 'strong',
     is_verified: true,
     verification_status: 'verified',
     editorial_review_status: 'verified',
-    last_reviewed_at: '2026-06-12',
-    editorial_notes: 'Guia revisado para a platina base de The Witcher 3: Wild Hunt: 53 trofeus, 9 perdiveis principais, Marcha da Morte obrigatoria, Gwent/Card Collector, Full Crew, Assassin of Kings, contratos e DLCs separadas da platina.',
-    quality_warnings: [],
-    verification_note: 'Guia verificado editorialmente para a lista base PlayStation de 53 trofeus, com roadmap estruturado, nomes EN/PT-BR, descricoes PT-BR, flags offline/sem coop/sem DLC e filtros controlados.',
-    roadmap: witcher3Roadmap,
-    roadmapStages: witcher3Roadmap,
-    trophies: witcher3Trophies
+    missable: 'The Witcher 3: Wild Hunt tem 9 perdíveis principais na platina base: Card Collector, Gwent Master, Brawl Master, Fast and Furious, Fist of the South Star, Even Odds, Assassin of Kings, Full Crew e Woodland Spirit. Isle of Mists, High Stakes, Gwent e contratos específicos devem ser tratados com saves manuais.',
+    runs_summary: 'A rota mais segura é uma única campanha em Marcha da Morte, sem reduzir a dificuldade, com saves manuais e checklist de Gwent, aliados, questlines, contratos, lutas e corridas.',
+    missable_summary: 'Controle os 9 perdíveis principais antes de pontos críticos: Gwent/Card Collector, High Stakes, Full Crew, Assassin of Kings, Even Odds, Brawl Master, Fast and Furious, Fist of the South Star e Woodland Spirit.',
+    online_summary: 'Não há exigência online para a platina base.',
+    grind_summary: 'O peso está em Marcha da Morte, Gwent, cartas, contratos, lutas, corridas, exploração, nível 35 e troféus misc de combate.',
+    dlc_scope: 'Guia focado nos 53 troféus da lista base. Hearts of Stone e Blood and Wine podem aparecer na lista completa, mas não são requisitos da platina base.',
+    difficulty_reason: 'A dificuldade vem de terminar a história em Marcha da Morte sem reduzir a dificuldade, além de controlar Gwent, questlines e vários perdíveis reais em uma campanha longa.',
+    time_reason: 'A faixa de 100-150 horas considera campanha em Marcha da Morte, Gwent, contratos, corridas, lutas, exploração, nível 35 e cleanup da lista base.',
+    first_run_advice: 'Comece diretamente em Marcha da Morte, não reduza a dificuldade até o final da história e mantenha saves manuais antes de Isle of Mists, High Stakes, Reason of State, questlines críticas e contratos específicos.',
+    cleanup_advice: 'Depois de controlar os perdíveis, limpe contratos, cartas restantes, lutas, corridas, ninhos de monstros, pontos de viagem rápida, fórmulas, equipamentos de bruxo e troféus misc de combate.',
+    before_you_start: 'The Witcher 3 é uma platina longa. Comece em Marcha da Morte, não reduza a dificuldade, acompanhe Gwent desde cedo e faça saves manuais antes de Isle of Mists, High Stakes, Reason of State, questlines de aliados e contratos específicos.',
+    best_for: 'Ideal para quem quer uma platina RPG enorme, narrativa e de mundo aberto, aceitando checklist desde o início.',
+    avoid_if: 'Evite se você não quer jogar em Marcha da Morte, acompanhar Gwent ou controlar perdíveis em uma campanha longa.',
+    editorial_summary: [
+      'The Witcher 3: Wild Hunt é uma platina longa e exigente, focada em terminar a história na dificuldade Marcha da Morte, controlar vários troféus perdíveis, coletar todas as cartas de Gwent da versão base, concluir contratos, corridas, lutas, questlines importantes e limpar troféus diversos de combate e exploração.',
+      'A rota mais segura é começar a campanha diretamente em Marcha da Morte, nunca reduzir a dificuldade até o final da história e manter saves manuais antes de pontos críticos como Isle of Mists, High Stakes, Reason of State, questlines de Keira/Triss/Skellige e contratos específicos. A platina não exige online, cooperação ou DLC, mas exige planejamento: Gwent, Full Crew, Assassin of Kings e os troféus de competição/contratos são os maiores riscos editoriais.'
+    ],
+    quickDecision: {
+      worthIt: 'Sim, mas é uma platina longa e exigente, indicada para quem quer jogar com checklist desde o início.',
+      difficulty: 'Alta.',
+      time: 'Muito longo, cerca de 100 a 150 horas.',
+      mainAlert: 'Marcha da Morte, Gwent, Full Crew, Assassin of Kings e Isle of Mists.',
+      risk: 'Alto, por causa de vários perdíveis reais e cartas de Gwent.',
+      onlineCoop: 'Não exige online nem cooperação.',
+      dlc: 'Não exige DLC para a platina base.'
+    },
+    seo: {
+      title: 'The Witcher 3: Wild Hunt: Guia de Troféus e Platina',
+      description: 'Guia de troféus de The Witcher 3: Wild Hunt com roadmap da platina, Marcha da Morte, troféus perdíveis, Gwent, Full Crew, Assassin of Kings, contratos, cartas e dicas para os 53 troféus da lista base.',
+      metaDescription: 'Guia de troféus de The Witcher 3: Wild Hunt com roadmap da platina, Marcha da Morte, troféus perdíveis, Gwent, Full Crew, Assassin of Kings, contratos, cartas e dicas para os 53 troféus da lista base.',
+      keywords: 'The Witcher 3 troféus, The Witcher 3 platina, guia The Witcher 3, The Witcher 3 Wild Hunt troféus, The Witcher 3 Death March, Marcha da Morte, Walked the Path, Seguiu o Caminho, Card Collector, Colecionador de cartas, Full Crew, Rapaziada, Assassin of Kings, Regicida, Gwent Master, Mestre do gwent',
+      ogTitle: 'The Witcher 3: Wild Hunt: Guia de Troféus e Platina',
+      ogDescription: 'Roadmap da platina base de The Witcher 3 com Marcha da Morte, 9 perdíveis principais, Gwent, Full Crew, Assassin of Kings e 53 troféus sem DLC.'
+    },
+    checklist: witcher3AccentChecklist,
+    attentionPoints: witcher3AccentAttentionPoints,
+    faq: witcher3AccentFaq,
+    tags: ['The Witcher 3', 'PS4', 'PS5', 'Platina', 'Marcha da Morte', 'Death March', 'Gwent', 'Perdíveis', 'Base game', 'Sem online', 'Sem coop', 'Sem DLC'],
+    editorial_notes: 'Guia revisado para a platina base de The Witcher 3: Wild Hunt: 53 troféus, 9 perdíveis principais, Marcha da Morte obrigatória, Gwent/Card Collector, Full Crew, Assassin of Kings, contratos e DLCs separadas da platina.',
+    verification_note: 'Guia verificado editorialmente para a lista base PlayStation de 53 troféus, com roadmap estruturado, nomes EN/PT-BR, descrições PT-BR, flags offline/sem coop/sem DLC e filtros controlados.',
+    roadmap: witcher3AccentRoadmap,
+    roadmapStages: witcher3AccentRoadmap,
+    trophies: witcher3AccentTrophies
   });
 }
 
