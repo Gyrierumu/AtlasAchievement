@@ -433,7 +433,7 @@
 
   function getExplicitGuideTrophyTags(trophy = {}, game = {}) {
     const slug = String(game?.slug || '').trim().toLowerCase();
-    if (!['armored-core-vi-fires-of-rubicon', 'assassins-creed-mirage', 'celeste', 'clair-obscur-expedition-33', 'dark-souls-remastered', 'days-gone', 'detroit-become-human', 'hades', 'hogwarts-legacy', 'hollow-knight-silksong', 'lies-of-p', 'life-is-strange-double-exposure', 'life-is-strange-remastered', 'lords-of-the-fallen', 'resident-evil-6', 'resident-evil-7-biohazard', 'resident-evil-village', 'sekiro-shadows-die-twice', 'until-dawn'].includes(slug)) return [];
+    if (!['a-way-out', 'armored-core-vi-fires-of-rubicon', 'assassins-creed-mirage', 'assassins-creed-odyssey', 'celeste', 'clair-obscur-expedition-33', 'dark-souls-remastered', 'days-gone', 'detroit-become-human', 'hades', 'hogwarts-legacy', 'hollow-knight-silksong', 'lies-of-p', 'life-is-strange-double-exposure', 'life-is-strange-remastered', 'lords-of-the-fallen', 'resident-evil-6', 'resident-evil-7-biohazard', 'resident-evil-village', 'sekiro-shadows-die-twice', 'until-dawn'].includes(slug)) return [];
     if (!Array.isArray(trophy?.tags) || !trophy.tags.length) return [];
     const tags = [];
     const ids = new Set();
@@ -1003,9 +1003,9 @@
     return `Buscar vídeo no YouTube para o troféu ${suffix}`;
   }
 
-  function countGuideTrophyTag(trophies = [], tagId = '') {
+  function countGuideTrophyTag(trophies = [], tagId = '', game = {}) {
     if (tagId === 'missable') return countRealMissableTrophies(trophies);
-    return (Array.isArray(trophies) ? trophies : []).filter(trophy => getGuideTrophyTags(trophy).some(tag => tag.id === tagId)).length;
+    return (Array.isArray(trophies) ? trophies : []).filter(trophy => getGuideTrophyTags(trophy, game).some(tag => tag.id === tagId)).length;
   }
 
   function getGuideRiskCounts(trophies = [], game = {}) {
@@ -1076,7 +1076,7 @@
     const trophies = Array.isArray(viewModel.trophies) ? viewModel.trophies : (Array.isArray(game?.trophies) ? game.trophies : []);
     const inputs = getGuideVerdictInputs(game, { ...viewModel, trophies });
     const combinedText = getGuideCombinedPlanningText(game, { ...viewModel, trophies });
-    const onlineCount = countGuideTrophyTag(trophies, 'online');
+    const onlineCount = countGuideTrophyTag(trophies, 'online', game);
     const explicitCoopCount = countGuideExplicitCoop(trophies)
       || trophies.filter(trophy => trophy?.is_coop || trophy?.isCoop || (Array.isArray(trophy?.tags) && trophy.tags.some(tag => /coop|posse|multiplayer|pvp/i.test(`${tag?.id || tag} ${tag?.label || ''}`)))).length;
     const explicitNoOnline = game?.onlineRequired === false || game?.requiresOnline === false || game?.hasMandatoryOnline === false;
@@ -1357,11 +1357,11 @@
 
   function shouldReadRoadmapFirst(game = {}, trophies = [], roadmap = []) {
     const inputs = getGuideVerdictInputs(game, { trophies, roadmap, total: trophies.length });
-    const riskCounts = ['armored-core-vi-fires-of-rubicon', 'assassins-creed-mirage', 'clair-obscur-expedition-33', 'detroit-become-human', 'lies-of-p', 'life-is-strange-double-exposure', 'life-is-strange-remastered', 'marvels-spider-man', 'marvels-spider-man-miles-morales', 'red-dead-redemption-2', 'sekiro-shadows-die-twice'].includes(String(game?.slug || '').trim().toLowerCase())
+    const riskCounts = ['a-way-out', 'armored-core-vi-fires-of-rubicon', 'assassins-creed-mirage', 'assassins-creed-odyssey', 'clair-obscur-expedition-33', 'detroit-become-human', 'lies-of-p', 'life-is-strange-double-exposure', 'life-is-strange-remastered', 'marvels-spider-man', 'marvels-spider-man-miles-morales', 'red-dead-redemption-2', 'sekiro-shadows-die-twice'].includes(String(game?.slug || '').trim().toLowerCase())
       ? getGuideRiskCounts(trophies, game)
       : getRiskCounts(trophies);
-    const onlineCount = countGuideTrophyTag(trophies, 'online');
-    const coopCount = countGuideTrophyTag(trophies, 'coop');
+    const onlineCount = countGuideTrophyTag(trophies, 'online', game);
+    const coopCount = countGuideTrophyTag(trophies, 'coop', game);
     const hasOnline = hasAffirmativeOnlineRequirement(inputs.online, onlineCount);
     const hasCoop = hasAffirmativeCoopRequirement(inputs.online, coopCount);
     const missableText = firstGuideText(inputs.missableSummary, game?.missable);
@@ -1393,7 +1393,7 @@
     const scope = viewModel.scopeModel || buildGuideScopeModel(game, { ...viewModel, trophies, total });
     const combinedText = normalizeGuideSignalText(getGuideCombinedPlanningText(game, { ...viewModel, trophies }));
     const hasChapterSelect = hasGuideChapterSelectSignal(combinedText, game);
-    const grindCount = Number(riskCounts.grind || countGuideTrophyTag(trophies, 'grind') || 0);
+    const grindCount = Number(riskCounts.grind || countGuideTrophyTag(trophies, 'grind', game) || 0);
     const normalizedGrindSummary = normalizeGuideSignalText(inputs.grind);
     const hasGrind = grindCount >= 4 || Boolean(normalizedGrindSummary
       && !/sem grind|nao ha grind|nao existe grind|nao ha grind real/.test(normalizedGrindSummary)
@@ -1702,9 +1702,9 @@
     const coopCount = network.coopCount;
     const hasOnline = network.hasOnline;
     const hasCoop = network.hasCoop;
-    const difficultyCount = Number(riskCounts.difficulty || countGuideTrophyTag(trophies, 'difficulty') || 0);
-    const grindCount = Number(riskCounts.grind || countGuideTrophyTag(trophies, 'grind') || (inputs.grind ? 1 : 0));
-    const cleanupCount = Number(riskCounts.cleanup || countGuideTrophyTag(trophies, 'cleanup') || 0);
+    const difficultyCount = Number(riskCounts.difficulty || countGuideTrophyTag(trophies, 'difficulty', game) || 0);
+    const grindCount = Number(riskCounts.grind || countGuideTrophyTag(trophies, 'grind', game) || (inputs.grind ? 1 : 0));
+    const cleanupCount = Number(riskCounts.cleanup || countGuideTrophyTag(trophies, 'cleanup', game) || 0);
     const dlcText = firstGuideText(inputs.dlc);
     const alerts = [];
 
@@ -5822,7 +5822,7 @@
     let missableCount = countRealMissableTrophies(trackableTrophies);
     let attentionCount = trackableTrophies.filter(trophy => trophy && (isRealMissableTrophy(trophy) || trophy.is_spoiler)).length;
     let spoilerCount = trackableTrophies.filter(trophy => trophy?.is_spoiler).length;
-    let riskCounts = ['armored-core-vi-fires-of-rubicon', 'assassins-creed-mirage', 'clair-obscur-expedition-33', 'detroit-become-human', 'lies-of-p', 'life-is-strange-double-exposure', 'life-is-strange-remastered', 'marvels-spider-man', 'marvels-spider-man-miles-morales', 'red-dead-redemption-2', 'sekiro-shadows-die-twice'].includes(String(game?.slug || '').trim().toLowerCase())
+    let riskCounts = ['a-way-out', 'armored-core-vi-fires-of-rubicon', 'assassins-creed-mirage', 'assassins-creed-odyssey', 'clair-obscur-expedition-33', 'detroit-become-human', 'lies-of-p', 'life-is-strange-double-exposure', 'life-is-strange-remastered', 'marvels-spider-man', 'marvels-spider-man-miles-morales', 'red-dead-redemption-2', 'sekiro-shadows-die-twice'].includes(String(game?.slug || '').trim().toLowerCase())
       ? getGuideRiskCounts(trackableTrophies, game)
       : getRiskCounts(trackableTrophies);
     let guidanceCounts = buildGuidanceCounts(trackableTrophies, riskCounts);

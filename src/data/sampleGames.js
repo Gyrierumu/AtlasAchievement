@@ -20444,8 +20444,8 @@ const sampleGames = [
                   ]
             },
             {
-                  "title": "DLC não necessária",
-                  "detail": "A platina base usa 51 troféus. Não misture os 94 troféus totais com DLCs ou Additional Feats.",
+                  "title": "Lista base vs DLCs",
+                  "detail": "A platina base usa 51 troféus. Não misture DLCs, Additional Feats ou listas completas de 94 troféus com os requisitos de Epic Cycle.",
                   "tags": [
                         "Lista base",
                         "Sem DLC"
@@ -20497,6 +20497,14 @@ const sampleGames = [
                   "tags": [
                         "Chefe",
                         "Endgame"
+                  ]
+            },
+            {
+                  "title": "Dificuldade",
+                  "detail": "A dificuldade escolhida não afeta troféus.",
+                  "tags": [
+                        "Dificuldade",
+                        "Sem requisito"
                   ]
             }
       ],
@@ -21093,8 +21101,7 @@ const sampleGames = [
                   "is_missable": false,
                   "is_spoiler": true,
                   "tags": [
-                        "Questline",
-                        "História"
+                        "Questline"
                   ]
             },
             {
