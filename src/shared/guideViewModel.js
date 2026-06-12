@@ -433,7 +433,7 @@
 
   function getExplicitGuideTrophyTags(trophy = {}, game = {}) {
     const slug = String(game?.slug || '').trim().toLowerCase();
-    if (!['a-way-out', 'armored-core-vi-fires-of-rubicon', 'assassins-creed-mirage', 'assassins-creed-odyssey', 'celeste', 'clair-obscur-expedition-33', 'dark-souls-remastered', 'days-gone', 'detroit-become-human', 'hades', 'hogwarts-legacy', 'hollow-knight-silksong', 'lies-of-p', 'life-is-strange-double-exposure', 'life-is-strange-remastered', 'lords-of-the-fallen', 'resident-evil-6', 'resident-evil-7-biohazard', 'resident-evil-village', 'sekiro-shadows-die-twice', 'until-dawn'].includes(slug)) return [];
+    if (!['a-way-out', 'armored-core-vi-fires-of-rubicon', 'assassins-creed-mirage', 'assassins-creed-origins', 'assassins-creed-odyssey', 'celeste', 'clair-obscur-expedition-33', 'dark-souls-remastered', 'days-gone', 'detroit-become-human', 'hades', 'hogwarts-legacy', 'hollow-knight-silksong', 'lies-of-p', 'life-is-strange-double-exposure', 'life-is-strange-remastered', 'lords-of-the-fallen', 'resident-evil-6', 'resident-evil-7-biohazard', 'resident-evil-village', 'sekiro-shadows-die-twice', 'until-dawn'].includes(slug)) return [];
     if (!Array.isArray(trophy?.tags) || !trophy.tags.length) return [];
     const tags = [];
     const ids = new Set();
@@ -1357,7 +1357,7 @@
 
   function shouldReadRoadmapFirst(game = {}, trophies = [], roadmap = []) {
     const inputs = getGuideVerdictInputs(game, { trophies, roadmap, total: trophies.length });
-    const riskCounts = ['a-way-out', 'armored-core-vi-fires-of-rubicon', 'assassins-creed-mirage', 'assassins-creed-odyssey', 'clair-obscur-expedition-33', 'detroit-become-human', 'lies-of-p', 'life-is-strange-double-exposure', 'life-is-strange-remastered', 'marvels-spider-man', 'marvels-spider-man-miles-morales', 'red-dead-redemption-2', 'sekiro-shadows-die-twice'].includes(String(game?.slug || '').trim().toLowerCase())
+    const riskCounts = ['a-way-out', 'armored-core-vi-fires-of-rubicon', 'assassins-creed-mirage', 'assassins-creed-origins', 'assassins-creed-odyssey', 'clair-obscur-expedition-33', 'detroit-become-human', 'lies-of-p', 'life-is-strange-double-exposure', 'life-is-strange-remastered', 'marvels-spider-man', 'marvels-spider-man-miles-morales', 'red-dead-redemption-2', 'sekiro-shadows-die-twice'].includes(String(game?.slug || '').trim().toLowerCase())
       ? getGuideRiskCounts(trophies, game)
       : getRiskCounts(trophies);
     const onlineCount = countGuideTrophyTag(trophies, 'online', game);
@@ -2131,7 +2131,7 @@
   function buildRouteChangingTrophies(trophies = [], game = {}) {
     const trophyById = new Map((Array.isArray(trophies) ? trophies : []).map(trophy => [trophy?.id, trophy]).filter(([id]) => id));
     const attentionSlug = String(game?.slug || '').trim().toLowerCase();
-    if (['a-way-out', 'armored-core-vi-fires-of-rubicon', 'assassins-creed-mirage', 'assassins-creed-odyssey', 'hades', 'life-is-strange-double-exposure', 'life-is-strange-remastered', 'resident-evil-6', 'sekiro-shadows-die-twice'].includes(attentionSlug) && Array.isArray(game?.attentionPoints)) {
+    if (['a-way-out', 'armored-core-vi-fires-of-rubicon', 'assassins-creed-mirage', 'assassins-creed-origins', 'assassins-creed-odyssey', 'hades', 'life-is-strange-double-exposure', 'life-is-strange-remastered', 'resident-evil-6', 'sekiro-shadows-die-twice'].includes(attentionSlug) && Array.isArray(game?.attentionPoints)) {
       return game.attentionPoints.map((item, index) => {
         const tags = (Array.isArray(item?.tags) ? item.tags : []).map(tag => {
           const label = typeof tag === 'string' ? tag : firstGuideText(tag?.label, tag?.id);
@@ -5822,7 +5822,7 @@
     let missableCount = countRealMissableTrophies(trackableTrophies);
     let attentionCount = trackableTrophies.filter(trophy => trophy && (isRealMissableTrophy(trophy) || trophy.is_spoiler)).length;
     let spoilerCount = trackableTrophies.filter(trophy => trophy?.is_spoiler).length;
-    let riskCounts = ['a-way-out', 'armored-core-vi-fires-of-rubicon', 'assassins-creed-mirage', 'assassins-creed-odyssey', 'clair-obscur-expedition-33', 'detroit-become-human', 'lies-of-p', 'life-is-strange-double-exposure', 'life-is-strange-remastered', 'marvels-spider-man', 'marvels-spider-man-miles-morales', 'red-dead-redemption-2', 'sekiro-shadows-die-twice'].includes(String(game?.slug || '').trim().toLowerCase())
+    let riskCounts = ['a-way-out', 'armored-core-vi-fires-of-rubicon', 'assassins-creed-mirage', 'assassins-creed-origins', 'assassins-creed-odyssey', 'clair-obscur-expedition-33', 'detroit-become-human', 'lies-of-p', 'life-is-strange-double-exposure', 'life-is-strange-remastered', 'marvels-spider-man', 'marvels-spider-man-miles-morales', 'red-dead-redemption-2', 'sekiro-shadows-die-twice'].includes(String(game?.slug || '').trim().toLowerCase())
       ? getGuideRiskCounts(trackableTrophies, game)
       : getRiskCounts(trackableTrophies);
     let guidanceCounts = buildGuidanceCounts(trackableTrophies, riskCounts);

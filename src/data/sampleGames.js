@@ -19835,504 +19835,1032 @@ const sampleGames = [
           }
       ]
   },
-  {
-    "name": "Assassin’s Creed Origins",
-    "slug": "assassins-creed-origins",
-    "difficulty": 3,
-    "time": "50-60h",
-    "time_min_hours": 50,
-    "time_max_hours": 60,
-    "time_sort_hours": 50,
-    "time_bucket": "long",
-    "missable": "Não há troféus perdíveis definitivos na lista base. Atenção apenas para guardar 100 trinkets para Reduce, Reuse, Recycle e manter o jogo atualizado por causa do histórico de bug corrigido em Old Habits.",
-    "runs_summary": "Uma campanha principal com cleanup livre após a história. Nada da lista base deve ser tratado como perdível sem confirmação confiável.",
-    "missable_summary": "0 perdíveis definitivos na lista base. Guarde 100 trinkets antes de vender e mantenha o jogo atualizado para evitar problemas históricos de Old Habits.",
-    "online_summary": "Não há exigência online para a platina da lista base.",
-    "grind_summary": "O peso está em limpar regiões, completar todos os locais, side quests específicas, tumbas, Stone Circles, War Elephants, Arena/Hippodrome e troféus situacionais.",
-    "dlc_scope": "Guia focado na lista base da platina; The Hidden Ones, The Curse of the Pharaohs e Discovery Tour/add-ons devem ficar separados se o projeto suportar DLC/add-ons.",
-    "difficulty_reason": "A platina é acessível e não exige dificuldade alta; o maior compromisso é o volume de mundo aberto, limpeza de locais e alguns troféus situacionais.",
-    "time_reason": "A faixa de 50-60 horas considera campanha, side quests, exploração, todos os locais necessários, tumbas, atividades opcionais e cleanup pós-história.",
-    "first_run_advice": "Jogue a história naturalmente, desbloqueie regiões, habilidades, Senu, montaria e upgrades, e vá completando atividades próximas para reduzir o cleanup final.",
-    "cleanup_advice": "Após a história, use o mapa para limpar todos os locais, tumbas, Stone Circles, Hermit Locations, War Elephants, Arena/Hippodrome, Papyrus e troféus situacionais.",
-    "before_you_start": "Nada da lista base é online ou de dificuldade. O maior cuidado é separar a lista base dos DLCs e não vender trinkets antes de juntar 100 para Reduce, Reuse, Recycle.",
-    "best_for": "Ideal para quem quer uma platina de mundo aberto acessível, histórica, longa e com checklist claro no Egito Antigo.",
-    "avoid_if": "Evite se você não gosta de limpar mapa, completar muitos pontos de interesse ou fazer atividades repetidas de mundo aberto.",
-    "editorial_status": "published",
-    "coverage_level": "strong",
-    "is_verified": false,
-    "verification_status": "review",
-    "verification_note": "Guia público seed-managed com checklist base e roadmap; aguardando revisão editorial manual final.",
-    "image": "https://cdn.cloudflare.steamstatic.com/steam/apps/582160/header.jpg",
-    "cover_image": "https://cdn.cloudflare.steamstatic.com/steam/apps/582160/library_600x900.jpg",
-    "roadmap": [
-      "Etapa 1: jogue a campanha naturalmente, desbloqueando regiões, sistemas, montaria, Senu, habilidades úteis como Dawn & Dusk, Poison Darts, Animal Taming, Enhanced Predator Bow e upgrades básicos.",
-      "Etapa 2: avance side quests e atividades importantes enquanto sobe de nível, incluindo Seven Farmers, Lady of Slaughter, Papyrus Mysteries, tumbas próximas e coleta de trinkets sem vendê-los antes de juntar 100.",
-      "Etapa 3: limpe regiões, sincronize pontos e complete todos os locais necessários para Old Habits, deixando claro que há free-roam/cleanup pós-história.",
-      "Etapa 4: complete tumbas, Stone Circles, Hermit Locations, underwater locations, Papyrus/locais específicos e atividades de mundo aberto que alimentam Old Habits.",
-      "Etapa 5: enfrente War Elephants, Phylakes, Arena de Krokodilopolis, Hippodrome e troféus de combate/situação como Archer of the Month, Overdesign, Set-up Date e BOOM!.",
-      "Etapa 6: faça cleanup final pós-história de todos os locais, side content restante, troféus situacionais, 0 online obrigatório, 0 troféus de dificuldade e revisão completa do checklist da lista base."
-    ],
-    "trophies": [
-      {
-        "id": "aco_earn_them_all",
-        "name": "Earn Them All!",
-        "type": "Platina",
-        "description": "Earn every trophy.",
-        "tip": "Conquiste todos os outros troféus da lista base para liberar a platina. DLCs não são necessárias.",
-        "is_missable": false,
-        "is_spoiler": false
-      },
-      {
-        "id": "aco_first_steps",
-        "name": "First Steps",
-        "type": "Bronze",
-        "description": "Complete the Prologue.",
-        "tip": "Avance a história inicial em Siwa até concluir o prólogo.",
-        "is_missable": false,
-        "is_spoiler": true
-      },
-      {
-        "id": "aco_im_just_getting_started",
-        "name": "I’m Just Getting Started",
-        "type": "Bronze",
-        "description": "Complete Main Quest “Aya”.",
-        "tip": "Troféu de história. Continue as missões principais até concluir “Aya”.",
-        "is_missable": false,
-        "is_spoiler": true
-      },
-      {
-        "id": "aco_the_sea",
-        "name": "The Sea",
-        "type": "Bronze",
-        "description": "Complete Main Quest “Pompeius Magnus”.",
-        "tip": "Troféu de história ligado à progressão principal.",
-        "is_missable": false,
-        "is_spoiler": true
-      },
-      {
-        "id": "aco_the_scarab",
-        "name": "The Scarab",
-        "type": "Prata",
-        "description": "Complete Main Quest “The Scarab’s Lies”.",
-        "tip": "Troféu de história ligado a um alvo principal.",
-        "is_missable": false,
-        "is_spoiler": true
-      },
-      {
-        "id": "aco_the_hyena",
-        "name": "The Hyena",
-        "type": "Bronze",
-        "description": "Complete Main Quest “The Hyena”.",
-        "tip": "Troféu de história ligado a um alvo principal.",
-        "is_missable": false,
-        "is_spoiler": true
-      },
-      {
-        "id": "aco_the_crocodile",
-        "name": "The Crocodile",
-        "type": "Bronze",
-        "description": "Complete Main Quest “The Crocodile’s Jaws”.",
-        "tip": "Troféu de história ligado a um alvo principal.",
-        "is_missable": false,
-        "is_spoiler": true
-      },
-      {
-        "id": "aco_the_lizard",
-        "name": "The Lizard",
-        "type": "Prata",
-        "description": "Complete Main Quest “The Lizard’s Face”.",
-        "tip": "Troféu de história ligado a um alvo principal.",
-        "is_missable": false,
-        "is_spoiler": true
-      },
-      {
-        "id": "aco_the_siege",
-        "name": "The Siege",
-        "type": "Prata",
-        "description": "Complete Main Quest “The Aftermath”.",
-        "tip": "Troféu de história de fase avançada da campanha.",
-        "is_missable": false,
-        "is_spoiler": true
-      },
-      {
-        "id": "aco_wake_up",
-        "name": "Wake Up!",
-        "type": "Prata",
-        "description": "Complete Main Quest Dream Sequence.",
-        "tip": "Troféu de história relacionado a sequência narrativa avançada.",
-        "is_missable": false,
-        "is_spoiler": true
-      },
-      {
-        "id": "aco_almost_there",
-        "name": "Almost There",
-        "type": "Prata",
-        "description": "Complete Main Quest “The Final Weighing”.",
-        "tip": "Troféu de história perto do final da campanha.",
-        "is_missable": false,
-        "is_spoiler": true
-      },
-      {
-        "id": "aco_the_end",
-        "name": "The End",
-        "type": "Ouro",
-        "description": "Complete the last Main Quest.",
-        "tip": "Troféu de história. Termine a última missão principal.",
-        "is_missable": false,
-        "is_spoiler": true
-      },
-      {
-        "id": "aco_im_a_legend",
-        "name": "I’m a Legend",
-        "type": "Bronze",
-        "description": "Be equipped with only Legendary equipment.",
-        "tip": "Equipe itens lendários em todos os slots exigidos. Guarde bons equipamentos lendários e compre/farme o que faltar no pós-jogo.",
-        "is_missable": false,
-        "is_spoiler": false
-      },
-      {
-        "id": "aco_im_done_learning",
-        "name": "I’m Done Learning",
-        "type": "Prata",
-        "description": "Activate a Master ability.",
-        "tip": "Compre uma Master Ability na árvore de habilidades após investir pontos suficientes.",
-        "is_missable": false,
-        "is_spoiler": false
-      },
-      {
-        "id": "aco_overheating",
-        "name": "Overheating",
-        "type": "Bronze",
-        "description": "Witness raining bugs in the desert.",
-        "tip": "Fique no deserto sob calor forte até ocorrer a alucinação de insetos caindo.",
-        "is_missable": false,
-        "is_spoiler": false
-      },
-      {
-        "id": "aco_for_those_about_to_die",
-        "name": "For Those About to Die…",
-        "type": "Prata",
-        "description": "Complete all arena events in the Krokodilopolis Arena.",
-        "tip": "Complete todos os eventos da arena de Krokodilopolis.",
-        "is_missable": false,
-        "is_spoiler": false
-      },
-      {
-        "id": "aco_fatality",
-        "name": "Fatality!",
-        "type": "Prata",
-        "description": "Finish an arena boss with an Overpower Attack.",
-        "tip": "Finalize um chefe da arena usando Overpower Attack.",
-        "is_missable": false,
-        "is_spoiler": false
-      },
-      {
-        "id": "aco_ben_hur",
-        "name": "Ben-Hur",
-        "type": "Bronze",
-        "description": "Win the first Hippodrome tournament.",
-        "tip": "Vença o primeiro torneio do Hipódromo.",
-        "is_missable": false,
-        "is_spoiler": false
-      },
-      {
-        "id": "aco_road_rage",
-        "name": "Road Rage",
-        "type": "Bronze",
-        "description": "Destroy an opponent in a Hippodrome race.",
-        "tip": "Durante uma corrida do Hipódromo, destrua a carruagem de um oponente.",
-        "is_missable": false,
-        "is_spoiler": false
-      },
-      {
-        "id": "aco_elephants_fall",
-        "name": "The Elephants Fall",
-        "type": "Prata",
-        "description": "Defeat the war elephants Qetesh & Resheph.",
-        "tip": "Derrote os elefantes de guerra Qetesh e Resheph. Deixe para nível alto e ajuste a dificuldade se quiser reduzir risco.",
-        "is_missable": false,
-        "is_spoiler": true
-      },
-      {
-        "id": "aco_slasher",
-        "name": "Slasher",
-        "type": "Bronze",
-        "description": "Kill 3 enemies with one hit.",
-        "tip": "Use uma oportunidade com inimigos agrupados e dano alto para matar 3 inimigos em um único golpe.",
-        "is_missable": false,
-        "is_spoiler": false
-      },
-      {
-        "id": "aco_the_arrow_whisperer",
-        "name": "The Arrow Whisperer",
-        "type": "Prata",
-        "description": "Kill an enemy with the predator bow from more than 60 meters while controlling the arrow.",
-        "tip": "Use o Predator Bow com controle de flecha e mate um inimigo a mais de 60 metros.",
-        "is_missable": false,
-        "is_spoiler": false
-      },
-      {
-        "id": "aco_words_of_wisdom",
-        "name": "Words of Wisdom",
-        "type": "Bronze",
-        "description": "Complete all hermit locations.",
-        "tip": "Complete todos os Hermit Locations. Eles também contam para Old Habits.",
-        "is_missable": false,
-        "is_spoiler": false
-      },
-      {
-        "id": "aco_circle_of_life",
-        "name": "Circle of Life",
-        "type": "Bronze",
-        "description": "Feed a predator with a corpse.",
-        "tip": "Leve um cadáver até um predador ou atraia um predador para se alimentar dele.",
-        "is_missable": false,
-        "is_spoiler": false
-      },
-      {
-        "id": "aco_seven_farmers",
-        "name": "Seven Farmers",
-        "type": "Bronze",
-        "description": "Complete Side Quest “Seven Farmers”.",
-        "tip": "Conclua a side quest “Seven Farmers”.",
-        "is_missable": false,
-        "is_spoiler": false
-      },
-      {
-        "id": "aco_the_festival",
-        "name": "The Festival",
-        "type": "Bronze",
-        "description": "Complete Side Quest “Lady of Slaughter”.",
-        "tip": "Conclua a side quest “Lady of Slaughter”.",
-        "is_missable": false,
-        "is_spoiler": false
-      },
-      {
-        "id": "aco_shadow_of_egypt",
-        "name": "Shadow of Egypt",
-        "type": "Prata",
-        "description": "Kill 10 enemies in a row without being detected.",
-        "tip": "Faça uma sequência furtiva de 10 eliminações sem ser detectado.",
-        "is_missable": false,
-        "is_spoiler": false
-      },
-      {
-        "id": "aco_smash",
-        "name": "Smash!",
-        "type": "Bronze",
-        "description": "Destroy 100 breakable objects.",
-        "tip": "Destrua 100 objetos quebráveis durante exploração ou cleanup.",
-        "is_missable": false,
-        "is_spoiler": false
-      },
-      {
-        "id": "aco_i_know_my_land",
-        "name": "I Know My Land",
-        "type": "Bronze",
-        "description": "Defog the whole map.",
-        "tip": "Passe por todas as regiões para revelar o mapa completo.",
-        "is_missable": false,
-        "is_spoiler": false
-      },
-      {
-        "id": "aco_raider_of_the_lost_tomb",
-        "name": "Raider of the Lost Tomb",
-        "type": "Bronze",
-        "description": "Complete a tomb.",
-        "tip": "Complete qualquer tumba da lista base.",
-        "is_missable": false,
-        "is_spoiler": false
-      },
-      {
-        "id": "aco_i_can_see_my_house_from_here",
-        "name": "I Can See My House From Here!",
-        "type": "Bronze",
-        "description": "Reach the “Top of the World” in the Black Desert territory.",
-        "tip": "Suba até o ponto “Top of the World” no território Black Desert.",
-        "is_missable": false,
-        "is_spoiler": false
-      },
-      {
-        "id": "aco_set_up_date",
-        "name": "Set-up Date",
-        "type": "Bronze",
-        "description": "Bring a tamed lion to a crocodile.",
-        "tip": "Use Animal Taming para domar um leão e leve-o até um crocodilo.",
-        "is_missable": false,
-        "is_spoiler": false
-      },
-      {
-        "id": "aco_wheres_my_black_flag",
-        "name": "Where’s My Black Flag?",
-        "type": "Bronze",
-        "description": "Defeat 8 Ship Captains.",
-        "tip": "Derrote 8 capitães de navio em atividades navais da lista base.",
-        "is_missable": false,
-        "is_spoiler": false
-      },
-      {
-        "id": "aco_reporter",
-        "name": "Reporter",
-        "type": "Bronze",
-        "description": "Take 1 photo in 5 different territories.",
-        "tip": "Use o modo foto em 5 territórios diferentes.",
-        "is_missable": false,
-        "is_spoiler": false
-      },
-      {
-        "id": "aco_overdesign",
-        "name": "Overdesign",
-        "type": "Bronze",
-        "description": "Kill a poisoned level 35+ enemy with the torch in less than 30 seconds.",
-        "tip": "Use Poison Darts e finalize um inimigo nível 35+ com a tocha rapidamente.",
-        "is_missable": false,
-        "is_spoiler": false
-      },
-      {
-        "id": "aco_free_as_a_bird",
-        "name": "Free as a Bird",
-        "type": "Bronze",
-        "description": "Use the eagle for a total of 30 minutes.",
-        "tip": "Use Senu por 30 minutos acumulados.",
-        "is_missable": false,
-        "is_spoiler": false
-      },
-      {
-        "id": "aco_triathlete",
-        "name": "Triathlete",
-        "type": "Bronze",
-        "description": "Swim for 1500m, ride for 40km and run for 10km.",
-        "tip": "Esse progresso vem naturalmente ao explorar o mapa; deixe completar durante campanha e cleanup.",
-        "is_missable": false,
-        "is_spoiler": false
-      },
-      {
-        "id": "aco_archer_of_the_month",
-        "name": "Archer of the Month",
-        "type": "Prata",
-        "description": "Headshot kill an enemy with the bow while in the air.",
-        "tip": "Salte de uma borda e acerte um headshot com arco enquanto está no ar.",
-        "is_missable": false,
-        "is_spoiler": false
-      },
-      {
-        "id": "aco_boom",
-        "name": "BOOM!",
-        "type": "Bronze",
-        "description": "Kill 30 enemies by shooting a fire arrow at oil jars.",
-        "tip": "Mate inimigos explodindo/queimando oil jars com flechas de fogo. Farmável em acampamentos.",
-        "is_missable": false,
-        "is_spoiler": false
-      },
-      {
-        "id": "aco_riders_licence",
-        "name": "Rider’s Licence",
-        "type": "Bronze",
-        "description": "Use all types of vehicle at least once.",
-        "tip": "Use todos os tipos de veículo pelo menos uma vez.",
-        "is_missable": false,
-        "is_spoiler": false
-      },
-      {
-        "id": "aco_old_habits",
-        "name": "Old Habits",
-        "type": "Prata",
-        "description": "Complete all locations.",
-        "tip": "Complete todos os locais do mapa base. É o maior gargalo da platina e deve ser feito no cleanup pós-história.",
-        "is_missable": false,
-        "is_spoiler": false
-      },
-      {
-        "id": "aco_run_for_your_life",
-        "name": "Run For Your Life!",
-        "type": "Bronze",
-        "description": "Run away from 3 fights with a hippo.",
-        "tip": "Inicie e fuja de 3 lutas contra hipopótamos.",
-        "is_missable": false,
-        "is_spoiler": false
-      },
-      {
-        "id": "aco_elementary_my_dear_bayek",
-        "name": "Elementary, My Dear Bayek",
-        "type": "Bronze",
-        "description": "Solve a papyrus mystery.",
-        "tip": "Resolva qualquer Papyrus Mystery da lista base.",
-        "is_missable": false,
-        "is_spoiler": false
-      },
-      {
-        "id": "aco_reduce_reuse_recycle",
-        "name": "Reduce, Reuse, Recycle",
-        "type": "Bronze",
-        "description": "Sell 100 trinkets at once.",
-        "tip": "Guarde 100 trinkets e venda todos de uma vez. Não venda trinkets cedo para evitar farm desnecessário.",
-        "is_missable": false,
-        "is_spoiler": false
-      },
-      {
-        "id": "aco_namaste",
-        "name": "Namaste",
-        "type": "Bronze",
-        "description": "Use Dawn & Dusk to make time speed forward 30 times.",
-        "tip": "Compre a habilidade Dawn & Dusk e avance o tempo 30 vezes.",
-        "is_missable": false,
-        "is_spoiler": false
-      },
-      {
-        "id": "aco_you_still_need_8880",
-        "name": "You still need 8880…",
-        "type": "Bronze",
-        "description": "Reach level 20.",
-        "tip": "Chegue ao nível 20 jogando campanha, side quests e atividades.",
-        "is_missable": false,
-        "is_spoiler": false
-      },
-      {
-        "id": "aco_stargazer",
-        "name": "Stargazer",
-        "type": "Prata",
-        "description": "Complete all 12 Stone Circles.",
-        "tip": "Complete os 12 Stone Circles. Eles também contam como locais para Old Habits.",
-        "is_missable": false,
-        "is_spoiler": false
-      },
-      {
-        "id": "aco_master_diver",
-        "name": "Master Diver",
-        "type": "Prata",
-        "description": "Complete 15 underwater locations.",
-        "tip": "Complete 15 locais submersos, normalmente marcados como pontos de interesse em rios e mares.",
-        "is_missable": false,
-        "is_spoiler": false
-      },
-      {
-        "id": "aco_defy_authority",
-        "name": "Defy Authority",
-        "type": "Bronze",
-        "description": "Defeat a Phylakes.",
-        "tip": "Derrote qualquer Phylakes e confirme a eliminação.",
-        "is_missable": false,
-        "is_spoiler": true
-      },
-      {
-        "id": "aco_handy_man",
-        "name": "Handy Man",
-        "type": "Bronze",
-        "description": "Craft 20 items.",
-        "tip": "Faça 20 upgrades/crafts de equipamento usando materiais coletados de caça e exploração.",
-        "is_missable": false,
-        "is_spoiler": false
-      },
-      {
-        "id": "aco_roooaaarrrrr",
-        "name": "Roooaaarrrrr!",
-        "type": "Bronze",
-        "description": "Tame a lion.",
-        "tip": "Compre Animal Taming, enfraqueça/coloque um leão para dormir e dome o animal.",
-        "is_missable": false,
-        "is_spoiler": false
-      }
-    ]
+{
+        "name": "Assassin’s Creed Origins",
+        "slug": "assassins-creed-origins",
+        "primary_platform": "PlayStation",
+        "platforms": [
+              "PS4"
+        ],
+        "developer": "Ubisoft Montreal",
+        "publisher": "Ubisoft",
+        "difficulty": 3,
+        "time": "50-70h",
+        "time_min_hours": 50,
+        "time_max_hours": 70,
+        "time_sort_hours": 60,
+        "time_bucket": "long",
+        "missable": "Não há troféus perdíveis reais na lista base. O principal cuidado é guardar 100 trinkets para Reduce, Reuse, Recycle, mas isso evita farm desnecessário e não bloqueia a platina.",
+        "runs_summary": "1 campanha principal com cleanup livre no pós-jogo. A lista base não exige dificuldade específica, online, coop ou DLC.",
+        "missable_summary": "Sem perdíveis reais. Reduce, Reuse, Recycle exige guardar 100 trinkets para vender de uma vez, e Old Habits exige atenção ao mapa, mas nenhum troféu da platina base fica permanentemente perdido.",
+        "online_summary": "Sem online obrigatório. A platina base é totalmente offline e single-player.",
+        "grind_summary": "O peso está em completar todos os locais para Old Habits, guardar 100 trinkets, craftar upgrades, explorar o mapa e resolver atividades específicas de arena, hipódromo, stone circles, hermit locations e locais submersos.",
+        "dlc_scope": "Guia focado na lista base de 51 troféus. The Hidden Ones, The Curse of the Pharaohs e a lista completa de 68 troféus ficam fora dos requisitos de Earn Them All!.",
+        "difficulty_reason": "A dificuldade 3/10 vem do volume de exploração e cleanup, não de execução. A dificuldade escolhida no jogo não afeta troféus.",
+        "time_reason": "A estimativa de 50 a 70 horas considera campanha, side quests, todos os locais para Old Habits, stone circles, hermit locations, locais submersos, arena, hipódromo, elefantes, crafting e troféus diversos.",
+        "first_run_advice": "Jogue a história normalmente, sincronize mirantes, compre habilidades ligadas a troféus, faça atividades próximas para manter o nível adequado e guarde trinkets desde o início.",
+        "cleanup_advice": "Após a história, limpe todos os locais do mapa para Old Habits, finalize stone circles, hermit locations, locais submersos, arena, hipódromo, elefantes de guerra, crafting, trinkets e troféus situacionais.",
+        "before_you_start": "A platina base não exige online, coop, DLC nem dificuldade específica. Guarde 100 trinkets antes de vender e jogue atualizado para evitar problemas históricos de Old Habits.",
+        "best_for": "Ideal para quem gosta de mundo aberto, exploração longa, mapa checklistado e uma platina acessível no Egito Antigo.",
+        "avoid_if": "Evite se você não quer limpar todos os locais do mapa ou prefere platinas curtas e sem checklist extenso.",
+        "hasMissables": false,
+        "missableCount": 0,
+        "missable_count": 0,
+        "hasOnline": false,
+        "hasCoop": false,
+        "hasMandatoryOnline": false,
+        "hasMandatoryCoop": false,
+        "requiresOnline": false,
+        "requiresCoop": false,
+        "onlineRequired": false,
+        "coopRequired": false,
+        "dlcRequired": false,
+        "dlcRequiredForPlatinum": false,
+        "playthroughs": "1 campanha + cleanup no pós-jogo",
+        "platinumType": "platina base PS4 offline",
+        "guideFocus": "história, exploração, todos os locais, atividades específicas, arena, hipódromo, elefantes, crafting e cleanup",
+        "editorial_status": "published",
+        "editorialStatus": "verified",
+        "coverage_level": "complete",
+        "is_verified": true,
+        "verification_status": "verified",
+        "editorial_review_status": "verified",
+        "last_reviewed_at": "2026-06-12",
+        "reviewed_by": "AtlasAchievement Editorial",
+        "verification_note": "Guia revisado para a lista base PS4: 51 troféus, sem DLC, sem online, sem coop, sem perdíveis reais, roadmap estruturado, nomes EN/PT-BR, descrições em português, FAQ, checklist, SEO e pontos de atenção.",
+        "editorial_notes": "Decisão editorial: manter apenas os 51 troféus da platina base. A lista completa pode chegar a 68 troféus com DLCs, mas The Hidden Ones e The Curse of the Pharaohs não entram em Earn Them All!. Old Habits e Reduce, Reuse, Recycle são pontos de atenção, não perdíveis.",
+        "quality_warnings": [],
+        "image": "https://cdn.cloudflare.steamstatic.com/steam/apps/582160/header.jpg",
+        "cover_image": "https://cdn.cloudflare.steamstatic.com/steam/apps/582160/library_600x900.jpg",
+        "editorial_summary": [
+              "Assassin’s Creed Origins é uma platina longa, mas acessível, focada em concluir a campanha, explorar o Egito, completar todos os locais do mapa e resolver atividades específicas como arena, hipódromo, elefantes de guerra, tumbas, locais submersos, stone circles, hermit locations e troféus diversos de combate.",
+              "A rota mais segura é jogar a história normalmente enquanto sincroniza mirantes, limpa atividades próximas, compra habilidades ligadas a troféus e guarda trinkets desde o início para Reduce, Reuse, Recycle.",
+              "Não há troféus perdíveis reais, online obrigatório, cooperação ou DLC necessária para a platina base. O maior cuidado é evitar vender trinkets antes de juntar 100, porque isso pode transformar o cleanup em farm desnecessário."
+        ],
+        "seo": {
+              "title": "Assassin’s Creed Origins: Guia de Troféus e Platina",
+              "description": "Guia de troféus de Assassin’s Creed Origins com roadmap da platina, tempo estimado, dificuldade, flags, Old Habits, Reduce Reuse Recycle, exploração, arena, hipódromo e dicas para os 51 troféus da lista base.",
+              "metaDescription": "Guia de troféus de Assassin’s Creed Origins com roadmap da platina, tempo estimado, dificuldade, flags, Old Habits, Reduce Reuse Recycle, exploração, arena, hipódromo e dicas para os 51 troféus da lista base.",
+              "keywords": "Assassin’s Creed Origins troféus, Assassin’s Creed Origins platina, guia Assassin’s Creed Origins, AC Origins troféus, AC Origins platina, Earn Them All, Old Habits, Reduce Reuse Recycle, The Harder They Fall, Stargazer, Master Diver",
+              "ogTitle": "Assassin’s Creed Origins: Guia de Troféus e Platina",
+              "ogDescription": "Roadmap da platina de Assassin’s Creed Origins com 51 troféus da lista base, sem perdíveis, sem online, sem coop e sem DLC obrigatória."
+        },
+        "quickDecision": {
+              "summary": "Sim, vale platinar se você gosta de mundo aberto e não se importa com uma platina longa de exploração.",
+              "recommendation": "A dificuldade é baixa; o tempo é longo, cerca de 50 a 70 horas.",
+              "firstAction": "Comece a campanha na dificuldade que preferir, sincronize mirantes, compre habilidades úteis e guarde trinkets desde o início.",
+              "risk": "Baixo. Não há perdíveis reais, online, coop ou DLC obrigatória; o maior cuidado é guardar 100 trinkets e limpar todos os locais do mapa."
+        },
+        "checklist": [
+              "Conferir se o guia tem 51 troféus da lista base.",
+              "Conferir se Earn Them All! é a platina.",
+              "Conferir se não há DLC misturada na platina base.",
+              "Conferir distribuição: 1 platina, 1 ouro, 15 prata e 34 bronze.",
+              "Conferir onlineRequired false.",
+              "Conferir coopRequired false.",
+              "Conferir dlcRequired false.",
+              "Conferir hasMissables false.",
+              "Conferir missableCount 0.",
+              "Conferir se nenhum troféu está marcado como perdível.",
+              "Conferir se Reduce, Reuse, Recycle está como ponto de atenção, não perdível.",
+              "Conferir se Old Habits não está como perdível.",
+              "Conferir se dificuldade não aparece como requisito de troféu.",
+              "Conferir se filtros não estão inflados por tags erradas.",
+              "Conferir se todos os troféus têm nome oficial em inglês como principal.",
+              "Conferir se todos têm PT-BR abaixo.",
+              "Conferir se descrições estão em português.",
+            "Conferir se não aparecem rótulos técnicos de nome original nem placeholders de descrição editorial.",
+              "Conferir se roadmap está estruturado como array de objetos.",
+            "Conferir se roadmap não renderiza objeto bruto ou chaves técnicas.",
+              "Conferir FAQ, decisão rápida, SEO e pontos de atenção.",
+              "Conferir se página individual e catálogo exibem o mesmo status editorial.",
+              "Conferir se flags do topo batem com filtros do catálogo."
+        ],
+        "attentionPoints": [
+              {
+                    "title": "Reduce, Reuse, Recycle",
+                    "detail": "Guarde trinkets desde o começo e venda 100 de uma vez. O troféu não é perdível, mas vender trinkets cedo pode gerar farm desnecessário.",
+                    "tags": [
+                          "Grind",
+                          "Cleanup",
+                          "Atenção"
+                    ]
+              },
+              {
+                    "title": "Old Habits",
+                    "detail": "Old Habits exige completar todos os locais do mapa e é o maior bloco de tempo da platina. Use mirantes para revelar pontos de interesse e confira regiões pequenas.",
+                    "tags": [
+                          "Exploração",
+                          "Mapa",
+                          "Grind"
+                    ]
+              },
+              {
+                    "title": "Bug histórico de Old Habits",
+                    "detail": "O bug antigo envolvendo completar locais com Aya foi corrigido em patch. Não marque como perdível atual, mas jogue com o jogo atualizado.",
+                    "tags": [
+                          "Patch",
+                          "Atenção"
+                    ]
+              },
+              {
+                    "title": "DLC não necessária",
+                    "detail": "A platina base usa 51 troféus. Não misture The Hidden Ones ou The Curse of the Pharaohs com os requisitos de Earn Them All!.",
+                    "tags": [
+                          "Lista base",
+                          "Sem DLC"
+                    ]
+              },
+              {
+                    "title": "Dificuldade",
+                    "detail": "A dificuldade escolhida não afeta troféus. O jogador pode fazer tudo no fácil.",
+                    "tags": [
+                          "Dificuldade",
+                          "Sem requisito"
+                    ]
+              },
+              {
+                    "title": "Elefantes de guerra",
+                    "detail": "The Harder They Fall envolve inimigos de nível alto. Deixe Qetesh e Resheph para o endgame.",
+                    "tags": [
+                          "Chefe",
+                          "Endgame"
+                    ]
+              },
+              {
+                    "title": "Overdesign",
+                    "detail": "Overdesign exige preparação específica com veneno, tocha e inimigo nível 35+, então deve ter dica clara.",
+                    "tags": [
+                          "Combate",
+                          "Ação específica"
+                    ]
+              },
+              {
+                    "title": "Exploração não é só coletável",
+                    "detail": "Origins reduziu coletáveis tradicionais, mas exige completar locais. Não transforme todo requisito de mapa em tag de Coletável.",
+                    "tags": [
+                          "Exploração",
+                          "Mapa"
+                    ]
+              }
+        ],
+        "faq": [
+              {
+                    "question": "Assassin’s Creed Origins tem troféus perdíveis?",
+                    "answer": "Não. A platina base não tem troféus perdíveis reais. O principal cuidado é guardar 100 trinkets para Reduce, Reuse, Recycle, mas isso é uma prevenção contra farm, não um perdível."
+              },
+              {
+                    "question": "Precisa jogar online para platinar?",
+                    "answer": "Não. A platina base é totalmente offline."
+              },
+              {
+                    "question": "Precisa de cooperação?",
+                    "answer": "Não. Assassin’s Creed Origins é uma platina single-player."
+              },
+              {
+                    "question": "Precisa de DLC para a platina?",
+                    "answer": "Não. Earn Them All! exige apenas os 51 troféus da lista base. The Hidden Ones e The Curse of the Pharaohs não são necessários para a platina."
+              },
+              {
+                    "question": "A dificuldade afeta troféus?",
+                    "answer": "Não. É possível buscar todos os troféus na dificuldade que preferir."
+              },
+              {
+                    "question": "Quanto tempo leva para platinar?",
+                    "answer": "Em média, cerca de 50 a 70 horas, dependendo do ritmo de exploração, limpeza de locais e troféus diversos."
+              },
+              {
+                    "question": "Preciso completar todos os locais?",
+                    "answer": "Sim. Old Habits exige completar todos os locais do mapa, e esse é o requisito mais demorado da platina."
+              },
+              {
+                    "question": "Preciso pegar todos os coletáveis?",
+                    "answer": "A platina exige locais e atividades específicas, como stone circles, hermit locations, tumbas e locais submersos, mas não deve ser tratada como uma caça genérica a coletáveis tradicionais."
+              },
+              {
+                    "question": "O bug de Old Habits ainda torna o troféu perdível?",
+                    "answer": "Não trate isso como perdível atual. O problema antigo envolvendo locais feitos com Aya foi corrigido em patch. A recomendação editorial é jogar com o jogo atualizado."
+              },
+              {
+                    "question": "Qual é o maior cuidado da platina?",
+                    "answer": "Guardar 100 trinkets para vender de uma vez e organizar a limpeza de todos os locais para Old Habits."
+              }
+        ],
+        "roadmap": [
+              {
+                    "title": "Avance pela campanha e prepare a base da platina",
+                    "focus": "História e progressão",
+                    "objective": "Concluir a história principal enquanto já compra habilidades úteis, libera regiões e reduz o trabalho do cleanup.",
+                    "actions": [
+                          "Jogue na dificuldade que preferir, pois ela não afeta troféus.",
+                          "Sincronize mirantes para revelar pontos de interesse no mapa.",
+                          "Compre habilidades ligadas a troféus, como Dawn & Dusk, Sleep Darts, Poison Darts, Animal Taming, Enhanced Predator Bow e Elite Ranger.",
+                          "Faça side quests e atividades próximas para manter o nível de Bayek adequado.",
+                          "Guarde trinkets desde o início e não venda antes de juntar 100."
+                    ],
+                    "warning": "Reduce, Reuse, Recycle não é perdível, mas vender trinkets cedo pode gerar farm desnecessário no final.",
+                    "result": "Ao fim da campanha, a maior parte da progressão estará aberta e o cleanup será mais organizado."
+              },
+              {
+                    "title": "Resolva os troféus de história e atividades principais",
+                    "focus": "Campanha e side quests",
+                    "objective": "Finalizar os troféus ligados à progressão principal e às missões secundárias específicas.",
+                    "actions": [
+                          "Complete todos os troféus automáticos da história até The End.",
+                          "Complete a side quest Seven Farmers.",
+                          "Complete a side quest Lady of Slaughter para The Festival.",
+                          "Ative uma Master Ability para I’m Done Learning.",
+                          "Alcance pelo menos o nível 20 para You still need 8880…"
+                    ],
+                    "warning": "",
+                    "result": "Os troféus de campanha, side quests específicas e progressão básica ficam resolvidos."
+              },
+              {
+                    "title": "Limpe o mapa com foco em Old Habits",
+                    "focus": "Exploração e locais",
+                    "objective": "Completar todos os locais exigidos por Old Habits e resolver os troféus de exploração relacionados.",
+                    "actions": [
+                          "Complete todos os pontos de interrogação do mapa para Old Habits.",
+                          "Complete 15 locais submersos para Master Diver.",
+                          "Complete todas as hermit locations para Words of Wisdom.",
+                          "Complete todos os 12 stone circles para Stargazer.",
+                          "Complete ao menos uma tumba para Raider of the Lost Tomb.",
+                          "Revele todo o mapa para I Know My Land."
+                    ],
+                    "warning": "Old Habits é o maior bloco de tempo da platina. Não confunda isso com coletáveis tradicionais isolados: o requisito principal é completar os locais do mapa.",
+                    "result": "A parte mais longa da platina fica concluída e boa parte dos troféus de exploração será liberada naturalmente."
+              },
+              {
+                    "title": "Complete arena, hipódromo e chefes fortes",
+                    "focus": "Desafios de combate",
+                    "objective": "Resolver os troféus de combate estruturado, chefes especiais e atividades competitivas offline.",
+                    "actions": [
+                          "Complete todos os eventos da arena de Krokodilopolis para For Those About to Die….",
+                          "Finalize um chefe da arena com Overpower Attack para Fatality!.",
+                          "Vença o primeiro torneio do hipódromo para Ben-Hur.",
+                          "Destrua um oponente em corrida do hipódromo para Road Rage.",
+                          "Derrote os elefantes de guerra Qetesh e Resheph para The Harder They Fall."
+                    ],
+                    "warning": "Os elefantes de guerra são inimigos de nível alto. Deixe esse desafio para quando Bayek estiver bem evoluído.",
+                    "result": "Os desafios mais exigentes de combate e atividades especiais ficam resolvidos."
+              },
+              {
+                    "title": "Faça os troféus diversos e de habilidade",
+                    "focus": "Misc e ações específicas",
+                    "objective": "Resolver troféus de ações pontuais, combate, stealth, montarias, foto, águia, craft e interações específicas.",
+                    "actions": [
+                          "Faça Slasher, The Arrow Whisperer, Shadow of Egypt, Archer of the Month, BOOM! e Overdesign.",
+                          "Use Dawn & Dusk 30 vezes para Namaste.",
+                          "Use Senu por 30 minutos para Free as a Bird.",
+                          "Use todos os tipos de veículo para Rider’s Licence.",
+                          "Destrua 100 objetos quebráveis para Smash!.",
+                          "Crie 20 upgrades para Handy Man."
+                    ],
+                    "warning": "Overdesign exige preparação específica: inimigo nível 35+, envenenado, morto com tocha em menos de 30 segundos.",
+                    "result": "Os troféus misc deixam de ficar espalhados e o cleanup final fica bem menor."
+              },
+              {
+                    "title": "Finalize trinkets, equipamentos e conferência da lista base",
+                    "focus": "Cleanup final",
+                    "objective": "Concluir os requisitos restantes sem misturar DLCs com a platina base.",
+                    "actions": [
+                          "Venda 100 trinkets de uma vez para Reduce, Reuse, Recycle.",
+                          "Equipe apenas equipamentos lendários para I’m a Legend.",
+                          "Resolva Elementary, My Dear Bayek com um papyrus mystery.",
+                          "Derrote um Phylakes para Defy Authority.",
+                          "Confira se todos os 51 troféus da lista base foram registrados."
+                    ],
+                    "warning": "Não inclua The Hidden Ones ou The Curse of the Pharaohs como requisitos da platina base.",
+                    "result": "Com todos os 51 troféus base concluídos, Earn Them All! será desbloqueado."
+              }
+        ],
+        "trophies": [
+              {
+                    "id": "ac-origins-earn-them-all",
+                    "name": "Earn Them All!",
+                    "name_pt": "Ganhe Todos!",
+                    "type": "Platina",
+                    "description": "Obtenha todos os outros troféus da lista base de Assassin’s Creed Origins.",
+            "tip": "Complete os 50 troféus restantes da lista base. Conteúdo extra não entra na platina.",
+                    "is_missable": false,
+                    "is_spoiler": false,
+                    "tags": [
+                          "Platina",
+                          "Conclusão"
+                    ]
+              },
+              {
+                    "id": "ac-origins-first-steps",
+                    "name": "First Steps",
+                    "name_pt": "Primeiros Passos",
+                    "type": "Bronze",
+                    "description": "Complete o prólogo.",
+                    "tip": "Troféu automático de história em Siwa.",
+                    "is_missable": false,
+                    "is_spoiler": true,
+                    "tags": [
+                          "História"
+                    ]
+              },
+              {
+                    "id": "ac-origins-im-just-getting-started",
+                    "name": "I’m Just Getting Started",
+                    "name_pt": "Estou Apenas Começando",
+                    "type": "Bronze",
+                    "description": "Complete a missão principal “Aya”.",
+                    "tip": "Troféu automático de história. Continue a campanha até concluir “Aya”.",
+                    "is_missable": false,
+                    "is_spoiler": true,
+                    "tags": [
+                          "História"
+                    ]
+              },
+              {
+                    "id": "ac-origins-the-sea",
+                    "name": "The Sea",
+                    "name_pt": "O Mar",
+                    "type": "Bronze",
+                    "description": "Complete a missão principal “Pompeius Magnus”.",
+                    "tip": "Troféu automático de história ligado à progressão naval da campanha.",
+                    "is_missable": false,
+                    "is_spoiler": true,
+                    "tags": [
+                          "História"
+                    ]
+              },
+              {
+                    "id": "ac-origins-the-scarab",
+                    "name": "The Scarab",
+                    "name_pt": "O Escaravelho",
+                    "type": "Prata",
+                    "description": "Complete a missão principal “The Scarab’s Lies”.",
+                    "tip": "Troféu automático de história ligado a um alvo principal.",
+                    "is_missable": false,
+                    "is_spoiler": true,
+                    "tags": [
+                          "História"
+                    ]
+              },
+              {
+                    "id": "ac-origins-the-hyena",
+                    "name": "The Hyena",
+                    "name_pt": "A Hiena",
+                    "type": "Bronze",
+                    "description": "Complete a missão principal “The Hyena”.",
+                    "tip": "Troféu automático de história ligado a um alvo principal.",
+                    "is_missable": false,
+                    "is_spoiler": true,
+                    "tags": [
+                          "História"
+                    ]
+              },
+              {
+                    "id": "ac-origins-the-crocodile",
+                    "name": "The Crocodile",
+                    "name_pt": "O Crocodilo",
+                    "type": "Bronze",
+                    "description": "Complete a missão principal “The Crocodile’s Jaws”.",
+                    "tip": "Troféu automático de história ligado a um alvo principal.",
+                    "is_missable": false,
+                    "is_spoiler": true,
+                    "tags": [
+                          "História"
+                    ]
+              },
+              {
+                    "id": "ac-origins-the-lizard",
+                    "name": "The Lizard",
+                    "name_pt": "O Lagarto",
+                    "type": "Prata",
+                    "description": "Complete a missão principal “The Lizard’s Face”.",
+                    "tip": "Troféu automático de história ligado a um alvo principal.",
+                    "is_missable": false,
+                    "is_spoiler": true,
+                    "tags": [
+                          "História"
+                    ]
+              },
+              {
+                    "id": "ac-origins-the-siege",
+                    "name": "The Siege",
+                    "name_pt": "O Cerco",
+                    "type": "Prata",
+                    "description": "Complete a missão principal “The Aftermath”.",
+                    "tip": "Troféu automático de história em uma etapa avançada da campanha.",
+                    "is_missable": false,
+                    "is_spoiler": true,
+                    "tags": [
+                          "História"
+                    ]
+              },
+              {
+                    "id": "ac-origins-wake-up",
+                    "name": "Wake Up!",
+                    "name_pt": "Acorde!",
+                    "type": "Prata",
+                    "description": "Complete a sequência de sonho da missão principal.",
+                    "tip": "Troféu automático de história relacionado a uma sequência narrativa avançada.",
+                    "is_missable": false,
+                    "is_spoiler": true,
+                    "tags": [
+                          "História"
+                    ]
+              },
+              {
+                    "id": "ac-origins-almost-there",
+                    "name": "Almost There",
+                    "name_pt": "Quase Lá",
+                    "type": "Prata",
+                    "description": "Complete a missão principal “The Final Weighing”.",
+                    "tip": "Troféu automático de história perto do final da campanha.",
+                    "is_missable": false,
+                    "is_spoiler": true,
+                    "tags": [
+                          "História"
+                    ]
+              },
+              {
+                    "id": "ac-origins-the-end",
+                    "name": "The End",
+                    "name_pt": "O Fim",
+                    "type": "Ouro",
+                    "description": "Complete a última missão principal.",
+                    "tip": "Troféu automático de história. Termine a última missão da campanha.",
+                    "is_missable": false,
+                    "is_spoiler": true,
+                    "tags": [
+                          "História"
+                    ]
+              },
+              {
+                    "id": "ac-origins-im-a-legend",
+                    "name": "I’m a Legend",
+                    "name_pt": "Sou uma Lenda",
+                    "type": "Bronze",
+                    "description": "Equipe apenas equipamentos lendários.",
+                    "tip": "Preencha todos os slots exigidos com equipamentos lendários. Compre, guarde ou obtenha peças lendárias durante o cleanup.",
+                    "is_missable": false,
+                    "is_spoiler": false,
+                    "tags": [
+                          "Equipamento",
+                          "Progressão",
+                          "Misc"
+                    ]
+              },
+              {
+                    "id": "ac-origins-im-done-learning",
+                    "name": "I’m Done Learning",
+                    "name_pt": "Terminei de Aprender",
+                    "type": "Prata",
+                    "description": "Ative uma Master Ability.",
+                    "tip": "Invista pontos suficientes em uma árvore de habilidades e compre uma Master Ability.",
+                    "is_missable": false,
+                    "is_spoiler": false,
+                    "tags": [
+                          "Habilidade",
+                          "Progressão"
+                    ]
+              },
+              {
+                    "id": "ac-origins-overheating",
+                    "name": "Overheating",
+                    "name_pt": "Superaquecimento",
+                    "type": "Bronze",
+                    "description": "Veja uma chuva de insetos no deserto.",
+                    "tip": "Fique no deserto sob calor forte até ocorrer a alucinação de insetos caindo.",
+                    "is_missable": false,
+                    "is_spoiler": false,
+                    "tags": [
+                          "Exploração",
+                          "Misc"
+                    ]
+              },
+              {
+                    "id": "ac-origins-for-those-about-to-die",
+                    "name": "For Those About to Die…",
+                    "name_pt": "Aqueles que Vão Morrer...",
+                    "type": "Prata",
+                    "description": "Complete todos os eventos da arena de Krokodilopolis.",
+                    "tip": "Finalize todos os eventos da arena de Krokodilopolis. Deixe para quando Bayek estiver bem equipado.",
+                    "is_missable": false,
+                    "is_spoiler": false,
+                    "tags": [
+                          "Arena",
+                          "Combate"
+                    ]
+              },
+              {
+                    "id": "ac-origins-fatality",
+                    "name": "Fatality!",
+                    "name_pt": "Fatality!",
+                    "type": "Prata",
+                    "description": "Finalize um chefe da arena com um Overpower Attack.",
+                    "tip": "Em uma luta de chefe da arena, deixe o inimigo com pouca vida e finalize com Overpower Attack.",
+                    "is_missable": false,
+                    "is_spoiler": false,
+                    "tags": [
+                          "Arena",
+                          "Combate",
+                          "Ação específica"
+                    ]
+              },
+              {
+                    "id": "ac-origins-ben-hur",
+                    "name": "Ben-Hur",
+                    "name_pt": "Ben-Hur",
+                    "type": "Bronze",
+                    "description": "Vença o primeiro torneio do hipódromo.",
+                    "tip": "Complete e vença o primeiro torneio do hipódromo.",
+                    "is_missable": false,
+                    "is_spoiler": false,
+                    "tags": [
+                          "Hipódromo",
+                          "Minigame"
+                    ]
+              },
+              {
+                    "id": "ac-origins-road-rage",
+                    "name": "Road Rage",
+                    "name_pt": "Fúria na Estrada",
+                    "type": "Bronze",
+                    "description": "Destrua um oponente em uma corrida do hipódromo.",
+                    "tip": "Durante uma corrida do hipódromo, danifique a carruagem de um oponente até destruí-la.",
+                    "is_missable": false,
+                    "is_spoiler": false,
+                    "tags": [
+                          "Hipódromo",
+                          "Minigame",
+                          "Ação específica"
+                    ]
+              },
+              {
+                    "id": "ac-origins-the-harder-they-fall",
+                    "name": "The Harder They Fall",
+                    "name_pt": "Quanto Maiores Eles São",
+                    "type": "Prata",
+                    "description": "Derrote os elefantes de guerra Qetesh e Resheph.",
+                    "tip": "São inimigos de nível alto. Deixe Qetesh e Resheph para o endgame, com bons equipamentos e upgrades.",
+                    "is_missable": false,
+                    "is_spoiler": true,
+                    "tags": [
+                          "Chefe",
+                          "Combate",
+                          "Endgame"
+                    ]
+              },
+              {
+                    "id": "ac-origins-slasher",
+                    "name": "Slasher",
+                    "name_pt": "Carniceiro",
+                    "type": "Bronze",
+                    "description": "Mate 3 inimigos com um único golpe.",
+                    "tip": "Procure inimigos fracos agrupados e use dano alto ou oportunidade de combate para matar três com um só golpe.",
+                    "is_missable": false,
+                    "is_spoiler": false,
+                    "tags": [
+                          "Combate",
+                          "Ação específica"
+                    ]
+              },
+              {
+                    "id": "ac-origins-the-arrow-whisperer",
+                    "name": "The Arrow Whisperer",
+                    "name_pt": "O Sussurrador de Flechas",
+                    "type": "Prata",
+                    "description": "Mate um inimigo com o arco predador a mais de 60 metros enquanto controla a flecha.",
+                    "tip": "Compre Enhanced Predator Bow, fique a mais de 60 metros e controle a flecha até acertar o alvo.",
+                    "is_missable": false,
+                    "is_spoiler": false,
+                    "tags": [
+                          "Combate",
+                          "Habilidade",
+                          "Ação específica"
+                    ]
+              },
+              {
+                    "id": "ac-origins-words-of-wisdom",
+                    "name": "Words of Wisdom",
+                    "name_pt": "Palavras de Sabedoria",
+                    "type": "Bronze",
+                    "description": "Complete todas as hermit locations.",
+                    "tip": "Visite e complete todas as hermit locations. Elas também ajudam no progresso de Old Habits.",
+                    "is_missable": false,
+                    "is_spoiler": false,
+                    "tags": [
+                          "Exploração",
+                          "Hermit Location",
+                          "Mapa"
+                    ]
+              },
+              {
+                    "id": "ac-origins-circle-of-life",
+                    "name": "Circle of Life",
+                    "name_pt": "Ciclo da Vida",
+                    "type": "Bronze",
+                    "description": "Alimente um predador com um cadáver.",
+                    "tip": "Carregue um cadáver até um predador ou atraia o animal para se alimentar dele.",
+                    "is_missable": false,
+                    "is_spoiler": false,
+                    "tags": [
+                          "Exploração",
+                          "Ação específica",
+                          "Misc"
+                    ]
+              },
+              {
+                    "id": "ac-origins-seven-farmers",
+                    "name": "Seven Farmers",
+                    "name_pt": "Sete Fazendeiros",
+                    "type": "Bronze",
+                    "description": "Complete a side quest “Seven Farmers”.",
+                    "tip": "Conclua a missão secundária “Seven Farmers”.",
+                    "is_missable": false,
+                    "is_spoiler": false,
+                    "tags": [
+                          "Side quest"
+                    ]
+              },
+              {
+                    "id": "ac-origins-the-festival",
+                    "name": "The Festival",
+                    "name_pt": "O Festival",
+                    "type": "Bronze",
+                    "description": "Complete a side quest “Lady of Slaughter”.",
+                    "tip": "Conclua a missão secundária “Lady of Slaughter”.",
+                    "is_missable": false,
+                    "is_spoiler": false,
+                    "tags": [
+                          "Side quest"
+                    ]
+              },
+              {
+                    "id": "ac-origins-shadow-of-egypt",
+                    "name": "Shadow of Egypt",
+                    "name_pt": "Sombra do Egito",
+                    "type": "Prata",
+                    "description": "Mate 10 inimigos seguidos sem ser detectado.",
+                    "tip": "Faça uma sequência furtiva de 10 eliminações sem alerta. Acampamentos grandes ajudam.",
+                    "is_missable": false,
+                    "is_spoiler": false,
+                    "tags": [
+                          "Stealth",
+                          "Combate"
+                    ]
+              },
+              {
+                    "id": "ac-origins-smash",
+                    "name": "Smash!",
+                    "name_pt": "Esmague!",
+                    "type": "Bronze",
+                    "description": "Destrua 100 objetos quebráveis.",
+                    "tip": "Quebre vasos, jarros e objetos destrutíveis durante exploração ou cleanup.",
+                    "is_missable": false,
+                    "is_spoiler": false,
+                    "tags": [
+                          "Ação específica",
+                          "Cleanup",
+                          "Misc"
+                    ]
+              },
+              {
+                    "id": "ac-origins-i-know-my-land",
+                    "name": "I Know My Land",
+                    "name_pt": "Conheço Minha Terra",
+                    "type": "Bronze",
+                    "description": "Revele todo o mapa.",
+                    "tip": "Passe por todas as regiões para remover a névoa do mapa.",
+                    "is_missable": false,
+                    "is_spoiler": false,
+                    "tags": [
+                          "Exploração",
+                          "Mapa"
+                    ]
+              },
+              {
+                    "id": "ac-origins-raider-of-the-lost-tomb",
+                    "name": "Raider of the Lost Tomb",
+                    "name_pt": "Caçador da Tumba Perdida",
+                    "type": "Bronze",
+                    "description": "Complete uma tumba.",
+                    "tip": "Conclua qualquer tumba da lista base.",
+                    "is_missable": false,
+                    "is_spoiler": false,
+                    "tags": [
+                          "Exploração",
+                          "Tumba"
+                    ]
+              },
+              {
+                    "id": "ac-origins-top-of-the-world",
+                    "name": "I Can See My House From Here!",
+                    "name_pt": "Posso Ver Minha Casa Daqui!",
+                    "type": "Bronze",
+                    "description": "Alcance o “Top of the World” no território Black Desert.",
+                    "tip": "Suba até o ponto mais alto no Black Desert para acionar o troféu.",
+                    "is_missable": false,
+                    "is_spoiler": false,
+                    "tags": [
+                          "Exploração",
+                          "Mapa",
+                          "Ação específica"
+                    ]
+              },
+              {
+                    "id": "ac-origins-set-up-date",
+                    "name": "Set-up Date",
+                    "name_pt": "Encontro Arranjado",
+                    "type": "Bronze",
+                    "description": "Leve um leão domesticado até um crocodilo.",
+                    "tip": "Compre Animal Taming, coloque um leão para dormir, dome o animal e leve-o até um crocodilo.",
+                    "is_missable": false,
+                    "is_spoiler": false,
+                    "tags": [
+                          "Habilidade",
+                          "Ação específica",
+                          "Misc"
+                    ]
+              },
+              {
+                    "id": "ac-origins-wheres-my-black-flag",
+                    "name": "Where’s My Black Flag?",
+                    "name_pt": "Cadê Minha Bandeira Negra?",
+                    "type": "Bronze",
+                    "description": "Derrote 8 capitães de navio.",
+                    "tip": "Derrote 8 capitães em atividades navais da lista base.",
+                    "is_missable": false,
+                    "is_spoiler": false,
+                    "tags": [
+                          "Naval",
+                          "Combate"
+                    ]
+              },
+              {
+                    "id": "ac-origins-reporter",
+                    "name": "Reporter",
+                    "name_pt": "Repórter",
+                    "type": "Bronze",
+                    "description": "Tire 1 foto em 5 territórios diferentes.",
+                    "tip": "Use o modo foto em cinco regiões diferentes do mapa.",
+                    "is_missable": false,
+                    "is_spoiler": false,
+                    "tags": [
+                          "Foto",
+                          "Exploração",
+                          "Misc"
+                    ]
+              },
+              {
+                    "id": "ac-origins-overdesign",
+                    "name": "Overdesign",
+                    "name_pt": "Exagero",
+                    "type": "Bronze",
+                    "description": "Mate um inimigo de nível 35 ou superior, envenenado, com a tocha em menos de 30 segundos.",
+                    "tip": "Prepare um inimigo nível 35+, aplique veneno e finalize rapidamente com a tocha. É situacional, mas não depende da dificuldade do jogo.",
+                    "is_missable": false,
+                    "is_spoiler": false,
+                    "tags": [
+                          "Combate",
+                          "Ação específica",
+                          "Misc"
+                    ]
+              },
+              {
+                    "id": "ac-origins-free-as-a-bird",
+                    "name": "Free as a Bird",
+                    "name_pt": "Livre como um Pássaro",
+                    "type": "Bronze",
+                    "description": "Use a águia por um total de 30 minutos.",
+                    "tip": "Use Senu por 30 minutos acumulados; esse tempo vem naturalmente se você marcar locais e inimigos.",
+                    "is_missable": false,
+                    "is_spoiler": false,
+                    "tags": [
+                          "Senu",
+                          "Exploração"
+                    ]
+              },
+              {
+                    "id": "ac-origins-triathlete",
+                    "name": "Triathlete",
+                    "name_pt": "Triatleta",
+                    "type": "Bronze",
+                    "description": "Nade 1500 metros, cavalgue 40 km e corra 10 km.",
+                    "tip": "O progresso vem naturalmente durante campanha e exploração; complete o restante no cleanup se faltar.",
+                    "is_missable": false,
+                    "is_spoiler": false,
+                    "tags": [
+                          "Exploração",
+                          "Progressão",
+                          "Cleanup"
+                    ]
+              },
+              {
+                    "id": "ac-origins-archer-of-the-month",
+                    "name": "Archer of the Month",
+                    "name_pt": "Arqueiro do Mês",
+                    "type": "Prata",
+                    "description": "Mate um inimigo com tiro na cabeça usando o arco enquanto estiver no ar.",
+                    "tip": "Salte de uma borda e acerte um headshot com arco durante a queda.",
+                    "is_missable": false,
+                    "is_spoiler": false,
+                    "tags": [
+                          "Combate",
+                          "Ação específica"
+                    ]
+              },
+              {
+                    "id": "ac-origins-boom",
+                    "name": "BOOM!",
+                    "name_pt": "BOOM!",
+                    "type": "Bronze",
+                    "description": "Mate 30 inimigos atirando uma flecha de fogo em jarros de óleo.",
+                    "tip": "Use flechas de fogo em jarros de óleo perto de inimigos. Pode ser farmado em acampamentos.",
+                    "is_missable": false,
+                    "is_spoiler": false,
+                    "tags": [
+                          "Combate",
+                          "Ação específica",
+                          "Grind"
+                    ]
+              },
+              {
+                    "id": "ac-origins-riders-licence",
+                    "name": "Rider’s Licence",
+                    "name_pt": "Carteira de Motorista",
+                    "type": "Bronze",
+                    "description": "Use todos os tipos de veículo pelo menos uma vez.",
+                    "tip": "Use montarias, barcos e carruagens exigidos pelo jogo ao menos uma vez.",
+                    "is_missable": false,
+                    "is_spoiler": false,
+                    "tags": [
+                          "Exploração",
+                          "Veículo",
+                          "Misc"
+                    ]
+              },
+              {
+                    "id": "ac-origins-old-habits",
+                    "name": "Old Habits",
+                    "name_pt": "Velhos Hábitos",
+                    "type": "Prata",
+                    "description": "Complete todos os locais.",
+                    "tip": "Complete todos os pontos de interesse da lista base. O bug antigo envolvendo locais feitos com Aya foi corrigido em patch; jogue atualizado.",
+                    "is_missable": false,
+                    "is_spoiler": false,
+                    "tags": [
+                          "Exploração",
+                          "Mapa",
+                          "Localização",
+                          "Grind",
+                          "Cleanup"
+                    ]
+              },
+              {
+                    "id": "ac-origins-run-for-your-life",
+                    "name": "Run For Your Life!",
+                    "name_pt": "Corra Pela Sua Vida!",
+                    "type": "Bronze",
+                    "description": "Fuja de 3 lutas contra hipopótamos.",
+                    "tip": "Entre em combate com hipopótamos e fuja três vezes.",
+                    "is_missable": false,
+                    "is_spoiler": false,
+                    "tags": [
+                          "Exploração",
+                          "Ação específica",
+                          "Misc"
+                    ]
+              },
+              {
+                    "id": "ac-origins-elementary-my-dear-bayek",
+                    "name": "Elementary, My Dear Bayek",
+                    "name_pt": "Elementar, Meu Caro Bayek",
+                    "type": "Bronze",
+                    "description": "Resolva um papyrus mystery.",
+                    "tip": "Encontre e resolva qualquer papyrus mystery da lista base.",
+                    "is_missable": false,
+                    "is_spoiler": false,
+                    "tags": [
+                          "Papyrus",
+                          "Exploração",
+                          "Mapa"
+                    ]
+              },
+              {
+                    "id": "ac-origins-reduce-reuse-recycle",
+                    "name": "Reduce, Reuse, Recycle",
+                    "name_pt": "Reduza, Reutilize, Recicle",
+                    "type": "Bronze",
+                    "description": "Venda 100 trinkets de uma vez.",
+                    "tip": "Guarde trinkets desde o começo e venda 100 de uma vez. Não é perdível, mas vender cedo pode gerar farm desnecessário.",
+                    "is_missable": false,
+                    "is_spoiler": false,
+                    "tags": [
+                          "Grind",
+                          "Cleanup",
+                          "Atenção"
+                    ]
+              },
+              {
+                    "id": "ac-origins-namaste",
+                    "name": "Namaste",
+                    "name_pt": "Namastê",
+                    "type": "Bronze",
+                    "description": "Use Dawn & Dusk para acelerar o tempo 30 vezes.",
+                    "tip": "Compre Dawn & Dusk e avance o tempo 30 vezes.",
+                    "is_missable": false,
+                    "is_spoiler": false,
+                    "tags": [
+                          "Habilidade",
+                          "Ação específica"
+                    ]
+              },
+              {
+                    "id": "ac-origins-you-still-need-8880",
+                    "name": "You still need 8880…",
+                    "name_pt": "Você Ainda Precisa de 8880...",
+                    "type": "Bronze",
+                    "description": "Alcance o nível 20.",
+                    "tip": "Chegue ao nível 20 jogando campanha, side quests e atividades do mapa.",
+                    "is_missable": false,
+                    "is_spoiler": false,
+                    "tags": [
+                          "Progressão"
+                    ]
+              },
+              {
+                    "id": "ac-origins-stargazer",
+                    "name": "Stargazer",
+                    "name_pt": "Observador das Estrelas",
+                    "type": "Prata",
+                    "description": "Complete todos os 12 stone circles.",
+                    "tip": "Complete os 12 stone circles. Eles também contribuem para Old Habits.",
+                    "is_missable": false,
+                    "is_spoiler": false,
+                    "tags": [
+                          "Exploração",
+                          "Stone Circle",
+                          "Mapa"
+                    ]
+              },
+              {
+                    "id": "ac-origins-master-diver",
+                    "name": "Master Diver",
+                    "name_pt": "Mergulhador Mestre",
+                    "type": "Prata",
+                    "description": "Complete 15 locais submersos.",
+                    "tip": "Complete todos os objetivos de 15 locais submersos em rios e mares.",
+                    "is_missable": false,
+                    "is_spoiler": false,
+                    "tags": [
+                          "Exploração",
+                          "Local submerso",
+                          "Mapa"
+                    ]
+              },
+              {
+                    "id": "ac-origins-defy-authority",
+                    "name": "Defy Authority",
+                    "name_pt": "Desafie a Autoridade",
+                    "type": "Bronze",
+                    "description": "Derrote um Phylakes.",
+                    "tip": "Derrote qualquer Phylakes e confirme a eliminação.",
+                    "is_missable": false,
+                    "is_spoiler": true,
+                    "tags": [
+                          "Combate",
+                          "Endgame"
+                    ]
+              },
+              {
+                    "id": "ac-origins-handy-man",
+                    "name": "Handy Man",
+                    "name_pt": "Faz-Tudo",
+                    "type": "Bronze",
+                    "description": "Faça 20 crafts/upgrades.",
+                    "tip": "Crie 20 upgrades de equipamento usando materiais de caça e exploração.",
+                    "is_missable": false,
+                    "is_spoiler": false,
+                    "tags": [
+                          "Crafting",
+                          "Grind",
+                          "Progressão"
+                    ]
+              },
+              {
+                    "id": "ac-origins-roooaaarrrrr",
+                    "name": "Roooaaarrrrr!",
+                    "name_pt": "Roooaaarrrrr!",
+                    "type": "Bronze",
+                    "description": "Dome um leão.",
+                    "tip": "Compre Animal Taming, coloque um leão para dormir e dome o animal.",
+                    "is_missable": false,
+                    "is_spoiler": false,
+                    "tags": [
+                          "Habilidade",
+                          "Ação específica",
+                          "Misc"
+                    ]
+              }
+        ]
   },
   {
       "name": "Assassin’s Creed Odyssey",
