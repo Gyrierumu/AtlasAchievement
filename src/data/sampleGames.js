@@ -30475,70 +30475,177 @@ const sampleGames = [
 
 {
       "name": "Disney Epic Mickey: Rebrushed",
+      "title": "Disney Epic Mickey: Rebrushed",
       "slug": "disney-epic-mickey-rebrushed",
       "primary_platform": "PlayStation",
       "platforms": ["PS4", "PS5", "PC", "Xbox One", "Xbox Series X|S", "Nintendo Switch"],
       "genre": "Plataforma 3D / Ação / Aventura",
-      "developer": "Purple Lamp",
+      "developer": "Purple Lamp Studios",
       "publisher": "THQ Nordic",
       "release_date": "2024-09-24",
-      "language_notes": "A versão PC/Steam lista interface em português do Brasil; o guia de troféus prioriza a lista PlayStation.",
+      "language_notes": "O guia prioriza a lista PlayStation de PS4 e PS5.",
       "mode": "single-player / offline",
       "difficulty": 3,
-      "time": "8-12h",
-      "time_min_hours": 8,
-      "time_max_hours": 12,
-      "time_sort_hours": 12,
-      "time_bucket": "short",
-      "missable": "Possui troféus perdíveis por escolhas de tinta/thinner, chefes, animatronics, coletáveis, quests e ações específicas. Acompanhe o roadmap desde o início para reduzir retrabalho.",
-      "runs_summary": "2 jogadas recomendadas: uma focada em tinta/ações heroicas e outra focada em thinner/decisões opostas para cobrir finais, chefes e decisões conflitantes.",
-      "missable_summary": "Sim. Há troféus ligados a escolhas, ações específicas, coletáveis e rotas. É recomendado seguir o roadmap desde o início e não avançar pontos importantes sem conferir pendências.",
-      "online_summary": "Não. A platina é offline, single-player e não exige multiplayer.",
-      "grind_summary": "Sem grind técnico pesado; o peso está em planejamento, rotas tinta/thinner, coletáveis, film reels, pins/itens, quests e ações específicas durante a campanha.",
-      "dlc_scope": "Não há DLC necessária para a platina base. Costume Pack/cosmético não deve ser tratado como requisito de platina.",
-      "difficulty_reason": "3/10 inicial, em revisão: a dificuldade está mais em planejamento de escolhas, coletáveis e rotas do que em desafio técnico alto.",
-      "time_reason": "Estimativa editorial inicial de 8-12 horas, ainda em revisão, considerando duas jogadas planejadas e limpeza reduzida se o checklist for seguido desde o começo.",
-      "first_run_advice": "Antes de começar, leia os troféus de escolhas, chefes e coletáveis. Faça uma jogada focada em tinta/ajudar personagens e outra focada em thinner/decisões opostas para reduzir risco de perder troféus.",
-      "cleanup_advice": "Na limpeza, revise troféus restantes por tipo: coletáveis, film reels, Gremlins, animatronics, quests, chefes e ações de combate. Não assuma que tudo pode ser limpo livremente depois do final sem validar a pendência.",
-      "before_you_start": "Disney Epic Mickey: Rebrushed é offline e single-player; não há online nem coop obrigatório. A dificuldade está mais em planejamento do que habilidade. Escolhas com tinta e thinner podem afetar troféus, chefes, animatronics e finais; coletáveis e quests devem ser acompanhados durante a campanha.",
-      "best_for": "Ideal para quem quer uma platina curta/moderada, offline, sem coop, com foco em exploração, decisões de rota e checklist de coletáveis.",
-      "avoid_if": "Evite começar sem roadmap se você não quer repetir campanha por escolhas opostas ou por coletáveis/quests perdidos.",
+      "time": "15-25h",
+      "time_min_hours": 15,
+      "time_max_hours": 25,
+      "time_sort_hours": 20,
+      "time_bucket": "medium",
+      "missable": "Possui troféus perdíveis por rota, avanço de história, colecionáveis por região, partes dos animatrônicos e ponto de não retorno. Siga uma run de tinta e outra de solvente, sem misturar objetivos incompatíveis.",
+      "runs_summary": "Pelo menos 2 jogadas: uma rota de tinta, com chefes pintados e animatrônicos consertados, e outra rota de solvente, com chefes dissolvidos e animatrônicos desmontados.",
+      "missable_summary": "Sim. Vários troféus dependem de escolhas de rota, avanço de história ou objetivos que podem ficar inacessíveis. Use checklist por região e faça pelo menos duas jogadas planejadas.",
+      "online_summary": "Não. A platina é totalmente offline, single-player e não exige servidores, PS+ ou multiplayer.",
+      "grind_summary": "Grind leve a moderado em E-Tickets, inimigos, objetos destrutíveis e upgrades; o maior peso está em checklist, rotas de tinta/solvente e colecionáveis por região.",
+      "dlc_scope": "Não há DLC obrigatória. O guia cobre apenas a lista base PlayStation com 39 troféus.",
+      "difficulty_reason": "3/10: a execução é acessível e a dificuldade selecionável não afeta troféus. O risco real está em planejamento de rota, colecionáveis e ponto de não retorno.",
+      "time_reason": "A faixa de 15 a 25 horas considera duas jogadas planejadas, checklist de gremlins, rolos de filme, partes dos animatrônicos, corridas da Gilda e cleanup de ações específicas.",
+      "first_run_advice": "Faça a primeira jogada pela rota de tinta: pinte chefes, conserte animatrônicos, liberte gremlins e acompanhe rolos de filme e partes dos animatrônicos por região.",
+      "cleanup_advice": "Antes do ponto de não retorno, revise gremlins, rolos de filme, partes dos animatrônicos, corridas da Gilda, upgrades, E-Tickets, tipos de Beetleworx e ações de combate pendentes.",
+      "before_you_start": "Disney Epic Mickey: Rebrushed é uma platina fácil, mas exige planejamento porque várias escolhas de tinta e solvente mudam recompensas, chefes, animatrônicos e caminhos disponíveis. A rota mais segura é fazer duas jogadas: uma focada em tinta, consertando animatrônicos e resolvendo a rota positiva, e outra focada em solvente, desmontando animatrônicos e derrotando chefes pela rota oposta. Não há troféus online, cooperação ou DLC obrigatória.",
+      "best_for": "Ideal para quem gosta de plataforma 3D, quer uma platina offline e consegue seguir checklist de rotas, colecionáveis e objetivos por região.",
+      "avoid_if": "Evite jogar no improviso se você não quer repetir campanha por misturar tinta e solvente ou por deixar gremlins, rolos de filme e partes dos animatrônicos para trás.",
       "hasMissables": true,
+      "missableCount": 12,
+      "missable_count": 12,
+      "onlineRequired": false,
+      "coopRequired": false,
+      "dlcRequired": false,
       "hasOnline": false,
       "hasCoop": false,
       "requiresOnline": false,
       "requiresCoop": false,
       "dlcRequiredForPlatinum": false,
-      "dlcNotes": "Costume Pack/cosmético não necessário para a platina base.",
-      "playthroughs": "2 jogadas recomendadas",
+      "dlcNotes": "Não há DLC necessária para a platina base.",
+      "playthroughs": "2 jogadas obrigatórias/recomendadas",
       "platinumType": "offline",
-      "guideFocus": "planejamento, escolhas, coletáveis e rotas tinta/thinner",
-      "editorialStatus": "in_review",
-      "editorial_status": "review",
-      "coverage_level": "strong",
-      "is_verified": false,
-      "verification_status": "review",
-      "qualityWarnings": [
-            "Validar troféus perdíveis por escolhas de tinta/thinner e finais.",
-            "Validar ordem ideal de coletáveis e quests antes da publicação ampla."
-      ],
-      "lastReviewedAt": "2026-05-09",
-      "reviewedBy": "",
-      "verification_note": "Em revisão: validar troféus perdíveis por escolhas de tinta/thinner e finais. Validar ordem ideal de coletáveis, quests, Gremlins e animatronics antes da publicação ampla. A lista PlayStation atual possui 39 troféus; fontes públicas divergem em alguns nomes/descrições e a revisão editorial deve priorizar PSN.",
+      "guideFocus": "duas rotas, tinta vs solvente, colecionáveis, gremlins, animatrônicos e checklist antes do ponto de não retorno",
+      "status": "published",
+      "editorialStatus": "verified",
+      "editorial_status": "published",
+      "editorial_review_status": "verified",
+      "coverage_level": "complete",
+      "is_verified": true,
+      "verification_status": "verified",
+      "qualityWarnings": [],
+      "quality_warnings": [],
+      "lastReviewedAt": "2026-06-13",
+      "last_reviewed_at": "2026-06-13",
+      "reviewedBy": "AtlasAchievement",
+      "reviewed_by": "AtlasAchievement",
+      "verification_note": "Guia revisado para publicação: lista PlayStation base com 39 troféus, distribuição 1/4/10/24, duas rotas incompatíveis de tinta e solvente, sem online, sem coop e sem DLC obrigatória.",
+      "editorial_notes": "Platina base revisada com foco em rotas incompatíveis, missables por região, nomes EN/PT-BR, descrições em português, tags, roadmap estruturado, FAQ e SEO.",
       "seo": {
-            "title": "Disney Epic Mickey: Rebrushed: guia de platina, troféus e roadmap | AtlasAchievement",
-            "description": "Guia de platina de Disney Epic Mickey: Rebrushed em português, com tempo estimado, dificuldade, troféus perdíveis, roadmap, checklist e dicas para conquistar todos os troféus.",
-            "ogTitle": "Disney Epic Mickey: Rebrushed: guia de platina, troféus e roadmap | AtlasAchievement",
-            "ogDescription": "Guia de platina de Disney Epic Mickey: Rebrushed em português, com tempo estimado, dificuldade, troféus perdíveis, roadmap, checklist e dicas para conquistar todos os troféus."
+            "title": "Disney Epic Mickey: Rebrushed: Guia de Troféus e Platina",
+            "description": "Guia de troféus de Disney Epic Mickey: Rebrushed com roadmap da platina, tempo estimado, dificuldade, troféus perdíveis, rotas de tinta e solvente, gremlins, rolos de filme e dicas para os 39 troféus.",
+            "metaDescription": "Guia de troféus de Disney Epic Mickey: Rebrushed com roadmap da platina, tempo estimado, dificuldade, troféus perdíveis, rotas de tinta e solvente, gremlins, rolos de filme e dicas para os 39 troféus.",
+            "ogTitle": "Disney Epic Mickey: Rebrushed: Guia de Troféus e Platina",
+            "ogDescription": "Guia de troféus de Disney Epic Mickey: Rebrushed com roadmap da platina, tempo estimado, dificuldade, troféus perdíveis, rotas de tinta e solvente, gremlins, rolos de filme e dicas para os 39 troféus.",
+            "keywords": ["Disney Epic Mickey Rebrushed troféus", "Disney Epic Mickey Rebrushed platina", "guia Disney Epic Mickey Rebrushed", "Epic Mickey Rebrushed troféus", "Epic Mickey Rebrushed platinum", "Mousetastic", "Camundongo Fantástico", "An Epic Journey", "Out of my way", "Uma Jornada Épica", "Sai da Frente", "Mickey Uncaged", "Moviegoer"]
       },
       "image": "https://cdn.cloudflare.steamstatic.com/steam/apps/1522160/header.jpg",
       "cover_image": "https://cdn.cloudflare.steamstatic.com/steam/apps/1522160/library_600x900.jpg",
+      "quickDecision": {
+            "verdict": "Sim, vale platinar, especialmente para quem gosta de plataforma 3D e consegue seguir checklist de rotas.",
+            "difficulty": "Baixa.",
+            "time": "Curto a médio, cerca de 15 a 25 horas.",
+            "mainRisk": "Duas rotas incompatíveis: tinta e solvente.",
+            "risk": "Médio, por causa de muitos objetivos perdíveis ou bloqueáveis por avanço de história.",
+            "onlineCoop": "Não exige online nem cooperação.",
+            "dlc": "Não exige DLC.",
+            "firstAction": "Comece pela rota de tinta e mantenha checklist de gremlins, rolos de filme e partes dos animatrônicos desde a primeira região."
+      },
+      "attentionPoints": [
+            { "title": "Duas jogadas obrigatórias", "detail": "A platina exige pelo menos duas jogadas porque An Epic Journey e Out of my way pedem rotas opostas de tinta e solvente." },
+            { "title": "Rota de tinta", "detail": "Na run de tinta, pinte chefes e conserte animatrônicos. Não misture com escolhas de solvente que possam bloquear An Epic Journey." },
+            { "title": "Rota de solvente", "detail": "Na run de solvente, dissolva chefes e deixe animatrônicos desmontados. Essa rota é incompatível com a rota positiva." },
+            { "title": "Gremlins presos", "detail": "Mickey Uncaged exige libertar 12 gremlins. Alguns ficam em áreas que podem se tornar inacessíveis, então use checklist por região." },
+            { "title": "Rolos de filme", "detail": "Moviegoer exige 36 rolos de filme, mas há mais reels no jogo. Continue coletando rolos se Battle Ready ainda estiver pendente." },
+            { "title": "Battle Ready", "detail": "Battle Ready exige todos os upgrades de coração e pode depender de recompensas ligadas à rota de tinta e aos rolos de filme. Confira esse troféu antes da reta final." },
+            { "title": "Animatrônicos", "detail": "Gawrsh!, Oh, goody goody! e Aw, phooey! exigem peças de Pateta, Margarida e Donald. Acompanhe as partes antes de avançar demais." },
+            { "title": "Ponto de não retorno", "detail": "Antes da reta final, revise gremlins, filmes, peças, corridas, upgrades e objetivos de rota." },
+            { "title": "Sem online/DLC", "detail": "A platina é single-player, offline e não exige DLC." },
+            { "title": "New Game+", "detail": "New Game+ pode ajudar na segunda rota, mas não substitui checklist. Planeje tinta e solvente como runs separadas." },
+            { "title": "Tinta vs solvente nos filtros", "detail": "Tags de Tinta e Solvente não devem inflar Coletável, Online, Coop ou Dificuldade." }
+      ],
+      "checklist": [
+            "Conferir se o guia tem 39 troféus.",
+            "Conferir se Mousetastic é a platina.",
+            "Conferir distribuição: 1 platina, 4 ouro, 10 prata e 24 bronze.",
+            "Conferir onlineRequired false, coopRequired false e dlcRequired false.",
+            "Conferir hasMissables true e missableCount igual aos troféus marcados como Perdível.",
+            "Conferir se An Epic Journey e Out of my way estão explicados como rotas incompatíveis.",
+            "Conferir se o roadmap recomenda pelo menos 2 jogadas.",
+            "Conferir se não há troféus marcados como Dificuldade, Online, Coop ou DLC.",
+            "Conferir se Coletáveis cobre gremlins, rolos de filme, partes dos animatrônicos e upgrades rastreáveis.",
+            "Conferir se todos os troféus têm nome oficial em inglês como principal e PT-BR abaixo.",
+            "Conferir se descrições e dicas estão em português com acentos.",
+            "Conferir se não aparecem rótulos antigos de nome original nem placeholder de descrição.",
+            "Conferir se roadmap está estruturado como array/objeto e não renderiza campos crus.",
+            "Conferir FAQ, decisão rápida, SEO e pontos de atenção.",
+            "Conferir se página individual e catálogo exibem o mesmo status editorial."
+      ],
+      "faq": [
+            { "question": "Disney Epic Mickey: Rebrushed tem troféus perdíveis?", "answer": "Sim. Vários troféus dependem de escolhas de rota, avanço de história ou objetivos que podem ficar inacessíveis. Use checklist por região e faça pelo menos duas jogadas planejadas." },
+            { "question": "Quantas jogadas são necessárias?", "answer": "Pelo menos duas. Uma run deve seguir a rota de tinta para An Epic Journey, e outra deve seguir a rota de solvente para Out of my way." },
+            { "question": "Precisa jogar online?", "answer": "Não. A platina é totalmente offline." },
+            { "question": "Precisa de cooperação?", "answer": "Não. Disney Epic Mickey: Rebrushed é uma platina single-player." },
+            { "question": "Precisa de DLC?", "answer": "Não. A platina usa apenas a lista base de 39 troféus." },
+            { "question": "A dificuldade afeta troféus?", "answer": "Não. Não há troféus dependentes de dificuldade selecionável." },
+            { "question": "Qual é o maior cuidado da platina?", "answer": "Não misturar a rota de tinta com a rota de solvente e controlar gremlins, rolos de filme, peças dos animatrônicos e upgrades de coração antes de avançar demais." },
+            { "question": "An Epic Journey e Out of my way podem ser feitos na mesma jogada?", "answer": "Não. Eles exigem escolhas opostas. Planeje uma jogada de tinta e uma jogada de solvente." },
+            { "question": "New Game+ resolve todos os perdíveis?", "answer": "New Game+ pode ajudar na segunda rota, mas não substitui o planejamento. Para evitar retrabalho, acompanhe gremlins, rolos de filme, animatrônicos e upgrades desde o início de cada run." },
+            { "question": "Quanto tempo leva para platinar?", "answer": "Em média, cerca de 15 a 25 horas, dependendo do uso de guia, do conhecimento das rotas e da quantidade de cleanup." },
+            { "question": "Moviegoer exige todos os rolos de filme?", "answer": "Não. Moviegoer exige 36 rolos de filme. Mesmo assim, continue coletando reels se Battle Ready ainda estiver pendente, porque rolos extras podem estar ligados a recompensas importantes." }
+      ],
       "roadmap": [
-            "Etapa 1 — Preparação antes da primeira jogada: leia alertas de perdíveis, entenda a diferença entre tinta e thinner, escolha qual rota fazer primeiro e acompanhe o checklist de coletáveis, Gremlins, animatronics, quests e film reels desde o início.",
-            "Etapa 2 — Primeira jogada focada em tinta / rota heroica: priorize ajudar personagens, reparar projetores/áreas, usar tinta em chefes e situações com variação, libertar Gremlins e concluir quests/coletáveis antes de avançar pontos importantes.",
-            "Etapa 3 — Segunda jogada focada em thinner / rota alternativa: faça escolhas opostas da primeira rota, use thinner em chefes e situações com variação, deixe animatronics desmontados quando o troféu pedir e busque os troféus que conflitam com a rota heroica.",
-            "Etapa 4 — Limpeza de coletáveis e troféus específicos: revise a lista restante, confira film reels, Gremlins, E-Tickets, coração, sketches, Beetleworx, corridas, telefone e ações de combate. Marque como perdível qualquer pendência que dependa de janela de campanha.",
-            "Etapa 5 — Platina: confirme todos os 39 troféus, valide se nenhum objetivo de rota ficou pendente e finalize a lista para desbloquear Mousetastic."
+            {
+                  "title": "Faça a primeira jogada pela rota de tinta",
+                  "focus": "Rota positiva",
+                  "objective": "Concluir a campanha usando tinta nos chefes e consertando os animatrônicos para encaminhar An Epic Journey.",
+                  "actions": ["Priorize tinta em chefes e escolhas principais.", "Conserte todos os animatrônicos exigidos pela rota positiva.", "Libere gremlins presos sempre que encontrar jaulas.", "Colete rolos de filme e peças dos animatrônicos por região.", "Acompanhe Gawrsh!, Oh, goody goody!, Aw, phooey!, Moviegoer e Mickey Uncaged com checklist."],
+                  "warning": "Não misture a rota de tinta com a rota de solvente. An Epic Journey e Out of my way exigem escolhas opostas.",
+                  "result": "Ao final da primeira run, a rota de tinta, os animatrônicos consertados e boa parte dos colecionáveis estarão encaminhados."
+            },
+            {
+                  "title": "Limpe colecionáveis e objetivos antes do ponto de não retorno",
+                  "focus": "Checklist por região",
+                  "objective": "Evitar que gremlins, rolos de filme, peças de animatrônicos e objetivos de região fiquem inacessíveis.",
+                  "actions": ["Revise Dark Beauty Castle, Gremlin Village, Mean Street, OsTown, Mickeyjunk Mountain, Tomorrow City, Pirates of the Wasteland, Bog Easy e Lonesome Manor.", "Confira os gremlins presos antes de sair definitivamente de cada área.", "Colete rolos de filme nos níveis 2D.", "Complete corridas da Gilda e objetivos de regiões antes de avançar demais.", "Faça saves manuais ou backups quando possível antes de decisões importantes."],
+                  "warning": "Algumas áreas e oportunidades não ficam disponíveis para sempre. Avançar sem checklist pode exigir outra run.",
+                  "result": "Os principais riscos de perda por avanço de história ficam controlados."
+            },
+            {
+                  "title": "Finalize a campanha e confirme An Epic Journey",
+                  "focus": "Fechamento da rota de tinta",
+                  "objective": "Concluir a primeira run com chefes pintados, animatrônicos consertados e rota positiva registrada.",
+                  "actions": ["Mantenha a coerência da rota de tinta até o final.", "Confirme se todos os animatrônicos necessários foram restaurados.", "Evite usar solvente em chefes se isso comprometer a rota positiva.", "Antes do final, revise gremlins, rolos de filme, peças e objetivos de Mean Street.", "Conclua a história e confira quais troféus ficaram pendentes para a segunda run."],
+                  "warning": "O final possui ponto de não retorno. Não avance sem revisar pendências importantes.",
+                  "result": "A primeira rota fica concluída e An Epic Journey deve ficar liberado se todos os requisitos foram respeitados."
+            },
+            {
+                  "title": "Faça a segunda jogada pela rota de solvente",
+                  "focus": "Rota negativa",
+                  "objective": "Concluir a rota oposta usando solvente nos chefes e deixando animatrônicos desmontados para Out of my way.",
+                  "actions": ["Inicie uma nova run ou New Game+ para seguir a rota oposta.", "Use solvente nas escolhas principais e chefes exigidos.", "Deixe os animatrônicos desmontados quando essa for a exigência da rota.", "Priorize eficiência, pois muitos colecionáveis já devem ter sido resolvidos na primeira run.", "Aproveite para fazer Eraser, se ainda estiver pendente."],
+                  "warning": "Não conserte animatrônicos nem use tinta nos chefes principais se isso bloquear Out of my way.",
+                  "result": "A segunda rota conclui os requisitos incompatíveis com a rota de tinta."
+            },
+            {
+                  "title": "Faça o cleanup dos troféus diversos",
+                  "focus": "Combate, ações e recursos",
+                  "objective": "Resolver troféus simples de combate, sketches, E-Tickets, destruição, fotografia e ações específicas.",
+                  "actions": ["Faça Photo Op usando o Modo Foto.", "Faça Dial Tone discando o número errado 3 vezes.", "Faça Fragile destruindo 100 objetos.", "Faça It's Over One Thousand!!! coletando 1001 E-Tickets.", "Faça Feisty Friends, Square Eyes, Get Off Me!, Clumsy Lifeguard, Eraser e Painter conforme necessário.", "Confirme se todos os sketches foram desbloqueados."],
+                  "warning": "Alguns troféus misc dependem de inimigos ou áreas específicas. Se faltar algo no fim, talvez seja mais rápido fazer em uma run planejada.",
+                  "result": "Os troféus diversos deixam de ficar espalhados e a platina entra na conferência final."
+            },
+            {
+                  "title": "Conferência final da platina base",
+                  "focus": "Conferência",
+                  "objective": "Garantir que os 39 troféus da lista PlayStation foram concluídos sem misturar dados de outras plataformas.",
+                  "actions": ["Confira se a lista contém 39 troféus.", "Confirme a distribuição: 1 platina, 4 ouro, 10 prata e 24 bronze.", "Verifique se não há online, coop ou DLC obrigatória.", "Compare topo, checklist, filtros e FAQ.", "Revise se os troféus de tinta e solvente foram explicados como rotas incompatíveis."],
+                  "warning": "Não misture conquistas de PC/GOG/Steam com a lista PlayStation se houver diferença de texto ou tradução.",
+                  "result": "Com todos os requisitos concluídos, Mousetastic será desbloqueado."
+            }
       ],
       "trophies": [
             {
@@ -39293,6 +39400,756 @@ if (bloodborneGuide) {
   }
 }
 
+const cyberpunk2077Guide = sampleGames.find(game => game.slug === 'cyberpunk-2077');
+if (cyberpunk2077Guide) {
+  const cyberpunk2077Roadmap = [
+    {
+      title: 'Comece a run principal com atenção a escolhas e lifepath',
+      focus: 'Início da campanha',
+      objective: 'Criar uma base segura para Method Stanislavski, progresso de questlines e troféus sensíveis.',
+      actions: [
+        'Escolha qualquer lifepath, mas use opções de diálogo do rumo de vida sempre que aparecerem para Method Stanislavski.',
+        'Faça saves manuais antes de missões principais importantes.',
+        'Aceite e conclua side jobs de personagens principais quando surgirem.',
+        'Não ignore ligações e mensagens de Panam, Judy, River, Kerry, Rogue e outros NPCs importantes.',
+        'Evite vender ou desmontar itens únicos antes de confirmar se eles não fazem parte de troféus.'
+      ],
+      warning: 'Method Stanislavski exige usar 10 opções de diálogo do lifepath em uma única run. Se ignorar essas falas, pode ficar para outra run.',
+      result: 'A campanha começa com menor risco de perder diálogos e questlines importantes.'
+    },
+    {
+      title: 'Avance a história até os pontos críticos de finais',
+      focus: 'História principal',
+      objective: 'Concluir os troféus automáticos de história e preparar os finais sem bloquear The Devil.',
+      actions: [
+        'Avance a campanha até Search and Destroy.',
+        'Durante Search and Destroy, salve Takemura para manter The Devil disponível.',
+        'Continue a história até Nocturne OP55N1.',
+        'Antes de entrar no ponto sem retorno, crie um save manual separado.',
+        'Use esse save para acessar finais diferentes depois.'
+      ],
+      warning: 'The Devil exige Takemura vivo. Se ele morrer em Search and Destroy, esse final/troféu pode ficar bloqueado na run.',
+      result: 'Os troféus principais de história ficam encaminhados e o save de finais fica pronto.'
+    },
+    {
+      title: 'Conclua questlines de personagens antes do ponto sem retorno',
+      focus: 'Personagens e finais',
+      objective: 'Liberar os finais e troféus ligados a Panam, Rogue, Kerry, Judy e River.',
+      actions: [
+        'Complete a história de Panam Palmer para Life of the Road e liberar The Star.',
+        'Complete a rota de Rogue/Johnny para Bushido and Chill e abrir The Sun/Temperance.',
+        'Complete a história de Kerry Eurodyne para To Bad Decisions!.',
+        'Complete a história de Judy Alvarez para Judy vs Night City.',
+        'Complete a história de River Ward para To Protect and Serve.',
+        'Não avance para o final definitivo sem revisar essas questlines.'
+      ],
+      warning: 'Alguns finais e troféus de personagem dependem de questlines opcionais. Ignorar essas linhas pode bloquear finais ou troféus até outra run.',
+      result: 'Os principais finais e troféus de personagens ficam disponíveis para o cleanup.'
+    },
+    {
+      title: 'Use o save de Nocturne OP55N1 para finais',
+      focus: 'Finais',
+      objective: 'Desbloquear finais diferentes sem repetir a campanha inteira.',
+      actions: [
+        'Use o save manual antes de Nocturne OP55N1.',
+        'Faça The Devil com Takemura salvo.',
+        'Faça The Star com a rota dos Aldecaldos/Panam.',
+        'Faça The Sun com a rota Rogue/Afterlife.',
+        'Faça Temperance permitindo que Johnny fique com o corpo.',
+        'Confira se The World foi desbloqueado ao concluir a história principal.'
+      ],
+      warning: 'Finais recuperáveis pelo save final devem ser tratados como Final/Rota. The Devil é o maior risco real porque depende de Takemura vivo antes do final.',
+      result: 'Os finais da platina base ficam resolvidos com o mínimo de repetição.'
+    },
+    {
+      title: 'Complete gigs e delitos da NCPD por distrito',
+      focus: 'Mapa e distritos',
+      objective: 'Limpar Watson, Westbrook, Pacifica, Terras Baldias, Heywood, Santo Domingo e Centro da Cidade.',
+      actions: [
+        'Complete Watson para It\'s Elementary.',
+        'Complete Westbrook para Little Tokyo.',
+        'Complete Pacifica para Greetings from Pacifica!.',
+        'Complete Badlands para The Wasteland.',
+        'Complete Heywood, Santo Domingo e City Center para Mean Streets, The Jungle e City Lights.',
+        'Use o mapa e filtros para evitar deixar gigs ou NCPD Scanner Hustles isolados.'
+      ],
+      warning: 'Os troféus regionais dependem do distrito correto. Não trate gigs e NCPD como colecionáveis comuns.',
+      result: 'Os troféus regionais de gigs e NCPD ficam concluídos.'
+    },
+    {
+      title: 'Colete itens de Johnny, tarô, dataterms e veículos',
+      focus: 'Colecionáveis e compras',
+      objective: 'Completar Breathtaking, The Wandering Fool, Frequent Flyer e Autojock.',
+      actions: [
+        'Colete todos os itens de Johnny Silverhand para Breathtaking.',
+        'Faça Chippin\' In e quests relacionadas com atenção aos itens únicos.',
+        'Colete todos os murais de tarô para The Wandering Fool.',
+        'Encontre todos os dataterms de viagem rápida para Frequent Flyer.',
+        'Compre todos os veículos disponíveis para Autojock.',
+        'Reserve bastante dinheiro para veículos e cyberware.'
+      ],
+      warning: 'Breathtaking pode ser sensível a itens únicos e quests específicas. Não deixe Chippin\' In e itens de Johnny para depois sem checklist.',
+      result: 'Os principais colecionáveis e compras da platina ficam encaminhados.'
+    },
+    {
+      title: 'Ajuste build, cyberware e troféus misc de combate',
+      focus: 'Combate e build',
+      objective: 'Resolver troféus ligados a cyberware, perks, quickhacks, armas e ações específicas na versão atualizada.',
+      actions: [
+        'Instale cyberware em todos os sistemas para Full Body Conversion.',
+        'Chegue ao nível máximo de uma skill relevante para Ten out of Ten conforme o sistema atual da versão 2.0+.',
+        'Crie três itens Tier 5 para Master Crafter.',
+        'Faça V for Vendetta com Second Heart/Segundo Fôlego, se esse cyberware estiver disponível na versão atual.',
+        'Faça Gun Fu, Gunslinger, Two Heads One Bullet, Rough Landing, Christmas Tree Attack, Daemon in the Shell, Must Be Rats e outros misc em locais controlados.',
+        'Use reset de perks/atributos quando disponível e planeje antes de gastar recursos raros.'
+      ],
+      warning: 'Guias antigos podem mencionar atributos, perks e crafting pré-2.0. Use instruções compatíveis com a versão atual antes de fechar o guia.',
+      result: 'Os troféus misc e de build ficam resolvidos sem depender de informação antiga.'
+    },
+    {
+      title: 'Mantenha Phantom Liberty separado se buscar 100%',
+      focus: 'DLC/extra',
+      objective: 'Manter os 13 troféus de Phantom Liberty fora da platina base e tratar Dogtown como conteúdo extra.',
+      actions: [
+        'Não misture os troféus de Phantom Liberty com os 45 troféus da platina base.',
+        'Trate Dogtown, Relic perks e finais de Songbird/Reed como DLC/100%.',
+        'Crie save manual em Firestarter se também for buscar os finais da expansão.',
+        'Mantenha Never Fade Away como platina base de 45 troféus.',
+        'Confirme que dlcRequired permanece false para a platina base.'
+      ],
+      warning: 'Phantom Liberty tem escolhas e finais próprios, mas não é necessária para a platina base.',
+      result: 'A platina base fica separada do 100% com Phantom Liberty.'
+    }
+  ];
+
+  const cyberpunk2077AttentionPoints = [
+    { title: 'Takemura e The Devil', detail: 'Salve Takemura durante Search and Destroy. Se ele morrer, The Devil fica bloqueado nessa run.', tags: ['Perdível', 'Takemura'] },
+    { title: 'Save antes de Nocturne OP55N1', detail: 'Crie um save manual antes de Nocturne OP55N1. Ele permite testar finais diferentes sem repetir a campanha inteira.', tags: ['Final', 'Save manual'] },
+    { title: 'Questlines de personagens', detail: 'Complete Panam, Rogue, Kerry, Judy e River antes do ponto sem retorno. Essas questlines liberam troféus próprios e rotas de final.', tags: ['Questline', 'Rota'] },
+    { title: 'Itens de Johnny', detail: 'Breathtaking exige todos os itens de Johnny Silverhand. Use checklist em Chippin\' In, Psychofan e recompensas relacionadas.', tags: ['Johnny', 'Coletável'] },
+    { title: 'Phantom Liberty separado', detail: 'A platina base tem 45 troféus. Phantom Liberty adiciona 13 troféus extras, mas não é necessária para Never Fade Away.', tags: ['DLC', 'Extra'] },
+    { title: 'PS4 vs PS5', detail: 'A versão PS4 não recebe patches recentes nem Phantom Liberty. Se o guia usa requisitos pós-2.0, trate PS5/versão atual como referência.', tags: ['PS5', 'Patch 2.0'] },
+    { title: 'Patch 2.0+', detail: 'Troféus ligados a perks, cyberware, crafting, quickhacks e habilidades precisam estar atualizados para a versão atual.', tags: ['Patch 2.0', 'Build'] },
+    { title: 'Lifepath', detail: 'Use opções de diálogo do rumo de vida sempre que aparecerem para Method Stanislavski.', tags: ['Lifepath', 'Diálogo'] },
+    { title: 'Gigs e NCPD', detail: 'Os troféus regionais exigem limpar gigs e delitos da NCPD por distrito. Use filtros do mapa e confira ícones pendentes.', tags: ['Gigs', 'NCPD'] },
+    { title: 'Veículos', detail: 'Autojock exige comprar todos os veículos disponíveis da lista base. Reserve dinheiro e confira ofertas/Autofixer.', tags: ['Veículos', 'Grind'] },
+    { title: 'Dificuldade', detail: 'A dificuldade selecionável não afeta troféus. Não inflar o filtro Dificuldade.', tags: ['Sem dificuldade'] },
+    { title: 'Online/coop', detail: 'A platina base é single-player e não exige online nem cooperação.', tags: ['Offline', 'Sem coop'] }
+  ];
+
+  const cyberpunk2077Checklist = [
+    'Conferir se o guia tem 45 troféus base.',
+    'Conferir se Never Fade Away é a platina.',
+    'Conferir distribuição: 1 platina, 1 ouro, 17 prata e 26 bronze.',
+    'Conferir se Phantom Liberty não foi misturado com a platina base.',
+    'Conferir se Phantom Liberty tem 13 troféus extras separados como DLC/100%.',
+    'Conferir onlineRequired false.',
+    'Conferir coopRequired false.',
+    'Conferir dlcRequired false para a platina base.',
+    'Conferir se missableCount bate com troféus marcados como Perdível.',
+    'Conferir The Devil/Takemura.',
+    'Conferir The Star/Panam.',
+    'Conferir The Sun/Rogue.',
+    'Conferir Temperance/Johnny.',
+    'Conferir Bushido and Chill.',
+    'Conferir To Bad Decisions!/Kerry.',
+    'Conferir Breathtaking/itens de Johnny.',
+    'Conferir Method Stanislavski/lifepath.',
+    'Conferir V for Vendetta após patch 2.0.',
+    'Conferir Master Crafter após patch 2.0.',
+    'Conferir Ten out of Ten após patch 2.0.',
+    'Conferir Full Body Conversion após patch 2.0.',
+    'Conferir gigs/NCPD por distrito.',
+    'Conferir todos os finais.',
+    'Conferir tarô.',
+    'Conferir dataterms.',
+    'Conferir veículos.',
+    'Conferir se Dificuldade está 0.',
+    'Conferir se Online está 0.',
+    'Conferir se Coop está 0.',
+    'Conferir se DLC está 0 nos troféus base.',
+    'Conferir se todos os troféus têm nome oficial em inglês como principal.',
+    'Conferir se todos têm PT-BR abaixo.',
+    'Conferir se descrições estão em português.',
+    'Conferir se roadmap está estruturado como array/objeto.',
+    'Conferir se roadmap não renderiza objeto bruto nem campos crus.',
+    'Conferir FAQ, decisão rápida, SEO e pontos de atenção.',
+    'Conferir se página individual e catálogo exibem o mesmo status editorial.',
+    'Conferir se flags do topo batem com filtros do catálogo.'
+  ];
+
+  const cyberpunk2077Faq = [
+    { question: 'Cyberpunk 2077 tem troféus perdíveis?', answer: 'Sim. O principal é The Devil, porque exige salvar Takemura em Search and Destroy. Também há riscos em questlines de personagens, itens de Johnny e diálogos de lifepath.' },
+    { question: 'Precisa jogar online para platinar?', answer: 'Não. A platina base é totalmente single-player.' },
+    { question: 'Precisa de cooperação?', answer: 'Não. Cyberpunk 2077 não exige cooperação para nenhum troféu da platina base.' },
+    { question: 'Precisa de Phantom Liberty para a platina?', answer: 'Não. Phantom Liberty adiciona 13 troféus extras, mas Never Fade Away usa apenas os 45 troféus da lista base.' },
+    { question: 'Quantas runs são necessárias?', answer: 'A rota segura usa uma run principal com saves manuais antes de Nocturne OP55N1. Outra run só é necessária se você perder Takemura, itens de Johnny, diálogos de lifepath ou questlines importantes.' },
+    { question: 'Qual save manual é mais importante?', answer: 'O save antes de Nocturne OP55N1, para testar finais diferentes. Também faça save antes de Search and Destroy para garantir Takemura.' },
+    { question: 'A dificuldade afeta troféus?', answer: 'Não. É possível buscar a platina na dificuldade que preferir.' },
+    { question: 'PS4 e PS5 têm diferenças?', answer: 'Sim. A versão PS4 não recebe patches recentes nem Phantom Liberty. Este guia usa PS5/pós-2.0 como referência para perks, cyberware, crafting e progressão.' },
+    { question: 'Quais questlines não devo ignorar?', answer: 'Panam, Rogue, Kerry, Judy e River. Elas liberam troféus próprios e algumas rotas de final.' },
+    { question: 'Itens de Johnny são perdíveis?', answer: 'Podem ser, dependendo das quests e recompensas. Use checklist para Breathtaking, revise Chippin\' In, Psychofan e itens únicos antes do cleanup final.' },
+    { question: 'O patch 2.0 mudou troféus?', answer: 'Os troféus são os mesmos, mas sistemas de perks, cyberware, crafting, quickhacks e progressão mudaram. Troféus como V for Vendetta, Master Crafter, Ten out of Ten e Full Body Conversion devem usar instruções atualizadas.' },
+    { question: 'Quanto tempo leva para platinar?', answer: 'Em média, cerca de 60 a 90 horas, dependendo do ritmo de exploração, cleanup de distritos, veículos, dinheiro e finais.' }
+  ];
+
+  const cyberpunk2077TrophyMeta = {
+    'cyberpunk-2077-never-fade-away': ['Never Fade Away', 'Never Fade Away', 'Desbloqueie todos os troféus.', 'Conclua os outros 44 troféus da lista base. Phantom Liberty fica separado como DLC/100% e não entra no requisito de Never Fade Away.', false, false, ['Platina', 'Conclusão']],
+    'cyberpunk-2077-the-fool': ['The Fool', 'O Louco', 'Torne-se mercenário.', 'Troféu automático do prólogo e início da carreira de V em Night City.', false, true, ['História', 'Progressão']],
+    'cyberpunk-2077-the-lovers': ['The Lovers', 'Os Enamorados', 'Roube o Relic.', 'Troféu automático da história principal.', false, true, ['História', 'Progressão']],
+    'cyberpunk-2077-the-hermit': ['The Hermit', 'O Eremita', 'Encontre Alt Cunningham.', 'Troféu automático de progresso da história principal.', false, true, ['História', 'Progressão']],
+    'cyberpunk-2077-wheel-of-fortune': ['The Wheel of Fortune', 'Roda da Fortuna', 'Interrogue Anders Hellman.', 'Troféu automático da história principal.', false, true, ['História', 'Progressão']],
+    'cyberpunk-2077-high-priestess': ['The High Priestess', 'A Alta Sacerdotisa', 'Fale com Hanako Arasaka.', 'Troféu automático de Search and Destroy. Aproveite essa missão para salvar Takemura se quiser manter The Devil disponível.', false, true, ['História', 'Progressão']],
+    'cyberpunk-2077-the-world': ['The World', 'O Mundo', 'Complete a história principal.', 'Troféu de conclusão da história principal. Use o retorno ao ponto sem retorno para cleanup e finais restantes.', false, true, ['História', 'Final']],
+    'cyberpunk-2077-the-devil': ['The Devil', 'O Diabo', 'Ajude Takemura a vingar a morte de Saburo Arasaka.', 'Perdível de run: salve Takemura em Search and Destroy e mantenha save manual antes de Nocturne OP55N1 para acessar este final.', true, true, ['Perdível', 'Final', 'Rota', 'Takemura', 'Save manual']],
+    'cyberpunk-2077-the-star': ['The Star', 'A Estrela', 'Deixe Night City com os Aldecaldos.', 'Perdível se a rota da Panam/Aldecaldos não for liberada. Complete a questline de Panam antes de usar o save de Nocturne OP55N1.', true, true, ['Perdível', 'Final', 'Rota', 'Panam', 'Questline']],
+    'cyberpunk-2077-the-sun': ['The Sun', 'O Sol', 'Torne-se uma lenda da Afterlife.', 'Perdível se a rota de Rogue/Johnny não for liberada. Cuide de Chippin\' In e Blistering Love antes dos finais.', true, true, ['Perdível', 'Final', 'Rota', 'Rogue', 'Johnny']],
+    'cyberpunk-2077-temperance': ['Temperance', 'Temperança', 'Deixe Johnny Silverhand ficar com seu corpo.', 'Final de rota. Use o save antes de Nocturne OP55N1 e garanta que as rotas necessárias de Johnny/Rogue estejam disponíveis.', true, true, ['Perdível', 'Final', 'Rota', 'Johnny']],
+    'cyberpunk-2077-to-protect-and-serve': ['To Protect and Serve', 'Servir e proteger', 'Complete a história de River Ward.', 'Perdível por questline: responda aos contatos de River e conclua a cadeia dele antes de fechar a campanha.', true, true, ['Perdível', 'Questline', 'River']],
+    'cyberpunk-2077-to-bad-decisions': ['To Bad Decisions!', 'Às decisões ruins!', 'Complete a história de Kerry Eurodyne.', 'Perdível por questline: siga a cadeia de Kerry depois da rota de Johnny/Rogue e conclua antes do cleanup final.', true, true, ['Perdível', 'Questline', 'Kerry']],
+    'cyberpunk-2077-judy-vs-night-city': ['Judy vs Night City', 'Judy contra Night City', 'Complete a história de Judy Alvarez.', 'Perdível por questline: responda aos contatos de Judy, acompanhe os side jobs e não abandone a cadeia dela.', true, true, ['Perdível', 'Questline', 'Judy']],
+    'cyberpunk-2077-life-of-the-road': ['Life of the Road', 'Vida na estrada', 'Complete a história de Panam Palmer.', 'Perdível por questline: conclua os jobs de Panam. Essa rota também é importante para The Star.', true, true, ['Perdível', 'Questline', 'Panam', 'Rota']],
+    'cyberpunk-2077-bushido-and-chill': ['Bushido and Chill', 'Bushido a dois', 'Assista Bushido X com Rogue.', 'Perdível por rota: depende de Chippin\' In/Blistering Love e da linha de Rogue. Faça antes de fechar finais.', true, true, ['Perdível', 'Questline', 'Rogue', 'Johnny']],
+    'cyberpunk-2077-breathtaking': ['Breathtaking', 'Mão de prata', 'Colete todos os itens que pertenceram a Johnny Silverhand.', 'Perdível por itens únicos. Use checklist para Chippin\' In, Psychofan e recompensas relacionadas a Johnny antes de encerrar gigs e quests.', true, true, ['Perdível', 'Coletável', 'Johnny', 'Checklist']],
+    'cyberpunk-2077-its-elementary': ['It\'s Elementary', 'Elementar, meu caro', 'Complete todos os gigs e delitos da NCPD em Watson.', 'Limpe todos os gigs e NCPD Scanner Hustles de Watson. Novos ícones podem depender de Street Cred.', false, false, ['Gigs', 'NCPD', 'Distrito', 'Mapa', 'Cleanup']],
+    'cyberpunk-2077-i-am-the-law': ['I Am The Law', 'Eu sou a lei', 'Complete todos os Cyberpsycho Sightings.', 'Complete todos os ciberpsicopatas e reporte os casos para Regina. Trate como cleanup de combate, não como desafio obrigatório.', false, false, ['Ciberpsicopata', 'Combate', 'Cleanup']],
+    'cyberpunk-2077-greetings-from-pacifica': ['Greetings from Pacifica!', 'Aqui é Pacifica!', 'Complete todos os gigs e delitos da NCPD em Pacifica.', 'Limpe todos os gigs e NCPD Scanner Hustles de Pacifica usando filtros do mapa.', false, false, ['Gigs', 'NCPD', 'Distrito', 'Mapa', 'Cleanup']],
+    'cyberpunk-2077-the-wasteland': ['The Wasteland', 'Terra de ninguém', 'Complete todos os gigs e delitos da NCPD nas Terras Baldias.', 'Limpe Badlands quando estiver com Street Cred suficiente e revise ícones isolados no mapa.', false, false, ['Gigs', 'NCPD', 'Distrito', 'Mapa', 'Cleanup']],
+    'cyberpunk-2077-little-tokyo': ['Little Tokyo', 'Pequena Tóquio', 'Complete todos os gigs e delitos da NCPD em Westbrook.', 'Limpe Westbrook e confira filtros do mapa se o troféu não aparecer.', false, false, ['Gigs', 'NCPD', 'Distrito', 'Mapa', 'Cleanup']],
+    'cyberpunk-2077-mean-streets': ['Mean Streets', 'A quebrada', 'Complete todos os gigs e delitos da NCPD em Heywood.', 'Limpe Heywood. Alguns ícones aparecem conforme Street Cred sobe.', false, false, ['Gigs', 'NCPD', 'Distrito', 'Mapa', 'Cleanup']],
+    'cyberpunk-2077-the-jungle': ['The Jungle', 'Selva de concreto', 'Complete todos os gigs e delitos da NCPD em Santo Domingo.', 'Limpe Santo Domingo antes do cleanup final e revise o mapa por filtros.', false, false, ['Gigs', 'NCPD', 'Distrito', 'Mapa', 'Cleanup']],
+    'cyberpunk-2077-city-lights': ['City Lights', 'Luzes da cidade', 'Complete todos os gigs e delitos da NCPD em City Center.', 'Limpe City Center e confira os ícones restantes por categoria.', false, false, ['Gigs', 'NCPD', 'Distrito', 'Mapa', 'Cleanup']],
+    'cyberpunk-2077-full-body-conversion': ['Full Body Conversion', 'Conversão corporal completa', 'Instale pelo menos um implante em cada sistema e parte do corpo.', 'Visite ripperdocs e instale cyberware em todos os sistemas exigidos. Na versão 2.0+, considere cyberware capacity e slots atuais.', false, false, ['Cyberware', 'Build', 'Patch 2.0', 'Atenção']],
+    'cyberpunk-2077-gun-fu': ['Gun Fu', 'Hoje eu tô pistola', 'Mate ou incapacite 3 inimigos em rápida sucessão com revólver ou pistola em combate próximo.', 'Enfraqueça três inimigos, aproxime-se e finalize rapidamente com pistola ou revólver.', false, false, ['Combate', 'Pistola', 'Revólver', 'Misc']],
+    'cyberpunk-2077-christmas-tree-attack': ['Christmas Tree Attack', 'Ataque-surpresa de Natal', 'Complete um Breach Protocol com pelo menos 3 daemons enviados.', 'Este troféu pode variar por versão por causa das mudanças de netrunning pós-2.0. Faça com alvo/dispositivo que permita sequência suficiente.', false, false, ['Quickhack', 'Netrunner', 'Patch 2.0', 'Atenção']],
+    'cyberpunk-2077-ten-out-of-ten': ['Ten out of Ten', 'Dez, nota dez!', 'Alcance o nível máximo em qualquer habilidade.', 'Na versão 2.0+, acompanhe uma skill atual até o nível máximo. É grind/build e depende mais de progressão do que de combate difícil.', false, false, ['Skill', 'Build', 'Grind', 'Patch 2.0', 'Atenção']],
+    'cyberpunk-2077-gunslinger': ['Gunslinger', 'Na lata!', 'Atire em uma granada inimiga no ar com um revólver.', 'Espere um inimigo arremessar granada e atire nela no ar usando revólver.', false, false, ['Combate', 'Revólver', 'Misc']],
+    'cyberpunk-2077-two-heads-one-bullet': ['Two Heads, One Bullet', 'Dois coelhos com uma cajadada', 'Mate ou incapacite 2 inimigos com o mesmo disparo de rifle sniper.', 'Alinhe dois inimigos e use sniper rifle forte para acertar ambos no mesmo disparo.', false, false, ['Combate', 'Sniper', 'Misc']],
+    'cyberpunk-2077-rough-landing': ['Rough Landing', 'Pouso forçado', 'Com Berserk ativo, faça um Superhero Landing para matar ou incapacitar 2 inimigos.', 'Equipe Berserk, reúna dois inimigos próximos e use Superhero Landing de altura suficiente.', false, false, ['Combate', 'Berserk', 'Cyberware', 'Misc']],
+    'cyberpunk-2077-stanislavskis-method': ['Stanislavski\'s Method', 'Método Stanislavski', 'Use uma opção de diálogo relacionada ao rumo de vida de V 10 vezes.', 'Perdível de run: escolha falas de lifepath sempre que aparecerem até o troféu subir.', true, false, ['Perdível', 'Lifepath', 'Diálogo']],
+    'cyberpunk-2077-autojock': ['Autojock', 'O ronco do motor', 'Compre todos os veículos disponíveis para compra.', 'Guarde dinheiro, suba Street Cred e compre todos os veículos da lista base via ofertas/Autofixer.', false, false, ['Veículos', 'Grind', 'Dinheiro', 'Cleanup']],
+    'cyberpunk-2077-master-crafter': ['Master Crafter', 'O tesão de artesão', 'Crie 3 itens Tier 5.', 'Na versão 2.0+, crie três itens Tier 5 com componentes adequados. Não use guias antigos que exigem perk legado sem validação.', false, false, ['Crafting', 'Build', 'Patch 2.0', 'Atenção']],
+    'cyberpunk-2077-daemon-in-the-shell': ['Daemon in the Shell', 'O pão que o daemon amassou', 'Mate ou incapacite 3 inimigos com um quickhack Detonate Grenade.', 'Use Detonate Grenade em um grupo de três inimigos próximos. Planeje RAM/cyberdeck conforme a versão atual.', false, false, ['Quickhack', 'Netrunner', 'Combate', 'Misc']],
+    'cyberpunk-2077-quick-and-dirty': ['The Quick and the Dead', 'Câmera lenta, gatilho rápido', 'Mate ou incapacite 50 inimigos enquanto o tempo está desacelerado.', 'Use Sandevistan, Kerenzikov ou cyberware equivalente e acumule 50 baixas com tempo desacelerado.', false, false, ['Cyberware', 'Sandevistan', 'Combate', 'Grind']],
+    'cyberpunk-2077-must-be-rats': ['Must Be Rats', 'Deve ser rato', 'Use o quickhack Distract Enemies 30 vezes sem chamar atenção.', 'Use Distract Enemies em dispositivos antes de ser detectado, repetindo até 30 usos.', false, false, ['Quickhack', 'Stealth', 'Grind']],
+    'cyberpunk-2077-v-for-vendetta': ['V for Vendetta', 'V de vingança', 'Após reviver com Second Heart, mate ou incapacite em até 5 segundos o inimigo que matou você.', 'Use Second Heart/Segundo Fôlego na versão atual, provoque a morte de V em local controlado e elimine rapidamente o inimigo após reviver.', false, false, ['Cyberware', 'Build', 'Combate', 'Patch 2.0', 'Atenção']],
+    'cyberpunk-2077-true-soldier': ['True Soldier', 'Soldado à vera', 'Mate ou incapacite 300 inimigos usando armas de longo alcance.', 'Use armas de fogo durante campanha, gigs e NCPD para reduzir grind no fim.', false, false, ['Combate', 'Grind', 'Armas']],
+    'cyberpunk-2077-true-warrior': ['True Warrior', 'Guerreiro à vera', 'Mate ou incapacite 100 inimigos usando armas corpo a corpo.', 'Use katanas, bastões ou outras armas corpo a corpo ao longo da limpeza de mapa.', false, false, ['Combate', 'Grind', 'Melee']],
+    'cyberpunk-2077-right-back-at-ya': ['Right Back At Ya', 'Toma-lhe', 'Mate ou incapacite um inimigo que lançou uma granada contra você.', 'Quando um inimigo arremessar uma granada, elimine-o logo depois.', false, false, ['Combate', 'Misc']],
+    'cyberpunk-2077-wandering-fool': ['The Wandering Fool', 'O Louco errante', 'Encontre todos os grafites de tarô para o job Fool on the Hill.', 'Colecionável de free-roam: encontre todos os murais de tarô ligados a Fool on the Hill.', false, false, ['Coletável', 'Tarô', 'Checklist', 'Cleanup']],
+    'cyberpunk-2077-frequent-flyer': ['Frequent Flyer', 'Senhores passageiros', 'Encontre todos os dataterms de viagem rápida.', 'Passe por todos os dataterms de viagem rápida da lista base de Night City e Badlands.', false, false, ['Coletável', 'Dataterms', 'Checklist', 'Cleanup']],
+    'cyberpunk-2077-legend-of-the-afterlife': ['Legend of The Afterlife', 'Lenda da Afterlife', 'Alcance o Street Cred máximo.', 'Chegue ao Street Cred 50 fazendo quests, gigs, NCPD Scanner Hustles e atividades de mundo aberto.', false, false, ['Street Cred', 'Grind', 'Cleanup']]
+  };
+
+  const cyberpunk2077Order = [
+    ['cyberpunk-2077-never-fade-away', 'Platina'],
+    ['cyberpunk-2077-the-world', 'Ouro'],
+    ['cyberpunk-2077-the-devil', 'Prata'],
+    ['cyberpunk-2077-the-star', 'Prata'],
+    ['cyberpunk-2077-the-sun', 'Prata'],
+    ['cyberpunk-2077-temperance', 'Prata'],
+    ['cyberpunk-2077-breathtaking', 'Prata'],
+    ['cyberpunk-2077-its-elementary', 'Prata'],
+    ['cyberpunk-2077-greetings-from-pacifica', 'Prata'],
+    ['cyberpunk-2077-the-wasteland', 'Prata'],
+    ['cyberpunk-2077-little-tokyo', 'Prata'],
+    ['cyberpunk-2077-mean-streets', 'Prata'],
+    ['cyberpunk-2077-the-jungle', 'Prata'],
+    ['cyberpunk-2077-city-lights', 'Prata'],
+    ['cyberpunk-2077-autojock', 'Prata'],
+    ['cyberpunk-2077-true-soldier', 'Prata'],
+    ['cyberpunk-2077-true-warrior', 'Prata'],
+    ['cyberpunk-2077-wandering-fool', 'Prata'],
+    ['cyberpunk-2077-legend-of-the-afterlife', 'Prata'],
+    ['cyberpunk-2077-the-fool', 'Bronze'],
+    ['cyberpunk-2077-the-lovers', 'Bronze'],
+    ['cyberpunk-2077-the-hermit', 'Bronze'],
+    ['cyberpunk-2077-wheel-of-fortune', 'Bronze'],
+    ['cyberpunk-2077-high-priestess', 'Bronze'],
+    ['cyberpunk-2077-to-protect-and-serve', 'Bronze'],
+    ['cyberpunk-2077-to-bad-decisions', 'Bronze'],
+    ['cyberpunk-2077-judy-vs-night-city', 'Bronze'],
+    ['cyberpunk-2077-life-of-the-road', 'Bronze'],
+    ['cyberpunk-2077-bushido-and-chill', 'Bronze'],
+    ['cyberpunk-2077-i-am-the-law', 'Bronze'],
+    ['cyberpunk-2077-full-body-conversion', 'Bronze'],
+    ['cyberpunk-2077-gun-fu', 'Bronze'],
+    ['cyberpunk-2077-christmas-tree-attack', 'Bronze'],
+    ['cyberpunk-2077-ten-out-of-ten', 'Bronze'],
+    ['cyberpunk-2077-gunslinger', 'Bronze'],
+    ['cyberpunk-2077-two-heads-one-bullet', 'Bronze'],
+    ['cyberpunk-2077-rough-landing', 'Bronze'],
+    ['cyberpunk-2077-stanislavskis-method', 'Bronze'],
+    ['cyberpunk-2077-master-crafter', 'Bronze'],
+    ['cyberpunk-2077-daemon-in-the-shell', 'Bronze'],
+    ['cyberpunk-2077-quick-and-dirty', 'Bronze'],
+    ['cyberpunk-2077-must-be-rats', 'Bronze'],
+    ['cyberpunk-2077-v-for-vendetta', 'Bronze'],
+    ['cyberpunk-2077-right-back-at-ya', 'Bronze'],
+    ['cyberpunk-2077-frequent-flyer', 'Bronze']
+  ];
+
+  const cyberpunk2077Trophies = cyberpunk2077Order.map(([id, type]) => {
+    const [name, namePt, description, tip, isMissable, isSpoiler, tags] = cyberpunk2077TrophyMeta[id];
+    return {
+      id,
+      name,
+      trophyNameOriginal: name,
+      officialName: name,
+      originalName: name,
+      name_pt: namePt,
+      trophyNamePtBr: namePt,
+      localizedNamePtBr: namePt,
+      namePtSource: 'trusted_playstation_ptbr',
+      type,
+      tier: type,
+      description,
+      descriptionPtBr: description,
+      ptDescription: description,
+      localizedDescription: { ptBr: description, 'pt-BR': description },
+      descriptionOriginal: '',
+      descriptionPtSource: 'editorial_ptbr',
+      tip,
+      guideTip: tip,
+      is_missable: type === 'Platina' ? false : Boolean(isMissable),
+      isMissable: type === 'Platina' ? false : Boolean(isMissable),
+      missable: type === 'Platina' ? false : Boolean(isMissable),
+      riskType: type !== 'Platina' && isMissable ? 'missable' : '',
+      is_spoiler: Boolean(isSpoiler),
+      isSpoiler: Boolean(isSpoiler),
+      is_online: false,
+      isOnline: false,
+      is_coop: false,
+      isCoop: false,
+      is_dlc: false,
+      isDlc: false,
+      tags
+    };
+  });
+
+  Object.assign(cyberpunk2077Guide, {
+    title: 'Cyberpunk 2077',
+    primary_platform: 'PlayStation',
+    platforms: ['PS4', 'PS5'],
+    genre: 'RPG de ação / Mundo aberto',
+    developer: 'CD Projekt RED',
+    publisher: 'CD Projekt RED',
+    difficulty: 4,
+    time: '60-90h',
+    time_min_hours: 60,
+    time_max_hours: 90,
+    time_sort_hours: 75,
+    time_bucket: 'long',
+    missable: 'Cyberpunk 2077 é uma platina longa, mas acessível, com perdíveis de run ligados a Takemura/The Devil, finais, questlines de personagens, itens de Johnny e diálogos de lifepath.',
+    runs_summary: 'A rota segura usa uma run principal completa com saves manuais antes de Search and Destroy e Nocturne OP55N1.',
+    missable_summary: 'São 11 troféus marcados como Perdível: The Devil, finais/rotas dependentes de questline, Panam, Rogue, Kerry, Judy, River, Breathtaking e Method Stanislavski.',
+    online_summary: 'A platina base é totalmente single-player. Não há online obrigatório.',
+    grind_summary: 'O grind fica em veículos, dinheiro, Street Cred, distritos, gigs, NCPD, dataterms, tarô, cyberware, combate e cleanup de mapa.',
+    dlc_scope: 'Base game sem DLCs; Phantom Liberty separado. Cyberpunk 2077 tem 45 troféus na platina base. Phantom Liberty adiciona 13 troféus extras no PS5, mas não é necessário para Never Fade Away.',
+    difficulty_reason: '4/10: a dificuldade selecionável não afeta troféus. O desafio está em planejamento, saves, questlines, cleanup de mapa e instruções pós-2.0 para build/cyberware.',
+    time_reason: '60-90 horas considerando campanha, finais por save, questlines, todos os gigs/NCPD por distrito, itens de Johnny, tarô, dataterms, veículos, dinheiro e troféus misc.',
+    first_run_advice: 'Faça uma run principal cuidadosa: use diálogos de lifepath, salve Takemura, complete Panam, Rogue, Kerry, Judy e River, e colete itens de Johnny antes dos finais.',
+    cleanup_advice: 'Antes do cleanup final, revise distritos, gigs, NCPD, cyberpsychos, dataterms, tarô, veículos, Street Cred, cyberware e troféus de combate/build.',
+    before_you_start: 'Cyberpunk 2077 tem 45 troféus na platina base e Phantom Liberty fica separado. No PS5/versão atual, patches 2.0+ mudaram perks, cyberware, crafting e progressão; evite guias antigos para troféus de build.',
+    best_for: 'Ideal para quem quer uma platina RPG de mundo aberto, com história forte, questlines de personagens, finais múltiplos e cleanup de mapa.',
+    avoid_if: 'Evite se você não quer limpar muitos ícones de mapa, fazer saves estratégicos ou acompanhar questlines e itens únicos com checklist.',
+    hasMissables: true,
+    missableCount: cyberpunk2077Trophies.filter(trophy => trophy.is_missable && trophy.type !== 'Platina').length,
+    missable_count: cyberpunk2077Trophies.filter(trophy => trophy.is_missable && trophy.type !== 'Platina').length,
+    onlineRequired: false,
+    coopRequired: false,
+    dlcRequired: false,
+    online_required: false,
+    coop_required: false,
+    dlc_required: false,
+    hasOnline: false,
+    hasCoop: false,
+    requiresOnline: false,
+    requiresCoop: false,
+    dlcRequiredForPlatinum: false,
+    difficultyTrophiesRequired: false,
+    newGamePlusRequired: false,
+    playthroughs: '1 run principal com saves manuais',
+    platinumType: 'offline / mundo aberto / saves manuais',
+    guideFocus: 'Finais, Takemura, questlines, Johnny, lifepath, gigs, NCPD, patch 2.0+ e Phantom Liberty separado',
+    status: 'published',
+    editorialStatus: 'verified',
+    editorial_status: 'published',
+    editorial_review_status: 'verified',
+    coverage_level: 'complete',
+    is_verified: true,
+    verification_status: 'verified',
+    qualityWarnings: [],
+    quality_warnings: [],
+    lastReviewedAt: '2026-06-14',
+    last_reviewed_at: '2026-06-14',
+    reviewedBy: 'AtlasAchievement',
+    reviewed_by: 'AtlasAchievement',
+    verification_note: 'Guia revisado para publicação: lista base PlayStation com 45 troféus, distribuição 1/1/17/26, Phantom Liberty separado, PS5/pós-2.0 como referência, offline, sem coop, sem DLC obrigatória e 11 perdíveis de run.',
+    editorial_notes: 'Revisão editorial focada em flags, roadmap estruturado, nomes EN/PT-BR, descrições PT-BR, Takemura/The Devil, saves de final, itens de Johnny, lifepath, patch 2.0+, Phantom Liberty e filtros.',
+    editorial_summary: [
+      'Cyberpunk 2077 é uma platina longa, mas relativamente acessível, focada em concluir a história principal, liberar finais diferentes, terminar questlines de personagens importantes, completar gigs e delitos da NCPD por distrito, coletar itens de Johnny Silverhand, comprar veículos, instalar cyberware, encontrar murais de tarô, dataterms e resolver troféus misc de combate e build.',
+      'A rota mais segura é fazer uma run principal completa, concluir Panam, Rogue, Kerry, Judy e River, salvar Takemura em Search and Destroy, coletar todos os itens de Johnny e criar saves manuais antes de Nocturne OP55N1 para testar finais diferentes.',
+      'A platina base não exige online, cooperação ou Phantom Liberty. A expansão tem 13 troféus próprios no PS5 e deve ficar separada como conteúdo extra/100%.'
+    ],
+    seo: {
+      title: 'Cyberpunk 2077: Guia de Troféus e Platina',
+      description: 'Guia de troféus de Cyberpunk 2077 com roadmap da platina, tempo estimado, dificuldade, troféus perdíveis, finais, Takemura, itens de Johnny, Phantom Liberty separado e dicas atualizadas para os 45 troféus base.',
+      metaDescription: 'Guia de troféus de Cyberpunk 2077 com roadmap da platina, tempo estimado, dificuldade, troféus perdíveis, finais, Takemura, itens de Johnny, Phantom Liberty separado e dicas atualizadas para os 45 troféus base.',
+      keywords: 'Cyberpunk 2077 troféus, Cyberpunk 2077 platina, guia Cyberpunk 2077, Cyberpunk 2077 PS5 troféus, Cyberpunk 2077 PS4 troféus, Never Fade Away, O Diabo, The Devil Cyberpunk 2077, Takemura, Breathtaking, Mão de prata, Phantom Liberty troféus, Nocturne OP55N1, Cyberpunk 2077 patch 2.0 troféus',
+      ogTitle: 'Cyberpunk 2077: Guia de Troféus e Platina',
+      ogDescription: 'Roadmap PT-BR da platina base de Cyberpunk 2077 com 45 troféus, Takemura, finais, itens de Johnny, patch 2.0+ e Phantom Liberty separado.'
+    },
+    quickDecision: {
+      verdict: 'Sim. É uma platina longa, mas acessível, desde que você use saves manuais e checklist.',
+      difficulty: 'Baixa a moderada, 4/10.',
+      time: 'Longo, cerca de 60 a 90 horas.',
+      mainRisk: 'Takemura, finais, questlines de personagens, itens de Johnny e patch 2.0+.',
+      risk: 'Médio. A maioria pode ser recuperada com save final, mas alguns requisitos podem exigir outra run se forem ignorados.',
+      onlineCoop: 'Não exige online nem cooperação.',
+      dlc: 'Phantom Liberty não é necessária para a platina base.',
+      firstAction: 'Comece a run principal usando diálogos de lifepath, salvando manualmente e acompanhando Takemura, Panam, Rogue, Kerry, Judy, River e itens de Johnny.'
+    },
+    attentionPoints: cyberpunk2077AttentionPoints,
+    checklist: cyberpunk2077Checklist,
+    faq: cyberpunk2077Faq,
+    roadmap: cyberpunk2077Roadmap,
+    roadmapStages: cyberpunk2077Roadmap,
+    trophies: cyberpunk2077Trophies
+  });
+}
+
+const darkSouls2SotfsGuide = sampleGames.find(game => game.slug === 'dark-souls-ii-scholar-of-the-first-sin');
+if (darkSouls2SotfsGuide) {
+  const ds2SotfsRoadmap = [
+    {
+      title: 'Prepare a run principal com checklist aberto',
+      focus: 'NPCs, gestos, pactos e magias',
+      objective: 'Começar Scholar of the First Sin sem perder NPCs, gestos, vendedores, falas e rotas de equipamentos herdados.',
+      actions: [
+        'Não mate NPCs e esgote diálogos sempre que encontrar alguém novo.',
+        'Anote gestos, vendedores, pactos e magias por área.',
+        'Comece cedo as linhas de Lucatiel, Benhart, Cale, Rosabeth, McDuff, Gilligan, Vengarl e Drummond.',
+        'Entre nos pactos quando estiver perto deles, mesmo que o grind fique para depois.',
+        'Guarde almas de chefe e itens únicos até confirmar se não serão usados para magias ou trocas.'
+      ],
+      warning: 'O risco principal não é online: é perder janela de NPC, gesto, fala ou equipamento e empurrar o troféu para outra run ou NG cycle.',
+      result: 'A primeira run começa com controle das pendências que mais causam retrabalho.'
+    },
+    {
+      title: 'Avance pela história e acenda as fogueiras primordiais',
+      focus: 'Campanha e progresso obrigatório',
+      objective: 'Abrir Drangleic de forma segura enquanto coleta recursos e conversa com NPCs em cada nova região.',
+      actions: [
+        'Derrote os chefes principais até acender as quatro fogueiras primordiais.',
+        'Conclua Last Giant, Self Recollection, King\'s Ring, Ancient Dragon, Looking Glass Knight, Vendrick e The Heir no fluxo normal.',
+        'Revise Majula e os vendedores a cada grande avanço de história.',
+        'Leve NPCs para Majula quando a rota permitir.',
+        'Não avance para NG+ sem revisar gestos, pactos, equipamentos herdados e magias compráveis.'
+      ],
+      warning: 'Troféus de história não são perdíveis, mas acelerar a campanha pode deixar NPCs e compras para outra run.',
+      result: 'A base da campanha fica resolvida sem misturar progresso obrigatório com perdas de checklist.'
+    },
+    {
+      title: 'Feche Lucatiel e Benhart com summons planejados',
+      focus: 'NPC questlines',
+      objective: 'Garantir que Lucatiel e Benhart sobrevivam às lutas necessárias antes dos pontos finais de suas linhas.',
+      actions: [
+        'Fale com Lucatiel em todos os locais e invoque-a para boss fights elegíveis.',
+        'Faça Lucatiel sobreviver a três vitórias contra chefes antes de concluir sua linha.',
+        'Fale com Benhart em todos os pontos de progressão.',
+        'Faça Benhart sobreviver a três vitórias contra chefes antes de herdar o equipamento.',
+        'Use Bonfire Ascetic apenas com cuidado para repetir uma luta elegível, sem assumir que isso resolve todas as pendências.'
+      ],
+      warning: 'Lucatiel e Benhart são os riscos mais famosos do guia: summons contam quando o NPC sobrevive à vitória, não apenas quando é invocado.',
+      result: 'Lucatiel e Moonlight Greatsword ficam protegidos contra retrabalho de run.'
+    },
+    {
+      title: 'Organize pactos e grinds opcionais',
+      focus: 'Covenants, farm e offline possível',
+      objective: 'Descobrir todos os pactos e separar o que exige devoção máxima, medalhas, Pilgrims of the Dark ou farm.',
+      actions: [
+        'Descubra Heirs of the Sun, Blue Sentinels, Brotherhood of Blood, Way of Blue, Rat King, Bell Keepers, Dragon Remnants, Company of Champions e Pilgrims of the Dark.',
+        'Escolha um pacto para Selfless Giver e acompanhe o progresso até maximizar a devoção.',
+        'Planeje Sunlight Medals para milagres e Bell Keepers/Mad Warrior se precisar de recompensas específicas.',
+        'Use online apenas como atalho quando quiser; mantenha uma rota offline viável.',
+        'Separe Pilgrims of the Dark e Darklurker para Master of Hexes.'
+      ],
+      warning: 'Online pode reduzir grind, mas não deve virar requisito do guia nem tag Online nos filtros.',
+      result: 'Os pactos ficam descobertos e o grind passa a ser uma etapa controlada, não uma surpresa no fim.'
+    },
+    {
+      title: 'Complete magias, milagres, piromancias e sortilégios',
+      focus: 'Troféus de mestre e Crowns integradas',
+      objective: 'Fechar os quatro troféus de mestre considerando vendedores, almas de chefe, pactos, NG++ e áreas das Crowns em Scholar.',
+      actions: [
+        'Compre e colete todas as magias, milagres, piromancias e sortilégios.',
+        'Inclua as magias das áreas das Crowns integradas à versão Scholar of the First Sin.',
+        'Confira Straid, Ornifex, Navlaan, Licia, Cromwell, Rosabeth, Felkin, Carhillion, Wellager e Darkdiver Grandahl.',
+        'Não consuma almas de chefe antes de confirmar trocas por magia.',
+        'Deixe compras finais de Chancellor Wellager para NG++ quando necessário.'
+      ],
+      warning: 'Scholar of the First Sin não tem lista separada de DLC, mas as áreas das Crowns estão integradas nessa versão e contam para os troféus de mestre de magias, milagres, piromancias e sortilégios.',
+      result: 'Os quatro troféus de mestre ficam encaminhados sem marcar DLC separada como obrigatória.'
+    },
+    {
+      title: 'Resolva Majula, mapa e equipamentos herdados',
+      focus: 'NPCs e cleanup de run',
+      objective: 'Fechar Curious Map, Change of Clothes, Gathering of Exiles e equipamentos herdados antes de trocar de ciclo.',
+      actions: [
+        'Leve os NPCs necessários para Majula e confirme Gathering of Exiles.',
+        'Fale com Cale e acenda todas as chamas do mapa em Majula.',
+        'Despetifique Rosabeth e entregue uma roupa para ela.',
+        'Herde equipamentos de Drummond, McDuff, Gilligan e Vengarl.',
+        'Revise todos os gestos antes de encerrar a run.'
+      ],
+      warning: 'NPC morto, diálogo ignorado ou evento avançado demais pode transformar cleanup em repetição de ciclo.',
+      result: 'A maior parte dos perdíveis de run fica resolvida antes de NG+.'
+    },
+    {
+      title: 'Use NG+ e avance até NG++ para Wellager',
+      focus: 'NG cycles e compras finais',
+      objective: 'Completar pendências de magias, pactos, vendedores e compras bloqueadas por ciclo.',
+      actions: [
+        'Entre em NG+ apenas depois de revisar a primeira run.',
+        'Use NG+ para corrigir NPCs, almas de chefe, magias e pactos que ficaram pendentes.',
+        'Avance até NG++ e chegue a Drangleic Castle para Chancellor Wellager.',
+        'Compre as magias, milagres e piromancias que dependem de Wellager em NG++.',
+        'Não conte com Bonfire Ascetic para substituir NG++ nas compras de Wellager.'
+      ],
+      warning: 'Bonfire Ascetic não substitui o avanço real até NG++ para Chancellor Wellager.',
+      result: 'A rota de NG++ fecha o maior gargalo estrutural da platina.'
+    },
+    {
+      title: 'Faça cleanup final e confira os filtros',
+      focus: 'Platina e revisão',
+      objective: 'Conferir os 38 troféus, fechar a The Dark Soul e manter os filtros coerentes com a lista.',
+      actions: [
+        'Confira a distribuição: 1 platina, 2 ouro, 23 prata e 12 bronze.',
+        'Revise os 14 troféus marcados como Perdível de run.',
+        'Confirme que Online, Coop, DLC e Dificuldade ficam zerados nos filtros.',
+        'Finalize Supreme Weapon, Selfless Giver, Gesture Maestro e os quatro troféus de mestre.',
+        'Abra a platina The Dark Soul somente depois dos outros 37 troféus.'
+      ],
+      warning: 'Cleanup de Dark Souls II é pesado; use a lista de tags para separar história, NPC, pacto, grind, coletável e NG++.',
+      result: 'O guia fica pronto para publicação como platina longa, offline e baseada em checklist.'
+    }
+  ];
+
+  const ds2SotfsAttentionPoints = [
+    { title: 'Sem online obrigatório', detail: 'A platina pode ser feita offline. Online ajuda em pactos e medalhas, mas não deve entrar como requisito ou filtro Online.', tags: ['Offline', 'Pactos'] },
+    { title: 'Sem coop obrigatório', detail: 'Invocações de NPC importam para Lucatiel e Benhart, mas isso não é coop online obrigatório.', tags: ['NPC', 'Summons'] },
+    { title: 'Sem DLC separada de troféus', detail: 'Scholar of the First Sin não tem lista separada de DLC, mas as áreas das Crowns estão integradas nessa versão e contam para os troféus de mestre de magias, milagres, piromancias e sortilégios.', tags: ['Crowns', 'Magias'] },
+    { title: 'Wellager exige NG++ real', detail: 'Chancellor Wellager vende magias importantes em NG++. Bonfire Ascetic não substitui esse avanço de ciclo.', tags: ['NG++', 'Wellager'] },
+    { title: 'Lucatiel precisa sobreviver', detail: 'Invocar Lucatiel não basta: ela precisa sobreviver a três vitórias contra chefes antes do fechamento da questline.', tags: ['Perdível', 'NPC'] },
+    { title: 'Benhart também precisa sobreviver', detail: 'Moonlight Greatsword depende de conversas e de Benhart sobreviver a três vitórias contra chefes elegíveis.', tags: ['Perdível', 'NPC'] },
+    { title: 'Gestos são sensíveis a NPCs', detail: 'Gesture Maestro depende de falas e NPCs específicos. Esgote diálogos e não mate NPCs antes de confirmar os gestos.', tags: ['Gestos', 'Checklist'] },
+    { title: 'Troféus de mestre incluem Crowns', detail: 'Magias, milagres, piromancias e sortilégios devem considerar vendedores, almas de chefe, pactos, NG++ e conteúdo integrado das Crowns.', tags: ['Coletável', 'Grind'] },
+    { title: 'Selfless Giver é grind, não online', detail: 'Maximizar devoção em um pacto pode ser trabalhoso, mas não é um troféu online obrigatório.', tags: ['Pacto', 'Grind'] },
+    { title: 'NPCs podem empurrar outra run', detail: 'Cale, Rosabeth, Majula, Drummond, McDuff, Gilligan e Vengarl entram como perdíveis de run por diálogo, evento ou NPC morto.', tags: ['NPC', 'Risco de run'] }
+  ];
+
+  const ds2SotfsChecklist = [
+    'Confirmar 38 troféus: 1 platina, 2 ouro, 23 prata e 12 bronze.',
+    'Manter onlineRequired false, coopRequired false e dlcRequired false.',
+    'Manter difficultyTrophiesRequired false e filtro Dificuldade zerado.',
+    'Confirmar missableCount e missable_count iguais a 14.',
+    'Controlar Lucatiel e Benhart com invocações de NPC e sobrevivência em boss fights.',
+    'Esgotar diálogos de NPCs antes de matar chefes importantes ou trocar de ciclo.',
+    'Conferir todos os gestos antes de NG+.',
+    'Conferir Cale, Rosabeth, Majula e equipamentos herdados antes de NG+.',
+    'Incluir magias das áreas das Crowns nos quatro troféus de mestre.',
+    'Guardar almas de chefe até confirmar compras e trocas de magias.',
+    'Separar grind de Sunlight Medals, Bell Keepers/Mad Warrior e Pilgrims of the Dark.',
+    'Avançar até NG++ real para Chancellor Wellager; Bonfire Ascetic não substitui.',
+    'Conferir que pactos de descoberta não estão marcados como online, coop ou perdíveis.',
+    'Fazer cleanup final por tags: NPC, Pacto, Grind, Coletável, NG++ e Cleanup.'
+  ];
+
+  const ds2SotfsFaq = [
+    { question: 'Dark Souls II: Scholar of the First Sin exige online para platinar?', answer: 'Não. A platina pode ser feita offline. Online pode facilitar recompensas de pactos, mas não é obrigatório.' },
+    { question: 'Precisa de cooperação online?', answer: 'Não. Lucatiel e Benhart usam invocações de NPC e sobrevivência em chefes, mas isso não é coop online obrigatório.' },
+    { question: 'As DLCs são necessárias?', answer: 'Não há DLC separada de troféus na lista de Scholar. Porém, as áreas das Crowns já integradas nessa versão contam para magias, milagres, piromancias e sortilégios.' },
+    { question: 'Quantos troféus tem a lista PS4?', answer: 'São 38 troféus: 1 platina, 2 ouro, 23 prata e 12 bronze.' },
+    { question: 'Qual é a dificuldade da platina?', answer: 'O guia usa 7/10. O desafio vem de combate Soulslike, checklist longo, NPCs, pactos, troféus de mestre, grind e avanço até NG++.' },
+    { question: 'Quanto tempo leva para platinar?', answer: 'A estimativa revisada é 80 a 120 horas, variando por experiência, farm offline, uso opcional de online e retrabalho em NPCs.' },
+    { question: 'É obrigatório chegar em NG++?', answer: 'Na rota segura, sim. Chancellor Wellager em NG++ é importante para comprar magias de pactos e fechar troféus de mestre sem depender de alternativas mais pesadas.' },
+    { question: 'Bonfire Ascetic substitui NG++ para Wellager?', answer: 'Não. Bonfire Ascetic pode ajudar em algumas repetições de boss, mas não substitui o avanço real até NG++ para as compras de Chancellor Wellager.' },
+    { question: 'Lucatiel é perdível?', answer: 'Sim. Você precisa falar com Lucatiel nos pontos certos e fazê-la sobreviver a três vitórias contra chefes antes de fechar a questline.' },
+    { question: 'Benhart é perdível?', answer: 'Sim. Moonlight Greatsword depende de conversas e de Benhart sobreviver a três vitórias contra chefes elegíveis.' },
+    { question: 'Selfless Giver é online?', answer: 'Não. É um troféu de pacto e grind. Online pode ajudar, mas o guia trata como offline possível e não marca filtro Online.' },
+    { question: 'Quais são os maiores riscos de retrabalho?', answer: 'Lucatiel, Benhart, Gesture Maestro, os quatro troféus de mestre, NPCs de Majula, equipamentos herdados e compras de Wellager em NG++.' }
+  ];
+
+  const ds2SotfsMetaById = {
+    ds2s_the_dark_soul: { name_pt: 'A Alma Escura', description: 'Obtenha todos os troféus.', tip: 'Conclua os outros 37 troféus da lista PS4 de Scholar of the First Sin.', tags: ['Platina', 'Conclusão'] },
+    ds2s_the_heir: { name_pt: 'Herdeiro', description: 'Veja o fim do jogo.', tip: 'Troféu de conclusão da história. Derrote o chefe final e veja o encerramento. Antes de avançar para NG+, revise NPCs, magias, gestos, pactos e compras pendentes.', spoiler: true, tags: ['História', 'Final'] },
+    ds2s_selfless_giver: { name_pt: 'Doadora Altruísta', description: 'Maximize a devoção em um pacto.', tip: 'Maximize um pacto. Heirs of the Sun, Bell Keepers e Pilgrims of the Dark podem envolver farm; online é opcional, não obrigatório.', tags: ['Pacto', 'Grind', 'Farm', 'Atenção'] },
+    ds2s_kings_ring: { name_pt: 'Anel do Rei', description: 'Obtenha o anel do rei.', tip: 'Progresso principal no Undead Crypt. Revise pendências antes de acelerar para o fim.', spoiler: true, tags: ['História', 'Progressão'] },
+    ds2s_ancient_dragon: { name_pt: 'Dragão Ancestral', description: 'Obtenha o Coração da Neblina de Cinzas.', tip: 'Progresso principal em Dragon Shrine, abrindo memories importantes para Drummond e Benhart.', spoiler: true, tags: ['História', 'Progressão'] },
+    ds2s_sinners_bonfire: { name_pt: 'Fogueira do Pecador', description: 'Acenda a fogueira primordial em Elevação dos Pecadores.', tip: 'Acenda a fogueira primordial após Lost Sinner.', spoiler: true, tags: ['História', 'Boss'] },
+    ds2s_iron_keep_bonfire: { name_pt: 'Fogueira da Masmorra de Ferro', description: 'Acenda a fogueira primordial em Masmorra de Ferro.', tip: 'Acenda a fogueira primordial após Old Iron King.', spoiler: true, tags: ['História', 'Boss'] },
+    ds2s_gulch_bonfire: { name_pt: 'Fogueira da Ravina', description: 'Acenda a fogueira primordial em Ravina Negra.', tip: 'Acenda a fogueira primordial após The Rotten. Black Gulch também importa para Lucatiel e Darkdiver Grandahl.', spoiler: true, tags: ['História', 'Boss'] },
+    ds2s_brightstone_bonfire: { name_pt: 'Fogueira da Pedra Luzente', description: 'Acenda a fogueira primordial em Enseada Pedra Luzente Tseldora.', tip: 'Acenda a fogueira primordial após The Duke\'s Dear Freja e anote farms úteis para depois.', spoiler: true, tags: ['História', 'Boss'] },
+    ds2s_looking_glass_knight: { name_pt: 'Cavaleiro do Espelho', description: 'Derrote o Cavaleiro do Espelho.', tip: 'Chefe obrigatório de Drangleic Castle/Shrine of Amana.', spoiler: true, tags: ['História', 'Boss'] },
+    ds2s_vendrick: { name_pt: 'Vendrick', description: 'Derrote Vendrick.', tip: 'Chefe opcional importante. Reúna Giant Souls para reduzir a defesa e planeje a luta antes do fechamento da run.', spoiler: true, tags: ['Boss', 'Opcional'] },
+    ds2s_supreme_weapon: { name_pt: 'Arma Suprema', description: 'Reforce uma arma até o limite.', tip: 'Leve uma arma comum a +10 ou especial a +5. É cleanup de upgrade, não troféu de dificuldade.', tags: ['Upgrade', 'Materiais', 'Cleanup'] },
+    ds2s_gesture_maestro: { name_pt: 'Mestre dos Gestos', description: 'Aprenda todos os gestos.', tip: 'Perdível de run por NPCs e diálogos. Esgote conversas com Saulden, Targray, Straid, Creighton, Gilligan, Rosabeth, Vengarl, Tark, Wellager, Agdayne e Drummond.', missable: true, spoiler: true, tags: ['Perdível', 'Risco de run', 'Gestos', 'NPC', 'Coletável', 'Checklist', 'Cleanup'] },
+    ds2s_master_of_sorcery: { name_pt: 'Mestre de Magia', description: 'Aprenda todas as magias.', tip: 'Inclui magias de Scholar e áreas das Crowns. Planeje Straid, Ornifex, Navlaan, almas de chefe, pactos e compras de Wellager em NG++.', missable: true, tags: ['Perdível', 'Risco de run', 'Magias', 'Coletável', 'Checklist', 'Grind', 'NG++', 'Chancellor Wellager', 'Cleanup'] },
+    ds2s_master_of_miracles: { name_pt: 'Mestre dos Milagres', description: 'Aprenda todos os milagres.', tip: 'Inclui milagres de Scholar e áreas das Crowns. Planeje Licia, Cromwell, Sunlight Medals, farm offline e compras de Wellager em NG++.', missable: true, tags: ['Perdível', 'Risco de run', 'Milagres', 'Coletável', 'Checklist', 'Grind', 'NG++', 'Chancellor Wellager', 'Cleanup'] },
+    ds2s_master_of_pyromancy: { name_pt: 'Mestre da Chama Piromântica', description: 'Aprenda todas as piromancias.', tip: 'Inclui piromancias de Scholar e áreas das Crowns. Revise Rosabeth, Straid, almas de chefe e compras de Wellager em NG++.', missable: true, tags: ['Perdível', 'Risco de run', 'Piromancias', 'Coletável', 'Checklist', 'Grind', 'NG++', 'Chancellor Wellager', 'Cleanup'] },
+    ds2s_master_of_hexes: { name_pt: 'Mestre dos Sortilégios', description: 'Aprenda todos os sortilégios.', tip: 'Inclui todos os sortilégios. Planeje Felkin, Straid, Darkdiver Grandahl, Pilgrims of the Dark, Darklurker e áreas das Crowns.', missable: true, tags: ['Perdível', 'Risco de run', 'Sortilégios', 'Coletável', 'Checklist', 'Grind', 'Pacto', 'Cleanup'] },
+    ds2s_curious_map: { name_pt: 'Mapa Curioso', description: 'Acenda todas as fogueiras no mapa em Majula.', tip: 'Leve Cale para Majula e acompanhe as chamas do mapa. Pode exigir outra run se Cale ou eventos forem perdidos.', missable: true, spoiler: true, tags: ['Perdível', 'Risco de run', 'NPC', 'Majula', 'Cleanup'] },
+    ds2s_change_of_clothes: { name_pt: 'Troca de Roupa', description: 'Entregue uma roupa para Rosabeth de Melfia usar.', tip: 'Despetifique Rosabeth e entregue qualquer roupa. Evite matar NPCs; ela também importa para piromancias.', missable: true, tags: ['Perdível', 'Risco de run', 'NPC', 'Majula', 'Cleanup'] },
+    ds2s_gathering_of_exiles: { name_pt: 'Reunião dos Exilados', description: 'Aumente a população de Majula.', tip: 'Leve NPCs e vendedores para Majula: Melentia, Cale, Licia, Carhillion, Chloanne, Gilligan e Rosabeth. Não mate NPCs e esgote diálogos.', missable: true, tags: ['Perdível', 'Risco de run', 'NPC', 'Majula', 'Cleanup'] },
+    ds2s_moonlight_greatsword: { name_pt: 'Espada Grande do Luar', description: 'Herde o equipamento do Benhart de Jugo.', tip: 'Perdível de questline: fale com Benhart em todos os pontos e faça-o sobreviver a três vitórias contra chefes elegíveis.', missable: true, spoiler: true, tags: ['Perdível', 'Risco de run', 'NPC', 'Questline', 'Summon', 'Cleanup'] },
+    ds2s_holder_of_the_fort: { name_pt: 'Detentor da Fortaleza', description: 'Herde o equipamento do Capitão Drummond.', tip: 'Fale com Captain Drummond em Memory of Vammar e volte após derrotar Giant Lord para herdar o equipamento.', missable: true, spoiler: true, tags: ['Perdível', 'Risco de run', 'NPC', 'Questline', 'Cleanup'] },
+    ds2s_lucatiel: { name_pt: 'Lucatiel', description: 'Herde o equipamento do Lucatiel de Mirrah.', tip: 'Perdível importante: encontre Lucatiel, esgote diálogos e faça-a sobreviver a três vitórias contra chefes antes de Aldia\'s Keep.', missable: true, spoiler: true, tags: ['Perdível', 'Risco de run', 'NPC', 'Questline', 'Summon', 'Cleanup'] },
+    ds2s_smith_for_life: { name_pt: 'Ferreiro para vida', description: 'Herde o equipamento do Pulso-Firme McDuff.', tip: 'Entregue o Dull Ember a McDuff e gaste almas suficientes em infusões/upgrades. Evite matar NPCs antes de herdar equipamentos.', missable: true, tags: ['Perdível', 'Risco de run', 'NPC', 'Questline', 'Cleanup'] },
+    ds2s_garrulous_miser: { name_pt: 'Gárrulo Miserável', description: 'Herde o equipamento do Mestre de Escadas Gilligan.', tip: 'Compre as escadas de Gilligan em Majula e esgote diálogos para herdar o equipamento. Também conversa com Gesture Maestro.', missable: true, tags: ['Perdível', 'Risco de run', 'NPC', 'Questline', 'Cleanup'] },
+    ds2s_reflections_on_disembodiment: { name_pt: 'Reflexões na Descorporificação', description: 'Herde o equipamento da cabeça de Vengarl.', tip: 'Encontre a Head of Vengarl em Shaded Woods, esgote diálogos e resolva a linha de equipamento.', missable: true, spoiler: true, tags: ['Perdível', 'Risco de run', 'NPC', 'Questline', 'Cleanup'] },
+    ds2s_self_recollection: { name_pt: 'Auto Reminiscência', description: 'Recupere sua carne e comece como um morto-vivo.', tip: 'Troféu inicial de história em Things Betwixt.', spoiler: true, tags: ['História', 'Progressão'] },
+    ds2s_last_giant: { name_pt: 'Último Gigante', description: 'Derrote o Último Gigante.', tip: 'Chefe inicial da Forest of Fallen Giants.', spoiler: true, tags: ['História', 'Boss'] },
+    ds2s_brilliant_covenant: { name_pt: 'Pacto Brilhante', description: 'Descubra um pacto muito brilhante.', tip: 'Descubra Heirs of the Sun em Harvest Valley. Importante para Sunlight Medals e Master of Miracles, mas online não é obrigatório.', tags: ['Pacto', 'Exploração'] },
+    ds2s_protector_covenant: { name_pt: 'Pacto de Protetor', description: 'Descubra o pacto dos protetores.', tip: 'Descubra Blue Sentinels com Targray na Cathedral of Blue usando Token of Fidelity obtível offline.', tags: ['Pacto', 'Exploração'] },
+    ds2s_sanguinary_covenant: { name_pt: 'Pacto Sanguinário', description: 'Descubra o pacto dos sanguinários.', tip: 'Descubra Brotherhood of Blood com Titchy Gren após Executioner\'s Chariot usando Token of Spite obtível offline.', tags: ['Pacto', 'Exploração'] },
+    ds2s_covenant_of_the_meek: { name_pt: 'Pacto dos Tímidos', description: 'Descubra o pacto dos tímidos.', tip: 'Entre na Way of Blue falando com Crestfallen Saulden em Majula.', tags: ['Pacto', 'Exploração'] },
+    ds2s_gnawing_covenant: { name_pt: 'Pacto de Roer', description: 'Descubra o pacto dos ratos.', tip: 'Descubra Rat King covenant após Royal Rat Vanguard ou Royal Rat Authority.', spoiler: true, tags: ['Pacto', 'Exploração'] },
+    ds2s_clangorous_covenant: { name_pt: 'Pacto Ressonante', description: 'Descubra o pacto dos barulhentos.', tip: 'Descubra Bell Keepers em Belfry Luna ou Belfry Sol. Pode exigir Pharros\' Lockstone, mas não online.', tags: ['Pacto', 'Exploração'] },
+    ds2s_covenant_of_ancients: { name_pt: 'Pacto dos Antigos', description: 'Descubra o pacto dos antigos.', tip: 'Leve o Petrified Dragon Egg do Dragon Shrine a Magerold em Iron Keep para entrar no Dragon Remnants.', spoiler: true, tags: ['Pacto', 'Exploração'] },
+    ds2s_covenant_of_the_fittest: { name_pt: 'Pacto dos Mais Aptos', description: 'Descubra o pacto dos mais aptos.', tip: 'Entre no Company of Champions em Majula. Use com cuidado porque aumenta a dificuldade enquanto ativo.', tags: ['Pacto', 'Exploração'] },
+    ds2s_abysmal_covenant: { name_pt: 'Pacto Abismal', description: 'Descubra o pacto abismal.', tip: 'Encontre Darkdiver Grandahl nos três locais para Pilgrims of the Dark. Importante para Master of Hexes, mas não é perdível nem online obrigatório.', spoiler: true, tags: ['Pacto', 'Exploração', 'Atenção'] },
+    ds2s_this_is_dark_souls: { name_pt: 'Este é Dark Souls', description: 'Morra pela primeira vez.', tip: 'Morra uma vez. Deve acontecer naturalmente durante a campanha.', tags: ['Misc'] }
+  };
+
+  Object.assign(darkSouls2SotfsGuide, {
+    title: 'Dark Souls II: Scholar of the First Sin',
+    primary_platform: 'PlayStation',
+    platforms: ['PS4'],
+    genre: 'Soulslike / RPG de ação',
+    developer: 'FromSoftware',
+    publisher: 'Bandai Namco',
+    difficulty: 7,
+    time: '80-120h',
+    time_min_hours: 80,
+    time_max_hours: 120,
+    time_sort_hours: 100,
+    time_bucket: 'long',
+    missable: 'Platina longa e offline, com perdíveis de run ligados a NPCs, gestos, equipamentos herdados, linhas de Lucatiel e Benhart, troféus de mestre e avanço até NG++ para Chancellor Wellager.',
+    runs_summary: 'Planeje NG, NG+ e avanço até NG++/Drangleic Castle para compras finais de Chancellor Wellager, além de cleanup de NPCs, pactos e magias.',
+    missable_summary: 'São 14 troféus marcados como Perdível de run: gestos, quatro troféus de mestre, mapa/Majula, Rosabeth, NPCs e equipamentos herdados.',
+    online_summary: 'Não há troféus online obrigatórios. Online pode reduzir grind de pactos, mas a platina é planejada como offline possível.',
+    grind_summary: 'O grind fica em pactos, Sunlight Medals, Bell Keepers/Mad Warrior, Pilgrims of the Dark, troféus de mestre, farm de itens e compras de NG++.',
+    dlc_scope: 'Sem DLC separada; Crowns integradas. Scholar of the First Sin não tem lista separada de DLC, mas as áreas das Crowns estão integradas nessa versão e contam para os troféus de mestre de magias, milagres, piromancias e sortilégios.',
+    difficulty_reason: '7/10: a execução Soulslike pesa, mas o maior risco editorial é planejamento de NPCs, pactos, magias, summons, grind e NG++.',
+    time_reason: '80-120 horas considerando uma primeira run cuidadosa, NG+, avanço até NG++, farm offline possível, pactos, troféus de mestre e cleanup de NPCs.',
+    first_run_advice: 'Comece com checklist de NPCs, gestos, pactos e magias. Não mate NPCs, esgote diálogos, guarde almas de chefe e controle Lucatiel e Benhart desde cedo.',
+    cleanup_advice: 'Faça cleanup antes de NG+ e novamente antes de NG++: gestos, mapa de Majula, equipamentos herdados, pactos, magias das Crowns integradas e compras de Wellager.',
+    before_you_start: 'Dark Souls II: Scholar of the First Sin não exige online, coop ou DLC separada, mas exige disciplina. O guia usa run porque a platina depende de ciclos: NG, NG+ e avanço até NG++ para Chancellor Wellager.',
+    best_for: 'Ideal para quem gosta de Souls, aceita checklist longo e quer uma platina offline com exploração, NPCs, pactos, magias e NG++.',
+    avoid_if: 'Evite se você quer platina rápida, sem múltiplas runs, sem farm ou sem acompanhar NPCs e magias com checklist.',
+    hasMissables: true,
+    missableCount: 14,
+    missable_count: 14,
+    onlineRequired: false,
+    coopRequired: false,
+    dlcRequired: false,
+    online_required: false,
+    coop_required: false,
+    dlc_required: false,
+    hasOnline: false,
+    hasCoop: false,
+    requiresOnline: false,
+    requiresCoop: false,
+    dlcRequiredForPlatinum: false,
+    difficultyTrophiesRequired: false,
+    newGamePlusRequired: true,
+    playthroughs: 'NG, NG+ e avanço até NG++',
+    platinumType: 'offline / NG++ / checklist',
+    guideFocus: 'NPCs, invocações de NPC, pactos, troféus de mestre, Crowns integradas, Wellager em NG++ e cleanup',
+    status: 'published',
+    editorialStatus: 'verified',
+    editorial_status: 'published',
+    editorial_review_status: 'verified',
+    coverage_level: 'complete',
+    is_verified: true,
+    verification_status: 'verified',
+    qualityWarnings: [],
+    quality_warnings: [],
+    lastReviewedAt: '2026-06-13',
+    last_reviewed_at: '2026-06-13',
+    reviewedBy: 'AtlasAchievement',
+    reviewed_by: 'AtlasAchievement',
+    verification_note: 'Guia revisado para publicação: lista PS4 de Scholar of the First Sin com 38 troféus, PT-BR, 14 perdíveis de run, offline, sem coop, sem DLC separada, sem troféus de dificuldade e rota até NG++/Wellager.',
+    editorial_notes: 'Revisão editorial focada em flags, tags explícitas, roadmap estruturado, nomes EN/PT-BR, descrições, Crowns integradas, NPC questlines, pactos, FAQ e SEO.',
+    editorial_summary: [
+      'Dark Souls II: Scholar of the First Sin é uma platina longa, offline e baseada em checklist. A lista PS4 tem 38 troféus: 1 platina, 2 ouro, 23 prata e 12 bronze.',
+      'O guia não marca online, coop, DLC separada ou dificuldade como requisito. Online e summons ajudam, mas a rota de platina é offline possível e depende de planejamento.',
+      'O maior gargalo é combinar NPC questlines, Lucatiel, Benhart, gestos, equipamentos herdados, pactos, troféus de mestre e compras de Chancellor Wellager em NG++.',
+      'Scholar of the First Sin não tem lista separada de DLC, mas as áreas das Crowns estão integradas nessa versão e contam para os troféus de mestre de magias, milagres, piromancias e sortilégios.'
+    ],
+    seo: {
+      title: 'Dark Souls II Scholar of the First Sin: guia de troféus e platina',
+      description: 'Guia de platina de Dark Souls II: Scholar of the First Sin com 38 troféus, roadmap, 14 perdíveis de run, magias das Crowns, pactos, Lucatiel, Benhart e NG++.',
+      metaDescription: 'Guia de platina de Dark Souls II: Scholar of the First Sin com 38 troféus, roadmap, 14 perdíveis de run, magias das Crowns, pactos, Lucatiel, Benhart e NG++.',
+      keywords: 'Dark Souls II Scholar of the First Sin troféus, Dark Souls 2 SOTFS platina, guia Dark Souls II Scholar, Lucatiel, Benhart, Chancellor Wellager NG++, Master of Sorcery, Master of Miracles, Master of Pyromancy, Master of Hexes',
+      ogTitle: 'Dark Souls II Scholar of the First Sin: guia de troféus e platina',
+      ogDescription: 'Roadmap PT-BR da platina PS4 de Dark Souls II Scholar, offline, com NPCs, pactos, Crowns integradas, troféus de mestre e NG++.'
+    },
+    quickDecision: {
+      verdict: 'Vale platinar se você gosta de Souls e aceita uma rota longa de checklist.',
+      difficulty: 'Alta moderada, 7/10.',
+      time: 'Longa: 80 a 120 horas.',
+      mainRisk: 'NPCs, invocações de Lucatiel/Benhart, troféus de mestre e NG++ para Wellager.',
+      risk: 'Alto risco de retrabalho por run, mas baixo risco de requisito externo.',
+      onlineCoop: 'Não exige online nem coop; online e summons são apenas ferramentas opcionais/contextuais.',
+      dlc: 'Não exige DLC separada; Crowns são conteúdo integrado em Scholar.',
+      firstAction: 'Comece a primeira run com checklist de NPCs, gestos, pactos, magias e almas de chefe antes de avançar demais.'
+    },
+    attentionPoints: ds2SotfsAttentionPoints,
+    checklist: ds2SotfsChecklist,
+    faq: ds2SotfsFaq,
+    roadmap: ds2SotfsRoadmap
+  });
+
+  for (const trophy of darkSouls2SotfsGuide.trophies || []) {
+    const meta = ds2SotfsMetaById[trophy.id] || {};
+    const originalName = trophy.name || '';
+    const descriptionOriginal = trophy.description || '';
+    const descriptionPt = meta.description || trophy.description || '';
+    const isMissable = trophy.type === 'Platina' ? false : Boolean(meta.missable);
+    trophy.name_pt = meta.name_pt || trophy.name_pt || originalName;
+    trophy.trophyNameOriginal = originalName;
+    trophy.trophyNamePtBr = trophy.name_pt;
+    trophy.namePtSource = 'trusted_exophase_ptbr';
+    trophy.descriptionOriginal = descriptionOriginal;
+    trophy.description = descriptionPt;
+    trophy.descriptionPtBr = descriptionPt;
+    trophy.ptDescription = descriptionPt;
+    trophy.localizedDescription = { ...(trophy.localizedDescription || {}), ptBr: descriptionPt, 'pt-BR': descriptionPt };
+    trophy.descriptionPtSource = 'trusted_exophase_ptbr';
+    trophy.tip = meta.tip || trophy.tip || '';
+    trophy.guideTip = trophy.tip;
+    trophy.is_missable = isMissable;
+    trophy.isMissable = isMissable;
+    trophy.missable = isMissable;
+    trophy.riskType = isMissable ? 'missable' : '';
+    trophy.is_spoiler = Boolean(meta.spoiler);
+    trophy.isSpoiler = trophy.is_spoiler;
+    trophy.is_online = false;
+    trophy.isOnline = false;
+    trophy.is_coop = false;
+    trophy.isCoop = false;
+    trophy.is_dlc = false;
+    trophy.isDlc = false;
+    trophy.tags = Array.isArray(meta.tags) ? meta.tags.slice() : [];
+  }
+
+  darkSouls2SotfsGuide.missableCount = (darkSouls2SotfsGuide.trophies || []).filter(trophy => trophy.type !== 'Platina' && trophy.is_missable).length;
+  darkSouls2SotfsGuide.missable_count = darkSouls2SotfsGuide.missableCount;
+  darkSouls2SotfsGuide.roadmapStages = darkSouls2SotfsGuide.roadmap;
+}
+
 const darkSouls3Guide = sampleGames.find(game => game.slug === 'dark-souls-iii');
 if (darkSouls3Guide) {
   const ds3NamePtById = {
@@ -47606,6 +48463,430 @@ if (witcher3Guide) {
     roadmapStages: witcher3AccentRoadmap,
     trophies: witcher3AccentTrophies
   });
+}
+
+const baldursGate3Guide = sampleGames.find(game => game.slug === 'baldurs-gate-3');
+if (baldursGate3Guide) {
+  const bg3Roadmap = [
+    {
+      title: 'Defina a rota antes de criar o personagem',
+      focus: 'Planejamento de campanha',
+      objective: 'Evitar escolhas incompatíveis e decidir quais troféus serão feitos em cada jogada.',
+      actions: [
+        'Decida se esta será a jogada principal, a rota Impulso Sombrio/Dark Urge com Bhaal ou a jogada de dificuldade.',
+        'Se for buscar Acerto Crítico, comece diretamente no modo Estrategista/Tactician.',
+        'Trate Modo Honra/Honour Mode como rota separada e extra se também quiser o 100%.',
+        'Planeje companheiros, romances, tieflings, Sazza e finais antes de avançar.',
+        'Crie saves manuais antes de decisões importantes e mantenha backups de fim de ato.'
+      ],
+      warning: 'Baldur\'s Gate 3 tem muitos bloqueios por escolhas. Um erro no Ato I pode impedir troféus no Ato III.',
+      result: 'A campanha começa com rota clara e menor risco de retrabalho.'
+    },
+    {
+      title: 'Proteja os tieflings e resolva riscos do Ato I',
+      focus: 'Ato I e perdíveis iniciais',
+      objective: 'Controlar Ninguém Fica Para Trás, Sazza, Scratch, filhote de urso-coruja, Zhalk, Forja de Adamantina e companheiros.',
+      actions: [
+        'Salve Nadira e outros tieflings em perigo.',
+        'Evite decisões que matem os refugiados tieflings.',
+        'Avance a quest de Sazza sem matá-la se buscar Deixem Ela Ir!.',
+        'Recrute ou preserve companheiros importantes para troféus futuros.',
+        'Conheça Scratch e o filhote de urso-coruja para Vantagens de Ter Duas Mãos.',
+        'Derrote o Comandante Zhalk no Nautiloide se ainda não fez O Diabo Mora nos Detalhes.',
+        'Faça a Forja de Adamantina e prepare Um Destino Atroz.'
+      ],
+      warning: 'Ninguém Fica Para Trás é um dos troféus mais sensíveis da platina. Não avance atos sem confirmar que os tieflings necessários estão vivos.',
+      result: 'Os maiores riscos iniciais de NPCs, companheiros e objetivos paralelos ficam controlados.'
+    },
+    {
+      title: 'Chegue ao Ato II mantendo todos vivos',
+      focus: 'Ato II e Torres do Luar',
+      objective: 'Salvar prisioneiros, proteger Isobel, manter tieflings vivos e preparar Karlach e companheiros.',
+      actions: [
+        'Proteja Last Light Inn e impeça que Isobel seja sequestrada.',
+        'Resgate os prisioneiros das Torres do Luar para Fechado a Sete Chaves.',
+        'Salve Rolan e outros tieflings em risco.',
+        'Complete missões de companheiros sem bloquear romances ou finais.',
+        'Faça chefes específicos como o cirurgião, a exatora e o Apóstolo de Myrkul com as condições dos troféus.'
+      ],
+      warning: 'Se Last Light Inn cair ou tieflings morrerem, Ninguém Fica Para Trás pode ser perdido para a jogada inteira.',
+      result: 'O Ato II termina com tieflings, companheiros e prisioneiros protegidos.'
+    },
+    {
+      title: 'Organize romances, companheiros e escolhas do Ato III',
+      focus: 'Ato III e finais pessoais',
+      objective: 'Resolver Karlach, Wyll, Gale, Shadowheart, Lae\'zel, Astarion, Imperador, Bhaal e decisões finais.',
+      actions: [
+        'Siga a rota de Karlach para Encontro Tórrido, se esse for o objetivo da jogada.',
+        'Rompa o pacto de Wyll para Brecha, se aplicável.',
+        'Estabilize Gale para Reparando a Trama.',
+        'Avance Lae\'zel e Voss para A Ira da Rainha Lich.',
+        'Presenteie Shadowheart com a orquídea noturna para Florescer na Noite Mais Escura.',
+        'Controle Astarion e a mordida para Só uma Mordidinha.',
+        'Faça Os Brutos Também Amam com o Imperador quando for seguro.'
+      ],
+      warning: 'Romances e companheiros são altamente sensíveis a aprovação, descansos longos e escolhas de diálogo. Use saves antes de cenas importantes.',
+      result: 'Os troféus de companheiros e romances ficam encaminhados antes dos finais.'
+    },
+    {
+      title: 'Resolva chefes com condições especiais',
+      focus: 'Chefes e combate específico',
+      objective: 'Fazer os troféus de combate que exigem condições precisas antes de perder a oportunidade.',
+      actions: [
+        'Derrote Gortash sem acionar armadilhas para Dança Elegante.',
+        'Mate Orin durante o ritual para Sangue Originário.',
+        'Derrube o dragão em voo para Pouso Forçado.',
+        'Mate o dragão vermelho na Cidade Alta para Mata-dragões.',
+        'Derrote a Matriarca Aranha antes dos ovos chocarem para Controle de Pragas.',
+        'Derrote o Apóstolo de Myrkul antes que consuma necromitas para Não Existe Almoço Grátis.',
+        'Mate o cirurgião sem deixá-lo usar habilidades cirúrgicas para Procedimento Não Invasivo.',
+        'Derrote a exatora sem deixá-la usar ouro para Mão de Vaca.'
+      ],
+      warning: 'A maioria desses troféus exige save antes da luta. Se a condição falhar e você salvar depois, terá que tentar em outra jogada.',
+      result: 'Os troféus de chefes e condições específicas ficam resolvidos sem comprometer o final.'
+    },
+    {
+      title: 'Complete finais incompatíveis com saves separados',
+      focus: 'Finais e rotas exclusivas',
+      objective: 'Desbloquear finais bons, ruins, devorador de mentes/Mind Flayer e Bhaal sem repetir campanhas inteiras desnecessariamente.',
+      actions: [
+        'Use saves antes das decisões finais.',
+        'Faça Herói dos Reinos Esquecidos destruindo o Cérebro de Netheril.',
+        'Faça Poder Absoluto, Corrupção Absoluta assumindo o controle do Cérebro.',
+        'Faça Ceremorfose com a transformação em devorador de mentes.',
+        'Faça Pecados do Pai na rota Impulso Sombrio/Dark Urge com Bhaal correta.',
+        'Faça Abrace o Impulso na rota de Impulso Sombrio/Dark Urge, se aplicável.'
+      ],
+      warning: 'Finais e Impulso Sombrio/Dark Urge podem ser incompatíveis entre si. Separe saves e jogadas para evitar retrabalho.',
+      result: 'Os troféus de finais e rotas exclusivas ficam organizados.'
+    },
+    {
+      title: 'Faça misc, leitura, performance e combate repetitivo',
+      focus: 'Limpeza de ações específicas',
+      objective: 'Resolver troféus que podem ficar esquecidos ao longo da campanha.',
+      actions: [
+        'Leia 100 livros em uma única aventura para Leitura Voraz.',
+        'Ganhe 100 moedas tocando música para Artista de Rua.',
+        'Faça Pau pra Toda Obra sem redefinir classe no Withers/Funestus.',
+        'Faça Briga de Bar com personagem bêbado.',
+        'Faça Rajada de Ação, Punhos da Fúria, Empurrão Mortal e Matar Dois Coelhos com Uma Gnomada.',
+        'Faça Vira, Vira, Vira usando apenas álcool no descanso longo.',
+        'Faça Vai Pegar! com Scratch.'
+      ],
+      warning: 'Alguns troféus diversos exigem uma única aventura. Não trate como progresso global entre jogadas se o jogo não rastrear dessa forma.',
+      result: 'A limpeza de ações específicas fica concluída.'
+    },
+    {
+      title: 'Finalize Estrategista/Tactician e Modo Honra/Honour Mode, se incluído',
+      focus: 'Dificuldade e modo adicional',
+      objective: 'Concluir a campanha em dificuldade alta sem confundir platina principal com troféu adicional.',
+      actions: [
+        'Complete o jogo em Estrategista/Tactician para Acerto Crítico.',
+        'Se também quiser 100%, complete o Modo Honra/Honour Mode para Ponta de lança.',
+        'Não reduza a dificuldade em jogadas que dependem de troféu de dificuldade.',
+        'Use build/composição de grupo e saves de forma conservadora.',
+        'No Modo Honra/Honour Mode, trate cada decisão como definitiva.'
+      ],
+      warning: 'Modo Honra/Honour Mode e Ponta de lança ficam fora dos requisitos da platina principal neste guia e devem ser tratados como extra/100%.',
+      result: 'Os requisitos de dificuldade ficam resolvidos com a separação correta entre platina e 100%.'
+    }
+  ];
+
+  const bg3AttentionPoints = [
+    { title: 'Lista principal vs Modo Honra', type: 'Extra / 100%', text: 'A platina principal usa os 54 troféus da lista base. Ponta de lança/Foehammer é tratado como extra de Modo Honra/Honour Mode para 100%, não como requisito de Pride of Baldur\'s Gate.', tags: ['Extra', 'Modo Honra', 'Lista base'] },
+    { title: 'Ninguém Fica Para Trás', type: 'Perdível / Tieflings', text: 'É um dos troféus mais sensíveis do jogo. Proteja os tieflings do Ato I ao Ato III e use checklist antes de avançar atos.', tags: ['Perdível', 'Tieflings', 'Checklist'] },
+    { title: 'Sazza', type: 'Perdível / Rota', text: 'Deixem Ela Ir! exige salvar Sazza em múltiplos momentos. Não mate Sazza e acompanhe a rota desde o Grove.', tags: ['Perdível', 'Sazza', 'Ato I'] },
+    { title: 'Karlach', type: 'Perdível / Romance', text: 'Encontro Tórrido exige romance e progressão correta de Karlach. Acompanhe aprovação, upgrades e cenas de descanso longo.', tags: ['Perdível', 'Karlach', 'Romance'] },
+    { title: 'Impulso Sombrio e Bhaal', type: 'Perdível / Rota', text: 'Pecados do Pai e Abrace o Impulso exigem rota específica. Separe uma jogada ou save dedicado para Impulso Sombrio/Dark Urge.', tags: ['Perdível', 'Impulso Sombrio', 'Bhaal'] },
+    { title: 'Estrategista', type: 'Dificuldade', text: 'Acerto Crítico exige terminar o jogo no modo Estrategista/Tactician. Não reduza a dificuldade nessa jogada.', tags: ['Dificuldade', 'Estrategista'] },
+    { title: 'Modo Honra', type: 'Extra / 100%', text: 'Ponta de lança exige Modo Honra/Honour Mode e fica separado como extra/100% neste guia.', tags: ['Extra', 'Modo Honra'] },
+    { title: 'Saves manuais', type: 'Atenção', text: 'Faça saves antes de decisões, romances, chefes e transições de ato. BG3 pode bloquear troféus dezenas de horas antes do fim.', tags: ['Atenção', 'Saves'] },
+    { title: 'Descansos longos', type: 'Atenção / Companheiros', text: 'Várias cenas de companheiros e romance dependem de descansos longos. Não avance a história ignorando eventos do acampamento.', tags: ['Descanso longo', 'Companheiro'] },
+    { title: 'Chefes com condições', type: 'Perdível / Chefe', text: 'Gortash, Orin, Myrkul, Grym, a Matriarca Aranha e outros chefes têm troféus com condições específicas. Faça save antes da luta.', tags: ['Perdível', 'Chefe', 'Condição específica'] },
+    { title: 'Multiplayer opcional', type: 'Sem online obrigatório', text: 'O jogo tem multiplayer, mas a platina não exige online nem cooperação.', tags: ['Solo', 'Offline'] },
+    { title: 'Finais incompatíveis', type: 'Final / Rota', text: 'Use saves separados antes das decisões finais para reduzir jogadas extras, mas trate Impulso Sombrio/Dark Urge com Bhaal como rota planejada desde cedo.', tags: ['Final', 'Rota', 'Saves'] }
+  ];
+
+  const bg3Checklist = [
+    'Confirmar que a lista principal está separada do Modo Honra/Honour Mode.',
+    'Confirmar que Pride of Baldur\'s Gate é a platina da lista base.',
+    'Manter Foehammer/Ponta de lança fora da lista principal e citado como extra/100%.',
+    'Confirmar onlineRequired false, coopRequired false e dlcRequired false.',
+    'Confirmar hasMissables true e missableCount igual aos troféus marcados como Perdível.',
+    'Marcar Acerto Crítico como o único troféu de Dificuldade da lista principal.',
+    'Não marcar chefes difíceis como Dificuldade.',
+    'Não marcar companheiros, grupo ou romance como Coop.',
+    'Não marcar multiplayer opcional como Online.',
+    'Acompanhar Ninguém Fica Para Trás do Ato I ao Ato III.',
+    'Acompanhar Sazza, Karlach, Impulso Sombrio/Dark Urge, Bhaal, companheiros e finais.',
+    'Criar saves manuais antes de transições de ato, romances, chefes e decisões finais.',
+    'Confirmar que todos os troféus têm nome oficial em inglês como principal e PT-BR em campo separado.',
+    'Confirmar que todas as descrições estão em português.',
+    'Confirmar que o roadmap está estruturado e renderiza como etapas legíveis.',
+    'Revisar FAQ, decisão rápida, SEO e pontos de atenção antes de publicar.',
+    'Comparar status editorial da página individual com o catálogo.'
+  ];
+
+  const bg3Faq = [
+    { question: 'Baldur\'s Gate 3 tem troféus perdíveis?', answer: 'Sim. A platina tem muitos perdíveis ligados a escolhas, companheiros, romances, tieflings, Sazza, Impulso Sombrio/Dark Urge, Bhaal e chefes com condições específicas.' },
+    { question: 'Quantas jogadas são necessárias?', answer: 'Depende da rota e do uso de saves, mas a rota segura usa mais de uma jogada: uma campanha principal planejada, uma rota Impulso Sombrio/Dark Urge com Bhaal e uma jogada de dificuldade, se necessário.' },
+    { question: 'Precisa jogar online?', answer: 'Não. A platina pode ser feita totalmente solo e offline.' },
+    { question: 'Precisa de cooperação?', answer: 'Não. Multiplayer existe, mas é opcional.' },
+    { question: 'Precisa de DLC?', answer: 'Não. A platina principal usa a lista base. Modo Honra/Honour Mode e Ponta de lança devem ser tratados separadamente como extra/100%.' },
+    { question: 'A dificuldade afeta troféus?', answer: 'Sim. Acerto Crítico exige completar o jogo no modo Estrategista/Tactician. Ponta de lança, se buscado para 100%, exige Modo Honra/Honour Mode em uma rota própria.' },
+    { question: 'Modo Honra é obrigatório para a platina?', answer: 'Não neste guia de platina principal. Ponta de lança/Foehammer é tratado como troféu adicional de Modo Honra/Honour Mode e não entra nos 54 troféus da lista base.' },
+    { question: 'Qual é o maior cuidado da platina?', answer: 'Ninguém Fica Para Trás. Salvar todos os tieflings possíveis exige decisões corretas do Ato I ao Ato III.' },
+    { question: 'Posso fazer finais diferentes com save?', answer: 'Sim, vários finais podem ser feitos com saves antes das decisões finais, mas rotas como Impulso Sombrio/Dark Urge com Bhaal e alguns companheiros exigem preparação muito antes.' },
+    { question: 'Quanto tempo leva para platinar?', answer: 'Em média, cerca de 120 a 150 horas ou mais, dependendo do conhecimento do jogo, número de jogadas, dificuldade e quantidade de retrabalho.' },
+    { question: 'Posso jogar em multiplayer e ainda pegar troféus?', answer: 'Sim, mas multiplayer não é obrigatório. O guia considera que a platina pode ser feita solo.' },
+    { question: 'O que pode estragar uma jogada?', answer: 'Matar NPCs importantes, ignorar tieflings, perder Sazza, falhar romance de Karlach, avançar atos sem saves, reduzir dificuldade da jogada Estrategista/Tactician ou não preparar a rota Impulso Sombrio/Dark Urge.' }
+  ];
+
+  const bg3TrophyRows = [
+    ['bg3_pride_of_baldurs_gate', 'Pride of Baldur\'s Gate', 'Orgulho de Baldur\'s Gate', 'Platina', 'Colete todos os troféus da lista principal de Baldur\'s Gate 3.', 'Conclua os outros 53 troféus da lista base. Ponta de lança/Foehammer fica separado como extra de Modo Honra/Honour Mode.', false, false, ['Platina', 'Conclusão']],
+    ['bg3_alls_well_that_ends_well', 'All\'s Well That Ends Well', 'Tudo Acaba Bem se Acaba Bem', 'Ouro', 'Termine o jogo.', 'Troféu de conclusão da campanha. Use saves finais para resolver rotas alternativas sem repetir tudo.', false, true, ['História', 'Final']],
+    ['bg3_critical_hit', 'Critical Hit', 'Acerto Crítico', 'Ouro', 'Complete o jogo no modo Estrategista/Tactician.', 'Atenção de dificuldade: comece e termine a jogada em Estrategista/Tactician. Não reduza a dificuldade nessa campanha.', false, false, ['Dificuldade', 'Estrategista', 'Tactician', 'Atenção']],
+    ['bg3_absolute_power_corrupts', 'Absolute Power Corrupts', 'Poder Absoluto, Corrupção Absoluta', 'Prata', 'Assuma o controle do Cérebro de Netheril e dobre o mundo à sua vontade.', 'Final de rota. Mantenha save estratégico antes da decisão final para alternar desfechos sem inflar a contagem de perdíveis.', false, true, ['Final', 'Rota']],
+    ['bg3_hero_of_the_forgotten_realms', 'Hero of the Forgotten Realms', 'A Salvação dos Reinos Esquecidos', 'Prata', 'Mate o Cérebro de Netheril, destrua as larvas da Absoluta e salve o dia.', 'Final de rota. Guarde save antes do confronto e da decisão final para recarregar se quiser outro desfecho.', false, true, ['Final', 'Rota']],
+    ['bg3_sins_of_the_father', 'Sins of the Father', 'Pecados do Pai', 'Prata', 'Assuma o Trono de Sangue: controle o Cérebro de Netheril para Bhaal e quebre o mundo.', 'Exige rota Impulso Sombrio/Dark Urge com Bhaal. Planeje uma jogada ou save dedicado para esse final.', true, true, ['Perdível', 'Final', 'Impulso Sombrio', 'Bhaal']],
+    ['bg3_ceremorphosis', 'Ceremorphosis', 'Ceremorfose', 'Prata', 'Torne-se devorador de mentes, derrote o Cérebro de Netheril e faça o sacrifício final.', 'Final/transformação de rota. Salve antes das decisões com Imperador, Orpheus e Cérebro de Netheril.', false, true, ['Final', 'Rota', 'Devorador de mentes']],
+    ['bg3_descent_from_avernus', 'Descent From Avernus', 'Descida de Avernus', 'Bronze', 'Assuma o controle do Nautiloide e escape dos Infernos.', 'Troféu automático do prólogo ao escapar do Nautiloide.', false, true, ['História', 'Prólogo']],
+    ['bg3_the_plot_thickens', 'The Plot Thickens', 'A Trama se Complica', 'Bronze', 'Conclua o Ato I e adentre um lugar bem mais sombrio.', 'Troféu de progresso ao sair do Ato I. Revise pendências antes de avançar.', false, true, ['História', 'Progressão']],
+    ['bg3_the_city_awaits', 'The City Awaits', 'A Cidade te Espera', 'Bronze', 'Saia do Ato II: Baldur\'s Gate está logo ali.', 'Troféu de progresso ao sair do Ato II. Verifique Torres do Luar, tieflings e missões de companheiros antes.', false, true, ['História', 'Progressão']],
+    ['bg3_roleplayer', 'Roleplayer', 'Interpretação Impecável', 'Bronze', 'Complete dez objetivos da história pessoal em uma única aventura.', 'Escolha uma origem coerente com seu estilo e acompanhe inspirações ao longo da campanha.', false, false, ['Origem', 'Atenção']],
+    ['bg3_bedrolls_and_breakfast', 'Bedrolls and Breakfast', 'Sono Reparador', 'Bronze', 'Faça quatro descansos longos completos em uma única aventura.', 'Faça descansos longos completos; eles também disparam cenas importantes de companheiros.', false, false, ['Descanso longo', 'Atenção']],
+    ['bg3_expand_your_mind', 'Expand Your Mind', 'Expansão da Consciência', 'Bronze', 'Consuma um parasita e desbloqueie um novo poder.', 'Troféu de rota/atenção: decida cedo se usará parasitas nesta jogada e guarde um antes de avançar demais.', false, true, ['Rota', 'Parasita', 'Atenção']],
+    ['bg3_dig_for_victory', 'Dig for Victory', 'A Vitória é Mais Embaixo', 'Bronze', 'Desenterre cinco baús em uma única aventura.', 'Tenha uma pá e investigue montes de terra revelados por testes de Percepção.', false, false, ['Exploração', 'Ação específica', 'Cleanup']],
+    ['bg3_no_penny_required', 'No Penny Required', 'Livro Aberto', 'Bronze', 'Use Detectar Pensamentos com sucesso para invadir os pensamentos de alguém.', 'Use magia, pergaminho ou poção de Detectar Pensamentos em um diálogo com opção disponível.', false, false, ['Magia', 'Diálogo', 'Cleanup']],
+    ['bg3_escapologist', 'Escapologist', 'Escapologia', 'Bronze', 'Fuja de sua cela após uma prisão.', 'Se for preso, fuja da cela sem resolver pela via normal.', false, false, ['Ação específica', 'Cleanup']],
+    ['bg3_outsourcing', 'Outsourcing', 'Terceirização', 'Bronze', 'Recrute um hireling.', 'Fale com Withers/Funestus no acampamento e recrute um hireling.', false, false, ['Sistema', 'Acampamento']],
+    ['bg3_jack_of_all_trades', 'Jack-of-all-Trades', 'Pau pra Toda Obra', 'Bronze', 'Experimente todas as classes em uma única aventura sem pedir a Funestus para mudar seu personagem.', 'Planeje 12 níveis sem redefinir classe. Pode ser feito com personagem dedicado ou mercenário, mas exige controle das classes.', false, false, ['Build', 'Multiclasse', 'Atenção']],
+    ['bg3_homebrewer', 'Homebrewer', 'Criador de Conteúdo', 'Bronze', 'Crie três soluções alquímicas únicas em uma única aventura.', 'Colete ingredientes e crie três soluções alquímicas diferentes.', false, false, ['Alquimia', 'Cleanup']],
+    ['bg3_kill_two_birds_with_one_gnome', 'Kill Two Birds with One Gnome', 'Matar Dois Coelhos com Uma Gnomada', 'Bronze', 'Use um inimigo como arma improvisada contra outro.', 'Use Improvised Melee Weapon com personagem forte para bater um inimigo em outro.', false, false, ['Combate', 'Ação específica', 'Cleanup']],
+    ['bg3_busker', 'Busker', 'Artista de Rua', 'Bronze', 'Ganhe 100 moedas tocando música em uma única campanha.', 'Use Performance com instrumento em áreas populosas, especialmente no Ato III.', false, false, ['Performance', 'Grind', 'Cleanup']],
+    ['bg3_action_surge', 'Action Surge', 'Rajada de Ação', 'Bronze', 'Realize cinco ataques em um único turno.', 'Use Fighter, ataques extras, Haste, Action Surge ou efeitos similares para chegar a cinco ataques.', false, false, ['Combate', 'Ação específica', 'Cleanup']],
+    ['bg3_fists_of_fury', 'Fists of Fury', 'Punhos da Fúria', 'Bronze', 'Mate um personagem com um ataque desarmado.', 'Enfraqueça um inimigo e finalize sem arma equipada ou com build de Monk.', false, false, ['Combate', 'Ação específica', 'Cleanup']],
+    ['bg3_devils_in_the_details', 'Devil\'s in the Details', 'O Diabo Mora nos Detalhes', 'Bronze', 'Derrote o Comandante Zhalk no Nautiloide.', 'Perdível no prólogo. Prepare Command/Drop, bônus e foco de dano antes de conectar o transponder.', true, false, ['Perdível', 'Chefe', 'Prólogo', 'Combate']],
+    ['bg3_pest_control', 'Pest Control', 'Controle de Pragas', 'Bronze', 'Mate a aranha interplanar matriarca antes que seus ovos choquem.', 'Perdível no Ato I. Destrua ovos ou foque a Matriarca antes que eles eclodam.', true, false, ['Perdível', 'Chefe', 'Condição específica', 'Combate']],
+    ['bg3_a_grym_fate', 'A Grym Fate', 'Um Destino Atroz', 'Bronze', 'Mate o golem de adamantina sem usar o martelo da forja.', 'Perdível na Forja de Adamantina. Mate Grym sem acionar o martelo da forja.', true, false, ['Perdível', 'Chefe', 'Forja', 'Forja de Adamantina']],
+    ['bg3_non_invasive_procedure', 'Non-Invasive Procedure', 'Procedimento Não Invasivo', 'Bronze', 'Mate o cirurgião sem deixá-lo usar suas habilidades cirúrgicas em combate.', 'Perdível no Ato II. Resolva o encontro com Malus Thorm antes que ele execute a ação de cirurgia.', true, true, ['Perdível', 'Chefe', 'Condição específica', 'Combate']],
+    ['bg3_penny_pincher', 'Penny Pincher', 'Mão de Vaca', 'Bronze', 'Derrote a exatora sem deixá-la usar ouro contra você.', 'Perdível no Ato II. Controle seu ouro e elimine Gerringothe Thorm sem sofrer o ataque baseado em moedas.', true, true, ['Perdível', 'Chefe', 'Condição específica', 'Combate']],
+    ['bg3_no_free_lunches', 'No Free Lunches', 'Não Existe Almoço Grátis', 'Bronze', 'Derrote o apóstolo de Myrkul antes que ele consuma qualquer necromita.', 'Perdível no fim do Ato II. Foque necromitas e dano no chefe para impedir o consumo.', true, true, ['Perdível', 'Chefe', 'Condição específica', 'Combate']],
+    ['bg3_fancy_footwork', 'Fancy Footwork', 'Dança Elegante', 'Bronze', 'Derrote Gortash sem que uma única armadilha seja acionada.', 'Perdível no Ato III. Prepare o combate, desative ameaças e não acione armadilhas durante a luta.', true, true, ['Perdível', 'Chefe', 'Condição específica', 'Combate']],
+    ['bg3_first_blood', 'First Blood', 'Sangue Originário', 'Bronze', 'Mate Orin enquanto seus asseclas estão realizando o cântico ritualístico.', 'Perdível no Ato III. Planeje dano explosivo contra Orin antes que o ritual mude o encontro.', true, true, ['Perdível', 'Chefe', 'Bhaal', 'Condição específica']],
+    ['bg3_interfectorem_draconis', 'Interfectorem Draconis', 'Mata-dragões', 'Bronze', 'Mate o dragão vermelho na Cidade Alta.', 'Perdível no final do jogo. Prepare dano alto e controle para matar o dragão vermelho durante a sequência final.', true, true, ['Perdível', 'Chefe', 'Final', 'Combate']],
+    ['bg3_crash_landing', 'Crash Landing', 'Pouso Forçado', 'Bronze', 'Na Via do Draco, espere o dragão estar em pleno voo e derrube-o do céu.', 'Perdível na Via do Draco. Espere Ansur voar e derrube-o no momento correto.', true, true, ['Perdível', 'Chefe', 'Condição específica', 'Combate']],
+    ['bg3_bottoms_up', 'Bottoms Up', 'Vira, Vira, Vira', 'Bronze', 'Faça um descanso longo usando apenas álcool.', 'Separe suprimentos alcoólicos suficientes e faça um descanso longo usando apenas álcool.', false, false, ['Descanso longo', 'Ação específica', 'Cleanup']],
+    ['bg3_shove_off', 'Shove Off', 'Empurrão Mortal', 'Bronze', 'Mate uma criatura com dano de queda.', 'Empurre ou arremesse um inimigo de uma altura suficiente.', false, false, ['Combate', 'Ação específica', 'Cleanup']],
+    ['bg3_bookworm', 'Bookworm', 'Leitura Voraz', 'Bronze', 'Leia 100 livros diferentes em uma única campanha.', 'Leia livros, cartas e textos diferentes em todos os atos para evitar concentrar tudo no fim.', false, false, ['Livro', 'Grind', 'Cleanup']],
+    ['bg3_punch_drunk', 'Punch Drunk', 'Briga de Bar', 'Bronze', 'Derrote vinte oponentes enquanto um personagem do grupo estiver bêbado em uma única aventura.', 'Ative o status bêbado antes de combates com inimigos fracos e acompanhe as 20 baixas na mesma campanha.', false, false, ['Combate', 'Grind', 'Cleanup']],
+    ['bg3_fetch_quest', 'Fetch Quest', 'Vai Pegar!', 'Bronze', 'Brinque de buscar com Scratch.', 'Perdível se Scratch não for recrutado ou se algo acontecer com ele. Encontre-o cedo e jogue a bola no acampamento.', true, false, ['Perdível', 'Scratch', 'Acampamento']],
+    ['bg3_you_have_two_hands_for_a_reason', 'You Have Two Hands for a Reason', 'Vantagens de ter Duas Mãos', 'Bronze', 'Acaricie Scratch e o filhote de urso-coruja ao mesmo tempo.', 'Recrute Scratch e o filhote de urso-coruja, preserve ambos e avance cenas de acampamento até poder acariciar os dois.', true, false, ['Perdível', 'Scratch', 'Urso-coruja', 'Descanso longo']],
+    ['bg3_rude_crude_and_full_of_attitude', 'Rude, Crude, and Full of Attitude', 'Linda, Louca e Mimada', 'Bronze', 'Encontre e invoque a quasit Pá.', 'Perdível no Ato I. Encontre o pergaminho correto na Vila Arruinada e invoque Pá antes de perder acesso.', true, false, ['Perdível', 'Ato I', 'Ação específica']],
+    ['bg3_forged_in_blood_and_fire', 'Forged in Blood and Fire', 'A Ferro e Fogo', 'Bronze', 'Crie um item na Forja de Adamantina.', 'Perdível se você avançar atos sem usar a Forja de Adamantina. Crie ao menos um item em Grymforge.', true, false, ['Perdível', 'Forja', 'Forja de Adamantina']],
+    ['bg3_under_lock_and_key', 'Under Lock and Key', 'Fechado a Sete Chaves', 'Bronze', 'Resgate todos os prisioneiros das profundezas de Torres do Luar em uma aventura.', 'Perdível no Ato II. Resgate prisioneiros de Torres do Luar antes de avançar eventos que fecham a área.', true, true, ['Perdível', 'Prisioneiros', 'Torres do Luar', 'Checklist']],
+    ['bg3_she_cannot_be_caged', 'She Cannot Be Caged!', 'Deixem Ela Ir!', 'Bronze', 'Resgate Sazza do santuário dos druidas, acampamento goblin e Torres do Luar em uma única aventura.', 'Perdível por escolhas em três pontos. Proteja Sazza no santuário, no acampamento goblin e em Torres do Luar na mesma jogada.', true, true, ['Perdível', 'Sazza', 'Checklist']],
+    ['bg3_taking_blood', 'Taking Blood', 'Tirando Sangue', 'Bronze', 'Roube o Sangue de Lathander debaixo do Mosteiro Rosamanhã.', 'Perdível se você deixar a região do Ato I/Creche sem resolver o mosteiro.', true, true, ['Perdível', 'Exploração', 'Atenção']],
+    ['bg3_leave_no_one_behind', 'Leave No One Behind', 'Ninguém Fica Para Trás', 'Bronze', 'Salve todos os refugiados tieflings possíveis durante o jogo em uma única aventura.', 'Perdível em todos os atos. Acompanhe tieflings desde o santuário até Last Light, Torres do Luar e Ato III.', true, true, ['Perdível', 'Tieflings', 'Checklist']],
+    ['bg3_murder_in_baldurs_gate', 'Murder in Baldur\'s Gate', 'Assassinato em Baldur\'s Gate', 'Bronze', 'Cubra as ruas de Baldur\'s Gate de sangue. Torne-se um Assassino Profano de Bhaal.', 'Perdível por rota de Bhaal no Ato III. Use save dedicado se não quiser travar uma jogada boa.', true, true, ['Perdível', 'Bhaal', 'Rota']],
+    ['bg3_mind_blown', 'Mind Blown', 'Os Brutos Também Amam', 'Bronze', 'Comece um romance com o Imperador.', 'Perdível por escolhas e relação com o Imperador. Mantenha save antes das cenas relevantes do Ato III.', true, true, ['Perdível', 'Romance', 'Imperador']],
+    ['bg3_repairing_the_weave', 'Repairing the Weave', 'Reparando a Trama', 'Bronze', 'Estabilize a esfera de Netheril de Gale.', 'Perdível se Gale não estiver no grupo, se for perdido ou se sua missão for ignorada.', true, true, ['Perdível', 'Companheiro', 'Gale']],
+    ['bg3_the_lich_queens_wrath', 'The Lich-Queen\'s Wrath', 'A Ira da Rainha Lich', 'Bronze', 'Una-se a Voss contra a rainha-deusa githyanki.', 'Perdível por escolhas na rota githyanki/Lae\'zel e por decisões envolvendo Voss.', true, true, ['Perdível', 'Companheiro', 'Lae\'zel']],
+    ['bg3_to_bloom_in_darkest_night', 'To Bloom in Darkest Night', 'Florescer na Noite Mais Escura', 'Bronze', 'Presenteie Umbralma com uma orquídea noturna.', 'Perdível se Shadowheart/Umbralma não estiver disponível ou se você perder a janela para entregar a orquídea noturna.', true, true, ['Perdível', 'Companheiro', 'Shadowheart']],
+    ['bg3_hot_date', 'Hot Date', 'Encontro Tórrido', 'Bronze', 'Vá a um encontro com Karlach.', 'Perdível por romance, aprovação e missão da Karlach. Planeje desde cedo se esse troféu estiver na jogada.', true, true, ['Perdível', 'Companheiro', 'Karlach', 'Romance']],
+    ['bg3_just_a_nibble', 'Just a Nibble', 'Só uma Mordidinha', 'Bronze', 'Deixe Astarion te morder.', 'Perdível se Astarion não estiver no grupo ou se você rejeitar, matar ou afastar o companheiro antes da cena.', true, true, ['Perdível', 'Companheiro', 'Astarion']],
+    ['bg3_loophole', 'Loophole', 'Brecha', 'Bronze', 'Rompa o pacto de Wyll com Mizora.', 'Perdível por escolhas na missão de Wyll/Mizora. Mantenha Wyll ativo e salve antes das decisões do pacto.', true, true, ['Perdível', 'Companheiro', 'Wyll']],
+    ['bg3_embrace_your_urge', 'Embrace Your Urge', 'Abrace o Impulso', 'Bronze', 'Torne-se a arma definitiva de Bhaal. Torne-se seu Algoz.', 'Perdível e exige Impulso Sombrio/Dark Urge. Planeje uma rota dedicada para aceitar Bhaal e obter o Algoz.', true, true, ['Perdível', 'Impulso Sombrio', 'Bhaal']]
+  ];
+
+  const bg3Trophies = bg3TrophyRows.map(([id, name, namePt, type, description, tip, isMissable, isSpoiler, tags]) => ({
+    id,
+    name,
+    trophyNameOriginal: name,
+    officialName: name,
+    originalName: name,
+    name_pt: namePt,
+    trophyNamePtBr: namePt,
+    localizedNamePtBr: namePt,
+    namePtSource: 'editorial_ptbr',
+    type,
+    tier: type,
+    description,
+    descriptionPtBr: description,
+    ptDescription: description,
+    localizedDescription: { ptBr: description, 'pt-BR': description },
+    descriptionPtSource: 'editorial_ptbr',
+    tip,
+    guideTip: tip,
+    tipPtBr: tip,
+    localizedTip: { ptBr: tip },
+    tags,
+    is_missable: isMissable,
+    isMissable,
+    missable: isMissable,
+    is_spoiler: isSpoiler,
+    isSpoiler,
+    is_online: false,
+    isOnline: false,
+    is_coop: false,
+    isCoop: false,
+    is_dlc: false,
+    isDlc: false,
+    dlcRequired: false,
+    riskType: isMissable ? 'missable' : ''
+  }));
+
+  const bg3MissableCount = bg3Trophies.filter(trophy => trophy.is_missable && trophy.type !== 'Platina').length;
+  Object.assign(baldursGate3Guide, {
+    name: 'Baldur’s Gate 3',
+    title: 'Baldur’s Gate 3',
+    difficulty: 7,
+    time: '120-150 horas',
+    time_min_hours: 120,
+    time_max_hours: 150,
+    time_sort_hours: 120,
+    time_bucket: 'long',
+    onlineRequired: false,
+    coopRequired: false,
+    dlcRequired: false,
+    hasMissables: true,
+    missableCount: bg3MissableCount,
+    missable_count: bg3MissableCount,
+    difficultyTrophiesRequired: true,
+    editorial_status: 'published',
+    editorialStatus: 'published',
+    editorial_review_status: 'verified',
+    coverage_level: 'complete',
+    is_verified: true,
+    verification_status: 'verified',
+    last_reviewed_at: '2026-06-13',
+    reviewed_by: 'AtlasAchievement editorial',
+    missable: 'Baldur\'s Gate 3 tem muitos perdíveis reais por escolhas, companheiros, romances, tieflings, Sazza, Impulso Sombrio/Dark Urge, Bhaal e chefes com condições específicas. Use saves manuais antes de decisões, romances, chefes e transições de ato.',
+    runs_summary: 'A rota segura usa mais de uma jogada: uma campanha principal planejada, uma rota Impulso Sombrio/Dark Urge com Bhaal e uma jogada em Estrategista/Tactician. Saves finais ajudam, mas não substituem planejamento de companheiros e escolhas antigas.',
+    missable_summary: `Há ${bg3MissableCount} troféus marcados como Perdível na lista principal. Ninguém Fica Para Trás, Sazza, Karlach, Impulso Sombrio/Dark Urge com Bhaal, companheiros e chefes condicionais são os maiores riscos.`,
+    online_summary: 'A platina principal pode ser feita solo e offline. Multiplayer existe, mas é opcional.',
+    grind_summary: 'O grind é moderado e concentrado em Artista de Rua, Leitura Voraz, Briga de Bar e alguns objetivos de limpeza; o peso real está em escolhas e rotas.',
+    dlc_scope: 'Lista base sem DLC obrigatória; Modo Honra/Honour Mode e Ponta de lança/Foehammer ficam separados como extra/100% e não são requisito da platina principal.',
+    difficulty_reason: 'A dificuldade vem da campanha longa, escolhas irreversíveis, muitos perdíveis e da exigência de terminar em Estrategista/Tactician para Acerto Crítico. Chefes difíceis não foram marcados como troféus de dificuldade.',
+    time_reason: 'A faixa de 120-150 horas considera uma campanha principal planejada, rota Impulso Sombrio/Dark Urge com Bhaal, jogada de Estrategista/Tactician e limpeza de companheiros, finais, leitura, performance e chefes condicionais.',
+    first_run_advice: 'Não jogue totalmente às cegas se a meta é platina. Defina se a jogada será principal, Impulso Sombrio/Dark Urge com Bhaal ou dificuldade, acompanhe tieflings e companheiros desde o Ato I e mantenha saves manuais.',
+    cleanup_advice: 'Antes de avançar atos ou entrar no final, confira tieflings, Sazza, prisioneiros de Torres do Luar, romances, missões de companheiros, chefes condicionais, livros, performance e objetivos de combate.',
+    before_you_start: 'Baldur\'s Gate 3 é uma platina longa e delicada. Quase tudo depende de escolhas, companheiros, descansos longos e decisões que podem bloquear troféus dezenas de horas antes do final.',
+    best_for: 'Ideal para quem quer uma platina RPG profunda, narrativa e baseada em planejamento, aceitando checklist e saves manuais desde o começo.',
+    avoid_if: 'Evite se você quer uma platina curta, linear ou sem risco de perder troféus por escolhas narrativas.',
+    editorial_summary: [
+      'Baldur’s Gate 3 é uma das platinas mais longas e delicadas do catálogo, porque quase tudo depende de escolhas, companheiros, romances, rotas de história e decisões que podem bloquear troféus dezenas de horas antes do final. A platina principal exige planejamento desde o Ato I, saves manuais frequentes, atenção aos tieflings, Sazza, Karlach, Impulso Sombrio/Dark Urge, Bhaal, chefes específicos, leitura, multiclasse, finais e dificuldade Estrategista/Tactician.',
+      'A rota mais segura é separar objetivos incompatíveis por jogada: uma campanha principal focada em salvar NPCs e resolver companheiros, uma rota Impulso Sombrio/Dark Urge com Bhaal para troféus específicos e uma campanha em Estrategista/Tactician. O jogo não exige online, cooperação ou DLC para a platina principal, e Ponta de lança/Foehammer fica separado como extra de Modo Honra/Honour Mode para 100%.'
+    ],
+    quickDecision: {
+      worthIt: 'Sim, mas é uma platina longa e de alto risco, indicada para quem aceita jogar com checklist e saves manuais desde o começo.',
+      difficulty: 'Alta.',
+      time: 'Muito longo, cerca de 120 a 150 horas ou mais.',
+      mainAlert: 'Tieflings, Sazza, Karlach, Impulso Sombrio/Dark Urge, finais, companheiros e Estrategista/Tactician.',
+      risk: 'Alto. Muitas escolhas podem bloquear troféus dezenas de horas antes do final.',
+      onlineCoop: 'Não exige online nem cooperação.',
+      dlc: 'A platina principal não exige DLC. Modo Honra/Honour Mode e Ponta de lança ficam separados como extra/100%.'
+    },
+    seo: {
+      title: 'Baldur’s Gate 3: Guia de Troféus e Platina',
+      description: 'Guia de troféus de Baldur’s Gate 3 com roadmap da platina, tempo estimado, dificuldade, troféus perdíveis, Estrategista/Tactician, Modo Honra, tieflings, Sazza, Karlach, Impulso Sombrio, finais e dicas para evitar retrabalho.',
+      metaDescription: 'Guia de troféus de Baldur’s Gate 3 com roadmap da platina, tempo estimado, dificuldade, troféus perdíveis, Estrategista/Tactician, Modo Honra, tieflings, Sazza, Karlach, Impulso Sombrio, finais e dicas para evitar retrabalho.',
+      keywords: 'Baldur’s Gate 3 troféus, Baldur’s Gate 3 platina, guia Baldur’s Gate 3, BG3 troféus, BG3 platina, Pride of Baldur\'s Gate, Orgulho de Baldur\'s Gate, Leave No One Behind, Ninguém Fica Para Trás, Critical Hit, Acerto Crítico, Foehammer, Ponta de lança, Modo Honra BG3, Tactician BG3, Sazza BG3, Karlach Hot Date, Dark Urge BG3',
+      ogTitle: 'Baldur’s Gate 3: Guia de Troféus e Platina',
+      ogDescription: `Roadmap da platina principal de Baldur’s Gate 3 com 54 troféus, ${bg3MissableCount} perdíveis, Estrategista/Tactician, companheiros, tieflings, Sazza, Impulso Sombrio/Dark Urge e Modo Honra separado como extra.`
+    },
+    checklist: bg3Checklist,
+    attentionPoints: bg3AttentionPoints,
+    faq: bg3Faq,
+    tags: ['Baldur\'s Gate 3', 'BG3', 'PS5', 'Platina', 'Tactician', 'Estrategista', 'Perdíveis', 'Tieflings', 'Sazza', 'Karlach', 'Impulso Sombrio', 'Bhaal', 'Modo Honra extra', 'Sem online', 'Sem coop', 'Sem DLC'],
+    editorial_notes: `Guia revisado para a platina principal de Baldur's Gate 3: 54 troféus da lista base, Ponta de lança/Foehammer separado como extra de Modo Honra/Honour Mode, ${bg3MissableCount} perdíveis, Acerto Crítico como único troféu de dificuldade da lista principal e flags offline/sem coop/sem DLC.`,
+    verification_note: 'Guia verificado editorialmente para a lista principal PlayStation de 54 troféus, com roadmap estruturado, nomes EN/PT-BR, descrições PT-BR, Modo Honra separado, flags e filtros controlados.',
+    quality_warnings: [],
+    roadmap: bg3Roadmap,
+    roadmapStages: bg3Roadmap,
+    trophies: bg3Trophies
+  });
+}
+
+const disneyEpicMickeyRebrushedGuide = sampleGames.find(game => game.slug === 'disney-epic-mickey-rebrushed');
+if (disneyEpicMickeyRebrushedGuide) {
+  const disneyEpicMickeyRebrushedTrophies = [
+    ['epic-mickey-rebrushed-mousetastic', 'Mousetastic', 'Camundongo Fantástico', 'Platina', 'Colete todos os troféus.', 'Complete os outros 38 troféus da lista base PlayStation para liberar a platina.', false, false, ['Platina', 'Conclusão']],
+    ['epic-mickey-rebrushed-full-of-beans', 'Full of Beans', 'Feijoada', 'Bronze', 'Complete o primeiro nível de rolagem lateral.', 'Troféu de história inicial: avance pelo primeiro nível 2D e conclua a sequência.', false, false, ['História']],
+    ['epic-mickey-rebrushed-small-world', 'Small World', 'Pequeno Mundo', 'Prata', 'Pinte ou dissolva a Torre do Relógio Maluca.', 'O troféu vem ao resolver o chefe, seja com tinta ou solvente. Escolha a opção coerente com a rota atual e deixe a rota oposta para a segunda jogada.', false, true, ['História', 'Boss', 'Tinta', 'Solvente', 'Rota']],
+    ['epic-mickey-rebrushed-collector', 'Collector', 'Colecionador', 'Bronze', 'Repare o projetor de Mickeyjunk Mountain.', 'Troféu de progresso da campanha. Antes de sair da região, confira gremlins, rolos de filme e pendências locais.', false, true, ['História', 'Progressão']],
+    ['epic-mickey-rebrushed-world-of-tomorrow', 'World of Tomorrow', 'Mundo do Amanhã', 'Bronze', 'Repare o projetor de Tomorrow City.', 'Avance pela campanha e repare o projetor. Use a passagem pela área para atualizar seu checklist regional.', false, true, ['História', 'Progressão']],
+    ['epic-mickey-rebrushed-spin-to-win', 'Spin to Win!', 'Girou, Ganhou!', 'Prata', 'Pinte ou dissolva Petetronic.', 'Chefe com escolha de tinta ou solvente. O troféu é de história, mas a escolha conta para a rota de An Epic Journey ou Out of my way.', false, true, ['História', 'Boss', 'Tinta', 'Solvente', 'Rota']],
+    ['epic-mickey-rebrushed-cleverness-of-me', 'Oh, the cleverness of me!', 'Que esperteza a minha!', 'Bronze', 'Repare o projetor de Pirates of the Wasteland.', 'Troféu de progresso. Revise pendências de Pirates of the Wasteland antes de avançar para não empurrar retrabalho para outra run.', false, true, ['História', 'Progressão']],
+    ['epic-mickey-rebrushed-tick-tock', 'Tick-Tock', 'Tique-taque', 'Prata', 'Pinte ou dissolva o Capitão Gancho animatrônico.', 'Resolva o chefe mantendo a lógica da sua run: tinta para a rota positiva, solvente para a rota negativa.', false, true, ['História', 'Boss', 'Tinta', 'Solvente', 'Rota', 'Animatrônicos']],
+    ['epic-mickey-rebrushed-awaken-the-spirits', 'Awaken the Spirits', 'Desperte os Espíritos', 'Bronze', 'Repare o projetor de Lonesome Manor.', 'Troféu de progresso de campanha. Antes de mudar de região, revise colecionáveis, gremlins e objetivos locais.', false, true, ['História', 'Progressão']],
+    ['epic-mickey-rebrushed-kaboom', 'Kaboom!', 'Cabum!', 'Prata', 'Frustre os planos do Mad Doctor.', 'Conclua a sequência do Mad Doctor. Trate a reta final da área como ponto de revisão para rota e checklist.', false, true, ['História', 'Boss']],
+    ['epic-mickey-rebrushed-tentacular', 'Tentacular', 'Tentacular', 'Bronze', 'Derrote os Bloticles que atacam cada hub.', 'Elimine os Bloticles nos hubs conforme aparecerem e não deixe ataques de área sem resolver.', false, true, ['História', 'Combate']],
+    ['epic-mickey-rebrushed-shadow-of-the-blot', 'Shadow of the Blot', 'Sombra do Mancha', 'Ouro', 'Derrote o Shadow Blot no topo de Mickeyjunk Mountain.', 'Troféu de história avançada. Antes do confronto, confira objetivos de rota, gremlins e colecionáveis sensíveis.', false, true, ['História', 'Boss']],
+    ['epic-mickey-rebrushed-escape-wasteland', 'Escape Wasteland', 'Fuga da Terra Desolada', 'Ouro', 'Escape do interior do Blot e salve a Terra Desolada.', 'Conclua a reta final da campanha somente depois de revisar pendências importantes, pois há ponto de não retorno.', false, true, ['História', 'Ponto de não retorno']],
+    ['epic-mickey-rebrushed-mickanically-gifted', 'Mickanically Gifted', 'Talentos Mickânicos', 'Prata', 'Repare 3 brinquedos na região de Gremlin Village.', 'No Gremlin Village, repare os três brinquedos antes de sair definitivamente da região.', true, false, ['Perdível', 'Exploração', 'Checklist']],
+    ['epic-mickey-rebrushed-photo-op', 'Photo Op', 'Sessão Fotográfica', 'Bronze', 'Use o Modo Foto e salve uma foto favorita.', 'Abra o Modo Foto em qualquer área segura, salve uma foto como favorita e confirme o desbloqueio.', false, false, ['Misc', 'Ação específica', 'Cleanup']],
+    ['epic-mickey-rebrushed-gawrsh', 'Gawrsh!', 'Nossa!', 'Bronze', 'Colete todas as partes do Pateta animatrônico.', 'Acompanhe as peças do Pateta por região e não avance quests que possam bloquear recompensas ou áreas.', true, false, ['Perdível', 'Coletável', 'Animatrônicos', 'Checklist']],
+    ['epic-mickey-rebrushed-oh-goody-goody', 'Oh, goody goody!', 'Oh, que bom!', 'Bronze', 'Colete todas as partes da Margarida animatrônica.', 'Colete todas as peças da Margarida e acompanhe objetivos de região antes de avançar demais na história.', true, false, ['Perdível', 'Coletável', 'Animatrônicos', 'Checklist']],
+    ['epic-mickey-rebrushed-aw-phooey', 'Aw, phooey!', 'Ai, droga!', 'Bronze', 'Colete todas as partes do Donald animatrônico.', 'Monitore as peças do Donald no checklist e conclua objetivos relacionados antes de deixar regiões importantes.', true, false, ['Perdível', 'Coletável', 'Animatrônicos', 'Checklist']],
+    ['epic-mickey-rebrushed-heavy-hitter', 'Heavy Hitter', 'Peso Pesado', 'Bronze', 'Desbloqueie o Sketch de Bigorna.', 'Progrida até liberar o Anvil Sketch e confirme o troféu ao desbloquear a habilidade.', false, false, ['Sketch', 'Progressão']],
+    ['epic-mickey-rebrushed-cartoon-chaos', 'Cartoon Chaos', 'Caos Cartunesco', 'Bronze', 'Desbloqueie o Sketch de TV.', 'Desbloqueie o TV Sketch durante a campanha; ele também ajuda a fazer Square Eyes.', false, false, ['Sketch', 'Progressão']],
+    ['epic-mickey-rebrushed-time-is-an-illusion', 'Time is an Illusion', 'O Tempo é uma Ilusão', 'Bronze', 'Desbloqueie o Sketch de Relógio.', 'Avance até receber o Watch Sketch e confirme o troféu ao desbloquear a habilidade.', false, false, ['Sketch', 'Progressão']],
+    ['epic-mickey-rebrushed-suit-up', 'Suit Up!', 'Vista-se!', 'Bronze', 'Vista uma fantasia pela primeira vez.', 'Assim que tiver uma fantasia disponível, equipe-a no menu para desbloquear o troféu.', false, false, ['Misc', 'Ação específica', 'Cleanup']],
+    ['epic-mickey-rebrushed-street-cleaner', 'Street Cleaner', 'Limpador de Rua', 'Bronze', 'Repinte toda a Rua Intermediária.', 'Pinte todos os pontos da Rua Intermediária e faça uma volta final pela área antes de seguir para a reta final.', true, false, ['Perdível', 'Tinta', 'Exploração', 'Ação específica', 'Checklist']],
+    ['epic-mickey-rebrushed-dial-tone', 'Dial Tone', 'É Engano', 'Bronze', 'Disque o número errado em um telefone 3 vezes.', 'Quando encontrar um telefone utilizável, disque números errados três vezes antes de resolver o objetivo correto.', false, false, ['Misc', 'Ação específica', 'Cleanup']],
+    ['epic-mickey-rebrushed-eraser', 'Eraser', 'Apagador', 'Prata', 'Dissolva 50 inimigos.', 'Faça naturalmente na rota de solvente. Use solvente contra inimigos até chegar a 50 e deixe Painter para a rota de tinta, se preferir separar estilos.', false, false, ['Solvente', 'Combate', 'Grind', 'Cleanup']],
+    ['epic-mickey-rebrushed-painter', 'Painter', 'Pintor', 'Prata', 'Pinte e faça amizade com 50 inimigos.', 'Faça naturalmente na rota de tinta. Pinte inimigos até chegar a 50 e deixe Eraser para a rota de solvente.', false, false, ['Tinta', 'Combate', 'Grind', 'Cleanup']],
+    ['epic-mickey-rebrushed-mickey-uncaged', 'Mickey Uncaged', 'Mickey Desimpedido', 'Prata', 'Liberte 12 gremlins de suas jaulas.', 'Libere gremlins sempre que encontrar jaulas. Alguns ficam em áreas que podem se tornar inacessíveis, então controle por região.', true, false, ['Perdível', 'Coletável', 'Gremlins', 'Checklist']],
+    ['epic-mickey-rebrushed-gilded', 'Gilded', 'Ouro da Gilda', 'Prata', 'Supere o melhor tempo da Gilda em todas as corridas.', 'Complete todas as corridas da Gilda batendo o melhor tempo e anote quais áreas já foram concluídas.', true, false, ['Perdível', 'Corridas', 'Checklist', 'Cleanup']],
+    ['epic-mickey-rebrushed-over-one-thousand', "It's Over One Thousand!!!", 'É Mais de Mil!!!', 'Bronze', 'Colete 1001 E-Tickets.', 'Colete E-Tickets durante a campanha, explore áreas opcionais e evite gastos desnecessários até o troféu liberar.', false, false, ['E-Tickets', 'Grind', 'Cleanup']],
+    ['epic-mickey-rebrushed-fragile', 'Fragile', 'Frágeis', 'Bronze', 'Destrua 100 objetos destrutíveis.', 'Quebre objetos durante a exploração. O troféu costuma vir naturalmente se você limpar cenários enquanto avança.', false, false, ['Misc', 'Ação específica', 'Grind', 'Cleanup']],
+    ['epic-mickey-rebrushed-battle-ready', 'Battle Ready', 'Pronto para a Batalha', 'Bronze', 'Melhore completamente os recipientes de coração do Mickey.', 'Battle Ready exige todos os upgrades/recipientes de coração. Faça esse troféu na rota de tinta, acompanhe as recompensas de quests e junte rolos de filme suficientes para o upgrade ligado ao cinema. Não avance para a reta final sem conferir todos os upgrades.', true, false, ['Perdível', 'Coletável', 'Upgrade', 'Grind', 'Cleanup']],
+    ['epic-mickey-rebrushed-clumsy-lifeguard', 'Clumsy Lifeguard', 'Salva-Vidas Desastrado', 'Bronze', 'Derrube 10 inimigos no solvente.', 'Em áreas com solvente e inimigos, empurre ou atraia inimigos para cair no líquido até acumular 10.', false, false, ['Solvente', 'Combate', 'Ação específica', 'Cleanup']],
+    ['epic-mickey-rebrushed-square-eyes', 'Square Eyes', 'Olhos Vidrados', 'Bronze', 'Use o TV Sketch para atrair a atenção de 5 Blotlings ao mesmo tempo.', 'Junte cinco Blotlings, use o TV Sketch e espere todos focarem nele simultaneamente.', false, false, ['Sketch', 'Combate', 'Ação específica', 'Cleanup']],
+    ['epic-mickey-rebrushed-moviegoer', 'Moviegoer', 'Cinéfilo', 'Bronze', 'Colete 36 rolos de filme.', 'Moviegoer exige 36 rolos de filme. Rebrushed possui mais rolos disponíveis, então use o cinema/checklist para recuperar rolos perdidos quando possível. Ainda assim, colete reels desde cedo, porque rolos extras também ajudam em recompensas importantes como upgrades de coração.', true, false, ['Perdível', 'Coletável', 'Rolos de filme', 'Checklist']],
+    ['epic-mickey-rebrushed-faulty-machinery', 'Faulty Machinery', 'Maquinário Defeituoso', 'Prata', 'Derrote cada tipo de Beetleworx uma vez.', 'Derrote ao menos um de cada tipo de Beetleworx conforme aparecem e marque os tipos já enfrentados.', true, false, ['Perdível', 'Combate', 'Checklist', 'Cleanup']],
+    ['epic-mickey-rebrushed-feisty-friends', 'Feisty Friends', 'Amigos Agressivos', 'Bronze', 'Tenha um total de 5 Blotlings pintados ao mesmo tempo.', 'Na rota de tinta, reúna Blotlings e pinte cinco para ficarem aliados simultaneamente.', false, false, ['Tinta', 'Combate', 'Ação específica', 'Cleanup']],
+    ['epic-mickey-rebrushed-get-off-me', 'Get Off Me!', 'Sai Daqui!', 'Bronze', 'Rebata 3 inimigos com um único Spin Attack.', 'Agrupe três inimigos pequenos e use um Spin Attack no centro do grupo.', false, false, ['Combate', 'Ação específica', 'Cleanup']],
+    ['epic-mickey-rebrushed-an-epic-journey', 'An Epic Journey', 'Uma Jornada Épica', 'Ouro', 'Use tinta para derrotar todos os chefes e consertar todos os animatrônicos.', 'Dedique uma jogada inteira à rota de tinta: pinte chefes e conserte todos os animatrônicos. É incompatível com Out of my way na mesma run.', true, true, ['Perdível', 'Rota', 'Rota incompatível', 'Tinta', 'Animatrônicos']],
+    ['epic-mickey-rebrushed-out-of-my-way', 'Out of my way', 'Sai da Frente!', 'Ouro', 'Use solvente para derrotar todos os chefes e deixe todos os animatrônicos desmontados.', 'Dedique uma jogada inteira à rota de solvente: dissolva chefes e deixe animatrônicos desmontados. É incompatível com An Epic Journey na mesma run.', true, true, ['Perdível', 'Rota', 'Rota incompatível', 'Solvente', 'Animatrônicos']]
+  ].map(([id, name, namePt, type, description, tip, isMissable, isSpoiler, tags]) => ({
+    id,
+    name,
+    trophyNameOriginal: name,
+    officialName: name,
+    originalName: name,
+    name_pt: namePt,
+    trophyNamePtBr: namePt,
+    localizedNamePtBr: namePt,
+    namePtSource: 'editorial_ptbr',
+    type,
+    tier: type,
+    description,
+    descriptionPtBr: description,
+    ptDescription: description,
+    localizedDescription: { ptBr: description, 'pt-BR': description },
+    descriptionPtSource: 'editorial_ptbr',
+    tip,
+    guideTip: tip,
+    is_missable: isMissable,
+    isMissable,
+    is_spoiler: isSpoiler,
+    isSpoiler,
+    is_online: false,
+    isOnline: false,
+    is_coop: false,
+    isCoop: false,
+    is_dlc: false,
+    isDlc: false,
+    tags,
+    riskType: isMissable ? 'missable' : ''
+  }));
+
+  disneyEpicMickeyRebrushedGuide.trophies = disneyEpicMickeyRebrushedTrophies;
+  disneyEpicMickeyRebrushedGuide.missableCount = disneyEpicMickeyRebrushedTrophies.filter(trophy => trophy.is_missable && trophy.type !== 'Platina').length;
+  disneyEpicMickeyRebrushedGuide.missable_count = disneyEpicMickeyRebrushedGuide.missableCount;
+  disneyEpicMickeyRebrushedGuide.roadmapStages = disneyEpicMickeyRebrushedGuide.roadmap;
 }
 
 const atlasGuideViewModel = require('../shared/guideViewModel');
