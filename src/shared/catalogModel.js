@@ -564,6 +564,7 @@
     const hasPartialNewGamePlus = /ng\+ parcial|new game\+ parcial/.test(text);
     const hasUpgrades = /upgrade|upgrades|melhoria|melhorias|suplementos|pe[cç]as/.test(text);
     const noMissableLabel = /definitiv|permanente|chapter select|sele[cç]ao de cap[ií]tulos/.test(text) ? 'Sem perdíveis definitivos' : 'Sem perdíveis';
+    const coopSignalLabel = String(game?.coopRequirementLabel || game?.coop_requirement_label || game?.duoModeRequirementLabel || game?.duo_mode_requirement_label || '').trim();
     const signals = [];
 
     if (baseGame) signals.push({ id: 'base-game', label: 'Base game', tone: 'neutral', icon: 'fa-layer-group' });
@@ -571,7 +572,7 @@
       ? { id: 'online', label: 'Online', tone: 'warning', icon: 'fa-wifi' }
       : { id: 'no-online', label: 'Sem online', tone: 'safe', icon: 'fa-wifi' });
     if (explicitNoCoop) signals.push({ id: 'no-coop', label: 'Sem coop', tone: 'safe', icon: 'fa-users' });
-    if (coopRequired) signals.push({ id: 'coop', label: 'Coop obrigatório', tone: 'warning', icon: 'fa-users' });
+    if (coopRequired) signals.push({ id: 'coop', label: coopSignalLabel || 'Coop obrigatório', tone: 'warning', icon: 'fa-users' });
     signals.push(hasMissable
       ? { id: 'missable', label: 'Perdíveis', tone: 'risk', icon: 'fa-triangle-exclamation' }
       : { id: 'no-missable', label: noMissableLabel, tone: 'safe', icon: 'fa-shield-halved' });

@@ -31,7 +31,7 @@ function hasVerifiedEditorialStatus(game = {}) {
     || game?.editorial_review_status === 'verified';
 }
 
-const LOCALIZED_TROPHY_SOURCE_SLUGS = new Set(['a-way-out', 'armored-core-vi-fires-of-rubicon', 'assassins-creed-mirage', 'assassins-creed-origins', 'assassins-creed-odyssey', 'assassins-creed-shadows', 'assassins-creed-valhalla', 'astro-bot', 'astros-playroom', 'avatar-frontiers-of-pandora', 'baldurs-gate-3', 'beyond-two-souls', 'bloodborne', 'celeste', 'clair-obscur-expedition-33', 'cyberpunk-2077', 'dark-souls-ii-scholar-of-the-first-sin', 'dark-souls-iii', 'dark-souls-remastered', 'days-gone', 'dead-cells', 'death-stranding', 'death-stranding-2-on-the-beach', 'detroit-become-human', 'disney-epic-mickey-rebrushed', 'god-of-war', 'god-of-war-ragnarok', 'hades', 'hades-ii', 'hogwarts-legacy', 'hollow-knight', 'hollow-knight-silksong', 'horizon-forbidden-west', 'horizon-zero-dawn', 'it-takes-two', 'lego-batman-legacy-of-the-dark-knight', 'lies-of-p', 'life-is-strange-double-exposure', 'life-is-strange-remastered', 'lords-of-the-fallen', 'marvels-spider-man', 'marvels-spider-man-2', 'marvels-spider-man-miles-morales', 'nioh-2', 'nioh-3', 'red-dead-redemption-2', 'resident-evil', 'resident-evil-2-remake', 'resident-evil-3-remake', 'resident-evil-5', 'resident-evil-6', 'resident-evil-7-biohazard', 'resident-evil-village', 'resident-evil-requiem', 'stray', 'the-last-of-us-part-i', 'the-last-of-us-part-ii', 'the-witcher-3-wild-hunt', 'subnautica', 'until-dawn']);
+const LOCALIZED_TROPHY_SOURCE_SLUGS = new Set(['a-way-out', 'armored-core-vi-fires-of-rubicon', 'assassins-creed-mirage', 'assassins-creed-origins', 'assassins-creed-odyssey', 'assassins-creed-shadows', 'assassins-creed-valhalla', 'astro-bot', 'astros-playroom', 'avatar-frontiers-of-pandora', 'baldurs-gate-3', 'beyond-two-souls', 'bloodborne', 'celeste', 'clair-obscur-expedition-33', 'cyberpunk-2077', 'dark-souls-ii-scholar-of-the-first-sin', 'dark-souls-iii', 'dark-souls-remastered', 'days-gone', 'dead-cells', 'death-stranding', 'death-stranding-2-on-the-beach', 'demons-souls', 'detroit-become-human', 'disney-epic-mickey-rebrushed', 'god-of-war', 'god-of-war-ragnarok', 'hades', 'hades-ii', 'hogwarts-legacy', 'hollow-knight', 'hollow-knight-silksong', 'horizon-forbidden-west', 'horizon-zero-dawn', 'it-takes-two', 'lego-batman-legacy-of-the-dark-knight', 'lies-of-p', 'life-is-strange-double-exposure', 'life-is-strange-remastered', 'lords-of-the-fallen', 'marvels-spider-man', 'marvels-spider-man-2', 'marvels-spider-man-miles-morales', 'nioh-2', 'nioh-3', 'red-dead-redemption-2', 'resident-evil', 'resident-evil-2-remake', 'resident-evil-3-remake', 'resident-evil-5', 'resident-evil-6', 'resident-evil-7-biohazard', 'resident-evil-village', 'resident-evil-requiem', 'stray', 'the-last-of-us-part-i', 'the-last-of-us-part-ii', 'the-witcher-3-wild-hunt', 'subnautica', 'until-dawn']);
 const CATALOG_IMAGE_BY_SLUG = {
   'the-last-of-us-part-ii': 'https://cdn.cloudflare.steamstatic.com/steam/apps/2531310/header.jpg'
 };
@@ -429,8 +429,8 @@ function normalizeGame(row, roadmapRows, trophyRows) {
   const seedHasVerifiedEditorialStatus = hasVerifiedEditorialStatus(seedGame);
   const rowHasVerifiedEditorialStatus = hasVerifiedEditorialStatus(row);
   const preferManualVerifiedEditorial = rowHasVerifiedEditorialStatus && !seedHasVerifiedEditorialStatus;
-  const useStrictSeedEditorial = !preferManualVerifiedEditorial && (useAWayOutSeedEditorial || useArmoredCoreViSeedEditorial || useAssassinsCreedMirageSeedEditorial || useAssassinsCreedOriginsSeedEditorial || useAssassinsCreedOdysseySeedEditorial || useAssassinsCreedShadowsSeedEditorial || useAssassinsCreedValhallaSeedEditorial || useBaldursGate3SeedEditorial || useBloodborneSeedEditorial || useClairObscurSeedEditorial || useDarkSouls2SotfsSeedEditorial || useDarkSouls3SeedEditorial || useDarkSoulsRemasteredSeedEditorial || useDaysGoneSeedEditorial || useDisneyEpicMickeyRebrushedSeedEditorial || useDetroitSeedEditorial || useHadesSeedEditorial || useDeathStrandingSeedEditorial || useDeathStranding2SeedEditorial || useHogwartsLegacySeedEditorial || useHorizonForbiddenWestSeedEditorial || useHorizonZeroDawnSeedEditorial || useItTakesTwoSeedEditorial || useLiesOfPSeedEditorial || useLifeIsStrangeDoubleExposureSeedEditorial || useLifeIsStrangeRemasteredSeedEditorial || useLordsOfTheFallenSeedEditorial || useResidentEvilSeedEditorial || useSpiderManSeedEditorial || useSpiderMan2SeedEditorial || useMilesMoralesSeedEditorial || useRedDeadRedemption2SeedEditorial || useSilksongSeedEditorial || useStraySeedEditorial || useUntilDawnSeedEditorial || useWitcher3SeedEditorial || normalizedSlug === 'avatar-frontiers-of-pandora' || normalizedSlug === 'beyond-two-souls' || normalizedSlug === 'cyberpunk-2077' || normalizedSlug === 'sekiro-shadows-die-twice');
-  const editorialSource = ['a-way-out', 'armored-core-vi-fires-of-rubicon', 'assassins-creed-mirage', 'assassins-creed-origins', 'assassins-creed-odyssey', 'assassins-creed-shadows', 'assassins-creed-valhalla', 'avatar-frontiers-of-pandora', 'baldurs-gate-3', 'beyond-two-souls', 'bloodborne', 'clair-obscur-expedition-33', 'cyberpunk-2077', 'dark-souls-ii-scholar-of-the-first-sin', 'dark-souls-iii', 'dark-souls-remastered', 'days-gone', 'death-stranding', 'death-stranding-2-on-the-beach', 'detroit-become-human', 'disney-epic-mickey-rebrushed', 'hades', 'hogwarts-legacy', 'hollow-knight-silksong', 'horizon-forbidden-west', 'horizon-zero-dawn', 'it-takes-two', 'lies-of-p', 'life-is-strange-double-exposure', 'life-is-strange-remastered', 'lords-of-the-fallen', 'marvels-spider-man', 'marvels-spider-man-2', 'marvels-spider-man-miles-morales', 'red-dead-redemption-2', 'resident-evil', 'resident-evil-2-remake', 'resident-evil-3-remake', 'resident-evil-5', 'resident-evil-6', 'resident-evil-7-biohazard', 'resident-evil-village', 'resident-evil-requiem', 'sekiro-shadows-die-twice', 'stray', 'the-witcher-3-wild-hunt', 'until-dawn'].includes(normalizedSlug) && seedGame
+  const useStrictSeedEditorial = !preferManualVerifiedEditorial && (useAWayOutSeedEditorial || useArmoredCoreViSeedEditorial || useAssassinsCreedMirageSeedEditorial || useAssassinsCreedOriginsSeedEditorial || useAssassinsCreedOdysseySeedEditorial || useAssassinsCreedShadowsSeedEditorial || useAssassinsCreedValhallaSeedEditorial || useBaldursGate3SeedEditorial || useBloodborneSeedEditorial || useClairObscurSeedEditorial || useDarkSouls2SotfsSeedEditorial || useDarkSouls3SeedEditorial || useDarkSoulsRemasteredSeedEditorial || useDaysGoneSeedEditorial || useDisneyEpicMickeyRebrushedSeedEditorial || useDetroitSeedEditorial || useHadesSeedEditorial || useDeathStrandingSeedEditorial || useDeathStranding2SeedEditorial || useHogwartsLegacySeedEditorial || useHorizonForbiddenWestSeedEditorial || useHorizonZeroDawnSeedEditorial || useItTakesTwoSeedEditorial || useLiesOfPSeedEditorial || useLifeIsStrangeDoubleExposureSeedEditorial || useLifeIsStrangeRemasteredSeedEditorial || useLordsOfTheFallenSeedEditorial || useResidentEvilSeedEditorial || useSpiderManSeedEditorial || useSpiderMan2SeedEditorial || useMilesMoralesSeedEditorial || useRedDeadRedemption2SeedEditorial || useSilksongSeedEditorial || useStraySeedEditorial || useUntilDawnSeedEditorial || useWitcher3SeedEditorial || normalizedSlug === 'avatar-frontiers-of-pandora' || normalizedSlug === 'beyond-two-souls' || normalizedSlug === 'cyberpunk-2077' || normalizedSlug === 'demons-souls' || normalizedSlug === 'sekiro-shadows-die-twice');
+  const editorialSource = ['a-way-out', 'armored-core-vi-fires-of-rubicon', 'assassins-creed-mirage', 'assassins-creed-origins', 'assassins-creed-odyssey', 'assassins-creed-shadows', 'assassins-creed-valhalla', 'avatar-frontiers-of-pandora', 'baldurs-gate-3', 'beyond-two-souls', 'bloodborne', 'clair-obscur-expedition-33', 'cyberpunk-2077', 'dark-souls-ii-scholar-of-the-first-sin', 'dark-souls-iii', 'dark-souls-remastered', 'days-gone', 'death-stranding', 'death-stranding-2-on-the-beach', 'demons-souls', 'detroit-become-human', 'disney-epic-mickey-rebrushed', 'hades', 'hogwarts-legacy', 'hollow-knight-silksong', 'horizon-forbidden-west', 'horizon-zero-dawn', 'it-takes-two', 'lies-of-p', 'life-is-strange-double-exposure', 'life-is-strange-remastered', 'lords-of-the-fallen', 'marvels-spider-man', 'marvels-spider-man-2', 'marvels-spider-man-miles-morales', 'red-dead-redemption-2', 'resident-evil', 'resident-evil-2-remake', 'resident-evil-3-remake', 'resident-evil-5', 'resident-evil-6', 'resident-evil-7-biohazard', 'resident-evil-village', 'resident-evil-requiem', 'sekiro-shadows-die-twice', 'stray', 'the-witcher-3-wild-hunt', 'until-dawn'].includes(normalizedSlug) && seedGame
     ? {
         ...row,
         ...seedGame,
@@ -465,6 +465,7 @@ function normalizeGame(row, roadmapRows, trophyRows) {
     'dark-souls-iii',
     'dark-souls-remastered',
     'days-gone',
+    'demons-souls',
     'detroit-become-human',
     'disney-epic-mickey-rebrushed',
     'celeste',
@@ -517,7 +518,7 @@ function normalizeGame(row, roadmapRows, trophyRows) {
   const isCanonicalMissableTrophy = item => canonicalMissableSet
     ? canonicalMissableSet.has(item?.trophy_code) || canonicalMissableSet.has(normalizeTrophyLookupCode(item?.trophy_code))
     : Boolean(item?.is_missable);
-  const useSeedTrophyRows = ['a-way-out', 'armored-core-vi-fires-of-rubicon', 'assassins-creed-mirage', 'assassins-creed-origins', 'assassins-creed-odyssey', 'assassins-creed-shadows', 'assassins-creed-valhalla', 'avatar-frontiers-of-pandora', 'baldurs-gate-3', 'beyond-two-souls', 'cyberpunk-2077', 'dark-souls-ii-scholar-of-the-first-sin', 'disney-epic-mickey-rebrushed', 'it-takes-two', 'lego-batman-legacy-of-the-dark-knight', 'stray', 'the-witcher-3-wild-hunt'].includes(normalizedSlug) && Array.isArray(seedGame?.trophies) && seedGame.trophies.length > 0;
+  const useSeedTrophyRows = ['a-way-out', 'armored-core-vi-fires-of-rubicon', 'assassins-creed-mirage', 'assassins-creed-origins', 'assassins-creed-odyssey', 'assassins-creed-shadows', 'assassins-creed-valhalla', 'avatar-frontiers-of-pandora', 'baldurs-gate-3', 'beyond-two-souls', 'cyberpunk-2077', 'dark-souls-ii-scholar-of-the-first-sin', 'demons-souls', 'disney-epic-mickey-rebrushed', 'it-takes-two', 'lego-batman-legacy-of-the-dark-knight', 'stray', 'the-witcher-3-wild-hunt'].includes(normalizedSlug) && Array.isArray(seedGame?.trophies) && seedGame.trophies.length > 0;
   const normalizedTrophyRows = useSeedTrophyRows
     ? seedGame.trophies.map(trophy => ({
         trophy_code: trophy.id,
@@ -610,6 +611,7 @@ function normalizeGame(row, roadmapRows, trophyRows) {
     openWorldCleanup: normalizedSlug === 'subnautica' ? true : undefined,
     onlineRequired: explicitOfflineBaseSlugs.includes(normalizedSlug) ? false : (editorialSource.onlineRequired ?? editorialSource.online_required),
     coopRequired: explicitOfflineBaseSlugs.includes(normalizedSlug) ? false : (editorialSource.coopRequired ?? editorialSource.coop_required),
+    coopRequirementLabel: firstText(editorialSource.coopRequirementLabel, editorialSource.coop_requirement_label, editorialSource.duoModeRequirementLabel, editorialSource.duo_mode_requirement_label),
     dlcRequired: explicitOfflineBaseSlugs.includes(normalizedSlug) ? false : (editorialSource.dlcRequired ?? editorialSource.dlc_required),
     hasMissables: editorialSource.hasMissables ?? Boolean(resolvedMissableCount),
     missableCount: resolvedMissableCount,
@@ -648,13 +650,13 @@ function normalizeGame(row, roadmapRows, trophyRows) {
         name_pt: namePt,
         trophyNameOriginal: originalName,
         trophyNamePtBr: namePt,
-        namePtSource: namePt && LOCALIZED_TROPHY_SOURCE_SLUGS.has(normalizedSlug) ? (seedTrophy?.namePtSource || (['a-way-out', 'assassins-creed-origins', 'assassins-creed-odyssey', 'avatar-frontiers-of-pandora', 'baldurs-gate-3', 'beyond-two-souls', 'celeste', 'clair-obscur-expedition-33', 'dead-cells', 'detroit-become-human', 'god-of-war', 'hades', 'hogwarts-legacy', 'horizon-forbidden-west', 'horizon-zero-dawn', 'it-takes-two', 'life-is-strange-double-exposure', 'life-is-strange-remastered', 'marvels-spider-man', 'marvels-spider-man-miles-morales', 'resident-evil', 'resident-evil-2-remake', 'resident-evil-3-remake', 'resident-evil-5', 'resident-evil-6', 'resident-evil-7-biohazard', 'resident-evil-village', 'stray', 'the-witcher-3-wild-hunt'].includes(normalizedSlug) ? 'editorial_ptbr' : 'trusted_steam_ptbr')) : '',
+        namePtSource: namePt && LOCALIZED_TROPHY_SOURCE_SLUGS.has(normalizedSlug) ? (seedTrophy?.namePtSource || (['a-way-out', 'assassins-creed-origins', 'assassins-creed-odyssey', 'avatar-frontiers-of-pandora', 'baldurs-gate-3', 'beyond-two-souls', 'celeste', 'clair-obscur-expedition-33', 'dead-cells', 'demons-souls', 'detroit-become-human', 'god-of-war', 'hades', 'hogwarts-legacy', 'horizon-forbidden-west', 'horizon-zero-dawn', 'it-takes-two', 'life-is-strange-double-exposure', 'life-is-strange-remastered', 'marvels-spider-man', 'marvels-spider-man-miles-morales', 'resident-evil', 'resident-evil-2-remake', 'resident-evil-3-remake', 'resident-evil-5', 'resident-evil-6', 'resident-evil-7-biohazard', 'resident-evil-village', 'stray', 'the-witcher-3-wild-hunt'].includes(normalizedSlug) ? 'editorial_ptbr' : 'trusted_steam_ptbr')) : '',
         type: item.type,
         description,
         descriptionOriginal: ['resident-evil', 'resident-evil-2-remake', 'resident-evil-3-remake', 'resident-evil-5', 'resident-evil-6', 'resident-evil-7-biohazard', 'resident-evil-village'].includes(normalizedSlug) ? '' : (seedTrophy?.descriptionOriginal || ''),
         descriptionPtBr: supportsLocalizedDescriptions ? (localizedSeedDescription || description) : '',
         ptDescription: supportsLocalizedDescriptions ? (localizedSeedDescription || description) : '',
-        descriptionPtSource: supportsLocalizedDescriptions && LOCALIZED_TROPHY_SOURCE_SLUGS.has(normalizedSlug) ? (seedTrophy?.descriptionPtSource || (['a-way-out', 'assassins-creed-origins', 'assassins-creed-odyssey', 'avatar-frontiers-of-pandora', 'baldurs-gate-3', 'beyond-two-souls', 'celeste', 'clair-obscur-expedition-33', 'dead-cells', 'detroit-become-human', 'hades', 'hogwarts-legacy', 'horizon-forbidden-west', 'horizon-zero-dawn', 'it-takes-two', 'life-is-strange-double-exposure', 'life-is-strange-remastered', 'marvels-spider-man', 'marvels-spider-man-miles-morales', 'resident-evil', 'resident-evil-2-remake', 'resident-evil-3-remake', 'resident-evil-5', 'resident-evil-6', 'resident-evil-7-biohazard', 'resident-evil-village', 'stray', 'the-witcher-3-wild-hunt'].includes(normalizedSlug) ? 'editorial_ptbr' : 'trusted_steam_ptbr')) : '',
+        descriptionPtSource: supportsLocalizedDescriptions && LOCALIZED_TROPHY_SOURCE_SLUGS.has(normalizedSlug) ? (seedTrophy?.descriptionPtSource || (['a-way-out', 'assassins-creed-origins', 'assassins-creed-odyssey', 'avatar-frontiers-of-pandora', 'baldurs-gate-3', 'beyond-two-souls', 'celeste', 'clair-obscur-expedition-33', 'dead-cells', 'demons-souls', 'detroit-become-human', 'hades', 'hogwarts-legacy', 'horizon-forbidden-west', 'horizon-zero-dawn', 'it-takes-two', 'life-is-strange-double-exposure', 'life-is-strange-remastered', 'marvels-spider-man', 'marvels-spider-man-miles-morales', 'resident-evil', 'resident-evil-2-remake', 'resident-evil-3-remake', 'resident-evil-5', 'resident-evil-6', 'resident-evil-7-biohazard', 'resident-evil-village', 'stray', 'the-witcher-3-wild-hunt'].includes(normalizedSlug) ? 'editorial_ptbr' : 'trusted_steam_ptbr')) : '',
         tip,
         riskType: seedTrophy?.riskType || '',
         is_missable: isMissable,
@@ -896,6 +898,11 @@ function buildListFilters({ search = '', facet = 'all' } = {}) {
 
   const chapterSelectNegatedSql = `((${chapterText}) LIKE '%não há chapter select%' OR (${chapterText}) LIKE '%nao ha chapter select%' OR (${chapterText}) LIKE '%não tem chapter select%' OR (${chapterText}) LIKE '%nao tem chapter select%' OR (${chapterText}) LIKE '%sem chapter select%' OR (${chapterText}) LIKE '%não existe chapter select%' OR (${chapterText}) LIKE '%nao existe chapter select%' OR (${chapterText}) LIKE '%não há seleção de capítulo%' OR (${chapterText}) LIKE '%nao ha selecao de capitulo%' OR (${chapterText}) LIKE '%sem seleção de capítulo%' OR (${chapterText}) LIKE '%sem selecao de capitulo%')`;
 
+  const seedOnlineRequiredSlugs = sampleGames
+    .filter(game => resolveExplicitBoolean(game?.onlineRequired, game?.online_required, game?.requiresOnline, game?.hasMandatoryOnline) === true)
+    .map(game => String(game?.slug || '').trim().toLowerCase())
+    .filter(Boolean);
+
   if (search) {
     const tokens = String(search || '')
       .toLowerCase()
@@ -967,10 +974,19 @@ function buildListFilters({ search = '', facet = 'all' } = {}) {
       break;
     case 'online-none':
       where.push(`NOT ${onlineRequiredSql}`);
+      if (seedOnlineRequiredSlugs.length) {
+        where.push(`slug NOT IN (${seedOnlineRequiredSlugs.map(() => '?').join(',')})`);
+        params.push(...seedOnlineRequiredSlugs);
+      }
       where.push("(coalesce(editorial_review_status, '') != 'needs_online_check')");
       break;
     case 'online-required':
-      where.push(onlineRequiredSql);
+      if (seedOnlineRequiredSlugs.length) {
+        where.push(`(slug IN (${seedOnlineRequiredSlugs.map(() => '?').join(',')}) OR ${onlineRequiredSql})`);
+        params.push(...seedOnlineRequiredSlugs);
+      } else {
+        where.push(onlineRequiredSql);
+      }
       where.push(`NOT ((${onlineText}) LIKE '%não há%online obrigat%' OR (${onlineText}) LIKE '%nao ha%online obrigat%' OR (${onlineText}) LIKE '%sem online obrigat%' OR (${onlineText}) LIKE '%não exige online%' OR (${onlineText}) LIKE '%nao exige online%' OR (${onlineText}) LIKE '%online opcional%' OR (${onlineText}) LIKE '%recursos online opcionais%' OR (${onlineText}) LIKE '%fora dos requisitos da platina%')`);
       break;
     case 'coop-required': {
@@ -1050,7 +1066,7 @@ function normalizeListRow(row) {
         reviewed_by: seedGame.reviewed_by
       }
     : row;
-  const usesCatalogSeedFlags = ['avatar-frontiers-of-pandora', 'baldurs-gate-3', 'beyond-two-souls', 'bloodborne', 'cyberpunk-2077', 'dark-souls-ii-scholar-of-the-first-sin', 'dark-souls-iii', 'dark-souls-remastered', 'disney-epic-mickey-rebrushed', 'hogwarts-legacy', 'horizon-forbidden-west', 'horizon-zero-dawn', 'resident-evil-7-biohazard', 'resident-evil-village'].includes(normalizedSlug);
+  const usesCatalogSeedFlags = ['avatar-frontiers-of-pandora', 'baldurs-gate-3', 'beyond-two-souls', 'bloodborne', 'cyberpunk-2077', 'dark-souls-ii-scholar-of-the-first-sin', 'dark-souls-iii', 'dark-souls-remastered', 'demons-souls', 'disney-epic-mickey-rebrushed', 'hogwarts-legacy', 'horizon-forbidden-west', 'horizon-zero-dawn', 'resident-evil-7-biohazard', 'resident-evil-village'].includes(normalizedSlug);
   const usesCatalogSeedMissableFlags = usesCatalogSeedFlags || ['a-way-out', 'assassins-creed-origins', 'assassins-creed-odyssey', 'assassins-creed-shadows', 'assassins-creed-valhalla', 'it-takes-two', 'stray', 'the-witcher-3-wild-hunt'].includes(normalizedSlug);
   const seedMissableCount = usesCatalogSeedMissableFlags
     ? Number(listSeedGame?.missableCount ?? listSeedGame?.missable_count)
@@ -1063,8 +1079,8 @@ function normalizeListRow(row) {
   const normalizedDlcRequired = resolveExplicitBoolean(listSeedGame?.dlcRequired, listSeedGame?.dlc_required, row.dlcRequired, row.dlc_required);
   const normalizedNewGamePlusRequired = resolveExplicitBoolean(listSeedGame?.newGamePlusRequired, listSeedGame?.requiresNewGamePlus, row.newGamePlusRequired, row.requiresNewGamePlus);
   const normalizedDifficultyTrophiesRequired = resolveExplicitBoolean(listSeedGame?.difficultyTrophiesRequired, row.difficultyTrophiesRequired);
-  const useCatalogSeedName = normalizedSlug === 'baldurs-gate-3' && seedGame;
-  const useCatalogSeedTiming = ['avatar-frontiers-of-pandora', 'baldurs-gate-3', 'beyond-two-souls', 'cyberpunk-2077', 'dark-souls-ii-scholar-of-the-first-sin', 'disney-epic-mickey-rebrushed'].includes(normalizedSlug) && seedGame;
+  const useCatalogSeedName = ['baldurs-gate-3', 'demons-souls'].includes(normalizedSlug) && seedGame;
+  const useCatalogSeedTiming = ['avatar-frontiers-of-pandora', 'baldurs-gate-3', 'beyond-two-souls', 'cyberpunk-2077', 'dark-souls-ii-scholar-of-the-first-sin', 'demons-souls', 'disney-epic-mickey-rebrushed'].includes(normalizedSlug) && seedGame;
   return {
     ...row,
     name: useCatalogSeedName ? seedGame.name : row.name,
@@ -1081,6 +1097,7 @@ function normalizeListRow(row) {
     hasMissables: usesCatalogSeedMissableFlags ? Boolean(listSeedGame?.hasMissables) : Boolean(missableCount),
     onlineRequired: usesCatalogSeedFlags ? Boolean(listSeedGame?.onlineRequired) : (normalizedOnlineRequired ?? row.onlineRequired),
     coopRequired: usesCatalogSeedFlags ? Boolean(listSeedGame?.coopRequired) : (normalizedCoopRequired ?? row.coopRequired),
+    coopRequirementLabel: firstText(listSeedGame?.coopRequirementLabel, listSeedGame?.coop_requirement_label, listSeedGame?.duoModeRequirementLabel, listSeedGame?.duo_mode_requirement_label, row.coopRequirementLabel, row.coop_requirement_label),
     dlcRequired: usesCatalogSeedFlags ? Boolean(listSeedGame?.dlcRequired) : (normalizedDlcRequired ?? row.dlcRequired),
     newGamePlusRequired: normalizedNewGamePlusRequired ?? row.newGamePlusRequired,
     difficultyTrophiesRequired: normalizedDifficultyTrophiesRequired ?? row.difficultyTrophiesRequired,

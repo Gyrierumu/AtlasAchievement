@@ -49401,6 +49401,368 @@ if (disneyEpicMickeyRebrushedGuide) {
   disneyEpicMickeyRebrushedGuide.roadmapStages = disneyEpicMickeyRebrushedGuide.roadmap;
 }
 
+const demonsSoulsGuide = sampleGames.find(game => game.slug === 'demons-souls');
+if (demonsSoulsGuide) {
+  const demonsSoulsRoadmap = [
+    {
+      title: 'Comece a primeira run controlando World Tendency',
+      focus: 'Soul Form, PWWT e base da platina',
+      objective: 'Evitar bagunçar World Tendency e preparar eventos de Pure White antes de Pure Black.',
+      actions: [
+        'Jogue em Soul Form sempre que possível.',
+        'Depois de derrotar um chefe e voltar em Body Form, morra no Nexus para não alterar World Tendency dos mundos.',
+        'Avance pelos chefes principais de cada Archstone.',
+        'Não consuma Boss Souls.',
+        'Escolha Providential Ring como starting boon se quiser reduzir risco em King of Rings.',
+        'Resgate Sage Freke, Saint Urbain e Yuria quando possível.',
+        'Anote quais mundos já estão próximos de Pure White.'
+      ],
+      warning: 'Morrer em Body Form dentro de um mundo empurra World Tendency para Black. Isso pode bloquear eventos e anéis até NG+ se você não controlar a rota.',
+      result: 'A primeira run fica preparada para eventos de Pure White World Tendency e para os troféus de anéis, feitiços e milagres.'
+    },
+    {
+      title: 'Faça eventos de Pure White antes de Pure Black',
+      focus: 'PWWT e anéis',
+      objective: 'Coletar eventos, NPCs e itens que dependem de tendência branca antes de mudar os mundos para preto.',
+      actions: [
+        'Complete os eventos de Pure White World Tendency em cada mundo relevante.',
+        'Obtenha Istarelle em Valley of Defilement para One of the Few.',
+        'Resgate Lord Rydell e confira eventos necessários para anéis.',
+        'Pegue anéis e itens exclusivos de PWWT antes de forçar Pure Black.',
+        'Revise King of Rings antes de mexer em Character Tendency.'
+      ],
+      warning: 'Não empurre um mundo para Pure Black antes de terminar tudo que precisa de Pure White nesse mundo.',
+      result: 'Os principais riscos de PWWT ficam resolvidos antes da fase de Pure Black.'
+    },
+    {
+      title: 'Empurre mundos para Pure Black e ajuste Character Tendency',
+      focus: 'PBWT, PBCT/PWCT e anéis',
+      objective: 'Fazer eventos de Pure Black World Tendency e controlar Character Tendency para Friend\'s Ring, Foe\'s Ring e outros requisitos.',
+      actions: [
+        'Após terminar eventos de Pure White, morra em Body Form nos mundos necessários para alcançar Pure Black World Tendency.',
+        'Derrote Black Phantom NPCs em Pure Black para avançar Character Tendency para Pure White.',
+        'Pegue Friend\'s Ring com o Monumental em Pure White Character Tendency.',
+        'Depois, planeje Pure Black Character Tendency para a quest de Mephistopheles e Foe\'s Ring.',
+        'Evite matar NPCs importantes antes de comprar, resgatar ou coletar tudo que depende deles.'
+      ],
+      warning: 'Character Tendency é fácil de bagunçar. Não mate NPCs nem invada sem saber o impacto nos anéis.',
+      result: 'King of Rings fica encaminhado com as tendências mais difíceis controladas.'
+    },
+    {
+      title: 'Resolva os troféus online cedo',
+      focus: 'Online, coop e PvP',
+      objective: 'Concluir Return to Form e Unwelcome Guest sem deixar o guia parecer offline.',
+      actions: [
+        'Faça Return to Form ajudando outro jogador a derrotar um chefe.',
+        'Faça Unwelcome Guest derrotando outro jogador como invasor.',
+        'Use faixa de nível adequada para encontrar jogadores.',
+        'Se jogar combinado com amigo, use senha para facilitar Return to Form quando possível.',
+        'Não marque outros troféus como Online sem necessidade.'
+      ],
+      warning: 'A platina do remake PS5 tem dois troféus online. Se PSN, PS Plus ou servidores não estiverem disponíveis, esses troféus podem ser impedimento real.',
+      result: 'A parte online da platina fica resolvida e o restante pode seguir focado em PvE, tendências e checklist.'
+    },
+    {
+      title: 'Compre feitiços e milagres sem gastar Boss Souls errado',
+      focus: 'Sage\'s Trophy e Saint\'s Trophy',
+      objective: 'Planejar todas as compras de feitiços e milagres que usam Boss Souls repetidas.',
+      actions: [
+        'Resgate Sage Freke.',
+        'Resgate Saint Urbain.',
+        'Resgate Yuria the Witch.',
+        'Não consuma Boss Souls.',
+        'Confira quais Boss Souls são usadas por mais de um feitiço ou milagre.',
+        'Compre feitiços e milagres em ordem planejada.',
+        'Se usar backup/save scum, trate como alternativa, não como única rota obrigatória.'
+      ],
+      warning: 'Algumas Boss Souls são necessárias para múltiplas compras. Sem backup, você precisará de NG+ e possivelmente NG++ para fechar Sage\'s Trophy e Saint\'s Trophy.',
+      result: 'Os troféus de feitiços e milagres ficam organizados sem desperdício de Boss Souls.'
+    },
+    {
+      title: 'Faça os chefes com condições específicas',
+      focus: 'Chefes condicionais',
+      objective: 'Resolver troféus que exigem derrotar chefes de uma forma específica.',
+      actions: [
+        'Derrote Tower Knight sem matar arqueiros para One Shall Fall.',
+        'Derrote Penetrator com Biorr para Brother-in-Arms.',
+        'Derrote Dragon God com Hands of God para Fists of Legend.',
+        'Atravesse a ponte de flechas de Fool\'s Idol para Time for Rolling.',
+        'Derrote Fool\'s Idol sem acertar clones para Not Fooled.',
+        'Derrote Adjudicator sem fazê-lo cair para One Shall Stand.',
+        'Derrote Maiden Astraea sem matar Garl Vinland para May you be unharmed.'
+      ],
+      warning: 'Se matar o chefe do jeito errado, o troféu fica para NG+. Use backup antes de chefes apenas se esse for seu estilo de rota.',
+      result: 'Os troféus de condição específica ficam resolvidos sem precisar repetir a run inteira.'
+    },
+    {
+      title: 'Finalize anéis, Northern Regalia e finais',
+      focus: 'King of Rings e finais',
+      objective: 'Concluir os 30 anéis do remake, Legacy of the Kings, Seekest soul power e pendências de rota.',
+      actions: [
+        'Confira todos os 30 anéis do remake para King of Rings.',
+        'Garanta Providential Ring, Ring of Longevity, Sodden Ring e Ring of Uneven Scales.',
+        'Faça a rota de Mephistopheles e Foe\'s Ring somente depois de não precisar mais dos NPCs envolvidos.',
+        'Crie Northern Regalia quando tiver Soulbrandt, Demonbrandt, False King\'s Demon Soul e acesso a Blacksmith Ed.',
+        'Escolha o final necessário para Seekest soul power em uma run planejada.',
+        'Se precisar de Soulsucker, não mate a Maiden in Black na run que precisa da Maiden in Black Demon\'s Soul.'
+      ],
+      warning: 'Foe\'s Ring, Friend\'s Ring, Providential Ring e Soulsucker são pontos de alto risco editorial. Siga a ordem para evitar retrabalho.',
+      result: 'Os troféus de anéis, final e arma especial ficam resolvidos.'
+    },
+    {
+      title: 'Avance NG+ ou NG++ para compras restantes',
+      focus: 'NG+ e cleanup',
+      objective: 'Completar Boss Souls, feitiços, milagres e qualquer troféu de chefe perdido.',
+      actions: [
+        'Avance para NG+ com checklist de Boss Souls pendentes.',
+        'Resgate novamente Freke, Urbain e Yuria quando necessário.',
+        'Compre os feitiços ou milagres restantes.',
+        'Repita chefes condicionais que foram perdidos.',
+        'Revise King of Rings antes de encerrar a última run.',
+        'Feche Return to Form e Unwelcome Guest se ainda estiverem pendentes.'
+      ],
+      warning: 'NG+ aumenta bastante o dano dos inimigos. Antes de avançar, confira anéis, tendências e NPCs pendentes da run atual.',
+      result: 'Com anéis, feitiços, milagres, online e chefes condicionais concluídos, Slayer of Trophies será liberado.'
+    }
+  ];
+
+  const demonsSoulsAttentionPoints = [
+    { title: 'Online obrigatório', detail: 'A platina do remake PS5 tem dois troféus online: Return to Form e Unwelcome Guest. Não marque o guia como offline.', tags: ['Online', 'PS Plus'] },
+    { title: 'World Tendency', detail: 'Jogue em Soul Form e morra no Nexus após chefes para evitar piorar World Tendency nos mundos.', tags: ['World Tendency', 'Soul Form'] },
+    { title: 'Pure White antes de Pure Black', detail: 'Faça eventos e anéis de Pure White World Tendency antes de empurrar mundos para Pure Black.', tags: ['PWWT', 'PBWT'] },
+    { title: 'Character Tendency', detail: 'Friend\'s Ring exige Pure White Character Tendency; Foe\'s Ring exige rota de Mephistopheles/Pure Black. Não mate NPCs cedo.', tags: ['Character Tendency', 'Anéis'] },
+    { title: 'King of Rings', detail: 'É o maior gargalo. São 30 anéis no remake, incluindo anéis novos do PS5 e anéis dependentes de tendência.', tags: ['Anéis', 'Coletável'] },
+    { title: 'Providential Ring', detail: 'Pegue como starting boon ou garanta a rota alternativa com Sparkly/Large Sword of Searching. Não deixe sem plano.', tags: ['Providential Ring', 'Atenção'] },
+    { title: 'Boss Souls', detail: 'Não consuma Boss Souls. Elas são usadas para feitiços, milagres e alguns requisitos específicos.', tags: ['Boss Souls', 'Checklist'] },
+    { title: 'Freke, Urbain e Yuria', detail: 'Resgate os três NPCs para Sage\'s Trophy e Saint\'s Trophy. Sem eles, compras importantes ficam bloqueadas.', tags: ['NPC', 'Feitiços'] },
+    { title: 'Feitiços e milagres', detail: 'Sem backup/save scum, algumas Boss Souls exigem NG+ e possivelmente NG++ para comprar tudo.', tags: ['Feitiços', 'Milagres', 'NG+'] },
+    { title: 'Chefes condicionais', detail: 'Alguns chefes têm troféus por derrotá-los de forma específica. Se errar, fica para NG+.', tags: ['Boss', 'Condição específica'] },
+    { title: 'PS3 vs PS5', detail: 'A lista do remake é diferente da versão PS3. Não misture troféus de upgrades de armas da versão original.', tags: ['PS5 Remake', 'Sem PS3'] },
+    { title: 'Dificuldade', detail: 'Não há troféu de dificuldade selecionável. NG+ e chefes difíceis não devem inflar o filtro Dificuldade.', tags: ['Sem dificuldade', 'NG+'] }
+  ];
+
+  const demonsSoulsChecklist = [
+    'Conferir se o guia e do Demon\'s Souls Remake PS5.',
+    'Conferir se o guia tem 37 trofeus.',
+    'Conferir se Slayer of Trophies e a platina.',
+    'Conferir distribuicao: 1 platina, 5 ouro, 9 prata e 22 bronze.',
+    'Conferir onlineRequired true.',
+    'Conferir filtro Online 2.',
+    'Conferir Return to Form como Online/Coop online.',
+    'Conferir Unwelcome Guest como Online/PvP.',
+    'Conferir que a campanha nao foi marcada como coop obrigatoria.',
+    'Conferir dlcRequired false e filtro DLC 0.',
+    'Conferir filtro Dificuldade 0.',
+    'Conferir hasMissables true e missableCount batendo com tags Perdível.',
+    'Conferir World Tendency e Character Tendency.',
+    'Conferir Pure White antes de Pure Black.',
+    'Conferir Friend\'s Ring, Foe\'s Ring, Providential Ring, Ring of Longevity, Sodden Ring e Ring of Uneven Scales.',
+    'Conferir King of Rings com 30 aneis.',
+    'Conferir Sage\'s Trophy, Saint\'s Trophy, Freke, Urbain e Yuria.',
+    'Conferir Boss Souls e Soulsucker/Maiden in Black Demon\'s Soul.',
+    'Conferir boss condition trophies e Northern Regalia.',
+    'Conferir se PS3 nao foi misturado.',
+    'Conferir nomes oficiais em ingles como principal e PT-BR abaixo.',
+    'Conferir descricoes em portugues com acentos.',
+    'Conferir se roadmap esta estruturado e nao renderiza campos crus.',
+    'Conferir se nao aparecem rotulos antigos, placeholders tecnicos ou campos crus do roadmap no front.',
+    'Conferir FAQ, decisao rapida, SEO e pontos de atencao.',
+    'Conferir se pagina individual e catalogo exibem o mesmo status editorial.'
+  ];
+
+  const demonsSoulsFaq = [
+    { question: 'Demon\'s Souls Remake tem troféus perdíveis?', answer: 'Sim. Muitos são perdíveis de run por World Tendency, Character Tendency, NPCs, Boss Souls, anéis e chefes derrotados de forma errada.' },
+    { question: 'Precisa jogar online para platinar?', answer: 'Sim. Return to Form exige ajudar outro jogador a derrotar um chefe e Unwelcome Guest exige derrotar outro jogador como invasor.' },
+    { question: 'Precisa de cooperação?', answer: 'Há um troféu de ajuda online, Return to Form. Não é campanha coop obrigatória, mas existe um requisito online de coop/ajuda.' },
+    { question: 'Precisa de DLC?', answer: 'Não. A platina usa apenas a lista base do remake PS5.' },
+    { question: 'Quantas runs são necessárias?', answer: 'Com backup/save scum bem planejado, é possível reduzir runs. Sem backup, espere NG+ e possivelmente NG++ por causa de Boss Souls usadas em feitiços e milagres.' },
+    { question: 'Qual é o maior cuidado da platina?', answer: 'World Tendency e Character Tendency. Jogue em Soul Form, morra no Nexus depois de chefes e faça Pure White antes de Pure Black.' },
+    { question: 'Por que King of Rings é tão importante?', answer: 'Porque exige todos os 30 anéis do remake, incluindo anéis ligados a tendência, Sparkly, Mephistopheles, Providential Ring e NG+.' },
+    { question: 'Devo consumir Boss Souls?', answer: 'Não antes de consultar o checklist. Boss Souls são necessárias para feitiços, milagres e alguns requisitos específicos.' },
+    { question: 'Preciso escolher Providential Ring no começo?', answer: 'É a opção mais segura. Existe rota alternativa, mas escolher Providential Ring como starting boon evita retrabalho e risco editorial.' },
+    { question: 'A dificuldade afeta troféus?', answer: 'Não. O jogo é difícil por natureza, mas não há troféu de dificuldade selecionável.' },
+    { question: 'A lista é igual à versão PS3?', answer: 'Não. O remake PS5 tem 37 troféus e lista diferente. Não misture os troféus de upgrades de armas da versão PS3.' },
+    { question: 'Quanto tempo leva para platinar?', answer: 'Em média, cerca de 40 a 70 horas, dependendo de habilidade, uso de online, controle de tendência, build e quantidade de runs.' }
+  ];
+
+  const demonsSoulsMissableIds = new Set([
+    'demons_one_shall_fall',
+    'demons_brother_in_arms',
+    'demons_fists_of_legend',
+    'demons_not_fooled',
+    'demons_one_shall_stand',
+    'demons_may_you_be_unharmed',
+    'demons_seekest_soul_power',
+    'demons_a_dash_of_sage',
+    'demons_umbasa',
+    'demons_worthy_of_the_sword',
+    'demons_one_of_the_few',
+    'demons_witch_in_the_tower',
+    'demons_legacy_of_the_kings',
+    'demons_sages_trophy',
+    'demons_saints_trophy',
+    'demons_king_of_rings'
+  ]);
+
+  const demonsSoulsTrophyRows = [
+    ['demons_slayer_of_trophies', 'Slayer of Trophies', 'Caçador de Troféus', 'Platina', 'Obtenha todos os troféus.', 'Conclua os outros 36 troféus da lista base do remake de PS5.', false, false, ['Platina', 'Conclusão']],
+    ['demons_phalanxs_trophy', 'Phalanx\'s Trophy', 'Troféu da Phalanx', 'Bronze', 'Derrote o demônio Phalanx.', 'Chefe inicial de Boletarian Palace. Troféu de história do remake PS5.', false, true, ['História', 'Boss']],
+    ['demons_tower_knights_trophy', 'Tower Knight\'s Trophy', 'Troféu do Cavaleiro da Torre', 'Bronze', 'Derrote o demônio Tower Knight.', 'Chefe de The Lord\'s Path. Leia One Shall Fall antes da luta se quiser evitar NG+.', false, true, ['História', 'Boss']],
+    ['demons_penetrators_trophy', 'Penetrator\'s Trophy', 'Troféu do Penetrador', 'Bronze', 'Derrote o demônio Penetrator.', 'Chefe de Inner Ward. Brother-in-Arms exige Biorr vivo e presente nessa luta.', false, true, ['História', 'Boss']],
+    ['demons_false_kings_trophy', 'False King\'s Trophy', 'Troféu do Falso Rei', 'Bronze', 'Derrote o demônio False King.', 'Chefe avançado de Boletarian Palace. Guarde a False King\'s Demon Soul para Northern Regalia.', false, true, ['História', 'Boss', 'Boss Soul']],
+    ['demons_armor_spiders_trophy', 'Armor Spider\'s Trophy', 'Troféu da Aranha Encouraçada', 'Bronze', 'Derrote o demônio Armor Spider.', 'Chefe de Stonefang Tunnel. Guarde a Boss Soul para o checklist de magias e milagres.', false, true, ['História', 'Boss', 'Boss Soul']],
+    ['demons_flamelurkers_trophy', 'Flamelurker\'s Trophy', 'Troféu do Flamelurker', 'Bronze', 'Derrote o demônio Flamelurker.', 'A Searing Demon Soul é essencial para Blacksmith Ed e Road to Possibilities. Não consuma.', false, true, ['História', 'Boss', 'Boss Soul']],
+    ['demons_dragon_gods_trophy', 'Dragon God\'s Trophy', 'Troféu do Deus Dragão', 'Bronze', 'Derrote o demônio Dragon God.', 'Chefe de Stonefang Tunnel. Revise Fists of Legend antes de finalizar a luta.', false, true, ['História', 'Boss']],
+    ['demons_fools_idols_trophy', 'Fool\'s Idol\'s Trophy', 'Troféu do Ídolo dos Tolos', 'Bronze', 'Derrote o demônio Fool\'s Idol.', 'Chefe de Prison of Hope. Revise Time for Rolling e Not Fooled antes da área/luta.', false, true, ['História', 'Boss']],
+    ['demons_maneaters_trophy', 'Maneater\'s Trophy', 'Troféu dos Maneaters', 'Bronze', 'Derrote o demônio Maneater.', 'Chefe de Tower of Latria. Prepare a arena estreita e mantenha atenção no segundo Maneater.', false, true, ['História', 'Boss']],
+    ['demons_old_monks_trophy', 'Old Monk\'s Trophy', 'Troféu do Old Monk', 'Bronze', 'Derrote o demônio Old Monk.', 'Chefe final de Tower of Latria. Pode envolver jogador online como boss, mas o troféu de história não é o requisito online da platina.', false, true, ['História', 'Boss']],
+    ['demons_adjudicators_trophy', 'Adjudicator\'s Trophy', 'Troféu do Adjudicator', 'Bronze', 'Derrote o demônio Adjudicator.', 'Chefe de Shrine of Storms. Leia One Shall Stand se quiser fazer o objetivo especial na mesma passagem.', false, true, ['História', 'Boss']],
+    ['demons_old_heros_trophy', 'Old Hero\'s Trophy', 'Troféu do Old Hero', 'Bronze', 'Derrote o demônio Old Hero.', 'Chefe de Shrine of Storms. Thief\'s Ring ajuda bastante se a luta estiver difícil.', false, true, ['História', 'Boss']],
+    ['demons_storm_kings_trophy', 'Storm King\'s Trophy', 'Troféu do Storm King', 'Bronze', 'Derrote o demônio Storm King.', 'Chefe final de Shrine of Storms. Pegue Storm Ruler na arena e conclua a luta.', false, true, ['História', 'Boss']],
+    ['demons_leechmongers_trophy', 'Leechmonger\'s Trophy', 'Troféu do Leechmonger', 'Bronze', 'Derrote o demônio Leechmonger.', 'Chefe de Valley of Defilement. Guarde a Boss Soul no checklist antes de gastar.', false, true, ['História', 'Boss', 'Boss Soul']],
+    ['demons_dirty_colossus_trophy', 'Dirty Colossus\' Trophy', 'Troféu do Dirty Colossus', 'Bronze', 'Derrote o demônio Dirty Colossus.', 'Chefe de Valley of Defilement. Continue controlando World Tendency do mundo 5.', false, true, ['História', 'Boss']],
+    ['demons_maiden_astraeas_trophy', 'Maiden Astraea\'s Trophy', 'Troféu da Maiden Astraea', 'Bronze', 'Derrote o demônio Maiden Astraea.', 'Chefe final de Valley of Defilement. Leia May you be unharmed antes de concluir.', false, true, ['História', 'Boss']],
+    ['demons_return_to_form', 'Return to Form', 'Retorno à Forma', 'Prata', 'Ajude outro jogador a derrotar um chefe.', 'Troféu online/coop: use a Blue Eye Stone para ser convocado e ajude outro jogador a derrotar um chefe. Exige PSN/PS Plus.', false, false, ['Online', 'Coop online', 'Multiplayer', 'Atenção']],
+    ['demons_unwelcome_guest', 'Unwelcome Guest', 'Visitante Indesejado', 'Prata', 'Derrote outro jogador como invasor.', 'Troféu online/PvP: invada com a Black Eye Stone e derrote outro jogador. Exige PSN/PS Plus.', false, false, ['Online', 'PvP', 'Invasão', 'Multiplayer', 'Atenção']],
+    ['demons_one_shall_fall', 'One Shall Fall', 'Um Deve Cair', 'Prata', 'Derrote Tower Knight sem matar nenhum arqueiro.', 'Perdível de run: ignore os arqueiros e derrote Tower Knight focando pernas e cabeça. Se errar, fica para NG+.', true, true, ['Perdível', 'Perdível de run', 'Boss', 'Condição específica', 'Atenção', 'Cleanup']],
+    ['demons_brother_in_arms', 'Brother-in-Arms', 'Irmãos de Armas', 'Bronze', 'Derrote Penetrator com Biorr.', 'Perdível de run: resgate Biorr antes da luta e mantenha-o vivo. Biorr é NPC, não coop online.', true, true, ['Perdível', 'Perdível de run', 'Boss', 'NPC', 'Biorr', 'Condição específica', 'Atenção', 'Cleanup']],
+    ['demons_fists_of_legend', 'Fists of Legend', 'Punhos Lendários', 'Bronze', 'Derrote Dragon God com as Hands of God.', 'Perdível de run: equipe as duas Hands of God e finalize Dragon God com elas quando o chefe estiver vulnerável.', true, true, ['Perdível', 'Perdível de run', 'Boss', 'Condição específica', 'Hands of God', 'Atenção', 'Cleanup']],
+    ['demons_time_for_rolling', 'Time for Rolling', 'Hora de Rolar', 'Prata', 'Atravesse a passarela sob as flechas do Ídolo.', 'Atravesse a máquina de flechas em Prison of Hope rolando entre as rajadas antes de desativar o perigo.', false, true, ['Ação específica', 'Latria', 'Atenção', 'Cleanup']],
+    ['demons_not_fooled', 'Not Fooled', 'Não Foi Enganado', 'Prata', 'Derrote Fool\'s Idol sem acertar clones.', 'Perdível de run: ataque apenas a Fool\'s Idol verdadeira. Acertar clone invalida o troféu nesta tentativa.', true, true, ['Perdível', 'Perdível de run', 'Boss', 'Condição específica', 'Atenção', 'Cleanup']],
+    ['demons_one_shall_stand', 'One Shall Stand', 'Um Deve Ficar de Pé', 'Prata', 'Derrote Adjudicator sem fazê-lo cair.', 'Perdível de run: use arco ou magia da parte superior e mire na cabeça sem derrubar o chefe.', true, true, ['Perdível', 'Perdível de run', 'Boss', 'Condição específica', 'Atenção', 'Cleanup']],
+    ['demons_may_you_be_unharmed', 'May you be unharmed', 'Que Você Fique Ilesa', 'Prata', 'Derrote Maiden Astraea sem matar Garl Vinland.', 'Perdível de run: derrote Maiden Astraea sem matar Garl Vinland. Se matar Garl, tente em NG+.', true, true, ['Perdível', 'Perdível de run', 'Boss', 'Condição específica', 'Maiden Astraea', 'Garl Vinland', 'Atenção', 'Cleanup']],
+    ['demons_seekest_soul_power', 'Seekest soul power', 'Buscas o Poder das Almas', 'Ouro', 'Abrace o poder do Old One.', 'Perdível de run por final/rota: escolha o final correto em uma run planejada. Se precisar de Soulsucker, preserve a Maiden in Black Demon\'s Soul.', true, true, ['Perdível', 'Perdível de run', 'Final', 'Rota', 'Atenção', 'Cleanup']],
+    ['demons_a_dash_of_sage', 'A Dash of Sage', 'Um Toque de Sábio', 'Bronze', 'Resgate Sage Freke the Visionary.', 'Perdível de run: resgate Sage Freke em Prison of Hope antes de encerrar a rota. Ele libera compras importantes de magia.', true, true, ['Perdível', 'Perdível de run', 'NPC', 'Feitiços']],
+    ['demons_umbasa', 'Umbasa', 'Umbasa', 'Bronze', 'Resgate Saint Urbain.', 'Perdível de run: resgate Saint Urbain em Shrine of Storms para acessar milagres importantes.', true, true, ['Perdível', 'Perdível de run', 'NPC', 'Milagres']],
+    ['demons_worthy_of_the_sword', 'Worthy of the Sword', 'Digno da Espada', 'Prata', 'Entregue Makoto a Satsuki.', 'Perdível de run: exige Pure White World Tendency em Shrine of Storms e entrega correta da Makoto para Satsuki.', true, true, ['Perdível', 'Perdível de run', 'World Tendency', 'NPC']],
+    ['demons_road_to_possibilities', 'Road to Possibilities', 'Caminho para Possibilidades', 'Bronze', 'Entregue a Searing Demon Soul a Blacksmith Ed.', 'Não consuma a Searing Demon Soul de Flamelurker. Entregue-a a Blacksmith Ed para liberar forjas com Boss Souls.', false, true, ['Blacksmith Ed', 'Searing Demon Soul', 'Boss Souls', 'Checklist', 'Atenção', 'Cleanup']],
+    ['demons_one_of_the_few', 'One of the few', 'Um dos Poucos', 'Prata', 'Obtenha Istarelle.', 'Perdível de run: exige Pure White World Tendency em Valley of Defilement. Controle mortes em Body Form.', true, true, ['Perdível', 'Perdível de run', 'World Tendency', 'Arma']],
+    ['demons_witch_in_the_tower', 'Witch in the Tower', 'Bruxa na Torre', 'Bronze', 'Resgate Yuria the Witch.', 'Perdível de run: use o conjunto completo de Official para acessar Yuria. Ela é essencial para magias avançadas.', true, true, ['Perdível', 'Perdível de run', 'NPC', 'Feitiços']],
+    ['demons_legacy_of_the_kings', 'Legacy of the Kings', 'Legado dos Reis', 'Ouro', 'Obtenha Northern Regalia.', 'Perdível de run: planeje Soulbrandt, Demonbrandt, False King\'s Demon Soul, Ostrava/Mausoleum Key e Blacksmith Ed.', true, true, ['Perdível', 'Perdível de run', 'Arma', 'Northern Regalia', 'Boss Souls', 'Checklist', 'Cleanup']],
+    ['demons_sages_trophy', 'Sage\'s Trophy', 'Troféu do Sábio', 'Ouro', 'Obtenha todos os feitiços.', 'Perdível de run/checklist: todos os feitiços exigem Boss Souls e NPCs como Freke e Yuria. Sem backup, use NG+ e possivelmente NG++.', true, false, ['Perdível', 'Perdível de run', 'Coletável', 'Feitiços', 'Boss Souls', 'NPC', 'Freke', 'Yuria', 'Checklist', 'Grind', 'NG+', 'Cleanup']],
+    ['demons_saints_trophy', 'Saint\'s Trophy', 'Troféu do Santo', 'Ouro', 'Obtenha todos os milagres.', 'Perdível de run/checklist: todos os milagres exigem planejamento de Boss Souls, Colorless Demon\'s Souls e acesso a Saint Urbain.', true, false, ['Perdível', 'Perdível de run', 'Coletável', 'Milagres', 'Boss Souls', 'Urbain', 'Checklist', 'Grind', 'NG+', 'Cleanup']],
+    ['demons_king_of_rings', 'King of Rings', 'Rei dos Anéis', 'Ouro', 'Obtenha todos os anéis.', 'Perdível de run e maior gargalo: o remake PS5 exige 30 anéis, incluindo Providential Ring, Friend\'s Ring, Foe\'s Ring, Sodden Ring e trocas com Sparkly.', true, false, ['Perdível', 'Perdível de run', 'Coletável', 'Anéis', 'Checklist', 'World Tendency', 'Character Tendency', 'NG+', 'Grind', 'Cleanup']]
+  ];
+
+  const demonsSoulsTrophies = demonsSoulsTrophyRows.map(([id, name, namePt, type, description, tip, isMissable, isSpoiler, tags]) => ({
+    id,
+    name,
+    trophyNameOriginal: name,
+    officialName: name,
+    originalName: name,
+    name_pt: namePt,
+    trophyNamePtBr: namePt,
+    localizedNamePtBr: namePt,
+    namePtSource: 'editorial_ptbr',
+    type,
+    tier: type,
+    description,
+    descriptionPtBr: description,
+    ptDescription: description,
+    localizedDescription: { ptBr: description, 'pt-BR': description },
+    descriptionPtSource: 'editorial_ptbr',
+    tip,
+    guideTip: tip,
+    is_missable: isMissable,
+    isMissable,
+    is_spoiler: isSpoiler,
+    isSpoiler,
+    is_online: id === 'demons_return_to_form' || id === 'demons_unwelcome_guest',
+    isOnline: id === 'demons_return_to_form' || id === 'demons_unwelcome_guest',
+    is_coop: id === 'demons_return_to_form',
+    isCoop: id === 'demons_return_to_form',
+    is_dlc: false,
+    isDlc: false,
+    tags,
+    riskType: isMissable ? 'missable' : ''
+  }));
+
+  Object.assign(demonsSoulsGuide, {
+    name: 'Demon’s Souls',
+    title: 'Demon’s Souls',
+    primary_platform: 'PlayStation',
+    platforms: ['PS5'],
+    genre: 'Action RPG / Soulslike',
+    developer: 'Bluepoint Games / Japan Studio',
+    publisher: 'Sony Interactive Entertainment',
+    difficulty: 6,
+    time: '40-70h',
+    time_min_hours: 40,
+    time_max_hours: 70,
+    time_sort_hours: 55,
+    time_bucket: 'long',
+    missable: 'Demon\'s Souls Remake é uma platina Souls curta em número de troféus, mas delicada por World Tendency, Character Tendency, anéis, feitiços, milagres, Boss Souls, NPCs, finais e dois troféus online.',
+    runs_summary: '2 runs com backup/save scum bem planejado ou 3 runs sem backup para Boss Souls de feitiços e milagres.',
+    missable_summary: 'Sim. A taxonomia conservadora marca 16 perdíveis de run ligados a tendência, NPCs, Boss Souls, chefes condicionais, final, anéis, feitiços e milagres.',
+    online_summary: 'Online obrigatório para a platina completa do remake PS5: Return to Form exige ajudar outro jogador a derrotar um chefe e Unwelcome Guest exige derrotar outro jogador como invasor.',
+    grind_summary: 'O peso está em NG+, checklist de Boss Souls, 30 anéis, todos os feitiços, todos os milagres e cleanup de tendência; não é farm infinito, mas há repetição planejada.',
+    dlc_scope: 'Base game sem DLCs. O guia cobre a lista de 37 troféus do remake PS5 e não mistura a lista PS3.',
+    difficulty_reason: '6/10: não há troféu de dificuldade selecionável. A dificuldade vem do combate Soulslike, NG+, tendência, escolhas e planejamento de recursos únicos.',
+    time_reason: '40-70 horas dependendo de habilidade, build, online, controle de tendência, uso de backup e quantidade de runs para Boss Souls.',
+    first_run_advice: 'Jogue em Soul Form, morra no Nexus depois de chefes, faça Pure White antes de Pure Black, resgate Freke/Urbain/Yuria e não consuma Boss Souls.',
+    cleanup_advice: 'Use NG+ ou NG++ para Boss Souls, feitiços, milagres, anéis, chefes condicionais perdidos, tendências e os dois troféus online pendentes.',
+    before_you_start: 'Este guia é para Demon\'s Souls Remake de PS5, não para a lista PS3. A versão PS5 tem 37 troféus, 30 anéis e dois troféus online; não inclui troféus antigos de evolução de armas.',
+    best_for: 'Ideal para quem quer uma platina Soulslike de planejamento, checklist e rotas de tendência.',
+    avoid_if: 'Evite se você não quer lidar com online, tendência, múltiplas runs, Boss Souls e troféus que podem ir para NG+ se feitos errado.',
+    hasMissables: true,
+    missableCount: demonsSoulsMissableIds.size,
+    missable_count: demonsSoulsMissableIds.size,
+    onlineRequired: true,
+    coopRequired: true,
+    coopRequirementLabel: 'Coop online pontual',
+    dlcRequired: false,
+    hasOnline: true,
+    hasCoop: true,
+    requiresOnline: true,
+    requiresCoop: true,
+    dlcRequiredForPlatinum: false,
+    difficultyTrophiesRequired: false,
+    playthroughs: '2 runs com backup ou 3 runs sem backup',
+    platinumType: 'online',
+    guideFocus: 'World Tendency, Character Tendency, King of Rings, Boss Souls, Freke, Urbain, Yuria, Return to Form e Unwelcome Guest',
+    status: 'published',
+    editorial_status: 'published',
+    editorialStatus: 'verified',
+    editorial_review_status: 'verified',
+    coverage_level: 'complete',
+    is_verified: true,
+    verification_status: 'verified',
+    quality_warnings: [],
+    last_reviewed_at: '2026-06-14',
+    reviewed_by: 'AtlasAchievement',
+    verification_note: 'Guia revisado para publicação: Demon\'s Souls Remake PS5 com 37 troféus, distribuição 1/5/9/22, online obrigatório, sem DLC, sem troféu de dificuldade e 16 perdíveis de run.',
+    editorial_notes: 'Revisão editorial focada no remake PS5, World Tendency, Character Tendency, 30 anéis, Boss Souls, NPCs, feitiços, milagres, online e separação da lista PS3.',
+    editorial_summary: [
+      'Demon\'s Souls Remake é uma platina Souls curta em número de troféus, mas muito delicada por World Tendency, Character Tendency, anéis, feitiços, milagres, Boss Souls e dois troféus online.',
+      'A rota segura é jogar em Soul Form, morrer no Nexus depois de chefes, fazer Pure White antes de Pure Black, guardar Boss Souls e planejar NG+/NG++ conforme o uso de backup.'
+    ],
+    seo: {
+      title: 'Demon’s Souls: Guia de Troféus e Platina',
+      description: 'Guia de troféus de Demon’s Souls Remake no PS5 com roadmap da platina, World Tendency, Character Tendency, anéis, feitiços, milagres, Boss Souls, troféus online e dicas para os 37 troféus.',
+      metaDescription: 'Guia de troféus de Demon’s Souls Remake no PS5 com roadmap da platina, World Tendency, Character Tendency, anéis, feitiços, milagres, Boss Souls, troféus online e dicas para os 37 troféus.',
+      ogTitle: 'Demon’s Souls: Guia de Troféus e Platina',
+      ogDescription: 'Roadmap PT-BR da platina de Demon’s Souls Remake PS5 com tendência, anéis, Boss Souls, online e 37 troféus.',
+      keywords: ['Demon’s Souls troféus', 'Demon’s Souls platina', 'guia Demon’s Souls PS5', 'Demon’s Souls Remake troféus', 'Slayer of Trophies', 'King of Rings', 'Sage\'s Trophy', 'Saint\'s Trophy', 'World Tendency', 'Character Tendency', 'Providential Ring', 'Return to Form', 'Unwelcome Guest', 'Demon’s Souls online trophies', 'Demon’s Souls rings', 'Demon’s Souls spells miracles']
+    },
+    quickDecision: {
+      verdict: 'Sim, mas é uma platina de planejamento. Boa para quem aceita seguir checklist de tendência, anéis e Boss Souls.',
+      difficulty: 'Moderada a alta.',
+      time: 'Médio a longo, cerca de 40 a 70 horas.',
+      mainRisk: 'World Tendency, Character Tendency, King of Rings, Boss Souls, Freke/Urbain/Yuria e os dois troféus online.',
+      risk: 'Alto se jogar às cegas, porque escolhas e tendências podem empurrar troféus para NG+.',
+      onlineCoop: 'Exige online para Return to Form e Unwelcome Guest; há ajuda online em um troféu e invasão PvP em outro.',
+      dlc: 'Não exige DLC.',
+      firstAction: 'Comece em Soul Form, escolha Providential Ring se quiser segurança e não consuma Boss Souls.'
+    },
+    attentionPoints: demonsSoulsAttentionPoints,
+    checklist: demonsSoulsChecklist,
+    faq: demonsSoulsFaq,
+    roadmap: demonsSoulsRoadmap,
+    roadmapStages: demonsSoulsRoadmap,
+    trophies: demonsSoulsTrophies
+  });
+}
+
 const beyondTwoSoulsGuide = sampleGames.find(game => game.slug === 'beyond-two-souls');
 if (beyondTwoSoulsGuide) {
   const beyondRoadmap = [
@@ -49568,8 +49930,8 @@ if (beyondTwoSoulsGuide) {
 
   const beyondTrophyRows = [
     ['beyond-two-souls-master', 'BEYOND: TWO SOULS™ MASTER', 'MESTRE DO BEYOND: TWO SOULS', 'Platina', 'Colete todos os troféus.', 'Desbloqueie os outros 45 troféus da lista base. Não há DLC separada exigida.', false, false, ['Platina', 'Conclusão']],
-    ['beyond-two-souls-all-endings', 'All Endings...', 'Todos os Finais...', 'Ouro', 'Veja todos os finais.', 'Veja as variações necessárias usando rotas com todos vivos, todos mortos e replays de Black Sun/Epílogo. Trate como Final/Rota/Replay, não como perdível principal.', false, true, ['Final', 'Rota', 'Replay', 'Grind', 'Atenção']],
-    ['beyond-two-souls-together-till-the-end', 'Together Till the End', 'Juntos até o Fim', 'Ouro', 'Termine o jogo em Duo Mode.', 'Conclua a campanha inteira em Duo Mode. Use dois controles ou aplicativo; é modo em dupla local, não online obrigatório.', false, false, ['Duo Mode', 'Modo em dupla', 'Coop', 'Coop local']],
+    ['beyond-two-souls-all-endings', 'All Endings...', 'Todos os Finais...', 'Ouro', 'Veja todos os finais.', 'Veja as variações necessárias usando rotas com todos vivos, todos mortos e replays de Black Sun/Epílogo. Trate como Final/Rota/Replay, não como perdível principal.', false, true, ['Final', 'Rota', 'Replay', 'Atenção']],
+    ['beyond-two-souls-together-till-the-end', 'Together Till the End', 'Juntos até o Fim', 'Ouro', 'Termine o jogo em Duo Mode.', 'Conclua a campanha inteira em Duo Mode. Use dois controles ou o aplicativo. É um modo em dupla local/app, não online obrigatório. Confirme o Duo Mode sempre que voltar ao menu.', false, false, ['Duo Mode', 'Modo em dupla', 'Coop local']],
     ['beyond-two-souls-saved-all', 'Saved All', 'Salvou Todos', 'Ouro', 'Salve todos os personagens que podem ser salvos.', 'Perdível de run: salve Jimmy, Walter, Paul, Norah, Cole e Ryan na mesma rota contínua.', true, true, ['Perdível', 'Perdível de run', 'Todos vivos', 'Rota', 'Chapter Select']],
     ['beyond-two-souls-the-end', 'The End', 'O Fim', 'Prata', 'Uma realidade possível foi revelada.', 'Complete a história e veja um final. Outros finais entram em All Endings.', false, true, ['História', 'Final']],
     ['beyond-two-souls-uncontrollable', 'Uncontrollable', 'Incontrolável', 'Prata', 'Aproveite todas as oportunidades para ser mau como Aiden.', 'Perdível de run: execute todas as ações destrutivas de Aiden em capítulos específicos. Planeje em rota dedicada.', true, true, ['Perdível', 'Perdível de run', 'Aiden', 'Ação específica', 'Rota']],
@@ -49679,6 +50041,7 @@ if (beyondTwoSoulsGuide) {
     missable_count: 4,
     onlineRequired: false,
     coopRequired: true,
+    coopRequirementLabel: 'Duo Mode obrigatório',
     dlcRequired: false,
     hasOnline: false,
     hasCoop: true,
