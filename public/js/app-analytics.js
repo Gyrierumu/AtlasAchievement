@@ -5,6 +5,7 @@ window.AtlasAnalytics = (() => {
   let catalogSearchTimer = null;
 
   const seoPageMap = {
+    '/privacidade': 'privacy_policy',
     '/comece-aqui': 'start_here',
     '/platinas-faceis': 'easy_platinums',
     '/platinas-curtas': 'short_platinums',

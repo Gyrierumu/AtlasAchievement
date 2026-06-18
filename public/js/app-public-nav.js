@@ -2,6 +2,26 @@ window.AppPublicNav = (() => {
   const DEFAULT_SOCIAL_IMAGE_PATH = '/assets/brand/atlasachievement-og.png';
 
   const organicSeoPages = {
+    '/sobre': {
+      view: 'seo-page',
+      title: 'Sobre | AtlasAchievement',
+      description: 'Conheça o AtlasAchievement, um projeto brasileiro focado em guias de troféus, conquistas, platinas, roadmaps e checklists para jogadores.'
+    },
+    '/contato': {
+      view: 'seo-page',
+      title: 'Contato | AtlasAchievement',
+      description: 'Entre em contato com o AtlasAchievement para enviar dúvidas, sugestões, correções de guias, feedback, parcerias ou solicitações relacionadas ao site.'
+    },
+    '/privacidade': {
+      view: 'seo-page',
+      title: 'Política de Privacidade | AtlasAchievement',
+      description: 'Entenda como o AtlasAchievement coleta, utiliza, protege e trata dados pessoais, cookies, informações de conta, progresso, analytics e publicidade.'
+    },
+    '/termos': {
+      view: 'seo-page',
+      title: 'Termos de Uso | AtlasAchievement',
+      description: 'Leia os termos de uso do AtlasAchievement e entenda as regras para acessar guias, usar funcionalidades, criar conta e navegar pelo site.'
+    },
     '/comece-aqui': {
       view: 'seo-page',
       title: 'Comece por aqui | AtlasAchievement',

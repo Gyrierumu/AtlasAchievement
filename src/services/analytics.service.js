@@ -13,6 +13,7 @@ const PUBLIC_EVENT_TYPES = new Set([
 ]);
 
 const SEO_PAGE_TYPES = new Map([
+  ['/privacidade', 'privacy_policy'],
   ['/comece-aqui', 'start_here'],
   ['/platinas-faceis', 'easy_platinums'],
   ['/platinas-curtas', 'short_platinums'],

@@ -60,6 +60,9 @@
     re3r_somebody_to_lean_on: { remove: ['collectible'], add: ['story'] },
     re3r_escape_city: { remove: ['collectible'], add: ['story'] }
   };
+  const FINAL_FANTASY_VII_REBIRTH_TAG_FIXES_BY_ID = {
+    'ff7-rebirth-professional-handler': { remove: ['difficulty'] }
+  };
   const EDITORIAL_TRUST_STATUSES = {
     verified: {
       label: 'Verificado',
@@ -238,6 +241,12 @@
     }
     if (RESIDENT_EVIL_3_TAG_FIXES_BY_ID[trophyId]) {
       const fix = RESIDENT_EVIL_3_TAG_FIXES_BY_ID[trophyId];
+      const filtered = tags.filter(tag => !(fix.remove || []).includes(tag.id));
+      (fix.add || []).forEach(id => pushRiskTag(filtered, id));
+      return filtered;
+    }
+    if (FINAL_FANTASY_VII_REBIRTH_TAG_FIXES_BY_ID[trophyId]) {
+      const fix = FINAL_FANTASY_VII_REBIRTH_TAG_FIXES_BY_ID[trophyId];
       const filtered = tags.filter(tag => !(fix.remove || []).includes(tag.id));
       (fix.add || []).forEach(id => pushRiskTag(filtered, id));
       return filtered;

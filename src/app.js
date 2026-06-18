@@ -36,12 +36,14 @@ const DEFAULT_SOCIAL_IMAGE_PATH = '/assets/brand/atlasachievement-og.png';
 const NO_STORE_CACHE_CONTROL = 'no-cache, no-store, must-revalidate';
 const NO_CACHE_CONTROL = 'no-cache';
 const IMMUTABLE_CACHE_CONTROL = 'public, max-age=31536000, immutable';
+const INSTITUTIONAL_EMAIL = 'atlasachievement08@gmail.com';
 const APP_VERSION = [
   packageJson.version || '0.0.0',
   process.env.APP_VERSION || process.env.RENDER_GIT_COMMIT || process.env.COMMIT_SHA || process.env.SOURCE_VERSION || process.env.BUILD_ID || process.env.RENDER_SERVICE_ID || ''
 ].filter(Boolean).join('-');
 const HOME_SEO_TITLE = 'AtlasAchievement — Guias de troféus e platina em português';
 const HOME_SEO_DESCRIPTION = 'Escolha sua próxima platina com tempo estimado, dificuldade, roadmap, checklist, troféus perdíveis, online/coop e guias em português.';
+const INSTITUTIONAL_KICKER_STYLE = 'letter-spacing:0;';
 const REQUIEM_EDITORIAL_SUMMARY = [
   'Resident Evil Requiem combina campanha, coletáveis, objetivos situacionais e runs condicionais. A platina gira em torno de acompanhar saves manuais, controlar arquivos e colecionáveis, separar troféus de personagem e planejar restrições como speedrun, cura e uso do Blood Collector.',
   'O ponto mais importante é não tratar toda tarefa situacional como perdível definitivo. Alguns objetivos exigem atenção em janelas específicas, mas muitos podem ser organizados com saves, nova run ou cleanup. Use a checklist para separar riscos reais, spoilers, coletáveis, dificuldade e objetivos acumuláveis.',
@@ -1121,7 +1123,7 @@ function buildGuideFaqStructuredData(canonicalUrl, viewModel) {
 function renderGuideEditorialNotesHtml(game = {}, viewModel = {}) {
   const normalizedSlug = String(game?.slug || '').trim().toLowerCase();
   const routeTrophyLimit = normalizedSlug === 'red-dead-redemption-2' ? 11 : (normalizedSlug === 'marvels-spider-man-2' ? 8 : 5);
-  const explicitAttentionPoints = ['baldurs-gate-3', 'dark-souls-ii-scholar-of-the-first-sin', 'days-gone', 'hogwarts-legacy', 'horizon-forbidden-west', 'horizon-zero-dawn', 'lies-of-p', 'lords-of-the-fallen', 'sekiro-shadows-die-twice', 'until-dawn'].includes(normalizedSlug) && Array.isArray(game?.attentionPoints)
+  const explicitAttentionPoints = ['baldurs-gate-3', 'dark-souls-ii-scholar-of-the-first-sin', 'days-gone', 'demons-souls', 'final-fantasy-xvi', 'hogwarts-legacy', 'horizon-forbidden-west', 'horizon-zero-dawn', 'lies-of-p', 'lords-of-the-fallen', 'sekiro-shadows-die-twice', 'until-dawn'].includes(normalizedSlug) && Array.isArray(game?.attentionPoints)
     ? game.attentionPoints.map(item => {
       const tags = Array.isArray(item?.tags)
         ? item.tags.map(tag => {
@@ -1140,7 +1142,7 @@ function renderGuideEditorialNotesHtml(game = {}, viewModel = {}) {
   const routeTrophies = explicitAttentionPoints.length
     ? explicitAttentionPoints
     : (Array.isArray(viewModel.routeChangingTrophies) ? viewModel.routeChangingTrophies.slice(0, routeTrophyLimit) : []);
-  const faqLimit = normalizedSlug === 'marvels-spider-man-miles-morales' ? 12 : (['baldurs-gate-3', 'dark-souls-ii-scholar-of-the-first-sin', 'lies-of-p', 'lords-of-the-fallen', 'nioh-3', 'saros', 'sekiro-shadows-die-twice', 'the-last-of-us-part-ii'].includes(normalizedSlug) ? 12 : (['days-gone', 'hogwarts-legacy', 'horizon-forbidden-west', 'horizon-zero-dawn', 'the-last-of-us-part-i', 'subnautica', 'until-dawn'].includes(normalizedSlug) ? 10 : (normalizedSlug === 'dark-souls-remastered' ? 9 : (['god-of-war-ragnarok', 'resident-evil-2-remake', 'resident-evil-3-remake', 'hollow-knight', 'marvels-spider-man'].includes(normalizedSlug) ? 8 : (normalizedSlug === 'red-dead-redemption-2' ? 7 : 6)))));
+  const faqLimit = normalizedSlug === 'marvels-spider-man-miles-morales' ? 12 : (['baldurs-gate-3', 'dark-souls-ii-scholar-of-the-first-sin', 'demons-souls', 'final-fantasy-xvi', 'lies-of-p', 'lords-of-the-fallen', 'nioh-3', 'saros', 'sekiro-shadows-die-twice', 'the-last-of-us-part-ii'].includes(normalizedSlug) ? 12 : (['days-gone', 'hogwarts-legacy', 'horizon-forbidden-west', 'horizon-zero-dawn', 'the-last-of-us-part-i', 'subnautica', 'until-dawn'].includes(normalizedSlug) ? 10 : (normalizedSlug === 'dark-souls-remastered' ? 9 : (['god-of-war-ragnarok', 'resident-evil-2-remake', 'resident-evil-3-remake', 'hollow-knight', 'marvels-spider-man'].includes(normalizedSlug) ? 8 : (normalizedSlug === 'red-dead-redemption-2' ? 7 : 6)))));
   const faqItems = Array.isArray(viewModel.contextualFaq) ? viewModel.contextualFaq.slice(0, faqLimit) : [];
   const playerFit = viewModel.playerFit || buildGuidePlayerFit(game, viewModel);
   const methodItems = Array.isArray(viewModel.editorial?.methodItems) ? viewModel.editorial.methodItems : [];
@@ -1150,6 +1152,11 @@ function renderGuideEditorialNotesHtml(game = {}, viewModel = {}) {
     : ['resident-evil-requiem', 'resident-evil-4-remake', 'hades', 'ghost-of-tsushima', 'god-of-war', 'god-of-war-2018', 'hades-ii', 'astro-bot', 'pragmata', 'saros', 'nioh-2', 'nioh-3', 'the-last-of-us-part-i'].includes(normalizedSlug)
       ? 'Respostas rápidas sobre perdíveis, online, coop, tempo, dificuldade e DLC da lista base.'
       : 'Respostas rápidas sobre perdíveis, online, coop, tempo, dificuldade e DLC da platina base.';
+  const attentionIntro = normalizedSlug === 'demons-souls'
+    ? 'Online, tendências, anéis, Boss Souls e chefes condicionais que merecem acompanhamento durante a platina.'
+    : (normalizedSlug === 'final-fantasy-xvi'
+      ? 'Materiais, Final Fantasy Mode, DLCs separadas e objetivos de cleanup que merecem acompanhamento durante a platina.'
+      : 'Riscos, spoilers, runs condicionais e objetivos que merecem acompanhamento durante a platina.');
   return `
     <section id="guideEditorialNotesPanel" class="atlas-panel atlas-panel--editorial atlas-editorial-notes p-5 md:p-6">
       <div class="atlas-section-head atlas-section-head--compact">
@@ -1164,7 +1171,7 @@ function renderGuideEditorialNotesHtml(game = {}, viewModel = {}) {
           <details class="atlas-editorial-note" open>
             <summary><span>Pontos de atenção</span><small>${escapeHtml(String(routeTrophies.length || 0))}</small></summary>
             <div class="atlas-editorial-notes__column">
-            <p class="atlas-muted-copy">Riscos, spoilers, runs condicionais e objetivos que merecem acompanhamento durante a platina.</p>
+            <p class="atlas-muted-copy">${escapeHtml(attentionIntro)}</p>
             ${routeTrophies.length ? routeTrophies.map(item => {
               const badge = Array.isArray(item.tags) && item.tags.length ? item.tags[0] : null;
               return `<article class="atlas-critical-row"><div><strong>${escapeHtml(item.name)}</strong><p>${escapeHtml(item.text)}</p></div><span class="atlas-badge atlas-badge--${escapeHtml(badge?.tone || 'neutral')}">${escapeHtml(badge?.label || item.type)}</span></article>`;
@@ -2154,6 +2161,310 @@ function renderOrganicListFinalCta() {
     </section>`;
 }
 
+function renderPrivacyPolicyPageContent() {
+  return `
+    <section class="atlas-panel atlas-panel--primary atlas-start-here-hero">
+      ${buildBreadcrumbsHtml([{ label: 'Início', href: '/' }, { label: 'Política de Privacidade' }])}
+      <span class="atlas-section-kicker" style="${INSTITUTIONAL_KICKER_STYLE}">PRIVACIDADE</span>
+      <h1>Política de Privacidade</h1>
+      <p>O AtlasAchievement respeita a privacidade de quem usa o site. Esta Política de Privacidade explica, de forma clara, como dados pessoais, informações de navegação, cookies e tecnologias semelhantes podem ser coletados, usados, armazenados e protegidos.</p>
+      <p>Última atualização: 18 de junho de 2026</p>
+    </section>
+
+    <section class="atlas-start-here-grid" aria-label="Resumo da política">
+      <article class="atlas-panel atlas-panel--support atlas-start-here-block">
+        <h2>Quem somos</h2>
+        <p>O AtlasAchievement é um projeto brasileiro de guias de troféus, conquistas e platinas de jogos, disponível em atlasachievement.com.br.</p>
+      </article>
+      <article class="atlas-panel atlas-panel--support atlas-start-here-block">
+        <h2>Escopo</h2>
+        <p>Esta política vale para o uso do site, incluindo catálogo, guias, checklist, biblioteca, conta de usuário, formulários de feedback, métricas e publicidade quando aplicável.</p>
+      </article>
+    </section>
+
+    <section class="atlas-panel atlas-panel--support atlas-start-here-block">
+      <h2>Dados que podemos coletar</h2>
+      <p>Dependendo de como você usa o AtlasAchievement, podemos coletar dados de cadastro, como username, e-mail e nome exibido; dados de login e autenticação; informações de perfil informadas pelo usuário, como bio e URL de avatar; progresso salvo em guias e checklists; jogos salvos na biblioteca pessoal; status de jogos, datas de criação, atualização e último acesso; interações com o site; e mensagens enviadas por feedback.</p>
+      <p>Também podemos tratar dados técnicos, como endereço IP, navegador, dispositivo, sistema operacional, páginas acessadas, data e horário de acesso, eventos de uso, cookies, localStorage, sessionStorage e tecnologias semelhantes. O formulário de feedback pode coletar mensagem, tipo de feedback, jogo relacionado, página onde ocorreu o problema, nome ou apelido e e-mail, quando informados.</p>
+    </section>
+
+    <section class="atlas-panel atlas-panel--support atlas-start-here-block">
+      <h2>Como usamos os dados</h2>
+      <p>Usamos dados para permitir login e funcionamento da conta, salvar biblioteca, checklist e progresso, importar progresso salvo no navegador para a conta, exibir informações do perfil, melhorar a experiência de navegação, responder mensagens de contato ou feedback, corrigir bugs, proteger o site contra abuso, entender o uso por métricas e analytics, cumprir obrigações legais e, quando aplicável, exibir anúncios por meio do Google AdSense ou parceiros de publicidade.</p>
+    </section>
+
+    <section class="atlas-panel atlas-panel--support atlas-start-here-block">
+      <h2>Cookies e tecnologias semelhantes</h2>
+      <p>O AtlasAchievement utiliza cookies necessários para manter sessões de login e recursos de segurança, incluindo proteção CSRF. Também pode utilizar armazenamento local do navegador, como localStorage e sessionStorage, para manter preferências, biblioteca, progresso de checklist, avisos já vistos e eventos temporários de uso.</p>
+      <p>Quando aplicável, cookies de analytics ajudam a entender desempenho, páginas acessadas e melhorias necessárias. Cookies de publicidade podem ser usados pelo Google AdSense ou por parceiros para exibição, medição e personalização ou não personalização de anúncios. Você pode gerenciar cookies e dados de navegação nas configurações do seu navegador, mas bloquear cookies necessários pode afetar login, conta e recursos salvos.</p>
+    </section>
+
+    <section class="atlas-panel atlas-panel--support atlas-start-here-block">
+      <h2>Google AdSense e publicidade</h2>
+      <p>O AtlasAchievement poderá exibir anúncios fornecidos pelo Google AdSense ou por parceiros de publicidade. Terceiros, incluindo o Google, podem utilizar cookies para veicular anúncios com base nas visitas anteriores do usuário a este e a outros sites. O uso de cookies de publicidade permite que o Google e seus parceiros exibam anúncios personalizados ou não personalizados, conforme as configurações do usuário e as regras aplicáveis.</p>
+      <p>Anúncios podem usar cookies, identificadores e tecnologias semelhantes para exibição, limitação de frequência, medição e prevenção de fraude. O usuário pode gerenciar a personalização de anúncios nas configurações de anúncios do Google. O AtlasAchievement não controla individualmente todos os cookies de terceiros usados por redes de anúncios.</p>
+    </section>
+
+    <section class="atlas-panel atlas-panel--support atlas-start-here-block">
+      <h2>Google Analytics e métricas</h2>
+      <p>O AtlasAchievement possui métricas próprias para entender uso do catálogo, guias, busca, checklist, feedback e páginas informativas. Em produção, também podemos utilizar ferramentas de análise, como Google Analytics ou similares, caso configuradas, para coletar dados agregados sobre navegação, desempenho, páginas acessadas e melhorias do site.</p>
+    </section>
+
+    <section class="atlas-panel atlas-panel--support atlas-start-here-block">
+      <h2>Compartilhamento de dados</h2>
+      <p>Podemos compartilhar dados com provedores de hospedagem, banco de dados, serviços necessários ao funcionamento do site, ferramentas de autenticação e segurança, ferramentas de analytics, plataformas de anúncios e autoridades públicas quando exigido por lei. O AtlasAchievement não vende dados pessoais dos usuários.</p>
+    </section>
+
+    <section class="atlas-panel atlas-panel--support atlas-start-here-block">
+      <h2>Armazenamento e segurança</h2>
+      <p>Os dados são armazenados pelo tempo necessário para cumprir as finalidades descritas nesta política, manter a conta e a biblioteca do usuário, preservar a segurança do serviço, atender solicitações e cumprir obrigações legais. Adotamos medidas razoáveis de segurança, como senhas protegidas por hash, cookies de sessão com HttpOnly, validações, proteção CSRF e controles de acesso.</p>
+      <p>Nenhum sistema é 100% imune a falhas. Por isso, o usuário também deve proteger suas credenciais, evitar reutilizar senhas e encerrar a sessão em dispositivos compartilhados.</p>
+    </section>
+
+    <section class="atlas-panel atlas-panel--support atlas-start-here-block">
+      <h2>Direitos do usuário</h2>
+      <p>Nos termos da LGPD, você pode solicitar confirmação da existência de tratamento, acesso aos dados, correção de dados incompletos ou incorretos, exclusão quando aplicável, revogação de consentimento quando aplicável, informações sobre uso e compartilhamento e portabilidade quando aplicável. Algumas solicitações podem depender de validação de identidade ou ser limitadas por obrigações legais e de segurança.</p>
+      <p>O site também oferece recursos de conta que permitem exportar dados, limpar progresso e excluir a conta quando o usuário estiver autenticado.</p>
+    </section>
+
+    <section class="atlas-panel atlas-panel--support atlas-start-here-block">
+      <h2>Crianças e adolescentes</h2>
+      <p>O AtlasAchievement é um site sobre jogos, mas não é direcionado especificamente a crianças pequenas. Menores de idade devem utilizar o site com orientação de seus responsáveis. Se um responsável identificar coleta indevida de dados de menor, pode solicitar avaliação e remoção dos dados.</p>
+    </section>
+
+    <section class="atlas-panel atlas-panel--support atlas-start-here-block">
+      <h2>Links externos</h2>
+      <p>O site pode conter links para PlayStation, Steam, Xbox, fontes de jogos, lojas, vídeos, guias externos, redes sociais ou outros sites. O AtlasAchievement não se responsabiliza pelas práticas de privacidade, conteúdo ou segurança de sites de terceiros. Recomendamos a leitura das políticas de privacidade desses serviços.</p>
+    </section>
+
+    <section class="atlas-panel atlas-panel--support atlas-start-here-block">
+      <h2>Alterações nesta política</h2>
+      <p>Esta Política de Privacidade pode ser atualizada para refletir mudanças no site, em recursos, em ferramentas utilizadas ou em exigências legais. Quando isso ocorrer, a data de atualização será ajustada nesta página.</p>
+    </section>
+
+    <section class="atlas-panel atlas-panel--flat atlas-start-here-cta">
+      <div>
+        <span class="atlas-section-kicker" style="${INSTITUTIONAL_KICKER_STYLE}">CONTATO</span>
+        <p class="text-white/65 mt-2">Em caso de dúvidas sobre esta Política de Privacidade ou sobre o tratamento de dados, entre em contato pelo e-mail: <a href="mailto:${INSTITUTIONAL_EMAIL}" class="atlas-text-action">${INSTITUTIONAL_EMAIL}</a></p>
+      </div>
+    </section>`;
+}
+
+function buildPrivacyPolicyStructuredData(origin, canonicalUrl) {
+  return {
+    '@context': 'https://schema.org',
+    '@type': 'PrivacyPolicy',
+    name: 'Política de Privacidade',
+    url: canonicalUrl,
+    publisher: {
+      '@type': 'Organization',
+      name: 'AtlasAchievement',
+      url: origin
+    },
+    dateModified: '2026-06-18'
+  };
+}
+
+async function buildPrivacyPolicyPageHtml(req) {
+  const origin = getPublicOrigin(req);
+  const canonicalUrl = buildPublicUrl(req, '/privacidade');
+  const title = 'Política de Privacidade | AtlasAchievement';
+  const description = 'Entenda como o AtlasAchievement coleta, utiliza, protege e trata dados pessoais, cookies, informações de conta, progresso, analytics e publicidade.';
+
+  return finalizeInstitutionalPageHtml(applyTemplateDefaults(publicIndexTemplate
+    .replace(/__PAGE_TITLE__/g, escapeHtml(title))
+    .replace(/__PAGE_DESCRIPTION__/g, escapeHtml(description))
+    .replace(/__ROBOTS_META__/g, '')
+    .replace(/__PAGE_OG_TYPE__/g, 'website')
+    .replace(/__PAGE_CANONICAL__/g, escapeHtml(canonicalUrl))
+    .replace(/__PAGE_OG_IMAGE__/g, resolveMetaImage(origin))
+    .replace(/__PAGE_JSON_LD__/g, safeJsonForHtml(buildPrivacyPolicyStructuredData(origin, canonicalUrl)))
+    .replace(/__HOME_VIEW_CLASS__/g, 'hidden')
+    .replace(/__HOME_HERO_HEADING_TAG__/g, 'h2')
+    .replace(/__SEO_VIEW_CLASS__/g, '')
+    .replace(/__SEO_PAGE_CONTENT__/g, renderPrivacyPolicyPageContent())
+    .replace(/__INITIAL_STATE_SCRIPT__/g, buildInitialStateScript({ page: 'seo', path: '/privacidade' }))));
+}
+
+function finalizeInstitutionalPageHtml(html = '') {
+  return String(html || '')
+    .replace('Algumas informações podem estar em revisão.', 'Algumas informações podem ser atualizadas.');
+}
+
+function renderTermsPageContent() {
+  return `
+    <section class="atlas-panel atlas-panel--primary atlas-start-here-hero">
+      ${buildBreadcrumbsHtml([{ label: 'Início', href: '/' }, { label: 'Termos de Uso' }])}
+      <span class="atlas-section-kicker" style="${INSTITUTIONAL_KICKER_STYLE}">TERMOS</span>
+      <h1>Termos de Uso</h1>
+      <p>Ao acessar e utilizar o AtlasAchievement, você concorda com estes Termos de Uso. Leia com atenção para entender as regras aplicáveis ao acesso aos guias, criação de conta, uso de funcionalidades e navegação pelo site.</p>
+      <p>Última atualização: 18 de junho de 2026</p>
+    </section>
+
+    <section class="atlas-start-here-grid" aria-label="Resumo dos termos">
+      <article class="atlas-panel atlas-panel--support atlas-start-here-block">
+        <h2>Sobre o AtlasAchievement</h2>
+        <p>O AtlasAchievement é um site brasileiro voltado a guias de troféus, conquistas, platinas, roadmaps, checklists e informações relacionadas a jogos.</p>
+      </article>
+      <article class="atlas-panel atlas-panel--support atlas-start-here-block">
+        <h2>Uso do site</h2>
+        <p>Você deve utilizar o site de forma adequada, sem tentar prejudicar seu funcionamento, explorar falhas, acessar áreas restritas sem autorização ou usar o conteúdo de forma abusiva.</p>
+      </article>
+    </section>
+
+    <section class="atlas-panel atlas-panel--support atlas-start-here-block">
+      <h2>Conta de usuário</h2>
+      <p>O AtlasAchievement oferece recursos de cadastro, login, biblioteca e progresso salvo. O usuário é responsável pelas informações fornecidas, por manter seus dados de acesso protegidos e por qualquer atividade realizada em sua conta. O AtlasAchievement pode limitar, suspender ou remover acesso em caso de abuso, fraude, uso indevido, tentativa de violação de segurança ou descumprimento destes Termos.</p>
+    </section>
+
+    <section class="atlas-panel atlas-panel--support atlas-start-here-block">
+      <h2>Conteúdo dos guias</h2>
+      <p>Os guias são criados para ajudar jogadores a se organizarem melhor. Mesmo com cuidado editorial, podem existir erros, informações incompletas ou mudanças causadas por atualizações de jogos, DLCs, patches, diferenças de plataforma ou alterações nas listas de troféus e conquistas. O AtlasAchievement busca manter as informações corretas, mas não garante que todos os dados estarão sempre atualizados. Use as informações por sua conta e avalie o contexto do seu jogo, plataforma e versão.</p>
+    </section>
+
+    <section class="atlas-panel atlas-panel--support atlas-start-here-block">
+      <h2>Propriedade intelectual</h2>
+      <p>Textos, organização, layout, marca AtlasAchievement, estrutura dos guias e conteúdos próprios pertencem ao projeto. Nomes de jogos, imagens, marcas, troféus, conquistas, plataformas e materiais de terceiros pertencem aos seus respectivos donos. O uso de nomes de jogos e marcas no AtlasAchievement tem finalidade informativa, editorial e de referência.</p>
+    </section>
+
+    <section class="atlas-panel atlas-panel--support atlas-start-here-block">
+      <h2>Uso permitido e proibido</h2>
+      <p>Você não deve copiar grandes partes do site sem autorização, realizar scraping abusivo, tentar derrubar ou sobrecarregar o serviço, burlar login ou áreas privadas, enviar spam, conteúdo ofensivo ou malicioso, inserir scripts, explorar vulnerabilidades ou usar o site para fins ilegais.</p>
+    </section>
+
+    <section class="atlas-panel atlas-panel--support atlas-start-here-block">
+      <h2>Links externos</h2>
+      <p>O site pode conter links para PlayStation, Steam, Xbox, lojas, vídeos, fontes, redes sociais ou outros sites. O AtlasAchievement não se responsabiliza pelo conteúdo, disponibilidade, segurança ou práticas de privacidade desses terceiros.</p>
+    </section>
+
+    <section class="atlas-panel atlas-panel--support atlas-start-here-block">
+      <h2>Anúncios e monetização</h2>
+      <p>O AtlasAchievement poderá exibir anúncios, incluindo Google AdSense ou parceiros de publicidade. Esses anúncios podem ser personalizados ou não personalizados conforme cookies, configurações do usuário, consentimentos disponíveis e políticas aplicáveis.</p>
+    </section>
+
+    <section class="atlas-panel atlas-panel--support atlas-start-here-block">
+      <h2>Limitação de responsabilidade</h2>
+      <p>O AtlasAchievement não se responsabiliza por decisões tomadas com base nos guias, perda de progresso em jogos, mudanças feitas por patches, indisponibilidade temporária do site, problemas causados por serviços de terceiros ou diferenças entre versões, plataformas e regiões. A proposta do site é oferecer apoio editorial e organização, não substituir a verificação do usuário dentro do jogo.</p>
+    </section>
+
+    <section class="atlas-panel atlas-panel--support atlas-start-here-block">
+      <h2>Alterações nos Termos</h2>
+      <p>Estes Termos de Uso podem ser atualizados para refletir mudanças no site, nas funcionalidades, na legislação ou em práticas editoriais. Quando isso ocorrer, a data de atualização será ajustada nesta página.</p>
+    </section>
+
+    <section class="atlas-panel atlas-panel--flat atlas-start-here-cta">
+      <div>
+        <span class="atlas-section-kicker" style="${INSTITUTIONAL_KICKER_STYLE}">CONTATO</span>
+        <p class="text-white/65 mt-2">Em caso de dúvidas sobre estes Termos de Uso, entre em contato pelo e-mail: <a href="mailto:${INSTITUTIONAL_EMAIL}" class="atlas-text-action">${INSTITUTIONAL_EMAIL}</a></p>
+      </div>
+    </section>`;
+}
+
+function renderAboutPageContent() {
+  return `
+    <section class="atlas-panel atlas-panel--primary atlas-start-here-hero">
+      ${buildBreadcrumbsHtml([{ label: 'Início', href: '/' }, { label: 'Sobre' }])}
+      <span class="atlas-section-kicker" style="${INSTITUTIONAL_KICKER_STYLE}">SOBRE</span>
+      <h1>Sobre o AtlasAchievement</h1>
+      <p>O AtlasAchievement é um projeto brasileiro criado para ajudar jogadores a conquistarem troféus, conquistas e platinas com mais organização, clareza e segurança.</p>
+    </section>
+
+    <section class="atlas-start-here-grid" aria-label="Sobre o AtlasAchievement">
+      <article class="atlas-panel atlas-panel--support atlas-start-here-block">
+        <h2>Missão</h2>
+        <p>O objetivo do site é oferecer guias de troféus, roadmaps de platina, checklists, alertas de perdíveis, filtros por dificuldade, tempo, online, coop e DLC, além de informações úteis para jogadores iniciantes e caçadores experientes.</p>
+      </article>
+      <article class="atlas-panel atlas-panel--support atlas-start-here-block">
+        <h2>Para quem é feito</h2>
+        <p>O AtlasAchievement é feito para caçadores de troféus, jogadores que querem platinar, quem quer saber tempo e dificuldade antes de começar, quem deseja evitar perder troféus e quem gosta de organizar progresso.</p>
+      </article>
+    </section>
+
+    <section class="atlas-panel atlas-panel--support atlas-start-here-block">
+      <h2>O que torna o AtlasAchievement diferente</h2>
+      <p>O projeto combina guias em português do Brasil, foco em platina, organização por filtros, checklist, roadmap, FAQ, pontos de atenção, guias verificados quando aplicável e linguagem prática. A ideia é ajudar você a decidir melhor antes de começar e acompanhar a rota com menos retrabalho.</p>
+    </section>
+
+    <section class="atlas-panel atlas-panel--support atlas-start-here-block">
+      <h2>Compromisso editorial</h2>
+      <p>O AtlasAchievement busca clareza e precisão. Ainda assim, informações sobre jogos podem mudar por patches, DLCs, diferenças de plataforma ou novas descobertas da comunidade. Por isso, os guias podem ser revisados com o tempo, e o feedback dos usuários ajuda a melhorar correções, alertas e explicações.</p>
+    </section>
+
+    <section class="atlas-panel atlas-panel--flat atlas-start-here-cta">
+      <div>
+        <span class="atlas-section-kicker" style="${INSTITUTIONAL_KICKER_STYLE}">EM EVOLUÇÃO</span>
+        <p class="text-white/65 mt-2">O AtlasAchievement ainda está em evolução, mas a proposta é construir uma das melhores bases brasileiras para quem quer jogar melhor, se organizar e conquistar mais platinas. Para falar com o projeto, escreva para <a href="mailto:${INSTITUTIONAL_EMAIL}" class="atlas-text-action">${INSTITUTIONAL_EMAIL}</a>.</p>
+      </div>
+      <a href="/contato" class="atlas-btn atlas-btn-primary"><i class="fas fa-envelope" aria-hidden="true"></i> Falar com o projeto</a>
+    </section>`;
+}
+
+function renderContactPageContent() {
+  return `
+    <section class="atlas-panel atlas-panel--primary atlas-start-here-hero">
+      ${buildBreadcrumbsHtml([{ label: 'Início', href: '/' }, { label: 'Contato' }])}
+      <span class="atlas-section-kicker" style="${INSTITUTIONAL_KICKER_STYLE}">CONTATO</span>
+      <h1>Contato</h1>
+      <p>Entre em contato com o AtlasAchievement para tirar dúvidas, enviar sugestões, reportar erros em guias, sugerir novos jogos, enviar feedback, tratar de parcerias, solicitar correção ou remoção de informações e falar sobre assuntos relacionados à privacidade.</p>
+    </section>
+
+    <section class="atlas-start-here-grid" aria-label="Opções de contato">
+      <article class="atlas-panel atlas-panel--support atlas-start-here-block">
+        <h2>E-mail</h2>
+        <p>Para contato direto, escreva para <a href="mailto:${INSTITUTIONAL_EMAIL}" class="atlas-text-action">${INSTITUTIONAL_EMAIL}</a>. Responderemos quando possível.</p>
+      </article>
+      <article class="atlas-panel atlas-panel--support atlas-start-here-block">
+        <h2>Feedback do site</h2>
+        <p>Você também pode usar o formulário de feedback já disponível no AtlasAchievement para reportar bugs, erros em guias, sugestões e pedidos de novos jogos.</p>
+        <p class="mt-3"><button type="button" data-feedback-open class="atlas-btn atlas-btn-secondary"><i class="fas fa-comment-dots" aria-hidden="true"></i> Enviar feedback</button></p>
+      </article>
+    </section>
+
+    <section class="atlas-panel atlas-panel--support atlas-start-here-block">
+      <h2>Sugestões de correção de guias</h2>
+      <p>Para sugerir correções em guias, informe o nome do jogo, o troféu ou conquista relacionado e explique o erro encontrado. Sempre que possível, inclua a plataforma, versão do jogo, região da lista e uma fonte ou contexto que ajude a validar a informação.</p>
+    </section>
+
+    <section class="atlas-panel atlas-panel--support atlas-start-here-block">
+      <h2>Privacidade e dados</h2>
+      <p>Solicitações relacionadas a privacidade, conta, dados pessoais, remoção, correção ou dúvidas sobre tratamento de dados podem ser enviadas para <a href="mailto:${INSTITUTIONAL_EMAIL}" class="atlas-text-action">${INSTITUTIONAL_EMAIL}</a>.</p>
+    </section>`;
+}
+
+function buildInstitutionalStructuredData(origin, canonicalUrl, title, description) {
+  return {
+    '@context': 'https://schema.org',
+    '@type': 'WebPage',
+    name: title,
+    url: canonicalUrl,
+    description,
+    publisher: {
+      '@type': 'Organization',
+      name: 'AtlasAchievement',
+      url: origin,
+      email: INSTITUTIONAL_EMAIL
+    }
+  };
+}
+
+async function buildInstitutionalPageHtml(req, pageConfig = {}) {
+  const origin = getPublicOrigin(req);
+  const canonicalUrl = buildPublicUrl(req, pageConfig.path);
+  return finalizeInstitutionalPageHtml(applyTemplateDefaults(publicIndexTemplate
+    .replace(/__PAGE_TITLE__/g, escapeHtml(pageConfig.title))
+    .replace(/__PAGE_DESCRIPTION__/g, escapeHtml(pageConfig.description))
+    .replace(/__ROBOTS_META__/g, '')
+    .replace(/__PAGE_OG_TYPE__/g, 'website')
+    .replace(/__PAGE_CANONICAL__/g, escapeHtml(canonicalUrl))
+    .replace(/__PAGE_OG_IMAGE__/g, resolveMetaImage(origin))
+    .replace(/__PAGE_JSON_LD__/g, safeJsonForHtml(buildInstitutionalStructuredData(origin, canonicalUrl, pageConfig.h1 || pageConfig.title, pageConfig.description)))
+    .replace(/__HOME_VIEW_CLASS__/g, 'hidden')
+    .replace(/__HOME_HERO_HEADING_TAG__/g, 'h2')
+    .replace(/__SEO_VIEW_CLASS__/g, '')
+    .replace(/__SEO_PAGE_CONTENT__/g, pageConfig.content || '')
+    .replace(/__INITIAL_STATE_SCRIPT__/g, buildInitialStateScript({ page: 'seo', path: pageConfig.path }))));
+}
+
 async function buildOrganicListPageHtml(req, config) {
   const origin = getPublicOrigin(req);
   const canonicalUrl = buildPublicUrl(req, config.path);
@@ -2708,6 +3019,10 @@ app.get('/sitemap.xml', async (req, res, next) => {
     const editorialUrls = Object.values(editorialCollectionPageMap)
       .map(item => ({ loc: buildPublicUrl(req, item.path), lastmod: new Date().toISOString() }));
     const organicSeoUrls = [
+      '/sobre',
+      '/contato',
+      '/privacidade',
+      '/termos',
       '/comece-aqui',
       ...Object.values(organicSeoListPageMap).map(item => item.path)
     ].map(pathName => ({ loc: buildPublicUrl(req, pathName), lastmod: new Date().toISOString() }));
@@ -2740,6 +3055,56 @@ app.use('/api/feedback', requireCsrf, feedbackRoutes);
 app.use('/api/me', requireCsrf, meRoutes);
 app.use('/api/uploads', requireCsrf, uploadsRoutes);
 app.use('/api/games', requireCsrf, gamesRoutes);
+
+app.get('/privacidade', setHtmlRouteCacheHeaders, async (req, res, next) => {
+  try {
+    res.send(await buildPrivacyPolicyPageHtml(req));
+  } catch (error) {
+    next(error);
+  }
+});
+
+app.get('/termos', setHtmlRouteCacheHeaders, async (req, res, next) => {
+  try {
+    res.send(await buildInstitutionalPageHtml(req, {
+      path: '/termos',
+      h1: 'Termos de Uso',
+      title: 'Termos de Uso | AtlasAchievement',
+      description: 'Leia os termos de uso do AtlasAchievement e entenda as regras para acessar guias, usar funcionalidades, criar conta e navegar pelo site.',
+      content: renderTermsPageContent()
+    }));
+  } catch (error) {
+    next(error);
+  }
+});
+
+app.get('/sobre', setHtmlRouteCacheHeaders, async (req, res, next) => {
+  try {
+    res.send(await buildInstitutionalPageHtml(req, {
+      path: '/sobre',
+      h1: 'Sobre o AtlasAchievement',
+      title: 'Sobre | AtlasAchievement',
+      description: 'Conheça o AtlasAchievement, um projeto brasileiro focado em guias de troféus, conquistas, platinas, roadmaps e checklists para jogadores.',
+      content: renderAboutPageContent()
+    }));
+  } catch (error) {
+    next(error);
+  }
+});
+
+app.get('/contato', setHtmlRouteCacheHeaders, async (req, res, next) => {
+  try {
+    res.send(await buildInstitutionalPageHtml(req, {
+      path: '/contato',
+      h1: 'Contato',
+      title: 'Contato | AtlasAchievement',
+      description: 'Entre em contato com o AtlasAchievement para enviar dúvidas, sugestões, correções de guias, feedback, parcerias ou solicitações relacionadas ao site.',
+      content: renderContactPageContent()
+    }));
+  } catch (error) {
+    next(error);
+  }
+});
 
 app.get('/comece-aqui', setHtmlRouteCacheHeaders, async (req, res, next) => {
   try {
