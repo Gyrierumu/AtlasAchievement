@@ -967,6 +967,14 @@ const sampleGames = [
       {
         "id": "er_elden_lord",
         "name": "Elden Lord",
+        "criticalGuide": {
+          "trophyType": "Final do jogo",
+          "when": "Prepare antes da escolha final, depois de derrotar o chefe final e antes de iniciar NG+.",
+          "how": "Escolha uma rota de Elden Lord na Fractured Marika. Se quiser economizar runs, faça backup do save antes da decisão final.",
+          "risk": "Os finais com troféu são mutuamente exclusivos no mesmo save sem backup; escolher outro final bloqueia este troféu nesta conclusão.",
+          "quickTip": "Deixe este como final padrão se não quiser seguir uma questline longa.",
+          "links": [{ "label": "Ver vídeo-guia", "url": "https://www.youtube.com/results?search_query=Elden+Ring+Elden+Lord+ending+trophy" }]
+        },
         "name_pt": "Lorde Prístino",
         "type": "Ouro",
         "description": "Conquistou o final \"Lorde Prístino\".",
@@ -976,6 +984,14 @@ const sampleGames = [
       {
         "id": "er_age_of_stars",
         "name": "Age of the Stars",
+        "criticalGuide": {
+          "trophyType": "Final do jogo",
+          "when": "Avance a quest da Ranni antes da decisão final e confirme se o sinal azul dela aparece após o chefe final.",
+          "how": "Complete a linha de Ranni, incluindo Nokron, o item de Renna's Rise, Lake of Rot e Cathedral of Manus Celes; no fim, escolha o sinal de Ranni.",
+          "risk": "Se a quest não estiver completa, o sinal do final não aparece. Sem backup, escolher outro final exige nova run ou NG+.",
+          "quickTip": "Antes de tocar em qualquer opção final, procure o sinal azul no chão e confirme se este final ainda falta.",
+          "links": [{ "label": "Ver vídeo-guia", "url": "https://www.youtube.com/results?search_query=Elden+Ring+Age+of+the+Stars+Ranni+trophy" }]
+        },
         "name_pt": "Era das Estrelas",
         "type": "Ouro",
         "description": "Conquistou o final \"Era das Estrelas\".",
@@ -985,6 +1001,14 @@ const sampleGames = [
       {
         "id": "er_frenzied_flame",
         "name": "Lord of Frenzied Flame",
+        "criticalGuide": {
+          "trophyType": "Final do jogo",
+          "when": "Deixe para preparar perto do fim, quando já souber se vai usar backup ou uma run separada.",
+          "how": "Acesse a área subterrânea de Leyndell, passe pela porta dos Three Fingers sem armadura e aceite a Frenzied Flame antes da escolha final.",
+          "risk": "Ao aceitar a Frenzied Flame, os outros finais ficam bloqueados neste save até usar Miquella's Needle, que exige uma rota opcional avançada.",
+          "quickTip": "Faça backup antes de abrir a porta dos Three Fingers se pretende combinar finais no mesmo save.",
+          "links": [{ "label": "Ver vídeo-guia", "url": "https://www.youtube.com/results?search_query=Elden+Ring+Lord+of+Frenzied+Flame+trophy" }]
+        },
         "name_pt": "Lorde da Chama Frenética",
         "type": "Ouro",
         "description": "Conquistou o final \"Lorde da Chama Frenética\".",
@@ -1084,6 +1108,17 @@ const sampleGames = [
       {
         "id": "er_legendary_armaments",
         "name": "Legendary Armaments",
+        "criticalGuide": {
+          "trophyType": "Coletável lendário",
+          "when": "Revise antes de avançar para a transformação de Leyndell em Ashen Capital.",
+          "how": "Colete os 9 armamentos lendários da lista base. Dê prioridade ao Bolt of Gransax em Leyndell enquanto a capital ainda está normal.",
+          "risk": "Bolt of Gransax pode ficar indisponível após Leyndell virar Ashen Capital; se perder, será necessário pegar em NG+ ou outra run.",
+          "quickTip": "Marque Bolt of Gransax assim que chegar a Leyndell; ele é o ponto mais sensível deste troféu.",
+          "links": [
+            { "label": "Ver localização", "url": "https://www.youtube.com/results?search_query=Elden+Ring+Bolt+of+Gransax+location" },
+            { "label": "Ver vídeo-guia", "url": "https://www.youtube.com/results?search_query=Elden+Ring+Legendary+Armaments+trophy" }
+          ]
+        },
         "name_pt": "Armas Lendárias",
         "type": "Prata",
         "description": "Obteve todas as armas lendárias.",
@@ -1093,6 +1128,14 @@ const sampleGames = [
       {
         "id": "er_legendary_ashes",
         "name": "Legendary Ashen Remains",
+        "criticalGuide": {
+          "trophyType": "Coletável lendário",
+          "when": "Pode ser feito no cleanup, mas algumas cinzas exigem áreas opcionais avançadas e chefes específicos.",
+          "how": "Use uma checklist para Lhutel, Mimic Tear, Cleanrot Knight Finlay, Redmane Knight Ogha, Ancient Dragon Knight Kristoff e Black Knife Tiche.",
+          "risk": "Não é o principal perdível da lista, mas deixar para o fim sem controle por região aumenta muito o retrabalho.",
+          "quickTip": "Separe por região e faça Black Knife Tiche quando sua build já estiver forte.",
+          "links": [{ "label": "Ver vídeo-guia", "url": "https://www.youtube.com/results?search_query=Elden+Ring+Legendary+Ashen+Remains+trophy" }]
+        },
         "name_pt": "Cinzas Lendárias",
         "type": "Prata",
         "description": "Obteve todas as cinzas lendárias.",
@@ -1102,6 +1145,14 @@ const sampleGames = [
       {
         "id": "er_legendary_sorceries",
         "name": "Legendary Sorceries and Incantations",
+        "criticalGuide": {
+          "trophyType": "Coletável lendário",
+          "when": "Faça durante exploração avançada e finalize no cleanup antes de encerrar a platina.",
+          "how": "Colete todos os feitiços e encantamentos lendários, conferindo requisitos de áreas opcionais, torres, chefes e progressão de NPCs quando necessário.",
+          "risk": "O risco principal é perder rastreio e deixar uma magia isolada para trás; não depende de dificuldade, mas pede controle por lista.",
+          "quickTip": "Depois de abrir áreas de fim de jogo, confira a lista completa de lendários antes de partir para o final.",
+          "links": [{ "label": "Ver vídeo-guia", "url": "https://www.youtube.com/results?search_query=Elden+Ring+Legendary+Sorceries+and+Incantations+trophy" }]
+        },
         "name_pt": "Feitiços e Encantos Lendários",
         "type": "Prata",
         "description": "Obteve todos os feitiços e encantos lendários.",
@@ -1111,6 +1162,14 @@ const sampleGames = [
       {
         "id": "er_legendary_talismans",
         "name": "Legendary Talismans",
+        "criticalGuide": {
+          "trophyType": "Coletável lendário",
+          "when": "Deixe a revisão final para depois de liberar áreas avançadas como Haligtree, Farum Azula e Ashen Capital.",
+          "how": "Colete os talismãs lendários por região e confirme os que dependem de áreas tardias antes de considerar a lista completa.",
+          "risk": "Não costuma bloquear a run, mas pode virar caça longa se você não souber quais regiões já limpou.",
+          "quickTip": "Use o checklist por nome do talismã e feche este troféu junto do cleanup final.",
+          "links": [{ "label": "Ver vídeo-guia", "url": "https://www.youtube.com/results?search_query=Elden+Ring+Legendary+Talismans+trophy" }]
+        },
         "name_pt": "Talismãs Lendários",
         "type": "Prata",
         "description": "Obteve todos os talismãs lendários.",
@@ -1129,6 +1188,14 @@ const sampleGames = [
       {
         "id": "er_fortissax",
         "name": "Lichdragon Fortissax",
+        "criticalGuide": {
+          "trophyType": "Chefe opcional / questline",
+          "when": "Resolva antes de encerrar a run, acompanhando a quest da Fia até Deeproot Depths.",
+          "how": "Avance a linha da Fia, chegue a Deeproot Depths, entregue o item necessário da quest e interaja com Fia para acessar a luta contra Fortissax.",
+          "risk": "Pode ser perdido ou exigir retrabalho se você tratar a quest da Fia de forma hostil ou avançar sem acompanhar os passos dela.",
+          "quickTip": "Não ataque Fia e não ignore Deeproot Depths se este troféu ainda estiver pendente.",
+          "links": [{ "label": "Ver vídeo-guia", "url": "https://www.youtube.com/results?search_query=Elden+Ring+Lichdragon+Fortissax+Fia+quest+trophy" }]
+        },
         "name_pt": "Fortissax, o Dragão Lich",
         "type": "Bronze",
         "description": "Derrotou Fortissax, o Dragão Lich.",

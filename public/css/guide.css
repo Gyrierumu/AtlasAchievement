@@ -1498,6 +1498,10 @@
   font-weight: 900;
 }
 
+.atlas-roadmap-step__marker::before {
+  content: attr(data-roadmap-number);
+}
+
 .atlas-roadmap-step__body {
   min-width: 0;
   padding: 16px;

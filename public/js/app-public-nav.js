@@ -90,6 +90,14 @@ window.AppPublicNav = (() => {
     return `${getPublicOrigin()}${pathPart}`;
   }
 
+  function getStaticViewPath(view = '', state = {}, getCatalogPath = () => '/catalogo') {
+    if (view === 'home') return '/';
+    if (view === 'catalog') return getCatalogPath(state.catalogFacet || 'all');
+    if (view === 'library') return '/biblioteca';
+    if (view === 'profile') return '/perfil';
+    return '';
+  }
+
   function setStaticViewMeta({ title, description, path, robots = 'noindex,follow' }) {
     document.title = title;
     const canonical = buildPublicUrl(path);
@@ -251,6 +259,11 @@ window.AppPublicNav = (() => {
     UI.qsa('[data-view-link]').forEach(button => button.addEventListener('click', async event => {
       event.preventDefault();
       const view = button.dataset.viewLink;
+      if (view && !UI.qs(`#view-${view}`)) {
+        const path = getStaticViewPath(view, state, facet => window.AppCatalog?.getCatalogPath?.(facet) || '/catalogo');
+        if (path) window.location.href = path;
+        return;
+      }
       if (view === 'home' && typeof loadGames === 'function') {
         await loadGames();
       }

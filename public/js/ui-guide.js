@@ -337,7 +337,106 @@ window.UIGuide = (() => {
   }
 
   function shouldShowTrophyDetailsToggle(trophy = {}, description = '', tip = '') {
-    return Boolean(String(tip || '').trim() || hasLongTrophyDescription(description));
+    return Boolean(trophy?.criticalGuide || String(tip || '').trim() || hasLongTrophyDescription(description));
+  }
+
+  function getEldenRingCriticalGuide(trophy = {}, game = {}) {
+    if (String(game?.slug || '').trim().toLowerCase() !== 'elden-ring') return null;
+    const guides = {
+      er_elden_lord: {
+        trophyType: 'Final do jogo',
+        when: 'Prepare antes da escolha final, depois de derrotar o chefe final e antes de iniciar NG+.',
+        how: 'Escolha uma rota de Elden Lord na Fractured Marika. Se quiser economizar runs, faça backup do save antes da decisão final.',
+        risk: 'Os finais com troféu são mutuamente exclusivos no mesmo save sem backup; escolher outro final bloqueia este troféu nesta conclusão.',
+        quickTip: 'Deixe este como final padrão se não quiser seguir uma questline longa.',
+        links: [{ label: 'Ver vídeo-guia', url: 'https://www.youtube.com/results?search_query=Elden+Ring+Elden+Lord+ending+trophy' }]
+      },
+      er_age_of_stars: {
+        trophyType: 'Final do jogo',
+        when: 'Avance a quest da Ranni antes da decisão final e confirme se o sinal azul dela aparece após o chefe final.',
+        how: "Complete a linha de Ranni, incluindo Nokron, o item de Renna's Rise, Lake of Rot e Cathedral of Manus Celes; no fim, escolha o sinal de Ranni.",
+        risk: 'Se a quest não estiver completa, o sinal do final não aparece. Sem backup, escolher outro final exige nova run ou NG+.',
+        quickTip: 'Antes de tocar em qualquer opção final, procure o sinal azul no chão e confirme se este final ainda falta.',
+        links: [{ label: 'Ver vídeo-guia', url: 'https://www.youtube.com/results?search_query=Elden+Ring+Age+of+the+Stars+Ranni+trophy' }]
+      },
+      er_frenzied_flame: {
+        trophyType: 'Final do jogo',
+        when: 'Deixe para preparar perto do fim, quando já souber se vai usar backup ou uma run separada.',
+        how: 'Acesse a área subterrânea de Leyndell, passe pela porta dos Three Fingers sem armadura e aceite a Frenzied Flame antes da escolha final.',
+        risk: "Ao aceitar a Frenzied Flame, os outros finais ficam bloqueados neste save até usar Miquella's Needle, que exige uma rota opcional avançada.",
+        quickTip: 'Faça backup antes de abrir a porta dos Three Fingers se pretende combinar finais no mesmo save.',
+        links: [{ label: 'Ver vídeo-guia', url: 'https://www.youtube.com/results?search_query=Elden+Ring+Lord+of+Frenzied+Flame+trophy' }]
+      },
+      er_legendary_armaments: {
+        trophyType: 'Coletável lendário',
+        when: 'Revise antes de avançar para a transformação de Leyndell em Ashen Capital.',
+        how: 'Colete os 9 armamentos lendários da lista base. Dê prioridade ao Bolt of Gransax em Leyndell enquanto a capital ainda está normal.',
+        risk: 'Bolt of Gransax pode ficar indisponível após Leyndell virar Ashen Capital; se perder, será necessário pegar em NG+ ou outra run.',
+        quickTip: 'Marque Bolt of Gransax assim que chegar a Leyndell; ele é o ponto mais sensível deste troféu.',
+        links: [
+          { label: 'Ver localização', url: 'https://www.youtube.com/results?search_query=Elden+Ring+Bolt+of+Gransax+location' },
+          { label: 'Ver vídeo-guia', url: 'https://www.youtube.com/results?search_query=Elden+Ring+Legendary+Armaments+trophy' }
+        ]
+      },
+      er_legendary_ashes: {
+        trophyType: 'Coletável lendário',
+        when: 'Pode ser feito no cleanup, mas algumas cinzas exigem áreas opcionais avançadas e chefes específicos.',
+        how: 'Use uma checklist para Lhutel, Mimic Tear, Cleanrot Knight Finlay, Redmane Knight Ogha, Ancient Dragon Knight Kristoff e Black Knife Tiche.',
+        risk: 'Não é o principal perdível da lista, mas deixar para o fim sem controle por região aumenta muito o retrabalho.',
+        quickTip: 'Separe por região e faça Black Knife Tiche quando sua build já estiver forte.',
+        links: [{ label: 'Ver vídeo-guia', url: 'https://www.youtube.com/results?search_query=Elden+Ring+Legendary+Ashen+Remains+trophy' }]
+      },
+      er_legendary_sorceries: {
+        trophyType: 'Coletável lendário',
+        when: 'Faça durante exploração avançada e finalize no cleanup antes de encerrar a platina.',
+        how: 'Colete todos os feitiços e encantamentos lendários, conferindo requisitos de áreas opcionais, torres, chefes e progressão de NPCs quando necessário.',
+        risk: 'O risco principal é perder rastreio e deixar uma magia isolada para trás; não depende de dificuldade, mas pede controle por lista.',
+        quickTip: 'Depois de abrir áreas de fim de jogo, confira a lista completa de lendários antes de partir para o final.',
+        links: [{ label: 'Ver vídeo-guia', url: 'https://www.youtube.com/results?search_query=Elden+Ring+Legendary+Sorceries+and+Incantations+trophy' }]
+      },
+      er_legendary_talismans: {
+        trophyType: 'Coletável lendário',
+        when: 'Deixe a revisão final para depois de liberar áreas avançadas como Haligtree, Farum Azula e Ashen Capital.',
+        how: 'Colete os talismãs lendários por região e confirme os que dependem de áreas tardias antes de considerar a lista completa.',
+        risk: 'Não costuma bloquear a run, mas pode virar caça longa se você não souber quais regiões já limpou.',
+        quickTip: 'Use o checklist por nome do talismã e feche este troféu junto do cleanup final.',
+        links: [{ label: 'Ver vídeo-guia', url: 'https://www.youtube.com/results?search_query=Elden+Ring+Legendary+Talismans+trophy' }]
+      },
+      er_fortissax: {
+        trophyType: 'Chefe opcional / questline',
+        when: 'Resolva antes de encerrar a run, acompanhando a quest da Fia até Deeproot Depths.',
+        how: 'Avance a linha da Fia, chegue a Deeproot Depths, entregue o item necessário da quest e interaja com Fia para acessar a luta contra Fortissax.',
+        risk: 'Pode ser perdido ou exigir retrabalho se você tratar a quest da Fia de forma hostil ou avançar sem acompanhar os passos dela.',
+        quickTip: 'Não ataque Fia e não ignore Deeproot Depths se este troféu ainda estiver pendente.',
+        links: [{ label: 'Ver vídeo-guia', url: 'https://www.youtube.com/results?search_query=Elden+Ring+Lichdragon+Fortissax+Fia+quest+trophy' }]
+      }
+    };
+    return guides[trophy?.id] || null;
+  }
+
+  function renderTrophyCriticalGuide(trophy = {}, game = {}) {
+    const guide = trophy?.criticalGuide || getEldenRingCriticalGuide(trophy, game);
+    if (!guide || typeof guide !== 'object') return '';
+    const items = [
+      ['Tipo do troféu', guide.trophyType || trophy.type],
+      ['Quando fazer', guide.when],
+      ['Como obter', guide.how],
+      ['Risco de perder ou bloquear', guide.risk],
+      ['Dica rápida', guide.quickTip || guide.tip]
+    ].filter(([, value]) => String(value || '').trim());
+    const links = Array.isArray(guide.links)
+      ? guide.links.filter(link => link?.url && link?.label).slice(0, 3)
+      : [];
+    if (!items.length && !links.length) return '';
+    return `
+      <div class="atlas-trophy-critical-guide">
+        <div class="atlas-tip-label">Guia crítico</div>
+        <dl>
+          ${items.map(([label, value]) => `<div><dt>${escapeHtml(label)}</dt><dd>${escapeHtml(value)}</dd></div>`).join('')}
+        </dl>
+        ${links.length ? `<div class="atlas-trophy-critical-guide__links">${links.map(link => `<a href="${escapeAttribute(link.url)}" target="_blank" rel="noopener noreferrer">${escapeHtml(link.label)}</a>`).join('')}</div>` : ''}
+      </div>
+    `;
   }
 
   function cleanTrophyNameCandidate(value = '') {
@@ -489,7 +588,7 @@ window.UIGuide = (() => {
               ].filter(Boolean);
           return `
           <li class="atlas-roadmap-step atlas-roadmap-step--${escapeAttribute(category.id || 'plan')}${Number(stage.number) === 1 ? ' atlas-roadmap-step--first' : ''}">
-            <div class="atlas-roadmap-step__marker">${escapeHtml(String(stage.number))}</div>
+            <div class="atlas-roadmap-step__marker" aria-hidden="true" data-roadmap-number="${escapeAttribute(String(stage.number))}"></div>
             <article class="atlas-roadmap-step__body">
               <div class="atlas-roadmap-step__head">
                 <div>
@@ -1148,6 +1247,7 @@ window.UIGuide = (() => {
             const done = viewModel.completedIds.has(trophy.id);
             const description = getTrophyDisplayDescription(trophy, game);
             const tip = trophy.tip || '';
+            const criticalGuideHtml = renderTrophyCriticalGuide(trophy, game);
             const officialName = getTrophyOriginalName(trophy);
             const editorialName = getTrophyEditorialName(trophy);
             const officialNameFirst = shouldUseOfficialTrophyNameFirst(game);
@@ -1191,6 +1291,7 @@ window.UIGuide = (() => {
                     <div id="${escapeAttribute(detailsId)}" class="atlas-trophy-details" data-trophy-details>
                       <p class="atlas-trophy-description">${escapeHtml(description || 'Sem descrição.')}</p>
                       ${tip ? `<div class="atlas-tip-box atlas-trophy-tip"><div class="atlas-tip-label">${trophy.is_spoiler ? 'Dica com spoiler' : 'Dica'}</div><p class="text-sm mt-2">${escapeHtml(tip)}</p></div>` : ''}
+                      ${criticalGuideHtml}
                     </div>
                     ${detailsToggleHtml}
                   </div>

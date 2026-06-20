@@ -142,6 +142,12 @@ window.UI = (() => {
   function setGuideEmptyState(visible, message = 'Nenhum troféu corresponde ao filtro atual. Limpe a busca ou troque o filtro.') {
     const empty = qs('#guideEmptyState');
     if (!empty) return;
+    empty.classList.toggle('hidden', !visible);
+    empty.setAttribute('aria-hidden', visible ? 'false' : 'true');
+    if (!visible) {
+      empty.innerHTML = '';
+      return;
+    }
     if (message && typeof message === 'object') {
       const title = escapeHtml(message.title || 'Nenhum troféu corresponde ao filtro atual.');
       const detail = escapeHtml(message.detail || 'Tente limpar filtros ou buscar por outro termo.');
@@ -164,7 +170,6 @@ window.UI = (() => {
         <button type="button" class="atlas-btn atlas-btn-secondary atlas-btn-compact" data-guide-clear-filters="true">Limpar filtros</button>
       `;
     }
-    empty.classList.toggle('hidden', !visible);
   }
 
   function replaceElementTag(element, tagName) {

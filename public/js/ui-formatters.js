@@ -15,6 +15,9 @@ window.UIFormatters = (() => {
 
   function buildGameSeoTitle(game = {}) {
     const name = String(game?.name || 'Jogo').trim() || 'Jogo';
+    if (String(game?.slug || '').trim().toLowerCase() === 'elden-ring') {
+      return 'Guia de Troféus Elden Ring | AtlasAchievement';
+    }
     return `${name}: guia de platina, troféus e roadmap | AtlasAchievement`;
   }
 
@@ -29,7 +32,7 @@ window.UIFormatters = (() => {
   function buildGameSeoDescription(game = {}) {
     const name = String(game?.name || 'este jogo').trim() || 'este jogo';
     if (String(game?.slug || '').trim().toLowerCase() === 'elden-ring') {
-      return 'Guia de platina de Elden Ring em português, com tempo estimado, dificuldade, finais, armas lendárias, Bolt of Gransax, chefes, roadmap e checklist de troféus.';
+      return 'Roadmap completo para platinar Elden Ring com checklist, troféus perdíveis, finais, lendários, tempo estimado e dicas para conquistar a platina.';
     }
     if (String(game?.slug || '').trim().toLowerCase() === 'hades') {
       return 'Guia de platina de Hades em português, com tempo estimado, dificuldade, roadmap, checklist, Fated List, Keepsakes, Companions, Pact of Punishment, Heat e dicas para a platina.';

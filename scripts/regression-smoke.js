@@ -422,6 +422,9 @@ function assertUIModules() {
   assert(read('src/app.js').includes('renderGuideDecisionStackHtmlV2'), 'SSR do guia precisa usar a mesma ordem do client');
   assert(guideCss.includes('.atlas-platinum-summary__grid'), 'guide.css precisa estilizar cards de resumo da platina');
   assert(guideCss.includes('.atlas-roadmap-step__actions'), 'roadmap visual precisa expor lista curta de acoes');
+  assert(guideCss.includes('.atlas-roadmap-step__marker::before') && guideCss.includes('content: attr(data-roadmap-number)'), 'numero visual do roadmap deve vir de CSS para nao duplicar texto acessivel');
+  assert(!/atlas-roadmap-step__marker[^>]*>\s*\$\{escapeHtml\(String\(stage\.number\)\)\}/.test(guideUiCode), 'client do roadmap nao deve renderizar numero manual como texto do marcador');
+  assert(!/atlas-roadmap-step__marker[^>]*>\s*\$\{escapeHtml\(String\(stage\.number\)\)\}/.test(read('src/app.js')), 'SSR do roadmap nao deve renderizar numero manual como texto do marcador');
   assert(guideCss.includes('.atlas-guide-flow .atlas-guide-sidebar-card'), 'progresso do guia precisa funcionar como bloco de fluxo antes do checklist');
   assert(read('public/css/checklist.css').includes('.atlas-trophy-card__title-translation'), 'checklist precisa estilizar name_pt como linha secundaria do card');
   assert(responsiveCss.includes('.atlas-trophy-card__title-translation'), 'mobile precisa ajustar a linha secundaria de name_pt');
@@ -503,6 +506,7 @@ function assertGuideChecklistFiltering(ctx) {
     UI.applyTrophyFilter('pending', '');
     assert.strictEqual(cards.filter(card => !card.classList.contains('hidden')).length, 2, 'filtro Pendentes deve mostrar apenas trofeus pendentes');
     assert(cards[1].classList.contains('hidden'), 'filtro Pendentes deve remover trofeu concluido');
+    assert.strictEqual(empty.innerHTML, '', 'estado vazio nao deve renderizar conteudo quando ha trofeus visiveis');
 
     UI.applyTrophyFilter('completed', '');
     assert.strictEqual(cards.filter(card => !card.classList.contains('hidden')).length, 1, 'filtro Concluidos deve mostrar apenas concluidos');
@@ -520,6 +524,7 @@ function assertGuideChecklistFiltering(ctx) {
     UI.clearGuideChecklistFilters();
     assert.strictEqual(search.value, '', 'Limpar filtros deve limpar busca');
     assert.strictEqual(cards.filter(card => !card.classList.contains('hidden')).length, 3, 'Limpar filtros deve restaurar lista');
+    assert.strictEqual(empty.innerHTML, '', 'limpar filtros deve desmontar o estado vazio quando a lista volta a ter resultados');
   } finally {
     ctx.document.querySelector = previousQuerySelector;
     ctx.document.querySelectorAll = previousQuerySelectorAll;
@@ -12787,8 +12792,8 @@ async function assertBackendEditorialConsistency() {
     const expectedEldenCanonical = 'https://atlasachievement.com.br/jogo/elden-ring';
     assert(guideHtml.includes('Verificado'), 'SSR de Elden Ring deve manter guia base verificado');
     assert(!guideHtml.includes('>unverified<'), 'SSR nao deve exibir status bruto unverified');
-    const expectedGuideTitle = 'Elden Ring: guia de platina, troféus e roadmap | AtlasAchievement';
-    const expectedGuideDescription = 'Guia de platina de Elden Ring em português, com tempo estimado, dificuldade, finais, armas lendárias, Bolt of Gransax, chefes, roadmap e checklist de troféus.';
+    const expectedGuideTitle = 'Guia de Troféus Elden Ring | AtlasAchievement';
+    const expectedGuideDescription = 'Roadmap completo para platinar Elden Ring com checklist, troféus perdíveis, finais, lendários, tempo estimado e dicas para conquistar a platina.';
     assert.strictEqual(getHtmlTitle(guideHtml), expectedGuideTitle, 'SSR de jogo deve gerar title por intenção de platina');
     assert.strictEqual(getMetaDescription(guideHtml), expectedGuideDescription, 'SSR de jogo deve gerar meta description padrao');
     assert.strictEqual(getCanonicalHref(guideHtml), expectedEldenCanonical, 'SSR de Elden Ring deve ter canonical de producao');
@@ -12806,6 +12811,15 @@ async function assertBackendEditorialConsistency() {
     assert(!/Dragonlord Placidusax[\s\S]{0,500}Perdível/.test(guideHtml), 'Dragonlord Placidusax nao deve aparecer como perdivel no SSR');
     assert(!/Roundtable Hold[\s\S]{0,500}Perdível/.test(guideHtml), 'Roundtable Hold nao deve aparecer como perdivel no SSR');
     assert(!/\[object Object\]|Descrição em revisão editorial|Comece pela rota segura/.test(guideHtml), 'SSR de Elden Ring nao deve conter placeholders ou roadmap bruto');
+    ['view-home', 'view-catalog', 'view-library', 'view-profile', 'feedbackModal', 'userAuthModal', 'libraryImportModal', 'adminModal'].forEach(id => {
+      assert(!guideHtml.includes(`id="${id}"`), `SSR de Elden Ring nao deve montar ${id} no DOM da rota de jogo`);
+    });
+    assert(guideHtml.includes('id="view-guide"'), 'SSR de Elden Ring deve manter somente a view do guia montada no main');
+    assert(guideHtml.includes('atlas-trophy-critical-guide'), 'SSR de Elden Ring deve renderizar estrutura expandida para trofeus criticos');
+    assert(guideHtml.includes('Tipo do troféu') && guideHtml.includes('Quando fazer') && guideHtml.includes('Risco de perder ou bloquear'), 'trofeus criticos de Elden Ring devem expor campos orientados para iniciantes');
+    assert(guideHtml.includes('Ver vídeo-guia') && guideHtml.includes('Ver localização'), 'links de apoio dos trofeus criticos devem ter rotulos claros');
+    assert(!/class="atlas-roadmap-step__marker"[^>]*>\s*\d+\s*<\/div>/.test(guideHtml), 'SSR de Elden Ring nao deve duplicar numeracao textual no marcador do roadmap');
+    assert(guideHtml.includes('class="atlas-roadmap-step__marker" aria-hidden="true" data-roadmap-number="1"></div>'), 'SSR de Elden Ring deve manter numero visual do roadmap fora do texto acessivel');
     assertSeoBasics(guideHtml, {
       label: 'SSR /jogo/elden-ring',
       canonical: expectedEldenCanonical,

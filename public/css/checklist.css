@@ -487,6 +487,58 @@
   color: rgba(226, 232, 240, .78);
 }
 
+.atlas-trophy-critical-guide {
+  margin-top: 12px;
+  padding: 12px;
+  border: 1px solid rgba(94, 234, 212, .14);
+  border-radius: 14px;
+  background: rgba(15, 23, 42, .34);
+}
+
+.atlas-trophy-critical-guide dl {
+  display: grid;
+  gap: 8px;
+  margin-top: 9px;
+}
+
+.atlas-trophy-critical-guide dl > div {
+  display: grid;
+  grid-template-columns: minmax(120px, .42fr) minmax(0, 1fr);
+  gap: 10px;
+  padding-top: 8px;
+  border-top: 1px solid rgba(255, 255, 255, .06);
+}
+
+.atlas-trophy-critical-guide dt {
+  color: rgba(255, 255, 255, .48);
+  font-size: .72rem;
+  font-weight: 850;
+  letter-spacing: .08em;
+  text-transform: uppercase;
+}
+
+.atlas-trophy-critical-guide dd {
+  color: rgba(226, 232, 240, .82);
+  font-size: .88rem;
+  line-height: 1.5;
+}
+
+.atlas-trophy-critical-guide__links {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  margin-top: 10px;
+}
+
+.atlas-trophy-critical-guide__links a {
+  color: #dffcf7;
+  font-size: .82rem;
+  font-weight: 800;
+  text-decoration: underline;
+  text-decoration-color: rgba(94, 234, 212, .42);
+  text-underline-offset: 3px;
+}
+
 .atlas-trophy-card__actions {
   display: flex;
   flex-wrap: wrap;
@@ -833,6 +885,11 @@
 }
 
 @media (max-width: 768px) {
+  .atlas-trophy-critical-guide dl > div {
+    grid-template-columns: 1fr;
+    gap: 4px;
+  }
+
   .atlas-guide-hero__layout {
     grid-template-columns: 1fr;
   }
