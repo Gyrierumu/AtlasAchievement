@@ -1641,10 +1641,12 @@ async function migrate(options = {}) {
   await syncSeedGameTrophiesFromSeed('resident-evil-4-remake');
   await syncSeedGameFromSeed('nioh-2', { insertIfMissing: true, forceSync: true });
   await syncSeedGameFromSeed('nioh-3', { insertIfMissing: true, forceSync: true });
+  await syncSeedGameFromSeed('demons-souls', { insertIfMissing: true, forceSync: true });
   await syncSeedGameFromSeed('saros', { insertIfMissing: true, forceSync: true });
   await syncSeedGameFromSeed('subnautica', { insertIfMissing: true, forceSync: true });
   await syncSeedGameFromSeed('hollow-knight-silksong', { insertIfMissing: true, forceSync: true });
   await syncSeedGameFromSeed('lego-batman-legacy-of-the-dark-knight', { insertIfMissing: true, forceSync: true });
+  await syncSeedGameFromSeed('heavy-rain', { insertIfMissing: true, forceSync: true });
   await syncSeedGameTrophiesFromSeed('the-last-of-us-part-i');
   await syncSeedGameRoadmapFromSeed('the-last-of-us-part-i');
   await syncSeedGameRoadmapFromSeed('the-last-of-us-part-ii');

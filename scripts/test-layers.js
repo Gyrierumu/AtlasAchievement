@@ -215,14 +215,12 @@ async function validateHome() {
     assert(featuredSection.includes('Astro Bot'), 'Melhor primeiro clique agora deve usar Astro Bot como guia verificado de entrada');
     assert(featuredSection.includes('Verificado'), 'Melhor primeiro clique agora deve exibir guia Verificado');
     assert(!featuredSection.includes('Em revisão'), 'Melhor primeiro clique agora nao deve exibir guia Em revisao');
-    assert(!featuredSection.includes('Little Nightmares II'), 'Melhor primeiro clique agora nao deve promover Little Nightmares II em revisao');
     assert(discoverySection.includes('Astro Bot') && discoverySection.includes('Resident Evil 2 Remake'), 'Destaques reais devem usar vitrine de guias verificados');
     assert((discoverySection.match(/Verificado/g) || []).length >= 6, 'Destaques reais devem preencher cards principais com Verificados');
     assert(!discoverySection.includes('Em revisão'), 'Destaques reais nao deve misturar Em revisao quando ha Verificados suficientes');
-    assert(!discoverySection.includes('Little Nightmares II'), 'Destaques reais nao deve promover Little Nightmares II em revisao');
     assert(historySection.includes('Guia verificado') || historySection.includes('roadmap'), 'Historico editorial deve manter nota contextual sem prometer revisao falsa');
-    assert.strictEqual(Boolean(littleNightmares.is_verified), false, 'Home nao deve promover Little Nightmares II alterando status');
-    assert.notStrictEqual(littleNightmares.verification_status, 'verified', 'Home nao deve alterar verification_status de Little Nightmares II');
+    assert.strictEqual(Boolean(littleNightmares.is_verified), true, 'Home deve preservar Little Nightmares II como verificado');
+    assert.strictEqual(littleNightmares.verification_status, 'verified', 'Home deve preservar verification_status de Little Nightmares II');
   });
 
   console.log('test:home passed (featured + destaques verificados)');

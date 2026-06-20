@@ -433,7 +433,7 @@
 
   function getExplicitGuideTrophyTags(trophy = {}, game = {}) {
     const slug = String(game?.slug || '').trim().toLowerCase();
-    if (!['a-way-out', 'armored-core-vi-fires-of-rubicon', 'assassins-creed-mirage', 'assassins-creed-origins', 'assassins-creed-odyssey', 'assassins-creed-shadows', 'assassins-creed-valhalla', 'avatar-frontiers-of-pandora', 'baldurs-gate-3', 'beyond-two-souls', 'celeste', 'clair-obscur-expedition-33', 'cyberpunk-2077', 'dark-souls-ii-scholar-of-the-first-sin', 'dark-souls-remastered', 'days-gone', 'demons-souls', 'detroit-become-human', 'disney-epic-mickey-rebrushed', 'final-fantasy-vii-remake', 'final-fantasy-vii-rebirth', 'final-fantasy-xvi', 'hades', 'hogwarts-legacy', 'hollow-knight-silksong', 'it-takes-two', 'lies-of-p', 'life-is-strange-double-exposure', 'life-is-strange-remastered', 'lords-of-the-fallen', 'resident-evil-6', 'resident-evil-7-biohazard', 'resident-evil-village', 'sekiro-shadows-die-twice', 'stray', 'the-witcher-3-wild-hunt', 'until-dawn'].includes(slug)) return [];
+    if (!['a-way-out', 'armored-core-vi-fires-of-rubicon', 'assassins-creed-mirage', 'assassins-creed-origins', 'assassins-creed-odyssey', 'assassins-creed-shadows', 'assassins-creed-valhalla', 'avatar-frontiers-of-pandora', 'baldurs-gate-3', 'beyond-two-souls', 'celeste', 'clair-obscur-expedition-33', 'cyberpunk-2077', 'dark-souls-ii-scholar-of-the-first-sin', 'dark-souls-remastered', 'days-gone', 'demons-souls', 'detroit-become-human', 'disney-epic-mickey-rebrushed', 'dragons-dogma-2', 'final-fantasy-vii-remake', 'final-fantasy-vii-rebirth', 'final-fantasy-xvi', 'gran-turismo-7', 'hades', 'heavy-rain', 'hogwarts-legacy', 'hollow-knight-silksong', 'it-takes-two', 'lies-of-p', 'life-is-strange-double-exposure', 'life-is-strange-remastered', 'life-is-strange-true-colors', 'little-nightmares-ii', 'lords-of-the-fallen', 'metaphor-refantazio', 'monster-hunter-world', 'persona-3-reload', 'persona-5-royal', 'prince-of-persia-the-lost-crown', 'ratchet-and-clank-rift-apart', 'reanimal', 'resident-evil-6', 'resident-evil-7-biohazard', 'resident-evil-village', 'returnal', 'road-96', 'sekiro-shadows-die-twice', 'split-fiction', 'star-wars-jedi-fallen-order', 'stray', 'the-witcher-3-wild-hunt', 'until-dawn'].includes(slug)) return [];
     if (!Array.isArray(trophy?.tags) || !trophy.tags.length) return [];
     const tags = [];
     const ids = new Set();
@@ -496,6 +496,15 @@
     if (!ids.has('difficulty') && /dificuldade|difficulty|\bhard\b|boss stem cell|stem cells|bsc|sem dano|no damage|flawless|professional|challenge rift|cursed sword|equipamento inicial|starter sword|sem usar|without|valquir|valkyr/.test(normalized)) {
       tags.push({ id: 'difficulty', label: 'Dificuldade', tone: 'warning' });
       ids.add('difficulty');
+    }
+    if (String(game?.slug || '').trim().toLowerCase() === 'prince-of-persia-the-lost-crown') {
+      const trophyId = String(trophy?.id || '').trim();
+      if (trophyId === 'poptlc_shock_trooper') {
+        const filteredTags = tags.filter(tag => tag?.id !== 'difficulty');
+        ids.delete('difficulty');
+        tags.length = 0;
+        tags.push(...filteredTags);
+      }
     }
     if (String(game?.slug || '').trim().toLowerCase() === 'life-is-strange-double-exposure') {
       const trophyId = String(trophy?.id || '').trim();
@@ -1115,11 +1124,61 @@
   function buildGuideDlcScopeModel(game = {}, inputs = {}) {
     const dlcText = firstGuideText(inputs.dlc, game?.dlc_scope, game?.guide_dlc, game?.dlc);
     const normalized = normalizeGuideSignalText(dlcText);
+    const slug = String(game?.slug || '').trim().toLowerCase();
     if (!dlcText) {
       return {
         value: 'Escopo não informado',
         detail: 'O guia ainda não informa se DLCs entram no escopo.',
         tone: 'atlas-meta-signal--partial'
+      };
+    }
+    if (slug === 'persona-3-reload' && /episode aigis/.test(normalized) && /nao e necessario|nao e necessaria|nao entra|fica separado/.test(normalized)) {
+      return {
+        value: 'DLC não necessário',
+        detail: dlcText,
+        tone: 'atlas-meta-signal--complete'
+      };
+    }
+    if (slug === 'persona-5-royal' && /dlc/.test(normalized) && /nao sao necessarios|nao e necessario|nao e necessaria|somente os 53 trofeus|lista base/.test(normalized)) {
+      return {
+        value: 'DLC não necessário',
+        detail: dlcText,
+        tone: 'atlas-meta-signal--complete'
+      };
+    }
+    if (slug === 'prince-of-persia-the-lost-crown' && /mask of darkness/.test(normalized) && /dlc nao necessario|nao entra nos 31 trofeus base|apenas no dlc|lista propria/.test(normalized)) {
+      return {
+        value: 'DLC não necessário',
+        detail: dlcText,
+        tone: 'atlas-meta-signal--complete'
+      };
+    }
+    if (slug === 'returnal' && /ascension|tower of sisyphus|co-op/.test(normalized) && /dlc nao necessario|conteudo separado|nao entram|nao entra/.test(normalized)) {
+      return {
+        value: 'DLC não necessário',
+        detail: dlcText,
+        tone: 'atlas-meta-signal--complete'
+      };
+    }
+    if (slug === 'road-96' && /mile 0|jogo separado|prequel/.test(normalized) && /dlc nao necessario|nao entra|fora/.test(normalized)) {
+      return {
+        value: 'DLC não necessário',
+        detail: dlcText,
+        tone: 'atlas-meta-signal--complete'
+      };
+    }
+    if (slug === 'split-fiction' && /21 trofeus base|conteudo futuro|futuro fica separado/.test(normalized) && /dlc nao necessario|nao entra|separado/.test(normalized)) {
+      return {
+        value: 'DLC não necessário',
+        detail: dlcText,
+        tone: 'atlas-meta-signal--complete'
+      };
+    }
+    if (slug === 'star-wars-jedi-fallen-order' && /40 trofeus base|new journey|survivor|cosmeticos/.test(normalized) && /dlc nao necessario|fora do escopo|nao sao necessarios|nao entra/.test(normalized)) {
+      return {
+        value: 'DLC não necessário',
+        detail: dlcText,
+        tone: 'atlas-meta-signal--complete'
       };
     }
     if (/extras fora da platina base/.test(normalized)) {
@@ -1364,7 +1423,7 @@
 
   function shouldReadRoadmapFirst(game = {}, trophies = [], roadmap = []) {
     const inputs = getGuideVerdictInputs(game, { trophies, roadmap, total: trophies.length });
-    const riskCounts = ['a-way-out', 'armored-core-vi-fires-of-rubicon', 'assassins-creed-mirage', 'assassins-creed-origins', 'assassins-creed-odyssey', 'assassins-creed-shadows', 'assassins-creed-valhalla', 'avatar-frontiers-of-pandora', 'beyond-two-souls', 'clair-obscur-expedition-33', 'cyberpunk-2077', 'dark-souls-ii-scholar-of-the-first-sin', 'demons-souls', 'detroit-become-human', 'final-fantasy-vii-remake', 'final-fantasy-vii-rebirth', 'final-fantasy-xvi', 'it-takes-two', 'lies-of-p', 'life-is-strange-double-exposure', 'life-is-strange-remastered', 'marvels-spider-man', 'marvels-spider-man-miles-morales', 'red-dead-redemption-2', 'sekiro-shadows-die-twice', 'stray', 'the-witcher-3-wild-hunt'].includes(String(game?.slug || '').trim().toLowerCase())
+    const riskCounts = ['a-way-out', 'armored-core-vi-fires-of-rubicon', 'assassins-creed-mirage', 'assassins-creed-origins', 'assassins-creed-odyssey', 'assassins-creed-shadows', 'assassins-creed-valhalla', 'avatar-frontiers-of-pandora', 'beyond-two-souls', 'clair-obscur-expedition-33', 'cyberpunk-2077', 'dark-souls-ii-scholar-of-the-first-sin', 'demons-souls', 'detroit-become-human', 'final-fantasy-vii-remake', 'final-fantasy-vii-rebirth', 'final-fantasy-xvi', 'it-takes-two', 'lies-of-p', 'life-is-strange-double-exposure', 'life-is-strange-remastered', 'life-is-strange-true-colors', 'marvels-spider-man', 'marvels-spider-man-miles-morales', 'persona-3-reload', 'persona-5-royal', 'red-dead-redemption-2', 'returnal', 'road-96', 'sekiro-shadows-die-twice', 'split-fiction', 'star-wars-jedi-fallen-order', 'stray', 'the-witcher-3-wild-hunt'].includes(String(game?.slug || '').trim().toLowerCase())
       ? getGuideRiskCounts(trophies, game)
       : getRiskCounts(trophies);
     const onlineCount = countGuideTrophyTag(trophies, 'online', game);
@@ -2138,7 +2197,7 @@
   function buildRouteChangingTrophies(trophies = [], game = {}) {
     const trophyById = new Map((Array.isArray(trophies) ? trophies : []).map(trophy => [trophy?.id, trophy]).filter(([id]) => id));
     const attentionSlug = String(game?.slug || '').trim().toLowerCase();
-    if (['a-way-out', 'armored-core-vi-fires-of-rubicon', 'assassins-creed-mirage', 'assassins-creed-origins', 'assassins-creed-odyssey', 'assassins-creed-shadows', 'assassins-creed-valhalla', 'avatar-frontiers-of-pandora', 'beyond-two-souls', 'cyberpunk-2077', 'demons-souls', 'final-fantasy-vii-remake', 'final-fantasy-vii-rebirth', 'final-fantasy-xvi', 'hades', 'life-is-strange-double-exposure', 'life-is-strange-remastered', 'resident-evil-6', 'sekiro-shadows-die-twice'].includes(attentionSlug) && Array.isArray(game?.attentionPoints)) {
+    if (['a-way-out', 'armored-core-vi-fires-of-rubicon', 'assassins-creed-mirage', 'assassins-creed-origins', 'assassins-creed-odyssey', 'assassins-creed-shadows', 'assassins-creed-valhalla', 'avatar-frontiers-of-pandora', 'beyond-two-souls', 'cyberpunk-2077', 'demons-souls', 'final-fantasy-vii-remake', 'final-fantasy-vii-rebirth', 'final-fantasy-xvi', 'hades', 'life-is-strange-double-exposure', 'life-is-strange-remastered', 'life-is-strange-true-colors', 'little-nightmares-ii', 'metaphor-refantazio', 'monster-hunter-world', 'persona-3-reload', 'persona-5-royal', 'prince-of-persia-the-lost-crown', 'ratchet-and-clank-rift-apart', 'reanimal', 'resident-evil-6', 'returnal', 'road-96', 'sekiro-shadows-die-twice', 'split-fiction', 'star-wars-jedi-fallen-order'].includes(attentionSlug) && Array.isArray(game?.attentionPoints)) {
       return game.attentionPoints.map((item, index) => {
         const tags = (Array.isArray(item?.tags) ? item.tags : []).map(tag => {
           const label = typeof tag === 'string' ? tag : firstGuideText(tag?.label, tag?.id);
@@ -5841,7 +5900,7 @@
     let missableCount = countRealMissableTrophies(trackableTrophies);
     let attentionCount = trackableTrophies.filter(trophy => trophy && (isRealMissableTrophy(trophy) || trophy.is_spoiler)).length;
     let spoilerCount = trackableTrophies.filter(trophy => trophy?.is_spoiler).length;
-    let riskCounts = ['a-way-out', 'armored-core-vi-fires-of-rubicon', 'assassins-creed-mirage', 'assassins-creed-origins', 'assassins-creed-odyssey', 'assassins-creed-shadows', 'assassins-creed-valhalla', 'avatar-frontiers-of-pandora', 'beyond-two-souls', 'clair-obscur-expedition-33', 'cyberpunk-2077', 'dark-souls-ii-scholar-of-the-first-sin', 'demons-souls', 'detroit-become-human', 'final-fantasy-vii-remake', 'final-fantasy-vii-rebirth', 'final-fantasy-xvi', 'it-takes-two', 'lies-of-p', 'life-is-strange-double-exposure', 'life-is-strange-remastered', 'marvels-spider-man', 'marvels-spider-man-miles-morales', 'red-dead-redemption-2', 'sekiro-shadows-die-twice', 'stray', 'the-witcher-3-wild-hunt'].includes(String(game?.slug || '').trim().toLowerCase())
+    let riskCounts = ['a-way-out', 'armored-core-vi-fires-of-rubicon', 'assassins-creed-mirage', 'assassins-creed-origins', 'assassins-creed-odyssey', 'assassins-creed-shadows', 'assassins-creed-valhalla', 'avatar-frontiers-of-pandora', 'beyond-two-souls', 'clair-obscur-expedition-33', 'cyberpunk-2077', 'dark-souls-ii-scholar-of-the-first-sin', 'demons-souls', 'detroit-become-human', 'final-fantasy-vii-remake', 'final-fantasy-vii-rebirth', 'final-fantasy-xvi', 'it-takes-two', 'lies-of-p', 'life-is-strange-double-exposure', 'life-is-strange-remastered', 'life-is-strange-true-colors', 'little-nightmares-ii', 'marvels-spider-man', 'marvels-spider-man-miles-morales', 'metaphor-refantazio', 'monster-hunter-world', 'persona-3-reload', 'persona-5-royal', 'reanimal', 'red-dead-redemption-2', 'returnal', 'road-96', 'sekiro-shadows-die-twice', 'split-fiction', 'star-wars-jedi-fallen-order', 'stray', 'the-witcher-3-wild-hunt'].includes(String(game?.slug || '').trim().toLowerCase())
       ? getGuideRiskCounts(trackableTrophies, game)
       : getRiskCounts(trackableTrophies);
     let guidanceCounts = buildGuidanceCounts(trackableTrophies, riskCounts);

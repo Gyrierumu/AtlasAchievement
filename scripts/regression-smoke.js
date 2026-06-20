@@ -1310,20 +1310,22 @@ async function assertSeedData({ all, get }, sampleGames) {
   assert.strictEqual(heavyRainSample.name, 'Heavy Rain', 'Heavy Rain deve manter nome oficial');
   assert.strictEqual(heavyRainSample.difficulty, 2, 'Heavy Rain deve usar dificuldade 2/10');
   assert.strictEqual(heavyRainSample.time_bucket, 'medium', 'Heavy Rain deve ter time_bucket medium');
-  assert.strictEqual(heavyRainSample.time_min_hours, 20, 'Heavy Rain deve preservar time_min_hours');
-  assert.strictEqual(heavyRainSample.time_max_hours, 30, 'Heavy Rain deve preservar time_max_hours');
+  assert.strictEqual(heavyRainSample.time_min_hours, 15, 'Heavy Rain deve preservar time_min_hours');
+  assert.strictEqual(heavyRainSample.time_max_hours, 25, 'Heavy Rain deve preservar time_max_hours');
   assert.strictEqual(heavyRainSample.time_sort_hours, 20, 'Heavy Rain deve preservar time_sort_hours');
   assert.strictEqual(heavyRainSample.editorial_status, 'published', 'Heavy Rain deve entrar publicado');
-  assert.strictEqual(heavyRainSample.coverage_level, 'strong', 'Heavy Rain deve ter cobertura forte sem selo complete');
-  assert.strictEqual(heavyRainSample.is_verified, false, 'Heavy Rain nao deve ser verificado automaticamente');
-  assert.strictEqual(heavyRainSample.verification_status, 'review', 'Heavy Rain deve aguardar revisao editorial');
+  assert.strictEqual(heavyRainSample.coverage_level, 'complete', 'Heavy Rain deve ter cobertura complete apos revisao final');
+  assert.strictEqual(heavyRainSample.is_verified, true, 'Heavy Rain deve ser verificado apos revisao final');
+  assert.strictEqual(heavyRainSample.verification_status, 'verified', 'Heavy Rain deve entrar verificado');
   assert.strictEqual(heavyRainSample.trophies.length, 57, 'Heavy Rain deve ter 57 trofeus da lista base');
   assert.strictEqual(new Set(heavyRainSample.trophies.map(trophy => trophy.id)).size, 57, 'Heavy Rain nao deve ter trophy_code duplicado');
-  assert(heavyRainSample.trophies.filter(trophy => trophy.is_missable).length >= 50, 'Heavy Rain deve marcar escolhas, QTEs, finais e rotas como trofeus de atencao/perdiveis');
+  assert.strictEqual(heavyRainSample.hasMissables, false, 'Heavy Rain deve usar taxonomia sem perdiveis permanentes');
+  assert.strictEqual(heavyRainSample.missableCount, 0, 'Heavy Rain deve manter missableCount zerado');
+  assert.strictEqual(heavyRainSample.trophies.filter(trophy => trophy.is_missable).length, 0, 'Heavy Rain nao deve marcar trofeus como perdiveis permanentes');
   assert(heavyRainSample.trophies.some(trophy => trophy.id === 'heavy_interactive_drama' && !trophy.is_missable), 'Interactive Drama nao deve ser marcado como perdivel');
   assert(heavyRainSample.trophies.some(trophy => trophy.id === 'heavy_hero' && !trophy.is_missable), 'HEAVY RAIN Hero nao deve ser marcado como perdivel');
-  assert(heavyRainSample.trophies.some(trophy => trophy.id === 'heavy_perfect_crime' && trophy.type === 'Ouro' && trophy.is_missable && trophy.tip.includes('Origami Killer')), 'Perfect Crime deve ser ouro, perdivel e explicar rota longa');
-  assert(heavyRainSample.trophies.some(trophy => trophy.id === 'heavy_all_endings' && trophy.type === 'Ouro' && trophy.is_missable && trophy.tip.includes('não é apenas repetir')), 'All Endings deve ser ouro e explicar que nao e replay simples do final');
+  assert(heavyRainSample.trophies.some(trophy => trophy.id === 'heavy_perfect_crime' && trophy.type === 'Ouro' && !trophy.is_missable && trophy.tip.includes('Origami Killer') && trophy.tags.includes('Replay')), 'Perfect Crime deve ser ouro, rota/replay e explicar rota longa');
+  assert(heavyRainSample.trophies.some(trophy => trophy.id === 'heavy_all_endings' && trophy.type === 'Ouro' && !trophy.is_missable && trophy.tip.includes('Não é apenas repetir') && trophy.tags.includes('Grind')), 'All Endings deve ser ouro e explicar que nao e replay simples do final');
   assert(heavyRainSample.trophies.some(trophy => trophy.id === 'heavy_trial_master' && trophy.type === 'Prata' && trophy.tip.includes('cinco trials')), 'Trial Master deve ser prata e citar cinco trials');
   assert(heavyRainSample.trophies.some(trophy => trophy.id === 'heavy_nerd' && trophy.type === 'Prata' && trophy.tip.includes('ARI')), 'Nerd deve ser prata e citar ARI');
   assert(!heavyRainSample.trophies.some(trophy => /online obrigatório|multiplayer obrigatório|PS\+/i.test(`${trophy.name} ${trophy.description} ${trophy.tip}`)), 'Heavy Rain nao deve marcar trofeu como online, multiplayer ou PS+ obrigatorio');
@@ -1332,10 +1334,10 @@ async function assertSeedData({ all, get }, sampleGames) {
   assert(heavyRainSample.online_summary.includes('Não há exigência online') && heavyRainSample.online_summary.includes('multiplayer'), 'Heavy Rain deve registrar ausencia de online/multiplayer obrigatorio');
   assert(heavyRainSample.cleanup_advice.includes('Chapter Select') && heavyRainSample.cleanup_advice.includes('continuar a linha do tempo'), 'Heavy Rain deve orientar Chapter Select com consequencias persistentes');
   assert(heavyRainSample.dlc_scope.includes('lista base de Heavy Rain') && heavyRainSample.dlc_scope.includes('The Taxidermist'), 'Heavy Rain deve separar lista base de conteudos extras');
-  assert(heavyRainSample.roadmap.some(step => roadmapStepText(step).includes('quatro protagonistas vivos') && roadmapStepText(step).includes('QTEs')), 'roadmap de Heavy Rain deve cobrir quatro protagonistas e QTEs');
-  assert(heavyRainSample.roadmap.some(step => roadmapStepText(step).includes('Perfect Crime') && roadmapStepText(step).includes('continue jogando com save')), 'roadmap de Heavy Rain deve cobrir Perfect Crime com save persistente');
+  assert(heavyRainSample.roadmap.some(step => roadmapStepText(step).includes('quatro protagonistas vivos') && roadmapStepText(step).includes('Chapter Select')), 'roadmap de Heavy Rain deve cobrir quatro protagonistas e Chapter Select');
+  assert(heavyRainSample.roadmap.some(step => roadmapStepText(step).includes('Perfect Crime') && roadmapStepText(step).includes('Não basta alterar apenas o capítulo final')), 'roadmap de Heavy Rain deve cobrir Perfect Crime com continuidade');
   assert(heavyRainSample.roadmap.some(step => roadmapStepText(step).includes('Four Heroes') && roadmapStepText(step).includes('Saved the Kid')), 'roadmap de Heavy Rain deve cobrir Four Heroes e Saved the Kid');
-  assert(heavyRainSample.roadmap.some(step => roadmapStepText(step).includes('All Endings') && roadmapStepText(step).includes('não trate All Endings como replay simples')), 'roadmap de Heavy Rain deve explicar All Endings');
+  assert(heavyRainSample.roadmap.some(step => roadmapStepText(step).includes('All Endings') && roadmapStepText(step).includes('epílogos diferentes')), 'roadmap de Heavy Rain deve explicar All Endings');
   assert(heavyRainSample.roadmap.some(step => roadmapStepText(step).includes('Trial Master') && roadmapStepText(step).includes('Nerd')), 'roadmap de Heavy Rain deve cobrir Trial Master e Nerd');
   assert.deepStrictEqual(
     heavyRainSample.trophies.reduce((counts, trophy) => {
@@ -1699,15 +1701,15 @@ async function assertSeedData({ all, get }, sampleGames) {
   const heavyRain = await get('SELECT slug, difficulty, time, time_bucket, time_min_hours, time_max_hours, time_sort_hours, editorial_status, coverage_level, is_verified, verification_status, image, cover_image, online_summary, dlc_scope, cleanup_advice, difficulty_reason FROM games WHERE slug = ?', ['heavy-rain']);
   assert.strictEqual(heavyRain?.slug, 'heavy-rain', 'seed deve persistir slug de Heavy Rain');
   assert.strictEqual(heavyRain?.difficulty, 2, 'seed deve persistir dificuldade 2/10 de Heavy Rain');
-  assert.strictEqual(heavyRain?.time, '20-30h', 'seed deve persistir tempo 20-30h de Heavy Rain');
+  assert.strictEqual(heavyRain?.time, '15-25h', 'seed deve persistir tempo 15-25h de Heavy Rain');
   assert.strictEqual(heavyRain?.time_bucket, 'medium', 'seed deve persistir Heavy Rain como medium');
-  assert.strictEqual(heavyRain?.time_min_hours, 20, 'seed deve persistir time_min_hours de Heavy Rain');
-  assert.strictEqual(heavyRain?.time_max_hours, 30, 'seed deve persistir time_max_hours de Heavy Rain');
+  assert.strictEqual(heavyRain?.time_min_hours, 15, 'seed deve persistir time_min_hours de Heavy Rain');
+  assert.strictEqual(heavyRain?.time_max_hours, 25, 'seed deve persistir time_max_hours de Heavy Rain');
   assert.strictEqual(heavyRain?.time_sort_hours, 20, 'seed deve persistir time_sort_hours de Heavy Rain');
   assert.strictEqual(heavyRain?.editorial_status, 'published', 'Heavy Rain deve aparecer publicado');
-  assert.strictEqual(heavyRain?.coverage_level, 'strong', 'Heavy Rain deve entrar com coverage strong');
-  assert.strictEqual(heavyRain?.is_verified, 0, 'Heavy Rain nao deve entrar como verificado');
-  assert.strictEqual(heavyRain?.verification_status, 'review', 'Heavy Rain deve entrar em revisao editorial');
+  assert.strictEqual(heavyRain?.coverage_level, 'complete', 'Heavy Rain deve entrar com coverage complete');
+  assert.strictEqual(heavyRain?.is_verified, 1, 'Heavy Rain deve entrar como verificado');
+  assert.strictEqual(heavyRain?.verification_status, 'verified', 'Heavy Rain deve entrar verificado');
   assert.strictEqual(heavyRain?.image, heavyRainSample.image, 'Heavy Rain deve persistir image horizontal');
   assert.strictEqual(heavyRain?.cover_image, heavyRainSample.cover_image, 'Heavy Rain deve persistir cover_image vertical');
   assert(heavyRain?.online_summary.includes('Não há exigência online') && heavyRain?.online_summary.includes('multiplayer'), 'Heavy Rain deve persistir ausencia de online/multiplayer');
@@ -1718,15 +1720,15 @@ async function assertSeedData({ all, get }, sampleGames) {
   const heavyRainRoadmapRows = await all('SELECT content FROM roadmaps WHERE game_id = (SELECT id FROM games WHERE slug = ?) ORDER BY step_order', ['heavy-rain']);
   assert.strictEqual(heavyRainRoadmapRows.length, 7, 'seed deve inserir 7 etapas de roadmap para Heavy Rain');
   const heavyRainRoadmapText = heavyRainRoadmapRows.map(row => row.content).join(' ');
-  assert(heavyRainRoadmapText.includes('quatro protagonistas vivos') && heavyRainRoadmapText.includes('QTEs'), 'seed deve persistir quatro protagonistas e QTEs no roadmap de Heavy Rain');
-  assert(heavyRainRoadmapText.includes('Perfect Crime') && heavyRainRoadmapText.includes('continue jogando com save'), 'seed deve persistir Perfect Crime com save no roadmap');
-  assert(heavyRainRoadmapText.includes('All Endings') && heavyRainRoadmapText.includes('não trate All Endings como replay simples'), 'seed deve persistir aviso de All Endings');
+  assert(heavyRainRoadmapText.includes('quatro protagonistas vivos') && heavyRainRoadmapText.includes('Chapter Select'), 'seed deve persistir quatro protagonistas e Chapter Select no roadmap de Heavy Rain');
+  assert(heavyRainRoadmapText.includes('Perfect Crime') && heavyRainRoadmapText.includes('Não basta alterar apenas o capítulo final'), 'seed deve persistir Perfect Crime com continuidade no roadmap');
+  assert(heavyRainRoadmapText.includes('All Endings') && heavyRainRoadmapText.includes('epílogos diferentes'), 'seed deve persistir aviso de All Endings');
   assert(heavyRainRoadmapText.includes('Trial Master') && heavyRainRoadmapText.includes('Nerd'), 'seed deve persistir Trial Master e Nerd');
 
   const heavyRainTrophyRows = await all('SELECT trophy_code, name, type, is_missable, is_spoiler, tip FROM trophies WHERE game_id = (SELECT id FROM games WHERE slug = ?) ORDER BY id', ['heavy-rain']);
   assert.strictEqual(heavyRainTrophyRows.length, 57, 'seed deve inserir checklist completo de Heavy Rain');
   assert.strictEqual(new Set(heavyRainTrophyRows.map(trophy => trophy.trophy_code)).size, 57, 'seed nao deve inserir trophy_code duplicado em Heavy Rain');
-  assert(heavyRainTrophyRows.filter(trophy => trophy.is_missable).length >= 50, 'seed deve marcar escolhas/QTEs/finais como atencao em Heavy Rain');
+  assert.strictEqual(heavyRainTrophyRows.filter(trophy => trophy.is_missable).length, 0, 'seed nao deve marcar Heavy Rain como perdivel permanente');
   assert.deepStrictEqual(
     heavyRainTrophyRows.reduce((counts, trophy) => {
       counts[trophy.type] = (counts[trophy.type] || 0) + 1;
@@ -1735,8 +1737,8 @@ async function assertSeedData({ all, get }, sampleGames) {
     { Platina: 1, Bronze: 50, Prata: 4, Ouro: 2 },
     'seed deve persistir distribuicao 1 platina, 2 ouro, 4 prata e 50 bronze em Heavy Rain'
   );
-  assert(heavyRainTrophyRows.some(trophy => trophy.trophy_code === 'heavy_perfect_crime' && trophy.type === 'Ouro' && trophy.is_missable && trophy.tip.includes('Origami Killer')), 'Perfect Crime deve ser ouro e citar Origami Killer');
-  assert(heavyRainTrophyRows.some(trophy => trophy.trophy_code === 'heavy_all_endings' && trophy.type === 'Ouro' && trophy.tip.includes('não é apenas repetir')), 'All Endings deve ser ouro e explicar replay de finais');
+  assert(heavyRainTrophyRows.some(trophy => trophy.trophy_code === 'heavy_perfect_crime' && trophy.type === 'Ouro' && !trophy.is_missable && trophy.tip.includes('Origami Killer')), 'Perfect Crime deve ser ouro e citar Origami Killer sem inflar perdivel permanente');
+  assert(heavyRainTrophyRows.some(trophy => trophy.trophy_code === 'heavy_all_endings' && trophy.type === 'Ouro' && !trophy.is_missable && trophy.tip.includes('Não é apenas repetir')), 'All Endings deve ser ouro e explicar replay de finais');
   assert(heavyRainTrophyRows.some(trophy => trophy.trophy_code === 'heavy_trial_master' && trophy.type === 'Prata' && trophy.tip.includes('cinco trials')), 'Trial Master deve ser prata e citar cinco trials');
   assert(heavyRainTrophyRows.some(trophy => trophy.trophy_code === 'heavy_nerd' && trophy.type === 'Prata' && trophy.tip.includes('ARI')), 'Nerd deve ser prata e citar ARI');
   assert(heavyRainTrophyRows.some(trophy => trophy.trophy_code === 'heavy_interactive_drama' && !trophy.is_missable), 'Interactive Drama nao deve entrar como perdivel');
@@ -2240,16 +2242,16 @@ async function assertSeedData({ all, get }, sampleGames) {
   assert.strictEqual(littleNightmaresIISample.time_max_hours, 10, 'Little Nightmares II deve preservar time_max_hours');
   assert.strictEqual(littleNightmaresIISample.time_sort_hours, 8, 'Little Nightmares II deve preservar time_sort_hours');
   assert.strictEqual(littleNightmaresIISample.editorial_status, 'published', 'Little Nightmares II deve entrar publicado');
-  assert.strictEqual(littleNightmaresIISample.coverage_level, 'strong', 'Little Nightmares II deve ter cobertura forte sem selo complete');
-  assert.strictEqual(littleNightmaresIISample.is_verified, false, 'Little Nightmares II nao deve ser verificado automaticamente');
-  assert.strictEqual(littleNightmaresIISample.verification_status, 'review', 'Little Nightmares II deve aguardar revisao editorial');
+  assert.strictEqual(littleNightmaresIISample.coverage_level, 'complete', 'Little Nightmares II deve ter cobertura completa');
+  assert.strictEqual(littleNightmaresIISample.is_verified, true, 'Little Nightmares II deve ficar verificado após revisao');
+  assert.strictEqual(littleNightmaresIISample.verification_status, 'verified', 'Little Nightmares II deve persistir verificacao editorial');
   assert.strictEqual(littleNightmaresIISample.trophies.length, 35, 'Little Nightmares II deve ter 35 trofeus da lista base');
   assert.strictEqual(new Set(littleNightmaresIISample.trophies.map(trophy => trophy.id)).size, 35, 'Little Nightmares II nao deve ter trophy_code duplicado');
   assert.strictEqual(littleNightmaresIISample.trophies.filter(trophy => trophy.is_missable).length, 0, 'Little Nightmares II nao deve marcar perdiveis definitivos');
-  assert(littleNightmaresIISample.online_summary.includes('Não há exigência online'), 'Little Nightmares II deve explicar ausencia de online');
+  assert(littleNightmaresIISample.online_summary.includes('totalmente offline'), 'Little Nightmares II deve explicar ausencia de online');
   assert(littleNightmaresIISample.before_you_start.includes('Fair Prey') && littleNightmaresIISample.before_you_start.includes('Post Industrial'), 'Little Nightmares II deve alertar trofeus com chapeus especificos');
-  assert(littleNightmaresIISample.cleanup_advice.includes('seleção de capítulos'), 'Little Nightmares II deve orientar cleanup por selecao de capitulos');
-  assert(littleNightmaresIISample.dlc_scope.includes('lista base') && littleNightmaresIISample.dlc_scope.includes('chapéus bônus'), 'Little Nightmares II deve separar lista base de conteudos extras');
+  assert(littleNightmaresIISample.cleanup_advice.includes('Chapter Select'), 'Little Nightmares II deve orientar cleanup por Chapter Select');
+  assert(littleNightmaresIISample.dlc_scope.includes('lista base') && littleNightmaresIISample.dlc_scope.includes('Nome’s Attic'), 'Little Nightmares II deve separar lista base de conteudos extras');
   assert(littleNightmaresIISample.roadmap.some(step => roadmapStepText(step).includes('Glitching Remains') && roadmapStepText(step).includes('chapéus')), 'roadmap de Little Nightmares II deve mencionar Glitching Remains e chapeus');
   assert(littleNightmaresIISample.roadmap.some(step => roadmapStepText(step).includes('Chapter Select') || roadmapStepText(step).includes('seleção de capítulos')), 'roadmap de Little Nightmares II deve mencionar selecao de capitulos');
   assert(littleNightmaresIISample.roadmap.some(step => roadmapStepText(step).includes('Fair Prey') && roadmapStepText(step).includes('Post Industrial')), 'roadmap de Little Nightmares II deve mencionar trofeus dependentes de chapeu');
@@ -2276,21 +2278,21 @@ async function assertSeedData({ all, get }, sampleGames) {
   assert.strictEqual(littleNightmaresII?.time_max_hours, 10, 'seed deve persistir time_max_hours de Little Nightmares II');
   assert.strictEqual(littleNightmaresII?.time_sort_hours, 8, 'seed deve persistir time_sort_hours de Little Nightmares II');
   assert.strictEqual(littleNightmaresII?.editorial_status, 'published', 'Little Nightmares II deve aparecer publicado');
-  assert.strictEqual(littleNightmaresII?.coverage_level, 'strong', 'Little Nightmares II deve entrar com coverage strong');
-  assert.strictEqual(littleNightmaresII?.is_verified, 0, 'Little Nightmares II nao deve entrar como verificado');
-  assert.strictEqual(littleNightmaresII?.verification_status, 'review', 'Little Nightmares II deve entrar em revisao editorial');
+  assert.strictEqual(littleNightmaresII?.coverage_level, 'complete', 'Little Nightmares II deve entrar com coverage complete');
+  assert.strictEqual(littleNightmaresII?.is_verified, 1, 'Little Nightmares II deve entrar verificado');
+  assert.strictEqual(littleNightmaresII?.verification_status, 'verified', 'Little Nightmares II deve persistir verificacao editorial');
   assert.strictEqual(littleNightmaresII?.image, littleNightmaresIISample.image, 'Little Nightmares II deve persistir image horizontal');
   assert.strictEqual(littleNightmaresII?.cover_image, littleNightmaresIISample.cover_image, 'Little Nightmares II deve persistir cover_image vertical');
-  assert(littleNightmaresII?.online_summary.includes('Não há exigência online'), 'Little Nightmares II deve persistir ausencia de online');
+  assert(littleNightmaresII?.online_summary.includes('totalmente offline'), 'Little Nightmares II deve persistir ausencia de online');
   assert(littleNightmaresII?.before_you_start.includes('Fair Prey') && littleNightmaresII?.before_you_start.includes('Post Industrial'), 'Little Nightmares II deve persistir alerta de chapeus especificos');
-  assert(littleNightmaresII?.cleanup_advice.includes('seleção de capítulos'), 'Little Nightmares II deve persistir cleanup por selecao de capitulos');
+  assert(littleNightmaresII?.cleanup_advice.includes('Chapter Select'), 'Little Nightmares II deve persistir cleanup por Chapter Select');
   assert(littleNightmaresII?.dlc_scope.includes('lista base'), 'Little Nightmares II deve persistir escopo da lista base');
 
   const littleNightmaresIIRoadmapRows = await all('SELECT content FROM roadmaps WHERE game_id = (SELECT id FROM games WHERE slug = ?) ORDER BY step_order', ['little-nightmares-ii']);
-  assert.strictEqual(littleNightmaresIIRoadmapRows.length, 6, 'seed deve inserir 6 etapas de roadmap para Little Nightmares II');
+  assert.strictEqual(littleNightmaresIIRoadmapRows.length, 8, 'seed deve inserir 8 etapas de roadmap para Little Nightmares II');
   const littleNightmaresIIRoadmapText = littleNightmaresIIRoadmapRows.map(row => row.content).join(' ');
   assert(littleNightmaresIIRoadmapText.includes('Glitching Remains') && littleNightmaresIIRoadmapText.includes('chapéus'), 'seed deve persistir coletaveis e chapeus');
-  assert(littleNightmaresIIRoadmapText.includes('seleção de capítulos'), 'seed deve persistir selecao de capitulos');
+  assert(littleNightmaresIIRoadmapText.includes('Chapter Select'), 'seed deve persistir Chapter Select');
   assert(littleNightmaresIIRoadmapText.includes('Fair Prey') && littleNightmaresIIRoadmapText.includes('Post Industrial'), 'seed deve persistir chapeus especificos');
 
   const littleNightmaresIITrophyRows = await all('SELECT trophy_code, name, type, is_missable, is_spoiler, tip FROM trophies WHERE game_id = (SELECT id FROM games WHERE slug = ?) ORDER BY id', ['little-nightmares-ii']);
@@ -2320,23 +2322,23 @@ async function assertSeedData({ all, get }, sampleGames) {
   assert.strictEqual(reanimalSample.time_max_hours, 6, 'REANIMAL deve preservar time_max_hours');
   assert.strictEqual(reanimalSample.time_sort_hours, 4, 'REANIMAL deve preservar time_sort_hours');
   assert.strictEqual(reanimalSample.editorial_status, 'published', 'REANIMAL deve entrar publicado');
-  assert.strictEqual(reanimalSample.coverage_level, 'strong', 'REANIMAL deve ter cobertura forte sem selo complete');
-  assert.strictEqual(reanimalSample.is_verified, false, 'REANIMAL nao deve ser verificado automaticamente');
-  assert.strictEqual(reanimalSample.verification_status, 'review', 'REANIMAL deve aguardar revisao editorial');
+  assert.strictEqual(reanimalSample.coverage_level, 'complete', 'REANIMAL deve ter cobertura completa após revisao final');
+  assert.strictEqual(reanimalSample.is_verified, true, 'REANIMAL deve ficar verificado após revisao final');
+  assert.strictEqual(reanimalSample.verification_status, 'verified', 'REANIMAL deve persistir status verificado');
   assert.strictEqual(reanimalSample.trophies.length, 32, 'REANIMAL deve ter 32 trofeus da lista base');
   assert.strictEqual(new Set(reanimalSample.trophies.map(trophy => trophy.id)).size, 32, 'REANIMAL nao deve ter trophy_code duplicado');
   assert.strictEqual(reanimalSample.trophies.filter(trophy => trophy.is_missable).length, 3, 'REANIMAL deve marcar apenas perdiveis confirmados, sem exagerar Naval Blazing');
   assert(reanimalSample.online_summary.includes('Não há troféus online') && reanimalSample.online_summary.includes('solo') && reanimalSample.online_summary.includes('coop'), 'REANIMAL deve explicar ausencia de online e suporte solo/coop');
-  assert(reanimalSample.before_you_start.includes('não tem versão PS4') && reanimalSample.before_you_start.includes('autosave'), 'REANIMAL deve alertar PS5/autosave');
-  assert(reanimalSample.cleanup_advice.includes('Chapter Select') && reanimalSample.cleanup_advice.includes('caixões'), 'REANIMAL deve orientar cleanup e limite do Chapter Select');
-  assert(reanimalSample.dlc_scope.includes('lista base') && reanimalSample.dlc_scope.includes('DLCs'), 'REANIMAL deve separar lista base de DLCs');
-  assert(reanimalSample.roadmap.some(step => roadmapStepText(step).includes('caixões') && roadmapStepText(step).includes('estátuas')), 'roadmap de REANIMAL deve mencionar coletaveis criticos');
+  assert(reanimalSample.before_you_start.includes('sem versão PS4') && reanimalSample.before_you_start.includes('autosave'), 'REANIMAL deve alertar PS5/autosave');
+  assert(reanimalSample.cleanup_advice.includes('Chapter Replay') && reanimalSample.cleanup_advice.includes('Coffins'), 'REANIMAL deve orientar cleanup e limite do Chapter Replay');
+  assert(reanimalSample.dlc_scope.includes('lista base') && reanimalSample.dlc_scope.includes('The Expanded World'), 'REANIMAL deve separar lista base de conteudo extra');
+  assert(reanimalSample.roadmap.some(step => roadmapStepText(step).includes('Coffins') && roadmapStepText(step).includes('Hidden Statues')), 'roadmap de REANIMAL deve mencionar coletaveis criticos');
   assert(reanimalSample.roadmap.some(step => roadmapStepText(step).includes('9 capítulos') || roadmapStepText(step).includes('Capítulo 9')), 'roadmap de REANIMAL deve mencionar campanha/capitulos');
   assert(reanimalSample.roadmap.some(step => roadmapStepText(step).includes('Naval Blazing') && roadmapStepText(step).includes('Lost at Sea')), 'roadmap de REANIMAL deve mencionar cumulativos/boat cleanup');
-  assert(reanimalSample.trophies.some(trophy => trophy.id === 'reanimal_friends_reunited' && trophy.type === 'Ouro' && trophy.is_missable && trophy.tip.includes('5 caixões')), 'Friends Reunited deve ser ouro perdível e citar 5 caixoes');
-  assert(reanimalSample.trophies.some(trophy => trophy.id === 'reanimal_prayer_for_the_dying' && trophy.type === 'Prata' && trophy.is_missable && trophy.tip.includes('5 estátuas')), 'Prayer for the Dying deve ser prata perdível e citar 5 estatuas');
-  assert(reanimalSample.trophies.some(trophy => trophy.id === 'reanimal_beneath_the_mask' && trophy.type === 'Ouro' && trophy.is_missable && trophy.tip.includes('18 máscaras')), 'Beneath the Mask deve ser ouro perdível e citar 18 mascaras');
-  assert(reanimalSample.trophies.some(trophy => trophy.id === 'reanimal_naval_blazing' && trophy.type === 'Prata' && trophy.is_missable === false && trophy.tip.includes('Capítulos 3 e 6') && trophy.tip.includes('precisa validar')), 'Naval Blazing deve persistir como atencao, nao como perdivel definitivo');
+  assert(reanimalSample.trophies.some(trophy => trophy.id === 'reanimal_friends_reunited' && trophy.type === 'Ouro' && trophy.is_missable && trophy.tip.includes('5 Coffins')), 'Friends Reunited deve ser ouro perdível e citar 5 Coffins');
+  assert(reanimalSample.trophies.some(trophy => trophy.id === 'reanimal_prayer_for_the_dying' && trophy.type === 'Prata' && trophy.is_missable && trophy.tip.includes('5 Hidden Statues')), 'Prayer for the Dying deve ser prata perdível e citar 5 Hidden Statues');
+  assert(reanimalSample.trophies.some(trophy => trophy.id === 'reanimal_beneath_the_mask' && trophy.type === 'Ouro' && trophy.is_missable && trophy.tip.includes('18 Masks')), 'Beneath the Mask deve ser ouro perdível e citar 18 Masks');
+  assert(reanimalSample.trophies.some(trophy => trophy.id === 'reanimal_naval_blazing' && trophy.type === 'Prata' && trophy.is_missable === false && trophy.tip.includes('20 naval mines') && trophy.tip.includes('mesma playthrough')), 'Naval Blazing deve persistir como atencao, nao como perdivel definitivo');
   assert(reanimalSample.trophies.some(trophy => trophy.id === 'reanimal_its_a_trap' && trophy.name === 'It’s a Trap!'), 'It’s a Trap! deve preservar apostrofo tipografico');
   assert(reanimalSample.trophies.some(trophy => trophy.id === 'reanimal_rock_n_pop' && trophy.name === 'Rock ‘n Pop'), 'Rock ‘n Pop deve preservar pontuacao');
   assert(reanimalSample.trophies.some(trophy => trophy.id === 'reanimal_non_cannonical' && trophy.name === 'Non-Cannonical'), 'Non-Cannonical deve preservar nome oficial');
@@ -2358,21 +2360,21 @@ async function assertSeedData({ all, get }, sampleGames) {
   assert.strictEqual(reanimal?.time_max_hours, 6, 'seed deve persistir time_max_hours de REANIMAL');
   assert.strictEqual(reanimal?.time_sort_hours, 4, 'seed deve persistir time_sort_hours de REANIMAL');
   assert.strictEqual(reanimal?.editorial_status, 'published', 'REANIMAL deve aparecer publicado');
-  assert.strictEqual(reanimal?.coverage_level, 'strong', 'REANIMAL deve entrar com coverage strong');
-  assert.strictEqual(reanimal?.is_verified, 0, 'REANIMAL nao deve entrar como verificado');
-  assert.strictEqual(reanimal?.verification_status, 'review', 'REANIMAL deve entrar em revisao editorial');
+  assert.strictEqual(reanimal?.coverage_level, 'complete', 'REANIMAL deve persistir coverage complete');
+  assert.strictEqual(reanimal?.is_verified, 1, 'REANIMAL deve entrar verificado');
+  assert.strictEqual(reanimal?.verification_status, 'verified', 'REANIMAL deve persistir verificacao editorial');
   assert.strictEqual(reanimal?.image, reanimalSample.image, 'REANIMAL deve persistir image horizontal');
   assert.strictEqual(reanimal?.cover_image, reanimalSample.cover_image, 'REANIMAL deve persistir cover_image vertical');
   assert(reanimal?.online_summary.includes('Não há troféus online') && reanimal?.online_summary.includes('coop'), 'REANIMAL deve persistir ausencia de online');
-  assert(reanimal?.before_you_start.includes('não tem versão PS4') && reanimal?.before_you_start.includes('autosave'), 'REANIMAL deve persistir nota de PS4/autosave');
-  assert(reanimal?.cleanup_advice.includes('Chapter Select') && reanimal?.cleanup_advice.includes('caixões'), 'REANIMAL deve persistir limite de Chapter Select');
+  assert(reanimal?.before_you_start.includes('sem versão PS4') && reanimal?.before_you_start.includes('autosave'), 'REANIMAL deve persistir nota de PS4/autosave');
+  assert(reanimal?.cleanup_advice.includes('Chapter Replay') && reanimal?.cleanup_advice.includes('Coffins'), 'REANIMAL deve persistir limite de Chapter Replay');
   assert(reanimal?.dlc_scope.includes('lista base'), 'REANIMAL deve persistir escopo da lista base');
 
   const reanimalRoadmapRows = await all('SELECT content FROM roadmaps WHERE game_id = (SELECT id FROM games WHERE slug = ?) ORDER BY step_order', ['reanimal']);
-  assert.strictEqual(reanimalRoadmapRows.length, 6, 'seed deve inserir 6 etapas de roadmap para REANIMAL');
+  assert.strictEqual(reanimalRoadmapRows.length, 8, 'seed deve inserir 8 etapas de roadmap para REANIMAL');
   const reanimalRoadmapText = reanimalRoadmapRows.map(row => row.content).join(' ');
-  assert(reanimalRoadmapText.includes('caixões') && reanimalRoadmapText.includes('estátuas'), 'seed deve persistir coletaveis criticos');
-  assert(reanimalRoadmapText.includes('Chapter Select'), 'seed deve persistir Chapter Select');
+  assert(reanimalRoadmapText.includes('Coffins') && reanimalRoadmapText.includes('Hidden Statues'), 'seed deve persistir coletaveis criticos');
+  assert(reanimalRoadmapText.includes('Chapter Replay'), 'seed deve persistir Chapter Replay');
   assert(reanimalRoadmapText.includes('Naval Blazing') && reanimalRoadmapText.includes('Lost at Sea'), 'seed deve persistir cumulativos de barco');
 
   const reanimalTrophyRows = await all('SELECT trophy_code, name, type, is_missable, is_spoiler, tip FROM trophies WHERE game_id = (SELECT id FROM games WHERE slug = ?) ORDER BY id', ['reanimal']);
@@ -2387,7 +2389,7 @@ async function assertSeedData({ all, get }, sampleGames) {
     { Platina: 1, Prata: 16, Ouro: 4, Bronze: 11 },
     'seed deve persistir distribuicao 1 platina, 4 ouro, 16 prata e 11 bronze em REANIMAL'
   );
-  assert(reanimalTrophyRows.some(trophy => trophy.trophy_code === 'reanimal_friends_reunited' && trophy.type === 'Ouro' && trophy.is_missable && trophy.tip.includes('5 caixões')), 'Friends Reunited deve persistir com caixoes e final secreto');
+  assert(reanimalTrophyRows.some(trophy => trophy.trophy_code === 'reanimal_friends_reunited' && trophy.type === 'Ouro' && trophy.is_missable && trophy.tip.includes('5 Coffins')), 'Friends Reunited deve persistir com Coffins e final secreto');
   assert(reanimalTrophyRows.some(trophy => trophy.trophy_code === 'reanimal_secret_bunker' && trophy.type === 'Prata' && trophy.tip.includes('2-3-3-2')), 'Secret Bunker deve persistir com codigo');
   assert(reanimalTrophyRows.some(trophy => trophy.trophy_code === 'reanimal_its_a_trap' && trophy.name === 'It’s a Trap!'), 'It’s a Trap! deve persistir com pontuacao');
   assert(reanimalTrophyRows.some(trophy => trophy.trophy_code === 'reanimal_rock_n_pop' && trophy.name === 'Rock ‘n Pop'), 'Rock ‘n Pop deve persistir com pontuacao');
@@ -13140,7 +13142,7 @@ function assertLote1BNetworkClassification() {
   assert(/teamwork/.test(normalizeEditorialSmokeText(nioh3.online_summary)) && /npc|acolytes/.test(normalizeEditorialSmokeText(nioh3.online_summary)), 'Nioh 3 deve tratar Teamwork como possível via NPCs/Acolytes');
 
   const reanimal = bySlug.get('reanimal');
-  assert(/solo/.test(normalizeEditorialSmokeText(reanimal.online_summary)) && /precisa validar/.test(normalizeEditorialSmokeText(reanimal.online_summary)), 'REANIMAL deve explicar solo/parceiro e validacao final sem coop obrigatorio');
+  assert(/solo/.test(normalizeEditorialSmokeText(reanimal.online_summary)) && /coop local e online/.test(normalizeEditorialSmokeText(reanimal.online_summary)), 'REANIMAL deve explicar solo e coop opcional sem requisito obrigatorio');
 }
 
 function assertLote1CRecentGuideEditorialSafety() {
@@ -13474,7 +13476,7 @@ function assertLote4NarrativeGuideRoadmaps() {
   assertBody('it-takes-two', /nao pode ser platinado solo|25 minigames|chapter select|friend's pass|friends pass/, 'It Takes Two deve explicar coop obrigatorio, minigames, Chapter Select e Friend Pass');
   assertBody('split-fiction', /nao ha rota solo|12 side stories|6 benches|friend pass|autosave|chapter select/, 'Split Fiction deve explicar coop obrigatorio, Side Stories, benches, Friend Pass e autosave');
   assert(/sem coop obrigatorio/.test(summaryCoopValue(bySlug.get('reanimal'))), 'REANIMAL nao deve aparecer como coop obrigatorio');
-  assertBody('reanimal', /solo|coop opcional|caixoes|estatuas|mascaras|posteres|final secreto|precisa validar|revisao/, 'REANIMAL deve comunicar solo/coop opcional, coletaveis criticos e revisao');
+  assertBody('reanimal', /solo|coop opcional|coffins|hidden statues|masks|posters|secret ending|chapter replay/, 'REANIMAL deve comunicar solo, coop opcional, coletaveis criticos e Chapter Replay');
   assert(!/coop obrigatorio|exige 2 jogadores/.test(editorialBody(bySlug.get('reanimal'))), 'REANIMAL nao deve afirmar coop obrigatorio');
 }
 
@@ -13543,9 +13545,10 @@ function assertFinalQaPriorityBlockerFixes() {
   assert(detroit.trophies.filter(trophy => trophy.is_missable).length >= 40, 'Detroit deve manter alertas de missable sem apagar riscos');
 
   const heavyRain = bySlug.get('heavy-rain');
-  assert(/atencao.*capitulo\/rota/.test(normalizedBody(heavyRain)) && /recuperavel por chapter select/.test(normalizedBody(heavyRain)), 'Heavy Rain deve diferenciar rota/final de trofeu recuperavel por Chapter Select');
+  assert(/sem perdiveis permanentes/.test(normalizedBody(heavyRain)) && /chapter select/.test(normalizedBody(heavyRain)), 'Heavy Rain deve diferenciar perda permanente de replay por Chapter Select');
   assert(/perfect crime/.test(normalizedBody(heavyRain)) && /all endings/.test(normalizedBody(heavyRain)), 'Heavy Rain deve manter Perfect Crime e All Endings claros');
-  assert(heavyRain.trophies.filter(trophy => trophy.is_missable).length >= 50, 'Heavy Rain deve manter alertas de missable sem apagar riscos');
+  assert.strictEqual(heavyRain.trophies.filter(trophy => trophy.is_missable).length, 0, 'Heavy Rain deve manter filtro de perdiveis zerado');
+  assert.strictEqual(summaryCardValue(heavyRain, 'Perdíveis'), 'Sem perdíveis permanentes', 'Heavy Rain nao deve exibir Tem perdiveis no topo');
 
   const untilDawn = bySlug.get('until-dawn');
   assert(/atencao.*rota\/capitulo/.test(normalizedBody(untilDawn)) && /coletaveis por capitulo/.test(normalizedBody(untilDawn)), 'Until Dawn deve diferenciar rotas de morte e coletaveis por capitulo');

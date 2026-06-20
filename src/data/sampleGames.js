@@ -49403,6 +49403,425 @@ if (disneyEpicMickeyRebrushedGuide) {
   disneyEpicMickeyRebrushedGuide.roadmapStages = disneyEpicMickeyRebrushedGuide.roadmap;
 }
 
+const heavyRainGuide = sampleGames.find(game => game.slug === 'heavy-rain');
+if (heavyRainGuide) {
+  const heavyRainRoadmap = [
+    {
+      title: 'Faça a primeira run salvando os personagens principais',
+      focus: 'História, Four Heroes e base da platina',
+      objective: 'Concluir a história uma vez, manter Ethan, Madison, Norman e Shaun vivos e desbloquear a base de finais positivos.',
+      actions: [
+        'Jogue normalmente, mas priorize manter os quatro protagonistas vivos.',
+        'Faça as provas de Ethan quando quiser encaminhar Trial Master.',
+        'Tente salvar Shaun no final para Saved the Kid.',
+        'Mantenha Madison e Norman vivos para Four Heroes.',
+        'Pegue troféus de capítulo simples conforme aparecem.',
+        'Não se preocupe em acertar tudo de primeira, pois Chapter Select ajuda no cleanup.'
+      ],
+      warning: 'Algumas consequências só contam se você continuar jogando a partir do capítulo alterado com salvamento ativo. Não mude escolhas isoladas esperando que todos os finais mudem automaticamente.',
+      result: 'A primeira conclusão libera a estrutura para finais, rotas alternativas e limpeza por Chapter Select.'
+    },
+    {
+      title: 'Use Chapter Select para troféus de capítulo',
+      focus: 'Ações específicas e cleanup',
+      objective: 'Resolver troféus pontuais sem repetir a campanha inteira.',
+      actions: [
+        'Volte aos capítulos com troféus específicos.',
+        'Faça Happy Birthday no prólogo.',
+        'Faça Good Father em Father and Son.',
+        'Faça Kamikaze e Good Driver em The Bear.',
+        'Faça The Chef, Queen of Ropes, Swimming Instructor, Invincible Scott, Kind Hearted e outros troféus de ação específica.',
+        'Espere o troféu aparecer antes de sair do capítulo quando necessário.'
+      ],
+      warning: 'Alguns troféus só desbloqueiam no fim do capítulo ou depois de uma transição. Não saia cedo se o troféu ainda não apareceu.',
+      result: 'A maior parte dos troféus de capítulo fica resolvida sem afetar as rotas principais.'
+    },
+    {
+      title: 'Faça a rota Perfect Crime',
+      focus: 'Rota específica e finais negativos',
+      objective: 'Seguir as escolhas necessárias para que o assassino escape sem ser ligado aos crimes.',
+      actions: [
+        'Planeje Perfect Crime como uma rota dedicada.',
+        'Deixe Hassan morrer no assalto.',
+        'Limpe as digitais em Manfred\'s Antiques.',
+        'Deixe Lauren morrer em Trapped.',
+        'Não dê o remédio para Kramer.',
+        'Faça Madison morrer quando necessário na rota.',
+        'Faça Norman morrer quando necessário na rota.',
+        'Garanta que o Origami Killer escape no final.'
+      ],
+      warning: 'Perfect Crime depende de várias escolhas ao longo da história. Não basta alterar apenas o capítulo final.',
+      result: 'A rota Perfect Crime libera um dos troféus mais sensíveis e ainda contribui para All Endings.'
+    },
+    {
+      title: 'Planeje All Endings com continuidade',
+      focus: 'Finais, epílogos e replay',
+      objective: 'Ver todos os finais necessários sem repetir trechos longos desnecessariamente.',
+      actions: [
+        'Use finais positivos, negativos e variações de personagens vivos ou mortos.',
+        'Anote quais epílogos já foram vistos.',
+        'Use Chapter Select em pontos-chave como On the Loose, Killer\'s Place e The Old Warehouse.',
+        'Continue jogando a partir do ponto alterado quando a consequência precisar carregar para capítulos seguintes.',
+        'Espere créditos e epílogos registrarem antes de sair.'
+      ],
+      warning: 'All Endings exige registrar epílogos diferentes. Sair cedo ou alterar apenas o capítulo final pode não registrar tudo.',
+      result: 'O maior grind de replay da platina fica controlado por checklist.'
+    },
+    {
+      title: 'Complete Trial Master, Nerd e rotas investigativas',
+      focus: 'Provas de Ethan e investigação de Norman',
+      objective: 'Resolver os troféus ligados às provas, ARI e investigação correta.',
+      actions: [
+        'Conclua todas as provas de Ethan para Trial Master.',
+        'Use Norman/ARI para encontrar pistas necessárias.',
+        'Investigue corretamente para Nerd.',
+        'Faça os troféus de ação envolvendo Jayden, Mad Jack e pistas.',
+        'Use Chapter Select para repetir investigações se alguma pista ficou pendente.'
+      ],
+      warning: 'Nerd exige investigação correta e conclusões certas. Trate como checklist, não como troféu automático de história.',
+      result: 'Os troféus de investigação e provas ficam concluídos.'
+    },
+    {
+      title: 'Faça Kamikaze e troféus de QTE com calma',
+      focus: 'QTEs e sequências específicas',
+      objective: 'Resolver troféus que dependem de execução precisa.',
+      actions: [
+        'Repita The Bear até fazer a rota correta para Kamikaze.',
+        'Use dificuldade mais baixa se quiser facilitar QTEs.',
+        'Faça Good Driver concluindo a prova do carro com sucesso.',
+        'Repita lutas e fugas específicas quando necessário.',
+        'Não marque esses troféus como Dificuldade, pois a dificuldade selecionável não é requisito.'
+      ],
+      warning: 'Kamikaze pode exigir várias tentativas, mas é recuperável por Chapter Select.',
+      result: 'As sequências mais sensíveis de execução ficam resolvidas.'
+    },
+    {
+      title: 'Feche troféus restantes e valide a platina',
+      focus: 'Cleanup final',
+      objective: 'Garantir que nenhum troféu de capítulo, final ou rota ficou pendente.',
+      actions: [
+        'Revise a lista de troféus restantes.',
+        'Confira se HEAVY RAIN™ Hero, Four Heroes, Saved the Kid, Perfect Crime e All Endings foram concluídos.',
+        'Limpe troféus pontuais por Chapter Select.',
+        'Verifique se os finais foram registrados no menu.',
+        'Faça uma última checagem antes de repetir trechos longos.'
+      ],
+      warning: 'O maior risco da platina é retrabalho por falta de anotação. Use checklist de finais e capítulos.',
+      result: 'Com finais, rotas e troféus de capítulo concluídos, HEAVY RAIN™ Master será liberado.'
+    }
+  ];
+
+  const heavyRainAttentionPoints = [
+    { title: 'Sem perdíveis permanentes', detail: 'Chapter Select permite recuperar capítulos, escolhas e finais. O risco principal é retrabalho, não perda permanente.', tags: ['Chapter Select', 'Replay'] },
+    { title: 'Perfect Crime', detail: 'Perfect Crime exige várias decisões específicas ao longo da história. Não basta mudar apenas o final.', tags: ['Perfect Crime', 'Rota', 'Atenção'] },
+    { title: 'All Endings', detail: 'All Endings exige registrar todos os finais e epílogos. Anote os finais vistos e espere o registro antes de sair.', tags: ['All Endings', 'Final', 'Checklist'] },
+    { title: 'Continuidade de Chapter Select', detail: 'Para consequências futuras, jogue a partir do capítulo alterado com salvamento ativo.', tags: ['Chapter Select', 'Save'] },
+    { title: 'Four Heroes', detail: 'Para Four Heroes, mantenha Ethan, Madison, Norman e Shaun vivos até o final.', tags: ['Four Heroes', 'Todos vivos'] },
+    { title: 'Trial Master', detail: 'Trial Master exige concluir todas as cinco provas de Ethan. Organize isso em uma rota própria.', tags: ['Trial Master', 'Ethan'] },
+    { title: 'Nerd', detail: 'Nerd exige investigação correta com Norman/ARI. Use checklist de pistas.', tags: ['Nerd', 'ARI', 'Pistas'] },
+    { title: 'Kamikaze', detail: 'Kamikaze exige a melhor rota na rodovia em The Bear. É recuperável por Chapter Select.', tags: ['Kamikaze', 'QTE'] },
+    { title: 'QTEs', detail: 'Use dificuldade mais baixa se quiser facilitar QTEs. A dificuldade não afeta troféus.', tags: ['QTE', 'Atenção'] },
+    { title: 'Troféus de capítulo', detail: 'Muitos troféus são ações específicas em capítulos. Espere o troféu aparecer antes de sair.', tags: ['Capítulo', 'Cleanup'] },
+    { title: 'Spoilers', detail: 'Heavy Rain depende de revelações e finais. Use alertas de spoiler nos troféus de final e rota.', tags: ['Spoiler', 'Final'] },
+    { title: 'Sem online, coop ou DLC', detail: 'A platina é totalmente single-player e não exige online, cooperação ou DLC.', tags: ['Offline', 'Base game'] }
+  ];
+
+  const heavyRainChecklist = [
+    'Conferir se o guia tem 57 troféus.',
+    'Conferir se HEAVY RAIN™ Master é a platina.',
+    'Conferir distribuição: 1 platina, 2 ouro, 4 prata, 50 bronze.',
+    'Conferir onlineRequired false.',
+    'Conferir coopRequired false.',
+    'Conferir dlcRequired false.',
+    'Conferir hasMissables false.',
+    'Conferir missableCount 0.',
+    'Conferir filtro Perdíveis 0.',
+    'Conferir filtro Online 0.',
+    'Conferir filtro Coop 0.',
+    'Conferir filtro DLC 0.',
+    'Conferir filtro Dificuldade 0.',
+    'Conferir Perfect Crime como Rota/Final/Replay/Atenção.',
+    'Conferir All Endings como Final/Replay/Grind/Checklist.',
+    'Conferir Four Heroes.',
+    'Conferir Trial Master.',
+    'Conferir Nerd.',
+    'Conferir Saved the Kid.',
+    'Conferir Kamikaze.',
+    'Conferir Good Driver.',
+    'Conferir troféus de capítulo.',
+    'Conferir que Chapter Select está explicado.',
+    'Conferir que consequências futuras exigem continuidade.',
+    'Conferir que QTEs não inflam Dificuldade.',
+    'Conferir que não há Online/Coop/DLC.',
+    'Conferir se todos os troféus têm nome oficial em inglês como principal.',
+    'Conferir se todos têm PT-BR abaixo.',
+    'Conferir se descrições estão em português.',
+    'Conferir se roadmap está estruturado como array/objeto.',
+    'Conferir se roadmap não renderiza campos técnicos ou objetos crus no front.',
+    'Conferir se campos internos do roadmap não aparecem como texto visível.',
+    'Conferir FAQ, decisão rápida, SEO e pontos de atenção.',
+    'Conferir se página individual e catálogo exibem o mesmo status editorial.',
+    'Conferir se flags do topo batem com filtros do catálogo.'
+  ];
+
+  const heavyRainFaq = [
+    { question: 'Heavy Rain tem troféus perdíveis?', answer: 'Não há perdíveis permanentes se você usar Chapter Select. O jogo exige replay de capítulos e rotas específicas, mas os troféus podem ser recuperados.' },
+    { question: 'Precisa jogar online para platinar?', answer: 'Não. A platina é totalmente single-player.' },
+    { question: 'Precisa de cooperação?', answer: 'Não. Nenhum troféu exige cooperação.' },
+    { question: 'Precisa de DLC?', answer: 'Não. A platina usa apenas a lista base.' },
+    { question: 'Quantas runs são necessárias?', answer: 'A rota eficiente usa uma run completa planejada e depois Chapter Select para finais, rotas e troféus de capítulo restantes.' },
+    { question: 'A dificuldade afeta troféus?', answer: 'Não. Você pode usar dificuldade mais baixa para facilitar QTEs sem bloquear troféus.' },
+    { question: 'O que é o maior cuidado da platina?', answer: 'Perfect Crime e All Endings. Eles exigem escolhas específicas, continuidade e registro correto dos finais.' },
+    { question: 'Chapter Select resolve tudo?', answer: 'Resolve quase tudo, mas finais e consequências futuras exigem continuar jogando a partir do capítulo alterado com salvamento ativo.' },
+    { question: 'Como funciona Perfect Crime?', answer: 'É uma rota específica em que certas pessoas morrem, pistas são apagadas e o Origami Killer escapa sem ser ligado aos crimes.' },
+    { question: 'All Endings exige o quê?', answer: 'Exige ver todos os finais e epílogos necessários. Use checklist e espere o jogo registrar cada final.' },
+    { question: 'Kamikaze é difícil?', answer: 'Pode exigir algumas tentativas por causa da sequência da rodovia, mas é recuperável por Chapter Select.' },
+    { question: 'Quanto tempo leva para platinar?', answer: 'Em média, cerca de 15 a 25 horas, dependendo de quantos finais e capítulos você precisa repetir.' }
+  ];
+
+  const heavyRainTrophyRows = [
+    ['heavy_rain_master', 'HEAVY RAIN™ Master', 'Mestre de HEAVY RAIN™', 'Platina', 'Obtenha todos os troféus.', 'Desbloqueie os outros 56 troféus da lista base. Não exige online, cooperação, DLC ou dificuldade específica.', false, false, ['Platina']],
+    ['heavy_happy_birthday', 'Happy Birthday', 'Feliz Aniversário', 'Bronze', 'No Prólogo, conclua o desenho, arrume a mesa e brinque com as crianças.', 'Troféu de capítulo recuperável. Faça as três ações antes de avançar a história.', false, false, ['Capítulo', 'Ação específica', 'Checklist', 'Cleanup']],
+    ['heavy_interactive_drama', 'Interactive Drama', 'Drama Interativo', 'Bronze', 'Agradecimento por apoiar o formato de drama interativo.', 'Troféu automático no começo da jornada; avance a história.', false, false, ['História']],
+    ['heavy_good_father', 'Good Father', 'Bom Pai', 'Bronze', 'Em Father and Son, siga a rotina de Shaun e coloque-o para dormir de bom humor.', 'Siga horários de lanche, dever de casa, jantar, remédio/descanso e cama. Recuperável por Chapter Select.', false, true, ['Capítulo', 'Ethan', 'Shaun', 'Ação específica', 'Checklist']],
+    ['heavy_white_knight', 'White Knight', 'Cavaleiro Branco', 'Bronze', 'Em Sleazy Place, derrote Troy.', 'Volte ao quarto de Lauren quando Troy aparecer e vença a briga.', false, true, ['Capítulo', 'Scott', 'Lauren', 'Ação específica', 'QTE', 'Cleanup']],
+    ['heavy_private_eye', 'Private Eye', 'Detetive Particular', 'Bronze', 'Em Sleazy Place, faça Lauren falar sobre o filho.', 'Escolha respostas empáticas até Lauren revelar informações sobre o filho.', false, true, ['Capítulo', 'Scott', 'Lauren', 'Investigação', 'Ação específica']],
+    ['heavy_fbi_investigator', 'FBI Investigator', 'Investigador do FBI', 'Bronze', 'Em Crime Scene, encontre todas as pistas relacionadas ao Origami Killer.', 'Use ARI para examinar corpo, trilhos, sangue, pegadas, pólen, cerca e marcas antes de sair.', false, true, ['Capítulo', 'Norman', 'ARI', 'Investigação', 'Pistas', 'Checklist']],
+    ['heavy_good_friends', 'Good Friends', 'Bons Amigos', 'Bronze', 'Em The Park, jogue duas atividades com Shaun e compre doces.', 'Vença duas brincadeiras com Shaun e compre doces para manter a relação positiva.', false, true, ['Capítulo', 'Ethan', 'Shaun', 'Ação específica']],
+    ['heavy_got_to_remember', 'Got To Remember!', 'Tenho Que Lembrar!', 'Bronze', 'Em Welcome, Norman!, lembre o horário e as roupas de Shaun.', 'Responda corretamente às perguntas sobre o parque para ajudar a investigação.', false, true, ['Capítulo', 'Ethan', 'Norman', 'Investigação', 'Checklist']],
+    ['heavy_negotiator', 'Negotiator', 'Negociador', 'Bronze', 'Em Hassan\'s Shop, convença o ladrão a ir embora.', 'Mantenha a calma e dialogue até resolver o assalto sem violência.', false, true, ['Capítulo', 'Scott', 'Escolha', 'Ação específica']],
+    ['heavy_vip', 'VIP', 'VIP', 'Bronze', 'Em Paparazzi, saia de casa sem ser visto pelos jornalistas.', 'Use uma rota discreta, normalmente pela saída dos fundos ou jardim.', false, false, ['Capítulo', 'Ethan', 'Ação específica', 'Cleanup']],
+    ['heavy_agoraphobia', 'Agoraphobia', 'Agorafobia', 'Bronze', 'Em Lexington Station, derrube pelo menos 50 pessoas.', 'Durante a crise de Ethan na estação, esbarre em bastante gente antes de retomar o controle normal.', false, true, ['Capítulo', 'Ethan', 'Ação específica', 'Cleanup']],
+    ['heavy_lucky_locker', 'Lucky Locker', 'Armário da Sorte', 'Bronze', 'Em Lexington Station, encontre o armário correto na primeira tentativa.', 'Siga a indicação do bilhete e abra o armário certo sem testar outros.', false, true, ['Capítulo', 'Ethan', 'Ação específica', 'Checklist']],
+    ['heavy_blunder', 'Blunder', 'Erro Grave', 'Bronze', 'Em Nathaniel, atire em Nathaniel.', 'Escolha atirar quando a situação escalar. Faça a escolha oposta para Self Control em outro replay.', false, true, ['Capítulo', 'Norman', 'Escolha', 'Chapter Select']],
+    ['heavy_self_control', 'Self Control', 'Autocontrole', 'Bronze', 'Em Nathaniel, não atire em Nathaniel.', 'Mantenha Norman calmo e evite disparar. Use Chapter Select para alternar com Blunder.', false, true, ['Capítulo', 'Norman', 'Escolha', 'Chapter Select']],
+    ['heavy_baby_master', 'Baby Master', 'Mestre dos Bebês', 'Bronze', 'Em Suicide Baby, cuide do bebê sem cometer erros.', 'Troque, prepare mamadeira, alimente e acalme o bebê na ordem correta.', false, false, ['Capítulo', 'Madison', 'Ação específica', 'Checklist']],
+    ['heavy_kamikaze', 'Kamikaze', 'Kamikaze', 'Bronze', 'Em The Bear, siga a melhor rota na rodovia.', 'Repita a sequência até fazer a rota perfeita. É recuperável por Chapter Select e não é troféu de dificuldade.', false, true, ['QTE', 'Ação específica', 'The Bear', 'Atenção', 'Chapter Select']],
+    ['heavy_good_driver', 'Good Driver', 'Bom Motorista', 'Bronze', 'Em The Bear, complete a prova do carro com sucesso.', 'Conclua a trial de direção de Ethan para receber uma pista de Shaun. Conta para Trial Master.', false, true, ['QTE', 'The Bear', 'Ação específica', 'Chapter Select', 'Ethan']],
+    ['heavy_cat_and_mouse', 'Cat & Mouse', 'Gato e Rato', 'Bronze', 'Em Covered Market, vença Korda na câmara fria.', 'Persiga Korda pelo mercado e acerte a sequência final.', false, true, ['Capítulo', 'Norman', 'QTE', 'Ação específica']],
+    ['heavy_tough_guy', 'Tough Guy', 'Durão', 'Bronze', 'Em Kramer\'s Party, derrote os seguranças de Gordi.', 'Acerte os QTEs da briga principal na festa de Kramer.', false, true, ['Capítulo', 'Scott', 'QTE', 'Ação específica']],
+    ['heavy_coward', 'Coward!', 'Covarde!', 'Bronze', 'Em The Butterfly, desista ou falhe na prova.', 'Faça em replay separado se também precisar de Electrified, pois as escolhas são incompatíveis na mesma tentativa.', false, true, ['Ethan', 'Escolha', 'Rota', 'Chapter Select']],
+    ['heavy_electrified', 'Electrified', 'Eletrificado', 'Bronze', 'Em The Butterfly, conclua a prova com sucesso.', 'Atravesse o vidro e a área eletrificada até o fim para receber a pista. Conta para Trial Master.', false, true, ['Ethan', 'QTE', 'Provas', 'Ação específica']],
+    ['heavy_good_cop', 'Good Cop', 'Policial Bom', 'Bronze', 'Em Shrink and Punches, impeça Blake de bater em Dupre.', 'Interrompa Blake durante o interrogatório. Alterne com Bad Cop por Chapter Select.', false, true, ['Capítulo', 'Norman', 'Escolha', 'Chapter Select']],
+    ['heavy_bad_cop', 'Bad Cop', 'Policial Mau', 'Bronze', 'Em Shrink and Punches, não impeça Blake de bater em Dupre.', 'Deixe Blake continuar a agressão para a variação oposta de Good Cop.', false, true, ['Capítulo', 'Norman', 'Escolha', 'Chapter Select']],
+    ['heavy_gold_finger', 'Gold Finger', 'Dedo de Ouro', 'Bronze', 'Em The Lizard, corte o dedo com machado, faca ou alicate e trate o ferimento.', 'Use ferramenta válida e desinfete ou cauterize o ferimento para completar a condição segura.', false, true, ['Ethan', 'Provas', 'Ação específica', 'Atenção']],
+    ['heavy_butcher', 'Butcher', 'Açougueiro', 'Bronze', 'Em The Lizard, corte o dedo com serra ou tesoura.', 'Faça em replay separado se quiser alternar com Gold Finger.', false, true, ['Ethan', 'Provas', 'Escolha', 'Chapter Select']],
+    ['heavy_fugitive', 'Fugitive', 'Fugitivo', 'Bronze', 'Em Fugitive, escape de Blake na estação de metrô.', 'Fuja com Ethan e Madison. Se salvo, o resultado pode afetar rotas posteriores.', false, true, ['Ethan', 'Madison', 'QTE', 'Rota', 'Chapter Select']],
+    ['heavy_hands_up', 'Hands Up!', 'Mãos ao Alto!', 'Bronze', 'Em Fugitive ou On the Loose, seja preso por Blake.', 'Permita que Ethan seja capturado em uma das oportunidades compatíveis para variações de finais.', false, true, ['Ethan', 'Escolha', 'Final', 'Chapter Select']],
+    ['heavy_ludwig_von', 'Ludwig Von', 'Ludwig Von', 'Bronze', 'Em Jayden Blues, toque piano sem errar notas.', 'Acerte toda a sequência do piano com Norman.', false, false, ['Capítulo', 'Norman', 'QTE', 'Ação específica']],
+    ['heavy_detox', 'Detox', 'Desintoxicação', 'Bronze', 'Em Jayden Blues, resista à triptocaine.', 'Durante a crise de Norman, não use a droga.', false, true, ['Capítulo', 'Norman', 'Escolha', 'Atenção']],
+    ['heavy_wise_guy', 'Wise Guy', 'Esperto', 'Bronze', 'Em Under Arrest, desligue a câmera antes de salvar Ethan.', 'Desative a câmera na sala de vigilância antes de libertar Ethan.', false, true, ['Capítulo', 'Norman', 'Ethan', 'Ação específica']],
+    ['heavy_im_a_killer', 'I\'m a Killer...', 'Sou um Assassino...', 'Bronze', 'Em The Shark, mate o traficante.', 'Escolha matar o traficante. Conta para Trial Master, mas conflita com I\'m Not a Killer! na mesma rota.', false, true, ['Ethan', 'Provas', 'Escolha', 'Rota']],
+    ['heavy_im_not_a_killer', 'I\'m Not a Killer!', 'Não Sou um Assassino!', 'Bronze', 'Em The Shark, não mate o traficante.', 'Recuse matar o traficante em uma rota alternativa ou cleanup por Chapter Select.', false, true, ['Ethan', 'Escolha', 'Chapter Select']],
+    ['heavy_smart_girl', 'Smart Girl', 'Garota Esperta', 'Bronze', 'Em The Doc, não beba a bebida do médico.', 'Como Madison, desconfie e recuse a bebida antes da armadilha.', false, true, ['Madison', 'Escolha', 'Ação específica', 'Atenção']],
+    ['heavy_queen_of_ropes', 'Queen of Ropes', 'Rainha das Cordas', 'Bronze', 'Em The Doc, escape antes que o médico volte.', 'Escape das amarras e fuja da casa do médico sem demora excessiva.', false, true, ['Madison', 'Ação específica', 'Chapter Select']],
+    ['heavy_goodbye_mad_jack', 'Goodbye Mad Jack', 'Adeus, Mad Jack', 'Bronze', 'Em Mad Jack, sobreviva à luta contra Mad Jack.', 'Acerte a sequência com Norman para sobreviver. Importante para rotas que precisam dele vivo.', false, true, ['Norman', 'QTE', 'Ação específica', 'Atenção']],
+    ['heavy_the_chef', 'The Chef', 'O Chef', 'Bronze', 'Em Eureka, prepare um bom omelete dentro do tempo.', 'Como Scott, prepare o omelete corretamente para Lauren.', false, false, ['Scott', 'Lauren', 'Ação específica', 'Chapter Select']],
+    ['heavy_im_not_scared', 'I\'m Not Scared!', 'Não Estou com Medo!', 'Bronze', 'Em Twins, siga seu irmão sem errar.', 'No flashback, siga John pelo canteiro sem falhar na sequência.', false, true, ['Capítulo', 'QTE', 'Ação específica']],
+    ['heavy_pride_saved', 'Pride Saved', 'Orgulho Preservado', 'Bronze', 'Em Sexy Girl, tire no máximo uma peça de roupa durante o strip-tease.', 'Com Madison, finalize a situação sem remover mais de uma peça.', false, true, ['Madison', 'Escolha', 'Ação específica', 'Atenção']],
+    ['heavy_unforgivable', 'Unforgivable', 'Imperdoável', 'Bronze', 'Em On the Loose, não perdoe Madison.', 'Escolha não perdoar Madison. Essa variação pode compor finais diferentes.', false, true, ['Ethan', 'Madison', 'Escolha', 'Final', 'Chapter Select']],
+    ['heavy_lover_boy', 'Lover Boy', 'Romântico', 'Bronze', 'Em On the Loose, perdoe Madison.', 'Escolha perdoar Madison e mantenha a relação com Ethan para a variação oposta.', false, true, ['Ethan', 'Madison', 'Escolha', 'Final', 'Chapter Select']],
+    ['heavy_escape_master', 'Escape Master', 'Mestre da Fuga', 'Bronze', 'Em On the Loose, escape da polícia no motel.', 'Execute a fuga completa com Ethan e Madison quando a polícia chegar.', false, true, ['Ethan', 'Madison', 'QTE', 'Ação específica']],
+    ['heavy_swimming_instructor', 'Swimming Instructor', 'Instrutor de Natação', 'Bronze', 'Em Trapped, salve Lauren debaixo d\'água.', 'No acidente do carro, salve Lauren antes de escapar. A escolha afeta Perfect Crime e finais.', false, true, ['Scott', 'Lauren', 'Escolha', 'Ação específica', 'Chapter Select']],
+    ['heavy_invincible_scott', 'Invincible Scott', 'Scott Invencível', 'Bronze', 'Em Face to Face, não seja baleado na mansão de Kramer.', 'Acerte os QTEs da sequência para sair sem ferimentos importantes.', false, true, ['Scott', 'QTE', 'Ação específica', 'Atenção']],
+    ['heavy_kind_hearted', 'Kind Hearted', 'Bom Coração', 'Bronze', 'Em Face to Face, dê o remédio a Kramer.', 'Depois do confronto, ajude Kramer. Essa escolha conflita com Perfect Crime.', false, true, ['Scott', 'Kramer', 'Escolha', 'Chapter Select']],
+    ['heavy_sacrifice', 'Sacrifice', 'Sacrifício', 'Bronze', 'Em The Rat, beba o veneno.', 'Complete a última prova de Ethan para receber a pista. Conta para Trial Master.', false, true, ['Ethan', 'Provas', 'Escolha', 'Rota']],
+    ['heavy_clever_dad', 'Clever Dad', 'Pai Esperto', 'Bronze', 'Em The Rat, descubra onde Shaun está preso.', 'Use as pistas das provas para deduzir corretamente o endereço.', false, true, ['Ethan', 'Shaun', 'Checklist', 'Final', 'Rota']],
+    ['heavy_cold_as_ice', 'Cold as Ice', 'Frio como Gelo', 'Bronze', 'Em Killer\'s Place, sobreviva à explosão escondendo-se na geladeira.', 'Com Madison, fuja do incêndio e use a geladeira para sobreviver.', false, true, ['Madison', 'Ação específica', 'QTE', 'Chapter Select']],
+    ['heavy_simple_mind', 'Simple Mind', 'Mente Simples', 'Bronze', 'Em The Old Warehouse, salve o Origami Killer antes da queda.', 'Escolha salvar o Origami Killer no confronto final. É uma variação de final com spoiler.', false, true, ['Final', 'Escolha', 'Rota', 'Atenção']],
+    ['heavy_so_close', 'So Close...', 'Tão Perto...', 'Bronze', 'Em The Old Warehouse, chegue ao fim com todos os personagens e falhe.', 'Chegue ao final com personagens relevantes vivos, mas falhe no resultado exigido para essa variação.', false, true, ['Final', 'Rota', 'Escolha', 'Chapter Select']],
+    ['heavy_hero', 'HEAVY RAIN™ Hero', 'Herói de HEAVY RAIN™', 'Bronze', 'Termine Heavy Rain.', 'Complete a história por qualquer final. O resultado importa para outros troféus, mas este vem ao concluir o jogo.', false, true, ['História', 'Final']],
+    ['heavy_four_heroes', 'Four Heroes', 'Quatro Heróis', 'Prata', 'Complete a história com quatro personagens vivos.', 'Finalize com Ethan, Madison, Norman e Shaun vivos. Planeje QTEs e decisões finais antes de The Old Warehouse.', false, true, ['Final', 'Rota', 'Todos vivos', 'Escolha', 'Atenção']],
+    ['heavy_trial_master', 'Trial Master', 'Mestre das Provas', 'Prata', 'Tenha sucesso em todas as provas de Ethan.', 'Complete as cinco trials de Ethan: Bear, Butterfly, Lizard, Shark e Rat. Trate como rota/checklist, não como troféu de dificuldade.', false, true, ['Provas', 'Ethan', 'Rota', 'Checklist', 'Atenção']],
+    ['heavy_nerd', 'Nerd', 'Nerd', 'Prata', 'Encontre todas as pistas usando ARI e descubra o Origami Killer.', 'Com Norman, use ARI em Crime Scene, Mad Jack e Fish Tank, e faça as conclusões corretas.', false, true, ['Norman', 'ARI', 'Investigação', 'Pistas', 'Checklist', 'Atenção']],
+    ['heavy_saved_the_kid', 'Saved the Kid', 'Salvou o Garoto', 'Prata', 'Salve Shaun.', 'Encontre Shaun e faça o salvamento no armazém. Pode combinar com Four Heroes ou outras variações de final.', false, true, ['Final', 'História', 'Rota', 'Shaun', 'Atenção']],
+    ['heavy_perfect_crime', 'Perfect Crime', 'Crime Perfeito', 'Ouro', 'Limpe a loja de Manfred, deixe Lauren, Hassan e Kramer morrerem, e mate Madison e Jayden.', 'Rota longa: deixe Hassan, Lauren e Kramer morrerem, limpe as digitais em Manfred, mate Madison e Norman/Jayden e deixe o Origami Killer escapar. Não basta alterar apenas o final.', false, true, ['Rota', 'Final', 'Escolha', 'Chapter Select', 'Atenção', 'Replay', 'Perfect Crime']],
+    ['heavy_all_endings', 'All Endings', 'Todos os Finais', 'Ouro', 'Veja todos os finais.', 'Veja todos os finais e epílogos necessários. Não é apenas repetir o último capítulo; várias variações dependem de decisões anteriores, Perfect Crime, Four Heroes, Nerd e Trial Master.', false, true, ['Final', 'Replay', 'Chapter Select', 'Grind', 'Checklist', 'Atenção', 'All Endings']]
+  ];
+
+  const heavyRainTrophies = heavyRainTrophyRows.map(([id, name, namePt, type, description, tip, isMissable, isSpoiler, tags]) => ({
+    id,
+    name,
+    trophyNameOriginal: name,
+    officialName: name,
+    originalName: name,
+    name_pt: namePt,
+    trophyNamePtBr: namePt,
+    localizedNamePtBr: namePt,
+    namePtSource: 'editorial_ptbr',
+    type,
+    tier: type,
+    description,
+    descriptionPtBr: description,
+    ptDescription: description,
+    localizedDescription: { ptBr: description, 'pt-BR': description },
+    descriptionPtSource: 'editorial_ptbr',
+    tip,
+    guideTip: tip,
+    is_missable: isMissable,
+    isMissable,
+    is_spoiler: isSpoiler,
+    isSpoiler,
+    is_online: false,
+    isOnline: false,
+    is_coop: false,
+    isCoop: false,
+    is_dlc: false,
+    isDlc: false,
+    tags,
+    riskType: ''
+  }));
+
+  const heavyRainCleanupIds = new Set([
+    'heavy_happy_birthday',
+    'heavy_good_father',
+    'heavy_white_knight',
+    'heavy_private_eye',
+    'heavy_fbi_investigator',
+    'heavy_good_friends',
+    'heavy_got_to_remember',
+    'heavy_negotiator',
+    'heavy_vip',
+    'heavy_agoraphobia',
+    'heavy_lucky_locker',
+    'heavy_blunder',
+    'heavy_self_control',
+    'heavy_baby_master',
+    'heavy_kamikaze',
+    'heavy_good_driver',
+    'heavy_cat_and_mouse',
+    'heavy_tough_guy',
+    'heavy_coward',
+    'heavy_electrified',
+    'heavy_good_cop',
+    'heavy_bad_cop',
+    'heavy_gold_finger',
+    'heavy_butcher',
+    'heavy_ludwig_von',
+    'heavy_detox',
+    'heavy_wise_guy',
+    'heavy_im_a_killer',
+    'heavy_im_not_a_killer',
+    'heavy_smart_girl',
+    'heavy_queen_of_ropes',
+    'heavy_goodbye_mad_jack',
+    'heavy_the_chef',
+    'heavy_im_not_scared',
+    'heavy_pride_saved',
+    'heavy_escape_master',
+    'heavy_swimming_instructor',
+    'heavy_invincible_scott',
+    'heavy_kind_hearted',
+    'heavy_cold_as_ice'
+  ]);
+  heavyRainTrophies.forEach(trophy => {
+    if (heavyRainCleanupIds.has(trophy.id) && !trophy.tags.includes('Cleanup')) {
+      trophy.tags = [...trophy.tags, 'Cleanup'];
+    }
+  });
+
+  const setHeavyRainTags = (id, tags) => {
+    const trophy = heavyRainTrophies.find(item => item.id === id);
+    if (trophy) trophy.tags = tags;
+  };
+  const setHeavyRainTip = (id, tip) => {
+    const trophy = heavyRainTrophies.find(item => item.id === id);
+    if (trophy) {
+      trophy.tip = tip;
+      trophy.guideTip = tip;
+    }
+  };
+  setHeavyRainTags('heavy_saved_the_kid', ['Final', 'Rota', 'Shaun', 'Atenção']);
+  setHeavyRainTags('heavy_perfect_crime', ['Rota', 'Final', 'Escolha', 'Chapter Select', 'Replay', 'Atenção', 'Perfect Crime']);
+  setHeavyRainTip('heavy_perfect_crime', 'Rota longa: deixe Hassan, Lauren e Kramer morrerem, limpe as digitais em Manfred, mate Madison e Jayden, e garanta que o Origami Killer escape. Não basta alterar apenas o capítulo final; continue a partir dos capítulos necessários com salvamento ativo.');
+  setHeavyRainTags('heavy_all_endings', ['Final', 'Replay', 'Chapter Select', 'Grind', 'Checklist', 'Atenção']);
+  setHeavyRainTip('heavy_all_endings', 'Veja todos os finais e epílogos necessários. Anote os epílogos já vistos e espere o jogo registrar cada final. Algumas variações exigem continuar jogando a partir de capítulos anteriores, não apenas repetir o último capítulo.');
+
+  Object.assign(heavyRainGuide, {
+    title: 'Heavy Rain',
+    primary_platform: 'PlayStation',
+    platforms: ['PS3', 'PS4'],
+    genre: 'Drama interativo / Aventura narrativa',
+    developer: 'Quantic Dream',
+    publisher: 'Sony Computer Entertainment / Sony Interactive Entertainment',
+    difficulty: 2,
+    time: '15-25h',
+    time_min_hours: 15,
+    time_max_hours: 25,
+    time_sort_hours: 20,
+    time_bucket: 'medium',
+    missable: 'Sem perdíveis permanentes. Heavy Rain é uma platina curta e fácil em habilidade, mas muito dependente de escolhas, finais, continuidade entre capítulos e rotas específicas.',
+    runs_summary: '1 run completa planejada + Chapter Select para finais, Perfect Crime, All Endings, Kamikaze, Nerd e troféus de capítulo restantes.',
+    missable_summary: 'Sem perdíveis permanentes se você usar Chapter Select corretamente. O risco real é retrabalho por escolhas, finais, epílogos e consequências que exigem continuidade com salvamento ativo.',
+    online_summary: 'Não há exigência online, cooperação, multiplayer obrigatório ou PS+ para a platina.',
+    grind_summary: 'O grind está em All Endings e no replay planejado de finais, rotas e capítulos, não em farm de itens.',
+    dlc_scope: 'Base game sem DLCs. O guia cobre a lista base de 57 troféus de Heavy Rain; conteúdos extras como The Taxidermist ficam fora da platina.',
+    difficulty_reason: '2/10: a execução é simples e a dificuldade selecionável não afeta troféus. Use dificuldade mais baixa para facilitar QTEs se quiser.',
+    time_reason: '15 a 25 horas considerando uma run planejada, Chapter Select, Perfect Crime, All Endings e cleanup de troféus de capítulo.',
+    first_run_advice: 'Na primeira run, mantenha Ethan, Madison, Norman e Shaun vivos sempre que possível, salve Shaun, faça troféus de capítulo simples e anote decisões que afetem finais.',
+    cleanup_advice: 'Use Chapter Select com cuidado: troféus pontuais podem ser repetidos por capítulo, mas finais, Perfect Crime e consequências futuras exigem continuar jogando a partir do capítulo alterado com salvamento ativo.',
+    before_you_start: 'Planeje Perfect Crime, All Endings, Four Heroes, Trial Master, Nerd e Kamikaze. Chapter Select recupera quase tudo, mas não transforma escolhas isoladas em finais registrados automaticamente.',
+    best_for: 'Ideal para quem quer uma platina narrativa curta, offline, focada em escolhas, finais e organização de checklist.',
+    avoid_if: 'Evite se você não gosta de repetir capítulos, registrar finais e seguir rotas específicas de personagens vivos ou mortos.',
+    hasMissables: false,
+    missableCount: 0,
+    missable_count: 0,
+    onlineRequired: false,
+    coopRequired: false,
+    dlcRequired: false,
+    hasOnline: false,
+    hasCoop: false,
+    requiresOnline: false,
+    requiresCoop: false,
+    dlcRequiredForPlatinum: false,
+    difficultyTrophiesRequired: false,
+    chapterSelect: true,
+    playthroughs: '1 run completa planejada + Chapter Select',
+    platinumType: 'single-player offline',
+    guideFocus: 'Chapter Select, Perfect Crime, All Endings, Four Heroes, Trial Master, Nerd, Kamikaze e finais',
+    status: 'published',
+    editorial_status: 'published',
+    editorialStatus: 'verified',
+    editorial_review_status: 'verified',
+    coverage_level: 'complete',
+    is_verified: true,
+    verification_status: 'verified',
+    quality_warnings: [],
+    last_reviewed_at: '2026-06-18',
+    reviewed_by: 'AtlasAchievement',
+    verification_note: 'Guia revisado para publicação: Heavy Rain com 57 troféus, distribuição 1/2/4/50, sem online, sem coop, sem DLC, sem dificuldade obrigatória e sem perdíveis permanentes com uso correto de Chapter Select.',
+    editorial_notes: 'Revisão editorial focada em taxonomia sem perdíveis permanentes, Chapter Select com continuidade, Perfect Crime, All Endings, Four Heroes, Trial Master, Nerd, Kamikaze, nomes EN/PT-BR, filtros e status.',
+    editorial_summary: [
+      'Heavy Rain é uma platina curta e fácil em habilidade, mas muito dependente de escolhas, finais e continuidade entre capítulos. A lista tem 57 troféus e não exige online, cooperação, DLC ou dificuldade específica. O maior cuidado é organizar as rotas de Perfect Crime, All Endings, Four Heroes, Trial Master e os troféus de capítulo para evitar repetir trechos mais do que o necessário.',
+      'A rota mais segura é fazer uma primeira run planejada, salvando os personagens necessários para Four Heroes e Saved the Kid, pegando o máximo possível de troféus de capítulo, e depois usar Chapter Select para Perfect Crime, All Endings, Kamikaze, Nerd e outros troféus específicos. Não há perdíveis permanentes, mas alguns troféus exigem jogar a partir de um capítulo com salvamento ativo para que as consequências sejam registradas.'
+    ],
+    seo: {
+      title: 'Heavy Rain: Guia de Troféus e Platina',
+      description: 'Guia de troféus de Heavy Rain com roadmap da platina, tempo estimado, finais, Perfect Crime, All Endings, Chapter Select, Kamikaze, Nerd, Four Heroes e dicas para os 57 troféus.',
+      metaDescription: 'Guia de troféus de Heavy Rain com roadmap da platina, tempo estimado, finais, Perfect Crime, All Endings, Chapter Select, Kamikaze, Nerd, Four Heroes e dicas para os 57 troféus.',
+      ogTitle: 'Heavy Rain: Guia de Troféus e Platina',
+      ogDescription: 'Roadmap PT-BR da platina de Heavy Rain com 57 troféus, sem perdíveis permanentes, sem online, sem coop, sem DLC e foco em finais, rotas e Chapter Select.',
+      keywords: ['Heavy Rain troféus', 'Heavy Rain platina', 'guia Heavy Rain', 'Heavy Rain PS4 troféus', 'HEAVY RAIN Master', 'Perfect Crime', 'All Endings', 'Kamikaze', 'Four Heroes', 'Trial Master', 'Nerd', 'Saved the Kid', 'Heavy Rain finais', 'Heavy Rain Chapter Select']
+    },
+    quickDecision: {
+      verdict: 'Sim. É uma platina curta e excelente para quem gosta de jogos narrativos, mas exige organização de finais.',
+      difficulty: 'Baixa.',
+      time: 'Curto a médio, cerca de 15 a 25 horas.',
+      mainRisk: 'Perfect Crime, All Endings, Trial Master, Nerd, Four Heroes e Kamikaze.',
+      risk: 'Baixo em perda permanente, médio em retrabalho por escolhas e finais.',
+      onlineCoop: 'Não exige online nem cooperação.',
+      dlc: 'Não exige DLC.',
+      firstAction: 'Faça uma primeira run mantendo protagonistas vivos, salve Shaun e anote decisões que afetem finais.'
+    },
+    attentionPoints: heavyRainAttentionPoints,
+    checklist: heavyRainChecklist,
+    faq: heavyRainFaq,
+    roadmap: heavyRainRoadmap,
+    roadmapStages: heavyRainRoadmap,
+    trophies: heavyRainTrophies
+  });
+}
+
 const finalFantasyXviGuide = sampleGames.find(game => game.slug === 'final-fantasy-xvi');
 if (finalFantasyXviGuide) {
   const finalFantasyXviRoadmap = [
@@ -51163,6 +51582,6192 @@ if (finalFantasyViiRebirthGuide) {
     roadmap: finalFantasyViiRebirthRoadmap,
     roadmapStages: finalFantasyViiRebirthRoadmap,
     trophies: finalFantasyViiRebirthTrophies
+  });
+}
+
+const granTurismo7Roadmap = [
+  {
+    title: "Complete os Menu Books e libere os sistemas principais",
+    focus: "Campanha, GT Café e desbloqueios",
+    objective: "Finalizar a progressão principal, liberar modos, pistas, licenças, multiplayer/Sport Mode e recursos de garagem.",
+    actions: [
+      "Avance pelos Menu Books do GT Café.",
+      "Complete eventos principais conforme forem liberando.",
+      "Use carros adequados por categoria para evitar gastos desnecessários.",
+      "Desbloqueie License Centre, Tuning Shop, GT Auto, Brand Central, Used Cars, Legend Cars e Sport Mode.",
+      "Faça troféus simples de corrida, pit stop, pneus, combustível, vitória por margem e pódio conforme surgirem.",
+      "Não foque em comprar carros caros antes de saber o que será necessário para Three Legendary Cars."
+    ],
+    warning: "O jogo depende de conexão online para grande parte do progresso e a platina exige Sport Mode. Não trate o guia como offline.",
+    result: "A campanha fica concluída e a maior parte dos sistemas necessários para a platina fica aberta."
+  },
+  {
+    title: "Faça licenças e mire ouro em todas",
+    focus: "Licenças e habilidade",
+    objective: "Concluir Fully Licensed e Hard Work Pays Off.",
+    actions: [
+      "Complete todas as licenças normais.",
+      "Depois, volte para buscar ouro em cada teste.",
+      "Use demonstrações, fantasmas e ajustes de assistências quando necessário.",
+      "Faça pausas em testes difíceis para evitar repetir com erro.",
+      "Registre Hard Work Pays Off como o principal skill check da platina."
+    ],
+    warning: "Hard Work Pays Off exige ouro em todas as licenças normais. É habilidade/licenças, não troféu de dificuldade selecionável.",
+    result: "A maior barreira técnica da platina fica resolvida."
+  },
+  {
+    title: "Complete Circuit Experience e troféus de pista",
+    focus: "Circuit Experience e performance",
+    objective: "Concluir The First Step to Mastery, Circuit Apprentice e Circuit Master.",
+    actions: [
+      "Complete setores e voltas no Circuit Experience.",
+      "Finalize 15 pistas no Circuit Experience para Circuit Master.",
+      "Use pistas mais familiares primeiro.",
+      "Aproveite para melhorar consistência de frenagem, traçado e aceleração.",
+      "Não marque esses troféus como online ou dificuldade."
+    ],
+    warning: "Circuit Experience exige habilidade, mas não é troféu de dificuldade selecionável. Classifique como Circuit Experience/Habilidade/Checklist.",
+    result: "Os troféus de domínio de pista ficam concluídos."
+  },
+  {
+    title: "Faça o bloco online do Sport Mode",
+    focus: "Online obrigatório",
+    objective: "Concluir Sport Mode Debut, In-Depth Mastery e progresso online de distância.",
+    actions: [
+      "Entre no Sport Mode quando estiver liberado.",
+      "Finalize uma corrida para Sport Mode Debut.",
+      "Finalize 50 corridas no Sport Mode para In-Depth Mastery.",
+      "Aproveite corridas online para avançar Going the Distance Together: The Atlantic.",
+      "Continue somando distância online até Going the Distance Together: The Autobahn.",
+      "Priorize terminar corridas limpas em vez de vencer, pois o requisito principal é concluir."
+    ],
+    warning: "Sport Mode é online e pode exigir PlayStation Plus para multiplayer. Não marque como coop; é multiplayer competitivo.",
+    result: "O bloco online obrigatório da platina fica resolvido."
+  },
+  {
+    title: "Planeje Three Legendary Cars com rotação da Legend Cars",
+    focus: "Legend Cars e créditos",
+    objective: "Comprar os três carros lendários corretos sem desperdiçar créditos.",
+    actions: [
+      "Acompanhe a concessionária Legend Cars.",
+      "Planeje créditos para Ford Mark IV Race Car '67.",
+      "Planeje créditos para Jaguar XJ13 '66.",
+      "Planeje créditos para Ferrari 330 P4 '67.",
+      "Não compre carros lendários aleatórios esperando que contem para o troféu.",
+      "Não dependa de preços antigos, pois os valores variam com o tempo."
+    ],
+    warning: "Three Legendary Cars é time-gated pela rotação da Legend Cars e exige carros específicos. Esse é um dos maiores gargalos da platina.",
+    result: "O troféu mais sensível a créditos e rotação fica planejado."
+  },
+  {
+    title: "Grinde créditos, garagem e distância",
+    focus: "Grind e coleção",
+    objective: "Resolver troféus de carros, garagem, distância, velocidade e compras.",
+    actions: [
+      "Junte créditos em eventos eficientes e consistentes.",
+      "Compre carros necessários para Motor Mania e No Car, No Life!",
+      "Compre carro elétrico, safety car, pickup truck, carro de fórmula e carro lendário.",
+      "Faça troféus de velocidade, oval, Route 66, Le Mans e Angeles Crest.",
+      "Use corridas longas ou repetições planejadas para acumular quilometragem.",
+      "Não confunda grind de créditos com DLC ou microtransação obrigatória."
+    ],
+    warning: "A platina pode exigir muito crédito e distância, mas não exige gastar dinheiro real.",
+    result: "A parte de garagem, créditos e distância fica encaminhada."
+  },
+  {
+    title: "Limpe tuning, GT Auto, fotos e troféus misc",
+    focus: "Cleanup",
+    objective: "Resolver troféus de personalização, fotos, peças, lavagem e ações pontuais.",
+    actions: [
+      "Compre e equipe peças de tuning para A Taste of Tuning.",
+      "Compre turbos/superchargers para A Bit of a Boost.",
+      "Compre rodas, aerodinâmica, wide body e rigidez de carroceria.",
+      "Lave carros 10 vezes.",
+      "Tire 100 fotos para Snap-Happy.",
+      "Faça Memento from Le Mans e Memento from the Nürburgring com os carros e locais corretos."
+    ],
+    warning: "Mementos exigem combinação específica de carro e local no Scapes. Não trate como foto genérica.",
+    result: "Os troféus rápidos de garagem, foto e GT Auto ficam concluídos."
+  },
+  {
+    title: "Revise DLCs, Power Pack e conteúdo extra separadamente",
+    focus: "DLC/extra",
+    objective: "Evitar misturar conteúdo pago/extra com a platina base.",
+    actions: [
+      "Mantenha a lista base com 54 troféus.",
+      "Não marque Power Pack ou conteúdo extra como obrigatório para a platina base.",
+      "Se o site cobrir Power Pack, crie nota separada de DLC/extra.",
+      "Não altere dlcRequired para true.",
+      "Não misture Gran Turismo Sport com Gran Turismo 7."
+    ],
+    warning: "Conteúdo pago/extra pode existir, mas a platina base deve continuar separada e sem DLC obrigatória.",
+    result: "O guia fica claro para quem quer só a platina e para quem acompanha conteúdo adicional."
+  }
+];
+
+const granTurismo7AttentionPoints = [
+  { title: "Online obrigatório", type: "Sport Mode / distância online", tip: "A platina exige Sport Mode e distância online. Não trate Gran Turismo 7 como guia offline." },
+  { title: "Sport Mode", type: "Online competitivo", tip: "In-Depth Mastery exige terminar 50 corridas no Sport Mode. O foco é concluir corridas, não vencer." },
+  { title: "Distância online", type: "Online / Grind", tip: "Going the Distance Together: The Atlantic e The Autobahn exigem distância com outros jogadores online." },
+  { title: "Sem coop", type: "Multiplayer competitivo", tip: "Corridas online são multiplayer competitivo, não coop. O filtro Coop deve ser 0." },
+  { title: "Three Legendary Cars", type: "Legend Cars", tip: "Exige Ford Mark IV Race Car '67, Jaguar XJ13 '66 e Ferrari 330 P4 '67 na Legend Cars." },
+  { title: "Rotação e créditos", type: "Legend Cars / Créditos", tip: "Legend Cars tem rotação e preços variáveis. Three Legendary Cars pode atrasar a platina mesmo com créditos." },
+  { title: "Licenças ouro", type: "Licenças / Habilidade", tip: "Hard Work Pays Off exige ouro em todas as licenças normais. É o principal skill check do guia." },
+  { title: "Circuit Experience", type: "Circuit Experience", tip: "Circuit Master exige completar 15 pistas no Circuit Experience. Não confunda com corridas normais." },
+  { title: "Time Attacker", type: "Time Trial", tip: "Time Attacker exige 100 voltas em Time Trials. Use corridas curtas e repetíveis para acelerar." },
+  { title: "Fotos específicas", type: "Scapes", tip: "Memento from Le Mans e Memento from the Nürburgring exigem carro e local específicos no Scapes." },
+  { title: "Sem perdíveis", type: "Cleanup", tip: "Não há perdíveis permanentes. Carros lendários são time-gated, não perdíveis." },
+  { title: "DLC/Power Pack separado", type: "Base game", tip: "Power Pack e outros conteúdos extras não são necessários para a platina base, salvo seção separada de DLC/extra." }
+];
+
+const granTurismo7Checklist = [
+  "Conferir se o guia tem 54 troféus.",
+  "Conferir se Gran Turismo Platinum Trophy é a platina.",
+  "Conferir distribuição: 1 platina, 2 ouro, 4 prata, 47 bronze.",
+  "Conferir onlineRequired true.",
+  "Conferir coopRequired false.",
+  "Conferir dlcRequired false.",
+  "Conferir hasMissables false e missableCount 0.",
+  "Conferir filtro Perdíveis 0, Online 4, Coop 0, DLC 0 e Dificuldade 0.",
+  "Conferir Sport Mode Debut como Online/Sport Mode.",
+  "Conferir In-Depth Mastery como Online/Sport Mode/Grind.",
+  "Conferir Going the Distance Together: The Atlantic como Online/Distância.",
+  "Conferir Going the Distance Together: The Autobahn como Online/Distância/Grind.",
+  "Conferir Hard Work Pays Off como Licenças/Ouro/Habilidade.",
+  "Conferir Fully Licensed.",
+  "Conferir Circuit Master/Circuit Experience.",
+  "Conferir Three Legendary Cars e os três carros corretos.",
+  "Conferir Legend Cars, rotação e créditos.",
+  "Conferir Finale/Menu Books.",
+  "Conferir Time Attacker com 100 voltas em Time Trials.",
+  "Conferir Snap-Happy e Mementos.",
+  "Conferir GT Auto/tuning.",
+  "Conferir garagem 50/100 carros.",
+  "Conferir troféus de velocidade.",
+  "Conferir troféus de distância offline.",
+  "Conferir que Sport Mode não virou Coop.",
+  "Conferir que Power Pack/DLC não entrou na platina base.",
+  "Conferir se todos os troféus têm nome oficial em inglês como principal.",
+  "Conferir se todos têm PT-BR abaixo.",
+  "Conferir se descrições estão em português.",
+  "Conferir se textos em português têm acentos.",
+  "Conferir se não aparecem rótulos técnicos de nome original nem placeholders editoriais.",
+  "Conferir se roadmap está estruturado como array/objeto.",
+  "Conferir se roadmap renderiza etapas legíveis sem labels internos.",
+  "Conferir FAQ, decisão rápida, SEO e pontos de atenção.",
+  "Conferir se página individual e catálogo exibem o mesmo status editorial.",
+  "Conferir se flags do topo batem com filtros do catálogo."
+];
+
+const granTurismo7Faq = [
+  { question: "Gran Turismo 7 tem troféus perdíveis?", answer: "Não. Não há perdíveis permanentes. Licenças, corridas, fotos, carros, Sport Mode e grinds podem ser feitos depois." },
+  { question: "Precisa jogar online para platinar?", answer: "Sim. A platina exige Sport Mode e troféus de distância online com outros jogadores." },
+  { question: "Precisa de cooperação?", answer: "Não. Sport Mode é multiplayer competitivo, não coop." },
+  { question: "Precisa de DLC?", answer: "Não. A platina usa apenas a lista base de 54 troféus. Power Pack e conteúdos extras devem ficar separados." },
+  { question: "Quantas horas leva para platinar?", answer: "Em média, cerca de 100 a 150 horas neste guia, dependendo de habilidade nas licenças, créditos, Sport Mode, distância online e rotação da Legend Cars." },
+  { question: "A dificuldade afeta troféus?", answer: "Não há troféu de dificuldade selecionável. O desafio vem de habilidade, licenças ouro, grind e Sport Mode." },
+  { question: "Qual é o maior gargalo?", answer: "Three Legendary Cars, Hard Work Pays Off, In-Depth Mastery e os troféus de distância online." },
+  { question: "Quais carros preciso para Three Legendary Cars?", answer: "Ford Mark IV Race Car '67, Jaguar XJ13 '66 e Ferrari 330 P4 '67, comprados na Legend Cars quando estiverem disponíveis." },
+  { question: "Preciso vencer 50 corridas no Sport Mode?", answer: "Não. In-Depth Mastery exige terminar 50 corridas no Sport Mode." },
+  { question: "Preciso de ouro em todas as licenças?", answer: "Sim. Hard Work Pays Off exige ouro em todas as licenças normais." },
+  { question: "Sport Mode conta como coop?", answer: "Não. Sport Mode é multiplayer competitivo. O guia deve marcar Online, não Coop." },
+  { question: "Posso usar dinheiro real para acelerar?", answer: "A platina não exige microtransações. O guia deve focar em créditos obtidos jogando." }
+];
+
+const granTurismo7TrophyRows = [
+  ["gt7-platinum-trophy", "Gran Turismo Platinum Trophy", "Troféu de Platina Gran Turismo", "Platina", "Conquiste todos os troféus de Gran Turismo 7.", "Conclua os outros 53 troféus da lista base. Não use a lista de Gran Turismo Sport.", false, false, false, ["Platina"]],
+  ["gt7-living-your-car-life", "Living Your Car Life", "Vivendo sua vida automobilística", "Bronze", "Inicie o primeiro Menu Book.", "Troféu inicial do GT Café/Menu Books.", false, false, false, ["GT Café", "Menu Books", "História"]],
+  ["gt7-student-of-motoring-history", "Student of Motoring History", "Estudante da história do automobilismo", "Bronze", "Complete o primeiro menu de coleção de carros.", "Complete o primeiro menu de coleção de carros no GT Café.", false, false, false, ["GT Café", "Menu Books", "História"]],
+  ["gt7-moving-on-up", "Moving on Up", "Subindo na vida", "Bronze", "Ganhe cinco ou mais posições em uma única volta.", "Vem cedo em corridas de Menu Books se você largar no meio ou fim do grid.", false, false, false, ["Corrida", "Ação específica"]],
+  ["gt7-clean-racer", "Clean Racer", "Piloto limpo", "Bronze", "Complete uma corrida sem sair da pista e sem colisões.", "Escolha uma corrida fácil e pilote de forma conservadora, sem contato.", false, false, false, ["Corrida limpa", "Ação específica"]],
+  ["gt7-by-a-country-mile", "By a Country Mile", "Com larga vantagem", "Bronze", "Vença com vantagem de 10 segundos ou mais em uma corrida de pelo menos duas voltas.", "Use um carro forte em corrida de duas ou mais voltas.", false, false, false, ["Corrida", "Ação específica"]],
+  ["gt7-by-a-whisker", "By a Whisker", "Por um triz", "Bronze", "Vença uma corrida com vantagem de 0,5 segundo ou menos.", "Se não vier naturalmente, reduza ritmo na reta final para vencer por margem pequena.", false, false, false, ["Corrida", "Ação específica"]],
+  ["gt7-new-treads", "New Treads", "Pneus novos", "Bronze", "Faça um pit stop durante uma corrida e troque os pneus.", "Troque pneus em uma corrida com pit stop habilitado.", false, false, false, ["Pit stop", "Pneus", "Corrida", "Cleanup"]],
+  ["gt7-first-step-to-mastery", "The First Step to Mastery", "O primeiro passo para a maestria", "Bronze", "Complete uma pista no Circuit Experience, incluindo todos os setores.", "Complete todos os setores e a volta final de um circuito no Circuit Experience.", false, false, false, ["Circuit Experience", "Checklist", "Habilidade", "Cleanup"]],
+  ["gt7-circuit-apprentice", "Circuit Apprentice", "Aprendiz de circuito", "Bronze", "Complete cinco pistas no Circuit Experience, incluindo todos os setores.", "Escolha cinco circuitos curtos ou familiares para reduzir tempo.", false, false, false, ["Circuit Experience", "Checklist", "Habilidade", "Cleanup"]],
+  ["gt7-circuit-master", "Circuit Master", "Mestre de circuito", "Prata", "Complete 15 pistas no Circuit Experience, incluindo todos os setores.", "Complete Circuit Experience em 15 pistas; bronze basta para o troféu.", false, false, false, ["Circuit Experience", "Habilidade", "Checklist", "Atenção"]],
+  ["gt7-done-in-60-seconds", "Done in 60 Seconds", "Feito em 60 segundos", "Bronze", "Faça uma volta em Tsukuba Circuit em menos de um minuto.", "Pode vir no Circuit Experience de Tsukuba ou em Time Trial com carro rápido.", false, false, false, ["Tsukuba", "Time Trial", "Volta rápida", "Habilidade", "Cleanup"]],
+  ["gt7-formula-first-timer", "Formula First Timer", "Primeira vez em fórmula", "Bronze", "Dirija um carro de fórmula.", "Pode vir em licenças/missões ou ao dirigir um Super Formula.", false, false, false, ["Carro específico", "Compra", "Checklist"]],
+  ["gt7-podium-fixture", "Podium Fixture", "Presença constante no pódio", "Bronze", "Termine no pódio dez vezes.", "Vem naturalmente durante Menu Books e eventos.", false, false, false, ["Corrida", "Checklist"]],
+  ["gt7-rain-royalty", "Rain Royalty", "Realeza da chuva", "Bronze", "Adquira sua licença de chuva.", "Complete os testes de licença em condições de chuva/molhado.", false, false, false, ["Licenças", "Habilidade", "Checklist"]],
+  ["gt7-fully-licensed", "Fully Licensed", "Totalmente licenciado", "Bronze", "Obtenha todas as licenças normais.", "Complete todos os testes de licença normal ao menos com bronze.", false, false, false, ["Licenças", "Checklist", "Progressão"]],
+  ["gt7-hard-work-pays-off", "Hard Work Pays Off", "Trabalho duro compensa", "Ouro", "Ganhe ouro em todas as licenças normais.", "Principal skill check da platina: obtenha ouro em todos os testes de licença normal.", false, false, false, ["Licenças", "Ouro", "Habilidade", "Atenção"]],
+  ["gt7-all-rounder", "All-Rounder", "Versátil", "Bronze", "Vença corridas em 10 pistas diferentes.", "Vem naturalmente ao completar o GT Café.", false, false, false, ["Corrida", "Menu Books", "Checklist"]],
+  ["gt7-digging-the-dirt", "Digging the Dirt", "Comendo poeira", "Bronze", "Vença 10 corridas em pistas de terra.", "Repita eventos dirt, como Fishermans Ranch, quando tiver carro adequado.", false, false, false, ["Dirt", "Corrida", "Checklist"]],
+  ["gt7-fill-her-up", "Fill Her Up", "Encha o tanque", "Bronze", "Faça um pit stop em corrida com consumo de combustível e abasteça.", "Entre nos boxes em corrida com consumo de combustível e complete o abastecimento.", false, false, false, ["Pit stop", "Combustível", "Corrida", "Cleanup"]],
+  ["gt7-running-on-empty", "Running on Empty", "Rodando no vazio", "Bronze", "Fique sem combustível em uma corrida com consumo de combustível.", "Use evento/missão com consumo e pilote até zerar o combustível.", false, false, false, ["Combustível", "Ação específica", "Cleanup"]],
+  ["gt7-looking-good", "Looking Good!", "Com estilo!", "Bronze", "Compre e equipe peças aerodinâmicas.", "Compre e equipe uma peça aerodinâmica no GT Auto.", false, false, false, ["GT Auto", "Tuning", "Compra", "Cleanup"]],
+  ["gt7-toughening-up", "Toughening Up", "Reforçando", "Bronze", "Aumente a rigidez da carroceria de um carro 10 vezes.", "Compre Increase Body Rigidity para dez carros.", false, false, false, ["GT Auto", "Tuning", "Compra", "Cleanup"]],
+  ["gt7-squeaky-clean", "Squeaky Clean", "Limpinho", "Bronze", "Lave um carro 10 vezes.", "Use Car Wash no GT Auto dez vezes.", false, false, false, ["GT Auto", "Ação específica", "Cleanup"]],
+  ["gt7-warning-wide-load", "Warning: Wide Load!", "Cuidado: carga larga!", "Bronze", "Alargue a carroceria de um carro.", "Aplique Wide Body em um carro elegível no GT Auto.", false, false, false, ["GT Auto", "Tuning", "Compra", "Cleanup"]],
+  ["gt7-a-taste-of-tuning", "A Taste of Tuning", "Um gostinho de tuning", "Bronze", "Compre e equipe peças de tuning.", "Compre e equipe qualquer peça na Tuning Shop.", false, false, false, ["Tuning", "Compra", "Cleanup"]],
+  ["gt7-a-bit-of-a-boost", "A Bit of a Boost", "Um pouco de pressão", "Bronze", "Compre um turbo ou supercharger 10 vezes.", "Compre turbo ou supercharger em dez carros elegíveis.", false, false, false, ["Tuning", "Compra", "Cleanup"]],
+  ["gt7-sport-mode-debut", "Sport Mode Debut", "Estreia no Sport Mode", "Bronze", "Termine uma corrida no Sport Mode.", "Troféu online/Sport Mode: conclua uma corrida. Pode exigir PlayStation Plus para multiplayer online.", false, false, true, ["Online", "Sport Mode", "Multiplayer competitivo", "Cleanup"]],
+  ["gt7-in-depth-mastery", "In-Depth Mastery", "Maestria aprofundada", "Bronze", "Termine 50 corridas no Sport Mode.", "Termine 50 corridas no Sport Mode. Não precisa vencer; o importante é concluir corridas válidas.", false, false, true, ["Online", "Sport Mode", "Multiplayer competitivo", "Grind", "Atenção"]],
+  ["gt7-snap-happy", "Snap-Happy", "Fotógrafo empolgado", "Bronze", "Tire 100 fotos em Scapes ou Race Photos.", "Pode repetir fotos; não precisa ser 100 imagens diferentes.", false, false, false, ["Fotos", "Scapes", "Checklist", "Cleanup"]],
+  ["gt7-memento-nurburgring", "Memento from the Nürburgring", "Lembrança de Nürburgring", "Bronze", "Tire uma foto Scapes de um BMW Gr.3 no Nürburgring.", "Use qualquer BMW Gr.3 elegível e tire foto no Scapes de Nürburgring.", false, false, false, ["Fotos", "Scapes", "Carro específico", "Checklist", "Cleanup"]],
+  ["gt7-memento-le-mans", "Memento from Le Mans", "Lembrança de Le Mans", "Bronze", "Tire uma foto Scapes de um Audi R18 TDI no Circuit de la Sarthe.", "Use o Audi R18 TDI (Audi Sport Team Joest) no Scapes do Circuit de la Sarthe.", false, false, false, ["Fotos", "Scapes", "Carro específico", "Checklist", "Cleanup"]],
+  ["gt7-heavy-haulage", "Heavy Haulage", "Carga pesada", "Bronze", "Compre uma pickup truck.", "Menu Books exigem pickup; escolha uma que também ajude em eventos posteriores.", false, false, false, ["Carro específico", "Compra", "Checklist", "Cleanup"]],
+  ["gt7-carbon-neutral", "Let's Go Carbon Neutral!", "Vamos ficar neutros em carbono!", "Bronze", "Compre um carro elétrico.", "Compre qualquer EV, como BMW i3, se quiser economizar.", false, false, false, ["Carro específico", "Compra", "Checklist", "Cleanup"]],
+  ["gt7-safety-first", "Safety First", "Segurança em primeiro lugar", "Bronze", "Compre um safety car.", "Compre um Safety Car em Brand Central/concessionária quando tiver créditos.", false, false, false, ["Carro específico", "Compra", "Checklist", "Cleanup"]],
+  ["gt7-living-with-a-legend", "Living with a Legend", "Vivendo com uma lenda", "Bronze", "Compre um carro na concessionária Legend Cars.", "Compre qualquer carro na Legend Cars. Aproveite para planejar Three Legendary Cars.", false, false, false, ["Legend Cars", "Compra", "Carro específico", "Créditos", "Cleanup"]],
+  ["gt7-wheely-good-fun", "Wheely Good Fun", "Diversão sobre rodas", "Bronze", "Compre 10 conjuntos de rodas no GT Auto.", "Compre dez rodas, podendo usar opções baratas no GT Auto.", false, false, false, ["GT Auto", "Tuning", "Compra", "Cleanup"]],
+  ["gt7-firm-favorite", "Firm Favorite", "Favorito absoluto", "Bronze", "Compre o mesmo carro 10 vezes.", "Use um carro barato para reduzir custo.", false, false, false, ["Garagem", "Carros", "Créditos", "Cleanup"]],
+  ["gt7-smoking-hot", "Smoking Hot", "Fumaça quente", "Bronze", "Ganhe 10.000 pontos em Drift Trials.", "Drift Trials em Missions ou World Circuits ajudam a chegar a 10.000 pontos.", false, false, false, ["Drift", "Habilidade", "Checklist", "Cleanup"]],
+  ["gt7-join-200-mph-club", "Join the 200-mph Club", "Entre para o clube das 200 mph", "Bronze", "Alcance 200 mph ou 322 km/h.", "Vem em carros rápidos, licenças ou Special Stage Route X.", false, false, false, ["Velocidade", "Carro rápido", "Setup", "Cleanup"]],
+  ["gt7-speed-demon", "Speed Demon", "Demônio da velocidade", "Bronze", "Alcance 500 km/h ou 311 mph.", "Use Special Stage Route X e carro extremo/tunado.", false, false, false, ["Velocidade", "Carro rápido", "Setup", "Cleanup"]],
+  ["gt7-speed-archdemon", "Speed Archdemon", "Arquidemônio da velocidade", "Prata", "Alcance 600 km/h ou 373 mph.", "Normalmente exige carro muito rápido, tuning e uma reta longa como Special Stage Route X.", false, false, false, ["Velocidade", "Carro rápido", "Setup", "Atenção", "Cleanup"]],
+  ["gt7-time-attacker", "Time Attacker", "Atacante do tempo", "Bronze", "Participe de 100 voltas em Time Trials.", "Descrição validada como 100 voltas em Time Trials. Use pistas curtas para acelerar o cleanup.", false, false, false, ["Time Trial", "Voltas", "Cleanup"]],
+  ["gt7-round-and-round", "Round and Round", "Volta após volta", "Bronze", "Dirija 500 milhas ou 804,672 km em pistas ovais.", "Special Stage Route X ou outros ovais ajudam a acumular distância.", false, false, false, ["Oval", "Distância", "Grind", "Cleanup"]],
+  ["gt7-distance-angeles-crest", "Going the Distance: Angeles Crest Highway", "Indo longe: Angeles Crest Highway", "Bronze", "Dirija a distância da Angeles Crest Highway: 66 milhas ou 106 km.", "Distância acumulada; vem naturalmente durante licenças/eventos se você jogar bastante.", false, false, false, ["Distância", "Checklist"]],
+  ["gt7-distance-le-mans", "Going the Distance: 24 Hours of Le Mans", "Indo longe: 24 Horas de Le Mans", "Bronze", "Dirija a distância de uma corrida completa das 24 Horas de Le Mans: 2.209,536 km.", "Distância acumulada; vem com progressão longa, missões e grind.", false, false, false, ["Distância", "Grind"]],
+  ["gt7-distance-route-66", "Going the Distance: Route 66", "Indo longe: Route 66", "Bronze", "Dirija a distância da Route 66: 2.451 milhas ou 3.945 km.", "Distância acumulada; corridas longas ajudam.", false, false, false, ["Distância", "Checklist"]],
+  ["gt7-distance-together-atlantic", "Going the Distance Together: The Atlantic", "Indo longe juntos: O Atlântico", "Bronze", "Dirigindo com outros jogadores online, iguale a distância do primeiro voo transatlântico sem escalas: 5.810 km.", "Troféu online com outros jogadores. Some distância em corridas/lobbies online.", false, false, true, ["Online", "Distância", "Multiplayer", "Grind"]],
+  ["gt7-distance-together-autobahn", "Going the Distance Together: The Autobahn", "Indo longe juntos: A Autobahn", "Prata", "Dirigindo com outros jogadores online, iguale a distância da rede Autobahn alemã: 13.191 km.", "Troféu online com outros jogadores e grind de distância. Planeje sessões online longas.", false, false, true, ["Online", "Distância", "Multiplayer", "Grind", "Atenção"]],
+  ["gt7-motor-mania", "Motor Mania", "Mania de motor", "Bronze", "Guarde 50 carros na sua garagem.", "Os Menu Books entregam muitos carros; complete a campanha antes de gastar pesado.", false, false, false, ["Garagem", "Carros", "Créditos", "Grind", "Checklist"]],
+  ["gt7-no-car-no-life", "No Car, No Life!", "Sem carro, sem vida!", "Bronze", "Guarde 100 carros na sua garagem.", "Compre carros baratos e aproveite recompensas de eventos até chegar a 100.", false, false, false, ["Garagem", "Carros", "Créditos", "Grind", "Checklist"]],
+  ["gt7-three-legendary-cars", "Three Legendary Cars", "Três carros lendários", "Prata", "Adquira três carros de corrida lendários que já foram destinados a vencer corridas de 24 horas.", "Compre os três carros corretos na Legend Cars: Ford Mark IV Race Car '67, Jaguar XJ13 '66 e Ferrari 330 P4 '67. Eles aparecem em rotação e os preços podem variar. Não basta comprar qualquer trio de carros lendários.", false, false, false, ["Legend Cars", "Carros lendários", "Créditos", "Rotação", "Grind", "Atenção"]],
+  ["gt7-finale", "Finale", "Finale", "Ouro", "Cumpra os requisitos para o final.", "Complete os Menu Books principais do GT Café até o encerramento da campanha.", false, false, false, ["GT Café", "Menu Books", "História", "Checklist"]],
+  ["gt7-no-assistance-required", "No Assistance Required!", "Sem assistência necessária!", "Bronze", "Complete uma corrida sem nenhuma configuração de assistência.", "Desative assistências e conclua uma corrida simples de baixa potência.", false, false, false, ["Habilidade", "Ação específica", "Cleanup"]]
+];
+
+const granTurismo7Trophies = granTurismo7TrophyRows.map(([id, name, namePt, type, descriptionPt, tip, isMissable, isSpoiler, isOnline, tags]) => ({
+  id,
+  name,
+  name_pt: namePt,
+  trophyNameOriginal: name,
+  trophyNamePtBr: namePt,
+  namePtSource: "editorial_ptbr_reference",
+  type,
+  tier: type,
+  description: descriptionPt,
+  descriptionPtBr: descriptionPt,
+  ptDescription: descriptionPt,
+  localizedDescription: { ptBr: descriptionPt },
+  descriptionPtSource: "editorial_ptbr_reference",
+  tip,
+  guideTip: tip,
+  is_missable: isMissable,
+  isMissable: isMissable,
+  missable: isMissable,
+  is_spoiler: isSpoiler,
+  isSpoiler: isSpoiler,
+  is_online: isOnline,
+  isOnline: isOnline,
+  is_coop: false,
+  isCoop: false,
+  dlcRequired: false,
+  difficultyRequired: false,
+  tags
+}));
+
+const granTurismo7Guide = sampleGames.find(game => game.slug === "gran-turismo-7");
+if (granTurismo7Guide) {
+  Object.assign(granTurismo7Guide, {
+    title: "Gran Turismo 7",
+    developer: "Polyphony Digital",
+    publisher: "Sony Interactive Entertainment",
+    platforms: ["PS4", "PS5"],
+    platform_base: "PS5",
+    platformBase: "PS5",
+    guideScope: "Lista PSN base de 54 troféus",
+    genre: ["corrida", "simulação"],
+    mode: "single-player + multiplayer competitivo obrigatório",
+    difficulty: 7,
+    time: "100-150 horas",
+    estimatedTime: "100-150 horas",
+    time_min_hours: 100,
+    time_max_hours: 150,
+    time_sort_hours: 100,
+    time_bucket: "long",
+    runs: "Progressão única longa com cleanup; sem perdíveis permanentes.",
+    hasMissables: false,
+    missableCount: 0,
+    missable_count: 0,
+    hasOnline: true,
+    hasMandatoryOnline: true,
+    hasMandatoryCoop: false,
+    requiresOnline: true,
+    requiresCoop: false,
+    onlineRequired: true,
+    online_required: true,
+    coopRequired: false,
+    coop_required: false,
+    dlcRequired: false,
+    dlc_required: false,
+    dlcRequiredForPlatinum: false,
+    difficultyTrophiesRequired: false,
+    newGamePlusRequired: false,
+    platinumType: "lista PSN base com online obrigatório",
+    guideFocus: "GT Café, licenças ouro, Circuit Experience, Sport Mode, distância online, Legend Cars, créditos e cleanup",
+    missable: "Sem perdíveis permanentes. Licenças, corridas, fotos, carros, Sport Mode, distância e grinds podem ser repetidos ou feitos depois; Legend Cars é rotação/time-gate, não perda definitiva.",
+    runs_summary: "Não há runs tradicionais. A rota é completar Menu Books, abrir sistemas, trabalhar licenças/Circuit Experience, fazer online obrigatório e finalizar garagem, créditos, distância e cleanup.",
+    missable_summary: "Não há perdíveis permanentes; missableCount fica 0.",
+    online_summary: "Online obrigatório para a platina: Sport Mode Debut, In-Depth Mastery e os dois troféus Going the Distance Together exigem Sport Mode/distância com outros jogadores. O jogo também depende de conexão para grande parte do progresso, mas o filtro Online deve contar apenas requisitos online diretos.",
+    grind_summary: "O peso está em 50 corridas no Sport Mode, distância online, créditos, garagem 50/100 carros, Three Legendary Cars, licenças ouro, Circuit Experience e distâncias acumuladas.",
+    dlc_scope: "Base game sem DLCs. Power Pack, atualizações, eventos e conteúdo extra não são obrigatórios para a platina base de 54 troféus.",
+    difficulty_reason: "7/10 pela combinação de licenças ouro, Circuit Experience, consistência de pilotagem, Sport Mode, créditos e longos grinds. Não há troféu de dificuldade selecionável.",
+    time_reason: "A faixa de 100-150 horas considera Menu Books, licenças ouro, Circuit Experience, 50 corridas Sport Mode, distância online, créditos, garagem, Legend Cars e cleanup.",
+    first_run_advice: "Complete os Menu Books do GT Café primeiro para liberar modos, circuitos, lojas, licenças, GT Auto, Brand Central, Used Cars, Legend Cars e Sport Mode.",
+    cleanup_advice: "Depois da campanha, foque em licenças ouro, Circuit Experience, Sport Mode, distâncias online, Three Legendary Cars, garagem, créditos, fotos, tuning, velocidade e troféus misc.",
+    before_you_start: "Gran Turismo 7 é longo e exige online: Sport Mode, corridas com outros jogadores e distância online entram na platina. PlayStation Plus pode ser necessário para multiplayer online/Sport Mode conforme plataforma/região.",
+    best_for: "Ideal para quem gosta de corrida, coleção de carros, progressão longa, licenças, melhoria de tempo e desafios online competitivos.",
+    avoid_if: "Evite se você quer uma platina offline, curta, sem Sport Mode ou sem grind de créditos/carros.",
+    status: "published",
+    editorial_status: "published",
+    editorialStatus: "verified",
+    editorial_review_status: "verified",
+    coverage_level: "complete",
+    is_verified: true,
+    verification_status: "verified",
+    quality_warnings: [],
+    last_reviewed_at: "2026-06-18",
+    reviewed_by: "AtlasAchievement",
+    completionState: "complete",
+    completion_state: "complete",
+    verification_note: "Guia revisado para publicação: lista base PS4/PS5 de Gran Turismo 7 com 54 troféus, distribuição 1/2/4/47, 100-150h, 7/10, online obrigatório, sem coop, sem DLC obrigatória, sem perdíveis permanentes, com Sport Mode, licenças ouro, Circuit Experience, Three Legendary Cars e filtros revisados.",
+    editorial_notes: "Revisão editorial focada na platina base de Gran Turismo 7: Sport Mode obrigatório, In-Depth Mastery, distância online, Three Legendary Cars, Legend Cars/rotação, licenças ouro, Circuit Experience, Time Attacker, Power Pack fora da platina, nomes EN/PT-BR, descrições PT-BR, tags e filtros.",
+    editorial_summary: [
+      "Gran Turismo 7 é uma platina longa e focada em progressão, habilidade e grind. A lista tem 54 troféus, não possui perdíveis permanentes, não exige cooperação e não exige DLC, mas possui online obrigatório por causa do Sport Mode e dos troféus de distância com outros jogadores.",
+      "A rota mais segura é completar os Menu Books do GT Café, liberar modos e circuitos, fazer licenças, avançar no Circuit Experience, acumular créditos, comprar carros específicos da Legend Cars para Three Legendary Cars, completar 50 corridas no Sport Mode, resolver os troféus de fotos, tuning, garagem e distância, e deixar Hard Work Pays Off e os grandes grinds para o cleanup. O maior risco não é perder troféus, mas subestimar tempo, créditos, rotação de carros lendários e requisitos online.",
+      "Os nomes PT-BR abaixo dos troféus usam tradução editorial consistente quando não há localização oficial confirmada no dado do projeto; o nome oficial em inglês permanece sempre como principal."
+    ],
+    seo: {
+      title: "Gran Turismo 7: Guia de Troféus e Platina",
+      description: "Guia de troféus de Gran Turismo 7 com roadmap da platina, online obrigatório, Sport Mode, Three Legendary Cars, licenças ouro, Circuit Experience, créditos, Legend Cars e dicas para os 54 troféus.",
+      metaDescription: "Guia de troféus de Gran Turismo 7 com roadmap da platina, online obrigatório, Sport Mode, Three Legendary Cars, licenças ouro, Circuit Experience, créditos, Legend Cars e dicas para os 54 troféus.",
+      ogTitle: "Gran Turismo 7: Guia de Troféus e Platina",
+      ogDescription: "Roadmap PT-BR da platina de Gran Turismo 7 com 54 troféus, online obrigatório, Sport Mode, Three Legendary Cars, licenças ouro, Circuit Experience e créditos.",
+      keywords: ["Gran Turismo 7 troféus", "Gran Turismo 7 platina", "guia Gran Turismo 7", "GT7 troféus", "GT7 platina", "Gran Turismo Platinum Trophy", "Three Legendary Cars", "Hard Work Pays Off", "In-Depth Mastery", "Sport Mode GT7", "Legend Cars GT7", "Ferrari 330 P4 GT7", "Jaguar XJ13 GT7", "Ford Mark IV GT7", "Gran Turismo 7 licenças ouro"]
+    },
+    quickDecision: {
+      verdict: "Sim, mas é uma platina longa, com online obrigatório, grind de créditos e desafios de habilidade.",
+      difficulty: "Moderada. O desafio principal é ouro nas licenças, consistência, Sport Mode e tempo.",
+      time: "Longo, cerca de 100 a 150 horas.",
+      mainRisk: "Sport Mode, 50 corridas online, distância online, Three Legendary Cars, ouro nas licenças e grind de créditos.",
+      risk: "Baixo em perda permanente, médio/alto em demora por rotação da Legend Cars e grind.",
+      onlineCoop: "Online obrigatório, sem coop obrigatório.",
+      dlc: "Não exige DLC para a platina base.",
+      firstAction: "Complete os Menu Books do GT Café para liberar sistemas, circuitos, lojas, licenças e Sport Mode."
+    },
+    attentionPoints: granTurismo7AttentionPoints,
+    checklist: granTurismo7Checklist,
+    faq: granTurismo7Faq,
+    roadmap: granTurismo7Roadmap,
+    roadmapStages: granTurismo7Roadmap,
+    trophies: granTurismo7Trophies
+  });
+}
+
+const dragonDogma2Roadmap = [
+  {
+    title: "Avance a história até A New Godsway sem entrar no fim",
+    focus: "História e ponto de segurança",
+    objective: "Chegar ao ponto ideal para backup e cleanup antes do caminho final.",
+    actions: [
+      "Avance a campanha normalmente até Main Quest 14: A New Godsway.",
+      "Não entregue os 15 Wyrmslife Crystals ao Magick Lab antes de fazer backup e revisar pendências.",
+      "Use inns para criar um inn-save limpo.",
+      "Se tiver PS+, faça backup em nuvem e desative autosync antes de mexer em rotas sensíveis.",
+      "Evite iniciar o final sem revisar Sphinx, vocações, maister teachings, Medusa, caves e quests pendentes.",
+      "Não trate o pós-jogo como free roam completo."
+    ],
+    warning: "A New Godsway é o ponto recomendado de controle. Depois disso, várias oportunidades ficam muito mais arriscadas ou exigem NG+.",
+    result: "Você chega ao ponto mais seguro para limpar a maior parte da platina."
+  },
+  {
+    title: "Limpe vocações, maisters e progresso de personagem",
+    focus: "Vocations e maister teachings",
+    objective: "Desbloquear vocações, alcançar rank máximo e obter todas as Maister's Teachings.",
+    actions: [
+      "Troque de vocação pelo menos uma vez para Versatile.",
+      "Desbloqueie Mystic Spearhand, Trickster, Magick Archer e Warfarer.",
+      "Leve uma vocação ao Rank 9 para The Specialist.",
+      "Colete todas as Maister's Teachings para Master of the Maisters.",
+      "Confira se NPCs importantes continuam vivos antes de avançar tempo demais.",
+      "Use Wakestones quando necessário para recuperar NPCs críticos."
+    ],
+    warning: "Algumas maister teachings dependem de NPCs, quests e afinidade. Não avance rotas críticas sem checar esses requisitos.",
+    result: "A parte de vocações e ensinamentos fica resolvida antes dos riscos finais."
+  },
+  {
+    title: "Resolva Sphinx, Medusa e troféus únicos",
+    focus: "Quests e oportunidades sensíveis",
+    objective: "Concluir os troféus mais fáceis de perder por erro, tempo ou oportunidade única.",
+    actions: [
+      "Faça Full Marks seguindo todas as charadas da Sphinx.",
+      "Planeje Off with Its Head!, An Eye for an Eye e Getting a Head com cuidado.",
+      "Guarde Preserved Medusa Head corretamente para evitar deterioração.",
+      "Faça Reaper's Scorn com Eternal Wakestone ou rota equivalente.",
+      "Faça Gigantus, I Hardly Knew Ye com Unmaking Arrow preparada antes da Main Quest 15.",
+      "Não deixe esses objetivos para depois do final."
+    ],
+    warning: "Sphinx, Medusa, Gigantus e Eternal Wakestone estão entre os maiores riscos de run. Use backup antes de tentar.",
+    result: "Os troféus de oportunidade única ficam controlados antes do fim da história."
+  },
+  {
+    title: "Complete exploração, caves e tarefas de mundo",
+    focus: "Exploração e checklist",
+    objective: "Fechar troféus de mapa, caves, badges, afinidade, camping, casa e tarefas gerais.",
+    actions: [
+      "Descubra 50 caves/named locations válidas para The Tourist.",
+      "Faça A Badge of Honor com um pawn badge.",
+      "Compre uma casa para A House? In This Economy?",
+      "Use Ferrystone e Portcrystal para Just a Stone's Throw Away.",
+      "Faça camping, oxcart, phantom oxcart, griffin ride e harpy ride.",
+      "Aumente afinidade com NPCs para The Philanthropist, Affinity and Beyond e Plenty Arisen to Go Round.",
+      "Resolva troféus misc como The Barbecue-Maister, Nobles' Night Out e This'll Cure What Ails Ye."
+    ],
+    warning: "Nem todo ponto do mapa conta para The Tourist. O troféu exige caves/named locations válidas, não qualquer ícone ou ponto de interesse.",
+    result: "A parte de exploração e misc fica limpa antes dos finais."
+  },
+  {
+    title: "Prepare Wyrmslife Crystals, Dragonforged e Dragon's Dogma",
+    focus: "Endgame e recursos",
+    objective: "Garantir recursos para Dragon's Dogma e preparações finais.",
+    actions: [
+      "Mate dragões/drakes para conseguir Wyrmslife Crystals.",
+      "Compre ou planeje a arma Dragon's Dogma com o Dragonforged.",
+      "Use Dragonforged para Dragon Forged.",
+      "Tenha recursos suficientes antes de entrar no Unmoored World.",
+      "Se faltar recurso, planeje NG+ apenas como alternativa, não como rota principal."
+    ],
+    warning: "Dragon's Dogma pode ser comprada no Unmoored World ou em NG+, mas deixar para depois pode gerar retrabalho.",
+    result: "Os recursos de endgame ficam prontos para os finais e o pós-jogo."
+  },
+  {
+    title: "Faça os finais Peace e Dragon's Dogma 2 corretamente",
+    focus: "Finais e rota verdadeira",
+    objective: "Registrar o final regular e depois acessar o Unmoored World.",
+    actions: [
+      "No final Legacy, faça Peace sentando no trono durante os créditos.",
+      "Depois de Peace, use Load from Last Save e não inicie New Game+.",
+      "Volte à sequência do dragão com o NPC azul/glowing man.",
+      "Durante a cavalgada no dragão, use Empowered Godsbane Blade no coração do dragão para entrar no Unmoored World.",
+      "Garanta que Dragon's Dogma 2 e Closure sejam encaminhados corretamente."
+    ],
+    warning: "Não comece New Game+ após Peace se ainda precisa do Unmoored World. Use Load from Last Save.",
+    result: "Os finais principais ficam registrados e a rota do Unmoored World abre."
+  },
+  {
+    title: "Resolva Unmoored World, The Hero e The Guardian",
+    focus: "Unmoored World e pós-jogo sensível",
+    objective: "Concluir os objetivos finais do mundo alternativo antes que a janela acabe.",
+    actions: [
+      "No Unmoored World, priorize os testes/trials e objetivos principais.",
+      "Resolva The Hero completando os trials necessários.",
+      "Faça I, Talos durante a rota correta do Gigantus.",
+      "Evacue áreas e líderes necessários para The Guardian.",
+      "Compre Dragon's Dogma se ainda faltar e tiver Wyrmslife Crystals.",
+      "Não desperdice tempo descansando sem necessidade no Unmoored World."
+    ],
+    warning: "Unmoored World é limitado e sensível. Faça backup antes e siga uma ordem clara para não perder The Hero/The Guardian.",
+    result: "Os troféus finais e o conteúdo mais sensível da platina ficam concluídos."
+  },
+  {
+    title: "Use NG+ apenas para recuperar erros",
+    focus: "Cleanup e segunda chance",
+    objective: "Evitar transformar a platina em várias runs desnecessárias.",
+    actions: [
+      "Se perdeu Sphinx, Gigantus, maister teaching, Medusa ou outro objetivo, use NG+ como recuperação.",
+      "Rush a história até o ponto necessário.",
+      "Leve conhecimento, nível e equipamento da run anterior.",
+      "Não marque como sem perdíveis se o guia depende de NG+ para recuperar erros.",
+      "Atualize pontos de atenção com qualquer troféu que exija nova run por falha."
+    ],
+    warning: "NG+ recupera muita coisa, mas ainda é retrabalho. A rota principal deve evitar perdas com backup e checklist.",
+    result: "O guia fica honesto sobre riscos sem assustar o usuário com perda permanente absoluta."
+  }
+];
+
+const dragonDogma2AttentionPoints = [
+  { title: "Save e backup", type: "Autosave / Inn-save / Backup", tip: "Dragon's Dogma 2 usa autosave e inn-save, sem save manual livre. Faça inn-save e backup antes de rotas sensíveis." },
+  { title: "A New Godsway", type: "Ponto de não retorno", tip: "Antes de entregar os 15 Wyrmslife Crystals em A New Godsway, faça cleanup e backup. Esse é o principal ponto de controle da platina." },
+  { title: "Casual Mode", type: "Modo normal recomendado", tip: "Não use Casual Mode se pretende platinar. Alguns troféus ficam indisponíveis nesse modo." },
+  { title: "Gigantus, I Hardly Knew Ye", type: "Gigantus / Unmaking Arrow", tip: "Prepare Unmaking Arrow antes de The Guardian Gigantus. Esse é um dos troféus mais fáceis de perder." },
+  { title: "Sphinx / Full Marks", type: "Sphinx / Charadas", tip: "Full Marks exige resolver todas as charadas da Sphinx. Use backup antes de responder ou lutar." },
+  { title: "Unmoored World", type: "Endgame sensível", tip: "Unmoored World não é free roam normal. Priorize The Hero, The Guardian, I, Talos e Closure." },
+  { title: "Peace e rota verdadeira", type: "Finais", tip: "Após Peace, use Load from Last Save e não inicie New Game+ se ainda precisa de Dragon's Dogma 2/Unmoored World." },
+  { title: "Medusa Head", type: "Medusa / Tempo", tip: "Preserved Medusa Head pode deteriorar com o tempo. Guarde corretamente antes de avançar dias." },
+  { title: "Maister's Teachings", type: "NPCs / Vocações", tip: "Master of the Maisters depende de NPCs, vocações e quests. Confirme tudo antes do ponto de não retorno." },
+  { title: "Dragon's Dogma", type: "Dragonforged / Wyrmslife Crystals", tip: "A arma Dragon's Dogma exige Wyrmslife Crystals e Dragonforged. Planeje antes ou prepare recuperação em NG+." },
+  { title: "The Tourist", type: "Caves / Exploração", tip: "The Tourist exige 50 caves/named locations válidas, não qualquer ponto do mapa." },
+  { title: "Pawns não são coop", type: "Single-player", tip: "Pawns fazem parte do sistema single-player. Não marque troféus de pawns como online ou coop." }
+];
+
+const dragonDogma2Checklist = [
+  "Conferir se o guia tem 55 troféus.",
+  "Conferir se The True Arisen é a platina.",
+  "Conferir distribuição: 1 platina, 2 ouro, 6 prata, 46 bronze.",
+  "Conferir onlineRequired false, coopRequired false e dlcRequired false.",
+  "Conferir filtro Online 0, Coop 0, DLC 0 e Dificuldade 0.",
+  "Conferir hasMissables true e missableCount igual aos troféus com tag Perdível.",
+  "Conferir que o topo não diz Sem perdíveis.",
+  "Conferir A New Godsway como ponto de backup/cleanup.",
+  "Conferir save, inn-save, autosave e backup explicados.",
+  "Conferir alerta de Casual Mode: modo normal recomendado para a platina.",
+  "Conferir Gigantus, I Hardly Knew Ye com Unmaking Arrow.",
+  "Conferir Full Marks/Sphinx.",
+  "Conferir Master of the Maisters.",
+  "Conferir The Hero, The Guardian, Peace, Dragon's Dogma 2, Closure e I, Talos.",
+  "Conferir Dragon's Dogma/Dragonforged e Wyrmslife Crystals.",
+  "Conferir Medusa trophies e deterioração da Preserved Medusa Head.",
+  "Conferir Reaper's Scorn/Eternal Wakestone.",
+  "Conferir The Tourist/50 caves/named locations válidas.",
+  "Conferir vocations e Maister's Teachings.",
+  "Conferir affinity e pawn badges.",
+  "Conferir que Pawns não inflaram Coop/Online.",
+  "Conferir que não há DLC obrigatória.",
+  "Conferir se todos os troféus têm nome oficial em inglês como principal.",
+  "Conferir se todos têm PT-BR abaixo.",
+  "Conferir se descrições estão em português.",
+  "Conferir se textos em português têm acentos.",
+  "Conferir se não aparecem rótulos técnicos de nome original nem placeholders editoriais.",
+  "Conferir se roadmap está estruturado como array/objeto.",
+  "Conferir se roadmap renderiza etapas legíveis sem labels internos.",
+  "Conferir FAQ, decisão rápida, SEO e pontos de atenção.",
+  "Conferir se página individual e catálogo exibem o mesmo status editorial.",
+  "Conferir se flags do topo batem com filtros do catálogo."
+];
+
+const dragonDogma2Faq = [
+  { question: "Dragon's Dogma 2 tem troféus perdíveis?", answer: "Sim. Muitos troféus têm risco de run por escolhas, ponto de não retorno, NPCs, Unmoored World e sistema de salvamento. Use backup antes de objetivos sensíveis." },
+  { question: "Precisa jogar online para platinar?", answer: "Não. A lista é totalmente offline." },
+  { question: "Precisa de cooperação?", answer: "Não. Pawns fazem parte do sistema single-player e não contam como coop obrigatório." },
+  { question: "Precisa de DLC?", answer: "Não. A platina usa apenas a lista base." },
+  { question: "Posso jogar no Casual Mode?", answer: "Não é recomendado para a platina. Casual Mode facilita o jogo, mas alguns troféus ficam indisponíveis nesse modo. Para a rota segura, jogue no modo normal." },
+  { question: "A dificuldade afeta troféus?", answer: "Não há troféu por dificuldade alta, mas Casual Mode pode bloquear troféus. Por isso, o guia recomenda modo normal para a platina." },
+  { question: "Quantas runs são necessárias?", answer: "Com planejamento e backup, é possível fazer em uma run com cleanup. Sem backup ou se perder objetivos sensíveis, NG+ pode ser necessário." },
+  { question: "Qual é o principal ponto de não retorno?", answer: "A New Godsway, antes de entregar os 15 Wyrmslife Crystals ao Magick Lab. Faça backup e cleanup antes disso." },
+  { question: "Como funciona o save?", answer: "O jogo usa autosave e inn-save, sem save manual livre. Dormir em inn cria um save separado; backup em nuvem é recomendado para rotas sensíveis." },
+  { question: "O que é o maior risco da platina?", answer: "Sphinx/Full Marks, Gigantus, Unmoored World, The Hero, The Guardian, Medusa, Maister's Teachings e finais." },
+  { question: "The Tourist exige todos os pontos do mapa?", answer: "Não. Exige 50 caves/named locations válidas. Não conte qualquer ponto de interesse como progresso." },
+  { question: "Quanto tempo leva para platinar?", answer: "Em média, cerca de 70 a 100 horas, dependendo de backup, exploração, Sphinx, Unmoored World, vocações e quantidade de retrabalho." }
+];
+
+const dragonDogma2TrophyRows = [
+  ["dd2-the-true-arisen", "The True Arisen", "O Verdadeiro Nascen", "Platina", "Obtenha todos os outros troféus de Dragon's Dogma 2.", "Conclua os outros 54 troféus da lista base de Dragon's Dogma 2.", false, false, ["Platina"]],
+  ["dd2-full-marks", "Full Marks", "Nota máxima", "Ouro", "Encontre a solução para todos os enigmas propostos pela deusa das charadas.", "Perdível: resolva todas as charadas da Sphinx sem errar e use backup antes de responder ou lutar.", true, true, ["Perdível", "Risco de run", "Sphinx", "Charadas", "Checklist", "Backup", "Atenção"]],
+  ["dd2-master-of-the-maisters", "Master of the Maisters", "Mestre dos mestres", "Ouro", "Adquira todos os ensinamentos de maister.", "Perdível por NPC, quest e afinidade. Colete todas as Maister's Teachings antes do ponto de não retorno.", true, true, ["Perdível", "Risco de run", "Maister", "Maister's Teachings", "Vocation", "NPC", "Checklist", "Atenção"]],
+  ["dd2-closure", "Closure", "Encerramento", "Prata", "Experimente o fim do ciclo.", "Final do Unmoored World. Entre na rota verdadeira e conclua o desfecho correto antes de encerrar a janela.", true, true, ["Perdível", "Final", "Unmoored World", "Rota", "Atenção"]],
+  ["dd2-the-guardian", "The Guardian", "O Guardião", "Prata", "Conduza o povo à segurança no Unmoored World.", "Perdível no Unmoored World: evacue as populações e líderes necessários antes de finalizar o mundo.", true, true, ["Perdível", "Unmoored World", "Evacuação", "NPC", "Checklist", "Atenção"]],
+  ["dd2-the-hero", "The Hero", "O Herói", "Prata", "Supere os testes do Unmoored World.", "Um dos maiores gargalos: complete os trials/bosses do Unmoored World dentro da janela sensível.", true, true, ["Perdível", "Unmoored World", "Trials", "Endgame", "Checklist", "Atenção"]],
+  ["dd2-an-eye-for-an-eye", "An Eye for an Eye", "Olho por olho", "Prata", "Petrifique uma medusa.", "Use uma Preserved Medusa Head antes que ela deteriore e faça backup antes da tentativa.", true, true, ["Perdível", "Risco de run", "Medusa", "Cabeça de Medusa", "Ação específica", "Checklist", "Atenção"]],
+  ["dd2-getting-a-head", "Getting a Head", "Mantendo a cabeça", "Prata", "Adquira uma cabeça de medusa preservada.", "Corte a cabeça da Medusa perto de vida cheia para obter a versão preservada; o item pode deteriorar com o tempo.", true, true, ["Perdível", "Medusa", "Cabeça de Medusa", "Ação específica", "Checklist", "Atenção"]],
+  ["dd2-reapers-scorn", "Reaper's Scorn", "Desprezo do Ceifador", "Prata", "Realize um milagre para várias pessoas de uma vez.", "Faça com Eternal Wakestone ou rota equivalente, revivendo várias pessoas simultaneamente.", true, true, ["Perdível", "Eternal Wakestone", "NPC", "Ação específica", "Checklist", "Atenção"]],
+  ["dd2-first-taste-of-freedom", "First Taste of Freedom", "Primeiro gosto de liberdade", "Bronze", "Escape dos grilhões da escravidão.", "Troféu automático do prólogo.", false, true, ["História"]],
+  ["dd2-arisen", "Arisen", "Nascen", "Bronze", "Recupere suas memórias de receber o chamado do Arisen.", "Troféu automático da história inicial.", false, true, ["História"]],
+  ["dd2-seat-of-the-proxy", "Seat of the Proxy", "Assento do substituto", "Bronze", "Chegue a Vernworth.", "Troféu de progresso ao chegar em Vernworth.", false, true, ["História"]],
+  ["dd2-across-the-border", "Across the Border", "Do outro lado da fronteira", "Bronze", "Passe pelo portão na fronteira.", "Troféu de progresso ao cruzar o portão da fronteira na história.", false, true, ["História"]],
+  ["dd2-dragons-dogma-2", "Dragon's Dogma 2", "Dragon's Dogma 2", "Bronze", "Testemunhe o Unmoored World.", "Perdível: use a Empowered Godsbane Blade no coração do dragão durante a sequência correta para entrar na rota verdadeira.", true, true, ["Perdível", "Final", "Unmoored World", "Rota", "Godsbane", "Atenção"]],
+  ["dd2-peace", "Peace", "Paz", "Bronze", "Torne-se Sovran de Vernworth.", "Faça o final regular sentando no trono durante os créditos; depois use Load from Last Save para buscar a rota verdadeira.", true, true, ["Perdível", "Final", "Rota", "Backup", "Atenção"]],
+  ["dd2-i-talos", "I, Talos", "Eu, Talos", "Bronze", "Ajude o Gigantus a caminhar novamente.", "Perdível no Unmoored World e ligado à rota correta do Gigantus/Talos.", true, true, ["Perdível", "Unmoored World", "Gigantus", "Rota", "Atenção"]],
+  ["dd2-versatile", "Versatile", "Versátil", "Bronze", "Mude sua vocação.", "Troque de vocação em uma guild/inn depois de desbloquear o sistema.", false, false, ["Vocation", "Classe", "Checklist", "Cleanup"]],
+  ["dd2-duo-destinies", "Duo Destinies", "Duplo destino", "Bronze", "Mude sua vocação para Mystic Spearhand.", "Desbloqueie Mystic Spearhand via Sigurd/história e troque para a vocação antes do cleanup final.", false, true, ["Vocation", "Classe", "Quest", "Checklist", "Cleanup"]],
+  ["dd2-trickster-of-the-trade", "Trickster of the Trade", "Truques do ofício", "Bronze", "Mude sua vocação para Trickster.", "Desbloqueie Trickster pela progressão em Battahl e troque para a vocação em uma guild.", false, false, ["Vocation", "Classe", "Quest", "Checklist", "Cleanup"]],
+  ["dd2-arrows-and-incantations", "Arrows and Incantations", "Flechas e encantamentos", "Bronze", "Mude sua vocação para Magick Archer.", "Complete a quest de desbloqueio de Magick Archer antes de fechar o cleanup final.", false, true, ["Vocation", "Classe", "Quest", "Checklist", "Cleanup", "Atenção"]],
+  ["dd2-jack-of-all-trades", "Jack of All Trades, Master of...All Trades", "Pau para toda obra, mestre de todas", "Bronze", "Mude sua vocação para Warfarer.", "Complete The Sotted Sage, desbloqueie Warfarer e troque para a vocação.", false, true, ["Vocation", "Classe", "Quest", "Checklist", "Cleanup", "Atenção"]],
+  ["dd2-an-in-tents-adventure", "An In-Tents Adventure", "Uma aventura em barraca", "Bronze", "Acampe.", "Use um camping kit em qualquer campsite.", false, false, ["Misc", "Ação específica", "Cleanup"]],
+  ["dd2-a-house-in-this-economy", "A House? In This Economy?", "Uma casa? Nesta economia?", "Bronze", "Compre uma moradia própria.", "Compre uma casa em Vernworth ou Bakbattahl. Ajuda com descanso e controle de inn-save.", false, false, ["Misc", "Casa", "Inn-save", "Cleanup"]],
+  ["dd2-one-speed-only", "One Speed Only", "Uma velocidade só", "Bronze", "Embarque em um oxcart.", "Use qualquer estação de oxcart e embarque no carro.", false, false, ["Misc", "Oxcart", "Ação específica", "Cleanup"]],
+  ["dd2-the-savior", "The Savior", "O Salvador", "Bronze", "Use uma Wakestone para restaurar os mortos à vida.", "Use uma Wakestone em um NPC morto.", false, false, ["Wakestone", "NPC", "Ação específica", "Cleanup"]],
+  ["dd2-just-a-stones-throw-away", "Just a Stone's Throw Away", "A um arremesso de pedra", "Bronze", "Use uma Ferrystone.", "Use uma Ferrystone em área aberta com Portcrystal disponível.", false, false, ["Misc", "Ferrystone", "Portcrystal", "Ação específica", "Cleanup"]],
+  ["dd2-a-badge-of-honor", "A Badge of Honor", "Um distintivo de honra", "Bronze", "Adquira um pawn badge.", "Complete progresso de badge do pawn, como derrotar repetidamente um tipo de monstro grande.", false, false, ["Pawn", "Pawn Badge", "Grind", "Monstros", "Checklist", "Cleanup"]],
+  ["dd2-gigantus-i-hardly-knew-ye", "Gigantus, I Hardly Knew Ye", "Gigantus, mal te conheci", "Bronze", "Derrote o Gigantus em pouco tempo.", "Altamente perdível: prepare Unmaking Arrow antes de The Guardian Gigantus e proteja seu save.", true, true, ["Perdível", "Gigantus", "Unmaking Arrow", "Main Quest 15", "Ponto de não retorno", "Rota", "Backup", "Atenção"]],
+  ["dd2-off-with-its-head", "Off with Its Head!", "Cortem-lhe a cabeça!", "Bronze", "Decapite uma medusa.", "Decapite a Medusa; normalmente vem junto do planejamento de Getting a Head e An Eye for an Eye.", false, true, ["Medusa", "Cabeça de Medusa", "Ação específica", "Checklist", "Atenção"]],
+  ["dd2-the-specialist", "The Specialist", "O Especialista", "Bronze", "Alcance o rank máximo em uma vocação.", "Use uma vocação até o Rank 9 enquanto explora e derrota inimigos.", false, false, ["Vocation", "Classe", "Grind", "Checklist", "Cleanup"]],
+  ["dd2-a-pawn-of-many-talents", "A Pawn of Many Talents", "Um pawn de muitos talentos", "Bronze", "Ensine uma especialização ao seu pawn.", "Obtenha um specialization tome por quest ou afinidade e ensine ao pawn.", false, false, ["Pawn", "NPC", "Checklist", "Cleanup"]],
+  ["dd2-wish-upon-the-rift", "Wish upon the Rift", "Desejo na fenda", "Bronze", "Defina uma pawn quest.", "Defina uma pawn quest em um Grand Riftstone; a platina não depende de outro jogador.", false, false, ["Pawn", "Riftstone", "Ação específica", "Cleanup"]],
+  ["dd2-myrmecoleon-delights", "Myrmecoleon Delights", "Delícias do Myrmecoleon", "Bronze", "Entre no Rose Chateau.", "Entre no Rose Chateau Bordelrie em Vernworth.", false, false, ["Rose Chateau", "Local", "Ação específica", "Cleanup"]],
+  ["dd2-the-collector", "The Collector", "O Colecionador", "Bronze", "Colete 80 Seeker's Tokens.", "Colete 80 Seeker's Tokens e anote o primeiro token para a charada da Sphinx.", false, false, ["Coletável", "Seeker's Tokens", "Grind", "Checklist", "Cleanup"]],
+  ["dd2-philanthropist", "The Philanthropist", "O Filantropo", "Bronze", "Conquiste o afeto de 50 pessoas.", "Aumente afinidade com NPCs ao longo da campanha para não transformar o final em grind.", false, false, ["Afinidade", "NPC", "Grind", "Checklist", "Cleanup"]],
+  ["dd2-affinity-and-beyond", "Affinity and Beyond", "Afinidade além", "Bronze", "Aumente a afinidade de uma pessoa ao máximo.", "Dê presentes e conclua tarefas de um NPC até atingir afinidade máxima.", false, false, ["Afinidade", "NPC", "Checklist", "Cleanup"]],
+  ["dd2-dragon-forged", "Dragon Forged", "Forjado pelo dragão", "Bronze", "Fortaleça uma arma em wyrmfire.", "Use o Dragonforged com Wyrmslife Crystals para aprimorar uma arma.", false, true, ["Dragonforged", "Wyrmslife Crystals", "Grind", "Checklist", "Cleanup"]],
+  ["dd2-thisll-cure-what-ails-ye", "This'll Cure What Ails Ye", "Isso cura o que te aflige", "Bronze", "Banhe-se na fonte termal.", "Use a hot spring na região vulcânica.", false, false, ["Misc", "Ação específica", "Cleanup"]],
+  ["dd2-cyclops-abridged", "Cyclops Abridged", "Ciclope abreviado", "Bronze", "Atravesse uma ponte ciclópica.", "Faça um Cyclops cair formando ponte e atravesse por cima dele.", false, false, ["Cyclops", "Misc", "Ação específica", "Cleanup"]],
+  ["dd2-harpy-joyride", "Harpy Joyride", "Passeio de harpia", "Bronze", "Invoque uma harpia, agarre-se a ela e voe.", "Use Harpysnare Smoke Beacon ou oportunidade equivalente para voar segurando uma harpia.", false, false, ["Misc", "Ação específica", "Exploração", "Cleanup"]],
+  ["dd2-quit-playing-dead", "Quit Playing Dead", "Pare de fingir de morto", "Bronze", "Reviva dois pawns simultaneamente.", "Espere dois pawns caírem e reviva ambos na mesma situação.", false, false, ["Pawn", "Ação específica", "Cleanup"]],
+  ["dd2-dragons-dogma", "Dragon's Dogma", "Dragon's Dogma", "Bronze", "Obtenha Dragon's Dogma.", "Risco de run/retrabalho: compre a arma Dragon's Dogma com Wyrmslife Crystals no Dragonforged antes de encerrar a rota.", true, true, ["Perdível", "Dragonforged", "Wyrmslife Crystals", "Dragon's Dogma", "Arma", "Grind", "Checklist", "Cleanup"]],
+  ["dd2-the-barbecue-maister", "The Barbecue-Maister", "Mestre do churrasco", "Bronze", "Grelhe todos os tipos de carne durante o dia e a noite.", "Grelhe cada tipo de carne tanto de dia quanto de noite e acompanhe em checklist.", false, false, ["Misc", "Ação específica", "Checklist", "Cleanup"]],
+  ["dd2-noble-night-out", "Nobles' Night Out", "Noite de gala", "Bronze", "Vá a um baile de máscaras no palácio usando traje formal.", "Vista formal raiment completo e entre no masquerade do palácio.", false, false, ["Misc", "Ação específica", "Cleanup"]],
+  ["dd2-thought-id-lost-you", "Thought I'd Lost You", "Achei que tinha te perdido", "Bronze", "Restaure os mortos à vida em um morgue ou charnel house.", "Use uma Wakestone em um corpo registrado no morgue/charnel house.", false, false, ["Wakestone", "NPC", "Ação específica", "Cleanup"]],
+  ["dd2-before-dawn-breaks", "Before Dawn Breaks", "Antes do amanhecer", "Bronze", "Derrote o cavaleiro sem cabeça.", "Resolva o Dullahan/headless horseman antes de perder a janela da rota; use backup se estiver perto do fim.", true, true, ["Perdível", "Dullahan", "Quest sensível", "Rota", "Atenção", "Cleanup"]],
+  ["dd2-the-tourist", "The Tourist", "O Turista", "Bronze", "Descubra 50 locais.", "Risco de run se deixado para tarde: conte caves/named locations válidas, não qualquer ponto de interesse do mapa.", true, false, ["Perdível", "Exploração", "Caves", "Named locations", "Mapa", "Grind", "Checklist", "Cleanup", "Atenção"]],
+  ["dd2-are-we-there-yet", "Are We There Yet?", "Já chegamos?", "Bronze", "Embarque no phantom oxcart.", "Quest sensível: embarque no Phantom Oxcart seguindo a rota correta antes de avançar demais.", true, true, ["Perdível", "Quest", "Oxcart", "Rota", "Atenção"]],
+  ["dd2-the-regriffining", "The Regriffining", "A regrificação", "Bronze", "Voe nas asas de um grifo pela segunda vez.", "Oportunidade sensível: agarre-se a um grifo e conclua o voo necessário antes de deixar para o endgame.", true, false, ["Perdível", "Exploração", "Ação específica", "Atenção"]],
+  ["dd2-back-where-it-all-began", "Back Where It All Began", "De volta ao começo", "Bronze", "Retorne à Agamen Volcanic Island.", "Volte à ilha vulcânica conforme a progressão liberar a rota.", false, true, ["Agamen Volcanic Island", "Local", "Exploração", "Rota", "Cleanup"]],
+  ["dd2-plenty-arisen-to-go-round", "Plenty Arisen to Go Round", "Nascen para todos", "Bronze", "Presencie uma briga em sua moradia entre seus admiradores.", "Aumente afinidade de pelo menos dois NPCs e leve-os à sua casa; planeje junto dos troféus de afinidade.", false, false, ["Afinidade", "NPC", "Grind", "Checklist", "Atenção"]],
+  ["dd2-roost-of-the-dragon", "Roost of the Dragon", "Ninho do dragão", "Bronze", "Chegue à Dragonsbreath Tower.", "Chegue à Dragonsbreath Tower em Battahl/rota de história.", false, true, ["Dragonsbreath Tower", "Local", "Exploração", "Rota"]],
+  ["dd2-hope-you-brought-a-lantern", "Hope You Brought a Lantern", "Espero que tenha trazido uma lanterna", "Bronze", "Chegue a Drabnir's Grotto.", "Entre em Drabnir's Grotto ao seguir para a região vulcânica.", false, false, ["Exploração", "Mapa", "Cleanup"]],
+  ["dd2-to-the-victor-go-the-spoils", "To the Victor Go the Spoils", "Ao vencedor, os espólios", "Bronze", "Recupere seus itens do saqueador que os roubou.", "Permita que um scavenger roube um item e recupere-o ao derrotar o inimigo.", false, false, ["Misc", "Ação específica", "Cleanup"]],
+  ["dd2-im-in", "I'm In", "Estou dentro", "Bronze", "Use meios ilícitos para passar pelo portão da fronteira.", "Atravesse no royal carriage sem carregar permits que invalidem a situação.", false, false, ["Quest", "Rota", "Ação específica", "Atenção"]]
+];
+
+const dragonDogma2Trophies = dragonDogma2TrophyRows.map(([id, name, namePt, type, descriptionPt, tip, isMissable, isSpoiler, tags]) => ({
+  id,
+  name,
+  name_pt: namePt,
+  trophyNameOriginal: name,
+  trophyNamePtBr: namePt,
+  namePtSource: "editorial_ptbr_reference",
+  type,
+  tier: type,
+  description: descriptionPt,
+  descriptionPtBr: descriptionPt,
+  ptDescription: descriptionPt,
+  localizedDescription: { ptBr: descriptionPt },
+  descriptionPtSource: "editorial_ptbr_reference",
+  tip,
+  guideTip: tip,
+  is_missable: isMissable,
+  isMissable: isMissable,
+  missable: isMissable,
+  is_spoiler: isSpoiler,
+  isSpoiler: isSpoiler,
+  is_online: false,
+  isOnline: false,
+  is_coop: false,
+  isCoop: false,
+  dlcRequired: false,
+  difficultyRequired: false,
+  tags
+}));
+
+const dragonDogma2Guide = sampleGames.find(game => game.slug === "dragons-dogma-2");
+if (dragonDogma2Guide) {
+  Object.assign(dragonDogma2Guide, {
+    name: "Dragon’s Dogma 2",
+    title: "Dragon’s Dogma 2",
+    developer: "Capcom",
+    publisher: "Capcom",
+    platforms: ["PS5"],
+    platform_base: "PS5",
+    platformBase: "PS5",
+    guideScope: "Lista PSN base de 55 troféus",
+    genre: ["RPG de ação", "mundo aberto"],
+    mode: "single-player",
+    difficulty: 5,
+    time: "70-100 horas",
+    estimatedTime: "70-100 horas",
+    time_min_hours: 70,
+    time_max_hours: 100,
+    time_sort_hours: 70,
+    time_bucket: "long",
+    runs: "Uma run planejada com cleanup e backup; NG+ apenas para recuperar erros.",
+    hasMissables: true,
+    missableCount: 17,
+    missable_count: 17,
+    hasOnline: false,
+    hasMandatoryOnline: false,
+    hasMandatoryCoop: false,
+    requiresOnline: false,
+    requiresCoop: false,
+    onlineRequired: false,
+    online_required: false,
+    coopRequired: false,
+    coop_required: false,
+    dlcRequired: false,
+    dlc_required: false,
+    dlcRequiredForPlatinum: false,
+    difficultyTrophiesRequired: false,
+    newGamePlusRequired: false,
+    platinumType: "lista PSN base offline",
+    guideFocus: "Save limitado, A New Godsway, Sphinx, Gigantus, Unmoored World, Maister's Teachings, Medusa, Dragonforged e cleanup",
+    missable: "Tem perdíveis de run e alto risco de retrabalho: save limitado, ponto de não retorno, Sphinx, Gigantus, Unmoored World, finais, Maister's Teachings, Medusa, Dragon's Dogma, caves e quests sensíveis podem exigir NG+ se forem ignorados.",
+    runs_summary: "Com planejamento, inn-save e backup, a platina pode ser feita em uma run com cleanup. Sem backup ou se perder objetivos sensíveis, NG+ pode ser necessário.",
+    missable_summary: "Há 17 troféus marcados como Perdível/Risco de run, concentrados em Sphinx, Gigantus, Unmoored World, finais, Maister's Teachings, Medusa, Eternal Wakestone, Dragon's Dogma, caves e oportunidades sensíveis.",
+    online_summary: "A lista é totalmente offline. Pawns, Riftstones e pawn quests fazem parte do sistema single-player e não contam como online ou coop obrigatório.",
+    grind_summary: "O peso está em exploração válida para The Tourist, Seeker's Tokens, pawn badge, afinidade, Wyrmslife Crystals, vocações, Maister's Teachings e cleanup de mundo aberto.",
+    dlc_scope: "Base game sem DLCs. Guia focado na lista base de Dragon's Dogma 2; Dragon's Dogma: Dark Arisen, cosméticos, microtransações e add-ons externos não entram na platina.",
+    difficulty_reason: "A dificuldade 5/10 vem mais de planejamento do que de execução: save limitado, ponto de não retorno, Sphinx, Gigantus, Unmoored World, NPCs, finais e janelas sensíveis são os riscos principais. Não há troféu por dificuldade alta, mas Casual Mode pode bloquear troféus; use modo normal para a platina.",
+    time_reason: "A faixa de 70-100 horas considera campanha, exploração, Sphinx, Maister's Teachings, Medusa, vocações, Unmoored World, Wyrmslife Crystals, finais e possível retrabalho em NG+.",
+    first_run_advice: "Não avance no piloto automático: acompanhe quests importantes, vocações, Maisters, Sphinx e decisões antes de pontos críticos. Use inn-save, faça backup antes de A New Godsway e não entregue os 15 Wyrmslife Crystals sem revisar pendências.",
+    cleanup_advice: "O melhor cleanup fica antes de A New Godsway. Revise Sphinx, vocações, Maister's Teachings, Medusa, caves, Dragonforged, afinidade, pawn badge, Seeker's Tokens e quests antes de seguir para os finais.",
+    before_you_start: "Dragon's Dogma 2 não tem save manual livre: usa autosave e inn-save. Faça backup/PS+ Cloud Save antes de A New Godsway, Sphinx, Gigantus e Unmoored World; sem backup, erros podem exigir NG+. Não use Casual Mode se pretende platinar, pois alguns troféus ficam indisponíveis nele.",
+    best_for: "Ideal para quem quer uma platina de RPG de mundo aberto com exploração, escolhas, rotas, finais e planejamento forte.",
+    avoid_if: "Evite se você não quer lidar com autosave, inn-save, ponto de não retorno, troféus sensíveis e risco de retrabalho em NG+.",
+    status: "published",
+    editorial_status: "published",
+    editorialStatus: "verified",
+    editorial_review_status: "verified",
+    coverage_level: "complete",
+    is_verified: true,
+    verification_status: "verified",
+    quality_warnings: [],
+    last_reviewed_at: "2026-06-18",
+    reviewed_by: "AtlasAchievement",
+    completionState: "complete",
+    completion_state: "complete",
+    verification_note: "Guia revisado para publicação: lista base PS5 de Dragon's Dogma 2 com 55 troféus, distribuição 1/2/6/46, 70-100h, 5/10, totalmente offline, sem coop, sem DLC obrigatória, sem troféu por dificuldade alta, com alerta de Casual Mode, 17 perdíveis/riscos de run e roadmap estruturado.",
+    editorial_notes: "Revisão editorial focada na platina base de Dragon's Dogma 2: save limitado, inn-save, backup, A New Godsway, Casual Mode, Sphinx/Full Marks, Gigantus, Unmoored World, The Hero, The Guardian, Maister's Teachings, Medusa, Dragonforged, nomes EN/PT-BR, descrições PT-BR, tags e filtros. Nomes PT-BR usam tradução editorial consistente quando localização oficial não foi confirmada.",
+    editorial_summary: [
+      "Dragon’s Dogma 2 é uma platina longa e muito dependente de planejamento. A lista tem 55 troféus, todos offline, sem cooperação, sem DLC obrigatória e sem troféu por dificuldade alta, mas Casual Mode pode deixar alguns troféus indisponíveis. O desafio principal não é um modo difícil, e sim o sistema de salvamento, o ponto de não retorno, o Unmoored World e vários troféus sensíveis a rota, tempo, escolhas, NPCs e oportunidades únicas.",
+      "A rota mais segura é avançar a história até A New Godsway, fazer backup/inn-save antes de entregar os 15 Wyrmslife Crystals, limpar vocações, Sphinx, Maister's Teachings, Medusa, caves, Dragonforged, afinidade, badges, quests sensíveis e demais troféus antes de seguir para o final. Depois, faça os finais Peace/Dragon’s Dogma 2/Closure, resolva Unmoored World, The Hero, The Guardian e I, Talos. New Game+ pode recuperar erros, mas aumenta bastante o retrabalho.",
+      "Os nomes PT-BR abaixo dos troféus seguem tradução editorial consistente quando não há localização oficial confirmada no dado do projeto; o nome oficial em inglês permanece sempre como principal."
+    ],
+    seo: {
+      title: "Dragon’s Dogma 2: Guia de Troféus e Platina",
+      description: "Guia de troféus de Dragon’s Dogma 2 com roadmap da platina, tempo estimado, perdíveis, Casual Mode, A New Godsway, Sphinx, Gigantus, Unmoored World, The Hero, The Guardian, Maister's Teachings e dicas para os 55 troféus.",
+      metaDescription: "Guia de troféus de Dragon’s Dogma 2 com roadmap da platina, tempo estimado, perdíveis, Casual Mode, A New Godsway, Sphinx, Gigantus, Unmoored World, The Hero, The Guardian, Maister's Teachings e dicas para os 55 troféus.",
+      ogTitle: "Dragon’s Dogma 2: Guia de Troféus e Platina",
+      ogDescription: "Roadmap PT-BR da platina PS5 de Dragon’s Dogma 2 com 55 troféus, save limitado, Casual Mode, A New Godsway, Sphinx, Gigantus, Unmoored World e 17 perdíveis/riscos de run.",
+      keywords: ["Dragon’s Dogma 2 troféus", "Dragon's Dogma 2 troféus", "Dragon’s Dogma 2 platina", "guia Dragon’s Dogma 2", "Dragon's Dogma II trophies", "The True Arisen", "Full Marks", "Gigantus I Hardly Knew Ye", "The Hero", "The Guardian", "Unmoored World", "Sphinx riddles", "Master of the Maisters", "Dragon’s Dogma 2 Casual Mode", "Dragon’s Dogma 2 A New Godsway", "Dragon’s Dogma 2 backup save", "Dragon’s Dogma 2 PS5"]
+    },
+    quickDecision: {
+      verdict: "Sim, mas é uma platina que exige guia e planejamento por causa do save, missables e Unmoored World.",
+      difficulty: "Moderada, cerca de 5/10.",
+      time: "Longo, cerca de 70 a 100 horas.",
+      mainRisk: "Casual Mode, backup em A New Godsway, Sphinx, Gigantus, Unmoored World, The Hero, The Guardian e Master of the Maisters.",
+      risk: "Alto em retrabalho se o jogador usar Casual Mode, ignorar backup ou avançar o ponto de não retorno.",
+      onlineCoop: "Não exige online nem cooperação.",
+      dlc: "Não exige DLC.",
+      firstAction: "Permaneça no modo normal, avance até A New Godsway sem entregar os 15 Wyrmslife Crystals, faça inn-save/backup e limpe pendências antes dos finais."
+    },
+    attentionPoints: dragonDogma2AttentionPoints,
+    checklist: dragonDogma2Checklist,
+    faq: dragonDogma2Faq,
+    roadmap: dragonDogma2Roadmap,
+    roadmapStages: dragonDogma2Roadmap,
+    trophies: dragonDogma2Trophies
+  });
+}
+
+const lifeIsStrangeTrueColorsRoadmap = [
+  {
+    title: "Jogue a história acompanhando memórias por capítulo",
+    focus: "História e Memory Collectibles",
+    objective: "Concluir os capítulos enquanto coleta as memórias sem precisar repetir cenas depois.",
+    actions: [
+      "Jogue os 5 capítulos normalmente.",
+      "Use Alex para interagir com objetos de memória quando o ícone aparecer.",
+      "Colete as 5 memórias de cada capítulo.",
+      "Confira o contador de memórias no Chapter Select se estiver em dúvida.",
+      "Não pule side quests opcionais quando encontrar NPCs com objetivo simples.",
+      "Não se preocupe com escolhas narrativas para troféus, porque elas não bloqueiam a platina."
+    ],
+    warning: "As memórias não são perdíveis permanentes, mas esquecer uma delas gera cleanup por Chapter Select.",
+    result: "A história avança e a maior parte da lista fica concluída naturalmente."
+  },
+  {
+    title: "Complete as 4 side quests opcionais",
+    focus: "Side quests e troféus pontuais",
+    objective: "Resolver os quatro troféus opcionais ligados a NPCs de Haven Springs.",
+    actions: [
+      "Ajude o Hoodie Guy a encontrar o cachorro para Found Dog!",
+      "Ajude a Birdwatcher a encontrar o pássaro para Bird Spotting.",
+      "Encontre e toque a música perdida do estudante para Earworm Squasher.",
+      "Ajude no desafio dos jelly beans para Exactly 731.",
+      "Use Chapter Select se esquecer alguma side quest.",
+      "Não marque essas side quests como Perdível."
+    ],
+    warning: "Essas side quests são curtas, mas fáceis de esquecer se você avançar direto pela história.",
+    result: "Os troféus opcionais de Haven Springs ficam resolvidos."
+  },
+  {
+    title: "Garanta os troféus de memórias de cada capítulo",
+    focus: "Coletáveis por capítulo",
+    objective: "Fechar os troféus de todas as memórias individuais e de cada capítulo.",
+    actions: [
+      "Capítulo 1: pegue Crack, Riley Letter, Business Card, Helmet e Phone.",
+      "Capítulo 2: pegue Rent Check, Umbrella, T-Shirt, Gummies e Button.",
+      "Capítulo 3: pegue Bomber Jacket, Dollar, Appointment Slip, Old Paper e Valkyrie's Dish.",
+      "Capítulo 4: pegue Drum Kit, CIT Sticker, Microphone, Pressed Rose e Polaroid.",
+      "Capítulo 5: pegue Mom's Keys, Business Card, Guitar Strings, Pendant e Bomber Jacket.",
+      "Use Chapter Select para conferir cena por cena."
+    ],
+    warning: "Cada capítulo tem 5 memórias. O jogo mostra o progresso por cena, então não é necessário repetir o capítulo inteiro se faltar só uma.",
+    result: "Todos os troféus de memórias individuais e por capítulo ficam concluídos."
+  },
+  {
+    title: "Desbloqueie Haven Historian conectado à PSN",
+    focus: "Online técnico e coleção completa",
+    objective: "Garantir que o troféu de todas as memórias registre corretamente.",
+    actions: [
+      "Antes de pegar a última memória, confirme que o console está conectado à internet.",
+      "Confirme que sua conta está conectada à PSN.",
+      "Pegue a última memória com o jogo online.",
+      "Aguarde o registro de Haven Historian.",
+      "Se o troféu não aparecer, reinicie o jogo e verifique conexão antes de tentar novamente pelo Chapter Select."
+    ],
+    warning: "Haven Historian é online técnico. Não é multiplayer, mas pode exigir conexão aos servidores/PSN para registrar a coleção completa.",
+    result: "O único requisito online técnico da platina fica resolvido."
+  },
+  {
+    title: "Use Chapter Select para cleanup",
+    focus: "Cleanup sem replay completo",
+    objective: "Recuperar qualquer memória ou side quest esquecida sem refazer o jogo inteiro.",
+    actions: [
+      "Abra Chapter Select no menu.",
+      "Confira quais cenas têm memórias faltando.",
+      "Entre apenas na cena necessária.",
+      "Colete a memória ou faça a side quest pendente.",
+      "Depois que o troféu desbloquear, volte ao menu.",
+      "Não reinicie uma run completa sem necessidade."
+    ],
+    warning: "Chapter Select é suficiente para recuperar collectibles e side quests. Não trate o guia como se tivesse perdíveis permanentes.",
+    result: "A platina fica fechada com pouco retrabalho."
+  },
+  {
+    title: "Separe Wavelengths da platina base",
+    focus: "DLC/extra",
+    objective: "Evitar misturar conteúdo extra com a lista de 41 troféus.",
+    actions: [
+      "Mantenha a lista base com 41 troféus.",
+      "Não marque Wavelengths como DLC obrigatória para a platina.",
+      "Se o site citar Wavelengths, trate como conteúdo extra/narrativo separado.",
+      "Não inflar dlcRequired.",
+      "Não adicionar troféus extras inexistentes à lista base."
+    ],
+    warning: "A platina base é de True Colors. Wavelengths não deve alterar as flags da platina.",
+    result: "O guia fica claro para quem busca a platina e para quem quer jogar o conteúdo extra."
+  }
+];
+
+const lifeIsStrangeTrueColorsAttentionPoints = [
+  { title: "Online técnico", type: "Haven Historian / PSN", tip: "Haven Historian exige conexão à PSN/servidores para registrar todos os Memory Collectibles. A platina tem online técnico, mas não multiplayer." },
+  { title: "Haven Historian", type: "Última memória", tip: "Antes de pegar a última memória, jogue conectado à internet/PSN para evitar falha no desbloqueio de Haven Historian." },
+  { title: "Sem coop", type: "Single-player", tip: "Não há cooperação obrigatória. Estatísticas online e servidores não são coop." },
+  { title: "Sem perdíveis permanentes", type: "Chapter Select", tip: "Chapter Select permite recuperar memórias e side quests esquecidas." },
+  { title: "25 Memory Collectibles", type: "Coletáveis", tip: "Cada capítulo tem 5 memórias. Use checklist por capítulo para evitar retrabalho." },
+  { title: "Chapter Select", type: "Cleanup", tip: "O Chapter Select mostra quais cenas ainda têm memórias faltando, então não é preciso repetir o jogo inteiro." },
+  { title: "Side quests", type: "Objetivos opcionais", tip: "Found Dog!, Bird Spotting, Earworm Squasher e Exactly 731 são as quatro side quests da platina." },
+  { title: "Side quests não rastreadas como memórias", type: "Checklist manual", tip: "As memórias aparecem no controle do Chapter Select, mas as side quests devem ser acompanhadas por checklist manual." },
+  { title: "Escolhas narrativas", type: "História", tip: "As escolhas de história não bloqueiam troféus da platina. Foque em memórias e side quests." },
+  { title: "Capítulo 5", type: "Online antes da última memória", tip: "Se for deixar uma memória para o final, garanta conexão online antes de coletá-la." },
+  { title: "Wavelengths", type: "Extra separado", tip: "Wavelengths é conteúdo extra/narrativo e não é obrigatório para Haven Maven." },
+  { title: "PS4/PS5", type: "Stacks separados", tip: "Não há autopop/save transfer automático entre PS4 e PS5; se quiser duas platinas, pode ser necessário jogar novamente." }
+];
+
+const lifeIsStrangeTrueColorsChecklist = [
+  "Conferir se o guia tem 41 troféus.",
+  "Conferir se Haven Maven é a platina.",
+  "Conferir distribuição: 1 platina, 6 ouro, 0 prata, 34 bronze.",
+  "Conferir onlineRequired true.",
+  "Conferir coopRequired false.",
+  "Conferir dlcRequired false.",
+  "Conferir hasMissables false.",
+  "Conferir missableCount 0.",
+  "Conferir filtro Perdíveis 0.",
+  "Conferir filtro Online 1.",
+  "Conferir Haven Historian como Online técnico.",
+  "Conferir filtro Coop 0.",
+  "Conferir filtro DLC 0.",
+  "Conferir filtro Dificuldade 0.",
+  "Conferir 25 Memory Collectibles.",
+  "Conferir 5 memórias por capítulo.",
+  "Conferir 4 side quests.",
+  "Conferir Chapter Select explicado.",
+  "Conferir que escolhas narrativas não bloqueiam troféus.",
+  "Conferir que Wavelengths não entrou na lista base.",
+  "Conferir que Haven Historian não foi confundido com multiplayer.",
+  "Conferir que Haven Maven não inflou tags indevidas.",
+  "Conferir se todos os troféus têm nome oficial em inglês como principal.",
+  "Conferir se todos têm PT-BR abaixo.",
+  "Conferir se descrições estão em português.",
+  "Conferir se textos em português têm acentos.",
+  "Conferir se não aparecem rótulos técnicos de nome nem descrições provisórias.",
+  "Conferir se roadmap está estruturado como array/objeto.",
+  "Conferir se roadmap renderiza etapas legíveis, sem objeto bruto.",
+  "Conferir se não aparecem labels internos do roadmap no front.",
+  "Conferir FAQ, decisão rápida, SEO e pontos de atenção.",
+  "Conferir se página individual e catálogo exibem o mesmo status editorial.",
+  "Conferir se flags do topo batem com filtros do catálogo."
+];
+
+const lifeIsStrangeTrueColorsFaq = [
+  { question: "Life is Strange: True Colors tem troféus perdíveis?", answer: "Não. Memory Collectibles e side quests podem ser recuperados pelo Chapter Select." },
+  { question: "Precisa jogar online para platinar?", answer: "Sim, mas apenas como requisito técnico. Haven Historian exige conexão à PSN/servidores para registrar todos os Memory Collectibles." },
+  { question: "Precisa de cooperação?", answer: "Não. O jogo é single-player e não há troféu de coop." },
+  { question: "Precisa de DLC/Wavelengths?", answer: "Não. Wavelengths é conteúdo extra/narrativo e não é necessário para Haven Maven." },
+  { question: "Quantas runs são necessárias?", answer: "Uma run é suficiente. Depois, use Chapter Select para qualquer memória ou side quest esquecida." },
+  { question: "A dificuldade afeta troféus?", answer: "Não. Não há troféu de dificuldade." },
+  { question: "Quantos coletáveis existem?", answer: "São 25 Memory Collectibles, 5 por capítulo." },
+  { question: "Quais são as side quests obrigatórias?", answer: "Found Dog!, Bird Spotting, Earworm Squasher e Exactly 731." },
+  { question: "Chapter Select resolve tudo?", answer: "Sim, para memórias e side quests. O menu mostra as memórias faltantes por cena; para side quests, use checklist manual." },
+  { question: "O que fazer antes da última memória?", answer: "Jogue conectado à internet/PSN para garantir que Haven Historian registre corretamente." },
+  { question: "Posso platinar offline?", answer: "Não com segurança na lista PlayStation. A platina depende de Haven Historian, que exige conexão online para registrar todos os Memory Collectibles." },
+  { question: "Quanto tempo leva para platinar?", answer: "Em média, cerca de 8 a 12 horas, ou até 10 a 14 horas jogando com calma e assistindo às cenas." }
+];
+
+const lisTrueColorsMemoryTags = (chapter, extra = []) => ["Coletável", "Memory", `Capítulo ${chapter}`, "Chapter Select", "Cleanup", ...extra];
+const lisTrueColorsSetTags = chapter => ["Coletável", "Memory Collectibles", `Capítulo ${chapter}`, "Chapter Select", "Checklist"];
+const lisTrueColorsStoryTags = chapter => ["História", `Capítulo ${chapter}`];
+
+const lifeIsStrangeTrueColorsTrophyRows = [
+  ["lis-true-colors-haven-maven", "Haven Maven", "Especialista de Haven", "Platina", "Conquiste todos os troféus de Life is Strange: True Colors.", "Conquiste os outros 40 troféus da lista base. Haven Maven não é marcado como Online; o requisito técnico direto fica em Haven Historian.", false, false, false, ["Platina"]],
+  ["lis-true-colors-crack", "Crack", "Rachadura", "Bronze", "Encontre a memória Crack no Capítulo 1.", "Memory Collectible do Capítulo 1. Se passar batido, volte depois pelo Chapter Select.", false, false, false, lisTrueColorsMemoryTags(1)],
+  ["lis-true-colors-letter-to-riley", "A Letter To Riley", "Uma carta para Riley", "Bronze", "Encontre a memória Riley Letter no Capítulo 1.", "Memory Collectible do Capítulo 1 no apartamento. Não é perdível permanente por causa do Chapter Select.", false, false, false, lisTrueColorsMemoryTags(1)],
+  ["lis-true-colors-officer-fish", "Officer Fish", "Oficial Fish", "Bronze", "Encontre a memória Business Card no Capítulo 1.", "Memory Collectible do Capítulo 1 no bar. Faça checklist por capítulo para reduzir cleanup.", false, false, false, lisTrueColorsMemoryTags(1)],
+  ["lis-true-colors-head-count", "Head Count", "Contagem de cabeças", "Bronze", "Encontre a memória Helmet no Capítulo 1.", "Memory Collectible do Capítulo 1 durante a sequência das minas. Pode ser limpo via Chapter Select.", false, false, false, lisTrueColorsMemoryTags(1)],
+  ["lis-true-colors-phone", "Phone", "Telefone", "Bronze", "Encontre a memória Phone no Capítulo 1.", "Memory Collectible do Capítulo 1 na área das minas. Pegue antes de encerrar o capítulo ou volte pelo Chapter Select.", false, false, false, lisTrueColorsMemoryTags(1)],
+  ["lis-true-colors-hunt-the-monster", "I Thought I Could Hunt The Monster", "Achei que pudesse caçar o monstro", "Bronze", "Complete o Capítulo 1 de Life is Strange: True Colors.", "Troféu automático de história ao concluir o Capítulo 1.", false, true, false, lisTrueColorsStoryTags(1)],
+  ["lis-true-colors-emotional-enthusiast", "Emotional Enthusiast", "Entusiasta emocional", "Ouro", "Encontre todos os Memory Collectibles do Capítulo 1.", "Pegue Crack, Riley Letter, Business Card, Helmet e Phone no Capítulo 1. Se faltar algo, refaça a cena pelo Chapter Select.", false, false, false, lisTrueColorsSetTags(1)],
+  ["lis-true-colors-no-handouts", "No Handouts", "Sem esmolas", "Bronze", "Encontre a memória Rent Check no Capítulo 2.", "Memory Collectible do Capítulo 2 durante a exploração do bar.", false, false, false, lisTrueColorsMemoryTags(2)],
+  ["lis-true-colors-umbrella", "Umbrella", "Guarda-chuva", "Bronze", "Encontre a memória Umbrella no Capítulo 2.", "Memory Collectible do Capítulo 2. Revise a parte inferior do bar antes de avançar a história.", false, false, false, lisTrueColorsMemoryTags(2)],
+  ["lis-true-colors-team-chomp-bot", "Team Chomp-Bot", "Equipe Chomp-Bot", "Bronze", "Encontre a memória T-Shirt no Capítulo 2.", "Memory Collectible do Capítulo 2 ligado à exploração da floricultura.", false, false, false, lisTrueColorsMemoryTags(2)],
+  ["lis-true-colors-pro-tip", "Pro Tip", "Dica profissional", "Bronze", "Encontre a memória Gummies no Capítulo 2.", "Memory Collectible do Capítulo 2. Use o checklist antes de encerrar as cenas principais do capítulo.", false, false, false, lisTrueColorsMemoryTags(2)],
+  ["lis-true-colors-time-for-something-new", "Time For Something New", "Hora de algo novo", "Bronze", "Encontre a memória Button no Capítulo 2.", "Memory Collectible do Capítulo 2. Pode ser recuperado depois pelo Chapter Select.", false, false, false, lisTrueColorsMemoryTags(2)],
+  ["lis-true-colors-found-dog", "Found Dog!", "Cachorro encontrado!", "Bronze", "Ajude o Hoodie Guy a encontrar seu cachorro.", "Side quest do Capítulo 2. Ajude o Hoodie Guy durante a exploração da cidade; se perder, repita a cena pelo Chapter Select.", false, false, false, ["Side quest", "Hoodie Guy", "Capítulo 2", "Chapter Select", "Cleanup"]],
+  ["lis-true-colors-bird-spotting", "Bird Spotting", "Observação de pássaros", "Bronze", "Ajude a Birdwatcher a encontrar seu pássaro.", "Side quest do Capítulo 2. Faça antes de avançar demais no capítulo ou volte pela seleção de capítulos.", false, false, false, ["Side quest", "Birdwatcher", "Capítulo 2", "Chapter Select", "Cleanup"]],
+  ["lis-true-colors-something-you-build", "Something You Build", "Algo que você constrói", "Bronze", "Complete o Capítulo 2 de Life is Strange: True Colors.", "Troféu automático de história ao concluir o Capítulo 2.", false, true, false, lisTrueColorsStoryTags(2)],
+  ["lis-true-colors-amateur-archaeophile", "Amateur Archaeophile", "Arqueófilo amador", "Ouro", "Encontre todos os Memory Collectibles do Capítulo 2.", "Pegue Rent Check, Umbrella, T-Shirt, Gummies e Button no Capítulo 2.", false, false, false, lisTrueColorsSetTags(2)],
+  ["lis-true-colors-earworm-squasher", "Earworm Squasher", "Caçador de música grudenta", "Bronze", "Encontre e toque a música perdida do estudante.", "Side quest do Capítulo 3 no bar. Resolva a busca da música antes de seguir para os eventos principais ou use Chapter Select depois.", false, false, false, ["Side quest", "Música perdida", "Capítulo 3", "Chapter Select", "Cleanup"]],
+  ["lis-true-colors-hell-divers", "Hell Divers", "Mergulhadores do inferno", "Bronze", "Encontre a memória Bomber Jacket no Capítulo 3.", "Memory Collectible do Capítulo 3 ligado à exploração inicial do bar.", false, false, false, lisTrueColorsMemoryTags(3)],
+  ["lis-true-colors-ethans-dollar", "Ethan's Dollar", "O dólar de Ethan", "Bronze", "Encontre a memória Dollar no Capítulo 3.", "Memory Collectible do Capítulo 3 durante o LARP. Volte pelo Chapter Select se passar batido.", false, false, false, lisTrueColorsMemoryTags(3)],
+  ["lis-true-colors-how-does-that-make-you-feel", "And How Does That Make You Feel?", "E como isso te faz sentir?", "Bronze", "Encontre a memória Appointment Slip no Capítulo 3.", "Memory Collectible do Capítulo 3. Confira a área externa antes de entrar no bar.", false, false, false, lisTrueColorsMemoryTags(3)],
+  ["lis-true-colors-upright-and-above-ground", "Upright and Above Ground", "De pé e acima da terra", "Bronze", "Encontre a memória Old Paper no Capítulo 3.", "Memory Collectible do Capítulo 3 dentro do bar. Faça a coleta antes de avançar a cena.", false, false, false, lisTrueColorsMemoryTags(3)],
+  ["lis-true-colors-valkyries-dish", "Valkyrie's Dish", "O prato da Valkyrie", "Bronze", "Encontre a memória Valkyrie's Dish no Capítulo 3.", "Memory Collectible do Capítulo 3 na loja de discos. Use o poder de Alex no item correto.", false, false, false, lisTrueColorsMemoryTags(3)],
+  ["lis-true-colors-burying-something", "Burying Something", "Enterrando algo", "Bronze", "Complete o Capítulo 3 de Life is Strange: True Colors.", "Troféu automático de história ao concluir o Capítulo 3.", false, true, false, lisTrueColorsStoryTags(3)],
+  ["lis-true-colors-memory-collector", "Memory Collector", "Colecionador de memórias", "Ouro", "Encontre todos os Memory Collectibles do Capítulo 3.", "Pegue Bomber Jacket, Dollar, Appointment Slip, Old Paper e Valkyrie's Dish no Capítulo 3.", false, false, false, lisTrueColorsSetTags(3)],
+  ["lis-true-colors-exactly-731", "Exactly 731", "Exatamente 731", "Bronze", "Ajude o Jelly Bean Counter a vencer o concurso.", "Side quest do Capítulo 4 no festival. Faça a sequência do contador de jujubas antes de encerrar o evento.", false, false, false, ["Side quest", "Jelly Beans", "Festival", "Capítulo 4", "Chapter Select", "Cleanup"]],
+  ["lis-true-colors-count-me-in", "Count Me In", "Conte comigo", "Bronze", "Encontre a memória Drum Kit no Capítulo 4.", "Memory Collectible do Capítulo 4 no festival. Confira o palco e arredores.", false, false, false, lisTrueColorsMemoryTags(4)],
+  ["lis-true-colors-proud-parent", "Proud Parent", "Pai orgulhoso", "Bronze", "Encontre a memória CIT Sticker no Capítulo 4.", "Memory Collectible do Capítulo 4. Procure atrás da floricultura durante o festival.", false, false, false, lisTrueColorsMemoryTags(4)],
+  ["lis-true-colors-in-front-of-god", "In Front of God and Everybody", "Na frente de Deus e de todo mundo", "Bronze", "Encontre a memória Microphone no Capítulo 4.", "Memory Collectible do Capítulo 4 no palco do festival.", false, false, false, lisTrueColorsMemoryTags(4)],
+  ["lis-true-colors-pressed-rose", "Pressed Rose", "Rosa prensada", "Bronze", "Encontre a memória Pressed Rose no Capítulo 4.", "Memory Collectible do Capítulo 4. Faça a interação na área inicial do capítulo antes de seguir.", false, true, false, lisTrueColorsMemoryTags(4)],
+  ["lis-true-colors-birthday-boy", "Birthday Boy", "Aniversariante", "Bronze", "Encontre a memória Polaroid no Capítulo 4.", "Memory Collectible do Capítulo 4. Fica disponível após os eventos do festival; pode exigir retorno via Chapter Select se esquecido.", false, true, false, lisTrueColorsMemoryTags(4)],
+  ["lis-true-colors-kind-of-thing-you-cant-undo", "The Kind of Thing You Can't Undo", "O tipo de coisa que não dá para desfazer", "Bronze", "Complete o Capítulo 4 de Life is Strange: True Colors.", "Troféu automático de história ao concluir o Capítulo 4.", false, true, false, lisTrueColorsStoryTags(4)],
+  ["lis-true-colors-emotional-archeologist", "Emotional Archeologist", "Arqueólogo emocional", "Ouro", "Encontre todos os Memory Collectibles do Capítulo 4.", "Pegue Drum Kit, CIT Sticker, Microphone, Pressed Rose e Polaroid no Capítulo 4.", false, false, false, lisTrueColorsSetTags(4)],
+  ["lis-true-colors-scary-news", "Scary News", "Notícias assustadoras", "Bronze", "Encontre a memória Mom's Keys no Capítulo 5.", "Memory Collectible do Capítulo 5. Conteúdo de reta final; use Chapter Select para cleanup se necessário.", false, true, false, lisTrueColorsMemoryTags(5)],
+  ["lis-true-colors-some-kind-of-fight", "Some Kind of Fight", "Algum tipo de luta", "Bronze", "Encontre a memória Business Card no Capítulo 5.", "Memory Collectible do Capítulo 5. Atenção a spoilers de história nessa sequência.", false, true, false, lisTrueColorsMemoryTags(5)],
+  ["lis-true-colors-guitar-strings", "Guitar Strings", "Cordas de violão", "Bronze", "Encontre a memória Guitar Strings no Capítulo 5.", "Memory Collectible do Capítulo 5. Siga o checklist antes de encerrar as cenas finais.", false, true, false, lisTrueColorsMemoryTags(5)],
+  ["lis-true-colors-where-the-devil-sleeps", "Where The Devil Sleeps", "Onde o diabo dorme", "Bronze", "Encontre a memória Pendant no Capítulo 5.", "Memory Collectible do Capítulo 5 ligado à reta final da história.", false, true, false, lisTrueColorsMemoryTags(5)],
+  ["lis-true-colors-youre-a-helldiver-now", "You're a Helldiver Now", "Agora você é um Helldiver", "Bronze", "Encontre a memória Bomber Jacket no Capítulo 5.", "Memory Collectible do Capítulo 5. Se esta for sua última memória, confirme conexão à internet/PSN antes de coletá-la para registrar Haven Historian.", false, true, false, lisTrueColorsMemoryTags(5, ["Atenção"])],
+  ["lis-true-colors-only-promise-adventure", "The Only Promise is The Adventure", "A única promessa é a aventura", "Bronze", "Complete o Capítulo 5 de Life is Strange: True Colors.", "Troféu automático de história ao concluir o Capítulo 5 e chegar ao fim da campanha base.", false, true, false, lisTrueColorsStoryTags(5)],
+  ["lis-true-colors-emotional-unearthing", "Emotional Unearthing", "Escavação emocional", "Ouro", "Encontre todos os Memory Collectibles do Capítulo 5.", "Pegue Mom's Keys, Business Card, Guitar Strings, Pendant e Bomber Jacket no Capítulo 5.", false, true, false, lisTrueColorsSetTags(5)],
+  ["lis-true-colors-haven-historian", "Haven Historian", "Historiador de Haven", "Ouro", "Encontre todos os Memory Collectibles de Life is Strange: True Colors.", "Haven Historian exige conexão à PSN/servidores para registrar todos os 25 Memory Collectibles. Antes de pegar a última memória, jogue online; isso é requisito técnico, não multiplayer ou coop.", false, false, true, ["Online", "Online técnico", "Coletável", "Memory Collectibles", "PSN", "Servidor", "Checklist", "Atenção"]]
+];
+
+const lifeIsStrangeTrueColorsTrophies = lifeIsStrangeTrueColorsTrophyRows.map(([id, name, namePt, type, descriptionPt, tip, isMissable, isSpoiler, isOnline, tags]) => ({
+  id,
+  name,
+  name_pt: namePt,
+  trophyNameOriginal: name,
+  trophyNamePtBr: namePt,
+  namePtSource: "editorial_ptbr_reference",
+  type,
+  tier: type,
+  description: descriptionPt,
+  descriptionPtBr: descriptionPt,
+  ptDescription: descriptionPt,
+  localizedDescription: { ptBr: descriptionPt },
+  descriptionPtSource: "editorial_ptbr_reference",
+  tip,
+  guideTip: tip,
+  is_missable: isMissable,
+  isMissable: isMissable,
+  missable: isMissable,
+  is_spoiler: isSpoiler,
+  isSpoiler: isSpoiler,
+  is_online: isOnline,
+  isOnline: isOnline,
+  is_coop: false,
+  isCoop: false,
+  dlcRequired: false,
+  difficultyRequired: false,
+  tags
+}));
+
+const lifeIsStrangeTrueColorsGuide = sampleGames.find(game => game.slug === "life-is-strange-true-colors");
+if (lifeIsStrangeTrueColorsGuide) {
+  Object.assign(lifeIsStrangeTrueColorsGuide, {
+    title: "Life is Strange: True Colors",
+    developer: "Deck Nine",
+    publisher: "Square Enix",
+    platforms: ["PS4", "PS5"],
+    platform_base: "PS5",
+    platformBase: "PS5",
+    guideScope: "Lista PlayStation base de 41 troféus",
+    genre: ["aventura narrativa"],
+    mode: "single-player",
+    difficulty: 1,
+    time: "8-12 horas",
+    estimatedTime: "8-12 horas",
+    time_min_hours: 8,
+    time_max_hours: 12,
+    time_sort_hours: 8,
+    time_bucket: "short",
+    runs: "Uma campanha principal com Chapter Select para cleanup.",
+    hasMissables: false,
+    missableCount: 0,
+    missable_count: 0,
+    hasOnline: true,
+    hasMandatoryOnline: true,
+    hasMandatoryCoop: false,
+    requiresOnline: true,
+    requiresCoop: false,
+    onlineRequired: true,
+    online_required: true,
+    coopRequired: false,
+    coop_required: false,
+    dlcRequired: false,
+    dlc_required: false,
+    dlcRequiredForPlatinum: false,
+    difficultyTrophiesRequired: false,
+    newGamePlusRequired: false,
+    hasChapterSelect: true,
+    chapterSelect: true,
+    platinumType: "lista base com online técnico",
+    guideFocus: "25 Memory Collectibles, 4 side quests, Chapter Select e Haven Historian online técnico",
+    missable: "Sem perdíveis permanentes. Memory Collectibles e side quests podem ser recuperados pelo Chapter Select.",
+    runs_summary: "Uma run é suficiente. Depois, use Chapter Select para qualquer memória ou side quest esquecida.",
+    missable_summary: "Não há perdíveis permanentes; missableCount fica 0 porque Chapter Select recupera memórias e side quests.",
+    online_summary: "Haven Historian exige conexão à PSN/servidores para registrar todos os Memory Collectibles. Isso torna a platina online técnica, mas não há multiplayer nem cooperação.",
+    grind_summary: "Não há grind real. O trabalho é seguir checklist dos 25 Memory Collectibles e resolver 4 side quests curtas.",
+    dlc_scope: "Base game sem DLC obrigatória. Wavelengths é conteúdo extra/narrativo separado e não é necessário para Haven Maven.",
+    difficulty_reason: "1/10: não há troféu de dificuldade, não há combate ou execução exigente, e Chapter Select permite cleanup.",
+    time_reason: "A faixa de 8-12 horas considera campanha completa, 25 Memory Collectibles, 4 side quests e cleanup curto por Chapter Select.",
+    first_run_advice: "Jogue a história com checklist leve de 5 memórias por capítulo e faça as side quests quando aparecerem.",
+    cleanup_advice: "Use Chapter Select para recuperar memórias ou side quests pendentes; o menu mostra memórias faltantes por cena, mas as side quests devem ser acompanhadas por checklist manual. Não é necessário refazer a campanha inteira.",
+    before_you_start: "A lista base é curta e simples. O único cuidado técnico é jogar online antes da última memória para registrar Haven Historian; isso não transforma o jogo em multiplayer ou coop.",
+    best_for: "Ideal para quem quer uma platina narrativa curta, fácil e com cleanup simples.",
+    avoid_if: "Evite apenas se você não gosta de aventuras narrativas lentas ou de seguir checklist de coletáveis.",
+    status: "published",
+    editorial_status: "published",
+    editorialStatus: "verified",
+    editorial_review_status: "verified",
+    coverage_level: "complete",
+    is_verified: true,
+    verification_status: "verified",
+    quality_warnings: [],
+    last_reviewed_at: "2026-06-18",
+    reviewed_by: "AtlasAchievement",
+    completionState: "complete",
+    completion_state: "complete",
+    verification_note: "Guia revisado para publicação: lista base PS4/PS5 de Life is Strange: True Colors com 41 troféus, distribuição 1/6/0/34, 8-12h, 1/10, online técnico em Haven Historian, sem coop, sem DLC obrigatória, sem perdíveis permanentes, com Chapter Select, 25 Memory Collectibles e 4 side quests.",
+    editorial_notes: "Revisão editorial focada na platina base de Life is Strange: True Colors: Haven Historian online técnico, Haven Maven, 25 Memory Collectibles, 4 side quests, Chapter Select, Wavelengths separado, nomes EN/PT-BR, descrições PT-BR, tags e filtros controlados.",
+    editorial_summary: [
+      "Life is Strange: True Colors é uma platina curta, simples e focada em exploração leve. A lista tem 41 troféus: a maior parte vem de concluir os 5 capítulos, encontrar os 25 Memory Collectibles e completar 4 pequenas side quests. Não há troféus de dificuldade, não há cooperação, não há perdíveis permanentes e o Chapter Select permite recuperar qualquer memória ou side quest esquecida.",
+      "O único cuidado técnico é Haven Historian: o troféu de encontrar todos os Memory Collectibles deve ser desbloqueado conectado à PSN/servidores do jogo. Por isso, a platina tem online técnico obrigatório, mas não é multiplayer nem coop. A rota mais segura é jogar normalmente usando um checklist de memórias por capítulo, fazer as side quests quando aparecerem e usar Chapter Select apenas para cleanup.",
+      "Wavelengths é conteúdo extra/narrativo separado e não faz parte da lista base de 41 troféus. Os nomes PT-BR abaixo dos troféus usam tradução editorial consistente quando não há localização oficial confirmada no dado do projeto."
+    ],
+    seo: {
+      title: "Life is Strange: True Colors: Guia de Troféus e Platina",
+      description: "Guia de troféus de Life is Strange: True Colors com roadmap da platina, 25 Memory Collectibles, side quests, Chapter Select, Haven Historian online técnico e dicas para os 41 troféus.",
+      metaDescription: "Guia de troféus de Life is Strange: True Colors com roadmap da platina, 25 Memory Collectibles, side quests, Chapter Select, Haven Historian online técnico e dicas para os 41 troféus.",
+      ogTitle: "Life is Strange: True Colors: Guia de Troféus e Platina",
+      ogDescription: "Roadmap PT-BR da platina de Life is Strange: True Colors com 41 troféus, 25 Memory Collectibles, 4 side quests, Chapter Select e Haven Historian online técnico.",
+      keywords: ["Life is Strange True Colors troféus", "Life is Strange True Colors platina", "guia Life is Strange True Colors", "True Colors trophy guide", "Haven Maven", "Haven Historian", "Memory Collectibles", "Life is Strange True Colors collectibles", "Life is Strange True Colors Chapter Select", "Found Dog", "Bird Spotting", "Earworm Squasher", "Exactly 731", "Wavelengths troféus"]
+    },
+    quickDecision: {
+      verdict: "Sim. É uma platina curta, fácil e excelente para quem gosta de narrativa.",
+      difficulty: "Muito baixa, cerca de 1/10.",
+      time: "Curto, cerca de 8 a 12 horas.",
+      mainRisk: "25 memórias, 4 side quests, Chapter Select e Haven Historian online técnico.",
+      risk: "Baixo. O único cuidado real é estar online para Haven Historian.",
+      onlineCoop: "Online técnico obrigatório, sem coop.",
+      dlc: "Wavelengths não é necessário para a platina base.",
+      firstAction: "Comece a história usando checklist de 5 Memory Collectibles por capítulo."
+    },
+    roadmap: lifeIsStrangeTrueColorsRoadmap,
+    roadmapStages: lifeIsStrangeTrueColorsRoadmap,
+    attentionPoints: lifeIsStrangeTrueColorsAttentionPoints,
+    checklist: lifeIsStrangeTrueColorsChecklist,
+    faq: lifeIsStrangeTrueColorsFaq,
+    trophies: lifeIsStrangeTrueColorsTrophies
+  });
+}
+
+const littleNightmaresIIRoadmap = [
+  {
+    title: "Jogue a história com checklist de coletáveis",
+    focus: "História, Glitching Remains e chapéus",
+    objective: "Concluir os cinco capítulos coletando o máximo possível para reduzir cleanup.",
+    actions: [
+      "Jogue os cinco capítulos normalmente.",
+      "Colete Glitching Remains conforme aparecem.",
+      "Pegue os chapéus necessários da lista base.",
+      "Faça os troféus misc simples quando passar por cada cena.",
+      "Use checklist por capítulo para não esquecer Glitching Remains.",
+      "Não se preocupe com dificuldade, speedrun ou mortes, pois nada disso bloqueia a platina."
+    ],
+    warning: "Os coletáveis são recuperáveis por Chapter Select, mas esquecer muitos aumenta o retrabalho.",
+    result: "A história e a maior parte da platina ficam encaminhadas."
+  },
+  {
+    title: "Limpe o Capítulo 1: Wilderness",
+    focus: "Capítulo 1, chapéus e Glitching Remains",
+    objective: "Resolver os coletáveis e misc do primeiro capítulo.",
+    actions: [
+      "Colete os 4 Glitching Remains do capítulo.",
+      "Pegue os chapéus da Wilderness necessários para a lista base.",
+      "Faça What's in the Box?! abrindo a geladeira na casa do Hunter.",
+      "Faça Evasive Prey alcançando a casa sem morrer.",
+      "Faça Fair Prey usando o chapéu correto na sequência do Hunter.",
+      "Use Chapter Select se algum misc não desbloquear."
+    ],
+    warning: "Nome’s Attic e o Nome Hat são conteúdo extra, não requisitos da platina base.",
+    result: "Wild Kids e os misc da Wilderness ficam resolvidos."
+  },
+  {
+    title: "Limpe o Capítulo 2: School",
+    focus: "Capítulo 2, escola e troféus misc",
+    objective: "Pegar os 6 Glitching Remains e concluir os misc da School.",
+    actions: [
+      "Colete os 6 Glitching Remains da School.",
+      "Pegue os chapéus necessários do capítulo.",
+      "Faça Referee! no playground com o chapéu correto.",
+      "Faça Fly Free com o avião de papel e Mono Tones no piano.",
+      "Faça Merciful Feat poupando o Bully desenhista.",
+      "Faça Bully of Bullies derrubando a estante nos Bullies."
+    ],
+    warning: "As ações são curtas e específicas; volte pela cena correta no Chapter Select se passar direto.",
+    result: "School Kids e os principais misc do Capítulo 2 ficam concluídos."
+  },
+  {
+    title: "Limpe o Capítulo 3: Hospital",
+    focus: "Capítulo 3, hospital e ações específicas",
+    objective: "Resolver coletáveis, chapéus e o maior bloco de troféus misc.",
+    actions: [
+      "Colete os 4 Glitching Remains do Hospital.",
+      "Pegue os chapéus necessários do capítulo.",
+      "Faça Hunger na vending machine e X Best Friends no raio-X.",
+      "Faça Toys Are For Kids usando o Bear Hat e o brinquedo correto.",
+      "Faça Popcorn, ...And Stay Dead!, Objection e Medicine Ball.",
+      "Faça First Do No Harm prendendo o Doctor no incinerador e saindo sem ligar o fogo."
+    ],
+    warning: "O Hospital concentra muitos misc; siga checklist para evitar repetir várias cenas.",
+    result: "Sick Kids e a maior parte do cleanup ficam resolvidos."
+  },
+  {
+    title: "Limpe o Capítulo 4: Pale City",
+    focus: "Capítulo 4, Pale City e últimos coletáveis",
+    objective: "Fechar os últimos Glitching Remains e misc antes do final.",
+    actions: [
+      "Colete os 4 Glitching Remains da Pale City.",
+      "Pegue os chapéus necessários do capítulo.",
+      "Faça Unladylike quebrando a estátua da Lady.",
+      "Faça Post Industrial entregando o pacote com o Delivery Hat.",
+      "Avance até completar o capítulo.",
+      "Confira No More Remains após o 18º Glitching Remain."
+    ],
+    warning: "Os 18 Glitching Remains também liberam o secret ending ao completar o jogo.",
+    result: "Pale Kids, No More Remains e os misc da Pale City ficam concluídos."
+  },
+  {
+    title: "Finalize o Capítulo 5 e use o último chapéu",
+    focus: "Final, último chapéu e conclusão",
+    objective: "Completar a história e fechar os troféus ligados ao final.",
+    actions: [
+      "Complete o Capítulo 5 para Signal Interruption.",
+      "Depois de terminar o jogo, equipe o chapéu final para How Do I Look?.",
+      "Confira se Half Hat e Far Ahead já foram liberados.",
+      "Com todos os Glitching Remains, veja o secret ending.",
+      "Não confunda o final secreto com DLC."
+    ],
+    warning: "O chapéu final é liberado ao terminar o jogo e precisa ser equipado pelo menu.",
+    result: "Os troféus de conclusão e chapéu final ficam resolvidos."
+  },
+  {
+    title: "Use Chapter Select para cleanup",
+    focus: "Cleanup e troféus esquecidos",
+    objective: "Recuperar qualquer misc, chapéu ou Glitching Remain sem reiniciar o jogo.",
+    actions: [
+      "Abra Chapter Select e volte apenas às cenas necessárias.",
+      "Colete chapéus ou Glitching Remains faltantes.",
+      "Faça Twenty-Six chamando Six 26 vezes, se ainda faltar.",
+      "Faça In The Palm Of My Hand segurando a mão de Six por tempo suficiente.",
+      "Repita cenas específicas para misc esquecidos.",
+      "Não reinicie uma run completa sem necessidade."
+    ],
+    warning: "Chapter Select resolve praticamente todo cleanup; o guia não tem perdíveis permanentes.",
+    result: "Com coletáveis, chapéus e misc concluídos, a platina será liberada."
+  },
+  {
+    title: "Separe Nome’s Attic da platina base",
+    focus: "DLC e conteúdo extra",
+    objective: "Evitar misturar conteúdo extra com os 35 troféus da lista base.",
+    actions: [
+      "Mantenha a lista base com 35 troféus.",
+      "Não marque Nome’s Attic como DLC obrigatória.",
+      "Não trate Nome Hat como requisito da platina base.",
+      "Não trate o chapéu Mokujin de pré-venda como obrigatório.",
+      "Cite esses itens apenas como conteúdo extra."
+    ],
+    warning: "Chapéus extras podem aparecer no menu, mas não bloqueiam a platina base.",
+    result: "A lista base permanece separada de DLC e bônus de pré-venda."
+  }
+];
+
+const littleNightmaresIIAttentionPoints = [
+  { title: "Sem perdíveis permanentes", type: "Chapter Select", tip: "Chapter Select permite recuperar chapéus, Glitching Remains e troféus misc esquecidos." },
+  { title: "18 Glitching Remains", type: "4/6/4/4", tip: "No More Remains exige todos os 18 Glitching Remains: 4 no Capítulo 1, 6 no Capítulo 2, 4 no Capítulo 3 e 4 no Capítulo 4." },
+  { title: "Final secreto", type: "Secret ending", tip: "Coletar todos os Glitching Remains libera o final secreto/secret ending ao completar o jogo." },
+  { title: "Chapéus da lista base", type: "Far Ahead", tip: "Far Ahead exige os chapéus necessários da lista base. Não trate chapéus extras de DLC ou pré-venda como obrigatórios." },
+  { title: "Nome’s Attic separado", type: "Conteúdo extra", tip: "Nome’s Attic é conteúdo extra/DLC e não é necessário para a platina base." },
+  { title: "Troféus misc por capítulo", type: "Checklist", tip: "Vários troféus dependem de ações específicas em cenas curtas. Use checklist para evitar muito cleanup." },
+  { title: "Capítulo 2: School", type: "School", tip: "Referee!, Fly Free, Mono Tones, Merciful Feat e Bully of Bullies são misc importantes da escola." },
+  { title: "Capítulo 3: Hospital", type: "Hospital", tip: "O Hospital concentra muitos misc: Hunger, X Best Friends, Toys Are For Kids, Popcorn, Objection, Medicine Ball e First Do No Harm." },
+  { title: "Chapter Select", type: "Cleanup", tip: "Use Chapter Select para repetir somente a cena necessária, sem refazer o jogo inteiro." },
+  { title: "Sem dificuldade", type: "2/10", tip: "Não há troféu de dificuldade, speedrun ou run sem morrer." },
+  { title: "Sem online ou coop", type: "Single-player", tip: "A platina é totalmente offline e single-player. Six é IA, não coop." },
+  { title: "Chapéu final", type: "How Do I Look?", tip: "Após terminar o jogo, use o chapéu final para How Do I Look?." }
+];
+
+const littleNightmaresIIChecklist = [
+  "Conferir 35 troféus e distribuição 1 platina, 3 ouro, 15 prata e 16 bronze.",
+  "Conferir Primetime Content Consumer como platina.",
+  "Conferir onlineRequired, coopRequired e dlcRequired false.",
+  "Conferir hasMissables false, missableCount 0 e filtros Perdíveis, Online, Coop, DLC e Dificuldade em 0.",
+  "Conferir 18 Glitching Remains e distribuição 4/6/4/4 nos Capítulos 1 a 4.",
+  "Conferir No More Remains e o secret ending.",
+  "Conferir Half Hat, Far Ahead e How Do I Look?.",
+  "Conferir que Nome’s Attic, Nome Hat e Mokujin não viraram requisitos da lista base.",
+  "Conferir troféus misc dos Capítulos 1, 2, 3 e 4.",
+  "Conferir Chapter Select e ausência de speedrun ou no death.",
+  "Conferir que Six não inflou Coop.",
+  "Conferir nome oficial em inglês, PT-BR separado e descrição em português nos 35 troféus.",
+  "Conferir roadmap estruturado e ausência de objetos brutos ou labels internas no front.",
+  "Conferir FAQ, decisão rápida, SEO, pontos de atenção, filtros e status entre página e catálogo."
+];
+
+const littleNightmaresIIFaq = [
+  { question: "Little Nightmares II tem troféus perdíveis?", answer: "Não há perdíveis permanentes. Chapter Select permite recuperar chapéus, Glitching Remains e troféus misc esquecidos." },
+  { question: "Precisa jogar online para platinar?", answer: "Não. A platina base é totalmente offline." },
+  { question: "Precisa de cooperação?", answer: "Não. O jogo é single-player; Six é controlada pela IA e não conta como coop." },
+  { question: "Precisa de DLC ou Nome’s Attic?", answer: "Não. Nome’s Attic é conteúdo extra e não é necessário para Primetime Content Consumer." },
+  { question: "Quantas runs são necessárias?", answer: "Uma run com checklist é suficiente. Se esquecer algo, use Chapter Select para cleanup." },
+  { question: "A dificuldade afeta troféus?", answer: "Não. Não há troféu de dificuldade." },
+  { question: "Existe troféu de speedrun ou no death?", answer: "Não. Little Nightmares II não exige speedrun nem run sem morrer." },
+  { question: "Quantos Glitching Remains existem?", answer: "São 18 no total: 4 no Capítulo 1, 6 no Capítulo 2, 4 no Capítulo 3 e 4 no Capítulo 4." },
+  { question: "O que No More Remains desbloqueia?", answer: "Além do troféu, todos os Glitching Remains liberam o final secreto/secret ending ao completar o jogo." },
+  { question: "Far Ahead exige chapéus de DLC?", answer: "Não trate chapéus extras de DLC ou pré-venda como obrigatórios para a platina base. O guia deve focar nos chapéus necessários da lista base." },
+  { question: "Qual capítulo exige mais atenção?", answer: "O Hospital, no Capítulo 3, concentra muitos troféus misc e pode gerar mais cleanup." },
+  { question: "Quanto tempo leva para platinar?", answer: "Em média, cerca de 6 a 10 horas, dependendo do uso de checklist e do quanto for necessário repetir por Chapter Select." }
+];
+
+const littleNightmaresIIDescriptions = {
+  little_nightmares_ii_primetime_content_consumer: "Obtenha todos os troféus da lista base.",
+  little_nightmares_ii_signal_interruption: "Conclua The Transmission.",
+  little_nightmares_ii_no_more_remains: "Colete todos os Glitching Remains.",
+  little_nightmares_ii_far_ahead: "Colete todos os chapéus necessários da lista base.",
+  little_nightmares_ii_foraged: "Conclua The Wilderness.",
+  little_nightmares_ii_schooled: "Conclua The School.",
+  little_nightmares_ii_hospitalised: "Conclua The Hospital.",
+  little_nightmares_ii_paled: "Conclua The Pale City.",
+  little_nightmares_ii_evasive_prey: "Chegue à casa sem morrer.",
+  little_nightmares_ii_in_the_palm_of_my_hand: "Segure a mão de Six por tempo suficiente.",
+  little_nightmares_ii_popcorn: "Faça pipoca.",
+  little_nightmares_ii_objection: "Jogue o queijo no buraco.",
+  little_nightmares_ii_sick_kids: "Encontre todos os Glitching Remains do Hospital.",
+  little_nightmares_ii_post_industrial: "Entregue o pacote.",
+  little_nightmares_ii_unladylike: "Quebre a estátua da Lady.",
+  little_nightmares_ii_bully_of_bullies: "Esmague os Bullies com a estante.",
+  little_nightmares_ii_school_kids: "Encontre todos os Glitching Remains da School.",
+  little_nightmares_ii_wild_kids: "Encontre todos os Glitching Remains da Wilderness.",
+  little_nightmares_ii_pale_kids: "Encontre todos os Glitching Remains da Pale City.",
+  little_nightmares_ii_true_colours: "Veja Six com sua capa de chuva amarela.",
+  little_nightmares_ii_half_hat: "Colete metade dos chapéus.",
+  little_nightmares_ii_how_do_i_look: "Equipe o chapéu liberado após concluir o jogo.",
+  little_nightmares_ii_toys_are_for_kids: "Queime o brinquedo usando o chapéu correto.",
+  little_nightmares_ii_hunger: "Retire lanches da máquina automática.",
+  little_nightmares_ii_x_best_friends: "Tire um raio-X com Six.",
+  little_nightmares_ii_and_stay_dead: "Garanta que a mão continue morta.",
+  little_nightmares_ii_first_do_no_harm: "Poupe o Doctor.",
+  little_nightmares_ii_referee: "Atravesse o gol usando o chapéu de bola.",
+  little_nightmares_ii_mono_tones: "Toque o piano.",
+  little_nightmares_ii_fly_free: "Arremesse o avião de papel.",
+  little_nightmares_ii_fair_prey: "Derrote o Hunter usando o chapéu correto.",
+  little_nightmares_ii_twenty_six: "Chame Six 26 vezes.",
+  little_nightmares_ii_medicine_ball: "Arremesse a bola medicinal.",
+  little_nightmares_ii_whats_in_the_box: "Abra a geladeira.",
+  little_nightmares_ii_merciful_feat: "Poupe o Bully preso."
+};
+
+const littleNightmaresIITags = {
+  little_nightmares_ii_primetime_content_consumer: ["Platina"],
+  little_nightmares_ii_signal_interruption: ["História", "Capítulo 5"],
+  little_nightmares_ii_no_more_remains: ["Glitching Remains", "Coletável", "Checklist", "Final secreto", "Chapter Select", "Cleanup"],
+  little_nightmares_ii_far_ahead: ["Chapéus", "Coletável", "Checklist", "Chapter Select", "Cleanup"],
+  little_nightmares_ii_foraged: ["História", "Capítulo 1", "Wilderness"],
+  little_nightmares_ii_schooled: ["História", "Capítulo 2", "School"],
+  little_nightmares_ii_hospitalised: ["História", "Capítulo 3", "Hospital"],
+  little_nightmares_ii_paled: ["História", "Capítulo 4", "Pale City"],
+  little_nightmares_ii_evasive_prey: ["Capítulo 1", "Wilderness", "Sequência", "Ação específica", "Atenção", "Cleanup", "Chapter Select"],
+  little_nightmares_ii_in_the_palm_of_my_hand: ["Six", "Ação específica", "Misc", "Cleanup"],
+  little_nightmares_ii_popcorn: ["Capítulo 3", "Furnace", "Ação específica", "Cleanup", "Chapter Select"],
+  little_nightmares_ii_objection: ["Capítulo 3", "Ação específica", "Misc", "Cleanup", "Chapter Select"],
+  little_nightmares_ii_sick_kids: ["Glitching Remains", "Coletável", "Hospital", "Capítulo 3", "Checklist", "Chapter Select", "Cleanup"],
+  little_nightmares_ii_post_industrial: ["Capítulo 4", "Chapéus", "Delivery Hat", "Ação específica", "Cleanup", "Chapter Select"],
+  little_nightmares_ii_unladylike: ["Capítulo 4", "Lady Statue", "Ação específica", "Cleanup", "Chapter Select"],
+  little_nightmares_ii_bully_of_bullies: ["Capítulo 2", "Ação específica", "Misc", "Cleanup", "Chapter Select"],
+  little_nightmares_ii_school_kids: ["Glitching Remains", "Coletável", "School", "Capítulo 2", "Checklist", "Chapter Select", "Cleanup"],
+  little_nightmares_ii_wild_kids: ["Glitching Remains", "Coletável", "Wilderness", "Capítulo 1", "Checklist", "Chapter Select", "Cleanup"],
+  little_nightmares_ii_pale_kids: ["Glitching Remains", "Coletável", "Pale City", "Capítulo 4", "Checklist", "Chapter Select", "Cleanup"],
+  little_nightmares_ii_true_colours: ["História", "Capítulo 2"],
+  little_nightmares_ii_half_hat: ["Chapéus", "Coletável", "Checklist", "Chapter Select", "Cleanup"],
+  little_nightmares_ii_how_do_i_look: ["Chapéus", "Ação específica", "Final", "Cleanup", "Chapter Select"],
+  little_nightmares_ii_toys_are_for_kids: ["Capítulo 3", "Chapéus", "Furnace", "Ação específica", "Cleanup", "Chapter Select"],
+  little_nightmares_ii_hunger: ["Capítulo 3", "Ação específica", "Misc", "Cleanup", "Chapter Select"],
+  little_nightmares_ii_x_best_friends: ["Capítulo 3", "Six", "Ação específica", "Misc", "Cleanup", "Chapter Select"],
+  little_nightmares_ii_and_stay_dead: ["Capítulo 3", "Combate", "Ação específica", "Cleanup", "Chapter Select"],
+  little_nightmares_ii_first_do_no_harm: ["Capítulo 3", "Doctor", "Escolha", "Ação específica", "Atenção", "Cleanup", "Chapter Select"],
+  little_nightmares_ii_referee: ["Capítulo 2", "Chapéus", "Ação específica", "Misc", "Cleanup", "Chapter Select"],
+  little_nightmares_ii_mono_tones: ["Capítulo 2", "Ação específica", "Misc", "Cleanup", "Chapter Select"],
+  little_nightmares_ii_fly_free: ["Capítulo 2", "Ação específica", "Misc", "Cleanup", "Chapter Select"],
+  little_nightmares_ii_fair_prey: ["Capítulo 1", "Chapéus", "Hunter", "Ação específica", "Atenção", "Cleanup", "Chapter Select"],
+  little_nightmares_ii_twenty_six: ["Six", "Ação específica", "Misc", "Cleanup"],
+  little_nightmares_ii_medicine_ball: ["Capítulo 3", "Ação específica", "Misc", "Cleanup", "Chapter Select"],
+  little_nightmares_ii_whats_in_the_box: ["Capítulo 1", "Hunter", "Ação específica", "Misc", "Cleanup", "Chapter Select"],
+  little_nightmares_ii_merciful_feat: ["Capítulo 2", "Escolha", "Ação específica", "Atenção", "Cleanup", "Chapter Select"]
+};
+
+const littleNightmaresIIGuide = sampleGames.find(game => game.slug === "little-nightmares-ii");
+if (littleNightmaresIIGuide) {
+  const littleNightmaresIITrophies = littleNightmaresIIGuide.trophies.map(trophy => {
+    const descriptionPt = littleNightmaresIIDescriptions[trophy.id];
+    return {
+      ...trophy,
+      trophyNameOriginal: trophy.name,
+      trophyNamePtBr: trophy.name_pt,
+      namePtSource: "editorial_ptbr_reference",
+      tier: trophy.type,
+      description: descriptionPt,
+      descriptionPtBr: descriptionPt,
+      ptDescription: descriptionPt,
+      localizedDescription: { ptBr: descriptionPt },
+      descriptionPtSource: "editorial_ptbr_reference",
+      guideTip: trophy.tip,
+      isMissable: false,
+      missable: false,
+      is_online: false,
+      isOnline: false,
+      is_coop: false,
+      isCoop: false,
+      dlcRequired: false,
+      difficultyRequired: false,
+      tags: littleNightmaresIITags[trophy.id]
+    };
+  });
+
+  Object.assign(littleNightmaresIIGuide, {
+    title: "Little Nightmares II",
+    developer: "Tarsier Studios",
+    publisher: "Bandai Namco Entertainment",
+    platforms: ["PS4", "PS5"],
+    platform_base: "PS5",
+    platformBase: "PS5",
+    guideScope: "Lista PlayStation base de 35 troféus",
+    genre: ["aventura", "terror atmosférico", "puzzle-platforming"],
+    mode: "single-player",
+    difficulty: 2,
+    time: "6-10h",
+    estimatedTime: "6-10 horas",
+    time_min_hours: 6,
+    time_max_hours: 10,
+    time_sort_hours: 8,
+    time_bucket: "short",
+    runs: "Uma playthrough com checklist e Chapter Select para cleanup.",
+    hasMissables: false,
+    missableCount: 0,
+    missable_count: 0,
+    hasOnline: false,
+    hasMandatoryOnline: false,
+    hasMandatoryCoop: false,
+    requiresOnline: false,
+    requiresCoop: false,
+    onlineRequired: false,
+    online_required: false,
+    coopRequired: false,
+    coop_required: false,
+    dlcRequired: false,
+    dlc_required: false,
+    dlcRequiredForPlatinum: false,
+    difficultyTrophiesRequired: false,
+    newGamePlusRequired: false,
+    hasChapterSelect: true,
+    chapterSelect: true,
+    guideFocus: "18 Glitching Remains, chapéus da lista base, misc por capítulo e Chapter Select",
+    missable: "Sem perdíveis permanentes. Chapter Select recupera Glitching Remains, chapéus e troféus misc.",
+    runs_summary: "Uma playthrough com checklist é suficiente; use Chapter Select para qualquer cleanup.",
+    missable_summary: "Não há perdíveis permanentes, porque coletáveis, chapéus e ações específicas podem ser recuperados por Chapter Select.",
+    online_summary: "A platina base é totalmente offline e single-player. Six é controlada pela IA e não representa cooperação.",
+    grind_summary: "Não há grind real; o trabalho é acompanhar coletáveis e ações específicas por capítulo.",
+    dlc_scope: "A lista base não exige Nome’s Attic, Nome Hat, Mokujin nem qualquer conteúdo extra ou de pré-venda.",
+    difficulty_reason: "2/10: não há dificuldade obrigatória, speedrun ou run sem morrer.",
+    time_reason: "A faixa de 6-10 horas inclui os cinco capítulos, 18 Glitching Remains, chapéus e cleanup por Chapter Select.",
+    first_run_advice: "Jogue com checklist por capítulo, coletando Glitching Remains, chapéus e misc conforme surgem.",
+    cleanup_advice: "Use Chapter Select para repetir somente cenas com Glitching Remains, chapéus ou ações específicas pendentes.",
+    before_you_start: "A lista tem 35 troféus offline. Acompanhe os 18 Glitching Remains, os chapéus e misc como Fair Prey, Referee!, Toys Are For Kids e Post Industrial; não há dificuldade, speedrun ou no death.",
+    best_for: "Ideal para quem quer uma platina curta, fácil e focada em terror atmosférico e coletáveis simples.",
+    avoid_if: "Evite se você não gosta de explorar cenários ou repetir cenas curtas para ações específicas.",
+    status: "published",
+    editorial_status: "published",
+    editorialStatus: "verified",
+    editorial_review_status: "verified",
+    coverage_level: "complete",
+    is_verified: true,
+    verification_status: "verified",
+    quality_warnings: [],
+    last_reviewed_at: "2026-06-19",
+    reviewed_by: "AtlasAchievement",
+    completionState: "complete",
+    completion_state: "complete",
+    verification_note: "Guia revisado para publicação: lista base PS4/PS5 com 35 troféus, distribuição 1/3/15/16, 6-10h, 2/10, sem perdíveis, online, coop, DLC ou dificuldade obrigatórios.",
+    editorial_notes: "Revisão editorial de Little Nightmares II focada em 18 Glitching Remains, distribuição 4/6/4/4, chapéus, secret ending, Chapter Select, misc por capítulo e Nome’s Attic separado.",
+    editorial_summary: [
+      "Little Nightmares II é uma platina curta, simples e totalmente offline, focada em terminar os cinco capítulos, coletar Glitching Remains, pegar os chapéus necessários e resolver troféus misc por capítulo. A lista tem 35 troféus e não exige online, cooperação, DLC, dificuldade alta, speedrun ou run sem morrer.",
+      "A rota mais segura é jogar acompanhando os 18 Glitching Remains — distribuídos em 4, 6, 4 e 4 nos quatro primeiros capítulos — e os chapéus da lista base. No More Remains e o secret ending dependem dos Glitching Remains; Half Hat, Far Ahead e How Do I Look? cobrem os chapéus. Chapter Select recupera qualquer item ou misc esquecido.",
+      "Nome’s Attic, Nome Hat e o chapéu Mokujin de pré-venda não são requisitos da platina base. Os nomes PT-BR usam tradução editorial consistente quando não há localização oficial confirmada no dado do projeto."
+    ],
+    seo: {
+      title: "Little Nightmares II: Guia de Troféus e Platina",
+      description: "Guia de troféus de Little Nightmares II com roadmap da platina, 18 Glitching Remains, chapéus, Chapter Select, No More Remains, Far Ahead, troféus misc por capítulo e dicas para os 35 troféus.",
+      metaDescription: "Guia de troféus de Little Nightmares II com roadmap da platina, 18 Glitching Remains, chapéus, Chapter Select, No More Remains, Far Ahead, troféus misc por capítulo e dicas para os 35 troféus.",
+      ogTitle: "Little Nightmares II: Guia de Troféus e Platina",
+      ogDescription: "Roadmap PT-BR da platina de Little Nightmares II com 35 troféus, 18 Glitching Remains, chapéus, secret ending e Chapter Select.",
+      keywords: ["Little Nightmares II troféus", "Little Nightmares II platina", "guia Little Nightmares 2", "Little Nightmares 2 trophies", "Primetime Content Consumer", "No More Remains", "Far Ahead", "Glitching Remains", "Little Nightmares II hats", "Little Nightmares II Chapter Select", "Little Nightmares II secret ending", "Little Nightmares II Nome's Attic"]
+    },
+    quickDecision: {
+      verdict: "Sim. É uma platina curta, fácil e ótima para quem gosta de terror atmosférico e coletáveis simples.",
+      difficulty: "Baixa, cerca de 2/10.",
+      time: "Curto, cerca de 6 a 10 horas.",
+      mainRisk: "18 Glitching Remains, chapéus, troféus misc por capítulo e Chapter Select.",
+      risk: "Baixo. O risco é apenas retrabalho por esquecer coletáveis ou ações específicas.",
+      onlineCoop: "Não exige online nem cooperação.",
+      dlc: "Nome’s Attic não é necessário para a platina base.",
+      firstAction: "Comece a história usando checklist de Glitching Remains e chapéus por capítulo."
+    },
+    roadmap: littleNightmaresIIRoadmap,
+    roadmapStages: littleNightmaresIIRoadmap,
+    attentionPoints: littleNightmaresIIAttentionPoints,
+    checklist: littleNightmaresIIChecklist,
+    faq: littleNightmaresIIFaq,
+    trophies: littleNightmaresIITrophies
+  });
+}
+
+const monsterHunterWorldRoadmap = [
+  {
+    title: "Conclua a história e desbloqueie o endgame",
+    focus: "História, sistemas e progressão base",
+    objective: "Finalizar a campanha, liberar High Rank/endgame e abrir os sistemas necessários para o grind da platina.",
+    actions: [
+      "Avance pelas assigned quests até The Sapphire Star.",
+      "Complete os troféus automáticos de estrelas de missão.",
+      "Use a campanha para aprender sua arma principal e montar sets confortáveis.",
+      "Capture monstros quando possível para adiantar Capture Pro.",
+      "Faça optional quests e delivery requests que liberam camps, canteen, ferramentas e upgrades.",
+      "Não se preocupe com perdíveis, porque nada da lista base é perdido permanentemente."
+    ],
+    warning: "A história é apenas o começo. A platina real está no endgame, no online e na caça às crowns.",
+    result: "A campanha fica concluída e os principais sistemas de progresso ficam liberados."
+  },
+  {
+    title: "Faça optional quests, camps, arena e sistemas de Astera",
+    focus: "Optional quests, camps, arena e upgrades",
+    objective: "Resolver troféus estruturais antes do grind pesado.",
+    actions: [
+      "Complete 50 optional quests para The Hunter’s Life for Me.",
+      "Complete 50 investigations para The Franchise Hunter.",
+      "Faça sua primeira arena quest para Step into the Arena.",
+      "Complete 50 arena quests para Nowhere to Go but Up.",
+      "Estabeleça 5 camps para New World Settler.",
+      "Desbloqueie e evolua um Palico Gadget para Bosom Buddies.",
+      "Mude para um quarto melhor para Movin’ On Up."
+    ],
+    warning: "Arena quests usam equipamentos predefinidos e podem ser feitas em dupla. Arena não é PvP e não é coop obrigatório para o troféu.",
+    result: "A estrutura de Astera, quests e sistemas fica quase toda resolvida."
+  },
+  {
+    title: "Resolva o bloco online e multiplayer",
+    focus: "SOS, multiplayer e Guild Cards",
+    objective: "Concluir os troféus que tornam a platina online obrigatória.",
+    actions: [
+      "Dispare um SOS flare para HELP!.",
+      "Responda a SOS flares e ajude a completar 10 quests para I Am the Reinforcements.",
+      "Complete uma quest via multiplayer para Hunters United.",
+      "Complete 100 quests via multiplayer para Hunters United Forever.",
+      "Colete mais de 50 Guild Cards para Spreading the Word.",
+      "Use caçadas rápidas, SOS de Low/High Rank e sessões públicas para acelerar."
+    ],
+    warning: "Este bloco torna a platina online e multiplayer obrigatória, embora grande parte do jogo possa ser feita solo.",
+    result: "Todos os requisitos online e multiplayer ficam resolvidos."
+  },
+  {
+    title: "Trabalhe em captures, Elder Dragons, HR100 e 500 monstros",
+    focus: "Grind de caçadas e Hunter Rank",
+    objective: "Avançar os grandes cumulativos enquanto prepara crown hunting.",
+    actions: [
+      "Capture 50 monstros para Capture Pro.",
+      "Cace 100 large monsters para Monster Slayer.",
+      "Cace 500 large monsters para Monster Hunter.",
+      "Mate 50 Elder Dragons para Elderslayer.",
+      "Cace 50 tempered monsters para Indomitable.",
+      "Continue subindo Hunter Rank até Established Hunter no HR100."
+    ],
+    warning: "Combine esses objetivos com crown hunting para evitar repetir centenas de caçadas sem necessidade.",
+    result: "Os grandes cumulativos avançam junto com o endgame."
+  },
+  {
+    title: "Complete Monster Ph.D. e pesquisa de monstros",
+    focus: "Research levels e Ecological Research",
+    objective: "Atingir o nível de pesquisa necessário para quase todos os monstros.",
+    actions: [
+      "Colete rastros e pistas durante as caçadas.",
+      "Reporte o progresso no Ecological Research Center.",
+      "Cace ou investigue monstros com research baixo.",
+      "Use investigations para combinar pesquisa, materiais e chance de crowns.",
+      "Evolua a pesquisa naturalmente durante os demais grinds."
+    ],
+    warning: "Monster Ph.D. é research/checklist de monstros, não um coletável comum nem troféu de dificuldade.",
+    result: "A pesquisa fica completa ou quase completa antes do grind final."
+  },
+  {
+    title: "Pegue endemic life e troféus misc",
+    focus: "Endemic life, pesca e ações pontuais",
+    objective: "Resolver capturas especiais e misc que podem ficar esquecidos.",
+    actions: [
+      "Capture o Petricanths para A Living Fossil.",
+      "Capture o Downy Crake para Snuggles for All.",
+      "Capture o Bristly Crake para Bristles for All.",
+      "Capture o Prism Hercudrome para Rainbow Bright.",
+      "Pesque seu primeiro peixe para Angling for a Bite.",
+      "Cozinhe um Well-done Steak para Mmm, So Tasty!.",
+      "Monte seu primeiro monstro para The Bigger They Are…."
+    ],
+    warning: "Algumas endemic life dependem de horário, clima ou spawn raro. Use guia específico e Ghillie Mantle quando aplicável.",
+    result: "Os troféus misc e de endemic life ficam concluídos."
+  },
+  {
+    title: "Faça armor, weapons, research points e zenny",
+    focus: "Economia, equipamentos e recursos",
+    objective: "Resolver troféus de recursos e equipamentos raros.",
+    actions: [
+      "Acumule 100.000 research points para Commissioned Work.",
+      "Tenha 1.000.000 zenny para Bourgeois Hunter.",
+      "Obtenha 5 armaduras altamente raras para Impregnable Defense.",
+      "Obtenha 5 armas altamente raras para Power is Everything.",
+      "Use investigations, Elder Dragons e endgame para materiais raros.",
+      "Evite gastar tudo antes de Bourgeois Hunter se ainda faltar."
+    ],
+    warning: "Esses troféus são simples, mas podem atrasar se os recursos forem gastos sem controle.",
+    result: "Economia e equipamentos raros ficam resolvidos."
+  },
+  {
+    title: "Faça crown hunting como grind principal",
+    focus: "Miniature Crowns, Giant Crowns e RNG",
+    objective: "Obter as gold miniature crowns e gold giant crowns necessárias para os troféus finais.",
+    actions: [
+      "Use o Monster Field Guide para conferir quais monstros ainda faltam.",
+      "Busque gold miniature crowns para Miniature Crown Master.",
+      "Busque gold giant crowns para Giant Crown Master.",
+      "Lembre que silver crown não conta para Giant Crown Master.",
+      "Priorize investigations e event quests com chance aumentada quando disponíveis.",
+      "Use crown sniping e comparação visual para evitar caçadas longas desnecessárias.",
+      "Combine crowns com HR100, 500 large monsters, Elder Dragons, captures e tempered monsters."
+    ],
+    warning: "Crown hunting depende de RNG e pode levar centenas de horas. É o maior gargalo da platina.",
+    result: "Com as gold crowns concluídas, os troféus mais demorados ficam finalizados."
+  },
+  {
+    title: "Separe Iceborne e conteúdo extra da platina base",
+    focus: "DLC e conteúdo separado",
+    objective: "Evitar misturar a lista base de Monster Hunter: World com Iceborne.",
+    actions: [
+      "Mantenha a lista base com 50 troféus.",
+      "Não marque Iceborne como obrigatório para Conqueror of the New World.",
+      "Não adicione troféus ou crowns de Iceborne à lista base.",
+      "Trate Iceborne como guia e lista separados.",
+      "Explique que event quests podem ajudar no grind sem virarem DLC obrigatória."
+    ],
+    warning: "Iceborne possui progressão e lista separadas. Misturar os dados infla DLC, tempo, troféus e crowns.",
+    result: "O guia permanece focado na platina base."
+  }
+];
+
+const monsterHunterWorldAttentionPoints = [
+  { title: "Online obrigatório", type: "SOS e Guild Cards", tip: "A platina exige online por SOS, multiplayer quests e Guild Cards." },
+  { title: "Multiplayer/co-op obrigatório", type: "3 troféus", tip: "Hunters United, Hunters United Forever e I Am the Reinforcements exigem multiplayer/co-op online." },
+  { title: "Sem perdíveis", type: "Endgame livre", tip: "Nenhum troféu da lista base é perdível. O risco é tempo e RNG, não perda permanente." },
+  { title: "Crowns são o maior gargalo", type: "RNG", tip: "Miniature Crown Master e Giant Crown Master dependem de RNG e podem levar centenas de horas." },
+  { title: "Gold crown, não silver", type: "Crown hunting", tip: "Silver crown não conta para os troféus finais. São necessárias gold miniature e gold giant crowns." },
+  { title: "Combine os grinds", type: "Endgame", tip: "Faça crown hunting junto com HR100, 500 large monsters, Elder Dragons, captures, tempered monsters e investigations." },
+  { title: "Iceborne separado", type: "Lista base", tip: "Iceborne não é necessário para a platina base e não deve ser misturado com os 50 troféus." },
+  { title: "Guild Cards", type: "Spreading the Word", tip: "Spreading the Word exige mais de 50 Guild Cards. Resolva isso enquanto faz multiplayer." },
+  { title: "Arena quests", type: "50 Arena Quests", tip: "Nowhere to Go but Up exige 50 arena quests. Arena usa sets predefinidos e não é PvP." },
+  { title: "Endemic life rara", type: "Rare Spawn", tip: "A Living Fossil, Snuggles for All, Bristles for All e Rainbow Bright dependem de spawns raros." },
+  { title: "Dificuldade não afeta", type: "Sem seletor", tip: "Não há troféu de dificuldade nem seletor de dificuldade obrigatório." },
+  { title: "Tempo conservador", type: "250-400h", tip: "Mesmo com dificuldade moderada, o tempo pode passar de 300h por causa das crowns." }
+];
+
+const monsterHunterWorldFaq = [
+  { question: "Monster Hunter: World tem troféus perdíveis?", answer: "Não. Nenhum troféu da lista base é perdível; tudo pode ser feito no endgame e cleanup." },
+  { question: "Precisa jogar online para platinar?", answer: "Sim. A platina exige SOS, multiplayer quests e Guild Cards." },
+  { question: "Precisa de cooperação ou multiplayer?", answer: "Sim. I Am the Reinforcements, Hunters United e Hunters United Forever exigem multiplayer/co-op online." },
+  { question: "Precisa de Iceborne?", answer: "Não. Iceborne é separado e não é necessário para Conqueror of the New World." },
+  { question: "A dificuldade afeta troféus?", answer: "Não. Monster Hunter: World não tem troféu de dificuldade selecionável." },
+  { question: "Quanto tempo leva para platinar?", answer: "Em média, de 250 a 400 horas, podendo passar de 300h dependendo da sorte com gold crowns." },
+  { question: "Qual é o maior gargalo?", answer: "Miniature Crown Master e Giant Crown Master, porque dependem de RNG." },
+  { question: "Silver crown conta para Giant Crown Master?", answer: "Não. Os troféus finais exigem gold miniature crowns e gold giant crowns." },
+  { question: "Onde vejo quais crowns faltam?", answer: "No Monster Field Guide e Ecological Research, conferindo os menores e maiores tamanhos de cada monstro." },
+  { question: "Posso fazer a maior parte solo?", answer: "Sim, grande parte do jogo pode ser feita solo, mas a platina exige alguns troféus online e multiplayer." },
+  { question: "Event quests ajudam na platina?", answer: "Podem ajudar no farm de crowns e materiais quando disponíveis, mas não tornam DLC obrigatória." },
+  { question: "O que devo combinar com crown hunting?", answer: "HR100, 500 large monsters, 50 Elder Dragons, 50 captures, tempered monsters e investigations." }
+];
+
+const monsterHunterWorldChecklist = [
+  "Conferir 50 troféus e distribuição 1 platina, 2 ouro, 11 prata e 36 bronze.",
+  "Conferir Conqueror of the New World como platina.",
+  "Conferir onlineRequired e coopRequired true; dlcRequired false.",
+  "Conferir hasMissables false, missableCount 0 e filtro Perdíveis 0.",
+  "Conferir filtros Online 5, Coop 3, DLC 0 e Dificuldade 0.",
+  "Conferir HELP! como Online e SOS.",
+  "Conferir I Am the Reinforcements como Online, SOS, Multiplayer e Coop.",
+  "Conferir Hunters United e Hunters United Forever como Online, Multiplayer e Coop.",
+  "Conferir Spreading the Word como Online e Guild Cards.",
+  "Conferir Miniature Crown Master e Giant Crown Master como gold crowns e RNG.",
+  "Conferir que silver crown não conta para Giant Crown Master.",
+  "Conferir Monster Ph.D., Established Hunter, Monster Hunter e Elderslayer.",
+  "Conferir Capture Pro, Nowhere to Go but Up e investigations.",
+  "Conferir A Living Fossil, Snuggles for All, Bristles for All e Rainbow Bright.",
+  "Conferir New World Settler, First Friends e Bosom Buddies.",
+  "Conferir Commissioned Work, Bourgeois Hunter, Impregnable Defense e Power is Everything.",
+  "Conferir Iceborne separado e ausência de DLC obrigatória.",
+  "Conferir ausência de perdíveis e de troféu de dificuldade.",
+  "Conferir nomes EN, PT-BR separado e descrições em português nos 50 troféus.",
+  "Conferir roadmap estruturado sem objetos brutos ou labels internas no front.",
+  "Conferir FAQ, decisão rápida, SEO, pontos de atenção, filtros e status entre página e catálogo."
+];
+
+const monsterHunterWorldDescriptionPtById = {
+  monster_hunter_world_conqueror_of_the_new_world: "Desbloqueie todos os troféus de Monster Hunter: World.",
+  monster_hunter_world_miniature_crown_master: "Obtenha uma gold miniature crown para quase todos os monstros do registro de caça.",
+  monster_hunter_world_giant_crown_master: "Obtenha uma gold giant crown para quase todos os monstros do registro de caça.",
+  monster_hunter_world_the_sapphire_star: "Resolva o mistério da Elder Crossing.",
+  monster_hunter_world_a_living_fossil: "Capture o peixe conhecido como fóssil vivo.",
+  monster_hunter_world_snuggles_for_all: "Capture uma criatura fofa e aconchegante.",
+  monster_hunter_world_bristles_for_all: "Capture uma criatura rígida e eriçada.",
+  monster_hunter_world_rainbow_bright: "Capture uma criatura que brilha como um arco-íris.",
+  monster_hunter_world_monster_phd: "Pesquise tudo sobre quase todos os monstros.",
+  monster_hunter_world_indomitable: "Cace 50 monstros temperados.",
+  monster_hunter_world_miniature_crown_collector: "Obtenha miniature crowns para 10 ou mais monstros.",
+  monster_hunter_world_giant_crown_collector: "Obtenha giant crowns para 10 ou mais monstros.",
+  monster_hunter_world_capture_pro: "Capture 50 monstros.",
+  monster_hunter_world_monster_hunter: "Cace 500 monstros grandes.",
+  monster_hunter_world_welcome_to_the_new_world: "Conquiste o direito de aceitar assigned quests de duas estrelas.",
+  monster_hunter_world_nothing_stops_this_commission: "Conquiste o direito de aceitar assigned quests de três estrelas.",
+  monster_hunter_world_defender_of_astera: "Conquiste o direito de aceitar assigned quests de quatro estrelas.",
+  monster_hunter_world_into_the_deep: "Conquiste o direito de aceitar assigned quests de cinco estrelas.",
+  monster_hunter_world_death_begets_life: "Conduza Zorah Magdaros com sucesso.",
+  monster_hunter_world_the_empress_of_the_highlands: "Conquiste o direito de aceitar assigned quests de sete estrelas.",
+  monster_hunter_world_one_shall_stand_one_shall_fall: "Conquiste o direito de aceitar assigned quests de oito estrelas.",
+  monster_hunter_world_the_hunters_life_for_me: "Complete 50 optional quests.",
+  monster_hunter_world_an_inquisitive_mind: "Complete sua primeira investigation.",
+  monster_hunter_world_the_franchise_hunter: "Complete 50 investigations.",
+  monster_hunter_world_step_into_the_arena: "Complete sua primeira arena quest.",
+  monster_hunter_world_nowhere_to_go_but_up: "Complete 50 arena quests.",
+  monster_hunter_world_new_world_settler: "Estabeleça cinco camps.",
+  monster_hunter_world_the_art_of_camouflage: "Escape do bando de Jagras escondendo-se nos arbustos.",
+  monster_hunter_world_angling_for_a_bite: "Pesque seu primeiro peixe.",
+  monster_hunter_world_mmm_so_tasty: "Prepare seu primeiro Well-done Steak.",
+  monster_hunter_world_the_bigger_they_are: "Monte seu primeiro monstro.",
+  monster_hunter_world_commissioned_work: "Obtenha 100.000 research points.",
+  monster_hunter_world_bourgeois_hunter: "Tenha 1.000.000 zenny.",
+  monster_hunter_world_impregnable_defense: "Obtenha cinco peças de armadura altamente raras.",
+  monster_hunter_world_power_is_everything: "Obtenha cinco armas altamente raras.",
+  monster_hunter_world_movin_on_up: "Mude-se para um quarto melhor.",
+  monster_hunter_world_first_friends: "Faça amizade com seu primeiro Tailraider.",
+  monster_hunter_world_bosom_buddies: "Domine completamente um Palico Gadget.",
+  monster_hunter_world_temper_temper: "Cace seu primeiro monstro temperado.",
+  monster_hunter_world_miniature_crown: "Registre sua primeira miniature crown.",
+  monster_hunter_world_giant_crown: "Registre sua primeira giant crown.",
+  monster_hunter_world_capture_novice: "Capture seu primeiro monstro.",
+  monster_hunter_world_elderslayer: "Mate 50 Elder Dragons.",
+  monster_hunter_world_monster_slayer: "Cace 100 monstros grandes.",
+  monster_hunter_world_help: "Dispare um SOS flare pela primeira vez.",
+  monster_hunter_world_i_am_the_reinforcements: "Responda a SOS flares e ajude a completar 10 quests.",
+  monster_hunter_world_hunters_united: "Complete uma quest via multiplayer.",
+  monster_hunter_world_hunters_united_forever: "Complete 100 quests via multiplayer.",
+  monster_hunter_world_spreading_the_word: "Colete mais de 50 Guild Cards.",
+  monster_hunter_world_established_hunter: "Alcance Hunter Rank 100."
+};
+
+const mhwTagsById = {
+  monster_hunter_world_conqueror_of_the_new_world: ["Platina"],
+  monster_hunter_world_miniature_crown_master: ["Crown", "Miniature Crown", "Gold Crown", "RNG", "Monster Field Guide", "Coletável", "Grind", "Endgame", "Atenção"],
+  monster_hunter_world_giant_crown_master: ["Crown", "Giant Crown", "Gold Crown", "RNG", "Monster Field Guide", "Coletável", "Grind", "Endgame", "Atenção"],
+  monster_hunter_world_the_sapphire_star: ["História", "Assigned Quests", "Progressão"],
+  monster_hunter_world_a_living_fossil: ["Endemic Life", "Fish", "Rare Spawn", "Coletável", "Cleanup", "Atenção"],
+  monster_hunter_world_snuggles_for_all: ["Endemic Life", "Rare Spawn", "Coletável", "Cleanup", "Atenção"],
+  monster_hunter_world_bristles_for_all: ["Endemic Life", "Rare Spawn", "Coletável", "Cleanup", "Atenção"],
+  monster_hunter_world_rainbow_bright: ["Endemic Life", "Rare Spawn", "Coletável", "Cleanup", "Atenção"],
+  monster_hunter_world_monster_phd: ["Research", "Monster Field Guide", "Checklist", "Endgame", "Grind"],
+  monster_hunter_world_indomitable: ["Tempered", "50 hunts", "Endgame", "Grind"],
+  monster_hunter_world_miniature_crown_collector: ["Crown", "Miniature Crown", "Gold Crown", "RNG", "Coletável", "Grind"],
+  monster_hunter_world_giant_crown_collector: ["Crown", "Giant Crown", "Gold Crown", "RNG", "Coletável", "Grind"],
+  monster_hunter_world_capture_pro: ["Capture", "50 captures", "Checklist", "Grind", "Cleanup"],
+  monster_hunter_world_monster_hunter: ["Large monsters", "500 hunts", "Hunter Rank", "Grind", "Endgame"],
+  monster_hunter_world_welcome_to_the_new_world: ["História", "Assigned Quests", "Progressão"],
+  monster_hunter_world_nothing_stops_this_commission: ["História", "Assigned Quests", "Progressão"],
+  monster_hunter_world_defender_of_astera: ["História", "Assigned Quests", "Progressão"],
+  monster_hunter_world_into_the_deep: ["História", "Assigned Quests", "Progressão"],
+  monster_hunter_world_death_begets_life: ["História", "Assigned Quests", "Progressão"],
+  monster_hunter_world_the_empress_of_the_highlands: ["História", "Assigned Quests", "Progressão"],
+  monster_hunter_world_one_shall_stand_one_shall_fall: ["História", "Assigned Quests", "Progressão"],
+  monster_hunter_world_the_hunters_life_for_me: ["Optional quests", "Checklist", "Cleanup"],
+  monster_hunter_world_an_inquisitive_mind: ["Investigations", "Progressão", "Cleanup"],
+  monster_hunter_world_the_franchise_hunter: ["Investigations", "Checklist", "Grind", "Cleanup"],
+  monster_hunter_world_step_into_the_arena: ["Arena", "Cleanup"],
+  monster_hunter_world_nowhere_to_go_but_up: ["Arena", "50 Arena Quests", "Grind", "Checklist", "Cleanup"],
+  monster_hunter_world_new_world_settler: ["Camps", "Delivery", "Exploração", "Checklist", "Cleanup"],
+  monster_hunter_world_the_art_of_camouflage: ["História", "Ação específica"],
+  monster_hunter_world_angling_for_a_bite: ["Fish", "Ação específica", "Cleanup"],
+  monster_hunter_world_mmm_so_tasty: ["Culinária", "Ação específica", "Cleanup"],
+  monster_hunter_world_the_bigger_they_are: ["Montaria", "Ação específica", "Cleanup"],
+  monster_hunter_world_commissioned_work: ["Research Points", "Economia", "Grind", "Cleanup"],
+  monster_hunter_world_bourgeois_hunter: ["Zenny", "Economia", "Grind", "Cleanup"],
+  monster_hunter_world_impregnable_defense: ["Armor", "Crafting", "Materials", "Cleanup"],
+  monster_hunter_world_power_is_everything: ["Weapons", "Crafting", "Materials", "Cleanup"],
+  monster_hunter_world_movin_on_up: ["Astera", "Quarto", "Cleanup"],
+  monster_hunter_world_first_friends: ["Tailraider", "Checklist", "Cleanup"],
+  monster_hunter_world_bosom_buddies: ["Palico Gadget", "Checklist", "Cleanup"],
+  monster_hunter_world_temper_temper: ["Tempered", "Endgame", "Progressão"],
+  monster_hunter_world_miniature_crown: ["Crown", "Miniature Crown", "Coletável", "RNG"],
+  monster_hunter_world_giant_crown: ["Crown", "Giant Crown", "Coletável", "RNG"],
+  monster_hunter_world_capture_novice: ["Capture", "Checklist", "Cleanup"],
+  monster_hunter_world_elderslayer: ["Elder Dragons", "50 kills", "Grind", "Endgame"],
+  monster_hunter_world_monster_slayer: ["Large monsters", "100 hunts", "Grind"],
+  monster_hunter_world_help: ["Online", "SOS"],
+  monster_hunter_world_i_am_the_reinforcements: ["Online", "Multiplayer", "Coop", "Co-op online", "SOS", "Checklist", "Cleanup"],
+  monster_hunter_world_hunters_united: ["Online", "Multiplayer", "Coop", "Co-op online"],
+  monster_hunter_world_hunters_united_forever: ["Online", "Multiplayer", "Coop", "Co-op online", "100 quests", "Grind", "Cleanup"],
+  monster_hunter_world_spreading_the_word: ["Online", "Guild Cards", "Checklist", "Grind", "Cleanup"],
+  monster_hunter_world_established_hunter: ["Hunter Rank", "HR100", "Endgame", "Grind"]
+};
+
+const mhwOnlineIds = new Set(["monster_hunter_world_help", "monster_hunter_world_i_am_the_reinforcements", "monster_hunter_world_hunters_united", "monster_hunter_world_hunters_united_forever", "monster_hunter_world_spreading_the_word"]);
+const mhwCoopIds = new Set(["monster_hunter_world_i_am_the_reinforcements", "monster_hunter_world_hunters_united", "monster_hunter_world_hunters_united_forever"]);
+
+const monsterHunterWorldGuide = sampleGames.find(game => game.slug === "monster-hunter-world");
+if (monsterHunterWorldGuide) {
+  const monsterHunterWorldTrophies = monsterHunterWorldGuide.trophies.map(trophy => {
+    const descriptionPt = monsterHunterWorldDescriptionPtById[trophy.id];
+    const namePt = trophy.name_pt || trophy.name;
+    return {
+      ...trophy,
+      trophyNameOriginal: trophy.name,
+      trophyNamePtBr: namePt,
+      name_pt: namePt,
+      namePtSource: "editorial_ptbr_reference",
+      tier: trophy.type,
+      description: descriptionPt,
+      descriptionPtBr: descriptionPt,
+      ptDescription: descriptionPt,
+      localizedDescription: { ptBr: descriptionPt },
+      descriptionPtSource: "editorial_ptbr_reference",
+      guideTip: trophy.tip,
+      is_missable: false,
+      isMissable: false,
+      is_online: mhwOnlineIds.has(trophy.id),
+      isOnline: mhwOnlineIds.has(trophy.id),
+      is_coop: mhwCoopIds.has(trophy.id),
+      isCoop: mhwCoopIds.has(trophy.id),
+      dlcRequired: false,
+      difficultyRequired: false,
+      tags: mhwTagsById[trophy.id]
+    };
+  });
+
+  Object.assign(monsterHunterWorldGuide, {
+    title: "Monster Hunter: World",
+    developer: "Capcom",
+    publisher: "Capcom",
+    platforms: ["PS4"],
+    platform_base: "PS4",
+    platformBase: "PS4",
+    guideScope: "Lista PlayStation base de 50 troféus",
+    genre: ["action RPG", "caça", "multiplayer online"],
+    mode: "single-player com multiplayer/co-op online obrigatório para a platina",
+    difficulty: 4,
+    time: "250-400h",
+    estimatedTime: "250 a 400 horas",
+    time_min_hours: 250,
+    time_max_hours: 400,
+    time_sort_hours: 300,
+    time_bucket: "long",
+    runs: "Uma campanha com endgame e cleanup livre.",
+    hasMissables: false,
+    missableCount: 0,
+    missable_count: 0,
+    hasOnline: true,
+    hasMandatoryOnline: true,
+    hasMandatoryCoop: true,
+    requiresOnline: true,
+    requiresCoop: true,
+    onlineRequired: true,
+    online_required: true,
+    coopRequired: true,
+    coop_required: true,
+    dlcRequired: false,
+    dlc_required: false,
+    dlcRequiredForPlatinum: false,
+    difficultyTrophiesRequired: false,
+    newGamePlusRequired: false,
+    hasChapterSelect: false,
+    chapterSelect: false,
+    hasFreeRoam: true,
+    guideFocus: "Gold crowns, HR100, 500 monstros, online/multiplayer, Guild Cards, endemic life e Iceborne separado",
+    missable: "Sem perdíveis permanentes. Todos os requisitos da lista base podem ser concluídos no endgame e cleanup.",
+    runs_summary: "Uma progressão completa da campanha seguida de endgame livre, online e grind de crowns.",
+    missable_summary: "Nenhum troféu é perdível. O risco real é o tempo de crown hunting e dos grandes cumulativos.",
+    online_summary: "Online e multiplayer são obrigatórios por SOS flares, quests multiplayer e Guild Cards. A maior parte pode ser feita solo, mas a platina não é 100% offline.",
+    grind_summary: "O grind principal envolve gold crowns, HR100, 500 large monsters, 50 Elder Dragons, 50 captures, 50 arena quests, research e 100 quests multiplayer.",
+    dlc_scope: "Este guia cobre somente os 50 troféus do jogo base. Iceborne tem progressão e lista com platina própria e não é necessário para Conqueror of the New World.",
+    difficulty_reason: "4/10: não há dificuldade selecionável nem troféu de dificuldade. O desafio vem do endgame, arena, domínio de arma, RNG e volume de grind.",
+    time_reason: "A faixa de 250-400h considera campanha, HR100, online, research, endemic life e o RNG de gold crowns.",
+    first_run_advice: "Avance a história, capture monstros, faça optional quests e inicie cedo SOS, multiplayer, Guild Cards, investigations e research.",
+    cleanup_advice: "Combine HR100, 500 monstros, Elder Dragons, captures, tempered monsters e investigations com crown hunting; limpe online, arena e endemic life em paralelo.",
+    before_you_start: "A lista base exige online/multiplayer, mas não tem perdíveis ou troféu de dificuldade. Iceborne fica separado. Gold crowns, e não silver crowns, são o maior gargalo.",
+    best_for: "Ideal para quem gosta do loop de caça, multiplayer e projetos de platina de longo prazo.",
+    avoid_if: "Evite se você não quer online obrigatório, RNG pesado ou centenas de horas de grind.",
+    status: "published",
+    editorial_status: "published",
+    editorialStatus: "review",
+    editorial_review_status: "review",
+    coverage_level: "strong",
+    is_verified: false,
+    verification_status: "review",
+    quality_warnings: [],
+    last_reviewed_at: "2026-06-19",
+    reviewed_by: "AtlasAchievement",
+    completionState: "complete",
+    completion_state: "complete",
+    verification_note: "Conteúdo revisado para publicação: lista base com 50 troféus, online e coop obrigatórios, sem perdíveis ou DLC, crowns e Iceborne separados. O selo aguarda a suíte global ficar verde.",
+    editorial_notes: "Revisão editorial focada em gold crowns, RNG, HR100, grandes cumulativos, SOS, multiplayer, Guild Cards, endemic life, research, arena e Iceborne separado.",
+    editorial_summary: [
+      "Monster Hunter: World é uma platina extremamente longa, dependente de endgame e grind, mas sem troféus perdíveis e sem requisito de dificuldade. A lista base tem 50 troféus e não exige Iceborne, porém exige online e multiplayer por SOS, quests multiplayer e Guild Cards.",
+      "O grande gargalo é a caça às gold crowns: Miniature Crown Master e Giant Crown Master podem consumir centenas de horas por RNG. Silver crown não conta para Giant Crown Master. A rota mais segura combina crown hunting com HR100, 500 large monsters, captures, Elder Dragons, tempered monsters, investigations e research.",
+      "Iceborne tem progressão e lista separadas e não é necessário para Conqueror of the New World. Event quests podem ajudar em algumas crowns quando disponíveis, mas não tornam DLC obrigatória. Os nomes PT-BR usam tradução editorial consistente quando não há localização oficial confirmada no dado do projeto."
+    ],
+    seo: {
+      title: "Monster Hunter: World: Guia de Troféus e Platina",
+      description: "Guia de troféus de Monster Hunter: World com roadmap da platina, 50 troféus, online obrigatório, multiplayer, gold crowns, HR100, endemic life e Iceborne separado.",
+      metaDescription: "Guia de troféus de Monster Hunter: World com roadmap da platina, 50 troféus, online obrigatório, multiplayer, gold crowns, Miniature Crown Master, Giant Crown Master, HR100, endemic life e Iceborne separado.",
+      ogTitle: "Monster Hunter: World: Guia de Troféus e Platina",
+      ogDescription: "Roadmap PT-BR da platina base de Monster Hunter: World com online, multiplayer, gold crowns, HR100, endemic life e Iceborne separado.",
+      keywords: ["Monster Hunter World troféus", "Monster Hunter World platina", "guia Monster Hunter World", "Monster Hunter World trophy guide", "Conqueror of the New World", "Monster Hunter World crowns", "Miniature Crown Master", "Giant Crown Master", "Monster Hunter World gold crowns", "Monster Hunter World HR100", "Monster Hunter World Guild Cards", "Monster Hunter World SOS", "Monster Hunter World Iceborne separado"]
+    },
+    quickDecision: {
+      verdict: "Sim, mas é uma platina de longo prazo para quem aceita o loop de caça e RNG pesado.",
+      difficulty: "Moderada, cerca de 4/10.",
+      time: "Muito longo, entre 250 e 400 horas, frequentemente acima de 300h por causa das crowns.",
+      mainRisk: "Gold crowns, HR100, 500 monstros, online, multiplayer, Guild Cards e Iceborne separado.",
+      risk: "Baixo em perda permanente e altíssimo em tempo e RNG.",
+      onlineCoop: "Online e multiplayer/co-op obrigatórios.",
+      dlc: "Iceborne não é necessário para a platina base.",
+      firstAction: "Avance a campanha capturando monstros e comece cedo o progresso online e de research."
+    },
+    roadmap: monsterHunterWorldRoadmap,
+    roadmapStages: monsterHunterWorldRoadmap,
+    attentionPoints: monsterHunterWorldAttentionPoints,
+    checklist: monsterHunterWorldChecklist,
+    faq: monsterHunterWorldFaq,
+    trophies: monsterHunterWorldTrophies
+  });
+}
+
+const metaphorRoadmap = [
+  {
+    title: "Faça a primeira run com walkthrough 100%",
+    focus: "Calendário, história, quests e base da platina",
+    objective: "Concluir quase todos os troféus em uma run planejada, evitando perdíveis de calendário.",
+    actions: [
+      "Siga um calendário 100% desde o início.",
+      "Complete todos os dungeons de história.",
+      "Faça todas as quests principais e side quests necessárias para Help Anyone in Need.",
+      "Acompanhe Followers, Virtues, debates, livros, receitas e Gold Beetles.",
+      "Use slots de save manual separados antes de blocos importantes.",
+      "Não confie em free roam pós-história, porque não há level select nem free roam depois do final."
+    ],
+    warning: "A primeira run concentra a maioria dos perdíveis. Jogar às cegas pode exigir retrabalho grande ou uma nova run completa.",
+    result: "A campanha e quase toda a platina ficam encaminhadas antes do New Game+."
+  },
+  {
+    title: "Maximize Followers e Archetypes",
+    focus: "Hearts as One e Archetype Hero",
+    objective: "Maximizar todos os Followers e dominar todos os Archetypes com o protagonista.",
+    actions: [
+      "Aumente todos os Followers até o rank máximo.",
+      "Desbloqueie todos os Archetypes ligados aos Followers.",
+      "Use o grind final para levar cada Archetype ao rank 20.",
+      "Preserve spawners úteis no dungeon final enquanto precisar de XP, A-EXP, MAG ou dinheiro.",
+      "Use Storyteller na primeira run se quiser acelerar o grind.",
+      "Confirme Archetype Hero antes de avançar para o final definitivo."
+    ],
+    warning: "Archetype Hero depende de Followers e calendário. Followers incompletos podem bloquear Archetypes e exigir nova run.",
+    result: "Hearts as One, Archetype Hero e boa parte do grind ficam resolvidos."
+  },
+  {
+    title: "Complete quests, debates, livros e receitas",
+    focus: "Perdíveis de calendário",
+    objective: "Fechar os troféus mais fáceis de perder por data ou janela de tempo.",
+    actions: [
+      "Complete todas as quests necessárias para Help Anyone in Need.",
+      "Vença todos os debates de Debate Me nas datas certas.",
+      "Leia todos os 7 livros para Bookworm.",
+      "Pegue o livro de Julian em Port Brilehaven quando disponível.",
+      "Faça todas as 21 receitas para King of Cuisine.",
+      "Faça Chef in Training com Maria e Fabienne antes de outubro."
+    ],
+    warning: "Debates, livros, receitas e Chef in Training são perdíveis por calendário. Não deixe para a reta final sem conferir datas.",
+    result: "Os principais perdíveis sociais e de calendário ficam concluídos."
+  },
+  {
+    title: "Feche Gold Beetles, desenhos, cidades e checklists",
+    focus: "Coletáveis e exploração",
+    objective: "Resolver exploração e itens sem inflar perdíveis indevidamente.",
+    actions: [
+      "Colete e troque Gold Beetles suficientes para All That Glitters.",
+      "Aproveite a margem de Gold Beetles; perder um Beetle isolado não significa falha automática.",
+      "Colete todos os drawings da jornada para Vista Viewer.",
+      "Visite todas as towns para Globetrotter.",
+      "Desbloqueie o mapa inteiro para Worldly Wisdom.",
+      "Use checklist por região para reduzir o cleanup."
+    ],
+    warning: "Há mais Gold Beetles do que o necessário. All That Glitters é Coletável/Checklist/Grind, não um dos 10 perdíveis principais.",
+    result: "Exploração e coletáveis ficam finalizados sem inflar Perdíveis."
+  },
+  {
+    title: "Crie masks, vessels e conclua experimentos",
+    focus: "Summon Mask Time",
+    objective: "Criar todos os summoning vessels e masks necessários.",
+    actions: [
+      "Faça um Special Experiment em Akademia para For Science!.",
+      "Colete materiais de Vessels em bosses, talismãs e baús.",
+      "Use rotas de drop e compra para Masks.",
+      "Compre Masks do Weary Shopkeep quando disponíveis.",
+      "Use habilidades de Merchant para melhorar drops quando necessário.",
+      "Confirme Summon Mask Time antes de encerrar a run."
+    ],
+    warning: "Summon Mask Time é perdível se materiais e janelas forem negligenciados. Trate-o como checklist forte.",
+    result: "O bloco de Akademia, Masks e Vessels fica concluído."
+  },
+  {
+    title: "Prepare Star Shatterer no dungeon final",
+    focus: "Destroyer Charadrius, rota final e save manual",
+    objective: "Derrotar Destroyer Charadrius sem enfraquecer o boss.",
+    actions: [
+      "Faça save manual antes da rota final.",
+      "No dia 10/26, não derrote os sub-bosses que enfraquecem Charadrius.",
+      "Evite as rotas que levam aos sub-bosses antes de Star Shatterer.",
+      "Vá direto ao final boss e derrote Destroyer Charadrius em sua forma não enfraquecida.",
+      "Depois do troféu, recarregue o save se quiser enfrentar os sub-bosses e pegar recompensas.",
+      "Use buffs e debuffs fortes para controlar a luta."
+    ],
+    warning: "Derrotar qualquer sub-boss que enfraquece Charadrius bloqueia Star Shatterer naquela rota. Use save manual.",
+    result: "Star Shatterer fica concluído sem sacrificar as recompensas da rota final."
+  },
+  {
+    title: "Limpe cumulativos e misc antes de encerrar",
+    focus: "Cleanup, grind e troféus simples",
+    objective: "Resolver cumulativos, combate, compras e atividades antes do final.",
+    actions: [
+      "Use 50 Synthesis skills diferentes para Teamwork Makes the Dream Work.",
+      "Faça 100 ataques contra inimigos atordoados para Tactical Strike.",
+      "Consulte Gallica 100 vezes para Hey, Listen!.",
+      "Gaste 100.000 reeve com skills que consomem dinheiro para Money is Power.",
+      "Faça 30 vitórias consecutivas na Gold Class para Coliseum Champion.",
+      "Complete a distância de blade-riding para Sword Surfer."
+    ],
+    warning: "Esses troféus não são perdíveis principais, mas deixá-los todos para o fim aumenta bastante o cleanup.",
+    result: "A primeira run fica praticamente completa antes do New Game+."
+  },
+  {
+    title: "Faça New Game+ para Closing the Book",
+    focus: "Redscale Dragon, Book of Apocalypse e dificuldade",
+    objective: "Derrotar o Redscale Dragon no New Game+ e fechar a platina.",
+    actions: [
+      "Inicie New Game+ em Easy ou dificuldade superior.",
+      "Não selecione Storyteller em nenhum momento da segunda run.",
+      "Avance até acessar o Book of Apocalypse em Akademia.",
+      "Prepare nível, Archetypes, equipamentos e itens como Sublime Spoonful.",
+      "Derrote o Redscale Dragon.",
+      "Confirme Closing the Book e The Traveller."
+    ],
+    warning: "Storyteller na segunda run bloqueia o Redscale Dragon até outra playthrough. Esse é o erro mais grave da platina.",
+    result: "Closing the Book e a platina The Traveller ficam concluídos."
+  }
+];
+
+const metaphorAttentionPoints = [
+  { title: "10 perdíveis", type: "Calendário e NG+", tip: "Metaphor: ReFantazio tem 10 perdíveis importantes, principalmente por calendário, Followers, quests, debates, livros, receitas, Archetypes e NG+." },
+  { title: "New Game+ obrigatório", type: "Closing the Book", tip: "Closing the Book exige New Game+ e o Redscale Dragon do Book of Apocalypse." },
+  { title: "Não use Storyteller na segunda run", type: "Easy ou superior", tip: "Na segunda run, jogue em Easy ou superior. Storyteller bloqueia o acesso ao Redscale Dragon." },
+  { title: "Star Shatterer", type: "Não enfraquecer", tip: "Enfrente Destroyer Charadrius sem derrotar os sub-bosses que enfraquecem o boss." },
+  { title: "Calendário sem free roam", type: "Datas específicas", tip: "Não há free roam ou level select após a história. Eventos de calendário precisam ser feitos no momento certo." },
+  { title: "Followers e Archetypes", type: "Checklist", tip: "Hearts as One e Archetype Hero dependem de maximizar Followers e dominar todos os Archetypes." },
+  { title: "Debates", type: "Debate Me", tip: "Debate Me exige vencer todos os debates em datas específicas." },
+  { title: "Bookworm", type: "7 livros", tip: "Bookworm exige todos os 7 livros, incluindo o livro obtido com Julian em Port Brilehaven." },
+  { title: "Chef in Training", type: "Antes de outubro", tip: "Chef in Training depende de Maria e Fabienne e não deve ser deixado para outubro." },
+  { title: "Gold Beetles", type: "All That Glitters", tip: "All That Glitters exige trocas de Gold Beetles, mas há folga. Não trate todo Beetle perdido como falha automática." },
+  { title: "Save manual", type: "16 slots", tip: "Use slots separados antes de datas críticas, do dungeon final e de decisões de rota." },
+  { title: "Sem online, coop ou DLC", type: "Lista base", tip: "A platina é offline, sem coop obrigatório e sem DLC necessária." }
+];
+
+const metaphorFaq = [
+  { question: "Metaphor: ReFantazio tem troféus perdíveis?", answer: "Sim. Há 10 perdíveis importantes ligados a calendário, Followers, quests, debates, livros, receitas, Archetypes, Star Shatterer e Closing the Book." },
+  { question: "Precisa jogar online para platinar?", answer: "Não. A lista é totalmente offline." },
+  { question: "Precisa de cooperação?", answer: "Não. Nenhum troféu exige cooperação." },
+  { question: "Precisa de DLC?", answer: "Não. A platina usa apenas a lista base." },
+  { question: "Quantas runs são necessárias?", answer: "No mínimo duas. A primeira run faz quase tudo; a segunda é necessária para Closing the Book no New Game+." },
+  { question: "A dificuldade afeta troféus?", answer: "Sim, mas apenas Closing the Book: na segunda run, jogue em Easy ou superior e não selecione Storyteller." },
+  { question: "Posso usar Storyteller?", answer: "Na primeira run, sim, se quiser facilitar o grind. Na segunda run do Redscale Dragon, não use Storyteller, pois isso bloqueia o acesso ao boss." },
+  { question: "Qual é o maior risco da platina?", answer: "Perder eventos de calendário ou escolher Storyteller na run de Closing the Book." },
+  { question: "Star Shatterer exige o quê?", answer: "Exige derrotar Destroyer Charadrius sem enfraquecê-lo. Não derrote os sub-bosses do dungeon final antes desse troféu." },
+  { question: "Bookworm exige o quê?", answer: "Exige ler todos os 7 livros, incluindo o livro ligado a Julian em Port Brilehaven." },
+  { question: "All That Glitters é perdível?", answer: "Não é um dos perdíveis principais porque há margem de Gold Beetles. Colete e troque Beetles suficientes para o troféu." },
+  { question: "Quanto tempo leva para platinar?", answer: "Em média, cerca de 120 horas, dependendo do walkthrough, do grind de Archetypes, dos Followers, das quests e da velocidade da segunda run." }
+];
+
+const metaphorChecklist = [
+  "Conferir 44 troféus e distribuição 1 platina, 3 ouro, 8 prata e 32 bronze.",
+  "Conferir The Traveller como platina.",
+  "Conferir onlineRequired, coopRequired e dlcRequired false.",
+  "Conferir hasMissables true, missableCount 10 e filtro Perdíveis 10.",
+  "Conferir filtros Online 0, Coop 0, DLC 0 e Dificuldade 1.",
+  "Conferir Closing the Book como Perdível, Dificuldade, NG+ e Redscale Dragon.",
+  "Conferir Storyteller na segunda run como bloqueio do Redscale Dragon.",
+  "Conferir Star Shatterer como Perdível, Destroyer Charadrius e não enfraquecer.",
+  "Conferir Archetype Hero, Summon Mask Time e Hearts as One.",
+  "Conferir King of Cuisine, Help Anyone in Need, Debate Me, Chef in Training e Bookworm.",
+  "Conferir All That Glitters sem inflar Perdíveis.",
+  "Conferir Gold Beetles, 7 livros, 21 receitas, Followers, quests e debates.",
+  "Conferir Drawings, Vista Viewer, Globetrotter e Worldly Wisdom.",
+  "Conferir Coliseum Champion, Sword Surfer e cumulativos de combate.",
+  "Conferir ausência de online, coop e DLC obrigatória.",
+  "Conferir save transfer PS4/PS5 sem prometer autopop automático.",
+  "Conferir ausência de free roam e level select após a história.",
+  "Conferir saves manuais e 16 slots.",
+  "Conferir nome oficial em inglês, PT-BR separado e descrição em português nos 44 troféus.",
+  "Conferir roadmap estruturado sem objetos brutos ou labels internas no front.",
+  "Conferir FAQ, decisão rápida, SEO, pontos de atenção, filtros e status entre página e catálogo."
+];
+
+const metaphorMissableIds = new Set([
+  "metaphor_closing_the_book", "metaphor_star_shatterer", "metaphor_archetype_hero", "metaphor_summon_mask_time",
+  "metaphor_hearts_as_one", "metaphor_king_of_cuisine", "metaphor_help_anyone_in_need", "metaphor_debate_me",
+  "metaphor_chef_in_training", "metaphor_bookworm"
+]);
+
+const metaphorTrophyEditorial = {
+  metaphor_the_traveller: ["O Viajante", "Conquiste todos os troféus.", "Conclua os outros 43 troféus da lista base para liberar a platina.", ["Platina"]],
+  metaphor_closing_the_book: ["Fechando o Livro", "Derrote o dragão de escamas vermelhas do Livro do Apocalipse.", "No New Game+, jogue em Easy ou superior e nunca em Storyteller; acesse o Book of Apocalypse em Akademia e derrote o Redscale Dragon.", ["Perdível", "Dificuldade", "NG+", "Storyteller", "Easy ou superior", "Redscale Dragon", "Book of Apocalypse", "Superboss", "Grind", "Atenção"]],
+  metaphor_star_shatterer: ["Destruidor de Estrelas", "Derrote Destroyer Charadrius, portador do verdadeiro poder.", "Faça save manual e derrote Destroyer Charadrius sem enfrentar antes os sub-bosses que o enfraquecem.", ["Perdível", "Final Boss", "Destroyer Charadrius", "Não enfraquecer", "Save manual", "Atenção"]],
+  metaphor_all_that_glitters: ["Nem Tudo que Reluz", "Faça todas as trocas possíveis de Gold Beetles.", "Colete e troque Gold Beetles suficientes em Port Brilehaven. Há Beetles extras, então um perdido não encerra a run.", ["Gold Beetles", "Coletável", "Checklist", "Port Brilehaven", "Grind"]],
+  metaphor_coronation_of_the_king: ["Coroação do Rei", "Traga a verdadeira paz.", "Conclua a história pelo caminho correto.", ["História", "Final"]],
+  metaphor_archetype_hero: ["Herói dos Arquétipos", "Domine todos os Archetypes com o protagonista.", "Maximize Followers para liberar linhagens e leve todos os Archetypes do protagonista ao rank 20 antes do fim.", ["Perdível", "Archetypes", "Followers", "Grind", "Checklist", "Atenção"]],
+  metaphor_summon_mask_time: ["Hora da Máscara de Invocação", "Crie todos os summoning vessels e masks.", "Acompanhe materiais, drops, compras e Special Experiments em Akademia antes de encerrar a primeira run.", ["Perdível", "Masks", "Vessels", "Akademia", "Coletável", "Checklist", "Grind", "Atenção"]],
+  metaphor_money_is_power: ["Dinheiro é Poder", "Gaste 100.000 reeve usando habilidades que consomem dinheiro.", "Use habilidades de Merchant ou Tycoon que gastam reeve e acompanhe o total durante o cleanup.", ["Reeve", "Merchant", "Grind", "Cleanup"]],
+  metaphor_hearts_as_one: ["Corações Unidos", "Maximize o rank de todos os Followers.", "Planeje calendário, Virtues e convites para levar todos os Followers ao rank máximo.", ["Perdível", "Followers", "Calendário", "Social", "Checklist", "Atenção"]],
+  metaphor_king_of_cuisine: ["Rei da Culinária", "Prepare todas as receitas.", "Cozinhe as 21 receitas e compre ingredientes nas cidades certas antes do fim do calendário.", ["Perdível", "Receitas", "Culinária", "Coletável", "Checklist", "Calendário", "Atenção"]],
+  metaphor_help_anyone_in_need: ["Ajude Quem Precisa", "Complete todas as quests necessárias.", "Conclua quests principais e side quests dentro dos prazos, acompanhando o calendário.", ["Perdível", "Quests", "Side quests", "Calendário", "Checklist", "Atenção"]],
+  metaphor_entrusted: ["Confiado", "Supere todos os trials para derrotar Louis.", "Complete a questline dos Dragon Trials com party e Archetypes preparados.", ["Dragon Trials", "Questline", "Combate", "Cleanup", "Atenção"]],
+  metaphor_allies_united: ["Aliados Unidos", "Encontre seu contato no Northern Border Fort.", "Troféu automático de história.", ["História"]],
+  metaphor_out_of_the_fire: ["Fora do Fogo", "Conclua as Nord Mines.", "Troféu automático de história ao concluir o dungeon.", ["História"]],
+  metaphor_calamity_averted: ["Calamidade Evitada", "Conclua a Regalith Grand Cathedral.", "Troféu automático de história ao concluir o dungeon.", ["História"]],
+  metaphor_dark_truths: ["Verdades Sombrias", "Conclua o Kriegante Castle.", "Troféu automático de história ao concluir o dungeon.", ["História"]],
+  metaphor_on_knifes_edge: ["No Fio da Navalha", "Conclua o Charadrius.", "Troféu automático de história.", ["História"]],
+  metaphor_history_untold: ["História Não Contada", "Conclua o Dragon Temple.", "Troféu automático de história ao concluir o dungeon.", ["História"]],
+  metaphor_mission_accomplished: ["Missão Cumprida", "Conclua a Montario Opera House.", "Troféu automático de história.", ["História"]],
+  metaphor_skybound_hope: ["Esperança Celeste", "Conclua o Skybound Avatar.", "Troféu automático de história ao concluir o dungeon.", ["História"]],
+  metaphor_archetype_adept: ["Adepto dos Arquétipos", "Domine um Archetype.", "Leve qualquer Archetype ao rank máximo; virá naturalmente no caminho de Archetype Hero.", ["Archetypes", "Progressão"]],
+  metaphor_his_majesty: ["Sua Majestade", "Estude o Prince Archetype.", "Troféu de história ligado ao Prince Archetype.", ["História", "Archetypes"]],
+  metaphor_united_front: ["Frente Unida", "Use uma Synthesis skill.", "Use qualquer Synthesis skill em combate.", ["Synthesis", "Combate"]],
+  metaphor_teamwork_makes_the_dream_work: ["Trabalho em Equipe Faz o Sonho Acontecer", "Use 50 Synthesis skills diferentes.", "Varie party e Archetypes para registrar 50 Synthesis skills diferentes.", ["Synthesis", "Combate", "Checklist", "Cleanup"]],
+  metaphor_for_science: ["Pela Ciência!", "Realize um Special Experiment.", "Faça qualquer Special Experiment em Akademia; combine com Summon Mask Time.", ["Akademia", "Vessels", "Cleanup"]],
+  metaphor_stunning: ["Atordoante!", "Atordoe um inimigo.", "Atordoe um inimigo no field combat antes de iniciar o squad battle.", ["Combate", "Cumulativo", "Cleanup"]],
+  metaphor_tactical_strike: ["Ataque Tático", "Cause dano de emboscada contra inimigos atordoados 100 vezes.", "Ataque inimigos atordoados e acumule 100 aberturas com vantagem.", ["Combate", "Cumulativo", "Cleanup"]],
+  metaphor_whats_yours_is_mine: ["O que é Seu é Meu", "Roube um item de um inimigo.", "Use Steal com um Archetype que tenha a habilidade.", ["Combate", "Ação específica", "Cleanup"]],
+  metaphor_stray_elements: ["Elementos Errantes", "Derrote 10 Elementas.", "Cace Elementas quando aparecerem e derrote-os antes que fujam.", ["Combate", "Cumulativo", "Cleanup"]],
+  metaphor_no_mercy: ["Sem Piedade", "Termine 50 batalhas sem sofrer dano.", "Use inimigos fracos, stuns e emboscadas para concluir 50 batalhas sem dano.", ["Combate", "Cumulativo", "Cleanup"]],
+  metaphor_hey_listen: ["Ei, Escute!", "Consulte Gallica 100 vezes.", "Consulte Gallica durante explorações e deslocamentos até chegar a 100 vezes.", ["Cumulativo", "Gallica", "Cleanup"]],
+  metaphor_shake_on_it: ["Aperto de Mãos", "Obtenha um Follower.", "Troféu automático ao obter seu primeiro Follower.", ["Followers", "História"]],
+  metaphor_monster_hunter: ["Caçador de Monstros", "Subjugue uma bounty.", "Conclua qualquer bounty disponível.", ["Bounty", "Combate", "Cleanup"]],
+  metaphor_blessed_power: ["Poder Abençoado", "Purifique um equipamento.", "Purifique qualquer equipamento em uma igreja quando tiver o material necessário.", ["Equipamento", "Ação específica", "Cleanup"]],
+  metaphor_shrewd_shopper: ["Comprador Astuto", "Compre um item com desconto.", "Faça uma compra em um dia de desconto.", ["Compra", "Ação específica", "Cleanup"]],
+  metaphor_globetrotter: ["Globetrotter", "Visite todas as towns.", "Visite todas as towns liberadas por quests, bounties e rotas da Gauntlet Runner.", ["Exploração", "Towns", "Mapa", "Checklist"]],
+  metaphor_worldly_wisdom: ["Sabedoria Mundana", "Desbloqueie o mapa inteiro.", "Complete quests, bounties, towns e dungeons opcionais para revelar o mapa.", ["Exploração", "Mapa", "Towns", "Checklist"]],
+  metaphor_vista_viewer: ["Observador de Paisagens", "Colete todos os desenhos da jornada.", "Colete todos os Drawings nas rotas da Gauntlet Runner.", ["Drawings", "Coletável", "Gauntlet Runner", "Checklist"]],
+  metaphor_debate_me: ["Debata Comigo", "Vença um debate contra cada candidato.", "Vença todos os debates nas datas específicas e salve antes das respostas.", ["Perdível", "Debates", "Calendário", "Datas específicas", "Atenção"]],
+  metaphor_coliseum_champion: ["Campeão do Coliseu", "Vença 30 batalhas consecutivas da Gold Class no coliseu.", "Prepare uma build consistente e conclua a sequência de 30 vitórias.", ["Coliseum", "Arena", "Checklist", "Habilidade", "Grind", "Cleanup", "Atenção"]],
+  metaphor_sword_surfer: ["Surfista de Espada", "Percorra uma grande distância usando blade-riding.", "Use blade-riding nos deslocamentos e complete a distância restante no cleanup.", ["Grind", "Distância", "Blade-riding", "Cleanup"]],
+  metaphor_chef_in_training: ["Chef em Treinamento", "Ajude a cozinhar uma refeição na hospedaria com Maria.", "Cozinhe com Maria e Fabienne antes de outubro; depois a janela deixa de estar disponível.", ["Perdível", "Maria", "Fabienne", "Culinária", "Calendário", "Atenção"]],
+  metaphor_at_your_own_risk: ["Por Sua Conta e Risco", "Conclua o teste de coragem no nível máximo.", "Complete o test of courage em Martira no nível máximo; isso não é dificuldade selecionável da campanha.", ["Ação específica", "Martira", "Checklist", "Cleanup"]],
+  metaphor_bookworm: ["Devorador de Livros", "Termine de ler todos os livros.", "Leia os 7 livros e pegue o livro de Julian em Port Brilehaven antes de perder a janela.", ["Perdível", "Livros", "Coletável", "Gauntlet Runner", "Julian", "Calendário", "Checklist", "Atenção"]]
+};
+
+const metaphorGuide = sampleGames.find(game => game.slug === "metaphor-refantazio");
+if (metaphorGuide) {
+  const metaphorTrophies = metaphorGuide.trophies.map(trophy => {
+    const [namePt, descriptionPt, tip, tags] = metaphorTrophyEditorial[trophy.id];
+    return {
+      ...trophy,
+      name_pt: namePt,
+      trophyNameOriginal: trophy.name,
+      trophyNamePtBr: namePt,
+      namePtSource: "editorial_ptbr_reference",
+      tier: trophy.type,
+      description: descriptionPt,
+      descriptionPtBr: descriptionPt,
+      ptDescription: descriptionPt,
+      localizedDescription: { ptBr: descriptionPt },
+      descriptionPtSource: "editorial_ptbr_reference",
+      tip,
+      guideTip: tip,
+      is_missable: metaphorMissableIds.has(trophy.id),
+      isMissable: metaphorMissableIds.has(trophy.id),
+      is_online: false,
+      isOnline: false,
+      is_coop: false,
+      isCoop: false,
+      dlcRequired: false,
+      difficultyRequired: trophy.id === "metaphor_closing_the_book",
+      tags
+    };
+  });
+
+  Object.assign(metaphorGuide, {
+    title: "Metaphor: ReFantazio",
+    developer: "Studio Zero / Atlus",
+    publisher: "Atlus / Sega",
+    platforms: ["PS4", "PS5", "Xbox Series X|S", "PC/Steam/Windows"],
+    platform_base: "PS5",
+    platformBase: "PS5",
+    guideScope: "Lista PlayStation base de 44 troféus",
+    genre: ["JRPG", "RPG", "fantasia"],
+    mode: "single-player",
+    difficulty: 3,
+    time: "120h",
+    estimatedTime: "Cerca de 120 horas",
+    time_min_hours: 120,
+    time_max_hours: 120,
+    time_sort_hours: 120,
+    time_bucket: "long",
+    runs: "Mínimo de duas playthroughs; New Game+ obrigatório para Closing the Book.",
+    hasMissables: true,
+    missableCount: 10,
+    missable_count: 10,
+    hasOnline: false,
+    hasMandatoryOnline: false,
+    hasMandatoryCoop: false,
+    requiresOnline: false,
+    requiresCoop: false,
+    onlineRequired: false,
+    online_required: false,
+    coopRequired: false,
+    coop_required: false,
+    dlcRequired: false,
+    dlc_required: false,
+    dlcRequiredForPlatinum: false,
+    difficultyTrophiesRequired: true,
+    newGamePlusRequired: true,
+    hasChapterSelect: false,
+    chapterSelect: false,
+    hasFreeRoam: false,
+    manualSaveSlots: 16,
+    crossBuy: true,
+    saveTransfer: "PS4/PS5 nos dois sentidos, sem autopop automático direto",
+    guideFocus: "Calendário, Followers, quests, debates, livros, receitas, Archetypes, Star Shatterer e New Game+",
+    missable: "Tem 10 perdíveis importantes ligados a calendário, Followers, quests, debates, livros, receitas, Archetypes e New Game+.",
+    runs_summary: "São necessárias no mínimo duas playthroughs. Faça quase tudo na primeira run e Closing the Book no New Game+.",
+    missable_summary: "Os 10 perdíveis principais são Closing the Book, Star Shatterer, Archetype Hero, Summon Mask Time, Hearts as One, King of Cuisine, Help Anyone in Need, Debate Me, Chef in Training e Bookworm.",
+    online_summary: "A lista base é totalmente offline e single-player, sem troféus online ou cooperação obrigatória.",
+    grind_summary: "O grind se concentra em Archetype Hero, Summon Mask Time, All That Glitters, Money is Power, Coliseum Champion, Sword Surfer e preparação de Closing the Book.",
+    dlc_scope: "A platina usa somente a lista base de 44 troféus e não exige DLC.",
+    difficulty_reason: "3/10: a primeira run pode usar qualquer dificuldade, inclusive Storyteller. No New Game+ de Closing the Book, use Easy ou superior para manter acesso ao Redscale Dragon.",
+    time_reason: "Cerca de 120 horas para calendário 100%, Followers, quests, Archetypes, coletáveis, grind e a segunda run de New Game+.",
+    first_run_advice: "Siga um walkthrough de calendário 100%, use saves manuais e conclua Followers, quests, debates, livros, receitas, Masks, Vessels e Star Shatterer antes do final.",
+    cleanup_advice: "Antes do final, revise Gold Beetles, Drawings, Archetypes, Followers, receitas, livros, debates, quests, Coliseum e cumulativos; não há free roam pós-história.",
+    before_you_start: "Planeje duas runs, use os 16 slots de save manual e não escolha Storyteller na segunda run. PS4 e PS5 têm crossbuy e save transfer nos dois sentidos, mas não há autopop automático direto.",
+    best_for: "Ideal para quem aceita uma platina longa com calendário, checklist detalhado e New Game+.",
+    avoid_if: "Evite se você não quer seguir walkthrough 100%, gerenciar calendário ou fazer uma segunda playthrough.",
+    status: "published",
+    editorial_status: "published",
+    editorialStatus: "review",
+    editorial_review_status: "review",
+    coverage_level: "strong",
+    is_verified: false,
+    verification_status: "review",
+    quality_warnings: [],
+    last_reviewed_at: "2026-06-19",
+    reviewed_by: "AtlasAchievement",
+    completionState: "complete",
+    completion_state: "complete",
+    verification_note: "Conteúdo revisado para publicação: lista base com 44 troféus, 10 perdíveis, 120h, 3/10, offline, sem coop ou DLC, calendário planejado e New Game+ obrigatório. O selo aguarda a suíte global ficar verde.",
+    editorial_notes: "Revisão editorial focada em calendário, Followers, quests, debates, 7 livros, 21 receitas, Archetypes, Masks/Vessels, Gold Beetles, Star Shatterer, Closing the Book e Storyteller.",
+    editorial_summary: [
+      "Metaphor: ReFantazio é uma platina longa e totalmente offline, focada em calendário, gerenciamento de tempo, Followers, quests, Archetypes, receitas, livros, debates, Gold Beetles e New Game+. A lista tem 44 troféus, não exige online, cooperação ou DLC, mas possui 10 perdíveis e exige uma segunda playthrough para enfrentar o Redscale Dragon em Closing the Book.",
+      "A rota mais segura é seguir um walkthrough 100% na primeira run para concluir quests, Followers, debates, livros, receitas, Archetypes, Masks, Vessels, Gold Beetles e demais checklists, deixando apenas Closing the Book para o New Game+. Na segunda run, jogue em Easy ou superior, nunca em Storyteller, avance até Akademia e derrote o Redscale Dragon do Book of Apocalypse.",
+      "Star Shatterer exige derrotar Destroyer Charadrius sem enfrentar os sub-bosses que o enfraquecem. O jogo não oferece free roam ou level select após a história, mas possui 16 slots de save manual. PS4 e PS5 têm crossbuy e save transfer nos dois sentidos, sem autopop automático direto. Os nomes PT-BR usam tradução editorial consistente quando não há localização oficial confirmada no dado do projeto."
+    ],
+    seo: {
+      title: "Metaphor: ReFantazio: Guia de Troféus e Platina",
+      description: "Guia de troféus de Metaphor: ReFantazio com roadmap da platina, 44 troféus, 10 perdíveis, New Game+, Closing the Book, Redscale Dragon, Star Shatterer, Followers e Archetypes.",
+      metaDescription: "Guia de troféus de Metaphor: ReFantazio com roadmap da platina, 44 troféus, 10 perdíveis, New Game+, Closing the Book, Redscale Dragon, Star Shatterer, Followers, Archetypes, debates, livros e receitas.",
+      ogTitle: "Metaphor: ReFantazio: Guia de Troféus e Platina",
+      ogDescription: "Roadmap PT-BR da platina de Metaphor: ReFantazio com 44 troféus, 10 perdíveis, calendário, New Game+, Star Shatterer e Redscale Dragon.",
+      keywords: ["Metaphor ReFantazio troféus", "Metaphor ReFantazio platina", "guia Metaphor ReFantazio", "Metaphor ReFantazio trophy guide", "The Traveller", "Closing the Book", "Redscale Dragon", "Star Shatterer", "Archetype Hero", "Hearts as One", "Help Anyone in Need", "Debate Me", "Bookworm", "King of Cuisine", "Metaphor ReFantazio New Game Plus", "Metaphor ReFantazio Gold Beetles", "Metaphor ReFantazio Followers"]
+    },
+    quickDecision: {
+      verdict: "Sim, mas é uma platina longa e recomendada para quem aceita seguir calendário e walkthrough 100%.",
+      difficulty: "Baixa a moderada, cerca de 3/10, com atenção especial ao New Game+.",
+      time: "Longo, cerca de 120 horas.",
+      mainRisk: "10 perdíveis, calendário, Followers, quests, debates, livros, receitas, Archetypes, Star Shatterer e Closing the Book.",
+      risk: "Alto em retrabalho se jogar às cegas ou escolher Storyteller na segunda run.",
+      onlineCoop: "Não exige online nem cooperação.",
+      dlc: "Não exige DLC.",
+      firstAction: "Comece com um calendário 100% e mantenha saves manuais em slots separados."
+    },
+    roadmap: metaphorRoadmap,
+    roadmapStages: metaphorRoadmap,
+    attentionPoints: metaphorAttentionPoints,
+    checklist: metaphorChecklist,
+    faq: metaphorFaq,
+    trophies: metaphorTrophies
+  });
+}
+
+const reanimalRoadmap = [
+  {
+    title: "Faça uma playthrough 100% com checklist aberto",
+    focus: "História, coletáveis e perdíveis",
+    objective: "Concluir a campanha pegando Coffins, Hidden Statues, Masks, Posters, Critters e Secrets sem depender de replay.",
+    actions: [
+      "Jogue desde o Capítulo 1 seguindo um checklist cronológico.",
+      "Pegue todos os 5 Coffins na mesma playthrough.",
+      "Pegue todas as 5 Hidden Statues na mesma playthrough.",
+      "Colete Masks, Posters, Critters e demais Secrets conforme aparecem.",
+      "Confira os trackers de troféus depois de cada capítulo.",
+      "Evite sair de áreas sem checar se há coletável ou ação específica pendente."
+    ],
+    warning: "Coffins e Hidden Statues são o maior risco da platina: Chapter Replay não resolve corretamente os troféus ligados ao secret ending e à Sheep Mask.",
+    result: "A maior parte da platina fica concluída em uma única rota segura."
+  },
+  {
+    title: "Priorize Coffins e Hidden Statues",
+    focus: "Perdíveis de run",
+    objective: "Evitar perder Friends Reunited, Prayer for the Dying e Beneath the Mask.",
+    actions: [
+      "Marque cada um dos 5 Coffins assim que encontrar.",
+      "Marque cada uma das 5 Hidden Statues assim que interagir.",
+      "Não deixe Coffins para Chapter Replay.",
+      "Não deixe Hidden Statues para Chapter Replay.",
+      "Lembre que a Sheep Mask depende de todas as Hidden Statues na mesma playthrough.",
+      "Se quiser reduzir o risco de repetição, use backup do save ou PS+ Cloud antes de avançar."
+    ],
+    warning: "Esses três troféus justificam hasMissables true e missableCount 3.",
+    result: "Os três principais perdíveis ficam protegidos."
+  },
+  {
+    title: "Colete Masks, Posters, Critters e Secrets",
+    focus: "Coletáveis e trackers",
+    objective: "Fechar Beneath the Mask, A Proper Gander, Critter Kill Hit e os troféus de Secrets.",
+    actions: [
+      "Colete todas as 18 Masks.",
+      "Derrube todos os 20 Posters.",
+      "Mate todos os 5 Critters.",
+      "Feche Hidden among the pines nos Capítulos 1 a 3.",
+      "Feche Hidden among rats nos Capítulos 4 a 6.",
+      "Feche Hidden in rubble nos Capítulos 7 a 9.",
+      "Use os trackers da lista de troféus para confirmar o progresso."
+    ],
+    warning: "Muitos coletáveis também contam como Secrets; não some cada categoria como se todos fossem itens adicionais.",
+    result: "O bloco de coletáveis e checklists fica concluído."
+  },
+  {
+    title: "Faça os troféus misc por capítulo",
+    focus: "Ações específicas e cleanup preventivo",
+    objective: "Resolver tarefas curtas durante a campanha para reduzir Chapter Replay.",
+    actions: [
+      "Faça Rock ‘n Pop na máquina de pipoca do cinema e Dark Tourism no sightseer.",
+      "Faça Scared to Dust na clock tower.",
+      "Faça Creature Comforts com o porco e Lullabye no piano.",
+      "Faça Long Live The King com a coroa dos Spider Kids.",
+      "Faça Shot Through the Heart durante a luta contra a Mother.",
+      "Resolva Survival Instinct, Secret Bunker, Non-Cannonical, Friends Like These e Just Making Sure quando surgirem."
+    ],
+    warning: "A maioria dos misc é recuperável por Chapter Replay, mas fazê-los na rota principal evita retrabalho.",
+    result: "Os troféus de ação específica ficam resolvidos durante a campanha."
+  },
+  {
+    title: "Controle os grinds curtos",
+    focus: "Distância, minas e destruição",
+    objective: "Fechar repetições leves sem confundir grind com dificuldade ou online.",
+    actions: [
+      "Avance Lost at Sea viajando uma grande distância com o barco.",
+      "Faça Naval Blazing destruindo 20 naval mines na mesma playthrough.",
+      "Faça Destruction Derby destruindo 24 carros com o veículo.",
+      "Use Chapter Replay quando o objetivo permitir e o tracker ficar incompleto.",
+      "Confira se o progresso subiu antes de sair da seção."
+    ],
+    warning: "Naval Blazing exige uma playthrough; trate-o como checklist de run, sem inflar missableCount além dos três perdíveis principais.",
+    result: "Os três grinds curtos ficam finalizados."
+  },
+  {
+    title: "Finalize a história e confirme os finais",
+    focus: "Final normal e secret ending",
+    objective: "Concluir All is Well e Friends Reunited com os requisitos corretos.",
+    actions: [
+      "Termine a história normalmente para All is Well.",
+      "Com os 5 Coffins obtidos na mesma playthrough, confirme o secret ending.",
+      "Confirme Friends Reunited após o final secreto.",
+      "Confirme Nothing Lasts Forever após todos os demais troféus.",
+      "Se o final secreto não aparecer, revise os Coffins e recorra ao backup ou a uma nova playthrough."
+    ],
+    warning: "O secret ending depende dos Coffins da playthrough e não é simples cleanup por Chapter Replay.",
+    result: "A história, o final secreto e a platina ficam concluídos."
+  },
+  {
+    title: "Use Chapter Replay apenas para cleanup seguro",
+    focus: "Chapter Replay e troféus recuperáveis",
+    objective: "Recuperar misc e coletáveis que realmente funcionam por replay.",
+    actions: [
+      "Use Chapter Replay para misc e ações específicas esquecidas.",
+      "Use os trackers para Posters, Critters, Secrets e Masks quando aplicável.",
+      "Não dependa de Chapter Replay para Coffins.",
+      "Não dependa de Chapter Replay para Hidden Statues ou Sheep Mask.",
+      "Evite reiniciar a run antes de identificar exatamente o que falta."
+    ],
+    warning: "Chapter Replay ajuda no cleanup, mas não corrige os requisitos de run de Coffins e Hidden Statues.",
+    result: "O cleanup fica objetivo e separado dos casos que exigem nova run."
+  },
+  {
+    title: "Separe Deluxe Edition, Season Pass e The Expanded World",
+    focus: "DLC e conteúdo extra",
+    objective: "Evitar misturar conteúdo extra com a lista base de 32 troféus.",
+    actions: [
+      "Mantenha a lista base com 32 troféus.",
+      "Não marque Deluxe Edition nem Season Pass como obrigatórios.",
+      "Não marque The Expanded World como obrigatório.",
+      "Não trate máscaras extras de DLC como requisito da lista base.",
+      "Mantenha qualquer conteúdo adicional em seção separada."
+    ],
+    warning: "Conteúdo extra não deve alterar dlcRequired nem o total da platina base.",
+    result: "O escopo da platina base permanece claro."
+  }
+];
+
+const reanimalAttentionPoints = [
+  { title: "Três perdíveis principais", type: "Risco de run", tip: "Friends Reunited, Prayer for the Dying e Beneath the Mask são os principais riscos de run." },
+  { title: "Coffins", type: "Friends Reunited", tip: "Friends Reunited exige todos os 5 Coffins e o secret ending. Faça todos na mesma playthrough." },
+  { title: "Hidden Statues", type: "Prayer for the Dying", tip: "Prayer for the Dying exige todas as 5 Hidden Statues na mesma playthrough." },
+  { title: "Sheep Mask", type: "Beneath the Mask", tip: "Beneath the Mask depende da Sheep Mask, ligada às Hidden Statues. Não deixe para Chapter Replay." },
+  { title: "Chapter Replay tem limite", type: "Cleanup", tip: "Chapter Replay ajuda em misc e muitos coletáveis, mas não resolve corretamente Coffins ou Hidden Statues para os troféus de run." },
+  { title: "Sem online obrigatório", type: "Solo", tip: "A platina não exige online, mesmo com coop online opcional." },
+  { title: "Sem coop obrigatório", type: "Coop opcional", tip: "O jogo pode ser feito solo. Coop local ou online é opcional e não deve inflar o filtro Coop." },
+  { title: "Sem dificuldade", type: "1/10", tip: "Não há troféu de dificuldade nem dificuldade selecionável. A platina é 1/10." },
+  { title: "Coletáveis por tracker", type: "Checklist", tip: "Use os trackers para confirmar Masks, Posters, Critters, Secrets e o progresso por capítulo." },
+  { title: "Naval Blazing", type: "Uma playthrough", tip: "Naval Blazing exige 20 naval mines em uma playthrough. Acompanhe o tracker durante a campanha." },
+  { title: "Lost at Sea", type: "Grind curto", tip: "Lost at Sea é grind de distância com o barco, não um requisito online." },
+  { title: "DLC separado", type: "Lista base", tip: "Deluxe Edition, Season Pass e The Expanded World não são necessários para a platina base." }
+];
+
+const reanimalChecklist = [
+  "Conferir total de 32 troféus e distribuição 1 platina, 4 ouro, 16 prata e 11 bronze.",
+  "Conferir Nothing Lasts Forever como platina.",
+  "Conferir onlineRequired false, coopRequired false e dlcRequired false.",
+  "Conferir hasMissables true, missableCount 3 e filtro Perdíveis 3.",
+  "Conferir filtros Online 0, Coop 0, DLC 0 e Dificuldade 0.",
+  "Conferir Friends Reunited como Perdível, Coffins e Secret Ending.",
+  "Conferir Prayer for the Dying como Perdível e Hidden Statues.",
+  "Conferir Beneath the Mask como Perdível, Masks e Sheep Mask.",
+  "Conferir 18 Masks, 20 Posters, 5 Hidden Statues, 5 Coffins e 5 Critters.",
+  "Conferir Secrets nos blocos pines, rats e rubble.",
+  "Conferir 10 lugares para sentar.",
+  "Conferir Naval Blazing com 20 naval mines na mesma playthrough.",
+  "Conferir Lost at Sea e Destruction Derby com 24 carros.",
+  "Conferir troféus misc por capítulo e cleanup por Chapter Replay.",
+  "Conferir que coop opcional não virou coop ou online obrigatório.",
+  "Conferir que Deluxe Edition, Season Pass e The Expanded World não entraram na lista base.",
+  "Conferir que o jogo usa autosave e não promete save manual livre.",
+  "Conferir os limites de Chapter Replay para Coffins e Hidden Statues.",
+  "Conferir nome oficial em inglês, nome PT-BR separado e descrição em português em todos os troféus.",
+  "Conferir roadmap estruturado e ausência de labels internas ou objetos brutos no front.",
+  "Conferir FAQ, decisão rápida, SEO, pontos de atenção e status consistente entre guia e catálogo."
+];
+
+const reanimalFaq = [
+  { question: "REANIMAL tem troféus perdíveis?", answer: "Sim. Os principais são Friends Reunited, Prayer for the Dying e Beneath the Mask, porque Coffins e Hidden Statues precisam ser feitos em uma única playthrough." },
+  { question: "Precisa jogar online para platinar?", answer: "Não. A lista base não tem troféus online." },
+  { question: "Precisa de cooperação?", answer: "Não. O jogo permite coop local e online, mas a platina pode ser feita solo." },
+  { question: "Precisa de DLC?", answer: "Não. Deluxe Edition, Season Pass e The Expanded World não são necessários para a platina base." },
+  { question: "Quantas runs são necessárias?", answer: "Uma playthrough com checklist é suficiente. Se perder Coffins ou Hidden Statues, pode ser necessário repetir a run." },
+  { question: "A dificuldade afeta troféus?", answer: "Não. O jogo não tem troféu de dificuldade e a platina é muito fácil." },
+  { question: "Chapter Replay resolve tudo?", answer: "Não. Chapter Replay ajuda em misc e vários coletáveis, mas Coffins e Hidden Statues devem ser feitos na mesma playthrough para os troféus ligados ao secret ending e à Sheep Mask." },
+  { question: "O que é o maior risco da platina?", answer: "Esquecer Coffins ou Hidden Statues, porque eles afetam Friends Reunited, Prayer for the Dying e Beneath the Mask." },
+  { question: "Quantas Masks existem?", answer: "São 18 Masks. Beneath the Mask exige todas, incluindo a Sheep Mask ligada às Hidden Statues." },
+  { question: "Quantos Posters, Coffins e Hidden Statues existem?", answer: "São 20 Posters, 5 Coffins e 5 Hidden Statues." },
+  { question: "Naval Blazing é perdível?", answer: "Ele exige destruir 20 naval mines em uma playthrough. Trate como checklist de run e acompanhe durante a campanha." },
+  { question: "Quanto tempo leva para platinar?", answer: "Em média, cerca de 2 a 6 horas, dependendo do uso de checklist e do retrabalho com coletáveis." }
+];
+
+const reanimalTrophyEditorial = {
+  reanimal_nothing_lasts_forever: ["Nada dura para sempre", "Desbloqueie tudo.", "Conquiste os outros 31 troféus da lista base para liberar a platina.", ["Platina"]],
+  reanimal_home_from_home: ["Lar, doce lar", "Chegue à pequena cidade na floresta.", "Troféu automático de história ao concluir o Capítulo 1.", ["História", "Capítulo 1"]],
+  reanimal_save_our_skins: ["Salve nossas peles", "Escape de Sniffer.", "Troféu automático de história ao concluir o Capítulo 2.", ["História", "Capítulo 2"]],
+  reanimal_tarred_and_feathered: ["Coberto de piche e penas", "Salve seu amigo dos pássaros.", "Troféu automático de história perto do fim do Capítulo 3.", ["História", "Capítulo 3"]],
+  reanimal_its_a_trap: ["É uma armadilha!", "Chegue a Sand City.", "Troféu automático de história ao concluir o Capítulo 4.", ["História", "Capítulo 4"]],
+  reanimal_happy_days: ["Dias felizes", "Reencontre seus amigos.", "Troféu automático de história perto do fim do Capítulo 5.", ["História", "Capítulo 5"]],
+  reanimal_into_the_abyss: ["Rumo ao abismo", "Encontre um caminho para dentro da fenda.", "Troféu automático de história ao concluir o Capítulo 6.", ["História", "Capítulo 6"]],
+  reanimal_all_is_well: ["Tudo está bem", "Conclua a história principal.", "Troféu de história obtido ao concluir o Capítulo 9.", ["História", "Capítulo 9"]],
+  reanimal_critter_kill_hit: ["Extermínio de criaturas", "Mate todos os Critters.", "Existem 5 Critters. Use o tracker e faça cleanup por Chapter Replay se algum faltar.", ["Critters", "Coletável", "Checklist", "Cleanup", "Chapter Replay"]],
+  reanimal_take_a_load_off: ["Descanse um pouco", "Descanse as pernas em 10 lugares pelo mundo.", "Sente-se em 10 cadeiras, bancos ou sofás diferentes e acompanhe o tracker.", ["Lugares para sentar", "Checklist", "Cleanup", "Atenção"]],
+  reanimal_prayer_for_the_dying: ["Prece pelos moribundos", "Preste homenagem em todas as Hidden Statues.", "Encontre as 5 Hidden Statues na mesma playthrough; Chapter Replay não garante a estátua final nem a Sheep Mask.", ["Perdível", "Hidden Statues", "Coletável", "Uma playthrough", "Sheep Mask", "Atenção"]],
+  reanimal_a_proper_gander: ["Uma boa olhada", "Encontre e derrube todos os Posters.", "Derrube os 20 Posters e confirme o progresso pelo tracker.", ["Posters", "Coletável", "Checklist", "Cleanup", "Chapter Replay"]],
+  reanimal_beneath_the_mask: ["Por trás da máscara", "Encontre todas as Masks.", "Colete as 18 Masks, incluindo a Sheep Mask liberada pelas 5 Hidden Statues feitas na mesma playthrough.", ["Perdível", "Masks", "Coletável", "Checklist", "Sheep Mask", "Hidden Statues", "Atenção"]],
+  reanimal_hidden_among_the_pines: ["Escondido entre os pinheiros", "Encontre todos os Secrets nos três primeiros capítulos.", "Complete todos os Secrets dos Capítulos 1 a 3 e confira o tracker.", ["Secrets", "Coletável", "Checklist", "Capítulos 1-3", "Cleanup", "Chapter Replay"]],
+  reanimal_hidden_among_rats: ["Escondido entre ratos", "Encontre todos os Secrets nos três capítulos do meio.", "Complete todos os Secrets dos Capítulos 4 a 6 e confira o tracker.", ["Secrets", "Coletável", "Checklist", "Capítulos 4-6", "Cleanup", "Chapter Replay"]],
+  reanimal_hidden_in_rubble: ["Escondido nos escombros", "Encontre todos os Secrets nos três capítulos finais.", "Complete todos os Secrets dos Capítulos 7 a 9 e confira o tracker.", ["Secrets", "Coletável", "Checklist", "Capítulos 7-9", "Cleanup", "Chapter Replay"]],
+  reanimal_friends_reunited: ["Amigos reunidos", "Encontre todos os Coffins e desbloqueie o secret ending.", "Encontre os 5 Coffins na mesma playthrough; Coffins obtidos isoladamente por Chapter Replay não liberam corretamente o secret ending.", ["Perdível", "Coffins", "Secret Ending", "Coletável", "Uma playthrough", "Atenção"]],
+  reanimal_rock_n_pop: ["Rock e pipoca", "Quebre a máquina de pipoca no cinema.", "No Capítulo 2, arremesse uma pedra contra a máquina de pipoca do cinema.", ["Ação específica", "Cinema", "Capítulo 2", "Cleanup", "Chapter Replay"]],
+  reanimal_dark_tourism: ["Turismo sombrio", "Empurre o sightseer para o buraco.", "No Capítulo 1, empurre o sightseer da cadeira de camping para o buraco.", ["Ação específica", "Capítulo 1", "Cleanup", "Chapter Replay"]],
+  reanimal_scared_to_dust: ["Assustados até virar pó", "Quebre todas as crianças petrificadas na clock tower.", "No Capítulo 4, destrua todas as crianças petrificadas na primeira sala da clock tower.", ["Ação específica", "Clock Tower", "Capítulo 4", "Checklist", "Cleanup", "Chapter Replay"]],
+  reanimal_creature_comforts: ["Conforto para criaturas", "Conforte o porco assustado.", "No Capítulo 5, siga o porco para a esquerda e interaja com ele.", ["Ação específica", "Pig", "Capítulo 5", "Cleanup", "Chapter Replay"]],
+  reanimal_lullabye: ["Canção de ninar", "Toque o piano.", "No Capítulo 5, interaja algumas vezes com o pequeno piano no corredor.", ["Ação específica", "Piano", "Capítulo 5", "Cleanup", "Chapter Replay"]],
+  reanimal_long_live_the_king: ["Vida longa ao rei", "Roube a coroa do líder dos Spider Kids.", "Pegue a coroa do líder dos Spider Kids antes de encerrar a luta.", ["Spider Kids", "Crown", "Ação específica", "Combate", "Cleanup", "Chapter Replay"]],
+  reanimal_shot_through_the_heart: ["Tiro no coração", "Mate 10 Spider Kids durante a luta contra a Mother.", "Durante a luta contra a Mother, mate 10 Spider Kids antes de finalizar o confronto.", ["Spider Kids", "Mother", "Combate", "Checklist", "Cleanup", "Chapter Replay"]],
+  reanimal_lost_at_sea: ["Perdido no mar", "Viaje uma grande distância com o barco.", "A distância é cumulativa. Navegue nos capítulos com barco e use Chapter Replay se o tracker ainda não estiver completo.", ["Barco", "Distância", "Grind", "Cleanup", "Chapter Replay"]],
+  reanimal_survival_instinct: ["Instinto de sobrevivência", "Não consiga salvar seu amigo da morte.", "No Capítulo 4, deixe um inimigo agarrar e matar seu parceiro sem interferir.", ["Ação específica", "Capítulo 4", "Cleanup", "Atenção", "Chapter Replay"]],
+  reanimal_secret_bunker: ["Bunker secreto", "Insira o código secreto.", "No Capítulo 6, use o console do laboratório e insira 2-3-3-2.", ["Ação específica", "Capítulo 6", "Cleanup", "Atenção", "Chapter Replay"]],
+  reanimal_non_cannonical: ["Não canônico", "Atire no alvo secundário com o canhão.", "No Capítulo 6, use o canhão da ilha central para atirar no bunker.", ["Ação específica", "Capítulo 6", "Cleanup", "Atenção", "Chapter Replay"]],
+  reanimal_naval_blazing: ["Em chamas no mar", "Destrua 20 naval mines em uma playthrough.", "Destrua 20 naval mines nos trechos de barco da mesma playthrough e acompanhe o tracker.", ["Naval mines", "Uma playthrough", "Checklist", "Atenção", "Grind", "Cleanup"]],
+  reanimal_friends_like_these: ["Com amigos assim", "Atire acidentalmente em seu amigo.", "No Capítulo 8, durante o estande de tiro, dispare contra o companheiro.", ["Ação específica", "Capítulo 8", "Cleanup", "Atenção", "Chapter Replay"]],
+  reanimal_just_making_sure: ["Só para ter certeza", "Vingue-se do Sniper.", "No Capítulo 8, após acertar o Sniper na torre, vá aos escombros e chute o corpo.", ["Ação específica", "Capítulo 8", "Cleanup", "Atenção", "Chapter Replay"]],
+  reanimal_destruction_derby: ["Demolição sobre rodas", "Destrua 24 carros do conforto de seu veículo.", "No Capítulo 9, destrua 24 carros durante o trecho com o veículo e acompanhe o tracker.", ["Carro", "Destruição", "Checklist", "Grind", "Cleanup", "Chapter Replay"]]
+};
+
+const reanimalGuide = sampleGames.find(game => game.slug === "reanimal");
+if (reanimalGuide) {
+  const reanimalTrophies = reanimalGuide.trophies.map(trophy => {
+    const editorial = reanimalTrophyEditorial[trophy.id];
+    const [namePt, descriptionPt, tip, tags] = editorial;
+    return {
+      ...trophy,
+      name_pt: namePt,
+      trophyNameOriginal: trophy.name,
+      trophyNamePtBr: namePt,
+      namePtSource: "editorial_ptbr_reference",
+      tier: trophy.type,
+      description: descriptionPt,
+      descriptionPtBr: descriptionPt,
+      ptDescription: descriptionPt,
+      localizedDescription: { ptBr: descriptionPt },
+      descriptionPtSource: "editorial_ptbr_reference",
+      tip,
+      guideTip: tip,
+      isMissable: trophy.is_missable,
+      missable: trophy.is_missable,
+      isSpoiler: trophy.is_spoiler,
+      is_online: false,
+      isOnline: false,
+      is_coop: false,
+      isCoop: false,
+      dlcRequired: false,
+      difficultyRequired: false,
+      tags
+    };
+  });
+
+  Object.assign(reanimalGuide, {
+    title: "REANIMAL",
+    developer: "Tarsier Studios",
+    publisher: "THQ Nordic",
+    platforms: ["PS5", "PC", "Xbox Series X|S", "Nintendo Switch 2"],
+    platform_base: "PS5",
+    platformBase: "PS5",
+    guideScope: "Lista PlayStation base de 32 troféus",
+    genre: ["aventura", "horror atmosférico"],
+    mode: "single-player com coop local/online opcional",
+    difficulty: 1,
+    time: "2-6h",
+    estimatedTime: "2-6 horas",
+    time_min_hours: 2,
+    time_max_hours: 6,
+    time_sort_hours: 4,
+    time_bucket: "short",
+    runs: "Uma playthrough com checklist; nova run se Coffins ou Hidden Statues forem perdidos.",
+    hasMissables: true,
+    missableCount: 3,
+    missable_count: 3,
+    hasOnline: false,
+    hasMandatoryOnline: false,
+    hasMandatoryCoop: false,
+    requiresOnline: false,
+    requiresCoop: false,
+    onlineRequired: false,
+    online_required: false,
+    coopRequired: false,
+    coop_required: false,
+    dlcRequired: false,
+    dlc_required: false,
+    dlcRequiredForPlatinum: false,
+    difficultyTrophiesRequired: false,
+    newGamePlusRequired: false,
+    hasChapterSelect: true,
+    chapterSelect: true,
+    hasFreeRoam: false,
+    guideFocus: "Coffins, Hidden Statues, Sheep Mask, coletáveis de uma playthrough e cleanup por Chapter Replay",
+    missable: "Tem 3 perdíveis principais: Friends Reunited, Prayer for the Dying e Beneath the Mask.",
+    runs_summary: "Uma playthrough com checklist é suficiente. Perder Coffins ou Hidden Statues pode exigir uma nova run.",
+    missable_summary: "Friends Reunited exige os 5 Coffins e o secret ending; Prayer for the Dying exige as 5 Hidden Statues; Beneath the Mask exige as 18 Masks, incluindo a Sheep Mask ligada às Hidden Statues.",
+    online_summary: "Não há troféus online. REANIMAL pode ser platinado solo; coop local e online são opções, não requisitos.",
+    grind_summary: "Há apenas grind curto em Lost at Sea, Naval Blazing e Destruction Derby, acompanhado por trackers e cleanup quando aplicável.",
+    dlc_scope: "A lista base de 32 troféus não exige Deluxe Edition, Season Pass, The Expanded World nem máscaras extras.",
+    difficulty_reason: "1/10: não existe dificuldade selecionável nem troféu de dificuldade; o risco está no checklist de uma playthrough.",
+    time_reason: "A faixa de 2-6 horas considera a campanha, os coletáveis, o secret ending e cleanup curto por Chapter Replay.",
+    first_run_advice: "Siga um walkthrough 100% desde o Capítulo 1 e confira Coffins, Hidden Statues, Masks, Posters, Critters e Secrets após cada capítulo.",
+    cleanup_advice: "Use Chapter Replay para misc e coletáveis recuperáveis. Não dependa dele para Coffins, Hidden Statues, Sheep Mask ou secret ending.",
+    before_you_start: "A lista PlayStation é de PS5, sem versão PS4. O jogo usa autosave, não oferece save manual livre, não tem free roam nem New Game+, e pode ser platinado solo apesar do coop opcional.",
+    best_for: "Ideal para quem quer uma platina muito curta de horror atmosférico e aceita seguir checklist de coletáveis.",
+    avoid_if: "Evite se você não quer acompanhar Coffins e Hidden Statues ou repetir a campanha ao perder um requisito de run.",
+    status: "published",
+    editorial_status: "published",
+    editorialStatus: "verified",
+    editorial_review_status: "verified",
+    coverage_level: "complete",
+    is_verified: true,
+    verification_status: "verified",
+    quality_warnings: [],
+    last_reviewed_at: "2026-06-19",
+    reviewed_by: "AtlasAchievement",
+    completionState: "complete",
+    completion_state: "complete",
+    verification_note: "Guia revisado para publicação: lista base PS5 com 32 troféus, distribuição 1/4/16/11, 2-6h, 1/10, três perdíveis, sem online, coop ou DLC obrigatórios, e limites de Chapter Replay documentados.",
+    editorial_notes: "Revisão editorial de REANIMAL focada em Coffins, Hidden Statues, Sheep Mask, 18 Masks, 20 Posters, 5 Critters, Secrets, Chapter Replay, coop opcional, lista base e filtros controlados.",
+    editorial_summary: [
+      "REANIMAL é uma platina muito curta e fácil, feita em cerca de 2 a 6 horas, com 32 troféus e sem requisitos de online, coop obrigatório, DLC ou dificuldade. Apesar de permitir coop local e online, a platina pode ser feita totalmente solo.",
+      "O ponto central é controlar os coletáveis de uma única playthrough. Friends Reunited exige os 5 Coffins e o secret ending; Prayer for the Dying exige as 5 Hidden Statues; e Beneath the Mask depende das 18 Masks, incluindo a Sheep Mask ligada às Hidden Statues. Chapter Replay ajuda em misc e vários coletáveis, mas não resolve esses requisitos de run.",
+      "A rota mais segura é seguir um walkthrough 100%, conferir trackers após cada capítulo e usar backup ou PS+ Cloud para reduzir o risco de repetir o jogo. Deluxe Edition, Season Pass, The Expanded World e máscaras extras ficam fora da platina base. Os nomes PT-BR usam tradução editorial consistente quando não há localização oficial confirmada no dado do projeto."
+    ],
+    seo: {
+      title: "REANIMAL: Guia de Troféus e Platina",
+      description: "Guia de troféus de REANIMAL com roadmap da platina, perdíveis, Coffins, Hidden Statues, Masks, Posters, Critters, Secret Ending, Chapter Replay, coop opcional e dicas para os 32 troféus.",
+      metaDescription: "Guia de troféus de REANIMAL com roadmap da platina, perdíveis, Coffins, Hidden Statues, Masks, Posters, Critters, Secret Ending, Chapter Replay, coop opcional e dicas para os 32 troféus.",
+      ogTitle: "REANIMAL: Guia de Troféus e Platina",
+      ogDescription: "Roadmap PT-BR da platina de REANIMAL com 32 troféus, três perdíveis, Coffins, Hidden Statues, Masks, Secret Ending e Chapter Replay.",
+      keywords: ["REANIMAL troféus", "REANIMAL platina", "guia REANIMAL", "REANIMAL trophy guide", "Nothing Lasts Forever", "Friends Reunited", "Prayer for the Dying", "Beneath the Mask", "REANIMAL Coffins", "REANIMAL Hidden Statues", "REANIMAL Masks", "REANIMAL Posters", "REANIMAL Secret Ending", "REANIMAL Chapter Replay", "REANIMAL coop"]
+    },
+    quickDecision: {
+      verdict: "Sim. É uma platina muito curta e fácil, ideal para quem gosta de horror atmosférico e coletáveis.",
+      difficulty: "Muito baixa, cerca de 1/10.",
+      time: "Muito curto, cerca de 2 a 6 horas.",
+      mainRisk: "Coffins, Hidden Statues, Sheep Mask, Masks, Posters, Critters, Secrets e Naval Blazing.",
+      risk: "Baixo em habilidade, médio em retrabalho se esquecer Coffins ou Hidden Statues.",
+      onlineCoop: "Sem online obrigatório e sem coop obrigatório. Coop local ou online é opcional.",
+      dlc: "Deluxe Edition, Season Pass e The Expanded World não são necessários para a platina base.",
+      firstAction: "Comece a playthrough com checklist cronológico de Coffins e Hidden Statues."
+    },
+    roadmap: reanimalRoadmap,
+    roadmapStages: reanimalRoadmap,
+    attentionPoints: reanimalAttentionPoints,
+    checklist: reanimalChecklist,
+    faq: reanimalFaq,
+    trophies: reanimalTrophies
+  });
+}
+
+// Auditoria editorial final: Monster Hunter: World.
+if (monsterHunterWorldGuide) {
+  const monsterHunterWorldFinalRoadmap = [
+    {
+      title: "Etapa 1 — Campanha, captura e fundamentos",
+      focus: "História, arma principal e sistemas básicos",
+      objective: "Avançar pela campanha enquanto aprende captura, montaria, pesca, churrasco, Palico Gadgets, investigações e missões opcionais.",
+      actions: [
+        "Escolha uma arma confortável e aprenda seus combos antes do High Rank.",
+        "Capture monstros sempre que possível para começar Capture Pro cedo.",
+        "Complete investigações e missões opcionais enquanto libera acampamentos, ferramentas e Palico Gadgets.",
+        "Pratique montaria, pesca e preparo de Well-done Steak durante a progressão."
+      ],
+      warning: "Não concentre tempo em crowns no começo; avance os sistemas e crie uma rotina de captura primeiro.",
+      result: "História avançada, fundamentos dominados e parte dos troféus básicos encaminhada."
+    },
+    {
+      title: "Etapa 2 — High Rank, pesquisas e preparação de endgame",
+      focus: "Equipamentos, pesquisas, opcionais e arena",
+      objective: "Liberar High Rank e preparar o personagem para HR100, monstros temperados, Elder Dragons e o farm pesado.",
+      actions: [
+        "Crie ou melhore cinco armas e cinco peças de armadura de alta raridade.",
+        "Estabeleça os cinco acampamentos e maximize a pesquisa dos monstros exigidos por Monster Ph.D..",
+        "Avance nas 50 missões opcionais e nas 50 investigações.",
+        "Complete 50 arena quests no Gathering Hub; é permitido repetir a mesma arena quest."
+      ],
+      warning: "Não confunda arena quests do Gathering Hub com as missões comuns de Special Arena.",
+      result: "Personagem e pesquisas preparados para os objetivos acumulativos do endgame."
+    },
+    {
+      title: "Etapa 3 — Online obrigatório e Guild Cards",
+      focus: "SOS Flare, multiplayer e interação com jogadores",
+      objective: "Concluir cedo os cinco troféus que tornam a platina dependente de multiplayer online.",
+      actions: [
+        "Dispare um SOS Flare para HELP! e responda a dez chamados para I Am the Reinforcements.",
+        "Complete uma quest multiplayer para Hunters United.",
+        "Avance gradualmente nas 100 quests multiplayer de Hunters United Forever.",
+        "Troque ou receba mais de 50 Guild Cards para Spreading the Word."
+      ],
+      warning: "A campanha e a maior parte da lista podem ser feitas solo, mas a platina exige multiplayer online; não há coop local obrigatório.",
+      result: "Os cinco requisitos online ficam concluídos ou bem encaminhados antes do cleanup."
+    },
+    {
+      title: "Etapa 4 — Endgame e caçadas acumulativas",
+      focus: "HR100, temperados, Elder Dragons, capturas e 500 monstros",
+      objective: "Resolver os grandes acumulativos junto com investigações e preparação para crown hunting.",
+      actions: [
+        "Alcance Hunter Rank 100 e complete 50 investigações de monstros temperados.",
+        "Mate 50 Elder Dragons; Zorah Magdaros não conta como morto para Elderslayer.",
+        "Cace 500 monstros grandes e complete as 50 capturas.",
+        "Combine cada objetivo com investigações que também ofereçam materiais, pesquisa e chance de crown."
+      ],
+      warning: "Evite farmar cada contador isoladamente: combinar esses objetivos reduz centenas de caçadas redundantes.",
+      result: "O bloco acumulativo mais pesado fica resolvido junto com materiais e pesquisa."
+    },
+    {
+      title: "Etapa 5 — Vida endêmica rara e acampamentos",
+      focus: "Petricanths, Crakes, Prism Hercudrome e exploração",
+      objective: "Capturar a vida endêmica rara e finalizar a exploração da lista base.",
+      actions: [
+        "Capture o Petricanths para A Living Fossil.",
+        "Use Ghillie Mantle para capturar o Bristly Crake e o Downy Crake sobre Aptonoth ou Apceros.",
+        "Procure o Prism Hercudrome ao amanhecer ou entardecer.",
+        "Alterne mapas e horários para renovar spawns raros e finalize os acampamentos restantes."
+      ],
+      warning: "A vida endêmica rara depende de RNG, horário e spawn; várias recargas de mapa podem ser necessárias.",
+      result: "Criaturas raras e exploração ficam concluídas."
+    },
+    {
+      title: "Etapa 6 — Gold crowns miniatura e gigantes",
+      focus: "Miniature Crown Master, Giant Crown Master e RNG",
+      objective: "Obter as gold miniature crowns e gold giant crowns dos monstros elegíveis do jogo base.",
+      actions: [
+        "Controle no Monster Field Guide os menores e maiores tamanhos já registrados.",
+        "Use investigações favoráveis e event quests com chance aumentada quando estiverem disponíveis.",
+        "Marque manualmente cada gold crown para evitar repetir monstros concluídos.",
+        "Combine as caçadas com HR100, 500 monstros, Elder Dragons, capturas, temperados e pesquisa."
+      ],
+      warning: "Silver crowns não contam para os dois troféus finais. Zorah Magdaros e o chefe final não entram na exigência porque não possuem crown.",
+      result: "O maior gargalo da platina fica concluído."
+    },
+    {
+      title: "Etapa 7 — Cleanup final da lista base",
+      focus: "Arena, online, investigações e crowns pendentes",
+      objective: "Fechar qualquer contador restante sem misturar Iceborne à lista base.",
+      actions: [
+        "Revise arena quests, opcionais, investigações, Guild Cards e quests multiplayer.",
+        "Finalize capturas, Elder Dragons, vida endêmica e crowns ainda pendentes.",
+        "Confirme que o checklist contém somente os 50 troféus de Monster Hunter: World.",
+        "Mantenha Iceborne em sua lista e guia próprios."
+      ],
+      warning: "Não deixe Guild Cards e multiplayer para o fim sem jogadores disponíveis, e não inclua crowns ou troféus de Iceborne.",
+      result: "Conqueror of the New World é desbloqueado com a lista base concluída."
+    }
+  ];
+
+  const monsterHunterWorldFinalAttentionPoints = [
+    { title: "Platina extremamente longa", type: "250–400h", tip: "Gold crowns e RNG podem levar a conclusão para além de 300 horas." },
+    { title: "Sem perdíveis", type: "Endgame livre", tip: "Nenhum troféu da lista base é perdível; tudo pode ser concluído no endgame e cleanup." },
+    { title: "Multiplayer online obrigatório", type: "Cinco troféus", tip: "HELP!, I Am the Reinforcements, Hunters United, Hunters United Forever e Spreading the Word exigem recursos online." },
+    { title: "Guild Cards", type: "Spreading the Word", tip: "Troque ou receba mais de 50 Guild Cards por meio da interação online com outros jogadores." },
+    { title: "SOS e quests multiplayer", type: "Quatro troféus", tip: "Use SOS Flare, responda a dez chamados e complete uma e depois cem quests multiplayer." },
+    { title: "Crowns são o maior gargalo", type: "RNG", tip: "Miniature Crown Master e Giant Crown Master normalmente concentram a maior parte do tempo da platina." },
+    { title: "Silver crown não conta", type: "Gold crowns", tip: "Os troféus finais exigem coroas douradas miniatura e gigantes; silver crowns não são suficientes." },
+    { title: "RNG pode passar de 300h", type: "Crown hunting", tip: "A duração varia muito conforme a sorte com os tamanhos dos monstros elegíveis." },
+    { title: "Investigações e event quests", type: "Farm de crowns", tip: "Investigações favoráveis e event quests podem elevar as chances de crown quando disponíveis." },
+    { title: "Vida endêmica rara", type: "Ghillie Mantle", tip: "Petricanths, Crakes e Prism Hercudrome podem exigir horário correto, reset de mapa e várias tentativas." },
+    { title: "Arena do Gathering Hub", type: "50 arena quests", tip: "Nowhere to Go but Up usa arena quests do Gathering Hub, não as missões comuns de Special Arena." },
+    { title: "Iceborne separado", type: "Lista e platina próprias", tip: "Iceborne não é requisito de Conqueror of the New World e não entra nos 50 troféus deste guia." },
+    { title: "Sem troféu de dificuldade", type: "Filtro zerado", tip: "A nota 4/10 é editorial; nenhuma dificuldade selecionável interfere no desbloqueio de troféus." },
+    { title: "Combine os grandes grinds", type: "Menos retrabalho", tip: "Una crown hunting a HR100, 500 monstros, capturas, Elder Dragons, temperados, investigações e pesquisa." }
+  ];
+
+  const monsterHunterWorldFinalFaq = [
+    { question: "Monster Hunter: World tem troféus perdíveis?", answer: "Não. Nenhum troféu da lista base é perdível; tudo pode ser feito no endgame e cleanup." },
+    { question: "Precisa jogar online para platinar?", answer: "Sim. A platina exige troféus online ligados a SOS, quests multiplayer e Guild Cards." },
+    { question: "Precisa de cooperação ou multiplayer?", answer: "Sim, há troféus de multiplayer online: HELP!, I Am the Reinforcements, Hunters United, Hunters United Forever e Spreading the Word. A campanha e a maior parte da lista podem ser feitas solo; não há coop local obrigatório." },
+    { question: "Precisa de Iceborne?", answer: "Não. Iceborne tem lista e platina próprias e não é necessário para Conqueror of the New World." },
+    { question: "A dificuldade afeta troféus?", answer: "Não. Monster Hunter: World não possui troféus ligados a dificuldade selecionável." },
+    { question: "Quanto tempo leva para platinar?", answer: "Cerca de 250 a 400 horas, podendo passar de 300 horas conforme a sorte com as gold crowns." },
+    { question: "Qual é o maior gargalo?", answer: "Miniature Crown Master e Giant Crown Master, devido ao RNG das gold crowns." },
+    { question: "Silver crown conta para os troféus finais?", answer: "Não. Miniature Crown Master e Giant Crown Master exigem gold crowns." },
+    { question: "Onde vejo quais crowns faltam?", answer: "No Monster Field Guide, com apoio do Ecological Research, comparando os menores e maiores tamanhos registrados." },
+    { question: "Posso fazer a maior parte solo?", answer: "Sim. Campanha e maior parte da lista aceitam jogo solo, mas cinco troféus exigem recursos de multiplayer online." },
+    { question: "Event quests ajudam?", answer: "Sim, algumas ajudam no farm de crowns e materiais quando disponíveis, sem tornar Iceborne obrigatório." },
+    { question: "O que devo combinar com crown hunting?", answer: "HR100, 500 monstros grandes, 50 Elder Dragons, 50 capturas, 50 monstros temperados, investigações, materiais e pesquisa." }
+  ];
+
+  const monsterHunterWorldFinalTagsById = {
+    monster_hunter_world_conqueror_of_the_new_world: [],
+    monster_hunter_world_miniature_crown_master: ["Coletável", "Grind", "Gold Crown", "RNG"],
+    monster_hunter_world_giant_crown_master: ["Coletável", "Grind", "Gold Crown", "RNG"],
+    monster_hunter_world_miniature_crown_collector: ["Coletável", "Grind", "Crown"],
+    monster_hunter_world_giant_crown_collector: ["Coletável", "Grind", "Crown"],
+    monster_hunter_world_miniature_crown: ["Coletável", "Crown"],
+    monster_hunter_world_giant_crown: ["Coletável", "Crown"],
+    monster_hunter_world_a_living_fossil: ["Coletável", "Endemic Life", "Rare Spawn"],
+    monster_hunter_world_bristles_for_all: ["Coletável", "Endemic Life", "Rare Spawn"],
+    monster_hunter_world_snuggles_for_all: ["Coletável", "Endemic Life", "Rare Spawn"],
+    monster_hunter_world_rainbow_bright: ["Coletável", "Endemic Life", "Rare Spawn"],
+    monster_hunter_world_new_world_settler: ["Exploração", "Camps", "Cleanup"],
+    monster_hunter_world_monster_phd: ["Coletável", "Grind", "Research", "Checklist"],
+    monster_hunter_world_first_friends: ["Exploração", "Ação específica", "Cleanup"],
+    monster_hunter_world_commissioned_work: ["Grind", "Research Points", "Cleanup"],
+    monster_hunter_world_capture_novice: ["Captura", "Combate", "Cleanup"],
+    monster_hunter_world_capture_pro: ["Captura", "Grind", "Cleanup"],
+    monster_hunter_world_established_hunter: ["Grind", "Hunter Rank", "HR100"],
+    monster_hunter_world_the_franchise_hunter: ["Grind", "Investigações", "Cleanup"],
+    monster_hunter_world_the_hunters_life_for_me: ["Grind", "Optional Quests", "Cleanup"],
+    monster_hunter_world_hunters_united_forever: ["Online", "Multiplayer", "Grind"],
+    monster_hunter_world_nowhere_to_go_but_up: ["Grind", "Arena", "Cleanup"],
+    monster_hunter_world_one_shall_stand_one_shall_fall: ["História", "Spoiler"],
+    monster_hunter_world_temper_temper: ["Grind", "Endgame"],
+    monster_hunter_world_spreading_the_word: ["Online", "Multiplayer", "Guild Cards", "Grind"],
+    monster_hunter_world_the_empress_of_the_highlands: ["História", "High Rank"],
+    monster_hunter_world_monster_slayer: ["Grind", "Large Monsters"],
+    monster_hunter_world_monster_hunter: ["Grind", "Large Monsters"],
+    monster_hunter_world_elderslayer: ["Grind", "Spoiler", "Elder Dragons"],
+    monster_hunter_world_power_is_everything: ["Grind", "Equipamento"],
+    monster_hunter_world_impregnable_defense: ["Grind", "Equipamento"],
+    monster_hunter_world_help: ["Online", "Multiplayer", "SOS"],
+    monster_hunter_world_i_am_the_reinforcements: ["Online", "Multiplayer", "SOS"],
+    monster_hunter_world_hunters_united: ["Online", "Multiplayer"]
+  };
+
+  const monsterHunterWorldFinalTipsById = {
+    monster_hunter_world_giant_crown_master: "Obtenha gold giant crowns para os monstros elegíveis do jogo base; silver crowns não contam.",
+    monster_hunter_world_miniature_crown_master: "Obtenha gold miniature crowns para os monstros elegíveis do jogo base.",
+    monster_hunter_world_giant_crown_collector: "Etapa intermediária para Giant Crown Master: registre giant crowns de dez monstros.",
+    monster_hunter_world_miniature_crown_collector: "Etapa intermediária para Miniature Crown Master: registre miniature crowns de dez monstros.",
+    monster_hunter_world_giant_crown: "Registre uma giant crown; este troféu individual não exige que ela seja gold.",
+    monster_hunter_world_miniature_crown: "Registre uma miniature crown; este troféu individual não exige grind dedicado.",
+    monster_hunter_world_a_living_fossil: "Capture o Petricanths, peixe raro sujeito a RNG e recargas de mapa.",
+    monster_hunter_world_bristles_for_all: "Use Ghillie Mantle para capturar o Bristly Crake.",
+    monster_hunter_world_snuggles_for_all: "Capture o Downy Crake sobre herbívoros como Aptonoth ou Apceros, preferencialmente com Ghillie Mantle.",
+    monster_hunter_world_rainbow_bright: "Capture o Prism Hercudrome ao amanhecer ou entardecer.",
+    monster_hunter_world_monster_phd: "Maximize a pesquisa de quase todos os monstros grandes do jogo base no Ecological Research.",
+    monster_hunter_world_commissioned_work: "Acumule 100.000 research points por rastros, coletas especiais e bounties.",
+    monster_hunter_world_capture_novice: "Capture qualquer monstro usando armadilha e tranquilizantes; não é troféu automático de história.",
+    monster_hunter_world_capture_pro: "Capture 50 monstros; comece cedo para evitar farm isolado no final.",
+    monster_hunter_world_established_hunter: "Alcance Hunter Rank 100 após o fim da campanha.",
+    monster_hunter_world_the_franchise_hunter: "Complete 50 investigações durante o endgame e o farm de crowns.",
+    monster_hunter_world_the_hunters_life_for_me: "Complete 50 missões opcionais; a dificuldade selecionada não interfere.",
+    monster_hunter_world_hunters_united_forever: "Complete 100 quests em multiplayer online; combine com SOS e caçadas rápidas.",
+    monster_hunter_world_nowhere_to_go_but_up: "Complete 50 arena quests no Gathering Hub; não confunda com Special Arena comum e repita uma arena quest se necessário.",
+    monster_hunter_world_one_shall_stand_one_shall_fall: "Troféu de história da reta final; não é coletável.",
+    monster_hunter_world_temper_temper: "Complete sua primeira investigação de monstro temperado.",
+    monster_hunter_world_spreading_the_word: "Troque ou receba mais de 50 Guild Cards com jogadores online.",
+    monster_hunter_world_the_empress_of_the_highlands: "Avance pela campanha de High Rank até liberar assigned quests de sete estrelas.",
+    monster_hunter_world_monster_slayer: "Cace 100 monstros grandes; virá no caminho das 500 caçadas e das crowns.",
+    monster_hunter_world_monster_hunter: "Cace 500 monstros grandes e combine o contador com HR100 e crown hunting.",
+    monster_hunter_world_elderslayer: "Mate 50 Elder Dragons; Zorah Magdaros não conta como morto.",
+    monster_hunter_world_power_is_everything: "Crie ou melhore cinco armas de alta raridade.",
+    monster_hunter_world_impregnable_defense: "Crie cinco peças de armadura de alta raridade."
+  };
+
+  for (const trophy of monsterHunterWorldGuide.trophies) {
+    if (monsterHunterWorldFinalTagsById[trophy.id]) trophy.tags = monsterHunterWorldFinalTagsById[trophy.id];
+    trophy.is_missable = false;
+    trophy.isMissable = false;
+    trophy.is_difficulty = false;
+    trophy.difficultyRequired = false;
+    trophy.is_coop = false;
+    trophy.isCoop = false;
+    if (monsterHunterWorldFinalTipsById[trophy.id]) trophy.tip = monsterHunterWorldFinalTipsById[trophy.id];
+    trophy.guideTip = trophy.tip;
+  }
+
+  Object.assign(monsterHunterWorldGuide, {
+    hasOnline: true,
+    hasMandatoryOnline: true,
+    requiresOnline: true,
+    onlineRequired: true,
+    multiplayerRequired: true,
+    hasMandatoryMultiplayer: true,
+    hasMandatoryCoop: true,
+    requiresCoop: true,
+    coopRequired: true,
+    difficultyTrophiesRequired: false,
+    online_summary: "A platina exige multiplayer online em cinco troféus ligados a SOS, quests multiplayer e Guild Cards. A campanha e a maior parte da lista podem ser feitas solo; não há coop local obrigatório.",
+    before_you_start: "A lista base não tem perdíveis nem troféus de dificuldade, mas exige multiplayer online. Gold crowns — não silver crowns — são o maior gargalo. Iceborne possui lista e platina próprias.",
+    cleanup_advice: "Combine crown hunting com HR100, 500 monstros, 50 capturas, 50 Elder Dragons, 50 temperados, investigações e pesquisa. Finalize arena, Guild Cards e quests multiplayer antes de encerrar.",
+    status: "published",
+    editorial_status: "published",
+    editorialStatus: "verified",
+    editorial_review_status: "verified",
+    coverage_level: "complete",
+    is_verified: true,
+    verification_status: "verified",
+    verification_note: "Guia verificado para a lista base: 50 troféus, 250–400h, dificuldade 4/10, sem perdíveis ou troféus de dificuldade, cinco requisitos online e Iceborne separado.",
+    editorial_notes: "Revisão final de Monster Hunter: World focada em multiplayer online, Guild Cards, SOS, gold crowns, silver crowns, vida endêmica, Gathering Hub, grind combinado e separação de Iceborne.",
+    quickDecision: {
+      verdict: "É uma platina extremamente longa, indicada para quem aceita multiplayer online, endgame e RNG pesado.",
+      difficulty: "Moderada, cerca de 4/10; nenhuma dificuldade selecionável afeta troféus.",
+      time: "Muito longa, entre 250 e 400 horas, podendo passar de 300h.",
+      mainRisk: "Gold crowns, RNG, cinco troféus online, Guild Cards e grandes acumulativos.",
+      risk: "Sem perda permanente, mas com altíssimo risco de tempo e repetição.",
+      onlineCoop: "Multiplayer online obrigatório em cinco troféus; sem coop local obrigatório e campanha majoritariamente solo.",
+      dlc: "Iceborne possui lista e platina próprias e não é necessário.",
+      firstAction: "Avance a campanha capturando monstros e comece cedo SOS, Guild Cards, investigações e pesquisas."
+    },
+    roadmap: monsterHunterWorldFinalRoadmap,
+    roadmapStages: monsterHunterWorldFinalRoadmap,
+    attentionPoints: monsterHunterWorldFinalAttentionPoints,
+    faq: monsterHunterWorldFinalFaq
+  });
+}
+
+// Auditoria editorial final: Metaphor: ReFantazio.
+if (metaphorGuide) {
+  const metaphorFinalRoadmap = [
+    {
+      title: "Etapa 1 — Primeira run com calendário 100%",
+      focus: "Calendário, Followers, Virtues e preparação da platina",
+      objective: "Jogar a campanha com uma rota segura e concluir o máximo possível da lista na primeira jogada.",
+      actions: [
+        "Siga um calendário completo desde o início para controlar Followers, Royal Virtues, quests, debates, livros e receitas.",
+        "Acompanhe Gold Beetles, drawings, Archetypes, Masks, Vessels e dungeons opcionais durante as viagens.",
+        "Use Storyteller se quiser facilitar o grind desta primeira run; a restrição vale apenas para o Redscale Dragon no New Game+.",
+        "Distribua saves manuais entre os 16 slots antes de datas, dungeons e decisões importantes."
+      ],
+      warning: "Não jogue totalmente às cegas se quiser evitar retrabalho: debates, livros, quests, receitas, Followers e outros eventos de calendário podem ser perdidos.",
+      result: "Quase todos os troféus ficam concluídos ou encaminhados na primeira run."
+    },
+    {
+      title: "Etapa 2 — Checklists de calendário antes da reta final",
+      focus: "Dez perdíveis, coleta e exploração",
+      objective: "Conferir os requisitos sensíveis ao calendário antes de consumir as últimas datas.",
+      actions: [
+        "Confirme Help Anyone in Need, Hearts as One, Debate Me, Bookworm, King of Cuisine e Chef in Training.",
+        "Finalize Summon Mask Time e Archetype Hero com os Followers, materiais e MAG necessários.",
+        "Revise Gold Beetles, drawings, towns, mapa, quests e bounties.",
+        "Em Debate Me, vença os oito candidatos nas datas corretas; discursos solo não contam.",
+        "Para Bookworm, leia os sete livros, incluindo o livro ligado a Julian em Angler’s Inn Square, Port Brilehaven."
+      ],
+      warning: "Não avance o calendário final sem conferir os checklists. Chef in Training depende da janela com Maria e Fabienne e não pode ser deixado para outubro.",
+      result: "A primeira run chega à reta final com risco mínimo de retrabalho por calendário."
+    },
+    {
+      title: "Etapa 3 — Reta final e Star Shatterer",
+      focus: "Destroyer Charadrius sem enfraquecimento",
+      objective: "Preparar a party e derrotar Destroyer Charadrius em sua força total.",
+      actions: [
+        "Prepare Archetypes, equipamentos, MAG, itens, buffs e debuffs para o dungeon final.",
+        "Faça um save manual antes dos sub-bosses e elevadores que enfraquecem Destroyer Charadrius.",
+        "Ignore esses confrontos e derrote Destroyer Charadrius sem enfraquecê-lo para liberar Star Shatterer.",
+        "Depois do troféu, recarregue o save se quiser enfrentar os sub-bosses e obter seus equipamentos."
+      ],
+      warning: "Derrotar os sub-bosses que reduzem o poder de Destroyer Charadrius bloqueia Star Shatterer naquela rota.",
+      result: "A primeira run termina com todos ou quase todos os troféus, exceto Closing the Book."
+    },
+    {
+      title: "Etapa 4 — New Game+ para Closing the Book",
+      focus: "Book of Apocalypse e Redscale Dragon",
+      objective: "Avançar no New Game+ e derrotar o Redscale Dragon, maior gargalo da platina.",
+      actions: [
+        "Inicie o New Game+ em Easy ou dificuldade superior; nunca selecione Storyteller nesta run.",
+        "Avance até liberar o Book of Apocalypse em Akademia.",
+        "Prepare Followers, Archetypes, materiais, equipamentos e Sublime Spoonful para a luta.",
+        "Derrote o Redscale Dragon e confirme Closing the Book."
+      ],
+      warning: "Storyteller bloqueia o acesso ao Redscale Dragon e empurra Closing the Book para outra jogada completa.",
+      result: "Closing the Book é desbloqueado e a platina termina, caso não existam pendências."
+    },
+    {
+      title: "Etapa 5 — Cleanup de acumulativos, se necessário",
+      focus: "Combate, Coliseu, gastos e ações diversas",
+      objective: "Resolver apenas troféus acumulativos ou misc que ficaram pendentes.",
+      actions: [
+        "Consulte Gallica 100 vezes e complete a distância de blade-riding.",
+        "Use 50 Synthesis skills diferentes e cause dano de emboscada contra inimigos atordoados 100 vezes.",
+        "Conclua 50 batalhas sem sofrer dano e obtenha 30 vitórias consecutivas na Gold Class do Coliseu.",
+        "Derrote os Elementas restantes e gaste 100.000 reeve com habilidades que consomem dinheiro."
+      ],
+      warning: "Não trate eventos de calendário perdidos como cleanup: eles podem exigir outra run ou um save manual anterior.",
+      result: "Todos os acumulativos restantes são concluídos e a platina fica finalizada."
+    }
+  ];
+
+  const metaphorFinalAttentionPoints = [
+    { title: "Platina longa e planejada", type: "120–150h", tip: "A rota exige calendário, checklists e duas jogadas; use os 16 slots de save manual em pontos diferentes." },
+    { title: "Dez perdíveis principais", type: "Calendário e NG+", tip: "Closing the Book, Star Shatterer, Archetype Hero, Summon Mask Time, Hearts as One, King of Cuisine, Help Anyone in Need, Debate Me, Chef in Training e Bookworm são os dez perdíveis." },
+    { title: "Closing the Book exige NG+", type: "Redscale Dragon", tip: "O Redscale Dragon aparece no Book of Apocalypse em Akademia somente no New Game+." },
+    { title: "Não use Storyteller no NG+", type: "Easy ou superior", tip: "Storyteller pode ser usado na primeira run, mas bloqueia o Redscale Dragon na jogada de Closing the Book." },
+    { title: "Debate Me tem datas e respostas", type: "Oito candidatos", tip: "Vença os oito debates nas datas corretas e escolha as respostas certas; discursos solo não contam." },
+    { title: "Star Shatterer", type: "Boss sem enfraquecimento", tip: "Derrote Destroyer Charadrius sem enfrentar os sub-bosses ou elevadores que reduzem o poder do chefe; faça save manual antes." },
+    { title: "Bookworm e Julian", type: "Sete livros", tip: "Leia os sete livros e não perca o volume ligado a Julian em Angler’s Inn Square, Port Brilehaven." },
+    { title: "Chef in Training", type: "Janela antes de outubro", tip: "Cozinhe com Maria e Fabienne na janela correta; o troféu não pode ser deixado para outubro." },
+    { title: "Hearts as One", type: "Followers", tip: "Maximize todos os Followers dentro do calendário para liberar o troféu e as linhagens necessárias." },
+    { title: "Help Anyone in Need", type: "Quests com prazo", tip: "Conclua todas as quests exigidas dentro de seus prazos; não dependa de pós-história." },
+    { title: "Sem pós-história livre", type: "Sem free roam", tip: "Não há free roam nem level select depois da história; finalize calendário e exploração antes do encerramento." },
+    { title: "Gold Beetles têm margem", type: "All That Glitters", tip: "Alguns Beetles individuais podem ser perdidos, mas há unidades extras e Beetles não trocados passam para o New Game+." },
+    { title: "Sem online, coop ou DLC", type: "Lista base", tip: "Os 44 troféus podem ser obtidos offline, sem cooperação e sem conteúdo adicional." },
+    { title: "Saves manuais", type: "16 slots", tip: "Mantenha saves separados antes de datas críticas, do dungeon final e da rota de Star Shatterer." }
+  ];
+
+  const metaphorFinalFaq = [
+    { question: "Metaphor: ReFantazio tem troféus online?", answer: "Não. A lista base é totalmente offline." },
+    { question: "Metaphor: ReFantazio tem troféus coop?", answer: "Não. Nenhum troféu exige cooperação ou outro jogador." },
+    { question: "Precisa de DLC para a platina?", answer: "Não. Os 44 troféus pertencem à lista base." },
+    { question: "Tem troféus perdíveis?", answer: "Sim. Há dez perdíveis principais: Closing the Book, Star Shatterer, Archetype Hero, Summon Mask Time, Hearts as One, King of Cuisine, Help Anyone in Need, Debate Me, Chef in Training e Bookworm." },
+    { question: "Quantas runs são necessárias?", answer: "No mínimo duas. Faça quase tudo na primeira run e deixe Closing the Book para o New Game+." },
+    { question: "A dificuldade afeta troféus?", answer: "Sim, mas somente Closing the Book: o New Game+ do Redscale Dragon precisa estar em Easy ou superior." },
+    { question: "Posso usar Storyteller?", answer: "Sim na primeira run. Não use Storyteller no New Game+ do Redscale Dragon, pois isso bloqueia o acesso ao chefe." },
+    { question: "Qual é o maior risco da platina?", answer: "Perder eventos de calendário ou escolher Storyteller na run de Closing the Book." },
+    { question: "Debate Me é perdível?", answer: "Sim. É preciso vencer os oito candidatos em datas específicas com as respostas corretas; discursos solo não contam." },
+    { question: "Star Shatterer exige o quê?", answer: "Derrotar Destroyer Charadrius sem enfrentar antes os sub-bosses ou elevadores que o enfraquecem." },
+    { question: "Bookworm exige o quê?", answer: "Ler os sete livros, incluindo o volume ligado a Julian em Angler’s Inn Square, Port Brilehaven." },
+    { question: "All That Glitters é perdível?", answer: "Não como perdível principal. Há Gold Beetles extras, e os Beetles não trocados passam para o New Game+." },
+    { question: "Quanto tempo leva para platinar?", answer: "A estimativa é de 120 a 150 horas, dependendo do calendário, do grind e da velocidade no New Game+." }
+  ];
+
+  const metaphorFinalTagsById = {
+    metaphor_closing_the_book: ["Perdível", "Spoiler", "Risco de run", "Dificuldade", "NG+", "Storyteller", "Redscale Dragon", "Book of Apocalypse"],
+    metaphor_star_shatterer: ["Perdível", "Spoiler", "Risco de run", "Destroyer Charadrius", "Save manual"],
+    metaphor_all_that_glitters: ["Coletável", "Checklist", "Gold Beetles"],
+    metaphor_coronation_of_the_king: ["História", "Spoiler"],
+    metaphor_archetype_hero: ["Perdível", "Grind", "Risco de run", "Archetypes", "Followers"],
+    metaphor_summon_mask_time: ["Perdível", "Spoiler", "Grind", "Crafting", "Equipamento", "Risco de run"],
+    metaphor_money_is_power: ["Grind", "Cleanup", "Reeve"],
+    metaphor_hearts_as_one: ["Perdível", "Risco de run", "Calendário", "Followers"],
+    metaphor_king_of_cuisine: ["Perdível", "Coletável", "Calendário", "Receitas"],
+    metaphor_help_anyone_in_need: ["Perdível", "Missão Secundária", "Questline", "Calendário"],
+    metaphor_entrusted: ["Spoiler", "Risco de run", "Questline", "Dragon Trials"],
+    metaphor_debate_me: ["Perdível", "Risco de run", "Calendário", "Debates"],
+    metaphor_chef_in_training: ["Perdível", "Calendário", "Culinária"],
+    metaphor_bookworm: ["Perdível", "Coletável", "Calendário", "Livros"],
+    metaphor_monster_hunter: ["Missão Secundária", "Bounty", "Cleanup"],
+    metaphor_no_mercy: ["Combate", "Cleanup", "Cumulativo"],
+    metaphor_shrewd_shopper: ["Cleanup", "Compra"],
+    metaphor_vista_viewer: ["Coletável", "Exploração", "Drawings"],
+    metaphor_whats_yours_is_mine: ["Combate", "Cleanup"],
+    metaphor_worldly_wisdom: ["Exploração", "Mapa", "Checklist"],
+    metaphor_at_your_own_risk: ["Cleanup", "Ação específica", "Martira"]
+  };
+
+  for (const trophy of metaphorGuide.trophies) {
+    if (metaphorFinalTagsById[trophy.id]) trophy.tags = metaphorFinalTagsById[trophy.id];
+    trophy.difficultyRequired = trophy.id === "metaphor_closing_the_book";
+    trophy.is_difficulty = trophy.id === "metaphor_closing_the_book";
+    if (trophy.id === "metaphor_all_that_glitters") trophy.tip = "Colete Gold Beetles suficientes para as trocas em Port Brilehaven. Há unidades extras, alguns Beetles individuais podem ser perdidos e os não trocados passam para o New Game+.";
+    if (trophy.id === "metaphor_closing_the_book") trophy.tip = "No New Game+, jogue em Easy ou superior e nunca em Storyteller; libere o Book of Apocalypse em Akademia e derrote o Redscale Dragon.";
+    if (trophy.id === "metaphor_star_shatterer") trophy.tip = "Faça save manual e derrote Destroyer Charadrius sem enfrentar os sub-bosses ou elevadores que o enfraquecem.";
+    if (trophy.id === "metaphor_debate_me") trophy.tip = "Vença os oito candidatos nas datas específicas e escolha as respostas corretas; discursos solo não contam.";
+    trophy.guideTip = trophy.tip;
+  }
+
+  Object.assign(metaphorGuide, {
+    time: "120-150h",
+    estimatedTime: "120–150 horas",
+    time_min_hours: 120,
+    time_max_hours: 150,
+    time_sort_hours: 150,
+    time_reason: "A faixa de 120–150 horas considera calendário 100%, Followers, quests, Archetypes, coleta, grind e a segunda run em New Game+.",
+    before_you_start: "Use um calendário completo desde o início, distribua saves entre os 16 slots e lembre que não há free roam nem level select pós-história. Storyteller pode facilitar a primeira run, mas não deve ser usado no New Game+ do Redscale Dragon.",
+    first_run_advice: "Siga um calendário 100% na primeira run para controlar Followers, quests, debates, livros, receitas, Archetypes, Masks, Vessels e checklists. Deixe Closing the Book para o New Game+ em Easy ou superior, sem usar Storyteller.",
+    cleanup_advice: "Use cleanup apenas para acumulativos, combate, Coliseu, blade-riding e gastos. Eventos de calendário, Star Shatterer e Closing the Book podem exigir save anterior ou outra run.",
+    status: "published",
+    editorial_status: "published",
+    editorialStatus: "verified",
+    editorial_review_status: "verified",
+    coverage_level: "complete",
+    is_verified: true,
+    verification_status: "verified",
+    verification_note: "Guia verificado: lista base com 44 troféus, 120–150h, dificuldade 3/10, dez perdíveis, um troféu afetado por dificuldade, duas runs, New Game+ obrigatório e nenhum requisito online, coop ou DLC.",
+    editorial_notes: "Revisão final de Metaphor: ReFantazio com filtros controlados, calendário, 16 slots de save, Star Shatterer, Closing the Book, Redscale Dragon e separação entre perdíveis e cleanup.",
+    editorial_summary: [
+      "Metaphor: ReFantazio é uma platina longa, totalmente offline e baseada em calendário. A lista tem 44 troféus, não exige online, cooperação ou DLC, possui dez perdíveis importantes e requer New Game+ para Closing the Book.",
+      "A rota segura usa um calendário 100% na primeira run para Followers, quests, debates, livros, receitas, Archetypes, Masks, Vessels, Gold Beetles e drawings. Na segunda, jogue em Easy ou superior, nunca em Storyteller, e derrote o Redscale Dragon do Book of Apocalypse.",
+      "Star Shatterer exige Destroyer Charadrius sem enfraquecimento. Não há free roam ou level select pós-história, mas existem 16 slots de save manual para proteger datas e decisões críticas."
+    ],
+    quickDecision: {
+      verdict: "É uma platina longa e acessível mecanicamente, indicada para quem aceita seguir calendário e checklists.",
+      difficulty: "Baixa a moderada, cerca de 3/10.",
+      time: "Longa, entre 120 e 150 horas.",
+      mainRisk: "Dez perdíveis, calendário e Storyteller no New Game+ de Closing the Book.",
+      risk: "Alto retrabalho se eventos de calendário forem perdidos ou se o Redscale Dragon for bloqueado.",
+      onlineCoop: "Não exige online nem cooperação.",
+      dlc: "Não exige DLC.",
+      firstAction: "Comece a primeira run com um calendário 100% e saves manuais em slots separados."
+    },
+    roadmap: metaphorFinalRoadmap,
+    roadmapStages: metaphorFinalRoadmap,
+    attentionPoints: metaphorFinalAttentionPoints,
+    faq: metaphorFinalFaq
+  });
+}
+
+// Auditoria editorial final: Mortal Shell (lista base PS4).
+const mortalShellGuide = sampleGames.find(game => game.slug === 'mortal-shell');
+if (mortalShellGuide) {
+  const mortalShellTagsById = {
+    mortal_shell_forever_alone: ['Perdível', 'Risco de run'],
+    mortal_shell_face_off: ['Perdível', 'Risco de oportunidade'],
+    mortal_shell_seeker_of_false_truths: ['Perdível', 'Coletável'],
+    mortal_shell_life_is_suffering: ['Perdível', 'Risco de run'],
+    mortal_shell_bars_tended: ['Perdível', 'Coletável', 'Grind'],
+    mortal_shell_sugar_baby: ['Grind'],
+    mortal_shell_untarnished: ['Grind'],
+    mortal_shell_you_seem_different: ['Coletável'],
+    mortal_shell_fun_guy: ['Coletável'],
+    mortal_shell_step_goal: ['Cleanup'],
+    mortal_shell_is_this_a_sparta: ['Cleanup'],
+    mortal_shell_the_good_times_are_killing_me: ['Cleanup'],
+    mortal_shell_its_a_me: ['Cleanup'],
+    mortal_shell_purrfect: ['Cleanup'],
+    mortal_shell_nailed_it: ['Cleanup']
+  };
+
+  Object.assign(mortalShellGuide, {
+    primary_platform: 'PS4',
+    platforms: ['PS4'],
+    guide_platform: 'PS4 — lista base',
+    platform_scope: 'Este guia cobre a lista base de Mortal Shell no PS4. Mortal Shell: Enhanced Edition é uma lista própria de PS5 e não é misturada aqui.',
+    runs: '2 jogadas recomendadas',
+    difficultyTrophiesRequired: false,
+    difficulty_trophies_required: false,
+    before_you_start: 'Este guia cobre a lista base de PS4. Não há seleção de dificuldade, online ou coop obrigatório. Tente Face Off no tutorial e, antes de derrotar Crucix em Seat of Infinity, pegue as inscrições, o Mango e o Glimpse of Disdain. Depois do chefe final, você pode retornar a Fallgrim para muitas pendências ou seguir para NG+, mas esses perdíveis não devem ser tratados como cleanup garantido.',
+    cleanup_advice: 'Depois do final, volte a Fallgrim para troféus diversos, Shells, upgrades, Tar, mushrooms, parries e familiaridade ainda acessível. Face Off exige o tutorial de uma nova jogada; inscrições, Mango e Glimpse of Disdain perdidos em Seat of Infinity podem exigir NG+ ou outra campanha.',
+    editorial_status: 'published',
+    coverage_level: 'complete',
+    is_verified: true,
+    verification_status: 'verified',
+    last_reviewed_at: '2026-06-19',
+    reviewed_by: 'AtlasAchievement',
+    verification_note: 'Guia verificado para a lista base de PS4: 26 troféus, distribuição 1/6/11/8, 20–40h, dificuldade 6/10, cinco perdíveis, duas jogadas recomendadas e nenhum requisito de online, coop, dificuldade selecionável ou DLC.',
+    editorial_notes: 'Revisão final focada na separação da Enhanced Edition/PS5 e de The Virtuous Cycle, nos cinco perdíveis reais, nos itens sensíveis de Seat of Infinity e em filtros sem inflação.'
+  });
+
+  mortalShellGuide.roadmap = [
+    {
+      title: 'Etapa 1 — Jogada normal: Shells, lore, itens e aprendizado',
+      focus: 'Campanha normal com uma Shell principal',
+      objective: 'Aprender o combate, evoluir uma Shell e adiantar Shells, armas, itens, lore, chefes e familiaridade.',
+      actions: [
+        'Tente derrotar Hadern no tutorial para Face Off; se perder a oportunidade, só será possível tentar novamente no início de outra jogada.',
+        'Use uma Shell confortável e aprenda harden, parry, stamina, resolve, rotas e padrões dos chefes.',
+        'Encontre as quatro Shells, as armas da lista base e upgrades úteis; trabalhe troféus diversos durante a exploração.',
+        'Use cada item até atingir a familiaridade exigida e acompanhe as inscrições de lore desde cedo.',
+        'Antes de derrotar Crucix em Seat of Infinity, pegue as inscrições necessárias, o Mango e o Glimpse of Disdain.',
+        'Derrote os chefes principais e entregue as glândulas ao Old Prisoner conforme a campanha avançar.'
+      ],
+      warning: 'Seat of Infinity tem inscrições e itens que ficam inacessíveis naquela jogada após o chefe da área. Face Off também não é cleanup de pós-jogo.',
+      result: 'Grande parte da lista concluída, personagem preparado e conhecimento de mapa, rotas e chefes adquirido.'
+    },
+    {
+      title: 'Etapa 2 — Cleanup antes e depois do final',
+      focus: 'Lore, itens, Shells, upgrades, familiaridade e troféus diversos',
+      objective: 'Fechar pendências acessíveis e deixar somente a run restritiva para o fim.',
+      actions: [
+        'Revise lore, itens, Shells, armas, upgrades e familiaridade antes de encerrar a campanha normal.',
+        'Complete Sugar Baby, Fun Guy, Untarnished e os troféus situacionais ainda pendentes; farme Tar apenas se necessário.',
+        'Depois do chefe final, escolha retornar a Fallgrim se quiser continuar o cleanup antes de entrar em NG+.',
+        'Se perdeu Face Off, alguma inscrição, o Mango ou o Glimpse of Disdain, planeje NG+ ou uma nova jogada em vez de contar com o pós-jogo.'
+      ],
+      warning: 'Muitas pendências aceitam cleanup, mas os cinco perdíveis não são recuperáveis a qualquer momento na mesma jogada.',
+      result: 'Lista base quase completa, restando principalmente Forever Alone e Life is Suffering.'
+    },
+    {
+      title: 'Etapa 3 — Run sem Shell em Obsidian Dark',
+      focus: 'Forever Alone e Life is Suffering',
+      objective: 'Concluir a jogada mais difícil sem se vincular a uma Shell e em Obsidian Dark Form.',
+      actions: [
+        'Inicie uma nova campanha e não se vincule a nenhuma Shell em momento algum.',
+        'Renuncie à humanidade para ativar Obsidian Dark Form e combinar os dois troféus na mesma run.',
+        'Use harden, mobilidade, upgrades de arma e rotas seguras para passar pelos chefes obrigatórios.',
+        'Evite desvios desnecessários e aplique o conhecimento obtido na campanha normal.'
+      ],
+      warning: 'Este é o principal gargalo de habilidade da platina: sem Shell, o personagem morre com extrema facilidade. Faça a etapa somente depois de dominar mapa, chefes e rotas.',
+      result: 'Forever Alone e Life is Suffering concluídos; com as pendências anteriores fechadas, a platina é desbloqueada.'
+    }
+  ];
+  mortalShellGuide.roadmapStages = mortalShellGuide.roadmap;
+
+  mortalShellGuide.attentionPoints = [
+    { title: 'Principal gargalo', detail: 'Forever Alone e Life is Suffering devem ser combinados em uma run dedicada sem Shell e em Obsidian Dark Form; é a parte mais difícil da platina.', tags: ['Perdíveis', 'Run sem Shell'] },
+    { title: 'Face Off', detail: 'Hadern precisa ser derrotado no tutorial. Se a tentativa for perdida, comece uma nova jogada; não é cleanup comum de pós-jogo.', tags: ['Perdível', 'Tutorial'] },
+    { title: 'Seat of Infinity', detail: 'Pegue as inscrições de Seeker of False Truths, o Mango e o Glimpse of Disdain antes de derrotar Crucix, pois eles podem ficar inacessíveis naquela jogada.', tags: ['Perdíveis', 'Coletáveis'] },
+    { title: 'Cleanup e Fallgrim', detail: 'Após o final, é possível voltar a Fallgrim para muitas pendências ou seguir para NG+, mas isso não torna todos os perdíveis recuperáveis na mesma jogada.', tags: ['Cleanup', 'NG+'] },
+    { title: 'Sem troféus online', detail: 'A lista base pode ser concluída totalmente offline e não exige PS+.', tags: ['Offline'] },
+    { title: 'Sem coop', detail: 'Não há troféu cooperativo nem segundo jogador obrigatório.', tags: ['Solo'] },
+    { title: 'Sem troféu de dificuldade', detail: 'Mortal Shell não possui seleção de dificuldade; o desafio mecânico não deve ativar o filtro Dificuldade.', tags: ['Sem dificuldade selecionável'] },
+    { title: 'DLC separado', detail: 'The Virtuous Cycle possui conteúdo e troféus separados e não é necessário para a platina base.', tags: ['DLC', 'Fora da platina'] },
+    { title: 'Plataforma do guia', detail: 'O alvo é a lista base de PS4. Mortal Shell: Enhanced Edition corresponde à lista própria de PS5 e não é misturada neste guia.', tags: ['PS4', 'Escopo'] }
+  ];
+
+  mortalShellGuide.faq = [
+    { question: 'Mortal Shell tem troféus online?', answer: 'Não. Os 26 troféus da lista base podem ser obtidos totalmente offline.' },
+    { question: 'Mortal Shell tem troféus coop?', answer: 'Não. A platina é single-player e não exige coop nem um segundo jogador.' },
+    { question: 'Mortal Shell tem troféus perdíveis?', answer: 'Sim. Os cinco são Forever Alone, Life is Suffering, Face Off, Seeker of False Truths e Bars Tended.' },
+    { question: 'A dificuldade afeta os troféus?', answer: 'Não. O jogo não tem seleção de dificuldade; a nota 6/10 reflete apenas o desafio da platina.' },
+    { question: 'O DLC The Virtuous Cycle é necessário para a platina?', answer: 'Não. O DLC tem conteúdo e troféus separados e não entra na lista base.' },
+    { question: 'Quantas jogadas são recomendadas?', answer: 'Duas: uma campanha normal para coleta, evolução e aprendizado, seguida de uma run sem Shell em Obsidian Dark Form.' },
+    { question: 'Qual é o maior desafio da platina?', answer: 'A run sem Shell em Obsidian Dark Form, que combina Forever Alone e Life is Suffering e deixa pouquíssima margem para erro.' },
+    { question: 'Posso fazer cleanup depois do final?', answer: 'Sim, para muitas pendências: escolha voltar a Fallgrim antes de seguir para NG+. Porém, Face Off e itens ou inscrições perdidos em Seat of Infinity podem exigir NG+ ou uma nova jogada.' },
+    { question: 'O que devo pegar em Seat of Infinity antes do chefe?', answer: 'Pegue as inscrições necessárias para Seeker of False Truths, o Mango e o Glimpse of Disdain antes de derrotar Crucix.' },
+    { question: 'Forever Alone e Life is Suffering podem ser feitos juntos?', answer: 'Sim. Não se vincule a nenhuma Shell e ative Obsidian Dark Form na mesma nova campanha.' }
+  ];
+
+  for (const trophy of mortalShellGuide.trophies) {
+    trophy.is_online = false;
+    trophy.is_coop = false;
+    trophy.is_difficulty = false;
+    trophy.is_dlc = false;
+    trophy.tags = mortalShellTagsById[trophy.id] || [];
+    if (trophy.id === 'mortal_shell_forever_alone') {
+      trophy.tip = 'Realize uma nova run sem interagir com nenhuma Shell. Combine com Life is Suffering quando já conhecer bem rotas e chefes.';
+    }
+    if (trophy.id === 'mortal_shell_you_seem_different') {
+      trophy.tip = 'Encontre as quatro Shells em Fallgrim no mesmo save. Evite esse objetivo na run dedicada de Forever Alone.';
+    }
+    if (trophy.id === 'mortal_shell_seeker_of_false_truths') {
+      trophy.tip = 'Desbloqueie todas as inscrições de lore secreta. Pegue as inscrições de Seat of Infinity antes de derrotar Crucix, pois elas podem ficar inacessíveis naquela jogada.';
+    }
+    if (trophy.id === 'mortal_shell_bars_tended') {
+      trophy.tip = 'Use todos os itens exigidos até completar a familiaridade. Pegue o Mango e o Glimpse of Disdain em Seat of Infinity antes de derrotar Crucix; perdê-los pode exigir NG+.';
+    }
+  }
+}
+
+// Segunda auditoria editorial: filtros, alertas e roadmap de Mortal Shell.
+if (mortalShellGuide) {
+  const mortalShellFinalTagsById = {
+    mortal_shell_platinum: [],
+    mortal_shell_crossed_the_threshold: ['História', 'Spoiler'],
+    mortal_shell_face_off: ['Perdível', 'Risco de run'],
+    mortal_shell_forever_alone: ['Perdível', 'Spoiler', 'Risco de run'],
+    mortal_shell_life_is_suffering: ['Perdível', 'Spoiler', 'Risco de run'],
+    mortal_shell_seeker_of_false_truths: ['Perdível', 'Coletável', 'Spoiler', 'Risco de run'],
+    mortal_shell_the_nihilist: ['Spoiler'],
+    mortal_shell_bars_tended: ['Perdível', 'Coletável', 'Risco de run', 'Grind'],
+    mortal_shell_brigand_life: ['Spoiler', 'Cleanup'],
+    mortal_shell_different_kinds_of_grisha: ['Spoiler', 'Cleanup', 'Combate', 'Miniboss'],
+    mortal_shell_faded_the_fire: ['História', 'Spoiler'],
+    mortal_shell_felled_the_glandfather: ['História', 'Spoiler'],
+    mortal_shell_martyrd_the_martyr: ['História', 'Spoiler'],
+    mortal_shell_tragic_loss: ['História', 'Spoiler'],
+    mortal_shell_nailed_it: ['Cleanup'],
+    mortal_shell_sugar_baby: ['Grind', 'Cleanup'],
+    mortal_shell_untarnished: ['Grind', 'Cleanup'],
+    mortal_shell_you_seem_different: ['Coletável'],
+    mortal_shell_bring_the_glands_back_to_me: ['História', 'Spoiler'],
+    mortal_shell_flesh_and_instinct: ['História'],
+    mortal_shell_fun_guy: ['Coletável'],
+    mortal_shell_is_this_a_sparta: ['Cleanup'],
+    mortal_shell_its_a_me: ['Cleanup'],
+    mortal_shell_purrfect: ['Cleanup'],
+    mortal_shell_step_goal: ['Cleanup'],
+    mortal_shell_the_good_times_are_killing_me: ['Cleanup']
+  };
+
+  const mortalShellFinalTipsById = {
+    mortal_shell_crossed_the_threshold: 'Após derrotar o chefe final, escolha retornar a Fallgrim para resolver pendências ou siga para o New Game+.',
+    mortal_shell_face_off: 'Derrote Hadern no tutorial. Se perder a tentativa, inicie uma nova campanha ou um novo save.',
+    mortal_shell_forever_alone: 'Termine o jogo sem nunca se vincular a uma shell. Use uma run limpa e combine o objetivo com Life is Suffering.',
+    mortal_shell_life_is_suffering: 'Termine o jogo em Obsidian Dark Form. Combine esta run com Forever Alone somente depois de conhecer bem rotas e chefes.',
+    mortal_shell_seeker_of_false_truths: 'Colete todas as inscrições de secret lore. Pegue as três inscrições de Seat of Infinity antes de derrotar Crucix; ignorá-las pode exigir outra run.',
+    mortal_shell_the_nihilist: 'Renuncie à humanidade no altar em Fallgrim para assumir Obsidian Dark Form.',
+    mortal_shell_bars_tended: 'Atinja familiaridade máxima com todos os itens aplicáveis. Planeje repetição e farm; pegue Mango e Glimpse of Disdain antes de derrotar Crucix ou eles podem exigir NG+. Itens sazonais e Rotten Guard não são necessários.',
+    mortal_shell_brigand_life: 'Leve Roasted Rat e Superior Moonshine para Baghead e aceite a proposta; ao recarregar, o progresso retorna ao ponto anterior à decisão.',
+    mortal_shell_different_kinds_of_grisha: 'Derrote as três variantes de Grisha: normal, versão da névoa e Enslaved Grisha.',
+    mortal_shell_nailed_it: 'Mate dois ou mais inimigos com um único disparo da Ballistazooka.',
+    mortal_shell_sugar_baby: 'Gaste mais de 50.000 Tar na loja de Vlas. Reserve o farm de Tar para depois de encaminhar upgrades importantes.',
+    mortal_shell_untarnished: 'Após obter o Tarnished Seal, acumule mais de 100 parries em inimigos com ataques previsíveis.',
+    mortal_shell_you_seem_different: 'Encontre as quatro shells em Fallgrim no mesmo save. Evite esse objetivo apenas na run dedicada a Forever Alone.',
+    mortal_shell_fun_guy: 'Colete 50 mushrooms; eles reaparecem com o tempo.',
+    mortal_shell_purrfect: 'Acaricie o felino de Vlas em Fallgrim Tower.'
+  };
+
+  for (const trophy of mortalShellGuide.trophies) {
+    if (mortalShellFinalTagsById[trophy.id]) trophy.tags = mortalShellFinalTagsById[trophy.id];
+    trophy.is_difficulty = false;
+    trophy.difficultyRequired = false;
+    trophy.is_online = false;
+    trophy.is_coop = false;
+    trophy.is_dlc = false;
+    if (mortalShellFinalTipsById[trophy.id]) trophy.tip = mortalShellFinalTipsById[trophy.id];
+    if (trophy.id === 'mortal_shell_different_kinds_of_grisha') trophy.description = 'Derrote as três variantes de Grisha.';
+    if (trophy.id === 'mortal_shell_purrfect') trophy.description = 'Interaja com o felino de Vlas.';
+    trophy.guideTip = trophy.tip;
+  }
+
+  const mortalShellFinalRoadmap = [
+    {
+      title: 'Etapa 1 — Primeira campanha normal: aprendizado e coleta',
+      focus: 'Shell principal, combate, lore e itens',
+      objective: 'Aprender harden, parry, stamina, resolve e chefes enquanto coleta shells, armas, lore e itens.',
+      actions: [
+        'Use uma shell confortável e evolua uma opção principal.',
+        'Encontre as quatro shells, armas e upgrades úteis da lista base.',
+        'Trabalhe familiaridade de itens e inscrições de secret lore durante a exploração.',
+        'Antes de avançar em Seat of Infinity, revise Seeker of False Truths e Bars Tended.'
+      ],
+      warning: 'Não derrote Crucix antes de pegar as três inscrições, o Mango e o Glimpse of Disdain em Seat of Infinity.',
+      result: 'Combate dominado, personagem preparado e grande parte da coleta encaminhada.'
+    },
+    {
+      title: 'Etapa 2 — Controle Face Off, Seat of Infinity e itens perdíveis',
+      focus: 'Tutorial, inscrições e itens com janela',
+      objective: 'Proteger os perdíveis que exigem uma oportunidade específica ou podem bloquear conteúdo naquela jogada.',
+      actions: [
+        'Derrote Hadern no tutorial para Face Off; se falhar, tente novamente em outra campanha ou save.',
+        'Pegue as três inscrições de Seat of Infinity necessárias para Seeker of False Truths antes de Crucix.',
+        'Pegue Mango e Glimpse of Disdain para Bars Tended antes do chefe da área.',
+        'Use saves separados e marque cada requisito no checklist.'
+      ],
+      warning: 'Face Off não é cleanup de pós-jogo, e o conteúdo sensível de Seat of Infinity pode exigir NG+ se for ignorado.',
+      result: 'Face Off, Seeker of False Truths e os itens críticos de Bars Tended ficam protegidos.'
+    },
+    {
+      title: 'Etapa 3 — Finalize itens, familiaridade, parries e gastos',
+      focus: 'Bars Tended, Sugar Baby, Untarnished e troféus variados',
+      objective: 'Concluir coleta repetitiva, acumulativos e ações específicas antes da run sem shell.',
+      actions: [
+        'Complete a familiaridade dos itens aplicáveis para Bars Tended.',
+        'Gaste mais de 50.000 Tar com Vlas para Sugar Baby.',
+        'Acumule mais de 100 parries para Untarnished e colete 50 mushrooms para Fun Guy.',
+        'Resolva Step Goal, Is This a Sparta?, The Good Times are Killing Me, Nailed It, It’s a me, The Nihilist e Purrfect.'
+      ],
+      warning: 'Itens sazonais e Rotten Guard não fazem parte do requisito de Bars Tended da platina base.',
+      result: 'Grinds moderados, familiaridade e troféus misc ficam concluídos.'
+    },
+    {
+      title: 'Etapa 4 — Derrote os chefes e conclua a campanha',
+      focus: 'Imrod, Tarsus, Crucix e The Unchained',
+      objective: 'Finalizar a campanha e seus troféus de história sem abandonar pendências importantes.',
+      actions: [
+        'Derrote Imrod, the Unrepentant e Tarsus, the First Martyr.',
+        'Revise lore e itens sensíveis de Seat of Infinity antes de enfrentar Crucix, the Twiceborn.',
+        'Derrote The Unchained e conclua a campanha.',
+        'Após o chefe final, escolha retornar a Fallgrim para pendências ou siga para o New Game+.'
+      ],
+      warning: 'O retorno a Fallgrim ajuda em muitas pendências, mas não restaura o tutorial nem o conteúdo perdido de Seat of Infinity naquela jogada.',
+      result: 'Campanha, chefes e glândulas da lista base ficam concluídos.'
+    },
+    {
+      title: 'Etapa 5 — Run sem shell em Obsidian Dark Form',
+      focus: 'Forever Alone e Life is Suffering',
+      objective: 'Concluir a campanha sem se vincular a uma shell e em Obsidian Dark Form.',
+      actions: [
+        'Inicie uma campanha limpa e não interaja com nenhuma shell.',
+        'Renuncie à humanidade para ativar Obsidian Dark Form.',
+        'Use harden, mobilidade, upgrades de arma e rotas seguras contra os chefes obrigatórios.',
+        'Deixe esta etapa para depois de conhecer mapa, chefes e atalhos.'
+      ],
+      warning: 'Esta é a parte mais difícil da platina, mas não representa um troféu de dificuldade selecionável.',
+      result: 'Forever Alone e Life is Suffering ficam concluídos na mesma run.'
+    },
+    {
+      title: 'Etapa 6 — Cleanup final da lista base',
+      focus: 'Itens, Grisha, Vlas, parries, mushrooms e misc',
+      objective: 'Revisar qualquer pendência recuperável e confirmar o escopo correto da platina.',
+      actions: [
+        'Confira itens, lore, familiaridade, gastos com Vlas, parries e mushrooms.',
+        'Derrote as variantes de Grisha e finalize ações específicas ainda pendentes.',
+        'Use Fallgrim, NG+ ou uma nova campanha curta conforme a natureza da pendência.',
+        'Confirme que The Virtuous Cycle permanece separado dos 26 troféus da lista base.'
+      ],
+      warning: 'Não inclua The Virtuous Cycle, itens sazonais ou troféus de DLC como requisito da platina base.',
+      result: 'Checklist base concluído e platina desbloqueada.'
+    }
+  ];
+
+  const mortalShellFinalAttentionPoints = [
+    { title: 'Forever Alone', type: 'Perdível / Risco de run', tip: 'Termine o jogo sem nunca se vincular a uma shell. Use uma campanha ou save limpo; não dependa de um NG+ cujo personagem já tenha shells vinculadas.' },
+    { title: 'Life is Suffering', type: 'Perdível / Obsidian Dark', tip: 'Termine em Obsidian Dark Form e combine com Forever Alone. Como o personagem morre com um golpe, deixe para depois de conhecer rotas e chefes.' },
+    { title: 'Face Off', type: 'Perdível / Tutorial', tip: 'Derrote Hadern no tutorial. Se perder a tentativa, inicie uma nova campanha ou save.' },
+    { title: 'Seeker of False Truths', type: 'Perdível / Lore', tip: 'Colete todas as inscrições de secret lore, com atenção especial às três inscrições de Seat of Infinity antes de Crucix.' },
+    { title: 'Bars Tended', type: 'Perdível / Familiaridade', tip: 'Maximize a familiaridade dos itens aplicáveis e pegue Mango e Glimpse of Disdain antes de Crucix; ignorá-los pode exigir NG+.' }
+  ];
+
+  const mortalShellFinalFaq = [
+    { question: 'Mortal Shell tem troféus online?', answer: 'Não. Os 26 troféus da lista base podem ser obtidos offline.' },
+    { question: 'Mortal Shell tem troféus coop?', answer: 'Não. A platina é single-player e não exige outro jogador.' },
+    { question: 'Mortal Shell tem troféus perdíveis?', answer: 'Sim. Os cinco são Forever Alone, Life is Suffering, Face Off, Seeker of False Truths e Bars Tended.' },
+    { question: 'A dificuldade afeta os troféus?', answer: 'Não. Mortal Shell não possui seleção de dificuldade; a nota 6/10 reflete o desafio da platina, especialmente a run sem shell em Obsidian Dark Form.' },
+    { question: 'The Virtuous Cycle é necessário?', answer: 'Não. O DLC possui conteúdo e troféus separados e não entra nos 26 troféus da lista base.' },
+    { question: 'Quantas jogadas são recomendadas?', answer: 'Duas: uma campanha normal para coleta, evolução e aprendizado, seguida de uma run sem shell em Obsidian Dark Form.' },
+    { question: 'Posso fazer cleanup depois do chefe final?', answer: 'Sim. Você pode retornar a Fallgrim em vez de entrar direto em NG+, mas deve conferir inscrições e itens sensíveis de Seat of Infinity antes de Crucix.' },
+    { question: 'Qual é o maior desafio da platina?', answer: 'Combinar Forever Alone e Life is Suffering, pois a run sem shell em Obsidian Dark Form deixa o personagem extremamente vulnerável.' }
+  ];
+
+  Object.assign(mortalShellGuide, {
+    difficultyTrophiesRequired: false,
+    roadmap: mortalShellFinalRoadmap,
+    roadmapStages: mortalShellFinalRoadmap,
+    attentionPoints: mortalShellFinalAttentionPoints,
+    faq: mortalShellFinalFaq,
+    coverage_level: 'complete',
+    is_verified: true,
+    verification_status: 'verified',
+    editorialStatus: 'verified',
+    editorial_review_status: 'verified',
+    verification_note: 'Guia verificado: 26 troféus, 20–40h, 6/10, cinco perdíveis, três grinds confirmados, sem online, coop ou dificuldade selecionável, e The Virtuous Cycle separado.'
+  });
+}
+
+// Auditoria editorial final: Persona 3 Reload.
+const persona3ReloadGuide = sampleGames.find(game => game.slug === 'persona-3-reload');
+if (persona3ReloadGuide) {
+  const persona3ReloadMissableIds = new Set([
+    'p3r_a_legacy_of_friendships',
+    'p3r_from_shadows_into_light',
+    'p3r_top_of_the_class',
+    'p3r_that_special_someone',
+    'p3r_the_strength_of_our_hearts',
+    'p3r_peak_performance',
+    'p3r_people_person',
+    'p3r_extracurricular_excellence'
+  ]);
+
+  const persona3ReloadTagsById = {
+    p3r_a_most_remarkable_guest: [],
+    p3r_a_legacy_of_friendships: ['Perdível', 'Risco de Calendário', 'Social Link', 'Calendário'],
+    p3r_reaper_reaped: ['Boss', 'Grind', 'Spoiler', 'Cleanup', 'Tartarus'],
+    p3r_path_to_salvation: ['Fusão', 'Grind', 'Spoiler', 'Cleanup'],
+    p3r_from_shadows_into_light: ['Perdível', 'Spoiler', 'Risco de run', 'História'],
+    p3r_distinguished_visitor: ['Elizabeth Requests', 'Checklist', 'Grind'],
+    p3r_top_of_the_class: ['Perdível', 'Risco de Calendário', 'Calendário'],
+    p3r_that_special_someone: ['Perdível', 'Risco de Calendário', 'Social Link', 'Calendário'],
+    p3r_unbreakable_link: ['Social Link', 'Calendário'],
+    p3r_the_strength_of_our_hearts: ['Perdível', 'Risco de Calendário', 'Theurgy', 'Combate'],
+    p3r_peak_performance: ['Perdível', 'Risco de Calendário', 'Calendário', 'Grind'],
+    p3r_awakened_power: ['História'],
+    p3r_sees_the_day: ['História'],
+    p3r_back_on_track: ['História', 'Spoiler'],
+    p3r_empowered_protector: ['História', 'Spoiler'],
+    p3r_never_toy_with_matters_of_the_heart: ['História', 'Spoiler'],
+    p3r_armor_disarmed: ['História', 'Spoiler'],
+    p3r_dodging_lightning: ['História', 'Spoiler'],
+    p3r_twist_of_fate: ['História', 'Spoiler'],
+    p3r_a_sense_of_finality: ['História', 'Spoiler'],
+    p3r_the_great_seal: ['História', 'Spoiler', 'Risco de run'],
+    p3r_the_fools_journey: ['Tartarus', 'Shuffle Time', 'Grind', 'Cleanup'],
+    p3r_people_person: ['Perdível', 'Risco de Calendário', 'Social Link', 'Calendário'],
+    p3r_a_newfound_strength: ['História', 'Spoiler'],
+    p3r_the_power_of_choice: ['Tartarus', 'Shuffle Time', 'Cleanup'],
+    p3r_theres_no_i_in_team: ['Combate', 'Cleanup'],
+    p3r_extracurricular_excellence: ['Perdível', 'Risco de Calendário', 'Tartarus', 'Missing Persons'],
+    p3r_get_a_load_of_those_numbers: ['Combate', 'Cleanup'],
+    p3r_shrouded_assassin: ['Tartarus', 'Combate', 'Grind', 'Cleanup'],
+    p3r_the_thrill_of_the_hunt: ['Tartarus', 'Combate', 'Cleanup'],
+    p3r_making_the_dream_work: ['Combate', 'Grind', 'Cleanup'],
+    p3r_glimpse_of_the_depths: ['Tartarus', 'Monad', 'Checklist', 'Cleanup'],
+    p3r_briefcase_burglar: ['Coletável', 'Tartarus', 'Grind', 'Cleanup'],
+    p3r_shattered_plumes: ['Coletável', 'Twilight Fragments', 'Grind', 'Cleanup'],
+    p3r_the_horror_of_the_shade: ['Tartarus', 'Cleanup'],
+    p3r_the_first_of_many: ['Fusão'],
+    p3r_fusion_artisan: ['Fusão'],
+    p3r_birthday_present: ['Fusão', 'Cleanup'],
+    p3r_tempting_fate: ['Fusão', 'Cleanup'],
+    p3r_eat_your_veggies_peas: ['Calendário', 'Dormitório'],
+    p3r_the_grindset_mindset: ['Calendário', 'Jobs', 'Grind'],
+    p3r_specialist: ['Calendário', 'Social Stats'],
+    p3r_dorm_life: ['Calendário', 'Dormitório'],
+    p3r_gourmand: ['Calendário', 'Cleanup'],
+    p3r_benevolent_purr_tector: ['Elizabeth Requests', 'Calendário', 'Cleanup'],
+    p3r_in_high_demand: ['Social Link', 'Calendário'],
+    p3r_beyond_the_darkness: ['Tartarus', 'Monad', 'Checklist', 'Spoiler', 'Cleanup'],
+    p3r_through_thick_and_thin: ['Calendário', 'Dormitório'],
+    p3r_eagle_eye: ['Coletável', 'Twilight Fragments', 'Checklist', 'Cleanup']
+  };
+
+  const persona3ReloadNamesPtById = {
+    p3r_a_most_remarkable_guest: 'O Convidado Mais Notável',
+    p3r_a_legacy_of_friendships: 'Um Legado de Amizades',
+    p3r_reaper_reaped: 'Ceifador Ceifado',
+    p3r_path_to_salvation: 'Caminho para a Salvação',
+    p3r_from_shadows_into_light: 'Das Sombras para a Luz',
+    p3r_distinguished_visitor: 'Visitante Ilustre',
+    p3r_top_of_the_class: 'Primeiro da Turma',
+    p3r_that_special_someone: 'Alguém Especial',
+    p3r_unbreakable_link: 'Vínculo Inquebrável',
+    p3r_the_strength_of_our_hearts: 'A Força dos Nossos Corações',
+    p3r_peak_performance: 'Desempenho Máximo',
+    p3r_awakened_power: 'Poder Desperto',
+    p3r_sees_the_day: 'O Dia da SEES',
+    p3r_back_on_track: 'De Volta aos Trilhos',
+    p3r_empowered_protector: 'Protetor Fortalecido',
+    p3r_never_toy_with_matters_of_the_heart: 'Não Brinque com Assuntos do Coração',
+    p3r_armor_disarmed: 'Armadura Desarmada',
+    p3r_dodging_lightning: 'Desviando do Relâmpago',
+    p3r_twist_of_fate: 'Reviravolta do Destino',
+    p3r_a_sense_of_finality: 'Sensação de Finalidade',
+    p3r_the_great_seal: 'O Grande Selo',
+    p3r_the_fools_journey: 'A Jornada do Louco',
+    p3r_people_person: 'Pessoa Sociável',
+    p3r_a_newfound_strength: 'Uma Nova Força',
+    p3r_the_power_of_choice: 'O Poder da Escolha',
+    p3r_theres_no_i_in_team: 'Não Existe "Eu" em "Equipe"',
+    p3r_extracurricular_excellence: 'Excelência Extracurricular',
+    p3r_get_a_load_of_those_numbers: 'Olha Esses Números!',
+    p3r_shrouded_assassin: 'Assassino Encoberto',
+    p3r_the_thrill_of_the_hunt: 'A Emoção da Caçada',
+    p3r_making_the_dream_work: 'Fazendo o Sonho Acontecer',
+    p3r_glimpse_of_the_depths: 'Vislumbre das Profundezas',
+    p3r_briefcase_burglar: 'Ladrão de Maletas',
+    p3r_shattered_plumes: 'Plumas Estilhaçadas',
+    p3r_the_horror_of_the_shade: 'O Horror da Sombra',
+    p3r_the_first_of_many: 'O Primeiro de Muitos',
+    p3r_fusion_artisan: 'Artesão da Fusão',
+    p3r_birthday_present: 'Presente de Aniversário',
+    p3r_tempting_fate: 'Tentando o Destino',
+    p3r_eat_your_veggies_peas: 'Coma Seus Legumes, Ervilhas!',
+    p3r_the_grindset_mindset: 'Mentalidade de Ralação',
+    p3r_specialist: 'Especialista',
+    p3r_dorm_life: 'Vida no Dormitório',
+    p3r_gourmand: 'Gourmet',
+    p3r_benevolent_purr_tector: 'Protetor Felino Benevolente',
+    p3r_in_high_demand: 'Muito Procurado',
+    p3r_beyond_the_darkness: 'Além da Escuridão',
+    p3r_through_thick_and_thin: 'Em Bons e Maus Momentos',
+    p3r_eagle_eye: 'Olho de Águia'
+  };
+
+  const persona3ReloadDescriptionOverrides = {
+    p3r_a_legacy_of_friendships: 'Maximize cada vínculo social.',
+    p3r_unbreakable_link: 'Maximize um vínculo social.',
+    p3r_the_strength_of_our_hearts: 'Use a Theurgy de cada companheiro.',
+    p3r_peak_performance: 'Maximize Courage, Academics e Charm.',
+    p3r_people_person: 'Desbloqueie cada vínculo social.',
+    p3r_a_newfound_strength: 'Desperte as Personas finais dos companheiros.',
+    p3r_making_the_dream_work: 'Realize 50 All-Out Attacks.',
+    p3r_the_first_of_many: 'Realize uma Dyad Fusion.',
+    p3r_specialist: 'Maximize um atributo social.',
+    p3r_gourmand: 'Peça o item do menu secreto à noite.',
+    p3r_through_thick_and_thin: 'Desbloqueie uma Combat Characteristic de companheiro.'
+  };
+
+  const persona3ReloadTipOverrides = {
+    p3r_a_legacy_of_friendships: 'Maior gargalo da platina: siga um calendário eficiente, leve uma Persona da Arcana correspondente aos encontros e reserve janeiro para Aigis.',
+    p3r_reaper_reaped: 'Derrote o Reaper antes do fim. Prepare nível, equipamentos, Theurgy e uma estratégia segura em Tartarus.',
+    p3r_path_to_salvation: 'Suba o nível necessário, avance Judgement em janeiro e funda Messiah antes do ponto final.',
+    p3r_from_shadows_into_light: 'Em 31/12, não mate Ryoji: escolha poupá-lo para seguir ao caminho do final bom.',
+    p3r_distinguished_visitor: 'Complete requests suficientes para convidar Elizabeth ao quarto; 82 requests são a referência principal, e há margem porque existem mais pedidos.',
+    p3r_top_of_the_class: 'Eleve Academics e responda corretamente às provas, que acontecem em datas fixas.',
+    p3r_that_special_someone: 'Avance uma opção romântica até o Rank 9 dentro do calendário.',
+    p3r_unbreakable_link: 'Maximize um Social Link; normalmente virá no caminho de A Legacy of Friendships.',
+    p3r_the_strength_of_our_hearts: 'Use a Theurgy de cada companheiro, incluindo a de Shinjiro antes de 04/10. Não trate este troféu como automático.',
+    p3r_peak_performance: 'Maximize Courage, Academics e Charm usando dias e noites com eficiência.',
+    p3r_awakened_power: 'Troféu automático de história obtido ao despertar Orpheus no início da campanha.',
+    p3r_sees_the_day: 'Troféu automático de história obtido ao entrar para a SEES.',
+    p3r_back_on_track: 'Troféu automático de história obtido ao derrotar a Priestess no primeiro chefe de lua cheia.',
+    p3r_empowered_protector: 'Troféu automático de história obtido ao derrotar Empress e Emperor.',
+    p3r_never_toy_with_matters_of_the_heart: 'Troféu automático de história obtido ao derrotar Hierophant e Lovers.',
+    p3r_armor_disarmed: 'Troféu automático de história obtido ao derrotar Chariot e Justice.',
+    p3r_dodging_lightning: 'Troféu automático de história obtido ao derrotar Hermit.',
+    p3r_twist_of_fate: 'Troféu automático de história obtido ao derrotar Fortune e Strength.',
+    p3r_a_sense_of_finality: 'Troféu automático de história obtido ao derrotar Hanged Man.',
+    p3r_the_great_seal: 'Sele Nyx no caminho do final bom. Este troféu depende de poupar Ryoji em 31/12 e seguir até a batalha final em 31/01.',
+    p3r_the_power_of_choice: 'Escolha cartas de Persona no Shuffle Time; duplicatas que você já carrega não contam.',
+    p3r_people_person: 'Inicie cada Social Link a tempo, incluindo os que aparecem mais tarde no calendário.',
+    p3r_extracurricular_excellence: 'Resgate uma missing person antes do prazo informado por Fuuka.',
+    p3r_get_a_load_of_those_numbers: 'Use buffs, debuffs e Theurgy em um inimigo vulnerável para superar 999 de dano.',
+    p3r_glimpse_of_the_depths: 'Conclua dez Monad Doors durante as subidas de Tartarus; não deixe todo o conteúdo para o último dia.',
+    p3r_briefcase_burglar: 'Colete recompensas ao abrir 50 baús em Tartarus; acompanhe o contador durante as subidas.',
+    p3r_shattered_plumes: 'Colete e gaste um total de 50 Twilight Fragments em baús trancados ou no relógio de cura.',
+    p3r_the_horror_of_the_shade: 'Depois do tutorial de Dark Zones, encontre uma zona escura aleatória em Tartarus.',
+    p3r_beyond_the_darkness: 'Complete a Monad Door fixa necessária para liberar os Major Arcana restantes antes do fim.',
+    p3r_the_first_of_many: 'Realize uma fusão simples de duas Personas na Velvet Room.',
+    p3r_fusion_artisan: 'Realize uma Special Fusion com três ou mais Personas na Velvet Room. As Special Fusions são liberadas com o progresso da história, Social Links, Linked Episodes e Elizabeth Requests.',
+    p3r_gourmand: 'Suba Charm e peça o menu secreto no Wakatsu Kitchen à noite.',
+    p3r_eagle_eye: 'Colete cada Twilight Fragment espalhado pela cidade antes do fim do calendário.'
+  };
+
+  const accentFixes = [
+    [/\bcalendario\b/gi, 'calendário'], [/\btrofeus\b/gi, 'troféus'], [/\btrofeu\b/gi, 'troféu'],
+    [/\bnao\b/gi, 'não'], [/\bhistoria\b/gi, 'história'], [/\bautomatico\b/gi, 'automático'],
+    [/\bdisponivel\b/gi, 'disponível'], [/\bnivel\b/gi, 'nível'], [/\bfusao\b/gi, 'fusão'],
+    [/\bfusoes\b/gi, 'fusões'], [/\bdecisao\b/gi, 'decisão'], [/\bcritica\b/gi, 'crítica'],
+    [/\bperiodo\b/gi, 'período'], [/\btras\b/gi, 'trás'], [/\bate\b/gi, 'até'],
+    [/\bbaus\b/gi, 'baús'], [/\brelogio\b/gi, 'relógio'], [/\bicone\b/gi, 'ícone'],
+    [/\bcoracao\b/gi, 'coração'], [/\bapos\b/gi, 'após'], [/\bdormitorio\b/gi, 'dormitório'],
+    [/\bnecessarios\b/gi, 'necessários'], [/\bpeca\b/gi, 'peça'], [/\bmedio\b/gi, 'médio'],
+    [/\btem\b/gi, 'têm'], [/\bha\b/gi, 'há']
+  ];
+
+  for (const trophy of persona3ReloadGuide.trophies) {
+    const namePt = persona3ReloadNamesPtById[trophy.id] || '';
+    trophy.trophyNameOriginal = trophy.trophyNameOriginal || trophy.name || '';
+    trophy.originalName = trophy.originalName || trophy.name || '';
+    trophy.name_pt = namePt;
+    trophy.trophyNamePtBr = namePt;
+    trophy.localizedNamePtBr = namePt;
+    trophy.namePtSource = 'editorial_ptbr';
+    trophy.tags = persona3ReloadTagsById[trophy.id] || [];
+    trophy.is_missable = persona3ReloadMissableIds.has(trophy.id);
+    trophy.isMissable = trophy.is_missable;
+    trophy.is_online = false;
+    trophy.isOnline = false;
+    trophy.is_coop = false;
+    trophy.isCoop = false;
+    trophy.is_difficulty = false;
+    trophy.difficultyRequired = false;
+    trophy.is_dlc = false;
+    if (persona3ReloadDescriptionOverrides[trophy.id]) trophy.description = persona3ReloadDescriptionOverrides[trophy.id];
+    let nextTip = persona3ReloadTipOverrides[trophy.id] || trophy.tip || '';
+    for (const [pattern, replacement] of accentFixes) nextTip = nextTip.replace(pattern, replacement);
+    trophy.tip = nextTip;
+    trophy.guideTip = nextTip;
+  }
+
+  const persona3ReloadFinalRoadmap = [
+    {
+      title: 'Etapa 1 — Calendário 100% desde abril',
+      focus: 'Social Links, Social Stats, aulas e rotina diária',
+      objective: 'Seguir um calendário eficiente desde o início e construir a base social para concluir a platina em uma jogada.',
+      actions: [
+        'Trabalhe Social Links, Social Stats, aulas, provas, romance, convites, jobs e atividades do dormitório.',
+        'Leve uma Persona da Arcana correspondente aos encontros de Social Link.',
+        'Distribua saves manuais entre os 16 slots antes de semanas ou escolhas importantes.',
+        'Evite gastar tardes úteis sem conferir o calendário.'
+      ],
+      warning: 'A Legacy of Friendships é o maior gargalo; erros repetidos no calendário podem exigir outra jogada.',
+      result: 'Base social e de calendário encaminhada para a platina em uma única run.'
+    },
+    {
+      title: 'Etapa 2 — Tartarus em blocos e Elizabeth Requests',
+      focus: 'Baús, Twilight Fragments, Monad e missing persons',
+      objective: 'Subir Tartarus regularmente e combinar exploração, resgates, requests, Personas e combate.',
+      actions: [
+        'Abra baús, gaste Twilight Fragments e conclua Monad Doors durante cada bloco.',
+        'Resgate missing persons antes dos prazos informados por Fuuka.',
+        'Complete Elizabeth Requests suficientes para Distinguished Visitor.',
+        'Use Shuffle Time para obter Personas e Major Arcana.'
+      ],
+      warning: 'Missing persons têm prazo; Monad Doors e requests não devem ser deixados para o último dia.',
+      result: 'Tartarus, exploração e Elizabeth Requests avançam sem quebrar o calendário.'
+    },
+    {
+      title: 'Etapa 3 — Social Links, Social Stats e romance',
+      focus: 'A Legacy of Friendships e troféus sociais',
+      objective: 'Maximizar Courage, Charm e Academics, desbloquear cada Social Link e concluir um romance.',
+      actions: [
+        'Priorize Social Links escolares e vínculos com disponibilidade limitada.',
+        'Use Arcana correspondente para reduzir encontros sem avanço de rank.',
+        'Avance uma opção romântica até o Rank 9 para That Special Someone.',
+        'Reserve janeiro para o Social Link de Aigis.'
+      ],
+      warning: 'Aigis só fica disponível em janeiro; não desperdice tardes sem revisar os vínculos restantes.',
+      result: 'A Legacy of Friendships, People Person, Peak Performance e troféus sociais ficam concluídos.'
+    },
+    {
+      title: 'Etapa 4 — Theurgy, dormitório e Shinjiro',
+      focus: 'The Strength of Our Hearts e Combat Characteristics',
+      objective: 'Usar a Theurgy de cada companheiro e concluir eventos relevantes do dormitório.',
+      actions: [
+        'Use as Theurgies assim que forem liberadas e marque cada companheiro.',
+        'Use obrigatoriamente a Theurgy de Shinjiro antes de 04/10.',
+        'Faça eventos do dormitório para liberar Combat Characteristics.',
+        'Confirme The Strength of Our Hearts antes de avançar outubro.'
+      ],
+      warning: 'A Theurgy de Shinjiro tem janela única antes de 04/10 e não é automática.',
+      result: 'O principal perdível técnico da lista fica protegido.'
+    },
+    {
+      title: 'Etapa 5 — Decisão de 31/12 e caminho do final bom',
+      focus: 'Ryoji, From Shadows into Light e The Great Seal',
+      objective: 'Fazer a escolha correta em 31/12 e manter acesso ao caminho de Nyx.',
+      actions: [
+        'Crie um save manual antes da decisão de 31/12.',
+        'Não mate Ryoji; escolha poupá-lo.',
+        'Continue a campanha pelo caminho do final bom.',
+        'Prepare Tartarus e os Social Links restantes para janeiro.'
+      ],
+      warning: 'Matar Ryoji encerra a rota cedo e impede o final bom nessa jogada.',
+      result: 'From Shadows into Light e The Great Seal permanecem disponíveis.'
+    },
+    {
+      title: 'Etapa 6 — Janeiro: Aigis, Reaper, Messiah e cleanup',
+      focus: 'Reta final antes de 31/01',
+      objective: 'Finalizar vínculos, Tartarus, fusões, bosses opcionais e acumulativos antes do encerramento.',
+      actions: [
+        'Maximize o Social Link de Aigis e feche outros vínculos pendentes.',
+        'Derrote o Reaper e alcance o nível necessário para fundir Messiah.',
+        'Conclua Monad, Twilight Fragments, baús, Major Arcana e combates restantes.',
+        'Confirme o checklist da lista base antes de 31/01.'
+      ],
+      warning: '31/01 é o ponto final; não existe free roam nem level select após a história. Faça saves manuais antes da reta final.',
+      result: 'A Most Remarkable Guest é desbloqueado sem depender de Episode Aigis.'
+    }
+  ];
+
+  const persona3ReloadAttentionPoints = [
+    { title: 'Calendário 100%', type: 'Uma jogada planejada', tip: 'Uma run é suficiente com calendário eficiente; sem guia, erros podem exigir duas ou mais jogadas.' },
+    { title: 'A Legacy of Friendships', type: 'Maior gargalo', tip: 'Maximize cada Social Link usando Arcana correspondente e protegendo as tardes de janeiro.' },
+    { title: 'Theurgy de Shinjiro', type: 'Antes de 04/10', tip: 'Use a Theurgy de Shinjiro antes de 04/10 para The Strength of Our Hearts.' },
+    { title: 'Escolha de 31/12', type: 'Final bom', tip: 'Poupe Ryoji; não o mate se quiser continuar pelo caminho de Nyx e do final bom.' },
+    { title: 'Sem pós-jogo livre', type: 'Ponto final em 31/01', tip: 'Não há free roam nem level select após a história; faça o cleanup antes do final.' },
+    { title: 'Saves manuais', type: '16 slots', tip: 'Mantenha saves separados antes de semanas críticas, 31/12 e 31/01.' },
+    { title: 'Missing persons', type: 'Prazo', tip: 'Resgate as pessoas desaparecidas antes das datas-limite informadas por Fuuka.' },
+    { title: 'Elizabeth Requests', type: 'Acompanhamento', tip: 'Há margem, mas complete requests suficientes; 82 pedidos são a referência para Distinguished Visitor.' },
+    { title: 'Messiah', type: 'Nível e fusão', tip: 'Prepare nível e Judgement em janeiro para fundir Messiah antes do fim.' },
+    { title: 'Reaper', type: 'Boss opcional', tip: 'Derrote o Reaper antes do encerramento da campanha; não existe cleanup pós-história.' },
+    { title: 'Episode Aigis', type: 'DLC separado', tip: 'Episode Aigis tem lista própria e não é necessário para A Most Remarkable Guest.' },
+    { title: 'Sem online, coop ou dificuldade', type: 'Lista base', tip: 'A platina pode ser feita offline, solo e em qualquer dificuldade.' }
+  ];
+
+  const persona3ReloadFaq = [
+    { question: 'Persona 3 Reload tem troféus online?', answer: 'Não. A lista base é totalmente offline.' },
+    { question: 'Persona 3 Reload tem coop?', answer: 'Não. A platina é single-player.' },
+    { question: 'A dificuldade afeta troféus?', answer: 'Não. A platina pode ser feita em qualquer dificuldade.' },
+    { question: 'Quantas jogadas são necessárias?', answer: 'Uma jogada com calendário 100%. Sem guia, duas ou mais podem ser necessárias por causa de Social Links, calendário e escolhas.' },
+    { question: 'Persona 3 Reload tem troféus perdíveis?', answer: 'Sim. O calendário, Social Links, exames, missing persons e escolhas criam riscos reais; use especialmente a Theurgy de Shinjiro antes de 04/10.' },
+    { question: 'Qual é o maior gargalo da platina?', answer: 'A Legacy of Friendships, por exigir maximizar cada Social Link em uma única jogada.' },
+    { question: 'Qual escolha devo fazer em 31/12?', answer: 'Poupe Ryoji. Não o mate; essa escolha mantém o caminho do final bom.' },
+    { question: 'Existe pós-jogo livre?', answer: 'Não. O ponto final é 31/01; finalize Reaper, Messiah, Social Links, Monad Doors, Twilight Fragments, baús, requests e cleanup antes do final.' },
+    { question: 'Episode Aigis é necessário para a platina?', answer: 'Não. Episode Aigis é DLC separado e não entra nos 49 troféus base nem em A Most Remarkable Guest.' },
+    { question: 'Preciso completar todos os Elizabeth Requests?', answer: 'Não todos, mas complete o suficiente para convidar Elizabeth ao quarto; 82 requests são a referência principal.' },
+    { question: 'Preciso completar todos os Linked Episodes?', answer: 'Não há troféu direto para todos eles, embora possam liberar fusões únicas e ajudar na rota 100%.' },
+    { question: 'Preciso completar 100% do Compendium?', answer: 'Não há troféu direto de 100% do Compendium, mas fusões avançadas ajudam com Messiah, Reaper e Theurgy.' }
+  ];
+
+  Object.assign(persona3ReloadGuide, {
+    hasMissables: true,
+    missableCount: persona3ReloadMissableIds.size,
+    missable_count: persona3ReloadMissableIds.size,
+    hasOnline: false,
+    hasMandatoryOnline: false,
+    hasMandatoryCoop: false,
+    requiresOnline: false,
+    requiresCoop: false,
+    onlineRequired: false,
+    coopRequired: false,
+    difficultyTrophiesRequired: false,
+    dlcRequired: false,
+    dlcRequiredForPlatinum: false,
+    hasFreeRoam: false,
+    manualSaveSlots: 16,
+    runs: 'Uma jogada com calendário 100%; sem guia, duas ou mais podem ser necessárias.',
+    runs_summary: 'Pode ser feita em uma jogada bem planejada, mas calendário, Social Links, Requests e final bom exigem atenção.',
+    missable: 'Tem perdíveis e exige planejamento de calendário. Os maiores riscos são Social Links, Theurgy de Shinjiro, exames, missing persons e a decisão de 31/12.',
+    missable_summary: 'Oito troféus recebem marcação principal de perdível ou risco de calendário, sem transformar toda atividade opcional em perdível.',
+    online_summary: 'A lista base é totalmente offline e single-player, sem troféus online ou cooperação.',
+    grind_summary: 'O peso está em calendário, Social Links, Social Stats, Elizabeth Requests, Tartarus, Reaper, Messiah e cleanup de janeiro.',
+    dlc_scope: 'Episode Aigis é DLC separado, possui lista própria e não é necessário para a platina A Most Remarkable Guest.',
+    difficulty_reason: '3/10: nenhuma dificuldade selecionável afeta troféus; o desafio está no calendário, Social Links e planejamento.',
+    first_run_advice: 'Siga um calendário 100% desde abril, leve Arcana correspondente aos Social Links e mantenha saves manuais em slots separados.',
+    cleanup_advice: 'Conclua em janeiro Social Links, Reaper, Messiah, Tartarus, Monad, Twilight Fragments, baús e acumulativos; não há free roam após 31/01.',
+    before_you_start: 'Uma jogada é suficiente com calendário 100%. Use os 16 slots de save manual, acompanhe Elizabeth Requests e missing persons, use a Theurgy de Shinjiro antes de 04/10 e poupe Ryoji em 31/12. Episode Aigis fica separado.',
+    best_for: 'Ideal para quem quer uma platina JRPG longa, acessível e baseada em planejamento de calendário.',
+    avoid_if: 'Evite se você não gosta de social sim, calendário rígido, Tartarus ou risco de perder janelas de tempo.',
+    editorial_summary: [
+      'Persona 3 Reload é uma platina longa, totalmente offline e baseada em calendário. A lista base possui 49 troféus, não exige online, cooperação ou dificuldade específica, e pode ser concluída em uma jogada seguindo um calendário 100%. O maior cuidado é administrar Social Links, Social Stats, Tartarus, Elizabeth Requests, romance, Monad Doors e a decisão de 31/12 antes do ponto final em 31/01.',
+      'O principal alerta técnico é The Strength of Our Hearts, pois é necessário usar a Theurgy de Shinjiro antes de 04/10. Também é importante usar saves manuais em slots separados, poupar Ryoji em 31/12 para seguir ao final bom e finalizar Reaper, Messiah, Social Links e cleanup antes do encerramento. Episode Aigis é DLC separado e não entra na platina base.'
+    ],
+    quickDecision: {
+      summary: 'Persona 3 Reload é uma platina longa, offline e de calendário: 49 troféus, 60-70h, 3/10, uma jogada com calendário 100%, oito riscos principais e Episode Aigis fora da lista base.'
+    },
+    status: 'published',
+    editorial_status: 'published',
+    editorialStatus: 'verified',
+    editorial_review_status: 'verified',
+    coverage_level: 'complete',
+    is_verified: true,
+    verification_status: 'verified',
+    last_reviewed_at: '2026-06-19',
+    reviewed_by: 'AtlasAchievement',
+    verification_note: 'Guia verificado: lista base com 49 troféus, 60–70h, dificuldade 3/10, oito riscos principais de calendário, uma run planejada, sem online, coop, dificuldade obrigatória ou DLC.',
+    roadmap: persona3ReloadFinalRoadmap,
+    roadmapStages: persona3ReloadFinalRoadmap,
+    attentionPoints: persona3ReloadAttentionPoints,
+    faq: persona3ReloadFaq
+  });
+}
+
+// Auditoria editorial final: Persona 5 Royal.
+const persona5RoyalGuide = sampleGames.find(game => game.slug === 'persona-5-royal');
+if (persona5RoyalGuide) {
+  const persona5RoyalMissableIds = new Set([
+    'p5r_the_path_chosen',
+    'p5r_take_back_the_future',
+    'p5r_a_most_studious_disguise',
+    'p5r_my_closest_partner',
+    'p5r_true_confidence',
+    'p5r_awakening_the_phantom_thieves'
+  ]);
+
+  const persona5RoyalSpoilerIds = new Set([
+    'p5r_the_path_chosen',
+    'p5r_castle_of_lust_seized',
+    'p5r_museum_of_vanity_repossessed',
+    'p5r_bank_of_gluttony_cleaned_out',
+    'p5r_pyramid_of_wrath_plundered',
+    'p5r_spaceport_of_greed_obliterated',
+    'p5r_casino_of_jealousy_bankrupted',
+    'p5r_cruiser_of_pride_capsized',
+    'p5r_the_thorough_trickster',
+    'p5r_take_back_the_future',
+    'p5r_spirit_of_rebellion',
+    'p5r_phantom_thieves_assemble'
+  ]);
+
+  const persona5RoyalTagsById = {
+    p5r_the_phenomenal_phantom_thief: ['Platina'],
+    p5r_the_path_chosen: ['Perdível', 'Final', 'História', 'Spoiler', 'Risco de run'],
+    p5r_a_most_studious_disguise: ['Perdível', 'Calendário', 'Social Stats'],
+    p5r_pure_perfection: ['Calendário', 'Social Stats', 'Grind'],
+    p5r_my_closest_partner: ['Perdível', 'Calendário', 'Confidant'],
+    p5r_true_confidence: ['Perdível', 'Calendário', 'Confidant'],
+    p5r_talent_thief: ['Palace', 'Will Seeds', 'Cleanup'],
+    p5r_the_search_for_power: ['Coletável', 'Mementos', 'Stamps', 'Grind'],
+    p5r_unsurpassed_rebel: ['Boss', 'Mementos', 'Grind', 'Cleanup'],
+    p5r_castle_of_lust_seized: ['História', 'Spoiler', 'Palace'],
+    p5r_museum_of_vanity_repossessed: ['História', 'Spoiler', 'Palace'],
+    p5r_bank_of_gluttony_cleaned_out: ['História', 'Spoiler', 'Palace'],
+    p5r_pyramid_of_wrath_plundered: ['História', 'Spoiler', 'Palace'],
+    p5r_spaceport_of_greed_obliterated: ['História', 'Spoiler', 'Palace'],
+    p5r_casino_of_jealousy_bankrupted: ['História', 'Spoiler', 'Palace'],
+    p5r_cruiser_of_pride_capsized: ['História', 'Spoiler', 'Palace'],
+    p5r_the_thorough_trickster: ['História', 'Spoiler', 'Mementos', 'Risco de run'],
+    p5r_take_back_the_future: ['Perdível', 'História', 'Spoiler', 'Palace', 'Risco de run'],
+    p5r_spirit_of_rebellion: ['História', 'Spoiler'],
+    p5r_phantom_thieves_assemble: ['História', 'Spoiler'],
+    p5r_one_step_at_a_time: ['Mementos', 'Request'],
+    p5r_tokyo_tourist: ['Calendário', 'Atividade social'],
+    p5r_awakening_the_phantom_thieves: ['Perdível', 'Calendário', 'Confidant'],
+    p5r_i_am_thou: ['Combate', 'Persona'],
+    p5r_tactical_teamwork: ['Combate'],
+    p5r_lets_blow_it_up: ['Combate'],
+    p5r_youd_better_hang_on: ['História', 'Palace'],
+    p5r_technician: ['Combate'],
+    p5r_the_purpose_of_a_thief: ['Coletável', 'Persona', 'Treasure Demon'],
+    p5r_its_showtime: ['Combate'],
+    p5r_joses_favorite_customer: ['Coletável', 'Mementos', 'Flowers'],
+    p5r_the_phantom_philatelist: ['Coletável', 'Mementos', 'Stamps'],
+    p5r_the_deviated_cognition: ['Mementos', 'Evento aleatório'],
+    p5r_a_deadly_debut: ['Velvet Room', 'Fusão'],
+    p5r_efficient_executioner: ['Velvet Room', 'Fusão'],
+    p5r_intensive_training: ['Velvet Room', 'Persona'],
+    p5r_success_built_on_sacrifice: ['Velvet Room', 'Fusão'],
+    p5r_accident_prone: ['Velvet Room', 'Fusion Alarm'],
+    p5r_a_grand_experiment: ['Velvet Room', 'Fusão'],
+    p5r_leblanc_buffer: ['Calendário', 'Atividade'],
+    p5r_punch_that_clock: ['Calendário', 'Job'],
+    p5r_batter_up: ['Calendário', 'Minigame'],
+    p5r_getting_the_vapors: ['Calendário', 'Clima'],
+    p5r_easy_money: ['Calendário', 'Loteria'],
+    p5r_going_against_the_crane: ['Calendário', 'Minigame'],
+    p5r_trash_into_treasure: ['Coletável', 'Kichijoji', 'Cleanup'],
+    p5r_dartslinger: ['Calendário', 'Minigame'],
+    p5r_a_hustlers_journey: ['Calendário', 'Minigame'],
+    p5r_a_night_in_kichijoji: ['Calendário', 'Atividade social'],
+    p5r_a_serene_experience: ['Calendário', 'Atividade'],
+    p5r_professional_modification: ['Calendário', 'Confidant'],
+    p5r_anglers_debut: ['Calendário', 'Minigame'],
+    p5r_master_of_akihabara: ['Calendário', 'Maid Café', 'Grind']
+  };
+
+  const persona5RoyalNamesPtById = {
+    p5r_the_phenomenal_phantom_thief: 'O Ladrão Fantasma Fenomenal',
+    p5r_the_path_chosen: 'O Caminho Escolhido',
+    p5r_a_most_studious_disguise: 'O Disfarce Mais Estudioso',
+    p5r_pure_perfection: 'Perfeição Absoluta',
+    p5r_my_closest_partner: 'Meu Parceiro Mais Próximo',
+    p5r_true_confidence: 'Confiança Verdadeira',
+    p5r_talent_thief: 'Ladrão de Talentos',
+    p5r_the_search_for_power: 'A Busca por Poder',
+    p5r_unsurpassed_rebel: 'Rebelde Insuperável',
+    p5r_castle_of_lust_seized: 'Castelo da Luxúria: Tomado',
+    p5r_museum_of_vanity_repossessed: 'Museu da Vaidade: Recuperado',
+    p5r_bank_of_gluttony_cleaned_out: 'Banco da Gula: Esvaziado',
+    p5r_pyramid_of_wrath_plundered: 'Pirâmide da Ira: Saqueada',
+    p5r_spaceport_of_greed_obliterated: 'Espaçoporto da Ganância: Obliterado',
+    p5r_casino_of_jealousy_bankrupted: 'Cassino da Inveja: Falido',
+    p5r_cruiser_of_pride_capsized: 'Cruzador do Orgulho: Afundado',
+    p5r_the_thorough_trickster: 'O Trapaceiro Completo',
+    p5r_take_back_the_future: 'Recupere o Futuro',
+    p5r_spirit_of_rebellion: 'Espírito de Rebelião',
+    p5r_phantom_thieves_assemble: 'Phantom Thieves: Reunir!',
+    p5r_one_step_at_a_time: 'Um Passo de Cada Vez',
+    p5r_tokyo_tourist: 'Turista em Tóquio',
+    p5r_awakening_the_phantom_thieves: 'Despertar dos Phantom Thieves',
+    p5r_i_am_thou: 'Eu Sou Tu...',
+    p5r_tactical_teamwork: 'Trabalho em Equipe Tático',
+    p5r_lets_blow_it_up: 'Vamos Explodir',
+    p5r_youd_better_hang_on: 'É Melhor Se Segurar!',
+    p5r_technician: 'Técnico',
+    p5r_the_purpose_of_a_thief: 'O Propósito de um Ladrão',
+    p5r_its_showtime: 'É Showtime!',
+    p5r_joses_favorite_customer: 'Cliente Favorito de Jose',
+    p5r_the_phantom_philatelist: 'O Filatelista Fantasma',
+    p5r_the_deviated_cognition: 'A Cognição Desviada',
+    p5r_a_deadly_debut: 'Uma Estreia Mortal',
+    p5r_efficient_executioner: 'Executor Eficiente',
+    p5r_intensive_training: 'Treinamento Intensivo',
+    p5r_success_built_on_sacrifice: 'Sucesso Construído no Sacrifício',
+    p5r_accident_prone: 'Propenso a Acidentes',
+    p5r_a_grand_experiment: 'Um Grande Experimento',
+    p5r_leblanc_buffer: 'Faxina no Leblanc',
+    p5r_punch_that_clock: 'Bata o Ponto!',
+    p5r_batter_up: 'Rebata!',
+    p5r_getting_the_vapors: 'Ficando Tonto no Vapor',
+    p5r_easy_money: 'Dinheiro Fácil',
+    p5r_going_against_the_crane: 'Contra a Garra',
+    p5r_trash_into_treasure: 'Lixo em Tesouro',
+    p5r_dartslinger: 'Arremessador de Dardos',
+    p5r_a_hustlers_journey: 'Jornada de um Jogador de Bilhar',
+    p5r_a_night_in_kichijoji: 'Uma Noite em Kichijoji',
+    p5r_a_serene_experience: 'Uma Experiência Serena',
+    p5r_professional_modification: 'Modificação Profissional',
+    p5r_anglers_debut: 'Estreia do Pescador',
+    p5r_master_of_akihabara: 'Mestre de Akihabara'
+  };
+
+  const persona5RoyalTipsById = {
+    p5r_the_phenomenal_phantom_thief: 'Conclua os outros 52 troféus da lista base de Persona 5 Royal.',
+    p5r_the_path_chosen: 'Acesse o terceiro semestre e veja o true ending. Leve Maruki ao rank 9 até 17/11 e recuse as ofertas de 11/20, 12/24, 09/01 e 02/02.',
+    p5r_a_most_studious_disguise: 'Chegue ao topo em uma prova. Eleve Knowledge e responda corretamente às questões; há várias oportunidades ao longo do calendário.',
+    p5r_pure_perfection: 'Maximize os cinco Social Stats: Knowledge, Guts, Proficiency, Kindness e Charm. Faça isso ao longo do calendário usando aulas, livros, filmes, banho, empregos, atividades sociais e outras janelas livres. Não precisa fazer isso em NG+. Com planejamento normal, é possível maximizar todos os Social Stats na primeira jogada. Priorize Knowledge para A Most Studious Disguise.',
+    p5r_my_closest_partner: 'Inicie um romance com uma Confidant elegível antes do encerramento do calendário.',
+    p5r_true_confidence: 'Maximize apenas um Confidant; a platina não exige todos. Escolha alguém com disponibilidade ampla e acompanhe os ranks.',
+    p5r_talent_thief: 'Reúna os três Will Seeds de um Palace e leve o cristal resultante a Jose para obter o acessório de habilidade.',
+    p5r_the_search_for_power: 'Use stamps com Jose até maximizar uma das três alterações de cognição de Mementos.',
+    p5r_unsurpassed_rebel: 'Derrote o Reaper em Mementos quando o grupo estiver preparado. Reduza a dificuldade do jogo se desejar; não há troféu ligado a ela.',
+    p5r_castle_of_lust_seized: 'Conclua o Palace de Kamoshida. Troféu automático de história.',
+    p5r_museum_of_vanity_repossessed: 'Conclua o Palace de Madarame. Troféu automático de história.',
+    p5r_bank_of_gluttony_cleaned_out: 'Conclua o Palace de Kaneshiro. Troféu automático de história.',
+    p5r_pyramid_of_wrath_plundered: 'Conclua o Palace de Futaba. Troféu automático de história.',
+    p5r_spaceport_of_greed_obliterated: 'Conclua o Palace de Okumura. Troféu automático de história.',
+    p5r_casino_of_jealousy_bankrupted: 'Conclua o Palace de Sae. Troféu automático de história, desde que você não aceite o final ruim após o interrogatório.',
+    p5r_cruiser_of_pride_capsized: 'Conclua o Palace de Shido. Troféu de história obtido na rota correta após evitar o final ruim do interrogatório.',
+    p5r_the_thorough_trickster: 'Conclua Mementos como parte da rota de história. Mantenha o avanço dos andares em dia antes das datas finais.',
+    p5r_take_back_the_future: 'Conclua o Palace final do terceiro semestre. O acesso depende de Maruki no rank 9 até 17/11 e das recusas corretas.',
+    p5r_spirit_of_rebellion: 'Obtenha Arsène no início da campanha. Troféu automático de história.',
+    p5r_phantom_thieves_assemble: 'Forme oficialmente os Phantom Thieves. Troféu automático de história.',
+    p5r_one_step_at_a_time: 'Conclua qualquer request de Mementos. Há muitas oportunidades e não é necessário completar todas para este troféu.',
+    p5r_tokyo_tourist: 'Convide um Confidant para um ponto de passeio quando surgir uma tarde ou noite livre.',
+    p5r_awakening_the_phantom_thieves: 'Maximize um Confidant do grupo e, no terceiro semestre, aceite o encontro que evolui a Persona do aliado.',
+    p5r_youd_better_hang_on: 'Use o grappling hook pela primeira vez durante a exploração de Palace. Troféu automático.',
+    p5r_the_purpose_of_a_thief: 'Derrube e negocie com um Treasure Demon, mantendo uma vaga livre no estoque de Personas.',
+    p5r_joses_favorite_customer: 'Colete flowers em Mementos e troque-as com Jose uma vez.',
+    p5r_the_phantom_philatelist: 'Encontre stamps em Mementos e entregue-as a Jose; combine o progresso com The Search for Power.',
+    p5r_the_deviated_cognition: 'Continue explorando Mementos até entrar em um andar com desvio aleatório de cognição.',
+    p5r_trash_into_treasure: 'Obtenha roupas antigas em Palaces ou Mementos e venda pelo menos uma na Furugi no Neuchi, em Kichijoji.',
+    p5r_master_of_akihabara: 'Visite repetidamente o maid café, acumule pontos e peça o menu especial quando ele for liberado.'
+  };
+
+  persona5RoyalGuide.trophies = persona5RoyalGuide.trophies.map(trophy => {
+    const namePt = persona5RoyalNamesPtById[trophy.id] || '';
+    const tip = persona5RoyalTipsById[trophy.id]
+      || String(trophy.tip || '')
+          .replaceAll('Trofeu', 'Troféu')
+          .replaceAll(' historia', ' história')
+          .replaceAll(' calendario', ' calendário')
+          .replaceAll(' opcao', ' opção')
+          .replaceAll(' funcao', ' função')
+          .replaceAll(' disponivel', ' disponível')
+          .replaceAll(' execucao', ' execução')
+          .replaceAll(' fusao', ' fusão')
+          .replaceAll(' modificacoes', ' modificações')
+          .replaceAll(' premio', ' prêmio')
+          .replaceAll(' periodo', ' período')
+          .replaceAll(' espaco', ' espaço')
+          .replaceAll(' explosao', ' explosão')
+          .replaceAll(' automatico', ' automático')
+          .replaceAll(' mecanica', ' mecânica')
+          .replaceAll('Va ao ', 'Vá ao ')
+          .replaceAll(' ate ', ' até ');
+    return {
+      ...trophy,
+      trophyNameOriginal: trophy.trophyNameOriginal || trophy.name || '',
+      originalName: trophy.originalName || trophy.name || '',
+      name_pt: namePt,
+      trophyNamePtBr: namePt,
+      localizedNamePtBr: namePt,
+      namePtSource: 'editorial_ptbr',
+      tip,
+      guideTip: tip,
+      tags: persona5RoyalTagsById[trophy.id] || ['Checklist'],
+      is_missable: persona5RoyalMissableIds.has(trophy.id),
+      is_spoiler: persona5RoyalSpoilerIds.has(trophy.id),
+      is_online: false,
+      isOnline: false,
+      is_coop: false,
+      isCoop: false,
+      is_difficulty: false,
+      difficultyRequired: false,
+      is_dlc: false
+    };
+  });
+
+  const persona5RoyalFinalRoadmap = [
+    {
+      title: 'Etapa 1 — Abril a junho: construa a base',
+      focus: 'Social Stats, Confidants e primeiros Palaces',
+      objective: 'Estabelecer uma rotina eficiente sem transformar cada atividade em obrigação.',
+      actions: [
+        'Conclua cada Palace com antecedência e use os dias restantes para Social Stats e Confidants.',
+        'Inicie os Confidants disponíveis e leve uma Persona da Arcana correspondente aos encontros.',
+        'Resolva os troféus simples de combate, Velvet Room, Leblanc, emprego e batting cages.',
+        'Visite Mementos quando houver vários requests para economizar dias de calendário.'
+      ],
+      warning: 'Persona 5 Royal não possui pós-jogo livre; mantenha saves manuais em datas diferentes.',
+      result: 'Primeiros Palaces concluídos e calendário preparado para as prioridades de Royal.'
+    },
+    {
+      title: 'Etapa 2 — Prioridades de Royal e prazos',
+      focus: 'Maruki, Akechi e Kasumi',
+      objective: 'Garantir o terceiro semestre e preservar a experiência completa do conteúdo Royal.',
+      actions: [
+        'Leve Maruki, o Councillor, ao rank 9 até 17/11; o rank 10 acontece automaticamente.',
+        'Leve Akechi ao rank 8 até 17/11 para cenas adicionais da rota completa.',
+        'Leve Kasumi ao rank 5 até 22/12 para continuar o Confidant no terceiro semestre.',
+        'Não confunda as recomendações de Akechi e Kasumi com o requisito central: Maruki é quem libera o terceiro semestre.'
+      ],
+      warning: 'Perder o prazo de Maruki bloqueia o Palace final, Take Back the Future e a rota do true ending nesta run.',
+      result: 'Acesso ao terceiro semestre assegurado sem necessidade de NG+.'
+    },
+    {
+      title: 'Etapa 3 — Palaces, Mementos e atividades opcionais',
+      focus: 'Will Seeds, Jose, requests e troféus sociais',
+      objective: 'Avançar a história enquanto dilui o cleanup ao longo do calendário.',
+      actions: [
+        'Colete os três Will Seeds de um Palace e obtenha o acessório de Talent Thief com Jose.',
+        'Reúna flowers e stamps, maximize uma cognição e conclua ao menos um request em Mementos.',
+        'Faça uma tentativa de cada atividade necessária: darts, billiards, pesca, templo, jazz club e maid café.',
+        'Maximize um Confidant, inicie um romance e continue elevando os cinco Social Stats.'
+      ],
+      warning: 'Não é necessário maximizar todos os Confidants nem completar 100% do Compendium.',
+      result: 'Coletáveis moderados e atividades opcionais resolvidos antes das decisões finais.'
+    },
+    {
+      title: 'Etapa 4 — Decisões de novembro e dezembro',
+      focus: '11/20 e 12/24',
+      objective: 'Evitar os finais ruins e manter a rota do true ending.',
+      actions: [
+        'Em 11/20, não traia seus amigos durante o interrogatório.',
+        'Em 12/24, recuse a oferta apresentada e prossiga com a resistência.',
+        'Mantenha saves separados antes de ambas as conversas.',
+        'Confirme que Maruki chegou ao rank 9 antes de 17/11.'
+      ],
+      warning: 'Aceitar qualquer acordo encerra a rota correta; recarregue o save caso escolha a resposta errada.',
+      result: 'Rota do terceiro semestre preservada.'
+    },
+    {
+      title: 'Etapa 5 — Terceiro semestre e Palace final',
+      focus: '09/01, 02/02 e Take Back the Future',
+      objective: 'Concluir o conteúdo Royal e manter o true ending.',
+      actions: [
+        'Em 09/01, recuse a realidade alternativa.',
+        'Aproveite janeiro para encontros de terceiro despertar, Social Stats e pendências de Mementos.',
+        'Em 02/02, recuse a oferta final.',
+        'Conclua o Palace final para liberar Take Back the Future.'
+      ],
+      warning: 'As ofertas de 09/01 e 02/02 levam a finais alternativos e interrompem a rota correta.',
+      result: 'Palace final concluído e true ending encaminhado.'
+    },
+    {
+      title: 'Etapa 6 — Cleanup antes do true ending',
+      focus: 'Reaper, exames, atividades e checklist final',
+      objective: 'Resolver tudo o que ainda depende do calendário antes de assistir ao final.',
+      actions: [
+        'Confira exame em primeiro lugar, romance, Confidant máximo e Persona evoluída de um aliado.',
+        'Derrote o Reaper e finalize stamps, flowers, cognição e Treasure Demon em Mementos.',
+        'Conclua Velvet Room, minigames, maid café, loteria, emprego e outras ações isoladas pendentes.',
+        'Revise o checklist antes do true ending; não existe cleanup pós-jogo.'
+      ],
+      warning: 'Thieves Den, DLC, chefes secretos de NG+ e a lista do Persona 5 original não fazem parte desta platina.',
+      result: 'Checklist base completo e The Phenomenal Phantom Thief desbloqueado.'
+    }
+  ];
+
+  const persona5RoyalAttentionPoints = [
+    { title: 'Maruki rank 9', type: 'Prazo 17/11', tip: 'É o requisito central para liberar o terceiro semestre; o rank 10 ocorre automaticamente.' },
+    { title: 'Akechi rank 8', type: 'Recomendado até 17/11', tip: 'Não é o gatilho central da platina, mas preserva cenas e detalhes da rota Royal completa.' },
+    { title: 'Kasumi rank 5', type: 'Recomendado até 22/12', tip: 'Permite continuar seu Confidant durante o terceiro semestre.' },
+    { title: 'Interrogatório de 11/20', type: 'Escolha crítica', tip: 'Não traia seus amigos; mantenha um save manual antes da conversa.' },
+    { title: 'Oferta de 12/24', type: 'Escolha crítica', tip: 'Recuse o acordo para continuar rumo ao terceiro semestre.' },
+    { title: 'Realidade de 09/01', type: 'Escolha crítica', tip: 'Recuse a realidade alternativa para preservar o true ending.' },
+    { title: 'Oferta de 02/02', type: 'Escolha crítica', tip: 'Recuse a última oferta antes do Palace final.' },
+    { title: 'Sem pós-jogo livre', type: 'Risco de run', tip: 'Realize o cleanup antes do true ending; depois dele não há calendário livre.' },
+    { title: 'A Most Studious Disguise', type: 'Calendário', tip: 'Eleve Knowledge e use respostas corretas para ficar em primeiro lugar em uma prova.' },
+    { title: 'My Closest Partner', type: 'Calendário social', tip: 'Escolha uma rota de romance antes que acabem os encontros disponíveis.' },
+    { title: 'Awakening the Phantom Thieves', type: 'Terceiro semestre', tip: 'Maximize um aliado e aceite o encontro de terceiro despertar em janeiro.' },
+    { title: 'Jose e Mementos', type: 'Coletáveis moderados', tip: 'Combine flowers, stamps e alteração de cognição em visitas com vários requests.' },
+    { title: 'Will Seeds', type: 'Talent Thief', tip: 'Reúna os três de um Palace e entregue o cristal a Jose para receber o acessório.' },
+    { title: 'Sem requisitos extras', type: 'Escopo da platina', tip: 'Não são necessários todos os Confidants, 100% do Compendium, chefe secreto de NG+ ou Thieves Den.' },
+    { title: 'Offline e qualquer dificuldade', type: 'Lista base', tip: 'Não há troféus online, coop ou vinculados à dificuldade selecionada.' }
+  ];
+
+  const persona5RoyalFaq = [
+    { question: 'Persona 5 Royal tem troféus online?', answer: 'Não. Os 53 troféus da lista base podem ser obtidos offline.' },
+    { question: 'Persona 5 Royal tem troféus coop?', answer: 'Não. A platina é totalmente single-player.' },
+    { question: 'A dificuldade afeta algum troféu?', answer: 'Não. Você pode alterar a dificuldade sem bloquear troféus.' },
+    { question: 'Quantas jogadas são necessárias?', answer: 'Uma jogada bem planejada é suficiente; NG+ não é obrigatório.' },
+    { question: 'Preciso de New Game+?', answer: 'Não. A platina de Persona 5 Royal pode ser feita em uma jogada seguindo a rota correta do terceiro semestre.' },
+    { question: 'Qual é o requisito para o terceiro semestre?', answer: 'Levar Maruki, o Councillor, ao rank 9 até 17/11. O rank 10 é automático.' },
+    { question: 'Akechi e Kasumi são obrigatórios para a platina?', answer: 'Não são o gatilho central, mas rank 8 de Akechi até 17/11 e rank 5 de Kasumi até 22/12 são recomendados para a rota Royal completa.' },
+    { question: 'Quais escolhas evitam os finais ruins?', answer: 'Não traia os amigos em 11/20 e recuse as ofertas de 12/24, 09/01 e 02/02.' },
+    { question: 'Existe pós-jogo livre?', answer: 'Não. Faça o cleanup antes do true ending; depois do final não há free roam livre para terminar pendências.' },
+    { question: 'Preciso maximizar todos os Confidants?', answer: 'Não. Royal exige maximizar um Confidant e evoluir uma Persona de aliado, mas não exige todos os Confidants.' },
+    { question: 'Preciso completar 100% do Compendium?', answer: 'Não. Diferente de Persona 5 original, Royal não exige 100% do Compendium para a platina.' },
+    { question: 'Preciso derrotar o chefe secreto de NG+?', answer: 'Não. Esse chefe não faz parte dos requisitos da platina.' },
+    { question: 'Thieves Den conta para a platina?', answer: 'Não. Thieves Den é conteúdo extra interno de Persona 5 Royal e não faz parte dos 53 troféus da platina.' },
+    { question: 'DLC é necessário?', answer: 'Não. Personas, itens e outros DLC não são necessários para The Phenomenal Phantom Thief.' },
+    { question: 'Persona 5 original tem os mesmos troféus?', answer: 'Não. Persona 5 original e Persona 5 Royal têm listas diferentes. Não importar requisitos antigos como NG+, boss secreto, 100% Compendium, todos os livros ou todos os Confidants.' },
+    { question: 'Todos os requests de Mementos são necessários?', answer: 'Não para One Step at a Time, que exige somente um request. Avançar Mementos continua necessário para a história.' },
+    { question: 'Todos os Will Seeds são necessários?', answer: 'Não. Para Talent Thief, basta completar o conjunto de um Palace e obter o acessório com Jose.' }
+  ];
+
+  Object.assign(persona5RoyalGuide, {
+    difficulty: 2,
+    time: '100–130h',
+    time_min_hours: 100,
+    time_max_hours: 130,
+    time_sort_hours: 130,
+    time_bucket: 'long',
+    runs: 'Uma jogada com rota correta; NG+ não é obrigatório.',
+    runs_summary: 'Uma jogada bem planejada é suficiente. Priorize Maruki e recuse os quatro acordos que levam a finais alternativos.',
+    hasMissables: true,
+    missableCount: persona5RoyalMissableIds.size,
+    missable_count: persona5RoyalMissableIds.size,
+    missable: 'Há seis riscos principais de calendário ou rota. O maior é perder Maruki rank 9 até 17/11, bloqueando o terceiro semestre.',
+    missable_summary: 'Seis troféus recebem a marca principal de perdível ou risco de calendário; atividades opcionais comuns não foram infladas como perdíveis.',
+    hasOnline: false,
+    hasMandatoryOnline: false,
+    requiresOnline: false,
+    onlineRequired: false,
+    hasMandatoryCoop: false,
+    requiresCoop: false,
+    coopRequired: false,
+    difficultyTrophiesRequired: false,
+    dlcRequired: false,
+    dlcRequiredForPlatinum: false,
+    newGamePlusRequired: false,
+    hasFreeRoam: false,
+    online_summary: 'A lista base é totalmente offline e single-player, sem troféus online ou coop.',
+    grind_summary: 'Grind moderado: cinco Social Stats, stamps para uma cognição, preparação para o Reaper e pontos do maid café. A maior parte ocorre naturalmente em 100–130h.',
+    dlc_scope: 'DLC de Personas e itens, Thieves Den, 100% do Compendium e o chefe secreto de NG+ não são necessários. Este guia cobre somente os 53 troféus de Persona 5 Royal.',
+    difficulty_reason: '2/10: não há troféu vinculado à dificuldade; o risco vem do calendário e das decisões de rota.',
+    time_reason: 'A faixa de 100–130h cobre a campanha, o terceiro semestre, Mementos, Social Stats e o cleanup da lista base.',
+    first_run_advice: 'Priorize Maruki rank 9 até 17/11, mantenha saves em datas diferentes e agrupe requests nas visitas a Mementos.',
+    cleanup_advice: 'Antes do true ending, confira Reaper, exame, romance, Confidant máximo, terceiro despertar, Jose, minigames e Velvet Room. Não há pós-jogo livre.',
+    before_you_start: 'Uma jogada basta. Maruki rank 9 até 17/11 libera o terceiro semestre; Akechi rank 8 e Kasumi rank 5 são recomendações para o conteúdo Royal completo.',
+    best_for: 'Ideal para quem busca uma platina longa, acessível e centrada em narrativa, calendário e exploração social.',
+    avoid_if: 'Evite se você não gosta de campanhas longas ou de acompanhar prazos de calendário e escolhas de diálogo.',
+    editorial_summary: [
+      'Persona 5 Royal é uma platina longa, mas acessível, totalmente offline e possível em uma única jogada. A lista base possui 53 troféus, não exige online, cooperação, New Game+, 100% do Compendium, todos os Confidants nem boss secreto. O foco da rota é liberar o terceiro semestre e concluir os troféus opcionais antes do final verdadeiro.',
+      'O ponto mais importante é subir Maruki ao Rank 9 antes de 17/11. Akechi Rank 8 antes de 17/11 e Kasumi Rank 5 antes de 22/12 são fortemente recomendados para a rota Royal completa. Também é essencial não entregar os Phantom Thieves em 11/20 e recusar as ofertas em 12/24, 09/01 e 02/02. Thieves Den, DLCs e requisitos do Persona 5 original não contam para a platina de Persona 5 Royal.'
+    ],
+    quickDecision: {
+      summary: 'Persona 5 Royal é uma platina longa, acessível e offline: 53 troféus, 100-130h, 2/10, uma jogada com rota correta, terceiro semestre via Maruki e sem NG+, Thieves Den ou DLC.'
+    },
+    status: 'published',
+    editorial_status: 'published',
+    editorialStatus: 'verified',
+    editorial_review_status: 'verified',
+    coverage_level: 'complete',
+    is_verified: true,
+    verification_status: 'verified',
+    last_reviewed_at: '2026-06-19',
+    reviewed_by: 'AtlasAchievement',
+    verification_note: 'Guia verificado: 53 troféus, 100–130h, 2/10, seis riscos principais, cinco coletáveis, uma run planejada e nenhum requisito online, coop, de dificuldade, DLC ou NG+.',
+    roadmap: persona5RoyalFinalRoadmap,
+    roadmapStages: persona5RoyalFinalRoadmap,
+    attentionPoints: persona5RoyalAttentionPoints,
+    faq: persona5RoyalFaq
+  });
+}
+
+// Auditoria editorial final: Prince of Persia: The Lost Crown.
+const princeOfPersiaLostCrownGuide = sampleGames.find(game => game.slug === 'prince-of-persia-the-lost-crown');
+if (princeOfPersiaLostCrownGuide) {
+  const poptlcStoryIds = new Set([
+    'poptlc_the_maneater',
+    'poptlc_the_forest_trespasser',
+    'poptlc_snake_in_the_sand',
+    'poptlc_fists_and_arrows',
+    'poptlc_the_storm_master',
+    'poptlc_the_white_lion',
+    'poptlc_king_of_kings',
+    'poptlc_the_end_of_time'
+  ]);
+
+  const poptlcTagsById = {
+    poptlc_prince_of_persia: [],
+    poptlc_the_maneater: ['História', 'Spoiler'],
+    poptlc_the_forest_trespasser: ['História', 'Spoiler'],
+    poptlc_snake_in_the_sand: ['História', 'Spoiler'],
+    poptlc_fists_and_arrows: ['História', 'Spoiler'],
+    poptlc_the_storm_master: ['História', 'Spoiler'],
+    poptlc_the_white_lion: ['História', 'Spoiler'],
+    poptlc_king_of_kings: ['História', 'Spoiler'],
+    poptlc_the_end_of_time: ['História', 'Spoiler'],
+    poptlc_a_warriors_end: ['Side Quest', 'Combate', 'Spoiler', 'Cleanup'],
+    poptlc_time_served: ['Combate', 'Spoiler', 'Cleanup'],
+    poptlc_parallel_universe: ['Combate', 'Athra Surges', 'Cleanup'],
+    poptlc_warrior_within: ['Athra Surges', 'Checklist', 'Cleanup'],
+    poptlc_glory_of_faravahar: ['Coletável', 'Upgrade', 'Grind', 'Cleanup'],
+    poptlc_blessing_of_shamshir: ['Upgrade', 'Grind', 'Cleanup'],
+    poptlc_tools_of_a_prophet: ['Coletável', 'Upgrade', 'Grind', 'Cleanup'],
+    poptlc_elixir_of_gods: ['Coletável', 'Upgrade', 'Grind', 'Cleanup'],
+    poptlc_cyras_last_hope: ['Exploração', 'Cleanup'],
+    poptlc_written_in_the_sand: ['Coletável', 'Side Quest', 'Cleanup'],
+    poptlc_tree_of_life: ['Coletável', 'Exploração', 'Cleanup'],
+    poptlc_spectre_of_the_seas: ['Exploração', 'Spoiler', 'Cleanup'],
+    poptlc_hidden_floor: ['Exploração', 'Cleanup'],
+    poptlc_the_true_moon: ['Side Quest', 'Cleanup'],
+    poptlc_charitable_soul: ['Side Quest', 'Coletável', 'Cleanup'],
+    poptlc_betrayal: ['Combate', 'Cleanup'],
+    poptlc_natural_resources: ['Coletável', 'Upgrade', 'Cleanup'],
+    poptlc_shock_trooper: ['Combate', 'Grind', 'Cleanup'],
+    poptlc_an_honorable_end: ['Side Quest', 'Combate', 'Cleanup'],
+    poptlc_all_the_time_in_the_world: ['Grind', 'Time Crystals', 'Cleanup'],
+    poptlc_air_dancer: ['Combate', 'Grind', 'Cleanup'],
+    poptlc_deadly_trap: ['Combate', 'Cleanup']
+  };
+
+  const poptlcNamesPtById = {
+    poptlc_prince_of_persia: 'Príncipe da Pérsia',
+    poptlc_the_maneater: 'O Devorador de Homens',
+    poptlc_the_forest_trespasser: 'A Invasora da Floresta',
+    poptlc_snake_in_the_sand: 'Serpente na Areia',
+    poptlc_fists_and_arrows: 'Punhos e Flechas',
+    poptlc_the_storm_master: 'O Mestre da Tempestade',
+    poptlc_the_white_lion: 'O Leão Branco',
+    poptlc_king_of_kings: 'Rei dos Reis',
+    poptlc_the_end_of_time: 'O Fim do Tempo',
+    poptlc_a_warriors_end: 'O Fim de um Guerreiro',
+    poptlc_time_served: 'Pena Cumprida',
+    poptlc_parallel_universe: 'Universo Paralelo',
+    poptlc_warrior_within: 'Guerreiro Interior',
+    poptlc_glory_of_faravahar: 'Glória de Faravahar',
+    poptlc_blessing_of_shamshir: 'Bênção de Shamshir',
+    poptlc_tools_of_a_prophet: 'Ferramentas de um Profeta',
+    poptlc_elixir_of_gods: 'Elixir dos Deuses',
+    poptlc_cyras_last_hope: 'A Última Esperança de Cyra',
+    poptlc_written_in_the_sand: 'Escrito na Areia',
+    poptlc_tree_of_life: 'Árvore da Vida',
+    poptlc_spectre_of_the_seas: 'Espectro dos Mares',
+    poptlc_hidden_floor: 'Andar Oculto',
+    poptlc_the_true_moon: 'A Lua Verdadeira',
+    poptlc_charitable_soul: 'Alma Caridosa',
+    poptlc_betrayal: 'Traição',
+    poptlc_natural_resources: 'Recursos Naturais',
+    poptlc_shock_trooper: 'Tropa de Choque',
+    poptlc_an_honorable_end: 'Um Fim Honroso',
+    poptlc_all_the_time_in_the_world: 'Todo o Tempo do Mundo',
+    poptlc_air_dancer: 'Dançarino Aéreo',
+    poptlc_deadly_trap: 'Armadilha Mortal'
+  };
+
+  const poptlcNamesEnById = {
+    poptlc_warrior_within: 'Warrior Within'
+  };
+
+  const poptlcDescriptionsById = {
+    poptlc_time_served: 'Volte ao Sacred Archives com Clairvoyance e derrote o Jailer. O troféu é recuperável no mapa e pode ser feito no free roam, portanto não é perdível.',
+    poptlc_the_end_of_time: 'Troféu automático de história: derrote o chefe final. Depois do final, você pode voltar ao mapa para cleanup em free roam.',
+    poptlc_written_in_the_sand: 'Complete o afresco da profecia ao encontrar os 30 Sand Jars da lista base.',
+    poptlc_the_true_moon: 'Complete a side quest The Moon Gatherer no Sacred Archives.',
+    poptlc_charitable_soul: 'Complete todas as 9 side quests do jogo base.'
+  };
+
+  const poptlcTipsById = {
+    poptlc_prince_of_persia: 'Conquiste os outros 30 troféus da lista base. Mask of Darkness é DLC separado e não é necessário para a platina.',
+    poptlc_the_maneater: 'Troféu automático de história: derrote Jahandar durante a campanha principal.',
+    poptlc_the_forest_trespasser: 'Troféu automático de história: derrote Kiana e avance para liberar novos poderes de travessia.',
+    poptlc_snake_in_the_sand: 'Troféu automático de história: derrote Azhdaha no Pit of Eternal Sands.',
+    poptlc_fists_and_arrows: 'Troféu automático de história: derrote Menolias durante a campanha principal.',
+    poptlc_the_storm_master: 'Troféu automático de história: derrote Orod na região do Raging Sea.',
+    poptlc_the_white_lion: 'Troféu automático de história: derrote Vahram e avance até liberar Fabric of Time.',
+    poptlc_king_of_kings: 'Troféu automático de história: derrote King Darius na reta final.',
+    poptlc_the_end_of_time: 'Troféu automático de história: derrote o chefe final. Depois do final, você pode voltar ao mapa para cleanup em free roam.',
+    poptlc_a_warriors_end: 'Conclua a linha The Lost Warriors e derrote o velho general após encontrar os 8 Lost Warriors.',
+    poptlc_time_served: 'Volte ao Sacred Archives com Clairvoyance e derrote o Jailer. É conteúdo recuperável no mapa, não perdível.',
+    poptlc_parallel_universe: 'Derrote qualquer Alternate Sargon; eles também ajudam a liberar Athra Surges.',
+    poptlc_warrior_within: 'Desbloqueie os 10 Athra Surges, equipe-os e use cada um pelo menos uma vez.',
+    poptlc_glory_of_faravahar: 'Colete os 9 Amulet Holders da lista base para melhorar totalmente o colar.',
+    poptlc_blessing_of_shamshir: 'Use Time Crystals, Azure Damascus Ingots e Xerxes Coins para maximizar espada e arco em Kaheva\'s Forge.',
+    poptlc_tools_of_a_prophet: 'Colete os 36 Amulets da lista base; amuleto de edição deluxe ou DLC não conta para a platina.',
+    poptlc_elixir_of_gods: 'Colete os 30 Soma Tree Petals da lista base para maximizar a vida. Não misture com flores do DLC Mask of Darkness.',
+    poptlc_cyras_last_hope: 'Com Fabric of Time, acesse a área avançada da Hyrcanian Forest e encontre o último acampamento da Herbalist.',
+    poptlc_written_in_the_sand: 'Complete a side quest Prophecy of Mount Qaf encontrando os 30 Sand Jars da lista base.',
+    poptlc_tree_of_life: 'Fale com as 8 Wak-Wak Heads espalhadas por Mount Qaf.',
+    poptlc_spectre_of_the_seas: 'Use Fabric of Time para alcançar o Ghost Ship no Raging Sea. Pode ser feito no free roam.',
+    poptlc_hidden_floor: 'Compre a Lost Key do Scrapper e use o elevador da Citadel para acessar o andar secreto.',
+    poptlc_the_true_moon: 'Complete a side quest The Moon Gatherer no Sacred Archives.',
+    poptlc_charitable_soul: 'Conclua todas as 9 side quests do jogo base: The Lost Warriors, The Moon Gatherer, Motherly Love, Prophecy of Mount Qaf, Ancient Power Unearthed, Treasures of the Seven Seas, The Architect, The Deserter e The Impossible Climb. Em versões antigas, Treasures of the Seven Seas podia causar problema técnico; mantenha o jogo atualizado antes do cleanup.',
+    poptlc_betrayal: 'Use Dimensional Claw para capturar e arremessar inimigo ou objeto de modo que elimine outro inimigo.',
+    poptlc_natural_resources: 'Colete 5 Azure Damascus Ingots durante a exploração; há mais que o necessário na lista base.',
+    poptlc_shock_trooper: 'Faça 20 opportunity attacks/parries com brilho amarelo; treino e inimigos do Sacred Archives ajudam no farm.',
+    poptlc_an_honorable_end: 'Derrote qualquer Lost Warrior da side quest The Lost Warriors.',
+    poptlc_all_the_time_in_the_world: 'Ganhe 10.000 Time Crystals ao longo do jogo. O total é cumulativo e pode vir naturalmente no cleanup.',
+    poptlc_air_dancer: 'Mate 30 inimigos no ar; inimigos voadores e launches aceleram o progresso.',
+    poptlc_deadly_trap: 'Jogue ou empurre 5 inimigos em espinhos ou armadilhas; use áreas com respawn perto de Wak-Wak Trees.'
+  };
+
+  princeOfPersiaLostCrownGuide.trophies = princeOfPersiaLostCrownGuide.trophies.map(trophy => {
+    const tip = poptlcTipsById[trophy.id] || trophy.tip || '';
+    const nameEn = poptlcNamesEnById[trophy.id] || trophy.name;
+    const namePt = poptlcNamesPtById[trophy.id] || trophy.name_pt || '';
+    const description = poptlcDescriptionsById[trophy.id] || trophy.description;
+    return {
+      ...trophy,
+      name: nameEn,
+      trophyNameOriginal: nameEn,
+      originalName: nameEn,
+      name_pt: namePt,
+      trophyNamePtBr: namePt,
+      localizedNamePtBr: namePt,
+      namePtSource: 'editorial_ptbr',
+      description,
+      descriptionPtBr: description,
+      ptDescription: description,
+      localizedDescription: { ...(trophy.localizedDescription || {}), ptBr: description },
+      descriptionPtSource: 'editorial_ptbr',
+      tip,
+      guideTip: tip,
+      tags: poptlcTagsById[trophy.id] || [],
+      is_missable: false,
+      isMissable: false,
+      is_spoiler: poptlcStoryIds.has(trophy.id) || Boolean((poptlcTagsById[trophy.id] || []).includes('Spoiler')),
+      is_online: false,
+      isOnline: false,
+      is_coop: false,
+      isCoop: false,
+      is_difficulty: false,
+      difficultyRequired: false,
+      is_dlc: false
+    };
+  });
+
+  const poptlcRoadmap = [
+    {
+      title: 'Etapa 1 — Campanha e habilidades principais',
+      focus: 'História, chefes obrigatórios e poderes de travessia',
+      objective: 'Avançar pela história até liberar as habilidades de travessia principais, derrotando os chefes obrigatórios e coletando o que estiver naturalmente acessível.',
+      actions: [
+        'Prossiga pela campanha e derrote Jahandar, Kiana, Azhdaha, Menolias, Orod, Vahram, King Darius e o chefe final.',
+        'Pegue upgrades, Amulets, Soma Tree Petals, Sand Jars e Wak-Wak Heads acessíveis sem forçar backtracking excessivo.',
+        'Use marcadores do mapa para registrar barreiras, baús e caminhos que exigem poderes futuros.',
+        'Lembre que o ponto de não retorno antes do final é temporário.'
+      ],
+      warning: 'Muitos coletáveis exigem habilidades futuras; não tente limpar 100% de cada área na primeira visita.',
+      result: 'Mapa, poderes e rotas principais ficam liberados para exploração completa.'
+    },
+    {
+      title: 'Etapa 2 — Side quests e áreas opcionais',
+      focus: 'Charitable Soul e quests do jogo base',
+      objective: 'Concluir as 9 side quests do jogo base sem importar pendências do DLC.',
+      actions: [
+        'Resolva The Lost Warriors, The Moon Gatherer, Motherly Love e Prophecy of Mount Qaf.',
+        'Conclua Ancient Power Unearthed, Treasures of the Seven Seas, The Architect, The Deserter e The Impossible Climb.',
+        'Derrote Lost Warriors e chefes opcionais ligados às quests.',
+        'Mantenha o jogo atualizado antes de fazer Treasures of the Seven Seas e o cleanup de Charitable Soul.'
+      ],
+      warning: 'The Impossible Climb exige precisão de plataforma, mas não é troféu de dificuldade; Charitable Soul não é perdível.',
+      result: 'Charitable Soul e troféus de side quest ficam concluídos.'
+    },
+    {
+      title: 'Etapa 3 — Coletáveis do mapa',
+      focus: 'Wak-Wak Heads, Amulets, Amulet Holders, Sand Jars e Soma Tree Petals',
+      objective: 'Revisitar Mount Qaf com habilidades completas e coletar apenas as listas exigidas pela platina base.',
+      actions: [
+        'Colete 8 Wak-Wak Heads, 36 Amulets, 9 Amulet Holders, 30 Sand Jars e 30 Soma Tree Petals.',
+        'Abra os 9 Mystery Chests ligados à side quest The Architect.',
+        'Finalize os 8 Lost Warriors ligados à side quest The Lost Warriors.',
+        'Use marcação do mapa para organizar áreas bloqueadas anteriormente.'
+      ],
+      warning: 'Os 57 Lore Items não são necessários para a platina, e coletáveis do DLC Mask of Darkness ficam fora deste guia.',
+      result: 'Tree of Life, Tools of a Prophet, Glory of Faravahar, Written in the Sand e Elixir of Gods ficam concluídos.'
+    },
+    {
+      title: 'Etapa 4 — Upgrades e recursos',
+      focus: 'Espada, arco, colar, Amulets e Time Crystals',
+      objective: 'Melhorar equipamento e fechar recursos acumulados sem marcar isso como dificuldade.',
+      actions: [
+        'Maximize espada e arco em Kaheva\'s Forge.',
+        'Melhore totalmente o colar com Amulet Holders.',
+        'Compre ou melhore Amulets restantes da lista base.',
+        'Farme Time Crystals e Xerxes Coins apenas se faltarem recursos.'
+      ],
+      warning: 'Upgrades e farm leve não significam que a dificuldade afeta troféus.',
+      result: 'Blessing of Shamshir, Glory of Faravahar e troféus de upgrade ficam finalizados.'
+    },
+    {
+      title: 'Etapa 5 — Misc de combate e exploração',
+      focus: 'Parry, Athra Surges, armadilhas, Ghost Ship e Hidden Floor',
+      objective: 'Finalizar troféus misc de combate, exploração e ações únicas no free roam.',
+      actions: [
+        'Use todos os Athra Surges e derrote Alternate Sargon se ainda faltar.',
+        'Conclua Betrayal, Shock Trooper, Air Dancer e Deadly Trap.',
+        'Complete Hidden Floor, The True Moon, Spectre of the Seas e pendências de exploração.',
+        'Revise bosses opcionais e pontos marcados no mapa.'
+      ],
+      warning: 'Tudo pode ser feito no free roam após a história; não há troféus perdíveis na lista base.',
+      result: 'Checklist base fica completo antes da conferência final.'
+    },
+    {
+      title: 'Etapa 6 — Conferência final sem DLC',
+      focus: '31 troféus base e separação de Mask of Darkness',
+      objective: 'Revisar os 31 troféus base e confirmar que DLC e Lore Items não foram misturados à platina.',
+      actions: [
+        'Confirme side quests, coletáveis base, upgrades e misc restantes.',
+        'Não some os 11 troféus de Mask of Darkness aos 31 troféus base.',
+        'Não importe troféus do DLC como perdíveis da platina base.',
+        'Finalize qualquer cleanup restante no free roam pós-história.'
+      ],
+      warning: 'Mask of Darkness é DLC separado; a platina base não exige DLC, online, coop, dificuldade específica ou save manual.',
+      result: 'Prince of Persia é desbloqueado com a lista base validada.'
+    }
+  ];
+
+  const poptlcAttentionPoints = [
+    { title: 'Sem perdíveis na lista base', type: 'Lista base', tip: 'A lista base não tem troféus perdíveis. Tudo pode ser feito no free roam após a história.' },
+    { title: 'Free roam após a história', type: 'Cleanup', tip: 'Depois do final, o jogador pode voltar ao mapa para concluir side quests, coletáveis, upgrades e troféus misc.' },
+    { title: 'Mask of Darkness separado', type: 'DLC separado', tip: 'O DLC Mask of Darkness tem lista própria e não entra nos 31 troféus base.' },
+    { title: 'Health Is Wealth é apenas do DLC', type: 'Apenas DLC', tip: 'Health Is Wealth é perdível do DLC Mask of Darkness, não da platina base.' },
+    { title: 'Lore Items não são necessários', type: 'Fora da platina', tip: 'Os 57 Lore Items não são necessários para a platina base.' },
+    { title: 'Charitable Soul e side quests', type: '9 side quests', tip: 'Charitable Soul exige as 9 side quests do jogo base. Mantenha o jogo atualizado por causa de problemas antigos em Treasures of the Seven Seas.' },
+    { title: 'Autosave', type: 'Sem save manual', tip: 'O jogo não tem save manual; usa autosave. Isso não torna troféus perdíveis, mas exige cautela em caso de bug.' }
+  ];
+
+  const poptlcFaq = [
+    { question: 'Prince of Persia: The Lost Crown tem troféus perdíveis?', answer: 'Não. A lista base não tem perdíveis e tudo pode ser feito no free roam após a história.' },
+    { question: 'A dificuldade afeta troféus?', answer: 'Não. A platina pode ser feita em qualquer dificuldade, inclusive na mais fácil.' },
+    { question: 'Tem troféus online?', answer: 'Não. A lista base é totalmente offline.' },
+    { question: 'Tem coop?', answer: 'Não. A platina é single-player e não exige cooperação.' },
+    { question: 'Quantas jogadas são necessárias?', answer: 'Uma jogada é suficiente.' },
+    { question: 'Existe free roam após a história?', answer: 'Sim. Após terminar a história, é possível voltar ao mapa para side quests, coletáveis, upgrades e cleanup.' },
+    { question: 'Mask of Darkness é necessário para a platina?', answer: 'Não. Mask of Darkness é DLC separado e não entra nos 31 troféus base.' },
+    { question: 'Health Is Wealth é perdível?', answer: 'Sim, mas apenas no DLC Mask of Darkness. Esse troféu não faz parte da platina base.' },
+    { question: 'Lore Items são necessários?', answer: 'Não. Os 57 Lore Items não são necessários para a platina base.' },
+    { question: 'Quais coletáveis são necessários?', answer: 'Wak-Wak Heads, Amulets, Amulet Holders, Sand Jars, Soma Tree Petals, Mystery Chests ligados à side quest The Architect e Lost Warriors ligados à side quest The Lost Warriors.' },
+    { question: 'Charitable Soul exige o quê?', answer: 'Concluir todas as 9 side quests do jogo base: The Lost Warriors, The Moon Gatherer, Motherly Love, Prophecy of Mount Qaf, Ancient Power Unearthed, Treasures of the Seven Seas, The Architect, The Deserter e The Impossible Climb.' },
+    { question: 'O jogo tem save manual?', answer: 'Não. O jogo usa autosave. Isso não torna troféus perdíveis, mas é recomendável manter o jogo atualizado antes do cleanup.' },
+    { question: 'Precisa completar 100% do mapa?', answer: 'Não necessariamente. O foco são os troféus, side quests, upgrades e coletáveis exigidos para a platina.' }
+  ];
+
+  Object.assign(princeOfPersiaLostCrownGuide, {
+    difficulty: 4,
+    time: '25-30h',
+    time_min_hours: 25,
+    time_max_hours: 30,
+    time_sort_hours: 30,
+    time_bucket: 'medium',
+    hasMissables: false,
+    missableCount: 0,
+    missable_count: 0,
+    hasOnline: false,
+    hasMandatoryOnline: false,
+    requiresOnline: false,
+    onlineRequired: false,
+    hasMandatoryCoop: false,
+    requiresCoop: false,
+    coopRequired: false,
+    difficultyTrophiesRequired: false,
+    dlcRequired: false,
+    dlcRequiredForPlatinum: false,
+    hasFreeRoam: true,
+    manualSaveSlots: 0,
+    runs: '1 jogada com free roam após a história.',
+    runs_summary: 'Uma jogada é suficiente, com free roam após a história para side quests, coletáveis, upgrades e cleanup.',
+    missable: 'Sem perdíveis na lista base. O ponto de não retorno antes do chefe final é temporário e o jogador retorna ao mapa depois da história.',
+    missable_summary: '0 perdíveis na lista base; não importe troféus do DLC Mask of Darkness.',
+    online_summary: 'A lista base é totalmente offline e single-player, sem troféus online ou coop obrigatórios.',
+    grind_summary: 'Grind baixo/moderado: Time Crystals, recursos de upgrade, Amulets, Amulet Holders e Soma Tree Petals.',
+    dlc_scope: 'DLC não necessário. Mask of Darkness possui lista própria, não entra nos 31 troféus base e não altera o tempo da platina.',
+    difficulty_reason: '4/10: a dificuldade selecionada não afeta troféus; o desafio vem de exploração, plataforma, bosses e organização de coletáveis.',
+    time_reason: '25-30h considerando campanha, free roam, 9 side quests, coletáveis exigidos, upgrades, bosses opcionais e cleanup.',
+    first_run_advice: 'Avance a campanha para liberar poderes de travessia e deixe a limpeza pesada de coletáveis para quando o mapa estiver mais aberto.',
+    cleanup_advice: 'Use o free roam após a história para fechar side quests, Wak-Wak Heads, Amulets, Amulet Holders, Sand Jars, Soma Tree Petals, Mystery Chests, Lost Warriors, upgrades e misc.',
+    before_you_start: 'A lista base não tem perdíveis, online, coop, DLC obrigatório nem troféus ligados à dificuldade. O jogo usa autosave, então mantenha o jogo atualizado antes do cleanup.',
+    editorial_summary: [
+      'Prince of Persia: The Lost Crown é uma platina de metroidvania direta, totalmente offline e sem troféus perdíveis. A lista base possui 31 troféus, não exige online, cooperação, dificuldade específica ou DLC, e pode ser concluída em uma única jogada. A campanha libera as habilidades principais de travessia e, depois da história, o jogador ainda pode retornar ao mapa em free roam para concluir side quests, coletáveis, upgrades e troféus misc.',
+      'A estratégia mais segura é avançar primeiro pela história para desbloquear áreas e poderes, sem tentar limpar 100% de cada região na primeira visita. Depois, faça as 9 side quests, colete Wak-Wak Heads, Amulets, Amulet Holders, Sand Jars, Soma Tree Petals, Mystery Chests e Lost Warriors, e finalize upgrades de espada, arco e colar. Os 57 Lore Items não são necessários para a platina. O DLC Mask of Darkness é separado e não entra nos 31 troféus base.'
+    ],
+    quickDecision: {
+      ...(princeOfPersiaLostCrownGuide.quickDecision || {}),
+      summary: 'Platina offline de 25-30h e 4/10, sem perdíveis, online, coop, dificuldade obrigatória ou DLC. Faça a campanha para liberar poderes, volte em free roam e feche side quests, coletáveis base, upgrades e misc sem misturar Mask of Darkness.'
+    },
+    best_for: 'Ideal para quem quer uma platina metroidvania acessível, curta/média, com exploração, bosses, plataforma e cleanup organizado.',
+    avoid_if: 'Evite apenas se você não gosta de backtracking, mapa metroidvania, coletáveis e desafios de plataforma ou combate.',
+    status: 'published',
+    editorial_status: 'published',
+    editorialStatus: 'verified',
+    editorial_review_status: 'verified',
+    coverage_level: 'complete',
+    is_verified: true,
+    verification_status: 'verified',
+    last_reviewed_at: '2026-06-20',
+    reviewed_by: 'AtlasAchievement',
+    verification_note: 'Guia verificado: 31 troféus base, 25-30h, 4/10, sem perdíveis, online, coop, dificuldade obrigatória ou DLC; Mask of Darkness separado.',
+    roadmap: poptlcRoadmap,
+    roadmapStages: poptlcRoadmap,
+    attentionPoints: poptlcAttentionPoints,
+    faq: poptlcFaq
+  });
+}
+
+// Auditoria editorial final: Star Wars Jedi: Fallen Order.
+const starWarsJediFallenOrderGuide = sampleGames.find(game => game.slug === 'star-wars-jedi-fallen-order');
+if (starWarsJediFallenOrderGuide) {
+  const fallenOrderNamesPtById = {
+    swjfo_a_new_hope: 'Uma Nova Esperança',
+    swjfo_kicking_back: 'Retribuindo o Coice',
+    swjfo_collector: 'Colecionador',
+    swjfo_legendary_beasts: 'Feras Lendárias',
+    swjfo_feel_the_force: 'Sinta a Força',
+    swjfo_a_galaxy_far_far_away: 'Uma Galáxia Muito, Muito Distante',
+    swjfo_trust_only_in_the_force: 'Confie Apenas na Força',
+    swjfo_the_mantis: 'A Mantis',
+    swjfo_a_long_time_ago: 'Há Muito Tempo',
+    swjfo_the_obstacle_is_the_way: 'O Obstáculo é o Caminho',
+    swjfo_everything_is_connected: 'Tudo Está Conectado',
+    swjfo_the_holocron_awaits: 'O Holocron Aguarda',
+    swjfo_happy_go_wookiee: 'Wookiee Feliz',
+    swjfo_her_name_was_masana_tide: 'O Nome Dela Era Masana Tide',
+    swjfo_visiting_alderaan_places: 'Visitando Lugares de Alderaan',
+    swjfo_gorgara_falls: 'A Queda de Gorgara',
+    swjfo_for_a_more_civilized_age: 'Para Uma Era Mais Civilizada',
+    swjfo_i_knew_he_was_no_good: 'Eu Sabia que Ele Não Prestava',
+    swjfo_back_at_you: 'De Volta para Você',
+    swjfo_perfect_timing: 'Sincronia Perfeita',
+    swjfo_kickoff: 'Pontapé Inicial',
+    swjfo_triple_take: 'Tripla Eliminação',
+    swjfo_what_goes_around: 'O Que Vai, Volta...',
+    swjfo_big_bang: 'Grande Explosão',
+    swjfo_dont_mess_with_bd1: 'Não Mexa com o BD-1',
+    swjfo_cant_touch_this: 'Não Encoste em Mim',
+    swjfo_look_out_below: 'Cuidado Lá Embaixo',
+    swjfo_not_so_fast: 'Nem Tão Rápido',
+    swjfo_bank_shot: 'Tabela',
+    swjfo_blade_master: 'Mestre da Lâmina',
+    swjfo_cal_got_your_tongue: 'Cal Pegou Sua Língua?',
+    swjfo_medical_droid: 'Droide Médico',
+    swjfo_green_thumb: 'Dedo Verde',
+    swjfo_full_house: 'Casa Cheia',
+    swjfo_data_disk: 'Disco de Dados',
+    swjfo_sabersmith: 'Armeiro de Sabre',
+    swjfo_the_full_glow_up: 'Visual Completo',
+    swjfo_data_collector: 'Coletor de Dados',
+    swjfo_scum_and_villainy: 'Escória e Vilania',
+    swjfo_echo_location: 'Localização de Ecos'
+  };
+
+  const fallenOrderTrophyEdits = {
+    swjfo_a_new_hope: {
+      description: 'Desbloqueie todos os troféus de Star Wars Jedi: Fallen Order.',
+      tip: 'Conclua os outros 39 troféus da lista base. A platina não exige online, cooperação, DLC, New Journey+ ou dificuldade específica.',
+      tags: ['Platina']
+    },
+    swjfo_kicking_back: {
+      description: 'Chute um Phillak depois que ele chutar Cal.',
+      tip: 'Compre Evasive Kick, deixe um Phillak em Zeffo aplicar o coice e responda com o chute evasivo.',
+      tags: ['Combate', 'Cleanup', 'Skills']
+    },
+    swjfo_collector: {
+      description: 'Colete todos os baús e todos os Secrets.',
+      tip: 'Use o mapa por planeta e subárea para conferir contadores. Mantenha o jogo atualizado por causa de relatos históricos de coletáveis não registrando corretamente.',
+      tags: ['Coletável', 'Exploração', 'Cleanup', 'Risco técnico', 'Bugável']
+    },
+    swjfo_legendary_beasts: {
+      description: 'Derrote as 4 criaturas misteriosas.',
+      tip: 'Derrote Oggdo Bogdo, Rabid Jotaz, Albino Wyyyschokk e Nydak Alpha. Elas não respawnam, mas são automaticamente escaneadas.',
+      tags: ['Combate', 'Boss opcional', 'Cleanup']
+    },
+    swjfo_feel_the_force: {
+      description: 'Compre todas as habilidades Jedi.',
+      tip: 'Se faltar XP, use Meditation Points para resetar inimigos e farmar durante o cleanup.',
+      tags: ['Grind', 'Skills', 'Cleanup']
+    },
+    swjfo_a_galaxy_far_far_away: {
+      description: 'Complete 100% dos holomapas do BD-1.',
+      tip: 'Complete 100% de exploração nos holomapas em Bogano, Zeffo, Kashyyyk, Dathomir e Ilum. Verifique a porcentagem de cada planeta e subárea.',
+      tags: ['Coletável', 'Exploração', 'Cleanup']
+    },
+    swjfo_trust_only_in_the_force: {
+      description: 'Conclua a história.',
+      tip: 'Troféu automático da campanha. Depois do final, ainda é possível voltar aos planetas pela Mantis para cleanup.',
+      tags: ['História', 'Spoiler']
+    },
+    swjfo_the_mantis: {
+      description: 'Junte-se à tripulação.',
+      tip: 'Troféu automático de história no início da jornada com a tripulação da Mantis.',
+      tags: ['História', 'Spoiler']
+    },
+    swjfo_a_long_time_ago: {
+      description: 'Descubra o Vault de Bogano.',
+      tip: 'Troféu automático de história em Bogano.',
+      tags: ['História', 'Spoiler']
+    },
+    swjfo_the_obstacle_is_the_way: {
+      description: 'Conclua a Tomb of Eilram.',
+      tip: 'Troféu automático de história em Zeffo.',
+      tags: ['História', 'Spoiler']
+    },
+    swjfo_everything_is_connected: {
+      description: 'Conclua a Tomb of Miktrull.',
+      tip: 'Troféu automático de história em Zeffo.',
+      tags: ['História', 'Spoiler']
+    },
+    swjfo_the_holocron_awaits: {
+      description: 'Abra o Vault.',
+      tip: 'Troféu automático de história ligado à reta final da campanha.',
+      tags: ['História', 'Spoiler']
+    },
+    swjfo_happy_go_wookiee: {
+      description: 'Liberte os Wookiees da prisão Imperial.',
+      tip: 'Troféu automático de história em Kashyyyk.',
+      tags: ['História', 'Spoiler']
+    },
+    swjfo_her_name_was_masana_tide: {
+      description: 'Derrote a Ninth Sister.',
+      tip: 'Boss obrigatório de história em Kashyyyk.',
+      tags: ['História', 'Boss', 'Spoiler']
+    },
+    swjfo_visiting_alderaan_places: {
+      description: 'Explore o Venator destruído.',
+      tip: 'Explore o Venator em Zeffo. Não é troféu automático de história e contribui para exploração e cleanup.',
+      tags: ['Exploração', 'Cleanup']
+    },
+    swjfo_gorgara_falls: {
+      description: 'Derrote o terror alado em Dathomir.',
+      tip: 'Boss obrigatório de história em Dathomir.',
+      tags: ['História', 'Boss', 'Spoiler']
+    },
+    swjfo_for_a_more_civilized_age: {
+      description: 'Construa seu próprio sabre de luz.',
+      tip: 'Troféu de história ligado ao sabre de Cal.',
+      tags: ['História', 'Spoiler']
+    },
+    swjfo_i_knew_he_was_no_good: {
+      description: 'Derrote um ex-Jedi.',
+      tip: 'Troféu de história avançado; mantenha o alerta de spoiler.',
+      tags: ['História', 'Boss', 'Spoiler']
+    },
+    swjfo_back_at_you: {
+      description: 'Derrote 50 inimigos com disparos de blaster refletidos.',
+      tip: 'Reflita disparos de inimigos com blaster durante a campanha ou no cleanup.',
+      tags: ['Combate', 'Grind', 'Cleanup']
+    },
+    swjfo_perfect_timing: {
+      description: 'Faça parry em 100 inimigos.',
+      tip: 'Acumule parries contra inimigos corpo a corpo. Pode ser feito em qualquer dificuldade.',
+      tags: ['Combate', 'Grind', 'Cleanup']
+    },
+    swjfo_kickoff: {
+      description: 'Derrote um inimigo usando apenas chutes.',
+      tip: 'Use Evasive Kick repetidamente contra um inimigo fraco sem usar outros ataques.',
+      tags: ['Combate', 'Skills', 'Cleanup']
+    },
+    swjfo_triple_take: {
+      description: 'Derrote 3 inimigos com um único lightsaber throw.',
+      tip: 'Agrupe inimigos fracos e use lightsaber throw quando a habilidade estiver disponível.',
+      tags: ['Combate', 'Skills', 'Cleanup']
+    },
+    swjfo_what_goes_around: {
+      description: 'Derrote um inimigo com o próprio disparo desacelerado.',
+      tip: 'Use Slow em um tiro de blaster e posicione o inimigo para ser atingido pelo próprio disparo.',
+      tags: ['Combate', 'Skills', 'Cleanup']
+    },
+    swjfo_big_bang: {
+      description: 'Derrote 20 inimigos com explosivos.',
+      tip: 'Use Force Push, Force Pull ou inimigos explosivos para acumular mortes por explosão.',
+      tags: ['Combate', 'Grind', 'Cleanup']
+    },
+    swjfo_dont_mess_with_bd1: {
+      description: 'Derrote um inimigo com um droid hackeado.',
+      tip: 'Depois de obter upgrades de hack do BD-1, use um droid hackeado para finalizar outro inimigo.',
+      tags: ['Combate', 'Skills', 'Cleanup']
+    },
+    swjfo_cant_touch_this: {
+      description: 'Faça 100 Precision Evades.',
+      tip: 'Compre Precision Evade e acumule esquivas perfeitas em combate. Não depende da dificuldade selecionada.',
+      tags: ['Combate', 'Grind', 'Cleanup']
+    },
+    swjfo_look_out_below: {
+      description: 'Derrube 25 inimigos de bordas.',
+      tip: 'Use Force Push em áreas com penhascos, pontes ou plataformas.',
+      tags: ['Combate', 'Grind', 'Cleanup']
+    },
+    swjfo_not_so_fast: {
+      description: 'Derrote 25 inimigos sob efeito de Empowered Slow.',
+      tip: 'Depois de desbloquear Empowered Slow, elimine inimigos enquanto o efeito estiver ativo.',
+      tags: ['Combate', 'Skills', 'Grind', 'Cleanup']
+    },
+    swjfo_bank_shot: {
+      description: 'Derrote um inimigo colidindo-o com outro.',
+      tip: 'Use Force Push ou Force Pull para lançar inimigos uns contra os outros.',
+      tags: ['Combate', 'Skills', 'Cleanup']
+    },
+    swjfo_blade_master: {
+      description: 'Acerte um mesmo inimigo com todos os tipos de sabre.',
+      tip: 'Use single blade, double-bladed saber e split saber no mesmo alvo quando todos estiverem disponíveis.',
+      tags: ['Combate', 'Skills', 'Cleanup']
+    },
+    swjfo_cal_got_your_tongue: {
+      description: 'Corte a língua de um Oggdo.',
+      tip: 'Use Force Pull na língua de um Oggdo e ataque para cortá-la.',
+      tags: ['Combate', 'Skills', 'Cleanup']
+    },
+    swjfo_medical_droid: {
+      description: 'Encontre todos os Stim Canisters do BD-1.',
+      tip: 'Encontre os 8 Stim Canisters. Eles contam como Secrets e ajudam no cleanup de Collector.',
+      tags: ['Coletável', 'Upgrade', 'Cleanup']
+    },
+    swjfo_green_thumb: {
+      description: 'Tenha um terrário completamente crescido.',
+      tip: 'Encontre e plante as 10 sementes do terrário na Mantis. Plante cedo, pois elas precisam de tempo in-game para crescer.',
+      tags: ['Coletável', 'Cleanup']
+    },
+    swjfo_full_house: {
+      description: 'Recrute todos os membros possíveis para a Mantis.',
+      tip: 'Alguns membros vêm pela história, outros exigem exploração e interação opcional.',
+      tags: ['Coletável', 'Crew', 'Cleanup', 'Spoiler']
+    },
+    swjfo_data_disk: {
+      description: 'Encontre todos os Encrypted Logs de BD-1.',
+      tip: 'Encontre os 19 Encrypted Logs da seção Cordova’s Journey.',
+      tags: ['Coletável', 'Lore', 'Cleanup']
+    },
+    swjfo_sabersmith: {
+      description: 'Customize completamente seu sabre de luz.',
+      tip: 'Altere todos os componentes do sabre em uma bancada ou na Mantis.',
+      tags: ['Customização', 'Misc']
+    },
+    swjfo_the_full_glow_up: {
+      description: 'Customize a aparência de Cal, BD-1 e da Mantis.',
+      tip: 'Aplique uma opção de aparência em Cal, BD-1 e na Mantis. As opções vêm principalmente de baús.',
+      tags: ['Customização', 'Coletável', 'Misc']
+    },
+    swjfo_data_collector: {
+      description: 'Escaneie todos os tipos de inimigos.',
+      tip: 'Escaneie cada inimigo novo assim que encontrá-lo, com atenção aos Bounty Hunters. Há relatos históricos de problemas de registro/spawn.',
+      tags: ['Coletável', 'Scan', 'Risco técnico', 'Bugável', 'Cleanup']
+    },
+    swjfo_scum_and_villainy: {
+      description: 'Derrote cada tipo de Bounty Hunter.',
+      tip: 'Derrote Haxion Brood Bounty Hunter, Haxion Brood Commando e Haxion Brood Bounty Droid. Não ignore Bounty Hunters quando aparecerem.',
+      tags: ['Combate', 'Cleanup', 'Risco técnico', 'Bugável']
+    },
+    swjfo_echo_location: {
+      description: 'Descubra 75 Force Echoes.',
+      tip: 'Colete 75 Force Echoes. Há mais ecos no jogo do que o necessário para o troféu.',
+      tags: ['Coletável', 'Cleanup']
+    }
+  };
+
+  starWarsJediFallenOrderGuide.trophies = (starWarsJediFallenOrderGuide.trophies || []).map(trophy => {
+    const edit = fallenOrderTrophyEdits[trophy.id] || {};
+    return {
+      ...trophy,
+      name_pt: fallenOrderNamesPtById[trophy.id] || trophy.name_pt || '',
+      description: edit.description || trophy.description,
+      tip: edit.tip || trophy.tip,
+      tags: edit.tags || trophy.tags || [],
+      is_missable: false,
+      is_online: false,
+      is_coop: false,
+      is_difficulty: false,
+      is_dlc: false,
+      riskType: ''
+    };
+  });
+
+  const fallenOrderRoadmap = [
+    {
+      title: 'Campanha em qualquer dificuldade e sementes cedo',
+      focus: 'História, scans iniciais e preparo do cleanup',
+      objective: 'Jogar a história em qualquer dificuldade, escanear inimigos novos com BD-1, plantar sementes do terrário assim que encontrá-las e trabalhar troféus de combate naturalmente.',
+      actions: [
+        'Escolha qualquer dificuldade, inclusive Story Mode, porque a dificuldade não afeta troféus.',
+        'Escaneie cada inimigo novo assim que BD-1 permitir.',
+        'Plante sementes do terrário na Mantis logo que encontrá-las.',
+        'Faça troféus simples de combate conforme aparecerem boas oportunidades.',
+        'Não tente limpar 100% das áreas cedo demais, pois várias rotas exigem habilidades futuras.'
+      ],
+      warning: 'Não há troféus de dificuldade. Plante sementes cedo para evitar espera no final.',
+      result: 'História concluída, habilidades principais liberadas e base de scans/seeds encaminhada.'
+    },
+    {
+      title: 'Free roam e exploração por planeta',
+      focus: 'Baús, Secrets, Stim Canisters, logs, ecos e holomapas',
+      objective: 'Após a história, retornar aos planetas pela Mantis para limpar coletáveis, exploração e áreas pendentes.',
+      actions: [
+        'Revisite Bogano, Zeffo, Kashyyyk, Dathomir e Ilum pela Mantis.',
+        'Use o mapa por planeta e subárea para conferir porcentagens e contadores.',
+        'Colete todos os baús e Secrets.',
+        'Pegue todos os Stim Canisters, Encrypted Logs, Force Echoes necessários e sementes restantes.',
+        'Complete 100% dos holomapas do BD-1.'
+      ],
+      warning: 'O jogo original não tem fast travel interno tradicional entre Meditation Points; planeje rotas e backtracking por planeta.',
+      result: 'Collector, A Galaxy Far, Far Away, Medical Droid, Green Thumb, Data Disk e Echo Location encaminhados ou concluídos.'
+    },
+    {
+      title: 'Inimigos, Bounty Hunters e criaturas lendárias',
+      focus: 'Scans, Bounty Hunters e bosses opcionais',
+      objective: 'Finalizar Data Collector, Scum and Villainy e Legendary Beasts.',
+      actions: [
+        'Escaneie inimigos que ficaram faltando.',
+        'Derrote Haxion Brood Bounty Hunter, Haxion Brood Commando e Haxion Brood Bounty Droid.',
+        'Derrote Oggdo Bogdo, Rabid Jotaz, Albino Wyyyschokk e Nydak Alpha.',
+        'Confira progresso e registros antes de avançar para a conferência final.'
+      ],
+      warning: 'Não ignore Bounty Hunters quando aparecerem. Data Collector e Scum and Villainy têm relatos históricos de problemas de spawn/registro.',
+      result: 'Scans, Bounty Hunters e criaturas misteriosas concluídos.'
+    },
+    {
+      title: 'XP, habilidades e troféus de combate',
+      focus: 'Skills, grind leve e objetivos de combate',
+      objective: 'Comprar todas as habilidades Jedi e finalizar troféus de parry, evade, Force Push, Slow, Pull, blaster deflect, hack de droid e lightsaber throw.',
+      actions: [
+        'Use Meditation Points para resetar inimigos e farmar XP se necessário.',
+        'Finalize Feel the Force comprando todas as skills.',
+        'Faça Back At You, Perfect Timing, Can’t Touch This e objetivos semelhantes em áreas com bons grupos de inimigos.',
+        'Use Force powers para troféus como Big Bang, Look Out Below, Bank Shot e What Goes Around....'
+      ],
+      warning: 'Esses objetivos são combate/grind/cleanup, não troféus de dificuldade.',
+      result: 'Feel the Force e troféus de combate concluídos.'
+    },
+    {
+      title: 'Customização e conferência final',
+      focus: 'Sabre, visuais e validação da lista base',
+      objective: 'Customizar sabre, Cal, BD-1 e Mantis, conferir os 40 troféus base e validar que nenhum requisito externo entrou no guia.',
+      actions: [
+        'Faça Sabersmith em uma bancada ou na Mantis.',
+        'Aplique customizações em Cal, BD-1 e Mantis para The Full Glow-Up.',
+        'Confira os contadores de baús, Secrets, holomapas, logs, ecos, scans e Bounty Hunters.',
+        'Confirme que não há DLC, online, coop, New Journey+ ou dificuldade obrigatória.'
+      ],
+      warning: 'New Journey+ não é necessário. Star Wars Jedi: Survivor é outro jogo e não deve ser misturado com Fallen Order.',
+      result: 'Com checklist e cleanup completos, A New Hope desbloqueia.'
+    }
+  ];
+
+  const fallenOrderAttentionPoints = [
+    { title: 'Sem perdíveis', detail: 'Não há troféus perdíveis; após a história é possível retornar aos planetas pela Mantis.', tags: ['Free roam', 'Cleanup'] },
+    { title: 'Dificuldade não afeta troféus', detail: 'A campanha pode ser jogada em qualquer dificuldade, inclusive Story Mode.', tags: ['Story Mode', 'Sem requisito'] },
+    { title: 'Coletáveis são o maior trabalho', detail: 'Collector, A Galaxy Far, Far Away, Data Disk, Medical Droid, Green Thumb e Echo Location concentram o cleanup.', tags: ['Coletáveis', 'Exploração'] },
+    { title: 'Plante sementes cedo', detail: 'As 10 sementes do terrário precisam crescer com tempo in-game; plante assim que encontrar.', tags: ['Green Thumb', 'Terrário'] },
+    { title: 'Bounty Hunters e scans', detail: 'Não ignore Bounty Hunters quando aparecerem; Scum and Villainy depende dos 3 tipos e Data Collector depende de scans.', tags: ['Bounty Hunters', 'Scans'] },
+    { title: 'Bugs históricos', detail: 'Collector, Data Collector e Scum and Villainy têm relatos históricos de bugs/registro; mantenha o jogo atualizado e confira progresso.', tags: ['Risco técnico', 'Bugável'] },
+    { title: 'Sem fast travel interno', detail: 'O jogo permite voltar aos planetas, mas não possui fast travel interno tradicional; planeje o backtracking.', tags: ['Backtracking', 'Mantis'] }
+  ];
+
+  const fallenOrderFaq = [
+    { question: 'Star Wars Jedi: Fallen Order tem troféus online?', answer: 'Não. A lista base é totalmente offline.' },
+    { question: 'Tem coop?', answer: 'Não. A platina não exige cooperação.' },
+    { question: 'Tem troféus perdíveis?', answer: 'Não. É possível retornar aos planetas após a história para cleanup.' },
+    { question: 'A dificuldade afeta troféus?', answer: 'Não. Tudo pode ser feito em qualquer dificuldade, inclusive Story Mode.' },
+    { question: 'Quantas jogadas são necessárias?', answer: 'Uma jogada é suficiente.' },
+    { question: 'Existe free roam após a história?', answer: 'Sim. Após a história, você pode retornar aos planetas pela Mantis para coletáveis e cleanup.' },
+    { question: 'Existe fast travel?', answer: 'Não há fast travel interno tradicional entre Meditation Points no jogo original. Você viaja entre planetas pela Mantis e precisa caminhar dentro das áreas.' },
+    { question: 'Precisa de New Journey+?', answer: 'Não. New Journey+ não é necessário para a platina.' },
+    { question: 'Preciso coletar tudo?', answer: 'Você precisa de todos os baús e Secrets, todos os Stim Canisters, todos os Encrypted Logs de Cordova, 10 sementes do terrário, 75 Force Echoes e 100% dos holomapas. Nem todos os ecos do jogo são necessários.' },
+    { question: 'Quais troféus podem bugar?', answer: 'Há relatos históricos envolvendo Collector, Data Collector e Scum and Villainy. Mantenha o jogo atualizado, escaneie inimigos novos e confira contadores de mapa.' },
+    { question: 'O que fazer se faltar XP para todas as habilidades?', answer: 'Use Meditation Points para resetar inimigos e farmar XP durante o cleanup.' },
+    { question: 'Star Wars Jedi: Survivor entra no guia?', answer: 'Não. Jedi: Survivor é outro jogo, com outra lista de troféus.' }
+  ];
+
+  Object.assign(starWarsJediFallenOrderGuide, {
+    difficulty: 3,
+    time: '30-40h',
+    time_min_hours: 30,
+    time_max_hours: 40,
+    time_sort_hours: 35,
+    time_bucket: 'medium',
+    hasMissables: false,
+    missableCount: 0,
+    missable_count: 0,
+    hasOnline: false,
+    hasMandatoryOnline: false,
+    requiresOnline: false,
+    onlineRequired: false,
+    online_required: false,
+    hasCoop: false,
+    hasMandatoryCoop: false,
+    requiresCoop: false,
+    coopRequired: false,
+    coop_required: false,
+    difficultyTrophiesRequired: false,
+    difficulty_trophies_required: false,
+    dlcRequired: false,
+    dlc_required: false,
+    dlcRequiredForPlatinum: false,
+    newGamePlusRequired: false,
+    requiresNewGamePlus: false,
+    hasFreeRoam: true,
+    freeRoamAfterStory: true,
+    hasChapterSelect: false,
+    chapterSelect: false,
+    missionReplay: false,
+    runs: '1 jogada',
+    runs_summary: 'Uma campanha é suficiente, com free roam após a história para retornar aos planetas pela Mantis e concluir o cleanup.',
+    missable: 'Sem troféus perdíveis. O jogo permite retornar aos planetas pela Mantis após a história; backtracking e ausência de fast travel interno não tornam objetivos perdíveis.',
+    missable_summary: 'Sem troféus perdíveis. Use o free roam pós-história para limpar planetas, scans, baús, Secrets, sementes, ecos e combate.',
+    online_summary: 'Sem online obrigatório: a lista base é totalmente offline, sem multiplayer, servidores, PS+ ou cooperação.',
+    grind_summary: 'Grind moderado concentrado em XP para todas as habilidades, objetivos de combate, scans e cleanup de exploração.',
+    dlc_scope: 'DLC não necessário. O guia cobre apenas os 40 troféus base de Star Wars Jedi: Fallen Order; cosméticos, New Journey+ e Star Wars Jedi: Survivor ficam fora do escopo.',
+    difficulty_reason: 'A nota 3/10 reflete uma platina acessível. A campanha tem seleção de dificuldade, mas nenhum troféu exige dificuldade específica.',
+    time_reason: 'A faixa de 30-40 horas considera campanha, free roam, backtracking sem fast travel interno, coletáveis, scans, Bounty Hunters, XP e troféus de combate.',
+    first_run_advice: 'Jogue em qualquer dificuldade, escaneie inimigos novos, plante sementes cedo e deixe o 100% pesado para depois de liberar as habilidades principais.',
+    cleanup_advice: 'Depois da história, volte aos planetas pela Mantis e limpe baús, Secrets, holomapas, Stim Canisters, Encrypted Logs, Force Echoes, scans, Bounty Hunters e troféus de combate.',
+    before_you_start: 'Não há perdíveis, online, coop, DLC ou dificuldade obrigatória. O cuidado real é organizar coletáveis e backtracking, pois o jogo original não tem fast travel interno tradicional.',
+    best_for: 'Ideal para quem quer uma platina offline de ação-aventura com exploração metroidvania e universo Star Wars.',
+    avoid_if: 'Evite se você não gosta de backtracking por mapas interconectados sem fast travel interno.',
+    editorial_summary: [
+      'Star Wars Jedi: Fallen Order é uma platina totalmente offline, sem troféus perdíveis e sem exigência de dificuldade. A lista base possui 40 troféus e pode ser concluída em uma única jogada, com free roam após a história para retornar aos planetas pela Mantis e finalizar coletáveis, exploração, inimigos, habilidades e troféus de combate. A campanha pode ser jogada em qualquer dificuldade, inclusive Story Mode, porque a dificuldade não afeta troféus.',
+      'O maior trabalho da platina é o cleanup de exploração e coletáveis. Para concluir tudo, o jogador precisa abrir baús e Secrets, completar os holomapas do BD-1, encontrar sementes do terrário, Encrypted Logs, Force Echoes suficientes, escanear inimigos e derrotar os tipos de Bounty Hunters. O guia destaca que não há fast travel interno tradicional, então é melhor deixar o cleanup pesado para depois de liberar as habilidades principais. Também há alerta técnico sobre relatos históricos de bugs em Collector, Data Collector e Scum and Villainy.'
+    ],
+    roadmap: fallenOrderRoadmap,
+    attentionPoints: fallenOrderAttentionPoints,
+    faq: fallenOrderFaq,
+    checklist: [
+      'Confirmar 40 troféus base com EN + PT-BR.',
+      'Confirmar 0 perdíveis, 0 online, 0 coop e 0 troféus de dificuldade.',
+      'Plantar as 10 sementes do terrário cedo.',
+      'Completar todos os baús, Secrets, Stim Canisters, Encrypted Logs, 75 Force Echoes e holomapas 100%.',
+      'Escanear inimigos novos e derrotar os 3 tipos de Bounty Hunters.',
+      'Tratar bugs históricos como risco técnico, não como perdível.'
+    ],
+    quickDecision: {
+      ...(starWarsJediFallenOrderGuide.quickDecision || {}),
+      verdict: 'Platina offline acessível, mas com bastante backtracking e cleanup de coletáveis.',
+      time: '30-40h',
+      difficulty: '3/10',
+      playthroughs: '1 jogada',
+      missables: 'Sem perdíveis',
+      online: 'Sem online obrigatório',
+      coop: 'Sem coop obrigatório',
+      dlc: 'DLC não necessário'
+    },
+    editorial_status: 'published',
+    publication_status: 'published',
+    coverage_level: 'complete',
+    is_verified: true,
+    verification_status: 'verified',
+    editorial_review_status: 'verified',
+    verification_note: 'Guia revisado tecnicamente: 40 troféus base, EN+PT-BR, sem perdíveis, sem online/coop, sem dificuldade obrigatória, roadmap/FAQ e alertas técnicos validados.',
+    quality_warnings: [],
+    reviewed_by: 'AtlasAchievement Technical Audit',
+    last_reviewed_at: '2026-06-20'
+  });
+}
+
+// Auditoria editorial final: Split Fiction.
+const splitFictionGuide = sampleGames.find(game => game.slug === 'split-fiction');
+if (splitFictionGuide) {
+  const splitFictionNamesPtById = {
+    split_fiction_it_took_two: 'Foram Necessários Dois',
+    split_fiction_bffs: 'Melhores Amigos para Sempre',
+    split_fiction_bookworms: 'Ratos de Biblioteca',
+    split_fiction_potion_chef: 'Chef de Poções',
+    split_fiction_chair_the_load: 'Segure o Peso da Cadeira',
+    split_fiction_you_are_not_a_robot: 'Você Não é um Robô',
+    split_fiction_sisters_a_tale_of_two_besties: 'Irmãs: Um Conto de Duas Melhores Amigas',
+    split_fiction_one_bird_three_stones: 'Um Pássaro, Três Pedras',
+    split_fiction_cold_potato: 'Batata Fria',
+    split_fiction_tazed_and_confused: 'Eletrocutado e Confuso',
+    split_fiction_locked_up: 'Trancado',
+    split_fiction_huffing_and_puffing: 'Bufando e Soprando',
+    split_fiction_robot_revolution: 'Revolução Robótica',
+    split_fiction_feed_me: 'Alimente-me',
+    split_fiction_a_friendly_push: 'Um Empurrão Amigável',
+    split_fiction_roses_best_friend: 'Melhor Amiga da Rose',
+    split_fiction_were_gonna_need_a_bigger_boat: 'Vamos Precisar de um Barco Maior',
+    split_fiction_are_we_the_baddies: 'Somos os Vilões?',
+    split_fiction_the_cake_is_not_a_lie: 'O Bolo Não é Mentira',
+    split_fiction_snaaaaaaaaake: 'Cooooobra',
+    split_fiction_goin_whole_hog: 'Indo com Tudo'
+  };
+
+  const splitFictionTrophyEdits = {
+    split_fiction_it_took_two: {
+      description: 'Desbloqueie todos os troféus de Split Fiction.',
+      tip: 'Conclua os outros 20 troféus da lista base. A platina exige dois jogadores, mas não exige online obrigatório.',
+      tags: ['Platina']
+    },
+    split_fiction_bffs: {
+      description: 'Finalmente publicado.',
+      tip: 'Complete a história no Chapter 8 "Split". Troféu automático de conclusão da campanha.',
+      tags: ['História'],
+      is_spoiler: true
+    },
+    split_fiction_bookworms: {
+      description: 'Complete todas as Side Stories.',
+      tip: 'Complete todas as 12 Side Stories. Se faltar alguma, use Chapter Select e conclua a última parte da Side Story sem pular o trecho final.',
+      tags: ['Checklist', 'Coletável', 'Side Stories', 'Chapter Select', 'Cleanup']
+    },
+    split_fiction_potion_chef: {
+      description: 'Eu preciso das suas poções mais fortes.',
+      tip: 'No Chapter 4 "Final Dawn", Side Story "Moon Market", prepare e beba todas as poções da lista.',
+      tags: ['Chapter Select', 'Side Story', 'Risco de capítulo']
+    },
+    split_fiction_chair_the_load: {
+      description: 'Sai de cima de mim...',
+      tip: 'No Chapter 4 "Final Dawn", Side Story "Moon Market", transforme o outro jogador em cadeira e sente nela.',
+      tags: ['Chapter Select', 'Side Story', 'Risco de capítulo']
+    },
+    split_fiction_you_are_not_a_robot: {
+      description: 'Teste público de Turing completamente automatizado para diferenciar computadores e humanos.',
+      tip: 'No Chapter 2 "Neon Revenge", checkpoint "Gravity Bike", complete o captcha no celular dentro do tempo.',
+      tags: ['Chapter Select', 'Minigame', 'Risco de capítulo']
+    },
+    split_fiction_sisters_a_tale_of_two_besties: {
+      description: 'Relaxe em todos os 6 benches.',
+      tip: 'Sente nos 6 benches espalhados pelos capítulos. Se faltar algum, use Chapter Select.',
+      tags: ['Checklist', 'Coletável', 'Benches', 'Chapter Select', 'Cleanup']
+    },
+    split_fiction_one_bird_three_stones: {
+      description: 'Você não tinha como saber.',
+      tip: 'No Chapter 3 "Hopes of Spring", checkpoint "Halls of Ice", acerte o boneco de neve com as três bolas de neve.',
+      tags: ['Chapter Select', 'Misc', 'Risco de capítulo']
+    },
+    split_fiction_cold_potato: {
+      description: 'Complete o Gameshow sem a bomba explodir.',
+      tip: 'No Chapter 3 "Hopes of Spring", Side Story "Gameshow", complete o desafio sem deixar a bomba explodir. Se falhar, reinicie a Side Story inteira; checkpoint isolado pode não contar.',
+      tags: ['Chapter Select', 'Side Story', 'Habilidade', 'Risco de capítulo']
+    },
+    split_fiction_tazed_and_confused: {
+      description: 'Humilhação depois do choque.',
+      tip: 'No Chapter 6 "Isolation", checkpoint "Cell Blocks", use o tubo longo para derrubar/eletrocutar o outro jogador.',
+      tags: ['Chapter Select', 'Misc', 'Risco de capítulo']
+    },
+    split_fiction_locked_up: {
+      description: 'Sem saída.',
+      tip: 'No Chapter 6 "Isolation", checkpoint "Maximum Security", prenda um jogador na gaiola.',
+      tags: ['Chapter Select', 'Misc', 'Risco de capítulo']
+    },
+    split_fiction_huffing_and_puffing: {
+      description: 'Não é o lobo mau que deve preocupar você.',
+      tip: 'No Chapter 2 "Neon Revenge", Side Story "Farmlife", use a habilidade de peido para destruir a casa de pedra.',
+      tags: ['Chapter Select', 'Side Story', 'Risco de capítulo']
+    },
+    split_fiction_robot_revolution: {
+      description: 'Hasta la vista, baby.',
+      tip: 'No Chapter 2 "Neon Revenge", checkpoint "Big City Life", entre no hotel e bata no robô até o troféu desbloquear.',
+      tags: ['Chapter Select', 'Misc', 'Risco de capítulo']
+    },
+    split_fiction_feed_me: {
+      description: 'Pegue um lanche.',
+      tip: 'No Chapter 5 "Rise of the Dragon Realm", checkpoint "Water Temple", coma uma fruta da árvore.',
+      tags: ['Chapter Select', 'Misc', 'Risco de capítulo']
+    },
+    split_fiction_a_friendly_push: {
+      description: 'Macaco forte.',
+      tip: 'No Chapter 3 "Hopes of Spring", checkpoint "The Underlabs", faça um jogador sentar no balanço e o outro empurrá-lo na forma de monstro.',
+      tags: ['Chapter Select', 'Misc', 'Risco de capítulo']
+    },
+    split_fiction_roses_best_friend: {
+      description: 'Você a fez chorar.',
+      tip: 'No Chapter 2 "Neon Revenge", checkpoint "Play Me Techno", interaja com o elefante da loja e puxe a orelha/pé para fazê-lo chorar.',
+      tags: ['Chapter Select', 'Easter Egg', 'Risco de capítulo']
+    },
+    split_fiction_were_gonna_need_a_bigger_boat: {
+      description: 'Duuuun dun... duuuun dun...',
+      tip: 'No Chapter 6 "Isolation", checkpoint "Hydration Facility", nade até as bolhas na água para fazer o tubarão aparecer.',
+      tags: ['Chapter Select', 'Misc', 'Risco de capítulo']
+    },
+    split_fiction_are_we_the_baddies: {
+      description: 'Sem preocupação, é só uma simulação.',
+      tip: 'No Chapter 2 "Neon Revenge", checkpoint "Play Me Techno", destrua a ponte com a bola explosiva enquanto o outro jogador está embaixo.',
+      tags: ['Chapter Select', 'Misc', 'Risco de capítulo']
+    },
+    split_fiction_the_cake_is_not_a_lie: {
+      description: 'Parabéns, o teste acabou.',
+      tip: 'No Chapter 4 "Final Dawn", checkpoint "Run and Gun", encontre a área secreta com referência a Portal.',
+      tags: ['Chapter Select', 'Easter Egg', 'Secret', 'Risco de capítulo']
+    },
+    split_fiction_snaaaaaaaaake: {
+      description: 'A amizade poderia florescer no campo de batalha.',
+      tip: 'No Chapter 6 "Isolation", checkpoint "Prison Courtyard", esconda-se na caixa de papelão e faça o outro jogador atirar nela.',
+      tags: ['Chapter Select', 'Easter Egg', 'Risco de capítulo']
+    },
+    split_fiction_goin_whole_hog: {
+      description: 'Vai com tudo.',
+      tip: 'No Chapter 2 "Neon Revenge", Side Story "Farmlife", use a habilidade de peido para pular na barriga do porco gigante.',
+      tags: ['Chapter Select', 'Side Story', 'Misc', 'Risco de capítulo']
+    }
+  };
+
+  splitFictionGuide.trophies = (splitFictionGuide.trophies || []).map(trophy => {
+    const edit = splitFictionTrophyEdits[trophy.id] || {};
+    const namePt = splitFictionNamesPtById[trophy.id] || trophy.name_pt || '';
+    const description = edit.description || trophy.description || '';
+    return {
+      ...trophy,
+      name_pt: namePt,
+      trophyNameOriginal: trophy.name,
+      trophyNamePtBr: namePt,
+      localizedNamePtBr: namePt,
+      description,
+      descriptionPtBr: description,
+      ptDescription: description,
+      localizedDescription: { ...(trophy.localizedDescription || {}), ptBr: description },
+      tip: edit.tip || trophy.tip,
+      tags: edit.tags || trophy.tags || [],
+      is_missable: false,
+      isMissable: false,
+      missable: false,
+      riskType: '',
+      is_spoiler: Boolean(edit.is_spoiler ?? trophy.is_spoiler),
+      isSpoiler: Boolean(edit.is_spoiler ?? trophy.is_spoiler),
+      is_online: false,
+      isOnline: false,
+      is_coop: false,
+      isCoop: false,
+      is_difficulty: false,
+      isDifficulty: false,
+      is_dlc: false,
+      isDlc: false
+    };
+  });
+
+  const splitFictionRoadmap = [
+    {
+      title: 'Etapa 1 — Campanha coop e troféus misc por capítulo',
+      focus: 'Campanha coop, história e oportunidades opcionais',
+      objective: 'Jogar a campanha em coop local/offline ou online, fazendo troféus misc conforme aparecem e mantendo Side Stories e benches no radar.',
+      actions: [
+        'Jogue com dois jogadores do início ao fim.',
+        'Escolha coop local/offline se quiser evitar qualquer dependência online.',
+        'Faça troféus misc quando os capítulos apresentarem a oportunidade.',
+        'Complete Side Stories e sente nos benches pelo caminho.'
+      ],
+      warning: 'O jogo exige dois jogadores, mas online não é obrigatório. Friend Pass não desbloqueia troféus para quem usa o Friend Pass.',
+      result: 'História encaminhada, BFF’s preparado e boa parte dos troféus misc resolvida.'
+    },
+    {
+      title: 'Etapa 2 — Side Stories e benches',
+      focus: 'Bookworms e Sisters',
+      objective: 'Completar as 12 Side Stories e sentar nos 6 benches.',
+      actions: [
+        'Complete todas as 12 Side Stories para Bookworms.',
+        'Sente nos 6 benches para Sisters: A Tale Of Two Besties.',
+        'Se faltar algo, volte por Chapter Select.',
+        'Conclua o trecho final de cada Side Story sem pular o último checkpoint.'
+      ],
+      warning: 'Bookworms e Sisters são checklist/side content recuperáveis por Chapter Select, não perdíveis definitivos.',
+      result: 'Os dois checklists principais da platina ficam concluídos.'
+    },
+    {
+      title: 'Etapa 3 — Troféus específicos por Chapter Select',
+      focus: 'Misc, easter eggs e habilidade curta',
+      objective: 'Limpar troféus opcionais como You Are Not a Robot, Cold Potato, The Cake is Not a Lie, Snaaaaaaaaake, Rose’s Best Friend e Are We the Baddies?.',
+      actions: [
+        'Use Chapter Select para voltar ao checkpoint ou Side Story correta.',
+        'Faça You Are Not a Robot no captcha do Chapter 2.',
+        'Faça Cold Potato na Side Story Gameshow sem deixar a bomba explodir.',
+        'Procure os easter eggs The Cake is Not a Lie, Rose’s Best Friend e Snaaaaaaaaake.',
+        'Use Skip to Next Checkpoint com cuidado.'
+      ],
+      warning: 'Cold Potato exige reiniciar a Side Story inteira se a bomba explodir; checkpoint isolado pode não contar. Não pule o trecho final de Side Stories que precisam registrar conclusão.',
+      result: 'Todos os troféus opcionais de capítulo ficam concluídos.'
+    },
+    {
+      title: 'Etapa 4 — Conferência final',
+      focus: '21 troféus base e It Took Two',
+      objective: 'Conferir a lista base, confirmar It Took Two e validar flags finais.',
+      actions: [
+        'Confira os 21 troféus base.',
+        'Garanta BFF’s, Bookworms e Sisters.',
+        'Revise troféus misc restantes por Chapter Select.',
+        'Confirme que não há DLC, online obrigatório ou dificuldade indevidos.'
+      ],
+      warning: 'Não venda Friend Pass como caminho para troféus do convidado e não trate semi-perdíveis de capítulo como perda definitiva.',
+      result: 'Platina It Took Two desbloqueada.'
+    }
+  ];
+
+  const splitFictionAttentionPoints = [
+    { title: 'Coop obrigatório', type: 'Dois jogadores', tip: 'Split Fiction exige dois jogadores, em coop local/offline ou online.' },
+    { title: 'Não é online obrigatório', type: 'Couch co-op', tip: 'A platina pode ser feita em couch co-op, então não marque Online obrigatório.' },
+    { title: 'Friend Pass', type: 'Troféus', tip: 'Quem joga via Friend Pass não desbloqueia troféus; a conta que quer a platina precisa jogar a versão que concede troféus.' },
+    { title: 'Chapter Select', type: 'Cleanup', tip: 'Não há perdíveis definitivos; troféus opcionais podem ser limpos via Chapter Select.' },
+    { title: 'Side Stories e benches', type: 'Checklist', tip: 'Bookworms exige 12 Side Stories e Sisters exige 6 benches.' },
+    { title: 'Cold Potato', type: 'Gameshow', tip: 'Se a bomba explodir em Gameshow, reinicie a Side Story inteira; checkpoint isolado pode não contar.' }
+  ];
+
+  const splitFictionFaq = [
+    { question: 'Split Fiction tem troféus online?', answer: 'Não no sentido obrigatório. A platina pode ser feita em coop local/offline. Também é possível jogar online, mas online não é requisito obrigatório.' },
+    { question: 'Split Fiction exige coop?', answer: 'Sim. O jogo exige dois jogadores.' },
+    { question: 'O Friend Pass desbloqueia troféus?', answer: 'Não para quem usa o Friend Pass. A conta que quer os troféus precisa jogar a versão que concede troféus.' },
+    { question: 'Split Fiction tem troféus perdíveis?', answer: 'Não há perdíveis definitivos. Quase todos são semi-perdíveis dentro dos capítulos, mas podem ser recuperados via Chapter Select.' },
+    { question: 'A dificuldade afeta troféus?', answer: 'Não. Não há seleção de dificuldade.' },
+    { question: 'Quantas jogadas são necessárias?', answer: 'Uma campanha coop é suficiente, com cleanup via Chapter Select se faltar algo.' },
+    { question: 'Precisa completar todas as Side Stories?', answer: 'Sim. Bookworms exige completar todas as 12 Side Stories.' },
+    { question: 'Precisa sentar em todos os benches?', answer: 'Sim. Sisters: A Tale Of Two Besties exige os 6 benches.' },
+    { question: 'Cold Potato é o mais difícil?', answer: 'Geralmente sim. Complete a Side Story Gameshow sem deixar a bomba explodir; se falhar, reinicie a Side Story inteira.' },
+    { question: 'Posso usar Skip to Next Checkpoint?', answer: 'Sim, mas não pule o trecho final de uma Side Story se ele precisa contar para conclusão.' },
+    { question: 'O jogo tem perdíveis definitivos?', answer: 'Não. Os troféus opcionais podem ser recuperados via Chapter Select.' }
+  ];
+
+  Object.assign(splitFictionGuide, {
+    difficulty: 3,
+    time: '10-15h',
+    time_min_hours: 10,
+    time_max_hours: 15,
+    time_sort_hours: 12,
+    time_bucket: 'short',
+    hasMissables: false,
+    missableCount: 0,
+    missable_count: 0,
+    hasOnline: false,
+    hasMandatoryOnline: false,
+    requiresOnline: false,
+    onlineRequired: false,
+    hasMandatoryCoop: true,
+    requiresCoop: true,
+    coopRequired: true,
+    difficultyTrophiesRequired: false,
+    dlcRequired: false,
+    dlcRequiredForPlatinum: false,
+    hasChapterSelect: true,
+    chapterSelect: true,
+    hasFreeRoam: false,
+    saveManual: false,
+    runs: '1 campanha coop com dois jogadores, mais cleanup por Chapter Select se faltar algum troféu opcional.',
+    runs_summary: 'Uma campanha coop é suficiente, com Chapter Select para limpar Side Stories, benches e troféus misc de capítulo.',
+    missable: 'Sem troféus perdíveis definitivos. Objetivos opcionais funcionam como semi-perdíveis de capítulo e são recuperáveis por Chapter Select.',
+    missable_summary: 'Sem troféus perdíveis definitivos. Semi-perdíveis de capítulo existem, mas todos podem ser recuperados via Chapter Select.',
+    online_summary: 'Sem online obrigatório: Split Fiction exige dois jogadores, mas pode ser platinado em coop local/offline. Online co-op é opcional.',
+    grind_summary: 'Sem grind relevante. O cleanup é por Chapter Select para Side Stories, benches e troféus misc de capítulo.',
+    dlc_scope: 'DLC não necessário. O guia cobre apenas os 21 troféus base de Split Fiction; qualquer conteúdo futuro fica separado.',
+    difficulty_reason: '3/10: a platina é curta e acessível, sem seleção de dificuldade ou troféus ligados a dificuldade.',
+    time_reason: '10-15h considerando campanha coop, 12 Side Stories, 6 benches e cleanup por Chapter Select.',
+    first_run_advice: 'Jogue com uma dupla fixa, faça Side Stories, sente nos benches e resolva troféus misc quando aparecerem. Use Chapter Select para o que faltar.',
+    cleanup_advice: 'Use Chapter Select para voltar aos checkpoints e Side Stories. Em Side Stories, não pule o trecho final se ele precisa registrar conclusão.',
+    before_you_start: 'Split Fiction exige dois jogadores, mas online não é obrigatório. Friend Pass não concede troféus para quem usa o Friend Pass; a conta que busca a platina precisa jogar a versão que concede troféus.',
+    editorial_summary: [
+      'Split Fiction é uma platina curta, cooperativa e totalmente baseada em capítulos. A lista base possui 21 troféus, não exige dificuldade específica e pode ser concluída em uma campanha coop de cerca de 10 horas. O jogo exige dois jogadores, seja em coop local/offline ou online, mas a platina não deve ser marcada como online obrigatória porque pode ser feita em couch co-op. O jogador usando Friend Pass não desbloqueia troféus; para troféus no perfil, a conta precisa estar jogando a versão que concede troféus.',
+      'Não há perdíveis definitivos, pois os capítulos e checkpoints podem ser repetidos via Chapter Select. Ainda assim, quase todos os troféus são ações opcionais ou atividades específicas dentro de capítulos, então o guia deve tratar esses objetivos como semi-perdíveis de capítulo, recuperáveis no cleanup. O foco da platina é completar a história, finalizar as 12 Side Stories para Bookworms, sentar nos 6 benches para Sisters: A Tale Of Two Besties e limpar troféus misc de capítulo como Cold Potato, You Are Not a Robot, The Cake is Not a Lie e Snaaaaaaaaake.'
+    ],
+    quickDecision: {
+      ...(splitFictionGuide.quickDecision || {}),
+      summary: 'Platina coop de 10-15h e 3/10, sem online obrigatório, sem perdíveis definitivos e com cleanup por Chapter Select.'
+    },
+    best_for: 'Ideal para quem quer uma platina cooperativa curta, criativa e acessível com uma segunda pessoa.',
+    avoid_if: 'Evite se você não tem outro jogador ou pretende usar Friend Pass esperando troféus no perfil convidado.',
+    status: 'published',
+    editorial_status: 'published',
+    editorialStatus: 'verified',
+    editorial_review_status: 'verified',
+    coverage_level: 'complete',
+    is_verified: true,
+    verification_status: 'verified',
+    last_reviewed_at: '2026-06-20',
+    reviewed_by: 'AtlasAchievement',
+    verification_note: 'Guia verificado: 21 troféus base, 10-15h, 3/10, sem perdíveis definitivos, online 0, coop obrigatório, dificuldade 0, Friend Pass explicado e Chapter Select para cleanup.',
+    roadmap: splitFictionRoadmap,
+    roadmapStages: splitFictionRoadmap,
+    attentionPoints: splitFictionAttentionPoints,
+    faq: splitFictionFaq
+  });
+}
+
+// Auditoria editorial final: Road 96.
+const road96Guide = sampleGames.find(game => game.slug === 'road-96');
+if (road96Guide) {
+  const road96NamesPtById = {
+    road96_border_master: 'Mestre da Fronteira',
+    road96_cat_person: 'Pessoa de Gatos',
+    road96_a_light_in_the_darkness: 'Uma Luz na Escuridão',
+    road96_collect_em_all: 'Colecione Todas',
+    road96_campaign_funder: 'Financiador de Campanha',
+    road96_homesick: 'Saudade de Casa',
+    road96_almost_there: 'Quase Lá?',
+    road96_stone_after_stone: 'Pedra Após Pedra',
+    road96_road_pals: 'Amigos de Estrada',
+    road96_help_a_friend: 'Ajude uma Amiga',
+    road96_old_pro: 'Veterano',
+    road96_hard_choice: 'Escolha Difícil'
+  };
+
+  const road96TrophyEdits = {
+    road96_border_master: {
+      description: 'Descubra o destino de Petria ao concluir a campanha.',
+      tip: 'Troféu de final/história. Conclua a campanha e mantenha Road 96: Mile 0 fora deste checklist base.',
+      tags: ['História', 'Final', 'Spoiler'],
+      is_missable: false,
+      is_spoiler: true
+    },
+    road96_cat_person: {
+      description: 'Faça carinho no gato no trailer park.',
+      tip: 'No capítulo Smells Like Teen Spirit, converse com a mulher na cadeira de balanço no trailer park e escolha acariciar o gato.',
+      tags: ['Perdível', 'Risco de run', 'Capítulo'],
+      is_missable: true,
+      is_spoiler: false
+    },
+    road96_a_light_in_the_darkness: {
+      description: 'Sopre o fogo.',
+      tip: 'No capítulo Smells Like Teen Spirit, durante a cena com Zoe à noite, olhe para a fogueira e escolha soprar o fogo.',
+      tags: ['Perdível', 'Risco de run', 'Capítulo', 'Zoe'],
+      is_missable: true,
+      is_spoiler: false
+    },
+    road96_collect_em_all: {
+      description: 'Colete todas as fitas/cassetes.',
+      tip: 'Colete as 18 fitas/cassetes. Elas podem aparecer em veículos, locais específicos, lojas ou ser dadas por personagens. Como os capítulos têm ordem semi-randômica, compre ou pegue qualquer fita que aparecer. O progresso pode carregar para New Game+.',
+      tags: ['Coletável', 'Risco de run', 'Cleanup', 'NG+'],
+      is_missable: false,
+      is_spoiler: false
+    },
+    road96_campaign_funder: {
+      description: 'Ligue e doe para a campanha de Florres ou Tyrak.',
+      tip: 'Use uma cabine telefônica e doe para uma campanha. Tenha pelo menos $11: $1 para a ligação e $10 para a doação. Use 96777 para Florres ou 96555/96-555 para Tyrak, conforme formato aceito pelo jogo.',
+      tags: ['Perdível', 'Risco de run', 'Misc', 'Telefone'],
+      is_missable: true,
+      is_spoiler: false
+    },
+    road96_homesick: {
+      description: 'Ligue para casa.',
+      tip: 'Use uma cabine telefônica e escolha ligar para casa. A ligação custa $1.',
+      tags: ['Perdível', 'Risco de run', 'Misc', 'Telefone'],
+      is_missable: true,
+      is_spoiler: false
+    },
+    road96_almost_there: {
+      description: 'Chegue à Road 96 pela primeira vez.',
+      tip: 'Chegue à Road 96 pela primeira vez com um dos adolescentes.',
+      tags: ['História', 'Progresso'],
+      is_missable: false,
+      is_spoiler: false
+    },
+    road96_stone_after_stone: {
+      description: 'Adicione pelo menos 3 pedras ao cairn da Road 96.',
+      tip: 'Adicione pelo menos 3 pedras ao cairn na caverna atrás da cachoeira ao chegar à Road 96. Só é possível colocar 1 pedra por adolescente, então faça isso em 3 chegadas diferentes antes da reta final. A 6ª chegada destrói o cairn.',
+      tags: ['Perdível', 'Spoiler', 'Risco de run'],
+      is_missable: true,
+      is_spoiler: true
+    },
+    road96_road_pals: {
+      description: 'Conheça Zoe pela primeira vez.',
+      tip: 'Conheça Zoe pela primeira vez no capítulo Smells Like Teen Spirit.',
+      tags: ['História', 'Zoe'],
+      is_missable: false,
+      is_spoiler: true
+    },
+    road96_help_a_friend: {
+      description: 'Ajude Zoe a escapar dos policiais.',
+      tip: 'Ajude Zoe a escapar dos policiais quando ela estiver presa/algemada à van. Neste guia, a ação foi marcada como perdível por ser uma oportunidade evitável dentro da campanha.',
+      tags: ['Perdível', 'Risco de run', 'Zoe', 'Spoiler'],
+      is_missable: true,
+      is_spoiler: true
+    },
+    road96_old_pro: {
+      description: 'Chegue à Road 96 pela sexta vez.',
+      tip: 'Chegue à Road 96 pela sexta vez durante a campanha.',
+      tags: ['História', 'Progresso'],
+      is_missable: false,
+      is_spoiler: true
+    },
+    road96_hard_choice: {
+      description: 'Tome uma escolha difícil ao cruzar a fronteira.',
+      tip: 'Tome a decisão difícil ao cruzar a fronteira com Zoe. Qualquer uma das escolhas finais deve desbloquear o troféu.',
+      tags: ['História', 'Spoiler', 'Zoe'],
+      is_missable: false,
+      is_spoiler: true
+    }
+  };
+
+  road96Guide.trophies = (road96Guide.trophies || []).map(trophy => {
+    const edit = road96TrophyEdits[trophy.id] || {};
+    const namePt = road96NamesPtById[trophy.id] || trophy.name_pt || '';
+    return {
+      ...trophy,
+      name_pt: namePt,
+      trophyNameOriginal: trophy.name,
+      trophyNamePtBr: namePt,
+      localizedNamePtBr: namePt,
+      description: edit.description || trophy.description,
+      descriptionPtBr: edit.description || trophy.description,
+      ptDescription: edit.description || trophy.description,
+      localizedDescription: { ...(trophy.localizedDescription || {}), ptBr: edit.description || trophy.description },
+      tip: edit.tip || trophy.tip,
+      tags: edit.tags || trophy.tags || [],
+      is_missable: Boolean(edit.is_missable),
+      isMissable: Boolean(edit.is_missable),
+      missable: Boolean(edit.is_missable),
+      riskType: edit.is_missable ? 'missable' : '',
+      is_spoiler: Boolean(edit.is_spoiler),
+      isSpoiler: Boolean(edit.is_spoiler),
+      is_online: false,
+      isOnline: false,
+      is_coop: false,
+      isCoop: false,
+      is_difficulty: false,
+      isDifficulty: false,
+      is_dlc: false,
+      isDlc: false
+    };
+  });
+
+  const road96Roadmap = [
+    {
+      title: 'Etapa 1 — Campanha com 6 adolescentes e oportunidades',
+      focus: 'Campanha, dinheiro, comida e encontros semi-randômicos',
+      objective: 'Jogar a campanha completa com os 6 adolescentes/fugitivos, mantendo recursos e aproveitando oportunidades de telefone, fitas, Zoe e chegadas à Road 96.',
+      actions: [
+        'Jogue a campanha completa sem tratar a rota como checklist linear fixo.',
+        'Mantenha dinheiro e comida sempre que possível.',
+        'Use cabines telefônicas quando aparecerem.',
+        'Compre ou pegue fitas/cassetes sempre que encontrar uma oportunidade.',
+        'Preste atenção aos eventos de Zoe e às chegadas à Road 96.'
+      ],
+      warning: 'A ordem dos encontros é semi-randômica. Não ignore cabines telefônicas nem fitas/cassetes, porque pode ser necessário esperar nova oportunidade.',
+      result: 'Progresso de história, Zoe, fronteira e coletáveis encaminhado.'
+    },
+    {
+      title: 'Etapa 2 — Zoe e Smells Like Teen Spirit',
+      focus: 'Cat Person, A Light in the Darkness e Road Pals',
+      objective: 'Resolver os troféus ligados ao primeiro encontro com Zoe e às ações específicas do capítulo Smells Like Teen Spirit.',
+      actions: [
+        'Conheça Zoe para Road Pals.',
+        'No trailer park, converse com a mulher na cadeira de balanço e acaricie o gato para Cat Person.',
+        'Na cena noturna com Zoe, olhe para a fogueira e sopre o fogo para A Light in the Darkness.',
+        'Marque essas ações assim que o capítulo aparecer.'
+      ],
+      warning: 'Cat Person e A Light in the Darkness dependem de ações específicas no capítulo. Se perder, pode exigir nova campanha, New Game+ ou nova oportunidade.',
+      result: 'Troféus ligados ao primeiro encontro com Zoe resolvidos.'
+    },
+    {
+      title: 'Etapa 3 — Cabines telefônicas e doações',
+      focus: 'Homesick e Campaign Funder',
+      objective: 'Usar cabines telefônicas para ligar para casa e doar para uma campanha.',
+      actions: [
+        'Use uma cabine telefônica e ligue para casa para Homesick.',
+        'Guarde pelo menos $11 antes de tentar Campaign Funder.',
+        'Pague $1 pela ligação e doe $10 para Florres ou Tyrak.',
+        'Use 96777 para Florres ou 96555/96-555 para Tyrak, conforme aceito pelo jogo.'
+      ],
+      warning: 'A ligação para casa custa $1 e a doação exige $10 adicionais. Não gaste todo o dinheiro antes de encontrar uma cabine.',
+      result: 'Troféus de telefone e campanha concluídos.'
+    },
+    {
+      title: 'Etapa 4 — Road 96 e o cairn de pedras',
+      focus: 'Stone After Stone',
+      objective: 'Colocar 3 pedras no cairn em 3 chegadas diferentes à Road 96 antes da reta final.',
+      actions: [
+        'Ao chegar à Road 96, procure a caverna atrás da cachoeira.',
+        'Coloque 1 pedra no cairn com o adolescente atual.',
+        'Repita o processo em 3 chegadas diferentes.',
+        'Priorize esse objetivo sempre que alcançar a área final.'
+      ],
+      warning: 'Stone After Stone é o principal risco. Só dá para colocar 1 pedra por adolescente e a 6ª chegada à Road 96 destrói o cairn.',
+      result: 'Stone After Stone concluído antes da reta final.'
+    },
+    {
+      title: 'Etapa 5 — Fitas/cassetes e New Game+ opcional',
+      focus: 'Collect ’em All',
+      objective: 'Coletar 18 fitas/cassetes, comprando ou pegando qualquer fita disponível durante encontros e viagens.',
+      actions: [
+        'Procure fitas em veículos, porta-luvas, assentos, gavetas e lojas.',
+        'Aceite fitas dadas por personagens.',
+        'Compre fitas quando tiver dinheiro sobrando.',
+        'Use New Game+ se faltar fita/cassete ao fim da campanha.'
+      ],
+      warning: 'Os capítulos são randômicos/semi-procedurais. O progresso das fitas pode carregar para New Game+, então não trate como 100% obrigatório em uma única campanha.',
+      result: 'Collect ’em All concluído ou encaminhado para New Game+.'
+    },
+    {
+      title: 'Etapa 6 — Final, escolhas e conferência',
+      focus: 'Hard Choice, Old Pro e Border Master',
+      objective: 'Chegar à fronteira com os fugitivos necessários, fazer a escolha final e conferir pendências.',
+      actions: [
+        'Chegue à Road 96 pela sexta vez para Old Pro.',
+        'Tome a decisão final com Zoe para Hard Choice.',
+        'Conclua a campanha para Border Master.',
+        'Confira se faltam fitas, cabines, doação, gato, fogueira, pedras ou Help a Friend.'
+      ],
+      warning: 'Road 96: Mile 0 não faz parte deste guia. Não há online, coop ou dificuldade afetando troféus.',
+      result: 'Platina Border Master desbloqueada.'
+    }
+  ];
+
+  const road96AttentionPoints = [
+    { title: 'Stone After Stone', type: 'Cairn', tip: 'Coloque 3 pedras no cairn em 3 chegadas diferentes à Road 96 antes da 6ª chegada, pois o cairn é destruído na reta final.' },
+    { title: 'Smells Like Teen Spirit', type: 'Zoe', tip: 'Cat Person e A Light in the Darkness dependem de ações específicas no primeiro encontro com Zoe.' },
+    { title: 'Cabines telefônicas', type: 'Telefone', tip: 'Homesick e Campaign Funder exigem cabines telefônicas; tenha dinheiro para ligar e doar.' },
+    { title: 'Fitas/cassetes', type: 'Coletáveis', tip: 'Collect ’em All exige 18 fitas/cassetes. Pegue ou compre sempre que aparecerem; o progresso pode carregar para New Game+.' },
+    { title: 'Mile 0 separado', type: 'Escopo', tip: 'Road 96: Mile 0 é jogo separado/prequel e não entra na platina base.' },
+    { title: 'Ordem semi-randômica', type: 'Estrutura', tip: 'Os capítulos/encontros podem aparecer em ordem diferente, então aproveite cada oportunidade quando ela surgir.' }
+  ];
+
+  const road96Faq = [
+    { question: 'Road 96 tem troféus online?', answer: 'Não. A lista é totalmente offline.' },
+    { question: 'Road 96 tem coop?', answer: 'Não.' },
+    { question: 'A dificuldade afeta troféus?', answer: 'Não. Road 96 não tem troféus ligados a dificuldade.' },
+    { question: 'Quantas jogadas são necessárias?', answer: 'Uma campanha completa pode ser suficiente, mas New Game+ pode ajudar se faltar fita/cassete ou alguma ação específica.' },
+    { question: 'Road 96 tem troféus perdíveis?', answer: 'Sim. Há troféus de ações específicas e oportunidades de capítulo, como Stone After Stone, Cat Person, A Light in the Darkness, Homesick, Campaign Funder e Help a Friend. Collect ’em All foi tratado como coletável com risco de run/New Game+ opcional.' },
+    { question: 'Qual é o maior risco da platina?', answer: 'Stone After Stone, porque exige colocar pedras no cairn em 3 chegadas diferentes à Road 96 antes da reta final.' },
+    { question: 'Collect ’em All é perdível?', answer: 'Ele exige 18 fitas/cassetes. Como as fitas carregam para New Game+, é melhor tratá-lo como coletável com risco de run/NG+ opcional, não como perda definitiva.' },
+    { question: 'Road 96: Mile 0 é necessário?', answer: 'Não. Mile 0 é jogo separado/prequel e não entra na platina de Road 96.' },
+    { question: 'Preciso de todos os finais?', answer: 'Não necessariamente. A platina exige concluir a campanha e descobrir o destino de Petria, mas não exige todos os finais possíveis.' },
+    { question: 'O jogo tem chapter select?', answer: 'Não trate como seleção livre tradicional. Os encontros são semi-randômicos; por isso o guia orienta ações por oportunidade.' }
+  ];
+
+  Object.assign(road96Guide, {
+    difficulty: 1,
+    time: '6-8h',
+    time_min_hours: 6,
+    time_max_hours: 8,
+    time_sort_hours: 8,
+    time_bucket: 'short',
+    hasMissables: true,
+    missableCount: 6,
+    missable_count: 6,
+    hasOnline: false,
+    hasMandatoryOnline: false,
+    requiresOnline: false,
+    onlineRequired: false,
+    hasMandatoryCoop: false,
+    requiresCoop: false,
+    coopRequired: false,
+    difficultyTrophiesRequired: false,
+    dlcRequired: false,
+    dlcRequiredForPlatinum: false,
+    newGamePlusRequired: false,
+    newGamePlusOptional: true,
+    hasChapterSelect: false,
+    chapterSelect: false,
+    runs: '1 campanha completa com 6 adolescentes/fugitivos; New Game+ é opcional para fitas/cassetes ou ações específicas faltantes.',
+    runs_summary: 'Uma campanha completa com 6 adolescentes pode ser suficiente, mas New Game+ pode ajudar se faltar Collect ’em All ou alguma oportunidade específica.',
+    missable: 'Tem perdíveis de campanha: Stone After Stone, Cat Person, A Light in the Darkness, Homesick, Campaign Funder e Help a Friend foram marcados como risco real de oportunidade.',
+    missable_summary: '6 perdíveis editoriais: Stone After Stone, Cat Person, A Light in the Darkness, Campaign Funder, Homesick e Help a Friend. Collect ’em All fica como coletável com risco de run/New Game+ opcional.',
+    online_summary: 'Sem online obrigatório: Road 96 não possui troféus online, multiplayer obrigatório ou requisito de PS+ para a platina.',
+    grind_summary: 'Sem grind relevante. O trabalho extra é atenção a 18 fitas/cassetes, eventos de Zoe, cabines telefônicas e pedras no cairn.',
+    dlc_scope: 'DLC não necessário. Road 96: Mile 0 é jogo separado/prequel e não entra nos 12 troféus base nem no tempo da platina.',
+    difficulty_reason: '1/10: a platina é mecanicamente simples e não possui troféus ligados a dificuldade selecionável.',
+    time_reason: '6-8h considerando uma campanha completa com 6 adolescentes, oportunidades semi-randômicas, 18 fitas/cassetes e possível New Game+ leve.',
+    first_run_advice: 'Explore cada encontro com calma, mantenha dinheiro, use cabines telefônicas, compre ou pegue fitas/cassetes e faça as ações de Zoe, gato, fogueira e cairn assim que aparecerem.',
+    cleanup_advice: 'Não há seleção de capítulos livre tradicional. Se faltar fita/cassete ou ação específica, use New Game+ ou nova campanha para buscar novas oportunidades.',
+    before_you_start: 'Road 96 tem encontros semi-randômicos. Priorize Stone After Stone, Smells Like Teen Spirit, cabines telefônicas e fitas/cassetes; Road 96: Mile 0 fica fora do guia base.',
+    editorial_summary: [
+      'Road 96 é uma platina curta, simples e totalmente offline, mas com atenção a troféus de capítulo e ações específicas. A lista base possui 12 troféus, não exige online, cooperação ou dificuldade específica, e normalmente pode ser concluída em uma campanha completa com os 6 adolescentes tentando chegar à fronteira de Petria. Como os encontros têm ordem semi-randômica, o guia deve orientar o jogador a aproveitar cada oportunidade de telefone, fitas/cassetes, eventos com Zoe e a chegada à Road 96.',
+      'Os principais cuidados são Stone After Stone, por exigir colocar pedras no cairn em 3 chegadas diferentes à Road 96 antes da reta final; Cat Person e A Light in the Darkness, ligados ao capítulo Smells Like Teen Spirit; Homesick e Campaign Funder, feitos em cabines telefônicas; e Collect ’em All, que exige 18 fitas/cassetes, com progresso que pode carregar para New Game+. Road 96: Mile 0 é um jogo separado e não entra na platina base.'
+    ],
+    quickDecision: {
+      ...(road96Guide.quickDecision || {}),
+      summary: 'Platina curta de 6-8h e 1/10, offline e sem coop, mas com perdíveis de oportunidade. Priorize Stone After Stone, Smells Like Teen Spirit, cabines telefônicas e fitas/cassetes.'
+    },
+    best_for: 'Ideal para quem quer uma platina narrativa curta, fácil, offline e focada em escolhas, estrada e oportunidades semi-randômicas.',
+    avoid_if: 'Evite apenas se você quer checklist linear com seleção livre de capítulos ou não quer repetir oportunidades por New Game+ se faltar fita/cassete.',
+    status: 'published',
+    editorial_status: 'published',
+    editorialStatus: 'verified',
+    editorial_review_status: 'verified',
+    coverage_level: 'complete',
+    is_verified: true,
+    verification_status: 'verified',
+    last_reviewed_at: '2026-06-20',
+    reviewed_by: 'AtlasAchievement',
+    verification_note: 'Guia verificado: 12 troféus base, 6-8h, 1/10, 6 perdíveis editoriais, online 0, coop 0, dificuldade 0 e Road 96: Mile 0 separado.',
+    roadmap: road96Roadmap,
+    roadmapStages: road96Roadmap,
+    attentionPoints: road96AttentionPoints,
+    faq: road96Faq
+  });
+}
+
+// Auditoria editorial final: Returnal.
+const returnalGuide = sampleGames.find(game => game.slug === 'returnal');
+if (returnalGuide) {
+  const returnalNamesPtById = {
+    returnal_helios: 'Hélios',
+    returnal_atropian_survival: 'Sobrevivência Atropiana',
+    returnal_past_the_ruins: 'Além das Ruínas',
+    returnal_ascending_the_mountain: 'Subindo a Montanha',
+    returnal_through_the_forgotten_city: 'Pela Cidade Esquecida',
+    returnal_echoes_of_the_past: 'Ecos do Passado',
+    returnal_frozen_in_time: 'Congelado no Tempo',
+    returnal_submerged_in_memories: 'Submerso em Memórias',
+    returnal_a_shadow_in_the_fog: 'Uma Sombra na Névoa',
+    returnal_ascension: 'Ascensão',
+    returnal_trial_by_judgement: 'Julgamento Final',
+    returnal_silence_the_song: 'Silencie a Canção',
+    returnal_inner_darkness: 'Escuridão Interior',
+    returnal_failed_escape: 'Fuga Fracassada',
+    returnal_last_drive: 'Última Viagem',
+    returnal_white_shadow: 'Sombra Branca',
+    returnal_second_chance: 'Segunda Chance',
+    returnal_cryptic_messages: 'Mensagens Crípticas',
+    returnal_cryptic_translations: 'Traduções Crípticas',
+    returnal_surgical_precision: 'Precisão Cirúrgica',
+    returnal_adapting_to_circumstance: 'Adaptando-se à Circunstância',
+    returnal_in_field_training: 'Treinamento em Campo',
+    returnal_hardened_shell: 'Casca Endurecida',
+    returnal_risk_assessment: 'Avaliação de Risco',
+    returnal_adrenaline_spike: 'Pico de Adrenalina',
+    returnal_irreversibly_contaminated: 'Irreversivelmente Contaminada',
+    returnal_eternal_return: 'Retorno Eterno',
+    returnal_alternate_fates: 'Destinos Alternativos',
+    returnal_welcome_home: 'Bem-vinda ao Lar',
+    returnal_sins_of_the_mother: 'Pecados da Mãe',
+    returnal_visions_of_the_past: 'Visões do Passado'
+  };
+
+  const returnalStoryIds = new Set([
+    'returnal_atropian_survival',
+    'returnal_a_shadow_in_the_fog',
+    'returnal_ascension',
+    'returnal_trial_by_judgement',
+    'returnal_silence_the_song',
+    'returnal_inner_darkness',
+    'returnal_failed_escape',
+    'returnal_last_drive',
+    'returnal_white_shadow',
+    'returnal_welcome_home'
+  ]);
+
+  const returnalTrophyEdits = {
+    returnal_helios: {
+      description: 'Conquiste todos os outros troféus da lista base.',
+      tip: 'A platina depende dos outros 30 troféus. O online direto é In-Field Training; Ascension, Tower of Sisyphus e co-op não entram.',
+      tags: []
+    },
+    returnal_atropian_survival: {
+      description: 'Aprenda os fundamentos de sobrevivência em Atropos.',
+      tip: 'Troféu automático inicial ligado ao tutorial, Overload, dash, combate e primeiros ciclos.',
+      tags: ['História', 'Spoiler']
+    },
+    returnal_past_the_ruins: {
+      description: 'Conclua o Survey de Overgrown Ruins.',
+      tip: 'Exige Scout Logs, Xenoglyph Ciphers, Xeno-Archives e objetivos do Survey do bioma. O RNG de salas pode exigir muitos ciclos.',
+      tags: ['Coletável', 'Survey', 'Grind', 'RNG', 'Cleanup']
+    },
+    returnal_ascending_the_mountain: {
+      description: 'Conclua o Survey de Crimson Wastes.',
+      tip: 'Volte em ciclos até as salas, Scout Logs e Xenoglyph Ciphers faltantes aparecerem.',
+      tags: ['Coletável', 'Survey', 'Grind', 'RNG', 'Cleanup']
+    },
+    returnal_through_the_forgotten_city: {
+      description: 'Conclua o Survey de Derelict Citadel.',
+      tip: 'Explore salas principais, side rooms, Scout Logs, Ciphers e Xeno-Archives quando o layout permitir.',
+      tags: ['Coletável', 'Survey', 'Grind', 'RNG', 'Cleanup']
+    },
+    returnal_echoes_of_the_past: {
+      description: 'Conclua o Survey de Echoing Ruins.',
+      tip: 'Trate como grind de RNG depois que a campanha liberar retorno aos biomas.',
+      tags: ['Coletável', 'Survey', 'Grind', 'RNG', 'Cleanup']
+    },
+    returnal_frozen_in_time: {
+      description: 'Conclua o Survey de Fractured Wastes.',
+      tip: 'As salas raras, Scout Logs e Ciphers podem exigir muitos ciclos.',
+      tags: ['Coletável', 'Survey', 'Grind', 'RNG', 'Cleanup']
+    },
+    returnal_submerged_in_memories: {
+      description: 'Conclua o Survey de Abyssal Scar.',
+      tip: 'Revise Scout Logs, Ciphers e Xeno-Archives com paciência no endgame.',
+      tags: ['Coletável', 'Survey', 'Grind', 'RNG', 'Cleanup']
+    },
+    returnal_a_shadow_in_the_fog: {
+      description: 'Derrote Phrike.',
+      tip: 'Chefe obrigatório de Overgrown Ruins. Aprenda dash, distância e janelas de ataque.',
+      tags: ['História', 'Boss', 'Spoiler']
+    },
+    returnal_ascension: {
+      description: 'Derrote Ixion.',
+      tip: 'Troféu base de chefe em Crimson Wastes; não confundir com o conteúdo separado Ascension.',
+      tags: ['História', 'Boss', 'Spoiler']
+    },
+    returnal_trial_by_judgement: {
+      description: 'Derrote Nemesis.',
+      tip: 'Chefe obrigatório de Derelict Citadel e marco importante da campanha.',
+      tags: ['História', 'Boss', 'Spoiler']
+    },
+    returnal_silence_the_song: {
+      description: 'Derrote Hyperion.',
+      tip: 'Chefe obrigatório de Echoing Ruins.',
+      tags: ['História', 'Boss', 'Spoiler']
+    },
+    returnal_inner_darkness: {
+      description: 'Derrote Ophion.',
+      tip: 'Chefe final do Act 2. Depois disso, o free roam libera a busca por Sunface Fragments e Surveys.',
+      tags: ['História', 'Boss', 'Spoiler']
+    },
+    returnal_failed_escape: {
+      description: 'Conclua o Act 1.',
+      tip: 'Troféu automático de história ao concluir o primeiro ato.',
+      tags: ['História', 'Spoiler']
+    },
+    returnal_last_drive: {
+      description: 'Conclua o Act 2.',
+      tip: 'Troféu automático de história ao concluir o segundo ato e entrar no free roam.',
+      tags: ['História', 'Spoiler']
+    },
+    returnal_white_shadow: {
+      description: 'Conclua o Act 3.',
+      tip: 'Exige 6 Sunface Fragments, a sequência final da casa e usar a chave no carro após derrotar Ophion novamente.',
+      tags: ['História', 'Coletável', 'Sunface Fragments', 'Grind', 'Spoiler', 'Cleanup']
+    },
+    returnal_second_chance: {
+      description: 'Volte à vida por meio de um artefato.',
+      tip: 'Use um artefato de revive, como Astronaut Figurine, e seja revivida durante um ciclo.',
+      tags: ['Sistema', 'Cleanup']
+    },
+    returnal_cryptic_messages: {
+      description: 'Escaneie um Xenoglyph.',
+      tip: 'Interaja com qualquer Xenoglyph encontrado durante a exploração.',
+      tags: ['Coletável', 'Xenoglyph']
+    },
+    returnal_cryptic_translations: {
+      description: 'Desbloqueie todos os níveis de tradução de um Xenoglyph.',
+      tip: 'Progrida em Xenoglyph Ciphers até liberar todos os tiers de tradução de um Xenoglyph.',
+      tags: ['Coletável', 'Xenoglyph Ciphers', 'Grind', 'RNG', 'Cleanup']
+    },
+    returnal_surgical_precision: {
+      description: 'Faça 5 Overloads bem-sucedidos em sequência.',
+      tip: 'Controle o timing do reload e faça cinco Overloads perfeitos seguidos.',
+      tags: ['Combate', 'Sistema']
+    },
+    returnal_adapting_to_circumstance: {
+      description: 'Alcance Weapon Proficiency level 30.',
+      tip: 'Mais fácil no endgame, especialmente em biomas avançados com calibrators e inimigos suficientes.',
+      tags: ['Grind', 'Proficiency', 'Cleanup']
+    },
+    returnal_in_field_training: {
+      description: 'Complete um Daily Challenge no Simulation Mode.',
+      tip: 'Troféu online direto: acesse o Simulation Mode pelo terminal da nave e complete um Daily Challenge conectado à PSN.',
+      tags: ['Online']
+    },
+    returnal_hardened_shell: {
+      description: 'Alcance 200% de Max Integrity.',
+      tip: 'Limpe salas com cuidado e pegue resins em vida cheia para aumentar Max Integrity em um ciclo forte.',
+      tags: ['Grind', 'Sobrevivência', 'Cleanup']
+    },
+    returnal_risk_assessment: {
+      description: 'Conclua Calculated Risk.',
+      tip: 'Use itens malignant/spoiled suficientes conforme o tracker; pode depender de ciclo favorável e repetição.',
+      tags: ['RNG', 'Grind', 'Cleanup']
+    },
+    returnal_adrenaline_spike: {
+      description: 'Alcance o nível máximo de Adrenaline.',
+      tip: 'Chegue ao nível 5 de Adrenaline eliminando inimigos sem levar dano.',
+      tags: ['Combate', 'Sistema']
+    },
+    returnal_irreversibly_contaminated: {
+      description: 'Tenha 5 Parasites simultaneamente.',
+      tip: 'Pegue Parasites sempre que possível até acumular cinco no mesmo ciclo.',
+      tags: ['RNG', 'Grind', 'Cleanup']
+    },
+    returnal_eternal_return: {
+      description: 'Morra pela primeira vez.',
+      tip: 'Vem naturalmente cedo; morrer faz parte do loop de Returnal.',
+      tags: ['Sistema']
+    },
+    returnal_alternate_fates: {
+      description: 'Recupere 10 Scout Logs.',
+      tip: 'Pegue Scout Logs quando aparecerem; eles dependem de spawns e layouts de ciclos.',
+      tags: ['Coletável', 'Scout Logs', 'Grind', 'RNG', 'Cleanup']
+    },
+    returnal_welcome_home: {
+      description: 'Complete a primeira House Sequence.',
+      tip: 'Entre na casa quando ela estiver acessível em Overgrown Ruins.',
+      tags: ['História', 'House Sequence', 'Spoiler']
+    },
+    returnal_sins_of_the_mother: {
+      description: 'Complete todas as House Sequences.',
+      tip: 'Complete as House Sequences, incluindo a sequência final ligada aos Sunface Fragments.',
+      tags: ['Coletável', 'House Sequences', 'Grind', 'Spoiler', 'Cleanup']
+    },
+    returnal_visions_of_the_past: {
+      description: 'Complete um conjunto de Xeno-Archive.',
+      tip: 'Ative todos os tableaus de um Xeno-Archive set quando encontrar a sala correspondente.',
+      tags: ['Coletável', 'Xeno-Archives', 'RNG', 'Cleanup']
+    }
+  };
+
+  returnalGuide.trophies = returnalGuide.trophies.map(trophy => {
+    const edit = returnalTrophyEdits[trophy.id] || {};
+    const namePt = returnalNamesPtById[trophy.id] || trophy.name_pt || '';
+    const description = edit.description || trophy.description || '';
+    const tip = edit.tip || trophy.tip || '';
+    return {
+      ...trophy,
+      trophyNameOriginal: trophy.name,
+      originalName: trophy.name,
+      name_pt: namePt,
+      trophyNamePtBr: namePt,
+      localizedNamePtBr: namePt,
+      namePtSource: 'editorial_ptbr',
+      description,
+      descriptionPtBr: description,
+      ptDescription: description,
+      localizedDescription: { ...(trophy.localizedDescription || {}), ptBr: description },
+      descriptionPtSource: 'editorial_ptbr',
+      tip,
+      guideTip: tip,
+      tags: edit.tags || [],
+      is_missable: false,
+      isMissable: false,
+      missable: false,
+      is_spoiler: returnalStoryIds.has(trophy.id) || Boolean((edit.tags || []).includes('Spoiler')),
+      is_online: trophy.id === 'returnal_in_field_training',
+      isOnline: trophy.id === 'returnal_in_field_training',
+      is_coop: false,
+      isCoop: false,
+      is_difficulty: false,
+      difficultyRequired: false,
+      is_dlc: false
+    };
+  });
+
+  const returnalRoadmap = [
+    {
+      title: 'Etapa 1 — Sobreviva até o fim do Act 2',
+      focus: 'Campanha, chefes e fundamentos do ciclo',
+      objective: 'Aprender Overload, dash, Adrenaline, Integrity, Parasites, Reconstructor, Fabricators e padrões dos inimigos enquanto avança pelos biomas 1-6.',
+      actions: [
+        'Derrote Phrike, Ixion, Nemesis, Hyperion e Ophion.',
+        'Colete Scout Logs, Xenoglyph Ciphers e Xeno-Archives que aparecerem naturalmente.',
+        'Aceite que morrer faz parte do loop e que muitos recursos temporários são perdidos.',
+        'Mantenha conexão PSN quando possível para Activity Cards e In-Field Training.'
+      ],
+      warning: 'Returnal não tem seleção de dificuldade; a nota 8,5/10 é avaliação editorial da platina, não requisito de troféu.',
+      result: 'Act 1 e Act 2 concluídos, free roam liberado e base da platina encaminhada.'
+    },
+    {
+      title: 'Etapa 2 — House Sequences, Sunface Fragments e Act 3',
+      focus: 'White Shadow e conclusão narrativa',
+      objective: 'Assistir às House Sequences, buscar os 6 Sunface Fragments, voltar à casa, derrotar Ophion novamente e usar a chave no carro.',
+      actions: [
+        'Depois de Ophion, procure 1 Sunface Fragment em cada bioma.',
+        'Anote quais biomas já tiveram o fragmento coletado.',
+        'Volte à casa para a sequência final quando todos os fragmentos estiverem reunidos.',
+        'Derrote Ophion novamente e use a chave no carro para concluir White Shadow.'
+      ],
+      warning: 'Sunface Fragments dependem de salas/biomas e RNG, mas não são perdíveis.',
+      result: 'Act 3 concluído e White Shadow desbloqueado.'
+    },
+    {
+      title: 'Etapa 3 — Surveys dos 6 biomas',
+      focus: 'Scout Logs, Xenoglyph Ciphers, Xeno-Archives e RNG',
+      objective: 'Completar os Surveys de Overgrown Ruins, Crimson Wastes, Derelict Citadel, Echoing Ruins, Fractured Wastes e Abyssal Scar.',
+      actions: [
+        'Busque Scout Logs, Xenoglyph Ciphers, Xeno-Archives e Containment Areas exigidas.',
+        'Use Activity Cards para acompanhar progresso quando estiver conectado à PSN.',
+        'Repita biomas até salas e coletáveis raros aparecerem.',
+        'Separe os Surveys como o maior bloco de grind da platina.'
+      ],
+      warning: 'Este é o maior gargalo da platina; o spawn de salas e coletáveis é RNG.',
+      result: 'Os 6 troféus de Survey ficam concluídos.'
+    },
+    {
+      title: 'Etapa 4 — Troféus de combate, sobrevivência e RNG leve',
+      focus: 'Overload, Proficiency, Integrity, Parasites e misc',
+      objective: 'Completar Surgical Precision, Adapting to Circumstance, Hardened Shell, Risk Assessment, Adrenaline Spike, Irreversibly Contaminated, Second Chance e Eternal Return.',
+      actions: [
+        'Faça cinco Overloads seguidos para Surgical Precision.',
+        'Busque Weapon Proficiency level 30 em biomas avançados.',
+        'Monte um ciclo forte para 200% Max Integrity.',
+        'Use ciclos favoráveis para Parasites, malignant/spoiled items e objetivos misc.'
+      ],
+      warning: 'Muitos objetivos dependem de run favorável e itens aleatórios, mas não devem receber tag Dificuldade individual.',
+      result: 'Troféus misc e de sobrevivência concluídos.'
+    },
+    {
+      title: 'Etapa 5 — Simulation Mode online',
+      focus: 'In-Field Training',
+      objective: 'Entrar no Simulation Mode pelo terminal da nave e completar um Daily Challenge.',
+      actions: [
+        'Conecte-se à PSN.',
+        'Acesse o terminal de Simulation Mode na Helios.',
+        'Complete um Daily Challenge para desbloquear In-Field Training.'
+      ],
+      warning: 'Este é o troféu online direto da lista base; não confundir com co-op do Ascension.',
+      result: 'Online direto concluído.'
+    },
+    {
+      title: 'Etapa 6 — Conferência final sem Ascension',
+      focus: '31 troféus base e extras fora da platina',
+      objective: 'Revisar os 31 troféus base e confirmar que Ascension, Tower of Sisyphus e co-op não foram incluídos.',
+      actions: [
+        'Confira Surveys, Act 3, House Sequences, Daily Challenge e misc restantes.',
+        'Não some os 7 troféus do Ascension à lista base.',
+        'Não trate Tower of Sisyphus ou co-op como requisito de Helios.',
+        'Finalize qualquer cleanup restante repetindo biomas em free roam.'
+      ],
+      warning: 'Ascension é conteúdo separado; o troféu base Ascension é apenas a derrota de Ixion.',
+      result: 'Platina Helios desbloqueada.'
+    }
+  ];
+
+  const returnalAttentionPoints = [
+    { title: 'Online obrigatório', type: 'Simulation Mode', tip: 'In-Field Training exige completar um Daily Challenge no Simulation Mode conectado à PSN.' },
+    { title: 'Ascension separado', type: 'DLC/update', tip: 'O DLC/update Ascension adiciona Tower of Sisyphus e co-op, mas não entra na platina base.' },
+    { title: 'Sem perdíveis desde o patch 1.4.0', type: 'Lista base', tip: 'A lista base não possui perdíveis na versão atual; RNG e repetição não são perdíveis.' },
+    { title: 'Dificuldade não afeta troféus', type: 'Sem seleção', tip: 'Returnal não tem seleção de dificuldade. A nota alta é apenas avaliação editorial da platina.' },
+    { title: 'Surveys são o maior gargalo', type: 'RNG', tip: 'Os 6 Surveys dependem de Scout Logs, Xenoglyph Ciphers, Xeno-Archives e salas que aparecem com RNG.' },
+    { title: 'Sunface Fragments e Act 3', type: 'White Shadow', tip: 'White Shadow exige 6 Sunface Fragments, sequência final da casa, derrotar Ophion novamente e usar a chave no carro.' },
+    { title: 'Activity Cards / PSN', type: 'Acompanhamento', tip: 'Activity Cards ajudam a rastrear Surveys, mas exigem conexão PSN e podem ser inconsistentes.' },
+    { title: 'Free roam após história', type: 'Cleanup', tip: 'Depois do Act 2 e do Act 3, é possível repetir biomas para Surveys, Sunface Fragments e cleanup.' }
+  ];
+
+  const returnalFaq = [
+    { question: 'Returnal tem troféus online?', answer: 'Sim. In-Field Training exige completar um Daily Challenge no Simulation Mode conectado à PSN. Algumas fontes contam 2 online incluindo a platina Helios, que depende de todos os troféus.' },
+    { question: 'Returnal tem coop obrigatório?', answer: 'Não. O co-op foi adicionado no update Ascension e não entra na platina base.' },
+    { question: 'Returnal tem troféus perdíveis?', answer: 'Não na versão atual. Desde o patch 1.4.0, a lista base não tem perdíveis.' },
+    { question: 'A dificuldade afeta troféus?', answer: 'Não. Returnal não tem seleção de dificuldade.' },
+    { question: 'Quantas jogadas são necessárias?', answer: 'Uma progressão base é suficiente, mas será necessário repetir biomas muitas vezes por causa dos Surveys e do RNG.' },
+    { question: 'Existe free roam após a história?', answer: 'Sim. Depois do Act 2 e do Act 3, é possível retornar aos biomas para coletáveis e cleanup.' },
+    { question: 'Ascension é necessário para a platina?', answer: 'Não. Ascension é conteúdo separado, com Tower of Sisyphus e troféus extras, e não entra na platina base Helios.' },
+    { question: 'Preciso completar a Tower of Sisyphus?', answer: 'Não. Tower of Sisyphus pertence ao conteúdo Ascension e não é requisito da platina base.' },
+    { question: 'Qual é o maior gargalo da platina?', answer: 'Os Survey trophies dos 6 biomas, porque dependem de Scout Logs, Xenoglyph Ciphers, Xeno-Archives, possíveis Containment Areas e salas que aparecem por RNG.' },
+    { question: 'O que cada Survey exige?', answer: 'Cada Survey pode envolver Scout Logs, Xenoglyph Ciphers, Xeno-Archives e, dependendo do Activity Card, Containment Areas do respectivo bioma.' },
+    { question: 'Preciso estar online o tempo todo?', answer: 'É recomendado manter conexão PSN, especialmente para Activity Cards e In-Field Training. O online direto da lista base é In-Field Training.' },
+    { question: 'Helios deve ser marcado como online?', answer: 'O online direto é In-Field Training. Helios pode ser considerado online apenas por dependência da platina, se o padrão do projeto marcar tags herdadas na platina.' },
+    { question: 'Como concluo White Shadow / Act 3?', answer: 'Colete os 6 Sunface Fragments, um por bioma, assista à sequência final da casa, derrote Ophion novamente e use a chave no carro.' }
+  ];
+
+  Object.assign(returnalGuide, {
+    difficulty: 8.5,
+    time: '50-100h+',
+    time_min_hours: 50,
+    time_max_hours: 100,
+    time_sort_hours: 100,
+    time_bucket: 'long',
+    hasMissables: false,
+    missableCount: 0,
+    missable_count: 0,
+    hasOnline: true,
+    hasMandatoryOnline: true,
+    requiresOnline: true,
+    onlineRequired: true,
+    hasMandatoryCoop: false,
+    requiresCoop: false,
+    coopRequired: false,
+    difficultyTrophiesRequired: false,
+    dlcRequired: false,
+    dlcRequiredForPlatinum: false,
+    hasFreeRoam: true,
+    runs: '1 progressão base com repetição intensa de biomas para Surveys e RNG.',
+    runs_summary: 'Uma progressão base é suficiente, mas os Surveys exigem repetir biomas muitas vezes no free roam pós-Act 2/Act 3.',
+    missable: 'Sem perdíveis na lista base desde o patch 1.4.0. RNG, repetição e erros de rota não são perdíveis.',
+    missable_summary: 'Sem perdíveis reais na versão atual desde o patch 1.4.0; nenhum troféu base deve receber tag Perdível.',
+    online_summary: 'Online obrigatório direto: In-Field Training exige completar um Daily Challenge no Simulation Mode conectado à PSN. Helios só é online por dependência, se o projeto contar a platina.',
+    grind_summary: 'Grind alto/moderado por causa dos 6 Surveys, Scout Logs, Xenoglyph Ciphers, Xeno-Archives, Sunface Fragments, House Sequences e RNG de salas.',
+    dlc_scope: 'DLC não necessário. Ascension, Tower of Sisyphus e co-op são conteúdo separado e não entram nos 31 troféus base nem na platina Helios.',
+    difficulty_reason: '8,5/10: Returnal não tem seleção de dificuldade; a nota alta é avaliação editorial baseada em habilidade, ciclos roguelike, chefes e RNG dos Surveys.',
+    time_reason: '50-100h+ considerando campanha, Act 3, Daily Challenge online e RNG dos Surveys dos 6 biomas.',
+    first_run_advice: 'Aprenda o loop roguelike, sobreviva até o Act 2 e colete naturalmente Scout Logs, Ciphers e Xeno-Archives sem tratar nada como perdível.',
+    cleanup_advice: 'Depois do Act 2/Act 3, repita biomas em free roam para Surveys, Sunface Fragments, House Sequences, Xeno-Archives, Scout Logs, Ciphers e objetivos misc.',
+    before_you_start: 'Mantenha conexão PSN para Activity Cards e In-Field Training. Ascension, Tower of Sisyphus e co-op não são necessários para a platina base.',
+    editorial_summary: [
+      'Returnal é uma platina difícil, longa e muito dependente de habilidade e RNG. A lista base possui 31 troféus, não tem perdíveis desde o patch 1.4.0 e não possui troféus ligados a dificuldade selecionável, porque o jogo não tem seleção de dificuldade. A campanha é estruturada em ciclos roguelike: ao morrer, Selene reinicia o ciclo e perde muitos recursos temporários, mas mantém desbloqueios permanentes importantes. Depois do Act 2 e do Act 3, o jogador pode usar o free roam para repetir biomas, buscar coletáveis e concluir Surveys.',
+      'A maior parte da dificuldade vem de vencer a história e lidar com o RNG dos coletáveis necessários aos Survey trophies. Para a platina, é preciso concluir os Surveys dos 6 biomas, fazer as House Sequences, coletar os 6 Sunface Fragments, terminar o Act 3 e completar o troféu online In-Field Training no Simulation Mode. O DLC Ascension, a Tower of Sisyphus e o co-op não entram na platina base.'
+    ],
+    quickDecision: {
+      ...(returnalGuide.quickDecision || {}),
+      summary: 'Platina de 50-100h+, 8,5/10, sem perdíveis e com online obrigatório direto em In-Field Training. O gargalo real são Surveys, RNG e repetição de biomas; Ascension fica fora.'
+    },
+    best_for: 'Ideal para quem gosta de roguelike exigente, combate de alta pressão, repetição de biomas e checklist com forte componente de RNG.',
+    avoid_if: 'Evite se você quer uma platina curta, previsível, offline total ou sem dependência de RNG em coletáveis.',
+    status: 'published',
+    editorial_status: 'published',
+    editorialStatus: 'verified',
+    editorial_review_status: 'verified',
+    coverage_level: 'complete',
+    is_verified: true,
+    verification_status: 'verified',
+    last_reviewed_at: '2026-06-20',
+    reviewed_by: 'AtlasAchievement',
+    verification_note: 'Guia verificado: 31 troféus base, 50-100h+, 8,5/10, 0 perdíveis, online direto em In-Field Training, coop 0, dificuldade individual 0 e Ascension separado.',
+    roadmap: returnalRoadmap,
+    roadmapStages: returnalRoadmap,
+    attentionPoints: returnalAttentionPoints,
+    faq: returnalFaq
+  });
+}
+
+// Auditoria editorial final: Ratchet & Clank: Rift Apart.
+const ratchetRiftApartGuide = sampleGames.find(game => game.slug === 'ratchet-and-clank-rift-apart');
+if (ratchetRiftApartGuide) {
+  const ratchetStoryIds = new Set([
+    'racra_rift_apart',
+    'racra_hide_n_seekerpede',
+    'racra_this_crystal_is_my_things',
+    'racra_dont_you_walk_away_from_me',
+    'racra_its_loose',
+    'racra_emotional_support_robot',
+    'racra_rated_aaarrr',
+    'racra_return_to_sender',
+    'racra_no_bones_about_it',
+    'racra_im_the_warden_now',
+    'racra_two_fuzz_two_nefarious',
+    'racra_quantum_mechanic'
+  ]);
+
+  const ratchetNamesById = {
+    racra_masters_of_the_multiverse: 'Mestres do Multiverso',
+    racra_rift_apart: 'Fenda Dimensional',
+    racra_hide_n_seekerpede: 'Esconde-Esconde com o Seekerpede',
+    racra_victory: 'Vitória!',
+    racra_cant_stop_me: 'Ninguém Me Para',
+    racra_hey_lombax_dj: 'Ei, DJ Lombax',
+    racra_this_crystal_is_my_things: 'Esse Cristal é Meu',
+    racra_dont_you_walk_away_from_me: 'Não Fuja de Mim',
+    racra_its_loose: 'Está à Solta!',
+    racra_emotional_support_robot: 'Robô de Apoio Emocional',
+    racra_rated_aaarrr: 'Classificação Aaarrr!',
+    racra_return_to_sender: 'Devolução ao Remetente',
+    racra_no_bones_about_it: 'Sem Ossos Sobre Isso',
+    racra_im_the_warden_now: 'Agora Eu Sou o Diretor',
+    racra_two_fuzz_two_nefarious: '2 Peludos 2 Nefarious',
+    racra_more_than_lint: 'Mais que Fiapo',
+    racra_sartorial_steel: 'Aço Estiloso',
+    racra_does_this_make_my_tail_look_big: 'Isso Faz Minha Cauda Parecer Grande?',
+    racra_shiny: 'Brilhante!',
+    racra_nooks_and_crannies: 'Cada Canto e Recanto',
+    racra_quantum_mechanic: 'Mecânico Quântico',
+    racra_they_blow_up_so_fast: 'Eles Explodem Tão Rápido',
+    racra_theres_even_a_cupholder: 'Tem Até Porta-Copos',
+    racra_full_rack: 'Arsenal Completo',
+    racra_fully_stacked: 'Totalmente Equipado',
+    racra_glitch_uh_finds_a_way: 'Glitch, Hã, Encontra um Jeito',
+    racra_shifty_character: 'Personagem Instável',
+    racra_boing: 'BOING!',
+    racra_max_relax: 'Relaxamento Máximo',
+    racra_lombax_and_chill: 'Lombax e Relax',
+    racra_alert_the_sponsors: 'Alerte os Patrocinadores',
+    racra_icebreaker: 'Quebra-Gelo',
+    racra_no_need_for_multiball: 'Sem Precisar de Multibola',
+    racra_return_policy: 'Política de Devolução',
+    racra_hole_puncher: 'Furador',
+    racra_life_of_the_party: 'Alma da Festa',
+    racra_extreme_gardening: 'Jardinagem Extrema',
+    racra_its_so_fluffy: 'É Tão Fofinho!',
+    racra_unbearably_awesome: 'Incrivelmente Ursástico',
+    racra_extinction_event: 'Evento de Extinção',
+    racra_just_stay_down: 'Fique no Chão',
+    racra_must_go_faster: 'Precisa Ir Mais Rápido',
+    racra_planning_some_destruction: 'Planejando Uma Destruição',
+    racra_aim_to_misbehave: 'Mirando na Travessura',
+    racra_feeding_friendsy: 'Alimentando a Amizade',
+    racra_sweet_sweet_victory: 'Doce, Doce Vitória',
+    racra_mightve_broken_something: 'Acho que Quebrei Algo'
+  };
+
+  const ratchetNameFixesById = {
+    racra_this_crystal_is_my_things: 'This Crystal Is My Thing'
+  };
+
+  const ratchetTrophyEdits = {
+    racra_masters_of_the_multiverse: { description: 'Conquiste todos os outros troféus da lista base.', tip: 'A platina libera após os outros 46 troféus. Não há online, coop, DLC ou dificuldade obrigatória.', tags: [] },
+    racra_rift_apart: { description: 'Separe-se em Nefarious City.', tip: 'Troféu automático de história no início de Corson V.', tags: ['História', 'Spoiler'] },
+    racra_hide_n_seekerpede: { description: 'Derrote o Seekerpede.', tip: 'Chefe obrigatório em Sargasso durante a campanha.', tags: ['História', 'Spoiler'] },
+    racra_victory: { description: 'Complete um desafio do Battleplex.', tip: 'Complete qualquer desafio do Battleplex em Scarstu Debris Field.', tags: ['Battleplex', 'Cleanup'] },
+    racra_cant_stop_me: { description: 'Complete um desafio Gold Cup do Battleplex.', tip: 'Gold Cup abre perto da reta final; volte com armas fortes se quiser facilitar.', tags: ['Battleplex', 'Cleanup'] },
+    racra_hey_lombax_dj: { description: 'Toque três músicas na jukebox da Zurkie.', tip: 'No bar da Zurkie, interaja com a jukebox e toque três músicas diferentes.', tags: ['Misc', 'Cleanup'] },
+    racra_this_crystal_is_my_things: { description: 'Adquira o Phase Quartz.', tip: 'Troféu automático de história em Blizar Prime.', tags: ['História', 'Spoiler'] },
+    racra_dont_you_walk_away_from_me: { description: 'Chegue aos Archives.', tip: 'Troféu automático de história em Savali.', tags: ['História', 'Spoiler'] },
+    racra_its_loose: { description: 'Liberte Juice.', tip: 'Troféu automático de história em Cordelion.', tags: ['História', 'Spoiler'] },
+    racra_emotional_support_robot: { description: 'Conheça o Fixer.', tip: 'Troféu automático de história em Torren IV.', tags: ['História', 'Spoiler'] },
+    racra_rated_aaarrr: { description: 'Alimente Bubbles.', tip: 'Troféu automático de história em Ardolis.', tags: ['História', 'Spoiler'] },
+    racra_return_to_sender: { description: 'Afunde a Mothership em Sargasso.', tip: 'Troféu automático da segunda visita de história a Sargasso.', tags: ['História', 'Spoiler'] },
+    racra_no_bones_about_it: { description: 'Recupere o Dimensional Map.', tip: 'Troféu automático de história na segunda passagem por Savali.', tags: ['História', 'Spoiler'] },
+    racra_im_the_warden_now: { description: 'Entre e saia da prisão.', tip: 'Troféu automático de história em Viceron.', tags: ['História', 'Spoiler'] },
+    racra_two_fuzz_two_nefarious: { description: 'Derrote Doctor Nefarious e Emperor Nefarious.', tip: 'Troféu automático de conclusão da história principal.', tags: ['História', 'Spoiler'] },
+    racra_more_than_lint: { description: 'Entre em uma Hidden Pocket Dimension.', tip: 'Entre em qualquer Pocket Dimension marcada por fenda roxa.', tags: ['Coletável', 'Exploração', 'Cleanup'] },
+    racra_sartorial_steel: { description: 'Adquira uma peça de armadura.', tip: 'Pegue qualquer peça de armadura em Pocket Dimensions, Battleplex ou atividades opcionais.', tags: ['Coletável', 'Armadura', 'Cleanup'] },
+    racra_does_this_make_my_tail_look_big: { description: 'Adquira e equipe armadura de cabeça, torso e pernas.', tip: 'Equipe uma peça de cabeça, torso e pernas; não precisam ser do mesmo conjunto.', tags: ['Coletável', 'Armadura', 'Cleanup'] },
+    racra_shiny: { description: 'Colete um Gold Bolt.', tip: 'Pegue qualquer Gold Bolt durante exploração ou cleanup.', tags: ['Coletável', 'Gold Bolt', 'Cleanup'] },
+    racra_nooks_and_crannies: { description: 'Colete cinco Gold Bolts.', tip: 'A lista exige apenas 5 dos 25 Gold Bolts, não todos.', tags: ['Coletável', 'Gold Bolt', 'Cleanup'] },
+    racra_quantum_mechanic: { description: 'Repare uma Dimensional Anomaly.', tip: 'Troféu automático de história ligado ao puzzle de Clank em Sargasso.', tags: ['História', 'Spoiler'] },
+    racra_they_blow_up_so_fast: { description: 'Evolua uma arma até o level 5.', tip: 'Use bastante uma arma, como a Blast Pistol, até chegar ao level 5.', tags: ['Armas', 'Grind', 'Cleanup'] },
+    racra_theres_even_a_cupholder: { description: 'Melhore completamente uma arma.', tip: 'Depois que uma arma atingir level 5, compre todos os upgrades dela com Raritanium.', tags: ['Armas', 'Upgrade', 'Grind', 'Cleanup'] },
+    racra_full_rack: { description: 'Preencha um Weapon Wheel.', tip: 'Tenha oito armas no Weapon Wheel; vem no caminho de Fully Stacked.', tags: ['Armas', 'Progressão'] },
+    racra_fully_stacked: { description: 'Compre todas as armas.', tip: 'Compre todas as armas. As 2 últimas ficam disponíveis no início do Challenge Mode; basta avançar até a primeira Ms. Zurkon, sem terminar NG+.', tags: ['Armas', 'Challenge Mode', 'Grind', 'Cleanup'] },
+    racra_glitch_uh_finds_a_way: { description: 'Complete todos os Glitch Challenges.', tip: 'Complete os 5 Glitch Challenges; puzzles podem ser pulados pelo menu sem invalidar troféus.', tags: ['Coletável', 'Glitch Challenge', 'Cleanup'] },
+    racra_shifty_character: { description: 'Acerte todos os Blizon Crystals em Blizar e Cordelion.', tip: 'Revise Blizar Prime e Cordelion. Em versões atuais, 29 de 30 Blizon Crystals costumam bastar.', tags: ['Coletável', 'Blizon Crystal', 'Cleanup'] },
+    racra_boing: { description: 'Pule nos balões de Big Al, Clank e Qwark na parada.', tip: 'Big Al vem no prólogo; Clank e Qwark ficam em uma Pocket Dimension de Corson V.', tags: ['Misc', 'Exploração', 'Cleanup'] },
+    racra_max_relax: { description: 'Encontre os Nefarious Citizens nas hot springs.', tip: 'Procure os cidadãos relaxando perto das hot springs em Savali.', tags: ['Misc', 'Exploração', 'Cleanup'] },
+    racra_lombax_and_chill: { description: 'Ligue a TV no esconderijo da Rivet.', tip: 'Interaja com a TV no esconderijo da Rivet em Sargasso.', tags: ['Misc', 'Cleanup'] },
+    racra_alert_the_sponsors: { description: 'Faça cinco trick jumps em um grind rail.', tip: 'Durante um grind rail, faça cinco trick jumps. Torren IV é um bom lugar.', tags: ['Misc', 'Cleanup'] },
+    racra_icebreaker: { description: 'Ataque cinco inimigos congelados com melee.', tip: 'Use Cold Snap para congelar inimigos e finalize cinco com melee.', tags: ['Combate', 'Cleanup'] },
+    racra_no_need_for_multiball: { description: 'Mate dois inimigos com uma única rodada da Ricochet.', tip: 'Use a Ricochet em inimigos fracos agrupados.', tags: ['Combate', 'Cleanup'] },
+    racra_return_policy: { description: 'Mate 10 inimigos devolvendo tiros com o Void Reactor.', tip: 'Evolua o Void Repulser para Void Reactor e devolva tiros até acumular 10 abates.', tags: ['Combate', 'Armas', 'Cleanup'] },
+    racra_hole_puncher: { description: 'Faça 20 headshots com a Headhunter.', tip: 'Compre a Headhunter e mire em headshots em inimigos humanoides ou arenas.', tags: ['Combate', 'Armas', 'Cleanup'] },
+    racra_life_of_the_party: { description: 'Implante 50 Mr. Fungis.', tip: 'Dispare Mr. Fungi sempre que tiver munição; basta implantar 50.', tags: ['Armas', 'Grind', 'Cleanup'] },
+    racra_extreme_gardening: { description: 'Derrote 30 inimigos enquanto estão Topiary’d.', tip: 'Use Topiary Sprinkler para transformar inimigos e mate 30 enquanto o efeito estiver ativo.', tags: ['Armas', 'Grind', 'Cleanup'] },
+    racra_its_so_fluffy: { description: 'Encontre um CraiggerBear.', tip: 'Pegue qualquer CraiggerBear; há um por planeta.', tags: ['Coletável', 'CraiggerBear', 'Cleanup'] },
+    racra_unbearably_awesome: { description: 'Encontre todos os CraiggerBears.', tip: 'Encontre os 9 CraiggerBears, um em cada planeta.', tags: ['Coletável', 'CraiggerBear', 'Cleanup'] },
+    racra_extinction_event: { description: 'Mate 5 Grunthors em Sargasso.', tip: 'É o único troféu perdível real da lista. A forma mais segura é farmar o primeiro Grunthor: mate-o, pule na água para forçar o respawn e repita até completar 5.', tags: ['Perdível', 'Combate', 'Risco de run', 'Grind'] },
+    racra_just_stay_down: { description: 'Derrote 30 cabeças ejetadas de Nefarious Troopers.', tip: 'Destrua troopers e depois suas cabeças ejetadas; Battleplex ajuda se faltar no fim.', tags: ['Combate', 'Grind', 'Cleanup'] },
+    racra_must_go_faster: { description: 'Faça um trick jump na velocidade máxima com os Hoverboots.', tip: 'Acelere com Hoverboots até velocidade máxima e faça um trick jump.', tags: ['Misc', 'Cleanup'] },
+    racra_planning_some_destruction: { description: 'Colete um Spybot.', tip: 'Pegue qualquer Spybot no caminho para liberar o RYNO.', tags: ['Coletável', 'Spybot', 'Cleanup'] },
+    racra_aim_to_misbehave: { description: 'Adquira o RYNO.', tip: 'Colete os 10 Spybots e compre o RYNO gratuitamente com Ms. Zurkon.', tags: ['Coletável', 'Spybot', 'RYNO', 'Cleanup'] },
+    racra_feeding_friendsy: { description: 'Colete 10 Zurpstones para Trudi.', tip: 'Complete a cadeia de Trudi em Sargasso; os 60 Zurpstones são necessários para o Spybot de Sargasso.', tags: ['Coletável', 'Zurpstone', 'Cleanup'] },
+    racra_sweet_sweet_victory: { description: 'Colete mel para Chef Tulio.', tip: 'Complete a side quest da Chef Tulio em Blizar Prime.', tags: ['Side Quest', 'Cleanup'] },
+    racra_mightve_broken_something: { description: 'Colete três Lorbs.', tip: 'Aceite Hunt for Lombax Lore em Savali e colete 3 Lorbs; a platina não exige todos.', tags: ['Coletável', 'Lorb', 'Cleanup'] }
+  };
+
+  ratchetRiftApartGuide.trophies = ratchetRiftApartGuide.trophies.map(trophy => {
+    const edit = ratchetTrophyEdits[trophy.id] || {};
+    const name = ratchetNameFixesById[trophy.id] || trophy.name;
+    const namePt = ratchetNamesById[trophy.id] || trophy.name_pt || '';
+    const description = edit.description || trophy.description || '';
+    const tip = edit.tip || trophy.tip || '';
+    const isMissable = trophy.id === 'racra_extinction_event';
+    return {
+      ...trophy,
+      name,
+      trophyNameOriginal: name,
+      originalName: name,
+      name_pt: namePt,
+      trophyNamePtBr: namePt,
+      localizedNamePtBr: namePt,
+      namePtSource: 'editorial_ptbr',
+      description,
+      descriptionPtBr: description,
+      ptDescription: description,
+      localizedDescription: { ...(trophy.localizedDescription || {}), ptBr: description },
+      descriptionPtSource: 'editorial_ptbr',
+      tip,
+      guideTip: tip,
+      tags: edit.tags || [],
+      is_missable: isMissable,
+      isMissable,
+      missable: isMissable,
+      is_spoiler: ratchetStoryIds.has(trophy.id),
+      is_online: false,
+      isOnline: false,
+      is_coop: false,
+      isCoop: false,
+      is_difficulty: false,
+      difficultyRequired: false,
+      is_dlc: false
+    };
+  });
+
+  const ratchetRoadmap = [
+    {
+      title: 'Etapa 1 — Campanha em qualquer dificuldade e atenção aos Grunthors',
+      focus: 'História, planeta a planeta e Extinction Event',
+      objective: 'Avançar pela história em qualquer dificuldade, liberar viagem entre planetas e resolver Extinction Event em Sargasso.',
+      actions: [
+        'Jogue a campanha em qualquer dificuldade; a dificuldade selecionada não afeta troféus.',
+        'Faça troféus automáticos de história e misc simples pelo caminho.',
+        'Em Sargasso, mate 5 Grunthors para Extinction Event.',
+        'Se quiser a rota mais segura, farme o primeiro Grunthor matando-o, pulando na água para forçar respawn e repetindo até completar 5.'
+      ],
+      warning: 'Extinction Event é o único perdível real. Resolva os 5 Grunthors antes de ignorar completamente Sargasso.',
+      result: 'História encaminhada e o único risco real da platina eliminado.'
+    },
+    {
+      title: 'Etapa 2 — Free roam pós-história e coletáveis necessários',
+      focus: 'CraiggerBears, Spybots, Zurpstones, Glitch Challenges e listas parciais',
+      objective: 'Usar Resume após o final para voltar antes do chefe final, retornar aos planetas e coletar apenas o que conta para troféus.',
+      actions: [
+        'Colete 9 CraiggerBears e 10 Spybots para UnBEARably Awesome e Aim to Misbehave.',
+        'Conclua a cadeia de Trudi e colete 60 Zurpstones para obter o Spybot de Sargasso.',
+        'Complete 5 Glitch Challenges e os Blizon Crystals necessários em Blizar Prime e Cordelion.',
+        'Pegue 5 Gold Bolts, 3 Lorbs, 1 peça de cabeça, torso e pernas, e pelo menos 1 Pocket Dimension.'
+      ],
+      warning: 'A platina não exige 100% dos coletáveis, todos os Gold Bolts, todos os Lorbs ou todas as armaduras.',
+      result: 'Coletáveis essenciais resolvidos sem transformar o guia em checklist de 100%.'
+    },
+    {
+      title: 'Etapa 3 — Battleplex, misc e armas',
+      focus: 'Battleplex, armas específicas e troféus de ação',
+      objective: 'Completar Battleplex, Gold Cup, jukebox, TV, hot springs, parade balloons, trick jump, Hoverboots e troféus de armas.',
+      actions: [
+        'Complete Battleplex Challenge e um Gold Cup Challenge.',
+        'Faça BOING!, Max Relax, Lombax and Chill, Alert the Sponsors e Must Go Faster.',
+        'Trabalhe Return Policy, Hole Puncher, Life of the Party, Extreme Gardening, Icebreaker e No Need for Multiball.',
+        'Evolua uma arma ao level 5 e melhore totalmente uma arma para They Blow Up So Fast e There’s Even a Cupholder.'
+      ],
+      warning: 'Alguns troféus pedem armas específicas ou versões evoluídas, como Void Reactor, mas isso não é requisito de dificuldade.',
+      result: 'Troféus misc, Battleplex e combate ficam finalizados antes do pequeno trecho de Challenge Mode.'
+    },
+    {
+      title: 'Etapa 4 — Challenge Mode apenas para as 2 últimas armas',
+      focus: 'Fully Stacked e finalização da platina',
+      objective: 'Iniciar Challenge Mode em novo save, avançar até a primeira Ms. Zurkon e comprar as 2 armas restantes.',
+      actions: [
+        'Comece Challenge Mode depois da campanha e avance só até encontrar a primeira Ms. Zurkon.',
+        'Compre as 2 armas exclusivas/restantes necessárias para Fully Stacked.',
+        'Não refaça a campanha inteira se só faltar Fully Stacked.',
+        'Finalize qualquer troféu residual de armas ou combate com o arsenal completo.'
+      ],
+      warning: 'Não é necessário terminar Challenge Mode, jogar em dificuldade maior ou fazer todos os troféus em NG+.',
+      result: 'Fully Stacked desbloqueado e Masters of the Multiverse concluído.'
+    }
+  ];
+
+  const ratchetAttentionPoints = [
+    { title: 'Extinction Event é o único perdível', type: 'Perdível', tip: 'Mate 5 Grunthors em Sargasso. Se ignorar todos, pode faltar Grunthor depois da história.' },
+    { title: 'Free roam após a história', type: 'Cleanup', tip: 'Depois do final, escolha Resume para voltar antes do chefe final e retornar aos planetas.' },
+    { title: 'Challenge Mode parcial', type: 'NG+ curto', tip: 'Não precisa terminar NG+. Basta iniciar Challenge Mode e comprar as 2 armas restantes.' },
+    { title: 'Dificuldade não afeta troféus', type: 'Sem requisito', tip: 'A platina pode ser feita em qualquer dificuldade.' },
+    { title: 'Não precisa de 100% dos coletáveis', type: 'Checklist parcial', tip: 'Só alguns coletáveis contam para troféus; não exija todos os Gold Bolts, Lorbs ou armaduras.' },
+    { title: 'Zurpstones e Spybot de Sargasso', type: 'Coletável', tip: 'Os 60 Zurpstones são necessários para a cadeia de Trudi e para obter o Spybot.' },
+    { title: 'RYNO depende dos 10 Spybots', type: 'RYNO', tip: 'Para Aim to Misbehave, colete todos os 10 Spybots e compre o RYNO.' }
+  ];
+
+  const ratchetFaq = [
+    { question: 'Ratchet & Clank: Rift Apart tem troféus online?', answer: 'Não. A lista é totalmente offline.' },
+    { question: 'Tem coop?', answer: 'Não.' },
+    { question: 'A dificuldade afeta troféus?', answer: 'Não. A platina pode ser feita em qualquer dificuldade.' },
+    { question: 'Quantas jogadas são necessárias?', answer: 'Uma jogada é suficiente, mas é necessário iniciar Challenge Mode rapidamente para comprar as 2 últimas armas.' },
+    { question: 'Precisa terminar Challenge Mode?', answer: 'Não. Basta iniciar Challenge Mode e chegar à primeira Ms. Zurkon para comprar as 2 armas restantes.' },
+    { question: 'Tem troféu perdível?', answer: 'Sim. Extinction Event é o único perdível real, ligado a matar 5 Grunthors em Sargasso.' },
+    { question: 'Existe free roam após a história?', answer: 'Sim. Depois do final, escolha Resume no menu principal para voltar antes do chefe final e retornar aos planetas.' },
+    { question: 'Precisa coletar tudo?', answer: 'Não. A platina não exige 100% dos coletáveis.' },
+    { question: 'Quais coletáveis são necessários?', answer: '9 CraiggerBears, 10 Spybots, 60 Zurpstones, 5 Glitch Challenges, Blizon Crystals necessários, 5 Gold Bolts, 3 Lorbs e 1 peça de armadura de cada tipo.' },
+    { question: 'Precisa de todas as armas?', answer: 'Sim. Fully Stacked exige comprar todas as armas, incluindo as 2 armas disponíveis no Challenge Mode.' },
+    { question: 'Precisa melhorar todas as armas?', answer: 'Não. Há troféus para evoluir uma arma ao level 5 e melhorar totalmente uma arma, mas não é necessário maximizar todas.' },
+    { question: 'O RYNO é obrigatório?', answer: 'Sim. Aim to Misbehave exige adquirir o RYNO, o que requer coletar os 10 Spybots.' }
+  ];
+
+  Object.assign(ratchetRiftApartGuide, {
+    difficulty: 2,
+    time: '10-15h',
+    time_min_hours: 10,
+    time_max_hours: 15,
+    time_sort_hours: 15,
+    time_bucket: 'short',
+    hasMissables: true,
+    missableCount: 1,
+    missable_count: 1,
+    hasOnline: false,
+    hasMandatoryOnline: false,
+    requiresOnline: false,
+    onlineRequired: false,
+    hasMandatoryCoop: false,
+    requiresCoop: false,
+    coopRequired: false,
+    difficultyTrophiesRequired: false,
+    dlcRequired: false,
+    dlcRequiredForPlatinum: false,
+    hasFreeRoam: true,
+    newGamePlusRequired: true,
+    challengeModeRequired: 'parcial',
+    runs: '1 jogada + início curto de Challenge Mode para comprar 2 armas.',
+    runs_summary: 'Uma campanha principal basta para quase tudo; depois, use free roam e inicie Challenge Mode apenas até a primeira Ms. Zurkon para comprar as 2 últimas armas.',
+    missable: 'Tem 1 perdível: Extinction Event. Mate 5 Grunthors em Sargasso antes de ignorar completamente a área.',
+    missable_summary: '1 perdível real: Extinction Event, ligado aos 5 Grunthors de Sargasso.',
+    online_summary: 'Não há exigência online; a lista base é totalmente offline.',
+    grind_summary: 'Grind baixo: armas, level 5, upgrade completo de uma arma, Mr. Fungi, Topiary Sprinkler e pequenos farms de combate.',
+    dlc_scope: 'DLC não necessário. A platina usa somente a lista base.',
+    difficulty_reason: '2/10: a dificuldade selecionada não afeta troféus; a nota é apenas avaliação editorial da platina.',
+    time_reason: '10-15h considerando campanha, free roam, coletáveis necessários, Battleplex, armas e início curto de Challenge Mode.',
+    first_run_advice: 'Jogue em qualquer dificuldade, aproveite a campanha e resolva Extinction Event em Sargasso assim que encontrar Grunthors.',
+    cleanup_advice: 'Depois do final, escolha Resume para voltar antes do chefe final e retornar aos planetas. Use Challenge Mode apenas para comprar as 2 armas finais de Fully Stacked.',
+    before_you_start: 'A lista não tem online, coop, DLC ou troféu de dificuldade. O único risco real é Extinction Event; o restante pode ser limpo no free roam pós-história.',
+    editorial_summary: [
+      'Ratchet & Clank: Rift Apart é uma platina curta, simples e totalmente offline. A lista base possui 47 troféus, não exige online, cooperação ou dificuldade específica, e pode ser concluída em cerca de 10 horas. A campanha pode ser jogada em qualquer dificuldade, e depois do final o jogador pode usar o free roam para retornar aos planetas e concluir coletáveis, armas, desafios e troféus misc.',
+      'O único perdível real é Extinction Event, ligado a matar 5 Grunthors em Sargasso. O ideal é resolver esse troféu durante a campanha ou farmar o primeiro Grunthor repetidamente enquanto ainda há acesso. O restante pode ser feito no cleanup pós-história. A platina não exige todos os coletáveis do jogo nem terminar o Challenge Mode; o New Game+ só é necessário para comprar as 2 últimas armas e desbloquear Fully Stacked.'
+    ],
+    quickDecision: {
+      ...(ratchetRiftApartGuide.quickDecision || {}),
+      summary: 'Platina curta de 10-15h e 2/10, totalmente offline, com 1 perdível real: Extinction Event. Faça a campanha, limpe planetas no free roam e use Challenge Mode apenas para comprar 2 armas.'
+    },
+    best_for: 'Ideal para quem quer uma platina curta, acessível, bonita e com coletáveis moderados sem exigência de 100%.',
+    avoid_if: 'Evite apenas se você não gosta de collectathon leve, arenas, troféus misc de armas e um pequeno início de Challenge Mode.',
+    status: 'published',
+    editorial_status: 'published',
+    editorialStatus: 'verified',
+    editorial_review_status: 'verified',
+    coverage_level: 'complete',
+    is_verified: true,
+    verification_status: 'verified',
+    last_reviewed_at: '2026-06-20',
+    reviewed_by: 'AtlasAchievement',
+    verification_note: 'Guia verificado: 47 troféus, 10-15h, 2/10, 1 perdível real (Extinction Event), sem online, coop, dificuldade obrigatória ou DLC; Challenge Mode apenas para 2 armas.',
+    roadmap: ratchetRoadmap,
+    roadmapStages: ratchetRoadmap,
+    attentionPoints: ratchetAttentionPoints,
+    faq: ratchetFaq
   });
 }
 
