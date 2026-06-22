@@ -95,6 +95,215 @@ function normalizeRoadmapStepPayload(step) {
   return sanitizeString(step, 2000);
 }
 
+function normalizeStringArray(value, maxLength = 240, limit = 20) {
+  return (Array.isArray(value) ? value : [])
+    .map(item => sanitizeString(item, maxLength))
+    .filter(Boolean)
+    .slice(0, limit);
+}
+
+function normalizeTextItemArray(value, maxLength = 240, limit = 20) {
+  return (Array.isArray(value) ? value : [])
+    .map(item => {
+      if (typeof item === 'string') return sanitizeString(item, maxLength);
+      if (!item || typeof item !== 'object' || Array.isArray(item)) return '';
+      return sanitizeString(item.text ?? item.label ?? item.title ?? item.name, maxLength);
+    })
+    .filter(Boolean)
+    .slice(0, limit);
+}
+
+function normalizeWalkthroughChecklist(value, stepId = '') {
+  return (Array.isArray(value) ? value : [])
+    .map((item, index) => {
+      if (typeof item === 'string') {
+        return {
+          id: sanitizeString(`${stepId || 'walkthrough'}-${index + 1}`, 80),
+          texto: sanitizeString(item, 260),
+          status: false
+        };
+      }
+      if (!item || typeof item !== 'object' || Array.isArray(item)) return null;
+      return {
+        id: sanitizeString(item.id ?? `${stepId || 'walkthrough'}-${index + 1}`, 80),
+        texto: sanitizeString(item.texto ?? item.text ?? item.label ?? item.title, 260),
+        status: item.status === true
+      };
+    })
+    .filter(item => item && item.id && item.texto)
+    .slice(0, 24);
+}
+
+function normalizeWalkthroughInstructionSteps(value, parentId = '') {
+  return (Array.isArray(value) ? value : [])
+    .map((item, index) => {
+      if (typeof item === 'string') {
+        const text = sanitizeString(item, 900);
+        return text ? {
+          id: sanitizeString(`${parentId || 'walkthrough'}-passo-${index + 1}`, 80),
+          title: '',
+          text,
+          importantItems: [],
+          relatedTrophies: [],
+          warning: ''
+        } : null;
+      }
+      if (!item || typeof item !== 'object' || Array.isArray(item)) return null;
+      const id = sanitizeString(item.id ?? `${parentId || 'walkthrough'}-passo-${index + 1}`, 80);
+      const title = sanitizeString(item.title ?? item.titulo ?? item.label, 160);
+      const text = sanitizeString(item.text ?? item.description ?? item.descricao ?? item.detail ?? item.body, 900);
+      if (!title && !text) return null;
+      return {
+        id,
+        title,
+        text,
+        importantItems: normalizeTextItemArray(item.importantItems ?? item.itens_importantes ?? item.items, 180, 12),
+        relatedTrophies: normalizeTextItemArray(item.relatedTrophies ?? item.trofeus_relacionados ?? item.trophies, 140, 12),
+        warning: sanitizeString(item.warning ?? item.alerta ?? item.missableAlert, 320)
+      };
+    })
+    .filter(Boolean)
+    .slice(0, 40);
+}
+
+function normalizeWalkthroughBosses(value) {
+  return (Array.isArray(value) ? value : [])
+    .map(item => {
+      if (!item || typeof item !== 'object' || Array.isArray(item)) return null;
+      const name = sanitizeString(item.name ?? item.nome ?? item.title, 160);
+      if (!name) return null;
+      return {
+        name,
+        type: sanitizeString(item.type ?? item.tipo, 60),
+        trophy: sanitizeString(item.trophy ?? item.trofeu ?? item.relatedTrophy, 160),
+        notes: sanitizeString(item.notes ?? item.note ?? item.observacao ?? item.description, 500)
+      };
+    })
+    .filter(Boolean)
+    .slice(0, 16);
+}
+
+function normalizeWalkthroughCollectibles(value) {
+  return (Array.isArray(value) ? value : [])
+    .map(item => {
+      if (!item || typeof item !== 'object' || Array.isArray(item)) return null;
+      const name = sanitizeString(item.name ?? item.nome ?? item.title, 180);
+      if (!name) return null;
+      return {
+        name,
+        type: sanitizeString(item.type ?? item.tipo, 80),
+        trophy: sanitizeString(item.trophy ?? item.trofeu ?? item.relatedTrophy, 160),
+        missable: item.missable === true || item.isMissable === true || item.is_missable === true,
+        notes: sanitizeString(item.notes ?? item.note ?? item.observacao ?? item.description, 500)
+      };
+    })
+    .filter(Boolean)
+    .slice(0, 24);
+}
+
+function normalizeWalkthroughRecommendedImages(value) {
+  return (Array.isArray(value) ? value : [])
+    .map(item => {
+      if (typeof item === 'string') {
+        const description = sanitizeString(item, 220);
+        return description ? { description, reason: '' } : null;
+      }
+      if (!item || typeof item !== 'object' || Array.isArray(item)) return null;
+      const description = sanitizeString(item.description ?? item.image ?? item.imagem ?? item.title ?? item.label, 220);
+      if (!description) return null;
+      return {
+        description,
+        reason: sanitizeString(item.reason ?? item.motivo ?? item.notes ?? item.note, 260)
+      };
+    })
+    .filter(Boolean)
+    .slice(0, 16);
+}
+
+function normalizeWalkthroughTrophyCoverage(value) {
+  return (Array.isArray(value) ? value : [])
+    .map(item => {
+      if (!item || typeof item !== 'object' || Array.isArray(item)) return null;
+      const trophy = sanitizeString(item.trophy ?? item.trophyEn ?? item.en ?? item.name, 160);
+      if (!trophy) return null;
+      return {
+        trophy,
+        trophyPt: sanitizeString(item.trophyPt ?? item.ptBr ?? item.pt ?? item.namePt, 160),
+        chapter: sanitizeString(item.chapter ?? item.capitulo ?? item.where, 120)
+      };
+    })
+    .filter(Boolean)
+    .slice(0, 60);
+}
+
+const WALKTHROUGH_IMAGE_TYPES = new Set(['location', 'item', 'boss', 'route', 'warning']);
+
+function isSafeWalkthroughImagePath(value) {
+  const trimmed = typeof value === 'string' ? value.trim() : '';
+  if (/^https?:\/\//i.test(trimmed) || isSafeUploadPath(trimmed) || isSafePublicAssetPath(trimmed)) return true;
+  if (!trimmed.startsWith('/images/') || trimmed.includes('\\')) return false;
+  if (!/\.(?:jpe?g|png|webp|gif|avif)(?:[?#].*)?$/i.test(trimmed)) return false;
+
+  const relativePath = trimmed.slice('/images/'.length).split(/[?#]/)[0];
+  if (!relativePath || relativePath.startsWith('/') || path.isAbsolute(relativePath) || /^[a-z]:/i.test(relativePath)) {
+    return false;
+  }
+
+  const normalizedPath = path.posix.normalize(relativePath);
+  if (normalizedPath !== relativePath || normalizedPath === '.' || normalizedPath.startsWith('../')) {
+    return false;
+  }
+
+  return normalizedPath.split('/').every(segment => segment && segment !== '.' && segment !== '..');
+}
+
+function normalizeWalkthroughImages(value) {
+  return (Array.isArray(value) ? value : [])
+    .map(image => {
+      if (!image || typeof image !== 'object' || Array.isArray(image)) return null;
+      const type = sanitizeString(image.type, 40).toLowerCase();
+      return {
+        src: sanitizeString(image.src, 500),
+        alt: sanitizeString(image.alt, 240),
+        caption: sanitizeString(image.caption, 320),
+        type: WALKTHROUGH_IMAGE_TYPES.has(type) ? type : '',
+        relatedTrophy: sanitizeString(image.relatedTrophy ?? image.related_trophy, 160),
+        relatedItem: sanitizeString(image.relatedItem ?? image.related_item, 160)
+      };
+    })
+    .filter(image => image && image.src && image.alt && isSafeWalkthroughImagePath(image.src))
+    .slice(0, 8);
+}
+
+function normalizeWalkthroughStepPayload(step, index = 0) {
+  if (!step || typeof step !== 'object' || Array.isArray(step)) return null;
+  const id = sanitizeString(step.id ?? `etapa-${index + 1}`, 80);
+  const collectiblesSource = step.collectibles ?? step.coletaveis_detalhados ?? step.itens_detalhados;
+  return {
+    id,
+    titulo_etapa: sanitizeString(step.titulo_etapa ?? step.title ?? step.titulo, 160),
+    navigationLabel: sanitizeString(step.navigationLabel ?? step.navigation_label ?? step.navLabel, 80),
+    objetivo_principal: sanitizeString(step.objetivo_principal ?? step.objective ?? step.objetivo, 700),
+    area_local: sanitizeString(step.area_local ?? step.area ?? step.local, 180),
+    quando_fazer: sanitizeString(step.quando_fazer ?? step.when ?? step.momento, 260),
+    intro: sanitizeString(step.intro ?? step.introducao, 900),
+    summary: normalizeTextItemArray(step.summary ?? step.nesta_parte ?? step.nestaParte ?? step.overview, 220, 20),
+    recommendedLevel: sanitizeString(step.recommendedLevel ?? step.recommended_level ?? step.level, 80),
+    videoUrl: sanitizeString(step.videoUrl ?? step.video_url, 500),
+    acoes_obrigatorias: normalizeStringArray(step.acoes_obrigatorias ?? step.requiredActions ?? step.actions, 260, 20),
+    trofeus_relacionados: normalizeStringArray(step.trofeus_relacionados ?? step.relatedTrophies ?? step.trophies, 140, 20),
+    itens_coletaveis: normalizeTextItemArray(step.itens_coletaveis ?? step.importantItems ?? (Array.isArray(collectiblesSource) && collectiblesSource.every(item => typeof item === 'string') ? collectiblesSource : []), 180, 20),
+    alertas_perdiveis: normalizeStringArray(step.alertas_perdiveis ?? step.missableAlerts ?? step.alerts, 320, 10),
+    steps: normalizeWalkthroughInstructionSteps(step.steps ?? step.passos, id),
+    bosses: normalizeWalkthroughBosses(step.bosses ?? step.chefes),
+    collectibles: normalizeWalkthroughCollectibles(collectiblesSource),
+    recommendedImages: normalizeWalkthroughRecommendedImages(step.recommendedImages ?? step.imagesRecommended ?? step.imagens_recomendadas),
+    trophyCoverage: normalizeWalkthroughTrophyCoverage(step.trophyCoverage ?? step.coverage ?? step.cobertura_trofeus),
+    images: normalizeWalkthroughImages(step.images),
+    checklist: normalizeWalkthroughChecklist(step.checklist, id)
+  };
+}
+
 function normalizeReviewedDate(value) {
   const text = sanitizeString(value, 20);
   return /^\d{4}-\d{2}-\d{2}$/.test(text) ? text : '';
@@ -229,6 +438,21 @@ function normalizeGamePayload(payload = {}) {
     normalized.roadmap = undefined;
   }
 
+  if (hasOwn('walkthrough')) {
+    normalized.walkthrough = Array.isArray(payload.walkthrough)
+      ? payload.walkthrough
+        .map(normalizeWalkthroughStepPayload)
+        .filter(step => step && step.titulo_etapa && (
+          step.objetivo_principal
+          || step.intro
+          || step.acoes_obrigatorias.length
+          || step.steps.length
+        ))
+      : payload.walkthrough;
+  } else {
+    normalized.walkthrough = undefined;
+  }
+
   return normalized;
 }
 
@@ -291,6 +515,10 @@ function validateGamePayload(payload, options = {}) {
     errors.push('roadmap deve ser um array com pelo menos um passo válido.');
   } else if (Array.isArray(payload.roadmap) && payload.roadmap.length > 40) {
     errors.push('roadmap aceita até 40 passos.');
+  }
+
+  if (payload.walkthrough !== undefined && !guideModel.isValidWalkthrough(payload.walkthrough)) {
+    errors.push('walkthrough deve ser um array opcional de etapas validas.');
   }
 
   const shouldValidateTrophies = Array.isArray(payload.trophies);

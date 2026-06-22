@@ -157,6 +157,12 @@ window.AppGuideView = (() => {
       }
     });
 
+    UI.qs('#view-guide')?.addEventListener('change', event => {
+      const walkthroughCheck = event.target.closest('[data-walkthrough-check]');
+      if (!walkthroughCheck) return;
+      walkthroughCheck.closest('.atlas-walkthrough-checklist__item')?.classList.toggle('is-checked', walkthroughCheck.checked);
+    });
+
     UI.qs('#guideQuickDock')?.addEventListener('click', handleGuideQuickDockClick);
 
     UI.qs('#view-guide')?.addEventListener('click', async event => {

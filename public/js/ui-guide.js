@@ -25,6 +25,7 @@ window.UIGuide = (() => {
     buildGuideBeforeStartItems
   } = window.UIDecisionModels;
   const sharedEditorial = window.AtlasEditorialModel || {};
+  const featureFlags = window.AtlasFeatureFlags || {};
   const sharedCard = window.AtlasCardModel || {};
 
   const CHECKLIST_DENSITY_KEY = 'atlas_checklist_density';
@@ -607,6 +608,196 @@ window.UIGuide = (() => {
       </ol>`;
   }
 
+  function renderWalkthroughList(items = []) {
+    if (!Array.isArray(items) || !items.length) return '';
+    return `<ul>${items.map(item => `<li>${escapeHtml(item)}</li>`).join('')}</ul>`;
+  }
+
+  function isSafeWalkthroughVideoUrl(value = '') {
+    return /^https?:\/\//i.test(String(value || '').trim());
+  }
+
+  function renderWalkthroughInstructionSteps(steps = []) {
+    if (!Array.isArray(steps) || !steps.length) return '';
+    return `
+      <ol class="atlas-walkthrough-substeps">
+        ${steps.map((step, index) => {
+          const meta = [
+            Array.isArray(step.importantItems) && step.importantItems.length
+              ? `<div><strong>Itens</strong>${renderWalkthroughList(step.importantItems)}</div>`
+              : '',
+            Array.isArray(step.relatedTrophies) && step.relatedTrophies.length
+              ? `<div><strong>Troféus</strong>${renderWalkthroughList(step.relatedTrophies)}</div>`
+              : ''
+          ].filter(Boolean).join('');
+          return `
+          <li class="atlas-walkthrough-substep">
+            <span class="atlas-walkthrough-substep__number">${escapeHtml(String(index + 1))}</span>
+            <div class="atlas-walkthrough-substep__body">
+              ${step.title ? `<h5>${escapeHtml(step.title)}</h5>` : ''}
+              ${step.text ? `<p>${escapeHtml(step.text)}</p>` : ''}
+              ${step.warning ? `<div class="atlas-walkthrough-substep__warning"><i class="fas fa-triangle-exclamation" aria-hidden="true"></i><span>${escapeHtml(step.warning)}</span></div>` : ''}
+              ${meta ? `<div class="atlas-walkthrough-substep__meta">${meta}</div>` : ''}
+            </div>
+          </li>`;
+        }).join('')}
+      </ol>`;
+  }
+
+  function renderWalkthroughEntityGrid(items = [], label = '') {
+    if (!Array.isArray(items) || !items.length) return '';
+    return `
+      <div class="atlas-walkthrough-entity-group">
+        <strong>${escapeHtml(label)}</strong>
+        <div class="atlas-walkthrough-entity-grid">
+          ${items.map(item => `
+            <div class="atlas-walkthrough-entity">
+              <div>
+                <h5>${escapeHtml(item.name || item.title || 'Item')}</h5>
+                ${item.type ? `<span>${escapeHtml(item.type)}</span>` : ''}
+                ${item.missable ? `<span class="atlas-walkthrough-entity__risk">Perdível</span>` : ''}
+              </div>
+              ${item.trophy ? `<p><b>Troféu:</b> ${escapeHtml(item.trophy)}</p>` : ''}
+              ${item.notes ? `<p>${escapeHtml(item.notes)}</p>` : ''}
+            </div>
+          `).join('')}
+        </div>
+      </div>`;
+  }
+
+  function renderWalkthroughSummary(items = []) {
+    if (!Array.isArray(items) || !items.length) return '';
+    return `
+      <div class="atlas-walkthrough-list atlas-walkthrough-list--summary">
+        <strong>Nesta parte você vai</strong>
+        ${renderWalkthroughList(items)}
+      </div>`;
+  }
+
+  function renderWalkthroughRecommendedImages(items = []) {
+    if (!Array.isArray(items) || !items.length) return '';
+    return `
+      <div class="atlas-walkthrough-entity-group atlas-walkthrough-entity-group--images">
+        <strong>Imagens recomendadas</strong>
+        <div class="atlas-walkthrough-entity-grid">
+          ${items.map(item => `
+            <div class="atlas-walkthrough-entity">
+              <div><h5>${escapeHtml(item.description || 'Print recomendado')}</h5></div>
+              ${item.reason ? `<p>${escapeHtml(item.reason)}</p>` : ''}
+            </div>
+          `).join('')}
+        </div>
+      </div>`;
+  }
+
+  function renderWalkthroughTrophyCoverage(items = []) {
+    if (!Array.isArray(items) || !items.length) return '';
+    return `
+      <div class="atlas-walkthrough-coverage">
+        <strong>Cobertura dos troféus</strong>
+        <div class="atlas-walkthrough-coverage__grid">
+          ${items.map(item => `
+            <div class="atlas-walkthrough-coverage__item">
+              <span>${escapeHtml(item.trophy || 'Troféu')}</span>
+              ${item.trophyPt ? `<p>${escapeHtml(item.trophyPt)}</p>` : ''}
+              ${item.chapter ? `<small>${escapeHtml(item.chapter)}</small>` : ''}
+            </div>
+          `).join('')}
+        </div>
+      </div>`;
+  }
+
+  function renderWalkthroughImages(images = []) {
+    if (!Array.isArray(images) || !images.length) return '';
+    return `
+      <div class="atlas-walkthrough-images">
+        ${images.map(image => {
+          const meta = [
+            image.type ? `<span>${escapeHtml(image.type)}</span>` : '',
+            image.relatedItem ? `<span>${escapeHtml(image.relatedItem)}</span>` : '',
+            image.relatedTrophy ? `<span>${escapeHtml(image.relatedTrophy)}</span>` : ''
+          ].filter(Boolean).join('');
+          return `
+          <figure class="atlas-walkthrough-image">
+            <img src="${escapeAttribute(image.src)}" alt="${escapeAttribute(image.alt)}" loading="lazy" decoding="async">
+            ${(image.caption || meta) ? `<figcaption>${image.caption ? `<p>${escapeHtml(image.caption)}</p>` : ''}${meta ? `<div>${meta}</div>` : ''}</figcaption>` : ''}
+          </figure>`;
+        }).join('')}
+      </div>`;
+  }
+
+  function renderGuideWalkthrough(viewModel = {}) {
+    if (featureFlags.isWalkthroughEnabled?.() !== true) return '';
+    const stages = Array.isArray(viewModel.walkthroughStages) ? viewModel.walkthroughStages : [];
+    if (!stages.length) return '';
+    const navItems = stages
+      .map((stage, index) => ({
+        id: String(stage.id || `walkthrough-${index + 1}`),
+        label: stage.navigationLabel || stage.titulo_etapa || `Etapa ${index + 1}`
+      }))
+      .filter(item => item.id && item.label);
+    return `
+      <section id="guideWalkthroughPanel" class="atlas-walkthrough-panel" aria-labelledby="guideWalkthroughTitle">
+        <div class="atlas-walkthrough-panel__head">
+          <div>
+            <div class="atlas-eyebrow">Detonado passo a passo</div>
+            <h3 id="guideWalkthroughTitle">Detonado passo a passo</h3>
+            <p>Use estas etapas como rota operacional quando o guia tiver um detonado editorial cadastrado.</p>
+          </div>
+          <span class="atlas-tag atlas-tag--soft">${escapeHtml(String(stages.length))} etapa(s)</span>
+        </div>
+        ${navItems.length > 1 ? `<nav class="atlas-walkthrough-nav" aria-label="Capítulos do detonado">${navItems.map(item => `<a href="#${escapeAttribute(item.id)}">${escapeHtml(item.label)}</a>`).join('')}</nav>` : ''}
+        <div class="atlas-walkthrough-steps">
+          ${stages.map((stage, index) => {
+            const checklist = Array.isArray(stage.checklist) ? stage.checklist : [];
+            const alerts = Array.isArray(stage.alertas_perdiveis) ? stage.alertas_perdiveis : [];
+            const images = Array.isArray(stage.images) ? stage.images : [];
+            const actionLists = [
+              stage.acoes_obrigatorias?.length ? `<div class="atlas-walkthrough-list"><strong>Ações obrigatórias</strong>${renderWalkthroughList(stage.acoes_obrigatorias)}</div>` : '',
+              stage.trofeus_relacionados?.length ? `<div class="atlas-walkthrough-list"><strong>Troféus relacionados</strong>${renderWalkthroughList(stage.trofeus_relacionados)}</div>` : '',
+              stage.itens_coletaveis?.length ? `<div class="atlas-walkthrough-list"><strong>Itens importantes</strong>${renderWalkthroughList(stage.itens_coletaveis)}</div>` : ''
+            ].filter(Boolean).join('');
+            const metaItems = [
+              stage.area_local ? `<div><dt>Área/local</dt><dd>${escapeHtml(stage.area_local)}</dd></div>` : '',
+              stage.quando_fazer ? `<div><dt>Quando fazer</dt><dd>${escapeHtml(stage.quando_fazer)}</dd></div>` : '',
+              stage.recommendedLevel ? `<div><dt>Nível sugerido</dt><dd>${escapeHtml(stage.recommendedLevel)}</dd></div>` : '',
+              isSafeWalkthroughVideoUrl(stage.videoUrl) ? `<div><dt>Vídeo</dt><dd><a href="${escapeAttribute(stage.videoUrl)}" target="_blank" rel="noopener noreferrer">Abrir vídeo de apoio</a></dd></div>` : ''
+            ].filter(Boolean).join('');
+            const stageId = String(stage.id || `walkthrough-${index + 1}`);
+            return `
+            <article id="${escapeAttribute(stageId)}" class="atlas-walkthrough-step">
+              <div class="atlas-walkthrough-step__number" aria-hidden="true">${escapeHtml(String(index + 1))}</div>
+              <div class="atlas-walkthrough-step__body">
+                <div class="atlas-walkthrough-step__head">
+                  <div>
+                    <h4>${escapeHtml(stage.titulo_etapa)}</h4>
+                    ${stage.objetivo_principal ? `<p>${escapeHtml(stage.objetivo_principal)}</p>` : ''}
+                  </div>
+                </div>
+                ${stage.intro ? `<p class="atlas-walkthrough-intro">${escapeHtml(stage.intro)}</p>` : ''}
+                ${renderWalkthroughSummary(stage.summary)}
+                ${metaItems ? `<dl class="atlas-walkthrough-meta">${metaItems}</dl>` : ''}
+                ${alerts.length ? `<div class="atlas-walkthrough-alerts" role="note" aria-label="Alertas perdíveis">${alerts.map(alert => `<p><i class="fas fa-triangle-exclamation" aria-hidden="true"></i><span>${escapeHtml(alert)}</span></p>`).join('')}</div>` : ''}
+                ${actionLists ? `<div class="atlas-walkthrough-grid">${actionLists}</div>` : ''}
+                ${renderWalkthroughInstructionSteps(stage.steps)}
+                ${renderWalkthroughEntityGrid(stage.bosses, 'Chefes')}
+                ${renderWalkthroughEntityGrid(stage.collectibles, 'Itens e coletáveis')}
+                ${renderWalkthroughTrophyCoverage(stage.trophyCoverage)}
+                ${renderWalkthroughRecommendedImages(stage.recommendedImages)}
+                ${renderWalkthroughImages(images)}
+                ${checklist.length ? `<div class="atlas-walkthrough-checklist" aria-label="Checklist da etapa">${checklist.map(item => `
+                  <label class="atlas-walkthrough-checklist__item${item.status ? ' is-checked' : ''}">
+                    <input type="checkbox" data-walkthrough-check="${escapeAttribute(String(item.id))}" ${item.status ? 'checked' : ''}>
+                    <span>${escapeHtml(item.texto)}</span>
+                  </label>
+                `).join('')}</div>` : ''}
+              </div>
+            </article>`;
+          }).join('')}
+        </div>
+      </section>`;
+  }
+
   function splitGuideRoadmapActions(value = '') {
     return String(value || '')
       .split(/(?:[.;]\s+|\n+|,\s+(?=e |depois|entao|então|antes|sem |com |use |faça |faca ))/i)
@@ -643,6 +834,7 @@ window.UIGuide = (() => {
         </div>
         <div id="guideRoadmapBody" data-guide-section-content>
           ${renderGuideRoadmapTimeline(roadmapStages)}
+          ${renderGuideWalkthrough(viewModel)}
         </div>
       </section>`;
   }

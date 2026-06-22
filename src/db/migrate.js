@@ -184,6 +184,9 @@ async function ensureGameColumns() {
   if (!columnNames.has('reviewed_by')) {
     statements.push('ALTER TABLE games ADD COLUMN reviewed_by TEXT');
   }
+  if (!columnNames.has('walkthrough')) {
+    statements.push('ALTER TABLE games ADD COLUMN walkthrough TEXT');
+  }
   if (!columnNames.has('runs_summary')) {
     statements.push('ALTER TABLE games ADD COLUMN runs_summary TEXT');
   }
@@ -708,6 +711,10 @@ async function syncSeedGameFromSeed(seedSlug, options = {}) {
     editorialPersistence.editorialNotes,
     editorialPersistence.qualityWarnings,
     editorialPersistence.reviewedBy,
+    (() => {
+      const walkthrough = guideModel.normalizeWalkthrough(game.walkthrough);
+      return walkthrough.length ? JSON.stringify(walkthrough) : '';
+    })(),
     game.image || null,
     game.cover_image || deriveSteamCoverImage(game.image) || null
   ];
@@ -716,12 +723,12 @@ async function syncSeedGameFromSeed(seedSlug, options = {}) {
 
   if (existing) {
     await run(
-      'UPDATE games SET name = ?, slug = ?, difficulty = ?, time = ?, time_min_hours = ?, time_max_hours = ?, time_sort_hours = ?, time_bucket = ?, missable = ?, runs_summary = ?, missable_summary = ?, online_summary = ?, grind_summary = ?, dlc_scope = ?, difficulty_reason = ?, time_reason = ?, first_run_advice = ?, cleanup_advice = ?, before_you_start = ?, best_for = ?, avoid_if = ?, verification_status = ?, editorial_status = ?, coverage_level = ?, is_verified = ?, verification_note = ?, editorial_review_status = ?, last_reviewed_at = ?, editorial_notes = ?, quality_warnings = ?, reviewed_by = ?, image = ?, cover_image = ? WHERE id = ?',
+      'UPDATE games SET name = ?, slug = ?, difficulty = ?, time = ?, time_min_hours = ?, time_max_hours = ?, time_sort_hours = ?, time_bucket = ?, missable = ?, runs_summary = ?, missable_summary = ?, online_summary = ?, grind_summary = ?, dlc_scope = ?, difficulty_reason = ?, time_reason = ?, first_run_advice = ?, cleanup_advice = ?, before_you_start = ?, best_for = ?, avoid_if = ?, verification_status = ?, editorial_status = ?, coverage_level = ?, is_verified = ?, verification_note = ?, editorial_review_status = ?, last_reviewed_at = ?, editorial_notes = ?, quality_warnings = ?, reviewed_by = ?, walkthrough = ?, image = ?, cover_image = ? WHERE id = ?',
       [...gameValues, existing.id]
     );
   } else if (insertIfMissing) {
     const result = await run(
-      'INSERT INTO games (name, slug, difficulty, time, time_min_hours, time_max_hours, time_sort_hours, time_bucket, missable, runs_summary, missable_summary, online_summary, grind_summary, dlc_scope, difficulty_reason, time_reason, first_run_advice, cleanup_advice, before_you_start, best_for, avoid_if, verification_status, editorial_status, coverage_level, is_verified, verification_note, editorial_review_status, last_reviewed_at, editorial_notes, quality_warnings, reviewed_by, image, cover_image) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)',
+      'INSERT INTO games (name, slug, difficulty, time, time_min_hours, time_max_hours, time_sort_hours, time_bucket, missable, runs_summary, missable_summary, online_summary, grind_summary, dlc_scope, difficulty_reason, time_reason, first_run_advice, cleanup_advice, before_you_start, best_for, avoid_if, verification_status, editorial_status, coverage_level, is_verified, verification_note, editorial_review_status, last_reviewed_at, editorial_notes, quality_warnings, reviewed_by, walkthrough, image, cover_image) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)',
       gameValues
     );
     gameId = result.lastID;
@@ -901,6 +908,7 @@ async function syncEldenRingVerifiedGuideFromSeed() {
             editorial_notes = ?,
             quality_warnings = ?,
             reviewed_by = ?,
+            walkthrough = ?,
             image = ?,
             cover_image = ?
       WHERE id = ?`,
@@ -936,6 +944,10 @@ async function syncEldenRingVerifiedGuideFromSeed() {
       editorialPersistence.editorialNotes,
       editorialPersistence.qualityWarnings,
       editorialPersistence.reviewedBy,
+      (() => {
+        const walkthrough = guideModel.normalizeWalkthrough(game.walkthrough);
+        return walkthrough.length ? JSON.stringify(walkthrough) : '';
+      })(),
       game.image || null,
       game.cover_image || deriveSteamCoverImage(game.image) || null,
       existing.id
@@ -1465,6 +1477,7 @@ async function migrate(options = {}) {
       editorial_notes TEXT,
       quality_warnings TEXT,
       reviewed_by TEXT,
+      walkthrough TEXT,
       image TEXT,
       cover_image TEXT,
       created_at TEXT DEFAULT CURRENT_TIMESTAMP,

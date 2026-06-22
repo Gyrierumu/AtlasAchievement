@@ -134,6 +134,7 @@ function assertHtmlLoadsModules(relPath) {
       '/js/storage.js',
       '/js/ui-shared.js',
       '/js/ui-formatters.js',
+      '/shared/featureFlags.js',
       '/shared/editorialModel.js',
       '/shared/guideViewModel.js',
       '/shared/cardModel.js',
@@ -277,6 +278,7 @@ function assertUIModules() {
   const ctx = loadBrowserScripts([
     'public/js/ui-shared.js',
     'public/js/ui-formatters.js',
+    'src/shared/featureFlags.js',
     'src/shared/editorialModel.js',
     'src/shared/guideViewModel.js',
     'src/shared/cardModel.js',
@@ -389,15 +391,68 @@ function assertUIModules() {
   const steamGuide = ctx.window.AtlasGuideViewModel.buildGuideViewModel({ name: 'Steam', difficulty: 2, time: '10 horas', image: 'https://cdn.cloudflare.steamstatic.com/steam/apps/123/header.jpg', trophies: [], roadmap: [] });
   assert.strictEqual(steamGuide.guideCover.image, 'https://cdn.cloudflare.steamstatic.com/steam/apps/123/library_600x900.jpg', 'guia deve derivar poster vertical de headers Steam quando faltar cover_image');
   assert.strictEqual(steamGuide.guideCover.mode, 'poster', 'poster derivado da Steam deve usar moldura vertical');
+  const noWalkthroughGuide = ctx.window.AtlasGuideViewModel.buildGuideViewModel({ name: 'Sem detonado', difficulty: 2, time: '10 horas', trophies: [], roadmap: [] });
+  assert(Array.isArray(noWalkthroughGuide.walkthroughStages) && noWalkthroughGuide.walkthroughStages.length === 0, 'guias sem walkthrough devem expor array vazio e nao renderizar componente opcional');
+  const walkthroughGuide = ctx.window.AtlasGuideViewModel.buildGuideViewModel({
+    name: 'Com detonado',
+    difficulty: 2,
+    time: '10 horas',
+    trophies: [],
+    roadmap: [],
+    walkthrough: [{
+      id: 'parte-1',
+      titulo_etapa: 'Primeira etapa',
+      objetivo_principal: 'Avance pela area inicial.',
+      area_local: 'Area inicial',
+      quando_fazer: 'No inicio',
+      acoes_obrigatorias: ['Abra a primeira rota'],
+      trofeus_relacionados: ['trofeu_teste'],
+      itens_coletaveis: ['Item teste'],
+      alertas_perdiveis: ['Alerta teste'],
+      images: [
+        {
+          src: '/images/guides/test/walkthrough/location.webp',
+          alt: 'Localizacao de teste',
+          caption: 'Legenda da imagem de teste.',
+          type: 'item',
+          relatedItem: 'Item teste',
+          relatedTrophy: 'trofeu_teste'
+        },
+        {
+          src: '/images/guides/test/walkthrough/route.webp',
+          alt: 'Rota de teste',
+          caption: 'Segunda legenda.',
+          type: 'route'
+        }
+      ],
+      checklist: [{ id: 'check-1', texto: 'Conferir progresso', status: true }]
+    }]
+  });
+  assert.strictEqual(walkthroughGuide.walkthroughStages.length, 1, 'view model deve aceitar walkthrough opcional estruturado');
+  assert.strictEqual(walkthroughGuide.walkthroughStages[0].checklist[0].status, true, 'checklist do walkthrough deve preservar status boolean');
+  assert.strictEqual(walkthroughGuide.walkthroughStages[0].images.length, 2, 'view model deve aceitar multiplas imagens opcionais por etapa do walkthrough');
+  const noWalkthroughHtml = ctx.window.UIGuide.renderGuideRoadmapPanel(noWalkthroughGuide);
+  const walkthroughHtml = ctx.window.UIGuide.renderGuideRoadmapPanel(walkthroughGuide);
+  assert(!noWalkthroughHtml.includes('guideWalkthroughPanel'), 'renderer client nao deve montar detonado quando walkthrough estiver vazio');
+  assert(!walkthroughHtml.includes('guideWalkthroughPanel') && !walkthroughHtml.includes('data-walkthrough-check'), 'renderer client deve ocultar detonado quando feature flag estiver desligada');
+  ctx.window.AtlasFeatureFlags.ENABLE_WALKTHROUGH = true;
+  const enabledWalkthroughHtml = ctx.window.UIGuide.renderGuideRoadmapPanel(walkthroughGuide);
+  assert(enabledWalkthroughHtml.includes('guideWalkthroughPanel') && enabledWalkthroughHtml.includes('data-walkthrough-check'), 'renderer client deve remontar detonado quando feature flag estiver ligada');
+  assert(enabledWalkthroughHtml.includes('atlas-walkthrough-images') && enabledWalkthroughHtml.includes('loading="lazy"'), 'renderer client deve montar imagens do walkthrough com lazy loading quando feature flag estiver ligada');
+  assert(enabledWalkthroughHtml.includes('Legenda da imagem de teste.') && enabledWalkthroughHtml.includes('Item teste'), 'renderer client deve mostrar legenda e metadados relacionados da imagem quando feature flag estiver ligada');
+  ctx.window.AtlasFeatureFlags.ENABLE_WALKTHROUGH = false;
   assert.strictEqual(typeof ctx.window.UIFormatters.formatCatalogCount, 'function', 'formatadores devem ser compartilhaveis');
 
   const guideUiCode = read('public/js/ui-guide.js');
+  const featureFlagsCode = read('src/shared/featureFlags.js');
   const guideViewCode = read('public/js/app-guide-view.js');
   const searchContextCode = read('public/js/app-context.js');
   const responsiveCss = read('public/css/responsive.css');
   const guideCss = read('public/css/guide.css');
   const publicIndex = read('public/index.html');
   assert(publicIndex.includes('class="atlas-brand notranslate') && publicIndex.includes('translate="no" aria-label="AtlasAchievement"'), 'marca AtlasAchievement precisa estar protegida contra traducao automatica');
+  assert(publicIndex.includes('/shared/featureFlags.js'), 'pagina publica precisa carregar feature flags compartilhadas antes do renderer do guia');
+  assert(featureFlagsCode.includes('ENABLE_WALKTHROUGH: false') && featureFlagsCode.includes('isWalkthroughEnabled'), 'feature flag do walkthrough deve ficar desligada por padrao em configuracao central');
   assert(publicIndex.includes('atlas-logo-letter notranslate') && publicIndex.includes('translate="no">A</span>'), 'simbolo A da logo precisa ser notranslate');
   assert(/\.atlas-suggestion-panel[\s\S]*?overflow-y:\s*auto/.test(componentsCss), 'dropdown da busca precisa permitir scroll vertical com mouse wheel');
   assert(/\.atlas-suggestion-panel[\s\S]*?overscroll-behavior:\s*contain/.test(componentsCss), 'dropdown da busca precisa conter scroll sem jogar a pagina junto');
@@ -419,8 +474,15 @@ function assertUIModules() {
   assert(publicIndex.indexOf('id="sidebarInfo"') < publicIndex.indexOf('id="guideChecklistPanel"'), 'progresso deve aparecer antes do checklist');
   assert(guideUiCode.includes('renderGuidePlatinumSummaryPanel'), 'guia precisa renderizar resumo rapido da platina');
   assert(guideUiCode.includes('renderGuideDecisionStackV2'), 'guia precisa usar nova ordem resumo -> alertas -> nav');
+  assert(guideUiCode.includes('renderGuideWalkthrough') && guideUiCode.includes('data-walkthrough-check') && guideUiCode.includes('isWalkthroughEnabled'), 'client deve manter walkthrough opcional com checklist interativo atras da feature flag');
+  assert(guideUiCode.includes('renderWalkthroughImages') && guideUiCode.includes('loading="lazy"'), 'client deve renderizar imagens opcionais do walkthrough com lazy loading');
+  assert(read('src/app.js').includes('renderGuideWalkthroughHtml') && read('src/app.js').includes('guideWalkthroughPanel') && read('src/app.js').includes('isWalkthroughEnabled'), 'SSR deve manter walkthrough opcional atras da feature flag');
+  assert(read('src/app.js').includes('renderWalkthroughImagesHtml') && read('src/app.js').includes('atlas-walkthrough-image'), 'SSR deve renderizar imagens opcionais do walkthrough');
+  assert(guideViewCode.includes('data-walkthrough-check'), 'view publica deve sincronizar checklist visual do walkthrough');
   assert(read('src/app.js').includes('renderGuideDecisionStackHtmlV2'), 'SSR do guia precisa usar a mesma ordem do client');
   assert(guideCss.includes('.atlas-platinum-summary__grid'), 'guide.css precisa estilizar cards de resumo da platina');
+  assert(guideCss.includes('.atlas-walkthrough-panel') && guideCss.includes('.atlas-walkthrough-alerts'), 'guide.css precisa estilizar o detonado opcional e alertas perdiveis');
+  assert(guideCss.includes('.atlas-walkthrough-images') && guideCss.includes('object-fit: contain'), 'guide.css precisa manter imagens do walkthrough responsivas sem deformar');
   assert(guideCss.includes('.atlas-roadmap-step__actions'), 'roadmap visual precisa expor lista curta de acoes');
   assert(guideCss.includes('.atlas-roadmap-step__marker::before') && guideCss.includes('content: attr(data-roadmap-number)'), 'numero visual do roadmap deve vir de CSS para nao duplicar texto acessivel');
   assert(!/atlas-roadmap-step__marker[^>]*>\s*\$\{escapeHtml\(String\(stage\.number\)\)\}/.test(guideUiCode), 'client do roadmap nao deve renderizar numero manual como texto do marcador');

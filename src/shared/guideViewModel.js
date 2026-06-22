@@ -2197,7 +2197,7 @@
   function buildRouteChangingTrophies(trophies = [], game = {}) {
     const trophyById = new Map((Array.isArray(trophies) ? trophies : []).map(trophy => [trophy?.id, trophy]).filter(([id]) => id));
     const attentionSlug = String(game?.slug || '').trim().toLowerCase();
-    if (['a-way-out', 'armored-core-vi-fires-of-rubicon', 'assassins-creed-mirage', 'assassins-creed-origins', 'assassins-creed-odyssey', 'assassins-creed-shadows', 'assassins-creed-valhalla', 'avatar-frontiers-of-pandora', 'beyond-two-souls', 'cyberpunk-2077', 'demons-souls', 'final-fantasy-vii-remake', 'final-fantasy-vii-rebirth', 'final-fantasy-xvi', 'hades', 'life-is-strange-double-exposure', 'life-is-strange-remastered', 'life-is-strange-true-colors', 'little-nightmares-ii', 'metaphor-refantazio', 'monster-hunter-world', 'persona-3-reload', 'persona-5-royal', 'prince-of-persia-the-lost-crown', 'ratchet-and-clank-rift-apart', 'reanimal', 'resident-evil-6', 'returnal', 'road-96', 'sekiro-shadows-die-twice', 'split-fiction', 'star-wars-jedi-fallen-order'].includes(attentionSlug) && Array.isArray(game?.attentionPoints)) {
+    if (['a-way-out', 'armored-core-vi-fires-of-rubicon', 'assassins-creed-mirage', 'assassins-creed-origins', 'assassins-creed-odyssey', 'assassins-creed-shadows', 'assassins-creed-valhalla', 'avatar-frontiers-of-pandora', 'beyond-two-souls', 'black-myth-wukong', 'cyberpunk-2077', 'demons-souls', 'final-fantasy-vii-remake', 'final-fantasy-vii-rebirth', 'final-fantasy-xvi', 'hades', 'life-is-strange-double-exposure', 'life-is-strange-remastered', 'life-is-strange-true-colors', 'little-nightmares-ii', 'metaphor-refantazio', 'monster-hunter-world', 'persona-3-reload', 'persona-5-royal', 'prince-of-persia-the-lost-crown', 'ratchet-and-clank-rift-apart', 'reanimal', 'resident-evil-6', 'returnal', 'road-96', 'sekiro-shadows-die-twice', 'split-fiction', 'star-wars-jedi-fallen-order'].includes(attentionSlug) && Array.isArray(game?.attentionPoints)) {
       return game.attentionPoints.map((item, index) => {
         const tags = (Array.isArray(item?.tags) ? item.tags : []).map(tag => {
           const label = typeof tag === 'string' ? tag : firstGuideText(tag?.label, tag?.id);
@@ -4241,6 +4241,221 @@
     return normalized.every(step => step.title && (step.objective || step.actions.length));
   }
 
+  function normalizeWalkthroughText(value = '', maxLength = 900) {
+    const text = String(value || '').trim().replace(/\s+/g, ' ');
+    return maxLength && text.length > maxLength ? text.slice(0, maxLength).trim() : text;
+  }
+
+  function normalizeWalkthroughTextList(value = [], maxLength = 240, limit = 12) {
+    return (Array.isArray(value) ? value : [])
+      .map(item => normalizeWalkthroughText(item, maxLength))
+      .filter(Boolean)
+      .slice(0, limit);
+  }
+
+  function normalizeWalkthroughTextItems(value = [], maxLength = 240, limit = 12) {
+    return (Array.isArray(value) ? value : [])
+      .map(item => {
+        if (typeof item === 'string') return normalizeWalkthroughText(item, maxLength);
+        if (!item || typeof item !== 'object' || Array.isArray(item)) return '';
+        return normalizeWalkthroughText(item.text ?? item.label ?? item.title ?? item.name, maxLength);
+      })
+      .filter(Boolean)
+      .slice(0, limit);
+  }
+
+  function normalizeWalkthroughChecklist(value = [], stepId = '', limit = 20) {
+    return (Array.isArray(value) ? value : [])
+      .map((item, index) => {
+        if (typeof item === 'string') {
+          return {
+            id: `${stepId || 'walkthrough'}-${index + 1}`,
+            texto: normalizeWalkthroughText(item, 260),
+            status: false
+          };
+        }
+        if (!item || typeof item !== 'object' || Array.isArray(item)) return null;
+        return {
+          id: normalizeWalkthroughText(item.id ?? `${stepId || 'walkthrough'}-${index + 1}`, 80),
+          texto: normalizeWalkthroughText(item.texto ?? item.text ?? item.label ?? item.title, 260),
+          status: item.status === true
+        };
+      })
+      .filter(item => item && item.id && item.texto)
+      .slice(0, limit);
+  }
+
+  function normalizeWalkthroughInstructionSteps(value = [], parentId = '', limit = 40) {
+    return (Array.isArray(value) ? value : [])
+      .map((item, index) => {
+        if (typeof item === 'string') {
+          const text = normalizeWalkthroughText(item, 900);
+          return text ? {
+            id: `${parentId || 'walkthrough'}-passo-${index + 1}`,
+            title: '',
+            text,
+            importantItems: [],
+            relatedTrophies: [],
+            warning: ''
+          } : null;
+        }
+        if (!item || typeof item !== 'object' || Array.isArray(item)) return null;
+        const id = normalizeWalkthroughText(item.id ?? `${parentId || 'walkthrough'}-passo-${index + 1}`, 80);
+        const title = normalizeWalkthroughText(item.title ?? item.titulo ?? item.label, 160);
+        const text = normalizeWalkthroughText(item.text ?? item.description ?? item.descricao ?? item.detail ?? item.body, 900);
+        const warning = normalizeWalkthroughText(item.warning ?? item.alerta ?? item.missableAlert, 320);
+        const importantItems = normalizeWalkthroughTextItems(item.importantItems ?? item.itens_importantes ?? item.items, 180, 12);
+        const relatedTrophies = normalizeWalkthroughTextItems(item.relatedTrophies ?? item.trofeus_relacionados ?? item.trophies, 140, 12);
+        if (!title && !text) return null;
+        return { id, title, text, importantItems, relatedTrophies, warning };
+      })
+      .filter(Boolean)
+      .slice(0, limit);
+  }
+
+  function normalizeWalkthroughBosses(value = [], limit = 16) {
+    return (Array.isArray(value) ? value : [])
+      .map(item => {
+        if (!item || typeof item !== 'object' || Array.isArray(item)) return null;
+        const name = normalizeWalkthroughText(item.name ?? item.nome ?? item.title, 160);
+        if (!name) return null;
+        return {
+          name,
+          type: normalizeWalkthroughText(item.type ?? item.tipo, 60),
+          trophy: normalizeWalkthroughText(item.trophy ?? item.trofeu ?? item.relatedTrophy, 160),
+          notes: normalizeWalkthroughText(item.notes ?? item.note ?? item.observacao ?? item.description, 500)
+        };
+      })
+      .filter(Boolean)
+      .slice(0, limit);
+  }
+
+  function normalizeWalkthroughCollectibles(value = [], limit = 24) {
+    return (Array.isArray(value) ? value : [])
+      .map(item => {
+        if (!item || typeof item !== 'object' || Array.isArray(item)) return null;
+        const name = normalizeWalkthroughText(item.name ?? item.nome ?? item.title, 180);
+        if (!name) return null;
+        return {
+          name,
+          type: normalizeWalkthroughText(item.type ?? item.tipo, 80),
+          trophy: normalizeWalkthroughText(item.trophy ?? item.trofeu ?? item.relatedTrophy, 160),
+          missable: item.missable === true || item.isMissable === true || item.is_missable === true,
+          notes: normalizeWalkthroughText(item.notes ?? item.note ?? item.observacao ?? item.description, 500)
+        };
+      })
+      .filter(Boolean)
+      .slice(0, limit);
+  }
+
+  function normalizeWalkthroughRecommendedImages(value = [], limit = 12) {
+    return (Array.isArray(value) ? value : [])
+      .map(item => {
+        if (typeof item === 'string') {
+          const description = normalizeWalkthroughText(item, 220);
+          return description ? { description, reason: '' } : null;
+        }
+        if (!item || typeof item !== 'object' || Array.isArray(item)) return null;
+        const description = normalizeWalkthroughText(item.description ?? item.image ?? item.imagem ?? item.title ?? item.label, 220);
+        if (!description) return null;
+        return {
+          description,
+          reason: normalizeWalkthroughText(item.reason ?? item.motivo ?? item.notes ?? item.note, 260)
+        };
+      })
+      .filter(Boolean)
+      .slice(0, limit);
+  }
+
+  function normalizeWalkthroughTrophyCoverage(value = [], limit = 60) {
+    return (Array.isArray(value) ? value : [])
+      .map(item => {
+        if (!item || typeof item !== 'object' || Array.isArray(item)) return null;
+        const trophy = normalizeWalkthroughText(item.trophy ?? item.trophyEn ?? item.en ?? item.name, 160);
+        if (!trophy) return null;
+        return {
+          trophy,
+          trophyPt: normalizeWalkthroughText(item.trophyPt ?? item.ptBr ?? item.pt ?? item.namePt, 160),
+          chapter: normalizeWalkthroughText(item.chapter ?? item.capitulo ?? item.where, 120)
+        };
+      })
+      .filter(Boolean)
+      .slice(0, limit);
+  }
+
+  const WALKTHROUGH_IMAGE_TYPES = new Set(['location', 'item', 'boss', 'route', 'warning']);
+
+  function normalizeWalkthroughImages(value = [], limit = 8) {
+    return (Array.isArray(value) ? value : [])
+      .map(image => {
+        if (!image || typeof image !== 'object' || Array.isArray(image)) return null;
+        const src = normalizeWalkthroughText(image.src, 500);
+        const alt = normalizeWalkthroughText(image.alt, 240);
+        if (!src || !alt) return null;
+        const type = normalizeWalkthroughText(image.type, 40).toLowerCase();
+        return {
+          src,
+          alt,
+          caption: normalizeWalkthroughText(image.caption, 320),
+          type: WALKTHROUGH_IMAGE_TYPES.has(type) ? type : '',
+          relatedTrophy: normalizeWalkthroughText(image.relatedTrophy ?? image.related_trophy, 160),
+          relatedItem: normalizeWalkthroughText(image.relatedItem ?? image.related_item, 160)
+        };
+      })
+      .filter(Boolean)
+      .slice(0, limit);
+  }
+
+  function normalizeWalkthroughStep(step = {}, index = 0) {
+    if (!step || typeof step !== 'object' || Array.isArray(step)) return null;
+    const id = normalizeWalkthroughText(step.id ?? `etapa-${index + 1}`, 80);
+    const titulo = normalizeWalkthroughText(step.titulo_etapa ?? step.title ?? step.titulo, 160);
+    const objetivo = normalizeWalkthroughText(step.objetivo_principal ?? step.objective ?? step.objetivo, 700);
+    const area = normalizeWalkthroughText(step.area_local ?? step.area ?? step.local, 180);
+    const quando = normalizeWalkthroughText(step.quando_fazer ?? step.when ?? step.momento, 260);
+    const collectiblesSource = step.collectibles ?? step.coletaveis_detalhados ?? step.itens_detalhados;
+    const normalized = {
+      id,
+      titulo_etapa: titulo,
+      navigationLabel: normalizeWalkthroughText(step.navigationLabel ?? step.navigation_label ?? step.navLabel, 80),
+      objetivo_principal: objetivo,
+      area_local: area,
+      quando_fazer: quando,
+      intro: normalizeWalkthroughText(step.intro ?? step.introducao, 900),
+      summary: normalizeWalkthroughTextItems(step.summary ?? step.nesta_parte ?? step.nestaParte ?? step.overview, 220, 20),
+      recommendedLevel: normalizeWalkthroughText(step.recommendedLevel ?? step.recommended_level ?? step.level, 80),
+      videoUrl: normalizeWalkthroughText(step.videoUrl ?? step.video_url, 500),
+      acoes_obrigatorias: normalizeWalkthroughTextList(step.acoes_obrigatorias ?? step.requiredActions ?? step.actions, 260, 20),
+      trofeus_relacionados: normalizeWalkthroughTextList(step.trofeus_relacionados ?? step.relatedTrophies ?? step.trophies, 140, 20),
+      itens_coletaveis: normalizeWalkthroughTextItems(step.itens_coletaveis ?? step.importantItems ?? (Array.isArray(collectiblesSource) && collectiblesSource.every(item => typeof item === 'string') ? collectiblesSource : []), 180, 20),
+      alertas_perdiveis: normalizeWalkthroughTextList(step.alertas_perdiveis ?? step.missableAlerts ?? step.alerts, 320, 10),
+      steps: normalizeWalkthroughInstructionSteps(step.steps ?? step.passos, id, 40),
+      bosses: normalizeWalkthroughBosses(step.bosses ?? step.chefes, 16),
+      collectibles: normalizeWalkthroughCollectibles(collectiblesSource, 24),
+      recommendedImages: normalizeWalkthroughRecommendedImages(step.recommendedImages ?? step.imagesRecommended ?? step.imagens_recomendadas, 16),
+      trophyCoverage: normalizeWalkthroughTrophyCoverage(step.trophyCoverage ?? step.coverage ?? step.cobertura_trofeus, 60),
+      images: normalizeWalkthroughImages(step.images, 8),
+      checklist: normalizeWalkthroughChecklist(step.checklist, id, 24)
+    };
+    if (!normalized.titulo_etapa || (!normalized.objetivo_principal && !normalized.intro && !normalized.acoes_obrigatorias.length && !normalized.steps.length)) return null;
+    return normalized;
+  }
+
+  function normalizeWalkthrough(walkthrough = []) {
+    if (!Array.isArray(walkthrough)) return [];
+    return walkthrough
+      .map((step, index) => normalizeWalkthroughStep(step, index))
+      .filter(Boolean)
+      .slice(0, 60);
+  }
+
+  function isValidWalkthrough(walkthrough = []) {
+    if (walkthrough === undefined || walkthrough === null) return true;
+    if (!Array.isArray(walkthrough) || walkthrough.length > 60) return false;
+    const normalized = normalizeWalkthrough(walkthrough);
+    return normalized.length === walkthrough.length;
+  }
+
   function parseStructuredRoadmapStep(value = '') {
     const text = safeRoadmapText(value);
     if (!/title\s*:/i.test(text) || !/objective\s*:/i.test(text)) return null;
@@ -5890,6 +6105,7 @@
     const trophies = Array.isArray(game?.trophies) ? game.trophies : [];
     const trackableTrophies = trophies.filter(trophy => !isPlaceholderTrophy(trophy));
     const roadmap = Array.isArray(game?.roadmap) ? game.roadmap : [];
+    const walkthrough = normalizeWalkthrough(game?.walkthrough);
     const roadmapStagesSource = Array.isArray(game?.roadmapStages) ? game.roadmapStages : roadmap;
     const normalizedSlug = String(game?.slug || '').trim().toLowerCase();
     const completedIds = new Set(Array.isArray(completedSource) ? completedSource : []);
@@ -6022,6 +6238,8 @@
     const viewModel = {
       trophies,
       roadmap,
+      walkthrough,
+      walkthroughStages: walkthrough,
       completedIds,
       completed,
       total,
@@ -6105,6 +6323,10 @@
     normalizeRoadmapStep,
     normalizeRoadmapForSave,
     isValidRoadmap,
+    normalizeWalkthroughStep,
+    normalizeWalkthrough,
+    normalizeWalkthroughImages,
+    isValidWalkthrough,
     buildDecisionRoadmapStages,
     buildRoadmapStages,
     buildContextualFaq,
