@@ -1660,6 +1660,7 @@ async function migrate(options = {}) {
   await syncSeedGameFromSeed('hollow-knight-silksong', { insertIfMissing: true, forceSync: true });
   await syncSeedGameFromSeed('lego-batman-legacy-of-the-dark-knight', { insertIfMissing: true, forceSync: true });
   await syncSeedGameFromSeed('heavy-rain', { insertIfMissing: true, forceSync: true });
+  await syncSeedGameFromSeed('black-myth-wukong', { insertIfMissing: true });
   await syncSeedGameTrophiesFromSeed('the-last-of-us-part-i');
   await syncSeedGameRoadmapFromSeed('the-last-of-us-part-i');
   await syncSeedGameRoadmapFromSeed('the-last-of-us-part-ii');
