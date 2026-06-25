@@ -31,12 +31,13 @@ window.UICatalog = (() => {
       || /verifica/i.test(String(statusBadge.label || ''));
   }
 
-  function getCatalogStatusBadge(statusBadge = {}) {
-    if (statusBadge.status) return statusBadge;
-    if (isUnverifiedBadge(statusBadge)) {
-      return { ...statusBadge, label: 'Em verificação', badge: 'unverified', tone: 'unverified' };
-    }
-    return statusBadge;
+  function getCatalogStatusBadge(statusBadge = {}, game = {}) {
+    const verified = typeof sharedCatalog.isCatalogVerified === 'function'
+      ? sharedCatalog.isCatalogVerified(game)
+      : !isUnverifiedBadge(statusBadge);
+    return verified
+      ? { ...statusBadge, status: 'verified', label: 'Verificado', badge: 'verified', tone: 'verified' }
+      : { ...statusBadge, status: 'in_review', label: 'Em revisão', badge: 'review', tone: 'review' };
   }
 
   function renderVerificationNotice(items = []) {
@@ -49,7 +50,7 @@ window.UICatalog = (() => {
       return total + (isUnverifiedBadge(statusBadge) ? 1 : 0);
     }, 0);
     target.innerHTML = count > 1
-      ? `<i class="fas fa-circle-info" aria-hidden="true"></i><span>${escapeHtml(`${count} guias com dados em verificação`)}</span>`
+      ? `<i class="fas fa-circle-info" aria-hidden="true"></i><span>${escapeHtml(`${count} guias em revisão editorial`)}</span>`
       : '';
   }
 
@@ -188,25 +189,22 @@ window.UICatalog = (() => {
     setCatalogMeta(facet, { items });
 
     if (segments) {
-      const primaryFacetIds = [
-        'all',
-        'time-short',
+      const primaryGroups = [
+        { label: 'Dificuldade', facets: ['difficulty-low', 'difficulty-mid', 'difficulty-high'] },
+        { label: 'Duração', facets: ['time-short', 'time-long'] },
+        { label: 'Requisitos', facets: ['online-none', 'missable-none'] },
+        { label: 'Status editorial', facets: ['editorial-verified', 'editorial-review'] }
+      ];
+      const secondaryFacetIds = [
         'time-medium',
-        'time-long',
-        'difficulty-low',
-        'difficulty-high',
-        'online-none',
         'online-required',
         'coop-required',
         'missable-present',
-        'missable-none',
         'grind-present',
         'dlc-base',
-        'chapter-select',
-        'editorial-verified',
-        'editorial-review'
+        'chapter-select'
       ];
-      const chipConfigs = primaryFacetIds
+      const buildChipConfigs = facetIds => facetIds
         .map(id => catalogFacetMeta[id])
         .filter(Boolean)
         .map(config => ({
@@ -214,17 +212,48 @@ window.UICatalog = (() => {
           count: Number(facetCounts[config.id] ?? (config.id === 'all' ? allGames.length || pagination.total || items.length : 0))
         }))
         .filter(entry => entry.config.id === activeFacet.id || entry.config.id === 'all' || entry.count > 0);
-
-      segments.innerHTML = chipConfigs.map(({ config, count }) => {
+      const renderChip = ({ config, count }, labelOverride = '') => {
         const isActive = config.id === activeFacet.id;
         const isEmpty = count === 0;
         const countLabel = count ? formatCatalogCount(count) : 'em expansão';
         return `
           <button type="button" class="atlas-collection-chip ${isActive ? 'is-active' : ''} ${isEmpty ? 'is-empty' : ''}" data-catalog-facet="${escapeAttribute(config.id)}" aria-pressed="${isActive ? 'true' : 'false'}" title="${escapeAttribute(config.chipDescription || config.description)}">
-            <span>${escapeHtml(config.chipLabel || config.name)}</span>
+            <span>${escapeHtml(labelOverride || config.chipLabel || config.name)}</span>
             <small>${escapeHtml(countLabel)}</small>
           </button>`;
+      };
+      const labelOverrides = {
+        'difficulty-mid': 'Médio',
+        'time-medium': '16–40h'
+      };
+      const allChip = renderChip({
+        config: catalogFacetMeta.all,
+        count: Number(facetCounts.all ?? allGames.length ?? pagination.total ?? items.length)
+      });
+      const primaryHtml = primaryGroups.map(group => {
+        const configs = buildChipConfigs(group.facets);
+        if (!configs.length) return '';
+        return `
+          <div class="atlas-catalog-filter-group">
+            <span class="atlas-catalog-filter-group__label">${escapeHtml(group.label)}</span>
+            <div class="atlas-catalog-filter-group__options">
+              ${configs.map(entry => renderChip(entry, labelOverrides[entry.config.id])).join('')}
+            </div>
+          </div>`;
       }).join('');
+      const secondaryConfigs = buildChipConfigs(secondaryFacetIds);
+      const secondaryActive = secondaryFacetIds.includes(activeFacet.id);
+      const secondaryHtml = secondaryConfigs.length ? `
+        <details class="atlas-catalog-more-filters" ${secondaryActive ? 'open' : ''}>
+          <summary>Mais filtros</summary>
+          <div class="atlas-catalog-filter-group__options">
+            ${secondaryConfigs.map(entry => renderChip(entry, labelOverrides[entry.config.id])).join('')}
+          </div>
+        </details>` : '';
+      segments.innerHTML = `
+        <div class="atlas-catalog-filter-all">${allChip}</div>
+        <div class="atlas-catalog-filter-groups">${primaryHtml}</div>
+        ${secondaryHtml}`;
     }
 
     if (summary) {
@@ -255,7 +284,7 @@ window.UICatalog = (() => {
         </article>` : `
         <div class="atlas-panel atlas-panel--plain atlas-catalog-empty p-6 text-white/60 md:col-span-2 xl:col-span-3">
           <span class="atlas-section-kicker">Nada com esses filtros</span>
-          <h3>Nenhum guia encontrado com essa combinação.</h3>
+          <h3>Nenhum guia encontrado com esses filtros.</h3>
           <p>Tente remover o filtro de online, ampliar a faixa de tempo ou limpar a busca.</p>
           <button type="button" class="atlas-btn atlas-btn-primary atlas-btn-compact" data-catalog-clear-filters><i class="fas fa-rotate-left"></i> Limpar filtros</button>
         </div>`;
@@ -278,29 +307,30 @@ window.UICatalog = (() => {
           difficultyTone: getDifficultyTone(game.difficulty),
           difficultyClass: getDifficultyToneClass(game.difficulty)
         };
-      model.statusBadge = getCatalogStatusBadge(model.statusBadge);
+      model.statusBadge = getCatalogStatusBadge(model.statusBadge, game);
       const slug = escapeAttribute(model.slug || '');
       const imageSource = getCatalogCardImageSource(game, model);
       const decision = getCatalogDecisionSignals(game);
-      const signalHtml = (decision.signals || []).slice(0, 5).map(signal => `
+      const primarySignalIds = new Set(['online', 'no-online', 'coop', 'no-coop', 'missable', 'no-missable', 'grind']);
+      const signalHtml = (decision.signals || []).filter(signal => primarySignalIds.has(signal.id)).slice(0, 4).map(signal => `
               <span class="catalog-card__signal catalog-card__signal--${escapeAttribute(signal.tone || 'neutral')}" title="${escapeAttribute(signal.label)}"><i class="fas ${escapeAttribute(signal.icon || 'fa-circle-info')}" aria-hidden="true"></i>${escapeHtml(signal.label)}</span>`).join('');
       return `
         <article class="catalog-card${imageSource ? '' : ' catalog-card--image-fallback'}" data-game-slug="${slug}" data-difficulty-tone="${escapeAttribute(model.difficultyTone)}" data-risk="${model.hasRisk ? 'missable' : 'none'}">
           ${renderCatalogCardImage(game, model, imageSource)}
           <div class="catalog-card__body">
+            <h3 class="catalog-card__title">${escapeHtml(model.name)}</h3>
             <div class="catalog-card__badges">
               <span class="catalog-card__status atlas-badge atlas-badge--${escapeAttribute(model.statusBadge.badge || model.statusBadge.tone || 'partial')}">${escapeHtml(model.statusBadge.label)}</span>
-              ${model.hasRisk ? '<span class="atlas-badge atlas-badge--risk">Perdíveis</span>' : ''}
             </div>
-            <h3 class="catalog-card__title">${escapeHtml(model.name)}</h3>
             <div class="catalog-card__meta">
               <span class="atlas-meta-signal ${escapeAttribute(model.difficultyClass)}"><i class="fas fa-gauge-high"></i>${escapeHtml(String(model.difficulty))}/10</span>
               <span class="atlas-meta-signal atlas-meta-signal--time"><i class="fas fa-clock"></i>${escapeHtml(model.time)}</span>
               <span class="atlas-meta-signal atlas-meta-signal--trophy"><i class="fas fa-trophy"></i>${escapeHtml(String(model.trophies))} troféus</span>
             </div>
-            <div class="catalog-card__signals" aria-label="Sinais para decidir a platina">
-              ${signalHtml}
-            </div>
+            ${signalHtml ? `<div class="catalog-card__risk-block">
+              <span class="catalog-card__risk-label">Riscos e requisitos</span>
+              <div class="catalog-card__signals" aria-label="Riscos e requisitos da platina">${signalHtml}</div>
+            </div>` : ''}
             <div class="catalog-card__actions">
               <a href="/jogo/${slug}" class="atlas-btn atlas-btn-primary atlas-btn-compact" data-open-guide-card="${slug}">Abrir guia</a>
             </div>

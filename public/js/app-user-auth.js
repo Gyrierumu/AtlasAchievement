@@ -149,7 +149,8 @@ window.AppUserAuth = (() => {
   }
 
   function openAuthModal(mode = 'login') {
-    const modal = document.querySelector('#userAuthModal');
+    const modal = window.AtlasModalFactories?.ensureUserAuthModal?.()
+      || document.querySelector('#userAuthModal');
     if (!modal) return;
     modal.classList.remove('hidden');
     modal.hidden = false;
@@ -197,6 +198,22 @@ window.AppUserAuth = (() => {
     ignoreLocalImport,
     renderLibraryView
   }) {
+    function bindAuthModalElements() {
+      const modal = document.querySelector('#userAuthModal');
+      if (!modal || modal.dataset.authBound === 'true') return;
+      modal.dataset.authBound = 'true';
+      modal.addEventListener('click', event => {
+        if (event.target.id === 'userAuthModal') closeAuthModal();
+      });
+      document.querySelector('#userLoginForm')?.addEventListener('submit', handleLogin);
+      document.querySelector('#userRegisterForm')?.addEventListener('submit', handleRegister);
+    }
+
+    function openBoundAuthModal(mode = 'login') {
+      openAuthModal(mode);
+      bindAuthModalElements();
+    }
+
     async function syncUserSession() {
       try {
         state.userSession = await ApiService.getCurrentUser();
@@ -350,7 +367,7 @@ window.AppUserAuth = (() => {
         const openButton = event.target.closest('[data-auth-open]');
         if (openButton) {
           event.preventDefault();
-          openAuthModal(openButton.dataset.authOpen || 'login');
+          openBoundAuthModal(openButton.dataset.authOpen || 'login');
           return;
         }
 
@@ -379,11 +396,7 @@ window.AppUserAuth = (() => {
         }
       });
 
-      document.querySelector('#userAuthModal')?.addEventListener('click', event => {
-        if (event.target.id === 'userAuthModal') closeAuthModal();
-      });
-      document.querySelector('#userLoginForm')?.addEventListener('submit', handleLogin);
-      document.querySelector('#userRegisterForm')?.addEventListener('submit', handleRegister);
+      bindAuthModalElements();
       document.querySelector('#profileContent')?.addEventListener('submit', event => {
         if (event.target.id === 'profileEditForm') return handleProfileUpdate(event);
         if (event.target.id === 'profilePasswordForm') return handlePasswordChange(event);
@@ -394,7 +407,7 @@ window.AppUserAuth = (() => {
       bindUserAuthEvents,
       syncUserSession,
       renderProfileView: () => renderProfile(state),
-      openAuthModal,
+      openAuthModal: openBoundAuthModal,
       closeAuthModal
     };
   }

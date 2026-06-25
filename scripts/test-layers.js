@@ -209,7 +209,7 @@ async function validateHome() {
     assert(html.includes('Melhor primeiro clique agora'), 'Home deve renderizar Melhor primeiro clique agora');
     assert(html.includes('Destaques reais'), 'Home deve renderizar Destaques reais');
     assert(html.includes('Últimas revisões'), 'Home deve renderizar Ultimas revisoes');
-    assert(html.includes('Encontrar minha próxima platina'), 'Home deve manter CTA principal para encontrar platina');
+    assert(html.includes('Explorar guias'), 'Home deve manter CTA principal para explorar o catalogo');
     assert(html.includes('Ver guias em destaque'), 'Home deve manter CTA Ver guias em destaque');
     assert(html.includes('Abrir guia'), 'Home deve manter links Abrir guia');
     assert(!html.includes('id="view-catalog"'), 'Home nao deve pre-renderizar a tela completa de catalogo');

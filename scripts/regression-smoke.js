@@ -132,6 +132,7 @@ function assertHtmlLoadsModules(relPath) {
       '/js/app-version.js',
       '/js/api.js',
       '/js/storage.js',
+      '/js/app-modal-factories.js',
       '/js/ui-shared.js',
       '/js/ui-formatters.js',
       '/shared/featureFlags.js',
@@ -214,8 +215,11 @@ function assertHtmlLoadsModules(relPath) {
     ['Explorar todos', 'Ver catálogo completo', 'Ver guias revisados'].forEach(label => {
       assert(html.includes(label), `home precisa expor o CTA de seção ${label}`);
     });
-    assert(html.includes('placeholder="Digite o nome de um jogo"'), 'busca da home precisa de placeholder direto');
+    assert(html.includes('placeholder="Digite o nome do jogo que você quer platinar"'), 'busca da home precisa explicar a intenção de platina');
     assert(html.includes('aria-label="Buscar um jogo pelo nome"'), 'busca da home precisa de nome acessível');
+    assert(html.includes('Exemplos: Spider-Man, Astro Bot, Life is Strange, Ratchet &amp; Clank'), 'busca da home precisa oferecer exemplos curtos');
+    assert(html.includes('Explorar guias'), 'home precisa manter CTA principal claro para o catálogo');
+    assert(html.includes('data-auth-open="register"') && html.includes('Criar minha biblioteca'), 'CTA secundário da home deve reutilizar o cadastro existente');
     ['Ver sem spoiler', 'Checklist contínuo', 'Roadmap por etapas', 'Biblioteca pessoal'].forEach(label => {
       assert(html.includes(label), `home precisa manter o diferencial ${label}`);
     });
@@ -270,6 +274,17 @@ function assertUIModules() {
   assert(!analyticsCode.includes('email') && !analyticsCode.includes('nickname') && !analyticsCode.includes('message'), 'analytics nao deve referenciar dados pessoais ou texto do feedback');
   const feedbackCode = read('public/js/app-feedback.js');
   assert(feedbackCode.includes('trackFeedbackSubmit') && !feedbackCode.includes('message: payload.message'), 'feedback deve rastrear apenas tipo e slug, nunca a mensagem');
+  const homeUiCode = read('public/js/ui-home.js');
+  const homeCss = read('public/css/home.css');
+  assert(homeUiCode.includes('data-home-update-banner'), 'novidade semanal deve ser renderizada como faixa na home');
+  assert(homeUiCode.includes("document.createElement('aside')"), 'faixa de novidade deve usar semantica informativa');
+  assert(homeUiCode.includes("banner.setAttribute('aria-label', 'Novidade da semana')"), 'faixa de novidade precisa de nome acessivel');
+  assert(homeUiCode.includes('data-update-banner-game') && homeUiCode.includes('data-update-banner-catalog'), 'faixa deve manter CTAs para guia e catalogo');
+  assert(!homeUiCode.includes('data-home-update-popup'), 'home nao deve montar o antigo popup automatico de novidades');
+  assert(!homeUiCode.includes('aria-modal="true"'), 'novidade semanal nao deve bloquear a pagina como modal');
+  assert(!homeUiCode.includes('preventScroll: true'), 'novidade semanal nao deve capturar foco automaticamente');
+  assert(homeCss.includes('.atlas-update-banner'), 'home.css deve estilizar a faixa de novidade');
+  assert(!homeCss.includes('.atlas-update-popup'), 'home.css nao deve manter o overlay do popup antigo');
 
   const userAuthCode = read('public/js/app-user-auth.js');
   assert(
@@ -638,20 +653,36 @@ function assertCatalogModule() {
 
   const uiCatalogCode = read('public/js/ui-catalog.js');
   [
+    'difficulty-low',
+    'difficulty-mid',
+    'difficulty-high',
+    'time-short',
+    'time-long',
     'online-none',
     'online-required',
     'coop-required',
     'missable-present',
     'missable-none',
-    'dlc-base'
+    'dlc-base',
+    'editorial-verified',
+    'editorial-review'
   ].forEach(facet => {
     assert(uiCatalogCode.includes(`'${facet}'`), `catalogo precisa expor filtro ${facet} na UI`);
   });
+  ['Dificuldade', 'Duração', 'Requisitos', 'Status editorial', 'Mais filtros'].forEach(label => {
+    assert(uiCatalogCode.includes(label), `catalogo precisa organizar filtros pelo grupo ${label}`);
+  });
+  assert(uiCatalogCode.includes("label: 'Verificado'") && uiCatalogCode.includes("label: 'Em revisão'"), 'cards do catalogo devem normalizar o status editorial');
+  assert(uiCatalogCode.indexOf('catalog-card__title') < uiCatalogCode.indexOf('catalog-card__badges'), 'card do catalogo deve apresentar nome antes do status');
+  assert(uiCatalogCode.includes('catalog-card__risk-label') && uiCatalogCode.includes('Riscos e requisitos'), 'cards do catalogo precisam separar riscos e requisitos');
   assert(uiCatalogCode.includes('catalog-card__signals'), 'cards do catalogo precisam mostrar sinais de decisao');
   assert(uiCatalogCode.includes('data-catalog-clear-filters'), 'estado vazio do catalogo precisa permitir limpar filtros');
+  assert(uiCatalogCode.includes('Nenhum guia encontrado com esses filtros.'), 'estado vazio do catalogo precisa usar mensagem clara');
 
   const bindingCode = read('public/js/app-view-bindings.js');
   assert(bindingCode.includes('data-catalog-clear-filters'), 'catalogo precisa tratar o botao de limpar filtros');
+  const catalogControllerCode = read('public/js/app-catalog.js');
+  assert(catalogControllerCode.includes('previousFacetCounts'), 'catalogo precisa preservar contagens globais ao combinar busca e filtros');
 }
 
 function assertLibraryModule() {
@@ -8806,13 +8837,19 @@ async function assertBackendEditorialConsistency() {
     assert.strictEqual(homeStructuredData['@type'], 'WebSite', 'SSR / deve expor JSON-LD WebSite');
     assert(!homeHtml.includes('__PAGE_'), 'SSR / nao deve vazar placeholders do template');
     assert(homeHtml.includes('roadmap, checklist, filtros de risco e progresso salvo'), 'home deve explicar a proposta de platina no H1');
-    assert(homeHtml.includes('Encontrar minha próxima platina'), 'home deve expor CTA principal para o catalogo');
+    assert(homeHtml.includes('Explorar guias'), 'home deve expor CTA principal para o catalogo');
+    assert(homeHtml.includes('Digite o nome do jogo que você quer platinar'), 'home deve expor placeholder orientado à platina');
+    assert(homeHtml.includes('Exemplos: Spider-Man, Astro Bot, Life is Strange, Ratchet &amp; Clank'), 'home deve expor exemplos de busca');
     assert(!homeHtml.includes('Ver guias em destaque'), 'SSR da home deve manter apenas um CTA editorial principal');
     assert(homeHtml.includes('id="homeBetaNotice"'), 'home deve renderizar aviso beta');
     assert(homeHtml.includes('Guias verificados passam por revisão editorial'), 'aviso beta deve comunicar evolucao editorial');
     assert(homeHtml.includes('id="homeBenefitsTitle"') && homeHtml.includes('Por que usar o Atlas'), 'SSR da home deve renderizar a seção de diferenciais');
     assert(!homeHtml.includes('id="featuredNowOverview"') && !homeHtml.includes('Melhor primeiro clique agora'), 'SSR da home não deve duplicar um jogo em destaque isolado');
     assert(!homeHtml.includes('Quem faz o Atlas') && !homeHtml.includes('Feito por jogadores brasileiros'), 'SSR da home não deve incluir a seção de autoria vetada');
+    ['feedbackModal', 'userAuthModal', 'libraryImportModal', 'adminModal'].forEach(id => {
+      assert(!homeHtml.includes(`id="${id}"`), `SSR da home não deve pré-montar ${id}`);
+    });
+    assert(homeHtml.includes('/js/app-modal-factories.js'), 'home precisa carregar factories para montar modais sob demanda');
     assert(homeHtml.includes('atlas-home-image-shell'), 'home deve renderizar imagens com fallback visual');
     assert(homeHtml.includes('atlas-discovery-card__media atlas-home-image-shell'), 'cards em destaque da home devem usar shell de imagem');
     assert(!/>\s*0 op/i.test(homeHtml), 'home nao deve exibir cards de momento com zero opcoes');

@@ -5,7 +5,6 @@ window.UIHome = (() => {
   const sharedCatalog = window.AtlasCatalogModel || {};
   const sharedCard = window.AtlasCardModel || {};
   const siteUpdates = window.AtlasSiteUpdates || {};
-  let activeAnnouncementCleanup = null;
 
   function renderHomeEditorialBadge(model = {}) {
     const badge = model.statusBadge || {};
@@ -47,24 +46,6 @@ window.UIHome = (() => {
     return path === '/' || path === '/index.html';
   }
 
-  function hasSeenUpdate(key = '') {
-    if (typeof window === 'undefined' || !key) return true;
-    try {
-      return window.localStorage.getItem(key) === '1';
-    } catch (_error) {
-      return false;
-    }
-  }
-
-  function markUpdateSeen(key = '') {
-    if (typeof window === 'undefined' || !key) return;
-    try {
-      window.localStorage.setItem(key, '1');
-    } catch (_error) {
-      // localStorage can be blocked; the user can still close the dialog.
-    }
-  }
-
   function isGuideVerified(game = {}) {
     const reviewStatus = normalizeSlug(game.editorial_review_status || game.editorialReviewStatus || game.editorialStatus);
     const verificationStatus = normalizeSlug(game.verification_status || game.verificationStatus || game.qualityStatus);
@@ -88,7 +69,7 @@ window.UIHome = (() => {
     }).filter(Boolean);
   }
 
-  function trackUpdatePopup(eventName, params = {}) {
+  function trackUpdateBanner(eventName, params = {}) {
     if (!eventName || typeof window === 'undefined') return;
     window.AtlasAnalytics?.trackEvent?.(eventName, {
       campaign_id: siteUpdates.activeHomeUpdate?.id || '',
@@ -96,33 +77,21 @@ window.UIHome = (() => {
     });
   }
 
-  function closeHomeUpdatePopup(dialog, storageKey, previousFocus, reason = 'close') {
-    if (!dialog) return;
-    markUpdateSeen(storageKey);
-    trackUpdatePopup('update_popup_close', { reason });
-    if (typeof activeAnnouncementCleanup === 'function') {
-      activeAnnouncementCleanup();
-      activeAnnouncementCleanup = null;
-    }
-    dialog.remove();
-    if (previousFocus && typeof previousFocus.focus === 'function') {
-      try {
-        previousFocus.focus({ preventScroll: true });
-      } catch (_error) {
-        previousFocus.focus();
-      }
-    }
-  }
-
-  function maybeShowHomeUpdatePopup(games = []) {
+  function renderHomeUpdateBanner(games = []) {
     const update = siteUpdates.activeHomeUpdate;
-    if (!update?.active || !isHomeRoute() || hasSeenUpdate(update.localStorageKey)) return;
     const homeView = qs('#view-home');
-    if (!homeView || homeView.classList.contains('hidden') || document.querySelector('[data-home-update-popup]')) return;
+    const existing = document.querySelector('[data-home-update-banner]');
+    if (!update?.active || !isHomeRoute() || !homeView || homeView.classList.contains('hidden')) {
+      existing?.remove();
+      return;
+    }
 
     const gamesBySlug = new Map((Array.isArray(games) ? games : []).map(game => [normalizeSlug(game.slug), game]));
     const requiredCatalogSlug = normalizeSlug(update.requiredCatalogSlug || update.sections?.[0]?.items?.[0]?.slug || '');
-    if (requiredCatalogSlug && !gamesBySlug.has(requiredCatalogSlug)) return;
+    if (requiredCatalogSlug && !gamesBySlug.has(requiredCatalogSlug)) {
+      existing?.remove();
+      return;
+    }
 
     const sections = (Array.isArray(update.sections) ? update.sections : []).map(section => {
       const items = resolveUpdateItems(section.items || [], gamesBySlug);
@@ -138,95 +107,48 @@ window.UIHome = (() => {
       };
     }).filter(Boolean);
 
-    if (!sections.length) return;
-    if (requiredCatalogSlug && !sections.some(section => section.items.some(item => item.slug === requiredCatalogSlug))) return;
+    const firstSection = sections[0];
+    const featuredItem = firstSection?.items?.[0];
+    if (!featuredItem || (requiredCatalogSlug && !sections.some(section => section.items.some(item => item.slug === requiredCatalogSlug)))) {
+      existing?.remove();
+      return;
+    }
 
-    const usesConservativeCopy = sections.some(section => section.requiresVerifiedStatus && !section.allVerified);
-    const subtitle = usesConservativeCopy ? (update.conservativeSubtitle || update.subtitle) : update.subtitle;
-    const previousFocus = document.activeElement;
-    const popup = document.createElement('div');
-    popup.className = 'atlas-update-popup';
-    popup.dataset.homeUpdatePopup = update.id || 'home-update';
-    popup.innerHTML = `
-      <div class="atlas-update-popup__overlay" aria-hidden="true"></div>
-      <section class="atlas-update-popup__dialog" role="dialog" aria-modal="true" aria-labelledby="atlasUpdatePopupTitle" aria-describedby="atlasUpdatePopupDescription">
-        <button type="button" class="atlas-update-popup__close" data-update-popup-close aria-label="Fechar pop-up de novidades">
-          <i class="fas fa-xmark" aria-hidden="true"></i>
-          <span class="sr-only">Fechar</span>
-        </button>
-        <div class="atlas-update-popup__badge"><i class="fas fa-star" aria-hidden="true"></i> Atualização do catálogo</div>
-        <h2 id="atlasUpdatePopupTitle">${escapeHtml(update.title)}</h2>
-        <p class="atlas-update-popup__subtitle">${escapeHtml(subtitle)}</p>
-        <p id="atlasUpdatePopupDescription" class="atlas-update-popup__description">${escapeHtml(update.description)}</p>
-        <div class="atlas-update-popup__sections">
-          ${sections.map(section => `
-            <article class="atlas-update-popup__section">
-              <h3>${escapeHtml(section.title)}</h3>
-              <div class="atlas-update-popup__chips">
-                ${section.items.map(item => `
-                  <a href="${escapeAttribute(item.href)}" class="atlas-update-popup__chip" data-update-popup-game="${escapeAttribute(item.slug)}" data-home-game="${escapeAttribute(item.label)}" data-open-guide-card="${escapeAttribute(item.slug)}">${escapeHtml(item.label)}${item.verified && /novo/i.test(section.title || '') ? ' · Verificado' : ''}</a>
-                `).join('')}
-              </div>
-            </article>
-          `).join('')}
-        </div>
-        <div class="atlas-update-popup__actions">
-          <a href="${escapeAttribute(update.primaryCta?.href || '/catalogo')}" class="atlas-btn atlas-btn-primary" data-update-popup-primary data-view-link="catalog">${escapeHtml(update.primaryCta?.label || 'Ver novidades')}</a>
-          <a href="${escapeAttribute(update.secondaryCta?.href || '/catalogo')}" class="atlas-btn atlas-btn-secondary" data-update-popup-secondary data-view-link="catalog">${escapeHtml(update.secondaryCta?.label || 'Explorar catálogo')}</a>
-          <button type="button" class="atlas-update-popup__dismiss" data-update-popup-close>Fechar</button>
-        </div>
-      </section>
-    `;
+    const isNewGuide = /novo/i.test(firstSection.title || '');
+    const bannerText = isNewGuide
+      ? `Novidade da semana: ${featuredItem.label} foi adicionado ao catálogo.`
+      : `Novidade da semana: o guia de ${featuredItem.label} recebeu revisão editorial.`;
+    const banner = existing || document.createElement('aside');
+    banner.className = 'atlas-update-banner';
+    banner.dataset.homeUpdateBanner = update.id || 'home-update';
+    banner.setAttribute('aria-label', 'Novidade da semana');
+    banner.innerHTML = `
+      <div class="atlas-update-banner__icon" aria-hidden="true"><i class="fas fa-star"></i></div>
+      <p>${escapeHtml(bannerText)}</p>
+      <div class="atlas-update-banner__actions">
+        <a href="${escapeAttribute(featuredItem.href)}" class="atlas-update-banner__link" data-update-banner-game="${escapeAttribute(featuredItem.slug)}" data-home-game="${escapeAttribute(featuredItem.label)}" data-open-guide-card="${escapeAttribute(featuredItem.slug)}">Ver guia</a>
+        <a href="${escapeAttribute(update.primaryCta?.href || '/catalogo')}" class="atlas-update-banner__link atlas-update-banner__link--muted" data-update-banner-catalog data-view-link="catalog">Ver catálogo</a>
+      </div>`;
 
-    homeView.appendChild(popup);
-
-    const close = reason => closeHomeUpdatePopup(popup, update.localStorageKey, previousFocus, reason);
-    const handleKeydown = event => {
-      if (event.key === 'Escape') close('escape');
-    };
-    const handleClick = event => {
-      const closeButton = event.target.closest('[data-update-popup-close]');
-      if (closeButton) {
-        event.preventDefault();
-        close('button');
-        return;
-      }
-      const primary = event.target.closest('[data-update-popup-primary]');
-      if (primary) {
-        markUpdateSeen(update.localStorageKey);
-        trackUpdatePopup('update_popup_primary_cta_click', { href: primary.getAttribute('href') || '' });
-        return;
-      }
-      const secondary = event.target.closest('[data-update-popup-secondary]');
-      if (secondary) {
-        markUpdateSeen(update.localStorageKey);
-        trackUpdatePopup('update_popup_secondary_cta_click', { href: secondary.getAttribute('href') || '' });
-        return;
-      }
-      const gameLink = event.target.closest('[data-update-popup-game]');
-      if (gameLink) {
-        markUpdateSeen(update.localStorageKey);
-        trackUpdatePopup('update_popup_game_click', {
-          game_slug: gameLink.dataset.updatePopupGame || '',
-          href: gameLink.getAttribute('href') || ''
-        });
-      }
-    };
-
-    popup.addEventListener('click', handleClick);
-    document.addEventListener('keydown', handleKeydown);
-    activeAnnouncementCleanup = () => {
-      popup.removeEventListener('click', handleClick);
-      document.removeEventListener('keydown', handleKeydown);
-    };
-
-    trackUpdatePopup('update_popup_view', { conservative_copy: usesConservativeCopy ? 'true' : 'false' });
-
-    requestAnimationFrame(() => {
-      const primary = popup.querySelector('[data-update-popup-primary]');
-      const closeButton = popup.querySelector('[data-update-popup-close]');
-      (primary || closeButton)?.focus?.({ preventScroll: true });
-    });
+    if (!existing) {
+      const hero = homeView.querySelector('.atlas-home-hero');
+      hero?.insertAdjacentElement('afterend', banner);
+      banner.addEventListener('click', event => {
+        const gameLink = event.target.closest('[data-update-banner-game]');
+        if (gameLink) {
+          trackUpdateBanner('update_popup_game_click', {
+            game_slug: gameLink.dataset.updateBannerGame || '',
+            href: gameLink.getAttribute('href') || ''
+          });
+          return;
+        }
+        const catalogLink = event.target.closest('[data-update-banner-catalog]');
+        if (catalogLink) {
+          trackUpdateBanner('update_popup_primary_cta_click', { href: catalogLink.getAttribute('href') || '' });
+        }
+      });
+      trackUpdateBanner('update_popup_view', { presentation: 'inline_banner' });
+    }
   }
 
   function renderHomeOverview(games = []) {
@@ -349,7 +271,7 @@ window.UIHome = (() => {
     renderDiscoveryList(recentTarget, byRecent, 'Nenhum guia recente disponível.');
     renderEditorialHistory(updatedTarget, byUpdated, 'Nenhuma revisão recente disponível.');
     sanitizeHomeHeadings();
-    maybeShowHomeUpdatePopup(games);
+    renderHomeUpdateBanner(games);
   }
 
   return { renderHomeOverview };

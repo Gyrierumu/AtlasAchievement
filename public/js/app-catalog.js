@@ -44,6 +44,9 @@ window.AppCatalog = (() => {
       throw new Error('loadCatalogPage requer apiService, ui e state.');
     }
 
+    const previousFacetCounts = state.catalogResponse?.facetCounts
+      || state.initialState?.catalog?.facetCounts
+      || null;
     state.catalogResponse = await apiService.getGames({
       q: options.search !== undefined ? options.search : state.catalogSearch,
       sort: options.sort || state.catalogSort,
@@ -51,6 +54,9 @@ window.AppCatalog = (() => {
       page: options.page || state.catalogPage,
       limit: Number(options.limit || 24)
     });
+    if (!state.catalogResponse.facetCounts && previousFacetCounts) {
+      state.catalogResponse.facetCounts = previousFacetCounts;
+    }
 
     state.catalogPage = state.catalogResponse.pagination?.page || 1;
     ui.renderCatalog(state.catalogResponse, {

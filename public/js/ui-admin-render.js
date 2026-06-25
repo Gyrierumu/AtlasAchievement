@@ -641,7 +641,7 @@ window.UIAdminRender = (() => {
   }
 
   function openAdminModal() {
-    const modal = qs('#adminModal');
+    const modal = window.AtlasModalFactories?.ensureAdminModal?.() || qs('#adminModal');
     if (!modal) return;
     modalState.lastFocused = document.activeElement instanceof HTMLElement ? document.activeElement : null;
     modal.classList.remove('hidden');

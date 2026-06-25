@@ -59,6 +59,7 @@ window.AppPublicAdminLoader = (() => {
     }
     controller.bindAdminEvents?.();
     context.UI.openAdminModal();
+    controller.bindAdminModalEvents?.();
   }
 
   function bind() {

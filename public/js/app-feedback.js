@@ -8,8 +8,11 @@ window.AppFeedback = (() => {
   }
 
   function setOpen(open) {
-    const modal = qs('#feedbackModal');
+    const modal = open
+      ? window.AtlasModalFactories?.ensureFeedbackModal?.()
+      : qs('#feedbackModal');
     if (!modal) return;
+    bindModalElements();
     modal.classList.toggle('hidden', !open);
     modal.hidden = !open;
     modal.setAttribute('aria-hidden', open ? 'false' : 'true');
@@ -157,6 +160,14 @@ window.AppFeedback = (() => {
     }
   }
 
+  function bindModalElements() {
+    const modal = qs('#feedbackModal');
+    if (!modal || modal.dataset.feedbackBound === 'true') return;
+    modal.dataset.feedbackBound = 'true';
+    qs('#feedbackForm')?.addEventListener('submit', handleSubmit);
+    qs('#feedbackMessage')?.addEventListener('input', updateCounter);
+  }
+
   function bind() {
     document.addEventListener('click', event => {
       const typeButton = event.target.closest('[data-feedback-type]');
@@ -186,8 +197,7 @@ window.AppFeedback = (() => {
         setOpen(false);
       }
     });
-    qs('#feedbackForm')?.addEventListener('submit', handleSubmit);
-    qs('#feedbackMessage')?.addEventListener('input', updateCounter);
+    bindModalElements();
   }
 
   return { bind, setOpen, collectPayload, syncTypeButtons };

@@ -78,20 +78,17 @@
 
 @media (max-width: 640px) {
   .atlas-catalog-chip-row {
-    flex-wrap: nowrap;
     margin-inline: 0;
     padding-inline: 0;
     padding-bottom: 3px;
-    overflow-x: auto;
-    scrollbar-width: none;
   }
 
-  .atlas-catalog-chip-row::-webkit-scrollbar {
-    display: none;
+  .atlas-catalog-filter-groups {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
   }
 
   .atlas-collection-chip {
-    flex: 0 0 auto;
+    flex: 1 1 auto;
     min-height: 34px;
     padding-inline: 10px;
   }
@@ -1164,8 +1161,6 @@
   }
 
   .atlas-catalog-chip-row {
-    flex-wrap: wrap;
-    overflow-x: visible;
     gap: 7px;
     padding: 1px 0 2px;
   }

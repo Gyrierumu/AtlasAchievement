@@ -635,12 +635,14 @@ window.AppAdmin = (() => {
     }
 
     function bindAdminEvents() {
-      UI.qs('#adminAccessBtn')?.addEventListener('click', () => page === 'public' ? UI.openAdminModal() : openAdminPanel());
-      UI.qs('#adminAccessBtnFooter')?.addEventListener('click', () => UI.openAdminModal());
+      const openBoundAdminModal = () => {
+        UI.openAdminModal();
+        bindAdminModalEvents();
+      };
+      UI.qs('#adminAccessBtn')?.addEventListener('click', () => page === 'public' ? openBoundAdminModal() : openAdminPanel());
+      UI.qs('#adminAccessBtnFooter')?.addEventListener('click', openBoundAdminModal);
       UI.qs('#adminLogoutBtn')?.addEventListener('click', handleAdminLogout);
-      UI.qs('#closeAdminModalBtn')?.addEventListener('click', UI.closeAdminModal);
-      UI.qs('#adminModal')?.addEventListener('click', event => { if (event.target.id === 'adminModal') UI.closeAdminModal(); });
-      UI.qs('#adminLoginForm')?.addEventListener('submit', handleAdminLogin);
+      bindAdminModalEvents();
 
       UI.qs('#newGameBtn')?.addEventListener('click', () => {
         UI.resetGameForm();
@@ -746,6 +748,15 @@ window.AppAdmin = (() => {
       });
     }
 
+    function bindAdminModalEvents() {
+      const modal = UI.qs('#adminModal');
+      if (!modal || modal.dataset.adminBound === 'true') return;
+      modal.dataset.adminBound = 'true';
+      UI.qs('#closeAdminModalBtn')?.addEventListener('click', UI.closeAdminModal);
+      modal.addEventListener('click', event => { if (event.target.id === 'adminModal') UI.closeAdminModal(); });
+      UI.qs('#adminLoginForm')?.addEventListener('submit', handleAdminLogin);
+    }
+
     return {
       loadAdminGames,
       loadAdminSummary,
@@ -753,7 +764,8 @@ window.AppAdmin = (() => {
       loadAdminBetaMetrics,
       openFormPreview,
       openAdminPanel,
-      bindAdminEvents
+      bindAdminEvents,
+      bindAdminModalEvents
     };
   }
 

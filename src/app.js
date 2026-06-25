@@ -2216,6 +2216,9 @@ function stripHomePageUnusedDom(html = '') {
   ['view-catalog', 'view-seo-page', 'view-library', 'view-guide', 'view-profile'].forEach(id => {
     next = removeElementById(next, 'section', id);
   });
+  ['feedbackModal', 'userAuthModal', 'libraryImportModal', 'adminModal'].forEach(id => {
+    next = removeElementById(next, 'div', id);
+  });
   next = removeElementById(next, 'nav', 'guideQuickDock');
   return next;
 }
@@ -2849,12 +2852,11 @@ function isCatalogUnverifiedBadge(statusBadge = {}) {
     || /verifica/i.test(String(statusBadge.label || ''));
 }
 
-function getCatalogStatusBadge(statusBadge = {}) {
-  if (statusBadge.status) return statusBadge;
-  if (isCatalogUnverifiedBadge(statusBadge)) {
-    return { ...statusBadge, label: 'Em verificação', badge: 'unverified', tone: 'unverified' };
-  }
-  return statusBadge;
+function getCatalogStatusBadge(statusBadge = {}, game = {}) {
+  const verified = sharedCatalogModel.isCatalogVerified(game);
+  return verified
+    ? { ...statusBadge, status: 'verified', label: 'Verificado', badge: 'verified', tone: 'verified' }
+    : { ...statusBadge, status: 'in_review', label: 'Em revisão', badge: 'review', tone: 'review' };
 }
 
 function renderCatalogVerificationNotice(items = []) {
@@ -2863,7 +2865,7 @@ function renderCatalogVerificationNotice(items = []) {
     return total + (isCatalogUnverifiedBadge(statusBadge) ? 1 : 0);
   }, 0);
   return count > 1
-    ? `<i class="fas fa-circle-info" aria-hidden="true"></i><span>${escapeHtml(`${count} guias com dados em verificação`)}</span>`
+    ? `<i class="fas fa-circle-info" aria-hidden="true"></i><span>${escapeHtml(`${count} guias em revisão editorial`)}</span>`
     : '';
 }
 
@@ -2930,31 +2932,32 @@ function renderCatalogSeoCards(items = [], facetConfig = catalogFacetPageMap.all
     const difficulty = escapeHtml(String(model.difficulty ?? '—'));
     const time = escapeHtml(model.time);
     const trophyCount = model.trophies;
-    const statusBadge = getCatalogStatusBadge(model.statusBadge);
+    const statusBadge = getCatalogStatusBadge(model.statusBadge, game);
     const imageSource = getCatalogCardImageSource(game, model);
     const decision = typeof sharedCatalogModel.getCatalogDecisionSignals === 'function'
       ? sharedCatalogModel.getCatalogDecisionSignals(game)
       : { signals: [] };
-    const signalHtml = (decision.signals || []).slice(0, 5).map(signal => `
+    const primarySignalIds = new Set(['online', 'no-online', 'coop', 'no-coop', 'missable', 'no-missable', 'grind']);
+    const signalHtml = (decision.signals || []).filter(signal => primarySignalIds.has(signal.id)).slice(0, 4).map(signal => `
             <span class="catalog-card__signal catalog-card__signal--${escapeHtml(signal.tone || 'neutral')}" title="${escapeHtml(signal.label)}"><i class="fas ${escapeHtml(signal.icon || 'fa-circle-info')}" aria-hidden="true"></i>${escapeHtml(signal.label)}</span>`).join('');
     return `
       <article class="catalog-card${imageSource ? '' : ' catalog-card--image-fallback'}" data-game-slug="${slug}" data-difficulty-tone="${escapeHtml(model.difficultyTone)}" data-risk="${model.hasRisk ? 'missable' : 'none'}" itemscope itemtype="https://schema.org/VideoGame">
         ${renderCatalogCardImageHtml(game, model, imageSource)}
         <div class="catalog-card__body">
-          <div class="catalog-card__badges">
-            <span class="catalog-card__status atlas-badge atlas-badge--${escapeHtml(statusBadge.badge || statusBadge.tone || 'partial')}">${escapeHtml(statusBadge.label)}</span>
-            ${model.hasRisk ? '<span class="atlas-badge atlas-badge--risk">Perdíveis</span>' : ''}
-          </div>
           <h3 class="catalog-card__title" itemprop="name">${name}</h3>
           <meta itemprop="url" content="/jogo/${slug}">
+          <div class="catalog-card__badges">
+            <span class="catalog-card__status atlas-badge atlas-badge--${escapeHtml(statusBadge.badge || statusBadge.tone || 'partial')}">${escapeHtml(statusBadge.label)}</span>
+          </div>
           <div class="catalog-card__meta">
             <span class="atlas-meta-signal ${escapeHtml(model.difficultyClass)}"><i class="fas fa-gauge-high"></i>${difficulty}/10</span>
             <span class="atlas-meta-signal atlas-meta-signal--time"><i class="fas fa-clock"></i>${time}</span>
             <span class="atlas-meta-signal atlas-meta-signal--trophy"><i class="fas fa-trophy"></i>${escapeHtml(String(trophyCount))} troféus</span>
           </div>
-          <div class="catalog-card__signals" aria-label="Sinais para decidir a platina">
-            ${signalHtml}
-          </div>
+          ${signalHtml ? `<div class="catalog-card__risk-block">
+            <span class="catalog-card__risk-label">Riscos e requisitos</span>
+            <div class="catalog-card__signals" aria-label="Riscos e requisitos da platina">${signalHtml}</div>
+          </div>` : ''}
           <div class="catalog-card__actions">
             <a href="/jogo/${slug}" class="atlas-btn atlas-btn-primary atlas-btn-compact" data-open-guide-card="${slug}">Abrir guia</a>
           </div>

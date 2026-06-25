@@ -110,7 +110,8 @@ window.AppLibraryController = (() => {
     }
 
     function showImportPrompt(localLibrary = StorageService.getLibrary()) {
-      const modal = document.querySelector('#libraryImportModal');
+      const modal = window.AtlasModalFactories?.ensureLibraryImportModal?.()
+        || document.querySelector('#libraryImportModal');
       if (!modal) return;
       const candidates = getLocalImportCandidates(localLibrary);
       if (!candidates.length) return;
