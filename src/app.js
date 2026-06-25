@@ -953,6 +953,10 @@ function getHomeFeaturedReason(game = {}) {
   return sharedCatalogModel.getHomeFeaturedReason(game);
 }
 
+function stripMarkdownHeadingPrefix(value = '') {
+  return String(value || '').replace(/^\s{0,3}#{1,6}\s+/, '').trim();
+}
+
 function renderHomeImageHtml(model = {}, imageClass = 'atlas-card__image', options = {}) {
   const name = model.name || 'Jogo';
   const source = model.image || '';
@@ -983,7 +987,7 @@ function renderHomeIntentCardsHtml(games = []) {
         <span class="atlas-intent-card__label">${escapeHtml(item.tag)}</span>
         <i class="fas ${escapeHtml(item.icon)}"></i>
       </div>
-      <strong>${escapeHtml(item.title)}</strong>
+      <strong>${escapeHtml(stripMarkdownHeadingPrefix(item.title))}</strong>
       <p>${escapeHtml(item.description)}</p>
       <span class="atlas-intent-card__meta">${escapeHtml(item.metric)}</span>
     </button>`).join('');
@@ -1012,7 +1016,7 @@ function renderHomeFeaturedGameHtml(games = []) {
       </div>
       <div class="atlas-card__body atlas-featured-game__body">
         <div class="atlas-card__badges">${renderEditorialBadgeHtml(model.statusBadge, { small: true })}</div>
-        <h3 class="atlas-card__title">${escapeHtml(model.name)}</h3>
+        <h3 class="atlas-card__title">${escapeHtml(stripMarkdownHeadingPrefix(model.name))}</h3>
         <p class="atlas-card__reason">${escapeHtml(reason)}</p>
         <div class="atlas-card__meta atlas-featured-game__meta" aria-label="Resumo da recomendação">
           <span class="atlas-meta-signal atlas-meta-signal--time"><i class="fas fa-clock"></i>${escapeHtml(time)}</span>
@@ -1044,7 +1048,7 @@ function renderHomeDiscoveryGuidesHtml(games = []) {
         </div>
         <div class="atlas-card__body">
           <div class="atlas-card__badges">${renderEditorialBadgeHtml(model.statusBadge, { small: true })}<span class="atlas-card__status atlas-badge atlas-badge--partial">Escolha editorial</span></div>
-          <h3 class="atlas-card__title">${escapeHtml(model.name)}</h3>
+          <h3 class="atlas-card__title">${escapeHtml(stripMarkdownHeadingPrefix(model.name))}</h3>
           <p class="atlas-card__reason">${escapeHtml(getHomeFeaturedReason(game))}</p>
           <div class="atlas-card__meta">
             <span class="atlas-meta-signal ${escapeHtml(model.difficultyClass)}"><i class="fas fa-gauge-high"></i>${escapeHtml(String(model.difficulty))}/10</span>
@@ -1075,7 +1079,7 @@ function renderHomeEditorialHistoryHtml(games = []) {
       <article class="atlas-editorial-update">
         <time datetime="${escapeHtml(game.updated_at || game.created_at || '')}">${escapeHtml(updatedLabel)}</time>
         <div class="atlas-editorial-update__body">
-          <h3>${escapeHtml(game.name)}</h3>
+          <h3>${escapeHtml(stripMarkdownHeadingPrefix(game.name))}</h3>
           <p>${escapeHtml(getHomeRevisionNote(game))}</p>
         </div>
         <a href="/jogo/${slug}" class="atlas-editorial-update__link" data-home-game="${escapeHtml(game.name)}" data-open-guide-card="${slug}" aria-label="Abrir guia de ${escapeHtml(game.name)}">

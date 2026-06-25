@@ -29,6 +29,10 @@ window.UIHome = (() => {
     return String(value || '').trim().toLowerCase();
   }
 
+  function stripMarkdownHeadingPrefix(value = '') {
+    return String(value || '').replace(/^\s{0,3}#{1,6}\s+/, '').trim();
+  }
+
   function isHomeRoute() {
     if (typeof window === 'undefined') return false;
     const path = window.location?.pathname || '/';
@@ -278,7 +282,7 @@ window.UIHome = (() => {
           </div>
           <div class="atlas-card__body">
             <div class="atlas-card__badges">${renderHomeEditorialBadge(model)}<span class="atlas-card__status atlas-badge atlas-badge--partial">Escolha editorial</span></div>
-            <h3 class="atlas-card__title">${escapeHtml(model.name)}</h3>
+            <h3 class="atlas-card__title">${escapeHtml(stripMarkdownHeadingPrefix(model.name))}</h3>
             <p class="atlas-card__reason">${escapeHtml(getFeaturedReason(game))}</p>
             <div class="atlas-card__meta">
               <span class="atlas-meta-signal ${escapeAttribute(model.difficultyClass)}"><i class="fas fa-gauge-high"></i>${escapeHtml(String(model.difficulty))}/10</span>
@@ -306,7 +310,7 @@ window.UIHome = (() => {
         <article class="atlas-editorial-update">
           <time datetime="${escapeAttribute(game.updated_at || game.created_at || '')}">${escapeHtml(updatedLabel)}</time>
           <div class="atlas-editorial-update__body">
-            <h3>${escapeHtml(game.name)}</h3>
+            <h3>${escapeHtml(stripMarkdownHeadingPrefix(game.name))}</h3>
             <p>${escapeHtml(getRevisionNote(game))}</p>
           </div>
           <a href="/jogo/${slug}" class="atlas-editorial-update__link" data-home-game="${escapeAttribute(game.name)}" data-open-guide-card="${slug}" aria-label="Abrir guia de ${escapeAttribute(game.name)}">
@@ -345,7 +349,7 @@ window.UIHome = (() => {
             </div>
             <div class="atlas-card__body atlas-featured-game__body">
               <div class="atlas-card__badges">${renderHomeEditorialBadge(model)}</div>
-              <h3 class="atlas-card__title">${escapeHtml(model.name)}</h3>
+              <h3 class="atlas-card__title">${escapeHtml(stripMarkdownHeadingPrefix(model.name))}</h3>
               <p class="atlas-card__reason">${escapeHtml(reason)}</p>
               <div class="atlas-card__meta atlas-featured-game__meta" aria-label="Resumo da recomendação">
                 <span class="atlas-meta-signal atlas-meta-signal--time"><i class="fas fa-clock"></i>${escapeHtml(model.time)}</span>
@@ -375,7 +379,7 @@ window.UIHome = (() => {
             <span class="atlas-intent-card__label">${escapeHtml(item.tag)}</span>
             <i class="fas ${escapeAttribute(item.icon)}"></i>
           </div>
-          <strong>${escapeHtml(item.title)}</strong>
+          <strong>${escapeHtml(stripMarkdownHeadingPrefix(item.title))}</strong>
           <p>${escapeHtml(item.description)}</p>
           <span class="atlas-intent-card__meta">${escapeHtml(item.metric)}</span>
         </button>`).join('');

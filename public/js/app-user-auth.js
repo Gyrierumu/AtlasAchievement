@@ -153,6 +153,7 @@ window.AppUserAuth = (() => {
     if (!modal) return;
     modal.classList.remove('hidden');
     modal.setAttribute('aria-hidden', 'false');
+    modal.removeAttribute('inert');
     setAuthMode(mode);
   }
 
@@ -161,6 +162,7 @@ window.AppUserAuth = (() => {
     if (!modal) return;
     modal.classList.add('hidden');
     modal.setAttribute('aria-hidden', 'true');
+    modal.setAttribute('inert', '');
     setFeedback('#userAuthFeedback');
   }
 

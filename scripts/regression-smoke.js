@@ -208,6 +208,13 @@ function assertHtmlLoadsModules(relPath) {
     assert(html.includes('id="view-profile"'), 'public/index.html precisa expor a pagina/painel de perfil');
     assert(html.includes('id="homeBetaNotice"'), 'home precisa expor aviso beta no template');
     assert(html.includes('AtlasAchievement está em evolução'), 'aviso beta precisa comunicar evolução editorial no template');
+    assert(html.includes('id="homeBenefitsTitle"') && html.includes('Por que usar o Atlas'), 'home precisa expor a seção de diferenciais');
+    ['Ver sem spoiler', 'Checklist contínuo', 'Roadmap por etapas', 'Biblioteca pessoal'].forEach(label => {
+      assert(html.includes(label), `home precisa manter o diferencial ${label}`);
+    });
+    assert(!html.includes('Melhor primeiro clique agora'), 'home não deve manter destaque isolado que duplica os cards editoriais');
+    assert(!html.includes('Ver guias em destaque'), 'hero deve manter apenas um CTA editorial principal');
+    assert(!html.includes('Quem faz o Atlas') && !html.includes('Feito por jogadores brasileiros'), 'home não deve incluir a seção de autoria vetada');
   }
 
   if (relPath === 'public/admin.html') {
@@ -8790,10 +8797,14 @@ async function assertBackendEditorialConsistency() {
     assert(!homeHtml.includes('__PAGE_'), 'SSR / nao deve vazar placeholders do template');
     assert(homeHtml.includes('roadmap, checklist, filtros de risco e progresso salvo'), 'home deve explicar a proposta de platina no H1');
     assert(homeHtml.includes('Encontrar minha próxima platina'), 'home deve expor CTA principal para o catalogo');
+    assert(!homeHtml.includes('Ver guias em destaque'), 'SSR da home deve manter apenas um CTA editorial principal');
     assert(homeHtml.includes('id="homeBetaNotice"'), 'home deve renderizar aviso beta');
     assert(homeHtml.includes('Guias verificados passam por revisão editorial'), 'aviso beta deve comunicar evolucao editorial');
+    assert(homeHtml.includes('id="homeBenefitsTitle"') && homeHtml.includes('Por que usar o Atlas'), 'SSR da home deve renderizar a seção de diferenciais');
+    assert(!homeHtml.includes('id="featuredNowOverview"') && !homeHtml.includes('Melhor primeiro clique agora'), 'SSR da home não deve duplicar um jogo em destaque isolado');
+    assert(!homeHtml.includes('Quem faz o Atlas') && !homeHtml.includes('Feito por jogadores brasileiros'), 'SSR da home não deve incluir a seção de autoria vetada');
     assert(homeHtml.includes('atlas-home-image-shell'), 'home deve renderizar imagens com fallback visual');
-    assert(homeHtml.includes('atlas-featured-game__cover atlas-home-image-shell'), 'destaque da home deve usar shell de imagem compacto');
+    assert(homeHtml.includes('atlas-discovery-card__media atlas-home-image-shell'), 'cards em destaque da home devem usar shell de imagem');
     assert(!/>\s*0 op/i.test(homeHtml), 'home nao deve exibir cards de momento com zero opcoes');
     assert(/window\.__APP_VERSION__\s*=/.test(homeHtml), 'SSR / deve expor versao publica do app para invalidacao tecnica');
 

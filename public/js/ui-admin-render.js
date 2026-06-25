@@ -646,6 +646,7 @@ window.UIAdminRender = (() => {
     modalState.lastFocused = document.activeElement instanceof HTMLElement ? document.activeElement : null;
     modal.classList.remove('hidden');
     modal.setAttribute('aria-hidden', 'false');
+    modal.removeAttribute('inert');
     document.body.classList.add('modal-open');
     document.addEventListener('keydown', handleAdminModalKeydown);
     if (qs('#adminUsername')) qs('#adminUsername').focus();
@@ -655,6 +656,7 @@ window.UIAdminRender = (() => {
     if (!modal) return;
     modal.classList.add('hidden');
     modal.setAttribute('aria-hidden', 'true');
+    modal.setAttribute('inert', '');
     document.body.classList.remove('modal-open');
     document.removeEventListener('keydown', handleAdminModalKeydown);
     if (qs('#adminLoginForm')) qs('#adminLoginForm').reset();

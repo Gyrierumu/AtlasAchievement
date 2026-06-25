@@ -121,6 +121,7 @@ window.AppLibraryController = (() => {
       }
       modal.classList.remove('hidden');
       modal.setAttribute('aria-hidden', 'false');
+      modal.removeAttribute('inert');
     }
 
     function closeImportPrompt() {
@@ -128,6 +129,7 @@ window.AppLibraryController = (() => {
       if (!modal) return;
       modal.classList.add('hidden');
       modal.setAttribute('aria-hidden', 'true');
+      modal.setAttribute('inert', '');
     }
 
     function maybePromptLocalImport() {

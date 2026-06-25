@@ -12,6 +12,7 @@ window.AppFeedback = (() => {
     if (!modal) return;
     modal.classList.toggle('hidden', !open);
     modal.setAttribute('aria-hidden', open ? 'false' : 'true');
+    modal.toggleAttribute('inert', !open);
     document.body?.classList.toggle('atlas-feedback-open', open);
     if (open) {
       prepareForm();
