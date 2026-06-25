@@ -236,7 +236,7 @@ window.UI = (() => {
       : 'AtlasAchievement — Guias de troféus e platina em português';
     const description = game
       ? buildGameSeoDescription(game)
-      : 'Escolha sua próxima platina com tempo estimado, dificuldade, roadmap, checklist, troféus perdíveis, online/coop e guias em português.';
+      : 'Guias de platina em português com roadmap, checklist, filtros de risco, progresso salvo, tempo estimado, dificuldade, perdíveis e requisitos online.';
     const canonical = game?.slug ? `${publicOrigin}/jogo/${game.slug}` : `${publicOrigin}/`;
     const image = !game?.image
       ? `${publicOrigin}/assets/brand/atlasachievement-og.png`

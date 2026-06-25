@@ -812,15 +812,32 @@
   }
 
   function getHomeFeaturedReason(game = {}) {
+    const slug = String(game?.slug || '').trim().toLowerCase();
+    const editorialReasons = {
+      'astro-bot': 'Boa opção para uma platina curta, acessível e com cleanup bem sinalizado.',
+      'resident-evil-2-remake': 'Ideal para quem quer desafio moderado com runs e riscos bem planejados.',
+      'resident-evil': 'Boa escolha para organizar campanhas, restrições e finais por run.',
+      'ghost-of-tsushima': 'Platina longa, mas limpa, com campanha e colecionáveis bem separados.',
+      'god-of-war': 'Boa escolha para uma campanha forte e um cleanup controlado pelos reinos.',
+      'the-last-of-us-part-i': 'Campanha compacta, dificuldade acessível e cleanup por seleção de capítulos.',
+      'the-last-of-us-part-ii': 'Boa opção para campanha densa com colecionáveis e NG+ bem organizados.',
+      'elden-ring': 'Melhor para quem busca desafio alto com finais e riscos planejados por save.',
+      'hades': 'Projeto longo para quem gosta de progresso constante entre runs e checklist.',
+      'hades-ii': 'Desafio longo com profecias, relações e recursos para acompanhar entre runs.'
+    };
+    if (editorialReasons[slug]) return editorialReasons[slug];
+
     const difficulty = Number(game?.difficulty || 0);
     const roadmapCount = getRoadmapCount(game);
     const timeValue = getTimeValue(game);
     const hasRisk = hasGuideRisk(game);
 
-    if (roadmapCount >= 4 && hasRisk) return 'Roadmap forte para entrar sem perder a rota.';
-    if (roadmapCount >= 4) return 'Roadmap claro para começar sem improviso.';
-    if (Number.isFinite(timeValue) && timeValue <= 15 && difficulty > 0 && difficulty <= 4) return 'Curta, legível e com baixo atrito.';
-    return 'Tempo, dificuldade e rota em bom equilíbrio.';
+    if (roadmapCount >= 4 && hasRisk) return 'Boa escolha para quem prefere entrar com riscos e ordem da platina planejados.';
+    if (Number.isFinite(timeValue) && timeValue <= 15 && difficulty > 0 && difficulty <= 4) return 'Melhor para quem busca uma platina curta, direta e de baixa dificuldade.';
+    if (Number.isFinite(timeValue) && timeValue > 40) return 'Projeto longo para quem quer acompanhar cada etapa com uma rota organizada.';
+    if (difficulty >= 7) return 'Ideal para quem procura desafio alto com pontos de atenção bem mapeados.';
+    if (roadmapCount >= 4) return 'Boa opção para seguir uma rota clara da campanha até a finalização.';
+    return 'Uma escolha equilibrada para comparar tempo, dificuldade e esforço antes de começar.';
   }
 
   function getHomeVerifiedPriorityIndex(game = {}) {
@@ -867,11 +884,43 @@
   }
 
   function getHomeRevisionNote(game = {}) {
+    const slug = String(game?.slug || '').trim().toLowerCase();
+    const editorialNotes = {
+      'elden-ring': 'Roadmap revisado para organizar finais, pontos de atenção e cleanup por save.',
+      'ghost-of-tsushima': 'Revisão focada em campanha, colecionáveis e cleanup livre no pós-jogo.',
+      'hades': 'Checklist revisado para acompanhar diálogos, recursos e progresso entre runs.',
+      'hades-ii': 'Guia atualizado para ordenar profecias, relações e recursos ao longo das runs.',
+      'astro-bot': 'Revisão focada em colecionáveis, seleção de fases e limpeza pelo hub.',
+      'astros-playroom': 'Checklist ajustado para facilitar colecionáveis, fases e cleanup na CPU Plaza.',
+      'resident-evil-4-remake': 'Roadmap ajustado para separar campanha, restrições de run e finalização.',
+      'mortal-shell': 'Revisão concentrada nos desafios de run e nos pontos que pedem planejamento.',
+      'nioh-2': 'Guia revisado para organizar missões, proficiências e limpeza por replay.',
+      'nioh-3': 'Checklist atualizado para separar campanha, pós-jogo e pendências de exploração.',
+      'black-myth-wukong': 'Roadmap revisado para destacar perdíveis por capítulo e reduzir retrabalho.',
+      'heavy-rain': 'Checklist ajustado para organizar escolhas, finais e epílogos com Chapter Select.',
+      'hollow-knight-silksong': 'Guia atualizado com foco no desafio alto, finais e metas de tempo.',
+      'lego-batman-legacy-of-the-dark-knight': 'Roadmap revisto para organizar campanha, replay e cleanup durante o ajuste editorial.',
+      'clair-obscur-expedition-33': 'Revisão focada na ordem da campanha, nos riscos e na finalização da platina.',
+      'monster-hunter-world': 'Guia atualizado com foco em tempo estimado, grind e organização da lista.',
+      'dead-cells': 'Checklist revisado para organizar progressão, chefes e objetivos por run.',
+      'reanimal': 'Leitura editorial atualizada para destacar esforço, rota e pontos de atenção.',
+      'a-way-out': 'Revisão focada em coop obrigatório, capítulos e limpeza dos objetivos restantes.'
+    };
+    if (editorialNotes[slug]) return editorialNotes[slug];
+
     const roadmapCount = getRoadmapCount(game);
     const hasRisk = hasGuideRisk(game);
-    if (isCatalogVerified(game)) return roadmapCount >= 3
-      ? 'Guia verificado com roadmap pronto para orientar o próximo clique.'
-      : 'Guia verificado editorialmente para consulta segura.';
+    const slugSeed = [...slug].reduce((total, char) => total + char.charCodeAt(0), 0);
+    if (isCatalogVerified(game) && roadmapCount >= 3) {
+      const verifiedNotes = [
+        'Revisão recente da rota, dos alertas e da leitura rápida da platina.',
+        'Checklist editorial ajustado para deixar etapas e pontos de atenção mais claros.',
+        'Guia atualizado com foco em tempo, dificuldade e sequência recomendada.',
+        'Roadmap revisado para facilitar a consulta antes e durante a campanha.'
+      ];
+      return verifiedNotes[slugSeed % verifiedNotes.length];
+    }
+    if (isCatalogVerified(game)) return 'Leitura editorial atualizada para destacar esforço e pontos de atenção.';
     if (hasRisk && roadmapCount >= 3) return 'Riscos e roadmap merecem leitura antes do primeiro save.';
     if (roadmapCount >= 3) return 'Roadmap revisado para orientar a ordem da platina.';
     return 'Leitura editorial recente para validar o próximo clique.';

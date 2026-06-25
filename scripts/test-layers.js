@@ -209,9 +209,16 @@ async function validateHome() {
     assert(html.includes('Melhor primeiro clique agora'), 'Home deve renderizar Melhor primeiro clique agora');
     assert(html.includes('Destaques reais'), 'Home deve renderizar Destaques reais');
     assert(html.includes('Últimas revisões'), 'Home deve renderizar Ultimas revisoes');
-    assert(html.includes('Explorar guias'), 'Home deve manter CTA Explorar guias');
-    assert(html.includes('Ver destaques'), 'Home deve manter CTA Ver destaques');
+    assert(html.includes('Encontrar minha próxima platina'), 'Home deve manter CTA principal para encontrar platina');
+    assert(html.includes('Ver guias em destaque'), 'Home deve manter CTA Ver guias em destaque');
     assert(html.includes('Abrir guia'), 'Home deve manter links Abrir guia');
+    assert(!html.includes('id="view-catalog"'), 'Home nao deve pre-renderizar a tela completa de catalogo');
+    assert(!html.includes('id="view-library"'), 'Home nao deve pre-renderizar a tela completa de biblioteca');
+    assert(!html.includes('id="view-guide"'), 'Home nao deve pre-renderizar a tela completa de guia');
+    assert(!html.includes('id="view-profile"'), 'Home nao deve pre-renderizar a tela completa de perfil');
+    assert(!html.includes('id="guideQuickDock"'), 'Home nao deve incluir atalhos ocultos de guia');
+    assert(!html.includes('Checklist de troféus'), 'Home nao deve expor checklist bruto de paginas de jogo');
+    assert.strictEqual((html.match(/<h1\b/g) || []).length, 1, 'Home deve expor apenas um heading principal');
     assert(featuredSection.includes('Astro Bot'), 'Melhor primeiro clique agora deve usar Astro Bot como guia verificado de entrada');
     assert(featuredSection.includes('Verificado'), 'Melhor primeiro clique agora deve exibir guia Verificado');
     assert(!featuredSection.includes('Em revisão'), 'Melhor primeiro clique agora nao deve exibir guia Em revisao');

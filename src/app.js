@@ -43,7 +43,7 @@ const APP_VERSION = [
   process.env.APP_VERSION || process.env.RENDER_GIT_COMMIT || process.env.COMMIT_SHA || process.env.SOURCE_VERSION || process.env.BUILD_ID || process.env.RENDER_SERVICE_ID || ''
 ].filter(Boolean).join('-');
 const HOME_SEO_TITLE = 'AtlasAchievement — Guias de troféus e platina em português';
-const HOME_SEO_DESCRIPTION = 'Escolha sua próxima platina com tempo estimado, dificuldade, roadmap, checklist, troféus perdíveis, online/coop e guias em português.';
+const HOME_SEO_DESCRIPTION = 'Guias de platina em português com roadmap, checklist, filtros de risco, progresso salvo, tempo estimado, dificuldade, perdíveis e requisitos online.';
 const INSTITUTIONAL_KICKER_STYLE = 'letter-spacing:0;';
 const REQUIEM_EDITORIAL_SUMMARY = [
   'Resident Evil Requiem combina campanha, coletáveis, objetivos situacionais e runs condicionais. A platina gira em torno de acompanhar saves manuais, controlar arquivos e colecionáveis, separar troféus de personagem e planejar restrições como speedrun, cura e uso do Blood Collector.',
@@ -1043,8 +1043,9 @@ function renderHomeDiscoveryGuidesHtml(games = []) {
           ${renderHomeImageHtml(model, 'atlas-card__image', { width: 600, height: 900, sizes: '(min-width: 1024px) 20vw, (min-width: 640px) 28vw, 42vw' })}
         </div>
         <div class="atlas-card__body">
-          <div class="atlas-card__badges">${renderEditorialBadgeHtml(model.statusBadge, { small: true })}<span class="atlas-card__status atlas-badge atlas-badge--partial">Novo guia</span></div>
+          <div class="atlas-card__badges">${renderEditorialBadgeHtml(model.statusBadge, { small: true })}<span class="atlas-card__status atlas-badge atlas-badge--partial">Escolha editorial</span></div>
           <h3 class="atlas-card__title">${escapeHtml(model.name)}</h3>
+          <p class="atlas-card__reason">${escapeHtml(getHomeFeaturedReason(game))}</p>
           <div class="atlas-card__meta">
             <span class="atlas-meta-signal ${escapeHtml(model.difficultyClass)}"><i class="fas fa-gauge-high"></i>${escapeHtml(String(model.difficulty))}/10</span>
             <span class="atlas-meta-signal atlas-meta-signal--time"><i class="fas fa-clock"></i>${escapeHtml(model.time)}</span>
@@ -2246,6 +2247,15 @@ function stripGuidePageUnusedDom(html = '') {
   return next;
 }
 
+function stripHomePageUnusedDom(html = '') {
+  let next = html;
+  ['view-catalog', 'view-seo-page', 'view-library', 'view-guide', 'view-profile'].forEach(id => {
+    next = removeElementById(next, 'section', id);
+  });
+  next = removeElementById(next, 'nav', 'guideQuickDock');
+  return next;
+}
+
 async function buildGamePageHtml(game, req) {
   const origin = getPublicOrigin(req);
   const normalizedSlug = String(game?.slug || '').trim().toLowerCase();
@@ -2333,7 +2343,7 @@ async function buildDefaultPageHtml(req) {
   const totalTrophies = games.reduce((sum, game) => sum + getHomeTotal(game), 0);
   const totalRoadmaps = games.reduce((sum, game) => sum + getHomeRoadmapCount(game), 0);
 
-  return applyTemplateDefaults(publicIndexTemplate
+  return stripHomePageUnusedDom(applyTemplateDefaults(publicIndexTemplate
     .replace(/__PAGE_TITLE__/g, HOME_SEO_TITLE)
     .replace(/__PAGE_DESCRIPTION__/g, HOME_SEO_DESCRIPTION)
     .replace(/__ROBOTS_META__/g, '')
@@ -2352,7 +2362,7 @@ async function buildDefaultPageHtml(req) {
     .replace(/__HOME_FEATURED_NOW__/g, renderHomeFeaturedGameHtml(games))
     .replace(/__HOME_RECENT_GUIDES__/g, renderHomeDiscoveryGuidesHtml(byRecent))
     .replace(/__HOME_UPDATED_GUIDES__/g, renderHomeEditorialHistoryHtml(byUpdated))
-    .replace(/__INITIAL_STATE_SCRIPT__/g, buildInitialStateScript({ page: 'home', homeUpdate })));
+    .replace(/__INITIAL_STATE_SCRIPT__/g, buildInitialStateScript({ page: 'home', homeUpdate }))));
 }
 
 async function buildStaticPublicPageHtml(req, pageConfig = {}) {

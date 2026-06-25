@@ -277,8 +277,9 @@ window.UIHome = (() => {
             ${renderHomeImage(model, 'atlas-card__image', { width: 600, height: 900, sizes: '(min-width: 1024px) 20vw, (min-width: 640px) 28vw, 42vw' })}
           </div>
           <div class="atlas-card__body">
-            <div class="atlas-card__badges">${renderHomeEditorialBadge(model)}<span class="atlas-card__status atlas-badge atlas-badge--partial">Novo guia</span></div>
+            <div class="atlas-card__badges">${renderHomeEditorialBadge(model)}<span class="atlas-card__status atlas-badge atlas-badge--partial">Escolha editorial</span></div>
             <h3 class="atlas-card__title">${escapeHtml(model.name)}</h3>
+            <p class="atlas-card__reason">${escapeHtml(getFeaturedReason(game))}</p>
             <div class="atlas-card__meta">
               <span class="atlas-meta-signal ${escapeAttribute(model.difficultyClass)}"><i class="fas fa-gauge-high"></i>${escapeHtml(String(model.difficulty))}/10</span>
               <span class="atlas-meta-signal atlas-meta-signal--time"><i class="fas fa-clock"></i>${escapeHtml(model.time)}</span>

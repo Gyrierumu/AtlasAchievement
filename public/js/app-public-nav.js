@@ -278,7 +278,13 @@ window.AppPublicNav = (() => {
       const viewTrigger = event.target.closest('[data-view-link]');
       if (viewTrigger) {
         event.preventDefault();
-        navigate(viewTrigger.dataset.viewLink, { resetScroll: true });
+        const view = viewTrigger.dataset.viewLink;
+        if (view && !UI.qs(`#view-${view}`)) {
+          const path = getStaticViewPath(view, state, facet => window.AppCatalog?.getCatalogPath?.(facet) || '/catalogo');
+          if (path) window.location.href = path;
+          return;
+        }
+        navigate(view, { resetScroll: true });
         return;
       }
 
@@ -294,6 +300,10 @@ window.AppPublicNav = (() => {
       if (facetTrigger) {
         event.preventDefault();
         state.catalogFacet = facetTrigger.dataset.homeFacet || 'all';
+        if (!UI.qs('#view-catalog')) {
+          window.location.href = window.AppCatalog?.getCatalogPath?.(state.catalogFacet) || '/catalogo';
+          return;
+        }
         state.catalogPage = 1;
         await loadCatalogPage({ page: 1, facet: state.catalogFacet });
         navigate('catalog', { facet: state.catalogFacet });
@@ -302,13 +312,19 @@ window.AppPublicNav = (() => {
 
       const gameTrigger = event.target.closest('[data-home-game]');
       if (gameTrigger) {
-        event.preventDefault();
         window.AtlasAnalytics?.trackGameCardClick?.({
           element: gameTrigger,
           gameSlug: gameTrigger.dataset.openGuideCard || '',
           gameTitle: gameTrigger.dataset.homeGame || '',
           origin: 'home'
         });
+        if (!UI.qs('#view-guide')) {
+          if (gameTrigger.tagName === 'A' && gameTrigger.href) return;
+          const slug = gameTrigger.dataset.openGuideCard || '';
+          if (slug) window.location.href = `/jogo/${encodeURIComponent(slug)}`;
+          return;
+        }
+        event.preventDefault();
         await loadGuideByName(gameTrigger.dataset.homeGame, { analyticsSource: 'home' });
         return;
       }
