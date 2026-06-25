@@ -211,6 +211,11 @@ function assertHtmlLoadsModules(relPath) {
     assert(html.includes('id="homeBenefitsTitle"') && html.includes('Por que usar o Atlas'), 'home precisa expor a seção de diferenciais');
     assert(html.includes('Guias para escolher a próxima platina'), 'home precisa manter o título editorial da seção de guias');
     assert(html.includes('Últimas revisões'), 'home precisa manter a seção de revisões');
+    ['Explorar todos', 'Ver catálogo completo', 'Ver guias revisados'].forEach(label => {
+      assert(html.includes(label), `home precisa expor o CTA de seção ${label}`);
+    });
+    assert(html.includes('placeholder="Digite o nome de um jogo"'), 'busca da home precisa de placeholder direto');
+    assert(html.includes('aria-label="Buscar um jogo pelo nome"'), 'busca da home precisa de nome acessível');
     ['Ver sem spoiler', 'Checklist contínuo', 'Roadmap por etapas', 'Biblioteca pessoal'].forEach(label => {
       assert(html.includes(label), `home precisa manter o diferencial ${label}`);
     });

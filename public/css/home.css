@@ -190,6 +190,67 @@
   gap: 10px;
 }
 
+.atlas-home-primary-cta {
+  min-height: 52px !important;
+  padding-inline: 22px !important;
+  font-size: .98rem;
+  box-shadow:
+    0 16px 34px rgba(14, 165, 233, .28),
+    0 0 28px rgba(250, 204, 21, .14) !important;
+}
+
+.atlas-home-section-cta {
+  min-height: 42px;
+  height: 42px;
+  padding-inline: 14px;
+  border-radius: 14px;
+  font-size: .82rem;
+  white-space: nowrap;
+}
+
+.atlas-search-wrap--home {
+  max-width: 760px;
+  border-color: rgba(148, 163, 184, .14);
+  background: rgba(3, 7, 18, .58);
+  box-shadow: inset 0 1px 0 rgba(255, 255, 255, .035);
+}
+
+.atlas-search-wrap--home .atlas-search-input {
+  min-height: 56px;
+}
+
+#gameInput:focus-visible {
+  outline: 2px solid rgba(125, 211, 252, .92);
+  outline-offset: 3px;
+  border-color: rgba(125, 211, 252, .62);
+  box-shadow:
+    0 0 0 4px rgba(56, 189, 248, .12),
+    inset 0 1px 0 rgba(255, 255, 255, .05);
+}
+
+.atlas-search-wrap--home .atlas-search-btn {
+  min-width: 132px;
+  height: 48px;
+  border: 1px solid rgba(125, 211, 252, .18);
+  color: rgba(240, 249, 255, .92);
+  background: rgba(14, 165, 233, .12);
+  box-shadow: none;
+  font-size: .88rem;
+}
+
+.atlas-search-wrap--home .atlas-search-btn:hover {
+  border-color: rgba(125, 211, 252, .34);
+  background: rgba(14, 165, 233, .18);
+}
+
+.atlas-search-wrap--home .atlas-search-btn:focus-visible,
+.atlas-home-section-cta:focus-visible,
+.atlas-intent-card:focus-visible,
+.atlas-editorial-update__link:focus-visible {
+  outline: 2px solid rgba(125, 211, 252, .92);
+  outline-offset: 3px;
+}
+
 .atlas-home-section__head h2,
 .atlas-home-feed__head h2 {
   letter-spacing: 0;
@@ -531,6 +592,18 @@
 
 .atlas-home-feed__head {
   margin-bottom: 12px;
+}
+
+.atlas-home-feed__title-row {
+  display: flex;
+  align-items: flex-end;
+  justify-content: space-between;
+  gap: 14px;
+  flex-wrap: wrap;
+}
+
+.atlas-home-feed__title-row > div {
+  min-width: 0;
 }
 
 .atlas-home-feed__head p {
@@ -895,5 +968,19 @@
 @media (max-width: 640px) {
   .atlas-home-benefits__grid {
     grid-template-columns: minmax(0, 1fr);
+  }
+
+  .atlas-home-primary-cta,
+  .atlas-home-section-cta {
+    width: 100%;
+  }
+
+  .atlas-home-section-cta {
+    min-height: 44px;
+    height: auto;
+  }
+
+  .atlas-home-feed__title-row {
+    align-items: stretch;
   }
 }

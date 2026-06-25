@@ -109,9 +109,13 @@
             Escolha sua próxima platina com estimativas de tempo, dificuldade, troféus perdíveis, requisitos online e etapas organizadas para jogar sem se perder.
           </p>
 
-          <div class="mt-5 atlas-search-wrap atlas-search-wrap--home">
+          <div class="mt-5 flex flex-wrap gap-3 max-w-[780px] atlas-home-cta-row">
+            <button type="button" data-view-link="catalog" class="atlas-btn atlas-btn-primary atlas-home-primary-cta"><i class="fas fa-scale-balanced"></i> Encontrar minha próxima platina</button>
+          </div>
+
+          <div class="mt-4 atlas-search-wrap atlas-search-wrap--home">
             <div class="relative atlas-search-control">
-              <input id="gameInput" type="text" placeholder="Digite um jogo para decidir a próxima platina" class="w-full atlas-search-input outline-none" autocomplete="off" role="combobox" aria-autocomplete="list" aria-expanded="false" aria-controls="suggestions" aria-describedby="searchFeedback">
+              <input id="gameInput" type="text" placeholder="Digite o nome de um jogo" class="w-full atlas-search-input outline-none" autocomplete="off" role="combobox" aria-label="Buscar um jogo pelo nome" aria-autocomplete="list" aria-expanded="false" aria-controls="suggestions" aria-describedby="searchFeedback">
               <button id="btnLoad" class="atlas-search-btn" aria-label="Buscar guia do jogo">
                 <i class="fas fa-magnifying-glass"></i>
                 <span>Buscar guia</span>
@@ -119,10 +123,6 @@
               <div id="suggestions" class="absolute top-full left-0 right-0 atlas-suggestion-panel mt-3 hidden z-20 max-h-72 overflow-y-auto" role="listbox" aria-label="Sugestões de jogos"></div>
             </div>
             <div id="searchFeedback" class="mt-3 text-sm text-white/50" aria-live="polite">Compare antes de começar: tempo, dificuldade, perdíveis, online e roadmap.</div>
-          </div>
-
-          <div class="mt-4 flex flex-wrap gap-3 max-w-[780px] atlas-home-cta-row">
-            <button type="button" data-view-link="catalog" class="atlas-btn atlas-btn-primary"><i class="fas fa-scale-balanced"></i> Encontrar minha próxima platina</button>
           </div>
 
           <p id="homeCatalogProofText" class="mt-6 atlas-home-proof" aria-label="Resumo do catálogo">__HOME_CATALOG_PROOF__</p>
@@ -140,7 +140,7 @@
             <h2 id="homeMomentTitle" class="text-[28px] md:text-[34px] font-extrabold tracking-tight">Escolha pelo seu momento</h2>
             <p class="text-white/58 mt-3 max-w-3xl">Entre pelo tipo de compromisso que combina com sua sessão de agora.</p>
           </div>
-          <button type="button" data-view-link="catalog" class="atlas-btn atlas-btn-secondary"><i class="fas fa-compass"></i> Ver todas as faixas</button>
+          <a href="/catalogo" data-view-link="catalog" class="atlas-btn atlas-btn-secondary atlas-home-section-cta"><i class="fas fa-compass"></i> Explorar todos</a>
         </div>
         <div id="intentOverview" class="atlas-region grid lg:grid-cols-4 md:grid-cols-2 gap-4">__HOME_INTENT_CARDS__</div>
       </section>
@@ -188,10 +188,13 @@
         <div class="atlas-home-feed-grid">
           <section class="atlas-home-feed atlas-home-feed--discovery" aria-labelledby="homeDiscoveryTitle">
             <div class="atlas-home-feed__head">
-              <div>
-                <span class="atlas-section-kicker">Destaques editoriais</span>
-                <h2 id="homeDiscoveryTitle" class="text-[24px] md:text-[30px] font-extrabold tracking-tight mt-2">Guias para escolher a próxima platina</h2>
-                <p class="text-white/55 mt-2 max-w-2xl">Uma seleção editorial para comparar ritmo, desafio e organização antes de começar.</p>
+              <div class="atlas-home-feed__title-row">
+                <div>
+                  <span class="atlas-section-kicker">Destaques editoriais</span>
+                  <h2 id="homeDiscoveryTitle" class="text-[24px] md:text-[30px] font-extrabold tracking-tight mt-2">Guias para escolher a próxima platina</h2>
+                  <p class="text-white/55 mt-2 max-w-2xl">Uma seleção editorial para comparar ritmo, desafio e organização antes de começar.</p>
+                </div>
+                <a href="/catalogo" data-view-link="catalog" class="atlas-btn atlas-btn-secondary atlas-home-section-cta">Ver catálogo completo</a>
               </div>
             </div>
             <div id="recentGamesOverview" class="atlas-region atlas-discovery-grid">__HOME_RECENT_GUIDES__</div>
@@ -199,10 +202,13 @@
 
           <section class="atlas-home-feed atlas-home-feed--history" aria-labelledby="homeHistoryTitle">
             <div class="atlas-home-feed__head">
-              <div>
-                <span class="atlas-section-kicker">Histórico editorial</span>
-                <h2 id="homeHistoryTitle" class="text-[26px] md:text-[32px] font-extrabold tracking-tight mt-3">Últimas revisões</h2>
-                <p class="text-white/55 mt-2 max-w-xl">Ajustes recentes em roadmaps, checklists e pontos de atenção dos guias.</p>
+              <div class="atlas-home-feed__title-row">
+                <div>
+                  <span class="atlas-section-kicker">Histórico editorial</span>
+                  <h2 id="homeHistoryTitle" class="text-[26px] md:text-[32px] font-extrabold tracking-tight mt-3">Últimas revisões</h2>
+                  <p class="text-white/55 mt-2 max-w-xl">Ajustes recentes em roadmaps, checklists e pontos de atenção dos guias.</p>
+                </div>
+                <a href="/catalogo" data-view-link="catalog" class="atlas-btn atlas-btn-secondary atlas-home-section-cta">Ver guias revisados</a>
               </div>
             </div>
             <div id="updatedGamesOverview" class="atlas-region atlas-editorial-timeline">__HOME_UPDATED_GUIDES__</div>

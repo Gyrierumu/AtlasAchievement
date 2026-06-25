@@ -956,12 +956,13 @@ function stripMarkdownHeadingPrefix(value = '') {
 function renderHomeImageHtml(model = {}, imageClass = 'atlas-card__image', options = {}) {
   const name = model.name || 'Jogo';
   const source = model.image || '';
+  const alt = options.alt || `Capa de ${name}`;
   const width = options.width || 520;
   const height = options.height || 320;
   const sizes = options.sizes || '100vw';
   return `
     <span class="atlas-home-image-fallback" aria-hidden="true">${escapeHtml(name)}</span>
-    ${source ? `<img src="${escapeHtml(source)}" alt="${escapeHtml(name)}" class="${escapeHtml(imageClass)}" loading="${escapeHtml(options.loading || 'lazy')}" decoding="${escapeHtml(options.decoding || 'async')}" width="${escapeHtml(String(width))}" height="${escapeHtml(String(height))}" sizes="${escapeHtml(sizes)}" onerror="this.hidden=true;this.parentElement.classList.add('atlas-home-image-shell--fallback-visible');">` : ''}
+    ${source ? `<img src="${escapeHtml(source)}" alt="${escapeHtml(alt)}" class="${escapeHtml(imageClass)}" loading="${escapeHtml(options.loading || 'lazy')}" decoding="${escapeHtml(options.decoding || 'async')}" width="${escapeHtml(String(width))}" height="${escapeHtml(String(height))}" sizes="${escapeHtml(sizes)}" onerror="this.hidden=true;this.parentElement.classList.add('atlas-home-image-shell--fallback-visible');">` : ''}
     `;
 }
 

@@ -16,12 +16,13 @@ window.UIHome = (() => {
   function renderHomeImage(model = {}, imageClass = 'atlas-card__image', options = {}) {
     const name = model.name || 'Jogo';
     const source = model.image ? getGameImageSrc(model.image) : '';
+    const alt = options.alt || `Capa de ${name}`;
     const width = options.width || 520;
     const height = options.height || 320;
     const sizes = options.sizes || '100vw';
     return `
       <span class="atlas-home-image-fallback" aria-hidden="true">${escapeHtml(name)}</span>
-      ${source ? `<img src="${escapeAttribute(source)}" alt="${escapeAttribute(name)}" class="${escapeAttribute(imageClass)}" loading="${escapeAttribute(options.loading || 'lazy')}" decoding="${escapeAttribute(options.decoding || 'async')}" width="${escapeAttribute(String(width))}" height="${escapeAttribute(String(height))}" sizes="${escapeAttribute(sizes)}" onerror="this.hidden=true;this.parentElement.classList.add('atlas-home-image-shell--fallback-visible');">` : ''}
+      ${source ? `<img src="${escapeAttribute(source)}" alt="${escapeAttribute(alt)}" class="${escapeAttribute(imageClass)}" loading="${escapeAttribute(options.loading || 'lazy')}" decoding="${escapeAttribute(options.decoding || 'async')}" width="${escapeAttribute(String(width))}" height="${escapeAttribute(String(height))}" sizes="${escapeAttribute(sizes)}" onerror="this.hidden=true;this.parentElement.classList.add('atlas-home-image-shell--fallback-visible');">` : ''}
     `;
   }
 
