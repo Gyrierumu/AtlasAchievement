@@ -33,6 +33,13 @@ window.UIHome = (() => {
     return String(value || '').replace(/^\s{0,3}#{1,6}\s+/, '').trim();
   }
 
+  function sanitizeHomeHeadings() {
+    document.querySelectorAll('#view-home h1, #view-home h2, #view-home h3, #view-home h4').forEach(heading => {
+      const cleanText = stripMarkdownHeadingPrefix(heading.textContent);
+      if (cleanText !== heading.textContent.trim()) heading.textContent = cleanText;
+    });
+  }
+
   function isHomeRoute() {
     if (typeof window === 'undefined') return false;
     const path = window.location?.pathname || '/';
@@ -222,16 +229,15 @@ window.UIHome = (() => {
   }
 
   function renderHomeOverview(games = []) {
+    sanitizeHomeHeadings();
     const recentTarget = qs('#recentGamesOverview');
     const updatedTarget = qs('#updatedGamesOverview');
-    const featuredTarget = qs('#featuredNowOverview');
     const intentTarget = qs('#intentOverview');
     const catalogProofTarget = qs('#homeCatalogProofText');
 
     const getTotal = sharedCatalog.getGameTotal || (game => Number(game.trophy_count || game.trophies?.length || 0));
     const getRoadmapCount = sharedCatalog.getRoadmapCount || (game => Number(game.roadmap_count || game.roadmap?.length || 0));
     const hasRisk = sharedCatalog.hasGuideRisk || (game => Number(game.missable_count || 0) > 0 || hasMissableRiskText(game.missable || game.missable_summary || ''));
-    const getRecommendationScore = sharedCatalog.getHomeRecommendationScore || (() => 0);
     const formatHomeCatalogProof = sharedCatalog.formatHomeCatalogProof || ((gamesCount = 0, totalTrophies = 0, totalRoadmaps = 0) => {
       if (!Number(gamesCount || 0) && !Number(totalTrophies || 0) && !Number(totalRoadmaps || 0)) {
         return 'Guias de platina com roadmap, checklist e progresso para acompanhar sua próxima run.';
@@ -242,10 +248,6 @@ window.UIHome = (() => {
     const getRevisionNote = sharedCatalog.getHomeRevisionNote || (() => 'Leitura editorial recente para validar o próximo clique.');
     const byRecent = [...games].sort((a, b) => String(b.created_at || '').localeCompare(String(a.created_at || '')));
     const byUpdated = [...games].sort((a, b) => String(b.updated_at || '').localeCompare(String(a.updated_at || '')));
-    const featuredShowcase = typeof sharedCatalog.selectHomeShowcaseGames === 'function'
-      ? sharedCatalog.selectHomeShowcaseGames(games, 1)
-      : [];
-    const featuredGame = featuredShowcase[0] || [...games].sort((a, b) => getRecommendationScore(b) - getRecommendationScore(a))[0] || null;
     const totalTrophies = games.reduce((sum, game) => sum + getTotal(game), 0);
     const totalRoadmaps = games.reduce((sum, game) => sum + getRoadmapCount(game), 0);
 
@@ -321,49 +323,6 @@ window.UIHome = (() => {
       }).join('');
     };
 
-    if (featuredTarget) {
-      const featuredSection = featuredTarget.closest('[data-home-featured-section]');
-      if (!featuredGame) {
-        featuredTarget.innerHTML = '';
-        featuredSection?.classList.add('hidden');
-      } else {
-        featuredSection?.classList.remove('hidden');
-        const model = typeof sharedCard.buildStandardGameCardModel === 'function'
-          ? sharedCard.buildStandardGameCardModel(featuredGame)
-          : {
-            slug: featuredGame.slug || '',
-            name: featuredGame.name || 'Jogo',
-            image: getGameCoverSrc ? getGameCoverSrc(featuredGame) : (featuredGame.cover_image || featuredGame.image || ''),
-            difficulty: featuredGame.difficulty || '-',
-            time: featuredGame.time || 'Tempo não informado',
-            trophies: getTotal(featuredGame),
-            difficultyTone: getDifficultyTone(featuredGame.difficulty),
-            difficultyClass: getDifficultyToneClass(featuredGame.difficulty)
-          };
-        const reason = getFeaturedReason(featuredGame);
-        const slug = escapeAttribute(model.slug || '');
-        featuredTarget.innerHTML = `
-          <article class="atlas-card atlas-card--game atlas-card--featured atlas-featured-game" data-difficulty-tone="${escapeAttribute(model.difficultyTone)}">
-            <div class="atlas-card__media atlas-featured-game__cover atlas-home-image-shell${model.image ? '' : ' atlas-home-image-shell--fallback-visible'}">
-              ${renderHomeImage(model, 'atlas-card__image atlas-featured-game__image', { width: 600, height: 900, sizes: '(min-width: 1024px) 180px, 42vw' })}
-            </div>
-            <div class="atlas-card__body atlas-featured-game__body">
-              <div class="atlas-card__badges">${renderHomeEditorialBadge(model)}</div>
-              <h3 class="atlas-card__title">${escapeHtml(stripMarkdownHeadingPrefix(model.name))}</h3>
-              <p class="atlas-card__reason">${escapeHtml(reason)}</p>
-              <div class="atlas-card__meta atlas-featured-game__meta" aria-label="Resumo da recomendação">
-                <span class="atlas-meta-signal atlas-meta-signal--time"><i class="fas fa-clock"></i>${escapeHtml(model.time)}</span>
-                <span class="atlas-meta-signal ${escapeAttribute(model.difficultyClass)}"><i class="fas fa-gauge-high"></i>${escapeHtml(String(model.difficulty))}/10</span>
-                <span class="atlas-meta-signal atlas-meta-signal--trophy"><i class="fas fa-trophy"></i>${escapeHtml(String(model.trophies))} troféus</span>
-              </div>
-              <div class="atlas-card__actions">
-                <a href="/jogo/${slug}" class="atlas-btn atlas-btn-primary atlas-featured-game__cta" data-home-game="${escapeAttribute(model.name)}" data-open-guide-card="${slug}"><i class="fas fa-book-open"></i>Abrir guia</a>
-              </div>
-            </div>
-          </article>`;
-      }
-    }
-
     if (intentTarget) {
       const intentConfigs = typeof sharedCatalog.buildHomeIntentCardsModel === 'function'
         ? sharedCatalog.buildHomeIntentCardsModel(games)
@@ -388,6 +347,7 @@ window.UIHome = (() => {
 
     renderDiscoveryList(recentTarget, byRecent, 'Nenhum guia recente disponível.');
     renderEditorialHistory(updatedTarget, byUpdated, 'Nenhuma revisão recente disponível.');
+    sanitizeHomeHeadings();
     maybeShowHomeUpdatePopup(games);
   }
 

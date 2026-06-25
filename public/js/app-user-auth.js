@@ -152,6 +152,7 @@ window.AppUserAuth = (() => {
     const modal = document.querySelector('#userAuthModal');
     if (!modal) return;
     modal.classList.remove('hidden');
+    modal.hidden = false;
     modal.setAttribute('aria-hidden', 'false');
     modal.removeAttribute('inert');
     setAuthMode(mode);
@@ -161,6 +162,7 @@ window.AppUserAuth = (() => {
     const modal = document.querySelector('#userAuthModal');
     if (!modal) return;
     modal.classList.add('hidden');
+    modal.hidden = true;
     modal.setAttribute('aria-hidden', 'true');
     modal.setAttribute('inert', '');
     setFeedback('#userAuthFeedback');

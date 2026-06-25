@@ -945,10 +945,6 @@ function formatHomeCatalogProof(gamesCount = 0, totalTrophies = 0, totalRoadmaps
   return sharedCatalogModel.formatHomeCatalogProof(gamesCount, totalTrophies, totalRoadmaps);
 }
 
-function getHomeRecommendationScore(game = {}) {
-  return sharedCatalogModel.getHomeRecommendationScore(game);
-}
-
 function getHomeFeaturedReason(game = {}) {
   return sharedCatalogModel.getHomeFeaturedReason(game);
 }
@@ -991,43 +987,6 @@ function renderHomeIntentCardsHtml(games = []) {
       <p>${escapeHtml(item.description)}</p>
       <span class="atlas-intent-card__meta">${escapeHtml(item.metric)}</span>
     </button>`).join('');
-}
-
-function renderHomeFeaturedGameHtml(games = []) {
-  const showcase = typeof sharedCatalogModel.selectHomeShowcaseGames === 'function'
-    ? sharedCatalogModel.selectHomeShowcaseGames(games, 1)
-    : [];
-  const game = showcase[0] || [...games].sort((a, b) => getHomeRecommendationScore(b) - getHomeRecommendationScore(a))[0] || null;
-  if (!game) return '';
-  const model = sharedCardModel.buildStandardGameCardModel(game);
-  const slug = escapeHtml(model.slug);
-  const image = model.image;
-  const time = model.time;
-  const difficulty = model.difficulty;
-  const total = model.trophies;
-  const difficultyTone = model.difficultyTone;
-  const difficultyClass = model.difficultyClass;
-  const reason = getHomeFeaturedReason(game);
-
-  return `
-    <article class="atlas-card atlas-card--game atlas-card--featured atlas-featured-game" data-difficulty-tone="${escapeHtml(difficultyTone)}">
-      <div class="atlas-card__media atlas-featured-game__cover atlas-home-image-shell${image ? '' : ' atlas-home-image-shell--fallback-visible'}">
-        ${renderHomeImageHtml(model, 'atlas-card__image atlas-featured-game__image', { width: 600, height: 900, sizes: '(min-width: 1024px) 180px, 42vw' })}
-      </div>
-      <div class="atlas-card__body atlas-featured-game__body">
-        <div class="atlas-card__badges">${renderEditorialBadgeHtml(model.statusBadge, { small: true })}</div>
-        <h3 class="atlas-card__title">${escapeHtml(stripMarkdownHeadingPrefix(model.name))}</h3>
-        <p class="atlas-card__reason">${escapeHtml(reason)}</p>
-        <div class="atlas-card__meta atlas-featured-game__meta" aria-label="Resumo da recomendação">
-          <span class="atlas-meta-signal atlas-meta-signal--time"><i class="fas fa-clock"></i>${escapeHtml(time)}</span>
-          <span class="atlas-meta-signal ${escapeHtml(difficultyClass)}"><i class="fas fa-gauge-high"></i>${escapeHtml(String(difficulty))}/10</span>
-          <span class="atlas-meta-signal atlas-meta-signal--trophy"><i class="fas fa-trophy"></i>${escapeHtml(String(total))} troféus</span>
-        </div>
-        <div class="atlas-card__actions">
-          <a href="/jogo/${slug}" class="atlas-btn atlas-btn-primary atlas-featured-game__cta" data-home-game="${escapeHtml(model.name)}" data-open-guide-card="${slug}"><i class="fas fa-book-open"></i>Abrir guia</a>
-        </div>
-      </div>
-    </article>`;
 }
 
 function renderHomeDiscoveryGuidesHtml(games = []) {
@@ -2363,7 +2322,6 @@ async function buildDefaultPageHtml(req) {
     }))
     .replace(/__HOME_CATALOG_PROOF__/g, formatHomeCatalogProof(games.length, totalTrophies, totalRoadmaps))
     .replace(/__HOME_INTENT_CARDS__/g, renderHomeIntentCardsHtml(games))
-    .replace(/__HOME_FEATURED_NOW__/g, renderHomeFeaturedGameHtml(games))
     .replace(/__HOME_RECENT_GUIDES__/g, renderHomeDiscoveryGuidesHtml(byRecent))
     .replace(/__HOME_UPDATED_GUIDES__/g, renderHomeEditorialHistoryHtml(byUpdated))
     .replace(/__INITIAL_STATE_SCRIPT__/g, buildInitialStateScript({ page: 'home', homeUpdate }))));

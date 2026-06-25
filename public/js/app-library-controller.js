@@ -120,6 +120,7 @@ window.AppLibraryController = (() => {
         count.textContent = `${candidates.length} jogo(s) salvo(s) neste navegador`;
       }
       modal.classList.remove('hidden');
+      modal.hidden = false;
       modal.setAttribute('aria-hidden', 'false');
       modal.removeAttribute('inert');
     }
@@ -128,6 +129,7 @@ window.AppLibraryController = (() => {
       const modal = document.querySelector('#libraryImportModal');
       if (!modal) return;
       modal.classList.add('hidden');
+      modal.hidden = true;
       modal.setAttribute('aria-hidden', 'true');
       modal.setAttribute('inert', '');
     }

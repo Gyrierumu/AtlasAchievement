@@ -209,12 +209,17 @@ function assertHtmlLoadsModules(relPath) {
     assert(html.includes('id="homeBetaNotice"'), 'home precisa expor aviso beta no template');
     assert(html.includes('AtlasAchievement está em evolução'), 'aviso beta precisa comunicar evolução editorial no template');
     assert(html.includes('id="homeBenefitsTitle"') && html.includes('Por que usar o Atlas'), 'home precisa expor a seção de diferenciais');
+    assert(html.includes('Guias para escolher a próxima platina'), 'home precisa manter o título editorial da seção de guias');
+    assert(html.includes('Últimas revisões'), 'home precisa manter a seção de revisões');
     ['Ver sem spoiler', 'Checklist contínuo', 'Roadmap por etapas', 'Biblioteca pessoal'].forEach(label => {
       assert(html.includes(label), `home precisa manter o diferencial ${label}`);
     });
     assert(!html.includes('Melhor primeiro clique agora'), 'home não deve manter destaque isolado que duplica os cards editoriais');
     assert(!html.includes('Ver guias em destaque'), 'hero deve manter apenas um CTA editorial principal');
     assert(!html.includes('Quem faz o Atlas') && !html.includes('Feito por jogadores brasileiros'), 'home não deve incluir a seção de autoria vetada');
+    ['feedbackModal', 'userAuthModal', 'libraryImportModal', 'adminModal'].forEach(id => {
+      assert(new RegExp(`id="${id}"[^>]*aria-hidden="true"[^>]*inert[^>]*hidden`).test(html), `${id} precisa iniciar semanticamente oculto e inerte`);
+    });
   }
 
   if (relPath === 'public/admin.html') {

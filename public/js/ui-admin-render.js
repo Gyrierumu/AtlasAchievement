@@ -645,6 +645,7 @@ window.UIAdminRender = (() => {
     if (!modal) return;
     modalState.lastFocused = document.activeElement instanceof HTMLElement ? document.activeElement : null;
     modal.classList.remove('hidden');
+    modal.hidden = false;
     modal.setAttribute('aria-hidden', 'false');
     modal.removeAttribute('inert');
     document.body.classList.add('modal-open');
@@ -655,6 +656,7 @@ window.UIAdminRender = (() => {
     const modal = qs('#adminModal');
     if (!modal) return;
     modal.classList.add('hidden');
+    modal.hidden = true;
     modal.setAttribute('aria-hidden', 'true');
     modal.setAttribute('inert', '');
     document.body.classList.remove('modal-open');
