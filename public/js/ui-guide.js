@@ -1466,6 +1466,22 @@ window.UIGuide = (() => {
     return `<section class="atlas-related-suggestions md:col-span-2 space-y-4"><div class="atlas-decision-panel__header"><div><span class="atlas-section-kicker">Jogos relacionados</span><h2 class="text-lg md:text-xl font-extrabold mt-2">Guias parecidos para manter o ritmo</h2></div><span class="atlas-tag atlas-tag--soft">Descoberta</span></div><div class="atlas-related-suggestions__grid">${renderGuideRelatedCards(relatedGames)}</div></section>`;
   }
 
+  function renderGuideFeedbackCta(game = {}) {
+    const gameName = game?.name || '';
+    const slug = game?.slug || '';
+    return `
+      <section class="atlas-guide-feedback-cta atlas-panel atlas-panel--support" aria-labelledby="guideFeedbackCtaTitle">
+        <div class="atlas-guide-feedback-cta__copy">
+          <span class="atlas-section-kicker">Correção colaborativa</span>
+          <h2 id="guideFeedbackCtaTitle">Encontrou erro neste guia?</h2>
+          <p>Avise a equipe para revisarmos informações de troféus, roadmap, filtros ou pontos de atenção.</p>
+        </div>
+        <button type="button" class="atlas-btn atlas-btn-secondary atlas-guide-feedback-cta__button" data-guide-feedback-open="true" data-guide-feedback-game="${escapeAttribute(gameName)}" data-guide-feedback-slug="${escapeAttribute(slug)}">
+          <i class="fas fa-flag" aria-hidden="true"></i> Reportar problema
+        </button>
+      </section>`;
+  }
+
   function activateGuideTab(target = 'summary', options = {}) {
     const requested = target || 'summary';
     const panelTarget = requested === 'trophies' ? 'checklist' : requested;
@@ -1512,6 +1528,7 @@ window.UIGuide = (() => {
     const roadmapEl = qs('#guideRoadmapSlot');
     const relatedEl = qs('#guideRelatedOverview');
     const editorialNotesEl = qs('#guideEditorialNotes');
+    const guideFeedbackEl = qs('#guideFeedbackSlot');
     const isSaved = Boolean(state?.isSaved);
     const libraryEntry = state?.libraryEntry || null;
     const storageLabel = state?.storageLabel || 'Salvo neste navegador';
@@ -1618,6 +1635,9 @@ window.UIGuide = (() => {
     if (relatedEl) {
       relatedEl.innerHTML = renderGuideRelatedOverview(game, relatedGames, comparisonModel);
     }
+    if (guideFeedbackEl) {
+      guideFeedbackEl.innerHTML = renderGuideFeedbackCta(game);
+    }
 
     const progressLabel = qs('#progressPercent');
     const counterLabel = qs('#guideCounter');
@@ -1721,6 +1741,7 @@ window.UIGuide = (() => {
     renderGuideHeaderShell,
     renderGuideRelatedCards,
     renderGuideRelatedOverview,
+    renderGuideFeedbackCta,
     activateGuideTab,
     renderGuide,
     updateProgress,

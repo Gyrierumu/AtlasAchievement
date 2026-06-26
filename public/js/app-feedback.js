@@ -7,7 +7,36 @@ window.AppFeedback = (() => {
     return document.querySelector(selector);
   }
 
-  function setOpen(open) {
+  function getGuideSectionLabel(section = '') {
+    const labels = {
+      summary: 'Resumo',
+      roadmap: 'Roadmap',
+      checklist: 'Checklist',
+      trophies: 'Checklist',
+      details: 'Detalhes'
+    };
+    return labels[String(section || '').trim()] || 'Página de guia';
+  }
+
+  function buildGuideFeedbackMessage(context = {}) {
+    const gameName = String(context.gameName || context.game || inferRelatedGame() || '').trim();
+    const slug = String(context.slug || '').trim();
+    const pageUrl = String(context.pageUrl || window.location.href || '').trim();
+    const section = getGuideSectionLabel(context.section);
+    const lines = [
+      `Guia: ${gameName || 'Não identificado'}`,
+      `URL: ${pageUrl}`,
+      'Contexto: Página de guia',
+      `Seção: ${section}`,
+      'Tipo: Erro no guia',
+      '',
+      'Descreva aqui o problema encontrado:'
+    ];
+    if (slug) lines.splice(1, 0, `Slug: ${slug}`);
+    return lines.join('\n');
+  }
+
+  function setOpen(open, context = {}) {
     const modal = open
       ? window.AtlasModalFactories?.ensureFeedbackModal?.()
       : qs('#feedbackModal');
@@ -19,7 +48,7 @@ window.AppFeedback = (() => {
     modal.toggleAttribute('inert', !open);
     document.body?.classList.toggle('atlas-feedback-open', open);
     if (open) {
-      prepareForm();
+      prepareForm(context);
       window.setTimeout(() => qs('#feedbackMessage')?.focus(), 0);
     }
   }
@@ -40,16 +69,21 @@ window.AppFeedback = (() => {
     });
   }
 
-  function prepareForm() {
+  function prepareForm(context = {}) {
     const form = qs('#feedbackForm');
     if (!form) return;
+    const hasGuideContext = Boolean(context && (context.kind === 'guide' || context.gameName || context.slug));
+    if (hasGuideContext) form.reset();
     const pageUrl = qs('#feedbackPageUrl');
     const relatedGame = qs('#feedbackRelatedGame');
+    const message = qs('#feedbackMessage');
     const startedAt = qs('#feedbackFormStartedAt');
-    if (pageUrl) pageUrl.value = window.location.href;
-    if (relatedGame && !relatedGame.value.trim()) relatedGame.value = inferRelatedGame();
+    const guideGameName = String(context.gameName || context.game || '').trim();
+    if (pageUrl) pageUrl.value = context.pageUrl || window.location.href;
+    if (relatedGame && (hasGuideContext || !relatedGame.value.trim())) relatedGame.value = guideGameName || inferRelatedGame();
+    if (message && hasGuideContext) message.value = buildGuideFeedbackMessage(context);
     if (startedAt) startedAt.value = String(Date.now());
-    syncTypeButtons(qs('#feedbackType')?.value || 'Bug do site');
+    syncTypeButtons(hasGuideContext ? 'Erro em guia' : (qs('#feedbackType')?.value || 'Bug do site'));
     updateCounter();
     setFeedbackMessage('');
     setSuccessActions(false);
@@ -200,7 +234,11 @@ window.AppFeedback = (() => {
     bindModalElements();
   }
 
-  return { bind, setOpen, collectPayload, syncTypeButtons };
+  function openGuideFeedback(context = {}) {
+    setOpen(true, { ...context, kind: 'guide' });
+  }
+
+  return { bind, setOpen, openGuideFeedback, collectPayload, syncTypeButtons };
 })();
 
 document.addEventListener('DOMContentLoaded', () => {

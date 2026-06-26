@@ -385,7 +385,7 @@ function buildAdminLoginPageHtml() {
   <link rel="stylesheet" href="/css/components.css">
   <link rel="stylesheet" href="/css/admin.css">
   <link rel="stylesheet" href="/css/responsive.css">
-  <link rel="icon" href="/favicon.png" type="image/png" sizes="any">
+  <link rel="icon" href="/favicon.png" type="image/png" sizes="64x64">
   <link rel="apple-touch-icon" href="/apple-touch-icon.png">
   <link rel="manifest" href="/site.webmanifest">
   <style>
@@ -1350,6 +1350,20 @@ function renderGuideRelatedOverviewServer(game, relatedGames = []) {
   return `<section class="atlas-related-suggestions md:col-span-2 space-y-4"><div class="atlas-decision-panel__header"><div><span class="atlas-section-kicker">Jogos relacionados</span><h2 class="text-lg md:text-xl font-extrabold mt-2">Guias parecidos para manter o ritmo</h2></div><span class="atlas-tag atlas-tag--soft">Descoberta</span></div><div class="atlas-related-suggestions__grid">${renderGuideRelatedCardsServer(relatedGames)}</div></section>`;
 }
 
+function renderGuideFeedbackCtaHtml(game = {}) {
+  return `
+    <section class="atlas-guide-feedback-cta atlas-panel atlas-panel--support" aria-labelledby="guideFeedbackCtaTitle">
+      <div class="atlas-guide-feedback-cta__copy">
+        <span class="atlas-section-kicker">Correção colaborativa</span>
+        <h2 id="guideFeedbackCtaTitle">Encontrou erro neste guia?</h2>
+        <p>Avise a equipe para revisarmos informações de troféus, roadmap, filtros ou pontos de atenção.</p>
+      </div>
+      <button type="button" class="atlas-btn atlas-btn-secondary atlas-guide-feedback-cta__button" data-guide-feedback-open="true" data-guide-feedback-game="${escapeHtml(game?.name || '')}" data-guide-feedback-slug="${escapeHtml(game?.slug || '')}">
+        <i class="fas fa-flag" aria-hidden="true"></i> Reportar problema
+      </button>
+    </section>`;
+}
+
 function buildGuideViewModel(game, completedSource = [], options = {}) {
   return sharedGuideViewModel.buildGuideViewModel(game, completedSource, {
     ...options,
@@ -2205,8 +2219,9 @@ function buildSsrGuideMarkup(game, relatedGames = []) {
     : '<div class="text-white/60">Nenhum troféu cadastrado.</div>';
   const editorialNotes = renderGuideEditorialNotesHtml(game, viewModel);
   const relatedOverview = renderGuideRelatedOverviewServer(game, relatedGames);
+  const feedbackCta = renderGuideFeedbackCtaHtml(game);
 
-  return { header, decisionStack, summary, roadmap, sidebar, trophyList, editorialNotes, relatedOverview, viewModel };
+  return { header, decisionStack, summary, roadmap, sidebar, trophyList, editorialNotes, relatedOverview, feedbackCta, viewModel };
 }
 
 function applyTemplateDefaults(template) {
@@ -2238,6 +2253,7 @@ function applyTemplateDefaults(template) {
     .replace(/__SSR_GUIDE_ROADMAP__/g, '')
     .replace(/__SSR_GUIDE_EDITORIAL_NOTES__/g, '')
     .replace(/__GUIDE_RELATED_OVERVIEW__/g, '')
+    .replace(/__GUIDE_FEEDBACK_CTA__/g, '')
     .replace(/__CATALOG_TITLE__/g, 'Todos os jogos')
     .replace(/__CATALOG_SUMMARY__/g, '')
     .replace(/__CATALOG_HERO_TITLE__/g, 'Navegue sem depender da busca')
@@ -2250,6 +2266,7 @@ function applyTemplateDefaults(template) {
     .replace(/__CATALOG_SEO_INTRO_BODY__/g, 'Esta coleção ajuda a comparar jogos antes do clique, com tempo, dificuldade, roadmap e riscos em primeiro plano.')
     .replace(/__CATALOG_RELATED_LINKS__/g, '')
     .replace(/__CATALOG_VERIFICATION_NOTICE__/g, '')
+    .replace(/__CATALOG_STARTER_PICKS__/g, '')
     .replace(/__CATALOG_SSR_LIST__/g, '')
     .replace(/__CATALOG_SSR_PAGINATION__/g, '')
     .replace(/__CATALOG_FINAL_CTA__/g, '')
@@ -2399,6 +2416,7 @@ async function buildGamePageHtml(game, req) {
     .replace(/__SSR_GUIDE_ROADMAP__/g, ssrMarkup.roadmap)
     .replace(/__SSR_GUIDE_EDITORIAL_NOTES__/g, ssrMarkup.editorialNotes)
     .replace(/__GUIDE_RELATED_OVERVIEW__/g, ssrMarkup.relatedOverview)
+    .replace(/__GUIDE_FEEDBACK_CTA__/g, ssrMarkup.feedbackCta)
     .replace(/__INITIAL_STATE_SCRIPT__/g, buildInitialStateScript({ page: 'guide', game: sanitizePublicGuideInitialStateGame(game) })))));
 }
 
@@ -3038,6 +3056,7 @@ function renderCatalogSeoCards(items = [], facetConfig = catalogFacetPageMap.all
     const decision = typeof sharedCatalogModel.getCatalogDecisionSignals === 'function'
       ? sharedCatalogModel.getCatalogDecisionSignals(game)
       : { signals: [] };
+    const curatorNote = String(game?.starterPickNote || '').trim();
     const primarySignalIds = new Set(['online', 'no-online', 'coop', 'no-coop', 'missable', 'no-missable', 'grind']);
     const signalHtml = (decision.signals || []).filter(signal => primarySignalIds.has(signal.id)).slice(0, 4).map(signal => `
             <span class="catalog-card__signal catalog-card__signal--${escapeHtml(signal.tone || 'neutral')}" title="${escapeHtml(signal.label)}"><i class="fas ${escapeHtml(signal.icon || 'fa-circle-info')}" aria-hidden="true"></i>${escapeHtml(signal.label)}</span>`).join('');
@@ -3046,6 +3065,7 @@ function renderCatalogSeoCards(items = [], facetConfig = catalogFacetPageMap.all
         ${renderCatalogCardImageHtml(game, model, imageSource)}
         <div class="catalog-card__body">
           <h3 class="catalog-card__title" itemprop="name">${name}</h3>
+          ${curatorNote ? `<p class="catalog-card__curator-note">${escapeHtml(curatorNote)}</p>` : ''}
           <meta itemprop="url" content="/jogo/${slug}">
           <div class="catalog-card__badges">
             <span class="catalog-card__status atlas-badge atlas-badge--${escapeHtml(statusBadge.badge || statusBadge.tone || 'partial')}">${escapeHtml(statusBadge.label)}</span>
@@ -3065,6 +3085,27 @@ function renderCatalogSeoCards(items = [], facetConfig = catalogFacetPageMap.all
         </div>
       </article>`;
   }).join('')}`;
+}
+
+function renderCatalogStarterPicksHtml(items = []) {
+  const picks = typeof sharedCatalogModel.selectCatalogStarterPicks === 'function'
+    ? sharedCatalogModel.selectCatalogStarterPicks(items, 4)
+    : [];
+  if (!picks.length) return '';
+  return `
+    <section class="atlas-catalog-starter" aria-labelledby="catalogStarterPicksTitle">
+      <div class="atlas-catalog-starter__head">
+        <div>
+          <span class="atlas-section-kicker">Curadoria rápida</span>
+          <h2 id="catalogStarterPicksTitle">Melhores para começar</h2>
+          <p>Guias mais tranquilos para iniciar uma nova platina sem online obrigatório ou grandes riscos.</p>
+        </div>
+        <span class="atlas-catalog-starter__count">${escapeHtml(`${picks.length} guias`)}</span>
+      </div>
+      <div class="atlas-catalog-starter__grid">
+        ${renderCatalogSeoCards(picks)}
+      </div>
+    </section>`;
 }
 
 function renderCatalogPaginationHtml(pagination = {}) {
@@ -3233,6 +3274,15 @@ async function buildCatalogPageHtml(req, facetSlug = null) {
   const requestedPage = Math.max(Number(req.query?.page || 1) || 1, 1);
   const catalogResponse = await gamesService.listGames({ facet: facetConfig?.serviceFacet || 'all', sort: 'recommended-desc', page: requestedPage, limit: PUBLIC_CATALOG_PAGE_SIZE });
   const items = Array.isArray(catalogResponse?.items) ? catalogResponse.items : [];
+  let starterPickItems = items;
+  if ((facetConfig?.serviceFacet || 'all') === 'all') {
+    try {
+      const starterResponse = await gamesService.listGames({ facet: 'all', sort: 'recommended-desc', page: 1, limit: 100 });
+      starterPickItems = Array.isArray(starterResponse?.items) && starterResponse.items.length ? starterResponse.items : items;
+    } catch (_error) {
+      starterPickItems = items;
+    }
+  }
   const total = getCatalogFacetCount(facetConfig, facetCounts) || Number(catalogResponse?.pagination?.total || items.length || 0);
   const isEmptyCollection = facetConfig?.serviceFacet !== 'all' && total === 0;
   const structuredData = buildCatalogStructuredData(origin, canonicalUrl, facetConfig, items, total);
@@ -3242,6 +3292,7 @@ async function buildCatalogPageHtml(req, facetSlug = null) {
   const catalogSummary = `${formatCatalogCount(total)} nesta coleção · página ${page} de ${totalPages}`;
   const catalogHeroDescription = `${facetConfig?.heroDescription || 'Veja todos os jogos em uma lista filtrável com dificuldade, tempo estimado, troféus e acesso direto à página de guia.'} ${isEmptyCollection ? 'Ainda não há jogos publicados nesta faixa.' : `${formatCatalogCount(total)} nesta faixa agora.`}`;
   const catalogRelatedLinks = renderCatalogRelatedLinks(facetConfig, facetCounts);
+  const catalogStarterPicks = (facetConfig?.serviceFacet || 'all') === 'all' ? renderCatalogStarterPicksHtml(starterPickItems) : '';
   const catalogSsrList = renderCatalogSeoCards(items, facetConfig, facetCounts);
   const catalogVerificationNotice = renderCatalogVerificationNotice(items);
   const robotsMeta = isEmptyCollection ? '<meta name="robots" content="noindex,follow">' : '';
@@ -3262,6 +3313,7 @@ async function buildCatalogPageHtml(req, facetSlug = null) {
     .replace(/__CATALOG_HERO_DESCRIPTION__/g, escapeHtml(catalogHeroDescription))
     .replace(/__CATALOG_RELATED_LINKS__/g, catalogRelatedLinks)
     .replace(/__CATALOG_VERIFICATION_NOTICE__/g, catalogVerificationNotice)
+    .replace(/__CATALOG_STARTER_PICKS__/g, catalogStarterPicks)
     .replace(/__CATALOG_SSR_LIST__/g, catalogSsrList)
     .replace(/__CATALOG_SSR_PAGINATION__/g, renderCatalogPaginationHtml(catalogResponse.pagination))
     .replace(/__CATALOG_TITLE__/g, escapeHtml(facetConfig?.name || 'Catálogo de jogos'))

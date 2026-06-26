@@ -113,6 +113,12 @@ window.UICatalog = (() => {
       : { signals: [] };
   }
 
+  function selectCatalogStarterPicks(games = [], limit = 4) {
+    return typeof sharedCatalog.selectCatalogStarterPicks === 'function'
+      ? sharedCatalog.selectCatalogStarterPicks(games, limit)
+      : [];
+  }
+
   function updateCatalogCollectionIntro(facet = 'all', total = 0, facetCounts = {}) {
     const meta = catalogFacetMeta[facet] || catalogFacetMeta.all;
     const titleTarget = qs('#catalogTitle');
@@ -162,6 +168,87 @@ window.UICatalog = (() => {
     }
   }
 
+  function renderCatalogCard(game = {}, options = {}) {
+    const getTotal = item => Number(item.trophy_count || item.trophies?.length || 0);
+    const model = typeof sharedCard.buildStandardGameCardModel === 'function'
+      ? sharedCard.buildStandardGameCardModel(game)
+      : {
+        slug: game.slug || '',
+        name: game.name || 'Jogo',
+        image: getGameCoverSrc ? getGameCoverSrc(game) : (game.cover_image || game.image || ''),
+        difficulty: game.difficulty || '-',
+        time: game.time || 'Tempo não informado',
+        trophies: getTotal(game),
+        statusBadge: getEditorialBadge(game),
+        hasRisk: Number(game.missable_count || 0) > 0 || hasMissableRiskText(game.missable || game.missable_summary || ''),
+        difficultyTone: getDifficultyTone(game.difficulty),
+        difficultyClass: getDifficultyToneClass(game.difficulty)
+      };
+    model.statusBadge = getCatalogStatusBadge(model.statusBadge, game);
+    const slug = escapeAttribute(model.slug || '');
+    const imageSource = getCatalogCardImageSource(game, model);
+    const decision = getCatalogDecisionSignals(game);
+    const primarySignalIds = new Set(['online', 'no-online', 'coop', 'no-coop', 'missable', 'no-missable', 'grind']);
+    const signalHtml = (decision.signals || []).filter(signal => primarySignalIds.has(signal.id)).slice(0, 4).map(signal => `
+              <span class="catalog-card__signal catalog-card__signal--${escapeAttribute(signal.tone || 'neutral')}" title="${escapeAttribute(signal.label)}"><i class="fas ${escapeAttribute(signal.icon || 'fa-circle-info')}" aria-hidden="true"></i>${escapeHtml(signal.label)}</span>`).join('');
+    const curatorNote = String(options.curatorNote || game.starterPickNote || '').trim();
+    const modifier = options.modifier ? ` ${options.modifier}` : '';
+    return `
+        <article class="catalog-card${modifier}${imageSource ? '' : ' catalog-card--image-fallback'}" data-game-slug="${slug}" data-difficulty-tone="${escapeAttribute(model.difficultyTone)}" data-risk="${model.hasRisk ? 'missable' : 'none'}">
+          ${renderCatalogCardImage(game, model, imageSource)}
+          <div class="catalog-card__body">
+            <h3 class="catalog-card__title">${escapeHtml(model.name)}</h3>
+            ${curatorNote ? `<p class="catalog-card__curator-note">${escapeHtml(curatorNote)}</p>` : ''}
+            <div class="catalog-card__badges">
+              <span class="catalog-card__status atlas-badge atlas-badge--${escapeAttribute(model.statusBadge.badge || model.statusBadge.tone || 'partial')}">${escapeHtml(model.statusBadge.label)}</span>
+            </div>
+            <div class="catalog-card__meta">
+              <span class="atlas-meta-signal ${escapeAttribute(model.difficultyClass)}"><i class="fas fa-gauge-high"></i>${escapeHtml(String(model.difficulty))}/10</span>
+              <span class="atlas-meta-signal atlas-meta-signal--time"><i class="fas fa-clock"></i>${escapeHtml(model.time)}</span>
+              <span class="atlas-meta-signal atlas-meta-signal--trophy"><i class="fas fa-trophy"></i>${escapeHtml(String(model.trophies))} troféus</span>
+            </div>
+            ${signalHtml ? `<div class="catalog-card__risk-block">
+              <span class="catalog-card__risk-label">Riscos e requisitos</span>
+              <div class="catalog-card__signals" aria-label="Riscos e requisitos da platina">${signalHtml}</div>
+            </div>` : ''}
+            <div class="catalog-card__actions">
+              <a href="/jogo/${slug}" class="atlas-btn atlas-btn-primary atlas-btn-compact" data-open-guide-card="${slug}">Abrir guia</a>
+            </div>
+          </div>
+        </article>`;
+  }
+
+  function renderCatalogStarterPicks(games = [], options = {}) {
+    const target = qs('#catalogStarterPicksSlot');
+    if (!target) return;
+    const search = String(options.search || '').trim();
+    const facet = options.facet || 'all';
+    const shouldShow = !search && facet === 'all';
+    const picks = shouldShow ? selectCatalogStarterPicks(games, 4) : [];
+    if (!shouldShow || !picks.length) {
+      target.innerHTML = '';
+      target.hidden = true;
+      target.setAttribute('aria-hidden', 'true');
+      return;
+    }
+    target.hidden = false;
+    target.setAttribute('aria-hidden', 'false');
+    target.innerHTML = `
+      <section class="atlas-catalog-starter" aria-labelledby="catalogStarterPicksTitle">
+        <div class="atlas-catalog-starter__head">
+          <div>
+            <span class="atlas-section-kicker">Curadoria rápida</span>
+            <h2 id="catalogStarterPicksTitle">Melhores para começar</h2>
+            <p>Guias mais tranquilos para iniciar uma nova platina sem online obrigatório ou grandes riscos.</p>
+          </div>
+          <span class="atlas-catalog-starter__count">${escapeHtml(`${picks.length} guias`)}</span>
+        </div>
+        <div class="atlas-catalog-starter__grid">
+          ${picks.map(game => renderCatalogCard(game, { modifier: 'catalog-card--starter' })).join('')}
+        </div>
+      </section>`;
+  }
+
   function renderCatalog(response = {}, options = {}) {
     const list = qs('#catalogList');
     const summary = qs('#catalogSummary');
@@ -175,11 +262,12 @@ window.UICatalog = (() => {
     const intent = options.intent || 'all';
     const allGames = Array.isArray(options.allGames) && options.allGames.length ? options.allGames : items;
     const facetCounts = getCatalogCounts(response, allGames);
-    const getTotal = game => Number(game.trophy_count || game.trophies?.length || 0);
+    const starterSource = allGames.length ? allGames : items;
 
     renderCatalogIntentBar(allGames, intent);
     renderCatalogCompareTray();
     renderVerificationNotice(items);
+    renderCatalogStarterPicks(starterSource, { search, facet });
 
     const activeFacet = catalogFacetMeta[facet] || catalogFacetMeta.all;
     const activeTotal = Number(facetCounts[facet] ?? pagination.total ?? items.length ?? 0);
@@ -433,6 +521,8 @@ window.UICatalog = (() => {
     renderCatalog,
     setCatalogMeta,
     renderCatalogIntentBar,
-    renderCatalogCompareTray
+    renderCatalogCompareTray,
+    selectCatalogStarterPicks,
+    renderCatalogStarterPicks
   };
 })();

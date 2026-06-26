@@ -204,7 +204,8 @@ window.AppPublicNav = (() => {
 
       const viewChanged = Boolean(previousView && previousView !== view);
       const guideChanged = view === 'guide' && path.startsWith('/jogo/') && currentPath !== path;
-      const shouldResetScroll = !options.preserveScroll && (options.resetScroll || viewChanged || guideChanged);
+      const shouldRespectHash = Boolean(window.location.hash);
+      const shouldResetScroll = !shouldRespectHash && !options.preserveScroll && (options.resetScroll || viewChanged || guideChanged);
       if (shouldResetScroll) {
         const schedule = window.requestAnimationFrame || (callback => window.setTimeout(callback, 0));
         schedule(() => {
@@ -325,7 +326,7 @@ window.AppPublicNav = (() => {
           return;
         }
         event.preventDefault();
-        await loadGuideByName(gameTrigger.dataset.homeGame, { analyticsSource: 'home' });
+        await loadGuideByName(gameTrigger.dataset.homeGame, { analyticsSource: 'home', resetScroll: true });
         return;
       }
 
@@ -336,7 +337,7 @@ window.AppPublicNav = (() => {
         if (!value || !UI.qs('#gameInput')) return;
         UI.qs('#gameInput').value = value;
         debouncedSearchGames(value);
-        await loadGuideByName(value, { analyticsSource: 'home' });
+        await loadGuideByName(value, { analyticsSource: 'home', resetScroll: true });
       }
     });
   }

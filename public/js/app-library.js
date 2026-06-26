@@ -9,18 +9,24 @@ window.AppLibrary = (() => {
     return 'saved';
   }
 
+  function normalizeCompletedIds(values = []) {
+    return [...new Set((Array.isArray(values) ? values : [])
+      .map(id => String(id || '').trim())
+      .filter(Boolean))];
+  }
+
   function normalizeLibraryEntry(game, library, normalizeKey, options = {}) {
     const key = getLibraryKey(game, normalizeKey);
     const existing = library?.[key] || {};
     const trophyIds = new Set((Array.isArray(game?.trophies) ? game.trophies : Array.isArray(existing.trophies) ? existing.trophies : [])
-      .map(trophy => trophy?.id)
+      .map(trophy => String(trophy?.id || '').trim())
       .filter(Boolean));
     const rawCompleted = Array.isArray(options.completed)
       ? options.completed
       : Array.isArray(existing.completed)
         ? existing.completed
         : [];
-    const completed = [...new Set(rawCompleted.filter(id => !trophyIds.size || trophyIds.has(id)))];
+    const completed = normalizeCompletedIds(rawCompleted).filter(id => !trophyIds.size || trophyIds.has(id));
     const trophies = Array.isArray(game?.trophies)
       ? game.trophies
       : Array.isArray(existing.trophies)

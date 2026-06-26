@@ -137,6 +137,19 @@ window.AppGuideView = (() => {
         return;
       }
 
+      const guideFeedbackButton = event.target.closest('[data-guide-feedback-open]');
+      if (guideFeedbackButton) {
+        event.preventDefault();
+        const section = document.body?.dataset?.guideActiveTab || state.activeGuideTab || 'summary';
+        window.AppFeedback?.openGuideFeedback?.({
+          gameName: state.currentGame?.name || guideFeedbackButton.dataset.guideFeedbackGame || '',
+          slug: state.currentGame?.slug || guideFeedbackButton.dataset.guideFeedbackSlug || '',
+          pageUrl: window.location.href,
+          section
+        });
+        return;
+      }
+
       const actionButton = event.target.closest('[data-guide-action]');
       if (actionButton) {
         event.preventDefault();

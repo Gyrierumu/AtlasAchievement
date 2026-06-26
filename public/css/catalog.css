@@ -293,6 +293,65 @@ html {
   border-radius: 16px;
 }
 
+.atlas-catalog-starter {
+  display: grid;
+  gap: 16px;
+  padding: 16px;
+  border: 1px solid rgba(255, 255, 255, .08);
+  border-radius: 22px;
+  background:
+    linear-gradient(135deg, rgba(125, 211, 252, .08), rgba(167, 139, 250, .05) 42%, rgba(255, 255, 255, .025)),
+    rgba(255, 255, 255, .025);
+}
+
+.atlas-catalog-starter__head {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 14px;
+}
+
+.atlas-catalog-starter__head h2 {
+  margin-top: 5px;
+  font-size: 1.22rem;
+  line-height: 1.18;
+  font-weight: 850;
+}
+
+.atlas-catalog-starter__head p {
+  margin-top: 6px;
+  max-width: 760px;
+  color: rgba(255, 255, 255, .62);
+  font-size: .92rem;
+  line-height: 1.45;
+}
+
+.atlas-catalog-starter__count {
+  flex: 0 0 auto;
+  padding: 7px 10px;
+  border: 1px solid rgba(255, 255, 255, .1);
+  border-radius: 999px;
+  color: rgba(255, 255, 255, .62);
+  font-size: .76rem;
+  font-weight: 800;
+}
+
+.atlas-catalog-starter__grid {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: 12px;
+}
+
+.catalog-card--starter .catalog-card__media {
+  min-height: 112px;
+}
+
+.catalog-card__curator-note {
+  color: rgba(255, 255, 255, .66);
+  font-size: .82rem;
+  line-height: 1.4;
+}
+
 .atlas-catalog-understanding {
   margin-top: 4px;
   border: 0;
@@ -917,4 +976,37 @@ html {
 .atlas-clear-filter.is-active {
   border-color: rgba(56, 189, 248, .28);
   background: rgba(56, 189, 248, .06);
+}
+
+@media (max-width: 1120px) {
+  .atlas-catalog-starter__grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
+
+@media (max-width: 640px) {
+  .atlas-catalog-starter {
+    padding: 14px;
+    border-radius: 18px;
+  }
+
+  .atlas-catalog-starter__head {
+    display: grid;
+  }
+
+  .atlas-catalog-starter__count {
+    width: fit-content;
+  }
+
+  .atlas-catalog-starter__grid {
+    grid-template-columns: minmax(0, 1fr);
+  }
+
+  .catalog-card--starter .catalog-card__media {
+    min-height: 132px;
+  }
+
+  .catalog-card--starter .atlas-btn {
+    min-height: 44px;
+  }
 }

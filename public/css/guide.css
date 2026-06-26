@@ -520,6 +520,39 @@
   padding: 14px !important;
 }
 
+#view-guide .atlas-guide-feedback-cta {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 16px;
+  padding: 16px 18px;
+  border-radius: 18px;
+}
+
+#view-guide .atlas-guide-feedback-cta__copy {
+  min-width: 0;
+}
+
+#view-guide .atlas-guide-feedback-cta h2 {
+  margin-top: 5px;
+  font-size: 1.05rem;
+  line-height: 1.2;
+  font-weight: 800;
+}
+
+#view-guide .atlas-guide-feedback-cta p {
+  margin-top: 5px;
+  max-width: 720px;
+  color: rgba(255, 255, 255, .58);
+  font-size: .88rem;
+  line-height: 1.45;
+}
+
+#view-guide .atlas-guide-feedback-cta__button {
+  flex: 0 0 auto;
+  min-height: 44px;
+}
+
 #view-guide .atlas-editorial-band__intro {
   gap: 12px;
   align-items: center;

@@ -1038,6 +1038,98 @@
     return 'Boa opção para comparar';
   }
 
+  function getCatalogStarterPickPriority(game = {}) {
+    const slug = String(game?.slug || '').trim().toLowerCase();
+    const prioritySlugs = [
+      'life-is-strange-remastered',
+      'marvels-spider-man-miles-morales',
+      'astro-bot',
+      'astros-playroom',
+      'life-is-strange-true-colors',
+      'little-nightmares-ii',
+      'ratchet-and-clank-rift-apart'
+    ];
+    const index = prioritySlugs.indexOf(slug);
+    return index >= 0 ? prioritySlugs.length - index : 0;
+  }
+
+  function getCatalogStarterTimeCeiling(game = {}) {
+    const explicitMax = Number(game?.time_max_hours || game?.timeMaxHours || 0);
+    if (Number.isFinite(explicitMax) && explicitMax > 0) return explicitMax;
+
+    const text = normalizeCatalogSignalText(game?.time || '');
+    const timeMatches = Array.from(text.matchAll(/\d+(?:[,.]\d+)?/g))
+      .map(match => Number(String(match[0]).replace(',', '.')))
+      .filter(Number.isFinite);
+    if (timeMatches.length) return Math.max(...timeMatches);
+
+    const sortValue = Number(game?.time_sort_hours || game?.timeSortHours || 0);
+    if (Number.isFinite(sortValue) && sortValue > 0) return sortValue;
+
+    return getTimeValue(game);
+  }
+
+  function getCatalogStarterPickNote(game = {}) {
+    const difficulty = Number(game?.difficulty || 0);
+    const timeValue = getCatalogStarterTimeCeiling(game);
+    const trophyCount = getGameTotal(game);
+    const hasMissables = hasCatalogMissables(game);
+    if (!hasMissables && hasKnownTimeValue(timeValue) && timeValue <= 12) return 'Platina curta e direta.';
+    if (!hasMissables && difficulty > 0 && difficulty <= 2) return 'Boa opção para começar sem pressão.';
+    if (!hasMissables && trophyCount >= 20 && trophyCount <= 60) return 'Ideal para uma primeira rota com checklist.';
+    return 'Boa escolha para testar roadmap e progresso salvo.';
+  }
+
+  function getCatalogStarterPickScore(game = {}) {
+    const difficulty = Number(game?.difficulty || 0);
+    const timeValue = getCatalogStarterTimeCeiling(game);
+    const hasMissables = hasCatalogMissables(game);
+    const trophyCount = getGameTotal(game);
+    let score = 0;
+    score += getCatalogStarterPickPriority(game) * 50;
+    score += Math.max(0, 5 - difficulty) * 24;
+    if (hasKnownTimeValue(timeValue)) score += Math.max(0, 28 - Math.min(timeValue, 28)) * 3;
+    if (!hasMissables) score += 80;
+    if (trophyCount >= 20 && trophyCount <= 60) score += 18;
+    if (hasCatalogGrind(game)) score -= 22;
+    if (hasMissables) score -= 60;
+    return score;
+  }
+
+  function isCatalogStarterCandidate(game = {}) {
+    const difficulty = Number(game?.difficulty || 0);
+    const timeValue = getCatalogStarterTimeCeiling(game);
+    if (!game?.slug || !isCatalogVerified(game) || hasCatalogCriticalEditorialStatus(game)) return false;
+    if (!(difficulty > 0 && difficulty <= 3)) return false;
+    if (!hasKnownTimeValue(timeValue) || timeValue > 25) return false;
+    if (hasCatalogOnlineRequired(game) || hasCatalogCoopRequired(game)) return false;
+    if (hasCatalogEditorialStatus(game, 'needs_online_check') || hasCatalogEditorialStatus(game, 'needs_missables_check')) return false;
+    return true;
+  }
+
+  function selectCatalogStarterPicks(games = [], limit = 4) {
+    const requestedLimit = Math.max(Number(limit || 0), 0);
+    if (!requestedLimit) return [];
+    const candidates = (Array.isArray(games) ? games : [])
+      .filter(isCatalogStarterCandidate)
+      .map(game => ({
+        game,
+        note: getCatalogStarterPickNote(game),
+        score: getCatalogStarterPickScore(game),
+        hasMissables: hasCatalogMissables(game)
+      }))
+      .sort((a, b) => b.score - a.score || String(a.game?.name || '').localeCompare(String(b.game?.name || ''), 'pt-BR'));
+
+    const strict = candidates.filter(item => !item.hasMissables);
+    const relaxed = candidates.filter(item => item.hasMissables);
+    const pool = strict.length >= Math.min(3, requestedLimit) ? strict : [...strict, ...relaxed];
+
+    return pool.slice(0, requestedLimit).map(item => ({
+      ...item.game,
+      starterPickNote: item.note
+    }));
+  }
+
   function buildEditorialCollectionItems(collectionSlug, items = []) {
     const list = Array.isArray(items) ? items : [];
     const isLowRisk = game => {
@@ -1101,6 +1193,7 @@
     buildHomeIntentCardsModel,
     buildCatalogDiscoveryCards,
     buildCatalogCompareLabel,
+    selectCatalogStarterPicks,
     buildEditorialCollectionItems
   };
 });

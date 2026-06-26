@@ -256,32 +256,39 @@ window.AppLibraryController = (() => {
 
     async function saveCurrentGameToLibrary(renderCurrentGuide) {
       if (!state.currentGame) return;
-      const existing = state.library[getLibraryKey(state.currentGame)];
+      const key = getLibraryKey(state.currentGame);
+      const previousLibrary = { ...(state.library || {}) };
+      const existing = state.library[key];
+      const completed = Array.isArray(existing?.completed) ? existing.completed : [];
       const entryOptions = {
+        completed,
         savedAt: existing?.savedAt,
         lastOpenedAt: new Date().toISOString(),
         lastActivityAt: existing?.lastActivityAt || new Date().toISOString(),
         status: buildLibraryStatus(existing?.progress || 0)
       };
+      const entry = upsertLibraryEntry(state.currentGame, entryOptions);
+      if (typeof renderCurrentGuide === 'function') renderCurrentGuide({ skipHistory: true, preserveScroll: true });
+      UI.showToast(existing ? 'Biblioteca atualizada.' : 'Jogo salvo na biblioteca.', 'success');
 
       if (isAccountLibrary() && state.currentGame.id) {
         try {
           const response = await ApiService.addUserLibrary({
             game_id: state.currentGame.id,
-            status: entryOptions.status,
+            status: entry.status,
             last_opened_at: entryOptions.lastOpenedAt
           });
           await applyAccountPayload(response);
+          if (typeof renderCurrentGuide === 'function') renderCurrentGuide({ skipHistory: true, preserveScroll: true });
         } catch (error) {
+          state.library = previousLibrary;
+          renderLibraryView();
+          if (typeof renderCurrentGuide === 'function') renderCurrentGuide({ skipHistory: true, preserveScroll: true });
           UI.showToast(error.message || 'Não foi possível salvar na conta.', 'error');
           return;
         }
-      } else {
-        upsertLibraryEntry(state.currentGame, entryOptions);
       }
 
-      if (typeof renderCurrentGuide === 'function') renderCurrentGuide({ skipHistory: true });
-      UI.showToast(existing ? 'Biblioteca atualizada.' : 'Jogo salvo na biblioteca.', 'success');
     }
 
     function isCurrentGameSaved() {

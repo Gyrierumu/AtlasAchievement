@@ -56,6 +56,15 @@
     width: 100%;
     min-height: 56px;
   }
+  #view-guide .atlas-guide-feedback-cta {
+    align-items: stretch;
+    flex-direction: column;
+    padding: 16px;
+  }
+  #view-guide .atlas-guide-feedback-cta__button {
+    width: 100%;
+    min-height: 52px;
+  }
 }
 
 @media (max-width: 768px) {
@@ -1767,6 +1776,11 @@
   .catalog-card .atlas-btn {
     min-height: 40px;
     height: 40px;
+  }
+
+  #view-catalog .catalog-card--starter .atlas-btn {
+    min-height: 44px;
+    height: auto;
   }
 
   #catalogPagination .atlas-btn,

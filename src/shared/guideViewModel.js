@@ -1896,12 +1896,14 @@
 
   function deriveNextAction(game = {}, completedIds = []) {
     const trophies = Array.isArray(game.trophies) ? game.trophies : [];
-    const completedSet = new Set(Array.isArray(completedIds) ? completedIds : []);
+    const completedSet = new Set((Array.isArray(completedIds) ? completedIds : [])
+      .map(id => String(id || '').trim())
+      .filter(Boolean));
     const total = trophies.length;
     const completedCount = completedSet.size;
     const remaining = Math.max(total - completedCount, 0);
     const started = completedCount > 0;
-    const pendingTrophies = trophies.filter(trophy => trophy && !completedSet.has(trophy.id));
+    const pendingTrophies = trophies.filter(trophy => trophy && !completedSet.has(String(trophy?.id || '').trim()));
     const firstPending = pendingTrophies[0] || null;
     const missablePending = pendingTrophies.find(isRealMissableTrophy);
     const spoilerPending = pendingTrophies.find(trophy => trophy && trophy.is_spoiler);
@@ -6121,8 +6123,10 @@
     const walkthrough = normalizeWalkthrough(game?.walkthrough);
     const roadmapStagesSource = Array.isArray(game?.roadmapStages) ? game.roadmapStages : roadmap;
     const normalizedSlug = String(game?.slug || '').trim().toLowerCase();
-    const completedIds = new Set(Array.isArray(completedSource) ? completedSource : []);
-    const completed = trackableTrophies.filter(trophy => completedIds.has(trophy.id)).length;
+    const completedIds = new Set((Array.isArray(completedSource) ? completedSource : [])
+      .map(id => String(id || '').trim())
+      .filter(Boolean));
+    const completed = trackableTrophies.filter(trophy => completedIds.has(String(trophy?.id || '').trim())).length;
     const total = trackableTrophies.length;
     const progress = total ? Math.round((completed / total) * 100) : 0;
     const pending = Math.max(total - completed, 0);

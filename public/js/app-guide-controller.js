@@ -31,6 +31,14 @@ window.AppGuideController = (() => {
       schedule(() => {
         UI.resetPageScroll?.();
         syncGuideQuickDock();
+        schedule(() => {
+          UI.resetPageScroll?.();
+          syncGuideQuickDock();
+        });
+        window.setTimeout(() => {
+          if (!window.location.hash) UI.resetPageScroll?.();
+          syncGuideQuickDock();
+        }, 60);
       });
     }
 
@@ -143,17 +151,21 @@ window.AppGuideController = (() => {
 
     function toggleTrophy(trophyId) {
       if (!state.currentGame) return;
+      const trophyKey = String(trophyId || '').trim();
+      if (!trophyKey) return;
       const key = getLibraryKey(state.currentGame);
       const currentEntry = state.library[key] || normalizeLibraryEntry(state.currentGame, { completed: [] });
-      const completed = Array.isArray(currentEntry.completed) ? [...currentEntry.completed] : [];
-      const index = completed.indexOf(trophyId);
+      const completed = Array.isArray(currentEntry.completed)
+        ? currentEntry.completed.map(id => String(id || '').trim()).filter(Boolean)
+        : [];
+      const index = completed.indexOf(trophyKey);
       const nextCompleted = index < 0;
-      if (index >= 0) completed.splice(index, 1); else completed.push(trophyId);
+      if (index >= 0) completed.splice(index, 1); else completed.push(trophyKey);
       const trophy = (Array.isArray(state.currentGame.trophies) ? state.currentGame.trophies : [])
-        .find(item => String(item?.id || item?.name || '') === String(trophyId));
+        .find(item => String(item?.id || item?.name || '') === trophyKey);
       window.AtlasAnalytics?.trackChecklistToggle?.({
         gameSlug: getGameSlug(state.currentGame),
-        trophyId: trophy?.id || trophyId,
+        trophyId: trophy?.id || trophyKey,
         trophyName: trophy?.name || '',
         action: nextCompleted ? 'checked' : 'unchecked'
       });
@@ -163,7 +175,7 @@ window.AppGuideController = (() => {
         lastOpenedAt: new Date().toISOString()
       });
       if (isAccountLibrary?.()) {
-        syncTrophyProgress?.(state.currentGame, trophyId, nextCompleted);
+        syncTrophyProgress?.(state.currentGame, trophyKey, nextCompleted);
       }
       renderCurrentGuide({ preserveChecklistState: true, skipHistory: true });
     }

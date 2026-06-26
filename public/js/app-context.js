@@ -396,7 +396,7 @@ window.AppContextFactory = (() => {
       UI.hideSuggestions();
       state.searchSuggestions = [];
       state.activeSuggestionIndex = -1;
-      return loadGuideBySlug(getGameSlug(currentSuggestion), options);
+      return loadGuideBySlug(getGameSlug(currentSuggestion), { resetScroll: true, ...options });
     }
 
     const guideController = createGuideController({

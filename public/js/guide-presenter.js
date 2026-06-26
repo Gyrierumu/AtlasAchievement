@@ -144,7 +144,8 @@ window.GuidePresenter = (() => {
     if (!currentGame) return null;
     const libraryKey = getSlug(currentGame);
     const fallbackEntry = normalizeLibraryEntry(currentGame, { completed: [] });
-    const libraryEntry = library?.[libraryKey] || fallbackEntry;
+    const normalizedLibraryKey = fallbackEntry?.slug || libraryKey;
+    const libraryEntry = library?.[libraryKey] || library?.[normalizedLibraryKey] || fallbackEntry;
     const relatedGames = buildRelatedGames(currentGame, availableGames, { getSlug, limit: options.limit || 4 });
     const comparisonModel = buildGuideComparisonModel(currentGame, relatedGames);
 
@@ -154,7 +155,7 @@ window.GuidePresenter = (() => {
       relatedGames,
       comparisonModel,
       completedTrophies: Array.isArray(libraryEntry.completed) ? libraryEntry.completed : [],
-      isSaved: Boolean(library?.[libraryKey])
+      isSaved: Boolean(library?.[libraryKey] || library?.[normalizedLibraryKey])
     };
   }
 

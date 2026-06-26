@@ -207,6 +207,7 @@ window.AppViewBindings = (() => {
       if (!event.target.closest('#view-library [data-library-game]')) closeLibraryMenus();
       const saveButton = event.target.closest('[data-toggle-save-game]');
       if (!saveButton) return;
+      event.preventDefault();
       if (isCurrentGameSaved()) removeCurrentGameFromLibrary();
       else saveCurrentGameToLibrary();
     });
