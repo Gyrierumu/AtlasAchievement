@@ -1350,6 +1350,20 @@ select:focus {
   box-shadow: inset 0 1px 0 rgba(255,255,255,.05);
 }
 
+.library-shelf__empty--welcome {
+  display: grid;
+  grid-template-columns: minmax(0, 1.08fr) minmax(220px, .72fr);
+  align-items: center;
+  text-align: left;
+}
+
+.library-empty__copy {
+  min-width: 0;
+  display: grid;
+  justify-items: start;
+  gap: 12px;
+}
+
 .library-shelf__empty--welcome strong {
   font-size: clamp(1.45rem, 3vw, 2rem);
   line-height: 1.08;
@@ -1362,9 +1376,86 @@ select:focus {
   line-height: 1.55;
 }
 
+.library-empty__benefits {
+  display: grid;
+  gap: 8px;
+  margin: 2px 0 0;
+  padding: 0;
+  list-style: none;
+}
+
+.library-empty__benefits li {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  color: rgba(255,255,255,.72);
+  font-size: .92rem;
+  line-height: 1.35;
+}
+
+.library-empty__benefits i {
+  width: 18px;
+  height: 18px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 999px;
+  color: rgba(20,184,166,.95);
+  background: rgba(20,184,166,.12);
+  font-size: .68rem;
+}
+
 .library-shelf__empty--welcome .atlas-btn {
   min-height: 50px;
   margin-top: 4px;
+}
+
+.library-empty-example {
+  width: 100%;
+  max-width: 280px;
+  justify-self: end;
+  display: grid;
+  gap: 9px;
+  padding: 16px;
+  border: 1px solid rgba(255,255,255,.1);
+  border-radius: 8px;
+  background: rgba(2,6,23,.42);
+  box-shadow: inset 0 1px 0 rgba(255,255,255,.045);
+}
+
+.library-empty-example > span {
+  color: rgba(125,211,252,.78);
+  font-size: .72rem;
+  font-weight: 900;
+  letter-spacing: .12em;
+  text-transform: uppercase;
+}
+
+.library-empty-example strong {
+  font-size: 1.05rem;
+  line-height: 1.2;
+}
+
+.library-empty-example p,
+.library-empty-example small {
+  margin: 0;
+  color: rgba(255,255,255,.64);
+  font-size: .86rem;
+  line-height: 1.35;
+}
+
+.library-empty-example__progress {
+  height: 7px;
+  overflow: hidden;
+  border-radius: 999px;
+  background: rgba(255,255,255,.1);
+}
+
+.library-empty-example__progress span {
+  display: block;
+  height: 100%;
+  border-radius: inherit;
+  background: linear-gradient(90deg, #14b8a6, #60a5fa);
 }
 
 .library-shelf__loading {

@@ -9,6 +9,7 @@ window.UIGuide = (() => {
     getEditorialBadge,
     getDifficultyTone,
     getDifficultyToneClass,
+    compactGuideText,
     getLibraryMeta,
     hasMissableRiskText,
     getTrophyRiskTags,
@@ -29,6 +30,14 @@ window.UIGuide = (() => {
   const sharedCard = window.AtlasCardModel || {};
 
   const CHECKLIST_DENSITY_KEY = 'atlas_checklist_density';
+  function compactGuideHeaderText(value = '', fallback = '', maxLength = 150) {
+    if (typeof compactGuideText === 'function') return compactGuideText(value, fallback, maxLength);
+    const text = String(value || fallback || '').trim().replace(/\s+/g, ' ');
+    const max = Number(maxLength || 0);
+    if (!max || text.length <= max) return text;
+    return `${text.slice(0, Math.max(0, max - 3)).trim()}...`;
+  }
+
   const REQUIEM_EDITORIAL_SUMMARY = [
     'Resident Evil Requiem combina campanha, coletáveis, objetivos situacionais e runs condicionais. A platina gira em torno de acompanhar saves manuais, controlar arquivos e colecionáveis, separar troféus de personagem e planejar restrições como speedrun, cura e uso do Blood Collector.',
     'O ponto mais importante é não tratar toda tarefa situacional como perdível definitivo. Alguns objetivos exigem atenção em janelas específicas, mas muitos podem ser organizados com saves, nova run ou cleanup. Use a checklist para separar riscos reais, spoilers, coletáveis, dificuldade e objetivos acumuláveis.',
@@ -126,6 +135,15 @@ window.UIGuide = (() => {
     return match ? `${match[3]}/${match[2]}/${match[1]}` : text;
   }
 
+  function getGuideEditorialTrustCopy(badge = {}, fallback = '') {
+    const status = String(badge.status || badge.badge || badge.tone || '').trim().toLowerCase();
+    if (status === 'verified') return 'Guia verificado editorialmente.';
+    if (status === 'in_review' || status === 'review') {
+      return 'Guia em revisão editorial. Use com atenção aos pontos sinalizados.';
+    }
+    return fallback || badge.detail || 'Este guia ainda está passando por revisão editorial.';
+  }
+
   function renderEditorialTrustRow(game = {}, viewModel = {}) {
     const badge = viewModel.editorial?.statusBadge || getEditorialBadge(game);
     const reviewedAt = badge.lastReviewedAt || viewModel.editorial?.lastReviewedAt || game.last_reviewed_at || game.lastReviewedAt || '';
@@ -134,6 +152,7 @@ window.UIGuide = (() => {
     const detail = isRequiem && sharedEditorial.getEditorialStatusMessage
       ? sharedEditorial.getEditorialStatusMessage(game, badge)
       : (badge.detail || 'Este guia ainda está passando por revisão editorial.');
+    const trustCopy = getGuideEditorialTrustCopy(badge, detail);
     const warningItems = isRequiem ? [] : (Array.isArray(viewModel.editorial?.qualityWarnings) ? viewModel.editorial.qualityWarnings : (badge.qualityWarnings || []));
     return `
       <div class="atlas-editorial-trust">
@@ -141,7 +160,7 @@ window.UIGuide = (() => {
           <span class="atlas-editorial-badge atlas-editorial-badge--${escapeAttribute(badge.status || badge.badge || badge.tone || 'in_review')}" title="${escapeAttribute(detail)}"><i class="fas fa-clipboard-check" aria-hidden="true"></i>${escapeHtml(badge.label || 'Em revisão')}</span>
           ${reviewedLabel ? `<span class="atlas-editorial-trust__date">Revisado em ${escapeHtml(reviewedLabel)}</span>` : ''}
         </div>
-        <p class="${badge.critical ? 'atlas-editorial-alert' : 'atlas-editorial-trust__copy'}">${escapeHtml(detail)}</p>
+        <p class="${badge.critical ? 'atlas-editorial-alert' : 'atlas-editorial-trust__copy'}">${escapeHtml(trustCopy)}</p>
         ${warningItems.length ? `<ul class="atlas-editorial-warning-list">${warningItems.slice(0, 3).map(item => `<li>${escapeHtml(item)}</li>`).join('')}</ul>` : ''}
       </div>`;
   }
@@ -520,9 +539,10 @@ window.UIGuide = (() => {
         missables: 'Perdíveis',
         online: 'Online',
         coop: 'Coop',
-        dlc: 'DLC'
+        dlc: 'DLC',
+        editorial: 'Status'
       };
-      return ['time', 'difficulty', 'missables', 'online', 'coop', 'dlc']
+      return ['time', 'difficulty', 'missables', 'online', 'coop', 'dlc', 'editorial']
         .map(id => quickDecision.cards.find(card => card?.id === id))
         .filter(Boolean)
         .map(card => ({
@@ -549,9 +569,20 @@ window.UIGuide = (() => {
       const cards = buildGuideSummaryCards(game, viewModel);
       const compactLabels = new Set(['Tempo estimado', 'Tempo', 'Dificuldade', 'Perdíveis', 'Online', 'Coop', 'DLC']);
       const compactCards = cards.filter(item => compactLabels.has(item.label));
-      if (compactCards.length) return compactCards.slice(0, 6);
+      const statusCard = cards.find(item => ['Status', 'Status editorial'].includes(item.label));
+      if (compactCards.length) {
+        const heroCards = compactCards.slice(0, 6);
+        if (statusCard && !heroCards.some(item => ['Status', 'Status editorial'].includes(item.label))) {
+          heroCards.push({ ...statusCard, label: 'Status' });
+        }
+        return heroCards.slice(0, 7);
+      }
       const essentials = new Set(['Tempo estimado', 'Tempo', 'Dificuldade', 'Perdíveis', 'Online', 'Coop', 'DLC']);
-      return buildGuideSummaryCards(game, viewModel).filter(item => essentials.has(item.label)).slice(0, 4);
+      const fallbackCards = buildGuideSummaryCards(game, viewModel).filter(item => essentials.has(item.label)).slice(0, 6);
+      if (statusCard && !fallbackCards.some(item => ['Status', 'Status editorial'].includes(item.label))) {
+        fallbackCards.push({ ...statusCard, label: 'Status' });
+      }
+      return fallbackCards.slice(0, 7);
     }
     if (typeof sharedEditorial.buildGuideHeroStats === 'function') {
       return sharedEditorial.buildGuideHeroStats(game, viewModel);
@@ -562,6 +593,63 @@ window.UIGuide = (() => {
       { icon: 'fa-trophy', label: 'Troféus', value: `${String(viewModel.total || 0)} troféu(s)`, tone: 'atlas-meta-signal--trophy' },
       { icon: 'fa-route', label: 'Roadmap', value: `${String(getGuideRoadmapCount(game, viewModel))} etapa(s)`, tone: 'atlas-meta-signal--partial' }
     ];
+  }
+
+  function getGuideHeroRouteTextFromContent(game = {}, viewModel = {}) {
+    const editorialParagraphs = Array.isArray(game?.editorial_summary) ? game.editorial_summary : [];
+    const candidates = [
+      game?.first_run_advice,
+      game?.firstRunAdvice,
+      game?.quickDecision?.firstAction,
+      viewModel?.firstRunAdvice,
+      ...editorialParagraphs
+    ]
+      .map(value => String(value || '').trim().replace(/\s+/g, ' '))
+      .filter(Boolean);
+    const routePattern = /melhor rota|melhor estrat|rota mais eficiente|primeir|comece|começar|campanha|roadmap|checklist|cleanup|perd/i;
+    const sentence = candidates
+      .flatMap(text => text.split(/(?<=[.!?])\s+/).map(item => item.trim()).filter(Boolean))
+      .find(item => routePattern.test(item));
+    return compactGuideHeaderText(sentence || candidates[0], '', 150);
+  }
+
+  function buildGuideHeroRouteModel(game = {}, viewModel = {}) {
+    const quickDecision = typeof buildGuideQuickDecisionModel === 'function' ? buildGuideQuickDecisionModel(game, viewModel) : null;
+    const firstAction = quickDecision?.firstAction || {};
+    const nextAction = viewModel.nextActionModel || {};
+    const routeText = getGuideHeroRouteTextFromContent(game, viewModel);
+    const title = compactGuideHeaderText(firstAction.title || nextAction.title, 'Abra o roadmap antes da checklist', 86)
+      || 'Abra o roadmap antes da checklist';
+    const detail = compactGuideHeaderText(
+      routeText || firstAction.detail || nextAction.detail,
+      'Use o roadmap para entender a ordem da platina antes de marcar troféus soltos.',
+      150
+    ) || 'Use o roadmap para entender a ordem da platina antes de marcar troféus soltos.';
+    return {
+      title,
+      detail,
+      focus: firstAction.focus || nextAction.focus || 'roadmap',
+      icon: firstAction.icon || nextAction.icon || 'fa-route'
+    };
+  }
+
+  function buildGuideHeroPrimaryAction(viewModel = {}) {
+    const isSaved = Boolean(viewModel.isSaved);
+    const hasChecklistProgress = Number(viewModel.completed || 0) > 0;
+    const nextAction = viewModel.nextActionModel || {};
+    if (!isSaved) {
+      return { label: 'Salvar na biblioteca', icon: 'fa-bookmark', save: true };
+    }
+    return hasChecklistProgress
+      ? { label: 'Continuar de onde parei', icon: 'fa-play', action: 'first-pending' }
+      : { label: 'Continuar guia', icon: 'fa-play', action: nextAction.focus || 'roadmap' };
+  }
+
+  function renderGuideHeroPrimaryAction(action = {}) {
+    if (action.save) {
+      return `<button type="button" class="atlas-btn atlas-btn-primary" data-toggle-save-game="true"><i class="fas ${escapeAttribute(action.icon || 'fa-bookmark')}" aria-hidden="true"></i>${escapeHtml(action.label || 'Salvar na biblioteca')}</button>`;
+    }
+    return `<button type="button" class="atlas-btn atlas-btn-primary" data-guide-action="${escapeAttribute(action.action || 'roadmap')}"><i class="fas ${escapeAttribute(action.icon || 'fa-play')}" aria-hidden="true"></i>${escapeHtml(action.label || 'Continuar guia')}</button>`;
   }
 
   function renderGuideRoadmapTimeline(roadmapStages = []) {
@@ -1109,6 +1197,18 @@ window.UIGuide = (() => {
     const storageLabel = context.storageLabel || 'Salvo neste navegador';
     const libraryLabel = isSaved ? `${storageLabel} • ${getLibraryStatusLabel(libraryEntry?.status, viewModel.progress)}` : 'Ainda não salvo';
     const nextAction = viewModel.nextActionModel || {};
+    const hasChecklistProgress = Number(viewModel.completed || 0) > 0;
+    const progressTitle = isSaved ? 'Seu progresso' : 'Salve este guia na sua biblioteca';
+    const progressText = isSaved
+      ? (hasChecklistProgress
+        ? 'Continue pelo checklist salvo e use o roadmap quando precisar retomar a ordem.'
+        : 'Guia salvo. Abra roadmap ou checklist para começar a acompanhar sua platina.')
+      : 'Acompanhe progresso, checklist e próxima etapa sem precisar procurar tudo de novo.';
+    const primaryAction = isSaved
+      ? (hasChecklistProgress
+        ? { label: 'Continuar de onde parei', action: 'first-pending', icon: 'fa-play' }
+        : { label: 'Continuar guia', action: nextAction.focus || 'roadmap', icon: 'fa-play' })
+      : { label: 'Salvar na biblioteca', action: 'save', icon: 'fa-bookmark' };
     const guidanceCounts = viewModel.guidanceCounts || {};
     const criticalAlertsCount = Number(guidanceCounts.criticalAlertsCount ?? viewModel.criticalAlertsCount ?? 0);
     const checklistTipsCount = Number(guidanceCounts.checklistTipsCount ?? viewModel.checklistTipsCount ?? 0);
@@ -1120,8 +1220,9 @@ window.UIGuide = (() => {
       <section class="atlas-panel atlas-panel--section atlas-guide-sidebar-card p-5">
         <div class="atlas-guide-sidebar-card__top">
           <div>
-            <div class="atlas-eyebrow">Progresso</div>
+            <div class="atlas-eyebrow">${escapeHtml(progressTitle)}</div>
             <strong id="guideProgressLabel" data-guide-progress-label>${viewModel.progress}%</strong>
+            <p class="atlas-sidebar-library-copy">${escapeHtml(progressText)}</p>
           </div>
           <span class="atlas-badge atlas-badge--${escapeAttribute(guideMeta.progressState.accent || 'partial')}">${escapeHtml(guideMeta.momentumLabel)}</span>
         </div>
@@ -1137,11 +1238,17 @@ window.UIGuide = (() => {
           <div class="atlas-eyebrow">Próximo passo</div>
           <strong>${escapeHtml(nextAction.title || 'Abrir checklist')}</strong>
           <p>${escapeHtml(nextAction.detail || 'Use a lista principal para continuar sem perder contexto.')}</p>
-          <button type="button" class="atlas-btn atlas-btn-primary atlas-btn-compact" data-guide-action="${escapeAttribute(nextAction.focus || 'trophies')}">${escapeHtml(nextAction.cta || 'Continuar')}</button>
+          <div class="atlas-sidebar-next__actions">
+            ${primaryAction.action === 'save'
+              ? `<button type="button" class="atlas-btn atlas-btn-primary atlas-btn-compact" data-toggle-save-game="true"><i class="fas ${escapeAttribute(primaryAction.icon)}" aria-hidden="true"></i>${escapeHtml(primaryAction.label)}</button>`
+              : `<button type="button" class="atlas-btn atlas-btn-primary atlas-btn-compact" data-guide-action="${escapeAttribute(primaryAction.action)}"><i class="fas ${escapeAttribute(primaryAction.icon)}" aria-hidden="true"></i>${escapeHtml(primaryAction.label)}</button>`}
+            <button type="button" class="atlas-btn atlas-btn-secondary atlas-btn-compact" data-guide-action="roadmap"><i class="fas fa-route" aria-hidden="true"></i>Ver roadmap</button>
+            <button type="button" class="atlas-btn atlas-btn-secondary atlas-btn-compact" data-guide-action="trophies"><i class="fas fa-list-check" aria-hidden="true"></i>Abrir checklist</button>
+          </div>
         </div>
         <div class="atlas-sidebar-actions">
           <div class="text-xs text-white/45">${escapeHtml(libraryLabel)}</div>
-          <button type="button" class="atlas-btn ${isSaved ? 'atlas-btn-secondary atlas-btn-muted-action' : 'atlas-btn-primary'} atlas-btn-compact" data-toggle-save-game="true">${isSaved ? 'Remover da biblioteca' : 'Salvar na biblioteca'}</button>
+          ${isSaved ? '<button type="button" class="atlas-btn atlas-btn-secondary atlas-btn-muted-action atlas-btn-compact" data-toggle-save-game="true">Remover da biblioteca</button>' : ''}
           <button type="button" class="atlas-btn atlas-btn-secondary atlas-btn-compact" data-copy-game-link="${escapeAttribute(game?.slug || '')}">Copiar link</button>
         </div>
       </section>`;
@@ -1253,7 +1360,8 @@ window.UIGuide = (() => {
     const guideEyebrow = 'Resumo rápido do guia';
     const verdict = buildThirtySecondVerdict(game, viewModel);
     const heroStats = buildGuideHeroStats(game, viewModel);
-    const nextAction = viewModel.nextActionModel || {};
+    const routeModel = buildGuideHeroRouteModel(game, viewModel);
+    const primaryAction = buildGuideHeroPrimaryAction(viewModel);
     const scopeModel = viewModel.scopeModel || {};
     return `
       <section class="atlas-panel atlas-panel--primary atlas-guide-hero p-5 md:p-6">
@@ -1269,16 +1377,17 @@ window.UIGuide = (() => {
             <p class="atlas-guide-hero__summary" hidden>${escapeHtml(verdict.summary || viewModel.decisionModel.verdictDetail)}</p>
             <div class="atlas-guide-start-card">
               <div>
-                <span>Primeiro passo recomendado</span>
-                <strong>${escapeHtml(nextAction.title || 'Abrir roadmap')}</strong>
-                <p>${escapeHtml(nextAction.detail || 'Use o roadmap para entender a ordem antes de marcar troféus soltos.')}</p>
+                <span>Melhor rota</span>
+                <strong>${escapeHtml(routeModel.title)}</strong>
+                <p>${escapeHtml(routeModel.detail)}</p>
               </div>
             </div>
             <div class="atlas-guide-hero__facts">
               ${heroStats.map(item => `<span class="atlas-meta-signal ${escapeAttribute(item.tone || 'atlas-meta-signal--partial')}" title="${escapeAttribute(item.detail || '')}"><i class="fas ${escapeAttribute(item.icon)}"></i><small>${escapeHtml(item.label)}</small><strong>${escapeHtml(item.value)}</strong></span>`).join('')}
             </div>
             <div class="atlas-guide-hero__actions">
-              <button type="button" class="atlas-btn atlas-btn-primary" data-guide-action="roadmap"><i class="fas fa-route"></i> Roadmap</button>
+              ${renderGuideHeroPrimaryAction(primaryAction)}
+              <button type="button" class="atlas-btn atlas-btn-secondary" data-guide-action="roadmap"><i class="fas fa-route"></i> Roadmap</button>
               <button type="button" class="atlas-btn atlas-btn-secondary" data-guide-action="trophies"><i class="fas fa-list-check"></i> Checklist</button>
             </div>
           </div>

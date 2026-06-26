@@ -449,10 +449,16 @@ window.UILibrary = (() => {
 
     if (!hasSavedItems && !trimmedSearch) {
       return {
-        title: 'Sua biblioteca ainda está vazia',
-        detail: 'Salve um guia para acompanhar checklist, progresso e sua próxima platina.',
-        helper: 'Abra qualquer guia e adicione à biblioteca para começar.',
-        action: '<a class="atlas-btn atlas-btn-primary" href="/catalogo">Explorar catálogo</a>',
+        title: 'Sua próxima platina começa aqui.',
+        detail: 'Salve um guia para acompanhar progresso, checklist e próxima etapa sem precisar procurar tudo de novo.',
+        helper: 'Entre para sincronizar sua biblioteca entre dispositivos.',
+        benefits: [
+          'Continue de onde parou.',
+          'Acompanhe checklist e roadmap.',
+          'Organize suas platinas em andamento.'
+        ],
+        example: true,
+        action: '<a class="atlas-btn atlas-btn-primary" href="/catalogo" data-library-catalog-link><i class="fas fa-compass" aria-hidden="true"></i> Explorar guias para salvar</a>',
         premium: true
       };
     }
@@ -567,10 +573,27 @@ window.UILibrary = (() => {
       });
       target.innerHTML = `
         <div class="library-shelf__empty${emptyState.premium ? ' library-shelf__empty--welcome' : ''}">
-          <strong>${escapeHtml(emptyState.title || emptyTitle)}</strong>
-          <span>${escapeHtml(emptyState.detail || emptyDetail)}</span>
-          ${emptyState.helper ? `<small>${escapeHtml(emptyState.helper)}</small>` : ''}
-          ${emptyState.action || ''}
+          <div class="library-empty__copy">
+            <strong>${escapeHtml(emptyState.title || emptyTitle)}</strong>
+            <span>${escapeHtml(emptyState.detail || emptyDetail)}</span>
+            ${Array.isArray(emptyState.benefits) && emptyState.benefits.length ? `
+              <ul class="library-empty__benefits" aria-label="Benefícios de salvar guias">
+                ${emptyState.benefits.slice(0, 3).map(item => `<li><i class="fas fa-check" aria-hidden="true"></i>${escapeHtml(item)}</li>`).join('')}
+              </ul>
+            ` : ''}
+            ${emptyState.helper ? `<small>${escapeHtml(emptyState.helper)}</small>` : ''}
+            ${emptyState.action || ''}
+          </div>
+          ${emptyState.example ? `
+            <article class="library-empty-example" aria-label="Exemplo visual de guia salvo">
+              <span>Exemplo de guia salvo</span>
+              <strong>Hades</strong>
+              <div class="library-empty-example__progress" aria-hidden="true"><span style="width:0%"></span></div>
+              <p>0% concluído</p>
+              <small>Próxima etapa: começar pelo roadmap</small>
+              <button type="button" class="atlas-btn atlas-btn-secondary atlas-btn-compact" disabled>Continuar</button>
+            </article>
+          ` : ''}
         </div>
       `;
       return;

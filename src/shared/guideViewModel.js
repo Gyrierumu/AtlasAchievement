@@ -245,6 +245,19 @@
       || tags.some(tag => normalizeGuideSignalText(typeof tag === 'string' ? tag : `${tag?.id || ''} ${tag?.label || ''}`).includes('perdivel'));
   }
 
+  function ensureRealMissableTag(tags = [], trophy = {}) {
+    const nextTags = Array.isArray(tags) ? tags.slice() : [];
+    const hasMissableFlag = trophy?.is_missable === true
+      || trophy?.isMissable === true
+      || trophy?.missable === true
+      || String(trophy?.risk || '').toLowerCase() === 'missable'
+      || String(trophy?.riskType || '').toLowerCase() === 'missable';
+    if (hasMissableFlag && !isCompletionTrophy(trophy) && !nextTags.some(tag => tag?.id === 'missable')) {
+      nextTags.push({ id: 'missable', label: 'Perdível', tone: 'risk' });
+    }
+    return nextTags;
+  }
+
   function countRealMissableTrophies(trophies = []) {
     return (Array.isArray(trophies) ? trophies : []).filter(isRealMissableTrophy).length;
   }
@@ -447,7 +460,7 @@
 
   function getGuideTrophyTags(trophy = {}, game = {}) {
     const explicitTags = getExplicitGuideTrophyTags(trophy, game);
-    if (explicitTags.length) return explicitTags;
+    if (explicitTags.length) return sortGuideTrophyTags(ensureRealMissableTag(explicitTags, trophy));
     if (isCompletionTrophy(trophy)) return [];
     const tags = Array.isArray(getTrophyRiskTags(trophy)) ? getTrophyRiskTags(trophy).slice() : [];
     const ids = new Set(tags.map(tag => tag?.id).filter(Boolean));

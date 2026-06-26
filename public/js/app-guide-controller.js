@@ -18,6 +18,22 @@ window.AppGuideController = (() => {
     let quickDockScrollFrame = null;
     let quickDockListenersBound = false;
 
+    function shouldResetGuideScroll(options = {}) {
+      return page === 'public'
+        && !options.preserveScroll
+        && !options.preserveChecklistState
+        && !window.location.hash;
+    }
+
+    function resetGuideScrollAfterRender(options = {}) {
+      if (!shouldResetGuideScroll(options)) return;
+      const schedule = window.requestAnimationFrame || (callback => window.setTimeout(callback, 0));
+      schedule(() => {
+        UI.resetPageScroll?.();
+        syncGuideQuickDock();
+      });
+    }
+
     function renderCurrentGuide(options = {}) {
       if (!state.currentGame) return;
       const renderModel = buildGuideRenderModel(state.currentGame, state.library, state.availableGames, {
@@ -46,6 +62,7 @@ window.AppGuideController = (() => {
       UI.applyTrophyFilter(state.activeFilter, state.guideSearch);
       if (UI.has('#guideDecisionStack')) UI.qs('#guideDecisionStack').classList.remove('hidden');
       if (UI.has('#guideContent')) UI.qs('#guideContent').classList.remove('hidden');
+      resetGuideScrollAfterRender(options);
       if (!options.preserveChecklistState) {
         window.AtlasAnalytics?.trackGuideView?.(state.currentGame, {
           source: options.analyticsSource || 'direct'

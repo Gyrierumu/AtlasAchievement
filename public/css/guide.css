@@ -319,7 +319,7 @@
 
 #view-guide .atlas-guide-hero__facts span,
 #view-guide .atlas-guide-hero__facts .atlas-meta-signal {
-  min-width: 128px;
+  min-width: 116px;
   padding: 7px 9px;
   border-radius: 11px;
   column-gap: 8px;
@@ -684,6 +684,12 @@
   font-size: 1.55rem;
 }
 
+#view-guide .atlas-sidebar-library-copy {
+  margin-top: 6px;
+  font-size: .8rem;
+  line-height: 1.35;
+}
+
 #view-guide .atlas-sidebar-counts {
   gap: 6px;
   font-size: .76rem;
@@ -706,6 +712,11 @@
   margin-top: 5px;
   font-size: .8rem;
   line-height: 1.35;
+}
+
+#view-guide .atlas-sidebar-next__actions {
+  gap: 7px;
+  margin-top: 10px;
 }
 
 #view-guide .atlas-sidebar-actions {
@@ -2039,6 +2050,14 @@
   font-weight: 900;
 }
 
+.atlas-sidebar-library-copy {
+  max-width: 42rem;
+  margin-top: 8px;
+  color: rgba(255,255,255,.66);
+  font-size: .88rem;
+  line-height: 1.42;
+}
+
 .atlas-sidebar-progress {
   height: 8px;
   overflow: hidden;
@@ -2097,6 +2116,25 @@
 
 .atlas-sidebar-next .atlas-btn {
   margin-top: 12px;
+}
+
+.atlas-sidebar-next__actions {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 8px;
+  margin-top: 12px;
+}
+
+.atlas-sidebar-next__actions .atlas-btn {
+  min-width: 0;
+  width: 100%;
+  margin-top: 0;
+  justify-content: center;
+  white-space: normal;
+}
+
+.atlas-sidebar-next__actions .atlas-btn i {
+  flex: 0 0 auto;
 }
 
 .atlas-sidebar-actions {
@@ -2997,6 +3035,14 @@ body.atlas-guide-dock-active footer {
   .atlas-guide-flow .atlas-sidebar-actions {
     min-width: 0;
   }
+
+  .atlas-sidebar-next__actions {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  .atlas-sidebar-next__actions .atlas-btn:first-child {
+    grid-column: 1 / -1;
+  }
 }
 
 @media (max-width: 768px) {
@@ -3022,6 +3068,14 @@ body.atlas-guide-dock-active footer {
   .atlas-guide-summary-actions {
     grid-template-columns: minmax(0, 1fr);
     padding: 12px !important;
+  }
+
+  .atlas-sidebar-next__actions {
+    grid-template-columns: minmax(0, 1fr);
+  }
+
+  .atlas-sidebar-next__actions .atlas-btn:first-child {
+    grid-column: auto;
   }
 
   .atlas-guide-summary-actions__buttons,

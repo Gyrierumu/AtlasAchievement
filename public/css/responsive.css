@@ -1259,9 +1259,25 @@
   }
 
   .library-shelf__empty--welcome {
+    grid-template-columns: minmax(0, 1fr);
+    justify-items: center;
     min-height: 280px;
     padding: 32px 18px;
     border-radius: 20px;
+    text-align: center;
+  }
+
+  .library-empty__copy {
+    justify-items: center;
+  }
+
+  .library-empty__benefits li {
+    justify-content: center;
+  }
+
+  .library-empty-example {
+    max-width: 280px;
+    justify-self: center;
   }
 
   .library-shelf__empty--welcome .atlas-btn {
