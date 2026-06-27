@@ -1,0 +1,847 @@
+{
+  "game": {
+    "avoid_if": "Evite se voce quer uma platina linear, curta ou sem risco de perder trofeus por decisao narrativa.",
+    "before_you_start": "Aceite que a platina exige planejamento. Baldur's Gate 3 bloqueia trofeus por escolhas, companions, quests, Dark Urge e finais; nao trate tudo como recuperavel no Ato 3.",
+    "best_for": "Ideal para quem quer uma platina RPG profunda, cheia de escolhas, builds, rotas alternativas e consequencias.",
+    "cleanup_advice": "Revise trofeus por ato, companions, finais e rotas alternativas antes de avancar para decisoes irreversiveis.",
+    "cover_image": "https://cdn.cloudflare.steamstatic.com/steam/apps/1086940/library_600x900.jpg",
+    "coverage_level": "strong",
+    "created_at": "2026-05-09 19:53:42",
+    "difficulty": 7,
+    "difficulty_reason": "A dificuldade vem da complexidade de escolhas, pontos de bloqueio, Tactician, builds, bosses opcionais e duracao das runs.",
+    "dlc_scope": "Guia focado na lista atual cadastrada no projeto e na platina principal. Honour Mode/Foehammer deve ser tratado como conteúdo/modo posterior a validar separadamente se houver nova lista; não tratar como DLC da platina principal.",
+    "editorial_notes": "",
+    "editorial_review_status": null,
+    "editorial_status": "published",
+    "first_run_advice": "Nao jogue totalmente as cegas se a meta e platina; mantenha saves estrategicos antes de decisoes grandes e pontos de nao retorno.",
+    "grind_summary": "O peso esta em escolhas, companions, finais, trofeus especificos, rotas alternativas e Tactician, nao em grind tradicional.",
+    "guide_avoid": null,
+    "guide_best_moment": null,
+    "guide_dlc": null,
+    "guide_grind": null,
+    "guide_ideal": null,
+    "guide_online": null,
+    "guide_runs": null,
+    "image": "https://cdn.cloudflare.steamstatic.com/steam/apps/1086940/header.jpg",
+    "is_verified": 0,
+    "last_reviewed_at": "",
+    "missable": "A platina principal e altamente sensivel a escolhas, atos, companions, finais, Dark Urge, quests opcionais e decisoes irreversiveis. Use saves estrategicos antes de pontos de nao retorno, decisoes de faccao, bosses e finais.",
+    "missable_summary": "Muitos trofeus podem ser bloqueados por ato, escolha, companion, boss opcional, final, Dark Urge ou dificuldade Tactician.",
+    "name": "Baldur's Gate 3",
+    "online_summary": "Nao ha exigencia de multiplayer para a platina.",
+    "quality_warnings": "[]",
+    "reviewed_by": "",
+    "runs_summary": "A platina exige planejamento pesado. Multiplas rotas, saves estrategicos e atencao a companions, escolhas e finais reduzem retrabalho.",
+    "slug": "baldurs-gate-3",
+    "time": "120-150 horas",
+    "time_bucket": "long",
+    "time_max_hours": 150,
+    "time_min_hours": 120,
+    "time_reason": "A faixa de 120-150 horas considera campanha longa, multiplas rotas, trofeus de escolhas, finais, companions e cleanup.",
+    "time_sort_hours": 120,
+    "updated_at": "2026-06-27 02:36:58",
+    "verification_note": "Lista principal da platina de Baldur's Gate 3 adicionada com checklist e roadmap completos; Honour Mode/Foehammer ficou fora por ser grupo extra.",
+    "verification_status": "review",
+    "walkthrough": null
+  },
+  "redirects": [],
+  "roadmaps": [
+    {
+      "content": "{\"title\":\"Avance pela campanha\",\"focus\":\"\",\"objective\":\"prepare personagem/build e entenda saves, checks, companions, inspiracao, descansos longos, consequencias e pontos de nao retorno antes de avancar atos.\",\"actions\":[],\"warning\":\"\",\"result\":\"\"}",
+      "step_order": 1
+    },
+    {
+      "content": "{\"title\":\"Prossiga pela rota planejada\",\"focus\":\"\",\"objective\":\"jogue o Act 1 com atencao a companions, tieflings, Sazza, Scratch, owlbear cub, Shovel, Adamantine Forge, Blood of Lathander, areas opcionais e trofeus bloqueaveis.\",\"actions\":[],\"warning\":\"\",\"result\":\"\"}",
+      "step_order": 2
+    },
+    {
+      "content": "{\"title\":\"Treine chefes sem dano\",\"focus\":\"\",\"objective\":\"no Act 2, foque em decisoes criticas, Moonrise Towers, prisioneiros, tieflings, companion quests, bosses opcionais, Dark Urge e requisitos de finais.\",\"actions\":[],\"warning\":\"\",\"result\":\"\"}",
+      "step_order": 3
+    },
+    {
+      "content": "{\"title\":\"Revise pendências finais\",\"focus\":\"\",\"objective\":\"no Act 3, mantenha saves estrategicos para finais, faccoes, Gortash, Orin, Emperor, companions, bosses opcionais, romances e cleanup narrativo.\",\"actions\":[],\"warning\":\"\",\"result\":\"\"}",
+      "step_order": 4
+    },
+    {
+      "content": "{\"title\":\"planeje rotas Dark Urge, good/evil e finais especificos como...\",\"focus\":\"\",\"objective\":\"planeje rotas Dark Urge, good/evil e finais especificos como Absolute Power Corrupts, Hero of the Forgotten Realms, Sins of the Father e Ceremorphosis.\",\"actions\":[],\"warning\":\"\",\"result\":\"\"}",
+      "step_order": 5
+    },
+    {
+      "content": "{\"title\":\"Fechamento e revisão final\",\"focus\":\"\",\"objective\":\"faca Tactician para Critical Hit com build e composicao preparadas; Honour Mode/Foehammer deve ser validado separadamente se houver nova lista e nao entra como DLC da platina principal deste guia.\",\"actions\":[],\"warning\":\"\",\"result\":\"\"}",
+      "step_order": 6
+    },
+    {
+      "content": "{\"title\":\"Revise pendências finais\",\"focus\":\"\",\"objective\":\"finalize cleanup de trofeus especificos, companions, builds, bosses, livros, musicas, combate, finais restantes e qualquer save estrategico pendente.\",\"actions\":[],\"warning\":\"\",\"result\":\"\"}",
+      "step_order": 7
+    }
+  ],
+  "schemaVersion": 1,
+  "seedExtras": {
+    "aliases": [],
+    "attentionPoints": [
+      {
+        "tags": [
+          "Extra",
+          "Modo Honra",
+          "Lista base"
+        ],
+        "text": "A platina principal usa os 54 troféus da lista base. Ponta de lança/Foehammer é tratado como extra de Modo Honra/Honour Mode para 100%, não como requisito de Pride of Baldur's Gate.",
+        "title": "Lista principal vs Modo Honra",
+        "type": "Extra / 100%"
+      },
+      {
+        "tags": [
+          "Perdível",
+          "Tieflings",
+          "Checklist"
+        ],
+        "text": "É um dos troféus mais sensíveis do jogo. Proteja os tieflings do Ato I ao Ato III e use checklist antes de avançar atos.",
+        "title": "Ninguém Fica Para Trás",
+        "type": "Perdível / Tieflings"
+      },
+      {
+        "tags": [
+          "Perdível",
+          "Sazza",
+          "Ato I"
+        ],
+        "text": "Deixem Ela Ir! exige salvar Sazza em múltiplos momentos. Não mate Sazza e acompanhe a rota desde o Grove.",
+        "title": "Sazza",
+        "type": "Perdível / Rota"
+      },
+      {
+        "tags": [
+          "Perdível",
+          "Karlach",
+          "Romance"
+        ],
+        "text": "Encontro Tórrido exige romance e progressão correta de Karlach. Acompanhe aprovação, upgrades e cenas de descanso longo.",
+        "title": "Karlach",
+        "type": "Perdível / Romance"
+      },
+      {
+        "tags": [
+          "Perdível",
+          "Impulso Sombrio",
+          "Bhaal"
+        ],
+        "text": "Pecados do Pai e Abrace o Impulso exigem rota específica. Separe uma jogada ou save dedicado para Impulso Sombrio/Dark Urge.",
+        "title": "Impulso Sombrio e Bhaal",
+        "type": "Perdível / Rota"
+      },
+      {
+        "tags": [
+          "Dificuldade",
+          "Estrategista"
+        ],
+        "text": "Acerto Crítico exige terminar o jogo no modo Estrategista/Tactician. Não reduza a dificuldade nessa jogada.",
+        "title": "Estrategista",
+        "type": "Dificuldade"
+      },
+      {
+        "tags": [
+          "Extra",
+          "Modo Honra"
+        ],
+        "text": "Ponta de lança exige Modo Honra/Honour Mode e fica separado como extra/100% neste guia.",
+        "title": "Modo Honra",
+        "type": "Extra / 100%"
+      },
+      {
+        "tags": [
+          "Atenção",
+          "Saves"
+        ],
+        "text": "Faça saves antes de decisões, romances, chefes e transições de ato. BG3 pode bloquear troféus dezenas de horas antes do fim.",
+        "title": "Saves manuais",
+        "type": "Atenção"
+      },
+      {
+        "tags": [
+          "Descanso longo",
+          "Companheiro"
+        ],
+        "text": "Várias cenas de companheiros e romance dependem de descansos longos. Não avance a história ignorando eventos do acampamento.",
+        "title": "Descansos longos",
+        "type": "Atenção / Companheiros"
+      },
+      {
+        "tags": [
+          "Perdível",
+          "Chefe",
+          "Condição específica"
+        ],
+        "text": "Gortash, Orin, Myrkul, Grym, a Matriarca Aranha e outros chefes têm troféus com condições específicas. Faça save antes da luta.",
+        "title": "Chefes com condições",
+        "type": "Perdível / Chefe"
+      },
+      {
+        "tags": [
+          "Solo",
+          "Offline"
+        ],
+        "text": "O jogo tem multiplayer, mas a platina não exige online nem cooperação.",
+        "title": "Multiplayer opcional",
+        "type": "Sem online obrigatório"
+      },
+      {
+        "tags": [
+          "Final",
+          "Rota",
+          "Saves"
+        ],
+        "text": "Use saves separados antes das decisões finais para reduzir jogadas extras, mas trate Impulso Sombrio/Dark Urge com Bhaal como rota planejada desde cedo.",
+        "title": "Finais incompatíveis",
+        "type": "Final / Rota"
+      }
+    ],
+    "checklist": [
+      "Confirmar que a lista principal está separada do Modo Honra/Honour Mode.",
+      "Confirmar que Pride of Baldur's Gate é a platina da lista base.",
+      "Manter Foehammer/Ponta de lança fora da lista principal e citado como extra/100%.",
+      "Confirmar onlineRequired false, coopRequired false e dlcRequired false.",
+      "Confirmar hasMissables true e missableCount igual aos troféus marcados como Perdível.",
+      "Marcar Acerto Crítico como o único troféu de Dificuldade da lista principal.",
+      "Não marcar chefes difíceis como Dificuldade.",
+      "Não marcar companheiros, grupo ou romance como Coop.",
+      "Não marcar multiplayer opcional como Online.",
+      "Acompanhar Ninguém Fica Para Trás do Ato I ao Ato III.",
+      "Acompanhar Sazza, Karlach, Impulso Sombrio/Dark Urge, Bhaal, companheiros e finais.",
+      "Criar saves manuais antes de transições de ato, romances, chefes e decisões finais.",
+      "Confirmar que todos os troféus têm nome oficial em inglês como principal e PT-BR em campo separado.",
+      "Confirmar que todas as descrições estão em português.",
+      "Confirmar que o roadmap está estruturado e renderiza como etapas legíveis.",
+      "Revisar FAQ, decisão rápida, SEO e pontos de atenção antes de publicar.",
+      "Comparar status editorial da página individual com o catálogo."
+    ],
+    "faq": [
+      {
+        "answer": "Sim. A platina tem muitos perdíveis ligados a escolhas, companheiros, romances, tieflings, Sazza, Impulso Sombrio/Dark Urge, Bhaal e chefes com condições específicas.",
+        "question": "Baldur's Gate 3 tem troféus perdíveis?"
+      },
+      {
+        "answer": "Depende da rota e do uso de saves, mas a rota segura usa mais de uma jogada: uma campanha principal planejada, uma rota Impulso Sombrio/Dark Urge com Bhaal e uma jogada de dificuldade, se necessário.",
+        "question": "Quantas jogadas são necessárias?"
+      },
+      {
+        "answer": "Não. A platina pode ser feita totalmente solo e offline.",
+        "question": "Precisa jogar online?"
+      },
+      {
+        "answer": "Não. Multiplayer existe, mas é opcional.",
+        "question": "Precisa de cooperação?"
+      },
+      {
+        "answer": "Não. A platina principal usa a lista base. Modo Honra/Honour Mode e Ponta de lança devem ser tratados separadamente como extra/100%.",
+        "question": "Precisa de DLC?"
+      },
+      {
+        "answer": "Sim. Acerto Crítico exige completar o jogo no modo Estrategista/Tactician. Ponta de lança, se buscado para 100%, exige Modo Honra/Honour Mode em uma rota própria.",
+        "question": "A dificuldade afeta troféus?"
+      },
+      {
+        "answer": "Não neste guia de platina principal. Ponta de lança/Foehammer é tratado como troféu adicional de Modo Honra/Honour Mode e não entra nos 54 troféus da lista base.",
+        "question": "Modo Honra é obrigatório para a platina?"
+      },
+      {
+        "answer": "Ninguém Fica Para Trás. Salvar todos os tieflings possíveis exige decisões corretas do Ato I ao Ato III.",
+        "question": "Qual é o maior cuidado da platina?"
+      },
+      {
+        "answer": "Sim, vários finais podem ser feitos com saves antes das decisões finais, mas rotas como Impulso Sombrio/Dark Urge com Bhaal e alguns companheiros exigem preparação muito antes.",
+        "question": "Posso fazer finais diferentes com save?"
+      },
+      {
+        "answer": "Em média, cerca de 120 a 150 horas ou mais, dependendo do conhecimento do jogo, número de jogadas, dificuldade e quantidade de retrabalho.",
+        "question": "Quanto tempo leva para platinar?"
+      },
+      {
+        "answer": "Sim, mas multiplayer não é obrigatório. O guia considera que a platina pode ser feita solo.",
+        "question": "Posso jogar em multiplayer e ainda pegar troféus?"
+      },
+      {
+        "answer": "Matar NPCs importantes, ignorar tieflings, perder Sazza, falhar romance de Karlach, avançar atos sem saves, reduzir dificuldade da jogada Estrategista/Tactician ou não preparar a rota Impulso Sombrio/Dark Urge.",
+        "question": "O que pode estragar uma jogada?"
+      }
+    ],
+    "note": "Campos exportados para auditoria. O SQLite atual nao possui colunas nativas para todos esses extras; a importacao preserva o que o banco suporta.",
+    "quickDecision": {
+      "difficulty": "Alta.",
+      "dlc": "A platina principal não exige DLC. Modo Honra/Honour Mode e Ponta de lança ficam separados como extra/100%.",
+      "mainAlert": "Tieflings, Sazza, Karlach, Impulso Sombrio/Dark Urge, finais, companheiros e Estrategista/Tactician.",
+      "onlineCoop": "Não exige online nem cooperação.",
+      "risk": "Alto. Muitas escolhas podem bloquear troféus dezenas de horas antes do final.",
+      "time": "Muito longo, cerca de 120 a 150 horas ou mais.",
+      "worthIt": "Sim, mas é uma platina longa e de alto risco, indicada para quem aceita jogar com checklist e saves manuais desde o começo."
+    },
+    "seo": {
+      "description": "Guia de troféus de Baldur’s Gate 3 com roadmap da platina, tempo estimado, dificuldade, troféus perdíveis, Estrategista/Tactician, Modo Honra, tieflings, Sazza, Karlach, Impulso Sombrio, finais e dicas para evitar retrabalho.",
+      "keywords": "Baldur’s Gate 3 troféus, Baldur’s Gate 3 platina, guia Baldur’s Gate 3, BG3 troféus, BG3 platina, Pride of Baldur's Gate, Orgulho de Baldur's Gate, Leave No One Behind, Ninguém Fica Para Trás, Critical Hit, Acerto Crítico, Foehammer, Ponta de lança, Modo Honra BG3, Tactician BG3, Sazza BG3, Karlach Hot Date, Dark Urge BG3",
+      "metaDescription": "Guia de troféus de Baldur’s Gate 3 com roadmap da platina, tempo estimado, dificuldade, troféus perdíveis, Estrategista/Tactician, Modo Honra, tieflings, Sazza, Karlach, Impulso Sombrio, finais e dicas para evitar retrabalho.",
+      "ogDescription": "Roadmap da platina principal de Baldur’s Gate 3 com 54 troféus, 28 perdíveis, Estrategista/Tactician, companheiros, tieflings, Sazza, Impulso Sombrio/Dark Urge e Modo Honra separado como extra.",
+      "ogTitle": "Baldur’s Gate 3: Guia de Troféus e Platina",
+      "title": "Baldur’s Gate 3: Guia de Troféus e Platina"
+    },
+    "tags": [
+      "Baldur's Gate 3",
+      "BG3",
+      "PS5",
+      "Platina",
+      "Tactician",
+      "Estrategista",
+      "Perdíveis",
+      "Tieflings",
+      "Sazza",
+      "Karlach",
+      "Impulso Sombrio",
+      "Bhaal",
+      "Modo Honra extra",
+      "Sem online",
+      "Sem coop",
+      "Sem DLC"
+    ]
+  },
+  "slug": "baldurs-gate-3",
+  "trophies": [
+    {
+      "description": "Collect every trophy in Baldur's Gate III - no easy task.",
+      "is_missable": 0,
+      "is_spoiler": 0,
+      "name": "Pride of Baldur's Gate",
+      "name_pt": "Orgulho de Baldur's Gate",
+      "tip": "Conclua os outros 53 trofeus da lista principal e mantenha qualquer grupo extra separado da platina base.",
+      "trophy_code": "bg3_pride_of_baldurs_gate",
+      "type": "Platina"
+    },
+    {
+      "description": "Finish the game (with a heartfelt \"thank you!\" from Larian Studios).",
+      "is_missable": 0,
+      "is_spoiler": 1,
+      "name": "All's Well That Ends Well",
+      "name_pt": "Tudo Está Bem Quando Termina Bem",
+      "tip": "Troféu de conclusao da campanha. Use saves finais para resolver rotas alternativas sem repetir tudo.",
+      "trophy_code": "bg3_alls_well_that_ends_well",
+      "type": "Ouro"
+    },
+    {
+      "description": "Complete the game in Tactician mode.",
+      "is_missable": 1,
+      "is_spoiler": 0,
+      "name": "Critical Hit",
+      "name_pt": "Acerto Crítico",
+      "tip": "Perdivel por dificuldade: comece e termine em Tactician. Nao conte com trocar a dificuldade no fim.",
+      "trophy_code": "bg3_critical_hit",
+      "type": "Ouro"
+    },
+    {
+      "description": "Reign with terror: take control of the Netherbrain and bend the world to your will.",
+      "is_missable": 1,
+      "is_spoiler": 1,
+      "name": "Absolute Power Corrupts",
+      "name_pt": "Poder Absoluto Corrompe",
+      "tip": "Final perdivel por escolha. Mantenha save estrategico antes da decisao final para alternar rotas.",
+      "trophy_code": "bg3_absolute_power_corrupts",
+      "type": "Prata"
+    },
+    {
+      "description": "Save the realms: destroy the Absolute once and for all.",
+      "is_missable": 1,
+      "is_spoiler": 1,
+      "name": "Hero of the Forgotten Realms",
+      "name_pt": "Herói dos Reinos Esquecidos",
+      "tip": "Final ligado a escolha no desfecho. Guarde save antes do confronto/decisao final.",
+      "trophy_code": "bg3_hero_of_the_forgotten_realms",
+      "type": "Prata"
+    },
+    {
+      "description": "Claim your Throne of Blood: take control of the Netherbrain for Bhaal and break the world.",
+      "is_missable": 1,
+      "is_spoiler": 1,
+      "name": "Sins of the Father",
+      "name_pt": "Pecados do Pai",
+      "tip": "Perdivel e exige rota Dark Urge/Bhaal. Planeje uma run ou save dedicado para esse final.",
+      "trophy_code": "bg3_sins_of_the_father",
+      "type": "Prata"
+    },
+    {
+      "description": "Make the ultimate sacrifice: become a mind flayer to defeat the Netherbrain.",
+      "is_missable": 1,
+      "is_spoiler": 1,
+      "name": "Ceremorphosis",
+      "name_pt": "Ceremorfose",
+      "tip": "Perdivel por escolha no endgame. Salve antes das decisoes com Emperor/Orpheus e Netherbrain.",
+      "trophy_code": "bg3_ceremorphosis",
+      "type": "Prata"
+    },
+    {
+      "description": "Take control of the Nautiloid and escape the Hells.",
+      "is_missable": 0,
+      "is_spoiler": 1,
+      "name": "Descent From Avernus",
+      "name_pt": "Descida de Avernus",
+      "tip": "Troféu automatico do prologo ao escapar do Nautiloid.",
+      "trophy_code": "bg3_descent_from_avernus",
+      "type": "Bronze"
+    },
+    {
+      "description": "Leave Act One - for somewhere altogether darker.",
+      "is_missable": 0,
+      "is_spoiler": 1,
+      "name": "The Plot Thickens",
+      "name_pt": "A Trama Engrossa",
+      "tip": "Troféu de progresso ao sair do Act 1. Revise pendencias antes de avancar.",
+      "trophy_code": "bg3_the_plot_thickens",
+      "type": "Bronze"
+    },
+    {
+      "description": "Leave Act Two - Baldur's Gate is just over the horizon.",
+      "is_missable": 0,
+      "is_spoiler": 1,
+      "name": "The City Awaits",
+      "name_pt": "A Cidade Aguarda",
+      "tip": "Troféu de progresso ao sair do Act 2. Verifique Moonrise, tieflings e companion quests antes.",
+      "trophy_code": "bg3_the_city_awaits",
+      "type": "Bronze"
+    },
+    {
+      "description": "Complete ten background goals in a single playthrough - you are one with your character.",
+      "is_missable": 0,
+      "is_spoiler": 0,
+      "name": "Roleplayer",
+      "name_pt": "Interpretador",
+      "tip": "Escolha um background coerente com seu estilo e acompanhe metas de inspiracao ao longo da campanha.",
+      "trophy_code": "bg3_roleplayer",
+      "type": "Bronze"
+    },
+    {
+      "description": "Take four full Long Rests in a single playthrough - adventuring's tiring work.",
+      "is_missable": 0,
+      "is_spoiler": 0,
+      "name": "Bedrolls and Breakfast",
+      "name_pt": "Sacos de Dormir e Café da Manhã",
+      "tip": "Faca descansos longos completos; eles tambem disparam cenas importantes de companions.",
+      "trophy_code": "bg3_bedrolls_and_breakfast",
+      "type": "Bronze"
+    },
+    {
+      "description": "Consume a parasite and unlock a new power - is it meant to wriggle the whole way down?",
+      "is_missable": 1,
+      "is_spoiler": 1,
+      "name": "Expand Your Mind",
+      "name_pt": "Expanda Sua Mente",
+      "tip": "Perdivel por escolha se voce rejeitar todos os parasitas. Decida cedo se esta rota cabe na run.",
+      "trophy_code": "bg3_expand_your_mind",
+      "type": "Bronze"
+    },
+    {
+      "description": "Dig up five buried chests in a single playthrough - treasure!",
+      "is_missable": 0,
+      "is_spoiler": 0,
+      "name": "Dig for Victory",
+      "name_pt": "Cave Pela Vitória",
+      "tip": "Tenha uma pa e investigue montes de terra revelados por Perception checks.",
+      "trophy_code": "bg3_dig_for_victory",
+      "type": "Bronze"
+    },
+    {
+      "description": "Successfully use Detect Thoughts to pry into someone's thoughts.",
+      "is_missable": 0,
+      "is_spoiler": 0,
+      "name": "No Penny Required",
+      "name_pt": "Sem Moeda Necessária",
+      "tip": "Use magia, scroll ou pocao de Detect Thoughts em dialogo com opcao disponivel.",
+      "trophy_code": "bg3_no_penny_required",
+      "type": "Bronze"
+    },
+    {
+      "description": "Break out of prison after being arrested - aren't you daring?",
+      "is_missable": 0,
+      "is_spoiler": 0,
+      "name": "Escapologist",
+      "name_pt": "Escapista",
+      "tip": "Se for preso, escape da cela sem resolver pela via normal.",
+      "trophy_code": "bg3_escapologist",
+      "type": "Bronze"
+    },
+    {
+      "description": "Recruit a hireling. You can befriend them or use them as cannon-fodder - we won't judge.",
+      "is_missable": 0,
+      "is_spoiler": 0,
+      "name": "Outsourcing",
+      "name_pt": "Terceirização",
+      "tip": "Fale com Withers no acampamento e recrute um hireling.",
+      "trophy_code": "bg3_outsourcing",
+      "type": "Bronze"
+    },
+    {
+      "description": "Multiclass into every class in one playthrough without asking Withers to change your character.",
+      "is_missable": 0,
+      "is_spoiler": 0,
+      "name": "Jack-of-all-Trades",
+      "name_pt": "Pau pra Toda Obra",
+      "tip": "Planeje 12 niveis sem respec. Pode ser feito com personagem dedicado/hireling, mas exige controle de classes.",
+      "trophy_code": "bg3_jack_of_all_trades",
+      "type": "Bronze"
+    },
+    {
+      "description": "Create three unique alchemical solutions in a single playthrough - bottoms up!",
+      "is_missable": 0,
+      "is_spoiler": 0,
+      "name": "Homebrewer",
+      "name_pt": "Alquimista Caseiro",
+      "tip": "Colete ingredientes e crie tres solucoes alquimicas diferentes.",
+      "trophy_code": "bg3_homebrewer",
+      "type": "Bronze"
+    },
+    {
+      "description": "Use one enemy as an improvised weapon against another.",
+      "is_missable": 0,
+      "is_spoiler": 0,
+      "name": "Kill Two Birds with One Gnome",
+      "name_pt": "Matar Dois Coelhos com Uma Gnomada",
+      "tip": "Use Improvised Melee Weapon com personagem forte para bater um inimigo em outro.",
+      "trophy_code": "bg3_kill_two_birds_with_one_gnome",
+      "type": "Bronze"
+    },
+    {
+      "description": "Earn a hundred gold from playing sweet, sweet music in a single playthrough.",
+      "is_missable": 0,
+      "is_spoiler": 0,
+      "name": "Busker",
+      "name_pt": "Artista de Rua",
+      "tip": "Use Performance com instrumento em areas populosas, especialmente no Act 3.",
+      "trophy_code": "bg3_busker",
+      "type": "Bronze"
+    },
+    {
+      "description": "Perform five attacks in one turn. Your enemies won't know what hit them (literally).",
+      "is_missable": 0,
+      "is_spoiler": 0,
+      "name": "Action Surge",
+      "name_pt": "Rajada de Ação",
+      "tip": "Use Fighter/extra attacks, Haste, Action Surge ou efeitos similares para chegar a cinco ataques.",
+      "trophy_code": "bg3_action_surge",
+      "type": "Bronze"
+    },
+    {
+      "description": "Kill a character with an Unarmed Strike.",
+      "is_missable": 0,
+      "is_spoiler": 0,
+      "name": "Fists of Fury",
+      "name_pt": "Punhos da Fúria",
+      "tip": "Enfraqueca um inimigo e finalize sem arma equipada ou com build de Monk.",
+      "trophy_code": "bg3_fists_of_fury",
+      "type": "Bronze"
+    },
+    {
+      "description": "Defeat Commander Zhalk on the Nautiloid.",
+      "is_missable": 1,
+      "is_spoiler": 0,
+      "name": "Devil's in the Details",
+      "name_pt": "O Diabo Mora nos Detalhes",
+      "tip": "Perdivel no prologo. Prepare Command/Drop, buffs e foco de dano antes de conectar o transponder.",
+      "trophy_code": "bg3_devils_in_the_details",
+      "type": "Bronze"
+    },
+    {
+      "description": "Kill the Spider Matriarch before her eggs hatch - why do they have so many legs?",
+      "is_missable": 1,
+      "is_spoiler": 0,
+      "name": "Pest Control",
+      "name_pt": "Controle de Pragas",
+      "tip": "Perdivel no Act 1. Destrua ovos ou foque a Matriarch antes que eles eclodam.",
+      "trophy_code": "bg3_pest_control",
+      "type": "Bronze"
+    },
+    {
+      "description": "Kill the Adamantine Golem without using the Forge Hammer.",
+      "is_missable": 1,
+      "is_spoiler": 0,
+      "name": "A Grym Fate",
+      "name_pt": "Um Destino Atroz",
+      "tip": "Perdivel no Adamantine Forge. Mate Grym sem acionar o martelo da forja.",
+      "trophy_code": "bg3_a_grym_fate",
+      "type": "Bronze"
+    },
+    {
+      "description": "Kill the Surgeon before he performs surgery on you in combat.",
+      "is_missable": 1,
+      "is_spoiler": 1,
+      "name": "Non-Invasive Procedure",
+      "name_pt": "Procedimento Não Invasivo",
+      "tip": "Perdivel no Act 2. Resolva o encontro com Malus Thorm antes que ele execute a acao de cirurgia.",
+      "trophy_code": "bg3_non_invasive_procedure",
+      "type": "Bronze"
+    },
+    {
+      "description": "Defeat the Toll Collector without her using gold against you - excellent budgeting.",
+      "is_missable": 1,
+      "is_spoiler": 1,
+      "name": "Penny Pincher",
+      "name_pt": "Mão de Vaca",
+      "tip": "Perdivel no Act 2. Controle seu ouro e elimine Gerringothe Thorm sem sofrer o ataque baseado em moedas.",
+      "trophy_code": "bg3_penny_pincher",
+      "type": "Bronze"
+    },
+    {
+      "description": "Defeat the Apostle of Myrkul before it consumes any necromites.",
+      "is_missable": 1,
+      "is_spoiler": 1,
+      "name": "No Free Lunches",
+      "name_pt": "Não Existe Almoço Grátis",
+      "tip": "Perdivel no fim do Act 2. Foque necromites e dano no boss para impedir o consumo.",
+      "trophy_code": "bg3_no_free_lunches",
+      "type": "Bronze"
+    },
+    {
+      "description": "Defeat Gortash in Wyrm's Rock without activating any traps.",
+      "is_missable": 1,
+      "is_spoiler": 1,
+      "name": "Fancy Footwork",
+      "name_pt": "Dança Elegante",
+      "tip": "Perdivel no Act 3. Prepare o combate, desative ameacas e nao acione armadilhas durante a luta.",
+      "trophy_code": "bg3_fancy_footwork",
+      "type": "Bronze"
+    },
+    {
+      "description": "Kill Orin while her cultists are performing their ritual chant.",
+      "is_missable": 1,
+      "is_spoiler": 1,
+      "name": "First Blood",
+      "name_pt": "Sangue Originário",
+      "tip": "Perdivel no Act 3. Planeje burst damage contra Orin antes que o ritual mude o encontro.",
+      "trophy_code": "bg3_first_blood",
+      "type": "Bronze"
+    },
+    {
+      "description": "Kill the red dragon in the Upper City.",
+      "is_missable": 1,
+      "is_spoiler": 1,
+      "name": "Interfectorem Draconis",
+      "name_pt": "Mata-dragões",
+      "tip": "Perdivel no endgame. Prepare dano alto e controle para matar o dragao vermelho durante a sequencia final.",
+      "trophy_code": "bg3_interfectorem_draconis",
+      "type": "Bronze"
+    },
+    {
+      "description": "In the Wyrmway, wait until the dragon is mid-flight, then knock it out of the sky - KAPOW.",
+      "is_missable": 1,
+      "is_spoiler": 1,
+      "name": "Crash Landing",
+      "name_pt": "Pouso Forçado",
+      "tip": "Perdivel em Wyrmway. Espere Ansur voar e derrube-o no momento correto.",
+      "trophy_code": "bg3_crash_landing",
+      "type": "Bronze"
+    },
+    {
+      "description": "Long Rest using only alcohol - a time-honoured dwarven tradition.",
+      "is_missable": 0,
+      "is_spoiler": 0,
+      "name": "Bottoms Up",
+      "name_pt": "Vira, Vira, Vira",
+      "tip": "Separe suprimentos alcoolicos suficientes e faca um descanso longo usando apenas alcool.",
+      "trophy_code": "bg3_bottoms_up",
+      "type": "Bronze"
+    },
+    {
+      "description": "Kill a creature with falling damage.",
+      "is_missable": 0,
+      "is_spoiler": 0,
+      "name": "Shove Off",
+      "name_pt": "Empurrão Mortal",
+      "tip": "Empurre ou arremesse um inimigo de uma altura suficiente.",
+      "trophy_code": "bg3_shove_off",
+      "type": "Bronze"
+    },
+    {
+      "description": "Read 100 different books in a single playthrough. Adventuring isn't just daring quests, you know.",
+      "is_missable": 0,
+      "is_spoiler": 0,
+      "name": "Bookworm",
+      "name_pt": "Leitura Voraz",
+      "tip": "Leia livros, cartas e textos diferentes em todos os atos para evitar concentrar tudo no fim.",
+      "trophy_code": "bg3_bookworm",
+      "type": "Bronze"
+    },
+    {
+      "description": "Defeat twenty opponents while a party character is drunk in a single playthrough - down them.",
+      "is_missable": 0,
+      "is_spoiler": 0,
+      "name": "Punch Drunk",
+      "name_pt": "Briga de Bar",
+      "tip": "Ative o status drunk antes de combates com inimigos fracos e acompanhe as 20 baixas na mesma campanha.",
+      "trophy_code": "bg3_punch_drunk",
+      "type": "Bronze"
+    },
+    {
+      "description": "Play fetch with Scratch - the best boy in the Realms.",
+      "is_missable": 1,
+      "is_spoiler": 0,
+      "name": "Fetch Quest",
+      "name_pt": "Vai Pegar!",
+      "tip": "Perdivel se Scratch nao for recrutado ou se algo acontecer com ele. Encontre-o cedo e jogue a bola no acampamento.",
+      "trophy_code": "bg3_fetch_quest",
+      "type": "Bronze"
+    },
+    {
+      "description": "Pet Scratch and the owlbear cub at the same time - the greatest joy an adventurer could ask for.",
+      "is_missable": 1,
+      "is_spoiler": 0,
+      "name": "You Have Two Hands for a Reason",
+      "name_pt": "Vantagens de Ter Duas Mãos",
+      "tip": "Perdivel: recrute Scratch e owlbear cub, preserve ambos e avance cenas de acampamento ate poder acariciar os dois.",
+      "trophy_code": "bg3_you_have_two_hands_for_a_reason",
+      "type": "Bronze"
+    },
+    {
+      "description": "Find and summon the quasit Shovel. Or is her name... Fork? Maybe Basket?",
+      "is_missable": 1,
+      "is_spoiler": 0,
+      "name": "Rude, Crude, and Full of Attitude",
+      "name_pt": "Rude, Crua e Cheia de Atitude",
+      "tip": "Perdivel no Act 1. Encontre o scroll correto em Blighted Village/Apothecary e aprenda/summone Shovel antes de perder acesso.",
+      "trophy_code": "bg3_rude_crude_and_full_of_attitude",
+      "type": "Bronze"
+    },
+    {
+      "description": "Craft an item in the Adamantine Forge.",
+      "is_missable": 1,
+      "is_spoiler": 0,
+      "name": "Forged in Blood and Fire",
+      "name_pt": "Forjado em Sangue e Fogo",
+      "tip": "Perdivel se voce avancar atos sem usar a Adamantine Forge. Crie ao menos um item em Grymforge.",
+      "trophy_code": "bg3_forged_in_blood_and_fire",
+      "type": "Bronze"
+    },
+    {
+      "description": "Rescue all the prisoners from the depths of Moonrise Towers in one playthrough.",
+      "is_missable": 1,
+      "is_spoiler": 1,
+      "name": "Under Lock and Key",
+      "name_pt": "Fechado a Sete Chaves",
+      "tip": "Perdivel no Act 2. Resgate prisioneiros de Moonrise antes de avancar eventos que fecham a area.",
+      "trophy_code": "bg3_under_lock_and_key",
+      "type": "Bronze"
+    },
+    {
+      "description": "Rescue Sazza from the Emerald Grove, Goblin Camp and Moonrise Towers in one playthrough.",
+      "is_missable": 1,
+      "is_spoiler": 1,
+      "name": "She Cannot Be Caged!",
+      "name_pt": "Deixem Ela Ir!",
+      "tip": "Perdivel por escolhas em tres pontos. Proteja Sazza no Grove, Goblin Camp e Moonrise na mesma run.",
+      "trophy_code": "bg3_she_cannot_be_caged",
+      "type": "Bronze"
+    },
+    {
+      "description": "Steal the Blood of Lathander from underneath Rosymorn Monastery.",
+      "is_missable": 1,
+      "is_spoiler": 1,
+      "name": "Taking Blood",
+      "name_pt": "Tirando Sangue",
+      "tip": "Perdivel se voce deixar a regiao do Act 1/Creche sem resolver o monasterio.",
+      "trophy_code": "bg3_taking_blood",
+      "type": "Bronze"
+    },
+    {
+      "description": "Save every tiefling refugee you can throughout the game in a single playthrough.",
+      "is_missable": 1,
+      "is_spoiler": 1,
+      "name": "Leave No One Behind",
+      "name_pt": "Ninguém Fica Para Trás",
+      "tip": "Perdivel em todos os atos. Acompanhe tieflings desde Emerald Grove ate Last Light/Moonrise e Act 3.",
+      "trophy_code": "bg3_leave_no_one_behind",
+      "type": "Bronze"
+    },
+    {
+      "description": "Coat the streets of Baldur's Gate in blood - become an Unholy Assassin of Bhaal.",
+      "is_missable": 1,
+      "is_spoiler": 1,
+      "name": "Murder in Baldur's Gate",
+      "name_pt": "Assassinato em Baldur's Gate",
+      "tip": "Perdivel por rota de Bhaal no Act 3. Use save dedicado se nao quiser travar uma run boa.",
+      "trophy_code": "bg3_murder_in_baldurs_gate",
+      "type": "Bronze"
+    },
+    {
+      "description": "Romance the Emperor.",
+      "is_missable": 1,
+      "is_spoiler": 1,
+      "name": "Mind Blown",
+      "name_pt": "Mente Explodida",
+      "tip": "Perdivel por escolhas e relacao com o Emperor. Mantenha save antes das cenas relevantes do Act 3.",
+      "trophy_code": "bg3_mind_blown",
+      "type": "Bronze"
+    },
+    {
+      "description": "Stabilise Gale's Netherese orb.",
+      "is_missable": 1,
+      "is_spoiler": 1,
+      "name": "Repairing the Weave",
+      "name_pt": "Reparando a Trama",
+      "tip": "Perdivel se Gale nao estiver no grupo, se for perdido ou se sua quest for ignorada.",
+      "trophy_code": "bg3_repairing_the_weave",
+      "type": "Bronze"
+    },
+    {
+      "description": "Ally with Voss against the githyanki God-Queen. Good luck.",
+      "is_missable": 1,
+      "is_spoiler": 1,
+      "name": "The Lich-Queen's Wrath",
+      "name_pt": "A Ira da Rainha Lich",
+      "tip": "Perdivel por escolhas na rota githyanki/Lae'zel e por decisoes envolvendo Voss.",
+      "trophy_code": "bg3_the_lich_queens_wrath",
+      "type": "Bronze"
+    },
+    {
+      "description": "Gift Shadowheart a night orchid - her favourite flower. Always knew she was a softie.",
+      "is_missable": 1,
+      "is_spoiler": 1,
+      "name": "To Bloom in Darkest Night",
+      "name_pt": "Florescer na Noite Mais Escura",
+      "tip": "Perdivel se Shadowheart nao estiver disponivel ou se voce perder a janela/relacao para entregar a night orchid.",
+      "trophy_code": "bg3_to_bloom_in_darkest_night",
+      "type": "Bronze"
+    },
+    {
+      "description": "Go on a date with Karlach - now that's playing with fire.",
+      "is_missable": 1,
+      "is_spoiler": 1,
+      "name": "Hot Date",
+      "name_pt": "Encontro Tórrido",
+      "tip": "Perdivel por romance, aprovacoes e quest da Karlach. Planeje desde cedo se esse trofeu estiver na run.",
+      "trophy_code": "bg3_hot_date",
+      "type": "Bronze"
+    },
+    {
+      "description": "Let Astarion bite you - ouch.",
+      "is_missable": 1,
+      "is_spoiler": 1,
+      "name": "Just a Nibble",
+      "name_pt": "Só uma Mordidinha",
+      "tip": "Perdivel se Astarion nao estiver no grupo ou se voce rejeitar/matar/afastar o companion antes da cena.",
+      "trophy_code": "bg3_just_a_nibble",
+      "type": "Bronze"
+    },
+    {
+      "description": "Break Wyll's pact with Mizora.",
+      "is_missable": 1,
+      "is_spoiler": 1,
+      "name": "Loophole",
+      "name_pt": "Brecha",
+      "tip": "Perdivel por escolhas na quest de Wyll/Mizora. Mantenha Wyll ativo e salve antes das decisoes do pacto.",
+      "trophy_code": "bg3_loophole",
+      "type": "Bronze"
+    },
+    {
+      "description": "Become Bhaal's ultimate weapon - become his Slayer.",
+      "is_missable": 1,
+      "is_spoiler": 1,
+      "name": "Embrace Your Urge",
+      "name_pt": "Abrace o Impulso",
+      "tip": "Perdivel e exige Dark Urge. Planeje uma rota dedicada para aceitar Bhaal e obter Slayer.",
+      "trophy_code": "bg3_embrace_your_urge",
+      "type": "Bronze"
+    }
+  ]
+}

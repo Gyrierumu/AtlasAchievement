@@ -1,0 +1,739 @@
+{
+  "game": {
+    "avoid_if": "Evite se você não gosta de limpar mapa, fazer questlines longas, atividades repetidas e grind de recursos em mundo aberto.",
+    "before_you_start": "A lista base não exige DLC, online nem dificuldade específica; o principal cuidado é não ignorar todas as oportunidades de romance para Aphrodite’s Embrace.",
+    "best_for": "Ideal para quem quer uma platina de mundo aberto longa, acessível, histórica e com bastante conteúdo opcional na Grécia Antiga.",
+    "cleanup_advice": "Após a história, limpe Cultistas, bosses míticos, Arena, underwater locations, contratos, mercenary tiers, upgrades da Adrestia e troféus situacionais.",
+    "cover_image": "https://cdn.cloudflare.steamstatic.com/steam/apps/812140/library_600x900.jpg",
+    "coverage_level": "strong",
+    "created_at": "2026-05-09 19:53:47",
+    "difficulty": 4,
+    "difficulty_reason": "A platina é acessível e não exige dificuldade alta; o maior compromisso é o volume de mundo aberto, questlines, chefes míticos e grind leve de recursos/nível.",
+    "dlc_scope": "Guia focado na lista base da platina; Legacy of the First Blade, The Fate of Atlantis e Discovery Tour/add-ons devem ficar separados se o projeto suportar DLC/add-ons.",
+    "editorial_notes": null,
+    "editorial_review_status": null,
+    "editorial_status": "published",
+    "first_run_advice": "Jogue a história naturalmente, aceite oportunidades de romance para evitar perder Aphrodite’s Embrace e vá completando questlines relevantes no caminho.",
+    "grind_summary": "O peso está em história, Culto do Kosmos, questlines, bosses míticos, underwater locations, Arena, contratos, mercenários e upgrades da Adrestia.",
+    "guide_avoid": null,
+    "guide_best_moment": null,
+    "guide_dlc": null,
+    "guide_grind": null,
+    "guide_ideal": null,
+    "guide_online": null,
+    "guide_runs": null,
+    "image": "https://cdn.cloudflare.steamstatic.com/steam/apps/812140/header.jpg",
+    "is_verified": 0,
+    "last_reviewed_at": null,
+    "missable": "Aphrodite’s Embrace é o único troféu com atenção/perdível leve por depender de uma oportunidade de romance, embora existam várias chances durante a campanha. O restante da lista base pode ser limpo com free-roam/cleanup após a história.",
+    "missable_summary": "Aphrodite’s Embrace é o único missable/atenção leve confirmado; aceite uma opção de romance quando aparecer. Os demais troféus da lista base ficam disponíveis por campanha e cleanup.",
+    "name": "Assassin’s Creed Odyssey",
+    "online_summary": "Não há exigência online para a platina da lista base.",
+    "quality_warnings": null,
+    "reviewed_by": null,
+    "runs_summary": "Uma campanha principal com cleanup livre após a história. A lista base não exige DLC nem dificuldade específica.",
+    "slug": "assassins-creed-odyssey",
+    "time": "60-70h",
+    "time_bucket": "long",
+    "time_max_hours": 70,
+    "time_min_hours": 60,
+    "time_reason": "A faixa de 60-70 horas considera campanha, Culto do Kosmos, questlines, bosses míticos, underwater locations, Arena, contratos, mercenary tiers, upgrades da Adrestia e cleanup.",
+    "time_sort_hours": 60,
+    "updated_at": "2026-06-27 02:36:58",
+    "verification_note": "Guia público seed-managed com checklist base e roadmap; aguardando revisão editorial manual final.",
+    "verification_status": "review",
+    "walkthrough": null
+  },
+  "redirects": [],
+  "roadmaps": [
+    {
+      "content": "Etapa 1: jogue a campanha naturalmente, desbloqueando regiões, Adrestia, habilidades, mercenários, cultistas e sistemas principais; aceite uma oportunidade de romance para garantir Aphrodite’s Embrace.",
+      "step_order": 1
+    },
+    {
+      "content": "Etapa 2: avance as linhas principais da lista base: história da família, Culto do Kosmos, lança de Leônidas e linha mítica/Atlantis com Pitágoras, sem confundir com o DLC The Fate of Atlantis.",
+      "step_order": 2
+    },
+    {
+      "content": "Etapa 3: complete questlines relevantes para troféus, como Xenia, Daughters of Artemis, Hippokrates, Markos, Arena, Olympic questline e bosses míticos.",
+      "step_order": 3
+    },
+    {
+      "content": "Etapa 4: limpe underwater locations, sub-regiões de Hermes’s Homie e atividades específicas de mundo aberto necessárias para a lista base, lembrando que não é preciso fazer 100% de todos os locais.",
+      "step_order": 4
+    },
+    {
+      "content": "Etapa 5: suba mercenary tiers, faça contratos de message board, chegue ao nível 50, equipe itens lendários, complete upgrades da Adrestia e resolva troféus navais/situacionais.",
+      "step_order": 5
+    },
+    {
+      "content": "Etapa 6: faça cleanup final pós-história de Cultistas, bosses míticos, Arena, underwater locations, contratos, troféus de combate, 0 online obrigatório, 0 troféus de dificuldade e separação total de Legacy of the First Blade/The Fate of Atlantis.",
+      "step_order": 6
+    }
+  ],
+  "schemaVersion": 1,
+  "seedExtras": {
+    "aliases": [],
+    "attentionPoints": [
+      {
+        "detail": "É o único troféu tecnicamente perdível da lista base. Escolha ao menos uma opção de romance marcada com coração quando aparecer.",
+        "tags": [
+          "Perdível",
+          "Romance"
+        ],
+        "title": "Aphrodite’s Embrace"
+      },
+      {
+        "detail": "A dificuldade é baixa/moderada, mas a platina exige muitas horas de exploração, XP, questlines, cultistas e atividades navais.",
+        "tags": [
+          "Tempo",
+          "Grind"
+        ],
+        "title": "Platina longa"
+      },
+      {
+        "detail": "A platina base usa 51 troféus. Não misture DLCs, Additional Feats ou listas completas de 94 troféus com os requisitos de Epic Cycle.",
+        "tags": [
+          "Lista base",
+          "Sem DLC"
+        ],
+        "title": "Lista base vs DLCs"
+      },
+      {
+        "detail": "A platina não exige online, cooperação ou multiplayer.",
+        "tags": [
+          "Offline",
+          "Single-player"
+        ],
+        "title": "Sem online"
+      },
+      {
+        "detail": "Revele todas as sub-regiões e pise em ilhas pequenas que podem não parecer necessárias.",
+        "tags": [
+          "Mapa",
+          "Exploração"
+        ],
+        "title": "Hermes’s Homie"
+      },
+      {
+        "detail": "Complete todos os objetivos dos locais submersos.",
+        "tags": [
+          "Local submerso",
+          "Exploração"
+        ],
+        "title": "Child of Poseidon"
+      },
+      {
+        "detail": "Aceite contratos dos quadros de mensagens ao longo da campanha para reduzir grind.",
+        "tags": [
+          "Contratos",
+          "Grind"
+        ],
+        "title": "Misthios in Training"
+      },
+      {
+        "detail": "Guarde recursos e tábuas antigas para reduzir o grind dos upgrades do navio.",
+        "tags": [
+          "Navio",
+          "Recursos"
+        ],
+        "title": "Adrasteia"
+      },
+      {
+        "detail": "Deixe Medusa e outros desafios de nível alto para quando o personagem estiver bem evoluído.",
+        "tags": [
+          "Chefe",
+          "Endgame"
+        ],
+        "title": "Chefes míticos"
+      },
+      {
+        "detail": "A dificuldade escolhida não afeta troféus.",
+        "tags": [
+          "Dificuldade",
+          "Sem requisito"
+        ],
+        "title": "Dificuldade"
+      }
+    ],
+    "checklist": [
+      "Conferir se o guia tem 51 troféus da lista base.",
+      "Conferir se Epic Cycle é a platina.",
+      "Conferir se DLCs e Additional Feats não foram misturados na platina base.",
+      "Conferir distribuição: 1 platina, 2 ouro, 10 prata e 38 bronze.",
+      "Conferir onlineRequired false, coopRequired false e dlcRequired false.",
+      "Conferir hasMissables true e missableCount 1.",
+      "Conferir que apenas Aphrodite’s Embrace está marcado como perdível.",
+      "Conferir nomes oficiais em inglês como principal e PT-BR abaixo.",
+      "Conferir descrições e dicas em português.",
+      "Conferir se não aparecem rótulos técnicos de nome original nem placeholders editoriais.",
+      "Conferir se roadmap está estruturado como array de objetos e renderiza sem texto bruto técnico.",
+      "Conferir FAQ, decisão rápida, SEO e pontos de atenção.",
+      "Conferir se página individual e catálogo exibem o mesmo status editorial.",
+      "Conferir se flags do topo batem com filtros do catálogo."
+    ],
+    "faq": [
+      {
+        "answer": "Sim. Aphrodite’s Embrace é o único troféu tecnicamente perdível da lista base, pois exige aceitar ao menos uma oportunidade de romance. Escolha uma opção de diálogo com coração quando aparecer para resolver esse risco.",
+        "question": "Assassin’s Creed Odyssey tem troféus perdíveis?"
+      },
+      {
+        "answer": "Não. A platina base é totalmente offline.",
+        "question": "Precisa jogar online para platinar?"
+      },
+      {
+        "answer": "Não. Assassin’s Creed Odyssey é uma platina single-player.",
+        "question": "Precisa de cooperação?"
+      },
+      {
+        "answer": "Não. A platina base exige apenas os 51 troféus principais. DLCs e Additional Feats não são necessários para Epic Cycle.",
+        "question": "Precisa de DLC para a platina?"
+      },
+      {
+        "answer": "Não. É possível buscar a platina na dificuldade que preferir.",
+        "question": "A dificuldade afeta troféus?"
+      },
+      {
+        "answer": "Em média, cerca de 60 a 70 horas, dependendo do ritmo de exploração, XP, contratos e cleanup.",
+        "question": "Quanto tempo leva para platinar?"
+      },
+      {
+        "answer": "Não. A platina exige objetivos específicos, como locais submersos e sub-regiões, mas não exige 100% de todos os pontos do mapa.",
+        "question": "Preciso limpar todos os pontos de interrogação do mapa?"
+      },
+      {
+        "answer": "O maior cuidado é não perder Aphrodite’s Embrace. Depois disso, o foco é administrar o tempo de grind, exploração, cultistas, chefes e upgrades da Adrasteia.",
+        "question": "Qual é o maior cuidado da platina?"
+      }
+    ],
+    "note": "Campos exportados para auditoria. O SQLite atual nao possui colunas nativas para todos esses extras; a importacao preserva o que o banco suporta.",
+    "quickDecision": {
+      "firstAction": "Comece a campanha na dificuldade que preferir, aceite contratos nos quadros de mensagens e resolva uma opção de romance cedo.",
+      "recommendation": "A dificuldade é baixa a moderada; o tempo é longo, cerca de 60 a 70 horas.",
+      "risk": "Baixo, desde que Aphrodite’s Embrace seja resolvido cedo. A platina não exige online, cooperação nem DLC.",
+      "summary": "Sim, vale platinar se você gosta de RPG de mundo aberto e não se importa com uma platina longa."
+    },
+    "seo": {
+      "description": "Guia de troféus de Assassin’s Creed Odyssey com roadmap da platina, tempo estimado, dificuldade, troféu perdível, exploração, cultistas, chefes míticos, Adrasteia e dicas para os 51 troféus da lista base.",
+      "keywords": "Assassin’s Creed Odyssey troféus, Assassin’s Creed Odyssey platina, guia Assassin’s Creed Odyssey, AC Odyssey troféus, AC Odyssey platina, Epic Cycle, Aphrodite’s Embrace, Nos Braços de Afrodite, Hermes’s Homie, Child of Poseidon, The Cult Unmasked",
+      "metaDescription": "Guia de troféus de Assassin’s Creed Odyssey com roadmap da platina, tempo estimado, dificuldade, troféu perdível, exploração, cultistas, chefes míticos, Adrasteia e dicas para os 51 troféus da lista base.",
+      "ogDescription": "Roadmap da platina de Assassin’s Creed Odyssey com 51 troféus da lista base, 1 perdível técnico, sem online, sem coop e sem DLC obrigatória.",
+      "ogTitle": "Assassin’s Creed Odyssey: Guia de Troféus e Platina",
+      "title": "Assassin’s Creed Odyssey: Guia de Troféus e Platina"
+    },
+    "tags": []
+  },
+  "slug": "assassins-creed-odyssey",
+  "trophies": [
+    {
+      "description": "Earn every trophy.",
+      "is_missable": 0,
+      "is_spoiler": 0,
+      "name": "Epic Cycle",
+      "name_pt": "",
+      "tip": "Conquiste todos os outros troféus da lista base para liberar a platina. DLCs não são necessárias.",
+      "trophy_code": "acod_epic_cycle",
+      "type": "Platina"
+    },
+    {
+      "description": "Complete the Battle of 300.",
+      "is_missable": 0,
+      "is_spoiler": 1,
+      "name": "This is Sparta!",
+      "name_pt": "",
+      "tip": "Troféu de história ligado ao prólogo da Batalha dos 300.",
+      "trophy_code": "acod_this_is_sparta",
+      "type": "Bronze"
+    },
+    {
+      "description": "Complete Episode 1.",
+      "is_missable": 0,
+      "is_spoiler": 1,
+      "name": "An Odyssey in the Making",
+      "name_pt": "",
+      "tip": "Troféu de história. Avance a campanha até completar o Episódio 1.",
+      "trophy_code": "acod_an_odyssey_in_the_making",
+      "type": "Bronze"
+    },
+    {
+      "description": "Complete Episode 2.",
+      "is_missable": 0,
+      "is_spoiler": 1,
+      "name": "Past Mistakes",
+      "name_pt": "",
+      "tip": "Troféu de história. Avance a campanha até completar o Episódio 2.",
+      "trophy_code": "acod_past_mistakes",
+      "type": "Bronze"
+    },
+    {
+      "description": "Complete Episode 3.",
+      "is_missable": 0,
+      "is_spoiler": 1,
+      "name": "Evil Unearthed",
+      "name_pt": "",
+      "tip": "Troféu de história. Avance a campanha até completar o Episódio 3.",
+      "trophy_code": "acod_evil_unearthed",
+      "type": "Bronze"
+    },
+    {
+      "description": "Complete Episode 4.",
+      "is_missable": 0,
+      "is_spoiler": 1,
+      "name": "The Bright Minds",
+      "name_pt": "",
+      "tip": "Troféu de história. Avance a campanha até completar o Episódio 4.",
+      "trophy_code": "acod_the_bright_minds",
+      "type": "Bronze"
+    },
+    {
+      "description": "Complete Episode 5.",
+      "is_missable": 0,
+      "is_spoiler": 1,
+      "name": "From the Ashes",
+      "name_pt": "",
+      "tip": "Troféu de história. Avance a campanha até completar o Episódio 5.",
+      "trophy_code": "acod_from_the_ashes",
+      "type": "Bronze"
+    },
+    {
+      "description": "Complete Episode 6.",
+      "is_missable": 0,
+      "is_spoiler": 1,
+      "name": "Democracy Falls",
+      "name_pt": "",
+      "tip": "Troféu de história. Avance a campanha até completar o Episódio 6.",
+      "trophy_code": "acod_democracy_falls",
+      "type": "Bronze"
+    },
+    {
+      "description": "Complete Episode 7.",
+      "is_missable": 0,
+      "is_spoiler": 1,
+      "name": "Legend in the Making",
+      "name_pt": "",
+      "tip": "Troféu de história. Avance a campanha até completar o Episódio 7.",
+      "trophy_code": "acod_legend_in_the_making",
+      "type": "Bronze"
+    },
+    {
+      "description": "Complete Episode 8.",
+      "is_missable": 0,
+      "is_spoiler": 1,
+      "name": "Taking Back Athens",
+      "name_pt": "",
+      "tip": "Troféu de história de fase avançada. Complete o Episódio 8.",
+      "trophy_code": "acod_taking_back_athens",
+      "type": "Prata"
+    },
+    {
+      "description": "Complete Episode 9 + Epilogue.",
+      "is_missable": 0,
+      "is_spoiler": 1,
+      "name": "Odyssey’s End",
+      "name_pt": "",
+      "tip": "Troféu de história. Termine o Episódio 9 e o epílogo.",
+      "trophy_code": "acod_odysseys_end",
+      "type": "Ouro"
+    },
+    {
+      "description": "Complete all underwater location objectives.",
+      "is_missable": 0,
+      "is_spoiler": 0,
+      "name": "Child of Poseidon",
+      "name_pt": "",
+      "tip": "Complete os objetivos de todos os locais submersos da lista base. Use o mapa e faça cleanup no pós-história.",
+      "trophy_code": "acod_child_of_poseidon",
+      "type": "Prata"
+    },
+    {
+      "description": "Engrave your first item.",
+      "is_missable": 0,
+      "is_spoiler": 0,
+      "name": "Make It Your Own",
+      "name_pt": "",
+      "tip": "Grave qualquer equipamento em um ferreiro pela primeira vez.",
+      "trophy_code": "acod_make_it_your_own",
+      "type": "Bronze"
+    },
+    {
+      "description": "Recruit and assign a Legendary NPC for your ship.",
+      "is_missable": 0,
+      "is_spoiler": 0,
+      "name": "You Work for Me Now",
+      "name_pt": "",
+      "tip": "Recrute um NPC lendário e atribua-o como tenente da Adrestia.",
+      "trophy_code": "acod_you_work_for_me_now",
+      "type": "Bronze"
+    },
+    {
+      "description": "Acquire and equip your first Legendary item.",
+      "is_missable": 0,
+      "is_spoiler": 0,
+      "name": "Shiny!",
+      "name_pt": "",
+      "tip": "Consiga e equipe seu primeiro item lendário.",
+      "trophy_code": "acod_shiny",
+      "type": "Bronze"
+    },
+    {
+      "description": "Equip 1 Legendary melee weapon and 5 Legendary armor pieces.",
+      "is_missable": 0,
+      "is_spoiler": 0,
+      "name": "I am Legend",
+      "name_pt": "",
+      "tip": "Equipe uma arma corpo a corpo lendária e cinco peças de armadura lendárias ao mesmo tempo.",
+      "trophy_code": "acod_i_am_legend",
+      "type": "Prata"
+    },
+    {
+      "description": "Become Champion of the Arena.",
+      "is_missable": 0,
+      "is_spoiler": 0,
+      "name": "Are You Not Entertained?",
+      "name_pt": "",
+      "tip": "Complete a linha da Arena em Pephka/Messara até se tornar campeão.",
+      "trophy_code": "acod_are_you_not_entertained",
+      "type": "Prata"
+    },
+    {
+      "description": "Reach Level 50.",
+      "is_missable": 0,
+      "is_spoiler": 0,
+      "name": "Demigod",
+      "name_pt": "",
+      "tip": "Chegue ao nível 50 completando história, questlines, contratos e atividades.",
+      "trophy_code": "acod_demigod",
+      "type": "Bronze"
+    },
+    {
+      "description": "Acquire a Tier 3 active Ability.",
+      "is_missable": 0,
+      "is_spoiler": 0,
+      "name": "Godly Power",
+      "name_pt": "",
+      "tip": "Compre uma habilidade ativa de Tier 3 após progredir e investir pontos suficientes.",
+      "trophy_code": "acod_godly_power",
+      "type": "Bronze"
+    },
+    {
+      "description": "Upgrade your Spear to Tier 6.",
+      "is_missable": 0,
+      "is_spoiler": 1,
+      "name": "Legacy Restored",
+      "name_pt": "",
+      "tip": "Derrote Cultistas para obter fragmentos e evolua a Lança de Leônidas até o Tier 6.",
+      "trophy_code": "acod_legacy_restored",
+      "type": "Prata"
+    },
+    {
+      "description": "Become the first Mercenary.",
+      "is_missable": 0,
+      "is_spoiler": 0,
+      "name": "Top of the Food Chain",
+      "name_pt": "",
+      "tip": "Suba no ranking de mercenários até alcançar o topo.",
+      "trophy_code": "acod_top_of_the_food_chain",
+      "type": "Bronze"
+    },
+    {
+      "description": "Defeat all the Cultists of Kosmos.",
+      "is_missable": 0,
+      "is_spoiler": 1,
+      "name": "The Cult Unmasked",
+      "name_pt": "",
+      "tip": "Elimine todos os membros do Culto do Kosmos da lista base.",
+      "trophy_code": "acod_the_cult_unmasked",
+      "type": "Prata"
+    },
+    {
+      "description": "Recover the Cyclops’s eye from a goat on Kephallonia.",
+      "is_missable": 0,
+      "is_spoiler": 0,
+      "name": "Stink Eye",
+      "name_pt": "",
+      "tip": "Depois da sequência de Kephallonia, elimine/saqueie cabras na ilha até recuperar o olho.",
+      "trophy_code": "acod_stink_eye",
+      "type": "Bronze"
+    },
+    {
+      "description": "Unveil all sub-regions of Greece.",
+      "is_missable": 0,
+      "is_spoiler": 0,
+      "name": "Hermes’s Homie",
+      "name_pt": "",
+      "tip": "Revele todas as sub-regiões do mapa da Grécia. Use cleanup pós-história para áreas faltantes.",
+      "trophy_code": "acod_hermess_homie",
+      "type": "Bronze"
+    },
+    {
+      "description": "Defeat Medusa.",
+      "is_missable": 0,
+      "is_spoiler": 1,
+      "name": "In Perseus’s Image",
+      "name_pt": "",
+      "tip": "Derrote Medusa na linha mítica da lista base.",
+      "trophy_code": "acod_in_perseuss_image",
+      "type": "Bronze"
+    },
+    {
+      "description": "Defeat the Minotaur.",
+      "is_missable": 0,
+      "is_spoiler": 1,
+      "name": "A-maze-ing Victory!",
+      "name_pt": "",
+      "tip": "Derrote o Minotauro na linha mítica da lista base.",
+      "trophy_code": "acod_a_maze_ing_victory",
+      "type": "Bronze"
+    },
+    {
+      "description": "Defeat the Cyclops.",
+      "is_missable": 0,
+      "is_spoiler": 1,
+      "name": "Eye on the Prize",
+      "name_pt": "",
+      "tip": "Derrote o Cyclops da linha mítica da lista base.",
+      "trophy_code": "acod_eye_on_the_prize",
+      "type": "Bronze"
+    },
+    {
+      "description": "Outwit the Sphinx.",
+      "is_missable": 0,
+      "is_spoiler": 1,
+      "name": "Riddle Me This",
+      "name_pt": "",
+      "tip": "Conclua o encontro da Sphinx na linha mítica da lista base.",
+      "trophy_code": "acod_riddle_me_this",
+      "type": "Bronze"
+    },
+    {
+      "description": "Fully upgrade the Adrestia.",
+      "is_missable": 0,
+      "is_spoiler": 0,
+      "name": "Lord of the Seas",
+      "name_pt": "",
+      "tip": "Faça todos os upgrades da Adrestia; farm de recursos, navios e tablets ajuda bastante.",
+      "trophy_code": "acod_lord_of_the_seas",
+      "type": "Prata"
+    },
+    {
+      "description": "Fully crew the Adrestia with Legendary Lieutenants.",
+      "is_missable": 0,
+      "is_spoiler": 0,
+      "name": "The Argonauts",
+      "name_pt": "",
+      "tip": "Preencha a tripulação da Adrestia com tenentes lendários.",
+      "trophy_code": "acod_the_argonauts",
+      "type": "Prata"
+    },
+    {
+      "description": "Complete the Daughters of Artemis questline.",
+      "is_missable": 0,
+      "is_spoiler": 1,
+      "name": "Master of the Hunt",
+      "name_pt": "",
+      "tip": "Complete a questline Daughters of Artemis.",
+      "trophy_code": "acod_master_of_the_hunt",
+      "type": "Bronze"
+    },
+    {
+      "description": "Complete Markos’s questline.",
+      "is_missable": 0,
+      "is_spoiler": 0,
+      "name": "Everybody Benefits",
+      "name_pt": "",
+      "tip": "Complete a questline de Markos.",
+      "trophy_code": "acod_everybody_benefits",
+      "type": "Bronze"
+    },
+    {
+      "description": "Complete the Hippokrates questline.",
+      "is_missable": 0,
+      "is_spoiler": 0,
+      "name": "Trust Me, I’m a Doctor",
+      "name_pt": "",
+      "tip": "Complete a questline de Hippokrates.",
+      "trophy_code": "acod_trust_me_im_a_doctor",
+      "type": "Bronze"
+    },
+    {
+      "description": "Complete Xenia’s questline.",
+      "is_missable": 0,
+      "is_spoiler": 0,
+      "name": "A Pirate’s Life for Me",
+      "name_pt": "",
+      "tip": "Complete a questline de Xenia, incluindo os mapas/tesouros associados.",
+      "trophy_code": "acod_a_pirates_life_for_me",
+      "type": "Bronze"
+    },
+    {
+      "description": "Complete the Olympic questline.",
+      "is_missable": 0,
+      "is_spoiler": 1,
+      "name": "Going For Gold",
+      "name_pt": "",
+      "tip": "Complete a questline Olímpica da história.",
+      "trophy_code": "acod_going_for_gold",
+      "type": "Prata"
+    },
+    {
+      "description": "Sink your first Epic Ship.",
+      "is_missable": 0,
+      "is_spoiler": 0,
+      "name": "Scourge of the Aegean",
+      "name_pt": "",
+      "tip": "Afunde seu primeiro navio épico durante navegação/combat naval.",
+      "trophy_code": "acod_scourge_of_the_aegean",
+      "type": "Bronze"
+    },
+    {
+      "description": "Defeat a Mercenary in the Arena.",
+      "is_missable": 0,
+      "is_spoiler": 0,
+      "name": "Blood Sport",
+      "name_pt": "",
+      "tip": "Derrote um mercenário na Arena.",
+      "trophy_code": "acod_blood_sport",
+      "type": "Bronze"
+    },
+    {
+      "description": "Upgrade the Adrestia for the first time.",
+      "is_missable": 0,
+      "is_spoiler": 0,
+      "name": "Adrestia Upgrade",
+      "name_pt": "",
+      "tip": "Faça qualquer upgrade da Adrestia pela primeira vez.",
+      "trophy_code": "acod_adrestia_upgrade",
+      "type": "Bronze"
+    },
+    {
+      "description": "Equip a Legendary Armor set.",
+      "is_missable": 0,
+      "is_spoiler": 0,
+      "name": "Fashion’s Creed",
+      "name_pt": "",
+      "tip": "Equipe um conjunto completo de armadura lendária.",
+      "trophy_code": "acod_fashions_creed",
+      "type": "Bronze"
+    },
+    {
+      "description": "Spend the night with another character.",
+      "is_missable": 1,
+      "is_spoiler": 0,
+      "name": "Aphrodite’s Embrace",
+      "name_pt": "",
+      "tip": "Missable leve: aceite uma oportunidade de romance quando aparecer para não depender de outra chance mais tarde.",
+      "trophy_code": "acod_aphrodites_embrace",
+      "type": "Bronze"
+    },
+    {
+      "description": "Defeat a full cluster of Cultists of Kosmos.",
+      "is_missable": 0,
+      "is_spoiler": 1,
+      "name": "One Head Down…",
+      "name_pt": "",
+      "tip": "Elimine um grupo completo de Cultistas do Kosmos.",
+      "trophy_code": "acod_one_head_down",
+      "type": "Prata"
+    },
+    {
+      "description": "Discover Atlantis and speak with Pythagoras.",
+      "is_missable": 0,
+      "is_spoiler": 1,
+      "name": "Birthright",
+      "name_pt": "",
+      "tip": "Descubra Atlantis e fale com Pythagoras na linha mítica da lista base. Não confundir com o DLC The Fate of Atlantis.",
+      "trophy_code": "acod_birthright",
+      "type": "Bronze"
+    },
+    {
+      "description": "Cleave a ship in half.",
+      "is_missable": 0,
+      "is_spoiler": 0,
+      "name": "Ramming Speed",
+      "name_pt": "",
+      "tip": "Parta um navio ao meio com a Adrestia.",
+      "trophy_code": "acod_ramming_speed",
+      "type": "Bronze"
+    },
+    {
+      "description": "Perform an Overpower Attack with every weapon type.",
+      "is_missable": 0,
+      "is_spoiler": 0,
+      "name": "I Have the Power",
+      "name_pt": "",
+      "tip": "Execute Overpower Attack com todos os tipos de arma exigidos.",
+      "trophy_code": "acod_i_have_the_power",
+      "type": "Bronze"
+    },
+    {
+      "description": "Kill the Leader of any Region with Low Resources, other than Megaris.",
+      "is_missable": 0,
+      "is_spoiler": 0,
+      "name": "War Master",
+      "name_pt": "",
+      "tip": "Enfraqueça uma região que não seja Megaris e elimine o líder local.",
+      "trophy_code": "acod_war_master",
+      "type": "Bronze"
+    },
+    {
+      "description": "Complete 20 Bounties, War Contracts, or Naval Quests from Message Boards.",
+      "is_missable": 0,
+      "is_spoiler": 0,
+      "name": "Misthios in Training",
+      "name_pt": "",
+      "tip": "Complete 20 atividades dos quadros de mensagens: bounties, war contracts ou naval quests.",
+      "trophy_code": "acod_misthios_in_training",
+      "type": "Bronze"
+    },
+    {
+      "description": "Complete 20 Quests in Pephka, Obsidian and Abantis islands.",
+      "is_missable": 0,
+      "is_spoiler": 0,
+      "name": "Island Hopper",
+      "name_pt": "",
+      "tip": "Complete 20 quests nas regiões Pephka, Obsidian e Abantis. Inclui side content e contratos dessas áreas.",
+      "trophy_code": "acod_island_hopper",
+      "type": "Ouro"
+    },
+    {
+      "description": "Raise your Bounty to the maximum level.",
+      "is_missable": 0,
+      "is_spoiler": 0,
+      "name": "Infamous",
+      "name_pt": "",
+      "tip": "Aumente sua recompensa até o nível máximo.",
+      "trophy_code": "acod_infamous",
+      "type": "Bronze"
+    },
+    {
+      "description": "Win your first on land conquest battle in any region (excluding Megaris).",
+      "is_missable": 0,
+      "is_spoiler": 0,
+      "name": "Hero for Hire",
+      "name_pt": "",
+      "tip": "Vença sua primeira batalha de conquista terrestre fora de Megaris.",
+      "trophy_code": "acod_hero_for_hire",
+      "type": "Bronze"
+    },
+    {
+      "description": "Cleave a ship while having an all-women crew.",
+      "is_missable": 0,
+      "is_spoiler": 0,
+      "name": "Wrath of the Amazons",
+      "name_pt": "",
+      "tip": "Parta um navio ao meio usando uma tripulação composta apenas por mulheres.",
+      "trophy_code": "acod_wrath_of_the_amazons",
+      "type": "Bronze"
+    },
+    {
+      "description": "Engrave a Legendary Item with a Legendary Effect.",
+      "is_missable": 0,
+      "is_spoiler": 0,
+      "name": "The Midas Touch",
+      "name_pt": "",
+      "tip": "Grave um item lendário com um efeito lendário em um ferreiro.",
+      "trophy_code": "acod_the_midas_touch",
+      "type": "Bronze"
+    }
+  ]
+}

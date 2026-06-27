@@ -1,0 +1,560 @@
+{
+  "game": {
+    "avoid_if": "Evite se você quer uma platina de uma campanha só, sem speedrun, sem dificuldade alta ou sem repetir trechos para rank.",
+    "before_you_start": "Separe saves por capítulo e acompanhe tesouros, pedidos do Mercador e Clockwork Castellans desde o começo. Separate Ways, VR Mode, tickets pagos e DLC extra não são requisitos da platina base.",
+    "best_for": "Ideal para quem gosta de survival horror de ação com rotas otimizadas, múltiplas runs e desafios de execução.",
+    "cleanup_advice": "Depois da primeira run, use saves e campanhas dedicadas para completar tesouros, armas, pedidos, rank S/S+, Professional, Minimalist, Frugalist e Silent Stranger.",
+    "cover_image": "https://cdn.cloudflare.steamstatic.com/steam/apps/2050650/library_600x900.jpg",
+    "coverage_level": "strong",
+    "created_at": "2026-05-09 19:53:24",
+    "difficulty": 7,
+    "difficulty_reason": "A dificuldade 7/10 vem de Professional, ranks S/S+, speedrun, economia de recursos e desafios de restrição que punem improviso.",
+    "dlc_scope": "DLC fora da platina base. Separate Ways/Caminhos Distintos, VR Mode, The Mercenaries, pacote de DLC extra e tickets pagos ficam fora da platina base.",
+    "editorial_notes": "Escopo PS4/PS5 da platina base com 40 troféus. Cleanup depende de saves, NG+ e múltiplas runs; não tratar como chapter select tradicional. The Mercenaries pode ser citado como rota opcional para Handcannon, mas não é DLC paga obrigatória; Separate Ways/Caminhos Distintos, VR Mode, DLC extra e tickets pagos ficam fora da lista principal.",
+    "editorial_review_status": "verified",
+    "editorial_status": "published",
+    "first_run_advice": "Use a primeira campanha para aprender capítulos, pegar tesouros, castelões, pedidos do Mercador e armas sem tentar combinar todas as restrições de uma vez.",
+    "grind_summary": "O peso está em otimizar rotas, comprar/upgradear armas, juntar dinheiro, completar pedidos do Mercador, limpar coletáveis e repetir campanhas para rank e restrições.",
+    "guide_avoid": null,
+    "guide_best_moment": null,
+    "guide_dlc": null,
+    "guide_grind": null,
+    "guide_ideal": null,
+    "guide_online": null,
+    "guide_runs": null,
+    "image": "https://cdn.cloudflare.steamstatic.com/steam/apps/2050650/header.jpg",
+    "is_verified": 1,
+    "last_reviewed_at": "",
+    "missable": "Boa parte dos troféus da platina é perdível por run, porque vários desafios dependem de rank, coleta total, pedidos do Mercador e restrições específicas. O ideal é separar a platina em múltiplas campanhas planejadas.",
+    "missable_summary": "A contagem prioriza janelas reais de capítulo/campanha. Ranks, restrições voluntárias, speedrun, Shooting Range e Gun Fanatic ficam como risco de run, dificuldade, coletável ou cleanup, não como perdíveis definitivos.",
+    "name": "Resident Evil 4 Remake",
+    "online_summary": "Sem online obrigatório, sem coop e sem PS+ para a platina da lista base do remake.",
+    "quality_warnings": "[]",
+    "reviewed_by": "",
+    "runs_summary": "Múltiplas campanhas planejadas: uma primeira run de coleta/aprendizado, runs de rank/speedrun e campanhas separadas para restrições como sem cura, sem Mercador e só pistolas/faca.",
+    "slug": "resident-evil-4-remake",
+    "time": "30-40 horas",
+    "time_bucket": "medium",
+    "time_max_hours": 40,
+    "time_min_hours": 30,
+    "time_reason": "A faixa de 30-40 horas considera várias campanhas, coleta total, pedidos do Mercador, ranks, Professional e runs de restrição.",
+    "time_sort_hours": 30,
+    "updated_at": "2026-06-27 02:37:01",
+    "verification_note": "Guia revisado editorialmente.",
+    "verification_status": "verified",
+    "walkthrough": null
+  },
+  "redirects": [],
+  "roadmaps": [
+    {
+      "content": "{\"title\":\"Primeira campanha com coletáveis e aprendizado\",\"focus\":\"Primeira run\",\"objective\":\"Concluir a história aprendendo combate, rotas, chefes e sistemas enquanto já adianta coletáveis importantes.\",\"actions\":[\"Jogue em uma dificuldade confortável para aprender inimigos, chefes e economia de recursos.\",\"Faça o máximo possível de Merchant Requests durante a campanha.\",\"Colete Clockwork Castellans, tesouros, armas e itens importantes conforme avança.\",\"Marque no checklist troféus situacionais de capítulo para evitar esquecimento.\",\"Faça saves manuais antes de trechos importantes quando houver troféus específicos.\"],\"warning\":\"O jogo não tem chapter select nem free-roam final; muitos objetivos exigem replay se forem ignorados no capítulo certo.\",\"result\":\"Campanha concluída, boa parte dos coletáveis adiantada e base pronta para runs mais técnicas.\"}",
+      "step_order": 1
+    },
+    {
+      "content": "{\"title\":\"Cleanup de coletáveis, requests e troféus situacionais\",\"focus\":\"Coletáveis\",\"objective\":\"Reduzir pendências antes de entrar nas runs de dificuldade, rank e restrição.\",\"actions\":[\"Revise Clockwork Castellans, Merchant Requests, tesouros e armas pendentes.\",\"Faça troféus situacionais de chefes, carrinho, lancha, Ashley, ilha e capítulos específicos.\",\"Complete objetivos ligados ao Shooting Range, se ainda faltarem.\",\"Confira se há armas faltando para Gun Fanatic.\",\"Use saves manuais para corrigir pendências curtas sem transformar tudo em uma nova campanha.\"],\"warning\":\"Não venda ou descarte armas antes de garantir que o registro de Gun Fanatic foi feito.\",\"result\":\"Checklist de coletáveis e troféus situacionais praticamente fechado.\"}",
+      "step_order": 2
+    },
+    {
+      "content": "{\"title\":\"Run rápida em NG+ para recursos e rank\",\"focus\":\"NG+\",\"objective\":\"Usar equipamentos e upgrades acumulados para cumprir objetivos de tempo, dificuldade ou rank que aceitem New Game+.\",\"actions\":[\"Use New Game+ para aproveitar armas, upgrades e dinheiro acumulado.\",\"Planeje uma campanha rápida para Sprinter e outros objetivos compatíveis com New Game+.\",\"Considere Professional em New Game+ para Peerless Agent se quiser reduzir pressão de recursos.\",\"Priorize desbloqueios e dinheiro que facilitem runs futuras.\",\"Não misture esta etapa com desafios que exigem New Game.\"],\"warning\":\"Mission Accomplished S+ e S+ Rank Investigator exigem New Game; não use New Game+ nesses requisitos.\",\"result\":\"Recursos, desbloqueios e objetivos de tempo/dificuldade encaminhados para reduzir a dificuldade das próximas runs.\"}",
+      "step_order": 3
+    },
+    {
+      "content": "{\"title\":\"Runs de restrição: Minimalist, Frugalist e Silent Stranger\",\"focus\":\"Desafios\",\"objective\":\"Cumprir troféus de restrição sem atrapalhar as runs de rank mais exigentes.\",\"actions\":[\"Planeje uma run específica para Minimalist usando apenas facas e pistolas, respeitando as exceções do jogo.\",\"Planeje Frugalist sem usar itens de cura.\",\"Planeje Silent Stranger sem falar com o Merchant.\",\"Combine restrições somente se fizer sentido e se você estiver confortável.\",\"Use dificuldade mais baixa quando o troféu permitir e cheque os contadores de desafio depois de cada capítulo.\"],\"warning\":\"Não combine restrições demais se isso aumentar muito o risco de erro. É melhor separar runs do que perder horas por uma regra quebrada.\",\"result\":\"Principais troféus de restrição concluídos ou separados em runs controladas.\"}",
+      "step_order": 4
+    },
+    {
+      "content": "{\"title\":\"Run de S+ / dificuldade alta em save novo\",\"focus\":\"Rank\",\"objective\":\"Cumprir os requisitos mais exigentes de rank e dificuldade com planejamento de rota, saves e tempo.\",\"actions\":[\"Faça Mission Accomplished S+ em Standard usando New Game.\",\"Faça S+ Rank Investigator em Hardcore usando New Game.\",\"Planeje rota curta, upgrades prioritários e pontos de save antes de começar.\",\"Evite gastar tempo com coletáveis já concluídos em runs anteriores.\",\"Use desbloqueios permitidos pela regra do troféu, sem violar requisitos.\"],\"warning\":\"S+ exige campanha nova e controle de tempo. A lista traz Standard S+ e Hardcore S+ separados; confirme no seu save se ambos foram desbloqueados antes de encerrar a etapa.\",\"result\":\"Troféus de rank/dificuldade mais críticos concluídos.\"}",
+      "step_order": 5
+    },
+    {
+      "content": "{\"title\":\"Revisão final da platina base\",\"focus\":\"Cleanup final\",\"objective\":\"Conferir todos os troféus restantes da lista base antes de encerrar a platina.\",\"actions\":[\"Revise checklist de armas, Merchant Requests, Clockwork Castellans, Shooting Range e troféus situacionais.\",\"Confirme se todos os troféus de dificuldade, rank e restrição foram concluídos.\",\"Verifique se nenhum troféu de Separate Ways, The Mercenaries ou DLC foi misturado à platina base.\",\"Finalize qualquer pendência curta em save específico ou campanha separada.\",\"Confirme a distribuição final de 40 troféus da lista base antes de encerrar o guia.\"],\"warning\":\"A platina não é perdível, mas muitos troféus exigem nova campanha se forem ignorados no momento certo.\",\"result\":\"Pendências finais resolvidas e todos os requisitos da platina base concluídos.\"}",
+      "step_order": 6
+    }
+  ],
+  "schemaVersion": 1,
+  "seedExtras": {
+    "aliases": [],
+    "attentionPoints": [],
+    "checklist": [
+      "Concluir a primeira campanha e guardar saves manuais em slots separados.",
+      "Pegar tesouros da vila para Bandit.",
+      "Pegar tesouros do castelo para Burglar.",
+      "Pegar tesouros da ilha para Raider.",
+      "Completar todos os pedidos do Mercador para Jack of All Trades.",
+      "Destruir os 16 Clockwork Castellans para Revolution Wind-up e liberar Primal Knife.",
+      "Resolver troféus de capítulo como Verdugo, carrinho da mina, torre do relógio, jet ski, Salazar e Regenerador.",
+      "Comprar, desbloquear e manter todas as armas necessárias para Gun Fanatic.",
+      "Completar o estande de tiro para Amateur Shooter, Real Deadeye e Trick Shot.",
+      "Fazer uma run Minimalist usando apenas facas e pistolas nas regras permitidas.",
+      "Fazer uma run Silent Stranger sem falar com o Mercador.",
+      "Fazer uma run Frugalist sem usar itens de cura.",
+      "Concluir Professional e liberar/desbloquear armas especiais sem tratar DLC paga como requisito.",
+      "Fazer Standard S+ em New Game.",
+      "Fazer Hardcore S+ em New Game.",
+      "Conferir que Separate Ways/Caminhos Distintos, VR Mode, tickets pagos e DLC extra não entraram na platina base."
+    ],
+    "faq": [
+      {
+        "answer": "Normalmente várias. O caminho mais seguro separa campanha de coleta, NG+ de restrições, Professional/rank e runs S+ em New Game.",
+        "question": "Quantas runs são necessárias para a platina?"
+      },
+      {
+        "answer": "Não. Por isso tesouros, pedidos, Castellans, troféus de capítulo e desafios de run devem ser planejados com saves manuais.",
+        "question": "Resident Evil 4 Remake tem chapter select ou free-roam final?"
+      },
+      {
+        "answer": "Não. Separate Ways é conteúdo separado e fica fora dos 40 troféus da platina base.",
+        "question": "Separate Ways/Caminhos Distintos conta para a platina base?"
+      },
+      {
+        "answer": "Não. A platina base não exige VR Mode, pacote de DLC extra, tickets pagos de upgrade ou DLC paga.",
+        "question": "VR Mode, DLC extra ou tickets pagos são obrigatórios?"
+      },
+      {
+        "answer": "Não. Pode ser citado como rota opcional/facilitadora para Handcannon, mas a platina base não deve depender dele como requisito obrigatório.",
+        "question": "The Mercenaries é obrigatório?"
+      },
+      {
+        "answer": "Não para os troféus S+. Mission Accomplished S+ e S+ Rank Investigator exigem planejamento em New Game.",
+        "question": "Rank S+ pode ser feito em New Game+?"
+      },
+      {
+        "answer": "Não. A lista base pode ser feita offline e não exige online, servidores ou PS+.",
+        "question": "A platina tem online?"
+      },
+      {
+        "answer": "Não. A platina base é single-player e não exige coop.",
+        "question": "Precisa de coop?"
+      },
+      {
+        "answer": "Não. PS VR2 é opcional e não faz parte dos requisitos da platina base.",
+        "question": "PS VR2 é obrigatório?"
+      },
+      {
+        "answer": "Sim. A platina em si não é perdível, mas muitos troféus de capítulo, coleta, rank e restrição exigem replay se forem ignorados.",
+        "question": "A platina tem perdíveis?"
+      },
+      {
+        "answer": "Use saves manuais em slots separados, acompanhe tesouros/pedidos/Castellans por capítulo e cheque os contadores internos depois de runs de restrição.",
+        "question": "Quais cuidados reduzem replay?"
+      }
+    ],
+    "note": "Campos exportados para auditoria. O SQLite atual nao possui colunas nativas para todos esses extras; a importacao preserva o que o banco suporta.",
+    "quickDecision": {
+      "firstAction": "Comece com uma campanha de coleta e preparação, marcando tesouros, Clockwork Castellans, pedidos do Mercador e troféus de capítulo.",
+      "recommendation": "Vale para quem aceita planejar saves, colecionáveis, pedidos do Mercador, runs S+, Professional e desafios de restrição sem depender de DLC paga.",
+      "summary": "Platina média/difícil, offline e de múltiplas runs: 40 troféus base, 30-40h, dificuldade 7/10 e objetivos sensíveis por falta de chapter select/free-roam."
+    },
+    "seo": {
+      "description": "Roadmap completo da platina de Resident Evil 4 Remake, com troféus perdíveis, runs S+, colecionáveis, armas, checklist e dicas para evitar replay desnecessário.",
+      "keywords": "Resident Evil 4 Remake troféus, Resident Evil 4 Remake platina, Resident Evil 4 Remake guia, Resident Evil 4 Remake roadmap, Resident Evil 4 Remake perdíveis, Resident Evil 4 Remake S+, Resident Evil 4 Remake checklist",
+      "ogDescription": "Roadmap completo da platina base de Resident Evil 4 Remake para PS4/PS5, com colecionáveis, S+, armas, restrições e sem DLC obrigatória.",
+      "ogTitle": "Resident Evil 4 Remake: guia de troféus e platina | AtlasAchievement",
+      "title": "Resident Evil 4 Remake: guia de troféus e platina | AtlasAchievement"
+    },
+    "tags": []
+  },
+  "slug": "resident-evil-4-remake",
+  "trophies": [
+    {
+      "description": "Obtenha todos os outros troféus.",
+      "is_missable": 0,
+      "is_spoiler": 0,
+      "name": "Cuz Boredom Kills Me",
+      "name_pt": "Tédio É de Matar",
+      "tip": "A platina pede múltiplas runs. Organize coleta, speedrun e desafios de restrição.",
+      "trophy_code": "re4r_platinum",
+      "type": "Platina"
+    },
+    {
+      "description": "Apare um ataque inimigo com a faca.",
+      "is_missable": 0,
+      "is_spoiler": 0,
+      "name": "Knife Basics",
+      "name_pt": "Faca Para Principiantes",
+      "tip": "Sai cedo no jogo; faça um parry em um ataque corpo a corpo assim que puder.",
+      "trophy_code": "re4r_knife_basics",
+      "type": "Bronze"
+    },
+    {
+      "description": "Melhore uma arma.",
+      "is_missable": 0,
+      "is_spoiler": 0,
+      "name": "My Preferred Piece",
+      "name_pt": "Minha Peça Preferida",
+      "tip": "No primeiro Mercador, entre em Tune Up e compre qualquer melhoria barata.",
+      "trophy_code": "re4r_preferred_piece",
+      "type": "Bronze"
+    },
+    {
+      "description": "Obtenha a melhoria exclusiva de uma arma.",
+      "is_missable": 0,
+      "is_spoiler": 0,
+      "name": "A Masterpiece",
+      "name_pt": "Obra-Prima",
+      "tip": "Você pode pagar todas as melhorias ou usar um ticket obtido no jogo; tickets pagos não são requisito da platina.",
+      "trophy_code": "re4r_masterpiece",
+      "type": "Bronze"
+    },
+    {
+      "description": "Complete um pedido do Mercador.",
+      "is_missable": 1,
+      "is_spoiler": 0,
+      "name": "Nice One, Stranger!",
+      "name_pt": "Boa, Estranho!",
+      "tip": "Pegue um cartaz azul e conclua o objetivo antes de avançar de capítulo.",
+      "trophy_code": "re4r_nice_one_stranger",
+      "type": "Bronze"
+    },
+    {
+      "description": "Resgate Ashley enquanto ela está sendo carregada por um inimigo.",
+      "is_missable": 1,
+      "is_spoiler": 0,
+      "name": "Talk About Near-Death Experience!",
+      "name_pt": "Uma Experiência de Quase Morte",
+      "tip": "Isso pode ser feito logo após Ashley começar a acompanhar Leon.",
+      "trophy_code": "re4r_near_death",
+      "type": "Bronze"
+    },
+    {
+      "description": "Destrua um Castellan mecânico.",
+      "is_missable": 0,
+      "is_spoiler": 0,
+      "name": "Revolt Against the Revolting",
+      "name_pt": "Revolta Contra os Revoltantes",
+      "tip": "Basta destruir qualquer um dos bonecos mecânicos escondidos pelo jogo.",
+      "trophy_code": "re4r_revolt",
+      "type": "Bronze"
+    },
+    {
+      "description": "Derrote Del Lago.",
+      "is_missable": 0,
+      "is_spoiler": 0,
+      "name": "Harpoon Hurler",
+      "name_pt": "Lança-Arpão",
+      "tip": "Troféu automático de história no fim da luta do lago.",
+      "trophy_code": "re4r_harpoon",
+      "type": "Bronze"
+    },
+    {
+      "description": "Derrote Bitores Méndez.",
+      "is_missable": 0,
+      "is_spoiler": 1,
+      "name": "Grilled Big Cheese",
+      "name_pt": "Chefão no Chão",
+      "tip": "Troféu automático de história ao vencer o chefe da vila.",
+      "trophy_code": "re4r_grilled_big_cheese",
+      "type": "Prata"
+    },
+    {
+      "description": "Derrote o Verdugo.",
+      "is_missable": 1,
+      "is_spoiler": 1,
+      "name": "Wave Goodbye, Right Hand",
+      "name_pt": "Dê Tchauzinho, Mão Direita",
+      "tip": "Pode ser feito congelando o chefe com nitrogênio para abrir janelas de dano.",
+      "trophy_code": "re4r_wave_goodbye",
+      "type": "Bronze"
+    },
+    {
+      "description": "Derrote Ramón Salazar.",
+      "is_missable": 0,
+      "is_spoiler": 1,
+      "name": "No Thanks, Bro!",
+      "name_pt": "Não, Valeu!",
+      "tip": "Troféu de história; salve antes se quiser combinar com o troféu da granada.",
+      "trophy_code": "re4r_no_thanks_bro",
+      "type": "Prata"
+    },
+    {
+      "description": "Derrote Jack Krauser.",
+      "is_missable": 0,
+      "is_spoiler": 1,
+      "name": "You Used to Be a Good Guy",
+      "name_pt": "Você Já Foi um Cara Legal",
+      "tip": "Troféu automático de história.",
+      "trophy_code": "re4r_good_guy",
+      "type": "Bronze"
+    },
+    {
+      "description": "Derrote Osmund Saddler.",
+      "is_missable": 0,
+      "is_spoiler": 1,
+      "name": "You’re Small Time!",
+      "name_pt": "Você É Peixe Pequeno!",
+      "tip": "Troféu automático ao concluir a campanha principal.",
+      "trophy_code": "re4r_small_time",
+      "type": "Ouro"
+    },
+    {
+      "description": "Derrote 3 inimigos de uma vez com uma granada de luz.",
+      "is_missable": 0,
+      "is_spoiler": 0,
+      "name": "Shield Your Eyes",
+      "name_pt": "Tapem os Olhos",
+      "tip": "Corvos e parasitas são ótimos alvos para liberar esse troféu facilmente.",
+      "trophy_code": "re4r_shield_your_eyes",
+      "type": "Bronze"
+    },
+    {
+      "description": "Derrote um Garrador usando apenas facas.",
+      "is_missable": 1,
+      "is_spoiler": 0,
+      "name": "Never Heard It Coming",
+      "name_pt": "Nem Ouviu Chegando",
+      "tip": "Faça no primeiro Garrador, usando stealth pelas costas sempre que possível.",
+      "trophy_code": "re4r_never_heard",
+      "type": "Bronze"
+    },
+    {
+      "description": "Mate 2 parasitas dentro de um Regenerador com uma única bala.",
+      "is_missable": 1,
+      "is_spoiler": 0,
+      "name": "Two Bugs, One Stone",
+      "name_pt": "Dois Insetos com Uma Bala Só",
+      "tip": "Use a biosensor scope para alinhar dois parasitas antes de atirar.",
+      "trophy_code": "re4r_two_bugs",
+      "type": "Bronze"
+    },
+    {
+      "description": "Jogue uma granada na boca de Ramón Salazar.",
+      "is_missable": 1,
+      "is_spoiler": 0,
+      "name": "You Talk Too Much!",
+      "name_pt": "Você Fala Demais!",
+      "tip": "Espere o momento em que a boca fica aberta e arremesse a granada.",
+      "trophy_code": "re4r_talk_too_much",
+      "type": "Bronze"
+    },
+    {
+      "description": "Use um canhão para derrotar um zealot.",
+      "is_missable": 1,
+      "is_spoiler": 0,
+      "name": "Overkill",
+      "name_pt": "Exagerado",
+      "tip": "No castelo, atraia um cultista para a linha do canhão e dispare.",
+      "trophy_code": "re4r_overkill",
+      "type": "Bronze"
+    },
+    {
+      "description": "Passe pelas duas seções do carrinho da mina sem sofrer dano.",
+      "is_missable": 1,
+      "is_spoiler": 0,
+      "name": "Hope You Like Thrill Rides!",
+      "name_pt": "Proteção de Propriedade",
+      "tip": "Decore a rota e priorize inimigos que arremessam projéteis.",
+      "trophy_code": "re4r_thrill_rides",
+      "type": "Bronze"
+    },
+    {
+      "description": "Chegue ao topo da torre do relógio sem o elevador parar uma única vez.",
+      "is_missable": 1,
+      "is_spoiler": 0,
+      "name": "Capacity Compliance",
+      "name_pt": "Respeitando o Limite de Peso",
+      "tip": "Destrua os inimigos rapidamente antes que eles bloqueiem o mecanismo.",
+      "trophy_code": "re4r_capacity_compliance",
+      "type": "Bronze"
+    },
+    {
+      "description": "Fuja na moto aquática sem sofrer dano.",
+      "is_missable": 1,
+      "is_spoiler": 0,
+      "name": "Smooth Escape",
+      "name_pt": "Fuga Suave",
+      "tip": "Faça save antes da sequência final e repita o trecho se bater em obstáculos ou sofrer dano.",
+      "trophy_code": "re4r_smooth_escape",
+      "type": "Bronze"
+    },
+    {
+      "description": "Venda um único tesouro por pelo menos 100000 ptas.",
+      "is_missable": 1,
+      "is_spoiler": 0,
+      "name": "Astute Appraiser",
+      "name_pt": "Avaliação Astuta",
+      "tip": "Guarde um tesouro combinável completo e venda só quando estiver no valor máximo.",
+      "trophy_code": "re4r_astute_appraiser",
+      "type": "Bronze"
+    },
+    {
+      "description": "Obtenha todos os tesouros indicados no mapa do tesouro da vila em uma única jogada.",
+      "is_missable": 1,
+      "is_spoiler": 0,
+      "name": "Bandit",
+      "name_pt": "Bandido",
+      "tip": "Compre o mapa da vila e limpe a região antes de partir para o castelo.",
+      "trophy_code": "re4r_bandit",
+      "type": "Bronze"
+    },
+    {
+      "description": "Obtenha todos os tesouros indicados no mapa do tesouro do castelo em uma única jogada.",
+      "is_missable": 1,
+      "is_spoiler": 0,
+      "name": "Burglar",
+      "name_pt": "Invasor",
+      "tip": "O castelo tem vários desvios; confira o mapa antes de avançar sem volta.",
+      "trophy_code": "re4r_burglar",
+      "type": "Bronze"
+    },
+    {
+      "description": "Obtenha todos os tesouros indicados no mapa do tesouro da ilha em uma única jogada.",
+      "is_missable": 1,
+      "is_spoiler": 0,
+      "name": "Raider",
+      "name_pt": "Assaltante",
+      "tip": "Deixe esse objetivo para uma run de coleta caso prefira evitar pressão de tempo.",
+      "trophy_code": "re4r_raider",
+      "type": "Bronze"
+    },
+    {
+      "description": "Obtenha todas as armas.",
+      "is_missable": 0,
+      "is_spoiler": 0,
+      "name": "Gun Fanatic",
+      "name_pt": "Fanático por Armas",
+      "tip": "Inclui armas compradas/desbloqueadas da lista base, como Chicago Sweeper, Primal Knife, Infinite Rocket Launcher e Handcannon.",
+      "trophy_code": "re4r_gun_fanatic",
+      "type": "Bronze"
+    },
+    {
+      "description": "Complete todos os pedidos do Mercador.",
+      "is_missable": 1,
+      "is_spoiler": 0,
+      "name": "Jack of All Trades",
+      "name_pt": "Pau Para Toda Obra",
+      "tip": "São pedidos espalhados pela campanha inteira; não ignore os cartazes azuis.",
+      "trophy_code": "re4r_jack_of_all_trades",
+      "type": "Prata"
+    },
+    {
+      "description": "Destrua todos os Castellans mecânicos.",
+      "is_missable": 1,
+      "is_spoiler": 0,
+      "name": "Revolution Wind-up",
+      "name_pt": "Desenrolar da Revolução",
+      "tip": "Há um em cada capítulo da campanha principal.",
+      "trophy_code": "re4r_revolution_windup",
+      "type": "Prata"
+    },
+    {
+      "description": "Conclua a história no modo Standard ou superior.",
+      "is_missable": 0,
+      "is_spoiler": 0,
+      "name": "Promising Agent",
+      "name_pt": "Agente Promissor",
+      "tip": "Pode ser obtido naturalmente na primeira run se começar no Standard.",
+      "trophy_code": "re4r_promising_agent",
+      "type": "Bronze"
+    },
+    {
+      "description": "Conclua a história principal no modo Standard com rank S+.",
+      "is_missable": 0,
+      "is_spoiler": 0,
+      "name": "Mission Accomplished S+",
+      "name_pt": "Missão Cumprida S+",
+      "tip": "Exige New Game e ótimo controle de tempo; evite desvios desnecessários.",
+      "trophy_code": "re4r_mission_accomplished",
+      "type": "Prata"
+    },
+    {
+      "description": "Conclua a história no modo Hardcore ou superior.",
+      "is_missable": 0,
+      "is_spoiler": 0,
+      "name": "Proficient Agent",
+      "name_pt": "Agente Proficiente",
+      "tip": "Pode ser combinado com runs de rank ou desafios posteriores.",
+      "trophy_code": "re4r_proficient_agent",
+      "type": "Prata"
+    },
+    {
+      "description": "Conclua a história principal no modo Hardcore com rank S+.",
+      "is_missable": 0,
+      "is_spoiler": 0,
+      "name": "S+ Rank Investigator",
+      "name_pt": "Investigador Classe S+",
+      "tip": "Uma das runs centrais da platina; use rotas otimizadas e saves estratégicos.",
+      "trophy_code": "re4r_splus_investigator",
+      "type": "Ouro"
+    },
+    {
+      "description": "Conclua a história no modo Professional.",
+      "is_missable": 0,
+      "is_spoiler": 0,
+      "name": "Peerless Agent",
+      "name_pt": "Agente Imbatível",
+      "tip": "Mesmo sem S+, essa run pede boa gestão de recursos e conhecimento do jogo.",
+      "trophy_code": "re4r_peerless_agent",
+      "type": "Ouro"
+    },
+    {
+      "description": "Conclua a história principal em até 8 horas.",
+      "is_missable": 0,
+      "is_spoiler": 0,
+      "name": "Sprinter",
+      "name_pt": "Maratonista",
+      "tip": "Pule cutscenes, evite confrontos opcionais e carregue saves pelo menu principal após morrer.",
+      "trophy_code": "re4r_sprinter",
+      "type": "Prata"
+    },
+    {
+      "description": "Conclua a história principal sem usar nenhum item de cura.",
+      "is_missable": 0,
+      "is_spoiler": 0,
+      "name": "Frugalist",
+      "name_pt": "Frugal",
+      "tip": "Faça em NG+ com armas fortes e acessórios defensivos.",
+      "trophy_code": "re4r_frugalist",
+      "type": "Prata"
+    },
+    {
+      "description": "Conclua a história principal usando apenas facas e pistolas. (Excluindo batalhas específicas.)",
+      "is_missable": 0,
+      "is_spoiler": 0,
+      "name": "Minimalist",
+      "name_pt": "Minimalista",
+      "tip": "Evite equipar outras armas por engano e acompanhe o desafio no menu.",
+      "trophy_code": "re4r_minimalist",
+      "type": "Prata"
+    },
+    {
+      "description": "Conclua a história principal sem falar com o Mercador nenhuma vez.",
+      "is_missable": 0,
+      "is_spoiler": 0,
+      "name": "Silent Stranger",
+      "name_pt": "Estranho Silencioso",
+      "tip": "Ideal em NG+ com inventário pronto e estratégia definida desde o início.",
+      "trophy_code": "re4r_silent_stranger",
+      "type": "Prata"
+    },
+    {
+      "description": "Consiga rank S em todos os jogos do estande de tiro.",
+      "is_missable": 0,
+      "is_spoiler": 0,
+      "name": "Real Deadeye",
+      "name_pt": "Mira Imbatível",
+      "tip": "Deixe para uma run de limpeza; algumas fases exigem muita consistência.",
+      "trophy_code": "re4r_real_deadeye",
+      "type": "Ouro"
+    },
+    {
+      "description": "Atravesse e destrua 5 alvos do estande de tiro com um único disparo.",
+      "is_missable": 0,
+      "is_spoiler": 0,
+      "name": "Trick Shot",
+      "name_pt": "Mandou Bem",
+      "tip": "Use munição penetrante ou alinhe alvos em sequência em desafios apropriados.",
+      "trophy_code": "re4r_trick_shot",
+      "type": "Bronze"
+    },
+    {
+      "description": "Complete um jogo no estande de tiro.",
+      "is_missable": 0,
+      "is_spoiler": 0,
+      "name": "Amateur Shooter",
+      "name_pt": "Atirador Amador",
+      "tip": "Liberado logo na primeira visita ao estande.",
+      "trophy_code": "re4r_amateur_shooter",
+      "type": "Bronze"
+    }
+  ]
+}

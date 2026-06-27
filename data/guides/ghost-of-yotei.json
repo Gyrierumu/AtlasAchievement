@@ -1,0 +1,781 @@
+{
+  "game": {
+    "avoid_if": "Evite se você quer uma platina curta ou não gosta de checklist grande de bounties, camps, coletáveis e equipamentos.",
+    "before_you_start": "Ghost of Yōtei é uma platina longa, tranquila e totalmente offline. A lista base possui 54 troféus, não exige online, cooperação, New Game+ ou dificuldade específica, e pode ser concluída em uma única jogada. A campanha pode ser feita em qualquer dificuldade, inclusive Casual, e o jogador ainda pode usar recursos de acessibilidade sem bloquear troféus. Não há troféus perdíveis: depois da história, é possível continuar no free roam para concluir bounties, side tales relevantes, mythic tales, sensei tales, coletáveis, equipamentos e troféus misc.\n\nA platina exige cerca de 85% de conclusão, mas não exige absolutamente tudo do mapa. O foco é completar todos os 31 bounties, os Yōtei Six Camps, armas, armaduras, Shamisen Songs, Fox Dens, Wolf Dens, Nine Tails Puzzle Boxes, Mountain Reliquary puzzles, Bamboo Strikes, Shrine Climbs, Hot Springs, 30 Altars of Reflection e outras atividades ligadas a troféus. Ainu Items, Pillars of the Fallen e todos os 61 Altars não são necessários. O DLC Yōtei Legends é separado, tem troféus online/co-op próprios e não entra na platina Legendary Onryō.",
+    "best_for": "Ideal para quem quer uma platina longa, offline, de mundo aberto, com exploração ampla e sem pressão de perdíveis.",
+    "cleanup_advice": "No pós-história, organize bounties manualmente, feche Yōtei Six Camps, colete apenas as categorias exigidas e confirme 30 de 61 Altars of Reflection.",
+    "cover_image": "https://image.api.playstation.com/vulcan/ap/rnd/202504/2116/53c76276602fca520ddf3269e1ff9f34aca0ac39ce46e4cb.jpg",
+    "coverage_level": "complete",
+    "created_at": "2026-06-27 02:31:56",
+    "difficulty": 3,
+    "difficulty_reason": "3/10: a dificuldade editorial vem mais do volume de atividades e organização do mapa do que de execução. A campanha pode ser jogada no Casual com acessibilidade.",
+    "dlc_scope": "Yōtei Legends é DLC/update separado, com troféus online/co-op próprios, e não entra nos 54 troféus da lista base.",
+    "editorial_notes": "Criado exclusivamente para Ghost of Yōtei. A lista base mantém Legendary Onryō como platina, separa Yōtei Legends como conteúdo externo à platina e trata Ainu Items, Pillars of the Fallen e todos os 61 Altars como não obrigatórios.",
+    "editorial_review_status": "verified",
+    "editorial_status": "published",
+    "first_run_advice": "Jogue a história com calma, desbloqueie regiões e ferramentas, faça side content no caminho e deixe a limpeza pesada para o free roam.",
+    "grind_summary": "Grind moderado por volume de bounties, camps, coletáveis e equipamentos, mas sem 100% absoluto do mapa.",
+    "guide_avoid": null,
+    "guide_best_moment": null,
+    "guide_dlc": null,
+    "guide_grind": null,
+    "guide_ideal": null,
+    "guide_online": null,
+    "guide_runs": null,
+    "image": "https://image.api.playstation.com/vulcan/ap/rnd/202504/2116/53c76276602fca520ddf3269e1ff9f34aca0ac39ce46e4cb.jpg",
+    "is_verified": 1,
+    "last_reviewed_at": "2026-06-27",
+    "missable": "Não há troféus perdíveis; tudo necessário fica disponível no free roam após a história.",
+    "missable_summary": "0 perdíveis. Quests não são replayable de forma tradicional, mas nada necessário para a platina base fica bloqueado.",
+    "name": "Ghost of Yōtei",
+    "online_summary": "Não há troféus online na lista base. Yōtei Legends é conteúdo separado com troféus online/co-op próprios e não entra na platina Legendary Onryō.",
+    "quality_warnings": "[]",
+    "reviewed_by": "AtlasAchievement Editorial",
+    "runs_summary": "Uma jogada é suficiente. A platina base não exige New Game+, rotas alternativas obrigatórias nem repetição de campanha.",
+    "slug": "ghost-of-yotei",
+    "time": "50-70h",
+    "time_bucket": "long",
+    "time_max_hours": 70,
+    "time_min_hours": 50,
+    "time_reason": "50-70h considerando campanha, free roam, 31 bounties, Yōtei Six Camps, coletáveis obrigatórios, equipamentos, armas, upgrades e misc.",
+    "time_sort_hours": 50,
+    "updated_at": "2026-06-27 02:36:59",
+    "verification_note": "Guia validado para a lista base PS5: 54 troféus, distribuição 1/2/7/44, 50-70h, 3/10, 0 perdíveis, online 0, coop 0, 0 troféus por configuração de jogo, sem New Game+, Yōtei Legends separado e 30/61 Altars explicados.",
+    "verification_status": "verified",
+    "walkthrough": ""
+  },
+  "redirects": [
+    "ghost-of-yotei-ps5"
+  ],
+  "roadmaps": [
+    {
+      "content": "{\"title\":\"História em qualquer dificuldade e abertura das regiões\",\"focus\":\"Campanha e free roam\",\"objective\":\"Concluir a campanha no ritmo que preferir, abrir regiões e liberar ferramentas suficientes para explorar Ezo com conforto.\",\"actions\":[\"Jogue em qualquer configuração, inclusive Casual, sem se preocupar com bloqueio de troféus.\",\"Avance a história principal até derrotar os alvos dos Yōtei Six e liberar acesso amplo às regiões.\",\"Ative pontos de viagem rápida, desbloqueie armas principais e mantenha progresso natural em side content encontrado pelo caminho.\",\"Use saves manuais antes de sessões longas se quiser uma camada extra de segurança.\",\"Não tente limpar 100% do mapa cedo demais\",\"deixe parte da exploração para quando tiver mais recursos.\"],\"warning\":\"Não há perdíveis, mas quests não são replayable de forma tradicional; anotar pendências evita confusão no cleanup.\",\"result\":\"Campanha concluída, regiões abertas e free roam pronto para a limpeza da platina.\"}",
+      "step_order": 1
+    },
+    {
+      "content": "{\"title\":\"Side Tales, Sensei Tales e Mythic Tales relevantes\",\"focus\":\"Missões secundárias\",\"objective\":\"Fechar linhas que liberam armas, técnicas, aliados, equipamentos e troféus específicos.\",\"actions\":[\"Complete as Mythic Tales ligadas à Yari, Kusarigama e Odachi.\",\"Conclua Sensei Tales e side tales relevantes antes de empilhar coletáveis finais.\",\"Acompanhe histórias ligadas a Sitturaynu, aliados e progressão de armas.\",\"Resolva objetivos de combate ensinados por essas missões enquanto a rota ainda está fresca.\",\"Marque no checklist qualquer troféu de tale concluído para reduzir ruído no fim.\"],\"warning\":\"Nada necessário fica perdido, mas o jogo não oferece um resumo perfeito de todas as tales e bounties concluídos.\",\"result\":\"Tales importantes fechadas e principais desbloqueios de gameplay disponíveis.\"}",
+      "step_order": 2
+    },
+    {
+      "content": "{\"title\":\"Bounties e Yōtei Six Camps\",\"focus\":\"Bounties, camps e liberação\",\"objective\":\"Completar os 31 bounties e todos os Yōtei Six Camps exigidos pela lista base.\",\"actions\":[\"Faça todos os 31 bounties para Master Bounty Hunter.\",\"Limpe os Yōtei Six Camps necessários para For the Living.\",\"Use o mapa e anotações próprias para confirmar bounties já entregues.\",\"Intercale camps com upgrades e armas para reduzir dificuldade de encontros maiores.\",\"Revise se algum bounty ficou fora do checklist antes de partir para coletáveis finais.\"],\"warning\":\"Bounties são o maior risco de organização porque o jogo não mostra um resumo global perfeito.\",\"result\":\"Bounties e camps principais concluídos, deixando o cleanup bem mais previsível.\"}",
+      "step_order": 3
+    },
+    {
+      "content": "{\"title\":\"Coletáveis e atividades de exploração\",\"focus\":\"Coleções e mapa\",\"objective\":\"Completar as atividades que contam para troféus sem transformar a platina em 100% absoluto.\",\"actions\":[\"Complete 12 Nine Tails Puzzle Boxes e 5 Mountain Reliquary Puzzles.\",\"Finalize 11 Fox Dens, 10 Wolf Dens, 15 Bamboo Strikes, 13 Shrine Climbs e 16 Hot Springs.\",\"Colete 15 de 18 Sumi-e Paintings e faça 30 dos 61 Altars of Reflection.\",\"Encontre 10 Special Places e conclua atividades ligadas a Speaking with the Land.\",\"Ignore Ainu Items, Pillars of the Fallen e os Altars excedentes se o objetivo for apenas a platina.\"],\"warning\":\"A platina pede cerca de 85% de conclusão, não 100% absoluto do mapa.\",\"result\":\"Coletáveis e atividades necessárias encaminhados sem incluir conteúdo dispensável.\"}",
+      "step_order": 4
+    },
+    {
+      "content": "{\"title\":\"Equipamentos, armas, vanity gear e upgrades\",\"focus\":\"Arsenal e preparação\",\"objective\":\"Fechar requisitos de armas, armaduras, ferramentas e cosméticos ligados a troféus.\",\"actions\":[\"Obtenha 12 armaduras, 5 armas corpo a corpo, 4 armas de longo alcance e 5 quickfire weapons.\",\"Colete 30 Vanity Gear e 8 Gifts.\",\"Aprenda ou conclua 8 Shamisen Songs.\",\"Faça 10 upgrades de charms ao menos uma vez.\",\"Use dinheiro e recursos com intenção para evitar farm desnecessário no fim.\"],\"warning\":\"Nem todo item cosmético do jogo é obrigatório; siga a contagem de troféus em vez de limpar tudo.\",\"result\":\"Inventário da platina fechado e personagem pronto para misc e conferência final.\"}",
+      "step_order": 5
+    },
+    {
+      "content": "{\"title\":\"Misc de combate, minigames e conferência final\",\"focus\":\"Cleanup final\",\"objective\":\"Resolver ações específicas, minigames e a revisão dos 54 troféus antes da platina.\",\"actions\":[\"Faça os troféus misc de combate como From the Hip, The Owl’s Talon, Sayonara e You Dropped This.\",\"Complete Spear Fishing, Sake Flight, Fireside Performance e outros objetivos curtos de interação.\",\"Confirme que nenhum troféu foi marcado como online, coop, perdível ou por dificuldade.\",\"Revise se Yōtei Legends não entrou na lista base de 54 troféus.\",\"Faça a conferência final do checklist para liberar Legendary Onryō.\"],\"warning\":\"Use saves manuais antes de blocos longos de cleanup se quiser voltar rapidamente de qualquer erro de rota.\",\"result\":\"Lista base de 54 troféus revisada e platina Legendary Onryō concluída.\"}",
+      "step_order": 6
+    }
+  ],
+  "schemaVersion": 1,
+  "seedExtras": {
+    "aliases": [
+      "Ghost of Yotei",
+      "ghost-of-yōtei",
+      "ghost-of-yotei-ps5"
+    ],
+    "attentionPoints": [
+      {
+        "detail": "Não há troféus perdíveis; tudo necessário fica disponível no free roam após a história.",
+        "tags": [
+          "Segurança",
+          "Free roam"
+        ],
+        "title": "Sem perdíveis",
+        "type": "Segurança"
+      },
+      {
+        "detail": "Yōtei Legends tem troféus online/co-op próprios, mas não entra na platina base.",
+        "tags": [
+          "DLC separado",
+          "Base"
+        ],
+        "title": "Legends DLC separado",
+        "type": "DLC separado"
+      },
+      {
+        "detail": "A platina exige muitos coletáveis, bounties e camps, mas não exige Ainu Items, Pillars of the Fallen nem todos os 61 Altars.",
+        "tags": [
+          "Conclusão",
+          "Coletáveis"
+        ],
+        "title": "85% completion, não 100% absoluto",
+        "type": "Conclusão"
+      },
+      {
+        "detail": "O jogo não mostra um resumo perfeito de todos os bounties/tales concluídos; acompanhar manualmente pode evitar confusão no cleanup.",
+        "tags": [
+          "Checklist",
+          "Bounties"
+        ],
+        "title": "Bounties sem checklist perfeito",
+        "type": "Organização"
+      },
+      {
+        "detail": "Tudo pode ser feito no Casual e com recursos de acessibilidade.",
+        "tags": [
+          "Acessibilidade",
+          "Casual"
+        ],
+        "title": "Dificuldade não afeta troféus",
+        "type": "Acessibilidade"
+      },
+      {
+        "detail": "O jogo tem 10 saves manuais; use antes de sessões longas de cleanup ou bounties.",
+        "tags": [
+          "Save manual",
+          "Cleanup"
+        ],
+        "title": "Saves manuais",
+        "type": "Save"
+      }
+    ],
+    "checklist": [
+      "Concluir a campanha em qualquer configuração.",
+      "Usar o free roam pós-história para cleanup.",
+      "Completar todos os 31 bounties.",
+      "Completar os Yōtei Six Camps.",
+      "Completar 12 Nine Tails Puzzle Boxes e 5 Mountain Reliquary Puzzles.",
+      "Completar 11 Fox Dens e 10 Wolf Dens.",
+      "Coletar 15 de 18 Sumi-e Paintings.",
+      "Completar 15 Bamboo Strikes, 13 Shrine Climbs e 16 Hot Springs.",
+      "Completar 30 de 61 Altars of Reflection.",
+      "Obter 8 Shamisen Songs, 12 armaduras, 5 armas corpo a corpo, 4 armas de longo alcance e 5 quickfire weapons.",
+      "Coletar 30 Vanity Gear, 8 Gifts e encontrar 10 Special Places.",
+      "Fazer 10 upgrades de charms ao menos uma vez.",
+      "Ignorar Ainu Items, Pillars of the Fallen e Altars excedentes se o objetivo for apenas a platina.",
+      "Confirmar que Yōtei Legends não entrou na lista base."
+    ],
+    "faq": [
+      {
+        "answer": "Não. Não há troféus perdíveis; tudo necessário para a platina base pode ser concluído no free roam após a história.",
+        "question": "Ghost of Yōtei tem troféus perdíveis?"
+      },
+      {
+        "answer": "Não. A lista base é totalmente offline e não exige servidores, PS Plus, multiplayer ou conexão para a platina Legendary Onryō.",
+        "question": "Ghost of Yōtei precisa de online para platinar?"
+      },
+      {
+        "answer": "Não. A platina base pode ser feita solo. O conteúdo Yōtei Legends é separado e possui troféus online/co-op próprios fora desta platina.",
+        "question": "Existe coop obrigatório na platina base?"
+      },
+      {
+        "answer": "Não. A campanha pode ser jogada em qualquer configuração, inclusive Casual, e recursos de acessibilidade não bloqueiam troféus.",
+        "question": "A dificuldade afeta troféus?"
+      },
+      {
+        "answer": "Uma jogada é suficiente. A lista base não exige New Game+ nem rotas mutuamente exclusivas para a platina.",
+        "question": "Quantas jogadas são necessárias?"
+      },
+      {
+        "answer": "Sim. Depois da campanha, o free roam continua disponível para bounties, camps, side tales, coletáveis, equipamentos e troféus misc.",
+        "question": "Posso continuar depois da história?"
+      },
+      {
+        "answer": "Não há seleção tradicional de capítulos e quests não são replayable de forma ampla, mas isso não cria perdíveis para a platina base.",
+        "question": "Há chapter select ou repetição tradicional de quests?"
+      },
+      {
+        "answer": "Não. New Game+ não é obrigatório para Legendary Onryō.",
+        "question": "New Game+ é necessário?"
+      },
+      {
+        "answer": "Não. Yōtei Legends é DLC/update separado, com troféus online/co-op próprios, e não entra nos 54 troféus da lista base.",
+        "question": "Yōtei Legends entra na platina?"
+      },
+      {
+        "answer": "Não. A platina exige cerca de 85% de conclusão, mas Ainu Items, Pillars of the Fallen e todos os 61 Altars of Reflection não são obrigatórios.",
+        "question": "Preciso fazer 100% absoluto do mapa?"
+      },
+      {
+        "answer": "O foco é concluir 31 bounties, Yōtei Six Camps, 12 Nine Tails Puzzle Boxes, 5 Mountain Reliquary Puzzles, 11 Fox Dens, 10 Wolf Dens, 15 de 18 Sumi-e Paintings, 15 Bamboo Strikes, 13 Shrine Climbs, 16 Hot Springs, 30 de 61 Altars of Reflection, 8 Shamisen Songs, 10 Special Places, 30 Vanity Gear, 8 Gifts, armas, armaduras e upgrades ligados a troféus.",
+        "question": "Quais coletáveis e atividades são obrigatórios?"
+      },
+      {
+        "answer": "Organização. Como o jogo não mostra um resumo perfeito de todos os bounties e tales concluídos, acompanhar manualmente reduz confusão no cleanup.",
+        "question": "Qual é o maior risco da platina?"
+      },
+      {
+        "answer": "O jogo oferece 10 saves manuais. Use-os antes de sessões longas de cleanup, bounties ou conferência final.",
+        "question": "Quantos saves manuais existem?"
+      },
+      {
+        "answer": "A estimativa é 50-70 horas e 3/10. O tempo vem do volume de atividades, não de execução extrema.",
+        "question": "Quanto tempo e qual dificuldade editorial esperar?"
+      }
+    ],
+    "note": "Campos exportados para auditoria. O SQLite atual nao possui colunas nativas para todos esses extras; a importacao preserva o que o banco suporta.",
+    "quickDecision": {
+      "firstAction": "Comece pela campanha, abra regiões e desbloqueie ferramentas; depois use o free roam para bounties, camps e coletáveis.",
+      "recommendation": "Boa para quem gosta de mundo aberto com campanha livre, cleanup pós-história e coleta seletiva sem precisar fazer 100% absoluto.",
+      "risk": "O risco real é organização: acompanhe os 31 bounties e categorias de coletáveis para não se perder no cleanup.",
+      "summary": "Platina PS5 de 50-70h, 3/10, totalmente offline, sem perdíveis, sem coop, sem New Game+ e sem exigência por configuração de jogo."
+    },
+    "seo": {
+      "description": "Guia de platina de Ghost of Yōtei no PS5 com 54 troféus, 50-70h, 3/10, sem perdíveis, offline, sem coop, sem New Game+, checklist EN/PT-BR e roadmap.",
+      "keywords": "Ghost of Yōtei troféus, Ghost of Yotei platina, Ghost of Yōtei guia PS5, Legendary Onryō, Ghost of Yotei roadmap, Yōtei Six Camps, Master Bounty Hunter",
+      "title": "Ghost of Yōtei — guia de platina PS5, troféus e roadmap"
+    },
+    "tags": [
+      "PS5",
+      "Offline",
+      "Solo",
+      "Sem perdíveis",
+      "Sem New Game+",
+      "Free roam pós-história",
+      "Base",
+      "Bounties",
+      "Coletáveis seletivos",
+      "Mundo aberto"
+    ]
+  },
+  "slug": "ghost-of-yotei",
+  "trophies": [
+    {
+      "description": "Obtenha todos os troféus da lista base.",
+      "is_missable": 0,
+      "is_spoiler": 0,
+      "name": "Legendary Onryō",
+      "name_pt": "Onryō Lendário",
+      "tip": "Conclua os outros 53 troféus da lista base. Yōtei Legends não entra nesta platina.",
+      "trophy_code": "goy_legendary_onryo",
+      "type": "Platina"
+    },
+    {
+      "description": "Conclua o arco da Serpente.",
+      "is_missable": 0,
+      "is_spoiler": 1,
+      "name": "The Snake",
+      "name_pt": "A Serpente",
+      "tip": "Troféu ligado à campanha principal. Avance naturalmente e deixe o cleanup para o free roam.",
+      "trophy_code": "goy_the_snake",
+      "type": "Bronze"
+    },
+    {
+      "description": "Conclua o arco do Oni.",
+      "is_missable": 0,
+      "is_spoiler": 1,
+      "name": "The Oni",
+      "name_pt": "O Oni",
+      "tip": "Marco de campanha dos Yōtei Six.",
+      "trophy_code": "goy_the_oni",
+      "type": "Bronze"
+    },
+    {
+      "description": "Conclua o arco da Kitsune.",
+      "is_missable": 0,
+      "is_spoiler": 1,
+      "name": "The Kitsune",
+      "name_pt": "A Kitsune",
+      "tip": "Progresso de história; não há bloqueio por ordem de cleanup.",
+      "trophy_code": "goy_the_kitsune",
+      "type": "Bronze"
+    },
+    {
+      "description": "Conclua o arco do Dragão.",
+      "is_missable": 0,
+      "is_spoiler": 1,
+      "name": "The Dragon",
+      "name_pt": "O Dragão",
+      "tip": "Continue a campanha até fechar este alvo principal.",
+      "trophy_code": "goy_the_dragon",
+      "type": "Bronze"
+    },
+    {
+      "description": "Conclua o arco da Aranha.",
+      "is_missable": 0,
+      "is_spoiler": 1,
+      "name": "The Spider",
+      "name_pt": "A Aranha",
+      "tip": "Mais um marco natural da rota principal.",
+      "trophy_code": "goy_the_spider",
+      "type": "Bronze"
+    },
+    {
+      "description": "Conclua a história principal.",
+      "is_missable": 0,
+      "is_spoiler": 1,
+      "name": "The Onryō Rests",
+      "name_pt": "O Onryō Descansa",
+      "tip": "Finalize a campanha para liberar o free roam completo de cleanup.",
+      "trophy_code": "goy_the_onryo_rests",
+      "type": "Ouro"
+    },
+    {
+      "description": "Revele a verdade por trás da máscara.",
+      "is_missable": 0,
+      "is_spoiler": 1,
+      "name": "The Woman Behind the Mask",
+      "name_pt": "A Mulher por Trás da Máscara",
+      "tip": "Troféu narrativo de reta final; conclua a sequência principal correspondente.",
+      "trophy_code": "goy_the_woman_behind_the_mask",
+      "type": "Prata"
+    },
+    {
+      "description": "Conclua o momento-chave dos Lobos Gêmeos.",
+      "is_missable": 0,
+      "is_spoiler": 1,
+      "name": "Twin Wolves",
+      "name_pt": "Lobos Gêmeos",
+      "tip": "Avance a história principal até o encontro indicado pelo jogo.",
+      "trophy_code": "goy_twin_wolves",
+      "type": "Prata"
+    },
+    {
+      "description": "Resolva o confronto ligado à ira do Onryō.",
+      "is_missable": 0,
+      "is_spoiler": 1,
+      "name": "Wrath of the Onryō",
+      "name_pt": "Ira do Onryō",
+      "tip": "Troféu de história avançada. Use qualquer build confortável.",
+      "trophy_code": "goy_wrath_of_the_onryo",
+      "type": "Prata"
+    },
+    {
+      "description": "Domine o caminho da Yari.",
+      "is_missable": 0,
+      "is_spoiler": 0,
+      "name": "Way of the Yari",
+      "name_pt": "Caminho da Yari",
+      "tip": "Complete a Mythic Tale ou linha de aprendizado ligada à Yari.",
+      "trophy_code": "goy_way_of_the_yari",
+      "type": "Bronze"
+    },
+    {
+      "description": "Domine o caminho da Kusarigama.",
+      "is_missable": 0,
+      "is_spoiler": 0,
+      "name": "Way of the Kusarigama",
+      "name_pt": "Caminho da Kusarigama",
+      "tip": "Complete o conteúdo ligado à Kusarigama e teste a arma em combate.",
+      "trophy_code": "goy_way_of_the_kusarigama",
+      "type": "Bronze"
+    },
+    {
+      "description": "Domine o caminho da Odachi.",
+      "is_missable": 0,
+      "is_spoiler": 0,
+      "name": "Way of the Odachi",
+      "name_pt": "Caminho da Odachi",
+      "tip": "Feche a tale correspondente para liberar e consolidar o uso da Odachi.",
+      "trophy_code": "goy_way_of_the_odachi",
+      "type": "Bronze"
+    },
+    {
+      "description": "Conclua o legado deixado por outro fantasma.",
+      "is_missable": 0,
+      "is_spoiler": 0,
+      "name": "From One Ghost to Another",
+      "name_pt": "De Um Fantasma para Outro",
+      "tip": "Siga a linha secundária indicada quando ela aparecer no mapa.",
+      "trophy_code": "goy_from_one_ghost_to_another",
+      "type": "Bronze"
+    },
+    {
+      "description": "Conclua a tale de Sitturaynu.",
+      "is_missable": 0,
+      "is_spoiler": 0,
+      "name": "Sitturaynu",
+      "name_pt": "Sitturaynu",
+      "tip": "Complete a missão relacionada e registre no checklist.",
+      "trophy_code": "goy_sitturaynu",
+      "type": "Bronze"
+    },
+    {
+      "description": "Faça uma pausa em uma atividade contemplativa.",
+      "is_missable": 0,
+      "is_spoiler": 0,
+      "name": "A Moment to Breathe",
+      "name_pt": "Um Momento para Respirar",
+      "tip": "Resolva quando passar por atividades de descanso ou interação no mapa.",
+      "trophy_code": "goy_a_moment_to_breathe",
+      "type": "Bronze"
+    },
+    {
+      "description": "Supere um desafio avançado de combate.",
+      "is_missable": 0,
+      "is_spoiler": 0,
+      "name": "Unrivaled",
+      "name_pt": "Inigualável",
+      "tip": "Deixe para quando tiver armas, charms e armaduras confortáveis.",
+      "trophy_code": "goy_unrivaled",
+      "type": "Prata"
+    },
+    {
+      "description": "Use kunai para se defender de forma decisiva.",
+      "is_missable": 0,
+      "is_spoiler": 0,
+      "name": "Kunai Defender",
+      "name_pt": "Defensor com Kunai",
+      "tip": "Pratique em grupos pequenos e finalize quando tiver estoque suficiente.",
+      "trophy_code": "goy_kunai_defender",
+      "type": "Bronze"
+    },
+    {
+      "description": "Use uma ferramenta destrutiva de forma efetiva.",
+      "is_missable": 0,
+      "is_spoiler": 0,
+      "name": "Gift for Destruction",
+      "name_pt": "Presente para a Destruição",
+      "tip": "Combine quickfire tools com inimigos agrupados.",
+      "trophy_code": "goy_gift_for_destruction",
+      "type": "Bronze"
+    },
+    {
+      "description": "Nomeie sua companheira.",
+      "is_missable": 0,
+      "is_spoiler": 0,
+      "name": "Naming a Friend",
+      "name_pt": "Nomeando uma Amiga",
+      "tip": "Troféu de vínculo; avance a interação correspondente quando ela estiver disponível.",
+      "trophy_code": "goy_naming_a_friend",
+      "type": "Bronze"
+    },
+    {
+      "description": "Elimine um inimigo com disparo rápido na cintura.",
+      "is_missable": 0,
+      "is_spoiler": 0,
+      "name": "From the Hip",
+      "name_pt": "Na Cintura",
+      "tip": "Use uma arma de longo alcance em encontro simples até acertar a ação exigida.",
+      "trophy_code": "goy_from_the_hip",
+      "type": "Bronze"
+    },
+    {
+      "description": "Execute a técnica ligada à Garra da Coruja.",
+      "is_missable": 0,
+      "is_spoiler": 0,
+      "name": "The Owl’s Talon",
+      "name_pt": "A Garra da Coruja",
+      "tip": "Faça em inimigos comuns depois de desbloquear a técnica necessária.",
+      "trophy_code": "goy_the_owls_talon",
+      "type": "Bronze"
+    },
+    {
+      "description": "Derrote um inimigo de forma estilosa.",
+      "is_missable": 0,
+      "is_spoiler": 0,
+      "name": "Sayonara",
+      "name_pt": "Sayonara",
+      "tip": "Guarde para encontros de cleanup e repita até o troféu registrar.",
+      "trophy_code": "goy_sayonara",
+      "type": "Bronze"
+    },
+    {
+      "description": "Use um item ou arma deixada por um inimigo contra ele.",
+      "is_missable": 0,
+      "is_spoiler": 0,
+      "name": "You Dropped This",
+      "name_pt": "Você Deixou Isto Cair",
+      "tip": "Procure encontros com inimigos armados e aproveite a abertura.",
+      "trophy_code": "goy_you_dropped_this",
+      "type": "Bronze"
+    },
+    {
+      "description": "Cause medo suficiente para afetar inimigos.",
+      "is_missable": 0,
+      "is_spoiler": 0,
+      "name": "The Horror",
+      "name_pt": "O Horror",
+      "tip": "Use ferramentas, postura agressiva e ações de Ghost em grupos.",
+      "trophy_code": "goy_the_horror",
+      "type": "Bronze"
+    },
+    {
+      "description": "Use lobos a seu favor em combate.",
+      "is_missable": 0,
+      "is_spoiler": 0,
+      "name": "Wolf Bait",
+      "name_pt": "Isca de Lobo",
+      "tip": "Faça perto de áreas com lobos e inimigos próximos.",
+      "trophy_code": "goy_wolf_bait",
+      "type": "Bronze"
+    },
+    {
+      "description": "Realize uma ação combinada com sua aliada.",
+      "is_missable": 0,
+      "is_spoiler": 0,
+      "name": "Two as One",
+      "name_pt": "Dois como Um",
+      "tip": "Avance o vínculo e use a oportunidade em combate ou evento indicado.",
+      "trophy_code": "goy_two_as_one",
+      "type": "Bronze"
+    },
+    {
+      "description": "Use fogo em vegetação ou inimigos para criar vantagem.",
+      "is_missable": 0,
+      "is_spoiler": 0,
+      "name": "Brush Fire",
+      "name_pt": "Fogo na Relva",
+      "tip": "Escolha um acampamento pequeno e controle o espaço com ferramenta incendiária.",
+      "trophy_code": "goy_brush_fire",
+      "type": "Bronze"
+    },
+    {
+      "description": "Encha 10 jarras completas de saquê.",
+      "is_missable": 0,
+      "is_spoiler": 0,
+      "name": "Sake Flight",
+      "name_pt": "Rodada de Saquê",
+      "tip": "Acompanhe as jarras completas durante a exploração para evitar busca final confusa.",
+      "trophy_code": "goy_sake_flight",
+      "type": "Bronze"
+    },
+    {
+      "description": "Convença alguém em uma interação especial.",
+      "is_missable": 0,
+      "is_spoiler": 0,
+      "name": "Very Persuasive",
+      "name_pt": "Muito Persuasiva",
+      "tip": "Resolva durante side content e conversas marcadas no mapa.",
+      "trophy_code": "goy_very_persuasive",
+      "type": "Bronze"
+    },
+    {
+      "description": "Aprimore charms 10 vezes ao menos uma vez cada.",
+      "is_missable": 0,
+      "is_spoiler": 0,
+      "name": "Charming",
+      "name_pt": "Encantadora",
+      "tip": "Faça upgrades de charms gradualmente em vez de deixar todos para o fim.",
+      "trophy_code": "goy_charming",
+      "type": "Bronze"
+    },
+    {
+      "description": "Repita um gesto ou feito ligado ao legado familiar.",
+      "is_missable": 0,
+      "is_spoiler": 0,
+      "name": "Like Father, Like Daughter",
+      "name_pt": "Tal Pai, Tal Filha",
+      "tip": "Troféu misc de legado; conclua quando a atividade correspondente aparecer.",
+      "trophy_code": "goy_like_father_like_daughter",
+      "type": "Bronze"
+    },
+    {
+      "description": "Colete 30 peças de Vanity Gear.",
+      "is_missable": 0,
+      "is_spoiler": 0,
+      "name": "Purely Decorative",
+      "name_pt": "Puramente Decorativo",
+      "tip": "Use o mapa e atividades secundárias para acumular cosméticos sem buscar todos do jogo.",
+      "trophy_code": "goy_purely_decorative",
+      "type": "Bronze"
+    },
+    {
+      "description": "Obtenha 12 armaduras.",
+      "is_missable": 0,
+      "is_spoiler": 0,
+      "name": "For All Occasions",
+      "name_pt": "Para Todas as Ocasiões",
+      "tip": "Compre, encontre e conclua atividades que liberam armaduras até atingir 12.",
+      "trophy_code": "goy_for_all_occasions",
+      "type": "Bronze"
+    },
+    {
+      "description": "Obtenha 5 quickfire weapons.",
+      "is_missable": 0,
+      "is_spoiler": 0,
+      "name": "Tools of a Warrior",
+      "name_pt": "Ferramentas de uma Guerreira",
+      "tip": "Priorize ferramentas de combate úteis para facilitar camps e bounties.",
+      "trophy_code": "goy_tools_of_a_warrior",
+      "type": "Bronze"
+    },
+    {
+      "description": "Obtenha 4 armas de longo alcance.",
+      "is_missable": 0,
+      "is_spoiler": 0,
+      "name": "Take Aim",
+      "name_pt": "Mire Bem",
+      "tip": "Complete atividades e progresso que liberam novas opções de arco ou disparo.",
+      "trophy_code": "goy_take_aim",
+      "type": "Bronze"
+    },
+    {
+      "description": "Obtenha 5 armas corpo a corpo.",
+      "is_missable": 0,
+      "is_spoiler": 0,
+      "name": "Quick Draw",
+      "name_pt": "Saque Rápido",
+      "tip": "Feche as rotas de armas principais, incluindo Yari, Kusarigama e Odachi.",
+      "trophy_code": "goy_quick_draw",
+      "type": "Bronze"
+    },
+    {
+      "description": "Receba um item importante de herança.",
+      "is_missable": 0,
+      "is_spoiler": 0,
+      "name": "Inheritance",
+      "name_pt": "Herança",
+      "tip": "Siga a linha de legado e confira o checklist após a recompensa.",
+      "trophy_code": "goy_inheritance",
+      "type": "Bronze"
+    },
+    {
+      "description": "Receba 8 Gifts.",
+      "is_missable": 0,
+      "is_spoiler": 0,
+      "name": "Gifts for a Ghost",
+      "name_pt": "Presentes para um Fantasma",
+      "tip": "Visite pontos de entrega e recompensas acumuladas conforme avança no mapa.",
+      "trophy_code": "goy_gifts_for_a_ghost",
+      "type": "Bronze"
+    },
+    {
+      "description": "Complete 11 Fox Dens.",
+      "is_missable": 0,
+      "is_spoiler": 0,
+      "name": "Trickster Fox",
+      "name_pt": "Raposa Trapaceira",
+      "tip": "Siga raposas e marque cada Fox Den concluído por região.",
+      "trophy_code": "goy_trickster_fox",
+      "type": "Bronze"
+    },
+    {
+      "description": "Colete 15 de 18 Sumi-e Paintings.",
+      "is_missable": 0,
+      "is_spoiler": 0,
+      "name": "An Artist’s Eye",
+      "name_pt": "O Olhar de uma Artista",
+      "tip": "Você não precisa dos 18; pare quando o troféu de 15 pinturas liberar.",
+      "trophy_code": "goy_an_artists_eye",
+      "type": "Bronze"
+    },
+    {
+      "description": "Guarde uma lembrança importante.",
+      "is_missable": 0,
+      "is_spoiler": 0,
+      "name": "Memento",
+      "name_pt": "Lembrança",
+      "tip": "Atividade de exploração curta; marque quando concluir para não revisitar sem necessidade.",
+      "trophy_code": "goy_memento",
+      "type": "Bronze"
+    },
+    {
+      "description": "Complete atividades ligadas a Inari.",
+      "is_missable": 0,
+      "is_spoiler": 0,
+      "name": "Guardian of Inari",
+      "name_pt": "Guardiã de Inari",
+      "tip": "Inclua Fox Dens e objetivos relacionados durante a varredura por região.",
+      "trophy_code": "goy_guardian_of_inari",
+      "type": "Bronze"
+    },
+    {
+      "description": "Conclua uma atividade ligada ao legado materno.",
+      "is_missable": 0,
+      "is_spoiler": 0,
+      "name": "Like Mother, Like Daughter",
+      "name_pt": "Tal Mãe, Tal Filha",
+      "tip": "Resolva durante side content de exploração e história pessoal.",
+      "trophy_code": "goy_like_mother_like_daughter",
+      "type": "Bronze"
+    },
+    {
+      "description": "Complete 10 Wolf Dens.",
+      "is_missable": 0,
+      "is_spoiler": 0,
+      "name": "Wolves of Ezo",
+      "name_pt": "Lobos de Ezo",
+      "tip": "Controle Wolf Dens por região e use viagem rápida para fechar os últimos.",
+      "trophy_code": "goy_wolves_of_ezo",
+      "type": "Bronze"
+    },
+    {
+      "description": "Complete Bamboo Strikes, Shrine Climbs e Hot Springs exigidos.",
+      "is_missable": 0,
+      "is_spoiler": 0,
+      "name": "Body, Mind, and Spirit",
+      "name_pt": "Corpo, Mente e Espírito",
+      "tip": "Feche 15 Bamboo Strikes, 13 Shrine Climbs e 16 Hot Springs para cobrir a parte de evolução pessoal.",
+      "trophy_code": "goy_body_mind_and_spirit",
+      "type": "Prata"
+    },
+    {
+      "description": "Realize a atividade de pesca com lança.",
+      "is_missable": 0,
+      "is_spoiler": 0,
+      "name": "Spear Fishing",
+      "name_pt": "Pesca com Lança",
+      "tip": "Faça quando encontrar o ponto de atividade; é um objetivo curto de cleanup.",
+      "trophy_code": "goy_spear_fishing",
+      "type": "Bronze"
+    },
+    {
+      "description": "Complete todos os 31 bounties.",
+      "is_missable": 0,
+      "is_spoiler": 0,
+      "name": "Master Bounty Hunter",
+      "name_pt": "Mestre Caçadora de Recompensas",
+      "tip": "Anote manualmente cada bounty concluído, já que o resumo global do jogo pode não ser perfeito.",
+      "trophy_code": "goy_master_bounty_hunter",
+      "type": "Prata"
+    },
+    {
+      "description": "Complete atividades contemplativas pelo mapa.",
+      "is_missable": 0,
+      "is_spoiler": 0,
+      "name": "Moments of Reflection",
+      "name_pt": "Momentos de Reflexão",
+      "tip": "Inclua Altars of Reflection e pontos de pausa durante a varredura de exploração.",
+      "trophy_code": "goy_moments_of_reflection",
+      "type": "Bronze"
+    },
+    {
+      "description": "Complete 5 Mountain Reliquary Puzzles.",
+      "is_missable": 0,
+      "is_spoiler": 0,
+      "name": "Child of the Mountain",
+      "name_pt": "Filha da Montanha",
+      "tip": "Resolva todos os cinco puzzles de reliquário de montanha e marque cada um.",
+      "trophy_code": "goy_child_of_the_mountain",
+      "type": "Bronze"
+    },
+    {
+      "description": "Use moedas ou recursos em compras relevantes.",
+      "is_missable": 0,
+      "is_spoiler": 0,
+      "name": "Good with Coins",
+      "name_pt": "Boa com Moedas",
+      "tip": "Economize recursos para equipamentos e cosméticos ligados a troféus antes de gastar livremente.",
+      "trophy_code": "goy_good_with_coins",
+      "type": "Bronze"
+    },
+    {
+      "description": "Realize uma apresentação à beira da fogueira.",
+      "is_missable": 0,
+      "is_spoiler": 0,
+      "name": "Fireside Performance",
+      "name_pt": "Apresentação à Beira da Fogueira",
+      "tip": "Procure a interação em acampamentos ou locais seguros durante a exploração.",
+      "trophy_code": "goy_fireside_performance",
+      "type": "Bronze"
+    },
+    {
+      "description": "Complete 30 dos 61 Altars of Reflection.",
+      "is_missable": 0,
+      "is_spoiler": 0,
+      "name": "Speaking with the Land",
+      "name_pt": "Falando com a Terra",
+      "tip": "Apenas 30 Altars são necessários para a platina; não é preciso limpar todos os 61.",
+      "trophy_code": "goy_speaking_with_the_land",
+      "type": "Prata"
+    },
+    {
+      "description": "Complete os Yōtei Six Camps.",
+      "is_missable": 0,
+      "is_spoiler": 0,
+      "name": "For the Living",
+      "name_pt": "Pelos Vivos",
+      "tip": "Limpe todos os camps ligados aos Yōtei Six para concluir a liberação exigida pela lista base.",
+      "trophy_code": "goy_for_the_living",
+      "type": "Ouro"
+    }
+  ]
+}

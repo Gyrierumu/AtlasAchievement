@@ -1,0 +1,633 @@
+{
+  "game": {
+    "avoid_if": "Evite se voce nao quer multiplas runs, NG++, covenants, checklist de spells e risco de perder NPC questlines.",
+    "before_you_start": "Leia o roadmap antes de jogar; Scholar of the First Sin pune falta de planejamento com NG+ extra, NG++, magias perdidas, NPC questlines e muito retrabalho. Online facilita covenants, mas nao e obrigatorio.",
+    "best_for": "Ideal para quem quer uma platina Soulslike longa, exigente e baseada em exploracao, NPCs e planejamento.",
+    "cleanup_advice": "Use NG+ e NG++ para completar magias, milagres, piromancias, hexes, covenants, gestures e NPC equipment pendentes.",
+    "cover_image": "https://cdn.cloudflare.steamstatic.com/steam/apps/335300/library_600x900.jpg",
+    "coverage_level": "strong",
+    "created_at": "2026-05-09 19:53:43",
+    "difficulty": 7,
+    "difficulty_reason": "A dificuldade vem do combate Soulslike, chefes, progressao punitiva, NPCs perdiveis e checklist extenso de spells/covenants.",
+    "dlc_scope": "Guia focado na lista PS4 de Dark Souls II: Scholar of the First Sin. Spells dos conteudos das coroas/DLCs entram nas listas de magia desta versao; nao misture com a lista original de PS3 e nao criar DLC separado.",
+    "editorial_notes": "",
+    "editorial_review_status": null,
+    "editorial_status": "published",
+    "first_run_advice": "Acompanhe NPCs, gestures, covenants e spells desde cedo; perder Lucatiel, Benhart ou compras importantes gera retrabalho.",
+    "grind_summary": "O peso esta em magias, milagres, piromancias, hexes, gestures, NPC questlines, covenants e NG+/NG++.",
+    "guide_avoid": null,
+    "guide_best_moment": null,
+    "guide_dlc": null,
+    "guide_grind": null,
+    "guide_ideal": null,
+    "guide_online": null,
+    "guide_runs": null,
+    "image": "https://cdn.cloudflare.steamstatic.com/steam/apps/335300/header.jpg",
+    "is_verified": 0,
+    "last_reviewed_at": "",
+    "missable": "Guia focado na versao PS4 de Scholar of the First Sin. Nao ha online obrigatorio, mas ha risco real de retrabalho em NPC questlines, gestures, covenants, magias, milagres, piromancias, hexes e NG++ para compras finais em Drangleic Castle.",
+    "missable_summary": "Os riscos principais estao em Lucatiel, Benhart/Moonlight Greatsword, Gathering of Exiles, NPC equipment, Gesture Maestro e nos trofeus de spells/covenants.",
+    "name": "Dark Souls II: Scholar of the First Sin",
+    "online_summary": "Nao ha trofeus online obrigatorios. Online pode facilitar covenants, mas a platina deve ser planejavel offline.",
+    "quality_warnings": "[]",
+    "reviewed_by": "",
+    "runs_summary": "Planeje cerca de 2,5 passagens: uma run principal cuidadosa, NG+ para pendencias e avanco ate NG++/Drangleic Castle para compras finais.",
+    "slug": "dark-souls-ii-scholar-of-the-first-sin",
+    "time": "60-90h",
+    "time_bucket": "long",
+    "time_max_hours": 90,
+    "time_min_hours": 60,
+    "time_reason": "A faixa de 60-90 horas considera primeira run, NG+, NG++, magias, milagres, piromancias, hexes, NPCs, covenants e cleanup.",
+    "time_sort_hours": 60,
+    "updated_at": "2026-06-27 02:36:58",
+    "verification_note": "Lista PS4/SOTFS revisada; spells de DLC integradas e guia ainda em revisão.",
+    "verification_status": "review",
+    "walkthrough": null
+  },
+  "redirects": [],
+  "roadmaps": [
+    {
+      "content": "{\"title\":\"Avance pela campanha\",\"focus\":\"\",\"objective\":\"faça a primeira run com progressão principal, covenants, NPC questlines e checklist de sorceries, miracles, pyromancies, hexes e gestures. Não mate NPCs e esgote diálogos.\",\"actions\":[],\"warning\":\"\",\"result\":\"\"}",
+      "step_order": 1
+    },
+    {
+      "content": "{\"title\":\"Treine chefes sem dano\",\"focus\":\"\",\"objective\":\"acompanhe Lucatiel, Benhart/Moonlight Greatsword e NPCs de equipamento. Garanta sobrevivência em bosses, conversas em todos os pontos e herança antes de avançar demais.\",\"actions\":[],\"warning\":\"\",\"result\":\"\"}",
+      "step_order": 2
+    },
+    {
+      "content": "{\"title\":\"Farme coroas miniatura e gigantes\",\"focus\":\"\",\"objective\":\"colete spells e gestures possíveis na primeira run, incluindo os spells dos conteúdos das coroas integrados em Scholar of the First Sin. Não trate como DLC separada nesta lista.\",\"actions\":[],\"warning\":\"\",\"result\":\"\"}",
+      "step_order": 3
+    },
+    {
+      "content": "{\"title\":\"Termine história antes do NG+\",\"focus\":\"\",\"objective\":\"complete a história, King's Ring, Ashen Mist Heart, Vendrick, The Heir e bonfires principais. Antes de iniciar NG+, revise vendors, covenants, NPC equipment e itens de boss soul.\",\"actions\":[],\"warning\":\"\",\"result\":\"\"}",
+      "step_order": 4
+    },
+    {
+      "content": "{\"title\":\"Limpe pendências antes do NG+\",\"focus\":\"\",\"objective\":\"use NG+ para itens, boss souls, magias, covenants, Selfless Giver e troféus pendentes. Online pode ajudar covenants, mas o planejamento deve funcionar offline.\",\"actions\":[],\"warning\":\"\",\"result\":\"\"}",
+      "step_order": 5
+    },
+    {
+      "content": "{\"title\":\"Limpe pendências antes do NG+\",\"focus\":\"\",\"objective\":\"avance até NG++/Drangleic Castle para comprar magias, milagres e piromancias restantes com Chancellor Wellager, além de fechar Master of Sorcery, Master of Miracles e Master of Pyromancy.\",\"actions\":[],\"warning\":\"\",\"result\":\"\"}",
+      "step_order": 6
+    },
+    {
+      "content": "{\"title\":\"Revise pendências finais\",\"focus\":\"\",\"objective\":\"faça cleanup final de covenants, spells, hexes, gestures, Lucatiel, Benhart, NPC questlines, Gathering of Exiles, equipamentos herdados e a platina The Dark Soul.\",\"actions\":[],\"warning\":\"\",\"result\":\"\"}",
+      "step_order": 7
+    }
+  ],
+  "schemaVersion": 1,
+  "seedExtras": {
+    "aliases": [],
+    "attentionPoints": [
+      {
+        "detail": "A platina pode ser feita offline. Online ajuda em pactos e medalhas, mas não deve entrar como requisito ou filtro Online.",
+        "tags": [
+          "Offline",
+          "Pactos"
+        ],
+        "title": "Sem online obrigatório"
+      },
+      {
+        "detail": "Invocações de NPC importam para Lucatiel e Benhart, mas isso não é coop online obrigatório.",
+        "tags": [
+          "NPC",
+          "Summons"
+        ],
+        "title": "Sem coop obrigatório"
+      },
+      {
+        "detail": "Scholar of the First Sin não tem lista separada de DLC, mas as áreas das Crowns estão integradas nessa versão e contam para os troféus de mestre de magias, milagres, piromancias e sortilégios.",
+        "tags": [
+          "Crowns",
+          "Magias"
+        ],
+        "title": "Sem DLC separada de troféus"
+      },
+      {
+        "detail": "Chancellor Wellager vende magias importantes em NG++. Bonfire Ascetic não substitui esse avanço de ciclo.",
+        "tags": [
+          "NG++",
+          "Wellager"
+        ],
+        "title": "Wellager exige NG++ real"
+      },
+      {
+        "detail": "Invocar Lucatiel não basta: ela precisa sobreviver a três vitórias contra chefes antes do fechamento da questline.",
+        "tags": [
+          "Perdível",
+          "NPC"
+        ],
+        "title": "Lucatiel precisa sobreviver"
+      },
+      {
+        "detail": "Moonlight Greatsword depende de conversas e de Benhart sobreviver a três vitórias contra chefes elegíveis.",
+        "tags": [
+          "Perdível",
+          "NPC"
+        ],
+        "title": "Benhart também precisa sobreviver"
+      },
+      {
+        "detail": "Gesture Maestro depende de falas e NPCs específicos. Esgote diálogos e não mate NPCs antes de confirmar os gestos.",
+        "tags": [
+          "Gestos",
+          "Checklist"
+        ],
+        "title": "Gestos são sensíveis a NPCs"
+      },
+      {
+        "detail": "Magias, milagres, piromancias e sortilégios devem considerar vendedores, almas de chefe, pactos, NG++ e conteúdo integrado das Crowns.",
+        "tags": [
+          "Coletável",
+          "Grind"
+        ],
+        "title": "Troféus de mestre incluem Crowns"
+      },
+      {
+        "detail": "Maximizar devoção em um pacto pode ser trabalhoso, mas não é um troféu online obrigatório.",
+        "tags": [
+          "Pacto",
+          "Grind"
+        ],
+        "title": "Selfless Giver é grind, não online"
+      },
+      {
+        "detail": "Cale, Rosabeth, Majula, Drummond, McDuff, Gilligan e Vengarl entram como perdíveis de run por diálogo, evento ou NPC morto.",
+        "tags": [
+          "NPC",
+          "Risco de run"
+        ],
+        "title": "NPCs podem empurrar outra run"
+      }
+    ],
+    "checklist": [
+      "Confirmar 38 troféus: 1 platina, 2 ouro, 23 prata e 12 bronze.",
+      "Manter onlineRequired false, coopRequired false e dlcRequired false.",
+      "Manter difficultyTrophiesRequired false e filtro Dificuldade zerado.",
+      "Confirmar missableCount e missable_count iguais a 14.",
+      "Controlar Lucatiel e Benhart com invocações de NPC e sobrevivência em boss fights.",
+      "Esgotar diálogos de NPCs antes de matar chefes importantes ou trocar de ciclo.",
+      "Conferir todos os gestos antes de NG+.",
+      "Conferir Cale, Rosabeth, Majula e equipamentos herdados antes de NG+.",
+      "Incluir magias das áreas das Crowns nos quatro troféus de mestre.",
+      "Guardar almas de chefe até confirmar compras e trocas de magias.",
+      "Separar grind de Sunlight Medals, Bell Keepers/Mad Warrior e Pilgrims of the Dark.",
+      "Avançar até NG++ real para Chancellor Wellager; Bonfire Ascetic não substitui.",
+      "Conferir que pactos de descoberta não estão marcados como online, coop ou perdíveis.",
+      "Fazer cleanup final por tags: NPC, Pacto, Grind, Coletável, NG++ e Cleanup."
+    ],
+    "faq": [
+      {
+        "answer": "Não. A platina pode ser feita offline. Online pode facilitar recompensas de pactos, mas não é obrigatório.",
+        "question": "Dark Souls II: Scholar of the First Sin exige online para platinar?"
+      },
+      {
+        "answer": "Não. Lucatiel e Benhart usam invocações de NPC e sobrevivência em chefes, mas isso não é coop online obrigatório.",
+        "question": "Precisa de cooperação online?"
+      },
+      {
+        "answer": "Não há DLC separada de troféus na lista de Scholar. Porém, as áreas das Crowns já integradas nessa versão contam para magias, milagres, piromancias e sortilégios.",
+        "question": "As DLCs são necessárias?"
+      },
+      {
+        "answer": "São 38 troféus: 1 platina, 2 ouro, 23 prata e 12 bronze.",
+        "question": "Quantos troféus tem a lista PS4?"
+      },
+      {
+        "answer": "O guia usa 7/10. O desafio vem de combate Soulslike, checklist longo, NPCs, pactos, troféus de mestre, grind e avanço até NG++.",
+        "question": "Qual é a dificuldade da platina?"
+      },
+      {
+        "answer": "A estimativa revisada é 80 a 120 horas, variando por experiência, farm offline, uso opcional de online e retrabalho em NPCs.",
+        "question": "Quanto tempo leva para platinar?"
+      },
+      {
+        "answer": "Na rota segura, sim. Chancellor Wellager em NG++ é importante para comprar magias de pactos e fechar troféus de mestre sem depender de alternativas mais pesadas.",
+        "question": "É obrigatório chegar em NG++?"
+      },
+      {
+        "answer": "Não. Bonfire Ascetic pode ajudar em algumas repetições de boss, mas não substitui o avanço real até NG++ para as compras de Chancellor Wellager.",
+        "question": "Bonfire Ascetic substitui NG++ para Wellager?"
+      },
+      {
+        "answer": "Sim. Você precisa falar com Lucatiel nos pontos certos e fazê-la sobreviver a três vitórias contra chefes antes de fechar a questline.",
+        "question": "Lucatiel é perdível?"
+      },
+      {
+        "answer": "Sim. Moonlight Greatsword depende de conversas e de Benhart sobreviver a três vitórias contra chefes elegíveis.",
+        "question": "Benhart é perdível?"
+      },
+      {
+        "answer": "Não. É um troféu de pacto e grind. Online pode ajudar, mas o guia trata como offline possível e não marca filtro Online.",
+        "question": "Selfless Giver é online?"
+      },
+      {
+        "answer": "Lucatiel, Benhart, Gesture Maestro, os quatro troféus de mestre, NPCs de Majula, equipamentos herdados e compras de Wellager em NG++.",
+        "question": "Quais são os maiores riscos de retrabalho?"
+      }
+    ],
+    "note": "Campos exportados para auditoria. O SQLite atual nao possui colunas nativas para todos esses extras; a importacao preserva o que o banco suporta.",
+    "quickDecision": {
+      "difficulty": "Alta moderada, 7/10.",
+      "dlc": "Não exige DLC separada; Crowns são conteúdo integrado em Scholar.",
+      "firstAction": "Comece a primeira run com checklist de NPCs, gestos, pactos, magias e almas de chefe antes de avançar demais.",
+      "mainRisk": "NPCs, invocações de Lucatiel/Benhart, troféus de mestre e NG++ para Wellager.",
+      "onlineCoop": "Não exige online nem coop; online e summons são apenas ferramentas opcionais/contextuais.",
+      "risk": "Alto risco de retrabalho por run, mas baixo risco de requisito externo.",
+      "time": "Longa: 80 a 120 horas.",
+      "verdict": "Vale platinar se você gosta de Souls e aceita uma rota longa de checklist."
+    },
+    "seo": {
+      "description": "Guia de platina de Dark Souls II: Scholar of the First Sin com 38 troféus, roadmap, 14 perdíveis de run, magias das Crowns, pactos, Lucatiel, Benhart e NG++.",
+      "keywords": "Dark Souls II Scholar of the First Sin troféus, Dark Souls 2 SOTFS platina, guia Dark Souls II Scholar, Lucatiel, Benhart, Chancellor Wellager NG++, Master of Sorcery, Master of Miracles, Master of Pyromancy, Master of Hexes",
+      "metaDescription": "Guia de platina de Dark Souls II: Scholar of the First Sin com 38 troféus, roadmap, 14 perdíveis de run, magias das Crowns, pactos, Lucatiel, Benhart e NG++.",
+      "ogDescription": "Roadmap PT-BR da platina PS4 de Dark Souls II Scholar, offline, com NPCs, pactos, Crowns integradas, troféus de mestre e NG++.",
+      "ogTitle": "Dark Souls II Scholar of the First Sin: guia de troféus e platina",
+      "title": "Dark Souls II Scholar of the First Sin: guia de troféus e platina"
+    },
+    "tags": []
+  },
+  "slug": "dark-souls-ii-scholar-of-the-first-sin",
+  "trophies": [
+    {
+      "description": "Acquire all trophies",
+      "is_missable": 0,
+      "is_spoiler": 0,
+      "name": "The Dark Soul",
+      "name_pt": "A Alma Escura",
+      "tip": "Conclua os outros 37 trofeus da lista PS4 de Scholar of the First Sin. Nao misture esta checklist com a lista original de PS3 sem validar spells de Scholar.",
+      "trophy_code": "ds2s_the_dark_soul",
+      "type": "Platina"
+    },
+    {
+      "description": "See the ending",
+      "is_missable": 0,
+      "is_spoiler": 1,
+      "name": "The Heir",
+      "name_pt": "Herdeiro",
+      "tip": "Trofeu de conclusao da historia. Prepare Vendrick, Aldia se aplicavel e pendencias de NPCs/spells antes de seguir para NG+.",
+      "trophy_code": "ds2s_the_heir",
+      "type": "Ouro"
+    },
+    {
+      "description": "Max-out devotion to covenant",
+      "is_missable": 1,
+      "is_spoiler": 0,
+      "name": "Selfless Giver",
+      "name_pt": "Doadora Altruísta",
+      "tip": "Maximize um covenant. Heirs of the Sun ou Pilgrims of the Dark sao relevantes para spells; online ajuda, mas Sunlight Medals e Pilgrims podem ser farmados offline.",
+      "trophy_code": "ds2s_selfless_giver",
+      "type": "Ouro"
+    },
+    {
+      "description": "Acquire the King's Ring",
+      "is_missable": 0,
+      "is_spoiler": 1,
+      "name": "King's Ring",
+      "name_pt": "Anel do Rei",
+      "tip": "Progresso principal no Undead Crypt. Nao hostilize Vendrick sem entender Giant Souls e trofeus pendentes.",
+      "trophy_code": "ds2s_kings_ring",
+      "type": "Prata"
+    },
+    {
+      "description": "Acquire Ashen Mist Heart",
+      "is_missable": 0,
+      "is_spoiler": 1,
+      "name": "Ancient Dragon",
+      "name_pt": "Dragão Ancestral",
+      "tip": "Progresso principal em Dragon Shrine para acessar memories e concluir linhas como Drummond/Benhart.",
+      "trophy_code": "ds2s_ancient_dragon",
+      "type": "Prata"
+    },
+    {
+      "description": "Light the primal bonfire in Sinner's Rise",
+      "is_missable": 0,
+      "is_spoiler": 1,
+      "name": "Sinner's Bonfire",
+      "name_pt": "Fogueira do Pecador",
+      "tip": "Acenda a primal bonfire apos Lost Sinner.",
+      "trophy_code": "ds2s_sinners_bonfire",
+      "type": "Prata"
+    },
+    {
+      "description": "Light the primal bonfire in the Iron Keep",
+      "is_missable": 0,
+      "is_spoiler": 1,
+      "name": "Iron Keep Bonfire",
+      "name_pt": "Fogueira da Masmorra de Ferro",
+      "tip": "Acenda a primal bonfire apos Old Iron King.",
+      "trophy_code": "ds2s_iron_keep_bonfire",
+      "type": "Prata"
+    },
+    {
+      "description": "Light the primal bonfire in the Black Gulch",
+      "is_missable": 0,
+      "is_spoiler": 1,
+      "name": "Gulch Bonfire",
+      "name_pt": "Fogueira da Ravina",
+      "tip": "Acenda a primal bonfire apos The Rotten. Black Gulch tambem importa para Lucatiel e Darkdiver Grandahl.",
+      "trophy_code": "ds2s_gulch_bonfire",
+      "type": "Prata"
+    },
+    {
+      "description": "Light the primal bonfire in Brightstone Cove Tseldora",
+      "is_missable": 0,
+      "is_spoiler": 1,
+      "name": "Brightstone Bonfire",
+      "name_pt": "Fogueira da Pedra Luzente",
+      "tip": "Acenda a primal bonfire apos The Duke's Dear Freja e revise drops/farm de Falconers para Sunlight Medals quando necessario.",
+      "trophy_code": "ds2s_brightstone_bonfire",
+      "type": "Prata"
+    },
+    {
+      "description": "Defeat Looking Glass Knight",
+      "is_missable": 0,
+      "is_spoiler": 1,
+      "name": "Looking Glass Knight",
+      "name_pt": "Cavaleiro do Espelho",
+      "tip": "Chefe obrigatorio de Drangleic Castle/Shrine of Amana.",
+      "trophy_code": "ds2s_looking_glass_knight",
+      "type": "Prata"
+    },
+    {
+      "description": "Defeat Vendrick",
+      "is_missable": 0,
+      "is_spoiler": 1,
+      "name": "Vendrick",
+      "name_pt": "Vendrick",
+      "tip": "Chefe opcional importante. Reuna Giant Souls para reduzir defesa e planeje antes do final/Aldia se quiser fechar tudo na passagem.",
+      "trophy_code": "ds2s_vendrick",
+      "type": "Prata"
+    },
+    {
+      "description": "Reinforce a weapon to its limit",
+      "is_missable": 0,
+      "is_spoiler": 0,
+      "name": "Supreme Weapon",
+      "name_pt": "Arma Suprema",
+      "tip": "Leve uma arma comum a +10 ou especial a +5. Recursos podem ser comprados/farmados depois, entao nao trate como perdivel.",
+      "trophy_code": "ds2s_supreme_weapon",
+      "type": "Prata"
+    },
+    {
+      "description": "Learn all gestures",
+      "is_missable": 1,
+      "is_spoiler": 1,
+      "name": "Gesture Maestro",
+      "name_pt": "Mestre dos Gestos",
+      "tip": "Perdivel por NPCs e janelas de dialogo. Esgote conversas com Saulden, Targray, Straid, Creighton, Gilligan, Rosabeth, Vengarl, Tark, Wellager, Agdayne e Drummond.",
+      "trophy_code": "ds2s_gesture_maestro",
+      "type": "Prata"
+    },
+    {
+      "description": "Learn all sorceries",
+      "is_missable": 1,
+      "is_spoiler": 0,
+      "name": "Master of Sorcery",
+      "name_pt": "Mestre de Magia",
+      "tip": "Inclui sorceries de Scholar/conteudo integrado. Planeje Straid, Ornifex, Navlaan, DLC integrado, covenant rewards e compras de NG++ em Drangleic Castle.",
+      "trophy_code": "ds2s_master_of_sorcery",
+      "type": "Prata"
+    },
+    {
+      "description": "Learn all miracles",
+      "is_missable": 1,
+      "is_spoiler": 0,
+      "name": "Master of Miracles",
+      "name_pt": "Mestre dos Milagres",
+      "tip": "Inclui miracles de Scholar/conteudo integrado. Planeje Licia, Cromwell, Heirs of the Sun/Sunlight Medals, farm offline quando necessario e compras em NG++.",
+      "trophy_code": "ds2s_master_of_miracles",
+      "type": "Prata"
+    },
+    {
+      "description": "Learn all pyromancies",
+      "is_missable": 1,
+      "is_spoiler": 0,
+      "name": "Master of Pyromancy",
+      "name_pt": "Mestre da Chama Piromântica",
+      "tip": "Inclui pyromancies de Scholar/conteudo integrado. Revise Rosabeth, Straid, boss souls, DLC integrado e compras de NG++ antes de encerrar cleanup.",
+      "trophy_code": "ds2s_master_of_pyromancy",
+      "type": "Prata"
+    },
+    {
+      "description": "Learn all hexes",
+      "is_missable": 1,
+      "is_spoiler": 0,
+      "name": "Master of Hexes",
+      "name_pt": "Mestre dos Sortilégios",
+      "tip": "Inclui todos os hexes, Darkdiver Grandahl/Pilgrims of the Dark, Darklurker, Straid, Felkin e conteudo integrado. Planeje covenant e NPCs desde cedo.",
+      "trophy_code": "ds2s_master_of_hexes",
+      "type": "Prata"
+    },
+    {
+      "description": "Light all flames on the map in Majula",
+      "is_missable": 1,
+      "is_spoiler": 1,
+      "name": "Curious Map",
+      "name_pt": "Mapa Curioso",
+      "tip": "Converse com Cale para leva-lo a Majula e acenda as chamas do mapa por progresso. Pode gerar retrabalho se Cale for perdido ou ignorado.",
+      "trophy_code": "ds2s_curious_map",
+      "type": "Prata"
+    },
+    {
+      "description": "Give Rosabeth of Melfia something to wear",
+      "is_missable": 1,
+      "is_spoiler": 0,
+      "name": "Change of Clothes",
+      "name_pt": "Troca de Roupa",
+      "tip": "Despetifique Rosabeth e entregue qualquer roupa. Evite matar NPCs; ela tambem importa para piromancias.",
+      "trophy_code": "ds2s_change_of_clothes",
+      "type": "Prata"
+    },
+    {
+      "description": "Increase the population of Majula",
+      "is_missable": 1,
+      "is_spoiler": 0,
+      "name": "Gathering of Exiles",
+      "name_pt": "Reunião dos Exilados",
+      "tip": "Leve NPCs/merchants para Majula: Melentia, Cale, Licia, Carhillion, Chloanne, Gilligan e Rosabeth. Nao mate NPCs e esgote dialogos.",
+      "trophy_code": "ds2s_gathering_of_exiles",
+      "type": "Prata"
+    },
+    {
+      "description": "Inherit Benhart of Jugo's equipment",
+      "is_missable": 1,
+      "is_spoiler": 1,
+      "name": "Moonlight Greatsword",
+      "name_pt": "Espada Grande do Luar",
+      "tip": "Perdivel por questline: fale com Benhart em todos os pontos e faca-o sobreviver a tres boss fights/summons antes de herdar o equipamento.",
+      "trophy_code": "ds2s_moonlight_greatsword",
+      "type": "Prata"
+    },
+    {
+      "description": "Inherit Captain Drummond's equipment",
+      "is_missable": 1,
+      "is_spoiler": 1,
+      "name": "Holder of the Fort",
+      "name_pt": "Detentor da Fortaleza",
+      "tip": "Fale com Captain Drummond em Memory of Vammar e volte apos derrotar Giant Lord para herdar o equipamento.",
+      "trophy_code": "ds2s_holder_of_the_fort",
+      "type": "Prata"
+    },
+    {
+      "description": "Inherit equipment from Lucatiel of Mirrah",
+      "is_missable": 1,
+      "is_spoiler": 1,
+      "name": "Lucatiel",
+      "name_pt": "Lucatiel",
+      "tip": "Perdivel importante: encontre Lucatiel em todos os locais, esgote dialogos e faca-a sobreviver a tres boss fights antes de Aldia's Keep.",
+      "trophy_code": "ds2s_lucatiel",
+      "type": "Prata"
+    },
+    {
+      "description": "Inherit Steady Hand McDuff's equipment",
+      "is_missable": 1,
+      "is_spoiler": 0,
+      "name": "Smith for Life",
+      "name_pt": "Ferreiro para vida",
+      "tip": "Entregue o Dull Ember a McDuff e gaste almas suficientes em infusoes/upgrades. Evite matar NPCs antes de herdar equipamentos.",
+      "trophy_code": "ds2s_smith_for_life",
+      "type": "Prata"
+    },
+    {
+      "description": "Inherit Laddersmith Gilligan's equipment",
+      "is_missable": 1,
+      "is_spoiler": 0,
+      "name": "Garrulous Miser",
+      "name_pt": "Gárrulo Miserável",
+      "tip": "Compre as ladders de Gilligan em Majula e esgote dialogos para herdar equipamento. Tambem conversa com Gesture Maestro.",
+      "trophy_code": "ds2s_garrulous_miser",
+      "type": "Prata"
+    },
+    {
+      "description": "Inherit equipment from the head of Vengarl",
+      "is_missable": 1,
+      "is_spoiler": 1,
+      "name": "Reflections on Disembodiment",
+      "name_pt": "Reflexões na Descorporificação",
+      "tip": "Encontre o Head of Vengarl em Shaded Woods, esgote dialogos e resolva a linha de equipamento.",
+      "trophy_code": "ds2s_reflections_on_disembodiment",
+      "type": "Prata"
+    },
+    {
+      "description": "Reclaim flesh and set out as an Undead",
+      "is_missable": 0,
+      "is_spoiler": 1,
+      "name": "Self Recollection",
+      "name_pt": "Auto Reminiscência",
+      "tip": "Trofeu inicial de historia em Things Betwixt.",
+      "trophy_code": "ds2s_self_recollection",
+      "type": "Bronze"
+    },
+    {
+      "description": "Defeat the Last Giant",
+      "is_missable": 0,
+      "is_spoiler": 1,
+      "name": "Last Giant",
+      "name_pt": "Último Gigante",
+      "tip": "Chefe inicial da Forest of Fallen Giants.",
+      "trophy_code": "ds2s_last_giant",
+      "type": "Bronze"
+    },
+    {
+      "description": "Discover a most brilliant covenant",
+      "is_missable": 0,
+      "is_spoiler": 0,
+      "name": "Brilliant Covenant",
+      "name_pt": "Pacto Brilhante",
+      "tip": "Descubra Heirs of the Sun em Harvest Valley. Importante para Sunlight Medals e Master of Miracles, mas online nao e obrigatorio.",
+      "trophy_code": "ds2s_brilliant_covenant",
+      "type": "Bronze"
+    },
+    {
+      "description": "Discover the covenant of the protectors",
+      "is_missable": 0,
+      "is_spoiler": 0,
+      "name": "Protector Covenant",
+      "name_pt": "Pacto de Protetor",
+      "tip": "Descubra Blue Sentinels com Targray na Cathedral of Blue usando Token of Fidelity obtivel offline.",
+      "trophy_code": "ds2s_protector_covenant",
+      "type": "Bronze"
+    },
+    {
+      "description": "Discover the covenant of the bloodthirsty",
+      "is_missable": 0,
+      "is_spoiler": 0,
+      "name": "Sanguinary Covenant",
+      "name_pt": "Pacto Sanguinário",
+      "tip": "Descubra Brotherhood of Blood com Titchy Gren apos Executioner's Chariot usando Token of Spite obtivel offline.",
+      "trophy_code": "ds2s_sanguinary_covenant",
+      "type": "Bronze"
+    },
+    {
+      "description": "Discover the covenant of the meek",
+      "is_missable": 0,
+      "is_spoiler": 0,
+      "name": "Covenant of the Meek",
+      "name_pt": "Pacto dos Tímidos",
+      "tip": "Entre na Way of Blue falando com Crestfallen Saulden em Majula.",
+      "trophy_code": "ds2s_covenant_of_the_meek",
+      "type": "Bronze"
+    },
+    {
+      "description": "Discover the covenant of rodents",
+      "is_missable": 0,
+      "is_spoiler": 1,
+      "name": "Gnawing Covenant",
+      "name_pt": "Pacto de Roer",
+      "tip": "Descubra Rat King covenant apos Royal Rat Vanguard ou Royal Rat Authority.",
+      "trophy_code": "ds2s_gnawing_covenant",
+      "type": "Bronze"
+    },
+    {
+      "description": "Discover the clangorous covenant",
+      "is_missable": 0,
+      "is_spoiler": 0,
+      "name": "Clangorous Covenant",
+      "name_pt": "Pacto Ressonante",
+      "tip": "Descubra Bell Keepers em Belfry Luna ou Belfry Sol. Pode exigir Pharros' Lockstone, mas nao online.",
+      "trophy_code": "ds2s_clangorous_covenant",
+      "type": "Bronze"
+    },
+    {
+      "description": "Discover an ancient covenant",
+      "is_missable": 0,
+      "is_spoiler": 1,
+      "name": "Covenant of Ancients",
+      "name_pt": "Pacto dos Antigos",
+      "tip": "Leve o Petrified Dragon Egg do Dragon Shrine a Magerold em Iron Keep para entrar no Dragon Remnants.",
+      "trophy_code": "ds2s_covenant_of_ancients",
+      "type": "Bronze"
+    },
+    {
+      "description": "Discover the covenant of the fittest",
+      "is_missable": 0,
+      "is_spoiler": 0,
+      "name": "Covenant of the Fittest",
+      "name_pt": "Pacto dos Mais Aptos",
+      "tip": "Entre no Company of Champions em Majula. Use com cuidado porque aumenta a dificuldade enquanto ativo.",
+      "trophy_code": "ds2s_covenant_of_the_fittest",
+      "type": "Bronze"
+    },
+    {
+      "description": "Discover the abysmal covenant",
+      "is_missable": 1,
+      "is_spoiler": 1,
+      "name": "Abysmal Covenant",
+      "name_pt": "Pacto Abismal",
+      "tip": "Encontre Darkdiver Grandahl nos tres locais para Pilgrims of the Dark. Covenant importante para Master of Hexes e Selfless Giver.",
+      "trophy_code": "ds2s_abysmal_covenant",
+      "type": "Bronze"
+    },
+    {
+      "description": "Die for the first time",
+      "is_missable": 0,
+      "is_spoiler": 0,
+      "name": "This is Dark Souls",
+      "name_pt": "Este é Dark Souls",
+      "tip": "Morra uma vez. Deve acontecer naturalmente durante a campanha.",
+      "trophy_code": "ds2s_this_is_dark_souls",
+      "type": "Bronze"
+    }
+  ]
+}

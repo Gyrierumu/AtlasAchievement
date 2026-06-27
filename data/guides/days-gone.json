@@ -1,0 +1,699 @@
+{
+  "game": {
+    "avoid_if": "Evite se você quer uma platina curta, linear ou sem cleanup de mapa, trust de acampamentos, colecionáveis e grind acumulativo.",
+    "before_you_start": "Confirme que o guia cobre a lista base PS4 de 46 troféus. Survival Mode, Challenge Mode, New Game+, Days Gone Remastered/PS5, Broken Road DLC, Horde Assault, Permadeath e Speedrun Mode ficam fora da platina base. Saqueie cadáveres humanos desde cedo para You've Got Red on You.",
+    "best_for": "Vale platinar Days Gone se você gosta de mundo aberto, exploração, sobrevivência leve, moto e combate contra hordas. É uma platina longa, mas tranquila, sem online, sem coop, sem DLC obrigatória e sem perdíveis rígidos. O principal cuidado é adiantar You've Got Red on You durante a campanha para não transformar o pós-game em um grind desnecessário.",
+    "cleanup_advice": "Depois da história, use o free roam para fechar hordas, ambush camps, marauder camps, infestation zones, NERO checkpoints, camp jobs, storylines, colecionáveis, skills, upgrades da moto, Burnout Apocalypse e qualquer acumulativo restante.",
+    "cover_image": "https://cdn.cloudflare.steamstatic.com/steam/apps/1259420/library_600x900.jpg",
+    "coverage_level": "partial",
+    "created_at": "2026-05-09 19:53:38",
+    "difficulty": 4,
+    "difficulty_reason": "A dificuldade 4/10 vem do volume de mundo aberto, hordas e cleanup, não de dificuldade alta obrigatória. A platina base pode ser feita em qualquer dificuldade.",
+    "dlc_scope": "DLC fora da platina base: Survival Mode, Challenge Mode e New Game+ ficam em listas adicionais e não entram nos 46 troféus da platina base PS4. Days Gone Remastered/PS5, Broken Road DLC, Horde Assault, Permadeath e Speedrun Mode ficam fora da lista base PS4.",
+    "editorial_notes": "Escopo verificado: Days Gone PS4 lista base de 46 troféus. Survival Mode, Challenge Mode, New Game+, Days Gone Remastered/PS5, Broken Road DLC, Horde Assault, Permadeath e Speedrun Mode ficam fora da platina base. You've Got Red on You e grind/atencao, não perdível rigido.",
+    "editorial_review_status": "in_review",
+    "editorial_status": "published",
+    "first_run_advice": "Comece a campanha explorando com calma, saqueando cadáveres humanos sempre que possível e completando acampamentos, NERO checkpoints, infestations e missões secundárias quando surgirem. Não precisa jogar em dificuldade alta para a platina base; o mais importante é adiantar You've Got Red on You e deixar o cleanup pós-história mais leve.",
+    "grind_summary": "O grind principal está em You've Got Red on You, Freaker Ears, trust dos acampamentos, hordas, storylines, skills, upgrades da moto, NERO injectors e colecionáveis exigidos.",
+    "guide_avoid": null,
+    "guide_best_moment": null,
+    "guide_dlc": null,
+    "guide_grind": null,
+    "guide_ideal": null,
+    "guide_online": null,
+    "guide_runs": null,
+    "image": "https://cdn.cloudflare.steamstatic.com/steam/apps/1259420/header.jpg",
+    "is_verified": 0,
+    "last_reviewed_at": "2026-06-04",
+    "missable": "Não há troféus perdíveis rígidos na lista base de Days Gone: o free roam depois da história permite voltar para hordas, acampamentos, NERO checkpoints, infestations, colecionáveis e troféus acumulativos. O cuidado real é You've Got Red on You, que não é perdível, mas fica bem mais lento se você ignorar loot de cadáveres humanos durante a campanha.",
+    "missable_summary": "Sem perdíveis rígidos: a lista base permite cleanup depois da história. You've Got Red on You é tratado como grind/atencao, não como troféu perdível.",
+    "name": "Days Gone",
+    "online_summary": "Não há exigência online, coop, multiplayer, servidores ou PS+ para a platina da lista base. Days Gone é uma platina single-player/offline.",
+    "quality_warnings": "[]",
+    "reviewed_by": "",
+    "runs_summary": "Uma run é suficiente para a platina base. Complete a campanha, adiante storylines e atividades do mapa, depois use o free roam pós-história para cleanup de hordas, NERO, acampamentos, colecionáveis, moto, skills e grind restante.",
+    "slug": "days-gone",
+    "time": "60-80 horas",
+    "time_bucket": "long",
+    "time_max_hours": 80,
+    "time_min_hours": 60,
+    "time_reason": "A estimativa de 60-80 horas considera campanha, storylines, hordas, acampamentos, NERO checkpoints, infestations, colecionáveis, trust, skills, moto e cleanup pós-história.",
+    "time_sort_hours": 60,
+    "updated_at": "2026-06-27 02:36:58",
+    "verification_note": "Guia em revisão editorial após render PDF/ZIP: lista base PS4 de 46 troféus, roadmap estruturado, checklist, FAQ, flags offline/sem coop/sem DLC, sem perdíveis rígidos, troféus EN + PT-BR e descrições em português.",
+    "verification_status": "review",
+    "walkthrough": null
+  },
+  "redirects": [],
+  "roadmaps": [
+    {
+      "content": "{\"title\":\"Campanha com saque constante e progresso natural\",\"focus\":\"História e base da platina\",\"objective\":\"Completar a história enquanto avança storylines, coleta recursos e reduz o grind de loot humano.\",\"actions\":[\"Avance pela campanha principal e conclua missões secundárias dos acampamentos quando surgirem.\",\"Saqueie cadáveres humanos sempre que possível para adiantar You've Got Red on You.\",\"Complete Ambush Camps, Infestation Zones e NERO Checkpoints ao explorar novas regiões.\",\"Use NERO Injectors para melhorar saúde, stamina e focus conforme sua preferência de combate.\",\"Invista em upgrades da moto e de armas para facilitar deslocamento, hordas e cleanup.\"],\"warning\":\"You've Got Red on You não é tecnicamente perdível, mas fica mais demorado se o jogador ignorar cadáveres humanos durante a história.\",\"result\":\"A campanha avança com boa parte das storylines, recursos, confiança dos acampamentos e grind de loot já encaminhados.\"}",
+      "step_order": 1
+    },
+    {
+      "content": "{\"title\":\"Storylines, acampamentos e atividades do mapa\",\"focus\":\"Mundo aberto\",\"objective\":\"Concluir as principais atividades paralelas necessárias para a platina base.\",\"actions\":[\"Finalize Ambush Camps para liberar mapas e facilitar deslocamento.\",\"Limpe Infestation Zones para reduzir ameaças e melhorar fast travel.\",\"Complete NERO Checkpoints e colete Injectors restantes.\",\"Avance camp jobs, bounty jobs e outras missões ligadas às storylines.\",\"Acompanhe o progresso de storylines até as porcentagens exigidas pelos troféus.\"],\"warning\":\"\",\"result\":\"O mapa fica mais limpo, com atividades essenciais resolvidas e storylines próximas da conclusão.\"}",
+      "step_order": 2
+    },
+    {
+      "content": "{\"title\":\"Hordas e combate avançado\",\"focus\":\"Hordas e upgrades\",\"objective\":\"Preparar Deacon para enfrentar hordas e limpar troféus ligados a combate e progressão.\",\"actions\":[\"Priorize armas, munição, stamina, focus e itens explosivos antes de enfrentar hordas maiores.\",\"Use o ambiente, gargalos, molotovs, bombas e armadilhas para controlar os Freakers.\",\"Derrote hordas necessárias para avançar storylines e liberar recompensas importantes.\",\"Aproveite hordas e combate para acumular Freaker Ears para Lend Me Your Ears.\",\"Complete troféus de combate, stealth, crafting e uso de armas durante o cleanup.\"],\"warning\":\"As hordas não tornam a platina online ou coop. Elas são um bloco single-player de preparação, rota e controle de recursos.\",\"result\":\"A parte mais intensa de combate fica controlada, com Deacon preparado para o cleanup final.\"}",
+      "step_order": 3
+    },
+    {
+      "content": "{\"title\":\"Colecionáveis e progresso de Deacon\",\"focus\":\"Coletáveis e evolução\",\"objective\":\"Completar colecionáveis, skills, upgrades e troféus de progresso acumulado.\",\"actions\":[\"Colete itens suficientes para cumprir o percentual necessário de colecionáveis da lista base.\",\"Finalize NERO Intel, Tourism Collectibles, Historical Markers, Character Collectibles e demais categorias exigidas pelo guia.\",\"Compre skills até liberar Mr. Fahrenheit.\",\"Complete upgrades relevantes da moto, incluindo nitro quando necessário.\",\"Resolva troféus específicos como drift com nitro, reparos, crafting, camp trust e uso de recursos.\"],\"warning\":\"A platina não exige 100% absoluto de todos os colecionáveis, mas o guia separa os percentuais que importam para os troféus.\",\"result\":\"Os blocos de evolução, colecionáveis e troféus acumulativos ficam prontos para a conferência final.\"}",
+      "step_order": 4
+    },
+    {
+      "content": "{\"title\":\"Cleanup pós-história\",\"focus\":\"Free roam\",\"objective\":\"Usar o free roam depois da campanha para fechar hordas, storylines, colecionáveis e troféus restantes.\",\"actions\":[\"Após a história, volte as regiões abertas para concluir atividades pendentes.\",\"Finalize hordas, Ambush Camps, Infestation Zones, NERO Checkpoints e camp jobs restantes.\",\"Complete You've Got Red on You se ainda faltar loot de cadáveres humanos.\",\"Resolva troféus acumulativos, de moto, skills, crafting e combate que ficaram para trás.\",\"Confira se Survival Mode, Challenge Mode e New Game+ continuam fora da checklist da platina base.\"],\"warning\":\"\",\"result\":\"Com o cleanup concluído, a lista base de 46 troféus fica pronta para a platina.\"}",
+      "step_order": 5
+    }
+  ],
+  "schemaVersion": 1,
+  "seedExtras": {
+    "aliases": [],
+    "attentionPoints": [
+      {
+        "detail": "Saqueie cadáveres humanos desde o início. O troféu não é perdível, mas deixar os 541 itens para o pós-game transforma a platina em um grind bem mais lento.",
+        "tags": [
+          "GRIND",
+          "LOOT",
+          "ATENÇÃO"
+        ],
+        "title": "You've Got Red on You"
+      },
+      {
+        "detail": "Depois da campanha, o mapa volta a ficar disponível para cleanup. Use esse momento para hordas, acampamentos, NERO checkpoints, colecionáveis e troféus acumulativos.",
+        "tags": [
+          "FREE ROAM",
+          "CLEANUP"
+        ],
+        "title": "Free roam pós-história"
+      },
+      {
+        "detail": "Deixe as maiores hordas para quando Deacon tiver armas melhores, mais stamina, focus, munição e itens explosivos.",
+        "tags": [
+          "HORDAS",
+          "COMBATE",
+          "DIFICULDADE"
+        ],
+        "title": "Hordas"
+      },
+      {
+        "detail": "NERO checkpoints e injectors aceleram a evolução de Deacon e facilitam combate, exploração e hordas.",
+        "tags": [
+          "NERO",
+          "PROGRESSÃO"
+        ],
+        "title": "NERO checkpoints e injectors"
+      },
+      {
+        "detail": "Burnout Apocalypse exige drift com nitro por pelo menos 5 segundos. Invista em upgrades da moto e teste em uma área aberta.",
+        "tags": [
+          "MOTO",
+          "SKILL",
+          "CLEANUP"
+        ],
+        "title": "Burnout Apocalypse"
+      },
+      {
+        "detail": "Best Friends Forever, Make it Rain e Mr. Fahrenheit dependem de confiança, créditos, skills e atividades do mapa. Avance acampamentos e hordas para reduzir grind.",
+        "tags": [
+          "ACAMPAMENTOS",
+          "GRIND",
+          "PROGRESSÃO"
+        ],
+        "title": "Camp Trust e skills"
+      },
+      {
+        "detail": "Survival Mode, Challenge Mode e New Game+ têm troféus adicionais, mas não entram nos 46 troféus da platina base.",
+        "tags": [
+          "DLC",
+          "FORA DA PLATINA"
+        ],
+        "title": "DLC fora da platina"
+      },
+      {
+        "detail": "A platina base é single-player, sem online obrigatório e sem coop obrigatório.",
+        "tags": [
+          "OFFLINE",
+          "SEM COOP"
+        ],
+        "title": "Online e coop opcionais"
+      }
+    ],
+    "checklist": [
+      "Confirmar 46 troféus da lista base PS4.",
+      "Não contar Survival Mode como requisito da platina.",
+      "Não contar Challenge Mode como requisito da platina.",
+      "Não contar New Game+ como requisito da platina.",
+      "Não misturar Days Gone Remastered/PS5, Horde Assault, Permadeath, Speedrun Mode ou Broken Road DLC com a lista base PS4.",
+      "Completar a campanha principal.",
+      "Saquear cadáveres humanos desde cedo para You've Got Red on You.",
+      "Completar ambush camps.",
+      "Completar infestation zones.",
+      "Completar marauder camps.",
+      "Completar NERO checkpoints e coletar injectors.",
+      "Avançar storylines exigidas pelos troféus.",
+      "Derrotar hordas necessárias e usar hordas para recursos e ears.",
+      "Coletar Freaker Ears suficientes para Lend Me Your Ears.",
+      "Comprar skills até fechar Mr. Fahrenheit.",
+      "Melhorar Deacon com NERO injectors.",
+      "Melhorar a moto, incluindo nitro.",
+      "Fazer drift com nitro para Burnout Apocalypse.",
+      "Completar colecionáveis exigidos pela lista base.",
+      "Fazer cleanup pós-história em free roam.",
+      "Conferir que a platina segue offline, sem coop obrigatório, sem DLC obrigatória e sem perdíveis rígidos."
+    ],
+    "faq": [
+      {
+        "answer": "Não. A platina base é single-player e pode ser feita offline.",
+        "question": "Days Gone exige online para platinar?"
+      },
+      {
+        "answer": "Não. A platina não depende de coop.",
+        "question": "Days Gone exige coop para platinar?"
+      },
+      {
+        "answer": "Não. Esses troféus ficam em listas adicionais e não entram nos 46 troféus da platina base.",
+        "question": "Survival Mode, Challenge Mode ou New Game+ são necessários para a platina?"
+      },
+      {
+        "answer": "Não há perdíveis rígidos na lista base, pois há free roam após a história. Ainda assim, é melhor saquear cadáveres humanos desde cedo para não deixar You've Got Red on You virar um grind chato no pós-game.",
+        "question": "Days Gone tem troféus perdíveis?"
+      },
+      {
+        "answer": "Uma run é suficiente para a platina base, com cleanup depois da história.",
+        "question": "Quantas runs são necessárias?"
+      },
+      {
+        "answer": "Não. A platina base pode ser feita em qualquer dificuldade. Survival Mode e New Game+ pertencem a listas adicionais.",
+        "question": "Preciso jogar em dificuldade alta?"
+      },
+      {
+        "answer": "You've Got Red on You é o grind mais sensível, porque exige coletar muitos itens de cadáveres humanos. Hordas, colecionáveis e storylines também consomem tempo, mas são bem controláveis no cleanup.",
+        "question": "Qual é o maior grind da platina?"
+      },
+      {
+        "answer": "Siga os requisitos reais dos troféus e storylines da lista base. Muitas hordas ajudam no progresso, Freaker Ears e recompensas, mas conteúdo de DLC ou remaster não entra como requisito da platina PS4.",
+        "question": "Preciso matar todas as hordas?"
+      },
+      {
+        "answer": "Sim. O free roam pós-história permite voltar para limpar hordas, acampamentos, infestations, NERO checkpoints, colecionáveis e troféus acumulativos.",
+        "question": "Dá para fazer cleanup depois da história?"
+      },
+      {
+        "answer": "Se houver guia separado do remaster, trate como lista própria. No guia base de Days Gone PS4, não misture Horde Assault, Permadeath, Speedrun Mode ou Broken Road DLC com a platina base.",
+        "question": "Days Gone Remastered muda a platina?"
+      }
+    ],
+    "note": "Campos exportados para auditoria. O SQLite atual nao possui colunas nativas para todos esses extras; a importacao preserva o que o banco suporta.",
+    "quickDecision": {
+      "avoidIf": "Quem quer uma platina curta ou sem grind de mundo aberto pode achar a rota cansativa.",
+      "bestFor": "Jogadores que gostam de limpar mapa, evoluir personagem/moto e fazer cleanup metódico.",
+      "firstStep": "Comece pela campanha, saqueando cadáveres humanos desde cedo e limpando atividades regionais conforme elas aparecem.",
+      "recommendation": "Vale platinar Days Gone se você gosta de mundo aberto, exploração, sobrevivência leve, moto e combate contra hordas. É uma platina longa, mas tranquila, sem online, sem coop, sem DLC obrigatória e sem perdíveis rígidos. O principal cuidado é adiantar You've Got Red on You durante a campanha para não transformar o pós-game em um grind desnecessário."
+    },
+    "seo": {
+      "description": "Guia de platina de Days Gone com roadmap em português, troféus da lista base, hordas, NERO checkpoints, acampamentos, colecionáveis, You've Got Red on You, cleanup pós-história e dicas para conquistar a platina no PS4.",
+      "keywords": "Days Gone, guia de platina Days Gone, troféus Days Gone, roadmap Days Gone, Days Gone PS4, One Percenter, You've Got Red on You, hordas Days Gone, NERO checkpoints, Burnout Apocalypse",
+      "ogDescription": "Roadmap da platina base PS4 de Days Gone com hordas, NERO, acampamentos, colecionáveis, You've Got Red on You e cleanup pós-história.",
+      "ogTitle": "Days Gone: guia de platina, troféus e roadmap",
+      "title": "Guia de Platina Days Gone - Troféus, Roadmap e Dicas"
+    },
+    "tags": [
+      "mundo aberto",
+      "ação",
+      "sobrevivência",
+      "campanha",
+      "hordas",
+      "coletaveis",
+      "grind",
+      "cleanup",
+      "offline",
+      "sem coop",
+      "sem DLC obrigatória"
+    ]
+  },
+  "slug": "days-gone",
+  "trophies": [
+    {
+      "description": "Desbloqueie todos os outros troféus de Days Gone.",
+      "is_missable": 0,
+      "is_spoiler": 0,
+      "name": "One Percenter",
+      "name_pt": "Um por cento",
+      "tip": "Conclua os outros 45 troféus da lista base PS4. Survival Mode, Challenge Mode, New Game+ e Remastered ficam fora desta platina.",
+      "trophy_code": "days_one_percenter",
+      "type": "Platina"
+    },
+    {
+      "description": "Saia de Crazy Willie's.",
+      "is_missable": 0,
+      "is_spoiler": 1,
+      "name": "Just a Flesh Wound",
+      "name_pt": "Foi só um arranhão",
+      "tip": "Troféu automático de história no início da campanha.",
+      "trophy_code": "days_just_a_flesh_wound",
+      "type": "Bronze"
+    },
+    {
+      "description": "Faça uma entrega para Tucker ou Copeland.",
+      "is_missable": 0,
+      "is_spoiler": 1,
+      "name": "Special Delivery",
+      "name_pt": "Entrega especial",
+      "tip": "Troféu automático ligado aos primeiros acampamentos.",
+      "trophy_code": "days_special_delivery",
+      "type": "Bronze"
+    },
+    {
+      "description": "Descubra o que aconteceu com a NERO.",
+      "is_missable": 0,
+      "is_spoiler": 1,
+      "name": "The Ends and the Means",
+      "name_pt": "Os fins e os meios",
+      "tip": "Troféu automático de história/NERO.",
+      "trophy_code": "days_the_ends_and_the_means",
+      "type": "Bronze"
+    },
+    {
+      "description": "Siga para o sul com Boozer.",
+      "is_missable": 0,
+      "is_spoiler": 1,
+      "name": "Lost and Found",
+      "name_pt": "Achados e perdidos",
+      "tip": "Troféu automático de história.",
+      "trophy_code": "days_lost_and_found",
+      "type": "Bronze"
+    },
+    {
+      "description": "Verifique como Boozer está.",
+      "is_missable": 0,
+      "is_spoiler": 1,
+      "name": "Brothers in Arm",
+      "name_pt": "Irmãos de armas",
+      "tip": "Troféu automático ligado a Boozer.",
+      "trophy_code": "days_brothers_in_arm",
+      "type": "Bronze"
+    },
+    {
+      "description": "Retribua o favor.",
+      "is_missable": 0,
+      "is_spoiler": 1,
+      "name": "Take Back Your Name",
+      "name_pt": "Recupere seu nome",
+      "tip": "Troféu automático de história.",
+      "trophy_code": "days_take_back_your_name",
+      "type": "Bronze"
+    },
+    {
+      "description": "Pegue a estrada sozinho.",
+      "is_missable": 0,
+      "is_spoiler": 1,
+      "name": "Riding NOMAD",
+      "name_pt": "Na estrada NOMAD",
+      "tip": "Troféu automático de transição de região.",
+      "trophy_code": "days_riding_nomad",
+      "type": "Bronze"
+    },
+    {
+      "description": "Veja um rosto familiar.",
+      "is_missable": 0,
+      "is_spoiler": 1,
+      "name": "Hold on Tight",
+      "name_pt": "Segure firme",
+      "tip": "Troféu automático de história.",
+      "trophy_code": "days_hold_on_tight",
+      "type": "Bronze"
+    },
+    {
+      "description": "Reconecte-se com o que você perdeu.",
+      "is_missable": 0,
+      "is_spoiler": 1,
+      "name": "It's Getting Cold Outside",
+      "name_pt": "Está ficando frio lá fora",
+      "tip": "Troféu automático em região avançada.",
+      "trophy_code": "days_its_getting_cold_outside",
+      "type": "Bronze"
+    },
+    {
+      "description": "Siga para recuperar o que e seu.",
+      "is_missable": 0,
+      "is_spoiler": 1,
+      "name": "Morior Invictus",
+      "name_pt": "Morior Invictus",
+      "tip": "Troféu automático da reta final da história.",
+      "trophy_code": "days_morior_invictus",
+      "type": "Prata"
+    },
+    {
+      "description": "Consiga vingança de uma vez por todas.",
+      "is_missable": 0,
+      "is_spoiler": 1,
+      "name": "I've Been Waiting for This",
+      "name_pt": "Eu esperei por isso",
+      "tip": "Troféu automático de fechamento narrativo.",
+      "trophy_code": "days_ive_been_waiting_for_this",
+      "type": "Bronze"
+    },
+    {
+      "description": "Complete a história de Days Gone.",
+      "is_missable": 0,
+      "is_spoiler": 1,
+      "name": "Days Done",
+      "name_pt": "Dias concluídos",
+      "tip": "Conclua a campanha principal. O free roam pós-história libera cleanup de regiões, jobs, trust e colecionáveis.",
+      "trophy_code": "days_days_done",
+      "type": "Ouro"
+    },
+    {
+      "description": "Complete a storyline Ambush Camp Hunter.",
+      "is_missable": 0,
+      "is_spoiler": 0,
+      "name": "Ambush Camp Hunter",
+      "name_pt": "Caçador de acampamentos de emboscada",
+      "tip": "Limpe Ambush Camps e entre nos bunkers para revelar atividades e colecionáveis da região.",
+      "trophy_code": "days_ambush_camp_hunter",
+      "type": "Prata"
+    },
+    {
+      "description": "Complete a storyline Infestation Exterminator.",
+      "is_missable": 0,
+      "is_spoiler": 0,
+      "name": "Infestation Exterminator",
+      "name_pt": "Exterminador de infestacoes",
+      "tip": "Queime os ninhos das Infestation Zones da lista base.",
+      "trophy_code": "days_infestation_exterminator",
+      "type": "Prata"
+    },
+    {
+      "description": "Complete a storyline Marauder Camp Hunter.",
+      "is_missable": 0,
+      "is_spoiler": 0,
+      "name": "Marauder Camp Hunter",
+      "name_pt": "Caçador de acampamentos de saqueadores",
+      "tip": "Complete os Marauder Camp jobs e feche a storyline correspondente.",
+      "trophy_code": "days_marauder_camp_hunter",
+      "type": "Prata"
+    },
+    {
+      "description": "Complete a storyline World's End.",
+      "is_missable": 0,
+      "is_spoiler": 0,
+      "name": "World's End",
+      "name_pt": "Fim do mundo",
+      "tip": "Complete NERO Checkpoints. NERO Research Sites ajudam nos upgrades, mas mantenha o foco nos checkpoints exigidos.",
+      "trophy_code": "days_worlds_end",
+      "type": "Prata"
+    },
+    {
+      "description": "Derrote sua primeira horda.",
+      "is_missable": 0,
+      "is_spoiler": 0,
+      "name": "One Down",
+      "name_pt": "Uma a menos",
+      "tip": "Derrote qualquer horda. Se quiser facilitar, espere armas melhores, explosivos, stamina e focus.",
+      "trophy_code": "days_one_down",
+      "type": "Prata"
+    },
+    {
+      "description": "Acumule 10 minutos de drift com a moto.",
+      "is_missable": 0,
+      "is_spoiler": 0,
+      "name": "Farewell Drift",
+      "name_pt": "Drift de Farewell",
+      "tip": "Faça drift em uma área segura e reabasteca quando precisar. O progresso é acumulativo.",
+      "trophy_code": "days_farewell_drift",
+      "type": "Bronze"
+    },
+    {
+      "description": "Mate um Breaker, Reacher ou Rager com a faca.",
+      "is_missable": 0,
+      "is_spoiler": 0,
+      "name": "This is a Knife",
+      "name_pt": "Isto é uma faca",
+      "tip": "Enfraqueça o inimigo com armas e finalize com a Boot Knife. Há oportunidades na história e no free roam.",
+      "trophy_code": "days_this_is_a_knife",
+      "type": "Prata"
+    },
+    {
+      "description": "Consiga 100 mortes furtivas.",
+      "is_missable": 0,
+      "is_spoiler": 0,
+      "name": "Ghost of Farewell",
+      "name_pt": "Fantasma de Farewell",
+      "tip": "Use stealth em camps e inimigos humanos desde cedo; o progresso acumula naturalmente.",
+      "trophy_code": "days_ghost_of_farewell",
+      "type": "Bronze"
+    },
+    {
+      "description": "Mate 200 inimigos com uma arma fabricada.",
+      "is_missable": 0,
+      "is_spoiler": 0,
+      "name": "Old Reliable",
+      "name_pt": "Velha confiavel",
+      "tip": "Use armas melee fabricadas e outros recursos de crafting durante a campanha e cleanup.",
+      "trophy_code": "days_old_reliable",
+      "type": "Bronze"
+    },
+    {
+      "description": "Mate um inimigo com cada tipo de virote da besta.",
+      "is_missable": 0,
+      "is_spoiler": 0,
+      "name": "Variety is the Spice of Life",
+      "name_pt": "Variedade e o tempero da vida",
+      "tip": "Use virotes normal, residue, incendiary, explosive e poison quando forem liberados.",
+      "trophy_code": "days_variety_is_the_spice_of_life",
+      "type": "Prata"
+    },
+    {
+      "description": "Compre um upgrade nas categorias Performance, Visual e Paint da moto.",
+      "is_missable": 0,
+      "is_spoiler": 0,
+      "name": "Farewell Original",
+      "name_pt": "Original de Farewell",
+      "tip": "Compre ao menos um item de cada categoria em um mechanic de acampamento.",
+      "trophy_code": "days_farewell_original",
+      "type": "Prata"
+    },
+    {
+      "description": "Melhore sua moto pela primeira vez.",
+      "is_missable": 0,
+      "is_spoiler": 0,
+      "name": "First Time Buyer",
+      "name_pt": "Comprador de primeira viagem",
+      "tip": "Compre qualquer upgrade de moto em um acampamento.",
+      "trophy_code": "days_first_time_buyer",
+      "type": "Bronze"
+    },
+    {
+      "description": "Use nitro e drift ao mesmo tempo na moto por pelo menos 5 segundos.",
+      "is_missable": 0,
+      "is_spoiler": 0,
+      "name": "Burnout Apocalypse",
+      "name_pt": "Apocalipse de burnout",
+      "tip": "Fica mais fácil com nitro melhorado, pneus melhores e uma área aberta para manter a derrapagem.",
+      "trophy_code": "days_burnout_apocalypse",
+      "type": "Bronze"
+    },
+    {
+      "description": "Use 100 scrap para reparar sua moto.",
+      "is_missable": 0,
+      "is_spoiler": 0,
+      "name": "The Art of Bike Repair",
+      "name_pt": "A arte do conserto da moto",
+      "tip": "Repare a moto com scrap sempre que sofrer dano. O total acumula.",
+      "trophy_code": "days_the_art_of_bike_repair",
+      "type": "Bronze"
+    },
+    {
+      "description": "Colete 541 itens de cadáveres.",
+      "is_missable": 0,
+      "is_spoiler": 0,
+      "name": "You've Got Red on You",
+      "name_pt": "Você está sujo de sangue",
+      "tip": "Saqueie cadáveres humanos desde o começo. Não é perdível, mas vira grind cansativo se você ignorar esse hábito por muitas horas.",
+      "trophy_code": "days_youve_got_red_on_you",
+      "type": "Bronze"
+    },
+    {
+      "description": "Colete 989 Freaker Ears.",
+      "is_missable": 0,
+      "is_spoiler": 0,
+      "name": "Lend Me Your Ears",
+      "name_pt": "Empreste-me seus ouvidos",
+      "tip": "Pegue ears de Freakers mortos, especialmente ao limpar hordas.",
+      "trophy_code": "days_lend_me_your_ears",
+      "type": "Bronze"
+    },
+    {
+      "description": "Desbloqueie seu primeiro colecionável.",
+      "is_missable": 0,
+      "is_spoiler": 0,
+      "name": "Finders Keepers",
+      "name_pt": "Achado não é roubado",
+      "tip": "Pegue qualquer colecionável; muitos aparecem no caminho da história e atividades.",
+      "trophy_code": "days_finders_keepers",
+      "type": "Bronze"
+    },
+    {
+      "description": "Desbloqueie mais de 50% dos colecionáveis.",
+      "is_missable": 0,
+      "is_spoiler": 0,
+      "name": "Wannabe Fortune Hunter",
+      "name_pt": "Aspirante a caçador de fortunas",
+      "tip": "A lista base exige percentual, não 100%. Ambush Camps ajudam a revelar pontos no mapa.",
+      "trophy_code": "days_wannabe_fortune_hunter",
+      "type": "Bronze"
+    },
+    {
+      "description": "Desbloqueie mais de 75% dos colecionáveis.",
+      "is_missable": 0,
+      "is_spoiler": 0,
+      "name": "The Broken Roadshow",
+      "name_pt": "Show da estrada quebrada",
+      "tip": "Combine colecionáveis com camps, NERO, história e cleanup por região.",
+      "trophy_code": "days_the_broken_roadshow",
+      "type": "Prata"
+    },
+    {
+      "description": "Resgate 10 sobreviventes.",
+      "is_missable": 0,
+      "is_spoiler": 0,
+      "name": "Surviving Isn't Living",
+      "name_pt": "Sobreviver não é viver",
+      "tip": "Resgate survivors encontrados em eventos aleatórios e envie-os para acampamentos.",
+      "trophy_code": "days_surviving_isnt_living",
+      "type": "Bronze"
+    },
+    {
+      "description": "Melhore saúde, stamina ou focus pela primeira vez.",
+      "is_missable": 0,
+      "is_spoiler": 0,
+      "name": "Better Living through Chemistry",
+      "name_pt": "Vida melhor pela química",
+      "tip": "Use um NERO Injector em qualquer atributo.",
+      "trophy_code": "days_better_living_through_chemistry",
+      "type": "Bronze"
+    },
+    {
+      "description": "Maximize saúde, stamina ou focus.",
+      "is_missable": 0,
+      "is_spoiler": 0,
+      "name": "Performance Enhanced",
+      "name_pt": "Performance aprimorada",
+      "tip": "Use NERO Injectors até maximizar um atributo; stamina ou focus ajudam bastante contra hordas.",
+      "trophy_code": "days_performance_enhanced",
+      "type": "Prata"
+    },
+    {
+      "description": "Alcance Allied Trust em um acampamento.",
+      "is_missable": 0,
+      "is_spoiler": 0,
+      "name": "Best Friends Forever",
+      "name_pt": "Melhores amigos para sempre",
+      "tip": "Chegue ao Trust Level 3 em qualquer acampamento.",
+      "trophy_code": "days_best_friends_forever",
+      "type": "Prata"
+    },
+    {
+      "description": "Alcance Allied Trust em três acampamentos diferentes.",
+      "is_missable": 0,
+      "is_spoiler": 0,
+      "name": "Best Friends Forever (For Life)",
+      "name_pt": "Melhores amigos para sempre (para a vida toda)",
+      "tip": "Chegue ao Trust Level 3 em três acampamentos. Jobs, hordas, ears, carne e plantas ajudam no grind.",
+      "trophy_code": "days_best_friends_forever_for_life",
+      "type": "Ouro"
+    },
+    {
+      "description": "Gaste 20.000 créditos em um acampamento.",
+      "is_missable": 0,
+      "is_spoiler": 0,
+      "name": "Make it Rain",
+      "name_pt": "Faz chover",
+      "tip": "Gaste tudo no mesmo acampamento, normalmente com armas, munição ou upgrades da moto.",
+      "trophy_code": "days_make_it_rain",
+      "type": "Prata"
+    },
+    {
+      "description": "Limpe todos os Ambush Camps, Infestations e NERO Checkpoints de uma única região.",
+      "is_missable": 0,
+      "is_spoiler": 0,
+      "name": "Welcome to the Party, Pal",
+      "name_pt": "Bem-vindo à festa, parceiro",
+      "tip": "Escolha uma região e feche esses três blocos de mapa para completar o requisito.",
+      "trophy_code": "days_welcome_to_the_party_pal",
+      "type": "Prata"
+    },
+    {
+      "description": "Venda carne de animal ou plantas para qualquer acampamento.",
+      "is_missable": 0,
+      "is_spoiler": 0,
+      "name": "Kitchen Courier",
+      "name_pt": "Entregador de cozinha",
+      "tip": "Venda recursos na cozinha de qualquer acampamento.",
+      "trophy_code": "days_kitchen_courier",
+      "type": "Bronze"
+    },
+    {
+      "description": "Desbloqueie sua primeira skill.",
+      "is_missable": 0,
+      "is_spoiler": 0,
+      "name": "Don't Stop Me Now",
+      "name_pt": "Não me pare agora",
+      "tip": "Compre qualquer skill ao ganhar pontos de experiência.",
+      "trophy_code": "days_dont_stop_me_now",
+      "type": "Bronze"
+    },
+    {
+      "description": "Desbloqueie 15 skills.",
+      "is_missable": 0,
+      "is_spoiler": 0,
+      "name": "I'm Out of Control",
+      "name_pt": "Estou fora de controle",
+      "tip": "Compre 15 skills no total.",
+      "trophy_code": "days_im_out_of_control",
+      "type": "Bronze"
+    },
+    {
+      "description": "Desbloqueie 30 skills.",
+      "is_missable": 0,
+      "is_spoiler": 0,
+      "name": "There's No Stopping Me",
+      "name_pt": "Ninguem me para",
+      "tip": "Compre 30 skills no total.",
+      "trophy_code": "days_theres_no_stopping_me",
+      "type": "Bronze"
+    },
+    {
+      "description": "Desbloqueie 45 skills.",
+      "is_missable": 0,
+      "is_spoiler": 0,
+      "name": "Mr. Fahrenheit",
+      "name_pt": "Sr. Fahrenheit",
+      "tip": "Compre todas as 45 skills da lista base.",
+      "trophy_code": "days_mr_fahrenheit",
+      "type": "Prata"
+    },
+    {
+      "description": "Derrube 12 Anarchist Cairns.",
+      "is_missable": 0,
+      "is_spoiler": 0,
+      "name": "Go Kick Rocks",
+      "name_pt": "Vá chutar pedras",
+      "tip": "Derrube 12 pilhas de pedras em pontos opcionais do mapa.",
+      "trophy_code": "days_go_kick_rocks",
+      "type": "Bronze"
+    },
+    {
+      "description": "Fabrique 50 itens.",
+      "is_missable": 0,
+      "is_spoiler": 0,
+      "name": "D.I.Y. Oregonian",
+      "name_pt": "Faça você mesmo, Oregoniano",
+      "tip": "Use crafting durante campanha e cleanup; qualquer item fabricado conta para o total.",
+      "trophy_code": "days_diy_oregonian",
+      "type": "Bronze"
+    }
+  ]
+}

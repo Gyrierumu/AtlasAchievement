@@ -1,0 +1,594 @@
+{
+  "game": {
+    "avoid_if": "Evite se você não gosta de caminhar devagar por cenários, repetir capítulos para coletáveis ou buscar ações opcionais escondidas.",
+    "before_you_start": "Muitos troféus são fáceis de ignorar se você seguir direto pelo caminho principal. Alguns dependem de chapéus específicos, como Fair Prey, Referee!, Toys Are For Kids e Post Industrial.",
+    "best_for": "Ideal para quem quer uma platina curta de terror atmosférico, focada em exploração, puzzle-platforming e coletáveis simples.",
+    "cleanup_advice": "Use seleção de capítulos para buscar coletáveis, chapéus e ações opcionais perdidas sem refazer a campanha inteira.",
+    "cover_image": "https://cdn.cloudflare.steamstatic.com/steam/apps/860510/library_600x900.jpg",
+    "coverage_level": "strong",
+    "created_at": "2026-05-09 19:53:54",
+    "difficulty": 2,
+    "difficulty_reason": "A platina é acessível, sem troféus de dificuldade e com Chapter Select; o cuidado está em explorar capítulos e executar ações opcionais específicas.",
+    "dlc_scope": "Guia focado na lista base de Little Nightmares II; chapéus bônus, preorder ou conteúdo extra não devem ser tratados como troféus adicionais.",
+    "editorial_notes": "",
+    "editorial_review_status": null,
+    "editorial_status": "published",
+    "first_run_advice": "Explore devagar cada capítulo, observe objetos interativos e pegue Glitching Remains e chapéus sempre que encontrar caminhos alternativos.",
+    "grind_summary": "O peso está em 18 Glitching Remains, chapéus necessários, ações opcionais por capítulo e alguns troféus cumulativos simples com Six.",
+    "guide_avoid": null,
+    "guide_best_moment": null,
+    "guide_dlc": null,
+    "guide_grind": null,
+    "guide_ideal": null,
+    "guide_online": null,
+    "guide_runs": null,
+    "image": "https://cdn.cloudflare.steamstatic.com/steam/apps/860510/header.jpg",
+    "is_verified": 0,
+    "last_reviewed_at": "",
+    "missable": "Vários troféus opcionais podem ser ignorados durante a campanha, mas nenhum é permanentemente perdível graças à seleção de capítulos.",
+    "missable_summary": "Não há perdíveis definitivos: use Chapter Select para voltar aos capítulos com coletáveis, chapéus ou ações opcionais pendentes.",
+    "name": "Little Nightmares II",
+    "online_summary": "Não há exigência online para a platina.",
+    "quality_warnings": "[]",
+    "reviewed_by": "",
+    "runs_summary": "Uma campanha com exploração e seleção de capítulos para limpar Glitching Remains, chapéus e ações opcionais.",
+    "slug": "little-nightmares-ii",
+    "time": "6-10h",
+    "time_bucket": "short",
+    "time_max_hours": 10,
+    "time_min_hours": 6,
+    "time_reason": "A faixa de 6-10 horas considera uma campanha completa, limpeza de Glitching Remains, chapéus e troféus opcionais por seleção de capítulos.",
+    "time_sort_hours": 6,
+    "updated_at": "2026-06-27 02:36:59",
+    "verification_note": "Lista base adicionada por fontes públicas; aguarda validação editorial manual.",
+    "verification_status": "review",
+    "walkthrough": null
+  },
+  "redirects": [
+    "little-nightmares"
+  ],
+  "roadmaps": [
+    {
+      "content": "{\"title\":\"Limpe coletáveis por seleção de capítulos\",\"focus\":\"\",\"objective\":\"Comece a campanha normalmente e explore cada capítulo antes de avançar para o objetivo principal, pegando Glitching Remains e chapéus sempre que encontrar caminhos alternativos.\",\"actions\":[],\"warning\":\"\",\"result\":\"\"}",
+      "step_order": 1
+    },
+    {
+      "content": "{\"title\":\"Limpe coletáveis por seleção de capítulos\",\"focus\":\"\",\"objective\":\"Use seleção de capítulos para limpar coletáveis por capítulo, priorizando Wild Kids, School Kids, Sick Kids, Pale Kids, No More Remains, Half Hat e Far Ahead.\",\"actions\":[],\"warning\":\"\",\"result\":\"\"}",
+      "step_order": 2
+    },
+    {
+      "content": "{\"title\":\"Revise eventos opcionais por capítulo\",\"focus\":\"\",\"objective\":\"Faça os troféus opcionais específicos de cada capítulo, como abrir a geladeira, lançar o avião de papel, tocar o piano, entregar o pacote, quebrar a estátua, jogar o queijo no buraco, fazer pipoca e tirar raio-x com Six.\",\"actions\":[],\"warning\":\"\",\"result\":\"\"}",
+      "step_order": 3
+    },
+    {
+      "content": "{\"title\":\"Limpe coletáveis por seleção de capítulos\",\"focus\":\"\",\"objective\":\"Preste atenção aos troféus que dependem de chapéus específicos: Fair Prey, Referee!, Toys Are For Kids e Post Industrial.\",\"actions\":[],\"warning\":\"\",\"result\":\"\"}",
+      "step_order": 4
+    },
+    {
+      "content": "{\"title\":\"Feche cumulativos com Six\",\"focus\":\"\",\"objective\":\"Limpe os cumulativos In The Palm Of My Hand e Twenty-Six chamando/segurando a mão de Six, e após terminar a campanha equipe o chapéu especial para How Do I Look?.\",\"actions\":[],\"warning\":\"\",\"result\":\"\"}",
+      "step_order": 5
+    },
+    {
+      "content": "{\"title\":\"Limpe coletáveis por seleção de capítulos\",\"focus\":\"\",\"objective\":\"Revise a checklist de 35 troféus, confirme todos os Glitching Remains, chapéus necessários e ações opcionais, e desbloqueie Primetime Content Consumer.\",\"actions\":[],\"warning\":\"\",\"result\":\"\"}",
+      "step_order": 6
+    }
+  ],
+  "schemaVersion": 1,
+  "seedExtras": {
+    "aliases": [],
+    "attentionPoints": [
+      {
+        "tip": "Chapter Select permite recuperar chapéus, Glitching Remains e troféus misc esquecidos.",
+        "title": "Sem perdíveis permanentes",
+        "type": "Chapter Select"
+      },
+      {
+        "tip": "No More Remains exige todos os 18 Glitching Remains: 4 no Capítulo 1, 6 no Capítulo 2, 4 no Capítulo 3 e 4 no Capítulo 4.",
+        "title": "18 Glitching Remains",
+        "type": "4/6/4/4"
+      },
+      {
+        "tip": "Coletar todos os Glitching Remains libera o final secreto/secret ending ao completar o jogo.",
+        "title": "Final secreto",
+        "type": "Secret ending"
+      },
+      {
+        "tip": "Far Ahead exige os chapéus necessários da lista base. Não trate chapéus extras de DLC ou pré-venda como obrigatórios.",
+        "title": "Chapéus da lista base",
+        "type": "Far Ahead"
+      },
+      {
+        "tip": "Nome’s Attic é conteúdo extra/DLC e não é necessário para a platina base.",
+        "title": "Nome’s Attic separado",
+        "type": "Conteúdo extra"
+      },
+      {
+        "tip": "Vários troféus dependem de ações específicas em cenas curtas. Use checklist para evitar muito cleanup.",
+        "title": "Troféus misc por capítulo",
+        "type": "Checklist"
+      },
+      {
+        "tip": "Referee!, Fly Free, Mono Tones, Merciful Feat e Bully of Bullies são misc importantes da escola.",
+        "title": "Capítulo 2: School",
+        "type": "School"
+      },
+      {
+        "tip": "O Hospital concentra muitos misc: Hunger, X Best Friends, Toys Are For Kids, Popcorn, Objection, Medicine Ball e First Do No Harm.",
+        "title": "Capítulo 3: Hospital",
+        "type": "Hospital"
+      },
+      {
+        "tip": "Use Chapter Select para repetir somente a cena necessária, sem refazer o jogo inteiro.",
+        "title": "Chapter Select",
+        "type": "Cleanup"
+      },
+      {
+        "tip": "Não há troféu de dificuldade, speedrun ou run sem morrer.",
+        "title": "Sem dificuldade",
+        "type": "2/10"
+      },
+      {
+        "tip": "A platina é totalmente offline e single-player. Six é IA, não coop.",
+        "title": "Sem online ou coop",
+        "type": "Single-player"
+      },
+      {
+        "tip": "Após terminar o jogo, use o chapéu final para How Do I Look?.",
+        "title": "Chapéu final",
+        "type": "How Do I Look?"
+      }
+    ],
+    "checklist": [
+      "Conferir 35 troféus e distribuição 1 platina, 3 ouro, 15 prata e 16 bronze.",
+      "Conferir Primetime Content Consumer como platina.",
+      "Conferir onlineRequired, coopRequired e dlcRequired false.",
+      "Conferir hasMissables false, missableCount 0 e filtros Perdíveis, Online, Coop, DLC e Dificuldade em 0.",
+      "Conferir 18 Glitching Remains e distribuição 4/6/4/4 nos Capítulos 1 a 4.",
+      "Conferir No More Remains e o secret ending.",
+      "Conferir Half Hat, Far Ahead e How Do I Look?.",
+      "Conferir que Nome’s Attic, Nome Hat e Mokujin não viraram requisitos da lista base.",
+      "Conferir troféus misc dos Capítulos 1, 2, 3 e 4.",
+      "Conferir Chapter Select e ausência de speedrun ou no death.",
+      "Conferir que Six não inflou Coop.",
+      "Conferir nome oficial em inglês, PT-BR separado e descrição em português nos 35 troféus.",
+      "Conferir roadmap estruturado e ausência de objetos brutos ou labels internas no front.",
+      "Conferir FAQ, decisão rápida, SEO, pontos de atenção, filtros e status entre página e catálogo."
+    ],
+    "faq": [
+      {
+        "answer": "Não há perdíveis permanentes. Chapter Select permite recuperar chapéus, Glitching Remains e troféus misc esquecidos.",
+        "question": "Little Nightmares II tem troféus perdíveis?"
+      },
+      {
+        "answer": "Não. A platina base é totalmente offline.",
+        "question": "Precisa jogar online para platinar?"
+      },
+      {
+        "answer": "Não. O jogo é single-player; Six é controlada pela IA e não conta como coop.",
+        "question": "Precisa de cooperação?"
+      },
+      {
+        "answer": "Não. Nome’s Attic é conteúdo extra e não é necessário para Primetime Content Consumer.",
+        "question": "Precisa de DLC ou Nome’s Attic?"
+      },
+      {
+        "answer": "Uma run com checklist é suficiente. Se esquecer algo, use Chapter Select para cleanup.",
+        "question": "Quantas runs são necessárias?"
+      },
+      {
+        "answer": "Não. Não há troféu de dificuldade.",
+        "question": "A dificuldade afeta troféus?"
+      },
+      {
+        "answer": "Não. Little Nightmares II não exige speedrun nem run sem morrer.",
+        "question": "Existe troféu de speedrun ou no death?"
+      },
+      {
+        "answer": "São 18 no total: 4 no Capítulo 1, 6 no Capítulo 2, 4 no Capítulo 3 e 4 no Capítulo 4.",
+        "question": "Quantos Glitching Remains existem?"
+      },
+      {
+        "answer": "Além do troféu, todos os Glitching Remains liberam o final secreto/secret ending ao completar o jogo.",
+        "question": "O que No More Remains desbloqueia?"
+      },
+      {
+        "answer": "Não trate chapéus extras de DLC ou pré-venda como obrigatórios para a platina base. O guia deve focar nos chapéus necessários da lista base.",
+        "question": "Far Ahead exige chapéus de DLC?"
+      },
+      {
+        "answer": "O Hospital, no Capítulo 3, concentra muitos troféus misc e pode gerar mais cleanup.",
+        "question": "Qual capítulo exige mais atenção?"
+      },
+      {
+        "answer": "Em média, cerca de 6 a 10 horas, dependendo do uso de checklist e do quanto for necessário repetir por Chapter Select.",
+        "question": "Quanto tempo leva para platinar?"
+      }
+    ],
+    "note": "Campos exportados para auditoria. O SQLite atual nao possui colunas nativas para todos esses extras; a importacao preserva o que o banco suporta.",
+    "quickDecision": {
+      "difficulty": "Baixa, cerca de 2/10.",
+      "dlc": "Nome’s Attic não é necessário para a platina base.",
+      "firstAction": "Comece a história usando checklist de Glitching Remains e chapéus por capítulo.",
+      "mainRisk": "18 Glitching Remains, chapéus, troféus misc por capítulo e Chapter Select.",
+      "onlineCoop": "Não exige online nem cooperação.",
+      "risk": "Baixo. O risco é apenas retrabalho por esquecer coletáveis ou ações específicas.",
+      "time": "Curto, cerca de 6 a 10 horas.",
+      "verdict": "Sim. É uma platina curta, fácil e ótima para quem gosta de terror atmosférico e coletáveis simples."
+    },
+    "seo": {
+      "description": "Guia de troféus de Little Nightmares II com roadmap da platina, 18 Glitching Remains, chapéus, Chapter Select, No More Remains, Far Ahead, troféus misc por capítulo e dicas para os 35 troféus.",
+      "keywords": [
+        "Little Nightmares II troféus",
+        "Little Nightmares II platina",
+        "guia Little Nightmares 2",
+        "Little Nightmares 2 trophies",
+        "Primetime Content Consumer",
+        "No More Remains",
+        "Far Ahead",
+        "Glitching Remains",
+        "Little Nightmares II hats",
+        "Little Nightmares II Chapter Select",
+        "Little Nightmares II secret ending",
+        "Little Nightmares II Nome's Attic"
+      ],
+      "metaDescription": "Guia de troféus de Little Nightmares II com roadmap da platina, 18 Glitching Remains, chapéus, Chapter Select, No More Remains, Far Ahead, troféus misc por capítulo e dicas para os 35 troféus.",
+      "ogDescription": "Roadmap PT-BR da platina de Little Nightmares II com 35 troféus, 18 Glitching Remains, chapéus, secret ending e Chapter Select.",
+      "ogTitle": "Little Nightmares II: Guia de Troféus e Platina",
+      "title": "Little Nightmares II: Guia de Troféus e Platina"
+    },
+    "tags": []
+  },
+  "slug": "little-nightmares-ii",
+  "trophies": [
+    {
+      "description": "Obtenha todos os troféus da lista base.",
+      "is_missable": 0,
+      "is_spoiler": 0,
+      "name": "Primetime Content Consumer",
+      "name_pt": "Consumidor de Conteúdo Nobre",
+      "tip": "Complete a história, pegue todos os Glitching Remains, todos os chapéus necessários e faça todas as ações opcionais por capítulo.",
+      "trophy_code": "little_nightmares_ii_primetime_content_consumer",
+      "type": "Platina"
+    },
+    {
+      "description": "Complete The Transmission.",
+      "is_missable": 0,
+      "is_spoiler": 1,
+      "name": "Signal Interruption",
+      "name_pt": "Interrupção do Sinal",
+      "tip": "Troféu de história obtido ao concluir o capítulo final, The Transmission.",
+      "trophy_code": "little_nightmares_ii_signal_interruption",
+      "type": "Ouro"
+    },
+    {
+      "description": "Collect all Glitching Remains.",
+      "is_missable": 0,
+      "is_spoiler": 0,
+      "name": "No More Remains",
+      "name_pt": "Sem Mais Restos",
+      "tip": "Colete os 18 Glitching Remains espalhados pelos capítulos. Use seleção de capítulos para limpar os que faltarem.",
+      "trophy_code": "little_nightmares_ii_no_more_remains",
+      "type": "Ouro"
+    },
+    {
+      "description": "Collect all hats.",
+      "is_missable": 0,
+      "is_spoiler": 0,
+      "name": "Far Ahead",
+      "name_pt": "Bem à Frente",
+      "tip": "Procure os chapéus escondidos em cada capítulo. Alguns ficam fora do caminho principal e alguns troféus opcionais exigem chapéus específicos.",
+      "trophy_code": "little_nightmares_ii_far_ahead",
+      "type": "Ouro"
+    },
+    {
+      "description": "Complete The Wilderness.",
+      "is_missable": 0,
+      "is_spoiler": 0,
+      "name": "Foraged",
+      "name_pt": "Vasculhado",
+      "tip": "Troféu de história obtido ao concluir o primeiro capítulo, The Wilderness.",
+      "trophy_code": "little_nightmares_ii_foraged",
+      "type": "Prata"
+    },
+    {
+      "description": "Complete The School.",
+      "is_missable": 0,
+      "is_spoiler": 0,
+      "name": "Schooled",
+      "name_pt": "Escolarizado",
+      "tip": "Troféu de história obtido ao concluir o segundo capítulo, The School.",
+      "trophy_code": "little_nightmares_ii_schooled",
+      "type": "Prata"
+    },
+    {
+      "description": "Complete The Hospital.",
+      "is_missable": 0,
+      "is_spoiler": 1,
+      "name": "Hospitalised",
+      "name_pt": "Hospitalizado",
+      "tip": "Troféu de história obtido ao concluir o terceiro capítulo, The Hospital.",
+      "trophy_code": "little_nightmares_ii_hospitalised",
+      "type": "Prata"
+    },
+    {
+      "description": "Complete The Pale City.",
+      "is_missable": 0,
+      "is_spoiler": 1,
+      "name": "Paled",
+      "name_pt": "Empalidecido",
+      "tip": "Troféu de história obtido ao concluir o quarto capítulo, The Pale City.",
+      "trophy_code": "little_nightmares_ii_paled",
+      "type": "Prata"
+    },
+    {
+      "description": "Reach the house without dying.",
+      "is_missable": 0,
+      "is_spoiler": 0,
+      "name": "Evasive Prey",
+      "name_pt": "Presa Esquiva",
+      "tip": "No capítulo The Wilderness, atravesse as armadilhas de urso e o trecho da floresta sem morrer. Refaça pelo Chapter Select se necessário.",
+      "trophy_code": "little_nightmares_ii_evasive_prey",
+      "type": "Prata"
+    },
+    {
+      "description": "Hold Six's hand for long enough.",
+      "is_missable": 0,
+      "is_spoiler": 0,
+      "name": "In The Palm Of My Hand",
+      "name_pt": "Na Palma da Minha Mão",
+      "tip": "Segure a mão de Six sempre que possível durante a campanha até acumular o tempo necessário.",
+      "trophy_code": "little_nightmares_ii_in_the_palm_of_my_hand",
+      "type": "Prata"
+    },
+    {
+      "description": "Make popcorn.",
+      "is_missable": 0,
+      "is_spoiler": 0,
+      "name": "Popcorn",
+      "name_pt": "Pipoca",
+      "tip": "No Hospital, leve a espiga de milho até o incinerador e queime-a para preparar pipoca.",
+      "trophy_code": "little_nightmares_ii_popcorn",
+      "type": "Prata"
+    },
+    {
+      "description": "Throw the cheese in the hole.",
+      "is_missable": 0,
+      "is_spoiler": 0,
+      "name": "Objection",
+      "name_pt": "Objeção",
+      "tip": "No Hospital, pegue o queijo na área dos pacientes e jogue-o no buraco da sala secreta próxima.",
+      "trophy_code": "little_nightmares_ii_objection",
+      "type": "Prata"
+    },
+    {
+      "description": "Find all Glitching Remains in the Hospital.",
+      "is_missable": 0,
+      "is_spoiler": 0,
+      "name": "Sick Kids",
+      "name_pt": "Crianças Doentes",
+      "tip": "Explore todas as salas opcionais do terceiro capítulo antes de avançar; se faltar algum, limpe por Chapter Select.",
+      "trophy_code": "little_nightmares_ii_sick_kids",
+      "type": "Prata"
+    },
+    {
+      "description": "Deliver the package.",
+      "is_missable": 0,
+      "is_spoiler": 0,
+      "name": "Post Industrial",
+      "name_pt": "Pós-Industrial",
+      "tip": "Em The Pale City, use o chapéu de carteiro, pegue o pacote na mala e entregue-o pela abertura da porta correta.",
+      "trophy_code": "little_nightmares_ii_post_industrial",
+      "type": "Prata"
+    },
+    {
+      "description": "Break the Lady statue.",
+      "is_missable": 0,
+      "is_spoiler": 0,
+      "name": "Unladylike",
+      "name_pt": "Nada Elegante",
+      "tip": "Em The Pale City, encontre a estátua escondida e jogue-a no chão para quebrá-la.",
+      "trophy_code": "little_nightmares_ii_unladylike",
+      "type": "Prata"
+    },
+    {
+      "description": "Crush the bullies with the bookcase.",
+      "is_missable": 0,
+      "is_spoiler": 0,
+      "name": "Bully of Bullies",
+      "name_pt": "Valentão dos Valentões",
+      "tip": "Na escola, atraia os bullies da sala de aula e derrube a estante sobre eles.",
+      "trophy_code": "little_nightmares_ii_bully_of_bullies",
+      "type": "Prata"
+    },
+    {
+      "description": "Find all Glitching Remains in the School.",
+      "is_missable": 0,
+      "is_spoiler": 0,
+      "name": "School Kids",
+      "name_pt": "Crianças da Escola",
+      "tip": "Verifique salas laterais, passagens escondidas e áreas antes de sair do capítulo da escola.",
+      "trophy_code": "little_nightmares_ii_school_kids",
+      "type": "Prata"
+    },
+    {
+      "description": "Find all Glitching Remains in the Wilderness.",
+      "is_missable": 0,
+      "is_spoiler": 0,
+      "name": "Wild Kids",
+      "name_pt": "Crianças Selvagens",
+      "tip": "No primeiro capítulo, explore cabanas, troncos e caminhos alternativos antes de seguir para a casa.",
+      "trophy_code": "little_nightmares_ii_wild_kids",
+      "type": "Prata"
+    },
+    {
+      "description": "Find all Glitching Remains in the Pale City.",
+      "is_missable": 0,
+      "is_spoiler": 0,
+      "name": "Pale Kids",
+      "name_pt": "Crianças Pálidas",
+      "tip": "Procure apartamentos e áreas escondidas durante o quarto capítulo.",
+      "trophy_code": "little_nightmares_ii_pale_kids",
+      "type": "Prata"
+    },
+    {
+      "description": "See Six in her yellow raincoat.",
+      "is_missable": 0,
+      "is_spoiler": 0,
+      "name": "True Colours",
+      "name_pt": "Cores Verdadeiras",
+      "tip": "Troféu de história obtido durante The School, quando Six encontra sua capa de chuva amarela.",
+      "trophy_code": "little_nightmares_ii_true_colours",
+      "type": "Bronze"
+    },
+    {
+      "description": "Collect half of the hats.",
+      "is_missable": 0,
+      "is_spoiler": 0,
+      "name": "Half Hat",
+      "name_pt": "Meio Chapéu",
+      "tip": "Explore os capítulos iniciais e colete os chapéus escondidos. Virá naturalmente no caminho para Far Ahead.",
+      "trophy_code": "little_nightmares_ii_half_hat",
+      "type": "Bronze"
+    },
+    {
+      "description": "Equip the hat unlocked after completing the game.",
+      "is_missable": 0,
+      "is_spoiler": 1,
+      "name": "How Do I Look?",
+      "name_pt": "Como Estou?",
+      "tip": "Após concluir a campanha, equipe o chapéu especial desbloqueado no menu de chapéus.",
+      "trophy_code": "little_nightmares_ii_how_do_i_look",
+      "type": "Bronze"
+    },
+    {
+      "description": "Burn the toy using the correct hat.",
+      "is_missable": 0,
+      "is_spoiler": 0,
+      "name": "Toys Are For Kids",
+      "name_pt": "Brinquedos São Para Crianças",
+      "tip": "No Hospital, use o chapéu de urso e queime o ursinho no incinerador.",
+      "trophy_code": "little_nightmares_ii_toys_are_for_kids",
+      "type": "Bronze"
+    },
+    {
+      "description": "Get snacks from the vending machine.",
+      "is_missable": 0,
+      "is_spoiler": 0,
+      "name": "Hunger",
+      "name_pt": "Fome",
+      "tip": "No Hospital, interaja várias vezes com a máquina de snacks até o troféu aparecer.",
+      "trophy_code": "little_nightmares_ii_hunger",
+      "type": "Bronze"
+    },
+    {
+      "description": "Take an x-ray with Six.",
+      "is_missable": 0,
+      "is_spoiler": 0,
+      "name": "X Best Friends",
+      "name_pt": "Melhores Amigos de Raio-X",
+      "tip": "No Hospital, segure a mão de Six atrás da tela do raio-x e ative a máquina.",
+      "trophy_code": "little_nightmares_ii_x_best_friends",
+      "type": "Bronze"
+    },
+    {
+      "description": "Make sure the hand stays dead.",
+      "is_missable": 0,
+      "is_spoiler": 0,
+      "name": "...And Stay Dead!",
+      "name_pt": "...E Fique Morta!",
+      "tip": "Após derrotar a mão viva no Hospital, bata nela mais algumas vezes para garantir o troféu.",
+      "trophy_code": "little_nightmares_ii_and_stay_dead",
+      "type": "Bronze"
+    },
+    {
+      "description": "Spare the Doctor.",
+      "is_missable": 0,
+      "is_spoiler": 1,
+      "name": "First Do No Harm",
+      "name_pt": "Primeiro, Não Cause Dano",
+      "tip": "No Hospital, prenda o Doctor no incinerador, mas saia pelo elevador sem ligar o fogo.",
+      "trophy_code": "little_nightmares_ii_first_do_no_harm",
+      "type": "Bronze"
+    },
+    {
+      "description": "Run through the goal with the ball hat.",
+      "is_missable": 0,
+      "is_spoiler": 0,
+      "name": "Referee!",
+      "name_pt": "Árbitro!",
+      "tip": "No pátio da escola, equipe o chapéu de bola e atravesse o gol.",
+      "trophy_code": "little_nightmares_ii_referee",
+      "type": "Bronze"
+    },
+    {
+      "description": "Play the piano.",
+      "is_missable": 0,
+      "is_spoiler": 0,
+      "name": "Mono Tones",
+      "name_pt": "Tons de Mono",
+      "tip": "Na escola, caminhe sobre as teclas do piano suspenso antes de derrubá-lo.",
+      "trophy_code": "little_nightmares_ii_mono_tones",
+      "type": "Bronze"
+    },
+    {
+      "description": "Throw the paper airplane.",
+      "is_missable": 0,
+      "is_spoiler": 0,
+      "name": "Fly Free",
+      "name_pt": "Voe Livre",
+      "tip": "Na escola, pegue o avião de papel no dormitório e arremesse-o pela janela.",
+      "trophy_code": "little_nightmares_ii_fly_free",
+      "type": "Bronze"
+    },
+    {
+      "description": "Defeat the Hunter with the correct hat.",
+      "is_missable": 0,
+      "is_spoiler": 1,
+      "name": "Fair Prey",
+      "name_pt": "Presa Justa",
+      "tip": "No final de The Wilderness, esteja usando o chapéu de caçador/guaxinim ao atirar no Hunter.",
+      "trophy_code": "little_nightmares_ii_fair_prey",
+      "type": "Bronze"
+    },
+    {
+      "description": "Call Six 26 times.",
+      "is_missable": 0,
+      "is_spoiler": 0,
+      "name": "Twenty-Six",
+      "name_pt": "Vinte e Seis",
+      "tip": "Use o botão de chamar Six repetidamente até acumular 26 chamadas.",
+      "trophy_code": "little_nightmares_ii_twenty_six",
+      "type": "Bronze"
+    },
+    {
+      "description": "Throw the medicine ball.",
+      "is_missable": 0,
+      "is_spoiler": 0,
+      "name": "Medicine Ball",
+      "name_pt": "Bola Medicinal",
+      "tip": "No Hospital, jogue a bola medicinal nas mãos que aparecem atrás da porta.",
+      "trophy_code": "little_nightmares_ii_medicine_ball",
+      "type": "Bronze"
+    },
+    {
+      "description": "Open the fridge.",
+      "is_missable": 0,
+      "is_spoiler": 0,
+      "name": "What's In the Box?!",
+      "name_pt": "O Que Tem na Caixa?!",
+      "tip": "Na casa do Hunter, abra a geladeira antes de avançar.",
+      "trophy_code": "little_nightmares_ii_whats_in_the_box",
+      "type": "Bronze"
+    },
+    {
+      "description": "Spare the trapped bully.",
+      "is_missable": 0,
+      "is_spoiler": 0,
+      "name": "Merciful Feat",
+      "name_pt": "Ato de Misericórdia",
+      "tip": "Na escola, não mate o bully com o chapéu de cone. Use o martelo apenas para abrir o caminho.",
+      "trophy_code": "little_nightmares_ii_merciful_feat",
+      "type": "Bronze"
+    }
+  ]
+}

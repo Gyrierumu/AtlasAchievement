@@ -1,0 +1,437 @@
+{
+  "game": {
+    "avoid_if": "Evite se você quer uma platina casual, sem perdíveis ou sem desafio de terminar o jogo praticamente sem margem para erro.",
+    "before_you_start": "Não há seleção de dificuldade. Depois do chefe final, escolha voltar a Fallgrim se ainda houver cleanup na jogada atual.",
+    "best_for": "Recomendado para quem gosta de soulslike curto, denso e desafiador, com uma run restritiva como teste principal.",
+    "cleanup_advice": "Antes da run sem shell, revise secret lore, Bars Tended, Vlas, mushrooms, parries, chefes, armas e troféus situacionais.",
+    "cover_image": "https://cdn.cloudflare.steamstatic.com/steam/apps/1110910/library_600x900.jpg",
+    "coverage_level": "strong",
+    "created_at": "2026-05-09 19:53:25",
+    "difficulty": 6,
+    "difficulty_reason": "A dificuldade 6/10 vem do combate soulslike, da falta de seleção de dificuldade e principalmente da run sem shell/Obsidian Dark Form.",
+    "dlc_scope": "Guia focado nos 26 troféus da lista base. The Virtuous Cycle é conteúdo separado e não é requisito da platina.",
+    "editorial_notes": "",
+    "editorial_review_status": null,
+    "editorial_status": "published",
+    "first_run_advice": "Use a primeira campanha para aprender harden, parry, stamina e padrões dos chefes enquanto coleta shells, armas, lore e itens.",
+    "grind_summary": "O peso está em familiaridade de itens, mushrooms, 50.000 Tar com Vlas, 100 parries, colecionáveis e a run sem shell.",
+    "guide_avoid": null,
+    "guide_best_moment": null,
+    "guide_dlc": null,
+    "guide_grind": null,
+    "guide_ideal": null,
+    "guide_online": null,
+    "guide_runs": null,
+    "image": "https://cdn.cloudflare.steamstatic.com/steam/apps/1110910/header.jpg",
+    "is_verified": 0,
+    "last_reviewed_at": "",
+    "missable": "Há cinco troféus perdíveis ou condicionais de run na lista base: Forever Alone, Life is Suffering, Face Off, Seeker of False Truths e Bars Tended. A platina Platinum não conta como perdível.",
+    "missable_summary": "Planeje Forever Alone, Life is Suffering, Face Off, Seeker of False Truths e Bars Tended antes de avançar demais.",
+    "name": "Mortal Shell",
+    "online_summary": "A platina base é totalmente offline. Não há online, coop ou PS+ obrigatório.",
+    "quality_warnings": "[]",
+    "reviewed_by": "",
+    "runs_summary": "Recomendado: uma campanha normal para shells, lore, itens, bosses e familiaridade, seguida de uma run sem shell em Obsidian Dark Form.",
+    "slug": "mortal-shell",
+    "time": "20-40h",
+    "time_bucket": "medium",
+    "time_max_hours": 40,
+    "time_min_hours": 20,
+    "time_reason": "A faixa de 20-40 horas considera uma campanha normal, cleanup de itens/lore/familiaridade e uma run de desafio sem shell.",
+    "time_sort_hours": 20,
+    "updated_at": "2026-06-27 02:36:58",
+    "verification_note": "Guia revisado para a lista base de 26 troféus; manter sem verified até confirmação manual de nomes PT-BR oficiais e detalhes de itens de Bars Tended.",
+    "verification_status": "review",
+    "walkthrough": null
+  },
+  "redirects": [],
+  "roadmaps": [
+    {
+      "content": "{\"title\":\"Faça a primeira jornada com uma shell principal\",\"focus\":\"Faça a primeira jornada com uma shell principal\",\"objective\":\"Completar a campanha aprendendo o combate, fortalecendo uma shell e coletando itens, lore e equipamentos antes de pensar na run sem shell.\",\"actions\":[\"Escolha uma shell confortável e use a primeira jogada para aprender parry, harden, stamina, resolve e padrões dos chefes.\",\"Encontre as quatro shells e as armas principais disponíveis no jogo base.\",\"Colete itens, materiais de upgrade, secret lore e consumíveis importantes enquanto explora Fallgrim e os templos.\",\"Fortaleça pelo menos uma shell o suficiente para liberar compras úteis com Sester Genessa.\",\"Marque no checklist itens, lore, armas, shells e chefes concluídos.\"],\"warning\":\"Não avance no Seat of Infinity sem pegar os itens e inscrições ligados a Seeker of False Truths e Bars Tended.\",\"result\":\"Campanha base avançada, personagem fortalecido e maior parte dos colecionáveis encaminhada.\"}",
+      "step_order": 1
+    },
+    {
+      "content": "{\"title\":\"Controle os perdíveis antes dos chefes críticos\",\"focus\":\"Controle os perdíveis antes dos chefes críticos\",\"objective\":\"Garantir os troféus que podem exigir nova jogada se forem ignorados no momento certo.\",\"actions\":[\"Tente Face Off contra Hadern no tutorial em uma nova jogada, se ainda não tiver conseguido.\",\"Antes de concluir o Seat of Infinity, colete as inscrições necessárias para Seeker of False Truths.\",\"Antes de concluir o Seat of Infinity, colete os itens necessários para Bars Tended, incluindo os que podem ficar bloqueados na jogada atual.\",\"Mantenha saves e checklist atualizados para saber quais riscos ainda faltam.\",\"Não trate a platina como perdível\",\"marque apenas troféus reais com risco.\"],\"warning\":\"Face Off só pode ser feito no tutorial de uma nova jogada, e parte dos itens/lore do Seat of Infinity pode exigir NG+ se for perdida.\",\"result\":\"Principais riscos de perda controlados antes da limpeza e da run sem shell.\"}",
+      "step_order": 2
+    },
+    {
+      "content": "{\"title\":\"Finalize colecionáveis, familiaridade e gastos\",\"focus\":\"Finalize colecionáveis, familiaridade e gastos\",\"objective\":\"Completar itens, familiaridade, lojas, mushrooms, parries e troféus variados antes da jogada sem shell.\",\"actions\":[\"Trabalhe Bars Tended usando todos os itens necessários até atingir familiaridade completa.\",\"Gaste o Tar necessário na loja de Vlas para Sugar Baby.\",\"Faça progresso em Fun Guy coletando mushrooms durante a exploração.\",\"Use combates seguros para acumular parries rumo a Untarnished.\",\"Resolva troféus variados como Step Goal, Is This a Sparta?, The Good Times are Killing Me, Nailed It, It's a me, The Nihilist e Purrfect.\"],\"warning\":\"\",\"result\":\"Troféus de coleta, familiaridade, loja e ações específicas resolvidos ou quase finalizados.\"}",
+      "step_order": 3
+    },
+    {
+      "content": "{\"title\":\"Derrote chefes e conclua a campanha base\",\"focus\":\"Derrote chefes e conclua a campanha base\",\"objective\":\"Fechar os chefes principais e troféus de progresso sem misturar conteúdo de The Virtuous Cycle com a platina base.\",\"actions\":[\"Derrote Imrod, the Unrepentant para Faded the Fire.\",\"Derrote Tarsus, the First Martyr para Matryr'd the Martyr.\",\"Derrote Crucix, the Twiceborn para Tragic Loss.\",\"Leve as glândulas ao Dark Father/Old Prisoner conforme a progressão exigir.\",\"Derrote The Unchained e conclua a campanha para Crossed the Threshold e Felled the Glandfather.\"],\"warning\":\"Depois do chefe final, escolha voltar a Fallgrim se ainda houver limpeza na jogada atual.\",\"result\":\"Campanha base concluída e chefes principais da lista da platina resolvidos.\"}",
+      "step_order": 4
+    },
+    {
+      "content": "{\"title\":\"Faça a run sem shell em Obsidian Dark Form\",\"focus\":\"Faça a run sem shell em Obsidian Dark Form\",\"objective\":\"Completar a jogada mais difícil combinando Forever Alone e Life is Suffering quando possível.\",\"actions\":[\"Inicie uma nova jogada sem se vincular a nenhuma shell.\",\"Renuncie à humanidade para ativar Obsidian Dark Form.\",\"Use mobilidade, harden, upgrades de arma e rotas seguras para atravessar áreas sem depender de defesa de shell.\",\"Evite interagir com shells para não invalidar Forever Alone.\",\"Finalize a campanha nessa condição para concluir os troféus de desafio.\"],\"warning\":\"Sem shell, o personagem morre com um único golpe; deixe essa etapa para depois de conhecer bem chefes e rotas.\",\"result\":\"Forever Alone e Life is Suffering concluídos, removendo o maior obstáculo da platina.\"}",
+      "step_order": 5
+    },
+    {
+      "content": "{\"title\":\"Faça o cleanup final da platina\",\"focus\":\"Faça o cleanup final da platina\",\"objective\":\"Revisar qualquer troféu restante da lista base e confirmar que DLC não foi tratada como requisito.\",\"actions\":[\"Abra o checklist e revise todos os troféus ainda pendentes.\",\"Use a jogada atual, NG+ ou uma nova run curta para corrigir perdas específicas.\",\"Confirme se Platinum não está marcado como perdível.\",\"Confirme se The Virtuous Cycle está separado da platina base.\",\"Revise flags de online, coop, DLC e perdíveis antes de finalizar o guia.\"],\"warning\":\"Não inclua troféus de The Virtuous Cycle no requisito da platina base.\",\"result\":\"Todos os requisitos da platina base concluídos.\"}",
+      "step_order": 6
+    }
+  ],
+  "schemaVersion": 1,
+  "seedExtras": {
+    "aliases": [],
+    "attentionPoints": [
+      {
+        "tip": "Termine o jogo sem nunca se vincular a uma shell. Use uma campanha ou save limpo; não dependa de um NG+ cujo personagem já tenha shells vinculadas.",
+        "title": "Forever Alone",
+        "type": "Perdível / Risco de run"
+      },
+      {
+        "tip": "Termine em Obsidian Dark Form e combine com Forever Alone. Como o personagem morre com um golpe, deixe para depois de conhecer rotas e chefes.",
+        "title": "Life is Suffering",
+        "type": "Perdível / Obsidian Dark"
+      },
+      {
+        "tip": "Derrote Hadern no tutorial. Se perder a tentativa, inicie uma nova campanha ou save.",
+        "title": "Face Off",
+        "type": "Perdível / Tutorial"
+      },
+      {
+        "tip": "Colete todas as inscrições de secret lore, com atenção especial às três inscrições de Seat of Infinity antes de Crucix.",
+        "title": "Seeker of False Truths",
+        "type": "Perdível / Lore"
+      },
+      {
+        "tip": "Maximize a familiaridade dos itens aplicáveis e pegue Mango e Glimpse of Disdain antes de Crucix; ignorá-los pode exigir NG+.",
+        "title": "Bars Tended",
+        "type": "Perdível / Familiaridade"
+      }
+    ],
+    "checklist": [
+      "Derrotar Hadern no tutorial para Face Off",
+      "Encontrar as quatro shells da lista base",
+      "Encontrar as armas principais e upgrades úteis",
+      "Derrotar Imrod, Tarsus, Crucix e The Unchained",
+      "Entregar glândulas ao Dark Father/Old Prisoner",
+      "Coletar secret lore antes de concluir Seat of Infinity",
+      "Completar familiaridade com os itens necessários para Bars Tended",
+      "Coletar 50 mushrooms para Fun Guy",
+      "Gastar mais de 50.000 Tar com Vlas",
+      "Fazer 100 parries para Untarnished",
+      "Matar inimigo com bear trap",
+      "Chutar inimigo de uma plataforma",
+      "Matar dois inimigos com um disparo da Ballistazooka",
+      "Matar inimigo com hardened plunge",
+      "Renunciar à humanidade para The Nihilist",
+      "Acariciar o gato de Vlas",
+      "Completar a campanha sem se vincular a uma shell",
+      "Completar a campanha em Obsidian Dark Form",
+      "Confirmar que The Virtuous Cycle não está no checklist obrigatório da platina base"
+    ],
+    "faq": [
+      {
+        "answer": "Não. Os 26 troféus da lista base podem ser obtidos offline.",
+        "question": "Mortal Shell tem troféus online?"
+      },
+      {
+        "answer": "Não. A platina é single-player e não exige outro jogador.",
+        "question": "Mortal Shell tem troféus coop?"
+      },
+      {
+        "answer": "Sim. Os cinco são Forever Alone, Life is Suffering, Face Off, Seeker of False Truths e Bars Tended.",
+        "question": "Mortal Shell tem troféus perdíveis?"
+      },
+      {
+        "answer": "Não. Mortal Shell não possui seleção de dificuldade; a nota 6/10 reflete o desafio da platina, especialmente a run sem shell em Obsidian Dark Form.",
+        "question": "A dificuldade afeta os troféus?"
+      },
+      {
+        "answer": "Não. O DLC possui conteúdo e troféus separados e não entra nos 26 troféus da lista base.",
+        "question": "The Virtuous Cycle é necessário?"
+      },
+      {
+        "answer": "Duas: uma campanha normal para coleta, evolução e aprendizado, seguida de uma run sem shell em Obsidian Dark Form.",
+        "question": "Quantas jogadas são recomendadas?"
+      },
+      {
+        "answer": "Sim. Você pode retornar a Fallgrim em vez de entrar direto em NG+, mas deve conferir inscrições e itens sensíveis de Seat of Infinity antes de Crucix.",
+        "question": "Posso fazer cleanup depois do chefe final?"
+      },
+      {
+        "answer": "Combinar Forever Alone e Life is Suffering, pois a run sem shell em Obsidian Dark Form deixa o personagem extremamente vulnerável.",
+        "question": "Qual é o maior desafio da platina?"
+      }
+    ],
+    "note": "Campos exportados para auditoria. O SQLite atual nao possui colunas nativas para todos esses extras; a importacao preserva o que o banco suporta.",
+    "quickDecision": {
+      "firstAction": "Comece aprendendo o combate com uma shell confortável e controle Face Off, Seat of Infinity, lore e itens antes dos pontos críticos.",
+      "recommendation": "Faça uma campanha normal de aprendizado e coleta, depois uma run dedicada combinando Forever Alone com Life is Suffering.",
+      "summary": "Platina curta para o gênero, mas exigente: não pede online, coop ou DLC, porém exige atenção a cinco perdíveis e uma run sem shell."
+    },
+    "seo": {
+      "description": "Roadmap completo da platina de Mortal Shell, com troféus perdíveis, run sem shell, Obsidian Dark Form, colecionáveis, checklist e dicas para evitar replay desnecessário.",
+      "keywords": "Mortal Shell troféus, Mortal Shell platina, Mortal Shell guia, Mortal Shell roadmap, Mortal Shell perdíveis, Mortal Shell Forever Alone, Mortal Shell Life is Suffering, Mortal Shell Obsidian Dark Form, Mortal Shell checklist",
+      "ogDescription": "Roadmap da platina base de Mortal Shell com 26 troféus, cinco perdíveis, run sem shell, Obsidian Dark Form e sem DLC obrigatória.",
+      "ogTitle": "Mortal Shell: guia de troféus e platina | AtlasAchievement",
+      "title": "Mortal Shell: guia de troféus e platina | AtlasAchievement"
+    },
+    "tags": []
+  },
+  "slug": "mortal-shell",
+  "trophies": [
+    {
+      "description": "Obtenha todos os outros troféus da lista base.",
+      "is_missable": 0,
+      "is_spoiler": 0,
+      "name": "Platinum",
+      "name_pt": "",
+      "tip": "Complete os outros 25 troféus da lista base. The Virtuous Cycle não é necessário para a platina.",
+      "trophy_code": "mortal_shell_platinum",
+      "type": "Platina"
+    },
+    {
+      "description": "Termine o jogo sem nunca se vincular a uma shell.",
+      "is_missable": 1,
+      "is_spoiler": 1,
+      "name": "Forever Alone",
+      "name_pt": "",
+      "tip": "Faça uma nova run sem interagir com nenhuma shell. Combine com Life is Suffering quando já conhecer bem rotas e chefes.",
+      "trophy_code": "mortal_shell_forever_alone",
+      "type": "Ouro"
+    },
+    {
+      "description": "Derrote Hadern no tutorial.",
+      "is_missable": 1,
+      "is_spoiler": 0,
+      "name": "Face Off",
+      "name_pt": "",
+      "tip": "Só pode ser feito no tutorial de uma nova campanha. Se perder a tentativa, será preciso iniciar outro save.",
+      "trophy_code": "mortal_shell_face_off",
+      "type": "Ouro"
+    },
+    {
+      "description": "Desbloqueie todo o secret lore.",
+      "is_missable": 1,
+      "is_spoiler": 1,
+      "name": "Seeker of False Truths",
+      "name_pt": "",
+      "tip": "Colete todas as inscrições de secret lore. Dê atenção especial às inscrições de Seat of Infinity antes do chefe da área.",
+      "trophy_code": "mortal_shell_seeker_of_false_truths",
+      "type": "Ouro"
+    },
+    {
+      "description": "Termine o jogo em Obsidian Dark Form.",
+      "is_missable": 1,
+      "is_spoiler": 1,
+      "name": "Life is Suffering",
+      "name_pt": "",
+      "tip": "Renuncie à humanidade e conclua a campanha nessa forma. A rota costuma ser combinada com Forever Alone.",
+      "trophy_code": "mortal_shell_life_is_suffering",
+      "type": "Ouro"
+    },
+    {
+      "description": "Complete Mortal Shell.",
+      "is_missable": 0,
+      "is_spoiler": 1,
+      "name": "Crossed the Threshold",
+      "name_pt": "",
+      "tip": "Derrote o chefe final e escolha concluir a campanha. Se ainda houver limpeza, escolha retornar a Fallgrim antes de entrar em NG+.",
+      "trophy_code": "mortal_shell_crossed_the_threshold",
+      "type": "Ouro"
+    },
+    {
+      "description": "Renuncie à humanidade.",
+      "is_missable": 0,
+      "is_spoiler": 1,
+      "name": "The Nihilist",
+      "name_pt": "",
+      "tip": "Interaja com o altar de renúncia em Fallgrim para assumir Obsidian Dark Form.",
+      "trophy_code": "mortal_shell_the_nihilist",
+      "type": "Ouro"
+    },
+    {
+      "description": "Desperdice sua vida com Baghead.",
+      "is_missable": 0,
+      "is_spoiler": 1,
+      "name": "Brigand Life",
+      "name_pt": "",
+      "tip": "Leve um Roasted Rat e um Superior Moonshine para Baghead em Fallgrim e aceite a proposta dele.",
+      "trophy_code": "mortal_shell_brigand_life",
+      "type": "Prata"
+    },
+    {
+      "description": "Torne-se familiarizado com todos os itens necessários.",
+      "is_missable": 1,
+      "is_spoiler": 0,
+      "name": "Bars Tended",
+      "name_pt": "",
+      "tip": "Aumente a familiaridade dos itens aplicáveis. Itens ligados a Seat of Infinity podem exigir NG+ se forem ignorados.",
+      "trophy_code": "mortal_shell_bars_tended",
+      "type": "Prata"
+    },
+    {
+      "description": "Gaste mais de 50.000 Tar na loja de Vlas.",
+      "is_missable": 0,
+      "is_spoiler": 0,
+      "name": "Sugar Baby",
+      "name_pt": "",
+      "tip": "Deixe para uma fase em que upgrades e recursos principais já estejam encaminhados.",
+      "trophy_code": "mortal_shell_sugar_baby",
+      "type": "Prata"
+    },
+    {
+      "description": "Apare mais de 100 ataques.",
+      "is_missable": 0,
+      "is_spoiler": 0,
+      "name": "Untarnished",
+      "name_pt": "",
+      "tip": "Depois de obter o Tarnished Seal, pratique parries em inimigos seguros até acumular o total.",
+      "trophy_code": "mortal_shell_untarnished",
+      "type": "Prata"
+    },
+    {
+      "description": "Desbloqueie todas as shells do jogo.",
+      "is_missable": 0,
+      "is_spoiler": 0,
+      "name": "You Seem Different...",
+      "name_pt": "",
+      "tip": "Encontre as quatro shells em Fallgrim em um mesmo save. Não faça isso na run dedicada de Forever Alone.",
+      "trophy_code": "mortal_shell_you_seem_different",
+      "type": "Prata"
+    },
+    {
+      "description": "Derrote todos os tipos diferentes de Grisha no jogo.",
+      "is_missable": 0,
+      "is_spoiler": 1,
+      "name": "Different Kinds of Grisha",
+      "name_pt": "",
+      "tip": "Derrote a versão comum, a versão da névoa e Enslaved Grisha antes de encerrar o cleanup.",
+      "trophy_code": "mortal_shell_different_kinds_of_grisha",
+      "type": "Prata"
+    },
+    {
+      "description": "Derrote Imrod, the Unrepentant.",
+      "is_missable": 0,
+      "is_spoiler": 1,
+      "name": "Faded the Fire",
+      "name_pt": "",
+      "tip": "Chefe de Shrine of Ash e um dos portadores de glândula da campanha base.",
+      "trophy_code": "mortal_shell_faded_the_fire",
+      "type": "Prata"
+    },
+    {
+      "description": "Derrote Tarsus, the First Martyr.",
+      "is_missable": 0,
+      "is_spoiler": 1,
+      "name": "Matryr'd the Martyr",
+      "name_pt": "",
+      "tip": "Chefe de Crypt of Martyrs. Aprenda os padrões dele antes de tentar a run sem shell.",
+      "trophy_code": "mortal_shell_martyrd_the_martyr",
+      "type": "Prata"
+    },
+    {
+      "description": "Derrote Crucix, the Twiceborn.",
+      "is_missable": 0,
+      "is_spoiler": 1,
+      "name": "Tragic Loss",
+      "name_pt": "",
+      "tip": "Chefe de Seat of Infinity. Revise lore e itens sensíveis dessa região antes da luta.",
+      "trophy_code": "mortal_shell_tragic_loss",
+      "type": "Prata"
+    },
+    {
+      "description": "Derrote The Unchained.",
+      "is_missable": 0,
+      "is_spoiler": 1,
+      "name": "Felled the Glandfather",
+      "name_pt": "",
+      "tip": "Chefe final da lista base e uma das maiores barreiras na run sem shell.",
+      "trophy_code": "mortal_shell_felled_the_glandfather",
+      "type": "Prata"
+    },
+    {
+      "description": "Mate dois ou mais inimigos com um único disparo da Ballistazooka.",
+      "is_missable": 0,
+      "is_spoiler": 0,
+      "name": "Nailed It",
+      "name_pt": "",
+      "tip": "Compre Tools com Vlas, conserte a Ballistazooka e alinhe inimigos comuns para o disparo.",
+      "trophy_code": "mortal_shell_nailed_it",
+      "type": "Prata"
+    },
+    {
+      "description": "Colete 50 mushrooms.",
+      "is_missable": 0,
+      "is_spoiler": 0,
+      "name": "Fun Guy",
+      "name_pt": "",
+      "tip": "Pegue Weltcaps e Tarspores durante a exploração. Eles reaparecem com o tempo.",
+      "trophy_code": "mortal_shell_fun_guy",
+      "type": "Bronze"
+    },
+    {
+      "description": "Mate um inimigo com uma bear trap.",
+      "is_missable": 0,
+      "is_spoiler": 0,
+      "name": "Step Goal",
+      "name_pt": "",
+      "tip": "Atraia um inimigo comum para uma armadilha e deixe o dano final vir dela.",
+      "trophy_code": "mortal_shell_step_goal",
+      "type": "Bronze"
+    },
+    {
+      "description": "Encontre sua primeira shell.",
+      "is_missable": 0,
+      "is_spoiler": 0,
+      "name": "Flesh and Instinct",
+      "name_pt": "",
+      "tip": "Pegue o primeiro corpo na área inicial após o tutorial. Evite isso apenas no save da run sem shell.",
+      "trophy_code": "mortal_shell_flesh_and_instinct",
+      "type": "Bronze"
+    },
+    {
+      "description": "Mate um inimigo chutando-o de uma plataforma.",
+      "is_missable": 0,
+      "is_spoiler": 0,
+      "name": "Is This a Sparta?",
+      "name_pt": "",
+      "tip": "Desbloqueie o chute de uma shell e empurre um inimigo comum para fora de uma borda.",
+      "trophy_code": "mortal_shell_is_this_a_sparta",
+      "type": "Bronze"
+    },
+    {
+      "description": "Leve uma glândula ao Dark Father.",
+      "is_missable": 0,
+      "is_spoiler": 1,
+      "name": "Bring the Glands Back to Me",
+      "name_pt": "",
+      "tip": "Após derrotar um dos três chefes principais, entregue a glândula ao Old Prisoner em Fallgrim Tower.",
+      "trophy_code": "mortal_shell_bring_the_glands_back_to_me",
+      "type": "Bronze"
+    },
+    {
+      "description": "Toque com um brigand.",
+      "is_missable": 0,
+      "is_spoiler": 0,
+      "name": "The Good Times are Killing Me",
+      "name_pt": "",
+      "tip": "Use um lute perto de um brigand tocando música em Fallgrim.",
+      "trophy_code": "mortal_shell_the_good_times_are_killing_me",
+      "type": "Bronze"
+    },
+    {
+      "description": "Mate um inimigo com um hardened plunge.",
+      "is_missable": 0,
+      "is_spoiler": 0,
+      "name": "It's a me",
+      "name_pt": "",
+      "tip": "Use harden enquanto cai para matar um inimigo com o impacto endurecido.",
+      "trophy_code": "mortal_shell_its_a_me",
+      "type": "Bronze"
+    },
+    {
+      "description": "Acaricie o gato de Vlas.",
+      "is_missable": 0,
+      "is_spoiler": 0,
+      "name": "Purrfect",
+      "name_pt": "",
+      "tip": "Interaja com o gato perto de Vlas, no topo de Fallgrim Tower.",
+      "trophy_code": "mortal_shell_purrfect",
+      "type": "Bronze"
+    }
+  ]
+}

@@ -1,0 +1,766 @@
+{
+  "game": {
+    "avoid_if": "Evite divulgar como platina leve: não é indicada para quem não quer grind de centenas de horas, RNG de coroas, troféus online/multiplayer, Guild Cards ou repetição intensa de monstros.",
+    "before_you_start": "Não misture Iceborne: a expansão tem platina própria. A platina do jogo base é uma maratona, depende de troféus online/multiplayer, RNG de coroas e várias centenas de caçadas.",
+    "best_for": "Ideal para quem quer uma platina longa de action RPG e aceita coop, domínio de arma, caçadas repetidas, endgame, online/multiplayer e checklist de monstros.",
+    "cleanup_advice": "Depois da história, combine HR100, investigações temperadas, Elder Dragons, pesquisas e coroas. Deixe o farm pesado de coroas para quando tiver equipamentos fortes e rotas eficientes.",
+    "cover_image": "https://cdn.cloudflare.steamstatic.com/steam/apps/582010/library_600x900.jpg",
+    "coverage_level": "strong",
+    "created_at": "2026-05-09 19:53:55",
+    "difficulty": 4,
+    "difficulty_reason": "A dificuldade mecânica é moderada para um action RPG cooperativo, mas a platina exige consistência em caçadas de High Rank/endgame, familiaridade com armas e muita tolerância a RNG de coroas e vida endêmica.",
+    "dlc_scope": "Guia focado somente nos 50 troféus do jogo base Monster Hunter: World. Monster Hunter World: Iceborne tem lista própria com platina própria e não foi misturado nesta entrada.",
+    "editorial_notes": "",
+    "editorial_review_status": null,
+    "editorial_status": "published",
+    "first_run_advice": "Escolha uma arma confortável, avance pela campanha, aprenda captura, montaria, pesca, Palico Gadgets e investigações. Comece a capturar monstros e a fazer multiplayer cedo para diluir o grind.",
+    "grind_summary": "O peso real está no grind longo de 250-400h: coroas miniatura e gigantes, Hunter Rank 100, 500 monstros grandes, 50 monstros temperados, 50 Elder Dragons, 50 capturas, 50 arenas, pesquisa de monstros e vida endêmica rara.",
+    "guide_avoid": null,
+    "guide_best_moment": null,
+    "guide_dlc": null,
+    "guide_grind": null,
+    "guide_ideal": null,
+    "guide_online": null,
+    "guide_runs": null,
+    "image": "https://cdn.cloudflare.steamstatic.com/steam/apps/582010/header.jpg",
+    "is_verified": 0,
+    "last_reviewed_at": "",
+    "missable": "Não há troféus permanentemente perdíveis. Todos os requisitos do jogo base podem ser feitos após a história, mas coroas, vida endêmica rara, Hunter Rank e troféus online exigem muito grind e RNG.",
+    "missable_summary": "Nada é permanentemente perdível na lista base. A maior atenção é acompanhar coroas, pesquisas, capturas, Guild Cards e progresso online para não deixar todo o grind para o fim.",
+    "name": "Monster Hunter: World",
+    "online_summary": "A lista base exige online/multiplayer para SOS Flare, responder a SOS, quests multiplayer, 100 quests em multiplayer e Guild Cards. Iceborne não é necessária para a platina base e tem lista própria.",
+    "quality_warnings": "[]",
+    "reviewed_by": "",
+    "runs_summary": "Uma progressão completa da campanha seguida de muito endgame: Hunter Rank 100, coroas pequenas e grandes, pesquisa de monstros, vida endêmica rara, arenas, investigações temperadas e multiplayer.",
+    "slug": "monster-hunter-world",
+    "time": "250-400h",
+    "time_bucket": "long",
+    "time_max_hours": 400,
+    "time_min_hours": 250,
+    "time_reason": "A faixa de 250-400+ horas considera campanha, High Rank, HR100, coroas pequenas e grandes, pesquisa, vida endêmica rara, arenas, monstros temperados, Elder Dragons e troféus online.",
+    "time_sort_hours": 250,
+    "updated_at": "2026-06-27 02:36:59",
+    "verification_note": "Precisa revisão editorial final: escopo base/Iceborne e online/multiplayer registrados; revisar coroas, eventos e grind antes de selo verificado.",
+    "verification_status": "review",
+    "walkthrough": null
+  },
+  "redirects": [
+    "monster-hunter-world-iceborne"
+  ],
+  "roadmaps": [
+    {
+      "content": "{\"title\":\"Avance campanha e capture cedo\",\"focus\":\"\",\"objective\":\"Comece pela campanha principal para aprender armas, captura, montaria, pesca, churrasco, Palico Gadgets, investigações e missões opcionais. Não foque em coroas no começo, mas capture monstros sempre que possível para adiantar Capture Pro.\",\"actions\":[],\"warning\":\"\",\"result\":\"\"}",
+      "step_order": 1
+    },
+    {
+      "content": "{\"title\":\"Libere High Rank e pesquisas\",\"focus\":\"\",\"objective\":\"Avance para High Rank, libere monstros de 7 e 8 estrelas, crie armas e armaduras de alta raridade, estabeleça acampamentos, complete opcionais, investigações e arenas, e comece a maximizar pesquisas de monstros.\",\"actions\":[],\"warning\":\"\",\"result\":\"\"}",
+      "step_order": 2
+    },
+    {
+      "content": "{\"title\":\"Resolva online e Guild Cards cedo\",\"focus\":\"\",\"objective\":\"Adiante os troféus online: dispare um SOS Flare, responda a 10 SOS, complete 1 quest multiplayer, avance nas 100 quests multiplayer e colete mais de 50 Guild Cards antes de deixar todo o online para o fim.\",\"actions\":[],\"warning\":\"\",\"result\":\"\"}",
+      "step_order": 3
+    },
+    {
+      "content": "{\"title\":\"Organize regiões e favores\",\"focus\":\"\",\"objective\":\"No endgame, suba até Hunter Rank 100, complete 50 caçadas de monstros temperados, mate 50 Elder Dragons, cace 500 monstros grandes e combine esses objetivos com materiais, pesquisas, capturas e equipamentos.\",\"actions\":[],\"warning\":\"\",\"result\":\"\"}",
+      "step_order": 4
+    },
+    {
+      "content": "{\"title\":\"Capture vida endêmica rara\",\"focus\":\"\",\"objective\":\"Capture vida endêmica rara: Petricanths, Downy Crake, Bristly Crake e Prism Hercudrome. Use Ghillie Mantle quando necessário e alterne mapas/horários para resetar spawns raros.\",\"actions\":[],\"warning\":\"\",\"result\":\"\"}",
+      "step_order": 5
+    },
+    {
+      "content": "{\"title\":\"Farme coroas miniatura e gigantes\",\"focus\":\"\",\"objective\":\"Faça o farm principal de coroas miniatura e gigantes de quase todos os monstros elegíveis do jogo base. Use investigações favoráveis, eventos com chance aumentada quando disponíveis e controle manual das coroas já obtidas.\",\"actions\":[],\"warning\":\"\",\"result\":\"\"}",
+      "step_order": 6
+    },
+    {
+      "content": "{\"title\":\"Organize regiões e favores\",\"focus\":\"\",\"objective\":\"Na limpeza final, complete arenas, investigações, opcionais, Guild Cards, capturas, Elder Dragons, vida endêmica e qualquer coroa pendente. Confirme que a checklist contém apenas os 50 troféus do jogo base, sem Iceborne.\",\"actions\":[],\"warning\":\"\",\"result\":\"\"}",
+      "step_order": 7
+    }
+  ],
+  "schemaVersion": 1,
+  "seedExtras": {
+    "aliases": [],
+    "attentionPoints": [
+      {
+        "tip": "Gold crowns e RNG podem levar a conclusão para além de 300 horas.",
+        "title": "Platina extremamente longa",
+        "type": "250–400h"
+      },
+      {
+        "tip": "Nenhum troféu da lista base é perdível; tudo pode ser concluído no endgame e cleanup.",
+        "title": "Sem perdíveis",
+        "type": "Endgame livre"
+      },
+      {
+        "tip": "HELP!, I Am the Reinforcements, Hunters United, Hunters United Forever e Spreading the Word exigem recursos online.",
+        "title": "Multiplayer online obrigatório",
+        "type": "Cinco troféus"
+      },
+      {
+        "tip": "Troque ou receba mais de 50 Guild Cards por meio da interação online com outros jogadores.",
+        "title": "Guild Cards",
+        "type": "Spreading the Word"
+      },
+      {
+        "tip": "Use SOS Flare, responda a dez chamados e complete uma e depois cem quests multiplayer.",
+        "title": "SOS e quests multiplayer",
+        "type": "Quatro troféus"
+      },
+      {
+        "tip": "Miniature Crown Master e Giant Crown Master normalmente concentram a maior parte do tempo da platina.",
+        "title": "Crowns são o maior gargalo",
+        "type": "RNG"
+      },
+      {
+        "tip": "Os troféus finais exigem coroas douradas miniatura e gigantes; silver crowns não são suficientes.",
+        "title": "Silver crown não conta",
+        "type": "Gold crowns"
+      },
+      {
+        "tip": "A duração varia muito conforme a sorte com os tamanhos dos monstros elegíveis.",
+        "title": "RNG pode passar de 300h",
+        "type": "Crown hunting"
+      },
+      {
+        "tip": "Investigações favoráveis e event quests podem elevar as chances de crown quando disponíveis.",
+        "title": "Investigações e event quests",
+        "type": "Farm de crowns"
+      },
+      {
+        "tip": "Petricanths, Crakes e Prism Hercudrome podem exigir horário correto, reset de mapa e várias tentativas.",
+        "title": "Vida endêmica rara",
+        "type": "Ghillie Mantle"
+      },
+      {
+        "tip": "Nowhere to Go but Up usa arena quests do Gathering Hub, não as missões comuns de Special Arena.",
+        "title": "Arena do Gathering Hub",
+        "type": "50 arena quests"
+      },
+      {
+        "tip": "Iceborne não é requisito de Conqueror of the New World e não entra nos 50 troféus deste guia.",
+        "title": "Iceborne separado",
+        "type": "Lista e platina próprias"
+      },
+      {
+        "tip": "A nota 4/10 é editorial; nenhuma dificuldade selecionável interfere no desbloqueio de troféus.",
+        "title": "Sem troféu de dificuldade",
+        "type": "Filtro zerado"
+      },
+      {
+        "tip": "Una crown hunting a HR100, 500 monstros, capturas, Elder Dragons, temperados, investigações e pesquisa.",
+        "title": "Combine os grandes grinds",
+        "type": "Menos retrabalho"
+      }
+    ],
+    "checklist": [
+      "Conferir 50 troféus e distribuição 1 platina, 2 ouro, 11 prata e 36 bronze.",
+      "Conferir Conqueror of the New World como platina.",
+      "Conferir onlineRequired e coopRequired true; dlcRequired false.",
+      "Conferir hasMissables false, missableCount 0 e filtro Perdíveis 0.",
+      "Conferir filtros Online 5, Coop 3, DLC 0 e Dificuldade 0.",
+      "Conferir HELP! como Online e SOS.",
+      "Conferir I Am the Reinforcements como Online, SOS, Multiplayer e Coop.",
+      "Conferir Hunters United e Hunters United Forever como Online, Multiplayer e Coop.",
+      "Conferir Spreading the Word como Online e Guild Cards.",
+      "Conferir Miniature Crown Master e Giant Crown Master como gold crowns e RNG.",
+      "Conferir que silver crown não conta para Giant Crown Master.",
+      "Conferir Monster Ph.D., Established Hunter, Monster Hunter e Elderslayer.",
+      "Conferir Capture Pro, Nowhere to Go but Up e investigations.",
+      "Conferir A Living Fossil, Snuggles for All, Bristles for All e Rainbow Bright.",
+      "Conferir New World Settler, First Friends e Bosom Buddies.",
+      "Conferir Commissioned Work, Bourgeois Hunter, Impregnable Defense e Power is Everything.",
+      "Conferir Iceborne separado e ausência de DLC obrigatória.",
+      "Conferir ausência de perdíveis e de troféu de dificuldade.",
+      "Conferir nomes EN, PT-BR separado e descrições em português nos 50 troféus.",
+      "Conferir roadmap estruturado sem objetos brutos ou labels internas no front.",
+      "Conferir FAQ, decisão rápida, SEO, pontos de atenção, filtros e status entre página e catálogo."
+    ],
+    "faq": [
+      {
+        "answer": "Não. Nenhum troféu da lista base é perdível; tudo pode ser feito no endgame e cleanup.",
+        "question": "Monster Hunter: World tem troféus perdíveis?"
+      },
+      {
+        "answer": "Sim. A platina exige troféus online ligados a SOS, quests multiplayer e Guild Cards.",
+        "question": "Precisa jogar online para platinar?"
+      },
+      {
+        "answer": "Sim, há troféus de multiplayer online: HELP!, I Am the Reinforcements, Hunters United, Hunters United Forever e Spreading the Word. A campanha e a maior parte da lista podem ser feitas solo; não há coop local obrigatório.",
+        "question": "Precisa de cooperação ou multiplayer?"
+      },
+      {
+        "answer": "Não. Iceborne tem lista e platina próprias e não é necessário para Conqueror of the New World.",
+        "question": "Precisa de Iceborne?"
+      },
+      {
+        "answer": "Não. Monster Hunter: World não possui troféus ligados a dificuldade selecionável.",
+        "question": "A dificuldade afeta troféus?"
+      },
+      {
+        "answer": "Cerca de 250 a 400 horas, podendo passar de 300 horas conforme a sorte com as gold crowns.",
+        "question": "Quanto tempo leva para platinar?"
+      },
+      {
+        "answer": "Miniature Crown Master e Giant Crown Master, devido ao RNG das gold crowns.",
+        "question": "Qual é o maior gargalo?"
+      },
+      {
+        "answer": "Não. Miniature Crown Master e Giant Crown Master exigem gold crowns.",
+        "question": "Silver crown conta para os troféus finais?"
+      },
+      {
+        "answer": "No Monster Field Guide, com apoio do Ecological Research, comparando os menores e maiores tamanhos registrados.",
+        "question": "Onde vejo quais crowns faltam?"
+      },
+      {
+        "answer": "Sim. Campanha e maior parte da lista aceitam jogo solo, mas cinco troféus exigem recursos de multiplayer online.",
+        "question": "Posso fazer a maior parte solo?"
+      },
+      {
+        "answer": "Sim, algumas ajudam no farm de crowns e materiais quando disponíveis, sem tornar Iceborne obrigatório.",
+        "question": "Event quests ajudam?"
+      },
+      {
+        "answer": "HR100, 500 monstros grandes, 50 Elder Dragons, 50 capturas, 50 monstros temperados, investigações, materiais e pesquisa.",
+        "question": "O que devo combinar com crown hunting?"
+      }
+    ],
+    "note": "Campos exportados para auditoria. O SQLite atual nao possui colunas nativas para todos esses extras; a importacao preserva o que o banco suporta.",
+    "quickDecision": {
+      "difficulty": "Moderada, cerca de 4/10; nenhuma dificuldade selecionável afeta troféus.",
+      "dlc": "Iceborne possui lista e platina próprias e não é necessário.",
+      "firstAction": "Avance a campanha capturando monstros e comece cedo SOS, Guild Cards, investigações e pesquisas.",
+      "mainRisk": "Gold crowns, RNG, cinco troféus online, Guild Cards e grandes acumulativos.",
+      "onlineCoop": "Multiplayer online obrigatório em cinco troféus; sem coop local obrigatório e campanha majoritariamente solo.",
+      "risk": "Sem perda permanente, mas com altíssimo risco de tempo e repetição.",
+      "time": "Muito longa, entre 250 e 400 horas, podendo passar de 300h.",
+      "verdict": "É uma platina extremamente longa, indicada para quem aceita multiplayer online, endgame e RNG pesado."
+    },
+    "seo": {
+      "description": "Guia de troféus de Monster Hunter: World com roadmap da platina, 50 troféus, online obrigatório, multiplayer, gold crowns, HR100, endemic life e Iceborne separado.",
+      "keywords": [
+        "Monster Hunter World troféus",
+        "Monster Hunter World platina",
+        "guia Monster Hunter World",
+        "Monster Hunter World trophy guide",
+        "Conqueror of the New World",
+        "Monster Hunter World crowns",
+        "Miniature Crown Master",
+        "Giant Crown Master",
+        "Monster Hunter World gold crowns",
+        "Monster Hunter World HR100",
+        "Monster Hunter World Guild Cards",
+        "Monster Hunter World SOS",
+        "Monster Hunter World Iceborne separado"
+      ],
+      "metaDescription": "Guia de troféus de Monster Hunter: World com roadmap da platina, 50 troféus, online obrigatório, multiplayer, gold crowns, Miniature Crown Master, Giant Crown Master, HR100, endemic life e Iceborne separado.",
+      "ogDescription": "Roadmap PT-BR da platina base de Monster Hunter: World com online, multiplayer, gold crowns, HR100, endemic life e Iceborne separado.",
+      "ogTitle": "Monster Hunter: World: Guia de Troféus e Platina",
+      "title": "Monster Hunter: World: Guia de Troféus e Platina"
+    },
+    "tags": []
+  },
+  "slug": "monster-hunter-world",
+  "trophies": [
+    {
+      "description": "Unlock all trophies for Monster Hunter: World.",
+      "is_missable": 0,
+      "is_spoiler": 0,
+      "name": "Conqueror of the New World",
+      "name_pt": "Conquistador do Novo Mundo",
+      "tip": "Conquiste todos os troféus do jogo base. A expansão não é necessária para esta platina.",
+      "trophy_code": "monster_hunter_world_conqueror_of_the_new_world",
+      "type": "Platina"
+    },
+    {
+      "description": "Obtain a miniature crown for almost every monster in your hunting log.",
+      "is_missable": 0,
+      "is_spoiler": 0,
+      "name": "Miniature Crown Master",
+      "name_pt": "Mestre das Coroas Miniatura",
+      "tip": "Um dos maiores grinds da platina. Use investigações com boas condições e eventos com chance aumentada de coroas quando disponíveis.",
+      "trophy_code": "monster_hunter_world_miniature_crown_master",
+      "type": "Ouro"
+    },
+    {
+      "description": "Obtain a giant crown for almost every monster in your hunting log.",
+      "is_missable": 0,
+      "is_spoiler": 0,
+      "name": "Giant Crown Master",
+      "name_pt": "Mestre das Coroas Gigantes",
+      "tip": "Exige coroas grandes de quase todos os monstros elegíveis. Priorize investigações de High Rank com múltiplas recompensas, menos tempo ou menos desmaios.",
+      "trophy_code": "monster_hunter_world_giant_crown_master",
+      "type": "Ouro"
+    },
+    {
+      "description": "Solve the mystery of the Elder Crossing.",
+      "is_missable": 0,
+      "is_spoiler": 1,
+      "name": "The Sapphire Star",
+      "name_pt": "A Estrela de Safira",
+      "tip": "Troféu de história obtido ao concluir a campanha principal do jogo base.",
+      "trophy_code": "monster_hunter_world_the_sapphire_star",
+      "type": "Prata"
+    },
+    {
+      "description": "Capture a fish known as “the living fossil.”",
+      "is_missable": 0,
+      "is_spoiler": 0,
+      "name": "A Living Fossil",
+      "name_pt": "Um Fóssil Vivo",
+      "tip": "Capture o Petricanths, peixe raro encontrado principalmente em Rotten Vale. Pode exigir várias tentativas por RNG.",
+      "trophy_code": "monster_hunter_world_a_living_fossil",
+      "type": "Prata"
+    },
+    {
+      "description": "Capture a fluffy, snuggly creature.",
+      "is_missable": 0,
+      "is_spoiler": 0,
+      "name": "Snuggles for All",
+      "name_pt": "Carinho Para Todos",
+      "tip": "Capture o Downy Crake. Use Ghillie Mantle e procure em monstros herbívoros como Aptonoth ou Apceros.",
+      "trophy_code": "monster_hunter_world_snuggles_for_all",
+      "type": "Prata"
+    },
+    {
+      "description": "Capture a stiff, bristly creature.",
+      "is_missable": 0,
+      "is_spoiler": 0,
+      "name": "Bristles for All",
+      "name_pt": "Cerdas Para Todos",
+      "tip": "Capture o Bristly Crake em Rotten Vale. Use Ghillie Mantle para não assustar a criatura.",
+      "trophy_code": "monster_hunter_world_bristles_for_all",
+      "type": "Prata"
+    },
+    {
+      "description": "Capture a creature that glitters like a rainbow.",
+      "is_missable": 0,
+      "is_spoiler": 0,
+      "name": "Rainbow Bright",
+      "name_pt": "Brilho de Arco-Íris",
+      "tip": "Capture o Prism Hercudrome durante amanhecer ou entardecer. Verifique árvores em Ancient Forest ou outras regiões.",
+      "trophy_code": "monster_hunter_world_rainbow_bright",
+      "type": "Prata"
+    },
+    {
+      "description": "Research everything about almost every monster.",
+      "is_missable": 0,
+      "is_spoiler": 0,
+      "name": "Monster Ph.D.",
+      "name_pt": "PhD em Monstros",
+      "tip": "Maximize a pesquisa de quase todos os monstros grandes do jogo base coletando rastros, caçando e capturando repetidamente.",
+      "trophy_code": "monster_hunter_world_monster_phd",
+      "type": "Prata"
+    },
+    {
+      "description": "Hunt 50 tempered monsters.",
+      "is_missable": 0,
+      "is_spoiler": 0,
+      "name": "Indomitable",
+      "name_pt": "Indomável",
+      "tip": "Complete 50 investigações de monstros temperados em High Rank. Combine com o grind de coroas e Hunter Rank.",
+      "trophy_code": "monster_hunter_world_indomitable",
+      "type": "Prata"
+    },
+    {
+      "description": "Obtain a miniature crown for 10 or more monsters in your hunting log.",
+      "is_missable": 0,
+      "is_spoiler": 0,
+      "name": "Miniature Crown Collector",
+      "name_pt": "Colecionador de Coroas Miniatura",
+      "tip": "Etapa intermediária rumo ao Miniature Crown Master. Mantenha controle manual das coroas já obtidas.",
+      "trophy_code": "monster_hunter_world_miniature_crown_collector",
+      "type": "Prata"
+    },
+    {
+      "description": "Obtain a giant crown for 10 or more monsters in your hunting log.",
+      "is_missable": 0,
+      "is_spoiler": 0,
+      "name": "Giant Crown Collector",
+      "name_pt": "Colecionador de Coroas Gigantes",
+      "tip": "Etapa intermediária rumo ao Giant Crown Master. Foque em monstros com eventos ou investigações favoráveis.",
+      "trophy_code": "monster_hunter_world_giant_crown_collector",
+      "type": "Prata"
+    },
+    {
+      "description": "Capture 50 monsters.",
+      "is_missable": 0,
+      "is_spoiler": 0,
+      "name": "Capture Pro",
+      "name_pt": "Profissional da Captura",
+      "tip": "Sempre que possível, capture monstros em vez de matá-los. Comece este progresso desde a campanha.",
+      "trophy_code": "monster_hunter_world_capture_pro",
+      "type": "Prata"
+    },
+    {
+      "description": "Hunt 500 large monsters.",
+      "is_missable": 0,
+      "is_spoiler": 0,
+      "name": "Monster Hunter",
+      "name_pt": "Caçador de Monstros",
+      "tip": "Virá durante o grind de coroas, Hunter Rank 100, pesquisas e materiais. Não tente farmar isoladamente no começo.",
+      "trophy_code": "monster_hunter_world_monster_hunter",
+      "type": "Prata"
+    },
+    {
+      "description": "Earn the right to take on two-star assignments.",
+      "is_missable": 0,
+      "is_spoiler": 0,
+      "name": "Welcome to the New World",
+      "name_pt": "Bem-vindo ao Novo Mundo",
+      "tip": "Troféu de história obtido no início da campanha.",
+      "trophy_code": "monster_hunter_world_welcome_to_the_new_world",
+      "type": "Bronze"
+    },
+    {
+      "description": "Earn the right to take on three-star assignments.",
+      "is_missable": 0,
+      "is_spoiler": 0,
+      "name": "Nothing Stops This Commission",
+      "name_pt": "Nada Para Esta Comissão",
+      "tip": "Troféu de história obtido ao avançar nas designações principais.",
+      "trophy_code": "monster_hunter_world_nothing_stops_this_commission",
+      "type": "Bronze"
+    },
+    {
+      "description": "Earn the right to take on four-star assignments.",
+      "is_missable": 0,
+      "is_spoiler": 0,
+      "name": "Defender of Astera",
+      "name_pt": "Defensor de Astera",
+      "tip": "Continue a campanha principal para liberar missões de 4 estrelas.",
+      "trophy_code": "monster_hunter_world_defender_of_astera",
+      "type": "Bronze"
+    },
+    {
+      "description": "Earn the right to take on five-star assignments.",
+      "is_missable": 0,
+      "is_spoiler": 0,
+      "name": "Into the Deep",
+      "name_pt": "Rumo às Profundezas",
+      "tip": "Troféu de progresso da campanha.",
+      "trophy_code": "monster_hunter_world_into_the_deep",
+      "type": "Bronze"
+    },
+    {
+      "description": "Successfully guide Zorah Magdaros.",
+      "is_missable": 0,
+      "is_spoiler": 1,
+      "name": "Death Begets Life",
+      "name_pt": "A Morte Gera Vida",
+      "tip": "Troféu de história obtido durante a sequência de Zorah Magdaros.",
+      "trophy_code": "monster_hunter_world_death_begets_life",
+      "type": "Bronze"
+    },
+    {
+      "description": "Earn the right to take on seven-star assignments.",
+      "is_missable": 0,
+      "is_spoiler": 0,
+      "name": "The Empress of the Highlands",
+      "name_pt": "A Imperatriz das Terras Altas",
+      "tip": "Avance para High Rank e continue as missões principais.",
+      "trophy_code": "monster_hunter_world_the_empress_of_the_highlands",
+      "type": "Bronze"
+    },
+    {
+      "description": "Earn the right to take on eight-star assignments.",
+      "is_missable": 0,
+      "is_spoiler": 1,
+      "name": "One Shall Stand, One Shall Fall",
+      "name_pt": "Um Ficará de Pé, Outro Cairá",
+      "tip": "Troféu de história obtido ao chegar à reta final da campanha.",
+      "trophy_code": "monster_hunter_world_one_shall_stand_one_shall_fall",
+      "type": "Bronze"
+    },
+    {
+      "description": "Complete 50 optional quests.",
+      "is_missable": 0,
+      "is_spoiler": 0,
+      "name": "The Hunter’s Life for Me",
+      "name_pt": "A Vida de Caçador É Para Mim",
+      "tip": "Faça missões opcionais liberadas por NPCs, progresso da história e entregas. Existem mais de 50 disponíveis.",
+      "trophy_code": "monster_hunter_world_the_hunters_life_for_me",
+      "type": "Bronze"
+    },
+    {
+      "description": "Complete your first investigation.",
+      "is_missable": 0,
+      "is_spoiler": 0,
+      "name": "An Inquisitive Mind",
+      "name_pt": "Uma Mente Inquisitiva",
+      "tip": "Aceite uma investigação no Resource Center e conclua a missão correspondente.",
+      "trophy_code": "monster_hunter_world_an_inquisitive_mind",
+      "type": "Bronze"
+    },
+    {
+      "description": "Complete 50 investigations.",
+      "is_missable": 0,
+      "is_spoiler": 0,
+      "name": "The Franchise Hunter",
+      "name_pt": "O Caçador da Franquia",
+      "tip": "Complete investigações ao longo da campanha e do endgame. Combine com farm de materiais e coroas.",
+      "trophy_code": "monster_hunter_world_the_franchise_hunter",
+      "type": "Bronze"
+    },
+    {
+      "description": "Complete your first arena quest.",
+      "is_missable": 0,
+      "is_spoiler": 0,
+      "name": "Step into the Arena",
+      "name_pt": "Entre na Arena",
+      "tip": "Entre no Gathering Hub e complete uma missão de arena.",
+      "trophy_code": "monster_hunter_world_step_into_the_arena",
+      "type": "Bronze"
+    },
+    {
+      "description": "Complete 50 arena quests.",
+      "is_missable": 0,
+      "is_spoiler": 0,
+      "name": "Nowhere to Go but Up",
+      "name_pt": "Agora É Só Subir",
+      "tip": "Faça 50 missões de arena no Gathering Hub. Pode ser repetitivo, então intercale com outros grinds.",
+      "trophy_code": "monster_hunter_world_nowhere_to_go_but_up",
+      "type": "Bronze"
+    },
+    {
+      "description": "Establish five camps.",
+      "is_missable": 0,
+      "is_spoiler": 0,
+      "name": "New World Settler",
+      "name_pt": "Colono do Novo Mundo",
+      "tip": "Encontre locais de acampamento nos mapas e complete as entregas necessárias no Resource Center.",
+      "trophy_code": "monster_hunter_world_new_world_settler",
+      "type": "Bronze"
+    },
+    {
+      "description": "Escape the Jagras pack by hiding in some shrubs.",
+      "is_missable": 0,
+      "is_spoiler": 0,
+      "name": "The Art of Camouflage",
+      "name_pt": "A Arte da Camuflagem",
+      "tip": "Troféu de história obtido no começo do jogo ao se esconder dos Jagras.",
+      "trophy_code": "monster_hunter_world_the_art_of_camouflage",
+      "type": "Bronze"
+    },
+    {
+      "description": "Catch your first fish.",
+      "is_missable": 0,
+      "is_spoiler": 0,
+      "name": "Angling for a Bite",
+      "name_pt": "Pescando uma Mordida",
+      "tip": "Use a vara de pesca em qualquer ponto de pesca disponível.",
+      "trophy_code": "monster_hunter_world_angling_for_a_bite",
+      "type": "Bronze"
+    },
+    {
+      "description": "Cook your first well-done steak.",
+      "is_missable": 0,
+      "is_spoiler": 0,
+      "name": "Mmm, So Tasty!",
+      "name_pt": "Hmmm, Que Delícia!",
+      "tip": "Use o BBQ Spit com carne crua e acerte o tempo para preparar um Well-done Steak.",
+      "trophy_code": "monster_hunter_world_mmm_so_tasty",
+      "type": "Bronze"
+    },
+    {
+      "description": "Mount your first monster.",
+      "is_missable": 0,
+      "is_spoiler": 0,
+      "name": "The Bigger They Are…",
+      "name_pt": "Quanto Maiores Eles São...",
+      "tip": "Ataque um monstro grande no ar, normalmente pulando de uma elevação, para iniciar a montaria.",
+      "trophy_code": "monster_hunter_world_the_bigger_they_are",
+      "type": "Bronze"
+    },
+    {
+      "description": "Obtain 100,000 research points.",
+      "is_missable": 0,
+      "is_spoiler": 0,
+      "name": "Commissioned Work",
+      "name_pt": "Trabalho Comissionado",
+      "tip": "Pontos de pesquisa vêm de rastros, coletas especiais e bounties. O progresso é cumulativo.",
+      "trophy_code": "monster_hunter_world_commissioned_work",
+      "type": "Bronze"
+    },
+    {
+      "description": "Possess 1,000,000 zenny.",
+      "is_missable": 0,
+      "is_spoiler": 0,
+      "name": "Bourgeois Hunter",
+      "name_pt": "Caçador Burguês",
+      "tip": "Acumule 1 milhão de zenny ao mesmo tempo. No endgame, venda materiais excedentes se precisar acelerar.",
+      "trophy_code": "monster_hunter_world_bourgeois_hunter",
+      "type": "Bronze"
+    },
+    {
+      "description": "Obtain five highly rare pieces of armor.",
+      "is_missable": 0,
+      "is_spoiler": 0,
+      "name": "Impregnable Defense",
+      "name_pt": "Defesa Impenetrável",
+      "tip": "Crie 5 peças de armadura de alta raridade, geralmente com materiais de Elder Dragons.",
+      "trophy_code": "monster_hunter_world_impregnable_defense",
+      "type": "Bronze"
+    },
+    {
+      "description": "Obtain five highly rare weapons.",
+      "is_missable": 0,
+      "is_spoiler": 0,
+      "name": "Power is Everything",
+      "name_pt": "Poder É Tudo",
+      "tip": "Crie ou melhore 5 armas de alta raridade. Combine com o farm de Elder Dragons e monstros de High Rank.",
+      "trophy_code": "monster_hunter_world_power_is_everything",
+      "type": "Bronze"
+    },
+    {
+      "description": "Move into an upgraded room.",
+      "is_missable": 0,
+      "is_spoiler": 0,
+      "name": "Movin’ On Up",
+      "name_pt": "Subindo na Vida",
+      "tip": "Após progredir na campanha, vá ao seu quarto em Astera e escolha mudar para um quarto melhor.",
+      "trophy_code": "monster_hunter_world_movin_on_up",
+      "type": "Bronze"
+    },
+    {
+      "description": "Befriend your first Tailraider.",
+      "is_missable": 0,
+      "is_spoiler": 0,
+      "name": "First Friends",
+      "name_pt": "Primeiros Amigos",
+      "tip": "Em expedições, encontre Palicos/Tailraiders no mapa e interaja para fazer amizade.",
+      "trophy_code": "monster_hunter_world_first_friends",
+      "type": "Bronze"
+    },
+    {
+      "description": "Become fully proficient with any Palico Gadget.",
+      "is_missable": 0,
+      "is_spoiler": 0,
+      "name": "Bosom Buddies",
+      "name_pt": "Grandes Companheiros",
+      "tip": "Use qualquer gadget do Palico até chegar ao nível máximo de proficiência.",
+      "trophy_code": "monster_hunter_world_bosom_buddies",
+      "type": "Bronze"
+    },
+    {
+      "description": "Hunt your first tempered monster.",
+      "is_missable": 0,
+      "is_spoiler": 0,
+      "name": "Temper Temper",
+      "name_pt": "Temperado Pela Primeira Vez",
+      "tip": "Desbloqueie investigações temperadas em High Rank coletando rastros azuis e complete uma caçada.",
+      "trophy_code": "monster_hunter_world_temper_temper",
+      "type": "Bronze"
+    },
+    {
+      "description": "Record your first miniature crown in your hunting log.",
+      "is_missable": 0,
+      "is_spoiler": 0,
+      "name": "Miniature Crown",
+      "name_pt": "Coroa Miniatura",
+      "tip": "Derrote ou capture um monstro em tamanho pequeno o suficiente para registrar uma coroa miniatura.",
+      "trophy_code": "monster_hunter_world_miniature_crown",
+      "type": "Bronze"
+    },
+    {
+      "description": "Record your first giant crown in your hunting log.",
+      "is_missable": 0,
+      "is_spoiler": 0,
+      "name": "Giant Crown",
+      "name_pt": "Coroa Gigante",
+      "tip": "Derrote ou capture um monstro grande o bastante para registrar uma coroa gigante.",
+      "trophy_code": "monster_hunter_world_giant_crown",
+      "type": "Bronze"
+    },
+    {
+      "description": "Capture your first monster.",
+      "is_missable": 0,
+      "is_spoiler": 0,
+      "name": "Capture Novice",
+      "name_pt": "Novato da Captura",
+      "tip": "Enfraqueça um monstro até ele mancar, prenda-o em uma armadilha e use Tranq Bombs.",
+      "trophy_code": "monster_hunter_world_capture_novice",
+      "type": "Bronze"
+    },
+    {
+      "description": "Slay 50 elder dragons.",
+      "is_missable": 0,
+      "is_spoiler": 1,
+      "name": "Elderslayer",
+      "name_pt": "Matador de Dragões Anciões",
+      "tip": "Cace Elder Dragons no endgame. Kirin, Nergigante, Teostra, Kushala Daora, Vaal Hazak e Xeno’jiiva contam; Zorah Magdaros não é morto.",
+      "trophy_code": "monster_hunter_world_elderslayer",
+      "type": "Bronze"
+    },
+    {
+      "description": "Hunt 100 large monsters.",
+      "is_missable": 0,
+      "is_spoiler": 0,
+      "name": "Monster Slayer",
+      "name_pt": "Matador de Monstros",
+      "tip": "Virá naturalmente no caminho para Monster Hunter e Hunter Rank 100.",
+      "trophy_code": "monster_hunter_world_monster_slayer",
+      "type": "Bronze"
+    },
+    {
+      "description": "Fire an SOS flare for the first time.",
+      "is_missable": 0,
+      "is_spoiler": 0,
+      "name": "HELP!",
+      "name_pt": "SOCORRO!",
+      "tip": "Durante uma quest ou expedição online, dispare um SOS Flare pelo menu.",
+      "trophy_code": "monster_hunter_world_help",
+      "type": "Bronze"
+    },
+    {
+      "description": "Respond to an SOS flare, and help complete 10 quests.",
+      "is_missable": 0,
+      "is_spoiler": 0,
+      "name": "I Am the Reinforcements",
+      "name_pt": "Eu Sou os Reforços",
+      "tip": "Use o quadro de quests para responder a SOS e complete 10 missões ajudando outros jogadores.",
+      "trophy_code": "monster_hunter_world_i_am_the_reinforcements",
+      "type": "Bronze"
+    },
+    {
+      "description": "Complete a quest via multiplayer.",
+      "is_missable": 0,
+      "is_spoiler": 0,
+      "name": "Hunters United",
+      "name_pt": "Caçadores Unidos",
+      "tip": "Complete qualquer quest com outro jogador.",
+      "trophy_code": "monster_hunter_world_hunters_united",
+      "type": "Bronze"
+    },
+    {
+      "description": "Complete 100 quests via multiplayer.",
+      "is_missable": 0,
+      "is_spoiler": 0,
+      "name": "Hunters United Forever",
+      "name_pt": "Caçadores Unidos Para Sempre",
+      "tip": "Faça 100 quests em multiplayer. Comece cedo para diluir o grind ao longo da platina.",
+      "trophy_code": "monster_hunter_world_hunters_united_forever",
+      "type": "Bronze"
+    },
+    {
+      "description": "Collect over 50 Guild Cards.",
+      "is_missable": 0,
+      "is_spoiler": 0,
+      "name": "Spreading the Word",
+      "name_pt": "Espalhando a Palavra",
+      "tip": "Troque Guild Cards com outros jogadores online. Pode ser acelerado com amigos ou sessões públicas.",
+      "trophy_code": "monster_hunter_world_spreading_the_word",
+      "type": "Bronze"
+    },
+    {
+      "description": "Reach hunter rank 100.",
+      "is_missable": 0,
+      "is_spoiler": 0,
+      "name": "Established Hunter",
+      "name_pt": "Caçador Estabelecido",
+      "tip": "Após a campanha, continue caçando monstros grandes, fazendo investigações e eventos para subir até HR 100.",
+      "trophy_code": "monster_hunter_world_established_hunter",
+      "type": "Bronze"
+    }
+  ]
+}

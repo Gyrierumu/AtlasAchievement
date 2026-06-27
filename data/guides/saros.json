@@ -1,0 +1,609 @@
+{
+  "game": {
+    "avoid_if": "Evite se você não curte repetir runs, aprender padrões de chefes ou fazer desafios situacionais de armas e combate.",
+    "before_you_start": "Saros é tratado como guia próprio, com rota baseada em runs, domínio de combate, upgrades permanentes, Nightmare Gates, objetivos acumulativos, epílogo e cleanup, sem online, coop ou DLC obrigatórios.",
+    "best_for": "Ideal para quem gosta de roguelite de ação com runs curtas, chefes, upgrades permanentes e desafios de execução.",
+    "cleanup_advice": "Depois da campanha/epílogo, foque em Nightmare Gates, armas, 33 expedições com modificadores, objetivos cumulativos, desafios situacionais e bioma sem dano.",
+    "cover_image": "/assets/games/saros/cover.png",
+    "coverage_level": "strong",
+    "created_at": "2026-05-16 23:21:09",
+    "difficulty": 5,
+    "difficulty_reason": "A dificuldade estimada fica em 5/10: a lista pede consistência em runs, chefes, Nightmare Gates, um bioma sem dano relevante e desafios de armas.",
+    "dlc_scope": "DLC fora da platina base. Digital Deluxe, cosméticos, acesso antecipado, expansões futuras e extras ficam separados da platina base.",
+    "editorial_notes": "",
+    "editorial_review_status": "verified",
+    "editorial_status": "published",
+    "first_run_advice": "Use as primeiras runs para aprender movimentação, padrões de inimigos e chefes, armas, upgrades permanentes, salas especiais e objetivos acumulativos antes de mirar no cleanup.",
+    "grind_summary": "O grind principal está em 33 expedições bem-sucedidas com Carcosan Modifiers, 1.995 inimigos, armas/variantes, Halcyon, upgrades e desafios de combate.",
+    "guide_avoid": null,
+    "guide_best_moment": null,
+    "guide_dlc": null,
+    "guide_grind": null,
+    "guide_ideal": null,
+    "guide_online": null,
+    "guide_runs": null,
+    "image": "/assets/games/saros/hero.png",
+    "is_verified": 1,
+    "last_reviewed_at": "2026-05-21",
+    "missable": "Não há troféus perdíveis reais na lista base. A lista pode ser concluída com runs adicionais e cleanup, sem bloquear a platina por ordem errada.",
+    "missable_summary": "Sem perdíveis reais na lista base. Troféus situacionais, bosses e objetivos de combate devem ser tratados como cleanup de runs, não como perda permanente.",
+    "name": "Saros",
+    "online_summary": "Não há online obrigatório para a platina base. A página oficial descreve Saros como jogo single-player, então coop e multiplayer não entram como requisito de platina.",
+    "quality_warnings": "[]",
+    "reviewed_by": "AtlasAchievement editorial",
+    "runs_summary": "Campanha/runs principais + cleanup de bosses, Nightmare Gates, armas, desafios de combate e objetivos cumulativos.",
+    "slug": "saros",
+    "time": "20-30h",
+    "time_bucket": "medium",
+    "time_max_hours": 30,
+    "time_min_hours": 20,
+    "time_reason": "A faixa de 20-30 horas considera campanha, epílogo, bosses, 7 Nightmare Gates, 33 expedições com modificadores, objetivos cumulativos e cleanup de armas/desafios.",
+    "time_sort_hours": 30,
+    "updated_at": "2026-06-27 02:37:03",
+    "verification_note": "Guia revisado editorialmente para a platina base de Saros, com 45 troféus, distribuição 1/2/16/26, sem perdíveis definitivos, sem online obrigatório, sem coop obrigatório e DLC fora da platina base.",
+    "verification_status": "verified",
+    "walkthrough": ""
+  },
+  "redirects": [],
+  "roadmaps": [
+    {
+      "content": "{\"title\":\"Aprenda as runs e fortaleça a base\",\"focus\":\"Primeiras runs / aprendizado\",\"objective\":\"Usar as primeiras tentativas para entender combate, movimentação, ritmo dos biomas, upgrades e padrões dos chefes.\",\"actions\":[\"Avance sem tentar limpar tudo na primeira run.\",\"Priorize sobrevivência, mobilidade e upgrades permanentes.\",\"Teste armas, habilidades e modificadores para encontrar uma build confortável.\",\"Observe padrões de inimigos e chefes antes de focar em troféus específicos.\"],\"warning\":\"\",\"result\":\"Base de combate criada e progresso inicial estabilizado.\"}",
+      "step_order": 1
+    },
+    {
+      "content": "{\"title\":\"Avance a campanha e desbloqueie sistemas\",\"focus\":\"Campanha / progressão\",\"objective\":\"Progredir pelas áreas principais enquanto libera sistemas, recursos e opções que facilitam as runs futuras.\",\"actions\":[\"Foque em chegar cada vez mais longe nas runs principais.\",\"Use recursos obtidos para fortalecer o personagem entre tentativas.\",\"Desbloqueie sistemas de upgrade conforme ficarem disponíveis.\",\"Marque no checklist qualquer troféu de história, boss ou sistema concluído.\"],\"warning\":\"\",\"result\":\"Campanha encaminhada e ferramentas principais liberadas.\"}",
+      "step_order": 2
+    },
+    {
+      "content": "{\"title\":\"Derrote chefes e complete objetivos de progressão\",\"focus\":\"Chefes / história\",\"objective\":\"Concluir os principais marcos de progressão e reduzir pendências ligadas a bosses e áreas.\",\"actions\":[\"Aprenda os padrões dos chefes antes de tentar desafios secundários.\",\"Use builds consistentes para avançar por biomas mais difíceis.\",\"Priorize objetivos de história e progressão principal.\",\"Volte a áreas anteriores quando estiver mais forte, se o jogo permitir.\"],\"warning\":\"\",\"result\":\"Principais chefes vencidos e rota de platina mais clara.\"}",
+      "step_order": 3
+    },
+    {
+      "content": "{\"title\":\"Trabalhe coletáveis, upgrades e objetivos longos\",\"focus\":\"Coletáveis / upgrades\",\"objective\":\"Fechar troféus ligados a coleta, recursos, melhorias permanentes e objetivos de médio/longo prazo.\",\"actions\":[\"Revise o checklist de coletáveis e recursos por área.\",\"Complete upgrades permanentes ou sistemas de progressão exigidos pelos troféus.\",\"Separe runs de farm das runs focadas em chefes.\",\"Use o checklist para reduzir retrabalho entre runs e separar coleta, upgrades e objetivos acumulativos.\"],\"warning\":\"\",\"result\":\"Coletáveis, recursos e upgrades avançados antes do cleanup final.\"}",
+      "step_order": 4
+    },
+    {
+      "content": "{\"title\":\"Complete desafios e troféus situacionais\",\"focus\":\"Desafios / combate\",\"objective\":\"Resolver troféus de ações específicas, desafios de combate, condições especiais e pendências que não vieram naturalmente.\",\"actions\":[\"Revise troféus situacionais no checklist.\",\"Faça runs focadas em requisitos específicos de arma, habilidade, dano, esquiva ou boss.\",\"Não classifique como perdível algo que possa ser repetido depois.\",\"Ajuste build e upgrades para facilitar desafios restantes.\"],\"warning\":\"\",\"result\":\"Pendências específicas reduzidas e lista pronta para revisão final.\"}",
+      "step_order": 5
+    },
+    {
+      "content": "{\"title\":\"Cleanup final da platina\",\"focus\":\"Checklist final\",\"objective\":\"Conferir todos os troféus da lista base sem misturar rede, dupla, DLC ou conteúdo futuro.\",\"actions\":[\"Revise história, bosses, coletáveis, upgrades, desafios e troféus situacionais.\",\"Confirme que nenhum requisito de rede ou dupla entrou na rota da platina base.\",\"Confirme que DLCs ou extras não foram contados como platina base.\",\"Finalize qualquer pendência usando replay, pós-jogo ou runs adicionais, se disponível.\"],\"warning\":\"\",\"result\":\"Lista base concluída e platina pronta.\"}",
+      "step_order": 6
+    }
+  ],
+  "schemaVersion": 1,
+  "seedExtras": {
+    "aliases": [],
+    "attentionPoints": [],
+    "checklist": [
+      "Confirmar os 45 troféus da lista base e a distribuição 1 platina, 2 ouro, 16 prata e 26 bronze.",
+      "Avançar pelas primeiras runs aprendendo combate, movimentação, escudo, parry, Overdrive e upgrades permanentes.",
+      "Concluir atos, epílogo e principais marcos de história/progressão.",
+      "Derrotar os Overlords de Shattered Rise, Ancient Depths, Shattered Descent, Blighted Marsh, Desecrated Fortress, Acolyte's Haven, Cathedral e Yellow Shore.",
+      "Entrar na Banyan Tree e completar todos os encontros internos exigidos.",
+      "Entrar e concluir todos os 7 Nightmare Gates pelo menos uma vez.",
+      "Desbloquear armas principais, Power Weapons, Traits e Variants necessários.",
+      "Trabalhar objetivos cumulativos: 1.995 hostis, 2.021 projéteis absorvidos, 70 Halcyon, 20 Integrity Augments e 33 expedições com Carcosan Modifiers.",
+      "Fazer desafios situacionais de Handcannons, Rifles, Shotguns, Chakrams, Crossbows e Power Weapons.",
+      "Reservar runs dedicadas para Untouchable, Vincible, Fatal Triptych, War Within e Fall From Grace.",
+      "Revisar o cleanup final sem marcar online, coop, DLC ou conteúdo futuro como obrigatório."
+    ],
+    "faq": [
+      {
+        "answer": "Não há perdíveis definitivos na lista base. Alguns objetivos podem exigir uma run específica, boa execução ou planejamento, mas devem ser tratados como risco de run, dificuldade ou cleanup quando puderem ser tentados novamente.",
+        "question": "Saros tem troféus perdíveis?"
+      },
+      {
+        "answer": "Não. A platina base não exige troféus online obrigatórios.",
+        "question": "Saros precisa de online para platinar?"
+      },
+      {
+        "answer": "Não. A platina base não exige coop obrigatório.",
+        "question": "Saros tem coop obrigatório?"
+      },
+      {
+        "answer": "O tempo depende do domínio das runs, chefes, upgrades permanentes, coletáveis, desafios e cleanup. Use o roadmap para separar campanha, progressão, objetivos acumulativos e limpeza final.",
+        "question": "Quanto tempo leva para platinar Saros?"
+      },
+      {
+        "answer": "A dificuldade vem de execução, sobrevivência, leitura de padrões, chefes, objetivos de run e domínio dos sistemas. O guia trata desafios repetíveis como risco de run/dificuldade, não como perdíveis definitivos.",
+        "question": "Qual a dificuldade da platina?"
+      },
+      {
+        "answer": "Não. DLCs ou extras ficam fora da platina base.",
+        "question": "Saros exige DLC para platina?"
+      },
+      {
+        "answer": "Sim. Pendências de armas, desafios, Nightmare Gates e objetivos cumulativos entram melhor em runs adicionais depois que a base de combate estiver mais estável.",
+        "question": "Dá para limpar pendências depois da campanha?"
+      },
+      {
+        "answer": "Não conte com Chapter Select tradicional para organizar a platina. Planeje por runs, checklist e cleanup final, usando qualquer retorno de área apenas quando o próprio jogo permitir.",
+        "question": "Saros tem chapter select ou replay de áreas?"
+      },
+      {
+        "answer": "Sim. Como roguelite de ação, a platina depende de várias runs para progressão, bosses, recursos, modificadores, armas e desafios situacionais.",
+        "question": "A platina depende de múltiplas runs?"
+      },
+      {
+        "answer": "Sim. Este guia está Verificado e revisado editorialmente para a platina base.",
+        "question": "O guia está verificado?"
+      },
+      {
+        "answer": "Não. Mesmo que possa lembrar outros roguelites de ação, o guia trata Saros como jogo próprio, com roadmap, checklist e alertas específicos da sua lista.",
+        "question": "Saros é Returnal 2?"
+      }
+    ],
+    "note": "Campos exportados para auditoria. O SQLite atual nao possui colunas nativas para todos esses extras; a importacao preserva o que o banco suporta.",
+    "quickDecision": {
+      "coopRequired": "Não",
+      "difficulty": "5/10",
+      "dlcRequired": "Não",
+      "firstAction": "Avance pelas primeiras runs aprendendo combate, movimentação, upgrades permanentes e padrões dos chefes antes de tentar limpar tudo.",
+      "mainAttention": "A platina deve focar em domínio das runs, chefes, coletáveis, upgrades e cleanup, sem tratar online, coop ou DLC como obrigatórios.",
+      "missables": "Não",
+      "onlineRequired": "Não",
+      "runs": "campanha/runs principais + cleanup",
+      "time": "20-30h"
+    },
+    "seo": {
+      "canonical": "https://atlasachievement.com.br/jogo/saros",
+      "description": "Guia de platina de Saros em português, com tempo estimado, dificuldade, troféus, roadmap, checklist, coletáveis, bosses e dicas para a platina.",
+      "title": "Saros: guia de platina, troféus e roadmap | AtlasAchievement"
+    },
+    "tags": []
+  },
+  "slug": "saros",
+  "trophies": [
+    {
+      "description": "Domine Carcosa e obtenha todos os troféus de SAROS.",
+      "is_missable": 0,
+      "is_spoiler": 0,
+      "name": "The Sun Is Forever",
+      "name_pt": "O sol é para sempre",
+      "tip": "A platina libera ao concluir todos os outros 44 troféus da lista base.",
+      "trophy_code": "saros-the-sun-is-forever",
+      "type": "Platina"
+    },
+    {
+      "description": "Derrote o Overlord de Shattered Rise.",
+      "is_missable": 0,
+      "is_spoiler": 1,
+      "name": "Prophet",
+      "name_pt": "Profeta",
+      "tip": "Chefe do primeiro bioma; foque em aprender padrões antes de buscar desafios extras.",
+      "trophy_code": "saros-prophet",
+      "type": "Prata"
+    },
+    {
+      "description": "Derrote o Overlord de Ancient Depths.",
+      "is_missable": 0,
+      "is_spoiler": 1,
+      "name": "Bastion",
+      "name_pt": "Bastião",
+      "tip": "Chefe do segundo bioma; continue investindo em sobrevivência e upgrades permanentes.",
+      "trophy_code": "saros-bastion",
+      "type": "Bronze"
+    },
+    {
+      "description": "Derrote o Overlord de Shattered Descent.",
+      "is_missable": 0,
+      "is_spoiler": 1,
+      "name": "Rhabdom",
+      "name_pt": "Rabdoma",
+      "tip": "Chefe do terceiro bioma; use uma build estável antes de tentar objetivos paralelos.",
+      "trophy_code": "saros-rhabdom",
+      "type": "Bronze"
+    },
+    {
+      "description": "Derrote o Overlord de Blighted Marsh.",
+      "is_missable": 0,
+      "is_spoiler": 1,
+      "name": "Legion",
+      "name_pt": "Legião",
+      "tip": "Chefe do quarto bioma; trate como marco de progressão principal.",
+      "trophy_code": "saros-legion",
+      "type": "Bronze"
+    },
+    {
+      "description": "Derrote o Overlord de Desecrated Fortress.",
+      "is_missable": 0,
+      "is_spoiler": 1,
+      "name": "Architect",
+      "name_pt": "Arquiteta",
+      "tip": "Chefe do quinto bioma; volte ao cleanup depois de liberar mais recursos.",
+      "trophy_code": "saros-architect",
+      "type": "Prata"
+    },
+    {
+      "description": "Derrote o Overlord de Acolyte's Haven.",
+      "is_missable": 0,
+      "is_spoiler": 1,
+      "name": "Shepherd",
+      "name_pt": "Pastora",
+      "tip": "Chefe do sexto bioma; priorize consistência e controle de dano.",
+      "trophy_code": "saros-shepherd",
+      "type": "Prata"
+    },
+    {
+      "description": "Derrote o Overlord de Cathedral.",
+      "is_missable": 0,
+      "is_spoiler": 1,
+      "name": "Priestess",
+      "name_pt": "Sacerdotisa",
+      "tip": "Chefe de progressão; mantenha upgrades e armas confortáveis para chegar inteiro à luta.",
+      "trophy_code": "saros-priestess",
+      "type": "Prata"
+    },
+    {
+      "description": "Derrote o Overlord de Yellow Shore.",
+      "is_missable": 0,
+      "is_spoiler": 1,
+      "name": "King",
+      "name_pt": "Rei",
+      "tip": "Marco importante do fim da rota; deixe desafios mais técnicos para depois.",
+      "trophy_code": "saros-king",
+      "type": "Prata"
+    },
+    {
+      "description": "Complete todos os requisitos do epílogo e derrote o King.",
+      "is_missable": 0,
+      "is_spoiler": 1,
+      "name": "Let Go",
+      "name_pt": "Desapegue",
+      "tip": "Siga os objetivos liberados após os créditos e finalize o epílogo.",
+      "trophy_code": "saros-let-go",
+      "type": "Ouro"
+    },
+    {
+      "description": "Complete o Ato 1.",
+      "is_missable": 0,
+      "is_spoiler": 1,
+      "name": "Never Let Go",
+      "name_pt": "Nunca desapegue",
+      "tip": "Troféu de progressão da campanha.",
+      "trophy_code": "saros-never-let-go",
+      "type": "Bronze"
+    },
+    {
+      "description": "Complete o Ato 2.",
+      "is_missable": 0,
+      "is_spoiler": 1,
+      "name": "Into Yellow",
+      "name_pt": "Ao Amarelo",
+      "tip": "Troféu de progressão da campanha.",
+      "trophy_code": "saros-into-yellow",
+      "type": "Bronze"
+    },
+    {
+      "description": "Complete o Ato 3.",
+      "is_missable": 0,
+      "is_spoiler": 1,
+      "name": "The Blazing Throne",
+      "name_pt": "O Trono Fulgurante",
+      "tip": "Troféu de progressão da campanha.",
+      "trophy_code": "saros-the-blazing-throne",
+      "type": "Bronze"
+    },
+    {
+      "description": "Entre na Banyan Tree pela primeira vez.",
+      "is_missable": 0,
+      "is_spoiler": 1,
+      "name": "Strange Is The Night",
+      "name_pt": "Estranha é a noite",
+      "tip": "Libera ao acessar esse conteúdo pela primeira vez.",
+      "trophy_code": "saros-strange-is-the-night",
+      "type": "Bronze"
+    },
+    {
+      "description": "Complete todos os encontros dentro da Banyan Tree.",
+      "is_missable": 0,
+      "is_spoiler": 1,
+      "name": "Shattered Glass",
+      "name_pt": "Vidro estilhaçado",
+      "tip": "Volte preparado e limpe todos os encontros internos exigidos.",
+      "trophy_code": "saros-shattered-glass",
+      "type": "Prata"
+    },
+    {
+      "description": "Entre e conclua todos os 7 Nightmare Gates pelo menos uma vez.",
+      "is_missable": 0,
+      "is_spoiler": 0,
+      "name": "Nightmare Strands",
+      "name_pt": "Limiar do Pesadelo",
+      "tip": "Deixe para quando sua build e seus upgrades estiverem mais consistentes.",
+      "trophy_code": "saros-nightmare-strands",
+      "type": "Ouro"
+    },
+    {
+      "description": "Desbloqueie todas as Main Weapons e Power Weapons e derrote 25 hostis com cada uma.",
+      "is_missable": 0,
+      "is_spoiler": 0,
+      "name": "Full Arsenal",
+      "name_pt": "Arsenal completo",
+      "tip": "Faça progresso por arma ao longo das runs para evitar grind concentrado no fim.",
+      "trophy_code": "saros-full-arsenal",
+      "type": "Prata"
+    },
+    {
+      "description": "Elimine 1.995 hostis comuns.",
+      "is_missable": 0,
+      "is_spoiler": 0,
+      "name": "Bullet Paradise",
+      "name_pt": "Tiros em todas as direções",
+      "tip": "Objetivo cumulativo; deve vir naturalmente durante runs e cleanup.",
+      "trophy_code": "saros-bullet-paradise",
+      "type": "Prata"
+    },
+    {
+      "description": "Use Carcosan Modifiers para iniciar e sobreviver a 33 expedições.",
+      "is_missable": 0,
+      "is_spoiler": 0,
+      "name": "Carcosan Cartographer",
+      "name_pt": "Cartógrafo carcosano",
+      "tip": "Use modificadores cedo e com frequência para diluir o grind.",
+      "trophy_code": "saros-carcosan-cartographer",
+      "type": "Bronze"
+    },
+    {
+      "description": "Desbloqueie e utilize todos os Traits e Variants de uma arma.",
+      "is_missable": 0,
+      "is_spoiler": 0,
+      "name": "Soltari R&D",
+      "name_pt": "Pesquisa e Desenvolvimento da Soltari",
+      "tip": "Escolha uma arma confortável e foque em explorar todas as variações dela.",
+      "trophy_code": "saros-soltari-rd",
+      "type": "Prata"
+    },
+    {
+      "description": "Absorva 2.021 projéteis usando o Shield.",
+      "is_missable": 0,
+      "is_spoiler": 0,
+      "name": "Break The Cycle",
+      "name_pt": "Quebre o ciclo",
+      "tip": "Use o escudo com frequência durante runs normais para acelerar o acumulado.",
+      "trophy_code": "saros-break-the-cycle",
+      "type": "Prata"
+    },
+    {
+      "description": "Colete 20 Integrity Augments.",
+      "is_missable": 0,
+      "is_spoiler": 0,
+      "name": "Reinforced Carapace",
+      "name_pt": "Proteção reforçada",
+      "tip": "Priorize melhorias de sobrevivência quando aparecerem.",
+      "trophy_code": "saros-reinforced-carapace",
+      "type": "Prata"
+    },
+    {
+      "description": "Colete 70 Halcyon.",
+      "is_missable": 0,
+      "is_spoiler": 0,
+      "name": "Eclipse's Gift",
+      "name_pt": "Dádiva do eclipse",
+      "tip": "Objetivo cumulativo; mantenha o foco em exploração e sobrevivência.",
+      "trophy_code": "saros-eclipses-gift",
+      "type": "Prata"
+    },
+    {
+      "description": "Encontre e derrote 10 hostis Alpha.",
+      "is_missable": 0,
+      "is_spoiler": 0,
+      "name": "Carcosan Conqueror",
+      "name_pt": "Conquistador de Carcosa",
+      "tip": "Objetivo de progressão/combate que deve avançar durante runs mais longas.",
+      "trophy_code": "saros-carcosan-conqueror",
+      "type": "Bronze"
+    },
+    {
+      "description": "Use o Shield para absorver 3 barras de Power e depois derrote um hostil com uma Power Weapon.",
+      "is_missable": 0,
+      "is_spoiler": 0,
+      "name": "Catch And Release",
+      "name_pt": "Capture e libere",
+      "tip": "Carregue as barras com o escudo e finalize um inimigo fraco com Power Weapon.",
+      "trophy_code": "saros-catch-and-release",
+      "type": "Prata"
+    },
+    {
+      "description": "Complete um bioma sem dano direto que não seja de Corruption e mantendo Adrenaline intacta.",
+      "is_missable": 0,
+      "is_spoiler": 0,
+      "name": "Untouchable",
+      "name_pt": "Intocável",
+      "tip": "Dificuldade de execução e risco de run. Deixe para uma run forte em bioma conhecido, priorizando segurança, esquiva e upgrades que aumentem sua margem de erro.",
+      "trophy_code": "saros-untouchable",
+      "type": "Prata"
+    },
+    {
+      "description": "Use Second Chance pela primeira vez.",
+      "is_missable": 0,
+      "is_spoiler": 0,
+      "name": "Second Chance",
+      "name_pt": "Segunda Chance",
+      "tip": "Libera ao acionar esse recurso pela primeira vez após desbloqueá-lo.",
+      "trophy_code": "saros-second-chance",
+      "type": "Bronze"
+    },
+    {
+      "description": "Elimine um hostil com escudo usando um ataque Melee no ar.",
+      "is_missable": 0,
+      "is_spoiler": 0,
+      "name": "Approach Vector",
+      "name_pt": "Vetor de aproximação",
+      "tip": "Enfraqueça o alvo e finalize com Melee aéreo.",
+      "trophy_code": "saros-approach-vector",
+      "type": "Bronze"
+    },
+    {
+      "description": "Elimine 30 hostis usando Overdrive durante um único ciclo.",
+      "is_missable": 0,
+      "is_spoiler": 0,
+      "name": "Overdriven",
+      "name_pt": "Sobrecarregado",
+      "tip": "Faça uma run dedicada e use Overdrive sempre que houver grupos seguros.",
+      "trophy_code": "saros-overdriven",
+      "type": "Bronze"
+    },
+    {
+      "description": "Atordoe 2 hostis simultaneamente com um Parry.",
+      "is_missable": 0,
+      "is_spoiler": 0,
+      "name": "Countermand",
+      "name_pt": "Revogação",
+      "tip": "Procure grupos próximos e use Parry quando dois inimigos estiverem alinhados.",
+      "trophy_code": "saros-countermand",
+      "type": "Bronze"
+    },
+    {
+      "description": "Cause dano a 7 hostis em até 5 segundos com Handcannons.",
+      "is_missable": 0,
+      "is_spoiler": 0,
+      "name": "Enforcer",
+      "name_pt": "Executor",
+      "tip": "Tente em salas com grupos pequenos e espalhe tiros rapidamente.",
+      "trophy_code": "saros-enforcer",
+      "type": "Bronze"
+    },
+    {
+      "description": "Acerte 50 tiros consecutivos em hostis com Rifles.",
+      "is_missable": 0,
+      "is_spoiler": 0,
+      "name": "Relentless",
+      "name_pt": "Implacável",
+      "tip": "Use inimigos maiores ou grupos próximos para manter a sequência sem errar.",
+      "trophy_code": "saros-relentless",
+      "type": "Bronze"
+    },
+    {
+      "description": "Acerte 7 disparos consecutivos de Shotgun com 100% de precisão dos projéteis.",
+      "is_missable": 0,
+      "is_spoiler": 0,
+      "name": "Spread The Cost",
+      "name_pt": "Distribua os custos",
+      "tip": "Atire de perto em alvos grandes para garantir que todos os pellets acertem.",
+      "trophy_code": "saros-spread-the-cost",
+      "type": "Bronze"
+    },
+    {
+      "description": "Use Chakrams para causar dano a 4 hostis em até 2 segundos.",
+      "is_missable": 0,
+      "is_spoiler": 0,
+      "name": "Vicious Circle",
+      "name_pt": "Círculo vicioso",
+      "tip": "Espere uma sala com inimigos agrupados antes de tentar.",
+      "trophy_code": "saros-vicious-circle",
+      "type": "Bronze"
+    },
+    {
+      "description": "Acerte 3 hostis de uma vez com Crossbows.",
+      "is_missable": 0,
+      "is_spoiler": 0,
+      "name": "All Shall Bow",
+      "name_pt": "Balestrante",
+      "tip": "Alinhe inimigos em corredor ou grupo compacto para facilitar.",
+      "trophy_code": "saros-all-shall-bow",
+      "type": "Bronze"
+    },
+    {
+      "description": "Derrote 5 hostis com uma única explosão de Prominence.",
+      "is_missable": 0,
+      "is_spoiler": 0,
+      "name": "Broadside",
+      "name_pt": "Amplitude",
+      "tip": "Use Prominence contra grupos de inimigos fracos.",
+      "trophy_code": "saros-broadside",
+      "type": "Bronze"
+    },
+    {
+      "description": "Cause dano simultâneo a 5 hostis com projéteis de Dispiritor.",
+      "is_missable": 0,
+      "is_spoiler": 0,
+      "name": "Atrophy",
+      "name_pt": "Atrofia",
+      "tip": "Procure grupos numerosos e dispare quando todos estiverem dentro da área.",
+      "trophy_code": "saros-atrophy",
+      "type": "Bronze"
+    },
+    {
+      "description": "Derrote um hostil usando um disparo ricocheteado de Nova Lance.",
+      "is_missable": 0,
+      "is_spoiler": 0,
+      "name": "Angle Of Attack",
+      "name_pt": "Ângulo de ataque",
+      "tip": "Ricocheteie o disparo no chão ou parede para atingir um inimigo próximo.",
+      "trophy_code": "saros-angle-of-attack",
+      "type": "Bronze"
+    },
+    {
+      "description": "Cause dano simultâneo a 3 hostis usando Illumine.",
+      "is_missable": 0,
+      "is_spoiler": 0,
+      "name": "Radiance",
+      "name_pt": "Radiância",
+      "tip": "Use o feixe em grupo de inimigos alinhados.",
+      "trophy_code": "saros-radiance",
+      "type": "Bronze"
+    },
+    {
+      "description": "Morra 3 vezes durante um único ciclo.",
+      "is_missable": 0,
+      "is_spoiler": 0,
+      "name": "Fatal Triptych",
+      "name_pt": "Tríptico letal",
+      "tip": "Planeje depois de desbloquear Second Chance e recursos que recuperem essa chance durante a run.",
+      "trophy_code": "saros-fatal-triptych",
+      "type": "Prata"
+    },
+    {
+      "description": "Alcance o nível máximo de Corruption e sobreviva.",
+      "is_missable": 0,
+      "is_spoiler": 0,
+      "name": "War Within",
+      "name_pt": "Batalha interna",
+      "tip": "Tente em luta controlável, absorvendo Corruption com o Shield e sobrevivendo até fechar o encontro.",
+      "trophy_code": "saros-war-within",
+      "type": "Prata"
+    },
+    {
+      "description": "Colete 20 Halcyon em Yellow Shore.",
+      "is_missable": 0,
+      "is_spoiler": 0,
+      "name": "Never Enough",
+      "name_pt": "Nunca bastava",
+      "tip": "Faça uma run dedicada quando já estiver confortável nessa área.",
+      "trophy_code": "saros-never-enough",
+      "type": "Bronze"
+    },
+    {
+      "description": "Use o ambiente para eliminar um hostil sem atirar nele.",
+      "is_missable": 0,
+      "is_spoiler": 0,
+      "name": "Fall From Grace",
+      "name_pt": "Queda em desgraça",
+      "tip": "Use parry e posicionamento para derrubar um inimigo em queda ou perigo ambiental.",
+      "trophy_code": "saros-fall-from-grace",
+      "type": "Bronze"
+    },
+    {
+      "description": "Complete um bioma sem usar o Shield.",
+      "is_missable": 0,
+      "is_spoiler": 0,
+      "name": "Vincible",
+      "name_pt": "Vulnerável",
+      "tip": "Escolha um bioma conhecido e jogue focado em esquiva, distância e segurança.",
+      "trophy_code": "saros-vincible",
+      "type": "Bronze"
+    },
+    {
+      "description": "Morra pela primeira vez.",
+      "is_missable": 0,
+      "is_spoiler": 0,
+      "name": "Come Back Stronger",
+      "name_pt": "Retorne mais forte",
+      "tip": "Troféu simples: libera na primeira morte.",
+      "trophy_code": "saros-come-back-stronger",
+      "type": "Bronze"
+    }
+  ]
+}

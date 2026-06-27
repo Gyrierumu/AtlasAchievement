@@ -1,0 +1,614 @@
+{
+  "game": {
+    "avoid_if": "Evite apenas se você não gosta de voltar várias vezes aos mesmos mapas para limpar coletáveis.",
+    "before_you_start": "Nada é perdível e não há troféus de dificuldade; deixe boa parte do cleanup para depois de desbloquear todas as habilidades.",
+    "best_for": "Ideal para quem quer uma platina de ação-aventura acessível, com exploração metroidvania e universo Star Wars.",
+    "cleanup_advice": "Depois da campanha, revisite planetas com todas as habilidades para fechar baús, segredos, scans, sementes, upgrades e troféus de combate.",
+    "cover_image": "https://cdn.cloudflare.steamstatic.com/steam/apps/1172380/library_600x900.jpg",
+    "coverage_level": "strong",
+    "created_at": "2026-05-09 19:53:45",
+    "difficulty": 3,
+    "difficulty_reason": "A platina é acessível porque não exige dificuldade alta nem online; o maior trabalho é navegar pelos planetas e limpar coletáveis.",
+    "dlc_scope": "Guia focado na lista base de Star Wars Jedi: Fallen Order. Conteúdos cosméticos ou extras de edição não são necessários para a platina.",
+    "editorial_notes": "",
+    "editorial_review_status": null,
+    "editorial_status": "published",
+    "first_run_advice": "Jogue a história naturalmente e explore quando quiser, mas não tente limpar tudo cedo demais porque várias áreas exigem habilidades desbloqueadas depois.",
+    "grind_summary": "O peso está em exploração de planetas, baús, segredos, scans, sementes do terrário, upgrades e troféus específicos de combate.",
+    "guide_avoid": null,
+    "guide_best_moment": null,
+    "guide_dlc": null,
+    "guide_grind": null,
+    "guide_ideal": null,
+    "guide_online": null,
+    "guide_runs": null,
+    "image": "https://cdn.cloudflare.steamstatic.com/steam/apps/1172380/header.jpg",
+    "is_verified": 0,
+    "last_reviewed_at": "",
+    "missable": "Não há troféus perdíveis definitivos na lista base. A campanha permite cleanup livre por planetas depois da história, e não há troféus de dificuldade ou online obrigatório.",
+    "missable_summary": "Nenhum troféu da lista base foi marcado como perdível; use o pós-jogo para limpar planetas, scans, baús, segredos e combate.",
+    "name": "Star Wars Jedi: Fallen Order",
+    "online_summary": "Não há exigência online para a platina.",
+    "quality_warnings": "[]",
+    "reviewed_by": "",
+    "runs_summary": "Uma campanha principal com cleanup livre após a história. Nada da lista base é perdível.",
+    "slug": "star-wars-jedi-fallen-order",
+    "time": "30-40h",
+    "time_bucket": "medium",
+    "time_max_hours": 40,
+    "time_min_hours": 30,
+    "time_reason": "A faixa de 30-40 horas considera campanha, exploração, coletáveis, upgrades, scans e cleanup por planeta.",
+    "time_sort_hours": 30,
+    "updated_at": "2026-06-27 02:36:58",
+    "verification_note": "Guia público seed-managed com checklist base e roadmap; aguardando revisão editorial manual final.",
+    "verification_status": "review",
+    "walkthrough": null
+  },
+  "redirects": [],
+  "roadmaps": [
+    {
+      "content": "{\"title\":\"Resolva requisitos online cedo\",\"focus\":\"\",\"objective\":\"jogue a campanha naturalmente, desbloqueando Force powers, planetas, habilidades de exploração, upgrades de BD-1 e opções de lightsaber. Não há online obrigatório nem troféus de dificuldade.\",\"actions\":[],\"warning\":\"\",\"result\":\"\"}",
+      "step_order": 1
+    },
+    {
+      "content": "{\"title\":\"Aprenda runs e libere runas\",\"focus\":\"\",\"objective\":\"plante as sementes do terrário cedo quando encontrá-las e escaneie novos inimigos com BD-1 para reduzir o cleanup de Green Thumb e Data Collector.\",\"actions\":[],\"warning\":\"\",\"result\":\"\"}",
+      "step_order": 2
+    },
+    {
+      "content": "{\"title\":\"Prossiga pela rota planejada\",\"focus\":\"\",\"objective\":\"avance a história até liberar todas as habilidades principais de exploração antes de tentar 100% dos planetas; muitas áreas exigem poderes obtidos depois.\",\"actions\":[],\"warning\":\"\",\"result\":\"\"}",
+      "step_order": 3
+    },
+    {
+      "content": "{\"title\":\"Prossiga pela rota planejada\",\"focus\":\"\",\"objective\":\"no pós-história, revisite Bogano, Zeffo, Kashyyyk, Dathomir e Ilum para limpar baús, segredos, stim canisters, Force Echoes, Encrypted Logs, holomaps e porcentagem de exploração.\",\"actions\":[],\"warning\":\"\",\"result\":\"\"}",
+      "step_order": 4
+    },
+    {
+      "content": "{\"title\":\"complete os objetivos específicos de combate e Force powers,...\",\"focus\":\"\",\"objective\":\"complete os objetivos específicos de combate e Force powers, como parries, blaster bolts refletidos, kills com explosivos, kicks, lightsaber throw, Empowered Slow, hacked droid e colisões de inimigos.\",\"actions\":[],\"warning\":\"\",\"result\":\"\"}",
+      "step_order": 5
+    },
+    {
+      "content": "{\"title\":\"Treine chefes sem dano\",\"focus\":\"\",\"objective\":\"finalize bosses opcionais, Bounty Hunters, crew members, customizações de Cal/BD-1/Mantis, skills restantes e o terrário totalmente crescido.\",\"actions\":[],\"warning\":\"\",\"result\":\"\"}",
+      "step_order": 6
+    },
+    {
+      "content": "{\"title\":\"Resolva requisitos online cedo\",\"focus\":\"\",\"objective\":\"revise o checklist final da lista base: 40 troféus, 0 online obrigatório, 0 perdíveis, 0 troféus de dificuldade e cleanup livre por planeta antes da platina.\",\"actions\":[],\"warning\":\"\",\"result\":\"\"}",
+      "step_order": 7
+    }
+  ],
+  "schemaVersion": 1,
+  "seedExtras": {
+    "aliases": [],
+    "attentionPoints": [
+      {
+        "detail": "Não há troféus perdíveis; após a história é possível retornar aos planetas pela Mantis.",
+        "tags": [
+          "Free roam",
+          "Cleanup"
+        ],
+        "title": "Sem perdíveis"
+      },
+      {
+        "detail": "A campanha pode ser jogada em qualquer dificuldade, inclusive Story Mode.",
+        "tags": [
+          "Story Mode",
+          "Sem requisito"
+        ],
+        "title": "Dificuldade não afeta troféus"
+      },
+      {
+        "detail": "Collector, A Galaxy Far, Far Away, Data Disk, Medical Droid, Green Thumb e Echo Location concentram o cleanup.",
+        "tags": [
+          "Coletáveis",
+          "Exploração"
+        ],
+        "title": "Coletáveis são o maior trabalho"
+      },
+      {
+        "detail": "As 10 sementes do terrário precisam crescer com tempo in-game; plante assim que encontrar.",
+        "tags": [
+          "Green Thumb",
+          "Terrário"
+        ],
+        "title": "Plante sementes cedo"
+      },
+      {
+        "detail": "Não ignore Bounty Hunters quando aparecerem; Scum and Villainy depende dos 3 tipos e Data Collector depende de scans.",
+        "tags": [
+          "Bounty Hunters",
+          "Scans"
+        ],
+        "title": "Bounty Hunters e scans"
+      },
+      {
+        "detail": "Collector, Data Collector e Scum and Villainy têm relatos históricos de bugs/registro; mantenha o jogo atualizado e confira progresso.",
+        "tags": [
+          "Risco técnico",
+          "Bugável"
+        ],
+        "title": "Bugs históricos"
+      },
+      {
+        "detail": "O jogo permite voltar aos planetas, mas não possui fast travel interno tradicional; planeje o backtracking.",
+        "tags": [
+          "Backtracking",
+          "Mantis"
+        ],
+        "title": "Sem fast travel interno"
+      }
+    ],
+    "checklist": [
+      "Confirmar 40 troféus base com EN + PT-BR.",
+      "Confirmar 0 perdíveis, 0 online, 0 coop e 0 troféus de dificuldade.",
+      "Plantar as 10 sementes do terrário cedo.",
+      "Completar todos os baús, Secrets, Stim Canisters, Encrypted Logs, 75 Force Echoes e holomapas 100%.",
+      "Escanear inimigos novos e derrotar os 3 tipos de Bounty Hunters.",
+      "Tratar bugs históricos como risco técnico, não como perdível."
+    ],
+    "faq": [
+      {
+        "answer": "Não. A lista base é totalmente offline.",
+        "question": "Star Wars Jedi: Fallen Order tem troféus online?"
+      },
+      {
+        "answer": "Não. A platina não exige cooperação.",
+        "question": "Tem coop?"
+      },
+      {
+        "answer": "Não. É possível retornar aos planetas após a história para cleanup.",
+        "question": "Tem troféus perdíveis?"
+      },
+      {
+        "answer": "Não. Tudo pode ser feito em qualquer dificuldade, inclusive Story Mode.",
+        "question": "A dificuldade afeta troféus?"
+      },
+      {
+        "answer": "Uma jogada é suficiente.",
+        "question": "Quantas jogadas são necessárias?"
+      },
+      {
+        "answer": "Sim. Após a história, você pode retornar aos planetas pela Mantis para coletáveis e cleanup.",
+        "question": "Existe free roam após a história?"
+      },
+      {
+        "answer": "Não há fast travel interno tradicional entre Meditation Points no jogo original. Você viaja entre planetas pela Mantis e precisa caminhar dentro das áreas.",
+        "question": "Existe fast travel?"
+      },
+      {
+        "answer": "Não. New Journey+ não é necessário para a platina.",
+        "question": "Precisa de New Journey+?"
+      },
+      {
+        "answer": "Você precisa de todos os baús e Secrets, todos os Stim Canisters, todos os Encrypted Logs de Cordova, 10 sementes do terrário, 75 Force Echoes e 100% dos holomapas. Nem todos os ecos do jogo são necessários.",
+        "question": "Preciso coletar tudo?"
+      },
+      {
+        "answer": "Há relatos históricos envolvendo Collector, Data Collector e Scum and Villainy. Mantenha o jogo atualizado, escaneie inimigos novos e confira contadores de mapa.",
+        "question": "Quais troféus podem bugar?"
+      },
+      {
+        "answer": "Use Meditation Points para resetar inimigos e farmar XP durante o cleanup.",
+        "question": "O que fazer se faltar XP para todas as habilidades?"
+      },
+      {
+        "answer": "Não. Jedi: Survivor é outro jogo, com outra lista de troféus.",
+        "question": "Star Wars Jedi: Survivor entra no guia?"
+      }
+    ],
+    "note": "Campos exportados para auditoria. O SQLite atual nao possui colunas nativas para todos esses extras; a importacao preserva o que o banco suporta.",
+    "quickDecision": {
+      "coop": "Sem coop obrigatório",
+      "difficulty": "3/10",
+      "dlc": "DLC não necessário",
+      "missables": "Sem perdíveis",
+      "online": "Sem online obrigatório",
+      "playthroughs": "1 jogada",
+      "time": "30-40h",
+      "verdict": "Platina offline acessível, mas com bastante backtracking e cleanup de coletáveis."
+    },
+    "seo": {},
+    "tags": []
+  },
+  "slug": "star-wars-jedi-fallen-order",
+  "trophies": [
+    {
+      "description": "Earn all trophies",
+      "is_missable": 0,
+      "is_spoiler": 0,
+      "name": "A New Hope",
+      "name_pt": "Uma Nova Esperança",
+      "tip": "Complete todos os outros 39 troféus da lista base para liberar a platina.",
+      "trophy_code": "swjfo_a_new_hope",
+      "type": "Platina"
+    },
+    {
+      "description": "Kick a phillak that has kicked you",
+      "is_missable": 0,
+      "is_spoiler": 0,
+      "name": "Kicking Back",
+      "name_pt": "Retribuindo o Coice",
+      "tip": "Compre Evasive Kick, deixe um Phillak de Zeffo te chutar e responda com um chute.",
+      "trophy_code": "swjfo_kicking_back",
+      "type": "Bronze"
+    },
+    {
+      "description": "Collect all chests and secrets",
+      "is_missable": 0,
+      "is_spoiler": 0,
+      "name": "Collector",
+      "name_pt": "Colecionador",
+      "tip": "Limpe todos os baús e segredos em cada planeta usando o mapa e o percentual de exploração no pós-história.",
+      "trophy_code": "swjfo_collector",
+      "type": "Ouro"
+    },
+    {
+      "description": "Defeat four mysterious creatures",
+      "is_missable": 0,
+      "is_spoiler": 1,
+      "name": "Legendary Beasts",
+      "name_pt": "Feras Lendárias",
+      "tip": "Derrote os quatro bosses opcionais/mysterious creatures espalhados pelos planetas.",
+      "trophy_code": "swjfo_legendary_beasts",
+      "type": "Prata"
+    },
+    {
+      "description": "Unlock all Jedi skills",
+      "is_missable": 0,
+      "is_spoiler": 0,
+      "name": "Feel the Force",
+      "name_pt": "Sinta a Força",
+      "tip": "Compre todas as habilidades Jedi; farm de XP pode ser feito depois da história em planetas revisitáveis.",
+      "trophy_code": "swjfo_feel_the_force",
+      "type": "Ouro"
+    },
+    {
+      "description": "Complete all of BD-1’s holomaps",
+      "is_missable": 0,
+      "is_spoiler": 0,
+      "name": "A Galaxy Far, Far Away",
+      "name_pt": "Uma Galáxia Muito, Muito Distante",
+      "tip": "Explore 100% dos mapas de BD-1 em todos os planetas, revisitando áreas com habilidades novas.",
+      "trophy_code": "swjfo_a_galaxy_far_far_away",
+      "type": "Prata"
+    },
+    {
+      "description": "Complete the story",
+      "is_missable": 0,
+      "is_spoiler": 1,
+      "name": "Trust Only In The Force",
+      "name_pt": "Confie Apenas na Força",
+      "tip": "Troféu de conclusão da campanha principal. Depois dela, ainda há cleanup livre por planetas.",
+      "trophy_code": "swjfo_trust_only_in_the_force",
+      "type": "Ouro"
+    },
+    {
+      "description": "Join the crew",
+      "is_missable": 0,
+      "is_spoiler": 1,
+      "name": "The Mantis",
+      "name_pt": "A Mantis",
+      "tip": "Troféu de história ligado ao início da jornada com a tripulação da Mantis.",
+      "trophy_code": "swjfo_the_mantis",
+      "type": "Bronze"
+    },
+    {
+      "description": "Discover the Bogano Vault",
+      "is_missable": 0,
+      "is_spoiler": 1,
+      "name": "A Long Time Ago",
+      "name_pt": "Há Muito Tempo",
+      "tip": "Troféu de história em Bogano, ligado à descoberta do Vault.",
+      "trophy_code": "swjfo_a_long_time_ago",
+      "type": "Bronze"
+    },
+    {
+      "description": "Complete the Tomb of Eilram",
+      "is_missable": 0,
+      "is_spoiler": 1,
+      "name": "The Obstacle is the Way",
+      "name_pt": "O Obstáculo é o Caminho",
+      "tip": "Troféu de história em Zeffo ao concluir a Tomb of Eilram.",
+      "trophy_code": "swjfo_the_obstacle_is_the_way",
+      "type": "Bronze"
+    },
+    {
+      "description": "Complete the Tomb of Miktrull",
+      "is_missable": 0,
+      "is_spoiler": 1,
+      "name": "Everything is Connected",
+      "name_pt": "Tudo Está Conectado",
+      "tip": "Troféu de história em Zeffo ao concluir a Tomb of Miktrull.",
+      "trophy_code": "swjfo_everything_is_connected",
+      "type": "Bronze"
+    },
+    {
+      "description": "Open the Vault",
+      "is_missable": 0,
+      "is_spoiler": 1,
+      "name": "The Holocron Awaits",
+      "name_pt": "O Holocron Aguarda",
+      "tip": "Troféu de história ligado ao avanço no Vault e à reta final da campanha.",
+      "trophy_code": "swjfo_the_holocron_awaits",
+      "type": "Bronze"
+    },
+    {
+      "description": "Free the Wookiees from Imperial imprisonment",
+      "is_missable": 0,
+      "is_spoiler": 1,
+      "name": "Happy Go Wookiee",
+      "name_pt": "Wookiee Feliz",
+      "tip": "Troféu de história em Kashyyyk, ligado à libertação dos Wookiees.",
+      "trophy_code": "swjfo_happy_go_wookiee",
+      "type": "Bronze"
+    },
+    {
+      "description": "Defeat the Ninth Sister",
+      "is_missable": 0,
+      "is_spoiler": 1,
+      "name": "Her Name Was Masana Tide",
+      "name_pt": "O Nome Dela Era Masana Tide",
+      "tip": "Boss de história em Kashyyyk. Marque como spoiler por envolver personagem importante.",
+      "trophy_code": "swjfo_her_name_was_masana_tide",
+      "type": "Prata"
+    },
+    {
+      "description": "Explore the crashed Venator",
+      "is_missable": 0,
+      "is_spoiler": 0,
+      "name": "Visiting Alderaan Places",
+      "name_pt": "Visitando Lugares de Alderaan",
+      "tip": "Explore o Venator em Zeffo; é uma área opcional que rende progresso de mapa e coletáveis.",
+      "trophy_code": "swjfo_visiting_alderaan_places",
+      "type": "Bronze"
+    },
+    {
+      "description": "Defeat the winged terror on Dathomir",
+      "is_missable": 0,
+      "is_spoiler": 1,
+      "name": "Gorgara Falls",
+      "name_pt": "A Queda de Gorgara",
+      "tip": "Boss de história em Dathomir, ligado a eventos avançados da campanha.",
+      "trophy_code": "swjfo_gorgara_falls",
+      "type": "Prata"
+    },
+    {
+      "description": "Craft a lightsaber of your own",
+      "is_missable": 0,
+      "is_spoiler": 1,
+      "name": "For A More Civilized Age",
+      "name_pt": "Para Uma Era Mais Civilizada",
+      "tip": "Troféu de história/customização ligado à criação do lightsaber próprio.",
+      "trophy_code": "swjfo_for_a_more_civilized_age",
+      "type": "Bronze"
+    },
+    {
+      "description": "Defeat a former Jedi",
+      "is_missable": 0,
+      "is_spoiler": 1,
+      "name": "I Knew He Was No Good",
+      "name_pt": "Eu Sabia que Ele Não Prestava",
+      "tip": "Boss/evento narrativo avançado da campanha; trate como spoiler.",
+      "trophy_code": "swjfo_i_knew_he_was_no_good",
+      "type": "Prata"
+    },
+    {
+      "description": "Defeat 50 enemies with reflected blaster bolts",
+      "is_missable": 0,
+      "is_spoiler": 0,
+      "name": "Back At You",
+      "name_pt": "De Volta para Você",
+      "tip": "Reflita disparos de inimigos armados com blaster ao longo da campanha ou no cleanup.",
+      "trophy_code": "swjfo_back_at_you",
+      "type": "Bronze"
+    },
+    {
+      "description": "Parry 100 enemies",
+      "is_missable": 0,
+      "is_spoiler": 0,
+      "name": "Perfect Timing",
+      "name_pt": "Sincronia Perfeita",
+      "tip": "Use parry contra inimigos corpo a corpo durante a campanha; vem naturalmente se praticar defesa.",
+      "trophy_code": "swjfo_perfect_timing",
+      "type": "Bronze"
+    },
+    {
+      "description": "Defeat an enemy using only kicks",
+      "is_missable": 0,
+      "is_spoiler": 0,
+      "name": "Kickoff",
+      "name_pt": "Pontapé Inicial",
+      "tip": "Use Evasive Kick repetidamente contra um inimigo fraco até derrotá-lo sem outros ataques.",
+      "trophy_code": "swjfo_kickoff",
+      "type": "Bronze"
+    },
+    {
+      "description": "Defeat 3 enemies using a single lightsaber throw",
+      "is_missable": 0,
+      "is_spoiler": 0,
+      "name": "Triple Take",
+      "name_pt": "Tripla Eliminação",
+      "tip": "Agrupe inimigos fracos e use lightsaber throw quando tiver a habilidade necessária.",
+      "trophy_code": "swjfo_triple_take",
+      "type": "Bronze"
+    },
+    {
+      "description": "Defeat an enemy with their own Slowed blaster bolt",
+      "is_missable": 0,
+      "is_spoiler": 0,
+      "name": "What Goes Around…",
+      "name_pt": "O Que Vai, Volta...",
+      "tip": "Use Slow em um disparo de blaster e faça o inimigo ser atingido pelo próprio tiro.",
+      "trophy_code": "swjfo_what_goes_around",
+      "type": "Bronze"
+    },
+    {
+      "description": "Defeat 20 enemies with explosives",
+      "is_missable": 0,
+      "is_spoiler": 0,
+      "name": "Big Bang",
+      "name_pt": "Grande Explosão",
+      "tip": "Use Force Push/Pull ou inimigos explosivos para matar 20 alvos com explosões.",
+      "trophy_code": "swjfo_big_bang",
+      "type": "Bronze"
+    },
+    {
+      "description": "Defeat an enemy with a hacked droid",
+      "is_missable": 0,
+      "is_spoiler": 0,
+      "name": "Don’t Mess With BD-1",
+      "name_pt": "Não Mexa com o BD-1",
+      "tip": "Depois de obter upgrades de hack do BD-1, use um droid hackeado para finalizar um inimigo.",
+      "trophy_code": "swjfo_dont_mess_with_bd1",
+      "type": "Bronze"
+    },
+    {
+      "description": "Precision Evade 100 attacks",
+      "is_missable": 0,
+      "is_spoiler": 0,
+      "name": "Can’t Touch This",
+      "name_pt": "Não Encoste em Mim",
+      "tip": "Compre a habilidade de Precision Evade e acumule 100 esquivas perfeitas em combate.",
+      "trophy_code": "swjfo_cant_touch_this",
+      "type": "Prata"
+    },
+    {
+      "description": "Send 25 enemies over the edge",
+      "is_missable": 0,
+      "is_spoiler": 0,
+      "name": "Look Out Below",
+      "name_pt": "Cuidado Lá Embaixo",
+      "tip": "Use Force Push em áreas com penhascos ou plataformas para derrubar inimigos.",
+      "trophy_code": "swjfo_look_out_below",
+      "type": "Bronze"
+    },
+    {
+      "description": "Defeat 25 enemies while they are under the effect of Empowered Slow",
+      "is_missable": 0,
+      "is_spoiler": 0,
+      "name": "Not So Fast",
+      "name_pt": "Nem Tão Rápido",
+      "tip": "Depois de desbloquear Empowered Slow, mate inimigos enquanto o efeito estiver ativo.",
+      "trophy_code": "swjfo_not_so_fast",
+      "type": "Bronze"
+    },
+    {
+      "description": "Defeat an enemy by colliding them with another enemy",
+      "is_missable": 0,
+      "is_spoiler": 0,
+      "name": "Bank Shot",
+      "name_pt": "Tabela",
+      "tip": "Use Force powers para lançar ou colidir inimigos e fazer o impacto causar a morte.",
+      "trophy_code": "swjfo_bank_shot",
+      "type": "Bronze"
+    },
+    {
+      "description": "Hit a single enemy with all lightsaber types",
+      "is_missable": 0,
+      "is_spoiler": 0,
+      "name": "Blade Master",
+      "name_pt": "Mestre da Lâmina",
+      "tip": "Ataque o mesmo inimigo com single blade, double-bladed e split saber quando todos estiverem disponíveis.",
+      "trophy_code": "swjfo_blade_master",
+      "type": "Prata"
+    },
+    {
+      "description": "Slice an oggdo’s tongue",
+      "is_missable": 0,
+      "is_spoiler": 0,
+      "name": "Cal Got Your Tongue?",
+      "name_pt": "Cal Pegou Sua Língua?",
+      "tip": "Use Force Pull na língua de um Oggdo e ataque para cortá-la.",
+      "trophy_code": "swjfo_cal_got_your_tongue",
+      "type": "Bronze"
+    },
+    {
+      "description": "Find all of BD-1’s stim canisters",
+      "is_missable": 0,
+      "is_spoiler": 0,
+      "name": "Medical Droid",
+      "name_pt": "Droide Médico",
+      "tip": "Encontre todos os 8 stim canisters em segredos espalhados pelos planetas.",
+      "trophy_code": "swjfo_medical_droid",
+      "type": "Prata"
+    },
+    {
+      "description": "Have a fully grown terrarium",
+      "is_missable": 0,
+      "is_spoiler": 0,
+      "name": "Green Thumb",
+      "name_pt": "Dedo Verde",
+      "tip": "Plante as 10 sementes do terrário e deixe crescer com tempo de jogo; comece cedo para evitar espera no final.",
+      "trophy_code": "swjfo_green_thumb",
+      "type": "Prata"
+    },
+    {
+      "description": "Recruit all possible crew members for the Mantis",
+      "is_missable": 0,
+      "is_spoiler": 1,
+      "name": "Full House",
+      "name_pt": "Casa Cheia",
+      "tip": "Complete os encontros opcionais necessários para trazer todos os possíveis membros à Mantis.",
+      "trophy_code": "swjfo_full_house",
+      "type": "Bronze"
+    },
+    {
+      "description": "Find all of BD-1’s encrypted logs",
+      "is_missable": 0,
+      "is_spoiler": 0,
+      "name": "Data Disk",
+      "name_pt": "Disco de Dados",
+      "tip": "Colete todos os 19 Encrypted Logs de BD-1, principalmente ligados à jornada de Cordova.",
+      "trophy_code": "swjfo_data_disk",
+      "type": "Bronze"
+    },
+    {
+      "description": "Fully customize your lightsaber",
+      "is_missable": 0,
+      "is_spoiler": 0,
+      "name": "Sabersmith",
+      "name_pt": "Armeiro de Sabre",
+      "tip": "Altere todos os componentes disponíveis do lightsaber em uma bancada.",
+      "trophy_code": "swjfo_sabersmith",
+      "type": "Bronze"
+    },
+    {
+      "description": "Customize the look of Cal, BD-1, and the Mantis",
+      "is_missable": 0,
+      "is_spoiler": 0,
+      "name": "The Full Glow-Up",
+      "name_pt": "Visual Completo",
+      "tip": "Aplique uma customização em Cal, BD-1 e na Mantis usando itens coletados em baús.",
+      "trophy_code": "swjfo_the_full_glow_up",
+      "type": "Bronze"
+    },
+    {
+      "description": "Scan all enemy types",
+      "is_missable": 0,
+      "is_spoiler": 1,
+      "name": "Data Collector",
+      "name_pt": "Coletor de Dados",
+      "tip": "Escaneie todos os tipos de inimigos com BD-1; preste atenção em bosses, criaturas e Bounty Hunters.",
+      "trophy_code": "swjfo_data_collector",
+      "type": "Prata"
+    },
+    {
+      "description": "Defeat each type of Bounty Hunter",
+      "is_missable": 0,
+      "is_spoiler": 1,
+      "name": "Scum and Villainy",
+      "name_pt": "Escória e Vilania",
+      "tip": "Derrote cada tipo de Bounty Hunter após eles começarem a aparecer na campanha.",
+      "trophy_code": "swjfo_scum_and_villainy",
+      "type": "Prata"
+    },
+    {
+      "description": "Discover 75 Force Echoes",
+      "is_missable": 0,
+      "is_spoiler": 0,
+      "name": "Echo Location",
+      "name_pt": "Localização de Ecos",
+      "tip": "Colete 75 Force Echoes. Há mais ecos do que o necessário, então use o mapa e guias por planeta no cleanup.",
+      "trophy_code": "swjfo_echo_location",
+      "type": "Bronze"
+    }
+  ]
+}

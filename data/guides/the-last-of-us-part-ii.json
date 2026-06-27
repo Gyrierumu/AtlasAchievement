@@ -1,0 +1,348 @@
+{
+  "game": {
+    "avoid_if": "Evite se você não gosta de coletáveis, campanha longa ou repetir parte do jogo em New Game+.",
+    "before_you_start": "Não use listas de Part I, Remastered ou No Return. A platina base do Part II original tem lista própria, sem online obrigatório e sem Grounded ou Permadeath como requisito.",
+    "best_for": "Ideal para quem quer uma platina narrativa, sem online, com foco em exploração cuidadosa e checklist de coletáveis.",
+    "cleanup_advice": "Use Chapter Select para limpar coletáveis, cofres, bancadas e troféus específicos; use NG+ parcial para fechar upgrades de armas e personagens.",
+    "cover_image": "https://image.api.playstation.com/vulcan/img/rnd/202010/2618/Y02ljdBodKFBiziorYgqftLE.png",
+    "coverage_level": "strong",
+    "created_at": "2026-05-09 19:53:32",
+    "difficulty": 3,
+    "difficulty_reason": "A platina não exige dificuldade alta, Grounded, Permadeath, online ou multiplayer; a atenção maior está em coletáveis, suplementos, peças e upgrades.",
+    "dlc_scope": "Extras fora da platina base. Grounded e Permadeath são troféus extras/update, e Remastered/No Return ficam fora do escopo da platina base do Part II original.",
+    "editorial_notes": "Guia revisado editorialmente para a lista base da platina original. Contagem base validada como 26 troféus, distribuição 1/7/8/10. Grounded e Permadeath tratados como extras/update fora da platina base; Remastered e No Return fora do escopo.",
+    "editorial_review_status": "verified",
+    "editorial_status": "published",
+    "first_run_advice": "Jogue a campanha coletando o máximo possível e deixe o cleanup de coletáveis, conversas, cofres, upgrades e situacionais para Chapter Select e NG+ parcial.",
+    "grind_summary": "O peso está em coletáveis, cartas, moedas, suplementos, peças, upgrades e cleanup por capítulos, não em grind repetitivo.",
+    "guide_avoid": null,
+    "guide_best_moment": null,
+    "guide_dlc": null,
+    "guide_grind": null,
+    "guide_ideal": null,
+    "guide_online": null,
+    "guide_runs": null,
+    "image": "https://image.api.playstation.com/vulcan/img/rnd/202010/2619/mw8nzMIY8TJUtdTbAuCGDxr4.png",
+    "is_verified": 1,
+    "last_reviewed_at": "",
+    "missable": "Não há troféus perdíveis definitivos na lista base de The Last of Us Part II. Chapter Select permite limpar coletáveis, cofres, bancadas e troféus situacionais, e NG+ parcial cobre upgrades restantes.",
+    "missable_summary": "Sem perdíveis definitivos; use Chapter Select e NG+ parcial para cleanup.",
+    "name": "The Last of Us Part II",
+    "online_summary": "Não há troféus online, coop ou multiplayer obrigatórios para a platina da lista base.",
+    "quality_warnings": "[]",
+    "reviewed_by": "",
+    "runs_summary": "1 campanha completa + cleanup por Chapter Select + NG+ parcial para upgrades de armas e personagens.",
+    "slug": "the-last-of-us-part-ii",
+    "time": "25-35h",
+    "time_bucket": "medium",
+    "time_max_hours": 35,
+    "time_min_hours": 25,
+    "time_reason": "A faixa de 25-35 horas considera campanha, coletáveis, upgrades, Chapter Select, NG+ parcial e cleanup.",
+    "time_sort_hours": 25,
+    "updated_at": "2026-06-27 02:36:59",
+    "verification_note": "Guia revisado editorialmente.",
+    "verification_status": "verified",
+    "walkthrough": null
+  },
+  "redirects": [],
+  "roadmaps": [
+    {
+      "content": "{\"title\":\"Complete a campanha explorando com calma\",\"focus\":\"Campanha / exploração\",\"objective\":\"Finalizar a história principal enquanto coleta o máximo possível de itens, artefatos, cartas, moedas, entradas de diário, manuais, cofres e bancadas.\",\"actions\":[\"Jogue em qualquer dificuldade confortável.\",\"Explore todos os ambientes antes de avançar para áreas sem volta.\",\"Pegue artefatos, cartas, moedas e entradas de diário sempre que encontrar.\",\"Abra cofres e visite bancadas conforme aparecerem.\",\"Guarde recursos para upgrades importantes, mas não se preocupe em completar tudo na primeira passagem.\"],\"warning\":\"\",\"result\":\"Campanha concluída e grande parte dos coletáveis já encaminhada.\"}",
+      "step_order": 1
+    },
+    {
+      "content": "{\"title\":\"Organize coletáveis por capítulo\",\"focus\":\"Coletáveis / Chapter Select\",\"objective\":\"Usar seleção de capítulos para buscar itens perdidos sem reiniciar a campanha inteira.\",\"actions\":[\"Revise artefatos, cartas colecionáveis, moedas e entradas de diário.\",\"Confira cofres, bancadas, manuais de treinamento e itens de upgrade.\",\"Limpe um capítulo por vez para evitar retrabalho.\",\"Use checklist para marcar exatamente o que falta.\"],\"warning\":\"\",\"result\":\"Coletáveis principais resolvidos com menos repetição.\"}",
+      "step_order": 2
+    },
+    {
+      "content": "{\"title\":\"Complete upgrades de armas e personagens\",\"focus\":\"Upgrades / NG+\",\"objective\":\"Finalizar melhorias de armas e habilidades que normalmente exigem recursos além de uma campanha única.\",\"actions\":[\"Inicie NG+ se os upgrades não forem concluídos na primeira campanha.\",\"Priorize suplementos e peças de melhoria.\",\"Complete upgrades de personagens e armas conforme os recursos permitirem.\",\"Continue coletando recursos em capítulos com boa densidade de itens.\"],\"warning\":\"\",\"result\":\"Troféus de upgrades concluídos ou muito próximos do fim.\"}",
+      "step_order": 3
+    },
+    {
+      "content": "{\"title\":\"Resolva troféus situacionais\",\"focus\":\"Situacionais / gameplay\",\"objective\":\"Fechar troféus ligados a ações específicas, treinamento, minigames ou momentos únicos.\",\"actions\":[\"Revise troféus situacionais no checklist.\",\"Use Chapter Select para voltar aos capítulos necessários.\",\"Faça ações específicas de combate, treino ou interação que não vieram naturalmente.\",\"Evite misturar esses objetivos com runs longas sem necessidade.\"],\"warning\":\"\",\"result\":\"Pendências de gameplay e interações específicas resolvidas.\"}",
+      "step_order": 4
+    },
+    {
+      "content": "{\"title\":\"Separe extras da platina base\",\"focus\":\"Extras / escopo\",\"objective\":\"Garantir que Grounded, Permadeath, Remastered ou No Return não sejam misturados com a platina base do Part II original.\",\"actions\":[\"Confirme que a lista base está separada de troféus extras ou updates.\",\"Não conte Grounded Mode como requisito da platina base.\",\"Não conte Permadeath como requisito da platina base.\",\"Não misture troféus da versão Remastered ou do modo No Return neste guia.\"],\"warning\":\"\",\"result\":\"Escopo da platina base claro e sem confusão com conteúdos extras.\"}",
+      "step_order": 5
+    },
+    {
+      "content": "{\"title\":\"Revisão final da platina\",\"focus\":\"Checklist final\",\"objective\":\"Conferir campanha, coletáveis, upgrades, cofres, bancadas, manuais e situacionais antes da platina.\",\"actions\":[\"Revise o checklist completo da lista base.\",\"Confirme que não há troféus online ou coop obrigatórios.\",\"Confirme que dificuldade alta não foi tratada como obrigatória.\",\"Finalize qualquer item restante por Chapter Select ou NG+ parcial.\"],\"warning\":\"\",\"result\":\"Lista base concluída e platina pronta.\"}",
+      "step_order": 6
+    }
+  ],
+  "schemaVersion": 1,
+  "seedExtras": {
+    "aliases": [],
+    "attentionPoints": [],
+    "checklist": [],
+    "faq": [],
+    "note": "Campos exportados para auditoria. O SQLite atual nao possui colunas nativas para todos esses extras; a importacao preserva o que o banco suporta.",
+    "quickDecision": null,
+    "seo": {},
+    "tags": []
+  },
+  "slug": "the-last-of-us-part-ii",
+  "trophies": [
+    {
+      "description": "Obtenha todas as conquistas da história normal",
+      "is_missable": 0,
+      "is_spoiler": 0,
+      "name": "Every Last One of Them",
+      "name_pt": "Até Não Sobrar Nenhum",
+      "tip": "Conclua todos os troféus da lista base de The Last of Us Part II. Add-ons não contam para a platina.",
+      "trophy_code": "tlou2_every_last_one_of_them",
+      "type": "Platina"
+    },
+    {
+      "description": "Conclua a história",
+      "is_missable": 0,
+      "is_spoiler": 1,
+      "name": "What I Had to Do",
+      "name_pt": "O Que Eu Tive Que Fazer",
+      "tip": "Complete a campanha em qualquer dificuldade; não há troféu de dificuldade máxima na lista base.",
+      "trophy_code": "tlou2_what_i_had_to_do",
+      "type": "Ouro"
+    },
+    {
+      "description": "Aprenda todas as melhorias de jogador",
+      "is_missable": 0,
+      "is_spoiler": 0,
+      "name": "Survival Expert",
+      "name_pt": "Especialista em Sobrevivência",
+      "tip": "Compre todos os player upgrades. Será necessário avançar em New Game+ para obter suplementos suficientes.",
+      "trophy_code": "tlou2_survival_expert",
+      "type": "Ouro"
+    },
+    {
+      "description": "Melhore totalmente todas as armas",
+      "is_missable": 0,
+      "is_spoiler": 0,
+      "name": "Arms Master",
+      "name_pt": "Mestre de Armas",
+      "tip": "Melhore todas as armas. Peças não são suficientes em uma campanha comum, então planeje New Game+ parcial.",
+      "trophy_code": "tlou2_arms_master",
+      "type": "Ouro"
+    },
+    {
+      "description": "Encontre todos os artefatos e registros de diário",
+      "is_missable": 0,
+      "is_spoiler": 0,
+      "name": "Archivist",
+      "name_pt": "Arquivista",
+      "tip": "Colete todos os artefatos e journal entries; chapter select ajuda no cleanup.",
+      "trophy_code": "tlou2_archivist",
+      "type": "Ouro"
+    },
+    {
+      "description": "Encontre todas as cartas colecionáveis",
+      "is_missable": 0,
+      "is_spoiler": 0,
+      "name": "Master Set",
+      "name_pt": "Conjunto Completo",
+      "tip": "Colete todos os trading cards.",
+      "trophy_code": "tlou2_master_set",
+      "type": "Ouro"
+    },
+    {
+      "description": "Encontre todas as moedas",
+      "is_missable": 0,
+      "is_spoiler": 0,
+      "name": "Numismatist",
+      "name_pt": "Numismata",
+      "tip": "Colete todas as coins.",
+      "trophy_code": "tlou2_numismatist",
+      "type": "Ouro"
+    },
+    {
+      "description": "Encontre todas as bancadas",
+      "is_missable": 0,
+      "is_spoiler": 0,
+      "name": "Prepared For the Worst",
+      "name_pt": "Preparada para o Pior",
+      "tip": "Encontre todas as workbenches da campanha.",
+      "trophy_code": "tlou2_prepared_for_the_worst",
+      "type": "Ouro"
+    },
+    {
+      "description": "Melhore totalmente uma arma",
+      "is_missable": 0,
+      "is_spoiler": 0,
+      "name": "Mechanist",
+      "name_pt": "Mecanicista",
+      "tip": "Melhore completamente qualquer arma em uma workbench.",
+      "trophy_code": "tlou2_mechanist",
+      "type": "Prata"
+    },
+    {
+      "description": "Aprenda toda uma linha de melhorias de jogador",
+      "is_missable": 0,
+      "is_spoiler": 0,
+      "name": "Specialist",
+      "name_pt": "Especialista",
+      "tip": "Complete uma árvore de habilidades inteira.",
+      "trophy_code": "tlou2_specialist",
+      "type": "Prata"
+    },
+    {
+      "description": "Abra todos os cofres",
+      "is_missable": 0,
+      "is_spoiler": 0,
+      "name": "Safecracker",
+      "name_pt": "Arrombadora",
+      "tip": "Abra todos os cofres e pegue o conteúdo para registrar o progresso.",
+      "trophy_code": "tlou2_safecracker",
+      "type": "Prata"
+    },
+    {
+      "description": "Visite todos os locais do centro de Seattle",
+      "is_missable": 0,
+      "is_spoiler": 1,
+      "name": "Sightseer",
+      "name_pt": "Turista",
+      "tip": "Explore todos os pontos marcados no mapa de Downtown Seattle; se não desbloquear, refaça pelo chapter select.",
+      "trophy_code": "tlou2_sightseer",
+      "type": "Prata"
+    },
+    {
+      "description": "Encontre todos os manuais de treinamento",
+      "is_missable": 0,
+      "is_spoiler": 0,
+      "name": "Journeyman",
+      "name_pt": "Profissional",
+      "tip": "Encontre todos os training manuals para liberar as árvores de habilidade.",
+      "trophy_code": "tlou2_journeyman",
+      "type": "Prata"
+    },
+    {
+      "description": "Aprenda 25 melhorias de jogador",
+      "is_missable": 0,
+      "is_spoiler": 0,
+      "name": "Survival Training",
+      "name_pt": "Treinamento de Sobrevivência",
+      "tip": "Compre 25 upgrades de personagem com suplementos.",
+      "trophy_code": "tlou2_survival_training",
+      "type": "Prata"
+    },
+    {
+      "description": "Encontre todas as armas",
+      "is_missable": 0,
+      "is_spoiler": 1,
+      "name": "High Caliber",
+      "name_pt": "Chumbo Grosso",
+      "tip": "Encontre todas as armas da campanha.",
+      "trophy_code": "tlou2_high_caliber",
+      "type": "Prata"
+    },
+    {
+      "description": "Encontre 12 bancadas",
+      "is_missable": 0,
+      "is_spoiler": 0,
+      "name": "In the Field",
+      "name_pt": "No Campo",
+      "tip": "Encontre 12 workbenches.",
+      "trophy_code": "tlou2_in_the_field",
+      "type": "Prata"
+    },
+    {
+      "description": "Fabrique todos os itens",
+      "is_missable": 0,
+      "is_spoiler": 0,
+      "name": "Tools of the Trade",
+      "name_pt": "Ferramentas do Ofício",
+      "tip": "Crie todos os tipos de item disponíveis na campanha.",
+      "trophy_code": "tlou2_tools_of_the_trade",
+      "type": "Bronze"
+    },
+    {
+      "description": "Melhore uma arma",
+      "is_missable": 0,
+      "is_spoiler": 0,
+      "name": "Tinkerer",
+      "name_pt": "Só na Gambiarra",
+      "tip": "Faça qualquer upgrade de arma em uma workbench.",
+      "trophy_code": "tlou2_tinkerer",
+      "type": "Bronze"
+    },
+    {
+      "description": "Aprenda uma melhoria de jogador",
+      "is_missable": 0,
+      "is_spoiler": 0,
+      "name": "Apprentice",
+      "name_pt": "Aprendiz",
+      "tip": "Compre qualquer upgrade de personagem.",
+      "trophy_code": "tlou2_apprentice",
+      "type": "Bronze"
+    },
+    {
+      "description": "Encontre 5 cartas colecionáveis",
+      "is_missable": 0,
+      "is_spoiler": 0,
+      "name": "Starter Set",
+      "name_pt": "Kit Básico",
+      "tip": "Colete 5 trading cards.",
+      "trophy_code": "tlou2_starter_set",
+      "type": "Bronze"
+    },
+    {
+      "description": "Encontre 5 moedas",
+      "is_missable": 0,
+      "is_spoiler": 0,
+      "name": "Mint Condition",
+      "name_pt": "Em Ótimo Estado",
+      "tip": "Colete 5 coins.",
+      "trophy_code": "tlou2_mint_condition",
+      "type": "Bronze"
+    },
+    {
+      "description": "Coloque um chapéu no seu companheiro",
+      "is_missable": 0,
+      "is_spoiler": 1,
+      "name": "Looks Good On You",
+      "name_pt": "Ficou Bonitão",
+      "tip": "No capítulo The Birthday Gift, interaja com o chapéu e coloque-o no companion depois dos dinossauros.",
+      "trophy_code": "tlou2_looks_good_on_you",
+      "type": "Bronze"
+    },
+    {
+      "description": "Vença a competição de tiro ao alvo",
+      "is_missable": 0,
+      "is_spoiler": 1,
+      "name": "Sharpshooter",
+      "name_pt": "Atirador de Elite",
+      "tip": "No capítulo The Stadium, vença a competição de tiro.",
+      "trophy_code": "tlou2_sharpshooter",
+      "type": "Bronze"
+    },
+    {
+      "description": "Consiga a maior pontuação no jogo de arco",
+      "is_missable": 0,
+      "is_spoiler": 1,
+      "name": "Put My Name Up",
+      "name_pt": "Na Mosca",
+      "tip": "No capítulo Winter Visit, faça a maior pontuação no minigame de arco.",
+      "trophy_code": "tlou2_put_my_name_up",
+      "type": "Bronze"
+    },
+    {
+      "description": "Encontre o Artefato Estranho",
+      "is_missable": 0,
+      "is_spoiler": 1,
+      "name": "Relic of the Sages",
+      "name_pt": "Relíquia dos Sábios",
+      "tip": "Encontre o Strange Artifact no capítulo Hostile Territory.",
+      "trophy_code": "tlou2_relic_of_the_sages",
+      "type": "Bronze"
+    },
+    {
+      "description": "Encontre o Anel Gravado",
+      "is_missable": 0,
+      "is_spoiler": 1,
+      "name": "So Great and Small",
+      "name_pt": "Tão Grandioso e Tão Pequeno",
+      "tip": "Encontre o Engraved Ring no cofre do banco em Downtown Seattle.",
+      "trophy_code": "tlou2_so_great_and_small",
+      "type": "Bronze"
+    }
+  ]
+}

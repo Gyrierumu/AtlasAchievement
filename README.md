@@ -22,6 +22,15 @@ Abra `http://localhost:3000`.
 
 O banco local padrao e `database.sqlite`, criado a partir de migration + seed quando necessario. Esse arquivo e artefato local, fica ignorado pelo Git e nao deve ser enviado em ZIP/release.
 
+Alteracoes feitas no painel admin ficam no SQLite configurado por `DATABASE_PATH`; como `database.sqlite` e ignorado pelo Git, elas precisam ser exportadas antes do push:
+
+```bash
+npm run export:data
+npm run import:data -- --yes
+```
+
+Veja o fluxo completo e os cuidados de backup em [`docs/publicar-dados-guias.md`](docs/publicar-dados-guias.md).
+
 Login padrão:
 - usuário: `admin`
 - senha: `admin123`

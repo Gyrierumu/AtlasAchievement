@@ -1,0 +1,588 @@
+{
+  "game": {
+    "avoid_if": "Evite se você não gosta de múltiplas runs, restrições de recursos, speedrun ou troféus perdíveis sem chapter select.",
+    "before_you_start": "Antes de iniciar, use este guia como checklist da lista base de Resident Evil Requiem. Acompanhe saves manuais, coletáveis, speedrun, restrições de cura, Blood Collector e troféus situacionais sem misturar DLCs ou modos futuros.",
+    "best_for": "Ideal para quem quer uma platina de survival horror moderna, com checklist de coletáveis, exploração e runs otimizadas.",
+    "cleanup_advice": "Depois de conhecer a campanha, use saves manuais para limpar troféus específicos e separe runs para Speed Demon, Never Touch the Stuff, Minimalist e Insanity. Não dependa de Chapter Select tradicional.",
+    "cover_image": "https://shared.fastly.steamstatic.com/store_item_assets/steam/apps/3764200/ed3b2cae7d15f598f41006f5f1e605ec5517b5e4/library_capsule.jpg",
+    "coverage_level": "strong",
+    "created_at": "2026-05-09 19:53:29",
+    "difficulty": 4,
+    "difficulty_reason": "Dificuldade 4/10 conforme PowerPyx e guias de apoio: Insanity fica mais controlável com itens de bônus, mas a platina exige speedrun de 4 horas, run sem cura, run sem Blood Collector, gestão de CP e atenção a perdíveis sem Chapter Select.",
+    "dlc_scope": "Guia focado na lista base da platina de PS5. Deluxe Kit é add-on separado e fica fora da platina base; updates, modos extras ou DLCs futuros ficam separados da lista base.",
+    "editorial_notes": "Fontes consultadas: Capcom/Resident Evil oficial, PlayStation Store, Exophase PSN, PowerPyx, Steam PT-BR, Dayngls' Guides, TrueTrophies e PlayStationTrophies. TrueTrophies e PlayStationTrophies apareciam desatualizados em resultados públicos; PS4 não faz parte do escopo validado.",
+    "editorial_review_status": "in_review",
+    "editorial_status": "review",
+    "first_run_advice": "Finalize a primeira campanha explorando com calma, mantendo saves manuais e anotando coletáveis, arquivos, Mr. Raccoons, cofres, containers da BSAA, armas, upgrades e requisitos situacionais antes de partir para runs de dificuldade, tempo ou cleanup.",
+    "grind_summary": "O peso está em coletáveis, rota, créditos, microsamples, compras no menu de bônus e runs condicionais. Não há grind online.",
+    "guide_avoid": null,
+    "guide_best_moment": null,
+    "guide_dlc": null,
+    "guide_grind": null,
+    "guide_ideal": null,
+    "guide_online": null,
+    "guide_runs": null,
+    "image": "https://shared.fastly.steamstatic.com/store_item_assets/steam/apps/3764200/ce5437442768e38eb575f205ab9397d0264017b0/header.jpg?t=1772587704",
+    "is_verified": 0,
+    "last_reviewed_at": "2026-05-18",
+    "missable": "A lista base de PS5 trata 4 troféus como perdíveis reais ou fortemente prováveis: a escolha final e três runs condicionais. Troféus de história, dificuldade, coletáveis, grind e ações situacionais devem ser tratados como dicas, cleanup ou risco de run, não como perdíveis automáticos.",
+    "missable_summary": "Há 4 troféus tratados como perdíveis reais ou fortemente prováveis: Hope and Requiem, Speed Demon, Never Touch the Stuff e Minimalist. A platina, troféus automáticos de história, dificuldade, coletáveis, grind e objetivos situacionais não entram nessa contagem.",
+    "name": "Resident Evil Requiem",
+    "online_summary": "Não há troféus online obrigatórios na lista base consultada; PlayStation Store indica jogo de 1 jogador/offline e PowerPyx lista 0 troféus online. A platina pode ser planejada solo.",
+    "quality_warnings": "[\"needs_trophy_list_validation\",\"needs_missables_validation\",\"needs_trophy_localization_check\",\"roadmap_recently_rewritten\",\"needs_psn_source_validation\"]",
+    "reviewed_by": "Equipe editorial AtlasAchievement",
+    "runs_summary": "3 campanhas recomendadas: primeira campanha com exploração, coletáveis e saves manuais; segunda em Casual para Speed Demon, sem cura e sem Blood Collector; terceira em Insanity com bônus liberados. É tecnicamente possível otimizar mais, mas 3 runs reduzem retrabalho.",
+    "slug": "resident-evil-requiem",
+    "time": "20-25h",
+    "time_bucket": "medium",
+    "time_max_hours": 25,
+    "time_min_hours": 20,
+    "time_reason": "Faixa conservadora de 20-25h: PowerPyx estima cerca de 20h e Dayngls' Guides estima 20-25h, cobrindo primeira campanha com coletáveis, cleanup por saves manuais, speedrun/condições especiais e Insanity.",
+    "time_sort_hours": 20,
+    "updated_at": "2026-06-27 02:36:58",
+    "verification_note": "Lista base PS5 organizada; sem PS4 no escopo validado; revisar pelo painel admin antes de aplicar selo verificado.",
+    "verification_status": "review",
+    "walkthrough": null
+  },
+  "redirects": [],
+  "roadmaps": [
+    {
+      "content": "{\"title\":\"Faça a primeira campanha com saves manuais\",\"focus\":\"Campanha / reconhecimento\",\"objective\":\"Conhecer a estrutura, planejar rotas, observar spoilers e evitar perda de troféus situacionais.\",\"actions\":[\"Jogue em Casual ou Standard sem tentar otimizar tudo.\",\"Mantenha saves manuais por região.\",\"Leia alertas de spoiler antes de avançar em pontos sem retorno.\",\"Marque arquivos, Mr. Raccoons, cofres, containers da BSAA e objetivos situacionais.\"],\"warning\":\"Use saves manuais antes de pontos sem retorno e confirme coletáveis importantes antes de avançar.\",\"result\":\"Campanha conhecida e base pronta para cleanup e runs condicionais.\"}",
+      "step_order": 1
+    },
+    {
+      "content": "{\"title\":\"Organize coletáveis e objetivos acumuláveis\",\"focus\":\"Coletáveis / checklist\",\"objective\":\"Controlar arquivos, Mr. Raccoons, cofres, containers da BSAA, créditos, microsamples, crafting e itens de bônus.\",\"actions\":[\"Use a checklist desde a primeira run.\",\"Separe coletáveis por personagem, região e ponto da história.\",\"Não marque todo coletável como perdível definitivo se puder ser recuperado em nova run.\",\"Diferencie coletável, cleanup e risco de run.\"],\"warning\":\"\",\"result\":\"Coletáveis e acumuláveis controlados sem inflar a lista de perdíveis.\"}",
+      "step_order": 2
+    },
+    {
+      "content": "{\"title\":\"Resolva troféus situacionais por saves\",\"focus\":\"Situacionais / combate\",\"objective\":\"Fechar ações específicas de combate, puzzle, recursos e inimigos sem transformar tudo em perdível.\",\"actions\":[\"Use saves manuais antes de encontros específicos.\",\"Faça troféus como Chunk, Licker, Victor, Plant 43, chef, cantoras e finalizadores no momento adequado.\",\"Classifique como situacional ou risco de run, não como perdível automático.\"],\"warning\":\"Spoiler não é igual a perdível.\",\"result\":\"Troféus situacionais organizados por janela de oportunidade.\"}",
+      "step_order": 3
+    },
+    {
+      "content": "{\"title\":\"Separe runs condicionais\",\"focus\":\"Runs / restrições\",\"objective\":\"Planejar Speed Demon, Never Touch the Stuff, Minimalist e dificuldades sem misturar objetivos incompatíveis.\",\"actions\":[\"Faça Speed Demon em Casual se essa for a rota escolhida para a run dedicada.\",\"Combine sem cura e sem Blood Collector apenas se for seguro.\",\"Deixe Insanity para depois de liberar recursos fortes, se permitido.\",\"Use saves e rotas separadas para restrições incompatíveis.\"],\"warning\":\"\",\"result\":\"Runs condicionais planejadas com menos retrabalho.\"}",
+      "step_order": 4
+    },
+    {
+      "content": "{\"title\":\"Feche dificuldade, bônus e extras da lista base\",\"focus\":\"Dificuldade / bônus\",\"objective\":\"Concluir dificuldades, CP, modelos, concept arts e recursos do menu de bônus sem misturar DLC.\",\"actions\":[\"Verifique quais dificuldades acumulam.\",\"Compre e visualize modelos e concept arts exigidos.\",\"Separe Deluxe Kit, DLCs e modos futuros da platina base.\"],\"warning\":\"\",\"result\":\"Conteúdo da lista base separado de extras externos.\"}",
+      "step_order": 5
+    },
+    {
+      "content": "{\"title\":\"Cleanup final da lista base\",\"focus\":\"Cleanup\",\"objective\":\"Revisar pendências finais antes de considerar a platina encaminhada.\",\"actions\":[\"Conferir os 50 troféus da lista base.\",\"Revisar perdíveis reais, riscos de run, spoilers e coletáveis.\",\"Fechar pendências de coletáveis, runs condicionais, dificuldade e cleanup.\"],\"warning\":\"\",\"result\":\"Lista base organizada para fechamento da platina.\"}",
+      "step_order": 6
+    }
+  ],
+  "schemaVersion": 1,
+  "seedExtras": {
+    "aliases": [],
+    "attentionPoints": [],
+    "checklist": [],
+    "faq": [],
+    "note": "Campos exportados para auditoria. O SQLite atual nao possui colunas nativas para todos esses extras; a importacao preserva o que o banco suporta.",
+    "quickDecision": null,
+    "seo": {},
+    "tags": []
+  },
+  "slug": "resident-evil-requiem",
+  "trophies": [
+    {
+      "description": "Obtenha todos os troféus.",
+      "is_missable": 0,
+      "is_spoiler": 0,
+      "name": "Requiem",
+      "name_pt": "",
+      "tip": "A platina da lista base exige concluir a história, limpar coletáveis, fechar desafios de campanha e comprar/visualizar extras no menu de bônus.",
+      "trophy_code": "rerequiem_requiem",
+      "type": "Platina"
+    },
+    {
+      "description": "Encontre um surto em Wrenwood.",
+      "is_missable": 0,
+      "is_spoiler": 1,
+      "name": "Déjà vu",
+      "name_pt": "Déjà Vu",
+      "tip": "Troféu de progresso. Avance pela abertura com Leon até o evento principal da região.",
+      "trophy_code": "rerequiem_deja_vu",
+      "type": "Bronze"
+    },
+    {
+      "description": "Chegue ao porão do centro de cuidados.",
+      "is_missable": 0,
+      "is_spoiler": 1,
+      "name": "Descent Into Darkness",
+      "name_pt": "Mergulhando no Abismo",
+      "tip": "Troféu automático da história durante a primeira grande seção com Grace.",
+      "trophy_code": "rerequiem_descent_into_darkness",
+      "type": "Bronze"
+    },
+    {
+      "description": "Chegue ao pátio do centro de cuidados.",
+      "is_missable": 0,
+      "is_spoiler": 1,
+      "name": "It’s Been a Long Night",
+      "name_pt": "Noite Sem Fim",
+      "tip": "Avance até escapar da área inicial do centro usando os três Quartz.",
+      "trophy_code": "rerequiem_its_been_a_long_night",
+      "type": "Bronze"
+    },
+    {
+      "description": "Escape do centro de cuidados.",
+      "is_missable": 0,
+      "is_spoiler": 1,
+      "name": "A Harsh Reality",
+      "name_pt": "Dura Realidade",
+      "tip": "Troféu de progresso após concluir Rhodes Hill e sair da estação de tratamento.",
+      "trophy_code": "rerequiem_a_harsh_reality",
+      "type": "Bronze"
+    },
+    {
+      "description": "Chegue ao solo usando a plataforma suspensa.",
+      "is_missable": 0,
+      "is_spoiler": 1,
+      "name": "Going Down?",
+      "name_pt": "Tá Descendo?",
+      "tip": "Troféu automático durante a seção de Leon em East Raccoon City.",
+      "trophy_code": "rerequiem_going_down",
+      "type": "Bronze"
+    },
+    {
+      "description": "Chegue ao R.P.D.",
+      "is_missable": 0,
+      "is_spoiler": 1,
+      "name": "The Hero Returns",
+      "name_pt": "A Volta do Herói",
+      "tip": "Relacionado à história. Desbloqueia ao entrar no prédio do Raccoon City Police Department.",
+      "trophy_code": "rerequiem_the_hero_returns",
+      "type": "Bronze"
+    },
+    {
+      "description": "Derrote o Super Tyrant.",
+      "is_missable": 0,
+      "is_spoiler": 1,
+      "name": "I Remember That, Too",
+      "name_pt": "Eu Me Lembro Disso Também",
+      "tip": "Chefe obrigatório da campanha. Prepare munição antes de sair do R.P.D.",
+      "trophy_code": "rerequiem_i_remember_that_too",
+      "type": "Bronze"
+    },
+    {
+      "description": "Encontre ARK.",
+      "is_missable": 0,
+      "is_spoiler": 1,
+      "name": "Umbrella’s Legacy",
+      "name_pt": "O Legado da Umbrella",
+      "tip": "Troféu de progresso ao chegar à área ARK Loading Dock.",
+      "trophy_code": "rerequiem_umbrellas_legacy",
+      "type": "Bronze"
+    },
+    {
+      "description": "Comece a explorar os níveis inferiores de ARK.",
+      "is_missable": 0,
+      "is_spoiler": 1,
+      "name": "The Final Mission",
+      "name_pt": "A Missão Final",
+      "tip": "Troféu automático na reta final da campanha com Grace.",
+      "trophy_code": "rerequiem_the_final_mission",
+      "type": "Bronze"
+    },
+    {
+      "description": "Conclua a história liberando Elpis.",
+      "is_missable": 1,
+      "is_spoiler": 1,
+      "name": "Hope and Requiem",
+      "name_pt": "Esperança e Réquiem",
+      "tip": "Na escolha final, selecione a opção de liberar Elpis. A outra escolha não desbloqueia este troféu.",
+      "trophy_code": "rerequiem_hope_and_requiem",
+      "type": "Bronze"
+    },
+    {
+      "description": "Conclua a história principal pelo menos no modo Casual.",
+      "is_missable": 0,
+      "is_spoiler": 0,
+      "name": "Rookie Agent",
+      "name_pt": "Agente Sem Medalhas",
+      "tip": "As dificuldades acumulam. Pode vir junto com troféus de dificuldades superiores.",
+      "trophy_code": "rerequiem_rookie_agent",
+      "type": "Bronze"
+    },
+    {
+      "description": "Conclua a história principal pelo menos no modo Padrão (Moderno).",
+      "is_missable": 0,
+      "is_spoiler": 0,
+      "name": "Rising Agent",
+      "name_pt": "Agente de Futuro",
+      "tip": "Boa opção para uma primeira campanha se você já tem familiaridade com survival horror.",
+      "trophy_code": "rerequiem_rising_agent",
+      "type": "Bronze"
+    },
+    {
+      "description": "Conclua a história principal pelo menos no modo Padrão (Clássico).",
+      "is_missable": 0,
+      "is_spoiler": 0,
+      "name": "Resolute Agent",
+      "name_pt": "Agente Casca-Grossa",
+      "tip": "No modo Classic, os saves manuais usam Ink Ribbons. Planeje salvamentos antes de áreas longas.",
+      "trophy_code": "rerequiem_resolute_agent",
+      "type": "Prata"
+    },
+    {
+      "description": "Conclua a história na dificuldade Insanity.",
+      "is_missable": 0,
+      "is_spoiler": 0,
+      "name": "Remarkable Agent",
+      "name_pt": "Agente Notável",
+      "tip": "Deixe para depois de liberar itens de bônus, munição infinita e recursos fortes. As dificuldades inferiores acumulam.",
+      "trophy_code": "rerequiem_remarkable_agent",
+      "type": "Ouro"
+    },
+    {
+      "description": "Com a Grace, armazene um item na Caixa de Itens.",
+      "is_missable": 0,
+      "is_spoiler": 0,
+      "name": "Out of Sight, Out of Mind",
+      "name_pt": "Caixinha da Bagunça",
+      "tip": "Use qualquer caixa de armazenamento nas salas seguras do centro de cuidados.",
+      "trophy_code": "rerequiem_out_of_sight_out_of_mind",
+      "type": "Bronze"
+    },
+    {
+      "description": "Use uma ink ribbon para salvar em uma máquina de escrever.",
+      "is_missable": 0,
+      "is_spoiler": 0,
+      "name": "The Ol’ Fashioned Way",
+      "name_pt": "À Moda Antiga",
+      "tip": "Disponível em Standard (Classic) e Insanity. Pegue uma fita e faça um save manual.",
+      "trophy_code": "rerequiem_the_ol_fashioned_way",
+      "type": "Bronze"
+    },
+    {
+      "description": "Abra uma gaveta com uma gazua.",
+      "is_missable": 0,
+      "is_spoiler": 0,
+      "name": "Like Mother, Like Daughter",
+      "name_pt": "Tal Mãe, Tal Filha",
+      "tip": "Faça com Grace em uma gaveta trancada marcada no mapa assim que encontrar um lockpick.",
+      "trophy_code": "rerequiem_like_mother_like_daughter",
+      "type": "Bronze"
+    },
+    {
+      "description": "Derrote um zumbi usando o hemolytic injector.",
+      "is_missable": 0,
+      "is_spoiler": 0,
+      "name": "Fatal Dose",
+      "name_pt": "Dose Cavalar",
+      "tip": "A melhor chance é logo após encontrar um injector no centro de cuidados. Aproxime-se agachado e injete por trás.",
+      "trophy_code": "rerequiem_fatal_dose",
+      "type": "Bronze"
+    },
+    {
+      "description": "Desbloqueie uma receita de crafting usando análise.",
+      "is_missable": 0,
+      "is_spoiler": 0,
+      "name": "Science!",
+      "name_pt": "Eureka!",
+      "tip": "Use o Analyzer no Blood Lab com os itens necessários para liberar receitas.",
+      "trophy_code": "rerequiem_science",
+      "type": "Bronze"
+    },
+    {
+      "description": "Crie um item usando o blood collector.",
+      "is_missable": 0,
+      "is_spoiler": 0,
+      "name": "The Power of Blood",
+      "name_pt": "Sangue é Poder",
+      "tip": "Após liberar receitas no Blood Lab, colete sangue infectado e fabrique munição ou injector.",
+      "trophy_code": "rerequiem_the_power_of_blood",
+      "type": "Bronze"
+    },
+    {
+      "description": "Use 300 microsamples de sangue infectado.",
+      "is_missable": 0,
+      "is_spoiler": 0,
+      "name": "Blood! More Blood!",
+      "name_pt": "Eu Quero é Sangue!",
+      "tip": "Pode ser farmado criando itens com sangue infectado e recarregando saves, se necessário.",
+      "trophy_code": "rerequiem_blood_more_blood",
+      "type": "Bronze"
+    },
+    {
+      "description": "Atordoe a Girl com Requiem.",
+      "is_missable": 0,
+      "is_spoiler": 1,
+      "name": "Bring Out the Big Guns",
+      "name_pt": "Hora da Artilharia Pesada",
+      "tip": "Use o revólver Requiem da Grace contra a perseguidora; a estação de tratamento é um bom ponto para isso.",
+      "trophy_code": "rerequiem_bring_out_the_big_guns",
+      "type": "Bronze"
+    },
+    {
+      "description": "Destrua um Memorial de Mr. Raccoon.",
+      "is_missable": 0,
+      "is_spoiler": 0,
+      "name": "The Hunt Begins",
+      "name_pt": "Primeiro Guaxinim na Conta",
+      "tip": "Atire ou bata no primeiro Mr. Raccoon encontrado. Depois siga checklist para todos.",
+      "trophy_code": "rerequiem_the_hunt_begins",
+      "type": "Bronze"
+    },
+    {
+      "description": "Apare um ataque inimigo.",
+      "is_missable": 0,
+      "is_spoiler": 0,
+      "name": "Untouchable",
+      "name_pt": "Sem Um Arranhão",
+      "tip": "Com Leon, use o machado de combate para aparar no timing certo pouco antes do golpe acertar.",
+      "trophy_code": "rerequiem_untouchable",
+      "type": "Bronze"
+    },
+    {
+      "description": "Arremesse uma arma obtida de um inimigo.",
+      "is_missable": 0,
+      "is_spoiler": 0,
+      "name": "Can I Borrow This?",
+      "name_pt": "Me Empresta Rapidinho?",
+      "tip": "Alguns inimigos de Leon deixam armas corpo a corpo no chão. Interaja para arremessar uma vez.",
+      "trophy_code": "rerequiem_can_i_borrow_this",
+      "type": "Bronze"
+    },
+    {
+      "description": "Derrote 3 zumbis com um golpe final do Machado Tático.",
+      "is_missable": 0,
+      "is_spoiler": 0,
+      "name": "Chop Chop",
+      "name_pt": "Picadinho de Zumbi",
+      "tip": "Com Leon, enfraqueça inimigos até aparecer o prompt de finalização e repita três vezes.",
+      "trophy_code": "rerequiem_chop_chop",
+      "type": "Bronze"
+    },
+    {
+      "description": "Compre um item na Caixa de Suprimentos.",
+      "is_missable": 0,
+      "is_spoiler": 0,
+      "name": "Retail Therapy",
+      "name_pt": "Me Mimei",
+      "tip": "Primeira oportunidade útil aparece em Raccoon City com Leon, após liberar o Central Camp.",
+      "trophy_code": "rerequiem_retail_therapy",
+      "type": "Bronze"
+    },
+    {
+      "description": "Aprimore uma arma.",
+      "is_missable": 0,
+      "is_spoiler": 0,
+      "name": "Tailor Made",
+      "name_pt": "Sob Medida",
+      "tip": "Combine uma peça nova com uma arma ou compre melhoria pela supply box quando estiver com Leon.",
+      "trophy_code": "rerequiem_tailor_made",
+      "type": "Bronze"
+    },
+    {
+      "description": "Interrompa um dos ataques de Victor na rodovia.",
+      "is_missable": 0,
+      "is_spoiler": 1,
+      "name": "Road Rage",
+      "name_pt": "Condução Agressiva",
+      "tip": "Durante a seção de moto, atire em Victor quando ele preparar o ataque indicado pelo marcador.",
+      "trophy_code": "rerequiem_road_rage",
+      "type": "Bronze"
+    },
+    {
+      "description": "Com o Leon, crie todos os itens possíveis.",
+      "is_missable": 0,
+      "is_spoiler": 0,
+      "name": "Master Craftsman",
+      "name_pt": "Senhor da Criação",
+      "tip": "Faça um save, fabrique os nove tipos de item necessários e recarregue se quiser preservar materiais.",
+      "trophy_code": "rerequiem_master_craftsman",
+      "type": "Bronze"
+    },
+    {
+      "description": "Derrote pelo menos três inimigos com um único disparo da Requiem.",
+      "is_missable": 0,
+      "is_spoiler": 0,
+      "name": "Bang For Your Buck",
+      "name_pt": "Pague Um, Leve Vários",
+      "tip": "Alinhe três zumbis com Grace e use o Requiem para atravessar todos com o mesmo disparo.",
+      "trophy_code": "rerequiem_bang_for_your_buck",
+      "type": "Bronze"
+    },
+    {
+      "description": "Corte a língua de um Licker β2 usando o hatchet.",
+      "is_missable": 0,
+      "is_spoiler": 1,
+      "name": "Cat Got Your Tongue?",
+      "name_pt": "O Gato Comeu a Sua Língua?",
+      "tip": "Com Leon em ARK, espere o ataque de língua e acerte o contra no timing correto.",
+      "trophy_code": "rerequiem_cat_got_your_tongue",
+      "type": "Bronze"
+    },
+    {
+      "description": "Derrote o chef no centro de cuidados durante a história.",
+      "is_missable": 0,
+      "is_spoiler": 1,
+      "name": "Order Up!",
+      "name_pt": "Prato do Dia: Bala",
+      "tip": "O chef aparece na cozinha. Dá para derrotar com Grace ou deixar para a chance posterior com Leon.",
+      "trophy_code": "rerequiem_order_up",
+      "type": "Bronze"
+    },
+    {
+      "description": "Derrote as duas cantoras na história principal.",
+      "is_missable": 0,
+      "is_spoiler": 1,
+      "name": "Deadly Duet",
+      "name_pt": "Dueto Mortal",
+      "tip": "As duas zumbis cantoras ficam no centro de cuidados. Faça isso antes de avançar demais.",
+      "trophy_code": "rerequiem_deadly_duet",
+      "type": "Bronze"
+    },
+    {
+      "description": "Derrote um Chunk como Grace.",
+      "is_missable": 0,
+      "is_spoiler": 1,
+      "name": "Grace and Goliath",
+      "name_pt": "Grace e Golias",
+      "tip": "Faça no centro de cuidados quando o Chunk aparecer após o ID Wristband. Munição infinita ajuda em runs futuras.",
+      "trophy_code": "rerequiem_grace_and_goliath",
+      "type": "Bronze"
+    },
+    {
+      "description": "Faça um zumbi atacar outro zumbi nas alas do hospital.",
+      "is_missable": 0,
+      "is_spoiler": 0,
+      "name": "Internal Dispute",
+      "name_pt": "Disputa Interna",
+      "tip": "Use uma garrafa vazia para manipular o zumbi cego e fazer ele atingir outro inimigo.",
+      "trophy_code": "rerequiem_internal_dispute",
+      "type": "Bronze"
+    },
+    {
+      "description": "Derrote 300 inimigos.",
+      "is_missable": 0,
+      "is_spoiler": 0,
+      "name": "Seasoned Pro",
+      "name_pt": "Profissional de Excelência",
+      "tip": "Acumula entre campanhas e pode ser farmado por reload/checkpoint, mas tende a vir naturalmente no caminho da platina.",
+      "trophy_code": "rerequiem_seasoned_pro",
+      "type": "Bronze"
+    },
+    {
+      "description": "Derrote todas as seedlings da Plant 43.",
+      "is_missable": 0,
+      "is_spoiler": 1,
+      "name": "Not Today, Buds!",
+      "name_pt": "Hoje Não, Flores!",
+      "tip": "Com Leon, explore completamente a seção da caverna depois do trem para não deixar nenhuma para trás.",
+      "trophy_code": "rerequiem_not_today_buds",
+      "type": "Bronze"
+    },
+    {
+      "description": "Abra todos os cofres da história principal.",
+      "is_missable": 0,
+      "is_spoiler": 0,
+      "name": "No Safe is Safe",
+      "name_pt": "Nem Cofres Se Salvam",
+      "tip": "São cofres encontrados nas seções da Grace. Use checklist porque não há chapter select tradicional.",
+      "trophy_code": "rerequiem_no_safe_is_safe",
+      "type": "Bronze"
+    },
+    {
+      "description": "Abra todos os containers da BSAA.",
+      "is_missable": 0,
+      "is_spoiler": 0,
+      "name": "Crate Expectations",
+      "name_pt": "Um Zumbi ou Um Presente Misterioso?",
+      "tip": "São containers encontrados com Leon em East Raccoon City. Faça antes de avançar definitivamente.",
+      "trophy_code": "rerequiem_crate_expectations",
+      "type": "Bronze"
+    },
+    {
+      "description": "Leia todos os arquivos da história principal.",
+      "is_missable": 0,
+      "is_spoiler": 0,
+      "name": "Case Closed",
+      "name_pt": "Caso Encerrado",
+      "tip": "Há 75 arquivos. Use checklist desde a primeira campanha para evitar cleanup longo.",
+      "trophy_code": "rerequiem_case_closed",
+      "type": "Bronze"
+    },
+    {
+      "description": "Destrua todos os Memoriais de Mr. Raccoon.",
+      "is_missable": 0,
+      "is_spoiler": 0,
+      "name": "You Little Rascal!",
+      "name_pt": "Que Pestinha!",
+      "tip": "São 25 memoriam. Destrua com tiro ou melee e acompanhe por checklist de área.",
+      "trophy_code": "rerequiem_you_little_rascal",
+      "type": "Bronze"
+    },
+    {
+      "description": "Conclua a história liberando Elpis em até quatro horas.",
+      "is_missable": 1,
+      "is_spoiler": 0,
+      "name": "Speed Demon",
+      "name_pt": "Trem Bala Sem Freio",
+      "tip": "Faça em Casual, combine com a run sem cura e sem blood collector, e pause quando precisar porque o timer para no menu.",
+      "trophy_code": "rerequiem_speed_demon",
+      "type": "Prata"
+    },
+    {
+      "description": "Ganhe 200.000 créditos.",
+      "is_missable": 0,
+      "is_spoiler": 0,
+      "name": "Credit Where Credit Is Due",
+      "name_pt": "Nem Vou Olhar a Fatura",
+      "tip": "Com Leon, colete o Tactical Tracker e derrote inimigos. Deve vir naturalmente até a segunda campanha.",
+      "trophy_code": "rerequiem_credit_where_credit_is_due",
+      "type": "Prata"
+    },
+    {
+      "description": "Colete 5000 microsamples de sangue infectado com o blood collector.",
+      "is_missable": 0,
+      "is_spoiler": 0,
+      "name": "Bloodlust",
+      "name_pt": "Sanguinário",
+      "tip": "Use transfusion bags e reload de save para farmar rapidamente quando já tiver o Blood Collector.",
+      "trophy_code": "rerequiem_bloodlust",
+      "type": "Prata"
+    },
+    {
+      "description": "Veja todos os modelos.",
+      "is_missable": 0,
+      "is_spoiler": 0,
+      "name": "Model Mania",
+      "name_pt": "Mania de Modelo",
+      "tip": "Compre e abra todos os modelos no menu de bônus. Só desbloquear não basta: é preciso visualizar.",
+      "trophy_code": "rerequiem_model_mania",
+      "type": "Prata"
+    },
+    {
+      "description": "Veja todas as artes conceituais.",
+      "is_missable": 0,
+      "is_spoiler": 0,
+      "name": "Curator",
+      "name_pt": "Curadoria de Arte",
+      "tip": "Compre e abra todas as artes conceituais no menu de bônus. Deixe para o final para não gastar CP cedo.",
+      "trophy_code": "rerequiem_curator",
+      "type": "Prata"
+    },
+    {
+      "description": "Conclua a história principal sem usar ervas ou injetores vitais.",
+      "is_missable": 1,
+      "is_spoiler": 0,
+      "name": "Never Touch the Stuff",
+      "name_pt": "Detox Raiz",
+      "tip": "Combine com speedrun em Casual. Pode pegar, descartar ou vender itens de cura, mas não consumir.",
+      "trophy_code": "rerequiem_never_touch_the_stuff",
+      "type": "Ouro"
+    },
+    {
+      "description": "Conclua a história sem Grace usar o blood collector.",
+      "is_missable": 1,
+      "is_spoiler": 0,
+      "name": "Minimalist",
+      "name_pt": "Minimalista",
+      "tip": "A forma mais segura é não pegar o Blood Collector na campanha dedicada a esse troféu.",
+      "trophy_code": "rerequiem_minimalist",
+      "type": "Ouro"
+    }
+  ]
+}

@@ -1,0 +1,690 @@
+{
+  "game": {
+    "avoid_if": "Evite se voce nao gosta de social sim, calendario rigido, Tartarus ou risco de perder janelas de tempo.",
+    "before_you_start": "Uma jogada é suficiente com calendário 100%. Use os 16 slots de save manual, acompanhe Elizabeth Requests e missing persons, use a Theurgy de Shinjiro antes de 04/10 e poupe Ryoji em 31/12. Episode Aigis fica separado.",
+    "best_for": "Ideal para quem quer uma platina JRPG longa, acessivel e baseada em planejamento de calendario.",
+    "cleanup_advice": "Conclua em janeiro Social Links, Reaper, Messiah, Tartarus, Monad, Twilight Fragments, baús e acumulativos; não há free roam após 31/01.",
+    "cover_image": "https://cdn.cloudflare.steamstatic.com/steam/apps/2161700/library_600x900.jpg",
+    "coverage_level": "complete",
+    "created_at": "2026-05-09 19:53:40",
+    "difficulty": 3,
+    "difficulty_reason": "3/10: nenhuma dificuldade selecionável afeta troféus; o desafio está no calendário, Social Links e planejamento.",
+    "dlc_scope": "Episode Aigis é DLC separado, possui lista própria e não é necessário para a platina A Most Remarkable Guest.",
+    "editorial_notes": "",
+    "editorial_review_status": "verified",
+    "editorial_status": "published",
+    "first_run_advice": "Siga um calendário 100% desde abril, leve Arcana correspondente aos Social Links e mantenha saves manuais em slots separados.",
+    "grind_summary": "O peso esta em calendario, Social Links, Social Stats, Elizabeth Requests, Tartarus, Reaper, Messiah e cleanup de janeiro.",
+    "guide_avoid": null,
+    "guide_best_moment": null,
+    "guide_dlc": null,
+    "guide_grind": null,
+    "guide_ideal": null,
+    "guide_online": null,
+    "guide_runs": null,
+    "image": "https://cdn.cloudflare.steamstatic.com/steam/apps/2161700/header.jpg",
+    "is_verified": 1,
+    "last_reviewed_at": "2026-06-19",
+    "missable": "Tem perdíveis e exige planejamento de calendário. Os maiores riscos são Social Links, Theurgy de Shinjiro, exames, missing persons e a decisão de 31/12.",
+    "missable_summary": "Oito troféus recebem marcação principal de perdível ou risco de calendário, sem transformar toda atividade opcional em perdível.",
+    "name": "Persona 3 Reload",
+    "online_summary": "A lista base é totalmente offline e single-player, sem troféus online ou cooperação.",
+    "quality_warnings": "",
+    "reviewed_by": "AtlasAchievement",
+    "runs_summary": "Pode ser feita em uma playthrough bem planejada, mas calendario, Social Links, Requests e final bom exigem atencao.",
+    "slug": "persona-3-reload",
+    "time": "60-70h",
+    "time_bucket": "long",
+    "time_max_hours": 70,
+    "time_min_hours": 60,
+    "time_reason": "A faixa de 60-70 horas considera campanha completa, Social Links, Tartarus, Requests, Reaper, Messiah e cleanup final.",
+    "time_sort_hours": 60,
+    "updated_at": "2026-06-27 02:36:59",
+    "verification_note": "Guia verificado: lista base com 49 troféus, 60–70h, dificuldade 3/10, oito riscos principais de calendário, uma run planejada, sem online, coop, dificuldade obrigatória ou DLC.",
+    "verification_status": "verified",
+    "walkthrough": null
+  },
+  "redirects": [],
+  "roadmaps": [
+    {
+      "content": "{\"title\":\"Calendário 100% desde abril\",\"focus\":\"Social Links, Social Stats, aulas e rotina diária\",\"objective\":\"Seguir um calendário eficiente desde o início e construir a base social para concluir a platina em uma jogada.\",\"actions\":[\"Trabalhe Social Links, Social Stats, aulas, provas, romance, convites, jobs e atividades do dormitório.\",\"Leve uma Persona da Arcana correspondente aos encontros de Social Link.\",\"Distribua saves manuais entre os 16 slots antes de semanas ou escolhas importantes.\",\"Evite gastar tardes úteis sem conferir o calendário.\"],\"warning\":\"A Legacy of Friendships é o maior gargalo; erros repetidos no calendário podem exigir outra jogada.\",\"result\":\"Base social e de calendário encaminhada para a platina em uma única run.\"}",
+      "step_order": 1
+    },
+    {
+      "content": "{\"title\":\"Tartarus em blocos e Elizabeth Requests\",\"focus\":\"Baús, Twilight Fragments, Monad e missing persons\",\"objective\":\"Subir Tartarus regularmente e combinar exploração, resgates, requests, Personas e combate.\",\"actions\":[\"Abra baús, gaste Twilight Fragments e conclua Monad Doors durante cada bloco.\",\"Resgate missing persons antes dos prazos informados por Fuuka.\",\"Complete Elizabeth Requests suficientes para Distinguished Visitor.\",\"Use Shuffle Time para obter Personas e Major Arcana.\"],\"warning\":\"Missing persons têm prazo; Monad Doors e requests não devem ser deixados para o último dia.\",\"result\":\"Tartarus, exploração e Elizabeth Requests avançam sem quebrar o calendário.\"}",
+      "step_order": 2
+    },
+    {
+      "content": "{\"title\":\"Social Links, Social Stats e romance\",\"focus\":\"A Legacy of Friendships e troféus sociais\",\"objective\":\"Maximizar Courage, Charm e Academics, desbloquear cada Social Link e concluir um romance.\",\"actions\":[\"Priorize Social Links escolares e vínculos com disponibilidade limitada.\",\"Use Arcana correspondente para reduzir encontros sem avanço de rank.\",\"Avance uma opção romântica até o Rank 9 para That Special Someone.\",\"Reserve janeiro para o Social Link de Aigis.\"],\"warning\":\"Aigis só fica disponível em janeiro; não desperdice tardes sem revisar os vínculos restantes.\",\"result\":\"A Legacy of Friendships, People Person, Peak Performance e troféus sociais ficam concluídos.\"}",
+      "step_order": 3
+    },
+    {
+      "content": "{\"title\":\"Theurgy, dormitório e Shinjiro\",\"focus\":\"The Strength of Our Hearts e Combat Characteristics\",\"objective\":\"Usar a Theurgy de cada companheiro e concluir eventos relevantes do dormitório.\",\"actions\":[\"Use as Theurgies assim que forem liberadas e marque cada companheiro.\",\"Use obrigatoriamente a Theurgy de Shinjiro antes de 04/10.\",\"Faça eventos do dormitório para liberar Combat Characteristics.\",\"Confirme The Strength of Our Hearts antes de avançar outubro.\"],\"warning\":\"A Theurgy de Shinjiro tem janela única antes de 04/10 e não é automática.\",\"result\":\"O principal perdível técnico da lista fica protegido.\"}",
+      "step_order": 4
+    },
+    {
+      "content": "{\"title\":\"Decisão de 31/12 e caminho do final bom\",\"focus\":\"Ryoji, From Shadows into Light e The Great Seal\",\"objective\":\"Fazer a escolha correta em 31/12 e manter acesso ao caminho de Nyx.\",\"actions\":[\"Crie um save manual antes da decisão de 31/12.\",\"Não mate Ryoji\",\"escolha poupá-lo.\",\"Continue a campanha pelo caminho do final bom.\",\"Prepare Tartarus e os Social Links restantes para janeiro.\"],\"warning\":\"Matar Ryoji encerra a rota cedo e impede o final bom nessa jogada.\",\"result\":\"From Shadows into Light e The Great Seal permanecem disponíveis.\"}",
+      "step_order": 5
+    },
+    {
+      "content": "{\"title\":\"Janeiro: Aigis, Reaper, Messiah e cleanup\",\"focus\":\"Reta final antes de 31/01\",\"objective\":\"Finalizar vínculos, Tartarus, fusões, bosses opcionais e acumulativos antes do encerramento.\",\"actions\":[\"Maximize o Social Link de Aigis e feche outros vínculos pendentes.\",\"Derrote o Reaper e alcance o nível necessário para fundir Messiah.\",\"Conclua Monad, Twilight Fragments, baús, Major Arcana e combates restantes.\",\"Confirme o checklist da lista base antes de 31/01.\"],\"warning\":\"31/01 é o ponto final; não existe free roam nem level select após a história. Faça saves manuais antes da reta final.\",\"result\":\"A Most Remarkable Guest é desbloqueado sem depender de Episode Aigis.\"}",
+      "step_order": 6
+    }
+  ],
+  "schemaVersion": 1,
+  "seedExtras": {
+    "aliases": [],
+    "attentionPoints": [
+      {
+        "tip": "Uma run é suficiente com calendário eficiente; sem guia, erros podem exigir duas ou mais jogadas.",
+        "title": "Calendário 100%",
+        "type": "Uma jogada planejada"
+      },
+      {
+        "tip": "Maximize cada Social Link usando Arcana correspondente e protegendo as tardes de janeiro.",
+        "title": "A Legacy of Friendships",
+        "type": "Maior gargalo"
+      },
+      {
+        "tip": "Use a Theurgy de Shinjiro antes de 04/10 para The Strength of Our Hearts.",
+        "title": "Theurgy de Shinjiro",
+        "type": "Antes de 04/10"
+      },
+      {
+        "tip": "Poupe Ryoji; não o mate se quiser continuar pelo caminho de Nyx e do final bom.",
+        "title": "Escolha de 31/12",
+        "type": "Final bom"
+      },
+      {
+        "tip": "Não há free roam nem level select após a história; faça o cleanup antes do final.",
+        "title": "Sem pós-jogo livre",
+        "type": "Ponto final em 31/01"
+      },
+      {
+        "tip": "Mantenha saves separados antes de semanas críticas, 31/12 e 31/01.",
+        "title": "Saves manuais",
+        "type": "16 slots"
+      },
+      {
+        "tip": "Resgate as pessoas desaparecidas antes das datas-limite informadas por Fuuka.",
+        "title": "Missing persons",
+        "type": "Prazo"
+      },
+      {
+        "tip": "Há margem, mas complete requests suficientes; 82 pedidos são a referência para Distinguished Visitor.",
+        "title": "Elizabeth Requests",
+        "type": "Acompanhamento"
+      },
+      {
+        "tip": "Prepare nível e Judgement em janeiro para fundir Messiah antes do fim.",
+        "title": "Messiah",
+        "type": "Nível e fusão"
+      },
+      {
+        "tip": "Derrote o Reaper antes do encerramento da campanha; não existe cleanup pós-história.",
+        "title": "Reaper",
+        "type": "Boss opcional"
+      },
+      {
+        "tip": "Episode Aigis tem lista própria e não é necessário para A Most Remarkable Guest.",
+        "title": "Episode Aigis",
+        "type": "DLC separado"
+      },
+      {
+        "tip": "A platina pode ser feita offline, solo e em qualquer dificuldade.",
+        "title": "Sem online, coop ou dificuldade",
+        "type": "Lista base"
+      }
+    ],
+    "checklist": [],
+    "faq": [
+      {
+        "answer": "Não. A lista base é totalmente offline.",
+        "question": "Persona 3 Reload tem troféus online?"
+      },
+      {
+        "answer": "Não. A platina é single-player.",
+        "question": "Persona 3 Reload tem coop?"
+      },
+      {
+        "answer": "Não. A platina pode ser feita em qualquer dificuldade.",
+        "question": "A dificuldade afeta troféus?"
+      },
+      {
+        "answer": "Uma jogada com calendário 100%. Sem guia, duas ou mais podem ser necessárias por causa de Social Links, calendário e escolhas.",
+        "question": "Quantas jogadas são necessárias?"
+      },
+      {
+        "answer": "Sim. O calendário, Social Links, exames, missing persons e escolhas criam riscos reais; use especialmente a Theurgy de Shinjiro antes de 04/10.",
+        "question": "Persona 3 Reload tem troféus perdíveis?"
+      },
+      {
+        "answer": "A Legacy of Friendships, por exigir maximizar cada Social Link em uma única jogada.",
+        "question": "Qual é o maior gargalo da platina?"
+      },
+      {
+        "answer": "Poupe Ryoji. Não o mate; essa escolha mantém o caminho do final bom.",
+        "question": "Qual escolha devo fazer em 31/12?"
+      },
+      {
+        "answer": "Não. O ponto final é 31/01; finalize Reaper, Messiah, Social Links, Monad Doors, Twilight Fragments, baús, requests e cleanup antes do final.",
+        "question": "Existe pós-jogo livre?"
+      },
+      {
+        "answer": "Não. Episode Aigis é DLC separado e não entra nos 49 troféus base nem em A Most Remarkable Guest.",
+        "question": "Episode Aigis é necessário para a platina?"
+      },
+      {
+        "answer": "Não todos, mas complete o suficiente para convidar Elizabeth ao quarto; 82 requests são a referência principal.",
+        "question": "Preciso completar todos os Elizabeth Requests?"
+      },
+      {
+        "answer": "Não há troféu direto para todos eles, embora possam liberar fusões únicas e ajudar na rota 100%.",
+        "question": "Preciso completar todos os Linked Episodes?"
+      },
+      {
+        "answer": "Não há troféu direto de 100% do Compendium, mas fusões avançadas ajudam com Messiah, Reaper e Theurgy.",
+        "question": "Preciso completar 100% do Compendium?"
+      }
+    ],
+    "note": "Campos exportados para auditoria. O SQLite atual nao possui colunas nativas para todos esses extras; a importacao preserva o que o banco suporta.",
+    "quickDecision": {
+      "summary": "Persona 3 Reload é uma platina longa, offline e de calendário: 49 troféus, 60-70h, 3/10, uma jogada com calendário 100%, oito riscos principais e Episode Aigis fora da lista base."
+    },
+    "seo": {},
+    "tags": []
+  },
+  "slug": "persona-3-reload",
+  "trophies": [
+    {
+      "description": "Acquired all trophies.",
+      "is_missable": 0,
+      "is_spoiler": 0,
+      "name": "A Most Remarkable Guest",
+      "name_pt": "O Convidado Mais Notável",
+      "tip": "Conclua os outros 48 troféus da lista base de Persona 3 Reload. Episode Aigis não entra na platina.",
+      "trophy_code": "p3r_a_most_remarkable_guest",
+      "type": "Platina"
+    },
+    {
+      "description": "Maximize cada vínculo social.",
+      "is_missable": 1,
+      "is_spoiler": 0,
+      "name": "A Legacy of Friendships",
+      "name_pt": "Um Legado de Amizades",
+      "tip": "Maior gargalo da platina: siga um calendário eficiente, leve uma Persona da Arcana correspondente aos encontros e reserve janeiro para Aigis.",
+      "trophy_code": "p3r_a_legacy_of_friendships",
+      "type": "Ouro"
+    },
+    {
+      "description": "Defeated the Reaper.",
+      "is_missable": 0,
+      "is_spoiler": 1,
+      "name": "Reaper Reaped",
+      "name_pt": "Ceifador Ceifado",
+      "tip": "Derrote o Reaper antes do fim. Prepare nível, equipamentos, Theurgy e uma estratégia segura em Tartarus.",
+      "trophy_code": "p3r_reaper_reaped",
+      "type": "Ouro"
+    },
+    {
+      "description": "Fused Messiah.",
+      "is_missable": 0,
+      "is_spoiler": 1,
+      "name": "Path to Salvation",
+      "name_pt": "Caminho para a Salvação",
+      "tip": "Suba o nível necessário, avance Judgement em janeiro e funda Messiah antes do ponto final.",
+      "trophy_code": "p3r_path_to_salvation",
+      "type": "Ouro"
+    },
+    {
+      "description": "Watched the good ending.",
+      "is_missable": 1,
+      "is_spoiler": 1,
+      "name": "From Shadows into Light",
+      "name_pt": "Das Sombras para a Luz",
+      "tip": "Em 31/12, não mate Ryoji: escolha poupá-lo para seguir ao caminho do final bom.",
+      "trophy_code": "p3r_from_shadows_into_light",
+      "type": "Prata"
+    },
+    {
+      "description": "Invited Elizabeth to your room.",
+      "is_missable": 0,
+      "is_spoiler": 0,
+      "name": "Distinguished Visitor",
+      "name_pt": "Visitante Ilustre",
+      "tip": "Complete requests suficientes para convidar Elizabeth ao quarto; 82 requests são a referência principal, e há margem porque existem mais pedidos.",
+      "trophy_code": "p3r_distinguished_visitor",
+      "type": "Prata"
+    },
+    {
+      "description": "Aced an exam.",
+      "is_missable": 1,
+      "is_spoiler": 0,
+      "name": "Top of the Class",
+      "name_pt": "Primeiro da Turma",
+      "tip": "Eleve Academics e responda corretamente às provas, que acontecem em datas fixas.",
+      "trophy_code": "p3r_top_of_the_class",
+      "type": "Prata"
+    },
+    {
+      "description": "Nurtured a romance.",
+      "is_missable": 1,
+      "is_spoiler": 0,
+      "name": "That Special Someone",
+      "name_pt": "Alguém Especial",
+      "tip": "Avance uma opção romântica até o Rank 9 dentro do calendário.",
+      "trophy_code": "p3r_that_special_someone",
+      "type": "Prata"
+    },
+    {
+      "description": "Maximize um vínculo social.",
+      "is_missable": 0,
+      "is_spoiler": 0,
+      "name": "Unbreakable Link",
+      "name_pt": "Vínculo Inquebrável",
+      "tip": "Maximize um Social Link; normalmente virá no caminho de A Legacy of Friendships.",
+      "trophy_code": "p3r_unbreakable_link",
+      "type": "Prata"
+    },
+    {
+      "description": "Use a Theurgy de cada companheiro.",
+      "is_missable": 1,
+      "is_spoiler": 0,
+      "name": "The Strength of Our Hearts",
+      "name_pt": "A Força dos Nossos Corações",
+      "tip": "Use a Theurgy de cada companheiro, incluindo a de Shinjiro antes de 04/10. Não trate este troféu como automático.",
+      "trophy_code": "p3r_the_strength_of_our_hearts",
+      "type": "Prata"
+    },
+    {
+      "description": "Maximize Courage, Academics e Charm.",
+      "is_missable": 1,
+      "is_spoiler": 0,
+      "name": "Peak Performance",
+      "name_pt": "Desempenho Máximo",
+      "tip": "Maximize Courage, Academics e Charm usando dias e noites com eficiência.",
+      "trophy_code": "p3r_peak_performance",
+      "type": "Prata"
+    },
+    {
+      "description": "Obtained Orpheus.",
+      "is_missable": 0,
+      "is_spoiler": 0,
+      "name": "Awakened Power",
+      "name_pt": "Poder Desperto",
+      "tip": "troféu automático de história no inicio da campanha.",
+      "trophy_code": "p3r_awakened_power",
+      "type": "Bronze"
+    },
+    {
+      "description": "Joined the Specialized Extracurricular Execution Squad.",
+      "is_missable": 0,
+      "is_spoiler": 0,
+      "name": "SEES the Day",
+      "name_pt": "O Dia da SEES",
+      "tip": "troféu automático de história.",
+      "trophy_code": "p3r_sees_the_day",
+      "type": "Bronze"
+    },
+    {
+      "description": "Defeated the Priestess.",
+      "is_missable": 0,
+      "is_spoiler": 1,
+      "name": "Back on Track",
+      "name_pt": "De Volta aos Trilhos",
+      "tip": "troféu automático de full moon boss.",
+      "trophy_code": "p3r_back_on_track",
+      "type": "Bronze"
+    },
+    {
+      "description": "Defeated the Empress and Emperor.",
+      "is_missable": 0,
+      "is_spoiler": 1,
+      "name": "Empowered Protector",
+      "name_pt": "Protetor Fortalecido",
+      "tip": "troféu automático de full moon boss.",
+      "trophy_code": "p3r_empowered_protector",
+      "type": "Bronze"
+    },
+    {
+      "description": "Defeated the Hierophant and the Lovers.",
+      "is_missable": 0,
+      "is_spoiler": 1,
+      "name": "Never Toy with Matters of the Heart",
+      "name_pt": "Não Brinque com Assuntos do Coração",
+      "tip": "troféu automático de full moon bosses.",
+      "trophy_code": "p3r_never_toy_with_matters_of_the_heart",
+      "type": "Bronze"
+    },
+    {
+      "description": "Defeated the Chariot and Justice.",
+      "is_missable": 0,
+      "is_spoiler": 1,
+      "name": "Armor Disarmed",
+      "name_pt": "Armadura Desarmada",
+      "tip": "troféu automático de full moon bosses.",
+      "trophy_code": "p3r_armor_disarmed",
+      "type": "Bronze"
+    },
+    {
+      "description": "Defeated the Hermit.",
+      "is_missable": 0,
+      "is_spoiler": 1,
+      "name": "Dodging Lightning",
+      "name_pt": "Desviando do Relâmpago",
+      "tip": "troféu automático de full moon boss.",
+      "trophy_code": "p3r_dodging_lightning",
+      "type": "Bronze"
+    },
+    {
+      "description": "Defeated Fortune and Strength.",
+      "is_missable": 0,
+      "is_spoiler": 1,
+      "name": "Twist of Fate",
+      "name_pt": "Reviravolta do Destino",
+      "tip": "troféu automático de full moon bosses.",
+      "trophy_code": "p3r_twist_of_fate",
+      "type": "Bronze"
+    },
+    {
+      "description": "Defeated the Hanged Man.",
+      "is_missable": 0,
+      "is_spoiler": 1,
+      "name": "A Sense of Finality",
+      "name_pt": "Sensação de Finalidade",
+      "tip": "troféu automático de full moon boss avancado.",
+      "trophy_code": "p3r_a_sense_of_finality",
+      "type": "Bronze"
+    },
+    {
+      "description": "Sealed Nyx.",
+      "is_missable": 0,
+      "is_spoiler": 1,
+      "name": "The Great Seal",
+      "name_pt": "O Grande Selo",
+      "tip": "troféu de reta final ligado ao Good Ending.",
+      "trophy_code": "p3r_the_great_seal",
+      "type": "Bronze"
+    },
+    {
+      "description": "Obtained 10 Major Arcana during Shuffle Time.",
+      "is_missable": 0,
+      "is_spoiler": 0,
+      "name": "The Fool's Journey",
+      "name_pt": "A Jornada do Louco",
+      "tip": "Use Shuffle Time em Tartarus e escolha Major Arcana diferentes ao longo da run.",
+      "trophy_code": "p3r_the_fools_journey",
+      "type": "Bronze"
+    },
+    {
+      "description": "Desbloqueie cada vínculo social.",
+      "is_missable": 1,
+      "is_spoiler": 0,
+      "name": "People Person",
+      "name_pt": "Pessoa Sociável",
+      "tip": "Inicie cada Social Link a tempo, incluindo os que aparecem mais tarde no calendário.",
+      "trophy_code": "p3r_people_person",
+      "type": "Bronze"
+    },
+    {
+      "description": "Desperte as Personas finais dos companheiros.",
+      "is_missable": 0,
+      "is_spoiler": 1,
+      "name": "A Newfound Strength",
+      "name_pt": "Uma Nova Força",
+      "tip": "Evento automático de história perto da reta final.",
+      "trophy_code": "p3r_a_newfound_strength",
+      "type": "Bronze"
+    },
+    {
+      "description": "Obtained 10 Personas during Shuffle Time.",
+      "is_missable": 0,
+      "is_spoiler": 0,
+      "name": "The Power of Choice",
+      "name_pt": "O Poder da Escolha",
+      "tip": "Escolha cartas de Persona em Shuffle Time; duplicatas que voce ja carrega não contam.",
+      "trophy_code": "p3r_the_power_of_choice",
+      "type": "Bronze"
+    },
+    {
+      "description": "Performed a Shift.",
+      "is_missable": 0,
+      "is_spoiler": 0,
+      "name": "There's No \"I\" in \"Team\"",
+      "name_pt": "Não Existe \"Eu\" em \"Equipe\"",
+      "tip": "Use Shift depois de explorar fraqueza em combate.",
+      "trophy_code": "p3r_theres_no_i_in_team",
+      "type": "Bronze"
+    },
+    {
+      "description": "Rescued a missing person.",
+      "is_missable": 1,
+      "is_spoiler": 0,
+      "name": "Extracurricular Excellence",
+      "name_pt": "Excelência Extracurricular",
+      "tip": "Resgate uma missing person antes do prazo informado por Fuuka.",
+      "trophy_code": "p3r_extracurricular_excellence",
+      "type": "Bronze"
+    },
+    {
+      "description": "Dealt over 999 damage in a single attack (All-Out Attacks excluded).",
+      "is_missable": 0,
+      "is_spoiler": 0,
+      "name": "Get a Load of Those Numbers!",
+      "name_pt": "Olha Esses Números!",
+      "tip": "Use buffs, debuffs e Theurgy em inimigo vulneravel para superar 999 de dano.",
+      "trophy_code": "p3r_get_a_load_of_those_numbers",
+      "type": "Bronze"
+    },
+    {
+      "description": "Initiated 50 Chance Encounters.",
+      "is_missable": 0,
+      "is_spoiler": 0,
+      "name": "Shrouded Assassin",
+      "name_pt": "Assassino Encoberto",
+      "tip": "Ataque sombras por trás em Tartarus até acumular 50 vantagens.",
+      "trophy_code": "p3r_shrouded_assassin",
+      "type": "Bronze"
+    },
+    {
+      "description": "Defeated a rare, golden enemy.",
+      "is_missable": 0,
+      "is_spoiler": 0,
+      "name": "The Thrill of the Hunt",
+      "name_pt": "A Emoção da Caçada",
+      "tip": "Derrote uma Golden Hand/rare shadow em Tartarus antes que fuja.",
+      "trophy_code": "p3r_the_thrill_of_the_hunt",
+      "type": "Bronze"
+    },
+    {
+      "description": "Realize 50 All-Out Attacks.",
+      "is_missable": 0,
+      "is_spoiler": 0,
+      "name": "Making the Dream Work",
+      "name_pt": "Fazendo o Sonho Acontecer",
+      "tip": "Derrube todos os inimigos e aceite All-Out Attack até chegar a 50 usos.",
+      "trophy_code": "p3r_making_the_dream_work",
+      "type": "Bronze"
+    },
+    {
+      "description": "Discovered and conquered 10 Monad doors.",
+      "is_missable": 0,
+      "is_spoiler": 0,
+      "name": "Glimpse of the Depths",
+      "name_pt": "Vislumbre das Profundezas",
+      "tip": "Conclua dez Monad Doors durante as subidas de Tartarus; não deixe todo o conteúdo para o último dia.",
+      "trophy_code": "p3r_glimpse_of_the_depths",
+      "type": "Bronze"
+    },
+    {
+      "description": "Opened 50 treasure chests.",
+      "is_missable": 0,
+      "is_spoiler": 0,
+      "name": "Briefcase Burglar",
+      "name_pt": "Ladrão de Maletas",
+      "tip": "Colete recompensas ao abrir 50 baús em Tartarus; acompanhe o contador durante as subidas.",
+      "trophy_code": "p3r_briefcase_burglar",
+      "type": "Bronze"
+    },
+    {
+      "description": "Used a total of 50 Twilight Fragments.",
+      "is_missable": 0,
+      "is_spoiler": 0,
+      "name": "Shattered Plumes",
+      "name_pt": "Plumas Estilhaçadas",
+      "tip": "Colete e gaste um total de 50 Twilight Fragments em baús trancados ou no relógio de cura.",
+      "trophy_code": "p3r_shattered_plumes",
+      "type": "Bronze"
+    },
+    {
+      "description": "Encountered a Dark Zone in Tartarus.",
+      "is_missable": 0,
+      "is_spoiler": 0,
+      "name": "The Horror of the Shade",
+      "name_pt": "O Horror da Sombra",
+      "tip": "Depois do tutorial de Dark Zones, encontre uma zona escura aleatoria em Tartarus.",
+      "trophy_code": "p3r_the_horror_of_the_shade",
+      "type": "Bronze"
+    },
+    {
+      "description": "Realize uma Dyad Fusion.",
+      "is_missable": 0,
+      "is_spoiler": 0,
+      "name": "The First of Many",
+      "name_pt": "O Primeiro de Muitos",
+      "tip": "Realize uma fusão simples de duas Personas na Velvet Room.",
+      "trophy_code": "p3r_the_first_of_many",
+      "type": "Bronze"
+    },
+    {
+      "description": "Performed a fusion with three or more Personas.",
+      "is_missable": 0,
+      "is_spoiler": 0,
+      "name": "Fusion Artisan",
+      "name_pt": "Artesão da Fusão",
+      "tip": "Use Special Fusion quando estiver liberada.",
+      "trophy_code": "p3r_fusion_artisan",
+      "type": "Bronze"
+    },
+    {
+      "description": "Obtained an item from a Persona Conception.",
+      "is_missable": 0,
+      "is_spoiler": 0,
+      "name": "Birthday Present",
+      "name_pt": "Presente de Aniversário",
+      "tip": "Evolua uma Persona com ícone de coração até ela entregar o item.",
+      "trophy_code": "p3r_birthday_present",
+      "type": "Bronze"
+    },
+    {
+      "description": "Triggered a skill change during fusion.",
+      "is_missable": 0,
+      "is_spoiler": 0,
+      "name": "Tempting Fate",
+      "name_pt": "Tentando o Destino",
+      "tip": "Aceite um skill change quando ele aparecer após uma fusão.",
+      "trophy_code": "p3r_tempting_fate",
+      "type": "Bronze"
+    },
+    {
+      "description": "Harvested a crop that you grew with a teammate.",
+      "is_missable": 0,
+      "is_spoiler": 0,
+      "name": "Eat Your Veggies, Peas!",
+      "name_pt": "Coma Seus Legumes, Ervilhas!",
+      "tip": "Plante e colha uma safra com colega no dormitório dentro de uma janela livre.",
+      "trophy_code": "p3r_eat_your_veggies_peas",
+      "type": "Bronze"
+    },
+    {
+      "description": "Earned over 50,000 yen total from part-time jobs.",
+      "is_missable": 0,
+      "is_spoiler": 0,
+      "name": "The Grindset Mindset",
+      "name_pt": "Mentalidade de Ralação",
+      "tip": "Trabalhos de meio período consomem dias/noites; encaixe-os sem sacrificar Social Links importantes.",
+      "trophy_code": "p3r_the_grindset_mindset",
+      "type": "Bronze"
+    },
+    {
+      "description": "Maximize um atributo social.",
+      "is_missable": 0,
+      "is_spoiler": 0,
+      "name": "Specialist",
+      "name_pt": "Especialista",
+      "tip": "Maximize qualquer Social Stat dentro do calendário.",
+      "trophy_code": "p3r_specialist",
+      "type": "Bronze"
+    },
+    {
+      "description": "Spent an evening in the dorm with a teammate.",
+      "is_missable": 0,
+      "is_spoiler": 0,
+      "name": "Dorm Life",
+      "name_pt": "Vida no Dormitório",
+      "tip": "Passe uma noite com colega no dormitório quando a atividade estiver disponível.",
+      "trophy_code": "p3r_dorm_life",
+      "type": "Bronze"
+    },
+    {
+      "description": "Peça o item do menu secreto à noite.",
+      "is_missable": 0,
+      "is_spoiler": 0,
+      "name": "Gourmand",
+      "name_pt": "Gourmet",
+      "tip": "Suba Charm e peça o menu secreto no Wakatsu Kitchen a noite.",
+      "trophy_code": "p3r_gourmand",
+      "type": "Bronze"
+    },
+    {
+      "description": "Nursed a cat back to full health.",
+      "is_missable": 0,
+      "is_spoiler": 0,
+      "name": "Benevolent Purr-tector",
+      "name_pt": "Protetor Felino Benevolente",
+      "tip": "Complete a Request da Elizabeth ligada ao gato fraco alimentando-o nos dias necessários.",
+      "trophy_code": "p3r_benevolent_purr_tector",
+      "type": "Bronze"
+    },
+    {
+      "description": "Accepted an invitation to hang out five times.",
+      "is_missable": 0,
+      "is_spoiler": 0,
+      "name": "In High Demand",
+      "name_pt": "Muito Procurado",
+      "tip": "Aceite cinco convites de Social Links em dias livres, normalmente domingos.",
+      "trophy_code": "p3r_in_high_demand",
+      "type": "Bronze"
+    },
+    {
+      "description": "Unlocked access to the remaining Major Arcana.",
+      "is_missable": 0,
+      "is_spoiler": 1,
+      "name": "Beyond the Darkness",
+      "name_pt": "Além da Escuridão",
+      "tip": "Complete a Monad Door fixa necessária para liberar os Major Arcana restantes antes do fim.",
+      "trophy_code": "p3r_beyond_the_darkness",
+      "type": "Bronze"
+    },
+    {
+      "description": "Desbloqueie uma Combat Characteristic de companheiro.",
+      "is_missable": 0,
+      "is_spoiler": 0,
+      "name": "Through Thick and Thin",
+      "name_pt": "Em Bons e Maus Momentos",
+      "tip": "Veja todos os eventos de dormitório de uma atividade de colega antes de perder as janelas noturnas.",
+      "trophy_code": "p3r_through_thick_and_thin",
+      "type": "Bronze"
+    },
+    {
+      "description": "Acquired every Twilight Fragment in town.",
+      "is_missable": 0,
+      "is_spoiler": 0,
+      "name": "Eagle Eye",
+      "name_pt": "Olho de Águia",
+      "tip": "Colete cada Twilight Fragment espalhado pela cidade antes do fim do calendário.",
+      "trophy_code": "p3r_eagle_eye",
+      "type": "Bronze"
+    }
+  ]
+}

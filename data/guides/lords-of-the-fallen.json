@@ -1,0 +1,911 @@
+{
+  "game": {
+    "avoid_if": "Não é recomendada para quem busca uma experiência solo simples, uma platina rápida ou uma rota sem grind, online e acompanhamento rigoroso de NPCs.",
+    "before_you_start": "Lords of the Fallen usa autosave e não oferece save manual tradicional. Planeje três finais no mesmo personagem, mantenha backup em cloud quando possível e trate online, co-op, PvP, beacons e questlines como partes obrigatórias da rota.",
+    "best_for": "Vale platinar Lords of the Fallen se você gosta de soulslike longo, checklist pesado, múltiplas runs, finais sensíveis e coleções extensas. A platina tem online, co-op e PvP obrigatórios, além de muitos perdíveis ligados a beacons, questlines, bosses e itens. É indicada para quem aceita planejamento rigoroso, backup em cloud e grind.",
+    "cleanup_advice": "Antes de encerrar cada run, compare inventário e questlines com o checklist. Deixe o cleanup final para weapons, armour, rings, pendants, spells, ammo, throwables, tincts, gestures, Umbral Eyes, Umbral Stigmas, upgrades, bosses e offerings pendentes.",
+    "cover_image": "https://cdn.cloudflare.steamstatic.com/steam/apps/1501750/library_600x900.jpg",
+    "coverage_level": "strong",
+    "created_at": "2026-05-09 19:53:45",
+    "difficulty": 7,
+    "difficulty_reason": "A dificuldade 7/10 combina combate soulslike, bosses, NG+, online/PvP, autosave e alto risco de quebrar questlines ou finais.",
+    "dlc_scope": "A platina considera somente os 63 troféus da lista base de PS5. Patches, modifiers e conquistas adicionais de outras plataformas não são DLC obrigatória e ficam fora deste checklist.",
+    "editorial_notes": "Escopo: Lords of the Fallen de 2023, desenvolvido pela Hexworks, lista base de PS5 com 63 troféus. A lista atual do Steam tem conquistas adicionais de modifiers, mas elas não foram misturadas à platina base. Os nomes PT-BR foram conferidos na localização brasileira da Steam. Resposta de desenvolvedor publicada em 27 de novembro de 2025 confirma que armour de shrines, sets PvP e equipamentos adicionados depois não são necessários para Ironclad ou Weapon Collector.",
+    "editorial_review_status": "verified",
+    "editorial_status": "published",
+    "first_run_advice": "Comece planejando a platina como uma rota de três runs no mesmo personagem. Na primeira run, siga um checklist completo, não purifique beacons se estiver mirando o final de Adyr, colete tudo que puder, faça backup em cloud quando possível e não avance questlines de NPCs sem confirmar o impacto nos finais, itens e bosses.",
+    "grind_summary": "O maior grind está em weapons, armour, rings, pendants, spells, ammo, throwables, tincts, gestures, Umbral Eyes, Umbral Stigmas e drops aleatórios. Trocas e drops de outros jogadores podem reduzir parte do farm, mas não substituem o checklist.",
+    "guide_avoid": null,
+    "guide_best_moment": null,
+    "guide_dlc": null,
+    "guide_grind": null,
+    "guide_ideal": null,
+    "guide_online": null,
+    "guide_runs": null,
+    "image": "https://cdn.cloudflare.steamstatic.com/steam/apps/1501750/header.jpg",
+    "is_verified": 1,
+    "last_reviewed_at": "2026-06-06",
+    "missable": "Este guia cobre Lords of the Fallen de 2023, desenvolvido pela Hexworks, e não o jogo de 2014. A platina é longa, exige online, co-op, PvP e pelo menos três runs no mesmo personagem. Os troféus perdíveis marcados envolvem finais, beacons, questlines de NPCs, bosses opcionais, exploração, itens vinculados à rota e coleções que podem exigir outra run.",
+    "missable_summary": "Há muitos perdíveis reais no checklist, ligados a finais, beacons, NPC questlines, bosses, exploração, itens de rota, spells, gestures e coleções sensíveis.",
+    "name": "Lords of the Fallen",
+    "online_summary": "A platina tem troféus online obrigatórios: Shared Triumph e Comrades usam co-op; No Mercy exige PvP; Vengeance for the Fallen e as offerings usam sistemas multiplayer e shrines.",
+    "quality_warnings": "[]",
+    "reviewed_by": "Equipe editorial AtlasAchievement",
+    "runs_summary": "A rota segura exige pelo menos 3 playthroughs no mesmo personagem: primeiro Adyr, depois Radiant e, por fim, Umbral em New Game+.",
+    "slug": "lords-of-the-fallen",
+    "time": "100-150h",
+    "time_bucket": "long",
+    "time_max_hours": 150,
+    "time_min_hours": 100,
+    "time_reason": "A estimativa de 100-150 horas considera três runs, New Game+, coleções extensas, drops, co-op, PvP e cleanup; troca de itens, habilidade e patches podem alterar bastante o tempo.",
+    "time_sort_hours": 100,
+    "updated_at": "2026-06-27 02:36:59",
+    "verification_note": "Guia da lista base de PS5 de Lords of the Fallen 2023 revisado com 63 troféus, roadmap estruturado, localização PT-BR e escopo online validados.",
+    "verification_status": "verified",
+    "walkthrough": null
+  },
+  "redirects": [],
+  "roadmaps": [
+    {
+      "content": "{\"title\":\"Preparação da platina e rota de checklist\",\"focus\":\"Planejamento\",\"objective\":\"Tratar Lords of the Fallen como uma platina de 3 finais no mesmo personagem, com online obrigatório, muitos perdíveis e checklist de itens.\",\"actions\":[\"Confirme que o guia usa Lords of the Fallen de 2023, desenvolvido pela Hexworks, e não o jogo de 2014.\",\"Planeje 3 runs no mesmo personagem para cobrir Adyr, Radiant e Umbral.\",\"Ative um método seguro de backup em cloud quando possível, pois o jogo usa autosave e não tem save manual tradicional.\",\"Acompanhe desde o início weapons, armour, spells, rings, pendants, gestures, Umbral Eyes, Umbral Stigmas, bosses e NPC questlines.\",\"Separe troféus online, co-op e PvP para não tratar a platina como offline.\"],\"warning\":\"Avançar sem checklist pode quebrar questlines, finais e itens vinculados à rota, empurrando troféus para outra run.\",\"result\":\"A rota começa com expectativas corretas: 63 troféus base, online e co-op obrigatórios, 3 finais e alto risco de perda de questline.\"}",
+      "step_order": 1
+    },
+    {
+      "content": "{\"title\":\"Primeira run com final de Adyr e coleta ampla\",\"focus\":\"Adyr e collectibles\",\"objective\":\"Fazer a primeira campanha maximizando collectibles, questlines compatíveis e preparação para as runs seguintes.\",\"actions\":[\"Siga a rota do final de Adyr e não purifique beacons.\",\"Colete o máximo possível de weapons, armour, rings, pendants, spells, ammo, throwables, tincts, gestures e Umbral items.\",\"Confira NPCs e questlines antes de derrotar bosses ou avançar áreas críticas.\",\"Faça backup em cloud antes de decisões sensíveis quando possível.\",\"Farme drops aleatórios que sejam mais práticos nesta run do que em New Game+.\"],\"warning\":\"Purificar beacons ou avançar a história sem confirmar questlines pode bloquear o final de Adyr e troféus de NPCs.\",\"result\":\"O final de Adyr fica concluído e o personagem entra em New Game+ com grande parte das coleções encaminhada.\"}",
+      "step_order": 2
+    },
+    {
+      "content": "{\"title\":\"Troféus online, co-op e PvP\",\"focus\":\"Online obrigatório\",\"objective\":\"Resolver os troféus que dependem de multiplayer, co-op, PvP, vingança e offerings.\",\"actions\":[\"Convoque um parceiro para Comrades e derrote um boss em co-op para Shared Triumph.\",\"Derrote outro jogador no PvP para No Mercy.\",\"Vingue um fallen lampbearer por uma red lamp para Vengeance for the Fallen.\",\"Doe Severed Hands, Pilfered Coins e Plucked Eyeballs nos shrines correspondentes.\",\"Não inclua armour de shrines, sets PvP ou equipamentos adicionados depois nos requisitos de Ironclad e Weapon Collector.\"],\"warning\":\"A platina não é offline. Mesmo que a campanha seja jogável solo, estes troféus exigem sistemas online e multiplayer.\",\"result\":\"Os requisitos online ficam concluídos e coerentes com o topo do guia: online e co-op obrigatórios.\"}",
+      "step_order": 3
+    },
+    {
+      "content": "{\"title\":\"Segunda run com final Radiant\",\"focus\":\"Radiant Ending\",\"objective\":\"Usar New Game+ para fazer o final Radiant e recuperar questlines ou itens incompatíveis com a rota anterior.\",\"actions\":[\"Purifique os beacons conforme a rota Radiant.\",\"Use esta run para questlines bloqueadas ou incompatíveis com a rota de Adyr.\",\"Continue o checklist de spells, weapons, armour, rings, pendants, gestures e bosses.\",\"Revise Kukajin, Damarose, Byron, Iron Wayfarer e os demais NPCs antes de áreas finais.\",\"Compare pendências de itens soul-bound antes de iniciar a próxima run.\"],\"warning\":\"Questlines são sensíveis à ordem, aos bosses e às decisões. Faça backup em cloud quando possível.\",\"result\":\"O final Radiant e uma nova camada de itens e questlines ficam resolvidos no mesmo personagem.\"}",
+      "step_order": 4
+    },
+    {
+      "content": "{\"title\":\"Terceira run com final Umbral\",\"focus\":\"Umbral Ending\",\"objective\":\"Completar o final Umbral e fechar itens soul-bound, bosses e questlines restantes.\",\"actions\":[\"Siga a rota Umbral com atenção aos passos específicos do final.\",\"Conclua Paladin Isaac, Iron Wayfarer e as questlines compatíveis com esta rota.\",\"Garanta bosses e NPCs necessários para None Shall be Spared e troféus de questline.\",\"Finalize itens soul-bound e collectibles vinculados aos finais.\",\"Compare o inventário com checklists por categoria antes de encerrar a run.\"],\"warning\":\"A rota Umbral pode exigir mortes de NPCs e uma sequência rígida. Errar a ordem pode exigir outra run.\",\"result\":\"Com Adyr, Radiant e Umbral no mesmo personagem, o maior bloco estrutural da platina fica concluído.\"}",
+      "step_order": 5
+    },
+    {
+      "content": "{\"title\":\"Cleanup de coleções, bosses e troféus acumulativos\",\"focus\":\"Checklist final\",\"objective\":\"Fechar todas as categorias restantes antes de concluir a platina.\",\"actions\":[\"Compare o inventário com checklists de weapons, shields, armour, rings, pendants, spells, ammo, throwables, tincts e gestures.\",\"Confirme Umbral Eyes, Umbral Stigmas, Sanguinarix, Umbral Lamp e bosses restantes.\",\"Finalize upgrades, runes, shrine donations, collectibles e farming.\",\"Verifique se todos os 63 troféus da lista base foram considerados e se os perdíveis marcados estão resolvidos.\",\"Confirme que o jogo de 2014, modifiers, patches e conquistas adicionais não foram misturados à lista base.\"],\"warning\":\"\",\"result\":\"A lista base de Lords of the Fallen 2023 fica pronta para a platina, com online, co-op, PvP, finais e checklist devidamente cobertos.\"}",
+      "step_order": 6
+    }
+  ],
+  "schemaVersion": 1,
+  "seedExtras": {
+    "aliases": [],
+    "attentionPoints": [
+      {
+        "detail": "A campanha pode ser solo, mas a platina não é offline: há requisitos de co-op, PvP, vingança e offerings.",
+        "tags": [
+          {
+            "id": "online",
+            "label": "Online",
+            "tone": "warning"
+          }
+        ],
+        "title": "Online obrigatório"
+      },
+      {
+        "detail": "Shared Triumph exige derrotar um boss em co-op. Resolva cedo para não deixar dependência online para o fim.",
+        "tags": [
+          {
+            "id": "coop",
+            "label": "Co-op",
+            "tone": "warning"
+          }
+        ],
+        "title": "Co-op obrigatório"
+      },
+      {
+        "detail": "No Mercy exige derrotar outro jogador. Infernal Offerings também envolve Severed Hands obtidos por invasões/PvP.",
+        "tags": [
+          {
+            "id": "pvp",
+            "label": "PvP",
+            "tone": "warning"
+          }
+        ],
+        "title": "PvP obrigatório"
+      },
+      {
+        "detail": "Adyr, Radiant e Umbral formam a base estrutural da platina e preservam itens soul-bound no mesmo personagem.",
+        "tags": [
+          {
+            "id": "finals",
+            "label": "Finais",
+            "tone": "risk"
+          }
+        ],
+        "title": "Três finais no mesmo personagem"
+      },
+      {
+        "detail": "Não purifique beacons na rota de Adyr; purifique-os na rota Radiant.",
+        "tags": [
+          {
+            "id": "beacons",
+            "label": "Beacons",
+            "tone": "risk"
+          }
+        ],
+        "title": "Beacons"
+      },
+      {
+        "detail": "A rota exige passos rígidos e pode quebrar NPCs e questlines quando feita sem checklist.",
+        "tags": [
+          {
+            "id": "umbral",
+            "label": "Umbral",
+            "tone": "risk"
+          }
+        ],
+        "title": "Rota Umbral"
+      },
+      {
+        "detail": "Não há save manual tradicional. Use backup em cloud quando possível antes de decisões, finais e questlines sensíveis.",
+        "tags": [
+          {
+            "id": "save",
+            "label": "Autosave",
+            "tone": "warning"
+          }
+        ],
+        "title": "Autosave e backup"
+      },
+      {
+        "detail": "Os troféus perdíveis marcados incluem finais, questlines, bosses e coleções que podem exigir outra run se forem ignorados.",
+        "tags": [
+          {
+            "id": "missable",
+            "label": "Perdíveis",
+            "tone": "risk"
+          }
+        ],
+        "title": "Muitos perdíveis"
+      },
+      {
+        "detail": "Weapons, armour, spells, rings, pendants, gestures e Umbral items formam o maior checklist e podem exigir farm.",
+        "tags": [
+          {
+            "id": "collectible",
+            "label": "Coletáveis",
+            "tone": "partial"
+          }
+        ],
+        "title": "Collectibles e drops"
+      },
+      {
+        "detail": "Armour de shrines, sets PvP e equipamentos adicionados depois não devem ser tratados como requisito de Ironclad ou Weapon Collector se patches atuais removeram essa exigência. Confirme antes de verificar.",
+        "tags": [
+          {
+            "id": "patches",
+            "label": "Patches",
+            "tone": "complete"
+          }
+        ],
+        "title": "Armour e equipamentos online"
+      },
+      {
+        "detail": "Este guia é do Lords of the Fallen de 2023, desenvolvido pela Hexworks, e não do jogo de 2014.",
+        "tags": [
+          {
+            "id": "scope",
+            "label": "Versão 2023",
+            "tone": "complete"
+          }
+        ],
+        "title": "Versão correta"
+      }
+    ],
+    "checklist": [
+      "Confirmar os 63 troféus da lista base de PS5 e o jogo de 2023 da Hexworks.",
+      "Confirmar online obrigatório, co-op obrigatório e DLC fora da platina base.",
+      "Planejar 3 runs no mesmo personagem para Adyr, Radiant e Umbral.",
+      "Não purificar beacons na rota de Adyr e purificá-los na rota Radiant.",
+      "Seguir os passos rígidos da rota Umbral e fazer backup em cloud quando possível.",
+      "Resolver Shared Triumph em co-op, No Mercy em PvP e Vengeance for the Fallen online.",
+      "Doar Severed Hands, Pilfered Coins e Plucked Eyeballs nos shrines correspondentes.",
+      "Coletar weapons, armour, rings, pendants e spells de Inferno, Radiance e Umbral.",
+      "Coletar ammo, throwables, tincts, gestures, Umbral Eyes e Umbral Stigmas.",
+      "Completar upgrades do Sanguinarix e da Umbral Lamp.",
+      "Completar bosses, None Shall be Spared e as questlines de NPCs relevantes.",
+      "Conferir os troféus perdíveis marcados antes de encerrar cada run."
+    ],
+    "faq": [
+      {
+        "answer": "Sim. A campanha pode ser jogada solo, mas a platina base tem troféus online ligados a co-op, PvP, vingança e offerings. Portanto o requisito online deve ficar marcado como obrigatório.",
+        "question": "Lords of the Fallen exige online para platinar?"
+      },
+      {
+        "answer": "Sim. Shared Triumph exige derrotar um boss em co-op. Como o projeto trata qualquer co-op/multiplayer obrigatório como requisito de platina, o co-op deve ficar marcado como obrigatório.",
+        "question": "Lords of the Fallen exige co-op para platinar?"
+      },
+      {
+        "answer": "Sim. No Mercy exige derrotar outro jogador no PvP, e Infernal Offerings usa Severed Hands obtidas pelo sistema de invasões.",
+        "question": "Lords of the Fallen exige PvP?"
+      },
+      {
+        "answer": "Sim. Os perdíveis estão ligados principalmente a finais, beacons, questlines de NPCs, bosses e coleções dependentes de rota. Use checklist por run e backup em cloud quando possível.",
+        "question": "Lords of the Fallen tem troféus perdíveis?"
+      },
+      {
+        "answer": "A rota segura exige pelo menos três runs no mesmo personagem, cobrindo os finais Adyr, Radiant e Umbral.",
+        "question": "Quantas runs são necessárias?"
+      },
+      {
+        "answer": "Não para a rota de platina recomendada. Itens soul-bound e coleções exigem progressão no mesmo personagem, então planeje as três runs no mesmo save.",
+        "question": "Posso fazer os finais com personagens diferentes?"
+      },
+      {
+        "answer": "Não há save manual tradicional; o jogo usa autosave. Backup em cloud pode proteger decisões, finais e questlines sensíveis.",
+        "question": "O jogo tem save manual?"
+      },
+      {
+        "answer": "O maior grind está nas coleções e nos drops de weapons, armour, rings, pendants, spells, ammo, throwables, tincts, gestures, Umbral Eyes, Umbral Stigmas e bosses.",
+        "question": "Qual é o maior grind da platina?"
+      },
+      {
+        "answer": "Não. A platina usa os 63 troféus da lista base. Patches, modifiers, armour de shrine pós-patch ou conteúdos adicionais não devem ser tratados como DLC obrigatória sem confirmação.",
+        "question": "Preciso de DLC para a platina?"
+      },
+      {
+        "answer": "As duas coisas. A dificuldade vem do combate soulslike, bosses, NG+, online/PvP e autosave; o tempo vem de três runs, collectibles, drops e questlines sensíveis.",
+        "question": "A platina é difícil ou só longa?"
+      },
+      {
+        "answer": "Não. Este guia trata exclusivamente Lords of the Fallen de 2023, desenvolvido pela Hexworks. Troféus e rotas do jogo de 2014 não entram aqui.",
+        "question": "A versão de 2023 é a mesma de 2014?"
+      }
+    ],
+    "note": "Campos exportados para auditoria. O SQLite atual nao possui colunas nativas para todos esses extras; a importacao preserva o que o banco suporta.",
+    "quickDecision": {
+      "firstAction": "Comece pela rota de Adyr sem purificar beacons e acompanhe NPCs, bosses, itens e requisitos online desde a primeira run.",
+      "mainRisk": "Avançar a história sem validar beacons e questlines pode bloquear finais, NPCs, bosses e coleções até a run seguinte.",
+      "recommendation": "Planeje Adyr, Radiant e Umbral desde o início, use checklist por categoria e faça backup em cloud antes de decisões sensíveis.",
+      "summary": "Vale platinar Lords of the Fallen se você gosta de soulslike longo, checklist pesado, múltiplas runs, finais sensíveis e coleções extensas. A platina tem online, co-op e PvP obrigatórios, além de muitos perdíveis ligados a beacons, questlines, bosses e itens. É uma platina indicada para quem aceita planejamento rigoroso, backup em cloud e grind; não é recomendada para quem busca uma experiência solo simples ou uma platina rápida.",
+      "verdict": "É uma platina forte para quem aceita planejamento rigoroso, backup em cloud e grind; não combina com uma experiência solo simples ou rápida."
+    },
+    "seo": {
+      "canonical": "https://atlasachievement.com.br/jogo/lords-of-the-fallen",
+      "description": "Guia de platina de Lords of the Fallen 2023 com roadmap em português, troféus online, co-op, PvP, finais Adyr, Radiant e Umbral, New Game+, questlines, bosses, collectibles e dicas para conquistar todos os troféus no PS5.",
+      "keywords": "Lords of the Fallen, Lords of the Fallen 2023, guia de platina Lords of the Fallen, troféus Lords of the Fallen, roadmap Lords of the Fallen, Shared Triumph, No Mercy, Adyr Ending, Radiant Ending, Umbral Ending, Weapon Collector, Ironclad, None Shall be Spared",
+      "ogDescription": "Roadmap de Lords of the Fallen 2023 no PS5 com 63 troféus, online, co-op, PvP, três finais, New Game+, questlines, bosses e collectibles.",
+      "ogTitle": "Guia de Platina Lords of the Fallen — Troféus, Roadmap e Dicas",
+      "title": "Guia de Platina Lords of the Fallen — Troféus, Roadmap e Dicas"
+    },
+    "tags": []
+  },
+  "slug": "lords-of-the-fallen",
+  "trophies": [
+    {
+      "description": "Obtenha todos os troféus da lista base.",
+      "is_missable": 0,
+      "is_spoiler": 0,
+      "name": "Lord of The Fallen",
+      "name_pt": "Lorde dos Caídos",
+      "tip": "Complete os outros 62 troféus da lista base de Lords of the Fallen 2023. Não use dados da lista de 2014.",
+      "trophy_code": "lotf2023_lord_of_the_fallen",
+      "type": "Platina"
+    },
+    {
+      "description": "Morra em Axiom pela primeira vez.",
+      "is_missable": 0,
+      "is_spoiler": 0,
+      "name": "A Veil Lifted",
+      "name_pt": "Um Véu Descoberto",
+      "tip": "Troféu inicial ligado ao sistema Axiom/Umbral. Vem naturalmente quando você morre em Axiom.",
+      "trophy_code": "lotf2023_a_veil_lifted",
+      "type": "Bronze"
+    },
+    {
+      "description": "Recupere o vigor perdido após morrer.",
+      "is_missable": 0,
+      "is_spoiler": 0,
+      "name": "Lost and Found",
+      "name_pt": "Achados e Perdidos",
+      "tip": "Recupere o vigor deixado após morrer completamente. Tutorial prático do loop soulslike.",
+      "trophy_code": "lotf2023_lost_and_found",
+      "type": "Bronze"
+    },
+    {
+      "description": "Colete todas as weapons e shields exigidas pela lista base.",
+      "is_missable": 1,
+      "is_spoiler": 1,
+      "name": "Weapon Collector",
+      "name_pt": "Coleção de Armas",
+      "tip": "Inclui weapons e shields. Exige 3 playthroughs no mesmo personagem, soul-bound items, boss/ending items, lojas e drops.",
+      "trophy_code": "lotf2023_weapon_collector",
+      "type": "Prata"
+    },
+    {
+      "description": "Colete todas as peças de armour exigidas pela lista base.",
+      "is_missable": 1,
+      "is_spoiler": 1,
+      "name": "Ironclad",
+      "name_pt": "Blindagem",
+      "tip": "Colete todos os armour pieces da lista base. É uma coleção enorme com questlines, drops aleatórios e itens de rota.",
+      "trophy_code": "lotf2023_ironclad",
+      "type": "Prata"
+    },
+    {
+      "description": "Colete todos os Umbral Eyes.",
+      "is_missable": 1,
+      "is_spoiler": 1,
+      "name": "What Sights Contained Within",
+      "name_pt": "As Visões Contidas",
+      "tip": "Todos os Umbral Eyes são exigidos. A quest Moving On afeta um deles, então acompanhe Byron e Winterberry.",
+      "trophy_code": "lotf2023_what_sights_contained_within",
+      "type": "Bronze"
+    },
+    {
+      "description": "Colete todos os rings e pendants.",
+      "is_missable": 1,
+      "is_spoiler": 1,
+      "name": "Trinket Collector",
+      "name_pt": "Coleção de Berloques",
+      "tip": "Exige rings e pendants em 3 playthroughs no mesmo personagem, com itens de finais, quests e drops.",
+      "trophy_code": "lotf2023_trinket_collector",
+      "type": "Bronze"
+    },
+    {
+      "description": "Colete todos os tipos de munição.",
+      "is_missable": 0,
+      "is_spoiler": 0,
+      "name": "Ammunition Collector",
+      "name_pt": "Coleção de Munições",
+      "tip": "Colete todos os ammo types. Normalmente fecha em uma run guiada, sem online obrigatório específico.",
+      "trophy_code": "lotf2023_ammunition_collector",
+      "type": "Bronze"
+    },
+    {
+      "description": "Colete todos os spells de Inferno.",
+      "is_missable": 1,
+      "is_spoiler": 1,
+      "name": "Inferno Adept",
+      "name_pt": "Apego Infernal",
+      "tip": "Spells exigem 3 playthroughs no mesmo personagem, classes/itens de final e quests. Não podem ser dropados por outros jogadores.",
+      "trophy_code": "lotf2023_inferno_adept",
+      "type": "Bronze"
+    },
+    {
+      "description": "Colete todos os spells de Radiance.",
+      "is_missable": 1,
+      "is_spoiler": 1,
+      "name": "Radiant Adept",
+      "name_pt": "Apego Radiante",
+      "tip": "Colete todos os Radiance spells. Rotas, NPCs e finais podem travar progresso, então acompanhe checklist desde cedo.",
+      "trophy_code": "lotf2023_radiant_adept",
+      "type": "Bronze"
+    },
+    {
+      "description": "Colete todos os spells de Umbral.",
+      "is_missable": 1,
+      "is_spoiler": 1,
+      "name": "Umbral Adept",
+      "name_pt": "Apego ao Umbral",
+      "tip": "Colete todos os Umbral spells. A rota Umbral e itens vinculados ao personagem tornam este troféu sensível.",
+      "trophy_code": "lotf2023_umbral_adept",
+      "type": "Bronze"
+    },
+    {
+      "description": "Colete todos os itens arremessáveis.",
+      "is_missable": 0,
+      "is_spoiler": 0,
+      "name": "Throwable Collector",
+      "name_pt": "Coleção de Arremessáveis",
+      "tip": "Colete todos os throwables da lista base. Use checklist por área para não perder tempo no cleanup.",
+      "trophy_code": "lotf2023_throwable_collector",
+      "type": "Bronze"
+    },
+    {
+      "description": "Colete todos os gestures.",
+      "is_missable": 1,
+      "is_spoiler": 1,
+      "name": "Gesture Collector",
+      "name_pt": "Coleção de Gestos",
+      "tip": "Online e missable: exige 3 playthroughs no mesmo personagem, quests e gestures de shrine desbloqueadas por doações online.",
+      "trophy_code": "lotf2023_gesture_collector",
+      "type": "Bronze"
+    },
+    {
+      "description": "Melhore totalmente o Sanguinarix.",
+      "is_missable": 0,
+      "is_spoiler": 0,
+      "name": "Salvation in Blood",
+      "name_pt": "Salvação no Sangue",
+      "tip": "Colete Saintly Quintessence suficiente e melhore o Sanguinarix em Skyrest Bridge.",
+      "trophy_code": "lotf2023_salvation_in_blood",
+      "type": "Bronze"
+    },
+    {
+      "description": "Melhore totalmente uma weapon.",
+      "is_missable": 0,
+      "is_spoiler": 0,
+      "name": "Honed in Perfection",
+      "name_pt": "Auge da Perfeição",
+      "tip": "Leve qualquer weapon ao máximo com Gerlinde. E custo de recurso/upgrades, não um perdível por escolha.",
+      "trophy_code": "lotf2023_honed_in_perfection",
+      "type": "Bronze"
+    },
+    {
+      "description": "Encaixe uma rune pela primeira vez.",
+      "is_missable": 0,
+      "is_spoiler": 0,
+      "name": "Rune Novice",
+      "name_pt": "Iniciante das Runas",
+      "tip": "Entregue a rune tablet a Gerlinde e coloque uma rune em uma weapon/shield.",
+      "trophy_code": "lotf2023_rune_novice",
+      "type": "Bronze"
+    },
+    {
+      "description": "Preencha uma weapon ou shield com três runes.",
+      "is_missable": 0,
+      "is_spoiler": 0,
+      "name": "Rune Master",
+      "name_pt": "Mestre das Runas",
+      "tip": "Entregue todas as rune tablets necessárias e equipe 3 runes em uma weapon ou shield.",
+      "trophy_code": "lotf2023_rune_master",
+      "type": "Bronze"
+    },
+    {
+      "description": "Melhore totalmente a Umbral Lamp.",
+      "is_missable": 0,
+      "is_spoiler": 0,
+      "name": "Carving Out Victory",
+      "name_pt": "Esculpindo a Vitória",
+      "tip": "Encontre Antediluvian Chisels e melhore a Umbral Lamp com Molhu.",
+      "trophy_code": "lotf2023_carving_out_victory",
+      "type": "Bronze"
+    },
+    {
+      "description": "Preencha a Umbral Lamp com três Umbral Eyes.",
+      "is_missable": 0,
+      "is_spoiler": 0,
+      "name": "Utmost Insight",
+      "name_pt": "Visão Extrema",
+      "tip": "Equipe 3 Umbral Eyes na lamp depois de melhorar a Umbral Lamp.",
+      "trophy_code": "lotf2023_utmost_insight",
+      "type": "Bronze"
+    },
+    {
+      "description": "Convoque um parceiro de co-op.",
+      "is_missable": 0,
+      "is_spoiler": 0,
+      "name": "Comrades",
+      "name_pt": "Camaradas",
+      "tip": "Online/PS Plus: use o multiplayer em um Vestige para chamar outro lampbearer.",
+      "trophy_code": "lotf2023_comrades",
+      "type": "Bronze"
+    },
+    {
+      "description": "Derrote um boss ao lado de um parceiro de co-op.",
+      "is_missable": 0,
+      "is_spoiler": 0,
+      "name": "Shared Triumph",
+      "name_pt": "Triunfo Compartilhado",
+      "tip": "Online/PS Plus: derrote qualquer boss em co-op. Separe cedo para não deixar online para o fim.",
+      "trophy_code": "lotf2023_shared_triumph",
+      "type": "Bronze"
+    },
+    {
+      "description": "Vingue um lampbearer caído.",
+      "is_missable": 0,
+      "is_spoiler": 0,
+      "name": "Vengeance for the Fallen",
+      "name_pt": "Vingança pelos Caídos",
+      "tip": "Online: use red lamps para vingar outro lampbearer. Também alimenta Plucked Eyeballs para Umbral Offerings.",
+      "trophy_code": "lotf2023_vengeance_for_the_fallen",
+      "type": "Bronze"
+    },
+    {
+      "description": "Derrote outro jogador no PvP.",
+      "is_missable": 0,
+      "is_spoiler": 0,
+      "name": "No Mercy",
+      "name_pt": "Sem Piedade",
+      "tip": "Online/PS Plus: invada via Slaughter Lampbearer e derrote outro jogador. É requisito real da platina.",
+      "trophy_code": "lotf2023_no_mercy",
+      "type": "Bronze"
+    },
+    {
+      "description": "Doe um total de 10 Severed Hands.",
+      "is_missable": 0,
+      "is_spoiler": 0,
+      "name": "Infernal Offerings",
+      "name_pt": "Oferendas Infernais",
+      "tip": "Online/PvP: doe Severed Hands no Shrine of Adyr. Use Charred Finger se quiser acelerar.",
+      "trophy_code": "lotf2023_infernal_offerings",
+      "type": "Bronze"
+    },
+    {
+      "description": "Doe um total de 10 Pilfered Coins.",
+      "is_missable": 0,
+      "is_spoiler": 0,
+      "name": "Radiant Offerings",
+      "name_pt": "Oferendas Radiantes",
+      "tip": "Online/co-op: doe Pilfered Coins no Shrine of Orius. Derrotar boss em co-op costuma fornecer o necessário.",
+      "trophy_code": "lotf2023_radiant_offerings",
+      "type": "Bronze"
+    },
+    {
+      "description": "Doe um total de 10 Plucked Eyeballs.",
+      "is_missable": 0,
+      "is_spoiler": 0,
+      "name": "Umbral Offerings",
+      "name_pt": "Oferendas Umbrais",
+      "tip": "Online: vingue lampbearers por red lamps e doe Plucked Eyeballs no Shrine of the Putrid Mother.",
+      "trophy_code": "lotf2023_umbral_offerings",
+      "type": "Bronze"
+    },
+    {
+      "description": "Aplique uma tinct a uma peça de equipamento.",
+      "is_missable": 0,
+      "is_spoiler": 0,
+      "name": "Shades of Violence",
+      "name_pt": "Tons de Violência",
+      "tip": "Aplique qualquer tinct a uma peça de gear pelo menu. Troféu simples de customização.",
+      "trophy_code": "lotf2023_shades_of_violence",
+      "type": "Bronze"
+    },
+    {
+      "description": "Derrote Pieta, She of Blessed Renewal.",
+      "is_missable": 0,
+      "is_spoiler": 1,
+      "name": "Rise and Fall",
+      "name_pt": "Ascensão e Queda",
+      "tip": "Boss obrigatório antes de Skyrest Bridge. Não marque como perdível.",
+      "trophy_code": "lotf2023_rise_and_fall",
+      "type": "Bronze"
+    },
+    {
+      "description": "Derrote o Congregator of Flesh.",
+      "is_missable": 0,
+      "is_spoiler": 1,
+      "name": "Together in Death",
+      "name_pt": "União na Morte",
+      "tip": "Boss obrigatório no caminho de Forsaken Fen.",
+      "trophy_code": "lotf2023_together_in_death",
+      "type": "Bronze"
+    },
+    {
+      "description": "Derrote o Hushed Saint.",
+      "is_missable": 0,
+      "is_spoiler": 1,
+      "name": "Burying the Past",
+      "name_pt": "Enterrando o Passado",
+      "tip": "Boss obrigatório de Forsaken Fen, perto da primeira beacon.",
+      "trophy_code": "lotf2023_burying_the_past",
+      "type": "Bronze"
+    },
+    {
+      "description": "Derrote o Spurned Progeny.",
+      "is_missable": 0,
+      "is_spoiler": 1,
+      "name": "Unwanted",
+      "name_pt": "Indesejado",
+      "tip": "Boss obrigatório de Upper Calrath.",
+      "trophy_code": "lotf2023_unwanted",
+      "type": "Bronze"
+    },
+    {
+      "description": "Derrote a Unbroken Promise.",
+      "is_missable": 0,
+      "is_spoiler": 1,
+      "name": "Unbroken to the End",
+      "name_pt": "Mantida até o Fim",
+      "tip": "Boss obrigatório de Revelation Depths, depois de Harrower Dervla.",
+      "trophy_code": "lotf2023_unbroken_to_the_end",
+      "type": "Bronze"
+    },
+    {
+      "description": "Derrote o Hollow Crow.",
+      "is_missable": 0,
+      "is_spoiler": 1,
+      "name": "Wings of Grief",
+      "name_pt": "Asas de Tristeza",
+      "tip": "Boss obrigatório no Fief of the Chill Curse.",
+      "trophy_code": "lotf2023_wings_of_grief",
+      "type": "Bronze"
+    },
+    {
+      "description": "Derrote Reinhold the Immured.",
+      "is_missable": 0,
+      "is_spoiler": 1,
+      "name": "Twin Faces of Sin",
+      "name_pt": "Faces Gêmeas do Pecado",
+      "tip": "Boss obrigatório da Tower of Penance, após Tancred.",
+      "trophy_code": "lotf2023_twin_faces_of_sin",
+      "type": "Bronze"
+    },
+    {
+      "description": "Derrote Judge Cleric, the Radiant Sentinel.",
+      "is_missable": 0,
+      "is_spoiler": 1,
+      "name": "Judgement",
+      "name_pt": "Julgamento",
+      "tip": "Boss obrigatório de The Empyrean e ponto narrativo avançado.",
+      "trophy_code": "lotf2023_judgement",
+      "type": "Bronze"
+    },
+    {
+      "description": "Derrote o Lightreaper.",
+      "is_missable": 1,
+      "is_spoiler": 1,
+      "name": "Hunt's End",
+      "name_pt": "Fim da Caçada",
+      "tip": "Missable: derrote o Lightreaper antes de Upper Calrath em uma das janelas certas, ou planeje outra run.",
+      "trophy_code": "lotf2023_hunts_end",
+      "type": "Bronze"
+    },
+    {
+      "description": "Derrote o Sundered Monarch.",
+      "is_missable": 0,
+      "is_spoiler": 1,
+      "name": "The King is Dead",
+      "name_pt": "O Rei Está Morto",
+      "tip": "Boss obrigatório de Bramis Castle.",
+      "trophy_code": "lotf2023_the_king_is_dead",
+      "type": "Bronze"
+    },
+    {
+      "description": "Derrote Elianne the Starved.",
+      "is_missable": 1,
+      "is_spoiler": 1,
+      "name": "A Hunger Sated",
+      "name_pt": "Fome Saciada",
+      "tip": "Missable: boss ligado ao Umbral Ending. Exige rota e questline específicas.",
+      "trophy_code": "lotf2023_a_hunger_sated",
+      "type": "Bronze"
+    },
+    {
+      "description": "Derrote Adyr, the Bereft Exile.",
+      "is_missable": 1,
+      "is_spoiler": 1,
+      "name": "Fallen",
+      "name_pt": "Caído",
+      "tip": "Missable: boss ligado ao Radiant Ending. Limpe beacons e siga a rota correta.",
+      "trophy_code": "lotf2023_fallen",
+      "type": "Bronze"
+    },
+    {
+      "description": "Derrote todos os bosses.",
+      "is_missable": 1,
+      "is_spoiler": 1,
+      "name": "None Shall be Spared",
+      "name_pt": "Ninguém Será Poupado",
+      "tip": "Missable e exige o mesmo personagem. Inclui bosses principais, opcionais e de finais diferentes.",
+      "trophy_code": "lotf2023_none_shall_be_spared",
+      "type": "Bronze"
+    },
+    {
+      "description": "Exacter Dunmire obtém o conhecimento que procura.",
+      "is_missable": 1,
+      "is_spoiler": 1,
+      "name": "The Price of Knowledge",
+      "name_pt": "O Preço do Conhecimento",
+      "tip": "Quest de Exacter Dunmire. Complete antes de ir para NG+; e uma das questlines menos sensíveis.",
+      "trophy_code": "lotf2023_the_price_of_knowledge",
+      "type": "Bronze"
+    },
+    {
+      "description": "Damarose the Marked recebe sua recompensa divina.",
+      "is_missable": 1,
+      "is_spoiler": 1,
+      "name": "Part of the Divine",
+      "name_pt": "Parte do Divino",
+      "tip": "Missable: quest de Damarose ligada a rota Adyr/Inferno e progresso de história.",
+      "trophy_code": "lotf2023_part_of_the_divine",
+      "type": "Bronze"
+    },
+    {
+      "description": "Liberte Sparky.",
+      "is_missable": 1,
+      "is_spoiler": 1,
+      "name": "Travels Resumed",
+      "name_pt": "De Volta às Viagens",
+      "tip": "Missable: entregue a última rune tablet a Sparky em vez de resolver tudo com Gerlinde.",
+      "trophy_code": "lotf2023_travels_resumed",
+      "type": "Bronze"
+    },
+    {
+      "description": "Byron encontra um novo propósito.",
+      "is_missable": 1,
+      "is_spoiler": 1,
+      "name": "Moving On",
+      "name_pt": "Seguindo em Frente",
+      "tip": "Missable: não use o elevador da Cistern para Upper Calrath cedo demais; acompanhe Byron/Winterberry.",
+      "trophy_code": "lotf2023_moving_on",
+      "type": "Bronze"
+    },
+    {
+      "description": "Mantenha firme a fé de Drustan em seu irmão.",
+      "is_missable": 1,
+      "is_spoiler": 1,
+      "name": "Hero Worship",
+      "name_pt": "Adoração do Herói",
+      "tip": "Missable: fale com Drustan em todos os pontos e acenda a fogueira em Fief of the Chill Curse.",
+      "trophy_code": "lotf2023_hero_worship",
+      "type": "Bronze"
+    },
+    {
+      "description": "Descubra o verdadeiro valor da amizade de Andreas of Ebb.",
+      "is_missable": 1,
+      "is_spoiler": 1,
+      "name": "Antanas' Legacy",
+      "name_pt": "O Legado de Antanas",
+      "tip": "Quest de Andreas of Ebb. Complete antes de NG+ e revise se ainda faltar no checklist.",
+      "trophy_code": "lotf2023_antanas_legacy",
+      "type": "Bronze"
+    },
+    {
+      "description": "Faça Stomund, Captain of the Fidelis, chegar ao Empyrean.",
+      "is_missable": 1,
+      "is_spoiler": 1,
+      "name": "Faithful",
+      "name_pt": "Fiel",
+      "tip": "Missable: quest de Stomund exige os banner parts e avanço controlado antes do Empyrean.",
+      "trophy_code": "lotf2023_faithful",
+      "type": "Bronze"
+    },
+    {
+      "description": "Faça Thehk-Ihir deixar Mournstead.",
+      "is_missable": 1,
+      "is_spoiler": 1,
+      "name": "Without Purpose",
+      "name_pt": "Sem Propósito",
+      "tip": "Missable: fale com Thehk-Ihir em todos os pontos da história ou a quest falha.",
+      "trophy_code": "lotf2023_without_purpose",
+      "type": "Bronze"
+    },
+    {
+      "description": "Receba o favor final de Sophesia.",
+      "is_missable": 1,
+      "is_spoiler": 1,
+      "name": "A Queen's Rest",
+      "name_pt": "Um Descanso de Rainha",
+      "tip": "Missable: conclua a quest da Tortured Prisoner/Sophesia no tempo certo antes de avançar demais.",
+      "trophy_code": "lotf2023_a_queens_rest",
+      "type": "Bronze"
+    },
+    {
+      "description": "Conclua a jornada do Iron Wayfarer.",
+      "is_missable": 1,
+      "is_spoiler": 1,
+      "name": "The Last Step",
+      "name_pt": "O Último Passo",
+      "tip": "Missable: quest do Iron Wayfarer ligada ao Umbral Ending. Fale com ele em todos os encontros.",
+      "trophy_code": "lotf2023_the_last_step",
+      "type": "Bronze"
+    },
+    {
+      "description": "Faça um imprint Umbral de Isaac enfrentar o Lightreaper.",
+      "is_missable": 1,
+      "is_spoiler": 1,
+      "name": "Vengeful Reflection",
+      "name_pt": "Reflexo Vingativo",
+      "tip": "Missable: complete Paladin Isaac e enfrente o Lightreaper no momento certo com Isaac.",
+      "trophy_code": "lotf2023_vengeful_reflection",
+      "type": "Bronze"
+    },
+    {
+      "description": "Alcance o final de Adyr.",
+      "is_missable": 1,
+      "is_spoiler": 1,
+      "name": "Lord of the Risen",
+      "name_pt": "Lorde dos Revividos",
+      "tip": "Missable: final Adyr/Inferno. Uma das 3 rotas obrigatorias no mesmo personagem.",
+      "trophy_code": "lotf2023_lord_of_the_risen",
+      "type": "Prata"
+    },
+    {
+      "description": "Alcance o final Radiant.",
+      "is_missable": 1,
+      "is_spoiler": 1,
+      "name": "In Light we Walk",
+      "name_pt": "Na Luz, Caminhamos",
+      "tip": "Missable: final Radiant. Exige limpar todos os beacons e rende itens vinculados.",
+      "trophy_code": "lotf2023_in_light_we_walk",
+      "type": "Prata"
+    },
+    {
+      "description": "Alcance o final Umbral.",
+      "is_missable": 1,
+      "is_spoiler": 1,
+      "name": "Back to the Void",
+      "name_pt": "De Volta ao Vazio",
+      "tip": "Missable: final Umbral. Siga a rota exatamente e use backup se possível.",
+      "trophy_code": "lotf2023_back_to_the_void",
+      "type": "Prata"
+    },
+    {
+      "description": "Derrote o Scarlet Shadow.",
+      "is_missable": 0,
+      "is_spoiler": 1,
+      "name": "A Shadow Dispelled",
+      "name_pt": "Uma Sombra Dissipada",
+      "tip": "Fique em Umbral até o Scarlet Shadow surgir e derrote-o. Desafio opcional, mas repetivel.",
+      "trophy_code": "lotf2023_a_shadow_dispelled",
+      "type": "Bronze"
+    },
+    {
+      "description": "Derrote um inimigo com um Umbral finisher.",
+      "is_missable": 0,
+      "is_spoiler": 0,
+      "name": "Essence of Death",
+      "name_pt": "Essência da Morte",
+      "tip": "Use Soulflay e finalize um inimigo com Umbral finisher.",
+      "trophy_code": "lotf2023_essence_of_death",
+      "type": "Bronze"
+    },
+    {
+      "description": "Use uma Vestige Seed.",
+      "is_missable": 0,
+      "is_spoiler": 0,
+      "name": "Thriving in Darkness",
+      "name_pt": "Prosperando na Escuridão",
+      "tip": "Plante um Vestige Seed em um flowerbed. Mecânica central de checkpoints temporários.",
+      "trophy_code": "lotf2023_thriving_in_darkness",
+      "type": "Bronze"
+    },
+    {
+      "description": "Alcance o nível 100.",
+      "is_missable": 0,
+      "is_spoiler": 0,
+      "name": "Seasoned",
+      "name_pt": "Experiente",
+      "tip": "Suba até level 100. Vem naturalmente com 3 runs ou farm de vigor.",
+      "trophy_code": "lotf2023_seasoned",
+      "type": "Prata"
+    },
+    {
+      "description": "Visite todas as áreas do jogo.",
+      "is_missable": 1,
+      "is_spoiler": 1,
+      "name": "Wayfarer",
+      "name_pt": "Viajante",
+      "tip": "Visite todas as áreas, incluindo zonas opcionais e avançadas como Mother's Lull e Bramis Castle.",
+      "trophy_code": "lotf2023_wayfarer",
+      "type": "Prata"
+    },
+    {
+      "description": "Ofereça a Molhu o Bowl of Revelations.",
+      "is_missable": 0,
+      "is_spoiler": 1,
+      "name": "The Past Shapes the Present",
+      "name_pt": "O Passado Molda o Presente",
+      "tip": "Encontre o Bowl of Revelations em Pilgrim's Perch/Umbral e entregue a Molhu.",
+      "trophy_code": "lotf2023_the_past_shapes_the_present",
+      "type": "Bronze"
+    },
+    {
+      "description": "Visualize todos os Umbral Stigmas.",
+      "is_missable": 1,
+      "is_spoiler": 1,
+      "name": "Lingering Moments",
+      "name_pt": "Momentos Prolongados",
+      "tip": "Missable: veja todos os 60 Umbral Stigmas, incluindo os ligados a bosses, finais e NPC questlines.",
+      "trophy_code": "lotf2023_lingering_moments",
+      "type": "Bronze"
+    },
+    {
+      "description": "Alcance o interior de Skyrest Bridge.",
+      "is_missable": 0,
+      "is_spoiler": 0,
+      "name": "A Rest Among the Dead",
+      "name_pt": "Um Descanso na Morte",
+      "tip": "Troféu de história inicial ao chegar ao interior de Skyrest Bridge depois de Pieta.",
+      "trophy_code": "lotf2023_a_rest_among_the_dead",
+      "type": "Bronze"
+    },
+    {
+      "description": "Conclua os negócios de Kukajin em Mournstead.",
+      "is_missable": 1,
+      "is_spoiler": 1,
+      "name": "A Trace of Venom",
+      "name_pt": "Um Rastro de Veneno",
+      "tip": "Missable: liberte Kukajin, invoque-a nos bosses corretos e pague após cada luta para não falhar a quest.",
+      "trophy_code": "lotf2023_a_trace_of_venom",
+      "type": "Bronze"
+    }
+  ]
+}

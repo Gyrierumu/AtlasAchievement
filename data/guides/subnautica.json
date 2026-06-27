@@ -1,0 +1,272 @@
+{
+  "game": {
+    "avoid_if": "Evite se você não gosta de navegação sem marcações constantes, exploração subaquática, gestão de oxigênio ou preparação antes de áreas profundas.",
+    "before_you_start": "Subnautica não tem Chapter Select tradicional. Use saves manuais antes de grandes expedições e antes do final, e não confunda este guia com Below Zero ou Subnautica 2.",
+    "best_for": "Ideal para quem quer uma platina de sobrevivência e exploração, com ritmo livre, progressão por descoberta e foco em veículos e mundo aberto subaquático.",
+    "cleanup_advice": "Antes do final, revise veículos, base, Aurora, instalações alienígenas, profundidade, Cuddlefish e qualquer objetivo pendente.",
+    "cover_image": "https://image.api.playstation.com/vulcan/ap/rnd/202009/3006/aJJxsiebmzSzHAVXztSZE9gI.jpg",
+    "coverage_level": "strong",
+    "created_at": "2026-05-17 10:29:54",
+    "difficulty": 3,
+    "difficulty_reason": "A dificuldade é baixa/média: o desafio vem de sobrevivência, navegação, profundidade e planejamento, sem online, coop ou dificuldade obrigatória.",
+    "dlc_scope": "Guia focado na lista base de Subnautica; não inclui Below Zero, Subnautica 2, versões mobile ou ports futuros.",
+    "editorial_notes": "Lista PlayStation validada como 18 troféus, distribuição 1 platina, 9 ouro, 7 prata e 1 bronze. Fontes divergem sobre perdíveis: PowerPyx trata 0 missables, mas guias de apoio apontam risco no Cuddlefish por recursos finitos; dado conservador aplicado.",
+    "editorial_review_status": "in_review",
+    "editorial_status": "published",
+    "first_run_advice": "Explore com calma, construa uma base funcional e avance a história enquanto cria veículos, equipamentos e saves manuais antes de grandes marcos.",
+    "grind_summary": "O esforço está em exploração, profundidade, veículos, base, recursos e preparação, não em grind repetitivo.",
+    "guide_avoid": null,
+    "guide_best_moment": null,
+    "guide_dlc": null,
+    "guide_grind": null,
+    "guide_ideal": null,
+    "guide_online": null,
+    "guide_runs": null,
+    "image": "https://image.api.playstation.com/vulcan/ap/rnd/202009/3006/xaQnlPaY1BGyNVrSJHruGiMb.jpg",
+    "is_verified": 0,
+    "last_reviewed_at": "",
+    "missable": "Há um risco conservador ligado ao troféu Man's Best Friend, porque ovos de Cuddlefish são finitos. O restante da platina pode ser organizado em free roam antes do final; mantenha saves manuais e revise pendências antes de lançar o foguete.",
+    "missable_summary": "1 risco real/conservador: Man's Best Friend. Faça esse troféu antes do final e evite descartar ou perder todos os ovos de Cuddlefish.",
+    "name": "Subnautica",
+    "online_summary": "Não há online, coop ou multiplayer obrigatório; Subnautica é uma platina single-player.",
+    "quality_warnings": "[]",
+    "reviewed_by": "",
+    "runs_summary": "1 campanha + exploração, veículos, base e cleanup antes do final.",
+    "slug": "subnautica",
+    "time": "20-30h",
+    "time_bucket": "medium",
+    "time_max_hours": 30,
+    "time_min_hours": 20,
+    "time_reason": "A faixa de 20-30h considera campanha, exploração, veículos, base, história, Cuddlefish e cleanup antes do lançamento final.",
+    "time_sort_hours": 30,
+    "updated_at": "2026-06-27 02:37:03",
+    "verification_note": "Guia inicial de Subnautica adicionado com lista PlayStation base; distribuição e risco de Cuddlefish requerem revisão editorial final.",
+    "verification_status": "review",
+    "walkthrough": ""
+  },
+  "redirects": [],
+  "roadmaps": [
+    {
+      "content": "{\"title\":\"Sobreviva aos primeiros dias e estabilize recursos\",\"focus\":\"Início / sobrevivência\",\"objective\":\"Aprender os sistemas básicos, coletar recursos essenciais e criar uma rotina segura de oxigênio, comida, água e crafting.\",\"actions\":[\"Explore as áreas próximas ao Lifepod sem se afastar demais no começo.\",\"Colete recursos básicos para ferramentas iniciais.\",\"Priorize oxigênio, água, comida e armazenamento.\",\"Escaneie fragmentos sempre que encontrar destroços.\",\"Crie beacons para marcar locais importantes.\"],\"warning\":\"\",\"result\":\"Base de sobrevivência criada e exploração inicial mais segura.\"}",
+      "step_order": 1
+    },
+    {
+      "content": "{\"title\":\"Construa base e equipamentos essenciais\",\"focus\":\"Base / crafting\",\"objective\":\"Criar uma estrutura de suporte para exploração, armazenamento, fabricação e progressão.\",\"actions\":[\"Construa uma base simples e funcional.\",\"Organize recursos por categoria.\",\"Crie ferramentas de exploração e sobrevivência.\",\"Escaneie fragmentos de módulos, equipamentos e veículos.\",\"Marque biomas e destroços importantes.\"],\"warning\":\"\",\"result\":\"Base preparada para expedições mais longas e progresso consistente.\"}",
+      "step_order": 2
+    },
+    {
+      "content": "{\"title\":\"Desbloqueie veículos e aumente a profundidade\",\"focus\":\"Veículos / exploração\",\"objective\":\"Construir veículos e equipamentos que permitam explorar áreas mais profundas e avançar a história.\",\"actions\":[\"Busque fragmentos do Seamoth, Prawn Suit e Cyclops conforme a progressão permitir.\",\"Faça upgrades de profundidade e segurança.\",\"Use veículos para explorar biomas mais distantes.\",\"Leve beacons, comida, água, baterias e kits de cura em expedições longas.\"],\"warning\":\"\",\"result\":\"Acesso a áreas profundas liberado e exploração avançada encaminhada.\"}",
+      "step_order": 3
+    },
+    {
+      "content": "{\"title\":\"Avance a história e investigue instalações alienígenas\",\"focus\":\"História / alienígenas\",\"objective\":\"Seguir os sinais principais, investigar instalações alienígenas e desbloquear marcos narrativos da platina.\",\"actions\":[\"Siga pistas de rádio, sinais e locais importantes.\",\"Explore a Aurora quando estiver preparado.\",\"Investigue estruturas alienígenas e áreas de maior profundidade.\",\"Faça saves manuais antes de grandes expedições.\",\"Não avance para o final sem revisar pendências importantes.\"],\"warning\":\"\",\"result\":\"História principal avançada e principais locais descobertos.\"}",
+      "step_order": 4
+    },
+    {
+      "content": "{\"title\":\"Faça cleanup de criaturas, bases, veículos e objetivos opcionais\",\"focus\":\"Cleanup / exploração\",\"objective\":\"Finalizar troféus ligados a construção, veículos, exploração, criaturas e objetivos que não vieram naturalmente.\",\"actions\":[\"Revise troféus de construção de base e veículos.\",\"Complete objetivos de exploração pendentes.\",\"Faça Man's Best Friend antes do final e preserve ovos de Cuddlefish.\",\"Verifique se falta algum marco antes do final.\",\"Use saves manuais para evitar retrabalho.\"],\"warning\":\"O Cuddlefish é o principal ponto de atenção por depender de ovos finitos.\",\"result\":\"Pendências secundárias reduzidas antes da conclusão.\"}",
+      "step_order": 5
+    },
+    {
+      "content": "{\"title\":\"Prepare o final e conclua a platina\",\"focus\":\"Final / checklist\",\"objective\":\"Revisar a lista de troféus antes de concluir a história e finalizar a platina com segurança.\",\"actions\":[\"Revise checklist completo antes do lançamento final.\",\"Confirme que troféus de exploração, veículos, base e história estão concluídos.\",\"Faça um save manual antes do ponto final.\",\"Conclua os objetivos finais da campanha.\",\"Volte ao save anterior se precisar limpar algo restante, se o jogo permitir.\"],\"warning\":\"\",\"result\":\"História concluída e platina pronta sem misturar online, coop ou DLC.\"}",
+      "step_order": 6
+    }
+  ],
+  "schemaVersion": 1,
+  "seedExtras": {
+    "aliases": [],
+    "attentionPoints": [],
+    "checklist": [],
+    "faq": [],
+    "note": "Campos exportados para auditoria. O SQLite atual nao possui colunas nativas para todos esses extras; a importacao preserva o que o banco suporta.",
+    "quickDecision": {
+      "firstAction": "Estabilize recursos básicos, construa uma base funcional e avance a exploração marcando biomas, destroços e rotas profundas com beacons.",
+      "recommendation": "Vale platinar Subnautica se você gosta de exploração subaquática, sobrevivência leve e progressão por descoberta. A platina não exige online, coop nem DLC, mas pede planejamento para expedições profundas, veículos, recursos, Aurora, instalações alienígenas e Man's Best Friend antes do lançamento final.",
+      "summary": "Platina acessível e single-player: sobrevivência, veículos, exploração profunda, história e cleanup antes do final."
+    },
+    "seo": {},
+    "tags": []
+  },
+  "slug": "subnautica",
+  "trophies": [
+    {
+      "description": "Conquiste todos os outros troféus.",
+      "is_missable": 0,
+      "is_spoiler": 0,
+      "name": "Platinum Trophy",
+      "name_pt": "Troféu de Platina",
+      "tip": "Conclua os 17 troféus restantes da lista PlayStation base de Subnautica.",
+      "trophy_code": "subnautica-platinum-trophy",
+      "type": "Platina"
+    },
+    {
+      "description": "Mergulhe pela primeira vez.",
+      "is_missable": 0,
+      "is_spoiler": 0,
+      "name": "Getting Your Feet Wet",
+      "name_pt": "Molhando Os Pés",
+      "tip": "Troféu inicial; entre na água após sair do Lifepod.",
+      "trophy_code": "subnautica-getting-your-feet-wet",
+      "type": "Bronze"
+    },
+    {
+      "description": "Conserte o reator da Aurora.",
+      "is_missable": 0,
+      "is_spoiler": 1,
+      "name": "Extinction Event Avoided",
+      "name_pt": "Evento de Extinção Evitado",
+      "tip": "Prepare radiação, ferramentas, água e suprimentos antes de explorar a Aurora.",
+      "trophy_code": "subnautica-extinction-event-avoided",
+      "type": "Ouro"
+    },
+    {
+      "description": "Encontre a Plataforma de Aplicação de Quarentena.",
+      "is_missable": 0,
+      "is_spoiler": 1,
+      "name": "Ancient Technologies",
+      "name_pt": "Tecnologias Antigas",
+      "tip": "Siga a progressão principal e investigue as estruturas alienígenas.",
+      "trophy_code": "subnautica-ancient-technologies",
+      "type": "Prata"
+    },
+    {
+      "description": "Encontre a Usina Térmica Alienígena.",
+      "is_missable": 0,
+      "is_spoiler": 1,
+      "name": "Thermal Activity",
+      "name_pt": "Atividade Térmica",
+      "tip": "Exige exploração profunda e veículos/upgrades adequados.",
+      "trophy_code": "subnautica-thermal-activity",
+      "type": "Ouro"
+    },
+    {
+      "description": "Encontre a Instalação de Pesquisa da Doença.",
+      "is_missable": 0,
+      "is_spoiler": 1,
+      "name": "Follow the Lost River",
+      "name_pt": "Siga pelo Rio Perdido",
+      "tip": "Prepare expedições longas com veículos, beacons e suprimentos.",
+      "trophy_code": "subnautica-find-the-lost-river",
+      "type": "Ouro"
+    },
+    {
+      "description": "Encontre a Unidade de Contenção Primária.",
+      "is_missable": 0,
+      "is_spoiler": 1,
+      "name": "Fourteen Thousand Leagues Under the Sea",
+      "name_pt": "Quatorze Mil Léguas Sob o Mar",
+      "tip": "Marco de progressão profunda; leve veículo preparado e recursos de sobrevivência.",
+      "trophy_code": "subnautica-fourteen-thousand-leagues-under-the-sea",
+      "type": "Ouro"
+    },
+    {
+      "description": "Cure a infecção.",
+      "is_missable": 0,
+      "is_spoiler": 1,
+      "name": "Optimal Health",
+      "name_pt": "Saudável",
+      "tip": "Avance a linha principal das instalações alienígenas e criaturas relacionadas.",
+      "trophy_code": "subnautica-optimal-health",
+      "type": "Ouro"
+    },
+    {
+      "description": "Crie e implante uma cápsula do tempo.",
+      "is_missable": 0,
+      "is_spoiler": 1,
+      "name": "Leave Only Time Capsules",
+      "name_pt": "Deixe Apenas Cápsulas do Tempo",
+      "tip": "Faça antes de concluir o lançamento final do foguete.",
+      "trophy_code": "subnautica-leave-only-time-capsules",
+      "type": "Ouro"
+    },
+    {
+      "description": "Lance o foguete Neptune.",
+      "is_missable": 0,
+      "is_spoiler": 1,
+      "name": "Go Among the Stars",
+      "name_pt": "Vá Além das Estrelas",
+      "tip": "Revise o checklist e faça save manual antes de finalizar a campanha.",
+      "trophy_code": "subnautica-go-among-the-stars",
+      "type": "Ouro"
+    },
+    {
+      "description": "Construa uma base.",
+      "is_missable": 0,
+      "is_spoiler": 0,
+      "name": "Settling in for the Long Haul",
+      "name_pt": "Estabelecendo-se Para Uma Longa Estadia",
+      "tip": "Uma base simples já resolve o troféu e facilita armazenamento e crafting.",
+      "trophy_code": "subnautica-settling-in-for-the-long-haul",
+      "type": "Prata"
+    },
+    {
+      "description": "Construa um Seamoth.",
+      "is_missable": 0,
+      "is_spoiler": 0,
+      "name": "Personal Propulsion",
+      "name_pt": "Propulsão Pessoal",
+      "tip": "Escaneie fragmentos e construa o veículo para expandir a exploração.",
+      "trophy_code": "subnautica-personal-propulsion",
+      "type": "Prata"
+    },
+    {
+      "description": "Construa um Cyclops.",
+      "is_missable": 0,
+      "is_spoiler": 0,
+      "name": "40-foot Sub For One",
+      "name_pt": "40-pés Abaixo Para Um",
+      "tip": "Procure fragmentos do Cyclops em destroços e biomas mais avançados.",
+      "trophy_code": "subnautica-40-foot-sub-for-one",
+      "type": "Prata"
+    },
+    {
+      "description": "Construa um Prawn Suit.",
+      "is_missable": 0,
+      "is_spoiler": 0,
+      "name": "Ordered the Prawn",
+      "name_pt": "Encomendado o P.R.A.W.N",
+      "tip": "Escaneie fragmentos do Prawn Suit, especialmente durante a progressão pela Aurora.",
+      "trophy_code": "subnautica-ordered-the-prawn",
+      "type": "Prata"
+    },
+    {
+      "description": "Encontre a base Degasi na ilha flutuante.",
+      "is_missable": 0,
+      "is_spoiler": 0,
+      "name": "Seaside Living with an Ocean View",
+      "name_pt": "Vivendo a Beira-Mar com Vista Para o Oceano",
+      "tip": "Siga pistas de PDAs/sinais e explore a ilha flutuante com beacons.",
+      "trophy_code": "subnautica-seaside-living-with-an-ocean-view",
+      "type": "Prata"
+    },
+    {
+      "description": "Encontre a base Degasi no recife profundo.",
+      "is_missable": 0,
+      "is_spoiler": 1,
+      "name": "Follow the Degasi",
+      "name_pt": "Siga a Degasi",
+      "tip": "Continue seguindo a trilha Degasi e prepare-se para maior profundidade.",
+      "trophy_code": "subnautica-follow-the-degasi",
+      "type": "Ouro"
+    },
+    {
+      "description": "Choque e liberte um Cuddlefish.",
+      "is_missable": 1,
+      "is_spoiler": 0,
+      "name": "\"Man's Best Friend\"",
+      "name_pt": "\"Melhor Amigo do Homem\"",
+      "tip": "Priorize este troféu antes do final. Ovos de Cuddlefish são finitos, então não descarte nem perca todos eles.",
+      "trophy_code": "subnautica-man-s-best-friend",
+      "type": "Prata"
+    },
+    {
+      "description": "Encontre o habitat do Sea Emperor.",
+      "is_missable": 0,
+      "is_spoiler": 1,
+      "name": "Seamonsters",
+      "name_pt": "Monstros Marinhos",
+      "tip": "Marco de história profunda; leve veículo preparado, beacons e recursos extras.",
+      "trophy_code": "subnautica-seamonsters",
+      "type": "Ouro"
+    }
+  ]
+}

@@ -1,0 +1,699 @@
+{
+  "game": {
+    "avoid_if": "Evite se você não gosta de combate exigente, farm de proficiência, replay de missões ou checklist extenso.",
+    "before_you_start": "A platina exige domínio do combate, conclusão de missões, coletáveis como Kodama/Hot Springs, proficiência/armas e bastante limpeza, mas não deve misturar DLC com a lista base.",
+    "best_for": "Ideal para quem quer uma platina soulslike/action RPG longa, técnica e cheia de sistemas de build.",
+    "cleanup_advice": "Use seleção/replay de missões para limpar Kodama, Hot Springs, Dark Realms, Soul Cores, proficiências, Mystic Arts e troféus situacionais.",
+    "cover_image": "https://cdn.cloudflare.steamstatic.com/steam/apps/1325200/library_600x900.jpg",
+    "coverage_level": "strong",
+    "created_at": "2026-05-09 19:53:25",
+    "difficulty": 6,
+    "difficulty_reason": "A dificuldade vem do combate técnico, gestão de Ki, Burst Counter, bosses, builds e domínio dos sistemas de Nioh.",
+    "dlc_scope": "DLC fora da platina base. Guia focado na lista base de 56 troféus; The Tengu's Disciple, Darkness in the Capital e The First Samurai existem como listas separadas de DLC e não contam para a platina base.",
+    "editorial_notes": "Nomes oficiais em inglês preservados. Nomes PT-BR não foram preenchidos por falta de fonte oficial/confiável no projeto; descrições principais usam tradução editorial em português fiel ao requisito.",
+    "editorial_review_status": "in_review",
+    "editorial_status": "published",
+    "first_run_advice": "Avance a campanha aprendendo Ki Pulse, Burst Counter, Yokai abilities e gerenciamento de equipamento antes de focar na limpeza completa.",
+    "grind_summary": "O maior peso está em concluir missões, coletar Kodama e Hot Springs, obter Soul Cores, liberar Mystic Arts/proficiências e fazer cleanup situacional.",
+    "guide_avoid": null,
+    "guide_best_moment": null,
+    "guide_dlc": null,
+    "guide_grind": null,
+    "guide_ideal": null,
+    "guide_online": null,
+    "guide_runs": null,
+    "image": "https://cdn.cloudflare.steamstatic.com/steam/apps/1325200/header.jpg",
+    "is_verified": 0,
+    "last_reviewed_at": "2026-05-16",
+    "missable": "Não há troféus perdíveis reais na lista base. As missões podem ser revisitadas por seleção/replay, então Kodama, Hot Springs, Soul Cores, Dark Realms, proficiências e objetivos situacionais podem ser limpos depois.",
+    "missable_summary": "Não há perdíveis reais na lista base; a platina também não é perdível. Use replay de missões para limpar objetivos, coletáveis e proficiências.",
+    "name": "Nioh 2",
+    "online_summary": "Sem online obrigatório: coop/expedições podem ajudar, mas a platina base pode ser feita solo/offline usando NPCs, Acolytes e replay de missões.",
+    "quality_warnings": "[]",
+    "reviewed_by": "Codex",
+    "runs_summary": "Campanha principal e pós-game/cleanup por seleção de missão. NG+ pode acelerar proficiência e farm, mas não é obrigatório para a platina base.",
+    "slug": "nioh-2",
+    "time": "100-150h",
+    "time_bucket": "long",
+    "time_max_hours": 150,
+    "time_min_hours": 100,
+    "time_reason": "A faixa conservadora de 100-150 horas considera curva de aprendizado, campanha, todas as missões, coletáveis, proficiências, Soul Cores, Mystic Arts e cleanup.",
+    "time_sort_hours": 150,
+    "updated_at": "2026-06-27 02:37:01",
+    "verification_note": "Lista base revisada com 56 troféus (1 Platina, 2 Ouro, 5 Prata, 48 Bronze), sem perdíveis reais, sem online/coop obrigatório e com DLCs separadas da platina. Mantido em revisão porque o selo manual verified não deve ser promovido pelo seed.",
+    "verification_status": "review",
+    "walkthrough": ""
+  },
+  "redirects": [],
+  "roadmaps": [
+    {
+      "content": "{\"title\":\"Aprenda o combate e avance a campanha\",\"focus\":\"Campanha / aprendizado\",\"objective\":\"Progredir pela história enquanto aprende Ki Pulse, Burst Counter, Yokai abilities, posturas e gerenciamento de equipamento.\",\"actions\":[\"Avance as missões principais sem tentar fazer 100% em cada região logo de início.\",\"Pratique Ki Pulse e Burst Counter, porque eles reduzem muito a dificuldade dos chefes.\",\"Troque equipamentos com frequência e use armas que combinem com seu estilo.\",\"Complete missões secundárias próximas do seu nível quando precisar de recursos, experiência ou prática.\"],\"warning\":\"\",\"result\":\"Base de combate consolidada e campanha encaminhada com menos frustração.\"}",
+      "step_order": 1
+    },
+    {
+      "content": "{\"title\":\"Complete missões principais e secundárias da lista base\",\"focus\":\"Missões\",\"objective\":\"Abrir todas as regiões e reduzir pendências de missões necessárias para a platina base.\",\"actions\":[\"Continue avançando a história até liberar todas as regiões principais.\",\"Complete missões secundárias conforme ficarem disponíveis e fizerem sentido para seu nível.\",\"Revise o checklist para separar missões principais, secundárias e especiais.\",\"Não misture missões de DLC com a platina base.\"],\"warning\":\"\",\"result\":\"Mapa da campanha praticamente completo e base pronta para cleanup.\"}",
+      "step_order": 2
+    },
+    {
+      "content": "{\"title\":\"Limpe Kodama, Hot Springs e pendências por região\",\"focus\":\"Coletáveis\",\"objective\":\"Finalizar coletáveis e atividades de exploração sem depender de memória no fim do jogo.\",\"actions\":[\"Revise Kodama por missão ou região usando o checklist.\",\"Complete Hot Springs e outros pontos de exploração exigidos pela lista base.\",\"Retorne a missões antigas quando estiver mais forte e conhecer melhor os atalhos.\",\"Organize a limpeza por região para evitar repetir missões desnecessariamente.\"],\"warning\":\"\",\"result\":\"Coletáveis principais fechados ou com pendências claramente mapeadas.\"}",
+      "step_order": 3
+    },
+    {
+      "content": "{\"title\":\"Trabalhe proficiência, armas e habilidades\",\"focus\":\"Grind / proficiência\",\"objective\":\"Avançar troféus ligados a armas, habilidades, proficiência e sistemas de progressão.\",\"actions\":[\"Varie tipos de armas se a lista exigir proficiência ou domínio com categorias diferentes.\",\"Invista pontos nas árvores de habilidade conforme os troféus pedirem.\",\"Aproveite missões repetíveis para farmar proficiência, Amrita e recursos.\",\"Separe grind de armas dos troféus de história para não perder foco.\"],\"warning\":\"\",\"result\":\"Progresso de armas, habilidades e proficiência encaminhado para a reta final.\"}",
+      "step_order": 4
+    },
+    {
+      "content": "{\"title\":\"Finalize Yokai, Soul Cores e troféus situacionais\",\"focus\":\"Combate / sistemas\",\"objective\":\"Concluir troféus de combate, Yokai abilities, Soul Cores, Burst Counter, Yokai Shift e ações específicas que não vieram naturalmente.\",\"actions\":[\"Revise troféus ligados a Yokai abilities, Burst Counter, Yokai Shift e Soul Cores.\",\"Complete troféus situacionais em missões específicas usando seleção de missão.\",\"Derrote chefes ou inimigos pendentes sem tratar isso como perdível se a missão puder ser repetida.\",\"Ajuste build, equipamento e espíritos guardiões para facilitar desafios restantes.\"],\"warning\":\"\",\"result\":\"Pendências de combate e sistemas reduzidas antes da revisão final.\"}",
+      "step_order": 5
+    },
+    {
+      "content": "{\"title\":\"Cleanup final da platina base\",\"focus\":\"Checklist final\",\"objective\":\"Conferir todos os troféus restantes da lista base sem misturar DLCs ou coop opcional.\",\"actions\":[\"Revise missões, coletáveis, Kodama, Hot Springs, proficiência, Soul Cores e ações situacionais.\",\"Confirme que nenhum troféu de DLC foi contado como requisito da platina base.\",\"Verifique se online e coop não estão marcados como obrigatórios sem necessidade.\",\"Finalize pendências curtas usando seleção de missão e checklist.\"],\"warning\":\"\",\"result\":\"Lista base concluída e platina pronta.\"}",
+      "step_order": 6
+    }
+  ],
+  "schemaVersion": 1,
+  "seedExtras": {
+    "aliases": [],
+    "attentionPoints": [],
+    "checklist": [
+      "Concluir os troféus de história da campanha base.",
+      "Completar todas as missões principais exigidas por Samurai of Legend.",
+      "Completar as missões secundárias da lista base sem incluir missões de DLC.",
+      "Coletar todos os Kodama da lista base por missão/região.",
+      "Usar todas as Hot Springs da lista base.",
+      "Dissipar todos os Dark Realms das missões principais.",
+      "Obter todos os Guardian Spirits da lista base.",
+      "Obter todas as Soul Cores da lista base, incluindo Kodama Soul Core.",
+      "Liberar Mystic Arts/proficiência para armas, Ninjutsu e Onmyo Magic.",
+      "Fazer Burst Counter Brute, Feral e Phantom cinco vezes cada.",
+      "Resolver troféus situacionais por missão, como Seven Wonders, Clean Sweep e Peal of Ten Thousand Bells.",
+      "Conferir Soul Match, Forge, Remodel, Tea Utensils, Kodama Bazaar e demais sistemas.",
+      "Finalizar cleanup por seleção/replay de missões sem marcar nada como perdível se puder repetir.",
+      "Confirmar que The Tengu's Disciple, Darkness in the Capital e The First Samurai ficaram fora da platina base."
+    ],
+    "faq": [
+      {
+        "answer": "Não. A platina base não tem perdíveis definitivos. A maioria dos objetivos pode ser resolvida retornando a missões, limpando regiões e avançando sistemas acumulativos.",
+        "question": "Nioh 2 tem troféus perdíveis?"
+      },
+      {
+        "answer": "Não. A platina base pode ser feita offline. Recursos online podem ajudar em alguns momentos, mas não são requisito obrigatório da platina.",
+        "question": "Nioh 2 precisa de online para platinar?"
+      },
+      {
+        "answer": "O tempo depende do domínio do combate, da build, do uso de missões secundárias e do quanto de cleanup ficar para o final. Use o roadmap para distribuir campanha, coletáveis, proficiência, Soul Cores e missões pendentes.",
+        "question": "Quanto tempo leva para platinar Nioh 2?"
+      },
+      {
+        "answer": "A dificuldade vem principalmente do combate, chefes, gerenciamento de Ki, Burst Counter, builds, missões opcionais e adaptação aos sistemas de yokai. A platina não é baseada em perdíveis, mas exige consistência.",
+        "question": "Qual a dificuldade da platina de Nioh 2?"
+      },
+      {
+        "answer": "Não. A platina base não exige coop obrigatório. O jogo pode ter recursos de ajuda/coop, mas eles não devem ser tratados como requisito obrigatório para platinar.",
+        "question": "Nioh 2 tem coop obrigatório?"
+      },
+      {
+        "answer": "Não. As DLCs ficam fora da platina base.",
+        "question": "A DLC é necessária para a platina de Nioh 2?"
+      }
+    ],
+    "note": "Campos exportados para auditoria. O SQLite atual nao possui colunas nativas para todos esses extras; a importacao preserva o que o banco suporta.",
+    "quickDecision": {
+      "attention": "A platina exige domínio do combate, conclusão de missões, coletáveis como Kodama/Hot Springs, proficiência/armas e bastante limpeza, mas não deve misturar DLC com a lista base.",
+      "firstAction": "Avance a campanha aprendendo Ki Pulse, Burst Counter, Yokai abilities e gerenciamento de equipamento antes de focar na limpeza completa.",
+      "recommendation": "Avance a campanha aprendendo Ki Pulse, Burst Counter, Yokai abilities e gerenciamento de equipamento antes de focar na limpeza completa.",
+      "summary": "Platina longa e técnica: 56 troféus base, cerca de 100-150h, dificuldade 6/10, sem perdíveis reais, sem online obrigatório, sem coop obrigatório e sem DLC necessária."
+    },
+    "seo": {
+      "canonical": "https://atlasachievement.com.br/jogo/nioh-2",
+      "description": "Guia de platina de Nioh 2 em português, com tempo estimado, dificuldade, missões, Kodama, Hot Springs, proficiência, Soul Cores, roadmap e checklist de troféus.",
+      "ogDescription": "Guia de platina de Nioh 2 em português, com tempo estimado, dificuldade, missões, Kodama, Hot Springs, proficiência, Soul Cores, roadmap e checklist.",
+      "ogTitle": "Nioh 2: guia de platina, troféus e roadmap | AtlasAchievement",
+      "title": "Nioh 2: guia de platina, troféus e roadmap | AtlasAchievement"
+    },
+    "tags": []
+  },
+  "slug": "nioh-2",
+  "trophies": [
+    {
+      "description": "Você desbloqueou todas as conquistas!",
+      "is_missable": 0,
+      "is_spoiler": 0,
+      "name": "You Are Nioh",
+      "name_pt": "Você é Nioh",
+      "tip": "Complete todos os outros 55 troféus da lista base. DLCs não são necessárias para a platina.",
+      "trophy_code": "nioh2_you_are_nioh",
+      "type": "Platina"
+    },
+    {
+      "description": "Conclua todas as missões em qualquer dificuldade. (Não inclui missões de treinamento.)",
+      "is_missable": 0,
+      "is_spoiler": 0,
+      "name": "Samurai of Legend",
+      "name_pt": "",
+      "tip": "Complete todas as missões principais e secundárias da lista base; training missions não contam.",
+      "trophy_code": "nioh2_samurai_of_legend",
+      "type": "Ouro"
+    },
+    {
+      "description": "Atingiu o nível 10.",
+      "is_missable": 0,
+      "is_spoiler": 0,
+      "name": "The Beginning of a Samurai",
+      "name_pt": "Aprendiz de Samurai",
+      "tip": "Vem naturalmente no começo da campanha ao gastar Amrita em um Shrine.",
+      "trophy_code": "nioh2_beginning_samurai",
+      "type": "Bronze"
+    },
+    {
+      "description": "Atingiu o nível 100.",
+      "is_missable": 0,
+      "is_spoiler": 0,
+      "name": "Full-fledged Samurai",
+      "name_pt": "Samurai Pleno",
+      "tip": "Normalmente vem ao completar história e missões secundárias sem farm pesado dedicado.",
+      "trophy_code": "nioh2_full_fledged_samurai",
+      "type": "Bronze"
+    },
+    {
+      "description": "Fez amizade com Tokichiro.",
+      "is_missable": 0,
+      "is_spoiler": 1,
+      "name": "Dawn of a Dream",
+      "name_pt": "Despertar de um Sonho",
+      "tip": "Troféu automático de história logo no início da jornada.",
+      "trophy_code": "nioh2_dawn_of_a_dream",
+      "type": "Bronze"
+    },
+    {
+      "description": "Derrotou Imagawa Yoshimoto e tornou-se um samurai.",
+      "is_missable": 0,
+      "is_spoiler": 1,
+      "name": "An Electrifying Triumph",
+      "name_pt": "Uma Conquista Eletrizante",
+      "tip": "Troféu de história ligado ao confronto com Imagawa Yoshimoto.",
+      "trophy_code": "nioh2_electrifying_triumph",
+      "type": "Bronze"
+    },
+    {
+      "description": "Escolheu compartilhar um nome com Tokichiro.",
+      "is_missable": 0,
+      "is_spoiler": 1,
+      "name": "Hideyoshi",
+      "name_pt": "Hideyoshi",
+      "tip": "Marco narrativo automático ao avançar para regiões intermediárias.",
+      "trophy_code": "nioh2_hideyoshi",
+      "type": "Bronze"
+    },
+    {
+      "description": "Separou-se de Tokichiro.",
+      "is_missable": 0,
+      "is_spoiler": 1,
+      "name": "The Paths We Tread",
+      "name_pt": "Os Caminhos que Trilhamos",
+      "tip": "Troféu automático de história em ponto narrativo avançado.",
+      "trophy_code": "nioh2_paths_we_tread",
+      "type": "Bronze"
+    },
+    {
+      "description": "Derrotou Tokichiro.",
+      "is_missable": 0,
+      "is_spoiler": 1,
+      "name": "Dream’s Toll",
+      "name_pt": "Preço de um Sonho",
+      "tip": "Troféu de história ligado a um dos confrontos finais.",
+      "trophy_code": "nioh2_dreams_toll",
+      "type": "Bronze"
+    },
+    {
+      "description": "Reuniu-se com sua mãe no Ínterim.",
+      "is_missable": 0,
+      "is_spoiler": 1,
+      "name": "Mother and Child",
+      "name_pt": "Laço Materno",
+      "tip": "Marco narrativo avançado da campanha.",
+      "trophy_code": "nioh2_mother_and_child",
+      "type": "Bronze"
+    },
+    {
+      "description": "Cumpriu seu verdadeiro destino.",
+      "is_missable": 0,
+      "is_spoiler": 1,
+      "name": "What is Written",
+      "name_pt": "Estava Escrito",
+      "tip": "Troféu de história da reta final.",
+      "trophy_code": "nioh2_what_is_written",
+      "type": "Bronze"
+    },
+    {
+      "description": "Despediu-se de Tokichiro em sua última partida.",
+      "is_missable": 0,
+      "is_spoiler": 1,
+      "name": "Dream Within a Dream",
+      "name_pt": "Sonho de um Sonho",
+      "tip": "Conclua a história principal da lista base.",
+      "trophy_code": "nioh2_dream_within_dream",
+      "type": "Ouro"
+    },
+    {
+      "description": "Ouviu os pensamentos mais profundos de uma Arma Yokai.",
+      "is_missable": 0,
+      "is_spoiler": 0,
+      "name": "A Weapon’s Mind",
+      "name_pt": "Pensamento Afiado",
+      "tip": "Use uma Yokai Weapon até ouvir todos os diálogos exigidos.",
+      "trophy_code": "nioh2_weapons_mind",
+      "type": "Bronze"
+    },
+    {
+      "description": "Obteve artes místicas de katana.",
+      "is_missable": 0,
+      "is_spoiler": 0,
+      "name": "Sword Master",
+      "name_pt": "Mestre Espadachim",
+      "tip": "Ganhe proficiência com espada e conclua o dojo correspondente.",
+      "trophy_code": "nioh2_sword_master",
+      "type": "Bronze"
+    },
+    {
+      "description": "Obteve artes místicas de katanas duplas.",
+      "is_missable": 0,
+      "is_spoiler": 0,
+      "name": "Dual Sword Master",
+      "name_pt": "Mestre das Katanas Duplas",
+      "tip": "Ganhe proficiência com dual swords e conclua o dojo correspondente.",
+      "trophy_code": "nioh2_dual_sword_master",
+      "type": "Bronze"
+    },
+    {
+      "description": "Obteve artes místicas de lança.",
+      "is_missable": 0,
+      "is_spoiler": 0,
+      "name": "Spear Master",
+      "name_pt": "Mestre Lanceiro",
+      "tip": "Ganhe proficiência com spear e conclua o dojo correspondente.",
+      "trophy_code": "nioh2_spear_master",
+      "type": "Bronze"
+    },
+    {
+      "description": "Obteve artes místicas de machado.",
+      "is_missable": 0,
+      "is_spoiler": 0,
+      "name": "Axe Master",
+      "name_pt": "Mestre do Machado",
+      "tip": "Ganhe proficiência com axe e conclua o dojo correspondente.",
+      "trophy_code": "nioh2_axe_master",
+      "type": "Bronze"
+    },
+    {
+      "description": "Obteve artes místicas de kusarigama.",
+      "is_missable": 0,
+      "is_spoiler": 0,
+      "name": "Kusarigama Master",
+      "name_pt": "Mestre da Kusarigama",
+      "tip": "Ganhe proficiência com kusarigama e conclua o dojo correspondente.",
+      "trophy_code": "nioh2_kusarigama_master",
+      "type": "Bronze"
+    },
+    {
+      "description": "Obteve artes místicas de odachi.",
+      "is_missable": 0,
+      "is_spoiler": 0,
+      "name": "Odachi Master",
+      "name_pt": "Mestre da Odachi",
+      "tip": "Ganhe proficiência com odachi e conclua o dojo correspondente.",
+      "trophy_code": "nioh2_odachi_master",
+      "type": "Bronze"
+    },
+    {
+      "description": "Obteve artes místicas de tonfa.",
+      "is_missable": 0,
+      "is_spoiler": 0,
+      "name": "Tonfa Master",
+      "name_pt": "Mestre da Tonfa",
+      "tip": "Ganhe proficiência com tonfa e conclua o dojo correspondente.",
+      "trophy_code": "nioh2_tonfa_master",
+      "type": "Bronze"
+    },
+    {
+      "description": "Obteve artes místicas de machadinhas.",
+      "is_missable": 0,
+      "is_spoiler": 0,
+      "name": "Hatchet Master",
+      "name_pt": "Mestre em Machadinhas",
+      "tip": "Ganhe proficiência com hatchets e conclua o dojo correspondente.",
+      "trophy_code": "nioh2_hatchet_master",
+      "type": "Bronze"
+    },
+    {
+      "description": "Obteve artes místicas de foice-borboleta.",
+      "is_missable": 0,
+      "is_spoiler": 0,
+      "name": "Switchglaive Master",
+      "name_pt": "Mestre em Foice-borboleta",
+      "tip": "Ganhe proficiência com switchglaive e conclua o dojo correspondente.",
+      "trophy_code": "nioh2_switchglaive_master",
+      "type": "Bronze"
+    },
+    {
+      "description": "Obteve artes místicas de ninjutsu.",
+      "is_missable": 0,
+      "is_spoiler": 0,
+      "name": "Ninjutsu Master",
+      "name_pt": "Mestre do Ninjutsu",
+      "tip": "Use Ninjutsu até liberar a árvore necessária e compre a Mystic Art.",
+      "trophy_code": "nioh2_ninjutsu_master",
+      "type": "Bronze"
+    },
+    {
+      "description": "Obteve artes místicas de Magia Onmyo.",
+      "is_missable": 0,
+      "is_spoiler": 0,
+      "name": "Onmyo Magic Master",
+      "name_pt": "Mestre de Magia Onmyo",
+      "tip": "Use Onmyo Magic até liberar a árvore necessária e compre a Mystic Art.",
+      "trophy_code": "nioh2_onmyo_magic_master",
+      "type": "Bronze"
+    },
+    {
+      "description": "Usou Revides Impetuosos (Brutamontes, Fera e Fantasma) 5 vezes cada para revidar Ataques Impetuosos.",
+      "is_missable": 0,
+      "is_spoiler": 0,
+      "name": "Burst Breaker",
+      "name_pt": "Vingador Impetuoso",
+      "tip": "Pratique os três tipos de Burst Counter contra ataques vermelhos; pode ser feito em missões repetidas.",
+      "trophy_code": "nioh2_burst_breaker",
+      "type": "Bronze"
+    },
+    {
+      "description": "Realizou uma Fusão Espiritual.",
+      "is_missable": 0,
+      "is_spoiler": 0,
+      "name": "Match Made in Heaven",
+      "name_pt": "Par Perfeito",
+      "tip": "Use o Blacksmith para fazer Soul Match em qualquer equipamento.",
+      "trophy_code": "nioh2_match_made_heaven",
+      "type": "Bronze"
+    },
+    {
+      "description": "Forjou um item.",
+      "is_missable": 0,
+      "is_spoiler": 0,
+      "name": "Latest Masterpiece",
+      "name_pt": "Obra-prima",
+      "tip": "Forje qualquer item no Blacksmith.",
+      "trophy_code": "nioh2_latest_masterpiece",
+      "type": "Bronze"
+    },
+    {
+      "description": "Remodelou um equipamento.",
+      "is_missable": 0,
+      "is_spoiler": 0,
+      "name": "Remodeling Novice",
+      "name_pt": "Novato em Remodelação",
+      "tip": "Use a opção de remodelar equipamento no Blacksmith.",
+      "trophy_code": "nioh2_remodeling_novice",
+      "type": "Bronze"
+    },
+    {
+      "description": "Seus utensílios de chá foram apreciados 50 vezes.",
+      "is_missable": 0,
+      "is_spoiler": 0,
+      "name": "Tea Connoisseur",
+      "name_pt": "Especialista em Chá",
+      "tip": "Tea Utensils vêm como drops; deixe para limpar junto de farm/build e missões repetidas.",
+      "trophy_code": "nioh2_tea_connoisseur",
+      "type": "Bronze"
+    },
+    {
+      "description": "Decorou sua cabana com um pergaminho de caligrafia.",
+      "is_missable": 0,
+      "is_spoiler": 0,
+      "name": "Lover of Letters",
+      "name_pt": "Amante das Letras",
+      "tip": "Compre ou obtenha um pergaminho de caligrafia e coloque-o na hut.",
+      "trophy_code": "nioh2_lover_of_letters",
+      "type": "Bronze"
+    },
+    {
+      "description": "Usou o Bazar Kodama.",
+      "is_missable": 0,
+      "is_spoiler": 0,
+      "name": "Trinket Triumph",
+      "name_pt": "Triunfo do Artefato",
+      "tip": "Use qualquer oferta do Kodama Bazaar em um Shrine.",
+      "trophy_code": "nioh2_trinket_triumph",
+      "type": "Bronze"
+    },
+    {
+      "description": "Concluiu 10 missões com um PNJ ou em Expedições com outros jogadores. (Não inclui Acólitos.)",
+      "is_missable": 0,
+      "is_spoiler": 0,
+      "name": "Teamwork",
+      "name_pt": "Trabalho em Equipe",
+      "tip": "Não exige online: várias missões com NPCs contam naturalmente.",
+      "trophy_code": "nioh2_teamwork",
+      "type": "Bronze"
+    },
+    {
+      "description": "Invocou um Acólito de um Túmulo Benevolente 10 vezes.",
+      "is_missable": 0,
+      "is_spoiler": 0,
+      "name": "Help Wanted",
+      "name_pt": "Mão Amiga",
+      "tip": "Use Benevolent Graves/Blue Graves para chamar aliados AI; não trate como multiplayer obrigatório.",
+      "trophy_code": "nioh2_help_wanted",
+      "type": "Bronze"
+    },
+    {
+      "description": "Concluiu a primeira Missão Crepuscular.",
+      "is_missable": 0,
+      "is_spoiler": 0,
+      "name": "Twilight Walker",
+      "name_pt": "Andarilho do Crepúsculo",
+      "tip": "Complete qualquer Twilight Mission disponível após desbloqueá-las.",
+      "trophy_code": "nioh2_twilight_walker",
+      "type": "Bronze"
+    },
+    {
+      "description": "Banhou-se na primeira fonte termal.",
+      "is_missable": 0,
+      "is_spoiler": 0,
+      "name": "Spa Healer",
+      "name_pt": "Descanso no Spa",
+      "tip": "Entre em qualquer Hot Spring pela primeira vez.",
+      "trophy_code": "nioh2_spa_healer",
+      "type": "Bronze"
+    },
+    {
+      "description": "Banhou-se em todas as fontes termais.",
+      "is_missable": 0,
+      "is_spoiler": 0,
+      "name": "Spa Lover",
+      "name_pt": "Viciado em Spa",
+      "tip": "Há Hot Springs espalhadas por missões; use replay para limpar as que faltarem.",
+      "trophy_code": "nioh2_spa_lover",
+      "type": "Prata"
+    },
+    {
+      "description": "Derrotou todos os tipos de Yokai.",
+      "is_missable": 0,
+      "is_spoiler": 1,
+      "name": "Yokai Quelling Master",
+      "name_pt": "Exterminador de Yokai",
+      "tip": "Derrote todos os tipos de Yokai da lista base; acompanhe inimigos raros como Mujina.",
+      "trophy_code": "nioh2_yokai_quelling_master",
+      "type": "Bronze"
+    },
+    {
+      "description": "Coletou todos os Kodama.",
+      "is_missable": 0,
+      "is_spoiler": 0,
+      "name": "Kodama Leader",
+      "name_pt": "Líder dos Kodama",
+      "tip": "Colete todos os Kodama por missão/região; replay facilita o cleanup.",
+      "trophy_code": "nioh2_kodama_leader",
+      "type": "Prata"
+    },
+    {
+      "description": "Coletou todos os Espíritos Guardiões.",
+      "is_missable": 0,
+      "is_spoiler": 1,
+      "name": "Friend of Guardians",
+      "name_pt": "Amigo dos Guardiões",
+      "tip": "Complete missões principais e secundárias necessárias para receber todos os Guardian Spirits.",
+      "trophy_code": "nioh2_friend_of_guardians",
+      "type": "Bronze"
+    },
+    {
+      "description": "Trocou presentes com um Sudama pela primeira vez.",
+      "is_missable": 0,
+      "is_spoiler": 0,
+      "name": "Sudama Swapper",
+      "name_pt": "Troca com Sudama",
+      "tip": "Derrube um item perto de um Sudama para fazer a troca.",
+      "trophy_code": "nioh2_sudama_swapper",
+      "type": "Bronze"
+    },
+    {
+      "description": "Obteve sua primeira Almessência.",
+      "is_missable": 0,
+      "is_spoiler": 0,
+      "name": "Core Score",
+      "name_pt": "Essência Essencial",
+      "tip": "Derrote Yokai e purifique o Soul Core em um Shrine.",
+      "trophy_code": "nioh2_core_score",
+      "type": "Bronze"
+    },
+    {
+      "description": "Obteve uma Almessência de Kodama.",
+      "is_missable": 0,
+      "is_spoiler": 0,
+      "name": "Friend to the Kodama",
+      "name_pt": "Amigo dos Kodama",
+      "tip": "Entregue Soul Cores a Sudama até receber uma Kodama Soul Core.",
+      "trophy_code": "nioh2_friend_to_kodama",
+      "type": "Bronze"
+    },
+    {
+      "description": "Obteve todas as Almessências.",
+      "is_missable": 0,
+      "is_spoiler": 1,
+      "name": "Soul Searcher",
+      "name_pt": "Colecionador de Almas",
+      "tip": "Colete todas as Soul Cores da lista base e guarde ao menos um de cada tipo para evitar retrabalho.",
+      "trophy_code": "nioh2_soul_searcher",
+      "type": "Prata"
+    },
+    {
+      "description": "Fundiu uma Almessência até o nível 9.",
+      "is_missable": 0,
+      "is_spoiler": 0,
+      "name": "Fuse It or Lose It",
+      "name_pt": "Fundir ou Perder",
+      "tip": "Use Soul Fusion em uma Soul Core comum até atingir rank 9.",
+      "trophy_code": "nioh2_fuse_it_or_lose_it",
+      "type": "Bronze"
+    },
+    {
+      "description": "Descobriu 10 itens ocultos no mapa.",
+      "is_missable": 0,
+      "is_spoiler": 0,
+      "name": "Seasoned Traveler",
+      "name_pt": "Viajado",
+      "tip": "Procure pontos ocultos no mapa de missões/regiões e interaja com eles.",
+      "trophy_code": "nioh2_seasoned_traveler",
+      "type": "Bronze"
+    },
+    {
+      "description": "Removeu todas as instâncias do Reino Sombrio nas missões principais.",
+      "is_missable": 0,
+      "is_spoiler": 1,
+      "name": "Let There Be Light",
+      "name_pt": "Faça-se a Luz",
+      "tip": "Limpe todos os Dark Realms na campanha principal; use replay para conferir pendências.",
+      "trophy_code": "nioh2_let_there_be_light",
+      "type": "Prata"
+    },
+    {
+      "description": "Derrotou Mezuki e Gozuki na mesma missão.",
+      "is_missable": 0,
+      "is_spoiler": 1,
+      "name": "Grazer Eraser",
+      "name_pt": "Vá Pastar",
+      "tip": "Na missão adequada, derrote o Gozuki opcional antes do boss Mezuki.",
+      "trophy_code": "nioh2_grazer_eraser",
+      "type": "Bronze"
+    },
+    {
+      "description": "Tornou-se o melhor amigo de Ryunojo, o apaixonado por estrume, e recebeu o texto antigo do Elmo Serpente Enrolada.",
+      "is_missable": 0,
+      "is_spoiler": 0,
+      "name": "Dungball Roller",
+      "name_pt": "Bolas de Estrume",
+      "tip": "Entregue Dungballs/Noble Dungballs suficientes a Ryunojo; pode ficar para o cleanup.",
+      "trophy_code": "nioh2_dungball_roller",
+      "type": "Bronze"
+    },
+    {
+      "description": "Encontrou todas as Usura-hicho em \"A Lâmina Ensandecida\".",
+      "is_missable": 0,
+      "is_spoiler": 1,
+      "name": "Hidden Hopes",
+      "name_pt": "Esperanças Ocultas",
+      "tip": "Interaja com todos os Usura-Hicho nessa missão; se faltar, use replay.",
+      "trophy_code": "nioh2_hidden_hopes",
+      "type": "Bronze"
+    },
+    {
+      "description": "Destruiu todos os pedaços de Amrita em \"O Demônio Destemido\".",
+      "is_missable": 0,
+      "is_spoiler": 1,
+      "name": "Clean Sweep",
+      "name_pt": "Varredura Completa",
+      "tip": "Destrua todos os Amrita shards da missão; pode ser repetido depois.",
+      "trophy_code": "nioh2_clean_sweep",
+      "type": "Bronze"
+    },
+    {
+      "description": "Derrotou o chefe de \"O Santuário da Víbora\" sem quebrar a estátua de Shirohami.",
+      "is_missable": 0,
+      "is_spoiler": 1,
+      "name": "Devout Believer",
+      "name_pt": "Beato Devoto",
+      "tip": "Rejogue a missão forte o suficiente e derrote o boss sem quebrar as estátuas.",
+      "trophy_code": "nioh2_devout_believer",
+      "type": "Bronze"
+    },
+    {
+      "description": "Derrotou cada uma das Sete Lanças em \"As Flores de Cerejeira em Daigo\".",
+      "is_missable": 0,
+      "is_spoiler": 1,
+      "name": "Seven Wonders",
+      "name_pt": "Sete Maravilhas",
+      "tip": "Derrote todos os Seven Spears antes de avançar para o fim da missão; se faltar, rejogue.",
+      "trophy_code": "nioh2_seven_wonders",
+      "type": "Prata"
+    },
+    {
+      "description": "Expulsou cada Tatarimokke pelo caminho em \"Uma Saída\".",
+      "is_missable": 0,
+      "is_spoiler": 1,
+      "name": "Feather Buster",
+      "name_pt": "Depenador",
+      "tip": "Destrua os orbes/searchlights de Tatarimokke na missão A Way Out.",
+      "trophy_code": "nioh2_feather_buster",
+      "type": "Bronze"
+    },
+    {
+      "description": "Derrotou Gozuki em \"O Vilarejo das Flores Amaldiçoadas\".",
+      "is_missable": 0,
+      "is_spoiler": 1,
+      "name": "Bold Wrangler",
+      "name_pt": "Toureiro Corajoso",
+      "tip": "Derrote o Gozuki opcional no começo da primeira missão; pode ser feito via replay.",
+      "trophy_code": "nioh2_bold_wrangler",
+      "type": "Bronze"
+    },
+    {
+      "description": "Fez Gyuki atacar a represa em \"Águas Imbuídas\".",
+      "is_missable": 0,
+      "is_spoiler": 1,
+      "name": "Schemer",
+      "name_pt": "Conspirador",
+      "tip": "Durante a luta contra Gyuki, posicione-se perto da barragem para provocar o ataque.",
+      "trophy_code": "nioh2_schemer",
+      "type": "Bronze"
+    },
+    {
+      "description": "Tocou todos os sinos em \"A Destruição se Avizinha\".",
+      "is_missable": 0,
+      "is_spoiler": 1,
+      "name": "Peal of Ten Thousand Bells",
+      "name_pt": "Repique de Dez Mil Sinos",
+      "tip": "Toque todos os sinos da missão Ruin Draws Near; use replay se algum ficar para trás.",
+      "trophy_code": "nioh2_peal_ten_thousand_bells",
+      "type": "Bronze"
+    }
+  ]
+}

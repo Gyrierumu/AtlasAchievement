@@ -1,0 +1,448 @@
+{
+  "game": {
+    "avoid_if": "Evite se você quer uma platina curta, sem segunda campanha ou sem cleanup de coletáveis e desafios situacionais.",
+    "before_you_start": "Acompanhe o perdível You're Not Getting Away That Easy, trate Lunatic como jogada separada e deixe DLC/cosméticos fora da platina base.",
+    "best_for": "Ideal para quem quer uma platina sci-fi single-player com campanha, hacking, exploração, coletáveis, pós-jogo e dificuldade alta final.",
+    "cleanup_advice": "Após a história, use Sinal Desconhecido para revisitar setores, fechar 100%, completar desafios especiais, obter Black Box e resolver Training Sims antes de Lunatic.",
+    "cover_image": "/assets/games/pragmata/cover.webp",
+    "coverage_level": "strong",
+    "created_at": "2026-05-15 09:06:45",
+    "difficulty": 6,
+    "difficulty_reason": "A dificuldade 6/10 vem da run em Lunatic, dos desafios de Unknown Signal, do 100% por setor e de troféus situacionais de combate/hacking.",
+    "dlc_scope": "DLC fora da platina base. Deluxe Edition, cosméticos, bônus e Pacote Variado do Abrigo não são requisito da platina.",
+    "editorial_notes": "Guia revisado editorialmente para a lista base, com foco em campanha, Lunatic, Unknown Signal, coletáveis, objetivos situacionais e separação de DLC/cosméticos.",
+    "editorial_review_status": "verified",
+    "editorial_status": "published",
+    "first_run_advice": "Na primeira campanha, aprenda o ciclo Hugh + Diana, converse com Diana no Abrigo, acompanhe LMTs, Mini Cabins, escotilhas, Red Zones e não desperdice o spawn do Sweeper bot.",
+    "grind_summary": "A platina combina campanha, LMTs, Mini Cabins, escotilhas, Red Zones, 100% por setor, Training Sims, Sinal Desconhecido e Lunatic.",
+    "guide_avoid": null,
+    "guide_best_moment": null,
+    "guide_dlc": null,
+    "guide_grind": null,
+    "guide_ideal": null,
+    "guide_online": null,
+    "guide_runs": null,
+    "image": "/assets/games/pragmata/hero.jpg",
+    "is_verified": 1,
+    "last_reviewed_at": "2026-05-15",
+    "missable": "1 troféu tratado como perdível ou sensível a janela de oportunidade: You're Not Getting Away That Easy. Priorize o Sweeper bot quando encontrar um spawn e leia os pontos de atenção antes de avançar demais na campanha.",
+    "missable_summary": "Há 1 troféu tratado como perdível: You're Not Getting Away That Easy. IT'S OVER 6000! fica como objetivo situacional de combate, não como perdível definitivo.",
+    "name": "PRAGMATA",
+    "online_summary": "PRAGMATA é single-player. A lista base não indica troféus online, coop obrigatório, servidores ou assinatura obrigatória para a platina.",
+    "quality_warnings": "[]",
+    "reviewed_by": "AtlasAchievement Editorial",
+    "runs_summary": "2 jogadas: uma campanha inicial em dificuldade livre para aprender combate/hacking e limpar bastante conteúdo; depois uma Nova Partida em Lunatic, que não fica disponível em New Game+.",
+    "slug": "pragmata",
+    "time": "30-35 horas",
+    "time_bucket": "medium",
+    "time_max_hours": 35,
+    "time_min_hours": 30,
+    "time_reason": "A faixa de 30-35 horas cobre campanha, coleta, pós-jogo, Training Sims, Unknown Signal, cleanup e uma jogada separada em Lunatic.",
+    "time_sort_hours": 30,
+    "updated_at": "2026-06-27 02:36:59",
+    "verification_note": "Guia revisado editorialmente.",
+    "verification_status": "verified",
+    "walkthrough": ""
+  },
+  "redirects": [],
+  "roadmaps": [
+    {
+      "content": "{\"title\":\"Aprenda combate e hacking\",\"focus\":\"Hugh + Diana / Abrigo\",\"objective\":\"Dominar o ritmo entre movimentação, tiros, hackeamento de Diana, Abrigo e treino inicial.\",\"actions\":[\"Avance pelo início até estabilizar o Abrigo.\",\"Converse com Diana e entenda as interações de LMT.\",\"Treine hackeamento, disparos e troca de recursos sem pressa.\",\"Marque no checklist os primeiros objetivos situacionais que surgirem.\"],\"warning\":\"\",\"result\":\"Base mecânica pronta para seguir a campanha com menos retrabalho.\"}",
+      "step_order": 1
+    },
+    {
+      "content": "{\"title\":\"Feche a campanha base\",\"focus\":\"História principal\",\"objective\":\"Concluir a história uma vez em dificuldade livre, mantendo atenção ao troféu perdível validado.\",\"actions\":[\"Jogue na dificuldade que preferir para aprender encontros, chefes e sistemas.\",\"Priorize o Sweeper bot se encontrar um spawn.\",\"Colete o que estiver no caminho sem transformar a primeira run em farm pesado.\",\"Continue atualizando o checklist de LMTs, Mini Cabins, escotilhas e Red Zones.\"],\"warning\":\"Leia os alertas de perdíveis antes de avançar demais na campanha.\",\"result\":\"Campanha concluída e Sinal Desconhecido liberado para cleanup.\"}",
+      "step_order": 2
+    },
+    {
+      "content": "{\"title\":\"Mapeie coletáveis e metas paralelas\",\"focus\":\"Coletáveis / setores\",\"objective\":\"Reduzir pendências de LMTs, Mini Cabins, escotilhas, Red Zones, impressões e progresso de setor.\",\"actions\":[\"Revise cada setor antes de depender só da memória.\",\"Feche LMTs e presentes de Diana quando estiver no Abrigo.\",\"Atire nas Mini Cabins e registre as que faltarem.\",\"Imprima armas, nodos de hackeamento e habilidades disponíveis durante a campanha.\"],\"warning\":\"\",\"result\":\"Menos pendências espalhadas antes do pós-jogo.\"}",
+      "step_order": 3
+    },
+    {
+      "content": "{\"title\":\"Limpe o pós-jogo em Unknown Signal\",\"focus\":\"Pós-jogo / Sinal Desconhecido\",\"objective\":\"Fechar 100% por setor, desafios especiais, chefes fortalecidos e Black Box.\",\"actions\":[\"Use Sinal Desconhecido para revisitar áreas pelo sistema do Abrigo.\",\"Complete 100% de progresso nos setores necessários.\",\"Faça as missões do setor especial e os desafios liberados.\",\"Equipe a Black Box quando o objetivo exigir.\"],\"warning\":\"\",\"result\":\"Conteúdo de pós-jogo resolvido antes da run em Lunatic.\"}",
+      "step_order": 4
+    },
+    {
+      "content": "{\"title\":\"Faça a run em Lunatic\",\"focus\":\"Dificuldade\",\"objective\":\"Concluir a segunda jogada em Nova Partida na dificuldade Lunática.\",\"actions\":[\"Inicie uma Nova Partida depois de liberar Lunatic.\",\"Priorize vida, dano, hackeamento de Diana e sobrevivência.\",\"Reaplique o conhecimento de chefes e rotas da primeira campanha.\",\"Evite tratar essa etapa como New Game+.\"],\"warning\":\"Trate Lunatic como uma jogada separada e não misture essa etapa com cleanup de New Game+.\",\"result\":\"Troféu Lunar Supremacy encaminhado sem misturar regras de NG+.\"}",
+      "step_order": 5
+    },
+    {
+      "content": "{\"title\":\"Feche pendências finais\",\"focus\":\"Checklist final\",\"objective\":\"Revisar o checklist e confirmar qualquer troféu restante antes de encerrar a platina.\",\"actions\":[\"Confira Training Sims, Red Zones, escotilhas e 100% por setor.\",\"Finalize troféus de combate como \\\"IT'S OVER 6000!\\\" e \\\"Who Needs Guns!?\\\" com setup adequado.\",\"Revise interações com Diana e LMTs.\",\"Mantenha DLC, Deluxe Edition, cosméticos e bônus fora da lógica da platina base.\"],\"warning\":\"\",\"result\":\"Checklist fechado com campanha, pós-jogo, Lunatic, coletáveis e objetivos situacionais resolvidos.\"}",
+      "step_order": 6
+    }
+  ],
+  "schemaVersion": 1,
+  "seedExtras": {
+    "aliases": [],
+    "attentionPoints": [],
+    "checklist": [],
+    "faq": [],
+    "note": "Campos exportados para auditoria. O SQLite atual nao possui colunas nativas para todos esses extras; a importacao preserva o que o banco suporta.",
+    "quickDecision": null,
+    "seo": {},
+    "tags": []
+  },
+  "slug": "pragmata",
+  "trophies": [
+    {
+      "description": "Obtenha todos os troféus.",
+      "is_missable": 0,
+      "is_spoiler": 0,
+      "name": "PRAGMATA",
+      "name_pt": "",
+      "tip": "Complete todos os demais troféus da lista base. A platina não exige DLC.",
+      "trophy_code": "pragmata_platinum",
+      "type": "Platina"
+    },
+    {
+      "description": "Chegue ao Abrigo.",
+      "is_missable": 0,
+      "is_spoiler": 0,
+      "name": "Rendezvous",
+      "name_pt": "Encontro",
+      "tip": "Troféu de história obtido ao alcançar o Abrigo pela primeira vez.",
+      "trophy_code": "pragmata_rendezvous",
+      "type": "Bronze"
+    },
+    {
+      "description": "Restaure a energia.",
+      "is_missable": 0,
+      "is_spoiler": 0,
+      "name": "Power Trip",
+      "name_pt": "Pane Elétrica",
+      "tip": "Troféu de história; avance a campanha até religar a energia.",
+      "trophy_code": "pragmata_power_trip",
+      "type": "Bronze"
+    },
+    {
+      "description": "Chegue à Torre de Comunicações.",
+      "is_missable": 0,
+      "is_spoiler": 0,
+      "name": "The Purr-fect Guide",
+      "name_pt": "O Miaulhor Guia da Lua",
+      "tip": "Troféu de história relacionado ao avanão até a Comms Tower.",
+      "trophy_code": "pragmata_purrfect_guide",
+      "type": "Bronze"
+    },
+    {
+      "description": "Encontre a garota presa.",
+      "is_missable": 0,
+      "is_spoiler": 1,
+      "name": "Another Pragmata",
+      "name_pt": "Outro Pragmata",
+      "tip": "Troféu de história com spoiler narrativo; desbloqueia pelo progresso.",
+      "trophy_code": "pragmata_another_pragmata",
+      "type": "Bronze"
+    },
+    {
+      "description": "Obtenha o código de parada.",
+      "is_missable": 0,
+      "is_spoiler": 1,
+      "name": "Entrusted Memory",
+      "name_pt": "Memória Confiada",
+      "tip": "Troféu de história com spoiler; avance a campanha normalmente.",
+      "trophy_code": "pragmata_entrusted_memory",
+      "type": "Bronze"
+    },
+    {
+      "description": "Chegue à Torre Nexus.",
+      "is_missable": 0,
+      "is_spoiler": 1,
+      "name": "Mission Unveiled",
+      "name_pt": "Dever Revelado",
+      "tip": "Troféu de história ligado à chegada na Nexus Tower.",
+      "trophy_code": "pragmata_mission_unveiled",
+      "type": "Bronze"
+    },
+    {
+      "description": "Conserte Diana.",
+      "is_missable": 0,
+      "is_spoiler": 1,
+      "name": "Awakening",
+      "name_pt": "Despertar",
+      "tip": "Troféu de história com spoiler envolvendo Diana.",
+      "trophy_code": "pragmata_awakening",
+      "type": "Bronze"
+    },
+    {
+      "description": "Derrote o Sentinela.",
+      "is_missable": 0,
+      "is_spoiler": 1,
+      "name": "Sentinel Breach",
+      "name_pt": "Invasão Sentinela",
+      "tip": "Troféu de chefe/história; prepare recursos antes do confronto.",
+      "trophy_code": "pragmata_sentinel_breach",
+      "type": "Bronze"
+    },
+    {
+      "description": "Conclua o jogo em qualquer dificuldade.",
+      "is_missable": 0,
+      "is_spoiler": 1,
+      "name": "Our Promise",
+      "name_pt": "Nossa Promessa",
+      "tip": "Finalize a campanha uma vez em qualquer dificuldade para abrir o pós-jogo.",
+      "trophy_code": "pragmata_our_promise",
+      "type": "Ouro"
+    },
+    {
+      "description": "Conclua o modo Sinal Desconhecido.",
+      "is_missable": 0,
+      "is_spoiler": 1,
+      "name": "The Right Man for the Job",
+      "name_pt": "O Cara Certo para o Trabalho Errado",
+      "tip": "Pós-jogo: feche desafios, 100% por setor e a condição da Black Box conforme necessário.",
+      "trophy_code": "pragmata_the_right_man_for_the_job",
+      "type": "Ouro"
+    },
+    {
+      "description": "Conclua o jogo na dificuldade Lunática.",
+      "is_missable": 0,
+      "is_spoiler": 0,
+      "name": "Lunar Supremacy",
+      "name_pt": "Supremacia Lunar",
+      "tip": "Faça em Nova Partida separada; Lunatic não está disponível em New Game+.",
+      "trophy_code": "pragmata_lunar_supremacy",
+      "type": "Ouro"
+    },
+    {
+      "description": "Fale com a Diana no Abrigo.",
+      "is_missable": 0,
+      "is_spoiler": 0,
+      "name": "Small Talk",
+      "name_pt": "Conversa Fiada",
+      "tip": "Converse com Diana no Abrigo assim que a interação estiver disponível.",
+      "trophy_code": "pragmata_small_talk",
+      "type": "Bronze"
+    },
+    {
+      "description": "Receba um desenho de presente.",
+      "is_missable": 0,
+      "is_spoiler": 0,
+      "name": "Thanks for Everything!",
+      "name_pt": "Obrigada por Tudo!",
+      "tip": "Continue falando com Diana e dando LMTs até receber um desenho.",
+      "trophy_code": "pragmata_thanks_for_everything",
+      "type": "Bronze"
+    },
+    {
+      "description": "Vença no esconde-esconde.",
+      "is_missable": 0,
+      "is_spoiler": 0,
+      "name": "Peekaboo",
+      "name_pt": "Achou!",
+      "tip": "Jogue esconde-esconde com Diana quando a atividade ficar disponível no Abrigo.",
+      "trophy_code": "pragmata_peekaboo",
+      "type": "Bronze"
+    },
+    {
+      "description": "Dê uma LMT de presente.",
+      "is_missable": 0,
+      "is_spoiler": 0,
+      "name": "For Me?",
+      "name_pt": "É pra Mim?",
+      "tip": "Entregue uma LMT para Diana no Abrigo.",
+      "trophy_code": "pragmata_for_me",
+      "type": "Bronze"
+    },
+    {
+      "description": "Conclua uma série de LMTs.",
+      "is_missable": 0,
+      "is_spoiler": 0,
+      "name": "Replicating Extraordinaire!",
+      "name_pt": "Replicação Extraordinária!",
+      "tip": "Acompanhe séries de LMTs e complete uma sequência inteira.",
+      "trophy_code": "pragmata_replicating_extraordinaire",
+      "type": "Bronze"
+    },
+    {
+      "description": "Complete uma Cartela de Selos do Cabin.",
+      "is_missable": 0,
+      "is_spoiler": 0,
+      "name": "Blackout!",
+      "name_pt": "Bingo dos Bingos!",
+      "tip": "Use Cabin Coins no Abrigo e complete uma cartela inteira.",
+      "trophy_code": "pragmata_blackout",
+      "type": "Prata"
+    },
+    {
+      "description": "Conclua o objetivo principal em uma Simulação de Treino.",
+      "is_missable": 0,
+      "is_spoiler": 0,
+      "name": "Mister Simulator",
+      "name_pt": "Noob da Simulação",
+      "tip": "Complete o objetivo principal de qualquer Simulação de Treino.",
+      "trophy_code": "pragmata_mister_simulator",
+      "type": "Bronze"
+    },
+    {
+      "description": "Conclua o objetivo principal em todas as Simulações de Treino.",
+      "is_missable": 0,
+      "is_spoiler": 0,
+      "name": "Master of the Simulator",
+      "name_pt": "Às da Simulação",
+      "tip": "Foque só nos objetivos principais; objetivos secundários não são requisito da lista.",
+      "trophy_code": "pragmata_master_of_the_simulator",
+      "type": "Ouro"
+    },
+    {
+      "description": "Assuma o controle de uma Zona Vermelha.",
+      "is_missable": 0,
+      "is_spoiler": 0,
+      "name": "Red-Zoned and Loving It",
+      "name_pt": "Código Vermelho",
+      "tip": "Complete uma Red Zone; elas também ajudam no 100% dos setores.",
+      "trophy_code": "pragmata_red_zoned_and_loving_it",
+      "type": "Prata"
+    },
+    {
+      "description": "Derrote um bot Varredor.",
+      "is_missable": 1,
+      "is_spoiler": 0,
+      "name": "You're Not Getting Away That Easy",
+      "name_pt": "Você não me Escapa",
+      "tip": "Perdível: quando um Sweeper bot aparecer, priorize derrotá-lo antes de seguir.",
+      "trophy_code": "pragmata_youre_not_getting_away",
+      "type": "Bronze"
+    },
+    {
+      "description": "Encontre uma parede holográfica.",
+      "is_missable": 0,
+      "is_spoiler": 0,
+      "name": "Wall? What Wall?",
+      "name_pt": "Parede? Que Parede?",
+      "tip": "Explore paredes falsas durante a busca por coletáveis.",
+      "trophy_code": "pragmata_wall_what_wall",
+      "type": "Bronze"
+    },
+    {
+      "description": "Atire em um Mini Cabin.",
+      "is_missable": 0,
+      "is_spoiler": 0,
+      "name": "Well Spotted!",
+      "name_pt": "Bem Achado!",
+      "tip": "Atire na primeira Mini Cabin encontrada e marque as restantes no checklist.",
+      "trophy_code": "pragmata_well_spotted",
+      "type": "Bronze"
+    },
+    {
+      "description": "Atire em todos os Mini Cabins.",
+      "is_missable": 0,
+      "is_spoiler": 0,
+      "name": "Mini-Hunter Supreme",
+      "name_pt": "Mini Caçadas Digitais",
+      "tip": "São coletáveis de cleanup; use revisão por setor antes de encerrar o pós-jogo.",
+      "trophy_code": "pragmata_mini_hunter_supreme",
+      "type": "Ouro"
+    },
+    {
+      "description": "Melhore uma arma usando lunum puro.",
+      "is_missable": 0,
+      "is_spoiler": 0,
+      "name": "Top-Shelf Item",
+      "name_pt": "Joia da Prateleira",
+      "tip": "Gaste lunum puro em uma arma que você pretende usar no cleanup ou em Lunatic.",
+      "trophy_code": "pragmata_top_shelf_item",
+      "type": "Bronze"
+    },
+    {
+      "description": "Imprima todas as armas, nodos de hackeamento e habilidades durante a história principal.",
+      "is_missable": 0,
+      "is_spoiler": 0,
+      "name": "Can't Stop, Won't Stop",
+      "name_pt": "Última Parada: Meu Bolso",
+      "tip": "Confira impressões, armas, nodos e habilidades antes de iniciar Lunatic.",
+      "trophy_code": "pragmata_cant_stop_wont_stop",
+      "type": "Prata"
+    },
+    {
+      "description": "Consiga 100% de progresso em um setor.",
+      "is_missable": 0,
+      "is_spoiler": 0,
+      "name": "Cradle Surveyor",
+      "name_pt": "Explorador do Berço",
+      "tip": "Feche todos os objetivos de um setor para validar a lógica de 100%.",
+      "trophy_code": "pragmata_cradle_surveyor",
+      "type": "Bronze"
+    },
+    {
+      "description": "Desbloqueie todas as escotilhas de fuga.",
+      "is_missable": 0,
+      "is_spoiler": 0,
+      "name": "Escape Artist",
+      "name_pt": "Escapista",
+      "tip": "Escotilhas funcionam como atalhos; desbloqueie todas durante exploração e cleanup.",
+      "trophy_code": "pragmata_escape_artist",
+      "type": "Bronze"
+    },
+    {
+      "description": "Conclua uma missão em um setor especial.",
+      "is_missable": 0,
+      "is_spoiler": 0,
+      "name": "A Lunar Challenge",
+      "name_pt": "Desafio Lunar",
+      "tip": "Resolva no Sinal Desconhecido após liberar o setor especial.",
+      "trophy_code": "pragmata_lunar_challenge",
+      "type": "Bronze"
+    },
+    {
+      "description": "Derrote três inimigos ao mesmo tempo com o reciclador de LNA.",
+      "is_missable": 0,
+      "is_spoiler": 0,
+      "name": "Round 'Em Up",
+      "name_pt": "Trinca Fatal",
+      "tip": "Agrupe três inimigos e use o Lim Recycler/reciclador de LNA no momento certo.",
+      "trophy_code": "pragmata_round_em_up",
+      "type": "Prata"
+    },
+    {
+      "description": "Repila o Escavador enquanto avança pelas Minas de Lunum.",
+      "is_missable": 0,
+      "is_spoiler": 1,
+      "name": "Courage in Desperation",
+      "name_pt": "Pulso de Coragem",
+      "tip": "Troféu situacional nas Minas de Lunum; enfrente o Escavador até ele recuar.",
+      "trophy_code": "pragmata_courage_in_desperation",
+      "type": "Prata"
+    },
+    {
+      "description": "Confunda um certo inimigo e pegue emprestado o escudo dele.",
+      "is_missable": 0,
+      "is_spoiler": 0,
+      "name": "Can I Borrow That?",
+      "name_pt": "Me Empresta Isso Aí?",
+      "tip": "Use Confuse no inimigo correto e roube o escudo antes de eliminá-lo.",
+      "trophy_code": "pragmata_can_i_borrow_that",
+      "type": "Prata"
+    },
+    {
+      "description": "Purifique três ou mais inimigos ao mesmo tempo.",
+      "is_missable": 0,
+      "is_spoiler": 0,
+      "name": "Clean Up on Aisle Three",
+      "name_pt": "Varredura Cibernética",
+      "tip": "Agrupe três inimigos corrompidos e use a purificação em área.",
+      "trophy_code": "pragmata_clean_up_on_aisle_three",
+      "type": "Prata"
+    },
+    {
+      "description": "Cause 6.000 de dano com disparos em um segundo.",
+      "is_missable": 0,
+      "is_spoiler": 0,
+      "name": "IT'S OVER 6000!",
+      "name_pt": "É MAIS DE 6.000!",
+      "tip": "Prepare arma forte, buffs e alvo favorável para causar 6.000 de dano em um segundo; Training Sim pode facilitar.",
+      "trophy_code": "pragmata_its_over_6000",
+      "type": "Prata"
+    },
+    {
+      "description": "Cause 3.000 de dano de hackeamento em um único hackeamento.",
+      "is_missable": 0,
+      "is_spoiler": 0,
+      "name": "Who Needs Guns!?",
+      "name_pt": "Quem Precisa de Armas?!",
+      "tip": "Requisito correto: 3.000 de dano de hack em um único hack, não 2.000.",
+      "trophy_code": "pragmata_who_needs_guns",
+      "type": "Prata"
+    }
+  ]
+}

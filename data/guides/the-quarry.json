@@ -1,0 +1,506 @@
+{
+  "game": {
+    "avoid_if": "Evite se você não gosta de repetir capítulos, seguir escolhas específicas ou refazer rotas por decisões anteriores.",
+    "before_you_start": "Planeje suas rotas antes de começar. The Quarry tem muitos troféus condicionais e coletáveis que dependem de escolhas e caminhos que se anulam.",
+    "best_for": "Ideal para quem quer uma platina de horror narrativo baseada em escolhas, finais, sobrevivência e planejamento de rotas.",
+    "cleanup_advice": "Use Chapter Select com cuidado: ele libera após terminar a história, mas você precisa continuar do capítulo escolhido até o fim e decisões anteriores podem obrigar replay longo.",
+    "cover_image": "https://cdn.cloudflare.steamstatic.com/steam/apps/1577120/library_600x900.jpg",
+    "coverage_level": "strong",
+    "created_at": "2026-05-09 19:53:53",
+    "difficulty": 3,
+    "difficulty_reason": "A dificuldade mecânica é baixa; o desafio está em seguir decisões corretas, organizar rotas e evitar repetir capítulos além do necessário.",
+    "dlc_scope": "Guia focado na lista base de The Quarry. Conteúdos extras ou Deluxe não são necessários para a platina.",
+    "editorial_notes": "",
+    "editorial_review_status": null,
+    "editorial_status": "published",
+    "first_run_advice": "Faça a primeira campanha com checklist e tente manter todos vivos; isso organiza melhor o cleanup de mortes, infecções, finais e coletáveis.",
+    "grind_summary": "O peso está em decisões, sobreviventes, infecções, mortes específicas, finais, 40 Clues, 10 Evidence e 22 Tarot Cards.",
+    "guide_avoid": null,
+    "guide_best_moment": null,
+    "guide_dlc": null,
+    "guide_grind": null,
+    "guide_ideal": null,
+    "guide_online": null,
+    "guide_runs": null,
+    "image": "https://cdn.cloudflare.steamstatic.com/steam/apps/1577120/header.jpg",
+    "is_verified": 0,
+    "last_reviewed_at": "",
+    "missable": "Sim. A maioria dos troféus depende de decisões, mortes, sobreviventes, infecções, finais, coletáveis e rotas específicas.",
+    "missable_summary": "Quase tudo é de atenção: escolhas, QTEs, mortes, sobreviventes, infecções, Clues, Evidence, Tarot Cards e finais podem exigir replay longo.",
+    "name": "The Quarry",
+    "online_summary": "Não há exigência online, troféus online, coop obrigatório, multiplayer obrigatório ou PS+ para a platina da lista base. Modos multiplayer/cooperação opcionais não são requisito de troféu.",
+    "quality_warnings": "[]",
+    "reviewed_by": "",
+    "runs_summary": "A platina exige múltiplas rotas: todos vivos, todos mortos, todos infectados, mortes específicas e cleanup por Chapter Select.",
+    "slug": "the-quarry",
+    "time": "25-35h",
+    "time_bucket": "medium",
+    "time_max_hours": 35,
+    "time_min_hours": 25,
+    "time_reason": "A faixa de 25-35 horas considera campanha principal, rotas alternativas, Chapter Select, coletáveis e Movie Mode.",
+    "time_sort_hours": 25,
+    "updated_at": "2026-06-27 02:36:58",
+    "verification_note": "Lista base adicionada por fontes públicas; aguarda validação editorial final.",
+    "verification_status": "review",
+    "walkthrough": null
+  },
+  "redirects": [],
+  "roadmaps": [
+    {
+      "content": "{\"title\":\"Revise coletáveis no checklist\",\"focus\":\"\",\"objective\":\"Faça a primeira campanha focada em todos vivos: preserve Laura, Max, Abigail, Emma, Jacob, Nick, Dylan, Ryan e Kaitlyn, e colete Clues, Evidence e Tarot Cards com checklist.\",\"actions\":[],\"warning\":\"\",\"result\":\"\"}",
+      "step_order": 1
+    },
+    {
+      "content": "{\"title\":\"Coordene a etapa com a dupla\",\"focus\":\"\",\"objective\":\"Garanta decisões críticas para sobrevivência, cooperação de Travis/Laura, The White Wolf e finais positivos. Essa rota também prepara Rough Night, Above the Law e vários troféus compatíveis.\",\"actions\":[],\"warning\":\"\",\"result\":\"\"}",
+      "step_order": 2
+    },
+    {
+      "content": "{\"title\":\"Limpe coletáveis por seleção de capítulos\",\"focus\":\"\",\"objective\":\"Após terminar, use Chapter Select para rotas alternativas, lembrando que você deve continuar do capítulo escolhido até o fim e que decisões anteriores podem exigir replay longo.\",\"actions\":[],\"warning\":\"\",\"result\":\"\"}",
+      "step_order": 3
+    },
+    {
+      "content": "{\"title\":\"Prossiga pela rota planejada\",\"focus\":\"\",\"objective\":\"Faça a rota de todos mortos para Hackett’s Quarry Massacre e use variações para The Final Girl, Last Man Standing, Lovers’ Quarrel e outras mortes específicas.\",\"actions\":[],\"warning\":\"\",\"result\":\"\"}",
+      "step_order": 4
+    },
+    {
+      "content": "{\"title\":\"Faça a rota de todos infectados para Blood Pact, planejando m...\",\"focus\":\"\",\"objective\":\"Faça a rota de todos infectados para Blood Pact, planejando mordidas, amputações evitadas e sobrevivência suficiente para que todas as infecções aconteçam.\",\"actions\":[],\"warning\":\"\",\"result\":\"\"}",
+      "step_order": 5
+    },
+    {
+      "content": "{\"title\":\"Limpe coletáveis\",\"focus\":\"\",\"objective\":\"Limpe coletáveis: 40 Clues, 10 Evidence e 22 Tarot Cards. Alguns caminhos se anulam, então talvez seja preciso recolher uma categoria inteira a partir do capítulo necessário.\",\"actions\":[],\"warning\":\"\",\"result\":\"\"}",
+      "step_order": 6
+    },
+    {
+      "content": "{\"title\":\"Inicie Movie Mode para Creature Feature e revise troféus espe...\",\"focus\":\"\",\"objective\":\"Inicie Movie Mode para Creature Feature e revise troféus específicos como Peanut Butter Butterpops!, Hard Pass, Forewarned is Forearmed e Mutually Assured.\",\"actions\":[],\"warning\":\"\",\"result\":\"\"}",
+      "step_order": 7
+    },
+    {
+      "content": "{\"title\":\"Limpe coletáveis por seleção de capítulos\",\"focus\":\"\",\"objective\":\"Finalize o checklist da lista base sem prometer cleanup simples: The Quarry exige planejamento de decisões, mortes, infecções, finais e Chapter Select bem usado.\",\"actions\":[],\"warning\":\"\",\"result\":\"\"}",
+      "step_order": 8
+    }
+  ],
+  "schemaVersion": 1,
+  "seedExtras": {
+    "aliases": [],
+    "attentionPoints": [],
+    "checklist": [],
+    "faq": [],
+    "note": "Campos exportados para auditoria. O SQLite atual nao possui colunas nativas para todos esses extras; a importacao preserva o que o banco suporta.",
+    "quickDecision": null,
+    "seo": {},
+    "tags": []
+  },
+  "slug": "the-quarry",
+  "trophies": [
+    {
+      "description": "Achieved all Trophies!",
+      "is_missable": 0,
+      "is_spoiler": 0,
+      "name": "What Doesn’t Kill You…",
+      "name_pt": "",
+      "tip": "Desbloqueie todos os outros troféus da lista base de The Quarry. Não há DLC obrigatório para a platina.",
+      "trophy_code": "quarry_what_doesnt_kill_you",
+      "type": "Platina"
+    },
+    {
+      "description": "Completed the Prologue",
+      "is_missable": 0,
+      "is_spoiler": 0,
+      "name": "Prologue",
+      "name_pt": "",
+      "tip": "Troféu automático de progresso da história. Complete a seção correspondente em qualquer rota.",
+      "trophy_code": "quarry_prologue",
+      "type": "Bronze"
+    },
+    {
+      "description": "Completed Chapter 1",
+      "is_missable": 0,
+      "is_spoiler": 0,
+      "name": "Chapter 1",
+      "name_pt": "",
+      "tip": "Troféu automático de progresso da história. Complete a seção correspondente em qualquer rota.",
+      "trophy_code": "quarry_chapter_1",
+      "type": "Bronze"
+    },
+    {
+      "description": "Completed Chapter 2",
+      "is_missable": 0,
+      "is_spoiler": 0,
+      "name": "Chapter 2",
+      "name_pt": "",
+      "tip": "Troféu automático de progresso da história. Complete a seção correspondente em qualquer rota.",
+      "trophy_code": "quarry_chapter_2",
+      "type": "Bronze"
+    },
+    {
+      "description": "Completed Chapter 3",
+      "is_missable": 0,
+      "is_spoiler": 0,
+      "name": "Chapter 3",
+      "name_pt": "",
+      "tip": "Troféu automático de progresso da história. Complete a seção correspondente em qualquer rota.",
+      "trophy_code": "quarry_chapter_3",
+      "type": "Bronze"
+    },
+    {
+      "description": "Completed Chapter 4",
+      "is_missable": 0,
+      "is_spoiler": 0,
+      "name": "Chapter 4",
+      "name_pt": "",
+      "tip": "Troféu automático de progresso da história. Complete a seção correspondente em qualquer rota.",
+      "trophy_code": "quarry_chapter_4",
+      "type": "Bronze"
+    },
+    {
+      "description": "Completed Chapter 5",
+      "is_missable": 0,
+      "is_spoiler": 0,
+      "name": "Chapter 5",
+      "name_pt": "",
+      "tip": "Troféu automático de progresso da história. Complete a seção correspondente em qualquer rota.",
+      "trophy_code": "quarry_chapter_5",
+      "type": "Bronze"
+    },
+    {
+      "description": "Completed Chapter 6",
+      "is_missable": 0,
+      "is_spoiler": 0,
+      "name": "Chapter 6",
+      "name_pt": "",
+      "tip": "Troféu automático de progresso da história. Complete a seção correspondente em qualquer rota.",
+      "trophy_code": "quarry_chapter_6",
+      "type": "Bronze"
+    },
+    {
+      "description": "Completed Chapter 7",
+      "is_missable": 0,
+      "is_spoiler": 0,
+      "name": "Chapter 7",
+      "name_pt": "",
+      "tip": "Troféu automático de progresso da história. Complete a seção correspondente em qualquer rota.",
+      "trophy_code": "quarry_chapter_7",
+      "type": "Bronze"
+    },
+    {
+      "description": "Completed Chapter 8",
+      "is_missable": 0,
+      "is_spoiler": 0,
+      "name": "Chapter 8",
+      "name_pt": "",
+      "tip": "Troféu automático de progresso da história. Complete a seção correspondente em qualquer rota.",
+      "trophy_code": "quarry_chapter_8",
+      "type": "Bronze"
+    },
+    {
+      "description": "Completed Chapter 9",
+      "is_missable": 0,
+      "is_spoiler": 1,
+      "name": "Chapter 9",
+      "name_pt": "",
+      "tip": "Troféu automático de progresso da história. Complete a seção correspondente em qualquer rota.",
+      "trophy_code": "quarry_chapter_9",
+      "type": "Bronze"
+    },
+    {
+      "description": "Completed Chapter 10",
+      "is_missable": 0,
+      "is_spoiler": 1,
+      "name": "Chapter 10",
+      "name_pt": "",
+      "tip": "Troféu automático de progresso da história. Complete a seção correspondente em qualquer rota.",
+      "trophy_code": "quarry_chapter_10",
+      "type": "Bronze"
+    },
+    {
+      "description": "Witnessed the Epilogue",
+      "is_missable": 0,
+      "is_spoiler": 1,
+      "name": "Epilogue",
+      "name_pt": "",
+      "tip": "Troféu automático de progresso da história. Complete a seção correspondente em qualquer rota.",
+      "trophy_code": "quarry_epilogue",
+      "type": "Bronze"
+    },
+    {
+      "description": "Kept everyone alive",
+      "is_missable": 1,
+      "is_spoiler": 1,
+      "name": "Rough Night",
+      "name_pt": "",
+      "tip": "Mantenha Laura, Max, Abigail, Emma, Jacob, Nick, Dylan, Ryan e Kaitlyn vivos até o fim. Planeje escolhas, QTEs, infecções e confronto final antes de começar.",
+      "trophy_code": "quarry_rough_night",
+      "type": "Ouro"
+    },
+    {
+      "description": "Killed everyone",
+      "is_missable": 1,
+      "is_spoiler": 1,
+      "name": "Hackett’s Quarry Massacre",
+      "name_pt": "",
+      "tip": "Faça a rota em que todos os protagonistas morrem. Várias mortes exigem decisões anteriores e replay longo por Chapter Select.",
+      "trophy_code": "quarry_hacketts_quarry_massacre",
+      "type": "Ouro"
+    },
+    {
+      "description": "Kaitlyn survived the night alone",
+      "is_missable": 1,
+      "is_spoiler": 1,
+      "name": "The Final Girl",
+      "name_pt": "",
+      "tip": "Deixe apenas Kaitlyn sobreviver. Normalmente usa setup do ursinho/teddy do Capítulo 1 e cleanup após a rota de todos mortos.",
+      "trophy_code": "quarry_the_final_girl",
+      "type": "Ouro"
+    },
+    {
+      "description": "Killed Silas",
+      "is_missable": 1,
+      "is_spoiler": 1,
+      "name": "The White Wolf",
+      "name_pt": "",
+      "tip": "Mate Silas na reta final. Laura e Travis precisam estar vivos e em condições de cooperar; decisões dos Capítulos 7-10 importam.",
+      "trophy_code": "quarry_the_white_wolf",
+      "type": "Ouro"
+    },
+    {
+      "description": "Successfully took the fastest route to Nick",
+      "is_missable": 1,
+      "is_spoiler": 1,
+      "name": "Nick of Time",
+      "name_pt": "",
+      "tip": "No Capítulo 3, como Ryan, escolha os atalhos e acerte os QTEs para chegar a Nick o mais rápido possível.",
+      "trophy_code": "quarry_nick_of_time",
+      "type": "Bronze"
+    },
+    {
+      "description": "Jacob told Emma the truth",
+      "is_missable": 1,
+      "is_spoiler": 1,
+      "name": "Nobody’s Fool",
+      "name_pt": "",
+      "tip": "Faça Jacob contar a verdade para Emma. Depende da sobrevivência e das escolhas certas na rota de Jacob/Emma.",
+      "trophy_code": "quarry_nobodys_fool",
+      "type": "Bronze"
+    },
+    {
+      "description": "Nick killed Abi",
+      "is_missable": 1,
+      "is_spoiler": 1,
+      "name": "Lovers’ Quarrel",
+      "name_pt": "",
+      "tip": "No Capítulo 6, deixe Abi sem atirar em Nick para que a consequência aconteça. É uma morte específica e bloqueia outras rotas.",
+      "trophy_code": "quarry_lovers_quarrel",
+      "type": "Bronze"
+    },
+    {
+      "description": "Reunited Laura and Max",
+      "is_missable": 1,
+      "is_spoiler": 1,
+      "name": "Should’ve Gone to the Motel",
+      "name_pt": "",
+      "tip": "Reúna Laura e Max em uma rota alternativa. Geralmente exige replay a partir do Capítulo 9 com decisões corretas anteriores sobre Travis.",
+      "trophy_code": "quarry_shouldve_gone_to_the_motel",
+      "type": "Bronze"
+    },
+    {
+      "description": "Travis and Laura agreed to work together",
+      "is_missable": 1,
+      "is_spoiler": 1,
+      "name": "Above the Law",
+      "name_pt": "",
+      "tip": "Construa a rota em que Travis e Laura cooperam. Evite decisões que façam os dois se matarem antes do acordo.",
+      "trophy_code": "quarry_above_the_law",
+      "type": "Bronze"
+    },
+    {
+      "description": "Laura and Travis killed each other",
+      "is_missable": 1,
+      "is_spoiler": 1,
+      "name": "Mutually Assured",
+      "name_pt": "",
+      "tip": "Faça Laura e Travis se matarem no Capítulo 9. É incompatível com rotas de cooperação e com alguns finais positivos.",
+      "trophy_code": "quarry_mutually_assured",
+      "type": "Bronze"
+    },
+    {
+      "description": "Saved a friend from infection",
+      "is_missable": 1,
+      "is_spoiler": 1,
+      "name": "Just a Flesh Wound",
+      "name_pt": "",
+      "tip": "Corte a mão de Dylan ou siga a ação equivalente para impedir a infecção. O setup pode depender de escolhas desde o Capítulo 1.",
+      "trophy_code": "quarry_just_a_flesh_wound",
+      "type": "Bronze"
+    },
+    {
+      "description": "Accepted the bite of a werewolf",
+      "is_missable": 1,
+      "is_spoiler": 1,
+      "name": "Phlebotomy",
+      "name_pt": "",
+      "tip": "Aceite a mordida de lobisomem em uma rota relevante. É normalmente ligada à sobrevivência de Ryan no Capítulo 9.",
+      "trophy_code": "quarry_phlebotomy",
+      "type": "Bronze"
+    },
+    {
+      "description": "Ryan survived alone",
+      "is_missable": 1,
+      "is_spoiler": 1,
+      "name": "Last Man Standing",
+      "name_pt": "",
+      "tip": "Deixe apenas Ryan sobreviver. Use Chapter Select com cuidado, porque escolhas anteriores afetam quem ainda pode morrer ou viver.",
+      "trophy_code": "quarry_last_man_standing",
+      "type": "Prata"
+    },
+    {
+      "description": "Killed all the Hacketts",
+      "is_missable": 1,
+      "is_spoiler": 1,
+      "name": "Family Matters",
+      "name_pt": "",
+      "tip": "Mate todos os Hacketts possíveis. O troféu depende de mortes específicas e decisões distribuídas pelos capítulos finais.",
+      "trophy_code": "quarry_family_matters",
+      "type": "Prata"
+    },
+    {
+      "description": "Infected every character",
+      "is_missable": 1,
+      "is_spoiler": 1,
+      "name": "Blood Pact",
+      "name_pt": "",
+      "tip": "Infecte todos os protagonistas em uma única linha coerente. Essa rota exige planejamento capítulo a capítulo e não combina com todos vivos.",
+      "trophy_code": "quarry_blood_pact",
+      "type": "Prata"
+    },
+    {
+      "description": "Listened to the podcast",
+      "is_missable": 1,
+      "is_spoiler": 1,
+      "name": "Bizzare Yet Bonafide",
+      "name_pt": "",
+      "tip": "Ouça o podcast no final/epílogo adequado. Normalmente vem ao seguir uma rota completa, mas depende de chegar ao fechamento correto.",
+      "trophy_code": "quarry_bizzare_yet_bonafide",
+      "type": "Bronze"
+    },
+    {
+      "description": "Activated 15 Interrupts",
+      "is_missable": 1,
+      "is_spoiler": 0,
+      "name": "Reactionist",
+      "name_pt": "",
+      "tip": "Ative 15 Interrupts ao longo da campanha. Evite pular interações de tempo limitado.",
+      "trophy_code": "quarry_reactionist",
+      "type": "Bronze"
+    },
+    {
+      "description": "Passed 5 Don’t Breath events",
+      "is_missable": 1,
+      "is_spoiler": 0,
+      "name": "You’re Breathetaking!",
+      "name_pt": "",
+      "tip": "Passe 5 eventos Don’t Breathe. Mantenha os comandos/controle estáveis durante essas cenas.",
+      "trophy_code": "quarry_youre_breathtaking",
+      "type": "Bronze"
+    },
+    {
+      "description": "Never missed in a combat encounter",
+      "is_missable": 1,
+      "is_spoiler": 1,
+      "name": "Peanut Butter Butterpops!",
+      "name_pt": "",
+      "tip": "Não erre nenhum disparo em encontros de combate. Pode exigir run dedicada ou replay planejado, porque alguns tiros são incompatíveis com outras rotas.",
+      "trophy_code": "quarry_peanut_butter_butterpops",
+      "type": "Prata"
+    },
+    {
+      "description": "Refused Eliza’s help",
+      "is_missable": 1,
+      "is_spoiler": 1,
+      "name": "Hard Pass",
+      "name_pt": "",
+      "tip": "Recuse a ajuda de Eliza. Faça com atenção durante as leituras/intervalos de Tarot, especialmente após coletar cartas.",
+      "trophy_code": "quarry_hard_pass",
+      "type": "Prata"
+    },
+    {
+      "description": "Found all Tarot cards",
+      "is_missable": 1,
+      "is_spoiler": 0,
+      "name": "Decked Out",
+      "name_pt": "",
+      "tip": "Encontre as 22 Tarot Cards. Use uma rota de coletáveis e lembre que Chapter Select pode exigir recolher itens posteriores da mesma categoria.",
+      "trophy_code": "quarry_decked_out",
+      "type": "Bronze"
+    },
+    {
+      "description": "Got a Tarot reading",
+      "is_missable": 1,
+      "is_spoiler": 1,
+      "name": "Forewarned is Forearmed",
+      "name_pt": "",
+      "tip": "Após encontrar uma carta de Tarot, aceite ver uma leitura de Eliza entre capítulos.",
+      "trophy_code": "quarry_forewarned_is_forearmed",
+      "type": "Bronze"
+    },
+    {
+      "description": "Collected all clues",
+      "is_missable": 1,
+      "is_spoiler": 0,
+      "name": "Meddling Kids!",
+      "name_pt": "",
+      "tip": "Colete os 40 Clues. Alguns caminhos se anulam, então pode ser necessário replay desde capítulo anterior e recolher a categoria em uma linha coerente.",
+      "trophy_code": "quarry_meddling_kids",
+      "type": "Prata"
+    },
+    {
+      "description": "Found a matching clue",
+      "is_missable": 1,
+      "is_spoiler": 0,
+      "name": "It’s All Coming Together",
+      "name_pt": "",
+      "tip": "Encontre uma pista que complemente outra no menu de Clues. Normalmente vem durante a busca pelos 40 Clues.",
+      "trophy_code": "quarry_its_all_coming_together",
+      "type": "Bronze"
+    },
+    {
+      "description": "Collected first clue",
+      "is_missable": 1,
+      "is_spoiler": 0,
+      "name": "What’s This?",
+      "name_pt": "",
+      "tip": "Colete seu primeiro Clue. Sirve como introdução ao checklist de pistas.",
+      "trophy_code": "quarry_whats_this",
+      "type": "Bronze"
+    },
+    {
+      "description": "Collected all evidence",
+      "is_missable": 1,
+      "is_spoiler": 0,
+      "name": "Conspiracy Theorist",
+      "name_pt": "",
+      "tip": "Colete as 10 Evidence. Monte a rota para não perder áreas ou personagens necessários.",
+      "trophy_code": "quarry_conspiracy_theorist",
+      "type": "Prata"
+    },
+    {
+      "description": "Collected first piece of evidence",
+      "is_missable": 1,
+      "is_spoiler": 0,
+      "name": "The Truth is Out There",
+      "name_pt": "",
+      "tip": "Colete a primeira Evidence. Continue acompanhando a lista até completar as 10.",
+      "trophy_code": "quarry_the_truth_is_out_there",
+      "type": "Bronze"
+    },
+    {
+      "description": "Started a movie mode playthrough",
+      "is_missable": 1,
+      "is_spoiler": 0,
+      "name": "Creature Feature",
+      "name_pt": "",
+      "tip": "Inicie qualquer playthrough em Movie Mode pelo menu principal. Não precisa terminar o filme.",
+      "trophy_code": "quarry_creature_feature",
+      "type": "Bronze"
+    }
+  ]
+}

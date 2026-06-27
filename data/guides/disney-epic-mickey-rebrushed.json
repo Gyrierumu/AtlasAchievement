@@ -1,0 +1,614 @@
+{
+  "game": {
+    "avoid_if": "Evite jogar no improviso se você não quer repetir campanha por misturar tinta e solvente ou por deixar gremlins, rolos de filme e partes dos animatrônicos para trás.",
+    "before_you_start": "Disney Epic Mickey: Rebrushed é uma platina fácil, mas exige planejamento porque várias escolhas de tinta e solvente mudam recompensas, chefes, animatrônicos e caminhos disponíveis. A rota mais segura é fazer duas jogadas: uma focada em tinta, consertando animatrônicos e resolvendo a rota positiva, e outra focada em solvente, desmontando animatrônicos e derrotando chefes pela rota oposta. Não há troféus online, cooperação ou DLC obrigatória.",
+    "best_for": "Ideal para quem gosta de plataforma 3D, quer uma platina offline e consegue seguir checklist de rotas, colecionáveis e objetivos por região.",
+    "cleanup_advice": "Antes do ponto de não retorno, revise gremlins, rolos de filme, partes dos animatrônicos, corridas da Gilda, upgrades, E-Tickets, tipos de Beetleworx e ações de combate pendentes.",
+    "cover_image": "https://cdn.cloudflare.steamstatic.com/steam/apps/1522160/library_600x900.jpg",
+    "coverage_level": "complete",
+    "created_at": "2026-05-15 09:06:46",
+    "difficulty": 3,
+    "difficulty_reason": "3/10: a execução é acessível e a dificuldade selecionável não afeta troféus. O risco real está em planejamento de rota, colecionáveis e ponto de não retorno.",
+    "dlc_scope": "Não há DLC obrigatória. O guia cobre apenas a lista base PlayStation com 39 troféus.",
+    "editorial_notes": "Platina base revisada com foco em rotas incompatíveis, missables por região, nomes EN/PT-BR, descrições em português, tags, roadmap estruturado, FAQ e SEO.",
+    "editorial_review_status": "verified",
+    "editorial_status": "published",
+    "first_run_advice": "Faça a primeira jogada pela rota de tinta: pinte chefes, conserte animatrônicos, liberte gremlins e acompanhe rolos de filme e partes dos animatrônicos por região.",
+    "grind_summary": "Grind leve a moderado em E-Tickets, inimigos, objetos destrutíveis e upgrades; o maior peso está em checklist, rotas de tinta/solvente e colecionáveis por região.",
+    "guide_avoid": null,
+    "guide_best_moment": null,
+    "guide_dlc": null,
+    "guide_grind": null,
+    "guide_ideal": null,
+    "guide_online": null,
+    "guide_runs": null,
+    "image": "https://cdn.cloudflare.steamstatic.com/steam/apps/1522160/header.jpg",
+    "is_verified": 1,
+    "last_reviewed_at": "2026-06-13",
+    "missable": "Possui troféus perdíveis por rota, avanço de história, colecionáveis por região, partes dos animatrônicos e ponto de não retorno. Siga uma run de tinta e outra de solvente, sem misturar objetivos incompatíveis.",
+    "missable_summary": "Sim. Vários troféus dependem de escolhas de rota, avanço de história ou objetivos que podem ficar inacessíveis. Use checklist por região e faça pelo menos duas jogadas planejadas.",
+    "name": "Disney Epic Mickey: Rebrushed",
+    "online_summary": "Não. A platina é totalmente offline, single-player e não exige servidores, PS+ ou multiplayer.",
+    "quality_warnings": "[]",
+    "reviewed_by": "AtlasAchievement",
+    "runs_summary": "Pelo menos 2 jogadas: uma rota de tinta, com chefes pintados e animatrônicos consertados, e outra rota de solvente, com chefes dissolvidos e animatrônicos desmontados.",
+    "slug": "disney-epic-mickey-rebrushed",
+    "time": "15-25h",
+    "time_bucket": "medium",
+    "time_max_hours": 25,
+    "time_min_hours": 15,
+    "time_reason": "A faixa de 15 a 25 horas considera duas jogadas planejadas, checklist de gremlins, rolos de filme, partes dos animatrônicos, corridas da Gilda e cleanup de ações específicas.",
+    "time_sort_hours": 20,
+    "updated_at": "2026-06-27 02:37:06",
+    "verification_note": "Guia revisado para publicação: lista PlayStation base com 39 troféus, distribuição 1/4/10/24, duas rotas incompatíveis de tinta e solvente, sem online, sem coop e sem DLC obrigatória.",
+    "verification_status": "verified",
+    "walkthrough": ""
+  },
+  "redirects": [],
+  "roadmaps": [
+    {
+      "content": "{\"title\":\"Faça a primeira jogada pela rota de tinta\",\"focus\":\"Rota positiva\",\"objective\":\"Concluir a campanha usando tinta nos chefes e consertando os animatrônicos para encaminhar An Epic Journey.\",\"actions\":[\"Priorize tinta em chefes e escolhas principais.\",\"Conserte todos os animatrônicos exigidos pela rota positiva.\",\"Libere gremlins presos sempre que encontrar jaulas.\",\"Colete rolos de filme e peças dos animatrônicos por região.\",\"Acompanhe Gawrsh!, Oh, goody goody!, Aw, phooey!, Moviegoer e Mickey Uncaged com checklist.\"],\"warning\":\"Não misture a rota de tinta com a rota de solvente. An Epic Journey e Out of my way exigem escolhas opostas.\",\"result\":\"Ao final da primeira run, a rota de tinta, os animatrônicos consertados e boa parte dos colecionáveis estarão encaminhados.\"}",
+      "step_order": 1
+    },
+    {
+      "content": "{\"title\":\"Limpe colecionáveis e objetivos antes do ponto de não retorno\",\"focus\":\"Checklist por região\",\"objective\":\"Evitar que gremlins, rolos de filme, peças de animatrônicos e objetivos de região fiquem inacessíveis.\",\"actions\":[\"Revise Dark Beauty Castle, Gremlin Village, Mean Street, OsTown, Mickeyjunk Mountain, Tomorrow City, Pirates of the Wasteland, Bog Easy e Lonesome Manor.\",\"Confira os gremlins presos antes de sair definitivamente de cada área.\",\"Colete rolos de filme nos níveis 2D.\",\"Complete corridas da Gilda e objetivos de regiões antes de avançar demais.\",\"Faça saves manuais ou backups quando possível antes de decisões importantes.\"],\"warning\":\"Algumas áreas e oportunidades não ficam disponíveis para sempre. Avançar sem checklist pode exigir outra run.\",\"result\":\"Os principais riscos de perda por avanço de história ficam controlados.\"}",
+      "step_order": 2
+    },
+    {
+      "content": "{\"title\":\"Finalize a campanha e confirme An Epic Journey\",\"focus\":\"Fechamento da rota de tinta\",\"objective\":\"Concluir a primeira run com chefes pintados, animatrônicos consertados e rota positiva registrada.\",\"actions\":[\"Mantenha a coerência da rota de tinta até o final.\",\"Confirme se todos os animatrônicos necessários foram restaurados.\",\"Evite usar solvente em chefes se isso comprometer a rota positiva.\",\"Antes do final, revise gremlins, rolos de filme, peças e objetivos de Mean Street.\",\"Conclua a história e confira quais troféus ficaram pendentes para a segunda run.\"],\"warning\":\"O final possui ponto de não retorno. Não avance sem revisar pendências importantes.\",\"result\":\"A primeira rota fica concluída e An Epic Journey deve ficar liberado se todos os requisitos foram respeitados.\"}",
+      "step_order": 3
+    },
+    {
+      "content": "{\"title\":\"Faça a segunda jogada pela rota de solvente\",\"focus\":\"Rota negativa\",\"objective\":\"Concluir a rota oposta usando solvente nos chefes e deixando animatrônicos desmontados para Out of my way.\",\"actions\":[\"Inicie uma nova run ou New Game+ para seguir a rota oposta.\",\"Use solvente nas escolhas principais e chefes exigidos.\",\"Deixe os animatrônicos desmontados quando essa for a exigência da rota.\",\"Priorize eficiência, pois muitos colecionáveis já devem ter sido resolvidos na primeira run.\",\"Aproveite para fazer Eraser, se ainda estiver pendente.\"],\"warning\":\"Não conserte animatrônicos nem use tinta nos chefes principais se isso bloquear Out of my way.\",\"result\":\"A segunda rota conclui os requisitos incompatíveis com a rota de tinta.\"}",
+      "step_order": 4
+    },
+    {
+      "content": "{\"title\":\"Faça o cleanup dos troféus diversos\",\"focus\":\"Combate, ações e recursos\",\"objective\":\"Resolver troféus simples de combate, sketches, E-Tickets, destruição, fotografia e ações específicas.\",\"actions\":[\"Faça Photo Op usando o Modo Foto.\",\"Faça Dial Tone discando o número errado 3 vezes.\",\"Faça Fragile destruindo 100 objetos.\",\"Faça It's Over One Thousand!!! coletando 1001 E-Tickets.\",\"Faça Feisty Friends, Square Eyes, Get Off Me!, Clumsy Lifeguard, Eraser e Painter conforme necessário.\",\"Confirme se todos os sketches foram desbloqueados.\"],\"warning\":\"Alguns troféus misc dependem de inimigos ou áreas específicas. Se faltar algo no fim, talvez seja mais rápido fazer em uma run planejada.\",\"result\":\"Os troféus diversos deixam de ficar espalhados e a platina entra na conferência final.\"}",
+      "step_order": 5
+    },
+    {
+      "content": "{\"title\":\"Conferência final da platina base\",\"focus\":\"Conferência\",\"objective\":\"Garantir que os 39 troféus da lista PlayStation foram concluídos sem misturar dados de outras plataformas.\",\"actions\":[\"Confira se a lista contém 39 troféus.\",\"Confirme a distribuição: 1 platina, 4 ouro, 10 prata e 24 bronze.\",\"Verifique se não há online, coop ou DLC obrigatória.\",\"Compare topo, checklist, filtros e FAQ.\",\"Revise se os troféus de tinta e solvente foram explicados como rotas incompatíveis.\"],\"warning\":\"Não misture conquistas de PC/GOG/Steam com a lista PlayStation se houver diferença de texto ou tradução.\",\"result\":\"Com todos os requisitos concluídos, Mousetastic será desbloqueado.\"}",
+      "step_order": 6
+    }
+  ],
+  "schemaVersion": 1,
+  "seedExtras": {
+    "aliases": [],
+    "attentionPoints": [
+      {
+        "detail": "A platina exige pelo menos duas jogadas porque An Epic Journey e Out of my way pedem rotas opostas de tinta e solvente.",
+        "title": "Duas jogadas obrigatórias"
+      },
+      {
+        "detail": "Na run de tinta, pinte chefes e conserte animatrônicos. Não misture com escolhas de solvente que possam bloquear An Epic Journey.",
+        "title": "Rota de tinta"
+      },
+      {
+        "detail": "Na run de solvente, dissolva chefes e deixe animatrônicos desmontados. Essa rota é incompatível com a rota positiva.",
+        "title": "Rota de solvente"
+      },
+      {
+        "detail": "Mickey Uncaged exige libertar 12 gremlins. Alguns ficam em áreas que podem se tornar inacessíveis, então use checklist por região.",
+        "title": "Gremlins presos"
+      },
+      {
+        "detail": "Moviegoer exige 36 rolos de filme, mas há mais reels no jogo. Continue coletando rolos se Battle Ready ainda estiver pendente.",
+        "title": "Rolos de filme"
+      },
+      {
+        "detail": "Battle Ready exige todos os upgrades de coração e pode depender de recompensas ligadas à rota de tinta e aos rolos de filme. Confira esse troféu antes da reta final.",
+        "title": "Battle Ready"
+      },
+      {
+        "detail": "Gawrsh!, Oh, goody goody! e Aw, phooey! exigem peças de Pateta, Margarida e Donald. Acompanhe as partes antes de avançar demais.",
+        "title": "Animatrônicos"
+      },
+      {
+        "detail": "Antes da reta final, revise gremlins, filmes, peças, corridas, upgrades e objetivos de rota.",
+        "title": "Ponto de não retorno"
+      },
+      {
+        "detail": "A platina é single-player, offline e não exige DLC.",
+        "title": "Sem online/DLC"
+      },
+      {
+        "detail": "New Game+ pode ajudar na segunda rota, mas não substitui checklist. Planeje tinta e solvente como runs separadas.",
+        "title": "New Game+"
+      },
+      {
+        "detail": "Tags de Tinta e Solvente não devem inflar Coletável, Online, Coop ou Dificuldade.",
+        "title": "Tinta vs solvente nos filtros"
+      }
+    ],
+    "checklist": [
+      "Conferir se o guia tem 39 troféus.",
+      "Conferir se Mousetastic é a platina.",
+      "Conferir distribuição: 1 platina, 4 ouro, 10 prata e 24 bronze.",
+      "Conferir onlineRequired false, coopRequired false e dlcRequired false.",
+      "Conferir hasMissables true e missableCount igual aos troféus marcados como Perdível.",
+      "Conferir se An Epic Journey e Out of my way estão explicados como rotas incompatíveis.",
+      "Conferir se o roadmap recomenda pelo menos 2 jogadas.",
+      "Conferir se não há troféus marcados como Dificuldade, Online, Coop ou DLC.",
+      "Conferir se Coletáveis cobre gremlins, rolos de filme, partes dos animatrônicos e upgrades rastreáveis.",
+      "Conferir se todos os troféus têm nome oficial em inglês como principal e PT-BR abaixo.",
+      "Conferir se descrições e dicas estão em português com acentos.",
+      "Conferir se não aparecem rótulos antigos de nome original nem placeholder de descrição.",
+      "Conferir se roadmap está estruturado como array/objeto e não renderiza campos crus.",
+      "Conferir FAQ, decisão rápida, SEO e pontos de atenção.",
+      "Conferir se página individual e catálogo exibem o mesmo status editorial."
+    ],
+    "faq": [
+      {
+        "answer": "Sim. Vários troféus dependem de escolhas de rota, avanço de história ou objetivos que podem ficar inacessíveis. Use checklist por região e faça pelo menos duas jogadas planejadas.",
+        "question": "Disney Epic Mickey: Rebrushed tem troféus perdíveis?"
+      },
+      {
+        "answer": "Pelo menos duas. Uma run deve seguir a rota de tinta para An Epic Journey, e outra deve seguir a rota de solvente para Out of my way.",
+        "question": "Quantas jogadas são necessárias?"
+      },
+      {
+        "answer": "Não. A platina é totalmente offline.",
+        "question": "Precisa jogar online?"
+      },
+      {
+        "answer": "Não. Disney Epic Mickey: Rebrushed é uma platina single-player.",
+        "question": "Precisa de cooperação?"
+      },
+      {
+        "answer": "Não. A platina usa apenas a lista base de 39 troféus.",
+        "question": "Precisa de DLC?"
+      },
+      {
+        "answer": "Não. Não há troféus dependentes de dificuldade selecionável.",
+        "question": "A dificuldade afeta troféus?"
+      },
+      {
+        "answer": "Não misturar a rota de tinta com a rota de solvente e controlar gremlins, rolos de filme, peças dos animatrônicos e upgrades de coração antes de avançar demais.",
+        "question": "Qual é o maior cuidado da platina?"
+      },
+      {
+        "answer": "Não. Eles exigem escolhas opostas. Planeje uma jogada de tinta e uma jogada de solvente.",
+        "question": "An Epic Journey e Out of my way podem ser feitos na mesma jogada?"
+      },
+      {
+        "answer": "New Game+ pode ajudar na segunda rota, mas não substitui o planejamento. Para evitar retrabalho, acompanhe gremlins, rolos de filme, animatrônicos e upgrades desde o início de cada run.",
+        "question": "New Game+ resolve todos os perdíveis?"
+      },
+      {
+        "answer": "Em média, cerca de 15 a 25 horas, dependendo do uso de guia, do conhecimento das rotas e da quantidade de cleanup.",
+        "question": "Quanto tempo leva para platinar?"
+      },
+      {
+        "answer": "Não. Moviegoer exige 36 rolos de filme. Mesmo assim, continue coletando reels se Battle Ready ainda estiver pendente, porque rolos extras podem estar ligados a recompensas importantes.",
+        "question": "Moviegoer exige todos os rolos de filme?"
+      }
+    ],
+    "note": "Campos exportados para auditoria. O SQLite atual nao possui colunas nativas para todos esses extras; a importacao preserva o que o banco suporta.",
+    "quickDecision": {
+      "difficulty": "Baixa.",
+      "dlc": "Não exige DLC.",
+      "firstAction": "Comece pela rota de tinta e mantenha checklist de gremlins, rolos de filme e partes dos animatrônicos desde a primeira região.",
+      "mainRisk": "Duas rotas incompatíveis: tinta e solvente.",
+      "onlineCoop": "Não exige online nem cooperação.",
+      "risk": "Médio, por causa de muitos objetivos perdíveis ou bloqueáveis por avanço de história.",
+      "time": "Curto a médio, cerca de 15 a 25 horas.",
+      "verdict": "Sim, vale platinar, especialmente para quem gosta de plataforma 3D e consegue seguir checklist de rotas."
+    },
+    "seo": {
+      "description": "Guia de troféus de Disney Epic Mickey: Rebrushed com roadmap da platina, tempo estimado, dificuldade, troféus perdíveis, rotas de tinta e solvente, gremlins, rolos de filme e dicas para os 39 troféus.",
+      "keywords": [
+        "Disney Epic Mickey Rebrushed troféus",
+        "Disney Epic Mickey Rebrushed platina",
+        "guia Disney Epic Mickey Rebrushed",
+        "Epic Mickey Rebrushed troféus",
+        "Epic Mickey Rebrushed platinum",
+        "Mousetastic",
+        "Camundongo Fantástico",
+        "An Epic Journey",
+        "Out of my way",
+        "Uma Jornada Épica",
+        "Sai da Frente",
+        "Mickey Uncaged",
+        "Moviegoer"
+      ],
+      "metaDescription": "Guia de troféus de Disney Epic Mickey: Rebrushed com roadmap da platina, tempo estimado, dificuldade, troféus perdíveis, rotas de tinta e solvente, gremlins, rolos de filme e dicas para os 39 troféus.",
+      "ogDescription": "Guia de troféus de Disney Epic Mickey: Rebrushed com roadmap da platina, tempo estimado, dificuldade, troféus perdíveis, rotas de tinta e solvente, gremlins, rolos de filme e dicas para os 39 troféus.",
+      "ogTitle": "Disney Epic Mickey: Rebrushed: Guia de Troféus e Platina",
+      "title": "Disney Epic Mickey: Rebrushed: Guia de Troféus e Platina"
+    },
+    "tags": []
+  },
+  "slug": "disney-epic-mickey-rebrushed",
+  "trophies": [
+    {
+      "description": "Colete todos os troféus.",
+      "is_missable": 0,
+      "is_spoiler": 0,
+      "name": "Mousetastic",
+      "name_pt": "Camundongo Fantástico",
+      "tip": "Complete os outros 38 troféus da lista base PlayStation para liberar a platina.",
+      "trophy_code": "epic-mickey-rebrushed-mousetastic",
+      "type": "Platina"
+    },
+    {
+      "description": "Complete o primeiro nível de rolagem lateral.",
+      "is_missable": 0,
+      "is_spoiler": 0,
+      "name": "Full of Beans",
+      "name_pt": "Feijoada",
+      "tip": "Troféu de história inicial: avance pelo primeiro nível 2D e conclua a sequência.",
+      "trophy_code": "epic-mickey-rebrushed-full-of-beans",
+      "type": "Bronze"
+    },
+    {
+      "description": "Pinte ou dissolva a Torre do Relógio Maluca.",
+      "is_missable": 0,
+      "is_spoiler": 1,
+      "name": "Small World",
+      "name_pt": "Pequeno Mundo",
+      "tip": "O troféu vem ao resolver o chefe, seja com tinta ou solvente. Escolha a opção coerente com a rota atual e deixe a rota oposta para a segunda jogada.",
+      "trophy_code": "epic-mickey-rebrushed-small-world",
+      "type": "Prata"
+    },
+    {
+      "description": "Repare o projetor de Mickeyjunk Mountain.",
+      "is_missable": 0,
+      "is_spoiler": 1,
+      "name": "Collector",
+      "name_pt": "Colecionador",
+      "tip": "Troféu de progresso da campanha. Antes de sair da região, confira gremlins, rolos de filme e pendências locais.",
+      "trophy_code": "epic-mickey-rebrushed-collector",
+      "type": "Bronze"
+    },
+    {
+      "description": "Repare o projetor de Tomorrow City.",
+      "is_missable": 0,
+      "is_spoiler": 1,
+      "name": "World of Tomorrow",
+      "name_pt": "Mundo do Amanhã",
+      "tip": "Avance pela campanha e repare o projetor. Use a passagem pela área para atualizar seu checklist regional.",
+      "trophy_code": "epic-mickey-rebrushed-world-of-tomorrow",
+      "type": "Bronze"
+    },
+    {
+      "description": "Pinte ou dissolva Petetronic.",
+      "is_missable": 0,
+      "is_spoiler": 1,
+      "name": "Spin to Win!",
+      "name_pt": "Girou, Ganhou!",
+      "tip": "Chefe com escolha de tinta ou solvente. O troféu é de história, mas a escolha conta para a rota de An Epic Journey ou Out of my way.",
+      "trophy_code": "epic-mickey-rebrushed-spin-to-win",
+      "type": "Prata"
+    },
+    {
+      "description": "Repare o projetor de Pirates of the Wasteland.",
+      "is_missable": 0,
+      "is_spoiler": 1,
+      "name": "Oh, the cleverness of me!",
+      "name_pt": "Que esperteza a minha!",
+      "tip": "Troféu de progresso. Revise pendências de Pirates of the Wasteland antes de avançar para não empurrar retrabalho para outra run.",
+      "trophy_code": "epic-mickey-rebrushed-cleverness-of-me",
+      "type": "Bronze"
+    },
+    {
+      "description": "Pinte ou dissolva o Capitão Gancho animatrônico.",
+      "is_missable": 0,
+      "is_spoiler": 1,
+      "name": "Tick-Tock",
+      "name_pt": "Tique-taque",
+      "tip": "Resolva o chefe mantendo a lógica da sua run: tinta para a rota positiva, solvente para a rota negativa.",
+      "trophy_code": "epic-mickey-rebrushed-tick-tock",
+      "type": "Prata"
+    },
+    {
+      "description": "Repare o projetor de Lonesome Manor.",
+      "is_missable": 0,
+      "is_spoiler": 1,
+      "name": "Awaken the Spirits",
+      "name_pt": "Desperte os Espíritos",
+      "tip": "Troféu de progresso de campanha. Antes de mudar de região, revise colecionáveis, gremlins e objetivos locais.",
+      "trophy_code": "epic-mickey-rebrushed-awaken-the-spirits",
+      "type": "Bronze"
+    },
+    {
+      "description": "Frustre os planos do Mad Doctor.",
+      "is_missable": 0,
+      "is_spoiler": 1,
+      "name": "Kaboom!",
+      "name_pt": "Cabum!",
+      "tip": "Conclua a sequência do Mad Doctor. Trate a reta final da área como ponto de revisão para rota e checklist.",
+      "trophy_code": "epic-mickey-rebrushed-kaboom",
+      "type": "Prata"
+    },
+    {
+      "description": "Derrote os Bloticles que atacam cada hub.",
+      "is_missable": 0,
+      "is_spoiler": 1,
+      "name": "Tentacular",
+      "name_pt": "Tentacular",
+      "tip": "Elimine os Bloticles nos hubs conforme aparecerem e não deixe ataques de área sem resolver.",
+      "trophy_code": "epic-mickey-rebrushed-tentacular",
+      "type": "Bronze"
+    },
+    {
+      "description": "Derrote o Shadow Blot no topo de Mickeyjunk Mountain.",
+      "is_missable": 0,
+      "is_spoiler": 1,
+      "name": "Shadow of the Blot",
+      "name_pt": "Sombra do Mancha",
+      "tip": "Troféu de história avançada. Antes do confronto, confira objetivos de rota, gremlins e colecionáveis sensíveis.",
+      "trophy_code": "epic-mickey-rebrushed-shadow-of-the-blot",
+      "type": "Ouro"
+    },
+    {
+      "description": "Escape do interior do Blot e salve a Terra Desolada.",
+      "is_missable": 0,
+      "is_spoiler": 1,
+      "name": "Escape Wasteland",
+      "name_pt": "Fuga da Terra Desolada",
+      "tip": "Conclua a reta final da campanha somente depois de revisar pendências importantes, pois há ponto de não retorno.",
+      "trophy_code": "epic-mickey-rebrushed-escape-wasteland",
+      "type": "Ouro"
+    },
+    {
+      "description": "Repare 3 brinquedos na região de Gremlin Village.",
+      "is_missable": 1,
+      "is_spoiler": 0,
+      "name": "Mickanically Gifted",
+      "name_pt": "Talentos Mickânicos",
+      "tip": "No Gremlin Village, repare os três brinquedos antes de sair definitivamente da região.",
+      "trophy_code": "epic-mickey-rebrushed-mickanically-gifted",
+      "type": "Prata"
+    },
+    {
+      "description": "Use o Modo Foto e salve uma foto favorita.",
+      "is_missable": 0,
+      "is_spoiler": 0,
+      "name": "Photo Op",
+      "name_pt": "Sessão Fotográfica",
+      "tip": "Abra o Modo Foto em qualquer área segura, salve uma foto como favorita e confirme o desbloqueio.",
+      "trophy_code": "epic-mickey-rebrushed-photo-op",
+      "type": "Bronze"
+    },
+    {
+      "description": "Colete todas as partes do Pateta animatrônico.",
+      "is_missable": 1,
+      "is_spoiler": 0,
+      "name": "Gawrsh!",
+      "name_pt": "Nossa!",
+      "tip": "Acompanhe as peças do Pateta por região e não avance quests que possam bloquear recompensas ou áreas.",
+      "trophy_code": "epic-mickey-rebrushed-gawrsh",
+      "type": "Bronze"
+    },
+    {
+      "description": "Colete todas as partes da Margarida animatrônica.",
+      "is_missable": 1,
+      "is_spoiler": 0,
+      "name": "Oh, goody goody!",
+      "name_pt": "Oh, que bom!",
+      "tip": "Colete todas as peças da Margarida e acompanhe objetivos de região antes de avançar demais na história.",
+      "trophy_code": "epic-mickey-rebrushed-oh-goody-goody",
+      "type": "Bronze"
+    },
+    {
+      "description": "Colete todas as partes do Donald animatrônico.",
+      "is_missable": 1,
+      "is_spoiler": 0,
+      "name": "Aw, phooey!",
+      "name_pt": "Ai, droga!",
+      "tip": "Monitore as peças do Donald no checklist e conclua objetivos relacionados antes de deixar regiões importantes.",
+      "trophy_code": "epic-mickey-rebrushed-aw-phooey",
+      "type": "Bronze"
+    },
+    {
+      "description": "Desbloqueie o Sketch de Bigorna.",
+      "is_missable": 0,
+      "is_spoiler": 0,
+      "name": "Heavy Hitter",
+      "name_pt": "Peso Pesado",
+      "tip": "Progrida até liberar o Anvil Sketch e confirme o troféu ao desbloquear a habilidade.",
+      "trophy_code": "epic-mickey-rebrushed-heavy-hitter",
+      "type": "Bronze"
+    },
+    {
+      "description": "Desbloqueie o Sketch de TV.",
+      "is_missable": 0,
+      "is_spoiler": 0,
+      "name": "Cartoon Chaos",
+      "name_pt": "Caos Cartunesco",
+      "tip": "Desbloqueie o TV Sketch durante a campanha; ele também ajuda a fazer Square Eyes.",
+      "trophy_code": "epic-mickey-rebrushed-cartoon-chaos",
+      "type": "Bronze"
+    },
+    {
+      "description": "Desbloqueie o Sketch de Relógio.",
+      "is_missable": 0,
+      "is_spoiler": 0,
+      "name": "Time is an Illusion",
+      "name_pt": "O Tempo é uma Ilusão",
+      "tip": "Avance até receber o Watch Sketch e confirme o troféu ao desbloquear a habilidade.",
+      "trophy_code": "epic-mickey-rebrushed-time-is-an-illusion",
+      "type": "Bronze"
+    },
+    {
+      "description": "Vista uma fantasia pela primeira vez.",
+      "is_missable": 0,
+      "is_spoiler": 0,
+      "name": "Suit Up!",
+      "name_pt": "Vista-se!",
+      "tip": "Assim que tiver uma fantasia disponível, equipe-a no menu para desbloquear o troféu.",
+      "trophy_code": "epic-mickey-rebrushed-suit-up",
+      "type": "Bronze"
+    },
+    {
+      "description": "Repinte toda a Rua Intermediária.",
+      "is_missable": 1,
+      "is_spoiler": 0,
+      "name": "Street Cleaner",
+      "name_pt": "Limpador de Rua",
+      "tip": "Pinte todos os pontos da Rua Intermediária e faça uma volta final pela área antes de seguir para a reta final.",
+      "trophy_code": "epic-mickey-rebrushed-street-cleaner",
+      "type": "Bronze"
+    },
+    {
+      "description": "Disque o número errado em um telefone 3 vezes.",
+      "is_missable": 0,
+      "is_spoiler": 0,
+      "name": "Dial Tone",
+      "name_pt": "É Engano",
+      "tip": "Quando encontrar um telefone utilizável, disque números errados três vezes antes de resolver o objetivo correto.",
+      "trophy_code": "epic-mickey-rebrushed-dial-tone",
+      "type": "Bronze"
+    },
+    {
+      "description": "Dissolva 50 inimigos.",
+      "is_missable": 0,
+      "is_spoiler": 0,
+      "name": "Eraser",
+      "name_pt": "Apagador",
+      "tip": "Faça naturalmente na rota de solvente. Use solvente contra inimigos até chegar a 50 e deixe Painter para a rota de tinta, se preferir separar estilos.",
+      "trophy_code": "epic-mickey-rebrushed-eraser",
+      "type": "Prata"
+    },
+    {
+      "description": "Pinte e faça amizade com 50 inimigos.",
+      "is_missable": 0,
+      "is_spoiler": 0,
+      "name": "Painter",
+      "name_pt": "Pintor",
+      "tip": "Faça naturalmente na rota de tinta. Pinte inimigos até chegar a 50 e deixe Eraser para a rota de solvente.",
+      "trophy_code": "epic-mickey-rebrushed-painter",
+      "type": "Prata"
+    },
+    {
+      "description": "Liberte 12 gremlins de suas jaulas.",
+      "is_missable": 1,
+      "is_spoiler": 0,
+      "name": "Mickey Uncaged",
+      "name_pt": "Mickey Desimpedido",
+      "tip": "Libere gremlins sempre que encontrar jaulas. Alguns ficam em áreas que podem se tornar inacessíveis, então controle por região.",
+      "trophy_code": "epic-mickey-rebrushed-mickey-uncaged",
+      "type": "Prata"
+    },
+    {
+      "description": "Supere o melhor tempo da Gilda em todas as corridas.",
+      "is_missable": 1,
+      "is_spoiler": 0,
+      "name": "Gilded",
+      "name_pt": "Ouro da Gilda",
+      "tip": "Complete todas as corridas da Gilda batendo o melhor tempo e anote quais áreas já foram concluídas.",
+      "trophy_code": "epic-mickey-rebrushed-gilded",
+      "type": "Prata"
+    },
+    {
+      "description": "Colete 1001 E-Tickets.",
+      "is_missable": 0,
+      "is_spoiler": 0,
+      "name": "It's Over One Thousand!!!",
+      "name_pt": "É Mais de Mil!!!",
+      "tip": "Colete E-Tickets durante a campanha, explore áreas opcionais e evite gastos desnecessários até o troféu liberar.",
+      "trophy_code": "epic-mickey-rebrushed-over-one-thousand",
+      "type": "Bronze"
+    },
+    {
+      "description": "Destrua 100 objetos destrutíveis.",
+      "is_missable": 0,
+      "is_spoiler": 0,
+      "name": "Fragile",
+      "name_pt": "Frágeis",
+      "tip": "Quebre objetos durante a exploração. O troféu costuma vir naturalmente se você limpar cenários enquanto avança.",
+      "trophy_code": "epic-mickey-rebrushed-fragile",
+      "type": "Bronze"
+    },
+    {
+      "description": "Melhore completamente os recipientes de coração do Mickey.",
+      "is_missable": 1,
+      "is_spoiler": 0,
+      "name": "Battle Ready",
+      "name_pt": "Pronto para a Batalha",
+      "tip": "Battle Ready exige todos os upgrades/recipientes de coração. Faça esse troféu na rota de tinta, acompanhe as recompensas de quests e junte rolos de filme suficientes para o upgrade ligado ao cinema. Não avance para a reta final sem conferir todos os upgrades.",
+      "trophy_code": "epic-mickey-rebrushed-battle-ready",
+      "type": "Bronze"
+    },
+    {
+      "description": "Derrube 10 inimigos no solvente.",
+      "is_missable": 0,
+      "is_spoiler": 0,
+      "name": "Clumsy Lifeguard",
+      "name_pt": "Salva-Vidas Desastrado",
+      "tip": "Em áreas com solvente e inimigos, empurre ou atraia inimigos para cair no líquido até acumular 10.",
+      "trophy_code": "epic-mickey-rebrushed-clumsy-lifeguard",
+      "type": "Bronze"
+    },
+    {
+      "description": "Use o TV Sketch para atrair a atenção de 5 Blotlings ao mesmo tempo.",
+      "is_missable": 0,
+      "is_spoiler": 0,
+      "name": "Square Eyes",
+      "name_pt": "Olhos Vidrados",
+      "tip": "Junte cinco Blotlings, use o TV Sketch e espere todos focarem nele simultaneamente.",
+      "trophy_code": "epic-mickey-rebrushed-square-eyes",
+      "type": "Bronze"
+    },
+    {
+      "description": "Colete 36 rolos de filme.",
+      "is_missable": 1,
+      "is_spoiler": 0,
+      "name": "Moviegoer",
+      "name_pt": "Cinéfilo",
+      "tip": "Moviegoer exige 36 rolos de filme. Rebrushed possui mais rolos disponíveis, então use o cinema/checklist para recuperar rolos perdidos quando possível. Ainda assim, colete reels desde cedo, porque rolos extras também ajudam em recompensas importantes como upgrades de coração.",
+      "trophy_code": "epic-mickey-rebrushed-moviegoer",
+      "type": "Bronze"
+    },
+    {
+      "description": "Derrote cada tipo de Beetleworx uma vez.",
+      "is_missable": 1,
+      "is_spoiler": 0,
+      "name": "Faulty Machinery",
+      "name_pt": "Maquinário Defeituoso",
+      "tip": "Derrote ao menos um de cada tipo de Beetleworx conforme aparecem e marque os tipos já enfrentados.",
+      "trophy_code": "epic-mickey-rebrushed-faulty-machinery",
+      "type": "Prata"
+    },
+    {
+      "description": "Tenha um total de 5 Blotlings pintados ao mesmo tempo.",
+      "is_missable": 0,
+      "is_spoiler": 0,
+      "name": "Feisty Friends",
+      "name_pt": "Amigos Agressivos",
+      "tip": "Na rota de tinta, reúna Blotlings e pinte cinco para ficarem aliados simultaneamente.",
+      "trophy_code": "epic-mickey-rebrushed-feisty-friends",
+      "type": "Bronze"
+    },
+    {
+      "description": "Rebata 3 inimigos com um único Spin Attack.",
+      "is_missable": 0,
+      "is_spoiler": 0,
+      "name": "Get Off Me!",
+      "name_pt": "Sai Daqui!",
+      "tip": "Agrupe três inimigos pequenos e use um Spin Attack no centro do grupo.",
+      "trophy_code": "epic-mickey-rebrushed-get-off-me",
+      "type": "Bronze"
+    },
+    {
+      "description": "Use tinta para derrotar todos os chefes e consertar todos os animatrônicos.",
+      "is_missable": 1,
+      "is_spoiler": 1,
+      "name": "An Epic Journey",
+      "name_pt": "Uma Jornada Épica",
+      "tip": "Dedique uma jogada inteira à rota de tinta: pinte chefes e conserte todos os animatrônicos. É incompatível com Out of my way na mesma run.",
+      "trophy_code": "epic-mickey-rebrushed-an-epic-journey",
+      "type": "Ouro"
+    },
+    {
+      "description": "Use solvente para derrotar todos os chefes e deixe todos os animatrônicos desmontados.",
+      "is_missable": 1,
+      "is_spoiler": 1,
+      "name": "Out of my way",
+      "name_pt": "Sai da Frente!",
+      "tip": "Dedique uma jogada inteira à rota de solvente: dissolva chefes e deixe animatrônicos desmontados. É incompatível com An Epic Journey na mesma run.",
+      "trophy_code": "epic-mickey-rebrushed-out-of-my-way",
+      "type": "Ouro"
+    }
+  ]
+}

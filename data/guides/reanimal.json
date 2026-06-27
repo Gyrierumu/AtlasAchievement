@@ -1,0 +1,572 @@
+{
+  "game": {
+    "avoid_if": "Evite se você não quer seguir checklist de coletáveis, repetir uma campanha por caixões/estátuas perdidos ou lidar com requisitos de final secreto.",
+    "before_you_start": "REANIMAL não tem versão PS4 no escopo validado, usa autosave e não tem save manual. Pode ser jogado solo ou em coop opcional; se quiser evitar replay, acompanhe caixões e estátuas escondidas desde o início e trate Chapter Select como precisa validar.",
+    "best_for": "Ideal para quem quer uma platina curta de terror atmosférico, com exploração, coop opcional e coletáveis bem guiados.",
+    "cleanup_advice": "Use Chapter Select apenas para ações opcionais, cumulativos ou coletáveis não críticos. Não confie nele para caixões, estátuas escondidas ou final secreto.",
+    "cover_image": "https://cdn.cloudflare.steamstatic.com/steam/apps/2129530/library_600x900.jpg",
+    "coverage_level": "strong",
+    "created_at": "2026-05-09 19:53:55",
+    "difficulty": 1,
+    "difficulty_reason": "A platina é muito acessível, sem dificuldade obrigatória e com puzzles simples; o cuidado real está em seguir os coletáveis críticos de campanha única.",
+    "dlc_scope": "Guia focado somente na lista base de REANIMAL em PS5/Xbox Series/PC. Season Pass, DLCs, expansões futuras e listas extras devem ficar separados e precisam revisão antes de entrar no guia.",
+    "editorial_notes": "",
+    "editorial_review_status": null,
+    "editorial_status": "published",
+    "first_run_advice": "Faça a primeira campanha como run 100%: pegue todos os caixões, estátuas escondidas, máscaras, pôsteres, critters e segredos antes de sair de cada área.",
+    "grind_summary": "O peso está em caixões, estátuas escondidas, máscaras, pôsteres, critters, segredos, trechos de barco e ações opcionais por capítulo.",
+    "guide_avoid": null,
+    "guide_best_moment": null,
+    "guide_dlc": null,
+    "guide_grind": null,
+    "guide_ideal": null,
+    "guide_online": null,
+    "guide_runs": null,
+    "image": "https://cdn.cloudflare.steamstatic.com/steam/apps/2129530/header.jpg",
+    "is_verified": 0,
+    "last_reviewed_at": "",
+    "missable": "Sim, com escopo limitado e precisa revisão final. Há seleção de capítulos, mas caixões, estátuas escondidas e a máscara ligada a elas precisam de atenção porque alguns requisitos podem não contar corretamente por Chapter Select; Naval Blazing fica como atenção de execução, não perdível definitivo.",
+    "missable_summary": "Friends Reunited, Prayer for the Dying e Beneath the Mask exigem atenção especial: caixões/estátuas devem ser feitos em uma única campanha até revisão confirmar Chapter Select. Naval Blazing tem margem limitada, mas não foi mantido como perdível definitivo.",
+    "name": "REANIMAL",
+    "online_summary": "Não há troféus online obrigatórios nos dados atuais. REANIMAL pode ser platinado solo ou em coop opcional local/online; por ser lista recente, precisa validar em revisão final antes de tratar parceiro, online ou coop como requisito.",
+    "quality_warnings": "[]",
+    "reviewed_by": "",
+    "runs_summary": "Uma campanha 100% bem planejada pode cobrir a platina, com Chapter Select apenas para limpar troféus opcionais menores, cumulativos ou de capítulo. Dados sujeitos a revisão editorial.",
+    "slug": "reanimal",
+    "time": "2-6h",
+    "time_bucket": "short",
+    "time_max_hours": 6,
+    "time_min_hours": 2,
+    "time_reason": "A faixa de 2-6 horas considera uma campanha completa com coletáveis, final secreto, ações opcionais e pequena limpeza por Chapter Select; precisa validar se updates alterarem rastreadores.",
+    "time_sort_hours": 2,
+    "updated_at": "2026-06-27 02:36:59",
+    "verification_note": "Precisa revisão editorial final: lista recente, com Chapter Select, coletáveis críticos, coop opcional, solo e escopo de DLCs/Season Pass marcados para validação manual.",
+    "verification_status": "review",
+    "walkthrough": null
+  },
+  "redirects": [],
+  "roadmaps": [
+    {
+      "content": "{\"title\":\"Limpe coletáveis por seleção de capítulos\",\"focus\":\"\",\"objective\":\"Comece uma nova campanha com foco em 100%, pegando caixões, estátuas escondidas, máscaras, pôsteres, critters e segredos antes de sair de cada área. O jogo tem Chapter Select, mas caixões e estátuas são os pontos críticos de campanha única e precisam validar em revisão final.\",\"actions\":[],\"warning\":\"\",\"result\":\"\"}",
+      "step_order": 1
+    },
+    {
+      "content": "{\"title\":\"Prossiga pela rota planejada\",\"focus\":\"\",\"objective\":\"Avance pelos 9 capítulos para desbloquear os troféus de história: Home From Home, Save Our Skins, Tarred and Feathered, It’s a Trap!, Happy Days, Into the Abyss e All is Well. Se os 5 caixões forem coletados corretamente, Friends Reunited e o final secreto entram no fim.\",\"actions\":[],\"warning\":\"\",\"result\":\"\"}",
+      "step_order": 2
+    },
+    {
+      "content": "{\"title\":\"Prossiga pela rota planejada\",\"focus\":\"\",\"objective\":\"Complete os grupos de coletáveis e segredos: Critter Kill Hit, Prayer for the Dying, A Proper Gander, Beneath the Mask, Hidden among the pines, Hidden among rats e Hidden in rubble. Use o rastreador do PlayStation quando possível.\",\"actions\":[],\"warning\":\"\",\"result\":\"\"}",
+      "step_order": 3
+    },
+    {
+      "content": "{\"title\":\"Prossiga pela rota planejada\",\"focus\":\"\",\"objective\":\"Limpe ações opcionais por capítulo como Rock ‘n Pop, Dark Tourism, Scared to Dust, Creature Comforts, Lullabye, Long Live The King, Secret Bunker, Non-Cannonical, Friends Like These, Just Making Sure e Destruction Derby.\",\"actions\":[],\"warning\":\"\",\"result\":\"\"}",
+      "step_order": 4
+    },
+    {
+      "content": "{\"title\":\"Prossiga pela rota planejada\",\"focus\":\"\",\"objective\":\"Finalize cumulativos e requisitos de atenção: Take a Load Off, Lost at Sea e Naval Blazing. Para Lost at Sea, estacione o barco na praia quando precisar atualizar o progresso do rastreador; Naval Blazing tem margem limitada, mas não fica como perdível definitivo.\",\"actions\":[],\"warning\":\"\",\"result\":\"\"}",
+      "step_order": 5
+    },
+    {
+      "content": "{\"title\":\"Limpe coletáveis por seleção de capítulos\",\"focus\":\"\",\"objective\":\"Use Chapter Select para troféus menores pendentes, mas refaça uma campanha se faltar caixão, estátua escondida ou a máscara ligada às estátuas. Com tudo completo, Nothing Lasts Forever deve liberar; dados sujeitos a revisão editorial.\",\"actions\":[],\"warning\":\"\",\"result\":\"\"}",
+      "step_order": 6
+    }
+  ],
+  "schemaVersion": 1,
+  "seedExtras": {
+    "aliases": [],
+    "attentionPoints": [
+      {
+        "tip": "Friends Reunited, Prayer for the Dying e Beneath the Mask são os principais riscos de run.",
+        "title": "Três perdíveis principais",
+        "type": "Risco de run"
+      },
+      {
+        "tip": "Friends Reunited exige todos os 5 Coffins e o secret ending. Faça todos na mesma playthrough.",
+        "title": "Coffins",
+        "type": "Friends Reunited"
+      },
+      {
+        "tip": "Prayer for the Dying exige todas as 5 Hidden Statues na mesma playthrough.",
+        "title": "Hidden Statues",
+        "type": "Prayer for the Dying"
+      },
+      {
+        "tip": "Beneath the Mask depende da Sheep Mask, ligada às Hidden Statues. Não deixe para Chapter Replay.",
+        "title": "Sheep Mask",
+        "type": "Beneath the Mask"
+      },
+      {
+        "tip": "Chapter Replay ajuda em misc e muitos coletáveis, mas não resolve corretamente Coffins ou Hidden Statues para os troféus de run.",
+        "title": "Chapter Replay tem limite",
+        "type": "Cleanup"
+      },
+      {
+        "tip": "A platina não exige online, mesmo com coop online opcional.",
+        "title": "Sem online obrigatório",
+        "type": "Solo"
+      },
+      {
+        "tip": "O jogo pode ser feito solo. Coop local ou online é opcional e não deve inflar o filtro Coop.",
+        "title": "Sem coop obrigatório",
+        "type": "Coop opcional"
+      },
+      {
+        "tip": "Não há troféu de dificuldade nem dificuldade selecionável. A platina é 1/10.",
+        "title": "Sem dificuldade",
+        "type": "1/10"
+      },
+      {
+        "tip": "Use os trackers para confirmar Masks, Posters, Critters, Secrets e o progresso por capítulo.",
+        "title": "Coletáveis por tracker",
+        "type": "Checklist"
+      },
+      {
+        "tip": "Naval Blazing exige 20 naval mines em uma playthrough. Acompanhe o tracker durante a campanha.",
+        "title": "Naval Blazing",
+        "type": "Uma playthrough"
+      },
+      {
+        "tip": "Lost at Sea é grind de distância com o barco, não um requisito online.",
+        "title": "Lost at Sea",
+        "type": "Grind curto"
+      },
+      {
+        "tip": "Deluxe Edition, Season Pass e The Expanded World não são necessários para a platina base.",
+        "title": "DLC separado",
+        "type": "Lista base"
+      }
+    ],
+    "checklist": [
+      "Conferir total de 32 troféus e distribuição 1 platina, 4 ouro, 16 prata e 11 bronze.",
+      "Conferir Nothing Lasts Forever como platina.",
+      "Conferir onlineRequired false, coopRequired false e dlcRequired false.",
+      "Conferir hasMissables true, missableCount 3 e filtro Perdíveis 3.",
+      "Conferir filtros Online 0, Coop 0, DLC 0 e Dificuldade 0.",
+      "Conferir Friends Reunited como Perdível, Coffins e Secret Ending.",
+      "Conferir Prayer for the Dying como Perdível e Hidden Statues.",
+      "Conferir Beneath the Mask como Perdível, Masks e Sheep Mask.",
+      "Conferir 18 Masks, 20 Posters, 5 Hidden Statues, 5 Coffins e 5 Critters.",
+      "Conferir Secrets nos blocos pines, rats e rubble.",
+      "Conferir 10 lugares para sentar.",
+      "Conferir Naval Blazing com 20 naval mines na mesma playthrough.",
+      "Conferir Lost at Sea e Destruction Derby com 24 carros.",
+      "Conferir troféus misc por capítulo e cleanup por Chapter Replay.",
+      "Conferir que coop opcional não virou coop ou online obrigatório.",
+      "Conferir que Deluxe Edition, Season Pass e The Expanded World não entraram na lista base.",
+      "Conferir que o jogo usa autosave e não promete save manual livre.",
+      "Conferir os limites de Chapter Replay para Coffins e Hidden Statues.",
+      "Conferir nome oficial em inglês, nome PT-BR separado e descrição em português em todos os troféus.",
+      "Conferir roadmap estruturado e ausência de labels internas ou objetos brutos no front.",
+      "Conferir FAQ, decisão rápida, SEO, pontos de atenção e status consistente entre guia e catálogo."
+    ],
+    "faq": [
+      {
+        "answer": "Sim. Os principais são Friends Reunited, Prayer for the Dying e Beneath the Mask, porque Coffins e Hidden Statues precisam ser feitos em uma única playthrough.",
+        "question": "REANIMAL tem troféus perdíveis?"
+      },
+      {
+        "answer": "Não. A lista base não tem troféus online.",
+        "question": "Precisa jogar online para platinar?"
+      },
+      {
+        "answer": "Não. O jogo permite coop local e online, mas a platina pode ser feita solo.",
+        "question": "Precisa de cooperação?"
+      },
+      {
+        "answer": "Não. Deluxe Edition, Season Pass e The Expanded World não são necessários para a platina base.",
+        "question": "Precisa de DLC?"
+      },
+      {
+        "answer": "Uma playthrough com checklist é suficiente. Se perder Coffins ou Hidden Statues, pode ser necessário repetir a run.",
+        "question": "Quantas runs são necessárias?"
+      },
+      {
+        "answer": "Não. O jogo não tem troféu de dificuldade e a platina é muito fácil.",
+        "question": "A dificuldade afeta troféus?"
+      },
+      {
+        "answer": "Não. Chapter Replay ajuda em misc e vários coletáveis, mas Coffins e Hidden Statues devem ser feitos na mesma playthrough para os troféus ligados ao secret ending e à Sheep Mask.",
+        "question": "Chapter Replay resolve tudo?"
+      },
+      {
+        "answer": "Esquecer Coffins ou Hidden Statues, porque eles afetam Friends Reunited, Prayer for the Dying e Beneath the Mask.",
+        "question": "O que é o maior risco da platina?"
+      },
+      {
+        "answer": "São 18 Masks. Beneath the Mask exige todas, incluindo a Sheep Mask ligada às Hidden Statues.",
+        "question": "Quantas Masks existem?"
+      },
+      {
+        "answer": "São 20 Posters, 5 Coffins e 5 Hidden Statues.",
+        "question": "Quantos Posters, Coffins e Hidden Statues existem?"
+      },
+      {
+        "answer": "Ele exige destruir 20 naval mines em uma playthrough. Trate como checklist de run e acompanhe durante a campanha.",
+        "question": "Naval Blazing é perdível?"
+      },
+      {
+        "answer": "Em média, cerca de 2 a 6 horas, dependendo do uso de checklist e do retrabalho com coletáveis.",
+        "question": "Quanto tempo leva para platinar?"
+      }
+    ],
+    "note": "Campos exportados para auditoria. O SQLite atual nao possui colunas nativas para todos esses extras; a importacao preserva o que o banco suporta.",
+    "quickDecision": {
+      "difficulty": "Muito baixa, cerca de 1/10.",
+      "dlc": "Deluxe Edition, Season Pass e The Expanded World não são necessários para a platina base.",
+      "firstAction": "Comece a playthrough com checklist cronológico de Coffins e Hidden Statues.",
+      "mainRisk": "Coffins, Hidden Statues, Sheep Mask, Masks, Posters, Critters, Secrets e Naval Blazing.",
+      "onlineCoop": "Sem online obrigatório e sem coop obrigatório. Coop local ou online é opcional.",
+      "risk": "Baixo em habilidade, médio em retrabalho se esquecer Coffins ou Hidden Statues.",
+      "time": "Muito curto, cerca de 2 a 6 horas.",
+      "verdict": "Sim. É uma platina muito curta e fácil, ideal para quem gosta de horror atmosférico e coletáveis."
+    },
+    "seo": {
+      "description": "Guia de troféus de REANIMAL com roadmap da platina, perdíveis, Coffins, Hidden Statues, Masks, Posters, Critters, Secret Ending, Chapter Replay, coop opcional e dicas para os 32 troféus.",
+      "keywords": [
+        "REANIMAL troféus",
+        "REANIMAL platina",
+        "guia REANIMAL",
+        "REANIMAL trophy guide",
+        "Nothing Lasts Forever",
+        "Friends Reunited",
+        "Prayer for the Dying",
+        "Beneath the Mask",
+        "REANIMAL Coffins",
+        "REANIMAL Hidden Statues",
+        "REANIMAL Masks",
+        "REANIMAL Posters",
+        "REANIMAL Secret Ending",
+        "REANIMAL Chapter Replay",
+        "REANIMAL coop"
+      ],
+      "metaDescription": "Guia de troféus de REANIMAL com roadmap da platina, perdíveis, Coffins, Hidden Statues, Masks, Posters, Critters, Secret Ending, Chapter Replay, coop opcional e dicas para os 32 troféus.",
+      "ogDescription": "Roadmap PT-BR da platina de REANIMAL com 32 troféus, três perdíveis, Coffins, Hidden Statues, Masks, Secret Ending e Chapter Replay.",
+      "ogTitle": "REANIMAL: Guia de Troféus e Platina",
+      "title": "REANIMAL: Guia de Troféus e Platina"
+    },
+    "tags": []
+  },
+  "slug": "reanimal",
+  "trophies": [
+    {
+      "description": "Unlock everything.",
+      "is_missable": 0,
+      "is_spoiler": 0,
+      "name": "Nothing Lasts Forever",
+      "name_pt": "Nada dura para sempre",
+      "tip": "Conquiste todos os outros troféus de REANIMAL para liberar a platina.",
+      "trophy_code": "reanimal_nothing_lasts_forever",
+      "type": "Platina"
+    },
+    {
+      "description": "Reach the small forest town.",
+      "is_missable": 0,
+      "is_spoiler": 0,
+      "name": "Home From Home",
+      "name_pt": "Lar, doce lar",
+      "tip": "Troféu de história obtido automaticamente ao concluir o Capítulo 1.",
+      "trophy_code": "reanimal_home_from_home",
+      "type": "Prata"
+    },
+    {
+      "description": "Escape Sniffer.",
+      "is_missable": 0,
+      "is_spoiler": 1,
+      "name": "Save Our Skins",
+      "name_pt": "Salve nossas peles",
+      "tip": "Troféu de história obtido automaticamente ao concluir o Capítulo 2.",
+      "trophy_code": "reanimal_save_our_skins",
+      "type": "Prata"
+    },
+    {
+      "description": "Save your friend from the birds.",
+      "is_missable": 0,
+      "is_spoiler": 1,
+      "name": "Tarred and Feathered",
+      "name_pt": "Coberto de piche e penas",
+      "tip": "Troféu de história obtido automaticamente perto do fim do Capítulo 3.",
+      "trophy_code": "reanimal_tarred_and_feathered",
+      "type": "Prata"
+    },
+    {
+      "description": "Reach Sand City.",
+      "is_missable": 0,
+      "is_spoiler": 1,
+      "name": "It’s a Trap!",
+      "name_pt": "É uma armadilha!",
+      "tip": "Troféu de história obtido automaticamente ao concluir o Capítulo 4.",
+      "trophy_code": "reanimal_its_a_trap",
+      "type": "Prata"
+    },
+    {
+      "description": "Reunite with your friends.",
+      "is_missable": 0,
+      "is_spoiler": 1,
+      "name": "Happy Days",
+      "name_pt": "Dias felizes",
+      "tip": "Troféu de história obtido automaticamente perto do fim do Capítulo 5.",
+      "trophy_code": "reanimal_happy_days",
+      "type": "Prata"
+    },
+    {
+      "description": "Find your way into the breach.",
+      "is_missable": 0,
+      "is_spoiler": 1,
+      "name": "Into the Abyss",
+      "name_pt": "Rumo ao abismo",
+      "tip": "Troféu de história obtido automaticamente ao concluir o Capítulo 6.",
+      "trophy_code": "reanimal_into_the_abyss",
+      "type": "Prata"
+    },
+    {
+      "description": "Finish the main story.",
+      "is_missable": 0,
+      "is_spoiler": 1,
+      "name": "All is Well",
+      "name_pt": "Tudo está bem",
+      "tip": "Troféu de história obtido ao concluir o Capítulo 9. Pode liberar junto com Friends Reunited se os 5 caixões forem coletados na campanha.",
+      "trophy_code": "reanimal_all_is_well",
+      "type": "Ouro"
+    },
+    {
+      "description": "Kill every critter.",
+      "is_missable": 0,
+      "is_spoiler": 0,
+      "name": "Critter Kill Hit",
+      "name_pt": "Extermínio de criaturas",
+      "tip": "Existem 5 critters. Eles deixam máscaras colecionáveis, então explore bem e acompanhe o progresso do troféu.",
+      "trophy_code": "reanimal_critter_kill_hit",
+      "type": "Prata"
+    },
+    {
+      "description": "Rest your legs at 10 places around the world.",
+      "is_missable": 0,
+      "is_spoiler": 0,
+      "name": "Take a Load Off",
+      "name_pt": "Descanse um pouco",
+      "tip": "Sente-se em cadeiras, bancos ou sofás em salas diferentes. Há mais oportunidades do que o necessário.",
+      "trophy_code": "reanimal_take_a_load_off",
+      "type": "Prata"
+    },
+    {
+      "description": "Pay tribute at all hidden statues.",
+      "is_missable": 1,
+      "is_spoiler": 0,
+      "name": "Prayer for the Dying",
+      "name_pt": "Prece pelos moribundos",
+      "tip": "Existem 5 estátuas escondidas. Faça todas em uma única jogada, pois Chapter Select pode não acender a estátua final nem liberar a máscara ligada a elas.",
+      "trophy_code": "reanimal_prayer_for_the_dying",
+      "type": "Prata"
+    },
+    {
+      "description": "Find and tear down all posters.",
+      "is_missable": 0,
+      "is_spoiler": 0,
+      "name": "A Proper Gander",
+      "name_pt": "Uma boa olhada",
+      "tip": "Existem 20 pôsteres espalhados pelo jogo. Aproxime-se das paredes e interaja quando houver destaque visual.",
+      "trophy_code": "reanimal_a_proper_gander",
+      "type": "Ouro"
+    },
+    {
+      "description": "Find all masks.",
+      "is_missable": 1,
+      "is_spoiler": 0,
+      "name": "Beneath the Mask",
+      "name_pt": "Por trás da máscara",
+      "tip": "Existem 18 máscaras. Atenção à máscara ligada às estátuas escondidas, que exige encontrar todas as estátuas em uma única jogada.",
+      "trophy_code": "reanimal_beneath_the_mask",
+      "type": "Ouro"
+    },
+    {
+      "description": "Find all secrets in the first three chapters.",
+      "is_missable": 0,
+      "is_spoiler": 0,
+      "name": "Hidden among the pines",
+      "name_pt": "Escondido entre os pinheiros",
+      "tip": "Explore os Capítulos 1 a 3 com atenção. Coletáveis contam como segredos, exceto oportunidades de sentar/descançar.",
+      "trophy_code": "reanimal_hidden_among_the_pines",
+      "type": "Prata"
+    },
+    {
+      "description": "Find all secrets in the middle three chapters.",
+      "is_missable": 0,
+      "is_spoiler": 0,
+      "name": "Hidden among rats",
+      "name_pt": "Escondido entre ratos",
+      "tip": "Explore os Capítulos 4 a 6 antes de avançar entre áreas, pois o retorno nem sempre é possível.",
+      "trophy_code": "reanimal_hidden_among_rats",
+      "type": "Prata"
+    },
+    {
+      "description": "Find all secrets in the final three chapters.",
+      "is_missable": 0,
+      "is_spoiler": 0,
+      "name": "Hidden in rubble",
+      "name_pt": "Escondido nos escombros",
+      "tip": "Explore os Capítulos 7 a 9 e use o rastreador do troféu para confirmar o progresso.",
+      "trophy_code": "reanimal_hidden_in_rubble",
+      "type": "Prata"
+    },
+    {
+      "description": "Find all coffins and unlock the secret ending.",
+      "is_missable": 1,
+      "is_spoiler": 1,
+      "name": "Friends Reunited",
+      "name_pt": "Amigos reunidos",
+      "tip": "Existem 5 caixões. Faça todos em uma única jogada, pois pegar caixões faltantes por Chapter Select não libera o final secreto.",
+      "trophy_code": "reanimal_friends_reunited",
+      "type": "Ouro"
+    },
+    {
+      "description": "Break open the popcorn machine in the cinema.",
+      "is_missable": 0,
+      "is_spoiler": 0,
+      "name": "Rock ‘n Pop",
+      "name_pt": "Rock e pipoca",
+      "tip": "No Capítulo 2, pegue uma pedra perto da entrada do cinema e arremesse contra a máquina de pipoca.",
+      "trophy_code": "reanimal_rock_n_pop",
+      "type": "Bronze"
+    },
+    {
+      "description": "Push the sightseer into the pit.",
+      "is_missable": 0,
+      "is_spoiler": 0,
+      "name": "Dark Tourism",
+      "name_pt": "Turismo sombrio",
+      "tip": "No Capítulo 1, encontre a cadeira de camping perto dos trilhos e empurre-a por trás para derrubá-la.",
+      "trophy_code": "reanimal_dark_tourism",
+      "type": "Bronze"
+    },
+    {
+      "description": "Break all petrified kids in the clock tower.",
+      "is_missable": 0,
+      "is_spoiler": 0,
+      "name": "Scared to Dust",
+      "name_pt": "Assustados até virar pó",
+      "tip": "No Capítulo 4, destrua todas as estátuas de crianças petrificadas na primeira sala da torre do relógio.",
+      "trophy_code": "reanimal_scared_to_dust",
+      "type": "Bronze"
+    },
+    {
+      "description": "Comfort the scared pig.",
+      "is_missable": 0,
+      "is_spoiler": 0,
+      "name": "Creature Comforts",
+      "name_pt": "Conforto para criaturas",
+      "tip": "No Capítulo 5, siga o porco para a esquerda assim que ele aparecer e interaja com ele.",
+      "trophy_code": "reanimal_creature_comforts",
+      "type": "Bronze"
+    },
+    {
+      "description": "Play the piano.",
+      "is_missable": 0,
+      "is_spoiler": 0,
+      "name": "Lullabye",
+      "name_pt": "Canção de ninar",
+      "tip": "No Capítulo 5, interaja algumas vezes com o pequeno piano no corredor.",
+      "trophy_code": "reanimal_lullabye",
+      "type": "Bronze"
+    },
+    {
+      "description": "Steal the crown from the leader of the Spider Kids.",
+      "is_missable": 0,
+      "is_spoiler": 1,
+      "name": "Long Live The King",
+      "name_pt": "Vida longa ao rei",
+      "tip": "No Capítulo 4, derrote o inimigo com coroa quando ele sair do trono e pegue a coroa antes de terminar a luta.",
+      "trophy_code": "reanimal_long_live_the_king",
+      "type": "Bronze"
+    },
+    {
+      "description": "Kill 10 Spider Kids while fighting the Mother.",
+      "is_missable": 0,
+      "is_spoiler": 1,
+      "name": "Shot Through the Heart",
+      "name_pt": "Tiro no coração",
+      "tip": "No Capítulo 5, durante o chefe aranha, derrote 10 inimigos menores com lanças antes de finalizar o chefe.",
+      "trophy_code": "reanimal_shot_through_the_heart",
+      "type": "Prata"
+    },
+    {
+      "description": "Travel a great distance with the boat.",
+      "is_missable": 0,
+      "is_spoiler": 0,
+      "name": "Lost at Sea",
+      "name_pt": "Perdido no mar",
+      "tip": "O progresso é cumulativo. Caso falte distância, use o barco nos capítulos com navegação e estacione na praia para atualizar o rastreador.",
+      "trophy_code": "reanimal_lost_at_sea",
+      "type": "Prata"
+    },
+    {
+      "description": "Fail to save your friend from being killed.",
+      "is_missable": 0,
+      "is_spoiler": 1,
+      "name": "Survival Instinct",
+      "name_pt": "Instinto de sobrevivência",
+      "tip": "No Capítulo 4, deixe um inimigo agarrar e matar seu parceiro sem interferir.",
+      "trophy_code": "reanimal_survival_instinct",
+      "type": "Bronze"
+    },
+    {
+      "description": "Input the secret code.",
+      "is_missable": 0,
+      "is_spoiler": 0,
+      "name": "Secret Bunker",
+      "name_pt": "Bunker secreto",
+      "tip": "No Capítulo 6, use o console do laboratório e insira a sequência 2-3-3-2 para abrir o segredo.",
+      "trophy_code": "reanimal_secret_bunker",
+      "type": "Prata"
+    },
+    {
+      "description": "Fire at the secondary target with the cannon.",
+      "is_missable": 0,
+      "is_spoiler": 0,
+      "name": "Non-Cannonical",
+      "name_pt": "Não canônico",
+      "tip": "No Capítulo 6, use o canhão da ilha central para atirar no bunker.",
+      "trophy_code": "reanimal_non_cannonical",
+      "type": "Bronze"
+    },
+    {
+      "description": "Clear 20 naval mines in one playthrough.",
+      "is_missable": 0,
+      "is_spoiler": 0,
+      "name": "Naval Blazing",
+      "name_pt": "Em chamas no mar",
+      "tip": "Destrua minas durante os trechos de barco dos Capítulos 3 e 6. Há poucas minas extras, então mire com cuidado; precisa validar se Chapter Select cobre qualquer falha.",
+      "trophy_code": "reanimal_naval_blazing",
+      "type": "Prata"
+    },
+    {
+      "description": "Accidentally shoot your friend.",
+      "is_missable": 0,
+      "is_spoiler": 0,
+      "name": "Friends Like These",
+      "name_pt": "Com amigos assim",
+      "tip": "No Capítulo 8, durante a área do estande de tiro, dispare contra o companheiro em vez do alvo.",
+      "trophy_code": "reanimal_friends_like_these",
+      "type": "Bronze"
+    },
+    {
+      "description": "Get your revenge on the Sniper.",
+      "is_missable": 0,
+      "is_spoiler": 1,
+      "name": "Just Making Sure",
+      "name_pt": "Só para ter certeza",
+      "tip": "No Capítulo 8, após acertar o sniper na torre, vá até os escombros e chute o corpo.",
+      "trophy_code": "reanimal_just_making_sure",
+      "type": "Bronze"
+    },
+    {
+      "description": "Wreck 24 cars from the comfort of your own vehicle.",
+      "is_missable": 0,
+      "is_spoiler": 1,
+      "name": "Destruction Derby",
+      "name_pt": "Demolição sobre rodas",
+      "tip": "No Capítulo 9, passe por cima dos carros durante o trecho com o tanque. Há margem para errar alguns, mas tente destruir todos.",
+      "trophy_code": "reanimal_destruction_derby",
+      "type": "Bronze"
+    }
+  ]
+}

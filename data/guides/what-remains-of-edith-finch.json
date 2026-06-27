@@ -1,0 +1,208 @@
+{
+  "game": {
+    "avoid_if": "Evite apenas se você não gosta de walking simulator, narrativa contemplativa ou experiências sem desafio mecânico.",
+    "before_you_start": "Confirme que o cadastro está usando a lista PS5. A versão PS4 de What Remains of Edith Finch não tem platina; não misture contagem, checklist ou metadados entre PS4 e PS5.",
+    "best_for": "Ideal para quem quer uma platina narrativa muito curta, fácil, artística e focada em história, exploração e drama familiar.",
+    "cleanup_advice": "Se perder algum troféu de história específica, use replay de cenas/histórias quando disponível após terminar a campanha para limpar rapidamente.",
+    "cover_image": "https://cdn.cloudflare.steamstatic.com/steam/apps/501300/library_600x900.jpg",
+    "coverage_level": "strong",
+    "created_at": "2026-05-09 19:53:51",
+    "difficulty": 1,
+    "difficulty_reason": "A platina é muito fácil, sem combate difícil, sem online, sem multiplayer e sem troféus de dificuldade.",
+    "dlc_scope": "Guia focado exclusivamente na versão PS5 com platina. A versão PS4 não possui platina e não deve aparecer como guia de platina; tratar separadamente se o projeto suportar versões.",
+    "editorial_notes": "",
+    "editorial_review_status": null,
+    "editorial_status": "published",
+    "first_run_advice": "Jogue aproveitando a narrativa, mas faça All Roads antes de entrar na casa, olhe peepholes/telescópios para A Closer Look e preste atenção às ações específicas de cada história.",
+    "grind_summary": "Não há grind real; o foco está em ações específicas durante histórias da família Finch e em revisar rapidamente cenas perdidas.",
+    "guide_avoid": null,
+    "guide_best_moment": null,
+    "guide_dlc": null,
+    "guide_grind": null,
+    "guide_ideal": null,
+    "guide_online": null,
+    "guide_runs": null,
+    "image": "https://cdn.cloudflare.steamstatic.com/steam/apps/501300/header.jpg",
+    "is_verified": 0,
+    "last_reviewed_at": "",
+    "missable": "Sim/atenção: a versão PS5 é curta, mas vários troféus dependem de ações específicas em histórias, cenas ou janelas de exploração. O cleanup costuma ser rápido por replay de histórias/cenas após terminar.",
+    "missable_summary": "All Roads, A Closer Look, Great Owl, Let Him Finish, Clear the Table, G-R-E-G-O-R-Y, Thanks, Johann! e Wildlife Photographer exigem atenção a interações específicas.",
+    "name": "What Remains of Edith Finch",
+    "online_summary": "Não há exigência online, troféus online, multiplayer obrigatório ou PS+ para a platina da versão PS5.",
+    "quality_warnings": "[]",
+    "reviewed_by": "",
+    "runs_summary": "Uma campanha curta costuma ser suficiente, com replay de histórias/cenas para limpar ações específicas se necessário.",
+    "slug": "what-remains-of-edith-finch",
+    "time": "2-4h",
+    "time_bucket": "short",
+    "time_max_hours": 4,
+    "time_min_hours": 2,
+    "time_reason": "A faixa de 2-4 horas considera a história completa e cleanup rápido de troféus específicos por replay de histórias/cenas.",
+    "time_sort_hours": 2,
+    "updated_at": "2026-06-27 02:36:58",
+    "verification_note": "Precisa revisão editorial final: versão PS5 com platina registrada; manter aviso explícito de que PS4 não tem platina.",
+    "verification_status": "review",
+    "walkthrough": null
+  },
+  "redirects": [],
+  "roadmaps": [
+    {
+      "content": "{\"title\":\"Avance pela campanha\",\"focus\":\"\",\"objective\":\"Inicie a história na versão PS5 e, antes de entrar na casa, faça All Roads pegando os dois caminhos até a casa; em seguida, acompanhe A Closer Look. A versão PS4 não possui platina.\",\"actions\":[],\"warning\":\"\",\"result\":\"\"}",
+      "step_order": 1
+    },
+    {
+      "content": "{\"title\":\"Prossiga pela rota planejada\",\"focus\":\"\",\"objective\":\"Durante a exploração da casa Finch, olhe todos os peepholes e telescópios necessários para A Closer Look, mantendo atenção aos quartos e histórias da família Finch.\",\"actions\":[],\"warning\":\"\",\"result\":\"\"}",
+      "step_order": 2
+    },
+    {
+      "content": "{\"title\":\"Prossiga pela rota planejada\",\"focus\":\"\",\"objective\":\"Complete todas as histórias da família Finch para Everything Ends, acompanhando membros como Molly, Calvin, Barbara, Walter, Sam, Gregory, Milton, Lewis, Edie, Dawn e Edith sem focar em dificuldade.\",\"actions\":[],\"warning\":\"\",\"result\":\"\"}",
+      "step_order": 3
+    },
+    {
+      "content": "{\"title\":\"Prossiga pela rota planejada\",\"focus\":\"\",\"objective\":\"Durante histórias específicas, faça Great Owl, Let Him Finish, Clear the Table, G-R-E-G-O-R-Y, Thanks, Johann!, Loop-de-loop-de-loop e Wildlife Photographer quando as oportunidades aparecerem.\",\"actions\":[],\"warning\":\"\",\"result\":\"\"}",
+      "step_order": 4
+    },
+    {
+      "content": "{\"title\":\"Revise pendências finais\",\"focus\":\"\",\"objective\":\"Termine a história principal, assista aos créditos quando necessário para Thanks, Johann! e libere o replay de histórias/cenas para cleanup curto.\",\"actions\":[],\"warning\":\"\",\"result\":\"\"}",
+      "step_order": 5
+    },
+    {
+      "content": "{\"title\":\"Prossiga pela rota planejada\",\"focus\":\"\",\"objective\":\"Use replay de histórias/cenas após terminar para Replay a Story, Loop-de-loop-de-loop e qualquer troféu específico perdido; revise os 12 troféus PS5 para desbloquear All Done sem misturar a lista PS4.\",\"actions\":[],\"warning\":\"\",\"result\":\"\"}",
+      "step_order": 6
+    }
+  ],
+  "schemaVersion": 1,
+  "seedExtras": {
+    "aliases": [],
+    "attentionPoints": [],
+    "checklist": [],
+    "faq": [],
+    "note": "Campos exportados para auditoria. O SQLite atual nao possui colunas nativas para todos esses extras; a importacao preserva o que o banco suporta.",
+    "quickDecision": null,
+    "seo": {},
+    "tags": []
+  },
+  "slug": "what-remains-of-edith-finch",
+  "trophies": [
+    {
+      "description": "Unlock all trophies",
+      "is_missable": 0,
+      "is_spoiler": 0,
+      "name": "All Done",
+      "name_pt": "",
+      "tip": "Desbloqueie os 11 troféus de ouro da versão PS5. Esta platina não existe na versão anterior.",
+      "trophy_code": "edith_all_done",
+      "type": "Platina"
+    },
+    {
+      "description": "Finish all stories",
+      "is_missable": 0,
+      "is_spoiler": 1,
+      "name": "Everything Ends",
+      "name_pt": "",
+      "tip": "Complete todas as histórias da família Finch até o fim da campanha. É o principal troféu de progresso narrativo e revela eventos centrais do final.",
+      "trophy_code": "edith_everything_ends",
+      "type": "Ouro"
+    },
+    {
+      "description": "Look in all peepholes and telescopes long enough to hear Edith's commentary",
+      "is_missable": 1,
+      "is_spoiler": 0,
+      "name": "A Closer Look",
+      "name_pt": "",
+      "tip": "Olhe todos os peepholes e telescópios tempo suficiente para ouvir o comentário de Edith. Se passar algum, limpe depois por replay de cena/história quando disponível.",
+      "trophy_code": "edith_a_closer_look",
+      "type": "Ouro"
+    },
+    {
+      "description": "Take both paths to the house",
+      "is_missable": 1,
+      "is_spoiler": 0,
+      "name": "All Roads",
+      "name_pt": "",
+      "tip": "Antes de entrar na casa, percorra os dois caminhos de acesso até a residência Finch. É uma janela de exploração simples, mas fácil de deixar para trás.",
+      "trophy_code": "edith_all_roads",
+      "type": "Ouro"
+    },
+    {
+      "description": "Catch 2 rabbits with only 2 swoops",
+      "is_missable": 1,
+      "is_spoiler": 1,
+      "name": "Great Owl",
+      "name_pt": "",
+      "tip": "Na história de Molly, durante a parte da coruja, capture 2 coelhos usando apenas 2 mergulhos. Se errar, repita a história no cleanup.",
+      "trophy_code": "edith_great_owl",
+      "type": "Ouro"
+    },
+    {
+      "description": "Let the drunken sailor finish his song",
+      "is_missable": 1,
+      "is_spoiler": 1,
+      "name": "Let Him Finish",
+      "name_pt": "",
+      "tip": "Na história de Molly, deixe o marinheiro bêbado terminar a música antes de avançar. Espere o troféu aparecer para não cortar a cena cedo demais.",
+      "trophy_code": "edith_let_him_finish",
+      "type": "Ouro"
+    },
+    {
+      "description": "Clear all balls off the pool table",
+      "is_missable": 1,
+      "is_spoiler": 1,
+      "name": "Clear the Table",
+      "name_pt": "",
+      "tip": "Na história de Barbara, limpe todas as bolas da mesa de sinuca antes de seguir a história. É uma interação específica de cena.",
+      "trophy_code": "edith_clear_the_table",
+      "type": "Ouro"
+    },
+    {
+      "description": "Knock all the letters of Gregory's name into the bathtub",
+      "is_missable": 1,
+      "is_spoiler": 1,
+      "name": "G-R-E-G-O-R-Y",
+      "name_pt": "",
+      "tip": "Na história de Gregory, derrube todas as letras do nome GREGORY na banheira. O troféu envolve uma ação específica durante uma vinheta sensível.",
+      "trophy_code": "edith_gregory",
+      "type": "Ouro"
+    },
+    {
+      "description": "See Johann's name in the ending credits",
+      "is_missable": 1,
+      "is_spoiler": 0,
+      "name": "Thanks, Johann!",
+      "name_pt": "",
+      "tip": "Assista aos créditos até o nome Johann aparecer. Não pule cedo demais; se perder, use cleanup/replay quando disponível.",
+      "trophy_code": "edith_thanks_johann",
+      "type": "Ouro"
+    },
+    {
+      "description": "Play Calvin's story again",
+      "is_missable": 0,
+      "is_spoiler": 1,
+      "name": "Loop-de-loop-de-loop",
+      "name_pt": "",
+      "tip": "Depois de terminar a campanha, use o replay de histórias/cenas e jogue a história de Calvin novamente.",
+      "trophy_code": "edith_loop_de_loop_de_loop",
+      "type": "Ouro"
+    },
+    {
+      "description": "Take a picture of the rabbit outside Odin Finch National Park",
+      "is_missable": 1,
+      "is_spoiler": 0,
+      "name": "Wildlife Photographer",
+      "name_pt": "",
+      "tip": "Tire a foto do coelho fora de Odin Finch National Park. É um troféu específico da lista PS5 e pode exigir replay/cleanup se passar pela cena sem fotografar.",
+      "trophy_code": "edith_wildlife_photographer",
+      "type": "Ouro"
+    },
+    {
+      "description": "Replay a story after completing the game",
+      "is_missable": 0,
+      "is_spoiler": 0,
+      "name": "Replay a Story",
+      "name_pt": "",
+      "tip": "Após terminar o jogo, use o recurso de replay para repetir qualquer história. Combine com Loop-de-loop-de-loop escolhendo Calvin.",
+      "trophy_code": "edith_replay_a_story",
+      "type": "Ouro"
+    }
+  ]
+}

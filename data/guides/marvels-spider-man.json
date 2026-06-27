@@ -1,0 +1,598 @@
+{
+  "game": {
+    "avoid_if": "Evite se você não gosta de limpar mapa, repetir crimes por distrito, perseguir coletáveis e completar atividades de mundo aberto.",
+    "before_you_start": "A lista base não exige online, coop, dificuldade específica, DLC, New Game+ ou Ultimate. A melhor rota é avançar a história, liberar recursos e alternar campanha com atividades próximas para reduzir repetição no final.",
+    "best_for": "Ideal para quem quer uma platina acessível de mundo aberto, com campanha forte, mobilidade fluida e checklist claro de distritos.",
+    "cleanup_advice": "Depois da campanha, use o mapa e a checklist para fechar 100% dos distritos, crimes restantes, bases, desafios do Taskmaster, mochilas, marcos, pesquisas, Black Cat Stakeouts, pombos, trajes, upgrades e troféus situacionais.",
+    "cover_image": "https://cdn.cloudflare.steamstatic.com/steam/apps/1817070/library_600x900.jpg",
+    "coverage_level": "complete",
+    "created_at": "2026-05-09 19:53:29",
+    "difficulty": 3,
+    "difficulty_reason": "A dificuldade é baixa a moderada: não há dificuldade obrigatória, mas alguns desafios do Taskmaster, bases e pontuações ficam mais fáceis com upgrades, gadgets e mobilidade melhores.",
+    "dlc_scope": "DLC fora da platina base; NG+ e Ultimate fora da rota principal. The City That Never Sleeps, New Game+, Ultimate e troféus extras do Remastered ficam separados da lista base de 51 troféus usada pelo guia.",
+    "editorial_notes": "Guia revisado editorialmente para a lista base de Marvel’s Spider-Man/Remastered. The City That Never Sleeps, New Game+, Ultimate e extras do Remastered ficam fora da rota da platina base.",
+    "editorial_review_status": "verified",
+    "editorial_status": "published",
+    "first_run_advice": "Jogue em uma dificuldade confortável, desbloqueie habilidades, gadgets, torres e atividades de distrito, coletando o que estiver no caminho. Deixe crimes, desafios, trajes e 100% dos distritos para a limpeza final quando o mapa estiver mais aberto.",
+    "grind_summary": "O maior volume está em 100% dos distritos, crimes por região, bases, desafios do Taskmaster, mochilas, marcos, pesquisas, Black Cat Stakeouts, pombos, trajes, tokens e upgrades.",
+    "guide_avoid": null,
+    "guide_best_moment": null,
+    "guide_dlc": null,
+    "guide_grind": null,
+    "guide_ideal": null,
+    "guide_online": null,
+    "guide_runs": null,
+    "image": "https://cdn.cloudflare.steamstatic.com/steam/apps/1817070/header.jpg",
+    "is_verified": 1,
+    "last_reviewed_at": "2026-05-24",
+    "missable": "Não há perdíveis definitivos na lista base. A platina permite concluir atividades, crimes, coletáveis, trajes, upgrades e 100% dos distritos no pós-jogo.",
+    "missable_summary": "Sem perdíveis definitivos: o maior risco é deixar crimes, desafios e atividades de distrito acumularem e transformar o pós-jogo em retrabalho.",
+    "name": "Marvel’s Spider-Man",
+    "online_summary": "A platina base é single-player e não exige online, coop, servidores, multiplayer ou PS+.",
+    "quality_warnings": "[]",
+    "reviewed_by": "",
+    "runs_summary": "Uma campanha principal em dificuldade confortável com pendências finais livres por distritos. New Game+ não entra na rota da platina base.",
+    "slug": "marvels-spider-man",
+    "time": "25-35h",
+    "time_bucket": "medium",
+    "time_max_hours": 35,
+    "time_min_hours": 25,
+    "time_reason": "A faixa de 25-35 horas considera campanha, abertura de distritos, coletáveis, crimes, bases, desafios, trajes, upgrades, pesquisas, atividades de mapa e limpeza final.",
+    "time_sort_hours": 25,
+    "updated_at": "2026-06-27 02:36:59",
+    "verification_note": "Guia revisado editorialmente para a lista base de 51 troféus.",
+    "verification_status": "verified",
+    "walkthrough": null
+  },
+  "redirects": [],
+  "roadmaps": [
+    {
+      "content": "{\"title\":\"Avance a campanha e abra a cidade antes do 100% dos distritos\",\"focus\":\"Campanha / fundamentos\",\"objective\":\"Desbloquear habilidades, gadgets, distritos e atividades sem forçar 100% cedo.\",\"actions\":[\"Jogue em uma dificuldade confortável.\",\"Ative torres e abra o mapa conforme avança.\",\"Pegue coletáveis próximos quando estiverem no caminho.\",\"Use a campanha para aprender combate, furtividade e mobilidade.\"],\"warning\":\"\",\"result\":\"História encaminhada e cidade preparada para a limpeza final.\"}",
+      "step_order": 1
+    },
+    {
+      "content": "{\"title\":\"Libere habilidades, gadgets e melhorias importantes\",\"focus\":\"Progressão / upgrades\",\"objective\":\"Fortalecer o Homem-Aranha antes de desafios, bases e limpeza completa.\",\"actions\":[\"Invista em habilidades úteis de combate e travessia.\",\"Melhore gadgets usados com frequência.\",\"Complete atividades que rendem tokens necessários.\",\"Evite gastar recursos sem conferir trajes e upgrades pendentes.\"],\"warning\":\"\",\"result\":\"Personagem mais forte e checklist de upgrades encaminhada.\"}",
+      "step_order": 2
+    },
+    {
+      "content": "{\"title\":\"Trabalhe coletáveis e atividades por distrito\",\"focus\":\"Coletáveis / mapa\",\"objective\":\"Reduzir retrabalho controlando mochilas, marcos, pesquisas, fotos, bases e atividades regionais.\",\"actions\":[\"Limpe um distrito por vez quando possível.\",\"Marque mochilas, marcos, pesquisas, Black Cat Stakeouts e pombos.\",\"Faça atividades próximas durante deslocamentos.\",\"Não deixe todos os crimes para o final.\"],\"warning\":\"\",\"result\":\"Distritos parcialmente ou totalmente encaminhados.\"}",
+      "step_order": 3
+    },
+    {
+      "content": "{\"title\":\"Complete bases, crimes e desafios\",\"focus\":\"Pendências finais / execução\",\"objective\":\"Resolver atividades repetitivas e objetivos de pontuação com mais recursos liberados.\",\"actions\":[\"Faça crimes por distrito até completar os requisitos.\",\"Complete bases com atenção aos objetivos bônus quando precisar de tokens.\",\"Volte aos desafios do Taskmaster depois de melhorar mobilidade e gadgets.\",\"Use checklist para separar o que ainda falta.\"],\"warning\":\"Crimes e desafios podem cansar se acumularem todos no fim.\",\"result\":\"Atividades principais da cidade concluídas ou quase concluídas.\"}",
+      "step_order": 4
+    },
+    {
+      "content": "{\"title\":\"Finalize campanha, chefes e troféus específicos\",\"focus\":\"História / chefes\",\"objective\":\"Concluir a história e resolver troféus ligados a eventos, chefes ou ações específicas.\",\"actions\":[\"Termine a campanha principal.\",\"Revise troféus de história e eventos específicos.\",\"Faça troféus situacionais em mundo aberto.\",\"Evite misturar DLC, New Game+ ou Ultimate com a lista base.\"],\"warning\":\"\",\"result\":\"História concluída e pendências específicas reduzidas.\"}",
+      "step_order": 5
+    },
+    {
+      "content": "{\"title\":\"Faça a limpeza final da platina base\",\"focus\":\"Checklist final\",\"objective\":\"Conferir 100% dos distritos, trajes, upgrades, coletáveis e pendências restantes.\",\"actions\":[\"Revise todos os troféus pendentes.\",\"Confirme distritos, crimes, bases, desafios, mochilas, marcos, pesquisas, trajes e upgrades.\",\"Separe The City That Never Sleeps, New Game+, Ultimate e extras do Remastered como pacotes fora da platina base.\",\"Confirme que não há online, coop ou dificuldade obrigatória na platina base.\"],\"warning\":\"\",\"result\":\"Lista base concluída e guia pronto para platina.\"}",
+      "step_order": 6
+    }
+  ],
+  "schemaVersion": 1,
+  "seedExtras": {
+    "aliases": [],
+    "attentionPoints": [],
+    "checklist": [],
+    "faq": [],
+    "note": "Campos exportados para auditoria. O SQLite atual nao possui colunas nativas para todos esses extras; a importacao preserva o que o banco suporta.",
+    "quickDecision": null,
+    "seo": {},
+    "tags": []
+  },
+  "slug": "marvels-spider-man",
+  "trophies": [
+    {
+      "description": "Conquiste todos os troféus da lista base.",
+      "is_missable": 0,
+      "is_spoiler": 0,
+      "name": "Be Greater",
+      "name_pt": "Seja Maior",
+      "tip": "Conclua os outros 50 troféus da lista base. DLC, New Game+ e extras do Remastered não entram nesta platina.",
+      "trophy_code": "msm_be_greater",
+      "type": "Platina"
+    },
+    {
+      "description": "Desbloqueie todas as habilidades.",
+      "is_missable": 0,
+      "is_spoiler": 0,
+      "name": "Superior Spider-Man",
+      "name_pt": "Homem-Aranha Superior",
+      "tip": "Chegue ao nível máximo e compre todas as habilidades. Atividades de mapa e campanha fornecem XP suficiente ao longo da rota.",
+      "trophy_code": "msm_superior_spider_man",
+      "type": "Ouro"
+    },
+    {
+      "description": "Alcance 100% de conclusão em todos os distritos.",
+      "is_missable": 0,
+      "is_spoiler": 0,
+      "name": "I Heart Manhattan",
+      "name_pt": "Eu Amo Manhattan",
+      "tip": "Feche distritos pelo mapa: crimes, bases, desafios, mochilas, marcos, pesquisas e atividades regionais. Pode ficar para o pós-jogo.",
+      "trophy_code": "msm_i_heart_manhattan",
+      "type": "Ouro"
+    },
+    {
+      "description": "Derrote o Taskmaster.",
+      "is_missable": 0,
+      "is_spoiler": 1,
+      "name": "Master of Masters",
+      "name_pt": "Mestre dos Mestres",
+      "tip": "Complete a cadeia de desafios do Taskmaster e vença o confronto final. Deixe para quando estiver confortável com combate e gadgets.",
+      "trophy_code": "msm_master_of_masters",
+      "type": "Prata"
+    },
+    {
+      "description": "Colete todas as mochilas.",
+      "is_missable": 0,
+      "is_spoiler": 0,
+      "name": "Backpacker",
+      "name_pt": "Mochileiro",
+      "tip": "Ative torres e siga o mapa para coletar todas as mochilas por distrito.",
+      "trophy_code": "msm_backpacker",
+      "type": "Prata"
+    },
+    {
+      "description": "Rastreie a Black Cat.",
+      "is_missable": 0,
+      "is_spoiler": 0,
+      "name": "Cat Prints",
+      "name_pt": "Pegadas da Gata",
+      "tip": "Complete todos os Black Cat Stakeouts revelados no mapa.",
+      "trophy_code": "msm_cat_prints",
+      "type": "Prata"
+    },
+    {
+      "description": "Elimine todos os Demon Warehouses.",
+      "is_missable": 0,
+      "is_spoiler": 0,
+      "name": "Inner Sanctuary",
+      "name_pt": "Santuário Interior",
+      "tip": "Conclua todos os Demon Warehouses quando esse tipo de base aparecer na campanha.",
+      "trophy_code": "msm_inner_sanctuary",
+      "type": "Prata"
+    },
+    {
+      "description": "Elimine todos os Fisk Hideouts.",
+      "is_missable": 0,
+      "is_spoiler": 0,
+      "name": "All the King's Men",
+      "name_pt": "Todos os Homens do Rei",
+      "tip": "Limpe todos os Fisk Hideouts e faça objetivos bônus se precisar de mais tokens.",
+      "trophy_code": "msm_all_the_kings_men",
+      "type": "Prata"
+    },
+    {
+      "description": "Elimine todos os Sable Outposts.",
+      "is_missable": 0,
+      "is_spoiler": 0,
+      "name": "Mercenary Tactics",
+      "name_pt": "Táticas Mercenárias",
+      "tip": "Conclua todos os Sable Outposts liberados na reta avançada da campanha.",
+      "trophy_code": "msm_mercenary_tactics",
+      "type": "Prata"
+    },
+    {
+      "description": "Elimine todos os Prisoner Camps.",
+      "is_missable": 0,
+      "is_spoiler": 0,
+      "name": "Back in the Slammer",
+      "name_pt": "De Volta à Prisão",
+      "tip": "Limpe todos os Prisoner Camps quando eles surgirem no mapa.",
+      "trophy_code": "msm_back_in_the_slammer",
+      "type": "Prata"
+    },
+    {
+      "description": "Conclua todos os crimes de facção em um distrito.",
+      "is_missable": 0,
+      "is_spoiler": 0,
+      "name": "Neighborhood Watch",
+      "name_pt": "Vigilância de Bairro",
+      "tip": "Escolha um distrito e conclua todos os crimes de facção listados nele. Crimes restantes podem ser limpos depois da campanha.",
+      "trophy_code": "msm_neighborhood_watch",
+      "type": "Prata"
+    },
+    {
+      "description": "Compre todos os trajes.",
+      "is_missable": 0,
+      "is_spoiler": 0,
+      "name": "A Suit For All Seasons",
+      "name_pt": "Um Traje para Todas as Estações",
+      "tip": "Guarde tokens suficientes para comprar os trajes exigidos antes de gastar demais em upgrades.",
+      "trophy_code": "msm_a_suit_for_all_seasons",
+      "type": "Prata"
+    },
+    {
+      "description": "Conclua todas as missões dos estudantes corrompidos.",
+      "is_missable": 0,
+      "is_spoiler": 0,
+      "name": "Schooled",
+      "name_pt": "Lição Dada",
+      "tip": "Conclua a sequência de missões secundárias dos estudantes corrompidos quando ficar disponível.",
+      "trophy_code": "msm_schooled",
+      "type": "Prata"
+    },
+    {
+      "description": "Ative todas as torres de vigilância.",
+      "is_missable": 0,
+      "is_spoiler": 0,
+      "name": "Amazing Coverage",
+      "name_pt": "Cobertura Espetacular",
+      "tip": "Ative todas as torres para revelar atividades e coletáveis por distrito.",
+      "trophy_code": "msm_amazing_coverage",
+      "type": "Bronze"
+    },
+    {
+      "description": "Consiga Spectacular ou melhor em um desafio de bomba do Taskmaster.",
+      "is_missable": 0,
+      "is_spoiler": 0,
+      "name": "Short Fuse",
+      "name_pt": "Pavio Curto",
+      "tip": "Otimize a rota de balanço e mire em Spectacular em um desafio de bomba.",
+      "trophy_code": "msm_short_fuse",
+      "type": "Bronze"
+    },
+    {
+      "description": "Consiga Spectacular ou melhor em um desafio de combate do Taskmaster.",
+      "is_missable": 0,
+      "is_spoiler": 0,
+      "name": "Fists of Fury",
+      "name_pt": "Punhos de Fúria",
+      "tip": "Use finalizações, gadgets e multiplicador alto para pontuar em um desafio de combate.",
+      "trophy_code": "msm_fists_of_fury",
+      "type": "Bronze"
+    },
+    {
+      "description": "Consiga Spectacular ou melhor em um desafio de furtividade do Taskmaster.",
+      "is_missable": 0,
+      "is_spoiler": 0,
+      "name": "Ninja",
+      "name_pt": "Ninja",
+      "tip": "Memorize a rota e faça quedas rápidas sem alertar inimigos.",
+      "trophy_code": "msm_ninja",
+      "type": "Bronze"
+    },
+    {
+      "description": "Consiga Spectacular ou melhor em um desafio de drone do Taskmaster.",
+      "is_missable": 0,
+      "is_spoiler": 0,
+      "name": "Spy Hunter",
+      "name_pt": "Caçador de Espiões",
+      "tip": "Siga os anéis com velocidade e use lançamentos pontuais para manter tempo baixo.",
+      "trophy_code": "msm_spy_hunter",
+      "type": "Bronze"
+    },
+    {
+      "description": "Conclua uma vez todos os desafios do Taskmaster na cidade.",
+      "is_missable": 0,
+      "is_spoiler": 0,
+      "name": "Challenge Finder",
+      "name_pt": "Caçador de Desafios",
+      "tip": "Faça todos os desafios do Taskmaster ao menos uma vez; medalhas melhores ajudam nos tokens.",
+      "trophy_code": "msm_challenge_finder",
+      "type": "Bronze"
+    },
+    {
+      "description": "Conclua todas as Research Stations.",
+      "is_missable": 0,
+      "is_spoiler": 0,
+      "name": "R&D",
+      "name_pt": "P&D",
+      "tip": "Conclua todas as Research Stations liberadas no mapa.",
+      "trophy_code": "msm_r_and_d",
+      "type": "Bronze"
+    },
+    {
+      "description": "Conclua o Ato 1.",
+      "is_missable": 0,
+      "is_spoiler": 1,
+      "name": "Demons Emerge",
+      "name_pt": "Demônios Surgem",
+      "tip": "Troféu de progresso da história; continue a campanha principal.",
+      "trophy_code": "msm_demons_emerge",
+      "type": "Bronze"
+    },
+    {
+      "description": "Conclua o Ato 2.",
+      "is_missable": 0,
+      "is_spoiler": 1,
+      "name": "The Six Assemble",
+      "name_pt": "Os Seis se Reúnem",
+      "tip": "Troféu de progresso de ato avançado da campanha.",
+      "trophy_code": "msm_the_six_assemble",
+      "type": "Bronze"
+    },
+    {
+      "description": "Conclua o Ato 3.",
+      "is_missable": 0,
+      "is_spoiler": 1,
+      "name": "End Game",
+      "name_pt": "Fim de Jogo",
+      "tip": "Troféu de conclusão da campanha principal.",
+      "trophy_code": "msm_end_game",
+      "type": "Bronze"
+    },
+    {
+      "description": "Crie 15 upgrades.",
+      "is_missable": 0,
+      "is_spoiler": 0,
+      "name": "Science FTW!",
+      "name_pt": "Ciência FTW!",
+      "tip": "Compre upgrades usando tokens de atividades; acompanhe o custo antes de comprar todos os trajes.",
+      "trophy_code": "msm_science_ftw",
+      "type": "Bronze"
+    },
+    {
+      "description": "Derrote Fisk.",
+      "is_missable": 0,
+      "is_spoiler": 1,
+      "name": "Knocking Down Kingpin",
+      "name_pt": "Derrubando o Rei do Crime",
+      "tip": "Troféu de chefe ligado à campanha principal.",
+      "trophy_code": "msm_knocking_down_kingpin",
+      "type": "Bronze"
+    },
+    {
+      "description": "Derrote Li.",
+      "is_missable": 0,
+      "is_spoiler": 1,
+      "name": "Staying Positive",
+      "name_pt": "Mantendo a Positividade",
+      "tip": "Troféu de chefe ligado a evento avançado da história.",
+      "trophy_code": "msm_staying_positive",
+      "type": "Bronze"
+    },
+    {
+      "description": "Derrote Electro e Vulture.",
+      "is_missable": 0,
+      "is_spoiler": 1,
+      "name": "Grounded",
+      "name_pt": "Aterrados",
+      "tip": "Troféu de chefe da reta final; prepare upgrades e gadgets.",
+      "trophy_code": "msm_grounded",
+      "type": "Bronze"
+    },
+    {
+      "description": "Derrote Scorpion e Rhino.",
+      "is_missable": 0,
+      "is_spoiler": 1,
+      "name": "Sting and Smash",
+      "name_pt": "Ferrão e Esmagamento",
+      "tip": "Troféu de chefe da reta final; controle arena e recursos.",
+      "trophy_code": "msm_sting_and_smash",
+      "type": "Bronze"
+    },
+    {
+      "description": "Derrote Tombstone.",
+      "is_missable": 0,
+      "is_spoiler": 1,
+      "name": "Tombstone Takedown",
+      "name_pt": "Queda do Tombstone",
+      "tip": "Conclua a cadeia de missões secundárias do Tombstone até o confronto.",
+      "trophy_code": "msm_tombstone_takedown",
+      "type": "Bronze"
+    },
+    {
+      "description": "Derrote Shocker.",
+      "is_missable": 0,
+      "is_spoiler": 1,
+      "name": "Shock and Awe",
+      "name_pt": "Choque e Pavor",
+      "tip": "Troféu de chefe ligado à campanha principal.",
+      "trophy_code": "msm_shock_and_awe",
+      "type": "Bronze"
+    },
+    {
+      "description": "Atravesse os telhados da cidade.",
+      "is_missable": 0,
+      "is_spoiler": 0,
+      "name": "Wing It",
+      "name_pt": "Improvisando nas Alturas",
+      "tip": "Continue se deslocando pelos telhados; tende a vir naturalmente durante a exploração.",
+      "trophy_code": "msm_wing_it",
+      "type": "Bronze"
+    },
+    {
+      "description": "Conclua um benchmark de travessia nível 1.",
+      "is_missable": 0,
+      "is_spoiler": 0,
+      "name": "King of Swing",
+      "name_pt": "Rei do Balanço",
+      "tip": "Faça qualquer benchmark de travessia nível 1 no menu de benchmarks.",
+      "trophy_code": "msm_king_of_swing",
+      "type": "Bronze"
+    },
+    {
+      "description": "Conclua um benchmark de combate nível 1.",
+      "is_missable": 0,
+      "is_spoiler": 0,
+      "name": "And Stay Down!",
+      "name_pt": "E Fique no Chão!",
+      "tip": "Conclua qualquer benchmark de combate nível 1 durante encontros ou bases.",
+      "trophy_code": "msm_and_stay_down",
+      "type": "Bronze"
+    },
+    {
+      "description": "Capture todos os pombos do Howard.",
+      "is_missable": 0,
+      "is_spoiler": 0,
+      "name": "Pigeon Hunter",
+      "name_pt": "Caçador de Pombos",
+      "tip": "Depois da missão secundária inicial de Howard, siga os ícones de pombos no mapa.",
+      "trophy_code": "msm_pigeon_hunter",
+      "type": "Bronze"
+    },
+    {
+      "description": "Junte 10 pares de inimigos usando Trip Mines.",
+      "is_missable": 0,
+      "is_spoiler": 0,
+      "name": "Hug It Out",
+      "name_pt": "Abraço Explosivo",
+      "tip": "Use Trip Mines em bases com grupos próximos para puxar pares de inimigos.",
+      "trophy_code": "msm_hug_it_out",
+      "type": "Bronze"
+    },
+    {
+      "description": "Conclua todas as missões secundárias.",
+      "is_missable": 0,
+      "is_spoiler": 0,
+      "name": "Friendly Neighborhood Spider-Man",
+      "name_pt": "Amigo da Vizinhança",
+      "tip": "Conclua todas as missões secundárias marcadas no mapa; nenhuma é perdível.",
+      "trophy_code": "msm_friendly_neighborhood_spider_man",
+      "type": "Bronze"
+    },
+    {
+      "description": "Crie seu primeiro upgrade.",
+      "is_missable": 0,
+      "is_spoiler": 0,
+      "name": "The Scientific Method",
+      "name_pt": "O Método Científico",
+      "tip": "Compre qualquer primeiro upgrade quando o sistema ficar disponível.",
+      "trophy_code": "msm_the_scientific_method",
+      "type": "Bronze"
+    },
+    {
+      "description": "Faça 10 Perfect Dodges.",
+      "is_missable": 0,
+      "is_spoiler": 0,
+      "name": "Spider-Sensible",
+      "name_pt": "Sentido-Aranha Apurado",
+      "tip": "Esquive no último instante quando o alerta ficar azul/branco para acumular Perfect Dodges.",
+      "trophy_code": "msm_spider_sensible",
+      "type": "Bronze"
+    },
+    {
+      "description": "Faça 10 Vehicle Takedowns.",
+      "is_missable": 0,
+      "is_spoiler": 0,
+      "name": "Overdrive",
+      "name_pt": "Sobrecarga",
+      "tip": "Faça perseguições de crimes de veículo e conclua dez takedowns.",
+      "trophy_code": "msm_overdrive",
+      "type": "Bronze"
+    },
+    {
+      "description": "Preste respeito no túmulo de Ben Parker.",
+      "is_missable": 0,
+      "is_spoiler": 0,
+      "name": "With Great Power...",
+      "name_pt": "Com Grandes Poderes...",
+      "tip": "Visite o cemitério no noroeste do mapa e interaja com o túmulo de Ben Parker.",
+      "trophy_code": "msm_with_great_power",
+      "type": "Bronze"
+    },
+    {
+      "description": "Pouse no topo da Avengers Tower.",
+      "is_missable": 0,
+      "is_spoiler": 0,
+      "name": "Hero for Higher",
+      "name_pt": "Herói nas Alturas",
+      "tip": "Suba ao topo da Avengers Tower e pouse na ponta mais alta.",
+      "trophy_code": "msm_hero_for_higher",
+      "type": "Bronze"
+    },
+    {
+      "description": "Fotografe todos os marcos no mapa.",
+      "is_missable": 0,
+      "is_spoiler": 0,
+      "name": "Sightseeing",
+      "name_pt": "Passeio Turístico",
+      "tip": "Fotografe todos os marcos revelados no mapa após ativar torres.",
+      "trophy_code": "msm_sightseeing",
+      "type": "Bronze"
+    },
+    {
+      "description": "Use o metrô 5 vezes.",
+      "is_missable": 0,
+      "is_spoiler": 0,
+      "name": "Born to Ride",
+      "name_pt": "Nascido para Viajar",
+      "tip": "Use fast travel cinco vezes; pode repetir o mesmo ponto se quiser limpar rápido.",
+      "trophy_code": "msm_born_to_ride",
+      "type": "Bronze"
+    },
+    {
+      "description": "Faça uma sequência de 4 manobras diferentes antes de pousar.",
+      "is_missable": 0,
+      "is_spoiler": 0,
+      "name": "Sticky and Tricky",
+      "name_pt": "Grudento e Estiloso",
+      "tip": "Durante uma queda longa, segure o comando de tricks e alterne quatro manobras antes de pousar.",
+      "trophy_code": "msm_sticky_and_tricky",
+      "type": "Bronze"
+    },
+    {
+      "description": "Use 5 Spider-Suits novos.",
+      "is_missable": 0,
+      "is_spoiler": 0,
+      "name": "Snappy Dresser",
+      "name_pt": "Bem Vestido",
+      "tip": "Equipe cinco trajes diferentes após comprá-los ou desbloqueá-los.",
+      "trophy_code": "msm_snappy_dresser",
+      "type": "Bronze"
+    },
+    {
+      "description": "Faça 75 Stealth Takedowns.",
+      "is_missable": 0,
+      "is_spoiler": 0,
+      "name": "Arachnophobia",
+      "name_pt": "Aracnofobia",
+      "tip": "Use encontros e bases para acumular takedowns furtivos de poleiro, parede ou aproximação.",
+      "trophy_code": "msm_arachnophobia",
+      "type": "Bronze"
+    },
+    {
+      "description": "Colete 5 mochilas.",
+      "is_missable": 0,
+      "is_spoiler": 0,
+      "name": "Lost and Found",
+      "name_pt": "Achados e Perdidos",
+      "tip": "Colete as primeiras cinco mochilas reveladas no mapa.",
+      "trophy_code": "msm_lost_and_found",
+      "type": "Bronze"
+    },
+    {
+      "description": "Cumprimente 10 cidadãos.",
+      "is_missable": 0,
+      "is_spoiler": 0,
+      "name": "Spider-Man About Town",
+      "name_pt": "Homem-Aranha pela Cidade",
+      "tip": "Ande pela rua e cumprimente dez civis quando o prompt aparecer.",
+      "trophy_code": "msm_spider_man_about_town",
+      "type": "Bronze"
+    },
+    {
+      "description": "Colete um item da Black Cat.",
+      "is_missable": 0,
+      "is_spoiler": 0,
+      "name": "Cat's Out of the Bag",
+      "name_pt": "A Gata Saiu do Saco",
+      "tip": "Pegue o primeiro colecionável da Black Cat durante a missão inicial de stakeout.",
+      "trophy_code": "msm_cats_out_of_the_bag",
+      "type": "Bronze"
+    },
+    {
+      "description": "Conclua todos os projetos opcionais no laboratório.",
+      "is_missable": 0,
+      "is_spoiler": 0,
+      "name": "A Bit of a Fixer-Upper",
+      "name_pt": "Uma Pequena Reforma",
+      "tip": "Volte ao laboratório no free roam e conclua todos os puzzles opcionais liberados.",
+      "trophy_code": "msm_a_bit_of_a_fixer_upper",
+      "type": "Bronze"
+    },
+    {
+      "description": "Conclua todos os objetivos em uma base.",
+      "is_missable": 0,
+      "is_spoiler": 0,
+      "name": "Ace the Base",
+      "name_pt": "Base Impecável",
+      "tip": "Escolha uma base com objetivos bônus fáceis e cumpra todos antes de finalizar o encontro.",
+      "trophy_code": "msm_ace_the_base",
+      "type": "Bronze"
+    }
+  ]
+}

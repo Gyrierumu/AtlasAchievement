@@ -1,0 +1,378 @@
+{
+  "game": {
+    "avoid_if": "Evite se você não gosta de seguir checklist de coletáveis e interações opcionais durante campanha narrativa.",
+    "before_you_start": "A platina não exige dificuldade alta nem multiplayer, mas exige atenção a coletáveis, conversas opcionais, piadas da Ellie, portas com faca, cofres, ferramentas, manuais e troféus situacionais. Não misture com Remastered, Part II ou Part II Remastered.",
+    "best_for": "Ideal para quem quer uma platina narrativa, sem online, com foco em exploração cuidadosa e checklist de coletáveis.",
+    "cleanup_advice": "Use seleção de capítulos para limpar coletáveis, conversas, piadas, cofres, ferramentas, portas com faca e ações específicas restantes.",
+    "cover_image": "https://cdn.cloudflare.steamstatic.com/steam/apps/1888930/library_600x900.jpg",
+    "coverage_level": "strong",
+    "created_at": "2026-05-09 19:53:31",
+    "difficulty": 3,
+    "difficulty_reason": "A platina é acessível porque não exige multiplayer, coop, dificuldade alta, Survivor/Grounded ou New Game+. A atenção maior está em coletáveis, interações e ações situacionais.",
+    "dlc_scope": "Left Behind incluso na lista base. O conteúdo integra o pacote e a lista de 29 troféus de The Last of Us Part I; não trate como DLC paga separada obrigatória e não use a lista de The Last of Us Remastered.",
+    "editorial_notes": "Guia revisado editorialmente para a lista base. Nomes oficiais em inglês preservados; descrições públicas em português. Left Behind tratado como parte da lista base de 29 troféus.",
+    "editorial_review_status": "verified",
+    "editorial_status": "published",
+    "first_run_advice": "Jogue a campanha coletando o máximo possível e salve o cleanup de coletáveis, conversas e situacionais para a seleção de capítulos.",
+    "grind_summary": "O peso está em coletáveis, conversas opcionais, piadas da Ellie, portas com shiv, safes, ferramentas, manuais, crafting, upgrades e ações situacionais, não em grind repetitivo.",
+    "guide_avoid": null,
+    "guide_best_moment": null,
+    "guide_dlc": null,
+    "guide_grind": null,
+    "guide_ideal": null,
+    "guide_online": null,
+    "guide_runs": null,
+    "image": "https://cdn.cloudflare.steamstatic.com/steam/apps/1888930/header.jpg",
+    "is_verified": 1,
+    "last_reviewed_at": "",
+    "missable": "Sem perdíveis definitivos: a seleção de capítulos permite cleanup de coletáveis, conversas opcionais, piadas da Ellie, portas com shiv, safes, bancadas, ferramentas e ações situacionais. Esses objetivos podem passar batido durante uma jogada, mas não devem ser tratados como perda permanente.",
+    "missable_summary": "Sem perdíveis definitivos; use Chapter Select para cleanup de coletáveis, conversas, piadas e troféus situacionais.",
+    "name": "The Last of Us Part I",
+    "online_summary": "Não há exigência online, multiplayer ou PS+ para a platina de The Last of Us Part I. Também não há coop obrigatório.",
+    "quality_warnings": "[]",
+    "reviewed_by": "",
+    "runs_summary": "1 campanha principal + Left Behind + cleanup por seleção de capítulos.",
+    "slug": "the-last-of-us-part-i",
+    "time": "20-30h",
+    "time_bucket": "medium",
+    "time_max_hours": 30,
+    "time_min_hours": 20,
+    "time_reason": "A faixa de 20-30 horas considera campanha, coletáveis, upgrades, Left Behind integrado e cleanup por capítulos.",
+    "time_sort_hours": 20,
+    "updated_at": "2026-06-27 02:36:59",
+    "verification_note": "Guia revisado editorialmente.",
+    "verification_status": "verified",
+    "walkthrough": null
+  },
+  "redirects": [],
+  "roadmaps": [
+    {
+      "content": "{\"title\":\"Complete a campanha coletando o máximo possível\",\"focus\":\"Campanha / exploração\",\"objective\":\"Finalizar a história principal enquanto já pega coletáveis, conversas opcionais, portas com shiv, safes e itens de progressão quando estiverem no caminho.\",\"actions\":[\"Jogue a campanha em qualquer dificuldade confortável.\",\"Explore ambientes antes de avançar para áreas sem volta.\",\"Pegue artefatos, pingentes dos Vagalumes, quadrinhos, manuais de treinamento e ferramentas sempre que possível.\",\"Abra portas com shiv e safes conforme encontrar combinações e recursos.\",\"Faça conversas opcionais e piadas da Ellie quando surgirem.\"],\"warning\":\"\",\"result\":\"História principal concluída e boa parte dos coletáveis já encaminhada.\"}",
+      "step_order": 1
+    },
+    {
+      "content": "{\"title\":\"Conclua Left Behind\",\"focus\":\"Left Behind / história\",\"objective\":\"Finalizar a campanha extra Left Behind e resolver os troféus próprios desse conteúdo incluído no Part I.\",\"actions\":[\"Conclua Left Behind depois da campanha principal ou quando preferir.\",\"Faça os troféus situacionais de Left Behind durante a jogada, se possível.\",\"Preste atenção em interações específicas, minigames e desafios próprios da Ellie.\",\"Use seleção de capítulos para corrigir qualquer pendência depois.\"],\"warning\":\"\",\"result\":\"Conteúdo de Left Behind concluído e lista base mais próxima da platina.\"}",
+      "step_order": 2
+    },
+    {
+      "content": "{\"title\":\"Faça cleanup de coletáveis por capítulo\",\"focus\":\"Coletáveis / Chapter Select\",\"objective\":\"Usar a seleção de capítulos para buscar tudo que ficou faltando sem reiniciar a campanha inteira.\",\"actions\":[\"Revise pingentes dos Vagalumes, artefatos, notas, quadrinhos, manuais de treinamento e ferramentas.\",\"Confira bancadas, cofres e portas com shiv.\",\"Limpe um capítulo por vez para evitar retrabalho.\",\"Use checklist para marcar exatamente o que falta.\"],\"warning\":\"\",\"result\":\"Coletáveis principais concluídos com menos repetição.\"}",
+      "step_order": 3
+    },
+    {
+      "content": "{\"title\":\"Complete conversas opcionais e piadas da Ellie\",\"focus\":\"Conversas / situacionais\",\"objective\":\"Finalizar interações específicas que dependem de momentos concretos da campanha.\",\"actions\":[\"Revise todas as conversas opcionais pendentes.\",\"Complete todas as piadas da Ellie nos capítulos corretos.\",\"Use Chapter Select para voltar aos pontos necessários.\",\"Evite avançar rápido demais quando houver área com diálogo opcional.\"],\"warning\":\"\",\"result\":\"Troféus de interação concluídos sem precisar refazer a campanha inteira.\"}",
+      "step_order": 4
+    },
+    {
+      "content": "{\"title\":\"Resolva troféus situacionais e de sistemas\",\"focus\":\"Situacionais / gameplay\",\"objective\":\"Fechar troféus ligados a crafting, upgrades, ações específicas, combate e momentos únicos.\",\"actions\":[\"Crie todos os tipos de item exigidos.\",\"Faça upgrades de armas e melee quando tiver recursos.\",\"Complete troféus situacionais como ações específicas em capítulos determinados.\",\"Use seleção de capítulos para repetir cenas ou encontros necessários.\"],\"warning\":\"\",\"result\":\"Pendências de gameplay e ações específicas resolvidas.\"}",
+      "step_order": 5
+    },
+    {
+      "content": "{\"title\":\"Revisão final da platina\",\"focus\":\"Checklist final\",\"objective\":\"Conferir campanha, Left Behind, coletáveis, conversas, piadas, safes, portas e situacionais antes da platina.\",\"actions\":[\"Revise o checklist completo da lista base.\",\"Confirme que não há troféus online ou coop obrigatórios.\",\"Confirme que dificuldade alta e New Game+ não foram tratados como obrigatórios.\",\"Finalize qualquer item restante por Chapter Select.\"],\"warning\":\"\",\"result\":\"Lista base concluída e platina pronta.\"}",
+      "step_order": 6
+    }
+  ],
+  "schemaVersion": 1,
+  "seedExtras": {
+    "aliases": [],
+    "attentionPoints": [],
+    "checklist": [],
+    "faq": [],
+    "note": "Campos exportados para auditoria. O SQLite atual nao possui colunas nativas para todos esses extras; a importacao preserva o que o banco suporta.",
+    "quickDecision": null,
+    "seo": {},
+    "tags": []
+  },
+  "slug": "the-last-of-us-part-i",
+  "trophies": [
+    {
+      "description": "Obtenha todos os outros troféus.",
+      "is_missable": 0,
+      "is_spoiler": 0,
+      "name": "It Can't Be For Nothing",
+      "name_pt": "Não pode ser em vão",
+      "tip": "Conclua todos os troféus da lista oficial de The Last of Us Part I.",
+      "trophy_code": "tlou1_it_cant_be_for_nothing",
+      "type": "Platina"
+    },
+    {
+      "description": "Conclua a campanha principal.",
+      "is_missable": 0,
+      "is_spoiler": 1,
+      "name": "No Matter What",
+      "name_pt": "Não Importa Como",
+      "tip": "Conclua a campanha principal no modo que preferir.",
+      "trophy_code": "tlou1_no_matter_what",
+      "type": "Ouro"
+    },
+    {
+      "description": "Conclua Left Behind.",
+      "is_missable": 0,
+      "is_spoiler": 1,
+      "name": "Don't Go",
+      "name_pt": "Não Vá",
+      "tip": "Conclua Left Behind, que faz parte da lista oficial de Part I.",
+      "trophy_code": "tlou1_dont_go",
+      "type": "Ouro"
+    },
+    {
+      "description": "Encontre todos os pingentes dos Vagalumes.",
+      "is_missable": 0,
+      "is_spoiler": 0,
+      "name": "Look for the Light",
+      "name_pt": "Procure a Luz",
+      "tip": "Colete todos os pingentes dos Vagalumes da campanha principal.",
+      "trophy_code": "tlou1_look_for_the_light",
+      "type": "Ouro"
+    },
+    {
+      "description": "Colete todos os quadrinhos.",
+      "is_missable": 0,
+      "is_spoiler": 0,
+      "name": "Endure and Survive",
+      "name_pt": "Resistir e Sobreviver",
+      "tip": "Colete todos os quadrinhos Savage Starlight.",
+      "trophy_code": "tlou1_endure_and_survive",
+      "type": "Ouro"
+    },
+    {
+      "description": "Encontre todas as notas e artefatos.",
+      "is_missable": 0,
+      "is_spoiler": 0,
+      "name": "Chronicles",
+      "name_pt": "Crônicas",
+      "tip": "Colete todas as notas e artefatos da campanha e de Left Behind.",
+      "trophy_code": "tlou1_chronicles",
+      "type": "Ouro"
+    },
+    {
+      "description": "Participe de todas as conversas opcionais.",
+      "is_missable": 0,
+      "is_spoiler": 1,
+      "name": "Getting to Know You",
+      "name_pt": "Conhecendo Você Melhor",
+      "tip": "Acione todas as conversas opcionais; algumas exigem posicionamento e espera.",
+      "trophy_code": "tlou1_getting_to_know_you",
+      "type": "Ouro"
+    },
+    {
+      "description": "Ouça todas as piadas da Ellie.",
+      "is_missable": 0,
+      "is_spoiler": 1,
+      "name": "That's All I Got",
+      "name_pt": "É só isso que eu tenho",
+      "tip": "Acione todos os conjuntos de piadas da Ellie na campanha e em Left Behind.",
+      "trophy_code": "tlou1_thats_all_i_got",
+      "type": "Ouro"
+    },
+    {
+      "description": "Encontre todos os manuais de treinamento.",
+      "is_missable": 0,
+      "is_spoiler": 0,
+      "name": "Something to Fight For",
+      "name_pt": "Algo Pelo Qual Lutar",
+      "tip": "Colete todos os manuais de treinamento para completar essa linha de coletáveis.",
+      "trophy_code": "tlou1_something_to_fight_for",
+      "type": "Prata"
+    },
+    {
+      "description": "Melhore uma arma completamente.",
+      "is_missable": 0,
+      "is_spoiler": 0,
+      "name": "Combat Ready",
+      "name_pt": "De Prontidão para o Combate",
+      "tip": "Concentre peças em uma arma barata, como o revólver, para garantir o upgrade completo.",
+      "trophy_code": "tlou1_combat_ready",
+      "type": "Prata"
+    },
+    {
+      "description": "Abra todas as portas trancadas usando facas.",
+      "is_missable": 0,
+      "is_spoiler": 0,
+      "name": "Master of Unlocking",
+      "name_pt": "Mestre da Abertura",
+      "tip": "Abra todas as portas com faca; evite gastar facas em eliminações furtivas antes de conferir portas.",
+      "trophy_code": "tlou1_master_of_unlocking",
+      "type": "Prata"
+    },
+    {
+      "description": "Encontre todas as bancadas.",
+      "is_missable": 0,
+      "is_spoiler": 0,
+      "name": "Prepared For the Worst",
+      "name_pt": "Preparado para o Pior",
+      "tip": "Interaja com todas as bancadas da campanha principal.",
+      "trophy_code": "tlou1_prepared_for_the_worst",
+      "type": "Prata"
+    },
+    {
+      "description": "Abra todos os cofres.",
+      "is_missable": 0,
+      "is_spoiler": 0,
+      "name": "Sticky Fingers",
+      "name_pt": "Mãos Leves",
+      "tip": "Abra todos os cofres e pegue o conteúdo para registrar o progresso.",
+      "trophy_code": "tlou1_sticky_fingers",
+      "type": "Prata"
+    },
+    {
+      "description": "Encontre todas as ferramentas de bancada.",
+      "is_missable": 0,
+      "is_spoiler": 0,
+      "name": "Sharpest Tool in the Shed",
+      "name_pt": "Ferramenta Certa para o Trabalho",
+      "tip": "Colete todas as ferramentas vermelhas; elas não são rastreadas como outros coletáveis.",
+      "trophy_code": "tlou1_sharpest_tool_in_the_shed",
+      "type": "Prata"
+    },
+    {
+      "description": "Melhore e quebre uma arma corpo a corpo de cada tipo.",
+      "is_missable": 0,
+      "is_spoiler": 0,
+      "name": "Build Em Up, Break Em Down",
+      "name_pt": "Construção e Destruição",
+      "tip": "Melhore e quebre cada tipo de arma corpo a corpo; a seleção de encontros ajuda no cleanup.",
+      "trophy_code": "tlou1_build_em_up_break_em_down",
+      "type": "Prata"
+    },
+    {
+      "description": "Encontre um pingente dos Vagalumes.",
+      "is_missable": 0,
+      "is_spoiler": 0,
+      "name": "Fallen Firefly",
+      "name_pt": "Vaga-lume Caído",
+      "tip": "Colete qualquer pingente dos Vagalumes.",
+      "trophy_code": "tlou1_fallen_firefly",
+      "type": "Bronze"
+    },
+    {
+      "description": "Encontre um manual de treinamento.",
+      "is_missable": 0,
+      "is_spoiler": 0,
+      "name": "Self-Help",
+      "name_pt": "Auto-ajuda",
+      "tip": "Colete qualquer manual de treinamento.",
+      "trophy_code": "tlou1_self_help",
+      "type": "Bronze"
+    },
+    {
+      "description": "Encontre um quadrinho.",
+      "is_missable": 0,
+      "is_spoiler": 0,
+      "name": "Savage Starlight Fan",
+      "name_pt": "Fã de Savage Starlight",
+      "tip": "Colete qualquer quadrinho Savage Starlight.",
+      "trophy_code": "tlou1_savage_starlight_fan",
+      "type": "Bronze"
+    },
+    {
+      "description": "Fabrique todos os tipos de item.",
+      "is_missable": 0,
+      "is_spoiler": 0,
+      "name": "Geared Up",
+      "name_pt": "Todo Equipado",
+      "tip": "Fabrique kit médico, molotov, shiv, melhoria corpo a corpo, bomba e bomba de fumaça.",
+      "trophy_code": "tlou1_geared_up",
+      "type": "Bronze"
+    },
+    {
+      "description": "Pegue a carta de Frank depois que ela for descartada.",
+      "is_missable": 0,
+      "is_spoiler": 1,
+      "name": "In Memoriam",
+      "name_pt": "Em Memória",
+      "tip": "Em Bill’s Town, entregue a carta a Bill e pegue-a novamente depois que ele a descartar.",
+      "trophy_code": "tlou1_in_memorium",
+      "type": "Bronze"
+    },
+    {
+      "description": "Em furtividade, desligue o gerador do holofote em Pittsburgh.",
+      "is_missable": 0,
+      "is_spoiler": 0,
+      "name": "Lights Out",
+      "name_pt": "Apagando as Luzes",
+      "tip": "No checkpoint de Pittsburgh, desligue o gerador furtivamente antes de ser detectado.",
+      "trophy_code": "tlou1_lights_out",
+      "type": "Bronze"
+    },
+    {
+      "description": "Ande na engenhoca dos esgotos com Henry e Sam.",
+      "is_missable": 0,
+      "is_spoiler": 1,
+      "name": "Waterlogged",
+      "name_pt": "Que Mergulho",
+      "tip": "Nos esgotos, suba na plataforma com Henry e Sam assim que ela começar a se mover.",
+      "trophy_code": "tlou1_waterlogged",
+      "type": "Bronze"
+    },
+    {
+      "description": "Deixe Ellie esperando depois de um trabalho bem feito.",
+      "is_missable": 0,
+      "is_spoiler": 1,
+      "name": "Left Hanging",
+      "name_pt": "No Vácuo",
+      "tip": "Em Tommy’s Dam, ignore o pedido de toque de mãos da Ellie.",
+      "trophy_code": "tlou1_left_hanging",
+      "type": "Bronze"
+    },
+    {
+      "description": "Faça carinho no cachorro Buckley.",
+      "is_missable": 0,
+      "is_spoiler": 0,
+      "name": "Who's A Good Boy?",
+      "name_pt": "Quem É um Bom Garoto?",
+      "tip": "Durante a visita à represa, interaja com Buckley.",
+      "trophy_code": "tlou1_whos_a_good_boy",
+      "type": "Bronze"
+    },
+    {
+      "description": "Jogue Jak X em Left Behind.",
+      "is_missable": 0,
+      "is_spoiler": 0,
+      "name": "Nobody's Perfect",
+      "name_pt": "Ninguém é perfeito",
+      "tip": "Em Left Behind, interaja com a máquina de Jak X no arcade antes de avançar.",
+      "trophy_code": "tlou1_nobodys_perfect",
+      "type": "Bronze"
+    },
+    {
+      "description": "Vença o concurso de arremesso de tijolos.",
+      "is_missable": 0,
+      "is_spoiler": 0,
+      "name": "Brick Master",
+      "name_pt": "Mestra dos Tijolos",
+      "tip": "Em Left Behind, vença Riley na disputa de tijolos.",
+      "trophy_code": "tlou1_brick_master",
+      "type": "Bronze"
+    },
+    {
+      "description": "Derrote Black Fang sem sofrer dano.",
+      "is_missable": 0,
+      "is_spoiler": 0,
+      "name": "Angel Knives",
+      "name_pt": "Angel Knives",
+      "tip": "Em Left Behind, vença o minigame The Turning sem errar a sequência.",
+      "trophy_code": "tlou1_angel_knives",
+      "type": "Bronze"
+    },
+    {
+      "description": "Vença a disputa com pistolas d’água.",
+      "is_missable": 0,
+      "is_spoiler": 0,
+      "name": "Skillz",
+      "name_pt": "Rápida no Gatilho",
+      "tip": "Em Left Behind, vença a disputa com pistolas d’água contra Riley.",
+      "trophy_code": "tlou1_skillz",
+      "type": "Bronze"
+    },
+    {
+      "description": "Use tijolos ou garrafas para atrair um infectado e fazê-lo atacar um humano.",
+      "is_missable": 0,
+      "is_spoiler": 1,
+      "name": "Live Bait",
+      "name_pt": "Isca Viva",
+      "tip": "Em Left Behind, use garrafas ou tijolos para iniciar conflito entre infectados e humanos.",
+      "trophy_code": "tlou1_live_bait",
+      "type": "Bronze"
+    }
+  ]
+}

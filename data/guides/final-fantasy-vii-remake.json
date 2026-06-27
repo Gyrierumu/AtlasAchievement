@@ -1,0 +1,845 @@
+{
+  "game": {
+    "avoid_if": "Evite se voce nao quer repetir capitulos, jogar no Hard Mode ou lidar com minigames e checklist de escolhas.",
+    "before_you_start": "Entenda que a platina exige Hard Mode completo e bastante chapter select; nada do DLC INTERmission/Yuffie entra na lista base.",
+    "best_for": "Ideal para quem quer uma platina JRPG/action RPG densa, com historia forte, builds e desafio real no Hard Mode.",
+    "cleanup_advice": "Use chapter select para limpar vestidos, minigames, music discs, Johnny incidents, enemy intel e preparar o Hard Mode.",
+    "cover_image": "https://cdn.cloudflare.steamstatic.com/steam/apps/1462040/library_600x900.jpg",
+    "coverage_level": "strong",
+    "created_at": "2026-05-09 19:53:39",
+    "difficulty": 6,
+    "difficulty_reason": "A dificuldade vem do Hard Mode, bosses opcionais, combat simulator, gestao de MP e preparacao de builds.",
+    "dlc_scope": "Guia focado na lista base da platina; INTERmission/Yuffie deve ficar separado se o projeto suportar DLC/add-ons. Nao use listas de Rebirth, Crisis Core ou Final Fantasy VII original.",
+    "editorial_notes": "",
+    "editorial_review_status": null,
+    "editorial_status": "published",
+    "first_run_advice": "Jogue a primeira campanha aproveitando a historia, mas acompanhe escolhas, side quests e colecionaveis se quiser reduzir cleanup.",
+    "grind_summary": "O peso esta em Hard Mode, chapter select, vestidos, side quests, music discs, minigames, enemy intel, combat simulator e trofeus especificos.",
+    "guide_avoid": null,
+    "guide_best_moment": null,
+    "guide_dlc": null,
+    "guide_grind": null,
+    "guide_ideal": null,
+    "guide_online": null,
+    "guide_runs": null,
+    "image": "https://image.api.playstation.com/vulcan/img/rnd/202010/0723/vDLeyNzrJdGwabFlEo44GkEZ.png",
+    "is_verified": 0,
+    "last_reviewed_at": "",
+    "missable": "Nao ha trofeus perdiveis definitivos: depois de concluir a campanha, chapter select permite refazer capitulos. A atencao fica em vestidos, side quests, minigames, Johnny incidents, music discs, enemy intel, materias, weapon abilities e simuladores.",
+    "missable_summary": "Nada e perdivel definitivo por causa do chapter select, mas escolhas e objetivos por capitulo podem gerar retrabalho se ignorados.",
+    "name": "Final Fantasy VII Remake",
+    "online_summary": "Nao ha exigencia online para a platina da lista base.",
+    "quality_warnings": "[]",
+    "reviewed_by": "",
+    "runs_summary": "Uma campanha inicial, cleanup por chapter select e uma passagem completa no Hard Mode. A platina exige planejamento de capitulos e builds.",
+    "slug": "final-fantasy-vii-remake",
+    "time": "60-80h",
+    "time_bucket": "long",
+    "time_max_hours": 80,
+    "time_min_hours": 60,
+    "time_reason": "A faixa de 60-80 horas considera campanha, chapter select, Hard Mode, coletaveis, minigames, combat simulator e cleanup.",
+    "time_sort_hours": 60,
+    "updated_at": "2026-06-27 02:36:58",
+    "verification_note": "Lista base de Final Fantasy VII Remake adicionada com checklist e roadmap completos, sem INTERmission/Yuffie; aguarda revisao editorial manual final.",
+    "verification_status": "review",
+    "walkthrough": null
+  },
+  "redirects": [],
+  "roadmaps": [
+    {
+      "content": "{\"title\":\"Avance pela campanha\",\"focus\":\"\",\"objective\":\"faca a primeira campanha em Normal ou Easy, aproveitando a historia e coletando o maximo possivel sem tratar nada como perdivel definitivo.\",\"actions\":[],\"warning\":\"\",\"result\":\"\"}",
+      "step_order": 1
+    },
+    {
+      "content": "{\"title\":\"controle side quests, escolhas e vestidos por capitulo para r...\",\"focus\":\"\",\"objective\":\"controle side quests, escolhas e vestidos por capitulo para reduzir retrabalho. Dressed to the Nines e Best in the Business dependem dessa organizacao.\",\"actions\":[],\"warning\":\"\",\"result\":\"\"}",
+      "step_order": 2
+    },
+    {
+      "content": "{\"title\":\"Limpe coletáveis por seleção de capítulos\",\"focus\":\"\",\"objective\":\"use chapter select para limpar minigames, music discs, Johnny incidents, vestidos, quests e trofeus especificos antes de concentrar tudo no Hard Mode.\",\"actions\":[],\"warning\":\"\",\"result\":\"\"}",
+      "step_order": 3
+    },
+    {
+      "content": "{\"title\":\"prepare builds, materias, weapon abilities, enemy intel, equi...\",\"focus\":\"\",\"objective\":\"prepare builds, materias, weapon abilities, enemy intel, equipamentos e manuscritos para o Hard Mode, onde MP e recursos importam muito mais.\",\"actions\":[],\"warning\":\"\",\"result\":\"\"}",
+      "step_order": 4
+    },
+    {
+      "content": "{\"title\":\"Prossiga pela rota planejada\",\"focus\":\"\",\"objective\":\"complete todos os capitulos no Hard Mode para Hardened Veteran. Esse modo so libera depois de terminar a campanha uma vez.\",\"actions\":[],\"warning\":\"\",\"result\":\"\"}",
+      "step_order": 5
+    },
+    {
+      "content": "{\"title\":\"Revise pendências finais\",\"focus\":\"\",\"objective\":\"finalize combat simulator, bosses opcionais como Pride and Joy, enemy skills, Malboro e qualquer cleanup restante. A lista base nao inclui INTERmission/Yuffie, Rebirth, Crisis Core ou Final Fantasy VII original.\",\"actions\":[],\"warning\":\"\",\"result\":\"\"}",
+      "step_order": 6
+    }
+  ],
+  "schemaVersion": 1,
+  "seedExtras": {
+    "aliases": [],
+    "attentionPoints": [
+      {
+        "detail": "Chapter Select libera após terminar a história. Use replay de capítulos para recuperar escolhas, side quests, vestidos, Johnny, discos, minigames e Enemy Skills.",
+        "tags": [
+          "Sem perdíveis",
+          "Chapter Select"
+        ],
+        "title": "Sem perdíveis permanentes"
+      },
+      {
+        "detail": "Hardened Veteran exige concluir todos os capítulos no Hard Mode, que só libera depois de terminar a campanha uma vez.",
+        "tags": [
+          "Hard Mode",
+          "Dificuldade"
+        ],
+        "title": "Hard Mode obrigatório"
+      },
+      {
+        "detail": "No Hard Mode, itens não podem ser usados. Prepare matérias, builds, habilidades de armas e controle de MP antes da passagem completa.",
+        "tags": [
+          "Hard Mode",
+          "MP"
+        ],
+        "title": "Hard Mode sem itens"
+      },
+      {
+        "detail": "Os 9 vestidos dependem de escolhas e side quests nos capítulos 3, 8 e 9. Use Chapter Select e registre cada vestido.",
+        "tags": [
+          "Vestidos",
+          "Replay"
+        ],
+        "title": "Dressed to the Nines"
+      },
+      {
+        "detail": "São 26 side quests no total, incluindo rotas alternativas do Capítulo 9. Não basta fazer só uma rota.",
+        "tags": [
+          "Side quests",
+          "Capítulo 9"
+        ],
+        "title": "Best in the Business"
+      },
+      {
+        "detail": "Os incidentes do Johnny dependem de ações específicas, especialmente no Capítulo 9. Use checklist por capítulo.",
+        "tags": [
+          "Johnny",
+          "Checklist"
+        ],
+        "title": "The Johnny Experience"
+      },
+      {
+        "detail": "Disc Jockey exige todos os 31 discos de música. Eles são recuperáveis por Chapter Select.",
+        "tags": [
+          "Discos",
+          "Coletável"
+        ],
+        "title": "Disc Jockey"
+      },
+      {
+        "detail": "Master of Mimicry exige Enemy Skill Materia equipada quando a habilidade for usada contra o personagem.",
+        "tags": [
+          "Enemy Skill",
+          "Materia"
+        ],
+        "title": "Enemy Skills"
+      },
+      {
+        "detail": "Intelligence Agent exige todos os relatórios do Chadley. Combine Assess, matérias, stagger, summons e cleanup de inimigos.",
+        "tags": [
+          "Battle Intel",
+          "Chadley"
+        ],
+        "title": "Battle Intel"
+      },
+      {
+        "detail": "Ultimate Weapon exige derrotar Pride and Joy Prototype no Shinra Combat Simulator. Não confundir com Pride and Joy Mk 0.5 da DLC.",
+        "tags": [
+          "Superboss",
+          "Simulador"
+        ],
+        "title": "Pride and Joy"
+      },
+      {
+        "detail": "Pull-ups, dança, dardos, moto e Whack-a-Box podem exigir repetição, mas são recuperáveis por Chapter Select.",
+        "tags": [
+          "Minigames",
+          "Cleanup"
+        ],
+        "title": "Minigames"
+      },
+      {
+        "detail": "INTERmission/Yuffie adiciona 9 troféus extras em Intergrade, mas não é necessário para Master of Fate. Em versões modernas, Streamlined Progression só entra como rota assistida se a versão-alvo tiver o recurso e se ele não bloquear troféus.",
+        "tags": [
+          "DLC",
+          "INTERmission"
+        ],
+        "title": "INTERmission separado"
+      }
+    ],
+    "checklist": [
+      "Conferir se o guia tem 54 troféus base.",
+      "Conferir se Master of Fate é a platina.",
+      "Conferir distribuição: 1 platina, 2 ouro, 7 prata e 44 bronze.",
+      "Conferir se INTERmission não foi misturado aos 54 troféus base.",
+      "Conferir se lista total/100% aparece como 63 apenas quando INTERmission está incluído.",
+      "Conferir onlineRequired false, coopRequired false e dlcRequired false.",
+      "Conferir filtro Online 0, Coop 0 e DLC 0 nos troféus base.",
+      "Conferir hasMissables false e missableCount 0.",
+      "Conferir filtro Dificuldade 1 por Hardened Veteran.",
+      "Conferir Hardened Veteran como Hard Mode/Chapter Select.",
+      "Conferir Ultimate Weapon como Pride and Joy Prototype, não DLC.",
+      "Conferir Best in the Business como 26 side quests.",
+      "Conferir Dressed to the Nines como 9 vestidos.",
+      "Conferir Disc Jockey como 31 discos.",
+      "Conferir The Johnny Experience.",
+      "Conferir Master of Mimicry/Enemy Skills.",
+      "Conferir Intelligence Agent/Battle Intel Reports.",
+      "Conferir Weapons Expert/habilidades de armas.",
+      "Conferir Building Character como nível 50.",
+      "Conferir minigames: dardos, dança, agachamento, pull-ups, moto e caixas.",
+      "Conferir Hard Mode sem itens.",
+      "Conferir Chapter Select explicado.",
+      "Conferir manuscritos como ajuda, não troféu direto.",
+      "Conferir INTERmission separado com 9 troféus, se existir.",
+      "Conferir Streamlined Progression apenas se aplicável à versão do guia.",
+      "Conferir se todos os troféus têm nome oficial em inglês como principal.",
+      "Conferir se todos têm PT-BR abaixo.",
+      "Conferir se descrições estão em português.",
+      "Conferir se textos em português têm acentos.",
+      "Conferir se não aparecem rótulos antigos de nome original nem placeholders editoriais.",
+      "Conferir se roadmap está estruturado como array/objeto.",
+      "Conferir se roadmap não renderiza objetos crus.",
+      "Conferir se não aparecem nomes técnicos de campos do roadmap no front.",
+      "Conferir FAQ, decisão rápida, SEO e pontos de atenção.",
+      "Conferir se página individual e catálogo exibem o mesmo status editorial.",
+      "Conferir se flags do topo batem com filtros do catálogo."
+    ],
+    "faq": [
+      {
+        "answer": "Não há perdíveis permanentes na platina base, porque Chapter Select libera após terminar a história. Alguns troféus exigem replay de capítulos e escolhas específicas.",
+        "question": "Final Fantasy VII Remake tem troféus perdíveis?"
+      },
+      {
+        "answer": "Não. A platina base é totalmente single-player e nenhum troféu exige cooperação.",
+        "question": "Precisa jogar online ou em cooperação?"
+      },
+      {
+        "answer": "Não. INTERmission/Yuffie adiciona 9 troféus extras em Intergrade, mas não é necessária para Master of Fate.",
+        "question": "Precisa de INTERmission para a platina?"
+      },
+      {
+        "answer": "No mínimo duas etapas: uma primeira run para terminar a história e liberar Chapter Select/Hard Mode, e uma segunda passagem pelos capítulos no Hard para Hardened Veteran.",
+        "question": "Quantas runs são necessárias?"
+      },
+      {
+        "answer": "Sim. Hardened Veteran exige concluir todos os capítulos no Hard Mode.",
+        "question": "A dificuldade afeta troféus?"
+      },
+      {
+        "answer": "Não é possível usar itens, MP precisa ser preservado e builds/matérias são muito mais importantes.",
+        "question": "O que muda no Hard Mode?"
+      },
+      {
+        "answer": "Use Chapter Select e alterne escolhas/side quests nos capítulos 3, 8 e 9 para registrar todos os vestidos de Cloud, Tifa e Aerith.",
+        "question": "Como faço os 9 vestidos?"
+      },
+      {
+        "answer": "Exige completar todas as 26 side quests, incluindo as duas rotas alternativas do Capítulo 9.",
+        "question": "Best in the Business exige o quê?"
+      },
+      {
+        "answer": "Não. Ultimate Weapon da platina base exige derrotar Pride and Joy Prototype. Ultimate Weapon 2.0 é da DLC INTERmission e fica separado.",
+        "question": "Ultimate Weapon é da DLC?"
+      },
+      {
+        "answer": "Manuscritos ajudam muito no Hard Mode e nas builds, mas não são um troféu direto da lista base.",
+        "question": "Preciso pegar todos os manuscritos?"
+      },
+      {
+        "answer": "Somente em versões que tenham esse recurso e se ele não bloquear troféus. Trate como rota assistida/moderna, não como requisito obrigatório da platina tradicional.",
+        "question": "Streamlined Progression pode ser usado?"
+      },
+      {
+        "answer": "Em média, cerca de 60 a 80 horas, dependendo de minigames, Hard Mode, cleanup, builds e uso de recursos modernos de assistência quando disponíveis.",
+        "question": "Quanto tempo leva para platinar?"
+      }
+    ],
+    "note": "Campos exportados para auditoria. O SQLite atual nao possui colunas nativas para todos esses extras; a importacao preserva o que o banco suporta.",
+    "quickDecision": {
+      "difficulty": "Moderada a alta na rota tradicional, principalmente por Hard Mode, Pride and Joy e alguns minigames.",
+      "dlc": "INTERmission não é necessária para a platina base.",
+      "firstAction": "Comece pela campanha normal coletando discos, armas, matérias úteis e side quests, usando Assess nos inimigos.",
+      "mainRisk": "Hard Mode sem itens, 9 vestidos, 26 side quests, Enemy Skills, Battle Intel, Pride and Joy e minigames.",
+      "onlineCoop": "Não exige online nem cooperação.",
+      "risk": "Baixo em perda permanente, mas médio em retrabalho se o jogador não organizar Chapter Select.",
+      "time": "Longo, cerca de 60 a 80 horas.",
+      "verdict": "Sim. É uma platina longa e bem completa, ideal para quem gosta de RPG com checklist, replay de capítulos e desafio no Hard."
+    },
+    "seo": {
+      "description": "Guia de troféus de Final Fantasy VII Remake com roadmap da platina, Hard Mode, 9 vestidos, 26 side quests, Enemy Skills, Battle Intel, Pride and Joy, INTERmission separada e dicas para os 54 troféus base.",
+      "keywords": [
+        "Final Fantasy VII Remake troféus",
+        "Final Fantasy VII Remake platina",
+        "guia Final Fantasy VII Remake",
+        "FF7 Remake troféus",
+        "FFVII Remake platina",
+        "Master of Fate",
+        "Mestre do destino",
+        "Hardened Veteran",
+        "Veterano calejado",
+        "Dressed to the Nines",
+        "Best in the Business",
+        "The Johnny Experience",
+        "Ultimate Weapon",
+        "Pride and Joy Prototype",
+        "INTERmission troféus",
+        "Yuffie DLC",
+        "Final Fantasy VII Remake Intergrade"
+      ],
+      "metaDescription": "Guia de troféus de Final Fantasy VII Remake com roadmap da platina, Hard Mode, 9 vestidos, 26 side quests, Enemy Skills, Battle Intel, Pride and Joy, INTERmission separada e dicas para os 54 troféus base.",
+      "ogDescription": "Roadmap PT-BR da platina de Final Fantasy VII Remake com 54 troféus base, sem online, sem coop, sem DLC obrigatória, Hard Mode, Chapter Select e INTERmission separada.",
+      "ogTitle": "Final Fantasy VII Remake: Guia de Troféus e Platina",
+      "title": "Final Fantasy VII Remake: Guia de Troféus e Platina"
+    },
+    "tags": []
+  },
+  "slug": "final-fantasy-vii-remake",
+  "trophies": [
+    {
+      "description": "Earn all FINAL FANTASY VII REMAKE trophies.",
+      "is_missable": 0,
+      "is_spoiler": 0,
+      "name": "Master of Fate",
+      "name_pt": "",
+      "tip": "Conclua os outros 53 trofeus da lista base. Nao inclua INTERmission/Yuffie, Rebirth, Crisis Core ou Final Fantasy VII original.",
+      "trophy_code": "ff7r_master_of_fate",
+      "type": "Platina"
+    },
+    {
+      "description": "Complete all chapters on Hard difficulty.",
+      "is_missable": 0,
+      "is_spoiler": 0,
+      "name": "Hardened Veteran",
+      "name_pt": "",
+      "tip": "Hard Mode libera apos terminar a campanha. Prepare materias, builds, weapon abilities e gestao de MP antes da passagem completa.",
+      "trophy_code": "ff7r_hardened_veteran",
+      "type": "Ouro"
+    },
+    {
+      "description": "Defeat the Pride and Joy prototype.",
+      "is_missable": 0,
+      "is_spoiler": 1,
+      "name": "Ultimate Weapon",
+      "name_pt": "",
+      "tip": "Chefe opcional avancado do combat simulator; normalmente exige preparacao forte e progresso profundo no cleanup.",
+      "trophy_code": "ff7r_ultimate_weapon",
+      "type": "Ouro"
+    },
+    {
+      "description": "Complete all quests.",
+      "is_missable": 0,
+      "is_spoiler": 0,
+      "name": "Best in the Business",
+      "name_pt": "",
+      "tip": "Complete todas as side quests. Chapter select permite refazer capitulos e caminhos diferentes para limpar o que faltar.",
+      "trophy_code": "ff7r_best_in_the_business",
+      "type": "Prata"
+    },
+    {
+      "description": "Obtain all nine bridal candidate outfits.",
+      "is_missable": 0,
+      "is_spoiler": 0,
+      "name": "Dressed to the Nines",
+      "name_pt": "",
+      "tip": "Exige controlar escolhas e side quests em capitulos especificos. Nao e perdivel definitivo por causa do chapter select.",
+      "trophy_code": "ff7r_dressed_to_the_nines",
+      "type": "Prata"
+    },
+    {
+      "description": "Collect all music discs.",
+      "is_missable": 0,
+      "is_spoiler": 0,
+      "name": "Disc Jockey",
+      "name_pt": "",
+      "tip": "Colete os 31 music discs. Use chapter select para retornar a vendedores, jukeboxes e NPCs que ficaram para tras.",
+      "trophy_code": "ff7r_disc_jockey",
+      "type": "Prata"
+    },
+    {
+      "description": "Complete all battle intel reports.",
+      "is_missable": 0,
+      "is_spoiler": 0,
+      "name": "Intelligence Agent",
+      "name_pt": "",
+      "tip": "Conclua todos os relatorios do Chadley; combine com Assess, materias e cleanup de inimigos.",
+      "trophy_code": "ff7r_intelligence_agent",
+      "type": "Prata"
+    },
+    {
+      "description": "Learn all weapon abilities.",
+      "is_missable": 0,
+      "is_spoiler": 0,
+      "name": "Weapons Expert",
+      "name_pt": "",
+      "tip": "Use cada arma ate dominar sua habilidade. Isso ajuda muito na preparacao do Hard Mode.",
+      "trophy_code": "ff7r_weapons_expert",
+      "type": "Prata"
+    },
+    {
+      "description": "Learn all enemy skills.",
+      "is_missable": 0,
+      "is_spoiler": 0,
+      "name": "Master of Mimicry",
+      "name_pt": "",
+      "tip": "Equipe Enemy Skill e aprenda todas as habilidades necessarias em lutas especificas e simuladores.",
+      "trophy_code": "ff7r_master_of_mimicry",
+      "type": "Prata"
+    },
+    {
+      "description": "Defeat a malboro.",
+      "is_missable": 0,
+      "is_spoiler": 1,
+      "name": "That's the Smell",
+      "name_pt": "",
+      "tip": "Encontro opcional avancado ligado ao combat simulator/Hard Mode. Prepare resistencias e cura.",
+      "trophy_code": "ff7r_thats_the_smell",
+      "type": "Prata"
+    },
+    {
+      "description": "Complete Chapter 1.",
+      "is_missable": 0,
+      "is_spoiler": 0,
+      "name": "Onetime Gig",
+      "name_pt": "",
+      "tip": "Trofeu automatico de progresso da historia.",
+      "trophy_code": "ff7r_onetime_gig",
+      "type": "Bronze"
+    },
+    {
+      "description": "Complete Chapter 2.",
+      "is_missable": 0,
+      "is_spoiler": 0,
+      "name": "Escape Artist",
+      "name_pt": "",
+      "tip": "Trofeu automatico de progresso da historia.",
+      "trophy_code": "ff7r_escape_artist",
+      "type": "Bronze"
+    },
+    {
+      "description": "Complete Chapter 3.",
+      "is_missable": 0,
+      "is_spoiler": 0,
+      "name": "Mercenary Endeavors",
+      "name_pt": "",
+      "tip": "Trofeu automatico de progresso da historia.",
+      "trophy_code": "ff7r_mercenary_endeavors",
+      "type": "Bronze"
+    },
+    {
+      "description": "Complete Chapter 4.",
+      "is_missable": 0,
+      "is_spoiler": 0,
+      "name": "Night on the Town",
+      "name_pt": "",
+      "tip": "Trofeu automatico de progresso da historia.",
+      "trophy_code": "ff7r_night_on_the_town",
+      "type": "Bronze"
+    },
+    {
+      "description": "Complete Chapter 5.",
+      "is_missable": 0,
+      "is_spoiler": 0,
+      "name": "Plan E",
+      "name_pt": "",
+      "tip": "Trofeu automatico de progresso da historia.",
+      "trophy_code": "ff7r_plan_e",
+      "type": "Bronze"
+    },
+    {
+      "description": "Complete Chapter 6.",
+      "is_missable": 0,
+      "is_spoiler": 0,
+      "name": "Lights Out",
+      "name_pt": "",
+      "tip": "Trofeu automatico de progresso da historia.",
+      "trophy_code": "ff7r_lights_out",
+      "type": "Bronze"
+    },
+    {
+      "description": "Complete Chapter 7.",
+      "is_missable": 0,
+      "is_spoiler": 0,
+      "name": "Trapped like Sewer Rats",
+      "name_pt": "",
+      "tip": "Trofeu automatico de progresso da historia.",
+      "trophy_code": "ff7r_trapped_like_sewer_rats",
+      "type": "Bronze"
+    },
+    {
+      "description": "Complete Chapter 8.",
+      "is_missable": 0,
+      "is_spoiler": 0,
+      "name": "Reunited",
+      "name_pt": "",
+      "tip": "Trofeu automatico de progresso da historia.",
+      "trophy_code": "ff7r_reunited",
+      "type": "Bronze"
+    },
+    {
+      "description": "Complete Chapter 9.",
+      "is_missable": 0,
+      "is_spoiler": 0,
+      "name": "Never the Bride",
+      "name_pt": "",
+      "tip": "Trofeu automatico de progresso da historia.",
+      "trophy_code": "ff7r_never_the_bride",
+      "type": "Bronze"
+    },
+    {
+      "description": "Complete Chapter 10.",
+      "is_missable": 0,
+      "is_spoiler": 0,
+      "name": "Sewer Survivor",
+      "name_pt": "",
+      "tip": "Trofeu automatico de progresso da historia.",
+      "trophy_code": "ff7r_sewer_survivor",
+      "type": "Bronze"
+    },
+    {
+      "description": "Complete Chapter 11.",
+      "is_missable": 0,
+      "is_spoiler": 0,
+      "name": "Paranormal Investigator",
+      "name_pt": "",
+      "tip": "Trofeu automatico de progresso da historia.",
+      "trophy_code": "ff7r_paranormal_investigator",
+      "type": "Bronze"
+    },
+    {
+      "description": "Complete Chapter 12.",
+      "is_missable": 0,
+      "is_spoiler": 1,
+      "name": "The Collapse",
+      "name_pt": "",
+      "tip": "Trofeu automatico de progresso da historia.",
+      "trophy_code": "ff7r_the_collapse",
+      "type": "Bronze"
+    },
+    {
+      "description": "Complete Chapter 13.",
+      "is_missable": 0,
+      "is_spoiler": 1,
+      "name": "Broken Dreams",
+      "name_pt": "",
+      "tip": "Trofeu automatico de progresso da historia.",
+      "trophy_code": "ff7r_broken_dreams",
+      "type": "Bronze"
+    },
+    {
+      "description": "Complete Chapter 14.",
+      "is_missable": 0,
+      "is_spoiler": 1,
+      "name": "Picking Up the Pieces",
+      "name_pt": "",
+      "tip": "Trofeu automatico de progresso da historia.",
+      "trophy_code": "ff7r_picking_up_the_pieces",
+      "type": "Bronze"
+    },
+    {
+      "description": "Complete Chapter 15.",
+      "is_missable": 0,
+      "is_spoiler": 1,
+      "name": "The Pizza in the Sky",
+      "name_pt": "",
+      "tip": "Trofeu automatico de progresso da historia.",
+      "trophy_code": "ff7r_the_pizza_in_the_sky",
+      "type": "Bronze"
+    },
+    {
+      "description": "Complete Chapter 16.",
+      "is_missable": 0,
+      "is_spoiler": 1,
+      "name": "No Appointment Needed",
+      "name_pt": "",
+      "tip": "Trofeu automatico de progresso da historia.",
+      "trophy_code": "ff7r_no_appointment_needed",
+      "type": "Bronze"
+    },
+    {
+      "description": "Complete Chapter 17.",
+      "is_missable": 0,
+      "is_spoiler": 1,
+      "name": "Emerging from Chaos",
+      "name_pt": "",
+      "tip": "Trofeu automatico de progresso da historia.",
+      "trophy_code": "ff7r_emerging_from_chaos",
+      "type": "Bronze"
+    },
+    {
+      "description": "Complete Chapter 18.",
+      "is_missable": 0,
+      "is_spoiler": 1,
+      "name": "Destiny's Crossroads",
+      "name_pt": "",
+      "tip": "Trofeu automatico de conclusao da historia e liberacao do chapter select/Hard Mode.",
+      "trophy_code": "ff7r_destinys_crossroads",
+      "type": "Bronze"
+    },
+    {
+      "description": "Win a battle.",
+      "is_missable": 0,
+      "is_spoiler": 0,
+      "name": "Warming Up",
+      "name_pt": "",
+      "tip": "Vem naturalmente no inicio da campanha.",
+      "trophy_code": "ff7r_warming_up",
+      "type": "Bronze"
+    },
+    {
+      "description": "Exploit an enemy's weakness.",
+      "is_missable": 0,
+      "is_spoiler": 0,
+      "name": "Weakened Resolve",
+      "name_pt": "",
+      "tip": "Use magia/ataque elemental ou habilidade que explore a fraqueza indicada por Assess.",
+      "trophy_code": "ff7r_weakened_resolve",
+      "type": "Bronze"
+    },
+    {
+      "description": "Free a bound ally.",
+      "is_missable": 0,
+      "is_spoiler": 0,
+      "name": "Bonds of Friendship",
+      "name_pt": "",
+      "tip": "Ataque o inimigo ou mecanica que prendeu um aliado.",
+      "trophy_code": "ff7r_bonds_of_friendship",
+      "type": "Bronze"
+    },
+    {
+      "description": "Stagger an enemy.",
+      "is_missable": 0,
+      "is_spoiler": 0,
+      "name": "Staggering Start",
+      "name_pt": "",
+      "tip": "Use ataques e habilidades que aumentem a barra de stagger.",
+      "trophy_code": "ff7r_staggering_start",
+      "type": "Bronze"
+    },
+    {
+      "description": "Collect 3 music discs.",
+      "is_missable": 0,
+      "is_spoiler": 0,
+      "name": "Music Collector",
+      "name_pt": "",
+      "tip": "Primeiro marco de music discs; continue a colecao para Disc Jockey.",
+      "trophy_code": "ff7r_music_collector",
+      "type": "Bronze"
+    },
+    {
+      "description": "Complete a quest.",
+      "is_missable": 0,
+      "is_spoiler": 0,
+      "name": "Gotta Start Somewhere",
+      "name_pt": "",
+      "tip": "Complete qualquer side quest. Todas entram depois em Best in the Business.",
+      "trophy_code": "ff7r_gotta_start_somewhere",
+      "type": "Bronze"
+    },
+    {
+      "description": "Max out a weapon's proficiency.",
+      "is_missable": 0,
+      "is_spoiler": 0,
+      "name": "My First Ability",
+      "name_pt": "",
+      "tip": "Use uma arma ate dominar a habilidade dela.",
+      "trophy_code": "ff7r_my_first_ability",
+      "type": "Bronze"
+    },
+    {
+      "description": "Level up an orb of materia.",
+      "is_missable": 0,
+      "is_spoiler": 0,
+      "name": "Materia for Beginners",
+      "name_pt": "",
+      "tip": "Vem ao ganhar AP suficiente em qualquer materia que possa evoluir.",
+      "trophy_code": "ff7r_materia_for_beginners",
+      "type": "Bronze"
+    },
+    {
+      "description": "Invoke a summon.",
+      "is_missable": 0,
+      "is_spoiler": 0,
+      "name": "My First Summon",
+      "name_pt": "",
+      "tip": "Use uma summon quando o prompt aparecer em combate.",
+      "trophy_code": "ff7r_my_first_summon",
+      "type": "Bronze"
+    },
+    {
+      "description": "Get praised by Jessie at the end of the motorcycle mini-game.",
+      "is_missable": 0,
+      "is_spoiler": 0,
+      "name": "Biker Boy",
+      "name_pt": "",
+      "tip": "Minigame de moto com requisito de desempenho. Se passar batido, refaca pelo chapter select.",
+      "trophy_code": "ff7r_biker_boy",
+      "type": "Bronze"
+    },
+    {
+      "description": "Rise to the top of the Seventh Heaven darts leaderboard.",
+      "is_missable": 0,
+      "is_spoiler": 0,
+      "name": "Heavenly Dart Player",
+      "name_pt": "",
+      "tip": "Supere a pontuacao no darts. Chapter select permite nova tentativa.",
+      "trophy_code": "ff7r_heavenly_dart_player",
+      "type": "Bronze"
+    },
+    {
+      "description": "Obtain the Chocobo & Moogle materia.",
+      "is_missable": 0,
+      "is_spoiler": 0,
+      "name": "Cleanup Crew",
+      "name_pt": "",
+      "tip": "Pegue a materia opcional no capitulo com ventilacao. Volte por chapter select se necessario.",
+      "trophy_code": "ff7r_cleanup_crew",
+      "type": "Bronze"
+    },
+    {
+      "description": "Bypass the delta-level security lock in Mako Reactor 5.",
+      "is_missable": 0,
+      "is_spoiler": 0,
+      "name": "In Lockstep",
+      "name_pt": "",
+      "tip": "Complete a sequencia de alavancas no capitulo correspondente.",
+      "trophy_code": "ff7r_in_lockstep",
+      "type": "Bronze"
+    },
+    {
+      "description": "Complete all Normal difficulty Whack-a-Box challenges.",
+      "is_missable": 0,
+      "is_spoiler": 0,
+      "name": "Crate Annihilator",
+      "name_pt": "",
+      "tip": "Limpe os desafios Normal do Whack-a-Box. Use chapter select para repetir.",
+      "trophy_code": "ff7r_crate_annihilator",
+      "type": "Bronze"
+    },
+    {
+      "description": "Decorate the Leaf House with a floral arrangement.",
+      "is_missable": 0,
+      "is_spoiler": 0,
+      "name": "Say It with Flowers",
+      "name_pt": "",
+      "tip": "Evento de capitulo ligado a flores; vem ao seguir a sequencia correta da historia.",
+      "trophy_code": "ff7r_say_it_with_flowers",
+      "type": "Bronze"
+    },
+    {
+      "description": "Defeat a summon in battle.",
+      "is_missable": 0,
+      "is_spoiler": 0,
+      "name": "Summon Slayer",
+      "name_pt": "",
+      "tip": "Venca uma luta de summon VR do Chadley.",
+      "trophy_code": "ff7r_summon_slayer",
+      "type": "Bronze"
+    },
+    {
+      "description": "Complete all squat challenges.",
+      "is_missable": 0,
+      "is_spoiler": 0,
+      "name": "Sultan of Squat",
+      "name_pt": "",
+      "tip": "Complete todos os desafios de squat. Pode exigir repeticao para ritmo perfeito.",
+      "trophy_code": "ff7r_sultan_of_squat",
+      "type": "Bronze"
+    },
+    {
+      "description": "Received a gift from Andrea for being a dance superstar.",
+      "is_missable": 0,
+      "is_spoiler": 0,
+      "name": "Dancing Queen",
+      "name_pt": "",
+      "tip": "Minigame de danca com boa performance. Refaca via chapter select se nao atingir o resultado.",
+      "trophy_code": "ff7r_dancing_queen",
+      "type": "Bronze"
+    },
+    {
+      "description": "Emerge victorious from a colosseum sparring session.",
+      "is_missable": 0,
+      "is_spoiler": 0,
+      "name": "Returning Champion",
+      "name_pt": "",
+      "tip": "Venca uma sessao de sparring no colosseum.",
+      "trophy_code": "ff7r_returning_champion",
+      "type": "Bronze"
+    },
+    {
+      "description": "Obtain three bridal candidate outfits.",
+      "is_missable": 0,
+      "is_spoiler": 0,
+      "name": "Snappy Dresser",
+      "name_pt": "",
+      "tip": "Primeiro marco de vestidos; todos os nove sao exigidos para Dressed to the Nines.",
+      "trophy_code": "ff7r_snappy_dresser",
+      "type": "Bronze"
+    },
+    {
+      "description": "Complete all Hard difficulty Whack-a-Box challenges.",
+      "is_missable": 0,
+      "is_spoiler": 0,
+      "name": "Whack-a-Box Wunderkind",
+      "name_pt": "",
+      "tip": "Complete os desafios Hard do Whack-a-Box. Ajuste arma/habilidades e repita pelo chapter select.",
+      "trophy_code": "ff7r_whack_a_box_wunderkind",
+      "type": "Bronze"
+    },
+    {
+      "description": "Complete all pull-up challenges.",
+      "is_missable": 0,
+      "is_spoiler": 0,
+      "name": "Peeress of Pull-Ups",
+      "name_pt": "",
+      "tip": "Um dos minigames mais chatos da lista; exige ritmo e consistencia.",
+      "trophy_code": "ff7r_peeress_of_pull_ups",
+      "type": "Bronze"
+    },
+    {
+      "description": "Receive a letter from an angel.",
+      "is_missable": 0,
+      "is_spoiler": 0,
+      "name": "Divine Gratitude",
+      "name_pt": "",
+      "tip": "Complete todas as side quests elegiveis do capitulo antes de avancar. Chapter select resolve cleanup.",
+      "trophy_code": "ff7r_divine_gratitude",
+      "type": "Bronze"
+    },
+    {
+      "description": "Witness all Johnny-related incidents.",
+      "is_missable": 0,
+      "is_spoiler": 0,
+      "name": "The Johnny Experience",
+      "name_pt": "",
+      "tip": "Acompanhe os eventos do Johnny em capitulos especificos; chapter select permite corrigir o que faltar.",
+      "trophy_code": "ff7r_the_johnny_experience",
+      "type": "Bronze"
+    },
+    {
+      "description": "Deal 300% damage to a staggered enemy.",
+      "is_missable": 0,
+      "is_spoiler": 0,
+      "name": "Staggering Feat",
+      "name_pt": "",
+      "tip": "Use habilidades que aumentam multiplicador de stagger em inimigo com janela longa.",
+      "trophy_code": "ff7r_staggering_feat",
+      "type": "Bronze"
+    },
+    {
+      "description": "Stagger 40 types of enemy.",
+      "is_missable": 0,
+      "is_spoiler": 0,
+      "name": "Staggering Mastery",
+      "name_pt": "",
+      "tip": "Use Assess e jogue naturalmente, depois limpe tipos restantes por chapter select/simuladores.",
+      "trophy_code": "ff7r_staggering_mastery",
+      "type": "Bronze"
+    }
+  ]
+}

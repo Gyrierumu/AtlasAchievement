@@ -1,0 +1,723 @@
+{
+  "game": {
+    "avoid_if": "Evite se você quer uma platina rápida, direta, sem limpeza extensa ou totalmente desconectada de recursos sociais/online.",
+    "before_you_start": "Death Stranding 2: On the Beach é uma platina longa e organizada. Exige online assíncrono/social no guia, não exige coop direto, DLC, Deluxe Edition ou upgrade pago, e não deve ser misturada com Death Stranding 1.",
+    "best_for": "Recomendada para quem gosta de logística, mundo aberto, checklist, rotas de transporte, infraestrutura e tarefas de conexão.",
+    "cleanup_advice": "No pós-game, revise instalações, pedidos padrão por categoria, infraestrutura, likes, animais, fontes termais, eventos opcionais, chefes e carga acumulada pelo checklist.",
+    "cover_image": "https://image.api.playstation.com/vulcan/ap/rnd/202511/2114/99a635712c24abd2e1de07ec73a9737bc87685477f47f96d.jpg",
+    "coverage_level": "strong",
+    "created_at": "2026-05-09 19:53:37",
+    "difficulty": 3,
+    "difficulty_reason": "A dificuldade sugerida é 3/10: a execução é baixa/moderada, mas Seasoned Porter exige rank S em Casual ou superior e a platina cobra organização extensa.",
+    "dlc_scope": "Guia focado na lista base PS5 de Death Stranding 2: On the Beach. Digital Deluxe, upgrade pago, itens bônus, DLC futura, Death Stranding original e Director's Cut ficam fora do escopo.",
+    "editorial_notes": "Base editorial cruzada com lista PT-BR fornecida, página oficial PlayStation para PS5/PT-BR/1 jogador e PowerPyx para contagem, dificuldade, tempo e online estrito. O Atlas agrupa um conjunto mais amplo de troféus sociais/online no filtro do guia.",
+    "editorial_review_status": "in_review",
+    "editorial_status": "published",
+    "first_run_advice": "Jogue os episódios principais primeiro, liberando instalações, estruturas e rotas de transporte. Depois use o roadmap para fechar conexões, pedidos padrão com rank S, infraestrutura, troféus sociais/online e limpeza de objetivos opcionais.",
+    "grind_summary": "O maior peso está em conectar e maximizar instalações, completar pedidos padrão com rank S, restaurar infraestrutura, acumular likes, fechar eventos opcionais e concluir a limpeza de carga.",
+    "guide_avoid": null,
+    "guide_best_moment": null,
+    "guide_dlc": null,
+    "guide_grind": null,
+    "guide_ideal": null,
+    "guide_online": null,
+    "guide_runs": null,
+    "image": "https://image.api.playstation.com/vulcan/ap/rnd/202511/2115/1296d5a398d07e92de46e35e0131931c536b02b3793a4c41.jpg",
+    "is_verified": 0,
+    "last_reviewed_at": "2026-05-27",
+    "missable": "Não há troféus perdíveis confirmados na platina base. A limpeza pode ser planejada para o pós-game/free roam, sem marcar Homo Liberans como perdível.",
+    "missable_summary": "Sem perdíveis confirmados na lista base PS5. A platina Homo Liberans: The Savior of Humanity não conta como perdível.",
+    "name": "Death Stranding 2: On the Beach",
+    "online_summary": "Online obrigatório no guia por causa de troféus sociais/assíncronos de aid requests, sinais online, likes, apoio emergencial, troca social e Bridge Link. Não há coop direto obrigatório.",
+    "quality_warnings": "[]",
+    "reviewed_by": "AtlasAchievement Editorial",
+    "runs_summary": "Uma campanha longa com 16 episódios e limpeza livre depois da história, focada em conexões, pedidos padrão com rank S, infraestrutura, likes, eventos opcionais e troféus sociais/online.",
+    "slug": "death-stranding-2-on-the-beach",
+    "time": "70-100h",
+    "time_bucket": "long",
+    "time_max_hours": 100,
+    "time_min_hours": 70,
+    "time_reason": "A estimativa de 70-100h segue fonte externa atual e considera campanha, conexões, S-ranks, infraestrutura, likes, online social e limpeza opcional.",
+    "time_sort_hours": 70,
+    "updated_at": "2026-06-27 02:36:58",
+    "verification_note": "Guia revisado para lista base PS5 com 55 troféus, EN/PT-BR, roadmap estruturado, resumo, tags, checklist, FAQ e SEO. Mantido em revisão até a validação completa do render e da suite global.",
+    "verification_status": "review",
+    "walkthrough": null
+  },
+  "redirects": [],
+  "roadmaps": [
+    {
+      "content": "{\"title\":\"Avance os episódios e libere as regiões principais\",\"focus\":\"História e desbloqueios\",\"objective\":\"Concluir os episódios principais enquanto libera Q-pid, APAS, estruturas, veículos, infraestrutura e instalações essenciais.\",\"actions\":[\"Jogue os episódios da história no ritmo normal, priorizando Orders for Sam e desbloqueios principais.\",\"Conecte instalações novas sempre que a rota principal permitir.\",\"Use veículos, estradas, minas e monotrilho conforme forem liberados para reduzir deslocamentos longos.\",\"Não tente maximizar todas as instalações cedo demais\",\"muitos recursos ficam mais eficientes no pós-game.\",\"Marque no checklist instalações, estruturas, pedidos padrão e eventos opcionais encontrados durante a campanha.\"],\"warning\":\"\",\"result\":\"História encaminhada, principais sistemas liberados e mapa pronto para a limpeza longa da platina.\"}",
+      "step_order": 1
+    },
+    {
+      "content": "{\"title\":\"Conecte todas as instalações e fortaleça a rede\",\"focus\":\"Q-pid e conexões\",\"objective\":\"Usar o Q-pid para conectar todas as instalações e preparar o grind de conexão máxima.\",\"actions\":[\"Procure instalações opcionais que não aparecem naturalmente na rota principal.\",\"Conecte todos os pontos necessários à rede.\",\"Aumente o nível de conexão enquanto faz entregas úteis para cada instalação.\",\"Use rotas com estrada, monotrilho e estruturas para acelerar entregas repetidas.\",\"Acompanhe o progresso de Keep on Connecting e Connecting Hearts and Minds.\"],\"warning\":\"\",\"result\":\"Rede de instalações montada e caminho preparado para maximizar conexões.\"}",
+      "step_order": 2
+    },
+    {
+      "content": "{\"title\":\"Faça pedidos padrão com rank S\",\"focus\":\"Entregas\",\"objective\":\"Completar entregas, recuperações e pedidos de eliminação/destruição com rank S conforme os requisitos da lista.\",\"actions\":[\"Complete pedidos padrão suficientes para Standard Porter e Seasoned Porter.\",\"Separe entregas, recuperações e pedidos de eliminação/destruição para não repetir categorias sem necessidade.\",\"Use rotas seguras e equipamentos adequados para preservar carga e cumprir tempo quando necessário.\",\"Aproveite infraestrutura restaurada para reduzir risco e deslocamento.\",\"Registre no checklist quais categorias já atingiram a meta.\"],\"warning\":\"Seasoned Porter exige tipos específicos de pedidos com rank S em dificuldade Casual ou superior; não conte apenas entregas comuns.\",\"result\":\"Pedidos padrão e ranks principais concluídos ou bem encaminhados.\"}",
+      "step_order": 3
+    },
+    {
+      "content": "{\"title\":\"Restaure infraestrutura e construa estruturas\",\"focus\":\"Construção\",\"objective\":\"Fechar troféus de estruturas, estradas, minas, monotrilho e recursos de apoio ao mapa.\",\"actions\":[\"Construa todos os tipos de estrutura necessários para Master Builder.\",\"Restaure pelo menos uma seção de estrada para Road Restorer.\",\"Restaure três minas para Dig, Dig, Dig!.\",\"Restaure e reabra por completo uma linha do monotrilho para Rail Restorer.\",\"Use materiais acumulados nas instalações para reduzir viagens extras.\"],\"warning\":\"\",\"result\":\"Infraestrutura essencial restaurada e troféus de construção concluídos.\"}",
+      "step_order": 4
+    },
+    {
+      "content": "{\"title\":\"Resolva troféus sociais, likes e ações opcionais\",\"focus\":\"Online social e atividades\",\"objective\":\"Concluir troféus ligados a aid requests, sinais online, curtidas, SCS, trocas, quarto privado, animais e eventos opcionais.\",\"actions\":[\"Conclua um aid request e construa uma placa de pedido de ajuda online.\",\"Envie curtidas e acompanhe o progresso de likes recebidos por pedidos.\",\"Leia uma postagem no SCS e use foto no quarto privado.\",\"Faça trocas com portadores, entregue animais ao abrigo e resolva tarefas opcionais como pizzaiolo, BTs e eventos de mapa.\",\"Confirme quais troféus sociais exigem conexão online e marque-os corretamente no guia.\"],\"warning\":\"O online é assíncrono/social; ele não exige coop direto, mas pode ser necessário para alguns troféus de interação online.\",\"result\":\"Troféus sociais, opcionais e de atividades específicas resolvidos.\"}",
+      "step_order": 5
+    },
+    {
+      "content": "{\"title\":\"Faça a limpeza final da platina\",\"focus\":\"Limpeza\",\"objective\":\"Revisar pendências da lista base, confirmar flags e finalizar qualquer troféu restante.\",\"actions\":[\"Abra o checklist e revise todos os 55 troféus.\",\"Confirme que não há troféus perdíveis marcados indevidamente.\",\"Confirme que troféus online/sociais estão identificados no filtro correto.\",\"Confirme que Digital Deluxe, upgrade pago e itens de edição não foram tratados como obrigatórios.\",\"Revise se todos os cards têm nome inglês principal e PT-BR abaixo quando confirmado.\"],\"warning\":\"\",\"result\":\"Todos os requisitos da platina base concluídos.\"}",
+      "step_order": 6
+    }
+  ],
+  "schemaVersion": 1,
+  "seedExtras": {
+    "aliases": [],
+    "attentionPoints": [],
+    "checklist": [
+      "Concluir os episódios 1 a 16.",
+      "Confirmar que o guia é da lista base PS5, sem Death Stranding 1, Director's Cut, Digital Deluxe, upgrade pago ou DLC.",
+      "Completar um pedido padrão pela primeira vez.",
+      "Completar 10 entregas, 10 recuperações e 10 pedidos de eliminação/destruição com rank S em Casual ou superior.",
+      "Completar um aid request.",
+      "Construir uma placa online de aid request.",
+      "Construir a primeira estrutura.",
+      "Construir todos os tipos de estrutura.",
+      "Conectar o Q-pid pela primeira vez.",
+      "Conectar todas as instalações.",
+      "Maximizar conexão com todas as instalações.",
+      "Ativar um aprimoramento APAS.",
+      "Enviar uma curtida.",
+      "Receber 2.400 likes por pedidos.",
+      "Receber 50.000 likes por pedidos.",
+      "Completar um treino VR.",
+      "Ler uma postagem no SCS.",
+      "Usar uma foto no quarto privado.",
+      "Entregar animal selvagem ao abrigo.",
+      "Entregar animal albino ao abrigo.",
+      "Restaurar uma estrada.",
+      "Restaurar três minas.",
+      "Restaurar uma linha de monotrilho.",
+      "Fornecer apoio emergencial.",
+      "Escavar uma fonte termal.",
+      "Estudar o céu noturno.",
+      "Trocar com outro portador.",
+      "Assistir apresentação ao vivo no quarto.",
+      "Descobrir a verdade sobre o Pizzaiolo.",
+      "Derrotar o Lord of the Tar Lake.",
+      "Resolver os indivíduos sem cabeça.",
+      "Salvar Terminal Fort Knot.",
+      "Ir ao nexo de EPs na cratera F3.",
+      "Revelar a verdade sobre o Ghost Hunter.",
+      "Capturar um BT grande.",
+      "Derrotar a criatura quiral dourada.",
+      "Obter nota de portador 40 ou superior em todas as categorias.",
+      "Entregar 500 cargas.",
+      "Entregar duas toneladas de carga.",
+      "Alcançar 80 km percorridos ao concluir um pedido.",
+      "Fazer limpeza final sem marcar nenhum troféu como perdível."
+    ],
+    "faq": [
+      {
+        "answer": "Não. A platina base não tem troféus perdíveis confirmados. A limpeza pode ser planejada para o pós-game/free roam.",
+        "question": "Death Stranding 2 tem troféus perdíveis?"
+      },
+      {
+        "answer": "Sim. O guia marca online obrigatório por causa de interações sociais/assíncronas como aid requests, sinais online, likes, apoio emergencial, troca social e Bridge Link.",
+        "question": "Death Stranding 2 precisa de online para platinar?"
+      },
+      {
+        "answer": "Não. Não há coop direto obrigatório. O online de Death Stranding 2 é social/assíncrono, com interações indiretas com outros jogadores.",
+        "question": "Precisa de coop?"
+      },
+      {
+        "answer": "Não. A platina base não exige Digital Deluxe, upgrade pago, edição especial, itens bônus ou DLC futura.",
+        "question": "Precisa de DLC ou Deluxe Edition?"
+      },
+      {
+        "answer": "A estimativa atual é 70-100h, variando conforme eficiência de rotas, conexões, pedidos padrão com rank S, infraestrutura, likes e limpeza.",
+        "question": "Quanto tempo leva para platinar?"
+      },
+      {
+        "answer": "Sim. Seasoned Porter exige rank S em pedidos padrão na dificuldade Casual ou superior. Fora esse requisito, ajuste a dificuldade conforme preferir, desde que os troféus específicos mantenham suas condições.",
+        "question": "A dificuldade afeta troféus?"
+      },
+      {
+        "answer": "Sim. O guia assume limpeza no pós-game/free roam para instalações, pedidos, infraestrutura, likes, eventos opcionais e troféus restantes.",
+        "question": "Dá para continuar depois da história?"
+      },
+      {
+        "answer": "Conectar e maximizar instalações, completar pedidos padrão com rank S, restaurar infraestrutura, acumular likes e fechar eventos opcionais são os maiores blocos de trabalho.",
+        "question": "O que mais demora?"
+      }
+    ],
+    "note": "Campos exportados para auditoria. O SQLite atual nao possui colunas nativas para todos esses extras; a importacao preserva o que o banco suporta.",
+    "quickDecision": {
+      "firstAction": "Jogue os episódios principais primeiro, liberando instalações, estruturas e rotas de transporte; depois feche conexões, rank S, likes, infraestrutura e eventos opcionais.",
+      "recommendation": "Boa para quem gosta de logística, mundo aberto, tarefas de conexão, infraestrutura e limpeza metódica; ruim para quem quer platina rápida ou totalmente offline.",
+      "summary": "Platina longa, mas organizada: 55 troféus, checklist pesado, online assíncrono/social, sem coop direto, sem DLC obrigatória e sem perdíveis confirmados."
+    },
+    "seo": {
+      "description": "Roadmap completo da platina de Death Stranding 2: On the Beach, com troféus, pedidos padrão, conexões, likes, estruturas, infraestrutura, eventos opcionais, checklist e dicas para reduzir retrabalho.",
+      "keywords": "Death Stranding 2 troféus, Death Stranding 2 platina, Death Stranding 2 guia, Death Stranding 2 roadmap, Death Stranding 2 On the Beach troféus, Death Stranding 2 checklist, Death Stranding 2 Seasoned Porter, Death Stranding 2 Connecting Hearts and Minds, Death Stranding 2 Master Builder, Death Stranding 2 likes",
+      "ogDescription": "Guia PT-BR da platina base PS5 de Death Stranding 2: On the Beach, com 55 troféus, online social, pedidos padrão, conexões, infraestrutura, likes e checklist.",
+      "ogTitle": "Death Stranding 2: On the Beach: guia de troféus e platina",
+      "title": "Death Stranding 2: On the Beach: guia de troféus e platina"
+    },
+    "tags": []
+  },
+  "slug": "death-stranding-2-on-the-beach",
+  "trophies": [
+    {
+      "description": "Obtenha todos os troféus de Death Stranding 2.",
+      "is_missable": 0,
+      "is_spoiler": 0,
+      "name": "Homo Liberans: The Savior of Humanity",
+      "name_pt": "Homo Liberans: A Pessoa que Salvou a Humanidade",
+      "tip": "Conclua os outros 54 troféus da lista base PS5. Não misture com Death Stranding, Director's Cut, Digital Deluxe, upgrade pago ou DLC futura.",
+      "trophy_code": "ds2_homo_liberans",
+      "type": "Platina"
+    },
+    {
+      "description": "Conclua o Episódio 1: Sam.",
+      "is_missable": 0,
+      "is_spoiler": 1,
+      "name": "\"Lou? Can you hear me? Can you see me?\"",
+      "name_pt": "\"Lou? Pode me ouvir? Consegue me ver?\"",
+      "tip": "Troféu automático de história ao concluir o Episódio 1.",
+      "trophy_code": "ds2_lou_can_you_hear_me",
+      "type": "Bronze"
+    },
+    {
+      "description": "Conclua o Episódio 2: Lou.",
+      "is_missable": 0,
+      "is_spoiler": 1,
+      "name": "\"Time to Start a New Journey\"",
+      "name_pt": "\"Hora de Começar uma Nova Etapa\"",
+      "tip": "Troféu automático de história ao concluir o Episódio 2.",
+      "trophy_code": "ds2_time_to_start_a_new_journey",
+      "type": "Bronze"
+    },
+    {
+      "description": "Conclua o Episódio 3: Drawbridge.",
+      "is_missable": 0,
+      "is_spoiler": 1,
+      "name": "\"Help us Bring Australia into the Network\"",
+      "name_pt": "\"Ajude a Gente a Colocar a Austrália na Rede\"",
+      "tip": "Troféu automático de história ao concluir o Episódio 3.",
+      "trophy_code": "ds2_help_us_bring_australia",
+      "type": "Bronze"
+    },
+    {
+      "description": "Conclua o Episódio 4: Raindrops.",
+      "is_missable": 0,
+      "is_spoiler": 1,
+      "name": "\"We'll Show the World the Hope in Your Rain\"",
+      "name_pt": "\"Mostraremos ao Mundo a Esperança na sua Chuva\"",
+      "tip": "Troféu automático de história ao concluir o Episódio 4.",
+      "trophy_code": "ds2_show_the_world_hope",
+      "type": "Bronze"
+    },
+    {
+      "description": "Conclua o Episódio 5: Conflagration.",
+      "is_missable": 0,
+      "is_spoiler": 1,
+      "name": "\"Did He Say Nirvana?\"",
+      "name_pt": "\"Ele Disse Nirvana?\"",
+      "tip": "Troféu automático de história ao concluir o Episódio 5.",
+      "trophy_code": "ds2_did_he_say_nirvana",
+      "type": "Bronze"
+    },
+    {
+      "description": "Conclua o Episódio 6: Chrysalis.",
+      "is_missable": 0,
+      "is_spoiler": 1,
+      "name": "\"To Our Little Family\"",
+      "name_pt": "\"Nossa Pequena Família\"",
+      "tip": "Troféu automático de história ao concluir o Episódio 6.",
+      "trophy_code": "ds2_to_our_little_family",
+      "type": "Bronze"
+    },
+    {
+      "description": "Conclua o Episódio 7: Pod.",
+      "is_missable": 0,
+      "is_spoiler": 1,
+      "name": "\"Sam the Man—In the Dark About Everything\"",
+      "name_pt": "\"Sam, o Cara... no Escuro. Em Relação a Tudo\"",
+      "tip": "Troféu automático de história ao concluir o Episódio 7.",
+      "trophy_code": "ds2_sam_the_man",
+      "type": "Bronze"
+    },
+    {
+      "description": "Conclua o Episódio 8: Deluge.",
+      "is_missable": 0,
+      "is_spoiler": 1,
+      "name": "\"His Name is Neil. Neil Vana\"",
+      "name_pt": "\"O Nome Dele é Neil. Neil Vana\"",
+      "tip": "Troféu automático de história ao concluir o Episódio 8.",
+      "trophy_code": "ds2_his_name_is_neil",
+      "type": "Bronze"
+    },
+    {
+      "description": "Conclua o Episódio 9: Puppets.",
+      "is_missable": 0,
+      "is_spoiler": 1,
+      "name": "\"I Don't Break That Easily\"",
+      "name_pt": "\"Eu Não Quebro Tão Fácil Assim\"",
+      "tip": "Troféu automático de história ao concluir o Episódio 9.",
+      "trophy_code": "ds2_i_dont_break_that_easily",
+      "type": "Bronze"
+    },
+    {
+      "description": "Conclua o Episódio 10: Isolation.",
+      "is_missable": 0,
+      "is_spoiler": 1,
+      "name": "\"You Will Never, Ever Be Alone\"",
+      "name_pt": "\"Você Nunca Vai Tá Sozinho\"",
+      "tip": "Troféu automático de história ao concluir o Episódio 10.",
+      "trophy_code": "ds2_you_will_never_be_alone",
+      "type": "Bronze"
+    },
+    {
+      "description": "Conclua o Episódio 11: Quake.",
+      "is_missable": 0,
+      "is_spoiler": 1,
+      "name": "\"Keep Lou Safe...\"",
+      "name_pt": "\"Protege Lou...\"",
+      "tip": "Troféu automático de história ao concluir o Episódio 11.",
+      "trophy_code": "ds2_keep_lou_safe",
+      "type": "Bronze"
+    },
+    {
+      "description": "Conclua o Episódio 12: Fragile.",
+      "is_missable": 0,
+      "is_spoiler": 1,
+      "name": "\"To Help You Find the Strength to Carry On\"",
+      "name_pt": "\"Achar Força pra Seguir em Frente\"",
+      "tip": "Troféu automático de história ao concluir o Episódio 12.",
+      "trophy_code": "ds2_to_help_you_find_strength",
+      "type": "Bronze"
+    },
+    {
+      "description": "Conclua o Episódio 13: Die Hard.",
+      "is_missable": 0,
+      "is_spoiler": 1,
+      "name": "\"To Forsake Our Flesh and Our Freedom\"",
+      "name_pt": "\"Abandonar Nosso Corpo e Nossa Liberdade\"",
+      "tip": "Troféu automático de história ao concluir o Episódio 13.",
+      "trophy_code": "ds2_forsake_our_flesh",
+      "type": "Bronze"
+    },
+    {
+      "description": "Conclua o Episódio 14: Last Stranding.",
+      "is_missable": 0,
+      "is_spoiler": 1,
+      "name": "\"We Have to Get Tomorrow Back\"",
+      "name_pt": "\"A Gente Tem que Salvar a Tomorrow\"",
+      "tip": "Troféu automático de história ao concluir o Episódio 14.",
+      "trophy_code": "ds2_get_tomorrow_back",
+      "type": "Bronze"
+    },
+    {
+      "description": "Conclua o Episódio 15: On the Beach.",
+      "is_missable": 0,
+      "is_spoiler": 1,
+      "name": "\"I'll Always Be With You\"",
+      "name_pt": "\"Sempre Vou Tá com Você\"",
+      "tip": "Troféu automático de história ao concluir o Episódio 15.",
+      "trophy_code": "ds2_ill_always_be_with_you",
+      "type": "Bronze"
+    },
+    {
+      "description": "Conclua o Episódio 16: Tomorrow.",
+      "is_missable": 0,
+      "is_spoiler": 1,
+      "name": "\"Death Can't Tear Us Apart\"",
+      "name_pt": "\"A Morte Não Pode Nos Separar\"",
+      "tip": "Troféu automático de conclusão da história. Depois, use o pós-game/free roam para a limpeza.",
+      "trophy_code": "ds2_death_cant_tear_us_apart",
+      "type": "Prata"
+    },
+    {
+      "description": "Conclua um pedido padrão pela primeira vez.",
+      "is_missable": 0,
+      "is_spoiler": 0,
+      "name": "Standard Porter",
+      "name_pt": "Portador Padrão",
+      "tip": "Complete qualquer pedido padrão depois que o sistema for liberado.",
+      "trophy_code": "ds2_standard_porter",
+      "type": "Bronze"
+    },
+    {
+      "description": "Conclua 10 entregas, 10 recuperações e 10 pedidos padrão de eliminação/destruição com rank S na dificuldade Casual ou superior.",
+      "is_missable": 0,
+      "is_spoiler": 0,
+      "name": "Seasoned Porter",
+      "name_pt": "Portador Experiente",
+      "tip": "Separe as três categorias exigidas e confirme rank S em Casual ou superior. Não conte apenas entregas comuns.",
+      "trophy_code": "ds2_seasoned_porter",
+      "type": "Ouro"
+    },
+    {
+      "description": "Conclua um aid request pela primeira vez.",
+      "is_missable": 0,
+      "is_spoiler": 0,
+      "name": "Helping People to Connect",
+      "name_pt": "Ajudando Pessoas a se Conectarem",
+      "tip": "Pedidos de ajuda entram no bloco social/online do guia. Exige interação assíncrona, sem coop direto.",
+      "trophy_code": "ds2_helping_people_to_connect",
+      "type": "Bronze"
+    },
+    {
+      "description": "Construa uma placa online de aid request pela primeira vez.",
+      "is_missable": 0,
+      "is_spoiler": 0,
+      "name": "Promising Signs",
+      "name_pt": "Sinais Promissores",
+      "tip": "Construa uma placa online de pedido de ajuda. Mantenha o jogo conectado aos servidores para cumprir o requisito.",
+      "trophy_code": "ds2_promising_signs",
+      "type": "Bronze"
+    },
+    {
+      "description": "Construa sua primeira estrutura.",
+      "is_missable": 0,
+      "is_spoiler": 0,
+      "name": "My First Structure",
+      "name_pt": "Minha Primeira Estrutura",
+      "tip": "Construa qualquer estrutura quando o sistema estiver disponível.",
+      "trophy_code": "ds2_my_first_structure",
+      "type": "Bronze"
+    },
+    {
+      "description": "Construa todos os tipos de estrutura.",
+      "is_missable": 0,
+      "is_spoiler": 0,
+      "name": "Master Builder",
+      "name_pt": "Mestre Construtor",
+      "tip": "Inclua todos os tipos de estrutura, placas, ferramentas e estruturas especiais liberadas pela campanha.",
+      "trophy_code": "ds2_master_builder",
+      "type": "Bronze"
+    },
+    {
+      "description": "Conecte seu Q-pid pela primeira vez.",
+      "is_missable": 0,
+      "is_spoiler": 1,
+      "name": "Starting Point",
+      "name_pt": "Ponto de Partida",
+      "tip": "Troféu ligado à primeira conexão feita com o Q-pid.",
+      "trophy_code": "ds2_starting_point",
+      "type": "Bronze"
+    },
+    {
+      "description": "Conecte todas as instalações usando o Q-pid.",
+      "is_missable": 0,
+      "is_spoiler": 0,
+      "name": "Keep on Connecting",
+      "name_pt": "Conectando sem Parar",
+      "tip": "Conecte todas as instalações da lista base. Procure também instalações opcionais fora da rota principal.",
+      "trophy_code": "ds2_keep_on_connecting",
+      "type": "Prata"
+    },
+    {
+      "description": "Maximize o nível de conexão com todas as instalações.",
+      "is_missable": 0,
+      "is_spoiler": 0,
+      "name": "Connecting Hearts and Minds",
+      "name_pt": "Conectando Corações e Mentes",
+      "tip": "Maximizar todas as instalações é um dos maiores grinds; deixe boa parte para o pós-game.",
+      "trophy_code": "ds2_connecting_hearts_and_minds",
+      "type": "Ouro"
+    },
+    {
+      "description": "Ative um aprimoramento APAS pela primeira vez.",
+      "is_missable": 0,
+      "is_spoiler": 0,
+      "name": "Self-Improvement",
+      "name_pt": "Autodesenvolvimento",
+      "tip": "Ative qualquer aprimoramento APAS quando o sistema estiver disponível.",
+      "trophy_code": "ds2_self_improvement",
+      "type": "Bronze"
+    },
+    {
+      "description": "Envie uma curtida pela primeira vez.",
+      "is_missable": 0,
+      "is_spoiler": 0,
+      "name": "It's Like That",
+      "name_pt": "Só Curtindo",
+      "tip": "Envie uma curtida em estrutura, carga, sinal ou elemento elegível quando o sistema estiver liberado.",
+      "trophy_code": "ds2_its_like_that",
+      "type": "Bronze"
+    },
+    {
+      "description": "Receba 2.400 ou mais curtidas por concluir pedidos.",
+      "is_missable": 0,
+      "is_spoiler": 0,
+      "name": "A Life Well Liked",
+      "name_pt": "Uma Vida de Curtição",
+      "tip": "Vem naturalmente ao fazer pedidos, conexões e infraestrutura, mas acompanhe o total para evitar limpeza solta.",
+      "trophy_code": "ds2_a_life_well_liked",
+      "type": "Bronze"
+    },
+    {
+      "description": "Receba 50.000 ou mais curtidas por concluir pedidos.",
+      "is_missable": 0,
+      "is_spoiler": 0,
+      "name": "A Porter at Peak Popularity",
+      "name_pt": "Um Portador Popular",
+      "tip": "Maximizar instalações e repetir rotas eficientes acelera bastante as 50.000 curtidas.",
+      "trophy_code": "ds2_a_porter_at_peak_popularity",
+      "type": "Bronze"
+    },
+    {
+      "description": "Conclua um programa de VR Training pela primeira vez.",
+      "is_missable": 0,
+      "is_spoiler": 0,
+      "name": "My First Training Session",
+      "name_pt": "Minha Primeira Sessão de Treino",
+      "tip": "Complete qualquer programa de VR Training quando ele estiver disponível.",
+      "trophy_code": "ds2_my_first_training_session",
+      "type": "Bronze"
+    },
+    {
+      "description": "Leia uma postagem no SCS pela primeira vez.",
+      "is_missable": 0,
+      "is_spoiler": 0,
+      "name": "A First Glimpse of the SSS",
+      "name_pt": "Uma Olhadinha no SCS",
+      "tip": "Abra o SCS e leia uma postagem pela primeira vez.",
+      "trophy_code": "ds2_first_glimpse_of_sss",
+      "type": "Bronze"
+    },
+    {
+      "description": "Use uma captura feita no Photo Mode para decorar seu quarto privado.",
+      "is_missable": 0,
+      "is_spoiler": 0,
+      "name": "Making It Your Own",
+      "name_pt": "Deixando com a Sua Cara",
+      "tip": "Tire uma captura de tela no Photo Mode e use-a para decorar o quarto privado.",
+      "trophy_code": "ds2_making_it_your_own",
+      "type": "Bronze"
+    },
+    {
+      "description": "Entregue um animal selvagem ao Animal Shelter pela primeira vez. Animais exigidos por pedidos não contam.",
+      "is_missable": 0,
+      "is_spoiler": 0,
+      "name": "Creature Comforter",
+      "name_pt": "Protetor de Criaturas",
+      "tip": "Entregue um animal selvagem ao Animal Shelter. Animais exigidos por pedidos não contam.",
+      "trophy_code": "ds2_creature_comforter",
+      "type": "Bronze"
+    },
+    {
+      "description": "Entregue um animal albino ao Animal Shelter pela primeira vez.",
+      "is_missable": 0,
+      "is_spoiler": 0,
+      "name": "Rare Specimen Rescuer",
+      "name_pt": "Resgatador de Espécimes Raras",
+      "tip": "Animal albino pode exigir atenção extra; marque no checklist quando encontrar oportunidade.",
+      "trophy_code": "ds2_rare_specimen_rescuer",
+      "type": "Bronze"
+    },
+    {
+      "description": "Restaure uma seção de estrada.",
+      "is_missable": 0,
+      "is_spoiler": 0,
+      "name": "Road Restorer",
+      "name_pt": "Restaurador de Estradas",
+      "tip": "Contribua materiais a um Auto-Paver até restaurar uma seção de estrada.",
+      "trophy_code": "ds2_road_restorer",
+      "type": "Bronze"
+    },
+    {
+      "description": "Restaure três minas.",
+      "is_missable": 0,
+      "is_spoiler": 0,
+      "name": "Dig, Dig, Dig!",
+      "name_pt": "Cavar, cavar, cavar!",
+      "tip": "Restaure três minas. Deixe materiais preparados para evitar viagens extras.",
+      "trophy_code": "ds2_dig_dig_dig",
+      "type": "Bronze"
+    },
+    {
+      "description": "Restaure e reabra completamente uma linha de monotrilho.",
+      "is_missable": 0,
+      "is_spoiler": 0,
+      "name": "Rail Restorer",
+      "name_pt": "Restaurador de Ferrovias",
+      "tip": "Reabrir uma linha completa de monotrilho costuma exigir materiais e rotas já estabilizadas.",
+      "trophy_code": "ds2_rail_restorer",
+      "type": "Bronze"
+    },
+    {
+      "description": "Forneça apoio emergencial pela primeira vez.",
+      "is_missable": 0,
+      "is_spoiler": 0,
+      "name": "Emergency Worker",
+      "name_pt": "Profissional de Emergência",
+      "tip": "Apoio emergencial entra no bloco online/assíncrono. Mantenha conexão aos servidores.",
+      "trophy_code": "ds2_emergency_worker",
+      "type": "Bronze"
+    },
+    {
+      "description": "Escave uma fonte termal pela primeira vez.",
+      "is_missable": 0,
+      "is_spoiler": 0,
+      "name": "Spring into Life",
+      "name_pt": "Brotar da Fonte",
+      "tip": "Use o Hot Spring Digger em um local válido para escavar uma fonte termal.",
+      "trophy_code": "ds2_spring_into_life",
+      "type": "Bronze"
+    },
+    {
+      "description": "Estude o céu noturno pela primeira vez.",
+      "is_missable": 0,
+      "is_spoiler": 0,
+      "name": "Written in the Stars",
+      "name_pt": "Escrito nas Estrelas",
+      "tip": "Use uma fonte termal à noite e observe o céu quando a ação estiver disponível.",
+      "trophy_code": "ds2_written_in_the_stars",
+      "type": "Bronze"
+    },
+    {
+      "description": "Faça uma troca com outro portador pela primeira vez.",
+      "is_missable": 0,
+      "is_spoiler": 0,
+      "name": "Porters Make the World Go Round",
+      "name_pt": "Portadores Fazem o Mundo Girar",
+      "tip": "Troque com outro portador quando encontrar um portador NPC elegível; o guia trata como social, sem coop direto.",
+      "trophy_code": "ds2_porters_make_the_world_go_round",
+      "type": "Bronze"
+    },
+    {
+      "description": "Assista a uma apresentação ao vivo no seu quarto privado.",
+      "is_missable": 0,
+      "is_spoiler": 0,
+      "name": "A Private Show!",
+      "name_pt": "Um show particular!",
+      "tip": "Assista à apresentação ao vivo no quarto privado quando a opção estiver disponível.",
+      "trophy_code": "ds2_a_private_show",
+      "type": "Bronze"
+    },
+    {
+      "description": "Descubra a verdade sobre o Pizzaiolo.",
+      "is_missable": 0,
+      "is_spoiler": 1,
+      "name": "So YOU'RE the Pizza Chef!",
+      "name_pt": "Então VOCÊ é o Pizzaiolo!",
+      "tip": "Missão opcional: não confundir com requisito de edição especial ou DLC.",
+      "trophy_code": "ds2_pizza_chef",
+      "type": "Bronze"
+    },
+    {
+      "description": "Derrote o Lord of the Tar Lake.",
+      "is_missable": 0,
+      "is_spoiler": 1,
+      "name": "Showdown at the Tar Lake",
+      "name_pt": "Confronto no Lago de Alcatrão",
+      "tip": "Chefe opcional. Volte no pós-game com equipamentos melhores se preferir.",
+      "trophy_code": "ds2_showdown_at_the_tar_lake",
+      "type": "Prata"
+    },
+    {
+      "description": "Resolva o mistério dos indivíduos sem cabeça.",
+      "is_missable": 0,
+      "is_spoiler": 1,
+      "name": "The Headless Riders Unmasked",
+      "name_pt": "Os Indivíduos sem Cabeça Desmascarados",
+      "tip": "Objetivo opcional com spoiler. Deixe para a limpeza se quiser priorizar a história primeiro.",
+      "trophy_code": "ds2_headless_riders_unmasked",
+      "type": "Bronze"
+    },
+    {
+      "description": "Impeça Terminal Fort Knot de sofrer um voidout.",
+      "is_missable": 0,
+      "is_spoiler": 1,
+      "name": "Savior of Terminal Fort Knot",
+      "name_pt": "Salvador de Terminal Fort Knot",
+      "tip": "Objetivo opcional avançado; volte com bons equipamentos se a luta estiver pesada.",
+      "trophy_code": "ds2_savior_of_terminal_fort_knot",
+      "type": "Prata"
+    },
+    {
+      "description": "Chegue ao nexo de EPs na cratera F3.",
+      "is_missable": 0,
+      "is_spoiler": 1,
+      "name": "The Scars Left by the Giants",
+      "name_pt": "As Cicatrizes Deixadas pelos Gigantes",
+      "tip": "Local específico com spoiler. Use o pós-game para visitar a cratera F3 sem pressa.",
+      "trophy_code": "ds2_scars_left_by_the_giants",
+      "type": "Prata"
+    },
+    {
+      "description": "Revele a verdade sobre o Ghost Hunter.",
+      "is_missable": 0,
+      "is_spoiler": 1,
+      "name": "The Real Story of the Ghost Hunter",
+      "name_pt": "A Verdadeira História do Caça-Fantasmas",
+      "tip": "Objetivo opcional ligado ao Ghost Hunter. Acompanhe mensagens e pedidos relacionados.",
+      "trophy_code": "ds2_real_story_of_the_ghost_hunter",
+      "type": "Bronze"
+    },
+    {
+      "description": "Capture um BT grande pela primeira vez.",
+      "is_missable": 0,
+      "is_spoiler": 1,
+      "name": "BT's Best Friend",
+      "name_pt": "Amigão das EPs",
+      "tip": "Capture um BT grande quando o sistema e os itens necessários estiverem liberados.",
+      "trophy_code": "ds2_bts_best_friend",
+      "type": "Bronze"
+    },
+    {
+      "description": "Derrote a criatura quiral dourada.",
+      "is_missable": 0,
+      "is_spoiler": 1,
+      "name": "Conqueror of the Golden CC",
+      "name_pt": "Conquistador da CQ Dourada",
+      "tip": "Chefe/criatura opcional; deixe para quando tiver recursos de combate suficientes.",
+      "trophy_code": "ds2_conqueror_of_the_golden_cc",
+      "type": "Bronze"
+    },
+    {
+      "description": "Alcance nota de portador 40 ou superior em todas as categorias.",
+      "is_missable": 0,
+      "is_spoiler": 0,
+      "name": "A Premier Porter",
+      "name_pt": "Um Portador de Primeira",
+      "tip": "Bridge Link e notas de portador podem depender de recursos sociais/online. Planeje junto das curtidas e entregas.",
+      "trophy_code": "ds2_a_premier_porter",
+      "type": "Prata"
+    },
+    {
+      "description": "Entregue um total de 500 cargas.",
+      "is_missable": 0,
+      "is_spoiler": 0,
+      "name": "Compulsive Cargo Carrier",
+      "name_pt": "Portador de Carga Compulsivo",
+      "tip": "Total acumulado de cargas entregues; vem junto de conexões, rank S e pedidos de limpeza.",
+      "trophy_code": "ds2_compulsive_cargo_carrier",
+      "type": "Bronze"
+    },
+    {
+      "description": "Entregue um total de duas toneladas de carga.",
+      "is_missable": 0,
+      "is_spoiler": 0,
+      "name": "Heavy Lifter",
+      "name_pt": "Levantamento de Peso",
+      "tip": "Total acumulado de peso entregue; pedidos grandes e rotas com veículos ajudam bastante.",
+      "trophy_code": "ds2_heavy_lifter",
+      "type": "Bronze"
+    },
+    {
+      "description": "Alcance 80 km de distância total percorrida ao concluir um pedido.",
+      "is_missable": 0,
+      "is_spoiler": 0,
+      "name": "Long-Distance Lugger",
+      "name_pt": "Longa Viagem",
+      "tip": "Distância acumulada. Conclua um pedido depois de atingir o total exigido.",
+      "trophy_code": "ds2_long_distance_lugger",
+      "type": "Bronze"
+    }
+  ]
+}

@@ -1,0 +1,538 @@
+{
+  "game": {
+    "avoid_if": "Evite se você não quer repetir campanhas, decorar mapa, lidar com inventário restrito ou fazer desafios sem save/só faca.",
+    "before_you_start": "Defina se a run é de Jill ou Chris, qual final busca e quais personagens serão salvos. Este guia é do HD Remaster/remake clássico, não de outros Resident Evil.",
+    "best_for": "Ideal para quem gosta de survival horror clássico, rotas de mansão, gerenciamento de inventário e múltiplos finais.",
+    "cleanup_advice": "Depois de memorizar rotas, faça finais ruins, speedruns abaixo de 5h/3h, Hard, Real Survival, Invisible Enemy, sem salvar e faca-only.",
+    "cover_image": "https://cdn.cloudflare.steamstatic.com/steam/apps/304240/library_600x900.jpg",
+    "coverage_level": "strong",
+    "created_at": "2026-05-09 19:53:27",
+    "difficulty": 5,
+    "difficulty_reason": "A dificuldade vem de roteirização da mansão, inventário limitado, finais, speedruns, run sem salvar, faca-only, Hard, Real Survival e Invisible Enemy.",
+    "dlc_scope": "DLC fora da platina base. Guia focado em Resident Evil HD Remaster/remake clássico usado na lista PlayStation do site; não mistura Resident Evil 2/3/4 Remake, Resident Evil 7, Village ou outros jogos da série.",
+    "editorial_notes": "Guia revisado editorialmente para a lista base de Resident Evil HD Remaster.",
+    "editorial_review_status": "verified",
+    "editorial_status": "published",
+    "first_run_advice": "Faça uma primeira run segura aprendendo a mansão, usando saves e entendendo puzzles, inventário, rotas e resgates antes de otimizar.",
+    "grind_summary": "Não há grind tradicional; a repetição vem de campanhas, finais alternativos, speedruns e modos especiais.",
+    "guide_avoid": "Evite se você não quer repetir campanhas, decorar mapa, lidar com inventário restrito ou fazer desafios sem save/só faca.",
+    "guide_best_moment": null,
+    "guide_dlc": "DLC fora da platina base. Guia focado em Resident Evil HD Remaster/remake clássico usado na lista PlayStation do site; não mistura Resident Evil 2/3/4 Remake, Resident Evil 7, Village ou outros jogos da série.",
+    "guide_grind": "Não há grind tradicional; a repetição vem de campanhas, finais alternativos, speedruns e modos especiais.",
+    "guide_ideal": "Ideal para quem gosta de survival horror clássico, rotas de mansão, gerenciamento de inventário e múltiplos finais.",
+    "guide_online": "Não há exigência online, coop, multiplayer ou PS+ para a platina desta lista.",
+    "guide_runs": "Múltiplas campanhas com Jill e Chris para finais bons/ruins, Hard, Real Survival, Invisible Enemy, speedruns, sem salvar e faca-only.",
+    "image": "https://cdn.cloudflare.steamstatic.com/steam/apps/304240/header.jpg",
+    "is_verified": 1,
+    "last_reviewed_at": "2026-05-22",
+    "missable": "A platina do HD Remaster depende de múltiplas runs planejadas: finais bons e ruins com Jill e Chris, Hard, Real Survival, Invisible Enemy, speedruns, run sem salvar e faca-only. Há vários perdíveis por campanha, mas nenhum perdível definitivo porque tudo pode ser refeito em outra run.",
+    "missable_summary": "Há perdíveis por run ligados a personagem, final, resgate, mapa completo, tempo, save e restrição de arma. Planeje cada campanha antes de avançar.",
+    "name": "Resident Evil",
+    "online_summary": "Não há exigência online, coop, multiplayer ou PS+ para a platina desta lista.",
+    "quality_warnings": "[]",
+    "reviewed_by": "",
+    "runs_summary": "Múltiplas campanhas com Jill e Chris para finais bons/ruins, Hard, Real Survival, Invisible Enemy, speedruns, sem salvar e faca-only.",
+    "slug": "resident-evil",
+    "time": "25-35 horas",
+    "time_bucket": "medium",
+    "time_max_hours": 35,
+    "time_min_hours": 25,
+    "time_reason": "A faixa de 25-35 horas considera múltiplas campanhas curtas, finais com Jill/Chris, armas infinitas, modos especiais e cleanup.",
+    "time_sort_hours": 25,
+    "updated_at": "2026-06-27 02:36:59",
+    "verification_note": "Guia revisado editorialmente.",
+    "verification_status": "verified",
+    "walkthrough": null
+  },
+  "redirects": [],
+  "roadmaps": [
+    {
+      "content": "{\"title\":\"Faça uma primeira run segura aprendendo a mansão\",\"focus\":\"Fundamentos / exploração\",\"objective\":\"Conhecer rotas, puzzles, inventário, baús, salvamentos, inimigos e chefes sem tentar otimizar tudo cedo.\",\"actions\":[\"Escolha um personagem inicial confortável.\",\"Aprenda a lógica da mansão, chaves, portas, puzzles e rotas.\",\"Use saves sem medo nesta primeira run.\",\"Observe quais eventos dependem de personagem, rota ou decisão.\"],\"warning\":\"\",\"result\":\"Primeira conclusão encaminhada e base criada para runs otimizadas.\"}",
+      "step_order": 1
+    },
+    {
+      "content": "{\"title\":\"Complete as rotas de Jill e Chris\",\"focus\":\"Personagens / finais\",\"objective\":\"Cobrir troféus específicos de personagem, finais e personagens salvos ou não salvos.\",\"actions\":[\"Faça runs separadas para Jill e Chris.\",\"Planeje quem será salvo em cada run.\",\"Marque troféus condicionais de Barry, Rebecca, Chris, Jill e outros personagens.\",\"Evite misturar objetivos incompatíveis na mesma run.\"],\"warning\":\"Alguns troféus dependem de escolhas e eventos que só valem naquela run.\",\"result\":\"Rotas principais de personagem concluídas ou organizadas.\"}",
+      "step_order": 2
+    },
+    {
+      "content": "{\"title\":\"Trabalhe Hard, Real Survival e Invisible Enemy\",\"focus\":\"Dificuldade / modos extras\",\"objective\":\"Resolver modos e dificuldades exigidos pela lista depois de conhecer bem o jogo.\",\"actions\":[\"Deixe modos mais difíceis para quando já souber rotas e puzzles.\",\"Use rotas seguras e econômicas.\",\"Controle munição, cura e saves.\",\"Separe runs de dificuldade das runs de speedrun ou condição especial quando necessário.\"],\"warning\":\"Hard, Real Survival e Invisible Enemy são grandes filtros da platina.\",\"result\":\"Modos e dificuldades obrigatórios vencidos ou encaminhados.\"}",
+      "step_order": 3
+    },
+    {
+      "content": "{\"title\":\"Faça runs condicionais: sem salvar, faca-only e speedrun\",\"focus\":\"Execução / risco de run\",\"objective\":\"Cumprir troféus que exigem rota limpa, tempo baixo ou restrição de equipamento.\",\"actions\":[\"Faça a run sem salvar somente quando estiver confortável.\",\"Planeje a rota de speedrun antes de começar.\",\"Separe faca-only de outros objetivos que atrapalhem.\",\"Evite riscos desnecessários e memorize puzzles, chefes e deslocamentos.\"],\"warning\":\"Esses objetivos podem exigir repetir a run se a condição for quebrada.\",\"result\":\"Troféus de execução resolvidos.\"}",
+      "step_order": 4
+    },
+    {
+      "content": "{\"title\":\"Limpe armas, roupas, mapas e objetivos específicos\",\"focus\":\"Cleanup / coletáveis\",\"objective\":\"Resolver pendências de exploração, armas, roupas, mapas completos e troféus situacionais.\",\"actions\":[\"Use a checklist para separar o que falta.\",\"Revise salas não visitadas e objetivos de mapa completo.\",\"Complete armas, roupas e desbloqueios necessários.\",\"Faça troféus situacionais em runs curtas quando possível.\"],\"warning\":\"\",\"result\":\"Pendências longas reduzidas e lista quase completa.\"}",
+      "step_order": 5
+    },
+    {
+      "content": "{\"title\":\"Finalize a checklist da platina base\",\"focus\":\"Checklist final\",\"objective\":\"Conferir todos os troféus restantes sem misturar outros jogos ou conteúdo fora da lista base.\",\"actions\":[\"Revise todos os troféus pendentes.\",\"Confirme personagens, finais, chefes, dificuldades, modos, speedrun, run sem salvar e faca-only.\",\"Verifique se há troféus marcados incorretamente como online ou coop.\",\"Confirme que a página pública não mostra placeholders ou aviso de revisão.\"],\"warning\":\"\",\"result\":\"Lista base concluída e guia pronto para platina.\"}",
+      "step_order": 6
+    }
+  ],
+  "schemaVersion": 1,
+  "seedExtras": {
+    "aliases": [],
+    "attentionPoints": [],
+    "checklist": [],
+    "faq": [],
+    "note": "Campos exportados para auditoria. O SQLite atual nao possui colunas nativas para todos esses extras; a importacao preserva o que o banco suporta.",
+    "quickDecision": null,
+    "seo": {},
+    "tags": []
+  },
+  "slug": "resident-evil",
+  "trophies": [
+    {
+      "description": "Obtenha todos os troféus da lista base.",
+      "is_missable": 0,
+      "is_spoiler": 0,
+      "name": "Platinum Splattin' 'Em!",
+      "name_pt": "Platina Ensanguentada!",
+      "tip": "A platina exige múltiplas campanhas: finais bons e ruins, speedruns, sem salvar, faca-only, Real Survival e Invisible Enemy.",
+      "trophy_code": "re1r_platinum",
+      "type": "Platina"
+    },
+    {
+      "description": "Termine o jogo na dificuldade Muito Fácil ou superior.",
+      "is_missable": 0,
+      "is_spoiler": 0,
+      "name": "Like Taking Candy from a Baby",
+      "name_pt": "Como Tirar Doce de Criança",
+      "tip": "Sai naturalmente em qualquer campanha acima do Very Easy.",
+      "trophy_code": "re1r_like_taking_candy",
+      "type": "Bronze"
+    },
+    {
+      "description": "Termine o jogo na dificuldade Fácil ou superior.",
+      "is_missable": 0,
+      "is_spoiler": 0,
+      "name": "Not in the Mood to Die",
+      "name_pt": "Sem Vontade de Morrer",
+      "tip": "Vem retroativamente se você terminar no Normal ou acima.",
+      "trophy_code": "re1r_not_in_mood_to_die",
+      "type": "Bronze"
+    },
+    {
+      "description": "Termine o jogo na dificuldade Normal ou superior.",
+      "is_missable": 0,
+      "is_spoiler": 0,
+      "name": "Take that, Zombies!",
+      "name_pt": "Tomem Essa, Zumbis!",
+      "tip": "Pode ser sua campanha principal de aprendizado se já conhece a mansão.",
+      "trophy_code": "re1r_take_that_zombies",
+      "type": "Bronze"
+    },
+    {
+      "description": "Termine o jogo na dificuldade Difícil.",
+      "is_missable": 0,
+      "is_spoiler": 0,
+      "name": "Oh, the Horror",
+      "name_pt": "Ah, o Horror",
+      "tip": "Melhor deixar para depois do speedrun de 3 horas, quando as armas bônus já estiverem destravadas.",
+      "trophy_code": "re1r_oh_the_horror",
+      "type": "Prata"
+    },
+    {
+      "description": "Termine o jogo com Jill e Chris.",
+      "is_missable": 0,
+      "is_spoiler": 0,
+      "name": "We're in This Together",
+      "name_pt": "Estamos Nessa Juntos",
+      "tip": "Basta zerar uma vez com cada protagonista.",
+      "trophy_code": "re1r_together",
+      "type": "Prata"
+    },
+    {
+      "description": "Termine o jogo no modo Real Survival.",
+      "is_missable": 0,
+      "is_spoiler": 0,
+      "name": "The Survival Horror",
+      "name_pt": "O Survival Horror",
+      "tip": "Nesse modo os baús não são conectados; jogue só quando sua rota estiver totalmente memorizada.",
+      "trophy_code": "re1r_survival_horror",
+      "type": "Prata"
+    },
+    {
+      "description": "Termine o jogo no modo Invisible Enemy.",
+      "is_missable": 0,
+      "is_spoiler": 0,
+      "name": "Ghost of a Chance",
+      "name_pt": "Chance Fantasma",
+      "tip": "A run fica muito mais segura quando você já decorou a posição dos inimigos e usa o mapa só para execução.",
+      "trophy_code": "re1r_ghost_chance",
+      "type": "Ouro"
+    },
+    {
+      "description": "Obtenha o Stone & Metal Object usando Chris.",
+      "is_missable": 0,
+      "is_spoiler": 1,
+      "name": "Not Just Any Object",
+      "name_pt": "Não É Qualquer Objeto",
+      "tip": "Troféu automático de progresso na campanha do Chris.",
+      "trophy_code": "re1r_not_just_any_object",
+      "type": "Bronze"
+    },
+    {
+      "description": "Derrote Plant 42 usando Chris.",
+      "is_missable": 0,
+      "is_spoiler": 1,
+      "name": "Herbicide",
+      "name_pt": "Herbicida",
+      "tip": "Relacionado à campanha do Chris.",
+      "trophy_code": "re1r_herbicide",
+      "type": "Bronze"
+    },
+    {
+      "description": "Obtenha o Last Book Vol. 2 usando Chris.",
+      "is_missable": 0,
+      "is_spoiler": 1,
+      "name": "Written Word is Dead",
+      "name_pt": "A Palavra Escrita Morreu",
+      "tip": "Sai naturalmente com exploração normal na campanha do Chris.",
+      "trophy_code": "re1r_written_word_dead",
+      "type": "Bronze"
+    },
+    {
+      "description": "Derrote Lisa Trevor usando Chris.",
+      "is_missable": 0,
+      "is_spoiler": 1,
+      "name": "An End to a Poor Girl's Misery",
+      "name_pt": "Fim do Sofrimento de uma Garota",
+      "tip": "Relacionado ao progresso da rota do Chris.",
+      "trophy_code": "re1r_poor_girl_misery",
+      "type": "Bronze"
+    },
+    {
+      "description": "Termine o jogo usando Chris.",
+      "is_missable": 0,
+      "is_spoiler": 0,
+      "name": "You da Man, Chris",
+      "name_pt": "Você É o Cara, Chris",
+      "tip": "Feche ao menos uma campanha completa com Chris.",
+      "trophy_code": "re1r_you_da_man_chris",
+      "type": "Prata"
+    },
+    {
+      "description": "Derrote um protótipo Crimson Head 1 usando Jill.",
+      "is_missable": 0,
+      "is_spoiler": 1,
+      "name": "Grave Digger",
+      "name_pt": "Coveiro",
+      "tip": "Troféu de progresso da campanha da Jill.",
+      "trophy_code": "re1r_grave_digger",
+      "type": "Bronze"
+    },
+    {
+      "description": "Obtenha a Helmet Key usando Jill.",
+      "is_missable": 0,
+      "is_spoiler": 1,
+      "name": "The Key Master",
+      "name_pt": "Mestra das Chaves",
+      "tip": "Automático ao avançar normalmente com Jill.",
+      "trophy_code": "re1r_key_master",
+      "type": "Bronze"
+    },
+    {
+      "description": "Derrote Yawn usando Jill.",
+      "is_missable": 0,
+      "is_spoiler": 1,
+      "name": "Giant Snake Got Nothin'",
+      "name_pt": "Cobra Gigante Não É Nada",
+      "tip": "Relacionado à progressão de Jill.",
+      "trophy_code": "re1r_giant_snake",
+      "type": "Bronze"
+    },
+    {
+      "description": "Entre no laboratório usando Jill.",
+      "is_missable": 0,
+      "is_spoiler": 1,
+      "name": "Where the Magic Happens",
+      "name_pt": "Onde a Mágica Acontece",
+      "tip": "Sai naturalmente perto do fim da campanha da Jill.",
+      "trophy_code": "re1r_magic_happens",
+      "type": "Bronze"
+    },
+    {
+      "description": "Termine o jogo usando Jill.",
+      "is_missable": 0,
+      "is_spoiler": 0,
+      "name": "Alpha Team's Finest",
+      "name_pt": "A Melhor da Equipe Alpha",
+      "tip": "Feche ao menos uma campanha completa com Jill.",
+      "trophy_code": "re1r_alpha_teams_finest",
+      "type": "Prata"
+    },
+    {
+      "description": "Morra pela primeira vez.",
+      "is_missable": 0,
+      "is_spoiler": 0,
+      "name": "Get Used To It",
+      "name_pt": "Acostume-se",
+      "tip": "Troféu rápido; pode ser feito logo no início para não esquecer.",
+      "trophy_code": "re1r_get_used_to_it",
+      "type": "Bronze"
+    },
+    {
+      "description": "Derrote um zumbi.",
+      "is_missable": 0,
+      "is_spoiler": 0,
+      "name": "First Kills Are Special",
+      "name_pt": "Primeiras Mortes São Especiais",
+      "tip": "Sai naturalmente nos primeiros minutos.",
+      "trophy_code": "re1r_first_kills",
+      "type": "Bronze"
+    },
+    {
+      "description": "Queime um zumbi.",
+      "is_missable": 0,
+      "is_spoiler": 0,
+      "name": "Not Taking Any Chances",
+      "name_pt": "Sem Correr Riscos",
+      "tip": "Use querosene e isqueiro em qualquer zumbi caído.",
+      "trophy_code": "re1r_not_taking_chances",
+      "type": "Bronze"
+    },
+    {
+      "description": "Derrote um Hunter.",
+      "is_missable": 1,
+      "is_spoiler": 1,
+      "name": "Who's the Hunter Now?",
+      "name_pt": "Quem É o Caçador Agora?",
+      "tip": "Não deixe para a última hora; pegue na primeira boa oportunidade após o retorno à mansão.",
+      "trophy_code": "re1r_hunter_now",
+      "type": "Bronze"
+    },
+    {
+      "description": "Salve Chris usando Rebecca.",
+      "is_missable": 1,
+      "is_spoiler": 1,
+      "name": "Bravo, Rebecca",
+      "name_pt": "Bravo, Rebecca",
+      "tip": "Na rota do Chris, siga a sequência correta para manter Rebecca viva até esse evento.",
+      "trophy_code": "re1r_bravo_rebecca",
+      "type": "Bronze"
+    },
+    {
+      "description": "Salve Jill usando Barry.",
+      "is_missable": 1,
+      "is_spoiler": 1,
+      "name": "What a Great Guy",
+      "name_pt": "Que Grande Cara",
+      "tip": "Na campanha da Jill, acione a armadilha da shotgun para ver a cena em que Barry ajuda.",
+      "trophy_code": "re1r_great_guy",
+      "type": "Bronze"
+    },
+    {
+      "description": "Salve Richard com o soro.",
+      "is_missable": 1,
+      "is_spoiler": 1,
+      "name": "Delaying the Inevitable",
+      "name_pt": "Adiando o Inevitável",
+      "tip": "Pegue o soro rápido após o encontro com Richard para não perder a janela.",
+      "trophy_code": "re1r_delaying_inevitable",
+      "type": "Bronze"
+    },
+    {
+      "description": "Salve Rebecca de um Hunter.",
+      "is_missable": 1,
+      "is_spoiler": 1,
+      "name": "That Was Nice of You",
+      "name_pt": "Isso Foi Gentil da Sua Parte",
+      "tip": "Exige rota específica no Chris; deixe anotado para não matar a cadeia de eventos.",
+      "trophy_code": "re1r_that_was_nice",
+      "type": "Bronze"
+    },
+    {
+      "description": "Salve Barry de Lisa Trevor.",
+      "is_missable": 1,
+      "is_spoiler": 1,
+      "name": "Trust Him",
+      "name_pt": "Confie Nele",
+      "tip": "Na Jill, devolva a arma do Barry antes do confronto com Lisa Trevor.",
+      "trophy_code": "re1r_trust_him",
+      "type": "Bronze"
+    },
+    {
+      "description": "Salve Jill da prisão usando Chris.",
+      "is_missable": 1,
+      "is_spoiler": 1,
+      "name": "Sorry I Made You Wait",
+      "name_pt": "Desculpe Fazer Você Esperar",
+      "tip": "Exige campanha do Chris com a cadeia correta de decisões até a prisão.",
+      "trophy_code": "re1r_sorry_i_made_you_wait",
+      "type": "Bronze"
+    },
+    {
+      "description": "Salve Chris da prisão usando Jill.",
+      "is_missable": 1,
+      "is_spoiler": 1,
+      "name": "Sorry About the Wait",
+      "name_pt": "Desculpe a Demora",
+      "tip": "Exige campanha da Jill com a rota certa até o resgate final.",
+      "trophy_code": "re1r_sorry_about_wait",
+      "type": "Bronze"
+    },
+    {
+      "description": "Termine o jogo salvando Rebecca e Jill usando Chris.",
+      "is_missable": 1,
+      "is_spoiler": 1,
+      "name": "The Nightmare Ends",
+      "name_pt": "O Pesadelo Acaba",
+      "tip": "Esse é o final bom do Chris.",
+      "trophy_code": "re1r_nightmare_ends",
+      "type": "Prata"
+    },
+    {
+      "description": "Termine o jogo salvando Chris e Barry usando Jill.",
+      "is_missable": 1,
+      "is_spoiler": 1,
+      "name": "I'm a Member of S.T.A.R.S.",
+      "name_pt": "Sou Membro dos S.T.A.R.S.",
+      "tip": "Esse é o final bom da Jill.",
+      "trophy_code": "re1r_member_stars",
+      "type": "Prata"
+    },
+    {
+      "description": "Termine o jogo sem salvar ninguém usando Chris.",
+      "is_missable": 1,
+      "is_spoiler": 1,
+      "name": "Every Man for Himself",
+      "name_pt": "Cada Homem por Si",
+      "tip": "Planeje uma run ruim do Chris sem cumprir os gatilhos de resgate.",
+      "trophy_code": "re1r_every_man",
+      "type": "Prata"
+    },
+    {
+      "description": "Termine o jogo sem salvar ninguém usando Jill.",
+      "is_missable": 1,
+      "is_spoiler": 1,
+      "name": "Every Woman for Herself",
+      "name_pt": "Cada Mulher por Si",
+      "tip": "Planeje uma run ruim da Jill sem salvar Barry nem Chris.",
+      "trophy_code": "re1r_every_woman",
+      "type": "Prata"
+    },
+    {
+      "description": "Derrote um Crimson Head.",
+      "is_missable": 0,
+      "is_spoiler": 1,
+      "name": "Seeing Red",
+      "name_pt": "Vendo Vermelho",
+      "tip": "Pode sair naturalmente quando algum zumbi voltar infectado; deixe um corpo sem queimar para isso.",
+      "trophy_code": "re1r_seeing_red",
+      "type": "Bronze"
+    },
+    {
+      "description": "Sobreviva ao primeiro encontro com Yawn.",
+      "is_missable": 0,
+      "is_spoiler": 1,
+      "name": "Not Waiting to Exhale",
+      "name_pt": "Sem Esperar Para Respirar",
+      "tip": "Troféu de história.",
+      "trophy_code": "re1r_not_waiting_exhale",
+      "type": "Bronze"
+    },
+    {
+      "description": "Derrote Mother Neptune.",
+      "is_missable": 0,
+      "is_spoiler": 1,
+      "name": "Deep Sixed",
+      "name_pt": "Afundado",
+      "tip": "Use o sistema elétrico para resolver a luta com segurança.",
+      "trophy_code": "re1r_deep_sixed",
+      "type": "Bronze"
+    },
+    {
+      "description": "Derrote Black Tiger.",
+      "is_missable": 0,
+      "is_spoiler": 1,
+      "name": "Spider Sense",
+      "name_pt": "Sentido Aranha",
+      "tip": "Sai ao limpar a rota das cavernas.",
+      "trophy_code": "re1r_spider_sense",
+      "type": "Bronze"
+    },
+    {
+      "description": "Termine o jogo em até 3 horas.",
+      "is_missable": 1,
+      "is_spoiler": 0,
+      "name": "Don't Stop Running",
+      "name_pt": "Não Pare de Correr",
+      "tip": "Faça só quando mapa, senhas e inventário já estiverem totalmente automatizados.",
+      "trophy_code": "re1r_dont_stop_running",
+      "type": "Prata"
+    },
+    {
+      "description": "Termine o jogo em até 5 horas.",
+      "is_missable": 1,
+      "is_spoiler": 0,
+      "name": "Racing and Pacing",
+      "name_pt": "Ritmo de Corrida",
+      "tip": "É a run de tempo mais tranquila e pode vir antes da sub-3h.",
+      "trophy_code": "re1r_racing_pacing",
+      "type": "Prata"
+    },
+    {
+      "description": "Termine o jogo usando apenas a faca.",
+      "is_missable": 1,
+      "is_spoiler": 0,
+      "name": "CQC FTW",
+      "name_pt": "CQC Para a Vitória",
+      "tip": "A forma mais segura é combinar com Invisible Enemy em Very Easy e evitar quase todos os combates fora dos chefes.",
+      "trophy_code": "re1r_cqc_ftw",
+      "type": "Prata"
+    },
+    {
+      "description": "Termine o jogo sem salvar.",
+      "is_missable": 1,
+      "is_spoiler": 0,
+      "name": "Ink is for Squids",
+      "name_pt": "Tinta É Para Lulas",
+      "tip": "Deixe para uma rota já dominada e jogue em dificuldade baixa.",
+      "trophy_code": "re1r_ink_is_for_squids",
+      "type": "Prata"
+    },
+    {
+      "description": "Queime dois zumbis ao mesmo tempo com o isqueiro.",
+      "is_missable": 0,
+      "is_spoiler": 1,
+      "name": "Break Out the Marshmallows!",
+      "name_pt": "Traga os Marshmallows!",
+      "tip": "Derrube dois zumbis sobrepostos e queime os dois com uma única aplicação de querosene.",
+      "trophy_code": "re1r_break_out_marshmallows",
+      "type": "Prata"
+    },
+    {
+      "description": "Obtenha todas as armas.",
+      "is_missable": 0,
+      "is_spoiler": 0,
+      "name": "Starsenal",
+      "name_pt": "Arsenal S.T.A.R.S.",
+      "tip": "Além de pegar, use todas ao menos uma vez na campanha, incluindo variantes específicas.",
+      "trophy_code": "re1r_starsenal",
+      "type": "Prata"
+    },
+    {
+      "description": "Obtenha todas as roupas.",
+      "is_missable": 0,
+      "is_spoiler": 0,
+      "name": "Passion for Fashion",
+      "name_pt": "Paixão por Moda",
+      "tip": "Normalmente vem ao terminar campanhas suficientes com Jill e Chris usando roupas que contam para desbloqueio.",
+      "trophy_code": "re1r_passion_fashion",
+      "type": "Bronze"
+    },
+    {
+      "description": "Visite todos os lugares em todos os mapas.",
+      "is_missable": 1,
+      "is_spoiler": 0,
+      "name": "Every Nook and Cranny",
+      "name_pt": "Cada Canto e Recanto",
+      "tip": "Não basta entrar: cada área precisa ficar verde no mapa, então recolha ao menos um item em cada sala válida.",
+      "trophy_code": "re1r_every_nook_cranny",
+      "type": "Bronze"
+    }
+  ]
+}

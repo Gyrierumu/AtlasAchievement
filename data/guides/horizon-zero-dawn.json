@@ -1,0 +1,866 @@
+{
+  "game": {
+    "avoid_if": "Evite se você não quer limpar mapa, collectibles, Hunting Grounds, side quests e atividades de mundo aberto depois da campanha.",
+    "before_you_start": "Separe a lista base de PS4 dos conteúdos adicionais. The Frozen Wilds, New Game+, Ultra Hard e Remastered/PS5 não entram nos 56 troféus da platina base.",
+    "best_for": "Vale platinar Horizon Zero Dawn se você gosta de mundo aberto, exploração, combate contra máquinas e checklist de atividades. A platina base é acessível, offline, sem coop, sem DLC obrigatória, sem New Game+ e sem Ultra Hard. O principal cuidado é organizar side quests, aliados opcionais, Hunting Grounds, Cauldrons, Tallnecks, collectibles e machines para o cleanup não ficar cansativo.",
+    "cleanup_advice": "Depois da história, use o free roam para fechar collectibles, machines, Hunting Grounds, Cauldrons, Tallnecks, Bandit Camps, Corrupted Zones, dummies, Shield-Weaver e troféus acumulativos restantes.",
+    "cover_image": "https://cdn.cloudflare.steamstatic.com/steam/apps/1151640/library_600x900.jpg",
+    "coverage_level": "complete",
+    "created_at": "2026-05-09 19:53:33",
+    "difficulty": 3,
+    "difficulty_reason": "A dificuldade editorial fica em 3/10: a lista base não exige dificuldade alta, Ultra Hard, New Game+ ou online; o desafio vem de organizar mapa, combate e Hunting Grounds.",
+    "dlc_scope": "The Frozen Wilds, New Game+, Ultra Hard e Horizon Zero Dawn Remastered/PS5 ficam fora da platina base de PS4. Complete Edition não transforma DLC em requisito da platina.",
+    "editorial_notes": "Escopo editorial: Horizon Zero Dawn lista base PS4, 56 troféus. Platina single-player/offline, sem coop, sem DLC obrigatória, sem New Game+ e sem Ultra Hard. The Frozen Wilds e listas Remastered/PS5 não foram misturadas.",
+    "editorial_review_status": "verified",
+    "editorial_status": "published",
+    "first_run_advice": "Comece a campanha explorando por região, ativando Tallnecks, comprando mapas de collectibles com comerciantes e completando side quests quando surgirem. Não precisa jogar em dificuldade alta para a platina base; o mais importante e adiantar aliados opcionais, Hunting Grounds, Cauldrons, camps e collectibles para deixar o cleanup pós-história mais leve.",
+    "grind_summary": "O maior checklist está em Hunting Grounds, collectibles, machines, Cauldrons, Tallnecks, Bandit Camps, Corrupted Zones, side quests e cleanup regional.",
+    "guide_avoid": null,
+    "guide_best_moment": null,
+    "guide_dlc": null,
+    "guide_grind": null,
+    "guide_ideal": null,
+    "guide_online": null,
+    "guide_runs": null,
+    "image": "https://cdn.cloudflare.steamstatic.com/steam/apps/1151640/header.jpg",
+    "is_verified": 1,
+    "last_reviewed_at": "2026-06-05",
+    "missable": "Não há troféus perdíveis rígidos na lista base. A campanha libera free roam e cleanup depois da história, então side quests, collectibles, machines e atividades do mapa podem ser organizados sem tratar a platina como perdível.",
+    "missable_summary": "Não há perdíveis rígidos na lista base; All Allies Joined pede planejamento de side quests, mas não deve inflar a contagem de perdíveis.",
+    "name": "Horizon Zero Dawn",
+    "online_summary": "A platina base é single-player/offline, sem online obrigatório, sem coop obrigatório e sem PS+ necessário.",
+    "quality_warnings": "[]",
+    "reviewed_by": "",
+    "runs_summary": "Uma run é suficiente para a platina base, com cleanup em free roam depois da história.",
+    "slug": "horizon-zero-dawn",
+    "time": "40-50 horas",
+    "time_bucket": "medium",
+    "time_max_hours": 50,
+    "time_min_hours": 40,
+    "time_reason": "A estimativa de 40-50 horas considera campanha, side quests importantes, aliados opcionais, Hunting Grounds, Cauldrons, Tallnecks, camps, zones, collectibles, machines e cleanup.",
+    "time_sort_hours": 40,
+    "updated_at": "2026-06-27 02:36:59",
+    "verification_note": "Guia revisado para a lista base PS4 com 56 troféus; The Frozen Wilds, New Game+, Ultra Hard e Remastered/PS5 ficam fora da platina base.",
+    "verification_status": "verified",
+    "walkthrough": null
+  },
+  "redirects": [],
+  "roadmaps": [
+    {
+      "content": "{\"title\":\"Campanha com exploração por região\",\"focus\":\"História e mapa\",\"objective\":\"Avançar pela história enquanto libera o mapa e reduz o cleanup da platina.\",\"actions\":[\"Progrida pela campanha principal sem se preocupar com dificuldade alta, pois a platina base não exige Ultra Hard.\",\"Ative Tallnecks para revelar regiões do mapa e facilitar o planejamento.\",\"Compre mapas de collectibles com comerciantes quando possível.\",\"Complete side quests, errands e atividades próximas antes de trocar de região.\",\"Catalogue machines e use diferentes armas, elementos e estratégias para adiantar troféus de combate.\"],\"warning\":\"A platina não tem perdíveis rígidos, mas deixar todo o mapa para o final transforma o cleanup em um checklist longo.\",\"result\":\"A campanha avança com o mapa aberto, atividades encaminhadas e boa parte dos requisitos naturais já resolvidos.\"}",
+      "step_order": 1
+    },
+    {
+      "content": "{\"title\":\"Aliados opcionais e side quests importantes\",\"focus\":\"Side quests e aliados\",\"objective\":\"Concluir as missões necessárias para reunir aliados e fortalecer o final da campanha.\",\"actions\":[\"Complete side quests e errands relevantes antes da missão final.\",\"Garanta os aliados opcionais necessários para All Allies Joined.\",\"Resolva missões de personagens importantes conforme aparecerem no mapa.\",\"Use o free roam para voltar a regiões antigas se alguma missão ficar pendente.\",\"Antes da reta final, confira se os aliados opcionais foram encaminhados.\"],\"warning\":\"All Allies Joined exige atenção as side quests certas. Não e um perdível rígido, mas e um ponto importante de planejamento.\",\"result\":\"Os aliados e missões opcionais ficam preparados para a conclusão da história.\"}",
+      "step_order": 2
+    },
+    {
+      "content": "{\"title\":\"Atividades principais do mundo aberto\",\"focus\":\"Cauldrons e camps\",\"objective\":\"Limpar as atividades estruturais do mapa que alimentam a platina.\",\"actions\":[\"Complete todos os Cauldrons exigidos para liberar overrides e troféus relacionados.\",\"Limpe Bandit Camps e Corrupted Zones conforme o mapa abrir.\",\"Complete Tallnecks restantes para revelar áreas pendentes.\",\"Faça os Hunting Grounds buscando Blazing Suns quando estiver com equipamento adequado.\",\"Use upgrades e armas melhores antes de enfrentar desafios mais exigentes.\"],\"warning\":\"Hunting Grounds podem ser deixados para depois, com Aloy mais forte e equipamentos melhores.\",\"result\":\"Cauldrons, camps, Corrupted Zones, Tallnecks e Hunting Grounds ficam prontos para o checklist final.\"}",
+      "step_order": 3
+    },
+    {
+      "content": "{\"title\":\"Machines, combate e troféus acumulativos\",\"focus\":\"Combate\",\"objective\":\"Finalizar troféus ligados a máquinas, overrides, catálogo e ações de combate.\",\"actions\":[\"Catalogue todos os tipos de machines exigidos pela lista base.\",\"Derrube, quebre componentes e use fraquezas elementais para adiantar troféus de combate.\",\"Use stealth, headshots e diferentes armas conforme os troféus pedirem.\",\"Complete overrides ligados aos Cauldrons já concluídos.\",\"Revise troféus acumulativos antes de terminar o cleanup final.\"],\"warning\":\"\",\"result\":\"Os troféus de combate, machines e progressão acumulativa ficam resolvidos.\"}",
+      "step_order": 4
+    },
+    {
+      "content": "{\"title\":\"Collectibles da lista base\",\"focus\":\"Colecionaveis\",\"objective\":\"Coletar os itens necessários da lista base sem misturar The Frozen Wilds.\",\"actions\":[\"Use os mapas comprados com comerciantes para localizar Vantage Points, Metal Flowers, Banuk Figures e Ancient Vessels.\",\"Colete os sets necessários de collectibles da lista base.\",\"Complete áreas antigas usando fast travel para reduzir deslocamento.\",\"Confira se nenhum collectible da DLC The Frozen Wilds foi misturado com a platina base.\",\"Use o mapa por região para fechar pendências antes da conferência final.\"],\"warning\":\"Complete Edition pode mostrar conteúdos adicionais, mas The Frozen Wilds não e requisito da platina base.\",\"result\":\"Os collectibles principais ficam concluídos sem confundir base game com DLC.\"}",
+      "step_order": 5
+    },
+    {
+      "content": "{\"title\":\"Cleanup final e conferência da platina\",\"focus\":\"Free roam\",\"objective\":\"Usar o free roam pós-história para fechar troféus restantes da lista base.\",\"actions\":[\"Depois da história, volte ao mapa para concluir side quests, activities, collectibles e machines pendentes.\",\"Confira se os 56 troféus da lista base foram considerados.\",\"Garanta que The Frozen Wilds, New Game+ e Ultra Hard continuam fora dos requisitos da platina.\",\"Revise Hunting Grounds, Cauldrons, Tallnecks, Bandit Camps, Corrupted Zones e allies.\",\"Confirme que a rota continua sem online obrigatório, sem coop obrigatório e sem DLC exigida.\"],\"warning\":\"\",\"result\":\"A lista base de Horizon Zero Dawn fica pronta para a platina.\"}",
+      "step_order": 6
+    }
+  ],
+  "schemaVersion": 1,
+  "seedExtras": {
+    "aliases": [],
+    "attentionPoints": [
+      {
+        "detail": "A DLC tem troféus próprios e não entra nos 56 troféus da lista base.",
+        "tags": [
+          {
+            "id": "dlc",
+            "label": "DLC fora da platina",
+            "tone": "complete"
+          }
+        ],
+        "title": "The Frozen Wilds fora da platina"
+      },
+      {
+        "detail": "São troféus adicionais, não requisito da platina base.",
+        "tags": [
+          {
+            "id": "extra",
+            "label": "Conteúdo adicional",
+            "tone": "complete"
+          }
+        ],
+        "title": "New Game+ e Ultra Hard fora da platina"
+      },
+      {
+        "detail": "Complete as side quests relevantes antes da reta final para garantir todos os aliados. Trate como atenção de rota, não como perdível rígido.",
+        "tags": [
+          {
+            "id": "side-quests",
+            "label": "Side quests",
+            "tone": "partial"
+          },
+          {
+            "id": "attention",
+            "label": "Atenção",
+            "tone": "warning"
+          }
+        ],
+        "title": "All Allies Joined"
+      },
+      {
+        "detail": "Blazing Suns at all Grounds pode ser deixado para depois, com armas e upgrades melhores.",
+        "tags": [
+          {
+            "id": "hunting-grounds",
+            "label": "Hunting Grounds",
+            "tone": "partial"
+          },
+          {
+            "id": "challenge",
+            "label": "Desafio",
+            "tone": "partial"
+          }
+        ],
+        "title": "Hunting Grounds"
+      },
+      {
+        "detail": "Compre mapas de comerciantes e organize Vantage Points, Metal Flowers, Banuk Figures e Ancient Vessels por região.",
+        "tags": [
+          {
+            "id": "collectibles",
+            "label": "Collectibles",
+            "tone": "partial"
+          },
+          {
+            "id": "cleanup",
+            "label": "Cleanup",
+            "tone": "partial"
+          }
+        ],
+        "title": "Collectibles da lista base"
+      },
+      {
+        "detail": "Escaneie todos os tipos de machines da lista base com o Focus.",
+        "tags": [
+          {
+            "id": "machines",
+            "label": "Machines",
+            "tone": "partial"
+          },
+          {
+            "id": "cleanup",
+            "label": "Cleanup",
+            "tone": "partial"
+          }
+        ],
+        "title": "Machines catalogued"
+      },
+      {
+        "detail": "Conclua todos os Cauldrons para liberar overrides e troféus relacionados.",
+        "tags": [
+          {
+            "id": "cauldrons",
+            "label": "Cauldrons",
+            "tone": "partial"
+          },
+          {
+            "id": "progression",
+            "label": "Progressão",
+            "tone": "partial"
+          }
+        ],
+        "title": "Cauldrons e overrides"
+      },
+      {
+        "detail": "A platina permite cleanup depois da campanha, sem perdíveis rígidos.",
+        "tags": [
+          {
+            "id": "free-roam",
+            "label": "Free roam",
+            "tone": "partial"
+          },
+          {
+            "id": "cleanup",
+            "label": "Cleanup",
+            "tone": "partial"
+          }
+        ],
+        "title": "Free roam pós-história"
+      },
+      {
+        "detail": "A platina base é single-player, sem online obrigatório e sem coop obrigatório.",
+        "tags": [
+          {
+            "id": "offline",
+            "label": "Offline",
+            "tone": "complete"
+          }
+        ],
+        "title": "Online e coop"
+      }
+    ],
+    "checklist": [
+      "Confirmar os 56 troféus da lista base de PS4.",
+      "Não contar The Frozen Wilds, New Game+, Ultra Hard ou Remastered/PS5 como requisito da platina base.",
+      "Completar a campanha principal em qualquer dificuldade.",
+      "Completar side quests importantes para All Allies Joined.",
+      "Ativar todos os Tallnecks.",
+      "Limpar Bandit Camps e Corrupted Zones.",
+      "Completar todos os Cauldrons e usar os overrides exigidos.",
+      "Completar Hunting Grounds, All Suns e Blazing Suns.",
+      "Catalogar todos os tipos de machines da lista base.",
+      "Coletar Vantage Points, Metal Flowers, Banuk Figures e Ancient Vessels da lista base.",
+      "Obter Shield-Weaver outfit e derrubar os 23 Grazer dummies.",
+      "Completar troféus de combate, level, skills e progressão.",
+      "Fazer cleanup pós-história em free roam.",
+      "Conferir flags finais: sem online, sem coop, sem DLC obrigatória e sem perdíveis rígidos."
+    ],
+    "faq": [
+      {
+        "answer": "Não. A platina base é single-player e pode ser feita offline.",
+        "question": "Horizon Zero Dawn exige online para platinar?"
+      },
+      {
+        "answer": "Não. A platina não depende de coop.",
+        "question": "Horizon Zero Dawn exige coop para platinar?"
+      },
+      {
+        "answer": "Não. The Frozen Wilds tem troféus próprios, mas não entra nos 56 troféus da platina base.",
+        "question": "The Frozen Wilds é necessário para a platina?"
+      },
+      {
+        "answer": "Não. New Game+ e Ultra Hard pertencem a troféus adicionais e não são exigidos pela platina base.",
+        "question": "New Game+ ou Ultra Hard são necessários para a platina?"
+      },
+      {
+        "answer": "Não há perdíveis rígidos na lista base. O free roam depois da história permite cleanup das atividades e colecionáveis.",
+        "question": "Horizon Zero Dawn tem troféus perdíveis?"
+      },
+      {
+        "answer": "Uma run é suficiente para a platina base, com cleanup depois da história.",
+        "question": "Quantas runs são necessárias?"
+      },
+      {
+        "answer": "Não. A dificuldade não afeta a platina base.",
+        "question": "Preciso jogar em dificuldade alta?"
+      },
+      {
+        "answer": "O maior checklist fica em Hunting Grounds, collectibles, machines, Cauldrons, Tallnecks, Bandit Camps, Corrupted Zones e side quests para aliados.",
+        "question": "Qual é o maior grind ou checklist da platina?"
+      },
+      {
+        "answer": "Sim. Depois da campanha, o free roam permite voltar para limpar atividades, collectibles e troféus acumulativos.",
+        "question": "Dá para fazer cleanup depois da história?"
+      },
+      {
+        "answer": "Não para a platina base. Complete Edition inclui The Frozen Wilds, mas a platina continua ligada aos troféus da lista base.",
+        "question": "Complete Edition muda a platina?"
+      }
+    ],
+    "note": "Campos exportados para auditoria. O SQLite atual nao possui colunas nativas para todos esses extras; a importacao preserva o que o banco suporta.",
+    "quickDecision": {
+      "firstAction": "Comece a campanha explorando por região, ativando Tallnecks, comprando mapas de collectibles e completando side quests quando surgirem.",
+      "mainRisk": "Organize side quests, aliados opcionais, Hunting Grounds, Cauldrons, Tallnecks, collectibles e machines para o cleanup não ficar cansativo.",
+      "summary": "Vale platinar Horizon Zero Dawn se você gosta de mundo aberto, exploração, combate contra máquinas e checklist de atividades. A platina base é acessível, offline, sem coop, sem DLC obrigatória, sem New Game+ e sem Ultra Hard. O principal cuidado é organizar side quests, aliados opcionais, Hunting Grounds, Cauldrons, Tallnecks, collectibles e machines para o cleanup não ficar cansativo."
+    },
+    "seo": {
+      "description": "Guia de platina de Horizon Zero Dawn com roadmap em português, troféus da lista base, machines, Hunting Grounds, Cauldrons, Tallnecks, Bandit Camps, Corrupted Zones, collectibles, aliados opcionais e cleanup para conquistar a platina no PS4.",
+      "keywords": [
+        "Horizon Zero Dawn",
+        "guia de platina Horizon Zero Dawn",
+        "troféus Horizon Zero Dawn",
+        "roadmap Horizon Zero Dawn",
+        "Horizon Zero Dawn PS4",
+        "All Allies Joined",
+        "All machines catalogued",
+        "Blazing Suns at all Grounds",
+        "The Frozen Wilds",
+        "New Game+"
+      ],
+      "title": "Guia de Platina Horizon Zero Dawn - Troféus, Roadmap e Dicas"
+    },
+    "tags": [
+      "mundo aberto",
+      "ação/RPG",
+      "campanha",
+      "machines",
+      "hunting grounds",
+      "cauldrons",
+      "collectibles",
+      "exploração",
+      "cleanup",
+      "offline",
+      "sem coop",
+      "sem DLC obrigatória"
+    ]
+  },
+  "slug": "horizon-zero-dawn",
+  "trophies": [
+    {
+      "description": "Obtenha todos os troféus de Horizon Zero Dawn.",
+      "is_missable": 0,
+      "is_spoiler": 0,
+      "name": "All trophies obtained",
+      "name_pt": "Todos os troféus obtidos",
+      "tip": "Conclua os outros 55 troféus da lista base de PS4. The Frozen Wilds, New Game+, Ultra Hard e Remastered/PS5 ficam fora desta platina base.",
+      "trophy_code": "hzd_all_trophies_obtained",
+      "type": "Platina"
+    },
+    {
+      "description": "Realize um abate furtivo em 10 máquinas.",
+      "is_missable": 0,
+      "is_spoiler": 0,
+      "name": "Stealth killed 10 machines",
+      "name_pt": "10 máquinas mortas furtivamente",
+      "tip": "Compre Silent Strike cedo e use grama alta, pedras ou Lure Call para preparar abates em máquinas fracas.",
+      "trophy_code": "hzd_stealth_killed_10_machines",
+      "type": "Bronze"
+    },
+    {
+      "description": "Mate 3 inimigos usando a habilidade Strike from Above.",
+      "is_missable": 0,
+      "is_spoiler": 0,
+      "name": "3 Strikes From Above",
+      "name_pt": "3 Ataques de Cima",
+      "tip": "Depois de liberar a skill, procure inimigos abaixo de rochas, plataformas ou beiradas e finalize com o prompt de ataque.",
+      "trophy_code": "hzd_3_strikes_from_above",
+      "type": "Bronze"
+    },
+    {
+      "description": "Arranque 10 componentes de máquinas durante combate.",
+      "is_missable": 0,
+      "is_spoiler": 0,
+      "name": "Tore off 10 components",
+      "name_pt": "10 componentes arrancados",
+      "tip": "Use Focus para identificar componentes e abuse de Tearblast Arrows quando tiver acesso a elas.",
+      "trophy_code": "hzd_tore_off_10_components",
+      "type": "Bronze"
+    },
+    {
+      "description": "Mate 10 máquinas fracas contra Fogo enquanto queimam, ou fracas contra Gelo enquanto congeladas.",
+      "is_missable": 0,
+      "is_spoiler": 0,
+      "name": "10 Vulnerable machine kills",
+      "name_pt": "10 máquinas vulneráveis abatidas",
+      "tip": "Analise fraquezas com o Focus e finalize máquinas enquanto o status elemental ainda estiver ativo.",
+      "trophy_code": "hzd_10_vulnerable_machine_kills",
+      "type": "Bronze"
+    },
+    {
+      "description": "Arranque 5 armas pesadas de máquinas durante combate.",
+      "is_missable": 0,
+      "is_spoiler": 0,
+      "name": "Tore off 5 heavy weapons",
+      "name_pt": "5 armas pesadas arrancadas",
+      "tip": "Ravagers, Thunderjaws e outros inimigos grandes carregam armas removíveis; Tearblast facilita muito.",
+      "trophy_code": "hzd_tore_off_5_heavy_weapons",
+      "type": "Bronze"
+    },
+    {
+      "description": "Desbloqueie e use overrides em 7 tipos diferentes de máquinas.",
+      "is_missable": 0,
+      "is_spoiler": 0,
+      "name": "7 types of machine overridden",
+      "name_pt": "7 tipos de máquinas sobrescritos",
+      "tip": "Complete Cauldrons para liberar overrides e teste em máquinas diferentes durante a exploração.",
+      "trophy_code": "hzd_7_types_of_machine_overridden",
+      "type": "Bronze"
+    },
+    {
+      "description": "Mate 30 inimigos humanos acertando headshots.",
+      "is_missable": 0,
+      "is_spoiler": 0,
+      "name": "Headshot 30 human enemies",
+      "name_pt": "30 inimigos humanos mortos com headshot",
+      "tip": "Use Concentration, stealth e bandit camps. Se o contador parecer atrasado, continue jogando até destravar.",
+      "trophy_code": "hzd_headshot_30_human_enemies",
+      "type": "Bronze"
+    },
+    {
+      "description": "Encontre e derrube todos os bonecos de treino Grazer na região Nora.",
+      "is_missable": 0,
+      "is_spoiler": 0,
+      "name": "Downed 23 Grazer dummies",
+      "name_pt": "23 bonecos Grazer derrubados",
+      "tip": "Faça uma volta pela região Nora e derrube todos os bonecos de treino com ataque corpo a corpo.",
+      "trophy_code": "hzd_downed_23_grazer_dummies",
+      "type": "Bronze"
+    },
+    {
+      "description": "Use uma Weapon Coil ou Outfit Weave em uma arma ou roupa modificável.",
+      "is_missable": 0,
+      "is_spoiler": 0,
+      "name": "First Modification",
+      "name_pt": "Primeira modificacao",
+      "tip": "Assim que pegar um coil ou weave, equipe-o em uma arma ou roupa modificável.",
+      "trophy_code": "hzd_first_modification",
+      "type": "Bronze"
+    },
+    {
+      "description": "Mate pelo menos uma maquina de cada tipo de Acquisition.",
+      "is_missable": 0,
+      "is_spoiler": 0,
+      "name": "All Acquisition machines killed",
+      "name_pt": "Todas as máquinas de aquisicao mortas",
+      "tip": "Sai enquanto você explora e completa o catálogo de máquinas. Use o notebook para conferir ausentes.",
+      "trophy_code": "hzd_all_acquisition_machines_killed",
+      "type": "Bronze"
+    },
+    {
+      "description": "Mate pelo menos uma maquina de cada tipo de Reconnaissance.",
+      "is_missable": 0,
+      "is_spoiler": 0,
+      "name": "All Recon machines killed",
+      "name_pt": "Todas as máquinas de reconhecimento mortas",
+      "tip": "Foque cada tipo de maquina de reconhecimento ao menos uma vez e acompanhe pelo notebook.",
+      "trophy_code": "hzd_all_recon_machines_killed",
+      "type": "Bronze"
+    },
+    {
+      "description": "Mate pelo menos uma maquina de cada tipo de Combat.",
+      "is_missable": 0,
+      "is_spoiler": 0,
+      "name": "All Combat machines killed",
+      "name_pt": "Todas as máquinas de combate mortas",
+      "tip": "Inclui máquinas mais perigosas; volte mais tarde com armas melhores se algum confronto estiver pesado.",
+      "trophy_code": "hzd_all_combat_machines_killed",
+      "type": "Bronze"
+    },
+    {
+      "description": "Mate pelo menos uma maquina de cada tipo de Transport.",
+      "is_missable": 0,
+      "is_spoiler": 0,
+      "name": "All Transport machines killed",
+      "name_pt": "Todas as máquinas de transporte mortas",
+      "tip": "Procure rotas e habitats no mapa e elimine uma maquina de cada tipo de transporte.",
+      "trophy_code": "hzd_all_transport_machines_killed",
+      "type": "Bronze"
+    },
+    {
+      "description": "Alcance o nível de jogador 10.",
+      "is_missable": 0,
+      "is_spoiler": 0,
+      "name": "Reached level 10",
+      "name_pt": "Nível 10 alcancado",
+      "tip": "Vem naturalmente com história, combate e atividades.",
+      "trophy_code": "hzd_reached_level_10",
+      "type": "Bronze"
+    },
+    {
+      "description": "Alcance o nível de jogador 25.",
+      "is_missable": 0,
+      "is_spoiler": 0,
+      "name": "Reached level 25",
+      "name_pt": "Nível 25 alcancado",
+      "tip": "Continue misturando main quests, side quests e atividades de mapa.",
+      "trophy_code": "hzd_reached_level_25",
+      "type": "Bronze"
+    },
+    {
+      "description": "Alcance o nível de jogador 40.",
+      "is_missable": 0,
+      "is_spoiler": 0,
+      "name": "Reached level 40",
+      "name_pt": "Nível 40 alcancado",
+      "tip": "Hunting Grounds, Cauldrons, Tallnecks, Bandit Camps e Corrupted Zones aceleram bastante o XP.",
+      "trophy_code": "hzd_reached_level_40",
+      "type": "Bronze"
+    },
+    {
+      "description": "Alcance o nível de jogador 50.",
+      "is_missable": 0,
+      "is_spoiler": 0,
+      "name": "Reached level 50",
+      "name_pt": "Nível 50 alcancado",
+      "tip": "Não exige farm pesado se você completar side content e atividades principais da lista base.",
+      "trophy_code": "hzd_reached_level_50",
+      "type": "Bronze"
+    },
+    {
+      "description": "Aprenda todas as habilidades disponíveis.",
+      "is_missable": 0,
+      "is_spoiler": 0,
+      "name": "All Skills learned",
+      "name_pt": "Todas as habilidades aprendidas",
+      "tip": "Há pontos suficientes com níveis e atividades. Priorize utilidade cedo e complete tudo no fim.",
+      "trophy_code": "hzd_all_skills_learned",
+      "type": "Bronze"
+    },
+    {
+      "description": "Escale um Tallneck e acesse suas informacoes.",
+      "is_missable": 0,
+      "is_spoiler": 0,
+      "name": "First Tallneck Overridden",
+      "name_pt": "Primeiro Tallneck sobrescrito",
+      "tip": "Suba por um ponto alto próximo da rota do Tallneck e conclua o override no topo.",
+      "trophy_code": "hzd_first_tallneck_overridden",
+      "type": "Bronze"
+    },
+    {
+      "description": "Recupere um assentamento de um clã de bandidos.",
+      "is_missable": 0,
+      "is_spoiler": 0,
+      "name": "First Bandit Camp cleared",
+      "name_pt": "Primeiro Bandit Camp limpo",
+      "tip": "Limpe um Bandit Camp quando aparecer no mapa; stealth e headshots tornam isso simples.",
+      "trophy_code": "hzd_first_bandit_camp_cleared",
+      "type": "Bronze"
+    },
+    {
+      "description": "Chegue ao Core de um Cauldron e acesse suas informacoes.",
+      "is_missable": 0,
+      "is_spoiler": 0,
+      "name": "First Core Overridden",
+      "name_pt": "Primeiro Core sobrescrito",
+      "tip": "Entre em um Cauldron, avance até o core e conclua o override para liberar novas máquinas.",
+      "trophy_code": "hzd_first_core_overridden",
+      "type": "Bronze"
+    },
+    {
+      "description": "Ganhe pelo menos uma marca Half Sun nas três trials de um Hunting Ground.",
+      "is_missable": 0,
+      "is_spoiler": 0,
+      "name": "All Suns at one Ground",
+      "name_pt": "Todos os Suns em um Ground",
+      "tip": "Escolha um Hunting Ground inicial e garanta pelo menos Half Sun nas três provas.",
+      "trophy_code": "hzd_all_suns_at_one_ground",
+      "type": "Bronze"
+    },
+    {
+      "description": "Ganhe uma marca Blazing Sun nas três trials de um Hunting Ground.",
+      "is_missable": 0,
+      "is_spoiler": 0,
+      "name": "Blazing Suns at one Ground",
+      "name_pt": "Blazing Suns em um Ground",
+      "tip": "Volte com melhor equipamento se necessário; Blazing Suns ficam muito mais faceis com armas fortes.",
+      "trophy_code": "hzd_blazing_suns_at_one_ground",
+      "type": "Bronze"
+    },
+    {
+      "description": "Mate todas as máquinas corrompidas em uma Corrupted Zone.",
+      "is_missable": 0,
+      "is_spoiler": 0,
+      "name": "First Corrupted Zone cleared",
+      "name_pt": "Primeira Corrupted Zone limpa",
+      "tip": "Entre em uma Corrupted Zone, elimine todas as máquinas marcadas e confirme a limpeza no mapa.",
+      "trophy_code": "hzd_first_corrupted_zone_cleared",
+      "type": "Bronze"
+    },
+    {
+      "description": "Escale todos os Tallnecks e acesse suas informacoes.",
+      "is_missable": 0,
+      "is_spoiler": 0,
+      "name": "All Tallnecks Overridden",
+      "name_pt": "Todos os Tallnecks sobrescritos",
+      "tip": "Há 6 Tallnecks. Eles revelam mapa e ajudam a organizar o restante do cleanup.",
+      "trophy_code": "hzd_all_tallnecks_overridden",
+      "type": "Prata"
+    },
+    {
+      "description": "Recupere todos os assentamentos dos clãs de bandidos.",
+      "is_missable": 0,
+      "is_spoiler": 0,
+      "name": "Cleared all the Bandit Camps",
+      "name_pt": "Todos os Bandit Camps limpos",
+      "tip": "Limpe os 6 Bandit Camps; eles aparecem com exploração e Tallnecks.",
+      "trophy_code": "hzd_cleared_all_the_bandit_camps",
+      "type": "Prata"
+    },
+    {
+      "description": "Chegue ao Core de todos os Cauldrons e acesse as informacoes neles.",
+      "is_missable": 0,
+      "is_spoiler": 0,
+      "name": "All Cores Overridden",
+      "name_pt": "Todos os Cores sobrescritos",
+      "tip": "Complete os 4 Cauldrons da lista base para liberar todos os overrides relevantes.",
+      "trophy_code": "hzd_all_cores_overridden",
+      "type": "Prata"
+    },
+    {
+      "description": "Ganhe pelo menos uma marca Half Sun em todas as trials de todos os Hunting Grounds.",
+      "is_missable": 0,
+      "is_spoiler": 0,
+      "name": "All Suns at all Grounds",
+      "name_pt": "Todos os Suns em todos os Grounds",
+      "tip": "Complete as 15 provas dos 5 Hunting Grounds com pelo menos Half Sun.",
+      "trophy_code": "hzd_all_suns_at_all_grounds",
+      "type": "Prata"
+    },
+    {
+      "description": "Ganhe uma marca Blazing Sun em todas as trials de todos os Hunting Grounds.",
+      "is_missable": 0,
+      "is_spoiler": 0,
+      "name": "Blazing Suns at all Grounds",
+      "name_pt": "Blazing Suns em todos os Grounds",
+      "tip": "O maior teste da platina. Deixe para depois de subir nível, melhorar armas e entender bem cada maquina.",
+      "trophy_code": "hzd_blazing_suns_at_all_grounds",
+      "type": "Ouro"
+    },
+    {
+      "description": "Mate todas as máquinas corrompidas em todas as Corrupted Zones.",
+      "is_missable": 0,
+      "is_spoiler": 0,
+      "name": "All Corrupted Zones cleared",
+      "name_pt": "Todas as Corrupted Zones limpas",
+      "tip": "Limpe as 11 Corrupted Zones. Volte melhor equipado para as zonas com máquinas mais duras.",
+      "trophy_code": "hzd_all_corrupted_zones_cleared",
+      "type": "Prata"
+    },
+    {
+      "description": "Encontre e escaneie com o Focus todos os tipos de máquinas.",
+      "is_missable": 0,
+      "is_spoiler": 0,
+      "name": "All machines catalogued",
+      "name_pt": "Todas as máquinas catalogadas",
+      "tip": "Use o Focus em cada maquina nova antes de destruir. Confira o notebook no cleanup.",
+      "trophy_code": "hzd_all_machines_catalogued",
+      "type": "Bronze"
+    },
+    {
+      "description": "Encontre e acesse um datapoint Vantage.",
+      "is_missable": 0,
+      "is_spoiler": 0,
+      "name": "First Vantage found",
+      "name_pt": "Primeiro Vantage encontrado",
+      "tip": "Compre mapas de coletáveis ou explore pontos altos para encontrar o primeiro Vantage.",
+      "trophy_code": "hzd_first_vantage_found",
+      "type": "Bronze"
+    },
+    {
+      "description": "Descubra uma estranha Metal Flower.",
+      "is_missable": 0,
+      "is_spoiler": 0,
+      "name": "First Metal Flower found",
+      "name_pt": "Primeira Metal Flower encontrada",
+      "tip": "Pegue qualquer Metal Flower durante a exploração ou seguindo o mapa comprado de mercadores.",
+      "trophy_code": "hzd_first_metal_flower_found",
+      "type": "Bronze"
+    },
+    {
+      "description": "Encontre uma efigie de madeira deixada por um viajante Banuk.",
+      "is_missable": 0,
+      "is_spoiler": 0,
+      "name": "First Banuk Figure found",
+      "name_pt": "Primeira Banuk Figure encontrada",
+      "tip": "Banuk Figures costumam exigir escalada; siga o mapa de coletáveis e procure trilhas próximas.",
+      "trophy_code": "hzd_first_banuk_figure_found",
+      "type": "Bronze"
+    },
+    {
+      "description": "Encontre um Ancient Vessel usado pelos Old Ones.",
+      "is_missable": 0,
+      "is_spoiler": 0,
+      "name": "First Ancient Vessel found",
+      "name_pt": "Primeiro Ancient Vessel encontrado",
+      "tip": "Colete qualquer Ancient Vessel revelado por mapa ou encontrado na exploração.",
+      "trophy_code": "hzd_first_ancient_vessel_found",
+      "type": "Bronze"
+    },
+    {
+      "description": "Encontre e acesse todos os datapoints Vantage.",
+      "is_missable": 0,
+      "is_spoiler": 0,
+      "name": "All Vantages found",
+      "name_pt": "Todos os Vantages encontrados",
+      "tip": "São 12 Vantages. Mapas de coletáveis tornam a rota direta.",
+      "trophy_code": "hzd_all_vantages_found",
+      "type": "Bronze"
+    },
+    {
+      "description": "Encontre todas as Metal Flowers.",
+      "is_missable": 0,
+      "is_spoiler": 0,
+      "name": "All Metal Flowers found",
+      "name_pt": "Todas as Metal Flowers encontradas",
+      "tip": "São 30 Metal Flowers. Compre o mapa e limpe por região para não repetir trajetos.",
+      "trophy_code": "hzd_all_metal_flowers_found",
+      "type": "Bronze"
+    },
+    {
+      "description": "Encontre todas as figuras de Arnak.",
+      "is_missable": 0,
+      "is_spoiler": 0,
+      "name": "All Banuk Figures found",
+      "name_pt": "Todas as Banuk Figures encontradas",
+      "tip": "São 6 Banuk Figures. Complete cada subida com calma e marque o que já pegou.",
+      "trophy_code": "hzd_all_banuk_figures_found",
+      "type": "Bronze"
+    },
+    {
+      "description": "Encontre todos os Ancient Vessels.",
+      "is_missable": 0,
+      "is_spoiler": 0,
+      "name": "All Ancient Vessels found",
+      "name_pt": "Todos os Ancient Vessels encontrados",
+      "tip": "São 12 Ancient Vessels. Use mapas de mercadores e limpe junto de outros coletáveis.",
+      "trophy_code": "hzd_all_ancient_vessels_found",
+      "type": "Bronze"
+    },
+    {
+      "description": "Recupere uma tecnologia antiga e coloque-a em uso.",
+      "is_missable": 0,
+      "is_spoiler": 1,
+      "name": "Got the Shield-Weaver outfit",
+      "name_pt": "Traje Shield-Weaver obtido",
+      "tip": "Colete as Power Cells ligadas a áreas da história e resolva a sala do traje quando tiver todas.",
+      "trophy_code": "hzd_got_the_shield_weaver_outfit",
+      "type": "Bronze"
+    },
+    {
+      "description": "Aprenda a caçar e lutar ao lado de Rost.",
+      "is_missable": 0,
+      "is_spoiler": 1,
+      "name": "Followed Rost's teachings",
+      "name_pt": "Ensinamentos de Rost seguidos",
+      "tip": "Troféu automático de progresso inicial da história.",
+      "trophy_code": "hzd_followed_rosts_teachings",
+      "type": "Bronze"
+    },
+    {
+      "description": "Derrote o Sawtooth que ameaçava os Nora.",
+      "is_missable": 0,
+      "is_spoiler": 1,
+      "name": "Defeated the Sawtooth",
+      "name_pt": "Sawtooth derrotado",
+      "tip": "Troféu automático de história ligado ao primeiro confronto importante.",
+      "trophy_code": "hzd_defeated_the_sawtooth",
+      "type": "Bronze"
+    },
+    {
+      "description": "Supere a adversidade e fique em primeiro lugar no Proving.",
+      "is_missable": 0,
+      "is_spoiler": 1,
+      "name": "Triumphed in the Proving",
+      "name_pt": "Triunfo no Proving",
+      "tip": "Troféu automático de história da fase inicial.",
+      "trophy_code": "hzd_triumphed_in_the_proving",
+      "type": "Bronze"
+    },
+    {
+      "description": "Destrua a corrupção dentro do vale Nora.",
+      "is_missable": 0,
+      "is_spoiler": 1,
+      "name": "Fought back the corruption",
+      "name_pt": "Corrupção combatida",
+      "tip": "Troféu automático de progresso da campanha.",
+      "trophy_code": "hzd_fought_back_the_corruption",
+      "type": "Bronze"
+    },
+    {
+      "description": "Descubra o passado antigo em Maker's End.",
+      "is_missable": 0,
+      "is_spoiler": 1,
+      "name": "Learned of the ancient past",
+      "name_pt": "Passado antigo descoberto",
+      "tip": "Troféu de história com revelações importantes; avance a main quest.",
+      "trophy_code": "hzd_learned_of_the_ancient_past",
+      "type": "Bronze"
+    },
+    {
+      "description": "Infiltre-se no campo de batalha Eclipse e derrube a rede deles.",
+      "is_missable": 0,
+      "is_spoiler": 1,
+      "name": "Crashed the Eclipse network",
+      "name_pt": "Rede Eclipse derrubada",
+      "tip": "Troféu automático de uma missão principal avançada.",
+      "trophy_code": "hzd_crashed_the_eclipse_network",
+      "type": "Bronze"
+    },
+    {
+      "description": "Descubra a verdade sobre Zero Dawn.",
+      "is_missable": 0,
+      "is_spoiler": 1,
+      "name": "Discovered the truth",
+      "name_pt": "Verdade descoberta",
+      "tip": "Troféu de revelacao central da história.",
+      "trophy_code": "hzd_discovered_the_truth",
+      "type": "Bronze"
+    },
+    {
+      "description": "Derrote os invasores e entre na montanha sagrada.",
+      "is_missable": 0,
+      "is_spoiler": 1,
+      "name": "Broke the siege of All-Mother",
+      "name_pt": "Cerco de All-Mother rompido",
+      "tip": "Troféu automático da reta avançada da campanha.",
+      "trophy_code": "hzd_broke_the_siege_of_all_mother",
+      "type": "Bronze"
+    },
+    {
+      "description": "Explore The Mountain That Fell e recupere uma arma poderosa.",
+      "is_missable": 0,
+      "is_spoiler": 1,
+      "name": "Recovered a powerful weapon",
+      "name_pt": "Arma poderosa recuperada",
+      "tip": "Troféu de história avançada; siga a campanha principal.",
+      "trophy_code": "hzd_recovered_a_powerful_weapon",
+      "type": "Bronze"
+    },
+    {
+      "description": "Com base nas ações de Aloy, todos os aliados opcionais possíveis se juntaram à defesa.",
+      "is_missable": 0,
+      "is_spoiler": 1,
+      "name": "All allies joined",
+      "name_pt": "Todos os aliados se juntaram",
+      "tip": "Complete as side quests e errands relevantes antes da reta final. A missão final pode ser repetida, então trate como ponto de planejamento, não como perdível rígido.",
+      "trophy_code": "hzd_all_allies_joined",
+      "type": "Bronze"
+    },
+    {
+      "description": "Encerre a ameaça das máquinas de guerra antigas.",
+      "is_missable": 0,
+      "is_spoiler": 1,
+      "name": "Ended the war machine threat",
+      "name_pt": "Ameaça das máquinas de guerra encerrada",
+      "tip": "Troféu automático de conclusão da história principal.",
+      "trophy_code": "hzd_ended_the_war_machine_threat",
+      "type": "Ouro"
+    },
+    {
+      "description": "Encontre a War-Chief Nora e derrote os assassinos no Ring of Metal.",
+      "is_missable": 0,
+      "is_spoiler": 1,
+      "name": "Victorious with the War-Chief",
+      "name_pt": "Vitoria com a War-Chief",
+      "tip": "Troféu de progresso narrativo ligado a missão da War-Chief.",
+      "trophy_code": "hzd_victorious_with_the_war_chief",
+      "type": "Bronze"
+    },
+    {
+      "description": "Ajude Erend a investigar o destino de Ersa e impeça uma conspiracao contra Meridian.",
+      "is_missable": 0,
+      "is_spoiler": 1,
+      "name": "Saved Meridian from its foe",
+      "name_pt": "Meridian salva de seu inimigo",
+      "tip": "Complete a linha de Erend e Meridian conforme ela ficar disponível.",
+      "trophy_code": "hzd_saved_meridian_from_its_foe",
+      "type": "Bronze"
+    },
+    {
+      "description": "Ajude Uthid e o rei-criança Itamen a escaparem dos Shadow Carja.",
+      "is_missable": 0,
+      "is_spoiler": 1,
+      "name": "Aided the defectors",
+      "name_pt": "Desertores ajudados",
+      "tip": "Complete Traitor's Bounty e Queen's Gambit para resolver essa cadeia de quests.",
+      "trophy_code": "hzd_aided_the_defectors",
+      "type": "Bronze"
+    },
+    {
+      "description": "Suba nas fileiras da Hunters Lodge e ajude Talanah a derrotar Redmaw.",
+      "is_missable": 0,
+      "is_spoiler": 1,
+      "name": "Hunted Redmaw with Talanah",
+      "name_pt": "Redmaw caçado com Talanah",
+      "tip": "Avance a linha do Hunters Lodge até Redmaw. Ela combina bem com os Hunting Grounds.",
+      "trophy_code": "hzd_hunted_redmaw_with_talanah",
+      "type": "Bronze"
+    }
+  ]
+}

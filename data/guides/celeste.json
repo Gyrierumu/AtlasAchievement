@@ -1,0 +1,527 @@
+{
+  "game": {
+    "avoid_if": "Evite se você não quer depender de precisão de plataforma, porque B-Sides, C-Sides e Thanks For Playing elevam bastante o desafio sem assistências.",
+    "before_you_start": "Celeste é uma platina curta, single-player, sem online, sem coop, sem DLC obrigatória e sem perdíveis. O cuidado principal é separar a lista PS4 base de Farewell, Golden Strawberries, Moon Berry e extras.",
+    "best_for": "Vale platinar Celeste se você quer uma lista curta, single-player e sem perdíveis, com Assist Mode disponível e cleanup por Chapter Select.",
+    "cleanup_advice": "Use Chapter Select para limpar strawberries, cassetes, Crystal Hearts, B-Sides, C-Sides, 1UP! e Real Gamer/PICO-8 sem misturar Farewell como requisito da platina.",
+    "cover_image": "https://cdn.cloudflare.steamstatic.com/steam/apps/504230/library_600x900.jpg",
+    "coverage_level": "strong",
+    "created_at": "2026-06-09 19:10:28",
+    "difficulty": 3,
+    "difficulty_reason": "A nota 3/10 assume Assist Mode como opção válida. Sem Assist Mode, B-Sides, C-Sides, 1UP! e Thanks For Playing elevam bastante a dificuldade.",
+    "dlc_scope": "Guia focado na lista PS4 base de 31 troféus. Farewell/Chapter 9, Golden Strawberries, Moon Berry e extras sem troféu ficam fora, mas Real Gamer/PICO-8 entra na platina base.",
+    "editorial_notes": "Decisão editorial: lista PS4 base com 31 troféus, sem online, sem coop, sem DLC obrigatória, sem perdíveis, Assist Mode permitido, Real Gamer/PICO-8 obrigatório e Farewell/Chapter 9, Golden Strawberries e Moon Berry fora da platina base.",
+    "editorial_review_status": "in_review",
+    "editorial_status": "published",
+    "first_run_advice": "Jogue a campanha principal aprendendo movimento, dash, climb e ritmo de telas. Se precisar, use Assist Mode: ele não bloqueia a rota editorial da platina.",
+    "grind_summary": "O peso está em repetição de telas difíceis, B-Sides, C-Sides, strawberries, Crystal Hearts, 1UP! e Real Gamer/PICO-8.",
+    "guide_avoid": null,
+    "guide_best_moment": null,
+    "guide_dlc": null,
+    "guide_grind": null,
+    "guide_ideal": null,
+    "guide_online": null,
+    "guide_runs": null,
+    "image": "https://cdn.cloudflare.steamstatic.com/steam/apps/504230/header.jpg",
+    "is_verified": 0,
+    "last_reviewed_at": "2026-06-09",
+    "missable": "A lista base não tem perdíveis reais. Chapter Select permite retornar para capítulos, strawberries, cassetes, Crystal Hearts, B-Sides, C-Sides e PICO-8.",
+    "missable_summary": "Não há troféus perdíveis na lista base. O risco é de execução, não de perda de rota.",
+    "name": "Celeste",
+    "online_summary": "Não há exigência online para a platina base. Celeste é uma platina single-player.",
+    "quality_warnings": "[\"Guia mantido em revisão até a suíte completa passar sem falhas externas ao escopo Celeste.\"]",
+    "reviewed_by": "Codex",
+    "runs_summary": "Uma campanha principal com cleanup por Chapter Select. Assist Mode pode reduzir bastante o atrito e é aceito na rota editorial.",
+    "slug": "celeste",
+    "time": "8-15 horas",
+    "time_bucket": "short",
+    "time_max_hours": 15,
+    "time_min_hours": 8,
+    "time_reason": "A faixa de 8-15 horas considera Assist Mode e foco direto. Sem assistências, o tempo pode subir bastante por causa de B-Sides, C-Sides, strawberries e execução.",
+    "time_sort_hours": 15,
+    "updated_at": "2026-06-27 02:36:59",
+    "verification_note": "Guia de Celeste revisado com resumo da platina, PICO-8/Real Gamer no escopo base, descrições PT-BR, FAQ firme, tags de dificuldade/cleanup/coletáveis e 31 troféus conferidos; permanece em revisão até validação global sem falhas.",
+    "verification_status": "review",
+    "walkthrough": ""
+  },
+  "redirects": [],
+  "roadmaps": [
+    {
+      "content": "{\"title\":\"Aprenda o ritmo da montanha\",\"focus\":\"Campanha principal\",\"objective\":\"Concluir a história principal enquanto domina dash, wall climb, stamina e leitura de telas.\",\"actions\":[\"Jogue os primeiros capítulos sem pressa para aprender o ritmo de movimento e o uso do dash.\",\"Pegue strawberries e Crystal Hearts quando aparecerem de forma natural, sem transformar a primeira passagem em checklist duro.\",\"Use Assist Mode se algum trecho estiver travando a progressão. Ele é uma opção válida para a rota editorial da platina.\",\"Marque quais capítulos precisam de retorno posterior para B-Sides, strawberries, cassetes, Crystal Hearts e cleanup.\"],\"warning\":\"Com Assist Mode, a dificuldade editorial fica baixa. Sem assistências, o desafio natural do jogo é muito maior.\",\"result\":\"A base da progressão fica pronta com leitura de rota e movimentos mais consistentes.\"}",
+      "step_order": 1
+    },
+    {
+      "content": "{\"title\":\"Feche os capítulos e os corações do caminho\",\"focus\":\"Coletáveis\",\"objective\":\"Limpar os troféus ligados aos capítulos, strawberries, cassetes e Crystal Hearts dos capítulos principais.\",\"actions\":[\"Complete os capítulos 1 a 8 e os respectivos troféus de progresso.\",\"Colete strawberries quando fizer sentido e use Chapter Select para voltar depois.\",\"Colete cassetes para abrir os B-Sides.\",\"Colete os Crystal Hearts dos capítulos 1 a 8.\",\"Não trate Farewell como requisito da platina PS4 base.\"],\"warning\":\"Crystal Hearts, strawberries e cassetes podem exigir retorno, mas Chapter Select evita perdíveis reais.\",\"result\":\"A campanha e os principais blocos de coleta ficam organizados para os B-Sides e C-Sides.\"}",
+      "step_order": 2
+    },
+    {
+      "content": "{\"title\":\"Resolva os B-Sides por capítulo\",\"focus\":\"Dificuldade\",\"objective\":\"Completar os B-Sides dos capítulos principais e consolidar consistência de movimento.\",\"actions\":[\"Abra os B-Sides depois de coletar as cassetes.\",\"Use Assist Mode se um B-Side estiver travando demais a execução.\",\"Priorize aprendizado de padrões e repetição limpa em vez de forçar tentativas longas.\",\"Deixe os B-Sides mais duros para quando o controle de movimento estiver mais confiável.\"],\"warning\":\"Cada B-Side tem troféu próprio, mas nenhum é perdível porque os capítulos podem ser revisitados.\",\"result\":\"Os B-Sides ficam fechados sem precisar de uma rota multirrun pesada.\"}",
+      "step_order": 3
+    },
+    {
+      "content": "{\"title\":\"Feche os C-Sides e o troféu PICO-8\",\"focus\":\"Dificuldade e cleanup\",\"objective\":\"Limpar todos os C-Sides e completar Celeste for PICO-8 para Real Gamer.\",\"actions\":[\"Complete todos os C-Sides para Thanks For Playing.\",\"Complete Celeste for PICO-8 para Real Gamer, que faz parte da platina base.\",\"Use Chapter Select e repetição focalizada para evitar refazer capítulos inteiros sem necessidade.\",\"Se precisar, divida o cleanup em sessões curtas para manter a precisão.\"],\"warning\":\"Thanks For Playing é o principal pico de dificuldade da lista base. PICO-8 entra pela exigência de Real Gamer.\",\"result\":\"C-Sides e PICO-8 ficam resolvidos dentro do escopo real dos 31 troféus.\"}",
+      "step_order": 4
+    },
+    {
+      "content": "{\"title\":\"Finalize strawberries e o checklist\",\"focus\":\"Platina\",\"objective\":\"Conferir as coleções restantes, os troféus de progresso e a ordem final do guia antes da platina.\",\"actions\":[\"Revise Strawberry Badge, Strawberry Medal e Impress Your Friends.\",\"Feche Gateway, 1UP!, Pointless Machines, Resurrections e os demais troféus de coleta em ordem flexível.\",\"Confirme que Heartbeat exige os outros 30 troféus da lista PS4 base, incluindo Real Gamer.\",\"Mantenha Farewell, Golden Strawberries, Moon Berry e extras sem troféu fora da platina PS4 base.\"],\"warning\":\"Não misture objetivos extras sem troféu com a platina PS4 base.\",\"result\":\"A lista base fica limpa, fechada e pronta para a platina sem misturar conteúdo fora do escopo.\"}",
+      "step_order": 5
+    }
+  ],
+  "schemaVersion": 1,
+  "seedExtras": {
+    "aliases": [],
+    "attentionPoints": [
+      {
+        "detail": "O guia assume Assist Mode como opção válida para reduzir dificuldade sem bloquear a platina.",
+        "tags": [
+          "Assist Mode",
+          "Dificuldade"
+        ],
+        "title": "Assist Mode é permitido na rota editorial"
+      },
+      {
+        "detail": "Capítulos, strawberries, cassetes, Crystal Hearts, B-Sides, C-Sides e PICO-8 podem ser revisitados.",
+        "tags": [
+          "Chapter Select",
+          "Sem perdíveis"
+        ],
+        "title": "Chapter Select evita perdíveis"
+      },
+      {
+        "detail": "Real Gamer exige completar Celeste for PICO-8, então ele faz parte dos 31 troféus da lista PS4 base.",
+        "tags": [
+          "Real Gamer",
+          "PICO-8"
+        ],
+        "title": "PICO-8 entra na platina base"
+      },
+      {
+        "detail": "Farewell/Chapter 9, Golden Strawberries, Moon Berry e extras sem troféu não entram na platina PS4 base.",
+        "tags": [
+          "Fora da base",
+          "Escopo"
+        ],
+        "title": "Farewell e extras ficam fora"
+      },
+      {
+        "detail": "Completar todos os C-Sides costuma ser o maior desafio da lista base.",
+        "tags": [
+          "C-Sides",
+          "Dificuldade"
+        ],
+        "title": "Thanks For Playing é o pico de dificuldade"
+      },
+      {
+        "detail": "Cassetes abrem B-Sides e cada B-Side tem troféu próprio, mas nenhum é perdível.",
+        "tags": [
+          "B-Sides",
+          "Cassetes"
+        ],
+        "title": "B-Sides exigem consistência"
+      },
+      {
+        "detail": "Os troféus pedem 30, 80 e 175 morangos; Golden Strawberries ficam fora do escopo.",
+        "tags": [
+          "Strawberries",
+          "Coletáveis"
+        ],
+        "title": "Strawberries têm metas específicas"
+      },
+      {
+        "detail": "Confira um Crystal Heart por capítulo antes do fechamento final da checklist.",
+        "tags": [
+          "Crystal Hearts",
+          "Cleanup"
+        ],
+        "title": "Crystal Hearts dos capítulos 1 a 8"
+      },
+      {
+        "detail": "O troféu pede seis strawberries em sequência sem tocar no chão, então vale separar uma tentativa própria.",
+        "tags": [
+          "1UP!",
+          "Execução"
+        ],
+        "title": "1UP! exige execução específica"
+      },
+      {
+        "detail": "8-15h é plausível com Assist Mode e foco direto; sem assistências, B-Sides e C-Sides podem alongar bastante.",
+        "tags": [
+          "Tempo",
+          "Assist Mode"
+        ],
+        "title": "Tempo varia com Assist Mode"
+      }
+    ],
+    "checklist": [],
+    "faq": [
+      {
+        "answer": "Não. A lista base pode ser limpa com Chapter Select, então strawberries, cassetes, Crystal Hearts, B-Sides, C-Sides e PICO-8 podem ser resolvidos sem risco real de perdibilidade.",
+        "question": "Celeste tem troféus perdíveis?"
+      },
+      {
+        "answer": "Não. A platina é totalmente single-player e não exige troféus online.",
+        "question": "Celeste precisa de online para platinar?"
+      },
+      {
+        "answer": "Não. Não há requisito de coop para a platina base.",
+        "question": "Celeste tem coop obrigatório?"
+      },
+      {
+        "answer": "Não. A platina PS4 base tem 31 troféus e não exige Farewell/Chapter 9, Golden Strawberries ou Moon Berry. Real Gamer/PICO-8, porém, entra na lista base.",
+        "question": "A DLC ou Farewell são necessários para a platina?"
+      },
+      {
+        "answer": "Não trate Assist Mode como bloqueio no guia. Ele pode ser usado como opção de acessibilidade para reduzir a dificuldade da platina.",
+        "question": "Assist Mode bloqueia troféus?"
+      },
+      {
+        "answer": "Com Assist Mode e foco direto, 8-15 horas é uma estimativa aceitável. Sem Assist Mode, o tempo pode subir bastante por causa de B-Sides, C-Sides, strawberries e execução.",
+        "question": "Quanto tempo leva para platinar Celeste?"
+      },
+      {
+        "answer": "Com Assist Mode, 3/10 é aceitável. Sem Assist Mode, a execução é muito mais exigente, especialmente em B-Sides, C-Sides e Thanks For Playing.",
+        "question": "Qual é a dificuldade da platina de Celeste?"
+      }
+    ],
+    "note": "Campos exportados para auditoria. O SQLite atual nao possui colunas nativas para todos esses extras; a importacao preserva o que o banco suporta.",
+    "quickDecision": {
+      "firstAction": "Conclua a campanha e use Chapter Select para organizar coletas e lados alternativos.",
+      "methodology": "O guia cobre os 31 troféus da lista PS4 base. Real Gamer/PICO-8 entra na platina; Farewell/Chapter 9, Golden Strawberries, Moon Berry e extras sem troféu ficam fora.",
+      "recommendation": "Boa platina para quem aceita plataforma técnico e quer uma lista limpa, offline e sem DLC obrigatória.",
+      "risk": "O risco real é execução: B-Sides, C-Sides, 1UP! e Thanks For Playing ficam muito mais exigentes sem Assist Mode.",
+      "summary": "Vale platinar Celeste se você quer uma lista curta, single-player e sem perdíveis, com Assist Mode disponível e cleanup por Chapter Select. Evite apenas se você não quer depender de precisão de plataforma, porque B-Sides, C-Sides e Thanks For Playing elevam bastante o desafio sem assistências."
+    },
+    "seo": {
+      "description": "Guia de platina de Celeste em português, com roadmap da lista base de 31 troféus, Assist Mode, B-Sides, C-Sides, Real Gamer/PICO-8, strawberries, Crystal Hearts, sem perdíveis, sem online e sem DLC obrigatória.",
+      "keywords": "Celeste, Celeste guia de platina, troféus Celeste, roadmap Celeste, Celeste Assist Mode troféus, Celeste B-Sides, Celeste C-Sides, Celeste Real Gamer PICO-8, Celeste strawberries, Celeste Crystal Hearts, Celeste sem perdíveis, Celeste sem online, Celeste sem DLC obrigatório",
+      "ogDescription": "Guia de platina de Celeste com lista PS4 base de 31 troféus, Assist Mode, B-Sides, C-Sides, PICO-8 obrigatório por Real Gamer e cleanup sem DLC obrigatória.",
+      "ogTitle": "Guia de Platina Celeste - Troféus e Roadmap | AtlasAchievement",
+      "title": "Guia de Platina Celeste - Troféus, Roadmap e Dicas"
+    },
+    "tags": [
+      "Celeste",
+      "Platformer",
+      "Single-player",
+      "Assist Mode opcional",
+      "Sem online obrigatório",
+      "Sem coop obrigatório",
+      "Sem DLC obrigatória",
+      "Sem perdíveis",
+      "PICO-8 obrigatório",
+      "Em revisão"
+    ]
+  },
+  "slug": "celeste",
+  "trophies": [
+    {
+      "description": "Unlock every trophy.",
+      "is_missable": 0,
+      "is_spoiler": 0,
+      "name": "Heartbeat",
+      "name_pt": "Piscar de olhos",
+      "tip": "Conclua os outros 30 troféus da lista PS4 base. Farewell, Golden Strawberries e Moon Berry ficam fora da platina; Real Gamer/PICO-8 entra na lista base.",
+      "trophy_code": "celeste_heartbeat",
+      "type": "Platina"
+    },
+    {
+      "description": "Climb Celeste Mountain.",
+      "is_missable": 0,
+      "is_spoiler": 1,
+      "name": "Celeste",
+      "name_pt": "Celeste",
+      "tip": "Troféu de história da campanha principal. Complete a subida sem se preocupar com coletáveis na primeira passagem.",
+      "trophy_code": "celeste_celeste",
+      "type": "Ouro"
+    },
+    {
+      "description": "Complete Chapter 1.",
+      "is_missable": 0,
+      "is_spoiler": 1,
+      "name": "Forsaken",
+      "name_pt": "Abandonada",
+      "tip": "Troféu de progresso inicial da história. Pode ser revisitado depois por Chapter Select.",
+      "trophy_code": "celeste_forsaken",
+      "type": "Bronze"
+    },
+    {
+      "description": "Complete Chapter 2.",
+      "is_missable": 0,
+      "is_spoiler": 1,
+      "name": "Archaeology",
+      "name_pt": "Arqueologia",
+      "tip": "Troféu de progresso da campanha, sem risco de perdível.",
+      "trophy_code": "celeste_archaeology",
+      "type": "Bronze"
+    },
+    {
+      "description": "Complete Chapter 3.",
+      "is_missable": 0,
+      "is_spoiler": 1,
+      "name": "Checking Out",
+      "name_pt": "Fazendo check-out",
+      "tip": "Troféu de progresso da história principal. Volte depois para morangos, cassete ou Crystal Heart se faltar.",
+      "trophy_code": "celeste_checking_out",
+      "type": "Bronze"
+    },
+    {
+      "description": "Complete Chapter 4.",
+      "is_missable": 0,
+      "is_spoiler": 1,
+      "name": "Breathe",
+      "name_pt": "Respire",
+      "tip": "Troféu de história sem risco de perdível graças ao Chapter Select.",
+      "trophy_code": "celeste_breathe",
+      "type": "Bronze"
+    },
+    {
+      "description": "Complete Chapter 5.",
+      "is_missable": 0,
+      "is_spoiler": 1,
+      "name": "In the Mirror",
+      "name_pt": "No Espelho",
+      "tip": "Troféu de progresso principal da montanha. Deixe o cleanup de coleta para depois se preferir.",
+      "trophy_code": "celeste_in_the_mirror",
+      "type": "Bronze"
+    },
+    {
+      "description": "Complete Chapter 6.",
+      "is_missable": 0,
+      "is_spoiler": 1,
+      "name": "Reflection",
+      "name_pt": "Reflexo",
+      "tip": "Troféu de progresso da história, com retorno livre por Chapter Select.",
+      "trophy_code": "celeste_reflection",
+      "type": "Bronze"
+    },
+    {
+      "description": "Collect 30 Strawberries.",
+      "is_missable": 0,
+      "is_spoiler": 0,
+      "name": "Strawberry Badge",
+      "name_pt": "Insígnia de Morango",
+      "tip": "Primeira meta de strawberries. Use Chapter Select para buscar morangos deixados para trás sem risco de perdível.",
+      "trophy_code": "celeste_strawberry_badge",
+      "type": "Prata"
+    },
+    {
+      "description": "Collect 80 Strawberries.",
+      "is_missable": 0,
+      "is_spoiler": 0,
+      "name": "Strawberry Medal",
+      "name_pt": "Medalha de Morango",
+      "tip": "Segunda meta de strawberries. A contagem sobe naturalmente enquanto você limpa capítulos e retorna por Chapter Select.",
+      "trophy_code": "celeste_strawberry_medal",
+      "type": "Prata"
+    },
+    {
+      "description": "Collect 175 Strawberries.",
+      "is_missable": 0,
+      "is_spoiler": 0,
+      "name": "Impress Your Friends",
+      "name_pt": "Impressione seus amigos",
+      "tip": "Maior meta de strawberries da platina base. Organize por capítulo e deixe Golden Strawberries fora do escopo.",
+      "trophy_code": "celeste_impress_your_friends",
+      "type": "Prata"
+    },
+    {
+      "description": "Collect a Cassette.",
+      "is_missable": 0,
+      "is_spoiler": 0,
+      "name": "Gateway",
+      "name_pt": "Portal",
+      "tip": "Cassetes desbloqueiam B-Sides. Pegue pelo menos uma e depois use Chapter Select para buscar as demais conforme precisar.",
+      "trophy_code": "celeste_gateway",
+      "type": "Prata"
+    },
+    {
+      "description": "Get a 1UP.",
+      "is_missable": 0,
+      "is_spoiler": 0,
+      "name": "1UP!",
+      "name_pt": "1UP!",
+      "tip": "Exige coletar seis strawberries em sequência sem tocar no chão. Separe uma sala própria e deixe para cleanup se travar.",
+      "trophy_code": "celeste_1up",
+      "type": "Prata"
+    },
+    {
+      "description": "Complete Celeste for PICO-8.",
+      "is_missable": 0,
+      "is_spoiler": 1,
+      "name": "Real Gamer",
+      "name_pt": "Gamer de Verdade",
+      "tip": "Celeste for PICO-8 fica dentro do Capítulo 3 e é obrigatório para a platina base por causa de Real Gamer.",
+      "trophy_code": "celeste_real_gamer",
+      "type": "Prata"
+    },
+    {
+      "description": "Collect the Crystal Heart in Chapter 1.",
+      "is_missable": 0,
+      "is_spoiler": 0,
+      "name": "Pointless Machines",
+      "name_pt": "Máquinas sem sentido",
+      "tip": "Crystal Heart do Capítulo 1. Se passar batido, volte por Chapter Select no cleanup.",
+      "trophy_code": "celeste_pointless_machines",
+      "type": "Prata"
+    },
+    {
+      "description": "Complete Chapter 1 B-Side.",
+      "is_missable": 0,
+      "is_spoiler": 1,
+      "name": "Sever the Skyline",
+      "name_pt": "Corte o horizonte",
+      "tip": "B-Side inicial. Use como treino para a consistência que os demais B-Sides pedem.",
+      "trophy_code": "celeste_sever_the_skyline",
+      "type": "Prata"
+    },
+    {
+      "description": "Collect the Crystal Heart in Chapter 2.",
+      "is_missable": 0,
+      "is_spoiler": 0,
+      "name": "Resurrections",
+      "name_pt": "Ressurreições",
+      "tip": "Crystal Heart do Capítulo 2. Não é perdível e pode ser resolvido no retorno por capítulo.",
+      "trophy_code": "celeste_resurrections",
+      "type": "Prata"
+    },
+    {
+      "description": "Complete Chapter 2 B-Side.",
+      "is_missable": 0,
+      "is_spoiler": 1,
+      "name": "Black Moonrise",
+      "name_pt": "Nascer da Lua Negra",
+      "tip": "B-Side do Capítulo 2. Assist Mode é uma opção válida se o foco for concluir a platina.",
+      "trophy_code": "celeste_black_moonrise",
+      "type": "Prata"
+    },
+    {
+      "description": "Collect the Crystal Heart in Chapter 3.",
+      "is_missable": 0,
+      "is_spoiler": 0,
+      "name": "Scattered and Lost",
+      "name_pt": "Espalhada e Perdida",
+      "tip": "Crystal Heart do Capítulo 3. Use Chapter Select se deixar esse coletável para depois.",
+      "trophy_code": "celeste_scattered_and_lost",
+      "type": "Prata"
+    },
+    {
+      "description": "Complete Chapter 3 B-Side.",
+      "is_missable": 0,
+      "is_spoiler": 1,
+      "name": "Good Karma",
+      "name_pt": "Bom karma",
+      "tip": "B-Side do Capítulo 3. Faça sessões curtas se a execução começar a perder consistência.",
+      "trophy_code": "celeste_good_karma",
+      "type": "Prata"
+    },
+    {
+      "description": "Collect the Crystal Heart in Chapter 4.",
+      "is_missable": 0,
+      "is_spoiler": 0,
+      "name": "Eye of the Storm",
+      "name_pt": "Olho da Tempestade",
+      "tip": "Crystal Heart do Capítulo 4. É coleta de rota, não perdível.",
+      "trophy_code": "celeste_eye_of_the_storm",
+      "type": "Prata"
+    },
+    {
+      "description": "Complete Chapter 4 B-Side.",
+      "is_missable": 0,
+      "is_spoiler": 1,
+      "name": "Golden Feather",
+      "name_pt": "Pena Dourada",
+      "tip": "B-Side do Capítulo 4. Use Assist Mode se necessário, mantendo foco em movimento limpo.",
+      "trophy_code": "celeste_golden_feather",
+      "type": "Prata"
+    },
+    {
+      "description": "Collect the Crystal Heart in Chapter 5.",
+      "is_missable": 0,
+      "is_spoiler": 0,
+      "name": "Quiet and Falling",
+      "name_pt": "Silenciosa e Caindo",
+      "tip": "Crystal Heart do Capítulo 5. Resolva por Chapter Select se ficar para o cleanup.",
+      "trophy_code": "celeste_quiet_and_falling",
+      "type": "Prata"
+    },
+    {
+      "description": "Complete Chapter 5 B-Side.",
+      "is_missable": 0,
+      "is_spoiler": 1,
+      "name": "Mirror Magic",
+      "name_pt": "Magia do Espelho",
+      "tip": "B-Side do Capítulo 5. É um bloco técnico da lista base, mas não tem risco de perdível.",
+      "trophy_code": "celeste_mirror_magic",
+      "type": "Prata"
+    },
+    {
+      "description": "Collect the Crystal Heart in Chapter 6.",
+      "is_missable": 0,
+      "is_spoiler": 0,
+      "name": "Heavy and Frail",
+      "name_pt": "Pesada e Frágil",
+      "tip": "Crystal Heart do Capítulo 6. Marque no checklist e volte com calma se faltar.",
+      "trophy_code": "celeste_heavy_and_frail",
+      "type": "Prata"
+    },
+    {
+      "description": "Complete Chapter 6 B-Side.",
+      "is_missable": 0,
+      "is_spoiler": 1,
+      "name": "Center of the Earth",
+      "name_pt": "Centro da Terra",
+      "tip": "B-Side do Capítulo 6. É um dos trechos em que Assist Mode pode reduzir bastante a fricção.",
+      "trophy_code": "celeste_center_of_the_earth",
+      "type": "Prata"
+    },
+    {
+      "description": "Collect the Crystal Heart in Chapter 7.",
+      "is_missable": 0,
+      "is_spoiler": 0,
+      "name": "Pink Sunrise",
+      "name_pt": "Nascer do Sol Rosa",
+      "tip": "Crystal Heart do Capítulo 7. Faça no cleanup se a primeira passagem estiver pesada.",
+      "trophy_code": "celeste_pink_sunrise",
+      "type": "Prata"
+    },
+    {
+      "description": "Complete Chapter 7 B-Side.",
+      "is_missable": 0,
+      "is_spoiler": 1,
+      "name": "No More Running",
+      "name_pt": "Chega de correr",
+      "tip": "B-Side longo e exigente. Chapter Select permite treinar e voltar sem perda de progresso.",
+      "trophy_code": "celeste_no_more_running",
+      "type": "Prata"
+    },
+    {
+      "description": "Collect the Crystal Heart in Chapter 8.",
+      "is_missable": 0,
+      "is_spoiler": 0,
+      "name": "Heart of the Mountain",
+      "name_pt": "Coração da Montanha",
+      "tip": "Crystal Heart do Capítulo 8 e fechamento dos corações da lista base.",
+      "trophy_code": "celeste_heart_of_the_mountain",
+      "type": "Prata"
+    },
+    {
+      "description": "Complete Chapter 8 B-Side.",
+      "is_missable": 0,
+      "is_spoiler": 1,
+      "name": "Say Goodbye",
+      "name_pt": "Diga adeus",
+      "tip": "B-Side final da campanha base. Resolva antes de partir para C-Sides se quiser uma progressão limpa.",
+      "trophy_code": "celeste_say_goodbye",
+      "type": "Prata"
+    },
+    {
+      "description": "Complete all C-Sides.",
+      "is_missable": 0,
+      "is_spoiler": 1,
+      "name": "Thanks For Playing",
+      "name_pt": "Agradecemos por jogar",
+      "tip": "Exige todos os C-Sides e é o pico de dificuldade da lista base. Deixe para depois de dominar B-Sides ou use Assist Mode.",
+      "trophy_code": "celeste_thanks_for_playing",
+      "type": "Ouro"
+    }
+  ]
+}

@@ -1,0 +1,572 @@
+{
+  "game": {
+    "avoid_if": "Evite apenas se você não gosta de collectathon ou desafios de plataforma opcionais.",
+    "before_you_start": "Nada é perdível na platina base, não há coop obrigatório e o online é opcional para extras/rankings fora do escopo da platina.",
+    "best_for": "Ideal para quem quer uma platina curta, divertida e com baixo risco de retrabalho.",
+    "cleanup_advice": "Use seleção de fases para voltar aos bots, puzzle pieces, saídas secretas e itens restantes.",
+    "cover_image": "https://image.api.playstation.com/vulcan/ap/rnd/202406/0500/0d05cb43413f28a641ac0c40fc272c70bbe194f6ade4b175.png",
+    "coverage_level": "strong",
+    "created_at": "2026-05-09 19:53:24",
+    "difficulty": 3,
+    "difficulty_reason": "A platina é acessível; o desafio maior tende a ficar em fases opcionais e no desafio final.",
+    "dlc_scope": "DLC fora da platina base. Packs gratuitos pós-lançamento podem elevar rastreadores públicos para 63 troféus, mas não são obrigatórios para Astro-nomical!.",
+    "editorial_notes": "Guia cobre somente a lista base de 44 troféus de PS5. Conteúdos gratuitos pós-lançamento, speedruns extras e rankings online ficam fora dos requisitos da platina base.",
+    "editorial_review_status": "verified",
+    "editorial_status": "published",
+    "first_run_advice": "Jogue explorando fases com calma, mas não se preocupe em limpar tudo de primeira.",
+    "grind_summary": "O peso está em coletáveis, moedas para itens do Gatcha e desafios opcionais, não em grind pesado.",
+    "guide_avoid": null,
+    "guide_best_moment": null,
+    "guide_dlc": null,
+    "guide_grind": null,
+    "guide_ideal": null,
+    "guide_online": null,
+    "guide_runs": null,
+    "image": "https://image.api.playstation.com/vulcan/ap/rnd/202406/0500/80ecf657918558eeef8da3ee4cef326e4517d34e6c69d950.jpg",
+    "is_verified": 1,
+    "last_reviewed_at": "",
+    "missable": "Não há troféus perdíveis. A campanha e a seleção de fases permitem voltar para bots, puzzle pieces, Lost Galaxy, desafios opcionais e itens do Gatcha depois da história.",
+    "missable_summary": "Não há troféus perdíveis; todos os objetivos podem ser limpos depois pela seleção de fases e pelo hub.",
+    "name": "Astro Bot",
+    "online_summary": "Não há online obrigatório para a platina base. Recursos online opcionais de conteúdos extras e rankings não entram no requisito da platina.",
+    "quality_warnings": "[]",
+    "reviewed_by": "",
+    "runs_summary": "Uma campanha principal com cleanup livre por seleção de fases. Nada é perdível.",
+    "slug": "astro-bot",
+    "time": "15 horas",
+    "time_bucket": "short",
+    "time_max_hours": 15,
+    "time_min_hours": 15,
+    "time_reason": "A faixa de aproximadamente 15 horas considera história, coletáveis, Lost Galaxy e cleanup.",
+    "time_sort_hours": 15,
+    "updated_at": "2026-06-27 02:37:00",
+    "verification_note": "Guia revisado editorialmente para a lista base.",
+    "verification_status": "verified",
+    "walkthrough": ""
+  },
+  "redirects": [],
+  "roadmaps": [
+    {
+      "content": "{\"title\":\"Jogue a campanha explorando com calma\",\"focus\":\"Campanha\",\"objective\":\"Avançar pelos mundos principais enquanto aprende as mecânicas de cada fase e coleta o que encontrar naturalmente.\",\"actions\":[\"Complete as fases principais sem pressa, explorando cantos, rotas alternativas e interações do cenário.\",\"Resgate bots e colete puzzle pieces sempre que estiverem no caminho.\",\"Observe fases que escondem saídas secretas ou caminhos opcionais.\",\"Não se preocupe em fazer 100% perfeito em todas as fases logo na primeira passagem.\"],\"warning\":\"\",\"result\":\"Campanha avançada, boa parte dos coletáveis obtida e fases principais liberadas para revisita.\"}",
+      "step_order": 1
+    },
+    {
+      "content": "{\"title\":\"Revise fases principais em busca de bots e puzzle pieces\",\"focus\":\"Coletáveis\",\"objective\":\"Limpar bots, puzzle pieces e objetivos de exploração que ficaram para trás nas fases já concluídas.\",\"actions\":[\"Use a seleção de fases para voltar aos níveis com coletáveis pendentes.\",\"Priorize fases com bots faltando antes de seguir para desafios mais difíceis.\",\"Revise áreas escondidas, objetos interativos e caminhos fora da rota principal.\",\"Use o checklist para marcar bots, puzzle pieces e pendências por fase.\"],\"warning\":\"\",\"result\":\"Grande parte dos coletáveis principais concluída antes da limpeza mais avançada.\"}",
+      "step_order": 2
+    },
+    {
+      "content": "{\"title\":\"Encontre fases secretas e caminhos alternativos\",\"focus\":\"Fases secretas\",\"objective\":\"Liberar fases escondidas e conteúdos opcionais relacionados à exploração dos mundos.\",\"actions\":[\"Revise fases com indicação de saída secreta ou portal escondido.\",\"Explore rotas alternativas, paredes falsas, objetos suspeitos e interações incomuns.\",\"Complete fases secretas assim que forem liberadas.\",\"Marque no checklist quais fases escondidas já foram abertas e concluídas.\"],\"warning\":\"\",\"result\":\"Fases secretas liberadas e menos pendências ocultas para o final.\"}",
+      "step_order": 3
+    },
+    {
+      "content": "{\"title\":\"Complete desafios e fases especiais\",\"focus\":\"Desafios\",\"objective\":\"Resolver fases de maior precisão, desafios curtos e conteúdos que exigem mais domínio de plataforma.\",\"actions\":[\"Deixe desafios mais difíceis para depois de se acostumar com a movimentação.\",\"Faça fases especiais com calma, memorizando obstáculos e padrões.\",\"Repita desafios curtos até fechar os bots ou recompensas associadas.\",\"Evite misturar cleanup de coletáveis com desafio de execução se isso atrapalhar o ritmo.\"],\"warning\":\"Alguns desafios podem exigir tentativa e erro, mas fazem parte da progressão solo de plataforma da lista base.\",\"result\":\"Bloco de desafios concluído e platina encaminhada para cleanup final.\"}",
+      "step_order": 4
+    },
+    {
+      "content": "{\"title\":\"Organize o Crash Site e conteúdos desbloqueados\",\"focus\":\"Hub\",\"objective\":\"Usar o hub e os desbloqueios acumulados para concluir interações, construções e objetivos relacionados aos bots resgatados.\",\"actions\":[\"Volte ao Crash Site para conferir desbloqueios pendentes.\",\"Use bots resgatados para acessar áreas, interações ou recompensas bloqueadas.\",\"Abra instalações como Gatcha Lab, Safari Park, Dual Speeder Garage e Changing Room quando tiver puzzle pieces suficientes.\",\"Compre recompensas no Gatcha Lab e confira interações especiais relacionadas a bots, peças ou coleções.\"],\"warning\":\"\",\"result\":\"Hub organizado e pendências de progressão central reduzidas.\"}",
+      "step_order": 5
+    },
+    {
+      "content": "{\"title\":\"Cleanup final da platina\",\"focus\":\"Checklist final\",\"objective\":\"Conferir todos os coletáveis, desafios e troféus situacionais restantes antes de encerrar a platina.\",\"actions\":[\"Revise bots, puzzle pieces, fases secretas e desafios restantes.\",\"Complete troféus situacionais que não vieram naturalmente durante a campanha.\",\"Confirme os marcos da lista base: 300 bots, 120 puzzle pieces, 10 saídas de Lost Galaxy e 150 recompensas do Gatcha Lab.\",\"Confira que conteúdos extras pós-lançamento ficaram fora do roteiro da platina base.\",\"Use o checklist final para fechar qualquer fase com item pendente.\"],\"warning\":\"\",\"result\":\"Lista base concluída e platina pronta.\"}",
+      "step_order": 6
+    }
+  ],
+  "schemaVersion": 1,
+  "seedExtras": {
+    "aliases": [],
+    "attentionPoints": [],
+    "checklist": [
+      "Concluir as cinco nebulosas principais da campanha.",
+      "Resgatar 300 bots da lista base.",
+      "Coletar 120 peças de quebra-cabeça.",
+      "Encontrar as 10 saídas secretas que abrem Lost Galaxy.",
+      "Concluir os níveis de Lost Galaxy e resgatar todos os bots dessa área.",
+      "Liberar instalações do Crash Site com peças de quebra-cabeça.",
+      "Abrir o Gatcha Lab, Safari Park, Dual Speeder Garage e Changing Room.",
+      "Comprar/obter 150 recompensas no Gatcha Lab.",
+      "Liberar a Golden Statue.",
+      "Completar o desafio final da Golden Statue e resgatar o Special Master Bot.",
+      "Resolver troféus contextuais de fases, como The Lost Eggacy, Time To Cash In! e Jumping Through Hoops.",
+      "Resolver interações do Crash Site, como SingStars, Thaw, God of Thunder!, Let’s Twist Again e KO!.",
+      "Confirmar que updates gratuitos, rankings online e speedruns extras não foram tratados como requisito da platina base."
+    ],
+    "faq": [
+      {
+        "answer": "Não. A platina base permite revisitar fases e limpar bots, peças, Lost Galaxy, Gatcha Lab e troféus contextuais depois da história.",
+        "question": "ASTRO BOT tem troféus perdíveis?"
+      },
+      {
+        "answer": "Não. ASTRO BOT é uma experiência single-player e a platina base não exige online, coop ou PS+.",
+        "question": "A platina exige online, coop ou PS+?"
+      },
+      {
+        "answer": "Não. Eles podem aparecer em rastreadores como listas extras ou rankings, mas não fazem parte dos 44 troféus base necessários para Astro-nomical!.",
+        "question": "Os conteúdos gratuitos pós-lançamento contam para a platina?"
+      },
+      {
+        "answer": "Sim. A lista base usa esses totais para liberar a Golden Statue e o desafio final ligado a The Golden Bot.",
+        "question": "Preciso pegar todos os 300 bots e 120 peças?"
+      },
+      {
+        "answer": "Normalmente faltam saídas secretas de Lost Galaxy, prêmios do Gatcha Lab e troféus contextuais em fases ou interações específicas do Crash Site.",
+        "question": "O que costuma faltar no cleanup?"
+      }
+    ],
+    "note": "Campos exportados para auditoria. O SQLite atual nao possui colunas nativas para todos esses extras; a importacao preserva o que o banco suporta.",
+    "quickDecision": {
+      "firstAction": "Comece pelas nebulosas principais e colete o que estiver no caminho; não trate a primeira jogada como uma run de perdíveis.",
+      "recommendation": "Avance a história primeiro, faça cleanup por seleção de fases, complete bots/peças/Lost Galaxy e deixe Gatcha Lab, Crash Site e o desafio da Estátua Dourada para a reta final.",
+      "summary": "Platina curta e acessível: 44 troféus base, cerca de 15h, sem perdíveis, sem online obrigatório, sem coop e sem DLC obrigatória."
+    },
+    "seo": {
+      "description": "Guia de platina de ASTRO BOT no PS5 em português, com 44 troféus base, 3/10 de dificuldade, cerca de 15h, sem perdíveis, sem online obrigatório e sem DLC obrigatória.",
+      "ogDescription": "Roadmap de ASTRO BOT para PS5 com bots, peças de quebra-cabeça, Lost Galaxy, Gatcha Lab, Estátua Dourada e The Golden Bot.",
+      "ogTitle": "ASTRO BOT: guia de platina PS5, troféus e roadmap | AtlasAchievement",
+      "title": "ASTRO BOT: guia de platina PS5, troféus e roadmap | AtlasAchievement"
+    },
+    "tags": []
+  },
+  "slug": "astro-bot",
+  "trophies": [
+    {
+      "description": "Conquiste todos os troféus.",
+      "is_missable": 0,
+      "is_spoiler": 0,
+      "name": "Astro-nomical!",
+      "name_pt": "Astro-nômico!",
+      "tip": "Complete todos os outros 43 troféus da lista base para liberar a platina.",
+      "trophy_code": "astrobot_astro_nomical",
+      "type": "Platina"
+    },
+    {
+      "description": "Recupere a memória da nave-mãe.",
+      "is_missable": 0,
+      "is_spoiler": 0,
+      "name": "Unforgettable!",
+      "name_pt": "Inesquecível!",
+      "tip": "Troféu de progresso da campanha ligado à primeira grande nebulosa.",
+      "trophy_code": "astrobot_unforgettable",
+      "type": "Prata"
+    },
+    {
+      "description": "Recupere o SSD da nave-mãe.",
+      "is_missable": 0,
+      "is_spoiler": 0,
+      "name": "Solid Performance",
+      "name_pt": "Desempenho Sólido",
+      "tip": "Avance a campanha principal até recuperar a peça correspondente da nave.",
+      "trophy_code": "astrobot_solid_performance",
+      "type": "Prata"
+    },
+    {
+      "description": "Recupere a GPU da nave-mãe.",
+      "is_missable": 0,
+      "is_spoiler": 0,
+      "name": "Doing It For You",
+      "name_pt": "Fazendo Isso por Você",
+      "tip": "Continue concluindo as fases principais e chefes das nebulosas.",
+      "trophy_code": "astrobot_doing_it_for_you",
+      "type": "Prata"
+    },
+    {
+      "description": "Recupere a ventoinha de resfriamento da nave-mãe.",
+      "is_missable": 0,
+      "is_spoiler": 0,
+      "name": "Keep It Cool",
+      "name_pt": "Mantenha a Cabeça Fria",
+      "tip": "Sai naturalmente ao progredir pela campanha.",
+      "trophy_code": "astrobot_keep_it_cool",
+      "type": "Prata"
+    },
+    {
+      "description": "Recupere as capas de proteção da nave-mãe.",
+      "is_missable": 0,
+      "is_spoiler": 1,
+      "name": "Take Cover!",
+      "name_pt": "Protejam-se!",
+      "tip": "Relacionado ao avanço principal antes da reta final.",
+      "trophy_code": "astrobot_take_cover",
+      "type": "Prata"
+    },
+    {
+      "description": "Salve o CPU Kid.",
+      "is_missable": 0,
+      "is_spoiler": 1,
+      "name": "A Lot To Process",
+      "name_pt": "Muito a Processar",
+      "tip": "Troféu de fim de história; derrote o chefe final depois de recuperar as peças da nave.",
+      "trophy_code": "astrobot_a_lot_to_process",
+      "type": "Ouro"
+    },
+    {
+      "description": "Resgate seu primeiro Bot.",
+      "is_missable": 0,
+      "is_spoiler": 0,
+      "name": "One Bot Down…",
+      "name_pt": "Um Bot a Menos...",
+      "tip": "Vem no início da campanha ao resgatar o primeiro bot.",
+      "trophy_code": "astrobot_one_bot_down",
+      "type": "Bronze"
+    },
+    {
+      "description": "Resgate todos os Bots em Gorilla Nebula.",
+      "is_missable": 0,
+      "is_spoiler": 0,
+      "name": "Monkey See, Monkey Rescue",
+      "name_pt": "Macaco Vê, Macaco Resgata",
+      "tip": "Use a seleção de fases da Gorilla Nebula para conferir quais bots ainda faltam.",
+      "trophy_code": "astrobot_monkey_see_monkey_rescue",
+      "type": "Prata"
+    },
+    {
+      "description": "Resgate todos os Bots em Tentacle System.",
+      "is_missable": 0,
+      "is_spoiler": 0,
+      "name": "Tentacular Spectacular",
+      "name_pt": "Espetáculo Tentacular",
+      "tip": "Limpe todas as fases e laterais do Tentacle System pelo contador de coletáveis.",
+      "trophy_code": "astrobot_tentacular_spectacular",
+      "type": "Prata"
+    },
+    {
+      "description": "Resgate todos os Bots em Serpent Starway.",
+      "is_missable": 0,
+      "is_spoiler": 0,
+      "name": "Fangs Very Much!",
+      "name_pt": "Presas, Muito Obrigado!",
+      "tip": "Revise Serpent Starway depois de liberar suas fases extras e saídas secretas.",
+      "trophy_code": "astrobot_fangs_very_much",
+      "type": "Prata"
+    },
+    {
+      "description": "Resgate todos os Bots em Camo Cosmos.",
+      "is_missable": 0,
+      "is_spoiler": 0,
+      "name": "Nowhere To Hide",
+      "name_pt": "Sem Lugar para se Esconder",
+      "tip": "Passe novamente pelas fases de Camo Cosmos usando os contadores de bots.",
+      "trophy_code": "astrobot_nowhere_to_hide",
+      "type": "Prata"
+    },
+    {
+      "description": "Resgate todos os Bots em Feather Cluster.",
+      "is_missable": 0,
+      "is_spoiler": 0,
+      "name": "Back To The Nest",
+      "name_pt": "De Volta ao Ninho",
+      "tip": "Conclua o resgate completo de bots no conjunto Feather Cluster.",
+      "trophy_code": "astrobot_back_to_the_nest",
+      "type": "Prata"
+    },
+    {
+      "description": "Resgate todos os Bots em Lost Galaxy.",
+      "is_missable": 0,
+      "is_spoiler": 1,
+      "name": "Lost And Found",
+      "name_pt": "Achados e Perdidos",
+      "tip": "Encontre as saídas secretas que liberam Lost Galaxy e depois resgate todos os bots dessas fases.",
+      "trophy_code": "astrobot_lost_and_found",
+      "type": "Prata"
+    },
+    {
+      "description": "Resgate o Bot Mestre Especial no topo da Estátua Dourada.",
+      "is_missable": 0,
+      "is_spoiler": 1,
+      "name": "The Golden Bot",
+      "name_pt": "O Bot Dourado",
+      "tip": "Exige todos os bots e puzzle pieces para abrir a Golden Statue e completar o Great Master Challenge.",
+      "trophy_code": "astrobot_the_golden_bot",
+      "type": "Ouro"
+    },
+    {
+      "description": "Encontre sua primeira peça de quebra-cabeça.",
+      "is_missable": 0,
+      "is_spoiler": 0,
+      "name": "A Puzzling Start",
+      "name_pt": "Começo Enigmático",
+      "tip": "Pegue a primeira peça da campanha; depois acompanhe o contador por fase.",
+      "trophy_code": "astrobot_a_puzzling_start",
+      "type": "Bronze"
+    },
+    {
+      "description": "Abra o Laboratório Gatcha.",
+      "is_missable": 0,
+      "is_spoiler": 0,
+      "name": "Licence To Spend",
+      "name_pt": "Licença para Gastar",
+      "tip": "Colete peças de quebra-cabeça suficientes e volte ao Crash Site para abrir o Gatcha Lab.",
+      "trophy_code": "astrobot_licence_to_spend",
+      "type": "Prata"
+    },
+    {
+      "description": "Abra o Safari Park.",
+      "is_missable": 0,
+      "is_spoiler": 0,
+      "name": "Animal Attraction",
+      "name_pt": "Atração Animal",
+      "tip": "Continue coletando peças de quebra-cabeça até liberar o Safari Park no hub.",
+      "trophy_code": "astrobot_animal_attraction",
+      "type": "Prata"
+    },
+    {
+      "description": "Abra a garagem da Dual Speeder.",
+      "is_missable": 0,
+      "is_spoiler": 0,
+      "name": "Splash My Dash",
+      "name_pt": "Corrida Molhada",
+      "tip": "Colete peças de quebra-cabeça e desbloqueie a garagem no Crash Site.",
+      "trophy_code": "astrobot_splash_my_dash",
+      "type": "Prata"
+    },
+    {
+      "description": "Abra o vestiário.",
+      "is_missable": 0,
+      "is_spoiler": 0,
+      "name": "Time For A Change",
+      "name_pt": "Hora de Mudar",
+      "tip": "O Changing Room é liberado com peças de quebra-cabeça; volte ao hub depois de juntar o total necessário.",
+      "trophy_code": "astrobot_time_for_a_change",
+      "type": "Prata"
+    },
+    {
+      "description": "Desbloqueie a Estátua Dourada.",
+      "is_missable": 0,
+      "is_spoiler": 1,
+      "name": "Monumental Achievement",
+      "name_pt": "Conquista Monumental",
+      "tip": "Colete todas as 120 peças de quebra-cabeça para liberar a Golden Statue no Crash Site.",
+      "trophy_code": "astrobot_monumental_achievement",
+      "type": "Prata"
+    },
+    {
+      "description": "Colete seu primeiro Gatcha no Laboratório Gatcha.",
+      "is_missable": 0,
+      "is_spoiler": 0,
+      "name": "First Prize",
+      "name_pt": "Primeiro Prêmio",
+      "tip": "Gaste moedas no Gatcha Lab assim que ele estiver aberto.",
+      "trophy_code": "astrobot_first_prize",
+      "type": "Bronze"
+    },
+    {
+      "description": "Ganhe 150 prêmios no Laboratório Gatcha.",
+      "is_missable": 0,
+      "is_spoiler": 0,
+      "name": "Money Well Spent",
+      "name_pt": "Dinheiro Bem Gasto",
+      "tip": "Junte moedas durante a campanha e repita fases curtas se precisar fechar os 150 prêmios.",
+      "trophy_code": "astrobot_money_well_spent",
+      "type": "Prata"
+    },
+    {
+      "description": "Tire uma foto em um ponto de foto.",
+      "is_missable": 0,
+      "is_spoiler": 0,
+      "name": "Strike A Pose!",
+      "name_pt": "Faça uma Pose!",
+      "tip": "Depois de liberar a câmera, tire uma foto em um Photo Spot.",
+      "trophy_code": "astrobot_strike_a_pose",
+      "type": "Bronze"
+    },
+    {
+      "description": "Veja todas as peças da nave cantando juntas no Crash Site.",
+      "is_missable": 0,
+      "is_spoiler": 1,
+      "name": "SingStars",
+      "name_pt": "Astros Cantores",
+      "tip": "Volte ao Crash Site depois de recuperar todas as peças principais da nave.",
+      "trophy_code": "astrobot_singstars",
+      "type": "Bronze"
+    },
+    {
+      "description": "Molhe o rosto de Papa Tree durante a música dele.",
+      "is_missable": 0,
+      "is_spoiler": 0,
+      "name": "What Is He Saying?",
+      "name_pt": "O Que Ele Está Dizendo?",
+      "tip": "Na fase Trunk of Funk, use a água no rosto do Papa Tree enquanto ele canta.",
+      "trophy_code": "astrobot_what_is_he_saying",
+      "type": "Bronze"
+    },
+    {
+      "description": "Enterre a bola de basquete em Construction Derby.",
+      "is_missable": 0,
+      "is_spoiler": 0,
+      "name": "Um Jammer Slammy",
+      "name_pt": "Enterrada no Ritmo",
+      "tip": "Em Construction Derby, acerte uma bola de basquete na cesta da área indicada.",
+      "trophy_code": "astrobot_um_jammer_slammy",
+      "type": "Bronze"
+    },
+    {
+      "description": "Capture a borboleta dourada em Apes On The Loose.",
+      "is_missable": 0,
+      "is_spoiler": 1,
+      "name": "Net Profit",
+      "name_pt": "Lucro na Rede",
+      "tip": "Procure a borboleta dourada na área aberta de Apes On The Loose e capture com a rede.",
+      "trophy_code": "astrobot_net_profit",
+      "type": "Bronze"
+    },
+    {
+      "description": "Encontre e derrote os oito corvos em Bot Of War.",
+      "is_missable": 0,
+      "is_spoiler": 1,
+      "name": "Eyes Of The All-Father",
+      "name_pt": "Olhos do Pai de Todos",
+      "tip": "Em Bot Of War, encontre e acerte os oito corvos escondidos.",
+      "trophy_code": "astrobot_eyes_of_the_all_father",
+      "type": "Bronze"
+    },
+    {
+      "description": "Colete os três artefatos de ovo em Dude Raiding.",
+      "is_missable": 0,
+      "is_spoiler": 1,
+      "name": "The Lost Eggacy",
+      "name_pt": "O Ovolegado Perdido",
+      "tip": "Em Dude Raiding, explore os desvios da fase para pegar os três artefatos de ovo.",
+      "trophy_code": "astrobot_the_lost_eggacy",
+      "type": "Bronze"
+    },
+    {
+      "description": "Derrote sete inimigos com o Tripcaster.",
+      "is_missable": 0,
+      "is_spoiler": 1,
+      "name": "What A Trip!",
+      "name_pt": "Que Viagem!",
+      "tip": "Em Machine Learning, atraia sete inimigos para os fios do Tripcaster.",
+      "trophy_code": "astrobot_what_a_trip",
+      "type": "Bronze"
+    },
+    {
+      "description": "Elimine dois Wormys ao mesmo tempo.",
+      "is_missable": 0,
+      "is_spoiler": 0,
+      "name": "Double Dug-in",
+      "name_pt": "Dupla Escavada",
+      "tip": "Em Wormy Passage, puxe dois Wormys ao mesmo tempo usando as duas luvas.",
+      "trophy_code": "astrobot_double_dug_in",
+      "type": "Bronze"
+    },
+    {
+      "description": "Pare o tempo e ganhe o jackpot nas quatro máquinas caça-níqueis de Slo-Mo Casino.",
+      "is_missable": 0,
+      "is_spoiler": 0,
+      "name": "Time To Cash In!",
+      "name_pt": "Hora de Faturar!",
+      "tip": "Use o poder de slow motion para acertar jackpot nas quatro máquinas da fase.",
+      "trophy_code": "astrobot_time_to_cash_in",
+      "type": "Bronze"
+    },
+    {
+      "description": "Salte através da argola em Bubbling Under.",
+      "is_missable": 0,
+      "is_spoiler": 0,
+      "name": "Jumping Through Hoops",
+      "name_pt": "Saltando por Aros",
+      "tip": "Use o power-up de pinguim para saltar pela argola dos golfinhos em Bubbling Under.",
+      "trophy_code": "astrobot_jumping_through_hoops",
+      "type": "Bronze"
+    },
+    {
+      "description": "Tire uma foto de dois exploradores lendários no Crash Site.",
+      "is_missable": 0,
+      "is_spoiler": 1,
+      "name": "Thick As Thieves",
+      "name_pt": "Parceiros de Roubo",
+      "tip": "Depois de resgatar os dois bots especiais e liberar a câmera, tire uma foto com ambos no Crash Site.",
+      "trophy_code": "astrobot_thick_as_thieves",
+      "type": "Bronze"
+    },
+    {
+      "description": "Congele uma divindade empunhando martelo com o machado no Crash Site.",
+      "is_missable": 0,
+      "is_spoiler": 1,
+      "name": "Thaw, God of Thunder!",
+      "name_pt": "Descongele, Deus do Trovão!",
+      "tip": "No Crash Site, use a interação do bot com machado para congelar o personagem certo.",
+      "trophy_code": "astrobot_thaw_god_of_thunder",
+      "type": "Bronze"
+    },
+    {
+      "description": "Chegue perto demais de uma esfera grudenta no Crash Site.",
+      "is_missable": 0,
+      "is_spoiler": 1,
+      "name": "Royally Stuck",
+      "name_pt": "Realmente Grudento",
+      "tip": "Com o bot e item de Gatcha corretos liberados, encoste na esfera grudenta no Crash Site.",
+      "trophy_code": "astrobot_royally_stuck",
+      "type": "Bronze"
+    },
+    {
+      "description": "Dance com um marsupial icônico no Crash Site.",
+      "is_missable": 0,
+      "is_spoiler": 1,
+      "name": "Let’s Twist Again",
+      "name_pt": "Vamos Rodopiar de Novo",
+      "tip": "Resgate o bot especial correspondente, libere o item de Gatcha dele e dance por perto.",
+      "trophy_code": "astrobot_lets_twist_again",
+      "type": "Bronze"
+    },
+    {
+      "description": "Faça um durão derrubar todos os itens dele no Crash Site.",
+      "is_missable": 0,
+      "is_spoiler": 1,
+      "name": "Deep-Pocket Dragon",
+      "name_pt": "Dragão dos Bolsos Fundos",
+      "tip": "Com o bot especial e seu item liberados, bata nele repetidas vezes no Crash Site.",
+      "trophy_code": "astrobot_deep_pocket_dragon",
+      "type": "Bronze"
+    },
+    {
+      "description": "Arrume briga com dois guerreiros de luta de rua no Crash Site.",
+      "is_missable": 0,
+      "is_spoiler": 1,
+      "name": "KO!",
+      "name_pt": "Nocaute!",
+      "tip": "Resgate os dois bots de luta e acerte ambos no Crash Site.",
+      "trophy_code": "astrobot_ko",
+      "type": "Bronze"
+    },
+    {
+      "description": "Desfaça uma Parede de Bots.",
+      "is_missable": 0,
+      "is_spoiler": 0,
+      "name": "Wall Buster",
+      "name_pt": "Quebra-Parede",
+      "tip": "Quando bots formarem uma parede no Crash Site, acerte a formação para desfazer.",
+      "trophy_code": "astrobot_wall_buster",
+      "type": "Bronze"
+    },
+    {
+      "description": "Derrube um Bot de uma Torre de Bots sem fazê-la cair.",
+      "is_missable": 0,
+      "is_spoiler": 0,
+      "name": "Keep It Together!",
+      "name_pt": "Mantenha a Formação!",
+      "tip": "Acerte um bot na base de uma torre sem derrubar toda a estrutura.",
+      "trophy_code": "astrobot_keep_it_together",
+      "type": "Bronze"
+    },
+    {
+      "description": "Dance com 100 Bots no Crash Site.",
+      "is_missable": 0,
+      "is_spoiler": 0,
+      "name": "Bot Bot Revolution",
+      "name_pt": "Bot Bot Revolution",
+      "tip": "Depois de resgatar ao menos 100 bots, chame o grupo no Crash Site e dance.",
+      "trophy_code": "astrobot_bot_bot_revolution",
+      "type": "Bronze"
+    },
+    {
+      "description": "Chegue ao topo da nave-mãe.",
+      "is_missable": 0,
+      "is_spoiler": 1,
+      "name": "At The Top Of My Game",
+      "name_pt": "No Topo do Meu Jogo",
+      "tip": "Depois de reparar a nave, suba até o topo da Mothership pelo Crash Site.",
+      "trophy_code": "astrobot_at_the_top_of_my_game",
+      "type": "Bronze"
+    }
+  ]
+}

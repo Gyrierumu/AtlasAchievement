@@ -1,0 +1,712 @@
+{
+  "game": {
+    "avoid_if": "Evite se voce nao quer seguir calendario, lidar com perdiveis ou investir mais de 100 horas.",
+    "before_you_start": "Entenda que ha trofeus perdiveis, calendario apertado e requisito de New Game+ para superboss; planejar desde cedo evita uma campanha extra desnecessaria.",
+    "best_for": "Ideal para quem quer uma platina JRPG longa, estrategica e baseada em calendario, builds e checklist robusto.",
+    "cleanup_advice": "Antes do fim do calendario, revise quests, Followers, books, recipes, debates, Gold Beetles, Archetypes e requisitos do superboss.",
+    "cover_image": "https://cdn.cloudflare.steamstatic.com/steam/apps/2679460/library_600x900.jpg",
+    "coverage_level": "strong",
+    "created_at": "2026-05-09 19:53:41",
+    "difficulty": 3,
+    "difficulty_reason": "A dificuldade mecanica e acessivel, mas a platina exige planejamento rigoroso de calendario e atencao a varios trofeus perdiveis.",
+    "dlc_scope": "Guia focado na lista base de Metaphor: ReFantazio.",
+    "editorial_notes": "",
+    "editorial_review_status": null,
+    "editorial_status": "published",
+    "first_run_advice": "Use um calendario/roadmap se quiser evitar retrabalho; jogar totalmente as cegas pode perder livros, debates, quests ou janelas importantes.",
+    "grind_summary": "O peso esta em calendario, quests, Followers, Archetypes, receitas, livros, debates, Gold Beetles e preparacao para superboss.",
+    "guide_avoid": null,
+    "guide_best_moment": null,
+    "guide_dlc": null,
+    "guide_grind": null,
+    "guide_ideal": null,
+    "guide_online": null,
+    "guide_runs": null,
+    "image": "https://cdn.cloudflare.steamstatic.com/steam/apps/2679460/header.jpg",
+    "is_verified": 0,
+    "last_reviewed_at": "",
+    "missable": "A platina e offline, mas exige uma campanha muito planejada e uma etapa em New Game+ para o superboss/trofeu especifico. O risco real esta no calendario, quests, Followers, Archetypes, receitas, livros, debates, desenhos, Gold Beetles, dungeons opcionais e chefes finais. Jogar totalmente as cegas pode deixar trofeus para uma nova run.",
+    "missable_summary": "Ha varios trofeus de atencao por calendario, quests, Followers, Archetypes, receitas, livros, debates, desenhos, Gold Beetles e superboss/NG+.",
+    "name": "Metaphor: ReFantazio",
+    "online_summary": "Nao ha exigencia online para a platina.",
+    "quality_warnings": "[]",
+    "reviewed_by": "",
+    "runs_summary": "A platina exige uma campanha muito planejada e pelo menos uma etapa em New Game+ para trofeu/superboss especifico.",
+    "slug": "metaphor-refantazio",
+    "time": "120-150h",
+    "time_bucket": "long",
+    "time_max_hours": 150,
+    "time_min_hours": 120,
+    "time_reason": "A faixa de 120-150 horas considera campanha, calendario otimizado, quests, Followers, Archetypes, coletaveis, New Game+ e superboss.",
+    "time_sort_hours": 120,
+    "updated_at": "2026-06-27 02:36:58",
+    "verification_note": "Lista base de Metaphor: ReFantazio adicionada com checklist e roadmap completos; aguarda revisao editorial manual final.",
+    "verification_status": "review",
+    "walkthrough": null
+  },
+  "redirects": [],
+  "roadmaps": [
+    {
+      "content": "{\"title\":\"Avance pela campanha\",\"focus\":\"\",\"objective\":\"comece a campanha entendendo calendario, Followers, Virtues, Archetypes e prioridades de tempo. Esta lista e de Metaphor: ReFantazio, nao de Persona 3 Reload, Persona 5 Royal ou outros jogos da Atlus.\",\"actions\":[],\"warning\":\"\",\"result\":\"\"}",
+      "step_order": 1
+    },
+    {
+      "content": "{\"title\":\"Prossiga pela rota planejada\",\"focus\":\"\",\"objective\":\"siga um calendario eficiente para quests, debates, books, recipes, drawings, Followers e Gold Beetles. Salve antes de datas importantes e nao deixe atividades sociais para a reta final.\",\"actions\":[],\"warning\":\"\",\"result\":\"\"}",
+      "step_order": 2
+    },
+    {
+      "content": "{\"title\":\"Prossiga pela rota planejada\",\"focus\":\"\",\"objective\":\"avance dungeons principais e opcionais sem perder prazos, limpando bounties, side quests, mapa, towns e desenhos conforme as rotas aparecem.\",\"actions\":[],\"warning\":\"\",\"result\":\"\"}",
+      "step_order": 3
+    },
+    {
+      "content": "{\"title\":\"Prossiga pela rota planejada\",\"focus\":\"\",\"objective\":\"antes do fim do calendario, revise Help Anyone in Need, All That Glitters, King of Cuisine, Chef in Training, Bookworm, Debate Me, Hearts as One, Summon Mask Time e Archetype Hero.\",\"actions\":[],\"warning\":\"\",\"result\":\"\"}",
+      "step_order": 4
+    },
+    {
+      "content": "{\"title\":\"Organize regiões e favores\",\"focus\":\"\",\"objective\":\"prepare builds, Archetypes, equipment, MAG, party e recursos para Trials, chefes avancados, Star Shatterer e o Redscale Dragon do Book of Apocalypse.\",\"actions\":[],\"warning\":\"\",\"result\":\"\"}",
+      "step_order": 5
+    },
+    {
+      "content": "{\"title\":\"Organize regiões e favores\",\"focus\":\"\",\"objective\":\"inicie New Game+ para Closing the Book/superboss ligado ao Redscale Dragon, mantendo save e recursos suficientes para a luta.\",\"actions\":[],\"warning\":\"\",\"result\":\"\"}",
+      "step_order": 6
+    },
+    {
+      "content": "{\"title\":\"Limpe pendências antes do NG+\",\"focus\":\"\",\"objective\":\"faca o cleanup final, enfrente superboss/New Game+, derrote Destroyer Charadrius em sua forma exigida para Star Shatterer e finalize a platina.\",\"actions\":[],\"warning\":\"\",\"result\":\"\"}",
+      "step_order": 7
+    }
+  ],
+  "schemaVersion": 1,
+  "seedExtras": {
+    "aliases": [],
+    "attentionPoints": [
+      {
+        "tip": "A rota exige calendário, checklists e duas jogadas; use os 16 slots de save manual em pontos diferentes.",
+        "title": "Platina longa e planejada",
+        "type": "120–150h"
+      },
+      {
+        "tip": "Closing the Book, Star Shatterer, Archetype Hero, Summon Mask Time, Hearts as One, King of Cuisine, Help Anyone in Need, Debate Me, Chef in Training e Bookworm são os dez perdíveis.",
+        "title": "Dez perdíveis principais",
+        "type": "Calendário e NG+"
+      },
+      {
+        "tip": "O Redscale Dragon aparece no Book of Apocalypse em Akademia somente no New Game+.",
+        "title": "Closing the Book exige NG+",
+        "type": "Redscale Dragon"
+      },
+      {
+        "tip": "Storyteller pode ser usado na primeira run, mas bloqueia o Redscale Dragon na jogada de Closing the Book.",
+        "title": "Não use Storyteller no NG+",
+        "type": "Easy ou superior"
+      },
+      {
+        "tip": "Vença os oito debates nas datas corretas e escolha as respostas certas; discursos solo não contam.",
+        "title": "Debate Me tem datas e respostas",
+        "type": "Oito candidatos"
+      },
+      {
+        "tip": "Derrote Destroyer Charadrius sem enfrentar os sub-bosses ou elevadores que reduzem o poder do chefe; faça save manual antes.",
+        "title": "Star Shatterer",
+        "type": "Boss sem enfraquecimento"
+      },
+      {
+        "tip": "Leia os sete livros e não perca o volume ligado a Julian em Angler’s Inn Square, Port Brilehaven.",
+        "title": "Bookworm e Julian",
+        "type": "Sete livros"
+      },
+      {
+        "tip": "Cozinhe com Maria e Fabienne na janela correta; o troféu não pode ser deixado para outubro.",
+        "title": "Chef in Training",
+        "type": "Janela antes de outubro"
+      },
+      {
+        "tip": "Maximize todos os Followers dentro do calendário para liberar o troféu e as linhagens necessárias.",
+        "title": "Hearts as One",
+        "type": "Followers"
+      },
+      {
+        "tip": "Conclua todas as quests exigidas dentro de seus prazos; não dependa de pós-história.",
+        "title": "Help Anyone in Need",
+        "type": "Quests com prazo"
+      },
+      {
+        "tip": "Não há free roam nem level select depois da história; finalize calendário e exploração antes do encerramento.",
+        "title": "Sem pós-história livre",
+        "type": "Sem free roam"
+      },
+      {
+        "tip": "Alguns Beetles individuais podem ser perdidos, mas há unidades extras e Beetles não trocados passam para o New Game+.",
+        "title": "Gold Beetles têm margem",
+        "type": "All That Glitters"
+      },
+      {
+        "tip": "Os 44 troféus podem ser obtidos offline, sem cooperação e sem conteúdo adicional.",
+        "title": "Sem online, coop ou DLC",
+        "type": "Lista base"
+      },
+      {
+        "tip": "Mantenha saves separados antes de datas críticas, do dungeon final e da rota de Star Shatterer.",
+        "title": "Saves manuais",
+        "type": "16 slots"
+      }
+    ],
+    "checklist": [
+      "Conferir 44 troféus e distribuição 1 platina, 3 ouro, 8 prata e 32 bronze.",
+      "Conferir The Traveller como platina.",
+      "Conferir onlineRequired, coopRequired e dlcRequired false.",
+      "Conferir hasMissables true, missableCount 10 e filtro Perdíveis 10.",
+      "Conferir filtros Online 0, Coop 0, DLC 0 e Dificuldade 1.",
+      "Conferir Closing the Book como Perdível, Dificuldade, NG+ e Redscale Dragon.",
+      "Conferir Storyteller na segunda run como bloqueio do Redscale Dragon.",
+      "Conferir Star Shatterer como Perdível, Destroyer Charadrius e não enfraquecer.",
+      "Conferir Archetype Hero, Summon Mask Time e Hearts as One.",
+      "Conferir King of Cuisine, Help Anyone in Need, Debate Me, Chef in Training e Bookworm.",
+      "Conferir All That Glitters sem inflar Perdíveis.",
+      "Conferir Gold Beetles, 7 livros, 21 receitas, Followers, quests e debates.",
+      "Conferir Drawings, Vista Viewer, Globetrotter e Worldly Wisdom.",
+      "Conferir Coliseum Champion, Sword Surfer e cumulativos de combate.",
+      "Conferir ausência de online, coop e DLC obrigatória.",
+      "Conferir save transfer PS4/PS5 sem prometer autopop automático.",
+      "Conferir ausência de free roam e level select após a história.",
+      "Conferir saves manuais e 16 slots.",
+      "Conferir nome oficial em inglês, PT-BR separado e descrição em português nos 44 troféus.",
+      "Conferir roadmap estruturado sem objetos brutos ou labels internas no front.",
+      "Conferir FAQ, decisão rápida, SEO, pontos de atenção, filtros e status entre página e catálogo."
+    ],
+    "faq": [
+      {
+        "answer": "Não. A lista base é totalmente offline.",
+        "question": "Metaphor: ReFantazio tem troféus online?"
+      },
+      {
+        "answer": "Não. Nenhum troféu exige cooperação ou outro jogador.",
+        "question": "Metaphor: ReFantazio tem troféus coop?"
+      },
+      {
+        "answer": "Não. Os 44 troféus pertencem à lista base.",
+        "question": "Precisa de DLC para a platina?"
+      },
+      {
+        "answer": "Sim. Há dez perdíveis principais: Closing the Book, Star Shatterer, Archetype Hero, Summon Mask Time, Hearts as One, King of Cuisine, Help Anyone in Need, Debate Me, Chef in Training e Bookworm.",
+        "question": "Tem troféus perdíveis?"
+      },
+      {
+        "answer": "No mínimo duas. Faça quase tudo na primeira run e deixe Closing the Book para o New Game+.",
+        "question": "Quantas runs são necessárias?"
+      },
+      {
+        "answer": "Sim, mas somente Closing the Book: o New Game+ do Redscale Dragon precisa estar em Easy ou superior.",
+        "question": "A dificuldade afeta troféus?"
+      },
+      {
+        "answer": "Sim na primeira run. Não use Storyteller no New Game+ do Redscale Dragon, pois isso bloqueia o acesso ao chefe.",
+        "question": "Posso usar Storyteller?"
+      },
+      {
+        "answer": "Perder eventos de calendário ou escolher Storyteller na run de Closing the Book.",
+        "question": "Qual é o maior risco da platina?"
+      },
+      {
+        "answer": "Sim. É preciso vencer os oito candidatos em datas específicas com as respostas corretas; discursos solo não contam.",
+        "question": "Debate Me é perdível?"
+      },
+      {
+        "answer": "Derrotar Destroyer Charadrius sem enfrentar antes os sub-bosses ou elevadores que o enfraquecem.",
+        "question": "Star Shatterer exige o quê?"
+      },
+      {
+        "answer": "Ler os sete livros, incluindo o volume ligado a Julian em Angler’s Inn Square, Port Brilehaven.",
+        "question": "Bookworm exige o quê?"
+      },
+      {
+        "answer": "Não como perdível principal. Há Gold Beetles extras, e os Beetles não trocados passam para o New Game+.",
+        "question": "All That Glitters é perdível?"
+      },
+      {
+        "answer": "A estimativa é de 120 a 150 horas, dependendo do calendário, do grind e da velocidade no New Game+.",
+        "question": "Quanto tempo leva para platinar?"
+      }
+    ],
+    "note": "Campos exportados para auditoria. O SQLite atual nao possui colunas nativas para todos esses extras; a importacao preserva o que o banco suporta.",
+    "quickDecision": {
+      "difficulty": "Baixa a moderada, cerca de 3/10.",
+      "dlc": "Não exige DLC.",
+      "firstAction": "Comece a primeira run com um calendário 100% e saves manuais em slots separados.",
+      "mainRisk": "Dez perdíveis, calendário e Storyteller no New Game+ de Closing the Book.",
+      "onlineCoop": "Não exige online nem cooperação.",
+      "risk": "Alto retrabalho se eventos de calendário forem perdidos ou se o Redscale Dragon for bloqueado.",
+      "time": "Longa, entre 120 e 150 horas.",
+      "verdict": "É uma platina longa e acessível mecanicamente, indicada para quem aceita seguir calendário e checklists."
+    },
+    "seo": {
+      "description": "Guia de troféus de Metaphor: ReFantazio com roadmap da platina, 44 troféus, 10 perdíveis, New Game+, Closing the Book, Redscale Dragon, Star Shatterer, Followers e Archetypes.",
+      "keywords": [
+        "Metaphor ReFantazio troféus",
+        "Metaphor ReFantazio platina",
+        "guia Metaphor ReFantazio",
+        "Metaphor ReFantazio trophy guide",
+        "The Traveller",
+        "Closing the Book",
+        "Redscale Dragon",
+        "Star Shatterer",
+        "Archetype Hero",
+        "Hearts as One",
+        "Help Anyone in Need",
+        "Debate Me",
+        "Bookworm",
+        "King of Cuisine",
+        "Metaphor ReFantazio New Game Plus",
+        "Metaphor ReFantazio Gold Beetles",
+        "Metaphor ReFantazio Followers"
+      ],
+      "metaDescription": "Guia de troféus de Metaphor: ReFantazio com roadmap da platina, 44 troféus, 10 perdíveis, New Game+, Closing the Book, Redscale Dragon, Star Shatterer, Followers, Archetypes, debates, livros e receitas.",
+      "ogDescription": "Roadmap PT-BR da platina de Metaphor: ReFantazio com 44 troféus, 10 perdíveis, calendário, New Game+, Star Shatterer e Redscale Dragon.",
+      "ogTitle": "Metaphor: ReFantazio: Guia de Troféus e Platina",
+      "title": "Metaphor: ReFantazio: Guia de Troféus e Platina"
+    },
+    "tags": []
+  },
+  "slug": "metaphor-refantazio",
+  "trophies": [
+    {
+      "description": "Acquired all trophies.",
+      "is_missable": 0,
+      "is_spoiler": 0,
+      "name": "The Traveller",
+      "name_pt": "O Viajante",
+      "tip": "Conclua os outros 43 trofeus da lista base. A platina e offline, mas pede calendario planejado e uma etapa em New Game+.",
+      "trophy_code": "metaphor_the_traveller",
+      "type": "Platina"
+    },
+    {
+      "description": "Defeated the redscale dragon from the Book of Apocalypse.",
+      "is_missable": 1,
+      "is_spoiler": 1,
+      "name": "Closing the Book",
+      "name_pt": "Fechando o Livro",
+      "tip": "Superboss ligado ao Book of Apocalypse em New Game+. Prepare build, Archetypes, equipamentos e recursos antes de encarar o Redscale Dragon.",
+      "trophy_code": "metaphor_closing_the_book",
+      "type": "Ouro"
+    },
+    {
+      "description": "Defeated Destroyer Charadrius, wielder of true power.",
+      "is_missable": 1,
+      "is_spoiler": 1,
+      "name": "Star Shatterer",
+      "name_pt": "Destruidor de Estrelas",
+      "tip": "Troféu de final/superboss: enfrente Destroyer Charadrius em sua forma exigida, sem enfraquecer a luta de forma incompatível com o troféu.",
+      "trophy_code": "metaphor_star_shatterer",
+      "type": "Ouro"
+    },
+    {
+      "description": "Made all possible gold beetle exchanges.",
+      "is_missable": 1,
+      "is_spoiler": 0,
+      "name": "All That Glitters",
+      "name_pt": "Nem Tudo que Reluz",
+      "tip": "Colete Gold Beetles desde cedo e acompanhe os que dependem de cidades, dungeons, rotas e janelas. Alguns beetles podem ser perdidos.",
+      "trophy_code": "metaphor_all_that_glitters",
+      "type": "Ouro"
+    },
+    {
+      "description": "Brought about true peace.",
+      "is_missable": 0,
+      "is_spoiler": 1,
+      "name": "Coronation of the King",
+      "name_pt": "Coroação do Rei",
+      "tip": "Troféu de final da história. Siga o caminho correto e conclua a campanha.",
+      "trophy_code": "metaphor_coronation_of_the_king",
+      "type": "Prata"
+    },
+    {
+      "description": "Mastered all Archetypes with the protagonist.",
+      "is_missable": 1,
+      "is_spoiler": 0,
+      "name": "Archetype Hero",
+      "name_pt": "Herói dos Arquétipos",
+      "tip": "Depende de desbloquear e evoluir todos os Archetypes com o protagonista. Planeje Followers, MAG e progresso antes do fim do calendario.",
+      "trophy_code": "metaphor_archetype_hero",
+      "type": "Prata"
+    },
+    {
+      "description": "Created all summoning vessels and masks.",
+      "is_missable": 1,
+      "is_spoiler": 1,
+      "name": "Summon Mask Time",
+      "name_pt": "Hora da Máscara de Invocação",
+      "tip": "Checklist avançado de Special Experiments, summoning vessels e masks. Acompanhe materiais, Followers e janelas de Akademeia.",
+      "trophy_code": "metaphor_summon_mask_time",
+      "type": "Prata"
+    },
+    {
+      "description": "Spent a total of 100,000 reeve using skills that consume money.",
+      "is_missable": 0,
+      "is_spoiler": 0,
+      "name": "Money is Power",
+      "name_pt": "Dinheiro é Poder",
+      "tip": "Use habilidades da linhagem Merchant/Tycoon que gastam reeve. Reserve dinheiro para nao travar compras, ingredientes e preparacao.",
+      "trophy_code": "metaphor_money_is_power",
+      "type": "Prata"
+    },
+    {
+      "description": "Maxed all Follower ranks.",
+      "is_missable": 1,
+      "is_spoiler": 1,
+      "name": "Hearts as One",
+      "name_pt": "Corações Unidos",
+      "tip": "Grande gargalo de calendario. Priorize todos os Followers, Virtues exigidas e convites antes das datas finais.",
+      "trophy_code": "metaphor_hearts_as_one",
+      "type": "Prata"
+    },
+    {
+      "description": "Made all recipes.",
+      "is_missable": 1,
+      "is_spoiler": 0,
+      "name": "King of Cuisine",
+      "name_pt": "Rei da Culinária",
+      "tip": "Cozinhe todas as recipes e compre ingredientes nas cidades certas. O calendario e as viagens da Gauntlet Runner tornam este trofeu sensivel.",
+      "trophy_code": "metaphor_king_of_cuisine",
+      "type": "Prata"
+    },
+    {
+      "description": "Completed all quests.",
+      "is_missable": 1,
+      "is_spoiler": 0,
+      "name": "Help Anyone in Need",
+      "name_pt": "Ajude Quem Precisa",
+      "tip": "Complete todas as quests, bounties e objetivos opcionais dentro dos prazos. Este trofeu tambem puxa mapa, towns, drawings e dungeons opcionais.",
+      "trophy_code": "metaphor_help_anyone_in_need",
+      "type": "Prata"
+    },
+    {
+      "description": "Overcame all the trials to defeat Louis.",
+      "is_missable": 1,
+      "is_spoiler": 1,
+      "name": "Entrusted",
+      "name_pt": "Confiado",
+      "tip": "Conteudo avançado de Trials na reta final. Prepare party, equipamentos e Archetypes antes de encerrar o calendario.",
+      "trophy_code": "metaphor_entrusted",
+      "type": "Prata"
+    },
+    {
+      "description": "Met your contact in the Northern Border Fort.",
+      "is_missable": 0,
+      "is_spoiler": 1,
+      "name": "Allies United",
+      "name_pt": "Aliados Unidos",
+      "tip": "Troféu automatico de progresso da historia.",
+      "trophy_code": "metaphor_allies_united",
+      "type": "Bronze"
+    },
+    {
+      "description": "Completed the Nord Mines.",
+      "is_missable": 0,
+      "is_spoiler": 1,
+      "name": "Out of the Fire",
+      "name_pt": "Fora do Fogo",
+      "tip": "Troféu automatico de dungeon principal.",
+      "trophy_code": "metaphor_out_of_the_fire",
+      "type": "Bronze"
+    },
+    {
+      "description": "Completed the Regalith Grand Cathedral.",
+      "is_missable": 0,
+      "is_spoiler": 1,
+      "name": "Calamity Averted",
+      "name_pt": "Calamidade Evitada",
+      "tip": "Troféu automatico de dungeon principal.",
+      "trophy_code": "metaphor_calamity_averted",
+      "type": "Bronze"
+    },
+    {
+      "description": "Completed Kriegante Castle.",
+      "is_missable": 0,
+      "is_spoiler": 1,
+      "name": "Dark Truths",
+      "name_pt": "Verdades Sombrias",
+      "tip": "Troféu automatico de progresso da historia.",
+      "trophy_code": "metaphor_dark_truths",
+      "type": "Bronze"
+    },
+    {
+      "description": "Completed the Charadrius.",
+      "is_missable": 0,
+      "is_spoiler": 1,
+      "name": "On Knife's Edge",
+      "name_pt": "No Fio da Navalha",
+      "tip": "Troféu automatico de progresso da historia.",
+      "trophy_code": "metaphor_on_knifes_edge",
+      "type": "Bronze"
+    },
+    {
+      "description": "Completed the Dragon Temple.",
+      "is_missable": 0,
+      "is_spoiler": 1,
+      "name": "History Untold",
+      "name_pt": "História Não Contada",
+      "tip": "Troféu automatico de dungeon principal.",
+      "trophy_code": "metaphor_history_untold",
+      "type": "Bronze"
+    },
+    {
+      "description": "Completed the Montario Opera House.",
+      "is_missable": 0,
+      "is_spoiler": 1,
+      "name": "Mission Accomplished",
+      "name_pt": "Missão Cumprida",
+      "tip": "Troféu automatico de progresso da historia.",
+      "trophy_code": "metaphor_mission_accomplished",
+      "type": "Bronze"
+    },
+    {
+      "description": "Completed the Skybound Avatar.",
+      "is_missable": 0,
+      "is_spoiler": 1,
+      "name": "Skybound Hope",
+      "name_pt": "Esperança Celeste",
+      "tip": "Troféu automatico de dungeon avançada da historia.",
+      "trophy_code": "metaphor_skybound_hope",
+      "type": "Bronze"
+    },
+    {
+      "description": "Mastered an Archetype.",
+      "is_missable": 0,
+      "is_spoiler": 0,
+      "name": "Archetype Adept",
+      "name_pt": "Adepto dos Arquétipos",
+      "tip": "Leve qualquer Archetype ao rank maximo. Vem naturalmente se voce buscar Archetype Hero.",
+      "trophy_code": "metaphor_archetype_adept",
+      "type": "Bronze"
+    },
+    {
+      "description": "Studied the Prince Archetype.",
+      "is_missable": 0,
+      "is_spoiler": 1,
+      "name": "His Majesty",
+      "name_pt": "Sua Majestade",
+      "tip": "Troféu de historia ligado a um Archetype avançado.",
+      "trophy_code": "metaphor_his_majesty",
+      "type": "Bronze"
+    },
+    {
+      "description": "Used a Synthesis skill.",
+      "is_missable": 0,
+      "is_spoiler": 0,
+      "name": "United Front",
+      "name_pt": "Frente Unida",
+      "tip": "Use qualquer Synthesis skill em combate depois que a mecanica estiver disponivel.",
+      "trophy_code": "metaphor_united_front",
+      "type": "Bronze"
+    },
+    {
+      "description": "Used 50 different Synthesis skills.",
+      "is_missable": 0,
+      "is_spoiler": 0,
+      "name": "Teamwork Makes the Dream Work",
+      "name_pt": "Trabalho em Equipe Faz o Sonho Acontecer",
+      "tip": "Varie party, Archetypes e habilidades para registrar 50 Synthesis skills diferentes ao longo da campanha.",
+      "trophy_code": "metaphor_teamwork_makes_the_dream_work",
+      "type": "Bronze"
+    },
+    {
+      "description": "Performed a Special Experiment.",
+      "is_missable": 0,
+      "is_spoiler": 0,
+      "name": "For Science!",
+      "name_pt": "Pela Ciência!",
+      "tip": "Realize qualquer Special Experiment em Akademeia. Combine com Summon Mask Time.",
+      "trophy_code": "metaphor_for_science",
+      "type": "Bronze"
+    },
+    {
+      "description": "Stunned an enemy.",
+      "is_missable": 0,
+      "is_spoiler": 0,
+      "name": "Stunning!",
+      "name_pt": "Atordoante!",
+      "tip": "Atordoe um inimigo em field combat antes de iniciar o squad battle.",
+      "trophy_code": "metaphor_stunning",
+      "type": "Bronze"
+    },
+    {
+      "description": "Inflicted ambush damage against stunned enemies 100 times.",
+      "is_missable": 0,
+      "is_spoiler": 0,
+      "name": "Tactical Strike",
+      "name_pt": "Ataque Tático",
+      "tip": "Ataque inimigos atordoados para iniciar combates com vantagem e acumular 100 ambush damage.",
+      "trophy_code": "metaphor_tactical_strike",
+      "type": "Bronze"
+    },
+    {
+      "description": "Stole an item from an enemy.",
+      "is_missable": 0,
+      "is_spoiler": 0,
+      "name": "What's Yours is Mine",
+      "name_pt": "O que é Seu é Meu",
+      "tip": "Use Steal com Archetype apropriado quando a habilidade estiver liberada.",
+      "trophy_code": "metaphor_whats_yours_is_mine",
+      "type": "Bronze"
+    },
+    {
+      "description": "Defeated 10 Elmentas.",
+      "is_missable": 0,
+      "is_spoiler": 0,
+      "name": "Stray Elements",
+      "name_pt": "Elementos Errantes",
+      "tip": "Cace Elmentas quando aparecerem e derrote-os antes que fujam.",
+      "trophy_code": "metaphor_stray_elements",
+      "type": "Bronze"
+    },
+    {
+      "description": "Ended 50 battles without taking damage.",
+      "is_missable": 0,
+      "is_spoiler": 0,
+      "name": "No Mercy",
+      "name_pt": "Sem Piedade",
+      "tip": "Volte a areas fracas ou controle stuns/ambushes para encerrar combates sem dano.",
+      "trophy_code": "metaphor_no_mercy",
+      "type": "Bronze"
+    },
+    {
+      "description": "Consulted Gallica 100 times.",
+      "is_missable": 0,
+      "is_spoiler": 0,
+      "name": "Hey, Listen!",
+      "name_pt": "Ei, Escute!",
+      "tip": "Consulte Gallica com frequencia durante exploração e deslocamentos ate acumular 100 consultas.",
+      "trophy_code": "metaphor_hey_listen",
+      "type": "Bronze"
+    },
+    {
+      "description": "Obtained a Follower.",
+      "is_missable": 0,
+      "is_spoiler": 0,
+      "name": "Shake on It",
+      "name_pt": "Aperto de Mãos",
+      "tip": "Troféu inicial ao obter seu primeiro Follower.",
+      "trophy_code": "metaphor_shake_on_it",
+      "type": "Bronze"
+    },
+    {
+      "description": "Subjugated a bounty.",
+      "is_missable": 0,
+      "is_spoiler": 0,
+      "name": "Monster Hunter",
+      "name_pt": "Caçador de Monstros",
+      "tip": "Complete qualquer bounty. Bounties tambem ajudam quests, mapa, towns e optional dungeons.",
+      "trophy_code": "metaphor_monster_hunter",
+      "type": "Bronze"
+    },
+    {
+      "description": "Purified a piece of equipment.",
+      "is_missable": 0,
+      "is_spoiler": 0,
+      "name": "Blessed Power",
+      "name_pt": "Poder Abençoado",
+      "tip": "Purifique qualquer equipamento em uma igreja quando tiver item/material adequado.",
+      "trophy_code": "metaphor_blessed_power",
+      "type": "Bronze"
+    },
+    {
+      "description": "Bought an item on discount.",
+      "is_missable": 0,
+      "is_spoiler": 0,
+      "name": "Shrewd Shopper",
+      "name_pt": "Comprador Astuto",
+      "tip": "Compre em um dia de desconto. Ha multiplas oportunidades, mas anote a primeira para nao esquecer.",
+      "trophy_code": "metaphor_shrewd_shopper",
+      "type": "Bronze"
+    },
+    {
+      "description": "Visited all towns.",
+      "is_missable": 0,
+      "is_spoiler": 0,
+      "name": "Globetrotter",
+      "name_pt": "Globetrotter",
+      "tip": "Visite todas as towns conforme quests, bounties e rotas da Gauntlet Runner liberarem o mapa.",
+      "trophy_code": "metaphor_globetrotter",
+      "type": "Bronze"
+    },
+    {
+      "description": "Unlocked the entire map.",
+      "is_missable": 1,
+      "is_spoiler": 0,
+      "name": "Worldly Wisdom",
+      "name_pt": "Sabedoria Mundana",
+      "tip": "Revele o mapa inteiro completando quests, bounties, towns, dungeons opcionais e rotas antes do fim do calendario.",
+      "trophy_code": "metaphor_worldly_wisdom",
+      "type": "Bronze"
+    },
+    {
+      "description": "Collected all drawings of the journey.",
+      "is_missable": 1,
+      "is_spoiler": 0,
+      "name": "Vista Viewer",
+      "name_pt": "Observador de Paisagens",
+      "tip": "Colete todos os drawings nas rotas da Gauntlet Runner. Alguns dependem de destinos opcionais e planejamento de viagem.",
+      "trophy_code": "metaphor_vista_viewer",
+      "type": "Bronze"
+    },
+    {
+      "description": "Won a debate against every candidate.",
+      "is_missable": 1,
+      "is_spoiler": 0,
+      "name": "Debate Me",
+      "name_pt": "Debata Comigo",
+      "tip": "Altamente sensivel ao calendario. Debata cada candidato quando aparecer nos podios das cidades e salve antes das respostas.",
+      "trophy_code": "metaphor_debate_me",
+      "type": "Bronze"
+    },
+    {
+      "description": "Won 30 consecutive Gold Class battles at the coliseum.",
+      "is_missable": 0,
+      "is_spoiler": 0,
+      "name": "Coliseum Champion",
+      "name_pt": "Campeão do Coliseu",
+      "tip": "Prepare builds consistentes e complete uma sequencia de 30 vitorias na Gold Class.",
+      "trophy_code": "metaphor_coliseum_champion",
+      "type": "Bronze"
+    },
+    {
+      "description": "Travelled a significant distance by blade-riding.",
+      "is_missable": 0,
+      "is_spoiler": 0,
+      "name": "Sword Surfer",
+      "name_pt": "Surfista de Espada",
+      "tip": "Use blade-riding com frequencia durante deslocamentos ate acumular distancia suficiente.",
+      "trophy_code": "metaphor_sword_surfer",
+      "type": "Bronze"
+    },
+    {
+      "description": "Helped cook a meal at the inn with Maria.",
+      "is_missable": 1,
+      "is_spoiler": 0,
+      "name": "Chef in Training",
+      "name_pt": "Chef em Treinamento",
+      "tip": "Faça a refeição com Maria no Hushed Honeybee Inn dentro da janela disponivel. Trate como trofeu de calendario inicial.",
+      "trophy_code": "metaphor_chef_in_training",
+      "type": "Bronze"
+    },
+    {
+      "description": "Successfully challenged the test of courage at the highest difficulty.",
+      "is_missable": 0,
+      "is_spoiler": 0,
+      "name": "At Your Own Risk",
+      "name_pt": "Por Sua Conta e Risco",
+      "tip": "Complete o test of courage no nivel maximo quando sua Courage/rota permitir.",
+      "trophy_code": "metaphor_at_your_own_risk",
+      "type": "Bronze"
+    },
+    {
+      "description": "Finished reading all the books.",
+      "is_missable": 1,
+      "is_spoiler": 0,
+      "name": "Bookworm",
+      "name_pt": "Devorador de Livros",
+      "tip": "Leia todos os books ao longo da campanha. Livros e sessões na Gauntlet Runner dependem de calendario e podem exigir planejamento.",
+      "trophy_code": "metaphor_bookworm",
+      "type": "Bronze"
+    }
+  ]
+}

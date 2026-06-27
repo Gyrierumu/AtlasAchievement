@@ -1,0 +1,740 @@
+{
+  "game": {
+    "avoid_if": "Evite se você não quer repetir campanha, fazer Village of Shadows, controlar gastos/curas ou buscar rank S no Mercenaries base.",
+    "before_you_start": "Separe saves antes de pontos sem retorno e não misture Shadows of Rose ou Mercenaries DLC com a platina base.",
+    "best_for": "Ideal para quem gosta de survival horror de ação com NG+, upgrades, dificuldade alta e desafios variados.",
+    "cleanup_advice": "Use NG+ para farmar Lei, comprar upgrades e preparar armas antes de Village of Shadows, speedrun, restrições e Mercenaries base.",
+    "cover_image": "https://cdn.cloudflare.steamstatic.com/steam/apps/1196590/library_600x900.jpg",
+    "coverage_level": "strong",
+    "created_at": "2026-05-09 19:53:28",
+    "difficulty": 6,
+    "difficulty_reason": "A dificuldade vem de Village of Shadows, economia de Lei, desafios de speedrun/restrição, armas brancas e rank S no Mercenaries base.",
+    "dlc_scope": "Guia focado na lista base de Resident Evil Village. Shadows of Rose e Mercenaries Additional Orders/DLC ficam fora da platina base; The Mercenaries original da lista base continua necessário.",
+    "editorial_notes": null,
+    "editorial_review_status": null,
+    "editorial_status": "published",
+    "first_run_advice": "Faça a primeira campanha com checklist de arquivos, cabras, janelas, outhouses, receitas e peças de armas, mantendo saves antes de áreas longas.",
+    "grind_summary": "Grind moderado para Lei, upgrades, munição infinita e ranks S no The Mercenaries da lista base.",
+    "guide_avoid": null,
+    "guide_best_moment": null,
+    "guide_dlc": null,
+    "guide_grind": null,
+    "guide_ideal": null,
+    "guide_online": null,
+    "guide_runs": null,
+    "image": "https://cdn.cloudflare.steamstatic.com/steam/apps/1196590/header.jpg",
+    "is_verified": 0,
+    "last_reviewed_at": null,
+    "missable": "A platina base pede várias campanhas e muitos troféus situacionais perdíveis. Trate a primeira run como coleta/checklist, deixe Village of Shadows para depois de upgrades e reserve uma run limpa para speedrun, pouco gasto, poucos heals e faca.",
+    "missable_summary": "Arquivos, cabras, outhouses, janelas do castelo, receitas, peças de armas e objetivos situacionais podem ser perdidos por campanha. Use saves antes de áreas sem retorno.",
+    "name": "Resident Evil Village",
+    "online_summary": "Não há exigência online, coop, multiplayer ou PS+ para a platina da lista base.",
+    "quality_warnings": null,
+    "reviewed_by": null,
+    "runs_summary": "Várias campanhas: coleta/checklist, NG+ para upgrades, Hardcore/Village of Shadows, speedrun/restrições e Mercenaries da lista base.",
+    "slug": "resident-evil-village",
+    "time": "25-35 horas",
+    "time_bucket": "medium",
+    "time_max_hours": 35,
+    "time_min_hours": 25,
+    "time_reason": "A faixa de 25-35 horas considera campanha, NG+, upgrades, Village of Shadows, speedrun, restrições, coletáveis e Mercenaries base.",
+    "time_sort_hours": 25,
+    "updated_at": "2026-06-27 02:36:58",
+    "verification_note": "Guia normalizado a partir do dado seed com checklist e roadmap; aguardando revisão editorial manual final.",
+    "verification_status": "review",
+    "walkthrough": null
+  },
+  "redirects": [],
+  "roadmaps": [
+    {
+      "content": "Faça a primeira campanha da lista base em Standard ou Casual aproveitando a história, mas já acompanhando arquivos, cabras, outhouses, janelas do castelo, receitas, peças de armas e troféus situacionais. Shadows of Rose e Mercenaries DLC ficam fora.",
+      "step_order": 1
+    },
+    {
+      "content": "Use New Game+ para juntar Lei, comprar melhorias, liberar munição infinita e preparar armas fortes antes das dificuldades mais altas.",
+      "step_order": 2
+    },
+    {
+      "content": "Finalize uma campanha em Hardcore e depois encare Village of Shadows com armas melhoradas e munição infinita, evitando transformar essa run na primeira experiência real do jogo.",
+      "step_order": 3
+    },
+    {
+      "content": "Faça uma run otimizada em Casual combinando menos de 3 horas, menos de 10.000 Lei gastos e no máximo quatro itens de cura. Separe save de segurança antes de pontos longos.",
+      "step_order": 4
+    },
+    {
+      "content": "Finalize a run de faça/armas brancas nas condições permitidas e feche The Mercenaries com combo 30 e rank S em todos os estágios para concluir a platina.",
+      "step_order": 5
+    }
+  ],
+  "schemaVersion": 1,
+  "seedExtras": {
+    "aliases": [],
+    "attentionPoints": [
+      {
+        "detail": "Legendary Cowboy costuma ser o maior gargalo da platina. Treine The Mercenaries por estágio, buscando Rank S nos mapas base antes de tentar otimizações agressivas.",
+        "tags": [
+          "Mercenaries",
+          "Dificuldade",
+          "Grind"
+        ],
+        "title": "Legendary Cowboy"
+      },
+      {
+        "detail": "Village of Shadows é o maior pico de dificuldade da campanha. Faça com preparação de New Game+, armas fortes, upgrades e saves bem posicionados.",
+        "tags": [
+          "Dificuldade",
+          "New Game+"
+        ],
+        "title": "Village of Shadows"
+      },
+      {
+        "detail": "Arquivos, Goats of Warding, outhouses e janelas do Castelo Dimitrescu podem exigir nova run ou save anterior se forem ignorados. Use checklist por região.",
+        "tags": [
+          "Coletáveis",
+          "Risco de run"
+        ],
+        "title": "Colecionáveis por região"
+      },
+      {
+        "detail": "Dashing Dad, Frugal Father, Don't Trust That Snake Oil e Knives Out exigem planejamento. Separar objetivos reduz o risco de repetir campanha por erro de rota.",
+        "tags": [
+          "Speedrun",
+          "Restrição",
+          "Risco de run"
+        ],
+        "title": "Runs restritivas"
+      },
+      {
+        "detail": "Doll Collector e Art Collector dependem de Challenge Points e compras na loja de extras. Deixe uma conferência final para evitar grind desnecessário.",
+        "tags": [
+          "Extras",
+          "Cleanup",
+          "Grind"
+        ],
+        "title": "Loja de extras"
+      },
+      {
+        "detail": "Winters' Expansion, Shadows of Rose, Third Person Mode, The Mercenaries Additional Orders e Re:Verse não entram nos 50 troféus da platina base.",
+        "tags": [
+          "DLC",
+          "Fora da platina"
+        ],
+        "title": "DLC fora da platina"
+      },
+      {
+        "detail": "A platina base é single-player. The Mercenaries faz parte da platina, mas não exige online nem coop obrigatório.",
+        "tags": [
+          "Offline",
+          "Sem coop"
+        ],
+        "title": "Online e coop opcionais"
+      }
+    ],
+    "checklist": [
+      "Confirmar os 50 troféus da lista base de Resident Evil Village.",
+      "Não contar Winters' Expansion como requisito da platina.",
+      "Não contar Shadows of Rose como requisito da platina.",
+      "Não contar The Mercenaries Additional Orders como requisito da platina.",
+      "Não misturar Resident Evil Re:Verse com Resident Evil Village.",
+      "Coletar todos os files para Bookworm.",
+      "Destruir todos os Goats of Warding para Heretic.",
+      "Abrir todos os outhouses necessários para When You Gotta Go...",
+      "Quebrar todas as janelas do Castelo Dimitrescu para Hooligan.",
+      "Concluir troféus situacionais de combate e exploração nas janelas corretas.",
+      "Completar crafting, receitas, peças de armas e tesouros combináveis necessários.",
+      "Planejar Village of Shadows em New Game+ com armas fortes e recursos preparados.",
+      "Planejar Dashing Dad em run rápida abaixo de três horas.",
+      "Planejar Frugal Father em run de baixo gasto, com limite de 10.000 Lei.",
+      "Planejar Don't Trust That Snake Oil em run de pouca cura, com quatro ou menos itens.",
+      "Planejar Knives Out em run dedicada de faca/close combat.",
+      "Obter Rank S nos estágios base de The Mercenaries para Legendary Cowboy.",
+      "Comprar e visualizar figuras e concept art na loja de extras.",
+      "Conferir flags finais: onlineRequired false, coopRequired false, dlcRequired false e hasMissables true."
+    ],
+    "faq": [
+      {
+        "answer": "Não. A platina base pode ser feita offline. The Mercenaries faz parte da platina, mas não exige online nem coop obrigatório.",
+        "question": "Resident Evil Village exige online para platinar?"
+      },
+      {
+        "answer": "Não. A platina é single-player e não depende de coop.",
+        "question": "Resident Evil Village exige coop para platinar?"
+      },
+      {
+        "answer": "Não. Winters' Expansion, Shadows of Rose, Third Person Mode e The Mercenaries Additional Orders são conteúdos separados e não entram nos 50 troféus da platina base.",
+        "question": "Winters' Expansion é necessária para a platina?"
+      },
+      {
+        "answer": "Sim. O principal risco está em colecionáveis de áreas sem retorno, ações situacionais e objetivos presos a uma campanha. Use saves manuais e checklist por região.",
+        "question": "Resident Evil Village tem troféus perdíveis?"
+      },
+      {
+        "answer": "Depende da eficiência e do uso de saves, mas o caminho mais seguro separa primeira campanha, cleanup, Village of Shadows, rota rápida, baixo gasto, pouca cura, faca/combate corpo a corpo e Mercenaries em etapas planejadas.",
+        "question": "Quantas runs são necessárias?"
+      },
+      {
+        "answer": "Para muitos jogadores, Legendary Cowboy é o maior bloqueio, pois exige Rank S nos estágios base de The Mercenaries. Village of Shadows também é um pico importante de dificuldade.",
+        "question": "Qual é o troféu mais difícil?"
+      },
+      {
+        "answer": "O maior grind está em The Mercenaries, especialmente Legendary Cowboy. O jogador precisa aprender rotas, manter combos, usar bem os orbes e buscar Rank S nos estágios base.",
+        "question": "Qual é o maior grind da platina?"
+      },
+      {
+        "answer": "Não. Additional Orders faz parte da Winters' Expansion e não deve ser tratado como requisito da platina base. A rota do guia considera os estágios base de The Mercenaries.",
+        "question": "The Mercenaries Additional Orders conta para a platina?"
+      },
+      {
+        "answer": "Alguns objetivos podem ser combinados, mas a rota mais segura é separar quando houver risco. Dashing Dad, Frugal Father, Don't Trust That Snake Oil e Knives Out ficam mais consistentes com saves e runs dedicadas.",
+        "question": "Dá para combinar speedrun, pouca cura, baixo gasto e faca na mesma run?"
+      },
+      {
+        "answer": "Arquivos, Goats of Warding, outhouses, janelas do Castelo Dimitrescu e ações situacionais. Use checklist por região e saves manuais antes de áreas sem retorno.",
+        "question": "O que mais costuma ser perdido na primeira campanha?"
+      }
+    ],
+    "note": "Campos exportados para auditoria. O SQLite atual nao possui colunas nativas para todos esses extras; a importacao preserva o que o banco suporta.",
+    "quickDecision": {
+      "firstAction": "Comece com uma campanha completa focada em exploração, arquivos, Goats of Warding, receitas, tesouros e troféus situacionais, mantendo saves manuais antes de pontos importantes.",
+      "mainRisk": "Legendary Cowboy é o maior gargalo da platina; Village of Shadows, colecionáveis por região e runs restritivas exigem planejamento separado.",
+      "verdict": "Vale platinar Resident Evil Village se você gosta de survival horror de ação com checklist variado, múltiplas runs e desafios de execução. A platina não exige online, coop nem Winters' Expansion, mas cobra domínio da campanha, colecionáveis por região, Village of Shadows, runs de baixo gasto, pouca cura, faca e Rank S em The Mercenaries. É uma platina excelente, porém pouco indicada para quem não quer repetir campanha ou treinar Legendary Cowboy."
+    },
+    "seo": {
+      "description": "Guia de platina de Resident Evil Village com roadmap em português, colecionáveis, Village of Shadows, speedrun, runs restritivas, The Mercenaries, Legendary Cowboy e dicas para conquistar todos os troféus no PS4 e PS5.",
+      "keywords": [
+        "Resident Evil Village",
+        "Resident Evil 8",
+        "guia de platina Resident Evil Village",
+        "troféus Resident Evil Village",
+        "roadmap Resident Evil Village",
+        "Legendary Cowboy",
+        "The Mercenaries",
+        "Village of Shadows",
+        "Ethan Winters",
+        "Goats of Warding",
+        "Bookworm"
+      ],
+      "ogDescription": "Guia PT-BR da platina base de Resident Evil Village, com 50 troféus, colecionáveis, Village of Shadows, runs restritivas e The Mercenaries sem DLC obrigatória.",
+      "ogTitle": "Guia de Platina Resident Evil Village — Troféus, Roadmap e Dicas",
+      "title": "Guia de Platina Resident Evil Village — Troféus, Roadmap e Dicas"
+    },
+    "tags": [
+      "survival horror",
+      "ação",
+      "campanha",
+      "colecionáveis",
+      "speedrun",
+      "Village of Shadows",
+      "Mercenaries",
+      "grind",
+      "desafio",
+      "offline",
+      "sem coop",
+      "sem DLC obrigatória"
+    ]
+  },
+  "slug": "resident-evil-village",
+  "trophies": [
+    {
+      "description": "Conquiste todos os troféus da lista base de Resident Evil Village.",
+      "is_missable": 0,
+      "is_spoiler": 0,
+      "name": "Ethan Winters",
+      "name_pt": "Ethan Winters",
+      "tip": "A platina exige história, dificuldades, coletáveis, desafios de campanha e The Mercenaries.",
+      "trophy_code": "revillage_platinum",
+      "type": "Platina"
+    },
+    {
+      "description": "Sobreviva ao primeiro ataque dos lycans.",
+      "is_missable": 0,
+      "is_spoiler": 1,
+      "name": "Not Lycan This...",
+      "name_pt": "Não é Lycan isso...",
+      "tip": "Troféu de progresso da história; apenas avance pela abertura da vila.",
+      "trophy_code": "revillage_not_lycan_this",
+      "type": "Bronze"
+    },
+    {
+      "description": "Escape da mina durante a campanha.",
+      "is_missable": 0,
+      "is_spoiler": 1,
+      "name": "Four Lords",
+      "name_pt": "Quatro Lordes",
+      "tip": "Relacionado à história principal; não exige ação extra além de avançar.",
+      "trophy_code": "revillage_four_lords",
+      "type": "Bronze"
+    },
+    {
+      "description": "Derrote a versão transformada de Dimitrêscu.",
+      "is_missable": 0,
+      "is_spoiler": 1,
+      "name": "That Sucked!",
+      "name_pt": "Isso Sugou!",
+      "tip": "Troféu de chefe da história. Prepare munição antes do confronto.",
+      "trophy_code": "revillage_that_sucked",
+      "type": "Bronze"
+    },
+    {
+      "description": "Derrote Donna e Angie.",
+      "is_missable": 0,
+      "is_spoiler": 1,
+      "name": "Got No Strings",
+      "name_pt": "Sem Cordas",
+      "tip": "Troféu de história ligado à Casa Beneviento.",
+      "trophy_code": "revillage_got_no_strings",
+      "type": "Bronze"
+    },
+    {
+      "description": "Derrote a forma transformada de Moreau.",
+      "is_missable": 0,
+      "is_spoiler": 1,
+      "name": "Fish Out of Watér",
+      "name_pt": "",
+      "tip": "Use o espaço da arena para evitar ácido e contra-atacar com segurança.",
+      "trophy_code": "revillage_fish_out_of_watér",
+      "type": "Bronze"
+    },
+    {
+      "description": "Derrote Urias na fortaleza.",
+      "is_missable": 0,
+      "is_spoiler": 1,
+      "name": "Up Urs!",
+      "name_pt": "Up Urs!",
+      "tip": "Troféu de história; leve explosivos e munição forte para reduzir pressão.",
+      "trophy_code": "revillage_up_urs",
+      "type": "Bronze"
+    },
+    {
+      "description": "Coloque o Cálice do Gigante no local da cerimônia.",
+      "is_missable": 0,
+      "is_spoiler": 1,
+      "name": "Temporary Measures",
+      "name_pt": "Medidas Temporárias",
+      "tip": "Progresso obrigatório da campanha principal.",
+      "trophy_code": "revillage_temporary_measures",
+      "type": "Bronze"
+    },
+    {
+      "description": "Derrote a forma transformada de Heisenberg.",
+      "is_missable": 0,
+      "is_spoiler": 1,
+      "name": "Iron Giant Down",
+      "name_pt": "Gigante de Ferro Abatido",
+      "tip": "Troféu de chefe da história; memorize os ataques para runs futuras.",
+      "trophy_code": "revillage_iron_giant_down",
+      "type": "Bronze"
+    },
+    {
+      "description": "Encontre o Megamycete nas ruínas subterrâneas.",
+      "is_missable": 0,
+      "is_spoiler": 1,
+      "name": "The Root of the Matter",
+      "name_pt": "A Raiz da Questão",
+      "tip": "Progresso tardio da história principal.",
+      "trophy_code": "revillage_root_matter",
+      "type": "Bronze"
+    },
+    {
+      "description": "Conclua a história em Casual ou dificuldade superior.",
+      "is_missable": 0,
+      "is_spoiler": 0,
+      "name": "Great Dad",
+      "name_pt": "Grande Pai",
+      "tip": "As dificuldades inferiores acumulam quando você conclui em uma dificuldade maior.",
+      "trophy_code": "revillage_great_dad",
+      "type": "Bronze"
+    },
+    {
+      "description": "Conclua a história em Standard ou dificuldade superior.",
+      "is_missable": 0,
+      "is_spoiler": 0,
+      "name": "Best Dad Ever",
+      "name_pt": "Melhor Pai de Todos",
+      "tip": "Boa dificuldade para a primeira run com coleta, sem pressão excessiva.",
+      "trophy_code": "revillage_best_dad_ever",
+      "type": "Bronze"
+    },
+    {
+      "description": "Conclua a história em Hardcore ou dificuldade superior.",
+      "is_missable": 0,
+      "is_spoiler": 0,
+      "name": "World's Best Dad",
+      "name_pt": "Melhor Pai do Mundo",
+      "tip": "Deixe para New Game+ se quiser entrar com armas e recursos melhores.",
+      "trophy_code": "revillage_worlds_best_dad",
+      "type": "Prata"
+    },
+    {
+      "description": "Conclua a história na dificuldade Village of Shadows.",
+      "is_missable": 0,
+      "is_spoiler": 0,
+      "name": "Universe's Best Dad",
+      "name_pt": "Melhor Pai do Universo",
+      "tip": "Use armas melhoradas e munição infinita. Não transforme essa run na sua primeira campanha.",
+      "trophy_code": "revillage_universes_best_dad",
+      "type": "Ouro"
+    },
+    {
+      "description": "Crie um item pelo menu de crafting.",
+      "is_missable": 0,
+      "is_spoiler": 0,
+      "name": "Crafter",
+      "name_pt": "Artesão",
+      "tip": "Faça um First Aid Med ou munição assim que tiver matériais suficientes.",
+      "trophy_code": "revillage_crafter",
+      "type": "Bronze"
+    },
+    {
+      "description": "Compre qualquer item do Duke durante a história.",
+      "is_missable": 0,
+      "is_spoiler": 0,
+      "name": "Patron",
+      "name_pt": "Cliente",
+      "tip": "Sai naturalmente na primeira visita útil ao mercador.",
+      "trophy_code": "revillage_patron",
+      "type": "Bronze"
+    },
+    {
+      "description": "Abra uma fechadura simples usando lockpick.",
+      "is_missable": 0,
+      "is_spoiler": 0,
+      "name": "Petty Thief",
+      "name_pt": "Ladrãozinho",
+      "tip": "Guarde lockpicks e use no primeiro armário/gaveta trancado marcado no mapa.",
+      "trophy_code": "revillage_petty_thief",
+      "type": "Bronze"
+    },
+    {
+      "description": "Combine partes de um tesouro até formar uma peça completa.",
+      "is_missable": 0,
+      "is_spoiler": 0,
+      "name": "Repairer",
+      "name_pt": "Reparador",
+      "tip": "Não venda tesouros combináveis antes de juntar todas as partes.",
+      "trophy_code": "revillage_repairer",
+      "type": "Bronze"
+    },
+    {
+      "description": "Cace um animal durante a história.",
+      "is_missable": 0,
+      "is_spoiler": 0,
+      "name": "Hunter",
+      "name_pt": "Caçador",
+      "tip": "Animais aparecem em áreas da vila e rendem ingredientes para refeições.",
+      "trophy_code": "revillage_hunter",
+      "type": "Bronze"
+    },
+    {
+      "description": "Complete um puzzle de labirinto.",
+      "is_missable": 0,
+      "is_spoiler": 0,
+      "name": "Get the Ball Rolling",
+      "name_pt": "Faça a Bola Rolar",
+      "tip": "Encontre a bola correspondente e volte ao labirinto da região.",
+      "trophy_code": "revillage_get_ball_rolling",
+      "type": "Bronze"
+    },
+    {
+      "description": "Leve a bola do quarto dos Winters até o escritório.",
+      "is_missable": 1,
+      "is_spoiler": 0,
+      "name": "Goooaaal!",
+      "name_pt": "Goooool!",
+      "tip": "Faça no prólogo, antes de avançar demais pela casa.",
+      "trophy_code": "revillage_goooaaal",
+      "type": "Bronze"
+    },
+    {
+      "description": "Derrube cinco corvos voando durante a história.",
+      "is_missable": 0,
+      "is_spoiler": 0,
+      "name": "Squawk Shot",
+      "name_pt": "Tiro no Grasnado",
+      "tip": "Assuste grupos de corvos e atire quando eles levantarem voo.",
+      "trophy_code": "revillage_squawk_shot",
+      "type": "Bronze"
+    },
+    {
+      "description": "Abra todas as portas de banheiro externo da vila em uma única campanha.",
+      "is_missable": 1,
+      "is_spoiler": 0,
+      "name": "When You Gotta Go...",
+      "name_pt": "When You Gotta Go...",
+      "tip": "Use checklist por área porque esse troféu é fácil de deixar para trás.",
+      "trophy_code": "revillage_when_you_gotta_go",
+      "type": "Bronze"
+    },
+    {
+      "description": "Quebre todas as janelas quebráveis do Castelo Dimitrêscu em uma campanha.",
+      "is_missable": 1,
+      "is_spoiler": 0,
+      "name": "Hooligan",
+      "name_pt": "Arruaceiro",
+      "tip": "Faça antes de sair definitivamente do castelo; são janelas perdíveis.",
+      "trophy_code": "revillage_hooligan",
+      "type": "Bronze"
+    },
+    {
+      "description": "Derrube um Soldat pendurado na linha de produção da fábrica.",
+      "is_missable": 1,
+      "is_spoiler": 1,
+      "name": "Quit Hanging Around",
+      "name_pt": "Pare de Ficar Pendurado",
+      "tip": "Use rifle ou arma precisa quando vir os corpos atravessando a área.",
+      "trophy_code": "revillage_quit_hanging",
+      "type": "Bronze"
+    },
+    {
+      "description": "Empurre um inimigo depois de defender um ataque.",
+      "is_missable": 0,
+      "is_spoiler": 0,
+      "name": "Push Comes to Shove",
+      "name_pt": "Empurrão Resolve",
+      "tip": "Segure defesa perto de inimigos fracos até Ethan fazer o contraempurrão.",
+      "trophy_code": "revillage_push_comes",
+      "type": "Bronze"
+    },
+    {
+      "description": "Derrote um inimigo de longa distância usando o rifle sniper.",
+      "is_missable": 0,
+      "is_spoiler": 0,
+      "name": "Trick Shot",
+      "name_pt": "Tiro de Mestre",
+      "tip": "Procure um alvo em área aberta e mantenha distância antes de atirar.",
+      "trophy_code": "revillage_trick_shot",
+      "type": "Bronze"
+    },
+    {
+      "description": "Derrote três inimigos com um único ataque.",
+      "is_missable": 0,
+      "is_spoiler": 0,
+      "name": "Strategist",
+      "name_pt": "Estrategista",
+      "tip": "Junte inimigos e use pipe bomb, mina ou explosivo em dificuldade baixa.",
+      "trophy_code": "revillage_strategist",
+      "type": "Bronze"
+    },
+    {
+      "description": "Incendeie uma Moroaica durante a história.",
+      "is_missable": 1,
+      "is_spoiler": 1,
+      "name": "Medium Rare",
+      "name_pt": "Ao Ponto",
+      "tip": "Use o trecho com fogo ambiental para atrair o inimigo até as chamas.",
+      "trophy_code": "revillage_medium_rare",
+      "type": "Bronze"
+    },
+    {
+      "description": "Rebata uma flecha flamejante com arma corpo a corpo.",
+      "is_missable": 0,
+      "is_spoiler": 0,
+      "name": "Fast Reflexes",
+      "name_pt": "Reflexos Rápidos",
+      "tip": "Tente na fortaleza contra lycans arqueiros; use a faça e treine o timing.",
+      "trophy_code": "revillage_fast_reflexes",
+      "type": "Bronze"
+    },
+    {
+      "description": "Derrote o Varcolac Alfa durante a história.",
+      "is_missable": 1,
+      "is_spoiler": 1,
+      "name": "Leader of the Pack",
+      "name_pt": "Líder da Alcateia",
+      "tip": "Volte preparado para a vila com armas fortes; ele é opcional e perigoso.",
+      "trophy_code": "revillage_leader_pack",
+      "type": "Bronze"
+    },
+    {
+      "description": "Derrote Urias no primeiro ataque lycan ao entrar na vila.",
+      "is_missable": 1,
+      "is_spoiler": 1,
+      "name": "Timber",
+      "name_pt": "Madeira!",
+      "tip": "Faça depois em New Game+ com munição infinita e dificuldade baixa.",
+      "trophy_code": "revillage_timber",
+      "type": "Bronze"
+    },
+    {
+      "description": "Use o Photo Mode.",
+      "is_missable": 0,
+      "is_spoiler": 0,
+      "name": "Photographer",
+      "name_pt": "Fotógrafo",
+      "tip": "Abra o menu de pausa e entre no modo foto a qualquer momento.",
+      "trophy_code": "revillage_photographer",
+      "type": "Bronze"
+    },
+    {
+      "description": "Tenha 777, 7.777 ou 77.777 Lei no inventário.",
+      "is_missable": 0,
+      "is_spoiler": 0,
+      "name": "Lucky Number 7",
+      "name_pt": "Número da Sorte 7",
+      "tip": "Planeje compra/venda de munição para ajustar o valor exato sem bagunçar a run principal.",
+      "trophy_code": "revillage_lucky_7",
+      "type": "Bronze"
+    },
+    {
+      "description": "Complete todo o mapa da vila.",
+      "is_missable": 1,
+      "is_spoiler": 0,
+      "name": "Mapmatician",
+      "name_pt": "Mapeador",
+      "tip": "Explore todos os cômodos e áreas acessíveis antes dos pontos sem retorno.",
+      "trophy_code": "revillage_mapmatician",
+      "type": "Bronze"
+    },
+    {
+      "description": "Destrua uma Goat of Warding.",
+      "is_missable": 1,
+      "is_spoiler": 0,
+      "name": "Cynic",
+      "name_pt": "Cínico",
+      "tip": "A primeira cabra já destrava; mantenha checklist para não esquecer as demais.",
+      "trophy_code": "revillage_cynic",
+      "type": "Bronze"
+    },
+    {
+      "description": "Destrua todas as Goats of Warding.",
+      "is_missable": 1,
+      "is_spoiler": 0,
+      "name": "Heretic",
+      "name_pt": "Herege",
+      "tip": "São coletáveis perdíveis. Use checklist por região desde a primeira run.",
+      "trophy_code": "revillage_heretic",
+      "type": "Bronze"
+    },
+    {
+      "description": "Equipe uma arma com peça customizável.",
+      "is_missable": 0,
+      "is_spoiler": 0,
+      "name": "Gunsmith",
+      "name_pt": "Armeiro",
+      "tip": "Compre ou encontre uma peça e aplique em uma arma compatível.",
+      "trophy_code": "revillage_gunsmith",
+      "type": "Bronze"
+    },
+    {
+      "description": "Equipe todas as armas com suas peças customizáveis.",
+      "is_missable": 0,
+      "is_spoiler": 0,
+      "name": "Veteran Gunsmith",
+      "name_pt": "Armeiro Veterano",
+      "tip": "Algumas peças dependem de compra, exploração e New Game+; controle por arma.",
+      "trophy_code": "revillage_veteran_gunsmith",
+      "type": "Bronze"
+    },
+    {
+      "description": "Crie todos os tipos de item disponíveis no crafting.",
+      "is_missable": 0,
+      "is_spoiler": 0,
+      "name": "Tinkerer",
+      "name_pt": "Funileiro",
+      "tip": "Compre receitas e crie ao menos uma vez cada item.",
+      "trophy_code": "revillage_tinkerer",
+      "type": "Bronze"
+    },
+    {
+      "description": "Colete todas as receitas de crafting.",
+      "is_missable": 0,
+      "is_spoiler": 0,
+      "name": "Artisan",
+      "name_pt": "Artífice",
+      "tip": "A maioria vem pelo Duke, mas cheque requisitos de progresso e dificuldade.",
+      "trophy_code": "revillage_artisan",
+      "type": "Bronze"
+    },
+    {
+      "description": "Leia todos os arquivos da história.",
+      "is_missable": 1,
+      "is_spoiler": 0,
+      "name": "Bookworm",
+      "name_pt": "Leitor Ávido",
+      "tip": "São muitos arquivos perdíveis. Interaja com documentos assim que encontrar.",
+      "trophy_code": "revillage_bookworm",
+      "type": "Bronze"
+    },
+    {
+      "description": "Conclua a história usando no máximo quatro itens de cura.",
+      "is_missable": 1,
+      "is_spoiler": 0,
+      "name": "Don't Trust That Snake Oil",
+      "name_pt": "Não Confie Nesse Óleo de Cobra",
+      "tip": "Combine com speedrun e pouco gasto em Casual, usando armas infinitas.",
+      "trophy_code": "revillage_snake_oil",
+      "type": "Ouro"
+    },
+    {
+      "description": "Conclua a história em menos de três horas.",
+      "is_missable": 1,
+      "is_spoiler": 0,
+      "name": "Dashing Dad",
+      "name_pt": "Pai Apressado",
+      "tip": "Faça depois de conhecer rotas e objetivos. Pause e reinicie checkpoints ruins.",
+      "trophy_code": "revillage_dashing_dad",
+      "type": "Prata"
+    },
+    {
+      "description": "Conclua a história gastando no máximo 10.000 Lei.",
+      "is_missable": 1,
+      "is_spoiler": 0,
+      "name": "Frugal Father",
+      "name_pt": "Pai Frugal",
+      "tip": "Use inventário preparado de New Game+ para quase não depender do Duke.",
+      "trophy_code": "revillage_frugal_father",
+      "type": "Prata"
+    },
+    {
+      "description": "Conclua a história usando apenas armas corpo a corpo, exceto trechos permitidos.",
+      "is_missable": 1,
+      "is_spoiler": 0,
+      "name": "Knives Out",
+      "name_pt": "Facas para Fora",
+      "tip": "Faça em Casual com Karambit/knife e entenda exceções antes de começar.",
+      "trophy_code": "revillage_knives_out",
+      "type": "Ouro"
+    },
+    {
+      "description": "Consiga combo de pelo menos 30 em The Mercenaries.",
+      "is_missable": 0,
+      "is_spoiler": 0,
+      "name": "Combo King",
+      "name_pt": "Rei do Combo",
+      "tip": "Memorize spawns e priorize manter o combo vivo em vez de jogar seguro demais.",
+      "trophy_code": "revillage_combo_king",
+      "type": "Bronze"
+    },
+    {
+      "description": "Alcance rank S em todos os estágios de The Mercenaries.",
+      "is_missable": 0,
+      "is_spoiler": 0,
+      "name": "Legendary Cowboy",
+      "name_pt": "Cowboy Lendário",
+      "tip": "É um dos maiores filtros da platina. Treine rotas, habilidades e spawn order.",
+      "trophy_code": "revillage_legendary_cowboy",
+      "type": "Prata"
+    },
+    {
+      "description": "Veja todos os modelos de personagens e armas.",
+      "is_missable": 0,
+      "is_spoiler": 0,
+      "name": "Doll Collector",
+      "name_pt": "Colecionador de Bonecos",
+      "tip": "Compre com CP no menu de bônus e abra a galeria para registrar.",
+      "trophy_code": "revillage_doll_collector",
+      "type": "Prata"
+    },
+    {
+      "description": "Veja todas as artes conceituais.",
+      "is_missable": 0,
+      "is_spoiler": 0,
+      "name": "Art Collector",
+      "name_pt": "Colecionador de Arte",
+      "tip": "Compre as artes no Content Unlock Shop e visualize todas no menu de bônus.",
+      "trophy_code": "revillage_art_collector",
+      "type": "Prata"
+    }
+  ]
+}

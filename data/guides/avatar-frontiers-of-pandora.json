@@ -1,0 +1,630 @@
+{
+  "game": {
+    "avoid_if": "Evite se você não gosta de coletáveis, limpeza de mapa, bases inimigas e exploração longa em mundo aberto.",
+    "before_you_start": "Não há save manual; mantenha atenção a logs/notas durante a campanha, embora haja mais do que o necessário para os troféus.",
+    "best_for": "Ideal para quem quer uma platina de mundo aberto acessível, visualmente forte, com exploração, voo e checklist moderado.",
+    "cleanup_advice": "Após a história, use o free-roam para limpar RDA sites, coletáveis, side questlines, Audio Logs, Notes, skills e desafios restantes.",
+    "cover_image": "https://cdn.cloudflare.steamstatic.com/steam/apps/2840770/library_600x900.jpg",
+    "coverage_level": "strong",
+    "created_at": "2026-05-09 19:53:49",
+    "difficulty": 3,
+    "difficulty_reason": "A platina é acessível e não exige dificuldade alta; o maior compromisso é exploração, mapa, coletáveis, bases RDA e limpeza de atividades.",
+    "dlc_scope": "Guia focado na lista base da platina; The Sky Breaker, Secrets of the Spires e DLCs futuras devem ficar separados se o projeto suportar DLC/add-ons.",
+    "editorial_notes": null,
+    "editorial_review_status": null,
+    "editorial_status": "published",
+    "first_run_advice": "Jogue a história naturalmente, escaneie flora/fauna no caminho e colete logs/notas quando encontrar para reduzir cleanup.",
+    "grind_summary": "O peso está em limpar RDA outposts/installations, coletáveis, side questlines necessárias, clan favor, Audio Logs, Notes e desafios específicos.",
+    "guide_avoid": null,
+    "guide_best_moment": null,
+    "guide_dlc": null,
+    "guide_grind": null,
+    "guide_ideal": null,
+    "guide_online": null,
+    "guide_runs": null,
+    "image": "https://cdn.cloudflare.steamstatic.com/steam/apps/2840770/header.jpg",
+    "is_verified": 0,
+    "last_reviewed_at": null,
+    "missable": "Nada da lista base é perdível de forma definitiva. Alguns Audio Logs/Notes e áreas de história podem sair de cena, mas há mais do que o necessário para os troféus e o cleanup segue disponível no free-roam pós-história.",
+    "missable_summary": "0 perdíveis definitivos; trate logs/notas de áreas temporárias como atenção, não como bloqueio da platina.",
+    "name": "Avatar: Frontiers of Pandora",
+    "online_summary": "Não há exigência online para a platina da lista base; co-op é opcional e não deve ser tratado como requisito.",
+    "quality_warnings": null,
+    "reviewed_by": null,
+    "runs_summary": "Uma campanha principal com cleanup livre após a história. A platina exige boa parte do mapa, mas não 100% absoluto.",
+    "slug": "avatar-frontiers-of-pandora",
+    "time": "35-60h",
+    "time_bucket": "medium",
+    "time_max_hours": 60,
+    "time_min_hours": 35,
+    "time_reason": "A faixa de 35-60 horas considera campanha, exploração, RDA sites, coletáveis, side questlines, clan favor e cleanup.",
+    "time_sort_hours": 35,
+    "updated_at": "2026-06-27 02:36:58",
+    "verification_note": "Lista base revisada contra fontes públicas; pendente de revisão editorial manual no projeto.",
+    "verification_status": "review",
+    "walkthrough": null
+  },
+  "redirects": [],
+  "roadmaps": [
+    {
+      "content": "Etapa 1: jogue a história naturalmente, desbloqueando regiões, Ikran, clãs, crafting, habilidades, Hunter’s Guide e sistemas principais.",
+      "step_order": 1
+    },
+    {
+      "content": "Etapa 2: durante a campanha, escaneie flora/fauna, colete Audio Logs/Notes encontrados e reduza RDA installations/outposts pelo caminho.",
+      "step_order": 2
+    },
+    {
+      "content": "Etapa 3: complete as side questlines necessárias e avance clan favor/contributions, incluindo Aranahe, Zeswa, Kame’tire e Steady Wings.",
+      "step_order": 3
+    },
+    {
+      "content": "Etapa 4: limpe RDA installations, RDA outposts e bases para melhorar a air quality e avançar Reclaim Pandora, Little by Little e Hit Them Where It Hurts.",
+      "step_order": 4
+    },
+    {
+      "content": "Etapa 5: feche coletáveis: Sarentu Totems, Bladewing Moth Trails, Aeolian Wind Flutes, Windswept Kites, Windswept Dolls, Mycelium Networks, Recon Retrievals e treasure hunt comics.",
+      "step_order": 5
+    },
+    {
+      "content": "Etapa 6: complete Audio Logs, Notes, Apex Challenge, crafting, skills, recipes e troféus específicos de exploração/combate como Thanator Hunter.",
+      "step_order": 6
+    },
+    {
+      "content": "Etapa 7: faça cleanup final pós-história em free-roam, revise clãs, RDA sites, Ikran, coletáveis restantes e checklist da lista base.",
+      "step_order": 7
+    }
+  ],
+  "schemaVersion": 1,
+  "seedExtras": {
+    "aliases": [],
+    "attentionPoints": [
+      {
+        "detail": "A platina base não tem perdíveis reais. Mesmo com Resistance HQ ficando indisponível, logs/anotações necessários continuam obtíveis em quantidade suficiente.",
+        "tags": [
+          "Sem perdíveis",
+          "Autosave"
+        ],
+        "title": "Sem perdíveis reais"
+      },
+      {
+        "detail": "O hub some depois de um ponto da história, mas isso não bloqueia troféus. Não marcar como Perdível.",
+        "tags": [
+          "História",
+          "Atenção"
+        ],
+        "title": "Resistance HQ"
+      },
+      {
+        "detail": "Song of the Sarentu usa os 32 troféus base. The Sky Breaker, Secrets of the Spires e From the Ashes são expansões separadas e não são necessárias para a platina.",
+        "tags": [
+          "DLC",
+          "Extra"
+        ],
+        "title": "DLCs separadas"
+      },
+      {
+        "detail": "O jogo tem coop opcional, mas nenhum troféu da platina base exige online ou cooperação.",
+        "tags": [
+          "Offline",
+          "Sem coop"
+        ],
+        "title": "Coop opcional"
+      },
+      {
+        "detail": "A dificuldade escolhida não afeta troféus. No Easy Prey é combate/endgame, não troféu de dificuldade.",
+        "tags": [
+          "Sem dificuldade",
+          "Combate"
+        ],
+        "title": "Dificuldade"
+      },
+      {
+        "detail": "Complete a parte 3 das comunidades Aranahe, Zeswa e Kame'tire. Se houver contador travado, tratar como risco técnico.",
+        "tags": [
+          "Clãs",
+          "Risco técnico"
+        ],
+        "title": "One with the Clans"
+      },
+      {
+        "detail": "Não é necessário completar o Guia do Caçador inteiro. O troféu pede 20 registros de fauna e 30 de plantas coletáveis.",
+        "tags": [
+          "Guia do Caçador",
+          "Parcial"
+        ],
+        "title": "Guia do Caçador"
+      },
+      {
+        "detail": "Logs, anotações, mudas de tarsyu, bellsprings, fauna e flora são requisitos parciais. Não transformar em 100% absoluto.",
+        "tags": [
+          "Parcial",
+          "Checklist"
+        ],
+        "title": "Colecionáveis parciais"
+      },
+      {
+        "detail": "Pipas, bonecos, quadrinhos, flautas do vento, totens Sarentu, mariposas-laminasas, extrações de reconhecimento e Rede de Micélio exigem checklist completo.",
+        "tags": [
+          "Coletável",
+          "Checklist"
+        ],
+        "title": "Colecionáveis obrigatórios"
+      },
+      {
+        "detail": "Reclaim Pandora exige limpar poluição da RDA e alcançar 100% de qualidade do ar. Use o mapa para conferir ícones marrons.",
+        "tags": [
+          "RDA",
+          "Qualidade do ar"
+        ],
+        "title": "Qualidade do ar"
+      },
+      {
+        "detail": "O jogo usa autosave. Por isso, o guia deve evitar estratégias baseadas em save manual.",
+        "tags": [
+          "Autosave",
+          "Atenção"
+        ],
+        "title": "Sem save manual"
+      },
+      {
+        "detail": "From the Ashes tem troféus próprios e personagem/estrutura separados. Não misturar com a platina base.",
+        "tags": [
+          "From the Ashes",
+          "Extra"
+        ],
+        "title": "From the Ashes"
+      }
+    ],
+    "checklist": [
+      "Conferir se o guia tem 32 troféus base.",
+      "Conferir se Song of the Sarentu é a platina.",
+      "Conferir distribuição: 1 platina, 4 ouro, 15 prata e 12 bronze.",
+      "Conferir se lista total/DLCs não foram misturadas nos 32 base.",
+      "Conferir se The Sky Breaker tem 5 troféus separados.",
+      "Conferir se Secrets of the Spires tem 5 troféus separados.",
+      "Conferir se From the Ashes tem 11 troféus separados.",
+      "Conferir onlineRequired false.",
+      "Conferir coopRequired false.",
+      "Conferir dlcRequired false para a platina base.",
+      "Conferir hasMissables false.",
+      "Conferir missableCount 0.",
+      "Conferir filtro Perdíveis 0.",
+      "Conferir filtro Online 0.",
+      "Conferir filtro Coop 0.",
+      "Conferir filtro Dificuldade 0.",
+      "Conferir filtro DLC 0 nos base.",
+      "Conferir se Resistance HQ não é tratado como perdível.",
+      "Conferir se One with the Clans é risco técnico, não perdível.",
+      "Conferir se logs/anotações são parciais.",
+      "Conferir se Guia do Caçador completo não é exigido.",
+      "Conferir se colecionáveis não obrigatórios não aparecem como requisito.",
+      "Conferir se free roam pós-história está explicado.",
+      "Conferir se não há instrução baseada em save manual.",
+      "Conferir todos os colecionáveis obrigatórios.",
+      "Conferir RDA/qualidade do ar.",
+      "Conferir clãs/comunidades.",
+      "Conferir thanator não bestial.",
+      "Conferir todos os troféus têm nome oficial em inglês como principal.",
+      "Conferir se todos têm PT-BR abaixo.",
+      "Conferir se descrições estão em português.",
+      "Conferir se textos em português têm acentos.",
+      "Conferir se não aparecem rótulos antigos de nome original nem placeholder de descrição.",
+      "Conferir se roadmap está estruturado como array/objeto.",
+      "Conferir se roadmap não renderiza objetos crus.",
+      "Conferir se não aparecem nomes técnicos de campos do roadmap no front.",
+      "Conferir FAQ, decisão rápida, SEO e pontos de atenção.",
+      "Conferir se página individual e catálogo exibem o mesmo status editorial.",
+      "Conferir se flags do topo batem com filtros do catálogo."
+    ],
+    "faq": [
+      {
+        "answer": "Não. A platina base não tem perdíveis reais. O Resistance HQ fica indisponível depois da história, mas logs e anotações necessários continuam obtíveis em quantidade suficiente.",
+        "question": "Avatar: Frontiers of Pandora tem troféus perdíveis?"
+      },
+      {
+        "answer": "Não. A platina base pode ser feita offline.",
+        "question": "Precisa jogar online para platinar?"
+      },
+      {
+        "answer": "Não. O coop é opcional e nenhum troféu da platina base exige jogar em coop.",
+        "question": "Precisa de cooperação?"
+      },
+      {
+        "answer": "Não. Song of the Sarentu usa os 32 troféus base. The Sky Breaker, Secrets of the Spires e From the Ashes são expansões separadas e não são necessárias para a platina.",
+        "question": "Precisa de DLC para a platina?"
+      },
+      {
+        "answer": "Uma run é suficiente. O jogo tem free roam após a história para limpar mapa, colecionáveis e atividades pendentes.",
+        "question": "Quantas runs são necessárias?"
+      },
+      {
+        "answer": "Não. A dificuldade escolhida não afeta a platina.",
+        "question": "A dificuldade afeta troféus?"
+      },
+      {
+        "answer": "Não. A platina exige cerca de 85% de conclusão. Alguns colecionáveis e atividades não são necessários para troféus.",
+        "question": "Preciso completar 100% de tudo no jogo?"
+      },
+      {
+        "answer": "Não. Wildlife Expert exige 20 registros de fauna coletável e Great Gatherer exige 30 registros de plantas coletáveis.",
+        "question": "Preciso completar o Guia do Caçador inteiro?"
+      },
+      {
+        "answer": "Pipas, bonecos, extrações de reconhecimento, quadrinhos, flautas do vento, totens Sarentu e mariposas-laminasas exigem checklist completo.",
+        "question": "Quais colecionáveis são obrigatórios?"
+      },
+      {
+        "answer": "Não para a platina. O jogo exige 30 de cada, e há quantidade suficiente mesmo após mudanças de hub.",
+        "question": "Logs e anotações são perdíveis?"
+      },
+      {
+        "answer": "Pode haver relatos de contador travado. Trate como risco técnico: acompanhe as partes das comunidades e entregue itens de forma organizada.",
+        "question": "One with the Clans pode bugar?"
+      },
+      {
+        "answer": "Em média, cerca de 40 a 60 horas, dependendo do ritmo de exploração, coleta e limpeza de bases da RDA.",
+        "question": "Quanto tempo leva para platinar?"
+      }
+    ],
+    "note": "Campos exportados para auditoria. O SQLite atual nao possui colunas nativas para todos esses extras; a importacao preserva o que o banco suporta.",
+    "quickDecision": {
+      "difficulty": "Baixa a moderada.",
+      "dlc": "Não exige DLC para a platina base.",
+      "firstAction": "Avance a campanha para liberar voo e regiões, escaneando fauna/flora e guardando materiais úteis para clãs.",
+      "mainRisk": "Coletáveis obrigatórios, qualidade do ar, comunidades dos clãs e requisitos parciais.",
+      "onlineCoop": "Não exige online nem cooperação.",
+      "risk": "Baixo. Não há perdíveis reais, mas há risco técnico em contador de comunidade.",
+      "time": "Médio, cerca de 40 a 60 horas.",
+      "verdict": "Sim. É uma platina de mundo aberto acessível, com bastante exploração e checklist."
+    },
+    "seo": {
+      "description": "Guia de troféus de Avatar: Frontiers of Pandora com roadmap da platina, tempo estimado, dificuldade, colecionáveis, qualidade do ar, comunidades dos clãs, RDA, DLCs separadas e dicas para os 32 troféus base.",
+      "keywords": [
+        "Avatar Frontiers of Pandora troféus",
+        "Avatar Frontiers of Pandora platina",
+        "guia Avatar Frontiers of Pandora",
+        "Avatar Frontiers of Pandora PS5 troféus",
+        "Song of the Sarentu",
+        "Canção dos Sarentu",
+        "Reclaim Pandora",
+        "Retome Pandora",
+        "One with the Clans",
+        "Em união com os clãs",
+        "No Easy Prey",
+        "Não é presa fácil",
+        "The Sky Breaker troféus",
+        "Secrets of the Spires troféus",
+        "From the Ashes troféus"
+      ],
+      "metaDescription": "Guia de troféus de Avatar: Frontiers of Pandora com roadmap da platina, tempo estimado, dificuldade, colecionáveis, qualidade do ar, comunidades dos clãs, RDA, DLCs separadas e dicas para os 32 troféus base.",
+      "ogDescription": "Roadmap PT-BR da platina base de Avatar: Frontiers of Pandora com 32 troféus, colecionáveis, qualidade do ar, clãs, RDA e DLCs separadas.",
+      "ogTitle": "Avatar: Frontiers of Pandora: Guia de Troféus e Platina",
+      "title": "Avatar: Frontiers of Pandora: Guia de Troféus e Platina"
+    },
+    "tags": []
+  },
+  "slug": "avatar-frontiers-of-pandora",
+  "trophies": [
+    {
+      "description": "Acquire all other trophies.",
+      "is_missable": 0,
+      "is_spoiler": 0,
+      "name": "Song of the Sarentu",
+      "name_pt": "",
+      "tip": "Desbloqueie todos os outros troféus da lista base.",
+      "trophy_code": "afop_song_of_the_sarentu",
+      "type": "Platina"
+    },
+    {
+      "description": "Complete the main campaign.",
+      "is_missable": 0,
+      "is_spoiler": 1,
+      "name": "Our Reclamation",
+      "name_pt": "",
+      "tip": "Troféu de história obtido ao completar a campanha principal.",
+      "trophy_code": "afop_our_reclamation",
+      "type": "Ouro"
+    },
+    {
+      "description": "Defeat a thanator (non-feral).",
+      "is_missable": 0,
+      "is_spoiler": 0,
+      "name": "Thanator Hunter",
+      "name_pt": "",
+      "tip": "Derrote um Thanator não-feral em Gossamer Lakes; deixe para depois da história se estiver abaixo do nível recomendado.",
+      "trophy_code": "afop_thanator_hunter",
+      "type": "Ouro"
+    },
+    {
+      "description": "Unlock three Ancestor Skills.",
+      "is_missable": 0,
+      "is_spoiler": 0,
+      "name": "Talk to the Ancestors",
+      "name_pt": "",
+      "tip": "Interaja com Tarsyu Flowers até liberar 3 Ancestor Skills.",
+      "trophy_code": "afop_talk_to_the_ancestors",
+      "type": "Bronze"
+    },
+    {
+      "description": "Touch 20 tarsyu saplings.",
+      "is_missable": 0,
+      "is_spoiler": 0,
+      "name": "Sprouting Potential",
+      "name_pt": "",
+      "tip": "Toque 20 Tarsyu Saplings durante a exploração; marque-os conforme aparecem no mapa.",
+      "trophy_code": "afop_sprouting_potential",
+      "type": "Bronze"
+    },
+    {
+      "description": "Touch 20 bellsprigs.",
+      "is_missable": 0,
+      "is_spoiler": 0,
+      "name": "Full Bloom",
+      "name_pt": "",
+      "tip": "Toque 20 Bellsprigs para avançar o troféu e melhorar a vida.",
+      "trophy_code": "afop_full_bloom",
+      "type": "Bronze"
+    },
+    {
+      "description": "Collect all windswept kites.",
+      "is_missable": 0,
+      "is_spoiler": 0,
+      "name": "Tethered Kites",
+      "name_pt": "",
+      "tip": "Colete todos os Windswept Kites da lista base.",
+      "trophy_code": "afop_tethered_kites",
+      "type": "Prata"
+    },
+    {
+      "description": "Complete the quest Becoming.",
+      "is_missable": 0,
+      "is_spoiler": 1,
+      "name": "First Strike",
+      "name_pt": "",
+      "tip": "Troféu de história da quest Becoming.",
+      "trophy_code": "afop_first_strike",
+      "type": "Bronze"
+    },
+    {
+      "description": "Complete the quest Pushing Back.",
+      "is_missable": 0,
+      "is_spoiler": 1,
+      "name": "Aranahe Alliance",
+      "name_pt": "",
+      "tip": "Troféu de história da quest Pushing Back.",
+      "trophy_code": "afop_aranahe_alliance",
+      "type": "Bronze"
+    },
+    {
+      "description": "Complete the quest Combined Forces.",
+      "is_missable": 0,
+      "is_spoiler": 1,
+      "name": "Stronger Together",
+      "name_pt": "",
+      "tip": "Troféu de história da quest Combined Forces.",
+      "trophy_code": "afop_stronger_together",
+      "type": "Bronze"
+    },
+    {
+      "description": "Complete the quest Revelations.",
+      "is_missable": 0,
+      "is_spoiler": 1,
+      "name": "Clearing the Mist",
+      "name_pt": "",
+      "tip": "Troféu de história da quest Revelations.",
+      "trophy_code": "afop_clearing_the_mist",
+      "type": "Bronze"
+    },
+    {
+      "description": "Complete the quest Rising Pressure.",
+      "is_missable": 0,
+      "is_spoiler": 1,
+      "name": "Eco Warrior",
+      "name_pt": "",
+      "tip": "Troféu de história avançada da quest Rising Pressure.",
+      "trophy_code": "afop_eco_warrior",
+      "type": "Prata"
+    },
+    {
+      "description": "Collect all windswept dolls.",
+      "is_missable": 0,
+      "is_spoiler": 0,
+      "name": "Doll Collector",
+      "name_pt": "",
+      "tip": "Colete todas as Windswept Dolls; use um checklist por região.",
+      "trophy_code": "afop_doll_collector",
+      "type": "Prata"
+    },
+    {
+      "description": "Complete all recon retrievals.",
+      "is_missable": 0,
+      "is_spoiler": 0,
+      "name": "Data Retriever",
+      "name_pt": "",
+      "tip": "Complete todos os Recon Retrievals/Data Collectors da lista base.",
+      "trophy_code": "afop_data_retriever",
+      "type": "Prata"
+    },
+    {
+      "description": "Unlock 20 Hunter’s Guide entries for gatherable wildlife.",
+      "is_missable": 0,
+      "is_spoiler": 0,
+      "name": "Wildlife Expert",
+      "name_pt": "",
+      "tip": "Escaneie/inspecione fauna coletável até registrar 20 entradas no Hunter’s Guide.",
+      "trophy_code": "afop_wildlife_expert",
+      "type": "Bronze"
+    },
+    {
+      "description": "Unlock 30 Hunter’s Guide entries for gatherable plants.",
+      "is_missable": 0,
+      "is_spoiler": 0,
+      "name": "Great Gatherer",
+      "name_pt": "",
+      "tip": "Escaneie ou colha plantas coletáveis até registrar 30 entradas no Hunter’s Guide.",
+      "trophy_code": "afop_great_gatherer",
+      "type": "Bronze"
+    },
+    {
+      "description": "Collect 30 audio logs.",
+      "is_missable": 0,
+      "is_spoiler": 0,
+      "name": "A Good Listener",
+      "name_pt": "",
+      "tip": "Colete 30 Audio Logs; há mais que o necessário, então áreas temporárias não bloqueiam a platina.",
+      "trophy_code": "afop_a_good_listener",
+      "type": "Prata"
+    },
+    {
+      "description": "Unlock an Apex Skill.",
+      "is_missable": 0,
+      "is_spoiler": 0,
+      "name": "Peak Performance",
+      "name_pt": "",
+      "tip": "Compre todas as skills de uma árvore e complete o Apex Challenge correspondente.",
+      "trophy_code": "afop_peak_performance",
+      "type": "Ouro"
+    },
+    {
+      "description": "Defeat 10 RDA Installations.",
+      "is_missable": 0,
+      "is_spoiler": 0,
+      "name": "Little by Little",
+      "name_pt": "",
+      "tip": "Destrua 10 RDA Installations; elas contam para reduzir a poluição do mapa.",
+      "trophy_code": "afop_little_by_little",
+      "type": "Prata"
+    },
+    {
+      "description": "Defeat five RDA outposts.",
+      "is_missable": 0,
+      "is_spoiler": 0,
+      "name": "Hit Them Where It Hurts",
+      "name_pt": "",
+      "tip": "Limpe 5 RDA Outposts. Stealth ajuda, mas não é obrigatório para o troféu.",
+      "trophy_code": "afop_hit_them_where_it_hurts",
+      "type": "Prata"
+    },
+    {
+      "description": "Collect 30 notes.",
+      "is_missable": 0,
+      "is_spoiler": 0,
+      "name": "Story Guardian",
+      "name_pt": "",
+      "tip": "Colete 30 Notes; existem mais que o necessário para compensar áreas que deixam de ficar acessíveis.",
+      "trophy_code": "afop_story_guardian",
+      "type": "Prata"
+    },
+    {
+      "description": "Unlock three recipes for specialty dishes.",
+      "is_missable": 0,
+      "is_spoiler": 0,
+      "name": "Cooking Pot Pro",
+      "name_pt": "",
+      "tip": "Abra Wicker Baskets e avance quests para liberar receitas especiais de comida.",
+      "trophy_code": "afop_cooking_pot_pro",
+      "type": "Bronze"
+    },
+    {
+      "description": "Craft a weapon or gear piece of ‘superior’ rarity or higher.",
+      "is_missable": 0,
+      "is_spoiler": 0,
+      "name": "Apprentice Crafter",
+      "name_pt": "",
+      "tip": "Pegue designs superiores/exquisite nos assentamentos e crie uma peça em uma crafting table.",
+      "trophy_code": "afop_apprentice_crafter",
+      "type": "Bronze"
+    },
+    {
+      "description": "Collect all treasure hunt comics.",
+      "is_missable": 0,
+      "is_spoiler": 0,
+      "name": "Father and Son in the Stars",
+      "name_pt": "",
+      "tip": "Colete todos os treasure hunt comics em Computer Terminals.",
+      "trophy_code": "afop_father_and_son_in_the_stars",
+      "type": "Prata"
+    },
+    {
+      "description": "Reach an air quality level of 100%.",
+      "is_missable": 0,
+      "is_spoiler": 0,
+      "name": "Reclaim Pandora",
+      "name_pt": "",
+      "tip": "Destrua RDA Installations, Outposts e Bases até atingir 100% de air quality.",
+      "trophy_code": "afop_reclaim_pandora",
+      "type": "Ouro"
+    },
+    {
+      "description": "Tune all aeolian wind flutes.",
+      "is_missable": 0,
+      "is_spoiler": 0,
+      "name": "In Harmony",
+      "name_pt": "",
+      "tip": "Sintonize todas as Aeolian Wind Flutes da lista base.",
+      "trophy_code": "afop_in_harmony",
+      "type": "Prata"
+    },
+    {
+      "description": "Complete all Sarentu totem interactions.",
+      "is_missable": 0,
+      "is_spoiler": 0,
+      "name": "Vision of the Ancestors",
+      "name_pt": "",
+      "tip": "Complete as interações de todos os Sarentu Totems.",
+      "trophy_code": "afop_vision_of_the_ancestors",
+      "type": "Prata"
+    },
+    {
+      "description": "Complete 10 Mycelium Network activities.",
+      "is_missable": 0,
+      "is_spoiler": 0,
+      "name": "Mushroom Navigator",
+      "name_pt": "",
+      "tip": "Complete 10 Mycelium Network activities; se necessário, repita uma após o respawn.",
+      "trophy_code": "afop_mushroom_navigator",
+      "type": "Prata"
+    },
+    {
+      "description": "Follow all the bladewing moths to their nests.",
+      "is_missable": 0,
+      "is_spoiler": 0,
+      "name": "Fleet-Footed",
+      "name_pt": "",
+      "tip": "Complete todos os Bladewing Moth Trails até os ninhos.",
+      "trophy_code": "afop_fleet_footed",
+      "type": "Prata"
+    },
+    {
+      "description": "Complete part 3 of the Aranahe Community, Zeswa Community, and Kame’tire Community side quests.",
+      "is_missable": 0,
+      "is_spoiler": 0,
+      "name": "One with the Clans",
+      "name_pt": "",
+      "tip": "Complete as contribuições de clã até a parte 3 para Aranahe, Zeswa e Kame’tire; guarde recursos no stash para acelerar.",
+      "trophy_code": "afop_one_with_the_clans",
+      "type": "Prata"
+    },
+    {
+      "description": "Complete the final Steady Wing side quest.",
+      "is_missable": 0,
+      "is_spoiler": 0,
+      "name": "Kinglor Carer",
+      "name_pt": "",
+      "tip": "Conclua todas as partes da questline Steady Wings iniciada em Hometree.",
+      "trophy_code": "afop_kinglor_carer",
+      "type": "Prata"
+    },
+    {
+      "description": "Unlock 3 skills in each skill tree.",
+      "is_missable": 0,
+      "is_spoiler": 0,
+      "name": "Becoming Na’vi",
+      "name_pt": "",
+      "tip": "Compre 3 skills em cada uma das 5 árvores, incluindo Rider após liberar o Ikran.",
+      "trophy_code": "afop_becoming_navi",
+      "type": "Bronze"
+    }
+  ]
+}

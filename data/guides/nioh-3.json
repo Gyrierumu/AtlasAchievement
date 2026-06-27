@@ -1,0 +1,669 @@
+{
+  "game": {
+    "avoid_if": "Evite se você quer uma platina curta, simples ou sem domínio de combate.",
+    "before_you_start": "Confirme que está usando a lista base de Nioh 3 em PS5/PC. Season Pass, Digital Deluxe, bônus, cosméticos, demo e DLCs futuras ficam fora da platina base.",
+    "best_for": "Ideal para quem quer uma platina de ação/RPG exigente, com exploração, loot, builds e checklist robusto.",
+    "cleanup_advice": "Depois da história, revise cada região pelos trackers de coletáveis, bases, Crucibles, Myths, Battle Scroll e troféus de combate.",
+    "cover_image": "https://shared.fastly.steamstatic.com/store_item_assets/steam/apps/3681010/a6c07532fbcfa8c7aeecddc251aa4a6a7156323c/library_capsule.jpg?t=1772090941",
+    "coverage_level": "strong",
+    "created_at": "2026-05-09 19:53:25",
+    "difficulty": 5,
+    "difficulty_reason": "A dificuldade vem do combate exigente, chefes, builds e volume de conteúdo de mundo aberto; não há troféu de dificuldade confirmado na lista base.",
+    "dlc_scope": "DLC fora da platina base. Season Pass, Digital Deluxe, bônus, cosméticos, demo, expansões futuras e conteúdos extras ficam fora da platina base.",
+    "editorial_notes": "",
+    "editorial_review_status": "verified",
+    "editorial_status": "published",
+    "first_run_advice": "Avance a campanha aprendendo Samurai/Ninja, Battle Scroll e trackers regionais antes do cleanup.",
+    "grind_summary": "O peso está em exploração de regiões, coletáveis, Myths, bases, Crucibles, proficiências, ferreiro e domínio dos sistemas de combate.",
+    "guide_avoid": null,
+    "guide_best_moment": null,
+    "guide_dlc": null,
+    "guide_grind": null,
+    "guide_ideal": null,
+    "guide_online": null,
+    "guide_runs": null,
+    "image": "https://shared.fastly.steamstatic.com/store_item_assets/steam/apps/3681010/a21264e9fd476dcb2901c2432b598107d024c5a8/header.jpg?t=1772090941",
+    "is_verified": 1,
+    "last_reviewed_at": "2026-05-16",
+    "missable": "Não há troféus perdíveis reais na lista base. A platina pode ser feita em uma campanha com cleanup por regiões, free roam e replay de missões pelo Battle Scroll.",
+    "missable_summary": "Sem perdíveis reais na lista base. Use pós-história, free roam e Battle Scroll para fechar pendências.",
+    "name": "Nioh 3",
+    "online_summary": "Não há online obrigatório para a platina base. Recursos online e coop opcional podem ajudar, mas Teamwork pode ser concluído com NPCs/Acolytes sem virar requisito obrigatório.",
+    "quality_warnings": "[]",
+    "reviewed_by": "AtlasAchievement Editorial",
+    "runs_summary": "1 campanha + cleanup/replay por regiões, Myths e missões repetíveis via Battle Scroll.",
+    "slug": "nioh-3",
+    "time": "40-60h",
+    "time_bucket": "long",
+    "time_max_hours": 60,
+    "time_min_hours": 40,
+    "time_reason": "A faixa de 40-60 horas considera história, exploração das regiões, coletáveis, Myths, side content, sistemas de combate e cleanup por Battle Scroll.",
+    "time_sort_hours": 60,
+    "updated_at": "2026-06-27 02:37:02",
+    "verification_note": "Guia revisado editorialmente.",
+    "verification_status": "verified",
+    "walkthrough": ""
+  },
+  "redirects": [],
+  "roadmaps": [
+    {
+      "content": "{\"title\":\"Aprenda o combate e avance a campanha\",\"focus\":\"Campanha / aprendizado\",\"objective\":\"Entender Samurai Style, Ninja Style, troca de estilos, primeiras missões e ritmo de progressão antes de tentar limpar tudo.\",\"actions\":[\"Avance pelo prólogo e pelas primeiras missões principais.\",\"Treine a troca entre Samurai Style e Ninja Style.\",\"Aprenda Burst Break, Ki, esquiva, defesa e leitura de inimigos.\",\"Teste armas diferentes antes de fixar uma build.\",\"Não force limpeza completa de regiões no início.\"],\"warning\":\"O começo pode parecer severo; volte para pendências quando tiver mais recursos, Guardian Spirits e opções de build.\",\"result\":\"Campanha encaminhada e base de combate pronta para o restante da platina.\"}",
+      "step_order": 1
+    },
+    {
+      "content": "{\"title\":\"Abra regiões, Guardian Spirits e Battle Scroll\",\"focus\":\"Progresso / regiões\",\"objective\":\"Desbloquear regiões, sistemas de progressão, Guardian Spirits e ferramentas de replay antes do cleanup.\",\"actions\":[\"Avance a história até liberar mais regiões.\",\"Desbloqueie Guardian Spirits e recursos ligados à progressão.\",\"Use o Battle Scroll/replay de missões para retornar a conteúdos pendentes.\",\"Marque regiões com coletáveis, Myths ou objetivos incompletos.\",\"Anote pendências por região para resolver depois com replay de missões.\"],\"warning\":\"Battle Scroll funciona como replay de missões, não como seleção livre clássica de capítulos.\",\"result\":\"Estrutura de replay e exploração regional pronta para limpeza organizada.\"}",
+      "step_order": 2
+    },
+    {
+      "content": "{\"title\":\"Limpe Myths, missões e coletáveis por região\",\"focus\":\"Missões / coletáveis\",\"objective\":\"Resolver atividades regionais, missões secundárias, Myths e coletáveis sem retrabalho.\",\"actions\":[\"Complete Myths e missões secundárias disponíveis.\",\"Busque Kodama, Chijiko, Six Jizo, Hot Springs e Scampusses.\",\"Limpe enemy bases, Lesser Crucibles e shrines/named shrines.\",\"Use checklist por região para não repetir exploração.\",\"Volte depois a áreas bloqueadas por progressão ou força insuficiente.\"],\"warning\":\"\",\"result\":\"Grande parte dos coletáveis e atividades regionais concluída.\"}",
+      "step_order": 3
+    },
+    {
+      "content": "{\"title\":\"Resolva progressão, proficiência e sistemas de ferraria\",\"focus\":\"Proficiência / sistemas\",\"objective\":\"Fechar troféus ligados a level, armas, Ninjutsu, Soul Cores, ferreiro e sistemas de evolução.\",\"actions\":[\"Trabalhe proficiência de armas conforme os troféus exigirem.\",\"Use Ninjutsu e sistemas de combate até cumprir requisitos específicos.\",\"Colete e gerencie Soul Cores/Yokai abilities.\",\"Use o ferreiro para forja, remodelagem ou melhorias exigidas.\",\"Revise requisitos de Crucible weapon e artes relacionadas.\"],\"warning\":\"\",\"result\":\"Troféus de progressão e sistemas avançados encaminhados.\"}",
+      "step_order": 4
+    },
+    {
+      "content": "{\"title\":\"Feche bosses opcionais e troféus situacionais\",\"focus\":\"Bosses / desafios\",\"objective\":\"Resolver chefes opcionais, desafios específicos e troféus que exigem ações concretas.\",\"actions\":[\"Enfrente bosses opcionais pendentes quando sua build estiver pronta.\",\"Complete requisitos ligados a Kunimatsu, Senji Toyo e desafios de santuário, se estiverem na lista.\",\"Revise troféus situacionais que não vieram naturalmente.\",\"Faça Teamwork com NPCs/Acolytes ou coop opcional, sem transformar isso em requisito obrigatório.\",\"Repita missões específicas pelo Battle Scroll quando necessário.\"],\"warning\":\"Teamwork pode ser organizado com NPCs/Acolytes; coop e online continuam opcionais para a platina base.\",\"result\":\"Pendências de combate, bosses e situacionais resolvidas.\"}",
+      "step_order": 5
+    },
+    {
+      "content": "{\"title\":\"Faça o cleanup final da lista base\",\"focus\":\"Checklist final\",\"objective\":\"Revisar os 51 troféus da lista base e fechar qualquer pendência sem misturar DLC ou conteúdo futuro.\",\"actions\":[\"Confira campanha, regiões, Myths, coletáveis, proficiência, bosses e situacionais.\",\"Confirme que não há troféus perdíveis reais na lista base.\",\"Confirme que online, coop e DLC não foram tratados como obrigatórios.\",\"Use replay/Battle Scroll para qualquer missão ou região restante.\",\"Finalize as pendências restantes e confirme a checklist da lista base.\"],\"warning\":\"\",\"result\":\"Lista base concluída e platina pronta.\"}",
+      "step_order": 6
+    }
+  ],
+  "schemaVersion": 1,
+  "seedExtras": {
+    "aliases": [],
+    "attentionPoints": [],
+    "checklist": [
+      "Confirmar os 51 troféus da lista base, sem misturar Season Pass, Digital Deluxe, demo ou DLCs futuras.",
+      "Avançar campanha principal e missões de história até abrir regiões, Guardian Spirits, Battle Scroll e Eternal Rift.",
+      "Completar missões principais, missões secundárias e Myths, incluindo Myths ocultos quando o progresso permitir.",
+      "Limpar coletáveis por região: Kodama, Chijiko, Six Jizo, hot springs, Scampusses, enemy bases e Lesser Crucibles.",
+      "Ativar shrines nomeados e Bodhisattva Statues enquanto acompanha Exploration Level e trackers regionais.",
+      "Trabalhar Samurai/Ninja, Ninjutsu, Burst Break, Guardian Spirit, Soul Cores/Yokai e proficiência de armas.",
+      "Resolver ferreiro, Crucible weapon, Arts Proficiency, Soul Match, remodelagem e upgrades no Eternal Rift.",
+      "Derrotar bosses opcionais, masters e inimigos especiais com troféu próprio.",
+      "Fechar troféus situacionais por Battle Scroll/replay sem tratá-los como perdíveis.",
+      "Fazer Teamwork com NPCs/Acolytes ou coop opcional, sem transformar isso em requisito obrigatório.",
+      "Fazer cleanup final por free roam/Battle Scroll e conferir que DLCs futuras ficaram fora da platina base."
+    ],
+    "faq": [
+      {
+        "answer": "Não. A platina base não tem perdíveis definitivos. A maioria dos objetivos pode ser resolvida retornando a missões, limpando regiões e avançando sistemas acumulativos.",
+        "question": "Nioh 3 tem troféus perdíveis?"
+      },
+      {
+        "answer": "Não. A platina base pode ser feita sem troféus online obrigatórios.",
+        "question": "Nioh 3 precisa de online para platinar?"
+      },
+      {
+        "answer": "Não. A platina base não exige coop obrigatório.",
+        "question": "Nioh 3 tem coop obrigatório?"
+      },
+      {
+        "answer": "O tempo depende do domínio do combate, da build, das missões secundárias e do quanto de cleanup ficar para o final. Use o roadmap para distribuir campanha, Battle Scroll, coletáveis, proficiência, Yokai e missões pendentes.",
+        "question": "Quanto tempo leva para platinar Nioh 3?"
+      },
+      {
+        "answer": "A dificuldade vem principalmente do combate, chefes, gerenciamento de recursos, alternância Samurai/Ninja, builds, missões opcionais e domínio dos sistemas de Yokai. A platina não depende de perdíveis, mas exige consistência.",
+        "question": "Qual a dificuldade da platina de Nioh 3?"
+      },
+      {
+        "answer": "Não. DLCs e conteúdos extras ficam fora da platina base.",
+        "question": "A DLC é necessária para a platina de Nioh 3?"
+      },
+      {
+        "answer": "Sim. Battle Scroll e free roam funcionam como caminhos de limpeza para missões, coletáveis, diálogos e condições situacionais.",
+        "question": "Dá para repetir missões para limpar coletáveis?"
+      },
+      {
+        "answer": "Não como seleção tradicional de capítulos. A limpeza funciona principalmente por replay de missões via Battle Scroll.",
+        "question": "Nioh 3 tem Chapter Select?"
+      },
+      {
+        "answer": "Sim. Battle Scroll permite revisar missões e corrigir pendências sem reiniciar a campanha.",
+        "question": "Battle Scroll conta como replay de missões?"
+      },
+      {
+        "answer": "O maior volume está em exploração regional, Myths, coletáveis, proficiência, sistemas de ferreiro, Soul Cores/Yokai, bosses opcionais e cleanup final.",
+        "question": "Qual é o maior grind da platina?"
+      },
+      {
+        "answer": "Sim. Este guia está Verificado e revisado editorialmente para a platina base.",
+        "question": "O guia está verificado?"
+      }
+    ],
+    "note": "Campos exportados para auditoria. O SQLite atual nao possui colunas nativas para todos esses extras; a importacao preserva o que o banco suporta.",
+    "quickDecision": {
+      "coopRequired": "Não",
+      "difficulty": "5/10",
+      "dlcRequired": "Não",
+      "firstAction": "Avance a campanha aprendendo Samurai/Ninja, Battle Scroll e trackers regionais antes do cleanup.",
+      "mainAttention": "A platina exige campanha, myths, coletáveis, proficiência, bosses opcionais e cleanup robusto, mas não depende de online, coop obrigatório ou DLC.",
+      "missables": "Não",
+      "onlineRequired": "Não",
+      "runs": "1 campanha + cleanup/replay",
+      "time": "40-60h"
+    },
+    "seo": {
+      "canonical": "https://atlasachievement.com.br/jogo/nioh-3",
+      "description": "Guia de platina de Nioh 3 em português, com tempo estimado, dificuldade, troféus, Samurai, Ninja, missões, coletáveis, Battle Scroll, roadmap e checklist.",
+      "title": "Nioh 3: guia de platina, troféus e roadmap | AtlasAchievement"
+    },
+    "tags": []
+  },
+  "slug": "nioh-3",
+  "trophies": [
+    {
+      "description": "Você desbloqueou todas as conquistas.",
+      "is_missable": 0,
+      "is_spoiler": 0,
+      "name": "You Are Nioh",
+      "name_pt": "Você é Nioh",
+      "tip": "A platina sai ao completar todo o conteúdo base, sem DLC.",
+      "trophy_code": "nioh3_platinum",
+      "type": "Platina"
+    },
+    {
+      "description": "Você concluiu todos os Contos.",
+      "is_missable": 0,
+      "is_spoiler": 0,
+      "name": "Answering to the People",
+      "name_pt": "A Pedido do Povo",
+      "tip": "Há 39 Myths no jogo. Faça também os dois ocultos no pós-jogo.",
+      "trophy_code": "nioh3_answering_people",
+      "type": "Ouro"
+    },
+    {
+      "description": "Você atingiu o nível 10.",
+      "is_missable": 0,
+      "is_spoiler": 0,
+      "name": "Budding Talent",
+      "name_pt": "Talento Emergente",
+      "tip": "Sai naturalmente bem cedo na campanha.",
+      "trophy_code": "nioh3_budding_talent",
+      "type": "Bronze"
+    },
+    {
+      "description": "Você atingiu o nível 100.",
+      "is_missable": 0,
+      "is_spoiler": 0,
+      "name": "Grizzled Veteran",
+      "name_pt": "Experiência Extensa",
+      "tip": "Normalmente vem sem grind antes do fim da história.",
+      "trophy_code": "nioh3_grizzled_veteran",
+      "type": "Bronze"
+    },
+    {
+      "description": "Viaje no tempo pela primeira vez.",
+      "is_missable": 0,
+      "is_spoiler": 1,
+      "name": "Wanderer in Time",
+      "name_pt": "Errante do Tempo",
+      "tip": "Troféu automático de história.",
+      "trophy_code": "nioh3_wanderer_time",
+      "type": "Bronze"
+    },
+    {
+      "description": "Receba o Guiding Mirror de Ii Naotora.",
+      "is_missable": 0,
+      "is_spoiler": 1,
+      "name": "Guiding Mirror",
+      "name_pt": "Espelho-guia",
+      "tip": "Automático logo após o primeiro Crucible.",
+      "trophy_code": "nioh3_guiding_mirror",
+      "type": "Bronze"
+    },
+    {
+      "description": "Destrua o Crucinite abrigado no espírito guardião de Takeda Shingen.",
+      "is_missable": 0,
+      "is_spoiler": 1,
+      "name": "The Old Tiger Departs",
+      "name_pt": "O Tigre que Parte",
+      "tip": "Automático no fim da região Warring Statés.",
+      "trophy_code": "nioh3_old_tiger",
+      "type": "Bronze"
+    },
+    {
+      "description": "Destrua o Crucinite abrigado no espírito guardião de Minamoto no Yoritomo.",
+      "is_missable": 0,
+      "is_spoiler": 1,
+      "name": "Unbreakable Cause",
+      "name_pt": "Determinação Inflexível",
+      "tip": "Automático ao concluir a região Heian.",
+      "trophy_code": "nioh3_unbreakable_cause",
+      "type": "Bronze"
+    },
+    {
+      "description": "Destrua o Crucinite abrigado no espírito guardião de Himiko.",
+      "is_missable": 0,
+      "is_spoiler": 1,
+      "name": "The Queen's Eyes Open",
+      "name_pt": "Os Olhos da Rainha se Abrem",
+      "tip": "Automático na região Antiquity.",
+      "trophy_code": "nioh3_queens_eyes",
+      "type": "Bronze"
+    },
+    {
+      "description": "Destrua o Crucinite abrigado no espírito guardião de Tokugawa Yoshinobu.",
+      "is_missable": 0,
+      "is_spoiler": 1,
+      "name": "What Must Be Done",
+      "name_pt": "O Que Deve Ser Feito",
+      "tip": "Automático em Bakumatsu.",
+      "trophy_code": "nioh3_what_must",
+      "type": "Bronze"
+    },
+    {
+      "description": "Destrua o Crucinite abrigado em Hiruko.",
+      "is_missable": 0,
+      "is_spoiler": 1,
+      "name": "Delusion Destroyed",
+      "name_pt": "Desilusão Destruída",
+      "tip": "Troféu do chefe final.",
+      "trophy_code": "nioh3_delusion",
+      "type": "Bronze"
+    },
+    {
+      "description": "Seja apontado como o terceiro xogum do xogunato Edo.",
+      "is_missable": 0,
+      "is_spoiler": 1,
+      "name": "As Shogun",
+      "name_pt": "Como Xogum",
+      "tip": "Automático ao terminar a história principal.",
+      "trophy_code": "nioh3_as_shogun",
+      "type": "Ouro"
+    },
+    {
+      "description": "Você aprendeu a Arte Marcial de uma arma do Umbrasal pela primeira vez.",
+      "is_missable": 0,
+      "is_spoiler": 0,
+      "name": "Crucible Arts Adopter",
+      "name_pt": "Especialista em Artes do Umbrasal",
+      "tip": "Use uma Crucible Weapon até encher a familiaridade.",
+      "trophy_code": "nioh3_crucible_arts",
+      "type": "Bronze"
+    },
+    {
+      "description": "Você derrotou 10 inimigos com um Ataque Forte ou uma Arte Marcial aprimorada pelo Domínio das Artes.",
+      "is_missable": 0,
+      "is_spoiler": 0,
+      "name": "Arts Proficiency",
+      "name_pt": "Domínio das Artes",
+      "tip": "Enfraqueça inimigos e finalize com o ataque pesado brilhando em Samurai Style.",
+      "trophy_code": "nioh3_arts_proficiency",
+      "type": "Bronze"
+    },
+    {
+      "description": "Você derrotou 10 inimigos com Ninjutsu.",
+      "is_missable": 0,
+      "is_spoiler": 0,
+      "name": "Ninjutsu",
+      "name_pt": "Ninjutsu",
+      "tip": "Troque para Ninja Style e finalize inimigos com shuriken ou bombas.",
+      "trophy_code": "nioh3_ninjutsu",
+      "type": "Bronze"
+    },
+    {
+      "description": "Você ativou a Quebra Impetuosa 10 vezes.",
+      "is_missable": 0,
+      "is_spoiler": 0,
+      "name": "Burst Break",
+      "name_pt": "Quebra Impetuosa",
+      "tip": "Use o contra-ataque em golpes com brilho vermelho.",
+      "trophy_code": "nioh3_burst_break",
+      "type": "Bronze"
+    },
+    {
+      "description": "Você ativou Repelir Habilidade Espiritual pela primeira vez.",
+      "is_missable": 0,
+      "is_spoiler": 0,
+      "name": "Guardian Spirit's Aid",
+      "name_pt": "Ajuda do Espírito Guardião",
+      "tip": "Libera pela história; faça um counter vermelho com a skill do espírito guardião.",
+      "trophy_code": "nioh3_guardian_aid",
+      "type": "Bronze"
+    },
+    {
+      "description": "Você usou um Selo de Invocação para invocar um yokai pela primeira vez.",
+      "is_missable": 0,
+      "is_spoiler": 0,
+      "name": "Yokai Manipulator",
+      "name_pt": "Manipulador de Yokai",
+      "tip": "Purifique um Soul Core, equipe-o e use o atalho de invocação.",
+      "trophy_code": "nioh3_yokai_manipulator",
+      "type": "Bronze"
+    },
+    {
+      "description": "Você desbloqueou todos os santuários e as Estátuas de Bodhisattva com nomes.",
+      "is_missable": 0,
+      "is_spoiler": 0,
+      "name": "Devotee",
+      "name_pt": "Adepto",
+      "tip": "Limpeza de coletáveis; acompanhe pelo mapa e pelo Exploration Level.",
+      "trophy_code": "nioh3_devotee",
+      "type": "Prata"
+    },
+    {
+      "description": "Você subiu seu Nível de Exploração para 4 em qualquer área.",
+      "is_missable": 0,
+      "is_spoiler": 0,
+      "name": "Explorer",
+      "name_pt": "Explorador",
+      "tip": "Bases, Lesser Crucibles e Myths sobem muito o nível de exploração.",
+      "trophy_code": "nioh3_explorer",
+      "type": "Bronze"
+    },
+    {
+      "description": "Você derrotou um mestre pela primeira vez.",
+      "is_missable": 0,
+      "is_spoiler": 0,
+      "name": "Masterful Pupil",
+      "name_pt": "Pupilo Magistral",
+      "tip": "Sai ao derrotar qualquer mestre opcional do mapa.",
+      "trophy_code": "nioh3_masterful_pupil",
+      "type": "Bronze"
+    },
+    {
+      "description": "Você derrotou todos os mestres.",
+      "is_missable": 0,
+      "is_spoiler": 0,
+      "name": "A God Among Men",
+      "name_pt": "Habilidade Imbatível",
+      "tip": "São 13 masters espalhados pelas regiões.",
+      "trophy_code": "nioh3_god_among_men",
+      "type": "Prata"
+    },
+    {
+      "description": "Você ativou todos os efeitos de bônus de conjunto para um conjunto de equipamentos.",
+      "is_missable": 0,
+      "is_spoiler": 0,
+      "name": "Armor's Real Value",
+      "name_pt": "Real Valor da Armadura",
+      "tip": "Equipe um set completo com o mesmo bônus verde.",
+      "trophy_code": "nioh3_armors_value",
+      "type": "Bronze"
+    },
+    {
+      "description": "Você forjou um item pela primeira vez.",
+      "is_missable": 0,
+      "is_spoiler": 0,
+      "name": "Latest Masterpiece",
+      "name_pt": "A última Obra-prima",
+      "tip": "Use a opção Forge na ferreira do Eternal Rift.",
+      "trophy_code": "nioh3_latest_masterpiece",
+      "type": "Bronze"
+    },
+    {
+      "description": "Você realizou uma Fusão Espiritual pela primeira vez.",
+      "is_missable": 0,
+      "is_spoiler": 0,
+      "name": "Match Made in Heaven",
+      "name_pt": "Almas Entrelaçadas",
+      "tip": "Sacrifique equipamentos para gerar matérial e use Soul Match na ferreira.",
+      "trophy_code": "nioh3_match_made",
+      "type": "Bronze"
+    },
+    {
+      "description": "Você remodelou um equipamento pela primeira vez.",
+      "is_missable": 0,
+      "is_spoiler": 0,
+      "name": "Remodeler",
+      "name_pt": "Remodelador",
+      "tip": "A opção Remodel fica na ferreira após liberar o recurso.",
+      "trophy_code": "nioh3_remodeler",
+      "type": "Bronze"
+    },
+    {
+      "description": "Acaricie um Chijiko pela primeira vez.",
+      "is_missable": 0,
+      "is_spoiler": 0,
+      "name": "Keen-Eyed",
+      "name_pt": "Visão Aguçada",
+      "tip": "Derrube o Chijiko com arma de longo alcance e interaja com ele.",
+      "trophy_code": "nioh3_keen_eyed",
+      "type": "Bronze"
+    },
+    {
+      "description": "Acaricie todos os Chijiko.",
+      "is_missable": 0,
+      "is_spoiler": 0,
+      "name": "Eagle-Eyed",
+      "name_pt": "Olhos de Lince",
+      "tip": "Existem 43 no total; todos contam para a limpeza.",
+      "trophy_code": "nioh3_eagle_eyed",
+      "type": "Prata"
+    },
+    {
+      "description": "Você usou todos os métodos para atravessar os Veios Espirituais.",
+      "is_missable": 0,
+      "is_spoiler": 0,
+      "name": "Unimpeded",
+      "name_pt": "Sem Obstáculos",
+      "tip": "Os espíritos guardiões necessários liberam pela história.",
+      "trophy_code": "nioh3_unimpeded",
+      "type": "Bronze"
+    },
+    {
+      "description": "Você concluiu três missões com um NPC ou em Expedições com outros jogadores (incluindo Acólitos).",
+      "is_missable": 0,
+      "is_spoiler": 0,
+      "name": "Teamwork",
+      "name_pt": "Trabalho em Equipe",
+      "tip": "Vale co-op, NPCs ou acólitos de Blue Graves.",
+      "trophy_code": "nioh3_teamwork",
+      "type": "Bronze"
+    },
+    {
+      "description": "Você negociou uma pelúcia com um Sunekosuri na Fenda Eterna pela primeira vez.",
+      "is_missable": 0,
+      "is_spoiler": 0,
+      "name": "A Scampuss's Best Friend",
+      "name_pt": "Melhor Amigo de um Sunekosuri",
+      "tip": "Colete um Furball seguindo um Scampuss e entregue ao Great Scampuss no hub.",
+      "trophy_code": "nioh3_scampuss_best_friend",
+      "type": "Bronze"
+    },
+    {
+      "description": "Você se banhou na fonte termal pela primeira vez.",
+      "is_missable": 0,
+      "is_spoiler": 0,
+      "name": "Spa Healer",
+      "name_pt": "Apreciador de Spa",
+      "tip": "Sai naturalmente ao explorar.",
+      "trophy_code": "nioh3_spa_healer",
+      "type": "Bronze"
+    },
+    {
+      "description": "Banhe-se em todas as fontes termais.",
+      "is_missable": 0,
+      "is_spoiler": 0,
+      "name": "Spa Lover",
+      "name_pt": "Viciado em Spa",
+      "tip": "Limpe todas durante a exploração ou pelo Battle Scroll.",
+      "trophy_code": "nioh3_spa_lover",
+      "type": "Prata"
+    },
+    {
+      "description": "Você guiou todos os Kodama para casa.",
+      "is_missable": 0,
+      "is_spoiler": 0,
+      "name": "Kodama Leader",
+      "name_pt": "Líder dos Kodama",
+      "tip": "São 92 Kodama; nada é perdível.",
+      "trophy_code": "nioh3_kodama_leader",
+      "type": "Prata"
+    },
+    {
+      "description": "Você orou para todos os Seis Jizo.",
+      "is_missable": 0,
+      "is_spoiler": 0,
+      "name": "Visiting the Six Jizo",
+      "name_pt": "Visita aos Seis Jizo",
+      "tip": "Conteúdo de limpeza de coletáveis.",
+      "trophy_code": "nioh3_six_jizo",
+      "type": "Prata"
+    },
+    {
+      "description": "Você fez carinho em todos os Sunekosuri.",
+      "is_missable": 0,
+      "is_spoiler": 0,
+      "name": "Scampuss Enthusiast",
+      "name_pt": "Entusiasta de Sunekosuri",
+      "tip": "Existem 16 no total.",
+      "trophy_code": "nioh3_scampuss_enthusiast",
+      "type": "Prata"
+    },
+    {
+      "description": "Você purificou uma Almessência pela primeira vez.",
+      "is_missable": 0,
+      "is_spoiler": 0,
+      "name": "Soul Core Owner",
+      "name_pt": "Proprietário de Almessências",
+      "tip": "Pegue um Soul Core e alcance um shrine sem morrer.",
+      "trophy_code": "nioh3_soul_core_owner",
+      "type": "Bronze"
+    },
+    {
+      "description": "Você conquistou uma base inimiga pela primeira vez.",
+      "is_missable": 0,
+      "is_spoiler": 0,
+      "name": "Base Captured",
+      "name_pt": "Base Capturada",
+      "tip": "Sai naturalmente durante a exploração.",
+      "trophy_code": "nioh3_base_captured",
+      "type": "Bronze"
+    },
+    {
+      "description": "Você conquistou todas as bases inimigas.",
+      "is_missable": 0,
+      "is_spoiler": 0,
+      "name": "Total Control",
+      "name_pt": "Controle Total",
+      "tip": "São 26 bases no total.",
+      "trophy_code": "nioh3_total_control",
+      "type": "Prata"
+    },
+    {
+      "description": "Você purificou um Umbrasal Inferior pela primeira vez.",
+      "is_missable": 0,
+      "is_spoiler": 0,
+      "name": "Lesser Crucible Cleanser",
+      "name_pt": "Purificador de Umbrasal Inferior",
+      "tip": "Automático bem cedo no jogo.",
+      "trophy_code": "nioh3_lesser_cleanser",
+      "type": "Bronze"
+    },
+    {
+      "description": "Você purificou todos os Umbrasais Inferiores.",
+      "is_missable": 0,
+      "is_spoiler": 0,
+      "name": "Lesser Crucible Eradicator",
+      "name_pt": "Erradicador do Umbrasal Inferior",
+      "tip": "São 23 no total.",
+      "trophy_code": "nioh3_lesser_eradicator",
+      "type": "Prata"
+    },
+    {
+      "description": "Derrote o Demônio do Orgulho e vislumbre as emoções de Kunimatsu.",
+      "is_missable": 0,
+      "is_spoiler": 1,
+      "name": "Kunimatsu's Pride",
+      "name_pt": "Orgulho de Kunimatsu",
+      "tip": "Chefe opcional marcado com baú dourado no mapa.",
+      "trophy_code": "nioh3_kunimatsu_pride",
+      "type": "Bronze"
+    },
+    {
+      "description": "Derrote o Demônio da Inveja e vislumbre as emoções de Kunimatsu.",
+      "is_missable": 0,
+      "is_spoiler": 1,
+      "name": "Kunimatsu's Envy",
+      "name_pt": "Inveja de Kunimatsu",
+      "tip": "Chefe opcional de região avançada.",
+      "trophy_code": "nioh3_kunimatsu_envy",
+      "type": "Bronze"
+    },
+    {
+      "description": "Derrote o Demônio da Obsessão e vislumbre as emoções de Kunimatsu.",
+      "is_missable": 0,
+      "is_spoiler": 1,
+      "name": "Kunimatsu's Obsession",
+      "name_pt": "Obsessão de Kunimatsu",
+      "tip": "Chefe opcional em Bakumatsu.",
+      "trophy_code": "nioh3_kunimatsu_obsession",
+      "type": "Bronze"
+    },
+    {
+      "description": "Recupere a memória da ferreira.",
+      "is_missable": 0,
+      "is_spoiler": 1,
+      "name": "Senji Toyo",
+      "name_pt": "Senji Toyo",
+      "tip": "Complete o Myth Memories in the Blade.",
+      "trophy_code": "nioh3_senji_toyo",
+      "type": "Bronze"
+    },
+    {
+      "description": "Em \"Black Feather Sanctuary\", afugente todos os corvos de Matsuo-taisha Shrine e derrote Otoroshi.",
+      "is_missable": 0,
+      "is_spoiler": 1,
+      "name": "Ruckus in the Sanctuary",
+      "name_pt": "Confusão no Santuário",
+      "tip": "Atire nos três corvos antes de eles fugirem e termine a missão.",
+      "trophy_code": "nioh3_ruckus_sanctuary",
+      "type": "Bronze"
+    },
+    {
+      "description": "Em \"A Sinister End\", repele todos os ataques de Murakumo.",
+      "is_missable": 0,
+      "is_spoiler": 1,
+      "name": "Pain, Pain, Go Away",
+      "name_pt": "Dor, Dor, Vai Embora",
+      "tip": "Atire no pássaro em cada aparição durante a missão final.",
+      "trophy_code": "nioh3_pain_pain",
+      "type": "Bronze"
+    },
+    {
+      "description": "Banhe-se com Himiko em \"Dark Roots\" e depois relembre o incidente de Naotora em \"Apparition of Ryotan Temple\".",
+      "is_missable": 0,
+      "is_spoiler": 1,
+      "name": "Distant Memories",
+      "name_pt": "Memórias Distantes",
+      "tip": "É feito em duas missões diferentes, ambas repetíveis via Battle Scroll.",
+      "trophy_code": "nioh3_distant_memories",
+      "type": "Bronze"
+    },
+    {
+      "description": "Em \"Seeking Rare Yokai\", satisfaça Toriyama Sekien com uma pintura de Kusanagi.",
+      "is_missable": 0,
+      "is_spoiler": 1,
+      "name": "Like-Minded Friends",
+      "name_pt": "Amigos com Afinidades",
+      "tip": "Sai ao concluir esse Myth oculto do fim do jogo.",
+      "trophy_code": "nioh3_like_minded",
+      "type": "Bronze"
+    },
+    {
+      "description": "Ajude Tatsumaro, o amante de esterco, a se conectar com Takechiyo.",
+      "is_missable": 0,
+      "is_spoiler": 1,
+      "name": "Dung Ball Roller",
+      "name_pt": "Rola-bosta",
+      "tip": "Após Putrid Paradise, entregue 30 Dung Balls ao NPC no Eternal Rift.",
+      "trophy_code": "nioh3_dung_ball",
+      "type": "Prata"
+    },
+    {
+      "description": "Conclua as veteran missions com Yagyu Munenori e Hattori Hanzo.",
+      "is_missable": 0,
+      "is_spoiler": 1,
+      "name": "Nothing Left to Learn",
+      "name_pt": "Nada mais para Aprender",
+      "tip": "Faça também as versões Novice e Adept antes da Veteran.",
+      "trophy_code": "nioh3_nothing_left",
+      "type": "Bronze"
+    }
+  ]
+}

@@ -1,0 +1,640 @@
+{
+  "game": {
+    "avoid_if": "Evite se você não quer múltiplas runs, NG++, almas de chefes, pactos, armas raras e checklist pesado.",
+    "before_you_start": "Leia o roadmap antes de jogar; Dark Souls Remastered pune decisões mal planejadas com muito retrabalho.",
+    "best_for": "Ideal para quem quer uma platina Soulslike clássica, exigente e baseada em domínio de combate e planejamento.",
+    "cleanup_advice": "Use NG+ e NG++ para finais, almas de chefes, armas raras, magias, milagres, piromancias e itens que ficaram pendentes.",
+    "cover_image": "https://cdn.cloudflare.steamstatic.com/steam/apps/570940/library_600x900.jpg",
+    "coverage_level": "strong",
+    "created_at": "2026-05-09 19:53:43",
+    "difficulty": 7,
+    "difficulty_reason": "A dificuldade vem do combate Soulslike, chefes, punição por erro, planejamento de almas de chefes e volume de itens específicos.",
+    "dlc_scope": "Guia focado na lista base de Dark Souls Remastered. Não há grupo separado de DLC/add-ons na lista oficial da platina.",
+    "editorial_notes": "",
+    "editorial_review_status": "verified",
+    "editorial_status": "published",
+    "first_run_advice": "Explore Lordran e prepare a primeira run. Comece uma campanha cuidadosa, explorando Lordran, entrando nos pactos disponíveis e guardando almas de chefes. Depois use o roadmap para separar finais, armas raras, feitiços, milagres, piromancias, upgrades e avanço em NG+/NG++.",
+    "grind_summary": "O peso está em almas de chefes, armas raras, pactos, magias, milagres, piromancias, armas de cauda e NG+/NG++.",
+    "guide_avoid": null,
+    "guide_best_moment": null,
+    "guide_dlc": null,
+    "guide_grind": null,
+    "guide_ideal": null,
+    "guide_online": null,
+    "guide_runs": null,
+    "image": "https://cdn.cloudflare.steamstatic.com/steam/apps/570940/header.jpg",
+    "is_verified": 1,
+    "last_reviewed_at": "",
+    "missable": "A platina tem perdíveis pelo critério de risco de run: alguns troféus ligados a NPCs, pactos, almas de chefes e armas raras podem exigir outra passagem se forem ignorados. Finais normais, chefes obrigatórios e The Dark Soul não entram nessa contagem.",
+    "missable_summary": "Há 8 perdíveis pelo critério de risco de run: armas raras, feitiços, piromancias, milagres e pactos sensíveis. The Dark Soul, finais normais e chefes obrigatórios não contam como perdíveis.",
+    "name": "Dark Souls Remastered",
+    "online_summary": "Não há exigência online para a platina; pactos e itens podem ser planejados offline, embora online possa ajudar em alguns casos.",
+    "quality_warnings": "[]",
+    "reviewed_by": "",
+    "runs_summary": "A platina exige múltiplas passagens ou avanço até NG++ para finais, almas de chefes, armas raras, magias, milagres e piromancias.",
+    "slug": "dark-souls-remastered",
+    "time": "60-80h",
+    "time_bucket": "long",
+    "time_max_hours": 80,
+    "time_min_hours": 60,
+    "time_reason": "A faixa de 60-80 horas considera run principal, NG+, NG++, armas raras, magias, milagres, piromancias, pactos e cleanup.",
+    "time_sort_hours": 60,
+    "updated_at": "2026-06-27 02:36:59",
+    "verification_note": "Lista PlayStation de Dark Souls Remastered revisada com roadmap estruturado, 41 troféus EN/PT-BR, descrições PT-BR, flags offline/sem coop/sem DLC, FAQ, pontos de atenção, tags e checklist completo; validada para publicação.",
+    "verification_status": "verified",
+    "walkthrough": null
+  },
+  "redirects": [],
+  "roadmaps": [
+    {
+      "content": "{\"title\":\"Explore Lordran e prepare a primeira run\",\"focus\":\"Campanha inicial\",\"objective\":\"Avançar pela história aprendendo rotas, chefes, pactos e sistemas de upgrade sem desperdiçar recursos importantes.\",\"actions\":[\"Jogue a primeira run explorando com calma e abrindo atalhos importantes.\",\"Entre nos pactos disponíveis quando encontrá-los para evitar voltar depois sem necessidade.\",\"Guarde todas as almas de chefes até confirmar quais armas raras serão criadas.\",\"Colete embers, titanites, slabs, magias, milagres e piromancias conforme avança.\",\"Mantenha um checklist separado para pactos, NPCs, armas de cauda e armas raras.\"],\"warning\":\"Não consuma almas de chefes sem conferir Knight's Honor; algumas almas são necessárias para armas específicas e podem exigir NG+ ou NG++.\",\"result\":\"Primeira run encaminhada com recursos importantes preservados e pactos iniciais mapeados.\"}",
+      "step_order": 1
+    },
+    {
+      "content": "{\"title\":\"Controle pactos, NPCs e magias\",\"focus\":\"Pactos e coleções\",\"objective\":\"Garantir que magias, milagres, piromancias e pactos sensíveis não sejam bloqueados por escolhas ou NPCs perdidos.\",\"actions\":[\"Siga as rotas de NPCs importantes como Big Hat Logan, Rhea, Laurentius, Quelana e Eingyi.\",\"Descubra pactos como Way of White, Forest Hunter, Chaos Servant, Gravelord Servant e Path of the Dragon.\",\"Planeje Darkwraith antes de entregar ou usar o Lordvessel da forma errada para essa rota.\",\"Evite matar Gwyndolin ou Gwynevere antes de resolver Blade of the Darkmoon, se ainda precisar do pacto.\",\"Registre quais magias, milagres e piromancias já foram comprados ou recebidos.\"],\"warning\":\"Alguns pactos e NPCs podem ficar indisponíveis na run atual se você avançar eventos na ordem errada.\",\"result\":\"Pactos principais descobertos e coleções de magia encaminhadas sem perda de rota.\"}",
+      "step_order": 2
+    },
+    {
+      "content": "{\"title\":\"Finalize chefes opcionais e escolha o primeiro final\",\"focus\":\"Chefes e final\",\"objective\":\"Derrotar chefes obrigatórios e opcionais importantes e concluir uma das duas terminações necessárias.\",\"actions\":[\"Derrote chefes de Lord Soul e chefes opcionais com troféu, como Gwyndolin e Priscilla.\",\"Adquira Rite of Kindling, Art of Abysswalking, Lordvessel e demais troféus de progressão.\",\"Escolha um dos finais: To Link the Fire ou The Dark Lord.\",\"Se usar backup de save para finais, trate como estratégia opcional e não como requisito do guia.\",\"Antes de finalizar a run, confira se ainda há NPC, pacto, magia ou item raro acessível.\"],\"warning\":\"Sem backup de save, o outro final exige NG+ ou nova run.\",\"result\":\"Primeiro final concluído e chefes/troféus principais da primeira campanha resolvidos.\"}",
+      "step_order": 3
+    },
+    {
+      "content": "{\"title\":\"Faça upgrades de armas e coleções principais\",\"focus\":\"Upgrades e colecionáveis\",\"objective\":\"Trabalhar caminhos de reforço, magias, milagres, piromancias e armas raras antes de avançar demais em NG+.\",\"actions\":[\"Complete os caminhos de reforço padrão, cristal, relâmpago, rústico, mágico, encantado, divino, oculto, ígneo e caótico.\",\"Separe slabs e materiais raros para não desperdiçar upgrades.\",\"Compre ou obtenha todas as magias, piromancias e milagres possíveis na run atual.\",\"Crie armas de chefes necessárias para Knight's Honor somente depois de conferir a lista.\",\"Use o checklist para marcar armas raras e itens de pacto já obtidos.\"],\"warning\":\"Slabs e materiais raros são limitados por run; planeje antes de criar upgrades finais.\",\"result\":\"Caminhos de upgrade e coleções principais concluídos ou bem encaminhados.\"}",
+      "step_order": 4
+    },
+    {
+      "content": "{\"title\":\"Use NG+ para segundo final e almas de chefes restantes\",\"focus\":\"NG+\",\"objective\":\"Avançar na segunda run para obter o final oposto e novas almas de chefes necessárias para armas raras.\",\"actions\":[\"Avance NG+ com foco nos requisitos que faltaram da primeira run.\",\"Faça o final oposto ao escolhido anteriormente.\",\"Colete almas de chefes novamente para criar armas alternativas.\",\"Corrija pactos, NPCs ou magias que foram perdidos na primeira run.\",\"Evite consumir almas de chefes que ainda têm uso em Knight's Honor.\"],\"warning\":\"Algumas armas raras exigem múltiplas cópias da mesma alma de chefe; planeje antes de transformar almas em armas.\",\"result\":\"Segundo final concluído e progresso de Knight's Honor avançado para a etapa final.\"}",
+      "step_order": 5
+    },
+    {
+      "content": "{\"title\":\"Avance até NG++ para fechar Knight's Honor\",\"focus\":\"NG++ e armas raras\",\"objective\":\"Obter os últimos materiais, almas de chefes e armas raras exigidos pela platina.\",\"actions\":[\"Avance apenas até o ponto necessário para obter as almas de chefes restantes.\",\"Crie as últimas armas de chefes e armas raras pendentes.\",\"Revise se armas de cauda, drops, pactos e tesouros únicos foram coletados.\",\"Confira Knight's Honor antes de considerar a platina travada por falta de item.\",\"Resolva qualquer upgrade, pacto ou magia restante.\"],\"warning\":\"Knight's Honor é o maior risco de retrabalho; uma alma usada errado pode empurrar a platina para outra run.\",\"result\":\"Armas raras concluídas e maior grind da platina resolvido.\"}",
+      "step_order": 6
+    },
+    {
+      "content": "{\"title\":\"Faça o cleanup final da platina\",\"focus\":\"Cleanup\",\"objective\":\"Revisar pendências finais e garantir que flags, troféus e status editorial estão corretos.\",\"actions\":[\"Abra o checklist e revise os 41 troféus.\",\"Confirme que The Dark Soul não está marcado como perdível.\",\"Confirme que onlineRequired, coopRequired e dlcRequired estão como false.\",\"Confirme que o guia não trata coop ou PvP como obrigatório.\",\"Revise se todos os cards têm nome inglês principal e PT-BR abaixo quando confirmado.\"],\"warning\":\"\",\"result\":\"Todos os requisitos da platina base concluídos.\"}",
+      "step_order": 7
+    }
+  ],
+  "schemaVersion": 1,
+  "seedExtras": {
+    "aliases": [],
+    "attentionPoints": [
+      {
+        "tip": "Não consuma almas de chefes antes de conferir todas as armas raras; algumas almas exigem NG+ ou NG++.",
+        "title": "Knight's Honor",
+        "type": "Armas raras / Almas de chefes / NG++"
+      },
+      {
+        "tip": "Acompanhe Big Hat Logan e compre todos os feitiços antes de avançar eventos irreversíveis.",
+        "title": "Wisdom of a Sage",
+        "type": "Feitiços / NPCs"
+      },
+      {
+        "tip": "Controle Laurentius, Quelana, Eingyi e piromancias ligadas a pactos/NPCs.",
+        "title": "Bond of a Pyromancer",
+        "type": "Piromancias / NPCs"
+      },
+      {
+        "tip": "Revise Rhea, pactos e Soul of Gwyn para não deixar milagres para outra run.",
+        "title": "Prayer of a Maiden",
+        "type": "Milagres / Pactos"
+      },
+      {
+        "tip": "Planeje a rota antes de entregar o Lordvessel de forma incompatível com o pacto.",
+        "title": "Covenant: Darkwraith",
+        "type": "Pacto / Rota / Atenção"
+      },
+      {
+        "tip": "Evite bloquear o pacto antes de resolver seus requisitos.",
+        "title": "Covenant: Blade of the Darkmoon",
+        "type": "Pacto / Atenção"
+      },
+      {
+        "tip": "Pode ser feito offline, mas requer planejamento de Fé ou coop opcional.",
+        "title": "Covenant: Warrior of Sunlight",
+        "type": "Pacto / Atenção"
+      },
+      {
+        "tip": "Sem backup de save, os dois finais exigem NG+ ou nova run.",
+        "title": "To Link the Fire / The Dark Lord",
+        "type": "Finais"
+      },
+      {
+        "tip": "Slabs e materiais raros são limitados por run; planeje os caminhos de reforço.",
+        "title": "Weapon upgrade paths",
+        "type": "Upgrades / Slabs"
+      },
+      {
+        "tip": "Chefe opcional que pode afetar pacto; deixe para o momento correto.",
+        "title": "Defeat Dark Sun Gwyndolin",
+        "type": "Chefe opcional / Pacto"
+      }
+    ],
+    "checklist": [
+      "Acender a primeira fogueira.",
+      "Adquirir o Frasco de Estus.",
+      "Chegar a Lordran.",
+      "Tocar o sino da Undead Church.",
+      "Tocar o sino de Quelaag's Domain.",
+      "Adquirir Rite of Kindling.",
+      "Adquirir Art of Abysswalking.",
+      "Chegar a Anor Londo.",
+      "Adquirir Lordvessel.",
+      "Derrotar Gravelord Nito.",
+      "Derrotar Bed of Chaos.",
+      "Derrotar Four Kings.",
+      "Derrotar Seath the Scaleless.",
+      "Derrotar Dark Sun Gwyndolin.",
+      "Derrotar Crossbreed Priscilla.",
+      "Descobrir todos os pactos da lista PSN.",
+      "Obter todas as magias.",
+      "Obter todas as piromancias.",
+      "Obter todos os milagres.",
+      "Criar uma arma padrão máxima.",
+      "Criar uma arma cristal máxima.",
+      "Criar uma arma relâmpago máxima.",
+      "Criar uma arma raw/rústica máxima.",
+      "Criar uma arma mágica máxima.",
+      "Criar uma arma encantada máxima.",
+      "Criar uma arma divina máxima.",
+      "Criar uma arma oculta máxima.",
+      "Criar uma arma fogo/ígnea máxima.",
+      "Criar uma arma caos máxima.",
+      "Escolher o primeiro final.",
+      "Escolher o segundo final.",
+      "Coletar almas de chefes necessárias.",
+      "Criar armas de chefes.",
+      "Coletar armas raras de drops, baús, caudas, pactos e NPCs.",
+      "Avançar NG+.",
+      "Avançar NG++ até o ponto necessário.",
+      "Fazer cleanup final e liberar The Dark Soul."
+    ],
+    "faq": [
+      {
+        "answer": "Não. A platina pode ser feita offline. Online, coop ou PvP pode facilitar alguns itens de pacto ou chefes, mas não é obrigatório.",
+        "question": "Dark Souls Remastered tem troféus online?"
+      },
+      {
+        "answer": "Não. Coop pode ajudar, especialmente em chefes ou no pacto Warrior of Sunlight, mas a platina não exige coop.",
+        "question": "Precisa de coop?"
+      },
+      {
+        "answer": "Não há DLC separada obrigatória para a lista PSN base. Não adicione troféus extras fora da lista de 41 troféus.",
+        "question": "Precisa de DLC?"
+      },
+      {
+        "answer": "A rota segura exige uma primeira campanha, NG+ para o segundo final e avanço até NG++ para fechar armas raras e almas de chefes de Knight's Honor.",
+        "question": "Quantas jogadas são necessárias?"
+      },
+      {
+        "answer": "Não. Dark Souls Remastered não tem seleção tradicional de dificuldade nem troféu ligado a dificuldade.",
+        "question": "A dificuldade afeta troféus?"
+      },
+      {
+        "answer": "Sim, se você considerar requisitos sensíveis à run. Alguns troféus ligados a NPCs, pactos, almas de chefes e armas raras podem exigir outra run se forem ignorados. Use o checklist para evitar consumir almas de chefes, perder pactos ou avançar eventos de NPC na ordem errada.",
+        "question": "A platina tem perdíveis?"
+      },
+      {
+        "answer": "Pode ser usado como estratégia opcional para reduzir runs de finais, mas o guia explica a rota normal por NG+/NG++ sem depender disso.",
+        "question": "Posso usar backup de save para os finais?"
+      },
+      {
+        "answer": "Knight's Honor, todos os feitiços, todos os milagres, todas as piromancias e os caminhos de upgrade de armas são os maiores blocos de organização.",
+        "question": "O que mais dá trabalho?"
+      },
+      {
+        "answer": "Não consuma almas de chefes antes de conferir a lista de armas raras. Algumas almas são necessárias para armas de chefes e podem exigir outra run se forem usadas errado.",
+        "question": "Posso consumir almas de chefes?"
+      }
+    ],
+    "note": "Campos exportados para auditoria. O SQLite atual nao possui colunas nativas para todos esses extras; a importacao preserva o que o banco suporta.",
+    "quickDecision": {
+      "firstAction": "Explore Lordran e prepare a primeira run. Comece uma campanha cuidadosa, explorando Lordran, entrando nos pactos disponíveis e guardando almas de chefes. Depois use o roadmap para separar finais, armas raras, feitiços, milagres, piromancias, upgrades e avanço em NG+/NG++.",
+      "mainRisk": "O maior risco é Knight's Honor: consumir almas de chefes, perder armas de cauda ou ignorar armas raras pode empurrar a platina para outra run.",
+      "recommendation": "Dark Souls Remastered é recomendado para quem gosta de soulslike, exploração, builds e checklist de colecionáveis. Não é indicado para quem busca platina rápida ou quer evitar múltiplas runs.",
+      "summary": "Platina clássica e trabalhosa: offline, sem coop obrigatório, sem DLC separada, com almas de chefes, pactos, NPCs, upgrades, Knight's Honor e avanço até NG+/NG++.",
+      "verdict": "Boa platina para fãs de Souls; exige organização, NG+/NG++ e paciência com farm."
+    },
+    "seo": {
+      "description": "Roadmap completo da platina de Dark Souls Remastered, com finais, pactos, Knight's Honor, armas raras, feitiços, milagres, piromancias, upgrades, NG+/NG++ e checklist para evitar retrabalho.",
+      "keywords": "Dark Souls Remastered troféus, Dark Souls Remastered platina, Dark Souls Remastered guia, Dark Souls Remastered roadmap, Dark Souls Remastered Knight's Honor, Dark Souls Remastered armas raras, Dark Souls Remastered pactos, Dark Souls Remastered piromancias, Dark Souls Remastered milagres, Dark Souls Remastered feitiços, Dark Souls Remastered NG++",
+      "ogDescription": "Guia PT-BR da platina PSN base de Dark Souls Remastered, com 41 troféus, finais, pactos, Knight's Honor, almas de chefes, armas raras e NG++.",
+      "ogTitle": "Dark Souls Remastered: guia de troféus e platina",
+      "title": "Dark Souls Remastered: guia de troféus e platina"
+    },
+    "tags": []
+  },
+  "slug": "dark-souls-remastered",
+  "trophies": [
+    {
+      "description": "Obtenha todos os troféus.",
+      "is_missable": 0,
+      "is_spoiler": 0,
+      "name": "The Dark Soul",
+      "name_pt": "A Alma Negra",
+      "tip": "Conclua os outros 40 troféus da lista PlayStation de Dark Souls Remastered. The Dark Soul nunca deve ser tratado como perdível e Artorias of the Abyss não é grupo separado de DLC nesta platina.",
+      "trophy_code": "dsr_the_dark_soul",
+      "type": "Platina"
+    },
+    {
+      "description": "Alcance o final \"To Link the Fire\".",
+      "is_missable": 0,
+      "is_spoiler": 1,
+      "name": "To Link the Fire",
+      "name_pt": "O Acender do Fogo",
+      "tip": "Final oposto a The Dark Lord na mesma conclusão de run. Use NG+ ou backup opcional se quiser reduzir retrabalho.",
+      "trophy_code": "dsr_to_link_the_fire",
+      "type": "Ouro"
+    },
+    {
+      "description": "Alcance o final \"The Dark Lord\".",
+      "is_missable": 0,
+      "is_spoiler": 1,
+      "name": "The Dark Lord",
+      "name_pt": "O Lorde Negro",
+      "tip": "Final oposto a To Link the Fire. Planeje junto de NG+ e NG++ para almas de chefes e armas raras.",
+      "trophy_code": "dsr_dark_lord",
+      "type": "Ouro"
+    },
+    {
+      "description": "Adquira todas as armas raras.",
+      "is_missable": 1,
+      "is_spoiler": 0,
+      "name": "Knight's Honor",
+      "name_pt": "Honra de cavaleiro",
+      "tip": "Troféu central da platina: acompanhe armas raras, armas de chefes, armas de cauda, armas de pacto e drops. Não consuma almas de chefes; a alma de Sif exige três usos e normalmente empurra para NG++.",
+      "trophy_code": "dsr_knights_honor",
+      "type": "Prata"
+    },
+    {
+      "description": "Adquira todos os feitiços.",
+      "is_missable": 1,
+      "is_spoiler": 0,
+      "name": "Wisdom of a Sage",
+      "name_pt": "Erudição de sábio",
+      "tip": "Compre e colete todos os feitiços, cuidando de Big Hat Logan, vendedores, rotas de NPC e compras avançadas.",
+      "trophy_code": "dsr_wisdom_of_a_sage",
+      "type": "Prata"
+    },
+    {
+      "description": "Adquira todas as piromancias.",
+      "is_missable": 1,
+      "is_spoiler": 0,
+      "name": "Bond of a Pyromancer",
+      "name_pt": "Vínculo de piromante",
+      "tip": "Acompanhe Laurentius, Eingyi, Quelana, Chaos Servant e piromancias de áreas avançadas. Janelas de NPC podem gerar retrabalho.",
+      "trophy_code": "dsr_bond_of_a_pyromancer",
+      "type": "Prata"
+    },
+    {
+      "description": "Adquira todos os milagres.",
+      "is_missable": 1,
+      "is_spoiler": 0,
+      "name": "Prayer of a Maiden",
+      "name_pt": "Prece de donzela",
+      "tip": "Planeje Rhea, pactos, Sunlight Medals, Gravelord Servant, Princess's Guard e Soul of Gwyn para Sunlight Spear em NG+.",
+      "trophy_code": "dsr_prayer_of_a_maiden",
+      "type": "Prata"
+    },
+    {
+      "description": "Descubra o pacto Way of White.",
+      "is_missable": 0,
+      "is_spoiler": 0,
+      "name": "Covenant: Way of White",
+      "name_pt": "Pacto: Caminho Branco",
+      "tip": "Entre pelo clérigo em Firelink Shrine ou por NPCs relacionados enquanto a questline ainda estiver acessível.",
+      "trophy_code": "dsr_covenant_way_of_white",
+      "type": "Bronze"
+    },
+    {
+      "description": "Descubra o pacto Princess's Guard.",
+      "is_missable": 0,
+      "is_spoiler": 1,
+      "name": "Covenant: Princess's Guard",
+      "name_pt": "Pacto: Guarda da Princesa",
+      "tip": "Descubra o pacto em Anor Londo antes de tomar decisões hostis contra Gwynevere ou a rota da Princess's Guard.",
+      "trophy_code": "dsr_covenant_princesss_guard",
+      "type": "Prata"
+    },
+    {
+      "description": "Descubra o pacto Blade of the Darkmoon.",
+      "is_missable": 1,
+      "is_spoiler": 1,
+      "name": "Covenant: Blade of the Darkmoon",
+      "name_pt": "Pacto: Lâmina da Lua Negra",
+      "tip": "Exige acesso ao altar de Dark Sun Gwyndolin e cuidado para não invalidar o pacto antes de descobri-lo.",
+      "trophy_code": "dsr_covenant_blade_of_the_darkmoon",
+      "type": "Prata"
+    },
+    {
+      "description": "Descubra o pacto Warrior of Sunlight.",
+      "is_missable": 0,
+      "is_spoiler": 0,
+      "name": "Covenant: Warrior of Sunlight",
+      "name_pt": "Pacto: Guerreiro da Luz Solar",
+      "tip": "Planeje Fé ou redução opcional por cooperação. Online ajuda, mas não é obrigatório para a platina.",
+      "trophy_code": "dsr_covenant_warrior_of_sunlight",
+      "type": "Prata"
+    },
+    {
+      "description": "Descubra o pacto Forest Hunter.",
+      "is_missable": 0,
+      "is_spoiler": 0,
+      "name": "Covenant: Forest Hunter",
+      "name_pt": "Pacto: Caçador da Floresta",
+      "tip": "Fale com Alvina em Darkroot Garden e evite hostilizar NPCs do pacto antes de entrar se estiver seguindo a checklist.",
+      "trophy_code": "dsr_covenant_forest_hunter",
+      "type": "Prata"
+    },
+    {
+      "description": "Descubra o pacto Darkwraith.",
+      "is_missable": 1,
+      "is_spoiler": 1,
+      "name": "Covenant: Darkwraith",
+      "name_pt": "Pacto: Aparição Negra",
+      "tip": "Um dos pactos mais sensíveis: derrote Four Kings antes de entregar o Lordvessel a Frampt para falar com Kaathe.",
+      "trophy_code": "dsr_covenant_darkwraith",
+      "type": "Prata"
+    },
+    {
+      "description": "Descubra o pacto Path of the Dragon.",
+      "is_missable": 0,
+      "is_spoiler": 1,
+      "name": "Covenant: Path of the Dragon",
+      "name_pt": "Pacto: Caminho do Dragão",
+      "tip": "Chegue a Ash Lake e fale com o Stone Dragon. Planeje a rota opcional sem depender de online.",
+      "trophy_code": "dsr_covenant_path_of_the_dragon",
+      "type": "Prata"
+    },
+    {
+      "description": "Descubra o pacto Gravelord Servant.",
+      "is_missable": 1,
+      "is_spoiler": 1,
+      "name": "Covenant: Gravelord Servant",
+      "name_pt": "Pacto: Servo do Lorde das Tumbas",
+      "tip": "Entre antes de derrotar Gravelord Nito se ainda precisar do pacto, de Eye of Death ou de recompensas ligadas a milagres.",
+      "trophy_code": "dsr_covenant_gravelord_servant",
+      "type": "Prata"
+    },
+    {
+      "description": "Descubra o pacto Chaos Servant.",
+      "is_missable": 1,
+      "is_spoiler": 1,
+      "name": "Covenant: Chaos Servant",
+      "name_pt": "Pacto: Servo do Caos",
+      "tip": "Descubra com Quelaag's Sister e evite matá-la se ainda precisar do pacto, piromancias ou atalhos.",
+      "trophy_code": "dsr_covenant_chaos_servant",
+      "type": "Prata"
+    },
+    {
+      "description": "Adquira a melhor arma através do reforço padrão.",
+      "is_missable": 0,
+      "is_spoiler": 0,
+      "name": "Strongest Weapon",
+      "name_pt": "Arma excepcional",
+      "tip": "Leve uma arma padrão até +15. Controle Large Ember, Very Large Ember, titanites e slab.",
+      "trophy_code": "dsr_strongest_weapon",
+      "type": "Bronze"
+    },
+    {
+      "description": "Adquira a melhor arma através do reforço cristal.",
+      "is_missable": 0,
+      "is_spoiler": 0,
+      "name": "Crystal Weapon",
+      "name_pt": "Arma cristalizada",
+      "tip": "Use o caminho Crystal até +5 com o ember correto. Revise recursos antes de gastar slabs raras.",
+      "trophy_code": "dsr_crystal_weapon",
+      "type": "Bronze"
+    },
+    {
+      "description": "Adquira a melhor arma através do reforço relâmpago.",
+      "is_missable": 0,
+      "is_spoiler": 0,
+      "name": "Lightning Weapon",
+      "name_pt": "Arma elétrica",
+      "tip": "Leve uma arma Lightning até +5. Guarde titanites e slabs para não atrasar outros caminhos de upgrade.",
+      "trophy_code": "dsr_lightning_weapon",
+      "type": "Bronze"
+    },
+    {
+      "description": "Adquira a melhor arma através do reforço raw.",
+      "is_missable": 0,
+      "is_spoiler": 0,
+      "name": "Raw Weapon",
+      "name_pt": "Arma rústica",
+      "tip": "Use o caminho Raw até +5. É um upgrade simples, mas entra na checklist de embers e titanites.",
+      "trophy_code": "dsr_raw_weapon",
+      "type": "Bronze"
+    },
+    {
+      "description": "Adquira a melhor arma através do reforço mágico.",
+      "is_missable": 0,
+      "is_spoiler": 0,
+      "name": "Magic Weapon",
+      "name_pt": "Arma mágica",
+      "tip": "Leve uma arma Magic até +10 com Rickert e o ember necessário. Planeje blue titanite para não travar o cleanup.",
+      "trophy_code": "dsr_magic_weapon",
+      "type": "Bronze"
+    },
+    {
+      "description": "Adquira a melhor arma através do reforço encantado.",
+      "is_missable": 0,
+      "is_spoiler": 0,
+      "name": "Enchanted Weapon",
+      "name_pt": "Arma encantada",
+      "tip": "Leve uma arma Enchanted até +5. O ember e recursos específicos ficam em áreas avançadas.",
+      "trophy_code": "dsr_enchanted_weapon",
+      "type": "Bronze"
+    },
+    {
+      "description": "Adquira a melhor arma através do reforço divino.",
+      "is_missable": 0,
+      "is_spoiler": 0,
+      "name": "Divine Weapon",
+      "name_pt": "Arma divina",
+      "tip": "Leve uma arma Divine até +10 com Andre e os embers corretos. Também ajuda em Tomb of the Giants.",
+      "trophy_code": "dsr_divine_weapon",
+      "type": "Bronze"
+    },
+    {
+      "description": "Adquira a melhor arma através do reforço oculto.",
+      "is_missable": 0,
+      "is_spoiler": 0,
+      "name": "Occult Weapon",
+      "name_pt": "Arma oculta",
+      "tip": "Leve uma arma Occult até +5. Planeje Dark Ember e white titanite para não depender de retrabalho tardio.",
+      "trophy_code": "dsr_occult_weapon",
+      "type": "Bronze"
+    },
+    {
+      "description": "Adquira a melhor arma através do reforço de fogo.",
+      "is_missable": 0,
+      "is_spoiler": 0,
+      "name": "Fire Weapon",
+      "name_pt": "Arma ígnea",
+      "tip": "Leve uma arma Fire até +10 com Vamos. Separe red titanite para Fire e Chaos.",
+      "trophy_code": "dsr_fire_weapon",
+      "type": "Bronze"
+    },
+    {
+      "description": "Adquira a melhor arma através do reforço caos.",
+      "is_missable": 0,
+      "is_spoiler": 0,
+      "name": "Chaos Weapon",
+      "name_pt": "Arma caótica",
+      "tip": "Leve uma arma Chaos até +5 com Vamos e o ember correto. Organize red slabs antes do cleanup.",
+      "trophy_code": "dsr_chaos_weapon",
+      "type": "Bronze"
+    },
+    {
+      "description": "Acenda a chama de uma fogueira.",
+      "is_missable": 0,
+      "is_spoiler": 0,
+      "name": "Enkindle",
+      "name_pt": "Acendendo",
+      "tip": "Troféu inicial ao acender uma bonfire.",
+      "trophy_code": "dsr_enkindle",
+      "type": "Bronze"
+    },
+    {
+      "description": "Adquira o Frasco de Estus.",
+      "is_missable": 0,
+      "is_spoiler": 0,
+      "name": "Estus Flask",
+      "name_pt": "Frasco de Estus",
+      "tip": "Obtido no tutorial em Undead Asylum.",
+      "trophy_code": "dsr_estus_flask",
+      "type": "Bronze"
+    },
+    {
+      "description": "Chegue a Lordran.",
+      "is_missable": 0,
+      "is_spoiler": 1,
+      "name": "Reach Lordran",
+      "name_pt": "Chegada a Lordran",
+      "tip": "Troféu automático ao concluir o tutorial e chegar a Lordran.",
+      "trophy_code": "dsr_reach_lordran",
+      "type": "Bronze"
+    },
+    {
+      "description": "Toque o Bell of Awakening na Undead Church.",
+      "is_missable": 0,
+      "is_spoiler": 1,
+      "name": "Ring the Bell (Undead Church)",
+      "name_pt": "Soar do sino (Igreja dos Mortos-vivos)",
+      "tip": "Progresso principal ligado a Undead Parish e Bell Gargoyles.",
+      "trophy_code": "dsr_ring_the_bell_undead_church",
+      "type": "Bronze"
+    },
+    {
+      "description": "Toque o Bell of Awakening em Quelaag's Domain.",
+      "is_missable": 0,
+      "is_spoiler": 1,
+      "name": "Ring the Bell (Quelaag's Domain)",
+      "name_pt": "Soar do sino (Domínio de Quelaag)",
+      "tip": "Progresso principal em Quelaag's Domain. Revise Chaos Servant depois da luta.",
+      "trophy_code": "dsr_ring_the_bell_quelaags_domain",
+      "type": "Bronze"
+    },
+    {
+      "description": "Adquira o Rite of Kindling.",
+      "is_missable": 0,
+      "is_spoiler": 1,
+      "name": "Rite of Kindling",
+      "name_pt": "Rito de Acendimento",
+      "tip": "Obtido ao derrotar Pinwheel nas Catacombs; ajuda a fortalecer bonfires para áreas posteriores.",
+      "trophy_code": "dsr_rite_of_kindling",
+      "type": "Bronze"
+    },
+    {
+      "description": "Adquira a Art of Abysswalking.",
+      "is_missable": 0,
+      "is_spoiler": 1,
+      "name": "Art of Abysswalking",
+      "name_pt": "Arte de Trilhar o Abismo",
+      "tip": "Obtido com Great Grey Wolf Sif e necessário para The Abyss/Four Kings. A alma de Sif também entra em Knight's Honor.",
+      "trophy_code": "dsr_art_of_abysswalking",
+      "type": "Bronze"
+    },
+    {
+      "description": "Chegue a Anor Londo.",
+      "is_missable": 0,
+      "is_spoiler": 1,
+      "name": "Reach Anor Londo",
+      "name_pt": "Chegada a Anor Londo",
+      "tip": "Troféu de progresso ao chegar em Anor Londo, ponto importante para Lordvessel, pactos e armas raras.",
+      "trophy_code": "dsr_reach_anor_londo",
+      "type": "Prata"
+    },
+    {
+      "description": "Adquira o Lordvessel.",
+      "is_missable": 0,
+      "is_spoiler": 1,
+      "name": "Lordvessel",
+      "name_pt": "Urna do Lorde",
+      "tip": "Antes de entregar o Lordvessel, revise Darkwraith e Kaathe se quiser evitar perder esse pacto nesta run.",
+      "trophy_code": "dsr_lordvessel",
+      "type": "Prata"
+    },
+    {
+      "description": "Derrote Gravelord Nito.",
+      "is_missable": 0,
+      "is_spoiler": 1,
+      "name": "Defeat Gravelord Nito",
+      "name_pt": "Derrota de Nito Lorde das Tumbas",
+      "tip": "Chefe principal de Lord Soul. Entre em Gravelord Servant antes se ainda precisar do pacto ou milagre.",
+      "trophy_code": "dsr_defeat_gravelord_nito",
+      "type": "Prata"
+    },
+    {
+      "description": "Derrote Bed of Chaos.",
+      "is_missable": 0,
+      "is_spoiler": 1,
+      "name": "Defeat Bed of Chaos",
+      "name_pt": "Derrota do Berço do Caos",
+      "tip": "Chefe principal de Lost Izalith. Chaos Servant pode reduzir uma parte importante da rota e ajudar no planejamento.",
+      "trophy_code": "dsr_defeat_bed_of_chaos",
+      "type": "Prata"
+    },
+    {
+      "description": "Derrote Four Kings.",
+      "is_missable": 0,
+      "is_spoiler": 1,
+      "name": "Defeat the Four Kings",
+      "name_pt": "Derrota dos Quatro Reis",
+      "tip": "Necessário para progresso e Darkwraith. Se quiser o pacto, faça Four Kings antes de entregar o Lordvessel a Frampt.",
+      "trophy_code": "dsr_defeat_the_four_kings",
+      "type": "Prata"
+    },
+    {
+      "description": "Derrote Seath the Scaleless.",
+      "is_missable": 0,
+      "is_spoiler": 1,
+      "name": "Defeat Seath the Scaleless",
+      "name_pt": "Derrota de Seath, o Descamado",
+      "tip": "Chefe principal de Duke's Archives/Crystal Cave. Revise sorceries e o Moonlight Greatsword de tail cut antes de finalizar.",
+      "trophy_code": "dsr_defeat_seath_the_scaleless",
+      "type": "Prata"
+    },
+    {
+      "description": "Derrote Dark Sun Gwyndolin.",
+      "is_missable": 0,
+      "is_spoiler": 1,
+      "name": "Defeat Dark Sun Gwyndolin",
+      "name_pt": "Derrota de Gwyndolin Sol Negro",
+      "tip": "Chefe opcional ligado a Anor Londo, pacto Blade of the Darkmoon e milagres. Revise o pacto antes de hostilizar.",
+      "trophy_code": "dsr_defeat_the_dark_sun_gwyndolin",
+      "type": "Prata"
+    },
+    {
+      "description": "Derrote Crossbreed Priscilla.",
+      "is_missable": 0,
+      "is_spoiler": 1,
+      "name": "Defeat Crossbreed Priscilla",
+      "name_pt": "Derrota de Priscilla Mestiça",
+      "tip": "Chefe opcional de Painted World. Corte a cauda para Priscilla's Dagger antes de matar, pois ela entra em Knight's Honor.",
+      "trophy_code": "dsr_defeat_crossbreed_priscilla",
+      "type": "Prata"
+    }
+  ]
+}

@@ -1,0 +1,1098 @@
+{
+  "game": {
+    "avoid_if": "Evite se voce nao quer lidar com speedrun, Crushing ou cleanup de coletaveis em dois jogos.",
+    "before_you_start": "Entenda que a colecao tem uma platina compartilhada e exige trofeus dos dois jogos.",
+    "best_for": "Ideal para quem quer uma platina narrativa de acao-aventura com dois jogos completos e bastante checklist.",
+    "cleanup_advice": "Use chapter select para limpar coletaveis, conversas, trofeus especificos e preparar speedrun/Crushing.",
+    "cover_image": "https://cdn.cloudflare.steamstatic.com/steam/apps/1659420/library_600x900.jpg",
+    "coverage_level": "strong",
+    "created_at": "2026-05-09 19:53:32",
+    "difficulty": 5,
+    "difficulty_reason": "A dificuldade vem principalmente de Crushing, speedrun e trofeus especificos, alem do volume de dois jogos.",
+    "dlc_scope": "The Lost Legacy aparece como grupo separado na lista, mas faz parte do caminho para a platina compartilhada da colecao.",
+    "editorial_notes": "",
+    "editorial_review_status": null,
+    "editorial_status": "published",
+    "first_run_advice": "Curta as campanhas, mas use checklist de coletaveis se quiser reduzir chapter select depois.",
+    "grind_summary": "O peso esta em coletaveis, chapter select, trofeus especificos, Crushing e speedrun, nao em grind repetitivo.",
+    "guide_avoid": null,
+    "guide_best_moment": null,
+    "guide_dlc": null,
+    "guide_grind": null,
+    "guide_ideal": null,
+    "guide_online": null,
+    "guide_runs": null,
+    "image": "https://cdn.cloudflare.steamstatic.com/steam/apps/1659420/header.jpg",
+    "is_verified": 0,
+    "last_reviewed_at": "",
+    "missable": "Nao ha trofeus online nem multiplayer obrigatorio. A colecao permite chapter select/encounter select para cleanup, entao os objetivos sensiveis nao sao perdiveis definitivos, mas Crushing, speedrun, coletaveis, conversas, fotos, lockboxes e acoes especificas pedem planejamento. A platina e compartilhada entre Uncharted 4: A Thief's End e Uncharted: The Lost Legacy.",
+    "missable_summary": "Sem perda definitiva por causa de chapter select, mas trate speedrun, 70% de precisao, Crushing, coletaveis e objetivos situacionais como pontos de atencao.",
+    "name": "Uncharted: Legacy of Thieves Collection",
+    "online_summary": "Nao ha exigencia online na colecao; os trofeus multiplayer antigos nao fazem parte da lista Legacy of Thieves.",
+    "quality_warnings": "[]",
+    "reviewed_by": "",
+    "runs_summary": "A platina cobre Uncharted 4 e The Lost Legacy. Planeje campanha, chapter select, Crushing, speedrun e cleanup dos dois jogos.",
+    "slug": "uncharted-legacy-of-thieves-collection",
+    "time": "30-40 horas",
+    "time_bucket": "medium",
+    "time_max_hours": 40,
+    "time_min_hours": 30,
+    "time_reason": "A faixa de 30-40 horas considera Uncharted 4, The Lost Legacy, coletaveis, chapter select, Crushing, speedrun e cleanup.",
+    "time_sort_hours": 30,
+    "updated_at": "2026-06-27 02:36:58",
+    "verification_note": "Lista da Legacy of Thieves Collection cadastrada com base em fontes publicas; aguarda revisao editorial manual final.",
+    "verification_status": "review",
+    "walkthrough": null
+  },
+  "redirects": [],
+  "roadmaps": [
+    {
+      "content": "{\"title\":\"Complete coletáveis antes do endgame\",\"focus\":\"\",\"objective\":\"Jogue Uncharted 4: A Thief's End naturalmente, coletando tesouros, journal entries, journal notes e conversas opcionais quando possivel.\",\"actions\":[],\"warning\":\"\",\"result\":\"\"}",
+      "step_order": 1
+    },
+    {
+      "content": "{\"title\":\"Limpe coletáveis por seleção de capítulos\",\"focus\":\"\",\"objective\":\"Limpe Uncharted 4 por chapter select/encounter select, incluindo tesouros, journal entries, optional conversations, armas e trofeus situacionais de capitulos especificos.\",\"actions\":[],\"warning\":\"\",\"result\":\"\"}",
+      "step_order": 2
+    },
+    {
+      "content": "{\"title\":\"Prossiga pela rota planejada\",\"focus\":\"\",\"objective\":\"Complete Uncharted 4 em Crushing e prepare a speedrun de ate 6 horas conforme a estrategia escolhida, lembrando que cheats liberados depois da campanha ajudam e nao removem trofeus.\",\"actions\":[],\"warning\":\"\",\"result\":\"\"}",
+      "step_order": 3
+    },
+    {
+      "content": "{\"title\":\"Fechamento e revisão final\",\"focus\":\"\",\"objective\":\"Jogue Uncharted: The Lost Legacy como parte obrigatoria da platina compartilhada, coletando tesouros, fotos, lockboxes, Hoysala tokens e conversas.\",\"actions\":[],\"warning\":\"\",\"result\":\"\"}",
+      "step_order": 4
+    },
+    {
+      "content": "{\"title\":\"Limpe coletáveis por seleção de capítulos\",\"focus\":\"\",\"objective\":\"Limpe The Lost Legacy por chapter select, fechando coletaveis, stealth, combate, veiculo, puzzles e trofeus especificos de capitulos.\",\"actions\":[],\"warning\":\"\",\"result\":\"\"}",
+      "step_order": 5
+    },
+    {
+      "content": "{\"title\":\"Fechamento e revisão final\",\"focus\":\"\",\"objective\":\"Revise ambos os jogos, confirme que os 49 trofeus de The Lost Legacy foram obtidos, conclua Don't Ruin The Moment e desbloqueie a platina compartilhada.\",\"actions\":[],\"warning\":\"\",\"result\":\"\"}",
+      "step_order": 6
+    }
+  ],
+  "schemaVersion": 1,
+  "seedExtras": {
+    "aliases": [],
+    "attentionPoints": [],
+    "checklist": [],
+    "faq": [],
+    "note": "Campos exportados para auditoria. O SQLite atual nao possui colunas nativas para todos esses extras; a importacao preserva o que o banco suporta.",
+    "quickDecision": null,
+    "seo": {},
+    "tags": []
+  },
+  "slug": "uncharted-legacy-of-thieves-collection",
+  "trophies": [
+    {
+      "description": "Collect all the Trophies",
+      "is_missable": 0,
+      "is_spoiler": 0,
+      "name": "A Thief's Legacy",
+      "name_pt": "",
+      "tip": "[Colecao] Platina compartilhada: exige todos os trofeus de Uncharted 4 e tambem os 49 trofeus de The Lost Legacy.",
+      "trophy_code": "uclot_a_thiefs_legacy",
+      "type": "Platina"
+    },
+    {
+      "description": "Complete the game in explorer mode",
+      "is_missable": 0,
+      "is_spoiler": 0,
+      "name": "Charted! - Explorer",
+      "name_pt": "",
+      "tip": "[Uncharted 4] Terminar em dificuldade superior tambem libera as dificuldades inferiores.",
+      "trophy_code": "uclot_u4_charted_explorer",
+      "type": "Bronze"
+    },
+    {
+      "description": "Complete the game in light mode",
+      "is_missable": 0,
+      "is_spoiler": 0,
+      "name": "Charted! - Light",
+      "name_pt": "",
+      "tip": "[Uncharted 4] Pode acumular com Hard ou Crushing.",
+      "trophy_code": "uclot_u4_charted_light",
+      "type": "Bronze"
+    },
+    {
+      "description": "Complete the game in moderate mode",
+      "is_missable": 0,
+      "is_spoiler": 0,
+      "name": "Charted! - Moderate",
+      "name_pt": "",
+      "tip": "[Uncharted 4] Pode acumular com dificuldades mais altas.",
+      "trophy_code": "uclot_u4_charted_moderate",
+      "type": "Bronze"
+    },
+    {
+      "description": "Complete the game in hard mode",
+      "is_missable": 0,
+      "is_spoiler": 0,
+      "name": "Charted! - Hard",
+      "name_pt": "",
+      "tip": "[Uncharted 4] Crushing tambem libera este trofeu.",
+      "trophy_code": "uclot_u4_charted_hard",
+      "type": "Bronze"
+    },
+    {
+      "description": "Complete the game in crushing mode",
+      "is_missable": 0,
+      "is_spoiler": 0,
+      "name": "Charted! - Crushing",
+      "name_pt": "",
+      "tip": "[Uncharted 4] Planeje a run de Crushing; cheats liberados apos finalizar a campanha podem reduzir bastante o risco.",
+      "trophy_code": "uclot_u4_charted_crushing",
+      "type": "Prata"
+    },
+    {
+      "description": "Complete the game in 6 hours or less",
+      "is_missable": 0,
+      "is_spoiler": 0,
+      "name": "Charted! - Speedrun",
+      "name_pt": "",
+      "tip": "[Uncharted 4] Trofeu de planejamento: pule cutscenes, use Explorer, auto-aim e cheats quando disponiveis.",
+      "trophy_code": "uclot_u4_charted_speedrun",
+      "type": "Prata"
+    },
+    {
+      "description": "Find a Treasure",
+      "is_missable": 0,
+      "is_spoiler": 0,
+      "name": "First Treasure",
+      "name_pt": "",
+      "tip": "[Uncharted 4] Primeiro marco de tesouros; todo progresso fica disponivel para cleanup.",
+      "trophy_code": "uclot_u4_first_treasure",
+      "type": "Bronze"
+    },
+    {
+      "description": "Find 50 treasures",
+      "is_missable": 0,
+      "is_spoiler": 0,
+      "name": "Treasure Hunter",
+      "name_pt": "",
+      "tip": "[Uncharted 4] Use chapter select para fechar tesouros esquecidos.",
+      "trophy_code": "uclot_u4_treasure_hunter",
+      "type": "Bronze"
+    },
+    {
+      "description": "Find all Treasures",
+      "is_missable": 0,
+      "is_spoiler": 0,
+      "name": "Treasure Master",
+      "name_pt": "",
+      "tip": "[Uncharted 4] Exige todos os tesouros; trate como checklist principal de coletaveis.",
+      "trophy_code": "uclot_u4_treasure_master",
+      "type": "Prata"
+    },
+    {
+      "description": "Find the Strange Relics",
+      "is_missable": 0,
+      "is_spoiler": 0,
+      "name": "Relic Finder",
+      "name_pt": "",
+      "tip": "[Uncharted 4] Os Strange Relics contam como tesouros e ficam em capitulos especificos.",
+      "trophy_code": "uclot_u4_relic_finder",
+      "type": "Bronze"
+    },
+    {
+      "description": "Find a Journal Entry",
+      "is_missable": 0,
+      "is_spoiler": 0,
+      "name": "Jot This Down",
+      "name_pt": "",
+      "tip": "[Uncharted 4] Primeiro journal entry; pode ser limpo por chapter select.",
+      "trophy_code": "uclot_u4_jot_this_down",
+      "type": "Bronze"
+    },
+    {
+      "description": "Find all Journal Entries",
+      "is_missable": 0,
+      "is_spoiler": 0,
+      "name": "Lost Art of Journaling",
+      "name_pt": "",
+      "tip": "[Uncharted 4] Revise os contadores por capitulo para completar todos os journal entries.",
+      "trophy_code": "uclot_u4_lost_art_of_journaling",
+      "type": "Bronze"
+    },
+    {
+      "description": "Find a Journal Note",
+      "is_missable": 0,
+      "is_spoiler": 0,
+      "name": "Take a Note",
+      "name_pt": "",
+      "tip": "[Uncharted 4] Primeiro journal note; progresso salvo para cleanup.",
+      "trophy_code": "uclot_u4_take_a_note",
+      "type": "Bronze"
+    },
+    {
+      "description": "Find All Journal Notes",
+      "is_missable": 0,
+      "is_spoiler": 0,
+      "name": "Lost History",
+      "name_pt": "",
+      "tip": "[Uncharted 4] Feche os journal notes pelo contador de chapter select.",
+      "trophy_code": "uclot_u4_lost_history",
+      "type": "Bronze"
+    },
+    {
+      "description": "Defeat 20 enemies with headshots",
+      "is_missable": 0,
+      "is_spoiler": 0,
+      "name": "Head of the Class!",
+      "name_pt": "",
+      "tip": "[Uncharted 4] Deve vir naturalmente; encounter select ajuda a completar.",
+      "trophy_code": "uclot_u4_head_of_the_class",
+      "type": "Bronze"
+    },
+    {
+      "description": "Defeat 50 enemies with headshots",
+      "is_missable": 0,
+      "is_spoiler": 0,
+      "name": "You Have a Head for this Business",
+      "name_pt": "",
+      "tip": "[Uncharted 4] Continue priorizando headshots em encontros ou farmando por checkpoint.",
+      "trophy_code": "uclot_u4_head_for_business",
+      "type": "Bronze"
+    },
+    {
+      "description": "Perform 20 headshots from the rope",
+      "is_missable": 0,
+      "is_spoiler": 0,
+      "name": "Hangman's Bullet",
+      "name_pt": "",
+      "tip": "[Uncharted 4] Bom para farmar em encounter select com checkpoint restart.",
+      "trophy_code": "uclot_u4_hangmans_bullet",
+      "type": "Bronze"
+    },
+    {
+      "description": "Stealth take-down 5 enemies",
+      "is_missable": 0,
+      "is_spoiler": 0,
+      "name": "Stealth First Ask Questions Later",
+      "name_pt": "",
+      "tip": "[Uncharted 4] Objetivo simples de stealth; pode vir naturalmente.",
+      "trophy_code": "uclot_u4_stealth_first",
+      "type": "Bronze"
+    },
+    {
+      "description": "Stealth take-down 30 enemies",
+      "is_missable": 0,
+      "is_spoiler": 0,
+      "name": "Shh Sleep Now",
+      "name_pt": "",
+      "tip": "[Uncharted 4] Farmavel em encounter select se nao vier durante a campanha.",
+      "trophy_code": "uclot_u4_shh_sleep_now",
+      "type": "Bronze"
+    },
+    {
+      "description": "Perform 30 vertical stealth takedowns",
+      "is_missable": 0,
+      "is_spoiler": 0,
+      "name": "I Thought I Heard Something",
+      "name_pt": "",
+      "tip": "[Uncharted 4] Use encontros com inimigos abaixo de saliencias e reinicie checkpoint.",
+      "trophy_code": "uclot_u4_i_thought_i_heard_something",
+      "type": "Bronze"
+    },
+    {
+      "description": "Defeat 50 enemies from-the-hip or blind-firing",
+      "is_missable": 0,
+      "is_spoiler": 0,
+      "name": "Run-and-Gunner",
+      "name_pt": "",
+      "tip": "[Uncharted 4] Nao mire com L2; use hip-fire ou blind-fire.",
+      "trophy_code": "uclot_u4_run_and_gunner",
+      "type": "Bronze"
+    },
+    {
+      "description": "Defeat 10 enemies in a row, alternating gunplay and hand-to-hand",
+      "is_missable": 0,
+      "is_spoiler": 0,
+      "name": "Leapfrog",
+      "name_pt": "",
+      "tip": "[Uncharted 4] Alterne uma eliminacao por arma e uma por melee ate completar a sequencia.",
+      "trophy_code": "uclot_u4_leapfrog",
+      "type": "Bronze"
+    },
+    {
+      "description": "Defeat 100 enemies in a row without dying in combat",
+      "is_missable": 0,
+      "is_spoiler": 0,
+      "name": "Unstoppable!",
+      "name_pt": "",
+      "tip": "[Uncharted 4] Pode vir na speedrun; se faltar, use encontros com respawn ou checkpoint seguro.",
+      "trophy_code": "uclot_u4_unstoppable",
+      "type": "Prata"
+    },
+    {
+      "description": "Complete game with 70% or higher shot accuracy",
+      "is_missable": 0,
+      "is_spoiler": 0,
+      "name": "Sharpshooter",
+      "name_pt": "",
+      "tip": "[Uncharted 4] Trofeu de atencao: auto-aim, armas precisas e uma run limpa ajudam a manter 70%.",
+      "trophy_code": "uclot_u4_sharpshooter",
+      "type": "Bronze"
+    },
+    {
+      "description": "Defeat enemies with a pistol, machine gun, and grenade, in that order, in 15 seconds",
+      "is_missable": 0,
+      "is_spoiler": 0,
+      "name": "Rushing Roulette",
+      "name_pt": "",
+      "tip": "[Uncharted 4] Faca exatamente a ordem pistol, machine gun e grenade em um encontro com inimigos proximos.",
+      "trophy_code": "uclot_u4_rushing_roulette",
+      "type": "Bronze"
+    },
+    {
+      "description": "Get through Scotland cemetery combat encounter without killing or being seen",
+      "is_missable": 0,
+      "is_spoiler": 0,
+      "name": "Ghost in the Cemetery",
+      "name_pt": "",
+      "tip": "[Uncharted 4] Objetivo de stealth do capitulo 8; reinicie checkpoint se for visto.",
+      "trophy_code": "uclot_u4_ghost_in_the_cemetery",
+      "type": "Prata"
+    },
+    {
+      "description": "Make 10 enemies drop their grenades",
+      "is_missable": 0,
+      "is_spoiler": 0,
+      "name": "Butterfingers",
+      "name_pt": "",
+      "tip": "[Uncharted 4] Jogue em Crushing para aumentar granadas e atire no inimigo enquanto ele prepara o arremesso.",
+      "trophy_code": "uclot_u4_butterfingers",
+      "type": "Bronze"
+    },
+    {
+      "description": "Defeat 4 enemies with the same explosion (all explosive items and weapons apply)",
+      "is_missable": 0,
+      "is_spoiler": 0,
+      "name": "Boom County",
+      "name_pt": "",
+      "tip": "[Uncharted 4] Use encounter select e mire em grupos compactos com explosivos.",
+      "trophy_code": "uclot_u4_boom_county",
+      "type": "Bronze"
+    },
+    {
+      "description": "Defeat 10 enemies in 60 seconds with the China Lake Grenade Launcher",
+      "is_missable": 0,
+      "is_spoiler": 0,
+      "name": "Defeat 10 in 60 - China Lake GL",
+      "name_pt": "",
+      "tip": "[Uncharted 4] Fica bem mais simples com weapon select e infinite ammo apos terminar a campanha.",
+      "trophy_code": "uclot_u4_china_lake_gl",
+      "type": "Bronze"
+    },
+    {
+      "description": "Destroy 10 vehicles while being dragged from the rope",
+      "is_missable": 0,
+      "is_spoiler": 0,
+      "name": "Hang Tough!",
+      "name_pt": "",
+      "tip": "[Uncharted 4] Repita o inicio do encontro de comboio ate somar os veiculos.",
+      "trophy_code": "uclot_u4_hang_tough",
+      "type": "Bronze"
+    },
+    {
+      "description": "Defeat enemies with a stealth attack, melee attack, headshot, and explosives, in that order, in 15 seconds",
+      "is_missable": 0,
+      "is_spoiler": 0,
+      "name": "Run the Table",
+      "name_pt": "",
+      "tip": "[Uncharted 4] Sequencia estrita e rapida: stealth, melee, headshot e explosivo.",
+      "trophy_code": "uclot_u4_run_the_table",
+      "type": "Prata"
+    },
+    {
+      "description": "Defeat 5 armored enemies with melee only",
+      "is_missable": 0,
+      "is_spoiler": 0,
+      "name": "Hitting a Brick Wall",
+      "name_pt": "",
+      "tip": "[Uncharted 4] Remova o capacete com salto/melee e finalize sem usar tiros.",
+      "trophy_code": "uclot_u4_hitting_a_brick_wall",
+      "type": "Bronze"
+    },
+    {
+      "description": "After being marooned, leave everyone alive until the Treasury",
+      "is_missable": 0,
+      "is_spoiler": 1,
+      "name": "Peaceful Resolution",
+      "name_pt": "",
+      "tip": "[Uncharted 4] Trofeu sensivel dos capitulos 13 e 14: avance sem matar e reinicie se algo sair errado.",
+      "trophy_code": "uclot_u4_peaceful_resolution",
+      "type": "Prata"
+    },
+    {
+      "description": "Perform 10 combo buddy takedowns",
+      "is_missable": 0,
+      "is_spoiler": 0,
+      "name": "Wingman",
+      "name_pt": "",
+      "tip": "[Uncharted 4] Use lutas com aliado e ataque o mesmo inimigo que ele estiver golpeando.",
+      "trophy_code": "uclot_u4_wingman",
+      "type": "Bronze"
+    },
+    {
+      "description": "Pull 20 enemies over when hanging from a ledge",
+      "is_missable": 0,
+      "is_spoiler": 0,
+      "name": "Cliffhanger",
+      "name_pt": "",
+      "tip": "[Uncharted 4] Pode ser farmado por checkpoint em encounter select.",
+      "trophy_code": "uclot_u4_cliffhanger",
+      "type": "Bronze"
+    },
+    {
+      "description": "Defeat 1000 enemies",
+      "is_missable": 0,
+      "is_spoiler": 0,
+      "name": "Ludonarrative Dissonance",
+      "name_pt": "",
+      "tip": "[Uncharted 4] Soma campanha e encounter select; deve vir durante runs e cleanup de combate.",
+      "trophy_code": "uclot_u4_ludonarrative_dissonance",
+      "type": "Ouro"
+    },
+    {
+      "description": "Play with the lemur in the market and let it steal your apple",
+      "is_missable": 0,
+      "is_spoiler": 0,
+      "name": "Don't Feed the Animals",
+      "name_pt": "",
+      "tip": "[Uncharted 4] Acao especifica do mercado no capitulo 11.",
+      "trophy_code": "uclot_u4_dont_feed_the_animals",
+      "type": "Bronze"
+    },
+    {
+      "description": "Use every gun",
+      "is_missable": 0,
+      "is_spoiler": 0,
+      "name": "I Accidentally All the Guns",
+      "name_pt": "",
+      "tip": "[Uncharted 4] Inclui armas de bonus e armas encontradas em encontros; acompanhe como checklist separado.",
+      "trophy_code": "uclot_u4_all_the_guns",
+      "type": "Bronze"
+    },
+    {
+      "description": "Knock over all rock cairns in Madagascar",
+      "is_missable": 0,
+      "is_spoiler": 0,
+      "name": "Not a Cairn in the World",
+      "name_pt": "",
+      "tip": "[Uncharted 4] Todos os cairns ficam em Madagascar no capitulo 10.",
+      "trophy_code": "uclot_u4_not_a_cairn",
+      "type": "Bronze"
+    },
+    {
+      "description": "Climb to the very top of the Clocktower in the City",
+      "is_missable": 0,
+      "is_spoiler": 0,
+      "name": "I Can See My House From Here!",
+      "name_pt": "",
+      "tip": "[Uncharted 4] Acao especifica do capitulo 11 antes de sair da torre.",
+      "trophy_code": "uclot_u4_clocktower",
+      "type": "Bronze"
+    },
+    {
+      "description": "Solve the first Trial in Scotland in 10 moves or less",
+      "is_missable": 0,
+      "is_spoiler": 0,
+      "name": "Trials and Tribulations",
+      "name_pt": "",
+      "tip": "[Uncharted 4] Reinicie checkpoint quando entender a solucao do puzzle.",
+      "trophy_code": "uclot_u4_trials_and_tribulations",
+      "type": "Bronze"
+    },
+    {
+      "description": "Beat the best score in the retro videogame",
+      "is_missable": 0,
+      "is_spoiler": 1,
+      "name": "Best Score!",
+      "name_pt": "",
+      "tip": "[Uncharted 4] Feito no epilogo; pegue frutas, vida extra e termine rapido.",
+      "trophy_code": "uclot_u4_best_score",
+      "type": "Bronze"
+    },
+    {
+      "description": "Listen to all optional conversations in game",
+      "is_missable": 0,
+      "is_spoiler": 0,
+      "name": "Gift of Gab",
+      "name_pt": "",
+      "tip": "[Uncharted 4] Use checklist de conversas opcionais e confira contadores por capitulo.",
+      "trophy_code": "uclot_u4_gift_of_gab",
+      "type": "Prata"
+    },
+    {
+      "description": "Play in the ocean near the sunken ship",
+      "is_missable": 0,
+      "is_spoiler": 0,
+      "name": "Marco Polo Returns!",
+      "name_pt": "",
+      "tip": "[Uncharted 4] Acao especifica do capitulo 12.",
+      "trophy_code": "uclot_u4_marco_polo_returns",
+      "type": "Bronze"
+    },
+    {
+      "description": "Just prior to City Chase, stand perfectly still for 30 seconds (stage demo fail)",
+      "is_missable": 0,
+      "is_spoiler": 0,
+      "name": "Stage Fright",
+      "name_pt": "",
+      "tip": "[Uncharted 4] Pare por 30 segundos no ponto certo antes da perseguição da cidade.",
+      "trophy_code": "uclot_u4_stage_fright",
+      "type": "Bronze"
+    },
+    {
+      "description": "Drive away in the jeep with Elena without killing any enemies",
+      "is_missable": 0,
+      "is_spoiler": 1,
+      "name": "Just Floor It!",
+      "name_pt": "",
+      "tip": "[Uncharted 4] Use stealth e dificuldade baixa para entrar no jeep sem mortes.",
+      "trophy_code": "uclot_u4_just_floor_it",
+      "type": "Bronze"
+    },
+    {
+      "description": "Get three dolphins to follow the boat",
+      "is_missable": 0,
+      "is_spoiler": 0,
+      "name": "On Porpoise",
+      "name_pt": "",
+      "tip": "[Uncharted 4] Acao especifica do capitulo 12 com o barco.",
+      "trophy_code": "uclot_u4_on_porpoise",
+      "type": "Bronze"
+    },
+    {
+      "description": "Hit all targets in the attic with the toy gun",
+      "is_missable": 0,
+      "is_spoiler": 0,
+      "name": "Still Got It!",
+      "name_pt": "",
+      "tip": "[Uncharted 4] Acao especifica do capitulo 4.",
+      "trophy_code": "uclot_u4_still_got_it",
+      "type": "Bronze"
+    },
+    {
+      "description": "Take a photo of Sully",
+      "is_missable": 0,
+      "is_spoiler": 0,
+      "name": "Glamour Shot",
+      "name_pt": "",
+      "tip": "[Uncharted 4] No capitulo 11, fotografe Sully em vez do objetivo principal.",
+      "trophy_code": "uclot_u4_glamour_shot",
+      "type": "Bronze"
+    },
+    {
+      "description": "Perfectly parry Rafe in the sword fight without getting slashed or stabbed",
+      "is_missable": 0,
+      "is_spoiler": 1,
+      "name": "Swordmaster",
+      "name_pt": "",
+      "tip": "[Uncharted 4] Trofeu do duelo final; use encounter select, Explorer e slow motion se precisar.",
+      "trophy_code": "uclot_u4_swordmaster",
+      "type": "Prata"
+    },
+    {
+      "description": "Collect all the trophies in Uncharted™: The Lost Legacy",
+      "is_missable": 0,
+      "is_spoiler": 0,
+      "name": "Don't Ruin The Moment",
+      "name_pt": "",
+      "tip": "[Colecao] Este ouro deixa claro que The Lost Legacy e obrigatorio para a platina compartilhada.",
+      "trophy_code": "uclot_u4_dont_ruin_the_moment",
+      "type": "Ouro"
+    },
+    {
+      "description": "Complete the Game",
+      "is_missable": 0,
+      "is_spoiler": 1,
+      "name": "Legacy Found!",
+      "name_pt": "",
+      "tip": "[The Lost Legacy] Complete a campanha em qualquer dificuldade.",
+      "trophy_code": "uclot_tll_legacy_found",
+      "type": "Prata"
+    },
+    {
+      "description": "Complete the Game in Crushing mode",
+      "is_missable": 0,
+      "is_spoiler": 1,
+      "name": "Progress Demands Sacrifice",
+      "name_pt": "",
+      "tip": "[The Lost Legacy] Crushing tambem faz parte do caminho obrigatorio da colecao.",
+      "trophy_code": "uclot_tll_progress_demands_sacrifice",
+      "type": "Ouro"
+    },
+    {
+      "description": "Find 5 treasures",
+      "is_missable": 0,
+      "is_spoiler": 0,
+      "name": "Casual Treasure Hunter",
+      "name_pt": "",
+      "tip": "[The Lost Legacy] Primeiro marco de tesouros.",
+      "trophy_code": "uclot_tll_casual_treasure_hunter",
+      "type": "Bronze"
+    },
+    {
+      "description": "Find 35 treasures",
+      "is_missable": 0,
+      "is_spoiler": 0,
+      "name": "Hardcore Treasure Hunter",
+      "name_pt": "",
+      "tip": "[The Lost Legacy] Continue acompanhando tesouros por capitulo.",
+      "trophy_code": "uclot_tll_hardcore_treasure_hunter",
+      "type": "Bronze"
+    },
+    {
+      "description": "Find all the treasures",
+      "is_missable": 0,
+      "is_spoiler": 0,
+      "name": "Collector of Antiquities",
+      "name_pt": "",
+      "tip": "[The Lost Legacy] Checklist completo de tesouros; chapter select permite limpeza.",
+      "trophy_code": "uclot_tll_collector_of_antiquities",
+      "type": "Prata"
+    },
+    {
+      "description": "Ask Skeleseer a question",
+      "is_missable": 0,
+      "is_spoiler": 0,
+      "name": "Shake For Your Fortune",
+      "name_pt": "",
+      "tip": "[The Lost Legacy] Trofeu situacional ligado a um easter egg.",
+      "trophy_code": "uclot_tll_shake_for_your_fortune",
+      "type": "Bronze"
+    },
+    {
+      "description": "Find a Hoysala token",
+      "is_missable": 0,
+      "is_spoiler": 0,
+      "name": "Token For Granted",
+      "name_pt": "",
+      "tip": "[The Lost Legacy] Primeiro Hoysala token.",
+      "trophy_code": "uclot_tll_token_for_granted",
+      "type": "Bronze"
+    },
+    {
+      "description": "Find all the Hoysala tokens and obtain the Queen's Ruby",
+      "is_missable": 0,
+      "is_spoiler": 0,
+      "name": "Yas Queen",
+      "name_pt": "",
+      "tip": "[The Lost Legacy] Complete a rota dos Hoysala tokens e pegue a Queen's Ruby.",
+      "trophy_code": "uclot_tll_yas_queen",
+      "type": "Prata"
+    },
+    {
+      "description": "Open 5 lockboxes",
+      "is_missable": 0,
+      "is_spoiler": 0,
+      "name": "Five Finger Discount",
+      "name_pt": "",
+      "tip": "[The Lost Legacy] Primeiro marco de lockboxes.",
+      "trophy_code": "uclot_tll_five_finger_discount",
+      "type": "Bronze"
+    },
+    {
+      "description": "Open every lockbox",
+      "is_missable": 0,
+      "is_spoiler": 0,
+      "name": "Picks or It Didn't Happen",
+      "name_pt": "",
+      "tip": "[The Lost Legacy] Abra todas as lockboxes; use chapter select para limpar.",
+      "trophy_code": "uclot_tll_picks_or_it_didnt_happen",
+      "type": "Bronze"
+    },
+    {
+      "description": "Take a photo at 5 photo opportunities",
+      "is_missable": 0,
+      "is_spoiler": 0,
+      "name": "#nofilter",
+      "name_pt": "",
+      "tip": "[The Lost Legacy] Primeiro marco de fotos opcionais.",
+      "trophy_code": "uclot_tll_nofilter",
+      "type": "Bronze"
+    },
+    {
+      "description": "Take a photo at all the photo opportunities",
+      "is_missable": 0,
+      "is_spoiler": 0,
+      "name": "Pics or It Didn't Happen",
+      "name_pt": "",
+      "tip": "[The Lost Legacy] Complete todas as oportunidades de foto.",
+      "trophy_code": "uclot_tll_pics_or_it_didnt_happen",
+      "type": "Prata"
+    },
+    {
+      "description": "Listen to all optional conversations",
+      "is_missable": 0,
+      "is_spoiler": 1,
+      "name": "Getting to Know You",
+      "name_pt": "",
+      "tip": "[The Lost Legacy] Acompanhe conversas opcionais junto dos coletaveis.",
+      "trophy_code": "uclot_tll_getting_to_know_you",
+      "type": "Prata"
+    },
+    {
+      "description": "Use every gun in the game",
+      "is_missable": 0,
+      "is_spoiler": 0,
+      "name": "Si Vis Pacem Para Bellum",
+      "name_pt": "",
+      "tip": "[The Lost Legacy] Use checklist de armas durante campanha e encounter select.",
+      "trophy_code": "uclot_tll_si_vis_pacem",
+      "type": "Bronze"
+    },
+    {
+      "description": "Defeat an enemy with the last bullet in your handgun clip",
+      "is_missable": 0,
+      "is_spoiler": 0,
+      "name": "Were You Counting?",
+      "name_pt": "",
+      "tip": "[The Lost Legacy] Prepare um inimigo fraco e finalize com o ultimo tiro do pente.",
+      "trophy_code": "uclot_tll_were_you_counting",
+      "type": "Bronze"
+    },
+    {
+      "description": "Defeat 10 enemies with headshots in a row",
+      "is_missable": 0,
+      "is_spoiler": 0,
+      "name": "10 Up, 10 Down",
+      "name_pt": "",
+      "tip": "[The Lost Legacy] Use dificuldade baixa e mira cuidadosa para manter a sequencia.",
+      "trophy_code": "uclot_tll_10_up_10_down",
+      "type": "Prata"
+    },
+    {
+      "description": "Defeat 5 consecutive enemies with the silenced pistol without being detected",
+      "is_missable": 0,
+      "is_spoiler": 0,
+      "name": "Frazer. Chloe Frazer.",
+      "name_pt": "",
+      "tip": "[The Lost Legacy] Faca a sequencia em stealth com a pistola silenciada.",
+      "trophy_code": "uclot_tll_frazer_chloe_frazer",
+      "type": "Bronze"
+    },
+    {
+      "description": "Defeat 20 enemies firing from-the-hip",
+      "is_missable": 0,
+      "is_spoiler": 0,
+      "name": "Itchy Trigger Finger",
+      "name_pt": "",
+      "tip": "[The Lost Legacy] Farmavel em encounter select sem mirar.",
+      "trophy_code": "uclot_tll_itchy_trigger_finger",
+      "type": "Bronze"
+    },
+    {
+      "description": "Defeat 20 enemies blind-firing from cover",
+      "is_missable": 0,
+      "is_spoiler": 0,
+      "name": "Stay and Pray",
+      "name_pt": "",
+      "tip": "[The Lost Legacy] Use cover e atire sem mirar.",
+      "trophy_code": "uclot_tll_stay_and_pray",
+      "type": "Bronze"
+    },
+    {
+      "description": "Stealth take-down 10 armored enemies with melee by first removing their helmets without being detected",
+      "is_missable": 0,
+      "is_spoiler": 0,
+      "name": "Tip of the Hat",
+      "name_pt": "",
+      "tip": "[The Lost Legacy] Exige stealth em inimigos blindados; remova capacetes antes do takedown.",
+      "trophy_code": "uclot_tll_tip_of_the_hat",
+      "type": "Bronze"
+    },
+    {
+      "description": "Defeat 20 enemies with C4",
+      "is_missable": 0,
+      "is_spoiler": 0,
+      "name": "Royal Demolitionist",
+      "name_pt": "",
+      "tip": "[The Lost Legacy] Acumule abates com C4 em encounters.",
+      "trophy_code": "uclot_tll_royal_demolitionist",
+      "type": "Bronze"
+    },
+    {
+      "description": "Mark 30 enemies",
+      "is_missable": 0,
+      "is_spoiler": 0,
+      "name": "On the Grid",
+      "name_pt": "",
+      "tip": "[The Lost Legacy] Marque inimigos antes de iniciar combate sempre que possivel.",
+      "trophy_code": "uclot_tll_on_the_grid",
+      "type": "Bronze"
+    },
+    {
+      "description": "Open a lockbox with enemies nearby",
+      "is_missable": 0,
+      "is_spoiler": 0,
+      "name": "I Was Never Here",
+      "name_pt": "",
+      "tip": "[The Lost Legacy] Abra uma lockbox sem limpar totalmente a area.",
+      "trophy_code": "uclot_tll_i_was_never_here",
+      "type": "Bronze"
+    },
+    {
+      "description": "Defeat 4 enemies with one C4 detonation",
+      "is_missable": 0,
+      "is_spoiler": 0,
+      "name": "C-Phoria",
+      "name_pt": "",
+      "tip": "[The Lost Legacy] Agrupe inimigos e detone C4 em um encontro favoravel.",
+      "trophy_code": "uclot_tll_c_phoria",
+      "type": "Bronze"
+    },
+    {
+      "description": "Stealth take-down 15 enemies in a row",
+      "is_missable": 0,
+      "is_spoiler": 0,
+      "name": "Just the Wind",
+      "name_pt": "",
+      "tip": "[The Lost Legacy] Mantenha stealth e reinicie se quebrar a sequencia.",
+      "trophy_code": "uclot_tll_just_the_wind",
+      "type": "Prata"
+    },
+    {
+      "description": "Break stealth and re-enter stealth successfully",
+      "is_missable": 0,
+      "is_spoiler": 0,
+      "name": "Now You See Me...",
+      "name_pt": "",
+      "tip": "[The Lost Legacy] Seja visto, escape e volte ao estado de stealth.",
+      "trophy_code": "uclot_tll_now_you_see_me",
+      "type": "Bronze"
+    },
+    {
+      "description": "Perform 10 combo partner takedowns",
+      "is_missable": 0,
+      "is_spoiler": 0,
+      "name": "Wingwoman",
+      "name_pt": "",
+      "tip": "[The Lost Legacy] Ataque inimigos junto da parceira para contar combos.",
+      "trophy_code": "uclot_tll_wingwoman",
+      "type": "Bronze"
+    },
+    {
+      "description": "Make it to the outskirts of Halebidu in Chapter 5 without using a firearm or explosive",
+      "is_missable": 0,
+      "is_spoiler": 1,
+      "name": "The Way of the Warrior",
+      "name_pt": "",
+      "tip": "[The Lost Legacy] Trofeu de atencao: ate chegar ao ponto exigido do capitulo 5, use apenas stealth/melee.",
+      "trophy_code": "uclot_tll_way_of_the_warrior",
+      "type": "Ouro"
+    },
+    {
+      "description": "Defeat 5 enemies, each one taking damage from a handgun, long-gun, and melee",
+      "is_missable": 0,
+      "is_spoiler": 0,
+      "name": "The Sampler",
+      "name_pt": "",
+      "tip": "[The Lost Legacy] Cada inimigo precisa receber os tres tipos de dano.",
+      "trophy_code": "uclot_tll_the_sampler",
+      "type": "Bronze"
+    },
+    {
+      "description": "Defeat enemies with the vehicle, long-gun, melee, and grenade, in that order, in 20 seconds",
+      "is_missable": 0,
+      "is_spoiler": 0,
+      "name": "Make an Entrance",
+      "name_pt": "",
+      "tip": "[The Lost Legacy] Sequencia rapida e em ordem: veiculo, long-gun, melee e grenade.",
+      "trophy_code": "uclot_tll_make_an_entrance",
+      "type": "Prata"
+    },
+    {
+      "description": "Defeat 30 enemies with gold weapons",
+      "is_missable": 0,
+      "is_spoiler": 0,
+      "name": "Bring in the Big Guns",
+      "name_pt": "",
+      "tip": "[The Lost Legacy] Use armas douradas quando encontra-las ou via encounter select.",
+      "trophy_code": "uclot_tll_bring_in_the_big_guns",
+      "type": "Prata"
+    },
+    {
+      "description": "Defeat 4 enemies with the vehicle in 20 seconds",
+      "is_missable": 0,
+      "is_spoiler": 0,
+      "name": "4x4x4",
+      "name_pt": "",
+      "tip": "[The Lost Legacy] Use area aberta com inimigos proximos e atropelamentos rapidos.",
+      "trophy_code": "uclot_tll_4x4x4",
+      "type": "Bronze"
+    },
+    {
+      "description": "Use all the zip-lines to traverse the city",
+      "is_missable": 0,
+      "is_spoiler": 0,
+      "name": "Drop Me a Line",
+      "name_pt": "",
+      "tip": "[The Lost Legacy] Checklist de zip-lines da cidade.",
+      "trophy_code": "uclot_tll_drop_me_a_line",
+      "type": "Bronze"
+    },
+    {
+      "description": "Appreciate the view at the top of the Hoysala Empire",
+      "is_missable": 0,
+      "is_spoiler": 0,
+      "name": "Your Prize",
+      "name_pt": "",
+      "tip": "[The Lost Legacy] Trofeu situacional de exploracao no topo da area.",
+      "trophy_code": "uclot_tll_your_prize",
+      "type": "Bronze"
+    },
+    {
+      "description": "Drive from the Ganesh mountain carving to the top of the waterfall at the Trident Fort and back in under 3 minutes",
+      "is_missable": 0,
+      "is_spoiler": 0,
+      "name": "Best Driver in the Business",
+      "name_pt": "",
+      "tip": "[The Lost Legacy] Treine a rota de veiculo antes de tentar o tempo.",
+      "trophy_code": "uclot_tll_best_driver",
+      "type": "Bronze"
+    },
+    {
+      "description": "Get through all 3 Axe Fort trials without resetting any boards",
+      "is_missable": 0,
+      "is_spoiler": 0,
+      "name": "Flawless Gauntlet",
+      "name_pt": "",
+      "tip": "[The Lost Legacy] Resolva os tres trials sem resetar tabuleiros.",
+      "trophy_code": "uclot_tll_flawless_gauntlet",
+      "type": "Bronze"
+    },
+    {
+      "description": "After entering the Trident Fort, reach the door without being seen",
+      "is_missable": 0,
+      "is_spoiler": 0,
+      "name": "Quiet as a Mouse",
+      "name_pt": "",
+      "tip": "[The Lost Legacy] Stealth especifico do Trident Fort; reinicie se for detectado.",
+      "trophy_code": "uclot_tll_quiet_as_a_mouse",
+      "type": "Bronze"
+    },
+    {
+      "description": "Perform 5 grapple swings in a row without touching the ground",
+      "is_missable": 0,
+      "is_spoiler": 0,
+      "name": "Tarzana",
+      "name_pt": "",
+      "tip": "[The Lost Legacy] Encontre uma sequencia de grapple points e nao toque o chao.",
+      "trophy_code": "uclot_tll_tarzana",
+      "type": "Bronze"
+    },
+    {
+      "description": "Get 30 seconds of total airtime with the vehicle",
+      "is_missable": 0,
+      "is_spoiler": 0,
+      "name": "Stunt It!",
+      "name_pt": "",
+      "tip": "[The Lost Legacy] Acumule saltos com o veiculo durante exploracao.",
+      "trophy_code": "uclot_tll_stunt_it",
+      "type": "Bronze"
+    },
+    {
+      "description": "Complete the shadow puzzle in 10 moves or less",
+      "is_missable": 0,
+      "is_spoiler": 0,
+      "name": "Shadow Theater",
+      "name_pt": "",
+      "tip": "[The Lost Legacy] Reinicie checkpoint quando souber a solucao do puzzle.",
+      "trophy_code": "uclot_tll_shadow_theater",
+      "type": "Bronze"
+    },
+    {
+      "description": "Play in the water in the dam in Halebidu",
+      "is_missable": 0,
+      "is_spoiler": 0,
+      "name": "Marco Po-No",
+      "name_pt": "",
+      "tip": "[The Lost Legacy] Acao especifica de agua na barragem.",
+      "trophy_code": "uclot_tll_marco_po_no",
+      "type": "Bronze"
+    },
+    {
+      "description": "Pick a three pin lock in under 15 seconds",
+      "is_missable": 0,
+      "is_spoiler": 0,
+      "name": "Fingersmith",
+      "name_pt": "",
+      "tip": "[The Lost Legacy] Escolha uma lockbox simples e pratique o timing.",
+      "trophy_code": "uclot_tll_fingersmith",
+      "type": "Bronze"
+    },
+    {
+      "description": "Plant multiple C4 charges on the APC at the same time and destroy it with one massive detonation",
+      "is_missable": 0,
+      "is_spoiler": 1,
+      "name": "Overkill",
+      "name_pt": "",
+      "tip": "[The Lost Legacy] Trofeu especifico de APC com multiplas cargas de C4.",
+      "trophy_code": "uclot_tll_overkill",
+      "type": "Prata"
+    },
+    {
+      "description": "Perform an impressive dive from the cliff near the old railroad tracks",
+      "is_missable": 0,
+      "is_spoiler": 0,
+      "name": "Cannonball!",
+      "name_pt": "",
+      "tip": "[The Lost Legacy] Salto especifico perto dos trilhos antigos.",
+      "trophy_code": "uclot_tll_cannonball",
+      "type": "Bronze"
+    },
+    {
+      "description": "Destroy the helicopter without defeating any other enemies",
+      "is_missable": 0,
+      "is_spoiler": 1,
+      "name": "Right Under Your Nose",
+      "name_pt": "",
+      "tip": "[The Lost Legacy] Trofeu de encontro avancado: foque no helicoptero e evite matar inimigos extras.",
+      "trophy_code": "uclot_tll_right_under_your_nose",
+      "type": "Prata"
+    },
+    {
+      "description": "Ram 10 motorcycles",
+      "is_missable": 0,
+      "is_spoiler": 0,
+      "name": "Combat Racing",
+      "name_pt": "",
+      "tip": "[The Lost Legacy] Atropele motos em secoes de veiculo/combate.",
+      "trophy_code": "uclot_tll_combat_racing",
+      "type": "Bronze"
+    },
+    {
+      "description": "Commandeer 6 vehicles by jumping on them and kicking out the driver",
+      "is_missable": 0,
+      "is_spoiler": 0,
+      "name": "Backseat Driver",
+      "name_pt": "",
+      "tip": "[The Lost Legacy] Pule em veiculos inimigos e expulse os motoristas.",
+      "trophy_code": "uclot_tll_backseat_driver",
+      "type": "Bronze"
+    },
+    {
+      "description": "Destroy a vehicle in Chapter 9 with an explosive",
+      "is_missable": 0,
+      "is_spoiler": 1,
+      "name": "Here, Catch!",
+      "name_pt": "",
+      "tip": "[The Lost Legacy] Acao especifica do capitulo 9 com explosivo.",
+      "trophy_code": "uclot_tll_here_catch",
+      "type": "Bronze"
+    },
+    {
+      "description": "Drive over the edge in the Western Ghats",
+      "is_missable": 0,
+      "is_spoiler": 0,
+      "name": "Let's Not Get Caught",
+      "name_pt": "",
+      "tip": "[The Lost Legacy] Trofeu situacional de exploracao com o veiculo.",
+      "trophy_code": "uclot_tll_lets_not_get_caught",
+      "type": "Bronze"
+    }
+  ]
+}

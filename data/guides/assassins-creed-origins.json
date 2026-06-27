@@ -1,0 +1,742 @@
+{
+  "game": {
+    "avoid_if": "Evite se você não gosta de limpar mapa, completar muitos pontos de interesse ou fazer atividades repetidas de mundo aberto.",
+    "before_you_start": "Nada da lista base é online ou de dificuldade. O maior cuidado é separar a lista base dos DLCs e não vender trinkets antes de juntar 100 para Reduce, Reuse, Recycle.",
+    "best_for": "Ideal para quem quer uma platina de mundo aberto acessível, histórica, longa e com checklist claro no Egito Antigo.",
+    "cleanup_advice": "Após a história, use o mapa para limpar todos os locais, tumbas, Stone Circles, Hermit Locations, War Elephants, Arena/Hippodrome, Papyrus e troféus situacionais.",
+    "cover_image": "https://cdn.cloudflare.steamstatic.com/steam/apps/582160/library_600x900.jpg",
+    "coverage_level": "strong",
+    "created_at": "2026-05-09 19:53:46",
+    "difficulty": 3,
+    "difficulty_reason": "A platina é acessível e não exige dificuldade alta; o maior compromisso é o volume de mundo aberto, limpeza de locais e alguns troféus situacionais.",
+    "dlc_scope": "Guia focado na lista base da platina; The Hidden Ones, The Curse of the Pharaohs e Discovery Tour/add-ons devem ficar separados se o projeto suportar DLC/add-ons.",
+    "editorial_notes": "",
+    "editorial_review_status": null,
+    "editorial_status": "published",
+    "first_run_advice": "Jogue a história naturalmente, desbloqueie regiões, habilidades, Senu, montaria e upgrades, e vá completando atividades próximas para reduzir o cleanup final.",
+    "grind_summary": "O peso está em limpar regiões, completar todos os locais, side quests específicas, tumbas, Stone Circles, War Elephants, Arena/Hippodrome e troféus situacionais.",
+    "guide_avoid": null,
+    "guide_best_moment": null,
+    "guide_dlc": null,
+    "guide_grind": null,
+    "guide_ideal": null,
+    "guide_online": null,
+    "guide_runs": null,
+    "image": "https://cdn.cloudflare.steamstatic.com/steam/apps/582160/header.jpg",
+    "is_verified": 0,
+    "last_reviewed_at": "",
+    "missable": "Não há troféus perdíveis definitivos na lista base. Atenção apenas para guardar 100 trinkets para Reduce, Reuse, Recycle e manter o jogo atualizado por causa do histórico de bug corrigido em Old Habits.",
+    "missable_summary": "0 perdíveis definitivos na lista base. Guarde 100 trinkets antes de vender e mantenha o jogo atualizado para evitar problemas históricos de Old Habits.",
+    "name": "Assassin’s Creed Origins",
+    "online_summary": "Não há exigência online para a platina da lista base.",
+    "quality_warnings": "[]",
+    "reviewed_by": "",
+    "runs_summary": "Uma campanha principal com cleanup livre após a história. Nada da lista base deve ser tratado como perdível sem confirmação confiável.",
+    "slug": "assassins-creed-origins",
+    "time": "50-60h",
+    "time_bucket": "long",
+    "time_max_hours": 60,
+    "time_min_hours": 50,
+    "time_reason": "A faixa de 50-60 horas considera campanha, side quests, exploração, todos os locais necessários, tumbas, atividades opcionais e cleanup pós-história.",
+    "time_sort_hours": 50,
+    "updated_at": "2026-06-27 02:36:58",
+    "verification_note": "Guia público seed-managed com checklist base e roadmap; aguardando revisão editorial manual final.",
+    "verification_status": "review",
+    "walkthrough": null
+  },
+  "redirects": [],
+  "roadmaps": [
+    {
+      "content": "{\"title\":\"Avance pela campanha\",\"focus\":\"\",\"objective\":\"jogue a campanha naturalmente, desbloqueando regiões, sistemas, montaria, Senu, habilidades úteis como Dawn & Dusk, Poison Darts, Animal Taming, Enhanced Predator Bow e upgrades básicos.\",\"actions\":[],\"warning\":\"\",\"result\":\"\"}",
+      "step_order": 1
+    },
+    {
+      "content": "{\"title\":\"Planeje o grind principal\",\"focus\":\"\",\"objective\":\"avance side quests e atividades importantes enquanto sobe de nível, incluindo Seven Farmers, Lady of Slaughter, Papyrus Mysteries, tumbas próximas e coleta de trinkets sem vendê-los antes de juntar 100.\",\"actions\":[],\"warning\":\"\",\"result\":\"\"}",
+      "step_order": 2
+    },
+    {
+      "content": "{\"title\":\"Revise pendências finais\",\"focus\":\"\",\"objective\":\"limpe regiões, sincronize pontos e complete todos os locais necessários para Old Habits, deixando claro que há free-roam/cleanup pós-história.\",\"actions\":[],\"warning\":\"\",\"result\":\"\"}",
+      "step_order": 3
+    },
+    {
+      "content": "{\"title\":\"complete tumbas, Stone Circles, Hermit Locations, underwater...\",\"focus\":\"\",\"objective\":\"complete tumbas, Stone Circles, Hermit Locations, underwater locations, Papyrus/locais específicos e atividades de mundo aberto que alimentam Old Habits.\",\"actions\":[],\"warning\":\"\",\"result\":\"\"}",
+      "step_order": 4
+    },
+    {
+      "content": "{\"title\":\"enfrente War Elephants, Phylakes, Arena de Krokodilopolis, Hi...\",\"focus\":\"\",\"objective\":\"enfrente War Elephants, Phylakes, Arena de Krokodilopolis, Hippodrome e troféus de combate/situação como Archer of the Month, Overdesign, Set-up Date e BOOM!.\",\"actions\":[],\"warning\":\"\",\"result\":\"\"}",
+      "step_order": 5
+    },
+    {
+      "content": "{\"title\":\"Resolva requisitos online cedo\",\"focus\":\"\",\"objective\":\"faça cleanup final pós-história de todos os locais, side content restante, troféus situacionais, 0 online obrigatório, 0 troféus de dificuldade e revisão completa do checklist da lista base.\",\"actions\":[],\"warning\":\"\",\"result\":\"\"}",
+      "step_order": 6
+    }
+  ],
+  "schemaVersion": 1,
+  "seedExtras": {
+    "aliases": [],
+    "attentionPoints": [
+      {
+        "detail": "Guarde trinkets desde o começo e venda 100 de uma vez. O troféu não é perdível, mas vender trinkets cedo pode gerar farm desnecessário.",
+        "tags": [
+          "Grind",
+          "Cleanup",
+          "Atenção"
+        ],
+        "title": "Reduce, Reuse, Recycle"
+      },
+      {
+        "detail": "Old Habits exige completar todos os locais do mapa e é o maior bloco de tempo da platina. Use mirantes para revelar pontos de interesse e confira regiões pequenas.",
+        "tags": [
+          "Exploração",
+          "Mapa",
+          "Grind"
+        ],
+        "title": "Old Habits"
+      },
+      {
+        "detail": "O bug antigo envolvendo completar locais com Aya foi corrigido em patch. Não marque como perdível atual, mas jogue com o jogo atualizado.",
+        "tags": [
+          "Patch",
+          "Atenção"
+        ],
+        "title": "Bug histórico de Old Habits"
+      },
+      {
+        "detail": "A platina base usa 51 troféus. Não misture The Hidden Ones ou The Curse of the Pharaohs com os requisitos de Earn Them All!.",
+        "tags": [
+          "Lista base",
+          "Sem DLC"
+        ],
+        "title": "DLC não necessária"
+      },
+      {
+        "detail": "A dificuldade escolhida não afeta troféus. O jogador pode fazer tudo no fácil.",
+        "tags": [
+          "Dificuldade",
+          "Sem requisito"
+        ],
+        "title": "Dificuldade"
+      },
+      {
+        "detail": "The Harder They Fall envolve inimigos de nível alto. Deixe Qetesh e Resheph para o endgame.",
+        "tags": [
+          "Chefe",
+          "Endgame"
+        ],
+        "title": "Elefantes de guerra"
+      },
+      {
+        "detail": "Overdesign exige preparação específica com veneno, tocha e inimigo nível 35+, então deve ter dica clara.",
+        "tags": [
+          "Combate",
+          "Ação específica"
+        ],
+        "title": "Overdesign"
+      },
+      {
+        "detail": "Origins reduziu coletáveis tradicionais, mas exige completar locais. Não transforme todo requisito de mapa em tag de Coletável.",
+        "tags": [
+          "Exploração",
+          "Mapa"
+        ],
+        "title": "Exploração não é só coletável"
+      }
+    ],
+    "checklist": [
+      "Conferir se o guia tem 51 troféus da lista base.",
+      "Conferir se Earn Them All! é a platina.",
+      "Conferir se não há DLC misturada na platina base.",
+      "Conferir distribuição: 1 platina, 1 ouro, 15 prata e 34 bronze.",
+      "Conferir onlineRequired false.",
+      "Conferir coopRequired false.",
+      "Conferir dlcRequired false.",
+      "Conferir hasMissables false.",
+      "Conferir missableCount 0.",
+      "Conferir se nenhum troféu está marcado como perdível.",
+      "Conferir se Reduce, Reuse, Recycle está como ponto de atenção, não perdível.",
+      "Conferir se Old Habits não está como perdível.",
+      "Conferir se dificuldade não aparece como requisito de troféu.",
+      "Conferir se filtros não estão inflados por tags erradas.",
+      "Conferir se todos os troféus têm nome oficial em inglês como principal.",
+      "Conferir se todos têm PT-BR abaixo.",
+      "Conferir se descrições estão em português.",
+      "Conferir se não aparecem rótulos técnicos de nome original nem placeholders de descrição editorial.",
+      "Conferir se roadmap está estruturado como array de objetos.",
+      "Conferir se roadmap não renderiza objeto bruto ou chaves técnicas.",
+      "Conferir FAQ, decisão rápida, SEO e pontos de atenção.",
+      "Conferir se página individual e catálogo exibem o mesmo status editorial.",
+      "Conferir se flags do topo batem com filtros do catálogo."
+    ],
+    "faq": [
+      {
+        "answer": "Não. A platina base não tem troféus perdíveis reais. O principal cuidado é guardar 100 trinkets para Reduce, Reuse, Recycle, mas isso é uma prevenção contra farm, não um perdível.",
+        "question": "Assassin’s Creed Origins tem troféus perdíveis?"
+      },
+      {
+        "answer": "Não. A platina base é totalmente offline.",
+        "question": "Precisa jogar online para platinar?"
+      },
+      {
+        "answer": "Não. Assassin’s Creed Origins é uma platina single-player.",
+        "question": "Precisa de cooperação?"
+      },
+      {
+        "answer": "Não. Earn Them All! exige apenas os 51 troféus da lista base. The Hidden Ones e The Curse of the Pharaohs não são necessários para a platina.",
+        "question": "Precisa de DLC para a platina?"
+      },
+      {
+        "answer": "Não. É possível buscar todos os troféus na dificuldade que preferir.",
+        "question": "A dificuldade afeta troféus?"
+      },
+      {
+        "answer": "Em média, cerca de 50 a 70 horas, dependendo do ritmo de exploração, limpeza de locais e troféus diversos.",
+        "question": "Quanto tempo leva para platinar?"
+      },
+      {
+        "answer": "Sim. Old Habits exige completar todos os locais do mapa, e esse é o requisito mais demorado da platina.",
+        "question": "Preciso completar todos os locais?"
+      },
+      {
+        "answer": "A platina exige locais e atividades específicas, como stone circles, hermit locations, tumbas e locais submersos, mas não deve ser tratada como uma caça genérica a coletáveis tradicionais.",
+        "question": "Preciso pegar todos os coletáveis?"
+      },
+      {
+        "answer": "Não trate isso como perdível atual. O problema antigo envolvendo locais feitos com Aya foi corrigido em patch. A recomendação editorial é jogar com o jogo atualizado.",
+        "question": "O bug de Old Habits ainda torna o troféu perdível?"
+      },
+      {
+        "answer": "Guardar 100 trinkets para vender de uma vez e organizar a limpeza de todos os locais para Old Habits.",
+        "question": "Qual é o maior cuidado da platina?"
+      }
+    ],
+    "note": "Campos exportados para auditoria. O SQLite atual nao possui colunas nativas para todos esses extras; a importacao preserva o que o banco suporta.",
+    "quickDecision": {
+      "firstAction": "Comece a campanha na dificuldade que preferir, sincronize mirantes, compre habilidades úteis e guarde trinkets desde o início.",
+      "recommendation": "A dificuldade é baixa; o tempo é longo, cerca de 50 a 70 horas.",
+      "risk": "Baixo. Não há perdíveis reais, online, coop ou DLC obrigatória; o maior cuidado é guardar 100 trinkets e limpar todos os locais do mapa.",
+      "summary": "Sim, vale platinar se você gosta de mundo aberto e não se importa com uma platina longa de exploração."
+    },
+    "seo": {
+      "description": "Guia de troféus de Assassin’s Creed Origins com roadmap da platina, tempo estimado, dificuldade, flags, Old Habits, Reduce Reuse Recycle, exploração, arena, hipódromo e dicas para os 51 troféus da lista base.",
+      "keywords": "Assassin’s Creed Origins troféus, Assassin’s Creed Origins platina, guia Assassin’s Creed Origins, AC Origins troféus, AC Origins platina, Earn Them All, Old Habits, Reduce Reuse Recycle, The Harder They Fall, Stargazer, Master Diver",
+      "metaDescription": "Guia de troféus de Assassin’s Creed Origins com roadmap da platina, tempo estimado, dificuldade, flags, Old Habits, Reduce Reuse Recycle, exploração, arena, hipódromo e dicas para os 51 troféus da lista base.",
+      "ogDescription": "Roadmap da platina de Assassin’s Creed Origins com 51 troféus da lista base, sem perdíveis, sem online, sem coop e sem DLC obrigatória.",
+      "ogTitle": "Assassin’s Creed Origins: Guia de Troféus e Platina",
+      "title": "Assassin’s Creed Origins: Guia de Troféus e Platina"
+    },
+    "tags": []
+  },
+  "slug": "assassins-creed-origins",
+  "trophies": [
+    {
+      "description": "Earn every trophy.",
+      "is_missable": 0,
+      "is_spoiler": 0,
+      "name": "Earn Them All!",
+      "name_pt": "",
+      "tip": "Conquiste todos os outros troféus da lista base para liberar a platina. DLCs não são necessárias.",
+      "trophy_code": "aco_earn_them_all",
+      "type": "Platina"
+    },
+    {
+      "description": "Complete the Prologue.",
+      "is_missable": 0,
+      "is_spoiler": 1,
+      "name": "First Steps",
+      "name_pt": "",
+      "tip": "Avance a história inicial em Siwa até concluir o prólogo.",
+      "trophy_code": "aco_first_steps",
+      "type": "Bronze"
+    },
+    {
+      "description": "Complete Main Quest “Aya”.",
+      "is_missable": 0,
+      "is_spoiler": 1,
+      "name": "I’m Just Getting Started",
+      "name_pt": "",
+      "tip": "Troféu de história. Continue as missões principais até concluir “Aya”.",
+      "trophy_code": "aco_im_just_getting_started",
+      "type": "Bronze"
+    },
+    {
+      "description": "Complete Main Quest “Pompeius Magnus”.",
+      "is_missable": 0,
+      "is_spoiler": 1,
+      "name": "The Sea",
+      "name_pt": "",
+      "tip": "Troféu de história ligado à progressão principal.",
+      "trophy_code": "aco_the_sea",
+      "type": "Bronze"
+    },
+    {
+      "description": "Complete Main Quest “The Scarab’s Lies”.",
+      "is_missable": 0,
+      "is_spoiler": 1,
+      "name": "The Scarab",
+      "name_pt": "",
+      "tip": "Troféu de história ligado a um alvo principal.",
+      "trophy_code": "aco_the_scarab",
+      "type": "Prata"
+    },
+    {
+      "description": "Complete Main Quest “The Hyena”.",
+      "is_missable": 0,
+      "is_spoiler": 1,
+      "name": "The Hyena",
+      "name_pt": "",
+      "tip": "Troféu de história ligado a um alvo principal.",
+      "trophy_code": "aco_the_hyena",
+      "type": "Bronze"
+    },
+    {
+      "description": "Complete Main Quest “The Crocodile’s Jaws”.",
+      "is_missable": 0,
+      "is_spoiler": 1,
+      "name": "The Crocodile",
+      "name_pt": "",
+      "tip": "Troféu de história ligado a um alvo principal.",
+      "trophy_code": "aco_the_crocodile",
+      "type": "Bronze"
+    },
+    {
+      "description": "Complete Main Quest “The Lizard’s Face”.",
+      "is_missable": 0,
+      "is_spoiler": 1,
+      "name": "The Lizard",
+      "name_pt": "",
+      "tip": "Troféu de história ligado a um alvo principal.",
+      "trophy_code": "aco_the_lizard",
+      "type": "Prata"
+    },
+    {
+      "description": "Complete Main Quest “The Aftermath”.",
+      "is_missable": 0,
+      "is_spoiler": 1,
+      "name": "The Siege",
+      "name_pt": "",
+      "tip": "Troféu de história de fase avançada da campanha.",
+      "trophy_code": "aco_the_siege",
+      "type": "Prata"
+    },
+    {
+      "description": "Complete Main Quest Dream Sequence.",
+      "is_missable": 0,
+      "is_spoiler": 1,
+      "name": "Wake Up!",
+      "name_pt": "",
+      "tip": "Troféu de história relacionado a sequência narrativa avançada.",
+      "trophy_code": "aco_wake_up",
+      "type": "Prata"
+    },
+    {
+      "description": "Complete Main Quest “The Final Weighing”.",
+      "is_missable": 0,
+      "is_spoiler": 1,
+      "name": "Almost There",
+      "name_pt": "",
+      "tip": "Troféu de história perto do final da campanha.",
+      "trophy_code": "aco_almost_there",
+      "type": "Prata"
+    },
+    {
+      "description": "Complete the last Main Quest.",
+      "is_missable": 0,
+      "is_spoiler": 1,
+      "name": "The End",
+      "name_pt": "",
+      "tip": "Troféu de história. Termine a última missão principal.",
+      "trophy_code": "aco_the_end",
+      "type": "Ouro"
+    },
+    {
+      "description": "Be equipped with only Legendary equipment.",
+      "is_missable": 0,
+      "is_spoiler": 0,
+      "name": "I’m a Legend",
+      "name_pt": "",
+      "tip": "Equipe itens lendários em todos os slots exigidos. Guarde bons equipamentos lendários e compre/farme o que faltar no pós-jogo.",
+      "trophy_code": "aco_im_a_legend",
+      "type": "Bronze"
+    },
+    {
+      "description": "Activate a Master ability.",
+      "is_missable": 0,
+      "is_spoiler": 0,
+      "name": "I’m Done Learning",
+      "name_pt": "",
+      "tip": "Compre uma Master Ability na árvore de habilidades após investir pontos suficientes.",
+      "trophy_code": "aco_im_done_learning",
+      "type": "Prata"
+    },
+    {
+      "description": "Witness raining bugs in the desert.",
+      "is_missable": 0,
+      "is_spoiler": 0,
+      "name": "Overheating",
+      "name_pt": "",
+      "tip": "Fique no deserto sob calor forte até ocorrer a alucinação de insetos caindo.",
+      "trophy_code": "aco_overheating",
+      "type": "Bronze"
+    },
+    {
+      "description": "Complete all arena events in the Krokodilopolis Arena.",
+      "is_missable": 0,
+      "is_spoiler": 0,
+      "name": "For Those About to Die…",
+      "name_pt": "",
+      "tip": "Complete todos os eventos da arena de Krokodilopolis.",
+      "trophy_code": "aco_for_those_about_to_die",
+      "type": "Prata"
+    },
+    {
+      "description": "Finish an arena boss with an Overpower Attack.",
+      "is_missable": 0,
+      "is_spoiler": 0,
+      "name": "Fatality!",
+      "name_pt": "",
+      "tip": "Finalize um chefe da arena usando Overpower Attack.",
+      "trophy_code": "aco_fatality",
+      "type": "Prata"
+    },
+    {
+      "description": "Win the first Hippodrome tournament.",
+      "is_missable": 0,
+      "is_spoiler": 0,
+      "name": "Ben-Hur",
+      "name_pt": "",
+      "tip": "Vença o primeiro torneio do Hipódromo.",
+      "trophy_code": "aco_ben_hur",
+      "type": "Bronze"
+    },
+    {
+      "description": "Destroy an opponent in a Hippodrome race.",
+      "is_missable": 0,
+      "is_spoiler": 0,
+      "name": "Road Rage",
+      "name_pt": "",
+      "tip": "Durante uma corrida do Hipódromo, destrua a carruagem de um oponente.",
+      "trophy_code": "aco_road_rage",
+      "type": "Bronze"
+    },
+    {
+      "description": "Defeat the war elephants Qetesh & Resheph.",
+      "is_missable": 0,
+      "is_spoiler": 1,
+      "name": "The Elephants Fall",
+      "name_pt": "",
+      "tip": "Derrote os elefantes de guerra Qetesh e Resheph. Deixe para nível alto e ajuste a dificuldade se quiser reduzir risco.",
+      "trophy_code": "aco_elephants_fall",
+      "type": "Prata"
+    },
+    {
+      "description": "Kill 3 enemies with one hit.",
+      "is_missable": 0,
+      "is_spoiler": 0,
+      "name": "Slasher",
+      "name_pt": "",
+      "tip": "Use uma oportunidade com inimigos agrupados e dano alto para matar 3 inimigos em um único golpe.",
+      "trophy_code": "aco_slasher",
+      "type": "Bronze"
+    },
+    {
+      "description": "Kill an enemy with the predator bow from more than 60 meters while controlling the arrow.",
+      "is_missable": 0,
+      "is_spoiler": 0,
+      "name": "The Arrow Whisperer",
+      "name_pt": "",
+      "tip": "Use o Predator Bow com controle de flecha e mate um inimigo a mais de 60 metros.",
+      "trophy_code": "aco_the_arrow_whisperer",
+      "type": "Prata"
+    },
+    {
+      "description": "Complete all hermit locations.",
+      "is_missable": 0,
+      "is_spoiler": 0,
+      "name": "Words of Wisdom",
+      "name_pt": "",
+      "tip": "Complete todos os Hermit Locations. Eles também contam para Old Habits.",
+      "trophy_code": "aco_words_of_wisdom",
+      "type": "Bronze"
+    },
+    {
+      "description": "Feed a predator with a corpse.",
+      "is_missable": 0,
+      "is_spoiler": 0,
+      "name": "Circle of Life",
+      "name_pt": "",
+      "tip": "Leve um cadáver até um predador ou atraia um predador para se alimentar dele.",
+      "trophy_code": "aco_circle_of_life",
+      "type": "Bronze"
+    },
+    {
+      "description": "Complete Side Quest “Seven Farmers”.",
+      "is_missable": 0,
+      "is_spoiler": 0,
+      "name": "Seven Farmers",
+      "name_pt": "",
+      "tip": "Conclua a side quest “Seven Farmers”.",
+      "trophy_code": "aco_seven_farmers",
+      "type": "Bronze"
+    },
+    {
+      "description": "Complete Side Quest “Lady of Slaughter”.",
+      "is_missable": 0,
+      "is_spoiler": 0,
+      "name": "The Festival",
+      "name_pt": "",
+      "tip": "Conclua a side quest “Lady of Slaughter”.",
+      "trophy_code": "aco_the_festival",
+      "type": "Bronze"
+    },
+    {
+      "description": "Kill 10 enemies in a row without being detected.",
+      "is_missable": 0,
+      "is_spoiler": 0,
+      "name": "Shadow of Egypt",
+      "name_pt": "",
+      "tip": "Faça uma sequência furtiva de 10 eliminações sem ser detectado.",
+      "trophy_code": "aco_shadow_of_egypt",
+      "type": "Prata"
+    },
+    {
+      "description": "Destroy 100 breakable objects.",
+      "is_missable": 0,
+      "is_spoiler": 0,
+      "name": "Smash!",
+      "name_pt": "",
+      "tip": "Destrua 100 objetos quebráveis durante exploração ou cleanup.",
+      "trophy_code": "aco_smash",
+      "type": "Bronze"
+    },
+    {
+      "description": "Defog the whole map.",
+      "is_missable": 0,
+      "is_spoiler": 0,
+      "name": "I Know My Land",
+      "name_pt": "",
+      "tip": "Passe por todas as regiões para revelar o mapa completo.",
+      "trophy_code": "aco_i_know_my_land",
+      "type": "Bronze"
+    },
+    {
+      "description": "Complete a tomb.",
+      "is_missable": 0,
+      "is_spoiler": 0,
+      "name": "Raider of the Lost Tomb",
+      "name_pt": "",
+      "tip": "Complete qualquer tumba da lista base.",
+      "trophy_code": "aco_raider_of_the_lost_tomb",
+      "type": "Bronze"
+    },
+    {
+      "description": "Reach the “Top of the World” in the Black Desert territory.",
+      "is_missable": 0,
+      "is_spoiler": 0,
+      "name": "I Can See My House From Here!",
+      "name_pt": "",
+      "tip": "Suba até o ponto “Top of the World” no território Black Desert.",
+      "trophy_code": "aco_i_can_see_my_house_from_here",
+      "type": "Bronze"
+    },
+    {
+      "description": "Bring a tamed lion to a crocodile.",
+      "is_missable": 0,
+      "is_spoiler": 0,
+      "name": "Set-up Date",
+      "name_pt": "",
+      "tip": "Use Animal Taming para domar um leão e leve-o até um crocodilo.",
+      "trophy_code": "aco_set_up_date",
+      "type": "Bronze"
+    },
+    {
+      "description": "Defeat 8 Ship Captains.",
+      "is_missable": 0,
+      "is_spoiler": 0,
+      "name": "Where’s My Black Flag?",
+      "name_pt": "",
+      "tip": "Derrote 8 capitães de navio em atividades navais da lista base.",
+      "trophy_code": "aco_wheres_my_black_flag",
+      "type": "Bronze"
+    },
+    {
+      "description": "Take 1 photo in 5 different territories.",
+      "is_missable": 0,
+      "is_spoiler": 0,
+      "name": "Reporter",
+      "name_pt": "",
+      "tip": "Use o modo foto em 5 territórios diferentes.",
+      "trophy_code": "aco_reporter",
+      "type": "Bronze"
+    },
+    {
+      "description": "Kill a poisoned level 35+ enemy with the torch in less than 30 seconds.",
+      "is_missable": 0,
+      "is_spoiler": 0,
+      "name": "Overdesign",
+      "name_pt": "",
+      "tip": "Use Poison Darts e finalize um inimigo nível 35+ com a tocha rapidamente.",
+      "trophy_code": "aco_overdesign",
+      "type": "Bronze"
+    },
+    {
+      "description": "Use the eagle for a total of 30 minutes.",
+      "is_missable": 0,
+      "is_spoiler": 0,
+      "name": "Free as a Bird",
+      "name_pt": "",
+      "tip": "Use Senu por 30 minutos acumulados.",
+      "trophy_code": "aco_free_as_a_bird",
+      "type": "Bronze"
+    },
+    {
+      "description": "Swim for 1500m, ride for 40km and run for 10km.",
+      "is_missable": 0,
+      "is_spoiler": 0,
+      "name": "Triathlete",
+      "name_pt": "",
+      "tip": "Esse progresso vem naturalmente ao explorar o mapa; deixe completar durante campanha e cleanup.",
+      "trophy_code": "aco_triathlete",
+      "type": "Bronze"
+    },
+    {
+      "description": "Headshot kill an enemy with the bow while in the air.",
+      "is_missable": 0,
+      "is_spoiler": 0,
+      "name": "Archer of the Month",
+      "name_pt": "",
+      "tip": "Salte de uma borda e acerte um headshot com arco enquanto está no ar.",
+      "trophy_code": "aco_archer_of_the_month",
+      "type": "Prata"
+    },
+    {
+      "description": "Kill 30 enemies by shooting a fire arrow at oil jars.",
+      "is_missable": 0,
+      "is_spoiler": 0,
+      "name": "BOOM!",
+      "name_pt": "",
+      "tip": "Mate inimigos explodindo/queimando oil jars com flechas de fogo. Farmável em acampamentos.",
+      "trophy_code": "aco_boom",
+      "type": "Bronze"
+    },
+    {
+      "description": "Use all types of vehicle at least once.",
+      "is_missable": 0,
+      "is_spoiler": 0,
+      "name": "Rider’s Licence",
+      "name_pt": "",
+      "tip": "Use todos os tipos de veículo pelo menos uma vez.",
+      "trophy_code": "aco_riders_licence",
+      "type": "Bronze"
+    },
+    {
+      "description": "Complete all locations.",
+      "is_missable": 0,
+      "is_spoiler": 0,
+      "name": "Old Habits",
+      "name_pt": "",
+      "tip": "Complete todos os locais do mapa base. É o maior gargalo da platina e deve ser feito no cleanup pós-história.",
+      "trophy_code": "aco_old_habits",
+      "type": "Prata"
+    },
+    {
+      "description": "Run away from 3 fights with a hippo.",
+      "is_missable": 0,
+      "is_spoiler": 0,
+      "name": "Run For Your Life!",
+      "name_pt": "",
+      "tip": "Inicie e fuja de 3 lutas contra hipopótamos.",
+      "trophy_code": "aco_run_for_your_life",
+      "type": "Bronze"
+    },
+    {
+      "description": "Solve a papyrus mystery.",
+      "is_missable": 0,
+      "is_spoiler": 0,
+      "name": "Elementary, My Dear Bayek",
+      "name_pt": "",
+      "tip": "Resolva qualquer Papyrus Mystery da lista base.",
+      "trophy_code": "aco_elementary_my_dear_bayek",
+      "type": "Bronze"
+    },
+    {
+      "description": "Sell 100 trinkets at once.",
+      "is_missable": 0,
+      "is_spoiler": 0,
+      "name": "Reduce, Reuse, Recycle",
+      "name_pt": "",
+      "tip": "Guarde 100 trinkets e venda todos de uma vez. Não venda trinkets cedo para evitar farm desnecessário.",
+      "trophy_code": "aco_reduce_reuse_recycle",
+      "type": "Bronze"
+    },
+    {
+      "description": "Use Dawn & Dusk to make time speed forward 30 times.",
+      "is_missable": 0,
+      "is_spoiler": 0,
+      "name": "Namaste",
+      "name_pt": "",
+      "tip": "Compre a habilidade Dawn & Dusk e avance o tempo 30 vezes.",
+      "trophy_code": "aco_namaste",
+      "type": "Bronze"
+    },
+    {
+      "description": "Reach level 20.",
+      "is_missable": 0,
+      "is_spoiler": 0,
+      "name": "You still need 8880…",
+      "name_pt": "",
+      "tip": "Chegue ao nível 20 jogando campanha, side quests e atividades.",
+      "trophy_code": "aco_you_still_need_8880",
+      "type": "Bronze"
+    },
+    {
+      "description": "Complete all 12 Stone Circles.",
+      "is_missable": 0,
+      "is_spoiler": 0,
+      "name": "Stargazer",
+      "name_pt": "",
+      "tip": "Complete os 12 Stone Circles. Eles também contam como locais para Old Habits.",
+      "trophy_code": "aco_stargazer",
+      "type": "Prata"
+    },
+    {
+      "description": "Complete 15 underwater locations.",
+      "is_missable": 0,
+      "is_spoiler": 0,
+      "name": "Master Diver",
+      "name_pt": "",
+      "tip": "Complete 15 locais submersos, normalmente marcados como pontos de interesse em rios e mares.",
+      "trophy_code": "aco_master_diver",
+      "type": "Prata"
+    },
+    {
+      "description": "Defeat a Phylakes.",
+      "is_missable": 0,
+      "is_spoiler": 1,
+      "name": "Defy Authority",
+      "name_pt": "",
+      "tip": "Derrote qualquer Phylakes e confirme a eliminação.",
+      "trophy_code": "aco_defy_authority",
+      "type": "Bronze"
+    },
+    {
+      "description": "Craft 20 items.",
+      "is_missable": 0,
+      "is_spoiler": 0,
+      "name": "Handy Man",
+      "name_pt": "",
+      "tip": "Faça 20 upgrades/crafts de equipamento usando materiais coletados de caça e exploração.",
+      "trophy_code": "aco_handy_man",
+      "type": "Bronze"
+    },
+    {
+      "description": "Tame a lion.",
+      "is_missable": 0,
+      "is_spoiler": 0,
+      "name": "Roooaaarrrrr!",
+      "name_pt": "",
+      "tip": "Compre Animal Taming, enfraqueça/coloque um leão para dormir e dome o animal.",
+      "trophy_code": "aco_roooaaarrrrr",
+      "type": "Bronze"
+    }
+  ]
+}

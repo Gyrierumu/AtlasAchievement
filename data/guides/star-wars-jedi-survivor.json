@@ -1,0 +1,768 @@
+{
+  "game": {
+    "avoid_if": "Evite apenas se você não gosta de voltar várias vezes aos mesmos mapas para limpar conteúdo secundário, colecionáveis e objetivos situacionais de combate.",
+    "before_you_start": "Não há online nem troféus de dificuldade; deixe boa parte do cleanup para depois de desbloquear todas as habilidades, mas não ignore as assistências de companheiros para You’ve Got A Friend.",
+    "best_for": "Ideal para quem quer uma platina de ação-aventura acessível, com exploração metroidvania, universo Star Wars e bastante cleanup organizado por planeta.",
+    "cleanup_advice": "Depois da campanha, revisite planetas com todas as habilidades para fechar Jedi Chambers, Force Tears, scans, perks, upgrades, bounties, fish, garden, colecionáveis e troféus de combate.",
+    "cover_image": "https://cdn.cloudflare.steamstatic.com/steam/apps/1774580/library_600x900.jpg",
+    "coverage_level": "strong",
+    "created_at": "2026-05-09 19:53:46",
+    "difficulty": 3,
+    "difficulty_reason": "A platina é acessível porque não exige dificuldade alta nem online; o maior trabalho é explorar mapas, limpar conteúdo secundário e completar ações específicas.",
+    "dlc_scope": "Guia focado na lista base de Star Wars Jedi: Survivor. Conteúdos cosméticos, Deluxe Upgrade ou add-ons não são necessários para a platina base.",
+    "editorial_notes": "",
+    "editorial_review_status": null,
+    "editorial_status": "published",
+    "first_run_advice": "Jogue a história naturalmente e explore quando quiser, mas use as habilidades dos companheiros quando estiverem disponíveis e não tente limpar tudo cedo demais porque várias áreas exigem habilidades desbloqueadas depois.",
+    "grind_summary": "O peso está em exploração de planetas, scans, Jedi Chambers, Force Tears, perks, upgrades, stances, bounties, fish, garden e troféus específicos de combate.",
+    "guide_avoid": null,
+    "guide_best_moment": null,
+    "guide_dlc": null,
+    "guide_grind": null,
+    "guide_ideal": null,
+    "guide_online": null,
+    "guide_runs": null,
+    "image": "https://cdn.cloudflare.steamstatic.com/steam/apps/1774580/header.jpg",
+    "is_verified": 0,
+    "last_reviewed_at": "",
+    "missable": "A lista base não tem online nem troféus de dificuldade. Há cleanup livre após a história, mas You’ve Got A Friend exige atenção porque as assistências de companheiros só ficam disponíveis em trechos específicos da campanha.",
+    "missable_summary": "Apenas You’ve Got A Friend foi marcado como perdível por depender de assistências de companheiros em janelas específicas da história; se perder, resolva em New Game+.",
+    "name": "Star Wars Jedi: Survivor",
+    "online_summary": "Não há exigência online para a platina.",
+    "quality_warnings": "[]",
+    "reviewed_by": "",
+    "runs_summary": "Uma campanha principal com cleanup livre após a história. You’ve Got A Friend exige atenção durante trechos com companheiros; o restante pode ser limpo depois.",
+    "slug": "star-wars-jedi-survivor",
+    "time": "40-50h",
+    "time_bucket": "medium",
+    "time_max_hours": 50,
+    "time_min_hours": 40,
+    "time_reason": "A faixa de 40-50 horas considera campanha, exploração, scans, Jedi Chambers, Force Tears, perks, upgrades, bounties, fish, garden e cleanup por planeta.",
+    "time_sort_hours": 40,
+    "updated_at": "2026-06-27 02:36:58",
+    "verification_note": "Guia público seed-managed com checklist base e roadmap; aguardando revisão editorial manual final.",
+    "verification_status": "review",
+    "walkthrough": null
+  },
+  "redirects": [],
+  "roadmaps": [
+    {
+      "content": "{\"title\":\"Avance pela campanha\",\"focus\":\"\",\"objective\":\"jogue a campanha naturalmente, desbloqueando planetas, stances, Force powers, habilidades de exploração e sistemas principais. Use as assistências de companheiros quando disponíveis para You’ve Got A Friend.\",\"actions\":[],\"warning\":\"\",\"result\":\"\"}",
+      "step_order": 1
+    },
+    {
+      "content": "{\"title\":\"interaja com NPCs, recrute para a cantina, escaneie inimigos/...\",\"focus\":\"\",\"objective\":\"interaja com NPCs, recrute para a cantina, escaneie inimigos/ambiente com BD-1 e complete conteúdo secundário encontrado pelo caminho sem tentar limpar áreas bloqueadas cedo demais.\",\"actions\":[],\"warning\":\"\",\"result\":\"\"}",
+      "step_order": 2
+    },
+    {
+      "content": "{\"title\":\"Revise pendências finais\",\"focus\":\"\",\"objective\":\"após a história, revisite Coruscant, Koboh, Jedha, Shattered Moon e Nova Garon com todas as habilidades para abrir rotas antes inacessíveis e organizar o cleanup por planeta.\",\"actions\":[],\"warning\":\"\",\"result\":\"\"}",
+      "step_order": 3
+    },
+    {
+      "content": "{\"title\":\"complete Jedi Chambers, Force Tears, scans do Tactical Guide,...\",\"focus\":\"\",\"objective\":\"complete Jedi Chambers, Force Tears, scans do Tactical Guide, bounties/Caij, fish/Skoova, garden, perks, upgrades de mapa e colecionáveis realmente necessários para os troféus.\",\"actions\":[],\"warning\":\"\",\"result\":\"\"}",
+      "step_order": 4
+    },
+    {
+      "content": "{\"title\":\"limpe troféus específicos de combate, stances, Force powers e...\",\"focus\":\"\",\"objective\":\"limpe troféus específicos de combate, stances, Force powers e ações situacionais como Slow, Point Blank, Lift, Slam, Focus Sight, Confuse, Precision Release, roller mine e dropkick.\",\"actions\":[],\"warning\":\"\",\"result\":\"\"}",
+      "step_order": 5
+    },
+    {
+      "content": "{\"title\":\"Fechamento e revisão final\",\"focus\":\"\",\"objective\":\"finalize Doma’s merchandise, Holotactics, Legendary Adversaries, cantina cheia, customizações de Cal/BD-1/blaster/lightsaber, skill trees e revisão final do checklist.\",\"actions\":[],\"warning\":\"\",\"result\":\"\"}",
+      "step_order": 6
+    },
+    {
+      "content": "{\"title\":\"Resolva requisitos online cedo\",\"focus\":\"\",\"objective\":\"confirme a platina da lista base: 54 troféus, 0 online obrigatório, 0 troféus de dificuldade, 1 missable validado por fonte confiável e cleanup livre pós-história.\",\"actions\":[],\"warning\":\"\",\"result\":\"\"}",
+      "step_order": 7
+    }
+  ],
+  "schemaVersion": 1,
+  "seedExtras": {
+    "aliases": [],
+    "attentionPoints": [
+      {
+        "detail": "Use os assistes de Bode e Merrin 10 vezes cada em combate. Bode é o ponto crítico por aparecer apenas em trechos específicos da história; resolva no Capítulo 1 e/ou Capítulo 4.",
+        "tags": [
+          "Perdível",
+          "Risco de run",
+          "Companheiro/Assist"
+        ],
+        "title": "You’ve Got A Friend é o único perdível",
+        "type": "Perdível"
+      },
+      {
+        "detail": "Tudo pode ser feito em Story Mode/Easiest Difficulty. Não use tag Dificuldade em troféus individuais.",
+        "tags": [
+          "Story Mode",
+          "Acessível"
+        ],
+        "title": "Dificuldade não afeta troféus",
+        "type": "Story Mode"
+      },
+      {
+        "detail": "Depois da campanha, é possível voltar aos planetas para cleanup de Jedi Chambers, Force Tears, bounties, scans, peixes, plantas, lojas e misc.",
+        "tags": [
+          "Free roam",
+          "Cleanup"
+        ],
+        "title": "Free roam após a história",
+        "type": "Cleanup"
+      },
+      {
+        "detail": "O jogo usa apenas 1 autosave. Mantenha o jogo atualizado e tenha cuidado antes de concluir categorias grandes.",
+        "tags": [
+          "Autosave",
+          "Atenção"
+        ],
+        "title": "Sem save manual",
+        "type": "Autosave"
+      },
+      {
+        "detail": "Perk of the Job e They’re Probably Fine tiveram relatos de instabilidade. Trate como risco técnico, não como perdível.",
+        "tags": [
+          "Risco técnico",
+          "Bugável"
+        ],
+        "title": "Risco técnico",
+        "type": "Risco técnico"
+      },
+      {
+        "detail": "Splurgle exige todos os 100 Priorite Shards, incluindo o shard escondido do estábulo/Nekko.",
+        "tags": [
+          "Loja",
+          "Risco técnico histórico"
+        ],
+        "title": "Splurgle e Priorite Shards",
+        "type": "Loja"
+      }
+    ],
+    "checklist": [
+      "Usar assist de Bode 10 vezes no Capítulo 1 e/ou Capítulo 4.",
+      "Usar assist de Merrin 10 vezes quando ela estiver disponível.",
+      "Completar a campanha em qualquer configuração, inclusive Story Mode.",
+      "Usar free roam pós-história para retornar aos planetas.",
+      "Desbloquear Map Upgrades para facilitar cleanup.",
+      "Coletar todos os 100 Priorite Shards e comprar tudo na Doma’s Shop.",
+      "Completar Jedi Chambers, Force Tears, 17 bounties, Legendary Adversaries e Tactical Guide.",
+      "Encontrar 12 Fish com Skoova, 10 Plants e 11 Cantina Recruits.",
+      "Vencer Holotactics e equipar Perks em todos os slots.",
+      "Finalizar combat/misc/customização sem marcar como Dificuldade."
+    ],
+    "faq": [
+      {
+        "answer": "Não. A lista base é totalmente offline.",
+        "question": "Star Wars Jedi: Survivor tem troféus online?"
+      },
+      {
+        "answer": "Não.",
+        "question": "Tem coop?"
+      },
+      {
+        "answer": "Não. Tudo pode ser feito em Story Mode/Easiest Difficulty.",
+        "question": "A configuração de jogo afeta troféus?"
+      },
+      {
+        "answer": "Uma jogada é suficiente, desde que You’ve Got A Friend seja feito durante a campanha.",
+        "question": "Quantas jogadas são necessárias?"
+      },
+      {
+        "answer": "Sim. You’ve Got A Friend é o único perdível real, pois exige usar assist de Bode e Merrin 10 vezes cada.",
+        "question": "Tem troféu perdível?"
+      },
+      {
+        "answer": "Sim. Depois da campanha, você pode voltar aos planetas e concluir quase todo o cleanup.",
+        "question": "Existe free roam após a história?"
+      },
+      {
+        "answer": "Não. New Game+ não é necessário para a platina, mas pode ajudar se você perdeu You’ve Got A Friend.",
+        "question": "Precisa de New Game+?"
+      },
+      {
+        "answer": "Não. Há apenas 1 autosave.",
+        "question": "O jogo tem save manual?"
+      },
+      {
+        "answer": "Sim. Diferente de Fallen Order, Survivor tem fast travel entre Meditation Points desbloqueados.",
+        "question": "Existe fast travel?"
+      },
+      {
+        "answer": "Perk of the Job e They’re Probably Fine tiveram relatos de instabilidade. Splurgle também teve histórico de problema com Priorite Shard no lançamento. Mantenha o jogo atualizado.",
+        "question": "Quais troféus podem ser problemáticos?"
+      },
+      {
+        "answer": "Não necessariamente tudo do jogo, mas você precisa de categorias específicas: Priorite Shards, Perk Slots, Jedi Chambers, Force Tears, Bounties, Legendary Adversaries, Tactical Guide, Fish, Plants, Cantina Recruits e Holotactics.",
+        "question": "Preciso coletar tudo?"
+      },
+      {
+        "answer": "Não. Fallen Order é outro jogo, com outra lista de troféus.",
+        "question": "Star Wars Jedi: Fallen Order entra no guia?"
+      }
+    ],
+    "note": "Campos exportados para auditoria. O SQLite atual nao possui colunas nativas para todos esses extras; a importacao preserva o que o banco suporta.",
+    "quickDecision": {
+      "firstAction": "Na campanha, resolva os 10 assists de Bode cedo e depois os 10 de Merrin.",
+      "recommendation": "Boa para quem aceita cleanup alto/moderado e quer jogar tudo em Story Mode.",
+      "risk": "O risco principal é perder Bode; Perk of the Job e They’re Probably Fine são riscos técnicos, não perdíveis.",
+      "summary": "Platina de 40-50h, 3/10, offline, sem coop e com 1 perdível real: You’ve Got A Friend."
+    },
+    "seo": {
+      "description": "Guia de platina de Star Wars Jedi: Survivor com 54 troféus, 40-50h, 3/10, 1 perdível, offline, sem coop, Story Mode, checklist EN/PT-BR e roadmap.",
+      "keywords": "Star Wars Jedi Survivor troféus, Star Wars Jedi Survivor platina, You’ve Got A Friend, Priorite Shards, Force Tears, Jedi Chambers, Caij Match",
+      "title": "Star Wars Jedi: Survivor — guia de platina, troféus e roadmap"
+    },
+    "tags": [
+      "PS5",
+      "Offline",
+      "Solo",
+      "1 perdível",
+      "Story Mode",
+      "Free roam pós-história",
+      "Autosave",
+      "Base game sem DLCs",
+      "Cleanup",
+      "Coletáveis"
+    ]
+  },
+  "slug": "star-wars-jedi-survivor",
+  "trophies": [
+    {
+      "description": "Unlock all Trophies",
+      "is_missable": 0,
+      "is_spoiler": 0,
+      "name": "The Jedi Survivor",
+      "name_pt": "O Jedi Sobrevivente",
+      "tip": "Complete todos os outros 53 troféus da lista base para liberar a platina.",
+      "trophy_code": "swjs_the_jedi_survivor",
+      "type": "Platina"
+    },
+    {
+      "description": "Defeat an Inquisitor",
+      "is_missable": 0,
+      "is_spoiler": 1,
+      "name": "Rooftop Duel",
+      "name_pt": "Duelo nos Telhados",
+      "tip": "Troféu de história em Coruscant, ligado ao primeiro grande confronto da campanha.",
+      "trophy_code": "swjs_rooftop_duel",
+      "type": "Bronze"
+    },
+    {
+      "description": "Break free from the grasp of the Empire",
+      "is_missable": 0,
+      "is_spoiler": 1,
+      "name": "For Saw Gerrera",
+      "name_pt": "Por Saw Gerrera",
+      "tip": "Troféu de história obtido ao escapar do Império na abertura da campanha.",
+      "trophy_code": "swjs_for_saw_gerrera",
+      "type": "Bronze"
+    },
+    {
+      "description": "Chat with the owner of the Koboh cantina",
+      "is_missable": 0,
+      "is_spoiler": 1,
+      "name": "Grab Some Seat",
+      "name_pt": "Pegue um Assento",
+      "tip": "Troféu de história ao conhecer o dono da cantina em Koboh.",
+      "trophy_code": "swjs_grab_some_seat",
+      "type": "Bronze"
+    },
+    {
+      "description": "Release the Jedi from the bacta tank",
+      "is_missable": 0,
+      "is_spoiler": 1,
+      "name": "The Past Made Present",
+      "name_pt": "O Passado Feito Presente",
+      "tip": "Troféu de história ligado a um evento central em Koboh. Trate como spoiler.",
+      "trophy_code": "swjs_the_past_made_present",
+      "type": "Bronze"
+    },
+    {
+      "description": "Travel together with a Nightsister",
+      "is_missable": 0,
+      "is_spoiler": 1,
+      "name": "Survivors, We Adapt",
+      "name_pt": "Sobreviventes, Nós nos Adaptamos",
+      "tip": "Troféu de história envolvendo companheira e avanço em Jedha.",
+      "trophy_code": "swjs_survivors_we_adapt",
+      "type": "Bronze"
+    },
+    {
+      "description": "Meet the hidden Jedi",
+      "is_missable": 0,
+      "is_spoiler": 1,
+      "name": "Among the Masters",
+      "name_pt": "Entre os Mestres",
+      "tip": "Troféu de história relacionado aos Jedi Masters. Trate como spoiler narrativo.",
+      "trophy_code": "swjs_among_the_masters",
+      "type": "Bronze"
+    },
+    {
+      "description": "Protect Pilgrim's Sanctuary",
+      "is_missable": 0,
+      "is_spoiler": 1,
+      "name": "For the Path",
+      "name_pt": "Pelo Caminho",
+      "tip": "Troféu de história em Jedha, ligado à proteção do Pilgrim’s Sanctuary.",
+      "trophy_code": "swjs_for_the_path",
+      "type": "Bronze"
+    },
+    {
+      "description": "Rescue a friend from the Bedlam Raiders.",
+      "is_missable": 0,
+      "is_spoiler": 1,
+      "name": "Out of Bedlam",
+      "name_pt": "Fora do Bedlam",
+      "tip": "Troféu de história avançada em Koboh, ligado aos Bedlam Raiders.",
+      "trophy_code": "swjs_out_of_bedlam",
+      "type": "Bronze"
+    },
+    {
+      "description": "Collect the Abyss Compass",
+      "is_missable": 0,
+      "is_spoiler": 1,
+      "name": "Tanalorr Bound",
+      "name_pt": "Rumo a Tanalorr",
+      "tip": "Troféu de história avançada ligado ao Abyss Compass e à rota para Tanalorr.",
+      "trophy_code": "swjs_tanalorr_bound",
+      "type": "Bronze"
+    },
+    {
+      "description": "Defend the Archive",
+      "is_missable": 0,
+      "is_spoiler": 1,
+      "name": "Tragedy",
+      "name_pt": "Tragédia",
+      "tip": "Troféu de história avançada em Jedha. Marque como spoiler.",
+      "trophy_code": "swjs_tragedy",
+      "type": "Bronze"
+    },
+    {
+      "description": "Survive Nova Garon",
+      "is_missable": 0,
+      "is_spoiler": 1,
+      "name": "At the Precipice",
+      "name_pt": "À Beira do Abismo",
+      "tip": "Troféu de história em Nova Garon, perto da reta final da campanha.",
+      "trophy_code": "swjs_at_the_precipice",
+      "type": "Bronze"
+    },
+    {
+      "description": "Discover the route to Tanalorr",
+      "is_missable": 0,
+      "is_spoiler": 1,
+      "name": "Into the Abyss",
+      "name_pt": "Para o Abismo",
+      "tip": "Troféu de história final ligado à descoberta da rota para Tanalorr.",
+      "trophy_code": "swjs_into_the_abyss",
+      "type": "Bronze"
+    },
+    {
+      "description": "Complete the story",
+      "is_missable": 0,
+      "is_spoiler": 1,
+      "name": "A Place You Could Call Home",
+      "name_pt": "Um Lugar que Você Poderia Chamar de Lar",
+      "tip": "Complete a campanha principal. Não há troféu de dificuldade, então pode ser feito no Story Mode.",
+      "trophy_code": "swjs_a_place_you_could_call_home",
+      "type": "Ouro"
+    },
+    {
+      "description": "Defeat 50 enemies under the effect of Slow",
+      "is_missable": 0,
+      "is_spoiler": 0,
+      "name": "Han Slowlo",
+      "name_pt": "Han Slowlo",
+      "tip": "Use Slow em combate e derrote 50 inimigos enquanto o efeito estiver ativo.",
+      "trophy_code": "swjs_han_slowlo",
+      "type": "Bronze"
+    },
+    {
+      "description": "Defeat 10 enemies with shots using the Point Blank skill",
+      "is_missable": 0,
+      "is_spoiler": 0,
+      "name": "So Uncivilized",
+      "name_pt": "Tão Incivilizado",
+      "tip": "Desbloqueie Point Blank e derrote 10 inimigos com tiros usando essa habilidade.",
+      "trophy_code": "swjs_so_uncivilized",
+      "type": "Bronze"
+    },
+    {
+      "description": "Direct your companions to assist in combat 10 times each",
+      "is_missable": 1,
+      "is_spoiler": 0,
+      "name": "You’ve Got A Friend",
+      "name_pt": "Você Tem um Amigo",
+      "tip": "Missable: use a assistência de cada companheiro 10 vezes quando eles estiverem disponíveis em trechos específicos da história. Se perder, faça em New Game+.",
+      "trophy_code": "swjs_youve_got_a_friend",
+      "type": "Bronze"
+    },
+    {
+      "description": "Hit 3 enemies with a single roller mine",
+      "is_missable": 0,
+      "is_spoiler": 0,
+      "name": "Catch!",
+      "name_pt": "Pega!",
+      "tip": "Atraia uma roller mine e faça a explosão atingir 3 inimigos de uma vez.",
+      "trophy_code": "swjs_catch",
+      "type": "Bronze"
+    },
+    {
+      "description": "Strike an unaware enemy 20 times",
+      "is_missable": 0,
+      "is_spoiler": 0,
+      "name": "They Never Saw It Coming",
+      "name_pt": "Eles Nunca Viram Chegar",
+      "tip": "Ataque inimigos desprevenidos 20 vezes ao longo da campanha ou no cleanup.",
+      "trophy_code": "swjs_they_never_saw_it_coming",
+      "type": "Bronze"
+    },
+    {
+      "description": "Push an enemy into the Shattered Moon mining cannon",
+      "is_missable": 0,
+      "is_spoiler": 1,
+      "name": "This is Canon",
+      "name_pt": "Isso é Canônico",
+      "tip": "Use Force Push para empurrar um inimigo no mining cannon da Shattered Moon.",
+      "trophy_code": "swjs_this_is_canon",
+      "type": "Bronze"
+    },
+    {
+      "description": "Defeat all legendary adversaries",
+      "is_missable": 0,
+      "is_spoiler": 1,
+      "name": "I’m a Living Legend",
+      "name_pt": "Sou uma Lenda Viva",
+      "tip": "Derrote todos os Legendary Adversaries. Faça no pós-história com mapa e habilidades completas.",
+      "trophy_code": "swjs_i_m_a_living_legend",
+      "type": "Prata"
+    },
+    {
+      "description": "Attack 20 Lifted enemies",
+      "is_missable": 0,
+      "is_spoiler": 0,
+      "name": "Get Down From There",
+      "name_pt": "Desça Daí",
+      "tip": "Use Lift em inimigos e acerte 20 deles enquanto estiverem suspensos.",
+      "trophy_code": "swjs_get_down_from_there",
+      "type": "Bronze"
+    },
+    {
+      "description": "Avoid 50 attacks using Focus Sight",
+      "is_missable": 0,
+      "is_spoiler": 0,
+      "name": "One With the Force",
+      "name_pt": "Um com a Força",
+      "tip": "Use Focus Sight para evitar 50 ataques. Acumule naturalmente em combate.",
+      "trophy_code": "swjs_one_with_the_force",
+      "type": "Bronze"
+    },
+    {
+      "description": "A confused enemy defeats an enemy of the same type",
+      "is_missable": 0,
+      "is_spoiler": 0,
+      "name": "Mirror Match",
+      "name_pt": "Duelo Espelhado",
+      "tip": "Use Confuse para fazer um inimigo derrotar outro do mesmo tipo.",
+      "trophy_code": "swjs_mirror_match",
+      "type": "Bronze"
+    },
+    {
+      "description": "Execute 10 perfectly timed precision releases",
+      "is_missable": 0,
+      "is_spoiler": 0,
+      "name": "Pinpoint",
+      "name_pt": "Precisão Cirúrgica",
+      "tip": "Use Precision Release no Dual Wield com timing perfeito 10 vezes.",
+      "trophy_code": "swjs_pinpoint",
+      "type": "Bronze"
+    },
+    {
+      "description": "Slam 5 enemies with a single use of Slam",
+      "is_missable": 0,
+      "is_spoiler": 0,
+      "name": "Slam Dunk",
+      "name_pt": "Enterrada",
+      "tip": "Agrupe inimigos e use Slam para acertar 5 com um único uso.",
+      "trophy_code": "swjs_slam_dunk",
+      "type": "Bronze"
+    },
+    {
+      "description": "Parry a Force Pull resisting enemy",
+      "is_missable": 0,
+      "is_spoiler": 0,
+      "name": "Riposte",
+      "name_pt": "Riposta",
+      "tip": "Use Force Pull em um inimigo que resiste e faça o parry no contra-ataque.",
+      "trophy_code": "swjs_riposte",
+      "type": "Bronze"
+    },
+    {
+      "description": "Discover and complete all Jedi Chambers",
+      "is_missable": 0,
+      "is_spoiler": 0,
+      "name": "Star Tours",
+      "name_pt": "Passeios Estelares",
+      "tip": "Encontre e complete todas as Jedi Chambers. Elas também ajudam a liberar upgrades de mapa.",
+      "trophy_code": "swjs_star_tours",
+      "type": "Prata"
+    },
+    {
+      "description": "Reach the highest point of Harvest Ridge",
+      "is_missable": 0,
+      "is_spoiler": 0,
+      "name": "King of the World",
+      "name_pt": "Rei do Mundo",
+      "tip": "Chegue ao ponto mais alto de Harvest Ridge em Koboh.",
+      "trophy_code": "swjs_king_of_the_world",
+      "type": "Bronze"
+    },
+    {
+      "description": "Help lift a ship out of the tar pits",
+      "is_missable": 0,
+      "is_spoiler": 1,
+      "name": "There Is No Try",
+      "name_pt": "Não Existe Tentar",
+      "tip": "Complete a interação/rumor ligado ao navio preso nos tar pits.",
+      "trophy_code": "swjs_there_is_no_try",
+      "type": "Bronze"
+    },
+    {
+      "description": "Travel 500m of distance while riding creatures",
+      "is_missable": 0,
+      "is_spoiler": 0,
+      "name": "Now, This Isn’t Podracing",
+      "name_pt": "Agora, Isso Não é Corrida de Pods",
+      "tip": "Cavalgue criaturas por 500 metros acumulados.",
+      "trophy_code": "swjs_now_this_isnt_podracing",
+      "type": "Bronze"
+    },
+    {
+      "description": "Refresh the Refresher",
+      "is_missable": 0,
+      "is_spoiler": 0,
+      "name": "Cleaning Up",
+      "name_pt": "Limpando a Área",
+      "tip": "Interaja com o refresher/toalete da cantina para obter o troféu.",
+      "trophy_code": "swjs_cleaning_up",
+      "type": "Bronze"
+    },
+    {
+      "description": "Drop your mount into the great unknown",
+      "is_missable": 0,
+      "is_spoiler": 0,
+      "name": "They’re Probably Fine",
+      "name_pt": "Eles Provavelmente Estão Bem",
+      "tip": "Derrube uma montaria no vazio em um ponto adequado. Pode exigir mais de uma tentativa se buggar.",
+      "trophy_code": "swjs_theyre_probably_fine",
+      "type": "Bronze"
+    },
+    {
+      "description": "Keep your feet off the ground and walls for 60 seconds",
+      "is_missable": 0,
+      "is_spoiler": 0,
+      "name": "Skywalker",
+      "name_pt": "Skywalker",
+      "tip": "Use paredes, cabos, montarias ou áreas de traversal para ficar 60 segundos sem tocar o chão.",
+      "trophy_code": "swjs_skywalker",
+      "type": "Bronze"
+    },
+    {
+      "description": "Explore the Phon’Qi Caverns",
+      "is_missable": 0,
+      "is_spoiler": 1,
+      "name": "It’s a Trap",
+      "name_pt": "É uma Armadilha",
+      "tip": "Explore as Phon’Qi Caverns. Área opcional importante para cleanup e inimigos.",
+      "trophy_code": "swjs_its_a_trap",
+      "type": "Bronze"
+    },
+    {
+      "description": "Have a packed cantina",
+      "is_missable": 0,
+      "is_spoiler": 0,
+      "name": "Max Capacity",
+      "name_pt": "Lotação Máxima",
+      "tip": "Recrute todos os NPCs possíveis para a cantina de Koboh.",
+      "trophy_code": "swjs_max_capacity",
+      "type": "Bronze"
+    },
+    {
+      "description": "You can pet the bogling",
+      "is_missable": 0,
+      "is_spoiler": 0,
+      "name": "Can You Pet the Bogling?",
+      "name_pt": "Dá para Acariciar o Bogling?",
+      "tip": "Encontre um Bogling e interaja para fazer carinho.",
+      "trophy_code": "swjs_can_you_pet_the_bogling",
+      "type": "Bronze"
+    },
+    {
+      "description": "Gain the attention of a mysterious stranger",
+      "is_missable": 0,
+      "is_spoiler": 1,
+      "name": "Caij Match",
+      "name_pt": "Duelo com Caij",
+      "tip": "Avance a linha de bounties/caçadores até chamar a atenção da figura misteriosa.",
+      "trophy_code": "swjs_caij_match",
+      "type": "Prata"
+    },
+    {
+      "description": "Obtain your first bounty",
+      "is_missable": 0,
+      "is_spoiler": 1,
+      "name": "Who Gives a Puck",
+      "name_pt": "Quem Liga para um Disco?",
+      "tip": "Obtenha seu primeiro bounty puck na linha de caçadores de recompensa.",
+      "trophy_code": "swjs_who_gives_a_puck",
+      "type": "Bronze"
+    },
+    {
+      "description": "Equip Perks in all slots",
+      "is_missable": 0,
+      "is_spoiler": 0,
+      "name": "Perk of the Job",
+      "name_pt": "Benefício do Trabalho",
+      "tip": "Libere todos os slots de perks e equipe perks em todos eles.",
+      "trophy_code": "swjs_perk_of_the_job",
+      "type": "Prata"
+    },
+    {
+      "description": "Trade 25 collected items",
+      "is_missable": 0,
+      "is_spoiler": 0,
+      "name": "Greezy Money",
+      "name_pt": "Dinheiro Greezy",
+      "tip": "Troque 25 itens coletados em lojas, como Priorite Shards em Doma.",
+      "trophy_code": "swjs_greezy_money",
+      "type": "Bronze"
+    },
+    {
+      "description": "Train with your weapons while wearing a headband",
+      "is_missable": 0,
+      "is_spoiler": 0,
+      "name": "Cobra Cal",
+      "name_pt": "Cobra Cal",
+      "tip": "Equipe uma headband e treine/ataque com as armas para liberar o troféu.",
+      "trophy_code": "swjs_cobra_cal",
+      "type": "Bronze"
+    },
+    {
+      "description": "Wear an old wardrobe staple",
+      "is_missable": 0,
+      "is_spoiler": 0,
+      "name": "A Presence I’ve Not Felt Since…",
+      "name_pt": "Uma Presença que Não Sentia Desde...",
+      "tip": "Equipe uma peça clássica do guarda-roupa como referência a Fallen Order.",
+      "trophy_code": "swjs_a_presence_ive_not_felt_since",
+      "type": "Bronze"
+    },
+    {
+      "description": "Equip a new cosmetic in every Cal slot",
+      "is_missable": 0,
+      "is_spoiler": 0,
+      "name": "Hey, Luke At Us",
+      "name_pt": "Ei, Luke Para Nós",
+      "tip": "Equipe cosméticos novos em todos os slots de Cal.",
+      "trophy_code": "swjs_hey_luke_at_us",
+      "type": "Bronze"
+    },
+    {
+      "description": "Dropkick an enemy while wearing a mullet",
+      "is_missable": 0,
+      "is_spoiler": 0,
+      "name": "Road House",
+      "name_pt": "Road House",
+      "tip": "Equipe o mullet e use dropkick em um inimigo.",
+      "trophy_code": "swjs_road_house",
+      "type": "Bronze"
+    },
+    {
+      "description": "Customize BD-1, the blaster, and Cal’s lightsaber with new parts",
+      "is_missable": 0,
+      "is_spoiler": 0,
+      "name": "Kitted Out",
+      "name_pt": "Totalmente Equipado",
+      "tip": "Personalize BD-1, o blaster e o lightsaber com novas peças.",
+      "trophy_code": "swjs_kitted_out",
+      "type": "Bronze"
+    },
+    {
+      "description": "Fill the aquarium in the cantina",
+      "is_missable": 0,
+      "is_spoiler": 0,
+      "name": "Skoova Diving",
+      "name_pt": "Mergulho com Skoova",
+      "tip": "Encontre Skoova em todos os pontos de pesca e complete o aquário da cantina.",
+      "trophy_code": "swjs_skoova_diving",
+      "type": "Prata"
+    },
+    {
+      "description": "Find space for a full garden",
+      "is_missable": 0,
+      "is_spoiler": 0,
+      "name": "Growth Spurt",
+      "name_pt": "Surto de Crescimento",
+      "tip": "Colete sementes diferentes e expanda/preencha o jardim da cantina.",
+      "trophy_code": "swjs_growth_spurt",
+      "type": "Bronze"
+    },
+    {
+      "description": "Win all holotastics matches",
+      "is_missable": 0,
+      "is_spoiler": 0,
+      "name": "Gambler",
+      "name_pt": "Apostador",
+      "tip": "Vença todas as partidas de holotactics.",
+      "trophy_code": "swjs_gambler",
+      "type": "Prata"
+    },
+    {
+      "description": "Scan every type of enemy to fill out the Tactical Guide",
+      "is_missable": 0,
+      "is_spoiler": 1,
+      "name": "Intergalactic Geographic",
+      "name_pt": "Geográfico Intergaláctico",
+      "tip": "Escaneie todos os tipos de inimigos com BD-1 para completar o Tactical Guide.",
+      "trophy_code": "swjs_intergalactic_geographic",
+      "type": "Prata"
+    },
+    {
+      "description": "Use BD-1 to investigate a target in the distance",
+      "is_missable": 0,
+      "is_spoiler": 0,
+      "name": "Reconnaissance",
+      "name_pt": "Reconhecimento",
+      "tip": "Use BD-1 para investigar um alvo à distância.",
+      "trophy_code": "swjs_reconnaissance",
+      "type": "Bronze"
+    },
+    {
+      "description": "Purchase all of Doma’s merchandise",
+      "is_missable": 0,
+      "is_spoiler": 0,
+      "name": "Splurgle",
+      "name_pt": "Esbanjador",
+      "tip": "Compre todos os itens da loja da Doma. Exige Priorite Shards suficientes.",
+      "trophy_code": "swjs_splurgle",
+      "type": "Bronze"
+    },
+    {
+      "description": "Fully upgrade 3 skill trees",
+      "is_missable": 0,
+      "is_spoiler": 0,
+      "name": "The Jedi Path",
+      "name_pt": "O Caminho Jedi",
+      "tip": "Gaste skill points para melhorar completamente 3 árvores de habilidade.",
+      "trophy_code": "swjs_the_jedi_path",
+      "type": "Bronze"
+    },
+    {
+      "description": "Complete all Force Tears",
+      "is_missable": 0,
+      "is_spoiler": 0,
+      "name": "Blood, Sweat, and Tears",
+      "name_pt": "Sangue, Suor e Lágrimas",
+      "tip": "Encontre e complete todos os Force Tears da lista base.",
+      "trophy_code": "swjs_blood_sweat_and_tears",
+      "type": "Ouro"
+    }
+  ]
+}

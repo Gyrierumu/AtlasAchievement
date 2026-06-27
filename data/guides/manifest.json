@@ -1,0 +1,772 @@
+{
+  "dataKind": "atlasachievement-guide-export",
+  "games": [
+    {
+      "file": "a-way-out.json",
+      "name": "A Way Out",
+      "roadmaps": 6,
+      "slug": "a-way-out",
+      "status": "review",
+      "trophies": 15
+    },
+    {
+      "file": "armored-core-vi-fires-of-rubicon.json",
+      "name": "Armored Core VI: Fires of Rubicon",
+      "roadmaps": 7,
+      "slug": "armored-core-vi-fires-of-rubicon",
+      "status": "review",
+      "trophies": 30
+    },
+    {
+      "file": "assassins-creed-mirage.json",
+      "name": "Assassin’s Creed Mirage",
+      "roadmaps": 6,
+      "slug": "assassins-creed-mirage",
+      "status": "review",
+      "trophies": 51
+    },
+    {
+      "file": "assassins-creed-odyssey.json",
+      "name": "Assassin’s Creed Odyssey",
+      "roadmaps": 6,
+      "slug": "assassins-creed-odyssey",
+      "status": "review",
+      "trophies": 51
+    },
+    {
+      "file": "assassins-creed-origins.json",
+      "name": "Assassin’s Creed Origins",
+      "roadmaps": 6,
+      "slug": "assassins-creed-origins",
+      "status": "review",
+      "trophies": 51
+    },
+    {
+      "file": "assassins-creed-shadows.json",
+      "name": "Assassin’s Creed Shadows",
+      "roadmaps": 8,
+      "slug": "assassins-creed-shadows",
+      "status": "review",
+      "trophies": 55
+    },
+    {
+      "file": "assassins-creed-valhalla.json",
+      "name": "Assassin’s Creed Valhalla",
+      "roadmaps": 6,
+      "slug": "assassins-creed-valhalla",
+      "status": "review",
+      "trophies": 51
+    },
+    {
+      "file": "astro-bot.json",
+      "name": "Astro Bot",
+      "roadmaps": 6,
+      "slug": "astro-bot",
+      "status": "verified",
+      "trophies": 44
+    },
+    {
+      "file": "astros-playroom.json",
+      "name": "Astro’s Playroom",
+      "roadmaps": 6,
+      "slug": "astros-playroom",
+      "status": "review",
+      "trophies": 43
+    },
+    {
+      "file": "avatar-frontiers-of-pandora.json",
+      "name": "Avatar: Frontiers of Pandora",
+      "roadmaps": 7,
+      "slug": "avatar-frontiers-of-pandora",
+      "status": "review",
+      "trophies": 32
+    },
+    {
+      "file": "baldurs-gate-3.json",
+      "name": "Baldur's Gate 3",
+      "roadmaps": 7,
+      "slug": "baldurs-gate-3",
+      "status": "review",
+      "trophies": 54
+    },
+    {
+      "file": "beyond-two-souls.json",
+      "name": "Beyond: Two Souls",
+      "roadmaps": 7,
+      "slug": "beyond-two-souls",
+      "status": "review",
+      "trophies": 46
+    },
+    {
+      "file": "black-myth-wukong.json",
+      "name": "Black Myth: Wukong",
+      "roadmaps": 6,
+      "slug": "black-myth-wukong",
+      "status": "verified",
+      "trophies": 36
+    },
+    {
+      "file": "bloodborne.json",
+      "name": "Bloodborne",
+      "roadmaps": 5,
+      "slug": "bloodborne",
+      "status": "review",
+      "trophies": 34
+    },
+    {
+      "file": "celeste.json",
+      "name": "Celeste",
+      "roadmaps": 5,
+      "slug": "celeste",
+      "status": "review",
+      "trophies": 31
+    },
+    {
+      "file": "clair-obscur-expedition-33.json",
+      "name": "Clair Obscur: Expedition 33",
+      "roadmaps": 6,
+      "slug": "clair-obscur-expedition-33",
+      "status": "review",
+      "trophies": 56
+    },
+    {
+      "file": "cyberpunk-2077.json",
+      "name": "Cyberpunk 2077",
+      "roadmaps": 7,
+      "slug": "cyberpunk-2077",
+      "status": "review",
+      "trophies": 45
+    },
+    {
+      "file": "dark-souls-ii-scholar-of-the-first-sin.json",
+      "name": "Dark Souls II: Scholar of the First Sin",
+      "roadmaps": 7,
+      "slug": "dark-souls-ii-scholar-of-the-first-sin",
+      "status": "review",
+      "trophies": 38
+    },
+    {
+      "file": "dark-souls-iii.json",
+      "name": "Dark Souls III",
+      "roadmaps": 6,
+      "slug": "dark-souls-iii",
+      "status": "review",
+      "trophies": 43
+    },
+    {
+      "file": "dark-souls-remastered.json",
+      "name": "Dark Souls Remastered",
+      "roadmaps": 7,
+      "slug": "dark-souls-remastered",
+      "status": "verified",
+      "trophies": 41
+    },
+    {
+      "file": "days-gone.json",
+      "name": "Days Gone",
+      "roadmaps": 5,
+      "slug": "days-gone",
+      "status": "review",
+      "trophies": 46
+    },
+    {
+      "file": "dead-cells.json",
+      "name": "Dead Cells",
+      "roadmaps": 6,
+      "slug": "dead-cells",
+      "status": "verified",
+      "trophies": 54
+    },
+    {
+      "file": "death-stranding.json",
+      "name": "Death Stranding",
+      "roadmaps": 6,
+      "slug": "death-stranding",
+      "status": "review",
+      "trophies": 63
+    },
+    {
+      "file": "death-stranding-2-on-the-beach.json",
+      "name": "Death Stranding 2: On the Beach",
+      "roadmaps": 6,
+      "slug": "death-stranding-2-on-the-beach",
+      "status": "review",
+      "trophies": 55
+    },
+    {
+      "file": "demons-souls.json",
+      "name": "Demon’s Souls",
+      "roadmaps": 8,
+      "slug": "demons-souls",
+      "status": "verified",
+      "trophies": 37
+    },
+    {
+      "file": "detroit-become-human.json",
+      "name": "Detroit: Become Human",
+      "roadmaps": 6,
+      "slug": "detroit-become-human",
+      "status": "verified",
+      "trophies": 49
+    },
+    {
+      "file": "disney-epic-mickey-rebrushed.json",
+      "name": "Disney Epic Mickey: Rebrushed",
+      "roadmaps": 6,
+      "slug": "disney-epic-mickey-rebrushed",
+      "status": "verified",
+      "trophies": 39
+    },
+    {
+      "file": "dragons-dogma-2.json",
+      "name": "Dragon's Dogma 2",
+      "roadmaps": 7,
+      "slug": "dragons-dogma-2",
+      "status": "review",
+      "trophies": 55
+    },
+    {
+      "file": "elden-ring.json",
+      "name": "Elden Ring",
+      "roadmaps": 6,
+      "slug": "elden-ring",
+      "status": "verified",
+      "trophies": 42
+    },
+    {
+      "file": "final-fantasy-vii-rebirth.json",
+      "name": "Final Fantasy VII Rebirth",
+      "roadmaps": 6,
+      "slug": "final-fantasy-vii-rebirth",
+      "status": "review",
+      "trophies": 61
+    },
+    {
+      "file": "final-fantasy-vii-remake.json",
+      "name": "Final Fantasy VII Remake",
+      "roadmaps": 6,
+      "slug": "final-fantasy-vii-remake",
+      "status": "review",
+      "trophies": 54
+    },
+    {
+      "file": "final-fantasy-xvi.json",
+      "name": "Final Fantasy XVI",
+      "roadmaps": 6,
+      "slug": "final-fantasy-xvi",
+      "status": "review",
+      "trophies": 50
+    },
+    {
+      "file": "ghost-of-tsushima.json",
+      "name": "Ghost of Tsushima",
+      "roadmaps": 6,
+      "slug": "ghost-of-tsushima",
+      "status": "verified",
+      "trophies": 52
+    },
+    {
+      "file": "ghost-of-yotei.json",
+      "name": "Ghost of Yōtei",
+      "roadmaps": 6,
+      "slug": "ghost-of-yotei",
+      "status": "verified",
+      "trophies": 54
+    },
+    {
+      "file": "god-of-war.json",
+      "name": "God of War",
+      "roadmaps": 6,
+      "slug": "god-of-war",
+      "status": "verified",
+      "trophies": 37
+    },
+    {
+      "file": "god-of-war-ragnarok.json",
+      "name": "God of War Ragnarök",
+      "roadmaps": 6,
+      "slug": "god-of-war-ragnarok",
+      "status": "verified",
+      "trophies": 36
+    },
+    {
+      "file": "gran-turismo-7.json",
+      "name": "Gran Turismo 7",
+      "roadmaps": 7,
+      "slug": "gran-turismo-7",
+      "status": "review",
+      "trophies": 54
+    },
+    {
+      "file": "hades.json",
+      "name": "Hades",
+      "roadmaps": 6,
+      "slug": "hades",
+      "status": "unverified",
+      "trophies": 50
+    },
+    {
+      "file": "hades-ii.json",
+      "name": "Hades II",
+      "roadmaps": 6,
+      "slug": "hades-ii",
+      "status": "verified",
+      "trophies": 50
+    },
+    {
+      "file": "heavy-rain.json",
+      "name": "Heavy Rain",
+      "roadmaps": 7,
+      "slug": "heavy-rain",
+      "status": "verified",
+      "trophies": 57
+    },
+    {
+      "file": "hogwarts-legacy.json",
+      "name": "Hogwarts Legacy",
+      "roadmaps": 6,
+      "slug": "hogwarts-legacy",
+      "status": "verified",
+      "trophies": 46
+    },
+    {
+      "file": "hollow-knight.json",
+      "name": "Hollow Knight",
+      "roadmaps": 6,
+      "slug": "hollow-knight",
+      "status": "verified",
+      "trophies": 35
+    },
+    {
+      "file": "hollow-knight-silksong.json",
+      "name": "Hollow Knight: Silksong",
+      "roadmaps": 7,
+      "slug": "hollow-knight-silksong",
+      "status": "verified",
+      "trophies": 34
+    },
+    {
+      "file": "horizon-forbidden-west.json",
+      "name": "Horizon Forbidden West",
+      "roadmaps": 6,
+      "slug": "horizon-forbidden-west",
+      "status": "verified",
+      "trophies": 59
+    },
+    {
+      "file": "horizon-zero-dawn.json",
+      "name": "Horizon Zero Dawn",
+      "roadmaps": 6,
+      "slug": "horizon-zero-dawn",
+      "status": "verified",
+      "trophies": 56
+    },
+    {
+      "file": "it-takes-two.json",
+      "name": "It Takes Two",
+      "roadmaps": 6,
+      "slug": "it-takes-two",
+      "status": "review",
+      "trophies": 21
+    },
+    {
+      "file": "lego-batman-legacy-of-the-dark-knight.json",
+      "name": "LEGO Batman: Legacy of the Dark Knight",
+      "roadmaps": 6,
+      "slug": "lego-batman-legacy-of-the-dark-knight",
+      "status": "unverified",
+      "trophies": 52
+    },
+    {
+      "file": "lies-of-p.json",
+      "name": "Lies of P",
+      "roadmaps": 6,
+      "slug": "lies-of-p",
+      "status": "review",
+      "trophies": 43
+    },
+    {
+      "file": "life-is-strange-double-exposure.json",
+      "name": "Life is Strange: Double Exposure",
+      "roadmaps": 7,
+      "slug": "life-is-strange-double-exposure",
+      "status": "review",
+      "trophies": 33
+    },
+    {
+      "file": "life-is-strange-remastered.json",
+      "name": "Life Is Strange Remastered",
+      "roadmaps": 4,
+      "slug": "life-is-strange-remastered",
+      "status": "unverified",
+      "trophies": 61
+    },
+    {
+      "file": "life-is-strange-true-colors.json",
+      "name": "Life is Strange: True Colors",
+      "roadmaps": 6,
+      "slug": "life-is-strange-true-colors",
+      "status": "review",
+      "trophies": 41
+    },
+    {
+      "file": "little-nightmares-ii.json",
+      "name": "Little Nightmares II",
+      "roadmaps": 6,
+      "slug": "little-nightmares-ii",
+      "status": "review",
+      "trophies": 35
+    },
+    {
+      "file": "lords-of-the-fallen.json",
+      "name": "Lords of the Fallen",
+      "roadmaps": 6,
+      "slug": "lords-of-the-fallen",
+      "status": "verified",
+      "trophies": 63
+    },
+    {
+      "file": "marvels-spider-man.json",
+      "name": "Marvel’s Spider-Man",
+      "roadmaps": 6,
+      "slug": "marvels-spider-man",
+      "status": "verified",
+      "trophies": 51
+    },
+    {
+      "file": "marvels-spider-man-2.json",
+      "name": "Marvel’s Spider-Man 2",
+      "roadmaps": 6,
+      "slug": "marvels-spider-man-2",
+      "status": "verified",
+      "trophies": 42
+    },
+    {
+      "file": "marvels-spider-man-miles-morales.json",
+      "name": "Marvel’s Spider-Man: Miles Morales",
+      "roadmaps": 6,
+      "slug": "marvels-spider-man-miles-morales",
+      "status": "verified",
+      "trophies": 50
+    },
+    {
+      "file": "metaphor-refantazio.json",
+      "name": "Metaphor: ReFantazio",
+      "roadmaps": 7,
+      "slug": "metaphor-refantazio",
+      "status": "review",
+      "trophies": 44
+    },
+    {
+      "file": "monster-hunter-world.json",
+      "name": "Monster Hunter: World",
+      "roadmaps": 7,
+      "slug": "monster-hunter-world",
+      "status": "review",
+      "trophies": 50
+    },
+    {
+      "file": "mortal-shell.json",
+      "name": "Mortal Shell",
+      "roadmaps": 6,
+      "slug": "mortal-shell",
+      "status": "review",
+      "trophies": 26
+    },
+    {
+      "file": "nioh-2.json",
+      "name": "Nioh 2",
+      "roadmaps": 6,
+      "slug": "nioh-2",
+      "status": "review",
+      "trophies": 56
+    },
+    {
+      "file": "nioh-3.json",
+      "name": "Nioh 3",
+      "roadmaps": 6,
+      "slug": "nioh-3",
+      "status": "verified",
+      "trophies": 51
+    },
+    {
+      "file": "persona-3-reload.json",
+      "name": "Persona 3 Reload",
+      "roadmaps": 6,
+      "slug": "persona-3-reload",
+      "status": "verified",
+      "trophies": 49
+    },
+    {
+      "file": "persona-5-royal.json",
+      "name": "Persona 5 Royal",
+      "roadmaps": 6,
+      "slug": "persona-5-royal",
+      "status": "verified",
+      "trophies": 53
+    },
+    {
+      "file": "pragmata.json",
+      "name": "PRAGMATA",
+      "roadmaps": 6,
+      "slug": "pragmata",
+      "status": "verified",
+      "trophies": 36
+    },
+    {
+      "file": "prince-of-persia-the-lost-crown.json",
+      "name": "Prince of Persia: The Lost Crown",
+      "roadmaps": 6,
+      "slug": "prince-of-persia-the-lost-crown",
+      "status": "review",
+      "trophies": 31
+    },
+    {
+      "file": "ratchet-and-clank-rift-apart.json",
+      "name": "Ratchet & Clank: Rift Apart",
+      "roadmaps": 6,
+      "slug": "ratchet-and-clank-rift-apart",
+      "status": "review",
+      "trophies": 47
+    },
+    {
+      "file": "reanimal.json",
+      "name": "REANIMAL",
+      "roadmaps": 6,
+      "slug": "reanimal",
+      "status": "review",
+      "trophies": 32
+    },
+    {
+      "file": "red-dead-redemption-2.json",
+      "name": "Red Dead Redemption 2",
+      "roadmaps": 6,
+      "slug": "red-dead-redemption-2",
+      "status": "review",
+      "trophies": 52
+    },
+    {
+      "file": "resident-evil.json",
+      "name": "Resident Evil",
+      "roadmaps": 6,
+      "slug": "resident-evil",
+      "status": "verified",
+      "trophies": 45
+    },
+    {
+      "file": "resident-evil-2-remake.json",
+      "name": "Resident Evil 2 Remake",
+      "roadmaps": 6,
+      "slug": "resident-evil-2-remake",
+      "status": "review",
+      "trophies": 42
+    },
+    {
+      "file": "resident-evil-3-remake.json",
+      "name": "Resident Evil 3 Remake",
+      "roadmaps": 5,
+      "slug": "resident-evil-3-remake",
+      "status": "review",
+      "trophies": 33
+    },
+    {
+      "file": "resident-evil-4-remake.json",
+      "name": "Resident Evil 4 Remake",
+      "roadmaps": 6,
+      "slug": "resident-evil-4-remake",
+      "status": "verified",
+      "trophies": 40
+    },
+    {
+      "file": "resident-evil-5.json",
+      "name": "Resident Evil 5",
+      "roadmaps": 7,
+      "slug": "resident-evil-5",
+      "status": "verified",
+      "trophies": 51
+    },
+    {
+      "file": "resident-evil-6.json",
+      "name": "Resident Evil 6",
+      "roadmaps": 5,
+      "slug": "resident-evil-6",
+      "status": "review",
+      "trophies": 51
+    },
+    {
+      "file": "resident-evil-7-biohazard.json",
+      "name": "Resident Evil 7 Biohazard",
+      "roadmaps": 5,
+      "slug": "resident-evil-7-biohazard",
+      "status": "review",
+      "trophies": 38
+    },
+    {
+      "file": "resident-evil-requiem.json",
+      "name": "Resident Evil Requiem",
+      "roadmaps": 6,
+      "slug": "resident-evil-requiem",
+      "status": "review",
+      "trophies": 50
+    },
+    {
+      "file": "resident-evil-village.json",
+      "name": "Resident Evil Village",
+      "roadmaps": 5,
+      "slug": "resident-evil-village",
+      "status": "review",
+      "trophies": 50
+    },
+    {
+      "file": "returnal.json",
+      "name": "Returnal",
+      "roadmaps": 6,
+      "slug": "returnal",
+      "status": "review",
+      "trophies": 31
+    },
+    {
+      "file": "road-96.json",
+      "name": "Road 96",
+      "roadmaps": 7,
+      "slug": "road-96",
+      "status": "review",
+      "trophies": 12
+    },
+    {
+      "file": "saros.json",
+      "name": "Saros",
+      "roadmaps": 6,
+      "slug": "saros",
+      "status": "verified",
+      "trophies": 45
+    },
+    {
+      "file": "sekiro-shadows-die-twice.json",
+      "name": "Sekiro: Shadows Die Twice",
+      "roadmaps": 6,
+      "slug": "sekiro-shadows-die-twice",
+      "status": "unverified",
+      "trophies": 34
+    },
+    {
+      "file": "split-fiction.json",
+      "name": "Split Fiction",
+      "roadmaps": 7,
+      "slug": "split-fiction",
+      "status": "review",
+      "trophies": 21
+    },
+    {
+      "file": "star-wars-jedi-fallen-order.json",
+      "name": "Star Wars Jedi: Fallen Order",
+      "roadmaps": 7,
+      "slug": "star-wars-jedi-fallen-order",
+      "status": "review",
+      "trophies": 40
+    },
+    {
+      "file": "star-wars-jedi-survivor.json",
+      "name": "Star Wars Jedi: Survivor",
+      "roadmaps": 7,
+      "slug": "star-wars-jedi-survivor",
+      "status": "review",
+      "trophies": 54
+    },
+    {
+      "file": "stray.json",
+      "name": "Stray",
+      "roadmaps": 6,
+      "slug": "stray",
+      "status": "review",
+      "trophies": 25
+    },
+    {
+      "file": "subnautica.json",
+      "name": "Subnautica",
+      "roadmaps": 6,
+      "slug": "subnautica",
+      "status": "review",
+      "trophies": 18
+    },
+    {
+      "file": "the-evil-within.json",
+      "name": "The Evil Within",
+      "roadmaps": 7,
+      "slug": "the-evil-within",
+      "status": "review",
+      "trophies": 42
+    },
+    {
+      "file": "the-evil-within-2.json",
+      "name": "The Evil Within 2",
+      "roadmaps": 7,
+      "slug": "the-evil-within-2",
+      "status": "review",
+      "trophies": 52
+    },
+    {
+      "file": "the-last-of-us-part-i.json",
+      "name": "The Last of Us Part I",
+      "roadmaps": 6,
+      "slug": "the-last-of-us-part-i",
+      "status": "verified",
+      "trophies": 29
+    },
+    {
+      "file": "the-last-of-us-part-ii.json",
+      "name": "The Last of Us Part II",
+      "roadmaps": 6,
+      "slug": "the-last-of-us-part-ii",
+      "status": "verified",
+      "trophies": 26
+    },
+    {
+      "file": "the-quarry.json",
+      "name": "The Quarry",
+      "roadmaps": 8,
+      "slug": "the-quarry",
+      "status": "review",
+      "trophies": 41
+    },
+    {
+      "file": "the-witcher-3-wild-hunt.json",
+      "name": "The Witcher 3: Wild Hunt",
+      "roadmaps": 7,
+      "slug": "the-witcher-3-wild-hunt",
+      "status": "review",
+      "trophies": 53
+    },
+    {
+      "file": "uncharted-legacy-of-thieves-collection.json",
+      "name": "Uncharted: Legacy of Thieves Collection",
+      "roadmaps": 6,
+      "slug": "uncharted-legacy-of-thieves-collection",
+      "status": "review",
+      "trophies": 101
+    },
+    {
+      "file": "until-dawn.json",
+      "name": "Until Dawn",
+      "roadmaps": 5,
+      "slug": "until-dawn",
+      "status": "verified",
+      "trophies": 19
+    },
+    {
+      "file": "what-remains-of-edith-finch.json",
+      "name": "What Remains of Edith Finch",
+      "roadmaps": 6,
+      "slug": "what-remains-of-edith-finch",
+      "status": "review",
+      "trophies": 12
+    }
+  ],
+  "schemaVersion": 1,
+  "totals": {
+    "games": 95,
+    "redirects": 9,
+    "roadmaps": 588,
+    "trophies": 4146
+  }
+}

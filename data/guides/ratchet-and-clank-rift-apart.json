@@ -1,0 +1,645 @@
+{
+  "game": {
+    "avoid_if": "Evite apenas se você não gosta de collectathon, arena challenges ou limpeza de mapa.",
+    "before_you_start": "A lista não tem online obrigatório e quase tudo permite cleanup por planeta; só trate Extinction Event como ponto real de atenção.",
+    "best_for": "Ideal para quem quer uma platina curta, bonita, acessível e com baixo risco de retrabalho.",
+    "cleanup_advice": "Depois da campanha, revisite planetas para coletáveis, Battleplex, armas e troféus específicos restantes. Use Challenge Mode apenas para as armas finais ou Grunthors pendentes.",
+    "cover_image": "https://cdn.cloudflare.steamstatic.com/steam/apps/1895880/library_600x900.jpg",
+    "coverage_level": "strong",
+    "created_at": "2026-05-09 19:53:35",
+    "difficulty": 2,
+    "difficulty_reason": "A platina é acessível; o desafio maior está em limpar coletáveis, cumprir ações específicas e lembrar dos Grunthors.",
+    "dlc_scope": "Guia focado na lista base da platina.",
+    "editorial_notes": "",
+    "editorial_review_status": null,
+    "editorial_status": "published",
+    "first_run_advice": "Jogue a história naturalmente, explore planetas e colete o que encontrar. Em Sargasso, mate Grunthors sempre que aparecerem para evitar retrabalho.",
+    "grind_summary": "O peso está em coletáveis, Battleplex, armas, desafios e troféus específicos, não em grind pesado.",
+    "guide_avoid": null,
+    "guide_best_moment": null,
+    "guide_dlc": null,
+    "guide_grind": null,
+    "guide_ideal": null,
+    "guide_online": null,
+    "guide_runs": null,
+    "image": "https://cdn.cloudflare.steamstatic.com/steam/apps/1895880/header.jpg",
+    "is_verified": 0,
+    "last_reviewed_at": "",
+    "missable": "Quase tudo permite cleanup por planetas após a história. O único ponto tecnicamente missable é Extinction Event: mate Grunthors em Sargasso quando aparecerem; se faltar, o progresso carrega para Challenge Mode.",
+    "missable_summary": "Extinction Event é o único troféu de atenção confiável; os demais objetivos permitem retorno, cleanup por planeta ou Challenge Mode curto.",
+    "name": "Ratchet & Clank: Rift Apart",
+    "online_summary": "Nao ha exigencia online para a platina.",
+    "quality_warnings": "[]",
+    "reviewed_by": "",
+    "runs_summary": "Uma campanha principal com cleanup livre por planetas. Challenge Mode é usado apenas se você precisar comprar as duas armas restantes para Fully Stacked ou recuperar Grunthors.",
+    "slug": "ratchet-and-clank-rift-apart",
+    "time": "10-15h",
+    "time_bucket": "short",
+    "time_max_hours": 15,
+    "time_min_hours": 10,
+    "time_reason": "A faixa de 10-15 horas considera campanha, coletáveis, Battleplex, armas, Challenge Mode curto para armas e cleanup.",
+    "time_sort_hours": 10,
+    "updated_at": "2026-06-27 02:36:58",
+    "verification_note": "Precisa revisão editorial final: Extinction Event confirmado como principal ponto de atenção; revisar checklist completo antes de selo verificado.",
+    "verification_status": "review",
+    "walkthrough": null
+  },
+  "redirects": [],
+  "roadmaps": [
+    {
+      "content": "{\"title\":\"Avance pela campanha\",\"focus\":\"\",\"objective\":\"jogue a campanha naturalmente, explore planetas, desbloqueie sistemas, armas, upgrades, Hoverboots e retorno por nave. Mate Grunthors em Sargasso quando aparecerem para proteger Extinction Event.\",\"actions\":[],\"warning\":\"\",\"result\":\"\"}",
+      "step_order": 1
+    },
+    {
+      "content": "{\"title\":\"Resolva desafios opcionais\",\"focus\":\"\",\"objective\":\"complete Battleplex Challenges em Scarstu Debris Field, incluindo um Gold Cup Challenge quando estiver disponível depois da reta final.\",\"actions\":[],\"warning\":\"\",\"result\":\"\"}",
+      "step_order": 2
+    },
+    {
+      "content": "{\"title\":\"Resolva desafios opcionais\",\"focus\":\"\",\"objective\":\"limpe coletáveis necessários: CraiggerBears, Spybots, Glitch Challenges, Zurpstones, Blizon Crystals, cinco Gold Bolts, três Lorbs e armaduras suficientes.\",\"actions\":[],\"warning\":\"\",\"result\":\"\"}",
+      "step_order": 3
+    },
+    {
+      "content": "{\"title\":\"Prossiga pela rota planejada\",\"focus\":\"\",\"objective\":\"complete trofeus especificos de armas, combate e interacao, como Topiary Sprinkler, Mr. Fungi, Void Reactor, Ricochet, Warmonger, jukebox, hot springs e TV.\",\"actions\":[],\"warning\":\"\",\"result\":\"\"}",
+      "step_order": 4
+    },
+    {
+      "content": "{\"title\":\"Resolva desafios opcionais\",\"focus\":\"\",\"objective\":\"faca cleanup final por planeta usando Resume apos a campanha. Se Fully Stacked faltar, entre em Challenge Mode e avance ate a primeira Ms. Zurkon para comprar as duas armas restantes.\",\"actions\":[],\"warning\":\"\",\"result\":\"\"}",
+      "step_order": 5
+    },
+    {
+      "content": "{\"title\":\"Resolva requisitos online cedo\",\"focus\":\"\",\"objective\":\"revise a checklist, confirme Grunthors, RYNO, Battleplex, Blizon Crystals e trofeus situacionais. Nao ha online obrigatorio nem DLC para a platina base.\",\"actions\":[],\"warning\":\"\",\"result\":\"\"}",
+      "step_order": 6
+    }
+  ],
+  "schemaVersion": 1,
+  "seedExtras": {
+    "aliases": [],
+    "attentionPoints": [
+      {
+        "tip": "Mate 5 Grunthors em Sargasso. Se ignorar todos, pode faltar Grunthor depois da história.",
+        "title": "Extinction Event é o único perdível",
+        "type": "Perdível"
+      },
+      {
+        "tip": "Depois do final, escolha Resume para voltar antes do chefe final e retornar aos planetas.",
+        "title": "Free roam após a história",
+        "type": "Cleanup"
+      },
+      {
+        "tip": "Não precisa terminar NG+. Basta iniciar Challenge Mode e comprar as 2 armas restantes.",
+        "title": "Challenge Mode parcial",
+        "type": "NG+ curto"
+      },
+      {
+        "tip": "A platina pode ser feita em qualquer dificuldade.",
+        "title": "Dificuldade não afeta troféus",
+        "type": "Sem requisito"
+      },
+      {
+        "tip": "Só alguns coletáveis contam para troféus; não exija todos os Gold Bolts, Lorbs ou armaduras.",
+        "title": "Não precisa de 100% dos coletáveis",
+        "type": "Checklist parcial"
+      },
+      {
+        "tip": "Os 60 Zurpstones são necessários para a cadeia de Trudi e para obter o Spybot.",
+        "title": "Zurpstones e Spybot de Sargasso",
+        "type": "Coletável"
+      },
+      {
+        "tip": "Para Aim to Misbehave, colete todos os 10 Spybots e compre o RYNO.",
+        "title": "RYNO depende dos 10 Spybots",
+        "type": "RYNO"
+      }
+    ],
+    "checklist": [],
+    "faq": [
+      {
+        "answer": "Não. A lista é totalmente offline.",
+        "question": "Ratchet & Clank: Rift Apart tem troféus online?"
+      },
+      {
+        "answer": "Não.",
+        "question": "Tem coop?"
+      },
+      {
+        "answer": "Não. A platina pode ser feita em qualquer dificuldade.",
+        "question": "A dificuldade afeta troféus?"
+      },
+      {
+        "answer": "Uma jogada é suficiente, mas é necessário iniciar Challenge Mode rapidamente para comprar as 2 últimas armas.",
+        "question": "Quantas jogadas são necessárias?"
+      },
+      {
+        "answer": "Não. Basta iniciar Challenge Mode e chegar à primeira Ms. Zurkon para comprar as 2 armas restantes.",
+        "question": "Precisa terminar Challenge Mode?"
+      },
+      {
+        "answer": "Sim. Extinction Event é o único perdível real, ligado a matar 5 Grunthors em Sargasso.",
+        "question": "Tem troféu perdível?"
+      },
+      {
+        "answer": "Sim. Depois do final, escolha Resume no menu principal para voltar antes do chefe final e retornar aos planetas.",
+        "question": "Existe free roam após a história?"
+      },
+      {
+        "answer": "Não. A platina não exige 100% dos coletáveis.",
+        "question": "Precisa coletar tudo?"
+      },
+      {
+        "answer": "9 CraiggerBears, 10 Spybots, 60 Zurpstones, 5 Glitch Challenges, Blizon Crystals necessários, 5 Gold Bolts, 3 Lorbs e 1 peça de armadura de cada tipo.",
+        "question": "Quais coletáveis são necessários?"
+      },
+      {
+        "answer": "Sim. Fully Stacked exige comprar todas as armas, incluindo as 2 armas disponíveis no Challenge Mode.",
+        "question": "Precisa de todas as armas?"
+      },
+      {
+        "answer": "Não. Há troféus para evoluir uma arma ao level 5 e melhorar totalmente uma arma, mas não é necessário maximizar todas.",
+        "question": "Precisa melhorar todas as armas?"
+      },
+      {
+        "answer": "Sim. Aim to Misbehave exige adquirir o RYNO, o que requer coletar os 10 Spybots.",
+        "question": "O RYNO é obrigatório?"
+      }
+    ],
+    "note": "Campos exportados para auditoria. O SQLite atual nao possui colunas nativas para todos esses extras; a importacao preserva o que o banco suporta.",
+    "quickDecision": {
+      "summary": "Platina curta de 10-15h e 2/10, totalmente offline, com 1 perdível real: Extinction Event. Faça a campanha, limpe planetas no free roam e use Challenge Mode apenas para comprar 2 armas."
+    },
+    "seo": {},
+    "tags": []
+  },
+  "slug": "ratchet-and-clank-rift-apart",
+  "trophies": [
+    {
+      "description": "Collect All Trophies",
+      "is_missable": 0,
+      "is_spoiler": 0,
+      "name": "Masters of the Multiverse",
+      "name_pt": "Mestres do Multiverso",
+      "tip": "Conclua os outros 46 trofeus da lista base.",
+      "trophy_code": "racra_masters_of_the_multiverse",
+      "type": "Platina"
+    },
+    {
+      "description": "Get Separated in Nefarious City",
+      "is_missable": 0,
+      "is_spoiler": 1,
+      "name": "Rift Apart",
+      "name_pt": "Fenda Dimensional",
+      "tip": "Trofeu automatico de historia no inicio de Corson V.",
+      "trophy_code": "racra_rift_apart",
+      "type": "Bronze"
+    },
+    {
+      "description": "Defeat the Seekerpede",
+      "is_missable": 0,
+      "is_spoiler": 1,
+      "name": "Hide 'N Seekerpede",
+      "name_pt": "Esconde-Esconde com o Seekerpede",
+      "tip": "Trofeu de chefe em Sargasso.",
+      "trophy_code": "racra_hide_n_seekerpede",
+      "type": "Bronze"
+    },
+    {
+      "description": "Complete a Battleplex Challenge",
+      "is_missable": 0,
+      "is_spoiler": 0,
+      "name": "Victory!",
+      "name_pt": "Vitória!",
+      "tip": "Complete qualquer desafio do Battleplex em Scarstu Debris Field.",
+      "trophy_code": "racra_victory",
+      "type": "Bronze"
+    },
+    {
+      "description": "Complete a Gold Cup Battleplex Challenge",
+      "is_missable": 0,
+      "is_spoiler": 0,
+      "name": "Can't Stop Me",
+      "name_pt": "Ninguém Me Para",
+      "tip": "Gold Cup abre na reta final; volte ao Battleplex com armas fortes se quiser facilitar.",
+      "trophy_code": "racra_cant_stop_me",
+      "type": "Prata"
+    },
+    {
+      "description": "Play Three Songs on Zurkie's Jukebox",
+      "is_missable": 0,
+      "is_spoiler": 0,
+      "name": "Hey Lombax DJ",
+      "name_pt": "Ei, DJ Lombax",
+      "tip": "No bar de Zurkie, interaja com a jukebox e toque tres musicas diferentes.",
+      "trophy_code": "racra_hey_lombax_dj",
+      "type": "Bronze"
+    },
+    {
+      "description": "Acquire Phase Quartz",
+      "is_missable": 0,
+      "is_spoiler": 1,
+      "name": "This Crystal Is My Things",
+      "name_pt": "Esse Cristal é Meu",
+      "tip": "Trofeu automatico de historia em Blizar Prime.",
+      "trophy_code": "racra_this_crystal_is_my_things",
+      "type": "Bronze"
+    },
+    {
+      "description": "Reach the Archives",
+      "is_missable": 0,
+      "is_spoiler": 1,
+      "name": "Don't You Walk Away From Me",
+      "name_pt": "Não Fuja de Mim",
+      "tip": "Trofeu automatico de historia em Savali.",
+      "trophy_code": "racra_dont_you_walk_away_from_me",
+      "type": "Bronze"
+    },
+    {
+      "description": "Set Juice Free",
+      "is_missable": 0,
+      "is_spoiler": 1,
+      "name": "It's Loose!",
+      "name_pt": "Está à Solta!",
+      "tip": "Trofeu automatico de historia em Cordelion.",
+      "trophy_code": "racra_its_loose",
+      "type": "Bronze"
+    },
+    {
+      "description": "Meet the Fixer",
+      "is_missable": 0,
+      "is_spoiler": 1,
+      "name": "Emotional Support Robot",
+      "name_pt": "Robô de Apoio Emocional",
+      "tip": "Trofeu automatico de historia em Torren IV.",
+      "trophy_code": "racra_emotional_support_robot",
+      "type": "Bronze"
+    },
+    {
+      "description": "Feed Bubbles",
+      "is_missable": 0,
+      "is_spoiler": 1,
+      "name": "Rated Aaarrr!",
+      "name_pt": "Classificação Aaarrr!",
+      "tip": "Trofeu automatico de historia em Ardolis.",
+      "trophy_code": "racra_rated_aaarrr",
+      "type": "Bronze"
+    },
+    {
+      "description": "Sink the Mothership on Sargasso",
+      "is_missable": 0,
+      "is_spoiler": 1,
+      "name": "Return to Sender",
+      "name_pt": "Devolução ao Remetente",
+      "tip": "Trofeu automatico da segunda visita de historia a Sargasso.",
+      "trophy_code": "racra_return_to_sender",
+      "type": "Bronze"
+    },
+    {
+      "description": "Retrieve the Dimensional Map",
+      "is_missable": 0,
+      "is_spoiler": 1,
+      "name": "No Bones About It",
+      "name_pt": "Sem Ossos Sobre Isso",
+      "tip": "Trofeu automatico de historia na segunda passagem por Savali.",
+      "trophy_code": "racra_no_bones_about_it",
+      "type": "Bronze"
+    },
+    {
+      "description": "Break In and Out of Prison",
+      "is_missable": 0,
+      "is_spoiler": 1,
+      "name": "I'm the Warden Now",
+      "name_pt": "Agora Eu Sou o Diretor",
+      "tip": "Trofeu automatico de historia em Viceron.",
+      "trophy_code": "racra_im_the_warden_now",
+      "type": "Bronze"
+    },
+    {
+      "description": "Defeat Doctor and Emperor Nefarious",
+      "is_missable": 0,
+      "is_spoiler": 1,
+      "name": "2 Fuzz 2 Nefarious",
+      "name_pt": "2 Peludos 2 Nefarious",
+      "tip": "Trofeu automatico de conclusao da historia principal.",
+      "trophy_code": "racra_two_fuzz_two_nefarious",
+      "type": "Ouro"
+    },
+    {
+      "description": "Enter a Hidden Pocket Dimension",
+      "is_missable": 0,
+      "is_spoiler": 0,
+      "name": "More Than Lint",
+      "name_pt": "Mais que Fiapo",
+      "tip": "Entre em qualquer Pocket Dimension marcada por fenda roxa.",
+      "trophy_code": "racra_more_than_lint",
+      "type": "Bronze"
+    },
+    {
+      "description": "Acquire a Piece of Armor",
+      "is_missable": 0,
+      "is_spoiler": 0,
+      "name": "Sartorial Steel",
+      "name_pt": "Aço Estiloso",
+      "tip": "Pegue qualquer peca de armadura em Pocket Dimensions, Battleplex ou atividades opcionais.",
+      "trophy_code": "racra_sartorial_steel",
+      "type": "Bronze"
+    },
+    {
+      "description": "Acquire and Equip Head, Torso, and Leg Armor",
+      "is_missable": 0,
+      "is_spoiler": 0,
+      "name": "Does This Make My Tail Look Big?",
+      "name_pt": "Isso Faz Minha Cauda Parecer Grande?",
+      "tip": "Equipe uma peca de cabeca, torso e pernas; nao precisam ser do mesmo set.",
+      "trophy_code": "racra_does_this_make_my_tail_look_big",
+      "type": "Prata"
+    },
+    {
+      "description": "Collect a Gold Bolt",
+      "is_missable": 0,
+      "is_spoiler": 0,
+      "name": "Shiny!",
+      "name_pt": "Brilhante!",
+      "tip": "Pegue qualquer Gold Bolt durante exploracao ou cleanup.",
+      "trophy_code": "racra_shiny",
+      "type": "Bronze"
+    },
+    {
+      "description": "Collect Five Gold Bolts",
+      "is_missable": 0,
+      "is_spoiler": 0,
+      "name": "Nooks and Crannies",
+      "name_pt": "Cada Canto e Recanto",
+      "tip": "A lista exige apenas cinco dos 25 Gold Bolts.",
+      "trophy_code": "racra_nooks_and_crannies",
+      "type": "Prata"
+    },
+    {
+      "description": "Repair a Dimensional Anomaly",
+      "is_missable": 0,
+      "is_spoiler": 1,
+      "name": "Quantum Mechanic",
+      "name_pt": "Mecânico Quântico",
+      "tip": "Trofeu automatico de historia ligado ao puzzle de Clank em Sargasso.",
+      "trophy_code": "racra_quantum_mechanic",
+      "type": "Bronze"
+    },
+    {
+      "description": "Get a Weapon to Level Five",
+      "is_missable": 0,
+      "is_spoiler": 0,
+      "name": "They Blow Up So Fast",
+      "name_pt": "Eles Explodem Tão Rápido",
+      "tip": "Use bastante uma arma, como a Blast Pistol, ate chegar ao nivel 5.",
+      "trophy_code": "racra_they_blow_up_so_fast",
+      "type": "Prata"
+    },
+    {
+      "description": "Fully Upgrade a Weapon",
+      "is_missable": 0,
+      "is_spoiler": 0,
+      "name": "There's Even a Cupholder",
+      "name_pt": "Tem Até Porta-Copos",
+      "tip": "Depois que uma arma atingir nivel 5, compre todos os upgrades dela com Raritanium.",
+      "trophy_code": "racra_theres_even_a_cupholder",
+      "type": "Prata"
+    },
+    {
+      "description": "Fill a Weapon Wheel",
+      "is_missable": 0,
+      "is_spoiler": 0,
+      "name": "Full Rack",
+      "name_pt": "Arsenal Completo",
+      "tip": "Tenha oito armas no Weapon Wheel; vem no caminho de Fully Stacked.",
+      "trophy_code": "racra_full_rack",
+      "type": "Prata"
+    },
+    {
+      "description": "Purchase All Weapons",
+      "is_missable": 0,
+      "is_spoiler": 0,
+      "name": "Fully Stacked",
+      "name_pt": "Totalmente Equipado",
+      "tip": "Compre todas as armas. As duas ultimas ficam disponiveis no inicio de Challenge Mode.",
+      "trophy_code": "racra_fully_stacked",
+      "type": "Ouro"
+    },
+    {
+      "description": "Complete All Glitch Challenges",
+      "is_missable": 0,
+      "is_spoiler": 0,
+      "name": "Glitch, Uh, Finds a Way",
+      "name_pt": "Glitch, Hã, Encontra um Jeito",
+      "tip": "Complete os cinco Glitch Challenges; puzzles podem ser pulados pelo menu sem invalidar trofeus.",
+      "trophy_code": "racra_glitch_uh_finds_a_way",
+      "type": "Bronze"
+    },
+    {
+      "description": "Hit Every Blizon Crystal on Blizar and Cordelion",
+      "is_missable": 0,
+      "is_spoiler": 0,
+      "name": "Shifty Character",
+      "name_pt": "Personagem Instável",
+      "tip": "Com patch atual, 29 de 30 Blizon Crystals bastam. Revise Blizar Prime e Cordelion.",
+      "trophy_code": "racra_shifty_character",
+      "type": "Bronze"
+    },
+    {
+      "description": "Bounce on Big Al, Clank, and Qwark's Parade Balloons",
+      "is_missable": 0,
+      "is_spoiler": 0,
+      "name": "BOING!",
+      "name_pt": "BOING!",
+      "tip": "Big Al vem no prologo; Clank e Qwark ficam em uma Pocket Dimension de Corson V.",
+      "trophy_code": "racra_boing",
+      "type": "Bronze"
+    },
+    {
+      "description": "Find the Nefarious Citizens by the Hot Springs",
+      "is_missable": 0,
+      "is_spoiler": 0,
+      "name": "Max Relax",
+      "name_pt": "Relaxamento Máximo",
+      "tip": "Procure os cidadaos relaxando perto das hot springs em Savali.",
+      "trophy_code": "racra_max_relax",
+      "type": "Bronze"
+    },
+    {
+      "description": "Turn on the TV in Rivet's Hideout",
+      "is_missable": 0,
+      "is_spoiler": 0,
+      "name": "Lombax and Chill",
+      "name_pt": "Lombax e Relax",
+      "tip": "Interaja com a TV no esconderijo da Rivet em Sargasso.",
+      "trophy_code": "racra_lombax_and_chill",
+      "type": "Bronze"
+    },
+    {
+      "description": "Perform Five Trick Jumps on a Grind Rail",
+      "is_missable": 0,
+      "is_spoiler": 0,
+      "name": "Alert the Sponsors",
+      "name_pt": "Alerte os Patrocinadores",
+      "tip": "Durante um grind rail, faca cinco trick jumps. Torren IV e um bom lugar.",
+      "trophy_code": "racra_alert_the_sponsors",
+      "type": "Bronze"
+    },
+    {
+      "description": "Melee Five Frozen Enemies",
+      "is_missable": 0,
+      "is_spoiler": 0,
+      "name": "Icebreaker",
+      "name_pt": "Quebra-Gelo",
+      "tip": "Use Cold Snap para congelar inimigos e finalize cinco com melee.",
+      "trophy_code": "racra_icebreaker",
+      "type": "Bronze"
+    },
+    {
+      "description": "Kill Two Enemies With a Single Ricochet Round",
+      "is_missable": 0,
+      "is_spoiler": 0,
+      "name": "No Need for Multiball",
+      "name_pt": "Sem Precisar de Multibola",
+      "tip": "Use a Ricochet em inimigos fracos agrupados.",
+      "trophy_code": "racra_no_need_for_multiball",
+      "type": "Bronze"
+    },
+    {
+      "description": "Kill 10 Enemies by Returning Shots with the Void Reactor",
+      "is_missable": 0,
+      "is_spoiler": 0,
+      "name": "Return Policy",
+      "name_pt": "Política de Devolução",
+      "tip": "Evolua o Void Repulser para Void Reactor e devolva tiros acumulando 10 abates.",
+      "trophy_code": "racra_return_policy",
+      "type": "Bronze"
+    },
+    {
+      "description": "Get 20 Headshots with the Headhunter",
+      "is_missable": 0,
+      "is_spoiler": 0,
+      "name": "Hole Puncher",
+      "name_pt": "Furador",
+      "tip": "Compre a Headhunter e mire em headshots em inimigos humanoides ou arenas.",
+      "trophy_code": "racra_hole_puncher",
+      "type": "Bronze"
+    },
+    {
+      "description": "Deploy 50 Mr. Fungis",
+      "is_missable": 0,
+      "is_spoiler": 0,
+      "name": "Life of the Party",
+      "name_pt": "Alma da Festa",
+      "tip": "Dispare Mr. Fungi sempre que tiver municao; basta implantar 50.",
+      "trophy_code": "racra_life_of_the_party",
+      "type": "Bronze"
+    },
+    {
+      "description": "Defeat 30 Enemies While They are Topiary'd",
+      "is_missable": 0,
+      "is_spoiler": 0,
+      "name": "Extreme Gardening",
+      "name_pt": "Jardinagem Extrema",
+      "tip": "Use Topiary Sprinkler para transformar inimigos e mate 30 enquanto o efeito estiver ativo.",
+      "trophy_code": "racra_extreme_gardening",
+      "type": "Bronze"
+    },
+    {
+      "description": "Find a CraiggerBear",
+      "is_missable": 0,
+      "is_spoiler": 0,
+      "name": "It's So Fluffy!",
+      "name_pt": "É Tão Fofinho!",
+      "tip": "Pegue qualquer CraiggerBear; ha um por planeta.",
+      "trophy_code": "racra_its_so_fluffy",
+      "type": "Bronze"
+    },
+    {
+      "description": "Find all CraiggerBears",
+      "is_missable": 0,
+      "is_spoiler": 0,
+      "name": "UnBEARably Awesome",
+      "name_pt": "Incrivelmente Ursástico",
+      "tip": "Encontre os nove CraiggerBears, um em cada planeta.",
+      "trophy_code": "racra_unbearably_awesome",
+      "type": "Ouro"
+    },
+    {
+      "description": "Kill Five Grunthors",
+      "is_missable": 1,
+      "is_spoiler": 0,
+      "name": "Extinction Event",
+      "name_pt": "Evento de Extinção",
+      "tip": "Tecnicamente missable se ignorar Grunthors em Sargasso. Mate todos que vir; se faltar, o progresso carrega para Challenge Mode.",
+      "trophy_code": "racra_extinction_event",
+      "type": "Bronze"
+    },
+    {
+      "description": "Defeat 30 Ejected Nefarious Trooper Heads",
+      "is_missable": 0,
+      "is_spoiler": 0,
+      "name": "Just Stay Down",
+      "name_pt": "Fique no Chão",
+      "tip": "Destrua troopers e depois suas cabecas ejetadas; Battleplex ajuda se faltar no fim.",
+      "trophy_code": "racra_just_stay_down",
+      "type": "Bronze"
+    },
+    {
+      "description": "Do a Trick Jump While Going at Max Speed with the Hoverboots",
+      "is_missable": 0,
+      "is_spoiler": 0,
+      "name": "Must Go Faster",
+      "name_pt": "Precisa Ir Mais Rápido",
+      "tip": "Acelere com Hoverboots ate velocidade maxima e faca um trick jump.",
+      "trophy_code": "racra_must_go_faster",
+      "type": "Bronze"
+    },
+    {
+      "description": "Collect a Spybot",
+      "is_missable": 0,
+      "is_spoiler": 0,
+      "name": "Planning Some Destruction",
+      "name_pt": "Planejando Uma Destruição",
+      "tip": "Pegue qualquer Spybot no caminho para liberar o RYNO.",
+      "trophy_code": "racra_planning_some_destruction",
+      "type": "Bronze"
+    },
+    {
+      "description": "Acquire the RYNO",
+      "is_missable": 0,
+      "is_spoiler": 0,
+      "name": "Aim to Misbehave",
+      "name_pt": "Mirando na Travessura",
+      "tip": "Colete os 10 Spybots e compre o RYNO gratuitamente com Ms. Zurkon.",
+      "trophy_code": "racra_aim_to_misbehave",
+      "type": "Prata"
+    },
+    {
+      "description": "Collect 10 Zurpstones for Trudi",
+      "is_missable": 0,
+      "is_spoiler": 0,
+      "name": "Feeding Friendsy",
+      "name_pt": "Alimentando a Amizade",
+      "tip": "Complete a parte inicial da side quest de Trudi em Sargasso.",
+      "trophy_code": "racra_feeding_friendsy",
+      "type": "Bronze"
+    },
+    {
+      "description": "Collect Honey for Chef Tulio",
+      "is_missable": 0,
+      "is_spoiler": 0,
+      "name": "Sweet, Sweet Victory",
+      "name_pt": "Doce, Doce Vitória",
+      "tip": "Complete a side quest da Chef Tulio em Blizar Prime.",
+      "trophy_code": "racra_sweet_sweet_victory",
+      "type": "Bronze"
+    },
+    {
+      "description": "Collect Three Lorbs",
+      "is_missable": 0,
+      "is_spoiler": 0,
+      "name": "Might've Broken Something",
+      "name_pt": "Acho que Quebrei Algo",
+      "tip": "Aceite Hunt for Lombax Lore em Savali e colete tres Lorbs.",
+      "trophy_code": "racra_mightve_broken_something",
+      "type": "Bronze"
+    }
+  ]
+}

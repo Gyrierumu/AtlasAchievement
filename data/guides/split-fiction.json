@@ -1,0 +1,380 @@
+{
+  "game": {
+    "avoid_if": "Evite se você não tem um segundo jogador ou não quer depender de coop para toda a platina.",
+    "before_you_start": "Split Fiction não pode ser platinado solo. Combine com outro jogador, decida coop local ou online, e valide se ambos estão usando versão completa caso ambos queiram troféus; Friend Pass e unlock de troféus precisam revisão final.",
+    "best_for": "Ideal para quem quer uma platina coop acessível, criativa, divertida e cheia de variedade entre fantasia e ficção científica.",
+    "cleanup_advice": "Depois da campanha, use Chapter Select para voltar diretamente aos capítulos com troféus, Side Stories ou benches pendentes. O jogo usa autosave, então não conte com saves manuais para separar rotas.",
+    "cover_image": "https://cdn.cloudflare.steamstatic.com/steam/apps/2001120/library_600x900.jpg",
+    "coverage_level": "strong",
+    "created_at": "2026-05-09 19:53:54",
+    "difficulty": 3,
+    "difficulty_reason": "A platina é acessível, sem troféus de dificuldade e com Chapter Select; o principal requisito é jogar em coop, prestar atenção aos capítulos e repetir trechos específicos quando necessário.",
+    "dlc_scope": "Guia focado na lista base de Split Fiction. Sem DLC necessária para a platina; qualquer add-on futuro precisa ficar separado.",
+    "editorial_notes": "",
+    "editorial_review_status": null,
+    "editorial_status": "published",
+    "first_run_advice": "Jogue com calma e explore cada capítulo com a dupla, procurando Side Stories, benches e interações opcionais antes de avançar.",
+    "grind_summary": "O peso está em completar a história, concluir as 12 Side Stories, sentar nos 6 benches e limpar troféus situacionais por capítulo.",
+    "guide_avoid": null,
+    "guide_best_moment": null,
+    "guide_dlc": null,
+    "guide_grind": null,
+    "guide_ideal": null,
+    "guide_online": null,
+    "guide_runs": null,
+    "image": "https://cdn.cloudflare.steamstatic.com/steam/apps/2001120/header.jpg",
+    "is_verified": 0,
+    "last_reviewed_at": "",
+    "missable": "Sem perdíveis definitivos por causa do Chapter Select, mas o jogo inteiro exige coop com 2 jogadores e vários troféus dependem de Side Stories, benches ou interações opcionais por capítulo.",
+    "missable_summary": "Não há perdíveis definitivos: após terminar a história, use Chapter Select para voltar a capítulos com Side Stories, benches ou troféus situacionais pendentes. O autosave impede separar saves manuais.",
+    "name": "Split Fiction",
+    "online_summary": "Não há troféus online obrigatórios tradicionais, porque tudo pode ser feito em coop local. Ainda assim, a platina não é solo: exige 2 jogadores do início ao fim, local ou online; PS+ só é necessário se a dupla jogar online. Friend Pass permite jogar, mas precisa validar se ambos liberam troféus ou se apenas quem possui o jogo desbloqueia.",
+    "quality_warnings": "[]",
+    "reviewed_by": "",
+    "runs_summary": "Uma campanha coop completa com 2 jogadores, local ou online, e Chapter Select para limpar Side Stories, benches e troféus específicos de capítulos.",
+    "slug": "split-fiction",
+    "time": "10-15h",
+    "time_bucket": "short",
+    "time_max_hours": 15,
+    "time_min_hours": 10,
+    "time_reason": "A faixa de 10-15 horas considera campanha coop, 12 Side Stories, 6 benches e cleanup por Chapter Select.",
+    "time_sort_hours": 10,
+    "updated_at": "2026-06-27 02:36:59",
+    "verification_note": "Precisa revisão editorial final: coop obrigatório, Friend Pass, 12 Side Stories, 6 benches, autosave e Chapter Select devem ser validados manualmente.",
+    "verification_status": "review",
+    "walkthrough": null
+  },
+  "redirects": [],
+  "roadmaps": [
+    {
+      "content": "{\"title\":\"Comece a campanha em coop\",\"focus\":\"\",\"objective\":\"Jogue a campanha em coop obrigatório com 2 jogadores, local ou online, avançando naturalmente pelos capítulos e aprendendo as mecânicas de Mio e Zoe. Não há rota solo para a platina.\",\"actions\":[],\"warning\":\"\",\"result\":\"\"}",
+      "step_order": 1
+    },
+    {
+      "content": "{\"title\":\"Em cada capítulo, procure Side Stories, benches e troféus esp...\",\"focus\":\"\",\"objective\":\"Em cada capítulo, procure Side Stories, benches e troféus específicos de área antes de seguir para o próximo trecho.\",\"actions\":[],\"warning\":\"\",\"result\":\"\"}",
+      "step_order": 2
+    },
+    {
+      "content": "{\"title\":\"Complete todas as 12 Side Stories para Bookworms, garantindo...\",\"focus\":\"\",\"objective\":\"Complete todas as 12 Side Stories para Bookworms, garantindo que o último checkpoint de cada Side Story seja concluído normalmente quando necessário.\",\"actions\":[],\"warning\":\"\",\"result\":\"\"}",
+      "step_order": 3
+    },
+    {
+      "content": "{\"title\":\"Limpe coletáveis por seleção de capítulos\",\"focus\":\"\",\"objective\":\"Sente nos 6 benches com os dois jogadores para Sisters: A Tale Of Two Besties; Chapter Select permite voltar aos capítulos 2 a 7.\",\"actions\":[],\"warning\":\"\",\"result\":\"\"}",
+      "step_order": 4
+    },
+    {
+      "content": "{\"title\":\"Limpe coletáveis por seleção de capítulos\",\"focus\":\"\",\"objective\":\"Complete a história até o Chapter 8 “Split” para BFF’s e mantenha Chapter Select liberado para cleanup.\",\"actions\":[],\"warning\":\"\",\"result\":\"\"}",
+      "step_order": 5
+    },
+    {
+      "content": "{\"title\":\"Limpe coletáveis por seleção de capítulos\",\"focus\":\"\",\"objective\":\"Use Chapter Select com atenção ao autosave para limpar troféus situacionais como You Are Not a Robot, Cold Potato, The Cake is Not a Lie, Rose’s Best Friend e Snaaaaaaaaake.\",\"actions\":[],\"warning\":\"\",\"result\":\"\"}",
+      "step_order": 6
+    },
+    {
+      "content": "{\"title\":\"Revise pendências finais\",\"focus\":\"\",\"objective\":\"Revise Bookworms, benches, troféus dos capítulos 2 a 7 e qualquer interação pendente antes de desbloquear It Took Two. Lembre que o jogo usa autosave, não save manual, e que Friend Pass exige atenção para unlock de troféus.\",\"actions\":[],\"warning\":\"\",\"result\":\"\"}",
+      "step_order": 7
+    }
+  ],
+  "schemaVersion": 1,
+  "seedExtras": {
+    "aliases": [],
+    "attentionPoints": [
+      {
+        "tip": "Split Fiction exige dois jogadores, em coop local/offline ou online.",
+        "title": "Coop obrigatório",
+        "type": "Dois jogadores"
+      },
+      {
+        "tip": "A platina pode ser feita em couch co-op, então não marque Online obrigatório.",
+        "title": "Não é online obrigatório",
+        "type": "Couch co-op"
+      },
+      {
+        "tip": "Quem joga via Friend Pass não desbloqueia troféus; a conta que quer a platina precisa jogar a versão que concede troféus.",
+        "title": "Friend Pass",
+        "type": "Troféus"
+      },
+      {
+        "tip": "Não há perdíveis definitivos; troféus opcionais podem ser limpos via Chapter Select.",
+        "title": "Chapter Select",
+        "type": "Cleanup"
+      },
+      {
+        "tip": "Bookworms exige 12 Side Stories e Sisters exige 6 benches.",
+        "title": "Side Stories e benches",
+        "type": "Checklist"
+      },
+      {
+        "tip": "Se a bomba explodir em Gameshow, reinicie a Side Story inteira; checkpoint isolado pode não contar.",
+        "title": "Cold Potato",
+        "type": "Gameshow"
+      }
+    ],
+    "checklist": [],
+    "faq": [
+      {
+        "answer": "Não no sentido obrigatório. A platina pode ser feita em coop local/offline. Também é possível jogar online, mas online não é requisito obrigatório.",
+        "question": "Split Fiction tem troféus online?"
+      },
+      {
+        "answer": "Sim. O jogo exige dois jogadores.",
+        "question": "Split Fiction exige coop?"
+      },
+      {
+        "answer": "Não para quem usa o Friend Pass. A conta que quer os troféus precisa jogar a versão que concede troféus.",
+        "question": "O Friend Pass desbloqueia troféus?"
+      },
+      {
+        "answer": "Não há perdíveis definitivos. Quase todos são semi-perdíveis dentro dos capítulos, mas podem ser recuperados via Chapter Select.",
+        "question": "Split Fiction tem troféus perdíveis?"
+      },
+      {
+        "answer": "Não. Não há seleção de dificuldade.",
+        "question": "A dificuldade afeta troféus?"
+      },
+      {
+        "answer": "Uma campanha coop é suficiente, com cleanup via Chapter Select se faltar algo.",
+        "question": "Quantas jogadas são necessárias?"
+      },
+      {
+        "answer": "Sim. Bookworms exige completar todas as 12 Side Stories.",
+        "question": "Precisa completar todas as Side Stories?"
+      },
+      {
+        "answer": "Sim. Sisters: A Tale Of Two Besties exige os 6 benches.",
+        "question": "Precisa sentar em todos os benches?"
+      },
+      {
+        "answer": "Geralmente sim. Complete a Side Story Gameshow sem deixar a bomba explodir; se falhar, reinicie a Side Story inteira.",
+        "question": "Cold Potato é o mais difícil?"
+      },
+      {
+        "answer": "Sim, mas não pule o trecho final de uma Side Story se ele precisa contar para conclusão.",
+        "question": "Posso usar Skip to Next Checkpoint?"
+      },
+      {
+        "answer": "Não. Os troféus opcionais podem ser recuperados via Chapter Select.",
+        "question": "O jogo tem perdíveis definitivos?"
+      }
+    ],
+    "note": "Campos exportados para auditoria. O SQLite atual nao possui colunas nativas para todos esses extras; a importacao preserva o que o banco suporta.",
+    "quickDecision": {
+      "summary": "Platina coop de 10-15h e 3/10, sem online obrigatório, sem perdíveis definitivos e com cleanup por Chapter Select."
+    },
+    "seo": {},
+    "tags": []
+  },
+  "slug": "split-fiction",
+  "trophies": [
+    {
+      "description": "Unlock all trophies",
+      "is_missable": 0,
+      "is_spoiler": 0,
+      "name": "It Took Two",
+      "name_pt": "Foram Necessários Dois",
+      "tip": "Desbloqueie todos os outros troféus da lista base. A platina exige coop com 2 jogadores, local ou online.",
+      "trophy_code": "split_fiction_it_took_two",
+      "type": "Platina"
+    },
+    {
+      "description": "Finally published",
+      "is_missable": 0,
+      "is_spoiler": 1,
+      "name": "BFF’s",
+      "name_pt": "Melhores Amigos para Sempre",
+      "tip": "Troféu automático de história no Chapter 8 “Split”, durante os créditos após o confronto final.",
+      "trophy_code": "split_fiction_bffs",
+      "type": "Ouro"
+    },
+    {
+      "description": "Complete all side stories",
+      "is_missable": 0,
+      "is_spoiler": 0,
+      "name": "Bookworms",
+      "name_pt": "Ratos de Biblioteca",
+      "tip": "Complete todas as 12 Side Stories. Se usar Chapter Select, conclua o último checkpoint normalmente para garantir que a Side Story conte.",
+      "trophy_code": "split_fiction_bookworms",
+      "type": "Ouro"
+    },
+    {
+      "description": "I need your strongest potions",
+      "is_missable": 0,
+      "is_spoiler": 0,
+      "name": "Potion Chef",
+      "name_pt": "Chef de Poções",
+      "tip": "Na Side Story Moon Market, no Chapter 4 “Final Dawn”, prepare e beba todas as poções da lista com a dupla.",
+      "trophy_code": "split_fiction_potion_chef",
+      "type": "Prata"
+    },
+    {
+      "description": "Get off me…",
+      "is_missable": 0,
+      "is_spoiler": 0,
+      "name": "Chair the Load",
+      "name_pt": "Segure o Peso da Cadeira",
+      "tip": "Na Side Story Moon Market, transforme o outro jogador em cadeira e sente nele. Pode ser limpo por Chapter Select junto de Potion Chef.",
+      "trophy_code": "split_fiction_chair_the_load",
+      "type": "Bronze"
+    },
+    {
+      "description": "Completely Automated Public Turing test to tell Computers and Humans Apart",
+      "is_missable": 0,
+      "is_spoiler": 0,
+      "name": "You Are Not a Robot",
+      "name_pt": "Você Não é um Robô",
+      "tip": "No Chapter 2 “Neon Revenge”, missão Gravity Bike, complete o captcha do telefone dentro do limite. Se falhar, reinicie o subcapítulo ou use Skip to Next Checkpoint com cuidado.",
+      "trophy_code": "split_fiction_you_are_not_a_robot",
+      "type": "Ouro"
+    },
+    {
+      "description": "Relax on all 6 benches",
+      "is_missable": 0,
+      "is_spoiler": 0,
+      "name": "Sisters: A Tale Of Two Besties",
+      "name_pt": "Irmãs: Um Conto de Duas Melhores Amigas",
+      "tip": "Sente nos 6 benches com os dois jogadores. Há 1 bench em cada capítulo do 2 ao 7, e todos podem ser recuperados por Chapter Select.",
+      "trophy_code": "split_fiction_sisters_a_tale_of_two_besties",
+      "type": "Ouro"
+    },
+    {
+      "description": "You couldn’t have known",
+      "is_missable": 0,
+      "is_spoiler": 0,
+      "name": "One Bird, Three Stones",
+      "name_pt": "Um Pássaro, Três Pedras",
+      "tip": "No Chapter 3 “Hopes of Spring”, missão Halls of Ice, acerte o boneco de neve com as três bolas de neve no início da área.",
+      "trophy_code": "split_fiction_one_bird_three_stones",
+      "type": "Bronze"
+    },
+    {
+      "description": "Complete the Gameshow without the bomb exploding",
+      "is_missable": 0,
+      "is_spoiler": 0,
+      "name": "Cold Potato",
+      "name_pt": "Batata Fria",
+      "tip": "Na Side Story Gameshow, no Chapter 3, complete todas as fases sem deixar a bomba explodir. Se errar, reinicie a Side Story inteira; checkpoint isolado pode não contar.",
+      "trophy_code": "split_fiction_cold_potato",
+      "type": "Ouro"
+    },
+    {
+      "description": "Adding insult to injury",
+      "is_missable": 0,
+      "is_spoiler": 0,
+      "name": "Tazed and Confused",
+      "name_pt": "Eletrocutado e Confuso",
+      "tip": "No Chapter 6 “Isolation”, missão Cell Blocks, use o bastão/cano no momento em que um jogador abre caminho para o outro.",
+      "trophy_code": "split_fiction_tazed_and_confused",
+      "type": "Bronze"
+    },
+    {
+      "description": "No way out",
+      "is_missable": 0,
+      "is_spoiler": 0,
+      "name": "Locked Up",
+      "name_pt": "Trancado",
+      "tip": "No Chapter 6 “Isolation”, missão Maximum Security, faça um jogador entrar na cela/gaiola e o outro trancar por fora.",
+      "trophy_code": "split_fiction_locked_up",
+      "type": "Bronze"
+    },
+    {
+      "description": "It’s not the big bad wolf you have to worry about",
+      "is_missable": 0,
+      "is_spoiler": 0,
+      "name": "Huffing and Puffing",
+      "name_pt": "Bufando e Soprando",
+      "tip": "Na Side Story Farmlife, no Chapter 2, use a habilidade de gás/vento para destruir a casa de pedra depois da área do porco gigante.",
+      "trophy_code": "split_fiction_huffing_and_puffing",
+      "type": "Prata"
+    },
+    {
+      "description": "Hasta la vista, baby",
+      "is_missable": 0,
+      "is_spoiler": 0,
+      "name": "Robot Revolution",
+      "name_pt": "Revolução Robótica",
+      "tip": "No Chapter 2 “Neon Revenge”, missão Big City Life, entre no hotel e acerte o robô com os dois jogadores até o troféu desbloquear.",
+      "trophy_code": "split_fiction_robot_revolution",
+      "type": "Prata"
+    },
+    {
+      "description": "Take a snack",
+      "is_missable": 0,
+      "is_spoiler": 0,
+      "name": "Feed Me",
+      "name_pt": "Alimente-me",
+      "tip": "No Chapter 5 “Rise of the Dragon Realm”, missão Water Temple, coma uma fruta da árvore no caminho. Qualquer jogador pode fazer a ação.",
+      "trophy_code": "split_fiction_feed_me",
+      "type": "Bronze"
+    },
+    {
+      "description": "Monkey strong",
+      "is_missable": 0,
+      "is_spoiler": 0,
+      "name": "A Friendly Push",
+      "name_pt": "Um Empurrão Amigável",
+      "tip": "No Chapter 3 “Hopes of Spring”, missão The Underlabs, faça um jogador sentar no balanço e o outro empurrar usando a forma de monstro.",
+      "trophy_code": "split_fiction_a_friendly_push",
+      "type": "Bronze"
+    },
+    {
+      "description": "You made her cry",
+      "is_missable": 0,
+      "is_spoiler": 0,
+      "name": "Rose’s Best Friend",
+      "name_pt": "Melhor Amiga da Rose",
+      "tip": "No Chapter 2 “Neon Revenge”, missão Play Me Techno, siga a sequência do elefante/ponte e interaja com o brinquedo para desbloquear este troféu.",
+      "trophy_code": "split_fiction_roses_best_friend",
+      "type": "Ouro"
+    },
+    {
+      "description": "Duuuun dun… duuuun dun…",
+      "is_missable": 0,
+      "is_spoiler": 0,
+      "name": "We’re Gonna Need a Bigger Boat",
+      "name_pt": "Vamos Precisar de um Barco Maior",
+      "tip": "No Chapter 6 “Isolation”, missão Hydration Facility, nade até as bolhas na água para acionar o encontro com o tubarão.",
+      "trophy_code": "split_fiction_were_gonna_need_a_bigger_boat",
+      "type": "Bronze"
+    },
+    {
+      "description": "No worries, it’s just a simulation",
+      "is_missable": 0,
+      "is_spoiler": 0,
+      "name": "Are We the Baddies?",
+      "name_pt": "Somos os Vilões?",
+      "tip": "No Chapter 2 “Neon Revenge”, missão Play Me Techno, destrua a ponte com a bola explosiva antes da parte final da sequência de Rose’s Best Friend.",
+      "trophy_code": "split_fiction_are_we_the_baddies",
+      "type": "Prata"
+    },
+    {
+      "description": "Congratulations, the test is now over",
+      "is_missable": 0,
+      "is_spoiler": 0,
+      "name": "The Cake is Not a Lie",
+      "name_pt": "O Bolo Não é Mentira",
+      "tip": "No Chapter 4 “Final Dawn”, missão Run and Gun, encontre a área secreta escondida pelos portais roxos e complete o teste.",
+      "trophy_code": "split_fiction_the_cake_is_not_a_lie",
+      "type": "Ouro"
+    },
+    {
+      "description": "Could friendship bloom on the battlefield",
+      "is_missable": 0,
+      "is_spoiler": 0,
+      "name": "Snaaaaaaaaake",
+      "name_pt": "Cooooobra",
+      "tip": "No Chapter 6 “Isolation”, missão Prison Courtyard, faça um jogador se esconder na caixa e o outro atirar nela para desbloquear o troféu.",
+      "trophy_code": "split_fiction_snaaaaaaaaake",
+      "type": "Ouro"
+    },
+    {
+      "description": "Let it rip",
+      "is_missable": 0,
+      "is_spoiler": 0,
+      "name": "Goin’ Whole Hog",
+      "name_pt": "Indo com Tudo",
+      "tip": "Na Side Story Farmlife, no Chapter 2, use a habilidade de gás/vento para entrar na barriga do porco gigante antes de seguir para Huffing and Puffing.",
+      "trophy_code": "split_fiction_goin_whole_hog",
+      "type": "Prata"
+    }
+  ]
+}

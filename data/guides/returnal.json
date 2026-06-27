@@ -1,0 +1,494 @@
+{
+  "game": {
+    "avoid_if": "Evite se voce nao gosta de RNG, runs repetidas, dificuldade alta ou coletaveis dependentes de salas aleatorias.",
+    "before_you_start": "Entre sabendo que a platina depende bastante de RNG e paciencia; nao trate coletaveis aleatorios como perdiveis definitivos. Ascension DLC nao e necessaria para a platina base.",
+    "best_for": "Ideal para quem quer uma platina dificil, baseada em habilidade, repeticao inteligente e dominio de roguelike.",
+    "cleanup_advice": "Depois de terminar a campanha/ato 3, foque em surveys por bioma, Ciphers, Scout Logs e salas raras.",
+    "cover_image": "https://cdn.cloudflare.steamstatic.com/steam/apps/1649240/library_600x900.jpg",
+    "coverage_level": "strong",
+    "created_at": "2026-05-09 19:53:34",
+    "difficulty": 8,
+    "difficulty_reason": "A dificuldade vem do combate exigente, do formato roguelike, de chefes e da consistencia necessaria para sobreviver aos biomas.",
+    "dlc_scope": "Guia focado na lista base da platina; Ascension deve ficar separado se o projeto suportar DLC/add-ons. O trofeu base chamado Ascension e apenas o chefe Ixion.",
+    "editorial_notes": "",
+    "editorial_review_status": null,
+    "editorial_status": "published",
+    "first_run_advice": "Priorize aprender armas, padroes de inimigos e upgrades permanentes antes de se preocupar em limpar surveys.",
+    "grind_summary": "O peso esta em RNG de salas, Ciphers, Scout Logs e Survey trophies, alem de dominio do combate.",
+    "guide_avoid": null,
+    "guide_best_moment": null,
+    "guide_dlc": null,
+    "guide_grind": null,
+    "guide_ideal": null,
+    "guide_online": null,
+    "guide_runs": null,
+    "image": "https://cdn.cloudflare.steamstatic.com/steam/apps/1649240/header.jpg",
+    "is_verified": 0,
+    "last_reviewed_at": "",
+    "missable": "Nao ha perdiveis definitivos na lista base desde os patches de tracking, mas a platina tem muito retrabalho por ciclos, RNG de salas, Ciphers, Scout Logs e surveys dos biomas.",
+    "missable_summary": "Nao ha trofeus perdiveis definitivos; colete e revise tudo por ciclos, tratando RNG e salas raras como risco de tempo.",
+    "name": "Returnal",
+    "online_summary": "Nao ha multiplayer obrigatorio, mas In-Field Training exige completar uma daily challenge em Simulation Mode conectado a PSN na lista base.",
+    "quality_warnings": "[]",
+    "reviewed_by": "",
+    "runs_summary": "A platina exige muitos ciclos. Nao e uma questao de uma run unica, e sim de dominar o loop, desbloqueios permanentes e surveys dos biomas.",
+    "slug": "returnal",
+    "time": "50-100h",
+    "time_bucket": "long",
+    "time_max_hours": 100,
+    "time_min_hours": 50,
+    "time_reason": "A faixa de 50-100 horas considera campanha, ato 3, surveys, coletaveis aleatorios, RNG e cleanup.",
+    "time_sort_hours": 50,
+    "updated_at": "2026-06-27 02:36:58",
+    "verification_note": "Lista base adicionada com checklist e roadmap completos; aguarda revisao editorial manual final.",
+    "verification_status": "review",
+    "walkthrough": null
+  },
+  "redirects": [],
+  "roadmaps": [
+    {
+      "content": "{\"title\":\"Treine chefes sem dano\",\"focus\":\"\",\"objective\":\"aprenda sobrevivencia, dash, overload, armas, artefatos, parasites, upgrades permanentes e padroes de inimigos. Foque em passar dos primeiros chefes antes de pensar em surveys.\",\"actions\":[],\"warning\":\"\",\"result\":\"\"}",
+      "step_order": 1
+    },
+    {
+      "content": "{\"title\":\"avance pelos atos principais, desbloqueando biomas, atalhos,...\",\"focus\":\"\",\"objective\":\"avance pelos atos principais, desbloqueando biomas, atalhos, habilidades permanentes e recursos de progressao. Explore o maximo possivel, mas aceite que ciclos ruins fazem parte do loop.\",\"actions\":[],\"warning\":\"\",\"result\":\"\"}",
+      "step_order": 2
+    },
+    {
+      "content": "{\"title\":\"Planeje o grind principal\",\"focus\":\"\",\"objective\":\"conclua House Sequences, encontre os Sunface Fragments e resolva o conteudo de final/ato 3. Esses objetivos envolvem historia e RNG, entao marque biomas ja concluídos fora do jogo.\",\"actions\":[],\"warning\":\"\",\"result\":\"\"}",
+      "step_order": 3
+    },
+    {
+      "content": "{\"title\":\"Fechamento e revisão final\",\"focus\":\"\",\"objective\":\"foque nos Survey trophies de cada bioma, incluindo Ciphers, Scout Logs, Xeno-Archives, Containment Areas e salas aleatorias. Este e o maior gargalo da platina.\",\"actions\":[],\"warning\":\"\",\"result\":\"\"}",
+      "step_order": 4
+    },
+    {
+      "content": "{\"title\":\"Resolva desafios opcionais\",\"focus\":\"\",\"objective\":\"faca cleanup de trofeus especificos como proficiencia 30, Max Integrity 200%, Calculated Risk, parasites, overloads e daily challenge em Simulation Mode.\",\"actions\":[],\"warning\":\"\",\"result\":\"\"}",
+      "step_order": 5
+    },
+    {
+      "content": "{\"title\":\"Planeje o grind principal\",\"focus\":\"\",\"objective\":\"revise RNG e coletaveis faltantes por bioma ate fechar a platina. Ascension DLC fica fora desta lista base, embora exista um trofeu base chamado Ascension ligado a Ixion.\",\"actions\":[],\"warning\":\"\",\"result\":\"\"}",
+      "step_order": 6
+    }
+  ],
+  "schemaVersion": 1,
+  "seedExtras": {
+    "aliases": [],
+    "attentionPoints": [
+      {
+        "tip": "In-Field Training exige completar um Daily Challenge no Simulation Mode conectado à PSN.",
+        "title": "Online obrigatório",
+        "type": "Simulation Mode"
+      },
+      {
+        "tip": "O DLC/update Ascension adiciona Tower of Sisyphus e co-op, mas não entra na platina base.",
+        "title": "Ascension separado",
+        "type": "DLC/update"
+      },
+      {
+        "tip": "A lista base não possui perdíveis na versão atual; RNG e repetição não são perdíveis.",
+        "title": "Sem perdíveis desde o patch 1.4.0",
+        "type": "Lista base"
+      },
+      {
+        "tip": "Returnal não tem seleção de dificuldade. A nota alta é apenas avaliação editorial da platina.",
+        "title": "Dificuldade não afeta troféus",
+        "type": "Sem seleção"
+      },
+      {
+        "tip": "Os 6 Surveys dependem de Scout Logs, Xenoglyph Ciphers, Xeno-Archives e salas que aparecem com RNG.",
+        "title": "Surveys são o maior gargalo",
+        "type": "RNG"
+      },
+      {
+        "tip": "White Shadow exige 6 Sunface Fragments, sequência final da casa, derrotar Ophion novamente e usar a chave no carro.",
+        "title": "Sunface Fragments e Act 3",
+        "type": "White Shadow"
+      },
+      {
+        "tip": "Activity Cards ajudam a rastrear Surveys, mas exigem conexão PSN e podem ser inconsistentes.",
+        "title": "Activity Cards / PSN",
+        "type": "Acompanhamento"
+      },
+      {
+        "tip": "Depois do Act 2 e do Act 3, é possível repetir biomas para Surveys, Sunface Fragments e cleanup.",
+        "title": "Free roam após história",
+        "type": "Cleanup"
+      }
+    ],
+    "checklist": [],
+    "faq": [
+      {
+        "answer": "Sim. In-Field Training exige completar um Daily Challenge no Simulation Mode conectado à PSN. Algumas fontes contam 2 online incluindo a platina Helios, que depende de todos os troféus.",
+        "question": "Returnal tem troféus online?"
+      },
+      {
+        "answer": "Não. O co-op foi adicionado no update Ascension e não entra na platina base.",
+        "question": "Returnal tem coop obrigatório?"
+      },
+      {
+        "answer": "Não na versão atual. Desde o patch 1.4.0, a lista base não tem perdíveis.",
+        "question": "Returnal tem troféus perdíveis?"
+      },
+      {
+        "answer": "Não. Returnal não tem seleção de dificuldade.",
+        "question": "A dificuldade afeta troféus?"
+      },
+      {
+        "answer": "Uma progressão base é suficiente, mas será necessário repetir biomas muitas vezes por causa dos Surveys e do RNG.",
+        "question": "Quantas jogadas são necessárias?"
+      },
+      {
+        "answer": "Sim. Depois do Act 2 e do Act 3, é possível retornar aos biomas para coletáveis e cleanup.",
+        "question": "Existe free roam após a história?"
+      },
+      {
+        "answer": "Não. Ascension é conteúdo separado, com Tower of Sisyphus e troféus extras, e não entra na platina base Helios.",
+        "question": "Ascension é necessário para a platina?"
+      },
+      {
+        "answer": "Não. Tower of Sisyphus pertence ao conteúdo Ascension e não é requisito da platina base.",
+        "question": "Preciso completar a Tower of Sisyphus?"
+      },
+      {
+        "answer": "Os Survey trophies dos 6 biomas, porque dependem de Scout Logs, Xenoglyph Ciphers, Xeno-Archives, possíveis Containment Areas e salas que aparecem por RNG.",
+        "question": "Qual é o maior gargalo da platina?"
+      },
+      {
+        "answer": "Cada Survey pode envolver Scout Logs, Xenoglyph Ciphers, Xeno-Archives e, dependendo do Activity Card, Containment Areas do respectivo bioma.",
+        "question": "O que cada Survey exige?"
+      },
+      {
+        "answer": "É recomendado manter conexão PSN, especialmente para Activity Cards e In-Field Training. O online direto da lista base é In-Field Training.",
+        "question": "Preciso estar online o tempo todo?"
+      },
+      {
+        "answer": "O online direto é In-Field Training. Helios pode ser considerado online apenas por dependência da platina, se o padrão do projeto marcar tags herdadas na platina.",
+        "question": "Helios deve ser marcado como online?"
+      },
+      {
+        "answer": "Colete os 6 Sunface Fragments, um por bioma, assista à sequência final da casa, derrote Ophion novamente e use a chave no carro.",
+        "question": "Como concluo White Shadow / Act 3?"
+      }
+    ],
+    "note": "Campos exportados para auditoria. O SQLite atual nao possui colunas nativas para todos esses extras; a importacao preserva o que o banco suporta.",
+    "quickDecision": {
+      "summary": "Platina de 50-100h+, 8,5/10, sem perdíveis e com online obrigatório direto em In-Field Training. O gargalo real são Surveys, RNG e repetição de biomas; Ascension fica fora."
+    },
+    "seo": {},
+    "tags": []
+  },
+  "slug": "returnal",
+  "trophies": [
+    {
+      "description": "Collect all trophies",
+      "is_missable": 0,
+      "is_spoiler": 0,
+      "name": "Helios",
+      "name_pt": "Hélios",
+      "tip": "Conclua os outros 30 trofeus da lista base. Ascension DLC nao e necessaria para esta platina.",
+      "trophy_code": "returnal_helios",
+      "type": "Platina"
+    },
+    {
+      "description": "Learn the basics of survival on Atropos",
+      "is_missable": 0,
+      "is_spoiler": 0,
+      "name": "Atropian Survival",
+      "name_pt": "Sobrevivência Atropiana",
+      "tip": "Trofeu automatico do inicio, ligado ao tutorial e aos fundamentos de combate.",
+      "trophy_code": "returnal_atropian_survival",
+      "type": "Bronze"
+    },
+    {
+      "description": "Finish Overgrown Ruins Survey",
+      "is_missable": 0,
+      "is_spoiler": 0,
+      "name": "Past the Ruins",
+      "name_pt": "Além das Ruínas",
+      "tip": "Complete o survey de Overgrown Ruins com Scout Logs, Ciphers, Xeno-Archives e areas necessarias.",
+      "trophy_code": "returnal_past_the_ruins",
+      "type": "Ouro"
+    },
+    {
+      "description": "Finish Crimson Wastes Survey",
+      "is_missable": 0,
+      "is_spoiler": 1,
+      "name": "Ascending the Mountain",
+      "name_pt": "Subindo a Montanha",
+      "tip": "Survey de Crimson Wastes. Volte em ciclos ate as salas e Ciphers faltantes aparecerem.",
+      "trophy_code": "returnal_ascending_the_mountain",
+      "type": "Ouro"
+    },
+    {
+      "description": "Finish Derelict Citadel Survey",
+      "is_missable": 0,
+      "is_spoiler": 1,
+      "name": "Through the Forgotten City",
+      "name_pt": "Pela Cidade Esquecida",
+      "tip": "Survey de Derelict Citadel. Explore salas principais, side rooms e arquivos quando o layout permitir.",
+      "trophy_code": "returnal_through_the_forgotten_city",
+      "type": "Ouro"
+    },
+    {
+      "description": "Finish Echoing Ruins Survey",
+      "is_missable": 0,
+      "is_spoiler": 1,
+      "name": "Echoes of the Past",
+      "name_pt": "Ecos do Passado",
+      "tip": "Survey de Echoing Ruins. Trate como grind de RNG depois que a campanha liberar o retorno aos biomas.",
+      "trophy_code": "returnal_echoes_of_the_past",
+      "type": "Ouro"
+    },
+    {
+      "description": "Finish Fractured Wastes Survey",
+      "is_missable": 0,
+      "is_spoiler": 1,
+      "name": "Frozen in Time",
+      "name_pt": "Congelado no Tempo",
+      "tip": "Survey de Fractured Wastes. As salas raras e Ciphers podem exigir muitos ciclos.",
+      "trophy_code": "returnal_frozen_in_time",
+      "type": "Ouro"
+    },
+    {
+      "description": "Finish Abyssal Scar Survey",
+      "is_missable": 0,
+      "is_spoiler": 1,
+      "name": "Submerged in Memories",
+      "name_pt": "Submerso em Memórias",
+      "tip": "Survey de Abyssal Scar. Revise Scout Logs, Ciphers e Xeno-Archives com paciencia no endgame.",
+      "trophy_code": "returnal_submerged_in_memories",
+      "type": "Ouro"
+    },
+    {
+      "description": "Defeat Phrike",
+      "is_missable": 0,
+      "is_spoiler": 1,
+      "name": "A Shadow in the Fog",
+      "name_pt": "Uma Sombra na Névoa",
+      "tip": "Chefe de Overgrown Ruins. Aprenda janelas de dash e mantenha distancia quando necessario.",
+      "trophy_code": "returnal_a_shadow_in_the_fog",
+      "type": "Bronze"
+    },
+    {
+      "description": "Defeat Ixion",
+      "is_missable": 0,
+      "is_spoiler": 1,
+      "name": "Ascension",
+      "name_pt": "Ascensão",
+      "tip": "Trofeu base de chefe; nao confundir com a expansao Ascension.",
+      "trophy_code": "returnal_ascension",
+      "type": "Bronze"
+    },
+    {
+      "description": "Defeat Nemesis",
+      "is_missable": 0,
+      "is_spoiler": 1,
+      "name": "Trial by Judgement",
+      "name_pt": "Julgamento Final",
+      "tip": "Chefe de Derelict Citadel e marco importante do progresso de campanha.",
+      "trophy_code": "returnal_trial_by_judgement",
+      "type": "Bronze"
+    },
+    {
+      "description": "Defeat Hyperion",
+      "is_missable": 0,
+      "is_spoiler": 1,
+      "name": "Silence the Song",
+      "name_pt": "Silencie a Canção",
+      "tip": "Chefe de Echoing Ruins; priorize sobrevivencia e leitura de padroes em fases longas.",
+      "trophy_code": "returnal_silence_the_song",
+      "type": "Bronze"
+    },
+    {
+      "description": "Defeat Ophion",
+      "is_missable": 0,
+      "is_spoiler": 1,
+      "name": "Inner Darkness",
+      "name_pt": "Escuridão Interior",
+      "tip": "Chefe final da campanha base. Venha com boa integridade, arma forte e consumiveis uteis.",
+      "trophy_code": "returnal_inner_darkness",
+      "type": "Bronze"
+    },
+    {
+      "description": "Finish Act 1",
+      "is_missable": 0,
+      "is_spoiler": 1,
+      "name": "Failed Escape",
+      "name_pt": "Fuga Fracassada",
+      "tip": "Trofeu automatico de historia ao concluir o primeiro ato.",
+      "trophy_code": "returnal_failed_escape",
+      "type": "Prata"
+    },
+    {
+      "description": "Finish Act 2",
+      "is_missable": 0,
+      "is_spoiler": 1,
+      "name": "Last Drive",
+      "name_pt": "Última Viagem",
+      "tip": "Trofeu automatico de historia ao concluir o segundo ato e entrar no free roam.",
+      "trophy_code": "returnal_last_drive",
+      "type": "Prata"
+    },
+    {
+      "description": "Finish Act 3",
+      "is_missable": 0,
+      "is_spoiler": 1,
+      "name": "White Shadow",
+      "name_pt": "Sombra Branca",
+      "tip": "Exige House Sequences, Sunface Fragments e a resolucao final apos Ophion.",
+      "trophy_code": "returnal_white_shadow",
+      "type": "Ouro"
+    },
+    {
+      "description": "Returned by an artifact",
+      "is_missable": 0,
+      "is_spoiler": 0,
+      "name": "Second Chance",
+      "name_pt": "Segunda Chance",
+      "tip": "Use um artefato de revive, como Astronaut Figurine, e seja revivido durante um ciclo.",
+      "trophy_code": "returnal_second_chance",
+      "type": "Bronze"
+    },
+    {
+      "description": "Scan a Xenoglyph",
+      "is_missable": 0,
+      "is_spoiler": 0,
+      "name": "Cryptic Messages",
+      "name_pt": "Mensagens Crípticas",
+      "tip": "Interaja com qualquer Xenoglyph encontrado durante exploracao.",
+      "trophy_code": "returnal_cryptic_messages",
+      "type": "Bronze"
+    },
+    {
+      "description": "Unlock all translation tiers of a Xenoglyph",
+      "is_missable": 0,
+      "is_spoiler": 0,
+      "name": "Cryptic Translations",
+      "name_pt": "Traduções Crípticas",
+      "tip": "Progrida em Ciphers/Xenoglyphs ate liberar todos os tiers de traducao de um Xenoglyph.",
+      "trophy_code": "returnal_cryptic_translations",
+      "type": "Bronze"
+    },
+    {
+      "description": "Perform 5 successful Overloads in a row",
+      "is_missable": 0,
+      "is_spoiler": 0,
+      "name": "Surgical Precision",
+      "name_pt": "Precisão Cirúrgica",
+      "tip": "Atire no vazio se quiser controlar o timing e faca cinco reloads perfeitos seguidos.",
+      "trophy_code": "returnal_surgical_precision",
+      "type": "Bronze"
+    },
+    {
+      "description": "Achieve Weapon Proficiency level 30",
+      "is_missable": 0,
+      "is_spoiler": 0,
+      "name": "Adapting to Circumstance",
+      "name_pt": "Adaptando-se à Circunstância",
+      "tip": "Mais facil no endgame, especialmente em biomas avancados com calibrators e inimigos suficientes.",
+      "trophy_code": "returnal_adapting_to_circumstance",
+      "type": "Prata"
+    },
+    {
+      "description": "Complete a daily challenge in Simulation Mode",
+      "is_missable": 0,
+      "is_spoiler": 0,
+      "name": "In-Field Training",
+      "name_pt": "Treinamento em Campo",
+      "tip": "Requer acessar Simulation Mode e completar uma daily challenge conectado a PSN; nao envolve multiplayer.",
+      "trophy_code": "returnal_in_field_training",
+      "type": "Bronze"
+    },
+    {
+      "description": "Achieve 200% Max Integrity",
+      "is_missable": 0,
+      "is_spoiler": 0,
+      "name": "Hardened Shell",
+      "name_pt": "Casca Endurecida",
+      "tip": "Limpe salas com cuidado e pegue resins em vida cheia para aumentar Max Integrity em um ciclo forte.",
+      "trophy_code": "returnal_hardened_shell",
+      "type": "Bronze"
+    },
+    {
+      "description": "Finish Calculated Risk",
+      "is_missable": 0,
+      "is_spoiler": 0,
+      "name": "Risk Assessment",
+      "name_pt": "Avaliação de Risco",
+      "tip": "Use itens malignant/spoiled suficientes conforme o tracker; pode ser feito em qualquer ciclo favoravel.",
+      "trophy_code": "returnal_risk_assessment",
+      "type": "Bronze"
+    },
+    {
+      "description": "Achieve maximum Adrenaline Level",
+      "is_missable": 0,
+      "is_spoiler": 0,
+      "name": "Adrenaline Spike",
+      "name_pt": "Pico de Adrenalina",
+      "tip": "Chegue ao nivel 5 de adrenaline eliminando inimigos sem levar dano.",
+      "trophy_code": "returnal_adrenaline_spike",
+      "type": "Bronze"
+    },
+    {
+      "description": "Have 5 Parasites simultaneously",
+      "is_missable": 0,
+      "is_spoiler": 0,
+      "name": "Irreversibly Contaminated",
+      "name_pt": "Irreversivelmente Contaminada",
+      "tip": "Pegue parasites sempre que possivel ate acumular cinco no mesmo ciclo.",
+      "trophy_code": "returnal_irreversibly_contaminated",
+      "type": "Bronze"
+    },
+    {
+      "description": "Die for the first time",
+      "is_missable": 0,
+      "is_spoiler": 0,
+      "name": "Eternal Return",
+      "name_pt": "Retorno Eterno",
+      "tip": "Vem naturalmente cedo: morrer faz parte do loop de Returnal.",
+      "trophy_code": "returnal_eternal_return",
+      "type": "Bronze"
+    },
+    {
+      "description": "Retrieve 10 Scout Logs",
+      "is_missable": 0,
+      "is_spoiler": 0,
+      "name": "Alternate Fates",
+      "name_pt": "Destinos Alternativos",
+      "tip": "Pegue Scout Logs quando aparecerem; eles dependem de spawns e layouts de ciclos.",
+      "trophy_code": "returnal_alternate_fates",
+      "type": "Bronze"
+    },
+    {
+      "description": "Complete the first House sequence",
+      "is_missable": 0,
+      "is_spoiler": 1,
+      "name": "Welcome Home",
+      "name_pt": "Bem-vinda ao Lar",
+      "tip": "Entre na casa quando ela estiver acessivel em Overgrown Ruins.",
+      "trophy_code": "returnal_welcome_home",
+      "type": "Bronze"
+    },
+    {
+      "description": "Complete all House sequences",
+      "is_missable": 0,
+      "is_spoiler": 1,
+      "name": "Sins of the Mother",
+      "name_pt": "Pecados da Mãe",
+      "tip": "Complete as seis House Sequences, incluindo a sequencia final ligada aos Sunface Fragments.",
+      "trophy_code": "returnal_sins_of_the_mother",
+      "type": "Prata"
+    },
+    {
+      "description": "Complete a Xeno-archive set",
+      "is_missable": 0,
+      "is_spoiler": 1,
+      "name": "Visions of the Past",
+      "name_pt": "Visões do Passado",
+      "tip": "Ative todos os tableaus de um Xeno-Archive set quando encontrar a sala correspondente.",
+      "trophy_code": "returnal_visions_of_the_past",
+      "type": "Prata"
+    }
+  ]
+}

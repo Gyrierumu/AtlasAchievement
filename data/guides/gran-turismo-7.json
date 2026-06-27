@@ -1,0 +1,811 @@
+{
+  "game": {
+    "avoid_if": "Evite se voce quer uma platina curta, offline simples ou sem grind de creditos/carros.",
+    "before_you_start": "Entre sabendo que e uma platina longa, com habilidade em corrida, grind de creditos, espera por carros/rotacao e dependencia de conexao/servidores. Sem servidores, o progresso fica limitado.",
+    "best_for": "Ideal para quem gosta de corrida, colecao de carros, progressao longa e desafios de habilidade.",
+    "cleanup_advice": "Depois dos menus, foque em licencas, carros especificos, creditos, concessionarias rotativas, Sport Mode e trofeus de distancia/eventos.",
+    "cover_image": "https://images.launchbox-app.com/4211ae53-61d4-4377-808f-e92d878ca5ed.jpg",
+    "coverage_level": "strong",
+    "created_at": "2026-05-09 19:53:38",
+    "difficulty": 7,
+    "difficulty_reason": "A dificuldade vem de licencas/eventos exigentes, habilidade de pilotagem e consistencia, alem do grind de creditos, carros e objetivos online.",
+    "dlc_scope": "Guia focado na lista base da platina de Gran Turismo 7; atualizacoes, Power Pack e eventos futuros nao devem ser tratados como DLC obrigatoria. Nao use a lista de Gran Turismo Sport.",
+    "editorial_notes": "",
+    "editorial_review_status": null,
+    "editorial_status": "published",
+    "first_run_advice": "Complete os Menu Books primeiro para liberar sistemas, pistas e recursos antes de focar no checklist pesado.",
+    "grind_summary": "O peso esta em licencas, creditos, compra de carros, rotacao de concessionarias, eventos, distancia e desafios de habilidade.",
+    "guide_avoid": null,
+    "guide_best_moment": null,
+    "guide_dlc": null,
+    "guide_grind": null,
+    "guide_ideal": null,
+    "guide_online": null,
+    "guide_runs": null,
+    "image": "https://image.api.playstation.com/vulcan/ap/rnd/202109/1322/vIfIiacVOq5cnma28fdLgdeb.png",
+    "is_verified": 0,
+    "last_reviewed_at": "",
+    "missable": "Nao ha trofeus perdiveis. A atencao fica em requisitos online/Sport Mode, ouro em todas as licencas, creditos, carros lendarios rotativos e paciencia com concessionarias.",
+    "missable_summary": "Nada e perdivel; carros de concessionarias e Legend Cars dependem de rotacao/espera, mas nao somem de forma definitiva.",
+    "name": "Gran Turismo 7",
+    "online_summary": "Gran Turismo 7 depende de conexao/servidores para boa parte da progressao; offline, o jogo fica limitado basicamente ao Arcade Mode. A lista tambem tem trofeus de Sport Mode e distancia com outros jogadores online, como Sport Mode Debut, In-Depth Mastery, Going the Distance Together: The Atlantic e Going the Distance Together: The Autobahn; nao trate a platina inteira como multiplayer tradicional.",
+    "quality_warnings": "[]",
+    "reviewed_by": "",
+    "runs_summary": "Nao ha runs; a platina e uma progressao longa por menus, licencas, eventos, creditos, carros e trofeus especificos.",
+    "slug": "gran-turismo-7",
+    "time": "100-150h",
+    "time_bucket": "long",
+    "time_max_hours": 150,
+    "time_min_hours": 100,
+    "time_reason": "A faixa de 100-150h considera menus, licencas, eventos, creditos, carros especificos, Sport Mode, distancia e cleanup.",
+    "time_sort_hours": 100,
+    "updated_at": "2026-06-27 02:36:58",
+    "verification_note": "Lista base de Gran Turismo 7 adicionada com checklist e roadmap completos; aguarda revisao editorial manual final.",
+    "verification_status": "review",
+    "walkthrough": null
+  },
+  "redirects": [],
+  "roadmaps": [
+    {
+      "content": "{\"title\":\"Avance pela campanha\",\"focus\":\"\",\"objective\":\"complete os Menu Books/GT Cafe para liberar sistemas, pistas, carros, Tuning Shop, GT Auto, License Center, Missions e Sport Mode. Nao confunda esta lista com Gran Turismo Sport.\",\"actions\":[],\"warning\":\"\",\"result\":\"\"}",
+      "step_order": 1
+    },
+    {
+      "content": "{\"title\":\"trabalhe licencas, missoes e eventos importantes\",\"focus\":\"\",\"objective\":\"trabalhe licencas, missoes e eventos importantes. Fully Licensed exige todas as licencas; Hard Work Pays Off exige ouro em todas e costuma ser o maior teste de habilidade.\",\"actions\":[],\"warning\":\"\",\"result\":\"\"}",
+      "step_order": 2
+    },
+    {
+      "content": "{\"title\":\"avance Circuit Experience, dirt races, time trials, distancia...\",\"focus\":\"\",\"objective\":\"avance Circuit Experience, dirt races, time trials, distancia e trofeus de corrida como Clean Racer, By a Whisker, By a Country Mile, Done in 60 Seconds e Speed Archdemon.\",\"actions\":[],\"warning\":\"\",\"result\":\"\"}",
+      "step_order": 3
+    },
+    {
+      "content": "{\"title\":\"Prossiga pela rota planejada\",\"focus\":\"\",\"objective\":\"acumule creditos, compre carros necessarios e acompanhe concessionarias/rotacao, especialmente Legend Cars para Living with a Legend e Three Legendary Cars.\",\"actions\":[],\"warning\":\"\",\"result\":\"\"}",
+      "step_order": 4
+    },
+    {
+      "content": "{\"title\":\"Resolva requisitos online cedo\",\"focus\":\"\",\"objective\":\"resolva os objetivos online confirmados com precisao: Sport Mode Debut, In-Depth Mastery, Going the Distance Together: The Atlantic e Going the Distance Together: The Autobahn. Isso exige online/servidores/Sport Mode ou distancia com outros jogadores, mas nao transforma toda a lista em multiplayer tradicional.\",\"actions\":[],\"warning\":\"\",\"result\":\"\"}",
+      "step_order": 5
+    },
+    {
+      "content": "{\"title\":\"Prossiga pela rota planejada\",\"focus\":\"\",\"objective\":\"limpe fotos/Scapes, tuning, rodas, turbo/supercharger, lavagem, rigidez, compra repetida de carro, electric car, safety car, pickup truck, wide body, pit stop, pneus e combustivel.\",\"actions\":[],\"warning\":\"\",\"result\":\"\"}",
+      "step_order": 6
+    },
+    {
+      "content": "{\"title\":\"Resolva requisitos online cedo\",\"focus\":\"\",\"objective\":\"faca cleanup final de 54 trofeus da lista base: licencas ouro, 100 carros, 15 Circuit Experiences, 50 Sport Mode races, distancia online, tres carros lendarios e qualquer evento especifico restante.\",\"actions\":[],\"warning\":\"\",\"result\":\"\"}",
+      "step_order": 7
+    }
+  ],
+  "schemaVersion": 1,
+  "seedExtras": {
+    "aliases": [],
+    "attentionPoints": [
+      {
+        "tip": "A platina exige Sport Mode e distância online. Não trate Gran Turismo 7 como guia offline.",
+        "title": "Online obrigatório",
+        "type": "Sport Mode / distância online"
+      },
+      {
+        "tip": "In-Depth Mastery exige terminar 50 corridas no Sport Mode. O foco é concluir corridas, não vencer.",
+        "title": "Sport Mode",
+        "type": "Online competitivo"
+      },
+      {
+        "tip": "Going the Distance Together: The Atlantic e The Autobahn exigem distância com outros jogadores online.",
+        "title": "Distância online",
+        "type": "Online / Grind"
+      },
+      {
+        "tip": "Corridas online são multiplayer competitivo, não coop. O filtro Coop deve ser 0.",
+        "title": "Sem coop",
+        "type": "Multiplayer competitivo"
+      },
+      {
+        "tip": "Exige Ford Mark IV Race Car '67, Jaguar XJ13 '66 e Ferrari 330 P4 '67 na Legend Cars.",
+        "title": "Three Legendary Cars",
+        "type": "Legend Cars"
+      },
+      {
+        "tip": "Legend Cars tem rotação e preços variáveis. Three Legendary Cars pode atrasar a platina mesmo com créditos.",
+        "title": "Rotação e créditos",
+        "type": "Legend Cars / Créditos"
+      },
+      {
+        "tip": "Hard Work Pays Off exige ouro em todas as licenças normais. É o principal skill check do guia.",
+        "title": "Licenças ouro",
+        "type": "Licenças / Habilidade"
+      },
+      {
+        "tip": "Circuit Master exige completar 15 pistas no Circuit Experience. Não confunda com corridas normais.",
+        "title": "Circuit Experience",
+        "type": "Circuit Experience"
+      },
+      {
+        "tip": "Time Attacker exige 100 voltas em Time Trials. Use corridas curtas e repetíveis para acelerar.",
+        "title": "Time Attacker",
+        "type": "Time Trial"
+      },
+      {
+        "tip": "Memento from Le Mans e Memento from the Nürburgring exigem carro e local específicos no Scapes.",
+        "title": "Fotos específicas",
+        "type": "Scapes"
+      },
+      {
+        "tip": "Não há perdíveis permanentes. Carros lendários são time-gated, não perdíveis.",
+        "title": "Sem perdíveis",
+        "type": "Cleanup"
+      },
+      {
+        "tip": "Power Pack e outros conteúdos extras não são necessários para a platina base, salvo seção separada de DLC/extra.",
+        "title": "DLC/Power Pack separado",
+        "type": "Base game"
+      }
+    ],
+    "checklist": [
+      "Conferir se o guia tem 54 troféus.",
+      "Conferir se Gran Turismo Platinum Trophy é a platina.",
+      "Conferir distribuição: 1 platina, 2 ouro, 4 prata, 47 bronze.",
+      "Conferir onlineRequired true.",
+      "Conferir coopRequired false.",
+      "Conferir dlcRequired false.",
+      "Conferir hasMissables false e missableCount 0.",
+      "Conferir filtro Perdíveis 0, Online 4, Coop 0, DLC 0 e Dificuldade 0.",
+      "Conferir Sport Mode Debut como Online/Sport Mode.",
+      "Conferir In-Depth Mastery como Online/Sport Mode/Grind.",
+      "Conferir Going the Distance Together: The Atlantic como Online/Distância.",
+      "Conferir Going the Distance Together: The Autobahn como Online/Distância/Grind.",
+      "Conferir Hard Work Pays Off como Licenças/Ouro/Habilidade.",
+      "Conferir Fully Licensed.",
+      "Conferir Circuit Master/Circuit Experience.",
+      "Conferir Three Legendary Cars e os três carros corretos.",
+      "Conferir Legend Cars, rotação e créditos.",
+      "Conferir Finale/Menu Books.",
+      "Conferir Time Attacker com 100 voltas em Time Trials.",
+      "Conferir Snap-Happy e Mementos.",
+      "Conferir GT Auto/tuning.",
+      "Conferir garagem 50/100 carros.",
+      "Conferir troféus de velocidade.",
+      "Conferir troféus de distância offline.",
+      "Conferir que Sport Mode não virou Coop.",
+      "Conferir que Power Pack/DLC não entrou na platina base.",
+      "Conferir se todos os troféus têm nome oficial em inglês como principal.",
+      "Conferir se todos têm PT-BR abaixo.",
+      "Conferir se descrições estão em português.",
+      "Conferir se textos em português têm acentos.",
+      "Conferir se não aparecem rótulos técnicos de nome original nem placeholders editoriais.",
+      "Conferir se roadmap está estruturado como array/objeto.",
+      "Conferir se roadmap renderiza etapas legíveis sem labels internos.",
+      "Conferir FAQ, decisão rápida, SEO e pontos de atenção.",
+      "Conferir se página individual e catálogo exibem o mesmo status editorial.",
+      "Conferir se flags do topo batem com filtros do catálogo."
+    ],
+    "faq": [
+      {
+        "answer": "Não. Não há perdíveis permanentes. Licenças, corridas, fotos, carros, Sport Mode e grinds podem ser feitos depois.",
+        "question": "Gran Turismo 7 tem troféus perdíveis?"
+      },
+      {
+        "answer": "Sim. A platina exige Sport Mode e troféus de distância online com outros jogadores.",
+        "question": "Precisa jogar online para platinar?"
+      },
+      {
+        "answer": "Não. Sport Mode é multiplayer competitivo, não coop.",
+        "question": "Precisa de cooperação?"
+      },
+      {
+        "answer": "Não. A platina usa apenas a lista base de 54 troféus. Power Pack e conteúdos extras devem ficar separados.",
+        "question": "Precisa de DLC?"
+      },
+      {
+        "answer": "Em média, cerca de 100 a 150 horas neste guia, dependendo de habilidade nas licenças, créditos, Sport Mode, distância online e rotação da Legend Cars.",
+        "question": "Quantas horas leva para platinar?"
+      },
+      {
+        "answer": "Não há troféu de dificuldade selecionável. O desafio vem de habilidade, licenças ouro, grind e Sport Mode.",
+        "question": "A dificuldade afeta troféus?"
+      },
+      {
+        "answer": "Three Legendary Cars, Hard Work Pays Off, In-Depth Mastery e os troféus de distância online.",
+        "question": "Qual é o maior gargalo?"
+      },
+      {
+        "answer": "Ford Mark IV Race Car '67, Jaguar XJ13 '66 e Ferrari 330 P4 '67, comprados na Legend Cars quando estiverem disponíveis.",
+        "question": "Quais carros preciso para Three Legendary Cars?"
+      },
+      {
+        "answer": "Não. In-Depth Mastery exige terminar 50 corridas no Sport Mode.",
+        "question": "Preciso vencer 50 corridas no Sport Mode?"
+      },
+      {
+        "answer": "Sim. Hard Work Pays Off exige ouro em todas as licenças normais.",
+        "question": "Preciso de ouro em todas as licenças?"
+      },
+      {
+        "answer": "Não. Sport Mode é multiplayer competitivo. O guia deve marcar Online, não Coop.",
+        "question": "Sport Mode conta como coop?"
+      },
+      {
+        "answer": "A platina não exige microtransações. O guia deve focar em créditos obtidos jogando.",
+        "question": "Posso usar dinheiro real para acelerar?"
+      }
+    ],
+    "note": "Campos exportados para auditoria. O SQLite atual nao possui colunas nativas para todos esses extras; a importacao preserva o que o banco suporta.",
+    "quickDecision": {
+      "difficulty": "Moderada. O desafio principal é ouro nas licenças, consistência, Sport Mode e tempo.",
+      "dlc": "Não exige DLC para a platina base.",
+      "firstAction": "Complete os Menu Books do GT Café para liberar sistemas, circuitos, lojas, licenças e Sport Mode.",
+      "mainRisk": "Sport Mode, 50 corridas online, distância online, Three Legendary Cars, ouro nas licenças e grind de créditos.",
+      "onlineCoop": "Online obrigatório, sem coop obrigatório.",
+      "risk": "Baixo em perda permanente, médio/alto em demora por rotação da Legend Cars e grind.",
+      "time": "Longo, cerca de 100 a 150 horas.",
+      "verdict": "Sim, mas é uma platina longa, com online obrigatório, grind de créditos e desafios de habilidade."
+    },
+    "seo": {
+      "description": "Guia de troféus de Gran Turismo 7 com roadmap da platina, online obrigatório, Sport Mode, Three Legendary Cars, licenças ouro, Circuit Experience, créditos, Legend Cars e dicas para os 54 troféus.",
+      "keywords": [
+        "Gran Turismo 7 troféus",
+        "Gran Turismo 7 platina",
+        "guia Gran Turismo 7",
+        "GT7 troféus",
+        "GT7 platina",
+        "Gran Turismo Platinum Trophy",
+        "Three Legendary Cars",
+        "Hard Work Pays Off",
+        "In-Depth Mastery",
+        "Sport Mode GT7",
+        "Legend Cars GT7",
+        "Ferrari 330 P4 GT7",
+        "Jaguar XJ13 GT7",
+        "Ford Mark IV GT7",
+        "Gran Turismo 7 licenças ouro"
+      ],
+      "metaDescription": "Guia de troféus de Gran Turismo 7 com roadmap da platina, online obrigatório, Sport Mode, Three Legendary Cars, licenças ouro, Circuit Experience, créditos, Legend Cars e dicas para os 54 troféus.",
+      "ogDescription": "Roadmap PT-BR da platina de Gran Turismo 7 com 54 troféus, online obrigatório, Sport Mode, Three Legendary Cars, licenças ouro, Circuit Experience e créditos.",
+      "ogTitle": "Gran Turismo 7: Guia de Troféus e Platina",
+      "title": "Gran Turismo 7: Guia de Troféus e Platina"
+    },
+    "tags": []
+  },
+  "slug": "gran-turismo-7",
+  "trophies": [
+    {
+      "description": "Acquired all Gran Turismo 7 trophies!",
+      "is_missable": 0,
+      "is_spoiler": 0,
+      "name": "Gran Turismo Platinum Trophy",
+      "name_pt": "",
+      "tip": "Conclua os outros 53 trofeus de Gran Turismo 7. Nao use a lista de Gran Turismo Sport.",
+      "trophy_code": "gt7_gran_turismo_platinum_trophy",
+      "type": "Platina"
+    },
+    {
+      "description": "Started the first Menu Book.",
+      "is_missable": 0,
+      "is_spoiler": 0,
+      "name": "Living Your Car Life",
+      "name_pt": "",
+      "tip": "Trofeu inicial do GT Cafe/Menu Books.",
+      "trophy_code": "gt7_living_your_car_life",
+      "type": "Bronze"
+    },
+    {
+      "description": "Completed the first car collecting menu.",
+      "is_missable": 0,
+      "is_spoiler": 0,
+      "name": "Student of Motoring History",
+      "name_pt": "",
+      "tip": "Complete o primeiro menu de colecao de carros.",
+      "trophy_code": "gt7_student_of_motoring_history",
+      "type": "Bronze"
+    },
+    {
+      "description": "Moved up five or more positions in a single lap.",
+      "is_missable": 0,
+      "is_spoiler": 0,
+      "name": "Moving on Up",
+      "name_pt": "",
+      "tip": "Vem cedo em corridas de Menu Books se voce largar no meio/fim do grid.",
+      "trophy_code": "gt7_moving_on_up",
+      "type": "Bronze"
+    },
+    {
+      "description": "Completed a race without leaving the track or any collisions.",
+      "is_missable": 0,
+      "is_spoiler": 0,
+      "name": "Clean Racer",
+      "name_pt": "",
+      "tip": "Escolha uma corrida facil e pilote de forma conservadora sem contato.",
+      "trophy_code": "gt7_clean_racer",
+      "type": "Bronze"
+    },
+    {
+      "description": "Won a race with a lead of 0.5 seconds or less.",
+      "is_missable": 0,
+      "is_spoiler": 0,
+      "name": "By a Whisker",
+      "name_pt": "",
+      "tip": "Se nao vier naturalmente, reduza ritmo na reta final para vencer por margem pequena.",
+      "trophy_code": "gt7_by_a_whisker",
+      "type": "Bronze"
+    },
+    {
+      "description": "Won with a lead of 10 seconds or more, in a race of at least two laps.",
+      "is_missable": 0,
+      "is_spoiler": 0,
+      "name": "By a Country Mile",
+      "name_pt": "",
+      "tip": "Use carro forte em corrida de duas ou mais voltas.",
+      "trophy_code": "gt7_by_a_country_mile",
+      "type": "Bronze"
+    },
+    {
+      "description": "Completed a race without any assist settings.",
+      "is_missable": 0,
+      "is_spoiler": 0,
+      "name": "No Assistance Required!",
+      "name_pt": "",
+      "tip": "Desative assistencias e conclua uma corrida simples de baixa potencia.",
+      "trophy_code": "gt7_no_assistance_required",
+      "type": "Bronze"
+    },
+    {
+      "description": "Stored 50 cars in your Garage.",
+      "is_missable": 0,
+      "is_spoiler": 0,
+      "name": "Motor Mania",
+      "name_pt": "",
+      "tip": "Os Menu Books entregam muitos carros; complete antes de gastar pesado.",
+      "trophy_code": "gt7_motor_mania",
+      "type": "Bronze"
+    },
+    {
+      "description": "Stored 100 cars in your Garage.",
+      "is_missable": 0,
+      "is_spoiler": 0,
+      "name": "No Car, No Life!",
+      "name_pt": "",
+      "tip": "Compre carros baratos e aproveite recompensas de eventos ate chegar a 100.",
+      "trophy_code": "gt7_no_car_no_life",
+      "type": "Bronze"
+    },
+    {
+      "description": "Acquired three legendary race cars that were once destined to win 24 hour races.",
+      "is_missable": 0,
+      "is_spoiler": 0,
+      "name": "Three Legendary Cars",
+      "name_pt": "",
+      "tip": "Exige Ferrari 330 P4 '67, Ford Mark IV Race Car '67 e Jaguar XJ13 '66 na Legend Cars. Depende de rotacao e muitos creditos, mas nao e perdivel.",
+      "trophy_code": "gt7_three_legendary_cars",
+      "type": "Prata"
+    },
+    {
+      "description": "Fulfilled requirements for ending.",
+      "is_missable": 0,
+      "is_spoiler": 0,
+      "name": "Finale",
+      "name_pt": "",
+      "tip": "Complete os Menu Books principais do GT Cafe ate o encerramento.",
+      "trophy_code": "gt7_finale",
+      "type": "Ouro"
+    },
+    {
+      "description": "Earned Gold in all normal licenses.",
+      "is_missable": 0,
+      "is_spoiler": 0,
+      "name": "Hard Work Pays Off",
+      "name_pt": "",
+      "tip": "Maior teste de habilidade da platina: obtenha ouro em todos os 50 testes de licenca normal, incluindo Super License.",
+      "trophy_code": "gt7_hard_work_pays_off",
+      "type": "Ouro"
+    },
+    {
+      "description": "Earned all normal licenses.",
+      "is_missable": 0,
+      "is_spoiler": 0,
+      "name": "Fully Licensed",
+      "name_pt": "",
+      "tip": "Complete todos os testes de licenca normal ao menos com bronze.",
+      "trophy_code": "gt7_fully_licensed",
+      "type": "Bronze"
+    },
+    {
+      "description": "Acquired your rain license.",
+      "is_missable": 0,
+      "is_spoiler": 0,
+      "name": "Rain Royalty",
+      "name_pt": "",
+      "tip": "Complete os testes de licenca em condicoes de chuva/molhado.",
+      "trophy_code": "gt7_rain_royalty",
+      "type": "Bronze"
+    },
+    {
+      "description": "Completed a track (all sectors) in Circuit Experience.",
+      "is_missable": 0,
+      "is_spoiler": 0,
+      "name": "The First Step to Mastery",
+      "name_pt": "",
+      "tip": "Complete todos os setores e volta final de um circuito no Circuit Experience.",
+      "trophy_code": "gt7_first_step_to_mastery",
+      "type": "Bronze"
+    },
+    {
+      "description": "Completed five tracks (all sectors) in Circuit Experience.",
+      "is_missable": 0,
+      "is_spoiler": 0,
+      "name": "Circuit Apprentice",
+      "name_pt": "",
+      "tip": "Escolha cinco circuitos curtos para reduzir tempo.",
+      "trophy_code": "gt7_circuit_apprentice",
+      "type": "Bronze"
+    },
+    {
+      "description": "Completed 15 tracks (all sectors) in Circuit Experience.",
+      "is_missable": 0,
+      "is_spoiler": 0,
+      "name": "Circuit Master",
+      "name_pt": "",
+      "tip": "Complete Circuit Experience em 15 pistas; bronzes bastam para o trofeu.",
+      "trophy_code": "gt7_circuit_master",
+      "type": "Prata"
+    },
+    {
+      "description": "Drove a lap of the Tsukuba Circuit in under one minute.",
+      "is_missable": 0,
+      "is_spoiler": 0,
+      "name": "Done in 60 Seconds",
+      "name_pt": "",
+      "tip": "Pode vir no Circuit Experience de Tsukuba ou em Time Trial com carro rapido.",
+      "trophy_code": "gt7_done_in_60_seconds",
+      "type": "Bronze"
+    },
+    {
+      "description": "Won 10 races on dirt tracks.",
+      "is_missable": 0,
+      "is_spoiler": 0,
+      "name": "Digging the Dirt",
+      "name_pt": "",
+      "tip": "Repita eventos dirt, como Fishermans Ranch, quando tiver carro adequado.",
+      "trophy_code": "gt7_digging_the_dirt",
+      "type": "Bronze"
+    },
+    {
+      "description": "Took part in 100 laps in Time Trials.",
+      "is_missable": 0,
+      "is_spoiler": 0,
+      "name": "Time Attacker",
+      "name_pt": "",
+      "tip": "Voltas curtas em Time Trial, como Northern Isle, aceleram o grind.",
+      "trophy_code": "gt7_time_attacker",
+      "type": "Bronze"
+    },
+    {
+      "description": "Finished a race in Sport mode.",
+      "is_missable": 0,
+      "is_spoiler": 0,
+      "name": "Sport Mode Debut",
+      "name_pt": "",
+      "tip": "Trofeu online/Sport Mode: conclua uma corrida Sport Mode. Nao confunda com toda a lista sendo multiplayer tradicional.",
+      "trophy_code": "gt7_sport_mode_debut",
+      "type": "Bronze"
+    },
+    {
+      "description": "Finished 50 races in Sport mode.",
+      "is_missable": 0,
+      "is_spoiler": 0,
+      "name": "In-Depth Mastery",
+      "name_pt": "",
+      "tip": "Trofeu online/Sport Mode: termine 50 corridas. Daily Races costumam ser o caminho mais direto.",
+      "trophy_code": "gt7_in_depth_mastery",
+      "type": "Bronze"
+    },
+    {
+      "description": "Drove the length of one complete 24 Hours of Le Mans race: 2209.536 km (1372.942 miles).",
+      "is_missable": 0,
+      "is_spoiler": 0,
+      "name": "Going the Distance: 24 Hours of Le Mans",
+      "name_pt": "",
+      "tip": "Distancia acumulada; vem com progressao longa, missoes e grind.",
+      "trophy_code": "gt7_going_the_distance_24_hours_le_mans",
+      "type": "Bronze"
+    },
+    {
+      "description": "Drove the length of Route 66 (U.S.): 2451 miles (3945 km).",
+      "is_missable": 0,
+      "is_spoiler": 0,
+      "name": "Going the Distance: Route 66",
+      "name_pt": "",
+      "tip": "Distancia acumulada; lobbies longos em Special Stage Route X tambem ajudam.",
+      "trophy_code": "gt7_going_the_distance_route_66",
+      "type": "Bronze"
+    },
+    {
+      "description": "Drove 500 miles (804.672 km) on oval tracks.",
+      "is_missable": 0,
+      "is_spoiler": 0,
+      "name": "Round and Round",
+      "name_pt": "",
+      "tip": "Special Stage Route X ou outros ovais ajudam a acumular distancia.",
+      "trophy_code": "gt7_round_and_round",
+      "type": "Bronze"
+    },
+    {
+      "description": "Drove the length of Angeles Crest Highway (U.S.): 66 miles (106 km).",
+      "is_missable": 0,
+      "is_spoiler": 0,
+      "name": "Going the Distance: Angeles Crest Highway",
+      "name_pt": "",
+      "tip": "Vem naturalmente durante licencas/eventos se voce jogar bastante.",
+      "trophy_code": "gt7_going_the_distance_angeles_crest_highway",
+      "type": "Bronze"
+    },
+    {
+      "description": "Driving with other players online, you matched the distance covered by the first ever non-stop Transatlantic flight: 5810 km (3610 miles).",
+      "is_missable": 0,
+      "is_spoiler": 0,
+      "name": "Going the Distance Together: The Atlantic",
+      "name_pt": "",
+      "tip": "Trofeu online com outros jogadores. Distancia de todos no lobby pode ajudar, mas voce precisa estar em corrida online.",
+      "trophy_code": "gt7_going_the_distance_together_atlantic",
+      "type": "Bronze"
+    },
+    {
+      "description": "Driving with other players online, you matched the distance covered by the entire German Autobahn network: 13,191 km (8197 miles).",
+      "is_missable": 0,
+      "is_spoiler": 0,
+      "name": "Going the Distance Together: The Autobahn",
+      "name_pt": "",
+      "tip": "Trofeu online com outros jogadores e grind de distancia; planeje sessoes de lobby/online longas.",
+      "trophy_code": "gt7_going_the_distance_together_autobahn",
+      "type": "Prata"
+    },
+    {
+      "description": "Reached a speed of 200 mph (322 km/h).",
+      "is_missable": 0,
+      "is_spoiler": 0,
+      "name": "Join the 200-mph Club",
+      "name_pt": "",
+      "tip": "Vem em carros rapidos, licencas ou Special Stage Route X.",
+      "trophy_code": "gt7_join_the_200_mph_club",
+      "type": "Bronze"
+    },
+    {
+      "description": "Reached a speed of 500 km/h (311 mph).",
+      "is_missable": 0,
+      "is_spoiler": 0,
+      "name": "Speed Demon",
+      "name_pt": "",
+      "tip": "Use Special Stage Route X e carro extremo/tunado, como Tomahawk X se disponivel.",
+      "trophy_code": "gt7_speed_demon",
+      "type": "Bronze"
+    },
+    {
+      "description": "Reached a speed of 600 km/h (373 mph).",
+      "is_missable": 0,
+      "is_spoiler": 0,
+      "name": "Speed Archdemon",
+      "name_pt": "",
+      "tip": "Normalmente exige carro muito rapido, tuning e uma reta longa como Special Stage Route X.",
+      "trophy_code": "gt7_speed_archdemon",
+      "type": "Prata"
+    },
+    {
+      "description": "Drove a Formula car.",
+      "is_missable": 0,
+      "is_spoiler": 0,
+      "name": "Formula First Timer",
+      "name_pt": "",
+      "tip": "Pode vir em licencas/missoes ou ao dirigir um Super Formula.",
+      "trophy_code": "gt7_formula_first_timer",
+      "type": "Bronze"
+    },
+    {
+      "description": "Finished on the podium ten times.",
+      "is_missable": 0,
+      "is_spoiler": 0,
+      "name": "Podium Fixture",
+      "name_pt": "",
+      "tip": "Vem naturalmente durante Menu Books e eventos.",
+      "trophy_code": "gt7_podium_fixture",
+      "type": "Bronze"
+    },
+    {
+      "description": "Won races on 10 different tracks.",
+      "is_missable": 0,
+      "is_spoiler": 0,
+      "name": "All-Rounder",
+      "name_pt": "",
+      "tip": "Vem naturalmente ao completar o GT Cafe.",
+      "trophy_code": "gt7_all_rounder",
+      "type": "Bronze"
+    },
+    {
+      "description": "Took a Scapes photo of an Audi R18 TDI (Audi Sport Team Joest) on the Circuit de la Sarthe.",
+      "is_missable": 0,
+      "is_spoiler": 0,
+      "name": "Memento from Le Mans",
+      "name_pt": "",
+      "tip": "Compre/tenha o Audi R18 TDI correto e tire foto em Scapes no Circuit de la Sarthe.",
+      "trophy_code": "gt7_memento_from_le_mans",
+      "type": "Bronze"
+    },
+    {
+      "description": "Took a Scapes photo of a BMW Gr.3 car on the Nürburgring.",
+      "is_missable": 0,
+      "is_spoiler": 0,
+      "name": "Memento from the Nürburgring",
+      "name_pt": "",
+      "tip": "Compre qualquer BMW Gr.3 elegivel e tire foto em Scapes no Nurburgring.",
+      "trophy_code": "gt7_memento_from_the_nurburgring",
+      "type": "Bronze"
+    },
+    {
+      "description": "Took 100 photos in Scapes or Race Photos.",
+      "is_missable": 0,
+      "is_spoiler": 0,
+      "name": "Snap-Happy",
+      "name_pt": "",
+      "tip": "Pode repetir fotos; nao precisa ser 100 imagens diferentes.",
+      "trophy_code": "gt7_snap_happy",
+      "type": "Bronze"
+    },
+    {
+      "description": "Bought and equipped tuning parts.",
+      "is_missable": 0,
+      "is_spoiler": 0,
+      "name": "A Taste of Tuning",
+      "name_pt": "",
+      "tip": "Compre e equipe qualquer peca na Tuning Shop.",
+      "trophy_code": "gt7_a_taste_of_tuning",
+      "type": "Bronze"
+    },
+    {
+      "description": "Bought and equipped aerodynamic parts.",
+      "is_missable": 0,
+      "is_spoiler": 0,
+      "name": "Looking Good!",
+      "name_pt": "",
+      "tip": "Compre e equipe peca aerodinamica no GT Auto.",
+      "trophy_code": "gt7_looking_good",
+      "type": "Bronze"
+    },
+    {
+      "description": "Bought 10 sets of wheels at GT Auto.",
+      "is_missable": 0,
+      "is_spoiler": 0,
+      "name": "Wheely Good Fun",
+      "name_pt": "",
+      "tip": "Compre dez rodas, podendo usar opcoes baratas no GT Auto.",
+      "trophy_code": "gt7_wheely_good_fun",
+      "type": "Bronze"
+    },
+    {
+      "description": "Bought the same car 10 times.",
+      "is_missable": 0,
+      "is_spoiler": 0,
+      "name": "Firm Favorite",
+      "name_pt": "",
+      "tip": "Use um carro barato, como kart quando disponivel, para reduzir custo.",
+      "trophy_code": "gt7_firm_favorite",
+      "type": "Bronze"
+    },
+    {
+      "description": "Purchased a turbo or supercharger 10 times.",
+      "is_missable": 0,
+      "is_spoiler": 0,
+      "name": "A Bit of a Boost",
+      "name_pt": "",
+      "tip": "Compre turbo/supercharger em dez carros elegiveis.",
+      "trophy_code": "gt7_a_bit_of_a_boost",
+      "type": "Bronze"
+    },
+    {
+      "description": "Washed a car 10 times.",
+      "is_missable": 0,
+      "is_spoiler": 0,
+      "name": "Squeaky Clean",
+      "name_pt": "",
+      "tip": "Use Car Wash no GT Auto dez vezes.",
+      "trophy_code": "gt7_squeaky_clean",
+      "type": "Bronze"
+    },
+    {
+      "description": "Increased a car's body rigidity 10 times.",
+      "is_missable": 0,
+      "is_spoiler": 0,
+      "name": "Toughening Up",
+      "name_pt": "",
+      "tip": "Compre Increase Body Rigidity para dez carros.",
+      "trophy_code": "gt7_toughening_up",
+      "type": "Bronze"
+    },
+    {
+      "description": "Bought a pickup truck.",
+      "is_missable": 0,
+      "is_spoiler": 0,
+      "name": "Heavy Haulage",
+      "name_pt": "",
+      "tip": "Menu Books exigem pickup; escolha um que tambem ajude em eventos posteriores.",
+      "trophy_code": "gt7_heavy_haulage",
+      "type": "Bronze"
+    },
+    {
+      "description": "Widened a car's body.",
+      "is_missable": 0,
+      "is_spoiler": 0,
+      "name": "Warning: Wide Load!",
+      "name_pt": "",
+      "tip": "Aplique Wide Body em um carro elegivel no GT Auto.",
+      "trophy_code": "gt7_warning_wide_load",
+      "type": "Bronze"
+    },
+    {
+      "description": "Took a pitstop during a race which featured fuel consumption, and filled your tank.",
+      "is_missable": 0,
+      "is_spoiler": 0,
+      "name": "Fill Her Up",
+      "name_pt": "",
+      "tip": "Entre nos boxes em corrida com consumo de combustivel e abasteca.",
+      "trophy_code": "gt7_fill_her_up",
+      "type": "Bronze"
+    },
+    {
+      "description": "Took a pitstop during a race and changed your tires.",
+      "is_missable": 0,
+      "is_spoiler": 0,
+      "name": "New Treads",
+      "name_pt": "",
+      "tip": "Troque pneus em uma corrida com pit stop habilitado.",
+      "trophy_code": "gt7_new_treads",
+      "type": "Bronze"
+    },
+    {
+      "description": "Ran out of fuel in a race which featured fuel consumption.",
+      "is_missable": 0,
+      "is_spoiler": 0,
+      "name": "Running on Empty",
+      "name_pt": "",
+      "tip": "Use evento/missao com consumo e pilote ate zerar combustivel.",
+      "trophy_code": "gt7_running_on_empty",
+      "type": "Bronze"
+    },
+    {
+      "description": "Earned 10,000 pts in Drift Trials.",
+      "is_missable": 0,
+      "is_spoiler": 0,
+      "name": "Smoking Hot",
+      "name_pt": "",
+      "tip": "Drift Trials em Missions ou World Circuits ajudam a chegar a 10.000 pontos.",
+      "trophy_code": "gt7_smoking_hot",
+      "type": "Bronze"
+    },
+    {
+      "description": "Bought an electric car.",
+      "is_missable": 0,
+      "is_spoiler": 0,
+      "name": "Let's Go Carbon Neutral!",
+      "name_pt": "",
+      "tip": "Compre qualquer EV, como BMW i3 se quiser economizar.",
+      "trophy_code": "gt7_lets_go_carbon_neutral",
+      "type": "Bronze"
+    },
+    {
+      "description": "Bought a car at the Legend Cars dealership.",
+      "is_missable": 0,
+      "is_spoiler": 0,
+      "name": "Living with a Legend",
+      "name_pt": "",
+      "tip": "Compre qualquer carro na Legend Cars. Aproveite para planejar Three Legendary Cars.",
+      "trophy_code": "gt7_living_with_a_legend",
+      "type": "Bronze"
+    },
+    {
+      "description": "Bought a safety car.",
+      "is_missable": 0,
+      "is_spoiler": 0,
+      "name": "Safety First",
+      "name_pt": "",
+      "tip": "Compre um Safety Car em Brand Central/concessionaria quando tiver creditos.",
+      "trophy_code": "gt7_safety_first",
+      "type": "Bronze"
+    }
+  ]
+}

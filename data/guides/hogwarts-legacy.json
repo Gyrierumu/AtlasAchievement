@@ -1,0 +1,710 @@
+{
+  "game": {
+    "avoid_if": "Evite se você não gosta de coletáveis extensos, limpeza de mapa, checklists por região ou repetir o começo do jogo com outras casas.",
+    "before_you_start": "Confirme que o guia cobre a lista base PS4/PS5 de 46 troféus. Dark Arts Pack, cosméticos, montarias extras e conteúdos adicionais ficam fora da platina base. Planeje Collector's Edition e as quatro casas até a Câmara do Mapa desde cedo.",
+    "best_for": "Vale platinar Hogwarts Legacy se você gosta de mundo aberto, exploração, colecionáveis e checklist longo. A platina não exige online, coop nem DLC, mas cobra paciência para Collector's Edition, Merlin Trials, challenges, side quests, atividades por região e quatro runs parciais até a Câmara do Mapa. É uma platina acessível e pouco difícil, porém longa e pouco indicada para quem não gosta de cleanup extenso.",
+    "cleanup_advice": "Depois da história, use o free roam para limpar Field Guide Pages, Demiguise Statues, Collection Chests, Ancient Magic Hotspots, Landing Platforms, Infamous Foes, Balloons, beasts, conjurations, traits, side quests, challenges e atividades restantes por região.",
+    "cover_image": "https://cdn.cloudflare.steamstatic.com/steam/apps/990080/library_600x900.jpg",
+    "coverage_level": "strong",
+    "created_at": "2026-05-09 19:53:46",
+    "difficulty": 3,
+    "difficulty_reason": "A dificuldade 3/10 vem do baixo risco mecânico e da ausência de dificuldade obrigatória. O compromisso real é tempo, checklist longo, colecionáveis e organização por região.",
+    "dlc_scope": "DLC fora da platina base: Dark Arts Pack, cosméticos, montarias extras, itens de edição Deluxe, bônus de pré-venda e conteúdo adicional não entram nos 46 troféus da lista base.",
+    "editorial_notes": "Escopo revisado: Hogwarts Legacy lista base de 46 troféus. Dark Arts Pack, cosméticos, montarias extras, Deluxe/preorder e conteúdos adicionais ficam fora da platina base. Collector's Edition é grind/checklist, não perdível rígido.",
+    "editorial_review_status": "verified",
+    "editorial_status": "published",
+    "first_run_advice": "Comece a campanha explorando com calma, desbloqueando Floo Flames, feitiços, talentos e atividades do mapa. Faça side quests quando surgirem e já acompanhe colecionáveis importantes, mas deixe o cleanup pesado de Collector's Edition, Merlin Trials, challenges e quatro casas até a Câmara do Mapa para etapas dedicadas.",
+    "grind_summary": "O grind principal está em Collector's Edition, coleções, Field Guide Pages, Merlin Trials, Demiguise Statues, challenges, side quests, Floo Flames, camps, Room of Requirement e três runs parciais de casas.",
+    "guide_avoid": null,
+    "guide_best_moment": null,
+    "guide_dlc": null,
+    "guide_grind": null,
+    "guide_ideal": null,
+    "guide_online": null,
+    "guide_runs": null,
+    "image": "https://cdn.cloudflare.steamstatic.com/steam/apps/990080/header.jpg",
+    "is_verified": 1,
+    "last_reviewed_at": "2026-06-04",
+    "missable": "Não há perdíveis rígidos na lista base se o jogador usar o free roam e fizer cleanup. O risco real está em deixar colecionáveis, challenges, camps e atividades por região acumularem demais, especialmente Collector's Edition.",
+    "missable_summary": "0 perdíveis rígidos. Os quatro troféus de casa são runs parciais até a Câmara do Mapa, não perda definitiva de colecionáveis.",
+    "name": "Hogwarts Legacy",
+    "online_summary": "Não há online obrigatório, coop obrigatório, multiplayer, servidores ou PS+ para a platina da lista base. Hogwarts Legacy é uma platina single-player/offline.",
+    "quality_warnings": "[]",
+    "reviewed_by": "",
+    "runs_summary": "A platina completa fica no personagem principal, mas é necessário criar personagens das outras casas e avançar cada um até a Câmara do Mapa para os troféus específicos de casa.",
+    "slug": "hogwarts-legacy",
+    "time": "60-80 horas",
+    "time_bucket": "long",
+    "time_max_hours": 80,
+    "time_min_hours": 60,
+    "time_reason": "A estimativa de 60-80 horas considera campanha, mundo aberto, side quests, challenges, Merlin Trials, colecionáveis, Room of Requirement, cleanup e quatro casas até a Câmara do Mapa.",
+    "time_sort_hours": 60,
+    "updated_at": "2026-06-27 02:36:59",
+    "verification_note": "Guia verificado: lista base PS4/PS5 de 46 troféus, roadmap estruturado, checklist, FAQ, flags offline/sem coop/sem DLC, sem perdíveis rígidos, troféus EN + PT-BR e descrições em português.",
+    "verification_status": "verified",
+    "walkthrough": null
+  },
+  "redirects": [],
+  "roadmaps": [
+    {
+      "content": "{\"title\":\"Campanha com exploração constante\",\"focus\":\"História e desbloqueios\",\"objective\":\"Avançar pela história liberando feitiços, talentos, Floo Flames e atividades essenciais do mundo aberto.\",\"actions\":[\"Progrida pela campanha principal até desbloquear os principais sistemas de Hogwarts e do mapa.\",\"Ative Floo Flames sempre que passar por uma nova região para facilitar o cleanup.\",\"Faça side quests e assignments que liberam feitiços, especialmente os necessários para exploração e combate.\",\"Colete páginas, baús e itens próximos sem transformar a primeira run em checklist exaustivo.\",\"Use Ancient Magic, plantas, poções e diferentes feitiços para adiantar troféus de combate e challenges.\"],\"warning\":\"A platina não é difícil, mas é longa. Se o jogador ignorar colecionáveis e atividades por muitas horas, Collector's Edition vira um cleanup pesado.\",\"result\":\"A campanha avança com boa base de mapa, feitiços, talentos, Floo Flames e atividades abertas.\"}",
+      "step_order": 1
+    },
+    {
+      "content": "{\"title\":\"Side quests, assignments e desafios de Hogwarts\",\"focus\":\"Missões e escola\",\"objective\":\"Completar side quests, assignments, feitiços e desafios ligados à progressão do personagem.\",\"actions\":[\"Finalize assignments de professores para liberar todos os feitiços necessários.\",\"Complete side quests e relationship quests conforme forem aparecendo.\",\"Acompanhe os troféus ligados a Poppy, Natsai e Sebastian sem confundir side quest com conteúdo DLC.\",\"Use a Room of Requirement para poções, plantas, beasts e upgrades quando necessário.\",\"Invista talentos até resolver os troféus ligados a gasto de Talent Points.\"],\"warning\":\"\",\"result\":\"A maior parte da progressão escolar, feitiços, side quests e evolução do personagem fica encaminhada.\"}",
+      "step_order": 2
+    },
+    {
+      "content": "{\"title\":\"Mundo aberto e atividades de mapa\",\"focus\":\"Exploração\",\"objective\":\"Limpar as atividades principais do mapa antes do checklist final de colecionáveis.\",\"actions\":[\"Complete todos os Merlin Trials da lista base para fechar Merlin's Beard!\",\"Resolva Ancient Magic Hotspots, Astronomy Tables, Landing Platforms e Balloon Challenges conforme o checklist do projeto.\",\"Limpe Bandit Camps, Spider Lairs, Troll Lairs, Infamous Foes e demais atividades relevantes.\",\"Abra Collection Chests e colete itens de conjuration, traits e appearances quando surgirem.\",\"Use o mapa por região para evitar deixar atividades espalhadas demais para o final.\"],\"warning\":\"Muitas atividades contam para coleções ou challenges. Não trate como perdíveis, mas mantenha checklist por região para evitar retrabalho.\",\"result\":\"O mundo aberto fica pronto para um cleanup final mais controlado.\"}",
+      "step_order": 3
+    },
+    {
+      "content": "{\"title\":\"Collector's Edition e checklist de colecionáveis\",\"focus\":\"Colecionáveis\",\"objective\":\"Fechar a grande lista de coleções exigida pela platina.\",\"actions\":[\"Revise Collection Chests, Field Guide Pages, Demiguise Statues, conjurations, traits, appearances, wand handles, beasts e demais categorias usadas pelo jogo.\",\"Confira challenges concluídos e recompensas resgatadas, pois algumas coleções dependem de recompensas de desafio.\",\"Complete Merlin Trials e outras atividades que alimentam progresso de collections.\",\"Use a contagem por região do mapa para localizar pendências.\",\"Priorize Collector's Edition como o principal bloco de cleanup da platina.\"],\"warning\":\"Collector's Edition é o maior gargalo da platina. O problema não é dificuldade, mas rastrear muitas categorias e recompensas diferentes.\",\"result\":\"Com as coleções fechadas, o maior checklist da platina fica resolvido.\"}",
+      "step_order": 4
+    },
+    {
+      "content": "{\"title\":\"Quatro casas até a Câmara do Mapa\",\"focus\":\"Runs parciais\",\"objective\":\"Criar personagens das outras casas e chegar à Câmara do Mapa para os troféus específicos.\",\"actions\":[\"Use o personagem principal para a platina completa e deixe as outras casas apenas para a etapa exigida.\",\"Crie personagens nas casas restantes conforme os troféus pendentes.\",\"Avance cada personagem só até alcançar a Câmara do Mapa.\",\"Evite repetir colecionáveis ou side quests desnecessárias nessas runs parciais.\",\"Confirme os quatro troféus de casa antes de encerrar a etapa.\"],\"warning\":\"Os troféus de casa não exigem quatro platinas nem quatro campanhas completas. São apenas runs parciais até a Câmara do Mapa.\",\"result\":\"Os troféus The Toast of the Town, The Auror's Apprentice, The Gryffindor in the Graveyard e The Wise Owl ficam resolvidos.\"}",
+      "step_order": 5
+    },
+    {
+      "content": "{\"title\":\"Cleanup final e conferência da platina\",\"focus\":\"Checklist\",\"objective\":\"Conferir troféus restantes, challenges, colecionáveis e requisitos antes de fechar a lista base.\",\"actions\":[\"Confira se os 46 troféus da lista base foram considerados.\",\"Finalize combate contra inimigos restantes, Ancient Magic em todos os tipos de inimigo e desafios pendentes.\",\"Resolva Demiguise, Merlin Trials, Floo Flames, Landing Platforms, Balloons e coleções restantes.\",\"Garanta que Dark Arts Pack, cosméticos e conteúdos adicionais não foram marcados como requisitos da platina.\",\"Confirme que a rota continua sem online obrigatório, sem coop obrigatório e sem DLC obrigatória.\"],\"warning\":\"\",\"result\":\"A lista base de Hogwarts Legacy fica pronta para a platina.\"}",
+      "step_order": 6
+    }
+  ],
+  "schemaVersion": 1,
+  "seedExtras": {
+    "aliases": [],
+    "attentionPoints": [
+      {
+        "detail": "É o maior gargalo da platina, porque envolve muitas categorias de coleção, challenges, recompensas e atividades espalhadas pelo mapa.",
+        "tags": [
+          "COLETÁVEL",
+          "GRIND",
+          "CLEANUP"
+        ],
+        "title": "Collector's Edition"
+      },
+      {
+        "detail": "Não exige quatro campanhas completas. Crie personagens das outras casas e avance cada um apenas até a Câmara do Mapa.",
+        "tags": [
+          "CASA",
+          "RUN PARCIAL"
+        ],
+        "title": "Quatro casas"
+      },
+      {
+        "detail": "Complete os Merlin Trials necessários com checklist por região, Mallowsweet e feitiços adequados para cada tipo de puzzle.",
+        "tags": [
+          "MERLIN TRIALS",
+          "COLETÁVEL",
+          "EXPLORAÇÃO"
+        ],
+        "title": "Merlin Trials"
+      },
+      {
+        "detail": "As estátuas exigem horário noturno e ficam mais simples com checklist por região antes do cleanup final.",
+        "tags": [
+          "COLETÁVEL",
+          "NOITE"
+        ],
+        "title": "Demiguise Statues"
+      },
+      {
+        "detail": "Ative fast travel cedo e limpe pendências por região para evitar uma busca confusa no pós-game.",
+        "tags": [
+          "EXPLORAÇÃO",
+          "COLETÁVEL",
+          "CLEANUP"
+        ],
+        "title": "Floo Flames e mapa por região"
+      },
+      {
+        "detail": "Use Ancient Magic nos tipos de inimigo exigidos e acompanhe o progresso para não precisar caçar inimigos específicos no fim.",
+        "tags": [
+          "COMBATE",
+          "ATENÇÃO"
+        ],
+        "title": "Finishing Touches"
+      },
+      {
+        "detail": "Poções, plantas, beasts, loom e upgrades entram em vários troféus. Compre receitas, mesas e cuide dos materiais.",
+        "tags": [
+          "ROOM OF REQUIREMENT",
+          "UPGRADES"
+        ],
+        "title": "Room of Requirement"
+      },
+      {
+        "detail": "Dark Arts Pack, cosméticos, montarias extras e bônus de edição não entram nos 46 troféus base.",
+        "tags": [
+          "DLC",
+          "FORA DA PLATINA"
+        ],
+        "title": "DLC fora da platina"
+      },
+      {
+        "detail": "A platina base é single-player, sem online obrigatório e sem coop obrigatório.",
+        "tags": [
+          "OFFLINE",
+          "SEM COOP"
+        ],
+        "title": "Online e coop"
+      }
+    ],
+    "checklist": [
+      "Confirmar 46 troféus da lista base PS4/PS5.",
+      "Confirmar onlineRequired false.",
+      "Confirmar coopRequired false.",
+      "Confirmar dlcRequired false.",
+      "Não contar Dark Arts Pack, cosméticos, montarias extras ou bônus de edição como requisito.",
+      "Completar a campanha principal.",
+      "Completar side quests e relationship quests.",
+      "Aprender todos os feitiços exigidos.",
+      "Gastar Talent Points conforme os troféus.",
+      "Completar Merlin Trials.",
+      "Completar Cairn Dungeons.",
+      "Ativar todas as Floo Flames.",
+      "Coletar Demiguise Statues.",
+      "Fechar Collector's Edition.",
+      "Completar challenges e resgatar recompensas.",
+      "Resolver Room of Requirement, beasts, poções, plantas e loom/upgrades.",
+      "Usar Ancient Magic nos tipos de inimigo exigidos.",
+      "Criar personagens das quatro casas e chegar à Câmara do Mapa.",
+      "Fazer cleanup final por região usando o mapa.",
+      "Conferir que Collector's Edition é checklist/grind, não perdível rígido."
+    ],
+    "faq": [
+      {
+        "answer": "Não. A platina base é single-player e não exige online.",
+        "question": "Hogwarts Legacy exige online para platinar?"
+      },
+      {
+        "answer": "Não. Hogwarts Legacy não tem coop obrigatório para a platina.",
+        "question": "Hogwarts Legacy exige coop para platinar?"
+      },
+      {
+        "answer": "Não. Dark Arts Pack, cosméticos, montarias extras e conteúdos adicionais não devem ser tratados como requisito da platina base.",
+        "question": "Hogwarts Legacy exige DLC para platinar?"
+      },
+      {
+        "answer": "Não há perdíveis rígidos se o jogador usar o free roam e fizer cleanup. O risco real é deixar colecionáveis e challenges acumularem demais, especialmente Collector's Edition.",
+        "question": "Hogwarts Legacy tem troféus perdíveis?"
+      },
+      {
+        "answer": "A platina completa fica no personagem principal, mas é necessário criar personagens das outras casas e avançar cada um até a Câmara do Mapa para os troféus específicos de casa.",
+        "question": "Quantas runs são necessárias?"
+      },
+      {
+        "answer": "Não. Os troféus de casa exigem apenas chegar à Câmara do Mapa com cada casa, não repetir a campanha inteira quatro vezes.",
+        "question": "Preciso completar quatro campanhas?"
+      },
+      {
+        "answer": "Collector's Edition é o maior grind, porque envolve muitas coleções, challenges, recompensas e atividades espalhadas pelo mapa.",
+        "question": "Qual é o maior grind da platina?"
+      },
+      {
+        "answer": "Siga a lista exigida por Collector's Edition e pelos challenges. O guia diferencia coleções necessárias, recompensas de challenge e itens que não contam para a platina.",
+        "question": "Preciso pegar todos os colecionáveis do jogo?"
+      },
+      {
+        "answer": "Sim. O free roam permite voltar para limpar colecionáveis, Merlin Trials, Demiguise Statues, Floo Flames, camps, challenges e atividades restantes.",
+        "question": "Dá para fazer cleanup depois da história?"
+      },
+      {
+        "answer": "Sim, mas apenas parcialmente. Cada casa tem um troféu por chegar à Câmara do Mapa, então o jogador precisa de runs parciais nas quatro casas.",
+        "question": "A escolha da casa muda a platina?"
+      }
+    ],
+    "note": "Campos exportados para auditoria. O SQLite atual nao possui colunas nativas para todos esses extras; a importacao preserva o que o banco suporta.",
+    "quickDecision": {
+      "avoidIf": "Quem não gosta de cleanup extenso, colecionáveis numerosos ou repetir a introdução com outras casas pode achar a platina cansativa.",
+      "bestFor": "Jogadores que gostam de explorar Hogwarts, limpar mapa, completar coleções e acompanhar checklist por região.",
+      "firstStep": "Comece pela campanha, ativando Floo Flames, liberando feitiços/talentos e fazendo side quests sem transformar a primeira run em checklist exaustivo.",
+      "recommendation": "Vale platinar Hogwarts Legacy se você gosta de mundo aberto, exploração, colecionáveis e checklist longo. A platina não exige online, coop nem DLC, mas cobra paciência para Collector's Edition, Merlin Trials, challenges, side quests, atividades por região e quatro runs parciais até a Câmara do Mapa. É uma platina acessível e pouco difícil, porém longa e pouco indicada para quem não gosta de cleanup extenso."
+    },
+    "seo": {
+      "description": "Guia de platina de Hogwarts Legacy com roadmap em português, troféus da lista base, Collector's Edition, Merlin Trials, Demiguise Statues, Floo Flames, quatro casas, side quests, challenges e dicas para conquistar a platina no PS4 e PS5.",
+      "keywords": "Hogwarts Legacy, guia de platina Hogwarts Legacy, troféus Hogwarts Legacy, roadmap Hogwarts Legacy, Collector's Edition, Merlin's Beard, Demiguise Dread, Floo Flames, quatro casas Hogwarts Legacy, Câmara do Mapa",
+      "ogDescription": "Roadmap da platina base PS4/PS5 de Hogwarts Legacy com Collector's Edition, Merlin Trials, Demiguise, Floo Flames, quatro casas, side quests e cleanup.",
+      "ogTitle": "Hogwarts Legacy: guia de platina, troféus e roadmap",
+      "title": "Guia de Platina Hogwarts Legacy - Troféus, Roadmap e Dicas"
+    },
+    "tags": [
+      "mundo aberto",
+      "RPG",
+      "campanha",
+      "colecionáveis",
+      "challenges",
+      "exploração",
+      "cleanup",
+      "grind",
+      "quatro casas",
+      "offline",
+      "sem coop",
+      "sem DLC obrigatória"
+    ]
+  },
+  "slug": "hogwarts-legacy",
+  "trophies": [
+    {
+      "description": "Conquiste todos os outros troféus de Hogwarts Legacy.",
+      "is_missable": 0,
+      "is_spoiler": 0,
+      "name": "Trophy Triumph",
+      "name_pt": "Triunfo dos Troféus",
+      "tip": "Complete os outros 45 troféus da lista base PS4/PS5. Dark Arts Pack e cosméticos ficam fora da platina.",
+      "trophy_code": "hogwarts_trophy_triumph",
+      "type": "Platina"
+    },
+    {
+      "description": "Complete a introdução e finalize a Cerimônia de Seleção.",
+      "is_missable": 0,
+      "is_spoiler": 1,
+      "name": "The Sort Who Makes an Entrance",
+      "name_pt": "O tipo que faz uma entrada",
+      "tip": "Troféu automático de história no início da campanha.",
+      "trophy_code": "hogwarts_the_sort_who_makes_an_entrance",
+      "type": "Bronze"
+    },
+    {
+      "description": "Encontre a Câmara do Mapa como Slytherin.",
+      "is_missable": 0,
+      "is_spoiler": 0,
+      "name": "The Toast of the Town",
+      "name_pt": "O brinde da cidade",
+      "tip": "Crie ou use um personagem Slytherin e avance só até a Câmara do Mapa.",
+      "trophy_code": "hogwarts_the_toast_of_the_town",
+      "type": "Bronze"
+    },
+    {
+      "description": "Encontre a Câmara do Mapa como Hufflepuff.",
+      "is_missable": 0,
+      "is_spoiler": 0,
+      "name": "The Auror's Apprentice",
+      "name_pt": "Aprendiz de Auror",
+      "tip": "Crie ou use um personagem Hufflepuff e avance só até a Câmara do Mapa.",
+      "trophy_code": "hogwarts_the_aurors_apprentice",
+      "type": "Bronze"
+    },
+    {
+      "description": "Encontre a Câmara do Mapa como Gryffindor.",
+      "is_missable": 0,
+      "is_spoiler": 0,
+      "name": "The Gryffindor in the Graveyard",
+      "name_pt": "O Gryffindor no cemitério",
+      "tip": "Crie ou use um personagem Gryffindor e avance só até a Câmara do Mapa.",
+      "trophy_code": "hogwarts_the_gryffindor_in_the_graveyard",
+      "type": "Bronze"
+    },
+    {
+      "description": "Encontre a Câmara do Mapa como Ravenclaw.",
+      "is_missable": 0,
+      "is_spoiler": 0,
+      "name": "The Wise Owl",
+      "name_pt": "A coruja sábia",
+      "tip": "Crie ou use um personagem Ravenclaw e avance só até a Câmara do Mapa.",
+      "trophy_code": "hogwarts_the_wise_owl",
+      "type": "Bronze"
+    },
+    {
+      "description": "Frequente sua primeira aula.",
+      "is_missable": 0,
+      "is_spoiler": 1,
+      "name": "First Class Student",
+      "name_pt": "Aluno da primeira aula",
+      "tip": "Troféu automático de história ao frequentar a primeira aula.",
+      "trophy_code": "hogwarts_first_class_student",
+      "type": "Bronze"
+    },
+    {
+      "description": "Sobreviva ao ataque do troll em Hogsmeade.",
+      "is_missable": 0,
+      "is_spoiler": 1,
+      "name": "Troll with the Punches",
+      "name_pt": "Trollando com os golpes",
+      "tip": "Troféu automático de história em Hogsmeade.",
+      "trophy_code": "hogwarts_troll_with_the_punches",
+      "type": "Bronze"
+    },
+    {
+      "description": "Encontre Charles Rookwood na Câmara do Mapa.",
+      "is_missable": 0,
+      "is_spoiler": 1,
+      "name": "That's a Keeper",
+      "name_pt": "Esse é um Guardião",
+      "tip": "Troféu automático de história ligado à Câmara do Mapa.",
+      "trophy_code": "hogwarts_thats_a_keeper",
+      "type": "Bronze"
+    },
+    {
+      "description": "Resgate a fênix.",
+      "is_missable": 0,
+      "is_spoiler": 1,
+      "name": "Rising From the Ashes",
+      "name_pt": "Ressurgindo das cinzas",
+      "tip": "Complete a linha de quests de Deek ligada à fênix. Pode ficar para o cleanup.",
+      "trophy_code": "hogwarts_rising_from_the_ashes",
+      "type": "Prata"
+    },
+    {
+      "description": "Subjugue o Lord of the Shore.",
+      "is_missable": 0,
+      "is_spoiler": 1,
+      "name": "Grappling with a Graphorn",
+      "name_pt": "Lidando com um Graphorn",
+      "tip": "Troféu de história avançada envolvendo o Graphorn.",
+      "trophy_code": "hogwarts_grappling_with_a_graphorn",
+      "type": "Bronze"
+    },
+    {
+      "description": "Veja todas as memórias da Penseira.",
+      "is_missable": 0,
+      "is_spoiler": 1,
+      "name": "The One Who Mastered Memories",
+      "name_pt": "Quem dominou as memórias",
+      "tip": "Avance a campanha principal para ver todas as memórias da Penseira.",
+      "trophy_code": "hogwarts_the_one_who_mastered_memories",
+      "type": "Bronze"
+    },
+    {
+      "description": "Empunhe uma Relíquia da Morte.",
+      "is_missable": 0,
+      "is_spoiler": 1,
+      "name": "The Hallowed Hero",
+      "name_pt": "O herói das Relíquias",
+      "tip": "Troféu automático de história ligado a uma sequência narrativa importante.",
+      "trophy_code": "hogwarts_the_hallowed_hero",
+      "type": "Bronze"
+    },
+    {
+      "description": "Derrote Ranrok.",
+      "is_missable": 0,
+      "is_spoiler": 1,
+      "name": "The Hero of Hogwarts",
+      "name_pt": "O herói de Hogwarts",
+      "tip": "Complete o confronto final da campanha.",
+      "trophy_code": "hogwarts_the_hero_of_hogwarts",
+      "type": "Prata"
+    },
+    {
+      "description": "Ganhe a House Cup.",
+      "is_missable": 0,
+      "is_spoiler": 1,
+      "name": "The Seeker of Knowledge",
+      "name_pt": "O buscador do conhecimento",
+      "tip": "Depois da história, conclua a quest da House Cup quando atingir o nível exigido.",
+      "trophy_code": "hogwarts_the_seeker_of_knowledge",
+      "type": "Ouro"
+    },
+    {
+      "description": "Complete a linha de relacionamento de Natsai Onai.",
+      "is_missable": 0,
+      "is_spoiler": 1,
+      "name": "The Avenging Gazelle",
+      "name_pt": "A gazela vingadora",
+      "tip": "Complete toda a relationship questline de Natsai Onai/Natty.",
+      "trophy_code": "hogwarts_the_avenging_gazelle",
+      "type": "Bronze"
+    },
+    {
+      "description": "Salve um dragão.",
+      "is_missable": 0,
+      "is_spoiler": 1,
+      "name": "The Defender of Dragons",
+      "name_pt": "O defensor dos dragões",
+      "tip": "Troféu de história ligado a uma missão envolvendo um dragão.",
+      "trophy_code": "hogwarts_the_defender_of_dragons",
+      "type": "Bronze"
+    },
+    {
+      "description": "Complete a linha de relacionamento de Poppy Sweeting.",
+      "is_missable": 0,
+      "is_spoiler": 1,
+      "name": "Beast Friends",
+      "name_pt": "Amigos das feras",
+      "tip": "Complete toda a relationship questline de Poppy Sweeting.",
+      "trophy_code": "hogwarts_beast_friends",
+      "type": "Bronze"
+    },
+    {
+      "description": "Complete a linha de relacionamento de Sebastian Sallow.",
+      "is_missable": 0,
+      "is_spoiler": 1,
+      "name": "A Sallow Grave",
+      "name_pt": "Um túmulo Sallow",
+      "tip": "Complete toda a relationship questline de Sebastian Sallow.",
+      "trophy_code": "hogwarts_a_sallow_grave",
+      "type": "Bronze"
+    },
+    {
+      "description": "Supere o tempo de Imelda em todas as corridas de vassoura.",
+      "is_missable": 0,
+      "is_spoiler": 0,
+      "name": "Flight the Good Flight",
+      "name_pt": "Voe o bom voo",
+      "tip": "Avance as corridas de vassoura de Imelda e vença os tempos exigidos.",
+      "trophy_code": "hogwarts_flight_the_good_flight",
+      "type": "Prata"
+    },
+    {
+      "description": "Complete todas as side quests.",
+      "is_missable": 0,
+      "is_spoiler": 0,
+      "name": "The Good Samaritan",
+      "name_pt": "O bom samaritano",
+      "tip": "Complete todas as side quests disponíveis. Elas podem ser limpas depois da história.",
+      "trophy_code": "hogwarts_the_good_samaritan",
+      "type": "Prata"
+    },
+    {
+      "description": "Complete todos os níveis de um challenge.",
+      "is_missable": 0,
+      "is_spoiler": 0,
+      "name": "Challenge Accepted",
+      "name_pt": "Desafio aceito",
+      "tip": "Complete todos os tiers de qualquer challenge. Isso costuma vir no caminho para 100%.",
+      "trophy_code": "hogwarts_challenge_accepted",
+      "type": "Bronze"
+    },
+    {
+      "description": "Complete todas as coleções.",
+      "is_missable": 0,
+      "is_spoiler": 0,
+      "name": "Collector's Edition",
+      "name_pt": "Edição de colecionador",
+      "tip": "O maior gargalo da platina: exige coleções, conjurations, traits, appearances, recompensas e checklist por região.",
+      "trophy_code": "hogwarts_collectors_edition",
+      "type": "Prata"
+    },
+    {
+      "description": "Use Ancient Magic pela primeira vez.",
+      "is_missable": 0,
+      "is_spoiler": 0,
+      "name": "A Keen Sense of Spell",
+      "name_pt": "Um sentido aguçado de feitiço",
+      "tip": "Use Ancient Magic em combate quando o medidor estiver cheio.",
+      "trophy_code": "hogwarts_a_keen_sense_of_spell",
+      "type": "Bronze"
+    },
+    {
+      "description": "Melhore uma peça de equipamento.",
+      "is_missable": 0,
+      "is_spoiler": 0,
+      "name": "Loom for Improvement",
+      "name_pt": "Tear para melhorar",
+      "tip": "Use o Loom na Room of Requirement para melhorar uma peça de equipamento.",
+      "trophy_code": "hogwarts_loom_for_improvement",
+      "type": "Bronze"
+    },
+    {
+      "description": "Atordoe 10 inimigos diferentes usando uma Mandrake.",
+      "is_missable": 0,
+      "is_spoiler": 0,
+      "name": "The Root of the Problem",
+      "name_pt": "A raiz do problema",
+      "tip": "Cultive ou compre Mandrakes e use-as contra 10 inimigos diferentes.",
+      "trophy_code": "hogwarts_the_root_of_the_problem",
+      "type": "Bronze"
+    },
+    {
+      "description": "Reproduza todos os tipos de fera.",
+      "is_missable": 0,
+      "is_spoiler": 0,
+      "name": "The Nature of the Beast",
+      "name_pt": "A natureza das feras",
+      "tip": "Capture e reproduza todos os tipos de fera necessários nos vivariums.",
+      "trophy_code": "hogwarts_the_nature_of_the_beast",
+      "type": "Prata"
+    },
+    {
+      "description": "Prepare todos os tipos de poção.",
+      "is_missable": 0,
+      "is_spoiler": 0,
+      "name": "Going Through the Potions",
+      "name_pt": "Passando pelas poções",
+      "tip": "Compre receitas, reúna ingredientes e prepare todos os tipos de poção.",
+      "trophy_code": "hogwarts_going_through_the_potions",
+      "type": "Prata"
+    },
+    {
+      "description": "Cultive todos os tipos de planta.",
+      "is_missable": 0,
+      "is_spoiler": 0,
+      "name": "Put Down Roots",
+      "name_pt": "Crie raízes",
+      "tip": "Compre sementes e mesas de cultivo para plantar todos os tipos necessários.",
+      "trophy_code": "hogwarts_put_down_roots",
+      "type": "Prata"
+    },
+    {
+      "description": "Melhore uma peça de equipamento 3 vezes.",
+      "is_missable": 0,
+      "is_spoiler": 0,
+      "name": "Third Time's a Charm",
+      "name_pt": "A terceira é a certa",
+      "tip": "Melhore uma peça três vezes no Loom. Materiais de beasts serão necessários.",
+      "trophy_code": "hogwarts_third_times_a_charm",
+      "type": "Prata"
+    },
+    {
+      "description": "Gaste 5 Talent Points.",
+      "is_missable": 0,
+      "is_spoiler": 0,
+      "name": "A Talent for Spending",
+      "name_pt": "Talento para gastar",
+      "tip": "Gaste 5 Talent Points após desbloquear talentos na campanha.",
+      "trophy_code": "hogwarts_a_talent_for_spending",
+      "type": "Bronze"
+    },
+    {
+      "description": "Gaste todos os Talent Points.",
+      "is_missable": 0,
+      "is_spoiler": 0,
+      "name": "Savvy Spender",
+      "name_pt": "Gastador esperto",
+      "tip": "Alcance o nível 40 e gaste todos os Talent Points disponíveis.",
+      "trophy_code": "hogwarts_savvy_spender",
+      "type": "Prata"
+    },
+    {
+      "description": "Alcance o ponto mais alto do castelo, o escritório superior do diretor.",
+      "is_missable": 0,
+      "is_spoiler": 0,
+      "name": "Room with a View",
+      "name_pt": "Quarto com vista",
+      "tip": "Desbloqueie Alohomora no nível necessário e alcance o upper study do Headmaster.",
+      "trophy_code": "hogwarts_room_with_a_view",
+      "type": "Bronze"
+    },
+    {
+      "description": "Use Flipendo dez vezes para virar uma vaca ou várias.",
+      "is_missable": 0,
+      "is_spoiler": 0,
+      "name": "Spilled Milk",
+      "name_pt": "Leite derramado",
+      "tip": "Após aprender Flipendo, use o feitiço 10 vezes em uma ou mais vacas.",
+      "trophy_code": "hogwarts_spilled_milk",
+      "type": "Bronze"
+    },
+    {
+      "description": "Desbloqueie todas as Floo Flames.",
+      "is_missable": 0,
+      "is_spoiler": 0,
+      "name": "Floo Around the World",
+      "name_pt": "Floo pelo mundo",
+      "tip": "Ative todas as Floo Flames para completar a rede de viagem rápida.",
+      "trophy_code": "hogwarts_floo_around_the_world",
+      "type": "Bronze"
+    },
+    {
+      "description": "Siga borboletas até um tesouro.",
+      "is_missable": 0,
+      "is_spoiler": 0,
+      "name": "Followed the Butterflies",
+      "name_pt": "Seguiu as borboletas",
+      "tip": "Siga um grupo de borboletas até o tesouro e abra o baú de collection.",
+      "trophy_code": "hogwarts_followed_the_butterflies",
+      "type": "Bronze"
+    },
+    {
+      "description": "Derrote inimigos em todas as battle arenas.",
+      "is_missable": 0,
+      "is_spoiler": 0,
+      "name": "Rise to the Challenges",
+      "name_pt": "À altura dos desafios",
+      "tip": "Conclua todas as battle arenas exigidas pela lista base.",
+      "trophy_code": "hogwarts_rise_to_the_challenges",
+      "type": "Prata"
+    },
+    {
+      "description": "Complete todos os Merlin Trials.",
+      "is_missable": 0,
+      "is_spoiler": 0,
+      "name": "Merlin's Beard!",
+      "name_pt": "Pelas barbas de Merlin!",
+      "tip": "Complete todos os Merlin Trials do mapa. Tenha Mallowsweet para iniciar os trials.",
+      "trophy_code": "hogwarts_merlins_beard",
+      "type": "Prata"
+    },
+    {
+      "description": "Descubra todos os Cairn Dungeons.",
+      "is_missable": 0,
+      "is_spoiler": 0,
+      "name": "The Intrepid Explorer",
+      "name_pt": "O explorador intrépido",
+      "tip": "Descubra todos os Cairn Dungeons e use o mapa para conferir regiões pendentes.",
+      "trophy_code": "hogwarts_the_intrepid_explorer",
+      "type": "Bronze"
+    },
+    {
+      "description": "Visite Poidsear Coast.",
+      "is_missable": 0,
+      "is_spoiler": 0,
+      "name": "Coasting Along",
+      "name_pt": "Seguindo pela costa",
+      "tip": "Avance a história ou explore o caminho sul até chegar a Poidsear Coast.",
+      "trophy_code": "hogwarts_coasting_along",
+      "type": "Bronze"
+    },
+    {
+      "description": "Encontre todas as Demiguise Statues.",
+      "is_missable": 0,
+      "is_spoiler": 0,
+      "name": "Demiguise Dread",
+      "name_pt": "Pavor de Demiguise",
+      "tip": "Colete todas as Demiguise Statues à noite e avance Alohomora com a quest correspondente.",
+      "trophy_code": "hogwarts_demiguise_dread",
+      "type": "Bronze"
+    },
+    {
+      "description": "Derrote 50 inimigos usando Petrificus Totalus.",
+      "is_missable": 0,
+      "is_spoiler": 0,
+      "name": "The Ends Petrify the Means",
+      "name_pt": "Os fins petrificam os meios",
+      "tip": "Use Disillusionment e finalize 50 inimigos com Petrificus Totalus.",
+      "trophy_code": "hogwarts_the_ends_petrify_the_means",
+      "type": "Prata"
+    },
+    {
+      "description": "Alcance um combo de 100.",
+      "is_missable": 0,
+      "is_spoiler": 0,
+      "name": "Raising Expectations",
+      "name_pt": "Elevando expectativas",
+      "tip": "Use uma battle arena ou inimigos resistentes para manter um combo de 100 sem ser atingido.",
+      "trophy_code": "hogwarts_raising_expectations",
+      "type": "Bronze"
+    },
+    {
+      "description": "Use Ancient Magic em todos os tipos de inimigo exigidos.",
+      "is_missable": 0,
+      "is_spoiler": 0,
+      "name": "Finishing Touches",
+      "name_pt": "Toques finais",
+      "tip": "Use Ancient Magic nos tipos de inimigo exigidos e acompanhe o progresso para evitar caça específica no final.",
+      "trophy_code": "hogwarts_finishing_touches",
+      "type": "Prata"
+    },
+    {
+      "description": "Aprenda todos os feitiços aplicáveis ao troféu.",
+      "is_missable": 0,
+      "is_spoiler": 0,
+      "name": "The Spell Master",
+      "name_pt": "Mestre dos feitiços",
+      "tip": "Complete assignments e quests necessários para aprender todos os feitiços exigidos.",
+      "trophy_code": "hogwarts_the_spell_master",
+      "type": "Prata"
+    },
+    {
+      "description": "Alcance o nível 40.",
+      "is_missable": 0,
+      "is_spoiler": 0,
+      "name": "A Forte for Achievement",
+      "name_pt": "Um forte para conquistas",
+      "tip": "Chegue ao nível 40 completando challenges, side quests e conteúdo de mundo aberto.",
+      "trophy_code": "hogwarts_a_forte_for_achievement",
+      "type": "Ouro"
+    }
+  ]
+}

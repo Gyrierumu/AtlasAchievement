@@ -1,0 +1,286 @@
+{
+  "game": {
+    "avoid_if": "Evite apenas se você não gosta de eventos procedurais, repetição leve ou buscar coletáveis simples.",
+    "before_you_start": "Road 96 é curto, mas procedural; não conte com os mesmos eventos na mesma ordem em todas as runs e use New Game+ se faltarem oportunidades. Road 96: Mile 0 fica fora do escopo deste guia.",
+    "best_for": "Ideal para quem quer uma platina narrativa curta, fácil e diferente, com escolhas, estrada e clima de viagem.",
+    "cleanup_advice": "Não há seleção de capítulos tradicional. Se faltar fita ou evento específico, use New Game+/nova campanha para repetir oportunidades; as fitas podem continuar no New Game+ segundo guias.",
+    "cover_image": "https://cdn.cloudflare.steamstatic.com/steam/apps/1466640/library_600x900.jpg",
+    "coverage_level": "strong",
+    "created_at": "2026-05-09 19:53:51",
+    "difficulty": 1,
+    "difficulty_reason": "A platina é muito fácil mecanicamente; o cuidado está em não perder oportunidades específicas durante a viagem. Não há troféus de dificuldade.",
+    "dlc_scope": "Guia focado em Road 96. Road 96: Mile 0 fica fora do escopo e deve ser uma entrada separada, não DLC desta platina.",
+    "editorial_notes": "",
+    "editorial_review_status": null,
+    "editorial_status": "published",
+    "first_run_advice": "Explore bem cada cena, procure fitas em carros e lojas, use telefones públicos e preste atenção aos eventos com Zoe.",
+    "grind_summary": "O peso está em 18 fitas, eventos específicos com Zoe, telefone público, gato, fogueira e pedras no cairn de Road 96.",
+    "guide_avoid": null,
+    "guide_best_moment": null,
+    "guide_dlc": null,
+    "guide_grind": null,
+    "guide_ideal": null,
+    "guide_online": null,
+    "guide_runs": null,
+    "image": "https://cdn.cloudflare.steamstatic.com/steam/apps/1466640/header.jpg",
+    "is_verified": 0,
+    "last_reviewed_at": "",
+    "missable": "Sim/atenção: a lista é curta, mas vários troféus dependem de oportunidades específicas em eventos procedurais, telefone público, Zoe, gato, fogueira, fitas e pedras no cairn de Road 96. Não trate como checklist linear tradicional.",
+    "missable_summary": "Troféus como Cat Person, A Light in the Darkness, Collect ’em All, Campaign Funder, Homesick, Stone After Stone e Help a Friend exigem atenção a oportunidades específicas durante viagens procedurais.",
+    "name": "Road 96",
+    "online_summary": "Não há exigência online, troféus online, multiplayer obrigatório ou PS+ para a platina.",
+    "quality_warnings": "[]",
+    "reviewed_by": "",
+    "runs_summary": "Uma campanha com 6 adolescentes costuma cobrir quase tudo, mas New Game+ pode ajudar se faltarem fitas ou eventos específicos.",
+    "slug": "road-96",
+    "time": "6-8h",
+    "time_bucket": "short",
+    "time_max_hours": 8,
+    "time_min_hours": 6,
+    "time_reason": "A faixa de 6-8 horas considera a campanha completa, 6 chegadas à Road 96, 18 fitas e cleanup leve por New Game+/nova campanha se faltar algo.",
+    "time_sort_hours": 6,
+    "updated_at": "2026-06-27 02:36:58",
+    "verification_note": "Precisa revisão editorial final: validar oportunidades procedurais, New Game+, fitas e eventos de Zoe antes de selo verificado.",
+    "verification_status": "review",
+    "walkthrough": null
+  },
+  "redirects": [],
+  "roadmaps": [
+    {
+      "content": "{\"title\":\"Avance pela campanha\",\"focus\":\"\",\"objective\":\"Inicie a campanha e jogue naturalmente com os 6 adolescentes/runaways, mantendo saúde e dinheiro suficientes para sobreviver às viagens até Road 96.\",\"actions\":[],\"warning\":\"\",\"result\":\"\"}",
+      "step_order": 1
+    },
+    {
+      "content": "{\"title\":\"Sempre verifique veículos, lojas, personagens e áreas por fit...\",\"focus\":\"\",\"objective\":\"Sempre verifique veículos, lojas, personagens e áreas por fitas/cassetes; Collect ’em All exige 18 fitas e o jogo é procedural.\",\"actions\":[],\"warning\":\"\",\"result\":\"\"}",
+      "step_order": 2
+    },
+    {
+      "content": "{\"title\":\"Quando encontrar telefone público, faça Homesick ligando para...\",\"focus\":\"\",\"objective\":\"Quando encontrar telefone público, faça Homesick ligando para casa e Campaign Funder ligando/doando para Florres ou Tyrak, mantendo pelo menos $11 para a doação.\",\"actions\":[],\"warning\":\"\",\"result\":\"\"}",
+      "step_order": 3
+    },
+    {
+      "content": "{\"title\":\"Nos eventos com Zoe e no trailer park, garanta Road Pals, Cat...\",\"focus\":\"\",\"objective\":\"Nos eventos com Zoe e no trailer park, garanta Road Pals, Cat Person, A Light in the Darkness e Help a Friend quando as oportunidades aparecerem.\",\"actions\":[],\"warning\":\"\",\"result\":\"\"}",
+      "step_order": 4
+    },
+    {
+      "content": "{\"title\":\"Prossiga pela rota planejada\",\"focus\":\"\",\"objective\":\"Em cada chegada à Road 96, procure a caverna atrás da cachoeira/cairn e adicione pedras em pelo menos 3 runaways para Stone After Stone.\",\"actions\":[],\"warning\":\"\",\"result\":\"\"}",
+      "step_order": 5
+    },
+    {
+      "content": "{\"title\":\"Avance até a sexta chegada à Road 96 para Old Pro e resolva a...\",\"focus\":\"\",\"objective\":\"Avance até a sexta chegada à Road 96 para Old Pro e resolva a escolha de fronteira com Zoe para Hard Choice, mantendo atenção aos spoilers de finais e destino de Petria.\",\"actions\":[],\"warning\":\"\",\"result\":\"\"}",
+      "step_order": 6
+    },
+    {
+      "content": "{\"title\":\"Limpe pendências antes do NG+\",\"focus\":\"\",\"objective\":\"Se faltar Collect ’em All ou algum evento específico, use New Game+/nova campanha para cleanup de fitas e oportunidades; não misture Road 96: Mile 0 com esta platina.\",\"actions\":[],\"warning\":\"\",\"result\":\"\"}",
+      "step_order": 7
+    }
+  ],
+  "schemaVersion": 1,
+  "seedExtras": {
+    "aliases": [],
+    "attentionPoints": [
+      {
+        "tip": "Coloque 3 pedras no cairn em 3 chegadas diferentes à Road 96 antes da 6ª chegada, pois o cairn é destruído na reta final.",
+        "title": "Stone After Stone",
+        "type": "Cairn"
+      },
+      {
+        "tip": "Cat Person e A Light in the Darkness dependem de ações específicas no primeiro encontro com Zoe.",
+        "title": "Smells Like Teen Spirit",
+        "type": "Zoe"
+      },
+      {
+        "tip": "Homesick e Campaign Funder exigem cabines telefônicas; tenha dinheiro para ligar e doar.",
+        "title": "Cabines telefônicas",
+        "type": "Telefone"
+      },
+      {
+        "tip": "Collect ’em All exige 18 fitas/cassetes. Pegue ou compre sempre que aparecerem; o progresso pode carregar para New Game+.",
+        "title": "Fitas/cassetes",
+        "type": "Coletáveis"
+      },
+      {
+        "tip": "Road 96: Mile 0 é jogo separado/prequel e não entra na platina base.",
+        "title": "Mile 0 separado",
+        "type": "Escopo"
+      },
+      {
+        "tip": "Os capítulos/encontros podem aparecer em ordem diferente, então aproveite cada oportunidade quando ela surgir.",
+        "title": "Ordem semi-randômica",
+        "type": "Estrutura"
+      }
+    ],
+    "checklist": [],
+    "faq": [
+      {
+        "answer": "Não. A lista é totalmente offline.",
+        "question": "Road 96 tem troféus online?"
+      },
+      {
+        "answer": "Não.",
+        "question": "Road 96 tem coop?"
+      },
+      {
+        "answer": "Não. Road 96 não tem troféus ligados a dificuldade.",
+        "question": "A dificuldade afeta troféus?"
+      },
+      {
+        "answer": "Uma campanha completa pode ser suficiente, mas New Game+ pode ajudar se faltar fita/cassete ou alguma ação específica.",
+        "question": "Quantas jogadas são necessárias?"
+      },
+      {
+        "answer": "Sim. Há troféus de ações específicas e oportunidades de capítulo, como Stone After Stone, Cat Person, A Light in the Darkness, Homesick, Campaign Funder e Help a Friend. Collect ’em All foi tratado como coletável com risco de run/New Game+ opcional.",
+        "question": "Road 96 tem troféus perdíveis?"
+      },
+      {
+        "answer": "Stone After Stone, porque exige colocar pedras no cairn em 3 chegadas diferentes à Road 96 antes da reta final.",
+        "question": "Qual é o maior risco da platina?"
+      },
+      {
+        "answer": "Ele exige 18 fitas/cassetes. Como as fitas carregam para New Game+, é melhor tratá-lo como coletável com risco de run/NG+ opcional, não como perda definitiva.",
+        "question": "Collect ’em All é perdível?"
+      },
+      {
+        "answer": "Não. Mile 0 é jogo separado/prequel e não entra na platina de Road 96.",
+        "question": "Road 96: Mile 0 é necessário?"
+      },
+      {
+        "answer": "Não necessariamente. A platina exige concluir a campanha e descobrir o destino de Petria, mas não exige todos os finais possíveis.",
+        "question": "Preciso de todos os finais?"
+      },
+      {
+        "answer": "Não trate como seleção livre tradicional. Os encontros são semi-randômicos; por isso o guia orienta ações por oportunidade.",
+        "question": "O jogo tem chapter select?"
+      }
+    ],
+    "note": "Campos exportados para auditoria. O SQLite atual nao possui colunas nativas para todos esses extras; a importacao preserva o que o banco suporta.",
+    "quickDecision": {
+      "summary": "Platina curta de 6-8h e 1/10, offline e sem coop, mas com perdíveis de oportunidade. Priorize Stone After Stone, Smells Like Teen Spirit, cabines telefônicas e fitas/cassetes."
+    },
+    "seo": {},
+    "tags": []
+  },
+  "slug": "road-96",
+  "trophies": [
+    {
+      "description": "Discover Petria’s fate",
+      "is_missable": 0,
+      "is_spoiler": 1,
+      "name": "Border Master",
+      "name_pt": "Mestre da Fronteira",
+      "tip": "Conquiste os outros 11 troféus e finalize a campanha para descobrir o destino de Petria. Não exige online nem multiplayer.",
+      "trophy_code": "road96_border_master",
+      "type": "Platina"
+    },
+    {
+      "description": "Pet the cat in the trailer park",
+      "is_missable": 1,
+      "is_spoiler": 0,
+      "name": "Cat Person",
+      "name_pt": "Pessoa de Gatos",
+      "tip": "No evento Smells Like Teen Spirit/trailer park, converse com a mulher na cadeira de balanço e escolha acariciar o gato antes de avançar.",
+      "trophy_code": "road96_cat_person",
+      "type": "Ouro"
+    },
+    {
+      "description": "Blow the fire",
+      "is_missable": 1,
+      "is_spoiler": 0,
+      "name": "A Light in the Darkness",
+      "name_pt": "Uma Luz na Escuridão",
+      "tip": "No evento com Zoe à noite em Smells Like Teen Spirit, olhe para a fogueira e use a interação de soprar o fogo quando aparecer.",
+      "trophy_code": "road96_a_light_in_the_darkness",
+      "type": "Ouro"
+    },
+    {
+      "description": "Collect all tapes",
+      "is_missable": 1,
+      "is_spoiler": 0,
+      "name": "Collect ’em All",
+      "name_pt": "Colecione Todas",
+      "tip": "Colete 18 fitas/cassetes. Elas aparecem em veículos, lojas, eventos ou como recompensa de personagens; se faltar alguma, guias indicam que fitas podem carregar para New Game+.",
+      "trophy_code": "road96_collect_em_all",
+      "type": "Ouro"
+    },
+    {
+      "description": "Call & Donate to the Florres or Tyrak Campaign Funding",
+      "is_missable": 1,
+      "is_spoiler": 0,
+      "name": "Campaign Funder",
+      "name_pt": "Financiador de Campanha",
+      "tip": "Em um telefone público, tenha $11, ligue para 96777/Florres ou 96555/Tyrak e faça a doação de campanha.",
+      "trophy_code": "road96_campaign_funder",
+      "type": "Ouro"
+    },
+    {
+      "description": "Call Home",
+      "is_missable": 1,
+      "is_spoiler": 0,
+      "name": "Homesick",
+      "name_pt": "Saudade de Casa",
+      "tip": "Use qualquer telefone público e escolha ligar para casa. A ligação custa $1, então mantenha dinheiro disponível.",
+      "trophy_code": "road96_homesick",
+      "type": "Ouro"
+    },
+    {
+      "description": "Reach Road 96 for the first time",
+      "is_missable": 0,
+      "is_spoiler": 1,
+      "name": "Almost There?",
+      "name_pt": "Quase Lá?",
+      "tip": "Chegue à Road 96 pela primeira vez com qualquer adolescente/runaway. Priorize saúde e dinheiro para não morrer ou ser pego antes da fronteira.",
+      "trophy_code": "road96_almost_there",
+      "type": "Ouro"
+    },
+    {
+      "description": "Add at least 3 rocks on Road 96’s cairn",
+      "is_missable": 1,
+      "is_spoiler": 1,
+      "name": "Stone After Stone",
+      "name_pt": "Pedra Após Pedra",
+      "tip": "Em Road 96, entre na caverna atrás da cachoeira e adicione uma pedra ao cairn com pelo menos 3 runaways diferentes. Há poucas oportunidades antes da reta final.",
+      "trophy_code": "road96_stone_after_stone",
+      "type": "Ouro"
+    },
+    {
+      "description": "Meet Zoe for the first time",
+      "is_missable": 0,
+      "is_spoiler": 1,
+      "name": "Road Pals",
+      "name_pt": "Amigos de Estrada",
+      "tip": "Troféu ligado ao primeiro encontro com Zoe no trailer park/Smells Like Teen Spirit. Aproveite a mesma sequência para Cat Person e A Light in the Darkness.",
+      "trophy_code": "road96_road_pals",
+      "type": "Ouro"
+    },
+    {
+      "description": "Help Zoe to escape from the cops",
+      "is_missable": 1,
+      "is_spoiler": 1,
+      "name": "Help a Friend",
+      "name_pt": "Ajude uma Amiga",
+      "tip": "Quando Zoe estiver presa pela polícia, cause a distração necessária, pegue as chaves e ajude-a a escapar antes de seguir viagem.",
+      "trophy_code": "road96_help_a_friend",
+      "type": "Ouro"
+    },
+    {
+      "description": "Reach Road 96 for the sixth time",
+      "is_missable": 0,
+      "is_spoiler": 1,
+      "name": "Old Pro",
+      "name_pt": "Veterano",
+      "tip": "Chegue à Road 96 com o sexto adolescente/runaway. Sobreviver às viagens e evitar ser pego é o foco principal até a reta final.",
+      "trophy_code": "road96_old_pro",
+      "type": "Ouro"
+    },
+    {
+      "description": "Make a hard choice in crossing the border",
+      "is_missable": 0,
+      "is_spoiler": 1,
+      "name": "Hard Choice",
+      "name_pt": "Escolha Difícil",
+      "tip": "Na sequência de fronteira com Zoe, tome a decisão final. Qualquer uma das opções indicadas pelos guias desbloqueia o troféu, mas envolve spoiler narrativo.",
+      "trophy_code": "road96_hard_choice",
+      "type": "Ouro"
+    }
+  ]
+}

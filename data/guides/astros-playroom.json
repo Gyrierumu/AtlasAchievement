@@ -1,0 +1,582 @@
+{
+  "game": {
+    "avoid_if": "Evite apenas se você não gosta de collectathon curto ou desafios simples de plataforma.",
+    "before_you_start": "A platina é focada em exploração, coletáveis, desafios curtos e limpeza por fase; não misture troféus extras com a lista base.",
+    "best_for": "Ideal como primeira platina de PS5 ou platina curta, leve e sem risco de retrabalho.",
+    "cleanup_advice": "Use a seleção de fases para buscar puzzle pieces, artefatos e interações restantes, depois finalize o PlayStation Labo e desafios de tempo.",
+    "cover_image": "https://images.launchbox-app.com/63073a9e-497e-4069-b47a-e24577a6c407.jpg",
+    "coverage_level": "strong",
+    "created_at": "2026-05-09 19:53:24",
+    "difficulty": 2,
+    "difficulty_reason": "A platina é baixa dificuldade: exploração leve, coletáveis bem distribuídos, desafios curtos e cleanup por fase.",
+    "dlc_scope": "Guia focado na lista base da platina, com 43 troféus. Troféus extras/adicionais, incluindo Special Bots ligados a Astro Bot, ficam fora da checklist da platina base.",
+    "editorial_notes": "Escopo da platina base: 43 troféus (1 Platina, 3 Ouro, 13 Prata, 26 Bronze). Troféus adicionais de add-on/Speed Run e Special Bots ligados a Astro Bot existem em listas públicas, mas não entram na checklist da platina base deste guia.",
+    "editorial_review_status": "in_review",
+    "editorial_status": "published",
+    "first_run_advice": "Jogue as fases principais explorando com calma, resgatando bots, pegando puzzle pieces e marcando pendências no checklist.",
+    "grind_summary": "O peso está em coletáveis, moedas para Gatcha, interações específicas e desafios curtos, não em grind pesado.",
+    "guide_avoid": null,
+    "guide_best_moment": null,
+    "guide_dlc": null,
+    "guide_grind": null,
+    "guide_ideal": null,
+    "guide_online": null,
+    "guide_runs": null,
+    "image": "https://image.api.playstation.com/vulcan/ap/rnd/202008/1220/M6bheZDaxpbtj8FiDW0UEQx7.jpg",
+    "is_verified": 0,
+    "last_reviewed_at": "",
+    "missable": "Não há troféus perdíveis na lista base da platina. A campanha curta e a seleção de fases permitem voltar aos mundos, ao CPU Plaza e ao PlayStation Labo para limpar artefatos, puzzle pieces, moedas e interações.",
+    "missable_summary": "Não há perdíveis reais na lista base da platina; todo cleanup pode ser feito pela seleção de fases, CPU Plaza e PlayStation Labo.",
+    "name": "Astro’s Playroom",
+    "online_summary": "Sem online obrigatório: a platina base é single-player/offline e não exige servidores, PS+ ou multiplayer.",
+    "quality_warnings": "[\"needs_pt_br_trophy_name_source_check\",\"needs_extra_trophies_scope_check\"]",
+    "reviewed_by": "",
+    "runs_summary": "Campanha curta pelos quatro mundos principais, seguida de cleanup livre por seleção de fases, CPU Plaza e PlayStation Labo.",
+    "slug": "astros-playroom",
+    "time": "3-5 horas",
+    "time_bucket": "short",
+    "time_max_hours": 5,
+    "time_min_hours": 3,
+    "time_reason": "A faixa conservadora de 3-5 horas considera campanha, puzzle pieces, artefatos, Gatcha e troféus situacionais da lista base.",
+    "time_sort_hours": 5,
+    "updated_at": "2026-06-27 02:37:06",
+    "verification_note": "Guia revisado para a lista base de 43 troféus da platina, separado dos troféus adicionais/Special Bots; manter sem verified até revisão manual final de localização PT-BR oficial.",
+    "verification_status": "review",
+    "walkthrough": ""
+  },
+  "redirects": [
+    "astro-playroom",
+    "astro-s-playroom",
+    "astro-s-playrrom",
+    "astros-playrrom"
+  ],
+  "roadmaps": [
+    {
+      "content": "{\"title\":\"Explore os mundos principais\",\"focus\":\"Campanha\",\"objective\":\"Completar as áreas principais enquanto aprende as mecânicas de cada mundo e coleta o que encontrar naturalmente.\",\"actions\":[\"Avance por Cooling Springs, GPU Jungle, SSD Speedway e Memory Meadow.\",\"Explore rotas alternativas, objetos interativos e cantos das fases.\",\"Colete artefatos e puzzle pieces sempre que estiverem no caminho.\",\"Marque no checklist fases com itens pendentes.\"],\"warning\":\"\",\"result\":\"Todos os mundos principais abertos e boa parte dos coletáveis adiantada.\"}",
+      "step_order": 1
+    },
+    {
+      "content": "{\"title\":\"Limpe puzzle pieces e artefatos por fase\",\"focus\":\"Coletáveis\",\"objective\":\"Revisitar fases com pendências e fechar os principais coletáveis da lista base.\",\"actions\":[\"Use a seleção de fases para voltar aos níveis incompletos.\",\"Procure puzzle pieces em rotas secundárias e interações escondidas.\",\"Revise artefatos faltantes em cada mundo.\",\"Priorize uma área por vez para evitar confusão no cleanup.\"],\"warning\":\"\",\"result\":\"Coletáveis principais quase completos e progresso do checklist mais organizado.\"}",
+      "step_order": 2
+    },
+    {
+      "content": "{\"title\":\"Complete desafios e troféus situacionais\",\"focus\":\"Desafios\",\"objective\":\"Resolver troféus de ações específicas, interações e pequenos desafios que não vieram naturalmente.\",\"actions\":[\"Revise troféus ligados a ações específicas dentro das fases.\",\"Faça interações especiais com objetos, controles, inimigos ou cenários quando necessário.\",\"Use checkpoints das fases para repetir trechos curtos.\",\"Separe troféus situacionais dos coletáveis para não repetir fases sem foco.\"],\"warning\":\"\",\"result\":\"Troféus de ações específicas concluídos ou reduzidos ao mínimo.\"}",
+      "step_order": 3
+    },
+    {
+      "content": "{\"title\":\"Organize o PlayStation Labo\",\"focus\":\"Hub\",\"objective\":\"Conferir desbloqueios, artefatos, puzzle pieces e interações do hub.\",\"actions\":[\"Volte ao PlayStation Labo para revisar itens desbloqueados.\",\"Confira se os artefatos e puzzle pieces foram registrados corretamente.\",\"Complete interações do hub ligadas a troféus.\",\"Use o checklist para confirmar o que ainda falta.\"],\"warning\":\"\",\"result\":\"Hub organizado e coleções principais encaminhadas para a platina.\"}",
+      "step_order": 4
+    },
+    {
+      "content": "{\"title\":\"Speedruns e Network Speed Run, se aplicável\",\"focus\":\"Desafios\",\"objective\":\"Evitar que add-ons, speedruns extras ou Special Bots sejam tratados como requisito da platina base.\",\"actions\":[\"Confira se Run Astro Run!, Play Has No Limits! e Gravity Daze! não entraram na checklist da platina base.\",\"Trate Network Speed Run como conteúdo adicional quando o objetivo for apenas a platina.\",\"Mantenha Special Bots ligados a Astro Bot fora da contagem de 43 troféus base.\",\"Use essa etapa apenas como conferência editorial antes do cleanup final.\"],\"warning\":\"Network Speed Run tem estrutura online/ranking, mas seus troféus adicionais não são obrigatórios para a platina base.\",\"result\":\"Escopo da platina base preservado sem misturar troféus adicionais.\"}",
+      "step_order": 5
+    },
+    {
+      "content": "{\"title\":\"Cleanup final da platina base\",\"focus\":\"Checklist final\",\"objective\":\"Conferir todos os troféus da lista base antes de encerrar a platina.\",\"actions\":[\"Revise mundos, fases, puzzle pieces, artefatos e troféus situacionais.\",\"Confirme que nenhum troféu extra/adicional foi misturado à platina base.\",\"Verifique se online, coop e DLC não estão marcados como obrigatórios.\",\"Finalize qualquer pendência curta usando seleção de fases.\"],\"warning\":\"Special Bots e troféus adicionais ligados a Astro Bot não fazem parte da platina base deste guia.\",\"result\":\"Lista base concluída e platina pronta.\"}",
+      "step_order": 6
+    }
+  ],
+  "schemaVersion": 1,
+  "seedExtras": {
+    "aliases": [],
+    "attentionPoints": [],
+    "checklist": [
+      "Concluir Cooling Springs, GPU Jungle, SSD Speedway e Memory Meadow.",
+      "Coletar todos os artefatos dos quatro mundos e do PlayStation Labo.",
+      "Coletar todas as puzzle pieces dos mundos, CPU Plaza e Gatcha.",
+      "Gastar moedas no Gatcha até liberar todos os prêmios necessários.",
+      "Resolver interações do CPU Plaza e PlayStation Labo.",
+      "Fazer troféus situacionais de Cooling Springs, GPU Jungle, SSD Speedway e Memory Meadow.",
+      "Separar Network Speed Run, add-ons e Special Bots da checklist da platina base.",
+      "Confirmar que troféus extras/adicionais e Special Bots não foram misturados à platina base."
+    ],
+    "faq": [
+      {
+        "answer": "Não. A lista base da platina não tem perdíveis reais; a seleção de fases permite voltar para coletáveis, interações e desafios curtos.",
+        "question": "Astro’s Playroom tem troféus perdíveis?"
+      },
+      {
+        "answer": "Não. A platina base é single-player/offline e não exige servidores, PS+ ou multiplayer.",
+        "question": "Astro’s Playroom precisa de online para platinar?"
+      },
+      {
+        "answer": "Não. A platina base é solo e não exige coop.",
+        "question": "Astro’s Playroom tem coop obrigatório?"
+      },
+      {
+        "answer": "Use uma faixa conservadora de 3-5 horas para campanha, coletáveis, Gatcha e cleanup da lista base.",
+        "question": "Quanto tempo leva para platinar Astro’s Playroom?"
+      },
+      {
+        "answer": "Baixa. O guia usa 2/10 porque os desafios são curtos e a maior parte da lista é exploração e coleta.",
+        "question": "Qual a dificuldade da platina?"
+      },
+      {
+        "answer": "Sim. Você pode voltar às fases, ao CPU Plaza e ao PlayStation Labo para buscar puzzle pieces, artefatos e interações restantes.",
+        "question": "Dá para limpar coletáveis depois?"
+      },
+      {
+        "answer": "Não. Este guia cobre a lista base de 43 troféus; extras, add-ons e Special Bots ligados a Astro Bot ficam fora da checklist da platina base.",
+        "question": "Os troféus extras/Special Bots contam para a platina base?"
+      },
+      {
+        "answer": "Não. Astro’s Playroom é o jogo de PS5 de 2020 incluso no console; Astro Bot é outro jogo, lançado depois, com lista própria.",
+        "question": "Astro’s Playroom é o mesmo jogo que Astro Bot?"
+      },
+      {
+        "answer": "Não. A platina base não exige DLC nem troféus adicionais.",
+        "question": "O jogo exige DLC para platina?"
+      },
+      {
+        "answer": "Ainda não. A lista base e o escopo foram revisados, mas o guia permanece em revisão até validação manual final de localização PT-BR e extras.",
+        "question": "O guia está verificado?"
+      }
+    ],
+    "note": "Campos exportados para auditoria. O SQLite atual nao possui colunas nativas para todos esses extras; a importacao preserva o que o banco suporta.",
+    "quickDecision": {
+      "firstAction": "Jogue as fases principais explorando com calma, resgatando bots, pegando puzzle pieces e marcando pendências no checklist.",
+      "recommendation": "Avance pelos quatro mundos principais, colete puzzle pieces e artefatos no caminho, depois use seleção de fases e PlayStation Labo para fechar a limpeza.",
+      "summary": "Platina curta e acessível: 43 troféus base, cerca de 3-5h, dificuldade 2/10, sem perdíveis reais, sem online, sem coop e sem DLC obrigatória."
+    },
+    "seo": {
+      "description": "Guia de platina de Astro’s Playroom em português, com tempo estimado, dificuldade, coletáveis, puzzle pieces, artefatos, roadmap e checklist de troféus.",
+      "ogDescription": "Roadmap de Astro’s Playroom para PS5 com lista base de 43 troféus, sem perdíveis, sem online obrigatório, sem coop e sem DLC obrigatória.",
+      "ogTitle": "Astro’s Playroom: guia de platina, troféus e roadmap | AtlasAchievement",
+      "title": "Astro’s Playroom: guia de platina, troféus e roadmap | AtlasAchievement"
+    },
+    "tags": []
+  },
+  "slug": "astros-playroom",
+  "trophies": [
+    {
+      "description": "Encontre todos os troféus de ASTRO's PLAYROOM. Até a próxima aventura!",
+      "is_missable": 0,
+      "is_spoiler": 0,
+      "name": "You've Only Done Everything",
+      "name_pt": "Você Fez Tudo",
+      "tip": "Complete todos os outros 42 troféus da lista base para liberar a platina.",
+      "trophy_code": "astros_playroom_youve_only_done_everything",
+      "type": "Platina"
+    },
+    {
+      "description": "Conclua Memory Meadow.",
+      "is_missable": 0,
+      "is_spoiler": 0,
+      "name": "Do it!",
+      "name_pt": "Manda Ver!",
+      "tip": "Conclua os quatro níveis de Memory Meadow; sai naturalmente na campanha.",
+      "trophy_code": "astros_playroom_do_it",
+      "type": "Prata"
+    },
+    {
+      "description": "Conclua SSD Speedway.",
+      "is_missable": 0,
+      "is_spoiler": 0,
+      "name": "Emotion Engine!",
+      "name_pt": "Motor de Emoção!",
+      "tip": "Complete SSD Speedway durante a progressão principal.",
+      "trophy_code": "astros_playroom_emotion_engine",
+      "type": "Prata"
+    },
+    {
+      "description": "Conclua Cooling Springs.",
+      "is_missable": 0,
+      "is_spoiler": 0,
+      "name": "HD graphics!",
+      "name_pt": "Gráficos em HD!",
+      "tip": "Finalize Cooling Springs; depois use a seleção de fases para qualquer coletável restante.",
+      "trophy_code": "astros_playroom_hd_graphics",
+      "type": "Prata"
+    },
+    {
+      "description": "Conclua GPU Jungle.",
+      "is_missable": 0,
+      "is_spoiler": 0,
+      "name": "Greatness Awaits!",
+      "name_pt": "A Grandeza Aguarda!",
+      "tip": "Conclua GPU Jungle como parte da campanha principal.",
+      "trophy_code": "astros_playroom_greatness_awaits",
+      "type": "Prata"
+    },
+    {
+      "description": "Pegue seu primeiro artefato.",
+      "is_missable": 0,
+      "is_spoiler": 0,
+      "name": "In Mint Condition",
+      "name_pt": "Em Estado Impecável",
+      "tip": "Pegue qualquer artefato; os primeiros aparecem cedo nos mundos principais.",
+      "trophy_code": "astros_playroom_in_mint_condition",
+      "type": "Bronze"
+    },
+    {
+      "description": "Pegue todos os artefatos em Cooling Springs.",
+      "is_missable": 0,
+      "is_spoiler": 0,
+      "name": "Such a Big Fan!",
+      "name_pt": "Que Fã!",
+      "tip": "Revise os quatro níveis de Cooling Springs e confira o contador de artefatos.",
+      "trophy_code": "astros_playroom_such_a_big_fan",
+      "type": "Prata"
+    },
+    {
+      "description": "Pegue todos os artefatos em GPU Jungle.",
+      "is_missable": 0,
+      "is_spoiler": 0,
+      "name": "Charted!",
+      "name_pt": "Mapeado!",
+      "tip": "Use a seleção de fases de GPU Jungle para buscar os artefatos que ficaram para trás.",
+      "trophy_code": "astros_playroom_charted",
+      "type": "Prata"
+    },
+    {
+      "description": "Pegue todos os artefatos em SSD Speedway.",
+      "is_missable": 0,
+      "is_spoiler": 0,
+      "name": "Welcome to the Third Place",
+      "name_pt": "Bem-vindo ao Terceiro Lugar",
+      "tip": "Limpe os artefatos de SSD Speedway antes ou depois do fim da campanha.",
+      "trophy_code": "astros_playroom_welcome_to_the_third_place",
+      "type": "Prata"
+    },
+    {
+      "description": "Pegue todos os artefatos em Memory Meadow.",
+      "is_missable": 0,
+      "is_spoiler": 0,
+      "name": "... And Conquered Worlds",
+      "name_pt": "... E Mundos Conquistados",
+      "tip": "Volte aos níveis de Memory Meadow até completar todos os artefatos.",
+      "trophy_code": "astros_playroom_and_conquered_worlds",
+      "type": "Prata"
+    },
+    {
+      "description": "Colete todos os artefatos nas quatro fases principais e no PS Labo.",
+      "is_missable": 0,
+      "is_spoiler": 0,
+      "name": "Dude Raider!",
+      "name_pt": "Aventureiro de Artefatos",
+      "tip": "Combine artefatos dos quatro mundos com os prêmios do Gatcha no PS Labo.",
+      "trophy_code": "astros_playroom_dude_raider",
+      "type": "Ouro"
+    },
+    {
+      "description": "Pegue sua primeira puzzle piece.",
+      "is_missable": 0,
+      "is_spoiler": 0,
+      "name": "One Down, Lots More to Go!",
+      "name_pt": "Um Foi, Faltam Muitos!",
+      "tip": "Pegue a primeira puzzle piece; elas aparecem em todos os mundos e também no hub.",
+      "trophy_code": "astros_playroom_one_down_lots_more_to_go",
+      "type": "Bronze"
+    },
+    {
+      "description": "Pegue todas as puzzle pieces em Cooling Springs.",
+      "is_missable": 0,
+      "is_spoiler": 0,
+      "name": "Cool Hoarder",
+      "name_pt": "Acumulador Radical",
+      "tip": "Revise Cooling Springs até fechar as puzzle pieces do mundo.",
+      "trophy_code": "astros_playroom_cool_hoarder",
+      "type": "Prata"
+    },
+    {
+      "description": "Pegue todas as puzzle pieces em GPU Jungle.",
+      "is_missable": 0,
+      "is_spoiler": 0,
+      "name": "The Found Legacy",
+      "name_pt": "O Legado Encontrado",
+      "tip": "Use o contador de GPU Jungle para localizar as puzzle pieces restantes.",
+      "trophy_code": "astros_playroom_the_found_legacy",
+      "type": "Prata"
+    },
+    {
+      "description": "Pegue todas as puzzle pieces em SSD Speedway.",
+      "is_missable": 0,
+      "is_spoiler": 0,
+      "name": "Omega Booster!",
+      "name_pt": "Impulso Ômega!",
+      "tip": "Limpe as puzzle pieces de SSD Speedway pela seleção de fases.",
+      "trophy_code": "astros_playroom_omega_booster",
+      "type": "Prata"
+    },
+    {
+      "description": "Pegue todas as puzzle pieces em Memory Meadow.",
+      "is_missable": 0,
+      "is_spoiler": 0,
+      "name": "Ico-nic",
+      "name_pt": "Ico-nico",
+      "tip": "Volte a Memory Meadow e confira as peças escondidas em cada subfase.",
+      "trophy_code": "astros_playroom_ico_nic",
+      "type": "Prata"
+    },
+    {
+      "description": "Colete todas as peças de puzzle do jogo.",
+      "is_missable": 0,
+      "is_spoiler": 0,
+      "name": "A Grand Tour!",
+      "name_pt": "Um Grande Passeio!",
+      "tip": "Feche as puzzle pieces dos quatro mundos, do CPU Plaza e dos prêmios do Gatcha.",
+      "trophy_code": "astros_playroom_a_grand_tour",
+      "type": "Ouro"
+    },
+    {
+      "description": "Pegue seu primeiro prêmio do Gatcha.",
+      "is_missable": 0,
+      "is_spoiler": 0,
+      "name": "Gatcha Beginner",
+      "name_pt": "Iniciante no Gatcha",
+      "tip": "Gaste moedas no Gatcha do PlayStation Labo assim que ele estiver disponível.",
+      "trophy_code": "astros_playroom_gatcha_beginner",
+      "type": "Bronze"
+    },
+    {
+      "description": "Pegue um prêmio secreto do Gatcha.",
+      "is_missable": 0,
+      "is_spoiler": 1,
+      "name": "For the Players!",
+      "name_pt": "Para os Jogadores!",
+      "tip": "Continue gastando moedas no Gatcha até sair o prêmio secreto relacionado ao troféu.",
+      "trophy_code": "astros_playroom_for_the_players",
+      "type": "Bronze"
+    },
+    {
+      "description": "Pegue metade dos prêmios do Gatcha.",
+      "is_missable": 0,
+      "is_spoiler": 0,
+      "name": "Gatcha Maniac",
+      "name_pt": "Maníaco do Gatcha",
+      "tip": "Colete moedas durante as fases e gaste no Gatcha até chegar a metade dos prêmios.",
+      "trophy_code": "astros_playroom_gatcha_maniac",
+      "type": "Prata"
+    },
+    {
+      "description": "Obtenha todos os prêmios do Gatcha.",
+      "is_missable": 0,
+      "is_spoiler": 0,
+      "name": "Saru Gatcha!",
+      "name_pt": "Saru Gatcha!",
+      "tip": "Esvazie a máquina de Gatcha no PlayStation Labo; repita fases curtas se faltar moeda.",
+      "trophy_code": "astros_playroom_saru_gatcha",
+      "type": "Ouro"
+    },
+    {
+      "description": "Lance 10 bots voando com um único spin attack.",
+      "is_missable": 0,
+      "is_spoiler": 0,
+      "name": "Project Neo",
+      "name_pt": "Projeto Neo",
+      "tip": "No CPU Plaza, junte bots seguindo Astro e use um spin attack quando estiverem agrupados.",
+      "trophy_code": "astros_playroom_project_neo",
+      "type": "Bronze"
+    },
+    {
+      "description": "Ande pelo CPU Plaza com pelo menos 20 bots seguindo você.",
+      "is_missable": 0,
+      "is_spoiler": 0,
+      "name": "The Last Guy",
+      "name_pt": "O Último Cara",
+      "tip": "Bata em bots no CPU Plaza até formar um grupo de 20 seguindo você.",
+      "trophy_code": "astros_playroom_the_last_guy",
+      "type": "Bronze"
+    },
+    {
+      "description": "Acerte o logo PS no PS2 em PlayStation Labo.",
+      "is_missable": 0,
+      "is_spoiler": 0,
+      "name": "This Way Up",
+      "name_pt": "Este Lado para Cima",
+      "tip": "Depois de liberar o PS2 no PlayStation Labo, suba nele e acerte o logo.",
+      "trophy_code": "astros_playroom_this_way_up",
+      "type": "Bronze"
+    },
+    {
+      "description": "Pegue um troféu em PlayStation Labo.",
+      "is_missable": 0,
+      "is_spoiler": 0,
+      "name": "You Got a Trophy!",
+      "name_pt": "Você Ganhou um Troféu!",
+      "tip": "Com os prêmios do Gatcha liberados, pegue um troféu físico exibido no PlayStation Labo.",
+      "trophy_code": "astros_playroom_you_got_a_trophy",
+      "type": "Bronze"
+    },
+    {
+      "description": "Acerte e olhe para a lente do PS VR em PlayStation Labo.",
+      "is_missable": 0,
+      "is_spoiler": 0,
+      "name": "I Recognize You...",
+      "name_pt": "Eu Reconheço Você...",
+      "tip": "Depois de liberar o PS VR no Labo, interaja com a lente pelo lado correto.",
+      "trophy_code": "astros_playroom_i_recognize_you",
+      "type": "Bronze"
+    },
+    {
+      "description": "Fique na ponta do Aim Controller em PlayStation Labo.",
+      "is_missable": 0,
+      "is_spoiler": 0,
+      "name": "The Very Far Point...",
+      "name_pt": "O Ponto Mais Distante...",
+      "tip": "Com os artefatos de PS VR e controles liberados, suba até a ponta do Aim Controller.",
+      "trophy_code": "astros_playroom_the_very_far_point",
+      "type": "Bronze"
+    },
+    {
+      "description": "Passe por baixo do ícone do PlayStation Home em PlayStation Labo.",
+      "is_missable": 0,
+      "is_spoiler": 0,
+      "name": "Honey, I'm Home!",
+      "name_pt": "Querido, Cheguei!",
+      "tip": "Libere o item do PlayStation Home no Gatcha e caminhe sob o ícone no Labo.",
+      "trophy_code": "astros_playroom_honey_im_home",
+      "type": "Bronze"
+    },
+    {
+      "description": "Abra a tampa do console PlayStation em PlayStation Labo.",
+      "is_missable": 0,
+      "is_spoiler": 0,
+      "name": "Disc Swap!",
+      "name_pt": "Troca de Disco!",
+      "tip": "Depois de liberar o PlayStation original, use o botão da tampa no Labo.",
+      "trophy_code": "astros_playroom_disc_swap",
+      "type": "Bronze"
+    },
+    {
+      "description": "Faça uma bola quicar 5 vezes usando o Frog Suit.",
+      "is_missable": 0,
+      "is_spoiler": 0,
+      "name": "Keepy Uppies",
+      "name_pt": "Embaixadinhas",
+      "tip": "Em Hotel Hopalot, quebre a vitrine com bolas e controle os pulos para quicar uma delas cinco vezes.",
+      "trophy_code": "astros_playroom_keepy_uppies",
+      "type": "Bronze"
+    },
+    {
+      "description": "Mergulhe na água a partir do trampolim.",
+      "is_missable": 0,
+      "is_spoiler": 0,
+      "name": "Hell Diver",
+      "name_pt": "Mergulhador Infernal",
+      "tip": "Em Bot Beach, suba no trampolim mais alto e pule na água.",
+      "trophy_code": "astros_playroom_hell_diver",
+      "type": "Bronze"
+    },
+    {
+      "description": "Pule na fonte perto do objetivo final em Cooling Springs.",
+      "is_missable": 0,
+      "is_spoiler": 0,
+      "name": "Jumping Splash!",
+      "name_pt": "Salto na Fonte!",
+      "tip": "Perto do objetivo final de Cooling Springs, pule em uma das fontes da piscina.",
+      "trophy_code": "astros_playroom_jumping_splash",
+      "type": "Bronze"
+    },
+    {
+      "description": "Pule 3 vezes durante um spin attack no gelo.",
+      "is_missable": 0,
+      "is_spoiler": 0,
+      "name": "Twisting Metal",
+      "name_pt": "Metal Torcido",
+      "tip": "Em Frigid Floes, carregue um spin attack sobre o gelo e pule três vezes enquanto ainda gira.",
+      "trophy_code": "astros_playroom_twisting_metal",
+      "type": "Bronze"
+    },
+    {
+      "description": "Abrace-se da chuva forte em Memory Meadow.",
+      "is_missable": 0,
+      "is_spoiler": 0,
+      "name": "Jason!",
+      "name_pt": "Jason!",
+      "tip": "Em Gusty Gateway, espere a chuva forte e fique sob o abrigo por alguns segundos.",
+      "trophy_code": "astros_playroom_jason",
+      "type": "Bronze"
+    },
+    {
+      "description": "Seja atingido por lixo voando em Memory Meadow.",
+      "is_missable": 0,
+      "is_spoiler": 0,
+      "name": "Pain!",
+      "name_pt": "Dor!",
+      "tip": "Em Gusty Gateway, fique perto do vento que arremessa objetos até ser atingido.",
+      "trophy_code": "astros_playroom_pain",
+      "type": "Bronze"
+    },
+    {
+      "description": "Faça um strike em Memory Meadow.",
+      "is_missable": 0,
+      "is_spoiler": 0,
+      "name": "Wipeout!",
+      "name_pt": "Wipeout!",
+      "tip": "Em Fastlane Fields, use a bola para derrubar todos os pinos da pista de boliche.",
+      "trophy_code": "astros_playroom_wipeout",
+      "type": "Bronze"
+    },
+    {
+      "description": "Rebata o ataque de um Spitter com uma flecha.",
+      "is_missable": 0,
+      "is_spoiler": 0,
+      "name": "Ready for the Proving",
+      "name_pt": "Pronto para a Provação",
+      "tip": "Em Raytrace Ruins, use uma flecha para rebater o projétil de um Spitter.",
+      "trophy_code": "astros_playroom_ready_for_the_proving",
+      "type": "Bronze"
+    },
+    {
+      "description": "Faça uma bola de neve enorme.",
+      "is_missable": 0,
+      "is_spoiler": 0,
+      "name": "Little Rolling Star...",
+      "name_pt": "Pequena Estrela Rolante...",
+      "tip": "Em Frigid Floes, empurre a bola de neve até ela crescer o suficiente.",
+      "trophy_code": "astros_playroom_little_rolling_star",
+      "type": "Bronze"
+    },
+    {
+      "description": "Caia 30 metros e se segure usando o monkey suit em GPU Jungle.",
+      "is_missable": 0,
+      "is_spoiler": 0,
+      "name": "No No No Noooooo!",
+      "name_pt": "Não Não Não Nãããão!",
+      "tip": "Em Teraflop Treetops, solte-se de uma altura grande e agarre uma barra antes de cair.",
+      "trophy_code": "astros_playroom_no_no_no_noooooo",
+      "type": "Bronze"
+    },
+    {
+      "description": "Acerte todos os coelhos com flechas no pico da montanha de GPU Jungle.",
+      "is_missable": 0,
+      "is_spoiler": 0,
+      "name": "Adequate, Boy...",
+      "name_pt": "Adequado, Garoto...",
+      "tip": "No topo de Mt. Motherboard, pegue o arco e acerte todos os coelhos da área.",
+      "trophy_code": "astros_playroom_adequate_boy",
+      "type": "Bronze"
+    },
+    {
+      "description": "Faça um giro enquanto dispara a metralhadora.",
+      "is_missable": 0,
+      "is_spoiler": 0,
+      "name": "Wild Arms",
+      "name_pt": "Braços Selvagens",
+      "tip": "Em Deep Dataspace, carregue um spin attack e atire com a metralhadora enquanto gira.",
+      "trophy_code": "astros_playroom_wild_arms",
+      "type": "Bronze"
+    },
+    {
+      "description": "Derrote 3 inimigos rapidamente com socos.",
+      "is_missable": 0,
+      "is_spoiler": 0,
+      "name": "It's All in the Mind",
+      "name_pt": "Está Tudo na Mente",
+      "tip": "Derrote três inimigos em sequência rápida com socos; pode sair naturalmente.",
+      "trophy_code": "astros_playroom_its_all_in_the_mind",
+      "type": "Bronze"
+    },
+    {
+      "description": "Revele o logo anterior em PlayStation Labo.",
+      "is_missable": 0,
+      "is_spoiler": 1,
+      "name": "Super Computer",
+      "name_pt": "Supercomputador",
+      "tip": "Depois de liberar o logo da SIE pelo Gatcha, acerte-o no PlayStation Labo para revelar o logo antigo.",
+      "trophy_code": "astros_playroom_super_computer",
+      "type": "Bronze"
+    }
+  ]
+}

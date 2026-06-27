@@ -1,0 +1,490 @@
+{
+  "game": {
+    "avoid_if": "Evite se você quer uma platina curta, simples, sem Cálices ou sem planejamento de finais e coletáveis.",
+    "before_you_start": "Planeje os finais desde cedo e não trate The Old Hunters como requisito. O ponto crítico é falar com Gehrman depois de Mergo's Wet Nurse, pois o jogo entra em New Game+ após o final.",
+    "best_for": "Vale platinar Bloodborne se você gosta de soulslike, exploração densa e chefes exigentes. A platina é justa quando a rota está organizada.",
+    "cleanup_advice": "Antes do final, confira Cainhurst, Upper Cathedral Ward, Abandoned Old Workshop, Nightmare Frontier, armas, ferramentas, runas, gemas, chefes opcionais e Cálices pendentes.",
+    "cover_image": "https://images.launchbox-app.com/e0e95929-d63d-4dbf-99bd-46a08df44778.jpg",
+    "coverage_level": "strong",
+    "created_at": "2026-05-09 19:53:36",
+    "difficulty": 7,
+    "difficulty_reason": "A dificuldade 7/10 vem do combate, chefes opcionais, execução em áreas avançadas e da rota dos Cálices, especialmente Defiled Chalice e o caminho até Yharnam, Pthumerian Queen.",
+    "dlc_scope": "The Old Hunters tem 6 troféus adicionais e fica fora da platina base. O guia cobre os 34 troféus do jogo base de PS4.",
+    "editorial_notes": "Escopo: platina base PS4 de Bloodborne, sem The Old Hunters. Política de perdíveis: contar apenas finais e Hunter's Essence como riscos editoriais fortes; a platina não entra na contagem.",
+    "editorial_review_status": "in_review",
+    "editorial_status": "published",
+    "first_run_advice": "Avance pela campanha explorando áreas opcionais, coletando armas e ferramentas e mantendo os finais sob controle. Depois de Mergo's Wet Nurse, pare antes de falar com Gehrman.",
+    "grind_summary": "O maior bloco de grind e desafio está nos Chalice Dungeons até Yharnam, Pthumerian Queen, além de armas, ferramentas e cleanup de chefes opcionais.",
+    "guide_avoid": null,
+    "guide_best_moment": null,
+    "guide_dlc": null,
+    "guide_grind": null,
+    "guide_ideal": null,
+    "guide_online": null,
+    "guide_runs": null,
+    "image": "https://image.api.playstation.com/vulcan/img/rnd/202010/2614/KKLEVc2SIIgrFVjsZChZJk1d.jpg",
+    "is_verified": 0,
+    "last_reviewed_at": "2026-06-01",
+    "missable": "Bloodborne tem riscos reais de retrabalho nos três finais e em Hunter's Essence. Chefes opcionais, áreas opcionais e Cálices exigem planejamento, mas não devem inflar a contagem de perdíveis.",
+    "missable_summary": "Os perdíveis editoriais são os três finais e Hunter's Essence. Hunter's Craft, áreas opcionais, chefes opcionais e Cálices entram como coleta, spoiler, dificuldade, grind ou risco de run.",
+    "name": "Bloodborne",
+    "online_summary": "O online é opcional. A platina base pode ser feita offline, sem servidores, invasões, mensagens, cooperação ou PS+.",
+    "quality_warnings": "[]",
+    "reviewed_by": "AtlasAchievement Editorial",
+    "runs_summary": "Rota eficiente: uma jogada com backup de save antes de falar com Gehrman. Sem backup, organize NG+ e NG++ para os finais restantes.",
+    "slug": "bloodborne",
+    "time": "50-70 horas",
+    "time_bucket": "long",
+    "time_max_hours": 70,
+    "time_min_hours": 50,
+    "time_reason": "A estimativa de 50-70 horas considera campanha, exploração completa, finais com backup ou NG+, armas, ferramentas, chefes opcionais, Cálices e cleanup.",
+    "time_sort_hours": 50,
+    "updated_at": "2026-06-27 02:36:58",
+    "verification_note": "Guia revisado para a lista base PS4: 34 troféus, roadmap estruturado, flags offline/sem DLC obrigatória e EN/PT-BR editorial. Mantido em revisão até validação final completa.",
+    "verification_status": "review",
+    "walkthrough": null
+  },
+  "redirects": [],
+  "roadmaps": [
+    {
+      "content": "{\"title\":\"Caçada principal com exploração completa\",\"focus\":\"Campanha e áreas opcionais\",\"objective\":\"Avançar pela história abrindo o máximo de áreas, chefes opcionais e atalhos antes do fim.\",\"actions\":[\"Progrida por Central Yharnam, Cathedral Ward, Forbidden Woods, Byrgenwerth, Yahargul, Nightmare of Mensis e demais áreas principais.\",\"Derrote chefes obrigatórios e opcionais sempre que liberar uma nova região.\",\"Abra áreas importantes como Cainhurst Castle, Upper Cathedral Ward, Nightmare Frontier e Abandoned Old Workshop.\",\"Colete armas, ferramentas de caçador, runas e materiais de upgrade durante a exploração.\",\"Evite falar com Gehrman para finalizar o jogo antes de concluir o cleanup do jogo base.\"],\"warning\":\"Depois do final, Bloodborne inicia New Game+ automaticamente. Antes de falar com Gehrman, resolva os opcionais e prepare os finais.\",\"result\":\"A campanha ficará praticamente concluída, com as principais áreas e chefes opcionais disponíveis para cleanup.\"}",
+      "step_order": 1
+    },
+    {
+      "content": "{\"title\":\"Armas, ferramentas e troféus de exploração\",\"focus\":\"Coletáveis da platina\",\"objective\":\"Garantir Hunter's Essence, Hunter's Craft e troféus ligados a áreas opcionais antes do ponto final.\",\"actions\":[\"Confira todas as armas de caçador necessárias para Hunter's Essence.\",\"Dê atenção especial a Blade of Mercy e Burial Blade, pois dependem de condições específicas e podem exigir NG+ se forem perdidas.\",\"Colete as ferramentas especiais de caçador necessárias para Hunter's Craft.\",\"Finalize Cainhurst, The Choir, The Source of the Dream e Nightmare Frontier.\",\"Faça o upgrade de uma arma até +10 e conclua Blood Gem Master e Rune Master.\"],\"warning\":\"Hunter's Essence é o principal risco de coleta. Algumas armas dependem de rota, badges, finais ou NG+ se forem deixadas para trás.\",\"result\":\"Os troféus de exploração, armas e ferramentas ficam encaminhados antes dos finais.\"}",
+      "step_order": 2
+    },
+    {
+      "content": "{\"title\":\"Preparação dos três finais\",\"focus\":\"Finais\",\"objective\":\"Organizar Yharnam Sunrise, Honoring Wishes e Childhood's Beginning com backup ou múltiplas jogadas.\",\"actions\":[\"Após Mergo's Wet Nurse, pare antes de concluir a escolha final com Gehrman.\",\"Para Childhood's Beginning, obtenha e consuma três One Third of Umbilical Cord antes da luta final correspondente.\",\"Use backup de save antes de falar com Gehrman se quiser obter os três finais em uma única jogada.\",\"Sem backup, deixe finais restantes para NG+ e NG++.\",\"Resolva armas, ferramentas, áreas opcionais e Cálices pendentes antes de acionar o final.\"],\"warning\":\"Se você finalizar sem backup e sem preparar os cordões umbilicais, terá de buscar os finais restantes em outra jogada.\",\"result\":\"Os três finais ficam planejados sem repetição desnecessária da campanha.\"}",
+      "step_order": 3
+    },
+    {
+      "content": "{\"title\":\"Cálices e Yharnam, Pthumerian Queen\",\"focus\":\"Grind e desafio\",\"objective\":\"Completar a cadeia necessária de Chalice Dungeons até derrotar Yharnam, Pthumerian Queen.\",\"actions\":[\"Complete os Cálices necessários em sequência até liberar a rota para Yharnam, Pthumerian Queen.\",\"Deixe os Cálices para uma etapa dedicada, com arma forte, bom nível e recursos suficientes.\",\"Junte materiais e avance pelos dungeons sem tratar essa etapa como cleanup simples.\",\"Prepare-se para chefes fortes e para a dificuldade alta de trechos como o Defiled Chalice.\",\"Use apenas os Cálices exigidos pela lista base\",\"The Old Hunters não entra na platina.\"],\"warning\":\"A etapa dos Cálices pode ser o maior bloqueio da platina e deve ser tratada como preparação de longo prazo, não como limpeza rápida.\",\"result\":\"Com Yharnam, Pthumerian Queen derrotada, a parte mais exigente da platina fica resolvida.\"}",
+      "step_order": 4
+    },
+    {
+      "content": "{\"title\":\"Cleanup final e verificação da platina\",\"focus\":\"Conferência\",\"objective\":\"Conferir troféus restantes, finais, armas, ferramentas, chefes e flags antes de encerrar a rota.\",\"actions\":[\"Confira no checklist se todos os 34 troféus da lista base foram concluídos.\",\"Verifique que The Old Hunters ficou fora da platina base.\",\"Mantenha onlineRequired, coopRequired e dlcRequired como false.\",\"Finalize armas, ferramentas, chefes opcionais, Cálices e finais pendentes.\",\"Antes de encerrar a rota, confira flags, checklist e separação da DLC.\"],\"warning\":\"\",\"result\":\"A rota fica pronta para revisão final sem misturar DLC, online obrigatório ou coop obrigatório.\"}",
+      "step_order": 5
+    }
+  ],
+  "schemaVersion": 1,
+  "seedExtras": {
+    "aliases": [],
+    "attentionPoints": [],
+    "checklist": [
+      "Confirmar os 34 troféus do jogo base.",
+      "Não contar The Old Hunters na platina.",
+      "Explorar áreas opcionais antes do final.",
+      "Coletar todas as armas de caçador necessárias para Hunter's Essence.",
+      "Coletar todas as ferramentas especiais de caçador para Hunter's Craft.",
+      "Preparar os três finais com backup de save ou múltiplas jogadas.",
+      "Obter e consumir três One Third of Umbilical Cord para Childhood's Beginning.",
+      "Derrotar chefes opcionais do jogo base.",
+      "Completar os Cálices necessários até Yharnam, Pthumerian Queen.",
+      "Fazer cleanup antes de falar com Gehrman.",
+      "Conferir flags: onlineRequired false, coopRequired false, dlcRequired false e perdíveis alinhados."
+    ],
+    "faq": [
+      {
+        "answer": "Não. O online é opcional; a platina base pode ser feita offline.",
+        "question": "Bloodborne exige online para platinar?"
+      },
+      {
+        "answer": "Não. A DLC tem troféus próprios, mas não é requisito da platina base.",
+        "question": "The Old Hunters é necessário para a platina?"
+      },
+      {
+        "answer": "Sim. Os perdíveis editoriais são os três finais e Hunter's Essence, por causa de armas que podem exigir planejamento de rota ou NG+.",
+        "question": "Bloodborne tem troféus perdíveis?"
+      },
+      {
+        "answer": "Sim, usando backup de save antes da decisão final. Sem backup, será necessário fazer novas jogadas para os finais restantes.",
+        "question": "Dá para fazer os três finais em uma jogada?"
+      },
+      {
+        "answer": "A combinação de dificuldade do combate, chefes opcionais e progressão dos Cálices até Yharnam, Pthumerian Queen.",
+        "question": "Qual é o maior desafio da platina?"
+      },
+      {
+        "answer": "Não há seletor tradicional de dificuldade. A dificuldade vem da execução, build, exploração e Cálices.",
+        "question": "A dificuldade do jogo afeta troféus?"
+      },
+      {
+        "answer": "Sim, mas não trate como cleanup simples. A rota até Yharnam, Pthumerian Queen exige preparação, materiais e chefes fortes, então é melhor entrar nos Cálices com arma evoluída e bom nível.",
+        "question": "Posso deixar os Cálices para depois?"
+      },
+      {
+        "answer": "Sim. The Old Hunters tem troféus próprios, mas não é requisito para a platina base de Bloodborne.",
+        "question": "Dá para platinar sem The Old Hunters?"
+      }
+    ],
+    "note": "Campos exportados para auditoria. O SQLite atual nao possui colunas nativas para todos esses extras; a importacao preserva o que o banco suporta.",
+    "quickDecision": {
+      "firstAction": "Jogue a campanha explorando áreas opcionais e pare depois de Mergo's Wet Nurse antes de falar com Gehrman.",
+      "recommendation": "Vale platinar Bloodborne se você gosta de soulslike exigente, exploração densa e chefes opcionais marcantes. A platina não exige online nem The Old Hunters, mas cobra planejamento para os três finais, atenção a armas e ferramentas de caçador e paciência nos Cálices até Yharnam, Pthumerian Queen. É uma platina justa e memorável, porém pouco indicada para quem não quer desafio, backup de save ou grind.",
+      "summary": "Platina difícil e justa: offline, sem coop, sem DLC obrigatória, com finais, armas/ferramentas e Cálices como gargalos principais."
+    },
+    "seo": {
+      "description": "Guia de platina de Bloodborne com roadmap em português, troféus perdíveis, finais, armas, ferramentas de caçador, Cálices e dicas para conquistar a platina no PS4.",
+      "keywords": "Bloodborne, guia de platina Bloodborne, troféus Bloodborne, roadmap Bloodborne, Bloodborne PS4, Yharnam Pthumerian Queen, Hunter's Essence, Childhood's Beginning",
+      "ogDescription": "Guia PT-BR da platina base de Bloodborne no PS4, com 34 troféus, finais, armas, ferramentas, Cálices, offline e sem The Old Hunters como requisito.",
+      "ogTitle": "Guia de Platina Bloodborne - Troféus, Roadmap e Dicas",
+      "title": "Guia de Platina Bloodborne - Troféus, Roadmap e Dicas"
+    },
+    "tags": [
+      "soulslike",
+      "ação",
+      "RPG",
+      "chefes",
+      "coletáveis",
+      "finais",
+      "grind",
+      "cálices",
+      "offline",
+      "sem DLC obrigatória"
+    ]
+  },
+  "slug": "bloodborne",
+  "trophies": [
+    {
+      "description": "Obtenha todos os troféus.",
+      "is_missable": 0,
+      "is_spoiler": 0,
+      "name": "Bloodborne",
+      "name_pt": "Bloodborne",
+      "tip": "Conclua os outros 33 troféus da lista base. The Old Hunters tem troféus próprios e não entra na platina.",
+      "trophy_code": "bb_bloodborne",
+      "type": "Platina"
+    },
+    {
+      "description": "Sobreviva à caçada e veja outro dia nascer.",
+      "is_missable": 1,
+      "is_spoiler": 1,
+      "name": "Yharnam Sunrise",
+      "name_pt": "Nascer do Sol de Yharnam",
+      "tip": "Final mutuamente exclusivo sem backup: aceite a proposta de Gehrman no fim da campanha. Faça backup antes de falar com ele se quiser resolver os três finais na mesma jogada.",
+      "trophy_code": "bb_yharnam_sunrise",
+      "type": "Ouro"
+    },
+    {
+      "description": "Fique cativo da Presença da Lua e prometa vigiar o Sonho do Caçador.",
+      "is_missable": 1,
+      "is_spoiler": 1,
+      "name": "Honoring Wishes",
+      "name_pt": "Honrando Desejos",
+      "tip": "Final mutuamente exclusivo sem backup: recuse a proposta de Gehrman sem ativar a condição de Childhood's Beginning. Use backup ou deixe para NG+.",
+      "trophy_code": "bb_honoring_wishes",
+      "type": "Ouro"
+    },
+    {
+      "description": "Torne-se um Grande e eleve a humanidade à sua próxima infância.",
+      "is_missable": 1,
+      "is_spoiler": 1,
+      "name": "Childhood's Beginning",
+      "name_pt": "Início da Infância",
+      "tip": "Consuma três One Third of Umbilical Cord antes da luta final correta. Sem backup e sem os cordões, será preciso nova jogada para corrigir.",
+      "trophy_code": "bb_childhoods_beginning",
+      "type": "Ouro"
+    },
+    {
+      "description": "Derrote Yharnam, Rainha de Sangue do Antigo Labirinto.",
+      "is_missable": 0,
+      "is_spoiler": 1,
+      "name": "Yharnam, Pthumerian Queen",
+      "name_pt": "Yharnam, Rainha Pthumeriana",
+      "tip": "Complete a cadeia de Chalice Dungeons até Pthumeru Ihyll e derrote a rainha. Não é DLC; costuma ser o maior gargalo da platina base.",
+      "trophy_code": "bb_yharnam_pthumerian_queen",
+      "type": "Ouro"
+    },
+    {
+      "description": "Obtenha todas as armas de caçador.",
+      "is_missable": 1,
+      "is_spoiler": 0,
+      "name": "Hunter's Essence",
+      "name_pt": "Essência do Caçador",
+      "tip": "Controle as armas da lista base desde cedo. Diante de Blade of Mercy, Burial Blade, Cainhurst e badges, avance com planejamento para evitar NG+ desnecessário.",
+      "trophy_code": "bb_hunters_essence",
+      "type": "Ouro"
+    },
+    {
+      "description": "Obtenha todas as ferramentas especiais de caçador.",
+      "is_missable": 0,
+      "is_spoiler": 0,
+      "name": "Hunter's Craft",
+      "name_pt": "Arte do Caçador",
+      "tip": "Colete as ferramentas especiais de caçador antes de encerrar o ciclo. Upper Cathedral Ward, Cainhurst e áreas opcionais concentram parte importante da lista.",
+      "trophy_code": "bb_hunters_craft",
+      "type": "Ouro"
+    },
+    {
+      "description": "Obtenha uma arma no nível máximo.",
+      "is_missable": 0,
+      "is_spoiler": 0,
+      "name": "Weapon Master",
+      "name_pt": "Mestre das Armas",
+      "tip": "Leve uma arma a +10 com Blood Rock. Escolha uma arma principal antes de gastar materiais raros.",
+      "trophy_code": "bb_weapon_master",
+      "type": "Prata"
+    },
+    {
+      "description": "Obtenha uma gema de sangue extremamente preciosa.",
+      "is_missable": 0,
+      "is_spoiler": 0,
+      "name": "Blood Gem Master",
+      "name_pt": "Mestre das Gemas de Sangue",
+      "tip": "Uma gema preciosa pode vir em conteúdo avançado e Cálices. O troféu não exige online.",
+      "trophy_code": "bb_blood_gem_master",
+      "type": "Prata"
+    },
+    {
+      "description": "Obtenha uma Runa Caryll extremamente preciosa.",
+      "is_missable": 0,
+      "is_spoiler": 0,
+      "name": "Rune Master",
+      "name_pt": "Mestre das Runas",
+      "tip": "Explore áreas opcionais e equipe runas quando o sistema estiver liberado. Não deixe tudo para depois do final.",
+      "trophy_code": "bb_rune_master",
+      "type": "Prata"
+    },
+    {
+      "description": "Entre em Cainhurst, o castelo perdido e arruinado.",
+      "is_missable": 0,
+      "is_spoiler": 1,
+      "name": "Cainhurst",
+      "name_pt": "Cainhurst",
+      "tip": "Área opcional essencial para Martyr Logarius, armas e checklist. Pegue o convite e visite Cainhurst antes de falar com Gehrman.",
+      "trophy_code": "bb_cainhurst",
+      "type": "Prata"
+    },
+    {
+      "description": "Entre no domínio do Coro, o alto estrato da Igreja da Cura.",
+      "is_missable": 0,
+      "is_spoiler": 1,
+      "name": "The Choir",
+      "name_pt": "O Coro",
+      "tip": "Use a Upper Cathedral Key para acessar Upper Cathedral Ward. A área liga ferramentas, Celestial Emissary e Ebrietas.",
+      "trophy_code": "bb_the_choir",
+      "type": "Prata"
+    },
+    {
+      "description": "Descubra a oficina abandonada, fonte do Sonho do Caçador.",
+      "is_missable": 0,
+      "is_spoiler": 1,
+      "name": "The Source of the Dream",
+      "name_pt": "A Fonte do Sonho",
+      "tip": "Desça pela Healing Church Workshop com cuidado para encontrar a Abandoned Old Workshop.",
+      "trophy_code": "bb_the_source_of_the_dream",
+      "type": "Prata"
+    },
+    {
+      "description": "Entre no prédio de conferências de Byrgenwerth, que flutua no reino do pesadelo.",
+      "is_missable": 0,
+      "is_spoiler": 1,
+      "name": "Nightmare Lecture Building",
+      "name_pt": "Prédio de Conferências do Pesadelo",
+      "tip": "Área de transição para pesadelos e conteúdo importante. Confirme o acesso antes de fechar a campanha.",
+      "trophy_code": "bb_nightmare_lecture_building",
+      "type": "Prata"
+    },
+    {
+      "description": "Derrote a fera que um dia foi Padre Gascoigne.",
+      "is_missable": 0,
+      "is_spoiler": 1,
+      "name": "Father Gascoigne",
+      "name_pt": "Padre Gascoigne",
+      "tip": "Chefe obrigatório inicial. Aprenda parry, uso de caixas de música e controle de espaço para estabilizar a run.",
+      "trophy_code": "bb_father_gascoigne",
+      "type": "Bronze"
+    },
+    {
+      "description": "Derrote a fera que um dia foi Vigária Amelia.",
+      "is_missable": 0,
+      "is_spoiler": 1,
+      "name": "Vicar Amelia",
+      "name_pt": "Vigária Amelia",
+      "tip": "Chefe obrigatório de Cathedral Ward que abre a próxima fase da história. Revise recursos antes de avançar demais.",
+      "trophy_code": "bb_vicar_amelia",
+      "type": "Bronze"
+    },
+    {
+      "description": "Derrote a Sombra de Yharnam.",
+      "is_missable": 0,
+      "is_spoiler": 1,
+      "name": "Shadow of Yharnam",
+      "name_pt": "Sombra de Yharnam",
+      "tip": "Chefe obrigatório em Forbidden Woods. Divida os alvos e use o cenário para reduzir pressão.",
+      "trophy_code": "bb_shadow_of_yharnam",
+      "type": "Bronze"
+    },
+    {
+      "description": "Derrote o Grande: Rom, a Aranha Vácua.",
+      "is_missable": 0,
+      "is_spoiler": 1,
+      "name": "Rom, the Vacuous Spider",
+      "name_pt": "Rom, a Aranha Vácua",
+      "tip": "Chefe obrigatório e ponto narrativo importante. Depois dele, algumas áreas mudam de estado; revise pendências opcionais.",
+      "trophy_code": "bb_rom_the_vacuous_spider",
+      "type": "Bronze"
+    },
+    {
+      "description": "Derrote o Renascido.",
+      "is_missable": 0,
+      "is_spoiler": 1,
+      "name": "The One Reborn",
+      "name_pt": "O Renascido",
+      "tip": "Chefe obrigatório de Yahargul na fase Blood Moon. Elimine primeiro as Bell-ringing Women nas laterais.",
+      "trophy_code": "bb_the_one_reborn",
+      "type": "Bronze"
+    },
+    {
+      "description": "Derrote Micolash, Anfitrião do Pesadelo.",
+      "is_missable": 0,
+      "is_spoiler": 1,
+      "name": "Micolash, Host of the Nightmare",
+      "name_pt": "Micolash, Anfitrião do Pesadelo",
+      "tip": "Chefe obrigatório no Nightmare of Mensis. Cuidado com A Call Beyond na fase final.",
+      "trophy_code": "bb_micolash_host_of_the_nightmare",
+      "type": "Bronze"
+    },
+    {
+      "description": "Derrote o Grande: Ama de Leite de Mergo.",
+      "is_missable": 0,
+      "is_spoiler": 1,
+      "name": "Mergo's Wet Nurse",
+      "name_pt": "Ama de Leite de Mergo",
+      "tip": "Chefe que libera a decisão final. Depois dela, pare, faça backup se for usar e conclua cleanup antes de falar com Gehrman.",
+      "trophy_code": "bb_mergos_wet_nurse",
+      "type": "Bronze"
+    },
+    {
+      "description": "Derrote a Fera Clerical.",
+      "is_missable": 0,
+      "is_spoiler": 1,
+      "name": "Cleric Beast",
+      "name_pt": "Fera Clerical",
+      "tip": "Chefe opcional inicial em Central Yharnam. Ajuda a abrir progresso e treino de combate contra feras grandes.",
+      "trophy_code": "bb_cleric_beast",
+      "type": "Bronze"
+    },
+    {
+      "description": "Derrote a Fera Sedenta de Sangue.",
+      "is_missable": 0,
+      "is_spoiler": 1,
+      "name": "Blood-starved Beast",
+      "name_pt": "Fera Sedenta de Sangue",
+      "tip": "Chefe opcional de Old Yharnam que libera o Chalice of Pthumeru. Antídotos e papel de fogo ajudam bastante.",
+      "trophy_code": "bb_blood_starved_beast",
+      "type": "Bronze"
+    },
+    {
+      "description": "Derrote a Bruxa de Hemwick.",
+      "is_missable": 0,
+      "is_spoiler": 1,
+      "name": "The Witch of Hemwick",
+      "name_pt": "A Bruxa de Hemwick",
+      "tip": "Chefe opcional de Hemwick Charnel Lane. Importante para liberar uso de runas.",
+      "trophy_code": "bb_the_witch_of_hemwick",
+      "type": "Bronze"
+    },
+    {
+      "description": "Derrote a Fera Negra Paarl.",
+      "is_missable": 0,
+      "is_spoiler": 1,
+      "name": "Darkbeast Paarl",
+      "name_pt": "Fera Negra Paarl",
+      "tip": "Chefe opcional ligado a Hypogean Gaol/Yahargul. Resolva antes do final para manter a rota limpa.",
+      "trophy_code": "bb_darkbeast_paarl",
+      "type": "Bronze"
+    },
+    {
+      "description": "Derrote o Grande: Amygdala.",
+      "is_missable": 0,
+      "is_spoiler": 1,
+      "name": "Amygdala",
+      "name_pt": "Amygdala",
+      "tip": "Chefe opcional de Nightmare Frontier e fonte do Chalice of Ailing Loran. Entre preparado para dano alto.",
+      "trophy_code": "bb_amygdala",
+      "type": "Bronze"
+    },
+    {
+      "description": "Derrote Mártir Logarius.",
+      "is_missable": 0,
+      "is_spoiler": 1,
+      "name": "Martyr Logarius",
+      "name_pt": "Mártir Logarius",
+      "tip": "Chefe opcional de Cainhurst. Necessário para fechar a área e encaminhar armas ligadas a Cainhurst.",
+      "trophy_code": "bb_martyr_logarius",
+      "type": "Bronze"
+    },
+    {
+      "description": "Derrote o Grande: Emissário Celestial.",
+      "is_missable": 0,
+      "is_spoiler": 1,
+      "name": "Celestial Emissary",
+      "name_pt": "Emissário Celestial",
+      "tip": "Chefe opcional de Upper Cathedral Ward, no caminho para Ebrietas e ferramentas importantes.",
+      "trophy_code": "bb_celestial_emissary",
+      "type": "Bronze"
+    },
+    {
+      "description": "Derrote o Grande: Ebrietas, Filha do Cosmos.",
+      "is_missable": 0,
+      "is_spoiler": 1,
+      "name": "Ebrietas, Daughter of the Cosmos",
+      "name_pt": "Ebrietas, Filha do Cosmos",
+      "tip": "Chefe opcional de Upper Cathedral Ward e fonte do Chalice of Isz. Um dos testes fortes fora da campanha principal.",
+      "trophy_code": "bb_ebrietas_daughter_of_the_cosmos",
+      "type": "Bronze"
+    },
+    {
+      "description": "Obtenha uma gema de sangue que fortalece armas de caçador.",
+      "is_missable": 0,
+      "is_spoiler": 0,
+      "name": "Blood Gem Contact",
+      "name_pt": "Contato com Gema de Sangue",
+      "tip": "Vem naturalmente ao pegar uma Blood Gem. Marque e siga para gemas melhores depois.",
+      "trophy_code": "bb_blood_gem_contact",
+      "type": "Bronze"
+    },
+    {
+      "description": "Obtenha uma Runa Caryll que concede força especial aos caçadores.",
+      "is_missable": 0,
+      "is_spoiler": 0,
+      "name": "Rune Contact",
+      "name_pt": "Contato com Runa",
+      "tip": "Vem ao obter uma Caryll Rune. A Bruxa de Hemwick libera o uso pratico das runas.",
+      "trophy_code": "bb_rune_contact",
+      "type": "Bronze"
+    },
+    {
+      "description": "Obtenha o Cálice de Pthumeru, que sela as catacumbas profundas sob Yharnam.",
+      "is_missable": 0,
+      "is_spoiler": 1,
+      "name": "Chalice of Pthumeru",
+      "name_pt": "Cálice de Pthumeru",
+      "tip": "Obtido com Blood-starved Beast. Inicia a rota dos Cálices da platina base.",
+      "trophy_code": "bb_chalice_of_pthumeru",
+      "type": "Bronze"
+    },
+    {
+      "description": "Obtenha o Cálice de Ailing Loran, que sela a terra trágica perdida nas areias.",
+      "is_missable": 0,
+      "is_spoiler": 1,
+      "name": "Chalice of Ailing Loran",
+      "name_pt": "Cálice de Ailing Loran",
+      "tip": "Obtido com Amygdala. É parte da preparação para materiais e progresso rumo à rainha pthumeriana.",
+      "trophy_code": "bb_chalice_of_ailing_loran",
+      "type": "Bronze"
+    },
+    {
+      "description": "Obtenha o Grande Cálice de Isz, que sela o lar dos parentes cósmicos.",
+      "is_missable": 0,
+      "is_spoiler": 1,
+      "name": "Chalice of Isz",
+      "name_pt": "Cálice de Isz",
+      "tip": "Obtido com Ebrietas. Não misture esse requisito da lista base com The Old Hunters.",
+      "trophy_code": "bb_chalice_of_isz",
+      "type": "Bronze"
+    }
+  ]
+}

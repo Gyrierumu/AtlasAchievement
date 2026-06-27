@@ -1,0 +1,489 @@
+{
+  "game": {
+    "avoid_if": "Evite apenas se você não gosta de backtracking, mapa metroidvania, coletáveis e desafios de plataforma/combate.",
+    "before_you_start": "Nada da lista base é online, de dificuldade ou perdível; apenas não misture os troféus do DLC Mask of Darkness com a platina.",
+    "best_for": "Ideal para quem quer uma platina metroidvania acessível, curta/média, com exploração, bosses, platforming e bom ritmo de cleanup.",
+    "cleanup_advice": "Depois da história, revisite áreas com todos os poderes para limpar mapa, upgrades, amuletos, lore não obrigatório, side quests e troféus específicos.",
+    "cover_image": "https://cdn.cloudflare.steamstatic.com/steam/apps/2751000/library_600x900.jpg",
+    "coverage_level": "strong",
+    "created_at": "2026-05-09 19:53:48",
+    "difficulty": 4,
+    "difficulty_reason": "A platina é acessível e não exige dificuldade alta; o maior cuidado é explorar bem o mapa, dominar platforming/combate e limpar coletáveis.",
+    "dlc_scope": "Guia focado na lista base da platina; Mask of Darkness, Divine Trials e updates/add-ons devem ficar separados se o projeto suportar DLC/add-ons.",
+    "editorial_notes": "",
+    "editorial_review_status": null,
+    "editorial_status": "published",
+    "first_run_advice": "Jogue a história naturalmente e explore bastante, mas deixe parte do cleanup para quando todos os poderes temporais estiverem liberados.",
+    "grind_summary": "O peso está em exploração metroidvania, upgrades, amuletos, bosses opcionais, side quests, mapa e coletáveis.",
+    "guide_avoid": null,
+    "guide_best_moment": null,
+    "guide_dlc": null,
+    "guide_grind": null,
+    "guide_ideal": null,
+    "guide_online": null,
+    "guide_runs": null,
+    "image": "https://cdn.cloudflare.steamstatic.com/steam/apps/2751000/header.jpg",
+    "is_verified": 0,
+    "last_reviewed_at": "",
+    "missable": "Nada da lista base é perdível: tudo pode ser limpo em free-roam após a história. Apenas separe a platina base do DLC Mask of Darkness e considere o histórico de bug corrigido de Charitable Soul em saves antigos.",
+    "missable_summary": "0 perdíveis definitivos na lista base; todo o checklist pode ser feito em free-roam pós-história.",
+    "name": "Prince of Persia: The Lost Crown",
+    "online_summary": "Não há exigência online para a platina da lista base.",
+    "quality_warnings": "[]",
+    "reviewed_by": "",
+    "runs_summary": "Uma campanha principal com cleanup livre após a história. Nada da lista base é perdível.",
+    "slug": "prince-of-persia-the-lost-crown",
+    "time": "25-30h",
+    "time_bucket": "medium",
+    "time_max_hours": 30,
+    "time_min_hours": 25,
+    "time_reason": "A faixa de 25-30 horas considera campanha, exploração, upgrades, bosses opcionais, side quests, amuletos, Soma Tree petals, Wak-Wak heads, Sand Jars e cleanup.",
+    "time_sort_hours": 25,
+    "updated_at": "2026-06-27 02:36:58",
+    "verification_note": "Guia público seed-managed com checklist base e roadmap; aguardando revisão editorial manual final.",
+    "verification_status": "review",
+    "walkthrough": null
+  },
+  "redirects": [],
+  "roadmaps": [
+    {
+      "content": "{\"title\":\"Avance pela campanha\",\"focus\":\"\",\"objective\":\"jogue a história naturalmente, desbloqueando poderes temporais, regiões, mapa, armas, Wak-Wak Trees, Athra Surges e sistemas principais; não há troféus de dificuldade.\",\"actions\":[],\"warning\":\"\",\"result\":\"\"}",
+      "step_order": 1
+    },
+    {
+      "content": "{\"title\":\"explore áreas acessíveis e colete upgrades, amuletos, Xerxes...\",\"focus\":\"\",\"objective\":\"explore áreas acessíveis e colete upgrades, amuletos, Xerxes Coins, Soma Tree petals, Wak-Wak heads e itens encontrados no caminho, sem tentar limpar tudo cedo demais.\",\"actions\":[],\"warning\":\"\",\"result\":\"\"}",
+      "step_order": 2
+    },
+    {
+      "content": "{\"title\":\"após obter todos os poderes principais, revisite áreas antes...\",\"focus\":\"\",\"objective\":\"após obter todos os poderes principais, revisite áreas antes inacessíveis para completar exploração metroidvania, side quests, mapa e coletáveis da lista base.\",\"actions\":[],\"warning\":\"\",\"result\":\"\"}",
+      "step_order": 3
+    },
+    {
+      "content": "{\"title\":\"Treine chefes sem dano\",\"focus\":\"\",\"objective\":\"derrote bosses opcionais, Alternate Sargon, Lost Warriors, Jailer, ghost ship/secret floor e complete side quests como Moon Gatherer, Architect e Prophecy of Mount Qaf.\",\"actions\":[],\"warning\":\"\",\"result\":\"\"}",
+      "step_order": 4
+    },
+    {
+      "content": "{\"title\":\"limpe amuletos, Athra Surges, necklace, sword/bow upgrades, S...\",\"focus\":\"\",\"objective\":\"limpe amuletos, Athra Surges, necklace, sword/bow upgrades, Soma Tree petals, Wak-Wak heads, Sand Jars, Mystery Chests e troféus específicos de combate/exploração.\",\"actions\":[],\"warning\":\"\",\"result\":\"\"}",
+      "step_order": 5
+    },
+    {
+      "content": "{\"title\":\"Revise pendências finais\",\"focus\":\"\",\"objective\":\"faça o cleanup final pós-história em free-roam, confirme que Mask of Darkness não foi misturado à lista base e revise o checklist para a platina.\",\"actions\":[],\"warning\":\"\",\"result\":\"\"}",
+      "step_order": 6
+    }
+  ],
+  "schemaVersion": 1,
+  "seedExtras": {
+    "aliases": [],
+    "attentionPoints": [
+      {
+        "tip": "A lista base não tem troféus perdíveis. Tudo pode ser feito no free roam após a história.",
+        "title": "Sem perdíveis na lista base",
+        "type": "Lista base"
+      },
+      {
+        "tip": "Depois do final, o jogador pode voltar ao mapa para concluir side quests, coletáveis, upgrades e troféus misc.",
+        "title": "Free roam após a história",
+        "type": "Cleanup"
+      },
+      {
+        "tip": "O DLC Mask of Darkness tem lista própria e não entra nos 31 troféus base.",
+        "title": "Mask of Darkness separado",
+        "type": "DLC separado"
+      },
+      {
+        "tip": "Health Is Wealth é perdível do DLC Mask of Darkness, não da platina base.",
+        "title": "Health Is Wealth é apenas do DLC",
+        "type": "Apenas DLC"
+      },
+      {
+        "tip": "Os 57 Lore Items não são necessários para a platina base.",
+        "title": "Lore Items não são necessários",
+        "type": "Fora da platina"
+      },
+      {
+        "tip": "Charitable Soul exige as 9 side quests do jogo base. Mantenha o jogo atualizado por causa de problemas antigos em Treasures of the Seven Seas.",
+        "title": "Charitable Soul e side quests",
+        "type": "9 side quests"
+      },
+      {
+        "tip": "O jogo não tem save manual; usa autosave. Isso não torna troféus perdíveis, mas exige cautela em caso de bug.",
+        "title": "Autosave",
+        "type": "Sem save manual"
+      }
+    ],
+    "checklist": [],
+    "faq": [
+      {
+        "answer": "Não. A lista base não tem perdíveis e tudo pode ser feito no free roam após a história.",
+        "question": "Prince of Persia: The Lost Crown tem troféus perdíveis?"
+      },
+      {
+        "answer": "Não. A platina pode ser feita em qualquer dificuldade, inclusive na mais fácil.",
+        "question": "A dificuldade afeta troféus?"
+      },
+      {
+        "answer": "Não. A lista base é totalmente offline.",
+        "question": "Tem troféus online?"
+      },
+      {
+        "answer": "Não. A platina é single-player e não exige cooperação.",
+        "question": "Tem coop?"
+      },
+      {
+        "answer": "Uma jogada é suficiente.",
+        "question": "Quantas jogadas são necessárias?"
+      },
+      {
+        "answer": "Sim. Após terminar a história, é possível voltar ao mapa para side quests, coletáveis, upgrades e cleanup.",
+        "question": "Existe free roam após a história?"
+      },
+      {
+        "answer": "Não. Mask of Darkness é DLC separado e não entra nos 31 troféus base.",
+        "question": "Mask of Darkness é necessário para a platina?"
+      },
+      {
+        "answer": "Sim, mas apenas no DLC Mask of Darkness. Esse troféu não faz parte da platina base.",
+        "question": "Health Is Wealth é perdível?"
+      },
+      {
+        "answer": "Não. Os 57 Lore Items não são necessários para a platina base.",
+        "question": "Lore Items são necessários?"
+      },
+      {
+        "answer": "Wak-Wak Heads, Amulets, Amulet Holders, Sand Jars, Soma Tree Petals, Mystery Chests ligados à side quest The Architect e Lost Warriors ligados à side quest The Lost Warriors.",
+        "question": "Quais coletáveis são necessários?"
+      },
+      {
+        "answer": "Concluir todas as 9 side quests do jogo base: The Lost Warriors, The Moon Gatherer, Motherly Love, Prophecy of Mount Qaf, Ancient Power Unearthed, Treasures of the Seven Seas, The Architect, The Deserter e The Impossible Climb.",
+        "question": "Charitable Soul exige o quê?"
+      },
+      {
+        "answer": "Não. O jogo usa autosave. Isso não torna troféus perdíveis, mas é recomendável manter o jogo atualizado antes do cleanup.",
+        "question": "O jogo tem save manual?"
+      },
+      {
+        "answer": "Não necessariamente. O foco são os troféus, side quests, upgrades e coletáveis exigidos para a platina.",
+        "question": "Precisa completar 100% do mapa?"
+      }
+    ],
+    "note": "Campos exportados para auditoria. O SQLite atual nao possui colunas nativas para todos esses extras; a importacao preserva o que o banco suporta.",
+    "quickDecision": {
+      "summary": "Platina offline de 25-30h e 4/10, sem perdíveis, online, coop, dificuldade obrigatória ou DLC. Faça a campanha para liberar poderes, volte em free roam e feche side quests, coletáveis base, upgrades e misc sem misturar Mask of Darkness."
+    },
+    "seo": {},
+    "tags": []
+  },
+  "slug": "prince-of-persia-the-lost-crown",
+  "trophies": [
+    {
+      "description": "Acquire all Trophies",
+      "is_missable": 0,
+      "is_spoiler": 0,
+      "name": "Prince of Persia",
+      "name_pt": "Príncipe da Pérsia",
+      "tip": "Conquiste todos os outros troféus da lista base. A expansão não é necessária para a platina.",
+      "trophy_code": "poptlc_prince_of_persia",
+      "type": "Platina"
+    },
+    {
+      "description": "Defeat the king of beasts",
+      "is_missable": 0,
+      "is_spoiler": 1,
+      "name": "The Maneater",
+      "name_pt": "O Devorador de Homens",
+      "tip": "Troféu de história: derrote Jahandar, o King of Beasts, durante a campanha principal.",
+      "trophy_code": "poptlc_the_maneater",
+      "type": "Prata"
+    },
+    {
+      "description": "Defeat the otherworldly queen",
+      "is_missable": 0,
+      "is_spoiler": 1,
+      "name": "The Forest Trespasser",
+      "name_pt": "A Invasora da Floresta",
+      "tip": "Troféu de história: derrote Kiana, a Forest Queen, e avance para desbloquear poderes novos.",
+      "trophy_code": "poptlc_the_forest_trespasser",
+      "type": "Prata"
+    },
+    {
+      "description": "Defeat the banished god",
+      "is_missable": 0,
+      "is_spoiler": 1,
+      "name": "Snake in the Sand",
+      "name_pt": "Serpente na Areia",
+      "tip": "Troféu de história: derrote Azhdaha no Pit of Eternal Sands.",
+      "trophy_code": "poptlc_snake_in_the_sand",
+      "type": "Prata"
+    },
+    {
+      "description": "Defeat the artful legend",
+      "is_missable": 0,
+      "is_spoiler": 1,
+      "name": "Fists & Arrows",
+      "name_pt": "Punhos e Flechas",
+      "tip": "Troféu de história: derrote Menolias e avance na campanha.",
+      "trophy_code": "poptlc_fists_and_arrows",
+      "type": "Prata"
+    },
+    {
+      "description": "Defeat the mighty master",
+      "is_missable": 0,
+      "is_spoiler": 1,
+      "name": "The Storm Master",
+      "name_pt": "O Mestre da Tempestade",
+      "tip": "Troféu de história: derrote Orod na região do Raging Sea.",
+      "trophy_code": "poptlc_the_storm_master",
+      "type": "Prata"
+    },
+    {
+      "description": "Defeat the vengeful prince",
+      "is_missable": 0,
+      "is_spoiler": 1,
+      "name": "The White Lion",
+      "name_pt": "O Leão Branco",
+      "tip": "Troféu de história: derrote Vahram e desbloqueie Fabric of Time.",
+      "trophy_code": "poptlc_the_white_lion",
+      "type": "Prata"
+    },
+    {
+      "description": "Defeat the King",
+      "is_missable": 0,
+      "is_spoiler": 1,
+      "name": "King of Kings",
+      "name_pt": "Rei dos Reis",
+      "tip": "Troféu de história avançada: derrote King Darius na reta final.",
+      "trophy_code": "poptlc_king_of_kings",
+      "type": "Prata"
+    },
+    {
+      "description": "Defeat the god prince",
+      "is_missable": 0,
+      "is_spoiler": 1,
+      "name": "The End of Time",
+      "name_pt": "O Fim do Tempo",
+      "tip": "Troféu de história/final: derrote o boss final. Depois ainda há free-roam para cleanup.",
+      "trophy_code": "poptlc_the_end_of_time",
+      "type": "Ouro"
+    },
+    {
+      "description": "Defeat the old general",
+      "is_missable": 0,
+      "is_spoiler": 1,
+      "name": "A Warrior’s End",
+      "name_pt": "O Fim de um Guerreiro",
+      "tip": "Conclua a linha The Lost Warriors e derrote o velho general após encontrar os Lost Warriors.",
+      "trophy_code": "poptlc_a_warriors_end",
+      "type": "Prata"
+    },
+    {
+      "description": "Eliminate the Jailer",
+      "is_missable": 0,
+      "is_spoiler": 1,
+      "name": "Time Served",
+      "name_pt": "Pena Cumprida",
+      "tip": "Volte ao Sacred Archives com Clairvoyance e derrote o Jailer.",
+      "trophy_code": "poptlc_time_served",
+      "type": "Prata"
+    },
+    {
+      "description": "Defeat an alternate version",
+      "is_missable": 0,
+      "is_spoiler": 0,
+      "name": "Parallel Universe",
+      "name_pt": "Universo Paralelo",
+      "tip": "Derrote qualquer Alternate Sargon; eles também ajudam a liberar Athra Surges.",
+      "trophy_code": "poptlc_parallel_universe",
+      "type": "Bronze"
+    },
+    {
+      "description": "Use every Athra Surge",
+      "is_missable": 0,
+      "is_spoiler": 0,
+      "name": "Athra Warrior",
+      "name_pt": "Guerreiro Interior",
+      "tip": "Desbloqueie todos os 10 Athra Surges, equipe-os e use cada um pelo menos uma vez.",
+      "trophy_code": "poptlc_warrior_within",
+      "type": "Prata"
+    },
+    {
+      "description": "Fully upgrade the necklace",
+      "is_missable": 0,
+      "is_spoiler": 0,
+      "name": "Glory of Faravahar",
+      "name_pt": "Glória de Faravahar",
+      "tip": "Colete todos os Amulet Holders necessários para alcançar 12 slots no necklace.",
+      "trophy_code": "poptlc_glory_of_faravahar",
+      "type": "Prata"
+    },
+    {
+      "description": "Fully upgrade sword and bow",
+      "is_missable": 0,
+      "is_spoiler": 0,
+      "name": "Blessing of Shamshir",
+      "name_pt": "Bênção de Shamshir",
+      "tip": "Use Time Crystals, Azure Damascus Ingots e Xerxes Coins para maximizar espada e arco na forge.",
+      "trophy_code": "poptlc_blessing_of_shamshir",
+      "type": "Ouro"
+    },
+    {
+      "description": "Collect all amulets",
+      "is_missable": 0,
+      "is_spoiler": 0,
+      "name": "Tools of a Prophet",
+      "name_pt": "Ferramentas de um Profeta",
+      "tip": "Colete os 36 amuletos da lista base; amuleto extra de edição deluxe não conta para a platina.",
+      "trophy_code": "poptlc_tools_of_a_prophet",
+      "type": "Ouro"
+    },
+    {
+      "description": "Acquire all Soma Tree petals",
+      "is_missable": 0,
+      "is_spoiler": 0,
+      "name": "Elixir of Gods",
+      "name_pt": "Elixir dos Deuses",
+      "tip": "Colete todos os Soma Tree petals necessários para maximizar vida na lista base.",
+      "trophy_code": "poptlc_elixir_of_gods",
+      "type": "Ouro"
+    },
+    {
+      "description": "Find the Herbalist’s last camp",
+      "is_missable": 0,
+      "is_spoiler": 0,
+      "name": "Cyra’s Last Hope",
+      "name_pt": "A Última Esperança de Cyra",
+      "tip": "Com Fabric of Time, acesse a área avançada da Hyrcanian Forest e encontre o último acampamento da Herbalist.",
+      "trophy_code": "poptlc_cyras_last_hope",
+      "type": "Bronze"
+    },
+    {
+      "description": "Complete the prophecy fresco",
+      "is_missable": 0,
+      "is_spoiler": 0,
+      "name": "Written in the Sand",
+      "name_pt": "Escrito na Areia",
+      "tip": "Complete a side quest Prophecy of Mount Qaf encontrando os 30 Sand Jars/Spirited-Sand Jars.",
+      "trophy_code": "poptlc_written_in_the_sand",
+      "type": "Prata"
+    },
+    {
+      "description": "Speak with every Wak-Wak head",
+      "is_missable": 0,
+      "is_spoiler": 0,
+      "name": "Tree of Life",
+      "name_pt": "Árvore da Vida",
+      "tip": "Fale com todos os Wak-Wak heads espalhados por Mount Qaf.",
+      "trophy_code": "poptlc_tree_of_life",
+      "type": "Prata"
+    },
+    {
+      "description": "Discover the ghost ship",
+      "is_missable": 0,
+      "is_spoiler": 0,
+      "name": "Spectre of the Seas",
+      "name_pt": "Espectro dos Mares",
+      "tip": "Use Fabric of Time para alcançar a região do Ghost Ship no Raging Sea.",
+      "trophy_code": "poptlc_spectre_of_the_seas",
+      "type": "Bronze"
+    },
+    {
+      "description": "Discover a secret floor",
+      "is_missable": 0,
+      "is_spoiler": 0,
+      "name": "Hidden Floor",
+      "name_pt": "Andar Oculto",
+      "tip": "Compre a Lost Key do Scrapper e use o elevador da Citadel para acessar o andar secreto.",
+      "trophy_code": "poptlc_hidden_floor",
+      "type": "Bronze"
+    },
+    {
+      "description": "Complete the Moon Gatherer’s quest",
+      "is_missable": 0,
+      "is_spoiler": 0,
+      "name": "The True Moon",
+      "name_pt": "A Lua Verdadeira",
+      "tip": "Complete a side quest The Moon Gatherer no Sacred Archives.",
+      "trophy_code": "poptlc_the_true_moon",
+      "type": "Prata"
+    },
+    {
+      "description": "Complete every side quest",
+      "is_missable": 0,
+      "is_spoiler": 0,
+      "name": "Charitable Soul",
+      "name_pt": "Alma Caridosa",
+      "tip": "Complete todas as 9 side quests da lista base. Em saves antigos, atenção ao histórico de bug em Treasures of the Seven Seas.",
+      "trophy_code": "poptlc_charitable_soul",
+      "type": "Ouro"
+    },
+    {
+      "description": "Eliminate an enemy with the Dimensional Claw",
+      "is_missable": 0,
+      "is_spoiler": 0,
+      "name": "Betrayal",
+      "name_pt": "Traição",
+      "tip": "Use Dimensional Claw para capturar e arremessar inimigo/objeto de modo que elimine outro inimigo.",
+      "trophy_code": "poptlc_betrayal",
+      "type": "Bronze"
+    },
+    {
+      "description": "Collect 5 ores",
+      "is_missable": 0,
+      "is_spoiler": 0,
+      "name": "Natural Resources",
+      "name_pt": "Recursos Naturais",
+      "tip": "Colete 5 Azure Damascus Ingots durante a exploração; há mais que o necessário na lista base.",
+      "trophy_code": "poptlc_natural_resources",
+      "type": "Bronze"
+    },
+    {
+      "description": "Eliminate 20 enemies with an opportunity attack",
+      "is_missable": 0,
+      "is_spoiler": 0,
+      "name": "Shock Trooper",
+      "name_pt": "Tropa de Choque",
+      "tip": "Faça 20 opportunity attacks/parries com brilho amarelo; treino e inimigos do Sacred Archives ajudam no farm.",
+      "trophy_code": "poptlc_shock_trooper",
+      "type": "Bronze"
+    },
+    {
+      "description": "Defeat a Lost Warrior",
+      "is_missable": 0,
+      "is_spoiler": 0,
+      "name": "An Honorable End",
+      "name_pt": "Um Fim Honroso",
+      "tip": "Derrote qualquer Lost Warrior da side quest The Lost Warriors.",
+      "trophy_code": "poptlc_an_honorable_end",
+      "type": "Bronze"
+    },
+    {
+      "description": "Earn 10,000 Time Crystals",
+      "is_missable": 0,
+      "is_spoiler": 0,
+      "name": "All the Time in the World",
+      "name_pt": "Todo o Tempo do Mundo",
+      "tip": "Acumule 10.000 Time Crystals ao longo do jogo; é cumulativo e pode vir naturalmente no cleanup.",
+      "trophy_code": "poptlc_all_the_time_in_the_world",
+      "type": "Bronze"
+    },
+    {
+      "description": "Eliminate 30 enemies in the air",
+      "is_missable": 0,
+      "is_spoiler": 0,
+      "name": "Air Dancer",
+      "name_pt": "Dançarino Aéreo",
+      "tip": "Mate 30 inimigos enquanto você e/ou eles estão no ar; inimigos voadores e launches aceleram o progresso.",
+      "trophy_code": "poptlc_air_dancer",
+      "type": "Bronze"
+    },
+    {
+      "description": "Eliminate 5 enemies by throwing them into spikes",
+      "is_missable": 0,
+      "is_spoiler": 0,
+      "name": "Deadly Trap",
+      "name_pt": "Armadilha Mortal",
+      "tip": "Jogue/empurre 5 inimigos em espinhos ou armadilhas; use áreas com respawn perto de Wak-Wak Trees.",
+      "trophy_code": "poptlc_deadly_trap",
+      "type": "Bronze"
+    }
+  ]
+}

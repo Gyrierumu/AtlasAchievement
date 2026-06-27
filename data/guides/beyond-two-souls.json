@@ -1,0 +1,767 @@
+{
+  "game": {
+    "avoid_if": "Evite se você não gosta de repetir capítulos, seguir decisões específicas, usar Duo Mode/local quando necessário ou refazer rotas por pequenas escolhas anteriores.",
+    "before_you_start": "Planeje All Endings, Saved All, A Better World e Uncontrollable antes do cleanup; essas rotas podem exigir replay longo a partir de capítulos específicos. Duo Mode/local é um requisito de modo/controle/app, não coop online obrigatório.",
+    "best_for": "Ideal para quem quer uma platina narrativa acessível, sobrenatural e baseada em escolhas, finais e consequências.",
+    "cleanup_advice": "Use Chapter Select com cuidado: troféus isolados podem ser feitos por capítulo, mas finais, mortes e salvamentos exigem continuar a linha do tempo a partir do capítulo alterado com save.",
+    "cover_image": "https://cdn.cloudflare.steamstatic.com/steam/apps/960990/library_600x900.jpg",
+    "coverage_level": "strong",
+    "created_at": "2026-05-09 19:53:52",
+    "difficulty": 2,
+    "difficulty_reason": "A dificuldade mecânica é baixa, sem troféus de dificuldade; o desafio está em organizar rotas, finais, consequências persistentes, Duo Mode e bonuses sem repetir mais capítulos do que o necessário.",
+    "dlc_scope": "Guia focado na lista base de Beyond: Two Souls, sem DLC/add-ons separados.",
+    "editorial_notes": "",
+    "editorial_review_status": null,
+    "editorial_status": "published",
+    "first_run_advice": "Na primeira campanha, jogue uma rota positiva, salve personagens importantes e colete bonuses sempre que possível. Depois use Chapter Select para rotas incompatíveis e finais.",
+    "grind_summary": "O peso está em escolhas, todos os finais, personagens salvos/mortos, ações de Aiden, bonuses/coletáveis e troféus específicos de capítulo.",
+    "guide_avoid": null,
+    "guide_best_moment": null,
+    "guide_dlc": null,
+    "guide_grind": null,
+    "guide_ideal": null,
+    "guide_online": null,
+    "guide_runs": null,
+    "image": "https://cdn.cloudflare.steamstatic.com/steam/apps/960990/header.jpg",
+    "is_verified": 0,
+    "last_reviewed_at": "",
+    "missable": "Sim, mas como atenção por rota/capítulo: a lista depende de escolhas, finais, personagens salvos/mortos, ações de Aiden, Duo Mode/local, romance, bonuses/coletáveis e capítulos específicos.",
+    "missable_summary": "Grande parte da lista é de atenção por rota/capítulo, não perdível definitivo: All Endings, Saved All, A Better World, Uncontrollable, Explorer, Together Till the End, romance e troféus específicos dependem de ação correta ou continuidade.",
+    "name": "Beyond: Two Souls",
+    "online_summary": "Sem online obrigatório. Duo Mode/local pode ser usado quando relevante, mas não deve ser confundido com coop online obrigatório, multiplayer online ou PS+.",
+    "quality_warnings": "[]",
+    "reviewed_by": "",
+    "runs_summary": "A platina exige uma campanha principal e vários replays por Chapter Select para finais, personagens salvos/mortos, Duo Mode/local, bonuses e escolhas incompatíveis.",
+    "slug": "beyond-two-souls",
+    "time": "20-30h",
+    "time_bucket": "medium",
+    "time_max_hours": 30,
+    "time_min_hours": 20,
+    "time_reason": "A faixa de 20-30 horas considera campanha principal, Chapter Select, todos os finais, bonuses, Duo Mode e troféus condicionais.",
+    "time_sort_hours": 20,
+    "updated_at": "2026-06-27 02:36:58",
+    "verification_note": "Lista base adicionada por fontes públicas; aguarda validação editorial final.",
+    "verification_status": "review",
+    "walkthrough": null
+  },
+  "redirects": [],
+  "roadmaps": [
+    {
+      "content": "{\"title\":\"Avance pela campanha\",\"focus\":\"\",\"objective\":\"Faça a primeira campanha em rota positiva, salvando personagens importantes, coletando bonuses e entendendo escolhas de Jodie e Aiden antes de buscar finais incompatíveis.\",\"actions\":[],\"warning\":\"\",\"result\":\"\"}",
+      "step_order": 1
+    },
+    {
+      "content": "{\"title\":\"Limpe coletáveis por seleção de capítulos\",\"focus\":\"\",\"objective\":\"Use Chapter Select para troféus específicos de capítulo, usando save apenas quando a consequência precisar persistir para Saved All, A Better World ou All Endings.\",\"actions\":[],\"warning\":\"\",\"result\":\"\"}",
+      "step_order": 2
+    },
+    {
+      "content": "{\"title\":\"Prepare a rota de Saved All e finais positivos, mantendo vivo...\",\"focus\":\"\",\"objective\":\"Prepare a rota de Saved All e finais positivos, mantendo vivos todos os personagens que podem ser salvos e registrando quais escolhas impactam o epílogo.\",\"actions\":[],\"warning\":\"\",\"result\":\"\"}",
+      "step_order": 3
+    },
+    {
+      "content": "{\"title\":\"Prepare a rota de A Better World deixando todos os personagen...\",\"focus\":\"\",\"objective\":\"Prepare a rota de A Better World deixando todos os personagens possíveis morrerem e escolhendo ir com eles ao Infraworld, continuando a linha do tempo com save.\",\"actions\":[],\"warning\":\"\",\"result\":\"\"}",
+      "step_order": 4
+    },
+    {
+      "content": "{\"title\":\"Prossiga pela rota planejada\",\"focus\":\"\",\"objective\":\"Complete All Endings revisitando decisões finais e epílogos, mas valide quando a variação exige continuidade a partir de capítulos anteriores e não apenas repetir a cena final.\",\"actions\":[],\"warning\":\"\",\"result\":\"\"}",
+      "step_order": 5
+    },
+    {
+      "content": "{\"title\":\"Coordene a etapa com a dupla\",\"focus\":\"\",\"objective\":\"Limpe Uncontrollable, In Love with Ryan, Perfect Lover, Together Till the End em Duo Mode/local, Two Souls e outros troféus incompatíveis com rotas anteriores; não trate isso como coop online obrigatório.\",\"actions\":[],\"warning\":\"\",\"result\":\"\"}",
+      "step_order": 6
+    },
+    {
+      "content": "{\"title\":\"Fechamento e revisão final\",\"focus\":\"\",\"objective\":\"Finalize Explorer/bonuses, capítulos específicos, ações de Aiden, batalhas contra entidades e a revisão completa da checklist antes de fechar BEYOND: TWO SOULS™ MASTER.\",\"actions\":[],\"warning\":\"\",\"result\":\"\"}",
+      "step_order": 7
+    }
+  ],
+  "schemaVersion": 1,
+  "seedExtras": {
+    "aliases": [],
+    "attentionPoints": [
+      {
+        "detail": "Together Till the End exige terminar a campanha em Duo Mode. Confira o modo em dupla sempre que voltar ao menu ou continuar a partida.",
+        "tags": [
+          "Duo Mode",
+          "Coop local"
+        ],
+        "title": "Duo Mode"
+      },
+      {
+        "detail": "Duo Mode não é online obrigatório. A platina não exige PS Plus, servidores ou coop online.",
+        "tags": [
+          "Offline",
+          "Sem online"
+        ],
+        "title": "Sem online"
+      },
+      {
+        "detail": "Salve Jimmy, Walter, Paul, Norah, Cole e Ryan em uma rota contínua para Saved All.",
+        "tags": [
+          "Perdível",
+          "Todos vivos"
+        ],
+        "title": "Saved All"
+      },
+      {
+        "detail": "Faça uma rota oposta a partir de Homeless/Desabrigada, deixando todos morrerem e escolhendo Beyond/Além.",
+        "tags": [
+          "Perdível",
+          "Todos mortos"
+        ],
+        "title": "A Better World"
+      },
+      {
+        "detail": "Use as rotas de todos vivos/todos mortos e repita Black Sun/Epílogo para ver as variações necessárias. Espere os créditos quando o jogo exigir.",
+        "tags": [
+          "Final",
+          "Replay"
+        ],
+        "title": "All Endings"
+      },
+      {
+        "detail": "Planeje as ações destrutivas de Aiden em uma rota dedicada. Esse troféu exige oportunidades específicas em vários capítulos.",
+        "tags": [
+          "Perdível",
+          "Aiden"
+        ],
+        "title": "Uncontrollable"
+      },
+      {
+        "detail": "Siga as escolhas de romance com Ryan. Se bloquear a rota, o troféu pode ficar para outra run.",
+        "tags": [
+          "Perdível",
+          "Romance"
+        ],
+        "title": "In Love with Ryan"
+      },
+      {
+        "detail": "Há 22 bônus: 20 coletáveis com Aiden e 2 liberados ao finalizar o jogo. Chapter select ajuda no cleanup.",
+        "tags": [
+          "Coletável",
+          "Chapter Select"
+        ],
+        "title": "Explorer"
+      },
+      {
+        "detail": "Use chapter select para troféus pontuais, mas salve progresso e continue a partir do capítulo quando o troféu depender de consequências futuras.",
+        "tags": [
+          "Chapter Select",
+          "Atenção"
+        ],
+        "title": "Chapter Select"
+      },
+      {
+        "detail": "Vários troféus só aparecem no fim do capítulo, no carregamento seguinte ou após os créditos. Não saia cedo.",
+        "tags": [
+          "Atenção",
+          "Créditos"
+        ],
+        "title": "Troféus pipam tarde"
+      },
+      {
+        "detail": "QTEs, lutas e stealth não são troféus de dificuldade selecionável.",
+        "tags": [
+          "Sem dificuldade",
+          "QTE"
+        ],
+        "title": "Não inflar Dificuldade"
+      },
+      {
+        "detail": "O guia de Beyond: Two Souls precisa usar alertas de spoiler nos finais, mas sem deixar pontos de atenção genéricos.",
+        "tags": [
+          "Spoiler",
+          "Final"
+        ],
+        "title": "Spoilers"
+      }
+    ],
+    "checklist": [
+      "Conferir se o guia tem 46 troféus.",
+      "Conferir se BEYOND: TWO SOULS MASTER é a platina.",
+      "Conferir distribuição: 1 platina, 3 ouro, 6 prata e 36 bronze.",
+      "Conferir onlineRequired false.",
+      "Conferir dlcRequired false.",
+      "Conferir coopRequired true por causa de Duo Mode obrigatório.",
+      "Conferir Together Till the End como Duo Mode obrigatório.",
+      "Conferir se Online está 0.",
+      "Conferir se DLC está 0.",
+      "Conferir se Dificuldade está 0.",
+      "Conferir se missableCount bate com troféus marcados como Perdível.",
+      "Conferir se os perdíveis principais são In Love with Ryan, Uncontrollable, A Better World e Saved All.",
+      "Conferir All Endings como Final/Rota/Replay, não Perdível.",
+      "Conferir Explorer como 22 bônus.",
+      "Conferir Explorer como Coletável/Chapter Select.",
+      "Conferir Saved All com Jimmy, Walter, Paul, Norah, Cole e Ryan.",
+      "Conferir A Better World com todos mortos.",
+      "Conferir Uncontrollable com ações de Aiden.",
+      "Conferir In Love with Ryan.",
+      "Conferir Together Till the End.",
+      "Conferir All Endings.",
+      "Conferir troféus de capítulo recuperáveis por chapter select.",
+      "Conferir se todos os troféus têm nome oficial em inglês como principal.",
+      "Conferir se todos têm PT-BR abaixo.",
+      "Conferir se descrições estão em português.",
+      "Conferir se textos em português têm acentos.",
+      "Conferir se não aparecem rótulos editoriais antigos nem placeholder de descrição.",
+      "Conferir se roadmap está estruturado como array/objeto.",
+      "Conferir se roadmap não renderiza objetos crus.",
+      "Conferir se não aparecem nomes técnicos de campos do roadmap no front.",
+      "Conferir FAQ, decisão rápida, SEO e pontos de atenção.",
+      "Conferir se página individual e catálogo exibem o mesmo status editorial.",
+      "Conferir se flags do topo batem com filtros do catálogo."
+    ],
+    "faq": [
+      {
+        "answer": "Sim. Os principais são In Love with Ryan, Uncontrollable, A Better World e Saved All, porque dependem de escolhas e rotas específicas.",
+        "question": "Beyond: Two Souls tem troféus perdíveis?"
+      },
+      {
+        "answer": "Não. A platina não exige online.",
+        "question": "Precisa jogar online para platinar?"
+      },
+      {
+        "answer": "Existe um troféu que exige Duo Mode: Together Till the End. Ele pode ser feito localmente com dois controles ou aplicativo, sem online obrigatório.",
+        "question": "Precisa de cooperação?"
+      },
+      {
+        "answer": "Não. A platina usa apenas a lista base de 46 troféus.",
+        "question": "Precisa de DLC?"
+      },
+      {
+        "answer": "A rota segura usa uma run em Duo Mode salvando todos e uma segunda rota a partir de Homeless/Desabrigada deixando todos morrerem, além de replays do final para All Endings.",
+        "question": "Quantas runs são necessárias?"
+      },
+      {
+        "answer": "Não tudo. Ele resolve muitos troféus de capítulo e coletáveis, mas rotas como Saved All e A Better World precisam de continuidade a partir de Homeless/Desabrigada.",
+        "question": "Chapter Select resolve tudo?"
+      },
+      {
+        "answer": "Salvar Jimmy, Walter, Paul, Norah, Cole e Ryan na mesma rota contínua.",
+        "question": "O que é preciso para Saved All?"
+      },
+      {
+        "answer": "Deixar todos os personagens possíveis morrerem e escolher Beyond/Além na rota correta.",
+        "question": "O que é preciso para A Better World?"
+      },
+      {
+        "answer": "O jogo possui várias cenas e variações de final. Use uma rota com todos vivos, outra com todos mortos e repita Black Sun/Epílogo para registrar as variações necessárias.",
+        "question": "All Endings exige quantos finais?"
+      },
+      {
+        "answer": "Não. Explorer exige os bônus, e eles podem ser recuperados por chapter select. Os dois últimos bônus são liberados ao finalizar o jogo.",
+        "question": "Explorer é perdível?"
+      },
+      {
+        "answer": "Não. QTEs e lutas podem exigir atenção, mas não há troféu de dificuldade selecionável.",
+        "question": "A dificuldade afeta troféus?"
+      },
+      {
+        "answer": "Em média, cerca de 25 a 35 horas, dependendo de quantos capítulos e finais precisam ser repetidos.",
+        "question": "Quanto tempo leva para platinar?"
+      }
+    ],
+    "note": "Campos exportados para auditoria. O SQLite atual nao possui colunas nativas para todos esses extras; a importacao preserva o que o banco suporta.",
+    "quickDecision": {
+      "difficulty": "Baixa.",
+      "dlc": "Não exige DLC.",
+      "firstAction": "Comece uma run em Duo Mode salvando todos e colete bônus com Aiden sempre que possível.",
+      "mainRisk": "Duo Mode, Saved All, A Better World, Uncontrollable, In Love with Ryan e All Endings.",
+      "onlineCoop": "Não exige online, mas exige Duo Mode para Together Till the End.",
+      "risk": "Médio. O risco vem de escolhas de rota e continuidade, não de dificuldade.",
+      "time": "Médio, cerca de 25 a 35 horas.",
+      "verdict": "Sim. É uma platina fácil, mas repetitiva por causa dos finais e rotas."
+    },
+    "seo": {
+      "description": "Guia de troféus de Beyond: Two Souls com roadmap da platina, tempo estimado, Duo Mode, finais, Saved All, A Better World, Uncontrollable, bônus, chapter select e dicas para os 46 troféus.",
+      "keywords": [
+        "Beyond Two Souls troféus",
+        "Beyond Two Souls platina",
+        "guia Beyond Two Souls",
+        "Beyond Two Souls PS4 troféus",
+        "BEYOND TWO SOULS MASTER",
+        "MESTRE DO BEYOND TWO SOULS",
+        "Together Till the End",
+        "Juntos até o Fim",
+        "All Endings",
+        "Todos os Finais",
+        "Saved All",
+        "Salvou Todos",
+        "A Better World",
+        "Um Mundo Melhor",
+        "Uncontrollable",
+        "Incontrolável",
+        "Duo Mode Beyond Two Souls",
+        "Explorer Beyond Two Souls"
+      ],
+      "metaDescription": "Guia de troféus de Beyond: Two Souls com roadmap da platina, tempo estimado, Duo Mode, finais, Saved All, A Better World, Uncontrollable, bônus, chapter select e dicas para os 46 troféus.",
+      "ogDescription": "Roadmap PT-BR da platina de Beyond: Two Souls com Duo Mode, finais, Saved All, A Better World, Uncontrollable e 46 troféus.",
+      "ogTitle": "Beyond: Two Souls: Guia de Troféus e Platina",
+      "title": "Beyond: Two Souls: Guia de Troféus e Platina"
+    },
+    "tags": []
+  },
+  "slug": "beyond-two-souls",
+  "trophies": [
+    {
+      "description": "Collected all trophies!",
+      "is_missable": 0,
+      "is_spoiler": 0,
+      "name": "BEYOND: TWO SOULS™ MASTER",
+      "name_pt": "",
+      "tip": "Desbloqueie todos os outros 45 troféus da lista base. Não há DLC/add-on misturado nesta checklist.",
+      "trophy_code": "beyond_master",
+      "type": "Platina"
+    },
+    {
+      "description": "Saw all endings.",
+      "is_missable": 1,
+      "is_spoiler": 1,
+      "name": "All Endings...",
+      "name_pt": "",
+      "tip": "Veja todos os finais. não apenas repetir a cena final: o troféu envolve variações de Life/Beyond e epílogos, algumas dependem de personagens salvos/mortos e exigem continuidade com save a partir de capítulos anteriores.",
+      "trophy_code": "beyond_all_endings",
+      "type": "Ouro"
+    },
+    {
+      "description": "Finished the game in Duo mode.",
+      "is_missable": 1,
+      "is_spoiler": 0,
+      "name": "Together Till the End",
+      "name_pt": "",
+      "tip": "Termine o jogo em Duo Mode/local. Não é online: use segundo controle/app compatível conforme a versão, mas mantenha a campanha inteira registrada em Duo Mode.",
+      "trophy_code": "beyond_together_till_the_end",
+      "type": "Ouro"
+    },
+    {
+      "description": "Saved every character that could be saved.",
+      "is_missable": 1,
+      "is_spoiler": 1,
+      "name": "Saved All",
+      "name_pt": "",
+      "tip": "Rota positiva: salve todos os personagens que podem ser salvos. Requer escolhas e QTEs consistentes ao longo da campanha, não apenas replay do final.",
+      "trophy_code": "beyond_saved_all",
+      "type": "Ouro"
+    },
+    {
+      "description": "One possible reality has been uncovered...",
+      "is_missable": 0,
+      "is_spoiler": 1,
+      "name": "The End",
+      "name_pt": "",
+      "tip": "Complete a história e veja qualquer final. É progresso natural da campanha, mas envolve spoiler de conclusão.",
+      "trophy_code": "beyond_the_end",
+      "type": "Prata"
+    },
+    {
+      "description": "Took every opportunity to be evil as Aiden.",
+      "is_missable": 1,
+      "is_spoiler": 1,
+      "name": "Uncontrollable",
+      "name_pt": "",
+      "tip": "Aproveite todas as oportunidades de agir mal como Aiden em capítulos específicos. Planeje desde cedo, porque ações perdidas podem exigir replay com continuidade.",
+      "trophy_code": "beyond_uncontrollable",
+      "type": "Prata"
+    },
+    {
+      "description": "Started at least one romance.",
+      "is_missable": 1,
+      "is_spoiler": 1,
+      "name": "Never Alone",
+      "name_pt": "",
+      "tip": "Inicie pelo menos um romance possível. O caminho mais comum envolve decisões de relacionamento e cenas específicas, então trate como escolha de rota.",
+      "trophy_code": "beyond_never_alone",
+      "type": "Prata"
+    },
+    {
+      "description": "Was victorious in every battle with the evil entities.",
+      "is_missable": 1,
+      "is_spoiler": 1,
+      "name": "Entities Master",
+      "name_pt": "",
+      "tip": "Vença todas as batalhas contra entidades malignas ao longo da história. Falhas em confrontos específicos podem exigir replay do capítulo.",
+      "trophy_code": "beyond_entities_master",
+      "type": "Prata"
+    },
+    {
+      "description": "Let every possible character die and chose to go with them to the Infraworld.",
+      "is_missable": 1,
+      "is_spoiler": 1,
+      "name": "A Better World",
+      "name_pt": "",
+      "tip": "Rota oposta de Saved All: deixe morrer todos os personagens possíveis e escolha ir com eles ao Infraworld. Exige cadeia de decisões persistente.",
+      "trophy_code": "beyond_a_better_world",
+      "type": "Prata"
+    },
+    {
+      "description": "Found all the bonuses.",
+      "is_missable": 1,
+      "is_spoiler": 0,
+      "name": "Explorer",
+      "name_pt": "",
+      "tip": "Encontre todos os bonuses/coletáveis. Use Chapter Select para limpar capítulos, mas confirme se o bonus foi salvo antes de avançar.",
+      "trophy_code": "beyond_explorer",
+      "type": "Prata"
+    },
+    {
+      "description": "Played as Aiden for the first time.",
+      "is_missable": 0,
+      "is_spoiler": 0,
+      "name": "Somebody Else?",
+      "name_pt": "",
+      "tip": "Troféu inicial ao controlar Aiden pela primeira vez no capítulo The Experiment.",
+      "trophy_code": "beyond_somebody_else",
+      "type": "Bronze"
+    },
+    {
+      "description": "Stopped the experiment voluntarily.",
+      "is_missable": 1,
+      "is_spoiler": 0,
+      "name": "Obedience",
+      "name_pt": "",
+      "tip": "Em The Experiment, obedeça e pare a experiência voluntariamente quando solicitado, em vez de continuar causando dano.",
+      "trophy_code": "beyond_obedience",
+      "type": "Bronze"
+    },
+    {
+      "description": "Did 3 mischievous things with Jodie and Aiden.",
+      "is_missable": 1,
+      "is_spoiler": 0,
+      "name": "Teammates",
+      "name_pt": "",
+      "tip": "Faça três travessuras com Jodie e Aiden durante a infância. Explore objetos interativos antes de encerrar a cena.",
+      "trophy_code": "beyond_teammates",
+      "type": "Bronze"
+    },
+    {
+      "description": "Vanquished the entities with Aiden.",
+      "is_missable": 1,
+      "is_spoiler": 1,
+      "name": "Entities Apprentice",
+      "name_pt": "",
+      "tip": "Derrote as entidades com Aiden na sequência em que elas atacam Jodie. Conte como treino para Entities Master.",
+      "trophy_code": "beyond_entities_apprentice",
+      "type": "Bronze"
+    },
+    {
+      "description": "Forgave Jodie's father.",
+      "is_missable": 1,
+      "is_spoiler": 1,
+      "name": "Sorry",
+      "name_pt": "",
+      "tip": "Na cena com o pai de Jodie, escolha perdoá-lo. É incompatível com Not My Father na mesma decisão salva.",
+      "trophy_code": "beyond_sorry",
+      "type": "Bronze"
+    },
+    {
+      "description": "Choked Philip with Aiden.",
+      "is_missable": 1,
+      "is_spoiler": 1,
+      "name": "Not My Father",
+      "name_pt": "",
+      "tip": "Use Aiden para sufocar Philip em vez de perdoá-lo. Use Chapter Select para alternar com Sorry se necessário.",
+      "trophy_code": "beyond_not_my_father",
+      "type": "Bronze"
+    },
+    {
+      "description": "Taught 3 or more of the teens a lesson, or started the house fire, with Aiden.",
+      "is_missable": 1,
+      "is_spoiler": 1,
+      "name": "Revenge",
+      "name_pt": "",
+      "tip": "Na festa, use Aiden para se vingar de pelo menos três adolescentes ou iniciar o incêndio. É incompatível com Cold Blood na mesma cena.",
+      "trophy_code": "beyond_revenge",
+      "type": "Bronze"
+    },
+    {
+      "description": "Did not impress or scare the teens with Aiden.",
+      "is_missable": 1,
+      "is_spoiler": 1,
+      "name": "Cold Blood",
+      "name_pt": "",
+      "tip": "Na festa, não impressione nem assuste os adolescentes com Aiden. É a alternativa limpa à rota Revenge.",
+      "trophy_code": "beyond_cold_blood",
+      "type": "Bronze"
+    },
+    {
+      "description": "Protected Jodie from her attackers.",
+      "is_missable": 1,
+      "is_spoiler": 1,
+      "name": "Together Forever",
+      "name_pt": "",
+      "tip": "Proteja Jodie dos agressores na sequência da festa. Acerte as ações de Aiden quando a cena escalar.",
+      "trophy_code": "beyond_together_forever",
+      "type": "Bronze"
+    },
+    {
+      "description": "Successfully shut down the condenser portal.",
+      "is_missable": 1,
+      "is_spoiler": 1,
+      "name": "Portal Shutdown",
+      "name_pt": "",
+      "tip": "Feche o portal do condensador com sucesso. Preste atenção às sequências de ação e entidades durante o capítulo.",
+      "trophy_code": "beyond_portal_shutdown",
+      "type": "Bronze"
+    },
+    {
+      "description": "Channeled all dead bodies in the condenser compound.",
+      "is_missable": 1,
+      "is_spoiler": 1,
+      "name": "Channeling Master",
+      "name_pt": "",
+      "tip": "No complexo do condensador, canalize todos os corpos disponíveis antes de concluir o objetivo principal.",
+      "trophy_code": "beyond_channeling_master",
+      "type": "Bronze"
+    },
+    {
+      "description": "Completed most of the physical training successfully.",
+      "is_missable": 1,
+      "is_spoiler": 0,
+      "name": "Perfect Soldier",
+      "name_pt": "",
+      "tip": "Durante o treinamento, complete a maior parte das provas físicas com sucesso. Repita o capítulo se falhar demais.",
+      "trophy_code": "beyond_perfect_soldier",
+      "type": "Bronze"
+    },
+    {
+      "description": "Won every fight whilst taking less than 5 hits.",
+      "is_missable": 1,
+      "is_spoiler": 0,
+      "name": "Fight Apprentice",
+      "name_pt": "",
+      "tip": "Vença todas as lutas do treinamento recebendo menos de cinco golpes. Exige atenção aos QTEs de combate.",
+      "trophy_code": "beyond_fight_apprentice",
+      "type": "Bronze"
+    },
+    {
+      "description": "Completed all stealth training without being spotted.",
+      "is_missable": 1,
+      "is_spoiler": 0,
+      "name": "Stealth Apprentice",
+      "name_pt": "",
+      "tip": "Complete o treinamento furtivo sem ser detectado. Use o caminho seguro e reinicie a cena se for visto.",
+      "trophy_code": "beyond_stealth_apprentice",
+      "type": "Bronze"
+    },
+    {
+      "description": "Shut down the monitor and finished the mission using only Aiden.",
+      "is_missable": 1,
+      "is_spoiler": 1,
+      "name": "Clean Job",
+      "name_pt": "",
+      "tip": "Na missão, desligue o monitor e conclua o objetivo usando somente Aiden, evitando soluções com Jodie quando o troféu exigir Aiden.",
+      "trophy_code": "beyond_clean_job",
+      "type": "Bronze"
+    },
+    {
+      "description": "Finished the mission using only the Sheik.",
+      "is_missable": 1,
+      "is_spoiler": 1,
+      "name": "Possessive Spy",
+      "name_pt": "",
+      "tip": "Conclua a missão possuindo apenas o Sheik para resolver o objetivo. Não use outros caminhos que invalidem a condição.",
+      "trophy_code": "beyond_possessive_spy",
+      "type": "Bronze"
+    },
+    {
+      "description": "Cooked a meal, cleaned the apartment, took a shower, wore the elegant dress and put on some music.",
+      "is_missable": 1,
+      "is_spoiler": 1,
+      "name": "Perfect Lover",
+      "name_pt": "",
+      "tip": "Em The Dinner, prepare tudo para o encontro: comida, limpeza, banho, vestido elegante e música. Ajuda na rota de romance com Ryan.",
+      "trophy_code": "beyond_perfect_lover",
+      "type": "Bronze"
+    },
+    {
+      "description": "Ordered a pizza, watched some TV and wore something casual.",
+      "is_missable": 1,
+      "is_spoiler": 1,
+      "name": "Casual Girl",
+      "name_pt": "",
+      "tip": "Em The Dinner, siga a alternativa casual: peça pizza, assista TV e use roupa casual. É incompatível com Perfect Lover na mesma tentativa.",
+      "trophy_code": "beyond_casual_girl",
+      "type": "Bronze"
+    },
+    {
+      "description": "Slept with Ryan.",
+      "is_missable": 1,
+      "is_spoiler": 1,
+      "name": "In Love with Ryan",
+      "name_pt": "",
+      "tip": "Construa a rota de romance com Ryan e aceite dormir com ele quando a oportunidade surgir. Pode conflitar com escolhas frias ou rotas alternativas.",
+      "trophy_code": "beyond_in_love_with_ryan",
+      "type": "Bronze"
+    },
+    {
+      "description": "Made it to the cathedral without being spotted.",
+      "is_missable": 1,
+      "is_spoiler": 1,
+      "name": "Stealth Master",
+      "name_pt": "",
+      "tip": "Durante a fuga/rota até a catedral, avance sem ser visto. Se for detectado, use replay do capítulo.",
+      "trophy_code": "beyond_stealth_master",
+      "type": "Bronze"
+    },
+    {
+      "description": "Escaped the train without being arrested.",
+      "is_missable": 1,
+      "is_spoiler": 1,
+      "name": "Catch Me if You Can",
+      "name_pt": "",
+      "tip": "Escape da sequência do trem sem ser preso. Acerte QTEs e escolhas rápidas até despistar os perseguidores.",
+      "trophy_code": "beyond_catch_me_if_you_can",
+      "type": "Bronze"
+    },
+    {
+      "description": "Destroyed the gas station, the church, the gun store and the helicopter.",
+      "is_missable": 1,
+      "is_spoiler": 1,
+      "name": "Aiden's Apocalypse",
+      "name_pt": "",
+      "tip": "No capítulo de fuga, destrua posto de gasolina, igreja, loja de armas e helicóptero com Aiden antes de avançar.",
+      "trophy_code": "beyond_aidens_apocalypse",
+      "type": "Bronze"
+    },
+    {
+      "description": "Got arrested three times and escaped each time.",
+      "is_missable": 1,
+      "is_spoiler": 1,
+      "name": "Houdini",
+      "name_pt": "",
+      "tip": "Permita que Jodie seja presa três vezes e escape em todas. É uma rota específica e não combina com escapar sempre de primeira.",
+      "trophy_code": "beyond_houdini",
+      "type": "Bronze"
+    },
+    {
+      "description": "Earned enough money to have some chocolate during dinner.",
+      "is_missable": 1,
+      "is_spoiler": 1,
+      "name": "Money to Eat",
+      "name_pt": "",
+      "tip": "Na sequência dos sem-teto, ganhe dinheiro suficiente para comprar chocolate no jantar. Explore as opções de arrecadar dinheiro.",
+      "trophy_code": "beyond_money_to_eat",
+      "type": "Bronze"
+    },
+    {
+      "description": "Deactivated the supermarket's camera.",
+      "is_missable": 1,
+      "is_spoiler": 1,
+      "name": "Smart Thief",
+      "name_pt": "",
+      "tip": "Antes do roubo no mercado, desative a câmera de segurança com Aiden para reduzir o risco da ação.",
+      "trophy_code": "beyond_smart_thief",
+      "type": "Bronze"
+    },
+    {
+      "description": "Looked after Tuesday's baby, healed Jimmy and channeled Stan.",
+      "is_missable": 1,
+      "is_spoiler": 1,
+      "name": "Miracles",
+      "name_pt": "",
+      "tip": "Cuide do bebê de Tuesday, cure Jimmy e canalize Stan na sequência dos sem-teto antes de avançar a história.",
+      "trophy_code": "beyond_miracles",
+      "type": "Bronze"
+    },
+    {
+      "description": "Successfully performed the entire ritual.",
+      "is_missable": 1,
+      "is_spoiler": 1,
+      "name": "Medicine Girl",
+      "name_pt": "",
+      "tip": "Execute o ritual completo com sucesso. Siga todas as etapas e QTEs da sequência para evitar falha.",
+      "trophy_code": "beyond_medicine_girl",
+      "type": "Bronze"
+    },
+    {
+      "description": "Ran from the sandstorm and took less than 3 hits.",
+      "is_missable": 1,
+      "is_spoiler": 1,
+      "name": "Not Just Sand",
+      "name_pt": "",
+      "tip": "Fuja da tempestade de areia tomando menos de três impactos. Memorize a rota e repita se for atingido demais.",
+      "trophy_code": "beyond_not_just_sand",
+      "type": "Bronze"
+    },
+    {
+      "description": "Didn't speak during the interrogation.",
+      "is_missable": 1,
+      "is_spoiler": 1,
+      "name": "Eye for an Eye",
+      "name_pt": "",
+      "tip": "Durante o interrogatório, recuse-se a falar. É incompatível com Agent 894732 na mesma escolha.",
+      "trophy_code": "beyond_eye_for_an_eye",
+      "type": "Bronze"
+    },
+    {
+      "description": "Told the truth during the interrogation.",
+      "is_missable": 1,
+      "is_spoiler": 1,
+      "name": "Agent 894732",
+      "name_pt": "",
+      "tip": "Durante o interrogatório, conte a verdade. Use Chapter Select para alternar com Eye for an Eye se necessário.",
+      "trophy_code": "beyond_agent_894732",
+      "type": "Bronze"
+    },
+    {
+      "description": "Went to the containment shield with the General.",
+      "is_missable": 1,
+      "is_spoiler": 1,
+      "name": "Almost Too Easy",
+      "name_pt": "",
+      "tip": "Na reta final, siga com o General até o escudo de contenção. É uma ação específica de capítulo próximo ao final.",
+      "trophy_code": "beyond_almost_too_easy",
+      "type": "Bronze"
+    },
+    {
+      "description": "Entered the Infraworld.",
+      "is_missable": 1,
+      "is_spoiler": 1,
+      "name": "Chose Afterlife",
+      "name_pt": "",
+      "tip": "Escolha Beyond/Afterlife no final. Essa decisão também pode compor rotas de All Endings e A Better World.",
+      "trophy_code": "beyond_chose_afterlife",
+      "type": "Bronze"
+    },
+    {
+      "description": "Stayed in reality.",
+      "is_missable": 1,
+      "is_spoiler": 1,
+      "name": "Chose Life",
+      "name_pt": "",
+      "tip": "Escolha Life no final e permaneça na realidade. Refaça o epílogo para variações necessárias de All Endings.",
+      "trophy_code": "beyond_chose_life",
+      "type": "Bronze"
+    },
+    {
+      "description": "Helped Dawkins see the truth.",
+      "is_missable": 1,
+      "is_spoiler": 1,
+      "name": "Convince Dawkins",
+      "name_pt": "",
+      "tip": "No confronto final com Dawkins, escolha as respostas/ações para fazê-lo aceitar a verdade em vez de insistir no plano.",
+      "trophy_code": "beyond_convince_dawkins",
+      "type": "Bronze"
+    },
+    {
+      "description": "Deactivated the Black Sun.",
+      "is_missable": 0,
+      "is_spoiler": 1,
+      "name": "Black Sun Down",
+      "name_pt": "",
+      "tip": "Desative o Black Sun na conclusão da história. É progresso de finalização, mas envolve spoilers da reta final.",
+      "trophy_code": "beyond_black_sun_down",
+      "type": "Bronze"
+    },
+    {
+      "description": "Launched a scene in Duo mode.",
+      "is_missable": 1,
+      "is_spoiler": 0,
+      "name": "Two Souls",
+      "name_pt": "",
+      "tip": "Inicie qualquer cena em Duo Mode/local para registrar o modo. Não é online; serve como preparação para Together Till the End.",
+      "trophy_code": "beyond_two_souls",
+      "type": "Bronze"
+    }
+  ]
+}

@@ -1,0 +1,636 @@
+{
+  "game": {
+    "avoid_if": "Evite se você quer uma platina curta, linear ou com checklist fechado em poucas sessões.",
+    "before_you_start": "Hades II está lançado e não é acesso antecipado. Use PS5 como base do guia; a platina não exige online, não exige coop e não exige DLC. Acompanhe a Fated List, converse com NPCs entre runs e use God Mode se quiser reduzir a exigência sem bloquear troféus.",
+    "best_for": "Bom para quem gosta de roguelite longo, progresso incremental e limpeza de objetivos em muitas runs.",
+    "cleanup_advice": "Depois da história principal, separe blocos para epílogo, Chaos Trials, keepsakes, familiars, Arcana, vínculos, Kudos e profecias pendentes.",
+    "cover_image": "https://cdn.cloudflare.steamstatic.com/steam/apps/1145350/library_600x900.jpg",
+    "coverage_level": "strong",
+    "created_at": "2026-05-09 19:53:23",
+    "difficulty": 7,
+    "difficulty_reason": "A execução é moderada a alta sem God Mode, com chefes finais, rotas longas e desafios de endgame. Com God Mode, a pressão editorial cai para aproximadamente 5/10.",
+    "dlc_scope": "DLC fora da platina base. A lista base de PS5 não exige DLC para a platina.",
+    "editorial_notes": "Base factual: Hades II está lançado e não deve ser tratado como acesso antecipado; PS5 usa 50 troféus com distribuição 1/2/11/36. A lista Xbox tem 49 achievements e não deve ser usada para contagem de troféus PS5. Nomes oficiais mantidos em inglês; descrições editoriais em português; name_pt omitido por prudência editorial.",
+    "editorial_review_status": "verified",
+    "editorial_status": "published",
+    "first_run_advice": "Priorize liberar armas, ferramentas, acesso à Superfície, incantations centrais e diálogos na Encruzilhada depois de cada run.",
+    "grind_summary": "Grind alto de materiais, Kudos, profecias, upgrades de Arcana, familiars, keepsakes, vínculos e Chaos Trials.",
+    "guide_avoid": null,
+    "guide_best_moment": null,
+    "guide_dlc": null,
+    "guide_grind": null,
+    "guide_ideal": null,
+    "guide_online": null,
+    "guide_runs": null,
+    "image": "https://cdn.cloudflare.steamstatic.com/steam/apps/1145350/header.jpg",
+    "is_verified": 1,
+    "last_reviewed_at": "2026-05-18",
+    "missable": "Não há troféus perdíveis reais na lista base de PS5. A progressão de Hades II avança por runs, diálogos, profecias, vínculos e recursos persistentes; se algo ficar para trás, continue jogando e revisite o objetivo depois.",
+    "missable_summary": "Não há perdíveis reais na lista base. Organize conversas, presentes, profecias e recursos entre runs apenas para reduzir grind e retrabalho.",
+    "name": "Hades II",
+    "online_summary": "Sem online obrigatório: a platina base de PS5 é single-player/offline e não exige coop, servidores ou PS+.",
+    "quality_warnings": "[]",
+    "reviewed_by": "AtlasAchievement Editorial",
+    "runs_summary": "Muitas runs no Submundo e na Superfície. A platina exige história, epílogo, profecias, Chaos Trials, familiars, keepsakes, Arcana e vínculos.",
+    "slug": "hades-ii",
+    "time": "65-85 horas",
+    "time_bucket": "long",
+    "time_max_hours": 85,
+    "time_min_hours": 65,
+    "time_reason": "A estimativa de 65-85 horas considera várias clears, progresso de história por diálogos/RNG, farm de materiais e limpeza de profecias, vínculos, Arcana, keepsakes, familiars e Chaos Trials.",
+    "time_sort_hours": 85,
+    "updated_at": "2026-06-27 02:37:00",
+    "verification_note": "Guia revisado editorialmente para a lista base.",
+    "verification_status": "verified",
+    "walkthrough": ""
+  },
+  "redirects": [],
+  "roadmaps": [
+    {
+      "content": "{\"title\":\"Aprenda as runs e estabilize a Crossroads\",\"focus\":\"Primeiras runs\",\"objective\":\"Usar as primeiras tentativas para aprender combate, boons, recursos e sistemas centrais sem tentar fazer 100% cedo demais.\",\"actions\":[\"Faça runs para conhecer armas, magias, esquivas, ataques especiais e padrões dos primeiros Guardians.\",\"Volte à Crossroads entre tentativas para liberar melhorias, diálogos e sistemas.\",\"Invista recursos iniciais em upgrades que aumentem consistência e sobrevivência.\",\"Comece a observar quais recursos aparecem em cada rota para planejar progresso futuro.\"],\"warning\":\"\",\"result\":\"Base de progressão criada e jogador preparado para avançar com mais consistência.\"}",
+      "step_order": 1
+    },
+    {
+      "content": "{\"title\":\"Evolua Arcana, Incantations e recursos essenciais\",\"focus\":\"Progressão permanente\",\"objective\":\"Fortalecer Melinoë com melhorias permanentes e desbloquear sistemas que reduzem retrabalho nas próximas runs.\",\"actions\":[\"Priorize Arcana e upgrades que aumentem sobrevivência, dano e controle de combate.\",\"Use Incantations para liberar recursos, rotas, ferramentas e melhorias importantes da Crossroads.\",\"Guarde materiais raros para desbloqueios que impactem troféus, aspectos, familiars e progressão.\",\"Atualize o checklist sempre que um recurso, desbloqueio ou sistema novo aparecer.\"],\"warning\":\"\",\"result\":\"Progressão permanente encaminhada e runs futuras mais eficientes.\"}",
+      "step_order": 2
+    },
+    {
+      "content": "{\"title\":\"Avance rotas, Guardians e história principal\",\"focus\":\"História\",\"objective\":\"Progredir pelo Underworld e pela Surface, derrotar Guardians e avançar eventos narrativos importantes.\",\"actions\":[\"Foque em chegar cada vez mais longe nas rotas disponíveis, incluindo Erebus, Oceanus, Fields of Mourning, Tartarus, City of Ephyra, Rift of Thessaly, Mount Olympus e Summit.\",\"Aprenda padrões dos Guardians antes de tentar objetivos secundários difíceis.\",\"Alterne runs de progresso com runs de farm quando faltar material importante.\",\"Continue conversando com personagens na Crossroads e em encontros relevantes.\"],\"warning\":\"Objetivos ligados a Chronos e ao epílogo podem conter spoilers de história.\",\"result\":\"História avançada, principais rotas abertas e bosses mais familiares.\"}",
+      "step_order": 3
+    },
+    {
+      "content": "{\"title\":\"Trabalhe armas, aspectos, Keepsakes e relacionamentos\",\"focus\":\"Relacionamentos\",\"objective\":\"Avançar troféus ligados a armas, aspectos, lembranças, presentes, personagens e sistemas de longo prazo.\",\"actions\":[\"Varie armas e estilos para cumprir requisitos diferentes da Fated List.\",\"Evolua aspectos e armas conforme os troféus e o checklist exigirem.\",\"Distribua presentes com intenção para avançar relacionamentos, Keepsakes e convites da Crossroads.\",\"Use Keepsakes de forma planejada para acelerar progresso e completar pendências.\"],\"warning\":\"\",\"result\":\"Coleções, relacionamentos e desbloqueios de longo prazo encaminhados.\"}",
+      "step_order": 4
+    },
+    {
+      "content": "{\"title\":\"Complete desafios, rotas avançadas e objetivos longos\",\"focus\":\"Desafios\",\"objective\":\"Reduzir pendências de maior duração antes do cleanup final da platina.\",\"actions\":[\"Revise objetivos longos no checklist antes de continuar fazendo runs aleatórias.\",\"Priorize desafios ligados a armas, bosses, recursos, rotas, Chaos Trials, Familiars, Kudos e sistemas específicos.\",\"Separe runs de farm das runs focadas em Guardians, Chronos, Surface ou progresso de história.\",\"Complete tarefas avançadas somente depois de ter upgrades e recursos suficientes.\"],\"warning\":\"Não trate grind ou repetição de runs como troféu perdível. Marque como perdível apenas o que for realmente bloqueável e validado.\",\"result\":\"Pendências longas reduzidas e guia encaminhado para limpeza final.\"}",
+      "step_order": 5
+    },
+    {
+      "content": "{\"title\":\"Cleanup final da platina\",\"focus\":\"Checklist final\",\"objective\":\"Conferir todos os troféus restantes, fechar coleções, desafios, relacionamentos e qualquer requisito específico.\",\"actions\":[\"Revise troféus de história, bosses, armas, aspectos, recursos, Keepsakes, Familiars, Arcana e relacionamentos.\",\"Complete qualquer objetivo situacional que não veio naturalmente nas runs.\",\"Confirme se não há troféu online, coop ou DLC sendo contado por engano.\",\"Revalide objetivos sensíveis a patch, desbloqueios recentes e requisitos situacionais antes de encerrar o cleanup.\"],\"warning\":\"\",\"result\":\"Checklist completo e platina pronta após fechar pendências de história, recursos, relacionamentos e objetivos situacionais.\"}",
+      "step_order": 6
+    }
+  ],
+  "schemaVersion": 1,
+  "seedExtras": {
+    "aliases": [],
+    "attentionPoints": [],
+    "checklist": [
+      "Concluir a rota do Submundo até Tartarus.",
+      "Concluir a rota da Superfície até o Summit.",
+      "Desbloquear todas as armas e avançar aspectos ligados a profecias.",
+      "Ganhar 30 Grasp e maximizar Arcana.",
+      "Cumprir 60 Minor Prophecies.",
+      "Coletar todos os keepsakes.",
+      "Recrutar, evoluir e alterar a aparência dos familiars.",
+      "Acumular 10.000 Kudos.",
+      "Completar 20 Chaos Trials e Great Chaos Below.",
+      "Forjar 10 vínculos com companheiros.",
+      "Resolver troféus situacionais como Sheep's Clothing, Breaking Up the Band, Dressed to Kill e Fair Fight.",
+      "Completar Death to Chronos.",
+      "Continuar até Golden Age."
+    ],
+    "faq": [
+      {
+        "answer": "Não. A lista base não tem perdíveis obrigatórios confirmados. O risco principal está em spoilers, objetivos situacionais e organização de runs, não em travar a platina.",
+        "question": "Hades II tem troféus perdíveis?"
+      },
+      {
+        "answer": "Não. A platina base é totalmente offline e não exige servidores, PS+ ou troféus online.",
+        "question": "Hades II precisa de online para platinar?"
+      },
+      {
+        "answer": "O tempo estimado é 65-85 horas, variando conforme domínio das runs, progresso na Fated List, recursos raros, relacionamentos, Chaos Trials, Surface, Chronos e cleanup.",
+        "question": "Quanto tempo leva para platinar Hades II?"
+      },
+      {
+        "answer": "A dificuldade cadastrada é 7/10. O desafio vem da consistência em runs, bosses, rotas avançadas, grind de recursos e objetivos longos.",
+        "question": "Qual a dificuldade da platina de Hades II?"
+      },
+      {
+        "answer": "Não. A platina base é single-player e não exige coop.",
+        "question": "Hades II tem coop obrigatório?"
+      },
+      {
+        "answer": "Não. A platina base não exige DLC.",
+        "question": "A DLC é necessária para a platina de Hades II?"
+      }
+    ],
+    "note": "Campos exportados para auditoria. O SQLite atual nao possui colunas nativas para todos esses extras; a importacao preserva o que o banco suporta.",
+    "quickDecision": {
+      "firstAction": "Liberar sistemas persistentes e acompanhar a Fated List, não ler alertas de perdíveis.",
+      "recommendation": "Comece pela Encruzilhada e pelos desbloqueios estruturais, avance Submundo e Superfície em paralelo quando possível e deixe Chaos Trials, vínculos, keepsakes, familiars, Kudos e epílogo para a limpeza planejada.",
+      "summary": "Platina longa e offline: 50 troféus no PS5, sem perdíveis reais, sem online/coop/DLC obrigatórios, com foco em duas rotas, história, epílogo e cleanup de sistemas persistentes."
+    },
+    "seo": {
+      "description": "Guia de platina de Hades II no PS5 em português, com 50 troféus, dificuldade 7/10, 65-85h, roadmap, checklist, God Mode, Chronos, epílogo e sem perdíveis.",
+      "ogDescription": "Roadmap de Hades II para PS5 com lista base de 50 troféus, sem online, sem coop, sem DLC obrigatória, sem perdíveis reais e guia verificado.",
+      "ogTitle": "Hades II: guia de platina PS5, troféus e roadmap | AtlasAchievement",
+      "title": "Hades II: guia de platina PS5, troféus e roadmap | AtlasAchievement"
+    },
+    "tags": []
+  },
+  "slug": "hades-ii",
+  "trophies": [
+    {
+      "description": "Obtenha todas as outras conquistas.",
+      "is_missable": 0,
+      "is_spoiler": 0,
+      "name": "Goddess of Nightmares",
+      "name_pt": "Deusa dos Pesadelos",
+      "tip": "Vem ao concluir todos os outros troféus da lista de PlayStation.",
+      "trophy_code": "hades2_goddess_of_nightmares",
+      "type": "Platina"
+    },
+    {
+      "description": "Transponha o Érebo.",
+      "is_missable": 0,
+      "is_spoiler": 0,
+      "name": "Witch of the Woods",
+      "name_pt": "Bruxa da Mata",
+      "tip": "Primeira limpeza de bioma do Submundo; foque em sobreviver ao chefe inicial.",
+      "trophy_code": "hades2_witch_of_the_woods",
+      "type": "Bronze"
+    },
+    {
+      "description": "Vá às termas com um dos seus companheiros.",
+      "is_missable": 0,
+      "is_spoiler": 0,
+      "name": "Soothing Soak",
+      "name_pt": "Mergulho Relaxante",
+      "tip": "Restaure as Hot Springs por incantation e use Bath Salts com um companheiro elegível.",
+      "trophy_code": "hades2_soothing_soak",
+      "type": "Bronze"
+    },
+    {
+      "description": "Vá ao píer de pesca com um dos seus companheiros.",
+      "is_missable": 0,
+      "is_spoiler": 0,
+      "name": "Catch of the Night",
+      "name_pt": "Fisgada Noturna",
+      "tip": "Libere a vara, restaure o pier e leve um companheiro com Twin Lures quando a relação permitir.",
+      "trophy_code": "hades2_catch_of_the_night",
+      "type": "Bronze"
+    },
+    {
+      "description": "Vá à taverna com um dos seus companheiros.",
+      "is_missable": 0,
+      "is_spoiler": 0,
+      "name": "Ambrosia for Two",
+      "name_pt": "Ambrosia a Dois",
+      "tip": "Restaure a Taverna e use Ambrosia com um personagem que já tenha afinidade suficiente.",
+      "trophy_code": "hades2_ambrosia_for_two",
+      "type": "Bronze"
+    },
+    {
+      "description": "Estabeleça um laço com 10 companheiros.",
+      "is_missable": 0,
+      "is_spoiler": 0,
+      "name": "Close Comrades",
+      "name_pt": "Grandes Companheiros",
+      "tip": "Compre Nectar e outros presentes sempre que puder e fale com aliados depois das runs.",
+      "trophy_code": "hades2_close_comrades",
+      "type": "Bronze"
+    },
+    {
+      "description": "Cumpra 60 pequenas profecias.",
+      "is_missable": 0,
+      "is_spoiler": 0,
+      "name": "Hand of the Fates",
+      "name_pt": "Mão das Moiras",
+      "tip": "Cheque a Fated List entre runs e combine profecias de armas, boons, regiões e NPCs.",
+      "trophy_code": "hades2_hand_of_the_fates",
+      "type": "Prata"
+    },
+    {
+      "description": "Alcance 30 de domínio no Altar Cinerário.",
+      "is_missable": 0,
+      "is_spoiler": 0,
+      "name": "Mind for Magick",
+      "name_pt": "Afinidade Mágica",
+      "tip": "Gaste Psyche no Altar of Ashes até chegar a 30 Grasp total.",
+      "trophy_code": "hades2_mind_for_magick",
+      "type": "Bronze"
+    },
+    {
+      "description": "Cumpra a profecia “Amplo Conhecimento”.",
+      "is_missable": 0,
+      "is_spoiler": 0,
+      "name": "Breadth of Knowledge",
+      "name_pt": "Amplo Conhecimento",
+      "tip": "Desbloqueie todas as cartas de Arcana para completar a profecia.",
+      "trophy_code": "hades2_breadth_of_knowledge",
+      "type": "Bronze"
+    },
+    {
+      "description": "Aprimore ao máximo todos os arcanos.",
+      "is_missable": 0,
+      "is_spoiler": 0,
+      "name": "Unassailable Insight",
+      "name_pt": "Compreensão Inabalável",
+      "tip": "Depois de liberar upgrades de Arcana, farme Ashes, Moon Dust e materiais raros até maximizar tudo.",
+      "trophy_code": "hades2_unassailable_insight",
+      "type": "Prata"
+    },
+    {
+      "description": "Cumpra a profecia “As Armas da Noite”.",
+      "is_missable": 0,
+      "is_spoiler": 0,
+      "name": "The Arms of Night",
+      "name_pt": "As Armas da Noite",
+      "tip": "Desbloqueie todas as armas no Silver Pool, incluindo as que pedem materiais da Superfície.",
+      "trophy_code": "hades2_the_arms_of_night",
+      "type": "Bronze"
+    },
+    {
+      "description": "Cumpra a profecia “Sentinela Oculta”.",
+      "is_missable": 0,
+      "is_spoiler": 0,
+      "name": "The Unseen Sentinel",
+      "name_pt": "Sentinela Oculta",
+      "tip": "Libere os aspectos de todas as armas e avance diálogos ligados aos aspectos ocultos.",
+      "trophy_code": "hades2_the_unseen_sentinel",
+      "type": "Prata"
+    },
+    {
+      "description": "Transponha o Oceano.",
+      "is_missable": 0,
+      "is_spoiler": 0,
+      "name": "Witch of the Depths",
+      "name_pt": "Bruxa das Profundezas",
+      "tip": "Complete o segundo bioma do Submundo e estabilize uma build com dano e defesa.",
+      "trophy_code": "hades2_witch_of_the_depths",
+      "type": "Bronze"
+    },
+    {
+      "description": "Cumpra a profecia “Confidente Selvagem”.",
+      "is_missable": 0,
+      "is_spoiler": 0,
+      "name": "Familiar Confidant",
+      "name_pt": "Confidente Selvagem",
+      "tip": "Leve familiars em várias saídas e interaja com eles na Encruzilhada quando houver diálogo novo.",
+      "trophy_code": "hades2_familiar_confidant",
+      "type": "Bronze"
+    },
+    {
+      "description": "Recrute todos os familiares selvagens.",
+      "is_missable": 0,
+      "is_spoiler": 0,
+      "name": "Animal Whisperer",
+      "name_pt": "Amiga das Feras",
+      "tip": "Fabrique Witch's Delight e recrute todos os familiars quando aparecerem nas regiões certas.",
+      "trophy_code": "hades2_animal_whisperer",
+      "type": "Bronze"
+    },
+    {
+      "description": "Fortaleça ao máximo todos os familiares selvagens.",
+      "is_missable": 0,
+      "is_spoiler": 0,
+      "name": "Beast Master",
+      "name_pt": "Mestra das Feras",
+      "tip": "Guarde recursos para evoluir cada familiar completamente depois de recrutar o grupo todo.",
+      "trophy_code": "hades2_beast_master",
+      "type": "Prata"
+    },
+    {
+      "description": "Alcance 10.000 de prestígio.",
+      "is_missable": 0,
+      "is_spoiler": 0,
+      "name": "Giving Back",
+      "name_pt": "Contribuições à Causa",
+      "tip": "Troque materiais excedentes com o Broker quando suas incantations e upgrades principais estiverem encaminhados.",
+      "trophy_code": "hades2_giving_back",
+      "type": "Bronze"
+    },
+    {
+      "description": "Obtenha todas as lembranças.",
+      "is_missable": 0,
+      "is_spoiler": 0,
+      "name": "Sentimental Value",
+      "name_pt": "Valor Sentimental",
+      "tip": "Presenteie todos os personagens e lembre que alguns keepsakes dependem do epílogo.",
+      "trophy_code": "hades2_sentimental_value",
+      "type": "Prata"
+    },
+    {
+      "description": "Supere 20 testes do Caos.",
+      "is_missable": 0,
+      "is_spoiler": 0,
+      "name": "Infinite Possibility",
+      "name_pt": "Infinitas Possibilidades",
+      "tip": "Use o Pitch-Black Stone e complete Trials aos poucos, alternando quando alguma combinação estiver ruim.",
+      "trophy_code": "hades2_infinite_possibility",
+      "type": "Prata"
+    },
+    {
+      "description": "Cumpra a profecia “Resultados Improváveis”.",
+      "is_missable": 0,
+      "is_spoiler": 0,
+      "name": "Improbable Outcomes",
+      "name_pt": "Resultados Improváveis",
+      "tip": "Deixe para o endgame, quando os Trials e desbloqueios raros do Caos já estiverem disponíveis.",
+      "trophy_code": "hades2_improbable_outcomes",
+      "type": "Prata"
+    },
+    {
+      "description": "Supere o teste “Grande Caos Sob a Terra”.",
+      "is_missable": 0,
+      "is_spoiler": 0,
+      "name": "Chaos in Hell",
+      "name_pt": "Caos no Inferno",
+      "tip": "Prepare-se para uma tentativa exigente de Trial; volte depois de conhecer melhor armas e boons.",
+      "trophy_code": "hades2_chaos_in_hell",
+      "type": "Bronze"
+    },
+    {
+      "description": "Cumpra a profecia “Talento Nato”.",
+      "is_missable": 0,
+      "is_spoiler": 0,
+      "name": "Natural Talent",
+      "name_pt": "Talento Nato",
+      "tip": "Complete o requisito da profecia com Arcana desativada quando já estiver confortável com Hecate.",
+      "trophy_code": "hades2_natural_talent",
+      "type": "Bronze"
+    },
+    {
+      "description": "Cumpra a profecia “Assuntos Inacabados”.",
+      "is_missable": 0,
+      "is_spoiler": 0,
+      "name": "Unfinished Business",
+      "name_pt": "Assuntos Inacabados",
+      "tip": "Continue os diálogos e favores ligados a Dora até a profecia resolver.",
+      "trophy_code": "hades2_unfinished_business",
+      "type": "Bronze"
+    },
+    {
+      "description": "Transponha os Campos da Dor.",
+      "is_missable": 0,
+      "is_spoiler": 0,
+      "name": "Witch of the Plains",
+      "name_pt": "Bruxa das Planícies",
+      "tip": "Terceiro bioma do Submundo; invista em vida, controle de grupos e dano sustentado.",
+      "trophy_code": "hades2_witch_of_the_plains",
+      "type": "Bronze"
+    },
+    {
+      "description": "Cumpra a profecia “Assombrada pelo Passado”.",
+      "is_missable": 0,
+      "is_spoiler": 0,
+      "name": "Haunted by the Past",
+      "name_pt": "Assombrada pelo Passado",
+      "tip": "Progrida as conversas de Dora e personagens relacionados entre runs.",
+      "trophy_code": "hades2_haunted_by_the_past",
+      "type": "Bronze"
+    },
+    {
+      "description": "Cumpra a profecia “Eterno Sonhador”.",
+      "is_missable": 0,
+      "is_spoiler": 0,
+      "name": "Soundest of Sleepers",
+      "name_pt": "Eterno Sonhador",
+      "tip": "Presenteie Hypnos e avance diálogos até a profecia ficar disponível.",
+      "trophy_code": "hades2_soundest_of_sleepers",
+      "type": "Bronze"
+    },
+    {
+      "description": "Cumpra a profecia “Seda e Despeito”.",
+      "is_missable": 0,
+      "is_spoiler": 0,
+      "name": "Silk and Spitefulness",
+      "name_pt": "Seda e Despeito",
+      "tip": "Visite Arachne, aumente afinidade e conclua os objetivos ligados aos vestidos.",
+      "trophy_code": "hades2_silk_and_spitefulness",
+      "type": "Bronze"
+    },
+    {
+      "description": "Cumpra a profecia “Voz e Vaidade”.",
+      "is_missable": 0,
+      "is_spoiler": 0,
+      "name": "Voice and Vanity",
+      "name_pt": "Voz e Vaidade",
+      "tip": "Avance as linhas de Narcissus e Echo, escolhendo os encontros de mãos douradas quando aparecerem.",
+      "trophy_code": "hades2_voice_and_vanity",
+      "type": "Bronze"
+    },
+    {
+      "description": "Cumpra a profecia “Habitantes das Profundezas”.",
+      "is_missable": 0,
+      "is_spoiler": 0,
+      "name": "Denizens of the Depths",
+      "name_pt": "Habitantes das Profundezas",
+      "tip": "Pesque em todas as regiões, incluindo rotas de Submundo, Superfície e Chaos.",
+      "trophy_code": "hades2_denizens_of_the_depths",
+      "type": "Bronze"
+    },
+    {
+      "description": "Cumpra a profecia “Maestria Incomparável”.",
+      "is_missable": 0,
+      "is_spoiler": 0,
+      "name": "Unrivaled Prowess",
+      "name_pt": "Maestria Incomparável",
+      "tip": "Trabalhe os desafios de Vow of Rivals depois de liberar o Oath of the Unseen.",
+      "trophy_code": "hades2_unrivaled_prowess",
+      "type": "Bronze"
+    },
+    {
+      "description": "Cumpra a profecia “Espada da Noite”.",
+      "is_missable": 0,
+      "is_spoiler": 0,
+      "name": "Sword of the Night",
+      "name_pt": "Espada da Noite",
+      "tip": "Complete clears da Superfície com todas as armas quando a rota estiver dominada.",
+      "trophy_code": "hades2_sword_of_the_night",
+      "type": "Bronze"
+    },
+    {
+      "description": "Cumpra a profecia “Arcanos das Eras”.",
+      "is_missable": 0,
+      "is_spoiler": 0,
+      "name": "Arcana of the Ages",
+      "name_pt": "Arcanos das Eras",
+      "tip": "Use as cartas de Arcana exigidas ao longo de várias runs contra Chronos.",
+      "trophy_code": "hades2_arcana_of_the_ages",
+      "type": "Bronze"
+    },
+    {
+      "description": "Cumpra a profecia “Presentes das Trevas”.",
+      "is_missable": 0,
+      "is_spoiler": 0,
+      "name": "Bearing Dark Gifts",
+      "name_pt": "Presentes das Trevas",
+      "tip": "Depois de liberar armas e aspectos, complete runs com todos os aspectos exigidos.",
+      "trophy_code": "hades2_bearing_dark_gifts",
+      "type": "Prata"
+    },
+    {
+      "description": "Cumpra a profecia “Vitória Vem de Berço”.",
+      "is_missable": 0,
+      "is_spoiler": 0,
+      "name": "Born to Win",
+      "name_pt": "Vitória Vem de Berço",
+      "tip": "Aumente o vínculo com Chaos e complete uma run usando o keepsake indicado pela profecia.",
+      "trophy_code": "hades2_born_to_win",
+      "type": "Prata"
+    },
+    {
+      "description": "Transponha o Tártaro.",
+      "is_missable": 0,
+      "is_spoiler": 1,
+      "name": "Witch of the Abyss",
+      "name_pt": "Bruxa do Abismo",
+      "tip": "Limpa a rota final do Submundo; entre com Death Defiances, boa vida e dano consistente.",
+      "trophy_code": "hades2_witch_of_the_abyss",
+      "type": "Bronze"
+    },
+    {
+      "description": "Obtenha 1.000 de ouro em competições com a Nêmesis.",
+      "is_missable": 0,
+      "is_spoiler": 0,
+      "name": "Fair Fight",
+      "name_pt": "Luta Justa",
+      "tip": "Ganhe desafios de sala contra Nemesis sempre que ela aparecer até acumular ouro suficiente.",
+      "trophy_code": "hades2_fair_fight",
+      "type": "Bronze"
+    },
+    {
+      "description": "Altere a aparência de cada um dos familiares selvagens.",
+      "is_missable": 0,
+      "is_spoiler": 0,
+      "name": "Unfamiliar Forms",
+      "name_pt": "Formas Pouco Familiares",
+      "tip": "Depois de recrutar e evoluir familiars, avance Circe e use a incantation de aparências.",
+      "trophy_code": "hades2_unfamiliar_forms",
+      "type": "Bronze"
+    },
+    {
+      "description": "Elimine uma Irmã dos Mortos sob o efeito da Maldição Crepuscular.",
+      "is_missable": 0,
+      "is_spoiler": 0,
+      "name": "Sheep's Clothing",
+      "name_pt": "Pele de Cordeiro",
+      "tip": "Aceite a maldição certa e derrote uma Sister of the Dead antes que o efeito atrapalhe a run.",
+      "trophy_code": "hades2_sheeps_clothing",
+      "type": "Bronze"
+    },
+    {
+      "description": "Use o Florescimento Noturno para reanimar uma sereia.",
+      "is_missable": 0,
+      "is_spoiler": 0,
+      "name": "Breaking Up the Band",
+      "name_pt": "Crise na Banda",
+      "tip": "Leve o Hex Night Bloom e use-o no momento certo durante o encontro das Sirens.",
+      "trophy_code": "hades2_breaking_up_the_band",
+      "type": "Bronze"
+    },
+    {
+      "description": "Chegue ao confronto final usando uma túnica da Aracne.",
+      "is_missable": 0,
+      "is_spoiler": 1,
+      "name": "Dressed to Kill",
+      "name_pt": "Vestida para Matar",
+      "tip": "Pegue um vestido forte da Arachne e preserve a armadura até a luta final da rota.",
+      "trophy_code": "hades2_dressed_to_kill",
+      "type": "Bronze"
+    },
+    {
+      "description": "Receba a primeira dádiva do véu.",
+      "is_missable": 0,
+      "is_spoiler": 0,
+      "name": "Behold Night's Champion",
+      "name_pt": "Contemple a Campeã da Noite",
+      "tip": "Avance o Oath of the Unseen e vença os desafios iniciais que liberam o primeiro presente.",
+      "trophy_code": "hades2_behold_nights_champion",
+      "type": "Bronze"
+    },
+    {
+      "description": "Receba a segunda dádiva do véu.",
+      "is_missable": 0,
+      "is_spoiler": 0,
+      "name": "Mercy, Night's Executioner",
+      "name_pt": "Piedade, ó Executora da Noite",
+      "tip": "Continue subindo os desafios do Oath of the Unseen até receber o segundo Gift of the Veil.",
+      "trophy_code": "hades2_mercy_nights_executioner",
+      "type": "Prata"
+    },
+    {
+      "description": "Triunfe no Duelo dos Campeões.",
+      "is_missable": 0,
+      "is_spoiler": 1,
+      "name": "Elysian Glory",
+      "name_pt": "Glória Elísia",
+      "tip": "Objetivo de epílogo: aceite o contrato quando estiver com build forte e pronto para um duelo especial.",
+      "trophy_code": "hades2_elysian_glory",
+      "type": "Prata"
+    },
+    {
+      "description": "Conclua a missão de vida da Princesa do Submundo.",
+      "is_missable": 0,
+      "is_spoiler": 1,
+      "name": "Death to Chronos",
+      "name_pt": "Morte a Cronos",
+      "tip": "Avance a história verdadeira, resolva as incantations principais e finalize a tarefa central de Melinoe.",
+      "trophy_code": "hades2_death_to_chronos",
+      "type": "Ouro"
+    },
+    {
+      "description": "Alcance o epílogo da história.",
+      "is_missable": 0,
+      "is_spoiler": 1,
+      "name": "Golden Age",
+      "name_pt": "Era de Ouro",
+      "tip": "Depois do final verdadeiro, continue diálogos, profecias e runs até abrir o epílogo.",
+      "trophy_code": "hades2_golden_age",
+      "type": "Ouro"
+    },
+    {
+      "description": "Transponha a cidade de Éfira.",
+      "is_missable": 0,
+      "is_spoiler": 0,
+      "name": "Witch of the Outskirts",
+      "name_pt": "Bruxa das Cercanias",
+      "tip": "Libere a Superfície, remova a maldição e complete a primeira área dessa rota.",
+      "trophy_code": "hades2_witch_of_the_outskirts",
+      "type": "Bronze"
+    },
+    {
+      "description": "Transponha a Fenda da Tessália.",
+      "is_missable": 0,
+      "is_spoiler": 0,
+      "name": "Witch of the Waters",
+      "name_pt": "Bruxa das Águas",
+      "tip": "Siga pela segunda área da Superfície e monte uma build com bom alcance e mobilidade.",
+      "trophy_code": "hades2_witch_of_the_waters",
+      "type": "Bronze"
+    },
+    {
+      "description": "Transponha o monte Olimpo.",
+      "is_missable": 0,
+      "is_spoiler": 0,
+      "name": "Witch of the Mountains",
+      "name_pt": "Bruxa das Montanhas",
+      "tip": "Área avançada da Superfície; entre com recursos defensivos e dano para chefes longos.",
+      "trophy_code": "hades2_witch_of_the_mountains",
+      "type": "Bronze"
+    },
+    {
+      "description": "Transponha o Topo.",
+      "is_missable": 0,
+      "is_spoiler": 1,
+      "name": "Witch of the Clouds",
+      "name_pt": "Bruxa das Nuvens",
+      "tip": "Final da rota de Superfície; deixe para quando já conhecer bem ataques e momentos seguros.",
+      "trophy_code": "hades2_witch_of_the_clouds",
+      "type": "Bronze"
+    },
+    {
+      "description": "Conjure 50 encantos no caldeirão da Encruzilhada.",
+      "is_missable": 0,
+      "is_spoiler": 0,
+      "name": "So Mote It Be",
+      "name_pt": "Que Assim Seja",
+      "tip": "Colete materiais em todas as rotas e use o cauldron sempre que novas receitas aparecerem.",
+      "trophy_code": "hades2_so_mote_it_be",
+      "type": "Bronze"
+    }
+  ]
+}

@@ -1,0 +1,921 @@
+{
+  "game": {
+    "avoid_if": "Evite se voce nao quer repetir capitulos, jogar Hard Mode, dominar minigames ou investir mais de 150 horas.",
+    "before_you_start": "Entre sabendo que e uma platina longa e dificil; o gargalo costuma estar em Hard Mode, combat simulator, Johnny's Treasure Trove, minigames e superbosses.",
+    "best_for": "Ideal para quem quer uma platina JRPG/action RPG enorme, com muito conteudo, builds e desafio real.",
+    "cleanup_advice": "Use chapter select para limpar minigames, side quests, world intel, relationship/affinity, manuscripts e preparar builds para Hard Mode.",
+    "cover_image": "https://cdn.cloudflare.steamstatic.com/steam/apps/2909400/library_600x900.jpg",
+    "coverage_level": "strong",
+    "created_at": "2026-05-09 19:53:39",
+    "difficulty": 8,
+    "difficulty_reason": "A dificuldade vem do Hard Mode, VR/Legendary bouts, superbosses, minigames exigentes e dominio dos sistemas de combate.",
+    "dlc_scope": "Guia focado na lista base de Final Fantasy VII Rebirth. Nao use listas de Final Fantasy VII Remake, INTERmission/Yuffie, Crisis Core ou Final Fantasy VII original.",
+    "editorial_notes": "",
+    "editorial_review_status": null,
+    "editorial_status": "published",
+    "first_run_advice": "Na primeira campanha, explore bastante e faca side content, mas aceite que a platina exigira retorno por chapter select.",
+    "grind_summary": "O peso esta em World Intel, side quests, minigames, combat simulator, Hard Mode, manuscripts, builds e desafios avancados.",
+    "guide_avoid": null,
+    "guide_best_moment": null,
+    "guide_dlc": null,
+    "guide_grind": null,
+    "guide_ideal": null,
+    "guide_online": null,
+    "guide_runs": null,
+    "image": "https://cdn.cloudflare.steamstatic.com/steam/apps/2909400/header.jpg",
+    "is_verified": 0,
+    "last_reviewed_at": "",
+    "missable": "Nao ha trofeus perdiveis definitivos: chapter select libera cleanup apos a historia, e o mundo aberto continua acessivel pelo Capitulo 13. A atencao fica em World Intel, Protorelics, side quests, minigames, Queen's Blood, piano, chocobo races, Johnny's Treasure Trove, combat simulator, affinity e Hard Mode.",
+    "missable_summary": "Nada e perdivel definitivo por causa do chapter select, mas escolhas, minigames e objetivos por capitulo podem gerar bastante retrabalho.",
+    "name": "Final Fantasy VII Rebirth",
+    "online_summary": "Nao ha exigencia online para a platina.",
+    "quality_warnings": "[]",
+    "reviewed_by": "",
+    "runs_summary": "Uma campanha inicial, muito cleanup por chapter select e uma passagem completa no Hard Mode. A platina exige dominio de side content, minigames e combat simulator.",
+    "slug": "final-fantasy-vii-rebirth",
+    "time": "150-200h",
+    "time_bucket": "long",
+    "time_max_hours": 200,
+    "time_min_hours": 150,
+    "time_reason": "A faixa de 150-200 horas considera campanha, regioes, side content, minigames, chapter select, Hard Mode, combat simulator e cleanup final.",
+    "time_sort_hours": 150,
+    "updated_at": "2026-06-27 02:36:58",
+    "verification_note": "Lista base de Final Fantasy VII Rebirth adicionada com checklist e roadmap completos; aguarda revisao editorial manual final.",
+    "verification_status": "review",
+    "walkthrough": null
+  },
+  "redirects": [],
+  "roadmaps": [
+    {
+      "content": "{\"title\":\"Avance pela campanha\",\"focus\":\"\",\"objective\":\"faca a primeira campanha em Normal ou Dynamic, explorando regioes e completando side content quando possivel. Nao confunda esta lista com Final Fantasy VII Remake.\",\"actions\":[],\"warning\":\"\",\"result\":\"\"}",
+      "step_order": 1
+    },
+    {
+      "content": "{\"title\":\"avance World Intel, Protorelics, Queen's Blood, minigames e s...\",\"focus\":\"\",\"objective\":\"avance World Intel, Protorelics, Queen's Blood, minigames e side quests. Assess em inimigos novos ajuda a liberar combat simulator/Chadley depois; nao minimize minigames, pois varios entram no caminho de Johnny's Treasure Trove.\",\"actions\":[],\"warning\":\"\",\"result\":\"\"}",
+      "step_order": 2
+    },
+    {
+      "content": "{\"title\":\"Limpe coletáveis por seleção de capítulos\",\"focus\":\"\",\"objective\":\"use chapter select para limpar collectibles, minigames, relationship/affinity, piano, chocobo races, Johnny's Treasure Trove e trofeus especificos.\",\"actions\":[],\"warning\":\"\",\"result\":\"\"}",
+      "step_order": 3
+    },
+    {
+      "content": "{\"title\":\"prepare builds, materias, equipamentos, manuscripts, weapon a...\",\"focus\":\"\",\"objective\":\"prepare builds, materias, equipamentos, manuscripts, weapon abilities, folios e party setups para Hard Mode e VR/Legendary bouts.\",\"actions\":[],\"warning\":\"\",\"result\":\"\"}",
+      "step_order": 4
+    },
+    {
+      "content": "{\"title\":\"Prossiga pela rota planejada\",\"focus\":\"\",\"objective\":\"complete todos os capitulos no Hard Mode para Of Hardy Stock. Hard Mode so libera depois de terminar a campanha uma vez.\",\"actions\":[],\"warning\":\"\",\"result\":\"\"}",
+      "step_order": 5
+    },
+    {
+      "content": "{\"title\":\"Revise pendências finais\",\"focus\":\"\",\"objective\":\"finalize combat simulator/Chadley, Brutal/Legendary VR bouts, Gilgamesh, superbosses, 7-Star Hotel e cleanup final sem misturar Remake, INTERmission/Yuffie, Crisis Core ou Final Fantasy VII original.\",\"actions\":[],\"warning\":\"\",\"result\":\"\"}",
+      "step_order": 6
+    }
+  ],
+  "schemaVersion": 1,
+  "seedExtras": {
+    "aliases": [],
+    "attentionPoints": [
+      {
+        "detail": "Chapter Select libera após a história. Use Chapter Select/Replay para recuperar minigames, World Intel, side quests e troféus de capítulo.",
+        "tags": [
+          "Sem perdíveis",
+          "Chapter Select"
+        ],
+        "title": "Sem perdíveis permanentes"
+      },
+      {
+        "detail": "Of Hardy Stock exige concluir todos os capítulos no Hard Mode, liberado apenas após terminar a história.",
+        "tags": [
+          "Hard Mode",
+          "Dificuldade"
+        ],
+        "title": "Hard Mode obrigatório"
+      },
+      {
+        "detail": "7-Star Hotel exige todos os 88 itens de Johnny's Treasure Trove e puxa quase todo o completionismo da platina.",
+        "tags": [
+          "Johnny",
+          "7-Star Hotel"
+        ],
+        "title": "Johnny's Treasure Trove"
+      },
+      {
+        "detail": "Virtually Renowned exige todos os Combat Simulator Challenges, incluindo Brutal e Legendary. Esses desafios são o maior gargalo de combate.",
+        "tags": [
+          "Combat Simulator",
+          "Legendary"
+        ],
+        "title": "Brutal/Legendary VR Missions"
+      },
+      {
+        "detail": "Priorize Rulers of the Outer Worlds quando estiver preparado, pois ele libera Gotterdammerung.",
+        "tags": [
+          "Gotterdammerung",
+          "Superboss"
+        ],
+        "title": "Rulers of the Outer Worlds"
+      },
+      {
+        "detail": "Esses desafios Legendary são extremamente exigentes. Prepare builds específicas e matérias maximizadas.",
+        "tags": [
+          "Legendary",
+          "Atenção"
+        ],
+        "title": "Bonds of Friendship e To Be a Hero"
+      },
+      {
+        "detail": "World Intel completo é necessário para desenvolver todas as matérias possíveis com Chadley.",
+        "tags": [
+          "World Intel",
+          "Chadley"
+        ],
+        "title": "World Intel e Chadley"
+      },
+      {
+        "detail": "Piano Virtuoso exige A-Rank nas músicas, não S-Rank.",
+        "tags": [
+          "Piano",
+          "A-Rank"
+        ],
+        "title": "Piano"
+      },
+      {
+        "detail": "A maioria dos minigames ligados a Johnny exige high score ou melhor rank. Separe uma etapa só para isso.",
+        "tags": [
+          "Minigames",
+          "High score"
+        ],
+        "title": "Minigames"
+      },
+      {
+        "detail": "Não exigem completionismo total para a platina. Além dos troféus introdutórios, não infle o checklist com conteúdo irrelevante.",
+        "tags": [
+          "Mapa",
+          "Escopo"
+        ],
+        "title": "Open World Caches e Chocobo Stops"
+      },
+      {
+        "detail": "Concluir Protorelics e Gilgamesh é importante para liberar conteúdo final e preparar Combat Simulator.",
+        "tags": [
+          "Protorelics",
+          "Gilgamesh"
+        ],
+        "title": "Gilgamesh e Protorelics"
+      },
+      {
+        "detail": "Se a versão do guia tiver Streamlined Progression, valide se essas opções não bloqueiam troféus antes de recomendar como rota facilitada.",
+        "tags": [
+          "Versões modernas",
+          "Assistência"
+        ],
+        "title": "Streamlined Progression"
+      }
+    ],
+    "checklist": [
+      "Conferir se o guia tem 61 troféus.",
+      "Conferir se The Planet's Hope é a platina.",
+      "Conferir distribuição: 1 platina, 1 ouro, 5 prata e 54 bronze.",
+      "Conferir onlineRequired false, coopRequired false e dlcRequired false.",
+      "Conferir hasMissables false e missableCount 0.",
+      "Conferir filtro Perdíveis 0, Online 0, Coop 0 e DLC 0.",
+      "Conferir filtro Dificuldade 1.",
+      "Conferir Of Hardy Stock como único troféu Dificuldade.",
+      "Conferir 7-Star Hotel/Johnny's Treasure Trove com 88 itens.",
+      "Conferir Virtually Renowned/todos Combat Simulator Challenges.",
+      "Conferir Rulers of the Outer Worlds/Gotterdammerung no texto de simuladores.",
+      "Conferir Bonds of Friendship e To Be a Hero.",
+      "Conferir World Intel 169.",
+      "Conferir Materia Completionist/Chadley.",
+      "Conferir Gilgamesh/Protorelics.",
+      "Conferir Piano Virtuoso com A-Rank, não S-Rank.",
+      "Conferir que Open World Caches não são completionismo obrigatório.",
+      "Conferir que Chocobo Stops não são completionismo obrigatório.",
+      "Conferir que Manuscripts ajudam, mas não são troféu direto.",
+      "Conferir minigames e high scores.",
+      "Conferir side quests.",
+      "Conferir Chapter Select e Chapter Replay.",
+      "Conferir Streamlined Progression apenas se aplicável e validado.",
+      "Conferir que não há INTERmission/Yuffie.",
+      "Conferir que não há Final Fantasy VII Remake misturado.",
+      "Conferir que não há Final Fantasy VII Revelation misturado.",
+      "Conferir se todos os troféus têm nome oficial em inglês como principal.",
+      "Conferir se todos têm PT-BR abaixo.",
+      "Conferir se descrições estão em português.",
+      "Conferir se textos em português têm acentos.",
+      "Conferir se não aparecem rótulos antigos de nome original nem placeholders editoriais.",
+      "Conferir se roadmap está estruturado como array de objetos.",
+      "Conferir se roadmap não renderiza objetos crus.",
+      "Conferir se não aparecem nomes técnicos de campos do roadmap no front.",
+      "Conferir FAQ, decisão rápida, SEO e pontos de atenção.",
+      "Conferir se página individual e catálogo exibem o mesmo status editorial.",
+      "Conferir se flags do topo batem com filtros do catálogo."
+    ],
+    "faq": [
+      {
+        "answer": "Não há perdíveis permanentes. Chapter Select libera após a história e permite recuperar side quests, World Intel, minigames, colecionáveis e troféus de capítulo.",
+        "question": "Final Fantasy VII Rebirth tem troféus perdíveis?"
+      },
+      {
+        "answer": "Não. A lista base é totalmente single-player.",
+        "question": "Precisa jogar online para platinar?"
+      },
+      {
+        "answer": "Não. Nenhum troféu exige cooperação.",
+        "question": "Precisa de cooperação?"
+      },
+      {
+        "answer": "Não. Final Fantasy VII Rebirth não exige DLC para a platina. Não misture este guia com INTERmission, que pertence ao Remake Intergrade.",
+        "question": "Precisa de DLC?"
+      },
+      {
+        "answer": "A rota tradicional exige pelo menos duas etapas: uma primeira run para concluir história e completionismo, e uma segunda passagem pelos capítulos no Hard Mode.",
+        "question": "Quantas runs são necessárias?"
+      },
+      {
+        "answer": "Sim. Of Hardy Stock exige concluir todos os capítulos no Hard Mode.",
+        "question": "A dificuldade afeta troféus?"
+      },
+      {
+        "answer": "Johnny's Treasure Trove e os desafios Brutal/Legendary do Combat Simulator. Eles concentram a maior parte do tempo e da dificuldade.",
+        "question": "O que é o maior gargalo da platina?"
+      },
+      {
+        "answer": "Exige todos os 88 itens do Johnny's Treasure Trove, o que envolve minigames, side quests, World Intel, Combat Simulator e várias atividades de completionismo.",
+        "question": "7-Star Hotel exige o quê?"
+      },
+      {
+        "answer": "Não. Para os troféus, as músicas de piano exigem A-Rank.",
+        "question": "Piano Virtuoso exige S-Rank?"
+      },
+      {
+        "answer": "Não como completionismo total. Há troféus introdutórios ligados a caches e Chocobo Stops, mas limpar todos eles não é requisito da platina.",
+        "question": "Preciso completar Open World Caches e Chocobo Stops?"
+      },
+      {
+        "answer": "Depende. Fazer Brutal/Legendary primeiro libera Gotterdammerung e facilita o Hard; fazer capítulos no Hard primeiro libera manuscripts e fortalece builds para os simuladores.",
+        "question": "Qual a melhor ordem: Hard Mode ou Brutal/Legendary primeiro?"
+      },
+      {
+        "answer": "Somente se estiver disponível na versão que você está usando e se não bloquear troféus. Trate como rota facilitada/assistida, não como requisito obrigatório.",
+        "question": "Streamlined Progression pode ser usado?"
+      },
+      {
+        "answer": "Na rota tradicional, cerca de 150 a 200 horas. O tempo pode cair em versões modernas com recursos de assistência, se eles estiverem disponíveis e não bloquearem troféus.",
+        "question": "Quanto tempo leva para platinar?"
+      }
+    ],
+    "note": "Campos exportados para auditoria. O SQLite atual nao possui colunas nativas para todos esses extras; a importacao preserva o que o banco suporta.",
+    "quickDecision": {
+      "difficulty": "Alta na rota tradicional, principalmente por Brutal/Legendary VR Missions, Hard Mode e minigames.",
+      "dlc": "Não exige DLC.",
+      "firstAction": "Comece a campanha usando Assess em inimigos novos, avançando World Intel e fazendo side quests/minigames conforme as regiões liberarem.",
+      "mainRisk": "Johnny's Treasure Trove, Brutal/Legendary Combat Simulator, World Intel, minigames, Hard Mode e Chapter Select.",
+      "onlineCoop": "Não exige online nem cooperação.",
+      "risk": "Baixo em perda permanente, alto em retrabalho se o jogador não usar checklist.",
+      "time": "Muito longo, cerca de 150 a 200 horas na rota tradicional.",
+      "verdict": "Sim, mas é uma platina de elite: longa, exigente e focada em quase 100% de conclusão."
+    },
+    "seo": {
+      "description": "Guia de troféus de Final Fantasy VII Rebirth com roadmap da platina, Hard Mode, Johnny's Treasure Trove, World Intel, Brutal/Legendary VR Missions, Piano, Gilgamesh, Chapter Select e dicas para os 61 troféus.",
+      "keywords": [
+        "Final Fantasy VII Rebirth troféus",
+        "Final Fantasy VII Rebirth platina",
+        "guia Final Fantasy VII Rebirth",
+        "FF7 Rebirth troféus",
+        "FFVII Rebirth platina",
+        "The Planet's Hope",
+        "7-Star Hotel",
+        "Johnny's Treasure Trove",
+        "Of Hardy Stock",
+        "Rulers of the Outer Worlds",
+        "Bonds of Friendship",
+        "To Be a Hero",
+        "Virtually Renowned",
+        "Materia Completionist",
+        "World Intel",
+        "Gilgamesh",
+        "Piano Virtuoso",
+        "Final Fantasy VII Rebirth Hard Mode"
+      ],
+      "metaDescription": "Guia de troféus de Final Fantasy VII Rebirth com roadmap da platina, Hard Mode, Johnny's Treasure Trove, World Intel, Brutal/Legendary VR Missions, Piano, Gilgamesh, Chapter Select e dicas para os 61 troféus.",
+      "ogDescription": "Roadmap PT-BR da platina de Final Fantasy VII Rebirth com 61 troféus, sem perdíveis permanentes, sem online, sem coop, sem DLC e foco em Johnny, World Intel, Combat Simulator e Hard Mode.",
+      "ogTitle": "Final Fantasy VII Rebirth: Guia de Troféus e Platina",
+      "title": "Final Fantasy VII Rebirth: Guia de Troféus e Platina"
+    },
+    "tags": []
+  },
+  "slug": "final-fantasy-vii-rebirth",
+  "trophies": [
+    {
+      "description": "Earn all FINAL FANTASY VII REBIRTH trophies.",
+      "is_missable": 0,
+      "is_spoiler": 0,
+      "name": "The Planet's Hope",
+      "name_pt": "",
+      "tip": "Conclua os outros 60 trofeus da lista base de Rebirth. Nao use listas de Remake, INTERmission/Yuffie, Crisis Core ou Final Fantasy VII original.",
+      "trophy_code": "ff7rebirth_the_planets_hope",
+      "type": "Platina"
+    },
+    {
+      "description": "Complete Chapter 1.",
+      "is_missable": 0,
+      "is_spoiler": 0,
+      "name": "Never Meet Your Heroes",
+      "name_pt": "",
+      "tip": "Trofeu automatico de progresso da historia.",
+      "trophy_code": "ff7rebirth_never_meet_your_heroes",
+      "type": "Bronze"
+    },
+    {
+      "description": "Complete Chapter 2.",
+      "is_missable": 0,
+      "is_spoiler": 0,
+      "name": "Swampy Situation",
+      "name_pt": "",
+      "tip": "Trofeu automatico de progresso da historia.",
+      "trophy_code": "ff7rebirth_swampy_situation",
+      "type": "Bronze"
+    },
+    {
+      "description": "Complete Chapter 3.",
+      "is_missable": 0,
+      "is_spoiler": 0,
+      "name": "Make Mine Black",
+      "name_pt": "",
+      "tip": "Trofeu automatico de progresso da historia.",
+      "trophy_code": "ff7rebirth_make_mine_black",
+      "type": "Bronze"
+    },
+    {
+      "description": "Complete Chapter 4.",
+      "is_missable": 0,
+      "is_spoiler": 0,
+      "name": "The President's Commendation",
+      "name_pt": "",
+      "tip": "Trofeu automatico de progresso da historia.",
+      "trophy_code": "ff7rebirth_the_presidents_commendation",
+      "type": "Bronze"
+    },
+    {
+      "description": "Complete Chapter 5.",
+      "is_missable": 0,
+      "is_spoiler": 0,
+      "name": "Cryptic Cameo",
+      "name_pt": "",
+      "tip": "Trofeu automatico de progresso da historia.",
+      "trophy_code": "ff7rebirth_cryptic_cameo",
+      "type": "Bronze"
+    },
+    {
+      "description": "Complete Chapter 6.",
+      "is_missable": 0,
+      "is_spoiler": 0,
+      "name": "Fun in the Sun",
+      "name_pt": "",
+      "tip": "Trofeu automatico de progresso da historia.",
+      "trophy_code": "ff7rebirth_fun_in_the_sun",
+      "type": "Bronze"
+    },
+    {
+      "description": "Complete Chapter 7.",
+      "is_missable": 0,
+      "is_spoiler": 0,
+      "name": "The Price of Progress",
+      "name_pt": "",
+      "tip": "Trofeu automatico de progresso da historia.",
+      "trophy_code": "ff7rebirth_the_price_of_progress",
+      "type": "Bronze"
+    },
+    {
+      "description": "Complete Chapter 8.",
+      "is_missable": 0,
+      "is_spoiler": 0,
+      "name": "Worth the Weight?",
+      "name_pt": "",
+      "tip": "Trofeu automatico de progresso da historia.",
+      "trophy_code": "ff7rebirth_worth_the_weight",
+      "type": "Bronze"
+    },
+    {
+      "description": "Complete Chapter 9.",
+      "is_missable": 0,
+      "is_spoiler": 0,
+      "name": "Crying Out",
+      "name_pt": "",
+      "tip": "Trofeu automatico de progresso da historia.",
+      "trophy_code": "ff7rebirth_crying_out",
+      "type": "Bronze"
+    },
+    {
+      "description": "Complete Chapter 10.",
+      "is_missable": 0,
+      "is_spoiler": 1,
+      "name": "Stars Fell from My Eyes",
+      "name_pt": "",
+      "tip": "Trofeu automatico de progresso da historia.",
+      "trophy_code": "ff7rebirth_stars_fell_from_my_eyes",
+      "type": "Bronze"
+    },
+    {
+      "description": "Complete Chapter 11.",
+      "is_missable": 0,
+      "is_spoiler": 1,
+      "name": "You're Not Murasaki",
+      "name_pt": "",
+      "tip": "Trofeu automatico de progresso da historia.",
+      "trophy_code": "ff7rebirth_youre_not_murasaki",
+      "type": "Bronze"
+    },
+    {
+      "description": "Complete Chapter 12.",
+      "is_missable": 0,
+      "is_spoiler": 1,
+      "name": "Hearts Out, Dukes Up",
+      "name_pt": "",
+      "tip": "Trofeu automatico de progresso da historia.",
+      "trophy_code": "ff7rebirth_hearts_out_dukes_up",
+      "type": "Bronze"
+    },
+    {
+      "description": "Complete Chapter 13.",
+      "is_missable": 0,
+      "is_spoiler": 1,
+      "name": "I'm Here for You",
+      "name_pt": "",
+      "tip": "Trofeu automatico de progresso da historia. Chapter 13 tambem e chave para cleanup do mundo aberto.",
+      "trophy_code": "ff7rebirth_im_here_for_you",
+      "type": "Bronze"
+    },
+    {
+      "description": "Complete Chapter 14.",
+      "is_missable": 0,
+      "is_spoiler": 1,
+      "name": "Confluence of Worlds",
+      "name_pt": "",
+      "tip": "Trofeu automatico de conclusao da historia e liberacao do chapter select/Hard Mode.",
+      "trophy_code": "ff7rebirth_confluence_of_worlds",
+      "type": "Bronze"
+    },
+    {
+      "description": "Win a battle.",
+      "is_missable": 0,
+      "is_spoiler": 0,
+      "name": "I Got This",
+      "name_pt": "",
+      "tip": "Vem naturalmente nos primeiros combates da campanha.",
+      "trophy_code": "ff7rebirth_i_got_this",
+      "type": "Bronze"
+    },
+    {
+      "description": "Exploit an enemy's weakness.",
+      "is_missable": 0,
+      "is_spoiler": 0,
+      "name": "Exploitative Practices",
+      "name_pt": "",
+      "tip": "Use Assess e ataques elementais para identificar e explorar fraquezas.",
+      "trophy_code": "ff7rebirth_exploitative_practices",
+      "type": "Bronze"
+    },
+    {
+      "description": "Free a bound ally.",
+      "is_missable": 0,
+      "is_spoiler": 0,
+      "name": "Unfettered Friendship",
+      "name_pt": "",
+      "tip": "Ataque o inimigo ou parte que prendeu um aliado durante combate.",
+      "trophy_code": "ff7rebirth_unfettered_friendship",
+      "type": "Bronze"
+    },
+    {
+      "description": "Stagger an enemy.",
+      "is_missable": 0,
+      "is_spoiler": 0,
+      "name": "Staggered Learning",
+      "name_pt": "",
+      "tip": "Pressione inimigos e encha a barra de stagger.",
+      "trophy_code": "ff7rebirth_staggered_learning",
+      "type": "Bronze"
+    },
+    {
+      "description": "Use a limit break.",
+      "is_missable": 0,
+      "is_spoiler": 0,
+      "name": "Break It Down",
+      "name_pt": "",
+      "tip": "Use qualquer Limit Break quando a barra encher.",
+      "trophy_code": "ff7rebirth_break_it_down",
+      "type": "Bronze"
+    },
+    {
+      "description": "Invoke a summon.",
+      "is_missable": 0,
+      "is_spoiler": 0,
+      "name": "Fledgling Summoner",
+      "name_pt": "",
+      "tip": "Use uma summon quando a barra de invocacao estiver disponivel.",
+      "trophy_code": "ff7rebirth_fledgling_summoner",
+      "type": "Bronze"
+    },
+    {
+      "description": "Use a synergy skill.",
+      "is_missable": 0,
+      "is_spoiler": 0,
+      "name": "Team Player",
+      "name_pt": "",
+      "tip": "Use uma synergy skill com dois personagens compativeis.",
+      "trophy_code": "ff7rebirth_team_player",
+      "type": "Bronze"
+    },
+    {
+      "description": "Use a synergy ability.",
+      "is_missable": 0,
+      "is_spoiler": 0,
+      "name": "No \"I\" in \"Synergy\"",
+      "name_pt": "",
+      "tip": "Use uma synergy ability depois de acumular sinergia suficiente entre personagens.",
+      "trophy_code": "ff7rebirth_no_i_in_synergy",
+      "type": "Bronze"
+    },
+    {
+      "description": "Complete a quest.",
+      "is_missable": 0,
+      "is_spoiler": 0,
+      "name": "Entering New Markets",
+      "name_pt": "",
+      "tip": "Complete qualquer side quest. Todas as quests entram no caminho de My Job Here Is Done.",
+      "trophy_code": "ff7rebirth_entering_new_markets",
+      "type": "Bronze"
+    },
+    {
+      "description": "Max out a weapon ability's proficiency.",
+      "is_missable": 0,
+      "is_spoiler": 0,
+      "name": "Weapons 101",
+      "name_pt": "",
+      "tip": "Use a habilidade unica de uma arma ate cumprir o bonus de proficiencia.",
+      "trophy_code": "ff7rebirth_weapons_101",
+      "type": "Bronze"
+    },
+    {
+      "description": "Level up an orb of materia.",
+      "is_missable": 0,
+      "is_spoiler": 0,
+      "name": "A Materia World",
+      "name_pt": "",
+      "tip": "Equipe materia e ganhe AP em combates.",
+      "trophy_code": "ff7rebirth_a_materia_world",
+      "type": "Bronze"
+    },
+    {
+      "description": "Raise your Queen's Blood rank.",
+      "is_missable": 0,
+      "is_spoiler": 0,
+      "name": "New Blood",
+      "name_pt": "",
+      "tip": "Venca jogadores de Queen's Blood para subir de rank.",
+      "trophy_code": "ff7rebirth_new_blood",
+      "type": "Bronze"
+    },
+    {
+      "description": "Complete your search of a cache location.",
+      "is_missable": 0,
+      "is_spoiler": 0,
+      "name": "Caching In",
+      "name_pt": "",
+      "tip": "Abra todos os baus em uma cache location.",
+      "trophy_code": "ff7rebirth_caching_in",
+      "type": "Bronze"
+    },
+    {
+      "description": "Repair three chocobo stops.",
+      "is_missable": 0,
+      "is_spoiler": 0,
+      "name": "I Brake for Chocobos",
+      "name_pt": "",
+      "tip": "Repare tres chocobo stops no mundo aberto.",
+      "trophy_code": "ff7rebirth_i_brake_for_chocobos",
+      "type": "Bronze"
+    },
+    {
+      "description": "Use a chocobo to find two treasures buried by rabbits.",
+      "is_missable": 0,
+      "is_spoiler": 0,
+      "name": "Expert Ex-kweh-vator",
+      "name_pt": "",
+      "tip": "Use o faro do chocobo para seguir rastros e desenterrar dois tesouros.",
+      "trophy_code": "ff7rebirth_expert_ex_kweh_vator",
+      "type": "Bronze"
+    },
+    {
+      "description": "Defeat a summon in battle and obtain its materia.",
+      "is_missable": 0,
+      "is_spoiler": 0,
+      "name": "You Work for Me Now",
+      "name_pt": "",
+      "tip": "Venca uma summon battle no combat simulator do Chadley.",
+      "trophy_code": "ff7rebirth_you_work_for_me_now",
+      "type": "Bronze"
+    },
+    {
+      "description": "Gather world intel at five separate locations.",
+      "is_missable": 0,
+      "is_spoiler": 0,
+      "name": "Intelligence Aide",
+      "name_pt": "",
+      "tip": "Complete cinco pontos de World Intel.",
+      "trophy_code": "ff7rebirth_intelligence_aide",
+      "type": "Bronze"
+    },
+    {
+      "description": "Gather world intel at fifty separate locations.",
+      "is_missable": 0,
+      "is_spoiler": 0,
+      "name": "Intelligence Specialist",
+      "name_pt": "",
+      "tip": "Complete 50 pontos de World Intel. Para Materia Completionist, planeje fazer todos.",
+      "trophy_code": "ff7rebirth_intelligence_specialist",
+      "type": "Bronze"
+    },
+    {
+      "description": "Gather all pieces of world intel in a region.",
+      "is_missable": 0,
+      "is_spoiler": 0,
+      "name": "Director of Regional Intelligence",
+      "name_pt": "",
+      "tip": "Complete todos os pontos de World Intel em uma regiao.",
+      "trophy_code": "ff7rebirth_director_of_regional_intelligence",
+      "type": "Bronze"
+    },
+    {
+      "description": "Obtain a protorelic in the grasslands.",
+      "is_missable": 0,
+      "is_spoiler": 1,
+      "name": "Founder's Bonus",
+      "name_pt": "",
+      "tip": "Protorelic ligado a Phenomenon Intel da regiao Grasslands. Nao e perdivel; use chapter select/Chapter 13 se faltar.",
+      "trophy_code": "ff7rebirth_founders_bonus",
+      "type": "Bronze"
+    },
+    {
+      "description": "Obtain a protorelic in the Junon region.",
+      "is_missable": 0,
+      "is_spoiler": 1,
+      "name": "Fort Condor Commander",
+      "name_pt": "",
+      "tip": "Protorelic da regiao Junon, ligado a Fort Condor. Trate como world intel/cleanup, nao como perdivel.",
+      "trophy_code": "ff7rebirth_fort_condor_commander",
+      "type": "Bronze"
+    },
+    {
+      "description": "Obtain a protorelic in the Corel region.",
+      "is_missable": 0,
+      "is_spoiler": 1,
+      "name": "Cactuar Crusher",
+      "name_pt": "",
+      "tip": "Protorelic da regiao Corel, ligado a minigames de Cactuar. Pode ser limpo depois.",
+      "trophy_code": "ff7rebirth_cactuar_crusher",
+      "type": "Bronze"
+    },
+    {
+      "description": "Obtain a protorelic in the Gongaga region.",
+      "is_missable": 0,
+      "is_spoiler": 1,
+      "name": "Honorary Turk",
+      "name_pt": "",
+      "tip": "Protorelic da regiao Gongaga. Use chapter select se deixar para cleanup.",
+      "trophy_code": "ff7rebirth_honorary_turk",
+      "type": "Bronze"
+    },
+    {
+      "description": "Obtain a protorelic in the Cosmo Canyon region.",
+      "is_missable": 0,
+      "is_spoiler": 1,
+      "name": "The Gambit Paid Off",
+      "name_pt": "",
+      "tip": "Protorelic da regiao Cosmo Canyon. Entra no caminho de Gilgamesh e Bladesman of Legend.",
+      "trophy_code": "ff7rebirth_the_gambit_paid_off",
+      "type": "Bronze"
+    },
+    {
+      "description": "Obtain a protorelic in the Nibel region.",
+      "is_missable": 0,
+      "is_spoiler": 1,
+      "name": "Professional Handler",
+      "name_pt": "",
+      "tip": "Protorelic da regiao Nibel. Complete todos os protorelics para abrir a rota de Gilgamesh.",
+      "trophy_code": "ff7rebirth_professional_handler",
+      "type": "Bronze"
+    },
+    {
+      "description": "Defeat Gilgamesh.",
+      "is_missable": 0,
+      "is_spoiler": 1,
+      "name": "Bladesman of Legend",
+      "name_pt": "",
+      "tip": "Exige todos os Protorelics e lutas adicionais na ilha de Gilgamesh. Conteudo opcional avancado, mas nao perdivel.",
+      "trophy_code": "ff7rebirth_bladesman_of_legend",
+      "type": "Prata"
+    },
+    {
+      "description": "Max out your moogle emporium merchant rank.",
+      "is_missable": 0,
+      "is_spoiler": 0,
+      "name": "Moogle Lover",
+      "name_pt": "",
+      "tip": "Complete Moogle Intel nas regioes para subir o merchant rank ao maximo.",
+      "trophy_code": "ff7rebirth_moogle_lover",
+      "type": "Bronze"
+    },
+    {
+      "description": "Develop all possible materia together with Chadley.",
+      "is_missable": 0,
+      "is_spoiler": 0,
+      "name": "Materia Completionist",
+      "name_pt": "",
+      "tip": "Exige todos os 169 World Intel e desenvolver todas as materias disponiveis no Chadley, incluindo copias.",
+      "trophy_code": "ff7rebirth_materia_completionist",
+      "type": "Prata"
+    },
+    {
+      "description": "Recruit all Midgar 7th Infantry units for the parade in Junon.",
+      "is_missable": 0,
+      "is_spoiler": 0,
+      "name": "7th, Assemble!",
+      "name_pt": "",
+      "tip": "Encontre todas as unidades no Capitulo 4. Chapter select permite repetir.",
+      "trophy_code": "ff7rebirth_7th_assemble",
+      "type": "Bronze"
+    },
+    {
+      "description": "Win the prize for outstanding performance in the Junon parade.",
+      "is_missable": 0,
+      "is_spoiler": 0,
+      "name": "Stealing the Show",
+      "name_pt": "",
+      "tip": "Monte a parada com todas as unidades e execute bem o minigame.",
+      "trophy_code": "ff7rebirth_stealing_the_show",
+      "type": "Bronze"
+    },
+    {
+      "description": "Win the Queen's Blood tournament held on board the Shinra-8.",
+      "is_missable": 0,
+      "is_spoiler": 0,
+      "name": "Card Royalty",
+      "name_pt": "",
+      "tip": "Venca o torneio de Queen's Blood. Guarde saves entre rodadas se quiser reduzir retrabalho.",
+      "trophy_code": "ff7rebirth_card_royalty",
+      "type": "Bronze"
+    },
+    {
+      "description": "Receive a review of S or higher for your performance in Loveless at the Gold Saucer.",
+      "is_missable": 0,
+      "is_spoiler": 1,
+      "name": "Critically Acclaimed",
+      "name_pt": "",
+      "tip": "Minigame de Loveless no Capitulo 12; a rota pode variar por affinity. Use save manual ou chapter select.",
+      "trophy_code": "ff7rebirth_critically_acclaimed",
+      "type": "Bronze"
+    },
+    {
+      "description": "Donate 10 items to the treasure trove at Johnny's Seaside Inn.",
+      "is_missable": 0,
+      "is_spoiler": 0,
+      "name": "1-Star Startup",
+      "name_pt": "",
+      "tip": "Primeiro marco de Johnny's Treasure Trove.",
+      "trophy_code": "ff7rebirth_1_star_startup",
+      "type": "Bronze"
+    },
+    {
+      "description": "Donate 30 items to the treasure trove at Johnny's Seaside Inn.",
+      "is_missable": 0,
+      "is_spoiler": 0,
+      "name": "3-Star Hotel",
+      "name_pt": "",
+      "tip": "Continue coletando Collector Items por side content e minigames.",
+      "trophy_code": "ff7rebirth_3_star_hotel",
+      "type": "Bronze"
+    },
+    {
+      "description": "Donate 60 items to the treasure trove at Johnny's Seaside Inn.",
+      "is_missable": 0,
+      "is_spoiler": 0,
+      "name": "5-Star Hotel",
+      "name_pt": "",
+      "tip": "Marco avancado do Treasure Trove; exige bastante side content e minigames.",
+      "trophy_code": "ff7rebirth_5_star_hotel",
+      "type": "Prata"
+    },
+    {
+      "description": "Inform Johnny that you have donated all possible items to his treasure trove.",
+      "is_missable": 0,
+      "is_spoiler": 0,
+      "name": "7-Star Hotel",
+      "name_pt": "",
+      "tip": "O grande requisito de quase 100%: side quests, World Intel, minigames, combat simulator, Brutal/Legendary bouts e itens do Johnny.",
+      "trophy_code": "ff7rebirth_7_star_hotel",
+      "type": "Ouro"
+    },
+    {
+      "description": "Defeat Sephiroth in 3D Brawler.",
+      "is_missable": 0,
+      "is_spoiler": 1,
+      "name": "Polygonal Prizefighter",
+      "name_pt": "",
+      "tip": "Minigame avancado de 3D Brawler; exige reconhecer padroes e desbloqueios tardios.",
+      "trophy_code": "ff7rebirth_polygonal_prizefighter",
+      "type": "Bronze"
+    },
+    {
+      "description": "Play all six Piano Outreach Association songs well enough to receive remuneration.",
+      "is_missable": 0,
+      "is_spoiler": 0,
+      "name": "Piano Virtuoso",
+      "name_pt": "",
+      "tip": "Toque as seis musicas de piano com rank suficiente. A platina nao exige S-rank nelas, mas exige consistencia.",
+      "trophy_code": "ff7rebirth_piano_virtuoso",
+      "type": "Bronze"
+    },
+    {
+      "description": "Complete all bouts in the Musclehead Colosseum.",
+      "is_missable": 0,
+      "is_spoiler": 0,
+      "name": "Are You Not Entertained?",
+      "name_pt": "",
+      "tip": "Complete todos os bouts do Musclehead Colosseum; alguns abrem so depois da historia.",
+      "trophy_code": "ff7rebirth_are_you_not_entertained",
+      "type": "Bronze"
+    },
+    {
+      "description": "Win all chocobo races.",
+      "is_missable": 0,
+      "is_spoiler": 0,
+      "name": "Hall of Famer",
+      "name_pt": "",
+      "tip": "Venca todas as corridas de chocobo, incluindo o Gold Cup desbloqueado por side quest.",
+      "trophy_code": "ff7rebirth_hall_of_famer",
+      "type": "Bronze"
+    },
+    {
+      "description": "Complete all quests.",
+      "is_missable": 0,
+      "is_spoiler": 0,
+      "name": "My Job Here Is Done",
+      "name_pt": "",
+      "tip": "Complete as 36 side quests. Chapter select permite retornar ao Capitulo 13 para cleanup.",
+      "trophy_code": "ff7rebirth_my_job_here_is_done",
+      "type": "Bronze"
+    },
+    {
+      "description": "Attain level 70 with a character.",
+      "is_missable": 0,
+      "is_spoiler": 0,
+      "name": "Grind It Out",
+      "name_pt": "",
+      "tip": "Normalmente vem durante cleanup, Hard Mode, colosseum e combat simulator.",
+      "trophy_code": "ff7rebirth_grind_it_out",
+      "type": "Bronze"
+    },
+    {
+      "description": "Deal 300% or more damage to a staggered enemy.",
+      "is_missable": 0,
+      "is_spoiler": 0,
+      "name": "Staggering Success",
+      "name_pt": "",
+      "tip": "Use Tifa e habilidades que aumentam multiplicador de stagger em uma janela longa.",
+      "trophy_code": "ff7rebirth_staggering_success",
+      "type": "Bronze"
+    },
+    {
+      "description": "Master all weapon abilities and limit breaks, including those found in folios.",
+      "is_missable": 0,
+      "is_spoiler": 0,
+      "name": "Well-Rounded",
+      "name_pt": "",
+      "tip": "Domine todas as habilidades de armas e limite/folios. Isso tambem prepara builds para Hard Mode.",
+      "trophy_code": "ff7rebirth_well_rounded",
+      "type": "Bronze"
+    },
+    {
+      "description": "Complete all chapters on Hard difficulty.",
+      "is_missable": 0,
+      "is_spoiler": 0,
+      "name": "Of Hardy Stock",
+      "name_pt": "",
+      "tip": "Hard Mode libera apos terminar a historia. Itens ficam bloqueados, benches nao restauram MP e builds importam muito.",
+      "trophy_code": "ff7rebirth_of_hardy_stock",
+      "type": "Prata"
+    },
+    {
+      "description": "Complete all of Chadley's combat simulations.",
+      "is_missable": 0,
+      "is_spoiler": 1,
+      "name": "Virtually Renowned",
+      "name_pt": "",
+      "tip": "Inclui Brutal/Legendary bouts, requisitos de World Intel, inimigos avaliados, Gilgamesh e lutas avancadas do Chadley.",
+      "trophy_code": "ff7rebirth_virtually_renowned",
+      "type": "Prata"
+    }
+  ]
+}

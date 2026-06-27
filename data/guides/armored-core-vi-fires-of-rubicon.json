@@ -1,0 +1,545 @@
+{
+  "game": {
+    "avoid_if": "Evite se voce nao quer repetir missoes, buscar S Rank, ajustar builds ou jogar ate NG++.",
+    "before_you_start": "Entre sabendo que o gargalo real e S Rank em todas as missoes. A campanha e so a primeira parte da platina.",
+    "best_for": "Ideal para quem quer uma platina de acao tecnica, baseada em customizacao, execucao, replay de missoes e otimizacao.",
+    "cleanup_advice": "Depois do NG++, revise missoes alternativas, Combat Logs, partes, Arena e comece o grind de S Rank missao por missao.",
+    "cover_image": "https://cdn.cloudflare.steamstatic.com/steam/apps/1888160/library_600x900.jpg",
+    "coverage_level": "strong",
+    "created_at": "2026-05-09 19:53:44",
+    "difficulty": 7,
+    "difficulty_reason": "A dificuldade vem menos da campanha em si e mais do S Rank em todas as missoes, bosses, execucao limpa e otimizacao de builds.",
+    "dlc_scope": "Guia focado na lista base de Armored Core VI: Fires of Rubicon.",
+    "editorial_notes": "",
+    "editorial_review_status": null,
+    "editorial_status": "published",
+    "first_run_advice": "Na primeira campanha, foque em aprender builds, mobilidade, stagger e padroes de bosses. Deixe S Rank para depois.",
+    "grind_summary": "O peso esta em S Rank de todas as missoes, Combat Logs, Arena, partes, finais e dominio de builds.",
+    "guide_avoid": null,
+    "guide_best_moment": null,
+    "guide_dlc": null,
+    "guide_grind": null,
+    "guide_ideal": null,
+    "guide_online": null,
+    "guide_runs": null,
+    "image": "https://cdn.cloudflare.steamstatic.com/steam/apps/1888160/header.jpg",
+    "is_verified": 0,
+    "last_reviewed_at": "",
+    "missable": "Nao ha trofeus online e a maioria do conteudo pode ser revisitada por Mission Replay, mas a platina exige tres ciclos ate NG++, todos os finais, todas as missoes, Combat Logs, Arena/Analysis Arena, partes, OS Tuning e S Rank em todas as missoes. O risco real e de planejamento: escolhas de rota e ultimos programas de Arena no NG++ podem gerar uma quarta passagem se forem ignorados.",
+    "missable_summary": "Nao ha perdiveis definitivos no sentido tradicional, pois missoes podem ser revisitadas, mas escolhas de rota, finais e a janela final da Analysis Arena no NG++ exigem planejamento para evitar uma quarta passagem.",
+    "name": "Armored Core VI: Fires of Rubicon",
+    "online_summary": "Nao ha exigencia online para a platina.",
+    "quality_warnings": "[]",
+    "reviewed_by": "",
+    "runs_summary": "A platina exige tres ciclos ate NG++ para todos os finais, missoes alternativas e desbloqueios. Depois, o foco vira S Rank e cleanup.",
+    "slug": "armored-core-vi-fires-of-rubicon",
+    "time": "50-70h",
+    "time_bucket": "long",
+    "time_max_hours": 70,
+    "time_min_hours": 50,
+    "time_reason": "A faixa de 50-70 horas considera tres ciclos, todos os finais, Combat Logs, partes, Arena, OS Tuning e S Rank em todas as missoes.",
+    "time_sort_hours": 50,
+    "updated_at": "2026-06-27 02:36:58",
+    "verification_note": "Lista PlayStation base de Armored Core VI: Fires of Rubicon adicionada com checklist e roadmap completos; aguarda revisao editorial manual final.",
+    "verification_status": "review",
+    "walkthrough": null
+  },
+  "redirects": [],
+  "roadmaps": [
+    {
+      "content": "{\"title\":\"Treine chefes sem dano\",\"focus\":\"\",\"objective\":\"faca a primeira campanha aprendendo builds, stagger, mobilidade, bosses e sistemas de montagem do AC. Compre e teste armas, frames, boosters, FCS e generators sem perseguir S Rank cedo.\",\"actions\":[],\"warning\":\"\",\"result\":\"\"}",
+      "step_order": 1
+    },
+    {
+      "content": "{\"title\":\"Planeje o grind principal\",\"focus\":\"\",\"objective\":\"escolha uma rota/final e complete a primeira campanha sem focar em S Rank. Use Mission Replay apenas para dinheiro, treino, Training Complete, Combat Logs obvios e partes faceis.\",\"actions\":[],\"warning\":\"\",\"result\":\"\"}",
+      "step_order": 2
+    },
+    {
+      "content": "{\"title\":\"Limpe pendências antes do NG+\",\"focus\":\"\",\"objective\":\"avance em NG+ para novas missoes, decisoes alternativas, Arena, OS Tuning, partes e segundo final. Anote escolhas de rota para liberar todas as missoes em Stargazer.\",\"actions\":[],\"warning\":\"\",\"result\":\"\"}",
+      "step_order": 3
+    },
+    {
+      "content": "{\"title\":\"Limpe pendências antes do NG+\",\"focus\":\"\",\"objective\":\"faca NG++ para a rota restante, missoes exclusivas, MIA, ultimo final Alea Iacta Est e Analysis Arena. Antes de Coral Release, finalize os programas finais de Arena para evitar retrabalho.\",\"actions\":[],\"warning\":\"\",\"result\":\"\"}",
+      "step_order": 4
+    },
+    {
+      "content": "{\"title\":\"Aprenda runs e libere runas\",\"focus\":\"\",\"objective\":\"limpe Combat Logs, Training, Arena, OS Tuning, partes de containers, recompensas de missoes e colecoes: Asset Holder, Weapon Collector, External Parts Collector, Internal Parts Collector e Expansion Collector.\",\"actions\":[],\"warning\":\"\",\"result\":\"\"}",
+      "step_order": 5
+    },
+    {
+      "content": "{\"title\":\"Planeje o grind principal\",\"focus\":\"\",\"objective\":\"use Mission Replay para S Rank em todas as missoes. Este e o maior gargalo da platina: ajuste builds, reduza dano, economize ammo e otimize rotas de objetivos.\",\"actions\":[],\"warning\":\"\",\"result\":\"\"}",
+      "step_order": 6
+    },
+    {
+      "content": "{\"title\":\"Aprenda runs e libere runas\",\"focus\":\"\",\"objective\":\"revise todos os finais, NG++, Stargazer, The Perfect Mercenary, Combat Log Collector, Master of Arena, Tuning Expert, partes, logs e S Ranks antes da platina Armored Core.\",\"actions\":[],\"warning\":\"\",\"result\":\"\"}",
+      "step_order": 7
+    }
+  ],
+  "schemaVersion": 1,
+  "seedExtras": {
+    "aliases": [],
+    "attentionPoints": [
+      {
+        "detail": "NG, NG+ e NG++ são necessários para liberar todos os finais, missões e conteúdo exclusivo.",
+        "tags": [
+          "RUNS",
+          "NG++"
+        ],
+        "title": "Três playthroughs são obrigatórios"
+      },
+      {
+        "detail": "Escolher missões repetidas pode atrasar Stargazer e forçar outra run.",
+        "tags": [
+          "ROTA",
+          "ATENÇÃO"
+        ],
+        "title": "Decision Missions definem a rota"
+      },
+      {
+        "detail": "A terceira rota exige escolhas específicas e missões exclusivas de NG++.",
+        "tags": [
+          "FINAL",
+          "NG++"
+        ],
+        "title": "Alea Iacta Est depende de NG++"
+      },
+      {
+        "detail": "S Rank em todas as missões é o principal desafio de execução.",
+        "tags": [
+          "S RANK",
+          "DIFICULDADE"
+        ],
+        "title": "The Perfect Mercenary é o pico da platina"
+      },
+      {
+        "detail": "Use replay para S Rank, combat logs, containers e aprendizado de rotas.",
+        "tags": [
+          "MISSION REPLAY",
+          "CLEANUP"
+        ],
+        "title": "Mission Replay e o centro do cleanup"
+      },
+      {
+        "detail": "Master of Arena pode exigir atenção antes de encerrar NG++.",
+        "tags": [
+          "ARENA",
+          "RISCO"
+        ],
+        "title": "Arena/Analysis não deve ficar para depois"
+      },
+      {
+        "detail": "Se uma missão com log não foi liberada por decisão, pode ser preciso outra run.",
+        "tags": [
+          "COMBAT LOGS",
+          "ROTA"
+        ],
+        "title": "Combat logs dependem de missões desbloqueadas"
+      },
+      {
+        "detail": "Asset Holder e coletores exigem checklist de equipamento.",
+        "tags": [
+          "PEÇAS",
+          "CHECKLIST"
+        ],
+        "title": "Peças dependem de loja, logs, containers e Arena"
+      },
+      {
+        "detail": "PvP/multiplayer não é requisito da platina.",
+        "tags": [
+          "OFFLINE"
+        ],
+        "title": "Não há troféu online"
+      },
+      {
+        "detail": "O jogo tem dificuldade fixa; o 8/10 vem dos S Ranks, não de seletor de dificuldade.",
+        "tags": [
+          "DIFICULDADE"
+        ],
+        "title": "Não existe troféu de dificuldade"
+      }
+    ],
+    "checklist": [],
+    "faq": [
+      {
+        "answer": "Não. A lista de platina tem 30 troféus offline e 0 online. PvP/multiplayer não é necessário para a platina.",
+        "question": "Armored Core VI tem troféus online?"
+      },
+      {
+        "answer": "Não. Não há requisito de coop.",
+        "question": "Precisa de coop para platinar?"
+      },
+      {
+        "answer": "Não. A platina base não exige DLC.",
+        "question": "DLC é necessária para a platina?"
+      },
+      {
+        "answer": "A lista PlayStation tem 30 troféus.",
+        "question": "Quantos troféus Armored Core VI tem?"
+      },
+      {
+        "answer": "O mínimo prático é 3 playthroughs: NG, NG+ e NG++. Isso é necessário para liberar todos os finais, missões e conteúdo exclusivo.",
+        "question": "Quantas runs são necessárias?"
+      },
+      {
+        "answer": "Não substitui as 3 runs. Há missões e final exclusivos de NG++, então o planejamento de rota continua obrigatório.",
+        "question": "Save scum resolve os finais?"
+      },
+      {
+        "answer": "Depende do critério. Não há perda permanente simples por causa de Mission Replay e NG+, mas há riscos de run/decisão: escolher missões erradas, não desbloquear conteúdo ou deixar Arena/Analysis de NG++ pode exigir outra run. O guia trata isso como risco de run.",
+        "question": "Armored Core VI tem troféus perdíveis?"
+      },
+      {
+        "answer": "The Perfect Mercenary, porque exige S Rank em todas as missões.",
+        "question": "Qual é o troféu mais difícil?"
+      },
+      {
+        "answer": "Sim. S Rank deve ser buscado via Mission Replay depois de liberar as missões.",
+        "question": "Mission Replay conta para S Rank?"
+      },
+      {
+        "answer": "Não há seletor de dificuldade tradicional. A dificuldade da platina vem da execução, builds e S Ranks.",
+        "question": "A dificuldade afeta troféus?"
+      },
+      {
+        "answer": "Uma estimativa segura é 50-70h, dependendo da habilidade do jogador e da quantidade de tentativas em S Rank.",
+        "question": "Quanto tempo leva para platinar?"
+      },
+      {
+        "answer": "Repetir Decision Missions antigas, deixar missões exclusivas de NG++ passarem, não finalizar Arena/Analysis, ignorar combat logs e não usar checklist de partes.",
+        "question": "O que mais causa retrabalho?"
+      }
+    ],
+    "note": "Campos exportados para auditoria. O SQLite atual nao possui colunas nativas para todos esses extras; a importacao preserva o que o banco suporta.",
+    "quickDecision": {
+      "firstAction": "Comece pela primeira campanha aprendendo builds e deixe S Rank pesado para Mission Replay depois de liberar todas as missões.",
+      "recommendation": "O maior desafio é The Perfect Mercenary, que exige S Rank em todas as missões; o maior risco de planejamento é repetir decisões e atrasar missões/finais de NG+ e NG++.",
+      "risk": "Evite apenas se você não quer repetir missões várias vezes ou depender de execução precisa para S Rank.",
+      "summary": "Vale platinar Armored Core VI: Fires of Rubicon se você quer uma platina offline, difícil e focada em domínio de builds, Mission Replay, S Rank, coleções de partes e três rotas completas."
+    },
+    "seo": {
+      "description": "Guia de platina de Armored Core VI: Fires of Rubicon com roadmap, 30 troféus, três runs, finais, Mission Replay, S Rank, combat logs, peças, flags e dicas para The Perfect Mercenary.",
+      "keywords": "Armored Core VI guia de platina, Armored Core 6 guia de platina, Armored Core VI Fires of Rubicon troféus, Armored Core VI roadmap, Armored Core VI S Rank, Armored Core VI The Perfect Mercenary, Armored Core VI Stargazer, Armored Core VI finais, Armored Core VI Alea Iacta Est, Armored Core VI Mission Replay, Armored Core VI combat logs, Armored Core VI peças, Armored Core VI sem online, Armored Core VI sem coop, Armored Core VI 30 troféus",
+      "ogDescription": "Roadmap da platina offline de Armored Core VI com 30 troféus, NG, NG+, NG++, S Rank, Mission Replay, combat logs, partes e finais.",
+      "ogTitle": "Armored Core VI: guia de platina, troféus e roadmap",
+      "title": "Armored Core VI: Fires of Rubicon: guia de platina, troféus e roadmap | AtlasAchievement"
+    },
+    "tags": [
+      "Armored Core VI",
+      "Fires of Rubicon",
+      "Platina",
+      "Offline",
+      "Sem online",
+      "Sem coop",
+      "Sem DLC obrigatória",
+      "NG+",
+      "NG++",
+      "Mission Replay",
+      "S Rank",
+      "Combat logs",
+      "Partes"
+    ]
+  },
+  "slug": "armored-core-vi-fires-of-rubicon",
+  "trophies": [
+    {
+      "description": "Acquired all trophies.",
+      "is_missable": 0,
+      "is_spoiler": 0,
+      "name": "Armored Core",
+      "name_pt": "Armored Core",
+      "tip": "Conclua os outros 29 trofeus da lista base de Armored Core VI: Fires of Rubicon. A platina usa apenas a lista base.",
+      "trophy_code": "ac6_armored_core",
+      "type": "Platina"
+    },
+    {
+      "description": "Cleared all missions with an S Rank rating.",
+      "is_missable": 1,
+      "is_spoiler": 0,
+      "name": "The Perfect Mercenary",
+      "name_pt": "O Mercenario Perfeito",
+      "tip": "S Rank so conta via Mission Replay. Nao e perdivel, mas e o maior gargalo de habilidade, build, velocidade, dano recebido e custo de ammo.",
+      "trophy_code": "ac6_the_perfect_mercenary",
+      "type": "Ouro"
+    },
+    {
+      "description": "Cleared all missions.",
+      "is_missable": 1,
+      "is_spoiler": 1,
+      "name": "Stargazer",
+      "name_pt": "Observador de Estrelas",
+      "tip": "Exige liberar e concluir todas as missoes, incluindo alternativas por decisoes e rotas de NG+/NG++. Planeje escolhas para nao repetir ciclo extra.",
+      "trophy_code": "ac6_stargazer",
+      "type": "Ouro"
+    },
+    {
+      "description": "Cleared all Arena programs.",
+      "is_missable": 1,
+      "is_spoiler": 1,
+      "name": "Master of Arena",
+      "name_pt": "Mestre da Arena",
+      "tip": "Inclui Arena/Analysis Arena de NG+ e NG++. Finalize os ultimos programas antes de concluir Coral Release; se ignorar, pode precisar avancar outra passagem ate esse ponto.",
+      "trophy_code": "ac6_master_of_arena",
+      "type": "Ouro"
+    },
+    {
+      "description": "Obtained all parts.",
+      "is_missable": 1,
+      "is_spoiler": 1,
+      "name": "Asset Holder",
+      "name_pt": "Detentor do Ativo",
+      "tip": "Exige todas as partes de loja, containers, Combat Logs, Arena/Analysis Arena, missoes e NG++. A janela final de Analysis Arena pode causar retrabalho se voce fechar NG++ cedo.",
+      "trophy_code": "ac6_asset_holder",
+      "type": "Ouro"
+    },
+    {
+      "description": "Performed all OS upgrades.",
+      "is_missable": 0,
+      "is_spoiler": 0,
+      "name": "Tuning Expert",
+      "name_pt": "Expert em Ajuste",
+      "tip": "Compre todos os upgrades no menu OS Tuning usando OST Chips da Arena. Precisa avancar ate NG+, mas nao e online nem perdivel.",
+      "trophy_code": "ac6_tuning_expert",
+      "type": "Ouro"
+    },
+    {
+      "description": "Reached ending: \"The Fires of Raven.\"",
+      "is_missable": 1,
+      "is_spoiler": 1,
+      "name": "The Fires of Raven",
+      "name_pt": "Os Incendios do Corvo",
+      "tip": "Final ligado a decisao de rota no fim. Nao e perdivel definitivo, mas exige um ciclo dedicado ou planejamento entre NG/NG+.",
+      "trophy_code": "ac6_the_fires_of_raven",
+      "type": "Prata"
+    },
+    {
+      "description": "Reached ending: \"Liberator of Rubicon.\"",
+      "is_missable": 1,
+      "is_spoiler": 1,
+      "name": "Liberator of Rubicon",
+      "name_pt": "Libertador de Rubicon",
+      "tip": "Final alternativo da campanha. Planeje junto de The Fires of Raven e deixe o terceiro final para NG++.",
+      "trophy_code": "ac6_liberator_of_rubicon",
+      "type": "Prata"
+    },
+    {
+      "description": "Reached ending: \"Alea Iacta Est.\"",
+      "is_missable": 1,
+      "is_spoiler": 1,
+      "name": "Alea Iacta Est",
+      "name_pt": "Alea Iacta Est",
+      "tip": "Final exclusivo de NG++ com decisoes e missoes especificas. E obrigatorio para a platina e para completar a rota final.",
+      "trophy_code": "ac6_alea_iacta_est",
+      "type": "Prata"
+    },
+    {
+      "description": "Obtained all weapon parts.",
+      "is_missable": 1,
+      "is_spoiler": 0,
+      "name": "Weapon Collector",
+      "name_pt": "Colecionador de Armas",
+      "tip": "Colete/compre todas as armas de bracos e costas. Faz parte do caminho para Asset Holder e depende de missoes, logs, loja e progresso de ciclos.",
+      "trophy_code": "ac6_weapon_collector",
+      "type": "Prata"
+    },
+    {
+      "description": "Obtained all frame parts.",
+      "is_missable": 1,
+      "is_spoiler": 0,
+      "name": "External Parts Collector",
+      "name_pt": "Colecionador de Pecas Externas",
+      "tip": "Inclui HEAD, CORE, ARMS e LEGS. Revise recompensas de missoes, containers, Combat Logs e Arena antes do cleanup final.",
+      "trophy_code": "ac6_external_parts_collector",
+      "type": "Prata"
+    },
+    {
+      "description": "Obtained all inner parts.",
+      "is_missable": 1,
+      "is_spoiler": 0,
+      "name": "Internal Parts Collector",
+      "name_pt": "Colecionador de Pecas Internas",
+      "tip": "Inclui BOOSTER, FCS e GENERATOR. Muitas partes dependem de progresso, compra e recompensas especificas.",
+      "trophy_code": "ac6_internal_parts_collector",
+      "type": "Prata"
+    },
+    {
+      "description": "Obtained all Core Expansions.",
+      "is_missable": 0,
+      "is_spoiler": 0,
+      "name": "Expansion Collector",
+      "name_pt": "Colecionador de Expansao",
+      "tip": "Compre Assault Armor, Pulse Protection, Pulse Armor e Terminal Armor no OS Tuning. Pode resetar OS, entao nao trate como perdivel.",
+      "trophy_code": "ac6_expansion_collector",
+      "type": "Prata"
+    },
+    {
+      "description": "Obtained all combat logs.",
+      "is_missable": 1,
+      "is_spoiler": 1,
+      "name": "Combat Log Collector",
+      "name_pt": "Colecionador de Registro de Combate",
+      "tip": "Revise todas as missoes com alvo de Combat Log, inclusive alternativas de rota. Logs sao cleanup/replay, nao online nem perdivel definitivo.",
+      "trophy_code": "ac6_combat_log_collector",
+      "type": "Prata"
+    },
+    {
+      "description": "Obtained ten data logs.",
+      "is_missable": 0,
+      "is_spoiler": 0,
+      "name": "Data Log Collector",
+      "name_pt": "Colecionador de Registro de Dados",
+      "tip": "Dez data logs bastam. Deve vir naturalmente pela historia e exploracao leve antes do cleanup pesado.",
+      "trophy_code": "ac6_data_log_collector",
+      "type": "Prata"
+    },
+    {
+      "description": "Cleared all combat aptitude evaluation programs in the Arena.",
+      "is_missable": 0,
+      "is_spoiler": 0,
+      "name": "Testing Complete",
+      "name_pt": "Teste Concluido",
+      "tip": "Complete os programas de Arena do primeiro ciclo. Tambem alimenta OST Chips e prepara o caminho para Master of Arena.",
+      "trophy_code": "ac6_testing_complete",
+      "type": "Prata"
+    },
+    {
+      "description": "Cleared mission: \"Illegal Entry.\"",
+      "is_missable": 0,
+      "is_spoiler": 0,
+      "name": "Illegal Entry",
+      "name_pt": "Entrada Ilegal",
+      "tip": "Trofeu de historia da primeira missao. Use para aprender movement, assault boost, lock-on e stagger.",
+      "trophy_code": "ac6_illegal_entry",
+      "type": "Bronze"
+    },
+    {
+      "description": "Cleared mission: \"Operation Wallclimber.\"",
+      "is_missable": 0,
+      "is_spoiler": 1,
+      "name": "Operation Wallclimber",
+      "name_pt": "Operacao Alpinista",
+      "tip": "Marco inicial de campanha e boss. Ainda nao se preocupe com S Rank.",
+      "trophy_code": "ac6_operation_wallclimber",
+      "type": "Bronze"
+    },
+    {
+      "description": "Cleared mission: \"Attack the Watchpoint.\"",
+      "is_missable": 0,
+      "is_spoiler": 1,
+      "name": "Contact",
+      "name_pt": "Contato",
+      "tip": "Chefe importante de Chapter 1. Ajuste build se bater em parede; comprar partes e trocar armas faz parte do jogo.",
+      "trophy_code": "ac6_contact",
+      "type": "Bronze"
+    },
+    {
+      "description": "Cleared mission: \"Ocean Crossing.\"",
+      "is_missable": 0,
+      "is_spoiler": 1,
+      "name": "Ocean Crossing",
+      "name_pt": "Travessia do Oceano",
+      "tip": "Marco de Chapter 2. Use como treino para mobilidade, cobertura e controle de dano.",
+      "trophy_code": "ac6_ocean_crossing",
+      "type": "Bronze"
+    },
+    {
+      "description": "Cleared mission: \"Attack the Old Spaceport.\"",
+      "is_missable": 0,
+      "is_spoiler": 1,
+      "name": "A New Threat",
+      "name_pt": "Uma Nova Ameaca",
+      "tip": "Marco de Chapter 3. Decisoes anteriores nao impedem este trofeu, mas afetam missoes alternativas para Stargazer.",
+      "trophy_code": "ac6_a_new_threat",
+      "type": "Bronze"
+    },
+    {
+      "description": "Cleared mission: \"Destroy the Ice Worm.\"",
+      "is_missable": 0,
+      "is_spoiler": 1,
+      "name": "Ayre and the Coral",
+      "name_pt": "Ayre e o Coral",
+      "tip": "Missao principal de Chapter 3. O boss ensina punicao de janelas curtas e execucao limpa.",
+      "trophy_code": "ac6_ayre_and_the_coral",
+      "type": "Bronze"
+    },
+    {
+      "description": "Cleared mission: \"Underground Exploration - Depth 3.\"",
+      "is_missable": 0,
+      "is_spoiler": 1,
+      "name": "Into Unknown Territory",
+      "name_pt": "Em Territorio Desconhecido",
+      "tip": "Marco de Chapter 4 e ponto relevante para desbloqueios de Arena. Revise progresso antes de acelerar para o fim.",
+      "trophy_code": "ac6_into_unknown_territory",
+      "type": "Bronze"
+    },
+    {
+      "description": "Cleared mission: \"Reach the Coral Convergence.\"",
+      "is_missable": 0,
+      "is_spoiler": 1,
+      "name": "Re-education",
+      "name_pt": "Reeducacao",
+      "tip": "Marco avancado de campanha. Rota e decisoes finais comecam a importar para finais e missoes restantes.",
+      "trophy_code": "ac6_re_education",
+      "type": "Bronze"
+    },
+    {
+      "description": "Cleared mission: \"Take the Uninhabited Floating City.\"",
+      "is_missable": 0,
+      "is_spoiler": 1,
+      "name": "The Floating City",
+      "name_pt": "A Cidade Flutuante",
+      "tip": "Missao de Chapter 5 ligada ao fim da campanha. Depois, acompanhe as decisoes finais para liberar endings diferentes.",
+      "trophy_code": "ac6_the_floating_city",
+      "type": "Bronze"
+    },
+    {
+      "description": "Cleared mission: \"MIA.\"",
+      "is_missable": 0,
+      "is_spoiler": 1,
+      "name": "MIA",
+      "name_pt": "Desaparecido",
+      "tip": "Missao de NG++ ligada a rota Alea Iacta Est. Nao existe nos dois primeiros ciclos e deve entrar no planejamento do terceiro.",
+      "trophy_code": "ac6_mia",
+      "type": "Bronze"
+    },
+    {
+      "description": "Cleared all training programs.",
+      "is_missable": 0,
+      "is_spoiler": 0,
+      "name": "Training Complete",
+      "name_pt": "Treinamento Concluido",
+      "tip": "Complete todos os tutoriais em Garage > Sortie > Training. Alem do trofeu, alguns treinos liberam partes uteis.",
+      "trophy_code": "ac6_training_complete",
+      "type": "Bronze"
+    },
+    {
+      "description": "Assembled an AC.",
+      "is_missable": 0,
+      "is_spoiler": 0,
+      "name": "Hardware Engineer",
+      "name_pt": "Engenheiro de Hardware",
+      "tip": "Troque qualquer parte no Assembly depois da primeira missao. Vem naturalmente enquanto voce testa builds.",
+      "trophy_code": "ac6_hardware_engineer",
+      "type": "Bronze"
+    },
+    {
+      "description": "Upgraded your AC's OS.",
+      "is_missable": 0,
+      "is_spoiler": 0,
+      "name": "Software Engineer",
+      "name_pt": "Engenheiro de Software",
+      "tip": "Compre qualquer melhoria em OS Tuning depois que o menu for liberado. Arena fornece os OST Chips.",
+      "trophy_code": "ac6_software_engineer",
+      "type": "Bronze"
+    },
+    {
+      "description": "Changed the coloration of your AC.",
+      "is_missable": 0,
+      "is_spoiler": 0,
+      "name": "Graphic Designer",
+      "name_pt": "Designer Grafico",
+      "tip": "Altere qualquer cor no menu Paint do AC Design. E um trofeu simples de garagem.",
+      "trophy_code": "ac6_graphic_designer",
+      "type": "Bronze"
+    }
+  ]
+}

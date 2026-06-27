@@ -1,0 +1,659 @@
+{
+  "game": {
+    "avoid_if": "Não recomendada para quem quer uma platina linear, sem guia ou sem repetir capítulos para escolhas opostas.",
+    "before_you_start": "Detroit: Become Human é uma platina curta e fácil em execução, mas muito dependente de escolhas. A lista base tem 49 troféus offline, não exige online, coop ou DLC, e pode ser feita com uma primeira campanha cuidadosa, uma rota para todos sobreviverem, uma rota para as mortes de Connor e replays parciais por seleção de capítulo. O maior cuidado é entender que o Chapter Select só salva mudanças se você continuar jogando os capítulos seguintes a partir da alteração; refazer um capítulo isolado e pular para o final não atualiza consequências futuras.\n\nA ordem mais segura é fazer uma primeira campanha acompanhando troféus de capítulo, mantendo personagens importantes vivos e coletando revistas quando possível, depois fazer a rota de SURVIVORS, a rota de I’LL BE BACK com Connor morrendo em todas as oportunidades, e por fim limpar revistas e troféus de escolhas opostas. Use o flowchart e o checklist para controlar rotas, personagens vivos, revistas condicionais e capítulos que precisam ser continuados com salvamento ativado.",
+    "best_for": "Recomendada para quem gosta de narrativa ramificada, escolhas consequentes e replay por capítulos.",
+    "cleanup_advice": "Use Chapter Select com cuidado: se uma escolha precisa afetar capítulos futuros, ative o salvamento e continue jogando todos os capítulos seguintes a partir dessa alteração. Refazer um capítulo isolado e pular direto para o final não atualiza consequências futuras.",
+    "cover_image": "https://cdn.cloudflare.steamstatic.com/steam/apps/1222140/library_600x900.jpg",
+    "coverage_level": "strong",
+    "created_at": "2026-05-09 19:53:51",
+    "difficulty": 2,
+    "difficulty_reason": "A dificuldade 2/10 vem de execução simples, ausência de troféus de dificuldade e possibilidade de jogar no Casual para reduzir falhas de QTE. O desafio real é planejamento de escolhas.",
+    "dlc_scope": "Guia focado na lista base PS4 de 49 troféus de Detroit: Become Human; não há DLC/add-on obrigatório para a platina.",
+    "editorial_notes": "Revisão editorial aplicada à lista base PS4 de 49 troféus. Critério de perdível do guia: troféus sensíveis a escolhas/capítulos/rotas/extras que podem exigir replay, pontos de bônus ou Chapter Select com continuidade. DETROIT MASTER, THANK YOU e THIS IS MY STORY ficam fora da contagem de perdíveis.",
+    "editorial_review_status": "verified",
+    "editorial_status": "published",
+    "first_run_advice": "Comece por uma campanha guiada, mantendo todos vivos sempre que possível e pegando revistas no caminho. Depois use Chapter Select com salvamento ativado para rotas específicas como SURVIVORS, I’LL BE BACK e cleanup de escolhas opostas.",
+    "grind_summary": "O esforço está em decisões, rotas, sobreviventes, mortes de Connor, relação Hank/Connor, finais de Kara e Markus, revistas condicionais e pontos de bônus.",
+    "guide_avoid": null,
+    "guide_best_moment": null,
+    "guide_dlc": null,
+    "guide_grind": null,
+    "guide_ideal": null,
+    "guide_online": null,
+    "guide_runs": null,
+    "image": "https://cdn.cloudflare.steamstatic.com/steam/apps/1222140/header.jpg",
+    "is_verified": 1,
+    "last_reviewed_at": "2026-05-28",
+    "missable": "Alta atenção por escolhas, capítulos e rotas. Neste guia, Perdível significa troféu sensível a escolha/capítulo que pode exigir replay ou Chapter Select com continuidade; a platina, THANK YOU e THIS IS MY STORY não entram nessa contagem.",
+    "missable_summary": "46 troféus ficam marcados como perdíveis/atenção por dependerem de escolhas, capítulos, personagens vivos, finais, revistas, extras ou rotas persistentes. Chapter Select ajuda, mas escolhas só afetam capítulos futuros se você continuar jogando a partir do ponto alterado com salvamento ativado.",
+    "name": "Detroit: Become Human",
+    "online_summary": "Não há exigência online, troféus online, multiplayer obrigatório, coop ou PS+ para a platina base.",
+    "quality_warnings": "[]",
+    "reviewed_by": "AtlasAchievement Editorial",
+    "runs_summary": "Mínimo recomendado: uma campanha guiada, uma rota para SURVIVORS, uma rota para I’LL BE BACK e replays parciais por Chapter Select para revistas e escolhas opostas.",
+    "slug": "detroit-become-human",
+    "time": "20h",
+    "time_bucket": "medium",
+    "time_max_hours": 20,
+    "time_min_hours": 20,
+    "time_reason": "A estimativa de cerca de 20h considera uma campanha guiada, rotas específicas para SURVIVORS e I’LL BE BACK, limpeza de revistas e replays por Chapter Select.",
+    "time_sort_hours": 20,
+    "updated_at": "2026-06-27 02:36:59",
+    "verification_note": "Guia verificado editorialmente para a lista base PS4 de 49 troféus, com 46 troféus sensíveis a escolhas, rotas, capítulos ou replays parciais.",
+    "verification_status": "verified",
+    "walkthrough": null
+  },
+  "redirects": [],
+  "roadmaps": [
+    {
+      "content": "{\"title\":\"Faça a primeira campanha guiada\",\"focus\":\"História e escolhas\",\"objective\":\"Concluir a história pela primeira vez enquanto pega troféus de capítulo, mantém personagens importantes vivos e começa a coletar revistas.\",\"actions\":[\"Jogue no Casual para reduzir o risco de falhar QTEs e perder personagens por acidente.\",\"Siga os troféus de capítulo em ordem cronológica sempre que possível.\",\"Mantenha Connor, Hank, Kara, Alice, Luther, Markus, Simon, North e Josh vivos se estiver mirando uma base boa para SURVIVORS.\",\"Leia todas as revistas que encontrar e confira as duas capas/assuntos quando houver revista dupla.\",\"Use o flowchart para entender escolhas, mas evite alterar capítulos isolados sem continuar a história a partir deles.\"],\"warning\":\"Mudanças feitas pelo Chapter Select só afetam capítulos futuros se você continuar jogando a partir do ponto alterado com salvamento ativado.\",\"result\":\"Primeira campanha concluída, boa parte dos troféus de capítulo encaminhada e rotas futuras preparadas.\"}",
+      "step_order": 1
+    },
+    {
+      "content": "{\"title\":\"Prepare a rota de todos sobrevivendo\",\"focus\":\"SURVIVORS\",\"objective\":\"Garantir que todos os personagens exigidos permaneçam vivos até o final para o troféu SURVIVORS.\",\"actions\":[\"Se alguém morreu na primeira campanha, volte ao capítulo em que o erro aconteceu.\",\"Continue jogando todos os capítulos seguintes a partir desse ponto para que a mudança seja salva.\",\"Mantenha Connor, Hank, Kara, Alice, Luther, Jerry, Markus, Simon, North e Josh vivos.\",\"Escolha rotas pacíficas sempre que isso reduzir risco para aliados importantes.\",\"Aproveite a rota para pegar revistas alternativas que aparecem conforme suas escolhas.\"],\"warning\":\"Não basta salvar um personagem em um capítulo e pular para o final; o jogo precisa propagar a alteração pelos capítulos seguintes.\",\"result\":\"Rota de sobreviventes concluída ou pronta para finalizar SURVIVORS e troféus relacionados.\"}",
+      "step_order": 2
+    },
+    {
+      "content": "{\"title\":\"Faça a rota das mortes de Connor\",\"focus\":\"I’LL BE BACK\",\"objective\":\"Completar a rota em que Connor morre em todas as oportunidades necessárias antes do final.\",\"actions\":[\"Planeje a rota completa de I’LL BE BACK antes de iniciar.\",\"Inclua a morte opcional ligada ao capítulo The Interrogation se ela estiver disponível no seu flowchart.\",\"Deteriore a relação com Hank para liberar JUST A MACHINE quando necessário.\",\"Considere encurtar a rota deixando Kara e Markus morrerem nas oportunidades adequadas, se o guia seguir essa estratégia.\",\"Use o checklist para marcar cada morte de Connor já concluída.\"],\"warning\":\"Pular uma morte de Connor pode obrigar replay longo; acompanhe a rota capítulo por capítulo.\",\"result\":\"I’LL BE BACK e JUST A MACHINE resolvidos ou encaminhados sem perder a sequência.\"}",
+      "step_order": 3
+    },
+    {
+      "content": "{\"title\":\"Limpe escolhas opostas por Chapter Select\",\"focus\":\"Capítulos e rotas\",\"objective\":\"Buscar troféus alternativos de capítulos que exigem escolhas opostas ou finais diferentes.\",\"actions\":[\"Rejogue capítulos com pares de troféus opostos, como DEFEND YOURSELF e SELF-CONTROL.\",\"Use Chapter Select com salvamento quando a escolha precisar afetar capítulos futuros.\",\"Faça rotas específicas de Connor, Kara e Markus para troféus de finais e decisões.\",\"Marque no checklist quais troféus dependem só de um capítulo e quais exigem continuar a história.\",\"Evite sobrescrever uma rota útil antes de terminar troféus dependentes dela.\"],\"warning\":\"Alguns troféus parecem isolados, mas dependem de escolhas acumuladas; revise o flowchart antes de alterar uma rota.\",\"result\":\"Troféus de escolhas alternativas e finais específicos resolvidos.\"}",
+      "step_order": 4
+    },
+    {
+      "content": "{\"title\":\"Finalize revistas e extras\",\"focus\":\"Coletáveis\",\"objective\":\"Encontrar revistas restantes, gastar pontos de bônus e fechar pendências de extras.\",\"actions\":[\"Abra o menu de extras para conferir revistas já encontradas.\",\"Revise revistas/magazines que dependem de escolhas específicas e rotas alternativas.\",\"Ao encontrar uma revista, leia todos os assuntos/capas disponíveis.\",\"Use Chapter Select com salvamento ativado quando a revista depender de consequências futuras.\",\"Gaste os pontos de bônus necessários para THESE ARE OUR STORIES.\"],\"warning\":\"BOOKWORM pode exigir replays parciais porque revistas mudam conforme eventos e escolhas da história.\",\"result\":\"Revistas, pontos de bônus e extras finalizados.\"}",
+      "step_order": 5
+    },
+    {
+      "content": "{\"title\":\"Faça o cleanup final da platina\",\"focus\":\"Cleanup\",\"objective\":\"Revisar a lista completa e confirmar que todas as rotas, escolhas e flags do guia estão corretas.\",\"actions\":[\"Abra o checklist e revise os 49 troféus.\",\"Confirme que DETROIT MASTER não está marcado como perdível.\",\"Confirme que THANK YOU e THIS IS MY STORY não estão marcados como perdíveis.\",\"Confirme que onlineRequired, coopRequired e dlcRequired estão como false.\",\"Revise se todos os cards têm nome inglês principal e PT-BR abaixo quando confirmado.\"],\"warning\":\"\",\"result\":\"Todos os requisitos da platina base concluídos.\"}",
+      "step_order": 6
+    }
+  ],
+  "schemaVersion": 1,
+  "seedExtras": {
+    "aliases": [],
+    "attentionPoints": [],
+    "checklist": [
+      "Concluir The Hostage e obter THANK YOU.",
+      "Resolver os troféus de The Hostage, incluindo MISSION ACCOMPLISHED.",
+      "Concluir A New Home e abrir a caixa de Alice para SECRETS.",
+      "Investigar Partners e localizar o divergente.",
+      "Escapar com Kara e Alice em Stormy Night.",
+      "Resolver as escolhas opostas de Broken.",
+      "Controlar The Interrogation e obter CONFESSION.",
+      "Planejar Fugitives, On the Run e a rota de Kara.",
+      "Investigar pistas de Hank e manter a relação Connor/Hank quando necessário.",
+      "Resolver The Nest com CATCH IT ou SAVE HANK.",
+      "Escapar de Zlatko com Kara, Alice e Luther vivos.",
+      "Resolver The Eden Club com Ruthless ou Doubts.",
+      "Conseguir peças suficientes em Spare Parts.",
+      "Executar The Stratford Tower sem alarme ou baixas para a rota limpa.",
+      "Planejar Public Enemy para Simon e A GLIMPSE OF JERICHO quando necessário.",
+      "Resolver Capitol Park nas rotas pacífica e violenta.",
+      "Controlar Freedom March e suas escolhas de confronto.",
+      "Planejar Meet Kamski para PRIORITIES ou KINSHIP.",
+      "Usar evidências para BLOODHOUND em Last Chance, Connor.",
+      "Chegar a Crossroads com Connor, Markus e Kara para THREE AT JERICHO.",
+      "Planejar Battle for Detroit para finais de Kara, Markus e Connor.",
+      "Concluir a rota de SURVIVORS.",
+      "Concluir a rota de I’LL BE BACK com todas as mortes de Connor.",
+      "Manter Hank e Connor amigos para PARTNERS.",
+      "Manter Kara, Alice e Luther juntos para HAPPY FAMILY.",
+      "Resolver Markus pacífico e Markus violento conforme troféus.",
+      "Resolver Connor máquina, Connor divergente e MY TURN TO DECIDE.",
+      "Coletar todas as revistas/magazines para BOOKWORM.",
+      "Gastar pontos de bônus para THESE ARE OUR STORIES.",
+      "Fazer o cleanup final dos 49 troféus da lista base."
+    ],
+    "faq": [
+      {
+        "answer": "Sim. Muitos troféus dependem de escolhas e capítulos específicos. O Chapter Select permite corrigir rotas, mas mudanças só valem para capítulos futuros se você continuar jogando a partir do ponto alterado com salvamento ativado.",
+        "question": "Detroit: Become Human tem troféus perdíveis?"
+      },
+      {
+        "answer": "Porque Detroit: Become Human depende de escolhas, rotas e capítulos específicos. A maioria dos troféus pode exigir replay parcial se você tomar outra decisão, mas o Chapter Select permite corrigir muita coisa. O cuidado é continuar jogando a partir da alteração com salvamento ativado, porque pular direto para capítulos futuros não propaga as consequências.",
+        "question": "Por que o guia mostra tantos troféus perdíveis?"
+      },
+      {
+        "answer": "Não. A lista base é totalmente offline.",
+        "question": "A platina exige online?"
+      },
+      {
+        "answer": "Não. Detroit: Become Human é single-player e a platina não exige coop.",
+        "question": "Precisa de coop?"
+      },
+      {
+        "answer": "Não. A platina base não exige DLC.",
+        "question": "Precisa de DLC?"
+      },
+      {
+        "answer": "A estimativa é cerca de 20h, dependendo de quantos replays parciais forem necessários para escolhas, revistas, SURVIVORS e I’LL BE BACK.",
+        "question": "Quanto tempo leva para platinar?"
+      },
+      {
+        "answer": "Não. A dificuldade não bloqueia troféus. Jogar no Casual é recomendado para reduzir risco de falhar QTEs e perder personagens por acidente.",
+        "question": "A dificuldade afeta troféus?"
+      },
+      {
+        "answer": "Sim, mas com cuidado. Se uma escolha precisa afetar capítulos futuros, ative o salvamento e continue jogando todos os capítulos seguintes a partir dessa alteração.",
+        "question": "Posso usar Chapter Select?"
+      },
+      {
+        "answer": "O mínimo recomendado é uma campanha guiada, uma rota para SURVIVORS, uma rota para I’LL BE BACK e replays parciais para revistas e escolhas opostas.",
+        "question": "Quantas jogadas são necessárias?"
+      },
+      {
+        "answer": "SURVIVORS, I’LL BE BACK, BOOKWORM e troféus que dependem de escolhas acumuladas são os maiores blocos de planejamento.",
+        "question": "O que mais dá trabalho?"
+      }
+    ],
+    "note": "Campos exportados para auditoria. O SQLite atual nao possui colunas nativas para todos esses extras; a importacao preserva o que o banco suporta.",
+    "quickDecision": {
+      "attention": "Não há online, coop, DLC ou bloqueio por dificuldade; o cuidado real é a persistência das escolhas pelo Chapter Select.",
+      "avoid": "Evite se você quer uma platina linear sem guia ou sem repetir capítulos.",
+      "fit": "Boa para quem gosta de narrativa ramificada, replay por capítulos e checklist de rotas.",
+      "recommendation": "Platina curta e fácil em execução, mas dependente de planejamento de escolhas."
+    },
+    "seo": {
+      "description": "Roadmap completo da platina de Detroit: Become Human, com escolhas, troféus perdíveis, SURVIVORS, I’LL BE BACK, revistas, Chapter Select, checklist e dicas para evitar replays desnecessários.",
+      "keywords": "Detroit Become Human troféus, Detroit Become Human platina, Detroit Become Human guia, Detroit Become Human roadmap, Detroit Become Human perdíveis, Detroit Become Human Survivors, Detroit Become Human I’ll Be Back, Detroit Become Human revistas, Detroit Become Human chapter select, Detroit Become Human checklist",
+      "title": "Detroit: Become Human: guia de troféus e platina"
+    },
+    "tags": []
+  },
+  "slug": "detroit-become-human",
+  "trophies": [
+    {
+      "description": "Colete todos os troféus.",
+      "is_missable": 0,
+      "is_spoiler": 0,
+      "name": "DETROIT MASTER",
+      "name_pt": "MESTRE DE DETROIT",
+      "tip": "Conclua os 48 troféus restantes da lista base. A platina não exige online, coop, DLC nem dificuldade específica.",
+      "trophy_code": "detroit-master",
+      "type": "Platina"
+    },
+    {
+      "description": "Jogue o primeiro capítulo.",
+      "is_missable": 0,
+      "is_spoiler": 0,
+      "name": "THANK YOU",
+      "name_pt": "OBRIGADO",
+      "tip": "Troféu de história por concluir The Hostage. Não é perdível.",
+      "trophy_code": "detroit-thank-you",
+      "type": "Bronze"
+    },
+    {
+      "description": "Connor salvou Emma.",
+      "is_missable": 1,
+      "is_spoiler": 1,
+      "name": "MISSION ACCOMPLISHED",
+      "name_pt": "MISSÃO CUMPRIDA",
+      "tip": "Em The Hostage, investigue bem a cena e conduza a negociação para salvar Emma.",
+      "trophy_code": "detroit-mission-accomplished",
+      "type": "Bronze"
+    },
+    {
+      "description": "Kara descobriu o conteúdo da caixa de Alice.",
+      "is_missable": 1,
+      "is_spoiler": 1,
+      "name": "SECRETS",
+      "name_pt": "SEGREDOS",
+      "tip": "Em A New Home, melhore a relação com Alice, receba a chave e abra a caixa dela antes de encerrar o capítulo.",
+      "trophy_code": "detroit-secrets",
+      "type": "Bronze"
+    },
+    {
+      "description": "Connor encontrou o divergente no sótão.",
+      "is_missable": 1,
+      "is_spoiler": 1,
+      "name": "DEVIANT LOCATED",
+      "name_pt": "DIVERGENTE LOCALIZADO",
+      "tip": "Em Partners, investigue as pistas do crime e localize o divergente no sótão.",
+      "trophy_code": "detroit-deviant-located",
+      "type": "Bronze"
+    },
+    {
+      "description": "Kara e Alice escaparam da casa de Todd.",
+      "is_missable": 1,
+      "is_spoiler": 1,
+      "name": "WE ARE FREE",
+      "name_pt": "ESTAMOS LIVRES",
+      "tip": "Em Stormy Night, desobedeça Todd, chegue até Alice e fuja da casa com as duas vivas.",
+      "trophy_code": "detroit-we-are-free",
+      "type": "Bronze"
+    },
+    {
+      "description": "Markus empurrou Leo.",
+      "is_missable": 1,
+      "is_spoiler": 1,
+      "name": "DEFEND YOURSELF",
+      "name_pt": "LEGÍTIMA DEFESA",
+      "tip": "Em Broken, escolha empurrar Leo. É uma escolha oposta a SELF-CONTROL.",
+      "trophy_code": "detroit-defend-yourself",
+      "type": "Bronze"
+    },
+    {
+      "description": "Markus deixou Leo vencer.",
+      "is_missable": 1,
+      "is_spoiler": 1,
+      "name": "SELF-CONTROL",
+      "name_pt": "AUTOCONTROLE",
+      "tip": "Em Broken, não revide contra Leo. Use Chapter Select se precisar do troféu oposto.",
+      "trophy_code": "detroit-self-control",
+      "type": "Bronze"
+    },
+    {
+      "description": "Connor fez o androide confessar.",
+      "is_missable": 1,
+      "is_spoiler": 1,
+      "name": "CONFESSION",
+      "name_pt": "CONFISSÃO",
+      "tip": "Em The Interrogation, controle o estresse do androide e conduza o interrogatório até a confissão.",
+      "trophy_code": "detroit-confession",
+      "type": "Bronze"
+    },
+    {
+      "description": "Kara e Alice dormiram no motel ou no prédio abandonado.",
+      "is_missable": 1,
+      "is_spoiler": 1,
+      "name": "SHELTER",
+      "name_pt": "ABRIGO",
+      "tip": "Em Fugitives, consiga dinheiro/roupas para o motel ou entre no squat e passe a noite em segurança.",
+      "trophy_code": "detroit-shelter",
+      "type": "Bronze"
+    },
+    {
+      "description": "Connor encontrou todas as pistas sobre Hank.",
+      "is_missable": 1,
+      "is_spoiler": 0,
+      "name": "KNOW YOUR PARTNER",
+      "name_pt": "CONHEÇA SEU PARCEIRO",
+      "tip": "Em Waiting for Hank..., investigue todos os itens na mesa de Hank antes de falar com ele.",
+      "trophy_code": "detroit-know-your-partner",
+      "type": "Bronze"
+    },
+    {
+      "description": "Kara e Alice escaparam da polícia.",
+      "is_missable": 1,
+      "is_spoiler": 1,
+      "name": "RUN KARA RUN",
+      "name_pt": "CORRA, KARA!",
+      "tip": "Em On the Run, vença a perseguição e mantenha Kara e Alice vivas.",
+      "trophy_code": "detroit-run-kara-run",
+      "type": "Bronze"
+    },
+    {
+      "description": "Connor alcançou Rupert.",
+      "is_missable": 1,
+      "is_spoiler": 1,
+      "name": "CATCH IT",
+      "name_pt": "CAPTURE",
+      "tip": "Em The Nest, escolha continuar perseguindo Rupert em vez de salvar Hank.",
+      "trophy_code": "detroit-catch-it",
+      "type": "Bronze"
+    },
+    {
+      "description": "Connor salvou Hank.",
+      "is_missable": 1,
+      "is_spoiler": 1,
+      "name": "SAVE HANK",
+      "name_pt": "SALVE O HANK",
+      "tip": "Em The Nest, escolha salvar Hank no fim da perseguição. Isso ajuda a relação com ele.",
+      "trophy_code": "detroit-save-hank",
+      "type": "Bronze"
+    },
+    {
+      "description": "Kara e Alice escaparam da casa de Zlatko.",
+      "is_missable": 1,
+      "is_spoiler": 1,
+      "name": "ESCAPE THE MANOR",
+      "name_pt": "FUGA DA CASA",
+      "tip": "Em Zlatko, encontre Alice, evite ser capturada de vez e fuja da mansão.",
+      "trophy_code": "detroit-escape-the-manor",
+      "type": "Bronze"
+    },
+    {
+      "description": "As Tracis foram mortas.",
+      "is_missable": 1,
+      "is_spoiler": 1,
+      "name": "RUTHLESS",
+      "name_pt": "IMPLACÁVEL",
+      "tip": "Em The Eden Club, encontre as Tracis e escolha matá-las.",
+      "trophy_code": "detroit-ruthless",
+      "type": "Bronze"
+    },
+    {
+      "description": "As Tracis escaparam.",
+      "is_missable": 1,
+      "is_spoiler": 1,
+      "name": "DOUBTS",
+      "name_pt": "DÚVIDAS",
+      "tip": "Em The Eden Club, encontre as Tracis e escolha poupá-las.",
+      "trophy_code": "detroit-doubts",
+      "type": "Bronze"
+    },
+    {
+      "description": "Markus conseguiu peças suficientes.",
+      "is_missable": 1,
+      "is_spoiler": 1,
+      "name": "JERICHO'S HERO",
+      "name_pt": "HERÓI DE JERICHO",
+      "tip": "Em Spare Parts, colete peças suficientes para Jericho e escape sem falhar o objetivo.",
+      "trophy_code": "detroit-jerichos-hero",
+      "type": "Bronze"
+    },
+    {
+      "description": "Hank matou Connor.",
+      "is_missable": 1,
+      "is_spoiler": 1,
+      "name": "JUST A MACHINE",
+      "name_pt": "É SÓ UMA MÁQUINA",
+      "tip": "No capítulo The Bridge, Connor precisa estar com Hank hostil. Combine com a rota de I’LL BE BACK.",
+      "trophy_code": "detroit-just-a-machine",
+      "type": "Bronze"
+    },
+    {
+      "description": "Alice se divertiu no carrossel.",
+      "is_missable": 1,
+      "is_spoiler": 1,
+      "name": "A SMILE ON HER FACE",
+      "name_pt": "SORRISO NO ROSTO",
+      "tip": "Em The Pirates’ Cove, avance a cena do parque com Kara e Alice vivas.",
+      "trophy_code": "detroit-a-smile-on-her-face",
+      "type": "Bronze"
+    },
+    {
+      "description": "Markus transmitiu sua mensagem sem disparar alarme nem perder alguém da equipe.",
+      "is_missable": 1,
+      "is_spoiler": 1,
+      "name": "WHEN A PLAN COMES TOGETHER",
+      "name_pt": "QUANDO O PLANO DÁ CERTO",
+      "tip": "Em The Stratford Tower, execute a infiltração sem alarme e sem baixa na equipe.",
+      "trophy_code": "detroit-plan-comes-together",
+      "type": "Bronze"
+    },
+    {
+      "description": "Connor se conectou a Simon.",
+      "is_missable": 1,
+      "is_spoiler": 1,
+      "name": "A GLIMPSE OF JERICHO",
+      "name_pt": "VISLUMBRE JERICHO",
+      "tip": "Prepare Simon ferido/abandonado em The Stratford Tower e investigue-o depois em Public Enemy.",
+      "trophy_code": "detroit-a-glimpse-of-jericho",
+      "type": "Bronze"
+    },
+    {
+      "description": "Markus conduziu um motim pacifista.",
+      "is_missable": 1,
+      "is_spoiler": 1,
+      "name": "SEND A MESSAGE",
+      "name_pt": "DÊ O RECADO",
+      "tip": "Em Capitol Park, mantenha a rota pacífica e poupe os policiais.",
+      "trophy_code": "detroit-send-a-message",
+      "type": "Bronze"
+    },
+    {
+      "description": "Markus conduziu um motim violento.",
+      "is_missable": 1,
+      "is_spoiler": 1,
+      "name": "BURN THE PLACE",
+      "name_pt": "QUEIMEM TUDO",
+      "tip": "Em Capitol Park, siga a rota violenta e escolha ações agressivas.",
+      "trophy_code": "detroit-burn-the-place",
+      "type": "Bronze"
+    },
+    {
+      "description": "Kara conseguiu fazer o policial ir embora.",
+      "is_missable": 1,
+      "is_spoiler": 1,
+      "name": "NOTHING TO SEE HERE",
+      "name_pt": "NÃO TEM NADA AQUI",
+      "tip": "Em Midnight Train, esconda evidências e responda ao policial sem levantar suspeita.",
+      "trophy_code": "detroit-nothing-to-see-here",
+      "type": "Bronze"
+    },
+    {
+      "description": "Markus atacou a polícia.",
+      "is_missable": 1,
+      "is_spoiler": 1,
+      "name": "CONFRONTATION",
+      "name_pt": "CONFRONTO",
+      "tip": "Em Freedom March, escolha atacar a polícia e vença o confronto.",
+      "trophy_code": "detroit-confrontation",
+      "type": "Bronze"
+    },
+    {
+      "description": "Markus resistiu diante da polícia.",
+      "is_missable": 1,
+      "is_spoiler": 1,
+      "name": "STAND YOUR GROUND",
+      "name_pt": "RESISTIR É PRECISO",
+      "tip": "Em Freedom March, escolha resistir. Use com cuidado porque a consequência pode afetar a rota.",
+      "trophy_code": "detroit-stand-your-ground",
+      "type": "Bronze"
+    },
+    {
+      "description": "Connor matou Chloe.",
+      "is_missable": 1,
+      "is_spoiler": 1,
+      "name": "PRIORITIES",
+      "name_pt": "PRIORIDADES",
+      "tip": "Em Meet Kamski, escolha atirar em Chloe.",
+      "trophy_code": "detroit-priorities",
+      "type": "Bronze"
+    },
+    {
+      "description": "Connor se recusou a matar Chloe.",
+      "is_missable": 1,
+      "is_spoiler": 1,
+      "name": "KINSHIP",
+      "name_pt": "EMPATIA",
+      "tip": "Em Meet Kamski, recuse atirar em Chloe.",
+      "trophy_code": "detroit-kinship",
+      "type": "Bronze"
+    },
+    {
+      "description": "Connor descobriu sozinho a localização de Jericho.",
+      "is_missable": 1,
+      "is_spoiler": 1,
+      "name": "BLOODHOUND",
+      "name_pt": "CÃO DE CAÇA",
+      "tip": "Em Last Chance, Connor, use evidências suficientes para descobrir Jericho sem depender de Kamski.",
+      "trophy_code": "detroit-bloodhound",
+      "type": "Bronze"
+    },
+    {
+      "description": "Leve os três personagens até Crossroads.",
+      "is_missable": 1,
+      "is_spoiler": 1,
+      "name": "THREE AT JERICHO",
+      "name_pt": "OS TRÊS DE JERICHO",
+      "tip": "Faça Connor, Markus e Kara chegarem vivos ao capítulo Crossroads.",
+      "trophy_code": "detroit-three-at-jericho",
+      "type": "Bronze"
+    },
+    {
+      "description": "Markus ou Connor detonou o cargueiro.",
+      "is_missable": 1,
+      "is_spoiler": 1,
+      "name": "SCORCHED EARTH",
+      "name_pt": "TERRA ARRASADA",
+      "tip": "Em Crossroads, detone Jericho/cargueiro com Markus ou Connor.",
+      "trophy_code": "detroit-scorched-earth",
+      "type": "Bronze"
+    },
+    {
+      "description": "Markus chegou ao acampamento e libertou os androides.",
+      "is_missable": 1,
+      "is_spoiler": 1,
+      "name": "LIBERATION",
+      "name_pt": "LIBERDADE",
+      "tip": "Em Battle for Detroit, siga a rota de revolução com Markus até libertar os androides.",
+      "trophy_code": "detroit-liberation",
+      "type": "Bronze"
+    },
+    {
+      "description": "Markus fez os soldados recuarem.",
+      "is_missable": 1,
+      "is_spoiler": 1,
+      "name": "MORAL VICTORY",
+      "name_pt": "VITÓRIA MORAL",
+      "tip": "Siga uma rota pacífica, mantenha boa opinião pública e escolha demonstração no final.",
+      "trophy_code": "detroit-moral-victory",
+      "type": "Bronze"
+    },
+    {
+      "description": "Kara e Alice escaparam do centro de reciclagem.",
+      "is_missable": 1,
+      "is_spoiler": 1,
+      "name": "ESCAPE DEATH",
+      "name_pt": "EVASÃO DA MORTE",
+      "tip": "No final de Kara capturada, escape do centro de desativação com Alice.",
+      "trophy_code": "detroit-escape-death",
+      "type": "Bronze"
+    },
+    {
+      "description": "Kara e Alice passaram pela fronteira.",
+      "is_missable": 1,
+      "is_spoiler": 1,
+      "name": "SAFE HARBOR",
+      "name_pt": "PORTO SEGURO",
+      "tip": "Leve Kara e Alice até a fronteira e atravesse com sucesso.",
+      "trophy_code": "detroit-safe-harbor",
+      "type": "Bronze"
+    },
+    {
+      "description": "Connor converteu os androides.",
+      "is_missable": 1,
+      "is_spoiler": 1,
+      "name": "AN ARMY OF ME",
+      "name_pt": "UM EXÉRCITO DE MIM",
+      "tip": "Com Connor divergente, conclua CyberLife Tower e converta os androides.",
+      "trophy_code": "detroit-an-army-of-me",
+      "type": "Bronze"
+    },
+    {
+      "description": "Connor matou o líder dos divergentes.",
+      "is_missable": 1,
+      "is_spoiler": 1,
+      "name": "MISSION COMPLETE",
+      "name_pt": "MISSÃO COMPLETA",
+      "tip": "No final, mantenha Connor como máquina ou na rota adequada para cumprir a missão contra o líder divergente.",
+      "trophy_code": "detroit-mission-complete",
+      "type": "Bronze"
+    },
+    {
+      "description": "Connor resistiu à tentativa de hack da CyberLife.",
+      "is_missable": 1,
+      "is_spoiler": 1,
+      "name": "MY TURN TO DECIDE",
+      "name_pt": "MINHA VEZ DE DECIDIR",
+      "tip": "No final com Connor divergente, encontre o ponto de saída no jardim de Amanda e resista ao controle.",
+      "trophy_code": "detroit-my-turn-to-decide",
+      "type": "Bronze"
+    },
+    {
+      "description": "Connor continuou sendo uma máquina.",
+      "is_missable": 1,
+      "is_spoiler": 1,
+      "name": "COMPLIANT",
+      "name_pt": "OBEDIENTE",
+      "tip": "Em Crossroads, escolha permanecer máquina.",
+      "trophy_code": "detroit-compliant",
+      "type": "Bronze"
+    },
+    {
+      "description": "Connor se tornou divergente.",
+      "is_missable": 1,
+      "is_spoiler": 1,
+      "name": "ONE OF US",
+      "name_pt": "UM DE NÓS",
+      "tip": "Em Crossroads, tenha instabilidade suficiente e escolha tornar Connor divergente.",
+      "trophy_code": "detroit-one-of-us",
+      "type": "Bronze"
+    },
+    {
+      "description": "Não perca nenhuma luta até chegar ao fim.",
+      "is_missable": 1,
+      "is_spoiler": 1,
+      "name": "UNDEFEATED",
+      "name_pt": "INCÓLUME",
+      "tip": "Jogue no Casual e reinicie checkpoints se falhar QTEs importantes. O troféu depende de manter vitórias até o final.",
+      "trophy_code": "detroit-undefeated",
+      "type": "Prata"
+    },
+    {
+      "description": "Encontre todas as revistas do jogo.",
+      "is_missable": 1,
+      "is_spoiler": 0,
+      "name": "BOOKWORM",
+      "name_pt": "LEITOR ASSÍDUO",
+      "tip": "Colete as 46 revistas/magazines. Muitas dependem de escolhas anteriores, então use o flowchart e replays com continuidade.",
+      "trophy_code": "detroit-bookworm",
+      "type": "Prata"
+    },
+    {
+      "description": "Hank e Connor foram amigos até o fim.",
+      "is_missable": 1,
+      "is_spoiler": 1,
+      "name": "PARTNERS",
+      "name_pt": "PARCEIROS",
+      "tip": "Salve Hank, faça escolhas empáticas com Connor e mantenha a relação positiva até o final.",
+      "trophy_code": "detroit-partners",
+      "type": "Prata"
+    },
+    {
+      "description": "Kara, Alice e Luther ficaram juntos no final.",
+      "is_missable": 1,
+      "is_spoiler": 1,
+      "name": "HAPPY FAMILY",
+      "name_pt": "FAMÍLIA FELIZ",
+      "tip": "Mantenha Kara, Alice e Luther vivos e juntos até o final.",
+      "trophy_code": "detroit-happy-family",
+      "type": "Prata"
+    },
+    {
+      "description": "Connor morreu e retornou em todas as oportunidades antes de chegar ao fim.",
+      "is_missable": 1,
+      "is_spoiler": 1,
+      "name": "I’LL BE BACK",
+      "name_pt": "EU VOLTAREI",
+      "tip": "Faça uma rota dedicada em que Connor morre em todas as oportunidades necessárias. A continuidade da rota importa.",
+      "trophy_code": "detroit-ill-be-back",
+      "type": "Prata"
+    },
+    {
+      "description": "Termine o jogo uma vez.",
+      "is_missable": 0,
+      "is_spoiler": 1,
+      "name": "THIS IS MY STORY",
+      "name_pt": "ESSA É A MINHA HISTÓRIA",
+      "tip": "Complete qualquer rota da campanha. Não é perdível.",
+      "trophy_code": "detroit-this-is-my-story",
+      "type": "Ouro"
+    },
+    {
+      "description": "Gaste 20.000 pontos de bônus.",
+      "is_missable": 1,
+      "is_spoiler": 0,
+      "name": "THESE ARE OUR STORIES",
+      "name_pt": "ESSAS SÃO AS NOSSAS HISTÓRIAS",
+      "tip": "Gaste pontos de bônus no menu Extras. Replays e caminhos novos ajudam a acumular pontos suficientes.",
+      "trophy_code": "detroit-these-are-our-stories",
+      "type": "Ouro"
+    },
+    {
+      "description": "Todos estão vivos no final.",
+      "is_missable": 1,
+      "is_spoiler": 1,
+      "name": "SURVIVORS",
+      "name_pt": "SOBREVIVENTES",
+      "tip": "Mantenha vivos Connor, Hank, Kara, Alice, Luther, Jerry, Markus, Simon, North e Josh até o final.",
+      "trophy_code": "detroit-survivors",
+      "type": "Ouro"
+    }
+  ]
+}

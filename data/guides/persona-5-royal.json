@@ -1,0 +1,765 @@
+{
+  "game": {
+    "avoid_if": "Evite se você não gosta de campanhas longas ou de acompanhar prazos de calendário e escolhas de diálogo.",
+    "before_you_start": "Uma jogada basta. Maruki rank 9 até 17/11 libera o terceiro semestre; Akechi rank 8 e Kasumi rank 5 são recomendações para o conteúdo Royal completo.",
+    "best_for": "Ideal para quem busca uma platina longa, acessível e centrada em narrativa, calendário e exploração social.",
+    "cleanup_advice": "Antes do true ending, confira Reaper, exame, romance, Confidant máximo, terceiro despertar, Jose, minigames e Velvet Room. Não há pós-jogo livre.",
+    "cover_image": "https://cdn.cloudflare.steamstatic.com/steam/apps/1687950/library_600x900.jpg",
+    "coverage_level": "complete",
+    "created_at": "2026-05-09 19:53:40",
+    "difficulty": 2,
+    "difficulty_reason": "2/10: não há troféu vinculado à dificuldade; o risco vem do calendário e das decisões de rota.",
+    "dlc_scope": "DLC de Personas e itens, Thieves Den, 100% do Compendium e o chefe secreto de NG+ não são necessários. Este guia cobre somente os 53 troféus de Persona 5 Royal.",
+    "editorial_notes": "",
+    "editorial_review_status": "verified",
+    "editorial_status": "published",
+    "first_run_advice": "Priorize Maruki rank 9 até 17/11, mantenha saves em datas diferentes e agrupe requests nas visitas a Mementos.",
+    "grind_summary": "Grind moderado: cinco Social Stats, stamps para uma cognição, preparação para o Reaper e pontos do maid café. A maior parte ocorre naturalmente em 100–130h.",
+    "guide_avoid": null,
+    "guide_best_moment": null,
+    "guide_dlc": null,
+    "guide_grind": null,
+    "guide_ideal": null,
+    "guide_online": null,
+    "guide_runs": null,
+    "image": "https://cdn.cloudflare.steamstatic.com/steam/apps/1687950/header.jpg",
+    "is_verified": 1,
+    "last_reviewed_at": "2026-06-19",
+    "missable": "Há seis riscos principais de calendário ou rota. O maior é perder Maruki rank 9 até 17/11, bloqueando o terceiro semestre.",
+    "missable_summary": "Seis troféus recebem a marca principal de perdível ou risco de calendário; atividades opcionais comuns não foram infladas como perdíveis.",
+    "name": "Persona 5 Royal",
+    "online_summary": "A lista base é totalmente offline e single-player, sem troféus online ou coop.",
+    "quality_warnings": "",
+    "reviewed_by": "AtlasAchievement",
+    "runs_summary": "Uma jogada bem planejada é suficiente. Priorize Maruki e recuse os quatro acordos que levam a finais alternativos.",
+    "slug": "persona-5-royal",
+    "time": "100–130h",
+    "time_bucket": "long",
+    "time_max_hours": 130,
+    "time_min_hours": 100,
+    "time_reason": "A faixa de 100–130h cobre a campanha, o terceiro semestre, Mementos, Social Stats e o cleanup da lista base.",
+    "time_sort_hours": 100,
+    "updated_at": "2026-06-27 02:36:59",
+    "verification_note": "Guia verificado: 53 troféus, 100–130h, 2/10, seis riscos principais, cinco coletáveis, uma run planejada e nenhum requisito online, coop, de dificuldade, DLC ou NG+.",
+    "verification_status": "verified",
+    "walkthrough": null
+  },
+  "redirects": [],
+  "roadmaps": [
+    {
+      "content": "{\"title\":\"Abril a junho: construa a base\",\"focus\":\"Social Stats, Confidants e primeiros Palaces\",\"objective\":\"Estabelecer uma rotina eficiente sem transformar cada atividade em obrigação.\",\"actions\":[\"Conclua cada Palace com antecedência e use os dias restantes para Social Stats e Confidants.\",\"Inicie os Confidants disponíveis e leve uma Persona da Arcana correspondente aos encontros.\",\"Resolva os troféus simples de combate, Velvet Room, Leblanc, emprego e batting cages.\",\"Visite Mementos quando houver vários requests para economizar dias de calendário.\"],\"warning\":\"Persona 5 Royal não possui pós-jogo livre; mantenha saves manuais em datas diferentes.\",\"result\":\"Primeiros Palaces concluídos e calendário preparado para as prioridades de Royal.\"}",
+      "step_order": 1
+    },
+    {
+      "content": "{\"title\":\"Prioridades de Royal e prazos\",\"focus\":\"Maruki, Akechi e Kasumi\",\"objective\":\"Garantir o terceiro semestre e preservar a experiência completa do conteúdo Royal.\",\"actions\":[\"Leve Maruki, o Councillor, ao rank 9 até 17/11\",\"o rank 10 acontece automaticamente.\",\"Leve Akechi ao rank 8 até 17/11 para cenas adicionais da rota completa.\",\"Leve Kasumi ao rank 5 até 22/12 para continuar o Confidant no terceiro semestre.\",\"Não confunda as recomendações de Akechi e Kasumi com o requisito central: Maruki é quem libera o terceiro semestre.\"],\"warning\":\"Perder o prazo de Maruki bloqueia o Palace final, Take Back the Future e a rota do true ending nesta run.\",\"result\":\"Acesso ao terceiro semestre assegurado sem necessidade de NG+.\"}",
+      "step_order": 2
+    },
+    {
+      "content": "{\"title\":\"Palaces, Mementos e atividades opcionais\",\"focus\":\"Will Seeds, Jose, requests e troféus sociais\",\"objective\":\"Avançar a história enquanto dilui o cleanup ao longo do calendário.\",\"actions\":[\"Colete os três Will Seeds de um Palace e obtenha o acessório de Talent Thief com Jose.\",\"Reúna flowers e stamps, maximize uma cognição e conclua ao menos um request em Mementos.\",\"Faça uma tentativa de cada atividade necessária: darts, billiards, pesca, templo, jazz club e maid café.\",\"Maximize um Confidant, inicie um romance e continue elevando os cinco Social Stats.\"],\"warning\":\"Não é necessário maximizar todos os Confidants nem completar 100% do Compendium.\",\"result\":\"Coletáveis moderados e atividades opcionais resolvidos antes das decisões finais.\"}",
+      "step_order": 3
+    },
+    {
+      "content": "{\"title\":\"Decisões de novembro e dezembro\",\"focus\":\"11/20 e 12/24\",\"objective\":\"Evitar os finais ruins e manter a rota do true ending.\",\"actions\":[\"Em 11/20, não traia seus amigos durante o interrogatório.\",\"Em 12/24, recuse a oferta apresentada e prossiga com a resistência.\",\"Mantenha saves separados antes de ambas as conversas.\",\"Confirme que Maruki chegou ao rank 9 antes de 17/11.\"],\"warning\":\"Aceitar qualquer acordo encerra a rota correta; recarregue o save caso escolha a resposta errada.\",\"result\":\"Rota do terceiro semestre preservada.\"}",
+      "step_order": 4
+    },
+    {
+      "content": "{\"title\":\"Terceiro semestre e Palace final\",\"focus\":\"09/01, 02/02 e Take Back the Future\",\"objective\":\"Concluir o conteúdo Royal e manter o true ending.\",\"actions\":[\"Em 09/01, recuse a realidade alternativa.\",\"Aproveite janeiro para encontros de terceiro despertar, Social Stats e pendências de Mementos.\",\"Em 02/02, recuse a oferta final.\",\"Conclua o Palace final para liberar Take Back the Future.\"],\"warning\":\"As ofertas de 09/01 e 02/02 levam a finais alternativos e interrompem a rota correta.\",\"result\":\"Palace final concluído e true ending encaminhado.\"}",
+      "step_order": 5
+    },
+    {
+      "content": "{\"title\":\"Cleanup antes do true ending\",\"focus\":\"Reaper, exames, atividades e checklist final\",\"objective\":\"Resolver tudo o que ainda depende do calendário antes de assistir ao final.\",\"actions\":[\"Confira exame em primeiro lugar, romance, Confidant máximo e Persona evoluída de um aliado.\",\"Derrote o Reaper e finalize stamps, flowers, cognição e Treasure Demon em Mementos.\",\"Conclua Velvet Room, minigames, maid café, loteria, emprego e outras ações isoladas pendentes.\",\"Revise os 52 troféus antes do true ending\",\"não existe cleanup pós-jogo.\"],\"warning\":\"Thieves Den, DLC, chefes secretos de NG+ e a lista do Persona 5 original não fazem parte desta platina.\",\"result\":\"Checklist base completo e The Phenomenal Phantom Thief desbloqueado.\"}",
+      "step_order": 6
+    }
+  ],
+  "schemaVersion": 1,
+  "seedExtras": {
+    "aliases": [],
+    "attentionPoints": [
+      {
+        "tip": "É o requisito central para liberar o terceiro semestre; o rank 10 ocorre automaticamente.",
+        "title": "Maruki rank 9",
+        "type": "Prazo 17/11"
+      },
+      {
+        "tip": "Não é o gatilho central da platina, mas preserva cenas e detalhes da rota Royal completa.",
+        "title": "Akechi rank 8",
+        "type": "Recomendado até 17/11"
+      },
+      {
+        "tip": "Permite continuar seu Confidant durante o terceiro semestre.",
+        "title": "Kasumi rank 5",
+        "type": "Recomendado até 22/12"
+      },
+      {
+        "tip": "Não traia seus amigos; mantenha um save manual antes da conversa.",
+        "title": "Interrogatório de 11/20",
+        "type": "Escolha crítica"
+      },
+      {
+        "tip": "Recuse o acordo para continuar rumo ao terceiro semestre.",
+        "title": "Oferta de 12/24",
+        "type": "Escolha crítica"
+      },
+      {
+        "tip": "Recuse a realidade alternativa para preservar o true ending.",
+        "title": "Realidade de 09/01",
+        "type": "Escolha crítica"
+      },
+      {
+        "tip": "Recuse a última oferta antes do Palace final.",
+        "title": "Oferta de 02/02",
+        "type": "Escolha crítica"
+      },
+      {
+        "tip": "Realize o cleanup antes do true ending; depois dele não há calendário livre.",
+        "title": "Sem pós-jogo livre",
+        "type": "Risco de run"
+      },
+      {
+        "tip": "Eleve Knowledge e use respostas corretas para ficar em primeiro lugar em uma prova.",
+        "title": "A Most Studious Disguise",
+        "type": "Calendário"
+      },
+      {
+        "tip": "Escolha uma rota de romance antes que acabem os encontros disponíveis.",
+        "title": "My Closest Partner",
+        "type": "Calendário social"
+      },
+      {
+        "tip": "Maximize um aliado e aceite o encontro de terceiro despertar em janeiro.",
+        "title": "Awakening the Phantom Thieves",
+        "type": "Terceiro semestre"
+      },
+      {
+        "tip": "Combine flowers, stamps e alteração de cognição em visitas com vários requests.",
+        "title": "Jose e Mementos",
+        "type": "Coletáveis moderados"
+      },
+      {
+        "tip": "Reúna os três de um Palace e entregue o cristal a Jose para receber o acessório.",
+        "title": "Will Seeds",
+        "type": "Talent Thief"
+      },
+      {
+        "tip": "Não são necessários todos os Confidants, 100% do Compendium, chefe secreto de NG+ ou Thieves Den.",
+        "title": "Sem requisitos extras",
+        "type": "Escopo da platina"
+      },
+      {
+        "tip": "Não há troféus online, coop ou vinculados à dificuldade selecionada.",
+        "title": "Offline e qualquer dificuldade",
+        "type": "Lista base"
+      }
+    ],
+    "checklist": [],
+    "faq": [
+      {
+        "answer": "Não. Os 53 troféus da lista base podem ser obtidos offline.",
+        "question": "Persona 5 Royal tem troféus online?"
+      },
+      {
+        "answer": "Não. A platina é totalmente single-player.",
+        "question": "Persona 5 Royal tem troféus coop?"
+      },
+      {
+        "answer": "Não. Você pode alterar a dificuldade sem bloquear troféus.",
+        "question": "A dificuldade afeta algum troféu?"
+      },
+      {
+        "answer": "Uma jogada bem planejada é suficiente; NG+ não é obrigatório.",
+        "question": "Quantas jogadas são necessárias?"
+      },
+      {
+        "answer": "Não. A platina de Persona 5 Royal pode ser feita em uma jogada seguindo a rota correta do terceiro semestre.",
+        "question": "Preciso de New Game+?"
+      },
+      {
+        "answer": "Levar Maruki, o Councillor, ao rank 9 até 17/11. O rank 10 é automático.",
+        "question": "Qual é o requisito para o terceiro semestre?"
+      },
+      {
+        "answer": "Não são o gatilho central, mas rank 8 de Akechi até 17/11 e rank 5 de Kasumi até 22/12 são recomendados para a rota Royal completa.",
+        "question": "Akechi e Kasumi são obrigatórios para a platina?"
+      },
+      {
+        "answer": "Não traia os amigos em 11/20 e recuse as ofertas de 12/24, 09/01 e 02/02.",
+        "question": "Quais escolhas evitam os finais ruins?"
+      },
+      {
+        "answer": "Não. Faça o cleanup antes do true ending; depois do final não há free roam livre para terminar pendências.",
+        "question": "Existe pós-jogo livre?"
+      },
+      {
+        "answer": "Não. Royal exige maximizar um Confidant e evoluir uma Persona de aliado, mas não exige todos os Confidants.",
+        "question": "Preciso maximizar todos os Confidants?"
+      },
+      {
+        "answer": "Não. Diferente de Persona 5 original, Royal não exige 100% do Compendium para a platina.",
+        "question": "Preciso completar 100% do Compendium?"
+      },
+      {
+        "answer": "Não. Esse chefe não faz parte dos requisitos da platina.",
+        "question": "Preciso derrotar o chefe secreto de NG+?"
+      },
+      {
+        "answer": "Não. Thieves Den é conteúdo extra interno de Persona 5 Royal e não faz parte dos 53 troféus da platina.",
+        "question": "Thieves Den conta para a platina?"
+      },
+      {
+        "answer": "Não. Personas, itens e outros DLC não são necessários para The Phenomenal Phantom Thief.",
+        "question": "DLC é necessário?"
+      },
+      {
+        "answer": "Não. Persona 5 original e Persona 5 Royal têm listas diferentes. Não importar requisitos antigos como NG+, boss secreto, 100% Compendium, todos os livros ou todos os Confidants.",
+        "question": "Persona 5 original tem os mesmos troféus?"
+      },
+      {
+        "answer": "Não para One Step at a Time, que exige somente um request. Avançar Mementos continua necessário para a história.",
+        "question": "Todos os requests de Mementos são necessários?"
+      },
+      {
+        "answer": "Não. Para Talent Thief, basta completar o conjunto de um Palace e obter o acessório com Jose.",
+        "question": "Todos os Will Seeds são necessários?"
+      }
+    ],
+    "note": "Campos exportados para auditoria. O SQLite atual nao possui colunas nativas para todos esses extras; a importacao preserva o que o banco suporta.",
+    "quickDecision": {
+      "summary": "Persona 5 Royal é uma platina longa, acessível e offline: 53 troféus, 100-130h, 2/10, uma jogada com rota correta, terceiro semestre via Maruki e sem NG+, Thieves Den ou DLC."
+    },
+    "seo": {},
+    "tags": []
+  },
+  "slug": "persona-5-royal",
+  "trophies": [
+    {
+      "description": "Obtained all trophies.",
+      "is_missable": 0,
+      "is_spoiler": 0,
+      "name": "The Phenomenal Phantom Thief",
+      "name_pt": "O Ladrão Fantasma Fenomenal",
+      "tip": "Conclua os outros 52 troféus da lista base de Persona 5 Royal.",
+      "trophy_code": "p5r_the_phenomenal_phantom_thief",
+      "type": "Platina"
+    },
+    {
+      "description": "Watched the ending.",
+      "is_missable": 1,
+      "is_spoiler": 1,
+      "name": "The Path Chosen",
+      "name_pt": "O Caminho Escolhido",
+      "tip": "Acesse o terceiro semestre e veja o true ending. Leve Maruki ao rank 9 até 17/11 e recuse as ofertas de 11/20, 12/24, 09/01 e 02/02.",
+      "trophy_code": "p5r_the_path_chosen",
+      "type": "Ouro"
+    },
+    {
+      "description": "Scored the highest on your exams.",
+      "is_missable": 1,
+      "is_spoiler": 0,
+      "name": "A Most Studious Disguise",
+      "name_pt": "O Disfarce Mais Estudioso",
+      "tip": "Chegue ao topo em uma prova. Eleve Knowledge e responda corretamente às questões; há várias oportunidades ao longo do calendário.",
+      "trophy_code": "p5r_a_most_studious_disguise",
+      "type": "Prata"
+    },
+    {
+      "description": "Maxed out all social stats.",
+      "is_missable": 0,
+      "is_spoiler": 0,
+      "name": "Pure Perfection",
+      "name_pt": "Perfeição Absoluta",
+      "tip": "Maximize Knowledge, Guts, Proficiency, Kindness e Charm. Livros, aulas, filmes e atividades sociais aceleram o progresso.",
+      "trophy_code": "p5r_pure_perfection",
+      "type": "Prata"
+    },
+    {
+      "description": "Entered a special relationship.",
+      "is_missable": 1,
+      "is_spoiler": 0,
+      "name": "My Closest Partner",
+      "name_pt": "Meu Parceiro Mais Próximo",
+      "tip": "Inicie um romance com uma Confidant elegível antes do encerramento do calendário.",
+      "trophy_code": "p5r_my_closest_partner",
+      "type": "Prata"
+    },
+    {
+      "description": "Maxed out one of your Confidants.",
+      "is_missable": 1,
+      "is_spoiler": 0,
+      "name": "True Confidence",
+      "name_pt": "Confiança Verdadeira",
+      "tip": "Maximize apenas um Confidant; a platina não exige todos. Escolha alguém com disponibilidade ampla e acompanhe os ranks.",
+      "trophy_code": "p5r_true_confidence",
+      "type": "Prata"
+    },
+    {
+      "description": "Obtained a Skill Accessory from a Palace ruler.",
+      "is_missable": 0,
+      "is_spoiler": 0,
+      "name": "Talent Thief",
+      "name_pt": "Ladrão de Talentos",
+      "tip": "Reúna os três Will Seeds de um Palace e leve o cristal resultante a Jose para obter o acessório de habilidade.",
+      "trophy_code": "p5r_talent_thief",
+      "type": "Prata"
+    },
+    {
+      "description": "Completely changed the cognition of Mementos.",
+      "is_missable": 0,
+      "is_spoiler": 0,
+      "name": "The Search for Power",
+      "name_pt": "A Busca por Poder",
+      "tip": "Use stamps com Jose até maximizar uma das três alterações de cognição de Mementos.",
+      "trophy_code": "p5r_the_search_for_power",
+      "type": "Prata"
+    },
+    {
+      "description": "Conquered the Reaper.",
+      "is_missable": 0,
+      "is_spoiler": 0,
+      "name": "Unsurpassed Rebel",
+      "name_pt": "Rebelde Insuperável",
+      "tip": "Derrote o Reaper em Mementos quando o grupo estiver preparado. Reduza a dificuldade do jogo se desejar; não há troféu ligado a ela.",
+      "trophy_code": "p5r_unsurpassed_rebel",
+      "type": "Prata"
+    },
+    {
+      "description": "Completed the castle Palace.",
+      "is_missable": 0,
+      "is_spoiler": 1,
+      "name": "Castle of Lust: Seized",
+      "name_pt": "Castelo da Luxúria: Tomado",
+      "tip": "Troféu automático de história; avance pela campanha na rota correta.",
+      "trophy_code": "p5r_castle_of_lust_seized",
+      "type": "Bronze"
+    },
+    {
+      "description": "Completed the museum Palace.",
+      "is_missable": 0,
+      "is_spoiler": 1,
+      "name": "Museum of Vanity: Repossessed",
+      "name_pt": "Museu da Vaidade: Recuperado",
+      "tip": "Troféu automático de história; avance pela campanha na rota correta.",
+      "trophy_code": "p5r_museum_of_vanity_repossessed",
+      "type": "Bronze"
+    },
+    {
+      "description": "Completed the bank Palace.",
+      "is_missable": 0,
+      "is_spoiler": 1,
+      "name": "Bank of Gluttony: Cleaned Out",
+      "name_pt": "Banco da Gula: Esvaziado",
+      "tip": "Troféu automático de história; avance pela campanha na rota correta.",
+      "trophy_code": "p5r_bank_of_gluttony_cleaned_out",
+      "type": "Bronze"
+    },
+    {
+      "description": "Completed the pyramid Palace.",
+      "is_missable": 0,
+      "is_spoiler": 1,
+      "name": "Pyramid of Wrath: Plundered",
+      "name_pt": "Pirâmide da Ira: Saqueada",
+      "tip": "Troféu automático de história; avance pela campanha na rota correta.",
+      "trophy_code": "p5r_pyramid_of_wrath_plundered",
+      "type": "Bronze"
+    },
+    {
+      "description": "Completed the spaceport Palace.",
+      "is_missable": 0,
+      "is_spoiler": 1,
+      "name": "Spaceport of Greed: Obliterated",
+      "name_pt": "Espaçoporto da Ganância: Obliterado",
+      "tip": "Troféu automático de história; avance pela campanha na rota correta.",
+      "trophy_code": "p5r_spaceport_of_greed_obliterated",
+      "type": "Bronze"
+    },
+    {
+      "description": "Completed the casino Palace.",
+      "is_missable": 0,
+      "is_spoiler": 1,
+      "name": "Casino of Jealousy: Bankrupted",
+      "name_pt": "Cassino da Inveja: Falido",
+      "tip": "Troféu automático de história; avance pela campanha na rota correta.",
+      "trophy_code": "p5r_casino_of_jealousy_bankrupted",
+      "type": "Bronze"
+    },
+    {
+      "description": "Completed the cruiser Palace.",
+      "is_missable": 0,
+      "is_spoiler": 1,
+      "name": "Cruiser of Pride: Capsized",
+      "name_pt": "Cruzador do Orgulho: Afundado",
+      "tip": "Troféu automático de história; avance pela campanha na rota correta.",
+      "trophy_code": "p5r_cruiser_of_pride_capsized",
+      "type": "Bronze"
+    },
+    {
+      "description": "Completed Mementos.",
+      "is_missable": 0,
+      "is_spoiler": 1,
+      "name": "The Thorough Trickster",
+      "name_pt": "O Trapaceiro Completo",
+      "tip": "Conclua Mementos como parte da rota de história. Mantenha o avanço dos andares em dia antes das datas finais.",
+      "trophy_code": "p5r_the_thorough_trickster",
+      "type": "Bronze"
+    },
+    {
+      "description": "Completed every Palace.",
+      "is_missable": 1,
+      "is_spoiler": 1,
+      "name": "Take Back the Future",
+      "name_pt": "Recupere o Futuro",
+      "tip": "Conclua o Palace final do terceiro semestre. O acesso depende de Maruki no rank 9 até 17/11 e das recusas corretas.",
+      "trophy_code": "p5r_take_back_the_future",
+      "type": "Bronze"
+    },
+    {
+      "description": "Obtained Arsene.",
+      "is_missable": 0,
+      "is_spoiler": 1,
+      "name": "Spirit of Rebellion",
+      "name_pt": "Espírito de Rebelião",
+      "tip": "Troféu automático de história; avance pela campanha na rota correta.",
+      "trophy_code": "p5r_spirit_of_rebellion",
+      "type": "Bronze"
+    },
+    {
+      "description": "Established your own squad of thieves.",
+      "is_missable": 0,
+      "is_spoiler": 1,
+      "name": "Phantom Thieves: Assemble!",
+      "name_pt": "Phantom Thieves: Reunir!",
+      "tip": "Troféu automático de história; avance pela campanha na rota correta.",
+      "trophy_code": "p5r_phantom_thieves_assemble",
+      "type": "Bronze"
+    },
+    {
+      "description": "Completed a Mementos request.",
+      "is_missable": 0,
+      "is_spoiler": 0,
+      "name": "One Step at a Time",
+      "name_pt": "Um Passo de Cada Vez",
+      "tip": "Conclua qualquer request de Mementos. Há muitas oportunidades e não é necessário completar todas para este troféu.",
+      "trophy_code": "p5r_one_step_at_a_time",
+      "type": "Bronze"
+    },
+    {
+      "description": "Went to a hangout spot with someone.",
+      "is_missable": 0,
+      "is_spoiler": 0,
+      "name": "Tokyo Tourist",
+      "name_pt": "Turista em Tóquio",
+      "tip": "Convide um Confidant para um ponto de passeio quando surgir uma tarde ou noite livre.",
+      "trophy_code": "p5r_tokyo_tourist",
+      "type": "Bronze"
+    },
+    {
+      "description": "Evolved a party member's Persona.",
+      "is_missable": 1,
+      "is_spoiler": 0,
+      "name": "Awakening the Phantom Thieves",
+      "name_pt": "Despertar dos Phantom Thieves",
+      "tip": "Maximize um Confidant do grupo e, no terceiro semestre, aceite o encontro que evolui a Persona do aliado.",
+      "trophy_code": "p5r_awakening_the_phantom_thieves",
+      "type": "Bronze"
+    },
+    {
+      "description": "Obtained a Persona through negotiation.",
+      "is_missable": 0,
+      "is_spoiler": 0,
+      "name": "I Am Thou...",
+      "name_pt": "Eu Sou Tu...",
+      "tip": "Negocie com uma sombra e obtenha uma Persona com espaço livre no estoque.",
+      "trophy_code": "p5r_i_am_thou",
+      "type": "Bronze"
+    },
+    {
+      "description": "Performed a Baton Pass.",
+      "is_missable": 0,
+      "is_spoiler": 0,
+      "name": "Tactical Teamwork",
+      "name_pt": "Trabalho em Equipe Tático",
+      "tip": "Use Baton Pass em combate; vem naturalmente ao explorar fraquezas.",
+      "trophy_code": "p5r_tactical_teamwork",
+      "type": "Bronze"
+    },
+    {
+      "description": "Defeated enemies via Disaster Shadow explosion.",
+      "is_missable": 0,
+      "is_spoiler": 0,
+      "name": "Let's Blow It Up",
+      "name_pt": "Vamos Explodir",
+      "tip": "Ataque uma Disaster Shadow e use a explosão para derrotar inimigos.",
+      "trophy_code": "p5r_lets_blow_it_up",
+      "type": "Bronze"
+    },
+    {
+      "description": "Used the grappling hook.",
+      "is_missable": 0,
+      "is_spoiler": 0,
+      "name": "You'd Better Hang On!",
+      "name_pt": "É Melhor Se Segurar!",
+      "tip": "Troféu automático ao usar o grappling hook pela primeira vez.",
+      "trophy_code": "p5r_youd_better_hang_on",
+      "type": "Bronze"
+    },
+    {
+      "description": "Triggered a Technical.",
+      "is_missable": 0,
+      "is_spoiler": 0,
+      "name": "Technician",
+      "name_pt": "Técnico",
+      "tip": "Aplique um status e acerte com elemento que gere Technical.",
+      "trophy_code": "p5r_technician",
+      "type": "Bronze"
+    },
+    {
+      "description": "Obtained a Treasure Demon.",
+      "is_missable": 0,
+      "is_spoiler": 0,
+      "name": "The Purpose of a Thief",
+      "name_pt": "O Propósito de um Ladrão",
+      "tip": "Derrube e negocie com um Treasure Demon, mantendo uma vaga livre no estoque de Personas.",
+      "trophy_code": "p5r_the_purpose_of_a_thief",
+      "type": "Bronze"
+    },
+    {
+      "description": "Performed a Showtime attack.",
+      "is_missable": 0,
+      "is_spoiler": 0,
+      "name": "It's Showtime!",
+      "name_pt": "É Showtime!",
+      "tip": "Use qualquer Showtime quando a mecânica estiver liberada e aparecer em combate.",
+      "trophy_code": "p5r_its_showtime",
+      "type": "Bronze"
+    },
+    {
+      "description": "Traded in flowers while in Mementos.",
+      "is_missable": 0,
+      "is_spoiler": 0,
+      "name": "Jose's Favorite Customer",
+      "name_pt": "Cliente Favorito de Jose",
+      "tip": "Colete flowers em Mementos e troque-as com Jose uma vez.",
+      "trophy_code": "p5r_joses_favorite_customer",
+      "type": "Bronze"
+    },
+    {
+      "description": "Traded in stamps while in Mementos.",
+      "is_missable": 0,
+      "is_spoiler": 0,
+      "name": "The Phantom Philatelist",
+      "name_pt": "O Filatelista Fantasma",
+      "tip": "Encontre stamps em Mementos e entregue-as a Jose; combine o progresso com The Search for Power.",
+      "trophy_code": "p5r_the_phantom_philatelist",
+      "type": "Bronze"
+    },
+    {
+      "description": "Encountered a deviation in Mementos.",
+      "is_missable": 0,
+      "is_spoiler": 0,
+      "name": "The Deviated Cognition",
+      "name_pt": "A Cognição Desviada",
+      "tip": "Continue explorando Mementos até entrar em um andar com desvio aleatório de cognição.",
+      "trophy_code": "p5r_the_deviated_cognition",
+      "type": "Bronze"
+    },
+    {
+      "description": "Performed a Guillotine execution.",
+      "is_missable": 0,
+      "is_spoiler": 0,
+      "name": "A Deadly Debut",
+      "name_pt": "Uma Estreia Mortal",
+      "tip": "Use fusão normal na Velvet Room.",
+      "trophy_code": "p5r_a_deadly_debut",
+      "type": "Bronze"
+    },
+    {
+      "description": "Performed a Group Guillotine execution.",
+      "is_missable": 0,
+      "is_spoiler": 0,
+      "name": "Efficient Executioner",
+      "name_pt": "Executor Eficiente",
+      "tip": "Use Group Guillotine quando a opção estiver liberada.",
+      "trophy_code": "p5r_efficient_executioner",
+      "type": "Bronze"
+    },
+    {
+      "description": "Used Incense on a Persona in Lockdown.",
+      "is_missable": 0,
+      "is_spoiler": 0,
+      "name": "Intensive Training",
+      "name_pt": "Treinamento Intensivo",
+      "tip": "Coloque uma Persona em Lockdown e use Incense na Velvet Room.",
+      "trophy_code": "p5r_intensive_training",
+      "type": "Bronze"
+    },
+    {
+      "description": "Performed a Gallows execution.",
+      "is_missable": 0,
+      "is_spoiler": 0,
+      "name": "Success Built on Sacrifice",
+      "name_pt": "Sucesso Construído no Sacrifício",
+      "tip": "Use Gallows para fortalecer uma Persona quando a função estiver disponível.",
+      "trophy_code": "p5r_success_built_on_sacrifice",
+      "type": "Bronze"
+    },
+    {
+      "description": "Performed an execution during a Fusion Alarm.",
+      "is_missable": 0,
+      "is_spoiler": 0,
+      "name": "Accident-Prone",
+      "name_pt": "Propenso a Acidentes",
+      "tip": "Use qualquer execução durante Fusion Alarm.",
+      "trophy_code": "p5r_accident_prone",
+      "type": "Bronze"
+    },
+    {
+      "description": "Performed an Electric Chair execution.",
+      "is_missable": 0,
+      "is_spoiler": 0,
+      "name": "A Grand Experiment",
+      "name_pt": "Um Grande Experimento",
+      "tip": "Use Electric Chair para transformar uma Persona em item quando a opção estiver liberada.",
+      "trophy_code": "p5r_a_grand_experiment",
+      "type": "Bronze"
+    },
+    {
+      "description": "Cleaned up in Leblanc.",
+      "is_missable": 0,
+      "is_spoiler": 0,
+      "name": "Leblanc Buffer",
+      "name_pt": "Faxina no Leblanc",
+      "tip": "Interaja com o banheiro de Leblanc para limpar em uma janela livre.",
+      "trophy_code": "p5r_leblanc_buffer",
+      "type": "Bronze"
+    },
+    {
+      "description": "Worked a part-time job.",
+      "is_missable": 0,
+      "is_spoiler": 0,
+      "name": "Punch That Clock!",
+      "name_pt": "Bata o Ponto!",
+      "tip": "Trabalhe em qualquer emprego de meio período antes de acabar o calendário.",
+      "trophy_code": "p5r_punch_that_clock",
+      "type": "Bronze"
+    },
+    {
+      "description": "Scored a hit at the batting cages.",
+      "is_missable": 0,
+      "is_spoiler": 0,
+      "name": "Batter Up!",
+      "name_pt": "Rebata!",
+      "tip": "Vá ao batting center e acerte uma bola em uma janela livre.",
+      "trophy_code": "p5r_batter_up",
+      "type": "Bronze"
+    },
+    {
+      "description": "Couldn't take the heat in the bathhouse.",
+      "is_missable": 0,
+      "is_spoiler": 0,
+      "name": "Getting the Vapors",
+      "name_pt": "Ficando Tonto no Vapor",
+      "tip": "Visite o bathhouse em noite chuvosa para ficar tonto com o calor.",
+      "trophy_code": "p5r_getting_the_vapors",
+      "type": "Bronze"
+    },
+    {
+      "description": "Won the lottery.",
+      "is_missable": 0,
+      "is_spoiler": 0,
+      "name": "Easy Money",
+      "name_pt": "Dinheiro Fácil",
+      "tip": "Compre bilhetes de loteria e cheque o resultado em semanas seguintes.",
+      "trophy_code": "p5r_easy_money",
+      "type": "Bronze"
+    },
+    {
+      "description": "Scored a prize in the crane game.",
+      "is_missable": 0,
+      "is_spoiler": 0,
+      "name": "Going Against the Crane",
+      "name_pt": "Contra a Garra",
+      "tip": "Tente o crane game em Akihabara até ganhar um prêmio.",
+      "trophy_code": "p5r_going_against_the_crane",
+      "type": "Bronze"
+    },
+    {
+      "description": "Sold old clothing at Furugi no Neuchi.",
+      "is_missable": 0,
+      "is_spoiler": 0,
+      "name": "Trash Into Treasure",
+      "name_pt": "Lixo em Tesouro",
+      "tip": "Obtenha roupas antigas em Palaces ou Mementos e venda pelo menos uma na Furugi no Neuchi, em Kichijoji.",
+      "trophy_code": "p5r_trash_into_treasure",
+      "type": "Bronze"
+    },
+    {
+      "description": "Played a game of darts.",
+      "is_missable": 0,
+      "is_spoiler": 0,
+      "name": "Dartslinger",
+      "name_pt": "Arremessador de Dardos",
+      "tip": "Jogue darts em Kichijoji durante uma janela livre.",
+      "trophy_code": "p5r_dartslinger",
+      "type": "Bronze"
+    },
+    {
+      "description": "Played a game of billiards.",
+      "is_missable": 0,
+      "is_spoiler": 0,
+      "name": "A Hustler's Journey",
+      "name_pt": "Jornada de um Jogador de Bilhar",
+      "tip": "Jogue billiards em Kichijoji durante uma janela livre.",
+      "trophy_code": "p5r_a_hustlers_journey",
+      "type": "Bronze"
+    },
+    {
+      "description": "Attended the jazz club.",
+      "is_missable": 0,
+      "is_spoiler": 0,
+      "name": "A Night in Kichijoji",
+      "name_pt": "Uma Noite em Kichijoji",
+      "tip": "Visite o jazz club de Kichijoji quando ele estiver disponível.",
+      "trophy_code": "p5r_a_night_in_kichijoji",
+      "type": "Bronze"
+    },
+    {
+      "description": "Visited a temple.",
+      "is_missable": 0,
+      "is_spoiler": 0,
+      "name": "A Serene Experience",
+      "name_pt": "Uma Experiência Serena",
+      "tip": "Passe tempo no templo durante uma janela livre.",
+      "trophy_code": "p5r_a_serene_experience",
+      "type": "Bronze"
+    },
+    {
+      "description": "Customized a gun.",
+      "is_missable": 0,
+      "is_spoiler": 0,
+      "name": "Professional Modification",
+      "name_pt": "Modificação Profissional",
+      "tip": "Customize uma arma quando a loja permitir modificações.",
+      "trophy_code": "p5r_professional_modification",
+      "type": "Bronze"
+    },
+    {
+      "description": "Passed time at the fishing pond.",
+      "is_missable": 0,
+      "is_spoiler": 0,
+      "name": "Angler's Debut",
+      "name_pt": "Estreia do Pescador",
+      "tip": "Visite o fishing pond e pesque antes do fim do calendário.",
+      "trophy_code": "p5r_anglers_debut",
+      "type": "Bronze"
+    },
+    {
+      "description": "Ordered from the special menu at the maid cafe.",
+      "is_missable": 0,
+      "is_spoiler": 0,
+      "name": "Master of Akihabara",
+      "name_pt": "Mestre de Akihabara",
+      "tip": "Visite repetidamente o maid café, acumule pontos e peça o menu especial quando ele for liberado.",
+      "trophy_code": "p5r_master_of_akihabara",
+      "type": "Bronze"
+    }
+  ]
+}

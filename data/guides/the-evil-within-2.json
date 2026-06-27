@@ -1,0 +1,612 @@
+{
+  "game": {
+    "avoid_if": "Evite se você não quer Classic Mode, múltiplas runs, saves limitados, coletáveis perdíveis ou troféus condicionais por capítulo.",
+    "before_you_start": "Leia o roadmap antes de jogar. The Evil Within 2 tem muitos perdíveis, não tem Chapter Select e Classic Mode exige planejamento rigoroso de saves.",
+    "best_for": "Ideal para quem quer uma platina survival horror difícil, tensa, com planejamento, múltiplas runs e desafio real.",
+    "cleanup_advice": "Como não há Chapter Select, use NG+, saves antigos e checklist para fechar coletáveis, armas, upgrades, side missions e troféus condicionais antes das runs finais.",
+    "cover_image": "https://cdn.cloudflare.steamstatic.com/steam/apps/601430/library_600x900.jpg",
+    "coverage_level": "strong",
+    "created_at": "2026-05-09 19:53:49",
+    "difficulty": 8,
+    "difficulty_reason": "A dificuldade vem principalmente do Classic Mode, da ausência de Chapter Select, dos saves limitados e de vários troféus perdíveis por capítulo ou progresso.",
+    "dlc_scope": "Guia focado na lista base de The Evil Within 2; não mistura dados, troféus ou roadmap do primeiro The Evil Within.",
+    "editorial_notes": null,
+    "editorial_review_status": null,
+    "editorial_status": "published",
+    "first_run_advice": "Use a primeira run para aprender mapas, inimigos, bosses, side missions e coletar o máximo possível, mantendo saves manuais antes de capítulos importantes.",
+    "grind_summary": "O peso está em coletáveis, side missions, upgrades, armas, crafting, troféus condicionais e Classic Mode.",
+    "guide_avoid": null,
+    "guide_best_moment": null,
+    "guide_dlc": null,
+    "guide_grind": null,
+    "guide_ideal": null,
+    "guide_online": null,
+    "guide_runs": null,
+    "image": "https://cdn.cloudflare.steamstatic.com/steam/apps/601430/header.jpg",
+    "is_verified": 0,
+    "last_reviewed_at": null,
+    "missable": "Muitos troféus são perdíveis porque não há Chapter Select. Coletáveis, side missions, armas, Coffee Makers, lockers, troféus de capítulo e condições de run exigem saves manuais e planejamento. Classic Mode é obrigatório para a platina.",
+    "missable_summary": "Tudo que não é história automática deve ser tratado como atenção: não há Chapter Select, então use saves manuais e checklist por capítulo/região.",
+    "name": "The Evil Within 2",
+    "online_summary": "Não há exigência online para a platina.",
+    "quality_warnings": null,
+    "reviewed_by": null,
+    "runs_summary": "A platina exige múltiplas runs ou rotas muito planejadas, incluindo coletáveis, New Game+, upgrades, armas, troféus condicionais e Classic Mode.",
+    "slug": "the-evil-within-2",
+    "time": "30-50h",
+    "time_bucket": "medium",
+    "time_max_hours": 50,
+    "time_min_hours": 30,
+    "time_reason": "A faixa de 30-50 horas considera campanha, coletáveis, NG+, upgrades, armas, troféus condicionais e Classic Mode; pode variar bastante conforme a execução no Classic.",
+    "time_sort_hours": 30,
+    "updated_at": "2026-06-27 02:36:58",
+    "verification_note": "Lista base revisada por fontes públicas; aguarda validação editorial final.",
+    "verification_status": "review",
+    "walkthrough": null
+  },
+  "redirects": [],
+  "roadmaps": [
+    {
+      "content": "Faça uma primeira run em Casual/Survival/Nightmare para aprender Union, STEM, inimigos, bosses e side missions, coletando files, residual memories, photographic slides, mysterious objects, locker keys e Coffee Makers desde o início.",
+      "step_order": 1
+    },
+    {
+      "content": "Mantenha saves manuais antes de capítulos e regiões importantes, porque The Evil Within 2 não tem Chapter Select e muitos troféus de capítulo/coletáveis podem exigir NG+ ou save antigo.",
+      "step_order": 2
+    },
+    {
+      "content": "Durante a campanha, resolva side missions como Rogue Signal e a linha de Sykes, além de troféus condicionais como Not Running This Time, Sometimes Fighting Isn’t the Answer, Death From Above, Melancholy Memories e I’ll Take You Down Myself.",
+      "step_order": 3
+    },
+    {
+      "content": "Use New Game+ para completar upgrades de Sebastian, upgrades de armas, crafting de todos os tipos, armas restantes, lockers, coletáveis e recursos que carregam entre runs.",
+      "step_order": 4
+    },
+    {
+      "content": "Garanta Powerhouse com todas as armas padrão, lembrando que Brass Knuckles exige terminar em Nightmare ou Classic, e revise Coffee Makers, Photographic Slides, Mysterious Objects e Residual Memories antes de avançar demais.",
+      "step_order": 5
+    },
+    {
+      "content": "Faça a run Classic Mode para You Asked For It… Again com rota conservadora: 7 saves manuais, sem upgrades comprados, sem transferência de equipamento e foco em evitar combates desnecessários.",
+      "step_order": 6
+    },
+    {
+      "content": "Finalize o cleanup por NG+ ou saves antigos, revisando checklist, troféus de combate, side missions, coletáveis, armas, upgrades e a separação correta em relação ao primeiro The Evil Within.",
+      "step_order": 7
+    }
+  ],
+  "schemaVersion": 1,
+  "seedExtras": {
+    "aliases": [],
+    "attentionPoints": [],
+    "checklist": [],
+    "faq": [],
+    "note": "Campos exportados para auditoria. O SQLite atual nao possui colunas nativas para todos esses extras; a importacao preserva o que o banco suporta.",
+    "quickDecision": null,
+    "seo": {},
+    "tags": []
+  },
+  "slug": "the-evil-within-2",
+  "trophies": [
+    {
+      "description": "Survived the nightmare, and everything in between.",
+      "is_missable": 0,
+      "is_spoiler": 1,
+      "name": "Learn to Survive",
+      "name_pt": "",
+      "tip": "Obtenha todos os outros troféus da lista base de The Evil Within 2.",
+      "trophy_code": "tew2_learn_to_survive",
+      "type": "Platina"
+    },
+    {
+      "description": "Completed the game on Casual difficulty or higher.",
+      "is_missable": 0,
+      "is_spoiler": 1,
+      "name": "Rookie",
+      "name_pt": "",
+      "tip": "Complete a campanha em Casual ou superior. Troféus de dificuldade acumulam conforme a dificuldade escolhida.",
+      "trophy_code": "tew2_rookie",
+      "type": "Bronze"
+    },
+    {
+      "description": "Completed the game on Survival difficulty or higher.",
+      "is_missable": 0,
+      "is_spoiler": 1,
+      "name": "Survivor",
+      "name_pt": "",
+      "tip": "Complete a campanha em Survival ou superior. Pode ser combinado com Nightmare se você já quiser treinar para Classic.",
+      "trophy_code": "tew2_survivor",
+      "type": "Bronze"
+    },
+    {
+      "description": "Completed the game on Nightmare difficulty or higher.",
+      "is_missable": 0,
+      "is_spoiler": 1,
+      "name": "Against All Odds",
+      "name_pt": "",
+      "tip": "Complete em Nightmare ou superior. Também é importante para liberar/obter armas ligadas ao checklist, como Brass Knuckles.",
+      "trophy_code": "tew2_against_all_odds",
+      "type": "Prata"
+    },
+    {
+      "description": "Completed the game in Classic Mode.",
+      "is_missable": 0,
+      "is_spoiler": 1,
+      "name": "You Asked For It… Again",
+      "name_pt": "",
+      "tip": "Classic Mode é obrigatório para a platina: 7 saves manuais, sem upgrades comprados e nenhuma transferência de equipamento.",
+      "trophy_code": "tew2_you_asked_for_it_again",
+      "type": "Ouro"
+    },
+    {
+      "description": "Took the plunge back into STEM.",
+      "is_missable": 0,
+      "is_spoiler": 1,
+      "name": "Welcome to Union",
+      "name_pt": "",
+      "tip": "Troféu automático de história.",
+      "trophy_code": "tew2_welcome_to_union",
+      "type": "Bronze"
+    },
+    {
+      "description": "Saw a chilling vision.",
+      "is_missable": 0,
+      "is_spoiler": 1,
+      "name": "Taken",
+      "name_pt": "",
+      "tip": "Troféu automático de história.",
+      "trophy_code": "tew2_taken",
+      "type": "Bronze"
+    },
+    {
+      "description": "Defeated the Guardian outside City Hall.",
+      "is_missable": 1,
+      "is_spoiler": 1,
+      "name": "Not Running This Time",
+      "name_pt": "",
+      "tip": "No Capítulo 5, derrote o Guardian fora da City Hall. Faça save se quiser também pegar a rota de evitar o confronto.",
+      "trophy_code": "tew2_not_running_this_time",
+      "type": "Bronze"
+    },
+    {
+      "description": "Found a potential ally in The Marrow.",
+      "is_missable": 0,
+      "is_spoiler": 1,
+      "name": "The Team Psychologist",
+      "name_pt": "",
+      "tip": "Troféu automático de história.",
+      "trophy_code": "tew2_the_team_psychologist",
+      "type": "Bronze"
+    },
+    {
+      "description": "Shut down a bloody performance.",
+      "is_missable": 0,
+      "is_spoiler": 1,
+      "name": "Premature Finale",
+      "name_pt": "",
+      "tip": "Troféu automático de história ligado ao avanço principal.",
+      "trophy_code": "tew2_premature_finale",
+      "type": "Prata"
+    },
+    {
+      "description": "Survived an ordeal with the help of a new friend.",
+      "is_missable": 0,
+      "is_spoiler": 1,
+      "name": "Another Ally",
+      "name_pt": "",
+      "tip": "Troféu automático de história.",
+      "trophy_code": "tew2_another_ally",
+      "type": "Bronze"
+    },
+    {
+      "description": "Provided a Harbinger sweet release.",
+      "is_missable": 0,
+      "is_spoiler": 1,
+      "name": "Crossing to the Other Side",
+      "name_pt": "",
+      "tip": "Troféu automático de história.",
+      "trophy_code": "tew2_crossing_to_the_other_side",
+      "type": "Bronze"
+    },
+    {
+      "description": "Came to terms with your past and present.",
+      "is_missable": 0,
+      "is_spoiler": 1,
+      "name": "Spiritual Awakening",
+      "name_pt": "",
+      "tip": "Troféu automático de história.",
+      "trophy_code": "tew2_spiritual_awakening",
+      "type": "Bronze"
+    },
+    {
+      "description": "Made it inside the enemy’s stronghold.",
+      "is_missable": 0,
+      "is_spoiler": 1,
+      "name": "Fire Walk With Me",
+      "name_pt": "",
+      "tip": "Troféu automático de história.",
+      "trophy_code": "tew2_fire_walk_with_me",
+      "type": "Bronze"
+    },
+    {
+      "description": "Your trauma is no more.",
+      "is_missable": 0,
+      "is_spoiler": 1,
+      "name": "Overcome the Past",
+      "name_pt": "",
+      "tip": "Troféu automático de história avançada.",
+      "trophy_code": "tew2_overcome_the_past",
+      "type": "Prata"
+    },
+    {
+      "description": "Reached the very end of the world.",
+      "is_missable": 0,
+      "is_spoiler": 1,
+      "name": "Everything Comes Crumbling Down",
+      "name_pt": "",
+      "tip": "Troféu automático da reta final.",
+      "trophy_code": "tew2_everything_comes_crumbling_down",
+      "type": "Bronze"
+    },
+    {
+      "description": "Did what needed to be done to save your daughter.",
+      "is_missable": 0,
+      "is_spoiler": 1,
+      "name": "Unfortunate Consequence",
+      "name_pt": "",
+      "tip": "Troféu automático ligado ao final da campanha.",
+      "trophy_code": "tew2_unfortunate_consequence",
+      "type": "Prata"
+    },
+    {
+      "description": "Completed the “Rogue Signal” side mission.",
+      "is_missable": 1,
+      "is_spoiler": 0,
+      "name": "Backup Ain’t Coming",
+      "name_pt": "",
+      "tip": "No Capítulo 3, aceite e conclua a side mission Rogue Signal. Sem Chapter Select, deixe save ou faça em NG+ se perder.",
+      "trophy_code": "tew2_backup_aint_coming",
+      "type": "Bronze"
+    },
+    {
+      "description": "Completed the “The Last Step” side mission.",
+      "is_missable": 1,
+      "is_spoiler": 0,
+      "name": "Sykes Out",
+      "name_pt": "",
+      "tip": "Complete as side missions de Sykes no Capítulo 7 para liberar The Last Step no Capítulo 13.",
+      "trophy_code": "tew2_sykes_out",
+      "type": "Prata"
+    },
+    {
+      "description": "Experienced every traumatic encounter and made peace with your inner demons.",
+      "is_missable": 1,
+      "is_spoiler": 1,
+      "name": "Finally Free",
+      "name_pt": "",
+      "tip": "Acione e conclua todos os encontros Anima ligados a arquivos, slides e memórias residuais. Use checklist de coletáveis.",
+      "trophy_code": "tew2_finally_free",
+      "type": "Prata"
+    },
+    {
+      "description": "Used your first Red Gel.",
+      "is_missable": 1,
+      "is_spoiler": 0,
+      "name": "You Got Red in You",
+      "name_pt": "",
+      "tip": "Use um Red Gel para abrir tiers de habilidades. Há janelas específicas; pegue durante a campanha ou NG+.",
+      "trophy_code": "tew2_you_got_red_in_you",
+      "type": "Bronze"
+    },
+    {
+      "description": "Completely upgraded all abilities.",
+      "is_missable": 1,
+      "is_spoiler": 0,
+      "name": "Stick it in My Veins",
+      "name_pt": "",
+      "tip": "Requer muito Green Gel e Red Gel. Faça em NG+ para acumular recursos e completar todas as habilidades.",
+      "trophy_code": "tew2_stick_it_in_my_veins",
+      "type": "Prata"
+    },
+    {
+      "description": "Used your first High-Grade Weapon Parts.",
+      "is_missable": 1,
+      "is_spoiler": 0,
+      "name": "Making Things a Little Easier",
+      "name_pt": "",
+      "tip": "Use High-Grade Weapon Parts em uma arma. Recurso limitado; acompanhe upgrades durante a campanha.",
+      "trophy_code": "tew2_making_things_a_little_easier",
+      "type": "Bronze"
+    },
+    {
+      "description": "Upgraded a weapon to Level 3.",
+      "is_missable": 1,
+      "is_spoiler": 0,
+      "name": "Now You’re Playing with Power",
+      "name_pt": "",
+      "tip": "Desbloqueie o tier alto de upgrades de uma arma em uma bancada usando High-Grade Weapon Parts.",
+      "trophy_code": "tew2_now_youre_playing_with_power",
+      "type": "Bronze"
+    },
+    {
+      "description": "Upgraded one of your Warden Crossbow bolts to max level.",
+      "is_missable": 1,
+      "is_spoiler": 0,
+      "name": "A Little Extra Kick to it",
+      "name_pt": "",
+      "tip": "Evolua um bolt da Warden Crossbow ao máximo; Smoke Bolt combina bem com o troféu Smoke Assassin.",
+      "trophy_code": "tew2_a_little_extra_kick_to_it",
+      "type": "Bronze"
+    },
+    {
+      "description": "Completely upgraded all weapons.",
+      "is_missable": 1,
+      "is_spoiler": 0,
+      "name": "They Never Even Stood A Chance",
+      "name_pt": "",
+      "tip": "Requer NG+ e bastante Weapon Parts/High-Grade Parts. Saqueie mapas e complete upgrades em runs adicionais.",
+      "trophy_code": "tew2_they_never_even_stood_a_chance",
+      "type": "Prata"
+    },
+    {
+      "description": "Crafted something for the first time.",
+      "is_missable": 1,
+      "is_spoiler": 0,
+      "name": "DIY",
+      "name_pt": "",
+      "tip": "Crie qualquer item em uma workbench; pode ser feito cedo no Capítulo 3.",
+      "trophy_code": "tew2_diy",
+      "type": "Bronze"
+    },
+    {
+      "description": "Crafted every type of item at least once.",
+      "is_missable": 1,
+      "is_spoiler": 0,
+      "name": "Handyman",
+      "name_pt": "",
+      "tip": "Exige NG+ para Magnum Ammo e todas as armas relevantes para craftar munições/tipos de bolt/itens.",
+      "trophy_code": "tew2_handyman",
+      "type": "Bronze"
+    },
+    {
+      "description": "Observed all Residual Memories.",
+      "is_missable": 1,
+      "is_spoiler": 1,
+      "name": "Echoes Within STEM",
+      "name_pt": "",
+      "tip": "Colete/observe todas as Residual Memories. Sem Chapter Select, use checklist por capítulo/região.",
+      "trophy_code": "tew2_echoes_within_stem",
+      "type": "Prata"
+    },
+    {
+      "description": "Collected 20 files.",
+      "is_missable": 1,
+      "is_spoiler": 0,
+      "name": "Doing Some Detecting",
+      "name_pt": "",
+      "tip": "Colete 20 Files ao longo da campanha. Use checklist para não depender de outra run.",
+      "trophy_code": "tew2_doing_some_detecting",
+      "type": "Bronze"
+    },
+    {
+      "description": "Collected all files.",
+      "is_missable": 1,
+      "is_spoiler": 0,
+      "name": "Diligent Reader",
+      "name_pt": "",
+      "tip": "Colete todos os Files. Sem Chapter Select, arquivos esquecidos exigem NG+ ou save antigo.",
+      "trophy_code": "tew2_diligent_reader",
+      "type": "Prata"
+    },
+    {
+      "description": "Opened 16 lockers.",
+      "is_missable": 1,
+      "is_spoiler": 0,
+      "name": "Half the Stash",
+      "name_pt": "",
+      "tip": "Abra 16 lockers usando Locker Keys. As chaves contam como coletáveis importantes.",
+      "trophy_code": "tew2_half_the_stash",
+      "type": "Bronze"
+    },
+    {
+      "description": "Opened all lockers.",
+      "is_missable": 1,
+      "is_spoiler": 0,
+      "name": "Locksmith",
+      "name_pt": "",
+      "tip": "Abra todos os lockers. Exige todas as Locker Keys e controle de progresso em um save/NG+.",
+      "trophy_code": "tew2_locksmith",
+      "type": "Prata"
+    },
+    {
+      "description": "Acquired the Warden Crossbow.",
+      "is_missable": 1,
+      "is_spoiler": 0,
+      "name": "Good to See You Again",
+      "name_pt": "",
+      "tip": "Pegue a Warden Crossbow no Capítulo 3/4; ela também facilita Shock Therapy e outros troféus de combate.",
+      "trophy_code": "tew2_good_to_see_you_again",
+      "type": "Bronze"
+    },
+    {
+      "description": "Talked to Kidman about all of the photographic slides.",
+      "is_missable": 1,
+      "is_spoiler": 1,
+      "name": "Chatting With Kidman",
+      "name_pt": "",
+      "tip": "Colete todos os Photographic Slides e fale com Kidman sobre cada um.",
+      "trophy_code": "tew2_chatting_with_kidman",
+      "type": "Bronze"
+    },
+    {
+      "description": "Acquired all standard weapons.",
+      "is_missable": 1,
+      "is_spoiler": 0,
+      "name": "Powerhouse",
+      "name_pt": "",
+      "tip": "Pegue todas as armas padrão em um save. Brass Knuckles exige terminar em Nightmare ou Classic.",
+      "trophy_code": "tew2_powerhouse",
+      "type": "Prata"
+    },
+    {
+      "description": "Collected all of the Mysterious Objects.",
+      "is_missable": 1,
+      "is_spoiler": 0,
+      "name": "All in the Family",
+      "name_pt": "",
+      "tip": "Colete todos os Mysterious Objects. Use checklist porque não há Chapter Select.",
+      "trophy_code": "tew2_all_in_the_family",
+      "type": "Prata"
+    },
+    {
+      "description": "Used every Coffee Maker at least once.",
+      "is_missable": 1,
+      "is_spoiler": 0,
+      "name": "Caffeine Addict",
+      "name_pt": "",
+      "tip": "Use todos os Coffee Makers; o último safehouse do Capítulo 13 é opcional e pode ser perdido.",
+      "trophy_code": "tew2_caffeine_addict",
+      "type": "Bronze"
+    },
+    {
+      "description": "Killed 30 enemies.",
+      "is_missable": 0,
+      "is_spoiler": 0,
+      "name": "Thinning Them Out",
+      "name_pt": "",
+      "tip": "Mate 30 inimigos. Deve vir naturalmente durante a campanha.",
+      "trophy_code": "tew2_thinning_them_out",
+      "type": "Bronze"
+    },
+    {
+      "description": "Killed 60 enemies.",
+      "is_missable": 0,
+      "is_spoiler": 0,
+      "name": "Clearing a Path",
+      "name_pt": "",
+      "tip": "Mate 60 inimigos. Normalmente vem de forma natural pela progressão.",
+      "trophy_code": "tew2_clearing_a_path",
+      "type": "Bronze"
+    },
+    {
+      "description": "Killed 3 enemies using upgraded Smoke Bolts.",
+      "is_missable": 1,
+      "is_spoiler": 0,
+      "name": "Smoke Assassin",
+      "name_pt": "",
+      "tip": "Faça com Smoke Bolts totalmente evoluídos. Planeje recursos ou deixe para NG+.",
+      "trophy_code": "tew2_smoke_assassin",
+      "type": "Bronze"
+    },
+    {
+      "description": "Stunned an enemy standing in water using a Shock Bolt.",
+      "is_missable": 1,
+      "is_spoiler": 0,
+      "name": "Shock Therapy",
+      "name_pt": "",
+      "tip": "Boa oportunidade ao pegar a Warden Crossbow no Capítulo 3/4; acerte inimigos na água com Shock Bolt.",
+      "trophy_code": "tew2_shock_therapy",
+      "type": "Bronze"
+    },
+    {
+      "description": "Killed an enemy using an Ambush.",
+      "is_missable": 1,
+      "is_spoiler": 0,
+      "name": "Wait For It…",
+      "name_pt": "",
+      "tip": "Compre a habilidade Ambush e mate um inimigo com corner takedown.",
+      "trophy_code": "tew2_wait_for_it",
+      "type": "Bronze"
+    },
+    {
+      "description": "Killed 2 or more enemies at once using oil on the ground.",
+      "is_missable": 1,
+      "is_spoiler": 0,
+      "name": "Kick, Shoot, Burn",
+      "name_pt": "",
+      "tip": "Boa oportunidade no Capítulo 3, usando óleo no chão em grupos de inimigos.",
+      "trophy_code": "tew2_kick_shoot_burn",
+      "type": "Bronze"
+    },
+    {
+      "description": "Stomped and killed 15 fallen enemies.",
+      "is_missable": 1,
+      "is_spoiler": 0,
+      "name": "Bootable Offense",
+      "name_pt": "",
+      "tip": "Derrube inimigos e finalize com stomp 15 vezes durante a run.",
+      "trophy_code": "tew2_bootable_offense",
+      "type": "Bronze"
+    },
+    {
+      "description": "Killed 10 enemies using Sneak Kills.",
+      "is_missable": 1,
+      "is_spoiler": 0,
+      "name": "I Am The Night",
+      "name_pt": "",
+      "tip": "Faça 10 Sneak Kills em uma run. Capítulo 3 oferece várias oportunidades.",
+      "trophy_code": "tew2_i_am_the_night",
+      "type": "Bronze"
+    },
+    {
+      "description": "Avoided unnecessary bloodshed outside City Hall. (Ch. 5)",
+      "is_missable": 1,
+      "is_spoiler": 1,
+      "name": "Sometimes Fighting Isn’t the Answer",
+      "name_pt": "",
+      "tip": "No Capítulo 5, evite matar o Guardian e contorne a área. Faça save para combinar com Not Running This Time.",
+      "trophy_code": "tew2_sometimes_fighting_isnt_the_answer",
+      "type": "Bronze"
+    },
+    {
+      "description": "Killed 2 or more enemies at once using a hanging lamp. (Ch. 9)",
+      "is_missable": 1,
+      "is_spoiler": 0,
+      "name": "Death From Above",
+      "name_pt": "",
+      "tip": "No Capítulo 9, use uma lâmpada suspensa para matar dois inimigos de uma vez.",
+      "trophy_code": "tew2_death_from_above",
+      "type": "Bronze"
+    },
+    {
+      "description": "Stopped a true believer from playing with his favorite toy. (Ch. 11)",
+      "is_missable": 1,
+      "is_spoiler": 1,
+      "name": "No More Playing With Fire",
+      "name_pt": "",
+      "tip": "No Capítulo 11, destrua o tanque do lança-chamas do chefe.",
+      "trophy_code": "tew2_no_more_playing_with_fire",
+      "type": "Bronze"
+    },
+    {
+      "description": "Reminisced about every moment from your past. (Ch. 12)",
+      "is_missable": 1,
+      "is_spoiler": 1,
+      "name": "Melancholy Memories",
+      "name_pt": "",
+      "tip": "No Capítulo 12, interaja com as memórias da casa antes de avançar a história.",
+      "trophy_code": "tew2_melancholy_memories",
+      "type": "Bronze"
+    },
+    {
+      "description": "Brought your own equipment to the barbecue this time. (Ch. 14)",
+      "is_missable": 1,
+      "is_spoiler": 1,
+      "name": "I’ll Take You Down Myself",
+      "name_pt": "",
+      "tip": "Troféu altamente perdível: pegue o lança-chamas quebrado no Cap. 11, repare no Cap. 13 e use no encontro do Cap. 14.",
+      "trophy_code": "tew2_ill_take_you_down_myself",
+      "type": "Prata"
+    },
+    {
+      "description": "Opted for a cinematic experience.",
+      "is_missable": 1,
+      "is_spoiler": 0,
+      "name": "That Cinematic Feel…",
+      "name_pt": "",
+      "tip": "Após terminar o jogo, ative Letterbox nas opções e inicie uma nova campanha.",
+      "trophy_code": "tew2_that_cinematic_feel",
+      "type": "Bronze"
+    }
+  ]
+}

@@ -1,0 +1,593 @@
+{
+  "game": {
+    "avoid_if": "Evite se você quer uma platina curta, sem RNG, sem New Game+ ou sem controle de NPC quests e coletáveis por capítulo.",
+    "before_you_start": "Black Myth: Wukong é uma platina longa, totalmente offline e focada em exploração completa, bosses opcionais, quests de NPCs, equipamentos, Transformações, Espíritos, Curios, bebidas, fórmulas, sementes e Journal. A versão PlayStation possui 36 troféus, não exige online, cooperação ou requisito por configuração de jogo, pois o jogo não tem seleção ajustável. A dificuldade estimada fica em torno de 5/10, mas o tempo pode variar bastante por habilidade, RNG de drops e organização do cleanup.\n\nA rota mais segura é explorar cada capítulo com calma, conversar com NPCs antes de avançar, derrotar bosses opcionais, coletar Espíritos/Transformações e evitar iniciar New Game+ antes de terminar tudo que for possível no ciclo atual. Após o chefe final, escolha Continue Journey para voltar ao ponto anterior ao final e fazer cleanup. Só entre em Enter a New Cycle depois de confirmar os perdíveis e coletáveis, pois o NG+ sobrescreve o ciclo atual. A platina exige New Game+ para alguns itens/equipamentos, mas o guia deve evitar retrabalho desnecessário.",
+    "best_for": "Ideal para quem gosta de action RPG focado em bosses, exploração, 100% completion, coleções grandes e planejamento de cleanup.",
+    "cleanup_advice": "Depois do chefe final, escolha Continue Journey para voltar antes do final e limpar pendências. Só escolha Enter a New Cycle quando estiver pronto para iniciar NG+ e sobrescrever o ciclo atual.",
+    "cover_image": "https://cdn.cloudflare.steamstatic.com/steam/apps/2358720/library_600x900.jpg",
+    "coverage_level": "complete",
+    "created_at": "2026-06-22 22:46:37",
+    "difficulty": 5,
+    "difficulty_reason": "5/10: a nota é uma avaliação editorial da platina. O jogo não tem seleção ajustável; o desafio vem de bosses, organização, 100% completion, RNG, drops e New Game+.",
+    "dlc_scope": "Base game sem DLCs. DLC não é necessário para a platina PS5 deste guia.",
+    "editorial_notes": "Validado contra a lista PS5 de 36 troféus e separado da lista expandida de 81 achievements de Steam/Xbox. Rota editorial prioriza Continue Journey antes de Enter a New Cycle, 1 autosave, 7 perdíveis e risco técnico em categorias grandes.",
+    "editorial_review_status": "verified",
+    "editorial_status": "published",
+    "first_run_advice": "Na primeira campanha, explore todos os capítulos com calma, converse com Horse NPC e Old Man NPC, derrote bosses opcionais, registre inimigos no Journal e não avance sem revisar perdíveis do capítulo.",
+    "grind_summary": "Grind moderado/alto por 100% completion, Journal, armas, armaduras, Spirits, Transformations, Curios, drinks, soaks, gourds, seeds, formulas, materiais e RNG de drops.",
+    "guide_avoid": null,
+    "guide_best_moment": null,
+    "guide_dlc": null,
+    "guide_grind": null,
+    "guide_ideal": null,
+    "guide_online": null,
+    "guide_runs": null,
+    "image": "https://cdn.cloudflare.steamstatic.com/steam/apps/2358720/header.jpg",
+    "is_verified": 1,
+    "last_reviewed_at": "2026-06-22",
+    "missable": "Tem 7 perdíveis principais: Urge Unfulfilled, Always Accompanied, Fickle Forms, A Curious Collection, Mantled with Might, Brewer’s Bounty e Portraits Perfected.",
+    "missable_summary": "7 perdíveis: Horse NPC, Old Man NPC, Spirits/Transformations, Curios, armaduras, gourds/drinks/soaks e Journal. Revise por capítulo antes de avançar.",
+    "name": "Black Myth: Wukong",
+    "online_summary": "Não há troféus online. A lista PS5 é totalmente offline e não exige servidores, PS+, multiplayer ou conexão para a platina base.",
+    "quality_warnings": "[]",
+    "reviewed_by": "AtlasAchievement Editorial",
+    "runs_summary": "2 jogadas mínimas. A primeira campanha deve limpar tudo que for possível com Continue Journey; New Game+ é necessário para alguns itens/equipamentos.",
+    "slug": "black-myth-wukong",
+    "time": "40-60h",
+    "time_bucket": "long",
+    "time_max_hours": 60,
+    "time_min_hours": 40,
+    "time_reason": "40-60h considerando campanha, exploração completa, áreas secretas, Journal, equipamentos, Spirits, Transformations, Curios, seeds, formulas, drops RNG, cleanup e New Game+.",
+    "time_sort_hours": 50,
+    "updated_at": "2026-06-27 02:37:05",
+    "verification_note": "Guia verificado para a lista PS5: 36 troféus, distribuição 1/4/9/22, 40-60h, 5/10, 7 perdíveis, online 0, coop 0, nenhum requisito por configuração de jogo, base game sem DLC e New Game+ explicado.",
+    "verification_status": "verified",
+    "walkthrough": ""
+  },
+  "redirects": [],
+  "roadmaps": [
+    {
+      "content": "{\"title\":\"Primeira campanha com checklist de perdíveis por capítulo\",\"focus\":\"Capítulos 1-6, NPCs e exploração\",\"objective\":\"Jogar os 6 capítulos explorando bem, conversando com Horse NPC e Old Man NPC antes de avançar, derrotando bosses opcionais e registrando inimigos no Journal.\",\"actions\":[\"Explore cada capítulo com calma e mate ao menos um de cada inimigo para alimentar o Journal.\",\"Converse com Horse NPC e Old Man NPC sempre que aparecerem antes de trocar de capítulo.\",\"Derrote bosses opcionais, acesse áreas secretas e colete Spirits, Transformations, Curios, gourds, drinks, soaks, fórmulas e sementes quando surgirem.\",\"Use Keeper’s Shrines para revisitar áreas, mas trate avanços de capítulo como pontos de checagem editorial.\",\"Lembre que o jogo usa apenas 1 autosave e não oferece save manual.\"],\"warning\":\"Há 7 perdíveis principais. Não avance capítulos sem revisar NPCs, bosses sensíveis e coletáveis com janela de perda.\",\"result\":\"História avançada com menor risco de retrabalho e base de 100% bem encaminhada.\"}",
+      "step_order": 1
+    },
+    {
+      "content": "{\"title\":\"Checklist de perdíveis críticos\",\"focus\":\"Ordem de bosses, NPC quests e itens únicos\",\"objective\":\"Eliminar os riscos que mais costumam forçar repetição de capítulo ou NG+.\",\"actions\":[\"Garanta Wandering Wight antes de Elder Jinchi.\",\"Resolva Second Rat Prince na ordem correta.\",\"Derrote os 9 Lantern Wardens antes de Captain Wise-Voice.\",\"Faça Apramana Bat no momento correto e acompanhe Daoist Mi e Purple Altars/Crane Immortal.\",\"Quebre os braços de Venom Daoist antes de derrotá-lo e derrote Scorpionlord antes de Duskveil.\"],\"warning\":\"Se falhar em uma dessas janelas, pode ser necessário avançar no NG+ até o capítulo correspondente.\",\"result\":\"Perdíveis mais problemáticos controlados antes do cleanup.\"}",
+      "step_order": 2
+    },
+    {
+      "content": "{\"title\":\"Pós-final antes do NG+: escolha Continue Journey\",\"focus\":\"Free roam, Keeper’s Shrines e cleanup seguro\",\"objective\":\"Depois do chefe final, voltar ao ciclo atual e limpar pendências antes de iniciar NG+.\",\"actions\":[\"Após o final, escolha Continue Journey.\",\"Use Keeper’s Shrines para retornar aos capítulos e áreas secretas.\",\"Faça cleanup de bosses, side quests, Journal, equipamentos, spells, Curios, drinks, soaks, gourds, sementes, fórmulas e meditações.\",\"Revise os 7 perdíveis e categorias grandes antes de qualquer transição de ciclo.\",\"Evite Enter a New Cycle enquanto houver pendência viável no ciclo atual.\"],\"warning\":\"Enter a New Cycle inicia NG+ e sobrescreve o ciclo atual. Não use essa opção antes do cleanup.\",\"result\":\"Quase tudo do primeiro ciclo finalizado antes do NG+.\"}",
+      "step_order": 3
+    },
+    {
+      "content": "{\"title\":\"100% completion e categorias grandes\",\"focus\":\"Journal, coleções, RNG e risco técnico\",\"objective\":\"Fechar as categorias de maior volume antes de depender do NG+.\",\"actions\":[\"Complete Portraits Perfected, Fickle Forms, Brewer’s Bounty, A Curious Collection, Seeds to Sow, Page Preserver e Scenic Seeker.\",\"Finalize Treasure Trove e Master of Magic.\",\"Farm Curios, seeds, equipamentos e materiais com paciência para lidar com RNG.\",\"Mantenha o jogo atualizado e considere backup em nuvem antes de pegar o último item de uma categoria grande.\",\"Não transforme risco técnico em perdível: trate como atenção/bugável.\"],\"warning\":\"Alguns drops são RNG e há relatos de troféus de coletáveis/equipamentos que podem não desbloquear corretamente para alguns jogadores.\",\"result\":\"Categorias principais concluídas ou prontas para o NG+.\"}",
+      "step_order": 4
+    },
+    {
+      "content": "{\"title\":\"New Game+ para equipamentos e armas restantes\",\"focus\":\"NG+, materiais e gear final\",\"objective\":\"Iniciar NG+ somente depois do cleanup do primeiro ciclo e buscar itens/equipamentos que exigem nova passagem.\",\"actions\":[\"Confirme que Continue Journey foi usado para limpar tudo que era possível antes de NG+.\",\"Entre em Enter a New Cycle apenas quando estiver pronto para sobrescrever o ciclo atual.\",\"Colete materiais/equipamentos/armas que exigem NG+.\",\"Complete Staffs and Spears, Mantled with Might e Guardian of Gear se ainda faltarem.\",\"Se algum perdível de capítulo ficou para trás, avance no NG+ até o ponto correto.\"],\"warning\":\"Tudo carrega para NG+, mas perder algo pode exigir avançar bastante novamente.\",\"result\":\"Troféus dependentes de NG+ concluídos.\"}",
+      "step_order": 5
+    },
+    {
+      "content": "{\"title\":\"Conferência final dos 36 troféus PS5\",\"focus\":\"Checklist PlayStation e platina\",\"objective\":\"Confirmar que a lista PS5 foi fechada sem misturar achievements de Steam/Xbox.\",\"actions\":[\"Conferir os 36 troféus PS5 e a distribuição 1 Platina, 4 Ouro, 9 Prata e 22 Bronze.\",\"Confirmar que a lista não importou os 81 achievements de Steam/Xbox.\",\"Confirmar online 0, coop 0 e nenhum troféu individual marcado por configuração de jogo.\",\"Verificar se Final Fulfillment aparece como platina final.\",\"Revisar FAQ, resumo, roadmap e tags antes de publicar como verificado.\"],\"warning\":\"\",\"result\":\"Platina Final Fulfillment desbloqueada e guia validado.\"}",
+      "step_order": 6
+    }
+  ],
+  "schemaVersion": 1,
+  "seedExtras": {
+    "aliases": [],
+    "attentionPoints": [
+      {
+        "detail": "Urge Unfulfilled, Always Accompanied, Fickle Forms, A Curious Collection, Mantled with Might, Brewer’s Bounty e Portraits Perfected exigem atenção antes de avançar capítulos.",
+        "tags": [
+          "Perdível",
+          "Risco de run"
+        ],
+        "title": "7 perdíveis por capítulo",
+        "type": "Perdível"
+      },
+      {
+        "detail": "Após o final, escolha Continue Journey para cleanup. Enter a New Cycle inicia NG+ e sobrescreve o ciclo atual.",
+        "tags": [
+          "NG+",
+          "Cleanup"
+        ],
+        "title": "Não iniciar NG+ cedo",
+        "type": "NG+"
+      },
+      {
+        "detail": "O jogo usa apenas 1 autosave. Para categorias grandes, considere backup em nuvem antes de pegar o último item.",
+        "tags": [
+          "Autosave",
+          "Atenção técnica"
+        ],
+        "title": "Sem save manual",
+        "type": "Autosave"
+      },
+      {
+        "detail": "A versão PS5 tem 36 troféus; os 81 achievements são de Steam/Xbox e não entram no checklist principal.",
+        "tags": [
+          "PS5",
+          "Escopo"
+        ],
+        "title": "PS5 não tem 81 troféus",
+        "type": "Escopo PS5"
+      },
+      {
+        "detail": "O jogo não tem seleção ajustável. Não use tag Dificuldade em troféus individuais.",
+        "tags": [
+          "Sem requisito",
+          "Checklist"
+        ],
+        "title": "Sem requisito por configuração de jogo",
+        "type": "Sem requisito"
+      },
+      {
+        "detail": "Alguns equipamentos, seeds, Curios ou drops podem exigir farm e repetição.",
+        "tags": [
+          "RNG",
+          "Grind"
+        ],
+        "title": "RNG e drops",
+        "type": "Grind"
+      },
+      {
+        "detail": "Mate ao menos um de cada inimigo e atenção às entradas perdíveis de bosses/NPCs específicos.",
+        "tags": [
+          "Journal",
+          "Coletável"
+        ],
+        "title": "Journal / Portraits Perfected",
+        "type": "Journal"
+      }
+    ],
+    "checklist": [
+      "Confirmar que este guia usa a lista PS5 de 36 troféus, não os 81 achievements de Steam/Xbox.",
+      "Concluir a primeira campanha explorando os 6 capítulos.",
+      "Conversar com Horse NPC e Old Man NPC antes de avançar capítulos.",
+      "Garantir Wandering Wight, Second Rat Prince, Lantern Wardens, Apramana Bat, Venomous Armguard, Scorpionlord, Daoist Mi e Purple Altars/Crane Immortal nas janelas corretas.",
+      "Depois do final, escolher Continue Journey para cleanup.",
+      "Completar Journal, Spirits, Transformations, Curios, drinks, soaks, gourds, formulas, seeds e Meditation Spots.",
+      "Fazer backup em nuvem antes de concluir categorias grandes, se possível.",
+      "Iniciar Enter a New Cycle apenas quando o primeiro ciclo estiver limpo.",
+      "Usar NG+ para equipamentos, armas e materiais restantes.",
+      "Conferir Final Fulfillment e os 36 troféus PS5."
+    ],
+    "faq": [
+      {
+        "answer": "Não. A lista PS5 é totalmente offline.",
+        "question": "Black Myth: Wukong tem troféus online?"
+      },
+      {
+        "answer": "Não.",
+        "question": "Tem coop?"
+      },
+      {
+        "answer": "Não. O jogo não tem seleção ajustável, então não há troféu individual ligado a isso.",
+        "question": "A configuração de jogo afeta troféus?"
+      },
+      {
+        "answer": "No mínimo 2. New Game+ é necessário para alguns itens/equipamentos ligados à platina.",
+        "question": "Quantas jogadas são necessárias?"
+      },
+      {
+        "answer": "Sim. A referência principal lista 7 perdíveis: Urge Unfulfilled, Always Accompanied, Fickle Forms, A Curious Collection, Mantled with Might, Brewer’s Bounty e Portraits Perfected.",
+        "question": "Black Myth: Wukong tem troféus perdíveis?"
+      },
+      {
+        "answer": "Sim. Depois do chefe final, escolha Continue Journey para voltar antes do final e explorar os capítulos.",
+        "question": "Posso fazer cleanup depois da história?"
+      },
+      {
+        "answer": "Não é recomendado. Enter a New Cycle inicia NG+ e sobrescreve o ciclo atual; termine o cleanup antes.",
+        "question": "Posso iniciar NG+ logo depois do final?"
+      },
+      {
+        "answer": "Não. Há apenas 1 autosave. Para categorias grandes, considere backup em nuvem antes de pegar o último item.",
+        "question": "O jogo tem save manual?"
+      },
+      {
+        "answer": "Não. PS5 tem 36 troféus. Steam/Xbox usam lista expandida de 81 conquistas.",
+        "question": "PS5 tem 81 troféus?"
+      },
+      {
+        "answer": "100% completion: Journal, equipamentos, armas, armaduras, Spirits, Transformations, drinks, soaks, gourds, Curios, seeds, fórmulas, bosses opcionais e drops RNG.",
+        "question": "Qual é o maior gargalo da platina?"
+      },
+      {
+        "answer": "Todos são obtíveis, mas há relatos de alguns troféus de coletáveis/equipamentos não desbloquearem corretamente. Mantenha o jogo atualizado e considere backup em nuvem antes de concluir categorias grandes.",
+        "question": "Há troféus bugados?"
+      },
+      {
+        "answer": "Tudo que for possível no primeiro ciclo deve ser concluído antes do NG+ para evitar retrabalho. Alguns itens/equipamentos, porém, exigem NG+.",
+        "question": "Preciso completar tudo antes do NG+?"
+      }
+    ],
+    "note": "Campos exportados para auditoria. O SQLite atual nao possui colunas nativas para todos esses extras; a importacao preserva o que o banco suporta.",
+    "quickDecision": {
+      "firstAction": "Comece a campanha com checklist de perdíveis por capítulo e revise NPCs antes de avançar.",
+      "recommendation": "Boa para quem aceita 100% completion, bosses opcionais, Journal, equipamentos, Spirits, Transformations, Curios, drinks, seeds e RNG.",
+      "risk": "O erro crítico é iniciar Enter a New Cycle cedo demais ou perder janelas de NPCs/bosses antes do cleanup.",
+      "summary": "Platina PS5 de 40-60h, 5/10, totalmente offline, com 7 perdíveis e New Game+ necessário. A rota segura é limpar o primeiro ciclo via Continue Journey antes de Enter a New Cycle."
+    },
+    "seo": {
+      "description": "Guia de platina de Black Myth: Wukong no PS5 com 36 troféus, 40-60h, 5/10, 7 perdíveis, New Game+ necessário, Continue Journey, checklist EN/PT-BR e roadmap seguro.",
+      "keywords": "Black Myth Wukong troféus PS5, Black Myth Wukong platina, Black Myth Wukong guia, Black Myth Wukong roadmap, Black Myth Wukong perdíveis, Final Fulfillment, Continue Journey, Enter a New Cycle",
+      "title": "Black Myth: Wukong — guia de platina PS5, troféus e roadmap"
+    },
+    "tags": [
+      "PS5",
+      "Offline",
+      "Sem coop obrigatório",
+      "Base game sem DLCs",
+      "New Game+ necessário",
+      "Tem perdíveis",
+      "Coletáveis",
+      "Grind",
+      "RNG",
+      "Journal",
+      "Continue Journey"
+    ]
+  },
+  "slug": "black-myth-wukong",
+  "trophies": [
+    {
+      "description": "Desbloqueie todos os outros troféus da lista PS5 de Black Myth: Wukong.",
+      "is_missable": 0,
+      "is_spoiler": 0,
+      "name": "Final Fulfillment",
+      "name_pt": "Realização Final",
+      "tip": "Platina da versão PlayStation. Confirme os 36 troféus PS5; a lista de 81 conquistas de Steam/Xbox não entra neste checklist.",
+      "trophy_code": "black_myth_wukong_final_fulfillment",
+      "type": "Platina"
+    },
+    {
+      "description": "Conclua o prólogo e inicie a jornada principal.",
+      "is_missable": 0,
+      "is_spoiler": 1,
+      "name": "Home is Behind",
+      "name_pt": "O Lar Ficou para Trás",
+      "tip": "Troféu de progressão inicial. Continue a campanha até o fim da introdução.",
+      "trophy_code": "black_myth_wukong_home_is_behind",
+      "type": "Bronze"
+    },
+    {
+      "description": "Use Sparks para desenvolver talentos do Destinado.",
+      "is_missable": 0,
+      "is_spoiler": 0,
+      "name": "A Spark of Thought",
+      "name_pt": "Uma Centelha de Pensamento",
+      "tip": "Invista Sparks conforme avança. Respecs não prejudicam a platina; foque em habilidades úteis para exploração e bosses.",
+      "trophy_code": "black_myth_wukong_a_spark_of_thought",
+      "type": "Bronze"
+    },
+    {
+      "description": "Equipe uma melhoria de bebida ou soak no gourd.",
+      "is_missable": 0,
+      "is_spoiler": 0,
+      "name": "Brew of Bravery",
+      "name_pt": "Poção de Bravura",
+      "tip": "Resolva cedo quando o sistema de gourds, drinks e soaks ficar disponível.",
+      "trophy_code": "black_myth_wukong_brew_of_bravery",
+      "type": "Bronze"
+    },
+    {
+      "description": "Prepare um consumível pela primeira vez.",
+      "is_missable": 0,
+      "is_spoiler": 0,
+      "name": "Creative Concoction",
+      "name_pt": "Mistura Criativa",
+      "tip": "Use o sistema de crafting/alquimia quando liberar fórmulas e materiais.",
+      "trophy_code": "black_myth_wukong_creative_concoction",
+      "type": "Bronze"
+    },
+    {
+      "description": "Cultive ou entregue sementes no hub ligado ao Ruyi Scroll.",
+      "is_missable": 0,
+      "is_spoiler": 0,
+      "name": "Happy Harvest",
+      "name_pt": "Colheita Feliz",
+      "tip": "Guarde sementes e ingredientes. Algumas sementes dependem de farm e repetição.",
+      "trophy_code": "black_myth_wukong_happy_harvest",
+      "type": "Bronze"
+    },
+    {
+      "description": "Use o sistema de forja/upgrade de equipamento.",
+      "is_missable": 0,
+      "is_spoiler": 0,
+      "name": "Pound and Perfect",
+      "name_pt": "Martelar e Aperfeiçoar",
+      "tip": "Faça upgrades de armas/armaduras durante a campanha para reduzir o cleanup de materiais.",
+      "trophy_code": "black_myth_wukong_pound_and_perfect",
+      "type": "Bronze"
+    },
+    {
+      "description": "Conclua o grande confronto de fim do Capítulo 1.",
+      "is_missable": 0,
+      "is_spoiler": 1,
+      "name": "Blazing Black Wind",
+      "name_pt": "Vento Negro Ardente",
+      "tip": "Troféu de campanha. Explore a montanha e resolva o templo secreto antes de avançar se quiser reduzir retrabalho.",
+      "trophy_code": "black_myth_wukong_blazing_black_wind",
+      "type": "Bronze"
+    },
+    {
+      "description": "Derrote Elder Jinchi no Ancient Guanyin Temple.",
+      "is_missable": 0,
+      "is_spoiler": 1,
+      "name": "Temple of Taint",
+      "name_pt": "Templo da Corrupção",
+      "tip": "Antes de tocar os três sinos e fechar essa área, garanta o Spirit de Wandering Wight se ainda estiver pendente.",
+      "trophy_code": "black_myth_wukong_temple_of_taint",
+      "type": "Bronze"
+    },
+    {
+      "description": "Conclua o confronto principal do Capítulo 2.",
+      "is_missable": 0,
+      "is_spoiler": 1,
+      "name": "A Great Gust",
+      "name_pt": "Uma Grande Rajada",
+      "tip": "Troféu de campanha. Explore o Reino de Sahali e os bosses opcionais antes de sair do capítulo.",
+      "trophy_code": "black_myth_wukong_a_great_gust",
+      "type": "Bronze"
+    },
+    {
+      "description": "Conclua o boss Fuban no Reino de Sahali.",
+      "is_missable": 0,
+      "is_spoiler": 1,
+      "name": "Shifting Sands",
+      "name_pt": "Areias Movediças",
+      "tip": "Finalize a quest do Drunken Boar para acessar a área secreta e derrotar Fuban.",
+      "trophy_code": "black_myth_wukong_shifting_sands",
+      "type": "Bronze"
+    },
+    {
+      "description": "Resolva o encontro opcional ligado ao monk no Capítulo 3.",
+      "is_missable": 0,
+      "is_spoiler": 1,
+      "name": "Nifty Nonsense",
+      "name_pt": "Bobagem Esperta",
+      "tip": "Explore bem o capítulo e conclua a cadeia opcional antes de seguir para o fim da área.",
+      "trophy_code": "black_myth_wukong_nifty_nonsense",
+      "type": "Bronze"
+    },
+    {
+      "description": "Conclua o confronto avançado do Capítulo 4.",
+      "is_missable": 0,
+      "is_spoiler": 1,
+      "name": "Behold the Betrayal",
+      "name_pt": "Contemple a Traição",
+      "tip": "Troféu ligado à progressão de boss. Revise a área secreta e quests de NPC antes de avançar demais.",
+      "trophy_code": "black_myth_wukong_behold_the_betrayal",
+      "type": "Bronze"
+    },
+    {
+      "description": "Derrote o boss da área secreta Purple Cloud Mountain.",
+      "is_missable": 0,
+      "is_spoiler": 1,
+      "name": "The Cockerel Crowed",
+      "name_pt": "O Galo Cantou",
+      "tip": "Faça a cadeia de Venom Daoist e explore Purple Cloud Mountain antes de concluir o capítulo.",
+      "trophy_code": "black_myth_wukong_the_cockerel_crowed",
+      "type": "Bronze"
+    },
+    {
+      "description": "Conclua o confronto principal do Capítulo 5.",
+      "is_missable": 0,
+      "is_spoiler": 1,
+      "name": "Flaming Fury",
+      "name_pt": "Fúria Flamejante",
+      "tip": "Troféu de campanha. Verifique NPCs e bosses opcionais do capítulo antes de avançar para o fim.",
+      "trophy_code": "black_myth_wukong_flaming_fury",
+      "type": "Bronze"
+    },
+    {
+      "description": "Conclua o confronto ligado a gelo e fogo.",
+      "is_missable": 0,
+      "is_spoiler": 1,
+      "name": "Frost and Flame",
+      "name_pt": "Gelo e Chama",
+      "tip": "Relacionado ao avanço da campanha e bosses principais. Use o roadmap para não deixar quests paralelas para trás.",
+      "trophy_code": "black_myth_wukong_frost_and_flame",
+      "type": "Bronze"
+    },
+    {
+      "description": "Derrote Erlang e os Four Heavenly Kings na rota secreta.",
+      "is_missable": 0,
+      "is_spoiler": 1,
+      "name": "Meet the Match",
+      "name_pt": "Encontre o Par",
+      "tip": "Conclua as áreas secretas dos capítulos e encontre Mount Mei. Este é um grande marco de endgame e tem spoiler pesado.",
+      "trophy_code": "black_myth_wukong_meet_the_match",
+      "type": "Ouro"
+    },
+    {
+      "description": "Conclua o duelo final da campanha.",
+      "is_missable": 0,
+      "is_spoiler": 1,
+      "name": "A Duel of Destiny",
+      "name_pt": "Um Duelo de Destino",
+      "tip": "Troféu de fim de história. Depois do final, escolha Continue Journey para limpar pendências antes de Enter a New Cycle.",
+      "trophy_code": "black_myth_wukong_a_duel_of_destiny",
+      "type": "Ouro"
+    },
+    {
+      "description": "Derrote os seis frog bosses e obtenha suas habilidades.",
+      "is_missable": 0,
+      "is_spoiler": 0,
+      "name": "The Clamor of Frogs",
+      "name_pt": "O Clamor dos Sapos",
+      "tip": "Acompanhe os seis sapos como checklist de bosses opcionais e skills.",
+      "trophy_code": "black_myth_wukong_the_clamor_of_frogs",
+      "type": "Bronze"
+    },
+    {
+      "description": "Resolva a cadeia dos Loong bosses.",
+      "is_missable": 0,
+      "is_spoiler": 1,
+      "name": "The Sire and Sons",
+      "name_pt": "O Pai e os Filhos",
+      "tip": "Use as Loong Scales para acessar os bosses opcionais e conclua a família ligada ao troféu.",
+      "trophy_code": "black_myth_wukong_the_sire_and_sons",
+      "type": "Bronze"
+    },
+    {
+      "description": "Conclua os encontros recorrentes com o Old Man NPC.",
+      "is_missable": 1,
+      "is_spoiler": 1,
+      "name": "Always Accompanied",
+      "name_pt": "Sempre Acompanhado",
+      "tip": "Converse com o Old Man NPC nos capítulos em que ele aparece antes de avançar demais. A linha de encontros pode ser perdida dentro do ciclo atual.",
+      "trophy_code": "black_myth_wukong_always_accompanied",
+      "type": "Bronze"
+    },
+    {
+      "description": "Conclua a quest do Horse NPC.",
+      "is_missable": 1,
+      "is_spoiler": 1,
+      "name": "Urge Unfulfilled",
+      "name_pt": "Desejo Não Realizado",
+      "tip": "Esgote os diálogos do Horse NPC em todos os capítulos em que ele aparece antes de avançar para o próximo capítulo. Se ignorar a linha de quest, o troféu pode exigir NG+.",
+      "trophy_code": "black_myth_wukong_urge_unfulfilled",
+      "type": "Bronze"
+    },
+    {
+      "description": "Obtenha os seis Relics/ sentidos ao longo da jornada.",
+      "is_missable": 0,
+      "is_spoiler": 1,
+      "name": "Six Senses Secured",
+      "name_pt": "Seis Sentidos Assegurados",
+      "tip": "Relacionado ao fechamento da história e ao ciclo de progressão. Revise o cleanup antes de entrar em NG+.",
+      "trophy_code": "black_myth_wukong_six_senses_secured",
+      "type": "Ouro"
+    },
+    {
+      "description": "Complete o Journal com todos os retratos/entradas.",
+      "is_missable": 1,
+      "is_spoiler": 1,
+      "name": "Portraits Perfected",
+      "name_pt": "Retratos Aperfeiçoados",
+      "tip": "Complete o Journal com todos os retratos/entradas. Mate pelo menos um de cada inimigo e atenção às entradas perdíveis de bosses/NPCs específicos, como Apramana Bat, Daoist Mi e Crane Immortal.",
+      "trophy_code": "black_myth_wukong_portraits_perfected",
+      "type": "Ouro"
+    },
+    {
+      "description": "Obtenha os quatro Vessels principais.",
+      "is_missable": 0,
+      "is_spoiler": 0,
+      "name": "Treasure Trove",
+      "name_pt": "Tesouro Encontrado",
+      "tip": "Complete as áreas secretas dos capítulos para garantir todos os Vessels antes do fechamento da rota.",
+      "trophy_code": "black_myth_wukong_treasure_trove",
+      "type": "Prata"
+    },
+    {
+      "description": "Obtenha todos os spells necessários.",
+      "is_missable": 0,
+      "is_spoiler": 0,
+      "name": "Master of Magic",
+      "name_pt": "Mestre da Magia",
+      "tip": "Conclua quests e progressões ligadas a spells, incluindo rotas opcionais e recompensas de NPC.",
+      "trophy_code": "black_myth_wukong_master_of_magic",
+      "type": "Prata"
+    },
+    {
+      "description": "Equipe-se com o conjunto completo de gear necessário.",
+      "is_missable": 0,
+      "is_spoiler": 0,
+      "name": "Guardian of Gear",
+      "name_pt": "Guardião dos Equipamentos",
+      "tip": "Complete armas, armaduras e upgrades relevantes. Alguns materiais e equipamentos dependem de NG+ ou farm.",
+      "trophy_code": "black_myth_wukong_guardian_of_gear",
+      "type": "Prata"
+    },
+    {
+      "description": "Colete todos os Curios.",
+      "is_missable": 1,
+      "is_spoiler": 1,
+      "name": "A Curious Collection",
+      "name_pt": "Uma Coleção Curiosa",
+      "tip": "Colete todos os Curios. Atenção ao Auspicious Lantern no Pagoda Realm: derrote os 9 Lantern Wardens antes de Captain Wise-Voice.",
+      "trophy_code": "black_myth_wukong_a_curious_collection",
+      "type": "Prata"
+    },
+    {
+      "description": "Obtenha todos os Celestial Medicines/itens de medicina necessários.",
+      "is_missable": 0,
+      "is_spoiler": 0,
+      "name": "Medicine Meal",
+      "name_pt": "Banquete Medicinal",
+      "tip": "Compre, colete e refine os itens medicinais. Revise Purple Altars/Crane Immortal antes de avançar demais no Capítulo 4.",
+      "trophy_code": "black_myth_wukong_medicine_meal",
+      "type": "Prata"
+    },
+    {
+      "description": "Obtenha todas as armas necessárias.",
+      "is_missable": 0,
+      "is_spoiler": 0,
+      "name": "Staffs and Spears",
+      "name_pt": "Bastões e Lanças",
+      "tip": "Complete as armas e materiais. Algumas receitas e materiais dependem de NG+, então deixe esta categoria para a conferência final.",
+      "trophy_code": "black_myth_wukong_staffs_and_spears",
+      "type": "Prata"
+    },
+    {
+      "description": "Obtenha todas as peças/conjuntos de armadura.",
+      "is_missable": 1,
+      "is_spoiler": 1,
+      "name": "Mantled with Might",
+      "name_pt": "Revestido de Poder",
+      "tip": "Obtenha todas as peças de armadura. Atenção ao Venomous Armguard: durante a luta contra Venom Daoist, quebre os braços dele atacando por trás antes de derrotá-lo.",
+      "trophy_code": "black_myth_wukong_mantled_with_might",
+      "type": "Prata"
+    },
+    {
+      "description": "Obtenha todas as Transformations e Spirit Skills.",
+      "is_missable": 1,
+      "is_spoiler": 1,
+      "name": "Fickle Forms",
+      "name_pt": "Formas Inconstantes",
+      "tip": "Obtenha todas as Transformations e Spirit Skills. Atenção a Spirits/Transformations perdíveis por ordem de bosses e quests, como Wandering Wight, Second Rat Prince e Daoist Mi.",
+      "trophy_code": "black_myth_wukong_fickle_forms",
+      "type": "Prata"
+    },
+    {
+      "description": "Colete todos os drinks, soaks e gourds.",
+      "is_missable": 1,
+      "is_spoiler": 1,
+      "name": "Brewer's Bounty",
+      "name_pt": "Recompensa do Cervejeiro",
+      "tip": "Colete todos os drinks, soaks e gourds. Atenção ao Scorpionlord no Capítulo 4: derrote-o antes de iniciar Duskveil para não perder a recompensa ligada ao troféu.",
+      "trophy_code": "black_myth_wukong_brewers_bounty",
+      "type": "Prata"
+    },
+    {
+      "description": "Colete todas as fórmulas/páginas necessárias.",
+      "is_missable": 0,
+      "is_spoiler": 0,
+      "name": "Page Preserver",
+      "name_pt": "Preservador de Páginas",
+      "tip": "Algumas fórmulas dependem de exploração, compras em NPCs e progresso de capítulo. Mantenha o jogo atualizado e considere backup em nuvem antes de concluir categorias grandes.",
+      "trophy_code": "black_myth_wukong_page_preserver",
+      "type": "Bronze"
+    },
+    {
+      "description": "Colete todas as sementes necessárias.",
+      "is_missable": 0,
+      "is_spoiler": 0,
+      "name": "Seeds to Sow",
+      "name_pt": "Sementes para Semear",
+      "tip": "Seeds podem exigir farm e RNG. Entregue sementes ao NPC do hub e acompanhe a lista até completar.",
+      "trophy_code": "black_myth_wukong_seeds_to_sow",
+      "type": "Bronze"
+    },
+    {
+      "description": "Encontre todos os Meditation Spots.",
+      "is_missable": 0,
+      "is_spoiler": 0,
+      "name": "Scenic Seeker",
+      "name_pt": "Buscador de Paisagens",
+      "tip": "Ative todos os pontos de meditação durante a exploração dos capítulos e revise por Keeper’s Shrines no cleanup.",
+      "trophy_code": "black_myth_wukong_scenic_seeker",
+      "type": "Bronze"
+    }
+  ]
+}

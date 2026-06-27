@@ -1,0 +1,727 @@
+{
+  "game": {
+    "avoid_if": "Não trate o guia como definitivo ainda: a lista PS5 foi cadastrada, mas dicas, tags e rota prática seguem em revisão.",
+    "before_you_start": "LEGO Batman: Legacy of the Dark Knight é uma platina de mundo aberto focada em campanha, Gotham City, personagens, veículos, gadgets, Red Bricks, Batcave, Puzzle Rooms, AR Trials, collectibles, crimes, side activities e cleanup. A platina base não exige online nem co-op obrigatório; o co-op local é opcional.",
+    "best_for": "Vale acompanhar se você gosta de mundo aberto LEGO, campanha leve, colecionáveis, desafios e cleanup em Gotham.",
+    "cleanup_advice": "Depois da campanha, feche Gotham por distritos: fast travel, side activities, collectibles, WayneTech Caches, Red Bricks, Batcave, Puzzle Rooms, AR Trials, crimes, lojas, veículos, suits e upgrades.",
+    "cover_image": null,
+    "coverage_level": "partial",
+    "created_at": "2026-06-07 15:14:35",
+    "difficulty": 0,
+    "difficulty_reason": "Dificuldade em revisão. A lista confirma o escopo, mas a nota final depende de testes de tempo, cleanup e exigência prática dos desafios.",
+    "dlc_scope": "Deluxe Edition, Legacy Collection, Season Pass e Mayhem Collection/Coleção do Caos ficam fora da platina base até prova contrária.",
+    "editorial_notes": "Fontes conferidas para a lista PS5: Exophase, GameFAQs, KeenGamer e Games.GG. Steam/Epic foram tratados como referência, não como substitutos automáticos da lista PlayStation.",
+    "editorial_review_status": "needs_review",
+    "editorial_status": "published",
+    "first_run_advice": "Avance pela história principal, desbloqueie personagens, veículos, gadgets e atividades do mundo aberto, e deixe colecionáveis, Red Bricks, Batcave, AR Trials e cleanup para etapas dedicadas.",
+    "grind_summary": "O cleanup concentra coletáveis, Red Bricks, WayneTech Caches, Batcave, veículos, trajes, upgrades, Puzzle Rooms, AR Trials, crimes, side activities e studs.",
+    "guide_avoid": null,
+    "guide_best_moment": null,
+    "guide_dlc": null,
+    "guide_grind": null,
+    "guide_ideal": null,
+    "guide_online": null,
+    "guide_runs": null,
+    "image": "https://image.api.playstation.com/vulcan/ap/rnd/202508/1316/3302f35b66691aa405aee31624c0c95fe73081be8e0c75bb.png",
+    "is_verified": 0,
+    "last_reviewed_at": "2026-06-07",
+    "missable": "Nenhum troféu foi marcado como perdível nesta revisão inicial. A contagem permanece 0 até validação prática do guia.",
+    "missable_summary": "Sem perdíveis marcados no checklist PS5 cadastrado; use replay, Batcomputer e cleanup com calma até a revisão final.",
+    "name": "LEGO Batman: Legacy of the Dark Knight",
+    "online_summary": "A platina base não exige online nem co-op online. O co-op local para 2 jogadores é opcional e não altera as flags do guia.",
+    "quality_warnings": "[\"Lista PS5 de 52 troféus cadastrada; guia permanece em revisão até validação final de dicas, tags, rota e render.\"]",
+    "reviewed_by": "Codex",
+    "runs_summary": "Campanha principal, exploração de Gotham e cleanup. O número final de runs fica em revisão até a validação editorial.",
+    "slug": "lego-batman-legacy-of-the-dark-knight",
+    "time": "Em revisão",
+    "time_bucket": "unknown",
+    "time_max_hours": 0,
+    "time_min_hours": 0,
+    "time_reason": "Tempo em revisão. Não estimar duração de platina antes de validar campanha, Gotham, coletáveis, studs e desafios.",
+    "time_sort_hours": 0,
+    "updated_at": "2026-06-27 02:37:04",
+    "verification_note": "Lista PlayStation cadastrada e pendente de revisão editorial, render e validação final.",
+    "verification_status": "unverified",
+    "walkthrough": ""
+  },
+  "redirects": [],
+  "roadmaps": [
+    {
+      "content": "{\"title\":\"Campanha principal e capítulos\",\"focus\":\"História\",\"objective\":\"Concluir prólogo, capítulos principais e desbloqueios narrativos sem fechar cleanup cedo demais.\",\"actions\":[\"Complete o prólogo e os cinco capítulos principais.\",\"Desbloqueie Jim Gordon, Catwoman, Robin, Batgirl, Nightwing e Talia conforme a história avançar.\",\"Use a campanha para aprender combate, stealth, gadgets, veículos e exploração.\",\"Não force coletáveis difíceis antes de liberar recursos suficientes.\"],\"warning\":\"O guia ainda está em revisão; trate a ordem fina dos capítulos como rota inicial.\",\"result\":\"A base da platina fica aberta para Gotham e cleanup.\"}",
+      "step_order": 1
+    },
+    {
+      "content": "{\"title\":\"Gotham City e distritos\",\"focus\":\"Exploração\",\"objective\":\"Abrir Gotham, visitar todos os distritos e preparar deslocamento rápido para o cleanup.\",\"actions\":[\"Visite todos os distritos.\",\"Desbloqueie todos os pontos de viagem rápida.\",\"Coloque um pin no mapa.\",\"Descubra eventos de mundo aberto enquanto cruza Gotham.\",\"Use túneis de vento em áreas diferentes.\"],\"warning\":\"Não misture eventos de mundo aberto com requisitos de DLC ou jogos LEGO Batman antigos.\",\"result\":\"Gotham fica mapeada para atividades, crimes e coletáveis.\"}",
+      "step_order": 2
+    },
+    {
+      "content": "{\"title\":\"Personagens, suits, gadgets e veículos\",\"focus\":\"Desbloqueios\",\"objective\":\"Liberar recursos que facilitam puzzles, combate, exploração e compras.\",\"actions\":[\"Desbloqueie todos os trajes.\",\"Desbloqueie todos os veículos.\",\"Compre upgrades de habilidade e gadget.\",\"Compre veículos e itens em lojas.\",\"Use a Batcave para controlar compras e expansões.\"],\"warning\":\"Co-op local é opcional e não foi marcado como requisito de platina.\",\"result\":\"Ferramentas suficientes para fechar as atividades mais específicas.\"}",
+      "step_order": 3
+    },
+    {
+      "content": "{\"title\":\"Red Bricks, WayneTech Caches, collectibles e Batcave\",\"focus\":\"Coletáveis\",\"objective\":\"Fechar os grandes blocos de coleta do jogo base.\",\"actions\":[\"Colete todos os Red Bricks e equipe pelo menos um.\",\"Abra todos os WayneTech Caches.\",\"Colete Bat-Symbols, Batcave Trophies e demais coletáveis.\",\"Complete o traje Gray Ghost.\",\"Compre expansões e personalize a Batcave com props ou troféus.\"],\"warning\":\"Deluxe Edition, Legacy Collection, Season Pass e Mayhem Collection/Coleção do Caos ficam fora deste escopo base.\",\"result\":\"A maior parte do progresso de coleção fica resolvida.\"}",
+      "step_order": 4
+    },
+    {
+      "content": "{\"title\":\"AR Trials, Puzzle Rooms, side activities e crimes\",\"focus\":\"Atividades\",\"objective\":\"Concluir os blocos de desafio e mundo aberto que sustentam o cleanup.\",\"actions\":[\"Complete 20 desafios.\",\"Ganhe 5 medalhas de ouro em AR Trials.\",\"Complete todas as Puzzle Rooms.\",\"Impeça 30 crimes e cada tipo de crime pelo menos uma vez.\",\"Complete todas as atividades secundárias em Gotham.\"],\"warning\":\"A ordem prática de desafios ainda precisa de validação antes do selo Verificado.\",\"result\":\"Gotham fica próxima do fechamento completo.\"}",
+      "step_order": 5
+    },
+    {
+      "content": "{\"title\":\"Cleanup final\",\"focus\":\"Finalização\",\"objective\":\"Resolver acumulados, studs, combos e troféus situacionais antes da platina.\",\"actions\":[\"Colete 1.000.000 de studs.\",\"Faça 30.000 studs em um único combo e mantenha combo máximo por 60 segundos.\",\"Execute 100 counters, 100 stealth takedowns e um combo de combate de 99 hits.\",\"Use Modo Foto, Batcomputer e entregas na Batcave.\",\"Revise o checklist completo até liberar a platina.\"],\"warning\":\"Tempo, dificuldade e dicas finais seguem em revisão editorial.\",\"result\":\"Checklist PS5 completo e pronto para revisão final do guia.\"}",
+      "step_order": 6
+    }
+  ],
+  "schemaVersion": 1,
+  "seedExtras": {
+    "aliases": [],
+    "attentionPoints": [
+      {
+        "detail": "A lista PS5 tem 52 troféus cadastrados no AtlasAchievement, mas o guia ainda precisa de revisão completa antes de virar Verificado.",
+        "tags": [
+          "PS5",
+          "52 troféus",
+          "Em revisão"
+        ],
+        "title": "Lista PSN confirmada"
+      },
+      {
+        "detail": "Achievements de PC foram usados apenas como referência de pesquisa; nomes, contagem, platina e tiers foram tratados pela lista PlayStation.",
+        "tags": [
+          "Steam",
+          "Epic",
+          "PSN"
+        ],
+        "title": "Steam/Epic não substituem PSN"
+      },
+      {
+        "detail": "O jogo tem co-op local para 2 jogadores, mas não há co-op online nem troféu marcado como co-op obrigatório nesta revisão.",
+        "tags": [
+          "Co-op local",
+          "Opcional"
+        ],
+        "title": "Co-op local opcional"
+      },
+      {
+        "detail": "PlayStation Plus não é necessário para jogar e nenhum troféu foi marcado como online obrigatório.",
+        "tags": [
+          "Offline",
+          "PS5"
+        ],
+        "title": "Online desativado"
+      },
+      {
+        "detail": "Deluxe Edition, Legacy Collection, Season Pass e Mayhem Collection/Coleção do Caos ficam fora da platina base até prova contrária.",
+        "tags": [
+          "DLC",
+          "Deluxe",
+          "Fora da platina"
+        ],
+        "title": "DLC fora da base"
+      },
+      {
+        "detail": "Gotham City, side activities, collectibles, Red Bricks, Batcave, vehicles, suits, WayneTech Caches, Puzzle Rooms e AR Trials formam o núcleo do cleanup.",
+        "tags": [
+          "Gotham",
+          "Cleanup"
+        ],
+        "title": "Cleanup de Gotham"
+      },
+      {
+        "detail": "Não misture este guia com LEGO Batman: The Videogame, LEGO Batman 2 ou LEGO Batman 3.",
+        "tags": [
+          "Escopo",
+          "LEGO Batman"
+        ],
+        "title": "Escopo do jogo novo"
+      }
+    ],
+    "checklist": [
+      "Complete o modo história e todos os capítulos.",
+      "Visite todos os distritos e desbloqueie todos os pontos de viagem rápida.",
+      "Desbloqueie personagens, trajes, veículos, gadgets e upgrades.",
+      "Colete Red Bricks, WayneTech Caches, Bat-Symbols, troféus da Batcave e demais coletáveis.",
+      "Complete Puzzle Rooms, AR Trials, desafios, crimes e side activities.",
+      "Finalize studs, combos, stealth, Modo Foto, Batcomputer, lojas e cleanup."
+    ],
+    "faq": [
+      {
+        "answer": "Não. A lista PS5 de 52 troféus foi cadastrada, mas o guia permanece em revisão até a validação final de rota, dicas, tags e render.",
+        "question": "O guia já está completo?"
+      },
+      {
+        "answer": "A lista PlayStation confirmada tem 52 troféus: 1 Platina, 3 Ouro, 4 Prata e 44 Bronze.",
+        "question": "Quantos troféus tem no PS5?"
+      },
+      {
+        "answer": "Não. O guia mantém o requisito online desativado porque não há co-op online nem troféu marcado como online obrigatório nesta revisão.",
+        "question": "O jogo exige online?"
+      },
+      {
+        "answer": "Não. O jogo tem co-op local para 2 jogadores, mas isso foi tratado como opcional e o requisito de co-op permanece desativado.",
+        "question": "O jogo exige co-op?"
+      },
+      {
+        "answer": "Não nesta revisão. Deluxe Edition, Legacy Collection, Season Pass e Mayhem Collection/Coleção do Caos ficam fora da platina base até prova contrária.",
+        "question": "DLC ou Deluxe entram na platina?"
+      },
+      {
+        "answer": "Não. Este guia é do jogo novo LEGO Batman: Legacy of the Dark Knight e não deve ser misturado com LEGO Batman: The Videogame, LEGO Batman 2 ou LEGO Batman 3.",
+        "question": "É o mesmo guia dos LEGO Batman antigos?"
+      },
+      {
+        "answer": "Pode usar como referência de pesquisa, mas não copiar automaticamente para a lista PlayStation sem conferir nomes, contagem, platina, tiers e descrições.",
+        "question": "Posso usar os achievements da Steam/Epic?"
+      }
+    ],
+    "note": "Campos exportados para auditoria. O SQLite atual nao possui colunas nativas para todos esses extras; a importacao preserva o que o banco suporta.",
+    "quickDecision": {
+      "firstAction": "Comece pela campanha e exploração de Gotham.",
+      "recommendation": "Vale acompanhar se você gosta de mundo aberto LEGO, campanha leve, colecionáveis, desafios e cleanup. A platina tende a depender mais de completar Gotham e comprar/liberar recursos do que de dificuldade alta, mas o guia ainda precisa de validação final.",
+      "risk": "O principal risco editorial é misturar esta lista PS5 com achievements de PC, DLC/Deluxe ou jogos LEGO Batman antigos.",
+      "summary": "LEGO Batman: Legacy of the Dark Knight é uma platina de mundo aberto focada em campanha, Gotham City, personagens, veículos, gadgets, Red Bricks, Batcave, Puzzle Rooms, AR Trials, collectibles, crimes, side activities e cleanup."
+    },
+    "seo": {
+      "description": "Guia em revisão de LEGO Batman: Legacy of the Dark Knight no AtlasAchievement, com informações iniciais sobre PS5, Gotham City, co-op local, lista PlayStation de troféus, roadmap e requisitos da platina quando a lista oficial for confirmada.",
+      "keywords": "LEGO Batman Legacy of the Dark Knight, LEGO Batman O Legado do Cavaleiro das Trevas, guia de platina LEGO Batman, troféus LEGO Batman Legacy of the Dark Knight, roadmap LEGO Batman, LEGO Batman PS5, Gotham City, TT Games, Warner Bros Games",
+      "ogDescription": "Guia em revisão com lista PS5 de 52 troféus cadastrada, flags offline seguras e roadmap inicial da platina.",
+      "ogTitle": "Guia de Platina LEGO Batman: O Legado do Cavaleiro das Trevas — Troféus e Roadmap | AtlasAchievement",
+      "title": "Guia de Platina LEGO Batman: O Legado do Cavaleiro das Trevas — Troféus e Roadmap"
+    },
+    "tags": [
+      "LEGO",
+      "Batman",
+      "Ação",
+      "Aventura",
+      "Mundo aberto",
+      "Gotham",
+      "Single-player",
+      "Co-op local opcional",
+      "Sem online obrigatório",
+      "Sem DLC obrigatória",
+      "Em revisão"
+    ]
+  },
+  "slug": "lego-batman-legacy-of-the-dark-knight",
+  "trophies": [
+    {
+      "description": "Obtenha todos os troféus.",
+      "is_missable": 0,
+      "is_spoiler": 0,
+      "name": "\"I am Batman.\"",
+      "name_pt": "Eu sou o Batman.",
+      "tip": "Troféu de platina liberado ao concluir todo o checklist PS5 do jogo base.",
+      "trophy_code": "lego_batman_lotdk_i_am_batman",
+      "type": "Platina"
+    },
+    {
+      "description": "Complete o modo história.",
+      "is_missable": 0,
+      "is_spoiler": 1,
+      "name": "\"A hero can be anyone.\"",
+      "name_pt": "Um herói pode ser qualquer pessoa.",
+      "tip": "Avance pelos capítulos principais antes de mergulhar no cleanup de Gotham.",
+      "trophy_code": "lego_batman_lotdk_a_hero_can_be_anyone",
+      "type": "Ouro"
+    },
+    {
+      "description": "Complete todas as atividades secundárias em Gotham.",
+      "is_missable": 0,
+      "is_spoiler": 0,
+      "name": "\"Hopefully, because he's busy.\"",
+      "name_pt": "Tomara, porque ele está ocupado.",
+      "tip": "Depois da campanha, varra os distritos e resolva todas as atividades abertas no mapa.",
+      "trophy_code": "lego_batman_lotdk_hopefully_because_hes_busy",
+      "type": "Ouro"
+    },
+    {
+      "description": "Colete todos os coletáveis.",
+      "is_missable": 0,
+      "is_spoiler": 0,
+      "name": "A Watchful Collector",
+      "name_pt": "Colecionador vigilante",
+      "tip": "Separe uma etapa dedicada para os coletáveis e use os distritos como controle de progresso.",
+      "trophy_code": "lego_batman_lotdk_a_watchful_collector",
+      "type": "Ouro"
+    },
+    {
+      "description": "Desbloqueie todos os trajes.",
+      "is_missable": 0,
+      "is_spoiler": 0,
+      "name": "\"I'm not wearing hockey pads.\"",
+      "name_pt": "Não estou usando protetores de hóquei.",
+      "tip": "Compre e libere os trajes conforme novos recursos, personagens e progresso ficarem disponíveis.",
+      "trophy_code": "lego_batman_lotdk_hockey_pads",
+      "type": "Prata"
+    },
+    {
+      "description": "Desbloqueie todos os veículos.",
+      "is_missable": 0,
+      "is_spoiler": 0,
+      "name": "\"Wanna know how I got these cars?\"",
+      "name_pt": "Quer saber como consegui estes carros?",
+      "tip": "Guarde studs e confira a Batcave para completar a garagem.",
+      "trophy_code": "lego_batman_lotdk_wanna_know_cars",
+      "type": "Prata"
+    },
+    {
+      "description": "Desbloqueie todas as melhorias de habilidade.",
+      "is_missable": 0,
+      "is_spoiler": 0,
+      "name": "\"Holy Skill Upgrades, Batman!\"",
+      "name_pt": "Santas melhorias de habilidade, Batman!",
+      "tip": "Priorize upgrades úteis durante a campanha e finalize todas as categorias no cleanup.",
+      "trophy_code": "lego_batman_lotdk_holy_skill_upgrades",
+      "type": "Prata"
+    },
+    {
+      "description": "Colete todos os Red Bricks.",
+      "is_missable": 0,
+      "is_spoiler": 0,
+      "name": "\"This is too much power for one person.\"",
+      "name_pt": "Poder demais para uma pessoa só.",
+      "tip": "Use uma rota por distrito para evitar deixar Red Bricks soltos no fim.",
+      "trophy_code": "lego_batman_lotdk_too_much_power",
+      "type": "Prata"
+    },
+    {
+      "description": "Complete 20 desafios.",
+      "is_missable": 0,
+      "is_spoiler": 0,
+      "name": "Up for the Challenge",
+      "name_pt": "Pronto para o desafio",
+      "tip": "Inclua desafios no cleanup de Gotham quando já tiver personagens, gadgets e veículos suficientes.",
+      "trophy_code": "lego_batman_lotdk_up_for_the_challenge",
+      "type": "Bronze"
+    },
+    {
+      "description": "Desbloqueie todos os pontos de viagem rápida.",
+      "is_missable": 0,
+      "is_spoiler": 0,
+      "name": "\"It's a big city. I can't be everywhere.\"",
+      "name_pt": "É uma cidade grande. Não posso estar em todos os lugares.",
+      "tip": "Abra os fast travels cedo para acelerar a coleta e as atividades secundárias.",
+      "trophy_code": "lego_batman_lotdk_big_city",
+      "type": "Bronze"
+    },
+    {
+      "description": "Desbloqueie Jim Gordon.",
+      "is_missable": 0,
+      "is_spoiler": 1,
+      "name": "A Friend",
+      "name_pt": "Um amigo",
+      "tip": "Relacionado ao progresso de história; continue avançando a campanha.",
+      "trophy_code": "lego_batman_lotdk_a_friend",
+      "type": "Bronze"
+    },
+    {
+      "description": "Desbloqueie Catwoman.",
+      "is_missable": 0,
+      "is_spoiler": 1,
+      "name": "\"Hear me Roar.\"",
+      "name_pt": "Ouça meu rugido.",
+      "tip": "Relacionado ao progresso de história; continue avançando a campanha.",
+      "trophy_code": "lego_batman_lotdk_hear_me_roar",
+      "type": "Bronze"
+    },
+    {
+      "description": "Desbloqueie Robin.",
+      "is_missable": 0,
+      "is_spoiler": 1,
+      "name": "The Boy Wonder",
+      "name_pt": "O Menino Prodígio",
+      "tip": "Relacionado ao progresso de história; continue avançando a campanha.",
+      "trophy_code": "lego_batman_lotdk_boy_wonder",
+      "type": "Bronze"
+    },
+    {
+      "description": "Desbloqueie Batgirl.",
+      "is_missable": 0,
+      "is_spoiler": 1,
+      "name": "\"Let's see what Batgirl can do!\"",
+      "name_pt": "Vamos ver o que a Batgirl consegue fazer!",
+      "tip": "Relacionado ao progresso de história; continue avançando a campanha.",
+      "trophy_code": "lego_batman_lotdk_batgirl_can_do",
+      "type": "Bronze"
+    },
+    {
+      "description": "Desbloqueie Nightwing.",
+      "is_missable": 0,
+      "is_spoiler": 1,
+      "name": "A Grayson Graduation",
+      "name_pt": "Formatura de Grayson",
+      "tip": "Relacionado ao progresso de história; continue avançando a campanha.",
+      "trophy_code": "lego_batman_lotdk_grayson_graduation",
+      "type": "Bronze"
+    },
+    {
+      "description": "Desbloqueie Talia.",
+      "is_missable": 0,
+      "is_spoiler": 1,
+      "name": "Out of the Shadows",
+      "name_pt": "Fora das sombras",
+      "tip": "Relacionado ao progresso de história; continue avançando a campanha.",
+      "trophy_code": "lego_batman_lotdk_out_of_the_shadows",
+      "type": "Bronze"
+    },
+    {
+      "description": "Visite todos os distritos.",
+      "is_missable": 0,
+      "is_spoiler": 0,
+      "name": "\"It's not exactly a normal world.\"",
+      "name_pt": "Não é exatamente um mundo normal.",
+      "tip": "Explore Gotham por distritos e confirme cada área no mapa antes do cleanup final.",
+      "trophy_code": "lego_batman_lotdk_not_normal_world",
+      "type": "Bronze"
+    },
+    {
+      "description": "Compre todas as melhorias de gadget para um único personagem.",
+      "is_missable": 0,
+      "is_spoiler": 0,
+      "name": "Wonderful Toys",
+      "name_pt": "Brinquedos maravilhosos",
+      "tip": "Escolha um personagem principal e complete os upgrades de gadgets dele primeiro.",
+      "trophy_code": "lego_batman_lotdk_wonderful_toys",
+      "type": "Bronze"
+    },
+    {
+      "description": "Complete o traje Gray Ghost de Bruce.",
+      "is_missable": 0,
+      "is_spoiler": 0,
+      "name": "Beware the Gray Ghost!",
+      "name_pt": "Cuidado com o Fantasma Cinzento!",
+      "tip": "Acompanhe as peças de traje como parte da rota de coletáveis.",
+      "trophy_code": "lego_batman_lotdk_gray_ghost",
+      "type": "Bronze"
+    },
+    {
+      "description": "Complete o prólogo.",
+      "is_missable": 0,
+      "is_spoiler": 1,
+      "name": "\"A legend, Mr. Wayne.\"",
+      "name_pt": "Uma lenda, Sr. Wayne.",
+      "tip": "Relacionado à história; conclua o prólogo para abrir a campanha.",
+      "trophy_code": "lego_batman_lotdk_a_legend_mr_wayne",
+      "type": "Bronze"
+    },
+    {
+      "description": "Complete o Capítulo Um.",
+      "is_missable": 0,
+      "is_spoiler": 1,
+      "name": "One Bad Day",
+      "name_pt": "Um dia ruim",
+      "tip": "Relacionado à história; avance naturalmente pelo primeiro capítulo.",
+      "trophy_code": "lego_batman_lotdk_one_bad_day",
+      "type": "Bronze"
+    },
+    {
+      "description": "Complete o Capítulo Dois.",
+      "is_missable": 0,
+      "is_spoiler": 1,
+      "name": "\"Do I look like I'm joking?\"",
+      "name_pt": "Eu pareço estar brincando?",
+      "tip": "Relacionado à história; avance naturalmente pelo segundo capítulo.",
+      "trophy_code": "lego_batman_lotdk_do_i_look_like_joking",
+      "type": "Bronze"
+    },
+    {
+      "description": "Complete o Capítulo Três.",
+      "is_missable": 0,
+      "is_spoiler": 1,
+      "name": "The Dynamic Duo",
+      "name_pt": "A Dupla Dinâmica",
+      "tip": "Relacionado à história; avance naturalmente pelo terceiro capítulo.",
+      "trophy_code": "lego_batman_lotdk_dynamic_duo",
+      "type": "Bronze"
+    },
+    {
+      "description": "Complete o Capítulo Quatro.",
+      "is_missable": 0,
+      "is_spoiler": 1,
+      "name": "An Endless Winter",
+      "name_pt": "Um inverno sem fim",
+      "tip": "Relacionado à história; avance naturalmente pelo quarto capítulo.",
+      "trophy_code": "lego_batman_lotdk_endless_winter",
+      "type": "Bronze"
+    },
+    {
+      "description": "Complete o Capítulo Cinco.",
+      "is_missable": 0,
+      "is_spoiler": 1,
+      "name": "Knightfall",
+      "name_pt": "Queda do Cavaleiro",
+      "tip": "Relacionado à história; avance naturalmente pelo quinto capítulo.",
+      "trophy_code": "lego_batman_lotdk_knightfall",
+      "type": "Bronze"
+    },
+    {
+      "description": "Abra todos os WayneTech Caches.",
+      "is_missable": 0,
+      "is_spoiler": 0,
+      "name": "\"You have a name to maintain.\"",
+      "name_pt": "Você tem um nome a manter.",
+      "tip": "Inclua os caches no roteiro de distrito junto com coletáveis e atividades.",
+      "trophy_code": "lego_batman_lotdk_name_to_maintain",
+      "type": "Bronze"
+    },
+    {
+      "description": "Colete 25 Bat-Symbols.",
+      "is_missable": 0,
+      "is_spoiler": 0,
+      "name": "\"The idea was to be a symbol.\"",
+      "name_pt": "A ideia era ser um símbolo.",
+      "tip": "Colete Bat-Symbols durante a exploração para reduzir o cleanup.",
+      "trophy_code": "lego_batman_lotdk_symbol",
+      "type": "Bronze"
+    },
+    {
+      "description": "Colete todos os troféus da Batcave.",
+      "is_missable": 0,
+      "is_spoiler": 0,
+      "name": "\"Quite the collection, Master Bruce.\"",
+      "name_pt": "Que coleção, Mestre Bruce.",
+      "tip": "Volte à Batcave periodicamente para conferir o que ainda falta expor.",
+      "trophy_code": "lego_batman_lotdk_collection_master_bruce",
+      "type": "Bronze"
+    },
+    {
+      "description": "Complete todas as Puzzle Rooms.",
+      "is_missable": 0,
+      "is_spoiler": 0,
+      "name": "Too Many Questions",
+      "name_pt": "Perguntas demais",
+      "tip": "Deixe salas de puzzle mais exigentes para depois de liberar personagens e gadgets.",
+      "trophy_code": "lego_batman_lotdk_too_many_questions",
+      "type": "Bronze"
+    },
+    {
+      "description": "Compre uma melhoria de habilidade de cada categoria.",
+      "is_missable": 0,
+      "is_spoiler": 0,
+      "name": "\"Lighter, faster, more agile.\"",
+      "name_pt": "Mais leve, mais rápido, mais ágil.",
+      "tip": "Espalhe os primeiros upgrades entre categorias antes de maximizar uma só.",
+      "trophy_code": "lego_batman_lotdk_lighter_faster_agile",
+      "type": "Bronze"
+    },
+    {
+      "description": "Compre 3 melhorias de gadget.",
+      "is_missable": 0,
+      "is_spoiler": 0,
+      "name": "Theatricality and Deception",
+      "name_pt": "Teatralidade e decepção",
+      "tip": "Compre upgrades de gadget úteis para acelerar combate, exploração e puzzles.",
+      "trophy_code": "lego_batman_lotdk_theatricality_deception",
+      "type": "Bronze"
+    },
+    {
+      "description": "Compre todas as expansões da Batcave.",
+      "is_missable": 0,
+      "is_spoiler": 0,
+      "name": "\"I own the place.\"",
+      "name_pt": "O lugar é meu.",
+      "tip": "Planeje gastos de studs para fechar as expansões da Batcave no cleanup.",
+      "trophy_code": "lego_batman_lotdk_i_own_place",
+      "type": "Bronze"
+    },
+    {
+      "description": "Coloque 5 props ou troféus na Batcave.",
+      "is_missable": 0,
+      "is_spoiler": 0,
+      "name": "Not Just a Cave",
+      "name_pt": "Mais que uma caverna",
+      "tip": "Interaja com a personalização da Batcave assim que liberar itens suficientes.",
+      "trophy_code": "lego_batman_lotdk_not_just_a_cave",
+      "type": "Bronze"
+    },
+    {
+      "description": "Compre 3 veículos na Batcave.",
+      "is_missable": 0,
+      "is_spoiler": 0,
+      "name": "\"No, sir. The OTHER car.\"",
+      "name_pt": "Não, senhor. O OUTRO carro.",
+      "tip": "Compre veículos aos poucos para não concentrar todo o gasto no fim.",
+      "trophy_code": "lego_batman_lotdk_other_car",
+      "type": "Bronze"
+    },
+    {
+      "description": "Compre 5 itens em lojas.",
+      "is_missable": 0,
+      "is_spoiler": 0,
+      "name": "\"You either buy a hero...\"",
+      "name_pt": "Ou você compra um herói...",
+      "tip": "Use lojas durante a campanha ou cleanup para adiantar compras obrigatórias.",
+      "trophy_code": "lego_batman_lotdk_buy_a_hero",
+      "type": "Bronze"
+    },
+    {
+      "description": "Equipe um Red Brick.",
+      "is_missable": 0,
+      "is_spoiler": 0,
+      "name": "\"Does it come in black?\"",
+      "name_pt": "Vem em preto?",
+      "tip": "Depois de obter um Red Brick, equipe-o para garantir o registro do troféu.",
+      "trophy_code": "lego_batman_lotdk_come_in_black",
+      "type": "Bronze"
+    },
+    {
+      "description": "Ganhe 5 medalhas de ouro em AR Trials.",
+      "is_missable": 0,
+      "is_spoiler": 0,
+      "name": "\"Wouldn't wanna make things too easy.\"",
+      "name_pt": "Não seria bom facilitar demais.",
+      "tip": "Revisite AR Trials quando já dominar movimentação, veículos e gadgets.",
+      "trophy_code": "lego_batman_lotdk_not_make_easy",
+      "type": "Bronze"
+    },
+    {
+      "description": "Entregue uma Challenge na Batcave.",
+      "is_missable": 0,
+      "is_spoiler": 0,
+      "name": "Rebuilding Gotham",
+      "name_pt": "Reconstruindo Gotham",
+      "tip": "Após completar um desafio, volte à Batcave para registrar a entrega.",
+      "trophy_code": "lego_batman_lotdk_rebuilding_gotham",
+      "type": "Bronze"
+    },
+    {
+      "description": "Gire a câmera mais de 20 graus no Modo Foto.",
+      "is_missable": 0,
+      "is_spoiler": 0,
+      "name": "Collecting Evidence",
+      "name_pt": "Coletando evidências",
+      "tip": "Entre no Modo Foto e incline a câmera até o registro aparecer.",
+      "trophy_code": "lego_batman_lotdk_collecting_evidence",
+      "type": "Bronze"
+    },
+    {
+      "description": "Troque o protetor de tela no Batcomputer.",
+      "is_missable": 0,
+      "is_spoiler": 0,
+      "name": "Computer Privileges",
+      "name_pt": "Privilégios no computador",
+      "tip": "Interaja com o Batcomputer na Batcave e altere o screensaver.",
+      "trophy_code": "lego_batman_lotdk_computer_privileges",
+      "type": "Bronze"
+    },
+    {
+      "description": "Colete 1.000.000 de studs.",
+      "is_missable": 0,
+      "is_spoiler": 0,
+      "name": "\"Life's been good to me.\"",
+      "name_pt": "A vida tem sido boa comigo.",
+      "tip": "Use multiplicadores e colete studs durante todas as etapas para reduzir grind.",
+      "trophy_code": "lego_batman_lotdk_lifes_good",
+      "type": "Bronze"
+    },
+    {
+      "description": "Execute 100 contra-ataques bem-sucedidos.",
+      "is_missable": 0,
+      "is_spoiler": 0,
+      "name": "Caped Defender",
+      "name_pt": "Defensor de capa",
+      "tip": "Faça counters sempre que o prompt aparecer para adiantar o acumulado.",
+      "trophy_code": "lego_batman_lotdk_caped_defender",
+      "type": "Bronze"
+    },
+    {
+      "description": "Colete 30.000 studs em um único combo de studs.",
+      "is_missable": 0,
+      "is_spoiler": 0,
+      "name": "\"Never do it for free.\"",
+      "name_pt": "Nunca faça de graça.",
+      "tip": "Procure áreas densas em studs e mantenha a coleta contínua até bater a meta.",
+      "trophy_code": "lego_batman_lotdk_never_free",
+      "type": "Bronze"
+    },
+    {
+      "description": "Mantenha o combo máximo de studs por 60 segundos.",
+      "is_missable": 0,
+      "is_spoiler": 0,
+      "name": "\"I'm good with calculation.\"",
+      "name_pt": "Sou bom com cálculos.",
+      "tip": "Ative o combo em uma área com fluxo constante de studs antes de mirar o cronômetro.",
+      "trophy_code": "lego_batman_lotdk_good_calculation",
+      "type": "Bronze"
+    },
+    {
+      "description": "Alcance um combo de combate de 99 hits.",
+      "is_missable": 0,
+      "is_spoiler": 0,
+      "name": "The Strength to Fight",
+      "name_pt": "A força para lutar",
+      "tip": "Escolha encontros com muitos inimigos e jogue de forma segura para não quebrar o combo.",
+      "trophy_code": "lego_batman_lotdk_strength_to_fight",
+      "type": "Bronze"
+    },
+    {
+      "description": "Execute 100 takedowns furtivos.",
+      "is_missable": 0,
+      "is_spoiler": 0,
+      "name": "\"I am the shadows.\"",
+      "name_pt": "Eu sou as sombras.",
+      "tip": "Use seções de stealth para adiantar o acumulado em vez de resolver tudo no combate aberto.",
+      "trophy_code": "lego_batman_lotdk_i_am_shadows",
+      "type": "Bronze"
+    },
+    {
+      "description": "Coloque um marcador no mapa.",
+      "is_missable": 0,
+      "is_spoiler": 0,
+      "name": "\"This is my city.\"",
+      "name_pt": "Esta é a minha cidade.",
+      "tip": "Abra o mapa de Gotham e posicione um pin em qualquer ponto válido.",
+      "trophy_code": "lego_batman_lotdk_this_is_my_city",
+      "type": "Bronze"
+    },
+    {
+      "description": "Descubra 100 eventos de mundo aberto.",
+      "is_missable": 0,
+      "is_spoiler": 0,
+      "name": "\"You're becoming quite a celebrity.\"",
+      "name_pt": "Você está virando uma celebridade.",
+      "tip": "Explore Gotham com calma para revelar eventos antes de fazer o cleanup final.",
+      "trophy_code": "lego_batman_lotdk_celebrity",
+      "type": "Bronze"
+    },
+    {
+      "description": "Derrote cada tipo de inimigo uma vez.",
+      "is_missable": 0,
+      "is_spoiler": 0,
+      "name": "Cowardly and Superstitious Lot",
+      "name_pt": "Lote covarde e supersticioso",
+      "tip": "Jogue naturalmente pela campanha e atividades; depois confira se algum tipo de inimigo ficou faltando.",
+      "trophy_code": "lego_batman_lotdk_cowardly_superstitious",
+      "type": "Bronze"
+    },
+    {
+      "description": "Impeça 30 crimes.",
+      "is_missable": 0,
+      "is_spoiler": 0,
+      "name": "\"Gotham can feel a little safer.\"",
+      "name_pt": "Gotham pode ficar um pouco mais segura.",
+      "tip": "Resolva crimes enquanto cruza Gotham para não deixar todos para o fim.",
+      "trophy_code": "lego_batman_lotdk_gotham_safer",
+      "type": "Bronze"
+    },
+    {
+      "description": "Impeça cada tipo de crime em Gotham uma vez.",
+      "is_missable": 0,
+      "is_spoiler": 0,
+      "name": "\"Things have improved.\"",
+      "name_pt": "As coisas melhoraram.",
+      "tip": "Varie os crimes resolvidos nos distritos até registrar todos os tipos.",
+      "trophy_code": "lego_batman_lotdk_things_improved",
+      "type": "Bronze"
+    },
+    {
+      "description": "Plane em 10 túneis de vento diferentes.",
+      "is_missable": 0,
+      "is_spoiler": 0,
+      "name": "\"Is that like parachuting?\"",
+      "name_pt": "É tipo paraquedismo?",
+      "tip": "Use túneis de vento durante a exploração e marque os que já foram usados.",
+      "trophy_code": "lego_batman_lotdk_like_parachuting",
+      "type": "Bronze"
+    }
+  ]
+}

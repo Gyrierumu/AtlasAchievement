@@ -1,0 +1,821 @@
+{
+  "game": {
+    "avoid_if": "Evite se você quer uma platina totalmente offline ou não quer lidar com dependência de servidor/conexão para desbloquear troféus.",
+    "before_you_start": "Não jogue offline se a meta é platina. Os troféus da lista base dependem de conexão/Ubisoft/Animus Hub; use Guided Exploration Mode OFF até Scouting Mission e faça saves manuais periódicos.",
+    "best_for": "Ideal para quem quer uma platina de Assassin’s Creed moderna, longa mas acessível, com Japão feudal, stealth, combate e dois protagonistas.",
+    "cleanup_advice": "Após a história, limpe side quests necessárias, contratos por província, skills, coletáveis pontuais, hideout, upgrades e troféus de combate/stealth.",
+    "cover_image": "https://cdn.cloudflare.steamstatic.com/steam/apps/3159330/library_600x900.jpg",
+    "coverage_level": "strong",
+    "created_at": "2026-05-09 19:53:48",
+    "difficulty": 4,
+    "difficulty_reason": "A platina é acessível e não exige dificuldade alta; o maior cuidado é conexão dos troféus, Scouting Mission com Guided Exploration Mode OFF e organização do cleanup.",
+    "dlc_scope": "Guia focado na lista base da platina de PS5. Claws of Awaji tem lista/expansão separada e não deve ser misturada aqui; qualquer DLC, patch extra ou trophy sets adicionais precisam ficar em escopo separado.",
+    "editorial_notes": "",
+    "editorial_review_status": null,
+    "editorial_status": "published",
+    "first_run_advice": "Comece com Guided Exploration Mode OFF até garantir Scouting Mission e mantenha saves manuais distribuídos para se proteger de falhas de conexão ou unlock atrasado.",
+    "grind_summary": "O peso está em história, side quests específicas, Knowledge Rank, skills de Naoe/Yasuke, contratos, coletáveis pontuais e troféus de combate/stealth.",
+    "guide_avoid": null,
+    "guide_best_moment": null,
+    "guide_dlc": null,
+    "guide_grind": null,
+    "guide_ideal": null,
+    "guide_online": null,
+    "guide_runs": null,
+    "image": "https://cdn.cloudflare.steamstatic.com/steam/apps/3159330/header.jpg",
+    "is_verified": 0,
+    "last_reviewed_at": "",
+    "missable": "Nenhum troféu da lista base deve ser tratado como perdível definitivo, mas Scouting Mission exige atenção: ele só funciona com Guided Exploration Mode OFF. Além disso, os troféus dependem de conexão/Ubisoft/Animus Hub e podem atrasar ou falhar se a conexão cair.",
+    "missable_summary": "0 perdíveis definitivos na lista base. Scouting Mission é atenção obrigatória por depender de Guided Exploration Mode OFF, e saves manuais ajudam contra falhas de conexão.",
+    "name": "Assassin’s Creed Shadows",
+    "online_summary": "A lista base depende de conexão/Ubisoft/Animus Hub para desbloquear troféus corretamente, mas os troféus não exigem multiplayer tradicional nem PS+. A PlayStation Store marca online play como opcional; trate a dependência como servidor/launcher, não como coop ou PvP.",
+    "quality_warnings": "[]",
+    "reviewed_by": "",
+    "runs_summary": "Uma campanha principal com cleanup livre após a história. A platina base não exige 100% do mapa, mas pede história, side quests específicas, skills e alguns coletáveis; lista extra/DLC fica fora deste guia.",
+    "slug": "assassins-creed-shadows",
+    "time": "50-75h",
+    "time_bucket": "long",
+    "time_max_hours": 75,
+    "time_min_hours": 50,
+    "time_reason": "A faixa de 50-75 horas considera campanha, 12 Onryo/Shinbakufu, side quests necessárias, Knowledge Rank, skills, contratos, coletáveis exigidos e cleanup.",
+    "time_sort_hours": 50,
+    "updated_at": "2026-06-27 02:36:58",
+    "verification_note": "Checklist base em revisão com divergência publica entre fontes sobre distribuição de tipos; contagem total foi mantida e o guia não deve ser tratado como verificado.",
+    "verification_status": "review",
+    "walkthrough": null
+  },
+  "redirects": [],
+  "roadmaps": [
+    {
+      "content": "{\"title\":\"Avance pela campanha\",\"focus\":\"\",\"objective\":\"inicie com Guided Exploration Mode OFF até obter Scouting Mission. Depois que o scout revelar um objetivo e o troféu desbloquear, você pode religar o Guided Exploration Mode se preferir.\",\"actions\":[],\"warning\":\"\",\"result\":\"\"}",
+      "step_order": 1
+    },
+    {
+      "content": "{\"title\":\"Prossiga pela rota planejada\",\"focus\":\"\",\"objective\":\"jogue a campanha naturalmente, desbloqueando Naoe, Yasuke, hideout, objective board, Kakurega, contratos, habilidades e províncias. Mantenha conexão ativa com Ubisoft/Animus Hub para evitar unlock perdido ou atrasado.\",\"actions\":[],\"warning\":\"\",\"result\":\"\"}",
+      "step_order": 2
+    },
+    {
+      "content": "{\"title\":\"Prossiga pela rota planejada\",\"focus\":\"\",\"objective\":\"complete a história principal: prólogo, Ato 1, Ato 2, Ato 3, os 12 Onryo/Shinbakufu e as quests de Naoe, Yasuke, Junjiro e Epilogue/Out of the Shadows.\",\"actions\":[],\"warning\":\"\",\"result\":\"\"}",
+      "step_order": 3
+    },
+    {
+      "content": "{\"title\":\"faça side quests necessárias para aliados, skills e troféus e...\",\"focus\":\"\",\"objective\":\"faça side quests necessárias para aliados, skills e troféus específicos, incluindo Gennojo, Oni-yuri, Yagoro, Ibuki, Yaya, Katsuhime, The Tournament e Tea Bowls of Rikyu.\",\"actions\":[],\"warning\":\"\",\"result\":\"\"}",
+      "step_order": 4
+    },
+    {
+      "content": "{\"title\":\"colete os itens exigidos para troféus\",\"focus\":\"\",\"objective\":\"colete os itens exigidos para troféus: Legendary Sumi-e, todos os Kuji-kiri, 1 Kata, 1 Kofun, coleção de tea bowls, legendary gear e pontos de exploração como o maior ponto do mapa.\",\"actions\":[],\"warning\":\"\",\"result\":\"\"}",
+      "step_order": 5
+    },
+    {
+      "content": "{\"title\":\"Planeje o grind principal\",\"focus\":\"\",\"objective\":\"complete contratos por província, Knowledge Rank, skill trees de Naoe/Yasuke, Art of Ninjutsu, Art of Kenjutsu, tools, Bow/Teppo, hideout, Kakurega, rations e upgrades necessários.\",\"actions\":[],\"warning\":\"\",\"result\":\"\"}",
+      "step_order": 6
+    },
+    {
+      "content": "{\"title\":\"Prossiga pela rota planejada\",\"focus\":\"\",\"objective\":\"limpe troféus de combate, stealth, Naoe/Yasuke e ações situacionais: Unseen, Giant Slayer, Unstoppable, Overdesign III, Final Hearing, Adventurer, Reeding is Fundamental e Just Your Shadow.\",\"actions\":[],\"warning\":\"\",\"result\":\"\"}",
+      "step_order": 7
+    },
+    {
+      "content": "{\"title\":\"Revise pendências finais\",\"focus\":\"\",\"objective\":\"faça cleanup final em free-roam, revisando contratos, coleções e troféus pendentes. Como quests não são replayáveis e unlocks podem atrasar por conexão, mantenha saves manuais espalhados e não misture Claws of Awaji ou trophy sets extras.\",\"actions\":[],\"warning\":\"\",\"result\":\"\"}",
+      "step_order": 8
+    }
+  ],
+  "schemaVersion": 1,
+  "seedExtras": {
+    "aliases": [],
+    "attentionPoints": [
+      {
+        "detail": "Os troféus dependem de conexão com Ubisoft/Animus Hub. Se a conexão cair, desbloqueios podem atrasar ou não registrar corretamente.",
+        "tags": [
+          "Conexão",
+          "Atenção"
+        ],
+        "title": "Conexão com Ubisoft servers"
+      },
+      {
+        "detail": "Online obrigatório aqui significa conexão para troféus, não multiplayer. A platina não exige cooperação nem PS Plus.",
+        "tags": [
+          "Conexão",
+          "Sem PS Plus"
+        ],
+        "title": "Sem multiplayer ou PS Plus"
+      },
+      {
+        "detail": "Faça Scouting Mission cedo com Guided Exploration Mode desligado. Depois desse troféu, o modo guiado pode ser ligado se preferir.",
+        "tags": [
+          "Scouting Mission",
+          "Atenção"
+        ],
+        "title": "Scouting Mission cedo"
+      },
+      {
+        "detail": "O aviso do jogo sobre troféus desativados é amplo demais. Para a platina base, o cuidado real é Scouting Mission.",
+        "tags": [
+          "Guided Exploration",
+          "Atenção"
+        ],
+        "title": "Guided Exploration Mode"
+      },
+      {
+        "detail": "Faça saves manuais distribuídos pela campanha e antes de marcos importantes, porque quests não são replayáveis e unlocks podem atrasar.",
+        "tags": [
+          "Saves manuais",
+          "Sincronização"
+        ],
+        "title": "Saves manuais"
+      },
+      {
+        "detail": "A platina base usa 55 troféus. Não misture Claws of Awaji, trophy sets extras ou conteúdos post-launch.",
+        "tags": [
+          "DLC fora da platina"
+        ],
+        "title": "DLC e post-launch"
+      },
+      {
+        "detail": "A Rare Occurrence exige os Legendary Sumi-e. Alguns dependem de estações, então acompanhe esse requisito durante a campanha.",
+        "tags": [
+          "Sumi-e",
+          "Coletável"
+        ],
+        "title": "Legendary Sumi-e"
+      },
+      {
+        "detail": "Complete um contrato em cada província e controle no checklist quais províncias já foram concluídas.",
+        "tags": [
+          "Contratos",
+          "Checklist"
+        ],
+        "title": "Would You Kindly?"
+      },
+      {
+        "detail": "Alguns troféus exigem protagonista específico. A dica deve dizer claramente se é Naoe, Yasuke ou qualquer personagem.",
+        "tags": [
+          "Naoe",
+          "Yasuke"
+        ],
+        "title": "Naoe e Yasuke"
+      },
+      {
+        "detail": "A platina não exige 100% de todos os colecionáveis e atividades do mapa. Foque no que tem troféu.",
+        "tags": [
+          "Cleanup",
+          "Escopo"
+        ],
+        "title": "Platina não é 100%"
+      }
+    ],
+    "checklist": [
+      "Conferir se o guia tem 55 troféus da lista base.",
+      "Conferir se Assassin’s Creed Shadows é a platina.",
+      "Conferir distribuição: 1 platina, 1 ouro, 10 prata, 43 bronze.",
+      "Conferir se DLCs/post-launch não foram misturados.",
+      "Conferir onlineRequired true para conexão obrigatória.",
+      "Conferir coopRequired false.",
+      "Conferir dlcRequired false.",
+      "Conferir hasMissables false.",
+      "Conferir missableCount 0.",
+      "Conferir se nenhum troféu está marcado como perdível.",
+      "Conferir se Scouting Mission está como ponto de atenção, não perdível.",
+      "Conferir se Guided Exploration Mode está explicado corretamente.",
+      "Conferir se PS Plus/multiplayer não são tratados como obrigatórios.",
+      "Conferir se dificuldade não afeta troféus.",
+      "Conferir se filtros não estão inflados por tags erradas.",
+      "Conferir se todos os troféus tem nome oficial em ingles como principal.",
+      "Conferir se todos tem PT-BR abaixo quando houver tradução confiavel/oficial.",
+      "Conferir se descrições estão em português.",
+      "Conferir se não aparecem rotulos tecnicos de nomes internos nem descricao provisoria.",
+      "Conferir se roadmap está estruturado como array/objeto.",
+      "Conferir se FAQ, decisão rápida, SEO e pontos de atenção estão coerentes.",
+      "Conferir se página individual e catálogo exibem o mesmo status editorial.",
+      "Conferir se flags do topo batem com filtros do catálogo."
+    ],
+    "faq": [
+      {
+        "answer": "Não. A platina base não tem perdíveis reais. O cuidado principal é fazer Scouting Mission com Guided Exploration Mode desligado, mas essa opção pode ser alterada nas configurações.",
+        "question": "Assassin’s Creed Shadows tem troféus perdíveis?"
+      },
+      {
+        "answer": "Sim. Os troféus dependem de conexão com Ubisoft/Animus Hub para desbloquear e sincronizar. Isso não significa multiplayer obrigatório.",
+        "question": "Assassin’s Creed Shadows precisa de online para platinar?"
+      },
+      {
+        "answer": "Não. A platina exige conexão, mas não exige PS Plus nem modo multiplayer.",
+        "question": "Precisa de PS Plus?"
+      },
+      {
+        "answer": "Não. A platina é single-player.",
+        "question": "Assassin’s Creed Shadows tem coop obrigatório?"
+      },
+      {
+        "answer": "Não. A platina base exige os 55 troféus principais. Claws of Awaji e outros conteúdos post-launch não são necessários.",
+        "question": "A DLC é necessária para a platina?"
+      },
+      {
+        "answer": "Não. É possível buscar a platina na dificuldade que preferir.",
+        "question": "A dificuldade afeta troféus?"
+      },
+      {
+        "answer": "Para a platina base, o cuidado real é Scouting Mission, que exige Guided Exploration Mode desligado para usar scout. Depois desse troféu, o jogador pode ligar o modo guiado se quiser.",
+        "question": "Guided Exploration Mode desativa troféus?"
+      },
+      {
+        "answer": "Sim. Como os desbloqueios dependem de sincronização online, alguns troféus podem atrasar. Reiniciar o Animus Hub, manter conexão estável ou recarregar um save pode ajudar.",
+        "question": "Os troféus podem atrasar?"
+      },
+      {
+        "answer": "Não. A platina exige atividades e coletáveis específicos, mas não 100% de tudo no mapa.",
+        "question": "Preciso fazer 100% do mapa?"
+      },
+      {
+        "answer": "Manter conexão estável, fazer Scouting Mission cedo com Guided Exploration desligado e usar saves manuais para se proteger contra falhas de sincronização.",
+        "question": "Qual é o maior cuidado da platina?"
+      }
+    ],
+    "note": "Campos exportados para auditoria. O SQLite atual nao possui colunas nativas para todos esses extras; a importacao preserva o que o banco suporta.",
+    "quickDecision": {
+      "difficulty": "Baixa a moderada.",
+      "dlc": "Não éxige DLC para a platina base.",
+      "mainAlert": "Conexão com servidores Ubisoft/Animus Hub e Scouting Mission com Guided Exploration Mode desligado.",
+      "onlineCoop": "Exige conexão para troféus, mas não exige cooperação, multiplayer nem PS Plus.",
+      "risk": "Risco técnico de sincronização, mas sem perdíveis reais.",
+      "time": "Longo, cerca de 50 a 75 horas.",
+      "worthIt": "Sim, se você gosta de Assassin’s Creed moderno e aceita uma platina longa com foco em história, exploração seletiva e cleanup."
+    },
+    "seo": {
+      "description": "Guia de troféus de Assassin’s Creed Shadows com roadmap da platina, tempo estimado, dificuldade, conexão obrigatória, Scouting Mission, Guided Exploration Mode, Naoe, Yasuke e dicas para os 55 troféus da lista base.",
+      "keywords": "Assassin’s Creed Shadows troféus, Assassin’s Creed Shadows platina, guia Assassin’s Creed Shadows, AC Shadows troféus, AC Shadows platina, Scouting Mission, Guided Exploration Mode, Naoe, Yasuke, Shinbakufu, Claws of Awaji DLC, Assassin’s Creed Shadows online trophies",
+      "metaDescription": "Guia de troféus de Assassin’s Creed Shadows com roadmap da platina, tempo estimado, dificuldade, conexão obrigatória, Scouting Mission, Guided Exploration Mode, Naoe, Yasuke e dicas para os 55 troféus da lista base.",
+      "ogDescription": "Roadmap da platina base de Assassin’s Creed Shadows com 55 troféus, conexão obrigatória para desbloqueio, Scouting Mission, Guided Exploration Mode, Naoe e Yasuke.",
+      "ogTitle": "Assassin’s Creed Shadows: Guia de Troféus e Platina",
+      "title": "Assassin’s Creed Shadows: Guia de Troféus e Platina"
+    },
+    "tags": [
+      "Assassin’s Creed Shadows",
+      "AC Shadows",
+      "PS5",
+      "Platina",
+      "Conexão obrigatória",
+      "Sem multiplayer",
+      "Sem PS Plus",
+      "Sem coop",
+      "DLC fora da platina base",
+      "Scouting Mission",
+      "Guided Exploration Mode",
+      "Naoe",
+      "Yasuke",
+      "Shinbakufu"
+    ]
+  },
+  "slug": "assassins-creed-shadows",
+  "trophies": [
+    {
+      "description": "Unlock every trophy",
+      "is_missable": 0,
+      "is_spoiler": 0,
+      "name": "Assassin’s Creed® Shadows",
+      "name_pt": "",
+      "tip": "Conquiste todos os troféus da lista base. DLCs/add-ons e trophy sets extras não entram nesta platina.",
+      "trophy_code": "acsh_assassins_creed_shadows",
+      "type": "Platina"
+    },
+    {
+      "description": "Complete the Prologue",
+      "is_missable": 0,
+      "is_spoiler": 1,
+      "name": "Prologue",
+      "name_pt": "",
+      "tip": "Complete o prólogo e mantenha conexão ativa para garantir o unlock no Animus Hub.",
+      "trophy_code": "acsh_prologue",
+      "type": "Bronze"
+    },
+    {
+      "description": "Complete Act 1 of the main story",
+      "is_missable": 0,
+      "is_spoiler": 1,
+      "name": "A New League Rises",
+      "name_pt": "",
+      "tip": "Avance a campanha até concluir o Ato 1 e liberar Yasuke no mundo aberto.",
+      "trophy_code": "acsh_a_new_league_rises",
+      "type": "Bronze"
+    },
+    {
+      "description": "Complete Act 2 of the main story",
+      "is_missable": 0,
+      "is_spoiler": 1,
+      "name": "An Oath Fulfilled",
+      "name_pt": "",
+      "tip": "Complete o Ato 2. Faça saves manuais antes/depois de alvos principais por causa de possíveis atrasos de conexão.",
+      "trophy_code": "acsh_an_oath_fulfilled",
+      "type": "Bronze"
+    },
+    {
+      "description": "Complete Act 3 of the main story",
+      "is_missable": 0,
+      "is_spoiler": 1,
+      "name": "Fall of the Shinbakufu",
+      "name_pt": "",
+      "tip": "Complete o Ato 3 após os 12 Shinbakufu/Onryo e as linhas de Naoe, Yasuke e Junjiro.",
+      "trophy_code": "acsh_fall_of_the_shinbakufu",
+      "type": "Bronze"
+    },
+    {
+      "description": "Complete the Epilogue",
+      "is_missable": 0,
+      "is_spoiler": 1,
+      "name": "Epilogue",
+      "name_pt": "",
+      "tip": "Depois do Ato 3, conclua a quest de epílogo Out of the Shadows no hideout.",
+      "trophy_code": "acsh_epilogue",
+      "type": "Ouro"
+    },
+    {
+      "description": "Defeat all Shinbakufu",
+      "is_missable": 0,
+      "is_spoiler": 1,
+      "name": "Death Blossom",
+      "name_pt": "",
+      "tip": "Derrote ou conclua todos os 12 membros Shinbakufu/Onryo exigidos pela história principal.",
+      "trophy_code": "acsh_death_blossom",
+      "type": "Prata"
+    },
+    {
+      "description": "Meet Gennojo",
+      "is_missable": 0,
+      "is_spoiler": 1,
+      "name": "The Thief",
+      "name_pt": "",
+      "tip": "Avance a linha ligada ao Shinbakufu The Fool até conhecer Gennojo.",
+      "trophy_code": "acsh_the_thief",
+      "type": "Bronze"
+    },
+    {
+      "description": "Meet Oni-yuri",
+      "is_missable": 0,
+      "is_spoiler": 1,
+      "name": "The Toxin Master",
+      "name_pt": "",
+      "tip": "Complete a side quest Sweet Lies em Wakasa quando ela ficar disponível pela progressão.",
+      "trophy_code": "acsh_the_toxin_master",
+      "type": "Bronze"
+    },
+    {
+      "description": "Meet Yagoro",
+      "is_missable": 0,
+      "is_spoiler": 1,
+      "name": "The Eager Assassin",
+      "name_pt": "",
+      "tip": "Complete a side quest A Blade in the Dark em Harima quando ela ficar disponível.",
+      "trophy_code": "acsh_the_eager_assassin",
+      "type": "Bronze"
+    },
+    {
+      "description": "Meet Ibuki",
+      "is_missable": 0,
+      "is_spoiler": 1,
+      "name": "The Ronin",
+      "name_pt": "",
+      "tip": "Complete a side quest Ambush Interrupted em Iga quando ela ficar disponível.",
+      "trophy_code": "acsh_the_ronin",
+      "type": "Bronze"
+    },
+    {
+      "description": "Meet Yaya",
+      "is_missable": 0,
+      "is_spoiler": 1,
+      "name": "The Warrior Monk",
+      "name_pt": "",
+      "tip": "Avance a história do Ato 1 pela linha The Wounded/The Fatherless Monk até conhecer Yaya.",
+      "trophy_code": "acsh_the_warrior_monk",
+      "type": "Bronze"
+    },
+    {
+      "description": "Meet Katsuhime",
+      "is_missable": 0,
+      "is_spoiler": 1,
+      "name": "The Sharpshooter",
+      "name_pt": "",
+      "tip": "Avance a linha de Akechi Kagemitsu em The Shinbakufu até conhecer Katsuhime.",
+      "trophy_code": "acsh_the_sharpshooter",
+      "type": "Bronze"
+    },
+    {
+      "description": "Recruit your first ally",
+      "is_missable": 0,
+      "is_spoiler": 0,
+      "name": "Build Your League",
+      "name_pt": "",
+      "tip": "Complete uma quest de aliado na objective board The League para recrutar seu primeiro aliado.",
+      "trophy_code": "acsh_build_your_league",
+      "type": "Bronze"
+    },
+    {
+      "description": "Fully train an ally",
+      "is_missable": 0,
+      "is_spoiler": 0,
+      "name": "Front of the Pack",
+      "name_pt": "",
+      "tip": "Construa e evolua o Dojo no hideout, depois compre os upgrades de um aliado até Veteran.",
+      "trophy_code": "acsh_front_of_the_pack",
+      "type": "Bronze"
+    },
+    {
+      "description": "Master the way of the shinobi",
+      "is_missable": 0,
+      "is_spoiler": 0,
+      "name": "Art of Ninjutsu",
+      "name_pt": "",
+      "tip": "Com Naoe, compre as skills necessárias da árvore Shinobi; você precisará de Knowledge Rank alto.",
+      "trophy_code": "acsh_art_of_ninjutsu",
+      "type": "Bronze"
+    },
+    {
+      "description": "Master the way of the samurai",
+      "is_missable": 0,
+      "is_spoiler": 0,
+      "name": "Art of Kenjutsu",
+      "name_pt": "",
+      "tip": "Com Yasuke, compre as skills necessárias da árvore Samurai; algumas exigem side quests específicas.",
+      "trophy_code": "acsh_art_of_kenjutsu",
+      "type": "Bronze"
+    },
+    {
+      "description": "Engrave your first weapon",
+      "is_missable": 0,
+      "is_spoiler": 0,
+      "name": "Make it Personal",
+      "name_pt": "",
+      "tip": "Construa/evolua o Blacksmith no hideout e aplique uma engraving em qualquer arma.",
+      "trophy_code": "acsh_make_it_personal",
+      "type": "Bronze"
+    },
+    {
+      "description": "Equip legendary gear in all slots",
+      "is_missable": 0,
+      "is_spoiler": 0,
+      "name": "Better than a Bucket",
+      "name_pt": "",
+      "tip": "Equipe peças lendárias em todos os slots de equipamento de um personagem.",
+      "trophy_code": "acsh_better_than_a_bucket",
+      "type": "Bronze"
+    },
+    {
+      "description": "Find a legendary piece of gear of each type",
+      "is_missable": 0,
+      "is_spoiler": 0,
+      "name": "Limitless",
+      "name_pt": "",
+      "tip": "Obtenha uma peça lendária de cada tipo de equipamento/arma exigido para Naoe e Yasuke.",
+      "trophy_code": "acsh_limitless",
+      "type": "Prata"
+    },
+    {
+      "description": "Fully upgrade your tools and ammunition",
+      "is_missable": 0,
+      "is_spoiler": 0,
+      "name": "In Case of Trouble",
+      "name_pt": "",
+      "tip": "Compre todos os upgrades de Tools de Naoe e Bow/Teppo de Yasuke; alguns dependem de quests e Knowledge Rank.",
+      "trophy_code": "acsh_in_case_of_trouble",
+      "type": "Prata"
+    },
+    {
+      "description": "Fully upgrade your rations",
+      "is_missable": 0,
+      "is_spoiler": 0,
+      "name": "Suture Self",
+      "name_pt": "",
+      "tip": "Complete os requisitos de comida/buildings no hideout para maximizar as rações.",
+      "trophy_code": "acsh_suture_self",
+      "type": "Bronze"
+    },
+    {
+      "description": "Perform a landing roll",
+      "is_missable": 0,
+      "is_spoiler": 0,
+      "name": "Sometimes",
+      "name_pt": "",
+      "tip": "Com Naoe, compre Igan Roll e role ao cair de um telhado ou altura pequena.",
+      "trophy_code": "acsh_sometimes",
+      "type": "Bronze"
+    },
+    {
+      "description": "Escape conflict by using a breathing reed to hide in shallow water",
+      "is_missable": 0,
+      "is_spoiler": 0,
+      "name": "Reeding is Fundamental",
+      "name_pt": "",
+      "tip": "Com Naoe, compre Shallow Water Breathing e fuja de conflito ficando imóvel em água rasa.",
+      "trophy_code": "acsh_reeding_is_fundamental",
+      "type": "Bronze"
+    },
+    {
+      "description": "Distract the same enemy 3 times with shinobi bells",
+      "is_missable": 0,
+      "is_spoiler": 0,
+      "name": "Just Your Shadow",
+      "name_pt": "",
+      "tip": "Com Naoe, use Shinobi Bells três vezes no mesmo inimigo sem jogar várias ao mesmo tempo.",
+      "trophy_code": "acsh_just_your_shadow",
+      "type": "Bronze"
+    },
+    {
+      "description": "Stay airborne by swinging from one grappling hook point to another",
+      "is_missable": 0,
+      "is_spoiler": 0,
+      "name": "Hook, Line, and Swinger",
+      "name_pt": "",
+      "tip": "Use dois pontos de grappling hook em sequência sem tocar o chão; Kofun inicial ajuda.",
+      "trophy_code": "acsh_hook_line_and_swinger",
+      "type": "Bronze"
+    },
+    {
+      "description": "Perform a Leap of Faith from a grappling hook swing",
+      "is_missable": 0,
+      "is_spoiler": 0,
+      "name": "Acrobatics",
+      "name_pt": "",
+      "tip": "Balance em um grappling hook e salte para um feno alto o suficiente para ativar Leap of Faith.",
+      "trophy_code": "acsh_acrobatics",
+      "type": "Bronze"
+    },
+    {
+      "description": "Perform a leap of faith as Yasuke",
+      "is_missable": 0,
+      "is_spoiler": 0,
+      "name": "Leap of Fail",
+      "name_pt": "",
+      "tip": "Depois de liberar Yasuke, salte de um viewpoint para um haystack.",
+      "trophy_code": "acsh_leap_of_fail",
+      "type": "Bronze"
+    },
+    {
+      "description": "Perform your first assassination",
+      "is_missable": 0,
+      "is_spoiler": 0,
+      "name": "Adept Shinobi",
+      "name_pt": "",
+      "tip": "Faça sua primeira assassination com Naoe; normalmente vem no prólogo.",
+      "trophy_code": "acsh_adept_shinobi",
+      "type": "Bronze"
+    },
+    {
+      "description": "Assassinate an enemy through a shoji door",
+      "is_missable": 0,
+      "is_spoiler": 0,
+      "name": "Master Shinobi",
+      "name_pt": "",
+      "tip": "Com Naoe, compre Shoji Door Assassin e mate um inimigo através de uma porta shoji.",
+      "trophy_code": "acsh_master_shinobi",
+      "type": "Bronze"
+    },
+    {
+      "description": "Perform 5 assassinations in a row without being noticed or entering combat",
+      "is_missable": 0,
+      "is_spoiler": 0,
+      "name": "Unseen",
+      "name_pt": "",
+      "tip": "Com Naoe, faça cinco assassinatos seguidos sem ser vista ou entrar em combate.",
+      "trophy_code": "acsh_unseen",
+      "type": "Prata"
+    },
+    {
+      "description": "Assassinate a powerful guardian in one go",
+      "is_missable": 0,
+      "is_spoiler": 0,
+      "name": "Giant Slayer",
+      "name_pt": "",
+      "tip": "Ative o wanted/alarm bell para gerar um Guardian e faça uma assassination de surpresa; Guaranteed Assassination facilita.",
+      "trophy_code": "acsh_giant_slayer",
+      "type": "Bronze"
+    },
+    {
+      "description": "Perform your first Finisher as Yasuke",
+      "is_missable": 0,
+      "is_spoiler": 0,
+      "name": "Adept Samurai",
+      "name_pt": "",
+      "tip": "Use Yasuke em combate e finalize o último inimigo de um encontro.",
+      "trophy_code": "acsh_adept_samurai",
+      "type": "Bronze"
+    },
+    {
+      "description": "Parry an incoming projectile",
+      "is_missable": 0,
+      "is_spoiler": 0,
+      "name": "Master Samurai",
+      "name_pt": "",
+      "tip": "Com Yasuke, faça parry de uma flecha/projétil no momento do brilho.",
+      "trophy_code": "acsh_master_samurai",
+      "type": "Bronze"
+    },
+    {
+      "description": "Use Samurai Stand before performing a Finisher on an enemy",
+      "is_missable": 0,
+      "is_spoiler": 0,
+      "name": "Unstoppable",
+      "name_pt": "",
+      "tip": "Com Yasuke, desbloqueie Samurai Stand e faça um Finisher enquanto a habilidade está ativa.",
+      "trophy_code": "acsh_unstoppable",
+      "type": "Prata"
+    },
+    {
+      "description": "Kick an enemy from a high place",
+      "is_missable": 0,
+      "is_spoiler": 0,
+      "name": "This is Japan, Actually",
+      "name_pt": "",
+      "tip": "Com Yasuke, use War Kick em um inimigo perto de um penhasco/altura suficiente.",
+      "trophy_code": "acsh_this_is_japan_actually",
+      "type": "Bronze"
+    },
+    {
+      "description": "Perform a Finisher on an enemy that is both Poisoned and Dazed",
+      "is_missable": 0,
+      "is_spoiler": 0,
+      "name": "Overdesign III",
+      "name_pt": "",
+      "tip": "Aplique Poison e Daze no mesmo inimigo forte e execute um Finisher enquanto os dois status estão ativos.",
+      "trophy_code": "acsh_overdesign_iii",
+      "type": "Bronze"
+    },
+    {
+      "description": "Sheath your weapon immediately after an enemy dies from Bleed",
+      "is_missable": 0,
+      "is_spoiler": 0,
+      "name": "Final Hearing",
+      "name_pt": "",
+      "tip": "Mate um inimigo enquanto Bleed está ativo e guarde a arma imediatamente.",
+      "trophy_code": "acsh_final_hearing",
+      "type": "Bronze"
+    },
+    {
+      "description": "Shoot an enemy in the knee with an arrow",
+      "is_missable": 0,
+      "is_spoiler": 0,
+      "name": "Adventurer",
+      "name_pt": "",
+      "tip": "Com Yasuke e um bow equipado, acerte uma flecha no joelho de um inimigo.",
+      "trophy_code": "acsh_adventurer",
+      "type": "Bronze"
+    },
+    {
+      "description": "Complete an Objective Board",
+      "is_missable": 0,
+      "is_spoiler": 1,
+      "name": "Mortal Reminder",
+      "name_pt": "",
+      "tip": "Complete todos os objetivos de uma board; a campanha obriga pelo menos uma durante o Ato 2.",
+      "trophy_code": "acsh_mortal_reminder",
+      "type": "Prata"
+    },
+    {
+      "description": "Defeat the final enemy in the tournament",
+      "is_missable": 0,
+      "is_spoiler": 0,
+      "name": "Test Your Might",
+      "name_pt": "",
+      "tip": "Complete a quest The Tournament e vença os cinco oponentes até o inimigo final.",
+      "trophy_code": "acsh_test_your_might",
+      "type": "Prata"
+    },
+    {
+      "description": "Complete your first kofun",
+      "is_missable": 0,
+      "is_spoiler": 0,
+      "name": "Kofun Raider",
+      "name_pt": "",
+      "tip": "Entre em um Kofun, chegue ao final e abra o baú principal.",
+      "trophy_code": "acsh_kofun_raider",
+      "type": "Bronze"
+    },
+    {
+      "description": "Complete your first kata",
+      "is_missable": 0,
+      "is_spoiler": 0,
+      "name": "Good Form",
+      "name_pt": "",
+      "tip": "Complete seu primeiro Kata.",
+      "trophy_code": "acsh_good_form",
+      "type": "Bronze"
+    },
+    {
+      "description": "Complete all Kuji-kiri",
+      "is_missable": 0,
+      "is_spoiler": 0,
+      "name": "Zen Master",
+      "name_pt": "",
+      "tip": "Complete todos os Kuji-kiri exigidos na lista base.",
+      "trophy_code": "acsh_zen_master",
+      "type": "Prata"
+    },
+    {
+      "description": "Complete all legendary sumi-e",
+      "is_missable": 0,
+      "is_spoiler": 0,
+      "name": "A Rare Occurrence",
+      "name_pt": "",
+      "tip": "Encontre e complete todos os Legendary Sumi-e.",
+      "trophy_code": "acsh_a_rare_occurrence",
+      "type": "Prata"
+    },
+    {
+      "description": "Complete a collection",
+      "is_missable": 0,
+      "is_spoiler": 0,
+      "name": "Collector",
+      "name_pt": "",
+      "tip": "Complete uma coleção, como Tea Bowls of Rikyu.",
+      "trophy_code": "acsh_collector",
+      "type": "Prata"
+    },
+    {
+      "description": "Unlock the Hideout",
+      "is_missable": 0,
+      "is_spoiler": 1,
+      "name": "Sole Sanctum",
+      "name_pt": "",
+      "tip": "Desbloqueie o hideout durante o Ato 1.",
+      "trophy_code": "acsh_sole_sanctum",
+      "type": "Bronze"
+    },
+    {
+      "description": "Add a sumi-e to the Hideout",
+      "is_missable": 0,
+      "is_spoiler": 0,
+      "name": "Chase the Morning",
+      "name_pt": "",
+      "tip": "Colete um Sumi-e e coloque-o como decoração no hideout.",
+      "trophy_code": "acsh_chase_the_morning",
+      "type": "Bronze"
+    },
+    {
+      "description": "Fully upgrade a building in the Hideout",
+      "is_missable": 0,
+      "is_spoiler": 0,
+      "name": "Against Wood and Stone",
+      "name_pt": "",
+      "tip": "Melhore completamente qualquer prédio principal do hideout.",
+      "trophy_code": "acsh_against_wood_and_stone",
+      "type": "Bronze"
+    },
+    {
+      "description": "Adopt a pet",
+      "is_missable": 0,
+      "is_spoiler": 0,
+      "name": "Everybody Benefits!",
+      "name_pt": "",
+      "tip": "Pet ou desenhe um animal compatível e coloque-o no hideout.",
+      "trophy_code": "acsh_everybody_benefits",
+      "type": "Bronze"
+    },
+    {
+      "description": "Reach the highest point on the map",
+      "is_missable": 0,
+      "is_spoiler": 0,
+      "name": "Happy Place",
+      "name_pt": "",
+      "tip": "Vá ao viewpoint mais alto em Yamato e sincronize/alcance o topo.",
+      "trophy_code": "acsh_happy_place",
+      "type": "Bronze"
+    },
+    {
+      "description": "Visit every province on the map",
+      "is_missable": 0,
+      "is_spoiler": 0,
+      "name": "Pathfinder",
+      "name_pt": "",
+      "tip": "Visite as 9 províncias principais: Izumi Settsu, Yamashiro, Omi, Iga, Harima, Yamato, Wakasa, Kii e Tamba.",
+      "trophy_code": "acsh_pathfinder",
+      "type": "Bronze"
+    },
+    {
+      "description": "Gather information using a scout",
+      "is_missable": 0,
+      "is_spoiler": 0,
+      "name": "Scouting Mission",
+      "name_pt": "",
+      "tip": "Atenção: faça com Guided Exploration Mode OFF. Use um scout na objective board depois de liberar o hideout; depois pode religar o Guided.",
+      "trophy_code": "acsh_scouting_mission",
+      "type": "Bronze"
+    },
+    {
+      "description": "Complete a contract in each province",
+      "is_missable": 0,
+      "is_spoiler": 0,
+      "name": "Would You Kindly?",
+      "name_pt": "",
+      "tip": "Construa Kakurega, compre pelo menos um em cada província e conclua um contrato por província.",
+      "trophy_code": "acsh_would_you_kindly",
+      "type": "Bronze"
+    },
+    {
+      "description": "Look for treasure behind the waterfall in the Hideout",
+      "is_missable": 0,
+      "is_spoiler": 0,
+      "name": "Made You Look!",
+      "name_pt": "",
+      "tip": "No hideout, atravesse a cachoeira/área secreta atrás da água para encontrar o ponto do troféu.",
+      "trophy_code": "acsh_made_you_look",
+      "type": "Prata"
+    }
+  ]
+}

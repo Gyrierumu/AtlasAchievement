@@ -1,0 +1,748 @@
+{
+  "game": {
+    "avoid_if": "Evite se você não quer repetir capítulos, farmar skills/medalhas ou jogar quatro campanhas completas.",
+    "before_you_start": "Não trate parceiro humano disponível como requisito obrigatório. Use checklist por capítulo/personagem para serpent emblems e não gaste skill points sem plano.",
+    "best_for": "Ideal para quem quer uma platina de ação longa, com várias campanhas, parceiro opcional e muito cleanup por capítulo.",
+    "cleanup_advice": "Use chapter select para troféus situacionais, emblemas restantes, Professional e grind de Mad Skillz, kills, títulos e medalhas.",
+    "cover_image": "https://cdn.cloudflare.steamstatic.com/steam/apps/221040/library_600x900.jpg",
+    "coverage_level": "strong",
+    "created_at": "2026-05-09 19:53:28",
+    "difficulty": 5,
+    "difficulty_reason": "A dificuldade vem do volume das quatro campanhas, Professional, QTEs, objetivos situacionais e grind final de skills/medalhas.",
+    "dlc_scope": "Guia focado na lista base de Resident Evil 6. DLCs/modos extras e listas adicionais ficam fora da platina base deste guia.",
+    "editorial_notes": null,
+    "editorial_review_status": null,
+    "editorial_status": "published",
+    "first_run_advice": "Complete Leon, Chris, Jake e Ada em Amateur ou Normal, coletando serpent emblems e acumulando skill points antes de subir a dificuldade.",
+    "grind_summary": "Grind alto para skill points, Mad Skillz, títulos, medalhas, 500 zombies, 500 J'avo, chrysalids e kills por arma.",
+    "guide_avoid": null,
+    "guide_best_moment": null,
+    "guide_dlc": null,
+    "guide_grind": null,
+    "guide_ideal": null,
+    "guide_online": null,
+    "guide_runs": null,
+    "image": "https://cdn.cloudflare.steamstatic.com/steam/apps/221040/header.jpg",
+    "is_verified": 0,
+    "last_reviewed_at": null,
+    "missable": "A platina base não tem troféus realmente perdíveis, porque chapter select permite voltar aos capítulos. O ideal é tratar a primeira passada pelas quatro campanhas como aprendizado, coleta de serpent emblems e acúmulo de skill points antes do Professional e do grind de skills.",
+    "missable_summary": "Sem perdíveis definitivos na lista base graças ao chapter select, mas serpent emblems e objetivos situacionais devem ser acompanhados por capítulo/personagem.",
+    "name": "Resident Evil 6",
+    "online_summary": "Não há exigência online, multiplayer ou PS+ para a platina base. As campanhas aceitam parceiro humano, mas a lista pode ser planejada solo com IA; trate companhia humana como ajuda, não requisito.",
+    "quality_warnings": null,
+    "reviewed_by": null,
+    "runs_summary": "Quatro campanhas completas, coleta de serpent emblems, cleanup por chapter select, Professional e grind de skills/títulos/medalhas.",
+    "slug": "resident-evil-6",
+    "time": "40-60 horas",
+    "time_bucket": "medium",
+    "time_max_hours": 60,
+    "time_min_hours": 40,
+    "time_reason": "A faixa de 40-60 horas considera quatro campanhas, chapter select, serpent emblems, Professional, cleanup e grind de skills/títulos.",
+    "time_sort_hours": 40,
+    "updated_at": "2026-06-27 02:36:58",
+    "verification_note": "Guia normalizado a partir do dado seed com checklist e roadmap; aguardando revisão editorial manual final.",
+    "verification_status": "review",
+    "walkthrough": null
+  },
+  "redirects": [],
+  "roadmaps": [
+    {
+      "content": "Complete o prólogo e jogue as campanhas de Leon, Chris, Jake e Ada em Amateur ou Normal. A lista base pode ser planejada solo com IA; parceiro humano ajuda, mas não é tratado aqui como requisito obrigatório.",
+      "step_order": 1
+    },
+    {
+      "content": "Durante as campanhas, já colete serpent emblems com checklist por capítulo e personagem. Alguns emblemas dependem de rotas/personagens específicos, então marcar o que já foi pego economiza muito retrabalho.",
+      "step_order": 2
+    },
+    {
+      "content": "Depois de concluir as quatro campanhas, compre uma munição infinita útil e prepare skills de dano/defesa para a run em Professional. Os troféus de dificuldade acumulam.",
+      "step_order": 3
+    },
+    {
+      "content": "Use chapter select para limpar troféus situacionais: stealth kills, coup de grâce, counters, VTOL sem dano, cathedral survivors, aircraft carrier sem ser visto e ações com armas/personagens específicos.",
+      "step_order": 4
+    },
+    {
+      "content": "Finalize o grind de Mad Skillz, títulos, medalhas, 500 zombies, 500 J'avo, chrysalids e kills por arma. Essa é a parte mais longa e fica melhor quando o restante já está fechado.",
+      "step_order": 5
+    }
+  ],
+  "schemaVersion": 1,
+  "seedExtras": {
+    "aliases": [],
+    "attentionPoints": [
+      {
+        "detail": "Leon, Chris, Jake e Ada têm cinco capítulos cada. A platina só anda de verdade quando todas as campanhas estão fechadas.",
+        "tags": [
+          "Campanha",
+          "Tempo"
+        ],
+        "title": "Quatro campanhas completas"
+      },
+      {
+        "detail": "Professional é requisito da lista base. Entre com skill points, skills defensivas/ofensivas e conhecimento dos QTEs para reduzir mortes.",
+        "tags": [
+          "Professional",
+          "Dificuldade"
+        ],
+        "title": "Professional obrigatório"
+      },
+      {
+        "detail": "Heirlooms exige todos os Serpent Emblems. Use checklist por capítulo e personagem para evitar voltar sem saber o que falta.",
+        "tags": [
+          "Coletável",
+          "Serpent Emblems"
+        ],
+        "title": "Serpent Emblems"
+      },
+      {
+        "detail": "Mad Skillz é um dos maiores grinds da platina. Não gaste skill points sem plano e deixe a compra final para depois das campanhas.",
+        "tags": [
+          "Grind",
+          "Skill Points"
+        ],
+        "title": "Mad Skillz e skill points"
+      },
+      {
+        "detail": "Covered in Brass pede 150 medalhas diferentes. Varie personagens, armas, ações e capítulos para não repetir sempre as mesmas medalhas.",
+        "tags": [
+          "Medals",
+          "Grind"
+        ],
+        "title": "150 medalhas"
+      },
+      {
+        "detail": "Dez kills com cada arma precisam de controle manual. Faça checklist, especialmente para as armas exclusivas de personagem.",
+        "tags": [
+          "Armas",
+          "Checklist"
+        ],
+        "title": "Weapons Master"
+      },
+      {
+        "detail": "VTOL sem dano, sobreviventes da catedral, helicóptero com Magnum e ponte do porta-aviões exigem trechos específicos e podem ser limpos por chapter select.",
+        "tags": [
+          "Capítulo específico",
+          "Atenção"
+        ],
+        "title": "Capítulos específicos"
+      },
+      {
+        "detail": "A campanha aceita parceiro humano, mas a platina base pode ser feita solo com IA. Co-op ajuda, não muda as flags obrigatórias do guia.",
+        "tags": [
+          "Offline",
+          "Sem coop"
+        ],
+        "title": "Co-op é opcional"
+      },
+      {
+        "detail": "Agent Hunt, Mercenaries e modos extras do relançamento não entram na platina base coberta por este guia.",
+        "tags": [
+          "DLC",
+          "Fora da platina"
+        ],
+        "title": "DLC e Agent Hunt fora da platina"
+      },
+      {
+        "detail": "A ausência de perdíveis rígidos não elimina planejamento. Chapter select corrige pendências, mas sem checklist o cleanup fica longo.",
+        "tags": [
+          "Cleanup",
+          "Chapter Select"
+        ],
+        "title": "Cleanup por chapter select"
+      }
+    ],
+    "checklist": [
+      "Planejar a lista base da platina com 51 troféus, sem incluir DLC.",
+      "Completar o prólogo e as campanhas de Leon, Chris, Jake e Ada em Amateur ou Normal.",
+      "Marcar Serpent Emblems por capítulo e personagem desde a primeira passagem.",
+      "Guardar skill points para as skills que sobem de nível e para o troféu Mad Skillz.",
+      "Preparar uma run em Professional com skills de dano/defesa e armas familiares.",
+      "Usar chapter select para VTOL sem dano, sobreviventes da catedral, stealth da Ada, Magnum no helicóptero e outros objetivos específicos.",
+      "Fazer checklist de armas para garantir dez kills com cada uma.",
+      "Fechar 500 zombies, 500 J'avo e 100 inimigos vindos de chrysalid no grind final.",
+      "Completar 150 medalhas e títulos restantes antes da platina.",
+      "Manter Agent Hunt, Mercenaries e DLC fora do planejamento da platina base."
+    ],
+    "faq": [
+      {
+        "answer": "Não. A platina base pode ser feita offline e não exige PS+, multiplayer, Agent Hunt ou modos extras.",
+        "question": "Resident Evil 6 tem troféu online obrigatório para a platina?"
+      },
+      {
+        "answer": "Não. Co-op humano pode facilitar resgates e combate, mas a lista base pode ser planejada solo com IA.",
+        "question": "Preciso jogar em co-op?"
+      },
+      {
+        "answer": "Não. Este guia cobre a lista base de 51 troféus; DLCs e modos extras ficam fora da platina base.",
+        "question": "DLC é necessário para a platina?"
+      },
+      {
+        "answer": "Não há perdíveis rígidos na lista base porque chapter select permite voltar aos capítulos. O ideal é usar checklist para não perder tempo.",
+        "question": "Há troféus perdíveis?"
+      },
+      {
+        "answer": "Você precisa completar as quatro campanhas e uma passagem em Professional. Os troféus de dificuldade acumulam, mas uma primeira campanha em dificuldade baixa ajuda a aprender rotas e juntar recursos.",
+        "question": "Quantas runs são necessárias?"
+      },
+      {
+        "answer": "Sim. Leave It to the Pro exige completar o jogo inteiro em Professional, e isso cobre as dificuldades inferiores se todas as campanhas forem concluídas nessa dificuldade.",
+        "question": "Professional é obrigatório?"
+      },
+      {
+        "answer": "Não nesta lista base. O foco da platina é Professional; No Hope não entra como requisito do guia.",
+        "question": "No Hope é obrigatório para a platina base?"
+      },
+      {
+        "answer": "Mad Skillz costuma ser o maior peso, junto de 150 medalhas, títulos, kills por arma, 500 zombies, 500 J'avo e chrysalids.",
+        "question": "Qual é o maior grind da platina?"
+      },
+      {
+        "answer": "Use checklist por capítulo e personagem desde a primeira passagem. Alguns emblemas dependem de rota ou personagem, então controlar cedo economiza replay.",
+        "question": "Como lidar com Serpent Emblems?"
+      },
+      {
+        "answer": "Sim. Ele permite voltar para troféus situacionais, emblemas restantes, kills específicas e trechos como VTOL, sobreviventes da catedral e stealth no porta-aviões.",
+        "question": "Chapter select ajuda no cleanup?"
+      },
+      {
+        "answer": "O relançamento de PS4 inclui conteúdo extra e listas adicionais, mas a platina base coberta aqui continua separada desses troféus de DLC/modos extras.",
+        "question": "Qual a diferença entre base game e DLC no PS4?"
+      }
+    ],
+    "note": "Campos exportados para auditoria. O SQLite atual nao possui colunas nativas para todos esses extras; a importacao preserva o que o banco suporta.",
+    "quickDecision": {
+      "firstAction": "Comece em Amateur ou Normal, jogue as quatro campanhas, marque Serpent Emblems por capítulo e guarde skill points para o Professional e Mad Skillz.",
+      "recommendation": "É uma boa platina para fãs da série, mas não é indicada para quem busca uma experiência curta ou sem repetição de capítulos.",
+      "risk": "O principal risco é deixar Serpent Emblems, medalhas, armas e skill points sem controle e transformar o cleanup em repetição cega.",
+      "summary": "Vale platinar Resident Evil 6 se você gosta de ação, campanhas longas, chapter select e grind moderado. A platina base não exige online, co-op nem DLC, mas cobra fechar Leon, Chris, Jake e Ada, concluir o Professional, coletar todos os Serpent Emblems, farmar skill points para Mad Skillz e limpar vários troféus situacionais."
+    },
+    "seo": {
+      "description": "Guia completo da platina base de Resident Evil 6 com roadmap, checklist, Professional, Serpent Emblems, Mad Skillz, grind, co-op opcional e diferenças entre base game e DLC.",
+      "keywords": [
+        "Resident Evil 6 troféus",
+        "Resident Evil 6 platina",
+        "Resident Evil 6 roadmap",
+        "Resident Evil 6 Serpent Emblems",
+        "Resident Evil 6 Mad Skillz",
+        "Resident Evil 6 Professional",
+        "Resident Evil 6 DLC"
+      ],
+      "title": "Guia de Platina Resident Evil 6 — Troféus, Roadmap e Dicas"
+    },
+    "tags": []
+  },
+  "slug": "resident-evil-6",
+  "trophies": [
+    {
+      "description": "Congratulations! You've overcome all your fears in RESIDENT EVIL 6!",
+      "is_missable": 0,
+      "is_spoiler": 0,
+      "name": "RESIDENT EVIL 6 Platinum Trophy",
+      "name_pt": "Troféu de Platina de RESIDENT EVIL 6",
+      "tip": "A platina exige fechar as quatro campanhas, limpar dificuldades, emblemas, skills, títulos, medalhas e troféus situacionais.",
+      "trophy_code": "re6_platinum",
+      "type": "Platina"
+    },
+    {
+      "description": "Complete the tutorial.",
+      "is_missable": 0,
+      "is_spoiler": 0,
+      "name": "The Longest Night",
+      "name_pt": "A Noite Mais Longa",
+      "tip": "Troféu automático ao concluir o prólogo.",
+      "trophy_code": "re6_longest_night",
+      "type": "Bronze"
+    },
+    {
+      "description": "Complete Chapter 1 in Leon's campaign.",
+      "is_missable": 0,
+      "is_spoiler": 0,
+      "name": "Gone to Hell",
+      "name_pt": "Foi para o Inferno",
+      "tip": "Relacionado à história da campanha do Leon.",
+      "trophy_code": "re6_gone_to_hell",
+      "type": "Bronze"
+    },
+    {
+      "description": "Complete Chapter 2 in Leon's campaign.",
+      "is_missable": 0,
+      "is_spoiler": 0,
+      "name": "Buried Secrets",
+      "name_pt": "Segredos Enterrados",
+      "tip": "Relacionado à história da campanha do Leon.",
+      "trophy_code": "re6_buried_secrets",
+      "type": "Bronze"
+    },
+    {
+      "description": "Complete Chapter 3 in Leon's campaign.",
+      "is_missable": 0,
+      "is_spoiler": 0,
+      "name": "Get on the Plane",
+      "name_pt": "Entre no Avião",
+      "tip": "Relacionado à história da campanha do Leon.",
+      "trophy_code": "re6_get_on_plane",
+      "type": "Bronze"
+    },
+    {
+      "description": "Complete Chapter 4 in Leon's campaign.",
+      "is_missable": 0,
+      "is_spoiler": 0,
+      "name": "Big Trouble in China",
+      "name_pt": "Grande Confusão na China",
+      "tip": "Relacionado à história da campanha do Leon.",
+      "trophy_code": "re6_big_trouble_china",
+      "type": "Bronze"
+    },
+    {
+      "description": "Complete Chapter 5 in Leon's campaign.",
+      "is_missable": 0,
+      "is_spoiler": 1,
+      "name": "The Trouble with Women",
+      "name_pt": "Problemas com Mulheres",
+      "tip": "Relacionado à conclusão da campanha do Leon.",
+      "trophy_code": "re6_trouble_with_women",
+      "type": "Bronze"
+    },
+    {
+      "description": "Complete Chapter 1 in Chris' campaign.",
+      "is_missable": 0,
+      "is_spoiler": 0,
+      "name": "Rescue the Hostages",
+      "name_pt": "Resgate os Reféns",
+      "tip": "Relacionado à história da campanha do Chris.",
+      "trophy_code": "re6_rescue_hostages",
+      "type": "Bronze"
+    },
+    {
+      "description": "Complete Chapter 2 in Chris' campaign.",
+      "is_missable": 0,
+      "is_spoiler": 0,
+      "name": "Tragedy in Europe",
+      "name_pt": "Tragédia na Europa",
+      "tip": "Relacionado à história da campanha do Chris.",
+      "trophy_code": "re6_tragedy_europe",
+      "type": "Bronze"
+    },
+    {
+      "description": "Complete Chapter 3 in Chris' campaign.",
+      "is_missable": 0,
+      "is_spoiler": 0,
+      "name": "After Her!",
+      "name_pt": "Atrás Dela!",
+      "tip": "Relacionado à história da campanha do Chris.",
+      "trophy_code": "re6_after_her",
+      "type": "Bronze"
+    },
+    {
+      "description": "Complete Chapter 4 in Chris' campaign.",
+      "is_missable": 0,
+      "is_spoiler": 1,
+      "name": "There's Always Hope",
+      "name_pt": "Sempre Há Esperança",
+      "tip": "Relacionado à história da campanha do Chris.",
+      "trophy_code": "re6_always_hope",
+      "type": "Bronze"
+    },
+    {
+      "description": "Complete Chapter 5 in Chris' campaign.",
+      "is_missable": 0,
+      "is_spoiler": 1,
+      "name": "Duty Calls",
+      "name_pt": "O Dever Chama",
+      "tip": "Relacionado à conclusão da campanha do Chris.",
+      "trophy_code": "re6_duty_calls",
+      "type": "Bronze"
+    },
+    {
+      "description": "Complete Chapter 1 in Jake's campaign.",
+      "is_missable": 0,
+      "is_spoiler": 0,
+      "name": "Money Talks",
+      "name_pt": "Dinheiro Fala",
+      "tip": "Relacionado à história da campanha do Jake.",
+      "trophy_code": "re6_money_talks",
+      "type": "Bronze"
+    },
+    {
+      "description": "Complete Chapter 2 in Jake's campaign.",
+      "is_missable": 0,
+      "is_spoiler": 0,
+      "name": "A Revolting Development",
+      "name_pt": "Um Desenvolvimento Revoltante",
+      "tip": "Relacionado à história da campanha do Jake.",
+      "trophy_code": "re6_revolting_development",
+      "type": "Bronze"
+    },
+    {
+      "description": "Complete Chapter 3 in Jake's campaign.",
+      "is_missable": 0,
+      "is_spoiler": 0,
+      "name": "Let's Blow This Joint",
+      "name_pt": "Vamos Sair Daqui",
+      "tip": "Relacionado à história da campanha do Jake.",
+      "trophy_code": "re6_blow_joint",
+      "type": "Bronze"
+    },
+    {
+      "description": "Complete Chapter 4 in Jake's campaign.",
+      "is_missable": 0,
+      "is_spoiler": 1,
+      "name": "Still on the Run",
+      "name_pt": "Ainda em Fuga",
+      "tip": "Relacionado à história da campanha do Jake.",
+      "trophy_code": "re6_still_run",
+      "type": "Bronze"
+    },
+    {
+      "description": "Complete Chapter 5 in Jake's campaign.",
+      "is_missable": 0,
+      "is_spoiler": 1,
+      "name": "See You Around",
+      "name_pt": "Vejo Você por Aí",
+      "tip": "Relacionado à conclusão da campanha do Jake.",
+      "trophy_code": "re6_see_you_around",
+      "type": "Bronze"
+    },
+    {
+      "description": "Complete Chapter 1 in Ada's campaign.",
+      "is_missable": 0,
+      "is_spoiler": 1,
+      "name": "I Spy",
+      "name_pt": "Eu Espiono",
+      "tip": "Relacionado à campanha da Ada.",
+      "trophy_code": "re6_i_spy",
+      "type": "Bronze"
+    },
+    {
+      "description": "Complete Chapter 2 in Ada's campaign.",
+      "is_missable": 0,
+      "is_spoiler": 1,
+      "name": "Counterintelligence",
+      "name_pt": "Contrainteligência",
+      "tip": "Relacionado à campanha da Ada.",
+      "trophy_code": "re6_counterintelligence",
+      "type": "Bronze"
+    },
+    {
+      "description": "Complete Chapter 3 in Ada's campaign.",
+      "is_missable": 0,
+      "is_spoiler": 1,
+      "name": "This Takes Me Back",
+      "name_pt": "Isso Me Traz Lembranças",
+      "tip": "Relacionado à campanha da Ada.",
+      "trophy_code": "re6_takes_me_back",
+      "type": "Bronze"
+    },
+    {
+      "description": "Complete Chapter 4 in Ada's campaign.",
+      "is_missable": 0,
+      "is_spoiler": 1,
+      "name": "Ada's Demise",
+      "name_pt": "A Derrota de Ada",
+      "tip": "Relacionado à campanha da Ada.",
+      "trophy_code": "re6_ada_demise",
+      "type": "Bronze"
+    },
+    {
+      "description": "Complete Chapter 5 in Ada's campaign.",
+      "is_missable": 0,
+      "is_spoiler": 1,
+      "name": "What's Next?",
+      "name_pt": "E Agora?",
+      "tip": "Relacionado à conclusão da campanha da Ada.",
+      "trophy_code": "re6_whats_next",
+      "type": "Bronze"
+    },
+    {
+      "description": "Complete the entire game on Amatéur.",
+      "is_missable": 0,
+      "is_spoiler": 0,
+      "name": "Green around the Ears",
+      "name_pt": "Verde Atrás das Orelhas",
+      "tip": "Os troféus de dificuldade acumulam; Professional destrava os inferiores se tudo for concluído nessa dificuldade.",
+      "trophy_code": "re6_green_ears",
+      "type": "Bronze"
+    },
+    {
+      "description": "Complete the entire game on Normal.",
+      "is_missable": 0,
+      "is_spoiler": 0,
+      "name": "Normal Is Good",
+      "name_pt": "Normal é Bom",
+      "tip": "Pode ser sua primeira passada completa para aprender rotas e juntar skill points.",
+      "trophy_code": "re6_normal_good",
+      "type": "Prata"
+    },
+    {
+      "description": "Complete the entire game on Veteran.",
+      "is_missable": 0,
+      "is_spoiler": 0,
+      "name": "Back in My Day",
+      "name_pt": "No Meu Tempo",
+      "tip": "Boa etapa antes do Professional se quiser uma progressão gradual.",
+      "trophy_code": "re6_back_my_day",
+      "type": "Prata"
+    },
+    {
+      "description": "Complete the entire game on Professional.",
+      "is_missable": 0,
+      "is_spoiler": 0,
+      "name": "Leave It to the Pro",
+      "name_pt": "Deixe com o Profissional",
+      "tip": "Entre com skill points, armas familiares e, se possível, munição infinita destravada para reduzir a pressão.",
+      "trophy_code": "re6_leave_pro",
+      "type": "Ouro"
+    },
+    {
+      "description": "Customize your dog tags.",
+      "is_missable": 0,
+      "is_spoiler": 0,
+      "name": "Check Out My Dogs",
+      "name_pt": "Olhe Minhas Dog Tags",
+      "tip": "Entre no menu de dog tags e personalize templaté, emblema ou título.",
+      "trophy_code": "re6_check_dogs",
+      "type": "Bronze"
+    },
+    {
+      "description": "Earn 10 different titles.",
+      "is_missable": 0,
+      "is_spoiler": 0,
+      "name": "Titular Achievement",
+      "name_pt": "Conquista Titular",
+      "tip": "Vem naturalmente com progresso e ações variadas; depois abra a customização para confirmar.",
+      "trophy_code": "re6_titular",
+      "type": "Bronze"
+    },
+    {
+      "description": "Purchase one skill.",
+      "is_missable": 0,
+      "is_spoiler": 0,
+      "name": "One Is Better Than None",
+      "name_pt": "Um é Melhor que Nenhum",
+      "tip": "Compre qualquer skill após um capítulo.",
+      "trophy_code": "re6_one_skill",
+      "type": "Bronze"
+    },
+    {
+      "description": "Max out all the skills that allow you to level up.",
+      "is_missable": 0,
+      "is_spoiler": 0,
+      "name": "Mad Skillz",
+      "name_pt": "Habilidades no Máximo",
+      "tip": "É o maior grind da platina. Guarde skill points e deixe a compra final para depois das campanhas.",
+      "trophy_code": "re6_mad_skillz",
+      "type": "Ouro"
+    },
+    {
+      "description": "Use a stealth attack to take down five enemies.",
+      "is_missable": 0,
+      "is_spoiler": 0,
+      "name": "Silent Killer",
+      "name_pt": "Assassino Silencioso",
+      "tip": "Ada e trechos com inimigos distraídos facilitam bastante.",
+      "trophy_code": "re6_silent_killer",
+      "type": "Bronze"
+    },
+    {
+      "description": "Perform a coup de grâce on ten enemies.",
+      "is_missable": 0,
+      "is_spoiler": 0,
+      "name": "Finish What You Start",
+      "name_pt": "Termine o que Começou",
+      "tip": "Atire nas pernas para ajoelhar zumbis e finalize com ataque corpo a corpo.",
+      "trophy_code": "re6_finish_start",
+      "type": "Bronze"
+    },
+    {
+      "description": "Counter an enemy's attack three times in row.",
+      "is_missable": 0,
+      "is_spoiler": 0,
+      "name": "Bob and Weave",
+      "name_pt": "Esquiva e Contra-ataque",
+      "tip": "Treine contra inimigos previsíveis em dificuldade baixa.",
+      "trophy_code": "re6_bob_weave",
+      "type": "Bronze"
+    },
+    {
+      "description": "Defeat an enemy while dying, then recover without any help.",
+      "is_missable": 0,
+      "is_spoiler": 0,
+      "name": "Down, Not Out",
+      "name_pt": "Caído, Mas Não Fora",
+      "tip": "Faça em dificuldade baixa deixando um inimigo fraco perto para finalizar no estado dying.",
+      "trophy_code": "re6_down_not_out",
+      "type": "Bronze"
+    },
+    {
+      "description": "Help or rescue your partner ten times.",
+      "is_missable": 0,
+      "is_spoiler": 0,
+      "name": "Lifesaver",
+      "name_pt": "Salva-vidas",
+      "tip": "Sai naturalmente com parceiro humano ou deixando o parceiro entrar em perigo controlado.",
+      "trophy_code": "re6_lifesaver",
+      "type": "Bronze"
+    },
+    {
+      "description": "Use all the weapons in the game and kill ten enemies with each of them.",
+      "is_missable": 0,
+      "is_spoiler": 0,
+      "name": "Weapons Master",
+      "name_pt": "Mestre das Armas",
+      "tip": "Faça checklist por arma para não perder tempo sem saber qual ainda falta.",
+      "trophy_code": "re6_weapons_master",
+      "type": "Prata"
+    },
+    {
+      "description": "Knock ten enemies off a high place.",
+      "is_missable": 0,
+      "is_spoiler": 0,
+      "name": "Give a Little Push",
+      "name_pt": "Dê um Empurrãozinho",
+      "tip": "Procure varandas, escadas e bordas nas campanhas para adiantar a contagem.",
+      "trophy_code": "re6_little_push",
+      "type": "Bronze"
+    },
+    {
+      "description": "Earn a level-four title.",
+      "is_missable": 0,
+      "is_spoiler": 0,
+      "name": "Rising Up",
+      "name_pt": "Ascensão",
+      "tip": "Use repetição de ações específicas até evoluir um título ao nível 4.",
+      "trophy_code": "re6_rising_up",
+      "type": "Prata"
+    },
+    {
+      "description": "Collect 3 figures.",
+      "is_missable": 0,
+      "is_spoiler": 0,
+      "name": "They're ACTION Figures!",
+      "name_pt": "Elas São Figures de Ação!",
+      "tip": "As figuras vêm com emblemas e medalhas; pegue três para destravar rápido.",
+      "trophy_code": "re6_action_figures",
+      "type": "Bronze"
+    },
+    {
+      "description": "Defeat 20 enemies with the Hydra using a quick shot.",
+      "is_missable": 0,
+      "is_spoiler": 0,
+      "name": "Stuntman",
+      "name_pt": "Dublê",
+      "tip": "Faça com Helena usando quick shot em grupos de inimigos fracos.",
+      "trophy_code": "re6_stuntman",
+      "type": "Bronze"
+    },
+    {
+      "description": "Take down an enemy from 50 meters away with a headshot using the thermal scope.",
+      "is_missable": 0,
+      "is_spoiler": 0,
+      "name": "Bring the Heat",
+      "name_pt": "Traga o Calor",
+      "tip": "Use o rifle com thermal scope em um trecho aberto e mantenha distância real.",
+      "trophy_code": "re6_bring_heat",
+      "type": "Bronze"
+    },
+    {
+      "description": "Defeat ten enemies with a stun rod charge attack.",
+      "is_missable": 0,
+      "is_spoiler": 0,
+      "name": "High Voltage",
+      "name_pt": "Alta Voltagem",
+      "tip": "Use Sherry e repita encontros com inimigos frágeis.",
+      "trophy_code": "re6_high_voltage",
+      "type": "Bronze"
+    },
+    {
+      "description": "Defeat 500 zombies.",
+      "is_missable": 0,
+      "is_spoiler": 0,
+      "name": "Zombie Massacre",
+      "name_pt": "Massacre de Zumbis",
+      "tip": "A campanha do Leon ajuda a acumular essa contagem naturalmente.",
+      "trophy_code": "re6_zombie_massacre",
+      "type": "Bronze"
+    },
+    {
+      "description": "Defeat 500 J'avo.",
+      "is_missable": 0,
+      "is_spoiler": 0,
+      "name": "J'avo Genocide",
+      "name_pt": "Genocídio J'avo",
+      "tip": "Chris e Jake concentram muitos J’avo; use replays de capítulos para fechar o grind.",
+      "trophy_code": "re6_javo_genocide",
+      "type": "Bronze"
+    },
+    {
+      "description": "Defeat 100 enemies that have come out of a chrysalid.",
+      "is_missable": 0,
+      "is_spoiler": 0,
+      "name": "B.O.W.s Are Ugly",
+      "name_pt": "B.O.W.s São Feios",
+      "tip": "Um grind específico; repita capítulos com chrysalids para acelerar.",
+      "trophy_code": "re6_bows_ugly",
+      "type": "Prata"
+    },
+    {
+      "description": "Rescue two female survivors at the cathedral.",
+      "is_missable": 0,
+      "is_spoiler": 1,
+      "name": "I Prefer Them Alive",
+      "name_pt": "Prefiro Elas Vivas",
+      "tip": "Troféu situacional na campanha do Leon.",
+      "trophy_code": "re6_prefer_alive",
+      "type": "Bronze"
+    },
+    {
+      "description": "Pilot the VTOL without getting a scratch on it.",
+      "is_missable": 0,
+      "is_spoiler": 1,
+      "name": "Flying Ace",
+      "name_pt": "Ás Voador",
+      "tip": "Faça em dificuldade baixa e reinicie checkpoint se tomar dano.",
+      "trophy_code": "re6_flying_ace",
+      "type": "Bronze"
+    },
+    {
+      "description": "Shoot the helicopter pilot with a Magnum at point-blank range.",
+      "is_missable": 0,
+      "is_spoiler": 1,
+      "name": "Hard Choice",
+      "name_pt": "Escolha Difícil",
+      "tip": "Troféu situacional da campanha do Jake.",
+      "trophy_code": "re6_hard_choice",
+      "type": "Bronze"
+    },
+    {
+      "description": "Get through the aircraft carrier's bridge área without being noticed.",
+      "is_missable": 0,
+      "is_spoiler": 1,
+      "name": "Sneaking Around",
+      "name_pt": "Passando de Fininho",
+      "tip": "Troféu situacional da campanha da Ada; avance devagar e memorize patrulhas.",
+      "trophy_code": "re6_sneaking",
+      "type": "Bronze"
+    },
+    {
+      "description": "Earn 150 different medals.",
+      "is_missable": 0,
+      "is_spoiler": 0,
+      "name": "Covered in Brass",
+      "name_pt": "Coberto de Bronze",
+      "tip": "Diversifique ações, personagens e modos para não repetir as mesmas medalhas.",
+      "trophy_code": "re6_covered_brass",
+      "type": "Prata"
+    },
+    {
+      "description": "Collect all the serpent emblems.",
+      "is_missable": 0,
+      "is_spoiler": 0,
+      "name": "Heirlooms",
+      "name_pt": "Heranças",
+      "tip": "São os principais coletáveis. Use checklist por capítulo e personagem.",
+      "trophy_code": "re6_heirlooms",
+      "type": "Prata"
+    }
+  ]
+}

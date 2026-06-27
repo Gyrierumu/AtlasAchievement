@@ -1,0 +1,604 @@
+{
+  "game": {
+    "avoid_if": "Evite se você não quer repetir campanha, jogar Madhouse ou controlar recursos sob restrições.",
+    "before_you_start": "Faça backup de saves perto de escolhas e pontos longos. DLCs de RE7 ficam fora da platina base deste guia.",
+    "best_for": "Ideal para quem gosta de survival horror em primeira pessoa, múltiplas runs curtas e desafios de rota.",
+    "cleanup_advice": "Use saves próximos da escolha final para endings e separe campanhas para Madhouse, speedrun, poucos baús e pouca cura.",
+    "cover_image": "https://cdn.cloudflare.steamstatic.com/steam/apps/418370/library_600x900.jpg",
+    "coverage_level": "strong",
+    "created_at": "2026-05-09 19:53:27",
+    "difficulty": 4,
+    "difficulty_reason": "A dificuldade vem de Madhouse, recursos limitados, Antique Coins exclusivas da dificuldade, speedrun e restrições de cura/baú.",
+    "dlc_scope": "Guia focado na lista base de Resident Evil 7 Biohazard. DLCs como Banned Footage, Not a Hero e End of Zoe não são necessários para a platina base.",
+    "editorial_notes": null,
+    "editorial_review_status": null,
+    "editorial_status": "published",
+    "first_run_advice": "Comece no Fácil para coletar arquivos, Mr. Everywhere, Antique Coins, fitas e troféus situacionais antes de se preocupar com Madhouse.",
+    "grind_summary": "Não há grind numérico pesado; o trabalho está em repetir campanhas, coletar itens, desbloquear recompensas e dominar Madhouse/speedrun.",
+    "guide_avoid": null,
+    "guide_best_moment": null,
+    "guide_dlc": null,
+    "guide_grind": null,
+    "guide_ideal": null,
+    "guide_online": null,
+    "guide_runs": null,
+    "image": "https://cdn.cloudflare.steamstatic.com/steam/apps/418370/header.jpg",
+    "is_verified": 0,
+    "last_reviewed_at": null,
+    "missable": "Quase tudo fora dos troféus de história é potencialmente perdível em uma campanha, então trate RE7 como platina de múltiplas runs. A rota mais segura é fazer uma primeira run em Fácil para collectibles, vídeos e troféus situacionais, depois fechar o final alternativo e por último reservar uma campanha focada em Madhouse, speedrun e restrições.",
+    "missable_summary": "Finais, fitas, arquivos, Mr. Everywhere, Antique Coins e vários troféus situacionais podem ser perdidos dentro de uma campanha. Use saves de segurança perto da escolha final.",
+    "name": "Resident Evil 7 Biohazard",
+    "online_summary": "Não há exigência online, coop, multiplayer ou PS+ para a platina da lista base.",
+    "quality_warnings": null,
+    "reviewed_by": null,
+    "runs_summary": "Três ou mais campanhas planejadas: coleta/finais, limpeza de objetivos situacionais e uma rota preparada para Madhouse, speedrun e restrições.",
+    "slug": "resident-evil-7-biohazard",
+    "time": "20-30 horas",
+    "time_bucket": "medium",
+    "time_max_hours": 30,
+    "time_min_hours": 20,
+    "time_reason": "A faixa de 20-30 horas considera múltiplas campanhas, finais, coletáveis, Madhouse, speedrun e cleanup de troféus situacionais.",
+    "time_sort_hours": 20,
+    "updated_at": "2026-06-27 02:36:58",
+    "verification_note": "Guia normalizado a partir do dado seed com checklist e roadmap; aguardando revisão editorial manual final.",
+    "verification_status": "review",
+    "walkthrough": null
+  },
+  "redirects": [],
+  "roadmaps": [
+    {
+      "content": "Faça a primeira campanha da lista base no Fácil priorizando todos os arquivos, 20 Mr. Everywhere, 18 Antique Coins, fitas de vídeo e troféus situacionais fáceis de perder como Can’t Catch Me, Out Before Dessert, Back Off, Mrs. B! e Fly Swatter. DLCs não são requisito da platina base.",
+      "step_order": 1
+    },
+    {
+      "content": "No confronto final, entregue a cura para Mia para garantir um final. Mantenha um save de segurança perto da escolha para acelerar a segunda run do outro ending.",
+      "step_order": 2
+    },
+    {
+      "content": "Feche uma campanha extra para limpar o final alternativo, qualquer collectible que tenha sobrado e troféus específicos como abrir poucos baús, usar pouca cura e matar com bomba remota.",
+      "step_order": 3
+    },
+    {
+      "content": "Depois encare Madhouse já com conhecimento de rota e recompensas destravadas. Nessa run, colete as 33 Antique Coins exclusivas da dificuldade e jogue de forma bem mais conservadora nos chefes.",
+      "step_order": 4
+    },
+    {
+      "content": "Deixe a speedrun abaixo de 4 horas e as restrições mais duras para a run em que sua rota estiver decorada. Quando o caminho está limpo, RE7 vira muito mais execução do que improviso.",
+      "step_order": 5
+    }
+  ],
+  "schemaVersion": 1,
+  "seedExtras": {
+    "aliases": [],
+    "attentionPoints": [
+      {
+        "detail": "Madhouse é o maior pico de dificuldade da platina, com recursos, pressão dos inimigos e Antique Coins diferentes da campanha normal.",
+        "tags": [
+          "Madhouse",
+          "Dificuldade",
+          "Campanha"
+        ],
+        "title": "Madhouse"
+      },
+      {
+        "detail": "Mad Pelicans exige as 33 Antique Coins de Madhouse. Não use a rota de moedas de Easy/Normal para essa etapa.",
+        "tags": [
+          "Coletável",
+          "Madhouse",
+          "Risco de run"
+        ],
+        "title": "Mad Pelicans"
+      },
+      {
+        "detail": "Arquivos, Mr. Everywhere e Antique Coins podem exigir nova jogada ou salvamento anterior se forem ignorados. Use checklist por região desde a primeira campanha.",
+        "tags": [
+          "Coletável",
+          "Risco de run"
+        ],
+        "title": "Colecionáveis por região"
+      },
+      {
+        "detail": "End of the Night e Just A Memory Now dependem da escolha da cura. Use salvamento manual perto da decisão para reduzir repetição.",
+        "tags": [
+          "Final",
+          "Spoiler",
+          "Risco de run"
+        ],
+        "title": "Finais"
+      },
+      {
+        "detail": "Just Get Me Outta Here, Resource Manager e Walk it Off devem ser planejados com rota limpa, inventário enxuto e uso controlado de cura.",
+        "tags": [
+          "Speedrun",
+          "Restrição",
+          "Risco de run"
+        ],
+        "title": "Jogadas restritivas"
+      },
+      {
+        "detail": "Bloqueios, VHS, furtividade, criação de itens e ações de combate podem passar despercebidos. Resolva quando a oportunidade aparecer ou use salvamento manual.",
+        "tags": [
+          "Situacional",
+          "VHS",
+          "Combate"
+        ],
+        "title": "Troféus situacionais"
+      },
+      {
+        "detail": "Banned Footage Vol. 1, Banned Footage Vol. 2, Not a Hero e End of Zoe não entram nos 38 troféus da lista base.",
+        "tags": [
+          "DLC",
+          "Fora da platina"
+        ],
+        "title": "DLC fora da platina"
+      },
+      {
+        "detail": "A platina base é single-player, sem online obrigatório e sem coop obrigatório.",
+        "tags": [
+          "Offline",
+          "Sem coop"
+        ],
+        "title": "Online e coop opcionais"
+      }
+    ],
+    "checklist": [
+      "Confirmar os 38 troféus da lista base de Resident Evil 7: Biohazard.",
+      "Não contar Banned Footage Vol. 1 como requisito da platina.",
+      "Não contar Banned Footage Vol. 2 como requisito da platina.",
+      "Não contar Not a Hero como requisito da platina.",
+      "Não contar End of Zoe como requisito da platina.",
+      "Não misturar Gold Edition com requisito da platina base.",
+      "Obter os dois finais com salvamento manual ou jogadas separadas.",
+      "Ler todos os arquivos para The Devil Is in the Details.",
+      "Destruir todos os Mr. Everywhere para Mr. Nowhere.",
+      "Coletar Antique Coins em Easy ou Normal para Pelicans in Your Pocket.",
+      "Coletar as 33 Antique Coins de Madhouse para Mad Pelicans.",
+      "Completar a campanha em menos de 4 horas para Just Get Me Outta Here.",
+      "Completar abrindo o item box no máximo 3 vezes para Resource Manager.",
+      "Completar usando 3 ou menos First Aid Meds para Walk it Off.",
+      "Completar Madhouse para Who’s Your Daddy Now?.",
+      "Resolver troféus situacionais de combate, furtividade, VHS, criação de itens, bloqueio e chefes.",
+      "Conferir flags finais: online obrigatório, coop obrigatório e DLC exigida devem continuar falsos."
+    ],
+    "faq": [
+      {
+        "answer": "Não. A platina base é single-player e pode ser feita offline.",
+        "question": "Resident Evil 7 exige online para platinar?"
+      },
+      {
+        "answer": "Não. A platina não depende de coop.",
+        "question": "Resident Evil 7 exige coop para platinar?"
+      },
+      {
+        "answer": "Não. Banned Footage Vol. 1, Banned Footage Vol. 2, Not a Hero e End of Zoe têm troféus próprios, mas não entram nos 38 troféus da platina base.",
+        "question": "Os DLCs são necessários para a platina?"
+      },
+      {
+        "answer": "Sim. O principal risco está em colecionáveis, escolhas de final, ações situacionais e jogadas com restrições. Use salvamentos manuais e checklist por região. Por isso, topo e filtro de perdíveis devem refletir os troféus que realmente podem exigir salvamento anterior ou nova jogada.",
+        "question": "Resident Evil 7 tem troféus perdíveis?"
+      },
+      {
+        "answer": "Depende da eficiência e do uso de salvamentos, mas a rota mais segura separa primeira campanha e colecionáveis, finais, speedrun/rota rápida e restrições, além de Madhouse.",
+        "question": "Quantas jogadas são necessárias?"
+      },
+      {
+        "answer": "Madhouse e a combinação de jogadas restritivas são os maiores desafios. Mad Pelicans também exige atenção porque as Antique Coins de Madhouse são diferentes das de Easy e Normal.",
+        "question": "Qual é o maior desafio da platina?"
+      },
+      {
+        "answer": "Sim, é possível combinar, mas a rota fica mais arriscada. Para segurança editorial, separe objetivos se estiver errando rota, cura ou baú de itens.",
+        "question": "Posso fazer speedrun, Resource Manager e Walk it Off juntos?"
+      },
+      {
+        "answer": "Não. Madhouse muda recursos, pressão dos inimigos e localização/quantidade de Antique Coins. Trate como uma etapa própria.",
+        "question": "Madhouse muda só a dificuldade?"
+      },
+      {
+        "answer": "Sim. Há troféus separados para Antique Coins em Easy/Normal e em Madhouse. Mad Pelicans exige as moedas da dificuldade Madhouse.",
+        "question": "Preciso pegar Antique Coins duas vezes?"
+      },
+      {
+        "answer": "Não para a platina base. A Gold Edition inclui ou dá acesso a DLCs, mas a platina base continua separada dos troféus adicionais.",
+        "question": "A Gold Edition muda a platina?"
+      }
+    ],
+    "note": "Campos exportados para auditoria. O SQLite atual nao possui colunas nativas para todos esses extras; a importacao preserva o que o banco suporta.",
+    "quickDecision": {
+      "firstAction": "Comece com uma campanha completa em Easy ou Normal focada em exploração, arquivos, Mr. Everywhere, Antique Coins da dificuldade normal e troféus situacionais.",
+      "mainRisk": "Madhouse, Mad Pelicans, speedrun/rota rápida, Resource Manager, Walk it Off, finais e colecionáveis por região são os pontos que mais geram retrabalho.",
+      "summary": "Platina compacta, offline e baseada em execução.",
+      "verdict": "Vale platinar Resident Evil 7: Biohazard se você gosta de survival horror em primeira pessoa, campanha compacta e desafios de rota. A platina não exige online, coop nem DLC, mas cobra atenção a arquivos, Mr. Everywhere, Antique Coins, dois finais, Madhouse, speedrun/rota rápida, baú de itens limitado e uso mínimo de cura. É uma platina excelente e bem planejável, porém pouco indicada para quem não quer repetir a campanha ou jogar com restrições."
+    },
+    "seo": {
+      "description": "Guia de platina de Resident Evil 7: Biohazard com roadmap em português, finais, colecionáveis, Madhouse, Antique Coins, Mr. Everywhere, speedrun/rota rápida, Resource Manager, Walk it Off e dicas para conquistar todos os troféus no PS4 e PS5.",
+      "keywords": "Resident Evil 7, Resident Evil 7 Biohazard, RE7, guia de platina Resident Evil 7, troféus Resident Evil 7, roadmap Resident Evil 7, Madhouse, Mad Pelicans, Mr Everywhere, Antique Coins, Resource Manager, Walk it Off",
+      "ogDescription": "Roadmap de Resident Evil 7 com finais, colecionáveis, Madhouse, Antique Coins, speedrun/rota rápida e restrições da platina base.",
+      "ogTitle": "Guia de Platina Resident Evil 7 Biohazard",
+      "title": "Guia de Platina Resident Evil 7 Biohazard — Troféus, Roadmap e Dicas"
+    },
+    "tags": []
+  },
+  "slug": "resident-evil-7-biohazard",
+  "trophies": [
+    {
+      "description": "Unlock all trophies.",
+      "is_missable": 0,
+      "is_spoiler": 0,
+      "name": "Biosplattered",
+      "name_pt": "Biossalpicado",
+      "tip": "A platina pede três campanhas bem planejadas: collectibles, finais, Madhouse e runs com restrições.",
+      "trophy_code": "re7_platinum",
+      "type": "Platina"
+    },
+    {
+      "description": "Travel to Louisiana.",
+      "is_missable": 0,
+      "is_spoiler": 0,
+      "name": "She’s Alive",
+      "name_pt": "Ela está viva",
+      "tip": "Troféu automático do início do jogo.",
+      "trophy_code": "re7_shes_alive",
+      "type": "Bronze"
+    },
+    {
+      "description": "Escape from the guest house.",
+      "is_missable": 0,
+      "is_spoiler": 0,
+      "name": "Welcome to the Family, Son",
+      "name_pt": "Bem-vindo à família, filho",
+      "tip": "Sai naturalmente ao concluir a abertura.",
+      "trophy_code": "re7_welcome_family",
+      "type": "Bronze"
+    },
+    {
+      "description": "Escape to the yard.",
+      "is_missable": 0,
+      "is_spoiler": 1,
+      "name": "You Ain’t Gettin’ Away",
+      "name_pt": "Você não vai escapar",
+      "tip": "Automático durante a fuga da casa principal.",
+      "trophy_code": "re7_you_aint_gettin_away",
+      "type": "Bronze"
+    },
+    {
+      "description": "Uncover the secret of the old house.",
+      "is_missable": 0,
+      "is_spoiler": 1,
+      "name": "The Grave Will Out the Truth",
+      "name_pt": "O túmulo revelará a verdade",
+      "tip": "Troféu de história.",
+      "trophy_code": "re7_grave_will_out_truth",
+      "type": "Bronze"
+    },
+    {
+      "description": "Escape from the Baker family home.",
+      "is_missable": 0,
+      "is_spoiler": 1,
+      "name": "You Better Start Running",
+      "name_pt": "É melhor começar a correr",
+      "tip": "Automático de história.",
+      "trophy_code": "re7_you_better_start_running",
+      "type": "Bronze"
+    },
+    {
+      "description": "Escape from the ship.",
+      "is_missable": 0,
+      "is_spoiler": 1,
+      "name": "Into the Depths",
+      "name_pt": "Nas profundezas",
+      "tip": "Sai naturalmente mais para o fim da campanha.",
+      "trophy_code": "re7_into_the_depths",
+      "type": "Bronze"
+    },
+    {
+      "description": "Get ending 1.",
+      "is_missable": 1,
+      "is_spoiler": 1,
+      "name": "End of Night",
+      "name_pt": "Fim da noite",
+      "tip": "Dê a cura para Mia na escolha final para garantir este ending.",
+      "trophy_code": "re7_end_of_night",
+      "type": "Ouro"
+    },
+    {
+      "description": "Get ending 2.",
+      "is_missable": 1,
+      "is_spoiler": 1,
+      "name": "Just A Memory Now",
+      "name_pt": "Agora é só uma lembrança",
+      "tip": "Na outra campanha, dê a cura para Zoe para ver o final alternativo.",
+      "trophy_code": "re7_just_a_memory_now",
+      "type": "Ouro"
+    },
+    {
+      "description": "Complete the game on Easy.",
+      "is_missable": 0,
+      "is_spoiler": 0,
+      "name": "Playing It Safe",
+      "name_pt": "Jogando pelo seguro",
+      "tip": "Boa dificuldade para a run de collectibles e troféus situacionais.",
+      "trophy_code": "re7_playing_it_safe",
+      "type": "Bronze"
+    },
+    {
+      "description": "Complete the game on Normal.",
+      "is_missable": 0,
+      "is_spoiler": 0,
+      "name": "The Nightmare’s Finally Over",
+      "name_pt": "O pesadelo finalmente acabou",
+      "tip": "Pode vir naturalmente se você preferir começar no Normal, mas não é obrigatório para o plano mais eficiente.",
+      "trophy_code": "re7_the_nightmares_finally_over",
+      "type": "Prata"
+    },
+    {
+      "description": "Complete the game on Madhouse.",
+      "is_missable": 0,
+      "is_spoiler": 0,
+      "name": "Who’s Your Daddy Now?",
+      "name_pt": "Quem é seu papai agora?",
+      "tip": "É o maior pico da platina. Entre nessa run com rota decorada e bônus destravados.",
+      "trophy_code": "re7_whos_your_daddy_now",
+      "type": "Ouro"
+    },
+    {
+      "description": "Close an open door by yourself.",
+      "is_missable": 0,
+      "is_spoiler": 0,
+      "name": "Behind Closed Doors",
+      "name_pt": "A portas fechadas",
+      "tip": "Basta interagir com uma porta aberta para fechá-la.",
+      "trophy_code": "re7_behind_closed_doors",
+      "type": "Bronze"
+    },
+    {
+      "description": "Block an enemy attack by guarding.",
+      "is_missable": 0,
+      "is_spoiler": 0,
+      "name": "Arms in the Air",
+      "name_pt": "Braços para o alto",
+      "tip": "Defender cedo no jogo já garante o troféu.",
+      "trophy_code": "re7_arms_in_the_air",
+      "type": "Bronze"
+    },
+    {
+      "description": "Obtain something by closely examining an item.",
+      "is_missable": 0,
+      "is_spoiler": 0,
+      "name": "A-ha!",
+      "name_pt": "A-ha!",
+      "tip": "Examine um item em 3D até revelar o detalhe escondido.",
+      "trophy_code": "re7_a_ha",
+      "type": "Bronze"
+    },
+    {
+      "description": "Use a lock pick to open something.",
+      "is_missable": 0,
+      "is_spoiler": 0,
+      "name": "Master of Unlocking",
+      "name_pt": "Mestre do desbloqueio",
+      "tip": "Use qualquer lockpick em uma gaveta ou caixa trancada.",
+      "trophy_code": "re7_master_of_unlocking",
+      "type": "Bronze"
+    },
+    {
+      "description": "Put an unrelatéd object on a shadow plinth.",
+      "is_missable": 0,
+      "is_spoiler": 0,
+      "name": "Nice Try",
+      "name_pt": "Boa tentativa",
+      "tip": "Troféu rápido e fácil de resolver durante os puzzles iniciais.",
+      "trophy_code": "re7_nice_try",
+      "type": "Bronze"
+    },
+    {
+      "description": "Use psychostimulants.",
+      "is_missable": 0,
+      "is_spoiler": 0,
+      "name": "Open Your Eyes",
+      "name_pt": "Abra os olhos",
+      "tip": "Ative um psychostimulant assim que encontrar o primeiro.",
+      "trophy_code": "re7_open_your_eyes",
+      "type": "Bronze"
+    },
+    {
+      "description": "Increase your item slots.",
+      "is_missable": 0,
+      "is_spoiler": 0,
+      "name": "In The Bag",
+      "name_pt": "Na mochila",
+      "tip": "Pegue uma mochila para expandir o inventário.",
+      "trophy_code": "re7_in_the_bag",
+      "type": "Bronze"
+    },
+    {
+      "description": "Finish off an enemy with the knife.",
+      "is_missable": 0,
+      "is_spoiler": 0,
+      "name": "Things Got Personal",
+      "name_pt": "Ficou pessoal",
+      "tip": "Deixe um inimigo quase sem vida e finalize com a faça para não depender de sorte.",
+      "trophy_code": "re7_things_got_personal",
+      "type": "Bronze"
+    },
+    {
+      "description": "Clear insects off a door using a knife.",
+      "is_missable": 0,
+      "is_spoiler": 0,
+      "name": "Slash Slash, Slashity Slash!",
+      "name_pt": "Corta, corta, corta e corta!",
+      "tip": "Faça isso na área da Marguerite assim que encontrar uma porta infestada.",
+      "trophy_code": "re7_slash_slash",
+      "type": "Bronze"
+    },
+    {
+      "description": "Fight off Marguerite while she wanders the old house to make her run away.",
+      "is_missable": 1,
+      "is_spoiler": 1,
+      "name": "Back Off, Mrs. B!",
+      "name_pt": "Afaste-se, Sra. B!",
+      "tip": "É fácil perder. Use a janela certa do encontro opcional para espantá-la.",
+      "trophy_code": "re7_back_off_mrs_b",
+      "type": "Bronze"
+    },
+    {
+      "description": "Avoid Jack’s scissor attack by crouching.",
+      "is_missable": 1,
+      "is_spoiler": 1,
+      "name": "Duck If You Love Life",
+      "name_pt": "Agache se ama a vida",
+      "tip": "Durante a briga com Jack, abaixe no momento do ataque horizontal da tesoura.",
+      "trophy_code": "re7_duck_if_you_love_life",
+      "type": "Bronze"
+    },
+    {
+      "description": "Take down two or more enemies with one shot.",
+      "is_missable": 0,
+      "is_spoiler": 0,
+      "name": "Less Is More",
+      "name_pt": "Menos é mais",
+      "tip": "A shotgun facilita muito quando dois Molded alinham no corredor.",
+      "trophy_code": "re7_less_is_more",
+      "type": "Bronze"
+    },
+    {
+      "description": "Shoot and knock back Marguerite while she’s leaping at you.",
+      "is_missable": 1,
+      "is_spoiler": 1,
+      "name": "Fly Swatter",
+      "name_pt": "Mata-moscas",
+      "tip": "Espere o pulo telegrafado e derrube-a no ar com um tiro forte.",
+      "trophy_code": "re7_fly_swatter",
+      "type": "Bronze"
+    },
+    {
+      "description": "Kill an enemy by attaching a Remote Bomb to them and detonating it.",
+      "is_missable": 0,
+      "is_spoiler": 0,
+      "name": "That’s a Spicy Meat-a-ball",
+      "name_pt": "Que almôndega apimentada",
+      "tip": "Aproxime-se o bastante para grudar a bomba em um inimigo e exploda em seguida.",
+      "trophy_code": "re7_spicy_meat_a_ball",
+      "type": "Bronze"
+    },
+    {
+      "description": "Creaté all items that contain Chem Fluid and Strong Chem Fluid.",
+      "is_missable": 0,
+      "is_spoiler": 0,
+      "name": "1st Place at the Science Fair",
+      "name_pt": "1º lugar na feira de ciências",
+      "tip": "Faça uma checklist de craft para não sobrar combinação esquecida no fim.",
+      "trophy_code": "re7_science_fair",
+      "type": "Prata"
+    },
+    {
+      "description": "Complete the “Mia” videotape without being spotted by Marguerite.",
+      "is_missable": 1,
+      "is_spoiler": 0,
+      "name": "Can’t Catch Me",
+      "name_pt": "Não consegue me pegar",
+      "tip": "Troféu clássico de primeira run. Jogue a fita com rota limpa e sem correr risco.",
+      "trophy_code": "re7_cant_catch_me",
+      "type": "Bronze"
+    },
+    {
+      "description": "Complete the “Happy Birthday” videotape within 5 minutes.",
+      "is_missable": 1,
+      "is_spoiler": 0,
+      "name": "Out Before Dessert",
+      "name_pt": "Fora antes da sobremesa",
+      "tip": "Decore a solução do puzzle e deixe para uma tentativa focada só nisso.",
+      "trophy_code": "re7_out_before_dessert",
+      "type": "Bronze"
+    },
+    {
+      "description": "Watch all the videotapes in a single playthrough.",
+      "is_missable": 1,
+      "is_spoiler": 0,
+      "name": "Be Kind, Please Rewind",
+      "name_pt": "Seja gentil, rebobine",
+      "tip": "Não perca nenhuma fita durante a campanha principal.",
+      "trophy_code": "re7_be_kind_rewind",
+      "type": "Prata"
+    },
+    {
+      "description": "Obtain all of the Antique Coins in Easy or Normal difficulty.",
+      "is_missable": 1,
+      "is_spoiler": 0,
+      "name": "Pelicans in Your Pocket",
+      "name_pt": "Pelicanos no bolso",
+      "tip": "São 18 moedas no Fácil/Normal. Faça junto da run de collectibles.",
+      "trophy_code": "re7_pelicans_in_your_pocket",
+      "type": "Prata"
+    },
+    {
+      "description": "Obtain all of the Antique Coins in Madhouse difficulty.",
+      "is_missable": 1,
+      "is_spoiler": 0,
+      "name": "Mad Pelicans",
+      "name_pt": "Pelicanos enlouquecidos",
+      "tip": "Em Madhouse são 33 moedas em posições diferentes; trate isso como checklist dedicada.",
+      "trophy_code": "re7_mad_pelicans",
+      "type": "Prata"
+    },
+    {
+      "description": "Read all of the files in a single playthrough.",
+      "is_missable": 1,
+      "is_spoiler": 0,
+      "name": "The Devil Is in the Details",
+      "name_pt": "O diabo mora nos detalhes",
+      "tip": "São muitos arquivos e alguns ficam em pontos sem retorno. Checklist ajuda muito.",
+      "trophy_code": "re7_devil_details",
+      "type": "Prata"
+    },
+    {
+      "description": "Destroy a Mr. Everywhere statuette.",
+      "is_missable": 0,
+      "is_spoiler": 0,
+      "name": "He’s Here, There, Everywhere!",
+      "name_pt": "Ele está aqui, ali, em todo lugar!",
+      "tip": "Quebre qualquer uma das estatuetas para liberar este imediatamente.",
+      "trophy_code": "re7_hes_here_there_everywhere",
+      "type": "Bronze"
+    },
+    {
+      "description": "Destroy all Mr. Everywhere statuettes.",
+      "is_missable": 1,
+      "is_spoiler": 0,
+      "name": "Mr. Nowhere",
+      "name_pt": "Sr. Lugar Nenhum",
+      "tip": "São 20 estatuetas no jogo base. Use vídeo ou checklist para não perder as de áreas rápidas.",
+      "trophy_code": "re7_mr_nowhere",
+      "type": "Prata"
+    },
+    {
+      "description": "Complete the game within 4 hours.",
+      "is_missable": 1,
+      "is_spoiler": 0,
+      "name": "Just Get Me Outta Here",
+      "name_pt": "Só me tire daqui",
+      "tip": "Deixe para quando sua rota já estiver memorizada; não precisa ser na mesma run de Madhouse.",
+      "trophy_code": "re7_just_get_me_outta_here",
+      "type": "Prata"
+    },
+    {
+      "description": "Complete the game without opening the Item Box more than 3 times.",
+      "is_missable": 1,
+      "is_spoiler": 0,
+      "name": "Resource Manager",
+      "name_pt": "Gerente de recursos",
+      "tip": "Planeje bem o inventário e evite guardar recursos sem necessidade.",
+      "trophy_code": "re7_resource_manager",
+      "type": "Prata"
+    },
+    {
+      "description": "Complete the game using only 3 First Aid Meds or less.",
+      "is_missable": 1,
+      "is_spoiler": 0,
+      "name": "Walk it Off",
+      "name_pt": "Aguente firme",
+      "tip": "Combine com Fácil e domínio de rota para reduzir risco. Bloqueio e guarda economizam muita cura.",
+      "trophy_code": "re7_walk_it_off",
+      "type": "Prata"
+    }
+  ]
+}

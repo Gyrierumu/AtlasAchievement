@@ -1,0 +1,920 @@
+{
+  "game": {
+    "avoid_if": "Evite se você não quer acompanhar scan de machines, Melee Pits, Hunting Grounds, Rebel Camps, Arena, side quests e cleanup de mundo aberto.",
+    "before_you_start": "Separe a platina base dos conteúdos adicionais: Burning Shores, New Game+, Ultra Hard e Complete Edition/PC não entram nos 59 troféus base. O scan de Specter e Specter Prime em Singularity é o ponto que merece atenção máxima.",
+    "best_for": "Vale platinar Horizon Forbidden West se você gosta de mundo aberto, combate contra machines, exploração e checklist moderado. A platina base é acessível, offline, sem coop, sem DLC obrigatória, sem New Game+ e sem Ultra Hard. O principal cuidado é escanear Specter e Specter Prime em Singularity e organizar Melee Pits, Hunting Grounds, Rebel Camps, Cauldrons, Arena, collectibles e side quests sem transformar o guia em 100% com DLC.",
+    "cleanup_advice": "Depois da história, use o free roam para fechar side quests, collectibles, activities, Gauntlet Runs, Salvage Contracts, Rebel Outposts, Arena, Hunting Grounds, upgrades, combat trophies e machines pendentes.",
+    "cover_image": "https://cdn.cloudflare.steamstatic.com/steam/apps/2420110/library_600x900.jpg",
+    "coverage_level": "complete",
+    "created_at": "2026-05-09 19:53:34",
+    "difficulty": 3,
+    "difficulty_reason": "A dificuldade editorial fica em 3/10: a lista base não exige dificuldade alta, Ultra Hard, New Game+ ou online; o cuidado maior e o scan de Specter/Specter Prime e a organizacao das atividades.",
+    "dlc_scope": "Burning Shores, New Game+, Ultra Hard e conteúdos de Complete Edition/PC ficam fora dos requisitos da platina base de 59 troféus.",
+    "editorial_notes": "Escopo editorial: Horizon Forbidden West lista base PS4/PS5, 59 troféus. Platina single-player/offline, sem coop, sem DLC obrigatória, sem New Game+ e sem Ultra Hard. All Machine Types Scanned fica como unico risco por Specter/Specter Prime em Singularity.",
+    "editorial_review_status": "verified",
+    "editorial_status": "published",
+    "first_run_advice": "Comece a campanha avançando pela história e abrindo o mapa com Tallnecks, mas já escaneie toda machine nova com o Focus. Priorize skills da árvore Warrior para evitar grind nos Melee Pits e, antes da missão final Singularity, garanta o scan de Specter e Specter Prime para All Machine Types Scanned.",
+    "grind_summary": "O maior checklist fica em scans de machines, Melee Pits, Hunting Grounds, Rebel Camps, Cauldrons, Arena, Gauntlet Runs, side quests específicas, upgrades e collectibles controlados.",
+    "guide_avoid": null,
+    "guide_best_moment": null,
+    "guide_dlc": null,
+    "guide_grind": null,
+    "guide_ideal": null,
+    "guide_online": null,
+    "guide_runs": null,
+    "image": "https://cdn.cloudflare.steamstatic.com/steam/apps/2420110/header.jpg",
+    "is_verified": 1,
+    "last_reviewed_at": "2026-06-05",
+    "missable": "O único ponto tratado como perdível/risco forte e All Machine Types Scanned por causa de Specter e Specter Prime na missão final Singularity. O restante da lista base permite cleanup em free roam depois da história.",
+    "missable_summary": "All Machine Types Scanned é o principal risco: escaneie Specter e Specter Prime durante Singularity e repita o scan se morrer antes de concluir o combate.",
+    "name": "Horizon Forbidden West",
+    "online_summary": "A platina base é single-player/offline, sem online obrigatório, sem coop obrigatório e sem PS+ necessário.",
+    "quality_warnings": "[]",
+    "reviewed_by": "",
+    "runs_summary": "Uma run é suficiente para a platina base, com cleanup depois da história. New Game+ não é obrigatório.",
+    "slug": "horizon-forbidden-west",
+    "time": "35-50 horas",
+    "time_bucket": "medium",
+    "time_max_hours": 50,
+    "time_min_hours": 35,
+    "time_reason": "A estimativa de 35-50 horas considera campanha, free roam, scans, Tallnecks, Cauldrons, Hunting Grounds, Melee Pits, Rebel Camps, Arena, side quests, collectibles e upgrades.",
+    "time_sort_hours": 35,
+    "updated_at": "2026-06-27 02:36:59",
+    "verification_note": "Guia revisado para a lista base PS4/PS5 com 59 troféus; Burning Shores, New Game+, Ultra Hard e Complete Edition/PC ficam fora da platina base.",
+    "verification_status": "verified",
+    "walkthrough": null
+  },
+  "redirects": [],
+  "roadmaps": [
+    {
+      "content": "{\"title\":\"Campanha com scan de machines desde o início\",\"focus\":\"História e machines\",\"objective\":\"Avançar pela história enquanto escaneia machines, libera sistemas principais e prepara os troféus acumulativos.\",\"actions\":[\"Progrida pela campanha principal sem se preocupar com dificuldade alta, pois a platina base não exige Ultra Hard.\",\"Use o Focus em toda machine nova para adiantar All Machine Types Scanned.\",\"Priorize skills da árvore Warrior para liberar combos exigidos nos Melee Pits.\",\"Ative Tallnecks quando possivel para abrir o mapa e facilitar o cleanup.\",\"Faça side quests e atividades proximas quando ajudarem a ganhar XP, skill points e equipamentos.\"],\"warning\":\"Specter e Specter Prime exigem atenção especial na missão final Singularity. Faça scan manual dos dois e confirme o registro no Machine Catalogue.\",\"result\":\"A campanha avança com machines catalogadas, mapa aberto e base sólida para atividades e cleanup.\"}",
+      "step_order": 1
+    },
+    {
+      "content": "{\"title\":\"Singularity e All Machine Types Scanned\",\"focus\":\"Risco de scan\",\"objective\":\"Evitar a principal pendência sensível da platina base: o scan de machines ligadas a reta final.\",\"actions\":[\"Antes de entrar na missão final Singularity, confira o Machine Catalogue.\",\"Durante a missão, escaneie Specter e Specter Prime com o Focus.\",\"Se morrer durante o combate final, escaneie novamente antes de concluir a luta.\",\"Depois da história, confira se todos os tipos de machines da lista base aparecem no catálogo.\",\"Use save anterior apenas se o scan não tiver sido registrado corretamente.\"],\"warning\":\"All Machine Types Scanned é o ponto mais sensível da platina. Quase tudo pode ser feito no free roam, mas Specter/Specter Prime exigem atenção na história.\",\"result\":\"O principal risco de checklist da platina fica resolvido antes do cleanup.\"}",
+      "step_order": 2
+    },
+    {
+      "content": "{\"title\":\"Atividades principais do mapa\",\"focus\":\"Open world\",\"objective\":\"Limpar as atividades estruturais exigidas pela lista base.\",\"actions\":[\"Complete todos os Tallnecks da lista base para revelar o mapa.\",\"Conclua Cauldrons para liberar overrides e troféus relacionados.\",\"Limpe Rebel Camps e a questline de Asera.\",\"Complete Hunting Grounds buscando pelo menos o requisito necessário da lista base.\",\"Complete Melee Pits e prepare-se para Defeated the Enduring.\"],\"warning\":\"Melee Pits exigem combos específicos. Ter a árvore Warrior adiantada evita grind de skill points no final.\",\"result\":\"Tallnecks, Cauldrons, Rebel Camps, Hunting Grounds e Melee Pits ficam prontos para a reta final.\"}",
+      "step_order": 3
+    },
+    {
+      "content": "{\"title\":\"Arena, Gauntlet Runs e side quests específicas\",\"focus\":\"Atividades e quests\",\"objective\":\"Completar atividades e side quests ligadas diretamente aos troféus da platina base.\",\"actions\":[\"Complete a Arena pelo menos no requisito necessário para o troféu da lista base.\",\"Vença duas Gauntlet Runs para o troféu correspondente.\",\"Complete um conjunto de Salvage Contracts.\",\"Finalize side quests ligadas a Kotallo, Zo, Alva, The Daunt e Desert Commander.\",\"Complete duas quests que exigem flying mount depois que ele for liberado pela história.\"],\"warning\":\"\",\"result\":\"As side quests e atividades específicas da platina ficam resolvidas sem exigir 100% absoluto do jogo.\"}",
+      "step_order": 4
+    },
+    {
+      "content": "{\"title\":\"Collectibles e exploração controlada\",\"focus\":\"Colecionaveis\",\"objective\":\"Coletar apenas o necessário para os troféus da lista base, sem confundir com 100% completo.\",\"actions\":[\"Complete três Relic Ruins para o troféu correspondente.\",\"Recupere cinco tipos diferentes de collectibles conforme a lista base pedir.\",\"Use o mapa e o flying mount para reduzir deslocamento no cleanup.\",\"Revise Vista Points, Black Boxes, Signal Lenses, Survey Drones e demais categorias apenas conforme exigência da lista base.\",\"Não inclua collectibles de Burning Shores como requisito da platina base.\"],\"warning\":\"Horizon Forbidden West não exige 100% absoluto de todos os collectibles para a platina base. Evite transformar o guia em rota de 100% com DLC.\",\"result\":\"Os collectibles necessários ficam concluídos sem misturar base game com DLC.\"}",
+      "step_order": 5
+    },
+    {
+      "content": "{\"title\":\"Cleanup final em free roam\",\"focus\":\"Conferência\",\"objective\":\"Fechar troféus acumulativos, combate, machines e pendências depois da história.\",\"actions\":[\"Use o free roam pós-história para concluir atividades restantes.\",\"Finalize troféus de combate, mount, glide, override e machines que ficaram pendentes.\",\"Confira se os 59 troféus da lista base foram considerados.\",\"Garanta que Burning Shores, New Game+ e Ultra Hard continuam fora dos requisitos da platina.\",\"Confirme que a rota continua sem online obrigatório, sem coop obrigatório e sem DLC exigida.\"],\"warning\":\"\",\"result\":\"A lista base de Horizon Forbidden West fica pronta para a platina.\"}",
+      "step_order": 6
+    }
+  ],
+  "schemaVersion": 1,
+  "seedExtras": {
+    "aliases": [],
+    "attentionPoints": [
+      {
+        "detail": "Escaneie Specter e Specter Prime em Singularity; se morrer no boss, escaneie novamente antes de concluir a luta.",
+        "tags": [
+          {
+            "id": "missable",
+            "label": "Perdível",
+            "tone": "warning"
+          },
+          {
+            "id": "machines",
+            "label": "Machines",
+            "tone": "partial"
+          },
+          {
+            "id": "scan",
+            "label": "Scan",
+            "tone": "partial"
+          },
+          {
+            "id": "attention",
+            "label": "Atenção",
+            "tone": "warning"
+          },
+          {
+            "id": "run-risk",
+            "label": "Risco de run",
+            "tone": "warning"
+          }
+        ],
+        "title": "All Machine Types Scanned"
+      },
+      {
+        "detail": "O DLC tem troféus próprios e não entra nos 59 troféus base.",
+        "tags": [
+          {
+            "id": "dlc",
+            "label": "DLC fora da platina",
+            "tone": "complete"
+          }
+        ],
+        "title": "Burning Shores fora da platina"
+      },
+      {
+        "detail": "São troféus adicionais, não requisitos da platina base.",
+        "tags": [
+          {
+            "id": "extra",
+            "label": "Conteúdo adicional",
+            "tone": "complete"
+          }
+        ],
+        "title": "New Game+ e Ultra Hard fora da platina"
+      },
+      {
+        "detail": "Priorize skills Warrior para liberar combos e evitar grind no final.",
+        "tags": [
+          {
+            "id": "melee-pits",
+            "label": "Melee Pits",
+            "tone": "partial"
+          },
+          {
+            "id": "skills",
+            "label": "Skills",
+            "tone": "partial"
+          }
+        ],
+        "title": "Melee Pits e The Enduring"
+      },
+      {
+        "detail": "Exigem 3 Stripes; não confunda com Blazing Suns de Horizon Zero Dawn.",
+        "tags": [
+          {
+            "id": "hunting-grounds",
+            "label": "Hunting Grounds",
+            "tone": "partial"
+          },
+          {
+            "id": "challenge",
+            "label": "Desafio",
+            "tone": "partial"
+          }
+        ],
+        "title": "Hunting Grounds"
+      },
+      {
+        "detail": "Complete a linha dos camps para fechar Defeated Asera.",
+        "tags": [
+          {
+            "id": "rebel-camps",
+            "label": "Rebel Camps",
+            "tone": "partial"
+          },
+          {
+            "id": "side-quest",
+            "label": "Side Quest",
+            "tone": "partial"
+          }
+        ],
+        "title": "Rebel Camps e Asera"
+      },
+      {
+        "detail": "A platina exige tipos específicos, não 100% absoluto de todos os collectibles.",
+        "tags": [
+          {
+            "id": "collectibles",
+            "label": "Collectibles",
+            "tone": "partial"
+          },
+          {
+            "id": "cleanup",
+            "label": "Cleanup",
+            "tone": "partial"
+          }
+        ],
+        "title": "Collectibles controlados"
+      },
+      {
+        "detail": "Quase tudo pode ser feito depois da campanha.",
+        "tags": [
+          {
+            "id": "free-roam",
+            "label": "Free roam",
+            "tone": "partial"
+          },
+          {
+            "id": "cleanup",
+            "label": "Cleanup",
+            "tone": "partial"
+          }
+        ],
+        "title": "Free roam pós-história"
+      },
+      {
+        "detail": "A platina base é single-player, sem online obrigatório e sem coop obrigatório.",
+        "tags": [
+          {
+            "id": "offline",
+            "label": "Offline",
+            "tone": "complete"
+          }
+        ],
+        "title": "Online e coop"
+      }
+    ],
+    "checklist": [
+      "Confirmar os 59 troféus da lista base PS4/PS5.",
+      "Não contar Burning Shores, New Game+, Ultra Hard, Complete Edition/PC ou DLC como requisito da platina.",
+      "Completar a campanha principal.",
+      "Escanear todas as machines da lista base, com atenção máxima a Specter e Specter Prime durante Singularity.",
+      "Ativar Tallnecks e completar Cauldrons.",
+      "Completar Hunting Grounds necessários com 3 Stripes.",
+      "Completar Melee Pits e derrotar The Enduring.",
+      "Completar Rebel Camps e derrotar Asera.",
+      "Completar o Arena Challenge Set necessário.",
+      "Vencer 2 Gauntlet Runs e completar 4 Rebel Outposts.",
+      "Completar um set de Salvage Contracts e 2 Flying Mount Quests.",
+      "Completar side quests ligadas a Kotallo, Zo, Alva, The Daunt e Desert Commander.",
+      "Recuperar 5 tipos diferentes de collectibles e completar 3 Relic Ruins.",
+      "Resolver upgrades, pouches, coils, dye flowers, glide, mounts, overrides e combat trophies.",
+      "Fazer cleanup pós-história em free roam e conferir flags online/coop/DLC/perdíveis."
+    ],
+    "faq": [
+      {
+        "answer": "Não. A platina base é single-player e pode ser feita offline.",
+        "question": "Horizon Forbidden West exige online para platinar?"
+      },
+      {
+        "answer": "Não. A platina não depende de coop.",
+        "question": "Horizon Forbidden West exige coop para platinar?"
+      },
+      {
+        "answer": "Não. Burning Shores tem troféus próprios e não entra nos 59 troféus da platina base.",
+        "question": "Burning Shores é necessário para a platina?"
+      },
+      {
+        "answer": "Não. New Game+ e Ultra Hard pertencem a troféus adicionais e não são exigidos pela platina base.",
+        "question": "New Game+ ou Ultra Hard são necessários para a platina?"
+      },
+      {
+        "answer": "O ponto de atenção principal é All Machine Types Scanned, por causa de Specter e Specter Prime na missão final Singularity. O restante da lista base pode ser resolvido no free roam.",
+        "question": "Horizon Forbidden West tem troféus perdíveis?"
+      },
+      {
+        "answer": "Uma run é suficiente para a platina base, com cleanup depois da história. New Game+ não é obrigatório.",
+        "question": "Quantas runs são necessárias?"
+      },
+      {
+        "answer": "Não. A dificuldade não afeta a platina base.",
+        "question": "Preciso jogar em dificuldade alta?"
+      },
+      {
+        "answer": "Não. A platina exige várias atividades, mas não 100% absoluto de todos os collectibles e atividades. O guia foca só no que entra nos 59 troféus base.",
+        "question": "Preciso fazer 100% do mapa?"
+      },
+      {
+        "answer": "Escanear Specter e Specter Prime durante Singularity e organizar Melee Pits, Hunting Grounds, Rebel Camps, Cauldrons e side quests específicas.",
+        "question": "Qual é o maior cuidado da platina?"
+      },
+      {
+        "answer": "Sim. O free roam pós-história permite resolver quase tudo, incluindo side quests, collectibles, activities, upgrades e combat trophies.",
+        "question": "Dá para fazer cleanup depois da história?"
+      }
+    ],
+    "note": "Campos exportados para auditoria. O SQLite atual nao possui colunas nativas para todos esses extras; a importacao preserva o que o banco suporta.",
+    "quickDecision": {
+      "firstAction": "Comece pela campanha abrindo o mapa com Tallnecks e escaneando toda machine nova com o Focus; antes de Singularity, confirme Specter e Specter Prime.",
+      "mainRisk": "O principal cuidado é escanear Specter e Specter Prime na missão final Singularity e organizar Cauldrons, Hunting Grounds, Melee Pits, Rebel Camps, Arena, side quests específicas e cleanup sem transformar o guia em 100% com DLC.",
+      "summary": "Vale platinar Horizon Forbidden West se você gosta de mundo aberto, combate contra machines, exploração e checklist moderado. A platina base é acessível, offline, sem coop, sem DLC obrigatória, sem New Game+ e sem Ultra Hard. O principal cuidado é escanear Specter e Specter Prime em Singularity e organizar Melee Pits, Hunting Grounds, Rebel Camps, Cauldrons, Arena, collectibles e side quests sem transformar o guia em 100% com DLC."
+    },
+    "seo": {
+      "description": "Guia de platina de Horizon Forbidden West com roadmap em português, troféus da lista base, machines, Specter, Cauldrons, Tallnecks, Hunting Grounds, Melee Pits, Rebel Camps, Arena, collectibles, side quests e cleanup para conquistar a platina no PS4 e PS5.",
+      "keywords": [
+        "Horizon Forbidden West",
+        "guia de platina Horizon Forbidden West",
+        "troféus Horizon Forbidden West",
+        "roadmap Horizon Forbidden West",
+        "All Machine Types Scanned",
+        "Specter",
+        "Specter Prime",
+        "Singularity",
+        "Cauldrons",
+        "Hunting Grounds",
+        "Melee Pits",
+        "Burning Shores",
+        "New Game+"
+      ],
+      "title": "Guia de Platina Horizon Forbidden West - Troféus, Roadmap e Dicas"
+    },
+    "tags": [
+      "mundo aberto",
+      "acao/RPG",
+      "campanha",
+      "machines",
+      "scan",
+      "cauldrons",
+      "hunting grounds",
+      "melee pits",
+      "rebel camps",
+      "arena",
+      "gauntlet runs",
+      "collectibles",
+      "exploração",
+      "cleanup",
+      "offline",
+      "sem coop",
+      "sem DLC obrigatória"
+    ]
+  },
+  "slug": "horizon-forbidden-west",
+  "trophies": [
+    {
+      "description": "Obtenha todos os troféus de Horizon Forbidden West.",
+      "is_missable": 0,
+      "is_spoiler": 0,
+      "name": "All Trophies Obtained",
+      "name_pt": "Todos os troféus obtidos",
+      "tip": "Conclua os outros 58 troféus da lista base. Burning Shores, New Game+ e Ultra Hard não são necessários para esta platina.",
+      "trophy_code": "hfw_all_trophies_obtained",
+      "type": "Platina"
+    },
+    {
+      "description": "Coloque fim a ameaca Zenith e descubra Nemesis.",
+      "is_missable": 0,
+      "is_spoiler": 1,
+      "name": "Discovered Nemesis",
+      "name_pt": "Nemesis descoberta",
+      "tip": "Troféu automático de conclusao da campanha principal.",
+      "trophy_code": "hfw_discovered_nemesis",
+      "type": "Ouro"
+    },
+    {
+      "description": "Alcance o nível de jogador 50.",
+      "is_missable": 0,
+      "is_spoiler": 0,
+      "name": "Reached Level 50",
+      "name_pt": "Nível 50 alcancado",
+      "tip": "Vem com campanha, side quests e bastante atividade de mundo aberto; não exige farm pesado se você limpar o mapa.",
+      "trophy_code": "hfw_reached_level_50",
+      "type": "Prata"
+    },
+    {
+      "description": "Chegue ao topo de todos os Tallnecks e acesse suas informações.",
+      "is_missable": 0,
+      "is_spoiler": 0,
+      "name": "All Tallnecks Overridden",
+      "name_pt": "Todos os Tallnecks sobrescritos",
+      "tip": "Complete todos os Tallnecks da lista base para revelar regioes e organizar o cleanup.",
+      "trophy_code": "hfw_all_tallnecks_overridden",
+      "type": "Prata"
+    },
+    {
+      "description": "Investigue todos os Rebel Camps e ajude Erend a derrotar Asera.",
+      "is_missable": 0,
+      "is_spoiler": 1,
+      "name": "Defeated Asera",
+      "name_pt": "Asera derrotada",
+      "tip": "Finalize a cadeia dos Rebel Camps e acompanhe a quest até o confronto final.",
+      "trophy_code": "hfw_defeated_asera",
+      "type": "Prata"
+    },
+    {
+      "description": "Chegue ao Core de todos os Cauldrons e acesse suas informações.",
+      "is_missable": 0,
+      "is_spoiler": 0,
+      "name": "All Cores Overridden",
+      "name_pt": "Todos os Cores sobrescritos",
+      "tip": "Complete todos os Cauldrons da lista base para liberar overrides e reduzir trabalho no fim.",
+      "trophy_code": "hfw_all_cores_overridden",
+      "type": "Prata"
+    },
+    {
+      "description": "Ganhe pelo menos uma marca Quarter Stripe nas três trials de todos os Hunting Grounds.",
+      "is_missable": 0,
+      "is_spoiler": 0,
+      "name": "Obtained 3 Stripes at All Hunting Grounds",
+      "name_pt": "3 Stripes em todos os Hunting Grounds",
+      "tip": "Basta Quarter Stripe em todos os trials. Volte mais tarde com equipamento melhor se algum tempo incomodar.",
+      "trophy_code": "hfw_three_stripes_all_hunting_grounds",
+      "type": "Prata"
+    },
+    {
+      "description": "Encontre e escaneie com o Focus todos os tipos de machines.",
+      "is_missable": 1,
+      "is_spoiler": 1,
+      "name": "All Machine Types Scanned",
+      "name_pt": "Todos os tipos de machines escaneados",
+      "tip": "Escaneie todas as machines com o Focus, com atenção especial a Specter e Specter Prime na missão final Singularity. Se morrer no combate final, escaneie novamente antes de concluir a luta.",
+      "trophy_code": "hfw_all_machine_types_scanned",
+      "type": "Prata"
+    },
+    {
+      "description": "Aprenda todas as skills disponíveis em uma árvore.",
+      "is_missable": 0,
+      "is_spoiler": 0,
+      "name": "Skill Tree Learned",
+      "name_pt": "Árvore de skills aprendida",
+      "tip": "Escolha a árvore que combina com seu estilo e complete-a com pontos de nível e atividades.",
+      "trophy_code": "hfw_skill_tree_learned",
+      "type": "Prata"
+    },
+    {
+      "description": "Alcance o nível de jogador 20.",
+      "is_missable": 0,
+      "is_spoiler": 0,
+      "name": "Reached Level 20",
+      "name_pt": "Nível 20 alcancado",
+      "tip": "Vem naturalmente com campanha, exploração e atividades iniciais.",
+      "trophy_code": "hfw_reached_level_20",
+      "type": "Bronze"
+    },
+    {
+      "description": "Alcance o nível de jogador 30.",
+      "is_missable": 0,
+      "is_spoiler": 0,
+      "name": "Reached Level 30",
+      "name_pt": "Nível 30 alcancado",
+      "tip": "Continue alternando main quests, side quests e mundo aberto.",
+      "trophy_code": "hfw_reached_level_30",
+      "type": "Bronze"
+    },
+    {
+      "description": "Chegue a The Daunt em busca de passagem para o Forbidden West.",
+      "is_missable": 0,
+      "is_spoiler": 1,
+      "name": "Reached the Daunt",
+      "name_pt": "The Daunt alcancado",
+      "tip": "Troféu automático de progresso inicial da história.",
+      "trophy_code": "hfw_reached_the_daunt",
+      "type": "Bronze"
+    },
+    {
+      "description": "Abra caminho até a Embassy e reabra The Daunt.",
+      "is_missable": 0,
+      "is_spoiler": 1,
+      "name": "Secured Passage to the Embassy",
+      "name_pt": "Passagem para a Embassy garantida",
+      "tip": "Troféu automático de história ligado a abertura da regiao inicial.",
+      "trophy_code": "hfw_secured_passage_to_embassy",
+      "type": "Bronze"
+    },
+    {
+      "description": "Sobreviva a emboscada na Embassy e consiga passagem para o Forbidden West.",
+      "is_missable": 0,
+      "is_spoiler": 1,
+      "name": "Attended the Embassy",
+      "name_pt": "Embassy concluída",
+      "tip": "Troféu automático de um evento narrativo importante.",
+      "trophy_code": "hfw_attended_the_embassy",
+      "type": "Bronze"
+    },
+    {
+      "description": "Garanta uma base de operações e reinicie GAIA.",
+      "is_missable": 0,
+      "is_spoiler": 1,
+      "name": "Established the Base",
+      "name_pt": "Base estabelecida",
+      "tip": "Troféu automático de progresso da campanha principal.",
+      "trophy_code": "hfw_established_the_base",
+      "type": "Bronze"
+    },
+    {
+      "description": "Defenda o Kulrut e recupere AETHER.",
+      "is_missable": 0,
+      "is_spoiler": 1,
+      "name": "Recovered AETHER",
+      "name_pt": "AETHER recuperado",
+      "tip": "Troféu automático de uma linha principal Tenakth.",
+      "trophy_code": "hfw_recovered_aether",
+      "type": "Bronze"
+    },
+    {
+      "description": "Drene Las Vegas e recupere POSEIDON.",
+      "is_missable": 0,
+      "is_spoiler": 1,
+      "name": "Recovered POSEIDON",
+      "name_pt": "POSEIDON recuperado",
+      "tip": "Troféu automático de uma linha principal em local avancado.",
+      "trophy_code": "hfw_recovered_poseidon",
+      "type": "Bronze"
+    },
+    {
+      "description": "Encontre os Quen e recupere DEMETER.",
+      "is_missable": 0,
+      "is_spoiler": 1,
+      "name": "Recovered DEMETER",
+      "name_pt": "DEMETER recuperado",
+      "tip": "Troféu automático de progresso principal com revelação de tribo/local.",
+      "trophy_code": "hfw_recovered_demeter",
+      "type": "Bronze"
+    },
+    {
+      "description": "Siga o sinal de emergência de Beta e leve-a de volta à base.",
+      "is_missable": 0,
+      "is_spoiler": 1,
+      "name": "Recovered Beta",
+      "name_pt": "Beta recuperada",
+      "tip": "Troféu automático de história avancada.",
+      "trophy_code": "hfw_recovered_beta",
+      "type": "Bronze"
+    },
+    {
+      "description": "Sobreviva a Thebes e faça amizade com os Quen.",
+      "is_missable": 0,
+      "is_spoiler": 1,
+      "name": "Discovered Faro's Fate",
+      "name_pt": "Destino de Faro descoberto",
+      "tip": "Troféu automático de revelação narrativa avancada.",
+      "trophy_code": "hfw_discovered_faros_fate",
+      "type": "Bronze"
+    },
+    {
+      "description": "Voe para a batalha e derrote Regalla.",
+      "is_missable": 0,
+      "is_spoiler": 1,
+      "name": "Flew on the Wings of the Ten",
+      "name_pt": "Voou nas Wings of the Ten",
+      "tip": "Troféu automático de reta final da campanha.",
+      "trophy_code": "hfw_flew_on_wings_of_ten",
+      "type": "Bronze"
+    },
+    {
+      "description": "Ajude Drakka e Yarra e escolha o melhor candidato.",
+      "is_missable": 0,
+      "is_spoiler": 1,
+      "name": "Chose a Desert Commander",
+      "name_pt": "Desert Commander escolhido",
+      "tip": "Complete os dois lados da cadeia do deserto e escolha um comandante.",
+      "trophy_code": "hfw_chose_desert_commander",
+      "type": "Bronze"
+    },
+    {
+      "description": "Resolva todos os problemas que afligem The Daunt.",
+      "is_missable": 0,
+      "is_spoiler": 1,
+      "name": "Saved the Daunt",
+      "name_pt": "The Daunt salva",
+      "tip": "Feche as side quests principais da Daunt antes ou depois da história.",
+      "trophy_code": "hfw_saved_the_daunt",
+      "type": "Bronze"
+    },
+    {
+      "description": "Ajude Kotallo a construir e testar um braço mecanizado.",
+      "is_missable": 0,
+      "is_spoiler": 1,
+      "name": "Aided Kotallo",
+      "name_pt": "Kotallo ajudado",
+      "tip": "Avance a linha pessoal de Kotallo quando ficar disponível na base.",
+      "trophy_code": "hfw_aided_kotallo",
+      "type": "Bronze"
+    },
+    {
+      "description": "Ajude Zo a reiniciar os land-gods para salvar Plainsong.",
+      "is_missable": 0,
+      "is_spoiler": 1,
+      "name": "Healed the Land-gods",
+      "name_pt": "Land-gods curados",
+      "tip": "Complete a linha de Zo e Plainsong para resolver os land-gods.",
+      "trophy_code": "hfw_healed_land_gods",
+      "type": "Bronze"
+    },
+    {
+      "description": "Ajude Alva a recuperar dados para ajudar os Quen.",
+      "is_missable": 0,
+      "is_spoiler": 1,
+      "name": "Recovered Alva's Data",
+      "name_pt": "Dados de Alva recuperados",
+      "tip": "Avance a linha de Alva quando ela abrir no progresso da história.",
+      "trophy_code": "hfw_recovered_alvas_data",
+      "type": "Bronze"
+    },
+    {
+      "description": "Chegue ao topo de um Tallneck e acesse suas informações.",
+      "is_missable": 0,
+      "is_spoiler": 0,
+      "name": "First Tallneck Overridden",
+      "name_pt": "Primeiro Tallneck sobrescrito",
+      "tip": "Suba em qualquer Tallneck e faça o override para revelar mapa.",
+      "trophy_code": "hfw_first_tallneck_overridden",
+      "type": "Bronze"
+    },
+    {
+      "description": "Conclua objetivos principais em 1 Rebel Camp.",
+      "is_missable": 0,
+      "is_spoiler": 0,
+      "name": "First Rebel Camp Completed",
+      "name_pt": "Primeiro Rebel Camp concluído",
+      "tip": "Limpe um Rebel Camp seguindo os objetivos internos.",
+      "trophy_code": "hfw_first_rebel_camp_completed",
+      "type": "Bronze"
+    },
+    {
+      "description": "Chegue ao Core de um Cauldron e acesse suas informações.",
+      "is_missable": 0,
+      "is_spoiler": 0,
+      "name": "First Core Overridden",
+      "name_pt": "Primeiro Core sobrescrito",
+      "tip": "Entre em um Cauldron, chegue ao core e conclua o override.",
+      "trophy_code": "hfw_first_core_overridden",
+      "type": "Bronze"
+    },
+    {
+      "description": "Ganhe pelo menos uma marca Quarter Stripe nas três trials de um Hunting Ground.",
+      "is_missable": 0,
+      "is_spoiler": 0,
+      "name": "Obtained 3 Stripes at a Hunting Ground",
+      "name_pt": "3 Stripes em um Hunting Ground",
+      "tip": "Faça Quarter Stripe nos três trials de um Hunting Ground.",
+      "trophy_code": "hfw_three_stripes_hunting_ground",
+      "type": "Bronze"
+    },
+    {
+      "description": "Mate pelo menos uma machine de cada tipo de Acquisition.",
+      "is_missable": 0,
+      "is_spoiler": 0,
+      "name": "All Acquisition Machines Killed",
+      "name_pt": "Todas as machines de aquisição mortas",
+      "tip": "Use o notebook de maquinas para conferir cada tipo de Acquisition morto.",
+      "trophy_code": "hfw_all_acquisition_machines_killed",
+      "type": "Bronze"
+    },
+    {
+      "description": "Mate pelo menos uma machine de cada tipo de Reconnaissance.",
+      "is_missable": 0,
+      "is_spoiler": 0,
+      "name": "All Recon Machines Killed",
+      "name_pt": "Todas as machines de reconhecimento mortas",
+      "tip": "Elimine pelo menos uma maquina de reconhecimento de cada tipo.",
+      "trophy_code": "hfw_all_recon_machines_killed",
+      "type": "Bronze"
+    },
+    {
+      "description": "Mate pelo menos uma machine de cada tipo de Combat.",
+      "is_missable": 0,
+      "is_spoiler": 0,
+      "name": "All Combat Machines Killed",
+      "name_pt": "Todas as machines de combate mortas",
+      "tip": "Deixe confrontos mais pesados para quando tiver armas e outfits melhores.",
+      "trophy_code": "hfw_all_combat_machines_killed",
+      "type": "Bronze"
+    },
+    {
+      "description": "Mate pelo menos uma machine de cada tipo de Transport.",
+      "is_missable": 0,
+      "is_spoiler": 0,
+      "name": "All Transport Machines Killed",
+      "name_pt": "Todas as machines de transporte mortas",
+      "tip": "Procure habitats de transporte no mapa e marque cada tipo morto.",
+      "trophy_code": "hfw_all_transport_machines_killed",
+      "type": "Bronze"
+    },
+    {
+      "description": "Monte um Charger, um Bristleback e um Clawstrider.",
+      "is_missable": 0,
+      "is_spoiler": 0,
+      "name": "Rode All Regular Mounts",
+      "name_pt": "Todas as montarias regulares montadas",
+      "tip": "Libere overrides necessários e monte os três tipos regulares.",
+      "trophy_code": "hfw_rode_all_regular_mounts",
+      "type": "Bronze"
+    },
+    {
+      "description": "Plane por 60 segundos sem interrupção.",
+      "is_missable": 0,
+      "is_spoiler": 0,
+      "name": "Completed a Long Glide",
+      "name_pt": "Planagem longa concluída",
+      "tip": "Procure um ponto muito alto e plane sem tocar o solo por 60 segundos.",
+      "trophy_code": "hfw_completed_long_glide",
+      "type": "Bronze"
+    },
+    {
+      "description": "Conclua 2 quests que exigem uma flying mount.",
+      "is_missable": 0,
+      "is_spoiler": 1,
+      "name": "Completed 2 Flying Mount Quests",
+      "name_pt": "2 quests de flying mount concluídas",
+      "tip": "Fica disponível na fase avancada, depois que o recurso de voo entra na campanha.",
+      "trophy_code": "hfw_completed_two_flying_mount_quests",
+      "type": "Bronze"
+    },
+    {
+      "description": "Fique em primeiro lugar em duas Gauntlet Runs diferentes.",
+      "is_missable": 0,
+      "is_spoiler": 0,
+      "name": "Won 2 Gauntlet Runs",
+      "name_pt": "2 Gauntlet Runs vencidas",
+      "tip": "Vença duas corridas diferentes; reduza a dificuldade se quiser focar só na platina.",
+      "trophy_code": "hfw_won_two_gauntlet_runs",
+      "type": "Bronze"
+    },
+    {
+      "description": "Conclua todos os contratos de um Salvage Contractor.",
+      "is_missable": 0,
+      "is_spoiler": 0,
+      "name": "Completed a Set of Salvage Contracts",
+      "name_pt": "Set de Salvage Contracts concluído",
+      "tip": "Escolha um Salvage Contractor e termine todos os contratos daquele conjunto.",
+      "trophy_code": "hfw_completed_salvage_contracts",
+      "type": "Bronze"
+    },
+    {
+      "description": "Derrote o líder do outpost e recupere as tags em 4 Rebel Outposts.",
+      "is_missable": 0,
+      "is_spoiler": 0,
+      "name": "Completed 4 Rebel Outposts",
+      "name_pt": "4 Rebel Outposts concluídos",
+      "tip": "Limpe quatro outposts, pegue as tags dos líderes e entregue quando necessário.",
+      "trophy_code": "hfw_completed_four_rebel_outposts",
+      "type": "Bronze"
+    },
+    {
+      "description": "Descubra e conclua 3 Relic Ruins.",
+      "is_missable": 0,
+      "is_spoiler": 0,
+      "name": "Completed 3 Relic Ruins",
+      "name_pt": "3 Relic Ruins concluídas",
+      "tip": "Resolva três Relic Ruins; algumas exigem ferramentas liberadas pela história.",
+      "trophy_code": "hfw_completed_three_relic_ruins",
+      "type": "Bronze"
+    },
+    {
+      "description": "Conclua 1 conjunto de desafios da Arena.",
+      "is_missable": 0,
+      "is_spoiler": 0,
+      "name": "Completed Arena Challenge Set",
+      "name_pt": "Arena Challenge Set concluído",
+      "tip": "Complete um conjunto da Arena. Volte depois com build melhor se estiver apertado.",
+      "trophy_code": "hfw_completed_arena_challenge_set",
+      "type": "Bronze"
+    },
+    {
+      "description": "Vença uma partida contra 2 desafiantes diferentes de Machine Strike.",
+      "is_missable": 0,
+      "is_spoiler": 0,
+      "name": "Defeated Machine Strike Challengers",
+      "name_pt": "Machine Strike Challengers derrotados",
+      "tip": "Vença dois oponentes diferentes de Machine Strike; use pecas fortes e partidas simples.",
+      "trophy_code": "hfw_defeated_machine_strike_challengers",
+      "type": "Bronze"
+    },
+    {
+      "description": "Obtenha 1 arma de cada classe.",
+      "is_missable": 0,
+      "is_spoiler": 0,
+      "name": "Obtained All Weapon Classes",
+      "name_pt": "Todas as classes de armas obtidas",
+      "tip": "Compre ou ganhe pelo menos uma arma de cada classe da lista base.",
+      "trophy_code": "hfw_obtained_all_weapon_classes",
+      "type": "Bronze"
+    },
+    {
+      "description": "Aplique cada estado elemental em um inimigo pelo menos uma vez.",
+      "is_missable": 0,
+      "is_spoiler": 0,
+      "name": "Used all Elemental States",
+      "name_pt": "Todos os estados elementais usados",
+      "tip": "Use armas e ammo de elementos diferentes até aplicar todos os estados.",
+      "trophy_code": "hfw_used_all_elemental_states",
+      "type": "Bronze"
+    },
+    {
+      "description": "Execute com sucesso 3 combos melee desbloqueáveis diferentes.",
+      "is_missable": 0,
+      "is_spoiler": 0,
+      "name": "Performed 3 Melee Combos",
+      "name_pt": "3 combos melee executados",
+      "tip": "Compre combos nas skills e execute três diferentes em inimigos ou treino.",
+      "trophy_code": "hfw_performed_three_melee_combos",
+      "type": "Bronze"
+    },
+    {
+      "description": "Realize um abate furtivo em 10 machines.",
+      "is_missable": 0,
+      "is_spoiler": 0,
+      "name": "Stealth Killed 10 Machines",
+      "name_pt": "10 machines mortas furtivamente",
+      "tip": "Use grama alta, Silent Strike e maquinas menores para acumular abates furtivos.",
+      "trophy_code": "hfw_stealth_killed_ten_machines",
+      "type": "Bronze"
+    },
+    {
+      "description": "Arranque 100 componentes de machines.",
+      "is_missable": 0,
+      "is_spoiler": 0,
+      "name": "Tore off 100 Components",
+      "name_pt": "100 componentes arrancados",
+      "tip": "Mire componentes destacados pelo Focus e use armas com dano de tear.",
+      "trophy_code": "hfw_tore_off_100_components",
+      "type": "Bronze"
+    },
+    {
+      "description": "Pegue 5 armas pesadas diferentes.",
+      "is_missable": 0,
+      "is_spoiler": 0,
+      "name": "Picked up 5 Heavy Weapons",
+      "name_pt": "5 armas pesadas coletadas",
+      "tip": "Derrube armas pesadas de maquinas grandes ou pegue armas em encontros onde elas aparecem.",
+      "trophy_code": "hfw_picked_up_five_heavy_weapons",
+      "type": "Bronze"
+    },
+    {
+      "description": "Desbloqueie e use overrides em 10 tipos diferentes de machines.",
+      "is_missable": 0,
+      "is_spoiler": 0,
+      "name": "10 Types of Machine Overridden",
+      "name_pt": "10 tipos de machines sobrescritos",
+      "tip": "Complete Cauldrons, libere overrides e use-os em dez tipos diferentes.",
+      "trophy_code": "hfw_ten_machine_types_overridden",
+      "type": "Bronze"
+    },
+    {
+      "description": "Derrote a mestre melee Tenakth conhecida como The Enduring.",
+      "is_missable": 0,
+      "is_spoiler": 1,
+      "name": "Defeated the Enduring",
+      "name_pt": "The Enduring derrotada",
+      "tip": "Conclua os Melee Pits para liberar e vencer o desafio final de combate corpo a corpo.",
+      "trophy_code": "hfw_defeated_the_enduring",
+      "type": "Bronze"
+    },
+    {
+      "description": "Aprimore um Valor Surge até o nível máximo.",
+      "is_missable": 0,
+      "is_spoiler": 0,
+      "name": "Fully Upgraded a Valor Surge",
+      "name_pt": "Valor Surge totalmente aprimorado",
+      "tip": "Invista pontos de skill em um Valor Surge até o nível máximo.",
+      "trophy_code": "hfw_fully_upgraded_valor_surge",
+      "type": "Bronze"
+    },
+    {
+      "description": "Aprimore totalmente 3 armas.",
+      "is_missable": 0,
+      "is_spoiler": 0,
+      "name": "Upgraded 3 Weapons",
+      "name_pt": "3 armas aprimoradas",
+      "tip": "Escolha três armas que você realmente usa para gastar materiais de upgrade.",
+      "trophy_code": "hfw_upgraded_three_weapons",
+      "type": "Bronze"
+    },
+    {
+      "description": "Aprimore totalmente 3 outfits diferentes.",
+      "is_missable": 0,
+      "is_spoiler": 0,
+      "name": "Upgraded 3 Outfits",
+      "name_pt": "3 outfits aprimorados",
+      "tip": "Atualize três outfits diferentes; farming de componentes pode ser feito no cleanup.",
+      "trophy_code": "hfw_upgraded_three_outfits",
+      "type": "Bronze"
+    },
+    {
+      "description": "Aprimore Food Pouch, Potion Pouch, Resource Pouch, Trap Pouch e qualquer ammo pouch pelo menos uma vez.",
+      "is_missable": 0,
+      "is_spoiler": 0,
+      "name": "Upgraded Every Pouch Type",
+      "name_pt": "Todos os tipos de pouch aprimorados",
+      "tip": "Cace animais e colete recursos para melhorar cada categoria de pouch ao menos uma vez.",
+      "trophy_code": "hfw_upgraded_every_pouch_type",
+      "type": "Bronze"
+    },
+    {
+      "description": "Equipe uma arma de qualquer tier com 2 coils.",
+      "is_missable": 0,
+      "is_spoiler": 0,
+      "name": "Enhanced Weapon with Coils",
+      "name_pt": "Arma melhorada com coils",
+      "tip": "Use uma arma com dois slots e equipe dois coils.",
+      "trophy_code": "hfw_enhanced_weapon_with_coils",
+      "type": "Bronze"
+    },
+    {
+      "description": "Desbloqueie uma Weapon Technique para 3 classes de armas diferentes.",
+      "is_missable": 0,
+      "is_spoiler": 0,
+      "name": "Unlocked 3 Weapon Techniques",
+      "name_pt": "3 Weapon Techniques desbloqueadas",
+      "tip": "Compre uma Weapon Technique em três classes de armas diferentes.",
+      "trophy_code": "hfw_unlocked_three_weapon_techniques",
+      "type": "Bronze"
+    },
+    {
+      "description": "Conclua 1 Survey Drone, 1 Black Box, 1 Relic Ruin, 1 Vista Point e 1 Signal Tower.",
+      "is_missable": 0,
+      "is_spoiler": 0,
+      "name": "Recovered 5 Different Collectables",
+      "name_pt": "5 collectibles diferentes recuperados",
+      "tip": "Feche um exemplo de cada tipo listado. Alguns dependem de ferramentas ou acesso a regioes posteriores.",
+      "trophy_code": "hfw_recovered_five_different_collectables",
+      "type": "Bronze"
+    },
+    {
+      "description": "Use dye flowers para desbloquear e aplicar uma nova tintura.",
+      "is_missable": 0,
+      "is_spoiler": 0,
+      "name": "Used Dye Flowers",
+      "name_pt": "Dye Flowers usadas",
+      "tip": "Colete dye flowers e aplique qualquer nova tintura em um dye merchant.",
+      "trophy_code": "hfw_used_dye_flowers",
+      "type": "Bronze"
+    }
+  ]
+}

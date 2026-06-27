@@ -1,0 +1,672 @@
+{
+  "game": {
+    "avoid_if": "Evite se você quer uma platina simples, curta ou sem múltiplas runs e coleta cuidadosa.",
+    "before_you_start": "Planeje os finais desde o começo. Lies of P pune decisões mal encaixadas com retrabalho, mas tudo continua offline e a platina base não exige Overture.",
+    "best_for": "Ideal para quem gosta de soulslike técnico, narrativa com escolhas e checklist denso.",
+    "cleanup_advice": "Antes de entrar em NG+, volte ao Hotel Krat para o piano, as cartas e os itens pós-final; depois use a segunda run para records, escolhas alternativas e as coleções que faltarem.",
+    "cover_image": "https://cdn.cloudflare.steamstatic.com/steam/apps/1627720/library_600x900.jpg",
+    "coverage_level": "strong",
+    "created_at": "2026-05-09 19:53:44",
+    "difficulty": 6,
+    "difficulty_reason": "A nota 6/10 considera o padrão atual do guia: o modo original continua exigente por chefes, parry/defesa perfeita e NG+, mas Butterfly's Guidance ou Awakened Puppet reduzem a barreira sem bloquear troféus.",
+    "dlc_scope": "Overture fica fora da platina base e não é necessário para fechar os 43 troféus desta lista.",
+    "editorial_notes": "Fonte-base: PowerPyx Trophy Guide & Roadmap, guia de finais, guia de colecionáveis, guia de Records, guia de gestos, guia de armas normais e guia de armas especiais. Decisão editorial: lista base de 43 troféus, perdíveis alinhados ao checklist, Overture fora do escopo e backup de save recomendado para reduzir retrabalho.",
+    "editorial_review_status": "in_review",
+    "editorial_status": "published",
+    "first_run_advice": "Faça a primeira run com o checklist aberto e backup planejado. Explore cada área antes de avançar, fale com NPCs no Hotel Krat, colete Records, gestos, Cryptic Vessels e armas, e anote as escolhas de mentira/verdade. Antes das decisões finais, faça backup do save ou da cloud save para reduzir o número de runs dos finais.",
+    "grind_summary": "O peso está em múltiplos finais, Records, gestos, Cryptic Vessels, Trinity Sanctums, armas especiais, Ergo de chefe, P-Organ e NG+.",
+    "guide_avoid": "Evite se você quer uma platina simples, curta ou sem múltiplas runs e coleta cuidadosa.",
+    "guide_best_moment": "Faça a primeira run com o checklist aberto e backup planejado. Explore cada área antes de avançar, fale com NPCs no Hotel Krat, colete Records, gestos, Cryptic Vessels e armas, e anote as escolhas de mentira/verdade. Antes das decisões finais, faça backup do save ou da cloud save para reduzir o número de runs dos finais.",
+    "guide_dlc": "Overture fica fora da platina base e não é necessário para fechar os 43 troféus desta lista.",
+    "guide_grind": "O peso está em múltiplos finais, records, gestos, cryptic vessels, Trinity Sanctums, armas especiais, boss Ergo, P-Organ e NG+.",
+    "guide_ideal": "Ideal para quem gosta de soulslike técnico, narrativa com escolhas e checklist denso.",
+    "guide_online": "Não há troféus online obrigatórios, coop obrigatório nem exigência de PS+ para a platina base.",
+    "guide_runs": "Com backup de save, a rota pode fechar os três finais em 2 runs e deixar o resto para o cleanup. Sem backup, planeje 3 finais separados e use NG+ para records, armas e pendências de colecionáveis.",
+    "image": "https://cdn.cloudflare.steamstatic.com/steam/apps/1627720/header.jpg",
+    "is_verified": 0,
+    "last_reviewed_at": "2026-06-08",
+    "missable": "A platina base de Lies of P é offline, mas pede plano: os três finais, os Records de NG+, as histórias de NPC, os gestos, os Cryptic Vessels, as armas especiais e os itens de Ergo de chefe podem gerar retrabalho se você tocar a campanha no automático. O guia cobre só a lista base de 43 troféus; Overture fica fora do escopo.",
+    "missable_summary": "Os troféus perdíveis marcados ficam nos finais, The First Puppet, Pianist of Krat, Special Weapon Collector, Golden Melody, Learning about Emotions, Veteran Explorer, End of Riddles e nas histórias de Venigni, Antonia, Geppetto, Eugenie e Sophia.",
+    "name": "Lies of P",
+    "online_summary": "Não há troféus online obrigatórios, coop obrigatório nem exigência de PS+ para a platina base.",
+    "quality_warnings": "[]",
+    "reviewed_by": "Codex",
+    "runs_summary": "Com backup de save, a rota pode fechar os três finais em 2 runs e deixar o resto para o cleanup. Sem backup, planeje 3 finais separados e use NG+ para Records, armas e pendências de colecionáveis.",
+    "slug": "lies-of-p",
+    "time": "50-70h",
+    "time_bucket": "long",
+    "time_max_hours": 70,
+    "time_min_hours": 50,
+    "time_reason": "A faixa de 50-70 horas considera campanha, 2 runs com backup ou 3 sem backup, Records de NG+, gestos, coleções, armas e cleanup.",
+    "time_sort_hours": 50,
+    "updated_at": "2026-06-27 02:36:58",
+    "verification_note": "Lista base revisada sem Overture; finais, Records e NG+ reorganizados, ainda em revisão editorial até a validação final do render/PDF.",
+    "verification_status": "review",
+    "walkthrough": null
+  },
+  "redirects": [],
+  "roadmaps": [
+    {
+      "content": "{\"title\":\"Faça a primeira run com checklist ativo\",\"focus\":\"Campanha e coletáveis\",\"objective\":\"Avançar pela história acompanhando escolhas, NPCs, Records, gestos, Cryptic Vessels, Trinity Sanctums e Ergo de chefe.\",\"actions\":[\"Jogue a campanha sem consumir Ergo de chefe antes de comprar as armas especiais necessárias.\",\"Acompanhe Records, gestos, Cryptic Vessels, Trinity Keys, Trinity Sanctums e histórias de NPC desde cedo.\",\"Registre decisões importantes envolvendo Sophia, Geppetto, Eugenie, Alidoro, Antonia e Venigni.\"],\"warning\":\"Algumas missões, escolhas e colecionáveis podem gerar retrabalho se forem ignorados até o fim da campanha.\",\"result\":\"Você chega ao endgame com a maior parte dos requisitos sensíveis controlada.\"}",
+      "step_order": 1
+    },
+    {
+      "content": "{\"title\":\"Prepare os finais antes de Under the Abyss\",\"focus\":\"Finais e backup\",\"objective\":\"Organizar humanidade, Sophia, Geppetto e o ponto de backup para reduzir runs.\",\"actions\":[\"Antes de Under the Abyss, confirme o estado de humanidade e as escolhas ligadas a Sophia.\",\"Prepare backup de save se for usar estratégia de múltiplos finais.\",\"Planeje Real Boy, Free from the Puppet String, Rise of P e The First Puppet antes da decisão final.\"],\"warning\":\"Dar o coração a Geppetto encerra a rota sem a luta contra Nameless Puppet e pode bloquear The First Puppet nessa run.\",\"result\":\"Os finais ficam organizados e o risco de repetir campanha por decisão errada diminui.\"}",
+      "step_order": 2
+    },
+    {
+      "content": "{\"title\":\"Resolva pendências antes de iniciar NG+\",\"focus\":\"Pós-final\",\"objective\":\"Conferir troféus que podem ser perdidos ao entrar em NG+ cedo demais.\",\"actions\":[\"Depois do final, não inicie NG+ imediatamente.\",\"Volte ao Hotel Krat para Pianist of Krat e cartas/histórias pendentes.\",\"Revise The Story of One Father, The Story of the Blue Butterfly, The Story of the Prince e outras histórias de NPC.\"],\"warning\":\"Iniciar NG+ cedo demais pode causar retrabalho em troféus de história, piano, cartas e finais.\",\"result\":\"A run atual fica limpa antes de avançar para NG+.\"}",
+      "step_order": 3
+    },
+    {
+      "content": "{\"title\":\"Use NG+ para Records e escolhas alternativas\",\"focus\":\"NG+\",\"objective\":\"Fechar Golden Records, escolhas exclusivas e coleções que dependem de segunda passada.\",\"actions\":[\"Compre os Golden Records dos mercadores em NG+.\",\"Faça a escolha alternativa da missão de Eugenie para obter o Record oposto.\",\"Complete Records, gestos, Cryptic Vessels, armas normais, armas especiais e Legion Arms restantes.\"],\"warning\":\"Golden Melody não fecha em uma única campanha, porque há Records ligados a NG+ e escolhas exclusivas.\",\"result\":\"Os colecionáveis mais sensíveis da platina ficam resolvidos.\"}",
+      "step_order": 4
+    },
+    {
+      "content": "{\"title\":\"Finalize armas, upgrades e P-Organ\",\"focus\":\"Cleanup\",\"objective\":\"Concluir upgrades, armas especiais/normais, Legion Arms, Quartz e P-Organ.\",\"actions\":[\"Revise armas normais e especiais antes de gastar recursos finais.\",\"Use Ergo de chefe apenas depois de garantir as armas especiais necessárias.\",\"Finalize Legion Arm, P-Organ Phase 5 e upgrades de arma.\"],\"warning\":\"Consumir Ergo de chefe cedo demais pode atrasar ou bloquear Special Weapon Collector e Strongest Special Weapon na run atual.\",\"result\":\"Os troféus de coleção e melhoria ficam prontos para a conferência final.\"}",
+      "step_order": 5
+    },
+    {
+      "content": "{\"title\":\"Faça a conferência final da platina\",\"focus\":\"Checklist\",\"objective\":\"Confirmar todos os 43 troféus da lista base sem misturar DLC ou update.\",\"actions\":[\"Confirme os 43 troféus da lista base.\",\"Revise finais, Nameless Puppet, Records, Golden Melody, gestos, Cryptic Vessels, Trinity Sanctums e histórias de NPC.\",\"Confirme que Overture, Battle Memories e Death March não foram tratados como requisito da platina base.\"],\"warning\":\"\",\"result\":\"A platina base deve ficar pronta sem online, coop ou DLC obrigatório.\"}",
+      "step_order": 6
+    }
+  ],
+  "schemaVersion": 1,
+  "seedExtras": {
+    "aliases": [],
+    "attentionPoints": [
+      {
+        "detail": "Os três finais dependem de escolhas no endgame; backup reduz runs e retrabalho.",
+        "tags": [
+          "Final",
+          "Backup",
+          "Risco de run"
+        ],
+        "title": "Finais e backup de save"
+      },
+      {
+        "detail": "Dar o coração a Geppetto fecha Real Boy, mas bloqueia Nameless Puppet e The First Puppet nessa rota.",
+        "tags": [
+          "Geppetto",
+          "Final",
+          "Perdível"
+        ],
+        "title": "Não entregue o coração sem planejar"
+      },
+      {
+        "detail": "Pianist of Krat, cartas pós-final e histórias de NPC podem exigir ações antes de avançar.",
+        "tags": [
+          "NG+",
+          "Pós-final",
+          "Atenção"
+        ],
+        "title": "Não inicie NG+ cedo demais"
+      },
+      {
+        "detail": "Consumir Ergo de chefe ou trocar por amuletos pode atrapalhar armas especiais.",
+        "tags": [
+          "Ergo de chefe",
+          "Armas especiais",
+          "Atenção"
+        ],
+        "title": "Ergo de chefe deve ser preservado"
+      },
+      {
+        "detail": "Records e Golden Records dependem de segunda passada e escolhas exclusivas.",
+        "tags": [
+          "Records",
+          "Golden Records",
+          "NG+"
+        ],
+        "title": "Golden Melody exige NG+"
+      },
+      {
+        "detail": "A história de Eugenie e Records ligados a ela podem exigir escolhas alternativas.",
+        "tags": [
+          "Eugenie",
+          "Alidoro",
+          "Risco de run"
+        ],
+        "title": "Eugenie e Alidoro exigem cuidado"
+      },
+      {
+        "detail": "Rise of P e Free from the Puppet String dependem de humanidade e decisão sobre Sophia.",
+        "tags": [
+          "Sophia",
+          "Humanidade",
+          "Final"
+        ],
+        "title": "Sophia e humanidade definem finais"
+      },
+      {
+        "detail": "Ignorar gestos, Cryptic Vessels e Trinity Sanctums aumenta o retrabalho no cleanup.",
+        "tags": [
+          "Gestos",
+          "Cryptic Vessels",
+          "Trinity Sanctums"
+        ],
+        "title": "Gestos, Vessels e Sanctums cedo"
+      },
+      {
+        "detail": "Não misture DLC ou update com os 43 troféus da lista base.",
+        "tags": [
+          "Overture",
+          "Fora da platina",
+          "DLC"
+        ],
+        "title": "Overture fica fora da platina base"
+      },
+      {
+        "detail": "O modo original continua exigente, mas as dificuldades adicionadas por patch podem reduzir a barreira da platina.",
+        "tags": [
+          "Dificuldade",
+          "Update",
+          "Acessibilidade"
+        ],
+        "title": "Dificuldade atual depende do modo"
+      }
+    ],
+    "checklist": [],
+    "faq": [
+      {
+        "answer": "A lista base tem 43 troféus. Overture possui lista separada e não entra na platina base.",
+        "question": "Quantos troféus Lies of P tem na platina base?"
+      },
+      {
+        "answer": "Com backup de save, a rota mais limpa fecha em 2 runs. Sem backup, planeje 3 finais separados e use NG+ para Records e cleanup.",
+        "question": "Quantas runs eu preciso?"
+      },
+      {
+        "answer": "Não. A lista base é offline, solo e sem coop obrigatório.",
+        "question": "A platina exige online ou coop?"
+      },
+      {
+        "answer": "Sim, com backup de save no ponto certo. Sem backup, os finais precisam ser separados.",
+        "question": "Posso fazer todos os finais numa run?"
+      },
+      {
+        "answer": "Não. Overture fica fora do escopo da platina base e não é necessário para fechar os 43 troféus.",
+        "question": "Overture entra na platina base?"
+      },
+      {
+        "answer": "Não. Há Records em NG+ e dois deles dependem de escolhas exclusivas em Eugenie, então a rota pede pelo menos uma segunda passada.",
+        "question": "Records e Golden Records cabem em uma campanha só?"
+      },
+      {
+        "answer": "Só depois de checar as armas especiais. Se você consumir Ergo de chefe cedo demais ou trocar por amuletos, pode atrapalhar Special Weapon Collector e Strongest Special Weapon.",
+        "question": "Quando devo gastar Ergo de chefe?"
+      },
+      {
+        "answer": "Sim. Neste guia, os 16 perdíveis estão ligados a finais, Records, histórias de NPC, gestos, Trinity Sanctums, Cryptic Vessels e armas especiais ligadas a Ergo de chefe. Chefes obrigatórios e upgrades gerais não contam como perdíveis.",
+        "question": "Lies of P tem troféus perdíveis? O filtro está correto?"
+      },
+      {
+        "answer": "Para a rota limpa, sim. NG+ ajuda com Golden Records, escolhas alternativas, finais e coleções pendentes.",
+        "question": "New Game+ é necessário?"
+      },
+      {
+        "answer": "Não. A platina base não tem troféus específicos por dificuldade, então as dificuldades mais fáceis adicionadas por update podem ser usadas para reduzir a exigência. Battle Memories e Death March também não são requisitos da platina base.",
+        "question": "As novas dificuldades bloqueiam troféus?"
+      },
+      {
+        "answer": "Se jogar no padrão original/Legendary Stalker, a platina continua exigente por causa de chefes, parry/defesa perfeita e NG+. Com Butterfly's Guidance ou Awakened Puppet, a dificuldade cai, mas o checklist de finais, Records, armas especiais e NPCs continua importante.",
+        "question": "Qual dificuldade usar no guia?"
+      },
+      {
+        "answer": "Os finais, Golden Melody, Special Weapon Collector, histórias de NPC e decisões de Sophia/Geppetto/Eugenie/Alidoro.",
+        "question": "Qual é o maior risco da platina?"
+      }
+    ],
+    "note": "Campos exportados para auditoria. O SQLite atual nao possui colunas nativas para todos esses extras; a importacao preserva o que o banco suporta.",
+    "quickDecision": null,
+    "seo": {
+      "description": "Guia de platina de Lies of P em português com 43 troféus, perdíveis marcados, finais, Records, gestos, Cryptic Vessels, armas especiais, roadmap e checklist.",
+      "keywords": "Lies of P guia de platina, troféus Lies of P, roadmap Lies of P, Lies of P finais, Lies of P Real Boy, Lies of P Rise of P, Lies of P Free from the Puppet String, Lies of P Golden Melody, Lies of P Records, Lies of P Golden Records, Lies of P boss Ergo, Lies of P Nameless Puppet, Lies of P sem online, Lies of P sem coop, Lies of P Overture fora da platina base, Lies of P dificuldade fácil troféus",
+      "ogDescription": "Checklist da platina base de Lies of P com 43 troféus, perdíveis marcados, 2 runs com backup e Overture fora do escopo.",
+      "ogTitle": "Lies of P — guia de platina, troféus e roadmap | AtlasAchievement",
+      "title": "Lies of P: guia de platina, troféus e roadmap | AtlasAchievement"
+    },
+    "tags": [
+      "Lies of P",
+      "Soulslike",
+      "Offline",
+      "Sem online",
+      "NG+",
+      "Perdíveis alinhados",
+      "Overture fora da platina base"
+    ]
+  },
+  "slug": "lies-of-p",
+  "trophies": [
+    {
+      "description": "Obtenha todos os troféus.",
+      "is_missable": 0,
+      "is_spoiler": 0,
+      "name": "Lies of P",
+      "name_pt": "Lies of P",
+      "tip": "Complete os outros 42 troféus da lista base. Overture, Battle Memories e Death March não entram nesta platina.",
+      "trophy_code": "lop_lies_of_p",
+      "type": "Platina"
+    },
+    {
+      "description": "Alcance o final Real Boy.",
+      "is_missable": 1,
+      "is_spoiler": 1,
+      "name": "Real Boy: They All Lived Happily Ever After",
+      "name_pt": "Menino de Verdade: Viveram Felizes para Sempre",
+      "tip": "Final ligado a dar o coração a Geppetto no fim. Use backup de save se quiser reduzir retrabalho entre finais.",
+      "trophy_code": "lop_real_boy",
+      "type": "Ouro"
+    },
+    {
+      "description": "Alcance o final Free from the Puppet String.",
+      "is_missable": 1,
+      "is_spoiler": 1,
+      "name": "Free from the Puppet String",
+      "name_pt": "Livre dos Fios da Marionete",
+      "tip": "Exige recusar Geppetto e cumprir condições de humanidade/escolha de Sophia. Planeje antes de Under the Abyss.",
+      "trophy_code": "lop_free_from_the_puppet_string",
+      "type": "Ouro"
+    },
+    {
+      "description": "Alcance o final Rise of P.",
+      "is_missable": 1,
+      "is_spoiler": 1,
+      "name": "Rise of P",
+      "name_pt": "Ascensão de P",
+      "tip": "Final de alta humanidade ligado a Sophia e a recusar Geppetto. Confirme requisitos antes de fechar Arche Abbey.",
+      "trophy_code": "lop_rise_of_p",
+      "type": "Ouro"
+    },
+    {
+      "description": "Derrote Nameless Puppet.",
+      "is_missable": 1,
+      "is_spoiler": 1,
+      "name": "The First Puppet",
+      "name_pt": "O Primeiro Fantoche",
+      "tip": "Depende de recusar Geppetto na decisão final e lutar contra Nameless Puppet. Dar o coração bloqueia esta luta nessa rota.",
+      "trophy_code": "lop_the_first_puppet",
+      "type": "Prata"
+    },
+    {
+      "description": "Melhore uma arma normal até o nível máximo.",
+      "is_missable": 0,
+      "is_spoiler": 0,
+      "name": "Strongest Normal Weapon",
+      "name_pt": "Arma Normal Mais Forte",
+      "tip": "Melhore uma arma normal até +10. É gasto de materiais/upgrades, não de online.",
+      "trophy_code": "lop_strongest_normal_weapon",
+      "type": "Prata"
+    },
+    {
+      "description": "Melhore uma arma especial até o nível máximo.",
+      "is_missable": 1,
+      "is_spoiler": 1,
+      "name": "Strongest Special Weapon",
+      "name_pt": "Arma Especial Mais Forte",
+      "tip": "Preserve Ergo de chefe e compre a arma especial antes de trocar o recurso por amuleto. Depois leve uma arma especial até +5.",
+      "trophy_code": "lop_strongest_special_weapon",
+      "type": "Prata"
+    },
+    {
+      "description": "Modifique um Legion Arm até o nível máximo.",
+      "is_missable": 0,
+      "is_spoiler": 0,
+      "name": "Strongest Legion Arm",
+      "name_pt": "Braço Legionário Mais Forte",
+      "tip": "Use Legion Calibers para maximizar um Legion Arm. Pode ser planejado no cleanup/NG+.",
+      "trophy_code": "lop_strongest_legion_arm",
+      "type": "Prata"
+    },
+    {
+      "description": "Ative o P-Organ até a Phase 5.",
+      "is_missable": 0,
+      "is_spoiler": 0,
+      "name": "Extreme Potential",
+      "name_pt": "Potencial Extremo",
+      "tip": "Invista Quartz até liberar a Phase 5 do P-Organ. O gargalo é exploração e progresso, não um perdível direto.",
+      "trophy_code": "lop_extreme_potential",
+      "type": "Prata"
+    },
+    {
+      "description": "Toque uma melodia perfeita no piano do Hotel Krat.",
+      "is_missable": 1,
+      "is_spoiler": 1,
+      "name": "Pianist of Krat",
+      "name_pt": "Pianista de Krat",
+      "tip": "Depois de um final, não entre em NG+ imediatamente. Volte ao Hotel Krat e toque o piano.",
+      "trophy_code": "lop_pianist_of_krat",
+      "type": "Prata"
+    },
+    {
+      "description": "Colete todos os Legion Arms.",
+      "is_missable": 0,
+      "is_spoiler": 0,
+      "name": "Legion Arm Collector",
+      "name_pt": "Colecionador de Braços Legionários",
+      "tip": "Colete/crafte todos os Legion Arms usando Legion Plugs. Revise antes do cleanup final.",
+      "trophy_code": "lop_legion_arm_collector",
+      "type": "Prata"
+    },
+    {
+      "description": "Colete todas as armas especiais.",
+      "is_missable": 1,
+      "is_spoiler": 1,
+      "name": "Special Weapon Collector",
+      "name_pt": "Colecionador de Armas Especiais",
+      "tip": "Exige Ergo de chefe, lojas de Alidoro/Explorer Hugo e a Golden Lie. Não consuma Ergos de chefes e planeje finais/Records antes das trocas.",
+      "trophy_code": "lop_special_weapon_collector",
+      "type": "Prata"
+    },
+    {
+      "description": "Colete todas as armas normais.",
+      "is_missable": 0,
+      "is_spoiler": 0,
+      "name": "Normal Weapon Collector",
+      "name_pt": "Colecionador de Armas Normais",
+      "tip": "Colete ou compre as 29 armas normais. Revise vendedores, baús e áreas antes de iniciar NG+ para evitar retrabalho.",
+      "trophy_code": "lop_normal_weapon_collector",
+      "type": "Prata"
+    },
+    {
+      "description": "Colete e toque todos os Records.",
+      "is_missable": 1,
+      "is_spoiler": 1,
+      "name": "Golden Melody",
+      "name_pt": "Melodia Dourada",
+      "tip": "Exige Records, Golden Records, NG+ e a escolha exclusiva de Eugenie. Toque todos no Hotel Krat e confira a lista antes de avançar.",
+      "trophy_code": "lop_golden_melody",
+      "type": "Prata"
+    },
+    {
+      "description": "Aprenda todos os gestos.",
+      "is_missable": 1,
+      "is_spoiler": 1,
+      "name": "Learning about Emotions",
+      "name_pt": "Aprendendo sobre Emoções",
+      "tip": "Gestos vêm de história, cartas e missões secundárias. Acompanhe desde cedo porque algumas janelas de NPC podem fechar.",
+      "trophy_code": "lop_learning_about_emotions",
+      "type": "Prata"
+    },
+    {
+      "description": "Decifre todos os Cryptic Vessels e receba as recompensas.",
+      "is_missable": 1,
+      "is_spoiler": 1,
+      "name": "Veteran Explorer",
+      "name_pt": "Explorador Veterano",
+      "tip": "Entregue todos os Cryptic Vessels a Venigni e pegue as recompensas. Decisões com Alidoro podem bloquear progresso.",
+      "trophy_code": "lop_veteran_explorer",
+      "type": "Prata"
+    },
+    {
+      "description": "Descubra todos os Trinity Sanctums.",
+      "is_missable": 1,
+      "is_spoiler": 1,
+      "name": "End of Riddles",
+      "name_pt": "Fim dos Enigmas",
+      "tip": "Responda aos enigmas por telefone, use as Trinity Keys nos Sanctums e conclua a sala final antes de encerrar a rota.",
+      "trophy_code": "lop_end_of_riddles",
+      "type": "Prata"
+    },
+    {
+      "description": "Conte uma mentira diante da entrada do Hotel Krat.",
+      "is_missable": 0,
+      "is_spoiler": 0,
+      "name": "First Lie",
+      "name_pt": "Primeira Mentira",
+      "tip": "Troféu de progresso inicial: mentir na entrada do Hotel Krat é necessário para avançar.",
+      "trophy_code": "lop_first_lie",
+      "type": "Bronze"
+    },
+    {
+      "description": "Repare um Stargazer.",
+      "is_missable": 0,
+      "is_spoiler": 0,
+      "name": "Stargazer's Guide",
+      "name_pt": "Guia do Stargazer",
+      "tip": "Repare o primeiro Stargazer em Krat Central Plaza. Vem naturalmente no início.",
+      "trophy_code": "lop_stargazers_guide",
+      "type": "Bronze"
+    },
+    {
+      "description": "Tente montar uma arma.",
+      "is_missable": 0,
+      "is_spoiler": 0,
+      "name": "Exploring Possibilities",
+      "name_pt": "Explorando Possibilidades",
+      "tip": "Use o sistema de montar armas depois de receber a ferramenta de montagem.",
+      "trophy_code": "lop_exploring_possibilities",
+      "type": "Bronze"
+    },
+    {
+      "description": "Destrua a arma de um inimigo com Perfect Guard.",
+      "is_missable": 0,
+      "is_spoiler": 0,
+      "name": "The Ultimate Defense Technique",
+      "name_pt": "Técnica Suprema de Defesa",
+      "tip": "Use Perfect Guard repetidamente contra inimigos armados até quebrar a arma; exige execução de dificuldade moderada.",
+      "trophy_code": "lop_the_ultimate_defense_technique",
+      "type": "Bronze"
+    },
+    {
+      "description": "Execute um Fatal Attack com sucesso.",
+      "is_missable": 0,
+      "is_spoiler": 0,
+      "name": "Fatal Blow",
+      "name_pt": "Golpe Fatal",
+      "tip": "Aplique um Fatal Attack pelas costas ou em inimigo em estado groggy.",
+      "trophy_code": "lop_fatal_blow",
+      "type": "Bronze"
+    },
+    {
+      "description": "Derrote um Stalker.",
+      "is_missable": 0,
+      "is_spoiler": 1,
+      "name": "The Bastards and the Sweepers",
+      "name_pt": "Os Bastardos e os Varredores",
+      "tip": "Sai na rota principal ao derrotar um Stalker de história, como Mad Donkey.",
+      "trophy_code": "lop_the_bastards_and_the_sweepers",
+      "type": "Bronze"
+    },
+    {
+      "description": "Derrote Parade Master.",
+      "is_missable": 0,
+      "is_spoiler": 1,
+      "name": "Parade Master",
+      "name_pt": "Mestre do Desfile",
+      "tip": "Chefe obrigatório inicial. Não é perdível.",
+      "trophy_code": "lop_parade_master",
+      "type": "Bronze"
+    },
+    {
+      "description": "Derrote Scrapped Watchman.",
+      "is_missable": 0,
+      "is_spoiler": 1,
+      "name": "Scrapped Watchman",
+      "name_pt": "Vigia Sucateado",
+      "tip": "Chefe obrigatório de história em Krat City Hall. Treine Perfect Guard e uso de Specter se precisar.",
+      "trophy_code": "lop_scrapped_watchman",
+      "type": "Bronze"
+    },
+    {
+      "description": "Derrote King's Flame, Fuoco.",
+      "is_missable": 0,
+      "is_spoiler": 1,
+      "name": "King's Flame",
+      "name_pt": "Chama do Rei",
+      "tip": "Chefe obrigatório de Venigni Works. Não marque como perdível; ele faz parte da história.",
+      "trophy_code": "lop_kings_flame",
+      "type": "Bronze"
+    },
+    {
+      "description": "Derrote Fallen Archbishop Andreus.",
+      "is_missable": 0,
+      "is_spoiler": 1,
+      "name": "Fallen Archbishop",
+      "name_pt": "Arcebispo Caído",
+      "tip": "Chefe obrigatório da Catedral. Prepare cura de status e aprenda a segunda fase.",
+      "trophy_code": "lop_fallen_archbishop",
+      "type": "Bronze"
+    },
+    {
+      "description": "Derrote o Eldest of the Black Rabbit Brotherhood.",
+      "is_missable": 0,
+      "is_spoiler": 1,
+      "name": "The Delayed Match",
+      "name_pt": "O Combate Adiado",
+      "tip": "Chefe obrigatório de Malum District. Controle inimigos adicionais e foque janelas seguras.",
+      "trophy_code": "lop_the_delayed_match",
+      "type": "Bronze"
+    },
+    {
+      "description": "Derrote Romeo, King of Puppets.",
+      "is_missable": 0,
+      "is_spoiler": 1,
+      "name": "King of Puppets",
+      "name_pt": "Rei das Marionetes",
+      "tip": "Chefe obrigatório de história e grande muro de dificuldade da campanha. Ajuste build antes de insistir.",
+      "trophy_code": "lop_king_of_puppets",
+      "type": "Bronze"
+    },
+    {
+      "description": "Derrote Champion Victor.",
+      "is_missable": 0,
+      "is_spoiler": 1,
+      "name": "The Champion of Evolution",
+      "name_pt": "O Campeão da Evolução",
+      "tip": "Chefe obrigatório do Grand Exhibition. Depois dele, histórias de NPC ficam mais sensíveis.",
+      "trophy_code": "lop_the_champion_of_evolution",
+      "type": "Bronze"
+    },
+    {
+      "description": "Derrote Puppet-Devouring Green Monster.",
+      "is_missable": 0,
+      "is_spoiler": 1,
+      "name": "Puppet-Devouring Green Monster",
+      "name_pt": "Monstro Verde Devorador de Marionetes",
+      "tip": "Chefe obrigatório de Barren Swamp. Prepare-se para duas fases e status.",
+      "trophy_code": "lop_puppet_devouring_green_monster",
+      "type": "Bronze"
+    },
+    {
+      "description": "Derrote Corrupted Parade Master.",
+      "is_missable": 0,
+      "is_spoiler": 1,
+      "name": "Corrupted Parade Master",
+      "name_pt": "Mestre do Desfile Corrompido",
+      "tip": "Chefe obrigatório de retorno a Krat. Não é perdível.",
+      "trophy_code": "lop_corrupted_parade_master",
+      "type": "Bronze"
+    },
+    {
+      "description": "Derrote a Black Rabbit Brotherhood.",
+      "is_missable": 0,
+      "is_spoiler": 1,
+      "name": "Revenge of Black",
+      "name_pt": "Vingança Negra",
+      "tip": "Chefe obrigatório em Relic of Trismegistus. Após essa parte, Alidoro/Eugenie ficam críticos.",
+      "trophy_code": "lop_revenge_of_black",
+      "type": "Bronze"
+    },
+    {
+      "description": "Derrote Laxasia, a Completa, em Arche Abbey.",
+      "is_missable": 0,
+      "is_spoiler": 1,
+      "name": "The Complete One",
+      "name_pt": "O Completo",
+      "tip": "Chefe obrigatório em Arche Abbey. Antes de avançar para a reta final, revise Sophia, Records e histórias de NPC.",
+      "trophy_code": "lop_the_complete_one",
+      "type": "Bronze"
+    },
+    {
+      "description": "Derrote Awakened God Simon Manus.",
+      "is_missable": 0,
+      "is_spoiler": 1,
+      "name": "The Awakened God",
+      "name_pt": "O Deus Desperto",
+      "tip": "Chefe obrigatório de fim de jogo. Depois dele, as escolhas finais definem finais e chefe opcional.",
+      "trophy_code": "lop_the_awakened_god",
+      "type": "Bronze"
+    },
+    {
+      "description": "Colha Gold Coin Fruit.",
+      "is_missable": 0,
+      "is_spoiler": 1,
+      "name": "Bear Gold Coin Fruit",
+      "name_pt": "Fruta de Moeda de Ouro",
+      "tip": "Desbloqueia pela história ao acessar a Gold Coin Tree. Use frutos com cuidado em missões de NPC.",
+      "trophy_code": "lop_bear_gold_coin_fruit",
+      "type": "Bronze"
+    },
+    {
+      "description": "Derrote todos os tipos de Dimensional Butterflies.",
+      "is_missable": 0,
+      "is_spoiler": 0,
+      "name": "From Across the Rift",
+      "name_pt": "Do Outro Lado da Fenda",
+      "tip": "Mate os quatro tipos de Dimensional Butterflies. Normalmente fecha ao explorar até Lorenzini Arcade.",
+      "trophy_code": "lop_from_across_the_rift",
+      "type": "Bronze"
+    },
+    {
+      "description": "Descubra a última história de Venigni.",
+      "is_missable": 1,
+      "is_spoiler": 1,
+      "name": "The Story of the Prince",
+      "name_pt": "A História do Príncipe",
+      "tip": "História ligada a Venigni, Arlecchino, enigmas e Trinity Sanctum final. Resolva antes de Simon Manus.",
+      "trophy_code": "lop_the_story_of_the_prince",
+      "type": "Bronze"
+    },
+    {
+      "description": "Descubra a última história de Antonia.",
+      "is_missable": 1,
+      "is_spoiler": 1,
+      "name": "The Story of the Refined Old Lady",
+      "name_pt": "A História da Senhora Refinada",
+      "tip": "Depende da cura de Antonia, de falar com Polendina no momento certo e de acompanhar o progresso da história.",
+      "trophy_code": "lop_the_story_of_the_refined_old_lady",
+      "type": "Bronze"
+    },
+    {
+      "description": "Descubra a última história de Simon Manus.",
+      "is_missable": 0,
+      "is_spoiler": 1,
+      "name": "The Story of the One Who Dreamed",
+      "name_pt": "A História de Quem Sonhou",
+      "tip": "Troféu de história ligado ao fim de Arche Abbey e Simon Manus.",
+      "trophy_code": "lop_the_story_of_the_one_who_dreamed",
+      "type": "Bronze"
+    },
+    {
+      "description": "Descubra a última história de Geppetto.",
+      "is_missable": 1,
+      "is_spoiler": 1,
+      "name": "The Story of One Father",
+      "name_pt": "A História de Um Pai",
+      "tip": "Exige o final Real Boy e ler a carta em Hotel Krat depois dos créditos sem iniciar NG+.",
+      "trophy_code": "lop_the_story_of_one_father",
+      "type": "Bronze"
+    },
+    {
+      "description": "Descubra a última história de Eugenie.",
+      "is_missable": 1,
+      "is_spoiler": 1,
+      "name": "The Story of a Stranger Girl",
+      "name_pt": "A História de uma Garota Estranha",
+      "tip": "Depende de Alidoro, Cryptic Vessel, Venigni e escolha de diálogo de Eugenie. Uma segunda run ajuda nos Records.",
+      "trophy_code": "lop_the_story_of_a_stranger_girl",
+      "type": "Bronze"
+    },
+    {
+      "description": "Descubra a última história de Sophia.",
+      "is_missable": 1,
+      "is_spoiler": 1,
+      "name": "The Story of the Blue Butterfly",
+      "name_pt": "A História da Borboleta Azul",
+      "tip": "Exige rota Rise of P, escolha de Sophia, recusar Geppetto e ler a carta depois dos créditos.",
+      "trophy_code": "lop_the_story_of_the_blue_butterfly",
+      "type": "Bronze"
+    }
+  ]
+}

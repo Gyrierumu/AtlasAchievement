@@ -1,0 +1,497 @@
+{
+  "game": {
+    "avoid_if": "Evite apenas se você não gosta de troféus de tempo, repetir capítulos ou fazer uma run rápida depois da campanha.",
+    "before_you_start": "Não tente otimizar tudo na primeira jogada. Aprenda os 12 capítulos, depois faça I am Speed em uma run dedicada abaixo de 2 horas.",
+    "best_for": "Ideal para quem quer uma platina curta, charmosa, com exploração leve, cyberpunk felino e um desafio final de speedrun.",
+    "cleanup_advice": "Use Chapter Select para recuperar coletáveis e troféus específicos, lembrando de avançar até um checkpoint/autosave quando necessário para gravar o progresso.",
+    "cover_image": "https://cdn.cloudflare.steamstatic.com/steam/apps/1332010/library_600x900.jpg",
+    "coverage_level": "strong",
+    "created_at": "2026-05-09 19:53:51",
+    "difficulty": 4,
+    "difficulty_reason": "A platina é curta e acessível, sem troféus de dificuldade, mas I am Speed e alguns troféus de capítulo como Can’t Cat-ch Me, Sneakitty e Pacifist exigem prática.",
+    "dlc_scope": "Guia focado na lista base de Stray; não há DLC/add-on necessário para a platina.",
+    "editorial_notes": "",
+    "editorial_review_status": null,
+    "editorial_status": "published",
+    "first_run_advice": "Na primeira campanha, explore com calma, colete 27 B-12 Memories, 6 Badges, 8 Sheet Music, 12 Scratch Points e 4 Energy Drinks, faça os troféus específicos de capítulo e deixe a speedrun para depois.",
+    "grind_summary": "O peso está em 27 B-12 Memories, 6 Badges, 8 Sheet Music, 12 Scratch Points, 4 Energy Drinks, nuzzles, troféus específicos de capítulos e a speedrun abaixo de 2 horas.",
+    "guide_avoid": null,
+    "guide_best_moment": null,
+    "guide_dlc": null,
+    "guide_grind": null,
+    "guide_ideal": null,
+    "guide_online": null,
+    "guide_runs": null,
+    "image": "https://cdn.cloudflare.steamstatic.com/steam/apps/1332010/header.jpg",
+    "is_verified": 0,
+    "last_reviewed_at": "",
+    "missable": "Não definitivos por Chapter Select, mas I am Speed exige uma run completa abaixo de 2 horas e deve ser tratada como condição de run/speedrun.",
+    "missable_summary": "Coletáveis e troféus de capítulo podem ser limpos por Chapter Select; I am Speed é a atenção real, pois exige terminar todos os 12 capítulos em menos de 2 horas.",
+    "name": "Stray",
+    "online_summary": "Não há exigência online, troféus online, multiplayer obrigatório ou PS+ para a platina.",
+    "quality_warnings": "[]",
+    "reviewed_by": "",
+    "runs_summary": "Uma campanha de coletáveis e uma run separada de speedrun abaixo de 2 horas para I am Speed.",
+    "slug": "stray",
+    "time": "6-8h",
+    "time_bucket": "short",
+    "time_max_hours": 8,
+    "time_min_hours": 6,
+    "time_reason": "A faixa de 6-8 horas considera uma campanha com coletáveis, cleanup por Chapter Select e uma run dedicada de speedrun abaixo de 2 horas.",
+    "time_sort_hours": 6,
+    "updated_at": "2026-06-27 02:36:58",
+    "verification_note": "Lista base adicionada por fontes públicas; aguarda validação editorial final.",
+    "verification_status": "review",
+    "walkthrough": null
+  },
+  "redirects": [],
+  "roadmaps": [
+    {
+      "content": "{\"title\":\"Avance pela campanha\",\"focus\":\"\",\"objective\":\"Faça a primeira campanha normal pelos 12 capítulos, aproveitando a história e coletando 27 B-12 Memories, 6 Badges, 8 Sheet Music, 12 Scratch Points, 4 Energy Drinks e interações opcionais.\",\"actions\":[],\"warning\":\"\",\"result\":\"\"}",
+      "step_order": 1
+    },
+    {
+      "content": "{\"title\":\"Prossiga pela rota planejada\",\"focus\":\"\",\"objective\":\"Durante a campanha, tente troféus específicos de capítulo como Can’t Cat-ch Me no Capítulo 2, Meowlody e Télé à chat no Capítulo 4, Pacifist no Capítulo 8, Sneakitty/Scratch no Capítulo 10 e Cat’s best friend nas áreas com robôs.\",\"actions\":[],\"warning\":\"\",\"result\":\"\"}",
+      "step_order": 2
+    },
+    {
+      "content": "{\"title\":\"Limpe coletáveis por seleção de capítulos\",\"focus\":\"\",\"objective\":\"Após terminar a história, use Chapter Select para limpar B-12 Memories, Badges, Sheet Music, Scratch Points, nuzzles e troféus específicos perdidos; espere checkpoint/autosave antes de sair quando necessário.\",\"actions\":[],\"warning\":\"\",\"result\":\"\"}",
+      "step_order": 3
+    },
+    {
+      "content": "{\"title\":\"Prossiga pela rota planejada\",\"focus\":\"\",\"objective\":\"Pratique capítulos críticos e memorize caminhos, códigos e objetivos principais antes de tentar a speedrun.\",\"actions\":[],\"warning\":\"\",\"result\":\"\"}",
+      "step_order": 4
+    },
+    {
+      "content": "{\"title\":\"Prossiga pela rota planejada\",\"focus\":\"\",\"objective\":\"Faça uma run dedicada para I am Speed, começando um save novo e terminando o jogo em menos de 2 horas; evite mortes, reinícios e desvios por coletáveis.\",\"actions\":[],\"warning\":\"\",\"result\":\"\"}",
+      "step_order": 5
+    },
+    {
+      "content": "{\"title\":\"Limpe coletáveis por seleção de capítulos\",\"focus\":\"\",\"objective\":\"Faça o cleanup final por Chapter Select se ainda faltar Productive Day, Territory, Badges, I Remember!, Meowlody ou algum troféu simples da lista base.\",\"actions\":[],\"warning\":\"\",\"result\":\"\"}",
+      "step_order": 6
+    }
+  ],
+  "schemaVersion": 1,
+  "seedExtras": {
+    "aliases": [],
+    "attentionPoints": [
+      {
+        "detail": "Faça I am Speed em uma segunda run dedicada. Pule diálogos, ignore colecionáveis, siga apenas os objetivos principais e evite mortes longas.",
+        "tags": [
+          "Speedrun",
+          "Perdível de run"
+        ],
+        "title": "I am Speed"
+      },
+      {
+        "detail": "A seleção de capítulos permite recuperar colecionáveis e troféus específicos, mas avance até um checkpoint/autosave depois de pegar itens para garantir o registro.",
+        "tags": [
+          "Chapter Select",
+          "Cleanup"
+        ],
+        "title": "Chapter Select e checkpoints"
+      },
+      {
+        "detail": "A primeira perseguição de Zurks pode exigir várias tentativas. Se algum Zurk grudar no gato, reinicie o checkpoint e tente uma rota em zigue-zague.",
+        "tags": [
+          "Zurks",
+          "Desafio"
+        ],
+        "title": "Can’t Cat-ch Me"
+      },
+      {
+        "detail": "Em The Sewers, não use a luz de B-12 para matar Zurks. Corra e desvie até o fim do capítulo.",
+        "tags": [
+          "The Sewers",
+          "Zurks"
+        ],
+        "title": "Pacifist"
+      },
+      {
+        "detail": "Em Midtown, passe pela área das sentinelas sem ser detectado. Se for visto, reinicie o checkpoint antes de avançar.",
+        "tags": [
+          "Midtown",
+          "Stealth"
+        ],
+        "title": "Sneakitty"
+      },
+      {
+        "detail": "Durma por mais de uma hora em tempo real. Não pause o jogo durante a espera.",
+        "tags": [
+          "Misc",
+          "Atenção"
+        ],
+        "title": "Productive Day"
+      },
+      {
+        "detail": "As memórias, bótons, partituras e scratches por capítulo são o núcleo do cleanup. Use checklist por capítulo.",
+        "tags": [
+          "Coletável",
+          "Checklist"
+        ],
+        "title": "Colecionáveis"
+      },
+      {
+        "detail": "A platina é totalmente offline, single-player e não exige DLC.",
+        "tags": [
+          "Offline",
+          "Sem coop",
+          "Sem DLC"
+        ],
+        "title": "Sem online/DLC"
+      }
+    ],
+    "checklist": [
+      "Conferir se o guia tem 25 troféus.",
+      "Conferir se All Done é a platina.",
+      "Conferir distribuicao: 1 platina, 7 ouro, 9 prata, 8 bronze.",
+      "Conferir onlineRequired false.",
+      "Conferir coopRequired false.",
+      "Conferir dlcRequired false.",
+      "Conferir se I am Speed está como perdível de run/speedrun.",
+      "Conferir se apenas I am Speed aparece como perdível.",
+      "Conferir se nenhum coletavel recuperavel por Chapter Select está marcado como perdível.",
+      "Conferir se dificuldade não aparece como requisito de troféu.",
+      "Conferir se filtros não estão inflados por tags erradas.",
+      "Conferir se todos os troféus tem nome oficial em ingles como principal.",
+      "Conferir se todos tem PT-BR abaixo.",
+      "Conferir se descrições estão em portugues.",
+      "Conferir se não aparecem rótulos técnicos de nomes internos nem descrição provisória.",
+      "Conferir se roadmap está estruturado como array/objeto.",
+      "Conferir se roadmap não renderiza objeto bruto.",
+      "Conferir se roadmap não mostra nomes de campos internos.",
+      "Conferir FAQ, decisão rápida, SEO e pontos de atenção.",
+      "Conferir se pagina individual e catalogo exibem o mesmo status editorial.",
+      "Conferir se flags do topo batem com filtros do catalogo."
+    ],
+    "faq": [
+      {
+        "answer": "Sim, mas apenas no sentido de run. I am Speed exige terminar o jogo em menos de 2 horas; se falhar, será necessário fazer outra tentativa. Os demais troféus podem ser recuperados pela seleção de capítulos.",
+        "question": "Stray tem troféus perdíveis?"
+      },
+      {
+        "answer": "Não. A platina é totalmente offline.",
+        "question": "Precisa jogar online para platinar?"
+      },
+      {
+        "answer": "Não. Stray é uma platina single-player.",
+        "question": "Precisa de cooperação?"
+      },
+      {
+        "answer": "Não. A platina usa apenas a lista base do jogo.",
+        "question": "Precisa de DLC?"
+      },
+      {
+        "answer": "Duas. Uma run tranquila para história, colecionáveis e troféus por capítulo, e uma run separada para I am Speed em menos de 2 horas.",
+        "question": "Quantas jogadas são recomendadas?"
+      },
+      {
+        "answer": "É possível para jogadores experientes, mas não é recomendado na primeira platina. Fazer colecionáveis e speedrun ao mesmo tempo aumenta o risco de erro.",
+        "question": "Dá para fazer tudo em uma jogada?"
+      },
+      {
+        "answer": "Em média, cerca de 6 a 8 horas, dependendo das tentativas em Can’t Cat-ch Me, Pacifist, Sneakitty e I am Speed.",
+        "question": "Quanto tempo leva para platinar?"
+      },
+      {
+        "answer": "Normalmente Can’t Cat-ch Me e I am Speed são os maiores obstáculos. Can’t Cat-ch Me depende de uma perseguição limpa, e I am Speed exige terminar tudo em menos de 2 horas.",
+        "question": "Qual é o troféu mais difícil?"
+      },
+      {
+        "answer": "Não. Deixe o gato dormindo por mais de uma hora em tempo real sem pausar.",
+        "question": "Productive Day pode ser feito pausando o jogo?"
+      },
+      {
+        "answer": "Sim, para os troféus ligados a memórias, bótons, partituras e scratches por capítulo. Eles podem ser recuperados pela seleção de capítulos.",
+        "question": "Preciso pegar todos os colecionáveis?"
+      }
+    ],
+    "note": "Campos exportados para auditoria. O SQLite atual nao possui colunas nativas para todos esses extras; a importacao preserva o que o banco suporta.",
+    "quickDecision": {
+      "difficulty": "Baixa a moderada.",
+      "dlc": "Não exige DLC.",
+      "mainAlert": "I am Speed em menos de 2 horas e os desafios Can’t Cat-ch Me, Pacifist e Sneakitty.",
+      "onlineCoop": "Não exige online nem cooperação.",
+      "risk": "Baixo. A seleção de capítulos ajuda no cleanup; o unico risco real é falhar a run de speedrun.",
+      "time": "Curto, cerca de 6 a 8 horas.",
+      "worthIt": "Sim. É uma platina curta, charmosa e acessivel, mas exige paciencia em alguns desafios."
+    },
+    "seo": {
+      "description": "Guia de troféus de Stray com roadmap da platina, tempo estimado, dificuldade, speedrun I am Speed, coletáveis, memórias, bótons, partituras e dicas para os 25 troféus.",
+      "keywords": "Stray troféus, Stray platina, guia Stray, Stray PS5 troféus, Stray PS4 troféus, All Done Stray, I am Speed, Can’t Cat-ch Me, Pacifist, Sneakitty, Badges, I Remember, Meowlody",
+      "metaDescription": "Guia de troféus de Stray com roadmap da platina, tempo estimado, dificuldade, speedrun I am Speed, coletáveis, memórias, bótons, partituras e dicas para os 25 troféus.",
+      "ogDescription": "Roadmap da platina de Stray com 25 troféus, I am Speed, Chapter Select, memórias, bótons, partituras e desafios por capítulo.",
+      "ogTitle": "Stray: Guia de Trofeus e Platina",
+      "title": "Stray: Guia de Trofeus e Platina"
+    },
+    "tags": [
+      "Stray",
+      "PS4",
+      "PS5",
+      "Platina",
+      "Offline",
+      "Sem coop",
+      "Sem DLC",
+      "Speedrun",
+      "I am Speed",
+      "Chapter Select",
+      "Coletaveis",
+      "Memórias",
+      "Bótons",
+      "Partituras"
+    ]
+  },
+  "slug": "stray",
+  "trophies": [
+    {
+      "description": "Obtenha todos os troféus da lista base.",
+      "is_missable": 0,
+      "is_spoiler": 0,
+      "name": "All Done",
+      "name_pt": "",
+      "tip": "Desbloqueie todos os outros 24 troféus da lista base de Stray. Não há online, multiplayer ou DLC obrigatório.",
+      "trophy_code": "stray_all_done",
+      "type": "Platina"
+    },
+    {
+      "description": "Meow 100 times.",
+      "is_missable": 0,
+      "is_spoiler": 0,
+      "name": "A Little Chatty",
+      "name_pt": "",
+      "tip": "Pressione o botão de miado 100 vezes. Pode ser feito logo no início e não depende de progresso específico.",
+      "trophy_code": "stray_a_little_chatty",
+      "type": "Prata"
+    },
+    {
+      "description": "Jump 500 times.",
+      "is_missable": 0,
+      "is_spoiler": 0,
+      "name": "Cat-a-Pult",
+      "name_pt": "",
+      "tip": "Salte 500 vezes em pontos interativos. Normalmente vem durante a campanha; se faltar, repita trechos com saltos em Chapter Select.",
+      "trophy_code": "stray_cat_a_pult",
+      "type": "Prata"
+    },
+    {
+      "description": "Sleep for more than one hour.",
+      "is_missable": 0,
+      "is_spoiler": 0,
+      "name": "Productive Day",
+      "name_pt": "",
+      "tip": "Deite em um ponto de descanso, como a cama perto de Morusque no Capítulo 4, e deixe o gato dormir por mais de uma hora.",
+      "trophy_code": "stray_productive_day",
+      "type": "Prata"
+    },
+    {
+      "description": "Dunk the basketball.",
+      "is_missable": 0,
+      "is_spoiler": 0,
+      "name": "Boom Chat Kalaka",
+      "name_pt": "",
+      "tip": "No Capítulo 4, empurre a bola de basquete para dentro do balde perto do Guardian. Se errar, recarregue o checkpoint ou use Chapter Select.",
+      "trophy_code": "stray_boom_chat_kalaka",
+      "type": "Bronze"
+    },
+    {
+      "description": "Complete the first Zurk pursuit without being caught.",
+      "is_missable": 0,
+      "is_spoiler": 1,
+      "name": "Can’t Cat-ch Me",
+      "name_pt": "",
+      "tip": "No Capítulo 2, conclua a primeira perseguição de Zurks sem nenhum deles grudar no gato. Reinicie o checkpoint ao falhar ou limpe depois por Chapter Select.",
+      "trophy_code": "stray_cant_cat_ch_me",
+      "type": "Ouro"
+    },
+    {
+      "description": "Go through Midtown without being detected by the Sentinels.",
+      "is_missable": 0,
+      "is_spoiler": 1,
+      "name": "Sneakitty",
+      "name_pt": "",
+      "tip": "No Capítulo 10, atravesse as seções de Sentinels sem ser detectado. Se a luz ficar amarela/vermelha, reinicie o checkpoint antes de avançar.",
+      "trophy_code": "stray_sneakitty",
+      "type": "Prata"
+    },
+    {
+      "description": "Die 9 times.",
+      "is_missable": 0,
+      "is_spoiler": 1,
+      "name": "No More Lives",
+      "name_pt": "",
+      "tip": "Morra 9 vezes em encontros com inimigos. A primeira perseguição de Zurks no Capítulo 2 é um ponto rápido para farmar.",
+      "trophy_code": "stray_no_more_lives",
+      "type": "Bronze"
+    },
+    {
+      "description": "Scratch the vinyl in the club.",
+      "is_missable": 0,
+      "is_spoiler": 0,
+      "name": "Scratch",
+      "name_pt": "",
+      "tip": "No nightclub do Capítulo 10, pegue o vinil, coloque-o no toca-discos e use a interação de arranhar o disco.",
+      "trophy_code": "stray_scratch",
+      "type": "Bronze"
+    },
+    {
+      "description": "Complete the Sewers without killing any Zurks.",
+      "is_missable": 0,
+      "is_spoiler": 1,
+      "name": "Pacifist",
+      "name_pt": "",
+      "tip": "No Capítulo 8, atravesse os esgotos sem matar Zurks com a luz de B-12. Se matar algum por acidente, reinicie o checkpoint ou tente via Chapter Select.",
+      "trophy_code": "stray_pacifist",
+      "type": "Ouro"
+    },
+    {
+      "description": "Complete the game in less than 2 hours.",
+      "is_missable": 1,
+      "is_spoiler": 0,
+      "name": "I am Speed",
+      "name_pt": "",
+      "tip": "Faça uma run dedicada em save novo e termine os 12 capítulos em menos de 2 horas. Evite coletáveis, mortes e reinícios; este é o único troféu de atenção real por condição de run.",
+      "trophy_code": "stray_i_am_speed",
+      "type": "Ouro"
+    },
+    {
+      "description": "Fall inside the city.",
+      "is_missable": 0,
+      "is_spoiler": 1,
+      "name": "Missed Jump",
+      "name_pt": "",
+      "tip": "Troféu automático de história no início da jornada dentro da cidade murada.",
+      "trophy_code": "stray_missed_jump",
+      "type": "Bronze"
+    },
+    {
+      "description": "Meet B-12.",
+      "is_missable": 0,
+      "is_spoiler": 1,
+      "name": "Not Alone",
+      "name_pt": "",
+      "tip": "Troféu automático de história ao encontrar B-12 no Capítulo 3.",
+      "trophy_code": "stray_not_alone",
+      "type": "Prata"
+    },
+    {
+      "description": "Have B-12 translate a robot.",
+      "is_missable": 0,
+      "is_spoiler": 1,
+      "name": "Cat Got Your Tongue?",
+      "name_pt": "",
+      "tip": "Troféu automático ao usar B-12 para traduzir um robô durante o progresso da história.",
+      "trophy_code": "stray_cat_got_your_tongue",
+      "type": "Bronze"
+    },
+    {
+      "description": "Reach Midtown.",
+      "is_missable": 0,
+      "is_spoiler": 1,
+      "name": "Catwalk",
+      "name_pt": "",
+      "tip": "Troféu automático de história ao chegar a Midtown no Capítulo 10.",
+      "trophy_code": "stray_catwalk",
+      "type": "Ouro"
+    },
+    {
+      "description": "Go to jail.",
+      "is_missable": 0,
+      "is_spoiler": 1,
+      "name": "Al-Cat-Raz",
+      "name_pt": "",
+      "tip": "Troféu automático de história ao chegar à sequência da prisão no Capítulo 11.",
+      "trophy_code": "stray_al_cat_raz",
+      "type": "Prata"
+    },
+    {
+      "description": "Complete the game and open the city.",
+      "is_missable": 0,
+      "is_spoiler": 1,
+      "name": "Eye Opener",
+      "name_pt": "",
+      "tip": "Troféu automático de conclusão da história após o Capítulo 12, com spoilers centrais sobre B-12 e a cidade murada.",
+      "trophy_code": "stray_eye_opener",
+      "type": "Ouro"
+    },
+    {
+      "description": "Bring all the music sheets to Morusque.",
+      "is_missable": 0,
+      "is_spoiler": 0,
+      "name": "Meowlody",
+      "name_pt": "",
+      "tip": "Encontre as 8 Sheet Music no Capítulo 4 e entregue todas a Morusque. Se faltar alguma, volte por Chapter Select.",
+      "trophy_code": "stray_meowlody",
+      "type": "Prata"
+    },
+    {
+      "description": "Wear the paper bag.",
+      "is_missable": 0,
+      "is_spoiler": 0,
+      "name": "Curiosity Killed the Cat",
+      "name_pt": "",
+      "tip": "No Capítulo 4, interaja com o saco de papel perto de Morusque para colocá-lo na cabeça do gato.",
+      "trophy_code": "stray_curiosity_killed_the_cat",
+      "type": "Bronze"
+    },
+    {
+      "description": "Try to play mahjong with the robots.",
+      "is_missable": 0,
+      "is_spoiler": 0,
+      "name": "Cat-a-strophe",
+      "name_pt": "",
+      "tip": "No Capítulo 9, suba na mesa onde dois robôs estão jogando mahjong em Antvillage.",
+      "trophy_code": "stray_cat_a_strophe",
+      "type": "Bronze"
+    },
+    {
+      "description": "Nuzzle up against 5 robots.",
+      "is_missable": 0,
+      "is_spoiler": 0,
+      "name": "Cat’s best friend",
+      "name_pt": "",
+      "tip": "Faça carinho/esfregue-se em 5 robôs com prompt de nuzzle, principalmente nos Capítulos 4 e 10. Pode ser limpo por Chapter Select.",
+      "trophy_code": "stray_cats_best_friend",
+      "type": "Prata"
+    },
+    {
+      "description": "Gather all B-12 memories.",
+      "is_missable": 0,
+      "is_spoiler": 1,
+      "name": "I Remember!",
+      "name_pt": "",
+      "tip": "Colete as 27 B-12 Memories. O Chapter Select mostra quantas memórias faltam por capítulo, facilitando o cleanup.",
+      "trophy_code": "stray_i_remember",
+      "type": "Ouro"
+    },
+    {
+      "description": "Browse through all of the TV channels.",
+      "is_missable": 0,
+      "is_spoiler": 0,
+      "name": "Télé à chat",
+      "name_pt": "",
+      "tip": "No Capítulo 4, encontre a TV nos telhados perto do apartamento de Momo e troque todos os canais até o troféu liberar.",
+      "trophy_code": "stray_tele_a_chat",
+      "type": "Bronze"
+    },
+    {
+      "description": "Collect all badges.",
+      "is_missable": 0,
+      "is_spoiler": 0,
+      "name": "Badges",
+      "name_pt": "",
+      "tip": "Colete os 6 Badges da lista base. Eles aparecem como adesivos na mochila do gato e podem ser limpos por Chapter Select.",
+      "trophy_code": "stray_badges",
+      "type": "Ouro"
+    },
+    {
+      "description": "Scratch in every chapter.",
+      "is_missable": 0,
+      "is_spoiler": 0,
+      "name": "Territory",
+      "name_pt": "",
+      "tip": "Use pelo menos um Scratch Point em cada um dos 12 capítulos. Após usar Chapter Select, avance até checkpoint/autosave quando necessário.",
+      "trophy_code": "stray_territory",
+      "type": "Prata"
+    }
+  ]
+}

@@ -1,0 +1,742 @@
+{
+  "game": {
+    "avoid_if": "Evite se voce nao quer limpar muitos icones de mapa, fazer saves estrategicos ou acompanhar finais/questlines.",
+    "before_you_start": "Entenda que a lista base tem trofeus de finais, decisoes e questlines; use saves manuais antes de Search and Destroy e Nocturne Op55N1 para evitar retrabalho. Phantom Liberty fica fora.",
+    "best_for": "Ideal para quem quer uma platina RPG de mundo aberto, com bastante questline, exploracao urbana e escolhas.",
+    "cleanup_advice": "Antes dos finais, revise gigs, NCPD scanner hustles, cyberpsychos, tarot, fast travel, questlines e trofeus de combate/build.",
+    "cover_image": "https://cdn.cloudflare.steamstatic.com/steam/apps/1091500/library_600x900.jpg",
+    "coverage_level": "strong",
+    "created_at": "2026-05-09 19:53:42",
+    "difficulty": 4,
+    "difficulty_reason": "A dificuldade mecanica e moderada; o risco maior esta em escolhas, finais, questlines e volume de atividades por distrito.",
+    "dlc_scope": "Guia focado na lista base da platina; Phantom Liberty deve ficar separado se o projeto suportar DLC/add-ons.",
+    "editorial_notes": "",
+    "editorial_review_status": null,
+    "editorial_status": "published",
+    "first_run_advice": "Nao avance para o fim sem saves manuais e sem cuidar das questlines de personagens importantes.",
+    "grind_summary": "O peso esta em limpar distritos, gigs, NCPD scanner hustles, cyberpsychos, tarot, fast travel, questlines e trofeus especificos de combate/build.",
+    "guide_avoid": null,
+    "guide_best_moment": null,
+    "guide_dlc": null,
+    "guide_grind": null,
+    "guide_ideal": null,
+    "guide_online": null,
+    "guide_runs": null,
+    "image": "https://cdn.cloudflare.steamstatic.com/steam/apps/1091500/header.jpg",
+    "is_verified": 0,
+    "last_reviewed_at": "",
+    "missable": "A lista base pode ser feita em uma playthrough planejada, mas finais, escolhas de questlines, reputacao com personagens, lifepath, atributos, itens do Johnny e algumas condicoes de historia podem gerar retrabalho. Mantenha saves manuais antes de Search and Destroy, Nocturne Op55N1 e antes de investir pontos de atributo.",
+    "missable_summary": "Os principais riscos sao The Devil, finais, questlines de Judy, Panam, River, Kerry/Rogue, Breathtaking, lifepath e trofeus dependentes de atributos.",
+    "name": "Cyberpunk 2077",
+    "online_summary": "Nao ha exigencia online para a platina da lista base.",
+    "quality_warnings": "[]",
+    "reviewed_by": "",
+    "runs_summary": "Uma playthrough planejada com saves manuais antes dos finais costuma ser suficiente para a platina base.",
+    "slug": "cyberpunk-2077",
+    "time": "60-80 horas",
+    "time_bucket": "long",
+    "time_max_hours": 80,
+    "time_min_hours": 60,
+    "time_reason": "A faixa de 60-80 horas considera campanha, questlines, limpeza de distritos, finais, colecionaveis e trofeus especificos.",
+    "time_sort_hours": 60,
+    "updated_at": "2026-06-27 02:36:58",
+    "verification_note": "Lista base de Cyberpunk 2077 adicionada com checklist e roadmap completos; aguarda revisao editorial manual final.",
+    "verification_status": "review",
+    "walkthrough": null
+  },
+  "redirects": [],
+  "roadmaps": [
+    {
+      "content": "{\"title\":\"Avance pela campanha\",\"focus\":\"\",\"objective\":\"comece a campanha naturalmente, desbloqueie Night City, builds, cyberware, quickhacks, crafting, Street Cred e sistemas de mapa sem gastar todos os recursos em itens caros cedo demais.\",\"actions\":[],\"warning\":\"\",\"result\":\"\"}",
+      "step_order": 1
+    },
+    {
+      "content": "{\"title\":\"Trave relações e Maelle\",\"focus\":\"\",\"objective\":\"avance questlines principais e secundarias importantes sem encerrar relacoes/personagens cedo demais. Mantenha save manual antes de Search and Destroy para The Devil e antes de escolhas criticas.\",\"actions\":[],\"warning\":\"\",\"result\":\"\"}",
+      "step_order": 2
+    },
+    {
+      "content": "{\"title\":\"complete as questlines de Judy, Panam, River e Kerry/Rogue co...\",\"focus\":\"\",\"objective\":\"complete as questlines de Judy, Panam, River e Kerry/Rogue conforme os requisitos de Judy vs Night City, Life of the Road, To Protect and Serve, To Bad Decisions e Bushido and Chill.\",\"actions\":[],\"warning\":\"\",\"result\":\"\"}",
+      "step_order": 3
+    },
+    {
+      "content": "{\"title\":\"Prossiga pela rota planejada\",\"focus\":\"\",\"objective\":\"limpe gigs, NCPD scanner hustles, cyberpsychos, fast travel dataterms, tarot graffiti e atividades por distrito em Watson, Pacifica, Badlands, Westbrook, Heywood, Santo Domingo e City Center.\",\"actions\":[],\"warning\":\"\",\"result\":\"\"}",
+      "step_order": 4
+    },
+    {
+      "content": "{\"title\":\"Prossiga pela rota planejada\",\"focus\":\"\",\"objective\":\"prepare saves manuais antes de Nocturne Op55N1 e resolva os finais The Devil, The Star, The Sun, Temperance e The World sem precisar de uma nova campanha completa.\",\"actions\":[],\"warning\":\"\",\"result\":\"\"}",
+      "step_order": 5
+    },
+    {
+      "content": "{\"title\":\"Prossiga pela rota planejada\",\"focus\":\"\",\"objective\":\"limpe trofeus especificos de combate, crafting, build, armas, atributos, quickhacks, Second Heart, Street Cred e compra de veiculos.\",\"actions\":[],\"warning\":\"\",\"result\":\"\"}",
+      "step_order": 6
+    },
+    {
+      "content": "{\"title\":\"Revise pendências finais\",\"focus\":\"\",\"objective\":\"faca cleanup final da lista base e confirme que Phantom Liberty ficou separado; os trofeus de Dogtown nao sao requisito para esta platina.\",\"actions\":[],\"warning\":\"\",\"result\":\"\"}",
+      "step_order": 7
+    }
+  ],
+  "schemaVersion": 1,
+  "seedExtras": {
+    "aliases": [],
+    "attentionPoints": [
+      {
+        "detail": "Salve Takemura durante Search and Destroy. Se ele morrer, The Devil fica bloqueado nessa run.",
+        "tags": [
+          "Perdível",
+          "Takemura"
+        ],
+        "title": "Takemura e The Devil"
+      },
+      {
+        "detail": "Crie um save manual antes de Nocturne OP55N1. Ele permite testar finais diferentes sem repetir a campanha inteira.",
+        "tags": [
+          "Final",
+          "Save manual"
+        ],
+        "title": "Save antes de Nocturne OP55N1"
+      },
+      {
+        "detail": "Complete Panam, Rogue, Kerry, Judy e River antes do ponto sem retorno. Essas questlines liberam troféus próprios e rotas de final.",
+        "tags": [
+          "Questline",
+          "Rota"
+        ],
+        "title": "Questlines de personagens"
+      },
+      {
+        "detail": "Breathtaking exige todos os itens de Johnny Silverhand. Use checklist em Chippin' In, Psychofan e recompensas relacionadas.",
+        "tags": [
+          "Johnny",
+          "Coletável"
+        ],
+        "title": "Itens de Johnny"
+      },
+      {
+        "detail": "A platina base tem 45 troféus. Phantom Liberty adiciona 13 troféus extras, mas não é necessária para Never Fade Away.",
+        "tags": [
+          "DLC",
+          "Extra"
+        ],
+        "title": "Phantom Liberty separado"
+      },
+      {
+        "detail": "A versão PS4 não recebe patches recentes nem Phantom Liberty. Se o guia usa requisitos pós-2.0, trate PS5/versão atual como referência.",
+        "tags": [
+          "PS5",
+          "Patch 2.0"
+        ],
+        "title": "PS4 vs PS5"
+      },
+      {
+        "detail": "Troféus ligados a perks, cyberware, crafting, quickhacks e habilidades precisam estar atualizados para a versão atual.",
+        "tags": [
+          "Patch 2.0",
+          "Build"
+        ],
+        "title": "Patch 2.0+"
+      },
+      {
+        "detail": "Use opções de diálogo do rumo de vida sempre que aparecerem para Method Stanislavski.",
+        "tags": [
+          "Lifepath",
+          "Diálogo"
+        ],
+        "title": "Lifepath"
+      },
+      {
+        "detail": "Os troféus regionais exigem limpar gigs e delitos da NCPD por distrito. Use filtros do mapa e confira ícones pendentes.",
+        "tags": [
+          "Gigs",
+          "NCPD"
+        ],
+        "title": "Gigs e NCPD"
+      },
+      {
+        "detail": "Autojock exige comprar todos os veículos disponíveis da lista base. Reserve dinheiro e confira ofertas/Autofixer.",
+        "tags": [
+          "Veículos",
+          "Grind"
+        ],
+        "title": "Veículos"
+      },
+      {
+        "detail": "A dificuldade selecionável não afeta troféus. Não inflar o filtro Dificuldade.",
+        "tags": [
+          "Sem dificuldade"
+        ],
+        "title": "Dificuldade"
+      },
+      {
+        "detail": "A platina base é single-player e não exige online nem cooperação.",
+        "tags": [
+          "Offline",
+          "Sem coop"
+        ],
+        "title": "Online/coop"
+      }
+    ],
+    "checklist": [
+      "Conferir se o guia tem 45 troféus base.",
+      "Conferir se Never Fade Away é a platina.",
+      "Conferir distribuição: 1 platina, 1 ouro, 17 prata e 26 bronze.",
+      "Conferir se Phantom Liberty não foi misturado com a platina base.",
+      "Conferir se Phantom Liberty tem 13 troféus extras separados como DLC/100%.",
+      "Conferir onlineRequired false.",
+      "Conferir coopRequired false.",
+      "Conferir dlcRequired false para a platina base.",
+      "Conferir se missableCount bate com troféus marcados como Perdível.",
+      "Conferir The Devil/Takemura.",
+      "Conferir The Star/Panam.",
+      "Conferir The Sun/Rogue.",
+      "Conferir Temperance/Johnny.",
+      "Conferir Bushido and Chill.",
+      "Conferir To Bad Decisions!/Kerry.",
+      "Conferir Breathtaking/itens de Johnny.",
+      "Conferir Method Stanislavski/lifepath.",
+      "Conferir V for Vendetta após patch 2.0.",
+      "Conferir Master Crafter após patch 2.0.",
+      "Conferir Ten out of Ten após patch 2.0.",
+      "Conferir Full Body Conversion após patch 2.0.",
+      "Conferir gigs/NCPD por distrito.",
+      "Conferir todos os finais.",
+      "Conferir tarô.",
+      "Conferir dataterms.",
+      "Conferir veículos.",
+      "Conferir se Dificuldade está 0.",
+      "Conferir se Online está 0.",
+      "Conferir se Coop está 0.",
+      "Conferir se DLC está 0 nos troféus base.",
+      "Conferir se todos os troféus têm nome oficial em inglês como principal.",
+      "Conferir se todos têm PT-BR abaixo.",
+      "Conferir se descrições estão em português.",
+      "Conferir se roadmap está estruturado como array/objeto.",
+      "Conferir se roadmap não renderiza objeto bruto nem campos crus.",
+      "Conferir FAQ, decisão rápida, SEO e pontos de atenção.",
+      "Conferir se página individual e catálogo exibem o mesmo status editorial.",
+      "Conferir se flags do topo batem com filtros do catálogo."
+    ],
+    "faq": [
+      {
+        "answer": "Sim. O principal é The Devil, porque exige salvar Takemura em Search and Destroy. Também há riscos em questlines de personagens, itens de Johnny e diálogos de lifepath.",
+        "question": "Cyberpunk 2077 tem troféus perdíveis?"
+      },
+      {
+        "answer": "Não. A platina base é totalmente single-player.",
+        "question": "Precisa jogar online para platinar?"
+      },
+      {
+        "answer": "Não. Cyberpunk 2077 não exige cooperação para nenhum troféu da platina base.",
+        "question": "Precisa de cooperação?"
+      },
+      {
+        "answer": "Não. Phantom Liberty adiciona 13 troféus extras, mas Never Fade Away usa apenas os 45 troféus da lista base.",
+        "question": "Precisa de Phantom Liberty para a platina?"
+      },
+      {
+        "answer": "A rota segura usa uma run principal com saves manuais antes de Nocturne OP55N1. Outra run só é necessária se você perder Takemura, itens de Johnny, diálogos de lifepath ou questlines importantes.",
+        "question": "Quantas runs são necessárias?"
+      },
+      {
+        "answer": "O save antes de Nocturne OP55N1, para testar finais diferentes. Também faça save antes de Search and Destroy para garantir Takemura.",
+        "question": "Qual save manual é mais importante?"
+      },
+      {
+        "answer": "Não. É possível buscar a platina na dificuldade que preferir.",
+        "question": "A dificuldade afeta troféus?"
+      },
+      {
+        "answer": "Sim. A versão PS4 não recebe patches recentes nem Phantom Liberty. Este guia usa PS5/pós-2.0 como referência para perks, cyberware, crafting e progressão.",
+        "question": "PS4 e PS5 têm diferenças?"
+      },
+      {
+        "answer": "Panam, Rogue, Kerry, Judy e River. Elas liberam troféus próprios e algumas rotas de final.",
+        "question": "Quais questlines não devo ignorar?"
+      },
+      {
+        "answer": "Podem ser, dependendo das quests e recompensas. Use checklist para Breathtaking, revise Chippin' In, Psychofan e itens únicos antes do cleanup final.",
+        "question": "Itens de Johnny são perdíveis?"
+      },
+      {
+        "answer": "Os troféus são os mesmos, mas sistemas de perks, cyberware, crafting, quickhacks e progressão mudaram. Troféus como V for Vendetta, Master Crafter, Ten out of Ten e Full Body Conversion devem usar instruções atualizadas.",
+        "question": "O patch 2.0 mudou troféus?"
+      },
+      {
+        "answer": "Em média, cerca de 60 a 90 horas, dependendo do ritmo de exploração, cleanup de distritos, veículos, dinheiro e finais.",
+        "question": "Quanto tempo leva para platinar?"
+      }
+    ],
+    "note": "Campos exportados para auditoria. O SQLite atual nao possui colunas nativas para todos esses extras; a importacao preserva o que o banco suporta.",
+    "quickDecision": {
+      "difficulty": "Baixa a moderada, 4/10.",
+      "dlc": "Phantom Liberty não é necessária para a platina base.",
+      "firstAction": "Comece a run principal usando diálogos de lifepath, salvando manualmente e acompanhando Takemura, Panam, Rogue, Kerry, Judy, River e itens de Johnny.",
+      "mainRisk": "Takemura, finais, questlines de personagens, itens de Johnny e patch 2.0+.",
+      "onlineCoop": "Não exige online nem cooperação.",
+      "risk": "Médio. A maioria pode ser recuperada com save final, mas alguns requisitos podem exigir outra run se forem ignorados.",
+      "time": "Longo, cerca de 60 a 90 horas.",
+      "verdict": "Sim. É uma platina longa, mas acessível, desde que você use saves manuais e checklist."
+    },
+    "seo": {
+      "description": "Guia de troféus de Cyberpunk 2077 com roadmap da platina, tempo estimado, dificuldade, troféus perdíveis, finais, Takemura, itens de Johnny, Phantom Liberty separado e dicas atualizadas para os 45 troféus base.",
+      "keywords": "Cyberpunk 2077 troféus, Cyberpunk 2077 platina, guia Cyberpunk 2077, Cyberpunk 2077 PS5 troféus, Cyberpunk 2077 PS4 troféus, Never Fade Away, O Diabo, The Devil Cyberpunk 2077, Takemura, Breathtaking, Mão de prata, Phantom Liberty troféus, Nocturne OP55N1, Cyberpunk 2077 patch 2.0 troféus",
+      "metaDescription": "Guia de troféus de Cyberpunk 2077 com roadmap da platina, tempo estimado, dificuldade, troféus perdíveis, finais, Takemura, itens de Johnny, Phantom Liberty separado e dicas atualizadas para os 45 troféus base.",
+      "ogDescription": "Roadmap PT-BR da platina base de Cyberpunk 2077 com 45 troféus, Takemura, finais, itens de Johnny, patch 2.0+ e Phantom Liberty separado.",
+      "ogTitle": "Cyberpunk 2077: Guia de Troféus e Platina",
+      "title": "Cyberpunk 2077: Guia de Troféus e Platina"
+    },
+    "tags": []
+  },
+  "slug": "cyberpunk-2077",
+  "trophies": [
+    {
+      "description": "Unlock all Trophies.",
+      "is_missable": 0,
+      "is_spoiler": 0,
+      "name": "Never Fade Away",
+      "name_pt": "",
+      "tip": "Conclua os outros 44 trofeus da lista base. Siga o roadmap para separar bem a platina base de conteudo extra.",
+      "trophy_code": "cp2077_never_fade_away",
+      "type": "Platina"
+    },
+    {
+      "description": "Complete the main storyline.",
+      "is_missable": 0,
+      "is_spoiler": 1,
+      "name": "The World",
+      "name_pt": "",
+      "tip": "Troféu de conclusao da historia principal. Depois dos creditos, volte ao ponto antes do final para cleanup.",
+      "trophy_code": "cp2077_the_world",
+      "type": "Ouro"
+    },
+    {
+      "description": "Help Takemura avenge the death of Saburo Arasaka.",
+      "is_missable": 1,
+      "is_spoiler": 1,
+      "name": "The Devil",
+      "name_pt": "",
+      "tip": "Perdivel: salve Takemura em Search and Destroy e mantenha save manual antes da reta final para acessar este final.",
+      "trophy_code": "cp2077_the_devil",
+      "type": "Prata"
+    },
+    {
+      "description": "Leave Night City with the Aldecaldos.",
+      "is_missable": 1,
+      "is_spoiler": 1,
+      "name": "The Star",
+      "name_pt": "",
+      "tip": "Perdivel se voce falhar ou ignorar a questline da Panam. Complete a rota dos Aldecaldos antes de Nocturne Op55N1.",
+      "trophy_code": "cp2077_the_star",
+      "type": "Prata"
+    },
+    {
+      "description": "Become a legend of the Afterlife.",
+      "is_missable": 1,
+      "is_spoiler": 1,
+      "name": "The Sun",
+      "name_pt": "",
+      "tip": "Perdivel se a rota de Johnny/Rogue nao for liberada. Cuide de Chippin' In e Blistering Love antes dos finais.",
+      "trophy_code": "cp2077_the_sun",
+      "type": "Prata"
+    },
+    {
+      "description": "Let Johnny Silverhand keep your body.",
+      "is_missable": 1,
+      "is_spoiler": 1,
+      "name": "Temperance",
+      "name_pt": "",
+      "tip": "Final perdivel por rota/escolha. Use save manual antes de Nocturne Op55N1 para voltar e resolver outros finais.",
+      "trophy_code": "cp2077_temperance",
+      "type": "Prata"
+    },
+    {
+      "description": "Collect all items that once belonged to Johnny Silverhand.",
+      "is_missable": 1,
+      "is_spoiler": 1,
+      "name": "Breathtaking",
+      "name_pt": "",
+      "tip": "Perdivel: acompanhe todos os itens do Johnny, especialmente o item ligado ao gig Psychofan, antes de fechar quests e gigs.",
+      "trophy_code": "cp2077_breathtaking",
+      "type": "Prata"
+    },
+    {
+      "description": "Complete all gigs and NCPD Scanner Hustles in Watson.",
+      "is_missable": 0,
+      "is_spoiler": 0,
+      "name": "It's Elementary",
+      "name_pt": "",
+      "tip": "Limpe todos os gigs e NCPD scanner hustles de Watson. Novos gigs podem depender de Street Cred.",
+      "trophy_code": "cp2077_its_elementary",
+      "type": "Prata"
+    },
+    {
+      "description": "Complete all gigs and NCPD Scanner Hustles in Pacifica.",
+      "is_missable": 0,
+      "is_spoiler": 0,
+      "name": "Greetings from Pacifica!",
+      "name_pt": "",
+      "tip": "Limpe todos os gigs e NCPD scanner hustles de Pacifica. Use filtros de mapa para confirmar faltantes.",
+      "trophy_code": "cp2077_greetings_from_pacifica",
+      "type": "Prata"
+    },
+    {
+      "description": "Complete all gigs and NCPD Scanner Hustles in the Badlands.",
+      "is_missable": 0,
+      "is_spoiler": 0,
+      "name": "The Wasteland",
+      "name_pt": "",
+      "tip": "Limpe todos os gigs e NCPD scanner hustles das Badlands quando estiver com Street Cred suficiente.",
+      "trophy_code": "cp2077_the_wasteland",
+      "type": "Prata"
+    },
+    {
+      "description": "Complete all gigs and NCPD Scanner Hustles in Westbrook.",
+      "is_missable": 0,
+      "is_spoiler": 0,
+      "name": "Little Tokyo",
+      "name_pt": "",
+      "tip": "Limpe todos os gigs e NCPD scanner hustles de Westbrook. Revise o mapa por filtros se o trofeu nao subir.",
+      "trophy_code": "cp2077_little_tokyo",
+      "type": "Prata"
+    },
+    {
+      "description": "Complete all gigs and NCPD Scanner Hustles in Heywood.",
+      "is_missable": 0,
+      "is_spoiler": 0,
+      "name": "Mean Streets",
+      "name_pt": "",
+      "tip": "Limpe todos os gigs e NCPD scanner hustles de Heywood. Alguns icones aparecem conforme Street Cred sobe.",
+      "trophy_code": "cp2077_mean_streets",
+      "type": "Prata"
+    },
+    {
+      "description": "Complete all gigs and NCPD Scanner Hustles in Santo Domingo.",
+      "is_missable": 0,
+      "is_spoiler": 0,
+      "name": "The Jungle",
+      "name_pt": "",
+      "tip": "Limpe todos os gigs e NCPD scanner hustles de Santo Domingo antes do cleanup final.",
+      "trophy_code": "cp2077_the_jungle",
+      "type": "Prata"
+    },
+    {
+      "description": "Complete all gigs and NCPD Scanner Hustles in City Center.",
+      "is_missable": 0,
+      "is_spoiler": 0,
+      "name": "City Lights",
+      "name_pt": "",
+      "tip": "Limpe todos os gigs e NCPD scanner hustles de City Center. Use filtros de mapa para encontrar faltantes.",
+      "trophy_code": "cp2077_city_lights",
+      "type": "Prata"
+    },
+    {
+      "description": "Buy all vehicles available for purchase.",
+      "is_missable": 0,
+      "is_spoiler": 0,
+      "name": "Autojock",
+      "name_pt": "",
+      "tip": "Guarde dinheiro e suba Street Cred. Compre todos os veiculos oferecidos por fixers da lista base.",
+      "trophy_code": "cp2077_autojock",
+      "type": "Prata"
+    },
+    {
+      "description": "Kill or incapacitate 300 enemies using ranged weapons.",
+      "is_missable": 0,
+      "is_spoiler": 0,
+      "name": "True Soldier",
+      "name_pt": "",
+      "tip": "Alterne armas de fogo durante campanha, gigs e NCPD scanner hustles para reduzir grind no fim.",
+      "trophy_code": "cp2077_true_soldier",
+      "type": "Prata"
+    },
+    {
+      "description": "Kill or incapacitate 100 enemies using melee weapons.",
+      "is_missable": 0,
+      "is_spoiler": 0,
+      "name": "True Warrior",
+      "name_pt": "",
+      "tip": "Use katanas, bastoes ou outras armas corpo a corpo ao longo da limpeza de mapa.",
+      "trophy_code": "cp2077_true_warrior",
+      "type": "Prata"
+    },
+    {
+      "description": "Find all the tarot graffiti for the job Fool on the Hill.",
+      "is_missable": 0,
+      "is_spoiler": 0,
+      "name": "The Wandering Fool",
+      "name_pt": "",
+      "tip": "Colecionavel de free-roam: encontre todos os graffiti de tarot ligados a Fool on the Hill.",
+      "trophy_code": "cp2077_the_wandering_fool",
+      "type": "Prata"
+    },
+    {
+      "description": "Reach max Street Cred.",
+      "is_missable": 0,
+      "is_spoiler": 0,
+      "name": "Legend of The Afterlife",
+      "name_pt": "",
+      "tip": "Chegue ao Street Cred 50 fazendo quests, gigs, NCPD scanner hustles e atividades de mundo aberto.",
+      "trophy_code": "cp2077_legend_of_the_afterlife",
+      "type": "Prata"
+    },
+    {
+      "description": "Become a mercenary.",
+      "is_missable": 0,
+      "is_spoiler": 1,
+      "name": "The Fool",
+      "name_pt": "",
+      "tip": "Troféu automatico de progresso do prologo.",
+      "trophy_code": "cp2077_the_fool",
+      "type": "Bronze"
+    },
+    {
+      "description": "Steal the Relic.",
+      "is_missable": 0,
+      "is_spoiler": 1,
+      "name": "The Lovers",
+      "name_pt": "",
+      "tip": "Troféu automatico da historia principal.",
+      "trophy_code": "cp2077_the_lovers",
+      "type": "Bronze"
+    },
+    {
+      "description": "Find Alt Cunningham.",
+      "is_missable": 0,
+      "is_spoiler": 1,
+      "name": "The Hermit",
+      "name_pt": "",
+      "tip": "Troféu automatico de progresso da historia principal.",
+      "trophy_code": "cp2077_the_hermit",
+      "type": "Bronze"
+    },
+    {
+      "description": "Interrogate Anders Hellman.",
+      "is_missable": 0,
+      "is_spoiler": 1,
+      "name": "The Wheel of Fortune",
+      "name_pt": "",
+      "tip": "Troféu automatico de progresso da historia principal.",
+      "trophy_code": "cp2077_the_wheel_of_fortune",
+      "type": "Bronze"
+    },
+    {
+      "description": "Talk with Hanako Arasaka.",
+      "is_missable": 0,
+      "is_spoiler": 1,
+      "name": "The High Priestess",
+      "name_pt": "",
+      "tip": "Troféu automatico de progresso da historia principal em Search and Destroy.",
+      "trophy_code": "cp2077_the_high_priestess",
+      "type": "Bronze"
+    },
+    {
+      "description": "Complete River Ward's storyline.",
+      "is_missable": 1,
+      "is_spoiler": 1,
+      "name": "To Protect and Serve",
+      "name_pt": "",
+      "tip": "Perdivel se voce falhar ou abandonar a questline de River. Complete os jobs dele antes dos finais.",
+      "trophy_code": "cp2077_to_protect_and_serve",
+      "type": "Bronze"
+    },
+    {
+      "description": "Complete Kerry Eurodyne's storyline.",
+      "is_missable": 1,
+      "is_spoiler": 1,
+      "name": "To Bad Decisions!",
+      "name_pt": "",
+      "tip": "Perdivel se voce nao seguir a cadeia de Kerry apos a rota de Johnny/Rogue. Complete antes de fechar a campanha.",
+      "trophy_code": "cp2077_to_bad_decisions",
+      "type": "Bronze"
+    },
+    {
+      "description": "Complete Judy Alvarez's storyline.",
+      "is_missable": 1,
+      "is_spoiler": 1,
+      "name": "Judy vs Night City",
+      "name_pt": "",
+      "tip": "Perdivel se voce falhar ou ignorar a questline de Judy. Responda aos contatos e conclua a cadeia dela.",
+      "trophy_code": "cp2077_judy_vs_night_city",
+      "type": "Bronze"
+    },
+    {
+      "description": "Complete Panam Palmer's storyline.",
+      "is_missable": 1,
+      "is_spoiler": 1,
+      "name": "Life of the Road",
+      "name_pt": "",
+      "tip": "Perdivel se voce falhar a questline da Panam. Tambem libera condicoes importantes para finais.",
+      "trophy_code": "cp2077_life_of_the_road",
+      "type": "Bronze"
+    },
+    {
+      "description": "Watch Bushido X with Rogue.",
+      "is_missable": 1,
+      "is_spoiler": 1,
+      "name": "Bushido and Chill",
+      "name_pt": "",
+      "tip": "Perdivel: depende de Chippin' In/Blistering Love e da rota de Rogue. Salve antes de dialogos importantes com Johnny.",
+      "trophy_code": "cp2077_bushido_and_chill",
+      "type": "Bronze"
+    },
+    {
+      "description": "Complete all Cyberpsycho Sightings.",
+      "is_missable": 0,
+      "is_spoiler": 0,
+      "name": "I Am The Law",
+      "name_pt": "",
+      "tip": "Complete todos os cyberpsychos e reporte os casos. Trate com cuidado para nao encerrar algum encontro de forma incorreta.",
+      "trophy_code": "cp2077_i_am_the_law",
+      "type": "Bronze"
+    },
+    {
+      "description": "Install at least one implant in each system and body part.",
+      "is_missable": 0,
+      "is_spoiler": 0,
+      "name": "Full Body Conversion",
+      "name_pt": "",
+      "tip": "Visite ripperdocs e instale ao menos um cyberware em cada sistema/parte exigida.",
+      "trophy_code": "cp2077_full_body_conversion",
+      "type": "Bronze"
+    },
+    {
+      "description": "Kill or incapacitate 3 enemies in quick succession with a revolver or pistol in close combat.",
+      "is_missable": 0,
+      "is_spoiler": 0,
+      "name": "Gun Fu",
+      "name_pt": "",
+      "tip": "Enfraqueca tres inimigos, aproxime-se e finalize rapidamente com pistola ou revolver.",
+      "trophy_code": "cp2077_gun_fu",
+      "type": "Bronze"
+    },
+    {
+      "description": "Complete a Breach Protocol with a minimum of 3 daemons uploaded.",
+      "is_missable": 0,
+      "is_spoiler": 0,
+      "name": "Christmas Tree Attack",
+      "name_pt": "",
+      "tip": "Procure um breach com sequencia suficiente e envie tres daemons no mesmo protocolo.",
+      "trophy_code": "cp2077_christmas_tree_attack",
+      "type": "Bronze"
+    },
+    {
+      "description": "Reach the max level in any skill.",
+      "is_missable": 1,
+      "is_spoiler": 0,
+      "name": "Ten out of Ten",
+      "name_pt": "",
+      "tip": "Perdivel por distribuicao de atributos/skills. Guarde save manual e acompanhe uma skill ate o nivel maximo.",
+      "trophy_code": "cp2077_ten_out_of_ten",
+      "type": "Bronze"
+    },
+    {
+      "description": "Shoot an enemy grenade in midair with a revolver.",
+      "is_missable": 0,
+      "is_spoiler": 0,
+      "name": "Gunslinger",
+      "name_pt": "",
+      "tip": "Espere um inimigo arremessar granada e atire nela no ar usando revolver.",
+      "trophy_code": "cp2077_gunslinger",
+      "type": "Bronze"
+    },
+    {
+      "description": "Kill or incapacitate 2 enemies with the same sniper rifle shot.",
+      "is_missable": 0,
+      "is_spoiler": 0,
+      "name": "Two Heads, One Bullet",
+      "name_pt": "",
+      "tip": "Alinhe dois inimigos e use sniper rifle forte para acertar ambos no mesmo disparo.",
+      "trophy_code": "cp2077_two_heads_one_bullet",
+      "type": "Bronze"
+    },
+    {
+      "description": "While Berserk cyberware is active, perform a Superhero Landing to kill or incapacitate 2 enemies.",
+      "is_missable": 0,
+      "is_spoiler": 0,
+      "name": "Rough Landing",
+      "name_pt": "",
+      "tip": "Equipe Berserk, encontre dois inimigos juntos e use Superhero Landing de altura suficiente.",
+      "trophy_code": "cp2077_rough_landing",
+      "type": "Bronze"
+    },
+    {
+      "description": "Use a dialogue option related to V's life path 10 times.",
+      "is_missable": 1,
+      "is_spoiler": 0,
+      "name": "Stanislavski's Method",
+      "name_pt": "",
+      "tip": "Perdivel se voce ignorar opcoes de lifepath durante quests. Escolha essas falas sempre que aparecerem ate o trofeu subir.",
+      "trophy_code": "cp2077_stanislavskis_method",
+      "type": "Bronze"
+    },
+    {
+      "description": "Craft 3 Legendary items.",
+      "is_missable": 1,
+      "is_spoiler": 0,
+      "name": "Master Crafter",
+      "name_pt": "",
+      "tip": "Perdivel por investimento de atributos/perks. Use save manual antes de gastar pontos em Technical Ability ou outra rota de crafting.",
+      "trophy_code": "cp2077_master_crafter",
+      "type": "Bronze"
+    },
+    {
+      "description": "Kill or incapacitate 3 enemies with one \"Detonate Grenade\" quickhack.",
+      "is_missable": 0,
+      "is_spoiler": 0,
+      "name": "Daemon In The Shell",
+      "name_pt": "",
+      "tip": "Use Detonate Grenade em um grupo de tres inimigos proximos. Pode exigir cyberdeck/RAM e quickhack adequados.",
+      "trophy_code": "cp2077_daemon_in_the_shell",
+      "type": "Bronze"
+    },
+    {
+      "description": "Kill or incapacitate 50 enemies while time is slowed.",
+      "is_missable": 0,
+      "is_spoiler": 0,
+      "name": "The Quick and the Dead",
+      "name_pt": "",
+      "tip": "Use Sandevistan, Kerenzikov ou cyberware equivalente e acumule 50 baixas com tempo desacelerado.",
+      "trophy_code": "cp2077_the_quick_and_the_dead",
+      "type": "Bronze"
+    },
+    {
+      "description": "Perform the Distract Enemies quickhack 30 times without drawing attention to yourself.",
+      "is_missable": 0,
+      "is_spoiler": 0,
+      "name": "Must Be Rats",
+      "name_pt": "",
+      "tip": "Use Distract Enemies em dispositivos antes de ser detectado, repetindo ate 30 usos.",
+      "trophy_code": "cp2077_must_be_rats",
+      "type": "Bronze"
+    },
+    {
+      "description": "After reviving with Second Heart, kill or incapacitate the enemy who killed you within 5 seconds.",
+      "is_missable": 1,
+      "is_spoiler": 0,
+      "name": "V for Vendetta",
+      "name_pt": "",
+      "tip": "Perdivel por atributo/cyberware. Faca save manual antes de investir em Body e comprar Second Heart.",
+      "trophy_code": "cp2077_v_for_vendetta",
+      "type": "Bronze"
+    },
+    {
+      "description": "Kill or incapacitate an enemy who threw a grenade at you.",
+      "is_missable": 0,
+      "is_spoiler": 0,
+      "name": "Right Back At Ya",
+      "name_pt": "",
+      "tip": "Quando um inimigo arremessar uma granada, elimine-o logo depois.",
+      "trophy_code": "cp2077_right_back_at_ya",
+      "type": "Bronze"
+    },
+    {
+      "description": "Find all fast travel dataterms.",
+      "is_missable": 0,
+      "is_spoiler": 0,
+      "name": "Frequent Flyer",
+      "name_pt": "",
+      "tip": "Passe por todos os dataterms de fast travel da lista base de Night City e Badlands.",
+      "trophy_code": "cp2077_frequent_flyer",
+      "type": "Bronze"
+    }
+  ]
+}

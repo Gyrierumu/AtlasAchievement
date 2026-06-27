@@ -1,0 +1,789 @@
+{
+  "game": {
+    "avoid_if": "Evite se você quer uma platina rápida, totalmente offline ou sem organização extensa de entregas e instalações.",
+    "before_you_start": "Death Stranding é uma platina longa, mas pouco difícil: não tem perdíveis, coop direto ou DLC obrigatória, mas exige online assíncrono/social e Hard para as entregas Legend of Legends de Growth of a Legend.",
+    "best_for": "Recomendada para quem gosta de checklist, logística, rotas de mundo aberto, ziplines, infraestrutura e grind metódico.",
+    "cleanup_advice": "No pós-game, monte uma rede eficiente de ziplines, eleve todas as instalações a 5 estrelas, acompanhe as quatro categorias de Premium Deliveries, restaure Memory Chips e finalize crafting, estruturas e troféus sociais.",
+    "cover_image": "https://images.launchbox-app.com/835a4acc-2708-4bf8-bbdf-61dbaa963f96.jpg",
+    "coverage_level": "strong",
+    "created_at": "2026-05-09 19:53:36",
+    "difficulty": 3,
+    "difficulty_reason": "A dificuldade sugerida é 3/10: a execução é baixa, mas Growth of a Legend exige Premium Deliveries com avaliação Legend of Legends na dificuldade Hard.",
+    "dlc_scope": "Guia focado na lista base de PS4 de Death Stranding. Director's Cut, Death Stranding 2 e DLCs devem ficar separados se existirem como outros guias/slugs.",
+    "editorial_notes": "Fontes de apoio: PSX Brasil para traduções PT-BR, contagem, online, ausência de perdíveis e Hard/Legend of Legends; Fandom/PowerPyx como apoio para descrições oficiais e requisitos. Escopo: lista base PS4, sem Director's Cut.",
+    "editorial_review_status": "in_review",
+    "editorial_status": "published",
+    "first_run_advice": "Jogue a história primeiro, priorizando desbloqueios, instalações e ziplines. Depois use o pós-game para maximizar conexões, fazer Legend of Legends em Hard, restaurar Memory Chips e concluir o cleanup online/social.",
+    "grind_summary": "O maior grind é maximizar todas as instalações, fazer Premium Deliveries com Legend of Legends em Hard, restaurar 56 Memory Chips, atualizar estruturas e fabricar todos os itens.",
+    "guide_avoid": null,
+    "guide_best_moment": null,
+    "guide_dlc": null,
+    "guide_grind": null,
+    "guide_ideal": null,
+    "guide_online": null,
+    "guide_runs": null,
+    "image": "https://image.api.playstation.com/vulcan/img/rnd/202009/2921/8lUGKoEzuAQE7pWDsHIDqLd5.jpg",
+    "is_verified": 0,
+    "last_reviewed_at": "2026-05-27",
+    "missable": "Não há troféus perdíveis na platina base. Há free roam após a história e todos os requisitos podem ser concluídos no pós-game.",
+    "missable_summary": "Não há troféus perdíveis. A platina Greatest of Great Deliverers também não deve ser contada como perdível.",
+    "name": "Death Stranding",
+    "online_summary": "Online obrigatório: a lista base tem troféus sociais/assíncronos de supply request, doação, shout, Like e Bridge Link. Não é coop direto e não deve ativar coopRequired.",
+    "quality_warnings": "[]",
+    "reviewed_by": "AtlasAchievement Editorial",
+    "runs_summary": "Uma campanha longa com cleanup livre no pós-game. A maior parte da platina fica em conexões 5 estrelas, Premium Deliveries, Memory Chips, estruturas, fabricação e troféus sociais online.",
+    "slug": "death-stranding",
+    "time": "70-130 horas",
+    "time_bucket": "long",
+    "time_max_hours": 130,
+    "time_min_hours": 70,
+    "time_reason": "A estimativa de 70-130 horas varia conforme eficiência de ziplines, rotas, 5 estrelas, entregas premium, Memory Chips e cleanup online/social. Tempo ocioso de bots/espera não entra como base.",
+    "time_sort_hours": 70,
+    "updated_at": "2026-06-27 02:36:58",
+    "verification_note": "Guia revisado para a lista base PS4: 63 troféus, roadmap estruturado, resumo, flags, online assíncrono, sem perdíveis, checklist, FAQ, SEO e troféus EN/PT-BR. Mantido em revisão porque a suite global npm test falhou em dado de outro guia.",
+    "verification_status": "review",
+    "walkthrough": null
+  },
+  "redirects": [],
+  "roadmaps": [
+    {
+      "content": "{\"title\":\"Avance a história e libere as ferramentas principais\",\"focus\":\"História e desbloqueios\",\"objective\":\"Concluir a campanha enquanto libera regiões, instalações, veículos, equipamentos e ziplines para facilitar o grind posterior.\",\"actions\":[\"Jogue a história normalmente e complete os Orders for Sam necessários para abrir novas instalações.\",\"Use veículos sempre que possível nas primeiras regiões para reduzir deslocamentos longos.\",\"Quando desbloquear PCC Lv. 2 e ziplines, comece a montar rotas úteis entre instalações importantes.\",\"Não tente maximizar todas as instalações cedo demais\",\"muitos recursos ficam mais eficientes no pós-game.\",\"Use Hard nas entregas premium quando estiver buscando Legend of Legends, mas reduza a dificuldade em chefes se quiser.\"],\"warning\":\"Growth of a Legend exige avaliações Legend of Legends em Premium Deliveries na dificuldade Hard; dificuldade menor não serve para esse requisito.\",\"result\":\"História concluída ou encaminhada, sistemas principais liberados e base pronta para a limpeza.\"}",
+      "step_order": 1
+    },
+    {
+      "content": "{\"title\":\"Conecte instalações e monte a rede de ziplines\",\"focus\":\"UCA e infraestrutura\",\"objective\":\"Conectar todas as instalações à UCA e criar uma estrutura de deslocamento eficiente para entregas, likes e 5 estrelas.\",\"actions\":[\"Localize instalações opcionais que não aparecem naturalmente na rota principal.\",\"Conecte todos os preppers e centros à rede quiral.\",\"Construa ziplines entre regiões de entrega frequente, principalmente áreas montanhosas.\",\"Use estruturas online quando disponíveis para economizar banda quiral e materiais.\",\"Mantenha materiais e PCCs preparados para completar trechos faltantes da rede.\"],\"warning\":\"\",\"result\":\"Todas as instalações encaminhadas e rede de transporte pronta para acelerar o grind principal.\"}",
+      "step_order": 2
+    },
+    {
+      "content": "{\"title\":\"Maximize instalações e faça Legend of Legends\",\"focus\":\"5 estrelas e entregas premium\",\"objective\":\"Elevar todas as instalações ao nível máximo e cumprir as entregas premium necessárias em todas as categorias.\",\"actions\":[\"Suba todas as instalações para 5 estrelas para Best Beloved.\",\"Faça Premium Deliveries diferentes com avaliação Legend of Legends.\",\"Acompanhe as quatro categorias de entrega para não repetir progresso desnecessariamente.\",\"Priorize entregas grandes e rotas com ziplines para ganhar mais likes por viagem.\",\"Confira no menu Bridge Links o progresso das categorias de entregas premium.\"],\"warning\":\"Growth of a Legend exige progresso nas quatro categorias; repetir a mesma entrega não substitui entregas diferentes.\",\"result\":\"5 estrelas e entregas premium resolvidas, removendo o maior grind da platina.\"}",
+      "step_order": 3
+    },
+    {
+      "content": "{\"title\":\"Restaure Memory Chips e planos de fabricação\",\"focus\":\"Coletáveis\",\"objective\":\"Coletar e restaurar todos os Memory Chips necessários para Fount of Knowledge e para completar planos de fabricação.\",\"actions\":[\"Leia e-mails que fazem Memory Chips aparecerem no mapa.\",\"Use o pós-game e a rede de ziplines para revisitar regiões com rapidez.\",\"Colete os 56 Memory Chips e restaure todos em um terminal.\",\"Confirme se algum chip desbloqueia plano necessário para Homo Faber.\",\"Use o checklist para evitar revisitar áreas já limpas.\"],\"warning\":\"\",\"result\":\"Memory Chips concluídos e planos importantes liberados para o cleanup de fabricação.\"}",
+      "step_order": 4
+    },
+    {
+      "content": "{\"title\":\"Complete fabricação, estruturas e troféus sociais\",\"focus\":\"Crafting e online\",\"objective\":\"Fabricar equipamentos, construir/atualizar estruturas e resolver troféus sociais/online restantes.\",\"actions\":[\"Fabrique todos os itens necessários para Homo Faber.\",\"Construa todos os tipos de estrutura exigidos por Master Builder.\",\"Atualize estruturas necessárias usando materiais obtidos nas instalações maximizadas.\",\"Faça supply request, doação, shout e demais troféus sociais online.\",\"Resolva troféus de likes, mensagens, entrevistas, BB, fontes termais, botas e ações específicas.\"],\"warning\":\"Alguns troféus sociais exigem conexão online aos servidores, mas não exigem coop direto.\",\"result\":\"Crafting, estruturas e troféus online/sociais concluídos.\"}",
+      "step_order": 5
+    },
+    {
+      "content": "{\"title\":\"Faça o cleanup final da platina\",\"focus\":\"Cleanup\",\"objective\":\"Revisar pendências da lista base e confirmar que flags, checklist e troféus estão coerentes.\",\"actions\":[\"Abra o checklist e revise os troféus restantes.\",\"Confirme que não há troféus perdíveis marcados indevidamente.\",\"Confirme que os 6 troféus online/sociais estão identificados.\",\"Confirme que DLC e Director's Cut não foram misturados com a lista PS4 base.\",\"Revise se todos os 63 troféus têm nome inglês principal e PT-BR abaixo quando confirmado.\"],\"warning\":\"\",\"result\":\"Todos os requisitos da platina base concluídos.\"}",
+      "step_order": 6
+    }
+  ],
+  "schemaVersion": 1,
+  "seedExtras": {
+    "aliases": [],
+    "attentionPoints": [],
+    "checklist": [
+      "Concluir o prólogo e os episódios 1 a 14.",
+      "Confirmar que o guia está na lista base PS4 e não mistura Director's Cut.",
+      "Conectar todas as instalações à UCA.",
+      "Encontrar instalações opcionais que não aparecem naturalmente na rota principal.",
+      "Montar rede de ziplines, principalmente em áreas montanhosas e rotas de entregas frequentes.",
+      "Maximizar todas as instalações para 5 estrelas.",
+      "Fazer 10 Premium Deliveries por categoria para Birth of a Legend.",
+      "Fazer 20 Premium Deliveries por categoria com Legend of Legends para Growth of a Legend.",
+      "Confirmar dificuldade Hard nas entregas Legend of Legends.",
+      "Restaurar os 56 Memory Chips em um terminal.",
+      "Fabricar todos os itens exigidos por Homo Faber.",
+      "Construir ao menos um tipo de cada estrutura para Master Builder.",
+      "Atualizar todos os tipos de estrutura exigidos por Trail-Blazer.",
+      "Emitir uma supply request para A Helping Hand.",
+      "Fazer uma doação online no Share Locker para Giver of Gifts.",
+      "Usar shout e receber resposta para A Shout in the Dark.",
+      "Atingir os níveis de avaliação de entrega, incluindo Bridge Link.",
+      "Atingir os totais de Likes necessários.",
+      "Ler 100 e-mails e 100 entrevistas.",
+      "Maximizar conexão com BB e receber Like de BB.",
+      "Tomar banho em fonte termal.",
+      "Trocar botas pela primeira vez.",
+      "Derrotar um Catcher.",
+      "Cortar o cordão umbilical de um BT sem ser percebido.",
+      "Trocar item com um NPC porter.",
+      "Acalmar BB chorando até ele parar.",
+      "Concluir cleanup final sem marcar nenhum troféu como perdível."
+    ],
+    "faq": [
+      {
+        "answer": "Não. A platina base não tem troféus perdíveis. Tudo pode ser concluído no pós-game/free roam.",
+        "question": "Death Stranding tem troféus perdíveis?"
+      },
+      {
+        "answer": "Sim. A lista base tem troféus sociais/online, como supply request, doações, shout, likes/estruturas e conexões online. Não é coop direto, mas exige conexão online para esses requisitos.",
+        "question": "Death Stranding precisa de online para platinar?"
+      },
+      {
+        "answer": "Não há coop direto obrigatório. O online de Death Stranding é assíncrono/social, com estruturas, likes, doações e solicitações envolvendo outros jogadores.",
+        "question": "Precisa de coop?"
+      },
+      {
+        "answer": "Não. Este guia trata a lista base de PS4. Director's Cut deve ser separado se existir como outro guia.",
+        "question": "Precisa de DLC ou Director's Cut?"
+      },
+      {
+        "answer": "Sim. Growth of a Legend exige entregas premium com avaliação Legend of Legends na dificuldade Hard. Fora disso, você pode ajustar a dificuldade para facilitar combates e chefes.",
+        "question": "A dificuldade afeta troféus?"
+      },
+      {
+        "answer": "A estimativa é 70-130h, variando conforme a eficiência da rede de ziplines, entregas, 5 estrelas e cleanup.",
+        "question": "Quanto tempo leva para platinar?"
+      },
+      {
+        "answer": "Maximizar todas as instalações, cumprir entregas premium por categoria, restaurar Memory Chips e fabricar tudo são os maiores blocos de trabalho.",
+        "question": "Qual é o maior grind?"
+      },
+      {
+        "answer": "Sim. Há free roam após a história, com regiões, instalações, entregas, coletáveis e troféus ainda acessíveis.",
+        "question": "Dá para continuar depois da história?"
+      }
+    ],
+    "note": "Campos exportados para auditoria. O SQLite atual nao possui colunas nativas para todos esses extras; a importacao preserva o que o banco suporta.",
+    "quickDecision": {
+      "firstAction": "Jogue a história primeiro, priorizando desbloqueios, instalações e ziplines. Depois use o pós-game para 5 estrelas, Legend of Legends em Hard, Memory Chips e cleanup social.",
+      "recommendation": "Boa para quem gosta de checklist, logística, ziplines, instalações e grind de mundo aberto; ruim para quem quer platina rápida ou totalmente offline.",
+      "summary": "Platina longa, mas fácil: exige online assíncrono/social, não exige coop direto, não tem perdíveis e cobra Hard apenas nas entregas Legend of Legends de Growth of a Legend."
+    },
+    "seo": {
+      "description": "Roadmap completo da platina de Death Stranding, com troféus online, Growth of a Legend, Legend of Legends, instalações 5 estrelas, Memory Chips, ziplines, checklist e dicas para reduzir o grind.",
+      "keywords": "Death Stranding troféus, Death Stranding platina, Death Stranding guia, Death Stranding roadmap, Death Stranding online, Death Stranding Growth of a Legend, Death Stranding Legend of Legends, Death Stranding Memory Chips, Death Stranding Best Beloved, Death Stranding checklist",
+      "ogDescription": "Guia PT-BR da platina base de Death Stranding no PS4, com 63 troféus, online assíncrono, sem perdíveis, Legend of Legends em Hard, Memory Chips, 5 estrelas e checklist.",
+      "ogTitle": "Death Stranding: guia de troféus e platina",
+      "title": "Death Stranding: guia de troféus e platina"
+    },
+    "tags": []
+  },
+  "slug": "death-stranding",
+  "trophies": [
+    {
+      "description": "Obtenha todos os troféus de Death Stranding.",
+      "is_missable": 0,
+      "is_spoiler": 0,
+      "name": "Greatest of Great Deliverers",
+      "name_pt": "O melhor dos Grandes Entregadores",
+      "tip": "Conclua os outros 62 troféus da lista base de PS4. Director's Cut e Death Stranding 2 ficam fora deste guia.",
+      "trophy_code": "ds_greatest_of_great_deliverers",
+      "type": "Platina"
+    },
+    {
+      "description": "Conclua o Prólogo: Porter.",
+      "is_missable": 0,
+      "is_spoiler": 1,
+      "name": "Delivering Is What I Do",
+      "name_pt": "Entregar é o que eu faço",
+      "tip": "Trofeu automatico de historia no Prologue: Porter.",
+      "trophy_code": "ds_delivering_is_what_i_do",
+      "type": "Bronze"
+    },
+    {
+      "description": "Conclua o Episódio 1: Bridget.",
+      "is_missable": 0,
+      "is_spoiler": 1,
+      "name": "Rebuilding America",
+      "name_pt": "Reconstruindo a América",
+      "tip": "Trofeu automatico de historia.",
+      "trophy_code": "ds_rebuilding_america",
+      "type": "Bronze"
+    },
+    {
+      "description": "Conclua o Episódio 2: Amelie.",
+      "is_missable": 0,
+      "is_spoiler": 1,
+      "name": "We Need You",
+      "name_pt": "Nós precisamos de você",
+      "tip": "Trofeu automatico de historia.",
+      "trophy_code": "ds_we_need_you",
+      "type": "Bronze"
+    },
+    {
+      "description": "Conclua o Episódio 3: Fragile.",
+      "is_missable": 0,
+      "is_spoiler": 1,
+      "name": "I Won't Break",
+      "name_pt": "Eu vou resistir",
+      "tip": "Trofeu automatico de historia.",
+      "trophy_code": "ds_i_wont_break",
+      "type": "Bronze"
+    },
+    {
+      "description": "Conclua o Episódio 4: Unger.",
+      "is_missable": 0,
+      "is_spoiler": 1,
+      "name": "BB...",
+      "name_pt": "BB...",
+      "tip": "Trofeu automatico de historia.",
+      "trophy_code": "ds_bb",
+      "type": "Bronze"
+    },
+    {
+      "description": "Conclua o Episódio 5: Mama.",
+      "is_missable": 0,
+      "is_spoiler": 1,
+      "name": "We're Whole Again",
+      "name_pt": "Estamos Unidas",
+      "tip": "Trofeu automatico de historia.",
+      "trophy_code": "ds_were_whole_again",
+      "type": "Bronze"
+    },
+    {
+      "description": "Conclua o Episódio 6: Deadman.",
+      "is_missable": 0,
+      "is_spoiler": 1,
+      "name": "BBs: A Bridge Between This World and the One Beyond",
+      "name_pt": "BBs: as pontes entre este e o outro mundo",
+      "tip": "Trofeu automatico de historia.",
+      "trophy_code": "ds_bbs_bridge_between_worlds",
+      "type": "Bronze"
+    },
+    {
+      "description": "Conclua o Episódio 7: Clifford.",
+      "is_missable": 0,
+      "is_spoiler": 1,
+      "name": "\"BB\"",
+      "name_pt": "\"BB\"",
+      "tip": "Trofeu automatico de historia.",
+      "trophy_code": "ds_quote_bb",
+      "type": "Bronze"
+    },
+    {
+      "description": "Conclua o Episódio 8: Heartman.",
+      "is_missable": 0,
+      "is_spoiler": 1,
+      "name": "Sixty Deaths and Sixty Births in a Day",
+      "name_pt": "Sessenta morreram e sessenta nasceram em um dia",
+      "tip": "Trofeu automatico de historia.",
+      "trophy_code": "ds_sixty_deaths_sixty_births",
+      "type": "Bronze"
+    },
+    {
+      "description": "Conclua o Episódio 9: Higgs.",
+      "is_missable": 0,
+      "is_spoiler": 1,
+      "name": "The Particle of God",
+      "name_pt": "A partícula de Deus",
+      "tip": "Trofeu automatico de historia.",
+      "trophy_code": "ds_particle_of_god",
+      "type": "Bronze"
+    },
+    {
+      "description": "Conclua o Episódio 10: Die-Hardman.",
+      "is_missable": 0,
+      "is_spoiler": 1,
+      "name": "I'm Your Die-Hardman",
+      "name_pt": "Die-Hardman ao seu dispor",
+      "tip": "Trofeu automatico de historia.",
+      "trophy_code": "ds_im_your_die_hardman",
+      "type": "Bronze"
+    },
+    {
+      "description": "Conclua o Episódio 11: Clifford Unger.",
+      "is_missable": 0,
+      "is_spoiler": 1,
+      "name": "Bring Back My Baby",
+      "name_pt": "Devolva o meu bebê",
+      "tip": "Trofeu automatico de historia.",
+      "trophy_code": "ds_bring_back_my_baby",
+      "type": "Bronze"
+    },
+    {
+      "description": "Conclua o Episódio 12: Bridges.",
+      "is_missable": 0,
+      "is_spoiler": 1,
+      "name": "She's waiting for you on the Beach.",
+      "name_pt": "Ela está te esperando na Praia",
+      "tip": "Trofeu automatico de historia.",
+      "trophy_code": "ds_shes_waiting_for_you_on_the_beach",
+      "type": "Bronze"
+    },
+    {
+      "description": "Conclua o Episódio 13: Sam Strand.",
+      "is_missable": 0,
+      "is_spoiler": 1,
+      "name": "Thank You, Sam",
+      "name_pt": "Obrigado, Sam",
+      "tip": "Trofeu automatico de historia.",
+      "trophy_code": "ds_thank_you_sam",
+      "type": "Bronze"
+    },
+    {
+      "description": "Conclua o Episódio 14: Lou.",
+      "is_missable": 0,
+      "is_spoiler": 1,
+      "name": "Thanks for Everything",
+      "name_pt": "Obrigado por tudo",
+      "tip": "Trofeu automatico ao concluir a historia; o cleanup permanece disponivel no pos-jogo.",
+      "trophy_code": "ds_thanks_for_everything",
+      "type": "Prata"
+    },
+    {
+      "description": "Conclua um pedido padrão.",
+      "is_missable": 0,
+      "is_spoiler": 0,
+      "name": "Everyday Delivery",
+      "name_pt": "A entrega de todo dia",
+      "tip": "Complete qualquer Standard Order liberada nos terminais.",
+      "trophy_code": "ds_everyday_delivery",
+      "type": "Bronze"
+    },
+    {
+      "description": "Conclua 36 pedidos padrão.",
+      "is_missable": 0,
+      "is_spoiler": 0,
+      "name": "Deliveries Done",
+      "name_pt": "Entregas feitas",
+      "tip": "Standard Orders reaparecem e permanecem disponiveis; voce fara muitas no caminho de Best Beloved.",
+      "trophy_code": "ds_deliveries_done",
+      "type": "Bronze"
+    },
+    {
+      "description": "Conclua 10 Premium Deliveries em cada categoria com avaliação Legend ou Legend of Legends.",
+      "is_missable": 0,
+      "is_spoiler": 0,
+      "name": "Birth of a Legend",
+      "name_pt": "Nasce uma lenda",
+      "tip": "Acompanhe as quatro categorias de entrega para não repetir pedidos sem necessidade.",
+      "trophy_code": "ds_birth_of_a_legend",
+      "type": "Bronze"
+    },
+    {
+      "description": "Conclua 20 Premium Deliveries diferentes em cada categoria com avaliação Legend of Legends na dificuldade Hard.",
+      "is_missable": 0,
+      "is_spoiler": 0,
+      "name": "Growth of a Legend",
+      "name_pt": "Cresce uma lenda",
+      "tip": "Legend of Legends só conta em Hard. Use Hard para aceitar e concluir as entregas premium; combates e chefes podem ser jogados em dificuldade menor fora desse requisito.",
+      "trophy_code": "ds_growth_of_a_legend",
+      "type": "Ouro"
+    },
+    {
+      "description": "Emita sua primeira solicitação de suprimentos.",
+      "is_missable": 0,
+      "is_spoiler": 0,
+      "name": "A Helping Hand",
+      "name_pt": "Uma mão amiga",
+      "tip": "Requer conexão aos servidores para publicar o supply request. É online assíncrono/social, sem coop direto.",
+      "trophy_code": "ds_a_helping_hand",
+      "type": "Bronze"
+    },
+    {
+      "description": "Conclua um pedido padrão usando um delivery bot.",
+      "is_missable": 0,
+      "is_spoiler": 0,
+      "name": "The Automation Revolution",
+      "name_pt": "A revolução automatizada",
+      "tip": "Use uma Standard Order elegivel para delivery bot depois que o sistema for liberado na campanha.",
+      "trophy_code": "ds_automation_revolution",
+      "type": "Bronze"
+    },
+    {
+      "description": "Construa sua primeira estrutura; placas, escadas e âncoras de escalada também contam.",
+      "is_missable": 0,
+      "is_spoiler": 0,
+      "name": "Apprentice Builder",
+      "name_pt": "Aprendiz de construtor",
+      "tip": "Coloque qualquer estrutura simples, incluindo placa, ladder ou climbing anchor.",
+      "trophy_code": "ds_apprentice_builder",
+      "type": "Bronze"
+    },
+    {
+      "description": "Construa ao menos uma estrutura de cada tipo, incluindo placas, escadas e âncoras de escalada.",
+      "is_missable": 0,
+      "is_spoiler": 0,
+      "name": "Master Builder",
+      "name_pt": "Mestre construtor",
+      "tip": "Confira estruturas de PCC Lv. 1 e Lv. 2, estradas, pontes, ziplines, caixa postal, abrigo e itens simples.",
+      "trophy_code": "ds_master_builder",
+      "type": "Bronze"
+    },
+    {
+      "description": "Conecte seu primeiro novo afiliado à UCA.",
+      "is_missable": 0,
+      "is_spoiler": 1,
+      "name": "A New Day for the UCA",
+      "name_pt": "Um novo dia para a UCA",
+      "tip": "Trofeu automatico de historia/conexao inicial.",
+      "trophy_code": "ds_a_new_day_for_the_uca",
+      "type": "Bronze"
+    },
+    {
+      "description": "Conecte todas as instalações à UCA.",
+      "is_missable": 0,
+      "is_spoiler": 0,
+      "name": "In Sam We Trust",
+      "name_pt": "No Sam nós confiamos",
+      "tip": "Inclui instalações opcionais que não aparecem naturalmente na rota principal. Não misture com conteúdo do Director's Cut.",
+      "trophy_code": "ds_in_sam_we_trust",
+      "type": "Bronze"
+    },
+    {
+      "description": "Alcance nível de conexão 3 com uma instalação.",
+      "is_missable": 0,
+      "is_spoiler": 0,
+      "name": "Well Connected",
+      "name_pt": "Bem conectado",
+      "tip": "Aumente estrelas fazendo entregas para qualquer facility.",
+      "trophy_code": "ds_well_connected",
+      "type": "Bronze"
+    },
+    {
+      "description": "Alcance o nível máximo de conexão com todas as instalações.",
+      "is_missable": 0,
+      "is_spoiler": 0,
+      "name": "Best Beloved",
+      "name_pt": "Mais amado",
+      "tip": "Leve todas as instalações a 5 estrelas. É um dos maiores grinds da platina e fica melhor no pós-game.",
+      "trophy_code": "ds_best_beloved",
+      "type": "Prata"
+    },
+    {
+      "description": "Dê seu primeiro Like.",
+      "is_missable": 0,
+      "is_spoiler": 0,
+      "name": "Like and Be Liked",
+      "name_pt": "Curta e seja curtido",
+      "tip": "Pode ser feito em objetos de NPCs, mas conta como troféu social/online nas referências por envolver estruturas e likes do Strand System.",
+      "trophy_code": "ds_like_and_be_liked",
+      "type": "Bronze"
+    },
+    {
+      "description": "Alcance um total de 2.400 Likes na tela de resultados.",
+      "is_missable": 0,
+      "is_spoiler": 0,
+      "name": "The People's Porter",
+      "name_pt": "O portador do povo",
+      "tip": "Vem naturalmente com entregas, estruturas e progresso de facilities.",
+      "trophy_code": "ds_the_peoples_porter",
+      "type": "Bronze"
+    },
+    {
+      "description": "Alcance um total de 50.000 Likes na tela de resultados.",
+      "is_missable": 0,
+      "is_spoiler": 0,
+      "name": "The World's Most Popular Porter",
+      "name_pt": "O portador mais popular do mundo",
+      "tip": "Some likes offline e online; maximizar facilities costuma passar esse numero.",
+      "trophy_code": "ds_worlds_most_popular_porter",
+      "type": "Bronze"
+    },
+    {
+      "description": "Entregue sua primeira carga perdida.",
+      "is_missable": 0,
+      "is_spoiler": 0,
+      "name": "Good Samaritan",
+      "name_pt": "Bom samaritano",
+      "tip": "Entregue qualquer Lost Cargo ao destino indicado.",
+      "trophy_code": "ds_good_samaritan",
+      "type": "Bronze"
+    },
+    {
+      "description": "Faça sua primeira doação de armas, equipamentos ou itens.",
+      "is_missable": 0,
+      "is_spoiler": 0,
+      "name": "Giver of Gifts",
+      "name_pt": "Entregador de presentes",
+      "tip": "Doe qualquer item no Share Locker conectado aos servidores. É online assíncrono/social, sem coop direto.",
+      "trophy_code": "ds_giver_of_gifts",
+      "type": "Bronze"
+    },
+    {
+      "description": "Recicle cristais quirais pela primeira vez.",
+      "is_missable": 0,
+      "is_spoiler": 1,
+      "name": "Chiral Crafter",
+      "name_pt": "Artesão quiral",
+      "tip": "Sistema liberado pela historia; recicle cristais em uma facility.",
+      "trophy_code": "ds_chiral_crafter",
+      "type": "Bronze"
+    },
+    {
+      "description": "Restaure seu primeiro Memory Chip.",
+      "is_missable": 0,
+      "is_spoiler": 0,
+      "name": "A Thirst for Knowledge",
+      "name_pt": "Sede de conhecimento",
+      "tip": "Colete e restaure qualquer memory chip.",
+      "trophy_code": "ds_a_thirst_for_knowledge",
+      "type": "Bronze"
+    },
+    {
+      "description": "Restaure todos os Memory Chips.",
+      "is_missable": 0,
+      "is_spoiler": 0,
+      "name": "Fount of Knowledge",
+      "name_pt": "A fonte do conhecimento",
+      "tip": "São 56 Memory Chips na lista base. Alguns dependem de e-mails/conexões para aparecer.",
+      "trophy_code": "ds_fount_of_knowledge",
+      "type": "Bronze"
+    },
+    {
+      "description": "Obtenha seu primeiro dado de personalização.",
+      "is_missable": 0,
+      "is_spoiler": 0,
+      "name": "The Custom Kid",
+      "name_pt": "Um garoto personalizado",
+      "tip": "Vem ao aumentar conexao com facilities e receber dados de customizacao.",
+      "trophy_code": "ds_the_custom_kid",
+      "type": "Bronze"
+    },
+    {
+      "description": "Tome seu primeiro banho em uma fonte termal.",
+      "is_missable": 0,
+      "is_spoiler": 0,
+      "name": "Soak and Sigh",
+      "name_pt": "Mergulhe e relaxe",
+      "tip": "Entre em qualquer hot spring e sente para tomar banho.",
+      "trophy_code": "ds_soak_and_sigh",
+      "type": "Bronze"
+    },
+    {
+      "description": "Leia 100 e-mails.",
+      "is_missable": 0,
+      "is_spoiler": 0,
+      "name": "The Post Guides the Present",
+      "name_pt": "O correio guia o presente",
+      "tip": "Leia emails recebidos por historia e conexoes com facilities/preppers.",
+      "trophy_code": "ds_the_post_guides_the_present",
+      "type": "Bronze"
+    },
+    {
+      "description": "Leia 100 entrevistas.",
+      "is_missable": 0,
+      "is_spoiler": 0,
+      "name": "The Past Guides the Present",
+      "name_pt": "O passado guia o presente",
+      "tip": "Leia interviews liberadas por historia, facilities e memory chips.",
+      "trophy_code": "ds_the_past_guides_the_present",
+      "type": "Bronze"
+    },
+    {
+      "description": "Ajude portadores a passarem por uma área de MULAs ou terroristas pela primeira vez.",
+      "is_missable": 0,
+      "is_spoiler": 0,
+      "name": "Pathfinder",
+      "name_pt": "Desbravador",
+      "tip": "Limpe um camp de MULEs/terrorists para tornar a rota temporariamente segura para porters.",
+      "trophy_code": "ds_pathfinder",
+      "type": "Bronze"
+    },
+    {
+      "description": "Alcance o nível máximo de conexão com BB.",
+      "is_missable": 0,
+      "is_spoiler": 1,
+      "name": "Childminder",
+      "name_pt": "Babá",
+      "tip": "Aumente a conexao com BB ao longo das entregas e cuide dele quando necessario.",
+      "trophy_code": "ds_childminder",
+      "type": "Bronze"
+    },
+    {
+      "description": "Receba um Like de BB.",
+      "is_missable": 0,
+      "is_spoiler": 1,
+      "name": "A Baby Blessing",
+      "name_pt": "A benção do bebê",
+      "tip": "Interaja com BB e realize acoes que gerem likes dele.",
+      "trophy_code": "ds_a_baby_blessing",
+      "type": "Bronze"
+    },
+    {
+      "description": "Alcance nível 10 em qualquer categoria de avaliação de entrega.",
+      "is_missable": 0,
+      "is_spoiler": 0,
+      "name": "Prominent Porter",
+      "name_pt": "Portador notável",
+      "tip": "Suba qualquer categoria de avaliacao fazendo entregas.",
+      "trophy_code": "ds_prominent_porter",
+      "type": "Bronze"
+    },
+    {
+      "description": "Alcance nível 60 em todas as categorias de avaliação de entrega.",
+      "is_missable": 0,
+      "is_spoiler": 0,
+      "name": "Great Deliverer",
+      "name_pt": "Grande Entregador",
+      "tip": "A categoria Bridge Link/elos sociais depende de likes e servidores online assíncronos. Não exige coop direto.",
+      "trophy_code": "ds_great_deliverer",
+      "type": "Bronze"
+    },
+    {
+      "description": "Derrote um Catcher.",
+      "is_missable": 0,
+      "is_spoiler": 1,
+      "name": "Catcher Crusher",
+      "name_pt": "Apanhando o apanhador",
+      "tip": "Trofeu de combate/chefe ligado aos BTs.",
+      "trophy_code": "ds_catcher_crusher",
+      "type": "Bronze"
+    },
+    {
+      "description": "Cure-se dormindo pela primeira vez.",
+      "is_missable": 0,
+      "is_spoiler": 0,
+      "name": "Snooze 'n' Soothe",
+      "name_pt": "Sonequinha relaxante",
+      "tip": "Descanse no mundo aberto para recuperar Sam.",
+      "trophy_code": "ds_snooze_n_soothe",
+      "type": "Bronze"
+    },
+    {
+      "description": "Troque de calçado pela primeira vez.",
+      "is_missable": 0,
+      "is_spoiler": 0,
+      "name": "Boots Are a Porter's Best Friend",
+      "name_pt": "Botas são as melhores amigas de um portador",
+      "tip": "Equipe novas botas fabricadas ou encontradas.",
+      "trophy_code": "ds_boots_are_a_porters_best_friend",
+      "type": "Bronze"
+    },
+    {
+      "description": "Entregue 700 itens de carga.",
+      "is_missable": 0,
+      "is_spoiler": 0,
+      "name": "Hooked on Delivering!?",
+      "name_pt": "Está viciado em entregar!?",
+      "tip": "Vem naturalmente no caminho de 5 estrelas e premium deliveries.",
+      "trophy_code": "ds_hooked_on_delivering",
+      "type": "Bronze"
+    },
+    {
+      "description": "Entregue 3.000 kg de carga.",
+      "is_missable": 0,
+      "is_spoiler": 0,
+      "name": "Pumped Porter",
+      "name_pt": "Musculação de portador",
+      "tip": "Vem naturalmente ao fazer entregas grandes para facilities.",
+      "trophy_code": "ds_pumped_porter",
+      "type": "Bronze"
+    },
+    {
+      "description": "Percorra 80 km e conclua um pedido.",
+      "is_missable": 0,
+      "is_spoiler": 0,
+      "name": "Well-Traveled",
+      "name_pt": "Viajante",
+      "tip": "Distancia acumulada; conclua uma ordem depois de atingir o total.",
+      "trophy_code": "ds_well_traveled",
+      "type": "Bronze"
+    },
+    {
+      "description": "Encontre a casa de Higgs.",
+      "is_missable": 0,
+      "is_spoiler": 1,
+      "name": "God Particle Go-Getter",
+      "name_pt": "Guerreiro das partículas de Deus",
+      "tip": "Disponivel depois de progresso avancado da historia; ainda pode ser feito no pos-jogo.",
+      "trophy_code": "ds_god_particle_go_getter",
+      "type": "Bronze"
+    },
+    {
+      "description": "Em uma área de BTs, corte um cordão umbilical pela primeira vez sem que o BT perceba.",
+      "is_missable": 0,
+      "is_spoiler": 1,
+      "name": "Rest In Pieces",
+      "name_pt": "Descanse em pedaços",
+      "tip": "Use o Cord Cutter em uma area de BTs depois que a ferramenta for liberada pela historia.",
+      "trophy_code": "ds_rest_in_pieces",
+      "type": "Bronze"
+    },
+    {
+      "description": "Faça uma troca com outro portador pela primeira vez.",
+      "is_missable": 0,
+      "is_spoiler": 0,
+      "name": "Any Porter in a Storm",
+      "name_pt": "O ombro de um amigo portador",
+      "tip": "Troque item com um NPC porter encontrado no mundo.",
+      "trophy_code": "ds_any_porter_in_a_storm",
+      "type": "Bronze"
+    },
+    {
+      "description": "Acalme um BB chorando e faça-o parar de chorar pela primeira vez.",
+      "is_missable": 0,
+      "is_spoiler": 1,
+      "name": "Sleep Tight, Little BB",
+      "name_pt": "Durma bem, pequeno BB",
+      "tip": "Quando BB chorar, use a acao de acalmar ate ele parar.",
+      "trophy_code": "ds_sleep_tight_little_bb",
+      "type": "Bronze"
+    },
+    {
+      "description": "Envie um chamado e receba uma resposta pela primeira vez.",
+      "is_missable": 0,
+      "is_spoiler": 0,
+      "name": "A Shout in the Dark",
+      "name_pt": "Um grito no escuro",
+      "tip": "Requer conexão aos servidores para receber resposta assíncrona de outro jogador.",
+      "trophy_code": "ds_a_shout_in_the_dark",
+      "type": "Bronze"
+    },
+    {
+      "description": "Descarte uma carga contaminada por quiralium no lago de cratera pela primeira vez.",
+      "is_missable": 0,
+      "is_spoiler": 0,
+      "name": "Public Service Porter",
+      "name_pt": "Lugar de lixo é no alcatrão",
+      "tip": "Leve carga contaminada ao crater lake e descarte-a corretamente.",
+      "trophy_code": "ds_public_service_porter",
+      "type": "Bronze"
+    },
+    {
+      "description": "Aprimore todos os tipos de estrutura até o nível máximo.",
+      "is_missable": 0,
+      "is_spoiler": 0,
+      "name": "Trail-Blazer",
+      "name_pt": "Grande herança",
+      "tip": "Deixe para o fim, quando instalações maximizadas fornecerem materiais suficientes. Estradas não entram como estrutura atualizável desse requisito.",
+      "trophy_code": "ds_trail_blazer",
+      "type": "Bronze"
+    },
+    {
+      "description": "Urine ao ar livre pela primeira vez.",
+      "is_missable": 0,
+      "is_spoiler": 0,
+      "name": "I Couldn't Hold it In!",
+      "name_pt": "Não consegui segurar!",
+      "tip": "Use a acao de urinar no mundo aberto.",
+      "trophy_code": "ds_i_couldnt_hold_it_in",
+      "type": "Bronze"
+    },
+    {
+      "description": "Conclua sua primeira estrada.",
+      "is_missable": 0,
+      "is_spoiler": 0,
+      "name": "All Roads Lead to the UCA",
+      "name_pt": "Todos os caminhos levam para a UCA",
+      "tip": "Reconstrua qualquer trecho de estrada, inclusive o trecho tutorial se contar no save.",
+      "trophy_code": "ds_all_roads_lead_to_the_uca",
+      "type": "Bronze"
+    },
+    {
+      "description": "Use o reprodutor de música pela primeira vez.",
+      "is_missable": 0,
+      "is_spoiler": 0,
+      "name": "Soothing Sounds",
+      "name_pt": "Música relaxante",
+      "tip": "Use o music player em um private room.",
+      "trophy_code": "ds_soothing_sounds",
+      "type": "Bronze"
+    },
+    {
+      "description": "Alcance nível 1 de Bridge Link/elo social.",
+      "is_missable": 0,
+      "is_spoiler": 0,
+      "name": "Building Bridges",
+      "name_pt": "Formando eixos",
+      "tip": "Bridge Link depende de estruturas, likes e servidores online assíncronos. Não exige coop direto.",
+      "trophy_code": "ds_building_bridges",
+      "type": "Bronze"
+    },
+    {
+      "description": "Fabrique todas as armas e equipamentos disponíveis.",
+      "is_missable": 0,
+      "is_spoiler": 0,
+      "name": "Homo Faber",
+      "name_pt": "Homo Faber",
+      "tip": "Na lista base, fabrique os 72 itens disponíveis. Alguns planos dependem de história, instalações, conexões e Memory Chips.",
+      "trophy_code": "ds_homo_faber",
+      "type": "Bronze"
+    }
+  ]
+}

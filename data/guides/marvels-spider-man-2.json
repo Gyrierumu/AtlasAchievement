@@ -1,0 +1,549 @@
+{
+  "game": {
+    "avoid_if": "Evite apenas se você não gosta de limpar mapa, coletáveis e atividades de distrito.",
+    "before_you_start": "Nada é perdível e não há online obrigatório; dá para jogar sem medo de travar a platina.",
+    "best_for": "Ideal para quem quer uma platina acessível, moderna, com mundo aberto compacto e baixo risco de retrabalho.",
+    "cleanup_advice": "Depois da campanha, use o mapa para fechar distritos, coletáveis, side stories, upgrades e troféus específicos.",
+    "cover_image": "https://cdn.cloudflare.steamstatic.com/steam/apps/2651280/library_600x900.jpg",
+    "coverage_level": "complete",
+    "created_at": "2026-05-09 19:53:30",
+    "difficulty": 2,
+    "difficulty_reason": "A platina é bem acessível; o maior compromisso é limpar o mapa e completar 100% dos distritos.",
+    "dlc_scope": "Guia focado na lista base da platina; DLCs, add-ons ou listas separadas devem ficar fora deste checklist.",
+    "editorial_notes": "",
+    "editorial_review_status": "verified",
+    "editorial_status": "published",
+    "first_run_advice": "Avance pela campanha enquanto libera habilidades, gadgets, Web Wings e atividades do mapa; deixe a limpeza completa de distritos, upgrades e troféus situacionais para o cleanup.",
+    "grind_summary": "O peso está em completar distritos, coletáveis, side stories, atividades de mundo aberto, upgrades e troféus específicos.",
+    "guide_avoid": null,
+    "guide_best_moment": null,
+    "guide_dlc": null,
+    "guide_grind": null,
+    "guide_ideal": null,
+    "guide_online": null,
+    "guide_runs": null,
+    "image": "https://cdn.cloudflare.steamstatic.com/steam/apps/2651280/header.jpg",
+    "is_verified": 1,
+    "last_reviewed_at": "2026-05-26",
+    "missable": "Nada da lista base é perdível: há free roam depois da história e todos os coletáveis, side stories, distritos e troféus específicos podem ser concluídos no cleanup. Coletáveis escondidos como Spider-Bots exigem atenção de checklist, sem bloqueio por avanço de campanha.",
+    "missable_summary": "Não há troféus perdíveis na lista base; coletáveis, side stories, atividades e 100% dos distritos ficam disponíveis para cleanup após a campanha.",
+    "name": "Marvel’s Spider-Man 2",
+    "online_summary": "Não há exigência online para a platina.",
+    "quality_warnings": "[]",
+    "reviewed_by": "AtlasAchievement editorial",
+    "runs_summary": "Uma campanha principal com cleanup livre por distritos. Nada da lista base é perdível.",
+    "slug": "marvels-spider-man-2",
+    "time": "25-35h",
+    "time_bucket": "medium",
+    "time_max_hours": 35,
+    "time_min_hours": 25,
+    "time_reason": "A faixa de 25-35 horas considera campanha, atividades de mundo aberto, coletáveis, upgrades e cleanup.",
+    "time_sort_hours": 25,
+    "updated_at": "2026-06-27 02:36:59",
+    "verification_note": "Guia revisado editorialmente para a platina base de Marvel’s Spider-Man 2, com 42 troféus, roadmap estruturado, descrições PT-BR, sem perdíveis, sem online obrigatório, sem coop obrigatório, sem DLC obrigatória e sem New Game+ obrigatório.",
+    "verification_status": "verified",
+    "walkthrough": null
+  },
+  "redirects": [],
+  "roadmaps": [
+    {
+      "content": "{\"title\":\"Conclua a campanha e libere todo o mapa\",\"focus\":\"História\",\"objective\":\"Avançar pela história principal enquanto libera atividades, habilidades, gadgets, Web Wings e recursos básicos dos dois Spider-Men.\",\"actions\":[\"Jogue a campanha naturalmente, alternando entre Peter e Miles conforme a história permitir.\",\"Aprenda a usar Spider Arms, habilidades simbiontes, Evolved Venom, gadgets e Web Wings.\",\"Pegue atividades próximas quando quiser ganhar XP e recursos, mas não tente limpar tudo antes da hora.\",\"Use saves manuais antes de limpezas grandes se quiser se proteger de problemas de contador.\",\"Não se preocupe com perdíveis, porque a platina base não tem troféus perdíveis.\"],\"warning\":\"\",\"result\":\"História concluída ou encaminhada, principais sistemas liberados e mapa pronto para a limpeza.\"}",
+      "step_order": 1
+    },
+    {
+      "content": "{\"title\":\"Faça 100% dos distritos\",\"focus\":\"Coleta de mapa\",\"objective\":\"Completar todas as atividades necessárias para Superior e liberar recursos suficientes para trajes, gadgets e Suit Tech.\",\"actions\":[\"Complete Marko’s Memories, Photo Ops, FNSM Requests, Prowler Stashes e Brooklyn Visions.\",\"Conclua EMF Experiments, Hunter Blinds, Hunter Bases, Mysteriums, Cultural Museum e Unidentified Targets.\",\"Limpe Symbiote Nests quando ficarem disponíveis na reta final.\",\"Colete Spider-Bots com atenção, pois eles não seguem o mesmo padrão de marcação do mapa.\",\"Use o checklist para conferir cada distrito antes de considerar o 100% concluído.\"],\"warning\":\"Confira os contadores do mapa durante a coleta. Se algo parecer não contar corretamente, volte a um save manual anterior.\",\"result\":\"Distritos completos, Superior encaminhado e a maioria dos recursos da platina garantida.\"}",
+      "step_order": 2
+    },
+    {
+      "content": "{\"title\":\"Finalize side stories e missões especiais\",\"focus\":\"Atividades finais\",\"objective\":\"Concluir as cadeias de atividades que liberam missões finais e troféus específicos.\",\"actions\":[\"Complete todos os Mysteriums para liberar Grand Finale e Behind the Masks.\",\"Complete The Flame para liberar It Was Meant for Me e Crimson Hour.\",\"Complete Unidentified Targets para liberar Target Identified e Data Collector.\",\"Finalize Brooklyn Visions, Cultural Museum, Howard e demais FNSM Requests.\",\"Resolva EMF Experiments restantes após a campanha, se algum só ficar disponível no pós-game.\"],\"warning\":\"\",\"result\":\"Side stories finalizadas e troféus de atividades especiais resolvidos.\"}",
+      "step_order": 3
+    },
+    {
+      "content": "{\"title\":\"Compre trajes, gadgets e Suit Tech\",\"focus\":\"Progressão\",\"objective\":\"Usar os recursos obtidos no 100% dos distritos para fechar upgrades e compras necessárias.\",\"actions\":[\"Compre todos os trajes necessários para Kitted Out.\",\"Compre todos os upgrades de gadgets para To the Max.\",\"Compre todas as melhorias de Suit Tech para Fully Loaded.\",\"Farme Tech Parts em crimes apenas se ainda faltar recurso depois do 100% dos distritos.\",\"Lembre que estilos de traje extras não devem ser tratados como requisito se o troféu não exigir.\"],\"warning\":\"\",\"result\":\"Progressão de compras e upgrades concluída.\"}",
+      "step_order": 4
+    },
+    {
+      "content": "{\"title\":\"Resolva troféus de combate e travessia\",\"focus\":\"Ações específicas\",\"objective\":\"Finalizar troféus que dependem de habilidades, técnicas de combate, Web Wings ou locais específicos.\",\"actions\":[\"Use Peter para Armed and Dangerous e Surge.\",\"Use Miles para Evolved e Overdrive.\",\"Faça Slack Line em áreas furtivas usando Web Line.\",\"Faça Hang Ten, Soar e Splat em locais adequados para travessia e tricks.\",\"Resolva Home Run!, Just Let Go e You Know What to Do nos locais corretos do mapa.\"],\"warning\":\"\",\"result\":\"Troféus situacionais resolvidos sem necessidade de nova campanha.\"}",
+      "step_order": 5
+    },
+    {
+      "content": "{\"title\":\"Faça o cleanup final da platina\",\"focus\":\"Cleanup\",\"objective\":\"Revisar pendências da lista base e garantir que nenhum requisito externo foi tratado como obrigatório.\",\"actions\":[\"Abra o checklist e revise os troféus restantes.\",\"Use free roam pós-história para voltar aos distritos e pontos de interesse.\",\"Confirme que Dedicated não está marcada como perdível.\",\"Confirme que onlineRequired, coopRequired, dlcRequired e hasMissables estão como false.\",\"Confirme que o guia não exige New Game+, DLC ou múltiplas runs para a platina base.\"],\"warning\":\"\",\"result\":\"Todos os requisitos da platina base concluídos.\"}",
+      "step_order": 6
+    }
+  ],
+  "schemaVersion": 1,
+  "seedExtras": {
+    "aliases": [],
+    "attentionPoints": [],
+    "checklist": [],
+    "faq": [
+      {
+        "answer": "Não. A platina base não tem troféus perdíveis. Você pode continuar em free roam depois da história para concluir distritos, atividades, colecionáveis e troféus situacionais.",
+        "question": "Marvel’s Spider-Man 2 tem troféus perdíveis?"
+      },
+      {
+        "answer": "Não. A platina base é offline e não exige troféus online.",
+        "question": "Marvel’s Spider-Man 2 precisa de online para platinar?"
+      },
+      {
+        "answer": "Não. O jogo é single-player e a platina não exige coop.",
+        "question": "Marvel’s Spider-Man 2 precisa de coop?"
+      },
+      {
+        "answer": "Não. A platina base não exige DLC nem New Game+.",
+        "question": "A DLC é necessária para a platina de Marvel’s Spider-Man 2?"
+      },
+      {
+        "answer": "A estimativa é 25-35h, dependendo de quanto você limpa durante a campanha e de quanto deixa para o cleanup.",
+        "question": "Quanto tempo leva para platinar Marvel’s Spider-Man 2?"
+      },
+      {
+        "answer": "A dificuldade estimada é 2/10. A dificuldade do jogo não afeta troféus, então você pode jogar na configuração que preferir.",
+        "question": "Qual a dificuldade da platina de Marvel’s Spider-Man 2?"
+      },
+      {
+        "answer": "Raramente, algum contador de distrito ou coletável pode não atualizar corretamente. Use saves manuais antes de limpezas grandes e confira os contadores do mapa durante a coleta.",
+        "question": "O troféu Superior pode dar problema?"
+      }
+    ],
+    "note": "Campos exportados para auditoria. O SQLite atual nao possui colunas nativas para todos esses extras; a importacao preserva o que o banco suporta.",
+    "quickDecision": {
+      "firstAction": "Conclua a campanha liberando distritos, atividades e recursos antes da limpeza do mapa.",
+      "mainRisk": "Nao ha perdivel, online ou coop obrigatorio; o cuidado e nao transformar a limpeza de distritos em checklist solto.",
+      "verdict": "Platina direta e offline, com campanha primeiro e cleanup de atividades, trajes, habilidades e colecionaveis depois."
+    },
+    "seo": {
+      "description": "Guia da platina de Marvels Spider-Man 2 com roadmap offline, checklist de distritos, atividades, trajes, habilidades e limpeza sem perdivel.",
+      "keywords": [
+        "Spider-Man 2 trofeus",
+        "Marvels Spider-Man 2 platina",
+        "Spider-Man 2 guia trofeus"
+      ],
+      "title": "Marvels Spider-Man 2 trofeus: guia da platina"
+    },
+    "tags": []
+  },
+  "slug": "marvels-spider-man-2",
+  "trophies": [
+    {
+      "description": "Colete todos os troféus.",
+      "is_missable": 0,
+      "is_spoiler": 0,
+      "name": "Dedicated",
+      "name_pt": "Dedicação",
+      "tip": "Conclua todos os troféus da lista base para liberar a platina; DLC não entra neste checklist.",
+      "trophy_code": "msm2_dedicated",
+      "type": "Platina"
+    },
+    {
+      "description": "Faça 100% de conclusão em todos os distritos.",
+      "is_missable": 0,
+      "is_spoiler": 0,
+      "name": "Superior",
+      "name_pt": "Superior",
+      "tip": "Feche todos os distritos pelo mapa, incluindo coletáveis, side stories, bases e atividades de mundo aberto.",
+      "trophy_code": "msm2_superior",
+      "type": "Ouro"
+    },
+    {
+      "description": "Conclua a história principal.",
+      "is_missable": 0,
+      "is_spoiler": 1,
+      "name": "Heal the World",
+      "name_pt": "Cure o Mundo",
+      "tip": "Troféu de conclusão da campanha principal.",
+      "trophy_code": "msm2_heal_the_world",
+      "type": "Ouro"
+    },
+    {
+      "description": "Compre todos os aprimoramentos de gadgets.",
+      "is_missable": 0,
+      "is_spoiler": 0,
+      "name": "To the Max",
+      "name_pt": "Ao Máximo",
+      "tip": "Compre todas as melhorias dos gadgets usando materiais obtidos em 100% dos distritos.",
+      "trophy_code": "msm2_to_the_max",
+      "type": "Prata"
+    },
+    {
+      "description": "Compre todos os trajes disponíveis.",
+      "is_missable": 0,
+      "is_spoiler": 0,
+      "name": "Kitted Out",
+      "name_pt": "Arrasando no Visual",
+      "tip": "Compre todos os trajes disponíveis; estilos de traje não são necessários para este troféu.",
+      "trophy_code": "msm2_kitted_out",
+      "type": "Prata"
+    },
+    {
+      "description": "Conclua Grand Finale.",
+      "is_missable": 0,
+      "is_spoiler": 1,
+      "name": "Behind the Masks",
+      "name_pt": "Por Trás das Máscaras",
+      "tip": "Conclua todos os Mysteriums para liberar e finalizar Grand Finale.",
+      "trophy_code": "msm2_behind_the_masks",
+      "type": "Prata"
+    },
+    {
+      "description": "Alcance o nível máximo.",
+      "is_missable": 0,
+      "is_spoiler": 0,
+      "name": "Amazing",
+      "name_pt": "Incrível",
+      "tip": "Você deve alcançar o nível 60 naturalmente enquanto limpa distritos e coletáveis.",
+      "trophy_code": "msm2_amazing",
+      "type": "Prata"
+    },
+    {
+      "description": "Conclua Target Identified.",
+      "is_missable": 0,
+      "is_spoiler": 1,
+      "name": "Data Collector",
+      "name_pt": "Coletor de Dados",
+      "tip": "Colete todos os Unidentified Targets para liberar a missão final dessa cadeia.",
+      "trophy_code": "msm2_data_collector",
+      "type": "Prata"
+    },
+    {
+      "description": "Conclua It Was Meant for Me.",
+      "is_missable": 0,
+      "is_spoiler": 1,
+      "name": "Crimson Hour",
+      "name_pt": "Hora Escarlate",
+      "tip": "Conclua todas as missões The Flame para liberar e finalizar It Was Meant for Me.",
+      "trophy_code": "msm2_crimson_hour",
+      "type": "Prata"
+    },
+    {
+      "description": "Conclua todos os Ninhos de Simbiontes.",
+      "is_missable": 0,
+      "is_spoiler": 0,
+      "name": "Exterminator",
+      "name_pt": "Exterminador",
+      "tip": "Limpe todos os Symbiote Nests quando eles ficarem disponíveis na reta final.",
+      "trophy_code": "msm2_exterminator",
+      "type": "Prata"
+    },
+    {
+      "description": "Junte memórias partidas.",
+      "is_missable": 0,
+      "is_spoiler": 0,
+      "name": "Grains of Sand",
+      "name_pt": "Grãos de Areia",
+      "tip": "Colete todas as Marko’s Memories e conclua a atividade final da cadeia.",
+      "trophy_code": "msm2_grains_of_sand",
+      "type": "Prata"
+    },
+    {
+      "description": "Conclua Don’t Be Scared.",
+      "is_missable": 0,
+      "is_spoiler": 1,
+      "name": "Leave Us Alone",
+      "name_pt": "Nos Deixe em Paz",
+      "tip": "Troféu de progresso da história em missão avançada.",
+      "trophy_code": "msm2_leave_us_alone",
+      "type": "Prata"
+    },
+    {
+      "description": "Conclua Anything Can Be Broken.",
+      "is_missable": 0,
+      "is_spoiler": 1,
+      "name": "The Great Hunt",
+      "name_pt": "A Grande Caçada",
+      "tip": "Troféu de progresso da campanha ligado à reta dos Hunters.",
+      "trophy_code": "msm2_the_great_hunt",
+      "type": "Prata"
+    },
+    {
+      "description": "Conclua todas as Bases de Caçadores.",
+      "is_missable": 0,
+      "is_spoiler": 0,
+      "name": "Seek and Destroy",
+      "name_pt": "Procurar e Destruir",
+      "tip": "Complete todos os Hunter Blinds para liberar as Hunter Bases e finalize as quatro bases.",
+      "trophy_code": "msm2_seek_and_destroy",
+      "type": "Prata"
+    },
+    {
+      "description": "Conclua todos os pedidos do AVSM.",
+      "is_missable": 0,
+      "is_spoiler": 0,
+      "name": "Friendly Neighborhood Spider-Man",
+      "name_pt": "Amigo da Vizinhança Spider-Man",
+      "tip": "Conclua todos os pedidos do app FNSM, incluindo Howard.",
+      "trophy_code": "msm2_friendly_neighborhood_spider_man",
+      "type": "Prata"
+    },
+    {
+      "description": "Conclua It Chose You.",
+      "is_missable": 0,
+      "is_spoiler": 1,
+      "name": "Medicine",
+      "name_pt": "Remédio",
+      "tip": "Troféu de progresso da história em missão de grande revelação.",
+      "trophy_code": "msm2_medicine",
+      "type": "Prata"
+    },
+    {
+      "description": "Use habilidades de simbionte 25 vezes durante um Surto de Simbionte.",
+      "is_missable": 0,
+      "is_spoiler": 0,
+      "name": "Surge",
+      "name_pt": "Surto",
+      "tip": "Com Peter, ative Symbiote Surge e use habilidades simbiontes durante o efeito.",
+      "trophy_code": "msm2_surge",
+      "type": "Prata"
+    },
+    {
+      "description": "Conclua todos os Experimentos da FEM.",
+      "is_missable": 0,
+      "is_spoiler": 0,
+      "name": "Foundational",
+      "name_pt": "Fundacional",
+      "tip": "Finalize todos os EMF Experiments; alguns só fecham após a campanha.",
+      "trophy_code": "msm2_foundational",
+      "type": "Prata"
+    },
+    {
+      "description": "Derrote 100 inimigos com habilidades de Venom Evoluído.",
+      "is_missable": 0,
+      "is_spoiler": 0,
+      "name": "Evolved",
+      "name_pt": "Evolução",
+      "tip": "Com Miles, finalize inimigos usando habilidades Evolved Venom. Crimes e Mysteriums ajudam no acúmulo.",
+      "trophy_code": "msm2_evolved",
+      "type": "Prata"
+    },
+    {
+      "description": "Derrote 100 inimigos com habilidades de Braços-Aranha.",
+      "is_missable": 0,
+      "is_spoiler": 0,
+      "name": "Armed and Dangerous",
+      "name_pt": "Armado e Perigoso",
+      "tip": "Com Peter, derrote inimigos usando Spider Arm abilities até acumular 100.",
+      "trophy_code": "msm2_armed_and_dangerous",
+      "type": "Prata"
+    },
+    {
+      "description": "Conclua No Escape.",
+      "is_missable": 0,
+      "is_spoiler": 1,
+      "name": "Another Way",
+      "name_pt": "Outro Jeito",
+      "tip": "Troféu automático de história durante No Escape.",
+      "trophy_code": "msm2_another_way",
+      "type": "Bronze"
+    },
+    {
+      "description": "Compre todos os aprimoramentos da tecnologia de traje do Spider-Man.",
+      "is_missable": 0,
+      "is_spoiler": 0,
+      "name": "Fully Loaded",
+      "name_pt": "Carregamento Completo",
+      "tip": "Compre todas as melhorias de Suit Tech usando recursos de atividades e coletáveis.",
+      "trophy_code": "msm2_fully_loaded",
+      "type": "Bronze"
+    },
+    {
+      "description": "Conclua A Gift.",
+      "is_missable": 0,
+      "is_spoiler": 0,
+      "name": "Brooklyn Pride",
+      "name_pt": "Orgulho do Brooklyn",
+      "tip": "Conclua a cadeia Brooklyn Visions para liberar e finalizar A Gift.",
+      "trophy_code": "msm2_brooklyn_pride",
+      "type": "Bronze"
+    },
+    {
+      "description": "Conclua Hard Bop.",
+      "is_missable": 0,
+      "is_spoiler": 0,
+      "name": "My Community",
+      "name_pt": "Minha Comunidade",
+      "tip": "Finalize as missões Cultural Museum até concluir Hard Bop.",
+      "trophy_code": "msm2_my_community",
+      "type": "Bronze"
+    },
+    {
+      "description": "Conclua This Isn’t You.",
+      "is_missable": 0,
+      "is_spoiler": 1,
+      "name": "I Quit",
+      "name_pt": "Estou Fora",
+      "tip": "Troféu de progresso da história em missão avançada.",
+      "trophy_code": "msm2_i_quit",
+      "type": "Bronze"
+    },
+    {
+      "description": "Resolva o mistério da origem dos Spider-Bots.",
+      "is_missable": 0,
+      "is_spoiler": 1,
+      "name": "Funky Wireless Protocols",
+      "name_pt": "Protocolos Sem Fio Descolados",
+      "tip": "Encontre todos os Spider-Bots, que não ficam marcados automaticamente no mapa.",
+      "trophy_code": "msm2_funky_wireless_protocols",
+      "type": "Bronze"
+    },
+    {
+      "description": "Equipe um estilo de traje.",
+      "is_missable": 0,
+      "is_spoiler": 0,
+      "name": "Stylish",
+      "name_pt": "Estiloso",
+      "tip": "Equipe qualquer suit style quando o tutorial de trajes liberar o sistema.",
+      "trophy_code": "msm2_stylish",
+      "type": "Bronze"
+    },
+    {
+      "description": "Derrote furtivamente 25 inimigos a partir da Linha de Teia.",
+      "is_missable": 0,
+      "is_spoiler": 0,
+      "name": "Slack Line",
+      "name_pt": "Bamba",
+      "tip": "Use Web Line em áreas furtivas e faça takedowns seguros a partir dela.",
+      "trophy_code": "msm2_slack_line",
+      "type": "Bronze"
+    },
+    {
+      "description": "Faça 30 manobras aéreas em sequência sem tocar o chão.",
+      "is_missable": 0,
+      "is_spoiler": 0,
+      "name": "Hang Ten",
+      "name_pt": "Dez Dedos no Ar",
+      "tip": "Use uma avenida longa ou ganho de altura para encadear 30 tricks antes de tocar o chão.",
+      "trophy_code": "msm2_hang_ten",
+      "type": "Bronze"
+    },
+    {
+      "description": "Como Miles, use Fluxo Reverso para puxar 6 ou mais inimigos ao mesmo tempo.",
+      "is_missable": 0,
+      "is_spoiler": 0,
+      "name": "Overdrive",
+      "name_pt": "Overdrive",
+      "tip": "Junte inimigos em uma base ou crime e use Reverse Flux com Miles.",
+      "trophy_code": "msm2_overdrive",
+      "type": "Bronze"
+    },
+    {
+      "description": "Dê uma volta completa pelas bases no estádio Big Apple Ballers.",
+      "is_missable": 0,
+      "is_spoiler": 0,
+      "name": "Home Run!",
+      "name_pt": "Home Run!",
+      "tip": "Vá ao estádio em Downtown Brooklyn e corra pelas quatro bases no campo.",
+      "trophy_code": "msm2_home_run",
+      "type": "Bronze"
+    },
+    {
+      "description": "Como Miles, encontre o troféu de ciências que Miles e Phin ganharam juntos.",
+      "is_missable": 0,
+      "is_spoiler": 1,
+      "name": "Just Let Go",
+      "name_pt": "Apenas Deixe Ir",
+      "tip": "Com Miles, visite a torre da igreja no Financial District para encontrar o troféu de ciência.",
+      "trophy_code": "msm2_just_let_go",
+      "type": "Bronze"
+    },
+    {
+      "description": "Como Peter, visite o túmulo da Tia May.",
+      "is_missable": 0,
+      "is_spoiler": 1,
+      "name": "You Know What to Do",
+      "name_pt": "Você Sabe o Que Fazer",
+      "tip": "Com Peter, visite o túmulo da May no cemitério ao norte do mapa.",
+      "trophy_code": "msm2_you_know_what_to_do",
+      "type": "Bronze"
+    },
+    {
+      "description": "Usando apenas as Web Wings, plane do Financial District até Astoria; túneis de vento são permitidos.",
+      "is_missable": 0,
+      "is_spoiler": 0,
+      "name": "Soar",
+      "name_pt": "Voando",
+      "tip": "Use Web Wings e túneis de vento para cruzar da Financial District até Astoria sem pousar.",
+      "trophy_code": "msm2_soar",
+      "type": "Bronze"
+    },
+    {
+      "description": "Tente e falhe uma manobra antes de aterrissar no chão.",
+      "is_missable": 0,
+      "is_spoiler": 0,
+      "name": "Splat",
+      "name_pt": "Espatifado",
+      "tip": "Faça um trick no ar e deixe o personagem bater no chão antes de recuperar o balanço.",
+      "trophy_code": "msm2_splat",
+      "type": "Bronze"
+    },
+    {
+      "description": "Ajude Howard.",
+      "is_missable": 0,
+      "is_spoiler": 0,
+      "name": "A New Adventure",
+      "name_pt": "Uma Nova Aventura",
+      "tip": "Complete o FNSM Request do Howard quando aparecer no Financial District.",
+      "trophy_code": "msm2_a_new_adventure",
+      "type": "Bronze"
+    },
+    {
+      "description": "Colete um total de 10.000 Peças Tecnológicas.",
+      "is_missable": 0,
+      "is_spoiler": 0,
+      "name": "Resourceful",
+      "name_pt": "Habilidoso",
+      "tip": "Acumula ao longo do jogo; 100% dos distritos fornece Tech Parts suficientes.",
+      "trophy_code": "msm2_resourceful",
+      "type": "Bronze"
+    },
+    {
+      "description": "Conclua todos os Esconderijos Prowler.",
+      "is_missable": 0,
+      "is_spoiler": 0,
+      "name": "Co-Signing",
+      "name_pt": "Parceria",
+      "tip": "Complete todos os Prowler Stashes espalhados pelos distritos.",
+      "trophy_code": "msm2_co_signing",
+      "type": "Bronze"
+    },
+    {
+      "description": "Conclua Surface Tension.",
+      "is_missable": 0,
+      "is_spoiler": 1,
+      "name": "You’re Gonna Need Help",
+      "name_pt": "Você Vai Precisar de Ajuda",
+      "tip": "Primeiro troféu de progresso da história.",
+      "trophy_code": "msm2_youre_gonna_need_help",
+      "type": "Bronze"
+    },
+    {
+      "description": "Conclua todas as Photo Ops.",
+      "is_missable": 0,
+      "is_spoiler": 0,
+      "name": "New York, New York",
+      "name_pt": "Nova York, Nova York",
+      "tip": "Fotografe todos os Photo Ops marcados pelo mapa.",
+      "trophy_code": "msm2_new_york_new_york",
+      "type": "Bronze"
+    },
+    {
+      "description": "Derrote um simbionte sob o efeito do status Anti-Venom.",
+      "is_missable": 0,
+      "is_spoiler": 1,
+      "name": "Antidote",
+      "name_pt": "Antídoto",
+      "tip": "Troféu de história ligado ao tutorial de Anti-Venom.",
+      "trophy_code": "msm2_antidote",
+      "type": "Bronze"
+    },
+    {
+      "description": "Adquira o Traje Preto.",
+      "is_missable": 0,
+      "is_spoiler": 1,
+      "name": "A New Suit",
+      "name_pt": "Um Novo Traje",
+      "tip": "Troféu automático de história ao adquirir o Black Suit.",
+      "trophy_code": "msm2_a_new_suit",
+      "type": "Bronze"
+    }
+  ]
+}

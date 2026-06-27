@@ -1,0 +1,893 @@
+{
+  "game": {
+    "avoid_if": "Evite apenas se você não quer seguir checklist de coletáveis fotográficos ou prefere platinas com desafio mecânico.",
+    "before_you_start": "Este guia cobre apenas Life Is Strange Remastered, não Before the Storm Remastered, a coleção completa com duas platinas, True Colors, Double Exposure ou outros jogos da série.",
+    "best_for": "Vale platinar Life Is Strange Remastered se você quer uma platina curta, narrativa, offline e de baixa dificuldade.",
+    "cleanup_advice": "Não reinicie a campanha por foto esquecida: use Collectible Mode/Chapter Select para voltar somente à cena necessária.",
+    "cover_image": "https://cdn.cloudflare.steamstatic.com/steam/apps/1265920/library_600x900.jpg",
+    "coverage_level": "strong",
+    "created_at": "2026-05-09 19:53:50",
+    "difficulty": 1,
+    "difficulty_reason": "A dificuldade é 1/10 porque não há combate difícil, online, coop, DLC obrigatória ou execução mecânica exigente; a platina depende de história e checklist de fotos.",
+    "dlc_scope": "Guia focado apenas em Life Is Strange Remastered. Before the Storm Remastered, a coleção completa e outros jogos da série ficam fora desta lista individual de 61 troféus.",
+    "editorial_notes": "",
+    "editorial_review_status": "in_review",
+    "editorial_status": "published",
+    "first_run_advice": "Jogue a história normalmente e acompanhe as 10 fotos opcionais de cada episódio para reduzir cleanup.",
+    "grind_summary": "O trabalho real é acompanhar as 50 fotos opcionais: 10 fotos em cada um dos 5 episódios.",
+    "guide_avoid": null,
+    "guide_best_moment": null,
+    "guide_dlc": null,
+    "guide_grind": null,
+    "guide_ideal": null,
+    "guide_online": null,
+    "guide_runs": null,
+    "image": "https://cdn.cloudflare.steamstatic.com/steam/apps/1265920/header.jpg",
+    "is_verified": 0,
+    "last_reviewed_at": "",
+    "missable": "Não há perdíveis permanentes para a platina. As fotos opcionais podem ser esquecidas dentro de uma cena, mas podem ser recuperadas depois por Collectible Mode/Chapter Select.",
+    "missable_summary": "Sem perdíveis permanentes; as 50 fotos opcionais são coletáveis recuperáveis por seleção de cena/capítulo.",
+    "name": "Life Is Strange Remastered",
+    "online_summary": "A platina é totalmente offline e single-player, sem troféus online ou PS+ obrigatório.",
+    "quality_warnings": "[]",
+    "reviewed_by": "",
+    "runs_summary": "Uma campanha completa pelos 5 episódios e um cleanup curto por Collectible Mode/Chapter Select para fotos opcionais pendentes.",
+    "slug": "life-is-strange-remastered",
+    "time": "8-12h",
+    "time_bucket": "short",
+    "time_max_hours": 12,
+    "time_min_hours": 8,
+    "time_reason": "A estimativa de 8-12h considera a campanha dos 5 episódios, leitura em ritmo normal e cleanup rápido das fotos opcionais por Collectible Mode/Chapter Select.",
+    "time_sort_hours": 8,
+    "updated_at": "2026-06-27 02:36:58",
+    "verification_note": "Guia revisado para a lista PS4 individual de Life Is Strange Remastered: 61 troféus, 5 episódios, 50 fotos opcionais, flags offline/sem coop/sem DLC, sem perdíveis permanentes e roadmap estruturado. Mantido em revisão porque a suíte global npm test falhou em dado fora deste guia.",
+    "verification_status": "unverified",
+    "walkthrough": null
+  },
+  "redirects": [],
+  "roadmaps": [
+    {
+      "content": "{\"title\":\"Complete a história sem pressa\",\"focus\":\"Campanha\",\"objective\":\"Concluir os 5 episódios acompanhando a narrativa e liberando os troféus de progressão.\",\"actions\":[\"Jogue os episódios Chrysalis, Out of Time, Chaos Theory, Dark Room e Polarized.\",\"Avance naturalmente pela história sem se preocupar com escolhas específicas para a platina.\",\"Sempre que encontrar uma oportunidade de foto, registre-a para reduzir o cleanup.\"],\"warning\":\"\",\"result\":\"Ao final da campanha, todos os troféus de conclusão de episódio estarão resolvidos ou muito próximos disso.\"}",
+      "step_order": 1
+    },
+    {
+      "content": "{\"title\":\"Fotografe os coletáveis de cada episódio\",\"focus\":\"Coletáveis\",\"objective\":\"Registrar as 10 fotos opcionais de cada episódio.\",\"actions\":[\"Use o checklist do guia para acompanhar as fotos de cada episódio.\",\"Priorize as fotos opcionais durante a campanha para evitar repetição.\",\"Confira cada episódio antes de seguir para o próximo, se quiser uma rota mais limpa.\"],\"warning\":\"As fotos podem ser perdidas dentro de uma cena, mas podem ser recuperadas depois por Collectible Mode/Chapter Select. Não trate isso como perdível permanente.\",\"result\":\"Com as 50 fotos opcionais registradas, a maior parte da platina estará concluída.\"}",
+      "step_order": 2
+    },
+    {
+      "content": "{\"title\":\"Use Collectible Mode para corrigir o que faltou\",\"focus\":\"Cleanup\",\"objective\":\"Recuperar fotos opcionais esquecidas sem reiniciar a história inteira.\",\"actions\":[\"Abra o Collectible Mode ou seleção de capítulo equivalente.\",\"Entre apenas nas cenas onde faltam fotos.\",\"Pegue a foto pendente e confirme se o troféu correspondente desbloqueou.\"],\"warning\":\"\",\"result\":\"Qualquer foto esquecida será recuperada sem comprometer o progresso principal.\"}",
+      "step_order": 3
+    },
+    {
+      "content": "{\"title\":\"Faça a conferência final da platina\",\"focus\":\"Checklist\",\"objective\":\"Confirmar os 61 troféus da lista base de Life Is Strange Remastered.\",\"actions\":[\"Revise os troféus de conclusão dos 5 episódios.\",\"Revise os troféus individuais de fotos opcionais.\",\"Revise os troféus de completar todas as fotos de cada episódio.\",\"Confirme que a platina desbloqueou após todos os demais troféus.\"],\"warning\":\"\",\"result\":\"A platina deve desbloquear após completar história e todas as fotos opcionais.\"}",
+      "step_order": 4
+    }
+  ],
+  "schemaVersion": 1,
+  "seedExtras": {
+    "aliases": [],
+    "attentionPoints": [
+      {
+        "detail": "A história é simples; o que exige checklist são as 50 fotos opcionais.",
+        "tags": [
+          {
+            "id": "collectible",
+            "label": "Coletável",
+            "tone": "partial"
+          },
+          {
+            "id": "checklist",
+            "label": "Checklist",
+            "tone": "partial"
+          }
+        ],
+        "title": "Fotos opcionais são o centro da platina"
+      },
+      {
+        "detail": "Organize a conferência por episódio para não transformar o cleanup em busca solta.",
+        "tags": [
+          {
+            "id": "episode",
+            "label": "Episódios",
+            "tone": "partial"
+          },
+          {
+            "id": "collectible",
+            "label": "Coletável",
+            "tone": "partial"
+          }
+        ],
+        "title": "Cada episódio tem 10 fotos"
+      },
+      {
+        "detail": "Fotos esquecidas podem ser recuperadas depois por Collectible Mode/Chapter Select.",
+        "tags": [
+          {
+            "id": "cleanup",
+            "label": "Cleanup",
+            "tone": "partial"
+          },
+          {
+            "id": "chapter-select",
+            "label": "Chapter Select",
+            "tone": "partial"
+          }
+        ],
+        "title": "Collectible Mode evita perdíveis permanentes"
+      },
+      {
+        "detail": "Este guia é apenas de Life Is Strange Remastered.",
+        "tags": [
+          {
+            "id": "scope",
+            "label": "Escopo",
+            "tone": "partial"
+          }
+        ],
+        "title": "Não misturar com Before the Storm"
+      },
+      {
+        "detail": "A coleção pode somar outra platina, mas este guia trata somente a lista individual de 61 troféus.",
+        "tags": [
+          {
+            "id": "scope",
+            "label": "Escopo",
+            "tone": "partial"
+          }
+        ],
+        "title": "Não misturar com a coleção completa"
+      },
+      {
+        "detail": "As dicas de fotos indicam cena e local sem revelar grandes viradas quando possível.",
+        "tags": [
+          {
+            "id": "spoiler-light",
+            "label": "Pouco spoiler",
+            "tone": "partial"
+          }
+        ],
+        "title": "Evitar spoilers fortes nas dicas"
+      },
+      {
+        "detail": "A platina é curta, mas varia se o jogador explorar diálogos, documentos e escolhas.",
+        "tags": [
+          {
+            "id": "time",
+            "label": "Tempo",
+            "tone": "partial"
+          }
+        ],
+        "title": "Tempo depende do ritmo de leitura"
+      },
+      {
+        "detail": "As escolhas da história não viram requisito de troféu; o foco é concluir episódios e tirar fotos.",
+        "tags": [
+          {
+            "id": "story",
+            "label": "História",
+            "tone": "partial"
+          }
+        ],
+        "title": "Escolhas narrativas não bloqueiam a platina"
+      },
+      {
+        "detail": "Algumas oportunidades ficam em sequências mais fragmentadas, então o checklist ajuda bastante.",
+        "tags": [
+          {
+            "id": "episode-5",
+            "label": "Episódio 5",
+            "tone": "partial"
+          },
+          {
+            "id": "checklist",
+            "label": "Checklist",
+            "tone": "partial"
+          }
+        ],
+        "title": "Fotos do Episódio 5 exigem atenção"
+      },
+      {
+        "detail": "Não é necessário repetir toda a campanha por causa de uma foto esquecida.",
+        "tags": [
+          {
+            "id": "chapter-select",
+            "label": "Chapter Select",
+            "tone": "partial"
+          },
+          {
+            "id": "cleanup",
+            "label": "Cleanup",
+            "tone": "partial"
+          }
+        ],
+        "title": "Use seleção de capítulo para cleanup"
+      }
+    ],
+    "checklist": [
+      "Completar o Episódio 1: Chrysalis.",
+      "Completar o Episódio 2: Out of Time.",
+      "Completar o Episódio 3: Chaos Theory.",
+      "Completar o Episódio 4: Dark Room.",
+      "Completar o Episódio 5: Polarized.",
+      "Registrar as 10 fotos opcionais do Episódio 1.",
+      "Registrar as 10 fotos opcionais do Episódio 2.",
+      "Registrar as 10 fotos opcionais do Episódio 3.",
+      "Registrar as 10 fotos opcionais do Episódio 4.",
+      "Registrar as 10 fotos opcionais do Episódio 5.",
+      "Usar Collectible Mode/Chapter Select para fotos pendentes.",
+      "Conferir os 61 troféus da lista individual.",
+      "Confirmar a platina What if? após todos os outros troféus."
+    ],
+    "faq": [
+      {
+        "answer": "Não há perdíveis permanentes para a platina. As fotos opcionais podem ser esquecidas durante uma cena, mas podem ser recuperadas depois por Collectible Mode/Chapter Select.",
+        "question": "Life Is Strange Remastered tem troféus perdíveis?"
+      },
+      {
+        "answer": "Não. A platina é totalmente offline e single-player.",
+        "question": "Precisa jogar online para platinar?"
+      },
+      {
+        "answer": "Não. Não há requisito de coop para a platina.",
+        "question": "Life Is Strange Remastered tem coop obrigatório?"
+      },
+      {
+        "answer": "Não. A lista individual de Life Is Strange Remastered não exige DLC para a platina.",
+        "question": "DLC é necessária para a platina?"
+      },
+      {
+        "answer": "A lista PS4 de Life Is Strange Remastered tem 61 troféus.",
+        "question": "Quantos troféus Life Is Strange Remastered tem?"
+      },
+      {
+        "answer": "São 50 fotos opcionais no total, distribuídas em 10 fotos por episódio.",
+        "question": "Quantas fotos opcionais existem?"
+      },
+      {
+        "answer": "Não para a platina. O foco dos troféus é completar os episódios e registrar as fotos opcionais.",
+        "question": "Preciso seguir escolhas específicas da história?"
+      },
+      {
+        "answer": "Uma estimativa segura é cerca de 8-12h, dependendo do ritmo de leitura, exploração e uso de guia para fotos.",
+        "question": "Quanto tempo leva para platinar?"
+      },
+      {
+        "answer": "Não. A dificuldade é 1/10 porque não há execução difícil nem online.",
+        "question": "É difícil platinar?"
+      },
+      {
+        "answer": "Sim. Use Collectible Mode/Chapter Select para voltar às cenas necessárias sem reiniciar toda a história.",
+        "question": "Posso pegar fotos que deixei passar?"
+      }
+    ],
+    "note": "Campos exportados para auditoria. O SQLite atual nao possui colunas nativas para todos esses extras; a importacao preserva o que o banco suporta.",
+    "quickDecision": {
+      "firstAction": "Complete a história acompanhando as fotos opcionais por episódio.",
+      "methodology": "Este guia cobre somente a lista individual PS4 de Life Is Strange Remastered, com 61 troféus: platina, 5 conclusões de episódio, 50 fotos opcionais e 5 troféus por completar todas as fotos de cada episódio.",
+      "recommendation": "Recomendada para quem busca uma platina narrativa fácil, curta e sem online.",
+      "risk": "O único cuidado é checklist de fotos; não há perdível permanente porque o cleanup pode ser feito por Collectible Mode/Chapter Select.",
+      "summary": "Vale platinar Life Is Strange Remastered se você quer uma platina curta, narrativa, offline e de baixa dificuldade. O único trabalho real é acompanhar as 50 fotos opcionais, mas qualquer foto esquecida pode ser recuperada depois por Collectible Mode/Chapter Select. Evite apenas se você não quer seguir checklist de coletáveis ou se prefere platinas com desafio mecânico."
+    },
+    "seo": {
+      "description": "Guia de platina de Life Is Strange Remastered com roadmap, lista de troféus, fotos opcionais por episódio, uso do Collectible Mode, flags de online/DLC/perdíveis e checklist para os 61 troféus.",
+      "keywords": "Life Is Strange Remastered guia de platina, troféus Life Is Strange Remastered, roadmap Life Is Strange Remastered, Life Is Strange Remastered fotos opcionais, Life Is Strange Remastered Collectible Mode, Life Is Strange Remastered Chapter Select, Life Is Strange Remastered 61 troféus, Life Is Strange Remastered sem online, Life Is Strange Remastered sem perdíveis permanentes, Life Is Strange Remastered platina fácil",
+      "ogDescription": "Roadmap e checklist de Life Is Strange Remastered com 61 troféus, 50 fotos opcionais, Collectible Mode, sem online, sem coop, sem DLC e sem perdíveis permanentes.",
+      "ogTitle": "Life Is Strange Remastered: guia de platina e fotos opcionais",
+      "title": "Life Is Strange Remastered: guia de platina, troféus e roadmap | AtlasAchievement"
+    },
+    "tags": []
+  },
+  "slug": "life-is-strange-remastered",
+  "trophies": [
+    {
+      "description": "Desbloqueie todos os outros troféus de Life Is Strange Remastered.",
+      "is_missable": 0,
+      "is_spoiler": 0,
+      "name": "What If?",
+      "name_pt": "E se?",
+      "tip": "Finalize os 5 episódios e registre as 50 fotos opcionais. A platina cobre apenas a lista individual de Life Is Strange Remastered.",
+      "trophy_code": "lis_rem_what_if",
+      "type": "Platina"
+    },
+    {
+      "description": "Complete o Episódio 1: Chrysalis.",
+      "is_missable": 0,
+      "is_spoiler": 1,
+      "name": "Chrysalis",
+      "name_pt": "Crisálida",
+      "tip": "Troféu automático de história. Avance normalmente e mantenha o checklist de fotos separado da progressão narrativa.",
+      "trophy_code": "lis_rem_chrysalis",
+      "type": "Bronze"
+    },
+    {
+      "description": "Tire a foto opcional nº 1 do Episódio 1: Chrysalis.",
+      "is_missable": 0,
+      "is_spoiler": 0,
+      "name": "Macro Eyes",
+      "name_pt": "Olhos macro",
+      "tip": "No Episódio 1, em sala de Jefferson, fotografe as marcas na carteira de Max antes de sair da sala. Se passar a oportunidade, volte depois pelo Collectible Mode/Chapter Select.",
+      "trophy_code": "lis_rem_macro_eyes",
+      "type": "Bronze"
+    },
+    {
+      "description": "Tire a foto opcional nº 2 do Episódio 1: Chrysalis.",
+      "is_missable": 0,
+      "is_spoiler": 0,
+      "name": "Wide Angles",
+      "name_pt": "Ângulos amplos",
+      "tip": "No Episódio 1, em pátio de Blackwell, fotografe a estátua em frente à escola. Se passar a oportunidade, volte depois pelo Collectible Mode/Chapter Select.",
+      "trophy_code": "lis_rem_wide_angles",
+      "type": "Bronze"
+    },
+    {
+      "description": "Tire a foto opcional nº 3 do Episódio 1: Chrysalis.",
+      "is_missable": 0,
+      "is_spoiler": 0,
+      "name": "Telephotogenic",
+      "name_pt": "Telefotogênica",
+      "tip": "No Episódio 1, em pátio de Blackwell, fale com Justin, rebobine com a resposta correta sobre skate e fotografe Trevor após o truque. Se passar a oportunidade, volte depois pelo Collectible Mode/Chapter Select.",
+      "trophy_code": "lis_rem_telephotogenic",
+      "type": "Bronze"
+    },
+    {
+      "description": "Tire a foto opcional nº 4 do Episódio 1: Chrysalis.",
+      "is_missable": 0,
+      "is_spoiler": 0,
+      "name": "Close-Ups",
+      "name_pt": "Close-ups",
+      "tip": "No Episódio 1, em área dos dormitórios, procure o esquilo perto da árvore ao lado do banco de Kate. Se passar a oportunidade, volte depois pelo Collectible Mode/Chapter Select.",
+      "trophy_code": "lis_rem_close_ups",
+      "type": "Bronze"
+    },
+    {
+      "description": "Tire a foto opcional nº 5 do Episódio 1: Chrysalis.",
+      "is_missable": 0,
+      "is_spoiler": 0,
+      "name": "Red Eye",
+      "name_pt": "Olho vermelho",
+      "tip": "No Episódio 1, em quarto de Max, use o espelho para tirar a selfie opcional. Se passar a oportunidade, volte depois pelo Collectible Mode/Chapter Select.",
+      "trophy_code": "lis_rem_red_eye",
+      "type": "Bronze"
+    },
+    {
+      "description": "Tire a foto opcional nº 6 do Episódio 1: Chrysalis.",
+      "is_missable": 0,
+      "is_spoiler": 0,
+      "name": "Focused",
+      "name_pt": "Em foco",
+      "tip": "No Episódio 1, em quarto de Victoria, mexa nas fotos de Victoria, tire a foto e rebobine se quiser desfazer a ação. Se passar a oportunidade, volte depois pelo Collectible Mode/Chapter Select.",
+      "trophy_code": "lis_rem_focused",
+      "type": "Bronze"
+    },
+    {
+      "description": "Tire a foto opcional nº 7 do Episódio 1: Chrysalis.",
+      "is_missable": 0,
+      "is_spoiler": 0,
+      "name": "Zoomed In",
+      "name_pt": "Zoom aplicado",
+      "tip": "No Episódio 1, em lado de fora dos dormitórios, avise Alyssa sobre a bola e fotografe a janela quebrada. Se passar a oportunidade, volte depois pelo Collectible Mode/Chapter Select.",
+      "trophy_code": "lis_rem_zoomed_in",
+      "type": "Bronze"
+    },
+    {
+      "description": "Tire a foto opcional nº 8 do Episódio 1: Chrysalis.",
+      "is_missable": 0,
+      "is_spoiler": 0,
+      "name": "Focal Pointed",
+      "name_pt": "Ponto focal",
+      "tip": "No Episódio 1, em estacionamento de Blackwell, desenhe no vidro sujo do trailer de Frank e fotografe o resultado. Se passar a oportunidade, volte depois pelo Collectible Mode/Chapter Select.",
+      "trophy_code": "lis_rem_focal_pointed",
+      "type": "Bronze"
+    },
+    {
+      "description": "Tire a foto opcional nº 9 do Episódio 1: Chrysalis.",
+      "is_missable": 0,
+      "is_spoiler": 0,
+      "name": "Maximum Aperture",
+      "name_pt": "Abertura máxima",
+      "tip": "No Episódio 1, em caminho do farol, vire para trás no início da cena e fotografe o pássaro na pedra. Se passar a oportunidade, volte depois pelo Collectible Mode/Chapter Select.",
+      "trophy_code": "lis_rem_maximum_aperture",
+      "type": "Bronze"
+    },
+    {
+      "description": "Tire a foto opcional nº 10 do Episódio 1: Chrysalis.",
+      "is_missable": 0,
+      "is_spoiler": 0,
+      "name": "Light Leak",
+      "name_pt": "Vazamento de luz",
+      "tip": "No Episódio 1, em colina do farol, fique atrás de Chloe e tire a foto antes de sentar com ela. Se passar a oportunidade, volte depois pelo Collectible Mode/Chapter Select.",
+      "trophy_code": "lis_rem_light_leak",
+      "type": "Bronze"
+    },
+    {
+      "description": "Tire todas as fotos opcionais do Episódio 1: Chrysalis.",
+      "is_missable": 0,
+      "is_spoiler": 0,
+      "name": "Visionary",
+      "name_pt": "Visionária",
+      "tip": "Confirme as 10 fotos opcionais do Episódio 1. Se faltar alguma, use Collectible Mode/Chapter Select em vez de reiniciar a campanha.",
+      "trophy_code": "lis_rem_visionary",
+      "type": "Bronze"
+    },
+    {
+      "description": "Complete o Episódio 2: Out of Time.",
+      "is_missable": 0,
+      "is_spoiler": 1,
+      "name": "Out of Time",
+      "name_pt": "Fora do tempo",
+      "tip": "Troféu automático de história. Avance normalmente e mantenha o checklist de fotos separado da progressão narrativa.",
+      "trophy_code": "lis_rem_out_of_time",
+      "type": "Bronze"
+    },
+    {
+      "description": "Tire a foto opcional nº 1 do Episódio 2: Out of Time.",
+      "is_missable": 0,
+      "is_spoiler": 0,
+      "name": "Field of View",
+      "name_pt": "Campo de visão",
+      "tip": "No Episódio 2, em quarto de Kate, fotografe o coelho na gaiola antes de sair. Se passar a oportunidade, volte depois pelo Collectible Mode/Chapter Select.",
+      "trophy_code": "lis_rem_field_of_view",
+      "type": "Bronze"
+    },
+    {
+      "description": "Tire a foto opcional nº 2 do Episódio 2: Out of Time.",
+      "is_missable": 0,
+      "is_spoiler": 0,
+      "name": "Full Exposure",
+      "name_pt": "Exposição total",
+      "tip": "No Episódio 2, em área dos dormitórios, use o donut mordido para atrair o esquilo perto do banco e fotografe quando ele se aproximar. Se passar a oportunidade, volte depois pelo Collectible Mode/Chapter Select.",
+      "trophy_code": "lis_rem_full_exposure",
+      "type": "Bronze"
+    },
+    {
+      "description": "Tire a foto opcional nº 3 do Episódio 2: Out of Time.",
+      "is_missable": 0,
+      "is_spoiler": 0,
+      "name": "Processor",
+      "name_pt": "Processador",
+      "tip": "No Episódio 2, em frente do Two Whales Diner, olhe para a placa do diner e tire a foto antes de entrar. Se passar a oportunidade, volte depois pelo Collectible Mode/Chapter Select.",
+      "trophy_code": "lis_rem_processor",
+      "type": "Bronze"
+    },
+    {
+      "description": "Tire a foto opcional nº 4 do Episódio 2: Out of Time.",
+      "is_missable": 0,
+      "is_spoiler": 0,
+      "name": "Image Stabilizer",
+      "name_pt": "Estabilizador de imagem",
+      "tip": "No Episódio 2, em fundos do Two Whales Diner, fotografe Pompidou pela cerca atrás do diner. Se passar a oportunidade, volte depois pelo Collectible Mode/Chapter Select.",
+      "trophy_code": "lis_rem_image_stabilizer",
+      "type": "Bronze"
+    },
+    {
+      "description": "Tire a foto opcional nº 5 do Episódio 2: Out of Time.",
+      "is_missable": 0,
+      "is_spoiler": 0,
+      "name": "Compressed",
+      "name_pt": "Comprimida",
+      "tip": "No Episódio 2, em banheiro do Two Whales Diner, fotografe a inscrição no espelho. Se passar a oportunidade, volte depois pelo Collectible Mode/Chapter Select.",
+      "trophy_code": "lis_rem_compressed",
+      "type": "Bronze"
+    },
+    {
+      "description": "Tire a foto opcional nº 6 do Episódio 2: Out of Time.",
+      "is_missable": 0,
+      "is_spoiler": 0,
+      "name": "Pixelated",
+      "name_pt": "Pixelada",
+      "tip": "No Episódio 2, em ferro-velho, aproxime-se do ônibus atrás de Max e Chloe para enquadrar a foto. Se passar a oportunidade, volte depois pelo Collectible Mode/Chapter Select.",
+      "trophy_code": "lis_rem_pixelated",
+      "type": "Bronze"
+    },
+    {
+      "description": "Tire a foto opcional nº 7 do Episódio 2: Out of Time.",
+      "is_missable": 0,
+      "is_spoiler": 0,
+      "name": "Dynamic Range",
+      "name_pt": "Faixa dinâmica",
+      "tip": "No Episódio 2, em ferro-velho, fotografe a corça antes que o trem interrompa a cena. Se passar a oportunidade, volte depois pelo Collectible Mode/Chapter Select.",
+      "trophy_code": "lis_rem_dynamic_range",
+      "type": "Bronze"
+    },
+    {
+      "description": "Tire a foto opcional nº 8 do Episódio 2: Out of Time.",
+      "is_missable": 0,
+      "is_spoiler": 0,
+      "name": "Colorized",
+      "name_pt": "Colorizada",
+      "tip": "No Episódio 2, em ferro-velho, fique ao lado de Chloe no ponto indicado e tire a foto. Se passar a oportunidade, volte depois pelo Collectible Mode/Chapter Select.",
+      "trophy_code": "lis_rem_colorized",
+      "type": "Bronze"
+    },
+    {
+      "description": "Tire a foto opcional nº 9 do Episódio 2: Out of Time.",
+      "is_missable": 0,
+      "is_spoiler": 0,
+      "name": "Meter Made",
+      "name_pt": "Medição feita",
+      "tip": "No Episódio 2, em laboratório de ciências, ajude Warren no experimento e fotografe o aparato. Se passar a oportunidade, volte depois pelo Collectible Mode/Chapter Select.",
+      "trophy_code": "lis_rem_meter_made",
+      "type": "Bronze"
+    },
+    {
+      "description": "Tire a foto opcional nº 10 do Episódio 2: Out of Time.",
+      "is_missable": 0,
+      "is_spoiler": 0,
+      "name": "Resolution Revolution",
+      "name_pt": "Revolução da resolução",
+      "tip": "No Episódio 2, em sala de Jefferson, fotografe Alyssa olhando pela janela. Se passar a oportunidade, volte depois pelo Collectible Mode/Chapter Select.",
+      "trophy_code": "lis_rem_resolution_revolution",
+      "type": "Bronze"
+    },
+    {
+      "description": "Tire todas as fotos opcionais do Episódio 2: Out of Time.",
+      "is_missable": 0,
+      "is_spoiler": 0,
+      "name": "Lab Master",
+      "name_pt": "Mestre do laboratório",
+      "tip": "Confirme as 10 fotos opcionais do Episódio 2. Se faltar alguma, use Collectible Mode/Chapter Select em vez de reiniciar a campanha.",
+      "trophy_code": "lis_rem_lab_master",
+      "type": "Bronze"
+    },
+    {
+      "description": "Complete o Episódio 3: Chaos Theory.",
+      "is_missable": 0,
+      "is_spoiler": 1,
+      "name": "Chaos Theory",
+      "name_pt": "Teoria do caos",
+      "tip": "Troféu automático de história. Avance normalmente e mantenha o checklist de fotos separado da progressão narrativa.",
+      "trophy_code": "lis_rem_chaos_theory",
+      "type": "Bronze"
+    },
+    {
+      "description": "Tire a foto opcional nº 1 do Episódio 3: Chaos Theory.",
+      "is_missable": 0,
+      "is_spoiler": 0,
+      "name": "Parallax View",
+      "name_pt": "Visão de paralaxe",
+      "tip": "No Episódio 3, em quarto de Victoria, aponte a luz para a action figure luminosa por alguns segundos e tire a foto. Se passar a oportunidade, volte depois pelo Collectible Mode/Chapter Select.",
+      "trophy_code": "lis_rem_parallax_view",
+      "type": "Bronze"
+    },
+    {
+      "description": "Tire a foto opcional nº 2 do Episódio 3: Chaos Theory.",
+      "is_missable": 0,
+      "is_spoiler": 0,
+      "name": "Lenscrafted",
+      "name_pt": "Lente artesanal",
+      "tip": "No Episódio 3, em área dos dormitórios, fotografe o esquilo brincando com vaga-lumes perto do banco. Se passar a oportunidade, volte depois pelo Collectible Mode/Chapter Select.",
+      "trophy_code": "lis_rem_lenscrafted",
+      "type": "Bronze"
+    },
+    {
+      "description": "Tire a foto opcional nº 3 do Episódio 3: Chaos Theory.",
+      "is_missable": 0,
+      "is_spoiler": 0,
+      "name": "The Reflex",
+      "name_pt": "O reflexo",
+      "tip": "No Episódio 3, em laboratório de ciências, ligue o aquário e fotografe os peixes. Se passar a oportunidade, volte depois pelo Collectible Mode/Chapter Select.",
+      "trophy_code": "lis_rem_the_reflex",
+      "type": "Bronze"
+    },
+    {
+      "description": "Tire a foto opcional nº 4 do Episódio 3: Chaos Theory.",
+      "is_missable": 0,
+      "is_spoiler": 0,
+      "name": "Histogrammar",
+      "name_pt": "Histograma",
+      "tip": "No Episódio 3, em laboratório de ciências, fotografe o esqueleto com cigarro no fundo da sala. Se passar a oportunidade, volte depois pelo Collectible Mode/Chapter Select.",
+      "trophy_code": "lis_rem_histogrammar",
+      "type": "Bronze"
+    },
+    {
+      "description": "Tire a foto opcional nº 5 do Episódio 3: Chaos Theory.",
+      "is_missable": 0,
+      "is_spoiler": 0,
+      "name": "Bokeh",
+      "name_pt": "Bokeh",
+      "tip": "No Episódio 3, em escritório do diretor, fotografe Chloe sentada na cadeira confortável. Se passar a oportunidade, volte depois pelo Collectible Mode/Chapter Select.",
+      "trophy_code": "lis_rem_bokeh",
+      "type": "Bronze"
+    },
+    {
+      "description": "Tire a foto opcional nº 6 do Episódio 3: Chaos Theory.",
+      "is_missable": 0,
+      "is_spoiler": 0,
+      "name": "Pinholed",
+      "name_pt": "Pinhole",
+      "tip": "No Episódio 3, em banheiro da casa dos Madsen, use o espelho para fotografar Max com a roupa nova. Se passar a oportunidade, volte depois pelo Collectible Mode/Chapter Select.",
+      "trophy_code": "lis_rem_pinholed",
+      "type": "Bronze"
+    },
+    {
+      "description": "Tire a foto opcional nº 7 do Episódio 3: Chaos Theory.",
+      "is_missable": 0,
+      "is_spoiler": 0,
+      "name": "RAW Strength",
+      "name_pt": "Força RAW",
+      "tip": "No Episódio 3, em casa dos Madsen, abra a janela, espante o pássaro para fora e fotografe-o no quintal. Se passar a oportunidade, volte depois pelo Collectible Mode/Chapter Select.",
+      "trophy_code": "lis_rem_raw_strength",
+      "type": "Bronze"
+    },
+    {
+      "description": "Tire a foto opcional nº 8 do Episódio 3: Chaos Theory.",
+      "is_missable": 0,
+      "is_spoiler": 0,
+      "name": "Viewfinder",
+      "name_pt": "Visor",
+      "tip": "No Episódio 3, em lado de fora do Two Whales Diner, converse com o caminhoneiro, rebobine e use as respostas certas para liberar a foto. Se passar a oportunidade, volte depois pelo Collectible Mode/Chapter Select.",
+      "trophy_code": "lis_rem_viewfinder",
+      "type": "Bronze"
+    },
+    {
+      "description": "Tire a foto opcional nº 9 do Episódio 3: Chaos Theory.",
+      "is_missable": 0,
+      "is_spoiler": 0,
+      "name": "Optican",
+      "name_pt": "Óptica",
+      "tip": "No Episódio 3, em lateral do Two Whales Diner, fotografe a imagem circular perturbadora ao lado do diner. Se passar a oportunidade, volte depois pelo Collectible Mode/Chapter Select.",
+      "trophy_code": "lis_rem_optican",
+      "type": "Bronze"
+    },
+    {
+      "description": "Tire a foto opcional nº 10 do Episódio 3: Chaos Theory.",
+      "is_missable": 0,
+      "is_spoiler": 0,
+      "name": "Flash!",
+      "name_pt": "Flash!",
+      "tip": "No Episódio 3, em cozinha da casa de Chloe jovem, fotografe a câmera de William. Se passar a oportunidade, volte depois pelo Collectible Mode/Chapter Select.",
+      "trophy_code": "lis_rem_flash",
+      "type": "Bronze"
+    },
+    {
+      "description": "Tire todas as fotos opcionais do Episódio 3: Chaos Theory.",
+      "is_missable": 0,
+      "is_spoiler": 0,
+      "name": "Camera Eye",
+      "name_pt": "Olho da câmera",
+      "tip": "Confirme as 10 fotos opcionais do Episódio 3. Se faltar alguma, use Collectible Mode/Chapter Select em vez de reiniciar a campanha.",
+      "trophy_code": "lis_rem_camera_eye",
+      "type": "Bronze"
+    },
+    {
+      "description": "Complete o Episódio 4: Dark Room.",
+      "is_missable": 0,
+      "is_spoiler": 1,
+      "name": "Dark Room",
+      "name_pt": "Quarto escuro",
+      "tip": "Troféu automático de história. Avance normalmente e mantenha o checklist de fotos separado da progressão narrativa.",
+      "trophy_code": "lis_rem_dark_room",
+      "type": "Bronze"
+    },
+    {
+      "description": "Tire a foto opcional nº 1 do Episódio 4: Dark Room.",
+      "is_missable": 0,
+      "is_spoiler": 0,
+      "name": "Ambient",
+      "name_pt": "Ambiente",
+      "tip": "No Episódio 4, em quarto de Chloe, fotografe Chloe na mesa após retornar da linha alternativa. Se passar a oportunidade, volte depois pelo Collectible Mode/Chapter Select.",
+      "trophy_code": "lis_rem_ambient",
+      "type": "Bronze"
+    },
+    {
+      "description": "Tire a foto opcional nº 2 do Episódio 4: Dark Room.",
+      "is_missable": 0,
+      "is_spoiler": 0,
+      "name": "Time-Lapsed",
+      "name_pt": "Lapso temporal",
+      "tip": "No Episódio 4, em garagem dos Madsen, mova a tábua para revelar o ninho e tire a foto. Se passar a oportunidade, volte depois pelo Collectible Mode/Chapter Select.",
+      "trophy_code": "lis_rem_time_lapsed",
+      "type": "Bronze"
+    },
+    {
+      "description": "Tire a foto opcional nº 3 do Episódio 4: Dark Room.",
+      "is_missable": 0,
+      "is_spoiler": 0,
+      "name": "Balance",
+      "name_pt": "Equilíbrio",
+      "tip": "No Episódio 4, em pátio dos dormitórios, fotografe o monte de pedras em frente ao Tobanga. Se passar a oportunidade, volte depois pelo Collectible Mode/Chapter Select.",
+      "trophy_code": "lis_rem_balance",
+      "type": "Bronze"
+    },
+    {
+      "description": "Tire a foto opcional nº 4 do Episódio 4: Dark Room.",
+      "is_missable": 0,
+      "is_spoiler": 0,
+      "name": "Rangefinder",
+      "name_pt": "Telêmetro",
+      "tip": "No Episódio 4, em pátio dos dormitórios, fale com Samuel sobre esquilos, use a comida e fotografe os dois juntos. Se passar a oportunidade, volte depois pelo Collectible Mode/Chapter Select.",
+      "trophy_code": "lis_rem_rangefinder",
+      "type": "Bronze"
+    },
+    {
+      "description": "Tire a foto opcional nº 5 do Episódio 4: Dark Room.",
+      "is_missable": 0,
+      "is_spoiler": 0,
+      "name": "Gamma Value",
+      "name_pt": "Valor gama",
+      "tip": "No Episódio 4, em dormitório masculino, olhe pela janela para fotografar as pegadas. Se passar a oportunidade, volte depois pelo Collectible Mode/Chapter Select.",
+      "trophy_code": "lis_rem_gamma_value",
+      "type": "Bronze"
+    },
+    {
+      "description": "Tire a foto opcional nº 6 do Episódio 4: Dark Room.",
+      "is_missable": 0,
+      "is_spoiler": 0,
+      "name": "Dioptric Power",
+      "name_pt": "Poder dióptrico",
+      "tip": "No Episódio 4, em praia, fotografe a baleia antes de falar com Frank. Se passar a oportunidade, volte depois pelo Collectible Mode/Chapter Select.",
+      "trophy_code": "lis_rem_dioptric_power",
+      "type": "Bronze"
+    },
+    {
+      "description": "Tire a foto opcional nº 7 do Episódio 4: Dark Room.",
+      "is_missable": 0,
+      "is_spoiler": 0,
+      "name": "Fisheye",
+      "name_pt": "Olho de peixe",
+      "tip": "No Episódio 4, em celeiro antigo, fotografe o pássaro com o moinho ao fundo antes de entrar. Se passar a oportunidade, volte depois pelo Collectible Mode/Chapter Select.",
+      "trophy_code": "lis_rem_fisheye",
+      "type": "Bronze"
+    },
+    {
+      "description": "Tire a foto opcional nº 8 do Episódio 4: Dark Room.",
+      "is_missable": 0,
+      "is_spoiler": 0,
+      "name": "Manually Exposed",
+      "name_pt": "Exposta manualmente",
+      "tip": "No Episódio 4, em interior do celeiro antigo, suba até a área do motor antigo e fotografe a coruja. Se passar a oportunidade, volte depois pelo Collectible Mode/Chapter Select.",
+      "trophy_code": "lis_rem_manually_exposed",
+      "type": "Bronze"
+    },
+    {
+      "description": "Tire a foto opcional nº 9 do Episódio 4: Dark Room.",
+      "is_missable": 0,
+      "is_spoiler": 0,
+      "name": "Slideshow",
+      "name_pt": "Apresentação de slides",
+      "tip": "No Episódio 4, em festa End of the World, alinhe o desenho de esqueleto com Justin ao fundo e tire a foto. Se passar a oportunidade, volte depois pelo Collectible Mode/Chapter Select.",
+      "trophy_code": "lis_rem_slideshow",
+      "type": "Bronze"
+    },
+    {
+      "description": "Tire a foto opcional nº 10 do Episódio 4: Dark Room.",
+      "is_missable": 0,
+      "is_spoiler": 0,
+      "name": "Tripod",
+      "name_pt": "Tripé",
+      "tip": "No Episódio 4, em festa na piscina, fotografe a lua dupla pela janela perto da entrada. Se passar a oportunidade, volte depois pelo Collectible Mode/Chapter Select.",
+      "trophy_code": "lis_rem_tripod",
+      "type": "Bronze"
+    },
+    {
+      "description": "Tire todas as fotos opcionais do Episódio 4: Dark Room.",
+      "is_missable": 0,
+      "is_spoiler": 0,
+      "name": "Shutterbug",
+      "name_pt": "Fotomaníaca",
+      "tip": "Confirme as 10 fotos opcionais do Episódio 4. Se faltar alguma, use Collectible Mode/Chapter Select em vez de reiniciar a campanha.",
+      "trophy_code": "lis_rem_shutterbug",
+      "type": "Bronze"
+    },
+    {
+      "description": "Complete o Episódio 5: Polarized.",
+      "is_missable": 0,
+      "is_spoiler": 1,
+      "name": "Polarized",
+      "name_pt": "Polarizado",
+      "tip": "Troféu automático de história. Avance normalmente e mantenha o checklist de fotos separado da progressão narrativa.",
+      "trophy_code": "lis_rem_polarized",
+      "type": "Ouro"
+    },
+    {
+      "description": "Tire a foto opcional nº 1 do Episódio 5: Polarized.",
+      "is_missable": 0,
+      "is_spoiler": 0,
+      "name": "Incandescent",
+      "name_pt": "Incandescente",
+      "tip": "No Episódio 5, em sala de Jefferson, conforte Kate e fotografe-a sentada na sala. Se passar a oportunidade, volte depois pelo Collectible Mode/Chapter Select.",
+      "trophy_code": "lis_rem_incandescent",
+      "type": "Bronze"
+    },
+    {
+      "description": "Tire a foto opcional nº 2 do Episódio 5: Polarized.",
+      "is_missable": 0,
+      "is_spoiler": 0,
+      "name": "Night Vision",
+      "name_pt": "Visão noturna",
+      "tip": "No Episódio 5, em galeria de arte, desça antes de subir para sua foto e fotografe a mulher observando as obras. Se passar a oportunidade, volte depois pelo Collectible Mode/Chapter Select.",
+      "trophy_code": "lis_rem_night_vision",
+      "type": "Bronze"
+    },
+    {
+      "description": "Tire a foto opcional nº 3 do Episódio 5: Polarized.",
+      "is_missable": 0,
+      "is_spoiler": 0,
+      "name": "Framed",
+      "name_pt": "Enquadrada",
+      "tip": "No Episódio 5, em Dark Room, quando surgir a opção de último pedido, peça uma última foto. Se passar a oportunidade, volte depois pelo Collectible Mode/Chapter Select.",
+      "trophy_code": "lis_rem_framed",
+      "type": "Bronze"
+    },
+    {
+      "description": "Tire a foto opcional nº 4 do Episódio 5: Polarized.",
+      "is_missable": 0,
+      "is_spoiler": 0,
+      "name": "Camera Obscura",
+      "name_pt": "Câmera escura",
+      "tip": "No Episódio 5, em lado de fora do Two Whales Diner, alinhe a baleia com o fogo ao fundo para montar o enquadramento. Se passar a oportunidade, volte depois pelo Collectible Mode/Chapter Select.",
+      "trophy_code": "lis_rem_camera_obscura",
+      "type": "Bronze"
+    },
+    {
+      "description": "Tire a foto opcional nº 5 do Episódio 5: Polarized.",
+      "is_missable": 0,
+      "is_spoiler": 0,
+      "name": "Blowup",
+      "name_pt": "Ampliação",
+      "tip": "No Episódio 5, em entrada do Two Whales Diner, após impedir a explosão, fotografe o carro no alto do prédio antes de entrar. Se passar a oportunidade, volte depois pelo Collectible Mode/Chapter Select.",
+      "trophy_code": "lis_rem_blowup",
+      "type": "Bronze"
+    },
+    {
+      "description": "Tire a foto opcional nº 6 do Episódio 5: Polarized.",
+      "is_missable": 0,
+      "is_spoiler": 0,
+      "name": "Iris",
+      "name_pt": "Íris",
+      "tip": "No Episódio 5, em pesadelo da sala de aula, inspecione as marcas na carteira até mudar a inscrição e tire a foto. Se passar a oportunidade, volte depois pelo Collectible Mode/Chapter Select.",
+      "trophy_code": "lis_rem_iris",
+      "type": "Bronze"
+    },
+    {
+      "description": "Tire a foto opcional nº 7 do Episódio 5: Polarized.",
+      "is_missable": 0,
+      "is_spoiler": 0,
+      "name": "Sensor",
+      "name_pt": "Sensor",
+      "tip": "No Episódio 5, em pesadelo dos dormitórios, na repetição do corredor, olhe pela janela perto dos chuveiros e fotografe os esquilos. Se passar a oportunidade, volte depois pelo Collectible Mode/Chapter Select.",
+      "trophy_code": "lis_rem_sensor",
+      "type": "Bronze"
+    },
+    {
+      "description": "Tire a foto opcional nº 8 do Episódio 5: Polarized.",
+      "is_missable": 0,
+      "is_spoiler": 0,
+      "name": "On Display",
+      "name_pt": "Em exposição",
+      "tip": "No Episódio 5, em corredor invertido do pesadelo, encontre o esqueleto e use a lógica invertida da cena para registrar a foto. Se passar a oportunidade, volte depois pelo Collectible Mode/Chapter Select.",
+      "trophy_code": "lis_rem_on_display",
+      "type": "Bronze"
+    },
+    {
+      "description": "Tire a foto opcional nº 9 do Episódio 5: Polarized.",
+      "is_missable": 0,
+      "is_spoiler": 0,
+      "name": "Light Meter",
+      "name_pt": "Fotômetro",
+      "tip": "No Episódio 5, em labirinto do pesadelo, vá até o armário de Warren, contornando pela direita e passando por Samuel. Se passar a oportunidade, volte depois pelo Collectible Mode/Chapter Select.",
+      "trophy_code": "lis_rem_light_meter",
+      "type": "Bronze"
+    },
+    {
+      "description": "Tire a foto opcional nº 10 do Episódio 5: Polarized.",
+      "is_missable": 0,
+      "is_spoiler": 0,
+      "name": "Silhouettes",
+      "name_pt": "Silhuetas",
+      "tip": "No Episódio 5, em labirinto do pesadelo, colete as garrafas novamente e fotografe o alvo no estande de tiro. Se passar a oportunidade, volte depois pelo Collectible Mode/Chapter Select.",
+      "trophy_code": "lis_rem_silhouettes",
+      "type": "Bronze"
+    },
+    {
+      "description": "Tire todas as fotos opcionais do Episódio 5: Polarized.",
+      "is_missable": 0,
+      "is_spoiler": 0,
+      "name": "Selfie Awareness",
+      "name_pt": "Consciência de selfie",
+      "tip": "Confirme as 10 fotos opcionais do Episódio 5. Se faltar alguma, use Collectible Mode/Chapter Select em vez de reiniciar a campanha.",
+      "trophy_code": "lis_rem_selfie_awareness",
+      "type": "Bronze"
+    }
+  ]
+}

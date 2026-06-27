@@ -1,0 +1,743 @@
+{
+  "game": {
+    "avoid_if": "Evite apenas se você não gosta de coletáveis, contratos, stealth situacional e limpeza de mapa, mesmo em mundo aberto menor.",
+    "before_you_start": "A lista base não exige online, DLC nem dificuldade. O único cuidado real é fazer You Snooze, You Lose antes de avançar demais nos inimigos com chave ou Mysterious Shards.",
+    "best_for": "Ideal para quem quer uma platina de Assassin’s Creed mais curta, focada em stealth, exploração compacta e checklist claro.",
+    "cleanup_advice": "Após a história, limpe territórios, coletáveis, contratos, ferramentas, upgrades, skills, Assassin’s Focus e troféus situacionais.",
+    "cover_image": "https://cdn.cloudflare.steamstatic.com/steam/apps/3035570/library_600x900.jpg",
+    "coverage_level": "strong",
+    "created_at": "2026-05-09 19:53:48",
+    "difficulty": 3,
+    "difficulty_reason": "A platina é acessível, sem online e sem dificuldade obrigatória; o maior cuidado é limpar o mapa compacto e não perder o troféu situacional de blowdart/pickpocket.",
+    "dlc_scope": "Guia focado na lista base da platina; Valley of Memory e outros add-ons devem ficar separados se o projeto suportar DLC/add-ons.",
+    "editorial_notes": null,
+    "editorial_review_status": null,
+    "editorial_status": "published",
+    "first_run_advice": "Jogue a história naturalmente, mas aproveite oportunidades de stealth e fique atento a You Snooze, You Lose quando encontrar guardas com chave ou Mysterious Shard.",
+    "grind_summary": "O peso está em coletáveis, territórios, contratos, ferramentas, upgrades, Assassin’s Focus e troféus situacionais.",
+    "guide_avoid": null,
+    "guide_best_moment": null,
+    "guide_dlc": null,
+    "guide_grind": null,
+    "guide_ideal": null,
+    "guide_online": null,
+    "guide_runs": null,
+    "image": "https://cdn.cloudflare.steamstatic.com/steam/apps/3035570/header.jpg",
+    "is_verified": 0,
+    "last_reviewed_at": null,
+    "missable": "A lista base tem um troféu de atenção/perdível confirmado: You Snooze, You Lose, ligado a pickpocket em guarda afetado por blowdart. O restante pode ser limpo por free-roam após a história.",
+    "missable_summary": "Somente You Snooze, You Lose deve ser tratado como atenção/perdível na lista base; faça-o antes de esgotar guardas com chaves ou Mysterious Shards.",
+    "name": "Assassin’s Creed Mirage",
+    "online_summary": "Não há exigência online para a platina da lista base.",
+    "quality_warnings": null,
+    "reviewed_by": null,
+    "runs_summary": "Uma campanha principal com cleanup livre após a história. Só fique atento a You Snooze, You Lose durante oportunidades de stealth.",
+    "slug": "assassins-creed-mirage",
+    "time": "20-30h",
+    "time_bucket": "medium",
+    "time_max_hours": 30,
+    "time_min_hours": 20,
+    "time_reason": "A faixa de 20-30 horas considera campanha, contratos, coletáveis, exploração de territórios, upgrades, ferramentas e cleanup.",
+    "time_sort_hours": 20,
+    "updated_at": "2026-06-27 02:36:58",
+    "verification_note": "Guia público seed-managed com checklist base e roadmap; aguardando revisão editorial manual final.",
+    "verification_status": "review",
+    "walkthrough": null
+  },
+  "redirects": [],
+  "roadmaps": [
+    {
+      "content": "Etapa 1: jogue a história naturalmente, desbloqueando Hidden Ones, ferramentas, Assassin’s Focus, Enkidu, viewpoints e sistemas principais; a dificuldade não afeta troféus.",
+      "step_order": 1
+    },
+    {
+      "content": "Etapa 2: durante a campanha, fique atento a You Snooze, You Lose: use blowdart e pickpocket em um guarda com chave ou Mysterious Shard antes de esgotar essas oportunidades.",
+      "step_order": 2
+    },
+    {
+      "content": "Etapa 3: complete contratos de facção, pickpocketing, notoriedade, ferramentas, upgrades de arma/outfit, skills e troféus de stealth/combate com Throwing Knives, Blowdarts, Traps e Smoke Bombs.",
+      "step_order": 3
+    },
+    {
+      "content": "Etapa 4: limpe territórios e coletáveis da lista base: Gear Chests, Lost Books, Enigmas, Historical Sites, Mysterious Shards, Dervis’ Artifacts e Tales of Baghdad.",
+      "step_order": 4
+    },
+    {
+      "content": "Etapa 5: finalize Explorer, Fearless, Tools of the Trade, Assassin’s Focus, Hidden One Rank, serviços de facção e troféus situacionais como Poster Boy, Spread the News e Gifted Escapist.",
+      "step_order": 5
+    },
+    {
+      "content": "Etapa 6: faça o cleanup final pós-história, revise a lista base, confirme que Valley of Memory/add-ons não foram misturados e feche a platina.",
+      "step_order": 6
+    }
+  ],
+  "schemaVersion": 1,
+  "seedExtras": {
+    "aliases": [],
+    "attentionPoints": [
+      {
+        "detail": "É o principal risco de oportunidade. Use blowdart/dardo sonífero e saqueie o guarda adormecido antes de limpar demais o mapa.",
+        "tags": [
+          "PERDÍVEL",
+          "BLOWDART"
+        ],
+        "title": "You Snooze, You Lose deve ser feito cedo"
+      },
+      {
+        "detail": "A platina pode ser feita em dificuldade baixa.",
+        "tags": [
+          "DIFICULDADE"
+        ],
+        "title": "A dificuldade não afeta troféus"
+      },
+      {
+        "detail": "Multiplayer/online não entra na platina.",
+        "tags": [
+          "OFFLINE"
+        ],
+        "title": "A lista base não exige online"
+      },
+      {
+        "detail": "Troféus de DLC/update devem ficar separados ou opcionais.",
+        "tags": [
+          "DLC FORA"
+        ],
+        "title": "Valley of Memory fica fora da platina base"
+      },
+      {
+        "detail": "Organize Bagdá por distrito e tipo de coletável.",
+        "tags": [
+          "COLETÁVEIS"
+        ],
+        "title": "Coletáveis são o centro do cleanup"
+      },
+      {
+        "detail": "Eles alimentam upgrades, skill points e troféus de sistema.",
+        "tags": [
+          "CONTRATOS"
+        ],
+        "title": "Contratos e atividades ajudam nos recursos"
+      },
+      {
+        "detail": "Notoriedade, stealth, ferramentas e Assassin's Focus ficam mais fáceis antes de esvaziar o mapa.",
+        "tags": [
+          "STEALTH",
+          "ATENÇÃO"
+        ],
+        "title": "Troféus situacionais precisam de guardas restantes"
+      },
+      {
+        "detail": "Coletar o enigma não basta; é preciso resolver o tesouro correspondente quando aplicável.",
+        "tags": [
+          "ENIGMAS"
+        ],
+        "title": "Enigmas exigem solução além da coleta"
+      },
+      {
+        "detail": "Recursos e componentes precisam ser usados para troféus de ferramentas/equipamentos.",
+        "tags": [
+          "UPGRADES"
+        ],
+        "title": "Ferramentas e upgrades devem ser planejados"
+      },
+      {
+        "detail": "Discovery Tour é experiência separada e não requisito da platina base.",
+        "tags": [
+          "ESCOPO"
+        ],
+        "title": "Não misturar Discovery Tour App"
+      }
+    ],
+    "checklist": [],
+    "faq": [
+      {
+        "answer": "Não. A lista base tem 51 troféus offline e 0 online. Multiplayer ou recursos online não são necessários para a platina.",
+        "question": "Assassin's Creed Mirage tem troféus online?"
+      },
+      {
+        "answer": "Não. Não há requisito de coop.",
+        "question": "Precisa de coop para platinar?"
+      },
+      {
+        "answer": "Não. A platina base não exige DLC. Valley of Memory/update fica separado ou opcional se estiver cadastrado no projeto.",
+        "question": "DLC é necessária para a platina?"
+      },
+      {
+        "answer": "A lista base PlayStation tem 51 troféus.",
+        "question": "Quantos troféus Assassin's Creed Mirage tem?"
+      },
+      {
+        "answer": "O principal risco é You Snooze, You Lose. O restante da lista base é majoritariamente recuperável por cleanup/pós-jogo.",
+        "question": "Assassin's Creed Mirage tem troféus perdíveis?"
+      },
+      {
+        "answer": "You Snooze, You Lose. Faça cedo usando blowdart/dardo sonífero em um guarda com chave ou Mysterious Shard e saqueando enquanto ele está dormindo.",
+        "question": "Qual é o troféu perdível?"
+      },
+      {
+        "answer": "Não. Pode jogar em dificuldade baixa sem bloquear a platina.",
+        "question": "A dificuldade afeta troféus?"
+      },
+      {
+        "answer": "Uma run é suficiente, desde que o jogador faça o cleanup e resolva You Snooze, You Lose antes de perder oportunidades boas.",
+        "question": "Quantas runs são necessárias?"
+      },
+      {
+        "answer": "Uma estimativa segura é 20-30 horas, dependendo do uso de guia para coletáveis e da quantidade de cleanup.",
+        "question": "Quanto tempo leva para platinar?"
+      },
+      {
+        "answer": "Coletáveis, enigmas, contratos, upgrades, ferramentas, equipamentos e atividades por distrito.",
+        "question": "O que mais toma tempo?"
+      },
+      {
+        "answer": "Não para a platina base. Se o projeto listar Valley of Memory, os troféus devem ficar como DLC/update/opcionais.",
+        "question": "Valley of Memory conta para a platina?"
+      },
+      {
+        "answer": "Não. Discovery Tour App: Medieval Baghdad não deve entrar como requisito da platina base.",
+        "question": "Discovery Tour App conta para a platina?"
+      }
+    ],
+    "note": "Campos exportados para auditoria. O SQLite atual nao possui colunas nativas para todos esses extras; a importacao preserva o que o banco suporta.",
+    "quickDecision": {
+      "firstAction": "Avance a campanha até desbloquear ferramentas e resolva You Snooze, You Lose assim que tiver blowdart/dardo sonífero.",
+      "recommendation": "A platina base não exige online, coop, DLC nem dificuldade alta.",
+      "risk": "O cuidado real é fazer You Snooze, You Lose cedo com blowdart/dardo sonífero e saque em guarda adormecido.",
+      "summary": "Vale platinar Assassin's Creed Mirage se você quer uma platina curta, offline e acessível dentro da série, com foco em história, contratos, coletáveis, enigmas, ferramentas e cleanup por distrito."
+    },
+    "seo": {
+      "description": "Guia de platina de Assassin's Creed Mirage com roadmap, 51 troféus, You Snooze You Lose, coletáveis, enigmas, contratos, ferramentas, flags e DLC fora da platina base.",
+      "keywords": "Assassin's Creed Mirage guia de platina, Assassin's Creed Mirage troféus, AC Mirage guia de platina, AC Mirage roadmap, Assassin's Creed Mirage You Snooze You Lose, Assassin's Creed Mirage coletáveis, Assassin's Creed Mirage enigmas, Assassin's Creed Mirage contratos, Assassin's Creed Mirage ferramentas, Assassin's Creed Mirage sem online, Assassin's Creed Mirage sem coop, Assassin's Creed Mirage Valley of Memory fora da platina base, Assassin's Creed Mirage 51 troféus, Assassin's Creed Mirage platina fácil",
+      "ogDescription": "Roadmap da platina base de Assassin's Creed Mirage com 51 troféus, You Snooze You Lose, coletáveis, contratos, ferramentas e DLC fora da platina.",
+      "ogTitle": "Assassin's Creed Mirage: guia de platina e troféus",
+      "title": "Assassin's Creed Mirage: guia de platina, troféus e roadmap | AtlasAchievement"
+    },
+    "tags": [
+      "Assassin's Creed Mirage",
+      "AC Mirage",
+      "Platina",
+      "Offline",
+      "Sem online",
+      "Sem coop",
+      "DLC fora da platina base",
+      "Coletáveis",
+      "Contratos",
+      "Enigmas",
+      "Bagdá"
+    ]
+  },
+  "slug": "assassins-creed-mirage",
+  "trophies": [
+    {
+      "description": "Earn Every Trophy",
+      "is_missable": 0,
+      "is_spoiler": 0,
+      "name": "Master of His Fate",
+      "name_pt": "Master of His Fate",
+      "tip": "Conquiste todos os outros troféus da lista base. DLCs/add-ons não são necessários.",
+      "trophy_code": "acm_master_of_his_fate",
+      "type": "Platina"
+    },
+    {
+      "description": "Complete the Prologue",
+      "is_missable": 0,
+      "is_spoiler": 1,
+      "name": "The Master Thief of Anbar",
+      "name_pt": "Mestre dos Ladroes de Anbar",
+      "tip": "Troféu de história. Complete o prólogo em Anbar.",
+      "trophy_code": "acm_the_master_thief_of_anbar",
+      "type": "Bronze"
+    },
+    {
+      "description": "Become an Initiate of the Hidden Ones",
+      "is_missable": 0,
+      "is_spoiler": 1,
+      "name": "La shay’a waqi’un mutlaq",
+      "name_pt": "La shay'a waqi'un mutlaq",
+      "tip": "Troféu de história. Torne-se Iniciado dos Hidden Ones.",
+      "trophy_code": "acm_la_shaya_waqiun_mutlaq",
+      "type": "Prata"
+    },
+    {
+      "description": "Eliminate Al-Ghul",
+      "is_missable": 0,
+      "is_spoiler": 1,
+      "name": "The Blood of a Ghoul",
+      "name_pt": "Sangue de um Monstro",
+      "tip": "Troféu de história. Elimine Al-Ghul.",
+      "trophy_code": "acm_the_blood_of_a_ghoul",
+      "type": "Prata"
+    },
+    {
+      "description": "Eliminate Al-Rabisu",
+      "is_missable": 0,
+      "is_spoiler": 1,
+      "name": "The Blood of a Demon",
+      "name_pt": "Sangue de um Demonio",
+      "tip": "Troféu de história. Elimine Al-Rabisu.",
+      "trophy_code": "acm_the_blood_of_a_demon",
+      "type": "Bronze"
+    },
+    {
+      "description": "Eliminate Al-Pairika",
+      "is_missable": 0,
+      "is_spoiler": 1,
+      "name": "The Blood of an Enchantress",
+      "name_pt": "Sangue de uma Feiticeira",
+      "tip": "Troféu de história. Elimine Al-Pairika.",
+      "trophy_code": "acm_the_blood_of_an_enchantress",
+      "type": "Bronze"
+    },
+    {
+      "description": "Eliminate Al-Mardikhwar",
+      "is_missable": 0,
+      "is_spoiler": 1,
+      "name": "The Blood of a Spymaster",
+      "name_pt": "Sangue do Mestre dos Espioes",
+      "tip": "Troféu de história. Elimine Al-Mardikhwar.",
+      "trophy_code": "acm_the_blood_of_a_spymaster",
+      "type": "Bronze"
+    },
+    {
+      "description": "Eliminate the Head of the Order",
+      "is_missable": 0,
+      "is_spoiler": 1,
+      "name": "The Head of the Snake",
+      "name_pt": "A Cabeca da Cobra",
+      "tip": "Troféu de história avançada. Elimine o líder da Ordem.",
+      "trophy_code": "acm_the_head_of_the_snake",
+      "type": "Prata"
+    },
+    {
+      "description": "Discover Basim’s past",
+      "is_missable": 0,
+      "is_spoiler": 1,
+      "name": "Bal kullun mumkin",
+      "name_pt": "Bal kullun mumkin",
+      "tip": "Troféu de história/final. Descubra o passado de Basim e conclua o arco principal.",
+      "trophy_code": "acm_bal_kullun_mumkin",
+      "type": "Ouro"
+    },
+    {
+      "description": "Reach the maximum Hidden One Rank",
+      "is_missable": 0,
+      "is_spoiler": 1,
+      "name": "Serving the Light",
+      "name_pt": "A Servico da Luz",
+      "tip": "Avance a história e elimine membros da Ordem até alcançar o rank máximo dos Hidden Ones.",
+      "trophy_code": "acm_serving_the_light",
+      "type": "Bronze"
+    },
+    {
+      "description": "Unlock all skills",
+      "is_missable": 0,
+      "is_spoiler": 0,
+      "name": "Self-Improvement",
+      "name_pt": "Autoaperfeicoamento",
+      "tip": "Desbloqueie todas as skills usando pontos obtidos na história, contratos, Lost Books e Tales of Baghdad.",
+      "trophy_code": "acm_self_improvement",
+      "type": "Prata"
+    },
+    {
+      "description": "Fully upgrade a weapon",
+      "is_missable": 0,
+      "is_spoiler": 0,
+      "name": "Cutting Edge",
+      "name_pt": "Arma de Ponta",
+      "tip": "Melhore completamente uma arma usando schematics de Gear Chests e materiais.",
+      "trophy_code": "acm_cutting_edge",
+      "type": "Bronze"
+    },
+    {
+      "description": "Fully upgrade an outfit",
+      "is_missable": 0,
+      "is_spoiler": 0,
+      "name": "Thick Skin",
+      "name_pt": "Casca-grossa",
+      "tip": "Melhore completamente um outfit usando schematics e materiais no Tailor.",
+      "trophy_code": "acm_thick_skin",
+      "type": "Bronze"
+    },
+    {
+      "description": "Apply dye to an outfit",
+      "is_missable": 0,
+      "is_spoiler": 0,
+      "name": "Fashion Statement",
+      "name_pt": "Estilo Unico",
+      "tip": "Aplique uma tintura compatível a um outfit.",
+      "trophy_code": "acm_fashion_statement",
+      "type": "Bronze"
+    },
+    {
+      "description": "Obtain both disguises",
+      "is_missable": 0,
+      "is_spoiler": 1,
+      "name": "Masquerader",
+      "name_pt": "Mestre dos Disfarces",
+      "tip": "Obtenha os dois disfarces ligados à progressão da campanha.",
+      "trophy_code": "acm_masquerader",
+      "type": "Bronze"
+    },
+    {
+      "description": "Open a token chest",
+      "is_missable": 0,
+      "is_spoiler": 0,
+      "name": "Treasure Seeker",
+      "name_pt": "Cacador de Tesouros",
+      "tip": "Abra um baú que exige Merchant Favor Token.",
+      "trophy_code": "acm_treasure_seeker",
+      "type": "Bronze"
+    },
+    {
+      "description": "Obtain a total of 10 elixirs",
+      "is_missable": 0,
+      "is_spoiler": 0,
+      "name": "Potion Collector",
+      "name_pt": "Colecionador de Pocoes",
+      "tip": "Obtenha 10 elixirs ao longo da campanha, comprando ou encontrando em baús.",
+      "trophy_code": "acm_potion_collector",
+      "type": "Bronze"
+    },
+    {
+      "description": "Synchronize all viewpoints",
+      "is_missable": 0,
+      "is_spoiler": 0,
+      "name": "Fearless",
+      "name_pt": "Destemido",
+      "tip": "Sincronize todos os viewpoints para revelar o mapa e facilitar o cleanup.",
+      "trophy_code": "acm_fearless",
+      "type": "Prata"
+    },
+    {
+      "description": "Tag 100 guards using Enkidu",
+      "is_missable": 0,
+      "is_spoiler": 0,
+      "name": "Bird of Prey",
+      "name_pt": "Ave de Rapina",
+      "tip": "Use Enkidu para marcar 100 guardas em áreas restritas ou durante contratos.",
+      "trophy_code": "acm_bird_of_prey",
+      "type": "Bronze"
+    },
+    {
+      "description": "Fully explore all territories",
+      "is_missable": 0,
+      "is_spoiler": 0,
+      "name": "Explorer",
+      "name_pt": "Explorador",
+      "tip": "Explore 100% dos territórios: Gear Chests, Lost Books, Enigmas, Historical Sites, Mysterious Shards e Tales of Baghdad.",
+      "trophy_code": "acm_explorer",
+      "type": "Prata"
+    },
+    {
+      "description": "Complete 10 faction contracts",
+      "is_missable": 0,
+      "is_spoiler": 0,
+      "name": "Defender of the People",
+      "name_pt": "Defensor do Povo",
+      "tip": "Complete 10 contratos de facção nos bureaus dos Hidden Ones.",
+      "trophy_code": "acm_defender_of_the_people",
+      "type": "Prata"
+    },
+    {
+      "description": "Complete a Tale from Baghdad",
+      "is_missable": 0,
+      "is_spoiler": 0,
+      "name": "Crossing Paths",
+      "name_pt": "Caminhos Cruzados",
+      "tip": "Complete pelo menos um Tale of Baghdad. Todos entram no cleanup de Explorer.",
+      "trophy_code": "acm_crossing_paths",
+      "type": "Bronze"
+    },
+    {
+      "description": "Bring all 7 lost books to Al-Jahiz",
+      "is_missable": 0,
+      "is_spoiler": 0,
+      "name": "Scholar",
+      "name_pt": "Academico",
+      "tip": "Encontre os 7 Lost Books e entregue-os a Al-Jahiz.",
+      "trophy_code": "acm_scholar",
+      "type": "Bronze"
+    },
+    {
+      "description": "Obtain a treasure by solving an enigma",
+      "is_missable": 0,
+      "is_spoiler": 0,
+      "name": "Riddle Me This",
+      "name_pt": "Enigma da Esfinge",
+      "tip": "Resolva uma Enigma e pegue o tesouro correspondente.",
+      "trophy_code": "acm_riddle_me_this",
+      "type": "Bronze"
+    },
+    {
+      "description": "Fully upgrade all tools",
+      "is_missable": 0,
+      "is_spoiler": 0,
+      "name": "Tools of the Trade",
+      "name_pt": "Ferramentas de Trabalho",
+      "tip": "Melhore todas as ferramentas no bureau: Throwing Knife, Noisemaker, Trap, Smoke Bomb e Blowdart.",
+      "trophy_code": "acm_tools_of_the_trade",
+      "type": "Prata"
+    },
+    {
+      "description": "Kill 75 guards with throwing knives",
+      "is_missable": 0,
+      "is_spoiler": 0,
+      "name": "Eagle’s Eye",
+      "name_pt": "Olho de Aguia",
+      "tip": "Mate 75 guardas com throwing knives; upgrades de faca facilitam bastante.",
+      "trophy_code": "acm_eagles_eye",
+      "type": "Prata"
+    },
+    {
+      "description": "Headshot 20 guards with throwing knives",
+      "is_missable": 0,
+      "is_spoiler": 0,
+      "name": "Headhunter",
+      "name_pt": "Cacador de Cabecas",
+      "tip": "Acerte 20 guardas na cabeça com throwing knives.",
+      "trophy_code": "acm_headhunter",
+      "type": "Bronze"
+    },
+    {
+      "description": "Put 10 guards to sleep with blowdarts",
+      "is_missable": 0,
+      "is_spoiler": 0,
+      "name": "Sleep Tight",
+      "name_pt": "Bons Sonhos",
+      "tip": "Use blowdarts para colocar 10 guardas para dormir.",
+      "trophy_code": "acm_sleep_tight",
+      "type": "Bronze"
+    },
+    {
+      "description": "Have 10 guards trigger traps",
+      "is_missable": 0,
+      "is_spoiler": 0,
+      "name": "Ambush",
+      "name_pt": "Emboscada",
+      "tip": "Faça 10 guardas acionarem traps.",
+      "trophy_code": "acm_ambush",
+      "type": "Bronze"
+    },
+    {
+      "description": "Affect 20 guards with smoke bombs",
+      "is_missable": 0,
+      "is_spoiler": 0,
+      "name": "Up in Smoke",
+      "name_pt": "Defumado",
+      "tip": "Afete 20 guardas com smoke bombs.",
+      "trophy_code": "acm_up_in_smoke",
+      "type": "Bronze"
+    },
+    {
+      "description": "Distract 10 guards with noisemakers",
+      "is_missable": 0,
+      "is_spoiler": 0,
+      "name": "Attention Seeker",
+      "name_pt": "Centro das Atencoes",
+      "tip": "Distraia 10 guardas usando noisemakers.",
+      "trophy_code": "acm_attention_seeker",
+      "type": "Bronze"
+    },
+    {
+      "description": "Pickpocket 50 people",
+      "is_missable": 0,
+      "is_spoiler": 0,
+      "name": "The Hands of a Thief",
+      "name_pt": "Maos-leves",
+      "tip": "Faça pickpocket em 50 pessoas; a opção Guaranteed Pickpocket ajuda no grind.",
+      "trophy_code": "acm_the_hands_of_a_thief",
+      "type": "Prata"
+    },
+    {
+      "description": "Pickpocket a guard affected by a blowdart",
+      "is_missable": 1,
+      "is_spoiler": 0,
+      "name": "You Snooze, You Lose",
+      "name_pt": "Piscou, Ja Era",
+      "tip": "Atenção/perdível: use blowdart e faça pickpocket em um guarda com chave ou Mysterious Shard antes de matar/lootar todos esses inimigos.",
+      "trophy_code": "acm_you_snooze_you_lose",
+      "type": "Bronze"
+    },
+    {
+      "description": "Pickpocket all 18 artifacts and bring them to Dervis",
+      "is_missable": 0,
+      "is_spoiler": 0,
+      "name": "Curio Collector",
+      "name_pt": "Colecionador de Raridades",
+      "tip": "Roube todos os 18 Dervis’ Artifacts e entregue-os a Dervis.",
+      "trophy_code": "acm_curio_collector",
+      "type": "Prata"
+    },
+    {
+      "description": "Save up 2007 dirhams",
+      "is_missable": 0,
+      "is_spoiler": 0,
+      "name": "Hoarder",
+      "name_pt": "Acumulador",
+      "tip": "Guarde 2007 dirhams ao mesmo tempo; pickpocket e venda de itens aceleram o processo.",
+      "trophy_code": "acm_hoarder",
+      "type": "Bronze"
+    },
+    {
+      "description": "Use benches to pass time 5 times",
+      "is_missable": 0,
+      "is_spoiler": 0,
+      "name": "Dawn and Dusk",
+      "name_pt": "Alvorecer e Anoitecer",
+      "tip": "Use bancos para passar o tempo 5 vezes.",
+      "trophy_code": "acm_dawn_and_dusk",
+      "type": "Bronze"
+    },
+    {
+      "description": "Pay musicians 5 times",
+      "is_missable": 0,
+      "is_spoiler": 0,
+      "name": "Patron of the Arts",
+      "name_pt": "Patrocinador das Artes",
+      "tip": "Pague músicos 5 vezes usando Scholar Favor Tokens.",
+      "trophy_code": "acm_patron_of_the_arts",
+      "type": "Bronze"
+    },
+    {
+      "description": "Pay mercenaries 5 times",
+      "is_missable": 0,
+      "is_spoiler": 0,
+      "name": "Patron of Sell-Swords",
+      "name_pt": "Patrocinador de Mercenarios",
+      "tip": "Pague mercenários 5 vezes usando Power Favor Tokens.",
+      "trophy_code": "acm_patron_of_sell_swords",
+      "type": "Bronze"
+    },
+    {
+      "description": "Pay merchant groups 5 times",
+      "is_missable": 0,
+      "is_spoiler": 0,
+      "name": "Patron of Industry",
+      "name_pt": "Patrocinador da Industria",
+      "tip": "Pague grupos de mercadores 5 vezes usando Merchant Favor Tokens.",
+      "trophy_code": "acm_patron_of_industry",
+      "type": "Bronze"
+    },
+    {
+      "description": "Assassinate 10 guards while blending with the crowd",
+      "is_missable": 0,
+      "is_spoiler": 0,
+      "name": "Blade in the Crowd",
+      "name_pt": "Uma Lamina entre a Multidao",
+      "tip": "Assassine 10 guardas enquanto estiver misturado à multidão.",
+      "trophy_code": "acm_blade_in_the_crowd",
+      "type": "Bronze"
+    },
+    {
+      "description": "Assassinate 10 guards from hiding spots",
+      "is_missable": 0,
+      "is_spoiler": 0,
+      "name": "Surprise!",
+      "name_pt": "Surpresa!",
+      "tip": "Assassine 10 guardas saindo de esconderijos como feno, folhas ou bancos.",
+      "trophy_code": "acm_surprise",
+      "type": "Bronze"
+    },
+    {
+      "description": "Defeat a Shakiriyya in combat",
+      "is_missable": 0,
+      "is_spoiler": 0,
+      "name": "The Shadow and the Flame",
+      "name_pt": "A Sombra e a Chama",
+      "tip": "Derrote um Shakiriyya em combate, normalmente gerado com notoriedade alta.",
+      "trophy_code": "acm_the_shadow_and_the_flame",
+      "type": "Bronze"
+    },
+    {
+      "description": "Destroy a Horn Bearer’s horn with a throwing knife",
+      "is_missable": 0,
+      "is_spoiler": 0,
+      "name": "Silencer",
+      "name_pt": "Silenciador",
+      "tip": "Destrua o chifre de um Horn Bearer usando throwing knife.",
+      "trophy_code": "acm_silencer",
+      "type": "Bronze"
+    },
+    {
+      "description": "Stay at maximum notoriety for 10 minutes",
+      "is_missable": 0,
+      "is_spoiler": 0,
+      "name": "Notorious",
+      "name_pt": "Notorio",
+      "tip": "Fique no nível máximo de notoriedade por 10 minutos sem reduzir o alerta.",
+      "trophy_code": "acm_notorious",
+      "type": "Prata"
+    },
+    {
+      "description": "At maximum notoriety, become anonymous by tearing down wanted posters",
+      "is_missable": 0,
+      "is_spoiler": 0,
+      "name": "Poster Boy",
+      "name_pt": "Voce Viu Este Assassino?",
+      "tip": "No máximo de notoriedade, remova cartazes de procurado até voltar ao anonimato.",
+      "trophy_code": "acm_poster_boy",
+      "type": "Bronze"
+    },
+    {
+      "description": "Use the services of a Munadi 3 times",
+      "is_missable": 0,
+      "is_spoiler": 0,
+      "name": "Spread the News",
+      "name_pt": "Espalhe as Boas-novas",
+      "tip": "Use serviços de Munadi 3 vezes para reduzir notoriedade.",
+      "trophy_code": "acm_spread_the_news",
+      "type": "Bronze"
+    },
+    {
+      "description": "Kill 5 guards with one use of Assassin’s Focus",
+      "is_missable": 0,
+      "is_spoiler": 0,
+      "name": "Unstoppable",
+      "name_pt": "Imbativel",
+      "tip": "Mate 5 guardas com um único uso de Assassin’s Focus após comprar capacidade suficiente.",
+      "trophy_code": "acm_unstoppable",
+      "type": "Prata"
+    },
+    {
+      "description": "Survive 10 minutes in open conflict",
+      "is_missable": 0,
+      "is_spoiler": 0,
+      "name": "Eagle’s Will",
+      "name_pt": "A Forca de uma Aguia",
+      "tip": "Sobreviva 10 minutos em combate aberto em um único encontro.",
+      "trophy_code": "acm_eagles_will",
+      "type": "Prata"
+    },
+    {
+      "description": "Collapse 20 scaffolding structures",
+      "is_missable": 0,
+      "is_spoiler": 0,
+      "name": "Gifted Escapist",
+      "name_pt": "Escapista Talentoso",
+      "tip": "Derrube 20 estruturas de andaime; é possível farmar após fast travel.",
+      "trophy_code": "acm_gifted_escapist",
+      "type": "Prata"
+    },
+    {
+      "description": "Assassinate 10 guards in a row without triggering open conflict",
+      "is_missable": 0,
+      "is_spoiler": 0,
+      "name": "A True Hidden One",
+      "name_pt": "Um Verdadeiro Oculto",
+      "tip": "Assassine 10 guardas seguidos sem iniciar combate aberto.",
+      "trophy_code": "acm_a_true_hidden_one",
+      "type": "Bronze"
+    },
+    {
+      "description": "Hide 5 bodies in bales of hay",
+      "is_missable": 0,
+      "is_spoiler": 0,
+      "name": "Street Cleaner",
+      "name_pt": "Mantendo as Estradas Limpas",
+      "tip": "Esconda 5 corpos em fardos de feno.",
+      "trophy_code": "acm_street_cleaner",
+      "type": "Bronze"
+    }
+  ]
+}

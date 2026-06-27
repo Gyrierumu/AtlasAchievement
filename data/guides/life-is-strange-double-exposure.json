@@ -1,0 +1,599 @@
+{
+  "game": {
+    "avoid_if": "Evite apenas se você não gosta de repetir capítulos ou fazer uma segunda rota para escolhas incompatíveis.",
+    "before_you_start": "Não misture a lista base com Exclusive Cat Content. A platina base tem 33 troféus, não exige online e pede atenção a fotos, Polaroids, romances, Bay/Bae e spoilers de Max, Safi, Moses, Amanda, Vinh, Gwen, Lucas, timelines e capítulos finais.",
+    "best_for": "Ideal para quem quer uma platina narrativa curta, acessível e focada em história, fotos e escolhas.",
+    "cleanup_advice": "Use Chapter Select para fotos, interações e troféus semi-perdíveis, mas valide se alguma escolha exige continuidade da rota antes de usar Restart Scene.",
+    "cover_image": "https://cdn.cloudflare.steamstatic.com/steam/apps/1874000/library_600x900.jpg",
+    "coverage_level": "strong",
+    "created_at": "2026-05-09 19:53:50",
+    "difficulty": 2,
+    "difficulty_reason": "A dificuldade mecânica é muito baixa; o cuidado está em não deixar fotos, interações e escolhas opcionais para trás. Não há troféus de dificuldade.",
+    "dlc_scope": "Guia focado na lista base da platina. Exclusive Cat Content adiciona 2 troféus e não deve ser tratado como requisito da platina base; manter separado se o projeto suportar DLC/add-ons.",
+    "editorial_notes": "",
+    "editorial_review_status": null,
+    "editorial_status": "published",
+    "first_run_advice": "Jogue com checklist leve de fotos/Polaroids e interações opcionais. Isso reduz muito o cleanup por Chapter Select.",
+    "grind_summary": "O peso está em fotos/Polaroids, interações opcionais, escolhas específicas e cleanup por Chapter Select.",
+    "guide_avoid": null,
+    "guide_best_moment": null,
+    "guide_dlc": null,
+    "guide_grind": null,
+    "guide_ideal": null,
+    "guide_online": null,
+    "guide_runs": null,
+    "image": "https://cdn.cloudflare.steamstatic.com/steam/apps/1874000/header.jpg",
+    "is_verified": 0,
+    "last_reviewed_at": "",
+    "missable": "A lista base tem troféus semi-perdíveis ligados a fotos/Polaroids, interações opcionais, escolhas de romance, rotas Bay/Bae e continuidade de capítulos. Chapter Select ajuda no cleanup, mas algumas escolhas podem exigir rota consistente ou uma segunda campanha.",
+    "missable_summary": "Semi-perdíveis para fotos/Polaroids, interações, romances, escolhas e rotas; use Chapter Select com cuidado e planeje Bay/Bae em duas campanhas para evitar incompatibilidades.",
+    "name": "Life is Strange: Double Exposure",
+    "online_summary": "Não há exigência online, troféus online, coop obrigatório, multiplayer obrigatório ou PS+ para a platina da lista base. É uma platina single-player/offline.",
+    "quality_warnings": "[]",
+    "reviewed_by": "",
+    "runs_summary": "A platina exige uma campanha principal, Chapter Select para troféus semi-perdíveis e uma segunda rota/playthrough para escolhas incompatíveis como Bay/Bae.",
+    "slug": "life-is-strange-double-exposure",
+    "time": "15-20h",
+    "time_bucket": "short",
+    "time_max_hours": 20,
+    "time_min_hours": 15,
+    "time_reason": "A faixa de 15-20 horas considera campanha, fotos por capítulo, Chapter Select e uma segunda rota para escolhas incompatíveis.",
+    "time_sort_hours": 15,
+    "updated_at": "2026-06-27 02:36:58",
+    "verification_note": "Precisa revisão editorial final: confirmar rotas Bay/Bae, romances, Chapter Select e separação de Exclusive Cat Content antes de selo verificado.",
+    "verification_status": "review",
+    "walkthrough": null
+  },
+  "redirects": [],
+  "roadmaps": [
+    {
+      "content": "{\"title\":\"Avance pela campanha\",\"focus\":\"\",\"objective\":\"Faça a primeira campanha focada em história, fotos/Polaroids e interações opcionais por capítulo, evitando avançar cenas importantes sem checar o ambiente.\",\"actions\":[],\"warning\":\"\",\"result\":\"\"}",
+      "step_order": 1
+    },
+    {
+      "content": "{\"title\":\"Prossiga pela rota planejada\",\"focus\":\"\",\"objective\":\"Acompanhe escolhas importantes desde o Capítulo 1, especialmente a escolha herdada Bay/Bae do primeiro Life is Strange, pois Bay or Bae exige os dois resultados.\",\"actions\":[],\"warning\":\"\",\"result\":\"\"}",
+      "step_order": 2
+    },
+    {
+      "content": "{\"title\":\"Prossiga pela rota planejada\",\"focus\":\"\",\"objective\":\"Complete os Capítulos 1 a 5 e garanta os troféus automáticos de história: Split Decision, Bullet, Proof, Face to Façade, Fade to White, Tempest Fugit e Commencement.\",\"actions\":[],\"warning\":\"\",\"result\":\"\"}",
+      "step_order": 3
+    },
+    {
+      "content": "{\"title\":\"Limpe coletáveis por seleção de capítulos\",\"focus\":\"\",\"objective\":\"Use Chapter Select para limpar fotos/Polaroids, Archival Footage, Frame Fatale, interações opcionais e troféus semi-perdíveis de capítulos específicos.\",\"actions\":[],\"warning\":\"\",\"result\":\"\"}",
+      "step_order": 4
+    },
+    {
+      "content": "{\"title\":\"Limpe coletáveis por seleção de capítulos\",\"focus\":\"\",\"objective\":\"Faça uma segunda rota/playthrough para Bay or Bae, Archival Footage e escolhas incompatíveis, se o cleanup por Chapter Select não preservar a continuidade necessária.\",\"actions\":[],\"warning\":\"\",\"result\":\"\"}",
+      "step_order": 5
+    },
+    {
+      "content": "{\"title\":\"Prossiga pela rota planejada\",\"focus\":\"\",\"objective\":\"Revise Archival Footage, todos os troféus de fotos por capítulo e opcionais como Art Restoration, Thirst Trip, Clue Me In, Page Turner, Patronizing (The Good Kind) e Platypus Genius.\",\"actions\":[],\"warning\":\"\",\"result\":\"\"}",
+      "step_order": 6
+    },
+    {
+      "content": "{\"title\":\"Fechamento e revisão final\",\"focus\":\"\",\"objective\":\"Finalize a lista base sem misturar Exclusive Cat Content; os troféus do gato pertencem ao DLC/add-on e não são necessários para a platina base.\",\"actions\":[],\"warning\":\"\",\"result\":\"\"}",
+      "step_order": 7
+    }
+  ],
+  "schemaVersion": 1,
+  "seedExtras": {
+    "aliases": [],
+    "attentionPoints": [
+      {
+        "detail": "A platina base exige completar o jogo com os dois destinos originais de Life is Strange.",
+        "tags": [
+          "Bay or Bae",
+          "Rota",
+          "Segunda run"
+        ],
+        "title": "Bay or Bae exige duas runs"
+      },
+      {
+        "detail": "Para buscar troféus esquecidos, prefira Explore Scene. Restart Scene pode sobrescrever progresso.",
+        "tags": [
+          "Chapter Select",
+          "Explore Scene",
+          "Cleanup"
+        ],
+        "title": "Explore Scene é o cleanup seguro"
+      },
+      {
+        "detail": "Muitos objetivos podem ser ignorados na cena, mas podem ser recuperados por Chapter Select/Explore Scene.",
+        "tags": [
+          "Risco de cena",
+          "Cleanup"
+        ],
+        "title": "Troféus de cena são riscos recuperáveis"
+      },
+      {
+        "detail": "Nothing Lasts Fur-Ever e Heavy Petting são DLC/opcionais e não contam para a platina base.",
+        "tags": [
+          "DLC fora da base",
+          "Exclusive Cat Content"
+        ],
+        "title": "Exclusive Cat Content fica fora da platina"
+      },
+      {
+        "detail": "Tirar todos os Snapshots possíveis pode exigir consistência no save/run; checklist reduz retrabalho.",
+        "tags": [
+          "Frame Fatale",
+          "Snapshots"
+        ],
+        "title": "Frame Fatale merece atenção"
+      },
+      {
+        "detail": "Há troféus para Amanda, Vinh, ambos e nenhum; planeje ou use Chapter Select quando aplicável.",
+        "tags": [
+          "Romance",
+          "Escolha"
+        ],
+        "title": "Amanda e Vinh têm quatro variações"
+      },
+      {
+        "detail": "Além de fotos, há decorações, pistas, livros, projetos e mensagens de Platypus Facts.",
+        "tags": [
+          "Coletáveis",
+          "Checklist"
+        ],
+        "title": "Coletáveis são variados"
+      },
+      {
+        "detail": "O guia orienta cena e requisito sem revelar grandes viradas narrativas.",
+        "tags": [
+          "Narrativo",
+          "Spoiler leve"
+        ],
+        "title": "Dicas evitam spoilers fortes"
+      },
+      {
+        "detail": "A platina é offline, single-player e não possui troféu de dificuldade.",
+        "tags": [
+          "Offline",
+          "Sem coop"
+        ],
+        "title": "Sem online, coop ou dificuldade"
+      },
+      {
+        "detail": "Algumas listas mostram 35 troféus totais, mas a platina base não exige os 2 troféus do Exclusive Cat Content.",
+        "tags": [
+          "35 total",
+          "33 base"
+        ],
+        "title": "Guias públicos podem misturar DLC"
+      }
+    ],
+    "checklist": [
+      "Completar o Capítulo 1: Still Life.",
+      "Completar o Capítulo 2: Penumbra.",
+      "Completar o Capítulo 3: Spin.",
+      "Completar o Capítulo 4: Diptych.",
+      "Completar o Capítulo 5: Decoherence.",
+      "Escolher um destino de Life is Strange na primeira run.",
+      "Escolher o destino oposto na segunda run.",
+      "Fechar Bay or Bae.",
+      "Encontrar todas as fotos/Polaroids por capítulo.",
+      "Fechar Archival Footage.",
+      "Fechar Frame Fatale.",
+      "Conferir decorações de Hellerton.",
+      "Conferir pistas da caixa de evidências.",
+      "Conferir livros dos funcionários.",
+      "Conferir projetos de Caledon.",
+      "Conferir mensagens de Platypus Facts.",
+      "Conferir troféus de romance com Amanda e Vinh.",
+      "Conferir troféus de cena/miscellaneous.",
+      "Usar Explore Scene para cleanup seguro.",
+      "Confirmar que Exclusive Cat Content não entrou como requisito da platina base."
+    ],
+    "faq": [
+      {
+        "answer": "Não. A platina base é totalmente offline e single-player.",
+        "question": "Life is Strange: Double Exposure tem troféus online?"
+      },
+      {
+        "answer": "Não. Não há requisito de coop.",
+        "question": "Precisa de coop para platinar?"
+      },
+      {
+        "answer": "Não. Os troféus do Exclusive Cat Content são DLC/opcionais e não entram como requisito da platina base.",
+        "question": "DLC é necessária para a platina?"
+      },
+      {
+        "answer": "A lista pública mostra 35 troféus totais, mas a platina base separa 33 troféus do jogo base e 2 troféus do DLC Exclusive Cat Content. Para a platina base, não trate os troféus do DLC como obrigatórios.",
+        "question": "Quantos troféus contam para a platina base?"
+      },
+      {
+        "answer": "Não há perdível permanente tratado como bloqueio da platina base. Há vários riscos de cena, coletáveis e escolhas específicas, mas muitos podem ser recuperados por Chapter Select/Explore Scene.",
+        "question": "Life is Strange: Double Exposure tem perdíveis?"
+      },
+      {
+        "answer": "Sim. Bay or Bae exige completar o jogo com os dois destinos originais de Life is Strange, então planeje duas runs ou uma rota equivalente validada pelo save.",
+        "question": "Precisa jogar duas vezes?"
+      },
+      {
+        "answer": "Sim, para muitos troféus. Use Explore Scene para cleanup seguro. Evite Restart Scene sem necessidade, porque pode sobrescrever progresso posterior.",
+        "question": "Chapter Select resolve troféus esquecidos?"
+      },
+      {
+        "answer": "Não. O jogo não tem troféu de dificuldade.",
+        "question": "Existe troféu de dificuldade?"
+      },
+      {
+        "answer": "A estimativa segura é 15-20 horas, dependendo do ritmo de leitura, checklist e retrabalho com Bay or Bae e coletáveis.",
+        "question": "Quanto tempo leva para platinar?"
+      },
+      {
+        "answer": "A dificuldade é baixa, cerca de 2/10. O desafio principal é organização de checklist, não execução mecânica.",
+        "question": "Qual é a dificuldade da platina?"
+      },
+      {
+        "answer": "Bay or Bae, Frame Fatale, romance com Amanda/Vinh, escolhas de cena, Snapshots, Polaroids, decorações, pistas, livros, projetos e mensagens de Platypus Facts.",
+        "question": "O que mais causa retrabalho?"
+      },
+      {
+        "answer": "Não. Nothing Lasts Fur-Ever e Heavy Petting são troféus DLC/opcionais e não entram como requisito da platina base no PlayStation.",
+        "question": "Preciso comprar o Exclusive Cat Content para platinar?"
+      }
+    ],
+    "note": "Campos exportados para auditoria. O SQLite atual nao possui colunas nativas para todos esses extras; a importacao preserva o que o banco suporta.",
+    "quickDecision": {
+      "firstAction": "Comece a primeira run escolhendo um destino Bay/Bae e mantendo checklist de cenas aberto.",
+      "recommendation": "Vale platinar se você aceita repetir a campanha com o outro destino de Life is Strange e acompanhar coletáveis por capítulo. Evite apenas se não quer fazer segunda run ou revisar cenas com checklist.",
+      "risk": "O maior retrabalho vem de Bay or Bae, Frame Fatale, romances Amanda/Vinh e uso errado de Restart Scene no cleanup.",
+      "summary": "Vale platinar Life is Strange: Double Exposure se você quer uma platina narrativa, offline e de baixa dificuldade, mas com bastante checklist. O jogo exige Bay or Bae, Polaroids, Snapshots, decorações, pistas, livros, projetos, romance e troféus de cena. O cleanup é administrável por Chapter Select/Explore Scene, e o Exclusive Cat Content fica fora da platina base."
+    },
+    "seo": {
+      "description": "Guia de platina de Life is Strange: Double Exposure com roadmap, troféus, Bay or Bae, Polaroids, Snapshots, Chapter Select, DLC fora da platina, flags e checklist da lista base.",
+      "keywords": "Life is Strange Double Exposure guia de platina, troféus Life is Strange Double Exposure, roadmap Life is Strange Double Exposure, Life is Strange Double Exposure Bay or Bae, Life is Strange Double Exposure Polaroids, Life is Strange Double Exposure Snapshots, Life is Strange Double Exposure Frame Fatale, Life is Strange Double Exposure Chapter Select, Life is Strange Double Exposure Explore Scene, Life is Strange Double Exposure Exclusive Cat Content, Life is Strange Double Exposure DLC fora da platina, Life is Strange Double Exposure sem online, Life is Strange Double Exposure sem coop, Life is Strange Double Exposure platina fácil",
+      "ogDescription": "Roadmap da platina base de Life is Strange: Double Exposure com 33 troféus, Bay or Bae, Chapter Select e Exclusive Cat Content fora da platina.",
+      "ogTitle": "Life is Strange: Double Exposure — guia de platina e troféus | AtlasAchievement",
+      "title": "Life is Strange: Double Exposure: guia de platina, troféus e roadmap | AtlasAchievement"
+    },
+    "tags": [
+      "Life is Strange",
+      "Double Exposure",
+      "PS5",
+      "Platina",
+      "Narrativo",
+      "Single-player",
+      "Offline",
+      "Chapter Select",
+      "Bay or Bae",
+      "Sem online",
+      "Sem coop",
+      "DLC fora da platina base"
+    ]
+  },
+  "slug": "life-is-strange-double-exposure",
+  "trophies": [
+    {
+      "description": "Collected all trophies in Life is Strange: Double Exposure",
+      "is_missable": 0,
+      "is_spoiler": 0,
+      "name": "Picture Perfect",
+      "name_pt": "Retrato perfeito",
+      "tip": "Conquiste os outros 32 troféus da lista base. O foco é terminar a história, fazer as duas rotas Bay/Bae, coletar fotos/Polaroids e limpar interações opcionais.",
+      "trophy_code": "lis_de_picture_perfect",
+      "type": "Platina"
+    },
+    {
+      "description": "Completed Chapter 1: Still Life",
+      "is_missable": 0,
+      "is_spoiler": 1,
+      "name": "Split Decision",
+      "name_pt": "Decisão dividida",
+      "tip": "Troféu automático de história ao concluir o Capítulo 1: Still Life.",
+      "trophy_code": "lis_de_split_decision",
+      "type": "Prata"
+    },
+    {
+      "description": "Found all photos in Chapter 1",
+      "is_missable": 1,
+      "is_spoiler": 0,
+      "name": "A Trick of the Light",
+      "name_pt": "Um truque da luz",
+      "tip": "Colete todas as fotos/Polaroids do Capítulo 1. Se perder alguma, use Chapter Select para revisitar a cena.",
+      "trophy_code": "lis_de_a_trick_of_the_light",
+      "type": "Prata"
+    },
+    {
+      "description": "Completed Chapter 2: Penumbra",
+      "is_missable": 0,
+      "is_spoiler": 1,
+      "name": "Bullet, Proof",
+      "name_pt": "À prova de bala",
+      "tip": "Troféu automático de história ao concluir o Capítulo 2: Penumbra.",
+      "trophy_code": "lis_de_bullet_proof",
+      "type": "Prata"
+    },
+    {
+      "description": "Found all photos in Chapter 2",
+      "is_missable": 1,
+      "is_spoiler": 0,
+      "name": "Further Developments",
+      "name_pt": "Revelações adicionais",
+      "tip": "Colete todas as fotos/Polaroids do Capítulo 2. Faça checklist antes de terminar Photo Finished.",
+      "trophy_code": "lis_de_further_developments",
+      "type": "Prata"
+    },
+    {
+      "description": "Completed Chapter 3: Spin",
+      "is_missable": 0,
+      "is_spoiler": 1,
+      "name": "Face to Façade",
+      "name_pt": "Face à fachada",
+      "tip": "Troféu automático de história ao concluir o Capítulo 3: Spin.",
+      "trophy_code": "lis_de_face_to_facade",
+      "type": "Prata"
+    },
+    {
+      "description": "Found all photos in Chapter 3",
+      "is_missable": 1,
+      "is_spoiler": 0,
+      "name": "Selfie Care",
+      "name_pt": "Cuidado com selfie",
+      "tip": "Colete todas as fotos/Polaroids do Capítulo 3. Atenção às cenas em Caledon, escritórios e bar.",
+      "trophy_code": "lis_de_selfie_care",
+      "type": "Prata"
+    },
+    {
+      "description": "Completed Chapter 4: Diptych",
+      "is_missable": 0,
+      "is_spoiler": 1,
+      "name": "Fade to White",
+      "name_pt": "Fade para branco",
+      "tip": "Troféu automático de história ao concluir o Capítulo 4: Diptych.",
+      "trophy_code": "lis_de_fade_to_white",
+      "type": "Prata"
+    },
+    {
+      "description": "Found all photos in Chapter 4",
+      "is_missable": 1,
+      "is_spoiler": 0,
+      "name": "Picture Taking",
+      "name_pt": "Tirando fotos",
+      "tip": "Colete todas as fotos/Polaroids do Capítulo 4, especialmente durante as cenas de festa e exploração.",
+      "trophy_code": "lis_de_picture_taking",
+      "type": "Prata"
+    },
+    {
+      "description": "Completed Chapter 5: Decoherence",
+      "is_missable": 0,
+      "is_spoiler": 1,
+      "name": "Tempest Fugit",
+      "name_pt": "Tempest Fugit",
+      "tip": "Troféu automático de história ao concluir o Capítulo 5: Decoherence.",
+      "trophy_code": "lis_de_tempest_fugit",
+      "type": "Prata"
+    },
+    {
+      "description": "Found all photos in Chapter 5",
+      "is_missable": 1,
+      "is_spoiler": 1,
+      "name": "Viewfinding",
+      "name_pt": "Enquadramento",
+      "tip": "Colete todas as fotos/Polaroids do Capítulo 5 antes de encerrar a reta final ou volte pelo Chapter Select.",
+      "trophy_code": "lis_de_viewfinding",
+      "type": "Prata"
+    },
+    {
+      "description": "Found all photos in Life is Strange: Double Exposure",
+      "is_missable": 1,
+      "is_spoiler": 0,
+      "name": "Archival Footage",
+      "name_pt": "Imagens de arquivo",
+      "tip": "Requer todas as fotos/Polaroids da lista base nos Capítulos 1 a 5. Revise os troféus de fotos por capítulo antes do cleanup final.",
+      "trophy_code": "lis_de_archival_footage",
+      "type": "Ouro"
+    },
+    {
+      "description": "Finished Life is Strange: Double Exposure",
+      "is_missable": 0,
+      "is_spoiler": 1,
+      "name": "Commencement",
+      "name_pt": "Conclusão",
+      "tip": "Troféu automático ao terminar a campanha principal da lista base.",
+      "trophy_code": "lis_de_commencement",
+      "type": "Ouro"
+    },
+    {
+      "description": "Played through Life is Strange: Double Exposure with both outcomes from Life is Strange",
+      "is_missable": 1,
+      "is_spoiler": 1,
+      "name": "Bay or Bae",
+      "name_pt": "Bay ou Bae",
+      "tip": "Exige completar o jogo com os dois resultados herdados: Bay e Bae. Planeje uma segunda rota/playthrough porque a escolha do Capítulo 1 é incompatível.",
+      "trophy_code": "lis_de_bay_or_bae",
+      "type": "Ouro"
+    },
+    {
+      "description": "Fixed all the paintings",
+      "is_missable": 1,
+      "is_spoiler": 0,
+      "name": "Art Restoration",
+      "name_pt": "Restauração de arte",
+      "tip": "No Capítulo 1, em A Drink to Remember, corrija as três pinturas dentro do Turtle Bar antes de avançar.",
+      "trophy_code": "lis_de_art_restoration",
+      "type": "Bronze"
+    },
+    {
+      "description": "Helped timid guy get to the bathroom",
+      "is_missable": 1,
+      "is_spoiler": 0,
+      "name": "Loyal Flush",
+      "name_pt": "Descarga fiel",
+      "tip": "No Capítulo 2, Table for Three, resolva a situação da chave do banheiro alternando entre timelines antes de seguir a história.",
+      "trophy_code": "lis_de_loyal_flush",
+      "type": "Bronze"
+    },
+    {
+      "description": "Helped Moses finish the gingerbread house",
+      "is_missable": 1,
+      "is_spoiler": 0,
+      "name": "Home Sweet Home",
+      "name_pt": "Lar doce lar",
+      "tip": "No Capítulo 4, No Party Like a Krampus Party, peça a chaminé quebrada para Safi e entregue a Moses.",
+      "trophy_code": "lis_de_home_sweet_home",
+      "type": "Bronze"
+    },
+    {
+      "description": "Retrieved the package for Vinh",
+      "is_missable": 1,
+      "is_spoiler": 0,
+      "name": "The Mail Gaze",
+      "name_pt": "O olhar do correio",
+      "tip": "No Capítulo 1, Back to School Blues, pegue o pacote na sala de correspondência e entregue a Vinh. Também prepara Favor Saver.",
+      "trophy_code": "lis_de_the_mail_gaze",
+      "type": "Bronze"
+    },
+    {
+      "description": "Took all possible photos",
+      "is_missable": 1,
+      "is_spoiler": 0,
+      "name": "Frame Fatale",
+      "name_pt": "Frame fatal",
+      "tip": "Tire todos os snapshots possíveis conforme suas escolhas. Use Chapter Select/Explore Scene para cleanup e acompanhe rotas que mudam fotos disponíveis.",
+      "trophy_code": "lis_de_frame_fatale",
+      "type": "Prata"
+    },
+    {
+      "description": "Romanced only Amanda",
+      "is_missable": 1,
+      "is_spoiler": 0,
+      "name": "A Nice Girl Who Runs a Bar",
+      "name_pt": "Uma garota legal que administra um bar",
+      "tip": "No Capítulo 3, escolha romance apenas com Amanda e não com Vinh. Pode ser limpo pelo Chapter Select na subcena do bar.",
+      "trophy_code": "lis_de_a_nice_girl_who_runs_a_bar",
+      "type": "Prata"
+    },
+    {
+      "description": "Romanced only Vinh",
+      "is_missable": 1,
+      "is_spoiler": 0,
+      "name": "Only Eyes for the Bad Boy",
+      "name_pt": "Só olhos para o bad boy",
+      "tip": "No Capítulo 3, escolha romance apenas com Vinh e não com Amanda. Repita a subcena se precisar das outras combinações.",
+      "trophy_code": "lis_de_only_eyes_for_the_bad_boy",
+      "type": "Prata"
+    },
+    {
+      "description": "Romanced neither Amanda nor Vinh",
+      "is_missable": 1,
+      "is_spoiler": 0,
+      "name": "Romantically Disentangled",
+      "name_pt": "Romanticamente desembaraçada",
+      "tip": "No Capítulo 3, não romance Amanda nem Vinh. É uma das quatro combinações de romance da subcena do bar.",
+      "trophy_code": "lis_de_romantically_disentangled",
+      "type": "Prata"
+    },
+    {
+      "description": "Romanced both Amanda and Vinh",
+      "is_missable": 1,
+      "is_spoiler": 0,
+      "name": "It’s Complicated",
+      "name_pt": "É complicado",
+      "tip": "No Capítulo 3, romance Amanda e Vinh na mesma passagem. As quatro combinações podem exigir repetições por Chapter Select.",
+      "trophy_code": "lis_de_its_complicated",
+      "type": "Prata"
+    },
+    {
+      "description": "Committed the crimes",
+      "is_missable": 1,
+      "is_spoiler": 1,
+      "name": "Be Great, Do Crime!",
+      "name_pt": "Seja grande, cometa crimes!",
+      "tip": "No Capítulo 2, concorde com Alderman em Avoiding Detection e depois escolha não cooperar na sequência com Moses em Photo Finished.",
+      "trophy_code": "lis_de_be_great_do_crime",
+      "type": "Prata"
+    },
+    {
+      "description": "Found everything to decorate Hellerton with",
+      "is_missable": 1,
+      "is_spoiler": 0,
+      "name": "Clutterbug",
+      "name_pt": "Bagunceira",
+      "tip": "Colete todos os itens de decoração de Hellerton ao longo dos capítulos. Use checklist porque são interações opcionais.",
+      "trophy_code": "lis_de_clutterbug",
+      "type": "Prata"
+    },
+    {
+      "description": "Watered both plants",
+      "is_missable": 1,
+      "is_spoiler": 0,
+      "name": "Thirst Trip",
+      "name_pt": "Viagem de sede",
+      "tip": "Regue a planta no escritório de Gwen no Capítulo 2 e a planta grande na casa de Max em Photo Finished.",
+      "trophy_code": "lis_de_thirst_trip",
+      "type": "Prata"
+    },
+    {
+      "description": "Read all staff books",
+      "is_missable": 1,
+      "is_spoiler": 0,
+      "name": "Page Turner",
+      "name_pt": "Vira-páginas",
+      "tip": "Leia todos os livros de funcionários disponíveis em cenas específicas. Faça checklist durante as visitas aos escritórios.",
+      "trophy_code": "lis_de_page_turner",
+      "type": "Prata"
+    },
+    {
+      "description": "Interacted with everyone’s project",
+      "is_missable": 1,
+      "is_spoiler": 0,
+      "name": "Patronizing (The Good Kind)",
+      "name_pt": "Apoiando projetos",
+      "tip": "Interaja com todos os projetos opcionais de Caledon. O progresso depende de exploração atenta em diferentes capítulos.",
+      "trophy_code": "lis_de_patronizing_the_good_kind",
+      "type": "Prata"
+    },
+    {
+      "description": "Collected all possible clues for the evidence box",
+      "is_missable": 1,
+      "is_spoiler": 1,
+      "name": "Clue Me In",
+      "name_pt": "Me dê uma pista",
+      "tip": "Colete todas as pistas possíveis para a evidence box. Algumas dependem de ações específicas em cenas de investigação.",
+      "trophy_code": "lis_de_clue_me_in",
+      "type": "Prata"
+    },
+    {
+      "description": "Solved the puzzle box",
+      "is_missable": 1,
+      "is_spoiler": 0,
+      "name": "Thinking Outside the Box",
+      "name_pt": "Pensando fora da caixa",
+      "tip": "Pegue a puzzle box no Capítulo 1 com Reggie e conclua a solução no Capítulo 2, na casa de Max.",
+      "trophy_code": "lis_de_thinking_outside_the_box",
+      "type": "Bronze"
+    },
+    {
+      "description": "Never cashed in your favor from Vinh",
+      "is_missable": 1,
+      "is_spoiler": 0,
+      "name": "Favor Saver",
+      "name_pt": "Guardadora de favor",
+      "tip": "Depois de entregar o pacote para Vinh no Capítulo 1, no Capítulo 2 escolha guardar o favor em vez de usá-lo.",
+      "trophy_code": "lis_de_favor_saver",
+      "type": "Bronze"
+    },
+    {
+      "description": "Successfully slipped Safi the bottle cap",
+      "is_missable": 1,
+      "is_spoiler": 1,
+      "name": "Putting the “Cap” in “Caper”",
+      "name_pt": "Colocando a tampinha na travessura",
+      "tip": "No Capítulo 1, Things Are Looking Up, coloque a tampinha no doce azedo e ofereça a Safi.",
+      "trophy_code": "lis_de_putting_the_cap_in_caper",
+      "type": "Bronze"
+    },
+    {
+      "description": "Read all messages from Platypus Facts",
+      "is_missable": 1,
+      "is_spoiler": 0,
+      "name": "Platypus Genius",
+      "name_pt": "Gênio ornitorrinco",
+      "tip": "Inscreva-se no Platypus Facts e leia todas as mensagens recebidas ao longo da campanha.",
+      "trophy_code": "lis_de_platypus_genius",
+      "type": "Bronze"
+    }
+  ]
+}

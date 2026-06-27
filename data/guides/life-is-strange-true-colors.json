@@ -1,0 +1,673 @@
+{
+  "game": {
+    "avoid_if": "Evite apenas se você não gosta de aventura narrativa lenta, exploração leve e coletáveis por capítulo.",
+    "before_you_start": "A lista base é simples, mas há atenção técnica/PSN para Haven Historian e, por consequência, Haven Maven. Não trate isso como multiplayer ou online obrigatório tradicional; precisa validar em revisão editorial. O guia pode citar spoilers de história envolvendo Alex, Gabe, Jed, Typhon, decisões e revelações finais.",
+    "best_for": "Ideal para quem quer uma platina narrativa curta, acessível e focada em história, escolhas e consequências.",
+    "cleanup_advice": "Use Chapter Select para revisitar capítulos com Memory Collectibles ou side objectives pendentes, sem tratar isso como New Game+.",
+    "cover_image": "https://cdn.cloudflare.steamstatic.com/steam/apps/936790/library_600x900.jpg",
+    "coverage_level": "strong",
+    "created_at": "2026-05-09 19:53:50",
+    "difficulty": 1,
+    "difficulty_reason": "A platina é muito acessível, sem troféus de dificuldade, sem multiplayer obrigatório e com Chapter Select para cleanup.",
+    "dlc_scope": "Guia focado na lista base da platina; Wavelengths deve ficar separado se o projeto suportar DLC/add-ons.",
+    "editorial_notes": "",
+    "editorial_review_status": null,
+    "editorial_status": "published",
+    "first_run_advice": "Jogue com checklist leve de Memory Collectibles; se perder algo, use Chapter Select depois.",
+    "grind_summary": "O peso está em Memory Collectibles por capítulo e pequenos objetivos opcionais como Found Dog!, Bird Spotting, Earworm Squasher e Exactly 731.",
+    "guide_avoid": null,
+    "guide_best_moment": null,
+    "guide_dlc": null,
+    "guide_grind": null,
+    "guide_ideal": null,
+    "guide_online": null,
+    "guide_runs": null,
+    "image": "https://cdn.cloudflare.steamstatic.com/steam/apps/936790/header.jpg",
+    "is_verified": 0,
+    "last_reviewed_at": "",
+    "missable": "Não há perdíveis definitivos na lista base porque o jogo libera Chapter Select para cleanup. Trate Memory Collectibles e objetivos opcionais de capítulo como atenção, pois eles podem exigir repetir a cena/capítulo se ficarem para trás.",
+    "missable_summary": "Sem perdíveis definitivos por causa do Chapter Select; atenção apenas a Memory Collectibles e side objectives por capítulo.",
+    "name": "Life is Strange: True Colors",
+    "online_summary": "Não há multiplayer obrigatório, online obrigatório tradicional ou PS+ obrigatório. Pode haver atenção técnica relacionada a conexão/PSN para Haven Historian e Haven Maven; precisa validar em revisão editorial antes de tratar como dependência de servidor.",
+    "quality_warnings": "[]",
+    "reviewed_by": "",
+    "runs_summary": "Uma campanha principal com Chapter Select para limpar coletáveis e objetivos de capítulo.",
+    "slug": "life-is-strange-true-colors",
+    "time": "10-14h",
+    "time_bucket": "short",
+    "time_max_hours": 14,
+    "time_min_hours": 10,
+    "time_reason": "A faixa de 10-14 horas considera a campanha completa, todos os Memory Collectibles, objetivos opcionais curtos e cleanup por Chapter Select.",
+    "time_sort_hours": 10,
+    "updated_at": "2026-06-27 02:36:58",
+    "verification_note": "Lista base adicionada por fontes públicas; aguarda validação editorial final.",
+    "verification_status": "review",
+    "walkthrough": null
+  },
+  "redirects": [],
+  "roadmaps": [
+    {
+      "content": "{\"title\":\"Avance pela campanha\",\"focus\":\"\",\"objective\":\"Jogue a história naturalmente, acompanhando um checklist leve dos 5 Memory Collectibles do Capítulo 1 para já desbloquear Emotional Enthusiast sem retrabalho.\",\"actions\":[],\"warning\":\"\",\"result\":\"\"}",
+      "step_order": 1
+    },
+    {
+      "content": "{\"title\":\"Prossiga pela rota planejada\",\"focus\":\"\",\"objective\":\"Continue a campanha pegando os Memory Collectibles e side objectives dos Capítulos 2 e 3, com atenção a Found Dog!, Bird Spotting e Earworm Squasher.\",\"actions\":[],\"warning\":\"\",\"result\":\"\"}",
+      "step_order": 2
+    },
+    {
+      "content": "{\"title\":\"Complete os Capítulos 4 e 5 com checklist de Memory Collectib...\",\"focus\":\"\",\"objective\":\"Complete os Capítulos 4 e 5 com checklist de Memory Collectibles e faça Exactly 731 no festival antes de avançar demais no capítulo.\",\"actions\":[],\"warning\":\"\",\"result\":\"\"}",
+      "step_order": 3
+    },
+    {
+      "content": "{\"title\":\"Limpe coletáveis por seleção de capítulos\",\"focus\":\"\",\"objective\":\"Depois de terminar a história, use Chapter Select para Memory Collectibles, coletáveis ou side objectives pendentes; isso permite cleanup sem New Game+ e sem repetir a campanha inteira.\",\"actions\":[],\"warning\":\"\",\"result\":\"\"}",
+      "step_order": 4
+    },
+    {
+      "content": "{\"title\":\"Resolva requisitos online cedo\",\"focus\":\"\",\"objective\":\"Antes do último Memory Collectible, trate Haven Historian/Haven Maven como atenção técnica/PSN: não é multiplayer ou online obrigatório tradicional, mas precisa validar em revisão editorial para evitar falha de desbloqueio.\",\"actions\":[],\"warning\":\"\",\"result\":\"\"}",
+      "step_order": 5
+    },
+    {
+      "content": "{\"title\":\"Revise pendências finais\",\"focus\":\"\",\"objective\":\"Finalize o cleanup da lista base e não misture Wavelengths: o DLC/add-on não é necessário para a platina base de Life is Strange: True Colors.\",\"actions\":[],\"warning\":\"\",\"result\":\"\"}",
+      "step_order": 6
+    }
+  ],
+  "schemaVersion": 1,
+  "seedExtras": {
+    "aliases": [],
+    "attentionPoints": [
+      {
+        "tip": "Haven Historian exige conexão à PSN/servidores para registrar todos os Memory Collectibles. A platina tem online técnico, mas não multiplayer.",
+        "title": "Online técnico",
+        "type": "Haven Historian / PSN"
+      },
+      {
+        "tip": "Antes de pegar a última memória, jogue conectado à internet/PSN para evitar falha no desbloqueio de Haven Historian.",
+        "title": "Haven Historian",
+        "type": "Última memória"
+      },
+      {
+        "tip": "Não há cooperação obrigatória. Estatísticas online e servidores não são coop.",
+        "title": "Sem coop",
+        "type": "Single-player"
+      },
+      {
+        "tip": "Chapter Select permite recuperar memórias e side quests esquecidas.",
+        "title": "Sem perdíveis permanentes",
+        "type": "Chapter Select"
+      },
+      {
+        "tip": "Cada capítulo tem 5 memórias. Use checklist por capítulo para evitar retrabalho.",
+        "title": "25 Memory Collectibles",
+        "type": "Coletáveis"
+      },
+      {
+        "tip": "O Chapter Select mostra quais cenas ainda têm memórias faltando, então não é preciso repetir o jogo inteiro.",
+        "title": "Chapter Select",
+        "type": "Cleanup"
+      },
+      {
+        "tip": "Found Dog!, Bird Spotting, Earworm Squasher e Exactly 731 são as quatro side quests da platina.",
+        "title": "Side quests",
+        "type": "Objetivos opcionais"
+      },
+      {
+        "tip": "As memórias aparecem no controle do Chapter Select, mas as side quests devem ser acompanhadas por checklist manual.",
+        "title": "Side quests não rastreadas como memórias",
+        "type": "Checklist manual"
+      },
+      {
+        "tip": "As escolhas de história não bloqueiam troféus da platina. Foque em memórias e side quests.",
+        "title": "Escolhas narrativas",
+        "type": "História"
+      },
+      {
+        "tip": "Se for deixar uma memória para o final, garanta conexão online antes de coletá-la.",
+        "title": "Capítulo 5",
+        "type": "Online antes da última memória"
+      },
+      {
+        "tip": "Wavelengths é conteúdo extra/narrativo e não é obrigatório para Haven Maven.",
+        "title": "Wavelengths",
+        "type": "Extra separado"
+      },
+      {
+        "tip": "Não há autopop/save transfer automático entre PS4 e PS5; se quiser duas platinas, pode ser necessário jogar novamente.",
+        "title": "PS4/PS5",
+        "type": "Stacks separados"
+      }
+    ],
+    "checklist": [
+      "Conferir se o guia tem 41 troféus.",
+      "Conferir se Haven Maven é a platina.",
+      "Conferir distribuição: 1 platina, 6 ouro, 0 prata, 34 bronze.",
+      "Conferir onlineRequired true.",
+      "Conferir coopRequired false.",
+      "Conferir dlcRequired false.",
+      "Conferir hasMissables false.",
+      "Conferir missableCount 0.",
+      "Conferir filtro Perdíveis 0.",
+      "Conferir filtro Online 1.",
+      "Conferir Haven Historian como Online técnico.",
+      "Conferir filtro Coop 0.",
+      "Conferir filtro DLC 0.",
+      "Conferir filtro Dificuldade 0.",
+      "Conferir 25 Memory Collectibles.",
+      "Conferir 5 memórias por capítulo.",
+      "Conferir 4 side quests.",
+      "Conferir Chapter Select explicado.",
+      "Conferir que escolhas narrativas não bloqueiam troféus.",
+      "Conferir que Wavelengths não entrou na lista base.",
+      "Conferir que Haven Historian não foi confundido com multiplayer.",
+      "Conferir que Haven Maven não inflou tags indevidas.",
+      "Conferir se todos os troféus têm nome oficial em inglês como principal.",
+      "Conferir se todos têm PT-BR abaixo.",
+      "Conferir se descrições estão em português.",
+      "Conferir se textos em português têm acentos.",
+      "Conferir se não aparecem rótulos técnicos de nome nem descrições provisórias.",
+      "Conferir se roadmap está estruturado como array/objeto.",
+      "Conferir se roadmap renderiza etapas legíveis, sem objeto bruto.",
+      "Conferir se não aparecem labels internos do roadmap no front.",
+      "Conferir FAQ, decisão rápida, SEO e pontos de atenção.",
+      "Conferir se página individual e catálogo exibem o mesmo status editorial.",
+      "Conferir se flags do topo batem com filtros do catálogo."
+    ],
+    "faq": [
+      {
+        "answer": "Não. Memory Collectibles e side quests podem ser recuperados pelo Chapter Select.",
+        "question": "Life is Strange: True Colors tem troféus perdíveis?"
+      },
+      {
+        "answer": "Sim, mas apenas como requisito técnico. Haven Historian exige conexão à PSN/servidores para registrar todos os Memory Collectibles.",
+        "question": "Precisa jogar online para platinar?"
+      },
+      {
+        "answer": "Não. O jogo é single-player e não há troféu de coop.",
+        "question": "Precisa de cooperação?"
+      },
+      {
+        "answer": "Não. Wavelengths é conteúdo extra/narrativo e não é necessário para Haven Maven.",
+        "question": "Precisa de DLC/Wavelengths?"
+      },
+      {
+        "answer": "Uma run é suficiente. Depois, use Chapter Select para qualquer memória ou side quest esquecida.",
+        "question": "Quantas runs são necessárias?"
+      },
+      {
+        "answer": "Não. Não há troféu de dificuldade.",
+        "question": "A dificuldade afeta troféus?"
+      },
+      {
+        "answer": "São 25 Memory Collectibles, 5 por capítulo.",
+        "question": "Quantos coletáveis existem?"
+      },
+      {
+        "answer": "Found Dog!, Bird Spotting, Earworm Squasher e Exactly 731.",
+        "question": "Quais são as side quests obrigatórias?"
+      },
+      {
+        "answer": "Sim, para memórias e side quests. O menu mostra as memórias faltantes por cena; para side quests, use checklist manual.",
+        "question": "Chapter Select resolve tudo?"
+      },
+      {
+        "answer": "Jogue conectado à internet/PSN para garantir que Haven Historian registre corretamente.",
+        "question": "O que fazer antes da última memória?"
+      },
+      {
+        "answer": "Não com segurança na lista PlayStation. A platina depende de Haven Historian, que exige conexão online para registrar todos os Memory Collectibles.",
+        "question": "Posso platinar offline?"
+      },
+      {
+        "answer": "Em média, cerca de 8 a 12 horas, ou até 10 a 14 horas jogando com calma e assistindo às cenas.",
+        "question": "Quanto tempo leva para platinar?"
+      }
+    ],
+    "note": "Campos exportados para auditoria. O SQLite atual nao possui colunas nativas para todos esses extras; a importacao preserva o que o banco suporta.",
+    "quickDecision": {
+      "difficulty": "Muito baixa, cerca de 1/10.",
+      "dlc": "Wavelengths não é necessário para a platina base.",
+      "firstAction": "Comece a história usando checklist de 5 Memory Collectibles por capítulo.",
+      "mainRisk": "25 memórias, 4 side quests, Chapter Select e Haven Historian online técnico.",
+      "onlineCoop": "Online técnico obrigatório, sem coop.",
+      "risk": "Baixo. O único cuidado real é estar online para Haven Historian.",
+      "time": "Curto, cerca de 8 a 12 horas.",
+      "verdict": "Sim. É uma platina curta, fácil e excelente para quem gosta de narrativa."
+    },
+    "seo": {
+      "description": "Guia de troféus de Life is Strange: True Colors com roadmap da platina, 25 Memory Collectibles, side quests, Chapter Select, Haven Historian online técnico e dicas para os 41 troféus.",
+      "keywords": [
+        "Life is Strange True Colors troféus",
+        "Life is Strange True Colors platina",
+        "guia Life is Strange True Colors",
+        "True Colors trophy guide",
+        "Haven Maven",
+        "Haven Historian",
+        "Memory Collectibles",
+        "Life is Strange True Colors collectibles",
+        "Life is Strange True Colors Chapter Select",
+        "Found Dog",
+        "Bird Spotting",
+        "Earworm Squasher",
+        "Exactly 731",
+        "Wavelengths troféus"
+      ],
+      "metaDescription": "Guia de troféus de Life is Strange: True Colors com roadmap da platina, 25 Memory Collectibles, side quests, Chapter Select, Haven Historian online técnico e dicas para os 41 troféus.",
+      "ogDescription": "Roadmap PT-BR da platina de Life is Strange: True Colors com 41 troféus, 25 Memory Collectibles, 4 side quests, Chapter Select e Haven Historian online técnico.",
+      "ogTitle": "Life is Strange: True Colors: Guia de Troféus e Platina",
+      "title": "Life is Strange: True Colors: Guia de Troféus e Platina"
+    },
+    "tags": []
+  },
+  "slug": "life-is-strange-true-colors",
+  "trophies": [
+    {
+      "description": "Collect all Trophies in Life is Strange: True Colors™.",
+      "is_missable": 0,
+      "is_spoiler": 0,
+      "name": "Haven Maven",
+      "name_pt": "",
+      "tip": "Conquiste os outros 40 troféus da lista base. Atenção técnica/PSN: Haven Historian pode exigir cuidado de conexão antes do último Memory Collectible, mas não é multiplayer ou online obrigatório tradicional.",
+      "trophy_code": "lis_tc_haven_maven",
+      "type": "Platina"
+    },
+    {
+      "description": "Find the “Crack” Memory in Chapter 1.",
+      "is_missable": 0,
+      "is_spoiler": 0,
+      "name": "Crack",
+      "name_pt": "",
+      "tip": "Memory Collectible do Capítulo 1. Use Alex para interagir com a memória; se passar batido, volte depois pelo Chapter Select.",
+      "trophy_code": "lis_tc_crack",
+      "type": "Bronze"
+    },
+    {
+      "description": "Find the “Riley Letter” Memory in Chapter 1.",
+      "is_missable": 0,
+      "is_spoiler": 0,
+      "name": "A Letter To Riley",
+      "name_pt": "",
+      "tip": "Memory Collectible do Capítulo 1 no apartamento. Não é perdível definitivo por causa do Chapter Select.",
+      "trophy_code": "lis_tc_a_letter_to_riley",
+      "type": "Bronze"
+    },
+    {
+      "description": "Find the “Business Card” Memory in Chapter 1.",
+      "is_missable": 0,
+      "is_spoiler": 0,
+      "name": "Officer Fish",
+      "name_pt": "",
+      "tip": "Memory Collectible do Capítulo 1 no bar. Faça checklist por capítulo para reduzir cleanup.",
+      "trophy_code": "lis_tc_officer_fish",
+      "type": "Bronze"
+    },
+    {
+      "description": "Find the “Helmet” Memory in Chapter 1.",
+      "is_missable": 0,
+      "is_spoiler": 0,
+      "name": "Head Count",
+      "name_pt": "",
+      "tip": "Memory Collectible do Capítulo 1 durante a sequência das minas. Pode ser limpo via Chapter Select.",
+      "trophy_code": "lis_tc_head_count",
+      "type": "Bronze"
+    },
+    {
+      "description": "Find the “Phone” Memory in Chapter 1.",
+      "is_missable": 0,
+      "is_spoiler": 0,
+      "name": "Phone",
+      "name_pt": "",
+      "tip": "Memory Collectible do Capítulo 1 na área das minas. Pegue antes de encerrar o capítulo ou volte pelo Chapter Select.",
+      "trophy_code": "lis_tc_phone",
+      "type": "Bronze"
+    },
+    {
+      "description": "Complete Chapter 1 of Life is Strange: True Colors™.",
+      "is_missable": 0,
+      "is_spoiler": 1,
+      "name": "I Thought I Could Hunt The Monster",
+      "name_pt": "",
+      "tip": "Troféu automático de história ao concluir o Capítulo 1.",
+      "trophy_code": "lis_tc_i_thought_i_could_hunt_the_monster",
+      "type": "Bronze"
+    },
+    {
+      "description": "Find all Memory Collectibles in Chapter 1.",
+      "is_missable": 0,
+      "is_spoiler": 0,
+      "name": "Emotional Enthusiast",
+      "name_pt": "",
+      "tip": "Pegue Crack, Riley Letter, Business Card, Helmet e Phone no Capítulo 1. Se faltar algo, refaça a cena pelo Chapter Select.",
+      "trophy_code": "lis_tc_emotional_enthusiast",
+      "type": "Ouro"
+    },
+    {
+      "description": "Find the “Rent Check” Memory in Chapter 2.",
+      "is_missable": 0,
+      "is_spoiler": 0,
+      "name": "No Handouts",
+      "name_pt": "",
+      "tip": "Memory Collectible do Capítulo 2. Fica disponível durante a exploração do bar.",
+      "trophy_code": "lis_tc_no_handouts",
+      "type": "Bronze"
+    },
+    {
+      "description": "Find the “Umbrella” Memory in Chapter 2.",
+      "is_missable": 0,
+      "is_spoiler": 0,
+      "name": "Umbrella",
+      "name_pt": "",
+      "tip": "Memory Collectible do Capítulo 2. Revise a parte inferior do bar antes de avançar a história.",
+      "trophy_code": "lis_tc_umbrella",
+      "type": "Bronze"
+    },
+    {
+      "description": "Find the “T-Shirt” Memory in Chapter 2.",
+      "is_missable": 0,
+      "is_spoiler": 0,
+      "name": "Team Chomp-Bot",
+      "name_pt": "",
+      "tip": "Memory Collectible do Capítulo 2. A localização fica vinculada à exploração da floricultura.",
+      "trophy_code": "lis_tc_team_chomp_bot",
+      "type": "Bronze"
+    },
+    {
+      "description": "Find the “Gummies” Memory in Chapter 2.",
+      "is_missable": 0,
+      "is_spoiler": 0,
+      "name": "Pro Tip",
+      "name_pt": "",
+      "tip": "Memory Collectible do Capítulo 2. Use o checklist antes de encerrar as cenas principais do capítulo.",
+      "trophy_code": "lis_tc_pro_tip",
+      "type": "Bronze"
+    },
+    {
+      "description": "Find the “Button” Memory in Chapter 2.",
+      "is_missable": 0,
+      "is_spoiler": 0,
+      "name": "Time For Something New",
+      "name_pt": "",
+      "tip": "Memory Collectible do Capítulo 2. Pode ser recuperado depois pelo Chapter Select.",
+      "trophy_code": "lis_tc_time_for_something_new",
+      "type": "Bronze"
+    },
+    {
+      "description": "Help the Hoodie Guy find his dog.",
+      "is_missable": 0,
+      "is_spoiler": 0,
+      "name": "Found Dog!",
+      "name_pt": "",
+      "tip": "Side objective do Capítulo 2. Ajude o Hoodie Guy durante a exploração da cidade; se perder, repita a cena pelo Chapter Select.",
+      "trophy_code": "lis_tc_found_dog",
+      "type": "Bronze"
+    },
+    {
+      "description": "Help the Birdwatcher find her bird.",
+      "is_missable": 0,
+      "is_spoiler": 0,
+      "name": "Bird Spotting",
+      "name_pt": "",
+      "tip": "Side objective do Capítulo 2. Faça antes de avançar demais no capítulo ou volte pela seleção de capítulos.",
+      "trophy_code": "lis_tc_bird_spotting",
+      "type": "Bronze"
+    },
+    {
+      "description": "Complete Chapter 2 of Life is Strange: True Colors™.",
+      "is_missable": 0,
+      "is_spoiler": 1,
+      "name": "Something You Build",
+      "name_pt": "",
+      "tip": "Troféu automático de história ao concluir o Capítulo 2.",
+      "trophy_code": "lis_tc_something_you_build",
+      "type": "Bronze"
+    },
+    {
+      "description": "Find all Memory Collectibles in Chapter 2.",
+      "is_missable": 0,
+      "is_spoiler": 0,
+      "name": "Amateur Archaeophile",
+      "name_pt": "",
+      "tip": "Pegue Rent Check, Umbrella, T-Shirt, Gummies e Button no Capítulo 2. Não inclui side objectives, mas eles também têm troféus próprios.",
+      "trophy_code": "lis_tc_amateur_archaeophile",
+      "type": "Ouro"
+    },
+    {
+      "description": "Find and play the Student’s lost song.",
+      "is_missable": 0,
+      "is_spoiler": 0,
+      "name": "Earworm Squasher",
+      "name_pt": "",
+      "tip": "Side objective do Capítulo 3 no bar. Resolva a busca da música antes de seguir para os eventos principais ou use Chapter Select depois.",
+      "trophy_code": "lis_tc_earworm_squasher",
+      "type": "Bronze"
+    },
+    {
+      "description": "Find the “Bomber Jacket” Memory in Chapter 3.",
+      "is_missable": 0,
+      "is_spoiler": 0,
+      "name": "Hell Divers",
+      "name_pt": "",
+      "tip": "Memory Collectible do Capítulo 3. Fica ligado à exploração inicial do bar.",
+      "trophy_code": "lis_tc_hell_divers",
+      "type": "Bronze"
+    },
+    {
+      "description": "Find the “Dollar” Memory in Chapter 3.",
+      "is_missable": 0,
+      "is_spoiler": 0,
+      "name": "Ethan’s Dollar",
+      "name_pt": "",
+      "tip": "Memory Collectible do Capítulo 3 durante o LARP. Volte pelo Chapter Select se passar batido.",
+      "trophy_code": "lis_tc_ethans_dollar",
+      "type": "Bronze"
+    },
+    {
+      "description": "Find the “Appointment Slip” Memory in Chapter 3.",
+      "is_missable": 0,
+      "is_spoiler": 0,
+      "name": "And How Does That Make You Feel?",
+      "name_pt": "",
+      "tip": "Memory Collectible do Capítulo 3. Confira a área externa antes de entrar no bar.",
+      "trophy_code": "lis_tc_and_how_does_that_make_you_feel",
+      "type": "Bronze"
+    },
+    {
+      "description": "Find the “Old Paper” Memory in Chapter 3.",
+      "is_missable": 0,
+      "is_spoiler": 0,
+      "name": "Upright and Above Ground",
+      "name_pt": "",
+      "tip": "Memory Collectible do Capítulo 3 dentro do bar. Faça a coleta antes de avançar a cena.",
+      "trophy_code": "lis_tc_upright_and_above_ground",
+      "type": "Bronze"
+    },
+    {
+      "description": "Find the “Valkyrie’s Dish” Memory in Chapter 3.",
+      "is_missable": 0,
+      "is_spoiler": 0,
+      "name": "Valkyrie’s Dish",
+      "name_pt": "",
+      "tip": "Memory Collectible do Capítulo 3 na loja de discos. Use o poder de Alex no item correto.",
+      "trophy_code": "lis_tc_valkyries_dish",
+      "type": "Bronze"
+    },
+    {
+      "description": "Complete Chapter 3 of Life is Strange: True Colors™.",
+      "is_missable": 0,
+      "is_spoiler": 1,
+      "name": "Burying Something",
+      "name_pt": "",
+      "tip": "Troféu automático de história ao concluir o Capítulo 3.",
+      "trophy_code": "lis_tc_burying_something",
+      "type": "Bronze"
+    },
+    {
+      "description": "Find all Memory Collectibles in Chapter 3.",
+      "is_missable": 0,
+      "is_spoiler": 0,
+      "name": "Memory Collector",
+      "name_pt": "",
+      "tip": "Pegue Bomber Jacket, Dollar, Appointment Slip, Old Paper e Valkyrie’s Dish no Capítulo 3.",
+      "trophy_code": "lis_tc_memory_collector",
+      "type": "Ouro"
+    },
+    {
+      "description": "Help the Jelly Bean Counter win the contest.",
+      "is_missable": 0,
+      "is_spoiler": 0,
+      "name": "Exactly 731",
+      "name_pt": "",
+      "tip": "Side objective do Capítulo 4 no festival. Faça a sequência do contador de jujubas antes de encerrar o evento.",
+      "trophy_code": "lis_tc_exactly_731",
+      "type": "Bronze"
+    },
+    {
+      "description": "Find the “Drum Kit” Memory in Chapter 4.",
+      "is_missable": 0,
+      "is_spoiler": 0,
+      "name": "Count Me In",
+      "name_pt": "",
+      "tip": "Memory Collectible do Capítulo 4 no festival. Confira o palco e arredores.",
+      "trophy_code": "lis_tc_count_me_in",
+      "type": "Bronze"
+    },
+    {
+      "description": "Find the “CIT Sticker” Memory in Chapter 4.",
+      "is_missable": 0,
+      "is_spoiler": 0,
+      "name": "Proud Parent",
+      "name_pt": "",
+      "tip": "Memory Collectible do Capítulo 4. Procure atrás da floricultura durante o festival.",
+      "trophy_code": "lis_tc_proud_parent",
+      "type": "Bronze"
+    },
+    {
+      "description": "Find the “Microphone” Memory in Chapter 4.",
+      "is_missable": 0,
+      "is_spoiler": 0,
+      "name": "In Front of God and Everybody",
+      "name_pt": "",
+      "tip": "Memory Collectible do Capítulo 4 no palco do festival.",
+      "trophy_code": "lis_tc_in_front_of_god_and_everybody",
+      "type": "Bronze"
+    },
+    {
+      "description": "Find the “Pressed Rose” Memory in Chapter 4.",
+      "is_missable": 0,
+      "is_spoiler": 1,
+      "name": "Pressed Rose",
+      "name_pt": "",
+      "tip": "Memory Collectible do Capítulo 4. Faça a interação na área inicial do capítulo antes de seguir.",
+      "trophy_code": "lis_tc_pressed_rose",
+      "type": "Bronze"
+    },
+    {
+      "description": "Find the “Polaroid” Memory in Chapter 4.",
+      "is_missable": 0,
+      "is_spoiler": 1,
+      "name": "Birthday Boy",
+      "name_pt": "",
+      "tip": "Memory Collectible do Capítulo 4. Fica disponível após os eventos do festival; pode exigir retorno via Chapter Select se esquecido.",
+      "trophy_code": "lis_tc_birthday_boy",
+      "type": "Bronze"
+    },
+    {
+      "description": "Complete Chapter 4 of Life is Strange: True Colors™.",
+      "is_missable": 0,
+      "is_spoiler": 1,
+      "name": "The Kind of Thing You Can’t Undo",
+      "name_pt": "",
+      "tip": "Troféu automático de história ao concluir o Capítulo 4.",
+      "trophy_code": "lis_tc_the_kind_of_thing_you_cant_undo",
+      "type": "Bronze"
+    },
+    {
+      "description": "Find all Memory Collectibles in Chapter 4.",
+      "is_missable": 0,
+      "is_spoiler": 0,
+      "name": "Emotional Archeologist",
+      "name_pt": "",
+      "tip": "Pegue Drum Kit, CIT Sticker, Microphone, Pressed Rose e Polaroid no Capítulo 4.",
+      "trophy_code": "lis_tc_emotional_archeologist",
+      "type": "Ouro"
+    },
+    {
+      "description": "Find the “Mom’s Keys” Memory in Chapter 5.",
+      "is_missable": 0,
+      "is_spoiler": 1,
+      "name": "Scary News",
+      "name_pt": "",
+      "tip": "Memory Collectible do Capítulo 5. Conteúdo de reta final; use Chapter Select para cleanup se necessário.",
+      "trophy_code": "lis_tc_scary_news",
+      "type": "Bronze"
+    },
+    {
+      "description": "Find the “Business Card” Memory in Chapter 5.",
+      "is_missable": 0,
+      "is_spoiler": 1,
+      "name": "Some Kind of Fight",
+      "name_pt": "",
+      "tip": "Memory Collectible do Capítulo 5. Atenção a spoilers de história nessa sequência.",
+      "trophy_code": "lis_tc_some_kind_of_fight",
+      "type": "Bronze"
+    },
+    {
+      "description": "Find the “Guitar Strings” Memory in Chapter 5.",
+      "is_missable": 0,
+      "is_spoiler": 1,
+      "name": "Guitar Strings",
+      "name_pt": "",
+      "tip": "Memory Collectible do Capítulo 5. Siga o checklist antes de encerrar as cenas finais.",
+      "trophy_code": "lis_tc_guitar_strings",
+      "type": "Bronze"
+    },
+    {
+      "description": "Find the “Pendant” Memory in Chapter 5.",
+      "is_missable": 0,
+      "is_spoiler": 1,
+      "name": "Where The Devil Sleeps",
+      "name_pt": "",
+      "tip": "Memory Collectible do Capítulo 5 ligado à reta final da história.",
+      "trophy_code": "lis_tc_where_the_devil_sleeps",
+      "type": "Bronze"
+    },
+    {
+      "description": "Find the “Bomber Jacket” Memory in Chapter 5.",
+      "is_missable": 0,
+      "is_spoiler": 1,
+      "name": "You’re a Helldiver Now",
+      "name_pt": "",
+      "tip": "Último Memory Collectible do Capítulo 5. Atenção técnica/PSN: valide conexão antes de pegar o último Memory se quiser evitar problema em Haven Historian; não é multiplayer.",
+      "trophy_code": "lis_tc_youre_a_helldiver_now",
+      "type": "Bronze"
+    },
+    {
+      "description": "Complete Chapter 5 of Life is Strange: True Colors™.",
+      "is_missable": 0,
+      "is_spoiler": 1,
+      "name": "The Only Promise is The Adventure",
+      "name_pt": "",
+      "tip": "Troféu automático de história ao concluir o Capítulo 5 e chegar ao fim da campanha base.",
+      "trophy_code": "lis_tc_the_only_promise_is_the_adventure",
+      "type": "Bronze"
+    },
+    {
+      "description": "Find all Memory Collectibles in Chapter 5.",
+      "is_missable": 0,
+      "is_spoiler": 1,
+      "name": "Emotional Unearthing",
+      "name_pt": "",
+      "tip": "Pegue Mom’s Keys, Business Card, Guitar Strings, Pendant e Bomber Jacket no Capítulo 5.",
+      "trophy_code": "lis_tc_emotional_unearthing",
+      "type": "Ouro"
+    },
+    {
+      "description": "Find all Memory Collectibles in Life is Strange: True Colors™.",
+      "is_missable": 0,
+      "is_spoiler": 0,
+      "name": "Haven Historian",
+      "name_pt": "",
+      "tip": "Requer todos os 25 Memory Collectibles da lista base. Guias indicam atenção técnica/PSN antes do último Memory; precisa validar em revisão editorial e não deve ser tratado como multiplayer.",
+      "trophy_code": "lis_tc_haven_historian",
+      "type": "Ouro"
+    }
+  ]
+}

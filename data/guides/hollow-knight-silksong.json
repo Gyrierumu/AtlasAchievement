@@ -1,0 +1,571 @@
+{
+  "game": {
+    "avoid_if": "Evite se você quer uma platina rápida, simples ou sem 100%, sem limite de tempo e sem múltiplas rotas planejadas.",
+    "before_you_start": "Este guia representa a lista PSN base de 34 troféus de Hollow Knight: Silksong para PS4/PS5. Não misture Steam/Xbox, Steel Soul, Sea of Sorrow ou qualquer expansão futura na platina base.",
+    "best_for": "Recomendada para quem gosta de metroidvania difícil, exploração densa, chefes fortes, execução de plataforma e rotas de speedrun.",
+    "cleanup_advice": "Depois da campanha de aprendizado, revise ferramentas, Silk Skills, Crests, upgrades, mapas, Bellways, Ventrica Stations, desejos, pulgas, finais e requisitos de 100% antes das runs cronometradas.",
+    "cover_image": "https://cdn.cloudflare.steamstatic.com/steam/apps/1030300/library_600x900.jpg",
+    "coverage_level": "strong",
+    "created_at": "2026-06-02 15:00:58",
+    "difficulty": 8,
+    "difficulty_reason": "A dificuldade 8/10 vem de combate, plataforma, chefes, exploração completa, 100%, Speedrunner em menos de 5h e Speed Completion em menos de 30h.",
+    "dlc_scope": "Sea of Sorrow foi anunciada como expansão gratuita para 2026 e fica fora da platina base. Este guia não inclui troféus de expansão, update futuro, Steel Soul de outras plataformas ou extras fora da lista PSN base.",
+    "editorial_notes": "Escopo verificado: lista PSN base de 34 troféus de Hollow Knight: Silksong em PS4/PS5. Steel Soul, Steel Heart, listas Steam/Xbox, Sea of Sorrow e updates futuros ficam fora da platina base. Política de rotas: finais, Act 3, 100%, Speedrunner e Speed Completion exigem planejamento, mas não foram marcados como perdíveis sem confirmação de perda permanente.",
+    "editorial_review_status": "verified",
+    "editorial_status": "published",
+    "first_run_advice": "Comece por uma campanha de exploração, aprendendo Pharloom e coletando upgrades, ferramentas, Silk Skills, Crests, mapas e desejos. Depois use o roadmap para separar 100%, Act 3, chefes/finais e as rotas de speedrun.",
+    "grind_summary": "O peso está em 100%, ferramentas, Silk Skills, Crests, upgrades, mapas, Bellways, Ventrica Stations, desejos, pulgas, finais e rotas cronometradas.",
+    "guide_avoid": null,
+    "guide_best_moment": null,
+    "guide_dlc": null,
+    "guide_grind": null,
+    "guide_ideal": null,
+    "guide_online": null,
+    "guide_runs": null,
+    "image": "https://cdn.cloudflare.steamstatic.com/steam/apps/1030300/header.jpg",
+    "is_verified": 1,
+    "last_reviewed_at": "2026-06-02",
+    "missable": "Não há troféus perdíveis confirmados na lista PSN base usada por este guia. Finais, Act 3, Speedrunner e Speed Completion exigem rotas, planejamento ou novas runs, mas são tratados como Rota, Speedrun ou Atenção, não como perda permanente.",
+    "missable_summary": "Sem perdíveis confirmados: rotas, finais, 100%, Speedrunner e Speed Completion exigem planejamento, mas não entram como perda permanente. Pharloom's Heart nunca entra na contagem de perdíveis.",
+    "name": "Hollow Knight: Silksong",
+    "online_summary": "A lista PSN base é totalmente offline, sem troféus online, coop obrigatório ou PS+ necessário para a platina.",
+    "quality_warnings": "[]",
+    "reviewed_by": "",
+    "runs_summary": "A rota editorial mais segura separa uma primeira campanha de exploração e 100%, uma run de Speedrunner abaixo de 5h e uma rota otimizada para Speed Completion abaixo de 30h.",
+    "slug": "hollow-knight-silksong",
+    "time": "70-100 horas",
+    "time_bucket": "long",
+    "time_max_hours": 100,
+    "time_min_hours": 70,
+    "time_reason": "A estimativa de 70-100 horas considera aprendizado de Pharloom, 100%, cleanup, prática de chefes e rotas cronometradas.",
+    "time_sort_hours": 70,
+    "updated_at": "2026-06-27 02:37:03",
+    "verification_note": "Guia verificado para a lista PSN base de 34 troféus: EN/PT-BR, descrições PT-BR, roadmap estruturado, flags offline/sem coop/sem DLC, sem perdíveis confirmados e rotas de 100%/speedrun documentadas.",
+    "verification_status": "verified",
+    "walkthrough": ""
+  },
+  "redirects": [],
+  "roadmaps": [
+    {
+      "content": "{\"title\":\"Explore Pharloom e fortaleça Hornet\",\"focus\":\"Campanha inicial\",\"objective\":\"Avançar pela campanha aprendendo combate, movimento, cura, Ferramentas, Habilidades de Seda, Brasões e rotas principais.\",\"actions\":[\"Jogue a primeira campanha sem tentar speedrun ou 100% cedo demais.\",\"Adquira ferramentas, Habilidades de Seda, Brasões e upgrades de Máscara, Carretel e Corações de Seda conforme explorar.\",\"Compre mapas de cada área e abra atalhos sempre que possível.\",\"Abra Vias Campanárias e Estações Ventrícula para facilitar deslocamento.\",\"Marque no checklist chefes, mapas, ferramentas, desejos e upgrades obtidos.\"],\"warning\":\"\",\"result\":\"Campanha encaminhada, Hornet fortalecida e mapa pronto para exploração avançada.\"}",
+      "step_order": 1
+    },
+    {
+      "content": "{\"title\":\"Complete desejos, pulgas e sistemas de exploração\",\"focus\":\"Coletáveis e desejos\",\"objective\":\"Resolver desejos importantes, resgatar pulgas, completar mapas e preparar os requisitos longos da platina.\",\"actions\":[\"Conceda desejos enquanto avança pelas regiões de Pharloom.\",\"Conceda o desejo de Nuu para Keen Hunter e avance até True Hunter.\",\"Resgate metade das pulgas para Flea Finder e depois todas para Fleafriend.\",\"Continue abrindo Vias Campanárias, Estações Ventrícula e rotas úteis.\",\"Use o checklist para separar ferramentas, upgrades e colecionáveis restantes.\"],\"warning\":\"\",\"result\":\"Desejos, pulgas e rotas principais bem encaminhados para o 100%.\"}",
+      "step_order": 2
+    },
+    {
+      "content": "{\"title\":\"Avance os finais e o conteúdo de Act 3\",\"focus\":\"Finais e endgame\",\"objective\":\"Concluir os requisitos de finais, derrotar chefes importantes e liberar o conteúdo avançado necessário para 100%.\",\"actions\":[\"Derrote chefes principais como a Besta dos Sinos, Tessela e a Grande Mãe Seda conforme a progressão exigir.\",\"Resolva requisitos de finais ligados a Weaver Queen, Snared Silk, Twisted Child e Sister of the Void.\",\"Conceda o desejo do Arauto para Passing of the Age.\",\"Conclua objetivos avançados como Entwined, Harmonious e Remembrance quando estiverem disponíveis.\",\"Evite misturar conteúdo futuro de expansão com a platina base.\"],\"warning\":\"Troféus de finais e Act 3 podem exigir rotas específicas; antes de alterar uma rota, confirme se o save atual ainda serve para 100%, finais e speedrun.\",\"result\":\"Finais principais, Act 3 e chefes relevantes concluídos ou mapeados.\"}",
+      "step_order": 3
+    },
+    {
+      "content": "{\"title\":\"Feche 100% de conclusão\",\"focus\":\"100% e cleanup\",\"objective\":\"Completar todos os requisitos de Completion antes de partir para rotas cronometradas.\",\"actions\":[\"Adquira todas as Ferramentas, Habilidades de Seda e Brasões.\",\"Complete todos os Fragmentos de Máscara, Fragmentos de Carretel e Corações de Seda.\",\"Confirme mapas, Bellways, Ventrica Stations, desejos e pulgas.\",\"Derrote chefes e conclua objetivos restantes que contam para 100%.\",\"Finalize o jogo com 100% para liberar Completion.\"],\"warning\":\"Use checklist detalhado; tentar lembrar todos os requisitos de 100% aumenta muito o risco de retrabalho.\",\"result\":\"100% concluído e base de conhecimento pronta para Speed Completion.\"}",
+      "step_order": 4
+    },
+    {
+      "content": "{\"title\":\"Faça a rota de Speedrunner\",\"focus\":\"Speedrun 5h\",\"objective\":\"Completar o jogo em menos de 5 horas usando uma rota direta e sem desviar para coleta desnecessária.\",\"actions\":[\"Planeje uma run separada focada apenas em terminar o jogo rapidamente.\",\"Use conhecimento da primeira campanha para cortar desvios, compras e chefes opcionais.\",\"Treine chefes e trechos de movimento que mais causam mortes.\",\"Pausas e menus devem ser usados com cuidado conforme o sistema de tempo do jogo.\",\"Não tente aprender a rota durante a tentativa válida.\"],\"warning\":\"Speedrunner é um dos troféus mais técnicos da platina e deve ser feito depois de conhecer bem Pharloom.\",\"result\":\"Jogo concluído em menos de 5 horas.\"}",
+      "step_order": 5
+    },
+    {
+      "content": "{\"title\":\"Planeje o 100% em menos de 30 horas\",\"focus\":\"Speed Completion\",\"objective\":\"Fazer uma rota otimizada para conseguir 100% de conclusão e terminar o jogo em menos de 30 horas.\",\"actions\":[\"Use a experiência do 100% casual para montar uma rota eficiente.\",\"Priorize upgrades e ferramentas que reduzem tempo de travessia e chefes.\",\"Evite backtracking desnecessário agrupando objetivos por região.\",\"Acompanhe o progresso de 100% no checklist para não esquecer requisitos obrigatórios.\",\"Finalize a run antes de 30 horas para Speed Completion.\"],\"warning\":\"Speed Completion combina 100% e limite de tempo; não comece essa etapa sem conhecer todos os requisitos de Completion.\",\"result\":\"Speed Completion concluído e maior barreira da platina resolvida.\"}",
+      "step_order": 6
+    },
+    {
+      "content": "{\"title\":\"Faça o cleanup final da platina\",\"focus\":\"Cleanup\",\"objective\":\"Revisar pendências da lista base e confirmar que flags, troféus e status editorial estão corretos.\",\"actions\":[\"Abra o checklist e revise os 34 troféus.\",\"Confirme que Pharloom's Heart está tratado apenas como platina.\",\"Confirme que onlineRequired, coopRequired e dlcRequired estão como false.\",\"Confirme que Sea of Sorrow e outros updates futuros não foram incluídos na platina base.\",\"Revise se todos os cards têm nome inglês principal e PT-BR abaixo quando confirmado.\"],\"warning\":\"\",\"result\":\"Todos os requisitos da platina base concluídos.\"}",
+      "step_order": 7
+    }
+  ],
+  "schemaVersion": 1,
+  "seedExtras": {
+    "aliases": [],
+    "attentionPoints": [
+      {
+        "tip": "Use checklist detalhado para confirmar todos os requisitos de 100% antes de finalizar a run.",
+        "title": "Completion",
+        "type": "100% / Grind"
+      },
+      {
+        "tip": "Deixe para uma run separada depois de conhecer chefes, atalhos e rotas principais.",
+        "title": "Speedrunner",
+        "type": "Speedrun / 5h"
+      },
+      {
+        "tip": "Combine 100% e rota otimizada abaixo de 30h; não tente improvisar essa run.",
+        "title": "Speed Completion",
+        "type": "100% / Speedrun / 30h"
+      },
+      {
+        "tip": "Acompanhe o desejo de Nuu até receber o Memento.",
+        "title": "True Hunter",
+        "type": "Memento / Nuu"
+      },
+      {
+        "tip": "Marque pulgas por área para evitar revisitar regiões sem necessidade.",
+        "title": "Fleafriend",
+        "type": "Coletáveis / Pulgas"
+      },
+      {
+        "tip": "Confira ferramentas por região antes do cleanup final.",
+        "title": "Arsenal",
+        "type": "Ferramentas"
+      },
+      {
+        "tip": "Revise todas as Habilidades de Seda antes de iniciar rotas cronometradas.",
+        "title": "Woven",
+        "type": "Habilidades de Seda"
+      },
+      {
+        "tip": "Confirme todos os Brasões antes de fechar 100%.",
+        "title": "Consumed",
+        "type": "Brasões"
+      },
+      {
+        "tip": "Trate como rota/final de Act 3 e acompanhe no plano de finais.",
+        "title": "Sister of the Void",
+        "type": "Act 3 / Final"
+      },
+      {
+        "tip": "Planeje a rota do final antes de alterar o estado da run.",
+        "title": "Twisted Child",
+        "type": "Final / Atenção"
+      }
+    ],
+    "checklist": [
+      "Adquirir a primeira Ferramenta.",
+      "Adquirir todas as Ferramentas.",
+      "Vincular a primeira Habilidade de Seda.",
+      "Vincular todas as Habilidades de Seda.",
+      "Reivindicar o primeiro Brasão.",
+      "Reivindicar todos os Brasões.",
+      "Adquirir 4 Fragmentos de Máscara.",
+      "Adquirir todos os Fragmentos de Máscara.",
+      "Adquirir 2 Fragmentos de Carretel.",
+      "Adquirir todos os Fragmentos de Carretel.",
+      "Adquirir todos os Corações de Seda.",
+      "Adquirir mapa de cada área.",
+      "Abrir todas as Vias Campanárias.",
+      "Abrir todas as Estações Ventrícula da Cidadela.",
+      "Conceder o desejo de Nuu.",
+      "Receber o Memento de Nuu.",
+      "Resgatar metade das pulgas.",
+      "Resgatar todas as pulgas e receber o presente final.",
+      "Derrotar a Besta dos Sinos.",
+      "Derrotar Tessela nas Docas Profundas.",
+      "Derrotar Tessela no Berço.",
+      "Conceder o primeiro Desejo.",
+      "Vincular Eva.",
+      "Aprender a canção Tríplice da Cidadela.",
+      "Reivindicar a Flor-da-Eternidade.",
+      "Derrotar a Grande Mãe Seda e vincular o poder dela.",
+      "Derrotar a Grande Mãe Seda e entrelaçar com a Teia de Almas.",
+      "Derrotar a Grande Mãe Seda enquanto amaldiçoada.",
+      "Derrotar Tessela Perdida e libertar Fiarlongo.",
+      "Conceder o desejo do Arauto.",
+      "Conseguir 100% e terminar o jogo.",
+      "Completar o jogo em menos de 5h.",
+      "Conseguir 100% e terminar o jogo em menos de 30h.",
+      "Fazer cleanup final e confirmar os 34 troféus da lista PSN base."
+    ],
+    "faq": [
+      {
+        "answer": "Não há troféus perdíveis confirmados na lista PSN base usada por este guia. Alguns troféus exigem rotas, finais, nova run, 100% ou limites de tempo, mas eles devem ser tratados como Rota, Speedrun ou Atenção, não como perda permanente.",
+        "question": "Hollow Knight: Silksong tem troféus perdíveis?"
+      },
+      {
+        "answer": "Não. A lista PSN base é totalmente offline.",
+        "question": "Hollow Knight: Silksong tem troféus online?"
+      },
+      {
+        "answer": "Não. Hollow Knight: Silksong é single-player e a platina não exige coop.",
+        "question": "Precisa de coop?"
+      },
+      {
+        "answer": "Não. A platina base não exige DLC. Sea of Sorrow e expansões futuras devem ficar separadas se receberem conteúdo ou troféus próprios.",
+        "question": "Precisa de DLC ou expansão?"
+      },
+      {
+        "answer": "A lista PSN base tem 34 troféus, incluindo a platina Pharloom's Heart.",
+        "question": "Quantos troféus tem Hollow Knight: Silksong?"
+      },
+      {
+        "answer": "Não neste guia. A lista PSN base usada aqui tem 34 troféus e não inclui troféus de Steel Soul. Não misture listas de outras plataformas com a platina PSN.",
+        "question": "Steel Soul conta para a platina PSN?"
+      },
+      {
+        "answer": "A estimativa editorial é 70–100h, variando conforme habilidade em chefes, exploração, 100%, Speedrunner em menos de 5h e Speed Completion com 100% em menos de 30h.",
+        "question": "Quanto tempo leva para platinar Hollow Knight: Silksong?"
+      },
+      {
+        "answer": "A dificuldade estimada é 8/10. A platina exige domínio de combate, plataforma, exploração, chefes, 100%, Speedrunner e Speed Completion.",
+        "question": "Qual é a dificuldade da platina?"
+      },
+      {
+        "answer": "Até pode ser possível com uma rota muito otimizada, mas a rota mais segura do guia é separar uma campanha de exploração/100%, uma run de Speedrunner e uma rota planejada para Speed Completion.",
+        "question": "Speedrunner e Speed Completion podem ser feitos na mesma run?"
+      },
+      {
+        "answer": "Use o save atual para cleanup quando o jogo permitir continuar explorando após finais. Se algum final ou rota exigir nova campanha, trate como rota planejada, não como perdível.",
+        "question": "Dá para continuar depois da história?"
+      }
+    ],
+    "note": "Campos exportados para auditoria. O SQLite atual nao possui colunas nativas para todos esses extras; a importacao preserva o que o banco suporta.",
+    "quickDecision": {
+      "firstAction": "Comece por uma campanha de exploração, aprendendo Pharloom e coletando upgrades, ferramentas, Silk Skills, Crests, mapas e desejos.",
+      "mainRisk": "As maiores barreiras são Completion, Speedrunner e Speed Completion; trate finais e Act 3 como rotas planejadas, não como perdíveis confirmados. Steel Soul fica fora da lista PSN base.",
+      "recommendation": "Hollow Knight: Silksong é recomendado para quem gosta de metroidvania difícil, exploração completa, chefes exigentes e rotas cronometradas. A platina é totalmente offline, não exige coop nem DLC, mas exige 100%, Speedrunner em menos de 5h e Speed Completion com 100% em menos de 30h. Não é uma platina rápida nem casual; o maior desafio está em dominar Pharloom e planejar rotas eficientes.",
+      "summary": "Platina longa e exigente: totalmente offline, sem coop, sem DLC obrigatória, sem perdíveis confirmados, com 100%, finais, exploração completa e duas metas cronometradas fortes.",
+      "verdict": "Recomendada para fãs de metroidvania técnico e pouco indicada para busca de platina rápida."
+    },
+    "seo": {
+      "description": "Roadmap completo da platina de Hollow Knight: Silksong, com lista PSN de 34 troféus, 100%, Speedrunner, Speed Completion, ferramentas, Habilidades de Seda, Brasões, pulgas, desejos, chefes, finais e checklist para reduzir retrabalho.",
+      "keywords": "Hollow Knight Silksong troféus, Hollow Knight Silksong platina, Hollow Knight Silksong guia, Hollow Knight Silksong roadmap, Hollow Knight Silksong 100%, Hollow Knight Silksong Speedrunner, Hollow Knight Silksong Speed Completion, Hollow Knight Silksong Pharloom's Heart, Hollow Knight Silksong checklist, Hollow Knight Silksong pulgas, Hollow Knight Silksong PSN, Hollow Knight Silksong troféus PS5",
+      "ogDescription": "Guia PT-BR da platina base PSN de Hollow Knight: Silksong, com 34 troféus, 100%, speedrun, Speed Completion, pulgas, desejos, chefes e checklist.",
+      "ogTitle": "Hollow Knight: Silksong: guia de troféus e platina",
+      "title": "Hollow Knight: Silksong: guia de troféus e platina"
+    },
+    "tags": []
+  },
+  "slug": "hollow-knight-silksong",
+  "trophies": [
+    {
+      "description": "Adquira todos os outros troféus.",
+      "is_missable": 0,
+      "is_spoiler": 0,
+      "name": "Pharloom's Heart",
+      "name_pt": "Coração de Fiarlongo",
+      "tip": "Desbloqueie os 33 troféus restantes da lista PSN base.",
+      "trophy_code": "silksong-pharlooms-heart",
+      "type": "Platina"
+    },
+    {
+      "description": "Adquira sua primeira Ferramenta.",
+      "is_missable": 0,
+      "is_spoiler": 0,
+      "name": "Equipped",
+      "name_pt": "Equipada",
+      "tip": "Vem cedo ao obter a primeira Ferramenta. Marque no checklist e siga explorando Pharloom.",
+      "trophy_code": "silksong-equipped",
+      "type": "Bronze"
+    },
+    {
+      "description": "Adquira todas as Ferramentas.",
+      "is_missable": 0,
+      "is_spoiler": 0,
+      "name": "Arsenal",
+      "name_pt": "Arsenal",
+      "tip": "Use checklist por região para não deixar Ferramentas soltas na limpeza final.",
+      "trophy_code": "silksong-arsenal",
+      "type": "Prata"
+    },
+    {
+      "description": "Vincule sua primeira Habilidade de Seda.",
+      "is_missable": 0,
+      "is_spoiler": 0,
+      "name": "Bound",
+      "name_pt": "Vínculo",
+      "tip": "Troféu de progressão inicial ligado ao primeiro vínculo de Silk Skill.",
+      "trophy_code": "silksong-bound",
+      "type": "Bronze"
+    },
+    {
+      "description": "Vincule todas as Habilidades de Seda.",
+      "is_missable": 0,
+      "is_spoiler": 0,
+      "name": "Woven",
+      "name_pt": "Tecido",
+      "tip": "Controle as Silk Skills no checklist e conclua a coleção antes do 100%.",
+      "trophy_code": "silksong-woven",
+      "type": "Prata"
+    },
+    {
+      "description": "Reivindique seu primeiro Brasão.",
+      "is_missable": 0,
+      "is_spoiler": 0,
+      "name": "Claimed",
+      "name_pt": "Reivindicado",
+      "tip": "Vem ao obter o primeiro Crest e começar a ajustar o estilo de Hornet.",
+      "trophy_code": "silksong-claimed",
+      "type": "Bronze"
+    },
+    {
+      "description": "Reivindique todos os Brasões.",
+      "is_missable": 0,
+      "is_spoiler": 0,
+      "name": "Consumed",
+      "name_pt": "Consumida",
+      "tip": "Colete todos os Crests da lista base e confirme cada um antes do cleanup final.",
+      "trophy_code": "silksong-consumed",
+      "type": "Prata"
+    },
+    {
+      "description": "Adquira 4 Fragmentos de Máscara.",
+      "is_missable": 0,
+      "is_spoiler": 0,
+      "name": "Protected",
+      "name_pt": "Protegida",
+      "tip": "Colete quatro Mask Shards para aumentar a sobrevivência durante a campanha.",
+      "trophy_code": "silksong-protected",
+      "type": "Bronze"
+    },
+    {
+      "description": "Adquira todos os Fragmentos de Máscara.",
+      "is_missable": 0,
+      "is_spoiler": 0,
+      "name": "Masked",
+      "name_pt": "Mascarada",
+      "tip": "Use checklist de upgrades para completar todos os Mask Shards antes do 100%.",
+      "trophy_code": "silksong-masked",
+      "type": "Prata"
+    },
+    {
+      "description": "Adquira 2 Fragmentos de Carretel.",
+      "is_missable": 0,
+      "is_spoiler": 0,
+      "name": "Restored",
+      "name_pt": "Restaurado",
+      "tip": "Os primeiros Spool Fragments ajudam a estabilizar recursos para combate e exploração.",
+      "trophy_code": "silksong-restored",
+      "type": "Bronze"
+    },
+    {
+      "description": "Adquira todos os Fragmentos de Carretel.",
+      "is_missable": 0,
+      "is_spoiler": 0,
+      "name": "Extended",
+      "name_pt": "Estendido",
+      "tip": "Complete todos os Spool Fragments usando checklist por área.",
+      "trophy_code": "silksong-extended",
+      "type": "Prata"
+    },
+    {
+      "description": "Adquira todos os Corações de Seda.",
+      "is_missable": 0,
+      "is_spoiler": 0,
+      "name": "Regenerated",
+      "name_pt": "Regenerada",
+      "tip": "Feche os Silk Hearts antes de tentar rotas de 100% cronometrado.",
+      "trophy_code": "silksong-regenerated",
+      "type": "Bronze"
+    },
+    {
+      "description": "Adquira um mapa de cada área.",
+      "is_missable": 0,
+      "is_spoiler": 0,
+      "name": "Cartographer",
+      "name_pt": "Cartógrafa",
+      "tip": "Compre ou obtenha mapas de todas as áreas para reduzir retrabalho na exploração.",
+      "trophy_code": "silksong-cartographer",
+      "type": "Bronze"
+    },
+    {
+      "description": "Abra todas as Vias Campanárias de Fiarlongo.",
+      "is_missable": 0,
+      "is_spoiler": 0,
+      "name": "Connected",
+      "name_pt": "Conectadas",
+      "tip": "Abra Bellways conforme avançar; elas economizam muito tempo no cleanup.",
+      "trophy_code": "silksong-connected",
+      "type": "Bronze"
+    },
+    {
+      "description": "Abra todas as Estações Ventrícula da Cidadela.",
+      "is_missable": 0,
+      "is_spoiler": 0,
+      "name": "Transported",
+      "name_pt": "Transportada",
+      "tip": "Confirme todas as Ventrica Stations da Cidadela antes do fechamento de 100%.",
+      "trophy_code": "silksong-transported",
+      "type": "Bronze"
+    },
+    {
+      "description": "Conceda o desejo de Nuu.",
+      "is_missable": 0,
+      "is_spoiler": 0,
+      "name": "Keen Hunter",
+      "name_pt": "Caçadora Habilidosa",
+      "tip": "Siga o desejo de Nuu assim que a rota estiver disponível.",
+      "trophy_code": "silksong-keen-hunter",
+      "type": "Bronze"
+    },
+    {
+      "description": "Receba o Memento de Nuu.",
+      "is_missable": 0,
+      "is_spoiler": 0,
+      "name": "True Hunter",
+      "name_pt": "Verdadeira Caçadora",
+      "tip": "Avance a linha de Nuu até receber o Memento. Trate como objetivo de atenção, não como perdível confirmado.",
+      "trophy_code": "silksong-true-hunter",
+      "type": "Prata"
+    },
+    {
+      "description": "Resgate metade das pulgas perdidas de Fiarlongo.",
+      "is_missable": 0,
+      "is_spoiler": 0,
+      "name": "Flea Finder",
+      "name_pt": "Localizadora de Pulgas",
+      "tip": "Marque as pulgas resgatadas por região para facilitar o troféu Fleafriend.",
+      "trophy_code": "silksong-flea-finder",
+      "type": "Bronze"
+    },
+    {
+      "description": "Resgate todas as pulgas perdidas de Fiarlongo e receba o presente final delas.",
+      "is_missable": 0,
+      "is_spoiler": 0,
+      "name": "Fleafriend",
+      "name_pt": "Pulgófila",
+      "tip": "Complete todas as pulgas e confirme o presente final antes do 100%.",
+      "trophy_code": "silksong-fleafriend",
+      "type": "Prata"
+    },
+    {
+      "description": "Derrote a Besta dos Sinos.",
+      "is_missable": 0,
+      "is_spoiler": 1,
+      "name": "Liberated",
+      "name_pt": "Liberada",
+      "tip": "Chefe de progressão da lista base.",
+      "trophy_code": "silksong-liberated",
+      "type": "Bronze"
+    },
+    {
+      "description": "Derrote Tessela nas Docas Profundas.",
+      "is_missable": 0,
+      "is_spoiler": 1,
+      "name": "Pharloom's Welcome",
+      "name_pt": "Boas-vindas de Fiarlongo",
+      "tip": "Luta contra Tessela em Deep Docks; aprenda o ritmo para encontros posteriores.",
+      "trophy_code": "silksong-pharlooms-welcome",
+      "type": "Bronze"
+    },
+    {
+      "description": "Derrote Tessela no Berço.",
+      "is_missable": 0,
+      "is_spoiler": 1,
+      "name": "White Knight",
+      "name_pt": "Cavaleira Branca",
+      "tip": "Revanche de história com spoiler; entre com upgrades e ferramentas confortáveis.",
+      "trophy_code": "silksong-white-knight",
+      "type": "Bronze"
+    },
+    {
+      "description": "Conceda seu primeiro Desejo.",
+      "is_missable": 0,
+      "is_spoiler": 0,
+      "name": "Granted",
+      "name_pt": "Concedido",
+      "tip": "Conclua o primeiro Wish e comece a controlar desejos no checklist.",
+      "trophy_code": "silksong-granted",
+      "type": "Bronze"
+    },
+    {
+      "description": "Vincule Eva.",
+      "is_missable": 0,
+      "is_spoiler": 1,
+      "name": "Entwined",
+      "name_pt": "Entrelaçada",
+      "tip": "Objetivo avançado com spoiler; conclua quando a progressão liberar a rota.",
+      "trophy_code": "silksong-entwined",
+      "type": "Prata"
+    },
+    {
+      "description": "Aprenda a canção Tríplice da Cidadela.",
+      "is_missable": 0,
+      "is_spoiler": 1,
+      "name": "Harmonious",
+      "name_pt": "Harmoniosa",
+      "tip": "Objetivo de história ligado à Citadel; registre no checklist quando aprender a canção.",
+      "trophy_code": "silksong-harmonious",
+      "type": "Bronze"
+    },
+    {
+      "description": "Reivindique a Flor-da-Eternidade de uma memória distante.",
+      "is_missable": 0,
+      "is_spoiler": 1,
+      "name": "Remembrance",
+      "name_pt": "Lembrança",
+      "tip": "Coletável avançado com spoiler; deixe anotado para o cleanup de endgame.",
+      "trophy_code": "silksong-remembrance",
+      "type": "Prata"
+    },
+    {
+      "description": "Derrote a Grande Mãe Seda e vincule o poder dela.",
+      "is_missable": 0,
+      "is_spoiler": 1,
+      "name": "Weaver Queen",
+      "name_pt": "Rainha Tecelã",
+      "tip": "Final/chefe com spoiler; confirme a rota antes de encerrar a run.",
+      "trophy_code": "silksong-weaver-queen",
+      "type": "Ouro"
+    },
+    {
+      "description": "Derrote a Grande Mãe Seda e entrelace-a com a Teia de Almas.",
+      "is_missable": 0,
+      "is_spoiler": 1,
+      "name": "Snared Silk",
+      "name_pt": "Seda Entrelaçada",
+      "tip": "Final/chefe com spoiler e rota própria; planeje junto aos demais finais.",
+      "trophy_code": "silksong-snared-silk",
+      "type": "Ouro"
+    },
+    {
+      "description": "Derrote a Grande Mãe Seda enquanto estiver amaldiçoada.",
+      "is_missable": 0,
+      "is_spoiler": 1,
+      "name": "Twisted Child",
+      "name_pt": "Criança Deturpada",
+      "tip": "Final/chefe com condição especial. Trate como Atenção e rota planejada.",
+      "trophy_code": "silksong-twisted-child",
+      "type": "Ouro"
+    },
+    {
+      "description": "Derrote a Tessela Perdida e liberte Fiarlongo.",
+      "is_missable": 0,
+      "is_spoiler": 1,
+      "name": "Sister of the Void",
+      "name_pt": "Irmã do Vazio",
+      "tip": "Final de Act 3 com spoiler; confirme requisitos antes de avançar.",
+      "trophy_code": "silksong-sister-of-the-void",
+      "type": "Ouro"
+    },
+    {
+      "description": "Conceda o desejo do Arauto.",
+      "is_missable": 0,
+      "is_spoiler": 1,
+      "name": "Passing of the Age",
+      "name_pt": "Passagem da Era",
+      "tip": "Conceda o desejo do Herald e finalize a rota correspondente.",
+      "trophy_code": "silksong-passing-of-the-age",
+      "type": "Prata"
+    },
+    {
+      "description": "Consiga 100% de conclusão e termine o jogo.",
+      "is_missable": 0,
+      "is_spoiler": 1,
+      "name": "Completion",
+      "name_pt": "Conclusão",
+      "tip": "Use checklist detalhado para confirmar todos os requisitos de 100% antes de finalizar a run.",
+      "trophy_code": "silksong-completion",
+      "type": "Ouro"
+    },
+    {
+      "description": "Complete o jogo em menos de 5 horas.",
+      "is_missable": 0,
+      "is_spoiler": 0,
+      "name": "Speedrunner",
+      "name_pt": "Velocista",
+      "tip": "Faça uma rota separada e treinada para terminar o jogo abaixo de 5h.",
+      "trophy_code": "silksong-speedrunner",
+      "type": "Prata"
+    },
+    {
+      "description": "Consiga 100% de conclusão e termine o jogo em menos de 30 horas.",
+      "is_missable": 0,
+      "is_spoiler": 0,
+      "name": "Speed Completion",
+      "name_pt": "Conclusão Rápida",
+      "tip": "Combine 100% e rota otimizada abaixo de 30h; deixe para depois de conhecer bem todos os requisitos.",
+      "trophy_code": "silksong-speed-completion",
+      "type": "Prata"
+    }
+  ]
+}

@@ -1,0 +1,679 @@
+{
+  "game": {
+    "avoid_if": "Evite se você não quer depender de online, farm longo, animais/RNG, medalhas de ouro ou centenas de horas de checklist.",
+    "before_you_start": "Confirme disponibilidade online/PS+ antes de investir na platina. No modo história, priorize missables dos capítulos 2 a 6, pedidos de companheiros, doações e honra antes de avançar demais.",
+    "best_for": "Ideal para quem quer uma platina longa, metódica e completa, com campanha, mundo aberto, checklist extenso e Red Dead Online.",
+    "cleanup_advice": "Após a história, separe blocos para 100%, animais, colecionáveis, 70 medalhas e Red Dead Online. Use checklist porque muitos objetivos são longos e fáceis de perder de vista.",
+    "cover_image": "https://cdn.cloudflare.steamstatic.com/steam/apps/1174180/library_600x900.jpg",
+    "coverage_level": "strong",
+    "created_at": "2026-05-09 19:53:26",
+    "difficulty": 10,
+    "difficulty_reason": "A dificuldade vem do volume extremo, missables, 70 medalhas de ouro, RNG/animais, 100% e dependência de troféus online.",
+    "dlc_scope": "Guia focado na lista base de Red Dead Redemption 2, separando campanha e Red Dead Online. DLCs, conteúdos sazonais ou modos extras não são tratados como requisito adicional da platina base.",
+    "editorial_notes": null,
+    "editorial_review_status": null,
+    "editorial_status": "published",
+    "first_run_advice": "Durante a campanha, faça atividades de acampamento e missões opcionais assim que aparecerem. Não deixe pedidos de companheiros, doações e missões de honra para depois.",
+    "grind_summary": "Grind muito alto: 100%, 70 medalhas de ouro, animais, estudos/skins, colecionáveis, desafios, dinheiro e progressão até rank 50 no Red Dead Online.",
+    "guide_avoid": null,
+    "guide_best_moment": null,
+    "guide_dlc": null,
+    "guide_grind": null,
+    "guide_ideal": null,
+    "guide_online": null,
+    "guide_runs": null,
+    "image": "https://cdn.cloudflare.steamstatic.com/steam/apps/1174180/header.jpg",
+    "is_verified": 0,
+    "last_reviewed_at": null,
+    "missable": "A platina exige online e tem missables relevantes no modo história, principalmente nos capítulos 2 a 6. Priorize Friends With Benefits, Errand Boy, Give to the Poor e Lending a Hand assim que surgirem, e faça Breaking and Entering ainda durante a campanha para evitar cleanup ruim ou progresso inconsistente.",
+    "missable_summary": "Missables importantes ficam nos capítulos 2 a 6 e no acampamento. Friends With Benefits, Errand Boy, Give to the Poor, Lending a Hand e Breaking and Entering devem ser tratados antes do epílogo.",
+    "name": "Red Dead Redemption 2",
+    "online_summary": "A lista base inclui troféus de Red Dead Online/multiplayer, como rank 50, MVPs, posse, eventos, missões free roam, counter rival posse e upgrades de acampamento. Planeje acesso online/PS+.",
+    "quality_warnings": null,
+    "reviewed_by": null,
+    "runs_summary": "Uma campanha longa com atenção pesada a missables, 100% e colecionáveis, seguida de um bloco separado de Red Dead Online para rank, eventos e troféus multiplayer.",
+    "slug": "red-dead-redemption-2",
+    "time": "240-300 horas",
+    "time_bucket": "long",
+    "time_max_hours": 300,
+    "time_min_hours": 240,
+    "time_reason": "A faixa de 240-300 horas considera campanha, 100%, colecionáveis, animais, medalhas de ouro, desafios e progresso online até rank 50.",
+    "time_sort_hours": 240,
+    "updated_at": "2026-06-27 02:36:58",
+    "verification_note": "Guia normalizado a partir do dado seed com checklist e roadmap; aguardando revisão editorial manual final.",
+    "verification_status": "review",
+    "walkthrough": null
+  },
+  "redirects": [],
+  "roadmaps": [
+    {
+      "content": "Avance pela história com atenção total aos missables de acampamento e às missões opcionais de honra. Faça atividades em cada acampamento, complete pedidos de companheiros e doe dinheiro ao cofre da gangue antes do fim do Capítulo 4.",
+      "step_order": 1
+    },
+    {
+      "content": "Ainda durante a campanha, já tente medalhas de ouro quando a missão for curta ou favorável. O replay existe, mas costuma ser menos confortável por impor loadout e checkpoints.",
+      "step_order": 2
+    },
+    {
+      "content": "Depois da história, feche 100% de conclusão, desafios, colecionáveis, estranhos, minigames, homesteads, honra, armas e vínculos com cavalo.",
+      "step_order": 3
+    },
+    {
+      "content": "Reserve um cleanup longo para Zoologist, Skin Deep, It's Art, colecionáveis, animais e 70 medalhas de ouro.",
+      "step_order": 4
+    },
+    {
+      "content": "Deixe Red Dead Online para uma etapa separada: Rank 50, MVPs, eventos, posse, missões free roam, counter rival posse, upgrades de acampamento e dinheiro para comprar o que os troféus pedem. Essa parte depende de acesso online/PS+.",
+      "step_order": 5
+    },
+    {
+      "content": "Use checklist para animais, missões opcionais, camp requests e 100% de conclusão. Em RDR2, organização pesa tanto quanto execução.",
+      "step_order": 6
+    }
+  ],
+  "schemaVersion": 1,
+  "seedExtras": {
+    "aliases": [],
+    "attentionPoints": [],
+    "checklist": [
+      "Concluir os capítulos da história principal.",
+      "Concluir o epílogo.",
+      "Completar missões opcionais de honra necessárias para Lending a Hand.",
+      "Fazer atividade com companheiro em cada acampamento necessário para Friends With Benefits.",
+      "Entregar 5 pedidos de itens de companheiros para Errand Boy.",
+      "Doar US$ 250 à caixa da gangue para Give to the Poor antes de ela ficar indisponível.",
+      "Acompanhar 100% de conclusão pelo tracker do jogo.",
+      "Obter 70 medalhas de ouro em missões da história.",
+      "Concluir linhas de Stranger necessárias.",
+      "Jogar todos os minigames.",
+      "Recuperar saques de homesteads exigidos.",
+      "Encontrar túmulos de companheiros caídos.",
+      "Completar colecionáveis exigidos, como cigarette cards, rock carvings, dinosaur bones e dreamcatchers.",
+      "Estudar animais necessários para Zoologist.",
+      "Esfolar animais necessários para Skin Deep.",
+      "Criar itens diferentes no modo história.",
+      "Sobreviver a ataques de urso e matar o urso para Grin and Bear It.",
+      "Pescar um peixe de pelo menos 7,7 kg.",
+      "Alcançar vínculo máximo com um cavalo.",
+      "Alcançar honra máxima ou mínima.",
+      "Completar a introdução de Red Dead Online.",
+      "Subir ao rank 50 em Red Dead Online.",
+      "Participar de Series e Free Roam Events.",
+      "Aceitar Free Roam Missions de personagens.",
+      "Criar ou usar Posse para Posse Up, Strength in Numbers e All's Fair.",
+      "Conseguir MVP 3 vezes em partidas com pelo menos 4 jogadores.",
+      "Obter 5 belt buckles de ouro em Awards.",
+      "Comprar melhorias de acampamento online.",
+      "Comprar 5 cavalos no online.",
+      "Criar itens, munição especial, vender ao Butcher e coletar ervas no online.",
+      "Revisar checklist final e confirmar que DLC, edições especiais e Gold Bars não foram tratados como obrigatórios."
+    ],
+    "faq": [
+      {
+        "answer": "Sim. Os principais perdíveis são Lending a Hand, Friends With Benefits, Give to the Poor e Errand Boy. Todos dependem de conteúdo de campanha/acampamento que pode ficar indisponível se você avançar demais.",
+        "question": "Red Dead Redemption 2 tem troféus perdíveis?"
+      },
+      {
+        "answer": "Sim. A lista base exige troféus de Red Dead Online, incluindo rank, eventos, posses, MVP e atividades multiplayer.",
+        "question": "Red Dead Redemption 2 precisa de online para platinar?"
+      },
+      {
+        "answer": "Sim. Alguns troféus online dependem de outros jogadores, partidas públicas ou Posse, como The Real Deal, All's Fair e Strength in Numbers.",
+        "question": "Red Dead Redemption 2 precisa jogar com outras pessoas?"
+      },
+      {
+        "answer": "Não. A platina base não exige DLC, edição especial, Ultimate Edition ou compra de Gold Bars.",
+        "question": "Red Dead Redemption 2 precisa de DLC ou Gold Bars?"
+      },
+      {
+        "answer": "A estimativa segura é 200-300h, dependendo do ritmo no modo história, Gold Rush, animais e Red Dead Online.",
+        "question": "Quanto tempo leva para platinar Red Dead Redemption 2?"
+      },
+      {
+        "answer": "Não. As missões podem ser repetidas para buscar medalhas de ouro, mas o troféu é um dos maiores grinds da platina.",
+        "question": "Gold Rush é perdível?"
+      },
+      {
+        "answer": "Não devem ser tratados como perdíveis no guia base. Eles são longos e exigem checklist, mas não entram na contagem principal de troféus perdíveis.",
+        "question": "Skin Deep e Zoologist são perdíveis?"
+      }
+    ],
+    "note": "Campos exportados para auditoria. O SQLite atual nao possui colunas nativas para todos esses extras; a importacao preserva o que o banco suporta.",
+    "quickDecision": {
+      "firstAction": "Antes de avançar capítulos, confira missões opcionais de honra, atividades com companheiros, pedidos de itens e doações à caixa da gangue.",
+      "recommendation": "Só entre se você aceitar uma checklist pesada offline e online. Controle os perdíveis durante a campanha, separe Gold Rush e animais em blocos próprios e deixe Red Dead Online como etapa dedicada.",
+      "summary": "Platina longa, com 52 troféus, online obrigatório, quatro perdíveis reais de campanha/acampamento, 100%, 70 medalhas de ouro, animais e rank 50 em Red Dead Online."
+    },
+    "seo": {
+      "description": "Roadmap completo da platina de Red Dead Redemption 2, com troféus perdíveis, Red Dead Online, 100%, Gold Rush, animais, checklist e dicas para evitar retrabalho.",
+      "keywords": "Red Dead Redemption 2 troféus, Red Dead Redemption 2 platina, Red Dead Redemption 2 guia, Red Dead Redemption 2 roadmap, Red Dead Redemption 2 perdíveis, Red Dead Redemption 2 online, Red Dead Redemption 2 Gold Rush, Red Dead Redemption 2 Zoologist, Red Dead Redemption 2 Skin Deep, Red Dead Redemption 2 checklist",
+      "ogDescription": "Roadmap da platina de Red Dead Redemption 2 com perdíveis, 100%, Gold Rush, animais, Red Dead Online e checklist.",
+      "ogTitle": "Red Dead Redemption 2: guia de troféus e platina",
+      "title": "Red Dead Redemption 2: guia de troféus e platina"
+    },
+    "tags": []
+  },
+  "slug": "red-dead-redemption-2",
+  "trophies": [
+    {
+      "description": "Obtenha todos os outros troféus.",
+      "is_missable": 0,
+      "is_spoiler": 0,
+      "name": "Legend of the West",
+      "name_pt": "",
+      "tip": "Inclui também os troféus online da lista base.",
+      "trophy_code": "rdr2_platinum",
+      "type": "Platina"
+    },
+    {
+      "description": "Complete o Capítulo 1.",
+      "is_missable": 0,
+      "is_spoiler": 0,
+      "name": "Back in the Mud",
+      "name_pt": "Na Lama Outra Vez",
+      "tip": "Troféu automático de história.",
+      "trophy_code": "rdr2_back_in_the_mud",
+      "type": "Bronze"
+    },
+    {
+      "description": "Complete “Enter, Pursued by a Memory”.",
+      "is_missable": 0,
+      "is_spoiler": 1,
+      "name": "Just a Scratch",
+      "name_pt": "Só um Arranhão",
+      "tip": "Sai naturalmente no início da campanha.",
+      "trophy_code": "rdr2_just_a_scratch",
+      "type": "Bronze"
+    },
+    {
+      "description": "Complete o Capítulo 2.",
+      "is_missable": 0,
+      "is_spoiler": 0,
+      "name": "To Greener Pastures",
+      "name_pt": "Por uma Grama Mais Verde",
+      "tip": "Troféu automático de história.",
+      "trophy_code": "rdr2_to_greener_pastures",
+      "type": "Bronze"
+    },
+    {
+      "description": "Complete o Capítulo 3.",
+      "is_missable": 0,
+      "is_spoiler": 0,
+      "name": "Settling Feuds",
+      "name_pt": "Acertando Contas",
+      "tip": "Troféu automático de história.",
+      "trophy_code": "rdr2_settling_feuds",
+      "type": "Bronze"
+    },
+    {
+      "description": "Complete o Capítulo 4.",
+      "is_missable": 0,
+      "is_spoiler": 0,
+      "name": "Washed Ashore",
+      "name_pt": "Dia de Ressaca",
+      "tip": "Troféu automático de história.",
+      "trophy_code": "rdr2_washed_ashore",
+      "type": "Bronze"
+    },
+    {
+      "description": "Complete o Capítulo 5.",
+      "is_missable": 0,
+      "is_spoiler": 0,
+      "name": "No Traitors",
+      "name_pt": "Nada de Traidores",
+      "tip": "Troféu automático de história.",
+      "trophy_code": "rdr2_no_traitors",
+      "type": "Bronze"
+    },
+    {
+      "description": "Complete “Goodbye, Dear Friend”.",
+      "is_missable": 0,
+      "is_spoiler": 1,
+      "name": "Third Time Lucky",
+      "name_pt": "Melhor de Três",
+      "tip": "Sai no Capítulo 6.",
+      "trophy_code": "rdr2_third_time_lucky",
+      "type": "Bronze"
+    },
+    {
+      "description": "Complete “Red Dead Redemption”.",
+      "is_missable": 0,
+      "is_spoiler": 1,
+      "name": "Redemption",
+      "name_pt": "Redenção",
+      "tip": "Marca o fim do Capítulo 6.",
+      "trophy_code": "rdr2_redemption",
+      "type": "Prata"
+    },
+    {
+      "description": "Complete “A New Jerusalem”.",
+      "is_missable": 0,
+      "is_spoiler": 1,
+      "name": "Cowboy Builder",
+      "name_pt": "Faroeste Reboco",
+      "tip": "Troféu de história do epílogo.",
+      "trophy_code": "rdr2_cowboy_builder",
+      "type": "Bronze"
+    },
+    {
+      "description": "Complete o Epílogo.",
+      "is_missable": 0,
+      "is_spoiler": 1,
+      "name": "Endless Summer",
+      "name_pt": "Verão Sem Fim",
+      "tip": "Sai ao concluir a parte final da campanha.",
+      "trophy_code": "rdr2_endless_summer",
+      "type": "Ouro"
+    },
+    {
+      "description": "Complete todas as missões opcionais de honra da história.",
+      "is_missable": 1,
+      "is_spoiler": 1,
+      "name": "Lending a Hand",
+      "name_pt": "Dando uma Mãozinha",
+      "tip": "Um dos grandes missables da platina. Sempre faça missões opcionais brancas ligadas à campanha, sobretudo no Capítulo 6.",
+      "trophy_code": "rdr2_lending_a_hand",
+      "type": "Prata"
+    },
+    {
+      "description": "Alcance 100% de conclusão.",
+      "is_missable": 0,
+      "is_spoiler": 0,
+      "name": "Best in the West",
+      "name_pt": "O Melhor do Oeste",
+      "tip": "Exige checklist pesada de progresso, desafios, minigames, caças, compêndio parcial e atividades.",
+      "trophy_code": "rdr2_best_in_the_west",
+      "type": "Ouro"
+    },
+    {
+      "description": "Ganhe 70 medalhas de ouro em missões da história.",
+      "is_missable": 0,
+      "is_spoiler": 0,
+      "name": "Gold Rush",
+      "name_pt": "Corrida do Ouro",
+      "tip": "Tente ouro já na primeira run sempre que possível.",
+      "trophy_code": "rdr2_gold_rush",
+      "type": "Prata"
+    },
+    {
+      "description": "Complete uma atividade de companheiro em cada acampamento.",
+      "is_missable": 1,
+      "is_spoiler": 0,
+      "name": "Friends With Benefits",
+      "name_pt": "Amigo do Peito",
+      "tip": "Missable. Faça pelo menos uma atividade de companheiro em Horseshoe Overlook, Clemens Point e Shady Belle.",
+      "trophy_code": "rdr2_friends_with_benefits",
+      "type": "Bronze"
+    },
+    {
+      "description": "Jogue todos os minigames.",
+      "is_missable": 0,
+      "is_spoiler": 0,
+      "name": "Hobby Horse",
+      "name_pt": "Só Mais uma Rodada",
+      "tip": "Basta iniciar cada um deles; não é necessário vencer.",
+      "trophy_code": "rdr2_hobby_horse",
+      "type": "Bronze"
+    },
+    {
+      "description": "Recupere o saque escondido em 4 homesteads.",
+      "is_missable": 1,
+      "is_spoiler": 0,
+      "name": "Breaking and Entering",
+      "name_pt": "Invasão de Domicílio",
+      "tip": "Faça ainda na campanha principal. É mais fácil encaixar esse progresso cedo do que deixar tudo para o pós-jogo.",
+      "trophy_code": "rdr2_breaking_and_entering",
+      "type": "Bronze"
+    },
+    {
+      "description": "Descubra o destino de Marko Dragic.",
+      "is_missable": 0,
+      "is_spoiler": 1,
+      "name": "Artificial Intelligence",
+      "name_pt": "Inteligência Artificial",
+      "tip": "Depende da linha de stranger missions dele.",
+      "trophy_code": "rdr2_artificial_intelligence",
+      "type": "Bronze"
+    },
+    {
+      "description": "Roube ou saqueie US$ 250.",
+      "is_missable": 0,
+      "is_spoiler": 0,
+      "name": "Take From the Rich",
+      "name_pt": "Roube dos Ricos",
+      "tip": "Sai naturalmente se você também fizer assaltos e loot com frequência.",
+      "trophy_code": "rdr2_take_from_the_rich",
+      "type": "Bronze"
+    },
+    {
+      "description": "Doe US$ 250 para a caixa da gangue.",
+      "is_missable": 1,
+      "is_spoiler": 0,
+      "name": "Give to the Poor",
+      "name_pt": "Doe aos Pobres",
+      "tip": "Missable. Complete isso nos capítulos centrais, antes de perder acesso normal ao cofre da gangue.",
+      "trophy_code": "rdr2_give_to_the_poor",
+      "type": "Bronze"
+    },
+    {
+      "description": "Gaste US$ 5000 em lojas.",
+      "is_missable": 0,
+      "is_spoiler": 0,
+      "name": "Pony Up",
+      "name_pt": "Pagando a Conta",
+      "tip": "Sai naturalmente ao longo da campanha e do cleanup.",
+      "trophy_code": "rdr2_pony_up",
+      "type": "Bronze"
+    },
+    {
+      "description": "Alcance o máximo ou mínimo de Honra.",
+      "is_missable": 0,
+      "is_spoiler": 0,
+      "name": "Extreme Personality",
+      "name_pt": "Personalidade Extrema",
+      "tip": "O caminho positivo costuma ser mais simples em uma run normal.",
+      "trophy_code": "rdr2_extreme_personality",
+      "type": "Bronze"
+    },
+    {
+      "description": "Complete 10 linhas de missões de Estranhos.",
+      "is_missable": 0,
+      "is_spoiler": 0,
+      "name": "Western Stranger",
+      "name_pt": "Um Estranho no Oeste",
+      "tip": "Sai enquanto você busca 100%.",
+      "trophy_code": "rdr2_western_stranger",
+      "type": "Bronze"
+    },
+    {
+      "description": "Sobreviva por 3 dias com recompensa de US$ 250 em todos os estados.",
+      "is_missable": 0,
+      "is_spoiler": 0,
+      "name": "Bountiful",
+      "name_pt": "O Queridinho da América",
+      "tip": "Faça quando estiver pronto para pagar ou ignorar a perseguição temporariamente.",
+      "trophy_code": "rdr2_bountiful",
+      "type": "Bronze"
+    },
+    {
+      "description": "Complete uma das linhas de colecionáveis.",
+      "is_missable": 0,
+      "is_spoiler": 0,
+      "name": "Collector's Item",
+      "name_pt": "Item de Colecionador",
+      "tip": "Rock Carvings e Dinosaur Bones costumam ser rotas mais amigáveis do que quests com exigência de RNG.",
+      "trophy_code": "rdr2_collectors_item",
+      "type": "Prata"
+    },
+    {
+      "description": "Encontre os túmulos de todos os companheiros caídos.",
+      "is_missable": 0,
+      "is_spoiler": 1,
+      "name": "Paying Respects",
+      "name_pt": "Condolências",
+      "tip": "Deixe para depois da história, com mapa de apoio.",
+      "trophy_code": "rdr2_paying_respects",
+      "type": "Bronze"
+    },
+    {
+      "description": "Entregue 5 pedidos de itens de companheiros do acampamento.",
+      "is_missable": 1,
+      "is_spoiler": 0,
+      "name": "Errand Boy",
+      "name_pt": "Garoto de Recados",
+      "tip": "Missable. Aceite pedidos sempre que surgirem no acampamento e entregue antes da mudança de capítulo.",
+      "trophy_code": "rdr2_errand_boy",
+      "type": "Bronze"
+    },
+    {
+      "description": "Encontre um lar permanente para a estátua de esquilo.",
+      "is_missable": 0,
+      "is_spoiler": 1,
+      "name": "It's Art",
+      "name_pt": "É Arte",
+      "tip": "Depende de concluir toda a cadeia de Hunting Requests. Deixe separado do restante do cleanup para não se perder no progresso.",
+      "trophy_code": "rdr2_its_art",
+      "type": "Bronze"
+    },
+    {
+      "description": "Crie 30 itens diferentes no modo História.",
+      "is_missable": 0,
+      "is_spoiler": 0,
+      "name": "Self Sufficient",
+      "name_pt": "Autossuficiente",
+      "tip": "Conte munições especiais, tônicos, iscas e receitas de acampamento. O segredo é variedade, não quantidade.",
+      "trophy_code": "rdr2_self_sufficient",
+      "type": "Bronze"
+    },
+    {
+      "description": "Esfole cada espécie de animal no modo História.",
+      "is_missable": 0,
+      "is_spoiler": 0,
+      "name": "Skin Deep",
+      "name_pt": "Arrancando o Couro",
+      "tip": "Combine com Zoologist sempre que possível. O ideal é estudar, abatér e esfolar a espécie na mesma visita.",
+      "trophy_code": "rdr2_skin_deep",
+      "type": "Bronze"
+    },
+    {
+      "description": "Estude cada espécie de animal em todos os estados no modo História.",
+      "is_missable": 0,
+      "is_spoiler": 0,
+      "name": "Zoologist",
+      "name_pt": "Zoólogo",
+      "tip": "Um dos maiores grinds da platina. Trabalhe com checklist por bioma e avance com calma para não repetir regiões à toa.",
+      "trophy_code": "rdr2_zoologist",
+      "type": "Bronze"
+    },
+    {
+      "description": "Sobreviva a 18 ataques de urso e maté o urso a cada vez no modo História.",
+      "is_missable": 0,
+      "is_spoiler": 0,
+      "name": "Grin and Bear It",
+      "name_pt": "Ursopador",
+      "tip": "Use tônicos fortes, deixe o urso derrubar Arthur/John e finalize logo depois. Saves perto de spawns ajudam muito.",
+      "trophy_code": "rdr2_grin_and_bear_it",
+      "type": "Bronze"
+    },
+    {
+      "description": "Alcance o vínculo máximo com um cavalo.",
+      "is_missable": 0,
+      "is_spoiler": 0,
+      "name": "Trusty Steed",
+      "name_pt": "Corcel Fiel",
+      "tip": "Sai naturalmente com uso constante, alimentação e escovação.",
+      "trophy_code": "rdr2_trusty_steed",
+      "type": "Bronze"
+    },
+    {
+      "description": "Pesque um peixe com pelo menos 7,7 kg.",
+      "is_missable": 0,
+      "is_spoiler": 0,
+      "name": "It was THIS Big!",
+      "name_pt": "",
+      "tip": "Procure peixes grandes em regiões de água profunda e use isca adequada para acelerar a tentativa.",
+      "trophy_code": "rdr2_broken_and_entering",
+      "type": "Bronze"
+    },
+    {
+      "description": "Melhore cada componente disponível de uma única arma curta ou longa.",
+      "is_missable": 0,
+      "is_spoiler": 0,
+      "name": "Locked and Loaded",
+      "name_pt": "Aprimorado para Matar",
+      "tip": "Escolha uma arma barata e complete todos os upgrades no Gunsmith. Não precisa melhorar várias armas.",
+      "trophy_code": "rdr2_locked_and_loaded",
+      "type": "Bronze"
+    },
+    {
+      "description": "Red Dead Online: crie 20 itens, excluindo munição.",
+      "is_missable": 0,
+      "is_spoiler": 0,
+      "name": "Master Craftsman",
+      "name_pt": "Mestre Artesão",
+      "tip": "Conte comida, tônicos e receitas simples. Esse troféu pertence ao Red Dead Online, não ao modo História.",
+      "trophy_code": "rdr2_master_craftsman",
+      "type": "Bronze"
+    },
+    {
+      "description": "Red Dead Online: complete a introdução.",
+      "is_missable": 0,
+      "is_spoiler": 0,
+      "name": "Breakout",
+      "name_pt": "Fuga",
+      "tip": "Sai naturalmente ao começar o online.",
+      "trophy_code": "rdr2_breakout",
+      "type": "Bronze"
+    },
+    {
+      "description": "Red Dead Online: participe de uma Série.",
+      "is_missable": 0,
+      "is_spoiler": 0,
+      "name": "Series Major",
+      "name_pt": "Mestre em Série",
+      "tip": "Basta entrar e concluir a atividade.",
+      "trophy_code": "rdr2_series_major",
+      "type": "Bronze"
+    },
+    {
+      "description": "Red Dead Online: alcance o Rank 10.",
+      "is_missable": 0,
+      "is_spoiler": 0,
+      "name": "Getting Started",
+      "name_pt": "",
+      "tip": "Sai naturalmente enquanto você libera as primeiras atividades e entende a economia do online.",
+      "trophy_code": "rdr2_grabbed_started",
+      "type": "Bronze"
+    },
+    {
+      "description": "Red Dead Online: jogue 5 Free Roam Events.",
+      "is_missable": 0,
+      "is_spoiler": 0,
+      "name": "Eventful",
+      "name_pt": "Agenda Cheia",
+      "tip": "Aceite convites quando surgirem durante o grind de nível.",
+      "trophy_code": "rdr2_eventful",
+      "type": "Bronze"
+    },
+    {
+      "description": "Red Dead Online: obtenha 5 belt buckles de ouro em Awards.",
+      "is_missable": 0,
+      "is_spoiler": 0,
+      "name": "Buckle Up",
+      "name_pt": "Apertem os cintos",
+      "tip": "Escolha awards simples e repetíveis, como vendas, coleta e ações básicas de combate.",
+      "trophy_code": "rdr2_buckle_up",
+      "type": "Bronze"
+    },
+    {
+      "description": "Red Dead Online: venda 20 itens ao Butcher.",
+      "is_missable": 0,
+      "is_spoiler": 0,
+      "name": "Butchered",
+      "name_pt": "Em Pedaços",
+      "tip": "Acumule carne, peles e partes de animais durante o grind.",
+      "trophy_code": "rdr2_butchered",
+      "type": "Bronze"
+    },
+    {
+      "description": "Red Dead Online: alcance o Rank 50.",
+      "is_missable": 0,
+      "is_spoiler": 0,
+      "name": "Notorious",
+      "name_pt": "Notório",
+      "tip": "É o maior grind do online. Faça missões, eventos e streaks de XP sem desperdiçar dinheiro no início.",
+      "trophy_code": "rdr2_notorious",
+      "type": "Ouro"
+    },
+    {
+      "description": "Red Dead Online: complete uma Free Roam mission como parte de uma Posse com pelo menos 2 membros.",
+      "is_missable": 0,
+      "is_spoiler": 0,
+      "name": "Strength in Numbers",
+      "name_pt": "Unidos Venceremos",
+      "tip": "Combine com amigos ou matchmaking/social.",
+      "trophy_code": "rdr2_strength_in_numbers",
+      "type": "Bronze"
+    },
+    {
+      "description": "Red Dead Online: possua 5 cavalos ao mesmo tempo.",
+      "is_missable": 0,
+      "is_spoiler": 0,
+      "name": "Horses for Courses",
+      "name_pt": "Cavalo para Cada Dia",
+      "tip": "Guarde dinheiro e compre slots/cavalos só quando o Rank e a economia permitirem. Não vale sair gastando cedo.",
+      "trophy_code": "rdr2_horses_for_courses",
+      "type": "Bronze"
+    },
+    {
+      "description": "Red Dead Online: compre 5 melhorias de acampamento.",
+      "is_missable": 0,
+      "is_spoiler": 0,
+      "name": "Home Comforts",
+      "name_pt": "Confortos do Lar",
+      "tip": "Também exige dinheiro sobrando. Planeje em conjunto com Posse Up e Horses for Courses.",
+      "trophy_code": "rdr2_home_comforts",
+      "type": "Bronze"
+    },
+    {
+      "description": "Red Dead Online: crie 25 peças de munição especial.",
+      "is_missable": 0,
+      "is_spoiler": 0,
+      "name": "Non-Regulation",
+      "name_pt": "Sem Regulação",
+      "tip": "Faça conforme desbloquear ingredientes e receitas.",
+      "trophy_code": "rdr2_non_regulation",
+      "type": "Bronze"
+    },
+    {
+      "description": "Red Dead Online: forme uma Posse permanente.",
+      "is_missable": 0,
+      "is_spoiler": 0,
+      "name": "Posse Up",
+      "name_pt": "Em Bando",
+      "tip": "Custa dinheiro. Deixe esse gasto para quando o online já estiver rendendo XP e dinheiro com mais consistência.",
+      "trophy_code": "rdr2_posse_up",
+      "type": "Bronze"
+    },
+    {
+      "description": "Red Dead Online: impeça com sucesso uma missão Free Roam de uma Posse rival.",
+      "is_missable": 0,
+      "is_spoiler": 0,
+      "name": "All's Fair",
+      "name_pt": "Vale Tudo",
+      "tip": "Segue sendo um dos troféus mais chatos do online. Em prática, costuma ser muito mais rápido combinar com outro jogador.",
+      "trophy_code": "rdr2_alls_fair",
+      "type": "Bronze"
+    },
+    {
+      "description": "Red Dead Online: aceite 10 Free Roam missions de personagens no mundo.",
+      "is_missable": 0,
+      "is_spoiler": 0,
+      "name": "Gun For Hire",
+      "name_pt": "Pistoleiro de Aluguel",
+      "tip": "Sai naturalmente enquanto sobe de nível.",
+      "trophy_code": "rdr2_gun_for_hire",
+      "type": "Bronze"
+    },
+    {
+      "description": "Red Dead Online: seja MVP 3 vezes em partidas com pelo menos 4 jogadores.",
+      "is_missable": 0,
+      "is_spoiler": 0,
+      "name": "The Real Deal",
+      "name_pt": "",
+      "tip": "Corridas e modos objetivos costumam ser a rota mais amigável. Entrar em playlist favorável reduz bastante o sofrimento.",
+      "trophy_code": "rdr2_master_major",
+      "type": "Bronze"
+    },
+    {
+      "description": "Red Dead Online: colete 25 ervas.",
+      "is_missable": 0,
+      "is_spoiler": 0,
+      "name": "Picked to Perfection",
+      "name_pt": "Colheita Perfeita",
+      "tip": "Muito simples e quase grátis. Resolva cedo enquanto explora o mapa e sobe de nível.",
+      "trophy_code": "rdr2_picked_to_perfection",
+      "type": "Bronze"
+    }
+  ]
+}

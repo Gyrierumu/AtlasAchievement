@@ -1,0 +1,641 @@
+{
+  "game": {
+    "avoid_if": "Evite se você quer uma platina de uma única campanha ou não gosta de repetir a história em New Game+.",
+    "before_you_start": "New Game+ é obrigatório. Não há online, coop, DLC obrigatória, dificuldade obrigatória ou perdíveis reais, mas a platina exige limpar mapa, atividades e troféus específicos.",
+    "best_for": "Ideal para quem quer uma platina curta, acessível e guiada por checklist, com campanha forte, mapa compacto e limpeza objetiva.",
+    "cleanup_advice": "Depois da campanha, use free roam, replay de missões e o app FNSM para fechar distritos, crimes, colecionáveis, bases, desafios, trajes, upgrades e troféus situacionais antes ou durante o New Game+.",
+    "cover_image": "https://cdn.cloudflare.steamstatic.com/steam/apps/1817190/library_600x900.jpg",
+    "coverage_level": "complete",
+    "created_at": "2026-05-09 19:53:30",
+    "difficulty": 2,
+    "difficulty_reason": "A dificuldade 2/10 vem de combate acessível, mapa pequeno, free roam pós-história, replay de missões e ausência de troféu de dificuldade.",
+    "dlc_scope": "DLC não é necessária para a platina da lista base. O guia cobre os 50 troféus base de PS4/PS5.",
+    "editorial_notes": "Lista base PS4/PS5 validada com 50 troféus. Guia usa nomes PT-BR quando há fonte brasileira confiável e preserva o nome original em inglês em trophyNameOriginal/name.",
+    "editorial_review_status": "verified",
+    "editorial_status": "published",
+    "first_run_advice": "Avance a história no ritmo normal, libere Manhattan, aprenda Venom Powers e camuflagem, faça atividades próximas e guarde recursos para trajes, mods, gadgets e habilidades.",
+    "grind_summary": "Grind leve de recursos, crimes, objetivos bônus e contadores de combate/furtividade. O New Game+ é obrigatório, mas curto se você focar a história.",
+    "guide_avoid": null,
+    "guide_best_moment": null,
+    "guide_dlc": null,
+    "guide_grind": null,
+    "guide_ideal": null,
+    "guide_online": null,
+    "guide_runs": null,
+    "image": "https://cdn.cloudflare.steamstatic.com/steam/apps/1817190/header.jpg",
+    "is_verified": 1,
+    "last_reviewed_at": "2026-05-24",
+    "missable": "Não há troféus perdíveis reais na lista base. A campanha tem free roam depois da história, atividades repetíveis e replay de missões para recuperar ações específicas.",
+    "missable_summary": "Sem perdíveis reais. Rhino Rodeo, Like a Rhino In A China Shop e outros troféus de missão podem exigir replay, mas não bloqueiam a platina definitivamente.",
+    "name": "Marvel’s Spider-Man: Miles Morales",
+    "online_summary": "Não há online obrigatório, coop, multiplayer, servidores ou PS+ para a platina.",
+    "quality_warnings": "[]",
+    "reviewed_by": "AtlasAchievement editorial",
+    "runs_summary": "Duas campanhas: uma primeira jogada para história, mapa, colecionáveis e atividades, seguida de New Game+ obrigatório para Plus Plus e habilidades restantes.",
+    "slug": "marvels-spider-man-miles-morales",
+    "time": "10-20h",
+    "time_bucket": "short",
+    "time_max_hours": 20,
+    "time_min_hours": 10,
+    "time_reason": "A faixa de 10-20 horas considera campanha, limpeza dos distritos, colecionáveis, atividades, troféus situacionais e uma segunda campanha objetiva em New Game+.",
+    "time_sort_hours": 10,
+    "updated_at": "2026-06-27 02:36:59",
+    "verification_note": "Guia revisado editorialmente para a lista base de Marvel’s Spider-Man: Miles Morales, com 50 troféus, New Game+ obrigatório, nomes PT-BR conferidos e rota sem DLC ou listas de outros jogos.",
+    "verification_status": "verified",
+    "walkthrough": null
+  },
+  "redirects": [],
+  "roadmaps": [
+    {
+      "content": "{\"title\":\"Avance a história e desbloqueie Manhattan\",\"focus\":\"História e exploração\",\"objective\":\"Concluir a campanha inicial enquanto aprende os poderes de Miles, libera atividades no mapa e coleta o que estiver no caminho.\",\"actions\":[\"Jogue a história no ritmo normal sem se preocupar em limpar todos os distritos de primeira.\",\"Aprenda a usar Venom Powers, camuflagem, gadgets e habilidades de travessia.\",\"Ative atividades do app FNSM, crimes, desafios e colecionáveis conforme forem surgindo.\",\"Pegue cápsulas do tempo, caches e recursos quando estiverem próximos da rota.\",\"Faça upgrades úteis para facilitar combate, stealth e travessia.\"],\"warning\":\"\",\"result\":\"Campanha encaminhada, mapa liberado e Miles preparado para a limpeza dos distritos.\"}",
+      "step_order": 1
+    },
+    {
+      "content": "{\"title\":\"Limpe distritos, colecionáveis e atividades\",\"focus\":\"Coleta e distritos\",\"objective\":\"Completar o mapa de Manhattan com colecionáveis, crimes, desafios, bases e atividades necessárias para a platina.\",\"actions\":[\"Complete cápsulas do tempo, cartões-postais, amostras de som e caches do Underground.\",\"Resolva crimes e atividades do app FNSM em cada distrito.\",\"Conclua laboratórios da Roxxon, esconderijos do Underground e desafios de treinamento.\",\"Use o mapa e o checklist para separar o que já foi feito em cada região.\",\"Aproveite o free roam pós-história para terminar qualquer distrito pendente.\"],\"warning\":\"\",\"result\":\"Mapa praticamente completo e a maior parte dos troféus de coleta e atividades resolvida.\"}",
+      "step_order": 2
+    },
+    {
+      "content": "{\"title\":\"Resolva troféus de combate e ações específicas\",\"focus\":\"Troféus específicos\",\"objective\":\"Buscar troféus ligados a técnicas, combos, stealth, habilidades e momentos específicos que podem não vir naturalmente.\",\"actions\":[\"Revise troféus de combate ligados a Venom Attacks, camuflagem, arremessos e finalizações.\",\"Use crimes, bases e replay de missões para repetir situações específicas.\",\"Faça troféus de missão como Rhino Rodeo e Like a Rhino In A China Shop sem marcá-los como perdíveis.\",\"Confira troféus de travessia, queda livre, teto e interações específicas.\",\"Abra o checklist e marque os troféus situacionais conforme forem concluídos.\"],\"warning\":\"Troféus de missão específica podem exigir replay da missão, mas não devem ser tratados como perdíveis se o jogo permite refazer o conteúdo.\",\"result\":\"Troféus situacionais e de combate encaminhados antes do New Game+.\"}",
+      "step_order": 3
+    },
+    {
+      "content": "{\"title\":\"Feche habilidades, trajes e upgrades\",\"focus\":\"Progressão\",\"objective\":\"Usar tokens e recursos para completar upgrades, trajes, mods e habilidades disponíveis antes da segunda campanha.\",\"actions\":[\"Compre habilidades disponíveis na primeira campanha.\",\"Desbloqueie trajes, mods de traje, mods de visor e gadgets necessários.\",\"Complete desafios com desempenho suficiente para obter recursos.\",\"Revise se ainda faltam tokens de atividades, bases, desafios ou crimes.\",\"Guarde o que depende de New Game+ para a próxima etapa.\"],\"warning\":\"\",\"result\":\"Miles fortalecido, recursos usados e progresso preparado para fechar os requisitos de New Game+.\"}",
+      "step_order": 4
+    },
+    {
+      "content": "{\"title\":\"Complete o New Game+ obrigatório\",\"focus\":\"New Game+\",\"objective\":\"Finalizar a campanha em New Game+ para liberar os troféus e habilidades restantes exigidos pela platina.\",\"actions\":[\"Inicie New Game+ após concluir a campanha principal.\",\"Avance a história novamente focando apenas no que ainda falta para a platina.\",\"Compre as habilidades exclusivas de New Game+ necessárias para Just the Beginning.\",\"Use a experiência da primeira campanha para acelerar chefes e missões principais.\",\"Finalize o New Game+ para concluir Plus Plus.\"],\"warning\":\"Não trate a platina como uma única campanha; New Game+ é obrigatório.\",\"result\":\"New Game+ concluído, habilidades fechadas e principais requisitos finais liberados.\"}",
+      "step_order": 5
+    },
+    {
+      "content": "{\"title\":\"Faça o cleanup final da platina\",\"focus\":\"Cleanup\",\"objective\":\"Revisar qualquer pendência restante da lista base e garantir que o guia não marque perdíveis incorretamente.\",\"actions\":[\"Abra o checklist e revise os troféus restantes.\",\"Use free roam, replay de missões ou atividades do mapa para terminar pendências.\",\"Confirme que Like a Rhino In A China Shop e Rhino Rodeo não estão marcados como perdíveis.\",\"Confirme que a platina Be Yourself não está marcada como perdível.\",\"Revise se online, coop, DLC e perdíveis continuam como false/zero.\"],\"warning\":\"\",\"result\":\"Todos os requisitos da platina base concluídos.\"}",
+      "step_order": 6
+    }
+  ],
+  "schemaVersion": 1,
+  "seedExtras": {
+    "aliases": [],
+    "attentionPoints": [],
+    "checklist": [],
+    "faq": [
+      {
+        "answer": "Não. A platina da lista base é offline e não exige servidores, multiplayer, ranking online ou PS+.",
+        "question": "A platina tem online?"
+      },
+      {
+        "answer": "Não. A lista é single-player e não tem coop obrigatório.",
+        "question": "Precisa de coop?"
+      },
+      {
+        "answer": "Não. O guia cobre os 50 troféus da lista base de PS4/PS5; DLC não é necessária para a platina.",
+        "question": "Precisa de DLC?"
+      },
+      {
+        "answer": "Não há perdíveis reais. Missões, atividades e situações específicas podem ser refeitas, então o risco é retrabalho, não perda definitiva.",
+        "question": "Tem troféus perdíveis?"
+      },
+      {
+        "answer": "Sim. New Game+ é obrigatório para concluir Plus Plus e comprar habilidades restantes necessárias para Just the Beginning.",
+        "question": "New Game+ é obrigatório?"
+      },
+      {
+        "answer": "Sim. Após a campanha, você pode continuar em Manhattan para limpar distritos, colecionáveis, crimes, app FNSM e troféus situacionais.",
+        "question": "Dá para continuar em free roam depois da história?"
+      },
+      {
+        "answer": "Sim. Use replay de missões quando precisar recuperar ações específicas ou repetir momentos como o shopping com Rhino.",
+        "question": "Dá para repetir missões?"
+      },
+      {
+        "answer": "Não. Ele é ligado à história e pode ser recuperado por replay de missão ou em New Game+ se necessário.",
+        "question": "Rhino Rodeo é perdível?"
+      },
+      {
+        "answer": "Não. Ele exige atenção na sequência do shopping, mas pode ser repetido por replay de missão ou em New Game+.",
+        "question": "Like a Rhino In A China Shop é perdível?"
+      },
+      {
+        "answer": "A estimativa editorial é de 10 a 20 horas, variando conforme cleanup, recursos, crimes e ritmo no New Game+.",
+        "question": "Quanto tempo leva a platina?"
+      },
+      {
+        "answer": "Não. A dificuldade não afeta a platina; jogue em uma configuração confortável nas duas campanhas.",
+        "question": "A dificuldade afeta troféus?"
+      },
+      {
+        "answer": "História, New Game+, 100% dos distritos, app FNSM, crimes, cápsulas do tempo, cartões-postais, amostras de som, caches do Underground, laboratórios Roxxon, esconderijos Underground, desafios, trajes, mods, habilidades e troféus de combate.",
+        "question": "Quais atividades contam para a platina?"
+      }
+    ],
+    "note": "Campos exportados para auditoria. O SQLite atual nao possui colunas nativas para todos esses extras; a importacao preserva o que o banco suporta.",
+    "quickDecision": null,
+    "seo": {
+      "description": "Roadmap completo da platina de Marvel’s Spider-Man: Miles Morales, com New Game+, colecionáveis, atividades do mapa, troféus de combate, checklist e dicas para concluir tudo sem perder tempo.",
+      "keywords": "Marvel’s Spider-Man Miles Morales troféus, Marvel’s Spider-Man Miles Morales platina, Miles Morales guia de troféus, Miles Morales roadmap, Miles Morales New Game+, Miles Morales checklist, Miles Morales colecionáveis",
+      "title": "Marvel’s Spider-Man: Miles Morales: guia de troféus e platina"
+    },
+    "tags": []
+  },
+  "slug": "marvels-spider-man-miles-morales",
+  "trophies": [
+    {
+      "description": "Conquiste todos os troféus da lista base de Marvel’s Spider-Man: Miles Morales.",
+      "is_missable": 0,
+      "is_spoiler": 0,
+      "name": "Be Yourself",
+      "name_pt": "Seja Você Mesmo",
+      "tip": "Libera ao concluir os outros 49 troféus. A lista exige New Game+, 100% dos distritos, colecionáveis, Spider-Treino, crimes, pedidos do app, trajes, habilidades e ações específicas.",
+      "trophy_code": "msmm_be_yourself",
+      "type": "Platina"
+    },
+    {
+      "description": "Desbloqueie todas as habilidades do Miles.",
+      "is_missable": 0,
+      "is_spoiler": 0,
+      "name": "Just the Beginning",
+      "name_pt": "Apenas o Começo",
+      "tip": "Exige as habilidades compradas com pontos, as habilidades liberadas pelo Spider-Treino e as habilidades restantes do New Game+. Combine com Plus Plus e não ignore os nove treinos.",
+      "trophy_code": "msmm_just_the_beginning",
+      "type": "Ouro"
+    },
+    {
+      "description": "Alcance 100% de conclusão em todos os distritos.",
+      "is_missable": 0,
+      "is_spoiler": 0,
+      "name": "A New Home",
+      "name_pt": "Um Novo Lar",
+      "tip": "Feche atividades de distrito, bases, pedidos, crimes, colecionáveis e pendências do mapa. Não é apenas coletável; trate como limpeza geral do mapa. Cartões-postais só aparecem após a campanha.",
+      "trophy_code": "msmm_a_new_home",
+      "type": "Ouro"
+    },
+    {
+      "description": "Colete todas as Cápsulas do Tempo.",
+      "is_missable": 0,
+      "is_spoiler": 0,
+      "name": "Urban Explorers",
+      "name_pt": "Exploradores Urbanos",
+      "tip": "Depois da primeira cápsula, siga os ícones no mapa e colete as 16. Pode ficar para a limpeza final e conta para o 100% dos distritos.",
+      "trophy_code": "msmm_urban_explorers",
+      "type": "Prata"
+    },
+    {
+      "description": "Colete todos os Cartões-Postais.",
+      "is_missable": 0,
+      "is_spoiler": 0,
+      "name": "Memory Lane",
+      "name_pt": "Caminho da Memória",
+      "tip": "Disponível após concluir a campanha. Volte ao apartamento do Miles para iniciar a cadeia e siga as pistas até o último cartão.",
+      "trophy_code": "msmm_memory_lane",
+      "type": "Prata"
+    },
+    {
+      "description": "Abra todas as Reservas do Underground.",
+      "is_missable": 0,
+      "is_spoiler": 0,
+      "name": "Salvager",
+      "name_pt": "Sucateiro",
+      "tip": "Use o mapa e o pulso de varredura para achar as reservas. Algumas ficam dentro de Laboratórios da Roxxon e Esconderijos do Underground; pegue-as antes de sair ou repita a base.",
+      "trophy_code": "msmm_salvager",
+      "type": "Prata"
+    },
+    {
+      "description": "Desative todos os Laboratórios da Roxxon.",
+      "is_missable": 0,
+      "is_spoiler": 0,
+      "name": "Under Their Noses",
+      "name_pt": "Debaixo do Nariz Deles",
+      "tip": "Complete todos os laboratórios quando forem liberados. Aproveite para farmar abates do teto/parede, camuflagem, Venom e pegar a Reserva do Underground dentro de cada local.",
+      "trophy_code": "msmm_under_their_noses",
+      "type": "Prata"
+    },
+    {
+      "description": "Desative todos os Esconderijos do Underground.",
+      "is_missable": 0,
+      "is_spoiler": 0,
+      "name": "Underground Undone",
+      "name_pt": "Underground Desfeito",
+      "tip": "Complete todos os esconderijos no mapa. Eles são ótimos para base sem detecção, abates furtivos e Reservas do Underground internas.",
+      "trophy_code": "msmm_underground_undone",
+      "type": "Prata"
+    },
+    {
+      "description": "Adquira todos os trajes.",
+      "is_missable": 0,
+      "is_spoiler": 0,
+      "name": "Ready for Anything",
+      "name_pt": "Pronto Para Tudo",
+      "tip": "Guarde recursos de atividades e fichas tecnológicas. Alguns trajes dependem de missões/atividades e pelo menos um fica ligado ao New Game+, então este troféu não fecha em uma única jogada comum.",
+      "trophy_code": "msmm_ready_for_anything",
+      "type": "Prata"
+    },
+    {
+      "description": "Desvende uma conspiração criminosa no Harlem.",
+      "is_missable": 0,
+      "is_spoiler": 0,
+      "name": "Come at the King",
+      "name_pt": "Enfrente o Rei",
+      "tip": "Complete a cadeia de missões secundárias do Harlem pelo mapa/app até concluir a missão final. Ela também contribui para o 100% dos distritos.",
+      "trophy_code": "msmm_come_at_the_king",
+      "type": "Prata"
+    },
+    {
+      "description": "Complete uma base inimiga sem ser detectado.",
+      "is_missable": 0,
+      "is_spoiler": 0,
+      "name": "Never Saw It Coming",
+      "name_pt": "Nem Viu Chegando",
+      "tip": "Faça em Laboratório da Roxxon ou Esconderijo do Underground. Use camuflagem, análise de alvo seguro, teias e Minas Remotas. Se for visto, repita a base depois.",
+      "trophy_code": "msmm_never_saw_it_coming",
+      "type": "Prata"
+    },
+    {
+      "description": "Faça um combo de 100 golpes.",
+      "is_missable": 0,
+      "is_spoiler": 0,
+      "name": "100x Combo!!!",
+      "name_pt": "Combo de 100x!!!",
+      "tip": "Tente em uma base com muitos inimigos ou no New Game+. Dificuldade baixa ajuda a manter o combo; esquive, use ataques aéreos e não finalize o encontro rápido demais.",
+      "trophy_code": "msmm_100x_combo",
+      "type": "Prata"
+    },
+    {
+      "description": "Colete todas as Amostras de Som e recrie o Davis Brothers Mix.",
+      "is_missable": 0,
+      "is_spoiler": 0,
+      "name": "Deep Cuts",
+      "name_pt": "Cortes Profundos",
+      "tip": "As amostras aparecem após progresso de história com o Prowler. Use as pistas sonoras por distrito e conclua a mixagem final depois de coletar todas.",
+      "trophy_code": "msmm_deep_cuts",
+      "type": "Prata"
+    },
+    {
+      "description": "Atinja Espetacular ou melhor em um desafio de Travessia do Spider-Treino.",
+      "is_missable": 0,
+      "is_spoiler": 0,
+      "name": "Launch, Swing and Dive",
+      "name_pt": "Lançar, Balançar e Mergulhar",
+      "tip": "Escolha o desafio de travessia mais confortável, memorize a rota e refaça até bater o tempo. Pode ser feito a qualquer momento após liberar Spider-Treino.",
+      "trophy_code": "msmm_launch_swing_and_dive",
+      "type": "Bronze"
+    },
+    {
+      "description": "Atinja Espetacular ou melhor em um desafio de Combate do Spider-Treino.",
+      "is_missable": 0,
+      "is_spoiler": 0,
+      "name": "Punching Pixels",
+      "name_pt": "Socando Pixels",
+      "tip": "Use Venom para encerrar ondas rápido, mantenha variedade de ataques e evite dano. Repetir o desafio não tem penalidade.",
+      "trophy_code": "msmm_punching_pixels",
+      "type": "Bronze"
+    },
+    {
+      "description": "Atinja Espetacular ou melhor em um desafio de Furtividade do Spider-Treino.",
+      "is_missable": 0,
+      "is_spoiler": 0,
+      "name": "Dodging Light",
+      "name_pt": "Desviando da Luz",
+      "tip": "Memorize a ordem de alvos seguros, use camuflagem para atravessar áreas abertas e reinicie se a rota ficar lenta.",
+      "trophy_code": "msmm_dodging_light",
+      "type": "Bronze"
+    },
+    {
+      "description": "Complete todos os desafios do Spider-Treino uma vez.",
+      "is_missable": 0,
+      "is_spoiler": 0,
+      "name": "Spider-Training: Complete",
+      "name_pt": "Spider-Treino: Concluído",
+      "tip": "São nove desafios no total, divididos entre Travessia, Combate e Furtividade. A nota não importa para este troféu, mas as habilidades ligadas aos treinos contam para Só o Começo.",
+      "trophy_code": "msmm_spider_training_complete",
+      "type": "Bronze"
+    },
+    {
+      "description": "Complete o Teste Final.",
+      "is_missable": 0,
+      "is_spoiler": 0,
+      "name": "Pete's First Villain",
+      "name_pt": "Primeiro Vilão do Pete",
+      "tip": "Depois de concluir os nove desafios do Spider-Treino, aceite a missão liberada e vença o confronto virtual final do Peter.",
+      "trophy_code": "msmm_petes_first_villain",
+      "type": "Bronze"
+    },
+    {
+      "description": "Crie 10 aprimoramentos.",
+      "is_missable": 0,
+      "is_spoiler": 0,
+      "name": "Kitbash",
+      "name_pt": "Modelismo",
+      "tip": "Gaste fichas de atividade e peças tecnológicas em aprimoramentos de dispositivos. Há recursos suficientes, mas priorize trajes e habilidades se ainda estiver organizando a primeira jogada.",
+      "trophy_code": "msmm_kitbash",
+      "type": "Bronze"
+    },
+    {
+      "description": "Monte no Rhino durante a sequência do shopping.",
+      "is_missable": 0,
+      "is_spoiler": 1,
+      "name": "Rhino Rodeo",
+      "name_pt": "Rodeio do Rhino",
+      "tip": "Troféu automático da história no início da campanha. Aproveite essa missão para mirar também Como um Rhino em uma Loja de Porcelana; se perder, repita a missão.",
+      "trophy_code": "msmm_rhino_rodeo",
+      "type": "Bronze"
+    },
+    {
+      "description": "Mantenha a ponte unida durante a campanha.",
+      "is_missable": 0,
+      "is_spoiler": 1,
+      "name": "Hanging By A Thread",
+      "name_pt": "Por um Fio",
+      "tip": "Troféu automático de história. Continue a missão principal; não exige ação extra além de concluir a sequência.",
+      "trophy_code": "msmm_hanging_by_a_thread",
+      "type": "Bronze"
+    },
+    {
+      "description": "Investigue o laboratório subterrâneo da Roxxon.",
+      "is_missable": 0,
+      "is_spoiler": 1,
+      "name": "The Core of the Problem",
+      "name_pt": "O Núcleo do Problema",
+      "tip": "Troféu automático de campanha ligado à investigação da Roxxon. Marque como história e spoiler.",
+      "trophy_code": "msmm_the_core_of_the_problem",
+      "type": "Bronze"
+    },
+    {
+      "description": "Complete a sequência do cofre em Underground Undercover.",
+      "is_missable": 0,
+      "is_spoiler": 1,
+      "name": "True Deception",
+      "name_pt": "Verdadeira Enganação",
+      "tip": "Troféu automático de missão avançada da história. Pode ser recuperado por repetição de missão se necessário para conferir pendências.",
+      "trophy_code": "msmm_true_deception",
+      "type": "Bronze"
+    },
+    {
+      "description": "Faça os trens voltarem a funcionar.",
+      "is_missable": 0,
+      "is_spoiler": 1,
+      "name": "The Harlem Express",
+      "name_pt": "O Expresso do Harlem",
+      "tip": "Troféu automático de história em Harlem. Avance a campanha principal.",
+      "trophy_code": "msmm_the_harlem_express",
+      "type": "Bronze"
+    },
+    {
+      "description": "Persiga a Tinkerer pela cidade.",
+      "is_missable": 0,
+      "is_spoiler": 1,
+      "name": "Veloci-Skates",
+      "name_pt": "Velocipatins",
+      "tip": "Troféu automático de história ligado à perseguição da Tinkerer. Marque como spoiler.",
+      "trophy_code": "msmm_veloci_skates",
+      "type": "Bronze"
+    },
+    {
+      "description": "Reviva o passado de Miles e Phin.",
+      "is_missable": 0,
+      "is_spoiler": 1,
+      "name": "Shared History",
+      "name_pt": "História Compartilhada",
+      "tip": "Troféu automático de uma missão narrativa avançada. Durante essa parte, procure também o minijogo do foguete para Espírito Competitivo.",
+      "trophy_code": "msmm_shared_history",
+      "type": "Bronze"
+    },
+    {
+      "description": "Derrote o Rhino da Roxxon.",
+      "is_missable": 0,
+      "is_spoiler": 1,
+      "name": "Exploding Bulldozer",
+      "name_pt": "Trator Explosivo",
+      "tip": "Troféu de chefe da campanha. Use esquivas, ataques Venom e objetos do cenário conforme a luta ensina.",
+      "trophy_code": "msmm_exploding_bulldozer",
+      "type": "Bronze"
+    },
+    {
+      "description": "Derrote o Prowler.",
+      "is_missable": 0,
+      "is_spoiler": 1,
+      "name": "Family Drama",
+      "name_pt": "Drama Familiar",
+      "tip": "Troféu de chefe e evento narrativo. Use Venom para quebrar vantagem do inimigo e mantenha atenção aos ataques surpresa.",
+      "trophy_code": "msmm_family_drama",
+      "type": "Bronze"
+    },
+    {
+      "description": "Salve Harlem.",
+      "is_missable": 0,
+      "is_spoiler": 1,
+      "name": "Ultimate Sacrifice",
+      "name_pt": "O Grande Sacrifício",
+      "tip": "Troféu automático ao concluir a campanha principal. Depois dele, cartões-postais e feed social ficam no radar da limpeza final.",
+      "trophy_code": "msmm_ultimate_sacrifice",
+      "type": "Bronze"
+    },
+    {
+      "description": "Faça 25 abates do teto.",
+      "is_missable": 0,
+      "is_spoiler": 0,
+      "name": "From the Rafters",
+      "name_pt": "Ataque de Cima",
+      "tip": "Farmável em bases e replays. Fique no teto, analise se o alvo está seguro e faça abates furtivos antes de alertar a área.",
+      "trophy_code": "msmm_from_the_rafters",
+      "type": "Bronze"
+    },
+    {
+      "description": "Faça 25 abates da parede.",
+      "is_missable": 0,
+      "is_spoiler": 0,
+      "name": "Climbing the Walls",
+      "name_pt": "Subindo pelas Paredes",
+      "tip": "Use paredes em Laboratórios da Roxxon, Esconderijos do Underground ou crimes. Aproxime inimigos da parede com distrações se necessário.",
+      "trophy_code": "msmm_climbing_the_walls",
+      "type": "Bronze"
+    },
+    {
+      "description": "Derrote 50 inimigos enquanto estiver camuflado.",
+      "is_missable": 0,
+      "is_spoiler": 0,
+      "name": "Invisible Spider",
+      "name_pt": "Spider Invisível",
+      "tip": "Ative camuflagem antes do golpe final. Vale em furtividade e combate aberto; bases, crimes e replays são os melhores locais para acumular.",
+      "trophy_code": "msmm_invisible_spider",
+      "type": "Bronze"
+    },
+    {
+      "description": "Derrote 100 inimigos com ataques Venom.",
+      "is_missable": 0,
+      "is_spoiler": 0,
+      "name": "Overcharge",
+      "name_pt": "Sobrecarga",
+      "tip": "Use ataques Venom sempre que a barra encher durante história, bases e crimes. Não deixe para farmar tudo no fim; ele vem naturalmente se você usar o kit do Miles.",
+      "trophy_code": "msmm_overcharge",
+      "type": "Bronze"
+    },
+    {
+      "description": "Use Pulo Venom e depois Impulso Venom no mesmo inimigo.",
+      "is_missable": 0,
+      "is_spoiler": 0,
+      "name": "Up and Over",
+      "name_pt": "Pula e Vai",
+      "tip": "Após liberar as duas habilidades, use Pulo Venom para lançar o alvo e, antes de ele cair, aplique Impulso Venom no mesmo inimigo. Pode ser feito em crimes ou bases.",
+      "trophy_code": "msmm_up_and_over",
+      "type": "Bronze"
+    },
+    {
+      "description": "Use Impulso Venom para arremessar um inimigo contra um grupo de três ou mais.",
+      "is_missable": 0,
+      "is_spoiler": 0,
+      "name": "From Downtown",
+      "name_pt": "Desde Downtown",
+      "tip": "Espere inimigos se agruparem em base/crime e use Impulso Venom mirando o alvo em direção ao grupo. Minas gravitacionais/distrações ajudam no posicionamento.",
+      "trophy_code": "msmm_from_downtown",
+      "type": "Bronze"
+    },
+    {
+      "description": "Quebre 15 objetos enquanto conduz o Rhino pelo shopping.",
+      "is_missable": 0,
+      "is_spoiler": 0,
+      "name": "Like a Rhino In A China Shop",
+      "name_pt": "Como um Rhino em uma Loja de Porcelana",
+      "tip": "Na primeira missão, durante a sequência do shopping, mire vitrines, mesas e objetos quebráveis em vez de desviar. Se perder, repita a missão ou faça no New Game+.",
+      "trophy_code": "msmm_like_a_rhino_in_a_china_shop",
+      "type": "Bronze"
+    },
+    {
+      "description": "Vença Phin no minijogo de lançamento de foguete.",
+      "is_missable": 0,
+      "is_spoiler": 1,
+      "name": "Competitive Spirit",
+      "name_pt": "Espírito Competitivo",
+      "tip": "Durante o flashback no Science Center, procure os foguetes na área de exposição e vença o minijogo. Se Phin ganhar ou você passar batido, repita a missão.",
+      "trophy_code": "msmm_competitive_spirit",
+      "type": "Bronze"
+    },
+    {
+      "description": "Preste homenagem a uma lenda no Upper West Side.",
+      "is_missable": 0,
+      "is_spoiler": 0,
+      "name": "Best Fries in Town",
+      "name_pt": "Melhores Fritas da Cidade",
+      "tip": "Vá até a homenagem a Stan Lee no Upper West Side e interaja. É um troféu de exploração simples, bom para a limpeza final.",
+      "trophy_code": "msmm_best_fries_in_town",
+      "type": "Bronze"
+    },
+    {
+      "description": "Aplique um sticker e personalize a iluminação no Modo Foto.",
+      "is_missable": 0,
+      "is_spoiler": 0,
+      "name": "JJJ Would Be Proud",
+      "name_pt": "O JJJ Ficaria Orgulhoso",
+      "tip": "Abra o Modo Foto pelo menu, adicione um sticker e altere qualquer opção de iluminação. Pode ser feito a qualquer momento no mundo livre.",
+      "trophy_code": "msmm_jjj_would_be_proud",
+      "type": "Bronze"
+    },
+    {
+      "description": "Derrote 50 inimigos com Minas Remotas.",
+      "is_missable": 0,
+      "is_spoiler": 0,
+      "name": "Trapped",
+      "name_pt": "Preso",
+      "tip": "Use Minas Remotas em bases, crimes e furtividade. Elas funcionam bem para separar grupos e ainda ajudam em Ninguém Viu.",
+      "trophy_code": "msmm_trapped",
+      "type": "Bronze"
+    },
+    {
+      "description": "Conclua todos os pedidos do app SMAV/FNSM.",
+      "is_missable": 0,
+      "is_spoiler": 0,
+      "name": "Five Star Review",
+      "name_pt": "Cinco Estrelas",
+      "tip": "Faça todos os pedidos do aplicativo quando ficarem disponíveis. Eles contam para progresso do mapa e ajudam com recursos para trajes/aprimoramentos.",
+      "trophy_code": "msmm_five_star_review",
+      "type": "Bronze"
+    },
+    {
+      "description": "Crie uma modificação de traje.",
+      "is_missable": 0,
+      "is_spoiler": 0,
+      "name": "Mod that Suit",
+      "name_pt": "Modifique o Traje",
+      "tip": "No menu de trajes, fabrique qualquer modificação de traje usando recursos. É simples e pode ser feito assim que o sistema estiver liberado.",
+      "trophy_code": "msmm_mod_that_suit",
+      "type": "Bronze"
+    },
+    {
+      "description": "Crie uma modificação de visor.",
+      "is_missable": 0,
+      "is_spoiler": 0,
+      "name": "Look with Better Eyes",
+      "name_pt": "Visão Melhorada",
+      "tip": "No menu de trajes, fabrique qualquer modificação de visor. Aproveite recursos de atividades e Reservas do Underground.",
+      "trophy_code": "msmm_look_with_better_eyes",
+      "type": "Bronze"
+    },
+    {
+      "description": "Preste homenagem no túmulo de Jefferson Davis em Harlem.",
+      "is_missable": 0,
+      "is_spoiler": 0,
+      "name": "Never Give Up",
+      "name_pt": "Nunca Desista",
+      "tip": "Vá ao cemitério no norte de Harlem e interaja com o túmulo. É fácil esquecer, então deixe marcado na limpeza final.",
+      "trophy_code": "msmm_never_give_up",
+      "type": "Bronze"
+    },
+    {
+      "description": "Receba o traje de presente do Pete.",
+      "is_missable": 0,
+      "is_spoiler": 0,
+      "name": "A Gift From Pete",
+      "name_pt": "Um Presente do Pete",
+      "tip": "Troféu automático no início da história ao receber o traje. Não exige ação extra.",
+      "trophy_code": "msmm_a_gift_from_pete",
+      "type": "Bronze"
+    },
+    {
+      "description": "Conclua todos os objetivos bônus de todos os tipos de crime.",
+      "is_missable": 0,
+      "is_spoiler": 0,
+      "name": "Crime Master",
+      "name_pt": "Mestre do Crime",
+      "tip": "Abra o app SMAV/FNSM e acompanhe o contador de objetivos bônus por tipo de crime. Eles não precisam ser feitos todos na mesma ocorrência; repita crimes pelo app até fechar tudo.",
+      "trophy_code": "msmm_crime_master",
+      "type": "Bronze"
+    },
+    {
+      "description": "Faça 100 abates furtivos.",
+      "is_missable": 0,
+      "is_spoiler": 0,
+      "name": "Nowhere to Hide",
+      "name_pt": "Não Há Onde se Esconder",
+      "tip": "Abates do teto, parede, poleiro e aproximação contam. Use bases e crimes repetíveis para acumular sem transformar isso em grind no fim.",
+      "trophy_code": "msmm_nowhere_to_hide",
+      "type": "Bronze"
+    },
+    {
+      "description": "Suba no barco abandonado no sul de Chinatown.",
+      "is_missable": 0,
+      "is_spoiler": 0,
+      "name": "I'm On A Boat",
+      "name_pt": "Tô num Barco",
+      "tip": "Procure o barco na orla sul de Chinatown, perto de uma Cápsula do Tempo. Suba nele para destravar o troféu.",
+      "trophy_code": "msmm_im_on_a_boat",
+      "type": "Bronze"
+    },
+    {
+      "description": "Role todo o feed social no fim da história.",
+      "is_missable": 0,
+      "is_spoiler": 0,
+      "name": "Socially Acceptable",
+      "name_pt": "Socialmente Aceitável",
+      "tip": "Após concluir a campanha, abra a aba social pelo menu/inventário e role até o fim da timeline. É simples, mas fácil de esquecer.",
+      "trophy_code": "msmm_socially_acceptable",
+      "type": "Bronze"
+    },
+    {
+      "description": "Conclua o jogo em New Game+.",
+      "is_missable": 0,
+      "is_spoiler": 0,
+      "name": "Plus Plus",
+      "name_pt": "Mais e Mais",
+      "tip": "Depois da primeira campanha, crie um save de New Game+ e termine a história novamente em qualquer dificuldade. Use essa jogada para fechar habilidades, traje restante e pendências finais.",
+      "trophy_code": "msmm_plus_plus",
+      "type": "Bronze"
+    }
+  ]
+}

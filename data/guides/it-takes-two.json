@@ -1,0 +1,455 @@
+{
+  "game": {
+    "avoid_if": "Evite se você não tem um segundo jogador ou não quer depender de coop para toda a platina.",
+    "before_you_start": "It Takes Two não pode ser platinado solo. Combine com outro jogador antes de começar; Friend’s Pass permite jogar junto, mas precisa revisão final se quem usa trial libera troféus.",
+    "best_for": "Ideal para quem quer uma platina coop acessível, criativa, divertida e com ótima variedade de mecânicas.",
+    "cleanup_advice": "Depois da campanha, use Chapter Select para voltar diretamente aos capítulos com troféus ou minigames pendentes. Alguns trechos podem ser longos, então vale pegar o máximo possível na primeira passagem.",
+    "cover_image": "https://cdn.cloudflare.steamstatic.com/steam/apps/1426210/library_600x900.jpg",
+    "coverage_level": "strong",
+    "created_at": "2026-05-09 19:53:54",
+    "difficulty": 3,
+    "difficulty_reason": "A platina é acessível, sem troféus de dificuldade e com Chapter Select; o principal requisito é ter um segundo jogador para toda a campanha.",
+    "dlc_scope": "Guia focado na lista base de It Takes Two.",
+    "editorial_notes": "",
+    "editorial_review_status": null,
+    "editorial_status": "published",
+    "first_run_advice": "Jogue com calma e explore cada capítulo com a dupla, procurando minigames e interações opcionais antes de avançar.",
+    "grind_summary": "O peso está em completar a história, encontrar os 25 minigames e limpar troféus específicos de capítulos.",
+    "guide_avoid": null,
+    "guide_best_moment": null,
+    "guide_dlc": null,
+    "guide_grind": null,
+    "guide_ideal": null,
+    "guide_online": null,
+    "guide_runs": null,
+    "image": "https://cdn.cloudflare.steamstatic.com/steam/apps/1426210/header.jpg",
+    "is_verified": 0,
+    "last_reviewed_at": "",
+    "missable": "Sem perdíveis definitivos por causa do Chapter Select, mas o jogo inteiro exige coop com 2 jogadores e vários troféus dependem de interações opcionais por capítulo.",
+    "missable_summary": "Não há perdíveis definitivos: após terminar a história, use Chapter Select para voltar a capítulos com minigames ou interações opcionais pendentes.",
+    "name": "It Takes Two",
+    "online_summary": "Não há troféus online obrigatórios tradicionais, mas a platina exige 2 jogadores do início ao fim. Pode ser feita em coop local ou online; PS+ só é necessário se a dupla jogar online. Friend’s Pass precisa validação se ambos quiserem troféus.",
+    "quality_warnings": "[]",
+    "reviewed_by": "",
+    "runs_summary": "Uma campanha coop completa com Chapter Select para limpar minigames e troféus específicos de capítulos.",
+    "slug": "it-takes-two",
+    "time": "11-15h",
+    "time_bucket": "short",
+    "time_max_hours": 15,
+    "time_min_hours": 11,
+    "time_reason": "A faixa de 11-15 horas considera campanha coop, 25 minigames e cleanup por Chapter Select.",
+    "time_sort_hours": 11,
+    "updated_at": "2026-06-27 02:36:59",
+    "verification_note": "Precisa revisão editorial final: coop obrigatório, Friend’s Pass/trial e desbloqueio de troféus para os dois jogadores devem ser validados manualmente.",
+    "verification_status": "review",
+    "walkthrough": null
+  },
+  "redirects": [],
+  "roadmaps": [
+    {
+      "content": "{\"title\":\"Comece a campanha em coop\",\"focus\":\"\",\"objective\":\"Jogue a campanha em coop com 2 jogadores, local ou online, avançando naturalmente pelos capítulos e aprendendo as mecânicas de Cody e May.\",\"actions\":[],\"warning\":\"\",\"result\":\"\"}",
+      "step_order": 1
+    },
+    {
+      "content": "{\"title\":\"Em cada capítulo, procure os minigames e tente os troféus esp...\",\"focus\":\"\",\"objective\":\"Em cada capítulo, procure os minigames e tente os troféus específicos de área antes de seguir para o próximo trecho.\",\"actions\":[],\"warning\":\"\",\"result\":\"\"}",
+      "step_order": 2
+    },
+    {
+      "content": "{\"title\":\"Limpe coletáveis por seleção de capítulos\",\"focus\":\"\",\"objective\":\"Complete a história para desbloquear It Took Two e manter Chapter Select liberado para cleanup.\",\"actions\":[],\"warning\":\"\",\"result\":\"\"}",
+      "step_order": 3
+    },
+    {
+      "content": "{\"title\":\"Limpe coletáveis por seleção de capítulos\",\"focus\":\"\",\"objective\":\"Use Chapter Select para voltar aos capítulos com minigames ou troféus específicos pendentes, acompanhando os 25 minigames no seletor.\",\"actions\":[],\"warning\":\"\",\"result\":\"\"}",
+      "step_order": 4
+    },
+    {
+      "content": "{\"title\":\"Colete os 25 minigames\",\"focus\":\"\",\"objective\":\"Colete/jogue todos os 25 minigames para Minigame Megalomania e revise capítulos como The Tree, Rose’s Room, Cuckoo Clock, Snow Globe, Garden e The Attic.\",\"actions\":[],\"warning\":\"\",\"result\":\"\"}",
+      "step_order": 5
+    },
+    {
+      "content": "{\"title\":\"Limpe troféus específicos restantes\",\"focus\":\"\",\"objective\":\"Limpe troféus específicos restantes, como Platforming Prodigy, Force Triangulated, Mood Swing, Something Fishy e Meditation Maestro, até desbloquear Power Couple.\",\"actions\":[],\"warning\":\"\",\"result\":\"\"}",
+      "step_order": 6
+    }
+  ],
+  "schemaVersion": 1,
+  "seedExtras": {
+    "aliases": [],
+    "attentionPoints": [
+      {
+        "detail": "It Takes Two não possui modo solo. A platina exige uma segunda pessoa do começo ao fim.",
+        "tags": [
+          "Coop obrigatório",
+          "Dois jogadores"
+        ],
+        "title": "Coop obrigatório"
+      },
+      {
+        "detail": "A platina pode ser feita em coop local, então onlineRequired deve continuar false. O online é apenas uma opção para jogar à distância.",
+        "tags": [
+          "Coop local",
+          "Sem online obrigatório"
+        ],
+        "title": "Online não obrigatório"
+      },
+      {
+        "detail": "O Friend’s Pass permite jogar online com outra pessoa que não tem o jogo completo, mas o guia não deve prometer troféus para a conta convidada sem confirmação atual da plataforma.",
+        "tags": [
+          "Friend’s Pass",
+          "Atenção"
+        ],
+        "title": "Friend’s Pass"
+      },
+      {
+        "detail": "A seleção de capítulos permite recuperar minijogos e troféus de ações específicas. Por isso, não há perdíveis reais.",
+        "tags": [
+          "Chapter Select",
+          "Cleanup"
+        ],
+        "title": "Seleção de capítulos"
+      },
+      {
+        "detail": "Há 25 minijogos. Use checklist por capítulo e jogue cada minijogo ao menos uma vez para garantir o registro.",
+        "tags": [
+          "Minijogos",
+          "Checklist"
+        ],
+        "title": "Minigame Megalomania"
+      },
+      {
+        "detail": "Alguns troféus exigem ação de Cody, May ou interação dos dois jogadores ao mesmo tempo. A dica do troféu deve deixar isso claro.",
+        "tags": [
+          "Cody",
+          "May"
+        ],
+        "title": "Cody/May"
+      },
+      {
+        "detail": "A dificuldade do jogo não afeta troféus. Desafios como Platforming Prodigy não devem inflar o filtro Dificuldade.",
+        "tags": [
+          "Sem dificuldade"
+        ],
+        "title": "Sem troféu de dificuldade"
+      },
+      {
+        "detail": "A platina usa apenas a lista base de 21 troféus e não exige DLC.",
+        "tags": [
+          "Sem DLC"
+        ],
+        "title": "Sem DLC"
+      }
+    ],
+    "checklist": [
+      "Conferir se o guia tem 21 troféus.",
+      "Conferir se Power Couple é a platina.",
+      "Conferir distribuição: 1 platina, 10 ouro, 0 prata, 10 bronze.",
+      "Conferir onlineRequired false.",
+      "Conferir coopRequired true.",
+      "Conferir dlcRequired false.",
+      "Conferir hasMissables false.",
+      "Conferir missableCount 0.",
+      "Conferir se nenhum troféu está marcado como perdível.",
+      "Conferir se nenhum troféu é marcado como online obrigatório.",
+      "Conferir se Minigame Megalomania destaca 25 minijogos.",
+      "Conferir se minijogos não são tratados como perdíveis.",
+      "Conferir se dificuldade não aparece como requisito de troféu.",
+      "Conferir se filtros não estão inflados por tags erradas.",
+      "Conferir se todos os troféus têm nome oficial em inglês como principal.",
+      "Conferir se todos têm PT-BR abaixo.",
+      "Conferir se descrições estão em português.",
+      "Conferir se não aparecem rótulos técnicos de nomes internos nem descrição provisória.",
+      "Conferir se textos em português têm acentos.",
+      "Conferir se roadmap está estruturado como array/objeto.",
+      "Conferir se roadmap não renderiza objeto bruto.",
+      "Conferir se roadmap não mostra nomes de campos internos.",
+      "Conferir FAQ, decisão rápida, SEO e pontos de atenção.",
+      "Conferir se página individual e catálogo exibem o mesmo status editorial.",
+      "Conferir se flags do topo batem com filtros do catálogo."
+    ],
+    "faq": [
+      {
+        "answer": "Não. A seleção de capítulos permite voltar para minijogos e ações específicas que ficaram para trás.",
+        "question": "It Takes Two tem troféus perdíveis?"
+      },
+      {
+        "answer": "Não. O jogo exige uma segunda pessoa durante toda a campanha.",
+        "question": "Dá para platinar It Takes Two sozinho?"
+      },
+      {
+        "answer": "Não obrigatoriamente. A platina pode ser feita em coop local. O online é uma opção para jogar com outra pessoa à distância.",
+        "question": "Precisa jogar online para platinar?"
+      },
+      {
+        "answer": "Para coop local, não. Para jogar online no PlayStation, a conta que joga online pode precisar dos requisitos de rede da plataforma. A platina em si não exige online se o coop local for usado.",
+        "question": "Precisa de PS Plus?"
+      },
+      {
+        "answer": "O Friend’s Pass permite jogar com outra pessoa que não tem o jogo completo, mas o guia não promete troféus para a conta convidada sem confirmação atual da plataforma. Para segurança, considere que a conta dona do jogo é a referência principal para a platina.",
+        "question": "Friend’s Pass dá troféus para a conta convidada?"
+      },
+      {
+        "answer": "Não. A platina usa apenas a lista base de 21 troféus.",
+        "question": "Precisa de DLC?"
+      },
+      {
+        "answer": "Em média, cerca de 11 a 15 horas, dependendo do ritmo da campanha e do cleanup dos minijogos.",
+        "question": "Quanto tempo leva para platinar?"
+      },
+      {
+        "answer": "São 25 minijogos. Todos devem ser encontrados e jogados ao menos uma vez para Minigame Megalomania.",
+        "question": "Quantos minijogos existem?"
+      },
+      {
+        "answer": "Não. It Takes Two não possui troféus dependentes de dificuldade selecionável.",
+        "question": "A dificuldade afeta troféus?"
+      },
+      {
+        "answer": "Ter uma segunda pessoa disponível para jogar tudo e manter checklist dos 25 minijogos.",
+        "question": "Qual é o maior cuidado da platina?"
+      }
+    ],
+    "note": "Campos exportados para auditoria. O SQLite atual nao possui colunas nativas para todos esses extras; a importacao preserva o que o banco suporta.",
+    "quickDecision": {
+      "difficulty": "Baixa.",
+      "dlc": "Não exige DLC.",
+      "mainAlert": "Coop obrigatório e checklist dos 25 minijogos.",
+      "onlineCoop": "Coop obrigatório; online não obrigatório se jogar em coop local.",
+      "risk": "Baixo. Não há perdíveis reais por causa da seleção de capítulos.",
+      "time": "Curto a médio, cerca de 11 a 15 horas.",
+      "worthIt": "Sim, especialmente para quem tem uma segunda pessoa para jogar a campanha inteira."
+    },
+    "seo": {
+      "description": "Guia de troféus de It Takes Two com roadmap da platina, tempo estimado, dificuldade, coop obrigatório, minijogos, seleção de capítulos, Friend’s Pass e dicas para os 21 troféus.",
+      "keywords": "It Takes Two troféus, It Takes Two platina, guia It Takes Two, It Takes Two PS4 troféus, It Takes Two PS5 troféus, Power Couple, Minigame Megalomania, Megalomania de minijogos, Friend’s Pass It Takes Two, It Takes Two coop",
+      "metaDescription": "Guia de troféus de It Takes Two com roadmap da platina, tempo estimado, dificuldade, coop obrigatório, minijogos, seleção de capítulos, Friend’s Pass e dicas para os 21 troféus.",
+      "ogDescription": "Roadmap da platina de It Takes Two com 21 troféus, coop obrigatório, 25 minijogos, seleção de capítulos e Friend’s Pass sem DLC.",
+      "ogTitle": "It Takes Two: Guia de Troféus e Platina",
+      "title": "It Takes Two: Guia de Troféus e Platina"
+    },
+    "tags": [
+      "It Takes Two",
+      "PS4",
+      "PS5",
+      "Platina",
+      "Coop obrigatório",
+      "Coop local",
+      "Online opcional",
+      "Sem DLC",
+      "Minijogos",
+      "Chapter Select",
+      "Friend’s Pass"
+    ]
+  },
+  "slug": "it-takes-two",
+  "trophies": [
+    {
+      "description": "You are unstoppable, nothing stands in your way!",
+      "is_missable": 0,
+      "is_spoiler": 0,
+      "name": "Power Couple",
+      "name_pt": "Casal Poderoso",
+      "tip": "Desbloqueie todos os outros troféus da lista base. A platina exige coop com 2 jogadores durante toda a campanha.",
+      "trophy_code": "it_takes_two_power_couple",
+      "type": "Platina"
+    },
+    {
+      "description": "You did it! CO-LLA-BO-RATION!",
+      "is_missable": 0,
+      "is_spoiler": 1,
+      "name": "It Took Two",
+      "name_pt": "Foram Necessários Dois",
+      "tip": "Complete a história em coop. Não há troféu de dificuldade, apenas termine a campanha com a dupla.",
+      "trophy_code": "it_takes_two_it_took_two",
+      "type": "Ouro"
+    },
+    {
+      "description": "All minigames found!",
+      "is_missable": 0,
+      "is_spoiler": 0,
+      "name": "Minigame Megalomania",
+      "name_pt": "Megalomania de Minigames",
+      "tip": "Encontre/jogue todos os 25 minigames. O Chapter Select mostra o que falta e permite cleanup depois da história.",
+      "trophy_code": "it_takes_two_minigame_megalomania",
+      "type": "Ouro"
+    },
+    {
+      "description": "It takes two to… torture.",
+      "is_missable": 0,
+      "is_spoiler": 0,
+      "name": "Fried Friendship",
+      "name_pt": "Amizade Frita",
+      "tip": "No capítulo The Tree, seção Captured, aperte o botão vermelho no caminho opcional antes de destruir todos os fechos da plataforma principal.",
+      "trophy_code": "it_takes_two_fried_friendship",
+      "type": "Bronze"
+    },
+    {
+      "description": "Self-inflicted paparazzi.",
+      "is_missable": 0,
+      "is_spoiler": 0,
+      "name": "Struck A Pose",
+      "name_pt": "Fez Pose",
+      "tip": "No capítulo The Tree, seção Deeply Rooted, use o cenário de câmera após o boss Mortar Wasp. Pode exigir repetir a ação para os dois jogadores.",
+      "trophy_code": "it_takes_two_struck_a_pose",
+      "type": "Bronze"
+    },
+    {
+      "description": "They had no way out.",
+      "is_missable": 0,
+      "is_spoiler": 0,
+      "name": "Plastic Prison Breakers",
+      "name_pt": "Fugitivos da Prisão de Plástico",
+      "tip": "Em Rose’s Room, seção Pillow Fort, encontre as figuras presas e faça os dois jogadores acionarem os botões ao mesmo tempo.",
+      "trophy_code": "it_takes_two_plastic_prison_breakers",
+      "type": "Ouro"
+    },
+    {
+      "description": "The truth was out there all along!",
+      "is_missable": 0,
+      "is_spoiler": 0,
+      "name": "Faraway Frequencies",
+      "name_pt": "Frequências Distantes",
+      "tip": "Em Rose’s Room, seção Spaced Out, use a antena no portal amarelo e escute as 4 frequências.",
+      "trophy_code": "it_takes_two_faraway_frequencies",
+      "type": "Bronze"
+    },
+    {
+      "description": "Shoot for the stars, literally.",
+      "is_missable": 0,
+      "is_spoiler": 0,
+      "name": "Look At Him Go",
+      "name_pt": "Olha Ele Indo",
+      "tip": "Em Spaced Out, no mesmo portal amarelo de Faraway Frequencies, use a rampa para catapultar o outro jogador às estrelas.",
+      "trophy_code": "it_takes_two_look_at_him_go",
+      "type": "Bronze"
+    },
+    {
+      "description": "Guess it was time to cash out.",
+      "is_missable": 0,
+      "is_spoiler": 0,
+      "name": "Break the Bank",
+      "name_pt": "Quebre o Banco",
+      "tip": "Em Rose’s Room, seção Hopscotch, coloque as 4 moedas douradas no porco e quebre o cofrinho. Pode precisar repetir para o outro jogador.",
+      "trophy_code": "it_takes_two_break_the_bank",
+      "type": "Ouro"
+    },
+    {
+      "description": "Put on a show and die trying.",
+      "is_missable": 0,
+      "is_spoiler": 0,
+      "name": "A Daring Devil",
+      "name_pt": "Um Diabinho Ousado",
+      "tip": "Em Hopscotch, lance o carrinho pela rampa e passe pelo aro. Fica no início da área, antes de seguir pela rota principal.",
+      "trophy_code": "it_takes_two_a_daring_devil",
+      "type": "Ouro"
+    },
+    {
+      "description": "Now look who’s extinct!",
+      "is_missable": 0,
+      "is_spoiler": 0,
+      "name": "Snackosaurus",
+      "name_pt": "Lanchossauro",
+      "tip": "Em Rose’s Room, seção Dino Land, use o dinossauro grande para comer o outro jogador no ponto certo da plataforma.",
+      "trophy_code": "it_takes_two_snackosaurus",
+      "type": "Bronze"
+    },
+    {
+      "description": "Isn’t it pretty? That’s going on the fridge.",
+      "is_missable": 0,
+      "is_spoiler": 0,
+      "name": "Realize Your Art",
+      "name_pt": "Realize Sua Arte",
+      "tip": "Em Rose’s Room, seção Once Upon a Time, entre na impressora/rolo de tinta no castelo. Cada jogador pode precisar fazer a ação individualmente.",
+      "trophy_code": "it_takes_two_realize_your_art",
+      "type": "Ouro"
+    },
+    {
+      "description": "Choo Choo!",
+      "is_missable": 0,
+      "is_spoiler": 0,
+      "name": "On Rails Experience",
+      "name_pt": "Experiência nos Trilhos",
+      "tip": "Em Once Upon a Time, espere o trem passar nos trilhos do pátio e suba nele.",
+      "trophy_code": "it_takes_two_on_rails_experience",
+      "type": "Ouro"
+    },
+    {
+      "description": "Helltower? More like hello-from-up-here-tower!",
+      "is_missable": 0,
+      "is_spoiler": 0,
+      "name": "Platforming Prodigy",
+      "name_pt": "Prodígio das Plataformas",
+      "tip": "No capítulo Cuckoo Clock, seção Gates of Time, ative Helltower com os dois botões e chegue ao topo. É o troféu mais exigente da lista.",
+      "trophy_code": "it_takes_two_platforming_prodigy",
+      "type": "Ouro"
+    },
+    {
+      "description": "Breathe some wind into your ocarina, my skyward princess!",
+      "is_missable": 0,
+      "is_spoiler": 0,
+      "name": "Force Triangulated",
+      "name_pt": "Força Triangulada",
+      "tip": "Em Gates of Time, use o barco no rio e entre na casa secreta inspirada em aventura clássica.",
+      "trophy_code": "it_takes_two_force_triangulated",
+      "type": "Ouro"
+    },
+    {
+      "description": "Again? Keep track of your kids!",
+      "is_missable": 0,
+      "is_spoiler": 0,
+      "name": "Lost And Found",
+      "name_pt": "Achados e Perdidos",
+      "tip": "No capítulo Snow Globe, seção Winter Village, devolva os 4 filhotes de tartaruga para a mãe no lago congelado.",
+      "trophy_code": "it_takes_two_lost_and_found",
+      "type": "Bronze"
+    },
+    {
+      "description": "Took things a bit too far, didn’t you?",
+      "is_missable": 0,
+      "is_spoiler": 0,
+      "name": "Mood Swing",
+      "name_pt": "Balanço de Humor",
+      "tip": "Em Winter Village, ative a torre esquerda e use os ímãs no balanço vermelho até ele girar rápido demais.",
+      "trophy_code": "it_takes_two_mood_swing",
+      "type": "Ouro"
+    },
+    {
+      "description": "Don’t feed the animals! Or do, they’re adorable.",
+      "is_missable": 0,
+      "is_spoiler": 0,
+      "name": "Something Fishy",
+      "name_pt": "Algo Suspeito",
+      "tip": "No capítulo Snow Globe, seção Beneath the Ice, use os arpões do barco para pegar peixes e alimentar as focas.",
+      "trophy_code": "it_takes_two_something_fishy",
+      "type": "Bronze"
+    },
+    {
+      "description": "Scurvy! Ye look smashing, captain!",
+      "is_missable": 0,
+      "is_spoiler": 0,
+      "name": "Terror Of The Seven Seas",
+      "name_pt": "Terror dos Sete Mares",
+      "tip": "Em Beneath the Ice, encontre o navio pirata, abra o baú e use o chapéu pirata.",
+      "trophy_code": "it_takes_two_terror_of_the_seven_seas",
+      "type": "Bronze"
+    },
+    {
+      "description": "Release that tension at the root level.",
+      "is_missable": 0,
+      "is_spoiler": 0,
+      "name": "Bug Sized Relaxation",
+      "name_pt": "Relaxamento em Tamanho de Inseto",
+      "tip": "No capítulo Garden, seção Green Fingers, entre no spa depois do boss Burrower.",
+      "trophy_code": "it_takes_two_bug_sized_relaxation",
+      "type": "Bronze"
+    },
+    {
+      "description": "You reached a higher state of mind. Or at least some peace and quiet.",
+      "is_missable": 0,
+      "is_spoiler": 0,
+      "name": "Meditation Maestro",
+      "name_pt": "Maestro da Meditação",
+      "tip": "No capítulo The Attic, seção Symphony, sente nos bancos dentro do grande tamborim para meditar.",
+      "trophy_code": "it_takes_two_meditation_maestro",
+      "type": "Bronze"
+    }
+  ]
+}

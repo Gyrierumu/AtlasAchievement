@@ -1,0 +1,604 @@
+{
+  "game": {
+    "avoid_if": "Evite se você não quer NG++, farm de juramentos, controle de NPCs, múltiplos finais e limpeza longa de anéis, gestos e magias.",
+    "before_you_start": "Leia o roadmap antes de jogar: Dark Souls III pune falta de planejamento com questlines quebradas, finais perdidos, juramentos atrasados, boss souls gastas errado e farm extra.",
+    "best_for": "Ideal para quem gosta de soulslike exigente, chefes fortes, rotas de NPC complexas, múltiplas jornadas e checklist profundo de colecionáveis.",
+    "cleanup_advice": "Use NG+ e NG++ para anéis, finais restantes, questlines pendentes, farm de juramentos e revisão de magias, milagres, piromancias, gestos, infusões, Estus, fogueira e arma máxima.",
+    "cover_image": "https://cdn.cloudflare.steamstatic.com/steam/apps/374320/library_600x900.jpg",
+    "coverage_level": "strong",
+    "created_at": "2026-05-09 19:53:43",
+    "difficulty": 7,
+    "difficulty_reason": "A dificuldade 7/10 vem do combate soulslike, chefes exigentes, rotas de NPC, finais, Master of Rings, listas de magias e farm de juramentos.",
+    "dlc_scope": "Guia focado na lista base de Dark Souls III no PS4. Ashes of Ariandel e The Ringed City ficam fora da platina base.",
+    "editorial_notes": "Platina base de Dark Souls III separada de Ashes of Ariandel e The Ringed City. Online tratado como opcional para acelerar farm de juramentos, nunca como requisito.",
+    "editorial_review_status": "in_review",
+    "editorial_status": "published",
+    "first_run_advice": "Comece a primeira jornada acompanhando NPCs, juramentos e gestos desde o início. Entre nos juramentos assim que forem liberados, não cure o Dark Sigil se for fazer The Usurpation of Fire e não consuma almas de chefes antes de confirmar magias, milagres e piromancias.",
+    "grind_summary": "O maior grind está nos itens de juramento e nas recompensas ligadas a magias, milagres, piromancias e anéis.",
+    "guide_avoid": null,
+    "guide_best_moment": null,
+    "guide_dlc": null,
+    "guide_grind": null,
+    "guide_ideal": null,
+    "guide_online": null,
+    "guide_runs": null,
+    "image": "https://cdn.cloudflare.steamstatic.com/steam/apps/374320/header.jpg",
+    "is_verified": 0,
+    "last_reviewed_at": "",
+    "missable": "Tem riscos reais em finais, questlines de NPC, Mound-makers, Blade of the Darkmoon, gestos, recompensas de juramento e troféus de coleção ligados a magias, milagres, piromancias e anéis.",
+    "missable_summary": "Os principais perdíveis estão em The Usurpation of Fire, finais mutuamente exclusivos, Mound-makers, Blade of the Darkmoon, Master of Expression e coleções afetadas por NPCs, boss souls e juramentos.",
+    "name": "Dark Souls III",
+    "online_summary": "Online existe e pode acelerar o farm de itens de juramento, mas é opcional. A platina base pode ser feita offline com farm.",
+    "quality_warnings": "[]",
+    "reviewed_by": "",
+    "runs_summary": "A rota normal usa uma primeira jornada completa, depois NG+ e NG++ para finais restantes, anéis, questlines perdidas e cleanup.",
+    "slug": "dark-souls-iii",
+    "time": "80-100h",
+    "time_bucket": "long",
+    "time_max_hours": 100,
+    "time_min_hours": 80,
+    "time_reason": "A estimativa de 80-100 horas considera uma jornada completa, NG+, NG++, coleta de anéis, finais, gestos, magias, milagres, piromancias e farm de juramentos.",
+    "time_sort_hours": 80,
+    "updated_at": "2026-06-27 02:36:58",
+    "verification_note": "Guia revisado para lista base PS4 com 43 troféus, roadmap estruturado, flags offline/sem coop/sem DLC, EN/PT-BR e conteúdo editorial forte. Mantido em revisão até a suíte global deixar de falhar por pendência externa.",
+    "verification_status": "review",
+    "walkthrough": null
+  },
+  "redirects": [],
+  "roadmaps": [
+    {
+      "content": "{\"title\":\"Primeira jornada com NPCs e juramentos sob controle\",\"focus\":\"Campanha e planejamento\",\"objective\":\"Completar a maior parte da campanha protegendo questlines, juramentos, gestos e itens importantes.\",\"actions\":[\"Avance pela campanha explorando áreas principais e opcionais sem ignorar NPCs.\",\"Entre nos juramentos assim que forem liberados, especialmente Mound-makers e Watchdogs of Farron.\",\"Colete Estus Shards, Undead Bone Shards, tomos, carvões, anéis, gestos e itens importantes de NPC.\",\"Não consuma almas de chefes antes de confirmar se elas serão necessárias para magias, milagres ou piromancias.\",\"Não cure o Dark Sigil se estiver seguindo a rota de The Usurpation of Fire.\"],\"warning\":\"Avançar chefes cedo demais, quebrar questlines, curar o Dark Sigil ou ignorar juramentos pode empurrar troféus para NG+.\",\"result\":\"A primeira jornada fica preparada para finais, colecionáveis, juramentos e cleanup sem perda desnecessária de tempo.\"}",
+      "step_order": 1
+    },
+    {
+      "content": "{\"title\":\"Rota de The Usurpation of Fire\",\"focus\":\"Final perdível\",\"objective\":\"Executar a questline de Yoel, Yuria e Anri para garantir o final mais sensível da platina.\",\"actions\":[\"Recrute Yoel e receba os níveis gratuitos necessários antes de avançar demais.\",\"Não cure o Dark Sigil durante essa rota.\",\"Siga os encontros de Anri e Yuria na ordem correta.\",\"Resolva a etapa de Irithyll e Anor Londo conforme o requisito do final.\",\"Depois do Soul of Cinder, escolha a interação correta para ativar The Usurpation of Fire.\"],\"warning\":\"Este é um dos pontos mais perdíveis do guia. Se a questline for quebrada, o jogador normalmente precisará tentar novamente em NG+.\",\"result\":\"O final The Usurpation of Fire fica garantido ou corretamente documentado para uma nova jornada.\"}",
+      "step_order": 2
+    },
+    {
+      "content": "{\"title\":\"Coletáveis de build e troféus de mestre\",\"focus\":\"Magias e upgrades\",\"objective\":\"Completar os troféus ligados a magias, milagres, piromancias, anéis, gestos, infusões, Estus, fogueira e reforço de arma.\",\"actions\":[\"Antes de consumir boss souls, confira quais magias, milagres e piromancias ainda dependem de almas de chefes, tomos, NPCs ou recompensas de juramento.\",\"Mantenha uma lista de anéis do jogo base por ciclo, incluindo versões de NG+ e NG++.\",\"Pegue gestos ligados a NPCs e interações específicas antes de avançar marcos grandes.\",\"Faça todas as infusões com os carvões e gemas necessários.\",\"Maximize Estus, fogueira e uma arma antes da conferência final.\"],\"warning\":\"Não inclua itens de DLC como requisito da platina base. Também não deixe almas de chefes serem consumidas se forem necessárias para feitiços, milagres ou piromancias.\",\"result\":\"Os troféus de coleção e progressão ficam organizados por categoria, com riscos reais destacados.\"}",
+      "step_order": 3
+    },
+    {
+      "content": "{\"title\":\"Farm de juramentos\",\"focus\":\"Grind\",\"objective\":\"Obter as recompensas de juramento necessárias para magias, milagres, piromancias e anéis.\",\"actions\":[\"Acompanhe os juramentos que entregam recompensas necessárias para magias, milagres, piromancias ou anéis.\",\"Use o online apenas como atalho opcional\",\"se preferir offline, prepare-se para farmar os itens de juramento nos inimigos correspondentes.\",\"Farme Proof of a Concord Kept, Vertebra Shackle, Sunlight Medal, Wolf's Blood Swordgrass, Pale Tongue e Human Dregs quando a recompensa do troféu depender deles.\",\"Trate a descoberta do juramento e o farm das recompensas como objetivos diferentes para não confundir troféus simples com grind longo.\",\"Não trate o farm online como obrigatório: ele acelera a platina, mas a rota offline continua válida.\"],\"warning\":\"Este é o maior grind da platina. Se o guia prometer platina rápida sem explicar os juramentos, a expectativa do jogador ficará errada.\",\"result\":\"O jogador entende por que a platina pode passar de 80 horas e sabe quando usar farm offline ou ajuda online opcional.\"}",
+      "step_order": 4
+    },
+    {
+      "content": "{\"title\":\"NG+ e NG++ para anéis e finais restantes\",\"focus\":\"Novas jornadas\",\"objective\":\"Usar os ciclos seguintes para coletar anéis de NG+/NG++, finais restantes e pendências de NPC.\",\"actions\":[\"Após terminar a primeira jornada, avance para NG+ mantendo checklist de anéis, finais e gestos pendentes.\",\"Colete os anéis exclusivos de NG+ e depois os de NG++ necessários para Master of Rings.\",\"Faça To Link the First Flame e The End of Fire se ainda não tiver obtido.\",\"Resolva questlines quebradas ou juramentos perdidos na jornada anterior.\",\"Mantenha Ashes of Ariandel e The Ringed City fora do checklist da platina base.\"],\"warning\":\"Master of Rings normalmente exige planejamento até NG++. Não venda, descarte ou ignore anéis antes de confirmar o troféu.\",\"result\":\"Com NG++ e os finais resolvidos, o guia entra na etapa final de conferência da platina.\"}",
+      "step_order": 5
+    },
+    {
+      "content": "{\"title\":\"Cleanup final e conferência da platina\",\"focus\":\"Conferência\",\"objective\":\"Fechar os 43 troféus da lista base sem misturar DLC, online opcional ou coop opcional com requisitos da platina.\",\"actions\":[\"Conclua a conferência dos 43 troféus da lista base.\",\"Mantenha Ashes of Ariandel e The Ringed City fora dos requisitos da platina.\",\"Confira se a rota continua sem online obrigatório, sem coop obrigatório e sem DLC exigida.\",\"Separe perdíveis reais de objetivos que apenas exigem NG+, NG++ ou cleanup.\",\"Revise finais, juramentos, anéis, gestos, magias, milagres, piromancias e boss souls antes de encerrar.\"],\"warning\":\"\",\"result\":\"A rota fica pronta para a conferência final da platina base.\"}",
+      "step_order": 6
+    }
+  ],
+  "schemaVersion": 1,
+  "seedExtras": {
+    "aliases": [],
+    "attentionPoints": [],
+    "checklist": [
+      "Confirmar os 43 troféus da lista base de PS4.",
+      "Não contar Ashes of Ariandel nem The Ringed City como requisito da platina.",
+      "Entrar nos juramentos no momento seguro, especialmente Mound-makers e Watchdogs of Farron.",
+      "Garantir Mound-makers antes de quebrar a rota inicial.",
+      "Garantir Watchdogs of Farron cedo em Farron Keep.",
+      "Não curar o Dark Sigil durante a rota de The Usurpation of Fire.",
+      "Seguir Yoel, Yuria e Anri na ordem correta.",
+      "Não consumir almas de chefes necessárias para magias, milagres ou piromancias.",
+      "Coletar todos os gestos necessários para Master of Expression.",
+      "Coletar todos os anéis do jogo base, incluindo versões de NG+ e NG++.",
+      "Fazer todos os finais com backup de save ou múltiplas jornadas.",
+      "Farmar recompensas de juramento necessárias para coleções.",
+      "Fazer todas as infusões para Master of Infusion.",
+      "Maximizar Estus, bonfire e uma arma.",
+      "Confirmar que a rota continua sem online obrigatório, sem coop obrigatório e sem DLC exigida.",
+      "Conferir se cada troféu marcado como perdível depende de final, decisão irreversível, NPC, juramento ou questline.",
+      "Conferir SEO, FAQ, decisão rápida, tags e pontos de atenção antes da revisão final."
+    ],
+    "faq": [
+      {
+        "answer": "Não. A platina pode ser feita offline. O online é opcional e pode acelerar itens de juramento, mas não deve ser tratado como obrigatório.",
+        "question": "Dark Souls III exige online para platinar?"
+      },
+      {
+        "answer": "Não. Coop e boost podem ajudar no farm, mas a platina não depende de coop obrigatório.",
+        "question": "Dark Souls III exige coop para platinar?"
+      },
+      {
+        "answer": "Não. A platina considera a lista base de troféus; DLC não deve ser marcada como requisito da platina. Anéis, magias e chefes de DLC ficam fora do escopo da lista base.",
+        "question": "As DLCs Ashes of Ariandel e The Ringed City são necessárias para a platina?"
+      },
+      {
+        "answer": "Sim. O principal risco está em questlines de NPCs, juramentos, gestos e finais, especialmente The Usurpation of Fire, Mound-makers, Blade of the Darkmoon e rotas de Anri, Yuria e Yoel.",
+        "question": "Dark Souls III tem troféus perdíveis?"
+      },
+      {
+        "answer": "Na rota normal, sim. Master of Rings exige anéis que aparecem em ciclos posteriores, então o guia deve planejar NG+ e NG++.",
+        "question": "Precisa jogar até NG++?"
+      },
+      {
+        "answer": "É possível reduzir repetição com backup de save, mas a rota sem backup exige múltiplas jornadas para finais diferentes.",
+        "question": "Dá para fazer os finais em uma jogada?"
+      },
+      {
+        "answer": "O maior grind está nos itens de juramento usados para recompensas ligadas a milagres, piromancias, magias e anéis. O online pode acelerar parte desse processo, mas a rota offline continua possível com farm.",
+        "question": "Qual é o maior grind da platina?"
+      },
+      {
+        "answer": "Não consuma boss souls sem conferir o checklist. Algumas almas são necessárias para obter magias, milagres ou piromancias usados nos troféus de mestre.",
+        "question": "Posso consumir almas de chefes?"
+      },
+      {
+        "answer": "Não. O guia considera os anéis da lista base. Ashes of Ariandel e The Ringed City ficam fora da platina.",
+        "question": "Os anéis de DLC contam para Master of Rings?"
+      }
+    ],
+    "note": "Campos exportados para auditoria. O SQLite atual nao possui colunas nativas para todos esses extras; a importacao preserva o que o banco suporta.",
+    "quickDecision": {
+      "firstAction": "Comece a primeira jornada acompanhando NPCs, juramentos e gestos desde o início. Entre nos juramentos assim que forem liberados, não cure o Dark Sigil se for fazer The Usurpation of Fire e não consuma almas de chefes antes de confirmar magias, milagres e piromancias.",
+      "mainRisk": "O maior risco é quebrar questlines, perder Mound-makers ou Blade of the Darkmoon, gastar boss souls importantes e subestimar o farm de juramentos.",
+      "verdict": "Vale platinar Dark Souls III se você gosta de soulslike exigente, rotas de NPC complexas e checklist de coleção. A platina não exige online nem DLC, mas cobra planejamento para finais, juramentos, gestos, anéis até NG++ e um farm pesado de recompensas."
+    },
+    "seo": {
+      "description": "Guia de platina de Dark Souls III com roadmap em português, finais, juramentos, anéis, gestos, magias, milagres, piromancias, NG++ e dicas para conquistar todos os troféus no PS4.",
+      "keywords": [
+        "Dark Souls III",
+        "Dark Souls 3",
+        "guia de platina Dark Souls III",
+        "troféus Dark Souls III",
+        "roadmap Dark Souls III",
+        "Master of Rings",
+        "The Usurpation of Fire",
+        "Mound-makers",
+        "Watchdogs of Farron",
+        "Blade of the Darkmoon"
+      ],
+      "title": "Guia de Platina Dark Souls III - Troféus, Roadmap e Dicas"
+    },
+    "tags": [
+      "soulslike",
+      "ação",
+      "RPG",
+      "chefes",
+      "finais",
+      "coletáveis",
+      "juramentos",
+      "grind",
+      "NG++",
+      "offline",
+      "sem DLC obrigatória"
+    ]
+  },
+  "slug": "dark-souls-iii",
+  "trophies": [
+    {
+      "description": "Obtenha todos os troféus da lista base de Dark Souls III.",
+      "is_missable": 0,
+      "is_spoiler": 0,
+      "name": "The Dark Soul",
+      "name_pt": "A Alma Sombria",
+      "tip": "Conclua os outros 42 troféus da lista base. Ashes of Ariandel e The Ringed City ficam fora desta platina.",
+      "trophy_code": "ds3_the_dark_soul",
+      "type": "Platina"
+    },
+    {
+      "description": "Alcance o final To Link the First Flame.",
+      "is_missable": 1,
+      "is_spoiler": 1,
+      "name": "To Link the First Flame",
+      "name_pt": "Ligar a Primeira Chama",
+      "tip": "Final mutuamente exclusivo sem backup. Planeje junto de The End of Fire e The Usurpation of Fire.",
+      "trophy_code": "ds3_to_link_the_first_flame",
+      "type": "Ouro"
+    },
+    {
+      "description": "Alcance o final The End of Fire.",
+      "is_missable": 1,
+      "is_spoiler": 1,
+      "name": "The End of Fire",
+      "name_pt": "O Fim do Fogo",
+      "tip": "Final dependente de rota e decisão final. Use backup ou deixe para uma jornada dedicada.",
+      "trophy_code": "ds3_the_end_of_fire",
+      "type": "Ouro"
+    },
+    {
+      "description": "Alcance o final The Usurpation of Fire.",
+      "is_missable": 1,
+      "is_spoiler": 1,
+      "name": "The Usurpation of Fire",
+      "name_pt": "A Usurpação do Fogo",
+      "tip": "Siga Yoel, Yuria e Anri sem curar o Dark Sigil. Quebrar a rota normalmente empurra o final para NG+.",
+      "trophy_code": "ds3_the_usurpation_of_fire",
+      "type": "Ouro"
+    },
+    {
+      "description": "Derrote os Abyss Watchers, Senhores das Cinzas.",
+      "is_missable": 0,
+      "is_spoiler": 1,
+      "name": "Lords of Cinder: Abyss Watchers",
+      "name_pt": "Senhores das Cinzas: Vigilantes do Abismo",
+      "tip": "Chefe principal de Farron Keep. Confira Watchdogs of Farron e NPCs da região antes de avançar demais.",
+      "trophy_code": "ds3_lords_of_cinder_abyss_watchers",
+      "type": "Prata"
+    },
+    {
+      "description": "Derrote Yhorm the Giant, Senhor das Cinzas.",
+      "is_missable": 0,
+      "is_spoiler": 1,
+      "name": "Lord of Cinder: Yhorm the Giant",
+      "name_pt": "Senhor das Cinzas: Yhorm, o Gigante",
+      "tip": "Derrote Yhorm the Giant, Senhor das Cinzas.",
+      "trophy_code": "ds3_lord_of_cinder_yhorm_the_giant",
+      "type": "Prata"
+    },
+    {
+      "description": "Derrote Aldrich, Devourer of Gods, Senhor das Cinzas.",
+      "is_missable": 0,
+      "is_spoiler": 1,
+      "name": "Lord of Cinder: Aldrich, Devourer of Gods",
+      "name_pt": "Senhor das Cinzas: Aldrich, Devorador de Deuses",
+      "tip": "Chefe principal de Anor Londo. Confira Aldrich Faithful e Blade of the Darkmoon antes de encerrar pendências da área.",
+      "trophy_code": "ds3_lord_of_cinder_aldrich_devourer_of_gods",
+      "type": "Prata"
+    },
+    {
+      "description": "Derrote Lothric, Younger Prince, Senhor das Cinzas.",
+      "is_missable": 0,
+      "is_spoiler": 1,
+      "name": "Lord of Cinder: Lothric, Younger Prince",
+      "name_pt": "Senhor das Cinzas: Lothric, Príncipe Mais Novo",
+      "tip": "Derrote Lothric, Younger Prince, Senhor das Cinzas.",
+      "trophy_code": "ds3_lord_of_cinder_lothric_younger_prince",
+      "type": "Prata"
+    },
+    {
+      "description": "Reforce uma arma até o nível máximo.",
+      "is_missable": 0,
+      "is_spoiler": 0,
+      "name": "Supreme Weapon Reinforcement",
+      "name_pt": "Reforço Supremo de Arma",
+      "tip": "Leve uma arma ao máximo com Titanite Slab. Não é online nem perdível, mas slabs limitadas por run pedem controle.",
+      "trophy_code": "ds3_supreme_weapon_reinforcement",
+      "type": "Prata"
+    },
+    {
+      "description": "Realize todos os tipos de infusão.",
+      "is_missable": 0,
+      "is_spoiler": 0,
+      "name": "Master of Infusion",
+      "name_pt": "Mestre da Infusão",
+      "tip": "Realize todas as infusões com Andre usando carvões e gemas. Organize recursos antes do cleanup final.",
+      "trophy_code": "ds3_master_of_infusion",
+      "type": "Prata"
+    },
+    {
+      "description": "Obtenha todas as feitiçarias da lista base.",
+      "is_missable": 1,
+      "is_spoiler": 0,
+      "name": "Master of Sorceries",
+      "name_pt": "Mestre das Feitiçarias",
+      "tip": "Feitiçarias podem depender de NPCs, pergaminhos, boss souls e recompensas de juramento. Guarde almas de chefes até fechar a lista.",
+      "trophy_code": "ds3_master_of_sorceries",
+      "type": "Prata"
+    },
+    {
+      "description": "Obtenha todas as piromancias da lista base.",
+      "is_missable": 1,
+      "is_spoiler": 0,
+      "name": "Master of Pyromancies",
+      "name_pt": "Mestre das Piromancias",
+      "tip": "Piromancias passam por Cornyx, Karla, tomos, boss souls e recompensas de juramento. Planeje antes do fim do ciclo.",
+      "trophy_code": "ds3_master_of_pyromancies",
+      "type": "Prata"
+    },
+    {
+      "description": "Obtenha todos os milagres da lista base.",
+      "is_missable": 1,
+      "is_spoiler": 0,
+      "name": "Master of Miracles",
+      "name_pt": "Mestre dos Milagres",
+      "tip": "Milagres dependem de NPCs, tomos, boss souls e recompensas de juramento, especialmente Blade of the Darkmoon.",
+      "trophy_code": "ds3_master_of_miracles",
+      "type": "Prata"
+    },
+    {
+      "description": "Obtenha todos os anéis exigidos pela lista base, incluindo NG+ e NG++.",
+      "is_missable": 1,
+      "is_spoiler": 0,
+      "name": "Master of Rings",
+      "name_pt": "Mestre dos Anéis",
+      "tip": "Exige anéis do jogo base em NG, NG+ e NG++. Não inclua anéis de DLC e não descarte anéis antes do troféu.",
+      "trophy_code": "ds3_master_of_rings",
+      "type": "Prata"
+    },
+    {
+      "description": "Aprenda todos os gestos exigidos pela lista base.",
+      "is_missable": 1,
+      "is_spoiler": 0,
+      "name": "Master of Expression",
+      "name_pt": "Mestre das Expressões",
+      "tip": "Gestos vêm de NPCs, invocações e decisões de rota. Esgote diálogos e acompanhe janelas sensíveis.",
+      "trophy_code": "ds3_master_of_expression",
+      "type": "Prata"
+    },
+    {
+      "description": "Reforce a fogueira até o nível máximo.",
+      "is_missable": 0,
+      "is_spoiler": 0,
+      "name": "Ultimate Bonfire",
+      "name_pt": "Fogueira Suprema",
+      "tip": "Colete Undead Bone Shards e reforce a fogueira ao máximo. Use checklist por área para não deixar limpeza cega.",
+      "trophy_code": "ds3_ultimate_bonfire",
+      "type": "Prata"
+    },
+    {
+      "description": "Reforce o Estus Flask até o nível máximo.",
+      "is_missable": 0,
+      "is_spoiler": 0,
+      "name": "Ultimate Estus",
+      "name_pt": "Estus Supremo",
+      "tip": "Colete Estus Shards e entregue ao ferreiro. É cleanup de exploração, não requisito online.",
+      "trophy_code": "ds3_ultimate_estus",
+      "type": "Prata"
+    },
+    {
+      "description": "Descubra o covenant Warrior of Sunlight.",
+      "is_missable": 0,
+      "is_spoiler": 1,
+      "name": "Covenant: Warrior of Sunlight",
+      "name_pt": "Juramento: Guerreiro da Luz Solar",
+      "tip": "Descubra o juramento em Undead Settlement. Importa para recompensas de juramento, mas online não é obrigatório.",
+      "trophy_code": "ds3_covenant_warrior_of_sunlight",
+      "type": "Bronze"
+    },
+    {
+      "description": "Descubra o covenant Way of Blue.",
+      "is_missable": 0,
+      "is_spoiler": 1,
+      "name": "Covenant: Way of Blue",
+      "name_pt": "Juramento: Caminho Azul",
+      "tip": "Descubra o covenant Way of Blue.",
+      "trophy_code": "ds3_covenant_way_of_blue",
+      "type": "Bronze"
+    },
+    {
+      "description": "Descubra o covenant Blue Sentinels.",
+      "is_missable": 0,
+      "is_spoiler": 1,
+      "name": "Covenant: Blue Sentinels",
+      "name_pt": "Juramento: Sentinelas Azuis",
+      "tip": "Descubra o covenant Blue Sentinels.",
+      "trophy_code": "ds3_covenant_blue_sentinels",
+      "type": "Bronze"
+    },
+    {
+      "description": "Descubra o covenant Blade of the Darkmoon.",
+      "is_missable": 1,
+      "is_spoiler": 1,
+      "name": "Covenant: Blade of the Darkmoon",
+      "name_pt": "Juramento: Lâmina da Lua Negra",
+      "tip": "Depende da rota de Sirris e do gesto correto. Evite quebrar a questline antes de desbloquear o juramento.",
+      "trophy_code": "ds3_covenant_blade_of_the_darkmoon",
+      "type": "Bronze"
+    },
+    {
+      "description": "Descubra o covenant Rosaria's Fingers.",
+      "is_missable": 0,
+      "is_spoiler": 1,
+      "name": "Covenant: Rosaria's Fingers",
+      "name_pt": "Juramento: Dedos de Rosaria",
+      "tip": "Descubra o covenant Rosaria's Fingers.",
+      "trophy_code": "ds3_covenant_rosarias_fingers",
+      "type": "Bronze"
+    },
+    {
+      "description": "Descubra o covenant Mound-makers.",
+      "is_missable": 1,
+      "is_spoiler": 1,
+      "name": "Covenant: Mound-makers",
+      "name_pt": "Juramento: Criadores de Montes",
+      "tip": "Entre cedo pela rota de Undead Settlement antes de matar Curse-rotted Greatwood pela rota comum.",
+      "trophy_code": "ds3_covenant_mound_makers",
+      "type": "Bronze"
+    },
+    {
+      "description": "Descubra o covenant Watchdogs of Farron.",
+      "is_missable": 0,
+      "is_spoiler": 1,
+      "name": "Covenant: Watchdogs of Farron",
+      "name_pt": "Juramento: Cães de Guarda de Farron",
+      "tip": "Pegue o juramento cedo em Farron Keep. O troféu é simples, mas as recompensas podem virar farm longo.",
+      "trophy_code": "ds3_covenant_watchdogs_of_farron",
+      "type": "Bronze"
+    },
+    {
+      "description": "Descubra o covenant Aldrich Faithful.",
+      "is_missable": 0,
+      "is_spoiler": 1,
+      "name": "Covenant: Aldrich Faithful",
+      "name_pt": "Juramento: Fiéis de Aldrich",
+      "tip": "Juramento ligado a Anor Londo e ao escopo de recompensas. Trate a descoberta do juramento e o farm como objetivos diferentes.",
+      "trophy_code": "ds3_covenant_aldrich_faithful",
+      "type": "Bronze"
+    },
+    {
+      "description": "Alcance a área Untended Graves.",
+      "is_missable": 0,
+      "is_spoiler": 1,
+      "name": "Untended Graves",
+      "name_pt": "Túmulos Abandonados",
+      "tip": "Área opcional importante para chefes e cleanup. Entre quando a build estiver pronta.",
+      "trophy_code": "ds3_untended_graves",
+      "type": "Bronze"
+    },
+    {
+      "description": "Alcance a área Archdragon Peak.",
+      "is_missable": 0,
+      "is_spoiler": 1,
+      "name": "Archdragon Peak",
+      "name_pt": "Pico do Arquidragão",
+      "tip": "Área opcional ligada a Ancient Wyvern e The Nameless King. Prepare-se para desafio alto.",
+      "trophy_code": "ds3_archdragon_peak",
+      "type": "Bronze"
+    },
+    {
+      "description": "Derrote Iudex Gundyr.",
+      "is_missable": 0,
+      "is_spoiler": 1,
+      "name": "Iudex Gundyr",
+      "name_pt": "Iudex Gundyr",
+      "tip": "Derrote Iudex Gundyr.",
+      "trophy_code": "ds3_iudex_gundyr",
+      "type": "Bronze"
+    },
+    {
+      "description": "Derrote Vordt of the Boreal Valley.",
+      "is_missable": 0,
+      "is_spoiler": 1,
+      "name": "Vordt of the Boreal Valley",
+      "name_pt": "Vordt do Vale Boreal",
+      "tip": "Derrote Vordt of the Boreal Valley.",
+      "trophy_code": "ds3_vordt_of_the_boreal_valley",
+      "type": "Bronze"
+    },
+    {
+      "description": "Derrote Curse-rotted Greatwood.",
+      "is_missable": 0,
+      "is_spoiler": 1,
+      "name": "Curse-rotted Greatwood",
+      "name_pt": "Grande Árvore Apodrecida pela Maldição",
+      "tip": "Derrote Curse-rotted Greatwood.",
+      "trophy_code": "ds3_curse_rotted_greatwood",
+      "type": "Bronze"
+    },
+    {
+      "description": "Derrote Crystal Sage.",
+      "is_missable": 0,
+      "is_spoiler": 1,
+      "name": "Crystal Sage",
+      "name_pt": "Sábio de Cristal",
+      "tip": "Chefe de Road of Sacrifices. Avance com atenção a Orbeck e aos pergaminhos de feitiçaria.",
+      "trophy_code": "ds3_crystal_sage",
+      "type": "Bronze"
+    },
+    {
+      "description": "Derrote Deacons of the Deep.",
+      "is_missable": 0,
+      "is_spoiler": 1,
+      "name": "Deacons of the Deep",
+      "name_pt": "Diáconos das Profundezas",
+      "tip": "Chefe de Cathedral of the Deep. Confira Rosaria, Patches, Siegward e questlines da área.",
+      "trophy_code": "ds3_deacons_of_the_deep",
+      "type": "Bronze"
+    },
+    {
+      "description": "Derrote High Lord Wolnir.",
+      "is_missable": 0,
+      "is_spoiler": 1,
+      "name": "High Lord Wolnir",
+      "name_pt": "Alto Lorde Wolnir",
+      "tip": "Derrote High Lord Wolnir.",
+      "trophy_code": "ds3_high_lord_wolnir",
+      "type": "Bronze"
+    },
+    {
+      "description": "Derrote Pontiff Sulyvahn.",
+      "is_missable": 0,
+      "is_spoiler": 1,
+      "name": "Pontiff Sulyvahn",
+      "name_pt": "Pontífice Sulyvahn",
+      "tip": "Derrote Pontiff Sulyvahn.",
+      "trophy_code": "ds3_pontiff_sulyvahn",
+      "type": "Bronze"
+    },
+    {
+      "description": "Derrote Dancer of the Boreal Valley.",
+      "is_missable": 0,
+      "is_spoiler": 1,
+      "name": "Dancer of the Boreal Valley",
+      "name_pt": "Dançarina do Vale Boreal",
+      "tip": "Derrote Dancer of the Boreal Valley.",
+      "trophy_code": "ds3_dancer_of_the_boreal_valley",
+      "type": "Bronze"
+    },
+    {
+      "description": "Derrote Dragonslayer Armour.",
+      "is_missable": 0,
+      "is_spoiler": 1,
+      "name": "Dragonslayer Armour",
+      "name_pt": "Armadura do Matador de Dragões",
+      "tip": "Derrote Dragonslayer Armour.",
+      "trophy_code": "ds3_dragonslayer_armour",
+      "type": "Bronze"
+    },
+    {
+      "description": "Derrote Old Demon King.",
+      "is_missable": 0,
+      "is_spoiler": 1,
+      "name": "Old Demon King",
+      "name_pt": "Velho Rei Demônio",
+      "tip": "Chefe opcional de Smouldering Lake. Faça no cleanup antes de avançar ciclos, se ainda faltar.",
+      "trophy_code": "ds3_old_demon_king",
+      "type": "Bronze"
+    },
+    {
+      "description": "Derrote Oceiros, the Consumed King.",
+      "is_missable": 0,
+      "is_spoiler": 1,
+      "name": "Oceiros, the Consumed King",
+      "name_pt": "Oceiros, o Rei Consumido",
+      "tip": "Derrote Oceiros, the Consumed King.",
+      "trophy_code": "ds3_oceiros_the_consumed_king",
+      "type": "Bronze"
+    },
+    {
+      "description": "Derrote Champion Gundyr.",
+      "is_missable": 0,
+      "is_spoiler": 1,
+      "name": "Champion Gundyr",
+      "name_pt": "Campeão Gundyr",
+      "tip": "Chefe opcional exigente em Untended Graves. Volte com build estável se travar.",
+      "trophy_code": "ds3_champion_gundyr",
+      "type": "Bronze"
+    },
+    {
+      "description": "Derrote Ancient Wyvern.",
+      "is_missable": 0,
+      "is_spoiler": 1,
+      "name": "Ancient Wyvern",
+      "name_pt": "Wyvern Antiga",
+      "tip": "Derrote Ancient Wyvern.",
+      "trophy_code": "ds3_ancient_wyvern",
+      "type": "Bronze"
+    },
+    {
+      "description": "Derrote The Nameless King.",
+      "is_missable": 0,
+      "is_spoiler": 1,
+      "name": "The Nameless King",
+      "name_pt": "O Rei Sem Nome",
+      "tip": "Um dos chefes mais difíceis da lista base. Deixe para quando a build e os upgrades estiverem fortes.",
+      "trophy_code": "ds3_the_nameless_king",
+      "type": "Bronze"
+    },
+    {
+      "description": "Acenda uma bonfire pela primeira vez.",
+      "is_missable": 0,
+      "is_spoiler": 0,
+      "name": "Enkindle",
+      "name_pt": "Acender",
+      "tip": "Acenda sua primeira fogueira. Troféu inicial e sem requisito online.",
+      "trophy_code": "ds3_enkindle",
+      "type": "Bronze"
+    },
+    {
+      "description": "Torne-se Host of Embers pela primeira vez.",
+      "is_missable": 0,
+      "is_spoiler": 0,
+      "name": "Embrace the Flame",
+      "name_pt": "Abraçar a Chama",
+      "tip": "Use uma Ember e torne-se Host of Embers pela primeira vez. Não depende de coop.",
+      "trophy_code": "ds3_embrace_the_flame",
+      "type": "Bronze"
+    }
+  ]
+}

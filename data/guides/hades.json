@@ -1,0 +1,729 @@
+{
+  "game": {
+    "avoid_if": "Evite se você quer uma platina curta, linear, sem repetição de runs ou sem depender de diálogos, RNG e grind de recursos.",
+    "before_you_start": "A platina não é linear: você não precisa fazer tudo em uma run. Relações com personagens são obrigatórias, a Fated List deve guiar o checklist, RNG pode alongar diálogos/encontros e God Mode é uma opção legítima para reduzir pressão.",
+    "best_for": "Excelente para quem gosta de progresso incremental, builds variadas, ação responsiva e uma platina longa em que quase toda tentativa avança algum sistema.",
+    "cleanup_advice": "No fim, use a Fated List como painel de controle: feche profecias, relações, Companions, Keepsakes rank 3, pesca por região, Charon, Thanatos/Hermes, Bad Call, Skelly e Heat pendente.",
+    "cover_image": "https://cdn.cloudflare.steamstatic.com/steam/apps/1145360/library_600x900.jpg",
+    "coverage_level": "strong",
+    "created_at": "2026-05-09 19:53:23",
+    "difficulty": 5,
+    "difficulty_reason": "O desafio vem de consistência em combate, leitura de builds, primeira clear, Heat 8/16, Extreme Measures, Infernal Gate sem dano e objetivos com keepsakes. Mirror, armas evoluídas e God Mode tornam a execução bem mais controlável.",
+    "dlc_scope": "Lista base de PlayStation. Não há DLC obrigatória para a platina.",
+    "editorial_notes": null,
+    "editorial_review_status": null,
+    "editorial_status": "published",
+    "first_run_advice": "Nas primeiras runs, não tente resolver tudo. Aprenda biomas e chefes, desbloqueie armas, invista Darkness no Mirror, compre a Fated List cedo e converse com todos no House of Hades após cada tentativa.",
+    "grind_summary": "Grind relevante de recursos, afinidade, diálogos, Keepsakes rank 3, Companions, profecias, pesca e Pact of Punishment. RNG afeta encontros e diálogos, mas novas runs sempre preservam progresso.",
+    "guide_avoid": null,
+    "guide_best_moment": null,
+    "guide_dlc": null,
+    "guide_grind": null,
+    "guide_ideal": null,
+    "guide_online": null,
+    "guide_runs": null,
+    "image": "https://cdn.cloudflare.steamstatic.com/steam/apps/1145360/header.jpg",
+    "is_verified": 0,
+    "last_reviewed_at": null,
+    "missable": "Sem perdíveis. A platina de Hades permite voltar a qualquer objetivo por novas tentativas; se uma condição, diálogo, peixe ou profecia não aparecer agora, continue fazendo runs e retome depois.",
+    "missable_summary": "Sem perdíveis. Fale com personagens após as runs, entregue Nectar/Ambrosia quando fizer sentido e use a Fated List para transformar objetivos soltos em checklist planejado.",
+    "name": "Hades",
+    "online_summary": "Sem online e sem coop: a platina é totalmente single-player/offline, sem multiplayer, servidores, PS+ ou parceiro obrigatório.",
+    "quality_warnings": null,
+    "reviewed_by": null,
+    "runs_summary": "Platina multi-run: você aprende o combate, desbloqueia armas e Mirror, conquista a primeira clear, faz 10 clears para a história principal e depois resolve relações, profecias, Heat e cleanup.",
+    "slug": "hades",
+    "time": "70 a 100 horas",
+    "time_bucket": "long",
+    "time_max_hours": 100,
+    "time_min_hours": 70,
+    "time_reason": "70 a 100 horas considera aprendizado inicial, primeira clear, 10 clears da história, epílogo, relações com personagens, Fated List, recursos raros, Keepsakes no rank máximo, Heat e cleanup situacional.",
+    "time_sort_hours": 70,
+    "updated_at": "2026-06-27 02:36:58",
+    "verification_note": "Guia revisado com lista completa de troféus e dicas editoriais; manter como não verificado até checagem manual final.",
+    "verification_status": "unverified",
+    "walkthrough": null
+  },
+  "redirects": [],
+  "roadmaps": [
+    {
+      "content": "{\"title\":\"Aprenda as runs, armas e Mirror of Night\",\"focus\":\"Primeiras runs e progressão permanente\",\"objective\":\"Criar uma base segura para a primeira fuga sem tentar limpar a checklist cedo demais.\",\"actions\":[\"Teste as seis armas e identifique quais ataques, especiais e Casts combinam com seu estilo.\",\"Invista Darkness na Mirror of Night e use Chthonic Keys para abrir talentos e armas.\",\"Converse com todos na House of Hades depois de cada tentativa e distribua Nectar com intenção.\",\"Compre a Fated List e a Rod of Fishing assim que os contratos aparecerem.\",\"Use God Mode se quiser reduzir a dificuldade sem bloquear troféus.\"],\"warning\":\"Não gaste Titan Blood, Diamonds ou Ambrosia sem entender as prioridades da platina.\",\"result\":\"Mirror, armas, diálogos e sistemas permanentes preparados para runs mais consistentes.\"}",
+      "step_order": 1
+    },
+    {
+      "content": "{\"title\":\"Faça a primeira fuga e conclua a história principal\",\"focus\":\"Primeira fuga, 10 clears e narrativa\",\"objective\":\"Transformar runs consistentes em progresso de história até The Family Secret.\",\"actions\":[\"Monte builds simples e consistentes até concluir a primeira fuga.\",\"Continue fazendo clears e avançando diálogos até completar a missão principal.\",\"Use Keepsakes dos deuses para direcionar boons e cobrir lacunas da Fated List.\",\"Pesque sempre que o ponto aparecer e continue investindo na Mirror of Night.\",\"Avance contratos do Contractor que liberam sistemas, Erebus e questlines.\"],\"warning\":\"A primeira fuga não encerra a história; a missão principal exige 10 fugas bem-sucedidas.\",\"result\":\"História principal concluída, Pact of Punishment aberto e pós-game disponível.\"}",
+      "step_order": 2
+    },
+    {
+      "content": "{\"title\":\"Suba Heat, Pact, Extreme Measures e Erebus\",\"focus\":\"Heat 8/16 e desafios de execução\",\"objective\":\"Resolver os troféus de Pact of Punishment sem transformar cada run em uma tentativa excessivamente difícil.\",\"actions\":[\"Aumente Heat gradualmente com condições que você controla bem.\",\"Conclua runs em Heat 8 e Heat 16 para liberar os dois prêmios de Skelly.\",\"Use Extreme Measures no nível necessário para Champion of Elysium.\",\"Ative Benefits Package e outras condições exigidas pela Fated List.\",\"Entre em Erebus com Heat suficiente e complete uma Infernal Gate sem sofrer dano.\"],\"warning\":\"Heat 16 é o teto relevante para a platina; não há motivo editorial para forçar Heat maior.\",\"result\":\"Prêmios de Skelly, Extreme Measures, Erebus e profecias do Pact encaminhados.\"}",
+      "step_order": 3
+    },
+    {
+      "content": "{\"title\":\"Feche afinidades, Keepsakes, Companions e questlines\",\"focus\":\"Relacionamentos e recursos raros\",\"objective\":\"Avançar vínculos sem desperdiçar Nectar, Ambrosia, Diamonds ou diálogos entre runs.\",\"actions\":[\"Converse com todos após cada run e acompanhe corações bloqueados no Codex.\",\"Distribua Nectar para obter todas as Keepsakes padrão.\",\"Equipe e alterne Keepsakes até todas chegarem ao rank 3.\",\"Conclua os favores elegíveis e use Ambrosia para liberar os seis Companions.\",\"Finalize as questlines de Sisyphus, Orpheus/Eurydice, Achilles/Patroclus, Nyx/Chaos e o epílogo.\"],\"warning\":\"Diálogos e aparições dependem de RNG; continue fazendo runs e evite interpretar atraso como perdível.\",\"result\":\"Afinidades, Keepsakes, Companions, questlines e epílogo próximos da conclusão.\"}",
+      "step_order": 4
+    },
+    {
+      "content": "{\"title\":\"Complete Fated List, boons, armas, aspectos e Codex\",\"focus\":\"Checklist estrutural e grind\",\"objective\":\"Usar cada run para fechar categorias específicas em vez de depender de tentativas aleatórias.\",\"actions\":[\"Revise a Fated List antes de cada run e escolha uma profecia como foco principal.\",\"Use Keepsakes dos deuses para buscar boons ainda não registrados.\",\"Desbloqueie todas as armas e aspectos, incluindo os aspectos ocultos.\",\"Varie armas e Daedalus Hammers para fechar Tools of the Architect e Master of Arms.\",\"Complete as entradas dos Olimpianos no Codex e as profecias pendentes.\"],\"warning\":\"Infernal Arms exige desbloquear todos os aspectos, mas Blood Bound exige maximizar apenas um.\",\"result\":\"Fated List, boons, armas, aspectos, Hammers e Codex sob controle.\"}",
+      "step_order": 5
+    },
+    {
+      "content": "{\"title\":\"Faça pesca, economia e cleanup final\",\"focus\":\"Fishing, Charon, Broker, Contractor e situacionais\",\"objective\":\"Fechar pendências de RNG, recursos e ações específicas sem confundir risco de run com perdível.\",\"actions\":[\"Pesque em Tartarus, Asphodel, Elysium, Styx, Chaos e Greece até cobrir todas as regiões.\",\"Faça 20 trocas com o Broker e compre 50 trabalhos do Contractor.\",\"Resolva To Charon's Credit, Well Stocked, Bad Call, Death Dealer, Thorn of Thanatos e Haste of Hermes.\",\"Revise Skelly, Cérbero, Pool of Purging e qualquer profecia ainda aberta.\",\"Confirme os 50 troféus da lista base de PlayStation antes de encerrar o checklist.\"],\"warning\":\"Hades II e achievements de PC/Steam não entram na contagem ou nos requisitos desta lista.\",\"result\":\"Checklist da lista base concluído e platina liberada.\"}",
+      "step_order": 6
+    }
+  ],
+  "schemaVersion": 1,
+  "seedExtras": {
+    "aliases": [],
+    "attentionPoints": [
+      {
+        "detail": "Nenhum troféu da lista base fica bloqueado definitivamente. Continue no mesmo save e retome diálogos, profecias, boons, pesca ou condições do Pact em novas runs.",
+        "tags": [
+          "Sem perdíveis",
+          "Mesmo save"
+        ],
+        "title": "Sem perdíveis reais"
+      },
+      {
+        "detail": "God Mode reduz bastante a dificuldade percebida e não bloqueia troféus. Use-o se a execução estiver impedindo o progresso da platina.",
+        "tags": [
+          "God Mode",
+          "Dificuldade"
+        ],
+        "title": "God Mode e dificuldade"
+      },
+      {
+        "detail": "Os dois prêmios de Skelly exigem clears em Heat 8 e Heat 16. Suba o Heat gradualmente e escolha condições compatíveis com sua arma e build.",
+        "tags": [
+          "Heat",
+          "Pact",
+          "Atenção"
+        ],
+        "title": "Heat 8, Heat 16 e Pact of Punishment"
+      },
+      {
+        "detail": "Champion of Elysium depende de Extreme Measures, enquanto Hold the Onions exige uma Infernal Gate de Erebus sem sofrer dano. Prepare esses objetivos depois de estabilizar suas clears.",
+        "tags": [
+          "Extreme Measures",
+          "Erebus",
+          "Dificuldade"
+        ],
+        "title": "Extreme Measures e Erebus"
+      },
+      {
+        "detail": "Leve todas as Keepsakes padrão ao rank 3 e avance afinidade para liberar os seis Companions. Nectar abre vínculos; Ambrosia conclui os favores elegíveis.",
+        "tags": [
+          "Keepsakes",
+          "Companions",
+          "Grind"
+        ],
+        "title": "Keepsakes e Companions"
+      },
+      {
+        "detail": "Use a Fated List como checklist central. Preserve Titan Blood, Diamonds, Ambrosia, Nectar, Darkness e Gemstones até entender quais armas, contratos e relacionamentos ainda faltam.",
+        "tags": [
+          "Fated List",
+          "Recursos",
+          "Grind"
+        ],
+        "title": "Fated List e recursos"
+      },
+      {
+        "detail": "Compre a Rod of Fishing e aproveite pontos em Tartarus, Asphodel, Elysium, Styx, Chaos e Greece. River Denizens depende de cobertura regional e pode alongar o cleanup por RNG.",
+        "tags": [
+          "Fishing",
+          "RNG",
+          "Cleanup"
+        ],
+        "title": "Pesca em todas as regiões"
+      },
+      {
+        "detail": "A lista base é totalmente offline e single-player. Não há troféu online, coop obrigatório ou DLC necessária para a platina.",
+        "tags": [
+          "Offline",
+          "Sem coop",
+          "Sem DLC"
+        ],
+        "title": "Online, coop e DLC"
+      },
+      {
+        "detail": "Hades II é outro jogo e não entra como DLC, sequência de troféus ou extensão desta checklist.",
+        "tags": [
+          "Escopo",
+          "Hades II"
+        ],
+        "title": "Hades II fora do guia"
+      },
+      {
+        "detail": "Este guia usa a lista base de PlayStation com 50 troféus. Não misture contagens ou requisitos de achievements de PC/Steam.",
+        "tags": [
+          "PlayStation",
+          "50 troféus"
+        ],
+        "title": "Lista PlayStation"
+      }
+    ],
+    "checklist": [],
+    "faq": [
+      {
+        "answer": "Não. A platina base é totalmente offline e não exige servidores, multiplayer, PS+ ou qualquer recurso online.",
+        "question": "Hades exige online?"
+      },
+      {
+        "answer": "Não. A lista base é single-player e não exige segundo jogador ou modo cooperativo.",
+        "question": "Hades exige coop?"
+      },
+      {
+        "answer": "Não. A platina usa apenas a lista base de PlayStation e não exige DLC ou conteúdo extra.",
+        "question": "Hades tem DLC obrigatória?"
+      },
+      {
+        "answer": "Não. Nenhum troféu fica bloqueado definitivamente; objetivos pendentes podem ser retomados no mesmo save em novas runs.",
+        "question": "Hades tem troféus perdíveis?"
+      },
+      {
+        "answer": "A estimativa editorial é de 70 a 100 horas. O tempo varia com a primeira fuga, diálogos sujeitos a RNG, afinidade, Fated List, Keepsakes, Companions, pesca, Heat e cleanup.",
+        "question": "Quanto tempo leva para platinar Hades?"
+      },
+      {
+        "answer": "Não. God Mode pode ser ativado para reduzir a dificuldade percebida sem invalidar os troféus da lista base.",
+        "question": "God Mode bloqueia troféus?"
+      },
+      {
+        "answer": "O maior volume está em afinidade e questlines, Keepsakes rank 3, Companions, Fated List, recursos raros, armas/aspectos, pesca e diálogos entre runs.",
+        "question": "Qual é o maior grind?"
+      },
+      {
+        "answer": "Sim, mas o teto relevante para a platina é Heat 16 por causa do segundo prêmio de Skelly. Outros troféus também usam Pact, Extreme Measures e Erebus.",
+        "question": "Preciso completar Heat alto?"
+      },
+      {
+        "answer": "Não. Blood Bound exige maximizar um aspecto, enquanto Infernal Arms exige desbloquear todos os aspectos. Não é necessário maximizar cada aspecto disponível.",
+        "question": "Preciso maximizar todos os aspectos?"
+      },
+      {
+        "answer": "Aprenda as armas, invista Darkness na Mirror of Night, converse com todos, distribua Nectar com intenção e compre a Fated List cedo. Deixe Heat alto e cleanup para depois da primeira fuga.",
+        "question": "O que focar nas primeiras runs?"
+      },
+      {
+        "answer": "Não. Hades II é outro jogo, não é DLC de Hades e possui guia e lista de troféus separados.",
+        "question": "Hades II entra neste guia?"
+      }
+    ],
+    "note": "Campos exportados para auditoria. O SQLite atual nao possui colunas nativas para todos esses extras; a importacao preserva o que o banco suporta.",
+    "quickDecision": {
+      "firstAction": "Comece pela Mirror of Night, teste as armas, converse com todos após cada run e compre a Fated List cedo.",
+      "recommendation": "É uma platina excelente para quem gosta de progressão constante e pouco indicada para quem não tolera grind, repetição ou objetivos sujeitos a diálogos e RNG.",
+      "summary": "Vale platinar Hades se você gosta de roguelite, runs repetidas, builds variadas e progressão de longo prazo. A platina não exige online, coop nem DLC e não tem perdíveis reais, mas cobra muitas runs, afinidade, Fated List, Keepsakes, Companions, Pact of Punishment, pesca e recursos raros."
+    },
+    "seo": {
+      "description": "Guia de platina de Hades em português, com tempo estimado, dificuldade, roadmap, checklist, Fated List, Keepsakes, Companions, Pact of Punishment, Heat e dicas para a platina.",
+      "ogDescription": "Roadmap de Hades para a lista base de PlayStation: 50 troféus, sem perdíveis reais, sem online, sem coop, sem DLC obrigatória e com God Mode permitido.",
+      "ogTitle": "Hades: guia de platina PlayStation com 50 troféus | AtlasAchievement",
+      "title": "Hades: guia de platina, troféus e roadmap | AtlasAchievement"
+    },
+    "tags": []
+  },
+  "slug": "hades",
+  "trophies": [
+    {
+      "description": "Obtenha todos os Troféus.",
+      "is_missable": 0,
+      "is_spoiler": 0,
+      "name": "God of Blood",
+      "name_pt": "Deus do Sangue",
+      "tip": "Surge automaticamente ao concluir o restante da lista. Não exige ação própria além de fechar os troféus pendentes.",
+      "trophy_code": "hades_platinum",
+      "type": "Platina"
+    },
+    {
+      "description": "Complete o Tártaro.",
+      "is_missable": 0,
+      "is_spoiler": 0,
+      "name": "Escaped Tartarus",
+      "name_pt": "Escapou do Tártaro",
+      "tip": "Complete o primeiro bioma derrotando uma Fury. Foque em aprender padrões, sobreviver mais salas e investir Darkness no Mirror.",
+      "trophy_code": "hades_tartarus",
+      "type": "Bronze"
+    },
+    {
+      "description": "Complete Asfódelo.",
+      "is_missable": 0,
+      "is_spoiler": 0,
+      "name": "Escaped Asphodel",
+      "name_pt": "Escapou de Asfódelo",
+      "tip": "Complete o segundo bioma. Priorize mobilidade, dano seguro e evite ficar preso na lava.",
+      "trophy_code": "hades_asphodel",
+      "type": "Bronze"
+    },
+    {
+      "description": "Complete o Elísio.",
+      "is_missable": 0,
+      "is_spoiler": 0,
+      "name": "Escaped Elysium",
+      "name_pt": "Escapou do Elísio",
+      "tip": "Vença Theseus e Asterius. Elimine Asterius primeiro se a dupla ainda estiver te pressionando.",
+      "trophy_code": "hades_elysium",
+      "type": "Bronze"
+    },
+    {
+      "description": "Complete o Elísio com a condição 'Medidas Extremas'.",
+      "is_missable": 0,
+      "is_spoiler": 0,
+      "name": "Champion of Elysium",
+      "name_pt": "Campeão do Elísio",
+      "tip": "Depois de liberar o Pact of Punishment, ative Extreme Measures até o nível que altera Elysium e derrote a dupla novamente.",
+      "trophy_code": "hades_champion_of_elysium",
+      "type": "Prata"
+    },
+    {
+      "description": "Complete um Portão de Érebo sem sofrer dano.",
+      "is_missable": 0,
+      "is_spoiler": 0,
+      "name": "Hold the Onions",
+      "name_pt": "Sem Cebola, Por Favor",
+      "tip": "Compre Gateways, Erebus no Contractor, entre em uma Infernal Gate com Heat suficiente e complete a sala sem levar dano. É desafio de execução para tentar em novas runs.",
+      "trophy_code": "hades_hold_the_onions",
+      "type": "Bronze"
+    },
+    {
+      "description": "Escape com sucesso.",
+      "is_missable": 0,
+      "is_spoiler": 1,
+      "name": "Is There No Escape?",
+      "name_pt": "Não há escapatória?",
+      "tip": "Complete uma run inteira pela primeira vez. Death Defiance, Mirror bem investido e uma arma confortavel ajudam muito.",
+      "trophy_code": "hades_escape",
+      "type": "Prata"
+    },
+    {
+      "description": "Escape usando o aspecto oculto de uma arma.",
+      "is_missable": 0,
+      "is_spoiler": 0,
+      "name": "Weapon of Fate",
+      "name_pt": "Arma do Destino",
+      "tip": "Revele um aspecto oculto por progresso e diálogos, equipe-o e conclua uma run com ele.",
+      "trophy_code": "hades_weapon_of_faté",
+      "type": "Bronze"
+    },
+    {
+      "description": "Ganhe um Cartão de Fidelidade.",
+      "is_missable": 0,
+      "is_spoiler": 0,
+      "name": "To Charon's Credit",
+      "name_pt": "Crédito do Caronte",
+      "tip": "Roube a sacola de obols na loja de Charon quando ela aparecer e vença a luta opcional contra ele. A aparição é RNG; tente novamente em outras runs.",
+      "trophy_code": "hades_charon_credit",
+      "type": "Prata"
+    },
+    {
+      "description": "Receba o primeiro prêmio do Zé Caveira.",
+      "is_missable": 0,
+      "is_spoiler": 0,
+      "name": "The Useless Trinket",
+      "name_pt": "A Bugiganga Inútil",
+      "tip": "Depois de liberar o Pact, complete uma run em Heat 8 ou mais e resgate o primeiro prêmio de Skelly no pátio. Trate como desafio de dificuldade.",
+      "trophy_code": "hades_useless_trinket",
+      "type": "Bronze"
+    },
+    {
+      "description": "Receba o segundo prêmio do Zé Caveira.",
+      "is_missable": 0,
+      "is_spoiler": 0,
+      "name": "Skelly's Last Lamentations",
+      "name_pt": "As Últimas Lamentações do Zé",
+      "tip": "Complete uma run em Heat 16 ou mais. Deixe para quando tiver armas, Mirror e builds de segurança bem dominados; é um dos desafios de dificuldade da platina.",
+      "trophy_code": "hades_skelly_last_lamentations",
+      "type": "Ouro"
+    },
+    {
+      "description": "Obtenha todas as Lembrancinhas padrão.",
+      "is_missable": 0,
+      "is_spoiler": 0,
+      "name": "Something From Everyone",
+      "name_pt": "Algo de todos",
+      "tip": "Dê Nectar uma vez a cada personagem que oferece Keepsake. Consulte o Codex para ver quem falta e faça isso aos poucos entre runs.",
+      "trophy_code": "hades_keepsakes",
+      "type": "Bronze"
+    },
+    {
+      "description": "Alcance o nível máximo de todas as Lembrancinhas padrão.",
+      "is_missable": 0,
+      "is_spoiler": 0,
+      "name": "Friends Forever",
+      "name_pt": "Amizade Eterna",
+      "tip": "Equipe Keepsakes durante runs até todos chegarem ao rank 3. Alterne por bioma para acelerar o progresso.",
+      "trophy_code": "hades_friends_forever",
+      "type": "Prata"
+    },
+    {
+      "description": "Equipe um Companheiro Ctônico.",
+      "is_missable": 0,
+      "is_spoiler": 0,
+      "name": "Rare Collectible",
+      "name_pt": "Colecionável Raro",
+      "tip": "Complete o favor de um personagem elegível, entregue Ambrosia para receber o Companion e equipe-o antes de uma run.",
+      "trophy_code": "hades_rare_collectible",
+      "type": "Bronze"
+    },
+    {
+      "description": "Obtenha todos os Companheiros Ctônicos.",
+      "is_missable": 0,
+      "is_spoiler": 0,
+      "name": "Complete Set",
+      "name_pt": "Colecionador",
+      "tip": "Avance os favores de Megaera, Thanatos, Skelly, Sisyphus, Dusa e Achilles/Patroclus, depois use Ambrosia.",
+      "trophy_code": "hades_complete_set",
+      "type": "Bronze"
+    },
+    {
+      "description": "Maximize qualquer Aspecto de Arma.",
+      "is_missable": 0,
+      "is_spoiler": 0,
+      "name": "Blood Bound",
+      "name_pt": "Vínculo de Sangue",
+      "tip": "Gaste Titan Blood para maximizar um aspecto de arma. Escolha uma arma que você usa bastante para aproveitar o investimento.",
+      "trophy_code": "hades_blood_bound",
+      "type": "Bronze"
+    },
+    {
+      "description": "Desbloqueie todos os Aspectos das Armas.",
+      "is_missable": 0,
+      "is_spoiler": 0,
+      "name": "Infernal Arms",
+      "name_pt": "Armas Infernais",
+      "tip": "Use Titan Blood para liberar todos os aspectos de todas as armas, incluindo os ocultos revelados por diálogos.",
+      "trophy_code": "hades_infernal_arms",
+      "type": "Prata"
+    },
+    {
+      "description": "Aceite 100 efeitos de Bençãos diferentes.",
+      "is_missable": 0,
+      "is_spoiler": 0,
+      "name": "Blessed by the Gods",
+      "name_pt": "Abençoado pelos Deuses",
+      "tip": "Pegue boons diferentes ao longo das runs. Use Keepsakes dos deuses e a Fated List para cobrir lacunas; o RNG de oferta pode alongar o cleanup.",
+      "trophy_code": "hades_blessed_by_the_gods",
+      "type": "Bronze"
+    },
+    {
+      "description": "Expurgue uma Benção Lendária.",
+      "is_missable": 0,
+      "is_spoiler": 0,
+      "name": "Thanks, But No Thanks",
+      "name_pt": "Obrigado, Só Que Não",
+      "tip": "Quando conseguir um boon Legendary, procure um Pool of Purging e venda esse boon. Depende de RNG, então deixe para uma run de cleanup se não aparecer naturalmente.",
+      "trophy_code": "hades_thanks_but_no_thanks",
+      "type": "Bronze"
+    },
+    {
+      "description": "Escolha 50 melhorias diferentes do Martelo de Dédalo.",
+      "is_missable": 0,
+      "is_spoiler": 0,
+      "name": "Tools of the Architect",
+      "name_pt": "Ferramentas do Arquiteto",
+      "tip": "Use armas variadas e escolha encantamentos novos de Daedalus Hammer sempre que aparecerem. A Fated List ajuda a rastrear o que falta.",
+      "trophy_code": "hades_tools_of_the_architect",
+      "type": "Bronze"
+    },
+    {
+      "description": "Desbloqueie todas as Armas Infernais.",
+      "is_missable": 0,
+      "is_spoiler": 0,
+      "name": "Arms Collector",
+      "name_pt": "Coletor de Armas",
+      "tip": "Gaste Chthonic Keys para liberar as seis armas base no arsenal antes de focar em aspectos.",
+      "trophy_code": "hades_arms_collector",
+      "type": "Bronze"
+    },
+    {
+      "description": "Forme um vínculo com qualquer personagem.",
+      "is_missable": 0,
+      "is_spoiler": 0,
+      "name": "Grown Close",
+      "name_pt": "Amigos Íntimos",
+      "tip": "Presenteie um personagem até completar o vínculo. Skelly, Dusa ou Thanatos costumam ser boas linhas para acompanhar.",
+      "trophy_code": "hades_bond",
+      "type": "Bronze"
+    },
+    {
+      "description": "Desbloqueie totalmente as entradas de Codex do Olimpo.",
+      "is_missable": 0,
+      "is_spoiler": 0,
+      "name": "Well Versed",
+      "name_pt": "Bem versado",
+      "tip": "Aceite boons de todos os olimpianos até completar as entradas deles no Codex.",
+      "trophy_code": "hades_well_versed",
+      "type": "Bronze"
+    },
+    {
+      "description": "Realize 20 trocas com o Mercador Miserável.",
+      "is_missable": 0,
+      "is_spoiler": 0,
+      "name": "Day-or-Night Trader",
+      "name_pt": "Negociante Diúrno e Noturno",
+      "tip": "Faça 20 trocas com o Broker. Use recursos excedentes, mas evite gastar materiais raros antes dos upgrades importantes.",
+      "trophy_code": "hades_day_or_night_trader",
+      "type": "Bronze"
+    },
+    {
+      "description": "Pague por 50 trabalhos do Empreiteiro.",
+      "is_missable": 0,
+      "is_spoiler": 0,
+      "name": "Home Makeover",
+      "name_pt": "Reformando a Casa",
+      "tip": "Compre 50 obras do Contractor. Melhorias baratas e cosméticos contam, então vá comprando com Gemstones excedentes.",
+      "trophy_code": "hades_home_makeover",
+      "type": "Bronze"
+    },
+    {
+      "description": "Realize 15 profecias.",
+      "is_missable": 0,
+      "is_spoiler": 0,
+      "name": "Had to Happen",
+      "name_pt": "Predestinado",
+      "tip": "Compre a Fated List cedo e conclua 15 profecias. Misture objetivos simples de armas, boons, personagens e Pact para reduzir grind no fim.",
+      "trophy_code": "hades_had_to_happen",
+      "type": "Bronze"
+    },
+    {
+      "description": "Pesque um peixe de cada região.",
+      "is_missable": 0,
+      "is_spoiler": 0,
+      "name": "River Denizens",
+      "name_pt": "Habitantes do rio",
+      "tip": "Compre a Rod of Fishing e pesque em Tartarus, Asphodel, Elysium, Styx, Chaos e Greece quando os pontos aparecerem.",
+      "trophy_code": "hades_river_denizens",
+      "type": "Bronze"
+    },
+    {
+      "description": "Convença Orfeu a voltar a cantar.",
+      "is_missable": 0,
+      "is_spoiler": 0,
+      "name": "Urge to Sing",
+      "name_pt": "Vontade de Cantar",
+      "tip": "Depois que Orpheus voltar ao House, fale com ele e Eurydice sempre que possível e avance a afinidade até ele cantar novamente.",
+      "trophy_code": "hades_urge_to_sing",
+      "type": "Bronze"
+    },
+    {
+      "description": "Tenha ao menos um nível em cada talento do Espelho da Noite.",
+      "is_missable": 0,
+      "is_spoiler": 0,
+      "name": "Nyx's Mirror",
+      "name_pt": "O Espelho de Nix",
+      "tip": "Desbloqueie todos os talentos do Mirror com Chthonic Keys e coloque ao menos um rank em cada um.",
+      "trophy_code": "hades_nyx_mirror",
+      "type": "Bronze"
+    },
+    {
+      "description": "Realize a profecia 'Noite e Escuridão'.",
+      "is_missable": 0,
+      "is_spoiler": 0,
+      "name": "Night and Darkness",
+      "name_pt": "Noite e Escuridão",
+      "tip": "Avance afinidade e diálogos de Nyx e Chaos, reabra a Administrative Chamber e compre a restauração necessária no Contractor.",
+      "trophy_code": "hades_night_and_darkness",
+      "type": "Bronze"
+    },
+    {
+      "description": "Realize a profecia 'Colegas Ctônicos'.",
+      "is_missable": 0,
+      "is_spoiler": 0,
+      "name": "Chthonic Colleagues",
+      "name_pt": "Colegas Ctônicos",
+      "tip": "Conheça todos os deuses ctônicos listados na Fated List. Continue explorando rotas e falando com NPCs raros.",
+      "trophy_code": "hades_chthonic_colleagues",
+      "type": "Bronze"
+    },
+    {
+      "description": "Realize a profecia 'Sede do Deus da Guerra'.",
+      "is_missable": 0,
+      "is_spoiler": 0,
+      "name": "War-God's Bloodlust",
+      "name_pt": "Sede do Deus da Guerra",
+      "tip": "Dê Nectar a Ares, acumule mortes ao longo das runs e fale com ele novamente quando a meta da profecia for alcançada. É grind acumulativo.",
+      "trophy_code": "hades_war_gods_bloodlust",
+      "type": "Bronze"
+    },
+    {
+      "description": "Realize a profecia 'Fim do Tormento'.",
+      "is_missable": 0,
+      "is_spoiler": 0,
+      "name": "End to Torment",
+      "name_pt": "Fim do Tormento",
+      "tip": "Aumente afinidade com Sisyphus, fale com Bouldy e os personagens ligados ao caso, depois compre o contrato no Contractor.",
+      "trophy_code": "hades_end_to_torment",
+      "type": "Bronze"
+    },
+    {
+      "description": "Realize a profecia 'Músico e Musa'.",
+      "is_missable": 0,
+      "is_spoiler": 0,
+      "name": "Musician and Muse",
+      "name_pt": "Músico e Musa",
+      "tip": "Avance Orpheus e Eurydice com diálogos e Nectar, então compre o contrato deles quando aparecer. O ritmo depende de diálogos entre runs.",
+      "trophy_code": "hades_musician_and_muse",
+      "type": "Bronze"
+    },
+    {
+      "description": "Realize a profecia 'Separados pela Morte'.",
+      "is_missable": 0,
+      "is_spoiler": 0,
+      "name": "Divided by Death",
+      "name_pt": "Separados pela Morte",
+      "tip": "Aumente afinidade com Achilles e Patroclus, resolva pré-requisitos de contratos e compre a reunião no Contractor.",
+      "trophy_code": "hades_divided_by_death",
+      "type": "Bronze"
+    },
+    {
+      "description": "Realize a profecia 'Reflexões Sombrias'.",
+      "is_missable": 0,
+      "is_spoiler": 0,
+      "name": "Dark Reflections",
+      "name_pt": "Reflexões Sombrias",
+      "tip": "Depois de liberar os talentos alternativos do Mirror, complete runs usando cada talento exigido pela profecia.",
+      "trophy_code": "hades_dark_reflections",
+      "type": "Bronze"
+    },
+    {
+      "description": "Realize a profecia 'Condições Difíceis'.",
+      "is_missable": 0,
+      "is_spoiler": 0,
+      "name": "Harsh Conditions",
+      "name_pt": "Condições Difíceis",
+      "tip": "Use cada condição do Pact of Punishment ao menos uma vez em clears. Faça em lotes para não sobrecarregar a run com dificuldade desnecessária.",
+      "trophy_code": "hades_harsh_conditions",
+      "type": "Prata"
+    },
+    {
+      "description": "Realize a profecia 'Mestre das Armas'.",
+      "is_missable": 0,
+      "is_spoiler": 0,
+      "name": "Master of Arms",
+      "name_pt": "Mestre das Armas",
+      "tip": "Conclua uma escape attempt com cada uma das seis armas base.",
+      "trophy_code": "hades_master_of_arms",
+      "type": "Prata"
+    },
+    {
+      "description": "Realize a profecia 'Benefícios Reduzidos'.",
+      "is_missable": 0,
+      "is_spoiler": 0,
+      "name": "Slashed Benefits",
+      "name_pt": "Benefícios Reduzidos",
+      "tip": "Ative Benefits Package no Pact e derrote inimigos com todos os perks exigidos pela profecia.",
+      "trophy_code": "hades_slashed_benefits",
+      "type": "Bronze"
+    },
+    {
+      "description": "Obtenha acesso à Câmara Administrativa.",
+      "is_missable": 0,
+      "is_spoiler": 1,
+      "name": "Back to Work",
+      "name_pt": "Ao Trabalho",
+      "tip": "Avance a história até poder comprar Administrative Privilege no Contractor, depois entre na sala.",
+      "trophy_code": "hades_back_to_work",
+      "type": "Bronze"
+    },
+    {
+      "description": "Termine a missão principal da história.",
+      "is_missable": 0,
+      "is_spoiler": 1,
+      "name": "The Family Secret",
+      "name_pt": "O Segredo de Familia",
+      "tip": "Complete 10 fugas bem-sucedidas e continue a linha principal até o final verdadeiro.",
+      "trophy_code": "hades_family_secret",
+      "type": "Ouro"
+    },
+    {
+      "description": "Chegue ao Epílogo da História.",
+      "is_missable": 0,
+      "is_spoiler": 1,
+      "name": "One for the Ages",
+      "name_pt": "Entrar pra História",
+      "tip": "Depois do final principal, avance favores e diálogos com os Olimpianos e Persephone até abrir o epílogo.",
+      "trophy_code": "hades_epilogue",
+      "type": "Bronze"
+    },
+    {
+      "description": "Compre nove itens do 'Poço do Caronte' em uma tentativa de fuga.",
+      "is_missable": 0,
+      "is_spoiler": 0,
+      "name": "Well Stocked",
+      "name_pt": "Bem Abastecido",
+      "tip": "Entre em uma run com bastante obol, visite todos os Wells que aparecerem e compre nove itens no total.",
+      "trophy_code": "hades_well_stocked",
+      "type": "Bronze"
+    },
+    {
+      "description": "Ganhe 30% de dano extra com a Broche de Borboleta.",
+      "is_missable": 0,
+      "is_spoiler": 0,
+      "name": "Thorn of Thanatos",
+      "name_pt": "Espinho de Tânato",
+      "tip": "Equipe Pierced Butterfly e limpe encontros sem tomar dano até acumular 30%. Rank 3 torna a meta bem mais curta.",
+      "trophy_code": "hades_thorn_of_thanatos",
+      "type": "Bronze"
+    },
+    {
+      "description": "Ganhe 20% de chance de esquiva com a Pluma Cintilante.",
+      "is_missable": 0,
+      "is_spoiler": 0,
+      "name": "Haste of Hermes",
+      "name_pt": "Pressa de Hermes",
+      "tip": "Equipe Lambent Plume e limpe encontros rápido. No rank 3, você precisa de menos salas perfeitas para chegar a 20%.",
+      "trophy_code": "hades_haste_of_hermes",
+      "type": "Bronze"
+    },
+    {
+      "description": "Derrote Tânato por 15 ou mais eliminações de diferença.",
+      "is_missable": 0,
+      "is_spoiler": 0,
+      "name": "Death Dealer",
+      "name_pt": "Ceifador",
+      "tip": "Quando Thanatos aparecer, foque inimigos frágeis e dano em área para terminar o desafio com 15 abates de vantagem. A aparição dele depende de RNG.",
+      "trophy_code": "hades_death_dealer",
+      "type": "Bronze"
+    },
+    {
+      "description": "Use o Grande Chamado para invocar a ajuda de alguém do Olimpo.",
+      "is_missable": 0,
+      "is_spoiler": 0,
+      "name": "Friends in High Places",
+      "name_pt": "Amigos em Lugares de Honra",
+      "tip": "Pegue um boon de Call, encha a barra completa e use a Greater Call em qualquer encontro.",
+      "trophy_code": "hades_friends_in_high_places",
+      "type": "Bronze"
+    },
+    {
+      "description": "Use o Grande Chamado de alguém do Olimpo contra eles em uma Provação.",
+      "is_missable": 0,
+      "is_spoiler": 0,
+      "name": "Bad Call",
+      "name_pt": "Péssima escolha",
+      "tip": "Em uma Trial of the Gods, tenha a Call de um dos deuses, escolha o outro boon e use a Greater Call contra o deus irritado. Depende de RNG de Trial e Call.",
+      "trophy_code": "hades_bad_call",
+      "type": "Bronze"
+    },
+    {
+      "description": "Mate Zé Caveira 15 vezes.",
+      "is_missable": 0,
+      "is_spoiler": 0,
+      "name": "Skelly Slayer",
+      "name_pt": "Caveirocídio",
+      "tip": "Ataque Skelly no pátio 15 vezes ao longo do jogo. Pode ser feito rapidamente entre tentativas.",
+      "trophy_code": "hades_skelly_slayer",
+      "type": "Bronze"
+    },
+    {
+      "description": "Acaricie Cérbero 10 vezes.",
+      "is_missable": 0,
+      "is_spoiler": 0,
+      "name": "Three-Headed Boy",
+      "name_pt": "Garoto de três cabeças",
+      "tip": "Faça carinho em Cerberus no House of Hades sempre que puder até acumular 10 interações.",
+      "trophy_code": "hades_three_headed_boy",
+      "type": "Bronze"
+    }
+  ]
+}

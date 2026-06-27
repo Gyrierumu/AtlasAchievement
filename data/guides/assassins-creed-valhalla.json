@@ -1,0 +1,776 @@
+{
+  "game": {
+    "avoid_if": "Evite se você não gosta de limpar mapa, coletáveis, regiões extensas, minigames e atividades repetidas de mundo aberto.",
+    "before_you_start": "A lista base não exige online, DLC nem dificuldade específica. O compromisso real é tempo: Valhalla é uma platina de mapa enorme com foco em Completionist All the Way!.",
+    "best_for": "Ideal para quem quer uma platina de mundo aberto longa, histórica, acessível e com muito conteúdo viking para limpar.",
+    "cleanup_advice": "Após a história, limpe regiões por Wealth, Mysteries e Artifacts, depois finalize Ordem dos Anciões, fishing, settlement, raids, Orlog e troféus situacionais.",
+    "cover_image": "https://cdn.cloudflare.steamstatic.com/steam/apps/2208920/library_600x900.jpg",
+    "coverage_level": "strong",
+    "created_at": "2026-05-09 19:53:47",
+    "difficulty": 4,
+    "difficulty_reason": "A platina é acessível em execução e não exige dificuldade alta; o maior desafio é o volume de exploração, regiões, atividades, coletáveis e cleanup.",
+    "dlc_scope": "Guia focado na lista base da platina; Wrath of the Druids, The Siege of Paris, Dawn of Ragnarök, The Forgotten Saga e Discovery Tour devem ficar separados se o projeto suportar DLC/add-ons.",
+    "editorial_notes": null,
+    "editorial_review_status": null,
+    "editorial_status": "published",
+    "first_run_advice": "Jogue a história naturalmente e limpe atividades próximas quando quiser, mas aceite que o cleanup final será grande por causa do tamanho do mapa.",
+    "grind_summary": "O peso está em completar territórios, Wealth, Mysteries, Artifacts, Ordem dos Anciões, fishing, settlement, raids e atividades de mundo aberto.",
+    "guide_avoid": null,
+    "guide_best_moment": null,
+    "guide_dlc": null,
+    "guide_grind": null,
+    "guide_ideal": null,
+    "guide_online": null,
+    "guide_runs": null,
+    "image": "https://cdn.cloudflare.steamstatic.com/steam/apps/2208920/header.jpg",
+    "is_verified": 0,
+    "last_reviewed_at": null,
+    "missable": "Sem perdíveis definitivos confirmados na lista base atual. O cleanup pode ser feito em free-roam após a história, embora alguns conteúdos dependam de progresso de arcos e regiões.",
+    "missable_summary": "Nenhum troféu da lista base deve ser tratado como perdível definitivo; colete e limpe regiões no free-roam pós-história quando necessário.",
+    "name": "Assassin’s Creed Valhalla",
+    "online_summary": "Não há exigência online para a platina da lista base.",
+    "quality_warnings": null,
+    "reviewed_by": null,
+    "runs_summary": "Uma campanha principal com cleanup livre após a história. A lista base não exige DLC nem dificuldade específica.",
+    "slug": "assassins-creed-valhalla",
+    "time": "100-150h",
+    "time_bucket": "long",
+    "time_max_hours": 150,
+    "time_min_hours": 100,
+    "time_reason": "A faixa de 100-150 horas considera campanha, arcos de território, Wealth, Mysteries, Artifacts, Ordem dos Anciões, fishing, settlement, raids e cleanup.",
+    "time_sort_hours": 100,
+    "updated_at": "2026-06-27 02:36:58",
+    "verification_note": "Guia público seed-managed com checklist base e roadmap; aguardando revisão editorial manual final.",
+    "verification_status": "review",
+    "walkthrough": null
+  },
+  "redirects": [
+    "assassin-s-creed-valhalla"
+  ],
+  "roadmaps": [
+    {
+      "content": "Etapa 1: jogue a campanha naturalmente, desbloqueando Inglaterra, settlement, raids, Senu/Huginn, habilidades, regiões e sistemas principais sem se preocupar com dificuldade.",
+      "step_order": 1
+    },
+    {
+      "content": "Etapa 2: avance arcos de território e a Ordem dos Anciões; marque Zealots quando encontrá-los para reduzir o tempo de busca no cleanup.",
+      "step_order": 2
+    },
+    {
+      "content": "Etapa 3: limpe regiões por Wealth, Mysteries e Artifacts para Completionist All the Way!, incluindo Noruega, Inglaterra, Vinland, Asgard e Jotunheim quando aplicável.",
+      "step_order": 3
+    },
+    {
+      "content": "Etapa 4: complete atividades especiais: Orlog, Flyting, Cairns, Standing Stones, Animus Anomalies, Fly Agaric, Treasure Hoards, Curse Symbols e Legendary Animals.",
+      "step_order": 4
+    },
+    {
+      "content": "Etapa 5: finalize settlement nível 6, raids, fishing, Vinland, Asgard/Jotunheim, Roman Collector, Excalibur, Thor’s Helmet, Mjolnir e troféus situacionais.",
+      "step_order": 5
+    },
+    {
+      "content": "Etapa 6: cleanup final pós-história de Completionist All the Way!, Disorder of the Ancients, Good Catch!, Overdesign II, Orlog Champion e checklist restante, mantendo DLCs fora da lista base.",
+      "step_order": 6
+    }
+  ],
+  "schemaVersion": 1,
+  "seedExtras": {
+    "aliases": [],
+    "attentionPoints": [
+      {
+        "detail": "É o maior gargalo da platina. Complete Wealth, Mysteries e Artifacts de todos os territórios da lista base.",
+        "tags": [
+          "Completionist",
+          "Mapa",
+          "Grind"
+        ],
+        "title": "Completionist All the Way!"
+      },
+      {
+        "detail": "Faça um save manual ao iniciar cada novo arco/região no mapa de alianças e antes de World Events. Isso reduz o risco de retrabalho em caso de bug.",
+        "tags": [
+          "Saves manuais",
+          "Risco técnico"
+        ],
+        "title": "Saves manuais por região"
+      },
+      {
+        "detail": "Relatos de bugs em Mysteries/World Events devem ser tratados como risco técnico, não como troféus perdíveis reais.",
+        "tags": [
+          "Risco técnico",
+          "Sem perdíveis"
+        ],
+        "title": "Bugs não são perdíveis"
+      },
+      {
+        "detail": "A platina base usa 51 troféus. Não misture Wrath of the Druids, The Siege of Paris, Dawn of Ragnarök, The Forgotten Saga ou outros DLCs com Viking Legend.",
+        "tags": [
+          "DLC fora da platina"
+        ],
+        "title": "DLC não necessária"
+      },
+      {
+        "detail": "A dificuldade escolhida não afeta troféus. Overdesign II fala de soldados difíceis/tipo de inimigo, não dificuldade da campanha.",
+        "tags": [
+          "Dificuldade livre"
+        ],
+        "title": "Dificuldade"
+      },
+      {
+        "detail": "Use a fishing line para pegar cada tipo de peixe. Matar peixes com armas ou explosivos não conta.",
+        "tags": [
+          "Pesca",
+          "Checklist"
+        ],
+        "title": "Good Catch!"
+      },
+      {
+        "detail": "Home Sweet Home exige settlement level 6; raids e recursos são parte importante do cleanup.",
+        "tags": [
+          "Settlement",
+          "Raids"
+        ],
+        "title": "Settlement level 6"
+      },
+      {
+        "detail": "Vencer todos os jogadores de Orlog pode ficar para o final, mas deve ser rastreado em checklist.",
+        "tags": [
+          "Orlog",
+          "Cleanup"
+        ],
+        "title": "Orlog Champion"
+      },
+      {
+        "detail": "Worthy e Godly Reward dependem de progressão avançada, Daughters of Lerion e requisitos de Thor.",
+        "tags": [
+          "Thor",
+          "Endgame"
+        ],
+        "title": "Mjolnir e Thor"
+      },
+      {
+        "detail": "PS4 e PS5 podem ter stacks separadas. Não prometa autopop ou progresso compartilhado sem confirmação no projeto/fonte.",
+        "tags": [
+          "PS4",
+          "PS5"
+        ],
+        "title": "PS4 e PS5"
+      }
+    ],
+    "checklist": [
+      "Conferir se o guia tem 51 troféus da lista base.",
+      "Conferir se Viking Legend é a platina.",
+      "Conferir distribuição: 1 platina, 1 ouro, 14 prata, 35 bronze.",
+      "Conferir se DLCs não foram misturadas.",
+      "Conferir onlineRequired false.",
+      "Conferir coopRequired false.",
+      "Conferir dlcRequired false.",
+      "Conferir hasMissables false.",
+      "Conferir missableCount 0.",
+      "Conferir se nenhum troféu está marcado como perdível.",
+      "Conferir se Completionist All the Way! não está como perdível.",
+      "Conferir se bugs são tratados como risco técnico, não perdível.",
+      "Conferir se Overdesign II não está marcado como dificuldade de campanha.",
+      "Conferir se dificuldade não afeta troféus.",
+      "Conferir se filtros não estão inflados por tags erradas.",
+      "Conferir se todos os troféus tem nome oficial em inglês como principal.",
+      "Conferir se todos tem PT-BR abaixo quando houver traducao confiável/oficial.",
+      "Conferir se descrições estão em português.",
+      "Conferir se não aparecem placeholders editoriais nos cards.",
+      "Conferir se roadmap está estruturado como array/objeto.",
+      "Conferir se roadmap não renderiza placeholder de objeto.",
+      "Conferir FAQ, decisão rápida, SEO e pontos de atenção.",
+      "Conferir se página individual e catálogo exibem o mesmo status editorial.",
+      "Conferir se flags do topo batem com filtros do catálogo."
+    ],
+    "faq": [
+      {
+        "answer": "Não. A platina base não tem perdíveis reais. O cuidado principal é manter saves manuais por região por causa de possíveis bugs em Mysteries ou World Events.",
+        "question": "Assassin’s Creed Valhalla tem troféus perdíveis?"
+      },
+      {
+        "answer": "Não. A platina base é offline e não exige troféus online.",
+        "question": "Precisa jogar online para platinar?"
+      },
+      {
+        "answer": "Não. Assassin’s Creed Valhalla é uma platina single-player.",
+        "question": "Precisa de cooperação?"
+      },
+      {
+        "answer": "Não. Viking Legend exige apenas os 51 troféus da lista base. DLCs como Wrath of the Druids, The Siege of Paris, Dawn of Ragnarök e The Forgotten Saga não são necessários para a platina.",
+        "question": "Precisa de DLC para a platina?"
+      },
+      {
+        "answer": "Não. A dificuldade escolhida não afeta a platina. Overdesign II envolve inimigos difíceis, mas não exige jogar em uma dificuldade específica da campanha.",
+        "question": "A dificuldade afeta troféus?"
+      },
+      {
+        "answer": "Em média, cerca de 120 horas ou mais, dependendo do ritmo de exploração e da organização do cleanup.",
+        "question": "Quanto tempo leva para platinar?"
+      },
+      {
+        "answer": "Sim. Completionist All the Way! exige completar os territórios da lista base com Wealth, Mysteries e Artifacts.",
+        "question": "Preciso completar todos os territórios?"
+      },
+      {
+        "answer": "Faça saves manuais ao iniciar cada região/arco e antes de World Events. Se algum evento não avançar, tente viajar para outra região, reiniciar o jogo ou recarregar um save anterior.",
+        "question": "O que fazer para evitar bugs?"
+      },
+      {
+        "answer": "Não. O troféu exige pegar cada tipo de peixe usando a fishing line.",
+        "question": "Good Catch! aceita matar peixe com arma?"
+      },
+      {
+        "answer": "Completionist All the Way!. Ele exige 100% dos territórios e é o principal motivo da platina ser tão longa.",
+        "question": "Qual é o maior cuidado da platina?"
+      }
+    ],
+    "note": "Campos exportados para auditoria. O SQLite atual nao possui colunas nativas para todos esses extras; a importacao preserva o que o banco suporta.",
+    "quickDecision": {
+      "difficulty": "Baixa a moderada.",
+      "dlc": "Não exige DLC para a platina base.",
+      "mainAlert": "Completionist All the Way! e saves manuais por região.",
+      "onlineCoop": "Não exige online nem cooperação.",
+      "risk": "Sem perdíveis reais, mas com risco técnico de bugs em Mysteries/World Events.",
+      "time": "Muito longo, cerca de 120h+.",
+      "worthIt": "Sim, se você gosta de mundo aberto e aceita uma platina muito longa de exploração completa."
+    },
+    "seo": {
+      "description": "Guia de troféus de Assassin’s Creed Valhalla com roadmap da platina, tempo estimado, dificuldade, Completionist All the Way, Order of the Ancients, Orlog, pesca, Mjolnir, Excalibur e dicas para os 51 troféus da lista base.",
+      "keywords": "Assassin’s Creed Valhalla troféus, Assassin’s Creed Valhalla platina, guia Assassin’s Creed Valhalla, AC Valhalla troféus, AC Valhalla platina, Viking Legend, Completionist All the Way, Order of the Ancients, Good Catch, Orlog Champion, Mjolnir, Excalibur, Worthy, Godly Reward",
+      "metaDescription": "Guia de troféus de Assassin’s Creed Valhalla com roadmap da platina, tempo estimado, dificuldade, Completionist All the Way, Order of the Ancients, Orlog, pesca, Mjolnir, Excalibur e dicas para os 51 troféus da lista base.",
+      "ogDescription": "Roadmap da platina base de Assassin’s Creed Valhalla com 51 troféus, Completionist All the Way, Order of the Ancients, Orlog, pesca, Mjolnir e Excalibur.",
+      "ogTitle": "Assassin’s Creed Valhalla: Guia de Troféus e Platina",
+      "title": "Assassin’s Creed Valhalla: Guia de Troféus e Platina"
+    },
+    "tags": [
+      "Assassin’s Creed Valhalla",
+      "AC Valhalla",
+      "PS4",
+      "PS5",
+      "Platina",
+      "Offline",
+      "Sem online",
+      "Sem coop",
+      "DLC fora da platina base",
+      "Completionist All the Way",
+      "Order of the Ancients",
+      "Mjolnir",
+      "Excalibur",
+      "Orlog"
+    ]
+  },
+  "slug": "assassins-creed-valhalla",
+  "trophies": [
+    {
+      "description": "Win Every Trophy",
+      "is_missable": 0,
+      "is_spoiler": 0,
+      "name": "Viking Legend",
+      "name_pt": "",
+      "tip": "Conquiste todos os outros troféus da lista base para liberar a platina. DLCs não são necessárias.",
+      "trophy_code": "acv_viking_legend",
+      "type": "Platina"
+    },
+    {
+      "description": "Complete the Prologue",
+      "is_missable": 0,
+      "is_spoiler": 1,
+      "name": "The Saga Begins",
+      "name_pt": "",
+      "tip": "Troféu de história. Complete o prólogo na Noruega.",
+      "trophy_code": "acv_the_saga_begins",
+      "type": "Bronze"
+    },
+    {
+      "description": "Leave Norway",
+      "is_missable": 0,
+      "is_spoiler": 1,
+      "name": "To England!",
+      "name_pt": "",
+      "tip": "Troféu de história. Avance até deixar a Noruega e chegar à Inglaterra.",
+      "trophy_code": "acv_to_england",
+      "type": "Bronze"
+    },
+    {
+      "description": "Complete the Grantebridgescire Arc",
+      "is_missable": 0,
+      "is_spoiler": 1,
+      "name": "Grantebridgescire Arc",
+      "name_pt": "",
+      "tip": "Troféu de história. Complete o arco de Grantebridgescire.",
+      "trophy_code": "acv_grantebridgescire_arc",
+      "type": "Bronze"
+    },
+    {
+      "description": "Complete the Lunden Arc",
+      "is_missable": 0,
+      "is_spoiler": 1,
+      "name": "The Order is Revealed",
+      "name_pt": "",
+      "tip": "Troféu de história. Complete o arco de Lunden e avance a trama da Ordem.",
+      "trophy_code": "acv_the_order_is_revealed",
+      "type": "Bronze"
+    },
+    {
+      "description": "Complete the East Anglia Arc",
+      "is_missable": 0,
+      "is_spoiler": 1,
+      "name": "The Good Saxon",
+      "name_pt": "",
+      "tip": "Troféu de história. Complete o arco de East Anglia.",
+      "trophy_code": "acv_the_good_saxon",
+      "type": "Bronze"
+    },
+    {
+      "description": "Complete the Cent Arc",
+      "is_missable": 0,
+      "is_spoiler": 1,
+      "name": "Take My Hand",
+      "name_pt": "",
+      "tip": "Troféu de história. Complete o arco de Cent.",
+      "trophy_code": "acv_take_my_hand",
+      "type": "Bronze"
+    },
+    {
+      "description": "Complete the Suthsexe Arc",
+      "is_missable": 0,
+      "is_spoiler": 1,
+      "name": "Calling in a Favor",
+      "name_pt": "",
+      "tip": "Troféu de história. Complete o arco de Suthsexe.",
+      "trophy_code": "acv_calling_in_a_favor",
+      "type": "Bronze"
+    },
+    {
+      "description": "Complete the Wincestre Arc",
+      "is_missable": 0,
+      "is_spoiler": 1,
+      "name": "The Enemy of My Enemy",
+      "name_pt": "",
+      "tip": "Troféu de história. Complete o arco de Wincestre.",
+      "trophy_code": "acv_the_enemy_of_my_enemy",
+      "type": "Bronze"
+    },
+    {
+      "description": "Complete the Asgard and Jotunheim quests",
+      "is_missable": 0,
+      "is_spoiler": 1,
+      "name": "In the Footsteps of the Gods",
+      "name_pt": "",
+      "tip": "Complete as linhas de Asgard e Jotunheim da lista base.",
+      "trophy_code": "acv_in_the_footsteps_of_the_gods",
+      "type": "Prata"
+    },
+    {
+      "description": "Complete “The Prophecy” storyline",
+      "is_missable": 0,
+      "is_spoiler": 1,
+      "name": "As It Was Foretold",
+      "name_pt": "",
+      "tip": "Complete a storyline “The Prophecy”.",
+      "trophy_code": "acv_as_it_was_foretold",
+      "type": "Prata"
+    },
+    {
+      "description": "Complete Hamtunscire Arc",
+      "is_missable": 0,
+      "is_spoiler": 1,
+      "name": "England Subdued",
+      "name_pt": "",
+      "tip": "Complete o arco de Hamtunscire, ligado ao final da campanha inglesa.",
+      "trophy_code": "acv_england_subdued",
+      "type": "Prata"
+    },
+    {
+      "description": "Eliminate all targets of the Order of Ancients",
+      "is_missable": 0,
+      "is_spoiler": 1,
+      "name": "Disorder of the Ancients",
+      "name_pt": "",
+      "tip": "Elimine todos os membros da Order of the Ancients, incluindo Zealots e alvos finais.",
+      "trophy_code": "acv_disorder_of_the_ancients",
+      "type": "Ouro"
+    },
+    {
+      "description": "Complete your first raid in England",
+      "is_missable": 0,
+      "is_spoiler": 0,
+      "name": "Rampage",
+      "name_pt": "",
+      "tip": "Complete seu primeiro raid na Inglaterra.",
+      "trophy_code": "acv_rampage",
+      "type": "Bronze"
+    },
+    {
+      "description": "Create a Jomsviking",
+      "is_missable": 0,
+      "is_spoiler": 0,
+      "name": "It’s Alive!",
+      "name_pt": "",
+      "tip": "Crie um Jomsviking em Ravensthorpe.",
+      "trophy_code": "acv_its_alive",
+      "type": "Bronze"
+    },
+    {
+      "description": "Complete a Standing Stone puzzle",
+      "is_missable": 0,
+      "is_spoiler": 0,
+      "name": "Tranquility",
+      "name_pt": "",
+      "tip": "Complete qualquer puzzle de Standing Stones.",
+      "trophy_code": "acv_tranquility",
+      "type": "Bronze"
+    },
+    {
+      "description": "Complete 3 Cairn challenges",
+      "is_missable": 0,
+      "is_spoiler": 0,
+      "name": "Equilibrium",
+      "name_pt": "",
+      "tip": "Complete três desafios de Cairn.",
+      "trophy_code": "acv_equilibrium",
+      "type": "Bronze"
+    },
+    {
+      "description": "Collect 5 Treasure Hoard rewards",
+      "is_missable": 0,
+      "is_spoiler": 0,
+      "name": "Old School Treasure Hunt",
+      "name_pt": "",
+      "tip": "Colete cinco recompensas de Treasure Hoard Maps.",
+      "trophy_code": "acv_old_school_treasure_hunt",
+      "type": "Bronze"
+    },
+    {
+      "description": "Perform a 150m slide in the snow",
+      "is_missable": 0,
+      "is_spoiler": 0,
+      "name": "Skadi’s Hobby",
+      "name_pt": "",
+      "tip": "Faça uma descida de 150 metros na neve.",
+      "trophy_code": "acv_skadis_hobby",
+      "type": "Bronze"
+    },
+    {
+      "description": "Defeat one Daughter of Lerion",
+      "is_missable": 0,
+      "is_spoiler": 1,
+      "name": "Witch Hunter",
+      "name_pt": "",
+      "tip": "Derrote uma Daughter of Lerion.",
+      "trophy_code": "acv_witch_hunter",
+      "type": "Bronze"
+    },
+    {
+      "description": "Assassinate an enemy from your horse",
+      "is_missable": 0,
+      "is_spoiler": 0,
+      "name": "Equine Attack",
+      "name_pt": "",
+      "tip": "Assassine um inimigo a partir do cavalo.",
+      "trophy_code": "acv_equine_attack",
+      "type": "Bronze"
+    },
+    {
+      "description": "Assassinate 10 enemies in a row without triggering a conflict",
+      "is_missable": 0,
+      "is_spoiler": 0,
+      "name": "Silent Viking",
+      "name_pt": "",
+      "tip": "Faça 10 assassinatos seguidos sem iniciar conflito.",
+      "trophy_code": "acv_silent_viking",
+      "type": "Bronze"
+    },
+    {
+      "description": "Complete 10 World Events",
+      "is_missable": 0,
+      "is_spoiler": 0,
+      "name": "Everyday Life",
+      "name_pt": "",
+      "tip": "Complete 10 World Events/Mysteries.",
+      "trophy_code": "acv_everyday_life",
+      "type": "Bronze"
+    },
+    {
+      "description": "While on fire during a fight, kill 3 elite soldiers without breaking their shields",
+      "is_missable": 0,
+      "is_spoiler": 0,
+      "name": "Overdesign II",
+      "name_pt": "",
+      "tip": "Mate três soldados de categoria difícil enquanto Eivor está em chamas, sem quebrar os escudos deles. Isso não é troféu de dificuldade do jogo.",
+      "trophy_code": "acv_overdesign_ii",
+      "type": "Prata"
+    },
+    {
+      "description": "Complete all territories",
+      "is_missable": 0,
+      "is_spoiler": 0,
+      "name": "Completionist All the Way!",
+      "name_pt": "",
+      "tip": "Complete todos os territórios da lista base limpando Wealth, Mysteries e Artifacts.",
+      "trophy_code": "acv_completionist_all_the_way",
+      "type": "Prata"
+    },
+    {
+      "description": "Ram and destroy 5 boats in under 2 minutes with your longship",
+      "is_missable": 0,
+      "is_spoiler": 0,
+      "name": "Row Rage",
+      "name_pt": "",
+      "tip": "Destrua cinco barcos em menos de dois minutos usando o longship.",
+      "trophy_code": "acv_row_rage",
+      "type": "Bronze"
+    },
+    {
+      "description": "Reach Power 280",
+      "is_missable": 0,
+      "is_spoiler": 0,
+      "name": "We’re in the End Game Now",
+      "name_pt": "",
+      "tip": "Chegue ao Power 280 com progressão, habilidades e atividades.",
+      "trophy_code": "acv_were_in_the_end_game_now",
+      "type": "Prata"
+    },
+    {
+      "description": "Run through 30 breakable objects",
+      "is_missable": 0,
+      "is_spoiler": 0,
+      "name": "A Picture of Grace",
+      "name_pt": "",
+      "tip": "Corra através de 30 objetos quebráveis.",
+      "trophy_code": "acv_a_picture_of_grace",
+      "type": "Bronze"
+    },
+    {
+      "description": "Reach settlement level 3",
+      "is_missable": 0,
+      "is_spoiler": 0,
+      "name": "Builder",
+      "name_pt": "",
+      "tip": "Eleve Ravensthorpe ao nível 3.",
+      "trophy_code": "acv_builder",
+      "type": "Bronze"
+    },
+    {
+      "description": "Reach settlement level 6",
+      "is_missable": 0,
+      "is_spoiler": 0,
+      "name": "Home Sweet Home",
+      "name_pt": "",
+      "tip": "Eleve Ravensthorpe ao nível 6 construindo e melhorando o settlement com recursos de raids, arcos e baús menores.",
+      "trophy_code": "acv_home_sweet_home",
+      "type": "Prata"
+    },
+    {
+      "description": "Reach Vinland",
+      "is_missable": 0,
+      "is_spoiler": 1,
+      "name": "Pioneer",
+      "name_pt": "",
+      "tip": "Chegue a Vinland pela campanha/lista base.",
+      "trophy_code": "acv_pioneer",
+      "type": "Bronze"
+    },
+    {
+      "description": "Place an item on each settlement cosmetic spot",
+      "is_missable": 0,
+      "is_spoiler": 0,
+      "name": "Home Decor",
+      "name_pt": "",
+      "tip": "Coloque um item em cada ponto cosmético do settlement.",
+      "trophy_code": "acv_home_decor",
+      "type": "Bronze"
+    },
+    {
+      "description": "Successfully pass close to a guard in a distrust area by blending with a group of monks",
+      "is_missable": 0,
+      "is_spoiler": 0,
+      "name": "Not the Norse You’re Looking For",
+      "name_pt": "",
+      "tip": "Passe perto de um guarda em área de desconfiança misturado a um grupo de monges.",
+      "trophy_code": "acv_not_the_norse_youre_looking_for",
+      "type": "Bronze"
+    },
+    {
+      "description": "Equip 8 abilities",
+      "is_missable": 0,
+      "is_spoiler": 0,
+      "name": "Face My Might!",
+      "name_pt": "",
+      "tip": "Equipe oito habilidades ao mesmo tempo.",
+      "trophy_code": "acv_face_my_might",
+      "type": "Bronze"
+    },
+    {
+      "description": "Fully upgrade and enhance a piece of gear",
+      "is_missable": 0,
+      "is_spoiler": 0,
+      "name": "Ultimate Refinement",
+      "name_pt": "",
+      "tip": "Melhore e aprimore completamente uma peça de equipamento.",
+      "trophy_code": "acv_ultimate_refinement",
+      "type": "Prata"
+    },
+    {
+      "description": "Get thrown 30 meters away by a destroyer or a housecarl",
+      "is_missable": 0,
+      "is_spoiler": 0,
+      "name": "Flying Eivor",
+      "name_pt": "",
+      "tip": "Seja arremessado 30 metros por um Destroyer ou Housecarl.",
+      "trophy_code": "acv_flying_eivor",
+      "type": "Bronze"
+    },
+    {
+      "description": "Release a firefly in your settlement",
+      "is_missable": 0,
+      "is_spoiler": 0,
+      "name": "Twinkle Twinkle",
+      "name_pt": "",
+      "tip": "Solte um vaga-lume no settlement.",
+      "trophy_code": "acv_twinkle_twinkle",
+      "type": "Bronze"
+    },
+    {
+      "description": "Complete all Roman collector challenges",
+      "is_missable": 0,
+      "is_spoiler": 0,
+      "name": "Archaeologist",
+      "name_pt": "",
+      "tip": "Complete todos os desafios do Roman Collector.",
+      "trophy_code": "acv_archaeologist",
+      "type": "Bronze"
+    },
+    {
+      "description": "Beat all the Orlog players",
+      "is_missable": 0,
+      "is_spoiler": 0,
+      "name": "Orlog Champion",
+      "name_pt": "",
+      "tip": "Vença todos os jogadores de Orlog.",
+      "trophy_code": "acv_orlog_champion",
+      "type": "Bronze"
+    },
+    {
+      "description": "Catch a fish of each type using the fishing line",
+      "is_missable": 0,
+      "is_spoiler": 0,
+      "name": "Good Catch!",
+      "name_pt": "",
+      "tip": "Pesque cada tipo de peixe usando a fishing line.",
+      "trophy_code": "acv_good_catch",
+      "type": "Bronze"
+    },
+    {
+      "description": "Spend your first Mastery point",
+      "is_missable": 0,
+      "is_spoiler": 0,
+      "name": "Full Mastery",
+      "name_pt": "",
+      "tip": "Gaste seu primeiro Mastery Point após atingir a progressão necessária.",
+      "trophy_code": "acv_full_mastery",
+      "type": "Prata"
+    },
+    {
+      "description": "Light the unlit braziers on Hadrian’s Wall",
+      "is_missable": 0,
+      "is_spoiler": 0,
+      "name": "Is There Anybody Out There?",
+      "name_pt": "",
+      "tip": "Acenda os braseiros apagados na Muralha de Adriano.",
+      "trophy_code": "acv_is_there_anybody_out_there",
+      "type": "Bronze"
+    },
+    {
+      "description": "Complete all the flytings",
+      "is_missable": 0,
+      "is_spoiler": 0,
+      "name": "Slam Master",
+      "name_pt": "",
+      "tip": "Complete todos os Flytings.",
+      "trophy_code": "acv_slam_master",
+      "type": "Prata"
+    },
+    {
+      "description": "Draw Excalibur from the Stone",
+      "is_missable": 0,
+      "is_spoiler": 1,
+      "name": "Caladfwlch",
+      "name_pt": "",
+      "tip": "Obtenha Excalibur na lista base.",
+      "trophy_code": "acv_caladfwlch",
+      "type": "Prata"
+    },
+    {
+      "description": "Complete your first Animus Anomaly",
+      "is_missable": 0,
+      "is_spoiler": 1,
+      "name": "It’s Not a Bug, It’s a Feature!",
+      "name_pt": "",
+      "tip": "Complete sua primeira Animus Anomaly.",
+      "trophy_code": "acv_its_not_a_bug_its_a_feature",
+      "type": "Bronze"
+    },
+    {
+      "description": "Swim a total of 3km with the horse",
+      "is_missable": 0,
+      "is_spoiler": 0,
+      "name": "Seahorse",
+      "name_pt": "",
+      "tip": "Nade 3 km no total com o cavalo. Compre o treinamento de nado no stable para facilitar.",
+      "trophy_code": "acv_seahorse",
+      "type": "Bronze"
+    },
+    {
+      "description": "Obtain all video fragments and watch the hidden truth video",
+      "is_missable": 0,
+      "is_spoiler": 1,
+      "name": "The Hidden Truth",
+      "name_pt": "",
+      "tip": "Obtenha todos os fragmentos de vídeo das Animus Anomalies e assista ao vídeo final.",
+      "trophy_code": "acv_the_hidden_truth",
+      "type": "Prata"
+    },
+    {
+      "description": "Defeat all Alpha animals",
+      "is_missable": 0,
+      "is_spoiler": 0,
+      "name": "Master Hunter",
+      "name_pt": "",
+      "tip": "Derrote todos os Alpha/Legendary Animals.",
+      "trophy_code": "acv_master_hunter",
+      "type": "Prata"
+    },
+    {
+      "description": "Destroy 10 Curse Symbols",
+      "is_missable": 0,
+      "is_spoiler": 0,
+      "name": "Dreamcatcher",
+      "name_pt": "",
+      "tip": "Destrua 10 Curse Symbols.",
+      "trophy_code": "acv_dreamcatcher",
+      "type": "Bronze"
+    },
+    {
+      "description": "Obtain Thor’s Helmet",
+      "is_missable": 0,
+      "is_spoiler": 1,
+      "name": "Godly Reward",
+      "name_pt": "",
+      "tip": "Obtenha Thor’s Helmet.",
+      "trophy_code": "acv_godly_reward",
+      "type": "Prata"
+    },
+    {
+      "description": "Wield Mjolnir",
+      "is_missable": 0,
+      "is_spoiler": 1,
+      "name": "Worthy",
+      "name_pt": "",
+      "tip": "Empunhe Mjolnir após cumprir os requisitos da lista base.",
+      "trophy_code": "acv_worthy",
+      "type": "Bronze"
+    }
+  ]
+}

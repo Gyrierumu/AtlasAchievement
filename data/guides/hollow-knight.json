@@ -1,0 +1,438 @@
+{
+  "game": {
+    "avoid_if": "Evite se você não quer chefes muito difíceis, Trial of the Fool, 112%, Pantheon of Hallownest ou longas sessões de prática.",
+    "before_you_start": "Esta entrada usa a lista PlayStation de Hollow Knight: Voidheart Edition. Antes de pegar Void Heart, faça o final The Hollow Knight no mesmo save. Steel Soul, Speedrun, Steel Heart e outras conquistas extras de PC/Xbox ficam fora da platina PlayStation usada por este guia.",
+    "best_for": "Ideal para quem quer uma platina metroidvania difícil, longa, técnica e altamente recompensadora.",
+    "cleanup_advice": "Depois dos finais principais, limpe amuletos, larvas, Essência, Diário do Caçador, Delicate Flower, Trials, Grimm Troupe e 112% antes de focar no Pantheon of Hallownest.",
+    "cover_image": "https://cdn.cloudflare.steamstatic.com/steam/apps/367520/library_600x900.jpg",
+    "coverage_level": "strong",
+    "created_at": "2026-05-09 19:53:53",
+    "difficulty": 9,
+    "difficulty_reason": "A dificuldade vem da execução em chefes, Trial of the Fool, Nightmare’s End, 112%, Godhome e Pantheon of Hallownest; não há seletor de dificuldade tradicional.",
+    "dlc_scope": "Conteúdo Voidheart integrado à lista PlayStation. Grimm Troupe e Godmaster fazem parte da lista usada pelo guia; conquistas extras de PC/Xbox não entram nesta platina.",
+    "editorial_notes": "Guia revisado editorialmente para a lista PlayStation de Hollow Knight: Voidheart Edition. Steel Soul, Speedrun, Steel Heart e extras de PC/Xbox ficam fora da platina PlayStation usada por este guia.",
+    "editorial_review_status": "verified",
+    "editorial_status": "published",
+    "first_run_advice": "Faça uma primeira run de aprendizado para abrir mapas, atalhos, habilidades, amuletos, melhorias do Ferrão e chefes. Antes de obter Void Heart, conclua o final básico The Hollow Knight no mesmo save.",
+    "grind_summary": "O peso está em 112%, amuletos, larvas, Essência, Diário do Caçador, Trials, Grimm Troupe, chefes opcionais e principalmente Pantheon of Hallownest.",
+    "guide_avoid": "Evite se você não quer chefes muito difíceis, Trial of the Fool, 112%, Pantheon of Hallownest ou longas sessões de prática.",
+    "guide_best_moment": "",
+    "guide_dlc": "Lista PlayStation integrada de Hollow Knight: Voidheart Edition. Grimm Troupe e Godmaster fazem parte da lista usada pelo guia; extras de PC/Xbox ficam fora da platina PlayStation.",
+    "guide_grind": "O peso está em 112%, amuletos, larvas, Essência, Diário do Caçador, Trials, Grimm Troupe, chefes opcionais e principalmente Pantheon of Hallownest.",
+    "guide_ideal": "Ideal para quem quer uma platina metroidvania difícil, longa, técnica e altamente recompensadora.",
+    "guide_online": "Não há exigência online, troféus online, multiplayer obrigatório ou PS+ para a platina da lista PlayStation.",
+    "guide_runs": "Recomendado: uma run principal de exploração e limpeza final, com atenção ao final básico antes de Void Heart, seguida de prática dedicada para 112%, Godhome e Pantheon of Hallownest.",
+    "image": "https://cdn.cloudflare.steamstatic.com/steam/apps/367520/header.jpg",
+    "is_verified": 1,
+    "last_reviewed_at": "2026-05-24",
+    "missable": "Sim, com prioridade alta: o final básico The Hollow Knight pode ser bloqueado no mesmo save depois de obter Void Heart. Não há Chapter Select, então faça esse final antes de avançar para Void Heart.",
+    "missable_summary": "Tem perdível por rota/save: faça o final básico The Hollow Knight antes de obter Void Heart. O restante é majoritariamente limpeza final e prática, mas 112%, Godhome e finais exigem planejamento.",
+    "name": "Hollow Knight",
+    "online_summary": "Não há exigência online, troféus online, multiplayer obrigatório ou PS+ para a platina da lista PlayStation.",
+    "quality_warnings": "[]",
+    "reviewed_by": "",
+    "runs_summary": "Recomendado: uma run principal de exploração e limpeza final, com atenção ao final básico antes de Void Heart, seguida de prática dedicada para 112%, Godhome e Pantheon of Hallownest.",
+    "slug": "hollow-knight",
+    "time": "60-100h",
+    "time_bucket": "long",
+    "time_max_hours": 100,
+    "time_min_hours": 60,
+    "time_reason": "A faixa de 60-100 horas considera exploração, coletáveis, 112%, chefes opcionais, Trials, Godhome e grande variação por habilidade.",
+    "time_sort_hours": 60,
+    "updated_at": "2026-06-27 02:36:59",
+    "verification_note": "Guia revisado editorialmente.",
+    "verification_status": "verified",
+    "walkthrough": null
+  },
+  "redirects": [],
+  "roadmaps": [
+    {
+      "content": "{\"title\":\"Explore Hallownest e aprenda a base do jogo\",\"focus\":\"Fundamentos / exploração\",\"objective\":\"Conhecer movimentação, mapas, chefes, amuletos, habilidades e rotas antes de tentar objetivos avançados.\",\"actions\":[\"Jogue a primeira run com calma.\",\"Compre mapas e marque áreas importantes.\",\"Aprenda padrões de inimigos e chefes.\",\"Priorize habilidades, melhorias do Ferrão, feitiços e amuletos úteis.\"],\"warning\":\"\",\"result\":\"Base de exploração criada e jogador preparado para a limpeza final.\"}",
+      "step_order": 1
+    },
+    {
+      "content": "{\"title\":\"Abra rotas, habilidades e upgrades importantes\",\"focus\":\"Progressão / upgrades\",\"objective\":\"Liberar mobilidade, recursos e acesso às áreas necessárias para coletáveis, chefes e finais.\",\"actions\":[\"Busque habilidades de movimento.\",\"Melhore o Ferrão, máscaras, Fragmentos de Vaso e amuletos.\",\"Abra estações de viagem, atalhos e rotas de retorno.\",\"Organize áreas pendentes por região.\"],\"warning\":\"\",\"result\":\"Hallownest aberto e rotas principais encaminhadas.\"}",
+      "step_order": 2
+    },
+    {
+      "content": "{\"title\":\"Limpe coletáveis, amuletos, larvas e progresso de 112%\",\"focus\":\"Coletáveis / pendências\",\"objective\":\"Resolver coletáveis e progresso antes dos desafios mais pesados.\",\"actions\":[\"Use checklist para amuletos, larvas, Fragmentos de Máscara, Fragmentos de Vaso e melhorias.\",\"Complete áreas por região.\",\"Trabalhe Essência, Diário do Caçador e objetivos longos se estiverem na lista.\",\"Evite deixar toda a limpeza final para depois dos desafios difíceis.\"],\"warning\":\"\",\"result\":\"Grande parte da lista de exploração concluída.\"}",
+      "step_order": 3
+    },
+    {
+      "content": "{\"title\":\"Resolva chefes, finais e desafios avançados\",\"focus\":\"Chefes / finais\",\"objective\":\"Concluir chefes, finais e desafios de combate da run principal.\",\"actions\":[\"Treine chefes difíceis antes de tentativas decisivas.\",\"Separe finais e escolhas de rota conforme a lista.\",\"Prepare amuletos e melhorias para lutas avançadas.\",\"Deixe Trial of the Fool, Grimm Troupe e chefes mais duros para depois de fortalecer o personagem.\"],\"warning\":\"Alguns finais e eventos exigem atenção para não travar uma rota específica.\",\"result\":\"Chefes, finais e desafios principais encaminhados.\"}",
+      "step_order": 4
+    },
+    {
+      "content": "{\"title\":\"Separe extras e riscos fora da platina PlayStation\",\"focus\":\"Escopo / extras\",\"objective\":\"Manter Steel Soul, Speedrun, Steel Heart e outras conquistas extras fora da rota principal da Voidheart Edition.\",\"actions\":[\"Siga a lista PlayStation usada pelo guia sem misturar extras de PC/Xbox.\",\"Deixe Steel Soul e Speedrun para uma leitura separada se a lista do projeto mudar.\",\"Não combine objetivos incompatíveis com coleta completa ou limpeza final longa.\"],\"warning\":\"\",\"result\":\"Riscos isolados da rota base e checklist mais limpa.\"}",
+      "step_order": 5
+    },
+    {
+      "content": "{\"title\":\"Finalize Godhome e a checklist da platina\",\"focus\":\"Godhome / checklist final\",\"objective\":\"Resolver os maiores desafios restantes e conferir a lista completa.\",\"actions\":[\"Treine chefes individualmente quando possível.\",\"Ajuste amuletos para cada desafio.\",\"Revise todos os troféus pendentes.\",\"Confirme coletáveis, finais, chefes, melhorias e limpeza final.\"],\"warning\":\"\",\"result\":\"Lista base concluída e guia pronto para platina.\"}",
+      "step_order": 6
+    }
+  ],
+  "schemaVersion": 1,
+  "seedExtras": {
+    "aliases": [],
+    "attentionPoints": [],
+    "checklist": [],
+    "faq": [],
+    "note": "Campos exportados para auditoria. O SQLite atual nao possui colunas nativas para todos esses extras; a importacao preserva o que o banco suporta.",
+    "quickDecision": null,
+    "seo": {},
+    "tags": []
+  },
+  "slug": "hollow-knight",
+  "trophies": [
+    {
+      "description": "Conquiste todos os demais troféus.",
+      "is_missable": 0,
+      "is_spoiler": 0,
+      "name": "Heart of Hallownest",
+      "name_pt": "Coração de Hallownest",
+      "tip": "Desbloqueie todos os demais troféus da lista PlayStation de Voidheart Edition.",
+      "trophy_code": "hollow_heart_of_hallownest",
+      "type": "Platina"
+    },
+    {
+      "description": "Derrote o Falso Cavaleiro.",
+      "is_missable": 0,
+      "is_spoiler": 0,
+      "name": "Falsehood",
+      "name_pt": "Falsidade",
+      "tip": "Derrote o Falso Cavaleiro no começo da campanha. Troféu de progressão de chefe.",
+      "trophy_code": "hollow_falsehood",
+      "type": "Bronze"
+    },
+    {
+      "description": "Derrote Hornet em Greenpath.",
+      "is_missable": 0,
+      "is_spoiler": 1,
+      "name": "Test of Resolve",
+      "name_pt": "Teste de Determinação",
+      "tip": "Derrote Hornet em Greenpath para abrir progressão essencial de movimento.",
+      "trophy_code": "hollow_test_of_resolve",
+      "type": "Bronze"
+    },
+    {
+      "description": "Derrote Hornet pela segunda vez em Kingdom's Edge.",
+      "is_missable": 0,
+      "is_spoiler": 1,
+      "name": "Proof of Resolve",
+      "name_pt": "Prova de Determinação",
+      "tip": "Derrote Hornet pela segunda vez em Kingdom’s Edge; necessário para avançar rumo ao Abyss e Void Heart.",
+      "trophy_code": "hollow_proof_of_resolve",
+      "type": "Bronze"
+    },
+    {
+      "description": "Destrua Lurien, o Vigia.",
+      "is_missable": 0,
+      "is_spoiler": 1,
+      "name": "Watcher",
+      "name_pt": "Vigilante",
+      "tip": "Destrua Lurien, um dos três Dreamers. Necessário para abrir o Black Egg.",
+      "trophy_code": "hollow_watcher",
+      "type": "Bronze"
+    },
+    {
+      "description": "Destrua Herrah, a Fera.",
+      "is_missable": 0,
+      "is_spoiler": 1,
+      "name": "Beast",
+      "name_pt": "Fera",
+      "tip": "Destrua Herrah, uma das três Sonhadoras/Dreamers. Planeje a rota por Deepnest com melhorias adequadas.",
+      "trophy_code": "hollow_beast",
+      "type": "Bronze"
+    },
+    {
+      "description": "Destrua Monomon, a Mestra.",
+      "is_missable": 0,
+      "is_spoiler": 1,
+      "name": "Teacher",
+      "name_pt": "Mestra",
+      "tip": "Destrua Monomon, uma das três Sonhadoras/Dreamers. Exige progressão em Fog Canyon e Teacher’s Archives.",
+      "trophy_code": "hollow_teacher",
+      "type": "Bronze"
+    },
+    {
+      "description": "Derrote o Hollow Knight e conclua o jogo.",
+      "is_missable": 1,
+      "is_spoiler": 1,
+      "name": "The Hollow Knight",
+      "name_pt": "O Cavaleiro Vazio",
+      "tip": "Faça este final antes de obter Void Heart. Depois de Void Heart, o final básico pode ficar bloqueado nesse save.",
+      "trophy_code": "hollow_the_hollow_knight",
+      "type": "Ouro"
+    },
+    {
+      "description": "Adquira seu primeiro amuleto.",
+      "is_missable": 0,
+      "is_spoiler": 0,
+      "name": "Charmed",
+      "name_pt": "Enfeitiçado",
+      "tip": "Pegue qualquer amuleto. É um troféu simples e parte natural da exploração.",
+      "trophy_code": "hollow_charmed",
+      "type": "Bronze"
+    },
+    {
+      "description": "Adquira metade dos amuletos de Hallownest.",
+      "is_missable": 0,
+      "is_spoiler": 0,
+      "name": "Enchanted",
+      "name_pt": "Encantado",
+      "tip": "Colete metade dos amuletos. Use mapa e checklist para não esquecer vendedores, missões e chefes opcionais.",
+      "trophy_code": "hollow_enchanted",
+      "type": "Bronze"
+    },
+    {
+      "description": "Adquira todos os amuletos e receba a bênção de Salubra.",
+      "is_missable": 0,
+      "is_spoiler": 0,
+      "name": "Blessed",
+      "name_pt": "Abençoado",
+      "tip": "Colete todos os amuletos necessários da lista PlayStation e compre ou receba a bênção de Salubra.",
+      "trophy_code": "hollow_blessed",
+      "type": "Prata"
+    },
+    {
+      "description": "Adquira 4 Fragmentos de Máscara.",
+      "is_missable": 0,
+      "is_spoiler": 0,
+      "name": "Protected",
+      "name_pt": "Protegido",
+      "tip": "Colete 4 Fragmentos de Máscara para ganhar uma máscara extra. Há muitos outros fragmentos para o troféu Mascarado.",
+      "trophy_code": "hollow_protected",
+      "type": "Bronze"
+    },
+    {
+      "description": "Adquira todos os Fragmentos de Máscara.",
+      "is_missable": 0,
+      "is_spoiler": 0,
+      "name": "Masked",
+      "name_pt": "Mascarado",
+      "tip": "Colete todos os Fragmentos de Máscara. Alguns exigem chefes, áreas avançadas, missões ou compras.",
+      "trophy_code": "hollow_masked",
+      "type": "Prata"
+    },
+    {
+      "description": "Adquira 3 Fragmentos de Vaso.",
+      "is_missable": 0,
+      "is_spoiler": 0,
+      "name": "Soulful",
+      "name_pt": "Cheio de Alma",
+      "tip": "Colete 3 Fragmentos de Vaso para aumentar o reservatório de Alma. Progride naturalmente com exploração.",
+      "trophy_code": "hollow_soulful",
+      "type": "Bronze"
+    },
+    {
+      "description": "Adquira todos os Fragmentos de Vaso.",
+      "is_missable": 0,
+      "is_spoiler": 0,
+      "name": "Worldsoul",
+      "name_pt": "Alma do Mundo",
+      "tip": "Colete todos os Fragmentos de Vaso, incluindo recompensas de áreas opcionais, lojas e desafios.",
+      "trophy_code": "hollow_worldsoul",
+      "type": "Prata"
+    },
+    {
+      "description": "Abra metade das estações de viagem de Hallownest.",
+      "is_missable": 0,
+      "is_spoiler": 0,
+      "name": "Connection",
+      "name_pt": "Conexão",
+      "tip": "Abra metade das estações de viagem (Stag Stations). Elas aceleram muito a limpeza final.",
+      "trophy_code": "hollow_connection",
+      "type": "Bronze"
+    },
+    {
+      "description": "Abra todas as estações de viagem de Hallownest e descubra o Ninho do Stag.",
+      "is_missable": 0,
+      "is_spoiler": 0,
+      "name": "Hope",
+      "name_pt": "Esperança",
+      "tip": "Abra todas as estações de viagem (Stag Stations) e visite o Ninho do Stag para concluir essa linha.",
+      "trophy_code": "hollow_hope",
+      "type": "Prata"
+    },
+    {
+      "description": "Resgate metade das larvas aprisionadas.",
+      "is_missable": 0,
+      "is_spoiler": 0,
+      "name": "Grubfriend",
+      "name_pt": "Amigo das Larvas",
+      "tip": "Resgate metade das larvas. Marque no mapa para facilitar Metamorfose depois.",
+      "trophy_code": "hollow_grubfriend",
+      "type": "Bronze"
+    },
+    {
+      "description": "Resgate todas as larvas aprisionadas.",
+      "is_missable": 0,
+      "is_spoiler": 0,
+      "name": "Metamorphosis",
+      "name_pt": "Metamorfose",
+      "tip": "Resgate todas as larvas. Exige explorar praticamente todo Hallownest e encontrar o Collector.",
+      "trophy_code": "hollow_metamorphosis",
+      "type": "Prata"
+    },
+    {
+      "description": "Adquira um mapa de cada área.",
+      "is_missable": 0,
+      "is_spoiler": 0,
+      "name": "Cartographer",
+      "name_pt": "Cartógrafo",
+      "tip": "Compre ou obtenha o mapa de cada área com Cornifer ou Iselda. Não confunda com completar todos os detalhes do mapa.",
+      "trophy_code": "hollow_cartographer",
+      "type": "Prata"
+    },
+    {
+      "description": "Colete 600 de Essência.",
+      "is_missable": 0,
+      "is_spoiler": 1,
+      "name": "Attunement",
+      "name_pt": "Sintonia",
+      "tip": "Colete 600 de Essência com Dream Warriors, Whispering Roots e Dream Bosses.",
+      "trophy_code": "hollow_attunement",
+      "type": "Bronze"
+    },
+    {
+      "description": "Colete 1800 de Essência e desperte o Dream Nail.",
+      "is_missable": 0,
+      "is_spoiler": 1,
+      "name": "Awakening",
+      "name_pt": "Despertar",
+      "tip": "Chegue a 1800 de Essência para despertar o Dream Nail. Necessário para conteúdo avançado e finais.",
+      "trophy_code": "hollow_awakening",
+      "type": "Bronze"
+    },
+    {
+      "description": "Colete 2400 de Essência e ouça as palavras finais da Seer.",
+      "is_missable": 0,
+      "is_spoiler": 1,
+      "name": "Ascension",
+      "name_pt": "Ascensão",
+      "tip": "Colete 2400 de Essência e retorne à Seer para encerrar essa linha.",
+      "trophy_code": "hollow_ascension",
+      "type": "Prata"
+    },
+    {
+      "description": "Registre todas as criaturas de Hallownest no Diário do Caçador.",
+      "is_missable": 0,
+      "is_spoiler": 0,
+      "name": "Keen Hunter",
+      "name_pt": "Caçador Atento",
+      "tip": "Registre as entradas exigidas no Diário do Caçador (Hunter’s Journal). A lista PlayStation permite limpeza ampla, mas controle as entradas pela checklist.",
+      "trophy_code": "hollow_keen_hunter",
+      "type": "Bronze"
+    },
+    {
+      "description": "Receba a Marca do Caçador.",
+      "is_missable": 0,
+      "is_spoiler": 0,
+      "name": "True Hunter",
+      "name_pt": "Caçador Verdadeiro",
+      "tip": "Complete o Diário do Caçador exigido e fale com o Hunter para receber a marca.",
+      "trophy_code": "hollow_true_hunter",
+      "type": "Prata"
+    },
+    {
+      "description": "Leve paz à Grey Mourner.",
+      "is_missable": 0,
+      "is_spoiler": 1,
+      "name": "Solace",
+      "name_pt": "Consolo",
+      "tip": "Complete a entrega da Delicate Flower sem sofrer dano. Faça com rota limpa e bancos/atalhos planejados.",
+      "trophy_code": "hollow_solace",
+      "type": "Bronze"
+    },
+    {
+      "description": "Conclua o Trial of the Warrior.",
+      "is_missable": 0,
+      "is_spoiler": 0,
+      "name": "Warrior",
+      "name_pt": "Guerreiro",
+      "tip": "Complete o primeiro Trial no Colosseum of Fools.",
+      "trophy_code": "hollow_warrior",
+      "type": "Bronze"
+    },
+    {
+      "description": "Conclua o Trial of the Conqueror.",
+      "is_missable": 0,
+      "is_spoiler": 0,
+      "name": "Conqueror",
+      "name_pt": "Conquistador",
+      "tip": "Complete o segundo Trial no Colosseum of Fools; pratique ondas aéreas e use amuletos defensivos ou ofensivos.",
+      "trophy_code": "hollow_conqueror",
+      "type": "Prata"
+    },
+    {
+      "description": "Conclua o Trial of the Fool.",
+      "is_missable": 0,
+      "is_spoiler": 0,
+      "name": "Fool",
+      "name_pt": "Tolo",
+      "tip": "Complete o Trial of the Fool. É um dos maiores picos de dificuldade fora de Godhome.",
+      "trophy_code": "hollow_fool",
+      "type": "Ouro"
+    },
+    {
+      "description": "Derrote Troupe Leader Grimm.",
+      "is_missable": 0,
+      "is_spoiler": 1,
+      "name": "Grand Performance",
+      "name_pt": "Grande Apresentação",
+      "tip": "Derrote Troupe Leader Grimm na linha da Grimm Troupe integrada à Voidheart Edition.",
+      "trophy_code": "hollow_grand_performance",
+      "type": "Bronze"
+    },
+    {
+      "description": "Conclua a história da Grimm Troupe.",
+      "is_missable": 0,
+      "is_spoiler": 1,
+      "name": "Nightmare's End",
+      "name_pt": "Fim do Pesadelo",
+      "tip": "Conclua a Grimm Troupe. Planeje a rota escolhida e pratique Nightmare King Grimm ou a alternativa correspondente.",
+      "trophy_code": "hollow_nightmares_end",
+      "type": "Ouro"
+    },
+    {
+      "description": "Conclua o Pantheon of the Knight.",
+      "is_missable": 0,
+      "is_spoiler": 1,
+      "name": "Soul & Shade",
+      "name_pt": "Alma e Sombra",
+      "tip": "Conclua o quarto Panteão em Godhome. Isso libera acesso ao Pantheon of Hallownest.",
+      "trophy_code": "hollow_soul_and_shade",
+      "type": "Prata"
+    },
+    {
+      "description": "Suba o Pantheon of Hallownest e alcance o topo.",
+      "is_missable": 0,
+      "is_spoiler": 1,
+      "name": "Embrace the Void",
+      "name_pt": "Abrace o Vazio",
+      "tip": "Conclua o Pantheon of Hallownest. É o maior desafio da platina e exige domínio de praticamente todos os chefes.",
+      "trophy_code": "hollow_embrace_the_void",
+      "type": "Ouro"
+    },
+    {
+      "description": "Atinga 112% de conclusão e conclua o jogo.",
+      "is_missable": 0,
+      "is_spoiler": 1,
+      "name": "Pure Completion",
+      "name_pt": "Conclusão Pura",
+      "tip": "Alcance 112% de conclusão e finalize o jogo. Envolve conteúdo base, Grimm Troupe, Godmaster, chefes, melhorias, amuletos, Essência e limpeza final extensa.",
+      "trophy_code": "hollow_pure_completion",
+      "type": "Ouro"
+    },
+    {
+      "description": "Ajude o Herald a seguir em frente.",
+      "is_missable": 0,
+      "is_spoiler": 1,
+      "name": "Passing of the Age",
+      "name_pt": "Passagem da Era",
+      "tip": "Siga a rota de Mister Mushroom/Herald depois dos Dreamers, com o amuleto correto quando necessário.",
+      "trophy_code": "hollow_passing_of_the_age",
+      "type": "Prata"
+    }
+  ]
+}

@@ -1,0 +1,878 @@
+{
+  "game": {
+    "avoid_if": "Evite se você não gosta de repetir capítulos, registrar finais e seguir rotas específicas de personagens vivos ou mortos.",
+    "before_you_start": "Planeje Perfect Crime, All Endings, Four Heroes, Trial Master, Nerd e Kamikaze. Chapter Select recupera quase tudo, mas não transforma escolhas isoladas em finais registrados automaticamente.",
+    "best_for": "Ideal para quem quer uma platina narrativa curta, offline, focada em escolhas, finais e organização de checklist.",
+    "cleanup_advice": "Use Chapter Select com cuidado: troféus pontuais podem ser repetidos por capítulo, mas finais, Perfect Crime e consequências futuras exigem continuar jogando a partir do capítulo alterado com salvamento ativo.",
+    "cover_image": "https://cdn.cloudflare.steamstatic.com/steam/apps/960910/library_600x900.jpg",
+    "coverage_level": "complete",
+    "created_at": "2026-05-09 19:53:52",
+    "difficulty": 2,
+    "difficulty_reason": "2/10: a execução é simples e a dificuldade selecionável não afeta troféus. Use dificuldade mais baixa para facilitar QTEs se quiser.",
+    "dlc_scope": "Base game sem DLCs. O guia cobre a lista base de 57 troféus de Heavy Rain; conteúdos extras como The Taxidermist ficam fora da platina.",
+    "editorial_notes": "Revisão editorial focada em taxonomia sem perdíveis permanentes, Chapter Select com continuidade, Perfect Crime, All Endings, Four Heroes, Trial Master, Nerd, Kamikaze, nomes EN/PT-BR, filtros e status.",
+    "editorial_review_status": "verified",
+    "editorial_status": "published",
+    "first_run_advice": "Na primeira run, mantenha Ethan, Madison, Norman e Shaun vivos sempre que possível, salve Shaun, faça troféus de capítulo simples e anote decisões que afetem finais.",
+    "grind_summary": "O grind está em All Endings e no replay planejado de finais, rotas e capítulos, não em farm de itens.",
+    "guide_avoid": null,
+    "guide_best_moment": null,
+    "guide_dlc": null,
+    "guide_grind": null,
+    "guide_ideal": null,
+    "guide_online": null,
+    "guide_runs": null,
+    "image": "https://cdn.cloudflare.steamstatic.com/steam/apps/960910/header.jpg",
+    "is_verified": 1,
+    "last_reviewed_at": "2026-06-18",
+    "missable": "Sem perdíveis permanentes. Heavy Rain é uma platina curta e fácil em habilidade, mas muito dependente de escolhas, finais, continuidade entre capítulos e rotas específicas.",
+    "missable_summary": "Sem perdíveis permanentes se você usar Chapter Select corretamente. O risco real é retrabalho por escolhas, finais, epílogos e consequências que exigem continuidade com salvamento ativo.",
+    "name": "Heavy Rain",
+    "online_summary": "Não há exigência online, cooperação, multiplayer obrigatório ou PS+ para a platina.",
+    "quality_warnings": "[]",
+    "reviewed_by": "AtlasAchievement",
+    "runs_summary": "1 run completa planejada + Chapter Select para finais, Perfect Crime, All Endings, Kamikaze, Nerd e troféus de capítulo restantes.",
+    "slug": "heavy-rain",
+    "time": "15-25h",
+    "time_bucket": "medium",
+    "time_max_hours": 25,
+    "time_min_hours": 15,
+    "time_reason": "15 a 25 horas considerando uma run planejada, Chapter Select, Perfect Crime, All Endings e cleanup de troféus de capítulo.",
+    "time_sort_hours": 20,
+    "updated_at": "2026-06-27 02:37:04",
+    "verification_note": "Guia revisado para publicação: Heavy Rain com 57 troféus, distribuição 1/2/4/50, sem online, sem coop, sem DLC, sem dificuldade obrigatória e sem perdíveis permanentes com uso correto de Chapter Select.",
+    "verification_status": "verified",
+    "walkthrough": ""
+  },
+  "redirects": [],
+  "roadmaps": [
+    {
+      "content": "{\"title\":\"Faça a primeira run salvando os personagens principais\",\"focus\":\"História, Four Heroes e base da platina\",\"objective\":\"Concluir a história uma vez, manter Ethan, Madison, Norman e Shaun vivos e desbloquear a base de finais positivos.\",\"actions\":[\"Jogue normalmente, mas priorize manter os quatro protagonistas vivos.\",\"Faça as provas de Ethan quando quiser encaminhar Trial Master.\",\"Tente salvar Shaun no final para Saved the Kid.\",\"Mantenha Madison e Norman vivos para Four Heroes.\",\"Pegue troféus de capítulo simples conforme aparecem.\",\"Não se preocupe em acertar tudo de primeira, pois Chapter Select ajuda no cleanup.\"],\"warning\":\"Algumas consequências só contam se você continuar jogando a partir do capítulo alterado com salvamento ativo. Não mude escolhas isoladas esperando que todos os finais mudem automaticamente.\",\"result\":\"A primeira conclusão libera a estrutura para finais, rotas alternativas e limpeza por Chapter Select.\"}",
+      "step_order": 1
+    },
+    {
+      "content": "{\"title\":\"Use Chapter Select para troféus de capítulo\",\"focus\":\"Ações específicas e cleanup\",\"objective\":\"Resolver troféus pontuais sem repetir a campanha inteira.\",\"actions\":[\"Volte aos capítulos com troféus específicos.\",\"Faça Happy Birthday no prólogo.\",\"Faça Good Father em Father and Son.\",\"Faça Kamikaze e Good Driver em The Bear.\",\"Faça The Chef, Queen of Ropes, Swimming Instructor, Invincible Scott, Kind Hearted e outros troféus de ação específica.\",\"Espere o troféu aparecer antes de sair do capítulo quando necessário.\"],\"warning\":\"Alguns troféus só desbloqueiam no fim do capítulo ou depois de uma transição. Não saia cedo se o troféu ainda não apareceu.\",\"result\":\"A maior parte dos troféus de capítulo fica resolvida sem afetar as rotas principais.\"}",
+      "step_order": 2
+    },
+    {
+      "content": "{\"title\":\"Faça a rota Perfect Crime\",\"focus\":\"Rota específica e finais negativos\",\"objective\":\"Seguir as escolhas necessárias para que o assassino escape sem ser ligado aos crimes.\",\"actions\":[\"Planeje Perfect Crime como uma rota dedicada.\",\"Deixe Hassan morrer no assalto.\",\"Limpe as digitais em Manfred's Antiques.\",\"Deixe Lauren morrer em Trapped.\",\"Não dê o remédio para Kramer.\",\"Faça Madison morrer quando necessário na rota.\",\"Faça Norman morrer quando necessário na rota.\",\"Garanta que o Origami Killer escape no final.\"],\"warning\":\"Perfect Crime depende de várias escolhas ao longo da história. Não basta alterar apenas o capítulo final.\",\"result\":\"A rota Perfect Crime libera um dos troféus mais sensíveis e ainda contribui para All Endings.\"}",
+      "step_order": 3
+    },
+    {
+      "content": "{\"title\":\"Planeje All Endings com continuidade\",\"focus\":\"Finais, epílogos e replay\",\"objective\":\"Ver todos os finais necessários sem repetir trechos longos desnecessariamente.\",\"actions\":[\"Use finais positivos, negativos e variações de personagens vivos ou mortos.\",\"Anote quais epílogos já foram vistos.\",\"Use Chapter Select em pontos-chave como On the Loose, Killer's Place e The Old Warehouse.\",\"Continue jogando a partir do ponto alterado quando a consequência precisar carregar para capítulos seguintes.\",\"Espere créditos e epílogos registrarem antes de sair.\"],\"warning\":\"All Endings exige registrar epílogos diferentes. Sair cedo ou alterar apenas o capítulo final pode não registrar tudo.\",\"result\":\"O maior grind de replay da platina fica controlado por checklist.\"}",
+      "step_order": 4
+    },
+    {
+      "content": "{\"title\":\"Complete Trial Master, Nerd e rotas investigativas\",\"focus\":\"Provas de Ethan e investigação de Norman\",\"objective\":\"Resolver os troféus ligados às provas, ARI e investigação correta.\",\"actions\":[\"Conclua todas as provas de Ethan para Trial Master.\",\"Use Norman/ARI para encontrar pistas necessárias.\",\"Investigue corretamente para Nerd.\",\"Faça os troféus de ação envolvendo Jayden, Mad Jack e pistas.\",\"Use Chapter Select para repetir investigações se alguma pista ficou pendente.\"],\"warning\":\"Nerd exige investigação correta e conclusões certas. Trate como checklist, não como troféu automático de história.\",\"result\":\"Os troféus de investigação e provas ficam concluídos.\"}",
+      "step_order": 5
+    },
+    {
+      "content": "{\"title\":\"Faça Kamikaze e troféus de QTE com calma\",\"focus\":\"QTEs e sequências específicas\",\"objective\":\"Resolver troféus que dependem de execução precisa.\",\"actions\":[\"Repita The Bear até fazer a rota correta para Kamikaze.\",\"Use dificuldade mais baixa se quiser facilitar QTEs.\",\"Faça Good Driver concluindo a prova do carro com sucesso.\",\"Repita lutas e fugas específicas quando necessário.\",\"Não marque esses troféus como Dificuldade, pois a dificuldade selecionável não é requisito.\"],\"warning\":\"Kamikaze pode exigir várias tentativas, mas é recuperável por Chapter Select.\",\"result\":\"As sequências mais sensíveis de execução ficam resolvidas.\"}",
+      "step_order": 6
+    },
+    {
+      "content": "{\"title\":\"Feche troféus restantes e valide a platina\",\"focus\":\"Cleanup final\",\"objective\":\"Garantir que nenhum troféu de capítulo, final ou rota ficou pendente.\",\"actions\":[\"Revise a lista de troféus restantes.\",\"Confira se HEAVY RAIN™ Hero, Four Heroes, Saved the Kid, Perfect Crime e All Endings foram concluídos.\",\"Limpe troféus pontuais por Chapter Select.\",\"Verifique se os finais foram registrados no menu.\",\"Faça uma última checagem antes de repetir trechos longos.\"],\"warning\":\"O maior risco da platina é retrabalho por falta de anotação. Use checklist de finais e capítulos.\",\"result\":\"Com finais, rotas e troféus de capítulo concluídos, HEAVY RAIN™ Master será liberado.\"}",
+      "step_order": 7
+    }
+  ],
+  "schemaVersion": 1,
+  "seedExtras": {
+    "aliases": [],
+    "attentionPoints": [
+      {
+        "detail": "Chapter Select permite recuperar capítulos, escolhas e finais. O risco principal é retrabalho, não perda permanente.",
+        "tags": [
+          "Chapter Select",
+          "Replay"
+        ],
+        "title": "Sem perdíveis permanentes"
+      },
+      {
+        "detail": "Perfect Crime exige várias decisões específicas ao longo da história. Não basta mudar apenas o final.",
+        "tags": [
+          "Perfect Crime",
+          "Rota",
+          "Atenção"
+        ],
+        "title": "Perfect Crime"
+      },
+      {
+        "detail": "All Endings exige registrar todos os finais e epílogos. Anote os finais vistos e espere o registro antes de sair.",
+        "tags": [
+          "All Endings",
+          "Final",
+          "Checklist"
+        ],
+        "title": "All Endings"
+      },
+      {
+        "detail": "Para consequências futuras, jogue a partir do capítulo alterado com salvamento ativo.",
+        "tags": [
+          "Chapter Select",
+          "Save"
+        ],
+        "title": "Continuidade de Chapter Select"
+      },
+      {
+        "detail": "Para Four Heroes, mantenha Ethan, Madison, Norman e Shaun vivos até o final.",
+        "tags": [
+          "Four Heroes",
+          "Todos vivos"
+        ],
+        "title": "Four Heroes"
+      },
+      {
+        "detail": "Trial Master exige concluir todas as cinco provas de Ethan. Organize isso em uma rota própria.",
+        "tags": [
+          "Trial Master",
+          "Ethan"
+        ],
+        "title": "Trial Master"
+      },
+      {
+        "detail": "Nerd exige investigação correta com Norman/ARI. Use checklist de pistas.",
+        "tags": [
+          "Nerd",
+          "ARI",
+          "Pistas"
+        ],
+        "title": "Nerd"
+      },
+      {
+        "detail": "Kamikaze exige a melhor rota na rodovia em The Bear. É recuperável por Chapter Select.",
+        "tags": [
+          "Kamikaze",
+          "QTE"
+        ],
+        "title": "Kamikaze"
+      },
+      {
+        "detail": "Use dificuldade mais baixa se quiser facilitar QTEs. A dificuldade não afeta troféus.",
+        "tags": [
+          "QTE",
+          "Atenção"
+        ],
+        "title": "QTEs"
+      },
+      {
+        "detail": "Muitos troféus são ações específicas em capítulos. Espere o troféu aparecer antes de sair.",
+        "tags": [
+          "Capítulo",
+          "Cleanup"
+        ],
+        "title": "Troféus de capítulo"
+      },
+      {
+        "detail": "Heavy Rain depende de revelações e finais. Use alertas de spoiler nos troféus de final e rota.",
+        "tags": [
+          "Spoiler",
+          "Final"
+        ],
+        "title": "Spoilers"
+      },
+      {
+        "detail": "A platina é totalmente single-player e não exige online, cooperação ou DLC.",
+        "tags": [
+          "Offline",
+          "Base game"
+        ],
+        "title": "Sem online, coop ou DLC"
+      }
+    ],
+    "checklist": [
+      "Conferir se o guia tem 57 troféus.",
+      "Conferir se HEAVY RAIN™ Master é a platina.",
+      "Conferir distribuição: 1 platina, 2 ouro, 4 prata, 50 bronze.",
+      "Conferir onlineRequired false.",
+      "Conferir coopRequired false.",
+      "Conferir dlcRequired false.",
+      "Conferir hasMissables false.",
+      "Conferir missableCount 0.",
+      "Conferir filtro Perdíveis 0.",
+      "Conferir filtro Online 0.",
+      "Conferir filtro Coop 0.",
+      "Conferir filtro DLC 0.",
+      "Conferir filtro Dificuldade 0.",
+      "Conferir Perfect Crime como Rota/Final/Replay/Atenção.",
+      "Conferir All Endings como Final/Replay/Grind/Checklist.",
+      "Conferir Four Heroes.",
+      "Conferir Trial Master.",
+      "Conferir Nerd.",
+      "Conferir Saved the Kid.",
+      "Conferir Kamikaze.",
+      "Conferir Good Driver.",
+      "Conferir troféus de capítulo.",
+      "Conferir que Chapter Select está explicado.",
+      "Conferir que consequências futuras exigem continuidade.",
+      "Conferir que QTEs não inflam Dificuldade.",
+      "Conferir que não há Online/Coop/DLC.",
+      "Conferir se todos os troféus têm nome oficial em inglês como principal.",
+      "Conferir se todos têm PT-BR abaixo.",
+      "Conferir se descrições estão em português.",
+      "Conferir se roadmap está estruturado como array/objeto.",
+      "Conferir se roadmap não renderiza campos técnicos ou objetos crus no front.",
+      "Conferir se campos internos do roadmap não aparecem como texto visível.",
+      "Conferir FAQ, decisão rápida, SEO e pontos de atenção.",
+      "Conferir se página individual e catálogo exibem o mesmo status editorial.",
+      "Conferir se flags do topo batem com filtros do catálogo."
+    ],
+    "faq": [
+      {
+        "answer": "Não há perdíveis permanentes se você usar Chapter Select. O jogo exige replay de capítulos e rotas específicas, mas os troféus podem ser recuperados.",
+        "question": "Heavy Rain tem troféus perdíveis?"
+      },
+      {
+        "answer": "Não. A platina é totalmente single-player.",
+        "question": "Precisa jogar online para platinar?"
+      },
+      {
+        "answer": "Não. Nenhum troféu exige cooperação.",
+        "question": "Precisa de cooperação?"
+      },
+      {
+        "answer": "Não. A platina usa apenas a lista base.",
+        "question": "Precisa de DLC?"
+      },
+      {
+        "answer": "A rota eficiente usa uma run completa planejada e depois Chapter Select para finais, rotas e troféus de capítulo restantes.",
+        "question": "Quantas runs são necessárias?"
+      },
+      {
+        "answer": "Não. Você pode usar dificuldade mais baixa para facilitar QTEs sem bloquear troféus.",
+        "question": "A dificuldade afeta troféus?"
+      },
+      {
+        "answer": "Perfect Crime e All Endings. Eles exigem escolhas específicas, continuidade e registro correto dos finais.",
+        "question": "O que é o maior cuidado da platina?"
+      },
+      {
+        "answer": "Resolve quase tudo, mas finais e consequências futuras exigem continuar jogando a partir do capítulo alterado com salvamento ativo.",
+        "question": "Chapter Select resolve tudo?"
+      },
+      {
+        "answer": "É uma rota específica em que certas pessoas morrem, pistas são apagadas e o Origami Killer escapa sem ser ligado aos crimes.",
+        "question": "Como funciona Perfect Crime?"
+      },
+      {
+        "answer": "Exige ver todos os finais e epílogos necessários. Use checklist e espere o jogo registrar cada final.",
+        "question": "All Endings exige o quê?"
+      },
+      {
+        "answer": "Pode exigir algumas tentativas por causa da sequência da rodovia, mas é recuperável por Chapter Select.",
+        "question": "Kamikaze é difícil?"
+      },
+      {
+        "answer": "Em média, cerca de 15 a 25 horas, dependendo de quantos finais e capítulos você precisa repetir.",
+        "question": "Quanto tempo leva para platinar?"
+      }
+    ],
+    "note": "Campos exportados para auditoria. O SQLite atual nao possui colunas nativas para todos esses extras; a importacao preserva o que o banco suporta.",
+    "quickDecision": {
+      "difficulty": "Baixa.",
+      "dlc": "Não exige DLC.",
+      "firstAction": "Faça uma primeira run mantendo protagonistas vivos, salve Shaun e anote decisões que afetem finais.",
+      "mainRisk": "Perfect Crime, All Endings, Trial Master, Nerd, Four Heroes e Kamikaze.",
+      "onlineCoop": "Não exige online nem cooperação.",
+      "risk": "Baixo em perda permanente, médio em retrabalho por escolhas e finais.",
+      "time": "Curto a médio, cerca de 15 a 25 horas.",
+      "verdict": "Sim. É uma platina curta e excelente para quem gosta de jogos narrativos, mas exige organização de finais."
+    },
+    "seo": {
+      "description": "Guia de troféus de Heavy Rain com roadmap da platina, tempo estimado, finais, Perfect Crime, All Endings, Chapter Select, Kamikaze, Nerd, Four Heroes e dicas para os 57 troféus.",
+      "keywords": [
+        "Heavy Rain troféus",
+        "Heavy Rain platina",
+        "guia Heavy Rain",
+        "Heavy Rain PS4 troféus",
+        "HEAVY RAIN Master",
+        "Perfect Crime",
+        "All Endings",
+        "Kamikaze",
+        "Four Heroes",
+        "Trial Master",
+        "Nerd",
+        "Saved the Kid",
+        "Heavy Rain finais",
+        "Heavy Rain Chapter Select"
+      ],
+      "metaDescription": "Guia de troféus de Heavy Rain com roadmap da platina, tempo estimado, finais, Perfect Crime, All Endings, Chapter Select, Kamikaze, Nerd, Four Heroes e dicas para os 57 troféus.",
+      "ogDescription": "Roadmap PT-BR da platina de Heavy Rain com 57 troféus, sem perdíveis permanentes, sem online, sem coop, sem DLC e foco em finais, rotas e Chapter Select.",
+      "ogTitle": "Heavy Rain: Guia de Troféus e Platina",
+      "title": "Heavy Rain: Guia de Troféus e Platina"
+    },
+    "tags": []
+  },
+  "slug": "heavy-rain",
+  "trophies": [
+    {
+      "description": "Obtenha todos os troféus.",
+      "is_missable": 0,
+      "is_spoiler": 0,
+      "name": "HEAVY RAIN™ Master",
+      "name_pt": "Mestre de HEAVY RAIN™",
+      "tip": "Desbloqueie os outros 56 troféus da lista base. Não exige online, cooperação, DLC ou dificuldade específica.",
+      "trophy_code": "heavy_rain_master",
+      "type": "Platina"
+    },
+    {
+      "description": "No Prólogo, conclua o desenho, arrume a mesa e brinque com as crianças.",
+      "is_missable": 0,
+      "is_spoiler": 0,
+      "name": "Happy Birthday",
+      "name_pt": "Feliz Aniversário",
+      "tip": "Troféu de capítulo recuperável. Faça as três ações antes de avançar a história.",
+      "trophy_code": "heavy_happy_birthday",
+      "type": "Bronze"
+    },
+    {
+      "description": "Agradecimento por apoiar o formato de drama interativo.",
+      "is_missable": 0,
+      "is_spoiler": 0,
+      "name": "Interactive Drama",
+      "name_pt": "Drama Interativo",
+      "tip": "Troféu automático no começo da jornada; avance a história.",
+      "trophy_code": "heavy_interactive_drama",
+      "type": "Bronze"
+    },
+    {
+      "description": "Em Father and Son, siga a rotina de Shaun e coloque-o para dormir de bom humor.",
+      "is_missable": 0,
+      "is_spoiler": 1,
+      "name": "Good Father",
+      "name_pt": "Bom Pai",
+      "tip": "Siga horários de lanche, dever de casa, jantar, remédio/descanso e cama. Recuperável por Chapter Select.",
+      "trophy_code": "heavy_good_father",
+      "type": "Bronze"
+    },
+    {
+      "description": "Em Sleazy Place, derrote Troy.",
+      "is_missable": 0,
+      "is_spoiler": 1,
+      "name": "White Knight",
+      "name_pt": "Cavaleiro Branco",
+      "tip": "Volte ao quarto de Lauren quando Troy aparecer e vença a briga.",
+      "trophy_code": "heavy_white_knight",
+      "type": "Bronze"
+    },
+    {
+      "description": "Em Sleazy Place, faça Lauren falar sobre o filho.",
+      "is_missable": 0,
+      "is_spoiler": 1,
+      "name": "Private Eye",
+      "name_pt": "Detetive Particular",
+      "tip": "Escolha respostas empáticas até Lauren revelar informações sobre o filho.",
+      "trophy_code": "heavy_private_eye",
+      "type": "Bronze"
+    },
+    {
+      "description": "Em Crime Scene, encontre todas as pistas relacionadas ao Origami Killer.",
+      "is_missable": 0,
+      "is_spoiler": 1,
+      "name": "FBI Investigator",
+      "name_pt": "Investigador do FBI",
+      "tip": "Use ARI para examinar corpo, trilhos, sangue, pegadas, pólen, cerca e marcas antes de sair.",
+      "trophy_code": "heavy_fbi_investigator",
+      "type": "Bronze"
+    },
+    {
+      "description": "Em The Park, jogue duas atividades com Shaun e compre doces.",
+      "is_missable": 0,
+      "is_spoiler": 1,
+      "name": "Good Friends",
+      "name_pt": "Bons Amigos",
+      "tip": "Vença duas brincadeiras com Shaun e compre doces para manter a relação positiva.",
+      "trophy_code": "heavy_good_friends",
+      "type": "Bronze"
+    },
+    {
+      "description": "Em Welcome, Norman!, lembre o horário e as roupas de Shaun.",
+      "is_missable": 0,
+      "is_spoiler": 1,
+      "name": "Got To Remember!",
+      "name_pt": "Tenho Que Lembrar!",
+      "tip": "Responda corretamente às perguntas sobre o parque para ajudar a investigação.",
+      "trophy_code": "heavy_got_to_remember",
+      "type": "Bronze"
+    },
+    {
+      "description": "Em Hassan's Shop, convença o ladrão a ir embora.",
+      "is_missable": 0,
+      "is_spoiler": 1,
+      "name": "Negotiator",
+      "name_pt": "Negociador",
+      "tip": "Mantenha a calma e dialogue até resolver o assalto sem violência.",
+      "trophy_code": "heavy_negotiator",
+      "type": "Bronze"
+    },
+    {
+      "description": "Em Paparazzi, saia de casa sem ser visto pelos jornalistas.",
+      "is_missable": 0,
+      "is_spoiler": 0,
+      "name": "VIP",
+      "name_pt": "VIP",
+      "tip": "Use uma rota discreta, normalmente pela saída dos fundos ou jardim.",
+      "trophy_code": "heavy_vip",
+      "type": "Bronze"
+    },
+    {
+      "description": "Em Lexington Station, derrube pelo menos 50 pessoas.",
+      "is_missable": 0,
+      "is_spoiler": 1,
+      "name": "Agoraphobia",
+      "name_pt": "Agorafobia",
+      "tip": "Durante a crise de Ethan na estação, esbarre em bastante gente antes de retomar o controle normal.",
+      "trophy_code": "heavy_agoraphobia",
+      "type": "Bronze"
+    },
+    {
+      "description": "Em Lexington Station, encontre o armário correto na primeira tentativa.",
+      "is_missable": 0,
+      "is_spoiler": 1,
+      "name": "Lucky Locker",
+      "name_pt": "Armário da Sorte",
+      "tip": "Siga a indicação do bilhete e abra o armário certo sem testar outros.",
+      "trophy_code": "heavy_lucky_locker",
+      "type": "Bronze"
+    },
+    {
+      "description": "Em Nathaniel, atire em Nathaniel.",
+      "is_missable": 0,
+      "is_spoiler": 1,
+      "name": "Blunder",
+      "name_pt": "Erro Grave",
+      "tip": "Escolha atirar quando a situação escalar. Faça a escolha oposta para Self Control em outro replay.",
+      "trophy_code": "heavy_blunder",
+      "type": "Bronze"
+    },
+    {
+      "description": "Em Nathaniel, não atire em Nathaniel.",
+      "is_missable": 0,
+      "is_spoiler": 1,
+      "name": "Self Control",
+      "name_pt": "Autocontrole",
+      "tip": "Mantenha Norman calmo e evite disparar. Use Chapter Select para alternar com Blunder.",
+      "trophy_code": "heavy_self_control",
+      "type": "Bronze"
+    },
+    {
+      "description": "Em Suicide Baby, cuide do bebê sem cometer erros.",
+      "is_missable": 0,
+      "is_spoiler": 0,
+      "name": "Baby Master",
+      "name_pt": "Mestre dos Bebês",
+      "tip": "Troque, prepare mamadeira, alimente e acalme o bebê na ordem correta.",
+      "trophy_code": "heavy_baby_master",
+      "type": "Bronze"
+    },
+    {
+      "description": "Em The Bear, siga a melhor rota na rodovia.",
+      "is_missable": 0,
+      "is_spoiler": 1,
+      "name": "Kamikaze",
+      "name_pt": "Kamikaze",
+      "tip": "Repita a sequência até fazer a rota perfeita. É recuperável por Chapter Select e não é troféu de dificuldade.",
+      "trophy_code": "heavy_kamikaze",
+      "type": "Bronze"
+    },
+    {
+      "description": "Em The Bear, complete a prova do carro com sucesso.",
+      "is_missable": 0,
+      "is_spoiler": 1,
+      "name": "Good Driver",
+      "name_pt": "Bom Motorista",
+      "tip": "Conclua a trial de direção de Ethan para receber uma pista de Shaun. Conta para Trial Master.",
+      "trophy_code": "heavy_good_driver",
+      "type": "Bronze"
+    },
+    {
+      "description": "Em Covered Market, vença Korda na câmara fria.",
+      "is_missable": 0,
+      "is_spoiler": 1,
+      "name": "Cat & Mouse",
+      "name_pt": "Gato e Rato",
+      "tip": "Persiga Korda pelo mercado e acerte a sequência final.",
+      "trophy_code": "heavy_cat_and_mouse",
+      "type": "Bronze"
+    },
+    {
+      "description": "Em Kramer's Party, derrote os seguranças de Gordi.",
+      "is_missable": 0,
+      "is_spoiler": 1,
+      "name": "Tough Guy",
+      "name_pt": "Durão",
+      "tip": "Acerte os QTEs da briga principal na festa de Kramer.",
+      "trophy_code": "heavy_tough_guy",
+      "type": "Bronze"
+    },
+    {
+      "description": "Em The Butterfly, desista ou falhe na prova.",
+      "is_missable": 0,
+      "is_spoiler": 1,
+      "name": "Coward!",
+      "name_pt": "Covarde!",
+      "tip": "Faça em replay separado se também precisar de Electrified, pois as escolhas são incompatíveis na mesma tentativa.",
+      "trophy_code": "heavy_coward",
+      "type": "Bronze"
+    },
+    {
+      "description": "Em The Butterfly, conclua a prova com sucesso.",
+      "is_missable": 0,
+      "is_spoiler": 1,
+      "name": "Electrified",
+      "name_pt": "Eletrificado",
+      "tip": "Atravesse o vidro e a área eletrificada até o fim para receber a pista. Conta para Trial Master.",
+      "trophy_code": "heavy_electrified",
+      "type": "Bronze"
+    },
+    {
+      "description": "Em Shrink and Punches, impeça Blake de bater em Dupre.",
+      "is_missable": 0,
+      "is_spoiler": 1,
+      "name": "Good Cop",
+      "name_pt": "Policial Bom",
+      "tip": "Interrompa Blake durante o interrogatório. Alterne com Bad Cop por Chapter Select.",
+      "trophy_code": "heavy_good_cop",
+      "type": "Bronze"
+    },
+    {
+      "description": "Em Shrink and Punches, não impeça Blake de bater em Dupre.",
+      "is_missable": 0,
+      "is_spoiler": 1,
+      "name": "Bad Cop",
+      "name_pt": "Policial Mau",
+      "tip": "Deixe Blake continuar a agressão para a variação oposta de Good Cop.",
+      "trophy_code": "heavy_bad_cop",
+      "type": "Bronze"
+    },
+    {
+      "description": "Em The Lizard, corte o dedo com machado, faca ou alicate e trate o ferimento.",
+      "is_missable": 0,
+      "is_spoiler": 1,
+      "name": "Gold Finger",
+      "name_pt": "Dedo de Ouro",
+      "tip": "Use ferramenta válida e desinfete ou cauterize o ferimento para completar a condição segura.",
+      "trophy_code": "heavy_gold_finger",
+      "type": "Bronze"
+    },
+    {
+      "description": "Em The Lizard, corte o dedo com serra ou tesoura.",
+      "is_missable": 0,
+      "is_spoiler": 1,
+      "name": "Butcher",
+      "name_pt": "Açougueiro",
+      "tip": "Faça em replay separado se quiser alternar com Gold Finger.",
+      "trophy_code": "heavy_butcher",
+      "type": "Bronze"
+    },
+    {
+      "description": "Em Fugitive, escape de Blake na estação de metrô.",
+      "is_missable": 0,
+      "is_spoiler": 1,
+      "name": "Fugitive",
+      "name_pt": "Fugitivo",
+      "tip": "Fuja com Ethan e Madison. Se salvo, o resultado pode afetar rotas posteriores.",
+      "trophy_code": "heavy_fugitive",
+      "type": "Bronze"
+    },
+    {
+      "description": "Em Fugitive ou On the Loose, seja preso por Blake.",
+      "is_missable": 0,
+      "is_spoiler": 1,
+      "name": "Hands Up!",
+      "name_pt": "Mãos ao Alto!",
+      "tip": "Permita que Ethan seja capturado em uma das oportunidades compatíveis para variações de finais.",
+      "trophy_code": "heavy_hands_up",
+      "type": "Bronze"
+    },
+    {
+      "description": "Em Jayden Blues, toque piano sem errar notas.",
+      "is_missable": 0,
+      "is_spoiler": 0,
+      "name": "Ludwig Von",
+      "name_pt": "Ludwig Von",
+      "tip": "Acerte toda a sequência do piano com Norman.",
+      "trophy_code": "heavy_ludwig_von",
+      "type": "Bronze"
+    },
+    {
+      "description": "Em Jayden Blues, resista à triptocaine.",
+      "is_missable": 0,
+      "is_spoiler": 1,
+      "name": "Detox",
+      "name_pt": "Desintoxicação",
+      "tip": "Durante a crise de Norman, não use a droga.",
+      "trophy_code": "heavy_detox",
+      "type": "Bronze"
+    },
+    {
+      "description": "Em Under Arrest, desligue a câmera antes de salvar Ethan.",
+      "is_missable": 0,
+      "is_spoiler": 1,
+      "name": "Wise Guy",
+      "name_pt": "Esperto",
+      "tip": "Desative a câmera na sala de vigilância antes de libertar Ethan.",
+      "trophy_code": "heavy_wise_guy",
+      "type": "Bronze"
+    },
+    {
+      "description": "Em The Shark, mate o traficante.",
+      "is_missable": 0,
+      "is_spoiler": 1,
+      "name": "I'm a Killer...",
+      "name_pt": "Sou um Assassino...",
+      "tip": "Escolha matar o traficante. Conta para Trial Master, mas conflita com I'm Not a Killer! na mesma rota.",
+      "trophy_code": "heavy_im_a_killer",
+      "type": "Bronze"
+    },
+    {
+      "description": "Em The Shark, não mate o traficante.",
+      "is_missable": 0,
+      "is_spoiler": 1,
+      "name": "I'm Not a Killer!",
+      "name_pt": "Não Sou um Assassino!",
+      "tip": "Recuse matar o traficante em uma rota alternativa ou cleanup por Chapter Select.",
+      "trophy_code": "heavy_im_not_a_killer",
+      "type": "Bronze"
+    },
+    {
+      "description": "Em The Doc, não beba a bebida do médico.",
+      "is_missable": 0,
+      "is_spoiler": 1,
+      "name": "Smart Girl",
+      "name_pt": "Garota Esperta",
+      "tip": "Como Madison, desconfie e recuse a bebida antes da armadilha.",
+      "trophy_code": "heavy_smart_girl",
+      "type": "Bronze"
+    },
+    {
+      "description": "Em The Doc, escape antes que o médico volte.",
+      "is_missable": 0,
+      "is_spoiler": 1,
+      "name": "Queen of Ropes",
+      "name_pt": "Rainha das Cordas",
+      "tip": "Escape das amarras e fuja da casa do médico sem demora excessiva.",
+      "trophy_code": "heavy_queen_of_ropes",
+      "type": "Bronze"
+    },
+    {
+      "description": "Em Mad Jack, sobreviva à luta contra Mad Jack.",
+      "is_missable": 0,
+      "is_spoiler": 1,
+      "name": "Goodbye Mad Jack",
+      "name_pt": "Adeus, Mad Jack",
+      "tip": "Acerte a sequência com Norman para sobreviver. Importante para rotas que precisam dele vivo.",
+      "trophy_code": "heavy_goodbye_mad_jack",
+      "type": "Bronze"
+    },
+    {
+      "description": "Em Eureka, prepare um bom omelete dentro do tempo.",
+      "is_missable": 0,
+      "is_spoiler": 0,
+      "name": "The Chef",
+      "name_pt": "O Chef",
+      "tip": "Como Scott, prepare o omelete corretamente para Lauren.",
+      "trophy_code": "heavy_the_chef",
+      "type": "Bronze"
+    },
+    {
+      "description": "Em Twins, siga seu irmão sem errar.",
+      "is_missable": 0,
+      "is_spoiler": 1,
+      "name": "I'm Not Scared!",
+      "name_pt": "Não Estou com Medo!",
+      "tip": "No flashback, siga John pelo canteiro sem falhar na sequência.",
+      "trophy_code": "heavy_im_not_scared",
+      "type": "Bronze"
+    },
+    {
+      "description": "Em Sexy Girl, tire no máximo uma peça de roupa durante o strip-tease.",
+      "is_missable": 0,
+      "is_spoiler": 1,
+      "name": "Pride Saved",
+      "name_pt": "Orgulho Preservado",
+      "tip": "Com Madison, finalize a situação sem remover mais de uma peça.",
+      "trophy_code": "heavy_pride_saved",
+      "type": "Bronze"
+    },
+    {
+      "description": "Em On the Loose, não perdoe Madison.",
+      "is_missable": 0,
+      "is_spoiler": 1,
+      "name": "Unforgivable",
+      "name_pt": "Imperdoável",
+      "tip": "Escolha não perdoar Madison. Essa variação pode compor finais diferentes.",
+      "trophy_code": "heavy_unforgivable",
+      "type": "Bronze"
+    },
+    {
+      "description": "Em On the Loose, perdoe Madison.",
+      "is_missable": 0,
+      "is_spoiler": 1,
+      "name": "Lover Boy",
+      "name_pt": "Romântico",
+      "tip": "Escolha perdoar Madison e mantenha a relação com Ethan para a variação oposta.",
+      "trophy_code": "heavy_lover_boy",
+      "type": "Bronze"
+    },
+    {
+      "description": "Em On the Loose, escape da polícia no motel.",
+      "is_missable": 0,
+      "is_spoiler": 1,
+      "name": "Escape Master",
+      "name_pt": "Mestre da Fuga",
+      "tip": "Execute a fuga completa com Ethan e Madison quando a polícia chegar.",
+      "trophy_code": "heavy_escape_master",
+      "type": "Bronze"
+    },
+    {
+      "description": "Em Trapped, salve Lauren debaixo d'água.",
+      "is_missable": 0,
+      "is_spoiler": 1,
+      "name": "Swimming Instructor",
+      "name_pt": "Instrutor de Natação",
+      "tip": "No acidente do carro, salve Lauren antes de escapar. A escolha afeta Perfect Crime e finais.",
+      "trophy_code": "heavy_swimming_instructor",
+      "type": "Bronze"
+    },
+    {
+      "description": "Em Face to Face, não seja baleado na mansão de Kramer.",
+      "is_missable": 0,
+      "is_spoiler": 1,
+      "name": "Invincible Scott",
+      "name_pt": "Scott Invencível",
+      "tip": "Acerte os QTEs da sequência para sair sem ferimentos importantes.",
+      "trophy_code": "heavy_invincible_scott",
+      "type": "Bronze"
+    },
+    {
+      "description": "Em Face to Face, dê o remédio a Kramer.",
+      "is_missable": 0,
+      "is_spoiler": 1,
+      "name": "Kind Hearted",
+      "name_pt": "Bom Coração",
+      "tip": "Depois do confronto, ajude Kramer. Essa escolha conflita com Perfect Crime.",
+      "trophy_code": "heavy_kind_hearted",
+      "type": "Bronze"
+    },
+    {
+      "description": "Em The Rat, beba o veneno.",
+      "is_missable": 0,
+      "is_spoiler": 1,
+      "name": "Sacrifice",
+      "name_pt": "Sacrifício",
+      "tip": "Complete a última prova de Ethan para receber a pista. Conta para Trial Master.",
+      "trophy_code": "heavy_sacrifice",
+      "type": "Bronze"
+    },
+    {
+      "description": "Em The Rat, descubra onde Shaun está preso.",
+      "is_missable": 0,
+      "is_spoiler": 1,
+      "name": "Clever Dad",
+      "name_pt": "Pai Esperto",
+      "tip": "Use as pistas das provas para deduzir corretamente o endereço.",
+      "trophy_code": "heavy_clever_dad",
+      "type": "Bronze"
+    },
+    {
+      "description": "Em Killer's Place, sobreviva à explosão escondendo-se na geladeira.",
+      "is_missable": 0,
+      "is_spoiler": 1,
+      "name": "Cold as Ice",
+      "name_pt": "Frio como Gelo",
+      "tip": "Com Madison, fuja do incêndio e use a geladeira para sobreviver.",
+      "trophy_code": "heavy_cold_as_ice",
+      "type": "Bronze"
+    },
+    {
+      "description": "Em The Old Warehouse, salve o Origami Killer antes da queda.",
+      "is_missable": 0,
+      "is_spoiler": 1,
+      "name": "Simple Mind",
+      "name_pt": "Mente Simples",
+      "tip": "Escolha salvar o Origami Killer no confronto final. É uma variação de final com spoiler.",
+      "trophy_code": "heavy_simple_mind",
+      "type": "Bronze"
+    },
+    {
+      "description": "Em The Old Warehouse, chegue ao fim com todos os personagens e falhe.",
+      "is_missable": 0,
+      "is_spoiler": 1,
+      "name": "So Close...",
+      "name_pt": "Tão Perto...",
+      "tip": "Chegue ao final com personagens relevantes vivos, mas falhe no resultado exigido para essa variação.",
+      "trophy_code": "heavy_so_close",
+      "type": "Bronze"
+    },
+    {
+      "description": "Termine Heavy Rain.",
+      "is_missable": 0,
+      "is_spoiler": 1,
+      "name": "HEAVY RAIN™ Hero",
+      "name_pt": "Herói de HEAVY RAIN™",
+      "tip": "Complete a história por qualquer final. O resultado importa para outros troféus, mas este vem ao concluir o jogo.",
+      "trophy_code": "heavy_hero",
+      "type": "Bronze"
+    },
+    {
+      "description": "Complete a história com quatro personagens vivos.",
+      "is_missable": 0,
+      "is_spoiler": 1,
+      "name": "Four Heroes",
+      "name_pt": "Quatro Heróis",
+      "tip": "Finalize com Ethan, Madison, Norman e Shaun vivos. Planeje QTEs e decisões finais antes de The Old Warehouse.",
+      "trophy_code": "heavy_four_heroes",
+      "type": "Prata"
+    },
+    {
+      "description": "Tenha sucesso em todas as provas de Ethan.",
+      "is_missable": 0,
+      "is_spoiler": 1,
+      "name": "Trial Master",
+      "name_pt": "Mestre das Provas",
+      "tip": "Complete as cinco trials de Ethan: Bear, Butterfly, Lizard, Shark e Rat. Trate como rota/checklist, não como troféu de dificuldade.",
+      "trophy_code": "heavy_trial_master",
+      "type": "Prata"
+    },
+    {
+      "description": "Encontre todas as pistas usando ARI e descubra o Origami Killer.",
+      "is_missable": 0,
+      "is_spoiler": 1,
+      "name": "Nerd",
+      "name_pt": "Nerd",
+      "tip": "Com Norman, use ARI em Crime Scene, Mad Jack e Fish Tank, e faça as conclusões corretas.",
+      "trophy_code": "heavy_nerd",
+      "type": "Prata"
+    },
+    {
+      "description": "Salve Shaun.",
+      "is_missable": 0,
+      "is_spoiler": 1,
+      "name": "Saved the Kid",
+      "name_pt": "Salvou o Garoto",
+      "tip": "Encontre Shaun e faça o salvamento no armazém. Pode combinar com Four Heroes ou outras variações de final.",
+      "trophy_code": "heavy_saved_the_kid",
+      "type": "Prata"
+    },
+    {
+      "description": "Limpe a loja de Manfred, deixe Lauren, Hassan e Kramer morrerem, e mate Madison e Jayden.",
+      "is_missable": 0,
+      "is_spoiler": 1,
+      "name": "Perfect Crime",
+      "name_pt": "Crime Perfeito",
+      "tip": "Rota longa: deixe Hassan, Lauren e Kramer morrerem, limpe as digitais em Manfred, mate Madison e Jayden, e garanta que o Origami Killer escape. Não basta alterar apenas o capítulo final; continue a partir dos capítulos necessários com salvamento ativo.",
+      "trophy_code": "heavy_perfect_crime",
+      "type": "Ouro"
+    },
+    {
+      "description": "Veja todos os finais.",
+      "is_missable": 0,
+      "is_spoiler": 1,
+      "name": "All Endings",
+      "name_pt": "Todos os Finais",
+      "tip": "Veja todos os finais e epílogos necessários. Anote os epílogos já vistos e espere o jogo registrar cada final. Algumas variações exigem continuar jogando a partir de capítulos anteriores, não apenas repetir o último capítulo.",
+      "trophy_code": "heavy_all_endings",
+      "type": "Ouro"
+    }
+  ]
+}

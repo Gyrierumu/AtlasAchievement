@@ -1,0 +1,454 @@
+{
+  "game": {
+    "avoid_if": "Evite se você não gosta de repetir capítulos, acompanhar colecionáveis por checklist ou refazer escolhas para ver finais e mortes incompatíveis.",
+    "before_you_start": "Este guia é da versão PS4 original de 2015, com 19 troféus. Não use a lista PS5/PC de 2024, não misture Rush of Blood ou The Inpatient, e trate chapter select como uma ferramenta de continuidade, não como correção instantânea.",
+    "best_for": "Vale platinar Until Dawn se você gosta de horror narrativo, escolhas com consequências e uma platina curta baseada em rotas alternativas. A platina não exige online, co-op nem DLC, mas cobra atenção a Totens, pistas, todos vivos, todos mortos e troféus de decisões específicas.",
+    "cleanup_advice": "Depois da primeira conclusão, use chapter select para mortes específicas, todos mortos, decisões incompatíveis e colecionáveis pendentes. Quando uma escolha precisar gerar consequência posterior, continue jogando a partir do capítulo escolhido até o ponto em que o troféu ou final realmente destrava.",
+    "cover_image": "https://cdn.cloudflare.steamstatic.com/steam/apps/2172010/library_600x900.jpg",
+    "coverage_level": "strong",
+    "created_at": "2026-05-09 19:53:53",
+    "difficulty": 3,
+    "difficulty_reason": "A dificuldade 3/10 vem de QTEs, decisões sob pressão e continuidade de capítulos, não de combate ou dificuldade selecionável.",
+    "dlc_scope": "A lista base do Until Dawn PS4 original tem 19 troféus e não exige DLC. Rush of Blood, The Inpatient e a versão PS5/PC de 2024 não entram neste guia.",
+    "editorial_notes": "Escopo confirmado pelo objeto atual do projeto: slug until-dawn, 19 troféus e lista da versão PS4 original. A versão PS5/PC de 2024, Rush of Blood e The Inpatient ficam fora deste guia.",
+    "editorial_review_status": "verified",
+    "editorial_status": "published",
+    "first_run_advice": "Comece com uma run focada em manter todos vivos, explorando cada cenário com calma para coletar Totens e pistas. Evite pular exploração e anote decisões importantes, porque vários troféus dependem de escolhas específicas e o chapter select precisa ser usado com cuidado para manter a continuidade das consequências.",
+    "grind_summary": "Não há grind tradicional. O peso está em escolhas, chapter select, QTEs, todos vivos, todos mortos, Totens e cluelines.",
+    "guide_avoid": null,
+    "guide_best_moment": null,
+    "guide_dlc": null,
+    "guide_grind": null,
+    "guide_ideal": null,
+    "guide_online": null,
+    "guide_runs": null,
+    "image": "https://cdn.cloudflare.steamstatic.com/steam/apps/2172010/header.jpg",
+    "is_verified": 1,
+    "last_reviewed_at": "2026-06-06",
+    "missable": "Until Dawn PS4 tem atenção alta por escolhas e continuidade de capítulos, mas não é uma lista com perda absoluta em todos os objetivos. O guia marca como perdíveis apenas troféus de final, sobrevivência ou decisão que podem exigir repetir blocos longos se a consequência errada for consolidada. Totens e cluelines ficam tratados como coletáveis de cleanup com chapter select.",
+    "missable_summary": "Há 12 troféus marcados como perdíveis por risco de rota, escolha e continuidade de chapter select, não por perda absoluta em todos os casos. Totens, The Twins, 1952 e Mystery Man exigem checklist, mas entram como coletáveis e cleanup.",
+    "name": "Until Dawn",
+    "online_summary": "A platina é totalmente single-player: não exige online, co-op, multiplayer ou PS Plus.",
+    "quality_warnings": "[]",
+    "reviewed_by": "Equipe editorial AtlasAchievement",
+    "runs_summary": "A rota segura usa uma run completa salvando todos, seguida de chapter select ou run parcial para todos mortos, mortes específicas, escolhas incompatíveis e colecionáveis faltantes.",
+    "slug": "until-dawn",
+    "time": "15-20h",
+    "time_bucket": "short",
+    "time_max_hours": 20,
+    "time_min_hours": 15,
+    "time_reason": "A estimativa de 15-20 horas considera uma campanha completa, coleta ampla, chapter select e rotas alternativas para todos vivos, todos mortos e escolhas incompatíveis.",
+    "time_sort_hours": 15,
+    "updated_at": "2026-06-27 02:36:59",
+    "verification_note": "Guia PS4 original de 2015 revisado com 19 troféus, roadmap estruturado, escopo single-player e separação explícita da versão PS5/PC de 2024.",
+    "verification_status": "verified",
+    "walkthrough": null
+  },
+  "redirects": [],
+  "roadmaps": [
+    {
+      "content": "{\"title\":\"Primeira run salvando todos\",\"focus\":\"Todos vivos e exploração\",\"objective\":\"Completar a história mantendo todos os personagens vivos e coletando o máximo possível de Totens e pistas.\",\"actions\":[\"Explore cada área antes de avançar para a próxima cena importante.\",\"Colete Totens e pistas das cluelines conforme surgirem.\",\"Evite decisões agressivas ou arriscadas quando o objetivo for manter todos vivos.\",\"Tenha atenção a QTEs e escolhas de diálogo que afetam sobrevivência.\",\"Anote capítulos em que decisões importantes foram tomadas para facilitar o cleanup.\"],\"warning\":\"A run de todos vivos pode ser comprometida por escolhas aparentemente pequenas. Use atenção extra em cenas com chase, QTEs, armas, portas e decisões sob pressão.\",\"result\":\"A base da platina fica pronta, com personagens vivos, história concluída e boa parte dos colecionáveis resolvida.\"}",
+      "step_order": 1
+    },
+    {
+      "content": "{\"title\":\"Colecionáveis, Totens e cluelines\",\"focus\":\"Coletáveis\",\"objective\":\"Completar os colecionáveis e linhas de pistas necessários para os troféus de investigação.\",\"actions\":[\"Cheque Totens pendentes por capítulo.\",\"Complete as pistas da clueline The Twins.\",\"Complete as pistas da clueline 1952.\",\"Complete as pistas da clueline Mystery Man.\",\"Use chapter select com cuidado, mantendo a continuidade quando uma pista depender de consequência posterior.\"],\"warning\":\"Chapter select ajuda, mas não deve ser tratado como seleção livre sem consequência. Algumas mudanças precisam ser jogadas até capítulos seguintes.\",\"result\":\"Os troféus de colecionáveis e investigação ficam prontos para a limpeza de escolhas.\"}",
+      "step_order": 2
+    },
+    {
+      "content": "{\"title\":\"Escolhas incompatíveis e mortes específicas\",\"focus\":\"Troféus de decisão\",\"objective\":\"Usar chapter select ou nova run parcial para resolver troféus que entram em conflito com todos vivos.\",\"actions\":[\"Planeje os troféus que exigem ferir, trair ou matar personagens específicos.\",\"Separe escolhas incompatíveis para não quebrar a run de todos vivos.\",\"Use chapter select a partir do ponto correto e continue até o capítulo necessário para validar a consequência.\",\"Faça backup save ou cloud save quando a plataforma permitir.\",\"Evite sobrescrever progresso limpo sem ter certeza da rota.\"],\"warning\":\"Muitos troféus dependem de consequências acumuladas. Começar no capítulo errado pode fazer você repetir mais tempo do que o necessário.\",\"result\":\"Os troféus incompatíveis com todos vivos ficam resolvidos sem bagunçar a rota principal.\"}",
+      "step_order": 3
+    },
+    {
+      "content": "{\"title\":\"Run ou sequência de todos mortos\",\"focus\":\"Final alternativo\",\"objective\":\"Obter os troféus ligados a mortes de personagens e finais negativos.\",\"actions\":[\"Siga uma rota planejada para matar todos os personagens exigidos.\",\"Use decisões e QTEs específicos para garantir cada morte possível.\",\"Mantenha vivos até o momento certo os personagens que só podem morrer em capítulos finais.\",\"Se usar chapter select, continue a partir do capítulo escolhido até o final necessário.\",\"Não misture esta rota com a run de todos vivos.\"],\"warning\":\"Alguns personagens só podem morrer em momentos específicos. Errar uma morte pode obrigar a repetir capítulos finais.\",\"result\":\"A rota de todos mortos ou mortes específicas fecha os troféus narrativos restantes.\"}",
+      "step_order": 4
+    },
+    {
+      "content": "{\"title\":\"Cleanup final e conferência da lista\",\"focus\":\"Conferência\",\"objective\":\"Validar troféus restantes, versão correta do jogo e consistência do guia.\",\"actions\":[\"Cheque o total de 19 troféus da versão PS4 original.\",\"Garanta que PS4 e PS5/PC de 2024 não foram misturados.\",\"Cheque Totens, cluelines, todos vivos, todos mortos e troféus de escolhas específicas.\",\"Mantenha a rota sem online obrigatório, sem co-op obrigatório e sem DLC exigida.\",\"Use o checklist final para identificar qualquer capítulo que precise de cleanup.\"],\"warning\":\"\",\"result\":\"A lista de Until Dawn PS4 fica pronta para a platina da versão correta.\"}",
+      "step_order": 5
+    }
+  ],
+  "schemaVersion": 1,
+  "seedExtras": {
+    "aliases": [],
+    "attentionPoints": [
+      {
+        "detail": "Este guia é do Until Dawn PS4 original de 2015, com 19 troféus. A lista PS5/PC de 2024 é diferente e não entra aqui.",
+        "tags": [
+          {
+            "id": "scope",
+            "label": "PS4 original",
+            "tone": "complete"
+          }
+        ],
+        "title": "Versão correta"
+      },
+      {
+        "detail": "They All Live exige manter os oito amigos vivos até o amanhecer. Faça esta rota em uma run limpa antes de buscar mortes específicas.",
+        "tags": [
+          {
+            "id": "everyone-lives",
+            "label": "Todos vivos",
+            "tone": "risk"
+          }
+        ],
+        "title": "Todos vivos"
+      },
+      {
+        "detail": "This Is THE End deve ficar em rota separada, porque conflita com todos vivos e depende de mortes em momentos certos.",
+        "tags": [
+          {
+            "id": "everyone-dies",
+            "label": "Todos mortos",
+            "tone": "risk"
+          }
+        ],
+        "title": "Todos mortos"
+      },
+      {
+        "detail": "Chapter select ajuda, mas não é correção instantânea: várias escolhas precisam ser jogadas até capítulos seguintes ou até o final para consolidar consequências.",
+        "tags": [
+          {
+            "id": "chapter-select",
+            "label": "Chapter select",
+            "tone": "warning"
+          }
+        ],
+        "title": "Chapter select"
+      },
+      {
+        "detail": "Night of the Totem Hunter exige todos os Totens da lista PS4. Acompanhe por capítulo para evitar cleanup confuso.",
+        "tags": [
+          {
+            "id": "totems",
+            "label": "Totens",
+            "tone": "partial"
+          }
+        ],
+        "title": "Totens"
+      },
+      {
+        "detail": "Separe The Twins, 1952 e Mystery Man. Cada linha de pistas tem troféu próprio e pede exploração cuidadosa.",
+        "tags": [
+          {
+            "id": "clueline",
+            "label": "Cluelines",
+            "tone": "partial"
+          }
+        ],
+        "title": "Cluelines"
+      },
+      {
+        "detail": "Fatal Grudge, Ashley Snaps, The Exorcism of Emily, Let eM In e Instant Inferno podem conflitar com rotas de sobrevivência.",
+        "tags": [
+          {
+            "id": "choice",
+            "label": "Escolhas",
+            "tone": "warning"
+          }
+        ],
+        "title": "Escolhas incompatíveis"
+      },
+      {
+        "detail": "Jessica, Matt, Chris, Ashley, Emily, Sam, Mike e Josh dependem de decisões, QTEs e cenas de pressão em capítulos específicos.",
+        "tags": [
+          {
+            "id": "survival",
+            "label": "Sobrevivência",
+            "tone": "risk"
+          }
+        ],
+        "title": "QTEs e sobrevivência"
+      },
+      {
+        "detail": "Quando a plataforma permitir, backup save ou cloud save ajuda antes de rotas finais e escolhas críticas.",
+        "tags": [
+          {
+            "id": "backup",
+            "label": "Backup save",
+            "tone": "warning"
+          }
+        ],
+        "title": "Backup save"
+      },
+      {
+        "detail": "A platina é single-player, sem online obrigatório, sem co-op obrigatório e sem DLC. Rush of Blood e The Inpatient são listas separadas e não entram aqui.",
+        "tags": [
+          {
+            "id": "offline",
+            "label": "Offline",
+            "tone": "complete"
+          }
+        ],
+        "title": "Sem online, co-op ou DLC"
+      }
+    ],
+    "checklist": [
+      "Confirmar que o guia é do Until Dawn PS4 original de 2015.",
+      "Confirmar a lista base com 19 troféus.",
+      "Manter online, co-op e DLC fora dos requisitos da platina.",
+      "Não misturar Until Dawn PS4 com a versão PS5/PC de 2024.",
+      "Não misturar Rush of Blood ou The Inpatient com o guia principal.",
+      "Completar uma run salvando todos os oito personagens.",
+      "Coletar todos os Totens da lista PS4.",
+      "Completar as cluelines The Twins, 1952 e Mystery Man.",
+      "Planejar a rota de todos mortos ou mortes específicas separadamente.",
+      "Resolver escolhas incompatíveis de Chris, Ashley, Emily, Mike, Jessica e Sam.",
+      "Usar chapter select continuando até a consequência necessária.",
+      "Fazer backup save ou cloud save antes de rotas finais, quando possível.",
+      "Conferir os 12 troféus marcados como perdíveis antes de encerrar o cleanup.",
+      "Validar que os cards mantêm inglês principal, PT-BR abaixo e botão de YouTube."
+    ],
+    "faq": [
+      {
+        "answer": "Não. A platina é single-player e não exige online, multiplayer ou PS Plus.",
+        "question": "Until Dawn exige online para platinar?"
+      },
+      {
+        "answer": "Não. A platina não depende de co-op e pode ser feita por uma pessoa.",
+        "question": "Until Dawn exige co-op para platinar?"
+      },
+      {
+        "answer": "Não. A lista base do PS4 não exige DLC. Também não misture Rush of Blood ou The Inpatient com o guia principal.",
+        "question": "Until Dawn exige DLC para platinar?"
+      },
+      {
+        "answer": "Sim, no padrão editorial deste guia. Eles são perdíveis por rota/escolha, porque podem exigir repetir capítulos longos se o jogador avançar sem cumprir a condição. Chapter select ajuda, mas não corrige tudo instantaneamente.",
+        "question": "Until Dawn tem troféus perdíveis?"
+      },
+      {
+        "answer": "Normalmente uma run completa salvando todos e cleanup por chapter select ou run parcial bastam. Separar todos vivos, todos mortos, colecionáveis e escolhas específicas evita repetição desnecessária.",
+        "question": "Quantas runs são necessárias?"
+      },
+      {
+        "answer": "Sim, mas com cuidado. Muitas consequências exigem continuar do capítulo escolhido até capítulos seguintes ou até o final, então chapter select não deve ser tratado como correção instantânea.",
+        "question": "Posso usar chapter select para corrigir escolhas?"
+      },
+      {
+        "answer": "A rota mais segura é salvar todos os personagens e coletar o máximo possível de Totens e pistas.",
+        "question": "Qual é a melhor primeira run?"
+      },
+      {
+        "answer": "Troféus incompatíveis entre si, mortes específicas, QTEs, Totens esquecidos e cluelines incompletas.",
+        "question": "O que mais costuma dar problema?"
+      },
+      {
+        "answer": "Sim, para os troféus de cluelines. Separe The Twins, 1952 e Mystery Man por capítulo e confira antes do cleanup final.",
+        "question": "Preciso coletar todas as pistas?"
+      },
+      {
+        "answer": "Não necessariamente. Este guia usa a lista PS4 original com 19 troféus; a versão PS5/PC de 2024 tem lista própria e não deve ser misturada aqui.",
+        "question": "A versão PS5/PC de 2024 tem a mesma lista da PS4?"
+      }
+    ],
+    "note": "Campos exportados para auditoria. O SQLite atual nao possui colunas nativas para todos esses extras; a importacao preserva o que o banco suporta.",
+    "quickDecision": {
+      "firstAction": "Comece salvando todos os personagens e coletando Totens e pistas em cada cenário antes de avançar.",
+      "mainRisk": "Usar chapter select como correção instantânea pode falhar, porque muitas consequências precisam ser jogadas até capítulos posteriores.",
+      "recommendation": "Faça primeiro uma run de todos vivos com coleta ampla e deixe mortes, todos mortos e escolhas incompatíveis para chapter select ou run parcial.",
+      "summary": "Vale platinar Until Dawn se você gosta de horror narrativo, escolhas com consequências e uma platina curta baseada em rotas alternativas. A platina não exige online, co-op nem DLC, mas cobra atenção a Totens, pistas, todos vivos, todos mortos e troféus de decisões específicas. É acessível, porém exige cuidado com chapter select para não repetir capítulos além do necessário.",
+      "verdict": "Ótima platina curta para quem gosta de narrativa ramificada; ruim para quem quer jogar sem checklist ou sem repetir cenas."
+    },
+    "seo": {
+      "canonical": "https://atlasachievement.com.br/jogo/until-dawn",
+      "description": "Guia de platina de Until Dawn com roadmap em português, troféus da lista base, todos vivos, todos mortos, Totens, pistas, cluelines, chapter select e dicas para conquistar a platina no PS4.",
+      "keywords": "Until Dawn, guia de platina Until Dawn, troféus Until Dawn, roadmap Until Dawn, They All Live, This Is THE End, Night of the Totem Hunter, The Tale of The Two Sisters, The Fateful Descent, You Opened Their Eyes",
+      "ogDescription": "Roadmap de Until Dawn PS4 com 19 troféus, todos vivos, todos mortos, Totens, cluelines e chapter select.",
+      "ogTitle": "Guia de Platina Until Dawn — Troféus, Roadmap e Dicas",
+      "title": "Guia de Platina Until Dawn — Troféus, Roadmap e Dicas"
+    },
+    "tags": []
+  },
+  "slug": "until-dawn",
+  "trophies": [
+    {
+      "description": "Colete todos os troféus de ouro, prata e bronze em Until Dawn.",
+      "is_missable": 0,
+      "is_spoiler": 0,
+      "name": "A Symphony of Horror Trophies",
+      "name_pt": "Sinfonia de Troféus de Horror",
+      "tip": "Desbloqueie todos os demais troféus da lista base. A entrada mantém Until Dawn como nome público e não mistura spin-offs.",
+      "trophy_code": "until_dawn_a_symphony_of_horror_trophies",
+      "type": "Platina"
+    },
+    {
+      "description": "O grupo encontrou todas as pistas da clueline Mystery Man.",
+      "is_missable": 0,
+      "is_spoiler": 1,
+      "name": "You Opened Their Eyes",
+      "name_pt": "Você Abriu os Olhos Deles",
+      "tip": "Use o checklist da lista PS4 para acompanhar as pistas da clueline Mystery Man por capítulo.",
+      "trophy_code": "until_dawn_you_opened_their_eyes",
+      "type": "Ouro"
+    },
+    {
+      "description": "Ninguém sobreviveu até o amanhecer.",
+      "is_missable": 1,
+      "is_spoiler": 1,
+      "name": "This Is THE End",
+      "name_pt": "Este É O Fim",
+      "tip": "Faça a rota em que ninguém sobrevive. Decisões dos capítulos finais e a situação de Josh/Jessica/Matt podem exigir replay longo.",
+      "trophy_code": "until_dawn_this_is_the_end",
+      "type": "Ouro"
+    },
+    {
+      "description": "Todos os oito amigos sobreviveram até o amanhecer.",
+      "is_missable": 1,
+      "is_spoiler": 1,
+      "name": "They All Live",
+      "name_pt": "Todos Viveram",
+      "tip": "Mantenha todos os oito protagonistas vivos até o amanhecer. Planeje escolhas, QTEs, Don’t Move e coletáveis ligados ao destino de Josh.",
+      "trophy_code": "until_dawn_they_all_live",
+      "type": "Ouro"
+    },
+    {
+      "description": "O grupo encontrou todas as pistas da clueline The Twins.",
+      "is_missable": 0,
+      "is_spoiler": 1,
+      "name": "The Tale of The Two Sisters",
+      "name_pt": "O Conto das Duas Irmãs",
+      "tip": "Complete a Twins Clueline. Alguns indícios dependem de exploração cuidadosa e de personagens vivos ou rotas certas em capítulos avançados.",
+      "trophy_code": "until_dawn_the_tale_of_the_two_sisters",
+      "type": "Ouro"
+    },
+    {
+      "description": "Mike manteve o lobo vivo durante toda a sequência do Sanatorium.",
+      "is_missable": 1,
+      "is_spoiler": 1,
+      "name": "The Skillful Wolf Man",
+      "name_pt": "O Homem-Lobo Habilidoso",
+      "tip": "Como Mike, não machuque o lobo e proteja-o durante o Sanatório. Falhar QTEs ou escolher errado pode matar o lobo.",
+      "trophy_code": "until_dawn_the_skillful_wolf_man",
+      "type": "Ouro"
+    },
+    {
+      "description": "Todos os garotos escaparam da morte.",
+      "is_missable": 1,
+      "is_spoiler": 1,
+      "name": "The Quicker Man",
+      "name_pt": "Os Rapazes Escaparam",
+      "tip": "Mantenha Mike, Matt, Chris e Josh vivos. Use a rota de todos vivos como base e cuidado com decisões ligadas ao diário das gêmeas.",
+      "trophy_code": "until_dawn_the_quicker_man",
+      "type": "Ouro"
+    },
+    {
+      "description": "O grupo encontrou todas as pistas da clueline 1952.",
+      "is_missable": 0,
+      "is_spoiler": 1,
+      "name": "The Fateful Descent",
+      "name_pt": "A Descida Fatídica",
+      "tip": "Complete a 1952 Clueline. Explore minas, sanatório e cenas finais com checklist da versão correta para não perder pistas condicionais.",
+      "trophy_code": "until_dawn_the_fateful_descent",
+      "type": "Ouro"
+    },
+    {
+      "description": "O grupo encontrou todos os Totems na montanha.",
+      "is_missable": 0,
+      "is_spoiler": 0,
+      "name": "Night of the Totem Hunter",
+      "name_pt": "Noite do Caçador de Totens",
+      "tip": "Use o checklist da lista PS4 para acompanhar os Totens por capítulo.",
+      "trophy_code": "until_dawn_night_of_the_totem_hunter",
+      "type": "Ouro"
+    },
+    {
+      "description": "Todas as garotas sobreviveram até o amanhecer.",
+      "is_missable": 1,
+      "is_spoiler": 1,
+      "name": "Four Daughters Of Darkness",
+      "name_pt": "Quatro Filhas da Escuridão",
+      "tip": "Mantenha Sam, Emily, Jessica e Ashley vivas. É compatível com They All Live e depende de decisões críticas nos capítulos 4, 8, 9 e 10.",
+      "trophy_code": "until_dawn_four_daughters_of_darkness",
+      "type": "Ouro"
+    },
+    {
+      "description": "Sam ou Ashley atacou o Psycho com uma arma.",
+      "is_missable": 0,
+      "is_spoiler": 1,
+      "name": "The Psycho Path",
+      "name_pt": "O Caminho do Psicopata",
+      "tip": "Ataque o Psycho com Sam ou Ashley quando a oportunidade aparecer. É uma ação de capítulo e pode ser limpa por replay de cena/capítulo.",
+      "trophy_code": "until_dawn_the_psycho_path",
+      "type": "Prata"
+    },
+    {
+      "description": "Mike cortou os próprios dedos para se libertar da armadilha de urso.",
+      "is_missable": 0,
+      "is_spoiler": 1,
+      "name": "Scream Too!",
+      "name_pt": "Grite Também!",
+      "tip": "Como Mike, escolha cortar os dedos para escapar da armadilha. Não combine com rotas em que você quer evitar ferimentos específicos.",
+      "trophy_code": "until_dawn_scream_too",
+      "type": "Prata"
+    },
+    {
+      "description": "Sam acionou imediatamente o interruptor para incendiar o lodge.",
+      "is_missable": 1,
+      "is_spoiler": 1,
+      "name": "Instant Inferno",
+      "name_pt": "Inferno Instantâneo",
+      "tip": "No lodge, acione o interruptor imediatamente com Sam. Isso altera sobreviventes/finais, então use em rota de mortes ou cleanup planejado.",
+      "trophy_code": "until_dawn_instant_inferno",
+      "type": "Prata"
+    },
+    {
+      "description": "Jessica sobreviveu à noite de terror.",
+      "is_missable": 1,
+      "is_spoiler": 1,
+      "name": "Don’t Scare Jessica To Death",
+      "name_pt": "Não Assuste Jessica Até a Morte",
+      "tip": "Mantenha Jessica viva. Como Mike, siga o caminho rápido quando necessário; no final, escolha esconder/avançar com cuidado se ela estiver com Matt.",
+      "trophy_code": "until_dawn_dont_scare_jessica_to_death",
+      "type": "Prata"
+    },
+    {
+      "description": "Ashley perdeu o controle e deixou Chris morrer.",
+      "is_missable": 1,
+      "is_spoiler": 1,
+      "name": "Ashley Snaps",
+      "name_pt": "Ashley Perde o Controle",
+      "tip": "Faça Chris atirar em Ashley no Capítulo 6 e depois mantenha Chris vivo até a porta no Capítulo 8. A consequência precisa persistir.",
+      "trophy_code": "until_dawn_ashley_snaps",
+      "type": "Prata"
+    },
+    {
+      "description": "Ashley ou Chris abriu o alçapão e deixou o monstro entrar.",
+      "is_missable": 1,
+      "is_spoiler": 1,
+      "name": "You Let The Wrong One In!",
+      "name_pt": "Você Deixou o Errado Entrar!",
+      "tip": "No Capítulo 9, investigue o som e abra o alçapão. Isso pode matar Ashley/Chris e deve ficar para rota alternativa.",
+      "trophy_code": "until_dawn_you_let_the_wrong_one_in",
+      "type": "Bronze"
+    },
+    {
+      "description": "Mike atirou em Emily.",
+      "is_missable": 1,
+      "is_spoiler": 1,
+      "name": "The Exorcism of Emily",
+      "name_pt": "O Exorcismo de Emily",
+      "tip": "Deixe Emily ser mordida e, no porão, escolha atirar nela como Mike. É incompatível com todos vivos e exige setup anterior.",
+      "trophy_code": "until_dawn_the_exorcism_of_emily",
+      "type": "Bronze"
+    },
+    {
+      "description": "Mike permitiu que Emily ficasse no porão.",
+      "is_missable": 1,
+      "is_spoiler": 1,
+      "name": "Let eM In",
+      "name_pt": "Deixe eM Entrar",
+      "tip": "Após Emily ser mordida, não atire nela como Mike. É a alternativa ao troféu The Exorcism of Emily na mesma tensão do porão.",
+      "trophy_code": "until_dawn_let_em_in",
+      "type": "Bronze"
+    },
+    {
+      "description": "Chris escolheu atirar em Ashley.",
+      "is_missable": 1,
+      "is_spoiler": 1,
+      "name": "Fatal Grudge",
+      "name_pt": "Rancor Fatal",
+      "tip": "No Capítulo 6, escolha atirar em Ashley. Essa decisão prepara Ashley Snaps e invalida a rota de todos vivos se mantida.",
+      "trophy_code": "until_dawn_fatal_grudge",
+      "type": "Bronze"
+    }
+  ]
+}

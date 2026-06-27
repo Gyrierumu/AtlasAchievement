@@ -1,0 +1,460 @@
+{
+  "game": {
+    "avoid_if": "Evite se você não gosta de coletáveis, limpeza de mapa ou chefes opcionais exigentes.",
+    "before_you_start": "God of War (2018) é uma platina single-player, sem online, coop, DLC ou dificuldade obrigatória. A atenção real é organizar coletáveis por região, acompanhar os 51 corvos de Odin no checklist e guardar Valkyries e reinos de desafio para o pós-história.",
+    "best_for": "Ideal para quem quer uma platina narrativa, acessível e com bastante exploração de mundo semiaberto.",
+    "cleanup_advice": "Após a história, use a exploração livre e o mapa por região para limpar coletáveis, favores, dragões, upgrades, Muspelheim, Niflheim e Valkyries. Deixe ecos de névoa, desafios finais e Rainha das Valkyries para quando Kratos estiver bem equipado.",
+    "cover_image": "https://cdn.cloudflare.steamstatic.com/steam/apps/1593500/library_600x900.jpg",
+    "coverage_level": "strong",
+    "created_at": "2026-05-09 19:53:30",
+    "difficulty": 4,
+    "difficulty_reason": "A dificuldade vem mais dos combates opcionais, Valkyries, Muspelheim, Niflheim e completude do mapa do que de dificuldade obrigatória ou runs múltiplas.",
+    "dlc_scope": "DLC fora da platina base. A platina base não exige DLC, God of War Ragnarök, Valhalla ou modos extras de outro jogo.",
+    "editorial_notes": "",
+    "editorial_review_status": "verified",
+    "editorial_status": "published",
+    "first_run_advice": "Jogue a campanha naturalmente, explore quando quiser e deixe o cleanup pesado para depois da história.",
+    "grind_summary": "O peso está em exploração, coletáveis, favores, melhorias e desafios opcionais, especialmente valquírias, Muspelheim e Niflheim.",
+    "guide_avoid": null,
+    "guide_best_moment": null,
+    "guide_dlc": null,
+    "guide_grind": null,
+    "guide_ideal": null,
+    "guide_online": null,
+    "guide_runs": null,
+    "image": "https://cdn.cloudflare.steamstatic.com/steam/apps/1593500/header.jpg",
+    "is_verified": 1,
+    "last_reviewed_at": "2026-05-21",
+    "missable": "Não há troféus perdíveis na lista base: há exploração livre depois da história e todos os coletáveis, favores, upgrades, Valkyries e desafios opcionais podem ser concluídos no cleanup.",
+    "missable_summary": "Sem perdíveis definitivos na lista base. Depois da história, é possível voltar aos reinos para limpar coletáveis, favores, Valkyries, mapas do tesouro, Muspelheim, Niflheim e atividades pendentes.",
+    "name": "God of War",
+    "online_summary": "Não há exigência online para a platina. A lista base é totalmente single-player e não exige servidores, PS+ ou troféus online.",
+    "quality_warnings": "[]",
+    "reviewed_by": "AtlasAchievement editorial",
+    "runs_summary": "Uma campanha principal com cleanup livre após a história. Nada da lista base é perdível.",
+    "slug": "god-of-war",
+    "time": "30-40h",
+    "time_bucket": "medium",
+    "time_max_hours": 40,
+    "time_min_hours": 30,
+    "time_reason": "A faixa de 30-40 horas considera história, exploração, coletáveis, favores, upgrades, valquírias e limpeza em exploração livre.",
+    "time_sort_hours": 30,
+    "updated_at": "2026-06-27 02:36:59",
+    "verification_note": "Guia revisado editorialmente para a platina base de God of War (2018), com 37 troféus, sem perdíveis definitivos, sem online obrigatório, sem coop obrigatório, sem dificuldade obrigatória e DLC fora da platina base.",
+    "verification_status": "verified",
+    "walkthrough": null
+  },
+  "redirects": [
+    "god-of-war-2018"
+  ],
+  "roadmaps": [
+    {
+      "content": "{\"title\":\"Avance a história em uma dificuldade confortável\",\"focus\":\"Campanha principal\",\"objective\":\"Concluir a história principal enquanto libera recursos, habilidades, atalhos e acesso gradual aos reinos.\",\"actions\":[\"Jogue em uma dificuldade confortável.\",\"Explore baús, favores e áreas secundárias quando estiverem no caminho.\",\"Use a campanha para aprender combate, esquivas, runas e comandos de Atreus.\",\"Não tente limpar todos os reinos antes de ter equipamentos melhores.\"],\"warning\":\"\",\"result\":\"História concluída e Kratos preparado para exploração avançada.\"}",
+      "step_order": 1
+    },
+    {
+      "content": "{\"title\":\"Explore reinos e abra atividades secundárias\",\"focus\":\"Exploração\",\"objective\":\"Liberar áreas, viagens, atalhos e atividades opcionais que serão usadas no cleanup.\",\"actions\":[\"Revisite reinos após ganhar novas habilidades.\",\"Abra baús, portais e caminhos bloqueados.\",\"Ative favores e atividades secundárias disponíveis.\",\"Marque pendências por região para evitar repetir rotas sem necessidade.\"],\"warning\":\"\",\"result\":\"Reinos principais abertos e pendências organizadas.\"}",
+      "step_order": 2
+    },
+    {
+      "content": "{\"title\":\"Complete favores, coletáveis e mapas por região\",\"focus\":\"Coletáveis\",\"objective\":\"Resolver artefatos, corvos de Odin, mapas do tesouro, favores e coletáveis usando uma ordem por região.\",\"actions\":[\"Limpe uma região por vez.\",\"Use checklist para artefatos, corvos, baús e mapas do tesouro.\",\"Complete favores de Brok, Sindri e atividades secundárias.\",\"Deixe objetivos mais difíceis para quando a build estiver mais forte.\"],\"warning\":\"\",\"result\":\"Grande parte dos coletáveis e favores concluída.\"}",
+      "step_order": 3
+    },
+    {
+      "content": "{\"title\":\"Trabalhe Muspelheim e Niflheim em etapas próprias\",\"focus\":\"Muspelheim / Niflheim\",\"objective\":\"Separar os dois reinos mais exigentes para controlar grind, desafios de combate e repetição.\",\"actions\":[\"Faça Muspelheim quando sua build estiver pronta para desafios de combate.\",\"Trabalhe Niflheim com foco em rota, recursos e repetição eficiente.\",\"Melhore equipamentos antes de insistir em tentativas longas.\",\"Evite deixar todo o grind para o último momento.\"],\"warning\":\"Niflheim pode ser a parte mais repetitiva da platina.\",\"result\":\"Troféus e recursos principais de Muspelheim e Niflheim encaminhados ou concluídos.\"}",
+      "step_order": 4
+    },
+    {
+      "content": "{\"title\":\"Derrote Valkyries e finalize upgrades importantes\",\"focus\":\"Valkyries\",\"objective\":\"Enfrentar os maiores desafios de combate com equipamentos, runas e atributos já fortalecidos.\",\"actions\":[\"Derrote Valkyries depois de melhorar vida, fúria, armadura e runas.\",\"Aprenda padrões antes de tentar lutas mais difíceis.\",\"Use upgrades finais para facilitar chefes opcionais.\",\"Ajuste talismãs, encantamentos e habilidades conforme cada luta.\"],\"warning\":\"As Valkyries são o maior pico de dificuldade da platina.\",\"result\":\"Valkyries derrotadas e upgrades importantes finalizados.\"}",
+      "step_order": 5
+    },
+    {
+      "content": "{\"title\":\"Faça o cleanup final da platina base\",\"focus\":\"Checklist final\",\"objective\":\"Conferir todos os requisitos restantes antes de liberar a platina.\",\"actions\":[\"Revise a checklist completa.\",\"Confirme corvos, artefatos, mapas, favores, baús e upgrades restantes.\",\"Termine objetivos pendentes por região.\",\"Confirme que não há online, coop, dificuldade obrigatória ou perdíveis definitivos.\"],\"warning\":\"\",\"result\":\"Lista base concluída e platina pronta.\"}",
+      "step_order": 6
+    }
+  ],
+  "schemaVersion": 1,
+  "seedExtras": {
+    "aliases": [],
+    "attentionPoints": [],
+    "checklist": [],
+    "faq": [],
+    "note": "Campos exportados para auditoria. O SQLite atual nao possui colunas nativas para todos esses extras; a importacao preserva o que o banco suporta.",
+    "quickDecision": null,
+    "seo": {},
+    "tags": []
+  },
+  "slug": "god-of-war",
+  "trophies": [
+    {
+      "description": "Obtenha todos os outros troféus.",
+      "is_missable": 0,
+      "is_spoiler": 0,
+      "name": "Father and Son",
+      "name_pt": "Pai e Filho",
+      "tip": "Conclua todos os troféus da lista base de God of War (2018) para liberar a platina.",
+      "trophy_code": "gow2018_father_and_son",
+      "type": "Platina"
+    },
+    {
+      "description": "Defenda sua casa contra o Estranho.",
+      "is_missable": 0,
+      "is_spoiler": 1,
+      "name": "The Journey Begins",
+      "name_pt": "A Jornada Começa",
+      "tip": "Troféu automático de história no começo da campanha.",
+      "trophy_code": "gow2018_the_journey_begins",
+      "type": "Bronze"
+    },
+    {
+      "description": "Sobreviva ao Bosque da Bruxa.",
+      "is_missable": 0,
+      "is_spoiler": 1,
+      "name": "A New Friend",
+      "name_pt": "Um Novo Amigo",
+      "tip": "Troféu automático de história durante Caminho para a Montanha.",
+      "trophy_code": "gow2018_a_new_friend",
+      "type": "Bronze"
+    },
+    {
+      "description": "Permita que os Light Elves retornem para casa.",
+      "is_missable": 0,
+      "is_spoiler": 1,
+      "name": "Feels Like Home",
+      "name_pt": "Parece o Lar",
+      "tip": "Troféu automático de história em A Luz de Alfheim.",
+      "trophy_code": "gow2018_feels_like_home",
+      "type": "Bronze"
+    },
+    {
+      "description": "Derrote o Dragão da Montanha.",
+      "is_missable": 0,
+      "is_spoiler": 1,
+      "name": "Dragon Slayer",
+      "name_pt": "Matador de Dragões",
+      "tip": "Troféu automático de história ao derrotar o dragão da montanha.",
+      "trophy_code": "gow2018_dragon_slayer",
+      "type": "Bronze"
+    },
+    {
+      "description": "Derrote Magni e Modi.",
+      "is_missable": 0,
+      "is_spoiler": 1,
+      "name": "Troubling Consequences",
+      "name_pt": "Consequências Problemáticas",
+      "tip": "Troféu automático de história ligado ao chefe Magni e Modi.",
+      "trophy_code": "gow2018_troubling_consequences",
+      "type": "Bronze"
+    },
+    {
+      "description": "Recupere as Blades of Chaos.",
+      "is_missable": 0,
+      "is_spoiler": 1,
+      "name": "Hello, Old Friend",
+      "name_pt": "Olá, Velho Amigo",
+      "tip": "Troféu automático de história ligado a uma grande virada de equipamento.",
+      "trophy_code": "gow2018_hello_old_friend",
+      "type": "Bronze"
+    },
+    {
+      "description": "Cure Atreus durante a história.",
+      "is_missable": 0,
+      "is_spoiler": 1,
+      "name": "Promise Fulfilled",
+      "name_pt": "Promessa Cumprida",
+      "tip": "Troféu automático de história durante A Doença.",
+      "trophy_code": "gow2018_promise_fulfilled",
+      "type": "Bronze"
+    },
+    {
+      "description": "Resgate Atreus durante a história.",
+      "is_missable": 0,
+      "is_spoiler": 1,
+      "name": "Round 2",
+      "name_pt": "Rodada 2",
+      "tip": "Troféu automático de história em Retorno ao Cume.",
+      "trophy_code": "gow2018_round_2",
+      "type": "Bronze"
+    },
+    {
+      "description": "Saia de Helheim usando o navio.",
+      "is_missable": 0,
+      "is_spoiler": 1,
+      "name": "Past Haunts",
+      "name_pt": "Assombrações do Passado",
+      "tip": "Troféu automático de história em Fuga de Helheim.",
+      "trophy_code": "gow2018_past_haunts",
+      "type": "Bronze"
+    },
+    {
+      "description": "Derrote Baldur.",
+      "is_missable": 0,
+      "is_spoiler": 1,
+      "name": "Twilight Beckons",
+      "name_pt": "O Crepúsculo Chama",
+      "tip": "Troféu automático de história em encontro avançado da campanha.",
+      "trophy_code": "gow2018_twilight_beckons",
+      "type": "Bronze"
+    },
+    {
+      "description": "Conclua a história principal.",
+      "is_missable": 0,
+      "is_spoiler": 1,
+      "name": "Last Wish",
+      "name_pt": "Último Desejo",
+      "tip": "Troféu de conclusão da campanha principal. A exploração livre continua disponível depois disso.",
+      "trophy_code": "gow2018_last_wish",
+      "type": "Ouro"
+    },
+    {
+      "description": "Revele todas as áreas principais do Lago dos Nove.",
+      "is_missable": 0,
+      "is_spoiler": 0,
+      "name": "Beneath the Surface",
+      "name_pt": "Sob a Superfície",
+      "tip": "Revele e visite as áreas principais ao redor do Lago dos Nove; a limpeza de coletáveis costuma desbloquear isso naturalmente.",
+      "trophy_code": "gow2018_beneath_the_surface",
+      "type": "Bronze"
+    },
+    {
+      "description": "Conclua a exploração de Veithurgard.",
+      "is_missable": 0,
+      "is_spoiler": 0,
+      "name": "Death Happened Here",
+      "name_pt": "A Morte Passou por Aqui",
+      "tip": "Complete os marcadores e coletáveis de Veithurgard até limpar a região.",
+      "trophy_code": "gow2018_death_happened_here",
+      "type": "Bronze"
+    },
+    {
+      "description": "Aprenda os idiomas de Muspelheim e Niflheim.",
+      "is_missable": 0,
+      "is_spoiler": 1,
+      "name": "Trilingual",
+      "name_pt": "Trilíngue",
+      "tip": "Abra baús de cifras para liberar Muspelheim e Niflheim. Há cifras extras, então a platina não fica perdível.",
+      "trophy_code": "gow2018_trilingual",
+      "type": "Bronze"
+    },
+    {
+      "description": "Melhore uma peça de armadura.",
+      "is_missable": 0,
+      "is_spoiler": 0,
+      "name": "Dwarven Ingenuity",
+      "name_pt": "Engenhosidade Anã",
+      "tip": "Melhore qualquer peça de armadura em uma loja de Brok ou Sindri.",
+      "trophy_code": "gow2018_dwarven_ingenuity",
+      "type": "Bronze"
+    },
+    {
+      "description": "Obtenha uma gema de ataque rúnico.",
+      "is_missable": 0,
+      "is_spoiler": 0,
+      "name": "Nice Moves",
+      "name_pt": "Bons Movimentos",
+      "tip": "A primeira gema de ataque rúnico vem naturalmente pela história; outras aparecem em baús, chefes e favores.",
+      "trophy_code": "gow2018_nice_moves",
+      "type": "Bronze"
+    },
+    {
+      "description": "Melhore sua vida ao máximo.",
+      "is_missable": 0,
+      "is_spoiler": 0,
+      "name": "Iðunn’s Orchard",
+      "name_pt": "Pomar de Iðunn",
+      "tip": "Colete Idunn Apples em Nornir Chests até melhorar a vida ao máximo.",
+      "trophy_code": "gow2018_idunns_orchard",
+      "type": "Prata"
+    },
+    {
+      "description": "Melhore sua fúria ao máximo.",
+      "is_missable": 0,
+      "is_spoiler": 0,
+      "name": "Quick Tempered",
+      "name_pt": "Temperamento Rápido",
+      "tip": "Colete Horns of Blood Mead em Nornir Chests até melhorar a fúria ao máximo.",
+      "trophy_code": "gow2018_quick_tempered",
+      "type": "Prata"
+    },
+    {
+      "description": "Crie uma roupa para Atreus.",
+      "is_missable": 0,
+      "is_spoiler": 0,
+      "name": "Best Dressed",
+      "name_pt": "Bem Vestido",
+      "tip": "Compre qualquer armadura de Atreus em uma loja.",
+      "trophy_code": "gow2018_best_dressed",
+      "type": "Bronze"
+    },
+    {
+      "description": "Equipe um encantamento em sua armadura.",
+      "is_missable": 0,
+      "is_spoiler": 0,
+      "name": "Enchanted",
+      "name_pt": "Encantado",
+      "tip": "Equipe um encantamento em uma peça de armadura com espaço liberado.",
+      "trophy_code": "gow2018_enchanted",
+      "type": "Bronze"
+    },
+    {
+      "description": "Derrote 1.000 inimigos.",
+      "is_missable": 0,
+      "is_spoiler": 0,
+      "name": "All Will Fall",
+      "name_pt": "Todos Cairão",
+      "tip": "Costuma vir naturalmente durante história, coletáveis, favores, Muspelheim e Niflheim.",
+      "trophy_code": "gow2018_all_will_fall",
+      "type": "Prata"
+    },
+    {
+      "description": "Liberte todos os dragões.",
+      "is_missable": 0,
+      "is_spoiler": 0,
+      "name": "Dangerous Skies",
+      "name_pt": "Céus Perigosos",
+      "tip": "Complete os três favores de dragões em Midgard: Fafnir, Reginn e Otr.",
+      "trophy_code": "gow2018_dangerous_skies",
+      "type": "Prata"
+    },
+    {
+      "description": "Conclua todos os favores de Brok e Sindri.",
+      "is_missable": 0,
+      "is_spoiler": 0,
+      "name": "Like Oil and Water",
+      "name_pt": "Como Água e Óleo",
+      "tip": "Finalize os cinco favores principais de Brok e Sindri em Midgard.",
+      "trophy_code": "gow2018_like_oil_and_water",
+      "type": "Ouro"
+    },
+    {
+      "description": "Colete todos os artefatos.",
+      "is_missable": 0,
+      "is_spoiler": 0,
+      "name": "Curator",
+      "name_pt": "Curador",
+      "tip": "Colete todos os artefatos por região; nada é perdido e o mapa ajuda no cleanup.",
+      "trophy_code": "gow2018_curator",
+      "type": "Prata"
+    },
+    {
+      "description": "Elimine todos os corvos de Odin.",
+      "is_missable": 0,
+      "is_spoiler": 0,
+      "name": "Allfather Blinded",
+      "name_pt": "Pai de Todos Cegado",
+      "tip": "Encontre e destrua todos os 51 corvos de Odin. Use checklist por região para evitar caça cega no final.",
+      "trophy_code": "gow2018_allfather_blinded",
+      "type": "Prata"
+    },
+    {
+      "description": "Melhore um ataque rúnico ao máximo.",
+      "is_missable": 0,
+      "is_spoiler": 0,
+      "name": "The Best Moves",
+      "name_pt": "Os Melhores Movimentos",
+      "tip": "Use experiência para melhorar qualquer ataque rúnico até o nível máximo.",
+      "trophy_code": "gow2018_the_best_moves",
+      "type": "Bronze"
+    },
+    {
+      "description": "Melhore completamente o Leviathan Axe com todos os upgrades.",
+      "is_missable": 0,
+      "is_spoiler": 0,
+      "name": "Worthy",
+      "name_pt": "Digno",
+      "tip": "Leve o Leviathan Axe ao nível máximo; o último upgrade depende de recurso de Niflheim após avançar bastante.",
+      "trophy_code": "gow2018_worthy",
+      "type": "Bronze"
+    },
+    {
+      "description": "Melhore completamente as Blades of Chaos.",
+      "is_missable": 0,
+      "is_spoiler": 1,
+      "name": "Why Fight It?",
+      "name_pt": "Por que Lutar Contra Isso?",
+      "tip": "Leve as Blades of Chaos ao nível máximo; o último upgrade envolve Muspelheim e uma valquíria.",
+      "trophy_code": "gow2018_why_fight_it",
+      "type": "Bronze"
+    },
+    {
+      "description": "Obtenha o conjunto de armadura dos Viajantes.",
+      "is_missable": 0,
+      "is_spoiler": 0,
+      "name": "Path of the Zealot",
+      "name_pt": "Caminho do Zelote",
+      "tip": "Derrote Viajantes, entregue o material na loja e crie o conjunto completo.",
+      "trophy_code": "gow2018_path_of_the_zealot",
+      "type": "Bronze"
+    },
+    {
+      "description": "Obtenha o conjunto de armadura dos Ancestrais.",
+      "is_missable": 0,
+      "is_spoiler": 0,
+      "name": "Primordial",
+      "name_pt": "Primordial",
+      "tip": "Derrote Ancestrais, entregue o material na loja e crie o conjunto completo.",
+      "trophy_code": "gow2018_primordial",
+      "type": "Bronze"
+    },
+    {
+      "description": "Ajude todos os espíritos errantes.",
+      "is_missable": 0,
+      "is_spoiler": 0,
+      "name": "Unfinished Business",
+      "name_pt": "Assuntos Inacabados",
+      "tip": "Complete os favores de espíritos errantes em Midgard, incluindo o favor iniciado por pergaminho.",
+      "trophy_code": "gow2018_unfinished_business",
+      "type": "Prata"
+    },
+    {
+      "description": "Utilize todos os mapas do tesouro para encontrar os tesouros.",
+      "is_missable": 0,
+      "is_spoiler": 0,
+      "name": "Treasure Hunter",
+      "name_pt": "Caçador de Tesouros",
+      "tip": "Encontre todos os mapas do tesouro e cave nos 12 locais correspondentes.",
+      "trophy_code": "gow2018_treasure_hunter",
+      "type": "Prata"
+    },
+    {
+      "description": "Leia todos os santuários Jötnar.",
+      "is_missable": 0,
+      "is_spoiler": 0,
+      "name": "The Truth",
+      "name_pt": "A Verdade",
+      "tip": "Leia todos os 11 santuários Jötnar. Eles não são perdíveis, mas não são todos rastreados do mesmo jeito no mapa.",
+      "trophy_code": "gow2018_the_truth",
+      "type": "Prata"
+    },
+    {
+      "description": "Conclua todos os desafios de Muspelheim.",
+      "is_missable": 0,
+      "is_spoiler": 1,
+      "name": "Fire and Brimstone",
+      "name_pt": "Fogo e Enxofre",
+      "tip": "Conclua as provas de Muspelheim e faça as chaves necessárias para fechar o desafio final.",
+      "trophy_code": "gow2018_fire_and_brimstone",
+      "type": "Ouro"
+    },
+    {
+      "description": "Recupere todos os tesouros da câmara central de Niflheim.",
+      "is_missable": 0,
+      "is_spoiler": 1,
+      "name": "Darkness and Fog",
+      "name_pt": "Escuridão e Névoa",
+      "tip": "Farme ecos de névoa em Niflheim e abra todos os baús e rasgos de reino da câmara central.",
+      "trophy_code": "gow2018_darkness_and_fog",
+      "type": "Ouro"
+    },
+    {
+      "description": "Derrote as nove Valkyries.",
+      "is_missable": 0,
+      "is_spoiler": 1,
+      "name": "Chooser of the Slain",
+      "name_pt": "Escolhedor dos Mortos",
+      "tip": "Derrote as oito valquírias e depois a Valkyrie Queen. É o maior pico de execução da platina.",
+      "trophy_code": "gow2018_chooser_of_the_slain",
+      "type": "Ouro"
+    }
+  ]
+}

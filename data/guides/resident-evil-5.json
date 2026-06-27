@@ -1,0 +1,809 @@
+{
+  "game": {
+    "avoid_if": "Evite se você não quer farm de dinheiro, repetir capítulos para rank S ou lidar com Professional solo/IA.",
+    "before_you_start": "Não há ponto de não retorno permanente. Pontos de atenção por capítulo: Soul Gem exige matar Popokarimu em 4-1 antes de fugir; Heart of Africa exige causar dano suficiente a Wesker em 5-3 antes da luta contra Jill; um emblema de 6-1 exige explosivo; Diamond Marquise fica na arena final de 6-3. Se perder qualquer um, repita o capítulo.",
+    "best_for": "Ideal para quem gosta de ação cooperativa opcional, Seleção de Capítulos, checklist de coletáveis, farm controlável e preparação de arsenal para uma dificuldade alta.",
+    "cleanup_advice": "Depois da campanha, use Seleção de Capítulos em Amateur ou Normal para fechar emblemas, tesouros, ovos, armas, ranks S, troféus situacionais e farm. Só entre no Professional quando tiver ao menos uma Magnum/Rifle forte com munição infinita, sprays e rota conhecida.",
+    "cover_image": "https://cdn.cloudflare.steamstatic.com/steam/apps/21690/library_600x900.jpg",
+    "coverage_level": "complete",
+    "created_at": "2026-05-09 19:53:28",
+    "difficulty": 6,
+    "difficulty_reason": "Dificuldade 6/10: a campanha normal é administrável, mas Professional pune qualquer erro, a IA pode atrapalhar resgates, 2-3 não aceita munição infinita, alguns chefes pedem rota conhecida e o grind de upgrades exige planejamento.",
+    "dlc_scope": "Guia focado na lista base de Resident Evil 5. DLCs/listas extras como Lost in Nightmares, Desperate Escape e Versus ficam fora da platina base neste guia.",
+    "editorial_notes": "Escopo verificado: lista base de 51 troféus de Resident Evil 5. Lost in Nightmares, Desperate Escape e Versus ficam fora da platina. Política de perdíveis: 0 perdíveis definitivos, pois Seleção de Capítulos permite repetir capítulos para coletáveis, dificuldades, ranks e situacionais. They Belong in a Museum não deve ser marcado como perdível; o risco é apenas repetir capítulos para tesouros com janela interna.",
+    "editorial_review_status": "verified",
+    "editorial_status": "published",
+    "first_run_advice": "Comece em Normal se for sua primeira vez ou em Veteran se já conhece RE5 e quer destravar Professional mais cedo. Em qualquer caso, colete emblemas BSAA, tesouros e armas desde o início, mas não reinicie capítulos longos por um item isolado: deixe o cleanup para a Seleção de Capítulos.",
+    "grind_summary": "Grind moderado/alto para dinheiro, upgrades de todas as armas, compra de armas especiais, pontos de Bonus Features, figuras, ranks S e preparação de munição infinita.",
+    "guide_avoid": null,
+    "guide_best_moment": null,
+    "guide_dlc": null,
+    "guide_grind": null,
+    "guide_ideal": null,
+    "guide_online": null,
+    "guide_runs": null,
+    "image": "https://cdn.cloudflare.steamstatic.com/steam/apps/21690/header.jpg",
+    "is_verified": 1,
+    "last_reviewed_at": "2026-06-03",
+    "missable": "Não há troféus perdíveis definitivos na lista base de Resident Evil 5. A Seleção de Capítulos permite repetir qualquer capítulo para limpar emblemas BSAA, tesouros, armas, ranks S, dificuldades e troféus situacionais. O risco real é de retrabalho: alguns tesouros e objetivos têm janela dentro do capítulo, mas se passar do ponto basta repetir o capítulo correspondente.",
+    "missable_summary": "Sem perdíveis definitivos. Tudo da platina base pode ser limpo por Seleção de Capítulos; trate emblemas, tesouros e situações específicas como checklist para evitar repetir capítulos no escuro.",
+    "name": "Resident Evil 5",
+    "online_summary": "Não há exigência online, multiplayer ou PS+ para a platina base. A campanha aceita parceiro humano, mas a lista pode ser planejada solo com a IA; trate companhia humana como ajuda, não requisito.",
+    "quality_warnings": "[]",
+    "reviewed_by": "",
+    "runs_summary": "1 campanha em Normal ou Veteran, limpeza por Seleção de Capítulos, ranks S/farm/upgrades/figuras e 1 campanha em Professional com inventário preparado.",
+    "slug": "resident-evil-5",
+    "time": "35-45 horas",
+    "time_bucket": "medium",
+    "time_max_hours": 45,
+    "time_min_hours": 35,
+    "time_reason": "35-45 horas: 8-12h na primeira campanha, 5-8h para emblemas/tesouros/armas, 4-6h para ranks S e troféus situacionais, 6-10h de farm/upgrades/figuras e 5-8h para Professional preparado.",
+    "time_sort_hours": 35,
+    "updated_at": "2026-06-27 02:36:59",
+    "verification_note": "Guia revisado com foco na lista base, ausência de perdíveis definitivos, Seleção de Capítulos, coletáveis, armas, upgrades, ranks S e Professional.",
+    "verification_status": "verified",
+    "walkthrough": null
+  },
+  "redirects": [],
+  "roadmaps": [
+    {
+      "content": "{\"title\":\"Primeira campanha: Normal ou Veteran\",\"focus\":\"Campanha e preparação\",\"objective\":\"Termine a história uma vez, aprenda arenas/chefes e comece os checklists sem tentar perfeição.\",\"actions\":[\"Escolha Normal se estiver jogando pela primeira vez\",\"escolha Veteran se já conhece o jogo e quer desbloquear Professional mais cedo.\",\"Pegue armas encontradas em baús/cenários, atire em emblemas visíveis e colete tesouros naturais, mas não reinicie capítulos longos por um único item.\",\"Guarde ovos diferentes, primeiros sprays e munição de Magnum/Rifle. Venda tesouros duplicados para melhorar uma arma principal.\",\"Use a campanha para adiantar A Friend in Need, Lifeguard, Exploding Heads, Get Physical, A Cut Above e Who Do You Trust?\"],\"warning\":\"Não gaste todo o dinheiro em muitas armas medianas. Uma arma forte bem evoluída ajuda mais que cinco armas parcialmente melhoradas.\",\"result\":\"Campanha concluída, capítulos abertos na Seleção de Capítulos e base de inventário para cleanup.\"}",
+      "step_order": 1
+    },
+    {
+      "content": "{\"title\":\"Desbloqueie Professional e prepare o arsenal\",\"focus\":\"Dificuldade\",\"objective\":\"Complete todos os capítulos no Veteran se ainda não tiver Professional liberado, depois evolua armas-chave antes da run final.\",\"actions\":[\"Para War Hero, Professional precisa estar disponível\",\"normalmente isso vem ao terminar todos os capítulos em Veteran.\",\"Priorize Magnum L. Hawk ou S&W M29/M500, Rifle PSG-1 ou S75 e uma shotgun forte. Munição infinita em uma arma de alto dano reduz muito o risco.\",\"Leve First Aid Sprays nos dois inventários e não dê armas fracas demais à IA\",\"ela desperdiça munição e pode morrer fora de posição.\"],\"warning\":\"O capítulo 2-3 é feito em turret e continua perigoso mesmo com arsenal forte. Treine em Veteran antes de insistir no Professional.\",\"result\":\"Professional pronto para ser enfrentado sem transformar a run em tentativa e erro.\"}",
+      "step_order": 2
+    },
+    {
+      "content": "{\"title\":\"Limpeza de emblemas BSAA e tesouros\",\"focus\":\"Coletáveis\",\"objective\":\"Use Seleção de Capítulos em Amateur/Normal para fechar Badge of Honor e They Belong in a Museum.\",\"actions\":[\"Emblemas BSAA: 1-2 tem 3\",\"2-1 tem 5\",\"2-2 tem 3\",\"3-1 tem 4\",\"3-2 tem 2\",\"3-3 tem 1\",\"4-1 tem 3\",\"4-2 tem 1\",\"5-1 tem 1\",\"5-2 tem 1\",\"5-3 tem 3\",\"6-1 tem 3.\",\"Capítulos sem emblemas: 1-1, 2-3, 6-2 e 6-3.\",\"Tesouros críticos: Soul Gem em 4-1, Heart of Africa em 5-3, Diamond Marquise em 6-3, Ruby Marquise em 2-1, Emerald Marquise em 3-3 e gemas Brilliant/Oval de 5-3.\",\"Você só precisa registrar cada tipo de tesouro\",\"depois pode vender para financiar upgrades.\"],\"warning\":\"Em 6-1, um emblema dentro de container só quebra com explosivo ou dinamite inimiga. Entre com granada/proximity bomb para não repetir.\",\"result\":\"Badge of Honor, grande parte de They Belong in a Museum e dinheiro extra para upgrades.\"}",
+      "step_order": 3
+    },
+    {
+      "content": "{\"title\":\"Ranks S e Bonus Features\",\"focus\":\"Rank S e figuras\",\"objective\":\"Garanta rank S em todos os capítulos em qualquer dificuldade e compre tudo que libera figuras/costumes.\",\"actions\":[\"Faça S rank em Amateur com munição infinita: priorize tempo baixo, alta precisão, muitas mortes e zero deaths.\",\"Capítulos curtos podem ser repetidos para pontos de Bonus Features\",\"6-2 com Rocket Launcher é uma rota rápida para pontos.\",\"Compre costumes em Bonus Features conforme forem liberados e deixe figuras para depois de todos os emblemas + ranks S.\"],\"warning\":\"O S rank não precisa ser todo na mesma dificuldade. Se um capítulo já tem S em qualquer dificuldade, siga para o próximo.\",\"result\":\"Base de They’re ACTION Figures!, All Dressed Up e pontuação suficiente para comprar extras.\"}",
+      "step_order": 4
+    },
+    {
+      "content": "{\"title\":\"Farm de dinheiro e upgrades\",\"focus\":\"Grind\",\"objective\":\"Comprar todas as armas, liberar armas especiais e evoluir todas as armas com upgrade.\",\"actions\":[\"Farm seguro: 4-1 com rota completa de gemas rende muito por run\",\"5-1 é bom para Lion Hearts dos Lickers\",\"5-2 rende Power Stones dos Reapers se você os mata rápido.\",\"Prioridade de desbloqueio: M92F libera M93R\",\"Ithaca M37 libera Hydra\",\"S&W M29 libera S&W M500\",\"VZ61 libera Gatling Gun\",\"S75 libera Longbow.\",\"Para Take It to the Max, evolua todos os handguns, shotguns, machine guns, rifles e magnums. Stun Rod, Rocket Launcher, Grenade Launcher, Gatling Gun e Longbow não têm upgrades tradicionais.\"],\"warning\":\"Não segure tesouros por apego: depois que o tipo foi registrado, vender é correto. O troféu de tesouros não exige inventário cheio.\",\"result\":\"Stockpile, Take It to the Max e arsenal pronto para War Hero.\"}",
+      "step_order": 5
+    },
+    {
+      "content": "{\"title\":\"Troféus situacionais\",\"focus\":\"Cleanup\",\"objective\":\"Limpe objetivos técnicos em capítulos fáceis antes de fechar a platina.\",\"actions\":[\"Faça Be the Knife em 2-1 contra arqueiros, Drive By em 2-3, Bad Blood/Heart of Africa em 5-3, Heart Stopper em 5-1, Egg Hunt em 3-1 + drops e Egg on Your Face em 1-1 Amateur.\",\"Use 1-1 Amateur para Gatling Gun, Longbow, Stun Rod, headshots, melee e explosivos em grupo.\",\"Use 3-2 para The Works contra Big Man Majini com parceiro humano ou IA bem posicionada.\"],\"warning\":\"Para troféus que dependem de parceiro, remova armas da IA quando ela estiver matando inimigos cedo demais.\",\"result\":\"Lista situacional limpa sem misturar objetivos técnicos com Professional.\"}",
+      "step_order": 6
+    },
+    {
+      "content": "{\"title\":\"Professional e revisão final\",\"focus\":\"War Hero\",\"objective\":\"Complete todos os capítulos no Professional e revise qualquer pendência pela Seleção de Capítulos.\",\"actions\":[\"Entre com armas infinitas, sprays, colete de proteção se quiser segurança e rota conhecida de chefes.\",\"Jogue devagar em arenas com instant kill, priorize resgatar o parceiro e deixe a IA com itens de cura.\",\"Depois de 6-3, confira 30 emblemas, 50 tesouros registrados, todas as armas, todos os upgrades, S rank por capítulo, figuras/costumes comprados e ovos.\"],\"warning\":\"Professional é o último bloco ideal porque qualquer falta de dano, cura ou conhecimento vira retrabalho. Preparar antes economiza horas.\",\"result\":\"War Hero e platina/100% da lista base.\"}",
+      "step_order": 7
+    }
+  ],
+  "schemaVersion": 1,
+  "seedExtras": {
+    "aliases": [],
+    "attentionPoints": [
+      {
+        "tip": "They Belong in a Museum, Badge of Honor, ranks S e situacionais podem ser limpos por Seleção de Capítulos. Nenhum troféu da lista base deve ficar marcado como perdível real.",
+        "title": "Sem perdíveis definitivos",
+        "type": "Chapter Select / Atenção"
+      },
+      {
+        "tip": "Matar Popokarimu antes de fugir no 4-1. Se fugir sem matar, repita o capítulo para registrar o tesouro.",
+        "title": "Soul Gem",
+        "type": "Tesouro / Capítulo 4-1"
+      },
+      {
+        "tip": "Causar dano suficiente a Wesker no primeiro confronto de 5-3; depois pegar o tesouro antes/depois da seção de Jill conforme a rota. Se não aparecer, repita 5-3 preparado.",
+        "title": "Heart of Africa",
+        "type": "Tesouro / Capítulo 5-3"
+      },
+      {
+        "tip": "Um emblema dentro de container exige explosivo ou dinamite inimiga. Entre com granada ou proximity bomb para evitar repetir.",
+        "title": "Emblema de 6-1",
+        "type": "BSAA / Explosivo"
+      },
+      {
+        "tip": "Fica na arena final. Pegue com Chris e cuidado com Wesker, porque o risco é morrer ou precisar repetir a luta.",
+        "title": "Diamond (Marquise)",
+        "type": "Tesouro / Capítulo 6-3"
+      },
+      {
+        "tip": "Não iniciar cedo. Priorize Magnum/Rifle/shotgun evoluídos, munição infinita, sprays e rota conhecida; parceiro humano facilita 2-3, 5-3 e resgates.",
+        "title": "Professional",
+        "type": "Dificuldade"
+      },
+      {
+        "tip": "É o maior consumo de dinheiro. Venda tesouros registrados e evolua armas-chave antes de completar armas menos úteis.",
+        "title": "Take It to the Max",
+        "type": "Grind / Upgrades"
+      },
+      {
+        "tip": "Depende de campanha concluída, todos os emblemas BSAA e rank S em todos os capítulos. Faça ranks em Amateur com arma infinita.",
+        "title": "They’re ACTION Figures!",
+        "type": "Rank S / Emblemas"
+      },
+      {
+        "tip": "Parceiro humano facilita muito a cadeia de melee. Com IA, tire armas fortes dela para não matar o alvo antes do combo.",
+        "title": "The Works",
+        "type": "Coop opcional / Situacional"
+      },
+      {
+        "tip": "Guarde White, Brown, Gold e Rotten Egg. Use o Rotten Egg em Majini fraco no 1-1 Amateur e não venda o primeiro antes do troféu.",
+        "title": "Egg Hunt e Egg on Your Face",
+        "type": "Ovos / RNG"
+      }
+    ],
+    "checklist": [
+      "Visão geral: confirmar 51 troféus da lista base, 0 perdíveis definitivos, 0 online obrigatório, 0 coop obrigatório e DLCs fora da platina.",
+      "Requisitos especiais: Professional obrigatório; Amateur/Normal/Veteran por conclusão de capítulos; Seleção de Capítulos disponível para cleanup; grind de dinheiro e pontos de Bonus Features; rank S em todos os capítulos para figuras.",
+      "Capítulo 1-1: sem emblemas BSAA; coletar Gold Ring do Executioner e Topaz (Marquise) se for farmar tesouros; usar a arena para Ride the Lightning, Stop, Drop, & Roll, Baptism by Fire, Meat Shower, A Cut Above, Gatling Gun, Longbow e headshots.",
+      "Capítulo 1-2: 3 emblemas BSAA: varanda após o Majini sair das caixas, suportes da torre d'água no prédio da Alpha Team e parede vista pela cerca após usar a Furnace Key. Pegar Antique Clock na varanda, Ivory Relief do Cephalo e tesouros do prédio/furnace.",
+      "Capítulo 2-1: 5 emblemas BSAA: garagem inicial perto da saída, suporte da ponte após o caminhão, barraca verde do porto, janela do prédio na área do helicóptero e telhado visto no segundo assist jump. Pegar H&K MP5, Jewel Bangle, Ruby (Marquise) com explosivo nos estandes e usar arqueiros/containers para Be the Knife.",
+      "Capítulo 2-2: 3 emblemas BSAA: torre metálica distante no início dos trens, cachoeira dentro da mina com lanterna e telhado/silos após Irving fugir. Pegar S75, Dragunov SVD, diamantes da mina/penhasco, Venom Fang do chefe e usar dinamiteiros para Fireworks.",
+      "Capítulo 2-3: sem emblemas; fazer Drive By mirando no motorista do caminhão blindado; treinar o capítulo em Veteran porque Professional não é resolvido por armas infinitas.",
+      "Capítulo 3-1: 4 emblemas BSAA: pilar sob a cabana da ilha central, poste de energia visto do início, prateleira na fish farm noroeste e parte inferior da plataforma após abrir a porta das placas. Coletar Rocket Launcher, S&W M29, Chalice (Silver), Idol (Silver), Ceremonial Mask, Blue Enigma e ovos White/Brown/Gold na ilha das galinhas.",
+      "Capítulo 3-2: 2 emblemas BSAA: atrás das tendas Tricell após a ponte e dentro da cabana depois que o timer do barco começa. Pegar tesouros da refinaria e usar Big Man Majini para The Works com parceiro humano ou IA sem arma forte.",
+      "Capítulo 3-3: 1 emblema BSAA na lateral da ponte após o primeiro floodgate. Pegar Emerald (Marquise) na sala entre metralhadoras e revisar tesouros antes de sair de barco.",
+      "Capítulo 4-1: 3 emblemas BSAA: rocha perto da cachoeira após a primeira escada, ruínas distantes após a porta de pedra e parede acima da estátua verde. Farmar gemas, pegar Ruby (Oval), Ruby (Trilliant) e Soul Gem matando Popokarimu antes de fugir; bom capítulo para Stun Rod e Go into the Light.",
+      "Capítulo 4-2: 1 emblema BSAA acima da porta na sala pequena atrás da estátua/esqueleto do terceiro puzzle de laser. Pegar Idol (Gold), Beetle (Gold), Diamond (Trilliant) e gemas do templo; revisar salas de lasers antes de encerrar.",
+      "Capítulo 5-1: 1 emblema BSAA sob a ponte perto do jardim de flores, acima da água. Pegar Lion Hearts de Lickers, fazer Heart Stopper derrubando um Licker e finalizar no coração; bom farm de dinheiro quando o dano já estiver alto.",
+      "Capítulo 5-2: 1 emblema BSAA dentro da lixeira após a segunda esteira. Pegar Dead Bride's Necklace e Power Stones dos Reapers; bom farm se você mata Reapers com Magnum/Rifle de forma consistente.",
+      "Capítulo 5-3: 3 emblemas BSAA: turbina direita no início, plataforma distante antes de ativar o elevador circular e poço do elevador na sala das ruínas. Pegar H&K PSG-1, Royal Necklace, Chalice (Gold), Sapphire (Marquise), gemas Brilliant/Oval e Heart of Africa após causar dano suficiente a Wesker; fazer Bad Blood e Masters of Removing.",
+      "Capítulo 6-1: 3 emblemas BSAA: topo do mastro distante, container norte que exige explosivo/dinamite e armário com vidro após Excella. Levar granada/proximity bomb; pegar Topaz (Oval), Jail Breaker e tesouros do navio.",
+      "Capítulo 6-2: sem emblemas; repetir com Rocket Launcher para pontos rápidos de Bonus Features e rank S quando estiver limpando figuras.",
+      "Capítulo 6-3: sem emblemas; pegar Lightning Hawk se faltou, Diamond (Marquise) na arena final e concluir a campanha; cuidado com ataque de morte instantânea de Wesker.",
+      "Armas para Stockpile: M92F, H&K P8, SIG P226, M93R, Ithaca M37, M3, Jail Breaker, Hydra, VZ61, AK-74, H&K MP5, SIG 556, S75, Dragunov SVD, H&K PSG-1, S&W M29, L. Hawk, S&W M500, Grenade Launcher, Rocket Launcher, Stun Rod, Gatling Gun, Longbow e Proximity Bomb.",
+      "Desbloqueios de armas especiais: M92F maximizada libera M93R; Ithaca M37 maximizada libera Hydra; S&W M29 maximizada libera S&W M500; VZ61 maximizada libera Gatling Gun; S75 maximizada libera Longbow.",
+      "Rank S: observar tempo, precisão, inimigos derrotados e mortes. A rota segura é Amateur com arma infinita, precisão acima de 70%, zero deaths, capítulos rápidos e kills suficientes.",
+      "Farm final: vender tesouros já registrados, repetir 4-1 por gemas, 5-1 por Lion Hearts, 5-2 por Power Stones e 6-2 por pontos de Bonus Features.",
+      "Checklist BSAA 01/30 - 1-2: depois do Majini sair das caixas, suba no prédio à direita e olhe da varanda para o muro ao lado da barraca. Arma: handgun/rifle; ângulo: fim da varanda; alerta: antes de seguir para o prédio da Alpha Team.",
+      "Checklist BSAA 02/30 - 1-2: no prédio dos restos da Alpha Team, olhe entre os suportes da caixa d'água no telhado. Arma: rifle facilita; ângulo: do interior/telhado olhando para cima.",
+      "Checklist BSAA 03/30 - 1-2: após usar a Furnace Key, vá ao corredor perto da maleta de munição e olhe pela cerca/fresta para a parede. Arma: handgun; alerta: pegue antes do elevador.",
+      "Checklist BSAA 04/30 - 2-1: garagem inicial, parede da saída à direita. Arma: qualquer uma; alerta: faça antes de abrir a porta.",
+      "Checklist BSAA 05/30 - 2-1: após o caminhão na ponte, desça em direção aos esgotos e olhe para trás, nos suportes da ponte junto à água. Arma: rifle recomendado; ângulo: base do suporte.",
+      "Checklist BSAA 06/30 - 2-1: porto de pesca, dentro da barraca verde com tela. Arma: handgun; ângulo: pela abertura da barraca.",
+      "Checklist BSAA 07/30 - 2-1: área do helicóptero, suba a escada à direita e mire na terceira janela do prédio além da barreira. Arma: rifle; alerta: inimigos pressionam a área.",
+      "Checklist BSAA 08/30 - 2-1: segundo assist jump nos telhados, com Sheva do outro lado; olhe para trás e para cima no telhado antes de ela descer. Arma: rifle/handgun; alerta: fácil passar visualmente.",
+      "Checklist BSAA 09/30 - 2-2: fim do trecho dos vagões, antes de descer para o carrinho da mina; mire no poste/torre metálica distante, alto à direita. Arma: rifle obrigatório na prática; ângulo: olhando de volta para o início.",
+      "Checklist BSAA 10/30 - 2-2: dentro da mina com lanterna, pare no meio da ponte e olhe à direita para a cachoeira. Arma: handgun/rifle; alerta: pouca luz atrapalha.",
+      "Checklist BSAA 11/30 - 2-2: depois de Irving fugir, suba as escadas e olhe para trás nos telhados/silos. Arma: rifle; ângulo: telhado distante.",
+      "Checklist BSAA 12/30 - 3-1: ilha central do pântano, fique no cais e olhe embaixo da cabana, no pilar de madeira. Arma: rifle recomendado; alerta: pode ser visto de longe.",
+      "Checklist BSAA 13/30 - 3-1: início do capítulo, siga os fios de energia à direita e mire no poste. Arma: rifle; ângulo: seção média do poste.",
+      "Checklist BSAA 14/30 - 3-1: fish farm/noroeste, entre no local e olhe para a prateleira acima do vaso. Arma: qualquer uma; alerta: cheque antes de voltar ao barco.",
+      "Checklist BSAA 15/30 - 3-1: após abrir a porta com as placas, caia do pequeno degrau, vire-se e olhe sob a plataforma. Arma: handgun; alerta: janela curta antes de avançar.",
+      "Checklist BSAA 16/30 - 3-2: depois de cruzar a ponte, vá atrás das tendas Tricell; fica atrás dos sacos de areia. Arma: qualquer uma.",
+      "Checklist BSAA 17/30 - 3-2: quando o timer do barco começar, vire para a cabana; o emblema está dentro. Arma: handgun; alerta: faça rápido por causa do cronômetro.",
+      "Checklist BSAA 18/30 - 3-3: após o primeiro floodgate, olhe na lateral da ponte. Arma: rifle/handgun; alerta: a lancha em movimento dificulta a mira.",
+      "Checklist BSAA 19/30 - 4-1: depois dos primeiros Bui Kichwa, suba a escada e olhe para a cachoeira/rocha do lado direito, voltando o olhar ao início. Arma: rifle.",
+      "Checklist BSAA 20/30 - 4-1: após limpar Bui Kichwa e passar pela porta de pedra, mire nas ruínas distantes, nos pilares centrais. Arma: rifle.",
+      "Checklist BSAA 21/30 - 4-1: sala das estátuas, vire à direita ao entrar, atravesse e olhe acima da estátua verde. Arma: handgun/rifle.",
+      "Checklist BSAA 22/30 - 4-2: terceiro puzzle de laser, sala pequena atrás da estátua/esqueleto; vire para a porta por onde entrou e mire acima dela. Arma: handgun; alerta: resolva antes de sair da área.",
+      "Checklist BSAA 23/30 - 5-1: jardim de flores, contorne pela direita até a máquina bloquear o caminho e olhe sob a ponte, acima da água. Arma: rifle/handgun; alerta: ângulo baixo.",
+      "Checklist BSAA 24/30 - 5-2: depois da segunda esteira, desça as escadas; no pé da escada, procure dentro da lixeira à esquerda/lado leste. Arma: handgun.",
+      "Checklist BSAA 25/30 - 5-3: início do capítulo, antes de subir a escada, mire dentro da turbina direita atrás das pás. Arma: rifle/handgun; alerta: timing das pás.",
+      "Checklist BSAA 26/30 - 5-3: plataforma circular, antes de ativar o painel, vire para leste e olhe para uma pequena plataforma alta na parede distante. Arma: rifle recomendado.",
+      "Checklist BSAA 27/30 - 5-3: sala das ruínas de pedra, vá atrás do elevador e olhe para baixo no poço, canto sudoeste. Arma: handgun; alerta: muito fácil não ver.",
+      "Checklist BSAA 28/30 - 6-1: suba ao topo no começo e mire no topo do mastro distante. Arma: PSG-1/rifle com zoom; alerta: distância extrema.",
+      "Checklist BSAA 29/30 - 6-1: área da jaula/containers, emblema dentro do container norte. Arma: explosivo, granada, proximity bomb ou dinamite de Majini; alerta: armas comuns não quebram este emblema.",
+      "Checklist BSAA 30/30 - 6-1: após encontrar Excella, procure no armário sob uma luz; emblema atrás do vidro. Arma: handgun.",
+      "Checklist tesouro 01/50 - Gold Ring: 1-1, drop do Executioner no fim da arena. Pré-requisito: derrotá-lo; alerta: não encerrar o capítulo sem pegar o drop.",
+      "Checklist tesouro 02/50 - Ivory Relief: 1-2, drop da mulher loira/Cephalo. Pré-requisito: matar o inimigo depois da mutação; alerta: confira o chão antes de sair.",
+      "Checklist tesouro 03/50 - Dead Bride's Necklace: 5-2 na primeira esteira ou drop dos Majini com lança-foguetes em 6-1. Pré-requisito: pegar na esteira sem cair; opção segura: 5-2.",
+      "Checklist tesouro 04/50 - Royal Necklace: 5-3, sala de controle. Pré-requisito: explorar antes de avançar; alerta: não passar direto pelo controle.",
+      "Checklist tesouro 05/50 - Jewel Bangle: drop de Big Man Majini, fácil em 1-1/2-1/3-2. Pré-requisito: matar Big Man; pode farmar por Chapter Select.",
+      "Checklist tesouro 06/50 - Venom Fang: drop de Chainsaw Majini em 2-2 no Veteran ou superior, ou em 3-2. Pré-requisito: derrotar Chainsaw; alerta: em 2-2 pode depender da dificuldade.",
+      "Checklist tesouro 07/50 - Antique Clock: 1-2, baú na varanda de uma casa. Pré-requisito: subir e abrir o baú antes de seguir.",
+      "Checklist tesouro 08/50 - Chalice (Silver): 3-1, baú na ilha central do pântano. Pré-requisito: explorar a ilha antes de coletar todas as placas.",
+      "Checklist tesouro 09/50 - Chalice (Gold): 5-3, baú na sala de controle da ponte levadiça. Pré-requisito: abrir o baú antes de avançar.",
+      "Checklist tesouro 10/50 - Idol (Silver): 3-1, plataforma de assist jump da ilha nordeste. Pré-requisito: lançar Sheva/usar coop; alerta: item depende da plataforma elevada.",
+      "Checklist tesouro 11/50 - Idol (Gold): 4-2, sala lateral do puzzle final de espelhos/laser, aberta redirecionando o laser para a estátua. Pré-requisito: resolver o laser para a sala opcional.",
+      "Checklist tesouro 12/50 - Ceremonial Mask: 3-1, caverna antes da plataforma do teleférico. Pré-requisito: abrir o baú antes de concluir o capítulo.",
+      "Checklist tesouro 13/50 - Jewel Beetle: 2-2 na parede oposta à cerca do trilho do carrinho, ou 3-2 em tambor perto das tendas Tricell. Pré-requisito: olhar paredes/objetos brilhantes.",
+      "Checklist tesouro 14/50 - Beetle (Brown): 3-1, lago interno da ilha noroeste. Pré-requisito: desembarcar e vasculhar antes de sair.",
+      "Checklist tesouro 15/50 - Beetle (Gold): 4-2, sala lateral do puzzle final de espelhos, junto ao Idol (Gold). Pré-requisito: abrir a sala com laser.",
+      "Checklist tesouro 16/50 - Topaz (Pear): múltiplos capítulos, recomendado 2-1/4-1 quebrando tochas, crânios ou pontos brilhantes. Pré-requisito: atirar no brilho e pegar a gema.",
+      "Checklist tesouro 17/50 - Ruby (Pear): múltiplos capítulos, recomendado 4-1 nas ruínas/estátuas. Pré-requisito: checar paredes e tochas antes de sair da sala.",
+      "Checklist tesouro 18/50 - Sapphire (Pear): múltiplos capítulos, recomendado 5-3 nos corredores da luta Jill/Wesker. Pré-requisito: vasculhar potes e paredes.",
+      "Checklist tesouro 19/50 - Emerald (Pear): múltiplos capítulos, recomendado 4-1/5-3 em potes, paredes e cofres. Pré-requisito: quebrar recipientes opcionais.",
+      "Checklist tesouro 20/50 - Diamond (Pear): 2-2, preso na parede perto de uma escada na parte final; atire para derrubar. Arma: handgun/rifle; alerta: brilho discreto.",
+      "Checklist tesouro 21/50 - Topaz (Square): múltiplos capítulos, recomendado 4-1 em tochas/crânios. Pré-requisito: atirar em objetos brilhantes.",
+      "Checklist tesouro 22/50 - Ruby (Square): múltiplos capítulos, recomendado 4-1 nas salas de estátua. Pré-requisito: revisar laterais das salas.",
+      "Checklist tesouro 23/50 - Sapphire (Square): múltiplos capítulos, recomendado 5-3 em potes e corredores. Pré-requisito: explorar antes de acionar transições.",
+      "Checklist tesouro 24/50 - Emerald (Square): múltiplos capítulos, recomendado 4-2/5-3 em potes e salas opcionais. Pré-requisito: quebrar recipientes.",
+      "Checklist tesouro 25/50 - Diamond (Square): 2-2, parede acima do assist jump na parte final; atire para derrubar. Arma: rifle recomendado; alerta: olhe para cima.",
+      "Checklist tesouro 26/50 - Topaz (Oval): 6-1, drop de Majini no topo do guindaste. Pré-requisito: subir as escadas iniciais e derrubar o inimigo com rifle.",
+      "Checklist tesouro 27/50 - Ruby (Oval): 4-1, atrás da estátua vermelha. Pré-requisito: explorar a sala das estátuas antes de avançar.",
+      "Checklist tesouro 28/50 - Sapphire (Oval): 5-3, pote nos corredores de trás da luta Jill/Wesker. Pré-requisito: vasculhar antes de finalizar a luta.",
+      "Checklist tesouro 29/50 - Emerald (Oval): 5-3, caixão de pedra nos corredores de trás da luta Jill/Wesker. Pré-requisito: abrir com ajuda de Sheva/parceiro.",
+      "Checklist tesouro 30/50 - Diamond (Oval): 2-2, baú nas minas em caminho lateral antes da manivela. Pré-requisito: entrar no desvio antes de girar a manivela.",
+      "Checklist tesouro 31/50 - Topaz (Trilliant): múltiplos capítulos, recomendado 4-1 em tesouros de ruínas/sarcófago. Pré-requisito: abrir baús opcionais.",
+      "Checklist tesouro 32/50 - Ruby (Trilliant): 4-1, baú após a armadilha do sarcófago. Pré-requisito: sobreviver à armadilha e abrir o baú.",
+      "Checklist tesouro 33/50 - Sapphire (Trilliant): 4-1, baú após a armadilha do sarcófago. Pré-requisito: abrir todos os baús da sala.",
+      "Checklist tesouro 34/50 - Emerald (Trilliant): 4-1, baú após a armadilha do sarcófago. Pré-requisito: abrir todos os baús da sala.",
+      "Checklist tesouro 35/50 - Diamond (Trilliant): 4-2, acima da saída da área de laser; atire para derrubar. Arma: rifle/handgun; alerta: olhe sobre a porta de saída.",
+      "Checklist tesouro 36/50 - Topaz (Brilliant): 5-3, acima da porta de saída da sala da ponte levadiça. Pré-requisito: atirar no brilho antes de sair.",
+      "Checklist tesouro 37/50 - Ruby (Brilliant): 5-3, teto do túnel ao entrar na sala da ponte levadiça, entre as últimas luzes. Pré-requisito: mirar para cima antes da sala.",
+      "Checklist tesouro 38/50 - Sapphire (Brilliant): 5-3, caixão de pedra nos corredores da luta Jill/Wesker. Pré-requisito: ajuda de Sheva/parceiro para abrir.",
+      "Checklist tesouro 39/50 - Emerald (Brilliant): 5-3, pote no fim da área da varanda da luta Jill/Wesker. Pré-requisito: explorar a varanda antes de encerrar.",
+      "Checklist tesouro 40/50 - Diamond (Brilliant): 2-2, baú em uma saliência à esquerda da metralhadora fixa. Pré-requisito: explorar o penhasco antes do chefe.",
+      "Checklist tesouro 41/50 - Topaz (Marquise): 1-1, drop do Majini com explosivos no fim da horda. Pré-requisito: derrotar/acionar a horda e pegar o drop.",
+      "Checklist tesouro 42/50 - Ruby (Marquise): 2-1, baú entre barracas no mercado. Pré-requisito: usar granada/explosivo para destruir as barracas; alerta: fácil sair sem abrir.",
+      "Checklist tesouro 43/50 - Sapphire (Marquise): 5-3, cofre na sala de controle acima da sala do boss Uroboros. Pré-requisito: abrir o cofre.",
+      "Checklist tesouro 44/50 - Emerald (Marquise): 3-3, sala entre as metralhadoras fixas da segunda plataforma. Pré-requisito: entrar na sala antes de seguir de barco.",
+      "Checklist tesouro 45/50 - Diamond (Marquise): 6-3, coluna de pedra na arena final; atire para quebrar e pegue pelo caminho na parede após cair. Pré-requisito: fazer durante a luta final; alerta: risco de morte/repetição.",
+      "Checklist tesouro 46/50 - Power Stone: drop de Reapers a partir de 5-2. Pré-requisito: matar mirando nos pontos fracos; bom farm com Magnum/Rifle.",
+      "Checklist tesouro 47/50 - Lion Heart: drop de Lickers a partir de 5-1. Pré-requisito: matar Lickers; bom farm no corredor de 5-1.",
+      "Checklist tesouro 48/50 - Blue Enigma: drop de Giant Majini em 3-1. Pré-requisito: matar os gigantes nas ilhas do pântano; repita em Amateur para segurança.",
+      "Checklist tesouro 49/50 - Soul Gem: 4-1, drop do Popokarimu se você matar o boss antes de fugir. Pré-requisito: ficar e matar; alerta: janela de capítulo, fugir não registra.",
+      "Checklist tesouro 50/50 - Heart of Africa: 5-3, chão entre as escadas durante a luta contra Jill, se Wesker recuou por dano suficiente na luta anterior. Pré-requisito: causar dano alto em Wesker; alerta: se não aparecer, repita 5-3 preparado."
+    ],
+    "faq": [
+      {
+        "answer": "Não há perdíveis definitivos na lista base. A Seleção de Capítulos permite repetir qualquer capítulo para limpar emblemas, tesouros, ranks S, dificuldades, armas e troféus situacionais.",
+        "question": "Resident Evil 5 tem troféus perdíveis?"
+      },
+      {
+        "answer": "Pode vender. They Belong in a Museum exige registrar cada tipo de tesouro ao menos uma vez, não manter todos no inventário.",
+        "question": "Posso vender tesouros ou preciso guardar todos?"
+      },
+      {
+        "answer": "Normal é a rota mais confortável para aprender. Veteran é melhor se você já conhece o jogo, porque adianta o desbloqueio de Professional.",
+        "question": "Qual a melhor primeira dificuldade?"
+      },
+      {
+        "answer": "Não. Coop ajuda muito em Professional, The Works e resgates, mas a platina base pode ser feita offline com a IA.",
+        "question": "Precisa de coop online para platinar?"
+      },
+      {
+        "answer": "Depois do cleanup principal, com pelo menos uma arma de alto dano bem evoluída ou infinita, sprays e capítulos treinados. Fazer Professional cedo aumenta muito o retrabalho.",
+        "question": "Quando devo fazer Professional?"
+      },
+      {
+        "answer": "Não. Para figuras, o importante é ter S em cada capítulo; pode misturar dificuldades. Amateur com munição infinita é a rota mais limpa.",
+        "question": "S rank precisa ser em uma dificuldade específica?"
+      },
+      {
+        "answer": "Take It to the Max, Stockpile, They’re ACTION Figures!, tesouros específicos e Professional. Resolva farm, armas e ranks S antes da run final.",
+        "question": "O que costuma atrasar mais a platina?"
+      },
+      {
+        "answer": "4-1 é consistente para gemas/tesouros; 5-1 é rápido se você mata Lickers por Lion Hearts; 5-2 funciona bem quando você já mata Reapers com segurança.",
+        "question": "Qual farm de dinheiro é melhor?"
+      },
+      {
+        "answer": "Não. Este guia cobre a lista base. Lost in Nightmares, Desperate Escape e Versus são listas extras separadas.",
+        "question": "Os DLCs contam para a platina?"
+      },
+      {
+        "answer": "Não. Colete o que for natural, mas deixe perfeccionismo para Seleção de Capítulos. Isso evita reiniciar capítulos longos e mantém a primeira run fluida.",
+        "question": "Devo limpar tudo durante a primeira campanha?"
+      }
+    ],
+    "note": "Campos exportados para auditoria. O SQLite atual nao possui colunas nativas para todos esses extras; a importacao preserva o que o banco suporta.",
+    "quickDecision": {
+      "firstAction": "Abra a campanha em Normal se for sua primeira vez ou Veteran se já conhece RE5. Marque emblemas, tesouros e armas desde o início, mas deixe a limpeza perfeita para depois.",
+      "mainRisk": "O risco não é perder troféus permanentemente; é repetir capítulos por tesouros de janela interna, emblemas distantes, rank S mal planejado e dinheiro gasto em upgrades sem prioridade.",
+      "recommendation": "Comece em Normal ou Veteran, colete o que encontrar, destrave Professional, limpe coletáveis e ranks S por Seleção de Capítulos, farme dinheiro e só então faça War Hero com arsenal preparado.",
+      "summary": "Platina de ação/coletáveis com 0 perdíveis definitivos, coop opcional, Professional obrigatório, grind moderado/alto e cleanup forte por Seleção de Capítulos.",
+      "verdict": "Boa platina para quem aceita repetir capítulos, farmar dinheiro e preparar inventário para Professional."
+    },
+    "seo": {
+      "description": "Guia completo da platina de Resident Evil 5 em português, com roadmap, Professional, emblemas BSAA, tesouros, armas, upgrades, rank S, farm de dinheiro e troféus situacionais.",
+      "keywords": "Resident Evil 5 troféus, Resident Evil 5 platina, Resident Evil 5 guia, RE5 trophy guide, Resident Evil 5 BSAA emblems, Resident Evil 5 treasures, Resident Evil 5 Professional, Resident Evil 5 Stockpile, Resident Evil 5 Take It to the Max",
+      "ogDescription": "Roadmap seguro para platinar Resident Evil 5: sem perdíveis definitivos, com Seleção de Capítulos, coletáveis, armas, upgrades, rank S, Professional e cleanup.",
+      "ogTitle": "Resident Evil 5: guia de troféus e platina",
+      "title": "Resident Evil 5: guia de troféus e platina"
+    },
+    "tags": []
+  },
+  "slug": "resident-evil-5",
+  "trophies": [
+    {
+      "description": "Earn all trophies.",
+      "is_missable": 0,
+      "is_spoiler": 0,
+      "name": "RESIDENT EVIL 5 Platinum Trophy",
+      "name_pt": "Troféu de Platina de Resident Evil 5",
+      "tip": "Visão geral da platina: termine a campanha, complete todas as dificuldades, colete 30 emblemas BSAA e 50 tesouros, obtenha todas as armas, evolua todas as armas com upgrade, compre figuras/costumes e limpe situacionais. Não há perdíveis definitivos: tudo pode ser revisitado por Seleção de Capítulos.",
+      "trophy_code": "re5_platinum",
+      "type": "Platina"
+    },
+    {
+      "description": "Complete Chapter 1 - 1 on any difficulty setting.",
+      "is_missable": 0,
+      "is_spoiler": 0,
+      "name": "Completed Chapter 1 - 1",
+      "name_pt": "Capítulo 1-1 Concluído",
+      "tip": "Troféu automático da progressão da campanha.",
+      "trophy_code": "re5_ch1_1",
+      "type": "Bronze"
+    },
+    {
+      "description": "Complete Chapter 1 - 2 on any difficulty setting.",
+      "is_missable": 0,
+      "is_spoiler": 0,
+      "name": "Completed Chapter 1 - 2",
+      "name_pt": "Capítulo 1-2 Concluído",
+      "tip": "Sai naturalmente ao avançar no começo do jogo.",
+      "trophy_code": "re5_ch1_2",
+      "type": "Bronze"
+    },
+    {
+      "description": "Complete Chapter 2 - 1 on any difficulty setting.",
+      "is_missable": 0,
+      "is_spoiler": 0,
+      "name": "Completed Chapter 2 - 1",
+      "name_pt": "Capítulo 2-1 Concluído",
+      "tip": "Relacionado ao progresso da campanha.",
+      "trophy_code": "re5_ch2_1",
+      "type": "Bronze"
+    },
+    {
+      "description": "Complete Chapter 2 - 2 on any difficulty setting.",
+      "is_missable": 0,
+      "is_spoiler": 0,
+      "name": "Completed Chapter 2 - 2",
+      "name_pt": "Capítulo 2-2 Concluído",
+      "tip": "Troféu automático de história.",
+      "trophy_code": "re5_ch2_2",
+      "type": "Bronze"
+    },
+    {
+      "description": "Complete Chapter 2 - 3 on any difficulty setting.",
+      "is_missable": 0,
+      "is_spoiler": 0,
+      "name": "Completed Chapter 2 - 3",
+      "name_pt": "Capítulo 2-3 Concluído",
+      "tip": "Continua saindo naturalmente com a campanha.",
+      "trophy_code": "re5_ch2_3",
+      "type": "Bronze"
+    },
+    {
+      "description": "Complete Chapter 3 - 1 on any difficulty setting.",
+      "is_missable": 0,
+      "is_spoiler": 0,
+      "name": "Completed Chapter 3 - 1",
+      "name_pt": "Capítulo 3-1 Concluído",
+      "tip": "Marco automático da progressão principal.",
+      "trophy_code": "re5_ch3_1",
+      "type": "Bronze"
+    },
+    {
+      "description": "Complete Chapter 3 - 2 on any difficulty setting.",
+      "is_missable": 0,
+      "is_spoiler": 0,
+      "name": "Completed Chapter 3 - 2",
+      "name_pt": "Capítulo 3-2 Concluído",
+      "tip": "Sem exigência extra além de concluir o capítulo.",
+      "trophy_code": "re5_ch3_2",
+      "type": "Bronze"
+    },
+    {
+      "description": "Complete Chapter 3 - 3 on any difficulty setting.",
+      "is_missable": 0,
+      "is_spoiler": 0,
+      "name": "Completed Chapter 3 - 3",
+      "name_pt": "Capítulo 3-3 Concluído",
+      "tip": "Troféu de história.",
+      "trophy_code": "re5_ch3_3",
+      "type": "Bronze"
+    },
+    {
+      "description": "Complete Chapter 4 - 1 on any difficulty setting.",
+      "is_missable": 0,
+      "is_spoiler": 0,
+      "name": "Completed Chapter 4 - 1",
+      "name_pt": "Capítulo 4-1 Concluído",
+      "tip": "Sai automaticamente ao fechar o capítulo.",
+      "trophy_code": "re5_ch4_1",
+      "type": "Bronze"
+    },
+    {
+      "description": "Complete Chapter 4 - 2 on any difficulty setting.",
+      "is_missable": 0,
+      "is_spoiler": 0,
+      "name": "Completed Chapter 4 - 2",
+      "name_pt": "Capítulo 4-2 Concluído",
+      "tip": "Mais um troféu de progressão.",
+      "trophy_code": "re5_ch4_2",
+      "type": "Bronze"
+    },
+    {
+      "description": "Complete Chapter 5 - 1 on any difficulty setting.",
+      "is_missable": 0,
+      "is_spoiler": 0,
+      "name": "Completed Chapter 5 - 1",
+      "name_pt": "Capítulo 5-1 Concluído",
+      "tip": "Automático da campanha.",
+      "trophy_code": "re5_ch5_1",
+      "type": "Bronze"
+    },
+    {
+      "description": "Complete Chapter 5 - 2 on any difficulty setting.",
+      "is_missable": 0,
+      "is_spoiler": 0,
+      "name": "Completed Chapter 5 - 2",
+      "name_pt": "Capítulo 5-2 Concluído",
+      "tip": "Continua vindo naturalmente.",
+      "trophy_code": "re5_ch5_2",
+      "type": "Bronze"
+    },
+    {
+      "description": "Complete Chapter 5 - 3 on any difficulty setting.",
+      "is_missable": 0,
+      "is_spoiler": 1,
+      "name": "Completed Chapter 5 - 3",
+      "name_pt": "Capítulo 5-3 Concluído",
+      "tip": "Troféu de progresso próximo ao fim. Aproveite este capítulo para Bad Blood, Heart of Africa, Masters of Removing, Royal Necklace e vários tesouros/gemas antes de seguir para a reta final.",
+      "trophy_code": "re5_ch5_3",
+      "type": "Bronze"
+    },
+    {
+      "description": "Complete Chapter 6 - 1 on any difficulty setting.",
+      "is_missable": 0,
+      "is_spoiler": 1,
+      "name": "Completed Chapter 6 - 1",
+      "name_pt": "Capítulo 6-1 Concluído",
+      "tip": "Automático da reta final.",
+      "trophy_code": "re5_ch6_1",
+      "type": "Bronze"
+    },
+    {
+      "description": "Complete Chapter 6 - 2 on any difficulty setting.",
+      "is_missable": 0,
+      "is_spoiler": 1,
+      "name": "Completed Chapter 6 - 2",
+      "name_pt": "Capítulo 6-2 Concluído",
+      "tip": "Sai naturalmente ao avançar.",
+      "trophy_code": "re5_ch6_2",
+      "type": "Bronze"
+    },
+    {
+      "description": "Complete Chapter 6 - 3 on any difficulty setting.",
+      "is_missable": 0,
+      "is_spoiler": 1,
+      "name": "Completed Chapter 6 - 3",
+      "name_pt": "Capítulo 6-3 Concluído",
+      "tip": "Troféu de conclusão da campanha.",
+      "trophy_code": "re5_ch6_3",
+      "type": "Bronze"
+    },
+    {
+      "description": "Complete all chapters on Amateur.",
+      "is_missable": 0,
+      "is_spoiler": 0,
+      "name": "Recruit",
+      "name_pt": "Recruta",
+      "tip": "Pode ser limpo depois via Seleção de Capítulos. Se você começou no Normal/Veteran, use Amateur para ranks S, emblemas, tesouros, ovos e situacionais; assim este troféu vem junto sem uma run separada.",
+      "trophy_code": "re5_recruit",
+      "type": "Bronze"
+    },
+    {
+      "description": "Complete all chapters on Normal.",
+      "is_missable": 0,
+      "is_spoiler": 0,
+      "name": "Soldier",
+      "name_pt": "Soldado",
+      "tip": "Melhor primeira campanha para a maioria dos jogadores: dano administrável, recursos suficientes e espaço para aprender chefes, posicionamento da IA e rotas de tesouros sem a pressão do Veteran/Professional.",
+      "trophy_code": "re5_soldier",
+      "type": "Bronze"
+    },
+    {
+      "description": "Complete all chapters on Veteran.",
+      "is_missable": 0,
+      "is_spoiler": 0,
+      "name": "Veteran",
+      "name_pt": "Veterano",
+      "tip": "Complete todos os capítulos em Veteran para preparar e normalmente liberar Professional. Se começou no Normal, faça Veteran depois de melhorar uma Magnum/Rifle; a experiência de dano alto e resgate rápido da IA é o treino real para War Hero.",
+      "trophy_code": "re5_veteran",
+      "type": "Prata"
+    },
+    {
+      "description": "Complete all chapters on Professional.",
+      "is_missable": 0,
+      "is_spoiler": 0,
+      "name": "War Hero",
+      "name_pt": "Herói de Guerra",
+      "tip": "Melhor momento: depois de Veteran, farm e upgrades. Preparação: Magnum ou Rifle de alto dano com munição infinita, shotgun para controle, sprays nos dois inventários e colete se quiser segurança. Método: complete capítulo por capítulo, resgate o parceiro imediatamente, não deixe a IA com armas que desperdiçam munição e treine 2-3 no Veteran porque é turret e não depende do arsenal. Riscos comuns: tentar cedo demais, entrar sem curas, deixar Sheva isolada e subestimar chefes/instant kills.",
+      "trophy_code": "re5_war_hero",
+      "type": "Ouro"
+    },
+    {
+      "description": "Find all 4 types of eggs.",
+      "is_missable": 0,
+      "is_spoiler": 0,
+      "name": "Egg Hunt",
+      "name_pt": "Caça aos Ovos",
+      "tip": "Você precisa registrar White Egg, Brown Egg, Gold Egg e Rotten Egg. Melhor rota: em 3-1, vá à ilha das galinhas, espere ovos e saia salvando quando conseguir White/Brown/Gold; o Rotten Egg é drop raro de inimigos e também pode aparecer mais rápido em sessões de Mercenaries. Guarde um de cada até o troféu cair. Risco comum: vender o primeiro Rotten Egg antes de fazer Egg on Your Face.",
+      "trophy_code": "re5_egg_hunt",
+      "type": "Bronze"
+    },
+    {
+      "description": "Purchase all available alternative costumes in Bonus Features.",
+      "is_missable": 0,
+      "is_spoiler": 0,
+      "name": "All Dressed Up",
+      "name_pt": "Todo Produzido",
+      "tip": "Compre todos os trajes liberados em Bonus Features. Termine a campanha e colete emblemas BSAA suficientes para liberar os trajes extras de Chris e Sheva; se algum não aparecer, revise Badge of Honor e avance a campanha/dificuldade pendente. Custa pontos de Bonus Features, não dinheiro da campanha.",
+      "trophy_code": "re5_all_dressed_up",
+      "type": "Prata"
+    },
+    {
+      "description": "Obtain all available weapons.",
+      "is_missable": 0,
+      "is_spoiler": 0,
+      "name": "Stockpile",
+      "name_pt": "Arsenal Completo",
+      "tip": "Checklist de armas: Handguns M92F, H&K P8, SIG P226, M93R; Shotguns Ithaca M37, M3, Jail Breaker, Hydra; Machine guns VZ61, AK-74, H&K MP5, SIG 556; Rifles S75, Dragunov SVD, H&K PSG-1; Magnums S&W M29, L. Hawk, S&W M500; especiais/itens de arma como Grenade Launcher, Rocket Launcher, Stun Rod, Gatling Gun, Longbow e Proximity Bomb. Desbloqueios: evolua M92F, Ithaca M37, S&W M29, VZ61 e S75 para liberar M93R, Hydra, S&W M500, Gatling Gun e Longbow. Compre/pegue tudo e mantenha no inventário/estoque até o troféu cair.",
+      "trophy_code": "re5_stockpile",
+      "type": "Prata"
+    },
+    {
+      "description": "Completely upgrade all weapons.",
+      "is_missable": 0,
+      "is_spoiler": 0,
+      "name": "Take It to the Max",
+      "name_pt": "No Máximo",
+      "tip": "Maior grind da platina. Evolua completamente todos os handguns, shotguns, machine guns, rifles e magnums, incluindo M93R, Hydra e S&W M500 depois de comprados. Não há upgrade tradicional para Stun Rod, Grenade Launcher, Rocket Launcher, Gatling Gun e Longbow. Farm recomendado: 4-1 pegando gemas/tesouros, 5-1 matando Lickers por Lion Hearts e 5-2 matando Reapers por Power Stones. Venda tesouros já registrados e priorize primeiro uma Magnum/Rifle forte para facilitar Professional.",
+      "trophy_code": "re5_take_it_to_the_max",
+      "type": "Prata"
+    },
+    {
+      "description": "Obtain all treasures in the game.",
+      "is_missable": 0,
+      "is_spoiler": 0,
+      "name": "They Belong in a Museum",
+      "name_pt": "Eles Pertencem a um Museu",
+      "tip": "São 50 tipos de tesouro registrados ao menos uma vez; pode vender depois. Checklist prático: 1-1 Gold Ring/Topaz Marquise; 1-2 Ivory Relief/Antique Clock; 2-1 Ruby Marquise; 2-2 Venom Fang/Jewel Beetle/Diamonds Pear-Square-Oval-Brilliant; 3-1 Chalice Silver/Idol Silver/Ceremonial Mask/Beetle Brown/Blue Enigma; 3-3 Emerald Marquise; 4-1 Ruby Oval/Trilliant gems/Soul Gem; 4-2 Idol Gold/Beetle Gold/Diamond Trilliant; 5-1 Lion Heart; 5-2 Dead Bride's Necklace/Power Stone; 5-3 Royal Necklace/Chalice Gold/Oval-Brilliant gems/Sapphire Marquise/Heart of Africa; 6-1 Topaz Oval; 6-3 Diamond Marquise. Riscos: Soul Gem exige matar Popokarimu em 4-1; Heart of Africa exige dano suficiente em Wesker no 5-3; Diamond Marquise fica na arena final.",
+      "trophy_code": "re5_museum",
+      "type": "Prata"
+    },
+    {
+      "description": "Find all the BSAA emblems.",
+      "is_missable": 0,
+      "is_spoiler": 0,
+      "name": "Badge of Honor",
+      "name_pt": "Medalha de Honra",
+      "tip": "São 30 emblemas e nenhum é perdível permanente. Checklist por capítulo: 1-1: 0; 1-2: 3; 2-1: 5; 2-2: 3; 2-3: 0; 3-1: 4; 3-2: 2; 3-3: 1; 4-1: 3; 4-2: 1; 5-1: 1; 5-2: 1; 5-3: 3; 6-1: 3; 6-2: 0; 6-3: 0. Use rifle com zoom para emblemas distantes. Em 6-1, um emblema dentro de container precisa de explosivo ou dinamite inimiga.",
+      "trophy_code": "re5_badge_of_honor",
+      "type": "Prata"
+    },
+    {
+      "description": "Collect all the figurines.",
+      "is_missable": 0,
+      "is_spoiler": 0,
+      "name": "They’re ACTION Figures!",
+      "name_pt": "São Figuras de Ação!",
+      "tip": "Exige comprar todas as figuras em Bonus Features. Preparação: termine a campanha, destrua os 30 emblemas BSAA, consiga S rank em todos os capítulos em qualquer dificuldade e junte pontos. Método: repita capítulos em Amateur com arma infinita, buscando tempo baixo, boa precisão, muitas mortes e zero deaths; o S não precisa estar todo na mesma dificuldade. Se faltar ponto, 6-2 com Rocket Launcher é rápido para farmar Bonus Features.",
+      "trophy_code": "re5_action_figures",
+      "type": "Prata"
+    },
+    {
+      "description": "Save your partner 10 times when HELP is displayed.",
+      "is_missable": 0,
+      "is_spoiler": 0,
+      "name": "A Friend in Need",
+      "name_pt": "Um Amigo em Apuros",
+      "tip": "HELP aparece quando o parceiro é agarrado. Melhor farm: 1-1 ou 2-1 em Amateur/Normal, remova armas fortes da IA, deixe Majini agarrarem Sheva/Chris e solte o parceiro com o comando de ajuda. Faça 10 vezes. Risco comum: matar todos os inimigos antes de permitir o agarrão.",
+      "trophy_code": "re5_friend_in_need",
+      "type": "Bronze"
+    },
+    {
+      "description": "Save your partner 10 times when DYING is displayed.",
+      "is_missable": 0,
+      "is_spoiler": 0,
+      "name": "Lifeguard",
+      "name_pt": "Salva-vidas",
+      "tip": "DYING aparece quando o parceiro perde toda a vida e entra em contagem regressiva. Pode vir naturalmente em Veteran/Professional, mas o farm seguro é em Amateur/Normal deixando a IA tomar dano controlado e revivendo imediatamente. Leve sprays e não tente isso em áreas com instant kill.",
+      "trophy_code": "re5_lifeguard",
+      "type": "Bronze"
+    },
+    {
+      "description": "Defeat 20 enemies with headshots.",
+      "is_missable": 0,
+      "is_spoiler": 0,
+      "name": "Exploding Heads",
+      "name_pt": "Cabeças Explosivas",
+      "tip": "Vem cedo se você mirar na cabeça de Majini básicos. Melhor local: 1-1/2-1 em Amateur ou Normal. Pistola precisa abre headshots limpos; shotgun de perto também estoura cabeças com frequência. Evite armas explosivas se quiser acumular a contagem.",
+      "trophy_code": "re5_exploding_heads",
+      "type": "Bronze"
+    },
+    {
+      "description": "Defeat 5 enemies with the knife.",
+      "is_missable": 0,
+      "is_spoiler": 0,
+      "name": "A Cut Above",
+      "name_pt": "Um Corte Acima",
+      "tip": "Faça em Amateur no 1-1. Enfraqueça Majini com tiros na perna ou deixe inimigos básicos isolados, então finalize com a faca. Remova arma forte da IA para ela não roubar as mortes. Não tente em Professional: o risco não compensa.",
+      "trophy_code": "re5_cut_above",
+      "type": "Bronze"
+    },
+    {
+      "description": "Defeat 30 enemies with the Stun Rod.",
+      "is_missable": 0,
+      "is_spoiler": 0,
+      "name": "Cattle Prod",
+      "name_pt": "Aguilhão Elétrico",
+      "tip": "Compre o Stun Rod quando aparecer na loja e faça em Amateur. Melhor local: início de 4-1 contra Bui Kichwa, que morrem rápido e vêm em grupo; alternativa é 1-1 com Majini básicos. Leve cura, aproxime com calma e reinicie o capítulo quando limpar a primeira leva.",
+      "trophy_code": "re5_cattle_prod",
+      "type": "Bronze"
+    },
+    {
+      "description": "Defeat 30 enemies with the Gatling Gun.",
+      "is_missable": 0,
+      "is_spoiler": 0,
+      "name": "Crowd Control",
+      "name_pt": "Controle de Multidão",
+      "tip": "Desbloqueie para Chris ao evoluir completamente a VZ61 e comprar a Gatling Gun. Melhor local: 1-1 em Amateur, porque há muitos Majini e pouco risco. Jogue como Chris, equipe a Gatling e limpe ondas até 30 mortes. Risco comum: tentar antes de comprar a arma especial em Bonus/loja.",
+      "trophy_code": "re5_crowd_control",
+      "type": "Bronze"
+    },
+    {
+      "description": "Defeat 30 enemies with the Longbow.",
+      "is_missable": 0,
+      "is_spoiler": 0,
+      "name": "Bull’s-eye",
+      "name_pt": "Na Mosca",
+      "tip": "Desbloqueie para Sheva ao evoluir completamente o S75 e comprar o Longbow. Melhor local: 1-1 em Amateur. Selecione Sheva, mantenha distância média e conte 30 mortes; o Longbow é forte, mas exige mira manual e não tem laser, então inimigos parados/aglomerados ajudam.",
+      "trophy_code": "re5_bulls_eye",
+      "type": "Bronze"
+    },
+    {
+      "description": "Defeat 20 enemies with physical attacks.",
+      "is_missable": 0,
+      "is_spoiler": 0,
+      "name": "Get Physical",
+      "name_pt": "Na Mão",
+      "tip": "Faça naturalmente na campanha: atire na cabeça, braço ou joelho para abrir comando de melee e finalize com socos/chutes/stomps. Melhor farm: 1-1 Amateur, com pistola fraca para não matar antes do stun. Conta apenas morte por ataque físico, não por tiro anterior.",
+      "trophy_code": "re5_get_physical",
+      "type": "Bronze"
+    },
+    {
+      "description": "Chain the maximum number of combos in one attack.",
+      "is_missable": 0,
+      "is_spoiler": 0,
+      "name": "The Works",
+      "name_pt": "Combo Completo",
+      "tip": "Melhor local: 3-2, no trecho final com Big Man Majini perto da corrida para o barco, ou 1-1 com um Majini resistente. Preparação: Amateur/Normal, parceiro humano facilita muito; com IA, remova armas fortes. Passo a passo: atordoe o inimigo com tiro no braço/joelho, faça o primeiro melee, deixe o parceiro encaixar o segundo e finalize com o terceiro golpe. Risco comum: dano alto demais matar antes do combo completo.",
+      "trophy_code": "re5_the_works",
+      "type": "Bronze"
+    },
+    {
+      "description": "Defeat a Majini with a headshot while it’s jumping.",
+      "is_missable": 0,
+      "is_spoiler": 0,
+      "name": "Lead Aspirin",
+      "name_pt": "Aspirina de Chumbo",
+      "tip": "Melhor local: final do 1-1 em Amateur, quando Majini pulam de telhados/ônibus/cercas para a arena. Use shotgun ou rifle, mire onde o inimigo vai cruzar no ar e atire na cabeça durante o salto. Munição infinita ajuda. Risco comum: acertar o corpo; espere um salto claro e fique em posição baixa olhando para a trajetória.",
+      "trophy_code": "re5_lead_aspirin",
+      "type": "Prata"
+    },
+    {
+      "description": "Shoot an enemy Molotov cocktail, dynamite stick, or hand grenade.",
+      "is_missable": 0,
+      "is_spoiler": 0,
+      "name": "Fireworks",
+      "name_pt": "Fogos de Artifício",
+      "tip": "Melhor local: 2-2, na área externa com Majini usando dinamite. Leve rifle, mantenha distância e mire no explosivo na mão antes do arremesso. Também funciona com Molotov/granada em outros capítulos. Risco comum: matar o inimigo em vez de acertar o explosivo; use mira precisa e espere ele levantar o braço.",
+      "trophy_code": "re5_fireworks",
+      "type": "Bronze"
+    },
+    {
+      "description": "Deflect a bow gun arrow with your knife.",
+      "is_missable": 0,
+      "is_spoiler": 0,
+      "name": "Be the Knife",
+      "name_pt": "Seja a Faca",
+      "tip": "Melhor local: 2-1, nos containers com arqueiros. Faça em Amateur, remova armas da IA, deixe um arqueiro vivo e fique a distância média. Segure a faca e golpeie quando a flecha estiver chegando ao peito do personagem. Riscos comuns: ficar longe demais para ver o timing, deixar a IA matar o arqueiro ou tentar em dificuldade alta.",
+      "trophy_code": "re5_be_the_knife",
+      "type": "Prata"
+    },
+    {
+      "description": "Defeat 3 Majini with one grenade or proximity bomb.",
+      "is_missable": 0,
+      "is_spoiler": 0,
+      "name": "Meat Shower",
+      "name_pt": "Chuva de Carne",
+      "tip": "Melhor local: 1-1 na grande arena ou 2-1 em corredores. Faça em Amateur, agrupe três Majini, jogue uma Hand Grenade no centro ou plante Proximity Bomb e atraia o grupo. Risco comum: usar explosivo fraco longe demais; espere os três entrarem no raio.",
+      "trophy_code": "re5_meat_shower",
+      "type": "Bronze"
+    },
+    {
+      "description": "Defeat 2 enemies with one flash grenade.",
+      "is_missable": 0,
+      "is_spoiler": 0,
+      "name": "Go into the Light",
+      "name_pt": "Vá para a Luz",
+      "tip": "Mais fácil em 4-1 contra Bui Kichwa ou em grupos de parasitas sensíveis a flash. Leve Flash Grenade, espere dois inimigos próximos e arremesse no meio. Em Majini comuns, flash pode atordoar sem matar; prefira inimigos parasitas/aranhas para garantir.",
+      "trophy_code": "re5_go_into_the_light",
+      "type": "Bronze"
+    },
+    {
+      "description": "Defeat a Majini using the electric current from a transformer.",
+      "is_missable": 0,
+      "is_spoiler": 0,
+      "name": "Ride the Lightning",
+      "name_pt": "Cavalgando o Relâmpago",
+      "tip": "Melhor local: 1-1 na área pública com transformadores pendurados. Atire no transformador quando Majini estiverem embaixo; se necessário, enfraqueça antes em Amateur para a eletricidade finalizar. Risco comum: explodir cedo demais sem inimigo no raio.",
+      "trophy_code": "re5_ride_the_lightning",
+      "type": "Bronze"
+    },
+    {
+      "description": "Defeat 3 Majini at once by setting oil canisters on fire.",
+      "is_missable": 0,
+      "is_spoiler": 0,
+      "name": "Stop, Drop, & Roll",
+      "name_pt": "Pare, Deite e Role",
+      "tip": "Melhor local: final do 1-1, na arena com latas/poças de óleo. Agrupe três Majini, derrube ou atraia o grupo para perto do óleo e atire na lata para incendiar. Faça em Amateur para eles morrerem com mais facilidade.",
+      "trophy_code": "re5_stop_drop_roll",
+      "type": "Bronze"
+    },
+    {
+      "description": "Defeat 3 Majini at once with a drum or gas tank explosion.",
+      "is_missable": 0,
+      "is_spoiler": 0,
+      "name": "Baptism by Fire",
+      "name_pt": "Batismo de Fogo",
+      "tip": "Melhor local: 1-1/2-1 com barris ou cilindros explosivos. Junte três Majini, espere todos entrarem no raio e atire no tambor/cilindro. Se falhar, reinicie o checkpoint ou repita o capítulo em Amateur.",
+      "trophy_code": "re5_baptism_by_fire",
+      "type": "Bronze"
+    },
+    {
+      "description": "Work together to save someone special.",
+      "is_missable": 0,
+      "is_spoiler": 1,
+      "name": "Masters of Removing",
+      "name_pt": "Mestres da Remoção",
+      "tip": "Capítulo 5-3. Durante a luta contra Jill, aproxime-se, segure-a com um personagem e use o outro para tentar remover o dispositivo. Não use dano excessivo nela. Com parceiro humano fica mais simples; solo, mantenha curas e repita a sequência de agarrar/remover até a cena concluir.",
+      "trophy_code": "re5_masters_of_removing",
+      "type": "Bronze"
+    },
+    {
+      "description": "Inflict a set amount of damage to your greatest enemy.",
+      "is_missable": 0,
+      "is_spoiler": 1,
+      "name": "Bad Blood",
+      "name_pt": "Sangue Ruim",
+      "tip": "Capítulo 5-3, primeiro confronto contra Wesker. Preparação: Rocket Launcher ou Magnum forte, sprays e distância. Método seguro: apague as luzes, faça Wesker perder você de vista, dispare um foguete; quando ele segurar o foguete, atire nele para explodir e depois descarregue dano até ele recuar. Isso também prepara Heart of Africa. Riscos comuns: gastar munição enquanto ele está desviando, não apagar luzes e avançar para Jill sem causar dano suficiente.",
+      "trophy_code": "re5_bad_blood",
+      "type": "Bronze"
+    },
+    {
+      "description": "Stop an armored truck by taking out the driver.",
+      "is_missable": 0,
+      "is_spoiler": 0,
+      "name": "Drive By",
+      "name_pt": "Tiro em Movimento",
+      "tip": "Capítulo 2-3. Durante o trecho do veículo, mire no motorista do caminhão blindado pela janela/para-brisa em vez de destruir o caminhão por dano geral. Use rajadas curtas para não perder precisão. Faça em Amateur se estiver limpando; em Professional, sobreviver já é prioridade.",
+      "trophy_code": "re5_drive_by",
+      "type": "Prata"
+    },
+    {
+      "description": "Defeat a Majini with a rotten egg.",
+      "is_missable": 0,
+      "is_spoiler": 0,
+      "name": "Egg on Your Face",
+      "name_pt": "Ovo na Cara",
+      "tip": "Guarde um Rotten Egg de Egg Hunt. Melhor execução: 1-1 em Amateur, encontre um Majini básico isolado, equipe o Rotten Egg e arremesse diretamente nele. Normalmente mata na hora. Riscos comuns: errar o arremesso ou gastar o único Rotten Egg; se quiser segurança, fique perto e mire no tronco.",
+      "trophy_code": "re5_egg_on_your_face",
+      "type": "Bronze"
+    },
+    {
+      "description": "Defeat a certain enemy by stabbing it in the heart.",
+      "is_missable": 0,
+      "is_spoiler": 0,
+      "name": "Heart Stopper",
+      "name_pt": "Parada Cardíaca",
+      "tip": "Melhor local: 5-1, corredor/laboratório com Lickers. Faça em Amateur, leve shotgun ou Magnum fraca o bastante para derrubar sem matar. Derrube um Licker de barriga para cima, corra até o corpo e use o comando de ataque/finalização no coração exposto. Riscos comuns: matar com tiro antes do prompt, deixar vários Lickers cercarem você e usar dificuldade alta.",
+      "trophy_code": "re5_heart_stopper",
+      "type": "Bronze"
+    },
+    {
+      "description": "Build up a certain level of trust with your partner.",
+      "is_missable": 0,
+      "is_spoiler": 0,
+      "name": "Who Do You Trust?",
+      "name_pt": "Em Quem Você Confia?",
+      "tip": "Aumente a confiança agradecendo o parceiro após curas, salvamentos e itens recebidos. Método de farm: equipe a IA com itens de cura, tome dano controlado em Amateur, deixe ela curar você e pressione o botão de agradecer logo depois; também agradeça quando ela entregar munição/itens ou salvar de DYING/HELP. Faça isso durante a primeira campanha para reduzir grind. Risco comum: ignorar o comando de agradecimento e chegar ao fim com a afinidade baixa.",
+      "trophy_code": "re5_who_do_you_trust",
+      "type": "Prata"
+    }
+  ]
+}

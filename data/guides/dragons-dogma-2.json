@@ -1,0 +1,819 @@
+{
+  "game": {
+    "avoid_if": "Evite se voce nao gosta de saves limitados, quests perdiveis, finais com planejamento ou risco de retrabalho.",
+    "before_you_start": "Entenda o sistema de save limitado, Inn Save e pontos sem retorno. Leia alertas de perdiveis sem spoilers antes de avancar a historia principal; Unmoored World e finais exigem planejamento.",
+    "best_for": "Ideal para quem quer uma platina de RPG de mundo aberto com exploracao, escolhas, quests e planejamento.",
+    "cleanup_advice": "Use NG+ para corrigir trofeus perdidos por escolhas, quests, finais, NPCs ou vocations que ficaram para tras.",
+    "cover_image": "https://cdn.cloudflare.steamstatic.com/steam/apps/2054970/library_600x900.jpg",
+    "coverage_level": "strong",
+    "created_at": "2026-05-09 19:53:42",
+    "difficulty": 5,
+    "difficulty_reason": "A dificuldade vem menos de execucao extrema e mais de planejamento, saves limitados, quests perdiveis, Unmoored World e decisoes.",
+    "dlc_scope": "Guia focado na lista base de Dragon's Dogma 2; nao inclui Dragon's Dogma: Dark Arisen nem DLC/add-ons externos.",
+    "editorial_notes": "",
+    "editorial_review_status": null,
+    "editorial_status": "published",
+    "first_run_advice": "Nao avance no piloto automatico: acompanhe quests importantes, vocations, Maisters, Sphinx e decisoes antes de pontos criticos.",
+    "grind_summary": "O peso esta em quests, vocations, Maisters, Sphinx, Unmoored World, NPCs, finais e cleanup de mundo aberto.",
+    "guide_avoid": null,
+    "guide_best_moment": null,
+    "guide_dlc": null,
+    "guide_grind": null,
+    "guide_ideal": null,
+    "guide_online": null,
+    "guide_runs": null,
+    "image": "https://cdn.cloudflare.steamstatic.com/steam/apps/2054970/header.jpg",
+    "is_verified": 0,
+    "last_reviewed_at": "",
+    "missable": "A platina pode ser feita em uma playthrough muito planejada, mas o save limitado, finais, Unmoored World, Sphinx, Maisters, vocations, NPCs e quests com janela podem causar retrabalho ou NG+.",
+    "missable_summary": "Os maiores riscos sao Sphinx/Full Marks, Gigantus, Unmoored World, finais, Maisters, vocations avancadas, affinity e quests/NPCs com janela.",
+    "name": "Dragon's Dogma 2",
+    "online_summary": "Nao ha exigencia online para a platina.",
+    "quality_warnings": "[]",
+    "reviewed_by": "",
+    "runs_summary": "Uma playthrough planejada cobre a maior parte da lista, mas saves limitados, escolhas, quests e finais podem exigir NG+ ou retrabalho.",
+    "slug": "dragons-dogma-2",
+    "time": "70-100 horas",
+    "time_bucket": "long",
+    "time_max_hours": 100,
+    "time_min_hours": 70,
+    "time_reason": "A faixa de 70-100 horas considera campanha, mundo aberto, vocations, quests, Sphinx, Unmoored World, finais e possivel NG+.",
+    "time_sort_hours": 70,
+    "updated_at": "2026-06-27 02:36:58",
+    "verification_note": "Lista base de Dragon's Dogma 2 adicionada com checklist e roadmap completos; aguarda revisao editorial manual final.",
+    "verification_status": "review",
+    "walkthrough": null
+  },
+  "redirects": [],
+  "roadmaps": [
+    {
+      "content": "{\"title\":\"Organize regiões e favores\",\"focus\":\"\",\"objective\":\"comece a campanha entendendo vocations, pawns, exploracao, save limitado, Inn Save, Dragonsplague e quests com janela antes de acelerar a historia.\",\"actions\":[],\"warning\":\"\",\"result\":\"\"}",
+      "step_order": 1
+    },
+    {
+      "content": "{\"title\":\"Prossiga pela rota planejada\",\"focus\":\"\",\"objective\":\"avance historia e regioes principais ate A New Godsway sem ignorar side quests criticas, Maisters, vocations e NPCs ligados a trofeus.\",\"actions\":[],\"warning\":\"\",\"result\":\"\"}",
+      "step_order": 2
+    },
+    {
+      "content": "{\"title\":\"Prossiga pela rota planejada\",\"focus\":\"\",\"objective\":\"desbloqueie vocations como Mystic Spearhand, Trickster, Magick Archer e Warfarer; resolva Maister teachings, Sphinx/riddles, affinity/NPCs e trofeus de pawn.\",\"actions\":[],\"warning\":\"\",\"result\":\"\"}",
+      "step_order": 3
+    },
+    {
+      "content": "{\"title\":\"Organize regiões e favores\",\"focus\":\"\",\"objective\":\"antes do final verdadeiro, prepare backup/planejamento de save quando possivel, Unmaking Arrow, Sphinx, Medusa, Dragon's Dogma e limpeza antes do ponto sem retorno.\",\"actions\":[],\"warning\":\"\",\"result\":\"\"}",
+      "step_order": 4
+    },
+    {
+      "content": "{\"title\":\"Organize regiões e favores\",\"focus\":\"\",\"objective\":\"complete Peace, Dragon's Dogma 2, Unmoored World, The Hero, I, Talos, The Guardian, Closure, evacuacoes, bosses/trials e trofeus de final.\",\"actions\":[],\"warning\":\"\",\"result\":\"\"}",
+      "step_order": 5
+    },
+    {
+      "content": "{\"title\":\"Limpe pendências antes do NG+\",\"focus\":\"\",\"objective\":\"use NG+ ou cleanup para corrigir trofeus perdidos por escolhas, vocations, NPCs, Sphinx, Maisters, Phantom Oxcart ou quests especificas.\",\"actions\":[],\"warning\":\"\",\"result\":\"\"}",
+      "step_order": 6
+    },
+    {
+      "content": "{\"title\":\"Prossiga pela rota planejada\",\"focus\":\"\",\"objective\":\"revise o checklist final, incluindo colecionaveis, Seeker's Tokens, affinity, pawn badge, camping, oxcart, casa, medusa e platina.\",\"actions\":[],\"warning\":\"\",\"result\":\"\"}",
+      "step_order": 7
+    }
+  ],
+  "schemaVersion": 1,
+  "seedExtras": {
+    "aliases": [],
+    "attentionPoints": [
+      {
+        "tip": "Dragon's Dogma 2 usa autosave e inn-save, sem save manual livre. Faça inn-save e backup antes de rotas sensíveis.",
+        "title": "Save e backup",
+        "type": "Autosave / Inn-save / Backup"
+      },
+      {
+        "tip": "Antes de entregar os 15 Wyrmslife Crystals em A New Godsway, faça cleanup e backup. Esse é o principal ponto de controle da platina.",
+        "title": "A New Godsway",
+        "type": "Ponto de não retorno"
+      },
+      {
+        "tip": "Não use Casual Mode se pretende platinar. Alguns troféus ficam indisponíveis nesse modo.",
+        "title": "Casual Mode",
+        "type": "Modo normal recomendado"
+      },
+      {
+        "tip": "Prepare Unmaking Arrow antes de The Guardian Gigantus. Esse é um dos troféus mais fáceis de perder.",
+        "title": "Gigantus, I Hardly Knew Ye",
+        "type": "Gigantus / Unmaking Arrow"
+      },
+      {
+        "tip": "Full Marks exige resolver todas as charadas da Sphinx. Use backup antes de responder ou lutar.",
+        "title": "Sphinx / Full Marks",
+        "type": "Sphinx / Charadas"
+      },
+      {
+        "tip": "Unmoored World não é free roam normal. Priorize The Hero, The Guardian, I, Talos e Closure.",
+        "title": "Unmoored World",
+        "type": "Endgame sensível"
+      },
+      {
+        "tip": "Após Peace, use Load from Last Save e não inicie New Game+ se ainda precisa de Dragon's Dogma 2/Unmoored World.",
+        "title": "Peace e rota verdadeira",
+        "type": "Finais"
+      },
+      {
+        "tip": "Preserved Medusa Head pode deteriorar com o tempo. Guarde corretamente antes de avançar dias.",
+        "title": "Medusa Head",
+        "type": "Medusa / Tempo"
+      },
+      {
+        "tip": "Master of the Maisters depende de NPCs, vocações e quests. Confirme tudo antes do ponto de não retorno.",
+        "title": "Maister's Teachings",
+        "type": "NPCs / Vocações"
+      },
+      {
+        "tip": "A arma Dragon's Dogma exige Wyrmslife Crystals e Dragonforged. Planeje antes ou prepare recuperação em NG+.",
+        "title": "Dragon's Dogma",
+        "type": "Dragonforged / Wyrmslife Crystals"
+      },
+      {
+        "tip": "The Tourist exige 50 caves/named locations válidas, não qualquer ponto do mapa.",
+        "title": "The Tourist",
+        "type": "Caves / Exploração"
+      },
+      {
+        "tip": "Pawns fazem parte do sistema single-player. Não marque troféus de pawns como online ou coop.",
+        "title": "Pawns não são coop",
+        "type": "Single-player"
+      }
+    ],
+    "checklist": [
+      "Conferir se o guia tem 55 troféus.",
+      "Conferir se The True Arisen é a platina.",
+      "Conferir distribuição: 1 platina, 2 ouro, 6 prata, 46 bronze.",
+      "Conferir onlineRequired false, coopRequired false e dlcRequired false.",
+      "Conferir filtro Online 0, Coop 0, DLC 0 e Dificuldade 0.",
+      "Conferir hasMissables true e missableCount igual aos troféus com tag Perdível.",
+      "Conferir que o topo não diz Sem perdíveis.",
+      "Conferir A New Godsway como ponto de backup/cleanup.",
+      "Conferir save, inn-save, autosave e backup explicados.",
+      "Conferir alerta de Casual Mode: modo normal recomendado para a platina.",
+      "Conferir Gigantus, I Hardly Knew Ye com Unmaking Arrow.",
+      "Conferir Full Marks/Sphinx.",
+      "Conferir Master of the Maisters.",
+      "Conferir The Hero, The Guardian, Peace, Dragon's Dogma 2, Closure e I, Talos.",
+      "Conferir Dragon's Dogma/Dragonforged e Wyrmslife Crystals.",
+      "Conferir Medusa trophies e deterioração da Preserved Medusa Head.",
+      "Conferir Reaper's Scorn/Eternal Wakestone.",
+      "Conferir The Tourist/50 caves/named locations válidas.",
+      "Conferir vocations e Maister's Teachings.",
+      "Conferir affinity e pawn badges.",
+      "Conferir que Pawns não inflaram Coop/Online.",
+      "Conferir que não há DLC obrigatória.",
+      "Conferir se todos os troféus têm nome oficial em inglês como principal.",
+      "Conferir se todos têm PT-BR abaixo.",
+      "Conferir se descrições estão em português.",
+      "Conferir se textos em português têm acentos.",
+      "Conferir se não aparecem rótulos técnicos de nome original nem placeholders editoriais.",
+      "Conferir se roadmap está estruturado como array/objeto.",
+      "Conferir se roadmap renderiza etapas legíveis sem labels internos.",
+      "Conferir FAQ, decisão rápida, SEO e pontos de atenção.",
+      "Conferir se página individual e catálogo exibem o mesmo status editorial.",
+      "Conferir se flags do topo batem com filtros do catálogo."
+    ],
+    "faq": [
+      {
+        "answer": "Sim. Muitos troféus têm risco de run por escolhas, ponto de não retorno, NPCs, Unmoored World e sistema de salvamento. Use backup antes de objetivos sensíveis.",
+        "question": "Dragon's Dogma 2 tem troféus perdíveis?"
+      },
+      {
+        "answer": "Não. A lista é totalmente offline.",
+        "question": "Precisa jogar online para platinar?"
+      },
+      {
+        "answer": "Não. Pawns fazem parte do sistema single-player e não contam como coop obrigatório.",
+        "question": "Precisa de cooperação?"
+      },
+      {
+        "answer": "Não. A platina usa apenas a lista base.",
+        "question": "Precisa de DLC?"
+      },
+      {
+        "answer": "Não é recomendado para a platina. Casual Mode facilita o jogo, mas alguns troféus ficam indisponíveis nesse modo. Para a rota segura, jogue no modo normal.",
+        "question": "Posso jogar no Casual Mode?"
+      },
+      {
+        "answer": "Não há troféu por dificuldade alta, mas Casual Mode pode bloquear troféus. Por isso, o guia recomenda modo normal para a platina.",
+        "question": "A dificuldade afeta troféus?"
+      },
+      {
+        "answer": "Com planejamento e backup, é possível fazer em uma run com cleanup. Sem backup ou se perder objetivos sensíveis, NG+ pode ser necessário.",
+        "question": "Quantas runs são necessárias?"
+      },
+      {
+        "answer": "A New Godsway, antes de entregar os 15 Wyrmslife Crystals ao Magick Lab. Faça backup e cleanup antes disso.",
+        "question": "Qual é o principal ponto de não retorno?"
+      },
+      {
+        "answer": "O jogo usa autosave e inn-save, sem save manual livre. Dormir em inn cria um save separado; backup em nuvem é recomendado para rotas sensíveis.",
+        "question": "Como funciona o save?"
+      },
+      {
+        "answer": "Sphinx/Full Marks, Gigantus, Unmoored World, The Hero, The Guardian, Medusa, Maister's Teachings e finais.",
+        "question": "O que é o maior risco da platina?"
+      },
+      {
+        "answer": "Não. Exige 50 caves/named locations válidas. Não conte qualquer ponto de interesse como progresso.",
+        "question": "The Tourist exige todos os pontos do mapa?"
+      },
+      {
+        "answer": "Em média, cerca de 70 a 100 horas, dependendo de backup, exploração, Sphinx, Unmoored World, vocações e quantidade de retrabalho.",
+        "question": "Quanto tempo leva para platinar?"
+      }
+    ],
+    "note": "Campos exportados para auditoria. O SQLite atual nao possui colunas nativas para todos esses extras; a importacao preserva o que o banco suporta.",
+    "quickDecision": {
+      "difficulty": "Moderada, cerca de 5/10.",
+      "dlc": "Não exige DLC.",
+      "firstAction": "Permaneça no modo normal, avance até A New Godsway sem entregar os 15 Wyrmslife Crystals, faça inn-save/backup e limpe pendências antes dos finais.",
+      "mainRisk": "Casual Mode, backup em A New Godsway, Sphinx, Gigantus, Unmoored World, The Hero, The Guardian e Master of the Maisters.",
+      "onlineCoop": "Não exige online nem cooperação.",
+      "risk": "Alto em retrabalho se o jogador usar Casual Mode, ignorar backup ou avançar o ponto de não retorno.",
+      "time": "Longo, cerca de 70 a 100 horas.",
+      "verdict": "Sim, mas é uma platina que exige guia e planejamento por causa do save, missables e Unmoored World."
+    },
+    "seo": {
+      "description": "Guia de troféus de Dragon’s Dogma 2 com roadmap da platina, tempo estimado, perdíveis, Casual Mode, A New Godsway, Sphinx, Gigantus, Unmoored World, The Hero, The Guardian, Maister's Teachings e dicas para os 55 troféus.",
+      "keywords": [
+        "Dragon’s Dogma 2 troféus",
+        "Dragon's Dogma 2 troféus",
+        "Dragon’s Dogma 2 platina",
+        "guia Dragon’s Dogma 2",
+        "Dragon's Dogma II trophies",
+        "The True Arisen",
+        "Full Marks",
+        "Gigantus I Hardly Knew Ye",
+        "The Hero",
+        "The Guardian",
+        "Unmoored World",
+        "Sphinx riddles",
+        "Master of the Maisters",
+        "Dragon’s Dogma 2 Casual Mode",
+        "Dragon’s Dogma 2 A New Godsway",
+        "Dragon’s Dogma 2 backup save",
+        "Dragon’s Dogma 2 PS5"
+      ],
+      "metaDescription": "Guia de troféus de Dragon’s Dogma 2 com roadmap da platina, tempo estimado, perdíveis, Casual Mode, A New Godsway, Sphinx, Gigantus, Unmoored World, The Hero, The Guardian, Maister's Teachings e dicas para os 55 troféus.",
+      "ogDescription": "Roadmap PT-BR da platina PS5 de Dragon’s Dogma 2 com 55 troféus, save limitado, Casual Mode, A New Godsway, Sphinx, Gigantus, Unmoored World e 17 perdíveis/riscos de run.",
+      "ogTitle": "Dragon’s Dogma 2: Guia de Troféus e Platina",
+      "title": "Dragon’s Dogma 2: Guia de Troféus e Platina"
+    },
+    "tags": []
+  },
+  "slug": "dragons-dogma-2",
+  "trophies": [
+    {
+      "description": "Collected all other Dragon's Dogma 2 trophies.",
+      "is_missable": 0,
+      "is_spoiler": 0,
+      "name": "The True Arisen",
+      "name_pt": "",
+      "tip": "Conclua os outros 54 trofeus da lista base de Dragon's Dogma 2.",
+      "trophy_code": "dd2_the_true_arisen",
+      "type": "Platina"
+    },
+    {
+      "description": "Found a solution to every conundrum posed by the goddess of riddles.",
+      "is_missable": 1,
+      "is_spoiler": 1,
+      "name": "Full Marks",
+      "name_pt": "",
+      "tip": "Perdivel: resolva todos os riddles da Sphinx sem errar e planeje o uso da Unmaking Arrow para obter a chave final.",
+      "trophy_code": "dd2_full_marks",
+      "type": "Ouro"
+    },
+    {
+      "description": "Acquired every maister's teaching.",
+      "is_missable": 1,
+      "is_spoiler": 1,
+      "name": "Master of the Maisters",
+      "name_pt": "",
+      "tip": "Perdivel por quest/NPC. Acompanhe todos os 12 Maister teachings, incluindo rotas de vocations avancadas.",
+      "trophy_code": "dd2_master_of_the_maisters",
+      "type": "Ouro"
+    },
+    {
+      "description": "Experienced the end of the cycle.",
+      "is_missable": 1,
+      "is_spoiler": 1,
+      "name": "Closure",
+      "name_pt": "",
+      "tip": "Final do Unmoored World. Entre no mundo verdadeiro e conclua o desfecho correto sem encerrar cedo.",
+      "trophy_code": "dd2_closure",
+      "type": "Prata"
+    },
+    {
+      "description": "Led the people to safety in the unmoored world.",
+      "is_missable": 1,
+      "is_spoiler": 1,
+      "name": "The Guardian",
+      "name_pt": "",
+      "tip": "Perdivel no Unmoored World: evacue as populacoes antes de encerrar o mundo ou perder janelas.",
+      "trophy_code": "dd2_the_guardian",
+      "type": "Prata"
+    },
+    {
+      "description": "Overcame the trials of the unmoored world.",
+      "is_missable": 1,
+      "is_spoiler": 1,
+      "name": "The Hero",
+      "name_pt": "",
+      "tip": "Perdivel: complete os trials/bosses do Unmoored World dentro da janela e sem resetar o progresso por morte.",
+      "trophy_code": "dd2_the_hero",
+      "type": "Prata"
+    },
+    {
+      "description": "Petrified a medusa.",
+      "is_missable": 1,
+      "is_spoiler": 1,
+      "name": "An Eye for an Eye",
+      "name_pt": "",
+      "tip": "Perdivel por execucao e item perecivel: use uma Preserved Medusa Head antes que ela apodreca.",
+      "trophy_code": "dd2_an_eye_for_an_eye",
+      "type": "Prata"
+    },
+    {
+      "description": "Acquired a preserved medusa head.",
+      "is_missable": 1,
+      "is_spoiler": 1,
+      "name": "Getting a Head",
+      "name_pt": "",
+      "tip": "Perdivel por janela/execucao. Corte a cabeca da Medusa perto de vida cheia para obter a versao preserved.",
+      "trophy_code": "dd2_getting_a_head",
+      "type": "Prata"
+    },
+    {
+      "description": "Accomplished a miracle for several people all at once.",
+      "is_missable": 1,
+      "is_spoiler": 1,
+      "name": "Reaper's Scorn",
+      "name_pt": "",
+      "tip": "Perdivel: depende da Eternal Wakestone da Sphinx e de usar o item corretamente para reviver varias pessoas.",
+      "trophy_code": "dd2_reapers_scorn",
+      "type": "Prata"
+    },
+    {
+      "description": "Escaped the bonds of slavery.",
+      "is_missable": 0,
+      "is_spoiler": 1,
+      "name": "First Taste of Freedom",
+      "name_pt": "",
+      "tip": "Troféu automatico do prologo.",
+      "trophy_code": "dd2_first_taste_of_freedom",
+      "type": "Bronze"
+    },
+    {
+      "description": "Regained your memories of receiving the Arisen's charge.",
+      "is_missable": 0,
+      "is_spoiler": 1,
+      "name": "Arisen",
+      "name_pt": "",
+      "tip": "Troféu automatico de historia inicial.",
+      "trophy_code": "dd2_arisen",
+      "type": "Bronze"
+    },
+    {
+      "description": "Arrived in Vernworth.",
+      "is_missable": 0,
+      "is_spoiler": 1,
+      "name": "Seat of the Proxy",
+      "name_pt": "",
+      "tip": "Troféu automatico ao chegar em Vernworth.",
+      "trophy_code": "dd2_seat_of_the_proxy",
+      "type": "Bronze"
+    },
+    {
+      "description": "Passed through the gate at the border.",
+      "is_missable": 0,
+      "is_spoiler": 1,
+      "name": "Across the Border",
+      "name_pt": "",
+      "tip": "Troféu de progresso ao cruzar o portao da fronteira na historia.",
+      "trophy_code": "dd2_across_the_border",
+      "type": "Bronze"
+    },
+    {
+      "description": "Witnessed the unmoored world.",
+      "is_missable": 1,
+      "is_spoiler": 1,
+      "name": "Dragon's Dogma 2",
+      "name_pt": "",
+      "tip": "Final alternativo perdivel. Use o Godsbane no momento correto durante a sequencia do dragao.",
+      "trophy_code": "dd2_dragons_dogma_2",
+      "type": "Bronze"
+    },
+    {
+      "description": "Became Sovran of Vernworth.",
+      "is_missable": 1,
+      "is_spoiler": 1,
+      "name": "Peace",
+      "name_pt": "",
+      "tip": "Final regular perdivel se voce seguir direto para o Unmoored World sem resolver a rota do trono.",
+      "trophy_code": "dd2_peace",
+      "type": "Bronze"
+    },
+    {
+      "description": "Helped the gigantus walk again.",
+      "is_missable": 1,
+      "is_spoiler": 1,
+      "name": "I, Talos",
+      "name_pt": "",
+      "tip": "Perdivel no Unmoored World, ligado ao trial do Gigantus/Talos.",
+      "trophy_code": "dd2_i_talos",
+      "type": "Bronze"
+    },
+    {
+      "description": "Changed your vocation.",
+      "is_missable": 0,
+      "is_spoiler": 0,
+      "name": "Versatile",
+      "name_pt": "",
+      "tip": "Troque de vocation em uma guild/inn depois de desbloquear o sistema.",
+      "trophy_code": "dd2_versatile",
+      "type": "Bronze"
+    },
+    {
+      "description": "Changed your vocation to mystic spearhand.",
+      "is_missable": 1,
+      "is_spoiler": 1,
+      "name": "Duo Destinies",
+      "name_pt": "",
+      "tip": "Atencao: desbloqueie Mystic Spearhand via Sigurd/historia e troque para a vocation antes do cleanup final.",
+      "trophy_code": "dd2_duo_destinies",
+      "type": "Bronze"
+    },
+    {
+      "description": "Changed your vocation to trickster.",
+      "is_missable": 0,
+      "is_spoiler": 0,
+      "name": "Trickster of the Trade",
+      "name_pt": "",
+      "tip": "Desbloqueie Trickster pela historia em Battahl e troque para a vocation em uma guild.",
+      "trophy_code": "dd2_trickster_of_the_trade",
+      "type": "Bronze"
+    },
+    {
+      "description": "Changed your vocation to magick archer.",
+      "is_missable": 1,
+      "is_spoiler": 1,
+      "name": "Arrows and Incantations",
+      "name_pt": "",
+      "tip": "Perdivel por quest/NPC: complete Put a Spring in Thy Step para liberar Magick Archer.",
+      "trophy_code": "dd2_arrows_and_incantations",
+      "type": "Bronze"
+    },
+    {
+      "description": "Changed your vocation to warfarer.",
+      "is_missable": 1,
+      "is_spoiler": 1,
+      "name": "Jack of All Trades, Master of...All Trades",
+      "name_pt": "",
+      "tip": "Perdivel por quest/NPC: complete The Sotted Sage e troque para Warfarer.",
+      "trophy_code": "dd2_jack_of_all_trades_master_of_all_trades",
+      "type": "Bronze"
+    },
+    {
+      "description": "Went camping.",
+      "is_missable": 0,
+      "is_spoiler": 0,
+      "name": "An In-Tents Adventure",
+      "name_pt": "",
+      "tip": "Use um camping kit em qualquer campsite.",
+      "trophy_code": "dd2_an_in_tents_adventure",
+      "type": "Bronze"
+    },
+    {
+      "description": "Purchased a dwelling of your own.",
+      "is_missable": 0,
+      "is_spoiler": 0,
+      "name": "A House? In This Economy?",
+      "name_pt": "",
+      "tip": "Compre uma casa em Vernworth ou Bakbattahl. Ajuda com Inn Save/descanso seguro.",
+      "trophy_code": "dd2_a_house_in_this_economy",
+      "type": "Bronze"
+    },
+    {
+      "description": "Boarded an oxcart.",
+      "is_missable": 0,
+      "is_spoiler": 0,
+      "name": "One Speed Only",
+      "name_pt": "",
+      "tip": "Use qualquer oxcart station e embarque no carro.",
+      "trophy_code": "dd2_one_speed_only",
+      "type": "Bronze"
+    },
+    {
+      "description": "Used a Wakestone to restore the dead to life.",
+      "is_missable": 0,
+      "is_spoiler": 0,
+      "name": "The Savior",
+      "name_pt": "",
+      "tip": "Use uma Wakestone em um NPC morto.",
+      "trophy_code": "dd2_the_savior",
+      "type": "Bronze"
+    },
+    {
+      "description": "Used a Ferrystone.",
+      "is_missable": 0,
+      "is_spoiler": 0,
+      "name": "Just a Stone's Throw Away",
+      "name_pt": "",
+      "tip": "Use uma Ferrystone em area aberta com Portcrystal disponivel.",
+      "trophy_code": "dd2_just_a_stones_throw_away",
+      "type": "Bronze"
+    },
+    {
+      "description": "Acquired a pawn badge.",
+      "is_missable": 0,
+      "is_spoiler": 0,
+      "name": "A Badge of Honor",
+      "name_pt": "",
+      "tip": "Complete progresso de badge do pawn, como derrotar repetidamente um tipo de monstro grande.",
+      "trophy_code": "dd2_a_badge_of_honor",
+      "type": "Bronze"
+    },
+    {
+      "description": "Defeated the gigantus in a short span of time.",
+      "is_missable": 1,
+      "is_spoiler": 1,
+      "name": "Gigantus, I Hardly Knew Ye",
+      "name_pt": "",
+      "tip": "Altamente perdivel: use Unmaking Arrow como Archer em The Guardian Gigantus e proteja seu save.",
+      "trophy_code": "dd2_gigantus_i_hardly_knew_ye",
+      "type": "Bronze"
+    },
+    {
+      "description": "Decapitated a medusa.",
+      "is_missable": 0,
+      "is_spoiler": 1,
+      "name": "Off with Its Head!",
+      "name_pt": "",
+      "tip": "Decapite a Medusa; normalmente vem junto do planejamento de Getting a Head/An Eye for an Eye.",
+      "trophy_code": "dd2_off_with_its_head",
+      "type": "Bronze"
+    },
+    {
+      "description": "Reached the maximum rank in a vocation.",
+      "is_missable": 0,
+      "is_spoiler": 0,
+      "name": "The Specialist",
+      "name_pt": "",
+      "tip": "Use uma vocation ate o rank 9 enquanto explora e derrota inimigos.",
+      "trophy_code": "dd2_the_specialist",
+      "type": "Bronze"
+    },
+    {
+      "description": "Taught your pawn a specialization.",
+      "is_missable": 0,
+      "is_spoiler": 0,
+      "name": "A Pawn of Many Talents",
+      "name_pt": "",
+      "tip": "Obtenha um specialization tome por quest ou affinity e ensine ao pawn.",
+      "trophy_code": "dd2_a_pawn_of_many_talents",
+      "type": "Bronze"
+    },
+    {
+      "description": "Set a pawn quest.",
+      "is_missable": 0,
+      "is_spoiler": 0,
+      "name": "Wish upon the Rift",
+      "name_pt": "",
+      "tip": "Defina uma pawn quest em um Grand Riftstone; o requisito da platina nao depende de outro jogador.",
+      "trophy_code": "dd2_wish_upon_the_rift",
+      "type": "Bronze"
+    },
+    {
+      "description": "Entered the rose chateau.",
+      "is_missable": 0,
+      "is_spoiler": 0,
+      "name": "Myrmecoleon Delights",
+      "name_pt": "",
+      "tip": "Entre no Rose Chateau Bordelrie em Vernworth.",
+      "trophy_code": "dd2_myrmecoleon_delights",
+      "type": "Bronze"
+    },
+    {
+      "description": "Collected 80 Seeker's Tokens.",
+      "is_missable": 0,
+      "is_spoiler": 0,
+      "name": "The Collector",
+      "name_pt": "",
+      "tip": "Colete 80 Seeker's Tokens. Anote o primeiro token para o riddle da Sphinx.",
+      "trophy_code": "dd2_the_collector",
+      "type": "Bronze"
+    },
+    {
+      "description": "Earned the affections of 50 people.",
+      "is_missable": 0,
+      "is_spoiler": 0,
+      "name": "The Philanthropist",
+      "name_pt": "",
+      "tip": "Aumente affinity de 50 NPCs com quests, gifts ou sistemas sociais.",
+      "trophy_code": "dd2_the_philanthropist",
+      "type": "Bronze"
+    },
+    {
+      "description": "Raised a person's affinity to the maximum.",
+      "is_missable": 0,
+      "is_spoiler": 0,
+      "name": "Affinity and Beyond",
+      "name_pt": "",
+      "tip": "Maximize affinity de um NPC com gifts, quests ou interacoes sociais.",
+      "trophy_code": "dd2_affinity_and_beyond",
+      "type": "Bronze"
+    },
+    {
+      "description": "Strengthened a weapon in wyrmfire.",
+      "is_missable": 0,
+      "is_spoiler": 1,
+      "name": "Dragon Forged",
+      "name_pt": "",
+      "tip": "Aplique o quarto upgrade com o Dragonforged usando Wyrmslife Crystals.",
+      "trophy_code": "dd2_dragon_forged",
+      "type": "Bronze"
+    },
+    {
+      "description": "Soaked in the hot spring.",
+      "is_missable": 0,
+      "is_spoiler": 0,
+      "name": "This'll Cure What Ails Ye",
+      "name_pt": "",
+      "tip": "Visite a hot spring em Agamen Volcanic Island/Volcanic Island Camp.",
+      "trophy_code": "dd2_thisll_cure_what_ails_ye",
+      "type": "Bronze"
+    },
+    {
+      "description": "Crossed a cyclopean bridge.",
+      "is_missable": 0,
+      "is_spoiler": 0,
+      "name": "Cyclops Abridged",
+      "name_pt": "",
+      "tip": "Faça um Cyclops tombar entre plataformas e atravesse o corpo dele.",
+      "trophy_code": "dd2_cyclops_abridged",
+      "type": "Bronze"
+    },
+    {
+      "description": "Summoned a harpy, grabbed hold, and took flight.",
+      "is_missable": 0,
+      "is_spoiler": 0,
+      "name": "Harpy Joyride",
+      "name_pt": "",
+      "tip": "Use Harpysnare Smoke Beacon e agarre a Harpy quando ela vier.",
+      "trophy_code": "dd2_harpy_joyride",
+      "type": "Bronze"
+    },
+    {
+      "description": "Revived two pawns simultaneously.",
+      "is_missable": 0,
+      "is_spoiler": 0,
+      "name": "Quit Playing Dead",
+      "name_pt": "",
+      "tip": "Reviva dois pawns caidos ao mesmo tempo quando estiverem proximos.",
+      "trophy_code": "dd2_quit_playing_dead",
+      "type": "Bronze"
+    },
+    {
+      "description": "Obtained Dragon's Dogma.",
+      "is_missable": 0,
+      "is_spoiler": 1,
+      "name": "Dragon's Dogma",
+      "name_pt": "",
+      "tip": "Compre a espada Dragon's Dogma com Wyrmslife Crystals no Dragonforged, inclusive em NG+ se necessario.",
+      "trophy_code": "dd2_dragons_dogma",
+      "type": "Bronze"
+    },
+    {
+      "description": "Grilled every type of meat during the night and day.",
+      "is_missable": 0,
+      "is_spoiler": 0,
+      "name": "The Barbecue-Maister",
+      "name_pt": "",
+      "tip": "Grelhe todos os tipos de carne tanto de dia quanto de noite.",
+      "trophy_code": "dd2_the_barbecue_maister",
+      "type": "Bronze"
+    },
+    {
+      "description": "Attended a palace masquerade in formal raiment.",
+      "is_missable": 0,
+      "is_spoiler": 0,
+      "name": "Nobles' Night Out",
+      "name_pt": "",
+      "tip": "Equipe formal raiment e entre no masquerade do palacio em noite valida.",
+      "trophy_code": "dd2_nobles_night_out",
+      "type": "Bronze"
+    },
+    {
+      "description": "Restored the dead to life at a morgue or charnel house.",
+      "is_missable": 0,
+      "is_spoiler": 0,
+      "name": "Thought I'd Lost You",
+      "name_pt": "",
+      "tip": "Use Wakestone em um corpo no morgue/charnel house.",
+      "trophy_code": "dd2_thought_id_lost_you",
+      "type": "Bronze"
+    },
+    {
+      "description": "Defeated the headless horseman.",
+      "is_missable": 0,
+      "is_spoiler": 1,
+      "name": "Before Dawn Breaks",
+      "name_pt": "",
+      "tip": "Derrote o Dullahan/headless horseman a noite ou pela quest apropriada antes que fuja.",
+      "trophy_code": "dd2_before_dawn_breaks",
+      "type": "Bronze"
+    },
+    {
+      "description": "Discovered 50 locations.",
+      "is_missable": 0,
+      "is_spoiler": 0,
+      "name": "The Tourist",
+      "name_pt": "",
+      "tip": "Descubra 50 locais nomeados, especialmente cavernas, durante a exploracao.",
+      "trophy_code": "dd2_the_tourist",
+      "type": "Bronze"
+    },
+    {
+      "description": "Boarded the phantom oxcart.",
+      "is_missable": 1,
+      "is_spoiler": 1,
+      "name": "Are We There Yet?",
+      "name_pt": "",
+      "tip": "Perdivel por quest: siga The Phantom Oxcart e entre no carro nas condicoes corretas.",
+      "trophy_code": "dd2_are_we_there_yet",
+      "type": "Bronze"
+    },
+    {
+      "description": "Took flight on griffin wing a second time.",
+      "is_missable": 0,
+      "is_spoiler": 0,
+      "name": "The Regriffining",
+      "name_pt": "",
+      "tip": "Agarre um Griffin quando ele tentar fugir voando para outro ponto do mapa.",
+      "trophy_code": "dd2_the_regriffining",
+      "type": "Bronze"
+    },
+    {
+      "description": "Returned to Agamen Volcanic Island.",
+      "is_missable": 0,
+      "is_spoiler": 1,
+      "name": "Back Where It All Began",
+      "name_pt": "",
+      "tip": "Troféu automatico de historia em The Guardian Gigantus.",
+      "trophy_code": "dd2_back_where_it_all_began",
+      "type": "Bronze"
+    },
+    {
+      "description": "Witnessed a brawl break out in your dwelling among your admirers.",
+      "is_missable": 1,
+      "is_spoiler": 0,
+      "name": "Plenty Arisen to Go Round",
+      "name_pt": "",
+      "tip": "Perdivel por affinity/NPC: maximize dois admiradores e leve-os a sua casa.",
+      "trophy_code": "dd2_plenty_arisen_to_go_round",
+      "type": "Bronze"
+    },
+    {
+      "description": "Reached Dragonsbreath Tower.",
+      "is_missable": 0,
+      "is_spoiler": 1,
+      "name": "Roost of the Dragon",
+      "name_pt": "",
+      "tip": "Chegue a Dragonsbreath Tower em Battahl/rota de historia.",
+      "trophy_code": "dd2_roost_of_the_dragon",
+      "type": "Bronze"
+    },
+    {
+      "description": "Reached Drabnir's Grotto.",
+      "is_missable": 0,
+      "is_spoiler": 0,
+      "name": "Hope You Brought a Lantern",
+      "name_pt": "",
+      "tip": "Entre em Drabnir's Grotto ao seguir para a regiao vulcanica.",
+      "trophy_code": "dd2_hope_you_brought_a_lantern",
+      "type": "Bronze"
+    },
+    {
+      "description": "Reclaimed your items from the scavenger who stole them from you.",
+      "is_missable": 0,
+      "is_spoiler": 0,
+      "name": "To the Victor Go the Spoils",
+      "name_pt": "",
+      "tip": "Permita que um scavenger roube um item e recupere-o ao derrotar o inimigo.",
+      "trophy_code": "dd2_to_the_victor_go_the_spoils",
+      "type": "Bronze"
+    },
+    {
+      "description": "Used illicit means to pass through the gate at the border.",
+      "is_missable": 1,
+      "is_spoiler": 0,
+      "name": "I'm In",
+      "name_pt": "",
+      "tip": "Perdivel por condicao especifica: atravesse no royal carriage sem carregar permits que invalidem a situacao.",
+      "trophy_code": "dd2_im_in",
+      "type": "Bronze"
+    }
+  ]
+}

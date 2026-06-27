@@ -1,0 +1,730 @@
+{
+  "game": {
+    "avoid_if": "Não recomendada para quem quer platina curta, sem controle de perdíveis ou sem cleanup de colecionáveis, relacionamentos e endgame.",
+    "before_you_start": "Não cadastre PS4: a lista base deste guia é de PS5. Clair Obscur: Expedition 33 é uma platina de RPG relativamente acessível, focada em concluir a história, controlar poucos perdíveis, revisitar áreas no pós-game, derrotar chefes opcionais, completar relacionamentos, coletar diários, canções e Gestrais perdidos, vencer jogos Gestrais, concluir missões de Nevrons e finalizar troféus de combate/personagem. A lista base tem 56 troféus, é totalmente offline, não exige coop, não exige DLC e pode ser feita em uma jogada, mas há troféus sensíveis a interações/itens específicos durante a campanha.\n\nA ordem mais segura é avançar a história com atenção aos perdíveis do prólogo, atos intermediários e relacionamentos, depois usar o Act 3/pós-game para limpar áreas opcionais, chefes, colecionáveis, relacionamentos, nível 99 e desafios de combate. Não é necessário New Game+ para a platina, mas ele pode servir como rota de correção se algum perdível ou coletável for ignorado na primeira campanha.",
+    "best_for": "Recomendada para quem gosta de RPG por turnos, ações em tempo real, chefes opcionais, exploração e checklist de colecionáveis.",
+    "cleanup_advice": "Após o chefe final, carregar o save retorna para a Expedition Flag antes do chefe final. Continue no mesmo save para limpar áreas opcionais, relacionamentos, chefes, colecionáveis, nível 99 e troféus de combate antes de considerar New Game+.",
+    "cover_image": "https://cdn.cloudflare.steamstatic.com/steam/apps/1903340/library_600x900.jpg",
+    "coverage_level": "strong",
+    "created_at": "2026-05-09 19:53:56",
+    "difficulty": 3,
+    "difficulty_reason": "A dificuldade 3/10 vem de uma campanha acessível com builds fortes, opções de acessibilidade e ausência de troféu de dificuldade. O pico real está em chefes opcionais, organização de colecionáveis e poucos perdíveis.",
+    "dlc_scope": "Guia focado somente na lista base PS5 de 56 troféus de Clair Obscur: Expedition 33. Conteúdo extra, update e eventual DLC ficam fora da platina base, salvo se a lista PSN base mudar oficialmente.",
+    "editorial_notes": "Lista base PS5 de 56 troféus organizada com dificuldade 3/10, 50-70h, offline, sem coop, sem DLC obrigatória e 1 jogada + cleanup. Mantidos 5 perdíveis de referência: Follow The Trail, Maelle, Connoisseur, Professional e A Peculiar Encounter. Curious foi removido da contagem de perdíveis. New Game+ e dificuldade não são requisitos.",
+    "editorial_review_status": "in_review",
+    "editorial_status": "published",
+    "first_run_advice": "Comece a campanha acompanhando os perdíveis principais, especialmente itens/interações do prólogo e relacionamentos. Depois use o roadmap para separar história, colecionáveis, chefes opcionais, relacionamentos, nível 99 e cleanup no Act 3/pós-game.",
+    "grind_summary": "O peso está em diários, 33 canções, Gestrais perdidos, missões de Nevrons, relacionamentos nível 7, habilidades de Monoco, nível 99, Endless Tower, Clea, Simon e chefes opcionais.",
+    "guide_avoid": null,
+    "guide_best_moment": null,
+    "guide_dlc": null,
+    "guide_grind": null,
+    "guide_ideal": null,
+    "guide_online": null,
+    "guide_runs": null,
+    "image": "https://cdn.cloudflare.steamstatic.com/steam/apps/1903340/header.jpg",
+    "is_verified": 0,
+    "last_reviewed_at": "2026-05-28",
+    "missable": "Sim. A rota conservadora trata Follow The Trail, Maelle, Connoisseur, Professional e A Peculiar Encounter como perdíveis ou sensíveis à campanha. A platina em si nunca deve ser marcada como perdível.",
+    "missable_summary": "Os 5 troféus sensíveis da rota são Follow The Trail, Maelle, Connoisseur, Professional e A Peculiar Encounter. Eles dependem de itens, interações ou condições específicas durante a campanha.",
+    "name": "Clair Obscur: Expedition 33",
+    "online_summary": "Não há troféus online. Clair Obscur: Expedition 33 é single-player e a platina base não exige conexão, servidores, PS+, coop ou multiplayer.",
+    "quality_warnings": "[]",
+    "reviewed_by": "AtlasAchievement Editorial",
+    "runs_summary": "1 jogada completa com cleanup no Act 3/pós-game. New Game+ existe, mas não é obrigatório para a platina; use apenas se quiser repetir a campanha ou corrigir algo que ficou bloqueado.",
+    "slug": "clair-obscur-expedition-33",
+    "time": "50-70h",
+    "time_bucket": "long",
+    "time_max_hours": 70,
+    "time_min_hours": 50,
+    "time_reason": "A faixa de 50-70h considera história, exploração, colecionáveis, relacionamentos, Endless Tower, chefes opcionais, habilidades de Monoco, upgrades e grind até o nível 99.",
+    "time_sort_hours": 50,
+    "updated_at": "2026-06-27 02:36:59",
+    "verification_note": "Guia publicado com cobertura forte, aguardando revisão editorial final para selo Verificado.",
+    "verification_status": "review",
+    "walkthrough": null
+  },
+  "redirects": [],
+  "roadmaps": [
+    {
+      "content": "{\"title\":\"Avance o prólogo sem perder itens únicos\",\"focus\":\"Prólogo e perdíveis\",\"objective\":\"Começar a campanha aprendendo o combate e garantindo os itens/interações que podem bloquear troféus depois.\",\"actions\":[\"Explore Lumière com calma antes de sair do prólogo.\",\"Derrote o Mime/mímico específico de Lumière para A Peculiar Encounter.\",\"Pegue o Old Key e outros itens únicos do festival ligados a Follow The Trail.\",\"Teste esquiva, parry, QTEs, Break e uso de AP desde os primeiros combates.\",\"Evite avançar se ainda houver interação ou item único marcado no checklist do prólogo.\"],\"warning\":\"O prólogo concentra riscos de perda importantes; pegue o Old Key e derrote o mímico específico de Lumière antes de avançar.\",\"result\":\"Base da campanha iniciada com os principais riscos do prólogo controlados.\"}",
+      "step_order": 1
+    },
+    {
+      "content": "{\"title\":\"Complete os atos iniciais acompanhando interações\",\"focus\":\"História e relacionamentos\",\"objective\":\"Avançar pelos atos 1 e 2 enquanto controla interações de acampamento, registros, canções e evolução do grupo.\",\"actions\":[\"Progrida por Spring Meadows, Flying Waters, Ancient Sanctuary, Gestral Village, Esquie's Nest e demais áreas principais.\",\"Assista cenas opcionais no acampamento quando ficarem disponíveis.\",\"Acompanhe registros, canções e interações que alimentam Follow The Trail, Connoisseur e relacionamentos, incluindo a escolha Truth da rota de Maelle.\",\"Evite enfrentar todos os chefes/Chromatic enemies tomando dano se ainda não tiver Professional.\",\"Mantenha personagens, armas, Pictos e Luminas atualizados para reduzir dificuldade nos chefes.\"],\"warning\":\"Interações de relacionamento e canções específicas podem ser sensíveis ao avanço da história; use o checklist antes de trocar de ato.\",\"result\":\"História avançada, grupo fortalecido e perdíveis intermediários controlados.\"}",
+      "step_order": 2
+    },
+    {
+      "content": "{\"title\":\"Abra o Act 3 e libere a exploração completa\",\"focus\":\"Exploração e Esquie\",\"objective\":\"Usar as habilidades de Esquie para acessar áreas opcionais, chefes e colecionáveis antes do cleanup pesado.\",\"actions\":[\"Continue a campanha até liberar as habilidades de exploração de Esquie.\",\"Revisite áreas com nado, voo e mergulho quando essas opções estiverem disponíveis.\",\"Colete Gestrais perdidos, diários, canções e recursos que antes estavam bloqueados.\",\"Acompanhe relacionamentos até o nível 7 com os personagens necessários.\",\"Não inicie New Game+ para resolver pendências que ainda podem ser feitas no save atual.\"],\"warning\":\"\",\"result\":\"Mapa aberto para limpeza, Esquie com habilidades principais e acesso às áreas opcionais liberado.\"}",
+      "step_order": 3
+    },
+    {
+      "content": "{\"title\":\"Derrote chefes opcionais e conclua desafios\",\"focus\":\"Chefes e desafios\",\"objective\":\"Resolver os troféus de bosses opcionais, jogos Gestrais, Torre Eterna e missões de Nevrons.\",\"actions\":[\"Derrote Simon para Peace At Last.\",\"Derrote Clea, Sprong, Serpenphare, Chromatic Pétank e outros chefes opcionais da lista.\",\"Vença todos os jogos Gestrais para Gestral Games.\",\"Chegue ao topo da Endless Tower.\",\"Conclua todas as missões dos Nevrons para Aiding the Enemy.\"],\"warning\":\"Alguns chefes opcionais são o pico de dificuldade da platina; ajuste builds, Luminas, armas e Pictos antes de insistir.\",\"result\":\"Principais desafios opcionais resolvidos e o maior bloco de combate concluído.\"}",
+      "step_order": 4
+    },
+    {
+      "content": "{\"title\":\"Finalize colecionáveis, relacionamentos e progressão\",\"focus\":\"Coleta e evolução\",\"objective\":\"Completar diários, canções, Gestrais perdidos, relacionamentos, nível 99, armas e habilidades específicas.\",\"actions\":[\"Encontre todos os diários das expedições anteriores para Follow The Trail.\",\"Encontre todas as 33 canções para Connoisseur.\",\"Encontre todos os Gestrais perdidos.\",\"Eleve relacionamentos necessários ao nível 7.\",\"Suba ao nível 99, aprimore totalmente uma arma e complete habilidades específicas de personagens.\"],\"warning\":\"Se um coletável de troféu foi perdido e não houver correção por patch, pode ser necessário usar NG+ e recoletar os itens relacionados.\",\"result\":\"Colecionáveis, progressão de personagens e grind principal encaminhados para a platina.\"}",
+      "step_order": 5
+    },
+    {
+      "content": "{\"title\":\"Faça o cleanup final da platina\",\"focus\":\"Cleanup\",\"objective\":\"Revisar pendências da lista base e confirmar que flags e troféus estão corretos.\",\"actions\":[\"Abra o checklist e revise os 56 troféus.\",\"Revise os 5 perdíveis finais no checklist.\",\"Confirme que onlineRequired, coopRequired e dlcRequired estão como false.\",\"Confirme que o guia não trata New Game+ como obrigatório.\",\"Revise se todos os cards têm nome inglês principal e PT-BR abaixo quando confirmado.\"],\"warning\":\"\",\"result\":\"Todos os requisitos da platina base concluídos.\"}",
+      "step_order": 6
+    }
+  ],
+  "schemaVersion": 1,
+  "seedExtras": {
+    "aliases": [],
+    "attentionPoints": [],
+    "checklist": [
+      "Concluir o prólogo.",
+      "Derrotar o mímico específico de Lumière para A Peculiar Encounter.",
+      "Obter o Old Key e os itens únicos ligados a Follow The Trail no prólogo.",
+      "Concluir as áreas principais da história.",
+      "Derrotar o Primeiro Axon.",
+      "Derrotar o Segundo Axon.",
+      "Chegar ao Monólito.",
+      "Derrotar Paintress/Artífice.",
+      "Retornar a Lumière.",
+      "Chegar ao final da campanha.",
+      "Liberar todas as habilidades de Esquie.",
+      "Encontrar todos os diários.",
+      "Concluir todas as missões dos Nevrons.",
+      "Derrotar Simon.",
+      "Vencer todos os jogos Gestrais.",
+      "Derrotar Clea.",
+      "Chegar ao topo da Endless Tower.",
+      "Encontrar todos os Gestrais perdidos.",
+      "Derrotar Serpenphare, Sprong, Chromatic Pétank e demais chefes relevantes.",
+      "Resolver Noir et Blanc.",
+      "Elevar relacionamentos de Sciel, Monoco, Maelle, Lune e Esquie ao nível 7.",
+      "Aprimorar uma arma uma vez.",
+      "Aprimorar uma arma totalmente.",
+      "Usar um ponto de Lumina.",
+      "Alcançar os níveis 33, 66 e 99.",
+      "Concluir troféus específicos de Gustave, Lune, Maelle, Sciel, Verso e Monoco.",
+      "Obter todas as habilidades de Monoco.",
+      "Habilitar todos os personagens jogáveis.",
+      "Usar um Gradient Attack de nível 3.",
+      "Encontrar as 33 canções.",
+      "Quebrar uma Paint Cage.",
+      "Quebrar um inimigo.",
+      "Derrotar um chefe sem tomar dano.",
+      "Ver uma cena opcional no acampamento.",
+      "Fazer o cleanup final dos 56 troféus da lista base."
+    ],
+    "faq": [
+      {
+        "answer": "Sim. Os perdíveis principais são Follow The Trail, Maelle, Connoisseur, Professional e A Peculiar Encounter. Eles dependem de itens, interações ou condições específicas durante a campanha. Use o checklist antes de avançar prólogo, atos intermediários e relacionamentos.",
+        "question": "Clair Obscur: Expedition 33 tem troféus perdíveis?"
+      },
+      {
+        "answer": "Não. A lista base de Clair Obscur: Expedition 33 é totalmente offline.",
+        "question": "A platina exige online?"
+      },
+      {
+        "answer": "Não. O jogo é single-player e a platina não exige coop.",
+        "question": "Precisa de coop?"
+      },
+      {
+        "answer": "Não. A platina base não exige DLC. Não misture conteúdo extra/update com a lista base de 56 troféus.",
+        "question": "Precisa de DLC ou update pago?"
+      },
+      {
+        "answer": "A estimativa segura é 50–70h, dependendo de quanto você explora durante a história e de quanto deixa para o cleanup.",
+        "question": "Quanto tempo leva para platinar?"
+      },
+      {
+        "answer": "Não. A dificuldade não bloqueia troféus; você pode jogar na configuração que preferir. As opções de acessibilidade também não impedem a platina, mas podem alterar a eficiência de alguns ataques/QTEs.",
+        "question": "A dificuldade afeta troféus?"
+      },
+      {
+        "answer": "Não. New Game+ existe, mas não é obrigatório para a platina. Ele só deve ser considerado se você quiser repetir a campanha ou corrigir algum perdível/coletável que não possa mais ser obtido no save atual.",
+        "question": "New Game+ é obrigatório?"
+      },
+      {
+        "answer": "Sim. Ao carregar o save após o chefe final, o jogo retorna para a Expedition Flag antes do chefe final e permite continuar explorando as áreas disponíveis.",
+        "question": "Dá para continuar depois da história?"
+      },
+      {
+        "answer": "Os chefes opcionais e o cleanup de colecionáveis/relacionamentos são os blocos mais exigentes. Simon, Clea, Endless Tower, Gestral Games e nível 99 merecem atenção no roadmap.",
+        "question": "Qual é o maior desafio?"
+      }
+    ],
+    "note": "Campos exportados para auditoria. O SQLite atual nao possui colunas nativas para todos esses extras; a importacao preserva o que o banco suporta.",
+    "quickDecision": {
+      "attention": "Não há online, coop, DLC obrigatória, New Game+ obrigatório nem bloqueio por dificuldade; o cuidado real está nos 5 perdíveis e no cleanup.",
+      "avoid": "Evite se você quer uma platina curta sem controle de perdíveis.",
+      "fit": "Boa para quem gosta de RPG por turnos, chefes opcionais, exploração e colecionáveis.",
+      "recommendation": "Platina de RPG longa, mas acessível, para jogar com checklist ao lado desde o prólogo."
+    },
+    "seo": {
+      "description": "Roadmap completo da platina de Clair Obscur: Expedition 33, com troféus perdíveis, colecionáveis, relacionamentos, chefes opcionais, Gestrais, canções, diários, checklist e dicas para evitar retrabalho.",
+      "keywords": "Clair Obscur Expedition 33 troféus, Clair Obscur Expedition 33 platina, Clair Obscur Expedition 33 guia, Clair Obscur Expedition 33 roadmap, Clair Obscur Expedition 33 perdíveis, Clair Obscur Expedition 33 Follow The Trail, Clair Obscur Expedition 33 Connoisseur, Clair Obscur Expedition 33 Gestrais Perdidos, Clair Obscur Expedition 33 Simon, Clair Obscur Expedition 33 checklist",
+      "title": "Clair Obscur: Expedition 33: guia de troféus e platina"
+    },
+    "tags": []
+  },
+  "slug": "clair-obscur-expedition-33",
+  "trophies": [
+    {
+      "description": "Obtenha todos os troféus.",
+      "is_missable": 0,
+      "is_spoiler": 0,
+      "name": "The Greatest Expedition in History",
+      "name_pt": "A Maior Expedição da História",
+      "tip": "Conclua os 55 troféus restantes da lista base PS5. A platina não exige online, coop, DLC, New Game+ ou dificuldade específica.",
+      "trophy_code": "clair-obscur-greatest-expedition",
+      "type": "Platina"
+    },
+    {
+      "description": "Chegue ao fim.",
+      "is_missable": 0,
+      "is_spoiler": 1,
+      "name": "The End",
+      "name_pt": "O Fim",
+      "tip": "Troféu de história por concluir a campanha. Depois, carregue o save para retornar à Expedition Flag antes do chefe final e fazer cleanup.",
+      "trophy_code": "clair-obscur-the-end",
+      "type": "Ouro"
+    },
+    {
+      "description": "Derrote Simon.",
+      "is_missable": 0,
+      "is_spoiler": 1,
+      "name": "Peace At Last",
+      "name_pt": "Finalmente, a Paz.",
+      "tip": "Chefe opcional de endgame e um dos maiores testes da platina. Deixe para quando estiver com builds, armas, Pictos e Luminas fortes.",
+      "trophy_code": "clair-obscur-peace-at-last",
+      "type": "Ouro"
+    },
+    {
+      "description": "Derrote a Artífice.",
+      "is_missable": 0,
+      "is_spoiler": 1,
+      "name": "Paintress",
+      "name_pt": "Artífice",
+      "tip": "Troféu de história com spoiler; prepare o grupo e siga a campanha.",
+      "trophy_code": "clair-obscur-paintress",
+      "type": "Prata"
+    },
+    {
+      "description": "Derrote Clea.",
+      "is_missable": 0,
+      "is_spoiler": 1,
+      "name": "Clea",
+      "name_pt": "Clea",
+      "tip": "Chefe opcional de endgame; volte com grupo fortalecido se a luta estiver travando.",
+      "trophy_code": "clair-obscur-clea",
+      "type": "Prata"
+    },
+    {
+      "description": "Chegue ao topo da Endless Tower.",
+      "is_missable": 0,
+      "is_spoiler": 0,
+      "name": "“Endless”",
+      "name_pt": "Eterna",
+      "tip": "Complete a Torre Eterna. Deixe para o endgame, quando sua composição já estiver estável.",
+      "trophy_code": "clair-obscur-endless",
+      "type": "Prata"
+    },
+    {
+      "description": "Resolva o mistério da Painting Workshop.",
+      "is_missable": 0,
+      "is_spoiler": 0,
+      "name": "Noir et Blanc",
+      "name_pt": "Noir et Blanc",
+      "tip": "Explore a Painting Workshop e resolva a sequência necessária para concluir o mistério.",
+      "trophy_code": "clair-obscur-noir-et-blanc",
+      "type": "Prata"
+    },
+    {
+      "description": "Adquira todas as habilidades de Monoco.",
+      "is_missable": 0,
+      "is_spoiler": 0,
+      "name": "Feet Collection",
+      "name_pt": "Podolatria",
+      "tip": "Derrote os inimigos necessários com Monoco disponível para aprender todas as habilidades.",
+      "trophy_code": "clair-obscur-feet-collection",
+      "type": "Prata"
+    },
+    {
+      "description": "Embarque na Expedição.",
+      "is_missable": 0,
+      "is_spoiler": 0,
+      "name": "Lumière",
+      "name_pt": "Lumière",
+      "tip": "Troféu de história do prólogo, liberado ao iniciar a expedição.",
+      "trophy_code": "clair-obscur-lumiere",
+      "type": "Bronze"
+    },
+    {
+      "description": "Encontre seu caminho por Spring Meadows.",
+      "is_missable": 0,
+      "is_spoiler": 0,
+      "name": "Spring Meadows",
+      "name_pt": "Prados Primaveris",
+      "tip": "Troféu de história; avance pela área principal normalmente.",
+      "trophy_code": "clair-obscur-spring-meadows",
+      "type": "Bronze"
+    },
+    {
+      "description": "Encontre seu caminho por Flying Waters.",
+      "is_missable": 0,
+      "is_spoiler": 0,
+      "name": "Flying Waters",
+      "name_pt": "Águas Flutuantes",
+      "tip": "Troféu de história; conclua a área durante a campanha.",
+      "trophy_code": "clair-obscur-flying-waters",
+      "type": "Bronze"
+    },
+    {
+      "description": "Encontre seu caminho por Ancient Sanctuary.",
+      "is_missable": 0,
+      "is_spoiler": 0,
+      "name": "Ancient Sanctuary",
+      "name_pt": "Santuário Ancestral",
+      "tip": "Troféu de história; explore a área e avance até a próxima região.",
+      "trophy_code": "clair-obscur-ancient-sanctuary",
+      "type": "Bronze"
+    },
+    {
+      "description": "Encontre seu caminho por Gestral Village.",
+      "is_missable": 0,
+      "is_spoiler": 0,
+      "name": "Gestral Village",
+      "name_pt": "Vilarejo Gestral",
+      "tip": "Troféu de história ligado à chegada e progressão no Vilarejo Gestral.",
+      "trophy_code": "clair-obscur-gestral-village",
+      "type": "Bronze"
+    },
+    {
+      "description": "Encontre seu caminho por Esquie's Nest.",
+      "is_missable": 0,
+      "is_spoiler": 0,
+      "name": "Esquie's Nest",
+      "name_pt": "Berço de Esquie",
+      "tip": "Troféu de história; avance até concluir a sequência de Esquie.",
+      "trophy_code": "clair-obscur-esquies-nest",
+      "type": "Bronze"
+    },
+    {
+      "description": "Encontre seu caminho por Stone Wave Cliffs.",
+      "is_missable": 0,
+      "is_spoiler": 0,
+      "name": "Stone Wave Cliffs",
+      "name_pt": "Falésias Quebraondas",
+      "tip": "Troféu de história; conclua a área principal.",
+      "trophy_code": "clair-obscur-stone-wave-cliffs",
+      "type": "Bronze"
+    },
+    {
+      "description": "Encontre seu caminho por Forgotten Battlefield.",
+      "is_missable": 0,
+      "is_spoiler": 0,
+      "name": "Forgotten Battlefield",
+      "name_pt": "Campo de Batalha Esquecido",
+      "tip": "Troféu de história; siga a campanha até sair do campo de batalha.",
+      "trophy_code": "clair-obscur-forgotten-battlefield",
+      "type": "Bronze"
+    },
+    {
+      "description": "Encontre seu caminho por Monoco's Station.",
+      "is_missable": 0,
+      "is_spoiler": 0,
+      "name": "Monoco's Station",
+      "name_pt": "Estação de Monoco",
+      "tip": "Troféu de história ligado à progressão pela estação.",
+      "trophy_code": "clair-obscur-monocos-station",
+      "type": "Bronze"
+    },
+    {
+      "description": "Encontre seu caminho por Old Lumière.",
+      "is_missable": 0,
+      "is_spoiler": 0,
+      "name": "Old Lumière",
+      "name_pt": "Velha Lumière",
+      "tip": "Troféu de história; avance pela região sem tratá-lo como perdível.",
+      "trophy_code": "clair-obscur-old-lumiere",
+      "type": "Bronze"
+    },
+    {
+      "description": "Derrote o Primeiro Axon.",
+      "is_missable": 0,
+      "is_spoiler": 1,
+      "name": "First Axon",
+      "name_pt": "O Primeiro Axon",
+      "tip": "Troféu de história com spoiler de chefe; avance a campanha normalmente.",
+      "trophy_code": "clair-obscur-first-axon",
+      "type": "Bronze"
+    },
+    {
+      "description": "Derrote o Segundo Axon.",
+      "is_missable": 0,
+      "is_spoiler": 1,
+      "name": "Second Axon",
+      "name_pt": "O Segundo Axon",
+      "tip": "Troféu de história com spoiler de chefe; avance a campanha normalmente.",
+      "trophy_code": "clair-obscur-second-axon",
+      "type": "Bronze"
+    },
+    {
+      "description": "Chegue ao Monólito.",
+      "is_missable": 0,
+      "is_spoiler": 1,
+      "name": "Monolith",
+      "name_pt": "Monólito",
+      "tip": "Troféu de história da reta final; não depende de dificuldade.",
+      "trophy_code": "clair-obscur-monolith",
+      "type": "Bronze"
+    },
+    {
+      "description": "Retorne a Lumière.",
+      "is_missable": 0,
+      "is_spoiler": 1,
+      "name": "Back to Lumière",
+      "name_pt": "Retorno a Lumière",
+      "tip": "Troféu de história da reta final.",
+      "trophy_code": "clair-obscur-back-to-lumiere",
+      "type": "Bronze"
+    },
+    {
+      "description": "Descubra todas as habilidades de Esquie.",
+      "is_missable": 0,
+      "is_spoiler": 0,
+      "name": "Plane, Train, and Submarine",
+      "name_pt": "Avião, Trem e Submarino",
+      "tip": "Continue a história e avance o relacionamento de Esquie para liberar as habilidades de travessia necessárias.",
+      "trophy_code": "clair-obscur-plane-train-submarine",
+      "type": "Bronze"
+    },
+    {
+      "description": "Encontre todos os diários das expedições anteriores.",
+      "is_missable": 1,
+      "is_spoiler": 0,
+      "name": "Follow The Trail",
+      "name_pt": "Siga a Trilha",
+      "tip": "Perdível/sensível: controle o Old Key e os diários desde o prólogo para não perder o journal relacionado.",
+      "trophy_code": "clair_obscur_expedition_33_follow_the_trail",
+      "type": "Bronze"
+    },
+    {
+      "description": "Conclua todas as missões dos Nevrons.",
+      "is_missable": 0,
+      "is_spoiler": 0,
+      "name": "Aiding the Enemy",
+      "name_pt": "Aminimigos",
+      "tip": "Complete as missões dos Nevrons brancos e volte a falar com eles até esgotar recompensas e diálogos.",
+      "trophy_code": "clair-obscur-aiding-the-enemy",
+      "type": "Bronze"
+    },
+    {
+      "description": "Vença todos os jogos Gestrais.",
+      "is_missable": 0,
+      "is_spoiler": 0,
+      "name": "Gestral Games",
+      "name_pt": "Gestrolimpíadas",
+      "tip": "Complete todos os minigames Gestrais. Eles exigem atenção, mas não são troféus online.",
+      "trophy_code": "clair-obscur-gestral-games",
+      "type": "Bronze"
+    },
+    {
+      "description": "Encontre todos os Gestrais perdidos.",
+      "is_missable": 0,
+      "is_spoiler": 0,
+      "name": "Lost Gestrals",
+      "name_pt": "Gestrais Perdidos",
+      "tip": "Use as habilidades de Esquie para revisitar o mapa e encontrar todos os Gestrais perdidos.",
+      "trophy_code": "clair-obscur-lost-gestrals",
+      "type": "Bronze"
+    },
+    {
+      "description": "Derrote Serpenphare.",
+      "is_missable": 0,
+      "is_spoiler": 1,
+      "name": "À On",
+      "name_pt": "À On",
+      "tip": "Chefe opcional; enfrente no endgame se ainda faltar dano ou sobrevivência.",
+      "trophy_code": "clair-obscur-a-on",
+      "type": "Bronze"
+    },
+    {
+      "description": "Derrote Sprong.",
+      "is_missable": 0,
+      "is_spoiler": 1,
+      "name": "Sprong",
+      "name_pt": "Sprong",
+      "tip": "Chefe opcional; ajuste build e volte mais tarde se necessário.",
+      "trophy_code": "clair-obscur-sprong",
+      "type": "Bronze"
+    },
+    {
+      "description": "Alcance o nível 7 de relacionamento com Sciel.",
+      "is_missable": 0,
+      "is_spoiler": 0,
+      "name": "Sciel",
+      "name_pt": "Sciel",
+      "tip": "Assista às interações de acampamento de Sciel conforme forem liberadas.",
+      "trophy_code": "clair-obscur-sciel",
+      "type": "Bronze"
+    },
+    {
+      "description": "Alcance o nível 7 de relacionamento com Monoco.",
+      "is_missable": 0,
+      "is_spoiler": 0,
+      "name": "Monoco",
+      "name_pt": "Monoco",
+      "tip": "Avance as conversas e cenas de Monoco no acampamento até o nível 7.",
+      "trophy_code": "clair-obscur-monoco",
+      "type": "Bronze"
+    },
+    {
+      "description": "Alcance o nível 7 de relacionamento com Maelle.",
+      "is_missable": 1,
+      "is_spoiler": 1,
+      "name": "Maelle",
+      "name_pt": "Maelle",
+      "tip": "Perdível/sensível: acompanhe as interações de Maelle e a escolha Truth de relacionamento antes de avançar demais na campanha.",
+      "trophy_code": "clair_obscur_expedition_33_maelle",
+      "type": "Bronze"
+    },
+    {
+      "description": "Alcance o nível 7 de relacionamento com Lune.",
+      "is_missable": 0,
+      "is_spoiler": 0,
+      "name": "Lune",
+      "name_pt": "Lune",
+      "tip": "Complete as interações de Lune no acampamento até o nível 7.",
+      "trophy_code": "clair-obscur-lune",
+      "type": "Bronze"
+    },
+    {
+      "description": "Alcance o nível 7 de relacionamento com Esquie.",
+      "is_missable": 0,
+      "is_spoiler": 0,
+      "name": "Esquie",
+      "name_pt": "Esquie",
+      "tip": "Avance o relacionamento de Esquie; isso também ajuda a liberar travessias importantes.",
+      "trophy_code": "clair-obscur-esquie",
+      "type": "Bronze"
+    },
+    {
+      "description": "Aprimore uma arma uma vez.",
+      "is_missable": 0,
+      "is_spoiler": 0,
+      "name": "Weapon Upgrade",
+      "name_pt": "Aprimoramento de Arma",
+      "tip": "Use materiais para melhorar qualquer arma pela primeira vez.",
+      "trophy_code": "clair-obscur-weapon-upgrade",
+      "type": "Bronze"
+    },
+    {
+      "description": "Aprimore totalmente uma arma.",
+      "is_missable": 0,
+      "is_spoiler": 0,
+      "name": "Weapon Mastery",
+      "name_pt": "Maestria Bélica",
+      "tip": "Escolha uma arma principal e concentre materiais raros nela até o nível máximo.",
+      "trophy_code": "clair-obscur-weapon-mastery",
+      "type": "Bronze"
+    },
+    {
+      "description": "Consuma um ponto de Lumina.",
+      "is_missable": 0,
+      "is_spoiler": 0,
+      "name": "Lumina",
+      "name_pt": "Lumina",
+      "tip": "Use um ponto de Lumina em qualquer personagem.",
+      "trophy_code": "clair-obscur-lumina",
+      "type": "Bronze"
+    },
+    {
+      "description": "Alcance o nível 33.",
+      "is_missable": 0,
+      "is_spoiler": 0,
+      "name": "Expeditioner",
+      "name_pt": "Expedicionário",
+      "tip": "Virá naturalmente durante a campanha se você enfrentar encontros e chefes opcionais.",
+      "trophy_code": "clair-obscur-expeditioner",
+      "type": "Bronze"
+    },
+    {
+      "description": "Alcance o nível 66.",
+      "is_missable": 0,
+      "is_spoiler": 0,
+      "name": "Trailbreaker",
+      "name_pt": "Desbravador",
+      "tip": "Normalmente vem perto do fim da campanha ou durante o conteúdo opcional.",
+      "trophy_code": "clair-obscur-trailbreaker",
+      "type": "Bronze"
+    },
+    {
+      "description": "Alcance o nível 99.",
+      "is_missable": 0,
+      "is_spoiler": 0,
+      "name": "Survivor",
+      "name_pt": "Sobrevivente",
+      "tip": "Grind de endgame; deixe para depois de chefes opcionais, Torre Eterna e cleanup principal.",
+      "trophy_code": "clair-obscur-survivor",
+      "type": "Bronze"
+    },
+    {
+      "description": "Com Gustave, use um Overcharge totalmente carregado que quebre um inimigo.",
+      "is_missable": 0,
+      "is_spoiler": 0,
+      "name": "Overcharge",
+      "name_pt": "Sobrecarga",
+      "tip": "Carregue Overcharge ao máximo e use contra um inimigo com barra de Break preparada.",
+      "trophy_code": "clair-obscur-overcharge",
+      "type": "Bronze"
+    },
+    {
+      "description": "Com Lune, consuma Stains por 4 turnos seguidos.",
+      "is_missable": 0,
+      "is_spoiler": 0,
+      "name": "Perfect Flow",
+      "name_pt": "Fluxo Perfeito",
+      "tip": "Monte uma rotação de Lune que gere e consuma Stains em sequência.",
+      "trophy_code": "clair-obscur-perfect-flow",
+      "type": "Bronze"
+    },
+    {
+      "description": "Com Maelle, use Percée em um inimigo marcado enquanto estiver em Virtuose Stance.",
+      "is_missable": 0,
+      "is_spoiler": 0,
+      "name": "Synergy",
+      "name_pt": "Sinergia",
+      "tip": "Marque o alvo, entre em Virtuose Stance e use Percée com Maelle.",
+      "trophy_code": "clair-obscur-synergy",
+      "type": "Bronze"
+    },
+    {
+      "description": "Com Sciel, consuma 20 Foretell em um único alvo durante Twilight.",
+      "is_missable": 0,
+      "is_spoiler": 0,
+      "name": "Maximisation",
+      "name_pt": "Cruz Celta",
+      "tip": "Acumule Foretell em um alvo e consuma 20 durante Twilight.",
+      "trophy_code": "clair-obscur-maximisation",
+      "type": "Bronze"
+    },
+    {
+      "description": "Com Verso, alcance Rank S.",
+      "is_missable": 0,
+      "is_spoiler": 0,
+      "name": "Perfection",
+      "name_pt": "Perfeição",
+      "tip": "Use Verso evitando dano e mantendo boa sequência de ações até chegar ao Rank S.",
+      "trophy_code": "clair-obscur-perfection",
+      "type": "Bronze"
+    },
+    {
+      "description": "Com Monoco, lance uma habilidade aprimorada por 4 turnos seguidos.",
+      "is_missable": 0,
+      "is_spoiler": 0,
+      "name": "Wheel Control",
+      "name_pt": "Controle Bestial",
+      "tip": "Prepare AP e rotação para usar habilidades aprimoradas de Monoco em sequência.",
+      "trophy_code": "clair-obscur-wheel-control",
+      "type": "Bronze"
+    },
+    {
+      "description": "Derrote o Chromatic Pétank.",
+      "is_missable": 0,
+      "is_spoiler": 1,
+      "name": "Carreau Parfait",
+      "name_pt": "Carreau Parfait",
+      "tip": "Chefe opcional; impeça fugas e use dano alto para encerrar a luta com segurança.",
+      "trophy_code": "clair-obscur-carreau-parfait",
+      "type": "Bronze"
+    },
+    {
+      "description": "Desbloqueie todos os personagens jogáveis.",
+      "is_missable": 0,
+      "is_spoiler": 0,
+      "name": "Expedition 33",
+      "name_pt": "Expedição 33",
+      "tip": "Troféu de história por reunir o grupo jogável completo.",
+      "trophy_code": "clair-obscur-expedition-33-trophy",
+      "type": "Bronze"
+    },
+    {
+      "description": "Use um Gradient Attack de nível 3.",
+      "is_missable": 0,
+      "is_spoiler": 0,
+      "name": "Chroma Proficiency",
+      "name_pt": "Proficiente em Chroma",
+      "tip": "Carregue a barra até o nível 3 e use o Gradient Attack em uma luta longa.",
+      "trophy_code": "clair-obscur-chroma-proficiency",
+      "type": "Bronze"
+    },
+    {
+      "description": "Encontre todas as 33 canções.",
+      "is_missable": 1,
+      "is_spoiler": 0,
+      "name": "Connoisseur",
+      "name_pt": "Connoisseur",
+      "tip": "Perdível/sensível: acompanhe as 33 canções e interações desde cedo, especialmente as que podem depender de progresso de campanha.",
+      "trophy_code": "clair_obscur_expedition_33_connoisseur",
+      "type": "Bronze"
+    },
+    {
+      "description": "Quebre uma Paint Cage.",
+      "is_missable": 0,
+      "is_spoiler": 0,
+      "name": "Paint Cage",
+      "name_pt": "Prisão Cromática",
+      "tip": "Encontre uma Paint Cage e destrua os nós de tinta relacionados para abri-la.",
+      "trophy_code": "clair-obscur-paint-cage",
+      "type": "Bronze"
+    },
+    {
+      "description": "Quebre um inimigo.",
+      "is_missable": 0,
+      "is_spoiler": 0,
+      "name": "Time to Spill Some Ink",
+      "name_pt": "Derramamento de Tintas",
+      "tip": "Encha a barra de Break de um inimigo e use uma habilidade para quebrá-lo.",
+      "trophy_code": "clair-obscur-time-to-spill-ink",
+      "type": "Bronze"
+    },
+    {
+      "description": "Derrote um chefe sem tomar dano.",
+      "is_missable": 1,
+      "is_spoiler": 0,
+      "name": "Professional",
+      "name_pt": "Profissional",
+      "tip": "Perdível/sensível: deixe um chefe controlável para voltar mais tarde, ou garanta o troféu antes de eliminar todos os chefes disponíveis.",
+      "trophy_code": "clair_obscur_expedition_33_professional",
+      "type": "Bronze"
+    },
+    {
+      "description": "Veja uma cena opcional no acampamento.",
+      "is_missable": 0,
+      "is_spoiler": 0,
+      "name": "Curious",
+      "name_pt": "Curiosidade",
+      "tip": "Interaja no acampamento quando cenas opcionais aparecerem. Não entra na contagem conservadora de 5 perdíveis.",
+      "trophy_code": "clair-obscur-curious",
+      "type": "Bronze"
+    },
+    {
+      "description": "Desbloqueie Esquie.",
+      "is_missable": 0,
+      "is_spoiler": 0,
+      "name": "Legend",
+      "name_pt": "Lenda Viva",
+      "tip": "Troféu de história por liberar Esquie.",
+      "trophy_code": "clair-obscur-legend",
+      "type": "Bronze"
+    },
+    {
+      "description": "Derrote o mímico em Lumière.",
+      "is_missable": 1,
+      "is_spoiler": 0,
+      "name": "A Peculiar Encounter",
+      "name_pt": "Um Encontro Peculiar",
+      "tip": "Perdível/sensível: derrote o mímico específico de Lumière durante o prólogo antes de avançar a campanha.",
+      "trophy_code": "clair_obscur_expedition_33_a_peculiar_encounter",
+      "type": "Bronze"
+    }
+  ]
+}

@@ -1,0 +1,608 @@
+{
+  "game": {
+    "avoid_if": "Evite se você não gosta de limpar mapa, coletáveis e atividades repetidas em mundo aberto.",
+    "before_you_start": "Não há perdíveis relevantes na lista base, então dá para jogar sem medo de travar a platina.",
+    "best_for": "Ideal para quem quer uma platina de mundo aberto bonita, acessível e com checklist claro.",
+    "cleanup_advice": "Depois da história, use o mapa para limpar regiões, coletáveis, santuários, haiku, faróis, bambus e atividades restantes.",
+    "cover_image": "/assets/games/ghost-of-tsushima/cover.jpg",
+    "coverage_level": "strong",
+    "created_at": "2026-05-09 19:53:22",
+    "difficulty": 4,
+    "difficulty_reason": "A platina é acessível; a dificuldade vem mais do volume de atividades e exploração do que de execução extrema.",
+    "dlc_scope": "DLC fora da platina base. Iki Island, Legends e New Game+ ficam fora da platina base.",
+    "editorial_notes": "Revisão editorial focada na lista base de 52 troféus. Legends/co-op, Iki Island e New Game+ ficam fora da platina base. Nomes PT-BR preenchidos a partir da localização brasileira oficial da Steam.",
+    "editorial_review_status": "verified",
+    "editorial_status": "published",
+    "first_run_advice": "Jogue a campanha explorando naturalmente, mas avance side tales e atividades para reduzir o cleanup final.",
+    "grind_summary": "O peso está em exploração de mundo aberto, atividades, side tales, coletáveis e libertação de áreas.",
+    "guide_avoid": null,
+    "guide_best_moment": null,
+    "guide_dlc": null,
+    "guide_grind": null,
+    "guide_ideal": null,
+    "guide_online": null,
+    "guide_runs": null,
+    "image": "/assets/games/ghost-of-tsushima/hero.jpg",
+    "is_verified": 1,
+    "last_reviewed_at": "2026-05-18",
+    "missable": "Não há troféus perdíveis relevantes na lista base. A platina pode ser feita em uma única campanha, com cleanup livre no pós-jogo.",
+    "missable_summary": "Não há troféus perdíveis na lista base; tudo pode ser limpo depois da história em free roam.",
+    "name": "Ghost of Tsushima",
+    "online_summary": "Não há troféus online, coop obrigatório, multiplayer ou PS+ para a platina base. Legends/online fica fora deste guia de lista base.",
+    "quality_warnings": "[]",
+    "reviewed_by": "",
+    "runs_summary": "Uma playthrough com cleanup livre no pós-jogo. A platina base não exige múltiplas runs.",
+    "slug": "ghost-of-tsushima",
+    "time": "40-50h",
+    "time_bucket": "medium",
+    "time_max_hours": 50,
+    "time_min_hours": 40,
+    "time_reason": "A faixa de 40-50 horas considera campanha, side content, coletáveis, libertação de áreas e cleanup.",
+    "time_sort_hours": 40,
+    "updated_at": "2026-06-27 02:37:00",
+    "verification_note": "Guia revisado editorialmente para a lista base.",
+    "verification_status": "verified",
+    "walkthrough": null
+  },
+  "redirects": [],
+  "roadmaps": [
+    {
+      "content": "{\"title\":\"Avance a história e libere recursos básicos\",\"focus\":\"Campanha principal\",\"objective\":\"Progredir pela história enquanto desbloqueia ferramentas, posturas, técnicas e acesso gradual às regiões.\",\"actions\":[\"Avance os contos principais até abrir melhor o mapa.\",\"Use os primeiros pontos de técnica para melhorar combate, furtividade e exploração.\",\"Ative pontos de viagem rápida sempre que possível.\",\"Faça atividades próximas ao caminho sem tentar limpar tudo cedo demais.\"],\"warning\":\"\",\"result\":\"Jin preparado para explorar Tsushima com mais recursos e menos retrabalho.\"}",
+      "step_order": 1
+    },
+    {
+      "content": "{\"title\":\"Liberte regiões e revele o mapa\",\"focus\":\"Exploração\",\"objective\":\"Reduzir a névoa do mapa e abrir atividades importantes em Izuhara, Toyotama e Kamiagata.\",\"actions\":[\"Liberte acampamentos mongóis conforme eles ficarem acessíveis.\",\"Use pássaros dourados, raposas e fumaça no horizonte para localizar atividades.\",\"Complete fontes termais, bambus, haiku e santuários quando estiverem no caminho.\",\"Marque pendências por região no checklist.\"],\"warning\":\"\",\"result\":\"Mapa mais aberto e atividades da platina mais fáceis de organizar.\"}",
+      "step_order": 2
+    },
+    {
+      "content": "{\"title\":\"Complete Tales e Mythic Tales\",\"focus\":\"Missões secundárias\",\"objective\":\"Concluir histórias secundárias importantes para recursos, técnicas, armaduras e troféus.\",\"actions\":[\"Faça Mythic Tales assim que ficarem disponíveis.\",\"Complete linhas de aliados como Ishikawa, Masako, Norio e Yuna.\",\"Intercale contos secundários com a campanha para evitar limpeza pesada no final.\",\"Use o checklist para separar Tales concluídos dos pendentes.\"],\"warning\":\"\",\"result\":\"Principais missões paralelas concluídas e pós-jogo mais leve.\"}",
+      "step_order": 3
+    },
+    {
+      "content": "{\"title\":\"Limpe coletáveis e atividades de mundo aberto\",\"focus\":\"Coletáveis\",\"objective\":\"Finalizar atividades exigidas pela platina base sem misturar conteúdo de DLC.\",\"actions\":[\"Complete santuários Shinto e Inari, fontes termais, haiku, bambus e faróis.\",\"Procure altares escondidos, Records e artefatos mongóis.\",\"Finalize duelos, acampamentos e atividades restantes por região.\",\"Priorize uma região por vez para não se perder no cleanup.\"],\"warning\":\"Iki Island, New Game+ e Legends não são obrigatórios para a platina base.\",\"result\":\"Coletáveis e atividades principais encaminhados sem incluir extras fora da lista base.\"}",
+      "step_order": 4
+    },
+    {
+      "content": "{\"title\":\"Use o free roam para cleanup final\",\"focus\":\"Pós-história\",\"objective\":\"Aproveitar o free roam/exploração livre após a campanha para fechar o que ficou pendente.\",\"actions\":[\"Volte às regiões com atividades incompletas.\",\"Finalize troféus miscelâneos e cosméticos da lista base.\",\"Confira contos, coletáveis e atividades regionais restantes.\",\"Verifique se nenhum troféu da lista base ficou sem progresso.\"],\"warning\":\"\",\"result\":\"Quase toda a lista base concluída antes da revisão final.\"}",
+      "step_order": 5
+    },
+    {
+      "content": "{\"title\":\"Revise a lista base e feche Living Legend\",\"focus\":\"Checklist final\",\"objective\":\"Confirmar todos os requisitos da platina base antes de encerrar o guia.\",\"actions\":[\"Revise a contagem total da lista base e os troféus restantes.\",\"Confirme que não está contando Iki Island, New Game+ ou Legends como obrigatórios.\",\"Verifique se não há troféus online marcados como necessários para a platina base.\",\"Feche qualquer pendência de exploração, contos ou atividades.\"],\"warning\":\"\",\"result\":\"Lista base concluída e troféu de platina Living Legend liberado.\"}",
+      "step_order": 6
+    }
+  ],
+  "schemaVersion": 1,
+  "seedExtras": {
+    "aliases": [],
+    "attentionPoints": [],
+    "checklist": [],
+    "faq": [],
+    "note": "Campos exportados para auditoria. O SQLite atual nao possui colunas nativas para todos esses extras; a importacao preserva o que o banco suporta.",
+    "quickDecision": null,
+    "seo": {},
+    "tags": []
+  },
+  "slug": "ghost-of-tsushima",
+  "trophies": [
+    {
+      "description": "Obtenha todos os troféus do jogo base.",
+      "is_missable": 0,
+      "is_spoiler": 0,
+      "name": "Living Legend",
+      "name_pt": "Lenda Viva",
+      "tip": "A platina pede os 51 troféus da lista base. New Game+, Legends e Iki Island não contam para a platina principal.",
+      "trophy_code": "got_living_legend",
+      "type": "Platina"
+    },
+    {
+      "description": "Recupere a katana do clã Sakai.",
+      "is_missable": 0,
+      "is_spoiler": 0,
+      "name": "Gathering Storm",
+      "name_pt": "Tempestade Crescente",
+      "tip": "Sai naturalmente no início da campanha.",
+      "trophy_code": "got_gathering_storm",
+      "type": "Bronze"
+    },
+    {
+      "description": "Quebre seu código para ajudar um novo amigo.",
+      "is_missable": 0,
+      "is_spoiler": 1,
+      "name": "Point of No Return",
+      "name_pt": "Ponto Sem Volta",
+      "tip": "Troféu de progressão automática da história.",
+      "trophy_code": "got_point_of_no_return",
+      "type": "Bronze"
+    },
+    {
+      "description": "Recrute os ronin Chapéus de Palha.",
+      "is_missable": 0,
+      "is_spoiler": 1,
+      "name": "Company of Wolves",
+      "name_pt": "Companhia dos Lobos",
+      "tip": "Desbloqueado ao avançar no Ato 1.",
+      "trophy_code": "got_company_of_wolves",
+      "type": "Bronze"
+    },
+    {
+      "description": "Resgate Taka do cativeiro mongol.",
+      "is_missable": 0,
+      "is_spoiler": 1,
+      "name": "Stoking the Flame",
+      "name_pt": "Atiçando a Chama",
+      "tip": "Marco automático da campanha.",
+      "trophy_code": "got_stoking_the_flame",
+      "type": "Bronze"
+    },
+    {
+      "description": "Libere Lord Shimura das garras do Khan.",
+      "is_missable": 0,
+      "is_spoiler": 1,
+      "name": "Family Reunion",
+      "name_pt": "Reunião de Família",
+      "tip": "Sai ao concluir o clímax do Ato 2.",
+      "trophy_code": "got_family_reunion",
+      "type": "Bronze"
+    },
+    {
+      "description": "Mobilize os camponeses de Yarikawa.",
+      "is_missable": 0,
+      "is_spoiler": 1,
+      "name": "Leader of the People",
+      "name_pt": "Líder do Povo",
+      "tip": "Troféu de progressão do Ato 2.",
+      "trophy_code": "got_leader_of_the_people",
+      "type": "Bronze"
+    },
+    {
+      "description": "Recupere a armadura do seu pai.",
+      "is_missable": 0,
+      "is_spoiler": 1,
+      "name": "Birthright",
+      "name_pt": "Direito Inato",
+      "tip": "Desbloqueado naturalmente durante a história principal.",
+      "trophy_code": "got_birthright",
+      "type": "Bronze"
+    },
+    {
+      "description": "Erradique os traidores em nome de um amigo caído.",
+      "is_missable": 0,
+      "is_spoiler": 1,
+      "name": "Dying Embers",
+      "name_pt": "Brasas Moribundas",
+      "tip": "Marco do Ato 3.",
+      "trophy_code": "got_dying_embers",
+      "type": "Bronze"
+    },
+    {
+      "description": "Abrace sua nova identidade.",
+      "is_missable": 0,
+      "is_spoiler": 1,
+      "name": "The Ghost",
+      "name_pt": "O Fantasma",
+      "tip": "Sai naturalmente perto da reta final.",
+      "trophy_code": "got_the_ghost",
+      "type": "Bronze"
+    },
+    {
+      "description": "Reencontre seus aliados no norte congelado.",
+      "is_missable": 0,
+      "is_spoiler": 1,
+      "name": "The Exiled Alliance",
+      "name_pt": "A Aliança Exilada",
+      "tip": "Desbloqueado no começo do Ato 3.",
+      "trophy_code": "got_the_exiled_alliance",
+      "type": "Bronze"
+    },
+    {
+      "description": "Confronte o Khan.",
+      "is_missable": 0,
+      "is_spoiler": 1,
+      "name": "Sovereign End",
+      "name_pt": "Fim Soberano",
+      "tip": "Sai naturalmente no fim da campanha.",
+      "trophy_code": "got_sovereign_end",
+      "type": "Bronze"
+    },
+    {
+      "description": "Deixe o passado para trás e aceite o peso do seu novo manto.",
+      "is_missable": 0,
+      "is_spoiler": 1,
+      "name": "Mono No Aware",
+      "name_pt": "Mono No Aware",
+      "tip": "Troféu do final da história. Qualquer escolha final serve.",
+      "trophy_code": "got_mono_no_aware",
+      "type": "Ouro"
+    },
+    {
+      "description": "Conclua todos os Contos de Norio.",
+      "is_missable": 0,
+      "is_spoiler": 0,
+      "name": "The Warrior Monk",
+      "name_pt": "O Monge Guerreiro",
+      "tip": "A linha do Norio se estende até o Ato 3. Faça todas as missões dele antes de encerrar o cleanup.",
+      "trophy_code": "got_warrior_monk",
+      "type": "Prata"
+    },
+    {
+      "description": "Conclua todos os Contos de Masako.",
+      "is_missable": 0,
+      "is_spoiler": 0,
+      "name": "The Vengeful Warrior",
+      "name_pt": "A Guerreira Vingativa",
+      "tip": "A maior parte aparece cedo; acompanhe a cadeia inteira até o fim.",
+      "trophy_code": "got_vengeful_warrior",
+      "type": "Prata"
+    },
+    {
+      "description": "Conclua todos os Contos de Ishikawa.",
+      "is_missable": 0,
+      "is_spoiler": 0,
+      "name": "The Unbending Archer",
+      "name_pt": "O Arqueiro Inflexível",
+      "tip": "Ishikawa tem várias missões espalhadas por atos diferentes. Vá limpando conforme a região abrir.",
+      "trophy_code": "got_unbending_archer",
+      "type": "Prata"
+    },
+    {
+      "description": "Conclua todos os Contos de Yuna.",
+      "is_missable": 0,
+      "is_spoiler": 0,
+      "name": "The Headstrong Thief",
+      "name_pt": "A Ladra Obstinada",
+      "tip": "Alguns Contos da Yuna são obrigatórios, mas faça a cadeia completa para o troféu.",
+      "trophy_code": "got_headstrong_thief",
+      "type": "Prata"
+    },
+    {
+      "description": "Conclua todos os Contos Míticos.",
+      "is_missable": 0,
+      "is_spoiler": 0,
+      "name": "Teller of Tales",
+      "name_pt": "Narrador de Contos",
+      "tip": "São 7 no jogo base. Eles rendem técnicas e equipamentos muito úteis, então vale encaixar cedo.",
+      "trophy_code": "got_teller_of_tales",
+      "type": "Prata"
+    },
+    {
+      "description": "Conclua todos os Tales of Tsushima.",
+      "is_missable": 0,
+      "is_spoiler": 0,
+      "name": "Helping Sword Hand",
+      "name_pt": "Amigo do Povo",
+      "tip": "É o troféu mais fácil de ficar pendente por uma side quest pequena. No pós-jogo, fale com NPCs com balão de fala e use o diário para conferir o que falta.",
+      "trophy_code": "got_helping_sword_hand",
+      "type": "Ouro"
+    },
+    {
+      "description": "Derrote 20 inimigos com um contra-ataque após um Aparo Perfeito.",
+      "is_missable": 0,
+      "is_spoiler": 0,
+      "name": "Flash of Steel",
+      "name_pt": "Lampejo de Aço",
+      "tip": "Pratique parry perfeito em inimigos básicos e finalize com o contra-ataque.",
+      "trophy_code": "got_flash_of_steel",
+      "type": "Bronze"
+    },
+    {
+      "description": "Atire uma flecha em um inimigo aterrorizado enquanto ele foge.",
+      "is_missable": 0,
+      "is_spoiler": 0,
+      "name": "Witness Protection",
+      "name_pt": "Proteção de Testemunha",
+      "tip": "Use Ghost Stance ou efeitos de terror e finalize um inimigo em fuga com o arco.",
+      "trophy_code": "got_witness_protection",
+      "type": "Bronze"
+    },
+    {
+      "description": "Derrote a quantidade máxima de inimigos dentro de um único confronto.",
+      "is_missable": 0,
+      "is_spoiler": 0,
+      "name": "All in the Wrist",
+      "name_pt": "Destreza do Guerreiro",
+      "tip": "Precisa dos upgrades de standoff. Espere ter aumentado a cadeia e faça em um grupo grande.",
+      "trophy_code": "got_all_in_the_wrist",
+      "type": "Bronze"
+    },
+    {
+      "description": "Atordoe inimigos 50 vezes.",
+      "is_missable": 0,
+      "is_spoiler": 0,
+      "name": "Open for Business",
+      "name_pt": "Aberto para Negócios",
+      "tip": "Use a postura correta contra cada tipo de inimigo para quebrar a guarda rapidamente.",
+      "trophy_code": "got_open_for_business",
+      "type": "Bronze"
+    },
+    {
+      "description": "Conclua todos os duelos com sucesso.",
+      "is_missable": 0,
+      "is_spoiler": 0,
+      "name": "There Can Be Only One",
+      "name_pt": "Só Pode Haver Um",
+      "tip": "Inclui duelos da história e dos Contos Míticos principais. Faça tudo antes de fechar a limpeza.",
+      "trophy_code": "got_there_can_be_only_one",
+      "type": "Bronze"
+    },
+    {
+      "description": "Mate um inimigo com dano de queda ao derrubá-lo de uma borda.",
+      "is_missable": 0,
+      "is_spoiler": 0,
+      "name": "Have a Nice Fall",
+      "name_pt": "Tenha uma Boa Queda",
+      "tip": "Use chute da postura do vento em encostas, fortes ou penhascos.",
+      "trophy_code": "got_have_a_nice_fall",
+      "type": "Prata"
+    },
+    {
+      "description": "Mate 20 inimigos com golpes da Postura Fantasma.",
+      "is_missable": 0,
+      "is_spoiler": 0,
+      "name": "Haunting Precision",
+      "name_pt": "Precisão Assombrosa",
+      "tip": "Após desbloquear a stance, use-a em acampamentos grandes para acumular o requisito rapidamente.",
+      "trophy_code": "got_haunting_precision",
+      "type": "Bronze"
+    },
+    {
+      "description": "Consolide sua lenda para obter o título de Fantasma de Tsushima.",
+      "is_missable": 0,
+      "is_spoiler": 0,
+      "name": "The Ghost of Legend",
+      "name_pt": "O Fantasma da Lenda",
+      "tip": "Vem naturalmente ao concluir história, side quests e atividades do mapa.",
+      "trophy_code": "got_ghost_of_legend",
+      "type": "Bronze"
+    },
+    {
+      "description": "Aprenda as posturas de combate da Pedra, da Água, do Vento e da Lua.",
+      "is_missable": 0,
+      "is_spoiler": 0,
+      "name": "Quick Study",
+      "name_pt": "Um Guerreiro Excepcional",
+      "tip": "Observe líderes mongóis antes de matá-los para acelerar o desbloqueio das posturas.",
+      "trophy_code": "got_quick_study",
+      "type": "Bronze"
+    },
+    {
+      "description": "Obtenha todas as técnicas das Armas Fantasmas de arremesso.",
+      "is_missable": 0,
+      "is_spoiler": 0,
+      "name": "Every Trick in the Book",
+      "name_pt": "Mestre das Artimanhas",
+      "tip": "Você precisa liberar kunai, bombas de fumaça, sticky bomb, black powder bomb e wind chimes/firecrackers conforme a árvore.",
+      "trophy_code": "got_every_trick_in_the_book",
+      "type": "Bronze"
+    },
+    {
+      "description": "Aprimore sua espada ao máximo.",
+      "is_missable": 0,
+      "is_spoiler": 0,
+      "name": "The Perfect Storm",
+      "name_pt": "A Tempestade Perfeita",
+      "tip": "Priorize suprimentos, ferro, aço e ouro em fortes e acampamentos mongóis.",
+      "trophy_code": "got_the_perfect_storm",
+      "type": "Bronze"
+    },
+    {
+      "description": "Equipe um amuleto em todos os 6 espaços.",
+      "is_missable": 0,
+      "is_spoiler": 0,
+      "name": "A Charming Man",
+      "name_pt": "Um Homem de Sorte",
+      "tip": "Você libera os slots ao avançar e consegue charms extras em shrines e atividades.",
+      "trophy_code": "got_a_charming_man",
+      "type": "Bronze"
+    },
+    {
+      "description": "Colete 10 donativos.",
+      "is_missable": 0,
+      "is_spoiler": 0,
+      "name": "Gifted",
+      "name_pt": "Donatário",
+      "tip": "Presentes aparecem no Altar das Oferendas em cidades e pousadas enquanto você explora o mapa.",
+      "trophy_code": "got_gifted",
+      "type": "Bronze"
+    },
+    {
+      "description": "Obtenha 30 peças de Equipamentos Cosméticos.",
+      "is_missable": 0,
+      "is_spoiler": 0,
+      "name": "Slay",
+      "name_pt": "Arrasador",
+      "tip": "Explore pilares da honra, mercadores e recompensas de missões.",
+      "trophy_code": "got_slay",
+      "type": "Bronze"
+    },
+    {
+      "description": "Reacenda todos os faróis de Tsushima.",
+      "is_missable": 0,
+      "is_spoiler": 0,
+      "name": "Light the Way",
+      "name_pt": "Iluminando o Caminho",
+      "tip": "Faça enquanto limpa o mapa costeiro; o vento guia ajuda bastante.",
+      "trophy_code": "got_light_the_way",
+      "type": "Bronze"
+    },
+    {
+      "description": "Descubra Umugi Cove.",
+      "is_missable": 0,
+      "is_spoiler": 0,
+      "name": "Den of Thieves",
+      "name_pt": "Covil de Ladrões",
+      "tip": "Sai naturalmente ao avançar em Toyotama.",
+      "trophy_code": "got_den_of_thieves",
+      "type": "Bronze"
+    },
+    {
+      "description": "Encontre e honre todos os santuários xintoístas de Tsushima.",
+      "is_missable": 0,
+      "is_spoiler": 0,
+      "name": "Favor of the Kami",
+      "name_pt": "Bênção dos Kamis",
+      "tip": "São locais de plataforma. Faça com calma e marque no mapa os que faltarem.",
+      "trophy_code": "got_favor_of_the_kami",
+      "type": "Bronze"
+    },
+    {
+      "description": "Faça reverência em 10 altares escondidos de Tsushima.",
+      "is_missable": 0,
+      "is_spoiler": 0,
+      "name": "Honor the Unseen",
+      "name_pt": "Honra ao Oculto",
+      "tip": "Use placas com o ícone de reverência ou siga um guia/checklist no cleanup.",
+      "trophy_code": "got_honor_the_unseen",
+      "type": "Bronze"
+    },
+    {
+      "description": "Descubra um Pilar da Honra e colete seu Kit de Espada.",
+      "is_missable": 0,
+      "is_spoiler": 0,
+      "name": "Lost and Found",
+      "name_pt": "Achados e Perdidos",
+      "tip": "Sai no primeiro Pilar da Honra que você visitar.",
+      "trophy_code": "got_lost_and_found",
+      "type": "Bronze"
+    },
+    {
+      "description": "Compre um item dos Mercadores de Tintura Preta e Branca.",
+      "is_missable": 0,
+      "is_spoiler": 0,
+      "name": "Monochrome Masters",
+      "name_pt": "Mestres Monocromáticos",
+      "tip": "Os dois mercadores ficam em regiões diferentes do mapa e vendem variações cosméticas.",
+      "trophy_code": "got_monochrome_masters",
+      "type": "Bronze"
+    },
+    {
+      "description": "Vista-se como um ladrão lendário.",
+      "is_missable": 0,
+      "is_spoiler": 0,
+      "name": "Cooper Clan Cosplayer",
+      "name_pt": "Cosplayer do Clã Cooper",
+      "tip": "Equipe a armadura de Gosaku, a tinta Ocean's Guardian, uma bandana torta e o sword kit Sly Tanuki.",
+      "trophy_code": "got_cooper_clan_cosplayer",
+      "type": "Prata"
+    },
+    {
+      "description": "Toque “Lamento da Tempestade” no túmulo de um amigo.",
+      "is_missable": 0,
+      "is_spoiler": 1,
+      "name": "Dirge of the Fallen Forge",
+      "name_pt": "A Elegia da Forja Caída",
+      "tip": "Você precisa coletar grilos cantores suficientes para desbloquear a música na flauta.",
+      "trophy_code": "got_dirge_of_the_fallen_forge",
+      "type": "Bronze"
+    },
+    {
+      "description": "Personalize uma cena no Modo Foto.",
+      "is_missable": 0,
+      "is_spoiler": 0,
+      "name": "A Moment in Time",
+      "name_pt": "Um Instante no Tempo",
+      "tip": "Abra o Photo Mode e altere qualquer parâmetro da cena.",
+      "trophy_code": "got_a_moment_in_time",
+      "type": "Bronze"
+    },
+    {
+      "description": "Colete 20 registros.",
+      "is_missable": 0,
+      "is_spoiler": 0,
+      "name": "Avid Reader",
+      "name_pt": "Leitor Assíduo",
+      "tip": "Use o Traje do Viajante e vento guia para localizar documentos mais rápido.",
+      "trophy_code": "got_avid_reader",
+      "type": "Bronze"
+    },
+    {
+      "description": "Colete 20 artefatos mongóis.",
+      "is_missable": 0,
+      "is_spoiler": 0,
+      "name": "Know Your Enemy",
+      "name_pt": "Conheça o Inimigo",
+      "tip": "Esses itens costumam estar em acampamentos e fortalezas mongóis.",
+      "trophy_code": "got_know_your_enemy",
+      "type": "Bronze"
+    },
+    {
+      "description": "Conclua todas as Fontes Termais, Haikus, Santuários de Inari e Desafios do Bambu.",
+      "is_missable": 0,
+      "is_spoiler": 0,
+      "name": "Body, Mind, and Spirit",
+      "name_pt": "Corpo, Mente e Espírito",
+      "tip": "É um grande troféu de cleanup. No jogo base, conte com 18 fontes termais, 19 haikais, 49 santuários Inari e 16 bambus.",
+      "trophy_code": "got_body_mind_and_spirit",
+      "type": "Prata"
+    },
+    {
+      "description": "Liberte 12 áreas dominadas em Izuhara.",
+      "is_missable": 0,
+      "is_spoiler": 0,
+      "name": "Hero of the People",
+      "name_pt": "Herói do Povo",
+      "tip": "Sai durante a limpeza do primeiro mapa.",
+      "trophy_code": "got_hero_of_the_people",
+      "type": "Bronze"
+    },
+    {
+      "description": "Liberte todas as áreas dominadas em Izuhara.",
+      "is_missable": 0,
+      "is_spoiler": 0,
+      "name": "A Fight For The Isle…",
+      "name_pt": "Batalha pela Ilha...",
+      "tip": "Ao fim do Ato 1, os acampamentos restantes costumam aparecer no mapa.",
+      "trophy_code": "got_a_fight_for_the_isle",
+      "type": "Bronze"
+    },
+    {
+      "description": "Liberte 8 áreas dominadas em Toyotama.",
+      "is_missable": 0,
+      "is_spoiler": 0,
+      "name": "Good Riddance",
+      "name_pt": "Já Vai Tarde",
+      "tip": "Sai naturalmente enquanto limpa a segunda região.",
+      "trophy_code": "got_good_riddance",
+      "type": "Bronze"
+    },
+    {
+      "description": "Liberte todas as áreas dominadas em Toyotama.",
+      "is_missable": 0,
+      "is_spoiler": 0,
+      "name": "Securing Sanctuary…",
+      "name_pt": "Santuário Seguro...",
+      "tip": "Os últimos pontos ficam mais rápidos de achar depois de progredir na campanha.",
+      "trophy_code": "got_securing_sanctuary",
+      "type": "Bronze"
+    },
+    {
+      "description": "Liberte 7 áreas dominadas em Kamiagata.",
+      "is_missable": 0,
+      "is_spoiler": 0,
+      "name": "Mass Eviction",
+      "name_pt": "Expulsão em Massa",
+      "tip": "Sai durante a limpeza da última região.",
+      "trophy_code": "got_mass_eviction",
+      "type": "Bronze"
+    },
+    {
+      "description": "Liberte todas as áreas dominadas em Kamiagata.",
+      "is_missable": 0,
+      "is_spoiler": 0,
+      "name": "A New Safe Haven",
+      "name_pt": "Um Novo Refúgio",
+      "tip": "Combine com side quests e colecionáveis da região final para economizar viagem.",
+      "trophy_code": "got_a_new_safe_haven",
+      "type": "Bronze"
+    },
+    {
+      "description": "Liberte toda a ilha de Tsushima.",
+      "is_missable": 0,
+      "is_spoiler": 0,
+      "name": "Master Liberator",
+      "name_pt": "Mestre Libertador",
+      "tip": "A platina praticamente passa por aqui. Complete todos os pontos vermelhos de ocupação no mapa.",
+      "trophy_code": "got_master_liberator",
+      "type": "Prata"
+    }
+  ]
+}

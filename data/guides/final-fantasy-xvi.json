@@ -1,0 +1,735 @@
+{
+  "game": {
+    "avoid_if": "Evite se voce nao quer repetir a campanha em dificuldade maior ou lidar com side content, Hunts e crafting.",
+    "before_you_start": "Entre sabendo que a platina exige New Game+/Final Fantasy Mode completo e atencao a materiais/crafting.",
+    "best_for": "Ideal para quem quer uma platina action RPG narrativa, longa, com campanha forte e segunda run obrigatoria.",
+    "cleanup_advice": "Antes e durante o Final Fantasy Mode, revise curiosities, Hunts, Chronolith Trials, crafting, ability mastery e trofeus especificos.",
+    "cover_image": "https://cdn.cloudflare.steamstatic.com/steam/apps/2515020/library_600x900.jpg",
+    "coverage_level": "strong",
+    "created_at": "2026-05-09 19:53:40",
+    "difficulty": 5,
+    "difficulty_reason": "A dificuldade vem do Final Fantasy Mode, Hunts, Chronolith Trials, bosses e dominio das habilidades, mas nao ha online obrigatorio.",
+    "dlc_scope": "Guia focado na lista base da platina; Echoes of the Fallen e The Rising Tide devem ficar separados se o projeto suportar DLC/add-ons. Nao use listas de Final Fantasy VII Remake, Final Fantasy VII Rebirth, Final Fantasy XV ou DLCs.",
+    "editorial_notes": "",
+    "editorial_review_status": null,
+    "editorial_status": "published",
+    "first_run_advice": "Faca side quests importantes, Hunts e explore o Hideaway com calma; evite vender materiais raros ate confirmar usos de crafting.",
+    "grind_summary": "O peso esta em Final Fantasy Mode, side quests, Hunts, Chronolith Trials, curiosities, ability mastery e crafting.",
+    "guide_avoid": null,
+    "guide_best_moment": null,
+    "guide_dlc": null,
+    "guide_grind": null,
+    "guide_ideal": null,
+    "guide_online": null,
+    "guide_runs": null,
+    "image": "https://cdn.cloudflare.steamstatic.com/steam/apps/2515020/header.jpg",
+    "is_verified": 0,
+    "last_reviewed_at": "",
+    "missable": "A lista base e offline e quase toda pode ser limpa por free-roam, Stage Replay ou New Game+. O ponto confirmado de atencao e Half Past Twilight: nao venda Ragnarok, Orichalcum, Darksteel, Primitive Battlehorn ou materiais raros antes de craftar Gotterdammerung.",
+    "missable_summary": "Half Past Twilight pode ser perdido se voce vender materiais de Gotterdammerung. O restante deve ser tratado como cleanup/atencao, nao como perdivel definitivo.",
+    "name": "Final Fantasy XVI",
+    "online_summary": "Nao ha exigencia online para a platina da lista base.",
+    "quality_warnings": "[]",
+    "reviewed_by": "",
+    "runs_summary": "Uma campanha inicial e uma segunda passagem completa no Final Fantasy Mode/New Game+. A platina exige planejamento de side content, habilidades e crafting.",
+    "slug": "final-fantasy-xvi",
+    "time": "70-90h",
+    "time_bucket": "long",
+    "time_max_hours": 90,
+    "time_min_hours": 70,
+    "time_reason": "A faixa de 70-90 horas considera campanha, side content, Hunts, Trials, crafting, ability mastery e Final Fantasy Mode.",
+    "time_sort_hours": 70,
+    "updated_at": "2026-06-27 02:36:58",
+    "verification_note": "Lista base de Final Fantasy XVI adicionada com checklist e roadmap completos, sem Echoes of the Fallen ou The Rising Tide; aguarda revisao editorial manual final.",
+    "verification_status": "review",
+    "walkthrough": null
+  },
+  "redirects": [],
+  "roadmaps": [
+    {
+      "content": "{\"title\":\"Avance pela campanha\",\"focus\":\"\",\"objective\":\"complete a primeira campanha em Story Focused ou Action Focused, fazendo side quests importantes, Hunts relevantes e explorando o Hideaway. Nao confunda esta lista com Final Fantasy XV, Final Fantasy VII Remake ou Final Fantasy VII Rebirth.\",\"actions\":[],\"warning\":\"\",\"result\":\"\"}",
+      "step_order": 1
+    },
+    {
+      "content": "{\"title\":\"Limpe pendências antes do NG+\",\"focus\":\"\",\"objective\":\"antes do NG+, limpe side quests, curiosities do Wall of Memories, Hunt Board/Notorious Marks, Chronolith Trials, areas do mapa e trofeus especificos.\",\"actions\":[],\"warning\":\"\",\"result\":\"\"}",
+      "step_order": 2
+    },
+    {
+      "content": "{\"title\":\"Prossiga pela rota planejada\",\"focus\":\"\",\"objective\":\"prepare equipamentos, habilidades, materiais e crafting. Nao venda Ragnarok, Orichalcum, Darksteel, Primitive Battlehorn ou materiais raros antes de craftar Gotterdammerung para Half Past Twilight.\",\"actions\":[],\"warning\":\"\",\"result\":\"\"}",
+      "step_order": 3
+    },
+    {
+      "content": "{\"title\":\"Termine história antes do NG+\",\"focus\":\"\",\"objective\":\"inicie New Game+ no Final Fantasy Mode e complete a campanha novamente para Fantasy, Finally. Esse modo so libera depois de terminar a historia uma vez.\",\"actions\":[],\"warning\":\"\",\"result\":\"\"}",
+      "step_order": 4
+    },
+    {
+      "content": "{\"title\":\"Revise pendências finais\",\"focus\":\"\",\"objective\":\"finalize ability mastery, crafting, Hunts/Trials pendentes, Patron Items, combat trophies e cleanup da lista base.\",\"actions\":[],\"warning\":\"\",\"result\":\"\"}",
+      "step_order": 5
+    },
+    {
+      "content": "{\"title\":\"Prossiga pela rota planejada\",\"focus\":\"\",\"objective\":\"revise a checklist final de 50 trofeus da lista base. Echoes of the Fallen e The Rising Tide nao entram na platina base.\",\"actions\":[],\"warning\":\"\",\"result\":\"\"}",
+      "step_order": 6
+    }
+  ],
+  "schemaVersion": 1,
+  "seedExtras": {
+    "aliases": [],
+    "attentionPoints": [
+      {
+        "detail": "Não venda materiais de crafting importantes. Half Past Twilight pode ser perdido se você vender itens necessários para fabricar a Gotterdammerung.",
+        "severity": "high",
+        "title": "Half Past Twilight"
+      },
+      {
+        "detail": "Guarde Ragnarok, Orichalcum, Darksteel, Primitive Battlehorn e materiais raros de hunts/quests até fabricar a espada.",
+        "severity": "high",
+        "title": "Materiais da Gotterdammerung"
+      },
+      {
+        "detail": "Fantasy, Finally exige concluir o jogo no Final Fantasy Mode, que só abre no New Game+ após terminar a campanha uma vez.",
+        "severity": "medium",
+        "title": "Final Fantasy Mode"
+      },
+      {
+        "detail": "Os anéis de assistência/cheat rings podem ser usados e não bloqueiam troféus, inclusive no Final Fantasy Mode.",
+        "severity": "low",
+        "title": "Anéis de assistência"
+      },
+      {
+        "detail": "Após o final, crie o clear save e carregue esse arquivo para voltar antes da missão final e limpar pendências.",
+        "severity": "medium",
+        "title": "Clear save e free roam"
+      },
+      {
+        "detail": "Echoes of the Fallen e The Rising Tide são extras/100%. Não são necessárias para The Chronicler/O Cronista.",
+        "severity": "medium",
+        "title": "DLCs separadas"
+      },
+      {
+        "detail": "For the Hoard exige as 22 curiosities exibidas na Wall of Memories, não todas as curiosities existentes.",
+        "severity": "medium",
+        "title": "For the Hoard"
+      },
+      {
+        "detail": "Hunter, Hunted exige limpar o Hunt Board com todas as 32 Notorious Marks.",
+        "severity": "medium",
+        "title": "Hunt Board"
+      },
+      {
+        "detail": "Careful Whisper exige coletar recompensas de Patron’s Whisper, o que demanda renown de side quests e hunts.",
+        "severity": "medium",
+        "title": "Patron Items"
+      },
+      {
+        "detail": "Alguns troféus de combate excluem batalhas no Hall of Virtue. Confira a descrição do card antes de tentar no treino.",
+        "severity": "medium",
+        "title": "Hall of Virtue"
+      },
+      {
+        "detail": "Os troféus de Torgal são simples, mas ações como Precision Sic devem ser feitas em combate válido quando a descrição excluir treino.",
+        "severity": "low",
+        "title": "Torgal"
+      },
+      {
+        "detail": "Trial Run exige completar um Chronolith Trial. Não trate como troféu de dificuldade selecionável.",
+        "severity": "low",
+        "title": "Chronolith"
+      }
+    ],
+    "checklist": [
+      "Completar a campanha uma vez e salvar o clear save.",
+      "Não vender materiais raros ligados a Gotterdammerung.",
+      "Fabricar Gotterdammerung para Half Past Twilight.",
+      "Completar as 32 Notorious Marks.",
+      "Obter todos os signboards.",
+      "Completar as 22 curiosities da Wall of Memories.",
+      "Melhorar potência e capacidade dos consumíveis.",
+      "Ajudar Harpocrates a alcançar nível de conhecimento 5.",
+      "Coletar todos os patron items por renown.",
+      "Desbloquear Ambrosia como montaria.",
+      "Completar uma prova de cronólito.",
+      "Dominar todas as habilidades Eikon.",
+      "Comprar o item de 36.000 gil para Eureka.",
+      "Concluir New Game+ em Final Fantasy Mode."
+    ],
+    "faq": [
+      {
+        "answer": "Sim. O principal é Half Past Twilight, caso você venda materiais necessários para a Gotterdammerung. Não venda materiais de crafting importantes.",
+        "question": "Final Fantasy XVI tem troféus perdíveis?"
+      },
+      {
+        "answer": "Não. A platina base é totalmente single-player.",
+        "question": "Precisa jogar online para platinar?"
+      },
+      {
+        "answer": "Não. Nenhum troféu da platina base exige cooperação.",
+        "question": "Precisa de cooperação?"
+      },
+      {
+        "answer": "Não. Echoes of the Fallen e The Rising Tide têm troféus extras, mas não são necessários para The Chronicler/O Cronista.",
+        "question": "Precisa de DLC para a platina?"
+      },
+      {
+        "answer": "Duas. Uma primeira run normal para completar história e side content, e uma segunda run em New Game+ no Final Fantasy Mode para Fantasy, Finally.",
+        "question": "Quantas runs são necessárias?"
+      },
+      {
+        "answer": "Sim. Fantasy, Finally exige concluir o jogo no Final Fantasy Mode, desbloqueado após terminar a história uma vez.",
+        "question": "A dificuldade afeta troféus?"
+      },
+      {
+        "answer": "Sim. Os anéis de assistência/cheat rings não bloqueiam troféus e podem ser usados até no Final Fantasy Mode.",
+        "question": "Posso usar os anéis de assistência?"
+      },
+      {
+        "answer": "Crie a Gotterdammerung, limpe hunts, side quests relevantes, patron items, curiosities, signboards, upgrades, áreas e troféus de combate pendentes.",
+        "question": "O que devo fazer antes do New Game+?"
+      },
+      {
+        "answer": "Não. Exige as 22 curiosities exibidas na Wall of Memories do quarto de Clive.",
+        "question": "For the Hoard exige todos os colecionáveis?"
+      },
+      {
+        "answer": "Sim. Após o final, crie e carregue o clear save para voltar antes da missão final e limpar pendências.",
+        "question": "Posso fazer cleanup depois da história?"
+      },
+      {
+        "answer": "Nem todos. Alguns troféus excluem batalhas no Hall of Virtue, então confira a descrição de cada card.",
+        "question": "Posso fazer troféus de combate no Hall of Virtue?"
+      },
+      {
+        "answer": "Em média, cerca de 70 a 90 horas, dependendo do ritmo de side quests, hunts, cleanup e da segunda run no Final Fantasy Mode.",
+        "question": "Quanto tempo leva para platinar?"
+      }
+    ],
+    "note": "Campos exportados para auditoria. O SQLite atual nao possui colunas nativas para todos esses extras; a importacao preserva o que o banco suporta.",
+    "quickDecision": {
+      "difficulty": "3/10 com anéis de assistência; 5/10 sem anéis.",
+      "dlc": "Echoes of the Fallen adiciona 6 troféus e The Rising Tide adiciona 13, mas nenhum deles é necessário para The Chronicler/O Cronista.",
+      "firstAction": "Na run 1, avance a campanha fazendo quests/hunts e guarde todos os materiais raros.",
+      "mainRisk": "Half Past Twilight é o único perdível real.",
+      "onlineCoop": "Sem online e sem coop obrigatório.",
+      "risk": "Vender materiais únicos antes de fabricar Gotterdammerung.",
+      "time": "70-90h.",
+      "verdict": "Platina longa, offline e segura se você proteger materiais de Gotterdammerung."
+    },
+    "seo": {
+      "description": "Guia de platina de Final Fantasy XVI com 50 troféus base, 1 perdível, roadmap em 8 etapas, Final Fantasy Mode, hunts, Gotterdammerung e DLC separado.",
+      "keywords": [
+        "Final Fantasy XVI troféus",
+        "Final Fantasy XVI platina",
+        "FF16 Half Past Twilight",
+        "FF16 Fantasy Finally",
+        "FF16 Gotterdammerung"
+      ],
+      "metaDescription": "Final Fantasy XVI: guia de troféus com 50 troféus base, 1 perdível, 70-90h, Final Fantasy Mode obrigatório e DLC fora da platina.",
+      "ogDescription": "Roadmap completo da platina de Final Fantasy XVI: 50 troféus base, 1 perdível, sem online/coop, sem DLC obrigatório e segunda run em Final Fantasy Mode.",
+      "ogTitle": "Final Fantasy XVI - Guia de Troféus e Platina",
+      "title": "Guia de Troféus Final Fantasy XVI - Platina, Perdíveis e Roadmap"
+    },
+    "tags": []
+  },
+  "slug": "final-fantasy-xvi",
+  "trophies": [
+    {
+      "description": "And thus did our journey end...",
+      "is_missable": 0,
+      "is_spoiler": 0,
+      "name": "The Chronicler",
+      "name_pt": "O Cronista",
+      "tip": "Conclua os outros 49 trofeus da lista base de Final Fantasy XVI. Nao inclua Echoes of the Fallen nem The Rising Tide.",
+      "trophy_code": "ff16_the_chronicler",
+      "type": "Platina"
+    },
+    {
+      "description": "Rise from your reverie.",
+      "is_missable": 0,
+      "is_spoiler": 1,
+      "name": "Awoken",
+      "name_pt": "Desperto",
+      "tip": "Trofeu automatico de historia.",
+      "trophy_code": "ff16_awoken",
+      "type": "Bronze"
+    },
+    {
+      "description": "Inherit a power unknown.",
+      "is_missable": 0,
+      "is_spoiler": 1,
+      "name": "With Great Power",
+      "name_pt": "Com Grande Poder",
+      "tip": "Trofeu automatico de historia ligado a progresso de Eikon.",
+      "trophy_code": "ff16_with_great_power",
+      "type": "Bronze"
+    },
+    {
+      "description": "Accept your fate.",
+      "is_missable": 0,
+      "is_spoiler": 1,
+      "name": "Acceptance",
+      "name_pt": "Aceitação",
+      "tip": "Trofeu automatico de historia.",
+      "trophy_code": "ff16_acceptance",
+      "type": "Bronze"
+    },
+    {
+      "description": "Defy your fate.",
+      "is_missable": 0,
+      "is_spoiler": 1,
+      "name": "Lawless",
+      "name_pt": "Fora da Lei",
+      "tip": "Trofeu automatico de historia.",
+      "trophy_code": "ff16_lawless",
+      "type": "Bronze"
+    },
+    {
+      "description": "Turn the corner.",
+      "is_missable": 0,
+      "is_spoiler": 1,
+      "name": "Legacy",
+      "name_pt": "Legado",
+      "tip": "Trofeu automatico de historia.",
+      "trophy_code": "ff16_legacy",
+      "type": "Bronze"
+    },
+    {
+      "description": "Revisit the past.",
+      "is_missable": 0,
+      "is_spoiler": 1,
+      "name": "Twilight Rose",
+      "name_pt": "Rosa do Crepúsculo",
+      "tip": "Trofeu automatico de historia.",
+      "trophy_code": "ff16_twilight_rose",
+      "type": "Bronze"
+    },
+    {
+      "description": "Exact revenge.",
+      "is_missable": 0,
+      "is_spoiler": 1,
+      "name": "From Stone to Sand",
+      "name_pt": "De Pedra a Areia",
+      "tip": "Trofeu automatico de historia.",
+      "trophy_code": "ff16_from_stone_to_sand",
+      "type": "Bronze"
+    },
+    {
+      "description": "Unite the flames.",
+      "is_missable": 0,
+      "is_spoiler": 1,
+      "name": "Twin Flames",
+      "name_pt": "Chamas Gêmeas",
+      "tip": "Trofeu automatico de historia ligado a Eikons.",
+      "trophy_code": "ff16_twin_flames",
+      "type": "Bronze"
+    },
+    {
+      "description": "Become one.",
+      "is_missable": 0,
+      "is_spoiler": 1,
+      "name": "The Promise",
+      "name_pt": "A Promessa",
+      "tip": "Trofeu automatico de historia.",
+      "trophy_code": "ff16_the_promise",
+      "type": "Bronze"
+    },
+    {
+      "description": "Collect the final piece.",
+      "is_missable": 0,
+      "is_spoiler": 1,
+      "name": "A Vessel Complete",
+      "name_pt": "Recipiente Completo",
+      "tip": "Trofeu automatico de historia ligado a progresso final de poderes.",
+      "trophy_code": "ff16_a_vessel_complete",
+      "type": "Bronze"
+    },
+    {
+      "description": "Escape the darkness.",
+      "is_missable": 0,
+      "is_spoiler": 1,
+      "name": "Ashes to Ashes",
+      "name_pt": "Cinzas às Cinzas",
+      "tip": "Trofeu automatico de historia de reta final.",
+      "trophy_code": "ff16_ashes_to_ashes",
+      "type": "Bronze"
+    },
+    {
+      "description": "Fulfill a legacy.",
+      "is_missable": 0,
+      "is_spoiler": 1,
+      "name": "Falling Star",
+      "name_pt": "Estrela Cadente",
+      "tip": "Trofeu automatico de conclusao da campanha base.",
+      "trophy_code": "ff16_falling_star",
+      "type": "Ouro"
+    },
+    {
+      "description": "Punish 10 enemies (excluding battles in the Hall of Virtue).",
+      "is_missable": 0,
+      "is_spoiler": 0,
+      "name": "Punisher",
+      "name_pt": "Justiceiro",
+      "tip": "Use Punish em inimigos derrubados ao longo do combate normal.",
+      "trophy_code": "ff16_punisher",
+      "type": "Bronze"
+    },
+    {
+      "description": "Defeat a boss without taking damage.",
+      "is_missable": 0,
+      "is_spoiler": 0,
+      "name": "You're Not the Boss of Me",
+      "name_pt": "Você Não Manda em Mim",
+      "tip": "Escolha um chefe simples ou use acessorios de assistencia para reduzir risco. Hall of Virtue nao conta.",
+      "trophy_code": "ff16_youre_not_the_boss_of_me",
+      "type": "Bronze"
+    },
+    {
+      "description": "Defeat 20 enemies while semi-primed (excluding battles in the Hall of Virtue).",
+      "is_missable": 0,
+      "is_spoiler": 0,
+      "name": "Made to Be Broken",
+      "name_pt": "Feito para Quebrar",
+      "tip": "Use Limit Break/semi-prime e finalize inimigos comuns.",
+      "trophy_code": "ff16_made_to_be_broken",
+      "type": "Bronze"
+    },
+    {
+      "description": "Deal an enemy 50,000 damage while staggered (excluding battles in the Hall of Virtue).",
+      "is_missable": 0,
+      "is_spoiler": 0,
+      "name": "It's Over 50,000",
+      "name_pt": "Mais de 50.000",
+      "tip": "Use janela de stagger longa, buffs e habilidades fortes para ultrapassar 50.000 de dano.",
+      "trophy_code": "ff16_its_over_50000",
+      "type": "Prata"
+    },
+    {
+      "description": "Land 15 Shift Strikes or Shift Shots combined (excluding battles in the Hall of Virtue).",
+      "is_missable": 0,
+      "is_spoiler": 0,
+      "name": "Sheeeeeeeeeeeeeeeift",
+      "name_pt": "Sheeeeeeeeeeeeeeeift",
+      "tip": "Use Phoenix Shift seguido de ataque/tiro ate acumular 15 acertos.",
+      "trophy_code": "ff16_sheeeeeeeeeeeeeeeift",
+      "type": "Bronze"
+    },
+    {
+      "description": "Execute and land 2 Heatwave Counters in a single battle (excluding those in the Hall of Virtue).",
+      "is_missable": 0,
+      "is_spoiler": 0,
+      "name": "Packing Heat",
+      "name_pt": "Levando Calor",
+      "tip": "Equipe Heatwave e contra-ataque projeteis duas vezes no mesmo combate.",
+      "trophy_code": "ff16_packing_heat",
+      "type": "Bronze"
+    },
+    {
+      "description": "Defeat 5 enemies in the air after using Deadly Embrace (excluding battles in the Hall of Virtue).",
+      "is_missable": 0,
+      "is_spoiler": 0,
+      "name": "Fatal Attraction",
+      "name_pt": "Atração Fatal",
+      "tip": "Use Deadly Embrace/Garuda para puxar inimigos e finalize-os no ar.",
+      "trophy_code": "ff16_fatal_attraction",
+      "type": "Bronze"
+    },
+    {
+      "description": "Land Gouge, Wicked Wheel, and Rook's Gambit in midair before landing (excluding battles in the Hall of Virtue).",
+      "is_missable": 0,
+      "is_spoiler": 0,
+      "name": "Never Coming Down",
+      "name_pt": "Nunca Vou Descer",
+      "tip": "Equipe as tres habilidades de Garuda e execute a sequencia em inimigo que permita airtime.",
+      "trophy_code": "ff16_never_coming_down",
+      "type": "Bronze"
+    },
+    {
+      "description": "Discharge 50 Blind Justice lightning balls (excluding battles in the Hall of Virtue).",
+      "is_missable": 0,
+      "is_spoiler": 0,
+      "name": "I Am the Thunder",
+      "name_pt": "Eu Sou o Trovão",
+      "tip": "Use Blind Justice/Ramuh e detone as cargas durante combates reais.",
+      "trophy_code": "ff16_i_am_the_thunder",
+      "type": "Bronze"
+    },
+    {
+      "description": "Lure an enemy into striking a Lightning Rod 3 times before it dissipates (excluding battles in the Hall of Virtue).",
+      "is_missable": 0,
+      "is_spoiler": 0,
+      "name": "Rod to Redemption",
+      "name_pt": "Bastão para a Redenção",
+      "tip": "Posicione Lightning Rod perto de inimigos agressivos e mantenha-os atacando a area.",
+      "trophy_code": "ff16_rod_to_redemption",
+      "type": "Bronze"
+    },
+    {
+      "description": "Use Titanic Block to fend off 10 enemy attacks (excluding battles in the Hall of Virtue).",
+      "is_missable": 0,
+      "is_spoiler": 0,
+      "name": "Untouchable",
+      "name_pt": "Intocável",
+      "tip": "Use Titanic Block/Titan contra ataques previsiveis ate acumular 10 defesas.",
+      "trophy_code": "ff16_untouchable",
+      "type": "Bronze"
+    },
+    {
+      "description": "Land the third punch of a Titanic Counter twice in a single battle (excluding those in the Hall of Virtue).",
+      "is_missable": 0,
+      "is_spoiler": 0,
+      "name": "Beat Rocking Blocks",
+      "name_pt": "Contra-ataque Rochoso",
+      "tip": "Depois de bloquear com Titan, complete o combo de counter ate o terceiro golpe duas vezes.",
+      "trophy_code": "ff16_beat_rocking_blocks",
+      "type": "Bronze"
+    },
+    {
+      "description": "Land 100 total hits with Lv. 2 or higher Megaflare (excluding battles in the Hall of Virtue).",
+      "is_missable": 0,
+      "is_spoiler": 0,
+      "name": "100 Mfps",
+      "name_pt": "100 Mfps",
+      "tip": "Carregue Megaflare/Dion e solte em grupos ou chefes para acumular hits.",
+      "trophy_code": "ff16_100_mfps",
+      "type": "Bronze"
+    },
+    {
+      "description": "Execute 3 Precision Dodges while charging a single Megaflare (excluding battles in the Hall of Virtue).",
+      "is_missable": 0,
+      "is_spoiler": 0,
+      "name": "Such Dodge, So Mega",
+      "name_pt": "Que Esquiva, Tão Mega",
+      "tip": "Com Wings of Light ativo, faca tres precision dodges antes de descarregar Megaflare.",
+      "trophy_code": "ff16_such_dodge_so_mega",
+      "type": "Bronze"
+    },
+    {
+      "description": "Inflict Permafrost on 10 enemies by perfectly dodging attacks with Cold Snap (excluding battles in the Hall of Virtue).",
+      "is_missable": 0,
+      "is_spoiler": 0,
+      "name": "Oh, Snap!",
+      "name_pt": "Ah, Congelou!",
+      "tip": "Use Cold Snap/Shiva para esquivar no timing perfeito e congelar inimigos.",
+      "trophy_code": "ff16_oh_snap",
+      "type": "Bronze"
+    },
+    {
+      "description": "Simultaneously defeat 3 or more enemies frozen using Frostbite, Permafrost, or Diamond Dust (excluding battles in the Hall of Virtue).",
+      "is_missable": 0,
+      "is_spoiler": 0,
+      "name": "Cold-blooded",
+      "name_pt": "Sangue Frio",
+      "tip": "Congele um grupo e finalize tres ou mais inimigos ao mesmo tempo.",
+      "trophy_code": "ff16_cold_blooded",
+      "type": "Bronze"
+    },
+    {
+      "description": "Land a Lv. 2 or higher Zantetsuken 5 times (excluding battles in the Hall of Virtue).",
+      "is_missable": 0,
+      "is_spoiler": 0,
+      "name": "Every Damn Sinew",
+      "name_pt": "Cada Fibra",
+      "tip": "Carregue Zantetsuken/Odin ate nivel 2+ e acerte cinco usos.",
+      "trophy_code": "ff16_every_damn_sinew",
+      "type": "Bronze"
+    },
+    {
+      "description": "Execute 3 Steel Counters in a single battle (excluding those in the Hall of Virtue).",
+      "is_missable": 0,
+      "is_spoiler": 0,
+      "name": "Fistful of Steel",
+      "name_pt": "Punhado de Aço",
+      "tip": "Use Arm of Darkness/Odin e execute Steel Counter tres vezes no mesmo combate.",
+      "trophy_code": "ff16_fistful_of_steel",
+      "type": "Bronze"
+    },
+    {
+      "description": "Master all of a single Eikon's abilities and feats.",
+      "is_missable": 0,
+      "is_spoiler": 0,
+      "name": "Yes, Eikon",
+      "name_pt": "Sim, Eikon",
+      "tip": "Gaste AP para dominar todas as habilidades/feat de um Eikon.",
+      "trophy_code": "ff16_yes_eikon",
+      "type": "Bronze"
+    },
+    {
+      "description": "Upgrade all feats and abilities to their maximum.",
+      "is_missable": 0,
+      "is_spoiler": 0,
+      "name": "Masterclass",
+      "name_pt": "Aula Magna",
+      "tip": "Maior grind de AP: domine todas as habilidades e feats. Pode continuar no Final Fantasy Mode/New Game+.",
+      "trophy_code": "ff16_masterclass",
+      "type": "Ouro"
+    },
+    {
+      "description": "Upgrade consumable potency and inventory slots to their maximum.",
+      "is_missable": 0,
+      "is_spoiler": 0,
+      "name": "With Two Ds",
+      "name_pt": "Com Dois Ds",
+      "tip": "Complete side quests com icone verde/plus para melhorar pocoes e capacidade de inventario.",
+      "trophy_code": "ff16_with_two_ds",
+      "type": "Bronze"
+    },
+    {
+      "description": "Collect six signboards.",
+      "is_missable": 0,
+      "is_spoiler": 0,
+      "name": "And They Opened Up My Mind",
+      "name_pt": "E Eles Abriram Minha Mente",
+      "tip": "Signboards sao recompensas de side quests importantes. Limpe side content antes de fechar a campanha/NG+.",
+      "trophy_code": "ff16_and_they_opened_up_my_mind",
+      "type": "Prata"
+    },
+    {
+      "description": "Defeat 10 notorious marks.",
+      "is_missable": 0,
+      "is_spoiler": 0,
+      "name": "Think, Mark!",
+      "name_pt": "Pense, Marca!",
+      "tip": "Use o Hunt Board para derrotar 10 Notorious Marks.",
+      "trophy_code": "ff16_think_mark",
+      "type": "Bronze"
+    },
+    {
+      "description": "Clear the Hunt Board.",
+      "is_missable": 0,
+      "is_spoiler": 1,
+      "name": "Hunter, Hunted",
+      "name_pt": "Caçador, Caçado",
+      "tip": "Derrote todos os Notorious Marks da lista base. Hunts avancadas ajudam com materiais de crafting.",
+      "trophy_code": "ff16_hunter_hunted",
+      "type": "Prata"
+    },
+    {
+      "description": "Complete a chronolith trial.",
+      "is_missable": 0,
+      "is_spoiler": 0,
+      "name": "Trial Run",
+      "name_pt": "Teste",
+      "tip": "Complete qualquer Chronolith Trial; todos entram no caminho de For the Hoard.",
+      "trophy_code": "ff16_trial_run",
+      "type": "Bronze"
+    },
+    {
+      "description": "Obtain all curiosities.",
+      "is_missable": 0,
+      "is_spoiler": 0,
+      "name": "For the Hoard",
+      "name_pt": "Para a Coleção",
+      "tip": "Exige as curiosities exibidas no Wall of Memories em Clive's Room, nao todas as curiosities do inventario.",
+      "trophy_code": "ff16_for_the_hoard",
+      "type": "Prata"
+    },
+    {
+      "description": "Craft or upgrade 5 pieces of gear.",
+      "is_missable": 0,
+      "is_spoiler": 0,
+      "name": "Dressed to the Fives",
+      "name_pt": "Vestido para Impressionar",
+      "tip": "Craft/upgrade cinco equipamentos no Blacksmith.",
+      "trophy_code": "ff16_dressed_to_the_fives",
+      "type": "Bronze"
+    },
+    {
+      "description": "Craft the legendary sword Gotterdammerung.",
+      "is_missable": 1,
+      "is_spoiler": 0,
+      "name": "Half Past Twilight",
+      "name_pt": "Além do Crepúsculo",
+      "tip": "Condicionalmente perdivel: nao venda Ragnarok, Orichalcum, Darksteel, Primitive Battlehorn ou materiais raros antes de craftar Gotterdammerung.",
+      "trophy_code": "ff16_half_past_twilight",
+      "type": "Prata"
+    },
+    {
+      "description": "Open 10 letters at the reading table.",
+      "is_missable": 0,
+      "is_spoiler": 0,
+      "name": "The Pen Is Mightier",
+      "name_pt": "A Caneta É Mais Forte",
+      "tip": "Leia 10 cartas em Clive's Room conforme elas chegarem por historia e side quests.",
+      "trophy_code": "ff16_the_pen_is_mightier",
+      "type": "Bronze"
+    },
+    {
+      "description": "Help Harpocrates attain a knowledge level of 5.",
+      "is_missable": 0,
+      "is_spoiler": 0,
+      "name": "The More You Know",
+      "name_pt": "Quanto Mais Você Sabe",
+      "tip": "Converse com Harpocrates no Hideaway conforme avanca historia e side content.",
+      "trophy_code": "ff16_the_more_you_know",
+      "type": "Bronze"
+    },
+    {
+      "description": "Obtain all available items from your patrons.",
+      "is_missable": 0,
+      "is_spoiler": 0,
+      "name": "Careful Whisper",
+      "name_pt": "Sussurro Cuidadoso",
+      "tip": "Colete todos os Patron Items aumentando Renown com main quests, side quests e Hunts.",
+      "trophy_code": "ff16_careful_whisper",
+      "type": "Prata"
+    },
+    {
+      "description": "Pet Torgal 5 times.",
+      "is_missable": 0,
+      "is_spoiler": 0,
+      "name": "You Can Pet the Dog",
+      "name_pt": "Você Pode Fazer Carinho no Cachorro",
+      "tip": "Depois que Torgal estiver disponivel, interaja com ele cinco vezes.",
+      "trophy_code": "ff16_you_can_pet_the_dog",
+      "type": "Bronze"
+    },
+    {
+      "description": "Execute and land 5 Precision Sics (excluding battles in the Hall of Virtue).",
+      "is_missable": 0,
+      "is_spoiler": 0,
+      "name": "A Fine Hound",
+      "name_pt": "Um Bom Cão",
+      "tip": "Comande Torgal para Sic no timing correto durante combates reais.",
+      "trophy_code": "ff16_a_fine_hound",
+      "type": "Bronze"
+    },
+    {
+      "description": "Ride Ambrosia for the first time.",
+      "is_missable": 0,
+      "is_spoiler": 0,
+      "name": "When You Ride Alone",
+      "name_pt": "Quando Você Cavalga Sozinho",
+      "tip": "Complete a side quest The White-Winged Wonder e monte Ambrosia.",
+      "trophy_code": "ff16_when_you_ride_alone",
+      "type": "Bronze"
+    },
+    {
+      "description": "Visit all areas on the world and local maps.",
+      "is_missable": 0,
+      "is_spoiler": 0,
+      "name": "Here Be Rosfields",
+      "name_pt": "Aqui Há Rosfields",
+      "tip": "Complete main quests e side quests para revelar todas as areas relevantes do mapa.",
+      "trophy_code": "ff16_here_be_rosfields",
+      "type": "Bronze"
+    },
+    {
+      "description": "Spend 36,000 gil at the Tub & Crown.",
+      "is_missable": 0,
+      "is_spoiler": 0,
+      "name": "Eureka",
+      "name_pt": "Eureka",
+      "tip": "Gaste gil no Tub & Crown; faca save manual antes se quiser recuperar o dinheiro depois.",
+      "trophy_code": "ff16_eureka",
+      "type": "Bronze"
+    },
+    {
+      "description": "Complete the game on \"Final Fantasy\" mode.",
+      "is_missable": 0,
+      "is_spoiler": 0,
+      "name": "Fantasy, Finally",
+      "name_pt": "Fantasia, Finalmente",
+      "tip": "Final Fantasy Mode libera apos terminar a historia uma vez. Inicie New Game+ com clear save e conclua a campanha novamente.",
+      "trophy_code": "ff16_fantasy_finally",
+      "type": "Ouro"
+    }
+  ]
+}

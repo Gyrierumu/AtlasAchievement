@@ -1,0 +1,508 @@
+{
+  "game": {
+    "avoid_if": "Evite se você não quer repetir campanhas, lidar com restrições ou aprender rotas de speedrun/rank.",
+    "before_you_start": "Planeje saves manuais e não conte com chapter select para corrigir tudo depois. O guia é do remake, não da versão clássica.",
+    "best_for": "Ideal para quem gosta de memorizar rotas, otimizar recursos e repetir campanhas curtas com objetivos diferentes.",
+    "cleanup_advice": "Use runs dedicadas para rank S, Hardcore, sem cura, sem baú, 14.000 passos, Ada sem atirar, Sherry em 60 segundos e The 4th Survivor.",
+    "cover_image": "https://cdn.cloudflare.steamstatic.com/steam/apps/883710/library_600x900.jpg",
+    "coverage_level": "strong",
+    "created_at": "2026-05-09 19:53:26",
+    "difficulty": 6,
+    "difficulty_reason": "A dificuldade vem de rotas eficientes, rank S, Hardcore, administração de recursos e desafios como sem cura, sem baú e poucos passos.",
+    "dlc_scope": "Guia focado em Resident Evil 2 Remake e na lista base de platina. Não mistura o Resident Evil 2 original, ports antigos ou DLCs/modos extras fora da lista base.",
+    "editorial_notes": null,
+    "editorial_review_status": null,
+    "editorial_status": "published",
+    "first_run_advice": "Escolha Leon A ou Claire A e aprenda a delegacia sem pressa, acompanhando arquivos, Mr. Raccoons e upgrades para reduzir retrabalho.",
+    "grind_summary": "Não é um grind numérico longo, mas exige repetição de campanhas para rank S, Hardcore, colecionáveis, 4th Survivor e desafios de restrição.",
+    "guide_avoid": null,
+    "guide_best_moment": null,
+    "guide_dlc": null,
+    "guide_grind": null,
+    "guide_ideal": null,
+    "guide_online": null,
+    "guide_runs": null,
+    "image": "https://cdn.cloudflare.steamstatic.com/steam/apps/883710/header.jpg",
+    "is_verified": 0,
+    "last_reviewed_at": null,
+    "missable": "A platina é mais limpa em múltiplas runs. Há troféus de rank S, runs sem cura, sem baú, poucos passos e objetivos específicos em trechos de Leon, Claire, Ada e Sherry.",
+    "missable_summary": "Sem chapter select livre durante a campanha; arquivos, Mr. Raccoons, cofres, upgrades, seções de Ada/Sherry e restrições precisam ser planejados por run.",
+    "name": "Resident Evil 2 Remake",
+    "online_summary": "Não há exigência online, coop, multiplayer ou PS+ para a platina da lista base do remake.",
+    "quality_warnings": null,
+    "reviewed_by": null,
+    "runs_summary": "Múltiplas campanhas com Leon e Claire, incluindo 1ª e 2ª jornada, runs de rank S, Hardcore e desafios de restrição.",
+    "slug": "resident-evil-2-remake",
+    "time": "25-35 horas",
+    "time_bucket": "medium",
+    "time_max_hours": 35,
+    "time_min_hours": 25,
+    "time_reason": "A faixa de 25-35 horas considera campanhas de Leon/Claire, 2ª jornada, Hardcore, rank S, coletáveis e cleanup de desafios pontuais.",
+    "time_sort_hours": 25,
+    "updated_at": "2026-06-27 02:36:58",
+    "verification_note": "Guia normalizado a partir do dado seed com checklist e roadmap; aguardando revisão editorial manual final.",
+    "verification_status": "review",
+    "walkthrough": null
+  },
+  "redirects": [],
+  "roadmaps": [
+    {
+      "content": "1ª run com Leon A ou Claire A no remake: jogue no seu ritmo, aprenda a rota da delegacia, pegue upgrades e familiarize-se com cofres, Mr. Raccoons e arquivos. A lista base não exige online.",
+      "step_order": 1
+    },
+    {
+      "content": "2ª run com o outro personagem: avance a história paralela, conclua o true ending e limpe boa parte dos colecionáveis que faltarem.",
+      "step_order": 2
+    },
+    {
+      "content": "Separe runs de rank S para Leon e Claire no Standard, priorizando rota curta, poucos desvios e recarga manual de save após mortes.",
+      "step_order": 3
+    },
+    {
+      "content": "Faça as campanhas no Hardcore quando já tiver domínio da rota; a Samurai Edge infinita e a faça indestrutível ajudam bastante.",
+      "step_order": 4
+    },
+    {
+      "content": "Deixe os desafios de restrição para runs dedicadas: sem cura, sem abrir o baú e com 14.000 passos ou menos.",
+      "step_order": 5
+    },
+    {
+      "content": "No fim, limpe troféus pontuais como Ada sem atirar, fuga da Sherry em 60 segundos, chefes com limite de tempo e o modo The 4th Survivor.",
+      "step_order": 6
+    }
+  ],
+  "schemaVersion": 1,
+  "seedExtras": {
+    "aliases": [],
+    "attentionPoints": [],
+    "checklist": [],
+    "faq": [],
+    "note": "Campos exportados para auditoria. O SQLite atual nao possui colunas nativas para todos esses extras; a importacao preserva o que o banco suporta.",
+    "quickDecision": null,
+    "seo": {},
+    "tags": []
+  },
+  "slug": "resident-evil-2-remake",
+  "trophies": [
+    {
+      "description": "Obtenha todos os outros troféus.",
+      "is_missable": 0,
+      "is_spoiler": 0,
+      "name": "Raccoon City Native",
+      "name_pt": "Nativo de Raccoon City",
+      "tip": "A platina pede domínio das rotas, múltiplas campanhas e algumas runs específicas de desafio.",
+      "trophy_code": "re2r_platinum",
+      "type": "Platina"
+    },
+    {
+      "description": "Chegue à delegacia.",
+      "is_missable": 0,
+      "is_spoiler": 1,
+      "name": "Welcome to the City of the Dead",
+      "name_pt": "Bem-vindo à Cidade dos Mortos",
+      "tip": "Troféu automático no início da campanha.",
+      "trophy_code": "re2r_welcome_dead",
+      "type": "Bronze"
+    },
+    {
+      "description": "Resolva o enigma da Estátua da Deusa.",
+      "is_missable": 0,
+      "is_spoiler": 1,
+      "name": "Path to the Goddess",
+      "name_pt": "Caminho até a Deusa",
+      "tip": "Sai naturalmente ao abrir caminho para o subterrâneo da delegacia.",
+      "trophy_code": "re2r_path_goddess",
+      "type": "Bronze"
+    },
+    {
+      "description": "Escape da delegacia.",
+      "is_missable": 0,
+      "is_spoiler": 1,
+      "name": "Never-Ending Rain",
+      "name_pt": "Chuva Sem Fim",
+      "tip": "Troféu automático de história.",
+      "trophy_code": "re2r_never_ending_rain",
+      "type": "Bronze"
+    },
+    {
+      "description": "Complete a seção da Ada.",
+      "is_missable": 0,
+      "is_spoiler": 1,
+      "name": "Hack Complete",
+      "name_pt": "Hack Concluído",
+      "tip": "Disponível apenas nas campanhas do Leon.",
+      "trophy_code": "re2r_hack_complete",
+      "type": "Bronze"
+    },
+    {
+      "description": "Complete a seção da Sherry.",
+      "is_missable": 0,
+      "is_spoiler": 1,
+      "name": "Hide and Seek",
+      "name_pt": "Esconde-Esconde",
+      "tip": "Disponível apenas nas campanhas da Claire.",
+      "trophy_code": "re2r_hide_seek",
+      "type": "Bronze"
+    },
+    {
+      "description": "Escape dos esgotos.",
+      "is_missable": 0,
+      "is_spoiler": 1,
+      "name": "A Great Need for a Shower",
+      "name_pt": "Preciso Muito de um Banho",
+      "tip": "Troféu automático de história.",
+      "trophy_code": "re2r_need_shower",
+      "type": "Bronze"
+    },
+    {
+      "description": "Complete a história do Leon.",
+      "is_missable": 0,
+      "is_spoiler": 1,
+      "name": "A Hero Emerges",
+      "name_pt": "Surge um Herói",
+      "tip": "Vale tanto na 1ª quanto na 2ª jornada.",
+      "trophy_code": "re2r_hero_emerges",
+      "type": "Prata"
+    },
+    {
+      "description": "Complete a história da Claire.",
+      "is_missable": 0,
+      "is_spoiler": 1,
+      "name": "A Heroine Emerges",
+      "name_pt": "Surge uma Heroína",
+      "tip": "Vale tanto na 1ª quanto na 2ª jornada.",
+      "trophy_code": "re2r_heroine_emerges",
+      "type": "Prata"
+    },
+    {
+      "description": "Complete qualquer campanha na 2ª jornada.",
+      "is_missable": 0,
+      "is_spoiler": 1,
+      "name": "Broken Umbrella",
+      "name_pt": "Umbrella Quebrada",
+      "tip": "Sai ao concluir um cenário B com Leon ou Claire.",
+      "trophy_code": "re2r_broken_umbrella",
+      "type": "Prata"
+    },
+    {
+      "description": "Combine dois itens.",
+      "is_missable": 0,
+      "is_spoiler": 0,
+      "name": "The Basics of Survival",
+      "name_pt": "O Básico da Sobrevivência",
+      "tip": "Combine duas ervas ou qualquer combinação compatível logo no começo.",
+      "trophy_code": "re2r_basics_survival",
+      "type": "Bronze"
+    },
+    {
+      "description": "Aumente o espaço do inventário.",
+      "is_missable": 0,
+      "is_spoiler": 0,
+      "name": "Hip to Add Squares",
+      "name_pt": "Mais Espaço no Inventário",
+      "tip": "Basta pegar uma pochete.",
+      "trophy_code": "re2r_hip_squares",
+      "type": "Bronze"
+    },
+    {
+      "description": "Customize uma arma.",
+      "is_missable": 0,
+      "is_spoiler": 0,
+      "name": "Customizer",
+      "name_pt": "Personalizador",
+      "tip": "Instale qualquer upgrade encontrado durante a campanha.",
+      "trophy_code": "re2r_customizer",
+      "type": "Bronze"
+    },
+    {
+      "description": "Derrote um inimigo com a faça.",
+      "is_missable": 0,
+      "is_spoiler": 0,
+      "name": "Don't Need No Stinkin' Gun",
+      "name_pt": "Não Preciso de Arma",
+      "tip": "Faça em um zumbi caído para reduzir risco.",
+      "trophy_code": "re2r_no_stinkin_gun",
+      "type": "Bronze"
+    },
+    {
+      "description": "Contra-ataque com uma arma secundária.",
+      "is_missable": 0,
+      "is_spoiler": 0,
+      "name": "Eat This!",
+      "name_pt": "Toma Essa!",
+      "tip": "Use faça, granada ou flash ao ser agarrado.",
+      "trophy_code": "re2r_eat_this",
+      "type": "Bronze"
+    },
+    {
+      "description": "Use tábuas de madeira para vedar uma janela.",
+      "is_missable": 0,
+      "is_spoiler": 0,
+      "name": "That'll Hold 'Em",
+      "name_pt": "Isso Deve Segurá-los",
+      "tip": "A delegacia oferece várias oportunidades no começo do jogo.",
+      "trophy_code": "re2r_hold_em",
+      "type": "Bronze"
+    },
+    {
+      "description": "Destrua um Mr. Raccoon.",
+      "is_missable": 0,
+      "is_spoiler": 0,
+      "name": "Vermin Extermination",
+      "name_pt": "Extermínio de Pragas",
+      "tip": "Basta quebrar qualquer um dos bonecos colecionáveis.",
+      "trophy_code": "re2r_vermin_extermination",
+      "type": "Bronze"
+    },
+    {
+      "description": "Abra um cofre portátil.",
+      "is_missable": 0,
+      "is_spoiler": 0,
+      "name": "A Vault-like Mind",
+      "name_pt": "Mente de Cofre",
+      "tip": "Resolva o minigame de botões em qualquer portable safe.",
+      "trophy_code": "re2r_vault_mind",
+      "type": "Bronze"
+    },
+    {
+      "description": "Abra um cofre mecânico.",
+      "is_missable": 0,
+      "is_spoiler": 0,
+      "name": "First Break-In",
+      "name_pt": "Primeira Invasão",
+      "tip": "Qualquer cofre de combinação conta.",
+      "trophy_code": "re2r_first_breakin",
+      "type": "Bronze"
+    },
+    {
+      "description": "Atire em uma granada que esteja na boca de um inimigo.",
+      "is_missable": 0,
+      "is_spoiler": 0,
+      "name": "Bon Appétit",
+      "name_pt": "Bon Appétit",
+      "tip": "Use uma granada defensiva num zumbi e atire logo em seguida.",
+      "trophy_code": "re2r_bon_appetit",
+      "type": "Bronze"
+    },
+    {
+      "description": "Maté 3 inimigos de uma vez com uma sub-weapon.",
+      "is_missable": 0,
+      "is_spoiler": 0,
+      "name": "Zombie Roundup",
+      "name_pt": "Ajuntamento de Zumbis",
+      "tip": "Junte três zumbis e use uma granada comum.",
+      "trophy_code": "re2r_zombie_roundup",
+      "type": "Bronze"
+    },
+    {
+      "description": "Atire em um cão zumbi ou Licker enquanto ele estiver no ar.",
+      "is_missable": 0,
+      "is_spoiler": 0,
+      "name": "Like Skeet Shooting",
+      "name_pt": "Como Tiro ao Prato",
+      "tip": "Espere o salto antes de disparar.",
+      "trophy_code": "re2r_skeet",
+      "type": "Bronze"
+    },
+    {
+      "description": "Atordoe um Licker com uma granada de luz.",
+      "is_missable": 0,
+      "is_spoiler": 0,
+      "name": "Keep Their Heads Ringin'",
+      "name_pt": "Cabeças Zumbindo",
+      "tip": "Encontre um Licker em corredor aberto e arremesse uma flash.",
+      "trophy_code": "re2r_heads_ringin",
+      "type": "Bronze"
+    },
+    {
+      "description": "Derrube o chapéu do Tyrant.",
+      "is_missable": 1,
+      "is_spoiler": 0,
+      "name": "Hats Off!",
+      "name_pt": "Tire o Chapéu!",
+      "tip": "Atire na cabeça do Mr. X quando ele aparecer na delegacia.",
+      "trophy_code": "re2r_hats_off",
+      "type": "Bronze"
+    },
+    {
+      "description": "Derrote a forma 2 do G usando o guindaste apenas uma vez.",
+      "is_missable": 1,
+      "is_spoiler": 1,
+      "name": "Gotcha!",
+      "name_pt": "Peguei Você!",
+      "tip": "Cause muito dano antes de ativar o guindaste e mantenha um save antes da luta.",
+      "trophy_code": "re2r_gotcha",
+      "type": "Prata"
+    },
+    {
+      "description": "Use os dois rolos de filme escondidos para encontrar dois itens.",
+      "is_missable": 1,
+      "is_spoiler": 0,
+      "name": "Treasure Hunter",
+      "name_pt": "Caçador de Tesouros",
+      "tip": "Revele os filmes no laboratório fotográfico e pegue as recompensas.",
+      "trophy_code": "re2r_treasure_hunter",
+      "type": "Bronze"
+    },
+    {
+      "description": "Maximize o espaço do inventário.",
+      "is_missable": 1,
+      "is_spoiler": 0,
+      "name": "A Waist of Space",
+      "name_pt": "Espaço de Sobra",
+      "tip": "Pegue todas as pochetes do jogo.",
+      "trophy_code": "re2r_waist_space",
+      "type": "Bronze"
+    },
+    {
+      "description": "Complete a seção da Ada usando apenas o EMF Visualizer.",
+      "is_missable": 1,
+      "is_spoiler": 1,
+      "name": "One Slick Super-spy",
+      "name_pt": "Uma Superespiã Eficiente",
+      "tip": "Não dê nenhum tiro com a pistola da Ada.",
+      "trophy_code": "re2r_super_spy",
+      "type": "Bronze"
+    },
+    {
+      "description": "Escape do quarto da Sherry em 60 segundos.",
+      "is_missable": 1,
+      "is_spoiler": 1,
+      "name": "Young Escapee",
+      "name_pt": "Jovem Fugitiva",
+      "tip": "Decore o puzzle do bloco e salve antes da cena.",
+      "trophy_code": "re2r_young_escapee",
+      "type": "Bronze"
+    },
+    {
+      "description": "Derrote a forma 4 do G com 4 minutos ou mais restantes.",
+      "is_missable": 1,
+      "is_spoiler": 1,
+      "name": "With Time to Spare",
+      "name_pt": "Com Tempo de Sobra",
+      "tip": "Guarde munição pesada para a reta final do laboratório.",
+      "trophy_code": "re2r_time_spare",
+      "type": "Bronze"
+    },
+    {
+      "description": "Derrote o Super Tyrant com 5 minutos ou mais restantes.",
+      "is_missable": 1,
+      "is_spoiler": 1,
+      "name": "In the Blink of an Eye",
+      "name_pt": "Num Piscar de Olhos",
+      "tip": "Use todo o dano pesado disponível na luta final do Leon.",
+      "trophy_code": "re2r_blink_eye",
+      "type": "Bronze"
+    },
+    {
+      "description": "Leia todos os arquivos.",
+      "is_missable": 1,
+      "is_spoiler": 0,
+      "name": "Lore Explorer",
+      "name_pt": "Explorador da História",
+      "tip": "Será preciso passar por múltiplos cenários para fechar os 58 arquivos.",
+      "trophy_code": "re2r_lore_explorer",
+      "type": "Bronze"
+    },
+    {
+      "description": "Destrua todos os Mr. Raccoons.",
+      "is_missable": 1,
+      "is_spoiler": 0,
+      "name": "Complete Vermin Extermination",
+      "name_pt": "Extermínio Completo de Pragas",
+      "tip": "São 15 no total, espalhados entre diferentes campanhas.",
+      "trophy_code": "re2r_complete_vermin",
+      "type": "Prata"
+    },
+    {
+      "description": "Abra todos os cofres e fechaduras do jogo.",
+      "is_missable": 1,
+      "is_spoiler": 0,
+      "name": "Master of Unlocking",
+      "name_pt": "Mestre das Aberturas",
+      "tip": "Limpe cofres, cadeados e portable safes usando uma checklist.",
+      "trophy_code": "re2r_master_unlocking",
+      "type": "Prata"
+    },
+    {
+      "description": "Consiga rank S com Leon no Standard ou Hardcore.",
+      "is_missable": 1,
+      "is_spoiler": 1,
+      "name": "Leon \"S.\" Kennedy",
+      "name_pt": "Leon \"S.\" Kennedy",
+      "tip": "O rank depende basicamente do tempo; recarregue o save ao morrer.",
+      "trophy_code": "re2r_leon_s",
+      "type": "Ouro"
+    },
+    {
+      "description": "Consiga rank S com Claire no Standard ou Hardcore.",
+      "is_missable": 1,
+      "is_spoiler": 1,
+      "name": "Sizzling Scarlet Hero",
+      "name_pt": "Heroína Escarlate Flamejante",
+      "tip": "Use rota curta e evite desvios que não rendam itens essenciais.",
+      "trophy_code": "re2r_scarlet_hero",
+      "type": "Ouro"
+    },
+    {
+      "description": "Complete a história do Leon no Hardcore.",
+      "is_missable": 0,
+      "is_spoiler": 1,
+      "name": "Hardcore Rookie",
+      "name_pt": "Novato Hardcore",
+      "tip": "Deixe para depois de dominar a rota e liberar armas ou itens de apoio úteis.",
+      "trophy_code": "re2r_hardcore_rookie",
+      "type": "Ouro"
+    },
+    {
+      "description": "Complete a história da Claire no Hardcore.",
+      "is_missable": 0,
+      "is_spoiler": 1,
+      "name": "Hardcore College Student",
+      "name_pt": "Universitária Hardcore",
+      "tip": "Mesma lógica do troféu do Leon: faça quando a rota já estiver segura.",
+      "trophy_code": "re2r_hardcore_college",
+      "type": "Ouro"
+    },
+    {
+      "description": "Complete o jogo sem usar nenhum item de recuperação.",
+      "is_missable": 1,
+      "is_spoiler": 0,
+      "name": "Frugalist",
+      "name_pt": "Frugalista",
+      "tip": "Faça numa run dedicada e evite riscos desnecessários.",
+      "trophy_code": "re2r_frugalist",
+      "type": "Prata"
+    },
+    {
+      "description": "Complete o jogo sem abrir o baú.",
+      "is_missable": 1,
+      "is_spoiler": 0,
+      "name": "Minimalist",
+      "name_pt": "Minimalista",
+      "tip": "Planeje a run para carregar só o essencial e colete as pochetes.",
+      "trophy_code": "re2r_minimalist",
+      "type": "Prata"
+    },
+    {
+      "description": "Dê 14.000 passos ou menos em uma campanha.",
+      "is_missable": 1,
+      "is_spoiler": 0,
+      "name": "A Small Carbon Footprint",
+      "name_pt": "Pegada de Carbono Pequena",
+      "tip": "Use uma rota enxuta e evite backtracking; essa run combina bem com speedrun.",
+      "trophy_code": "re2r_small_footprint",
+      "type": "Prata"
+    },
+    {
+      "description": "Complete o modo extra The 4th Survivor.",
+      "is_missable": 0,
+      "is_spoiler": 1,
+      "name": "Grim Reaper",
+      "name_pt": "Ceifador",
+      "tip": "Memorize a rota, use itens de defesa com disciplina e evite combates inúteis.",
+      "trophy_code": "re2r_grim_reaper",
+      "type": "Bronze"
+    }
+  ]
+}

@@ -1,0 +1,615 @@
+{
+  "game": {
+    "avoid_if": "Não é a melhor escolha se você busca uma platina rápida, tolerante a erro de rota ou sem múltiplas runs.",
+    "before_you_start": "Sekiro: Shadows Die Twice é uma platina exigente de ação e precisão, focada em dominar deflect, postura, bosses, mini-bosses, finais, Prayer Beads, Gourd Seeds, Prosthetic Tools, Lapis Lazuli e todas as skills. A lista base é single-player, não exige online, co-op nem DLC, mas cobra planejamento por causa da escolha com Owl, dos finais, de bosses opcionais e de itens que podem ficar indisponíveis conforme a história avança.",
+    "best_for": "Vale platinar Sekiro: Shadows Die Twice se você gosta de combate técnico, bosses exigentes, deflect preciso e planejamento de finais. A platina base não exige online, co-op nem DLC, mas cobra domínio do combate, todos os finais, bosses opcionais, Prayer Beads, Gourd Seeds, Lapis Lazuli, upgrades de Prosthetic Tools e um grind pesado de skills.",
+    "cleanup_advice": "Use NG+ e backup save para fechar Shura, bosses restantes, Lapis Lazuli, Prayer Beads e o grind de Height of Technique sem transformar o fim em varredura cega.",
+    "cover_image": "https://cdn.cloudflare.steamstatic.com/steam/apps/814380/library_600x900.jpg",
+    "coverage_level": "strong",
+    "created_at": "2026-05-09 19:53:44",
+    "difficulty": 7,
+    "difficulty_reason": "A dificuldade vem do combate preciso, do domínio de deflect, de bosses exigentes e da consistência; não há seletor de dificuldade.",
+    "dlc_scope": "Gauntlets of Strength, Reflections of Strength, skins de update e conteúdo extra ficam fora da platina base.",
+    "editorial_notes": "Escopo confirmado: lista base PS4, 34 troféus, finais, Shura, Purification, Return/Dragon's Homecoming, NG+, backup save, sem online/co-op e Gauntlets/Reflections fora da platina base.",
+    "editorial_review_status": "in_review",
+    "editorial_status": "published",
+    "first_run_advice": "Comece explorando cada área com checklist aberto, derrotando mini-bosses, coletando Prayer Beads, Gourd Seeds e Prosthetic Tools, e evitando escolher Shura sem planejamento. Antes das decisões com Owl e antes dos finais, faça backup save/cloud save se quiser reduzir runs.",
+    "grind_summary": "O peso está em bosses, finais, upgrades de Prosthetic Tools, Prayer Beads, Lapis Lazuli e farm de XP para todas as skills.",
+    "guide_avoid": null,
+    "guide_best_moment": null,
+    "guide_dlc": null,
+    "guide_grind": null,
+    "guide_ideal": null,
+    "guide_online": null,
+    "guide_runs": null,
+    "image": "https://cdn.cloudflare.steamstatic.com/steam/apps/814380/header.jpg",
+    "is_verified": 0,
+    "last_reviewed_at": "",
+    "missable": "A platina base é single-player, sem online, sem coop e sem DLC obrigatória, mas exige planejamento por causa da escolha com Owl, dos finais, de bosses opcionais, de Prayer Beads, Gourd Seeds, Prosthetic Tools, Lapis Lazuli e do grind de XP para todas as skills. Com backup save, é possível reduzir runs; sem backup, planeje várias passagens.",
+    "missable_summary": "Os riscos principais estão em finais, escolha com Owl, Shura, Fountainhead Palace, Great Serpent, Prayer Beads, Lapis Lazuli, Great Colored Carp e bosses opcionais.",
+    "name": "Sekiro: Shadows Die Twice",
+    "online_summary": "Não há exigência online para a platina base. O jogo é single-player e não usa coop obrigatório.",
+    "quality_warnings": "[]",
+    "reviewed_by": "",
+    "runs_summary": "A rota mais segura usa 2 runs com backup de save. Sem backup, planeje 3-4 runs para cobrir Shura, finais e cleanup de rota.",
+    "slug": "sekiro-shadows-die-twice",
+    "time": "50-70h",
+    "time_bucket": "long",
+    "time_max_hours": 70,
+    "time_min_hours": 50,
+    "time_reason": "A faixa de 50-70 horas considera aprendizado, múltiplos finais, bosses opcionais, upgrades, Prayer Beads, Lapis Lazuli, NG+ e farm de skills.",
+    "time_sort_hours": 50,
+    "updated_at": "2026-06-27 02:36:58",
+    "verification_note": "Lista base PS4 com 34 troféus revisada: resumo da platina, roadmap estruturado, dicas críticas, FAQ, flags offline/sem coop/sem DLC e contagem de 16 riscos/perdíveis conferidos.",
+    "verification_status": "unverified",
+    "walkthrough": null
+  },
+  "redirects": [],
+  "roadmaps": [
+    {
+      "content": "{\"title\":\"Primeira run com checklist antes dos pontos críticos\",\"focus\":\"Exploração, Prayer Beads e ferramentas\",\"objective\":\"Avançar pela história coletando upgrades e evitando perder mini-bosses, Prosthetic Tools e áreas importantes.\",\"actions\":[\"Explore Ashina Outskirts, Hirata Estate, Ashina Castle, Senpou Temple, Ashina Depths e Sunken Valley com atenção.\",\"Derrote mini-bosses sempre que possível para garantir Prayer Beads.\",\"Colete Gourd Seeds para melhorar a Healing Gourd.\",\"Pegue Prosthetic Tools assim que ficarem disponíveis.\",\"Antes de avançar depois de Guardian Ape e Corrupted Monk, revise mini-bosses, Prayer Beads e ferramentas pendentes.\"],\"warning\":\"Após certos avanços de história, alguns mini-bosses e itens ficam indisponíveis. Não trate o jogo como cleanup livre sem checklist.\",\"result\":\"A primeira run chega aos pontos de decisão com boa base de vitalidade, postura, cura e ferramentas.\"}",
+      "step_order": 1
+    },
+    {
+      "content": "{\"title\":\"Escolha com Owl e preparação dos finais longos\",\"focus\":\"Kuro, Purification e Return\",\"objective\":\"Seguir a rota de Kuro e preparar os finais que exigem passos extras antes da reta final.\",\"actions\":[\"No topo do Castelo Ashina, escolha permanecer leal a Kuro se a rota for Purification, Return ou Immortal Severance.\",\"Prepare os passos de Purification antes de avançar demais a história.\",\"Prepare Dragon's Homecoming/Return com Divine Child, arroz, serpentes e itens necessários.\",\"Evite entrar na rota Shura na primeira run se ainda precisa de Fountainhead Palace, Lapis Lazuli e bosses opcionais.\",\"Faça backup save/cloud save antes de decisões finais se quiser reduzir retrabalho.\"],\"warning\":\"A escolha com Owl define a rota. Shura encerra a campanha cedo e bloqueia áreas, bosses e itens da rota de Kuro.\",\"result\":\"Os finais longos ficam preparados e o jogador evita perder Fountainhead Palace e bosses importantes.\"}",
+      "step_order": 2
+    },
+    {
+      "content": "{\"title\":\"Fountainhead Palace, Lapis Lazuli e bosses opcionais\",\"focus\":\"Itens e bosses sensíveis\",\"objective\":\"Coletar itens finais e derrotar bosses opcionais antes de iniciar NG+.\",\"actions\":[\"Avance até Fountainhead Palace pela rota de Kuro.\",\"Colete Lapis Lazuli disponíveis na run para upgrades finais de Prosthetic Tools.\",\"Resolva Great Colored Carp se o troféu estiver pendente.\",\"Derrote Demon of Hatred antes de iniciar NG+, se ainda faltar.\",\"Revise Prayer Beads, Gourd Seeds, bosses e mini-bosses pendentes.\"],\"warning\":\"Não inicie NG+ cedo demais. Demon of Hatred, Lapis Lazuli, Prayer Beads e Fountainhead Palace são pontos sensíveis para a platina.\",\"result\":\"A run principal fecha a maior parte de upgrades, áreas e bosses fora da rota Shura.\"}",
+      "step_order": 3
+    },
+    {
+      "content": "{\"title\":\"Finais com backup save\",\"focus\":\"Finais\",\"objective\":\"Obter finais da rota de Kuro com menor retrabalho possível.\",\"actions\":[\"Depois de derrotar Sword Saint Isshin, faça backup save/cloud save antes de interagir com Kuro.\",\"Obtenha Immortal Severance, Purification e Dragon's Homecoming/Return conforme os itens preparados.\",\"Após cada final, restaure o backup se estiver usando a estratégia de múltiplos finais na mesma run.\",\"Confirme o registro do troféu antes de restaurar backup ou seguir para NG+.\",\"Só avance para NG+ depois de revisar bosses, Prayer Beads, Lapis Lazuli e áreas pendentes.\"],\"warning\":\"Backup save reduz runs, mas precisa ser feito no ponto certo. Restaurar errado pode perder horas de preparação.\",\"result\":\"Os finais da rota de Kuro ficam resolvidos sem repetir a campanha inteira.\"}",
+      "step_order": 4
+    },
+    {
+      "content": "{\"title\":\"NG+ para Shura, bosses restantes e Lapis Lazuli\",\"focus\":\"New Game+\",\"objective\":\"Usar NG+ para fechar Shura, bosses exclusivos e upgrades que não cabem em uma única run.\",\"actions\":[\"Avance em NG+ até a escolha com Owl.\",\"Escolha obedecer ao Iron Code para seguir a rota Shura quando for hora de obter esse final.\",\"Derrote os bosses exclusivos da rota Shura.\",\"Se ainda precisar de Lapis Lazuli, planeje uma rota de Kuro em NG+ para acessar Fountainhead Palace novamente.\",\"Confirme Man Without Equal e Master of the Prosthetic conforme os requisitos ficarem completos.\"],\"warning\":\"Shura e rota de Kuro são incompatíveis no mesmo avanço sem backup. Planeje antes de escolher.\",\"result\":\"Os bosses e finais incompatíveis ficam cobertos em NG+.\"}",
+      "step_order": 5
+    },
+    {
+      "content": "{\"title\":\"Grind de skills e cleanup final\",\"focus\":\"XP, skills e conferência\",\"objective\":\"Fechar Height of Technique, upgrades e qualquer troféu restante da lista base.\",\"actions\":[\"Farme XP em áreas finais ou NG+ para comprar todas as skills.\",\"Finalize upgrades de Prosthetic Tools com materiais e Lapis Lazuli restantes.\",\"Confirme todos os Ninjutsu Techniques, Prosthetic Tools, Prayer Beads e Gourd Seeds.\",\"Revise se todos os 34 troféus da lista base foram considerados.\",\"Garanta que Gauntlets, Reflections, skins e conteúdo de update não foram tratados como requisito da platina base.\"],\"warning\":\"Height of Technique costuma ser o maior grind da platina. Deixar para NG+ facilita por causa do XP maior.\",\"result\":\"A lista base de Sekiro fica pronta para a platina.\"}",
+      "step_order": 6
+    }
+  ],
+  "schemaVersion": 1,
+  "seedExtras": {
+    "aliases": [],
+    "attentionPoints": [
+      {
+        "detail": "A escolha no topo do Castelo Ashina separa Shura da rota de Kuro. Escolher Shura cedo bloqueia Fountainhead Palace, Lapis Lazuli e vários bosses.",
+        "tags": [
+          "Shura",
+          "Kuro",
+          "Risco de run"
+        ],
+        "title": "Escolha com Owl"
+      },
+      {
+        "detail": "Immortal Severance, Purification, Dragon's Homecoming/Return e Shura exigem planejamento. Backup save reduz runs, mas precisa ser feito no ponto certo.",
+        "tags": [
+          "Final",
+          "Backup save"
+        ],
+        "title": "Finais e backup save"
+      },
+      {
+        "detail": "Purification exige passos específicos com Kuro, Emma e Hirata Estate revisitado. Father Surpassed depende dessa rota.",
+        "tags": [
+          "Purification",
+          "Hirata Estate"
+        ],
+        "title": "Purification e Owl Father"
+      },
+      {
+        "detail": "Return exige a cadeia da Divine Child, arroz, serpentes e itens específicos antes do fim.",
+        "tags": [
+          "Return",
+          "Divine Child"
+        ],
+        "title": "Dragon's Homecoming/Return"
+      },
+      {
+        "detail": "Alguns mini-bosses podem sumir conforme a história avança. Revise Prayer Beads antes de pontos críticos.",
+        "tags": [
+          "Prayer Beads",
+          "Mini-bosses"
+        ],
+        "title": "Prayer Beads e mini-bosses"
+      },
+      {
+        "detail": "Lapis Lazuli é limitado por run e necessário para upgrades finais de Prosthetic Tools.",
+        "tags": [
+          "Lapis Lazuli",
+          "Prosthetic Tools"
+        ],
+        "title": "Lapis Lazuli"
+      },
+      {
+        "detail": "Demon of Hatred é opcional, difícil e deve ser resolvido antes de NG+ se ainda faltar.",
+        "tags": [
+          "Demon of Hatred",
+          "Risco de run"
+        ],
+        "title": "Demon of Hatred"
+      },
+      {
+        "detail": "Fountainhead Palace fica fora da rota Shura; Great Colored Carp e áreas finais dependem da rota de Kuro.",
+        "tags": [
+          "Great Colored Carp",
+          "Fountainhead Palace"
+        ],
+        "title": "Great Colored Carp e Fountainhead Palace"
+      },
+      {
+        "detail": "Comprar todas as skills é o maior grind de XP. Deixe para áreas finais ou NG+.",
+        "tags": [
+          "Skills",
+          "Grind"
+        ],
+        "title": "Height of Technique"
+      },
+      {
+        "detail": "Gauntlets of Strength, Reflections of Strength e skins são conteúdo de update e não entram nos 34 troféus da lista base.",
+        "tags": [
+          "Fora da base",
+          "Update"
+        ],
+        "title": "Gauntlets/Reflections fora da platina"
+      },
+      {
+        "detail": "A platina base é single-player, sem online obrigatório e sem coop obrigatório.",
+        "tags": [
+          "Sem online",
+          "Sem coop"
+        ],
+        "title": "Sem online/co-op"
+      }
+    ],
+    "checklist": [
+      "Confirmar 34 troféus da lista base.",
+      "Confirmar onlineRequired false, coopRequired false e dlcRequired false.",
+      "Planejar finais e backup save/cloud save.",
+      "Escolher rota de Kuro na primeira run, salvo estratégia diferente justificada.",
+      "Preparar Purification.",
+      "Preparar Dragon's Homecoming/Return.",
+      "Obter Immortal Severance.",
+      "Obter Shura em NG+ ou backup separado.",
+      "Derrotar todos os bosses da lista base.",
+      "Derrotar Demon of Hatred.",
+      "Derrotar Owl Father.",
+      "Resolver Great Colored Carp.",
+      "Coletar Prayer Beads.",
+      "Coletar Gourd Seeds.",
+      "Coletar Prosthetic Tools.",
+      "Coletar Lapis Lazuli.",
+      "Melhorar Prosthetic Tools.",
+      "Obter todos os Ninjutsu Techniques.",
+      "Comprar todas as skills.",
+      "Farmar XP para Height of Technique.",
+      "Conferir Fountainhead Palace antes de NG+.",
+      "Conferir o botão YouTube nos cards."
+    ],
+    "faq": [
+      {
+        "answer": "Não. A platina base é single-player e não exige online.",
+        "question": "Sekiro exige online para platinar?"
+      },
+      {
+        "answer": "Não. Sekiro não tem co-op obrigatório na platina base.",
+        "question": "Sekiro exige co-op para platinar?"
+      },
+      {
+        "answer": "Não. A platina usa a lista base. Gauntlets, Reflections, skins e conteúdo de update ficam fora da platina base.",
+        "question": "Sekiro exige DLC ou Game of the Year para platinar?"
+      },
+      {
+        "answer": "Sim. Os principais riscos estão nas escolhas de rota, finais, bosses opcionais, Fountainhead Palace, Great Colored Carp, Prayer Beads e janelas de história que podem fechar conforme o progresso.",
+        "question": "Sekiro tem troféus perdíveis?"
+      },
+      {
+        "answer": "A rota otimizada pode usar 2 runs com backup save bem planejado. Sem backup, o jogador pode precisar de até 4 runs para todos os finais.",
+        "question": "Quantas runs são necessárias?"
+      },
+      {
+        "answer": "Não é obrigatório, mas ajuda muito a reduzir runs. O backup precisa ser feito antes das decisões finais corretas e antes de escolhas incompatíveis.",
+        "question": "Preciso usar backup save?"
+      },
+      {
+        "answer": "Height of Technique, por exigir todas as skills e muito XP, especialmente se o jogador tentar fazer tudo cedo demais.",
+        "question": "Qual é o maior grind da platina?"
+      },
+      {
+        "answer": "Escolher Shura cedo demais, perder mini-bosses ou Prayer Beads, iniciar NG+ antes de revisar Demon of Hatred, Lapis Lazuli, Fountainhead Palace e finais preparados.",
+        "question": "O que mais costuma dar errado?"
+      },
+      {
+        "answer": "Sim. A rota precisa planejar Lapis Lazuli porque os upgrades finais de Prosthetic Tools exigem mais de uma run ou escolhas específicas.",
+        "question": "Lapis Lazuli é limitado?"
+      },
+      {
+        "answer": "Existe free roam depois do final, mas algumas áreas, bosses e mini-bosses dependem da rota e do estado da história. Não trate como cleanup livre sem checklist.",
+        "question": "Posso fazer cleanup depois da história?"
+      },
+      {
+        "answer": "Não há seletor tradicional de dificuldade afetando troféus. O desafio é fixo e vem do domínio de combate, bosses e deflect.",
+        "question": "A dificuldade afeta troféus?"
+      },
+      {
+        "answer": "Não para a platina base. Gauntlets, Reflections e atualizações de conteúdo ficam fora do checklist base, salvo se houver uma lista separada específica.",
+        "question": "Gauntlets of Strength são necessários?"
+      }
+    ],
+    "note": "Campos exportados para auditoria. O SQLite atual nao possui colunas nativas para todos esses extras; a importacao preserva o que o banco suporta.",
+    "quickDecision": {
+      "firstAction": "Faça a primeira run com checklist antes dos pontos críticos.",
+      "methodology": "Este guia cobre os 34 troféus da lista base. Gauntlets of Strength, Reflections of Strength, skins e conteúdo de update ficam fora da platina. A rota considera backup save como ferramenta opcional para reduzir runs entre finais.",
+      "recommendation": "Vale platinar Sekiro: Shadows Die Twice se você gosta de combate técnico, bosses exigentes, deflect preciso e planejamento de finais. A platina base não exige online, co-op nem DLC, mas cobra domínio do combate, todos os finais, bosses opcionais, Prayer Beads, Gourd Seeds, Lapis Lazuli, upgrades de Prosthetic Tools e um grind pesado de skills. É uma excelente platina para fãs de desafio, mas não é recomendada para quem busca uma platina rápida ou tolerante a erro de rota.",
+      "risk": "O principal risco editorial é escolher Shura cedo demais, perder Fountainhead Palace, Great Colored Carp, bosses opcionais e parte dos finais.",
+      "summary": "Vale platinar Sekiro: Shadows Die Twice se você gosta de combate técnico, bosses exigentes, deflect preciso e planejamento de finais. A platina base não exige online, co-op nem DLC, mas cobra domínio do combate, todos os finais, bosses opcionais, Prayer Beads, Gourd Seeds, Lapis Lazuli, upgrades de Prosthetic Tools e um grind pesado de skills. É uma excelente platina para fãs de desafio, mas não é recomendada para quem busca uma platina rápida ou tolerante a erro de rota."
+    },
+    "seo": {
+      "description": "Guia de platina de Sekiro: Shadows Die Twice em português, com roadmap da lista base, finais, Shura, Purification, Dragon's Homecoming, Immortal Severance, Prayer Beads, Gourd Seeds, Prosthetic Tools, Lapis Lazuli, bosses, NG+, backup save e dicas para conquistar a platina no PS4.",
+      "keywords": "Sekiro, Sekiro Shadows Die Twice, guia de platina Sekiro, troféus Sekiro, roadmap Sekiro, finais Sekiro, Prayer Beads, Gourd Seeds, Lapis Lazuli, Prosthetic Tools, Shura, Purification, Dragon's Homecoming, Return, Immortal Severance, Man Without Equal, Height of Technique, Demon of Hatred, sem online obrigatório, sem DLC obrigatório",
+      "ogDescription": "Guia de platina de Sekiro: Shadows Die Twice com lista base PS4, finais, bosses, Prayer Beads, Gourd Seeds, Prosthetic Tools, Lapis Lazuli, NG+ e backup save.",
+      "ogTitle": "Guia de Platina Sekiro: Shadows Die Twice — Troféus e Roadmap | AtlasAchievement",
+      "title": "Guia de Platina Sekiro: Shadows Die Twice — Troféus, Roadmap e Dicas"
+    },
+    "tags": [
+      "Sekiro",
+      "Shadows Die Twice",
+      "PS4",
+      "Platina",
+      "Ação",
+      "Soulslike",
+      "Single-player",
+      "Finais",
+      "NG+",
+      "Sem online",
+      "Sem coop",
+      "Sem DLC"
+    ]
+  },
+  "slug": "sekiro-shadows-die-twice",
+  "trophies": [
+    {
+      "description": "All trophies have been unlocked.",
+      "is_missable": 0,
+      "is_spoiler": 0,
+      "name": "Sekiro",
+      "name_pt": "",
+      "tip": "Conclua os outros 33 trofeus da lista base de Sekiro: Shadows Die Twice. O guia cobre apenas a lista base da platina.",
+      "trophy_code": "sekiro_sekiro",
+      "type": "Platina"
+    },
+    {
+      "description": "Defeated all bosses",
+      "is_missable": 1,
+      "is_spoiler": 1,
+      "name": "Man Without Equal",
+      "name_pt": "",
+      "tip": "Exige bosses de rotas diferentes, incluindo Shura e nao-Shura. Nao da para fechar em uma unica passagem sem usar saves/NG+.",
+      "trophy_code": "sekiro_man_without_equal",
+      "type": "Ouro"
+    },
+    {
+      "description": "Traveled to all areas of the game",
+      "is_missable": 1,
+      "is_spoiler": 1,
+      "name": "Ashina Traveler",
+      "name_pt": "",
+      "tip": "Fountainhead Palace fica bloqueado se voce escolher Shura. Visite todas as areas principais antes de encerrar a run.",
+      "trophy_code": "sekiro_ashina_traveler",
+      "type": "Ouro"
+    },
+    {
+      "description": "Upgraded all Prosthetic Tools to their limit",
+      "is_missable": 0,
+      "is_spoiler": 0,
+      "name": "Master of the Prosthetic",
+      "name_pt": "",
+      "tip": "Exige todas as ferramentas, materiais raros e Lapis Lazuli em quantidade de multiplas passagens. Shura bloqueia parte do caminho e pode empurrar o cleanup para NG+.",
+      "trophy_code": "sekiro_master_of_the_prosthetic",
+      "type": "Ouro"
+    },
+    {
+      "description": "Acquired all skills",
+      "is_missable": 0,
+      "is_spoiler": 0,
+      "name": "Height of Technique",
+      "name_pt": "",
+      "tip": "O maior grind da lista. Farm de XP nao e perdivel; deixe para endgame/NG+ quando os inimigos rendem mais experiencia.",
+      "trophy_code": "sekiro_height_of_technique",
+      "type": "Ouro"
+    },
+    {
+      "description": "Acquired all Prosthetic Tools",
+      "is_missable": 0,
+      "is_spoiler": 0,
+      "name": "All Prosthetic Tools",
+      "name_pt": "",
+      "tip": "Colete todas as ferramentas antes de avancar demais. Se alguma ficar bloqueada por progresso, recupere em NG+, mas isso gera retrabalho.",
+      "trophy_code": "sekiro_all_prosthetic_tools",
+      "type": "Prata"
+    },
+    {
+      "description": "Acquired all Ninjutsu Techniques",
+      "is_missable": 0,
+      "is_spoiler": 1,
+      "name": "All Ninjutsu Techniques",
+      "name_pt": "",
+      "tip": "Feche Bloodsmoke, Puppeteer e Bestowal seguindo bosses e eventos principais; revise antes de iniciar NG+.",
+      "trophy_code": "sekiro_all_ninjutsu_techniques",
+      "type": "Prata"
+    },
+    {
+      "description": "Upgraded Vitality and Posture to their limit",
+      "is_missable": 1,
+      "is_spoiler": 1,
+      "name": "Peak Physical Strength",
+      "name_pt": "",
+      "tip": "Exige todas as Prayer Beads, incluindo minibosses e rotas que podem mudar com escolhas e progresso de historia.",
+      "trophy_code": "sekiro_peak_physical_strength",
+      "type": "Prata"
+    },
+    {
+      "description": "Fully upgraded the \"Healing Gourd\"",
+      "is_missable": 0,
+      "is_spoiler": 0,
+      "name": "Ultimate Healing Gourd",
+      "name_pt": "",
+      "tip": "Colete todos os Gourd Seeds e entregue a Emma. Mantenha checklist por area para nao transformar o fim em busca cega.",
+      "trophy_code": "sekiro_ultimate_healing_gourd",
+      "type": "Prata"
+    },
+    {
+      "description": "Attained the \"Immortal Severance\" ending",
+      "is_missable": 1,
+      "is_spoiler": 1,
+      "name": "Immortal Severance",
+      "name_pt": "",
+      "tip": "Final mutuamente exclusivo por conclusao. Use backup antes da escolha final ou deixe para NG+.",
+      "trophy_code": "sekiro_immortal_severance",
+      "type": "Prata"
+    },
+    {
+      "description": "Attained the \"Purification\" ending",
+      "is_missable": 1,
+      "is_spoiler": 1,
+      "name": "Purification",
+      "name_pt": "",
+      "tip": "Final com requisitos especificos ligados a Kuro, Emma e Hirata Estate revisitado. Planeje antes de derrotar o chefe final.",
+      "trophy_code": "sekiro_purification",
+      "type": "Prata"
+    },
+    {
+      "description": "Attained the \"Return\" ending",
+      "is_missable": 1,
+      "is_spoiler": 1,
+      "name": "Dragon's Homecoming",
+      "name_pt": "",
+      "tip": "Final tambem conhecido como Return/Dragon's Homecoming. Exige cadeia de eventos propria antes do fim.",
+      "trophy_code": "sekiro_dragons_homecoming",
+      "type": "Prata"
+    },
+    {
+      "description": "Attained the \"Shura\" ending",
+      "is_missable": 1,
+      "is_spoiler": 1,
+      "name": "Shura",
+      "name_pt": "",
+      "tip": "Escolher Shura encerra a rota cedo e bloqueia areas, bosses e Lapis Lazuli daquela passagem. Melhor separar em NG+ ou save dedicado.",
+      "trophy_code": "sekiro_shura",
+      "type": "Prata"
+    },
+    {
+      "description": "Defeated \"Sword Saint Isshin Ashina\"",
+      "is_missable": 1,
+      "is_spoiler": 1,
+      "name": "Sword Saint, Isshin Ashina",
+      "name_pt": "",
+      "tip": "Chefe final da rota nao-Shura. Se escolher Shura, fica para outra passagem/backup.",
+      "trophy_code": "sekiro_sword_saint_isshin_ashina",
+      "type": "Prata"
+    },
+    {
+      "description": "Grasped the inner mysteries of any combat style",
+      "is_missable": 0,
+      "is_spoiler": 0,
+      "name": "Master of the Arts",
+      "name_pt": "",
+      "tip": "Compre a habilidade final de qualquer arvore de skills. Vem naturalmente no caminho para Height of Technique.",
+      "trophy_code": "sekiro_master_of_the_arts",
+      "type": "Prata"
+    },
+    {
+      "description": "Used Lapis Lazuli to upgrade any tool to its limit",
+      "is_missable": 0,
+      "is_spoiler": 0,
+      "name": "Lazuline Upgrade",
+      "name_pt": "",
+      "tip": "Lapis Lazuli e limitado por passagem e Shura bloqueia Fountainhead Palace. Planeje antes de gastar se estiver mirando Master of the Prosthetic.",
+      "trophy_code": "sekiro_lazuline_upgrade",
+      "type": "Prata"
+    },
+    {
+      "description": "Received the \"Kusabimaru\" from Kuro",
+      "is_missable": 0,
+      "is_spoiler": 0,
+      "name": "Revered Blade",
+      "name_pt": "",
+      "tip": "Trofeu inicial de historia no prologo.",
+      "trophy_code": "sekiro_revered_blade",
+      "type": "Bronze"
+    },
+    {
+      "description": "Acquired the Shinobi Prosthetic",
+      "is_missable": 0,
+      "is_spoiler": 0,
+      "name": "Shinobi Prosthetic",
+      "name_pt": "",
+      "tip": "Trofeu de historia logo apos o prologo.",
+      "trophy_code": "sekiro_shinobi_prosthetic",
+      "type": "Bronze"
+    },
+    {
+      "description": "Encountered the Memorial Mob",
+      "is_missable": 0,
+      "is_spoiler": 0,
+      "name": "Memorial Mob",
+      "name_pt": "",
+      "tip": "Encontre um dos comerciantes Memorial Mob; o primeiro fica cedo em Ashina Outskirts.",
+      "trophy_code": "sekiro_memorial_mob",
+      "type": "Bronze"
+    },
+    {
+      "description": "Returned from the dead using \"Resurrection\" for the first time",
+      "is_missable": 0,
+      "is_spoiler": 0,
+      "name": "Resurrection",
+      "name_pt": "",
+      "tip": "Use Resurrection pela primeira vez depois de morrer. Deve vir naturalmente.",
+      "trophy_code": "sekiro_resurrection",
+      "type": "Bronze"
+    },
+    {
+      "description": "Defeated \"Gyoubu Masataka Oniwa\"",
+      "is_missable": 0,
+      "is_spoiler": 1,
+      "name": "Gyoubu Masataka Oniwa",
+      "name_pt": "",
+      "tip": "Chefe principal inicial. Aprenda deflect, postura e uso pontual de prosthetics.",
+      "trophy_code": "sekiro_gyoubu_masataka_oniwa",
+      "type": "Bronze"
+    },
+    {
+      "description": "Defeated \"Lady Butterfly\"",
+      "is_missable": 0,
+      "is_spoiler": 1,
+      "name": "The Phantom Lady Butterfly",
+      "name_pt": "",
+      "tip": "Chefe de Hirata Estate. Opcional, mas importante para pratica e progresso de bosses.",
+      "trophy_code": "sekiro_the_phantom_lady_butterfly",
+      "type": "Bronze"
+    },
+    {
+      "description": "Defeated \"Genichiro Ashina\"",
+      "is_missable": 0,
+      "is_spoiler": 1,
+      "name": "Genichiro Ashina",
+      "name_pt": "",
+      "tip": "Grande teste de deflect, postura e punicao de lightning reversal.",
+      "trophy_code": "sekiro_genichiro_ashina",
+      "type": "Bronze"
+    },
+    {
+      "description": "Defeated the \"Guardian Ape\"",
+      "is_missable": 0,
+      "is_spoiler": 1,
+      "name": "Guardian Ape",
+      "name_pt": "",
+      "tip": "Chefe principal de Sunken Valley e marco importante antes das escolhas criticas.",
+      "trophy_code": "sekiro_guardian_ape",
+      "type": "Bronze"
+    },
+    {
+      "description": "Used the Mortal Blade to sever the Guardian Ape's undying",
+      "is_missable": 0,
+      "is_spoiler": 1,
+      "name": "Guardian Ape Immortality Severed",
+      "name_pt": "",
+      "tip": "Evento de boss ligado a Mortal Blade e ao caminho para Ninjutsu/Bestowal.",
+      "trophy_code": "sekiro_guardian_ape_immortality_severed",
+      "type": "Bronze"
+    },
+    {
+      "description": "Caught the Folding Screen Monkeys",
+      "is_missable": 0,
+      "is_spoiler": 1,
+      "name": "Folding Screen Monkeys",
+      "name_pt": "",
+      "tip": "Chefe de Senpou Temple ligado ao progresso principal e Mortal Blade.",
+      "trophy_code": "sekiro_folding_screen_monkeys",
+      "type": "Bronze"
+    },
+    {
+      "description": "Defeated \"Great Shinobi - Owl\"",
+      "is_missable": 1,
+      "is_spoiler": 1,
+      "name": "Great Shinobi - Owl",
+      "name_pt": "",
+      "tip": "Escolha ficar leal a Kuro para lutar contra Owl nesta rota. Shura bloqueia este boss ate NG+/backup.",
+      "trophy_code": "sekiro_great_shinobi_owl",
+      "type": "Bronze"
+    },
+    {
+      "description": "Defeated \"Great Shinobi - Owl\" at the Hirata Estate",
+      "is_missable": 1,
+      "is_spoiler": 1,
+      "name": "Father Surpassed",
+      "name_pt": "",
+      "tip": "Boss opcional de Hirata Estate revisitado, ligado a Purification. Pode ser perdido por escolhas/progresso e recuperado em NG+.",
+      "trophy_code": "sekiro_father_surpassed",
+      "type": "Bronze"
+    },
+    {
+      "description": "Defeated the \"Corrupted Monk\"",
+      "is_missable": 1,
+      "is_spoiler": 1,
+      "name": "Corrupted Monk",
+      "name_pt": "",
+      "tip": "A lista cobra a luta verdadeira em Fountainhead Palace, bloqueada se voce escolher Shura.",
+      "trophy_code": "sekiro_corrupted_monk",
+      "type": "Bronze"
+    },
+    {
+      "description": "Defeated the \"Divine Dragon\" and obtained the \"Divine Dragon's Tears\"",
+      "is_missable": 1,
+      "is_spoiler": 1,
+      "name": "Gracious Gift of Tears",
+      "name_pt": "",
+      "tip": "Marco de historia da rota nao-Shura em Fountainhead Palace.",
+      "trophy_code": "sekiro_gracious_gift_of_tears",
+      "type": "Bronze"
+    },
+    {
+      "description": "Defeated \"Isshin Ashina\"",
+      "is_missable": 1,
+      "is_spoiler": 1,
+      "name": "Isshin Ashina",
+      "name_pt": "",
+      "tip": "Boss especifico do final Shura. Se ficar leal a Kuro, deixe para NG+ ou save separado.",
+      "trophy_code": "sekiro_isshin_ashina",
+      "type": "Bronze"
+    },
+    {
+      "description": "Defeated the \"Demon of Hatred\"",
+      "is_missable": 1,
+      "is_spoiler": 1,
+      "name": "Demon of Hatred",
+      "name_pt": "",
+      "tip": "Boss opcional de endgame. Pode ser perdido por escolha/progresso na passagem, mas e recuperavel em NG+.",
+      "trophy_code": "sekiro_demon_of_hatred",
+      "type": "Bronze"
+    },
+    {
+      "description": "Defeated the \"Great Serpent\".",
+      "is_missable": 1,
+      "is_spoiler": 1,
+      "name": "Great Serpent",
+      "name_pt": "",
+      "tip": "Evento opcional de exploracao ligado a rota e cleanup. Feche antes de ir para NG+.",
+      "trophy_code": "sekiro_great_serpent",
+      "type": "Bronze"
+    },
+    {
+      "description": "Defeated the \"Great Colored Carp\".",
+      "is_missable": 1,
+      "is_spoiler": 1,
+      "name": "Great Colored Carp",
+      "name_pt": "",
+      "tip": "Evento opcional de Fountainhead Palace. Shura impede acesso a area nesta passagem; recupere em NG+ se perder.",
+      "trophy_code": "sekiro_great_colored_carp",
+      "type": "Bronze"
+    }
+  ]
+}
