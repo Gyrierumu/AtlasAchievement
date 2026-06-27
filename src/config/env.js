@@ -25,6 +25,7 @@ const config = {
   loginBlockDurationMs: Number(process.env.LOGIN_BLOCK_DURATION_MS || 15 * 60 * 1000),
   appUrl: (process.env.APP_URL || '').trim(),
   canonicalOrigin: (process.env.CANONICAL_ORIGIN || process.env.PUBLIC_SITE_URL || '').trim(),
+  autoImportGuidesOnStart: process.env.AUTO_IMPORT_GUIDES_ON_START === 'true',
   googleAnalyticsMeasurementId: (
     process.env.GA_MEASUREMENT_ID
     || process.env.GOOGLE_ANALYTICS_MEASUREMENT_ID

@@ -89,6 +89,45 @@ function normalizeCoverageLevel(game = {}) {
   return level === 'complete' && normalizeVerificationStatus(game) !== 'verified' ? 'strong' : level;
 }
 
+function normalizeSlugValue(value) {
+  return String(value || '').trim().toLowerCase();
+}
+
+function createSeedGameConflictError({ name, existingSlug, newSlug }) {
+  return new Error(
+    `Conflito de jogo no seed: name ja existe com outro slug. name="${name}", slug existente="${existingSlug || '(vazio)'}", slug novo="${newSlug}".`
+  );
+}
+
+async function resolveSeedGameTarget(game, slug) {
+  const name = String(game.name || '').trim();
+  const matches = [];
+  const slugMatch = await all('SELECT id, slug, name FROM games WHERE slug = ?', [slug]);
+  for (const row of slugMatch) matches.push(row);
+
+  if (name) {
+    const nameMatches = await all('SELECT id, slug, name FROM games WHERE lower(name) = lower(?)', [name]);
+    for (const row of nameMatches) {
+      if (!matches.some(match => match.id === row.id)) matches.push(row);
+    }
+  }
+
+  if (matches.length > 1) {
+    const conflict = matches.find(row => row.id !== matches[0].id) || matches[0];
+    throw createSeedGameConflictError({ name, existingSlug: conflict.slug, newSlug: slug });
+  }
+
+  const target = matches[0] || null;
+  if (!target) return null;
+
+  const existingSlug = normalizeSlugValue(target.slug);
+  if (existingSlug && existingSlug !== slug) {
+    throw createSeedGameConflictError({ name, existingSlug: target.slug, newSlug: slug });
+  }
+
+  return target;
+}
+
 async function seed() {
   const existingRows = await all('SELECT slug, name FROM games');
   const existingSlugs = new Set(existingRows.map(row => getCanonicalGameSlug(row.slug || row.name)).filter(Boolean));
@@ -96,7 +135,8 @@ async function seed() {
   for (const game of sampleGames) {
     const timeMeta = formatTimeMetadata(game.time);
     const slug = getCanonicalGameSlug(game.slug || game.name);
-    if (existingSlugs.has(slug)) continue;
+    const existing = await resolveSeedGameTarget(game, slug);
+    if (existing && normalizeSlugValue(existing.slug) === slug) continue;
     const timeMinHours = Number.isFinite(Number(game.time_min_hours)) ? Number(game.time_min_hours) : timeMeta.time_min_hours;
     const timeMaxHours = Number.isFinite(Number(game.time_max_hours)) ? Number(game.time_max_hours) : timeMeta.time_max_hours;
     const timeSortHours = Number.isFinite(Number(game.time_sort_hours)) ? Number(game.time_sort_hours) : timeMeta.time_sort_hours;
@@ -106,48 +146,62 @@ async function seed() {
       ? JSON.stringify(game.quality_warnings || game.qualityWarnings)
       : (game.quality_warnings || game.qualityWarnings || '');
     const walkthrough = guideModel.normalizeWalkthrough(game.walkthrough);
-    const result = await run(
-      'INSERT INTO games (name, slug, difficulty, time, time_min_hours, time_max_hours, time_sort_hours, time_bucket, missable, runs_summary, missable_summary, online_summary, grind_summary, dlc_scope, difficulty_reason, time_reason, first_run_advice, cleanup_advice, before_you_start, best_for, avoid_if, verification_status, editorial_status, coverage_level, is_verified, verification_note, editorial_review_status, last_reviewed_at, editorial_notes, quality_warnings, reviewed_by, walkthrough, image, cover_image) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)',
-      [
-        game.name,
-        slug,
-        game.difficulty,
-        game.time,
-        timeMinHours,
-        timeMaxHours,
-        timeSortHours,
-        timeBucket,
-        game.missable,
-        game.runs_summary || game.guide_runs || game.runs || '',
-        game.missable_summary || game.missable || '',
-        game.online_summary || game.guide_online || game.online || '',
-        game.grind_summary || game.guide_grind || game.grind || '',
-        game.dlc_scope || game.guide_dlc || game.dlc || '',
-        game.difficulty_reason || '',
-        game.time_reason || '',
-        game.first_run_advice || game.guide_best_moment || game.best_for_when || '',
-        game.cleanup_advice || '',
-        game.before_you_start || '',
-        game.best_for || game.guide_ideal || game.ideal_for || '',
-        game.avoid_if || game.guide_avoid || game.avoid_for || '',
-        verificationStatus,
-        game.editorial_status || 'published',
-        normalizeCoverageLevel(game),
-        verificationStatus === 'verified' ? 1 : 0,
-        game.verification_note || '',
-        game.editorial_review_status || game.editorialReviewStatus || null,
-        game.last_reviewed_at || game.lastReviewedAt || '',
-        game.editorial_notes || game.editorialNotes || '',
-        qualityWarnings,
-        game.reviewed_by || game.reviewedBy || '',
-        walkthrough.length ? JSON.stringify(walkthrough) : '',
-        game.image || null,
-        game.cover_image || deriveSteamCoverImage(game.image) || null
-      ]
-    );
+    const values = [
+      game.name,
+      slug,
+      game.difficulty,
+      game.time,
+      timeMinHours,
+      timeMaxHours,
+      timeSortHours,
+      timeBucket,
+      game.missable,
+      game.runs_summary || game.guide_runs || game.runs || '',
+      game.missable_summary || game.missable || '',
+      game.online_summary || game.guide_online || game.online || '',
+      game.grind_summary || game.guide_grind || game.grind || '',
+      game.dlc_scope || game.guide_dlc || game.dlc || '',
+      game.difficulty_reason || '',
+      game.time_reason || '',
+      game.first_run_advice || game.guide_best_moment || game.best_for_when || '',
+      game.cleanup_advice || '',
+      game.before_you_start || '',
+      game.best_for || game.guide_ideal || game.ideal_for || '',
+      game.avoid_if || game.guide_avoid || game.avoid_for || '',
+      verificationStatus,
+      game.editorial_status || 'published',
+      normalizeCoverageLevel(game),
+      verificationStatus === 'verified' ? 1 : 0,
+      game.verification_note || '',
+      game.editorial_review_status || game.editorialReviewStatus || null,
+      game.last_reviewed_at || game.lastReviewedAt || '',
+      game.editorial_notes || game.editorialNotes || '',
+      qualityWarnings,
+      game.reviewed_by || game.reviewedBy || '',
+      walkthrough.length ? JSON.stringify(walkthrough) : '',
+      game.image || null,
+      game.cover_image || deriveSteamCoverImage(game.image) || null
+    ];
 
-    const gameId = result.lastID;
+    let gameId = existing?.id;
+    if (existing) {
+      await run(
+        'UPDATE games SET name = ?, slug = ?, difficulty = ?, time = ?, time_min_hours = ?, time_max_hours = ?, time_sort_hours = ?, time_bucket = ?, missable = ?, runs_summary = ?, missable_summary = ?, online_summary = ?, grind_summary = ?, dlc_scope = ?, difficulty_reason = ?, time_reason = ?, first_run_advice = ?, cleanup_advice = ?, before_you_start = ?, best_for = ?, avoid_if = ?, verification_status = ?, editorial_status = ?, coverage_level = ?, is_verified = ?, verification_note = ?, editorial_review_status = ?, last_reviewed_at = ?, editorial_notes = ?, quality_warnings = ?, reviewed_by = ?, walkthrough = ?, image = ?, cover_image = ? WHERE id = ?',
+        [...values, existing.id]
+      );
+    } else {
+      const result = await run(
+        'INSERT INTO games (name, slug, difficulty, time, time_min_hours, time_max_hours, time_sort_hours, time_bucket, missable, runs_summary, missable_summary, online_summary, grind_summary, dlc_scope, difficulty_reason, time_reason, first_run_advice, cleanup_advice, before_you_start, best_for, avoid_if, verification_status, editorial_status, coverage_level, is_verified, verification_note, editorial_review_status, last_reviewed_at, editorial_notes, quality_warnings, reviewed_by, walkthrough, image, cover_image) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)',
+        values
+      );
+      gameId = result.lastID;
+    }
     existingSlugs.add(slug);
+
+    if (existing) {
+      await run('DELETE FROM roadmaps WHERE game_id = ?', [gameId]);
+      await run('DELETE FROM trophies WHERE game_id = ?', [gameId]);
+    }
 
     for (const alias of getSeedGameSlugAliases(game, slug)) {
       const normalizedAlias = slugifyGameName(alias);

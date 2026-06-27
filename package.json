@@ -9,6 +9,7 @@
     "db:setup": "node scripts/setup-database.js",
     "export:data": "node scripts/export-data.js",
     "import:data": "node scripts/import-data.js",
+    "import:data:changed": "node scripts/import-data.js --changed",
     "build": "npm run check:runtime && npm run test:quick",
     "release:check": "node scripts/check-release.js",
     "test:guide": "node scripts/test-layers.js guide",

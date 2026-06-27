@@ -27,6 +27,7 @@ Alteracoes feitas no painel admin ficam no SQLite configurado por `DATABASE_PATH
 ```bash
 npm run export:data
 npm run import:data -- --yes
+npm run import:data:changed -- --yes
 ```
 
 Veja o fluxo completo e os cuidados de backup em [`docs/publicar-dados-guias.md`](docs/publicar-dados-guias.md).
@@ -47,10 +48,13 @@ SESSION_MAX_AGE_HOURS=8
 SESSION_CLEANUP_INTERVAL_MINUTES=30
 ADMIN_USERNAME=admin
 ADMIN_PASSWORD=admin123
+AUTO_IMPORT_GUIDES_ON_START=false
 DATABASE_PATH=./database.sqlite
 UPLOAD_DIR=./public/uploads
 MAX_UPLOAD_SIZE_BYTES=5242880
 ```
+
+`AUTO_IMPORT_GUIDES_ON_START=true` ativa a importacao automatica dos snapshots versionados em `data/guides` durante o startup. Quando ausente ou `false`, nada e importado automaticamente. O importador automatico usa hashes em `guide_import_state`, cria backup antes de importacao real, roda em transacao e pula guias ja sincronizados.
 
 ## Testes e release
 
@@ -102,6 +106,7 @@ Variaveis importantes para producao:
 - `DATABASE_PATH` apontando para volume persistente do ambiente
 - `UPLOAD_DIR` apontando para volume persistente quando houver uploads
 - `ALLOW_DEFAULT_ADMIN_BOOTSTRAP=false`
+- `AUTO_IMPORT_GUIDES_ON_START=true` para importar guias versionados no proximo deploy/start, ou `false` para manter controle manual
 
 ## Upload de capas
 
@@ -122,6 +127,20 @@ Limite padrão: 5MB.
 
 ## Deploy no Render
 
+### Fluxo automatico de guias
+
+Com `autoDeploy: true` no `render.yaml` e `AUTO_IMPORT_GUIDES_ON_START=true` no ambiente do Render, o fluxo normal e:
+
+```bash
+git push origin main
+```
+
+O Render faz build/deploy, roda o startup do app e importa automaticamente os guias novos ou alterados de `data/guides` para o SQLite persistente em `/data/database.sqlite`.
+
+Em servicos novos criados pelo Blueprint, `render.yaml` ja define `AUTO_IMPORT_GUIDES_ON_START=true`. Em servicos existentes, confirme no painel do Render em **Environment** se a variavel esta ativa, ou reaplique o Blueprint.
+
+Se aparecer `Conflito de jogo: name ja existe com outro slug`, revise o JSON em `data/guides` e o registro existente no banco. O mesmo jogo deve manter o mesmo `slug`; um nome igual com slug diferente e tratado como conflito real para evitar duplicacao.
+
 O arquivo `render.yaml` já está pronto.
 
 ### Passos
@@ -131,7 +150,8 @@ O arquivo `render.yaml` já está pronto.
 4. configure manualmente:
    - `ADMIN_USERNAME`
    - `ADMIN_PASSWORD`
-5. faça o deploy
+5. confirme `AUTO_IMPORT_GUIDES_ON_START=true`
+6. faça o deploy
 
 ### Por que o disco persistente importa
 - o SQLite precisa persistir entre deploys

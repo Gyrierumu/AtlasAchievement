@@ -5,10 +5,13 @@ const env = require('../src/config/env');
 const {
   parseArgs,
   normalizeDataDir,
+  createContentHash,
   createDatabaseBackup,
   openDatabase,
   normalizeGuideFileName
 } = require('./data-sync-utils');
+
+const IMPORT_VERSION = 1;
 
 const GAME_COLUMNS = [
   'name',
@@ -68,7 +71,40 @@ const TROPHY_COLUMNS = [
 ];
 
 function readJson(filePath) {
-  return JSON.parse(fs.readFileSync(filePath, 'utf8'));
+  return JSON.parse(fs.readFileSync(filePath, 'utf8').replace(/^\uFEFF/, ''));
+}
+
+function assertSafeGuidePath(dataDir, fileName) {
+  const resolvedDataDir = path.resolve(dataDir);
+  const resolvedFilePath = path.resolve(resolvedDataDir, fileName);
+  const expectedPrefix = `${resolvedDataDir}${path.sep}`;
+  if (!resolvedFilePath.startsWith(expectedPrefix)) {
+    throw new Error(`Arquivo de guia invalido no manifest: ${fileName}`);
+  }
+  return resolvedFilePath;
+}
+
+function validateManifest(manifest) {
+  if (!manifest || typeof manifest !== 'object' || !Array.isArray(manifest.games)) {
+    throw new Error('Manifest invalido: campo games deve ser uma lista.');
+  }
+}
+
+function validateGuide(guide, expectedSlug, sourceFile) {
+  if (!guide || typeof guide !== 'object') {
+    throw new Error(`Guia invalido em ${sourceFile}: JSON deve ser um objeto.`);
+  }
+  if (guide.slug !== expectedSlug) {
+    throw new Error(`Guia invalido em ${sourceFile}: slug esperado ${expectedSlug}, recebido ${guide.slug || '(vazio)'}.`);
+  }
+  if (!guide.game || typeof guide.game !== 'object' || Array.isArray(guide.game)) {
+    throw new Error(`Guia invalido em ${sourceFile}: campo game deve ser um objeto.`);
+  }
+  for (const field of ['roadmaps', 'trophies', 'redirects']) {
+    if (guide[field] !== undefined && !Array.isArray(guide[field])) {
+      throw new Error(`Guia invalido em ${sourceFile}: campo ${field} deve ser uma lista.`);
+    }
+  }
 }
 
 function resolveSelectedSlugs(manifest, onlyArg) {
@@ -87,6 +123,20 @@ function resolveSelectedSlugs(manifest, onlyArg) {
 
 function pickValues(source, columns) {
   return columns.map(column => source[column] ?? null);
+}
+
+function normalizeSlugValue(value) {
+  return String(value || '').trim().toLowerCase();
+}
+
+function isEmptySlug(value) {
+  return normalizeSlugValue(value).length === 0;
+}
+
+function createGameConflictError({ name, existingSlug, newSlug }) {
+  return new Error(
+    `Conflito de jogo: name ja existe com outro slug. name="${name}", slug existente="${existingSlug || '(vazio)'}", slug novo="${newSlug}".`
+  );
 }
 
 async function getTableColumns(database, tableName) {
@@ -108,9 +158,77 @@ async function assertRequiredTables(database) {
   }
 }
 
-async function upsertGame(database, guide, gameColumns) {
+async function hasGuideImportStateTable(database) {
+  const row = await database.get(
+    "SELECT name FROM sqlite_master WHERE type = 'table' AND name = 'guide_import_state'"
+  );
+  return Boolean(row);
+}
+
+async function ensureGuideImportStateTable(database) {
+  await database.exec(`
+    CREATE TABLE IF NOT EXISTS guide_import_state (
+      slug TEXT PRIMARY KEY,
+      content_hash TEXT NOT NULL,
+      imported_at TEXT NOT NULL DEFAULT CURRENT_TIMESTAMP,
+      source_file TEXT NOT NULL,
+      import_version INTEGER NOT NULL DEFAULT ${IMPORT_VERSION}
+    );
+
+    CREATE INDEX IF NOT EXISTS idx_guide_import_state_imported_at
+      ON guide_import_state(imported_at);
+  `);
+}
+
+async function readGuideImportState(database) {
+  if (!(await hasGuideImportStateTable(database))) {
+    return new Map();
+  }
+
+  const rows = await database.all('SELECT slug, content_hash FROM guide_import_state');
+  return new Map(rows.map(row => [row.slug, row.content_hash]));
+}
+
+async function upsertGuideImportState(database, record) {
+  await database.run(
+    `INSERT INTO guide_import_state (slug, content_hash, imported_at, source_file, import_version)
+     VALUES (?, ?, CURRENT_TIMESTAMP, ?, ?)
+     ON CONFLICT(slug) DO UPDATE SET
+       content_hash = excluded.content_hash,
+       imported_at = CURRENT_TIMESTAMP,
+       source_file = excluded.source_file,
+       import_version = excluded.import_version`,
+    [record.slug, record.contentHash, record.sourceFile, IMPORT_VERSION]
+  );
+}
+
+function loadGuideRecords(dataDir, manifest, selectedSlugs) {
+  const manifestBySlug = new Map(manifest.games.map(game => [game.slug, game]));
+  return selectedSlugs.map(slug => {
+    const entry = manifestBySlug.get(slug);
+    const sourceFile = entry?.file || normalizeGuideFileName(slug);
+    const filePath = assertSafeGuidePath(dataDir, sourceFile);
+
+    if (!fs.existsSync(filePath)) {
+      throw new Error(`Guia nao encontrado para ${slug}: ${filePath}`);
+    }
+
+    const guide = readJson(filePath);
+    validateGuide(guide, slug, sourceFile);
+
+    return {
+      slug,
+      guide,
+      sourceFile,
+      contentHash: createContentHash(guide)
+    };
+  });
+}
+
+async function upsertGame(database, record, gameColumns) {
+  const guide = record.guide;
   const game = { ...(guide.game || {}), slug: guide.slug };
-  const existing = await database.get('SELECT id FROM games WHERE slug = ?', [guide.slug]);
+  const existing = record.target;
   const values = pickValues(game, gameColumns);
 
   if (existing) {
@@ -159,59 +277,176 @@ async function preserveAndInsertRedirects(database, gameId, redirects = []) {
   }
 }
 
-async function main() {
-  const args = parseArgs();
-  const apply = Boolean(args.yes || args.apply || process.env.ATLAS_IMPORT_CONFIRM === '1');
-  const dataDir = normalizeDataDir(args.dataDir);
+function buildPlan(records, existingSlugs) {
+  return records.map(record => ({
+    slug: record.slug,
+    action: record.target ? 'update' : (existingSlugs.has(record.slug) ? 'update' : 'insert'),
+    content_hash: record.contentHash,
+    source_file: record.sourceFile,
+    trophies: Array.isArray(record.guide.trophies) ? record.guide.trophies.length : 0,
+    roadmaps: Array.isArray(record.guide.roadmaps) ? record.guide.roadmaps.length : 0,
+    redirects: Array.isArray(record.guide.redirects) ? record.guide.redirects.length : 0
+  }));
+}
+
+async function resolveGameTarget(database, guide) {
+  const game = guide.game || {};
+  const slug = normalizeSlugValue(guide.slug);
+  const name = String(game.name || '').trim();
+  const matches = [];
+
+  const slugMatch = await database.get(
+    'SELECT id, slug, name FROM games WHERE slug = ?',
+    [slug]
+  );
+  if (slugMatch) matches.push(slugMatch);
+
+  if (name) {
+    const nameMatch = await database.get(
+      'SELECT id, slug, name FROM games WHERE lower(name) = lower(?)',
+      [name]
+    );
+    if (nameMatch && !matches.some(row => row.id === nameMatch.id)) {
+      matches.push(nameMatch);
+    }
+  }
+
+  if (matches.length > 1) {
+    const conflict = matches.find(row => row.id !== slugMatch?.id) || matches[0];
+    throw createGameConflictError({
+      name,
+      existingSlug: conflict.slug,
+      newSlug: slug
+    });
+  }
+
+  const target = matches[0] || null;
+  if (!target) return null;
+
+  const existingSlug = normalizeSlugValue(target.slug);
+  if (existingSlug && existingSlug !== slug) {
+    throw createGameConflictError({
+      name,
+      existingSlug: target.slug,
+      newSlug: slug
+    });
+  }
+
+  if (!slugMatch && isEmptySlug(target.slug)) {
+    return { ...target, matchedBy: 'name-empty-slug' };
+  }
+
+  return { ...target, matchedBy: slugMatch ? 'slug' : 'name' };
+}
+
+async function attachGameTargets(database, records) {
+  const resolved = [];
+  for (const record of records) {
+    const target = await resolveGameTarget(database, record.guide);
+    resolved.push({ ...record, target });
+  }
+  return resolved;
+}
+
+async function runImport(options = {}) {
+  const args = options.args || {};
+  const apply = options.apply !== undefined
+    ? Boolean(options.apply)
+    : Boolean(args.yes || args.apply || process.env.ATLAS_IMPORT_CONFIRM === '1');
+  const changedOnly = options.changedOnly !== undefined
+    ? Boolean(options.changedOnly)
+    : Boolean(args.changed || args.onlyChanged);
+  const dataDir = normalizeDataDir(options.dataDir || args.dataDir);
   const manifestPath = path.join(dataDir, 'manifest.json');
-  const databasePath = path.resolve(env.databasePath);
+  const databasePath = path.resolve(options.databasePath || env.databasePath);
+  const logLabel = options.logLabel || 'guides import';
 
   if (!fs.existsSync(manifestPath)) {
     throw new Error(`Manifest nao encontrado em ${manifestPath}. Rode npm run export:data primeiro.`);
   }
 
   const manifest = readJson(manifestPath);
-  const selectedSlugs = resolveSelectedSlugs(manifest, args.only);
-  const guides = selectedSlugs.map(slug => readJson(path.join(dataDir, normalizeGuideFileName(slug))));
-  const backupPath = apply ? createDatabaseBackup(databasePath, 'import-data') : null;
+  validateManifest(manifest);
+  const selectedSlugs = resolveSelectedSlugs(manifest, options.only || args.only);
+  const allRecords = loadGuideRecords(dataDir, manifest, selectedSlugs);
   const database = openDatabase(databasePath);
 
   try {
     await assertRequiredTables(database);
+    const importState = changedOnly ? await readGuideImportState(database) : new Map();
+    const pendingRecords = changedOnly
+      ? allRecords.filter(record => importState.get(record.slug) !== record.contentHash)
+      : allRecords;
+    const skipped = changedOnly
+      ? allRecords.filter(record => importState.get(record.slug) === record.contentHash).map(record => record.slug)
+      : [];
     const gameColumns = filterColumns(GAME_COLUMNS, await getTableColumns(database, 'games'));
     const trophyColumns = filterColumns(TROPHY_COLUMNS, await getTableColumns(database, 'trophies'));
     const existingRows = await database.all('SELECT slug FROM games');
     const existingSlugs = new Set(existingRows.map(row => row.slug));
-    const plan = guides.map(guide => ({
-      slug: guide.slug,
-      action: existingSlugs.has(guide.slug) ? 'update' : 'insert',
-      trophies: Array.isArray(guide.trophies) ? guide.trophies.length : 0,
-      roadmaps: Array.isArray(guide.roadmaps) ? guide.roadmaps.length : 0,
-      redirects: Array.isArray(guide.redirects) ? guide.redirects.length : 0
-    }));
+    const records = await attachGameTargets(database, pendingRecords);
+    const plan = buildPlan(records, existingSlugs);
 
     if (!apply) {
       console.log(JSON.stringify({
         ok: true,
         mode: 'dry-run',
+        changedOnly,
         database: databasePath,
         input: dataDir,
         selected: plan.length,
+        skipped,
         message: 'Nenhuma alteracao aplicada. Rode npm run import:data -- --yes para importar com backup.',
         plan
       }, null, 2));
-      return;
+      return {
+        ok: true,
+        mode: 'dry-run',
+        changedOnly,
+        database: databasePath,
+        input: dataDir,
+        selected: plan.length,
+        skipped,
+        plan
+      };
     }
+
+    if (changedOnly && records.length === 0) {
+      console.log(`${logLabel}: no changes`);
+      console.log(JSON.stringify({
+        ok: true,
+        mode: 'import',
+        changedOnly,
+        database: databasePath,
+        input: dataDir,
+        selected: 0,
+        skipped
+      }, null, 2));
+      return {
+        ok: true,
+        mode: 'import',
+        changedOnly,
+        database: databasePath,
+        input: dataDir,
+        selected: 0,
+        skipped
+      };
+    }
+
+    const backupPath = createDatabaseBackup(databasePath, changedOnly ? 'import-data-changed' : 'import-data');
 
     await database.exec('BEGIN TRANSACTION');
     const summary = { inserted: 0, updated: 0, trophies: 0, roadmaps: 0, redirects: 0 };
     try {
-      for (const guide of guides) {
-        const result = await upsertGame(database, guide, gameColumns);
+      await ensureGuideImportStateTable(database);
+      for (const record of records) {
+        const guide = record.guide;
+        const result = await upsertGame(database, record, gameColumns);
         summary[result.action] += 1;
         await replaceRoadmaps(database, result.id, guide.roadmaps || []);
         await replaceTrophies(database, result.id, guide.trophies || [], trophyColumns);
         await preserveAndInsertRedirects(database, result.id, guide.redirects || []);
+        await upsertGuideImportState(database, record);
         summary.trophies += Array.isArray(guide.trophies) ? guide.trophies.length : 0;
         summary.roadmaps += Array.isArray(guide.roadmaps) ? guide.roadmaps.length : 0;
         summary.redirects += Array.isArray(guide.redirects) ? guide.redirects.length : 0;
@@ -222,21 +457,44 @@ async function main() {
       throw error;
     }
 
-    console.log(JSON.stringify({
+    const result = {
       ok: true,
       mode: 'import',
+      changedOnly,
       database: databasePath,
       backup: backupPath,
       input: dataDir,
       selected: plan.length,
+      imported: plan.map(item => item.slug),
+      skipped,
       summary
-    }, null, 2));
+    };
+
+    console.log(JSON.stringify(result, null, 2));
+
+    return result;
   } finally {
     await database.close();
   }
 }
 
-main().catch(error => {
-  console.error(error.message || error);
-  process.exitCode = 1;
-});
+async function main() {
+  const args = parseArgs();
+  await runImport({ args });
+}
+
+if (require.main === module) {
+  main().catch(error => {
+    console.error(error.message || error);
+    process.exitCode = 1;
+  });
+}
+
+module.exports = {
+  IMPORT_VERSION,
+  runImport,
+  validateManifest,
+  validateGuide,
+  loadGuideRecords,
+  ensureGuideImportStateTable
+};

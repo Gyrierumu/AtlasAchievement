@@ -244,6 +244,8 @@ async function ensureGameColumns() {
   await exec('CREATE INDEX IF NOT EXISTS idx_games_updated_at ON games(updated_at)');
   await exec('CREATE TABLE IF NOT EXISTS game_slug_redirects (id INTEGER PRIMARY KEY AUTOINCREMENT, game_id INTEGER NOT NULL, slug TEXT NOT NULL UNIQUE, created_at TEXT DEFAULT CURRENT_TIMESTAMP, FOREIGN KEY (game_id) REFERENCES games(id) ON DELETE CASCADE)');
   await exec('CREATE INDEX IF NOT EXISTS idx_game_slug_redirects_game_id ON game_slug_redirects(game_id)');
+  await exec('CREATE TABLE IF NOT EXISTS guide_import_state (slug TEXT PRIMARY KEY, content_hash TEXT NOT NULL, imported_at TEXT NOT NULL DEFAULT CURRENT_TIMESTAMP, source_file TEXT NOT NULL, import_version INTEGER NOT NULL DEFAULT 1)');
+  await exec('CREATE INDEX IF NOT EXISTS idx_guide_import_state_imported_at ON guide_import_state(imported_at)');
 
   const rows = await all('SELECT id, name, time, slug, time_min_hours, time_max_hours, time_sort_hours FROM games ORDER BY id ASC');
   const usedSlugs = new Set();
@@ -568,6 +570,36 @@ function getSeedGameBySlug(slug) {
   return sampleGames.find(game => getCanonicalGameSlug(game.slug || game.name) === canonicalSlug);
 }
 
+function normalizeSlugValue(value) {
+  return String(value || '').trim().toLowerCase();
+}
+
+function createSeedGameConflictError({ name, existingSlug, newSlug }) {
+  return new Error(
+    `Conflito de jogo: name ja existe com outro slug. name="${name}", slug existente="${existingSlug || '(vazio)'}", slug novo="${newSlug}".`
+  );
+}
+
+async function assertNoSeedGameNameSlugConflict(game = {}, slug = '') {
+  const name = String(game.name || '').trim();
+  const rows = await all(
+    'SELECT id, slug, name FROM games WHERE slug = ? OR lower(name) = lower(?) ORDER BY id ASC',
+    [slug, name]
+  );
+  const uniqueRows = rows.filter((row, index) => rows.findIndex(candidate => candidate.id === row.id) === index);
+
+  if (uniqueRows.length > 1) {
+    const conflict = uniqueRows.find(row => normalizeSlugValue(row.slug) !== normalizeSlugValue(slug)) || uniqueRows[0];
+    throw createSeedGameConflictError({ name, existingSlug: conflict.slug, newSlug: slug });
+  }
+
+  const existing = uniqueRows[0];
+  const existingSlug = normalizeSlugValue(existing?.slug);
+  if (existingSlug && existingSlug !== normalizeSlugValue(slug)) {
+    throw createSeedGameConflictError({ name, existingSlug: existing.slug, newSlug: slug });
+  }
+}
+
 function serializeRoadmapStep(step, index = 0, total = 1) {
   const normalized = guideModel.normalizeRoadmapStep(step, index, total);
   return JSON.stringify({
@@ -587,6 +619,7 @@ async function shouldSyncSeedGame(seedSlug, options = {}) {
   if (!game) return false;
 
   const slug = getCanonicalGameSlug(game.slug || game.name);
+  await assertNoSeedGameNameSlugConflict(game, slug);
   const existing = await get(
     `SELECT g.id,
             g.difficulty,
@@ -651,6 +684,7 @@ async function syncSeedGameFromSeed(seedSlug, options = {}) {
 
   const { insertIfMissing = false } = options;
   const slug = getCanonicalGameSlug(game.slug || game.name);
+  await assertNoSeedGameNameSlugConflict(game, slug);
   const existing = await get(
     `SELECT id,
             is_verified,
@@ -773,6 +807,7 @@ async function syncSeedGameRoadmapFromSeed(seedSlug) {
   if (!game || !Array.isArray(game.roadmap)) return;
 
   const slug = getCanonicalGameSlug(game.slug || game.name);
+  await assertNoSeedGameNameSlugConflict(game, slug);
   const existing = await get('SELECT id FROM games WHERE slug = ? OR name = ? ORDER BY id ASC LIMIT 1', [slug, game.name]);
   if (!existing) return;
 
@@ -790,6 +825,7 @@ async function syncSeedGameTrophiesFromSeed(seedSlug) {
   if (!game || !Array.isArray(game.trophies) || !game.trophies.length) return;
 
   const slug = getCanonicalGameSlug(game.slug || game.name);
+  await assertNoSeedGameNameSlugConflict(game, slug);
   const existing = await get('SELECT id FROM games WHERE slug = ? OR name = ? ORDER BY id ASC LIMIT 1', [slug, game.name]);
   if (!existing) return;
 
@@ -845,6 +881,7 @@ async function syncEldenRingVerifiedGuideFromSeed() {
   if (!game) return;
 
   const slug = getCanonicalGameSlug(game.slug || game.name);
+  await assertNoSeedGameNameSlugConflict(game, slug);
   const existing = await get(
     `SELECT id,
             is_verified,
@@ -986,6 +1023,7 @@ async function syncSeedGameGuideSummaryAndRoadmapFromSeed(seedSlug) {
   if (!game || !Array.isArray(game.roadmap)) return;
 
   const slug = getCanonicalGameSlug(game.slug || game.name);
+  await assertNoSeedGameNameSlugConflict(game, slug);
   const existing = await get(
     `SELECT id,
             is_verified,
@@ -1514,6 +1552,14 @@ async function migrate(options = {}) {
       FOREIGN KEY (game_id) REFERENCES games(id) ON DELETE CASCADE
     );
 
+    CREATE TABLE IF NOT EXISTS guide_import_state (
+      slug TEXT PRIMARY KEY,
+      content_hash TEXT NOT NULL,
+      imported_at TEXT NOT NULL DEFAULT CURRENT_TIMESTAMP,
+      source_file TEXT NOT NULL,
+      import_version INTEGER NOT NULL DEFAULT 1
+    );
+
     CREATE TABLE IF NOT EXISTS feedbacks (
       id INTEGER PRIMARY KEY AUTOINCREMENT,
       type TEXT NOT NULL CHECK (type IN ('Erro em guia', 'Bug do site', 'Sugestão', 'Pedido de novo guia')),
@@ -1572,6 +1618,7 @@ async function migrate(options = {}) {
     );
 
     CREATE INDEX IF NOT EXISTS idx_sessions_expires_at ON sessions(expires_at);
+    CREATE INDEX IF NOT EXISTS idx_guide_import_state_imported_at ON guide_import_state(imported_at);
     CREATE INDEX IF NOT EXISTS idx_feedbacks_created_at ON feedbacks(created_at);
     CREATE INDEX IF NOT EXISTS idx_feedbacks_status ON feedbacks(status);
     CREATE INDEX IF NOT EXISTS idx_analytics_events_type_created ON analytics_events(event_type, created_at);

@@ -3,6 +3,7 @@ const migrate = require('./src/db/migrate');
 const seed = require('./src/db/seed');
 const env = require('./src/config/env');
 const adminService = require('./src/services/admin.service');
+const { runAutoImportGuidesOnStart } = require('./src/services/guideAutoImport.service');
 
 async function start() {
   env.assertRuntimeConfig();
@@ -11,6 +12,8 @@ async function start() {
   if (env.allowStartupSeed) {
     await seed();
   }
+
+  await runAutoImportGuidesOnStart();
 
   let adminBootstrap = { created: false, skipped: true, username: null };
   try {

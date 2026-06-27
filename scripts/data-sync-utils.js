@@ -1,5 +1,6 @@
 const fs = require('fs');
 const path = require('path');
+const crypto = require('crypto');
 const sqlite3 = require('sqlite3').verbose();
 
 const ROOT = path.resolve(__dirname, '..');
@@ -117,11 +118,19 @@ function normalizeGuideFileName(slug) {
   return `${String(slug || '').trim().toLowerCase()}.json`;
 }
 
+function createContentHash(value) {
+  return crypto
+    .createHash('sha256')
+    .update(stableStringify(value), 'utf8')
+    .digest('hex');
+}
+
 module.exports = {
   ROOT,
   DEFAULT_DATA_DIR,
   parseArgs,
   stableStringify,
+  createContentHash,
   normalizeDataDir,
   ensureDirectory,
   createDatabaseBackup,
