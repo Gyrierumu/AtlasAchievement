@@ -43,8 +43,8 @@ function assertRuntimeConfig() {
       throw new Error('SESSION_SECRET deve ser definido em produção com pelo menos 16 caracteres.');
     }
 
-    if (!config.hasAdminUsername || !config.hasAdminPassword) {
-      throw new Error('ADMIN_USERNAME e ADMIN_PASSWORD devem ser definidos em produção.');
+    if (config.allowDefaultAdminBootstrap && (!config.hasAdminUsername || !config.hasAdminPassword)) {
+      throw new Error('ADMIN_USERNAME e ADMIN_PASSWORD devem ser definidos em produção quando ALLOW_DEFAULT_ADMIN_BOOTSTRAP=true.');
     }
   }
 }
@@ -57,7 +57,7 @@ function getStartupWarnings() {
   }
 
   if (!config.hasAdminUsername || !config.hasAdminPassword) {
-    warnings.push('ADMIN_USERNAME/ADMIN_PASSWORD não definidos. Bootstrap padrão liberado apenas para ambiente local.');
+    warnings.push('ADMIN_USERNAME/ADMIN_PASSWORD não definidos. Bootstrap automático de administrador fica desativado sem credenciais em produção.');
   }
 
   if (config.loginRateLimitMaxAttempts < 3) {
