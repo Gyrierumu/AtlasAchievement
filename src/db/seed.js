@@ -21,6 +21,16 @@ const GAME_SLUG_ALIASES = {
   'monster-hunter-world': ['monster-hunter-world-iceborne']
 };
 
+function getSeedGameSlugAliases(game = {}, slug = '') {
+  const configuredAliases = GAME_SLUG_ALIASES[slug] || [];
+  const gameAliases = Array.isArray(game.aliases)
+    ? game.aliases
+    : Array.isArray(game.slug_aliases)
+    ? game.slug_aliases
+    : [];
+  return [...configuredAliases, ...gameAliases];
+}
+
 const TROPHY_TYPE_ALIASES = {
   platinum: 'Platina',
   platina: 'Platina',
@@ -139,7 +149,7 @@ async function seed() {
     const gameId = result.lastID;
     existingSlugs.add(slug);
 
-    for (const alias of GAME_SLUG_ALIASES[slug] || []) {
+    for (const alias of getSeedGameSlugAliases(game, slug)) {
       const normalizedAlias = slugifyGameName(alias);
       if (!normalizedAlias || normalizedAlias === slug) continue;
       await run(

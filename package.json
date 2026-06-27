@@ -13,6 +13,7 @@
     "test:data": "node scripts/test-layers.js data",
     "test:seo": "node scripts/test-layers.js seo",
     "test:quick": "node scripts/test-layers.js quick",
+    "validate:new-guide": "node scripts/validate-new-guide.js",
     "test": "node scripts/regression-smoke.js",
     "check:runtime": "node -e \"const major=Number(process.versions.node.split('.')[0]); if(major!==20){console.warn('Aviso: recomendado Node 20.x; atual = '+process.versions.node)}\""
   },
