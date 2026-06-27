@@ -32,7 +32,7 @@
     "quality_warnings": "[]",
     "reviewed_by": "",
     "runs_summary": "Uma campanha principal com cleanup livre após a história. A platina base não exige 100% do mapa, mas pede história, side quests específicas, skills e alguns coletáveis; lista extra/DLC fica fora deste guia.",
-    "slug": "assassins-creed-shadows",
+    "slug": "assassin-s-creed-shadows",
     "time": "50-75h",
     "time_bucket": "long",
     "time_max_hours": 75,
@@ -44,7 +44,9 @@
     "verification_status": "review",
     "walkthrough": null
   },
-  "redirects": [],
+  "redirects": [
+    "assassins-creed-shadows"
+  ],
   "roadmaps": [
     {
       "content": "{\"title\":\"Avance pela campanha\",\"focus\":\"\",\"objective\":\"inicie com Guided Exploration Mode OFF até obter Scouting Mission. Depois que o scout revelar um objetivo e o troféu desbloquear, você pode religar o Guided Exploration Mode se preferir.\",\"actions\":[],\"warning\":\"\",\"result\":\"\"}",
@@ -265,7 +267,7 @@
       "Shinbakufu"
     ]
   },
-  "slug": "assassins-creed-shadows",
+  "slug": "assassin-s-creed-shadows",
   "trophies": [
     {
       "description": "Unlock every trophy",

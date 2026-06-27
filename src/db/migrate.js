@@ -18,6 +18,10 @@ const GAME_SLUG_ALIASES = {
   ],
   'little-nightmares-ii': ['little-nightmares'],
   'god-of-war': ['god-of-war-2018'],
+  'assassin-s-creed-mirage': ['assassins-creed-mirage'],
+  'assassin-s-creed-odyssey': ['assassins-creed-odyssey'],
+  'assassin-s-creed-origins': ['assassins-creed-origins'],
+  'assassin-s-creed-shadows': ['assassins-creed-shadows'],
   'assassin-s-creed-valhalla': ['assassins-creed-valhalla'],
   'monster-hunter-world': ['monster-hunter-world-iceborne']
 };
@@ -1118,8 +1122,8 @@ async function syncReviewedGuidesFromSeed() {
   await syncSeedGameFromSeed('star-wars-jedi-fallen-order', syncOptions);
   await syncSeedGameFromSeed('star-wars-jedi-survivor', syncOptions);
   await syncSeedGameFromSeed('hogwarts-legacy', syncOptions);
-  await syncSeedGameFromSeed('assassins-creed-origins', syncOptions);
-  await syncSeedGameFromSeed('assassins-creed-shadows', syncOptions);
+  await syncSeedGameFromSeed('assassin-s-creed-origins', syncOptions);
+  await syncSeedGameFromSeed('assassin-s-creed-shadows', syncOptions);
   await syncSeedGameFromSeed('assassin-s-creed-valhalla', syncOptions);
   await syncSeedGameFromSeed('prince-of-persia-the-lost-crown', syncOptions);
   await syncSeedGameFromSeed('the-evil-within', syncOptions);

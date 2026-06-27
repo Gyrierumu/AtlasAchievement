@@ -239,6 +239,12 @@ A tabela `guide_import_state` registra:
 
 Ela nao substitui `games`, `roadmaps` ou `trophies`; serve apenas para saber quais snapshots versionados ja foram aplicados ao SQLite atual.
 
+## Slug canonico e aliases
+
+Quando um jogo ja existe em producao, o slug versionado deve preservar o slug do banco persistente. Para a serie Assassin's Creed, os slugs canonicos usam `assassin-s-creed-*`, por compatibilidade com registros ja existentes no SQLite de producao. Os slugs `assassins-creed-*` ficam apenas como redirects/aliases em `game_slug_redirects`.
+
+`npm run prepare:guides` valida antes do commit se `manifest.json`, arquivos em `data/guides`, `sampleGames.js` e redirects continuam coerentes. Se o mesmo `name` aparecer com slugs diferentes, ou se um arquivo/manifest apontar para o slug errado, o comando falha localmente antes do deploy.
+
 ## O que os scripts exportam
 
 Os snapshots versionados ficam em `data/guides`:

@@ -32,7 +32,7 @@
     "quality_warnings": null,
     "reviewed_by": null,
     "runs_summary": "Uma campanha principal com cleanup livre após a história. A lista base não exige DLC nem dificuldade específica.",
-    "slug": "assassins-creed-odyssey",
+    "slug": "assassin-s-creed-odyssey",
     "time": "60-70h",
     "time_bucket": "long",
     "time_max_hours": 70,
@@ -44,7 +44,9 @@
     "verification_status": "review",
     "walkthrough": null
   },
-  "redirects": [],
+  "redirects": [
+    "assassins-creed-odyssey"
+  ],
   "roadmaps": [
     {
       "content": "Etapa 1: jogue a campanha naturalmente, desbloqueando regiões, Adrestia, habilidades, mercenários, cultistas e sistemas principais; aceite uma oportunidade de romance para garantir Aphrodite’s Embrace.",
@@ -223,7 +225,7 @@
     },
     "tags": []
   },
-  "slug": "assassins-creed-odyssey",
+  "slug": "assassin-s-creed-odyssey",
   "trophies": [
     {
       "description": "Earn every trophy.",

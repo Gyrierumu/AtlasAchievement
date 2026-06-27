@@ -5525,7 +5525,7 @@ async function assertSeedData({ all, get }, sampleGames) {
 
 
 
-  const assassinsCreedOriginsSample = sampleGames.find(game => game.slug === 'assassins-creed-origins');
+  const assassinsCreedOriginsSample = sampleGames.find(game => game.slug === 'assassin-s-creed-origins');
   assert(assassinsCreedOriginsSample, 'sampleGames deve incluir Assassin’s Creed Origins');
   assert.strictEqual(assassinsCreedOriginsSample.name, 'Assassin’s Creed Origins', 'Assassin’s Creed Origins deve manter nome oficial');
   assert.strictEqual(assassinsCreedOriginsSample.difficulty, 3, 'Assassin’s Creed Origins deve usar dificuldade 3/10');
@@ -5569,7 +5569,7 @@ async function assertSeedData({ all, get }, sampleGames) {
   assert.strictEqual(assassinsCreedOriginsTypeById.aco_old_habits, 'Prata', 'Old Habits deve ser prata');
   assert.strictEqual(assassinsCreedOriginsTypeById.aco_stargazer, 'Prata', 'Stargazer deve ser prata');
 
-  const assassinsCreedOdysseySample = sampleGames.find(game => game.slug === 'assassins-creed-odyssey');
+  const assassinsCreedOdysseySample = sampleGames.find(game => game.slug === 'assassin-s-creed-odyssey');
   assert(assassinsCreedOdysseySample, 'sampleGames deve incluir Assassin’s Creed Odyssey');
   assert.strictEqual(assassinsCreedOdysseySample.name, 'Assassin’s Creed Odyssey', 'Assassin’s Creed Odyssey deve manter nome oficial');
   assert.strictEqual(assassinsCreedOdysseySample.difficulty, 4, 'Assassin’s Creed Odyssey deve usar dificuldade 4/10');
@@ -5662,7 +5662,7 @@ async function assertSeedData({ all, get }, sampleGames) {
   assert.strictEqual(assassinsCreedValhallaTypeById.acv_caladfwlch, 'Prata', 'Caladfwlch deve ser prata');
 
 
-  const assassinsCreedMirageSample = sampleGames.find(game => game.slug === 'assassins-creed-mirage');
+  const assassinsCreedMirageSample = sampleGames.find(game => game.slug === 'assassin-s-creed-mirage');
   assert(assassinsCreedMirageSample, 'sampleGames deve incluir Assassin’s Creed Mirage');
   assert.strictEqual(assassinsCreedMirageSample.name, 'Assassin’s Creed Mirage', 'Assassin’s Creed Mirage deve manter nome oficial');
   assert.strictEqual(assassinsCreedMirageSample.difficulty, 3, 'Assassin’s Creed Mirage deve usar dificuldade 3/10');
@@ -5708,7 +5708,7 @@ async function assertSeedData({ all, get }, sampleGames) {
   assert.strictEqual(assassinsCreedMirageTypeById.acm_tools_of_the_trade, 'Prata', 'Tools of the Trade deve ser prata');
 
 
-  const assassinsCreedShadowsSample = sampleGames.find(game => game.slug === 'assassins-creed-shadows');
+  const assassinsCreedShadowsSample = sampleGames.find(game => game.slug === 'assassin-s-creed-shadows');
   assert(assassinsCreedShadowsSample, 'sampleGames deve incluir Assassin’s Creed Shadows');
   assert.strictEqual(assassinsCreedShadowsSample.name, 'Assassin’s Creed Shadows', 'Assassin’s Creed Shadows deve manter nome oficial');
   assert.strictEqual(assassinsCreedShadowsSample.difficulty, 4, 'Assassin’s Creed Shadows deve usar dificuldade 4/10');
@@ -6237,8 +6237,8 @@ async function assertSeedData({ all, get }, sampleGames) {
 
 
 
-  const assassinsCreedOriginsSeeded = await get('SELECT slug, difficulty, time, time_bucket, time_min_hours, time_max_hours, time_sort_hours, editorial_status, coverage_level, is_verified, verification_status, image, cover_image, online_summary, dlc_scope, before_you_start, missable_summary FROM games WHERE slug = ?', ['assassins-creed-origins']);
-  assert.strictEqual(assassinsCreedOriginsSeeded?.slug, 'assassins-creed-origins', 'seed deve persistir slug de Assassin’s Creed Origins');
+  const assassinsCreedOriginsSeeded = await get('SELECT slug, difficulty, time, time_bucket, time_min_hours, time_max_hours, time_sort_hours, editorial_status, coverage_level, is_verified, verification_status, image, cover_image, online_summary, dlc_scope, before_you_start, missable_summary FROM games WHERE slug = ?', ['assassin-s-creed-origins']);
+  assert.strictEqual(assassinsCreedOriginsSeeded?.slug, 'assassin-s-creed-origins', 'seed deve persistir slug de Assassin’s Creed Origins');
   assert.strictEqual(assassinsCreedOriginsSeeded?.difficulty, 3, 'seed deve persistir dificuldade 3/10 de Assassin’s Creed Origins');
   assert.strictEqual(assassinsCreedOriginsSeeded?.time, '50-60h', 'seed deve persistir tempo 50-60h de Assassin’s Creed Origins');
   assert.strictEqual(assassinsCreedOriginsSeeded?.time_bucket, 'long', 'seed deve persistir Assassin’s Creed Origins na faixa longa');
@@ -6256,14 +6256,14 @@ async function assertSeedData({ all, get }, sampleGames) {
   assert(assassinsCreedOriginsSeeded?.before_you_start.includes('trinkets'), 'Assassin’s Creed Origins deve persistir cuidado de trinkets');
   assert(assassinsCreedOriginsSeeded?.missable_summary.includes('0 perdíveis'), 'Assassin’s Creed Origins deve persistir 0 perdiveis definitivos');
 
-  const assassinsCreedOriginsRoadmapRows = await all('SELECT content FROM roadmaps WHERE game_id = (SELECT id FROM games WHERE slug = ?) ORDER BY step_order', ['assassins-creed-origins']);
+  const assassinsCreedOriginsRoadmapRows = await all('SELECT content FROM roadmaps WHERE game_id = (SELECT id FROM games WHERE slug = ?) ORDER BY step_order', ['assassin-s-creed-origins']);
   assert.strictEqual(assassinsCreedOriginsRoadmapRows.length, 6, 'seed deve inserir 6 etapas de roadmap para Assassin’s Creed Origins');
   assert(assassinsCreedOriginsRoadmapRows.some(row => row.content.includes('Old Habits') && row.content.includes('free-roam')), 'seed deve persistir Old Habits e free-roam em Assassin’s Creed Origins');
   assert(assassinsCreedOriginsRoadmapRows.some(row => row.content.includes('tumbas') && row.content.includes('Stone Circles')), 'seed deve persistir tumbas e Stone Circles em Assassin’s Creed Origins');
   assert(assassinsCreedOriginsRoadmapRows.some(row => row.content.includes('War Elephants') && row.content.includes('Hippodrome')), 'seed deve persistir War Elephants e Hippodrome em Assassin’s Creed Origins');
   assert(assassinsCreedOriginsRoadmapRows.some(row => row.content.includes('0 online obrigatório') && row.content.includes('0 troféus de dificuldade')), 'seed deve persistir ausencia de online e dificuldade em Assassin’s Creed Origins');
 
-  const assassinsCreedOriginsTrophyRows = await all('SELECT trophy_code, name, type, is_missable, is_spoiler, description FROM trophies WHERE game_id = (SELECT id FROM games WHERE slug = ?) ORDER BY id', ['assassins-creed-origins']);
+  const assassinsCreedOriginsTrophyRows = await all('SELECT trophy_code, name, type, is_missable, is_spoiler, description FROM trophies WHERE game_id = (SELECT id FROM games WHERE slug = ?) ORDER BY id', ['assassin-s-creed-origins']);
   assert.strictEqual(assassinsCreedOriginsTrophyRows.length, 51, 'seed deve inserir checklist base completo de Assassin’s Creed Origins');
   assert.strictEqual(new Set(assassinsCreedOriginsTrophyRows.map(trophy => trophy.trophy_code)).size, 51, 'seed nao deve inserir trophy_code duplicado em Assassin’s Creed Origins');
   assert.strictEqual(assassinsCreedOriginsTrophyRows.filter(trophy => trophy.is_missable).length, 0, 'seed nao deve persistir missables definitivos em Assassin’s Creed Origins');
@@ -6278,8 +6278,8 @@ async function assertSeedData({ all, get }, sampleGames) {
   assert.strictEqual(assassinsCreedOriginsPersistedTypeCounts.Prata, 15, 'seed deve persistir 15 prata em Assassin’s Creed Origins');
   assert.strictEqual(assassinsCreedOriginsPersistedTypeCounts.Bronze, 34, 'seed deve persistir 34 bronze em Assassin’s Creed Origins');
 
-  const assassinsCreedOdysseySeeded = await get('SELECT slug, difficulty, time, time_bucket, time_min_hours, time_max_hours, time_sort_hours, editorial_status, coverage_level, is_verified, verification_status, image, cover_image, online_summary, dlc_scope, before_you_start, missable_summary FROM games WHERE slug = ?', ['assassins-creed-odyssey']);
-  assert.strictEqual(assassinsCreedOdysseySeeded?.slug, 'assassins-creed-odyssey', 'seed deve persistir slug de Assassin’s Creed Odyssey');
+  const assassinsCreedOdysseySeeded = await get('SELECT slug, difficulty, time, time_bucket, time_min_hours, time_max_hours, time_sort_hours, editorial_status, coverage_level, is_verified, verification_status, image, cover_image, online_summary, dlc_scope, before_you_start, missable_summary FROM games WHERE slug = ?', ['assassin-s-creed-odyssey']);
+  assert.strictEqual(assassinsCreedOdysseySeeded?.slug, 'assassin-s-creed-odyssey', 'seed deve persistir slug de Assassin’s Creed Odyssey');
   assert.strictEqual(assassinsCreedOdysseySeeded?.difficulty, 4, 'seed deve persistir dificuldade 4/10 de Assassin’s Creed Odyssey');
   assert.strictEqual(assassinsCreedOdysseySeeded?.time, '60-70h', 'seed deve persistir tempo 60-70h de Assassin’s Creed Odyssey');
   assert.strictEqual(assassinsCreedOdysseySeeded?.time_bucket, 'long', 'seed deve persistir Assassin’s Creed Odyssey na faixa longa');
@@ -6297,14 +6297,14 @@ async function assertSeedData({ all, get }, sampleGames) {
   assert(assassinsCreedOdysseySeeded?.before_you_start.includes('Aphrodite’s Embrace'), 'Assassin’s Creed Odyssey deve persistir cuidado de Aphrodite’s Embrace');
   assert(assassinsCreedOdysseySeeded?.missable_summary.includes('Aphrodite’s Embrace'), 'Assassin’s Creed Odyssey deve persistir missable leve confirmado');
 
-  const assassinsCreedOdysseyRoadmapRows = await all('SELECT content FROM roadmaps WHERE game_id = (SELECT id FROM games WHERE slug = ?) ORDER BY step_order', ['assassins-creed-odyssey']);
+  const assassinsCreedOdysseyRoadmapRows = await all('SELECT content FROM roadmaps WHERE game_id = (SELECT id FROM games WHERE slug = ?) ORDER BY step_order', ['assassin-s-creed-odyssey']);
   assert.strictEqual(assassinsCreedOdysseyRoadmapRows.length, 6, 'seed deve inserir 6 etapas de roadmap para Assassin’s Creed Odyssey');
   assert(assassinsCreedOdysseyRoadmapRows.some(row => row.content.includes('Culto do Kosmos') && row.content.includes('Atlantis')), 'seed deve persistir Culto e Atlantis da lista base em Assassin’s Creed Odyssey');
   assert(assassinsCreedOdysseyRoadmapRows.some(row => row.content.includes('Xenia') && row.content.includes('Daughters of Artemis')), 'seed deve persistir questlines principais em Assassin’s Creed Odyssey');
   assert(assassinsCreedOdysseyRoadmapRows.some(row => row.content.includes('underwater locations') && row.content.includes('Hermes’s Homie')), 'seed deve persistir underwater locations em Assassin’s Creed Odyssey');
   assert(assassinsCreedOdysseyRoadmapRows.some(row => row.content.includes('0 online obrigatório') && row.content.includes('0 troféus de dificuldade')), 'seed deve persistir ausencia de online e dificuldade em Assassin’s Creed Odyssey');
 
-  const assassinsCreedOdysseyTrophyRows = await all('SELECT trophy_code, name, type, is_missable, is_spoiler, description FROM trophies WHERE game_id = (SELECT id FROM games WHERE slug = ?) ORDER BY id', ['assassins-creed-odyssey']);
+  const assassinsCreedOdysseyTrophyRows = await all('SELECT trophy_code, name, type, is_missable, is_spoiler, description FROM trophies WHERE game_id = (SELECT id FROM games WHERE slug = ?) ORDER BY id', ['assassin-s-creed-odyssey']);
   assert.strictEqual(assassinsCreedOdysseyTrophyRows.length, 51, 'seed deve inserir checklist base completo de Assassin’s Creed Odyssey');
   assert.strictEqual(new Set(assassinsCreedOdysseyTrophyRows.map(trophy => trophy.trophy_code)).size, 51, 'seed nao deve inserir trophy_code duplicado em Assassin’s Creed Odyssey');
   assert.strictEqual(assassinsCreedOdysseyTrophyRows.filter(trophy => trophy.is_missable).length, 1, 'seed deve persistir apenas Aphrodite’s Embrace como missable leve em Assassin’s Creed Odyssey');
@@ -13287,7 +13287,7 @@ function assertLote1CRecentGuideEditorialSafety() {
     'nioh-3': { total: 51, Platina: 1, Ouro: 2, Prata: 10, Bronze: 38 },
     reanimal: { total: 32, Platina: 1, Ouro: 4, Prata: 16, Bronze: 11 },
     'split-fiction': { total: 21, Platina: 1, Ouro: 8, Prata: 5, Bronze: 7 },
-    'assassins-creed-shadows': { total: 55, Platina: 1, Ouro: 1, Prata: 11, Bronze: 42 },
+    'assassin-s-creed-shadows': { total: 55, Platina: 1, Ouro: 1, Prata: 11, Bronze: 42 },
     'death-stranding-2-on-the-beach': { total: 55, Platina: 1, Ouro: 2, Prata: 6, Bronze: 46 }
   };
   const editorialFields = [
@@ -13381,7 +13381,7 @@ function assertLote1CRecentGuideEditorialSafety() {
     .replace(/nao ha rota solo para a platina/g, '');
   assert(!/pode ser platinado solo|platina solo|rota solo/.test(splitSoloSafetyText), 'Split Fiction nao deve sugerir platina solo');
 
-  const shadows = bySlug.get('assassins-creed-shadows');
+  const shadows = bySlug.get('assassin-s-creed-shadows');
   const shadowsBody = editorialBody(shadows);
   assert(/claws of awaji/.test(shadowsBody) && /separad/.test(shadowsBody), 'Assassin’s Creed Shadows deve separar Claws of Awaji/lista extra');
   assert(/nao exigem? multiplayer tradicional/.test(shadowsBody), 'Assassin’s Creed Shadows deve diferenciar conexao de multiplayer obrigatorio');

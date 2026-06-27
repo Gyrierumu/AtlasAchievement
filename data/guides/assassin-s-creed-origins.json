@@ -32,7 +32,7 @@
     "quality_warnings": "[]",
     "reviewed_by": "",
     "runs_summary": "Uma campanha principal com cleanup livre após a história. Nada da lista base deve ser tratado como perdível sem confirmação confiável.",
-    "slug": "assassins-creed-origins",
+    "slug": "assassin-s-creed-origins",
     "time": "50-60h",
     "time_bucket": "long",
     "time_max_hours": 60,
@@ -44,7 +44,9 @@
     "verification_status": "review",
     "walkthrough": null
   },
-  "redirects": [],
+  "redirects": [
+    "assassins-creed-origins"
+  ],
   "roadmaps": [
     {
       "content": "{\"title\":\"Avance pela campanha\",\"focus\":\"\",\"objective\":\"jogue a campanha naturalmente, desbloqueando regiões, sistemas, montaria, Senu, habilidades úteis como Dawn & Dusk, Poison Darts, Animal Taming, Enhanced Predator Bow e upgrades básicos.\",\"actions\":[],\"warning\":\"\",\"result\":\"\"}",
@@ -226,7 +228,7 @@
     },
     "tags": []
   },
-  "slug": "assassins-creed-origins",
+  "slug": "assassin-s-creed-origins",
   "trophies": [
     {
       "description": "Earn every trophy.",

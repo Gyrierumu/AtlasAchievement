@@ -236,26 +236,27 @@ function normalizeGuideName(value) {
 function assertNoGuideRecordConflicts(records) {
   const seenSlugs = new Set();
   const slugByName = new Map();
+  const errors = [];
 
   for (const record of records) {
     const slug = normalizeSlugValue(record.slug);
     const name = normalizeGuideName(record.guide?.game?.name);
 
     if (seenSlugs.has(slug)) {
-      throw new Error(`Conflito de guia: slug duplicado nos snapshots versionados: ${slug}.`);
+      errors.push(`slug duplicado nos snapshots versionados: ${slug}.`);
     }
     seenSlugs.add(slug);
 
     if (!name) continue;
     const existingSlug = slugByName.get(name);
     if (existingSlug && existingSlug !== slug) {
-      throw createGameConflictError({
-        name: record.guide.game.name,
-        existingSlug,
-        newSlug: slug
-      });
+      errors.push(`name="${record.guide.game.name}" aparece com slugs diferentes: ${existingSlug} e ${slug}.`);
     }
     slugByName.set(name, slug);
+  }
+
+  if (errors.length) {
+    throw new Error(`Conflitos de guia:\n- ${errors.join('\n- ')}`);
   }
 }
 

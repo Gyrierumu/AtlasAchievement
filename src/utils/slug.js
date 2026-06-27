@@ -14,6 +14,10 @@ const CANONICAL_GAME_SLUG_ALIASES = Object.freeze({
   'astros-playrrom': 'astros-playroom',
   'astro-s-playrrom': 'astros-playroom',
   'god-of-war-2018': 'god-of-war',
+  'assassins-creed-mirage': 'assassin-s-creed-mirage',
+  'assassins-creed-odyssey': 'assassin-s-creed-odyssey',
+  'assassins-creed-origins': 'assassin-s-creed-origins',
+  'assassins-creed-shadows': 'assassin-s-creed-shadows',
   'assassins-creed-valhalla': 'assassin-s-creed-valhalla'
 });
 

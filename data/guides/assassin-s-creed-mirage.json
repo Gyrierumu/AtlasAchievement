@@ -32,7 +32,7 @@
     "quality_warnings": null,
     "reviewed_by": null,
     "runs_summary": "Uma campanha principal com cleanup livre após a história. Só fique atento a You Snooze, You Lose durante oportunidades de stealth.",
-    "slug": "assassins-creed-mirage",
+    "slug": "assassin-s-creed-mirage",
     "time": "20-30h",
     "time_bucket": "medium",
     "time_max_hours": 30,
@@ -44,7 +44,9 @@
     "verification_status": "review",
     "walkthrough": null
   },
-  "redirects": [],
+  "redirects": [
+    "assassins-creed-mirage"
+  ],
   "roadmaps": [
     {
       "content": "Etapa 1: jogue a história naturalmente, desbloqueando Hidden Ones, ferramentas, Assassin’s Focus, Enkidu, viewpoints e sistemas principais; a dificuldade não afeta troféus.",
@@ -227,7 +229,7 @@
       "Bagdá"
     ]
   },
-  "slug": "assassins-creed-mirage",
+  "slug": "assassin-s-creed-mirage",
   "trophies": [
     {
       "description": "Earn Every Trophy",

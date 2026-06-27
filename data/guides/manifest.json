@@ -18,34 +18,34 @@
       "trophies": 30
     },
     {
-      "file": "assassins-creed-mirage.json",
+      "file": "assassin-s-creed-mirage.json",
       "name": "Assassin’s Creed Mirage",
       "roadmaps": 6,
-      "slug": "assassins-creed-mirage",
+      "slug": "assassin-s-creed-mirage",
       "status": "review",
       "trophies": 51
     },
     {
-      "file": "assassins-creed-odyssey.json",
+      "file": "assassin-s-creed-odyssey.json",
       "name": "Assassin’s Creed Odyssey",
       "roadmaps": 6,
-      "slug": "assassins-creed-odyssey",
+      "slug": "assassin-s-creed-odyssey",
       "status": "review",
       "trophies": 51
     },
     {
-      "file": "assassins-creed-origins.json",
+      "file": "assassin-s-creed-origins.json",
       "name": "Assassin’s Creed Origins",
       "roadmaps": 6,
-      "slug": "assassins-creed-origins",
+      "slug": "assassin-s-creed-origins",
       "status": "review",
       "trophies": 51
     },
     {
-      "file": "assassins-creed-shadows.json",
+      "file": "assassin-s-creed-shadows.json",
       "name": "Assassin’s Creed Shadows",
       "roadmaps": 8,
-      "slug": "assassins-creed-shadows",
+      "slug": "assassin-s-creed-shadows",
       "status": "review",
       "trophies": 55
     },
