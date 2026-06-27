@@ -44,6 +44,8 @@ window.AppSearchView = (() => {
     UI.qs('#suggestions')?.addEventListener('click', event => {
       const button = event.target.closest('[data-suggestion]');
       if (!button) return;
+      event.preventDefault();
+      event.stopPropagation();
       const nextIndex = Number(button.dataset.suggestionIndex);
       if (Number.isInteger(nextIndex)) state.activeSuggestionIndex = nextIndex;
       UI.qs('#gameInput').value = button.dataset.suggestion;

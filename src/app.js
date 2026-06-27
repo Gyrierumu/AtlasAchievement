@@ -1197,7 +1197,7 @@ function buildGuideFaqStructuredData(canonicalUrl, viewModel) {
 function renderGuideEditorialNotesHtml(game = {}, viewModel = {}) {
   const normalizedSlug = String(game?.slug || '').trim().toLowerCase();
   const routeTrophyLimit = ['little-nightmares-ii', 'metaphor-refantazio', 'monster-hunter-world', 'reanimal'].includes(normalizedSlug) ? 12 : (normalizedSlug === 'red-dead-redemption-2' ? 11 : (normalizedSlug === 'marvels-spider-man-2' ? 8 : 5));
-  const explicitAttentionPoints = ['baldurs-gate-3', 'dark-souls-ii-scholar-of-the-first-sin', 'days-gone', 'demons-souls', 'final-fantasy-xvi', 'heavy-rain', 'hogwarts-legacy', 'horizon-forbidden-west', 'horizon-zero-dawn', 'lies-of-p', 'lords-of-the-fallen', 'sekiro-shadows-die-twice', 'until-dawn'].includes(normalizedSlug) && Array.isArray(game?.attentionPoints)
+  const explicitAttentionPoints = ['baldurs-gate-3', 'dark-souls-ii-scholar-of-the-first-sin', 'days-gone', 'demons-souls', 'final-fantasy-xvi', 'heavy-rain', 'hogwarts-legacy', 'horizon-forbidden-west', 'horizon-zero-dawn', 'lies-of-p', 'lords-of-the-fallen', 'sekiro-shadows-die-twice', 'star-wars-jedi-survivor', 'until-dawn'].includes(normalizedSlug) && Array.isArray(game?.attentionPoints)
     ? game.attentionPoints.map(item => {
       const tags = Array.isArray(item?.tags)
         ? item.tags.map(tag => {
@@ -1216,7 +1216,7 @@ function renderGuideEditorialNotesHtml(game = {}, viewModel = {}) {
   const routeTrophies = explicitAttentionPoints.length
     ? explicitAttentionPoints
     : (Array.isArray(viewModel.routeChangingTrophies) ? viewModel.routeChangingTrophies.slice(0, routeTrophyLimit) : []);
-  const faqLimit = normalizedSlug === 'marvels-spider-man-miles-morales' ? 12 : (['baldurs-gate-3', 'dark-souls-ii-scholar-of-the-first-sin', 'demons-souls', 'final-fantasy-xvi', 'heavy-rain', 'lies-of-p', 'little-nightmares-ii', 'lords-of-the-fallen', 'metaphor-refantazio', 'monster-hunter-world', 'nioh-3', 'reanimal', 'saros', 'sekiro-shadows-die-twice', 'the-last-of-us-part-ii'].includes(normalizedSlug) ? 12 : (['days-gone', 'hogwarts-legacy', 'horizon-forbidden-west', 'horizon-zero-dawn', 'the-last-of-us-part-i', 'subnautica', 'until-dawn'].includes(normalizedSlug) ? 10 : (normalizedSlug === 'dark-souls-remastered' ? 9 : (['god-of-war-ragnarok', 'resident-evil-2-remake', 'resident-evil-3-remake', 'hollow-knight', 'marvels-spider-man'].includes(normalizedSlug) ? 8 : (normalizedSlug === 'red-dead-redemption-2' ? 7 : 6)))));
+  const faqLimit = normalizedSlug === 'marvels-spider-man-miles-morales' ? 12 : (['baldurs-gate-3', 'dark-souls-ii-scholar-of-the-first-sin', 'demons-souls', 'final-fantasy-xvi', 'heavy-rain', 'lies-of-p', 'little-nightmares-ii', 'lords-of-the-fallen', 'metaphor-refantazio', 'monster-hunter-world', 'nioh-3', 'reanimal', 'saros', 'sekiro-shadows-die-twice', 'star-wars-jedi-survivor', 'the-last-of-us-part-ii'].includes(normalizedSlug) ? 12 : (['days-gone', 'hogwarts-legacy', 'horizon-forbidden-west', 'horizon-zero-dawn', 'the-last-of-us-part-i', 'subnautica', 'until-dawn'].includes(normalizedSlug) ? 10 : (normalizedSlug === 'dark-souls-remastered' ? 9 : (['god-of-war-ragnarok', 'resident-evil-2-remake', 'resident-evil-3-remake', 'hollow-knight', 'marvels-spider-man'].includes(normalizedSlug) ? 8 : (normalizedSlug === 'red-dead-redemption-2' ? 7 : 6)))));
   const faqItems = Array.isArray(viewModel.contextualFaq) ? viewModel.contextualFaq.slice(0, faqLimit) : [];
   const playerFit = viewModel.playerFit || buildGuidePlayerFit(game, viewModel);
   const methodItems = Array.isArray(viewModel.editorial?.methodItems) ? viewModel.editorial.methodItems : [];
@@ -2331,13 +2331,12 @@ function stripGuidePageUnusedDom(html = '') {
 
 function stripHomePageUnusedDom(html = '') {
   let next = html;
-  ['view-catalog', 'view-seo-page', 'view-library', 'view-guide', 'view-profile'].forEach(id => {
+  ['view-catalog', 'view-seo-page', 'view-library', 'view-profile'].forEach(id => {
     next = removeElementById(next, 'section', id);
   });
   ['feedbackModal', 'userAuthModal', 'libraryImportModal', 'adminModal'].forEach(id => {
     next = removeElementById(next, 'div', id);
   });
-  next = removeElementById(next, 'nav', 'guideQuickDock');
   return next;
 }
 

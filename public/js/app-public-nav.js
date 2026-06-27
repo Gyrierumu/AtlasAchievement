@@ -210,6 +210,7 @@ window.AppPublicNav = (() => {
         const schedule = window.requestAnimationFrame || (callback => window.setTimeout(callback, 0));
         schedule(() => {
           UI.resetPageScroll?.();
+          UI.focusRouteContent?.();
           syncGuideQuickDock();
         });
       }

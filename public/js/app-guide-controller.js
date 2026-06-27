@@ -30,15 +30,21 @@ window.AppGuideController = (() => {
       const schedule = window.requestAnimationFrame || (callback => window.setTimeout(callback, 0));
       schedule(() => {
         UI.resetPageScroll?.();
+        UI.focusRouteContent?.();
         syncGuideQuickDock();
         schedule(() => {
           UI.resetPageScroll?.();
+          UI.focusRouteContent?.();
           syncGuideQuickDock();
         });
         window.setTimeout(() => {
           if (!window.location.hash) UI.resetPageScroll?.();
+          UI.focusRouteContent?.();
           syncGuideQuickDock();
         }, 60);
+        window.setTimeout(() => {
+          UI.focusRouteContent?.();
+        }, 180);
       });
     }
 
@@ -82,6 +88,7 @@ window.AppGuideController = (() => {
       const slugValue = slug?.trim();
       if (!slugValue) return navigate('home', options);
       try {
+        UI.resetTransientNavigationState?.();
         navigate('guide', { ...options, game: { slug: slugValue } });
         UI.setLoading(true);
         UI.setGuideEmptyState(false);
@@ -122,6 +129,7 @@ window.AppGuideController = (() => {
         return UI.showToast('Digite o nome de um jogo.', 'error');
       }
       try {
+        UI.resetTransientNavigationState?.();
         navigate('guide', { ...options, game: { name: gameName } });
         UI.setLoading(true);
         UI.setGuideEmptyState(false);

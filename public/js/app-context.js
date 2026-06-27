@@ -393,6 +393,7 @@ window.AppContextFactory = (() => {
 
       const input = UI.qs('#gameInput');
       if (input) input.value = currentSuggestion.name;
+      UI.resetTransientNavigationState?.();
       UI.hideSuggestions();
       state.searchSuggestions = [];
       state.activeSuggestionIndex = -1;

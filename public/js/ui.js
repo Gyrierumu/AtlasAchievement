@@ -41,11 +41,60 @@ window.UI = (() => {
   }
 
   function resetPageScroll() {
+    resetTransientNavigationState();
     try {
       window.scrollTo({ top: 0, left: 0, behavior: 'instant' });
     } catch (_error) {
       window.scrollTo(0, 0);
     }
+    const scrollingElement = document.scrollingElement || document.documentElement;
+    if (scrollingElement) {
+      scrollingElement.scrollTop = 0;
+      scrollingElement.scrollLeft = 0;
+    }
+    const main = qs('#mainContent');
+    if (main && main !== scrollingElement) {
+      main.scrollTop = 0;
+      main.scrollLeft = 0;
+    }
+  }
+
+  function resetTransientNavigationState() {
+    hideSuggestions();
+    const input = qs('#gameInput');
+    if (input) {
+      input.removeAttribute('aria-activedescendant');
+      input.setAttribute('aria-expanded', 'false');
+    }
+    const suggestions = qs('#suggestions');
+    if (suggestions) suggestions.innerHTML = '';
+    const openDialogs = qsa('[role="dialog"]').filter(dialog => (
+      !dialog.classList.contains('hidden')
+      && dialog.hidden !== true
+      && dialog.getAttribute('aria-hidden') !== 'true'
+    ));
+    if (!openDialogs.length) {
+      document.body?.classList.remove('modal-open', 'atlas-feedback-open');
+      if (document.body?.style?.overflow === 'hidden') document.body.style.overflow = '';
+      if (document.documentElement?.style?.overflow === 'hidden') document.documentElement.style.overflow = '';
+    }
+    if (document.body?.style?.pointerEvents === 'none') document.body.style.pointerEvents = '';
+    if (document.documentElement?.style?.pointerEvents === 'none') document.documentElement.style.pointerEvents = '';
+  }
+
+  function focusRouteContent() {
+    const guideHeading = qs('#view-guide:not(.hidden) #guideHeader h1, #view-guide:not(.hidden) #guideHeader h2');
+    const main = qs('#mainContent');
+    const target = guideHeading || main;
+    if (!target || typeof target.focus !== 'function') return;
+    if (guideHeading && target.getAttribute('tabindex') === null) target.setAttribute('tabindex', '-1');
+    window.setTimeout(() => {
+      try {
+        target.focus({ preventScroll: true });
+      } catch (_error) {
+        target.focus();
+      }
+    }, 0);
   }
 
   function setSearchFeedback(message = '', type = 'default') {
@@ -306,6 +355,8 @@ window.UI = (() => {
     updateLibraryBadge,
     showView,
     resetPageScroll,
+    resetTransientNavigationState,
+    focusRouteContent,
     setSearchFeedback,
     renderSuggestions,
     syncSuggestionHighlight,
