@@ -8,6 +8,7 @@
     "dev": "node server.js",
     "db:setup": "node scripts/setup-database.js",
     "export:data": "node scripts/export-data.js",
+    "prepare:guides": "node scripts/prepare-guides.js",
     "import:data": "node scripts/import-data.js",
     "import:data:changed": "node scripts/import-data.js --changed",
     "build": "npm run check:runtime && npm run test:quick",

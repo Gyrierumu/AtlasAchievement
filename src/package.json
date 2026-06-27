@@ -1,0 +1,18 @@
+{
+  "name": "master-trophy-guide-pro-src-shim",
+  "private": true,
+  "description": "Delegates npm scripts to the AtlasAchievement project root when a shell starts inside src.",
+  "scripts": {
+    "start": "cd .. && npm start",
+    "dev": "cd .. && npm run dev",
+    "db:setup": "cd .. && npm run db:setup",
+    "export:data": "cd .. && npm run export:data",
+    "prepare:guides": "cd .. && npm run prepare:guides",
+    "import:data": "cd .. && npm run import:data --",
+    "import:data:changed": "cd .. && npm run import:data:changed --",
+    "build": "cd .. && npm run build",
+    "test:quick": "cd .. && npm run test:quick",
+    "test:guide": "cd .. && npm run test:guide --",
+    "validate:new-guide": "cd .. && npm run validate:new-guide --"
+  }
+}

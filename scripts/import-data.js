@@ -225,6 +225,39 @@ function loadGuideRecords(dataDir, manifest, selectedSlugs) {
   });
 }
 
+function normalizeGuideName(value) {
+  return String(value || '')
+    .trim()
+    .replace(/\s+/g, ' ')
+    .toLowerCase();
+}
+
+function assertNoGuideRecordConflicts(records) {
+  const seenSlugs = new Set();
+  const slugByName = new Map();
+
+  for (const record of records) {
+    const slug = normalizeSlugValue(record.slug);
+    const name = normalizeGuideName(record.guide?.game?.name);
+
+    if (seenSlugs.has(slug)) {
+      throw new Error(`Conflito de guia: slug duplicado nos snapshots versionados: ${slug}.`);
+    }
+    seenSlugs.add(slug);
+
+    if (!name) continue;
+    const existingSlug = slugByName.get(name);
+    if (existingSlug && existingSlug !== slug) {
+      throw createGameConflictError({
+        name: record.guide.game.name,
+        existingSlug,
+        newSlug: slug
+      });
+    }
+    slugByName.set(name, slug);
+  }
+}
+
 async function upsertGame(database, record, gameColumns) {
   const guide = record.guide;
   const game = { ...(guide.game || {}), slug: guide.slug };
@@ -369,6 +402,7 @@ async function runImport(options = {}) {
   validateManifest(manifest);
   const selectedSlugs = resolveSelectedSlugs(manifest, options.only || args.only);
   const allRecords = loadGuideRecords(dataDir, manifest, selectedSlugs);
+  assertNoGuideRecordConflicts(allRecords);
   const database = openDatabase(databasePath);
 
   try {
@@ -496,5 +530,6 @@ module.exports = {
   validateManifest,
   validateGuide,
   loadGuideRecords,
+  assertNoGuideRecordConflicts,
   ensureGuideImportStateTable
 };

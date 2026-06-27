@@ -3,9 +3,9 @@ services:
     name: master-trophy-guide
     env: node
     plan: starter
-    buildCommand: npm ci
-    preDeployCommand: npm run db:setup
-    startCommand: npm start
+    buildCommand: if [ -f server.js ]; then npm ci && npm run build; else cd .. && npm ci && npm run build; fi
+    preDeployCommand: if [ -f server.js ]; then npm run db:setup; else cd .. && npm run db:setup; fi
+    startCommand: if [ -f server.js ]; then npm start; else cd .. && npm start; fi
     autoDeploy: true
     envVars:
       - key: NODE_ENV

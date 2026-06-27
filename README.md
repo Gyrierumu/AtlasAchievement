@@ -25,9 +25,10 @@ O banco local padrao e `database.sqlite`, criado a partir de migration + seed qu
 Alteracoes feitas no painel admin ficam no SQLite configurado por `DATABASE_PATH`; como `database.sqlite` e ignorado pelo Git, elas precisam ser exportadas antes do push:
 
 ```bash
-npm run export:data
-npm run import:data -- --yes
-npm run import:data:changed -- --yes
+npm run prepare:guides
+git add data/guides
+git commit -m "data: atualizar guias"
+git push
 ```
 
 Veja o fluxo completo e os cuidados de backup em [`docs/publicar-dados-guias.md`](docs/publicar-dados-guias.md).
@@ -127,6 +128,40 @@ Limite padrão: 5MB.
 
 ## Deploy no Render
 
+### Como publicar uma feature
+
+Quando a mudanca for apenas codigo/layout/comportamento do site:
+
+```bash
+git add .
+git commit -m "feat: ..."
+git push
+```
+
+Nao precisa rodar `export:data` nem `prepare:guides` se nenhum jogo/guia foi editado no admin local.
+
+### Como publicar um jogo/guia
+
+Quando um jogo ou guia foi criado/revisado pelo admin local:
+
+```bash
+npm run prepare:guides
+git diff data/guides
+git add data/guides
+git commit -m "data: atualizar guias"
+git push
+```
+
+O comando `prepare:guides` exporta o SQLite local para `data/guides`, valida o manifest e os JSONs, mostra os slugs alterados e nao faz commit automatico.
+
+### Como publicar feature + guia
+
+Rode `npm run prepare:guides` antes do commit, revise `git diff data/guides`, depois adicione os arquivos de codigo junto com `data/guides` no mesmo commit ou em commits separados.
+
+### Como saber se deu certo
+
+Depois do deploy, abra os logs do Render e procure `guides import startup` e `guides import`. Em seguida confira `/catalogo` e a rota `/jogo/slug-do-jogo`.
+
 ### Fluxo automatico de guias
 
 Com `autoDeploy: true` no `render.yaml` e `AUTO_IMPORT_GUIDES_ON_START=true` no ambiente do Render, o fluxo normal e:
@@ -138,6 +173,17 @@ git push origin main
 O Render faz build/deploy, roda o startup do app e importa automaticamente os guias novos ou alterados de `data/guides` para o SQLite persistente em `/data/database.sqlite`.
 
 Em servicos novos criados pelo Blueprint, `render.yaml` ja define `AUTO_IMPORT_GUIDES_ON_START=true`. Em servicos existentes, confirme no painel do Render em **Environment** se a variavel esta ativa, ou reaplique o Blueprint.
+
+O Render deve usar a raiz do repositorio como diretório do serviço. A raiz contem `package.json`, `server.js`, `scripts/` e `data/guides/`. Se o Shell abrir em `~/project/src`, os scripts de `src/package.json` delegam para a raiz, entao `npm run import:data` deixa de retornar `Missing script`.
+
+Configuracao recomendada:
+- **Root Directory**: vazio ou raiz do repositorio;
+- **Build Command**: `if [ -f server.js ]; then npm ci && npm run build; else cd .. && npm ci && npm run build; fi`;
+- **Pre-Deploy Command**: `if [ -f server.js ]; then npm run db:setup; else cd .. && npm run db:setup; fi`;
+- **Start Command**: `if [ -f server.js ]; then npm start; else cd .. && npm start; fi`;
+- **Environment**: `AUTO_IMPORT_GUIDES_ON_START=true`.
+
+Para pausar a automacao, altere `AUTO_IMPORT_GUIDES_ON_START=false` no Render e faca um novo deploy/restart. O SQLite de producao em `/data/database.sqlite` nao deve ser apagado nem substituido pelo banco local.
 
 Se aparecer `Conflito de jogo: name ja existe com outro slug`, revise o JSON em `data/guides` e o registro existente no banco. O mesmo jogo deve manter o mesmo `slug`; um nome igual com slug diferente e tratado como conflito real para evitar duplicacao.
 

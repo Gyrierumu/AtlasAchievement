@@ -10,42 +10,117 @@ O AtlasAchievement tem duas camadas de dados:
 
 No Render, `render.yaml` aponta `DATABASE_PATH=/data/database.sqlite`, em disco persistente. Esse banco nao vem do Git: ele vive no volume do Render.
 
+## Diretorio correto no Render
+
+O projeto deve rodar a partir da raiz do repositorio, nao de `src`.
+
+A raiz contem:
+
+- `package.json`;
+- `package-lock.json`;
+- `server.js`;
+- `scripts/`;
+- `data/guides/`;
+- `src/`.
+
+Essa e a opcao mais segura porque os scripts `export:data`, `import:data`, `import:data:changed`, o bootstrap e o auto-import compartilham caminhos relativos a raiz. O `render.yaml` foi ajustado para subir pela raiz mesmo que o shell/servico esteja temporariamente em `src`.
+
+Configuracao recomendada no Render:
+
+- **Root Directory**: vazio ou raiz do repositorio;
+- **Build Command**: `if [ -f server.js ]; then npm ci && npm run build; else cd .. && npm ci && npm run build; fi`;
+- **Pre-Deploy Command**: `if [ -f server.js ]; then npm run db:setup; else cd .. && npm run db:setup; fi`;
+- **Start Command**: `if [ -f server.js ]; then npm start; else cd .. && npm start; fi`;
+- **Environment**: `AUTO_IMPORT_GUIDES_ON_START=true`.
+
+Se o Render Shell abrir em `~/project/src`, `npm run import:data` e `npm run prepare:guides` tambem funcionam: `src/package.json` apenas delega os scripts para a raiz. Isso existe para diagnostico/emergencia; o fluxo normal continua sendo `git push origin main`.
+
 ## Por que `git push` nao publicava algumas alteracoes
 
 `database.sqlite` esta no `.gitignore`, corretamente. Quando um jogo e criado ou editado no painel admin local, a gravacao acontece no SQLite local. Como esse arquivo e ignorado, o `git push` nao leva essas mudancas.
 
 O push leva apenas arquivos versionados, como `src/data/sampleGames.js` e os snapshots em `data/guides`. Se a alteracao ficou apenas no banco local, ela precisa ser exportada antes de publicar.
 
-## Fluxo seguro recomendado
+## Como publicar uma feature
+
+Quando a mudanca for somente codigo do site:
+
+```bash
+git add .
+git commit -m "feat: ..."
+git push
+```
+
+O Render faz build/deploy automaticamente. Nao rode `npm run prepare:guides` se nenhum guia foi alterado no admin local.
+
+## Como publicar um jogo/guia
 
 1. Fazer a alteracao no admin local.
 2. Rodar:
 
    ```bash
-   npm run export:data
+   npm run prepare:guides
    ```
 
-3. Revisar `git status` e o diff em `data/guides/*.json` e `data/guides/manifest.json`.
-4. Rodar validacoes locais:
+3. Conferir o que mudou:
 
    ```bash
-   npm run build
-   npm run validate:new-guide -- slug-do-jogo
+   git diff data/guides
    ```
 
-5. Commitar apenas os arquivos versionados:
+4. Commitar apenas os snapshots versionados:
 
    ```bash
    git add data/guides
    git commit -m "data: atualizar guias"
-   git push origin main
+   git push
    ```
 
-6. Nunca commitar `database.sqlite`, `.env`, backups ou uploads locais.
-7. Com `autoDeploy: true`, o Render faz deploy automaticamente apos o push.
-8. No Render, se `AUTO_IMPORT_GUIDES_ON_START=true`, a importacao dos guias alterados acontece automaticamente no proximo deploy/start.
-9. O site publico passa a refletir os dados importados do SQLite persistente.
-10. Se quiser controle manual, mantenha `AUTO_IMPORT_GUIDES_ON_START=false` ou ausente e rode o importador manualmente no Render Shell.
+5. Com `autoDeploy: true`, o Render faz deploy automaticamente apos o push.
+6. No Render, se `AUTO_IMPORT_GUIDES_ON_START=true`, a importacao dos guias alterados acontece automaticamente no proximo startup.
+7. O site publico passa a refletir os dados importados do SQLite persistente.
+
+Nunca commitar `database.sqlite`, `.env`, backups ou uploads locais.
+
+## Como publicar feature + guia no mesmo deploy
+
+1. Alterar o codigo.
+2. Editar/adicionar o guia no admin local.
+3. Rodar:
+
+   ```bash
+   npm run prepare:guides
+   ```
+
+4. Conferir:
+
+   ```bash
+   git diff data/guides
+   ```
+
+5. Adicionar codigo e dados versionados:
+
+   ```bash
+   git add arquivos-de-codigo data/guides
+   git commit -m "feat: ..."
+   git push
+   ```
+
+## Como saber se deu certo
+
+Nos logs do Render, procure:
+
+```text
+guides import startup
+guides import
+```
+
+Depois abra:
+
+- `/catalogo`;
+- `/jogo/slug-do-jogo`.
+
+Se o guia novo aparecer no catalogo e a rota do slug abrir, os dados versionados foram importados para `/data/database.sqlite`.
 
 ## Importacao automatica no Render
 
@@ -80,6 +155,19 @@ AUTO_IMPORT_GUIDES_ON_START=false
 ```
 
 Depois faca um novo deploy/restart. O comportamento volta ao fluxo manual.
+
+## Comando local simples
+
+`npm run prepare:guides` faz o trabalho diario:
+
+- roda `npm run export:data`;
+- valida `data/guides/manifest.json`;
+- valida cada JSON referenciado pelo manifest;
+- falha cedo se houver slug duplicado ou `name` igual com slug diferente;
+- mostra os slugs alterados segundo o Git;
+- lembra o proximo comando: `git add data/guides && git commit -m "data: atualizar guias" && git push`.
+
+Ele nao commita automaticamente e nao importa nada em producao.
 
 ## Importacao manual
 
