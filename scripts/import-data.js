@@ -2,6 +2,7 @@ const fs = require('fs');
 const path = require('path');
 
 const env = require('../src/config/env');
+const { getCanonicalGameSlug } = require('../src/utils/slug');
 const {
   parseArgs,
   normalizeDataDir,
@@ -126,7 +127,7 @@ function pickValues(source, columns) {
 }
 
 function normalizeSlugValue(value) {
-  return String(value || '').trim().toLowerCase();
+  return getCanonicalGameSlug(value);
 }
 
 function isEmptySlug(value) {

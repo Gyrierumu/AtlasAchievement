@@ -32,7 +32,7 @@
     "quality_warnings": null,
     "reviewed_by": null,
     "runs_summary": "Uma campanha principal com cleanup livre após a história. A lista base não exige DLC nem dificuldade específica.",
-    "slug": "assassins-creed-valhalla",
+    "slug": "assassin-s-creed-valhalla",
     "time": "100-150h",
     "time_bucket": "long",
     "time_max_hours": 150,
@@ -45,7 +45,7 @@
     "walkthrough": null
   },
   "redirects": [
-    "assassin-s-creed-valhalla"
+    "assassins-creed-valhalla"
   ],
   "roadmaps": [
     {
@@ -260,7 +260,7 @@
       "Orlog"
     ]
   },
-  "slug": "assassins-creed-valhalla",
+  "slug": "assassin-s-creed-valhalla",
   "trophies": [
     {
       "description": "Win Every Trophy",

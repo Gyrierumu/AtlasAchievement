@@ -17,7 +17,7 @@ const GAME_SLUG_ALIASES = {
   ],
   'little-nightmares-ii': ['little-nightmares'],
   'god-of-war': ['god-of-war-2018'],
-  'assassins-creed-valhalla': ['assassin-s-creed-valhalla'],
+  'assassin-s-creed-valhalla': ['assassins-creed-valhalla'],
   'monster-hunter-world': ['monster-hunter-world-iceborne']
 };
 
@@ -90,7 +90,7 @@ function normalizeCoverageLevel(game = {}) {
 }
 
 function normalizeSlugValue(value) {
-  return String(value || '').trim().toLowerCase();
+  return getCanonicalGameSlug(value);
 }
 
 function createSeedGameConflictError({ name, existingSlug, newSlug }) {

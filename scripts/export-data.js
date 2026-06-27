@@ -3,7 +3,7 @@ const path = require('path');
 
 const env = require('../src/config/env');
 const sampleGames = require('../src/data/sampleGames');
-const { getCanonicalGameSlug } = require('../src/utils/slug');
+const { CANONICAL_GAME_SLUG_ALIASES, getCanonicalGameSlug } = require('../src/utils/slug');
 const {
   parseArgs,
   stableStringify,
@@ -85,6 +85,15 @@ function getSeedExtrasBySlug() {
   return extras;
 }
 
+function addRedirectAlias(redirectsBySlug, slug, alias) {
+  const canonicalSlug = getCanonicalGameSlug(slug);
+  const aliasSlug = String(alias || '').trim().toLowerCase();
+  if (!aliasSlug || aliasSlug === canonicalSlug) return;
+  if (!redirectsBySlug.has(canonicalSlug)) redirectsBySlug.set(canonicalSlug, []);
+  const aliases = redirectsBySlug.get(canonicalSlug);
+  if (!aliases.includes(aliasSlug)) aliases.push(aliasSlug);
+}
+
 async function main() {
   const args = parseArgs();
   const dataDir = normalizeDataDir(args.dataDir);
@@ -154,8 +163,12 @@ async function main() {
     }
     for (const row of redirects) {
       const slug = getCanonicalGameSlug(row.game_slug);
-      if (!redirectsBySlug.has(slug)) redirectsBySlug.set(slug, []);
-      redirectsBySlug.get(slug).push(row.slug);
+      const redirectSlug = String(row.slug || '').trim().toLowerCase();
+      if (!redirectSlug || redirectSlug === slug) continue;
+      addRedirectAlias(redirectsBySlug, slug, redirectSlug);
+    }
+    for (const [alias, canonicalSlug] of Object.entries(CANONICAL_GAME_SLUG_ALIASES)) {
+      addRedirectAlias(redirectsBySlug, canonicalSlug, alias);
     }
 
     const seedExtrasBySlug = getSeedExtrasBySlug();

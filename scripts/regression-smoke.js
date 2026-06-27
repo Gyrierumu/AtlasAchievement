@@ -5616,7 +5616,7 @@ async function assertSeedData({ all, get }, sampleGames) {
   assert.strictEqual(assassinsCreedOdysseyTypeById.acod_child_of_poseidon, 'Prata', 'Child of Poseidon deve ser prata');
   assert.strictEqual(assassinsCreedOdysseyTypeById.acod_the_cult_unmasked, 'Prata', 'The Cult Unmasked deve ser prata');
 
-  const assassinsCreedValhallaSample = sampleGames.find(game => game.slug === 'assassins-creed-valhalla');
+  const assassinsCreedValhallaSample = sampleGames.find(game => game.slug === 'assassin-s-creed-valhalla');
   assert(assassinsCreedValhallaSample, 'sampleGames deve incluir Assassin’s Creed Valhalla');
   assert.strictEqual(assassinsCreedValhallaSample.name, 'Assassin’s Creed Valhalla', 'Assassin’s Creed Valhalla deve manter nome oficial');
   assert.strictEqual(assassinsCreedValhallaSample.difficulty, 4, 'Assassin’s Creed Valhalla deve usar dificuldade 4/10');

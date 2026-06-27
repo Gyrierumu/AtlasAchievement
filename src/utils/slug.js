@@ -14,7 +14,7 @@ const CANONICAL_GAME_SLUG_ALIASES = Object.freeze({
   'astros-playrrom': 'astros-playroom',
   'astro-s-playrrom': 'astros-playroom',
   'god-of-war-2018': 'god-of-war',
-  'assassin-s-creed-valhalla': 'assassins-creed-valhalla'
+  'assassins-creed-valhalla': 'assassin-s-creed-valhalla'
 });
 
 function getCanonicalGameSlug(value) {
