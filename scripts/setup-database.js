@@ -17,8 +17,13 @@ async function main() {
   env.assertRuntimeConfig();
 
   await migrate({ syncSeedData: env.runSeedSync });
-  await adminService.ensureDefaultAdmin();
   await seed();
+
+  try {
+    await adminService.ensureDefaultAdmin();
+  } catch (error) {
+    console.warn(`Aviso: bootstrap de administrador ignorado durante db:setup: ${error.message || error}`);
+  }
 
   console.log(`Database ready at ${env.databasePath}`);
 }

@@ -8,9 +8,15 @@ async function start() {
   env.assertRuntimeConfig();
 
   await migrate({ syncSeedData: env.runSeedSync });
-  const adminBootstrap = await adminService.ensureDefaultAdmin();
   if (env.allowStartupSeed) {
     await seed();
+  }
+
+  let adminBootstrap = { created: false, skipped: true, username: null };
+  try {
+    adminBootstrap = await adminService.ensureDefaultAdmin();
+  } catch (error) {
+    console.warn(`Aviso: bootstrap de administrador ignorado na inicializacao: ${error.message || error}`);
   }
 
   const warnings = env.getStartupWarnings();
