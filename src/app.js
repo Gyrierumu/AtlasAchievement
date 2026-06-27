@@ -313,9 +313,17 @@ function buildPublicUrl(req, pathname = '/') {
 }
 
 function resolveMetaImage(origin, imagePath) {
-  if (!imagePath) return `${origin}${DEFAULT_SOCIAL_IMAGE_PATH}`;
-  if (/^https?:\/\//i.test(imagePath)) return imagePath;
-  return `${origin}${imagePath}`;
+  const fallback = `${origin}${DEFAULT_SOCIAL_IMAGE_PATH}`;
+  const source = String(imagePath || '').trim();
+  if (!source) return fallback;
+  if (/^https?:\/\//i.test(source)) return source;
+  if (source.startsWith('/')) return `${origin}${source}`;
+  return fallback;
+}
+
+function resolveGuideMetaImage(game = {}) {
+  const publicOrigin = PRODUCTION_CANONICAL_ORIGIN;
+  return resolveMetaImage(publicOrigin, firstSeoText(game?.cover_image, game?.image));
 }
 
 
@@ -552,88 +560,67 @@ function firstSeoText(...values) {
 
 function buildGameSeoTitle(game = {}) {
   const name = String(game?.name || 'Jogo').trim() || 'Jogo';
-  if (String(game?.slug || '').trim().toLowerCase() === 'elden-ring') {
-    return 'Guia de Troféus Elden Ring | AtlasAchievement';
-  }
-  if (String(game?.slug || '').trim().toLowerCase() === 'lords-of-the-fallen') {
-    return 'Guia de Platina Lords of the Fallen — Troféus, Roadmap e Dicas';
-  }
-  if (String(game?.slug || '').trim().toLowerCase() === 'until-dawn') {
-    return 'Guia de Platina Until Dawn — Troféus, Roadmap e Dicas';
-  }
-  if (String(game?.slug || '').trim().toLowerCase() === 'sekiro-shadows-die-twice') {
-    return 'Guia de Platina Sekiro: Shadows Die Twice — Troféus, Roadmap e Dicas';
-  }
-  return `${name}: guia de platina, troféus e roadmap | AtlasAchievement`;
+  const trophies = Array.isArray(game?.trophies) ? game.trophies : [];
+  const hasPlatinum = trophies.some(trophy => /^(platina|platinum)$/i.test(String(trophy?.type || '').trim()))
+    || /platina|platinum/i.test(firstSeoText(game?.platinumType, game?.platinum_type));
+  const guideKind = hasPlatinum ? 'guia de platina, troféus e roadmap' : 'guia de troféus e roadmap';
+  return `${name}: ${guideKind} | AtlasAchievement`;
+}
+
+function truncateSeoDescription(value = '', maxLength = 180) {
+  const text = String(value || '').replace(/\s+/g, ' ').trim();
+  if (text.length <= maxLength) return text;
+  const slice = text.slice(0, maxLength + 1);
+  const lastBreak = Math.max(slice.lastIndexOf(', '), slice.lastIndexOf(' e '), slice.lastIndexOf(' '));
+  return `${slice.slice(0, lastBreak > 90 ? lastBreak : maxLength).trim().replace(/[,.]$/, '')}.`;
+}
+
+function hasPlatinumTrophyForSeo(game = {}) {
+  const trophies = Array.isArray(game?.trophies) ? game.trophies : [];
+  return trophies.some(trophy => /^(platina|platinum)$/i.test(String(trophy?.type || '').trim()))
+    || /platina|platinum/i.test(firstSeoText(game?.platinumType, game?.platinum_type));
+}
+
+function hasMandatoryOnlineForSeo(game = {}) {
+  if (game?.onlineRequired === true || game?.requiresOnline === true || game?.hasMandatoryOnline === true) return true;
+  if (game?.onlineRequired === false || game?.requiresOnline === false || game?.hasMandatoryOnline === false) return false;
+  const text = normalizeSeoSignalText(firstSeoText(game?.online_summary, game?.guide_online, game?.online));
+  if (!text || hasUncertainEditorialText(text)) return false;
+  if (/nao ha|sem online|nao exige online|sem trofeus online|online opcional|nao.*online obrigatorio|ps\+ nao/.test(text)) return false;
+  return /online\/multiplayer|trofeus? online confirmad|red dead online|sport mode|sos flare|guild cards?|daily challenge|servidor|server|ps\+|depende de conexao|depende de rede/.test(text);
+}
+
+function hasNoMandatoryOnlineForSeo(game = {}) {
+  if (game?.onlineRequired === false || game?.requiresOnline === false || game?.hasMandatoryOnline === false) return true;
+  return hasExplicitNoOnline(game);
+}
+
+function hasMissablesForSeo(game = {}) {
+  const missableCount = Number(game?.missable_count ?? game?.missableCount ?? 0);
+  if (Number.isFinite(missableCount) && missableCount > 0) return true;
+  const text = normalizeSeoSignalText(firstSeoText(game?.missable_summary, game?.missable));
+  if (!text || hasUncertainEditorialText(text)) return false;
+  if (/nao ha|sem perdiveis|nada .*perdivel|0 perdiveis|nenhum/.test(text)) return false;
+  return /perdivel|perdiveis|ponto sem retorno|bloque|janela|missable/.test(text);
 }
 
 function buildGameSeoDescription(game = {}) {
   const name = String(game?.name || 'este jogo').trim() || 'este jogo';
-  if (String(game?.slug || '').trim().toLowerCase() === 'lords-of-the-fallen') {
-    return 'Guia de platina de Lords of the Fallen 2023 com roadmap em português, troféus online, co-op, PvP, finais Adyr, Radiant e Umbral, New Game+, questlines, bosses, collectibles e dicas para conquistar todos os troféus no PS5.';
-  }
-  if (String(game?.slug || '').trim().toLowerCase() === 'until-dawn') {
-    return 'Guia de platina de Until Dawn com roadmap em português, troféus da lista base, todos vivos, todos mortos, Totens, pistas, cluelines, chapter select e dicas para conquistar a platina no PS4.';
-  }
-  if (String(game?.slug || '').trim().toLowerCase() === 'elden-ring') {
-    return 'Roadmap completo para platinar Elden Ring com checklist, troféus perdíveis, finais, lendários, tempo estimado e dicas para conquistar a platina.';
-  }
-  if (String(game?.slug || '').trim().toLowerCase() === 'hades') {
-    return 'Guia de platina de Hades em português, com tempo estimado, dificuldade, roadmap, checklist, Fated List, Keepsakes, Companions, Pact of Punishment, Heat e dicas para a platina.';
-  }
-  if (String(game?.slug || '').trim().toLowerCase() === 'pragmata') {
-    return 'Guia de platina de PRAGMATA em português, com tempo estimado, dificuldade, troféus perdíveis, Lunatic, coletáveis, roadmap e checklist.';
-  }
-  if (String(game?.slug || '').trim().toLowerCase() === 'nioh-2') {
-    return 'Guia de platina de Nioh 2 em português, com tempo estimado, dificuldade, missões, Kodama, Hot Springs, proficiência, Soul Cores, roadmap e checklist de troféus.';
-  }
-  if (String(game?.slug || '').trim().toLowerCase() === 'nioh-3') {
-    return 'Guia de platina de Nioh 3 em português, com tempo estimado, dificuldade, troféus, Samurai, Ninja, missões, coletáveis, Battle Scroll, roadmap e checklist.';
-  }
-  if (String(game?.slug || '').trim().toLowerCase() === 'saros') {
-    return 'Guia de platina de Saros em português, com tempo estimado, dificuldade, troféus, roadmap, checklist, coletáveis, bosses e dicas para a platina.';
-  }
-  if (String(game?.slug || '').trim().toLowerCase() === 'resident-evil-requiem') {
-    return 'Guia de platina de Resident Evil Requiem em português, com tempo estimado, dificuldade, troféus, coletáveis, roadmap, checklist e dicas para a platina.';
-  }
-  if (String(game?.slug || '').trim().toLowerCase() === 'the-last-of-us-part-i') {
-    return 'Guia de platina de The Last of Us Part I em português, com tempo estimado, dificuldade, troféus, coletáveis, Left Behind, Chapter Select, roadmap e checklist.';
-  }
-  if (String(game?.slug || '').trim().toLowerCase() === 'the-last-of-us-part-ii') {
-    return 'Guia de platina de The Last of Us Part II em português, com tempo estimado, dificuldade, troféus, coletáveis, upgrades, Chapter Select, NG+ parcial, roadmap e checklist.';
-  }
-  if (String(game?.slug || '').trim().toLowerCase() === 'subnautica') {
-    return 'Guia de platina de Subnautica em português, com tempo estimado, dificuldade, troféus, exploração, veículos, base, história, roadmap e checklist.';
-  }
-  if (String(game?.slug || '').trim().toLowerCase() === 'sekiro-shadows-die-twice') {
-    return 'Guia de platina de Sekiro: Shadows Die Twice em português, com tempo estimado, dificuldade, finais, Shura, Purification, Dragon\'s Homecoming, Immortal Severance, Prayer Beads, Gourd Seeds, Prosthetic Tools, Lapis Lazuli, bosses, NG+, backup save e checklist da lista base de PS4.';
-  }
+  const guideKind = hasPlatinumTrophyForSeo(game) ? 'Guia de platina' : 'Guia de troféus';
   const parts = [];
   const time = String(game?.time || '').trim();
   const difficulty = Number(game?.difficulty || 0);
-  const onlineText = normalizeSeoSignalText(firstSeoText(game?.online_summary, game?.guide_online, game?.online));
-  const missableText = normalizeSeoSignalText(firstSeoText(game?.missable_summary, game?.missable));
-  const dlcText = normalizeSeoSignalText(firstSeoText(game?.dlc_scope, game?.guide_dlc, game?.dlc));
-  const hasOnline = /online\/multiplayer|trofeus? online confirmad|red dead online|sport mode|sos flare|guild cards?|daily challenge|servidor|server|ps\+/.test(onlineText)
-    && !/nao ha|sem online|nao exige online|online opcional|nao.*online obrigatorio|ps\+ nao/.test(onlineText);
-  const noOnline = /nao ha (?:trofeus )?(?:online|exigencia online)|sem online obrigatorio|nao exige online|sem trofeus online|nao ha multiplayer obrigatorio/.test(onlineText)
-    && !hasUncertainEditorialText(onlineText);
-  const hasCoop = /exige 2 jogadores|2 jogadores obrigatorios|dois jogadores obrigatorios|nao pode ser platinado solo|coop obrigatorio|co-op obrigatorio/.test(onlineText);
-  const missableCount = Number(game?.missable_count || 0);
-  const hasMissables = missableCount > 0 || (!/nao ha|sem perdiveis|nada .*perdivel|0 perdiveis/.test(missableText) && /perdivel|perdiveis|ponto sem retorno|bloque/.test(missableText));
 
+  parts.push('roadmap');
+  parts.push('checklist');
   if (time) parts.push(`tempo estimado de ${time}`);
   if (difficulty > 0) parts.push(`dificuldade ${difficulty}/10`);
-  if (hasMissables) parts.push('alertas de troféus perdíveis');
-  if (hasCoop) parts.push('coop obrigatório');
-  else if (hasOnline) parts.push('requisitos online');
-  else if (noOnline) parts.push('sem online obrigatório');
-  if (/lista base|jogo base|base game|sem dlc|dlc nao necessaria|nao e necessaria|fora do escopo|nao inclui/.test(dlcText) && !hasUncertainEditorialText(dlcText)) {
-    parts.push('DLC fora da platina base');
-  }
-  parts.push('roadmap e checklist');
+  if (hasMissablesForSeo(game)) parts.push('troféus perdíveis');
+  if (hasMandatoryOnlineForSeo(game)) parts.push('online obrigatório');
+  else if (hasNoMandatoryOnlineForSeo(game)) parts.push('sem online obrigatório');
+  parts.push('progresso salvo');
 
-  return `Guia de platina de ${name} em português, com ${parts.join(', ')}.`;
+  return truncateSeoDescription(`${guideKind} de ${name} com ${parts.join(', ')}.`);
 }
 
 function buildGameGuideH1(game = {}) {
@@ -2341,11 +2328,8 @@ function stripHomePageUnusedDom(html = '') {
 }
 
 async function buildGamePageHtml(game, req) {
-  const origin = getPublicOrigin(req);
   const normalizedSlug = String(game?.slug || '').trim().toLowerCase();
-  const canonicalUrl = ['elden-ring', 'ghost-of-tsushima', 'god-of-war', 'god-of-war-2018', 'god-of-war-ragnarok', 'hades', 'hades-ii', 'astro-bot', 'lords-of-the-fallen', 'pragmata', 'nioh-2', 'nioh-3', 'resident-evil-requiem', 'resident-evil-4-remake', 'saros', 'the-last-of-us-part-i', 'the-last-of-us-part-ii', 'subnautica', 'until-dawn'].includes(normalizedSlug)
-    ? `https://atlasachievement.com.br/jogo/${normalizedSlug}`
-    : buildPublicUrl(req, `/jogo/${game.slug}`);
+  const canonicalUrl = `${PRODUCTION_CANONICAL_ORIGIN}/jogo/${normalizedSlug || game.slug}`;
   const relatedResponse = await gamesService.listGames({ page: 1, limit: 80, sort: 'recommended-desc' });
   const relatedPool = Array.isArray(relatedResponse?.items) ? relatedResponse.items : [];
   const relatedGames = buildRelatedGamesServer(game, relatedPool, 4);
@@ -2362,27 +2346,31 @@ async function buildGamePageHtml(game, req) {
   const statusBadge = viewModel.editorial?.statusBadge || getEditorialBadge(game);
   const title = buildGameSeoTitle(game);
   const description = buildGameSeoDescription(game);
-  const image = resolveMetaImage(origin, game.image);
+  const image = resolveGuideMetaImage(game);
   const guideCollections = classifyGameCollections(game, game.trophies || []);
   const structuredData = safeJsonForHtml({
     '@context': 'https://schema.org',
     '@graph': [{
-      '@type': 'VideoGame',
-      name: game.name,
-      image,
-      description,
-      genre: 'Achievement tracking',
+      '@type': 'WebPage',
+      name: title,
       url: canonicalUrl,
-      additionalProperty: [
-        { '@type': 'PropertyValue', name: 'Status editorial', value: statusBadge.label },
-        { '@type': 'PropertyValue', name: 'Cobertura', value: game.coverage_level || 'partial' },
-        { '@type': 'PropertyValue', name: 'Verificado manualmente', value: game.is_verified ? 'sim' : 'não' }
-      ]
+      description,
+      image,
+      isPartOf: {
+        '@type': 'WebSite',
+        name: 'AtlasAchievement',
+        url: PRODUCTION_CANONICAL_ORIGIN
+      },
+      publisher: {
+        '@type': 'Organization',
+        name: 'AtlasAchievement',
+        url: PRODUCTION_CANONICAL_ORIGIN
+      }
     }, {
       '@type': 'BreadcrumbList',
       itemListElement: [
-        { '@type': 'ListItem', position: 1, name: 'Início', item: `${origin}/` },
-        { '@type': 'ListItem', position: 2, name: 'Catálogo', item: `${origin}/catalogo` },
+        { '@type': 'ListItem', position: 1, name: 'Início', item: `${PRODUCTION_CANONICAL_ORIGIN}/` },
+        { '@type': 'ListItem', position: 2, name: 'Catálogo', item: `${PRODUCTION_CANONICAL_ORIGIN}/catalogo` },
         { '@type': 'ListItem', position: 3, name: game.name, item: canonicalUrl }
       ]
     }, ...buildGuideFaqStructuredData(canonicalUrl, viewModel)]

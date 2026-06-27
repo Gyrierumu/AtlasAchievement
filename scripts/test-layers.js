@@ -1360,7 +1360,7 @@ async function validateGuide(slug = '') {
       assert(!/>\s*null\s*</i.test(html), 'Hades SSR nao deve exibir null visivel');
       assertNoLooseEditorialHyphen(html, 'Hades');
       assert.strictEqual(getTitle(html), 'Hades: guia de platina, troféus e roadmap | AtlasAchievement', 'title de Hades deve seguir SEO esperado');
-      assert.strictEqual(getMeta(html, 'description'), 'Guia de platina de Hades em português, com tempo estimado, dificuldade, roadmap, checklist, Fated List, Keepsakes, Companions, Pact of Punishment, Heat e dicas para a platina.', 'meta description de Hades deve seguir SEO esperado');
+      assert.strictEqual(getMeta(html, 'description'), 'Guia de platina de Hades com roadmap, checklist, tempo estimado de 70 a 100 horas, dificuldade 5/10, sem online obrigatório, progresso salvo.', 'meta description de Hades deve seguir SEO esperado');
       assert.strictEqual(getCanonical(html), 'https://atlasachievement.com.br/jogo/hades', 'canonical de Hades deve usar dominio de producao');
     }
     if (slug === 'ghost-of-tsushima') {
