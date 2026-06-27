@@ -18,10 +18,32 @@ window.AppFeedback = (() => {
     return labels[String(section || '').trim()] || 'Página de guia';
   }
 
+  function getCurrentPageUrl() {
+    try {
+      return new URL(window.location.href).href;
+    } catch (_error) {
+      return `${window.location.origin || ''}${window.location.pathname || ''}${window.location.search || ''}${window.location.hash || ''}`;
+    }
+  }
+
+  function normalizePageUrl(value = '') {
+    const candidate = String(value || '').trim();
+    try {
+      return new URL(candidate || getCurrentPageUrl(), window.location.origin).href;
+    } catch (_error) {
+      return getCurrentPageUrl();
+    }
+  }
+
+  function resolveFeedbackPageUrl(context = {}, hasGuideContext = false) {
+    if (hasGuideContext) return getCurrentPageUrl();
+    return normalizePageUrl(context.pageUrl || getCurrentPageUrl());
+  }
+
   function buildGuideFeedbackMessage(context = {}) {
     const gameName = String(context.gameName || context.game || inferRelatedGame() || '').trim();
     const slug = String(context.slug || '').trim();
-    const pageUrl = String(context.pageUrl || window.location.href || '').trim();
+    const pageUrl = resolveFeedbackPageUrl(context, true);
     const section = getGuideSectionLabel(context.section);
     const lines = [
       `Guia: ${gameName || 'Não identificado'}`,
@@ -73,15 +95,16 @@ window.AppFeedback = (() => {
     const form = qs('#feedbackForm');
     if (!form) return;
     const hasGuideContext = Boolean(context && (context.kind === 'guide' || context.gameName || context.slug));
-    if (hasGuideContext) form.reset();
+    form.reset();
     const pageUrl = qs('#feedbackPageUrl');
     const relatedGame = qs('#feedbackRelatedGame');
     const message = qs('#feedbackMessage');
     const startedAt = qs('#feedbackFormStartedAt');
     const guideGameName = String(context.gameName || context.game || '').trim();
-    if (pageUrl) pageUrl.value = context.pageUrl || window.location.href;
+    const resolvedPageUrl = resolveFeedbackPageUrl(context, hasGuideContext);
+    if (pageUrl) pageUrl.value = resolvedPageUrl;
     if (relatedGame && (hasGuideContext || !relatedGame.value.trim())) relatedGame.value = guideGameName || inferRelatedGame();
-    if (message && hasGuideContext) message.value = buildGuideFeedbackMessage(context);
+    if (message && hasGuideContext) message.value = buildGuideFeedbackMessage({ ...context, pageUrl: resolvedPageUrl });
     if (startedAt) startedAt.value = String(Date.now());
     syncTypeButtons(hasGuideContext ? 'Erro em guia' : (qs('#feedbackType')?.value || 'Bug do site'));
     updateCounter();
@@ -120,10 +143,11 @@ window.AppFeedback = (() => {
   }
 
   function collectPayload() {
+    const pageUrl = normalizePageUrl(qs('#feedbackPageUrl')?.value?.trim() || getCurrentPageUrl());
     return {
       type: qs('#feedbackType')?.value || 'Bug do site',
       relatedGame: qs('#feedbackRelatedGame')?.value?.trim() || '',
-      pageUrl: qs('#feedbackPageUrl')?.value?.trim() || window.location.href,
+      pageUrl,
       message: qs('#feedbackMessage')?.value?.trim() || '',
       nickname: qs('#feedbackNickname')?.value?.trim() || '',
       email: qs('#feedbackEmail')?.value?.trim() || '',
@@ -235,7 +259,7 @@ window.AppFeedback = (() => {
   }
 
   function openGuideFeedback(context = {}) {
-    setOpen(true, { ...context, kind: 'guide' });
+    setOpen(true, { ...context, pageUrl: getCurrentPageUrl(), kind: 'guide' });
   }
 
   return { bind, setOpen, openGuideFeedback, collectPayload, syncTypeButtons };
