@@ -34,7 +34,7 @@ const config = {
   sessionMaxAgeHours: Number(process.env.SESSION_MAX_AGE_HOURS || 8),
   sessionCleanupIntervalMinutes: Number(process.env.SESSION_CLEANUP_INTERVAL_MINUTES || 30),
   runSeedSync: !isProduction && process.env.RUN_SEED_SYNC === 'true',
-  allowStartupSeed: !isProduction
+  allowStartupSeed: process.env.DISABLE_STARTUP_SEED !== 'true'
 };
 
 function assertRuntimeConfig() {
