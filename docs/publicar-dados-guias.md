@@ -111,9 +111,11 @@ Nunca commitar `database.sqlite`, `.env`, backups ou uploads locais.
 Nos logs do Render, procure:
 
 ```text
-guides import startup
-guides import
+guides import startup context
+guides import startup summary
 ```
+
+`guides import startup context` mostra `cwd`, raiz do pacote, caminho de `data/guides`, manifest, total de guias e SQLite usado. `guides import startup summary` mostra slugs pendentes, importados, pulados, ausentes no banco mesmo com hash registrado, alterados por hash e ainda nao rastreados.
 
 Depois abra:
 
@@ -138,6 +140,7 @@ Com essa variavel ligada, o startup roda uma importacao protegida:
 - valida os JSONs selecionados;
 - calcula hash SHA-256 deterministico de cada guia;
 - compara com `guide_import_state`;
+- se o hash for igual, mas o jogo nao existir em `games`, reimporta o slug em vez de pular;
 - cria backup do banco antes de qualquer importacao real;
 - importa somente guias com hash novo ou alterado;
 - atualiza `guide_import_state` na mesma transacao;
@@ -145,6 +148,8 @@ Com essa variavel ligada, o startup roda uma importacao protegida:
 - falha com mensagem clara em conflitos ou erros de dados.
 
 Se nao houver mudancas, o log mostra `guides import: no changes` e o banco nao e alterado.
+
+Se houver erro, procure `guides import startup error`. Conflitos de nome/slug aparecem como `Conflito de jogo: name ja existe com outro slug...` e fazem o startup falhar de forma visivel quando `AUTO_IMPORT_GUIDES_ON_START=true`.
 
 Se a importacao automatica falhar com `AUTO_IMPORT_GUIDES_ON_START=true`, o startup falha. Essa e a opcao mais segura para producao porque evita subir o servidor com deploy novo e banco parcialmente desatualizado. O rollback da transacao protege o banco se algo quebrar durante a importacao.
 

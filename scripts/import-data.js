@@ -314,6 +314,9 @@ function buildPlan(records, existingSlugs) {
   return records.map(record => ({
     slug: record.slug,
     action: record.target ? 'update' : (existingSlugs.has(record.slug) ? 'update' : 'insert'),
+    reason: record.importReason || 'selected',
+    hash_changed: Boolean(record.hashChanged),
+    missing_in_database: Boolean(record.missingInDatabase),
     content_hash: record.contentHash,
     source_file: record.sourceFile,
     trophies: Array.isArray(record.guide.trophies) ? record.guide.trophies.length : 0,
@@ -381,6 +384,50 @@ async function attachGameTargets(database, records) {
   return resolved;
 }
 
+function attachImportDecisions(records, importState, changedOnly) {
+  return records.map(record => {
+    const storedHash = importState.get(record.slug) || null;
+    const hashChanged = storedHash !== record.contentHash;
+    const missingInDatabase = !record.target;
+    let importReason = 'full-import';
+
+    if (changedOnly) {
+      if (!storedHash) {
+        importReason = 'not-in-import-state';
+      } else if (hashChanged) {
+        importReason = 'hash-changed';
+      } else if (missingInDatabase) {
+        importReason = 'missing-game-with-current-hash';
+      } else {
+        importReason = 'unchanged';
+      }
+    }
+
+    return {
+      ...record,
+      storedHash,
+      hashChanged,
+      missingInDatabase,
+      importReason
+    };
+  });
+}
+
+function summarizeDetected(records, pendingRecords, skipped) {
+  return {
+    manifestTotal: records.length,
+    pending: pendingRecords.map(record => ({
+      slug: record.slug,
+      reason: record.importReason,
+      action: record.target ? 'update' : 'insert'
+    })),
+    hashChanged: pendingRecords.filter(record => record.hashChanged && record.storedHash).map(record => record.slug),
+    notTracked: pendingRecords.filter(record => !record.storedHash).map(record => record.slug),
+    missingInDatabase: pendingRecords.filter(record => record.missingInDatabase).map(record => record.slug),
+    skipped
+  };
+}
+
 async function runImport(options = {}) {
   const args = options.args || {};
   const apply = options.apply !== undefined
@@ -407,19 +454,23 @@ async function runImport(options = {}) {
 
   try {
     await assertRequiredTables(database);
-    const importState = changedOnly ? await readGuideImportState(database) : new Map();
-    const pendingRecords = changedOnly
-      ? allRecords.filter(record => importState.get(record.slug) !== record.contentHash)
-      : allRecords;
-    const skipped = changedOnly
-      ? allRecords.filter(record => importState.get(record.slug) === record.contentHash).map(record => record.slug)
-      : [];
     const gameColumns = filterColumns(GAME_COLUMNS, await getTableColumns(database, 'games'));
     const trophyColumns = filterColumns(TROPHY_COLUMNS, await getTableColumns(database, 'trophies'));
     const existingRows = await database.all('SELECT slug FROM games');
     const existingSlugs = new Set(existingRows.map(row => row.slug));
-    const records = await attachGameTargets(database, pendingRecords);
+    const importState = changedOnly ? await readGuideImportState(database) : new Map();
+    const recordsWithTargets = await attachGameTargets(database, allRecords);
+    const recordsWithDecisions = attachImportDecisions(recordsWithTargets, importState, changedOnly);
+    const records = changedOnly
+      ? recordsWithDecisions.filter(record => record.hashChanged || record.missingInDatabase)
+      : recordsWithDecisions;
+    const skipped = changedOnly
+      ? recordsWithDecisions
+        .filter(record => !record.hashChanged && !record.missingInDatabase)
+        .map(record => record.slug)
+      : [];
     const plan = buildPlan(records, existingSlugs);
+    const detected = summarizeDetected(recordsWithDecisions, records, skipped);
 
     if (!apply) {
       console.log(JSON.stringify({
@@ -428,7 +479,9 @@ async function runImport(options = {}) {
         changedOnly,
         database: databasePath,
         input: dataDir,
+        manifestTotal: allRecords.length,
         selected: plan.length,
+        detected,
         skipped,
         message: 'Nenhuma alteracao aplicada. Rode npm run import:data -- --yes para importar com backup.',
         plan
@@ -439,7 +492,9 @@ async function runImport(options = {}) {
         changedOnly,
         database: databasePath,
         input: dataDir,
+        manifestTotal: allRecords.length,
         selected: plan.length,
+        detected,
         skipped,
         plan
       };
@@ -453,7 +508,9 @@ async function runImport(options = {}) {
         changedOnly,
         database: databasePath,
         input: dataDir,
+        manifestTotal: allRecords.length,
         selected: 0,
+        detected,
         skipped
       }, null, 2));
       return {
@@ -462,7 +519,9 @@ async function runImport(options = {}) {
         changedOnly,
         database: databasePath,
         input: dataDir,
+        manifestTotal: allRecords.length,
         selected: 0,
+        detected,
         skipped
       };
     }
@@ -498,7 +557,9 @@ async function runImport(options = {}) {
       database: databasePath,
       backup: backupPath,
       input: dataDir,
+      manifestTotal: allRecords.length,
       selected: plan.length,
+      detected,
       imported: plan.map(item => item.slug),
       skipped,
       summary

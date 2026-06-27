@@ -3,7 +3,26 @@ const path = require('path');
 const crypto = require('crypto');
 const sqlite3 = require('sqlite3').verbose();
 
-const ROOT = path.resolve(__dirname, '..');
+function findPackageRoot(startDir = __dirname) {
+  let currentDir = path.resolve(startDir);
+
+  while (true) {
+    const packagePath = path.join(currentDir, 'package.json');
+    const scriptsPath = path.join(currentDir, 'scripts');
+    const serverPath = path.join(currentDir, 'server.js');
+    if (fs.existsSync(packagePath) && fs.existsSync(scriptsPath) && fs.existsSync(serverPath)) {
+      return currentDir;
+    }
+
+    const parentDir = path.dirname(currentDir);
+    if (parentDir === currentDir) {
+      throw new Error(`Nao foi possivel encontrar a raiz do projeto a partir de ${startDir}.`);
+    }
+    currentDir = parentDir;
+  }
+}
+
+const ROOT = findPackageRoot(__dirname);
 const DEFAULT_DATA_DIR = path.join(ROOT, 'data', 'guides');
 
 function parseArgs(argv = process.argv.slice(2)) {
@@ -128,6 +147,7 @@ function createContentHash(value) {
 module.exports = {
   ROOT,
   DEFAULT_DATA_DIR,
+  findPackageRoot,
   parseArgs,
   stableStringify,
   createContentHash,

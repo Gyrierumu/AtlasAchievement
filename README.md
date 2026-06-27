@@ -160,7 +160,12 @@ Rode `npm run prepare:guides` antes do commit, revise `git diff data/guides`, de
 
 ### Como saber se deu certo
 
-Depois do deploy, abra os logs do Render e procure `guides import startup` e `guides import`. Em seguida confira `/catalogo` e a rota `/jogo/slug-do-jogo`.
+Depois do deploy, abra os logs do Render e procure:
+- `guides import startup context`, com `cwd`, `packageRoot`, `dataDir`, `manifestPath`, `manifestFound`, `manifestGuides` e `databasePath`;
+- `guides import startup summary`, com `pending`, `imported`, `skipped`, `missingInDatabase`, `hashChanged` e `notTracked`;
+- `guides import startup error`, se houver conflito ou falha.
+
+Em seguida confira `/catalogo` e a rota `/jogo/slug-do-jogo`.
 
 ### Fluxo automatico de guias
 
@@ -185,7 +190,7 @@ Configuracao recomendada:
 
 Para pausar a automacao, altere `AUTO_IMPORT_GUIDES_ON_START=false` no Render e faca um novo deploy/restart. O SQLite de producao em `/data/database.sqlite` nao deve ser apagado nem substituido pelo banco local.
 
-Se aparecer `Conflito de jogo: name ja existe com outro slug`, revise o JSON em `data/guides` e o registro existente no banco. O mesmo jogo deve manter o mesmo `slug`; um nome igual com slug diferente e tratado como conflito real para evitar duplicacao.
+Se aparecer `missingInDatabase` com um slug, o hash estava registrado em `guide_import_state`, mas o jogo nao existia em `games`; o startup deve reimportar esse slug automaticamente. Se aparecer `Conflito de jogo: name ja existe com outro slug`, revise o JSON em `data/guides` e o registro existente no banco. O mesmo jogo deve manter o mesmo `slug`; um nome igual com slug diferente e tratado como conflito real para evitar duplicacao.
 
 O arquivo `render.yaml` já está pronto.
 

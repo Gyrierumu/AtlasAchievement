@@ -51,10 +51,11 @@ Confirme que:
 
 O Render usa `render.yaml`:
 
-- `buildCommand: npm ci`
-- `preDeployCommand: npm run db:setup`
-- `startCommand: npm start`
+- `buildCommand: if [ -f server.js ]; then npm ci && npm run build; else cd .. && npm ci && npm run build; fi`
+- `preDeployCommand: if [ -f server.js ]; then npm run db:setup; else cd .. && npm run db:setup; fi`
+- `startCommand: if [ -f server.js ]; then npm start; else cd .. && npm start; fi`
 - `DATABASE_PATH=/data/database.sqlite`
+- `AUTO_IMPORT_GUIDES_ON_START=true`
 - `autoDeploy: true`
 
 Depois do push para `main`, o Auto-Deploy deve executar o pre-deploy e inserir jogos novos que ainda não existem no SQLite persistente. Se o deploy não iniciar automaticamente, acione Manual Deploy no Render usando o último commit da branch `main`.
