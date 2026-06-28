@@ -284,7 +284,7 @@ window.UIHome = (() => {
           <strong>${escapeHtml(stripMarkdownHeadingPrefix(model.name))}</strong>
         </div>
         <div class="atlas-home-hero-preview__cover atlas-home-image-shell${model.image ? '' : ' atlas-home-image-shell--fallback-visible'}">
-          ${renderHomeImage(model, 'atlas-home-hero-preview__image', { width: 360, height: 240, sizes: '(min-width: 1024px) 320px, 90vw', loading: 'eager' })}
+          ${renderHomeImage(model, 'atlas-home-hero-preview__image', { width: 320, height: 480, sizes: '(min-width: 1024px) 240px, 70vw', loading: 'eager' })}
         </div>
         <div class="atlas-home-hero-preview__facts">
           <span><i class="fas fa-clock" aria-hidden="true"></i><strong>${escapeHtml(model.time || 'Tempo não informado')}</strong><small>Tempo estimado</small></span>
