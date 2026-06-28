@@ -284,3 +284,16 @@ Para evitar sobrescrever producao por acidente:
 - use `npm run import:data:changed` sem `--yes` para dry-run;
 - use `--only slug` quando quiser limitar a publicacao;
 - deixe `AUTO_IMPORT_GUIDES_ON_START=false` se precisar pausar a automacao.
+
+## Status Verificado e downgrade intencional
+
+Guias protegidos em `src/data/protectedVerifiedGuides.js` devem permanecer com:
+
+- `is_verified: 1`
+- `verification_status: "verified"`
+- `editorial_review_status: "verified"`
+- `manifest.games[].status: "verified"`
+
+`npm run prepare:guides` falha se um desses snapshots aparecer em `data/guides` como revisao/unverified. O import automatico tambem bloqueia downgrade silencioso: se o banco de destino ja tem um guia Verificado e o snapshot versionado tenta aplicar revisao/unverified, `scripts/import-data.js` aborta com slug, nome, status encontrado, status esperado e arquivo.
+
+Para rebaixar um guia de Verificado para revisao de forma intencional, remova/ajuste o slug no registro protegido, revise o diff de `data/guides` e rode o import explicitamente com `--allow-status-downgrade`. A automacao de startup do Render nao usa essa flag.

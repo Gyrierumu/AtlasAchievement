@@ -312,7 +312,7 @@ window.UIGuide = (() => {
     });
     const results = qs('#guideResults');
     const resultLabel = activeFilter === 'all' ? '' : ` em ${getGuideFilterLabel(activeFilter)}`;
-    if (results) results.textContent = `${visibleCount} troféu(s) visível(is)${resultLabel}`;
+    if (results) results.textContent = `${visibleCount} de ${cards.length} troféu(s)${resultLabel}`;
     setGuideEmptyState(visibleCount === 0, getGuideFilterEmptyMessage(activeFilter, query));
     return { activeFilter, visibleCount };
   }
@@ -652,6 +652,16 @@ window.UIGuide = (() => {
     return `<button type="button" class="atlas-btn atlas-btn-primary" data-guide-action="${escapeAttribute(action.action || 'roadmap')}"><i class="fas ${escapeAttribute(action.icon || 'fa-play')}" aria-hidden="true"></i>${escapeHtml(action.label || 'Continuar guia')}</button>`;
   }
 
+  function renderGuideQuickActions(primaryAction = {}) {
+    return `
+      <div class="atlas-guide-hero__actions" aria-label="Ações rápidas do guia">
+        ${renderGuideHeroPrimaryAction(primaryAction)}
+        <button type="button" class="atlas-btn atlas-btn-secondary" data-guide-action="roadmap"><i class="fas fa-route" aria-hidden="true"></i> Ver roadmap</button>
+        <button type="button" class="atlas-btn atlas-btn-secondary" data-guide-action="trophies"><i class="fas fa-list-check" aria-hidden="true"></i> Abrir checklist</button>
+        <button type="button" class="atlas-btn atlas-btn-secondary atlas-btn-soft-danger" data-guide-action="feedback"><i class="fas fa-flag" aria-hidden="true"></i> Reportar problema</button>
+      </div>`;
+  }
+
   function renderGuideRoadmapTimeline(roadmapStages = []) {
     if (!roadmapStages.length) return '<div class="atlas-inline-empty">Sem roadmap cadastrado.</div>';
     return `
@@ -666,17 +676,19 @@ window.UIGuide = (() => {
           const showObjectiveMeta = !stage.isStructured && stage.objective && String(stage.objective).trim() !== String(primaryText || '').trim();
           const metaItems = stage.isStructured
             ? [
-                stage.warning ? `<span><strong>Alerta</strong>${escapeHtml(stage.warning)}</span>` : '',
-                stage.note ? `<span><strong>Observação</strong>${escapeHtml(stage.note)}</span>` : '',
-                stage.result ? `<span><strong>Resultado</strong>${escapeHtml(stage.result)}</span>` : ''
+                stage.warning ? `<span class="atlas-roadmap-step__meta-item atlas-roadmap-step__meta-item--warning"><strong>Alerta</strong>${escapeHtml(stage.warning)}</span>` : '',
+                stage.note ? `<span class="atlas-roadmap-step__meta-item"><strong>Observação</strong>${escapeHtml(stage.note)}</span>` : '',
+                stage.result ? `<span class="atlas-roadmap-step__meta-item atlas-roadmap-step__meta-item--result"><strong>Resultado</strong>${escapeHtml(stage.result)}</span>` : ''
               ].filter(Boolean)
             : [
-                showObjectiveMeta ? `<span><strong>Objetivo</strong>${escapeHtml(stage.objective)}</span>` : '',
-                stage.risk ? `<span><strong>Risco</strong>${escapeHtml(stage.risk)}</span>` : '',
-                stage.relatedTrophies?.length ? `<span><strong>TrofÃ©us relacionados</strong>${stage.relatedTrophies.map(escapeHtml).join(' / ')}</span>` : ''
+                showObjectiveMeta ? `<span class="atlas-roadmap-step__meta-item atlas-roadmap-step__meta-item--objective"><strong>Objetivo</strong>${escapeHtml(stage.objective)}</span>` : '',
+                stage.risk ? `<span class="atlas-roadmap-step__meta-item atlas-roadmap-step__meta-item--warning"><strong>Risco</strong>${escapeHtml(stage.risk)}</span>` : '',
+                stage.relatedTrophies?.length ? `<span class="atlas-roadmap-step__meta-item"><strong>TrofÃ©us relacionados</strong>${stage.relatedTrophies.map(escapeHtml).join(' / ')}</span>` : ''
               ].filter(Boolean);
+          const hasWarning = Boolean(stage.warning || stage.risk);
+          const hasResult = Boolean(stage.result);
           return `
-          <li class="atlas-roadmap-step atlas-roadmap-step--${escapeAttribute(category.id || 'plan')}${Number(stage.number) === 1 ? ' atlas-roadmap-step--first' : ''}">
+          <li class="atlas-roadmap-step atlas-roadmap-step--${escapeAttribute(category.id || 'plan')}${Number(stage.number) === 1 ? ' atlas-roadmap-step--first' : ''}${hasWarning ? ' atlas-roadmap-step--has-warning' : ''}${hasResult ? ' atlas-roadmap-step--has-result' : ''}">
             <div class="atlas-roadmap-step__marker" aria-hidden="true" data-roadmap-number="${escapeAttribute(String(stage.number))}"></div>
             <article class="atlas-roadmap-step__body">
               <div class="atlas-roadmap-step__head">
@@ -685,7 +697,7 @@ window.UIGuide = (() => {
                 </div>
                 ${focusLabel ? `<span class="atlas-roadmap-step__category atlas-roadmap-step__category--${escapeAttribute(category.id || 'plan')}"><i class="fas ${escapeAttribute(category.icon || 'fa-route')}" aria-hidden="true"></i>${escapeHtml(focusLabel)}</span>` : ''}
               </div>
-              <p>${escapeHtml(primaryText)}</p>
+              <p class="atlas-roadmap-step__objective"><span>Objetivo</span>${escapeHtml(primaryText)}</p>
               ${actions.length ? `<ul class="atlas-roadmap-step__actions">${actions.map(action => `<li>${escapeHtml(action)}</li>`).join('')}</ul>` : ''}
               ${stage.isStructured && metaItems.length ? `<div class="atlas-roadmap-step__meta">${metaItems.join('')}</div>` : ''}
               ${!stage.isStructured && metaItems.length ? `<div class="atlas-roadmap-step__meta">${metaItems.join('')}</div>` : ''}
@@ -1111,18 +1123,20 @@ window.UIGuide = (() => {
 
   function renderGuideLayerNav() {
     const items = [
-      { id: 'summary', icon: 'fa-bolt', label: 'Resumo', panel: 'summary' },
-      { id: 'roadmap', icon: 'fa-route', label: 'Roadmap', panel: 'roadmap' },
-      { id: 'checklist', icon: 'fa-list-check', label: 'Checklist', panel: 'checklist' },
-      { id: 'details', icon: 'fa-circle-info', label: 'Detalhes', panel: 'details' }
+      { id: 'summary', icon: 'fa-bolt', label: 'Resumo', action: 'summary', href: '#guideSummaryActions' },
+      { id: 'roadmap', icon: 'fa-route', label: 'Roadmap', action: 'roadmap', href: '#guideRoadmapPanel' },
+      { id: 'checklist', icon: 'fa-list-check', label: 'Checklist', action: 'trophies', href: '#guideChecklistPanel' },
+      { id: 'attention', icon: 'fa-triangle-exclamation', label: 'Pontos de atenção', action: 'attention', href: '#guideEditorialNotesPanel' },
+      { id: 'faq', icon: 'fa-circle-question', label: 'FAQ', action: 'faq', href: '#guideEditorialNotesPanel' },
+      { id: 'feedback', icon: 'fa-flag', label: 'Feedback', action: 'feedback', href: '#guideFeedbackSlot' }
     ];
     return `
       <nav id="guideLayerNav" class="atlas-guide-layer-nav" aria-label="Seções do guia">
         ${items.map((item, index) => `
-          <button type="button" class="atlas-guide-layer-nav__button${index === 0 ? ' is-active' : ''}" data-guide-tab-button="${escapeAttribute(item.id)}" data-guide-tab-target="${escapeAttribute(item.panel)}" aria-pressed="${index === 0 ? 'true' : 'false'}">
+          <a class="atlas-guide-layer-nav__button${index === 0 ? ' is-active' : ''}" href="${escapeAttribute(item.href)}" data-guide-action="${escapeAttribute(item.action)}" data-guide-tab-button="${escapeAttribute(item.id)}" aria-current="${index === 0 ? 'true' : 'false'}">
             <i class="fas ${escapeAttribute(item.icon)}" aria-hidden="true"></i>
             <span>${escapeHtml(item.label)}</span>
-          </button>
+          </a>
         `).join('')}
       </nav>`;
   }
@@ -1181,6 +1195,7 @@ window.UIGuide = (() => {
         <div class="atlas-guide-summary-actions__buttons">
           <button type="button" class="atlas-btn atlas-btn-primary" data-guide-action="roadmap"><i class="fas fa-route" aria-hidden="true"></i> Abrir roadmap</button>
           <button type="button" class="atlas-btn atlas-btn-secondary" data-guide-action="trophies"><i class="fas fa-list-check" aria-hidden="true"></i> Abrir checklist</button>
+          <button type="button" class="atlas-btn atlas-btn-secondary" data-guide-action="feedback"><i class="fas fa-flag" aria-hidden="true"></i> Reportar problema</button>
         </div>
       </section>`;
   }
@@ -1203,7 +1218,7 @@ window.UIGuide = (() => {
       ? (hasChecklistProgress
         ? 'Continue pelo checklist salvo e use o roadmap quando precisar retomar a ordem.'
         : 'Guia salvo. Abra roadmap ou checklist para começar a acompanhar sua platina.')
-      : 'Acompanhe progresso, checklist e próxima etapa sem precisar procurar tudo de novo.';
+      : 'Acompanhe progresso, checklist e próxima etapa sem procurar tudo de novo.';
     const primaryAction = isSaved
       ? (hasChecklistProgress
         ? { label: 'Continuar de onde parei', action: 'first-pending', icon: 'fa-play' }
@@ -1217,7 +1232,7 @@ window.UIGuide = (() => {
       ? `<span class="atlas-sidebar-counts__risk">${escapeHtml(String(criticalAlertsCount))} alertas críticos</span><span class="atlas-sidebar-counts__pending">${escapeHtml(String(checklistTipsCount))} dicas</span>`
       : `<span class="atlas-sidebar-counts__risk">${escapeHtml(String(totalGuidanceCount))} dicas e alertas</span>`;
     return `
-      <section class="atlas-panel atlas-panel--section atlas-guide-sidebar-card p-5">
+      <section class="atlas-panel atlas-panel--section atlas-guide-sidebar-card p-5" data-progress-state="${escapeAttribute(guideMeta.progressState.accent || 'partial')}">
         <div class="atlas-guide-sidebar-card__top">
           <div>
             <div class="atlas-eyebrow">${escapeHtml(progressTitle)}</div>
@@ -1230,7 +1245,7 @@ window.UIGuide = (() => {
           <span id="guideProgressBar" data-guide-progress-bar style="width: ${escapeAttribute(String(viewModel.progress))}%"></span>
         </div>
         <div class="atlas-sidebar-counts">
-          <span class="atlas-sidebar-counts__complete"><strong id="guideCompletedCount" data-guide-completed-count>${escapeHtml(String(viewModel.completed))}</strong> concluídos</span>
+          <span class="atlas-sidebar-counts__complete"><strong id="guideCompletedCount" data-guide-completed-count>${escapeHtml(String(viewModel.completed))}</strong> de ${escapeHtml(String(viewModel.total || viewModel.trophies?.length || 0))} marcados</span>
           <span class="atlas-sidebar-counts__pending"><strong id="guideRemainingCount" data-guide-remaining-count>${escapeHtml(String(viewModel.pending))}</strong> pendentes</span>
           ${guidanceCounterHtml}
         </div>
@@ -1385,11 +1400,7 @@ window.UIGuide = (() => {
             <div class="atlas-guide-hero__facts">
               ${heroStats.map(item => `<span class="atlas-meta-signal ${escapeAttribute(item.tone || 'atlas-meta-signal--partial')}" title="${escapeAttribute(item.detail || '')}"><i class="fas ${escapeAttribute(item.icon)}"></i><small>${escapeHtml(item.label)}</small><strong>${escapeHtml(item.value)}</strong></span>`).join('')}
             </div>
-            <div class="atlas-guide-hero__actions">
-              ${renderGuideHeroPrimaryAction(primaryAction)}
-              <button type="button" class="atlas-btn atlas-btn-secondary" data-guide-action="roadmap"><i class="fas fa-route"></i> Roadmap</button>
-              <button type="button" class="atlas-btn atlas-btn-secondary" data-guide-action="trophies"><i class="fas fa-list-check"></i> Checklist</button>
-            </div>
+            ${renderGuideQuickActions(primaryAction)}
           </div>
         </div>
       </section>`;
@@ -1500,11 +1511,16 @@ window.UIGuide = (() => {
       const selected = button.dataset.guideTabButton === requested
         || (requested === panelTarget && button.dataset.guideTabTarget === panelTarget);
       button.classList.toggle('is-active', selected);
-      button.setAttribute('aria-pressed', selected ? 'true' : 'false');
+      if (button.tagName === 'A') {
+        button.setAttribute('aria-current', selected ? 'true' : 'false');
+      } else {
+        button.setAttribute('aria-pressed', selected ? 'true' : 'false');
+      }
     });
     if (options.scroll) {
       const element = qs(`#guideTab-${panelTarget}`) || qs('#guideContent');
-      element?.scrollIntoView({ behavior: 'smooth', block: 'start' });
+      const reducedMotion = typeof window.matchMedia === 'function' && window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+      element?.scrollIntoView({ behavior: reducedMotion ? 'auto' : 'smooth', block: 'start' });
     }
     if (panelTarget === 'details') {
       setGuideQuickDockState({ enabled: false, visible: false });

@@ -893,8 +893,9 @@ async function validateGuide(slug = '') {
     const tagCount = tagId => seedGame.trophies.filter(trophy => guideModel.getGuideTrophyTags(trophy, seedGame).some(tag => tag.id === tagId)).length;
     const teamwork = seedGame.trophies.find(trophy => trophy.name === 'Teamwork' || trophy.name_pt === 'Trabalho em Equipe');
     const teamworkTags = guideModel.getGuideTrophyTags(teamwork, seedGame).map(tag => tag.id);
-    assert.strictEqual(seedGame.is_verified, false, 'Nioh 2 nao deve ser promovido automaticamente para verified');
-    assert.strictEqual(seedGame.verification_status, 'review', 'Nioh 2 deve preservar status editorial atual');
+    assert.strictEqual(seedGame.is_verified, true, 'Nioh 2 deve ficar Verificado no seed');
+    assert.strictEqual(seedGame.verification_status, 'verified', 'Nioh 2 deve expor verification_status verified');
+    assert.strictEqual(viewModel.editorial.statusBadge.label, 'Verificado', 'Nioh 2 deve exibir selo Verificado');
     assert.strictEqual(viewModel.trophies.length, 56, 'Nioh 2 deve manter 56 trofeus');
     assert.strictEqual(viewModel.missableCount, 0, 'Nioh 2 deve manter missableCount 0');
     assert.strictEqual(seedGame.trophies.filter(item => item.is_missable || item.isMissable).length, 0, 'Nioh 2 deve manter Perdiveis 0 na checklist');
@@ -1439,8 +1440,8 @@ async function validateGuide(slug = '') {
       const apiMissables = apiGame.trophies.filter(trophy => trophy.is_missable);
       const apiTeamwork = apiGame.trophies.find(trophy => trophy.name === 'Teamwork' || trophy.name_pt === 'Trabalho em Equipe');
       const normalizedHtml = normalizeText(html);
-      assert.strictEqual(apiGame.is_verified, false, 'API de Nioh 2 deve preservar status sem verified automatico');
-      assert.strictEqual(apiGame.verification_status, 'review', 'API de Nioh 2 deve preservar verification_status review');
+      assert.strictEqual(apiGame.is_verified, true, 'API de Nioh 2 deve expor status Verificado');
+      assert.strictEqual(apiGame.verification_status, 'verified', 'API de Nioh 2 deve expor verification_status verified');
       assert.strictEqual(apiGame.trophies.length, 56, 'API de Nioh 2 deve manter 56 trofeus');
       assert.strictEqual(apiGame.missable_count, 0, 'API de Nioh 2 deve manter missable_count 0');
       assert.strictEqual(apiMissables.length, 0, 'API de Nioh 2 deve manter Perdiveis 0 na checklist');

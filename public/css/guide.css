@@ -3334,3 +3334,131 @@ body.atlas-guide-dock-active footer {
     grid-column: 1 / -1;
   }
 }
+
+#view-guide .atlas-guide-hero__actions {
+  align-items: stretch;
+}
+
+#view-guide .atlas-guide-hero__actions .atlas-btn {
+  min-height: 44px;
+}
+
+#view-guide .atlas-btn-soft-danger {
+  border-color: rgba(248, 113, 113, .22);
+  color: rgba(254, 226, 226, .92);
+  background: rgba(127, 29, 29, .16);
+}
+
+#view-guide .atlas-btn-soft-danger:hover,
+#view-guide .atlas-btn-soft-danger:focus-visible {
+  border-color: rgba(248, 113, 113, .42);
+  color: #fff;
+  background: rgba(185, 28, 28, .22);
+}
+
+#view-guide .atlas-guide-layer-nav {
+  grid-template-columns: repeat(6, minmax(0, 1fr));
+}
+
+#view-guide .atlas-guide-layer-nav__button {
+  text-decoration: none;
+  white-space: normal;
+}
+
+#view-guide .atlas-guide-layer-nav__button[aria-current="true"] {
+  border-color: rgba(94, 234, 212, .32);
+  color: #fff;
+  background: rgba(20,184,166,.14);
+}
+
+#view-guide .atlas-roadmap-step__objective {
+  display: grid;
+  gap: 5px;
+  margin-top: 12px;
+  padding: 11px 12px;
+  border: 1px solid rgba(94, 234, 212, .14);
+  border-radius: 12px;
+  color: rgba(241,245,249,.86);
+  background: rgba(15, 23, 42, .35);
+}
+
+#view-guide .atlas-roadmap-step__objective span {
+  color: rgba(94, 234, 212, .9);
+  font-size: .66rem;
+  font-weight: 900;
+  text-transform: uppercase;
+}
+
+#view-guide .atlas-roadmap-step--has-warning .atlas-roadmap-step__body {
+  box-shadow: inset 3px 0 0 rgba(251, 191, 36, .48);
+}
+
+#view-guide .atlas-roadmap-step__meta-item--warning {
+  border-color: rgba(251, 191, 36, .22) !important;
+  background: rgba(120, 53, 15, .18) !important;
+}
+
+#view-guide .atlas-roadmap-step__meta-item--result {
+  border-color: rgba(34, 197, 94, .22) !important;
+  background: rgba(20, 83, 45, .16) !important;
+}
+
+#view-guide .atlas-guide-sidebar-card[data-progress-state="done"] {
+  border-color: rgba(34, 197, 94, .28);
+  background:
+    linear-gradient(135deg, rgba(34, 197, 94, .10), transparent 48%),
+    rgba(255,255,255,.032);
+}
+
+#view-guide .atlas-guide-feedback-cta {
+  border-color: rgba(125, 211, 252, .18);
+  background:
+    linear-gradient(135deg, rgba(14, 165, 233, .10), transparent 46%),
+    rgba(255,255,255,.03);
+}
+
+#view-guide .atlas-guide-feedback-cta__button {
+  min-height: 44px;
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  #view-guide .atlas-guide-hero__actions .atlas-btn,
+  #view-guide .atlas-guide-layer-nav__button,
+  #view-guide .atlas-roadmap-step__body,
+  #view-guide .atlas-guide-feedback-cta__button {
+    transition: transform .18s ease, border-color .18s ease, background .18s ease, color .18s ease;
+  }
+
+  #view-guide .atlas-guide-hero__actions .atlas-btn:hover,
+  #view-guide .atlas-guide-feedback-cta__button:hover {
+    transform: translateY(-1px);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  #view-guide .atlas-guide-hero__actions .atlas-btn,
+  #view-guide .atlas-guide-layer-nav__button,
+  #view-guide .atlas-roadmap-step__body,
+  #view-guide .atlas-guide-feedback-cta__button {
+    transition: none !important;
+    transform: none !important;
+  }
+}
+
+@media (max-width: 980px) {
+  #view-guide .atlas-guide-layer-nav {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+  }
+}
+
+@media (max-width: 520px) {
+  #view-guide .atlas-guide-layer-nav {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    overflow-x: hidden;
+  }
+
+  #view-guide .atlas-guide-layer-nav__button {
+    min-height: 46px;
+    font-size: .76rem;
+  }
+}

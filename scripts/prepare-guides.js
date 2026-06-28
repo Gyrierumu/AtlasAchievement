@@ -14,7 +14,8 @@ const {
 const {
   validateManifest,
   loadGuideRecords,
-  assertNoGuideRecordConflicts
+  assertNoGuideRecordConflicts,
+  assertProtectedVerifiedGuideStatuses
 } = require('./import-data');
 
 function readJson(filePath) {
@@ -167,6 +168,7 @@ function validateGuideFiles(dataDir) {
   const selectedSlugs = manifest.games.map(entry => entry.slug);
   const records = loadGuideRecords(dataDir, manifest, selectedSlugs);
   assertNoGuideRecordConflicts(records);
+  assertProtectedVerifiedGuideStatuses(records);
   const errors = collectDataGuideValidationErrors(manifest, records);
   if (errors.length) {
     throw new Error(`data/guides invalido:\n- ${errors.join('\n- ')}`);

@@ -331,7 +331,11 @@ window.AppGuideController = (() => {
         const changedToCompleted = syncResult.completed.includes(syncResult.changedIds[0]);
         syncAccountTrophyChanges(state.currentGame, syncResult.changedIds, changedToCompleted);
       }
-      if (syncResult.feedback) UI.showToast(syncResult.feedback, 'success');
+      if (syncResult.feedback) {
+        UI.showToast(syncResult.feedback, 'success');
+      } else {
+        UI.showToast(nextCompleted ? 'Troféu marcado no checklist.' : 'Troféu voltou para pendente.', 'success');
+      }
       renderCurrentGuide({ preserveChecklistState: true, skipHistory: true });
     }
 
@@ -353,6 +357,7 @@ window.AppGuideController = (() => {
     function focusGuideAction(action = 'trophies') {
       const tabByAction = {
         header: 'summary',
+        summary: 'summary',
         quick: 'summary',
         roadmap: 'roadmap',
         trophies: 'checklist',
@@ -360,21 +365,30 @@ window.AppGuideController = (() => {
         search: 'checklist',
         'first-pending': 'checklist',
         risks: 'summary',
+        attention: 'details',
         missables: 'summary',
         online: 'summary',
         dlc: 'summary',
+        faq: 'details',
+        feedback: 'details',
         related: 'details',
         details: 'details'
       };
       const nextTab = tabByAction[action] || 'checklist';
       state.activeGuideTab = nextTab;
       UI.activateGuideTab?.(nextTab, { scroll: false });
+      document.querySelectorAll('#guideLayerNav [data-guide-action]').forEach(link => {
+        const selected = (link.dataset.guideAction || '') === action;
+        link.classList.toggle('is-active', selected);
+        link.setAttribute('aria-current', selected ? 'true' : 'false');
+      });
       window.AtlasAnalytics?.trackGuideTabChange?.({
         gameSlug: getGameSlug(state.currentGame),
         tabName: nextTab
       });
       const map = {
         header: '#guideHeader',
+        summary: '#guideSummaryActions',
         quick: '#guidePlatinumSummaryPanel',
         roadmap: '#guideRoadmapPanel',
         missables: '#guideQuickCard-missables',
@@ -382,13 +396,18 @@ window.AppGuideController = (() => {
         online: '#guideQuickCard-online',
         dlc: '#guideQuickCard-dlc',
         search: '#trophySearch',
-        risks: '#guideHeader',
+        risks: '#guideRiskSummaryPanel',
+        attention: '#guideEditorialNotesPanel',
+        faq: '#guideEditorialNotesPanel',
+        feedback: '#guideFeedbackSlot',
         related: '#guideRelatedPanel',
         'first-pending': '[data-next-focus="true"]'
       };
       const selector = map[action] || map.trophies;
-      const element = document.querySelector(selector) || document.querySelector('#trophyList');
+      const element = document.querySelector(selector) || document.querySelector('#guideEditorialNotes') || document.querySelector('#trophyList');
       if (!element) return;
+      const reducedMotion = typeof window.matchMedia === 'function' && window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+      const scrollBehavior = reducedMotion ? 'auto' : 'smooth';
 
       const sectionBody = element.matches?.('[data-guide-section-content]')
         ? element
@@ -409,7 +428,7 @@ window.AppGuideController = (() => {
         }
       }
 
-      element.scrollIntoView({ behavior: 'smooth', block: 'start' });
+      element.scrollIntoView({ behavior: scrollBehavior, block: 'start' });
       if (selector === '#trophySearch') {
         window.setTimeout(() => {
           element.focus({ preventScroll: true });
@@ -419,6 +438,12 @@ window.AppGuideController = (() => {
       if (selector === '[data-next-focus="true"]') {
         element.classList.add('ring-2', 'ring-atlas-300');
         window.setTimeout(() => element.classList.remove('ring-2', 'ring-atlas-300'), 1800);
+      }
+      if (selector === '#guideFeedbackSlot') {
+        window.setTimeout(() => {
+          const feedbackButton = element.querySelector?.('[data-guide-feedback-open]');
+          feedbackButton?.focus?.({ preventScroll: true });
+        }, reducedMotion ? 0 : 280);
       }
     }
 
@@ -519,7 +544,8 @@ window.AppGuideController = (() => {
       if (topButton) {
         event.preventDefault();
         state.quickDockCollapsed = true;
-        window.scrollTo({ top: 0, behavior: 'smooth' });
+        const reducedMotion = typeof window.matchMedia === 'function' && window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+        window.scrollTo({ top: 0, behavior: reducedMotion ? 'auto' : 'smooth' });
         syncGuideQuickDock();
       }
     }

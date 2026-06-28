@@ -2,6 +2,10 @@ const fs = require('fs');
 const path = require('path');
 
 const env = require('../src/config/env');
+const {
+  PROTECTED_VERIFIED_GUIDES,
+  getProtectedVerifiedGuide
+} = require('../src/data/protectedVerifiedGuides');
 const { getCanonicalGameSlug } = require('../src/utils/slug');
 const {
   parseArgs,
@@ -124,6 +128,83 @@ function resolveSelectedSlugs(manifest, onlyArg) {
 
 function pickValues(source, columns) {
   return columns.map(column => source[column] ?? null);
+}
+
+function normalizeStatusValue(value) {
+  return String(value || '').trim().toLowerCase();
+}
+
+function isVerifiedGuideStatus(game = {}) {
+  return Number(game.is_verified || 0) === 1
+    || game.is_verified === true
+    || normalizeStatusValue(game.verification_status) === 'verified'
+    || normalizeStatusValue(game.editorial_review_status) === 'verified';
+}
+
+function describeGuideStatus(game = {}) {
+  if (isVerifiedGuideStatus(game)) return 'verified';
+  return normalizeStatusValue(game.verification_status)
+    || normalizeStatusValue(game.editorial_review_status)
+    || (Number(game.is_verified || 0) === 1 ? 'verified' : 'unverified');
+}
+
+function isStatusDowngrade(record) {
+  if (!record?.target) return false;
+  return isVerifiedGuideStatus(record.target) && !isVerifiedGuideStatus(record.guide?.game || {});
+}
+
+function buildStatusDowngradeErrors(records) {
+  return records
+    .filter(isStatusDowngrade)
+    .map(record => ({
+      slug: record.slug,
+      name: record.guide?.game?.name || record.target?.name || '',
+      statusEncontrado: describeGuideStatus(record.guide?.game || {}),
+      statusEsperado: 'verified',
+      arquivo: record.sourceFile
+    }));
+}
+
+function assertNoStatusDowngrades(records, allowStatusDowngrade = false) {
+  const downgrades = buildStatusDowngradeErrors(records);
+  if (!downgrades.length || allowStatusDowngrade) return;
+
+  const details = downgrades
+    .map(item => `${item.slug} (${item.name || 'sem nome'}): encontrado=${item.statusEncontrado}, esperado=${item.statusEsperado}, arquivo=${item.arquivo}`)
+    .join('\n- ');
+  throw new Error(
+    `Importacao bloqueada: downgrade editorial de Verificado para revisao detectado.\n`
+    + `Use --allow-status-downgrade apenas quando a mudanca for intencional e revisada.\n`
+    + `- ${details}`
+  );
+}
+
+function buildProtectedVerifiedStatusErrors(records) {
+  return records
+    .map(record => {
+      const expected = getProtectedVerifiedGuide(record.slug);
+      if (!expected || expected.expectedStatus !== 'verified') return null;
+      const game = record.guide?.game || {};
+      if (isVerifiedGuideStatus(game)) return null;
+      return {
+        slug: record.slug,
+        name: game.name || '',
+        statusEncontrado: describeGuideStatus(game),
+        statusEsperado: expected.expectedStatus,
+        arquivo: record.sourceFile
+      };
+    })
+    .filter(Boolean);
+}
+
+function assertProtectedVerifiedGuideStatuses(records) {
+  const errors = buildProtectedVerifiedStatusErrors(records);
+  if (!errors.length) return;
+
+  const details = errors
+    .map(item => `${item.slug} (${item.name || 'sem nome'}): encontrado=${item.statusEncontrado}, esperado=${item.statusEsperado}, arquivo=${item.arquivo}`)
+    .join('\n- ');
+  throw new Error(`data/guides contem guia protegido sem status Verificado:\n- ${details}`);
 }
 
 function normalizeSlugValue(value) {
@@ -334,14 +415,18 @@ async function resolveGameTarget(database, guide) {
   const matches = [];
 
   const slugMatch = await database.get(
-    'SELECT id, slug, name FROM games WHERE slug = ?',
+    `SELECT id, slug, name, is_verified, verification_status, editorial_review_status
+       FROM games
+      WHERE slug = ?`,
     [slug]
   );
   if (slugMatch) matches.push(slugMatch);
 
   if (name) {
     const nameMatch = await database.get(
-      'SELECT id, slug, name FROM games WHERE lower(name) = lower(?)',
+      `SELECT id, slug, name, is_verified, verification_status, editorial_review_status
+         FROM games
+        WHERE lower(name) = lower(?)`,
       [name]
     );
     if (nameMatch && !matches.some(row => row.id === nameMatch.id)) {
@@ -438,6 +523,9 @@ async function runImport(options = {}) {
   const changedOnly = options.changedOnly !== undefined
     ? Boolean(options.changedOnly)
     : Boolean(args.changed || args.onlyChanged);
+  const allowStatusDowngrade = options.allowStatusDowngrade !== undefined
+    ? Boolean(options.allowStatusDowngrade)
+    : Boolean(args.allowStatusDowngrade || process.env.ATLAS_ALLOW_STATUS_DOWNGRADE === '1');
   const dataDir = normalizeDataDir(options.dataDir || args.dataDir);
   const manifestPath = path.join(dataDir, 'manifest.json');
   const databasePath = path.resolve(options.databasePath || env.databasePath);
@@ -451,6 +539,7 @@ async function runImport(options = {}) {
   validateManifest(manifest);
   const selectedSlugs = resolveSelectedSlugs(manifest, options.only || args.only);
   const allRecords = loadGuideRecords(dataDir, manifest, selectedSlugs);
+  assertProtectedVerifiedGuideStatuses(allRecords);
   assertNoGuideRecordConflicts(allRecords);
   const database = openDatabase(databasePath);
 
@@ -466,6 +555,7 @@ async function runImport(options = {}) {
     const records = changedOnly
       ? recordsWithDecisions.filter(record => record.hashChanged || record.missingInDatabase)
       : recordsWithDecisions;
+    assertNoStatusDowngrades(records, allowStatusDowngrade);
     const skipped = changedOnly
       ? recordsWithDecisions
         .filter(record => !record.hashChanged && !record.missingInDatabase)
@@ -479,6 +569,7 @@ async function runImport(options = {}) {
         ok: true,
         mode: 'dry-run',
         changedOnly,
+        allowStatusDowngrade,
         database: databasePath,
         input: dataDir,
         manifestTotal: allRecords.length,
@@ -492,6 +583,7 @@ async function runImport(options = {}) {
         ok: true,
         mode: 'dry-run',
         changedOnly,
+        allowStatusDowngrade,
         database: databasePath,
         input: dataDir,
         manifestTotal: allRecords.length,
@@ -508,6 +600,7 @@ async function runImport(options = {}) {
         ok: true,
         mode: 'import',
         changedOnly,
+        allowStatusDowngrade,
         database: databasePath,
         input: dataDir,
         manifestTotal: allRecords.length,
@@ -519,6 +612,7 @@ async function runImport(options = {}) {
         ok: true,
         mode: 'import',
         changedOnly,
+        allowStatusDowngrade,
         database: databasePath,
         input: dataDir,
         manifestTotal: allRecords.length,
@@ -556,6 +650,7 @@ async function runImport(options = {}) {
       ok: true,
       mode: 'import',
       changedOnly,
+      allowStatusDowngrade,
       database: databasePath,
       backup: backupPath,
       input: dataDir,
@@ -589,10 +684,17 @@ if (require.main === module) {
 
 module.exports = {
   IMPORT_VERSION,
+  PROTECTED_VERIFIED_GUIDES,
   runImport,
   validateManifest,
   validateGuide,
   loadGuideRecords,
   assertNoGuideRecordConflicts,
-  ensureGuideImportStateTable
+  ensureGuideImportStateTable,
+  assertNoStatusDowngrades,
+  assertProtectedVerifiedGuideStatuses,
+  buildStatusDowngradeErrors,
+  buildProtectedVerifiedStatusErrors,
+  isVerifiedGuideStatus,
+  describeGuideStatus
 };
