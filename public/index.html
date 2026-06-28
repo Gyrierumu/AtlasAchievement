@@ -99,38 +99,41 @@
     <section id="view-home" class="atlas-view-shell __HOME_VIEW_CLASS__ space-y-4">
       <section class="atlas-home-hero atlas-panel atlas-panel--primary overflow-hidden">
         <div class="atlas-home-hero__content">
-          <div class="atlas-hero-kicker mb-4" translate="no"><span class="atlas-hero-kicker__medal"><img src="/assets/brand/atlasachievement-logo.png" alt="AtlasAchievement" class="atlas-hero-kicker__logo" width="28" height="28" decoding="async"></span><span class="notranslate" translate="no">AtlasAchievement</span></div>
-          <__HOME_HERO_HEADING_TAG__ id="homeHeroHeading" class="text-[38px] md:text-[52px] xl:text-[64px] leading-[0.97] font-black tracking-tight max-w-[840px]">
-            Guias de platina em português com roadmap, checklist, filtros de risco e progresso salvo.
-          </__HOME_HERO_HEADING_TAG__>
-          <p class="mt-3 text-white/68 text-[17px] md:text-[18px] max-w-[680px] leading-relaxed">
-            Escolha sua próxima platina com estimativas de tempo, dificuldade, troféus perdíveis, requisitos online e etapas organizadas para jogar sem se perder.
-          </p>
+          <div class="atlas-home-hero__main">
+            <div class="atlas-hero-kicker mb-4" translate="no"><span class="atlas-hero-kicker__medal"><img src="/assets/brand/atlasachievement-logo.png" alt="AtlasAchievement" class="atlas-hero-kicker__logo" width="28" height="28" decoding="async"></span><span class="notranslate" translate="no">AtlasAchievement</span></div>
+            <__HOME_HERO_HEADING_TAG__ id="homeHeroHeading" class="text-[38px] md:text-[52px] xl:text-[64px] leading-[0.97] font-black tracking-tight max-w-[840px]">
+              Guias de platina em português com roadmap, checklist, filtros de risco e progresso salvo.
+            </__HOME_HERO_HEADING_TAG__>
+            <p class="mt-3 text-white/68 text-[17px] md:text-[18px] max-w-[680px] leading-relaxed">
+              Escolha sua próxima platina com estimativas de tempo, dificuldade, troféus perdíveis, requisitos online e etapas organizadas para jogar sem se perder.
+            </p>
 
-          <div class="atlas-home-pulse" data-home-pulse aria-live="polite">
-            <span class="atlas-home-pulse__icon" aria-hidden="true"><i class="fas fa-star"></i></span>
-            <span data-home-pulse-message>Guias revisados, filtros de risco e progresso salvo em um só lugar.</span>
-          </div>
-
-          <div class="mt-5 flex flex-wrap gap-3 max-w-[780px] atlas-home-cta-row">
-            <button type="button" data-view-link="catalog" class="atlas-btn atlas-btn-primary atlas-home-primary-cta"><i class="fas fa-compass" aria-hidden="true"></i> Explorar guias</button>
-            <button type="button" data-auth-open="register" class="atlas-btn atlas-btn-secondary atlas-home-secondary-cta"><i class="fas fa-bookmark" aria-hidden="true"></i> Criar minha biblioteca</button>
-          </div>
-
-          <div class="mt-4 atlas-search-wrap atlas-search-wrap--home">
-            <div class="relative atlas-search-control">
-              <input id="gameInput" type="text" placeholder="Digite o nome do jogo que você quer platinar" class="w-full atlas-search-input outline-none" autocomplete="off" role="combobox" aria-label="Buscar um jogo pelo nome" aria-autocomplete="list" aria-expanded="false" aria-controls="suggestions" aria-describedby="searchFeedback">
-              <button id="btnLoad" class="atlas-search-btn" aria-label="Buscar guia do jogo">
-                <i class="fas fa-magnifying-glass"></i>
-                <span>Buscar guia</span>
-              </button>
-              <div id="suggestions" class="absolute top-full left-0 right-0 atlas-suggestion-panel mt-3 hidden z-20 max-h-72 overflow-y-auto" role="listbox" aria-label="Sugestões de jogos"></div>
+            <div class="atlas-home-pulse" data-home-pulse aria-live="polite">
+              <span class="atlas-home-pulse__icon" aria-hidden="true"><i class="fas fa-star"></i></span>
+              <span data-home-pulse-message>Guias revisados, filtros de risco e progresso salvo em um só lugar.</span>
             </div>
-            <div id="homeSearchChips" class="atlas-home-search-chips" aria-label="Sugestões rápidas de busca"></div>
-            <div id="searchFeedback" class="mt-3 text-sm text-white/50" aria-live="polite">Exemplos: Spider-Man, Astro Bot, Life is Strange, Ratchet &amp; Clank</div>
-          </div>
 
-          <p id="homeCatalogProofText" class="mt-6 atlas-home-proof" aria-label="Resumo do catálogo">__HOME_CATALOG_PROOF__</p>
+            <div class="mt-5 flex flex-wrap gap-3 max-w-[780px] atlas-home-cta-row">
+              <button type="button" data-view-link="catalog" class="atlas-btn atlas-btn-primary atlas-home-primary-cta"><i class="fas fa-compass" aria-hidden="true"></i> Explorar guias</button>
+              <button type="button" data-auth-open="register" class="atlas-btn atlas-btn-secondary atlas-home-secondary-cta"><i class="fas fa-bookmark" aria-hidden="true"></i> Criar minha biblioteca</button>
+            </div>
+
+            <div class="mt-4 atlas-search-wrap atlas-search-wrap--home">
+              <div class="relative atlas-search-control">
+                <input id="gameInput" type="text" placeholder="Digite o nome do jogo que você quer platinar" class="w-full atlas-search-input outline-none" autocomplete="off" role="combobox" aria-label="Buscar um jogo pelo nome" aria-autocomplete="list" aria-expanded="false" aria-controls="suggestions" aria-describedby="searchFeedback">
+                <button id="btnLoad" class="atlas-search-btn" aria-label="Buscar guia do jogo">
+                  <i class="fas fa-magnifying-glass"></i>
+                  <span>Buscar guia</span>
+                </button>
+                <div id="suggestions" class="absolute top-full left-0 right-0 atlas-suggestion-panel mt-3 hidden z-20 max-h-72 overflow-y-auto" role="listbox" aria-label="Sugestões de jogos"></div>
+              </div>
+              <div id="homeSearchChips" class="atlas-home-search-chips" aria-label="Sugestões rápidas de busca"></div>
+              <div id="searchFeedback" class="mt-3 text-sm text-white/50" aria-live="polite">Exemplos: Spider-Man, Astro Bot, Life is Strange, Ratchet &amp; Clank</div>
+            </div>
+
+            <p id="homeCatalogProofText" class="mt-6 atlas-home-proof" aria-label="Resumo do catálogo">__HOME_CATALOG_PROOF__</p>
+          </div>
+          <aside id="homeHeroPreview" class="atlas-home-hero-preview" aria-label="Prévia de guia em destaque"></aside>
         </div>
       </section>
 
@@ -497,22 +500,20 @@
     </section>
   </main>
 
-  <footer class="max-w-[1320px] mx-auto px-4 lg:px-6 mt-10">
-    <div class="atlas-panel atlas-panel--flat px-6 py-6 grid md:grid-cols-4 gap-4 text-white/58 text-sm">
-      <div class="atlas-footer-item"><i class="fa-regular fa-eye-slash"></i><div><strong>Ver sem spoiler</strong><span>Consulte objetivos sem abrir detalhes desnecessários logo de cara.</span></div></div>
-      <div class="atlas-footer-item"><i class="fas fa-book"></i><div><strong>Ler guias</strong><span>Abra rota, alertas e checklist no mesmo fluxo.</span></div></div>
-      <div class="atlas-footer-item"><i class="fas fa-display"></i><div><strong>Usar biblioteca</strong><span>Salve jogos e volte ao próximo passo certo.</span></div></div>
-      <div class="atlas-footer-item"><i class="fas fa-trophy"></i><div><strong>Acompanhar 100%</strong><span>Marque troféus e veja o que falta sem se perder.</span></div></div>
-          <div class="md:col-span-4 pt-2 border-t border-white/8 flex items-center justify-between gap-3 flex-wrap">
-        <span class="text-white/40">AtlasAchievement prioriza decisão rápida, contexto editorial e checklist contínuo.</span>
-        <div class="flex items-center gap-3 flex-wrap">
-          <a href="/sobre" class="atlas-text-action text-sm">Sobre</a>
-          <a href="/contato" class="atlas-text-action text-sm">Contato</a>
-          <a href="/privacidade" class="atlas-text-action text-sm">Política de Privacidade</a>
-          <a href="/termos" class="atlas-text-action text-sm">Termos de Uso</a>
-          <button type="button" data-feedback-open class="atlas-text-action text-sm">Enviar feedback</button>
-          <button id="adminAccessBtnFooter" class="atlas-text-action text-sm" title="Acesso do editor">Acesso editorial</button>
-        </div>
+  <footer class="max-w-[1320px] mx-auto px-4 lg:px-6 mt-10 atlas-site-footer">
+    <div class="atlas-panel atlas-panel--flat atlas-site-footer__panel">
+      <div class="atlas-site-footer__brand">
+        <strong class="notranslate" translate="no">AtlasAchievement</strong>
+        <span>Guias de platina com contexto editorial, roadmap e checklist contínuo.</span>
+      </div>
+      <div class="atlas-site-footer__links" aria-label="Links do rodapé">
+        <a href="/catalogo" data-view-link="catalog" class="atlas-text-action text-sm">Explorar guias</a>
+        <a href="/biblioteca" data-view-link="library" class="atlas-text-action text-sm">Biblioteca</a>
+        <button type="button" data-feedback-open class="atlas-text-action text-sm">Enviar feedback</button>
+        <a href="/contato" class="atlas-text-action text-sm">Contato</a>
+        <a href="/privacidade" class="atlas-text-action text-sm">Política de Privacidade</a>
+        <a href="/termos" class="atlas-text-action text-sm">Termos de Uso</a>
+        <button id="adminAccessBtnFooter" class="atlas-text-action text-sm" title="Acesso do editor">Acesso editorial</button>
       </div>
     </div>
   </footer>

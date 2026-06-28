@@ -250,6 +250,55 @@ window.UIHome = (() => {
       </article>`;
   }
 
+  function renderHomeHeroPreview(games = []) {
+    const target = qs('#homeHeroPreview');
+    if (!target) return;
+    const game = selectEditorialSpotlight(games);
+    if (!game) {
+      target.innerHTML = `
+        <div class="atlas-home-hero-preview__empty">
+          <span>Próxima platina</span>
+          <strong>Escolha por tempo, dificuldade e risco</strong>
+        </div>`;
+      return;
+    }
+    const model = typeof sharedCard.buildStandardGameCardModel === 'function'
+      ? sharedCard.buildStandardGameCardModel(game)
+      : {
+        slug: game.slug || '',
+        name: game.name || 'Jogo',
+        image: getGameCoverSrc ? getGameCoverSrc(game) : (game.cover_image || game.image || ''),
+        difficulty: game.difficulty || '-',
+        time: game.time || 'Tempo não informado',
+        trophies: getGameTotal(game),
+        hasRisk: Number(game.missable_count || 0) > 0 || hasMissableRiskText(game.missable || game.missable_summary || '')
+    };
+    const slug = escapeAttribute(model.slug || '');
+    const hasRiskSignal = Boolean(model.hasRisk || Number(game.missable_count || 0) > 0 || hasMissableRiskText(game.missable || game.missable_summary || ''));
+    const riskLabel = hasRiskSignal ? 'Atenção cedo' : 'Baixo risco';
+    const riskTone = hasRiskSignal ? 'risk' : 'safe';
+    target.innerHTML = `
+      <div class="atlas-home-hero-preview__shell">
+        <div class="atlas-home-hero-preview__head">
+          <span>Próxima platina</span>
+          <strong>${escapeHtml(stripMarkdownHeadingPrefix(model.name))}</strong>
+        </div>
+        <div class="atlas-home-hero-preview__cover atlas-home-image-shell${model.image ? '' : ' atlas-home-image-shell--fallback-visible'}">
+          ${renderHomeImage(model, 'atlas-home-hero-preview__image', { width: 360, height: 240, sizes: '(min-width: 1024px) 320px, 90vw', loading: 'eager' })}
+        </div>
+        <div class="atlas-home-hero-preview__facts">
+          <span><i class="fas fa-clock" aria-hidden="true"></i><strong>${escapeHtml(model.time || 'Tempo não informado')}</strong><small>Tempo estimado</small></span>
+          <span><i class="fas fa-gauge-high" aria-hidden="true"></i><strong>${escapeHtml(String(model.difficulty || '-'))}/10</strong><small>Dificuldade</small></span>
+          <span data-risk="${escapeAttribute(riskTone)}"><i class="fas ${hasRiskSignal ? 'fa-triangle-exclamation' : 'fa-shield-halved'}" aria-hidden="true"></i><strong>${escapeHtml(riskLabel)}</strong><small>Riscos</small></span>
+          <span><i class="fas fa-list-check" aria-hidden="true"></i><strong>Checklist</strong><small>Progresso salvo</small></span>
+        </div>
+        <a href="/jogo/${slug}" class="atlas-home-hero-preview__link" data-home-game="${escapeAttribute(model.name)}" data-open-guide-card="${slug}">
+          Ver guia em destaque
+          <i class="fas fa-arrow-up-right-from-square" aria-hidden="true"></i>
+        </a>
+      </div>`;
+  }
+
   function resolveUpdateItems(items = [], gamesBySlug = new Map()) {
     return items.map(item => {
       const slug = normalizeSlug(item.slug);
@@ -376,6 +425,7 @@ window.UIHome = (() => {
     renderHomeSearchChips(games);
     hydrateHomePulse(games);
     renderHomeEditorialSpotlight(games);
+    renderHomeHeroPreview(games);
 
     const renderDiscoveryList = (target, items, emptyMessage) => {
       if (!target) return;
@@ -407,7 +457,11 @@ window.UIHome = (() => {
             ${renderHomeImage(model, 'atlas-card__image', { width: 600, height: 900, sizes: '(min-width: 1024px) 20vw, (min-width: 640px) 28vw, 42vw' })}
           </div>
           <div class="atlas-card__body">
-            <div class="atlas-card__badges">${renderHomeEditorialBadge(model)}<span class="atlas-card__status atlas-badge atlas-badge--partial">${escapeHtml(getHomeGuideSignal(game))}</span></div>
+            <div class="atlas-card__badges">
+              ${renderHomeEditorialBadge(model)}
+              <span class="atlas-card__status atlas-badge atlas-badge--partial">${escapeHtml(getHomeGuideSignal(game))}</span>
+              ${model.hasRisk ? '<span class="atlas-home-risk-badge atlas-home-risk-badge--risk"><i class="fas fa-triangle-exclamation" aria-hidden="true"></i>Atenção cedo</span>' : ''}
+            </div>
             <h3 class="atlas-card__title">${escapeHtml(stripMarkdownHeadingPrefix(model.name))}</h3>
             <p class="atlas-card__reason">${escapeHtml(getFeaturedReason(game))}</p>
             <div class="atlas-card__meta">
@@ -471,6 +525,7 @@ window.UIHome = (() => {
           <strong>${escapeHtml(stripMarkdownHeadingPrefix(item.title))}</strong>
           <p>${escapeHtml(item.description)}</p>
           <span class="atlas-intent-card__meta">${escapeHtml(item.metric)}</span>
+          <span class="atlas-intent-card__action">Ver seleção <i class="fas fa-arrow-right" aria-hidden="true"></i></span>
         </button>`).join('');
       }
     }
