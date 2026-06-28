@@ -3,6 +3,7 @@ const path = require('path');
 
 const env = require('../src/config/env');
 const sampleGames = require('../src/data/sampleGames');
+const { getProtectedVerifiedGuide } = require('../src/data/protectedVerifiedGuides');
 const { CANONICAL_GAME_SLUG_ALIASES, getCanonicalGameSlug } = require('../src/utils/slug');
 const {
   parseArgs,
@@ -92,6 +93,18 @@ function addRedirectAlias(redirectsBySlug, slug, alias) {
   if (!redirectsBySlug.has(canonicalSlug)) redirectsBySlug.set(canonicalSlug, []);
   const aliases = redirectsBySlug.get(canonicalSlug);
   if (!aliases.includes(aliasSlug)) aliases.push(aliasSlug);
+}
+
+function applyProtectedVerificationStatus(game, slug) {
+  const protectedGuide = getProtectedVerifiedGuide(slug);
+  if (!protectedGuide || protectedGuide.expectedStatus !== 'verified') return game;
+
+  return {
+    ...game,
+    is_verified: 1,
+    verification_status: 'verified',
+    editorial_review_status: 'verified'
+  };
 }
 
 async function main() {
@@ -186,10 +199,11 @@ async function main() {
 
     for (const row of games) {
       const slug = getCanonicalGameSlug(row.slug || row.name);
+      const exportedGame = applyProtectedVerificationStatus({ ...row, slug }, slug);
       const guide = {
         schemaVersion: 1,
         slug,
-        game: pickColumns({ ...row, slug }, GAME_COLUMNS),
+        game: pickColumns(exportedGame, GAME_COLUMNS),
         roadmaps: roadmapsBySlug.get(slug) || [],
         trophies: trophiesBySlug.get(slug) || [],
         redirects: redirectsBySlug.get(slug) || [],
@@ -204,7 +218,7 @@ async function main() {
         name: row.name || '',
         trophies: guide.trophies.length,
         roadmaps: guide.roadmaps.length,
-        status: row.verification_status || row.editorial_status || ''
+        status: exportedGame.verification_status || exportedGame.editorial_status || ''
       });
     }
 
