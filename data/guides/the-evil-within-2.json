@@ -78,13 +78,126 @@
   "schemaVersion": 1,
   "seedExtras": {
     "aliases": [],
-    "attentionPoints": [],
+    "attentionPoints": [
+      {
+        "tags": [
+          "Dificuldade",
+          "Classic Mode"
+        ],
+        "text": "You Asked For It… Again exige Classic Mode, com apenas 7 saves manuais e sem compra de upgrades.",
+        "title": "Classic Mode é o gargalo",
+        "type": "Dificuldade"
+      },
+      {
+        "tags": [
+          "Perdível",
+          "Risco de run"
+        ],
+        "text": "The Evil Within 2 não tem Chapter Select. Missables exigem New Game+, save anterior ou nova run.",
+        "title": "Sem Chapter Select",
+        "type": "Perdível"
+      },
+      {
+        "tags": [
+          "Dificuldade",
+          "Powerhouse"
+        ],
+        "text": "Casual, Survival, Nightmare e Classic têm troféus próprios; Powerhouse também depende de Nightmare/Classic por causa dos Brass Knuckles.",
+        "title": "Dificuldade afeta troféus",
+        "type": "Dificuldade"
+      },
+      {
+        "tags": [
+          "Risco de run",
+          "Capítulos"
+        ],
+        "text": "Sykes Out e I’ll Take You Down Myself exigem passos em capítulos diferentes e são dois dos principais riscos de rota.",
+        "title": "Sykes e flamethrower",
+        "type": "Rota"
+      },
+      {
+        "tags": [
+          "Coletáveis",
+          "Coffee Makers"
+        ],
+        "text": "O guia cobre 115 coletáveis e 7 Coffee Makers; o último safehouse do Chapter 13 é opcional.",
+        "title": "Coletáveis e Coffee Makers",
+        "type": "Coletável"
+      },
+      {
+        "tags": [
+          "Classic Mode",
+          "NG+"
+        ],
+        "text": "New Game+ carrega progresso, mas Classic Mode não recebe equipamentos/upgrades de outras runs.",
+        "title": "Classic não carrega upgrades",
+        "type": "Classic Mode"
+      }
+    ],
     "checklist": [],
-    "faq": [],
+    "faq": [
+      {
+        "answer": "Não. A lista base é totalmente offline.",
+        "question": "The Evil Within 2 tem troféus online?"
+      },
+      {
+        "answer": "Não.",
+        "question": "Tem coop?"
+      },
+      {
+        "answer": "Sim. Há troféus para Casual, Survival, Nightmare e Classic Mode. Powerhouse também depende de Nightmare/Classic por causa dos Brass Knuckles.",
+        "question": "A dificuldade afeta troféus?"
+      },
+      {
+        "answer": "3+ jogadas são recomendadas: uma run inicial, New Game+ para upgrades/coletáveis e Classic Mode. Pode exigir mais se perder missables.",
+        "question": "Quantas jogadas são necessárias?"
+      },
+      {
+        "answer": "Não. Se perder algo, use New Game+, save manual anterior ou outra run.",
+        "question": "Tem Chapter Select?"
+      },
+      {
+        "answer": "Sim. Todos os troféus não automáticos de história podem ser perdidos em uma run, porque não há Chapter Select.",
+        "question": "Tem troféus perdíveis?"
+      },
+      {
+        "answer": "Classic Mode limita o jogador a 7 saves manuais, não permite comprar upgrades e não carrega equipamento de outras runs.",
+        "question": "O que torna Classic Mode difícil?"
+      },
+      {
+        "answer": "Sim. Coletáveis, equipamentos e upgrades carregam para New Game+, mas não para Classic Mode.",
+        "question": "Coletáveis carregam para New Game+?"
+      },
+      {
+        "answer": "Há 115 coletáveis principais e 7 Coffee Makers para conferir durante a rota.",
+        "question": "Quantos coletáveis existem?"
+      },
+      {
+        "answer": "Sim. O último safehouse do Chapter 13 é opcional, então Caffeine Addict exige atenção.",
+        "question": "O último Coffee Maker é perdível?"
+      },
+      {
+        "answer": "Não. O guia base não exige DLC e não deve misturar DLCs do primeiro The Evil Within.",
+        "question": "Preciso dos DLCs?"
+      },
+      {
+        "answer": "Não. The Evil Within e The Evil Within 2 têm listas e estruturas diferentes.",
+        "question": "The Evil Within 1 entra neste guia?"
+      }
+    ],
     "note": "Campos exportados para auditoria. O SQLite atual nao possui colunas nativas para todos esses extras; a importacao preserva o que o banco suporta.",
     "quickDecision": null,
     "seo": {},
-    "tags": []
+    "tags": [
+      "Offline",
+      "Sem coop",
+      "Dificuldade",
+      "Classic Mode",
+      "New Game+",
+      "Sem Chapter Select",
+      "Coletáveis",
+      "Missables"
+    ]
   },
   "slug": "the-evil-within-2",
   "trophies": [

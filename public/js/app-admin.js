@@ -389,6 +389,133 @@ window.AppAdmin = (() => {
     return { score, badge, tone, summary, items, meta };
   }
 
+  function isVerifiedGame(game = {}) {
+    return Boolean(game.is_verified)
+      || game.verification_status === 'verified'
+      || game.editorial_review_status === 'verified';
+  }
+
+  function isReviewGame(game = {}) {
+    return game.editorial_status === 'review'
+      || game.verification_status === 'review'
+      || game.editorial_review_status === 'in_review'
+      || /^needs_|_pending$|outdated/.test(String(game.editorial_review_status || ''));
+  }
+
+  function parseAdminDate(value) {
+    const date = value ? new Date(value) : null;
+    return date && !Number.isNaN(date.getTime()) ? date : null;
+  }
+
+  function wasChangedRecently(game = {}, days = 21) {
+    const date = parseAdminDate(game.updated_at || game.updatedAt || game.last_reviewed_at || game.created_at);
+    if (!date) return false;
+    return Date.now() - date.getTime() <= days * 24 * 60 * 60 * 1000;
+  }
+
+  function hasSuspiciousFilterSignal(game = {}) {
+    const text = normalizeEditorialText([
+      game.missable_summary,
+      game.missable,
+      game.online_summary,
+      game.online,
+      game.dlc_scope,
+      game.dlc,
+      game.grind_summary,
+      game.grind
+    ].join(' '));
+    const trophies = Array.isArray(game.trophies) ? game.trophies : [];
+    const missableFlags = trophies.filter(trophy => trophy.is_missable).length;
+    if (/sem perdivel|sem missable|nenhum perdivel/.test(text) && missableFlags > 0) return true;
+    if (/online obrigatorio|multiplayer|coop/.test(text) && !/online|coop|multiplayer/.test(normalizeEditorialText(game.online_summary || game.online || ''))) return true;
+    if (!game.time || !hasReadableTime(game.time)) return true;
+    return false;
+  }
+
+  function buildEnhancedAdminSummary(summary = {}, games = []) {
+    const items = Array.isArray(games) ? games : [];
+    return {
+      ...summary,
+      totalGames: summary.totalGames || items.length,
+      verifiedGuides: items.filter(isVerifiedGame).length,
+      guidesInReview: items.filter(isReviewGame).length
+    };
+  }
+
+  function buildAdminEditorialQueue(state = {}) {
+    const games = Array.isArray(state.availableGames) ? state.availableGames : [];
+    const lowScoreGames = games
+      .map(game => ({ game, score: createEditorialQualityModel(game).score }))
+      .filter(item => item.score < 70);
+    const withoutCover = games.filter(game => !(game.cover_image || game.image));
+    const suspicious = games.filter(hasSuspiciousFilterSignal);
+    const changedRecently = games.filter(game => wasChangedRecently(game, 14));
+    const verifiedRecently = changedRecently.filter(isVerifiedGame);
+    const feedbackTotal = Number(state.adminFeedbackResponse?.pagination?.total || state.adminBetaMetrics?.overview?.newFeedbacks || 0);
+    const reviewGames = games.filter(isReviewGame);
+
+    const cards = [
+      {
+        title: 'Guias em revisão',
+        count: reviewGames.length,
+        description: 'Guias com status editorial ou verificação pendente.',
+        examples: reviewGames.map(game => game.name),
+        target: '#adminCatalogPanel',
+        action: 'Ver guias'
+      },
+      {
+        title: 'Score editorial baixo',
+        count: lowScoreGames.length,
+        description: 'Guias que parecem incompletos pela mesma régua do editor.',
+        examples: lowScoreGames.map(item => `${item.game.name} (${item.score})`),
+        target: '#adminCatalogPanel',
+        action: 'Revisar'
+      },
+      {
+        title: 'Guias sem capa',
+        count: withoutCover.length,
+        description: 'Cards com acabamento visual ou compartilhamento enfraquecido.',
+        examples: withoutCover.map(game => game.name),
+        target: '#adminCatalogPanel',
+        action: 'Ver guias'
+      },
+      {
+        title: 'Filtros suspeitos',
+        count: suspicious.length,
+        description: 'Sinais contraditórios ou metadados que merecem conferência.',
+        examples: suspicious.map(game => game.name),
+        target: '#adminCatalogPanel',
+        action: 'Conferir'
+      },
+      {
+        title: 'Alterados recentemente',
+        count: changedRecently.length,
+        description: 'Guias modificados nos últimos 14 dias.',
+        examples: changedRecently.map(game => game.name),
+        target: '#adminCatalogPanel',
+        action: 'Ver recentes'
+      },
+      {
+        title: 'Feedbacks pendentes',
+        count: feedbackTotal,
+        description: 'Mensagens recebidas aguardando triagem editorial.',
+        examples: [],
+        target: '#adminFeedbackPanel',
+        action: 'Ver feedbacks'
+      },
+      {
+        title: 'Verificados alterados',
+        count: verifiedRecently.length,
+        description: 'Guias verificados que foram mexidos recentemente.',
+        examples: verifiedRecently.map(game => game.name),
+        target: '#adminCatalogPanel',
+        action: 'Auditar'
+      }
+    ];
+
+    return cards.filter(card => card.count > 0);
+  }
+
   function refreshEditorialQuality(UI, state, collectGameFormPayload) {
     if (!UI?.renderAdminQuality) return null;
     const payload = buildPreviewPayload({ UI, state, collectGameFormPayload });

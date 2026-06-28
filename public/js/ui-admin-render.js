@@ -91,6 +91,13 @@ window.UIAdminRender = (() => {
     panel.classList.toggle('hidden', !shouldOpen);
   }
 
+  function setAdminDirtyState(isDirty = false, message = '') {
+    const target = qs('#adminUnsavedState');
+    if (!target) return;
+    target.classList.toggle('admin-unsaved-state--dirty', Boolean(isDirty));
+    target.textContent = message || (isDirty ? 'Alterações não salvas.' : 'Nenhuma alteração pendente.');
+  }
+
   function renderAdminPreview(game = {}) {
     const target = qs('#adminPreviewContent');
     const openBtn = qs('#previewOpenPublicBtn');
@@ -223,6 +230,7 @@ window.UIAdminRender = (() => {
     setImagePreview(''); setUploadState(false, '');
     container.innerHTML = createTrophyInputBlock();
     updateAdminFieldMetrics();
+    setAdminDirtyState(false);
   }
 
   function appendTrophyInput(values = {}) {
@@ -298,6 +306,7 @@ window.UIAdminRender = (() => {
     setUploadState(false, game.image ? 'Capa pronta para uso.' : '');
     replaceTrophyInputs(game.trophies);
     updateAdminFieldMetrics();
+    setAdminDirtyState(false);
   }
 
   function toggleGameForm(force) {
@@ -308,7 +317,41 @@ window.UIAdminRender = (() => {
 
   function renderAdminSummary(summary = { totalGames: 0, totalTrophies: 0 }) {
     const cards = qs('#adminSummaryCards'); if (!cards) return;
-    cards.innerHTML = `<div class="glass-morphism p-5 rounded-[20px]"><div class="text-xs uppercase tracking-wide text-slate-400 mb-2">Jogos cadastrados</div><div class="text-3xl font-extrabold text-atlas-400">${summary.totalGames}</div></div><div class="glass-morphism p-5 rounded-[20px]"><div class="text-xs uppercase tracking-wide text-slate-400 mb-2">Troféus cadastrados</div><div class="text-3xl font-extrabold text-emerald-400">${summary.totalTrophies}</div></div>`;
+    cards.innerHTML = [
+      ['Jogos cadastrados', summary.totalGames || 0, 'base editorial'],
+      ['Trof?us cadastrados', summary.totalTrophies || 0, 'checklists'],
+      ['Verificados', summary.verifiedGuides || 0, 'revis?o manual'],
+      ['Em revis?o', summary.guidesInReview || 0, 'fila ativa']
+    ].map(([label, value, help]) => `
+      <div class="glass-morphism p-5 rounded-[20px] admin-kpi-card">
+        <div class="text-xs uppercase tracking-wide text-slate-400 mb-2">${escapeHtml(label)}</div>
+        <div class="text-3xl font-extrabold text-atlas-300">${escapeHtml(String(value))}</div>
+        <div class="text-xs text-white/45 mt-1">${escapeHtml(help)}</div>
+      </div>`).join('');
+  }
+
+  function renderAdminEditorialQueue(queue = []) {
+    const target = qs('#adminEditorialQueue');
+    if (!target) return;
+    const items = Array.isArray(queue) ? queue : [];
+    if (!items.length) {
+      target.innerHTML = `
+        <div class="admin-empty-state admin-empty-state--compact">
+          <strong>Nada urgente agora</strong>
+          <p>Quando houver guias em revis?o, feedback novo ou sinais editoriais fracos, eles aparecer?o aqui.</p>
+        </div>`;
+      return;
+    }
+    target.innerHTML = items.map(item => `
+      <article class="admin-queue-card">
+        <div class="admin-queue-card__count">${escapeHtml(String(item.count || 0))}</div>
+        <div class="admin-queue-card__body">
+          <strong>${escapeHtml(item.title || 'Pend?ncia')}</strong>
+          <p>${escapeHtml(item.description || '')}</p>
+          ${Array.isArray(item.examples) && item.examples.length ? `<small>${escapeHtml(item.examples.slice(0, 3).join(' ? '))}</small>` : ''}
+        </div>
+        <button type="button" class="atlas-btn atlas-btn-secondary atlas-btn-compact" data-admin-queue-target="${escapeAttribute(item.target || '#adminCatalogPanel')}">${escapeHtml(item.action || 'Ver guias')}</button>
+      </article>`).join('');
   }
 
   function renderAdminQuality(model = {}) {
@@ -368,19 +411,53 @@ window.UIAdminRender = (() => {
     const summary = qs('#adminResultsSummary');
     const items = Array.isArray(response.items) ? response.items : [];
     const pagination = response.pagination || {};
-    if (summary) summary.textContent = `${pagination.total || 0} jogo(s) encontrados nesta página administrativa.`;
+    if (summary) summary.textContent = `${pagination.total || 0} jogo(s) encontrados nesta p?gina administrativa.`;
     if (!items.length) {
-      target.innerHTML = '<div class="glass-morphism p-6 rounded-[20px] text-slate-400">Nenhum jogo encontrado para esse filtro.</div>';
+      target.innerHTML = '<div class="admin-empty-state"><strong>Nenhum jogo encontrado</strong><p>Revise a busca ou limpe o filtro para voltar ? lista completa.</p></div>';
       renderPagination('#adminPagination', pagination, { mode: 'admin', itemLabel: 'jogos' });
       return;
     }
     target.innerHTML = items.map(game => {
       const statusBadge = getEditorialBadge(game);
+      const hasCover = Boolean(game.cover_image || game.image);
+      const score = game.editorial_score ?? game.editorialScore ?? game.quality_score ?? game.qualityScore ?? null;
+      const warningItems = [];
+      if (!hasCover) warningItems.push('Sem capa');
+      if (game.verification_status === 'review' || game.editorial_review_status === 'in_review') warningItems.push('Em revis?o');
+      if (game.coverage_level === 'partial') warningItems.push('Cobertura inicial');
+      const scoreHtml = score !== null && score !== undefined
+        ? `<span class="admin-card-score">Score ${escapeHtml(String(score))}</span>`
+        : '';
+      const warningsHtml = warningItems.length
+        ? `<div class="admin-card-alerts">${warningItems.slice(0, 3).map(item => `<span>${escapeHtml(item)}</span>`).join('')}</div>`
+        : '<div class="admin-card-alerts admin-card-alerts--ok"><span>Sem alerta r?pido</span></div>';
       return `
-      <div class="glass-morphism p-5 rounded-[20px] flex flex-col md:flex-row md:items-center md:justify-between gap-4">
-        <div class="flex gap-4 items-center"><div class="w-16 h-24 rounded-[14px] overflow-hidden bg-slate-900 shrink-0">${buildImageAttrs(getGameCoverSrc ? getGameCoverSrc(game) : (game.cover_image || game.image), game.name, 'w-full h-full object-cover', { width: 128, height: 192, sizes: '64px' })}</div><div><div class="flex items-center gap-3 flex-wrap"><h3 class="text-lg font-bold">${escapeHtml(game.name)}</h3><span class="text-xs px-2 py-1 rounded-full bg-[#111922] text-slate-300">${game.difficulty}/10</span><span class="atlas-tag atlas-tag--${escapeAttribute(statusBadge.tone)}">${escapeHtml(statusBadge.label)}</span></div><div class="text-sm text-slate-400 mt-2">${escapeHtml(game.time)} • ${escapeHtml(statusBadge.detail)}</div></div></div>
-        <div class="flex gap-2 flex-wrap"><button type="button" class="px-4 py-2 rounded-xl bg-[#111922] hover:bg-slate-700" data-admin-edit="${game.id}">Editar</button><button type="button" class="px-4 py-2 rounded-xl bg-[#111922] hover:bg-slate-700" data-admin-preview="${game.id}">Prévia</button><button type="button" class="px-4 py-2 rounded-xl bg-atlas-600 hover:bg-atlas-500" data-admin-duplicate="${game.id}">Duplicar</button><button type="button" class="px-4 py-2 rounded-xl bg-rose-600 hover:bg-rose-500" data-admin-delete="${game.id}" data-admin-name="${escapeHtml(game.name)}">Excluir</button></div>
-      </div>`;
+      <article class="admin-game-card">
+        <div class="admin-game-card__main">
+          <div class="admin-game-card__cover">${buildImageAttrs(getGameCoverSrc ? getGameCoverSrc(game) : (game.cover_image || game.image), game.name, 'w-full h-full object-cover', { width: 128, height: 192, sizes: '88px' })}</div>
+          <div class="admin-game-card__content">
+            <div class="admin-game-card__title-row">
+              <h3>${escapeHtml(game.name)}</h3>
+              <span class="text-xs px-2 py-1 rounded-full bg-[#111922] text-slate-300">${escapeHtml(String(game.difficulty || '-'))}/10</span>
+              <span class="atlas-tag atlas-tag--${escapeAttribute(statusBadge.tone)}">${escapeHtml(statusBadge.label)}</span>
+              ${scoreHtml}
+            </div>
+            <div class="admin-game-card__meta">${escapeHtml(game.time || 'Tempo n?o informado')} ? ${escapeHtml(statusBadge.detail || '')}</div>
+            ${warningsHtml}
+          </div>
+        </div>
+        <div class="admin-game-card__actions">
+          <button type="button" class="atlas-btn atlas-btn-primary atlas-btn-compact" data-admin-edit="${escapeAttribute(String(game.id))}"><i class="fas fa-pen-to-square"></i><span>Editar</span></button>
+          <button type="button" class="atlas-btn atlas-btn-secondary atlas-btn-compact" data-admin-preview="${escapeAttribute(String(game.id))}"><i class="fas fa-eye"></i><span>Pr?via</span></button>
+          <details class="admin-card-more">
+            <summary aria-label="Mais a??es para ${escapeAttribute(game.name || 'jogo')}"><i class="fas fa-ellipsis"></i><span>Mais</span></summary>
+            <div>
+              <button type="button" data-admin-duplicate="${escapeAttribute(String(game.id))}"><i class="fas fa-copy"></i><span>Duplicar</span></button>
+              <button type="button" class="admin-danger-action" data-admin-delete="${escapeAttribute(String(game.id))}" data-admin-name="${escapeAttribute(game.name || '')}" data-admin-slug="${escapeAttribute(game.slug || '')}"><i class="fas fa-trash"></i><span>Excluir</span></button>
+            </div>
+          </details>
+        </div>
+      </article>`;
     }).join('');
     renderPagination('#adminPagination', pagination, { mode: 'admin', itemLabel: 'jogos' });
   }
@@ -402,10 +479,16 @@ window.UIAdminRender = (() => {
 
     const items = Array.isArray(response.items) ? response.items : [];
     const pagination = response.pagination || {};
-    if (summary) summary.textContent = `${pagination.total || 0} feedback(s) recebido(s).`;
+    if (summary) summary.textContent = items.length
+      ? `${pagination.total || 0} feedback(s) recebido(s), ordenados para triagem editorial.`
+      : 'Feedbacks contextuais dos guias aparecer?o aqui quando leitores enviarem coment?rios.';
 
     if (!items.length) {
-      target.innerHTML = '<div class="glass-morphism p-6 rounded-[20px] text-slate-400">Nenhum feedback enviado ainda.</div>';
+      target.innerHTML = `
+        <div class="admin-empty-state">
+          <strong>Nenhum feedback pendente</strong>
+          <p>Quando algu?m enviar uma corre??o, d?vida ou sugest?o por uma p?gina de guia, ela aparecer? com tipo, jogo relacionado, URL e data.</p>
+        </div>`;
       if (paginationTarget) paginationTarget.innerHTML = '';
       return;
     }
@@ -415,13 +498,14 @@ window.UIAdminRender = (() => {
         <div class="admin-feedback-card__head">
           <div>
             <span class="atlas-tag atlas-tag--soft">${escapeHtml(item.type || 'Feedback')}</span>
-            <strong>${escapeHtml(item.related_game || 'Sem jogo relacionado')}</strong>
+            <strong>${escapeHtml(item.related_game || item.relatedGame || 'Sem jogo relacionado')}</strong>
           </div>
-          <time datetime="${escapeAttribute(item.created_at || '')}">${escapeHtml(formatFeedbackDate(item.created_at))}</time>
+          <time datetime="${escapeAttribute(item.created_at || '')}">${escapeHtml(formatFeedbackDate(item.created_at || item.createdAt))}</time>
         </div>
         <p>${escapeHtml(item.message || '')}</p>
         <div class="admin-feedback-card__meta">
-          ${item.page_url ? `<a href="${escapeAttribute(item.page_url)}" target="_blank" rel="noopener">Abrir página</a>` : '<span>Sem URL</span>'}
+          <span>Status: ${escapeHtml(statusLabel(item.status))}</span>
+          ${item.page_url ? `<a href="${escapeAttribute(item.page_url)}" target="_blank" rel="noopener">Abrir URL</a>` : '<span>Sem URL</span>'}
           <span>${escapeHtml(item.nickname || 'Sem nome')}</span>
           <span>${escapeHtml(item.email || 'Sem e-mail')}</span>
         </div>
@@ -433,13 +517,17 @@ window.UIAdminRender = (() => {
     const totalPages = Number(pagination.totalPages || 1);
     paginationTarget.innerHTML = `
       <button type="button" class="atlas-btn atlas-btn-secondary atlas-btn-compact" data-feedback-page="${Math.max(currentPage - 1, 1)}" ${currentPage <= 1 ? 'disabled' : ''}>Anterior</button>
-      <span class="text-sm text-white/55">Página ${escapeHtml(String(currentPage))} de ${escapeHtml(String(totalPages))}</span>
-      <button type="button" class="atlas-btn atlas-btn-secondary atlas-btn-compact" data-feedback-page="${Math.min(currentPage + 1, totalPages)}" ${currentPage >= totalPages ? 'disabled' : ''}>Próxima</button>
+      <span class="text-sm text-white/55">P?gina ${escapeHtml(String(currentPage))} de ${escapeHtml(String(totalPages))}</span>
+      <button type="button" class="atlas-btn atlas-btn-secondary atlas-btn-compact" data-feedback-page="${Math.min(currentPage + 1, totalPages)}" ${currentPage >= totalPages ? 'disabled' : ''}>Pr?xima</button>
     `;
   }
 
   function renderMetricEmpty() {
-    return '<div class="glass-morphism p-4 rounded-[18px] text-sm text-white/45">Ainda não há dados suficientes para esta métrica.</div>';
+    return `
+      <div class="admin-empty-state admin-empty-state--compact">
+        <strong>Aguardando sinal</strong>
+        <p>Esta m?trica come?a a fazer sentido quando houver eventos suficientes. Use atualizar depois de novas buscas, checklists ou feedbacks.</p>
+      </div>`;
   }
 
   function renderMetricList(items = [], renderItem) {
@@ -670,6 +758,7 @@ window.UIAdminRender = (() => {
     updateAdminFieldMetrics,
     togglePasswordPanel,
     togglePreviewPanel,
+    setAdminDirtyState,
     renderAdminPreview,
     setImagePreview,
     setUploadState,
@@ -679,6 +768,7 @@ window.UIAdminRender = (() => {
     fillGameForm,
     toggleGameForm,
     renderAdminSummary,
+    renderAdminEditorialQueue,
     renderAdminQuality,
     renderAdminGames,
     renderAdminFeedback,

@@ -17,7 +17,8 @@ const PROTECTED_VERIFIED_GUIDES = [
   { slug: 'dark-souls-iii', expectedStatus: 'verified' },
   { slug: 'armored-core-vi-fires-of-rubicon', expectedStatus: 'verified' },
   { slug: 'hades', expectedStatus: 'verified' },
-  { slug: 'star-wars-jedi-survivor', expectedStatus: 'verified' }
+  { slug: 'star-wars-jedi-survivor', expectedStatus: 'verified' },
+  { slug: 'the-evil-within-2', expectedStatus: 'verified' }
 ];
 
 const PROTECTED_VERIFIED_GUIDE_SLUGS = new Set(

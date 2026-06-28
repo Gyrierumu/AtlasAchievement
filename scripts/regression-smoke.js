@@ -7214,11 +7214,14 @@ async function assertSeedData({ all, get }, sampleGames) {
   assert.strictEqual(evilWithin2Sample.trophies.length, 52, 'The Evil Within 2 deve ter 52 trofeus da lista base');
   assert.strictEqual(new Set(evilWithin2Sample.trophies.map(trophy => trophy.id)).size, 52, 'The Evil Within 2 nao deve ter trophy_code duplicado');
   assert.strictEqual(new Set(evilWithin2Sample.trophies.map(trophy => trophy.name)).size, 52, 'The Evil Within 2 nao deve ter nomes duplicados');
-  assert.strictEqual(evilWithin2Sample.roadmap.length, 7, 'The Evil Within 2 deve ter roadmap editorial com 7 etapas');
+  assert.strictEqual(evilWithin2Sample.roadmap.length, 5, 'The Evil Within 2 deve ter roadmap editorial com 5 etapas');
   assert.strictEqual(evilWithin2Sample.editorial_status, 'published', 'The Evil Within 2 deve entrar publicado');
-  assert.strictEqual(evilWithin2Sample.coverage_level, 'strong', 'The Evil Within 2 deve ter cobertura forte sem selo complete');
-  assert.strictEqual(evilWithin2Sample.is_verified, false, 'The Evil Within 2 nao deve ser verificado automaticamente');
-  assert.strictEqual(evilWithin2Sample.verification_status, 'review', 'The Evil Within 2 deve aguardar revisao editorial final');
+  assert.strictEqual(evilWithin2Sample.coverage_level, 'complete', 'The Evil Within 2 deve ter cobertura completa apos auditoria');
+  assert.strictEqual(evilWithin2Sample.is_verified, true, 'The Evil Within 2 deve ficar verificado apos auditoria');
+  assert.strictEqual(evilWithin2Sample.verification_status, 'verified', 'The Evil Within 2 deve expor verification_status verified');
+  assert.strictEqual(evilWithin2Sample.trophies.filter(trophy => trophy.name_pt).length, 52, 'The Evil Within 2 deve ter traducao PT-BR em 52 trofeus');
+  assert(Array.isArray(evilWithin2Sample.faq) && evilWithin2Sample.faq.length >= 12, 'The Evil Within 2 deve ter FAQ editorial completo');
+  assert(Array.isArray(evilWithin2Sample.attentionPoints) && evilWithin2Sample.attentionPoints.length >= 6, 'The Evil Within 2 deve ter pontos de atencao preenchidos');
   assert(evilWithin2Sample.online_summary.includes('Não há exigência online'), 'The Evil Within 2 deve deixar claro que online não é obrigatório');
   assert(evilWithin2Sample.difficulty_reason.includes('Classic Mode'), 'The Evil Within 2 deve explicar Classic Mode como gargalo');
   assert(evilWithin2Sample.before_you_start.includes('não tem Chapter Select') && evilWithin2Sample.before_you_start.includes('Classic Mode'), 'The Evil Within 2 deve explicar ausencia de Chapter Select e Classic Mode');
@@ -7254,23 +7257,24 @@ async function assertSeedData({ all, get }, sampleGames) {
   assert.strictEqual(evilWithin2Seeded?.time_max_hours, 50, 'seed deve persistir time_max_hours do The Evil Within 2');
   assert.strictEqual(evilWithin2Seeded?.time_sort_hours, 30, 'seed deve persistir time_sort_hours do The Evil Within 2');
   assert.strictEqual(evilWithin2Seeded?.editorial_status, 'published', 'The Evil Within 2 deve entrar publicado');
-  assert.strictEqual(evilWithin2Seeded?.coverage_level, 'strong', 'The Evil Within 2 deve entrar com coverage strong');
-  assert.strictEqual(evilWithin2Seeded?.is_verified, 0, 'The Evil Within 2 nao deve entrar como verificado');
-  assert.strictEqual(evilWithin2Seeded?.verification_status, 'review', 'The Evil Within 2 deve entrar em revisao editorial');
+  assert.strictEqual(evilWithin2Seeded?.coverage_level, 'complete', 'The Evil Within 2 deve entrar com coverage complete');
+  assert.strictEqual(evilWithin2Seeded?.is_verified, 1, 'The Evil Within 2 deve entrar como verificado');
+  assert.strictEqual(evilWithin2Seeded?.verification_status, 'verified', 'The Evil Within 2 deve entrar como verified');
   assert.strictEqual(evilWithin2Seeded?.image, evilWithin2Sample.image, 'The Evil Within 2 deve persistir image horizontal');
   assert.strictEqual(evilWithin2Seeded?.cover_image, evilWithin2Sample.cover_image, 'The Evil Within 2 deve persistir cover_image vertical');
   assert(evilWithin2Seeded?.online_summary.includes('Não há exigência online'), 'The Evil Within 2 deve persistir ausencia de online obrigatório');
   assert(evilWithin2Seeded?.before_you_start.includes('Classic Mode') && evilWithin2Seeded?.before_you_start.includes('Chapter Select'), 'The Evil Within 2 deve persistir avisos de Classic e Chapter Select');
 
   const evilWithin2RoadmapRows = await all('SELECT content FROM roadmaps WHERE game_id = (SELECT id FROM games WHERE slug = ?) ORDER BY step_order', ['the-evil-within-2']);
-  assert.strictEqual(evilWithin2RoadmapRows.length, 7, 'seed deve inserir 7 etapas de roadmap para The Evil Within 2');
+  assert.strictEqual(evilWithin2RoadmapRows.length, 5, 'seed deve inserir 5 etapas de roadmap para The Evil Within 2');
   assert(evilWithin2RoadmapRows.some(row => row.content.includes('Classic Mode') && row.content.includes('7 saves manuais')), 'seed deve persistir Classic Mode no roadmap de The Evil Within 2');
   assert(evilWithin2RoadmapRows.some(row => row.content.includes('New Game+')), 'seed deve persistir NG+ no roadmap de The Evil Within 2');
   assert(evilWithin2RoadmapRows.some(row => row.content.includes('Sykes') && row.content.includes('I’ll Take You Down Myself')), 'seed deve persistir trofeus condicionais no roadmap de The Evil Within 2');
 
-  const evilWithin2TrophyRows = await all('SELECT trophy_code, name, type, is_missable, is_spoiler, description FROM trophies WHERE game_id = (SELECT id FROM games WHERE slug = ?) ORDER BY id', ['the-evil-within-2']);
+  const evilWithin2TrophyRows = await all('SELECT trophy_code, name, name_pt, type, is_missable, is_spoiler, description FROM trophies WHERE game_id = (SELECT id FROM games WHERE slug = ?) ORDER BY id', ['the-evil-within-2']);
   assert.strictEqual(evilWithin2TrophyRows.length, 52, 'seed deve inserir checklist base completo de The Evil Within 2');
   assert.strictEqual(new Set(evilWithin2TrophyRows.map(trophy => trophy.trophy_code)).size, 52, 'seed nao deve inserir trophy_code duplicado no The Evil Within 2');
+  assert.strictEqual(evilWithin2TrophyRows.filter(trophy => trophy.name_pt).length, 52, 'seed deve persistir traducoes PT-BR em 52 trofeus no The Evil Within 2');
   assert(evilWithin2TrophyRows.filter(trophy => trophy.is_missable).length >= 25, 'seed deve marcar trofeus de atencao/missable em The Evil Within 2');
   assert(!evilWithin2TrophyRows.some(trophy => /The Assignment|The Consequence|The Executioner|DLC/i.test(`${trophy.trophy_code} ${trophy.name} ${trophy.description}`)), 'seed nao deve persistir DLCs/add-ons em The Evil Within 2');
   const evilWithin2PersistedTypeCounts = evilWithin2TrophyRows.reduce((counts, trophy) => {
