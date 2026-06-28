@@ -79,10 +79,6 @@
             <button type="button" class="auth-menu__item auth-menu__item--danger user-menu__item user-menu__item--danger" data-user-logout><i class="fas fa-right-from-bracket"></i> Sair</button>
           </div>
         </details>
-        <a href="/admin" id="adminPanelLink" class="hidden atlas-btn atlas-btn-secondary">Console</a>
-        <div id="adminStatus" class="hidden text-xs text-white/40"></div>
-        <button id="adminAccessBtn" class="hidden atlas-text-action" title="Acesso do editor">Editor</button>
-        <button id="adminLogoutBtn" class="hidden atlas-btn atlas-btn-primary">Sair</button>
       </div>
     </div>
     <div class="atlas-mobile-nav-wrap xl:hidden px-4 lg:px-6 pb-4">
@@ -247,29 +243,31 @@
 
       <div class="atlas-panel atlas-panel--plain atlas-catalog-shell p-3 md:p-4 space-y-2">
         <div class="atlas-catalog-controls">
-          <label class="block">
+          <label class="block atlas-catalog-search-field">
             <span class="sr-only">Buscar no catálogo</span>
-            <input id="catalogSearch" type="search" placeholder="Buscar jogo no catálogo" class="atlas-input min-h-[46px] h-[46px] py-3">
+            <input id="catalogSearch" type="search" placeholder="Buscar por jogo, série ou estilo de platina" class="atlas-input min-h-[46px] h-[46px] py-3">
+            <button type="button" class="atlas-catalog-search-clear" data-catalog-clear-search hidden aria-hidden="true" aria-label="Limpar busca"><i class="fas fa-xmark" aria-hidden="true"></i></button>
           </label>
           <label class="block">
             <span class="sr-only">Ordenar catálogo</span>
             <select id="catalogSort" class="atlas-input min-h-[46px] h-[46px] py-3 pr-10">
-              <option value="recommended-desc">Melhores para começar</option>
-              <option value="updated-desc">Revisados por último</option>
-              <option value="created-desc">Entraram no catálogo</option>
-              <option value="time-asc">Menor tempo</option>
-              <option value="time-desc">Maior tempo</option>
-              <option value="difficulty-asc">Menor dificuldade</option>
-              <option value="difficulty-desc">Maior dificuldade</option>
-              <option value="trophies-asc">Menos troféus</option>
-              <option value="trophies-desc">Mais troféus</option>
+              <option value="recommended-desc">Recomendação para começar</option>
+              <option value="updated-desc">Atualizados recentemente</option>
+              <option value="created-desc">Mais novos no catálogo</option>
+              <option value="time-asc">Tempo: menor primeiro</option>
+              <option value="time-desc">Tempo: maior primeiro</option>
+              <option value="difficulty-asc">Dificuldade: menor primeiro</option>
+              <option value="difficulty-desc">Dificuldade: maior primeiro</option>
+              <option value="trophies-asc">Troféus: menos primeiro</option>
+              <option value="trophies-desc">Troféus: mais primeiro</option>
               <option value="name-asc">Nome A–Z</option>
             </select>
           </label>
         </div>
 
         <div id="catalogSegments" class="atlas-region atlas-catalog-chip-row" aria-label="Filtros principais de coleção"></div>
-        <div id="catalogIntentBar" class="hidden" aria-hidden="true"></div>
+        <div id="catalogIntentBar" class="atlas-region atlas-catalog-intent-bar" aria-label="Filtros por experiência"></div>
+        <div id="catalogActiveFilters" class="atlas-catalog-active-filters" aria-live="polite"></div>
         <div id="catalogCompareTray" class="atlas-region hidden" aria-hidden="true"></div>
         <div id="catalogStarterPicksSlot">__CATALOG_STARTER_PICKS__</div>
 
@@ -516,7 +514,6 @@
         <a href="/contato" class="atlas-text-action text-sm">Contato</a>
         <a href="/privacidade" class="atlas-text-action text-sm">Política de Privacidade</a>
         <a href="/termos" class="atlas-text-action text-sm">Termos de Uso</a>
-        <button id="adminAccessBtnFooter" class="atlas-text-action text-sm" title="Acesso do editor">Acesso editorial</button>
       </div>
     </div>
   </footer>
@@ -646,25 +643,6 @@
     </div>
   </div>
 
-  <div id="adminModal" class="hidden fixed inset-0 bg-black/80 backdrop-blur-md z-[100] p-4" role="dialog" aria-modal="true" aria-labelledby="adminModalTitle" aria-describedby="adminModalDescription" aria-hidden="true" inert hidden>
-    <div class="max-w-md mx-auto mt-24 atlas-panel p-6 rounded-[28px]">
-      <div class="flex items-center justify-between gap-4 mb-4">
-        <div>
-          <h3 id="adminModalTitle" class="text-xl font-bold">Entrar no painel</h3>
-          <p id="adminModalDescription" class="text-sm text-white/45 mt-1">Faça login para gerenciar jogos, troféus e guias.</p>
-        </div>
-        <button id="closeAdminModalBtn" class="text-white/45 hover:text-white">Fechar</button>
-      </div>
-      <form id="adminLoginForm" class="space-y-4" autocomplete="on">
-        <input id="adminUsername" type="text" placeholder="Usuário" class="atlas-input" autocomplete="username" required>
-        <input id="adminPassword" type="password" placeholder="Senha" class="atlas-input" autocomplete="current-password" required>
-        <button class="w-full atlas-btn atlas-btn-primary h-[54px]">Entrar</button>
-      </form>
-    </div>
-  </div>
-
-
-
   <nav id="guideQuickDock" class="atlas-quick-dock hidden" aria-label="Navegação rápida do guia">
     <button type="button" class="atlas-quick-dock__toggle" data-quick-dock-toggle="true" aria-expanded="false" aria-controls="guideQuickDockActions" aria-label="Mostrar ou recolher atalhos do guia">
       <span class="atlas-quick-dock__toggle-copy">
@@ -729,7 +707,6 @@
   <!-- Bootstrap: creates context, selects public/admin initializer, then starts. -->
   <script src="/js/app-context.js" defer></script>
   <script src="/js/app-public-init.js" defer></script>
-  <script src="/js/app-public-admin-loader.js" defer></script>
   <script src="/js/app.js" defer></script>
 </body>
 </html>

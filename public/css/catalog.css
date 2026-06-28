@@ -99,6 +99,43 @@ html {
   color: #e5edf7;
 }
 
+.atlas-catalog-search-field {
+  position: relative;
+  min-width: 0;
+  display: block;
+}
+
+.atlas-catalog-search-field .atlas-input {
+  padding-right: 42px;
+}
+
+.atlas-catalog-search-clear {
+  position: absolute;
+  top: 50%;
+  right: 8px;
+  width: 30px;
+  height: 30px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  border: 1px solid rgba(148, 163, 184, .12);
+  border-radius: 999px;
+  background: rgba(15, 23, 42, .72);
+  color: rgba(226, 232, 240, .68);
+  transform: translateY(-50%);
+  transition: border-color .2s ease, background .2s ease, color .2s ease;
+}
+
+.atlas-catalog-search-clear:hover {
+  border-color: rgba(125, 211, 252, .28);
+  background: rgba(14, 165, 233, .10);
+  color: rgba(248, 251, 255, .94);
+}
+
+.atlas-catalog-search-clear[hidden] {
+  display: none;
+}
+
 .atlas-catalog-chip-row {
   display: grid;
   gap: 10px;
@@ -162,6 +199,147 @@ html {
 
 .atlas-catalog-more-filters .atlas-catalog-filter-group__options {
   margin-top: 6px;
+}
+
+.atlas-catalog-intent-bar {
+  display: grid;
+  min-width: 0;
+}
+
+.atlas-catalog-filter-group--experience {
+  background: rgba(14, 165, 233, .025);
+}
+
+.atlas-catalog-intent-bar__options {
+  min-width: 0;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 7px;
+}
+
+.atlas-catalog-intent-bar .atlas-pill {
+  min-height: 32px;
+  padding: 6px 10px;
+  font-size: .78rem;
+  line-height: 1.15;
+}
+
+.atlas-catalog-active-filters {
+  min-height: 0;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 8px;
+}
+
+.atlas-catalog-active-filters:empty {
+  display: none;
+}
+
+.atlas-catalog-active-filters__count {
+  color: rgba(226, 232, 240, .58);
+  font-size: .78rem;
+  font-weight: 780;
+}
+
+.atlas-catalog-active-filters__chips {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px;
+}
+
+.atlas-active-filter-chip {
+  min-height: 30px;
+  display: inline-flex;
+  align-items: center;
+  gap: 7px;
+  max-width: 100%;
+  padding: 5px 9px;
+  border: 1px solid rgba(125, 211, 252, .17);
+  border-radius: 999px;
+  background: rgba(14, 165, 233, .055);
+  color: rgba(226, 232, 240, .78);
+  font-size: .76rem;
+  font-weight: 760;
+  line-height: 1.1;
+  transition: border-color .2s ease, background .2s ease, color .2s ease;
+}
+
+.atlas-active-filter-chip:hover {
+  border-color: rgba(125, 211, 252, .34);
+  background: rgba(14, 165, 233, .10);
+  color: rgba(248, 251, 255, .95);
+}
+
+.atlas-active-filter-chip span {
+  min-width: 0;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.atlas-catalog-compare-tray {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+  padding: 10px;
+  border: 1px solid rgba(148, 163, 184, .10);
+  border-radius: 14px;
+  background: rgba(255, 255, 255, .018);
+}
+
+.atlas-catalog-compare-tray__intro {
+  min-width: 0;
+}
+
+.atlas-catalog-compare-tray__intro span {
+  display: block;
+  color: rgba(248, 251, 255, .86);
+  font-size: .78rem;
+  font-weight: 840;
+}
+
+.atlas-catalog-compare-tray__intro p {
+  margin: 2px 0 0;
+  color: rgba(226, 232, 240, .54);
+  font-size: .76rem;
+  line-height: 1.35;
+}
+
+.atlas-catalog-compare-tray__links {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: flex-end;
+  gap: 7px;
+}
+
+.atlas-compare-chip {
+  min-height: 34px;
+  display: inline-flex;
+  align-items: center;
+  gap: 7px;
+  padding: 6px 9px;
+  border: 1px solid rgba(148, 163, 184, .12);
+  border-radius: 999px;
+  background: rgba(15, 23, 42, .38);
+  color: rgba(226, 232, 240, .72);
+  font-size: .76rem;
+  font-weight: 760;
+  line-height: 1.1;
+  transition: border-color .2s ease, background .2s ease, color .2s ease, transform .2s ease;
+}
+
+.atlas-compare-chip strong {
+  color: rgba(125, 211, 252, .88);
+  font-size: .68rem;
+  font-weight: 820;
+}
+
+.atlas-compare-chip:hover {
+  border-color: rgba(125, 211, 252, .26);
+  background: rgba(14, 165, 233, .075);
+  color: rgba(248, 251, 255, .94);
+  transform: translateY(-1px);
 }
 
 .atlas-collection-chip {
@@ -1008,5 +1186,27 @@ html {
 
   .catalog-card--starter .atlas-btn {
     min-height: 44px;
+  }
+
+  .atlas-catalog-intent-bar__options,
+  .atlas-catalog-active-filters,
+  .atlas-catalog-active-filters__chips,
+  .atlas-catalog-compare-tray,
+  .atlas-catalog-compare-tray__links {
+    align-items: stretch;
+    flex-direction: column;
+  }
+
+  .atlas-catalog-intent-bar .atlas-pill,
+  .atlas-active-filter-chip,
+  .atlas-compare-chip {
+    width: 100%;
+    justify-content: center;
+    white-space: normal;
+    text-align: center;
+  }
+
+  .atlas-catalog-compare-tray {
+    border-radius: 12px;
   }
 }

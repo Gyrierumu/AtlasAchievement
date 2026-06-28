@@ -220,10 +220,22 @@ window.AppViewBindings = (() => {
   }
 
   function bindCatalogView({ UI, state, loadCatalogPage, navigate, loadGuideBySlug, rerenderCatalogView, toggleCatalogCompare, clearCatalogCompare, setCatalogIntent }) {
+    const syncCatalogSearchClear = () => {
+      const searchField = UI.qs('#catalogSearch');
+      const clearButton = UI.qs('.atlas-catalog-search-clear');
+      if (!searchField || !clearButton) return;
+      const hasSearch = Boolean(String(searchField.value || '').trim());
+      clearButton.hidden = !hasSearch;
+      clearButton.setAttribute('aria-hidden', hasSearch ? 'false' : 'true');
+    };
+
+    syncCatalogSearchClear();
+
     UI.qs('#catalogSearch')?.addEventListener('input', async event => {
       state.catalogSearch = event.target.value || '';
       state.catalogPage = 1;
       setCatalogIntent('all');
+      syncCatalogSearchClear();
       const response = await loadCatalogPage({ page: 1 });
       window.AtlasAnalytics?.trackCatalogSearch?.({
         searchTerm: state.catalogSearch,
@@ -274,6 +286,19 @@ window.AppViewBindings = (() => {
         return;
       }
 
+      const clearSearchButton = event.target.closest('[data-catalog-clear-search]');
+      if (clearSearchButton) {
+        event.preventDefault();
+        state.catalogSearch = '';
+        state.catalogPage = 1;
+        const searchField = UI.qs('#catalogSearch');
+        if (searchField) searchField.value = '';
+        syncCatalogSearchClear();
+        await loadCatalogPage({ page: 1, search: '' });
+        navigate('catalog', { facet: state.catalogFacet || 'all' });
+        return;
+      }
+
       const clearFiltersButton = event.target.closest('[data-catalog-clear-filters]');
       if (clearFiltersButton) {
         event.preventDefault();
@@ -283,6 +308,7 @@ window.AppViewBindings = (() => {
         state.catalogPage = 1;
         const searchField = UI.qs('#catalogSearch');
         if (searchField) searchField.value = '';
+        syncCatalogSearchClear();
         await loadCatalogPage({ page: 1, facet: 'all', search: '' });
         navigate('catalog', { facet: 'all' });
         return;

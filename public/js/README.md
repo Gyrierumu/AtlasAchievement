@@ -20,7 +20,7 @@ This project intentionally uses classic browser scripts with `defer`, not a buil
    - `ui.js` must load after all renderers needed by the page. It builds `window.UI` by combining common helpers with any loaded renderer modules. Keep `window.UI` as the compatibility surface for controllers.
 
 4. Controllers and bindings
-   - Public: `app-search.js`, `app-catalog.js`, `app-library.js`, `guide-presenter.js`, `app-pagination.js`, `app-view-bindings.js`, `app-search-view.js`, `app-guide-view.js`, `app-public-nav.js`, `app-library-controller.js`, `app-guide-controller.js`, `app-admin.js`.
+   - Public: `app-search.js`, `app-catalog.js`, `app-library.js`, `guide-presenter.js`, `app-pagination.js`, `app-view-bindings.js`, `app-search-view.js`, `app-guide-view.js`, `app-public-nav.js`, `app-library-controller.js`, `app-guide-controller.js`, `app-user-auth.js`, `app-analytics.js`, `app-feedback.js`.
    - Admin: `app-pagination.js`, `app-admin.js`, `app-admin-draft.js`.
    - `app-pagination.js` is shared because admin and public pagination both use `[data-page-target]`.
 
@@ -33,9 +33,9 @@ This project intentionally uses classic browser scripts with `defer`, not a buil
 
 ### `public/index.html`
 
-Core -> UI foundations + shared models -> public UI renderers + `ui-admin-render.js` -> `ui.js` -> public controllers/bindings -> admin access controller -> bootstrap.
+Core -> UI foundations + shared models -> public UI renderers -> `ui.js` -> public controllers/bindings -> bootstrap.
 
-The public page keeps `ui-admin-render.js` and `app-admin.js` because the public header/footer include editorial login and logout controls. It does not load `app-admin-draft.js`.
+The public page does not load admin renderers/controllers or expose an editorial/admin CTA. Administrators access the panel through the direct `/admin` route, which loads the admin-only scripts.
 
 ### `public/admin.html`
 

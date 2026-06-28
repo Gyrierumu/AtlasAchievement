@@ -119,6 +119,91 @@ window.UICatalog = (() => {
       : [];
   }
 
+  function getCatalogChipLabel(config = {}) {
+    const labels = {
+      all: 'Todos',
+      'difficulty-low': 'Fácil',
+      'difficulty-mid': 'Médio',
+      'difficulty-high': 'Difícil',
+      'time-short': 'Curto',
+      'time-medium': 'Médio',
+      'time-long': 'Longo',
+      'online-none': 'Sem online',
+      'missable-none': 'Sem perdíveis',
+      'coop-required': 'Coop',
+      'missable-present': 'Perdíveis',
+      'editorial-verified': 'Verificados',
+      'editorial-review': 'Em revisão'
+    };
+    return labels[config.id] || config.chipLabel || config.name || config.id || 'Filtro';
+  }
+
+  function getExperienceIntentConfigs(items = [], facetCounts = {}) {
+    const base = buildCatalogIntentConfigs(items);
+    const byId = new Map(base.map(item => [item.id, item]));
+    const defaults = [
+      {
+        id: 'first-platinum',
+        label: 'Ideal para começar',
+        icon: 'fa-seedling',
+        facet: 'difficulty-low',
+        sort: 'recommended-desc',
+        count: Number(facetCounts['difficulty-low'] || 0),
+        helper: `${Number(facetCounts['difficulty-low'] || 0)} opção(ões) fáceis`
+      },
+      {
+        id: 'weekend-run',
+        label: 'Platina rápida',
+        icon: 'fa-bolt',
+        facet: 'time-short',
+        sort: 'time-asc',
+        count: Number(facetCounts['time-short'] || 0),
+        helper: `${Number(facetCounts['time-short'] || 0)} jogo(s) curtos`
+      },
+      {
+        id: 'high-challenge',
+        label: 'Desafio',
+        icon: 'fa-mountain',
+        facet: 'difficulty-high',
+        sort: 'difficulty-desc',
+        count: Number(facetCounts['difficulty-high'] || 0),
+        helper: `${Number(facetCounts['difficulty-high'] || 0)} projeto(s) exigentes`
+      }
+    ];
+    defaults.forEach(item => {
+      if (!byId.has(item.id) && item.count > 0) byId.set(item.id, item);
+    });
+    return defaults.map(item => byId.get(item.id)).filter(item => item && Number(item.count || 0) > 0);
+  }
+
+  function getActiveIntentLabel(intent = 'all', items = [], facetCounts = {}) {
+    if (!intent || intent === 'all') return '';
+    const match = getExperienceIntentConfigs(items, facetCounts).find(item => item.id === intent);
+    return match?.label || '';
+  }
+
+  function renderCatalogActiveFilters({ search = '', facet = 'all', activeFacet = {}, intent = 'all', items = [], facetCounts = {}, total = 0 } = {}) {
+    const target = qs('#catalogActiveFilters');
+    if (!target) return;
+    const chips = [];
+    const normalizedSearch = String(search || '').trim();
+    if (normalizedSearch) {
+      chips.push(`<button type="button" class="atlas-active-filter-chip" data-catalog-clear-search title="Limpar busca"><i class="fas fa-magnifying-glass" aria-hidden="true"></i><span>${escapeHtml(normalizedSearch)}</span><i class="fas fa-xmark" aria-hidden="true"></i></button>`);
+    }
+    if (facet && facet !== 'all') {
+      chips.push(`<button type="button" class="atlas-active-filter-chip" data-catalog-facet="all" title="Remover filtro"><i class="fas fa-filter" aria-hidden="true"></i><span>${escapeHtml(getCatalogChipLabel(activeFacet))}</span><i class="fas fa-xmark" aria-hidden="true"></i></button>`);
+    }
+    const intentLabel = getActiveIntentLabel(intent, items, facetCounts);
+    if (intentLabel) {
+      chips.push(`<button type="button" class="atlas-active-filter-chip" data-catalog-intent="all" data-intent-facet="all" data-intent-sort="recommended-desc" title="Remover experiência"><i class="fas fa-compass" aria-hidden="true"></i><span>${escapeHtml(intentLabel)}</span><i class="fas fa-xmark" aria-hidden="true"></i></button>`);
+    }
+    const resultCount = Number(total || 0);
+    const resultLabel = formatCatalogCount(resultCount);
+    target.innerHTML = `
+      <div class="atlas-catalog-active-filters__count">${escapeHtml(resultLabel)} ${resultCount === 1 ? 'encontrado' : 'encontrados'}</div>
+      ${chips.length ? `<div class="atlas-catalog-active-filters__chips">${chips.join('')}</div><button type="button" class="atlas-btn atlas-btn-secondary atlas-btn-compact" data-catalog-clear-filters><i class="fas fa-rotate-left" aria-hidden="true"></i> Limpar filtros</button>` : ''}`;
+  }
+
   function updateCatalogCollectionIntro(facet = 'all', total = 0, facetCounts = {}) {
     const meta = catalogFacetMeta[facet] || catalogFacetMeta.all;
     const titleTarget = qs('#catalogTitle');
@@ -132,9 +217,14 @@ window.UICatalog = (() => {
     const seoTitleTarget = qs('#catalogSeoIntroTitle');
     const seoBodyTarget = qs('#catalogSeoIntroBody');
 
-    if (titleTarget) titleTarget.textContent = meta.name || 'Catálogo de jogos';
+    const isCatalogRoot = (meta.id || facet) === 'all';
+    if (titleTarget) titleTarget.textContent = isCatalogRoot ? 'Encontre sua próxima platina' : (meta.name || 'Catálogo de jogos');
     if (heroTitleTarget) heroTitleTarget.textContent = meta.heroTitle || 'Navegue sem depender da busca';
-    if (heroDescriptionTarget) heroDescriptionTarget.textContent = `${meta.heroDescription || meta.description}${typeof total === 'number' ? ` ${total} jogo(s) visível(is) nesta faixa agora.` : ''}`.trim();
+    if (heroDescriptionTarget) {
+      heroDescriptionTarget.textContent = isCatalogRoot
+        ? 'Filtre por tempo, dificuldade, online, perdíveis e status editorial para escolher o guia certo.'
+        : `${meta.heroDescription || meta.description}${typeof total === 'number' ? ` ${total} jogo(s) visível(is) nesta faixa agora.` : ''}`.trim();
+    }
     if (collectionTitleTarget) collectionTitleTarget.textContent = meta.collectionTitle || meta.name || 'Coleção aberta';
     if (collectionDescriptionTarget) collectionDescriptionTarget.textContent = meta.collectionDescription || meta.description || '';
     if (reasonTarget) reasonTarget.textContent = meta.reason || 'Use esta visão para comparar esforço, tempo e densidade do guia antes de escolher um jogo.';
@@ -264,14 +354,16 @@ window.UICatalog = (() => {
     const facetCounts = getCatalogCounts(response, allGames);
     const starterSource = allGames.length ? allGames : items;
 
-    renderCatalogIntentBar(allGames, intent);
-    renderCatalogCompareTray();
+    renderCatalogIntentBar(allGames, intent, facetCounts);
+    renderCatalogCompareTray(allGames, facetCounts);
     renderVerificationNotice(items);
     renderCatalogStarterPicks(starterSource, { search, facet });
 
     const activeFacet = catalogFacetMeta[facet] || catalogFacetMeta.all;
     const activeTotal = Number(facetCounts[facet] ?? pagination.total ?? items.length ?? 0);
     const isEmptyCollection = facet !== 'all' && activeTotal === 0;
+    const visibleTotal = Number(pagination.total ?? activeTotal ?? items.length ?? 0);
+    renderCatalogActiveFilters({ search, facet, activeFacet, intent, items: allGames, facetCounts, total: visibleTotal });
     updateCatalogCollectionIntro(facet, activeTotal, facetCounts);
     setCatalogRobotsMeta(isEmptyCollection);
     setCatalogMeta(facet, { items });
@@ -279,15 +371,12 @@ window.UICatalog = (() => {
     if (segments) {
       const primaryGroups = [
         { label: 'Dificuldade', facets: ['difficulty-low', 'difficulty-mid', 'difficulty-high'] },
-        { label: 'Duração', facets: ['time-short', 'time-long'] },
-        { label: 'Requisitos', facets: ['online-none', 'missable-none'] },
-        { label: 'Status editorial', facets: ['editorial-verified', 'editorial-review'] }
+        { label: 'Tempo', facets: ['time-short', 'time-medium', 'time-long'] },
+        { label: 'Riscos', facets: ['online-none', 'missable-none', 'coop-required', 'missable-present'] },
+        { label: 'Status', facets: ['editorial-verified', 'editorial-review'] }
       ];
       const secondaryFacetIds = [
-        'time-medium',
         'online-required',
-        'coop-required',
-        'missable-present',
         'grind-present',
         'dlc-base',
         'chapter-select'
@@ -311,8 +400,18 @@ window.UICatalog = (() => {
           </button>`;
       };
       const labelOverrides = {
+        'difficulty-low': 'Fácil',
         'difficulty-mid': 'Médio',
-        'time-medium': '16–40h'
+        'difficulty-high': 'Difícil',
+        'time-short': 'Curto',
+        'time-medium': 'Médio',
+        'time-long': 'Longo',
+        'online-none': 'Sem online',
+        'missable-none': 'Sem perdíveis',
+        'coop-required': 'Coop',
+        'missable-present': 'Perdíveis',
+        'editorial-verified': 'Verificados',
+        'editorial-review': 'Em revisão'
       };
       const allChip = renderChip({
         config: catalogFacetMeta.all,
@@ -345,7 +444,6 @@ window.UICatalog = (() => {
     }
 
     if (summary) {
-      const visibleTotal = Number(pagination.total ?? activeTotal ?? 0);
       const page = Number(pagination.page || 1);
       const totalPages = Number(pagination.totalPages || 1);
       summary.textContent = search
@@ -373,8 +471,8 @@ window.UICatalog = (() => {
         <div class="atlas-panel atlas-panel--plain atlas-catalog-empty p-6 text-white/60 md:col-span-2 xl:col-span-3">
           <span class="atlas-section-kicker">Nada com esses filtros</span>
           <h3>Nenhum guia encontrado com esses filtros.</h3>
-          <p>Tente remover o filtro de online, ampliar a faixa de tempo ou limpar a busca.</p>
-          <button type="button" class="atlas-btn atlas-btn-primary atlas-btn-compact" data-catalog-clear-filters><i class="fas fa-rotate-left"></i> Limpar filtros</button>
+          <p>Tente remover algum filtro ou buscar por outro jogo.</p>
+          <button type="button" class="atlas-btn atlas-btn-primary atlas-btn-compact" ${search ? 'data-catalog-clear-search' : 'data-catalog-clear-filters'}><i class="fas fa-rotate-left"></i> ${search ? 'Limpar busca' : 'Limpar filtros'}</button>
         </div>`;
       renderPagination('#catalogPagination', pagination, { mode: 'catalog', itemLabel: 'jogos', compact: true });
       return;
@@ -489,26 +587,58 @@ window.UICatalog = (() => {
     });
   }
 
-  function renderCatalogIntentBar(items = [], activeIntent = 'all') {
+  function renderCatalogIntentBar(items = [], activeIntent = 'all', facetCounts = {}) {
     const target = qs('#catalogIntentBar');
     if (!target) return;
-    const intents = buildCatalogIntentConfigs(items);
+    const intents = getExperienceIntentConfigs(items, facetCounts);
     if (!intents.length) {
+      target.classList.add('hidden');
+      target.setAttribute('aria-hidden', 'true');
       target.innerHTML = '<span class="text-sm text-white/45">Atalhos por intenção aparecem quando houver jogos publicados nessas faixas.</span>';
       return;
     }
-    target.innerHTML = intents.map(intent => {
+    target.classList.remove('hidden');
+    target.setAttribute('aria-hidden', 'false');
+    target.innerHTML = `
+      <div class="atlas-catalog-filter-group atlas-catalog-filter-group--experience">
+        <span class="atlas-catalog-filter-group__label">Experiência</span>
+        <div class="atlas-catalog-intent-bar__options">
+          ${intents.map(intent => {
       const active = activeIntent === intent.id;
       return `<button type="button" class="atlas-pill ${active ? 'atlas-pill-active' : ''}" data-catalog-intent="${escapeAttribute(intent.id)}" data-intent-facet="${escapeAttribute(intent.facet)}" data-intent-sort="${escapeAttribute(intent.sort)}"><i class="fas ${escapeAttribute(intent.icon)}"></i> ${escapeHtml(intent.label)} <span class="text-white/45">• ${escapeHtml(intent.helper)}</span></button>`;
-    }).join('');
+    }).join('')}
+        </div>
+      </div>`;
   }
 
-  function renderCatalogCompareTray() {
+  function renderCatalogCompareTray(items = [], facetCounts = {}) {
     const tray = qs('#catalogCompareTray');
     if (!tray) return;
-    tray.innerHTML = '';
-    tray.classList.add('hidden');
-    tray.setAttribute('aria-hidden', 'true');
+    const total = Number(facetCounts.all || items.length || 0);
+    if (!total) {
+      tray.innerHTML = '';
+      tray.classList.add('hidden');
+      tray.setAttribute('aria-hidden', 'true');
+      return;
+    }
+    const quickLinks = [
+      { label: 'Mais rápidas', facet: 'time-short', icon: 'fa-bolt' },
+      { label: 'Mais fáceis', facet: 'difficulty-low', icon: 'fa-shield-halved' },
+      { label: 'Verificados', facet: 'editorial-verified', icon: 'fa-circle-check' }
+    ].map(item => ({
+      ...item,
+      count: Number(facetCounts[item.facet] || 0)
+    })).filter(item => item.count > 0);
+    tray.classList.remove('hidden');
+    tray.setAttribute('aria-hidden', 'false');
+    tray.innerHTML = `
+      <div class="atlas-catalog-compare-tray__intro">
+        <span>Comparação rápida</span>
+        <p>Use os atalhos para cruzar tempo, dificuldade e status antes de abrir um guia.</p>
+      </div>
+      <div class="atlas-catalog-compare-tray__links">
+        ${quickLinks.map(item => `<button type="button" class="atlas-compare-chip" data-catalog-facet="${escapeAttribute(item.facet)}"><i class="fas ${escapeAttribute(item.icon)}" aria-hidden="true"></i><span>${escapeHtml(item.label)}</span><strong>${escapeHtml(formatCatalogCount(item.count))}</strong></button>`).join('')}
+      </div>`;
   }
 
   return {

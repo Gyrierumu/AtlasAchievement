@@ -3281,6 +3281,8 @@ async function buildCatalogPageHtml(req, facetSlug = null) {
       starterPickItems = items;
     }
   }
+  const serviceFacet = facetConfig?.serviceFacet || 'all';
+  const isCatalogRoot = serviceFacet === 'all';
   const total = getCatalogFacetCount(facetConfig, facetCounts) || Number(catalogResponse?.pagination?.total || items.length || 0);
   const isEmptyCollection = facetConfig?.serviceFacet !== 'all' && total === 0;
   const structuredData = buildCatalogStructuredData(origin, canonicalUrl, facetConfig, items, total);
@@ -3288,7 +3290,9 @@ async function buildCatalogPageHtml(req, facetSlug = null) {
   const page = Number(catalogResponse?.pagination?.page || 1);
   const totalPages = Number(catalogResponse?.pagination?.totalPages || 1);
   const catalogSummary = `${formatCatalogCount(total)} nesta coleção · página ${page} de ${totalPages}`;
-  const catalogHeroDescription = `${facetConfig?.heroDescription || 'Veja todos os jogos em uma lista filtrável com dificuldade, tempo estimado, troféus e acesso direto à página de guia.'} ${isEmptyCollection ? 'Ainda não há jogos publicados nesta faixa.' : `${formatCatalogCount(total)} nesta faixa agora.`}`;
+  const catalogHeroDescription = isCatalogRoot
+    ? 'Filtre por tempo, dificuldade, online, perdíveis e status editorial para escolher o guia certo.'
+    : `${facetConfig?.heroDescription || 'Veja todos os jogos em uma lista filtrável com dificuldade, tempo estimado, troféus e acesso direto à página de guia.'} ${isEmptyCollection ? 'Ainda não há jogos publicados nesta faixa.' : `${formatCatalogCount(total)} nesta faixa agora.`}`;
   const catalogRelatedLinks = renderCatalogRelatedLinks(facetConfig, facetCounts);
   const catalogStarterPicks = (facetConfig?.serviceFacet || 'all') === 'all' ? renderCatalogStarterPicksHtml(starterPickItems) : '';
   const catalogSsrList = renderCatalogSeoCards(items, facetConfig, facetCounts);
@@ -3314,7 +3318,7 @@ async function buildCatalogPageHtml(req, facetSlug = null) {
     .replace(/__CATALOG_STARTER_PICKS__/g, catalogStarterPicks)
     .replace(/__CATALOG_SSR_LIST__/g, catalogSsrList)
     .replace(/__CATALOG_SSR_PAGINATION__/g, renderCatalogPaginationHtml(catalogResponse.pagination))
-    .replace(/__CATALOG_TITLE__/g, escapeHtml(facetConfig?.name || 'Catálogo de jogos'))
+    .replace(/__CATALOG_TITLE__/g, escapeHtml(isCatalogRoot ? 'Encontre sua próxima platina' : (facetConfig?.name || 'Catálogo de jogos')))
     .replace(/__CATALOG_BREADCRUMBS__/g, buildBreadcrumbsHtml([{ label: 'Início', href: '/' }, { label: 'Catálogo', href: '/catalogo' }, { label: facetConfig?.name || 'Catálogo de jogos' }]))
     .replace(/__CATALOG_HERO_TITLE__/g, escapeHtml(facetConfig?.heroTitle || 'Navegue sem depender da busca'))
     .replace(/__CATALOG_COLLECTION_TITLE__/g, escapeHtml(facetConfig?.collectionTitle || 'Coleção aberta'))

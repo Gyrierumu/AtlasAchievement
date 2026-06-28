@@ -163,7 +163,6 @@ function assertHtmlLoadsModules(relPath) {
       '/js/app-feedback.js',
       '/js/app-context.js',
       '/js/app-public-init.js',
-      '/js/app-public-admin-loader.js',
       '/js/app.js'
     ],
     'public/admin.html': [
@@ -226,8 +225,11 @@ function assertHtmlLoadsModules(relPath) {
     assert(!html.includes('Melhor primeiro clique agora'), 'home não deve manter destaque isolado que duplica os cards editoriais');
     assert(!html.includes('Ver guias em destaque'), 'hero deve manter apenas um CTA editorial principal');
     assert(!html.includes('Quem faz o Atlas') && !html.includes('Feito por jogadores brasileiros'), 'home não deve incluir a seção de autoria vetada');
-    ['feedbackModal', 'userAuthModal', 'libraryImportModal', 'adminModal'].forEach(id => {
+    ['feedbackModal', 'userAuthModal', 'libraryImportModal'].forEach(id => {
       assert(new RegExp(`id="${id}"[^>]*aria-hidden="true"[^>]*inert[^>]*hidden`).test(html), `${id} precisa iniciar semanticamente oculto e inerte`);
+    });
+    ['adminModal', 'adminAccessBtn', 'adminAccessBtnFooter', 'adminPanelLink', '/js/app-public-admin-loader.js'].forEach(token => {
+      assert(!html.includes(token), `home pública não deve expor acesso administrativo: ${token}`);
     });
   }
 
@@ -1042,7 +1044,8 @@ function assertCatalogSsrPage(html, label) {
   assert(getCatalogCardImageCount(html) <= 24, `${label} deve renderizar no maximo 24 imagens no HTML inicial`);
   assert(!html.includes('/js/app-admin.js'), `${label} nao deve carregar app-admin.js no publico`);
   assert(!html.includes('/js/ui-admin-render.js'), `${label} nao deve carregar ui-admin-render.js no publico`);
-  assert(html.includes('/js/app-public-admin-loader.js'), `${label} deve usar lazy-load para acesso editorial`);
+  assert(!html.includes('/js/app-public-admin-loader.js'), `${label} nao deve carregar acesso editorial/admin no publico`);
+  assert(!html.includes('adminAccessBtn') && !html.includes('adminPanelLink'), `${label} nao deve expor controles de admin no HTML publico`);
 }
 
 async function assertMigrationShape({ all, get }) {

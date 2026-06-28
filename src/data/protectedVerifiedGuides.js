@@ -13,6 +13,8 @@ const PROTECTED_VERIFIED_GUIDES = [
   { slug: 'nioh-2', expectedStatus: 'verified' },
   { slug: 'sekiro-shadows-die-twice', expectedStatus: 'verified' },
   { slug: 'bloodborne', expectedStatus: 'verified' },
+  { slug: 'days-gone', expectedStatus: 'verified' },
+  { slug: 'dark-souls-iii', expectedStatus: 'verified' },
   { slug: 'armored-core-vi-fires-of-rubicon', expectedStatus: 'verified' },
   { slug: 'hades', expectedStatus: 'verified' },
   { slug: 'star-wars-jedi-survivor', expectedStatus: 'verified' }

@@ -737,43 +737,25 @@
     const configs = [
       {
         id: 'first-platinum',
-        label: 'Primeira platina',
+        label: 'Ideal para começar',
         icon: 'fa-seedling',
         facet: 'difficulty-low',
         sort: 'recommended-desc',
         count: count(game => matchesCatalogFacet(game, 'difficulty-low')),
-        helper: `${count(game => matchesCatalogFacet(game, 'difficulty-low'))} opção(ões) mais acessíveis`
+        helper: `${count(game => matchesCatalogFacet(game, 'difficulty-low'))} opção(ões) fáceis`
       },
       {
         id: 'weekend-run',
-        label: 'Projeto de fim de semana',
+        label: 'Platina rápida',
         icon: 'fa-bolt',
         facet: 'time-short',
         sort: 'time-asc',
         count: count(game => matchesCatalogFacet(game, 'time-short')),
-        helper: `${count(game => matchesCatalogFacet(game, 'time-short'))} jogo(s) curtos agora`
-      },
-      {
-        id: 'steady-project',
-        label: 'Projeto médio',
-        icon: 'fa-layer-group',
-        facet: 'time-medium',
-        sort: 'recommended-desc',
-        count: count(game => matchesCatalogFacet(game, 'time-medium')),
-        helper: `${count(game => matchesCatalogFacet(game, 'time-medium'))} opção(ões) equilibradas`
-      },
-      {
-        id: 'dense-checklist',
-        label: 'Checklist denso',
-        icon: 'fa-list-check',
-        facet: 'trophies-large',
-        sort: 'trophies-desc',
-        count: count(game => matchesCatalogFacet(game, 'trophies-large')),
-        helper: `${count(game => matchesCatalogFacet(game, 'trophies-large'))} lista(s) longas`
+        helper: `${count(game => matchesCatalogFacet(game, 'time-short'))} jogo(s) curtos`
       },
       {
         id: 'high-challenge',
-        label: 'Desafio real',
+        label: 'Desafio',
         icon: 'fa-mountain',
         facet: 'difficulty-high',
         sort: 'difficulty-desc',

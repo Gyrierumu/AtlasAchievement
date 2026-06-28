@@ -5,7 +5,6 @@
       if (!context) throw new Error('Contexto principal indisponível.');
 
       window.AtlasAppContext = context;
-      window.AppPublicAdminLoader?.bind?.();
 
       const initializedPublic = await window.AppPublicInit?.init?.(context);
       if (initializedPublic) return;
