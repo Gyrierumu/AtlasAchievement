@@ -650,6 +650,14 @@
       "trophies": 34
     },
     {
+      "file": "silent-hill-2-remake.json",
+      "name": "Silent Hill 2 Remake",
+      "roadmaps": 5,
+      "slug": "silent-hill-2-remake",
+      "status": "verified",
+      "trophies": 44
+    },
+    {
       "file": "split-fiction.json",
       "name": "Split Fiction",
       "roadmaps": 7,
@@ -674,6 +682,14 @@
       "trophies": 54
     },
     {
+      "file": "stellar-blade.json",
+      "name": "Stellar Blade",
+      "roadmaps": 5,
+      "slug": "stellar-blade",
+      "status": "verified",
+      "trophies": 43
+    },
+    {
       "file": "stray.json",
       "name": "Stray",
       "roadmaps": 6,
@@ -692,9 +708,9 @@
     {
       "file": "the-evil-within.json",
       "name": "The Evil Within",
-      "roadmaps": 7,
+      "roadmaps": 5,
       "slug": "the-evil-within",
-      "status": "review",
+      "status": "verified",
       "trophies": 42
     },
     {
@@ -764,9 +780,9 @@
   ],
   "schemaVersion": 1,
   "totals": {
-    "games": 95,
-    "redirects": 9,
-    "roadmaps": 588,
-    "trophies": 4146
+    "games": 97,
+    "redirects": 19,
+    "roadmaps": 596,
+    "trophies": 4233
   }
 }

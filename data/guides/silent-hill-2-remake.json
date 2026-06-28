@@ -1,0 +1,697 @@
+{
+  "game": {
+    "avoid_if": "Evite se você quer jogar totalmente às cegas sem risco de repetir áreas, porque muitos troféus e coletáveis ficam bloqueados ao avançar.",
+    "before_you_start": "Silent Hill 2 Remake é uma platina offline, curta em horas, mas muito sensível a rota, finais, coletáveis e troféus perdíveis. A lista base possui 44 troféus, não exige online, cooperação ou modo específico, e pode ser feita em cerca de 20-30h com planejamento. A seleção de modo não afeta troféus, então o jogador pode usar Light/Easy para reduzir o risco nas runs de speedrun, melee-only/no radio e finais.\n\nO maior cuidado é que não há Chapter Select nem free roam após a história. Depois de sair de uma área, muitos itens, coletáveis e troféus de oportunidade ficam perdidos naquela jogada. Os coletáveis principais - 68 Memos, 26 Strange Photos e 26 Glimpses of the Past - precisam ser coletados em uma única playthrough para seus troféus e não carregam para New Game+. A platina exige os 6 finais clássicos/originais: Leave, Maria, In Water, Rebirth, Dog e UFO; os 2 finais novos do remake não são necessários. Use saves manuais estratégicos antes de decisões, áreas finais e pontos de rota para reduzir retrabalho.",
+    "best_for": "Ideal para quem quer uma platina de survival horror offline, curta, com rota bem planejada e vários finais clássicos.",
+    "cleanup_advice": "Não planeje cleanup pós-história. Use saves manuais e NG+ para corrigir finais, chainsaw e rotas especiais; coletáveis de Archivist, Pieces Unarranged e Echoes devem ser feitos em uma única playthrough.",
+    "cover_image": "/assets/games/silent-hill-2-remake/cover.png",
+    "coverage_level": "complete",
+    "created_at": null,
+    "difficulty": 3,
+    "difficulty_reason": "3/10: a nota é editorial da platina. O desafio vem de rota, pontos de não retorno, coletáveis em uma jogada, finais e restrições, não de seleção obrigatória de modo.",
+    "dlc_scope": "Base game sem DLCs. Este guia cobre apenas Silent Hill 2 Remake de 2024 e não mistura Silent Hill 2 HD Collection, Silent Hill 2 original de PS2 ou Silent Hill f.",
+    "editorial_notes": "Criado exclusivamente para Silent Hill 2 Remake de 2024. Não mistura Silent Hill 2 HD Collection, Silent Hill 2 original de PS2 ou Silent Hill f. Risco técnico confirmado editorialmente para Merciless, Faster Than Fog e Party Like It's 2001.",
+    "editorial_review_status": "verified",
+    "editorial_status": "published",
+    "first_run_advice": "Faça a primeira jogada no modo Light/Easy com checklist cronológico de 68 Memos, 26 Strange Photos e 26 Glimpses of the Past, resolvendo troféus de oportunidade antes de sair de cada área.",
+    "grind_summary": "Grind baixo/moderado: há acumulativos de combate, portas e janelas, mas o foco real é rota, coletáveis e finais.",
+    "guide_avoid": null,
+    "guide_best_moment": null,
+    "guide_dlc": null,
+    "guide_grind": null,
+    "guide_ideal": null,
+    "guide_online": null,
+    "guide_runs": null,
+    "image": "/assets/games/silent-hill-2-remake/cover.png",
+    "is_verified": 1,
+    "last_reviewed_at": "2026-06-27",
+    "missable": "Tem perdíveis. A referência principal lista 20, mas o Atlas marca 23 para cobrir também riscos de New Game+, coleções em uma jogada e o troféu agregado de finais clássicos. Não há Chapter Select nem free roam após a história.",
+    "missable_summary": "23 troféus marcados como perdíveis no Atlas: No Turning Back Now, Let's NOT Party!, All Seems in Order, Leftovers, Scourge of Toluca Lake, It's Bread, Lumberjack, You Never Know..., Making Peace, Vicious Circle, Only Way Out, Defy Even Death, The Goodest Boi, Tinfoil Hat, I Saw That Town, Radio Silence, James of All Trades, Pieces Unarranged, Archivist, Echoes, Faster Than Fog, As Close as You Like e Party Like It's 2001. A contagem fica acima de 20 porque inclui NG+, coletáveis em uma única playthrough, restrições e o troféu agregado de finais clássicos.",
+    "name": "Silent Hill 2 Remake",
+    "online_summary": "Online: 0. A lista base de Silent Hill 2 Remake é totalmente offline e não exige servidores, multiplayer ou PS Plus para a platina.",
+    "quality_warnings": "[object Object]",
+    "reviewed_by": "AtlasAchievement Editorial",
+    "runs_summary": "Duas jogadas são o mínimo editorial: primeira rota completa com coletáveis e finais base, depois New Game+ para Rebirth, Dog, UFO, chainsaw e I Saw That Town. Separe runs de restrição se necessário.",
+    "slug": "silent-hill-2-remake",
+    "time": "20-30h",
+    "time_bucket": "medium",
+    "time_max_hours": 30,
+    "time_min_hours": 20,
+    "time_reason": "20-30h com planejamento, saves manuais, primeira jogada completa, New Game+ e runs/reloads para finais e restrições.",
+    "time_sort_hours": 20,
+    "updated_at": "2026-06-28 04:00:39",
+    "verification_note": "Guia validado para a lista base PS5: 44 troféus, distribuição 1/3/12/28, 20-30h, 3/10, online 0, coop 0, troféus por seleção de modo 0, 23 perdíveis editoriais justificados, New Game+ necessário, sem Chapter Select, sem free roam, EN/PT-BR em todos os troféus.",
+    "verification_status": "verified",
+    "walkthrough": null
+  },
+  "redirects": [
+    "silent-hill-2",
+    "silent-hill-2-ps5",
+    "silent-hill-2-remake-ps5"
+  ],
+  "roadmaps": [
+    {
+      "content": "{\"number\":1,\"title\":\"Primeira jogada 100% coletáveis e finais base\",\"category\":{\"id\":\"collectibles\",\"label\":\"Coletáveis\",\"icon\":\"fa-map-pin\",\"tone\":\"neutral\"},\"description\":\"Jogar no modo Light/Easy, coletar 68 Memos, 26 Strange Photos e 26 Glimpses of the Past em uma única playthrough, resolver troféus de oportunidade por área e preparar saves para finais base.\",\"objective\":\"Jogar no modo Light/Easy, coletar 68 Memos, 26 Strange Photos e 26 Glimpses of the Past em uma única playthrough, resolver troféus de oportunidade por área e preparar saves para finais base.\",\"focus\":\"Coletáveis / oportunidades / saves\",\"actions\":[\"Siga uma rota cronológica de coletáveis desde o início.\",\"Faça No Turning Back Now, Let's NOT Party!, All Seems in Order, Leftovers, It's Bread e Scourge of Toluca Lake antes de sair das áreas correspondentes.\",\"Use Wooden Plank, Steel Pipe, Handgun, Shotgun e Rifle ao menos uma vez contra inimigos para James of All Trades.\",\"Mantenha saves manuais antes de áreas grandes, decisões e reta final.\"],\"warning\":\"Tudo é perdível por área; não há Chapter Select nem free roam após a história.\",\"note\":\"\",\"result\":\"Coletáveis principais e troféus de oportunidade resolvidos.\",\"risk\":\"Tudo é perdível por área; não há Chapter Select nem free roam após a história.\",\"relatedTrophies\":[],\"isStructured\":true}",
+      "step_order": 1
+    },
+    {
+      "content": "{\"number\":2,\"title\":\"Finais Leave, Maria e In Water\",\"category\":{\"id\":\"plan\",\"label\":\"Plano\",\"icon\":\"fa-route\",\"tone\":\"soft\"},\"description\":\"Usar saves manuais estratégicos para obter Making Peace, Vicious Circle e Only Way Out.\",\"objective\":\"Usar saves manuais estratégicos para obter Making Peace, Vicious Circle e Only Way Out.\",\"focus\":\"Finais base\",\"actions\":[\"Ajuste comportamento e decisões conforme o final desejado.\",\"Separe saves antes dos trechos finais para reduzir retrabalho.\",\"Confirme cada troféu de final antes de sobrescrever saves importantes.\"],\"warning\":\"As condições dos finais podem conflitar.\",\"note\":\"\",\"result\":\"Finais base concluídos.\",\"risk\":\"As condições dos finais podem conflitar.\",\"relatedTrophies\":[],\"isStructured\":true}",
+      "step_order": 2
+    },
+    {
+      "content": "{\"number\":3,\"title\":\"New Game+ e finais especiais\",\"category\":{\"id\":\"story\",\"label\":\"História\",\"icon\":\"fa-book-open\",\"tone\":\"soft\"},\"description\":\"Iniciar New Game+, coletar itens/requisitos de Rebirth, Dog e UFO, encontrar a chainsaw e concluir I Saw That Town.\",\"objective\":\"Iniciar New Game+, coletar itens/requisitos de Rebirth, Dog e UFO, encontrar a chainsaw e concluir I Saw That Town.\",\"focus\":\"NG+ / Rebirth / Dog / UFO\",\"actions\":[\"Pegue a chainsaw no New Game+ para Lumberjack.\",\"Prepare os itens de Rebirth antes da reta final.\",\"Siga os requisitos de Dog e UFO sem misturar com os 2 finais novos do remake.\"],\"warning\":\"Coletáveis de Archivist, Pieces Unarranged e Echoes não devem ser tratados como carregados para os troféus.\",\"note\":\"\",\"result\":\"Finais NG+ concluídos e Party Like It's 2001 encaminhado.\",\"risk\":\"Coletáveis de Archivist, Pieces Unarranged e Echoes não devem ser tratados como carregados para os troféus.\",\"relatedTrophies\":[],\"isStructured\":true}",
+      "step_order": 3
+    },
+    {
+      "content": "{\"number\":4,\"title\":\"Runs de restrição\",\"category\":{\"id\":\"story\",\"label\":\"História\",\"icon\":\"fa-book-open\",\"tone\":\"soft\"},\"description\":\"Fazer Radio Silence, As Close as You Like e Faster Than Fog em runs planejadas.\",\"objective\":\"Fazer Radio Silence, As Close as You Like e Faster Than Fog em runs planejadas.\",\"focus\":\"No radio / melee-only / speedrun\",\"actions\":[\"Mantenha o rádio desligado durante toda a run de Radio Silence.\",\"Use apenas melee para abates em As Close as You Like.\",\"Faça Faster Than Fog em menos de 10 horas, com rota enxuta e poucos desvios.\"],\"warning\":\"Essas metas podem ser combinadas, mas separar runs reduz risco de quebrar uma condição.\",\"note\":\"\",\"result\":\"Troféus de restrição e speedrun concluídos.\",\"risk\":\"Essas metas podem ser combinadas, mas separar runs reduz risco de quebrar uma condição.\",\"relatedTrophies\":[],\"isStructured\":true}",
+      "step_order": 4
+    },
+    {
+      "content": "{\"number\":5,\"title\":\"Conferência final\",\"category\":{\"id\":\"online\",\"label\":\"Coop\",\"icon\":\"fa-users\",\"tone\":\"warning\"},\"description\":\"Conferir os 44 troféus, os 6 finais clássicos, coletáveis em uma jogada e restrições restantes.\",\"objective\":\"Conferir os 44 troféus, os 6 finais clássicos, coletáveis em uma jogada e restrições restantes.\",\"focus\":\"Checklist da platina\",\"actions\":[\"Confirme 0 online, 0 coop e 0 troféus por seleção de modo.\",\"Revise Archivist, Pieces Unarranged e Echoes.\",\"Não exija os 8 finais e não misture Silent Hill 2 HD ou Silent Hill f.\"],\"warning\":\"Se algum coletável de uma única playthrough ficou para trás, será necessário refazer a rota correspondente.\",\"note\":\"\",\"result\":\"Platina You Made Me Happy desbloqueada.\",\"risk\":\"Se algum coletável de uma única playthrough ficou para trás, será necessário refazer a rota correspondente.\",\"relatedTrophies\":[],\"isStructured\":true}",
+      "step_order": 5
+    }
+  ],
+  "schemaVersion": 1,
+  "seedExtras": {
+    "aliases": [
+      "Silent Hill 2",
+      "silent-hill-2",
+      "silent-hill-2-ps5",
+      "silent-hill-2-remake-ps5"
+    ],
+    "attentionPoints": [
+      {
+        "name": "Sem Chapter Select / sem free roam",
+        "tags": [
+          {
+            "id": "missable",
+            "label": "Perdível",
+            "tone": "risk"
+          }
+        ],
+        "text": "Depois de sair de uma área, muitos itens e troféus ficam perdidos. Não há Chapter Select nem free roam após a história.",
+        "type": "Ponto de não retorno"
+      },
+      {
+        "name": "Coletáveis em uma única jogada",
+        "tags": [
+          {
+            "id": "collectible",
+            "label": "Coletável",
+            "tone": "partial"
+          }
+        ],
+        "text": "Archivist, Pieces Unarranged e Echoes exigem 68 Memos, 26 Strange Photos e 26 Glimpses of the Past em uma única playthrough.",
+        "type": "Coletáveis"
+      },
+      {
+        "name": "6 finais clássicos",
+        "tags": [
+          {
+            "id": "final",
+            "label": "Final",
+            "tone": "spoiler"
+          }
+        ],
+        "text": "A platina exige os finais clássicos/originais necessários para os troféus. Os 2 finais novos do remake não são obrigatórios.",
+        "type": "Finais"
+      },
+      {
+        "name": "New Game+",
+        "tags": [
+          {
+            "id": "ng-plus",
+            "label": "NG+",
+            "tone": "warning"
+          }
+        ],
+        "text": "Rebirth, Dog, UFO, Lumberjack e I Saw That Town dependem de New Game+.",
+        "type": "NG+"
+      },
+      {
+        "name": "Runs de restrição",
+        "tags": [
+          {
+            "id": "run",
+            "label": "Risco de run",
+            "tone": "warning"
+          }
+        ],
+        "text": "Radio Silence, As Close as You Like e Faster Than Fog são mais seguros em runs planejadas em dificuldade baixa.",
+        "type": "Rota"
+      },
+      {
+        "name": "Muitos perdíveis",
+        "tags": [
+          {
+            "id": "missable",
+            "label": "Perdível",
+            "tone": "risk"
+          }
+        ],
+        "text": "Praticamente todo troféu não automático de história pode ser perdido se o jogador avançar a área errada.",
+        "type": "Perdíveis"
+      }
+    ],
+    "checklist": [
+      "Confirmar lista base com 44 troféus: 1 platina, 3 ouro, 12 prata e 28 bronze.",
+      "Usar Light/Easy se quiser reduzir risco de execução.",
+      "Coletar 68 Memos, 26 Strange Photos e 26 Glimpses of the Past em uma única playthrough.",
+      "Fazer os troféus de oportunidade antes de sair de cada área.",
+      "Usar saves manuais antes de áreas grandes, decisões e reta final.",
+      "Obter os finais Leave, Maria, In Water, Rebirth, Dog e UFO.",
+      "Usar New Game+ para Rebirth, Dog, UFO, Lumberjack e I Saw That Town.",
+      "Separar ou combinar com cuidado Radio Silence, As Close as You Like e Faster Than Fog.",
+      "Manter online 0, coop 0, DLC fora da platina e troféus por seleção de modo 0.",
+      "Não misturar Silent Hill 2 HD Collection, Silent Hill 2 original de PS2 ou Silent Hill f."
+    ],
+    "faq": [
+      {
+        "answer": "Não. A lista base é totalmente offline.",
+        "question": "Silent Hill 2 Remake tem troféus online?"
+      },
+      {
+        "answer": "Não.",
+        "question": "Tem coop?"
+      },
+      {
+        "answer": "Não. Tudo pode ser feito no modo Light/Easy.",
+        "question": "A seleção de modo afeta troféus?"
+      },
+      {
+        "answer": "Duas jogadas com saves/reloads bem planejados são o caminho mínimo, mas algumas runs extras podem facilitar speedrun, no radio e melee-only.",
+        "question": "Quantas jogadas são necessárias?"
+      },
+      {
+        "answer": "Sim. A referência principal lista 20 perdíveis, mas o Atlas marca 23 por incluir finais/rotas/restrições que podem exigir nova run se o jogador avançar sem planejamento.",
+        "question": "Tem troféus perdíveis?"
+      },
+      {
+        "answer": "Não.",
+        "question": "Existe Chapter Select?"
+      },
+      {
+        "answer": "Não. Depois do final, não há exploração livre para voltar e pegar itens ou troféus esquecidos.",
+        "question": "Existe free roam depois da história?"
+      },
+      {
+        "answer": "Para Archivist, Pieces Unarranged e Echoes, os coletáveis precisam ser obtidos em uma única playthrough. Não trate como progresso carregado para NG+.",
+        "question": "Os coletáveis carregam para New Game+?"
+      },
+      {
+        "answer": "68 Memos, 26 Strange Photos e 26 Glimpses of the Past, todos em uma única playthrough.",
+        "question": "Quantos coletáveis são necessários?"
+      },
+      {
+        "answer": "Não. O remake tem finais novos, mas a platina exige os finais clássicos/originais necessários para os troféus. Os 2 finais novos do remake não são obrigatórios.",
+        "question": "Preciso de todos os finais?"
+      },
+      {
+        "answer": "Sim. Alguns finais e itens, como a chainsaw, dependem de New Game+.",
+        "question": "Preciso de New Game+?"
+      },
+      {
+        "answer": "Não. O remake não exige uma run 10 estrelas como requisito de platina.",
+        "question": "Preciso fazer 10-star run?"
+      },
+      {
+        "answer": "Radio Silence, As Close as You Like e Faster Than Fog são mais seguros em uma run planejada em dificuldade baixa.",
+        "question": "Quais troféus são melhores em run separada?"
+      },
+      {
+        "answer": "Não. Este guia é do Silent Hill 2 Remake de 2024.",
+        "question": "Silent Hill 2 HD entra neste guia?"
+      },
+      {
+        "answer": "Não. Silent Hill f é outro jogo, com lista e requisitos próprios.",
+        "question": "Silent Hill f entra neste guia?"
+      }
+    ],
+    "note": "Campos exportados para auditoria. O SQLite atual nao possui colunas nativas para todos esses extras; a importacao preserva o que o banco suporta.",
+    "quickDecision": {
+      "firstAction": "Comece já com rota cronológica de Memos, Strange Photos e Glimpses of the Past; salve manualmente antes de áreas grandes e decisões.",
+      "recommendation": "Boa para quem aceita seguir checklist desde o início. A execução é acessível, mas a rota cobra saves manuais e atenção aos pontos de não retorno.",
+      "risk": "O risco real é avançar áreas sem pegar coletáveis, perder troféus de oportunidade ou bagunçar condições de finais/restrições.",
+      "summary": "Platina PS5 de 20-30h, 3/10, 44 troféus base, offline, solo, com 23 perdíveis editoriais, New Game+ obrigatório e sem Chapter Select."
+    },
+    "seo": {
+      "description": "Guia PT-BR da platina de Silent Hill 2 Remake no PS5: 44 troféus, 20-30h, 3/10, 20 perdíveis, finais clássicos, coletáveis em uma jogada e NG+.",
+      "keywords": "Silent Hill 2 Remake troféus, Silent Hill 2 Remake platina, guia Silent Hill 2 PS5, Archivist, Pieces Unarranged, Echoes, finais Silent Hill 2 Remake",
+      "title": "Silent Hill 2 Remake - guia de platina PS5, troféus e roadmap"
+    },
+    "tags": [
+      "PS5",
+      "Offline",
+      "Solo",
+      "Tem perdíveis",
+      "New Game+",
+      "Sem Chapter Select",
+      "Sem free roam após história",
+      "Saves manuais",
+      "Base sem DLC"
+    ]
+  },
+  "slug": "silent-hill-2-remake",
+  "trophies": [
+    {
+      "description": "Obtenha todos os outros troféus.",
+      "is_missable": 0,
+      "is_spoiler": 0,
+      "name": "You Made Me Happy",
+      "name_pt": "Você Me Fez Feliz",
+      "tip": "Complete os 43 troféus restantes da lista base. A platina não exige DLC, online, coop ou os 2 finais novos do remake.",
+      "trophy_code": "sh2r_you_made_me_happy",
+      "type": "Platina"
+    },
+    {
+      "description": "Tente deixar Silent Hill na Observation Area.",
+      "is_missable": 1,
+      "is_spoiler": 0,
+      "name": "No Turning Back Now",
+      "name_pt": "Agora Não Há Volta",
+      "tip": "No início do jogo, na Observation Area, tente sair de Silent Hill seguindo pela estrada oposta. É perdível logo no começo.",
+      "trophy_code": "sh2r_no_turning_back_now",
+      "type": "Bronze"
+    },
+    {
+      "description": "Chegue a Silent Hill.",
+      "is_missable": 0,
+      "is_spoiler": 0,
+      "name": "Enjoy Your Stay",
+      "name_pt": "Aproveite a Estadia",
+      "tip": "Troféu automático de história ao chegar à cidade.",
+      "trophy_code": "sh2r_enjoy_your_stay",
+      "type": "Bronze"
+    },
+    {
+      "description": "Chegue ao Wood Side Apartments.",
+      "is_missable": 0,
+      "is_spoiler": 0,
+      "name": "Nice and Cozy",
+      "name_pt": "Aconchegante",
+      "tip": "Troféu de história; avance até o prédio de apartamentos.",
+      "trophy_code": "sh2r_nice_and_cozy",
+      "type": "Bronze"
+    },
+    {
+      "description": "Estoure todos os balões no Wood Side Apartments.",
+      "is_missable": 1,
+      "is_spoiler": 0,
+      "name": "Let's NOT Party!",
+      "name_pt": "Nada de Festa!",
+      "tip": "Atire em todos os balões no Wood Side Apartments antes de avançar. Troféu de oportunidade e perdível.",
+      "trophy_code": "sh2r_lets_not_party",
+      "type": "Bronze"
+    },
+    {
+      "description": "Entre no Otherworld pela primeira vez.",
+      "is_missable": 0,
+      "is_spoiler": 1,
+      "name": "Otherworldly",
+      "name_pt": "De Outro Mundo",
+      "tip": "Troféu automático de história ligado à progressão para o Otherworld.",
+      "trophy_code": "sh2r_otherworldly",
+      "type": "Bronze"
+    },
+    {
+      "description": "Saia do Blue Creek Apartments.",
+      "is_missable": 0,
+      "is_spoiler": 1,
+      "name": "Passed",
+      "name_pt": "Aprovado",
+      "tip": "Troféu de história; avance pela sequência dos apartamentos.",
+      "trophy_code": "sh2r_passed",
+      "type": "Bronze"
+    },
+    {
+      "description": "Encontre Maria.",
+      "is_missable": 0,
+      "is_spoiler": 1,
+      "name": "Uncanny",
+      "name_pt": "Estranho",
+      "tip": "Troféu de história com spoiler leve; desbloqueia ao encontrar Maria.",
+      "trophy_code": "sh2r_uncanny",
+      "type": "Bronze"
+    },
+    {
+      "description": "Descubra o segredo do Room 106.",
+      "is_missable": 1,
+      "is_spoiler": 0,
+      "name": "All Seems in Order",
+      "name_pt": "Tudo Parece em Ordem",
+      "tip": "Descubra o segredo do Room 106 antes de sair da área correspondente.",
+      "trophy_code": "sh2r_all_seems_in_order",
+      "type": "Bronze"
+    },
+    {
+      "description": "Encontre a pizza no Pete's Bowl-O-Rama.",
+      "is_missable": 1,
+      "is_spoiler": 0,
+      "name": "Leftovers",
+      "name_pt": "Sobras",
+      "tip": "Encontre a pizza no Pete's Bowl-O-Rama. Troféu de oportunidade perdível.",
+      "trophy_code": "sh2r_leftovers",
+      "type": "Bronze"
+    },
+    {
+      "description": "Chegue ao Brookhaven Hospital.",
+      "is_missable": 0,
+      "is_spoiler": 0,
+      "name": "Admitted",
+      "name_pt": "Admitido",
+      "tip": "Troféu de história ao entrar no Brookhaven Hospital.",
+      "trophy_code": "sh2r_admitted",
+      "type": "Bronze"
+    },
+    {
+      "description": "Chegue ao Brookhaven Hospital do Otherworld.",
+      "is_missable": 0,
+      "is_spoiler": 1,
+      "name": "Nightmare Fuel",
+      "name_pt": "Combustível de Pesadelo",
+      "tip": "Troféu automático de história ao avançar pela versão Otherworld do hospital.",
+      "trophy_code": "sh2r_nightmare_fuel",
+      "type": "Bronze"
+    },
+    {
+      "description": "Saia do Brookhaven Hospital.",
+      "is_missable": 0,
+      "is_spoiler": 1,
+      "name": "Alone Again",
+      "name_pt": "Sozinho de Novo",
+      "tip": "Troféu de história com spoiler; continue a campanha até deixar o hospital.",
+      "trophy_code": "sh2r_alone_again",
+      "type": "Bronze"
+    },
+    {
+      "description": "Chegue à Historical Society.",
+      "is_missable": 0,
+      "is_spoiler": 1,
+      "name": "Into the Abyss",
+      "name_pt": "Para o Abismo",
+      "tip": "Troféu de história ao alcançar a Historical Society.",
+      "trophy_code": "sh2r_into_the_abyss",
+      "type": "Bronze"
+    },
+    {
+      "description": "Saia da área do Abstract Daddy.",
+      "is_missable": 0,
+      "is_spoiler": 1,
+      "name": "Unforgivable",
+      "name_pt": "Imperdoável",
+      "tip": "Troféu de história com spoiler de chefe; desbloqueia pelo progresso obrigatório.",
+      "trophy_code": "sh2r_unforgivable",
+      "type": "Bronze"
+    },
+    {
+      "description": "Encontre a sala interna.",
+      "is_missable": 0,
+      "is_spoiler": 1,
+      "name": "Inner Sanctum",
+      "name_pt": "Santuário Interior",
+      "tip": "Troféu de história; siga a progressão principal até a sala interna.",
+      "trophy_code": "sh2r_inner_sanctum",
+      "type": "Bronze"
+    },
+    {
+      "description": "Derrote Eddie.",
+      "is_missable": 0,
+      "is_spoiler": 1,
+      "name": "A Human Being",
+      "name_pt": "Um Ser Humano",
+      "tip": "Troféu de história com spoiler de chefe; desbloqueia ao concluir o confronto.",
+      "trophy_code": "sh2r_a_human_being",
+      "type": "Bronze"
+    },
+    {
+      "description": "Chegue ao Lakeview Hotel.",
+      "is_missable": 0,
+      "is_spoiler": 1,
+      "name": "Glimmer of Hope",
+      "name_pt": "Lampejo de Esperança",
+      "tip": "Troféu de história ao chegar ao Lakeview Hotel.",
+      "trophy_code": "sh2r_glimmer_of_hope",
+      "type": "Bronze"
+    },
+    {
+      "description": "Passe 10 minutos no Toluca Lake.",
+      "is_missable": 1,
+      "is_spoiler": 0,
+      "name": "Scourge of Toluca Lake",
+      "name_pt": "Flagelo do Lago Toluca",
+      "tip": "Passe 10 minutos no Toluca Lake durante a travessia de barco antes de seguir para o destino.",
+      "trophy_code": "sh2r_scourge_of_toluca_lake",
+      "type": "Bronze"
+    },
+    {
+      "description": "Chegue ao Room 312.",
+      "is_missable": 0,
+      "is_spoiler": 1,
+      "name": "Truly Special",
+      "name_pt": "Verdadeiramente Especial",
+      "tip": "Troféu de história ao chegar ao Room 312 no Lakeview Hotel.",
+      "trophy_code": "sh2r_truly_special",
+      "type": "Bronze"
+    },
+    {
+      "description": "Interaja com o pão.",
+      "is_missable": 1,
+      "is_spoiler": 0,
+      "name": "It's Bread",
+      "name_pt": "É Pão",
+      "tip": "Interaja com o pão quando encontrar a área correspondente. Troféu de oportunidade perdível.",
+      "trophy_code": "sh2r_its_bread",
+      "type": "Prata"
+    },
+    {
+      "description": "Destrua um inimigo específico.",
+      "is_missable": 0,
+      "is_spoiler": 1,
+      "name": "Obsolete",
+      "name_pt": "Obsoleto",
+      "tip": "Troféu de história ligado a um confronto obrigatório. Marque quando o evento acontecer.",
+      "trophy_code": "sh2r_obsolete",
+      "type": "Prata"
+    },
+    {
+      "description": "Derrote o chefe final.",
+      "is_missable": 0,
+      "is_spoiler": 1,
+      "name": "That Part of Me",
+      "name_pt": "Aquela Parte de Mim",
+      "tip": "Troféu de história da reta final. Use saves manuais antes do fim para preservar rotas de finais.",
+      "trophy_code": "sh2r_that_part_of_me",
+      "type": "Prata"
+    },
+    {
+      "description": "Encontre a chainsaw.",
+      "is_missable": 1,
+      "is_spoiler": 0,
+      "name": "Lumberjack",
+      "name_pt": "Lenhador",
+      "tip": "Encontre a chainsaw em New Game+. Troféu ligado ao NG+.",
+      "trophy_code": "sh2r_lumberjack",
+      "type": "Prata"
+    },
+    {
+      "description": "Finalize 50 inimigos com pisões.",
+      "is_missable": 0,
+      "is_spoiler": 0,
+      "name": "Merciless",
+      "name_pt": "Impiedoso",
+      "tip": "Finalize inimigos caídos com stomp até alcançar 50. Há alerta externo de risco técnico; acompanhe a contagem e faça saves regulares.",
+      "trophy_code": "sh2r_merciless",
+      "type": "Prata"
+    },
+    {
+      "description": "Mate 75 inimigos com armas de fogo.",
+      "is_missable": 0,
+      "is_spoiler": 0,
+      "name": "No Big Deal",
+      "name_pt": "Nada Demais",
+      "tip": "Acumule abates com Handgun, Shotgun e Rifle ao longo das runs. Não é online, coop nem seleção de modo.",
+      "trophy_code": "sh2r_no_big_deal",
+      "type": "Prata"
+    },
+    {
+      "description": "Mate 75 inimigos com armas melee.",
+      "is_missable": 0,
+      "is_spoiler": 0,
+      "name": "Blunt Force Trauma",
+      "name_pt": "Trauma por Força Bruta",
+      "tip": "Acumule abates com Wooden Plank, Steel Pipe e outras opções melee. Combina bem com a run de As Close as You Like.",
+      "trophy_code": "sh2r_blunt_force_trauma",
+      "type": "Prata"
+    },
+    {
+      "description": "Tente abrir 50 portas trancadas.",
+      "is_missable": 1,
+      "is_spoiler": 0,
+      "name": "You Never Know...",
+      "name_pt": "Nunca se Sabe...",
+      "tip": "Interaja com portas trancadas durante a exploração. Como não há retorno livre, faça isso naturalmente em cada área.",
+      "trophy_code": "sh2r_you_never_know",
+      "type": "Prata"
+    },
+    {
+      "description": "Quebre 50 janelas.",
+      "is_missable": 0,
+      "is_spoiler": 0,
+      "name": "Shattered",
+      "name_pt": "Estilhaçado",
+      "tip": "Quebre janelas pelo caminho até alcançar 50. É situacional, mas pode ser adiantado com exploração cuidadosa.",
+      "trophy_code": "sh2r_shattered",
+      "type": "Prata"
+    },
+    {
+      "description": "Veja o final Leave.",
+      "is_missable": 1,
+      "is_spoiler": 1,
+      "name": "Making Peace",
+      "name_pt": "Fazendo as Pazes",
+      "tip": "Final clássico Leave. Use saves manuais perto do fim para separar este final de Maria e In Water.",
+      "trophy_code": "sh2r_making_peace",
+      "type": "Prata"
+    },
+    {
+      "description": "Veja o final Maria.",
+      "is_missable": 1,
+      "is_spoiler": 1,
+      "name": "Vicious Circle",
+      "name_pt": "Círculo Vicioso",
+      "tip": "Final clássico Maria. Planeje comportamento e saves para não conflitar com Leave ou In Water.",
+      "trophy_code": "sh2r_vicious_circle",
+      "type": "Prata"
+    },
+    {
+      "description": "Veja o final In Water.",
+      "is_missable": 1,
+      "is_spoiler": 1,
+      "name": "Only Way Out",
+      "name_pt": "Única Saída",
+      "tip": "Final clássico In Water. Use save separado antes da reta final para reduzir repetição de campanha.",
+      "trophy_code": "sh2r_only_way_out",
+      "type": "Prata"
+    },
+    {
+      "description": "Veja o final Rebirth.",
+      "is_missable": 1,
+      "is_spoiler": 1,
+      "name": "Defy Even Death",
+      "name_pt": "Desafie Até a Morte",
+      "tip": "Final clássico de New Game+. Colete os itens de Rebirth durante a rota e confirme antes da reta final.",
+      "trophy_code": "sh2r_defy_even_death",
+      "type": "Bronze"
+    },
+    {
+      "description": "Veja o final Dog.",
+      "is_missable": 1,
+      "is_spoiler": 1,
+      "name": "The Goodest Boi",
+      "name_pt": "O Melhor Garoto",
+      "tip": "Final clássico de New Game+. Siga os requisitos do Dog ending e preserve saves antes do fim.",
+      "trophy_code": "sh2r_the_goodest_boi",
+      "type": "Bronze"
+    },
+    {
+      "description": "Veja o final UFO.",
+      "is_missable": 1,
+      "is_spoiler": 1,
+      "name": "Tinfoil Hat",
+      "name_pt": "Chapéu de Papel-Alumínio",
+      "tip": "Final clássico de New Game+. Siga os requisitos de UFO sem exigir os 2 finais novos do remake.",
+      "trophy_code": "sh2r_tinfoil_hat",
+      "type": "Bronze"
+    },
+    {
+      "description": "Complete New Game+.",
+      "is_missable": 1,
+      "is_spoiler": 0,
+      "name": "I Saw That Town",
+      "name_pt": "Eu Vi Aquela Cidade",
+      "tip": "Complete New Game+ em qualquer modo. Aproveite essa run para chainsaw, Rebirth, Dog e UFO.",
+      "trophy_code": "sh2r_i_saw_that_town",
+      "type": "Bronze"
+    },
+    {
+      "description": "Complete o jogo com o rádio desligado.",
+      "is_missable": 1,
+      "is_spoiler": 0,
+      "name": "Radio Silence",
+      "name_pt": "Silêncio no Rádio",
+      "tip": "Mantenha o rádio desligado durante toda a run. Faça em rota separada ou combinada com speedrun/melee-only se estiver seguro.",
+      "trophy_code": "sh2r_radio_silence",
+      "type": "Bronze"
+    },
+    {
+      "description": "Mate ao menos um inimigo com Wooden Plank, Steel Pipe, Handgun, Shotgun e Rifle em uma única playthrough.",
+      "is_missable": 1,
+      "is_spoiler": 0,
+      "name": "James of All Trades",
+      "name_pt": "James Faz-Tudo",
+      "tip": "Mate ao menos um inimigo com Wooden Plank, Steel Pipe, Handgun, Shotgun e Rifle em uma única playthrough.",
+      "trophy_code": "sh2r_james_of_all_trades",
+      "type": "Bronze"
+    },
+    {
+      "description": "Colete todas as 26 Strange Photos em uma única playthrough.",
+      "is_missable": 1,
+      "is_spoiler": 0,
+      "name": "Pieces Unarranged",
+      "name_pt": "Peças Desordenadas",
+      "tip": "Colete todas as 26 Strange Photos em uma única playthrough. Elas não carregam para o troféu em NG+.",
+      "trophy_code": "sh2r_pieces_unarranged",
+      "type": "Bronze"
+    },
+    {
+      "description": "Colete todos os 68 Memos em uma única playthrough.",
+      "is_missable": 1,
+      "is_spoiler": 0,
+      "name": "Archivist",
+      "name_pt": "Arquivista",
+      "tip": "Colete todos os 68 Memos em uma única playthrough. Todos são perdíveis por área.",
+      "trophy_code": "sh2r_archivist",
+      "type": "Bronze"
+    },
+    {
+      "description": "Complete o jogo em menos de 10 horas.",
+      "is_missable": 1,
+      "is_spoiler": 0,
+      "name": "Faster Than Fog",
+      "name_pt": "Mais Rápido que a Névoa",
+      "tip": "Complete o jogo em menos de 10 horas. Faça em uma run separada, com rota enxuta, poucos desvios e saves manuais. Há alerta externo de risco técnico.",
+      "trophy_code": "sh2r_faster_than_fog",
+      "type": "Ouro"
+    },
+    {
+      "description": "Complete o jogo sem matar inimigos com armas de fogo.",
+      "is_missable": 1,
+      "is_spoiler": 0,
+      "name": "As Close as You Like",
+      "name_pt": "Tão Perto Quanto Quiser",
+      "tip": "Complete a campanha registrando abates apenas com melee; evite kills com armas ranged. Combine com Blunt Force Trauma se quiser otimizar.",
+      "trophy_code": "sh2r_as_close_as_you_like",
+      "type": "Ouro"
+    },
+    {
+      "description": "Veja todos os finais clássicos exigidos para a platina. Não é necessário obter os 2 finais novos do remake.",
+      "is_missable": 1,
+      "is_spoiler": 1,
+      "name": "Party Like It's 2001",
+      "name_pt": "Festa Como se Fosse 2001",
+      "tip": "Use saves manuais e New Game+ para organizar Leave, Maria, In Water, Rebirth, Dog e UFO. Confirme no relatório como o projeto trata os classic endings conforme a descrição do troféu e a referência usada.",
+      "trophy_code": "sh2r_party_like_its_2001",
+      "type": "Ouro"
+    },
+    {
+      "description": "Testemunhe todos os 26 Glimpses of the Past em uma única playthrough.",
+      "is_missable": 1,
+      "is_spoiler": 0,
+      "name": "Echoes",
+      "name_pt": "Ecos",
+      "tip": "Testemunhe todos os 26 Glimpses of the Past em uma única playthrough. São exclusivos do remake e todos são perdíveis por área.",
+      "trophy_code": "sh2r_echoes",
+      "type": "Bronze"
+    }
+  ]
+}

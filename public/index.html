@@ -107,6 +107,11 @@
             Escolha sua próxima platina com estimativas de tempo, dificuldade, troféus perdíveis, requisitos online e etapas organizadas para jogar sem se perder.
           </p>
 
+          <div class="atlas-home-pulse" data-home-pulse aria-live="polite">
+            <span class="atlas-home-pulse__icon" aria-hidden="true"><i class="fas fa-star"></i></span>
+            <span data-home-pulse-message>Guias revisados, filtros de risco e progresso salvo em um só lugar.</span>
+          </div>
+
           <div class="mt-5 flex flex-wrap gap-3 max-w-[780px] atlas-home-cta-row">
             <button type="button" data-view-link="catalog" class="atlas-btn atlas-btn-primary atlas-home-primary-cta"><i class="fas fa-compass" aria-hidden="true"></i> Explorar guias</button>
             <button type="button" data-auth-open="register" class="atlas-btn atlas-btn-secondary atlas-home-secondary-cta"><i class="fas fa-bookmark" aria-hidden="true"></i> Criar minha biblioteca</button>
@@ -121,6 +126,7 @@
               </button>
               <div id="suggestions" class="absolute top-full left-0 right-0 atlas-suggestion-panel mt-3 hidden z-20 max-h-72 overflow-y-auto" role="listbox" aria-label="Sugestões de jogos"></div>
             </div>
+            <div id="homeSearchChips" class="atlas-home-search-chips" aria-label="Sugestões rápidas de busca"></div>
             <div id="searchFeedback" class="mt-3 text-sm text-white/50" aria-live="polite">Exemplos: Spider-Man, Astro Bot, Life is Strange, Ratchet &amp; Clank</div>
           </div>
 
@@ -132,6 +138,16 @@
         <span class="atlas-home-beta-notice__badge"><i class="fas fa-screwdriver-wrench" aria-hidden="true"></i> Beta</span>
         <p><strong>AtlasAchievement está em evolução.</strong> Guias verificados passam por revisão editorial; guias em ajuste ficam sinalizados com status próprio.</p>
       </aside>
+
+      <section class="atlas-home-section atlas-home-spotlight" aria-labelledby="homeSpotlightTitle">
+        <div class="atlas-home-section__head atlas-home-section__head--compact">
+          <div>
+            <span class="atlas-section-kicker">Boa escolha para começar</span>
+            <h2 id="homeSpotlightTitle" class="text-[24px] md:text-[28px] font-extrabold tracking-tight mt-2">Um guia em destaque agora</h2>
+          </div>
+        </div>
+        <div id="homeEditorialSpotlight" class="atlas-home-spotlight__slot"></div>
+      </section>
 
       <section class="atlas-home-section atlas-home-section--moment" aria-labelledby="homeMomentTitle">
         <div class="atlas-home-section__head">

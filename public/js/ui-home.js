@@ -5,6 +5,7 @@ window.UIHome = (() => {
   const sharedCatalog = window.AtlasCatalogModel || {};
   const sharedCard = window.AtlasCardModel || {};
   const siteUpdates = window.AtlasSiteUpdates || {};
+  let homePulseTimer = null;
 
   function renderHomeEditorialBadge(model = {}) {
     const badge = model.statusBadge || {};
@@ -53,6 +54,200 @@ window.UIHome = (() => {
     return (game.is_verified === true || verificationStatus === 'verified')
       && reviewStatus === 'verified'
       && (coverage === 'strong' || coverage === 'complete');
+  }
+
+  function toNumber(value, fallback = 0) {
+    const number = Number(value);
+    return Number.isFinite(number) ? number : fallback;
+  }
+
+  function getGameTotal(game = {}) {
+    const total = typeof sharedCatalog.getGameTotal === 'function'
+      ? sharedCatalog.getGameTotal(game)
+      : (game.trophy_count || game.trophies?.length || 0);
+    return toNumber(total, 0);
+  }
+
+  function getRoadmapTotal(game = {}) {
+    const total = typeof sharedCatalog.getRoadmapCount === 'function'
+      ? sharedCatalog.getRoadmapCount(game)
+      : (game.roadmap_count || game.roadmap?.length || 0);
+    return toNumber(total, 0);
+  }
+
+  function isShortPlatinum(game = {}) {
+    const bucket = normalizeSlug(game.time_bucket || game.timeBucket);
+    const hours = toNumber(game.time_sort_hours || game.timeMinHours || game.time_min_hours, 0);
+    return bucket === 'short' || (hours > 0 && hours <= 30);
+  }
+
+  function hasNoOnlineRequirement(game = {}) {
+    const onlineFlags = [
+      game.onlineRequired,
+      game.online_required,
+      game.requiresOnline,
+      game.requires_online,
+      game.is_online
+    ];
+    const hasExplicitOfflineFlag = onlineFlags.some(value => value === false);
+    return hasExplicitOfflineFlag
+      && onlineFlags.every(value => value !== true)
+      && toNumber(game.online_trophy_count || game.onlineTrophies, 0) === 0;
+  }
+
+  function getHomeGuideSignal(game = {}) {
+    if (isGuideVerified(game)) return 'Verificado recentemente';
+    if (hasNoOnlineRequirement(game)) return 'Sem online';
+    if (isShortPlatinum(game)) return 'Platina curta';
+    return 'Boa escolha para começar';
+  }
+
+  function renderHomeCatalogProof(target, gamesCount = 0, totalTrophies = 0, totalRoadmaps = 0, fallbackText = '') {
+    if (!target) return;
+    if (!Number(gamesCount || 0) && !Number(totalTrophies || 0) && !Number(totalRoadmaps || 0)) {
+      target.textContent = fallbackText || 'Guias de platina com roadmap, checklist e progresso para acompanhar sua próxima run.';
+      return;
+    }
+    const stats = [
+      { icon: 'fa-gamepad', value: gamesCount, label: gamesCount === 1 ? 'guia no catálogo' : 'guias no catálogo' },
+      { icon: 'fa-trophy', value: totalTrophies, label: 'troféus mapeados' },
+      { icon: 'fa-route', value: totalRoadmaps, label: 'etapas de roadmap' }
+    ];
+    target.setAttribute('aria-label', fallbackText || `${gamesCount} jogos mapeados, ${totalTrophies} troféus e ${totalRoadmaps} etapas de roadmap`);
+    target.innerHTML = stats.map(stat => `
+      <span class="atlas-home-proof__item">
+        <i class="fas ${escapeAttribute(stat.icon)}" aria-hidden="true"></i>
+        <strong>${escapeHtml(String(stat.value))}</strong>
+        <span>${escapeHtml(stat.label)}</span>
+      </span>`).join('');
+  }
+
+  function renderHomeSearchChips(games = []) {
+    const target = qs('#homeSearchChips');
+    if (!target) return;
+    const gamesBySlug = new Map((Array.isArray(games) ? games : []).map(game => [normalizeSlug(game.slug), game]));
+    const preferredSlugs = [
+      'astro-bot',
+      'hades',
+      'elden-ring',
+      'resident-evil-4-remake',
+      'resident-evil-2-remake',
+      'star-wars-jedi-survivor'
+    ];
+    const preferredGames = preferredSlugs.map(slug => gamesBySlug.get(slug)).filter(Boolean);
+    const fallbackGames = (Array.isArray(games) ? games : []).filter(game => game?.slug && !preferredSlugs.includes(normalizeSlug(game.slug)));
+    const chipGames = [...preferredGames, ...fallbackGames].slice(0, 4);
+    if (!chipGames.length) {
+      target.innerHTML = '';
+      return;
+    }
+    target.innerHTML = chipGames.map(game => {
+      const slug = escapeAttribute(game.slug || '');
+      const name = stripMarkdownHeadingPrefix(game.name || 'Jogo');
+      return `
+        <a href="/jogo/${slug}" class="atlas-home-search-chip" data-home-game="${escapeAttribute(name)}" data-open-guide-card="${slug}" aria-label="Abrir guia de ${escapeAttribute(name)}">
+          <i class="fas fa-arrow-up-right-from-square" aria-hidden="true"></i>
+          <span>${escapeHtml(name)}</span>
+        </a>`;
+    }).join('');
+  }
+
+  function hydrateHomePulse(games = []) {
+    const pulse = qs('[data-home-pulse]');
+    const message = pulse?.querySelector('[data-home-pulse-message]');
+    if (!pulse || !message) return;
+    if (homePulseTimer) {
+      window.clearInterval(homePulseTimer);
+      homePulseTimer = null;
+    }
+
+    const verifiedCount = games.filter(isGuideVerified).length;
+    const shortCount = games.filter(isShortPlatinum).length;
+    const noOnlineCount = games.filter(hasNoOnlineRequirement).length;
+    const messages = [
+      verifiedCount ? `${verifiedCount} guias verificados para escolher com mais confiança.` : '',
+      noOnlineCount ? `${noOnlineCount} platinas sem online obrigatório no catálogo.` : '',
+      shortCount ? `${shortCount} opções curtas para encaixar na próxima sessão.` : '',
+      'Roadmap, checklist e alertas de risco ficam juntos no mesmo fluxo.'
+    ].filter(Boolean);
+    const uniqueMessages = [...new Set(messages)];
+    message.textContent = uniqueMessages[0] || message.textContent;
+
+    const prefersReducedMotion = typeof window.matchMedia === 'function'
+      && window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+    if (prefersReducedMotion || uniqueMessages.length < 2) return;
+
+    let index = 0;
+    homePulseTimer = window.setInterval(() => {
+      index = (index + 1) % uniqueMessages.length;
+      pulse.classList.add('is-switching');
+      window.setTimeout(() => {
+        message.textContent = uniqueMessages[index];
+        pulse.classList.remove('is-switching');
+      }, 180);
+    }, 6500);
+  }
+
+  function selectEditorialSpotlight(games = []) {
+    return [...(Array.isArray(games) ? games : [])]
+      .filter(game => game?.slug && game?.name)
+      .sort((a, b) => {
+        const score = game => (isGuideVerified(game) ? 40 : 0)
+          + (hasNoOnlineRequirement(game) ? 20 : 0)
+          + (isShortPlatinum(game) ? 15 : 0)
+          + Math.min(getRoadmapTotal(game), 10);
+        const scoreDelta = score(b) - score(a);
+        if (scoreDelta) return scoreDelta;
+        return String(b.updated_at || b.created_at || '').localeCompare(String(a.updated_at || a.created_at || ''));
+      })[0] || null;
+  }
+
+  function renderHomeEditorialSpotlight(games = []) {
+    const target = qs('#homeEditorialSpotlight');
+    if (!target) return;
+    const game = selectEditorialSpotlight(games);
+    if (!game) {
+      target.innerHTML = '<div class="atlas-inline-empty">O destaque aparece aqui quando houver guias suficientes no catálogo.</div>';
+      return;
+    }
+    const model = typeof sharedCard.buildStandardGameCardModel === 'function'
+      ? sharedCard.buildStandardGameCardModel(game)
+      : {
+        slug: game.slug || '',
+        name: game.name || 'Jogo',
+        image: getGameCoverSrc ? getGameCoverSrc(game) : (game.cover_image || game.image || ''),
+        difficulty: game.difficulty || '-',
+        time: game.time || 'Tempo não informado',
+        trophies: getGameTotal(game)
+      };
+    const slug = escapeAttribute(model.slug || '');
+    const signal = getHomeGuideSignal(game);
+    const metaItems = [
+      model.time ? `<span><i class="fas fa-clock" aria-hidden="true"></i>${escapeHtml(model.time)}</span>` : '',
+      model.difficulty ? `<span><i class="fas fa-gauge-high" aria-hidden="true"></i>${escapeHtml(String(model.difficulty))}/10</span>` : '',
+      `<span><i class="fas fa-trophy" aria-hidden="true"></i>${escapeHtml(String(model.trophies || getGameTotal(game)))} troféus</span>`
+    ].filter(Boolean).join('');
+    const reason = isGuideVerified(game)
+      ? 'Status editorial verificado no catálogo, com rota e checklist prontos para consulta.'
+      : hasNoOnlineRequirement(game)
+        ? 'Platina marcada sem online obrigatório nos dados do guia.'
+        : 'Boa opção para comparar tempo, dificuldade e riscos antes de começar.';
+    target.innerHTML = `
+      <article class="atlas-home-spotlight-card">
+        <div class="atlas-home-spotlight-card__media atlas-home-image-shell${model.image ? '' : ' atlas-home-image-shell--fallback-visible'}">
+          ${renderHomeImage(model, 'atlas-home-spotlight-card__image', { width: 260, height: 360, sizes: '(min-width: 768px) 120px, 88px' })}
+        </div>
+        <div class="atlas-home-spotlight-card__body">
+          <span class="atlas-home-spotlight-card__badge">${escapeHtml(signal)}</span>
+          <h3>${escapeHtml(stripMarkdownHeadingPrefix(model.name))}</h3>
+          <p>${escapeHtml(reason)}</p>
+          <div class="atlas-home-spotlight-card__meta">${metaItems}</div>
+        </div>
+        <a href="/jogo/${slug}" class="atlas-btn atlas-btn-primary atlas-home-spotlight-card__cta" data-home-game="${escapeAttribute(model.name)}" data-open-guide-card="${slug}">
+          <span>Abrir guia</span>
+          <i class="fas fa-arrow-up-right-from-square" aria-hidden="true"></i>
+        </a>
+      </article>`;
   }
 
   function resolveUpdateItems(items = [], gamesBySlug = new Map()) {
@@ -124,7 +319,10 @@ window.UIHome = (() => {
     banner.setAttribute('aria-label', 'Novidade da semana');
     banner.innerHTML = `
       <div class="atlas-update-banner__icon" aria-hidden="true"><i class="fas fa-star"></i></div>
-      <p>${escapeHtml(bannerText)}</p>
+      <div class="atlas-update-banner__copy">
+        <span class="atlas-update-banner__badge">Novidade</span>
+        <p>${escapeHtml(bannerText)}</p>
+      </div>
       <div class="atlas-update-banner__actions">
         <a href="${escapeAttribute(featuredItem.href)}" class="atlas-update-banner__link" data-update-banner-game="${escapeAttribute(featuredItem.slug)}" data-home-game="${escapeAttribute(featuredItem.label)}" data-open-guide-card="${escapeAttribute(featuredItem.slug)}">Ver guia</a>
         <a href="${escapeAttribute(update.primaryCta?.href || '/catalogo')}" class="atlas-update-banner__link atlas-update-banner__link--muted" data-update-banner-catalog data-view-link="catalog">Ver catálogo</a>
@@ -174,7 +372,10 @@ window.UIHome = (() => {
     const totalTrophies = games.reduce((sum, game) => sum + getTotal(game), 0);
     const totalRoadmaps = games.reduce((sum, game) => sum + getRoadmapCount(game), 0);
 
-    if (catalogProofTarget) catalogProofTarget.textContent = formatHomeCatalogProof(games.length, totalTrophies, totalRoadmaps);
+    renderHomeCatalogProof(catalogProofTarget, games.length, totalTrophies, totalRoadmaps, formatHomeCatalogProof(games.length, totalTrophies, totalRoadmaps));
+    renderHomeSearchChips(games);
+    hydrateHomePulse(games);
+    renderHomeEditorialSpotlight(games);
 
     const renderDiscoveryList = (target, items, emptyMessage) => {
       if (!target) return;
@@ -206,7 +407,7 @@ window.UIHome = (() => {
             ${renderHomeImage(model, 'atlas-card__image', { width: 600, height: 900, sizes: '(min-width: 1024px) 20vw, (min-width: 640px) 28vw, 42vw' })}
           </div>
           <div class="atlas-card__body">
-            <div class="atlas-card__badges">${renderHomeEditorialBadge(model)}<span class="atlas-card__status atlas-badge atlas-badge--partial">Escolha editorial</span></div>
+            <div class="atlas-card__badges">${renderHomeEditorialBadge(model)}<span class="atlas-card__status atlas-badge atlas-badge--partial">${escapeHtml(getHomeGuideSignal(game))}</span></div>
             <h3 class="atlas-card__title">${escapeHtml(stripMarkdownHeadingPrefix(model.name))}</h3>
             <p class="atlas-card__reason">${escapeHtml(getFeaturedReason(game))}</p>
             <div class="atlas-card__meta">
@@ -231,11 +432,17 @@ window.UIHome = (() => {
       target.innerHTML = items.slice(0, 5).map(game => {
         const updatedLabel = formatDisplayDate(game.updated_at || game.created_at);
         const slug = escapeAttribute(game.slug || '');
+        const revisionBadges = [
+          '<span class="atlas-editorial-update__badge">Revisão recente</span>',
+          isGuideVerified(game) ? '<span class="atlas-editorial-update__badge atlas-editorial-update__badge--verified">Verificado</span>' : '',
+          hasNoOnlineRequirement(game) ? '<span class="atlas-editorial-update__badge atlas-editorial-update__badge--soft">Sem online</span>' : ''
+        ].filter(Boolean).join('');
         return `
         <article class="atlas-editorial-update">
           <time datetime="${escapeAttribute(game.updated_at || game.created_at || '')}">${escapeHtml(updatedLabel)}</time>
           <div class="atlas-editorial-update__body">
             <h3>${escapeHtml(stripMarkdownHeadingPrefix(game.name))}</h3>
+            <div class="atlas-editorial-update__badges">${revisionBadges}</div>
             <p>${escapeHtml(getRevisionNote(game))}</p>
           </div>
           <a href="/jogo/${slug}" class="atlas-editorial-update__link" data-home-game="${escapeAttribute(game.name)}" data-open-guide-card="${slug}" aria-label="Abrir guia de ${escapeAttribute(game.name)}">

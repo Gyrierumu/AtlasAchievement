@@ -157,6 +157,150 @@ window.AppGuideController = (() => {
       }
     }
 
+    function normalizeTrophySignal(value = '') {
+      return String(value || '')
+        .normalize('NFD')
+        .replace(/[\u0300-\u036f]/g, '')
+        .trim()
+        .toLowerCase();
+    }
+
+    function getTrophyId(trophy = {}) {
+      return String(trophy?.id || trophy?.trophy_code || trophy?.trophyCode || trophy?.code || '').trim();
+    }
+
+    function isPlatinumTrophy(trophy = {}) {
+      const structuredSignals = [
+        trophy.type,
+        trophy.rank,
+        trophy.rarity,
+        trophy.tier,
+        trophy.trophyType,
+        trophy.trophy_type,
+        trophy.category
+      ].map(normalizeTrophySignal);
+
+      if (structuredSignals.some(value => value === 'platinum' || value === 'platina')) return true;
+
+      const fallbackSignals = [
+        trophy.name,
+        trophy.name_pt,
+        trophy.trophyNameOriginal,
+        trophy.trophyNamePtBr
+      ].map(normalizeTrophySignal);
+
+      return fallbackSignals.some(value => value === 'platinum' || value === 'platina');
+    }
+
+    function isBaseTrophy(trophy = {}) {
+      const scopeSignals = [
+        trophy.scope,
+        trophy.list,
+        trophy.listType,
+        trophy.list_type,
+        trophy.group,
+        trophy.groupName,
+        trophy.dlc,
+        trophy.dlcName,
+        trophy.dlc_name,
+        trophy.pack,
+        trophy.packName,
+        trophy.pack_name
+      ].map(normalizeTrophySignal);
+      const hasDlcBoolean = trophy.is_dlc === true
+        || trophy.isDlc === true
+        || trophy.dlc_required === true
+        || trophy.dlcRequired === true;
+      const hasDlcScope = scopeSignals.some(value => value && value !== 'base' && value !== 'base game' && value !== 'jogo base' && value.includes('dlc'));
+      return !hasDlcBoolean && !hasDlcScope;
+    }
+
+    function getPlatinumSyncModel(game = {}) {
+      const trophies = (Array.isArray(game?.trophies) ? game.trophies : [])
+        .map(trophy => ({ ...trophy, id: getTrophyId(trophy) }))
+        .filter(trophy => trophy.id);
+      const baseTrophies = trophies.filter(isBaseTrophy);
+      const platinumTrophies = baseTrophies.filter(isPlatinumTrophy);
+
+      if (platinumTrophies.length > 1) {
+        console.warn('[AtlasAchievement] Sincronização de platina ignorada: mais de um troféu de platina detectado.', {
+          game: game?.slug || game?.name || '',
+          trophies: platinumTrophies.map(trophy => ({ id: trophy.id, name: trophy.name, type: trophy.type }))
+        });
+        return { enabled: false, reason: 'multiple-platinum', trophies, baseTrophies, platinumTrophies };
+      }
+
+      if (platinumTrophies.length !== 1) {
+        return { enabled: false, reason: 'no-platinum', trophies, baseTrophies, platinumTrophies };
+      }
+
+      const platinumId = platinumTrophies[0].id;
+      const baseIds = baseTrophies.map(trophy => trophy.id);
+      return {
+        enabled: true,
+        trophies,
+        baseTrophies,
+        platinumTrophy: platinumTrophies[0],
+        platinumId,
+        baseIds,
+        nonPlatinumBaseIds: baseIds.filter(id => id !== platinumId)
+      };
+    }
+
+    function syncAccountTrophyChanges(game, changedIds = [], completed) {
+      if (!isAccountLibrary?.() || !game?.id) return;
+      const uniqueIds = [...new Set((Array.isArray(changedIds) ? changedIds : [changedIds])
+        .map(id => String(id || '').trim())
+        .filter(Boolean))];
+      if (!uniqueIds.length) return;
+
+      if (completed && uniqueIds.length > 1 && typeof ApiService?.bulkUserProgress === 'function') {
+        ApiService.bulkUserProgress(game.id, { completed: uniqueIds }).catch(error => {
+          UI.showToast(error.message || 'Não foi possível salvar os troféus na conta.', 'error');
+        });
+        return;
+      }
+
+      uniqueIds.forEach(id => syncTrophyProgress?.(game, id, completed));
+    }
+
+    function applyPlatinumChecklistSync(game, toggledId, completedIds, nextCompleted) {
+      const syncModel = getPlatinumSyncModel(game);
+      if (!syncModel.enabled) {
+        return { completed: completedIds, changedIds: [toggledId], feedback: '' };
+      }
+
+      const completedSet = new Set(completedIds);
+      const isPlatinumToggle = toggledId === syncModel.platinumId;
+      let feedback = '';
+
+      if (isPlatinumToggle && nextCompleted) {
+        syncModel.baseIds.forEach(id => completedSet.add(id));
+        feedback = 'Platina marcada. Todos os troféus base foram concluídos.';
+      } else if (isPlatinumToggle && !nextCompleted) {
+        completedSet.delete(syncModel.platinumId);
+      } else if (!isPlatinumToggle && !nextCompleted) {
+        completedSet.delete(syncModel.platinumId);
+      } else if (!isPlatinumToggle && nextCompleted) {
+        const allNonPlatinumDone = syncModel.nonPlatinumBaseIds.every(id => completedSet.has(id));
+        if (allNonPlatinumDone) {
+          completedSet.add(syncModel.platinumId);
+          feedback = 'Todos os troféus foram marcados. Platina concluída!';
+        }
+      }
+
+      const changedIds = [
+        toggledId,
+        ...syncModel.baseIds.filter(id => completedIds.includes(id) !== completedSet.has(id))
+      ];
+
+      return {
+        completed: [...completedSet].filter(id => syncModel.trophies.some(trophy => trophy.id === id)),
+        changedIds: [...new Set(changedIds)].filter(Boolean),
+        feedback
+      };
+    }
+
     function toggleTrophy(trophyId) {
       if (!state.currentGame) return;
       const trophyKey = String(trophyId || '').trim();
@@ -169,6 +313,7 @@ window.AppGuideController = (() => {
       const index = completed.indexOf(trophyKey);
       const nextCompleted = index < 0;
       if (index >= 0) completed.splice(index, 1); else completed.push(trophyKey);
+      const syncResult = applyPlatinumChecklistSync(state.currentGame, trophyKey, completed, nextCompleted);
       const trophy = (Array.isArray(state.currentGame.trophies) ? state.currentGame.trophies : [])
         .find(item => String(item?.id || item?.name || '') === trophyKey);
       window.AtlasAnalytics?.trackChecklistToggle?.({
@@ -178,13 +323,15 @@ window.AppGuideController = (() => {
         action: nextCompleted ? 'checked' : 'unchecked'
       });
       upsertLibraryEntry(state.currentGame, {
-        completed,
+        completed: syncResult.completed,
         lastActivityAt: new Date().toISOString(),
         lastOpenedAt: new Date().toISOString()
       });
-      if (isAccountLibrary?.()) {
-        syncTrophyProgress?.(state.currentGame, trophyKey, nextCompleted);
+      if (syncResult.changedIds.length) {
+        const changedToCompleted = syncResult.completed.includes(syncResult.changedIds[0]);
+        syncAccountTrophyChanges(state.currentGame, syncResult.changedIds, changedToCompleted);
       }
+      if (syncResult.feedback) UI.showToast(syncResult.feedback, 'success');
       renderCurrentGuide({ preserveChecklistState: true, skipHistory: true });
     }
 

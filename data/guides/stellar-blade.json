@@ -1,0 +1,664 @@
+{
+  "game": {
+    "avoid_if": "Evite se você quer jogar totalmente às cegas: finais, Lily, Xion e Spire 4 podem gerar retrabalho grande.",
+    "before_you_start": "Stellar Blade é uma platina offline, acessível no Story Mode, mas com vários cuidados de rota. A lista base possui 43 troféus, não exige online, cooperação ou dificuldade específica, e pode ser feita em cerca de 40-50h se o jogador seguir um roteiro organizado. O maior risco são os dois pontos de não retorno: após Abyss Levoire, parte das side quests e coletáveis de Xion ficam bloqueados; após Spire 4, o jogador entra na reta final e perde acesso ao restante do mundo.\n\nA platina exige os três finais: Return to the Colony, Cost of Lost Memories e Making New Memories. Como Cost of Lost Memories depende de não completar 100% da barra da Lily, enquanto Making New Memories exige Lily em 100% e acesso a Eidos 9, o caminho mais seguro é fazer uma primeira jogada completa para Making New Memories/Return to the Colony e depois usar New Game+ para o final restante. Antes de avançar nos pontos de não retorno, finalize side quests, Bulletin Board Requests, coletáveis de Xion, cans, Nano Suits, Data Bank, peixes, caixas, Naytiba Data, Camps, Exospines e troféus de combate. Os troféus de New Game+ DLC são separados e não entram na platina base.",
+    "best_for": "Ideal para quem quer uma platina de ação offline, acessível no Story Mode, mas aceita seguir checklist e roadmap para finais e pontos de não retorno.",
+    "cleanup_advice": "Não deixe cleanup para depois da história. Conclua requests, side quests, coletáveis, upgrades e troféus de combate antes de avançar para a área final.",
+    "cover_image": "/assets/games/stellar-blade/cover.jpg",
+    "coverage_level": "complete",
+    "created_at": null,
+    "difficulty": 3,
+    "difficulty_reason": "3/10 no Story Mode. A avaliação editorial vem de organização de rota, pontos de não retorno e finais, não de seleção obrigatória de modo.",
+    "dlc_scope": "Guia focado nos 43 troféus da lista base. A platina EVE Protocol não exige DLC; Repeating Protocols, Infinite Blade e troféus de New Game+ DLC ficam separados.",
+    "editorial_notes": "Criado exclusivamente para Stellar Blade. A lista base mantém EVE Protocol como platina, separa Repeating Protocols/Infinite Blade e New Game+ DLC, e trata Thorough Technician como as 96 skills do jogo base.",
+    "editorial_review_status": "verified",
+    "editorial_status": "published",
+    "first_run_advice": "Faça a primeira jogada completa, leve Lily a 100%, resolva side quests/coletáveis antes de Abyss Levoire e Spire 4, e use backup na nuvem antes da decisão final se disponível.",
+    "grind_summary": "Grind moderado por 1.500 inimigos, perfect parries, perfect dodges, kills com skills, 200 caixas, Data Bank, latas, Camps, upgrades e skills base.",
+    "guide_avoid": null,
+    "guide_best_moment": null,
+    "guide_dlc": null,
+    "guide_grind": null,
+    "guide_ideal": null,
+    "guide_online": null,
+    "guide_runs": null,
+    "image": "/assets/games/stellar-blade/cover.jpg",
+    "is_verified": 1,
+    "last_reviewed_at": "2026-06-27",
+    "missable": "Tem perdíveis por pontos de não retorno, finais, barra da Lily, side quests e coletáveis bloqueáveis.",
+    "missable_summary": "13 troféus marcados como perdíveis ou risco de rota: Brute, Behemoth, Abyss Levoire, os três finais, Can Collector, Records Collector, Naytiba Researcher, Meticulous Explorer, Beyond Fate, Sisterly Love e Beep!. Outros objetivos também podem gerar retrabalho se o jogador ignorar os pontos de não retorno.",
+    "name": "Stellar Blade",
+    "online_summary": "Online: 0. A lista base é totalmente offline e não exige servidores, PS Plus, multiplayer ou recursos online para a platina.",
+    "quality_warnings": "[object Object]",
+    "reviewed_by": "AtlasAchievement Editorial",
+    "runs_summary": "Duas jogadas são o caminho recomendado: primeira rota completa para Making New Memories e Return to the Colony, depois NG+ rápido para Cost of Lost Memories.",
+    "slug": "stellar-blade",
+    "time": "40-50h",
+    "time_bucket": "medium",
+    "time_max_hours": 50,
+    "time_min_hours": 40,
+    "time_reason": "40-50h com checklist organizado, primeira jogada completa e NG+ rápido para o final restante.",
+    "time_sort_hours": 40,
+    "updated_at": "2026-06-28 04:00:39",
+    "verification_note": "Guia validado para a lista base PS5: 43 troféus, distribuição 1/3/12/27, 40-50h, 3/10 no Story Mode, online 0, coop 0, troféus por dificuldade 0, DLC separado, dois pontos de não retorno, três finais e EN/PT-BR em todos os troféus.",
+    "verification_status": "verified",
+    "walkthrough": null
+  },
+  "redirects": [
+    "stellar-blade-guia",
+    "stellar-blade-ps5"
+  ],
+  "roadmaps": [
+    {
+      "content": "{\"number\":1,\"title\":\"Primeira jogada completa até Abyss Levoire\",\"category\":{\"id\":\"collectibles\",\"label\":\"Coletáveis\",\"icon\":\"fa-map-pin\",\"tone\":\"neutral\"},\"description\":\"Jogar no Story Mode ou configuração desejada, fazendo side quests e coleta conforme aparecem.\",\"objective\":\"Jogar no Story Mode ou configuração desejada, fazendo side quests e coleta conforme aparecem.\",\"focus\":\"Abrir a rota principal e reduzir o risco do primeiro ponto de não retorno.\",\"actions\":[\"Colete documents, memorysticks, passcodes, cans, Nano Suits, peixes, caixas, Camps e Naytiba Data pelo caminho.\",\"Trabalhe perfect dodge, perfect parry, executions, Beta Skills, Burst Skills, Tachy Mode e ranged attacks naturalmente.\",\"Antes de avançar depois de Abyss Levoire, conclua side quests disponíveis, Xion Collectibles e conteúdo pendente de Xion.\",\"Mantenha atenção especial a Bulletin Board Requests e linhas secundárias que nascem em Xion.\"],\"warning\":\"Abyss Levoire leva ao primeiro ponto de não retorno e pode bloquear parte de Xion.\",\"note\":\"\",\"result\":\"Base da platina encaminhada e risco de perder Xion reduzido.\",\"risk\":\"Abyss Levoire leva ao primeiro ponto de não retorno e pode bloquear parte de Xion.\",\"relatedTrophies\":[],\"isStructured\":true}",
+      "step_order": 1
+    },
+    {
+      "content": "{\"number\":2,\"title\":\"Antes de Spire 4: completar rota da Lily\",\"category\":{\"id\":\"story\",\"label\":\"História\",\"icon\":\"fa-book-open\",\"tone\":\"soft\"},\"description\":\"Buscar 100% da barra da Lily, fazer side quests, requests e coletáveis, e garantir acesso a Eidos 9.\",\"objective\":\"Buscar 100% da barra da Lily, fazer side quests, requests e coletáveis, e garantir acesso a Eidos 9.\",\"focus\":\"Preparar Making New Memories na primeira jogada.\",\"actions\":[\"Priorize documentos, memorysticks e side quests que aumentam a barra da Lily.\",\"Continue Data Bank, cans, Nano Suits, Camps, boxes, Naytiba Data e upgrades.\",\"Deixe Cost of Lost Memories para New Game+, mantendo a primeira jogada focada em Lily 100%.\",\"Revise Can Collector, Nano Suit Collector, Records Collector, Lonely Fisherman e Box Hunter antes de seguir.\"],\"warning\":\"Making New Memories exige Lily em 100%; Cost of Lost Memories exige Lily abaixo de 100% e combina melhor com NG+.\",\"note\":\"\",\"result\":\"Rota completa para Making New Memories preparada.\",\"risk\":\"Making New Memories exige Lily em 100%; Cost of Lost Memories exige Lily abaixo de 100% e combina melhor com NG+.\",\"relatedTrophies\":[],\"isStructured\":true}",
+      "step_order": 2
+    },
+    {
+      "content": "{\"number\":3,\"title\":\"Spire 4 e segundo ponto de não retorno\",\"category\":{\"id\":\"cleanup\",\"label\":\"Cleanup\",\"icon\":\"fa-broom\",\"tone\":\"neutral\"},\"description\":\"Antes de falar com Lily para a área final, concluir tudo que faltar no mundo.\",\"objective\":\"Antes de falar com Lily para a área final, concluir tudo que faltar no mundo.\",\"focus\":\"Fechar cleanup antes da área final.\",\"actions\":[\"Finalize requests, side quests, coletáveis e troféus de combate acumulativo.\",\"Conferir Naytiba Researcher e Meticulous Explorer considerando que alguns dados e Camps finais vêm na reta final.\",\"Maximize Blood Edge, Rechargeable Tumbler, HP, Beta Energy e Exospines conforme seus materiais permitirem.\",\"Use PS+ Cloud Save antes da decisão final se quiser reduzir retrabalho.\"],\"warning\":\"Após Spire 4 não há free roam, level select ou volta ao mundo para cleanup.\",\"note\":\"\",\"result\":\"Primeira jogada pronta para finais e cleanup mínimo.\",\"risk\":\"Após Spire 4 não há free roam, level select ou volta ao mundo para cleanup.\",\"relatedTrophies\":[],\"isStructured\":true}",
+      "step_order": 3
+    },
+    {
+      "content": "{\"number\":4,\"title\":\"Finais da primeira jogada\",\"category\":{\"id\":\"plan\",\"label\":\"Plano\",\"icon\":\"fa-route\",\"tone\":\"soft\"},\"description\":\"Obter Making New Memories e Return to the Colony com reload ou backup quando possível.\",\"objective\":\"Obter Making New Memories e Return to the Colony com reload ou backup quando possível.\",\"focus\":\"Obter dois finais com a rota de Lily completa.\",\"actions\":[\"Para Making New Memories, mantenha Lily em 100%, visite Eidos 9 antes de Spire 4 e pegue a mão de Adam.\",\"Para Return to the Colony, recuse a mão de Adam na decisão final.\",\"Faça PS+ Cloud Save antes da decisão final se o recurso estiver disponível.\",\"Evite depender de save manual: Stellar Blade usa apenas um autosave.\"],\"warning\":\"Se morrer no chefe final, pode perder a chance de trocar escolha sem backup.\",\"note\":\"\",\"result\":\"Dois finais concluídos se o backup ou reload funcionar.\",\"risk\":\"Se morrer no chefe final, pode perder a chance de trocar escolha sem backup.\",\"relatedTrophies\":[],\"isStructured\":true}",
+      "step_order": 4
+    },
+    {
+      "content": "{\"number\":5,\"title\":\"New Game+ para Cost of Lost Memories\",\"category\":{\"id\":\"story\",\"label\":\"História\",\"icon\":\"fa-book-open\",\"tone\":\"soft\"},\"description\":\"Iniciar NG+, manter Lily abaixo de 100%, ir direto para Spire 4 e aceitar a mão de Adam.\",\"objective\":\"Iniciar NG+, manter Lily abaixo de 100%, ir direto para Spire 4 e aceitar a mão de Adam.\",\"focus\":\"Concluir o final restante sem misturar troféus de DLC.\",\"actions\":[\"Evite coletáveis, documents, memorysticks e side quests desnecessárias.\",\"Não vá para Eidos 9 nessa rota.\",\"Siga para Spire 4 com a barra da Lily abaixo de 100%.\",\"Na decisão final, pegue a mão de Adam para obter Cost of Lost Memories.\"],\"warning\":\"Repeating Protocols, Infinite Blade e skills de New Game+ DLC não entram na platina base.\",\"note\":\"\",\"result\":\"Cost of Lost Memories concluído e platina EVE Protocol desbloqueada.\",\"risk\":\"Repeating Protocols, Infinite Blade e skills de New Game+ DLC não entram na platina base.\",\"relatedTrophies\":[],\"isStructured\":true}",
+      "step_order": 5
+    }
+  ],
+  "schemaVersion": 1,
+  "seedExtras": {
+    "aliases": [
+      "stellar-blade-ps5",
+      "stellar blade ps5",
+      "stellar blade guia"
+    ],
+    "attentionPoints": [
+      {
+        "detail": "Após Abyss Levoire, Xion e parte das side quests/coletáveis ficam bloqueados; após Spire 4, não há retorno ao mundo.",
+        "tags": [
+          "Perdíveis",
+          "Rota"
+        ],
+        "title": "Dois pontos de não retorno",
+        "type": "Perdíveis"
+      },
+      {
+        "detail": "A platina exige Return to the Colony, Making New Memories e Cost of Lost Memories.",
+        "tags": [
+          "Finais",
+          "Spoiler"
+        ],
+        "title": "Três finais obrigatórios",
+        "type": "Finais"
+      },
+      {
+        "detail": "Making New Memories exige Lily em 100%; Cost of Lost Memories exige Lily abaixo de 100%.",
+        "tags": [
+          "Rota",
+          "Lily"
+        ],
+        "title": "Barra da Lily",
+        "type": "Rota"
+      },
+      {
+        "detail": "O jogo usa apenas 1 autosave. PS+ Cloud Save antes da decisão final pode reduzir retrabalho.",
+        "tags": [
+          "Autosave",
+          "Backup"
+        ],
+        "title": "Sem save manual",
+        "type": "Save"
+      },
+      {
+        "detail": "Faça cleanup antes de avançar para a área final; depois não há exploração livre.",
+        "tags": [
+          "Cleanup",
+          "Ponto de não retorno"
+        ],
+        "title": "Sem free roam após história",
+        "type": "Cleanup"
+      },
+      {
+        "detail": "Repeating Protocols e Infinite Blade são troféus de DLC/New Game+ e não entram nos 43 troféus base.",
+        "tags": [
+          "DLC separado",
+          "Base"
+        ],
+        "title": "DLC/New Game+ separado",
+        "type": "DLC separado"
+      },
+      {
+        "detail": "Tudo pode ser feito no Story Mode. Não use tag Dificuldade em troféus individuais.",
+        "tags": [
+          "Story Mode",
+          "Base"
+        ],
+        "title": "Dificuldade não afeta troféus",
+        "type": "Acessibilidade"
+      }
+    ],
+    "checklist": [
+      "Confirmar que a lista base possui 43 troféus: 1 platina, 3 ouro, 12 prata e 27 bronze.",
+      "Fazer primeira jogada completa com Lily em 100% para Eidos 9 e Making New Memories.",
+      "Usar reload/PS+ Cloud Save para Return to the Colony quando possível.",
+      "Fazer NG+ rápido mantendo Lily abaixo de 100% para Cost of Lost Memories.",
+      "Concluir side quests de Enya/Su, Kaya e D1G-g2r antes da reta final.",
+      "Coletar todas as latas, 30 Nano Suits, 200 Data Bank entries, 20 peixes, 200 caixas, Naytiba Data e todos os Camps.",
+      "Maximizar 10 Exospines, Blood Edge, Rechargeable Tumbler, HP e Beta Energy.",
+      "Aprender as 96 skills do jogo base para Thorough Technician.",
+      "Acumular perfect dodge, perfect parry, executions, Beta Skills, Burst Skills, Tachy Mode, ranged attacks e 1.500 inimigos.",
+      "Não incluir Repeating Protocols, Infinite Blade ou skills de New Game+ DLC na platina base."
+    ],
+    "faq": [
+      {
+        "answer": "Não. A lista base é totalmente offline.",
+        "question": "Stellar Blade tem troféus online?"
+      },
+      {
+        "answer": "Não.",
+        "question": "Tem coop?"
+      },
+      {
+        "answer": "Não. Tudo pode ser feito no Story Mode.",
+        "question": "A dificuldade afeta troféus?"
+      },
+      {
+        "answer": "Duas jogadas são o caminho recomendado, porque Making New Memories e Cost of Lost Memories dependem de condições opostas da barra da Lily.",
+        "question": "Quantas jogadas são necessárias?"
+      },
+      {
+        "answer": "Sim. Há dois pontos de não retorno e vários troféus podem ser perdidos dentro da jogada se você avançar sem concluir side quests, coletáveis e finais.",
+        "question": "Tem troféus perdíveis?"
+      },
+      {
+        "answer": "Não. Depois de avançar para a área final, você não consegue voltar ao mundo para cleanup.",
+        "question": "Existe free roam depois da história?"
+      },
+      {
+        "answer": "O primeiro ocorre após Abyss Levoire e bloqueia parte de Xion; o segundo ocorre após Spire 4, antes da área final.",
+        "question": "Quais são os pontos de não retorno?"
+      },
+      {
+        "answer": "Eidos 9 depende de Lily chegar a 100% antes de Spire 4. Faça side quests e colete documents/memorysticks para aumentar a barra.",
+        "question": "Como libero Eidos 9?"
+      },
+      {
+        "answer": "Mantenha Lily abaixo de 100%, não vá para Eidos 9, siga direto para Spire 4 e aceite a mão de Adam no final.",
+        "question": "Como faço Cost of Lost Memories?"
+      },
+      {
+        "answer": "Não. Repeating Protocols e Infinite Blade são separados e não entram na platina base.",
+        "question": "Preciso dos troféus de New Game+ DLC?"
+      },
+      {
+        "answer": "Não. Thorough Technician exige apenas as 96 skills do jogo base.",
+        "question": "Preciso das skills de New Game+ para Thorough Technician?"
+      },
+      {
+        "answer": "Não. Há apenas 1 autosave. Use backup na nuvem, se possível, antes da decisão final.",
+        "question": "O jogo tem save manual?"
+      }
+    ],
+    "note": "Campos exportados para auditoria. O SQLite atual nao possui colunas nativas para todos esses extras; a importacao preserva o que o banco suporta.",
+    "quickDecision": {
+      "firstAction": "Comece no Story Mode se quiser reduzir execução, acompanhe Xion e coletáveis desde a primeira visita.",
+      "recommendation": "Boa escolha se você seguir roadmap desde cedo e separar jogo base de DLC/New Game+ DLC.",
+      "risk": "O risco real é avançar depois de Abyss Levoire ou Spire 4 sem limpar side quests, coletáveis e rota da Lily.",
+      "summary": "Platina PS5 de 40-50h, 3/10 no Story Mode, 43 troféus base, offline, solo, com perdíveis e dois pontos de não retorno."
+    },
+    "seo": {
+      "description": "Guia PT-BR da platina base de Stellar Blade no PS5: 43 troféus, 40-50h, Story Mode, finais, Lily, pontos de não retorno, coletáveis e NG+.",
+      "keywords": "Stellar Blade troféus, Stellar Blade platina, guia Stellar Blade PS5, EVE Protocol, Lily 100%, Cost of Lost Memories, Making New Memories",
+      "title": "Stellar Blade — guia de platina PS5, troféus e roadmap"
+    },
+    "tags": [
+      "PS5",
+      "Offline",
+      "Solo",
+      "Tem perdíveis",
+      "Pontos de não retorno",
+      "New Game+",
+      "Sem free roam após história",
+      "Autosave",
+      "Base sem DLC"
+    ]
+  },
+  "slug": "stellar-blade",
+  "trophies": [
+    {
+      "description": "Conquiste todos os troféus da lista base de Stellar Blade.",
+      "is_missable": 0,
+      "is_spoiler": 0,
+      "name": "EVE Protocol",
+      "name_pt": "Protocolo EVE",
+      "tip": "A platina cobre apenas os 43 troféus base. Repeating Protocols e Infinite Blade ficam fora deste guia.",
+      "trophy_code": "sb_eve_protocol",
+      "type": "Platina"
+    },
+    {
+      "description": "Ative o primeiro Camp durante a história.",
+      "is_missable": 0,
+      "is_spoiler": 1,
+      "name": "Camp Preparation",
+      "name_pt": "Preparação de Acampamento",
+      "tip": "Troféu automático de progresso. Continue a rota principal até o primeiro Camp.",
+      "trophy_code": "sb_camp_preparation",
+      "type": "Bronze"
+    },
+    {
+      "description": "Derrote Abaddon na história principal.",
+      "is_missable": 0,
+      "is_spoiler": 1,
+      "name": "Abaddon",
+      "name_pt": "Abaddon",
+      "tip": "Chefe obrigatório da campanha. Use o encontro para praticar perfect dodge e perfect parry.",
+      "trophy_code": "sb_abaddon",
+      "type": "Bronze"
+    },
+    {
+      "description": "Derrote Corrupter na história principal.",
+      "is_missable": 0,
+      "is_spoiler": 1,
+      "name": "Corrupter",
+      "name_pt": "Corruptor",
+      "tip": "Progresso obrigatório. Mantenha distância quando a arena ficar tomada por ácido.",
+      "trophy_code": "sb_corrupter",
+      "type": "Bronze"
+    },
+    {
+      "description": "Derrote Gigas na história principal.",
+      "is_missable": 0,
+      "is_spoiler": 1,
+      "name": "Gigas",
+      "name_pt": "Gigas",
+      "tip": "Leia os ataques amplos e aproveite janelas de contra-ataque para carregar Beta Energy.",
+      "trophy_code": "sb_gigas",
+      "type": "Bronze"
+    },
+    {
+      "description": "Vença Brute em conteúdo opcional.",
+      "is_missable": 1,
+      "is_spoiler": 0,
+      "name": "Brute",
+      "name_pt": "Bruto",
+      "tip": "Conclua a side quest ligada ao confronto antes de avançar para a área final.",
+      "trophy_code": "sb_brute",
+      "type": "Bronze"
+    },
+    {
+      "description": "Conclua Altess Levoire na história principal.",
+      "is_missable": 0,
+      "is_spoiler": 1,
+      "name": "Altess Levoire",
+      "name_pt": "Altess Levoire",
+      "tip": "Marco obrigatório de campanha. Revise upgrades e recursos antes de entrar.",
+      "trophy_code": "sb_altess_levoire",
+      "type": "Bronze"
+    },
+    {
+      "description": "Derrote Stalker na história principal.",
+      "is_missable": 0,
+      "is_spoiler": 1,
+      "name": "Stalker",
+      "name_pt": "Perseguidor",
+      "tip": "Chefe obrigatório. Use esquiva perfeita para abrir boas janelas de dano.",
+      "trophy_code": "sb_stalker",
+      "type": "Bronze"
+    },
+    {
+      "description": "Derrote Juggernaut na história principal.",
+      "is_missable": 0,
+      "is_spoiler": 1,
+      "name": "Juggernaut",
+      "name_pt": "Juggernaut",
+      "tip": "Mantenha pressão controlada e aproveite Beta Skills quando o chefe ficar vulnerável.",
+      "trophy_code": "sb_juggernaut",
+      "type": "Bronze"
+    },
+    {
+      "description": "Derrote Tachy na história principal.",
+      "is_missable": 0,
+      "is_spoiler": 1,
+      "name": "Tachy",
+      "name_pt": "Tachy",
+      "tip": "Chefe obrigatório e ponto narrativo importante. Prepare curas antes do confronto.",
+      "trophy_code": "sb_tachy",
+      "type": "Bronze"
+    },
+    {
+      "description": "Vença Behemoth em conteúdo opcional.",
+      "is_missable": 1,
+      "is_spoiler": 0,
+      "name": "Behemoth",
+      "name_pt": "Behemoth",
+      "tip": "Resolva a questline correspondente antes do segundo ponto de não retorno.",
+      "trophy_code": "sb_behemoth",
+      "type": "Bronze"
+    },
+    {
+      "description": "Conclua Abyss Levoire na história principal.",
+      "is_missable": 1,
+      "is_spoiler": 1,
+      "name": "Abyss Levoire",
+      "name_pt": "Abyss Levoire",
+      "tip": "Depois deste trecho, parte de Xion e de suas pendências fica bloqueada. Revise Xion antes de prosseguir.",
+      "trophy_code": "sb_abyss_levoire",
+      "type": "Bronze"
+    },
+    {
+      "description": "Derrote Belial na história principal.",
+      "is_missable": 0,
+      "is_spoiler": 1,
+      "name": "Belial",
+      "name_pt": "Belial",
+      "tip": "Progresso obrigatório após o primeiro ponto de não retorno.",
+      "trophy_code": "sb_belial",
+      "type": "Bronze"
+    },
+    {
+      "description": "Derrote Karakuri na história principal.",
+      "is_missable": 0,
+      "is_spoiler": 1,
+      "name": "Karakuri",
+      "name_pt": "Karakuri",
+      "tip": "Chefe obrigatório. Entre com itens de cura e munição do Drone abastecida.",
+      "trophy_code": "sb_karakuri",
+      "type": "Bronze"
+    },
+    {
+      "description": "Derrote Demogorgon na história principal.",
+      "is_missable": 0,
+      "is_spoiler": 1,
+      "name": "Demogorgon",
+      "name_pt": "Demogorgon",
+      "tip": "Progresso de campanha na reta avançada. Controle espaço e finalize com Burst Skills quando possível.",
+      "trophy_code": "sb_demogorgon",
+      "type": "Bronze"
+    },
+    {
+      "description": "Derrote Raven na história principal.",
+      "is_missable": 0,
+      "is_spoiler": 1,
+      "name": "Raven",
+      "name_pt": "Raven",
+      "tip": "Confronto de reta final. Chegue com upgrades e itens resolvidos antes de entrar no fim.",
+      "trophy_code": "sb_raven",
+      "type": "Bronze"
+    },
+    {
+      "description": "Alcance um dos finais: Return to the Colony.",
+      "is_missable": 1,
+      "is_spoiler": 1,
+      "name": "Return to the Colony",
+      "name_pt": "Retorno à Colônia",
+      "tip": "Na decisão final, recuse a mão de Adam. Um backup antes da escolha pode reduzir retrabalho.",
+      "trophy_code": "sb_return_to_the_colony",
+      "type": "Ouro"
+    },
+    {
+      "description": "Alcance um dos finais: Cost of Lost Memories.",
+      "is_missable": 1,
+      "is_spoiler": 1,
+      "name": "Cost of Lost Memories",
+      "name_pt": "Custo das Memórias Perdidas",
+      "tip": "Mantenha Lily abaixo de 100%, não vá para Eidos 9 e aceite a mão de Adam na decisão final.",
+      "trophy_code": "sb_cost_of_lost_memories",
+      "type": "Ouro"
+    },
+    {
+      "description": "Alcance um dos finais: Making New Memories.",
+      "is_missable": 1,
+      "is_spoiler": 1,
+      "name": "Making New Memories",
+      "name_pt": "Criando Novas Memórias",
+      "tip": "Leve Lily a 100%, visite Eidos 9 antes de Spire 4 e aceite a mão de Adam na decisão final.",
+      "trophy_code": "sb_making_new_memories",
+      "type": "Ouro"
+    },
+    {
+      "description": "Colete todas as latas da lista base.",
+      "is_missable": 1,
+      "is_spoiler": 0,
+      "name": "Can Collector",
+      "name_pt": "Colecionadora de Latas",
+      "tip": "Use checklist por região e conclua antes de avançar para a área final.",
+      "trophy_code": "sb_can_collector",
+      "type": "Prata"
+    },
+    {
+      "description": "Obtenha 30 Nano Suits.",
+      "is_missable": 0,
+      "is_spoiler": 0,
+      "name": "Nano Suit Collector",
+      "name_pt": "Colecionadora de Nano Suits",
+      "tip": "Compre, encontre e conclua atividades de recompensa até chegar a 30 Nano Suits.",
+      "trophy_code": "sb_nano_suit_collector",
+      "type": "Prata"
+    },
+    {
+      "description": "Registre 200 entradas no Data Bank.",
+      "is_missable": 1,
+      "is_spoiler": 0,
+      "name": "Records Collector",
+      "name_pt": "Colecionadora de Registros",
+      "tip": "Colete documents, memorysticks, passcodes e registros pelo caminho, principalmente antes dos pontos de não retorno.",
+      "trophy_code": "sb_records_collector",
+      "type": "Prata"
+    },
+    {
+      "description": "Pesque 20 espécies diferentes para o checklist de coletáveis.",
+      "is_missable": 0,
+      "is_spoiler": 0,
+      "name": "Lonely Fisherman",
+      "name_pt": "Pescadora Solitária",
+      "tip": "Complete a cadeia de pesca e registre cada espécie antes da reta final.",
+      "trophy_code": "sb_lonely_fisherman",
+      "type": "Bronze"
+    },
+    {
+      "description": "Abra 200 caixas do checklist de coletáveis.",
+      "is_missable": 0,
+      "is_spoiler": 0,
+      "name": "Box Hunter",
+      "name_pt": "Caçadora de Caixas",
+      "tip": "Abra caixas em Xion, Wasteland, Great Desert e áreas principais conforme explora.",
+      "trophy_code": "sb_box_hunter",
+      "type": "Bronze"
+    },
+    {
+      "description": "Complete o Naytiba Data da lista base como checklist de coletáveis.",
+      "is_missable": 1,
+      "is_spoiler": 0,
+      "name": "Naytiba Researcher",
+      "name_pt": "Pesquisadora de Naytibas",
+      "tip": "Escaneie e enfrente as variantes necessárias; alguns registros vêm na reta final.",
+      "trophy_code": "sb_naytiba_researcher",
+      "type": "Prata"
+    },
+    {
+      "description": "Ative todos os Camps da lista base.",
+      "is_missable": 1,
+      "is_spoiler": 0,
+      "name": "Meticulous Explorer",
+      "name_pt": "Exploradora Meticulosa",
+      "tip": "Marque Camps por região e confira os Camps tardios antes do encerramento da rota.",
+      "trophy_code": "sb_meticulous_explorer",
+      "type": "Prata"
+    },
+    {
+      "description": "Aprimore 10 Exospines ao máximo.",
+      "is_missable": 0,
+      "is_spoiler": 0,
+      "name": "Perfect Exospine",
+      "name_pt": "Exospine Perfeito",
+      "tip": "Colete materiais e priorize Exospines úteis para combate e exploração antes da área final.",
+      "trophy_code": "sb_perfect_exospine",
+      "type": "Prata"
+    },
+    {
+      "description": "Aprimore a Blood Edge ao máximo.",
+      "is_missable": 0,
+      "is_spoiler": 0,
+      "name": "Perfect Blood Edge",
+      "name_pt": "Blood Edge Perfeita",
+      "tip": "Colete Weapon Cores e confira chefes/rotas principais antes de fechar a jogada.",
+      "trophy_code": "sb_perfect_blood_edge",
+      "type": "Prata"
+    },
+    {
+      "description": "Aprimore o Rechargeable Tumbler ao máximo.",
+      "is_missable": 0,
+      "is_spoiler": 0,
+      "name": "Perfect Rechargeable Tumbler",
+      "name_pt": "Tumbler Recarregável Perfeito",
+      "tip": "Colete Tumbler Expansion Modules durante exploração e side content.",
+      "trophy_code": "sb_perfect_rechargeable_tumbler",
+      "type": "Prata"
+    },
+    {
+      "description": "Aprimore o HP ao máximo.",
+      "is_missable": 0,
+      "is_spoiler": 0,
+      "name": "Perfect Physical Enhancement",
+      "name_pt": "Aprimoramento Físico Perfeito",
+      "tip": "Colete Body Cores e revise áreas abertas antes de Spire 4.",
+      "trophy_code": "sb_perfect_physical_enhancement",
+      "type": "Prata"
+    },
+    {
+      "description": "Aprimore a Beta Energy ao máximo.",
+      "is_missable": 0,
+      "is_spoiler": 0,
+      "name": "Perfect Beta Energy Enhancement",
+      "name_pt": "Aprimoramento Perfeito de Energia Beta",
+      "tip": "Colete Beta Cores e mantenha checklist por região.",
+      "trophy_code": "sb_perfect_beta_energy_enhancement",
+      "type": "Prata"
+    },
+    {
+      "description": "Aprenda as 96 skills do jogo base.",
+      "is_missable": 0,
+      "is_spoiler": 0,
+      "name": "Thorough Technician",
+      "name_pt": "Técnica Minuciosa",
+      "tip": "Use SP em todas as skills base. Skills de New Game+ DLC não contam para esta platina.",
+      "trophy_code": "sb_thorough_technician",
+      "type": "Prata"
+    },
+    {
+      "description": "Conclua a questline de Enya e Su.",
+      "is_missable": 1,
+      "is_spoiler": 0,
+      "name": "Beyond Fate",
+      "name_pt": "Além do Destino",
+      "tip": "Use como checklist de rota junto dos coletáveis bloqueáveis antes dos pontos de não retorno.",
+      "trophy_code": "sb_beyond_fate",
+      "type": "Prata"
+    },
+    {
+      "description": "Conclua a questline de Kaya.",
+      "is_missable": 1,
+      "is_spoiler": 0,
+      "name": "Sisterly Love",
+      "name_pt": "Amor de Irmã",
+      "tip": "Use como checklist de rota junto dos coletáveis bloqueáveis antes de perder acesso a pendências importantes.",
+      "trophy_code": "sb_sisterly_love",
+      "type": "Bronze"
+    },
+    {
+      "description": "Conclua a questline de D1G-g2r.",
+      "is_missable": 1,
+      "is_spoiler": 0,
+      "name": "Beep!",
+      "name_pt": "Beep!",
+      "tip": "Use como checklist de rota junto dos coletáveis bloqueáveis antes da reta final.",
+      "trophy_code": "sb_beep",
+      "type": "Bronze"
+    },
+    {
+      "description": "Realize 200 perfect dodges.",
+      "is_missable": 0,
+      "is_spoiler": 0,
+      "name": "Battlefield Martial Artist",
+      "name_pt": "Artista Marcial do Campo de Batalha",
+      "tip": "Pratique em inimigos comuns e chefes; o contador sobe naturalmente durante as rotas.",
+      "trophy_code": "sb_battlefield_martial_artist",
+      "type": "Bronze"
+    },
+    {
+      "description": "Realize 300 perfect parries.",
+      "is_missable": 0,
+      "is_spoiler": 0,
+      "name": "Agile Gladiator",
+      "name_pt": "Gladiadora Ágil",
+      "tip": "Use encontros seguros para treinar parry perfeito e acumular contador ao longo das duas jogadas.",
+      "trophy_code": "sb_agile_gladiator",
+      "type": "Bronze"
+    },
+    {
+      "description": "Realize 50 executions.",
+      "is_missable": 0,
+      "is_spoiler": 0,
+      "name": "Silent Executioner",
+      "name_pt": "Executora Silenciosa",
+      "tip": "Use aberturas de stun e inimigos menores para acumular executions sem pressa.",
+      "trophy_code": "sb_silent_executioner",
+      "type": "Bronze"
+    },
+    {
+      "description": "Elimine 100 Naytibas com Beta Skills.",
+      "is_missable": 0,
+      "is_spoiler": 0,
+      "name": "Naytiba Hunter",
+      "name_pt": "Caçadora de Naytibas",
+      "tip": "Use Beta Skills com frequência durante exploração e side content.",
+      "trophy_code": "sb_naytiba_hunter",
+      "type": "Bronze"
+    },
+    {
+      "description": "Elimine 50 inimigos com Burst Skills.",
+      "is_missable": 0,
+      "is_spoiler": 0,
+      "name": "Relentless Destroyer",
+      "name_pt": "Destruidora Implacável",
+      "tip": "Use Burst Skills contra grupos e inimigos resistentes para acumular naturalmente.",
+      "trophy_code": "sb_relentless_destroyer",
+      "type": "Bronze"
+    },
+    {
+      "description": "Elimine 50 inimigos com Tachy Mode.",
+      "is_missable": 0,
+      "is_spoiler": 0,
+      "name": "Revenging Agent",
+      "name_pt": "Agente Vingadora",
+      "tip": "Ative Tachy Mode em lutas com grupos e continue acumulando durante NG+ se faltar.",
+      "trophy_code": "sb_revenging_agent",
+      "type": "Bronze"
+    },
+    {
+      "description": "Elimine 150 inimigos com ataques à distância.",
+      "is_missable": 0,
+      "is_spoiler": 0,
+      "name": "Cold-blooded Sniper",
+      "name_pt": "Atiradora de Sangue-Frio",
+      "tip": "Use o Drone sempre que houver munição e alvos seguros.",
+      "trophy_code": "sb_cold_blooded_sniper",
+      "type": "Bronze"
+    },
+    {
+      "description": "Elimine 1.500 inimigos.",
+      "is_missable": 0,
+      "is_spoiler": 0,
+      "name": "Cruel Liberator",
+      "name_pt": "Libertadora Cruel",
+      "tip": "A contagem acumula ao longo das rotas, cleanup e NG+.",
+      "trophy_code": "sb_cruel_liberator",
+      "type": "Bronze"
+    }
+  ]
+}

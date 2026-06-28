@@ -1,20 +1,20 @@
 {
   "game": {
-    "avoid_if": "Evite se você não quer AKUMU Mode, speedrun, run sem upgrades ou troféus condicionais por capítulo.",
-    "before_you_start": "Leia o roadmap antes de jogar. The Evil Within tem troféus de run, speedrun e AKUMU Mode, então planejamento reduz muito retrabalho.",
-    "best_for": "Ideal para quem quer uma platina survival horror difícil, tensa, com múltiplas runs e desafio real.",
-    "cleanup_advice": "Depois da primeira run, use Chapter Select/NG+ conforme permitido para fechar coletáveis, lockers, upgrades e troféus de capítulo antes das runs restritivas.",
-    "cover_image": "https://cdn.cloudflare.steamstatic.com/steam/apps/268050/library_600x900.jpg",
-    "coverage_level": "strong",
+    "avoid_if": "Evite se você não quer repetir capítulos/runs ou se a ideia de morrer em um hit no AKUMU parece frustrante demais.",
+    "before_you_start": "Guia validado para The Evil Within base no PS3/PS4: 42 troféus, com distribuição 1 Platina, 4 Ouro, 9 Prata e 28 Bronze.\n\nDificuldade editorial 8.5/10 e tempo estimado de 35-50h. A platina é totalmente offline, solo, sem troféus online, sem coop e sem DLC obrigatório.\n\nPerdíveis definitivos: 0. Depois de terminar a história, o Chapter Select fica disponível e o progresso de coletáveis/lockers carrega para New Game+, então falhas de capítulo podem ser recuperadas.\n\nRisco de capítulo: alto. Alguns troféus exigem ações específicas em capítulos, speedrun ou restrições de run; trate esses pontos como checklist por capítulo e use Chapter Select/NG+ para limpeza.\n\nA dificuldade afeta troféus. Apenas First Step into Darkness, Another Day on the Job, Master of Horror e You Asked For It devem aparecer no filtro Dificuldade.",
+    "best_for": "Ideal para quem quer survival horror offline difícil, com rota de aprendizado, limpeza por capítulos e desafio alto em AKUMU.",
+    "cleanup_advice": "Depois da campanha, use Chapter Select e New Game+ para coletáveis, lockers, kills situacionais e upgrades antes de entrar nas runs de restrição e AKUMU.",
+    "cover_image": "https://cdn.cloudflare.steamstatic.com/steam/apps/268050/header.jpg",
+    "coverage_level": "complete",
     "created_at": "2026-05-09 19:53:49",
-    "difficulty": 8,
-    "difficulty_reason": "A dificuldade vem principalmente do AKUMU Mode, onde qualquer golpe mata, além de recursos limitados, checkpoints tensos e capítulos muito punitivos.",
-    "dlc_scope": "Guia focado na lista base da platina; The Assignment, The Consequence e The Executioner devem ficar separados se o projeto suportar DLC/add-ons.",
-    "editorial_notes": "",
-    "editorial_review_status": null,
+    "difficulty": 8.5,
+    "difficulty_reason": "8.5/10: a platina é puxada principalmente por AKUMU, speedrun abaixo de 5 horas, run sem upgrades e execução de capítulos específicos.",
+    "dlc_scope": "Base game sem DLCs. The Assignment, The Consequence e The Executioner são listas separadas e não contam para a platina base.",
+    "editorial_notes": "Correção restrita ao guia base de The Evil Within. What’s In The Box?! incluído como troféu oficial e duplicação de Master of Horror rejeitada.",
+    "editorial_review_status": "verified",
     "editorial_status": "published",
-    "first_run_advice": "Use a primeira run para aprender capítulos, inimigos, armadilhas e coletar o máximo possível sem se preocupar com AKUMU.",
-    "grind_summary": "O peso está em coletáveis, lockers, upgrades, troféus condicionais de capítulos, speedrun e AKUMU Mode.",
+    "first_run_advice": "Comece em Casual ou Survival com checklist de coletáveis/chaves por capítulo. Não trate troféus de capítulo como perdidos para sempre: anote e limpe por Chapter Select depois.",
+    "grind_summary": "Grind moderado de gel verde, kills acumulativas e lockers. O gargalo real é execução em AKUMU e rotas de run.",
     "guide_avoid": null,
     "guide_best_moment": null,
     "guide_dlc": null,
@@ -23,56 +23,48 @@
     "guide_online": null,
     "guide_runs": null,
     "image": "https://cdn.cloudflare.steamstatic.com/steam/apps/268050/header.jpg",
-    "is_verified": 0,
-    "last_reviewed_at": "",
-    "missable": "Há muitos troféus de atenção por capítulo e por run. Chapter Select/NG+ ajuda no cleanup, mas speedrun, run sem upgrades, coletáveis, lockers e objetivos específicos exigem planejamento.",
-    "missable_summary": "Há muitos troféus de atenção por capítulo e por run. Chapter Select/NG+ ajuda no cleanup, mas speedrun, run sem upgrades, coletáveis, lockers e objetivos específicos exigem planejamento.",
+    "is_verified": 1,
+    "last_reviewed_at": "2026-06-27",
+    "missable": "0 perdíveis definitivos. Sem perdíveis definitivos / riscos de capítulo: Chapter Select libera após terminar a história e o progresso de coletáveis/lockers carrega para New Game+, mas há alto risco de capítulo.",
+    "missable_summary": "Perdíveis definitivos: 0. O Atlas marca troféus de oportunidade como Risco de Capítulo/Chapter Select, não como missable, porque podem ser recuperados por replay de capítulo ou NG+.",
     "name": "The Evil Within",
-    "online_summary": "Não há exigência online para a platina da lista base.",
+    "online_summary": "Online: 0. A platina base é totalmente offline e não exige servidores, multiplayer ou PS Plus.",
     "quality_warnings": "[]",
-    "reviewed_by": "",
-    "runs_summary": "A platina exige múltiplas runs, incluindo coletáveis/upgrades, speedrun, run sem upgrades e AKUMU Mode.",
+    "reviewed_by": "AtlasAchievement Editorial",
+    "runs_summary": "Recomendado várias runs. Use a primeira para campanha/coletáveis, depois Chapter Select/NG+ para limpeza e upgrades, separe as restrições quando necessário e finalize AKUMU.",
     "slug": "the-evil-within",
-    "time": "40-60h",
+    "time": "35-50h",
     "time_bucket": "medium",
-    "time_max_hours": 60,
-    "time_min_hours": 40,
-    "time_reason": "A faixa de 40-60 horas considera múltiplas runs, coletáveis, lockers, upgrades, speedrun, run sem upgrades e AKUMU Mode.",
-    "time_sort_hours": 40,
-    "updated_at": "2026-06-27 02:36:58",
-    "verification_note": "Guia público seed-managed com checklist base e roadmap; aguardando revisão editorial manual final.",
-    "verification_status": "review",
+    "time_max_hours": 50,
+    "time_min_hours": 35,
+    "time_reason": "35-50h com campanha inicial, limpeza por Chapter Select/NG+, upgrades, coletáveis, run de restrição/speedrun e AKUMU.",
+    "time_sort_hours": 35,
+    "updated_at": "2026-06-28 04:00:39",
+    "verification_note": "Guia validado para a lista base PS3/PS4: 42 troféus, distribuição 1/4/9/28, 35-50h, 8.5/10, online 0, coop 0, missable 0, Chapter Select, New Game+ recomendado, DLC fora do escopo e quatro troféus de dificuldade.",
+    "verification_status": "verified",
     "walkthrough": null
   },
   "redirects": [],
   "roadmaps": [
     {
-      "content": "{\"title\":\"Avance pela campanha\",\"focus\":\"\",\"objective\":\"faça a primeira run em Casual/Survival para aprender capítulos, inimigos e armadilhas, coletando documentos, map fragments, jornais, posters, audio tapes e locker keys sempre que possível.\",\"actions\":[],\"warning\":\"\",\"result\":\"\"}",
+      "content": "{\"title\":\"Primeira run: Survival/Casual, coletáveis e aprendizado\",\"focus\":\"Campanha base\",\"objective\":\"Complete a campanha, aprenda capítulos, inimigos, armadilhas e colete o máximo possível dos 106 coletáveis e locker keys. Faça troféus de capítulo quando conveniente, mas não se preocupe se algo ficar para trás.\",\"actions\":[\"Jogar em Casual ou Survival.\",\"Usar checklist de coletáveis e locker keys.\",\"Anotar troféus de capítulo que ficarem pendentes.\"],\"warning\":\"Não comece um jogo totalmente novo se quiser preservar progresso de coletáveis. Use New Game+ ou Chapter Select depois de zerar.\",\"result\":\"História concluída, Chapter Select liberado e base da platina encaminhada.\"}",
       "step_order": 1
     },
     {
-      "content": "{\"title\":\"Limpe coletáveis por seleção de capítulos\",\"focus\":\"\",\"objective\":\"use Chapter Select/NG+ conforme permitido para limpar coletáveis, lockers, upgrades, armas e troféus específicos de capítulos antes das runs restritivas.\",\"actions\":[],\"warning\":\"\",\"result\":\"\"}",
+      "content": "{\"title\":\"Chapter Select / NG+ para coletáveis e troféus de capítulo\",\"focus\":\"Limpeza\",\"objective\":\"Use Chapter Select e New Game+ para recuperar coletáveis, locker keys e troféus específicos de capítulo.\",\"actions\":[\"Limpar Every Nook and Cranny.\",\"Concluir Master of Unlocking.\",\"Refazer capítulos com condições específicas.\"],\"warning\":\"Locker keys não contam para Every Nook and Cranny. Se morrer depois de pegar uma key antes do checkpoint, pegue novamente.\",\"result\":\"Every Nook and Cranny, Master of Unlocking e troféus de capítulo ficam concluídos.\"}",
       "step_order": 2
     },
     {
-      "content": "{\"title\":\"Limpe pendências antes do NG+\",\"focus\":\"\",\"objective\":\"faça a speedrun abaixo de 5 horas em uma rota planejada, preferencialmente no Casual/NG+ com recursos e skips dominados.\",\"actions\":[],\"warning\":\"\",\"result\":\"\"}",
+      "content": "{\"title\":\"New Game+, upgrades e arsenal\",\"focus\":\"Upgrades\",\"objective\":\"Feche upgrades de atributos, armas, stock, Agony Bolt e kills acumulativas.\",\"actions\":[\"Gastar gel verde nos upgrades planejados.\",\"Maximizar armas e capacidades de munição.\",\"Aproveitar runs extras para kills acumulativas.\"],\"warning\":\"Não misture esta etapa com a run sem upgrades.\",\"result\":\"Bloco de upgrades, armas e combate acumulativo concluído.\"}",
       "step_order": 3
     },
     {
-      "content": "{\"title\":\"Prossiga pela rota planejada\",\"focus\":\"\",\"objective\":\"complete uma run sem upgrades de Green Gel para It Is What It Is, separando essa rota dos troféus de upgrade.\",\"actions\":[],\"warning\":\"\",\"result\":\"\"}",
+      "content": "{\"title\":\"Runs de restrição e speedrun\",\"focus\":\"Runs dedicadas\",\"objective\":\"Concluir It Is What It Is sem upgrades e The Quick and the Dead abaixo de 5 horas.\",\"actions\":[\"Separar uma run sem upgrades.\",\"Planejar uma rota abaixo de 5 horas.\",\"Usar dificuldade baixa ou NG+ quando a estratégia permitir.\"],\"warning\":\"O upgrade obrigatório do tutorial não invalida It Is What It Is. Planeje a speedrun em dificuldade baixa ou NG+ conforme estratégia.\",\"result\":\"Troféus de restrição e tempo concluídos.\"}",
       "step_order": 4
     },
     {
-      "content": "{\"title\":\"conclua Nightmare se ainda precisar consolidar troféus de dif...\",\"focus\":\"\",\"objective\":\"conclua Nightmare se ainda precisar consolidar troféus de dificuldade e preparar conhecimento para AKUMU.\",\"actions\":[],\"warning\":\"\",\"result\":\"\"}",
+      "content": "{\"title\":\"Nightmare, AKUMU e platina\",\"focus\":\"Dificuldade final\",\"objective\":\"Concluir Nightmare para Master of Horror e AKUMU para You Asked For It.\",\"actions\":[\"Memorizar rotas, armadilhas e spawns.\",\"Jogar AKUMU com checkpoints bem planejados.\",\"Conferir os quatro troféus de dificuldade.\"],\"warning\":\"AKUMU é o maior gargalo da platina: qualquer dano mata Sebastian.\",\"result\":\"Dificuldade final vencida e platina Pure Evil desbloqueada.\"}",
       "step_order": 5
-    },
-    {
-      "content": "{\"title\":\"Limpe pendências antes do NG+\",\"focus\":\"\",\"objective\":\"finalize AKUMU Mode para You Asked For It, jogando de forma conservadora porque qualquer golpe mata e a run não é NG+.\",\"actions\":[],\"warning\":\"\",\"result\":\"\"}",
-      "step_order": 6
-    },
-    {
-      "content": "{\"title\":\"Revise pendências finais\",\"focus\":\"\",\"objective\":\"faça o cleanup final de troféus condicionais, combate, chapter-specific, lockers e upgrades, mantendo The Assignment, The Consequence e The Executioner fora da lista base.\",\"actions\":[],\"warning\":\"\",\"result\":\"\"}",
-      "step_order": 7
     }
   ],
   "schemaVersion": 1,
@@ -85,61 +77,101 @@
     ],
     "attentionPoints": [
       {
-        "content": "O guia deve exibir missable 0. Trofeus de capitulo e coletaveis sao recuperaveis por Chapter Select e progresso em New Game+, entao entram como risco de capitulo/checklist.",
-        "title": "Sem perdiveis definitivos"
+        "content": "You Asked For It exige terminar AKUMU, onde qualquer dano mata Sebastian.",
+        "title": "AKUMU é o gargalo"
       },
       {
-        "content": "Nao ha mundo aberto livre depois da campanha. A limpeza e feita por selecao/replay de capitulos.",
-        "title": "Chapter Select nao e free roam"
+        "content": "Casual, Survival, Nightmare e AKUMU têm troféus próprios. Diferente de muitos guias do Atlas, aqui Dificuldade não deve ficar 0.",
+        "title": "Dificuldade afeta troféus"
       },
       {
-        "content": "Somente First Step into Darkness, Another Day on the Job, Master of Horror e You Asked For It devem carregar a tag Dificuldade.",
-        "title": "Dificuldade com filtro estrito"
+        "content": "Troféus de capítulo, coletáveis e keys podem ser recuperados via Chapter Select/NG+, então não trate tudo como perdido definitivo.",
+        "title": "Chapter Select após zerar"
       },
       {
-        "content": "The Assignment, The Consequence e The Executioner sao listas separadas e nao contam para a platina base.",
-        "title": "DLC fora do escopo"
+        "content": "Every Nook and Cranny exige 106 coletáveis; locker keys são para Master of Unlocking e não contam nesse troféu.",
+        "title": "Coletáveis e keys são categorias separadas"
+      },
+      {
+        "content": "Para preservar progresso de coletáveis, use New Game+ ou Chapter Select. Um jogo novo do zero pode apagar progresso.",
+        "title": "Não começar jogo totalmente novo"
+      },
+      {
+        "content": "The Assignment, The Consequence e The Executioner têm troféus próprios e não entram na platina base.",
+        "title": "DLC separado"
       }
     ],
     "checklist": [
-      "Confirmar lista base com 42 trofeus: 1 Platina, 4 Ouro, 9 Prata e 28 Bronze.",
+      "Confirmar lista base com 42 troféus: 1 Platina, 4 Ouro, 9 Prata e 28 Bronze.",
       "Manter online 0, coop 0 e DLC fora da platina.",
-      "Usar checklist de coletaveis/chaves desde a primeira run.",
-      "Tratar trofeus de oportunidade como Risco de capitulo/Chapter Select, nao como missable.",
+      "Usar checklist de coletáveis/chaves desde a primeira run.",
+      "Tratar troféus de oportunidade como Risco de Capítulo/Chapter Select, não como missable.",
       "Usar New Game+ para upgrades, lockers e limpeza.",
-      "Separar speedrun abaixo de 5h e run sem upgrades se necessario.",
-      "Finalizar Akumu por ultimo, com rotas e checkpoints conhecidos.",
+      "Separar speedrun abaixo de 5h e run sem upgrades se necessário.",
+      "Finalizar AKUMU por último, com rotas e checkpoints conhecidos.",
       "Garantir que o filtro Dificuldade contenha apenas First Step into Darkness, Another Day on the Job, Master of Horror e You Asked For It."
     ],
     "faq": [
       {
-        "answer": "Nao. O Atlas marca 0 perdiveis definitivos porque Chapter Select libera depois da campanha e os coletaveis/lockers podem ser limpos com progresso carregado para New Game+.",
-        "question": "The Evil Within tem trofeus perdiveis definitivos?"
+        "answer": "Não. A lista base é totalmente offline.",
+        "question": "The Evil Within tem troféus online?"
       },
       {
-        "answer": "Nao existe free roam tradicional. A limpeza e feita por Chapter Select, com replay de capitulos.",
-        "question": "Existe free roam apos terminar?"
+        "answer": "Não. A platina base é solo.",
+        "question": "Tem coop?"
       },
       {
-        "answer": "Planeje 3 ou mais runs: uma campanha de base/coletaveis, limpeza/NG+, run de restricao ou speedrun e Akumu.",
-        "question": "Quantas jogadas sao recomendadas?"
+        "answer": "Sim. Há troféus para Casual, Survival, Nightmare e AKUMU.",
+        "question": "A dificuldade afeta troféus?"
       },
       {
-        "answer": "Nao. The Assignment, The Consequence e The Executioner sao DLCs separados e ficam fora deste guia base.",
-        "question": "Os DLCs entram na platina?"
+        "answer": "Várias runs são recomendadas: primeira run de aprendizado e coleta, Chapter Select/NG+ para limpeza, uma run sem upgrades, uma speedrun e AKUMU.",
+        "question": "Quantas jogadas são necessárias?"
+      },
+      {
+        "answer": "Não há perda definitiva após zerar se você usar Chapter Select/NG+. Existem riscos de capítulo e de run, então mantenha checklist.",
+        "question": "Tem troféus perdíveis definitivos?"
+      },
+      {
+        "answer": "Sim. Chapter Select fica disponível após terminar o jogo.",
+        "question": "Existe Chapter Select?"
+      },
+      {
+        "answer": "Sim, o progresso pode ser preservado em New Game+. Evite começar um jogo totalmente novo do zero se quiser manter progresso de coletáveis.",
+        "question": "Coletáveis carregam para NG+?"
+      },
+      {
+        "answer": "Every Nook and Cranny exige 106 coletáveis: Personal Documents, Documents, Map Fragments, Newspapers, Missing Person Posters e Audio Tapes.",
+        "question": "Quantos coletáveis existem?"
+      },
+      {
+        "answer": "Não. Locker keys são para Master of Unlocking.",
+        "question": "Locker keys contam para Every Nook and Cranny?"
+      },
+      {
+        "answer": "Há 46 keys e 45 lockers. Existe uma key extra.",
+        "question": "Quantas locker keys existem?"
+      },
+      {
+        "answer": "Não. The Assignment, The Consequence e The Executioner têm listas separadas e não entram na platina base.",
+        "question": "Os DLCs são necessários para a platina?"
+      },
+      {
+        "answer": "Sim. You Asked For It exige completar AKUMU.",
+        "question": "AKUMU é obrigatório?"
       }
     ],
     "note": "Campos exportados para auditoria. O SQLite atual nao possui colunas nativas para todos esses extras; a importacao preserva o que o banco suporta.",
     "quickDecision": {
-      "firstAction": "Inicie uma run de coleta em Casual/Survival, registre capitulos pendentes e guarde Akumu para depois da limpeza.",
-      "recommendation": "Vale para quem aceita checklist por capitulo e multiplas runs. O jogo permite recuperar oportunidades, mas cobra execucao.",
-      "risk": "O risco real e confundir risco de capitulo com perdivel definitivo ou entrar em Akumu sem conhecer arenas e armadilhas.",
-      "summary": "Platina base PS3/PS4 de 35-50h, 8.5/10, 42 trofeus, offline, solo, missable 0, Chapter Select, NG+ recomendado e Akumu obrigatorio."
+      "firstAction": "Inicie uma run de coleta em Casual/Survival, registre capítulos pendentes e guarde AKUMU para depois da limpeza.",
+      "recommendation": "Vale para quem aceita checklist por capítulo e múltiplas runs. O jogo permite recuperar oportunidades, mas cobra execução.",
+      "risk": "O risco real é confundir risco de capítulo com perdível definitivo ou entrar em AKUMU sem conhecer arenas e armadilhas.",
+      "summary": "Platina base PS3/PS4 de 35-50h, 8.5/10, 42 troféus, offline, solo, missable 0, Chapter Select, NG+ recomendado e AKUMU obrigatório."
     },
     "seo": {
-      "description": "Guia PT-BR da platina de The Evil Within no PS3/PS4: 42 trofeus, 35-50h, 8.5/10, online 0, coop 0, missable 0, Chapter Select, NG+ e Akumu.",
-      "keywords": "The Evil Within trofeus, The Evil Within platina, guia The Evil Within PS4, The Evil Within PS3, Akumu, Chapter Select",
-      "title": "The Evil Within - guia de platina PS3/PS4, trofeus e roadmap"
+      "description": "Guia PT-BR da platina de The Evil Within no PS3/PS4: 42 troféus, 35-50h, 8.5/10, online 0, coop 0, missable 0, Chapter Select, NG+ e AKUMU.",
+      "keywords": "The Evil Within troféus, The Evil Within platina, guia The Evil Within PS4, The Evil Within PS3, AKUMU, Chapter Select",
+      "title": "The Evil Within - guia de platina PS3/PS4, troféus e roadmap"
     },
     "tags": [
       "PS3",
@@ -147,7 +179,7 @@
       "Offline",
       "Solo",
       "Missable 0",
-      "Risco de capitulo",
+      "Risco de Capítulo",
       "Chapter Select",
       "New Game+",
       "Dificuldade",
@@ -157,422 +189,422 @@
   "slug": "the-evil-within",
   "trophies": [
     {
-      "description": "Unlocked all trophies for The Evil Within.",
+      "description": "Desbloqueie todos os troféus da lista base de The Evil Within.",
       "is_missable": 0,
       "is_spoiler": 0,
       "name": "Pure Evil",
-      "name_pt": "",
-      "tip": "Conquiste todos os outros troféus da lista base. Conteúdos extras não são necessários para a platina.",
+      "name_pt": "Puro Mal",
+      "tip": "Complete a campanha, colete tudo, feche os upgrades, finalize runs de restrição e vença AKUMU.",
       "trophy_code": "tew_pure_evil",
       "type": "Platina"
     },
     {
-      "description": "Defeat the Sadist within the village.",
+      "description": "Derrote o Sadist no capítulo 3.",
       "is_missable": 0,
-      "is_spoiler": 1,
+      "is_spoiler": 0,
       "name": "Weapon of Choice",
-      "name_pt": "",
-      "tip": "Troféu de história: derrote o Sadist no vilarejo.",
+      "name_pt": "Arma de Escolha",
+      "tip": "Troféu de história. Use armadilhas e explosivos para controlar a arena.",
       "trophy_code": "tew_weapon_of_choice",
       "type": "Bronze"
     },
     {
-      "description": "Finish off a shrieking beast.",
+      "description": "Conclua o confronto principal do capítulo 5.",
       "is_missable": 0,
       "is_spoiler": 1,
       "name": "Old Flame",
-      "name_pt": "",
-      "tip": "Troféu de história/boss: finalize a criatura Laura quando a campanha exigir.",
+      "name_pt": "Velha Chama",
+      "tip": "Troféu de história. Mantenha distância, economize munição pesada e use fogo quando disponível.",
       "trophy_code": "tew_old_flame",
       "type": "Bronze"
     },
     {
-      "description": "Take out both Guardians before the church.",
+      "description": "Sobreviva ao encontro duplo obrigatório da campanha.",
       "is_missable": 0,
       "is_spoiler": 1,
       "name": "Two on Two",
-      "name_pt": "",
-      "tip": "Troféu de história: elimine os dois Guardians antes da igreja.",
+      "name_pt": "Dois contra Dois",
+      "tip": "Troféu de história. Separe os inimigos e não gaste recursos antes da arena.",
       "trophy_code": "tew_two_on_two",
       "type": "Bronze"
     },
     {
-      "description": "Escape the Keeper beneath the catacombs.",
+      "description": "Derrote o Keeper pela primeira vez.",
       "is_missable": 0,
       "is_spoiler": 1,
       "name": "What’s In The Box?!",
-      "name_pt": "",
-      "tip": "Troféu de história: sobreviva e fuja do Keeper nas catacumbas.",
+      "name_pt": "O Que Tem na Caixa?!",
+      "tip": "Troféu oficial da lista base. Ele corrige a duplicação indevida de Master of Horror em listas incompletas.",
       "trophy_code": "tew_whats_in_the_box",
       "type": "Bronze"
     },
     {
-      "description": "End a monstrosity in the underground garage.",
+      "description": "Conclua o primeiro grande chefe da campanha.",
       "is_missable": 0,
       "is_spoiler": 1,
       "name": "The First, Not the Last",
-      "name_pt": "",
-      "tip": "Troféu de história: derrote o monstro na garagem subterrânea.",
+      "name_pt": "O Primeiro, Mas Não o Último",
+      "tip": "Troféu de história; avance normalmente até o fim do capítulo correspondente.",
       "trophy_code": "tew_the_first_not_the_last",
       "type": "Bronze"
     },
     {
-      "description": "Outrun a gigantic threat in the city.",
+      "description": "Derrote Laura na progressão principal.",
       "is_missable": 0,
       "is_spoiler": 1,
       "name": "Arachnophobia",
-      "name_pt": "",
-      "tip": "Troféu de história: fuja da ameaça gigante na cidade.",
+      "name_pt": "Aracnofobia",
+      "tip": "Troféu de história. Fogo e controle de espaço reduzem muito o risco.",
       "trophy_code": "tew_arachnophobia",
       "type": "Bronze"
     },
     {
-      "description": "Remove an invisible enemy from the equation.",
+      "description": "Derrote o boss aquático da campanha.",
       "is_missable": 0,
       "is_spoiler": 1,
       "name": "Slither into Oblivion",
-      "name_pt": "",
-      "tip": "Troféu de história: derrote o inimigo invisível quando ele aparecer na campanha.",
+      "name_pt": "Rasteje para o Esquecimento",
+      "tip": "Troféu de história. Guarde munição precisa para as janelas de dano.",
       "trophy_code": "tew_slither_into_oblivion",
       "type": "Bronze"
     },
     {
-      "description": "Defeat the ultimate evil within.",
+      "description": "Chegue ao encerramento da história.",
       "is_missable": 0,
       "is_spoiler": 1,
       "name": "One of the Many",
-      "name_pt": "",
-      "tip": "Troféu de história/final: conclua a batalha final da campanha.",
+      "name_pt": "Um Entre Muitos",
+      "tip": "Troféu de história concedido ao terminar a campanha.",
       "trophy_code": "tew_one_of_the_many",
       "type": "Bronze"
     },
     {
-      "description": "Complete the game on Casual difficulty.",
+      "description": "Conclua o jogo no Casual ou superior.",
       "is_missable": 0,
       "is_spoiler": 0,
       "name": "First Step into Darkness",
-      "name_pt": "",
-      "tip": "Complete a campanha no Casual ou em dificuldade superior. Troféus de dificuldade acumulam, mas AKUMU tem rota própria.",
+      "name_pt": "Primeiro Passo na Escuridão",
+      "tip": "Pode ser sua primeira run. Conta como troféu de dificuldade porque depende da conclusão em um modo específico.",
       "trophy_code": "tew_first_step_into_darkness",
       "type": "Bronze"
     },
     {
-      "description": "Complete the game on Survival difficulty.",
+      "description": "Conclua o jogo no Survival ou superior.",
       "is_missable": 0,
       "is_spoiler": 0,
       "name": "Another Day on the Job",
-      "name_pt": "",
-      "tip": "Complete a campanha no Survival ou em dificuldade superior para avançar rumo a Nightmare/AKUMU.",
+      "name_pt": "Mais um Dia de Trabalho",
+      "tip": "Pode ser acumulado com Nightmare/AKUMU se você já dominar o jogo.",
       "trophy_code": "tew_another_day_on_the_job",
       "type": "Prata"
     },
     {
-      "description": "Complete the game on Nightmare difficulty.",
+      "description": "Conclua o jogo no Nightmare ou superior.",
       "is_missable": 0,
       "is_spoiler": 0,
       "name": "Master of Horror",
-      "name_pt": "",
-      "tip": "Conclua o Nightmare. Ele é parte da preparação para o desafio real: AKUMU Mode.",
+      "name_pt": "Mestre do Horror",
+      "tip": "Deixe para depois de uma run de aprendizado e upgrades em NG+ quando aplicável.",
       "trophy_code": "tew_master_of_horror",
       "type": "Prata"
     },
     {
-      "description": "Collect every collectable in the game.",
-      "is_missable": 1,
+      "description": "Colete todos os 106 coletáveis da lista base.",
+      "is_missable": 0,
       "is_spoiler": 0,
       "name": "Every Nook and Cranny",
-      "name_pt": "",
-      "tip": "Colete todos os documentos, jornais, posters, map fragments, journals e audio tapes. Chapter Select/NG+ ajuda, mas use checklist para evitar retrabalho.",
+      "name_pt": "Cada Canto e Recanto",
+      "tip": "Use checklist por capítulo. Locker keys não contam para este troféu; se algo ficar para trás, recupere por Chapter Select/NG+.",
       "trophy_code": "tew_every_nook_and_cranny",
       "type": "Prata"
     },
     {
-      "description": "Open up all the lockers in the save room.",
-      "is_missable": 1,
+      "description": "Abra todos os lockers.",
+      "is_missable": 0,
       "is_spoiler": 0,
       "name": "Master of Unlocking",
-      "name_pt": "",
-      "tip": "Abra todos os lockers da save room encontrando chaves em estátuas, caixas e lockers. Trate como checklist de coletáveis por capítulo.",
+      "name_pt": "Mestre do Desbloqueio",
+      "tip": "Depende das locker keys encontradas nos capítulos. Há 46 keys e 45 lockers; o progresso carrega para NG+.",
       "trophy_code": "tew_master_of_unlocking",
       "type": "Bronze"
     },
     {
-      "description": "Fully upgrade all of Sebastian’s attributes.",
+      "description": "Melhore completamente os atributos de Sebastian.",
       "is_missable": 0,
       "is_spoiler": 0,
       "name": "Hardbody",
-      "name_pt": "",
-      "tip": "Use Green Gel para maximizar todos os atributos de Sebastian. Faça isso fora da run sem upgrades.",
+      "name_pt": "Corpo Resistente",
+      "tip": "Use gel verde acumulado em NG+ para completar os upgrades pessoais.",
       "trophy_code": "tew_hardbody",
       "type": "Prata"
     },
     {
-      "description": "Completely upgrade one weapon.",
+      "description": "Melhore completamente uma arma.",
       "is_missable": 0,
       "is_spoiler": 0,
       "name": "My Best Friend",
-      "name_pt": "",
-      "tip": "Maximize uma arma usando Green Gel. Combine com as runs de farm/NG+.",
+      "name_pt": "Meu Melhor Amigo",
+      "tip": "Escolha uma arma central para sua rota e maximize cedo em NG+.",
       "trophy_code": "tew_my_best_friend",
       "type": "Bronze"
     },
     {
-      "description": "Completely upgrade three weapons.",
+      "description": "Melhore três armas completamente.",
       "is_missable": 0,
       "is_spoiler": 0,
       "name": "The Power of Three",
-      "name_pt": "",
-      "tip": "Maximize três armas. Não faça upgrades durante a run de It Is What It Is.",
+      "name_pt": "O Poder de Três",
+      "tip": "Priorize handgun/shotgun/crossbow ou as armas que você mais usa nas runs difíceis.",
       "trophy_code": "tew_the_power_of_three",
       "type": "Bronze"
     },
     {
-      "description": "Completely upgrade all weapons.",
+      "description": "Melhore todas as armas.",
       "is_missable": 0,
       "is_spoiler": 0,
       "name": "Unstoppable Arsenal",
-      "name_pt": "",
-      "tip": "Maximize todas as armas da lista base. Exige bastante Green Gel e planejamento de NG+/farm.",
+      "name_pt": "Arsenal Imparável",
+      "tip": "Normalmente fecha em NG+ depois de coletar muito gel verde e abrir lockers.",
       "trophy_code": "tew_unstoppable_arsenal",
       "type": "Ouro"
     },
     {
-      "description": "Upgrade all options in the Stock menu.",
+      "description": "Melhore todas as capacidades de munição.",
       "is_missable": 0,
       "is_spoiler": 0,
       "name": "Why Can’t I Hold All This Ammo?",
-      "name_pt": "",
-      "tip": "Maximize todas as opções do menu Stock com Green Gel, separando isso da run sem upgrades.",
+      "name_pt": "Por Que Não Consigo Carregar Toda Essa Munição?",
+      "tip": "Compre as expansões de estoque com gel verde; lockers ajudam a sustentar o custo.",
       "trophy_code": "tew_why_cant_i_hold_all_this_ammo",
       "type": "Bronze"
     },
     {
-      "description": "Use a secret explosive weapon to kill 10 enemies. (Agony Bolt effects negate results.)",
+      "description": "Mate 10 inimigos com explosivos.",
       "is_missable": 0,
       "is_spoiler": 0,
       "name": "Blow Up the Playing Field",
-      "name_pt": "",
-      "tip": "Use a arma explosiva secreta liberada após terminar a campanha para matar 10 inimigos em NG+.",
+      "name_pt": "Exploda o Campo de Jogo",
+      "tip": "Pode ser feito naturalmente com granadas, armadilhas e bolts explosivos.",
       "trophy_code": "tew_blow_up_the_playing_field",
       "type": "Prata"
     },
     {
-      "description": "Kill five enemies with each type of Agony Bolt.",
+      "description": "Mate 5 inimigos com cada tipo de bolt da Agony Crossbow.",
       "is_missable": 0,
       "is_spoiler": 0,
       "name": "Full House",
-      "name_pt": "",
-      "tip": "Mate 5 inimigos com cada tipo de Agony Bolt: Explosive, Shock, Freeze, Flash e Harpoon. Pode ser farmado com checkpoint.",
+      "name_pt": "Casa Cheia",
+      "tip": "Controle a contagem durante campanhas/Chapter Select; use encontros com grupos para Flash/Freeze/Explosive.",
       "trophy_code": "tew_full_house",
       "type": "Bronze"
     },
     {
-      "description": "Kill five enemies in a row with a sneak kill without being discovered.",
-      "is_missable": 1,
+      "description": "Mate 5 inimigos seguidos com ataques furtivos.",
+      "is_missable": 0,
       "is_spoiler": 0,
       "name": "Silent Kill",
-      "name_pt": "",
-      "tip": "Faça 5 sneak kills seguidos sem ser visto; o início do Capítulo 2 é uma boa oportunidade.",
+      "name_pt": "Morte Silenciosa",
+      "tip": "Melhor em capítulos iniciais. Se errar, refaça por Chapter Select.",
       "trophy_code": "tew_silent_kill",
       "type": "Bronze"
     },
     {
-      "description": "Kill five enemies with a torch.",
+      "description": "Mate 5 inimigos com uma tocha.",
       "is_missable": 0,
       "is_spoiler": 0,
       "name": "Burn, Baby, Burn!",
-      "name_pt": "",
-      "tip": "Use tochas deixadas por inimigos para matar 5 inimigos. Pode ser feito durante campanhas ou chapter replay.",
+      "name_pt": "Queime, Bebê, Queime!",
+      "tip": "Procure grupos em corredores estreitos e recarregue checkpoint se a tentativa falhar.",
       "trophy_code": "tew_burn_baby_burn",
       "type": "Bronze"
     },
     {
-      "description": "Kill 30 enemies.",
+      "description": "Mate 30 inimigos.",
       "is_missable": 0,
       "is_spoiler": 0,
-      "name": "…And the Corpses Mount",
-      "name_pt": "",
-      "tip": "Mate 30 inimigos ao longo das runs; o progresso acumula naturalmente.",
+      "name": "...And the Corpses Mount",
+      "name_pt": "...E os Corpos se Acumulam",
+      "tip": "Vem naturalmente durante a campanha.",
       "trophy_code": "tew_and_the_corpses_mount",
       "type": "Bronze"
     },
     {
-      "description": "Kill 200 enemies.",
+      "description": "Mate 200 inimigos.",
       "is_missable": 0,
       "is_spoiler": 0,
       "name": "Krimson PD Fury",
-      "name_pt": "",
-      "tip": "Mate 200 inimigos ao longo das runs. O progresso carrega entre playthroughs.",
+      "name_pt": "Fúria da Polícia de Krimson",
+      "tip": "Acumulativo entre runs; não exige farm pesado se você fizer NG+ e AKUMU.",
       "trophy_code": "tew_krimson_pd_fury",
       "type": "Bronze"
     },
     {
-      "description": "Kill 400 enemies.",
+      "description": "Mate 400 inimigos.",
       "is_missable": 0,
       "is_spoiler": 0,
       "name": "One Man Army",
-      "name_pt": "",
-      "tip": "Mate 400 inimigos. Use NG+/chapter replay se o troféu não vier naturalmente nas múltiplas runs.",
+      "name_pt": "Exército de Um Homem Só",
+      "tip": "Acumulativo. Deve fechar antes da platina se você fizer as runs recomendadas.",
       "trophy_code": "tew_one_man_army",
       "type": "Prata"
     },
     {
-      "description": "Kill 25 enemies with melee attacks.",
+      "description": "Mate 25 inimigos com ataques corpo a corpo.",
       "is_missable": 0,
       "is_spoiler": 0,
       "name": "Ammo Conservationist",
-      "name_pt": "",
-      "tip": "Finalize 25 inimigos com golpes corpo a corpo; mais fácil no Casual ou em inimigos enfraquecidos.",
+      "name_pt": "Conservador de Munição",
+      "tip": "Use inimigos enfraquecidos e capítulos iniciais para reduzir gasto de munição.",
       "trophy_code": "tew_ammo_conservationist",
       "type": "Bronze"
     },
     {
-      "description": "Sneak kill an enemy after hitting them with a bottle.",
-      "is_missable": 1,
+      "description": "Mate um inimigo com uma garrafa.",
+      "is_missable": 0,
       "is_spoiler": 0,
       "name": "Bloody Bar Brawl",
-      "name_pt": "",
-      "tip": "Acerte uma garrafa na cabeça de um inimigo e finalize com sneak kill. Há uma boa chance no Capítulo 2.",
+      "name_pt": "Briga Sangrenta de Bar",
+      "tip": "Risco de capítulo. Execute onde houver garrafas e inimigos fracos; recupere por Chapter Select se passar.",
       "trophy_code": "tew_bloody_bar_brawl",
       "type": "Bronze"
     },
     {
-      "description": "Kill three living enemies with one drop of a match.",
-      "is_missable": 1,
+      "description": "Mate 3 inimigos vivos soltando uma única tocha.",
+      "is_missable": 0,
       "is_spoiler": 0,
       "name": "Drop It Like It’s Hot",
-      "name_pt": "",
-      "tip": "Derrube ou agrupe 3 inimigos vivos e use um match para queimá-los de uma vez. Pode exigir checkpoint/farm.",
+      "name_pt": "Jogue Como se Estivesse Quente",
+      "tip": "Risco de capítulo. Use grupos compactos e recarregue checkpoint para repetir a tentativa.",
       "trophy_code": "tew_drop_it_like_its_hot",
       "type": "Bronze"
     },
     {
-      "description": "Finish the game with a clear time of under 5:00:00.",
-      "is_missable": 1,
+      "description": "Termine o jogo em menos de 5 horas.",
+      "is_missable": 0,
       "is_spoiler": 0,
       "name": "The Quick and the Dead",
-      "name_pt": "",
-      "tip": "Faça uma speedrun abaixo de 5 horas, preferencialmente no Casual/NG+ com rota planejada e cutscenes puladas.",
+      "name_pt": "Os Rápidos e os Mortos",
+      "tip": "Faça em run dedicada, preferencialmente depois de conhecer rotas e encontros. Não é missable definitivo; é uma condição de run.",
       "trophy_code": "tew_the_quick_and_the_dead",
       "type": "Ouro"
     },
     {
-      "description": "Finish the game without upgrading any skills with Green Gel.",
-      "is_missable": 1,
+      "description": "Termine o jogo sem melhorar Sebastian nem armas com gel verde.",
+      "is_missable": 0,
       "is_spoiler": 0,
       "name": "It Is What It Is",
-      "name_pt": "",
-      "tip": "Conclua uma run sem comprar upgrades com Green Gel. O upgrade obrigatório do tutorial não invalida o troféu.",
+      "name_pt": "É o Que É",
+      "tip": "Run de restrição. Não gaste gel verde em upgrades nessa campanha; o upgrade obrigatório do tutorial não invalida o troféu.",
       "trophy_code": "tew_it_is_what_it_is",
       "type": "Ouro"
     },
     {
-      "description": "Finish the game on 悪夢 (AKUMU) mode.",
+      "description": "Conclua o jogo no modo AKUMU.",
       "is_missable": 0,
       "is_spoiler": 0,
       "name": "You Asked For It",
-      "name_pt": "",
-      "tip": "Conclua AKUMU Mode. Qualquer golpe mata, não é NG+ e é o principal gargalo da platina.",
+      "name_pt": "Você Pediu por Isso",
+      "tip": "Principal barreira da platina. Um hit mata Sebastian; memorize capítulos, armadilhas e chefes.",
       "trophy_code": "tew_you_asked_for_it",
       "type": "Ouro"
     },
     {
-      "description": "Have they lost their minds? Better get past them without a fight. (Ch. 2)",
-      "is_missable": 1,
+      "description": "Passe pelo capítulo indicado sem matar inimigos além dos obrigatórios.",
+      "is_missable": 0,
       "is_spoiler": 0,
       "name": "À la Corvo",
-      "name_pt": "",
-      "tip": "No Capítulo 2, atravesse a área indicada sem lutar diretamente com os Haunted. Use armadilhas e rota segura.",
+      "name_pt": "À la Corvo",
+      "tip": "Risco de capítulo. Use stealth, distrações e Chapter Select para repetir sem comprometer a platina.",
       "trophy_code": "tew_a_la_corvo",
       "type": "Bronze"
     },
     {
-      "description": "His engine roars, but my knife is strong enough to take him out. (Ch. 3)",
-      "is_missable": 1,
-      "is_spoiler": 1,
+      "description": "Derrote o Sadist usando a faca.",
+      "is_missable": 0,
+      "is_spoiler": 0,
       "name": "Knife Beats Chainsaw",
-      "name_pt": "",
-      "tip": "No Capítulo 3, derrote o Sadist com faca/sneak kill após preparar dano e stun. Troféu específico de capítulo.",
+      "name_pt": "Faca Vence Motosserra",
+      "tip": "Risco de capítulo e execução. Enfraqueça o inimigo e finalize conforme a condição exigir.",
       "trophy_code": "tew_knife_beats_chainsaw",
       "type": "Prata"
     },
     {
-      "description": "That vision in the hospice... why here? Why now? (Ch. 4)",
-      "is_missable": 1,
-      "is_spoiler": 1,
-      "name": "Home Is Where the Hospice Is",
-      "name_pt": "",
-      "tip": "No Capítulo 4, entre na casa correta e acione a visão opcional antes de avançar demais.",
+      "description": "Complete o evento especial na área do hospício.",
+      "is_missable": 0,
+      "is_spoiler": 0,
+      "name": "Home is Where the Hospice is",
+      "name_pt": "Lar é Onde Está o Hospício",
+      "tip": "Risco de capítulo. Resolva antes de avançar demais ou recupere via Chapter Select.",
       "trophy_code": "tew_home_is_where_the_hospice_is",
       "type": "Bronze"
     },
     {
-      "description": "The water’s rising, but we’ll get out of this without a scratch. (Ch. 5)",
-      "is_missable": 1,
-      "is_spoiler": 1,
+      "description": "No Chapter 5, salve Kidman da seção da água sem Joseph tomar dano. Observe a barra de vida de Joseph e recarregue o autosave imediatamente se ele for atingido.",
+      "is_missable": 0,
+      "is_spoiler": 0,
       "name": "Not Part of the Job Description",
-      "name_pt": "",
-      "tip": "No Capítulo 5, proteja Joseph/Kidman na sequência da água sem permitir dano. Faça em Casual/NG+ se necessário.",
+      "name_pt": "Não Faz Parte da Descrição do Cargo",
+      "tip": "New Game+ facilita bastante por causa de armas e recursos melhores. Use Explosive Bolts, Shock Bolts e granadas para controlar as ondas antes que cheguem em Joseph.",
       "trophy_code": "tew_not_part_of_the_job_description",
       "type": "Prata"
     },
     {
-      "description": "Who wouldn’t reach out for a man clinging for his life? (Ch. 6)",
-      "is_missable": 1,
-      "is_spoiler": 1,
+      "description": "Salve Joseph de morrer em uma situação crítica.",
+      "is_missable": 0,
+      "is_spoiler": 0,
       "name": "Everybody Gets One",
-      "name_pt": "",
-      "tip": "No Capítulo 6, ajude Joseph quando ele ficar pendurado em uma borda. Troféu de janela específica.",
+      "name_pt": "Todo Mundo Tem Uma Chance",
+      "tip": "Risco de capítulo. Fique atento ao estado de Joseph e repita por Chapter Select se necessário.",
       "trophy_code": "tew_everybody_gets_one",
       "type": "Bronze"
     },
     {
-      "description": "It won’t stay dead! Better only fight when I have to. (Ch. 7)",
-      "is_missable": 1,
-      "is_spoiler": 1,
+      "description": "Evite uma luta opcional e fuja quando o jogo permitir.",
+      "is_missable": 0,
+      "is_spoiler": 0,
       "name": "I Don’t Have Time for This!",
-      "name_pt": "",
-      "tip": "No Capítulo 7, limite as mortes do Keeper e siga a rota de válvulas/gás sem desperdiçar confrontos.",
+      "name_pt": "Não Tenho Tempo para Isso!",
+      "tip": "Risco de capítulo. Siga diretamente para o objetivo em vez de gastar recursos no confronto.",
       "trophy_code": "tew_i_dont_have_time_for_this",
       "type": "Bronze"
     },
     {
-      "description": "This cave echoes like crazy. Better put the gun away and keep quiet. (Ch. 8)",
-      "is_missable": 1,
+      "description": "Complete o capítulo indicado sem usar armas.",
+      "is_missable": 0,
       "is_spoiler": 0,
       "name": "Item Management",
-      "name_pt": "",
-      "tip": "No Capítulo 8, complete a seção sem disparar armas. Fuja ou use alternativas que não invalidem o requisito.",
+      "name_pt": "Gerenciamento de Itens",
+      "tip": "Risco de capítulo. Planeje rota de stealth, armadilhas e movimentação antes de tentar.",
       "trophy_code": "tew_item_management",
       "type": "Bronze"
     },
     {
-      "description": "Enough running! I’ll burn her to the ground right here! (Ch. 10)",
-      "is_missable": 1,
-      "is_spoiler": 1,
+      "description": "Derrote Laura em uma arena específica.",
+      "is_missable": 0,
+      "is_spoiler": 0,
       "name": "Bathed in Flames",
-      "name_pt": "",
-      "tip": "No Capítulo 10, mate Laura antes de entrar no elevador. NG+ e armas fortes facilitam muito.",
+      "name_pt": "Banhada em Chamas",
+      "tip": "Risco de capítulo. Use fogo, fornalhas e recursos pesados; refaça por Chapter Select se passar.",
       "trophy_code": "tew_bathed_in_flames",
       "type": "Prata"
     },
     {
-      "description": "I’m not taking any chances, this bus can’t take much more damage. (Ch. 12)",
-      "is_missable": 1,
-      "is_spoiler": 1,
+      "description": "Proteja o veículo/aliada na sequência indicada sem dano relevante.",
+      "is_missable": 0,
+      "is_spoiler": 0,
       "name": "Not a Scratch on Her!",
-      "name_pt": "",
-      "tip": "No Capítulo 12, conclua a sequência do ônibus sem dano. Recarregue checkpoint se bater em inimigos/obstáculos.",
+      "name_pt": "Nem um Arranhão Nela!",
+      "tip": "Risco de capítulo. Memorize spawns e reinicie checkpoint se a condição falhar.",
       "trophy_code": "tew_not_a_scratch_on_her",
       "type": "Bronze"
     },
     {
-      "description": "I should get this whole generator panel running just in case. (Ch. 14)",
-      "is_missable": 1,
+      "description": "Resolva o painel elétrico do capítulo indicado em poucas tentativas.",
+      "is_missable": 0,
       "is_spoiler": 0,
       "name": "Entry Level Electrician",
-      "name_pt": "",
-      "tip": "No Capítulo 14, coloque as três peças elétricas no painel de uma vez; não saia do puzzle antes de completar.",
+      "name_pt": "Eletricista Iniciante",
+      "tip": "Risco de capítulo. Confira a solução antes de interagir e repita via Chapter Select se errar.",
       "trophy_code": "tew_entry_level_electrician",
       "type": "Bronze"
     }

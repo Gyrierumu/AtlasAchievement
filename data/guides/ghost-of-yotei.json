@@ -39,7 +39,7 @@
     "time_min_hours": 50,
     "time_reason": "50-70h considerando campanha, free roam, 31 bounties, Yōtei Six Camps, coletáveis obrigatórios, equipamentos, armas, upgrades e misc.",
     "time_sort_hours": 50,
-    "updated_at": "2026-06-27 02:36:59",
+    "updated_at": "2026-06-28 04:00:39",
     "verification_note": "Guia validado para a lista base PS5: 54 troféus, distribuição 1/2/7/44, 50-70h, 3/10, 0 perdíveis, online 0, coop 0, 0 troféus por configuração de jogo, sem New Game+, Yōtei Legends separado e 30/61 Altars explicados.",
     "verification_status": "verified",
     "walkthrough": ""
@@ -118,7 +118,7 @@
         "type": "Organização"
       },
       {
-        "detail": "Tudo pode ser feito no Casual e com recursos de acessibilidade.",
+        "detail": "Tudo pode ser feito no Casual e com recursos de acessibilidade. Nenhum troféu deve ter tag Dificuldade.",
         "tags": [
           "Acessibilidade",
           "Casual"
@@ -186,24 +186,28 @@
         "question": "New Game+ é necessário?"
       },
       {
-        "answer": "Não. Yōtei Legends é DLC/update separado, com troféus online/co-op próprios, e não entra nos 54 troféus da lista base.",
-        "question": "Yōtei Legends entra na platina?"
+        "answer": "Não. Yōtei Legends é DLC/update separado, com troféus online/co-op próprios, e não é necessário para a platina base Legendary Onryō.",
+        "question": "Yōtei Legends é necessário?"
       },
       {
-        "answer": "Não. A platina exige cerca de 85% de conclusão, mas Ainu Items, Pillars of the Fallen e todos os 61 Altars of Reflection não são obrigatórios.",
-        "question": "Preciso fazer 100% absoluto do mapa?"
+        "answer": "Não absolutamente tudo. A platina exige muitos coletáveis, mas não exige Ainu Items, Pillars of the Fallen e só exige 30 dos 61 Altars of Reflection.",
+        "question": "Precisa coletar tudo?"
       },
       {
-        "answer": "O foco é concluir 31 bounties, Yōtei Six Camps, 12 Nine Tails Puzzle Boxes, 5 Mountain Reliquary Puzzles, 11 Fox Dens, 10 Wolf Dens, 15 de 18 Sumi-e Paintings, 15 Bamboo Strikes, 13 Shrine Climbs, 16 Hot Springs, 30 de 61 Altars of Reflection, 8 Shamisen Songs, 10 Special Places, 30 Vanity Gear, 8 Gifts, armas, armaduras e upgrades ligados a troféus.",
-        "question": "Quais coletáveis e atividades são obrigatórios?"
+        "answer": "Coletáveis, todos os 31 bounties, Yōtei Six Camps, equipamentos, weapons, Shamisen Songs, Fox Dens, Wolf Dens, puzzle boxes, Bamboo Strikes, Shrine Climbs e Hot Springs.",
+        "question": "Qual é o maior trabalho da platina?"
       },
       {
         "answer": "Organização. Como o jogo não mostra um resumo perfeito de todos os bounties e tales concluídos, acompanhar manualmente reduz confusão no cleanup.",
         "question": "Qual é o maior risco da platina?"
       },
       {
-        "answer": "O jogo oferece 10 saves manuais. Use-os antes de sessões longas de cleanup, bounties ou conferência final.",
-        "question": "Quantos saves manuais existem?"
+        "answer": "Sim. Há 10 slots de save manual.",
+        "question": "O jogo tem save manual?"
+      },
+      {
+        "answer": "Não. Ghost of Tsushima e Ghost of Yōtei têm listas separadas.",
+        "question": "Ghost of Tsushima entra no guia?"
       },
       {
         "answer": "A estimativa é 50-70 horas e 3/10. O tempo vem do volume de atividades, não de execução extrema.",
