@@ -39,7 +39,7 @@
     "time_min_hours": 35,
     "time_reason": "35-50h com campanha inicial, limpeza por Chapter Select/NG+, upgrades, coletáveis, run de restrição/speedrun e AKUMU.",
     "time_sort_hours": 35,
-    "updated_at": "2026-06-28 21:19:07",
+    "updated_at": "2026-06-29 22:19:45",
     "verification_note": "Guia validado para a lista base PS3/PS4: 42 troféus, distribuição 1/4/9/28, 35-50h, 8.5/10, online 0, coop 0, missable 0, Chapter Select, New Game+ recomendado, DLC fora do escopo e quatro troféus de dificuldade.",
     "verification_status": "verified",
     "walkthrough": null
@@ -111,6 +111,13 @@
       "Finalizar AKUMU por último, com rotas e checkpoints conhecidos.",
       "Garantir que o filtro Dificuldade contenha apenas First Step into Darkness, Another Day on the Job, Master of Horror e You Asked For It."
     ],
+    "editorial_summary": [
+      "Guia validado para The Evil Within base no PS3/PS4: 42 troféus, com distribuição 1 Platina, 4 Ouro, 9 Prata e 28 Bronze.",
+      "Dificuldade editorial 8.5/10 e tempo estimado de 35-50h. A platina é totalmente offline, solo, sem troféus online, sem coop e sem DLC obrigatório.",
+      "Perdíveis definitivos: 0. Depois de terminar a história, o Chapter Select fica disponível e o progresso de coletáveis/lockers carrega para New Game+, então falhas de capítulo podem ser recuperadas.",
+      "Risco de capítulo: alto. Alguns troféus exigem ações específicas em capítulos, speedrun ou restrições de run; trate esses pontos como checklist por capítulo e use Chapter Select/NG+ para limpeza.",
+      "A dificuldade afeta troféus. Apenas First Step into Darkness, Another Day on the Job, Master of Horror e You Asked For It devem aparecer no filtro Dificuldade."
+    ],
     "faq": [
       {
         "answer": "Não. A lista base é totalmente offline.",
@@ -168,6 +175,38 @@
       "risk": "O risco real é confundir risco de capítulo com perdível definitivo ou entrar em AKUMU sem conhecer arenas e armadilhas.",
       "summary": "Platina base PS3/PS4 de 35-50h, 8.5/10, 42 troféus, offline, solo, missable 0, Chapter Select, NG+ recomendado e AKUMU obrigatório."
     },
+    "quick_plan": [
+      {
+        "detail": "Complete a campanha, aprenda capítulos, inimigos, armadilhas e colete o máximo possível dos 106 coletáveis e locker keys. Faça troféus de capítulo quando conveniente, ma…",
+        "number": 1,
+        "title": "Primeira run: Survival/Casual, coletáveis e aprendizado"
+      },
+      {
+        "detail": "Use Chapter Select e New Game+ para recuperar coletáveis, locker keys e troféus específicos de capítulo.",
+        "number": 2,
+        "title": "Chapter Select / NG+ para coletáveis e troféus de capítulo"
+      },
+      {
+        "detail": "Feche upgrades de atributos, armas, stock, Agony Bolt e kills acumulativas.",
+        "number": 3,
+        "title": "New Game+, upgrades e arsenal"
+      },
+      {
+        "detail": "Concluir It Is What It Is sem upgrades e The Quick and the Dead abaixo de 5 horas.",
+        "number": 4,
+        "title": "Runs de restrição e speedrun"
+      },
+      {
+        "detail": "Concluir Nightmare para Master of Horror e AKUMU para You Asked For It.",
+        "number": 5,
+        "title": "Nightmare, AKUMU e platina"
+      },
+      {
+        "detail": "Guia validado para The Evil Within base no PS3/PS4: 42 troféus, com distribuição 1 Platina, 4 Ouro, 9 Prata e 28 Bronze.\n\nDificuldade editorial 8.5/10 e tempo estimado d…",
+        "number": 6,
+        "title": "Leia os alertas iniciais"
+      }
+    ],
     "seo": {
       "description": "Guia PT-BR da platina de The Evil Within no PS3/PS4: 42 troféus, 35-50h, 8.5/10, online 0, coop 0, missable 0, Chapter Select, NG+ e AKUMU.",
       "keywords": "The Evil Within troféus, The Evil Within platina, guia The Evil Within PS4, The Evil Within PS3, AKUMU, Chapter Select",

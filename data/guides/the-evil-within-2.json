@@ -39,7 +39,7 @@
     "time_min_hours": 30,
     "time_reason": "A faixa de 30-50 horas considera campanha, coletáveis, NG+, upgrades, armas, troféus condicionais e Classic Mode; pode variar bastante conforme a execução no Classic.",
     "time_sort_hours": 30,
-    "updated_at": "2026-06-28 21:19:06",
+    "updated_at": "2026-06-29 22:19:44",
     "verification_note": "Lista base revisada por fontes públicas; aguarda validação editorial final.",
     "verification_status": "verified",
     "walkthrough": null
@@ -135,6 +135,7 @@
       }
     ],
     "checklist": [],
+    "editorial_summary": [],
     "faq": [
       {
         "answer": "Não. A lista base é totalmente offline.",
@@ -187,6 +188,38 @@
     ],
     "note": "Campos exportados para auditoria. O SQLite atual nao possui colunas nativas para todos esses extras; a importacao preserva o que o banco suporta.",
     "quickDecision": null,
+    "quick_plan": [
+      {
+        "detail": "Jogar em Nightmare para treinar Classic e encaminhar Brass Knuckles/Powerhouse; coletar o máximo possível dos 115 coletáveis; usar Coffee Makers; fazer side missions de…",
+        "number": 1,
+        "title": "Primeira run em Nightmare com coletáveis, armas e missables"
+      },
+      {
+        "detail": "Completar upgrades de habilidades e armas, coletar armas/faltantes, abrir lockers, concluir Mysterious Objects, Photographic Slides, Residual Memories e Files restantes,…",
+        "number": 2,
+        "title": "New Game+ para upgrades, armas e cleanup de save"
+      },
+      {
+        "detail": "Fechar Not Running This Time, Sometimes Fighting Isn’t the Answer, Death From Above, No More Playing With Fire, Melancholy Memories, I’ll Take You Down Myself e troféus…",
+        "number": 3,
+        "title": "Troféus de capítulo e combate"
+      },
+      {
+        "detail": "Completar Classic Mode para You Asked For It… Again.",
+        "number": 4,
+        "title": "Classic Mode"
+      },
+      {
+        "detail": "Conferir os 52 troféus, validar Online 0, Coop 0, dificuldade correta, nenhum DLC misturado, ausência de Chapter Select e Learn to Survive liberado.",
+        "number": 5,
+        "title": "Conferência final"
+      },
+      {
+        "detail": "The Evil Within 2 é uma platina offline, difícil e baseada em múltiplas runs, New Game+, coletáveis, armas, upgrades, side missions e Classic Mode. A lista base possui 5…",
+        "number": 6,
+        "title": "Leia os alertas iniciais"
+      }
+    ],
     "seo": {},
     "tags": [
       "Offline",

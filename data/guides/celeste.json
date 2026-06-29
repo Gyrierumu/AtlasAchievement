@@ -39,7 +39,7 @@
     "time_min_hours": 8,
     "time_reason": "A faixa de 8-15 horas considera Assist Mode e foco direto. Sem assistências, o tempo pode subir bastante por causa de B-Sides, C-Sides, strawberries e execução.",
     "time_sort_hours": 15,
-    "updated_at": "2026-06-28 21:19:07",
+    "updated_at": "2026-06-29 22:19:45",
     "verification_note": "Guia de Celeste revisado com resumo da platina, PICO-8/Real Gamer no escopo base, descrições PT-BR, FAQ firme, tags de dificuldade/cleanup/coletáveis e 31 troféus conferidos; permanece em revisão até validação global sem falhas.",
     "verification_status": "verified",
     "walkthrough": ""
@@ -153,6 +153,10 @@
       }
     ],
     "checklist": [],
+    "editorial_summary": [
+      "Celeste é uma platina curta, single-player e sem troféus perdíveis, online, coop ou DLC obrigatória. A lista base gira em torno da campanha principal, Chapter Select, strawberries, Crystal Hearts, cassetes, B-Sides, C-Sides e o minigame PICO-8 exigido por Real Gamer. O Assist Mode pode ser usado sem invalidar a rota editorial do guia, então a dificuldade cadastrada pode ficar baixa para quem prioriza a platina, mas o desafio natural do jogo é bem maior sem assistências.",
+      "A ordem mais segura é concluir a campanha, voltar por Chapter Select para strawberries, Crystal Hearts e cassetes, abrir e fechar os B-Sides, resolver os C-Sides, completar Celeste for PICO-8 e finalizar os troféus de cleanup. O principal cuidado é não confundir a platina PS4 base com Farewell, Golden Strawberries, Moon Berry ou objetivos extras que não fazem parte dos 31 troféus da lista base."
+    ],
     "faq": [
       {
         "answer": "Não. A lista base pode ser limpa com Chapter Select, então strawberries, cassetes, Crystal Hearts, B-Sides, C-Sides e PICO-8 podem ser resolvidos sem risco real de perdibilidade.",
@@ -191,6 +195,38 @@
       "risk": "O risco real é execução: B-Sides, C-Sides, 1UP! e Thanks For Playing ficam muito mais exigentes sem Assist Mode.",
       "summary": "Vale platinar Celeste se você quer uma lista curta, single-player e sem perdíveis, com Assist Mode disponível e cleanup por Chapter Select. Evite apenas se você não quer depender de precisão de plataforma, porque B-Sides, C-Sides e Thanks For Playing elevam bastante o desafio sem assistências."
     },
+    "quick_plan": [
+      {
+        "detail": "Concluir a história principal enquanto domina dash, wall climb, stamina e leitura de telas.",
+        "number": 1,
+        "title": "Aprenda o ritmo da montanha"
+      },
+      {
+        "detail": "Limpar os troféus ligados aos capítulos, strawberries, cassetes e Crystal Hearts dos capítulos principais.",
+        "number": 2,
+        "title": "Feche os capítulos e os corações do caminho"
+      },
+      {
+        "detail": "Completar os B-Sides dos capítulos principais e consolidar consistência de movimento.",
+        "number": 3,
+        "title": "Resolva os B-Sides por capítulo"
+      },
+      {
+        "detail": "Limpar todos os C-Sides e completar Celeste for PICO-8 para Real Gamer.",
+        "number": 4,
+        "title": "Feche os C-Sides e o troféu PICO-8"
+      },
+      {
+        "detail": "Conferir as coleções restantes, os troféus de progresso e a ordem final do guia antes da platina.",
+        "number": 5,
+        "title": "Finalize strawberries e o checklist"
+      },
+      {
+        "detail": "Celeste é uma platina curta, single-player, sem online, sem coop, sem DLC obrigatória e sem perdíveis. O cuidado principal é separar a lista PS4 base de Farewell, Golden…",
+        "number": 6,
+        "title": "Leia os alertas iniciais"
+      }
+    ],
     "seo": {
       "description": "Guia de platina de Celeste em português, com roadmap da lista base de 31 troféus, Assist Mode, B-Sides, C-Sides, Real Gamer/PICO-8, strawberries, Crystal Hearts, sem perdíveis, sem online e sem DLC obrigatória.",
       "keywords": "Celeste, Celeste guia de platina, troféus Celeste, roadmap Celeste, Celeste Assist Mode troféus, Celeste B-Sides, Celeste C-Sides, Celeste Real Gamer PICO-8, Celeste strawberries, Celeste Crystal Hearts, Celeste sem perdíveis, Celeste sem online, Celeste sem DLC obrigatório",

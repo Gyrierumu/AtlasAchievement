@@ -258,6 +258,28 @@ window.AppPublicNav = (() => {
   function bindPublicNavigation({ UI, page, state, navigate, loadCatalogPage, loadGuideByName, loadGames, debouncedSearchGames, getCatalogFacetFromPath = () => 'all' }) {
     useManualScrollRestoration();
 
+    const backToTopButton = UI.qs('#backToTopBtn');
+    if (backToTopButton) {
+      let backToTopFrame = 0;
+      const updateBackToTop = () => {
+        backToTopFrame = 0;
+        const shouldShow = window.scrollY > 640;
+        backToTopButton.classList.toggle('is-visible', shouldShow);
+        backToTopButton.setAttribute('aria-hidden', shouldShow ? 'false' : 'true');
+      };
+      const requestBackToTopUpdate = () => {
+        if (backToTopFrame) return;
+        backToTopFrame = window.requestAnimationFrame(updateBackToTop);
+      };
+      backToTopButton.addEventListener('click', event => {
+        event.preventDefault();
+        window.scrollTo({ top: 0, behavior: 'smooth' });
+      });
+      window.addEventListener('scroll', requestBackToTopUpdate, { passive: true });
+      window.addEventListener('resize', requestBackToTopUpdate);
+      updateBackToTop();
+    }
+
     UI.qsa('[data-view-link]').forEach(button => button.addEventListener('click', async event => {
       event.preventDefault();
       const view = button.dataset.viewLink;

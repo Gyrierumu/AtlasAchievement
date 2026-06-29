@@ -39,7 +39,7 @@
     "time_min_hours": 25,
     "time_reason": "A faixa de 25-35 horas considera campanha, abertura de distritos, coletáveis, crimes, bases, desafios, trajes, upgrades, pesquisas, atividades de mapa e limpeza final.",
     "time_sort_hours": 25,
-    "updated_at": "2026-06-28 21:19:07",
+    "updated_at": "2026-06-29 22:19:45",
     "verification_note": "Guia revisado editorialmente para a lista base de 51 troféus.",
     "verification_status": "verified",
     "walkthrough": null
@@ -76,9 +76,80 @@
     "aliases": [],
     "attentionPoints": [],
     "checklist": [],
-    "faq": [],
+    "editorial_summary": [
+      "A platina de Marvel’s Spider-Man é direta, acessível e focada em campanha, exploração urbana e conclusão das atividades de Manhattan. A lista base não exige online, coop, dificuldade específica, DLC, New Game+ ou Ultimate, então o desafio principal está em organizar distritos, crimes, bases, desafios, trajes, upgrades e coletáveis sem transformar o final em uma limpeza repetitiva.",
+      "A melhor rota é usar a campanha para abrir a cidade, liberar torres, habilidades, gadgets e atividades de distrito. Pegue mochilas, marcos, pesquisas, Black Cat Stakeouts, pombos e objetivos próximos quando estiverem no caminho, mas não tente limpar tudo cedo demais, porque várias tarefas ficam mais rápidas com mobilidade, combate e gadgets melhores.",
+      "O maior risco é retrabalho, não perda definitiva. 100% dos distritos, crimes, bases, desafios do Taskmaster, tokens, trajes e upgrades podem ser concluídos depois da história, mas acumulam bastante volume se forem todos deixados para o fim. Alterne campanha, atividades próximas e limpeza por distrito para manter ritmo.",
+      "DLCs de história, The City That Never Sleeps, New Game+, Ultimate e extras do Remastered ficam separados da platina base. Use o roadmap para organizar campanha, distritos, atividades, desafios e limpeza final, e depois acompanhe cada pendência pela checklist."
+    ],
+    "faq": [
+      {
+        "answer": "Não. A platina base permite limpar atividades, crimes, coletáveis e 100% dos distritos no pós-jogo. O maior cuidado é organizar a limpeza final para evitar retrabalho.",
+        "question": "Marvel’s Spider-Man tem troféus perdíveis?"
+      },
+      {
+        "answer": "Não. A platina base é single-player e não exige online, coop, servidores, multiplayer ou PS+.",
+        "question": "Marvel’s Spider-Man precisa de online ou coop para platinar?"
+      },
+      {
+        "answer": "A platina base pode ser planejada em uma campanha com limpeza final pós-história. New Game+ só entra como pacote extra separado, fora da rota principal.",
+        "question": "Quantas runs são necessárias?"
+      },
+      {
+        "answer": "Não. A platina base não exige dificuldade específica. Jogue em uma dificuldade confortável e deixe desafios, bases e pontuações para depois de liberar mais recursos.",
+        "question": "Precisa jogar em dificuldade específica?"
+      },
+      {
+        "answer": "100% dos distritos, crimes, bases, desafios do Taskmaster, mochilas, marcos, pesquisas, Black Cat Stakeouts, pombos, trajes, tokens, upgrades e atividades de mapa concentram a maior parte do tempo.",
+        "question": "O que mais toma tempo na platina?"
+      },
+      {
+        "answer": "Não para a platina base. The City That Never Sleeps, New Game+, Ultimate e troféus extras do Remastered ficam separados da lista base acompanhada por este guia.",
+        "question": "DLCs, New Game+ ou Ultimate são necessários?"
+      },
+      {
+        "answer": "Avance a campanha, abra distritos, desbloqueie habilidades e gadgets, colete o que estiver no caminho e deixe a limpeza completa para quando a cidade estiver mais aberta.",
+        "question": "Qual é o melhor primeiro passo?"
+      },
+      {
+        "answer": "Não. Trate 100% dos distritos como objetivo de mapa e limpeza final. Ele pode ser resolvido depois da história com a cidade aberta.",
+        "question": "100% dos distritos é perdível?"
+      }
+    ],
     "note": "Campos exportados para auditoria. O SQLite atual nao possui colunas nativas para todos esses extras; a importacao preserva o que o banco suporta.",
     "quickDecision": null,
+    "quick_plan": [
+      {
+        "detail": "Desbloquear habilidades, gadgets, distritos e atividades sem forçar 100% cedo.",
+        "number": 1,
+        "title": "Avance a campanha e abra a cidade antes do 100% dos distritos"
+      },
+      {
+        "detail": "Fortalecer o Homem-Aranha antes de desafios, bases e limpeza completa.",
+        "number": 2,
+        "title": "Libere habilidades, gadgets e melhorias importantes"
+      },
+      {
+        "detail": "Reduzir retrabalho controlando mochilas, marcos, pesquisas, fotos, bases e atividades regionais.",
+        "number": 3,
+        "title": "Trabalhe coletáveis e atividades por distrito"
+      },
+      {
+        "detail": "Resolver atividades repetitivas e objetivos de pontuação com mais recursos liberados.",
+        "number": 4,
+        "title": "Complete bases, crimes e desafios"
+      },
+      {
+        "detail": "Concluir a história e resolver troféus ligados a eventos, chefes ou ações específicas.",
+        "number": 5,
+        "title": "Finalize campanha, chefes e troféus específicos"
+      },
+      {
+        "detail": "Conferir 100% dos distritos, trajes, upgrades, coletáveis e pendências restantes.",
+        "number": 6,
+        "title": "Faça a limpeza final da platina base"
+      }
+    ],
     "seo": {},
     "tags": []
   },

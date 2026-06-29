@@ -39,7 +39,7 @@
     "time_min_hours": 60,
     "time_reason": "A faixa de 60-80 horas considera campanha, questlines, limpeza de distritos, finais, colecionaveis e trofeus especificos.",
     "time_sort_hours": 60,
-    "updated_at": "2026-06-28 21:19:06",
+    "updated_at": "2026-06-29 22:19:44",
     "verification_note": "Lista base de Cyberpunk 2077 adicionada com checklist e roadmap completos; aguarda revisao editorial manual final.",
     "verification_status": "review",
     "walkthrough": null
@@ -215,6 +215,11 @@
       "Conferir se página individual e catálogo exibem o mesmo status editorial.",
       "Conferir se flags do topo batem com filtros do catálogo."
     ],
+    "editorial_summary": [
+      "Cyberpunk 2077 é uma platina longa, mas relativamente acessível, focada em concluir a história principal, liberar finais diferentes, terminar questlines de personagens importantes, completar gigs e delitos da NCPD por distrito, coletar itens de Johnny Silverhand, comprar veículos, instalar cyberware, encontrar murais de tarô, dataterms e resolver troféus misc de combate e build.",
+      "A rota mais segura é fazer uma run principal completa, concluir Panam, Rogue, Kerry, Judy e River, salvar Takemura em Search and Destroy, coletar todos os itens de Johnny e criar saves manuais antes de Nocturne OP55N1 para testar finais diferentes.",
+      "A platina base não exige online, cooperação ou Phantom Liberty. A expansão tem 13 troféus próprios no PS5 e deve ficar separada como conteúdo extra/100%."
+    ],
     "faq": [
       {
         "answer": "Sim. O principal é The Devil, porque exige salvar Takemura em Search and Destroy. Também há riscos em questlines de personagens, itens de Johnny e diálogos de lifepath.",
@@ -276,6 +281,38 @@
       "time": "Longo, cerca de 60 a 90 horas.",
       "verdict": "Sim. É uma platina longa, mas acessível, desde que você use saves manuais e checklist."
     },
+    "quick_plan": [
+      {
+        "detail": "Criar uma base segura para Method Stanislavski, progresso de questlines e troféus sensíveis.",
+        "number": 1,
+        "title": "Comece a run principal com atenção a escolhas e lifepath"
+      },
+      {
+        "detail": "Concluir os troféus automáticos de história e preparar os finais sem bloquear The Devil.",
+        "number": 2,
+        "title": "Avance a história até os pontos críticos de finais"
+      },
+      {
+        "detail": "Liberar os finais e troféus ligados a Panam, Rogue, Kerry, Judy e River.",
+        "number": 3,
+        "title": "Conclua questlines de personagens antes do ponto sem retorno"
+      },
+      {
+        "detail": "Desbloquear finais diferentes sem repetir a campanha inteira.",
+        "number": 4,
+        "title": "Use o save de Nocturne OP55N1 para finais"
+      },
+      {
+        "detail": "Limpar Watson, Westbrook, Pacifica, Terras Baldias, Heywood, Santo Domingo e Centro da Cidade.",
+        "number": 5,
+        "title": "Complete gigs e delitos da NCPD por distrito"
+      },
+      {
+        "detail": "Completar Breathtaking, The Wandering Fool, Frequent Flyer e Autojock.",
+        "number": 6,
+        "title": "Colete itens de Johnny, tarô, dataterms e veículos"
+      }
+    ],
     "seo": {
       "description": "Guia de troféus de Cyberpunk 2077 com roadmap da platina, tempo estimado, dificuldade, troféus perdíveis, finais, Takemura, itens de Johnny, Phantom Liberty separado e dicas atualizadas para os 45 troféus base.",
       "keywords": "Cyberpunk 2077 troféus, Cyberpunk 2077 platina, guia Cyberpunk 2077, Cyberpunk 2077 PS5 troféus, Cyberpunk 2077 PS4 troféus, Never Fade Away, O Diabo, The Devil Cyberpunk 2077, Takemura, Breathtaking, Mão de prata, Phantom Liberty troféus, Nocturne OP55N1, Cyberpunk 2077 patch 2.0 troféus",

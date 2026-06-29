@@ -319,9 +319,10 @@ window.UIAdminRender = (() => {
     const cards = qs('#adminSummaryCards'); if (!cards) return;
     cards.innerHTML = [
       ['Jogos cadastrados', summary.totalGames || 0, 'base editorial'],
-      ['Trof?us cadastrados', summary.totalTrophies || 0, 'checklists'],
-      ['Verificados', summary.verifiedGuides || 0, 'revis?o manual'],
-      ['Em revis?o', summary.guidesInReview || 0, 'fila ativa']
+      ['Troféus cadastrados', summary.totalTrophies || 0, 'checklists'],
+      ['Guias publicados', summary.publishedGuides || 0, 'fora de rascunho'],
+      ['Em revisão', summary.guidesInReview || 0, 'fila ativa'],
+      ['Verificados', summary.verifiedGuides || 0, 'revisão manual']
     ].map(([label, value, help]) => `
       <div class="glass-morphism p-5 rounded-[20px] admin-kpi-card">
         <div class="text-xs uppercase tracking-wide text-slate-400 mb-2">${escapeHtml(label)}</div>
@@ -334,23 +335,15 @@ window.UIAdminRender = (() => {
     const target = qs('#adminEditorialQueue');
     if (!target) return;
     const items = Array.isArray(queue) ? queue : [];
-    if (!items.length) {
-      target.innerHTML = `
-        <div class="admin-empty-state admin-empty-state--compact">
-          <strong>Nada urgente agora</strong>
-          <p>Quando houver guias em revis?o, feedback novo ou sinais editoriais fracos, eles aparecer?o aqui.</p>
-        </div>`;
-      return;
-    }
     target.innerHTML = items.map(item => `
-      <article class="admin-queue-card">
+      <article class="admin-queue-card ${Number(item.count || 0) > 0 ? '' : 'admin-queue-card--empty'}">
         <div class="admin-queue-card__count">${escapeHtml(String(item.count || 0))}</div>
         <div class="admin-queue-card__body">
-          <strong>${escapeHtml(item.title || 'Pend?ncia')}</strong>
+          <strong>${escapeHtml(item.title || 'Pendência')}</strong>
           <p>${escapeHtml(item.description || '')}</p>
-          ${Array.isArray(item.examples) && item.examples.length ? `<small>${escapeHtml(item.examples.slice(0, 3).join(' ? '))}</small>` : ''}
+          ${Array.isArray(item.examples) && item.examples.length ? `<small>${escapeHtml(item.examples.slice(0, 3).join(' · '))}</small>` : `<small>${escapeHtml(item.empty || 'Sem pendência neste recorte.')}</small>`}
         </div>
-        <button type="button" class="atlas-btn atlas-btn-secondary atlas-btn-compact" data-admin-queue-target="${escapeAttribute(item.target || '#adminCatalogPanel')}">${escapeHtml(item.action || 'Ver guias')}</button>
+        <button type="button" class="atlas-btn atlas-btn-secondary atlas-btn-compact" data-admin-queue-target="${escapeAttribute(item.target || '#adminCatalogPanel')}" data-admin-queue-filter="${escapeAttribute(item.filter || '')}">${escapeHtml(item.action || 'Ver guias')}</button>
       </article>`).join('');
   }
 
@@ -411,22 +404,38 @@ window.UIAdminRender = (() => {
     const summary = qs('#adminResultsSummary');
     const items = Array.isArray(response.items) ? response.items : [];
     const pagination = response.pagination || {};
-    if (summary) summary.textContent = `${pagination.total || 0} jogo(s) encontrados nesta p?gina administrativa.`;
+    const filterLabels = {
+      review: 'Em revisão',
+      verified: 'Verificados',
+      draft: 'Rascunho',
+      'low-score': 'Score baixo',
+      'low-coverage': 'Cobertura baixa',
+      'no-cover': 'Sem capa',
+      recent: 'Atualizados recentemente',
+      feedback: 'Com feedback',
+      suspicious: 'Com risco/filtro suspeito'
+    };
+    if (summary) {
+      const filterCopy = response.filter && response.filter !== 'all' ? ` Filtro ativo: ${filterLabels[response.filter] || response.filter}.` : '';
+      summary.textContent = `${pagination.total || 0} jogo(s) encontrados nesta página administrativa.${filterCopy}`;
+    }
     if (!items.length) {
-      target.innerHTML = '<div class="admin-empty-state"><strong>Nenhum jogo encontrado</strong><p>Revise a busca ou limpe o filtro para voltar ? lista completa.</p></div>';
+      target.innerHTML = '<div class="admin-empty-state"><strong>Nenhum jogo encontrado</strong><p>Revise a busca, troque o filtro ou volte para Todos para ver a lista completa.</p></div>';
       renderPagination('#adminPagination', pagination, { mode: 'admin', itemLabel: 'jogos' });
       return;
     }
     target.innerHTML = items.map(game => {
       const statusBadge = getEditorialBadge(game);
       const hasCover = Boolean(game.cover_image || game.image);
-      const score = game.editorial_score ?? game.editorialScore ?? game.quality_score ?? game.qualityScore ?? null;
+      const score = game._adminEditorialScore ?? game.editorial_score ?? game.editorialScore ?? game.quality_score ?? game.qualityScore ?? null;
+      const coverage = game.coverage_level || game.coverageLevel || 'partial';
+      const updatedAt = game.updated_at || game.updatedAt || '';
       const warningItems = [];
       if (!hasCover) warningItems.push('Sem capa');
-      if (game.verification_status === 'review' || game.editorial_review_status === 'in_review') warningItems.push('Em revis?o');
-      if (game.coverage_level === 'partial') warningItems.push('Cobertura inicial');
+      if (game.verification_status === 'review' || game.editorial_review_status === 'in_review') warningItems.push('Em revisão');
+      if (coverage === 'partial') warningItems.push('Cobertura inicial');
       const scoreHtml = score !== null && score !== undefined
-        ? `<span class="admin-card-score">Score ${escapeHtml(String(score))}</span>`
+        ? `<span class="admin-card-score">Score ${escapeHtml(String(score))} · ${escapeHtml(game._adminScoreLabel || '')}</span>`
         : '';
       const warningsHtml = warningItems.length
         ? `<div class="admin-card-alerts">${warningItems.slice(0, 3).map(item => `<span>${escapeHtml(item)}</span>`).join('')}</div>`
@@ -442,13 +451,18 @@ window.UIAdminRender = (() => {
               <span class="atlas-tag atlas-tag--${escapeAttribute(statusBadge.tone)}">${escapeHtml(statusBadge.label)}</span>
               ${scoreHtml}
             </div>
-            <div class="admin-game-card__meta">${escapeHtml(game.time || 'Tempo n?o informado')} ? ${escapeHtml(statusBadge.detail || '')}</div>
+            <div class="admin-game-card__meta">
+              <span>${escapeHtml(game.time || 'Tempo não informado')}</span>
+              <span>${escapeHtml(statusBadge.detail || '')}</span>
+              <span>Cobertura: ${escapeHtml(coverage)}</span>
+              ${updatedAt ? `<span>Atualizado: ${escapeHtml(formatFeedbackDate(updatedAt))}</span>` : ''}
+            </div>
             ${warningsHtml}
           </div>
         </div>
         <div class="admin-game-card__actions">
           <button type="button" class="atlas-btn atlas-btn-primary atlas-btn-compact" data-admin-edit="${escapeAttribute(String(game.id))}"><i class="fas fa-pen-to-square"></i><span>Editar</span></button>
-          <button type="button" class="atlas-btn atlas-btn-secondary atlas-btn-compact" data-admin-preview="${escapeAttribute(String(game.id))}"><i class="fas fa-eye"></i><span>Pr?via</span></button>
+          <button type="button" class="atlas-btn atlas-btn-secondary atlas-btn-compact" data-admin-preview="${escapeAttribute(String(game.id))}"><i class="fas fa-eye"></i><span>Prévia</span></button>
           <details class="admin-card-more">
             <summary aria-label="Mais a??es para ${escapeAttribute(game.name || 'jogo')}"><i class="fas fa-ellipsis"></i><span>Mais</span></summary>
             <div>
@@ -487,7 +501,7 @@ window.UIAdminRender = (() => {
       target.innerHTML = `
         <div class="admin-empty-state">
           <strong>Nenhum feedback pendente</strong>
-          <p>Quando algu?m enviar uma corre??o, d?vida ou sugest?o por uma p?gina de guia, ela aparecer? com tipo, jogo relacionado, URL e data.</p>
+          <p>Quando alguém enviar uma correção, dúvida ou sugestão por uma página de guia, ela aparecerá com tipo, jogo relacionado, URL e data.</p>
         </div>`;
       if (paginationTarget) paginationTarget.innerHTML = '';
       return;
@@ -518,7 +532,7 @@ window.UIAdminRender = (() => {
     paginationTarget.innerHTML = `
       <button type="button" class="atlas-btn atlas-btn-secondary atlas-btn-compact" data-feedback-page="${Math.max(currentPage - 1, 1)}" ${currentPage <= 1 ? 'disabled' : ''}>Anterior</button>
       <span class="text-sm text-white/55">P?gina ${escapeHtml(String(currentPage))} de ${escapeHtml(String(totalPages))}</span>
-      <button type="button" class="atlas-btn atlas-btn-secondary atlas-btn-compact" data-feedback-page="${Math.min(currentPage + 1, totalPages)}" ${currentPage >= totalPages ? 'disabled' : ''}>Pr?xima</button>
+      <button type="button" class="atlas-btn atlas-btn-secondary atlas-btn-compact" data-feedback-page="${Math.min(currentPage + 1, totalPages)}" ${currentPage >= totalPages ? 'disabled' : ''}>Próxima</button>
     `;
   }
 

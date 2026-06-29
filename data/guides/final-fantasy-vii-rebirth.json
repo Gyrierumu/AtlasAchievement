@@ -39,7 +39,7 @@
     "time_min_hours": 150,
     "time_reason": "A faixa de 150-200 horas considera campanha, regioes, side content, minigames, chapter select, Hard Mode, combat simulator e cleanup final.",
     "time_sort_hours": 150,
-    "updated_at": "2026-06-28 21:19:06",
+    "updated_at": "2026-06-29 22:19:44",
     "verification_note": "Lista base de Final Fantasy VII Rebirth adicionada com checklist e roadmap completos; aguarda revisao editorial manual final.",
     "verification_status": "review",
     "walkthrough": null
@@ -211,6 +211,11 @@
       "Conferir se página individual e catálogo exibem o mesmo status editorial.",
       "Conferir se flags do topo batem com filtros do catálogo."
     ],
+    "editorial_summary": [
+      "Final Fantasy VII Rebirth é uma das platinas mais longas e exigentes do projeto, focada em praticamente 100% de conclusão: terminar a história, liberar Chapter Select, limpar World Intel, side quests, minigames, colecionáveis relevantes, Johnny's Treasure Trove, Combat Simulator, desafios Brutal/Legendary, Gilgamesh, Protorelics, piano, Queen's Blood relacionado a troféus e todos os capítulos no Hard Mode.",
+      "A lista base tem 61 troféus, não exige online, cooperação ou DLC, e não possui perdíveis permanentes graças ao Chapter Select. A rota mais segura é fazer uma primeira run completa em dificuldade livre, avançar o máximo possível de World Intel e side content, usar o pós-jogo/Capítulo 13 para cleanup, fechar Johnny's Treasure Trove e Combat Simulator, liberar Gotterdammerung em Rulers of the Outer Worlds e então concluir todos os capítulos no Hard Mode.",
+      "Versões modernas podem ter recursos de assistência ou Streamlined Progression, mas o guia só deve recomendar essas opções como rota facilitada se a versão-alvo confirmar disponibilidade e ausência de bloqueio de troféus."
+    ],
     "faq": [
       {
         "answer": "Não há perdíveis permanentes. Chapter Select libera após a história e permite recuperar side quests, World Intel, minigames, colecionáveis e troféus de capítulo.",
@@ -276,6 +281,38 @@
       "time": "Muito longo, cerca de 150 a 200 horas na rota tradicional.",
       "verdict": "Sim, mas é uma platina de elite: longa, exigente e focada em quase 100% de conclusão."
     },
+    "quick_plan": [
+      {
+        "detail": "Concluir a história, liberar Chapter Select e evitar retrabalho em inimigos, World Intel e colecionáveis.",
+        "number": 1,
+        "title": "Faça a primeira run coletando e avaliando tudo"
+      },
+      {
+        "detail": "Resolver World Intel, side quests, protorelics, minigames e colecionáveis restantes.",
+        "number": 2,
+        "title": "Use Chapter Select para limpar open world no Capítulo 13"
+      },
+      {
+        "detail": "Obter todos os 88 itens do Johnny's Treasure Trove, o maior gargalo geral da platina.",
+        "number": 3,
+        "title": "Complete Johnny's Treasure Trove"
+      },
+      {
+        "detail": "Completar World Intel suficiente para desenvolver todas as matérias disponíveis com Chadley.",
+        "number": 4,
+        "title": "Desenvolva todas as matérias de Chadley"
+      },
+      {
+        "detail": "Concluir os troféus e itens de Johnny ligados a minigames.",
+        "number": 5,
+        "title": "Feche minigames, piano e Queen's Blood"
+      },
+      {
+        "detail": "Derrotar os desafios mais difíceis da platina e liberar Gotterdammerung.",
+        "number": 6,
+        "title": "Prepare builds para Brutal e Legendary Combat Simulator"
+      }
+    ],
     "seo": {
       "description": "Guia de troféus de Final Fantasy VII Rebirth com roadmap da platina, Hard Mode, Johnny's Treasure Trove, World Intel, Brutal/Legendary VR Missions, Piano, Gilgamesh, Chapter Select e dicas para os 61 troféus.",
       "keywords": [

@@ -39,7 +39,7 @@
     "time_min_hours": 50,
     "time_reason": "A faixa de 50-100 horas considera campanha, ato 3, surveys, coletaveis aleatorios, RNG e cleanup.",
     "time_sort_hours": 50,
-    "updated_at": "2026-06-28 21:19:06",
+    "updated_at": "2026-06-29 22:19:44",
     "verification_note": "Lista base adicionada com checklist e roadmap completos; aguarda revisao editorial manual final.",
     "verification_status": "review",
     "walkthrough": null
@@ -117,6 +117,10 @@
       }
     ],
     "checklist": [],
+    "editorial_summary": [
+      "Returnal é uma platina difícil, longa e muito dependente de habilidade e RNG. A lista base possui 31 troféus, não tem perdíveis desde o patch 1.4.0 e não possui troféus ligados a dificuldade selecionável, porque o jogo não tem seleção de dificuldade. A campanha é estruturada em ciclos roguelike: ao morrer, Selene reinicia o ciclo e perde muitos recursos temporários, mas mantém desbloqueios permanentes importantes. Depois do Act 2 e do Act 3, o jogador pode usar o free roam para repetir biomas, buscar coletáveis e concluir Surveys.",
+      "A maior parte da dificuldade vem de vencer a história e lidar com o RNG dos coletáveis necessários aos Survey trophies. Para a platina, é preciso concluir os Surveys dos 6 biomas, fazer as House Sequences, coletar os 6 Sunface Fragments, terminar o Act 3 e completar o troféu online In-Field Training no Simulation Mode. O DLC Ascension, a Tower of Sisyphus e o co-op não entram na platina base."
+    ],
     "faq": [
       {
         "answer": "Sim. In-Field Training exige completar um Daily Challenge no Simulation Mode conectado à PSN. Algumas fontes contam 2 online incluindo a platina Helios, que depende de todos os troféus.",
@@ -175,6 +179,38 @@
     "quickDecision": {
       "summary": "Platina de 50-100h+, 8,5/10, sem perdíveis e com online obrigatório direto em In-Field Training. O gargalo real são Surveys, RNG e repetição de biomas; Ascension fica fora."
     },
+    "quick_plan": [
+      {
+        "detail": "Aprender Overload, dash, Adrenaline, Integrity, Parasites, Reconstructor, Fabricators e padrões dos inimigos enquanto avança pelos biomas 1-6.",
+        "number": 1,
+        "title": "Sobreviva até o fim do Act 2"
+      },
+      {
+        "detail": "Assistir às House Sequences, buscar os 6 Sunface Fragments, voltar à casa, derrotar Ophion novamente e usar a chave no carro.",
+        "number": 2,
+        "title": "House Sequences, Sunface Fragments e Act 3"
+      },
+      {
+        "detail": "Completar os Surveys de Overgrown Ruins, Crimson Wastes, Derelict Citadel, Echoing Ruins, Fractured Wastes e Abyssal Scar.",
+        "number": 3,
+        "title": "Surveys dos 6 biomas"
+      },
+      {
+        "detail": "Completar Surgical Precision, Adapting to Circumstance, Hardened Shell, Risk Assessment, Adrenaline Spike, Irreversibly Contaminated, Second Chance e Eternal Return.",
+        "number": 4,
+        "title": "Troféus de combate, sobrevivência e RNG leve"
+      },
+      {
+        "detail": "Entrar no Simulation Mode pelo terminal da nave e completar um Daily Challenge.",
+        "number": 5,
+        "title": "Simulation Mode online"
+      },
+      {
+        "detail": "Revisar os 31 troféus base e confirmar que Ascension, Tower of Sisyphus e co-op não foram incluídos.",
+        "number": 6,
+        "title": "Conferência final sem Ascension"
+      }
+    ],
     "seo": {},
     "tags": []
   },

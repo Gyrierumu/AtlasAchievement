@@ -39,7 +39,7 @@
     "time_min_hours": 30,
     "time_reason": "A faixa de 30-40 horas considera várias campanhas, coleta total, pedidos do Mercador, ranks, Professional e runs de restrição.",
     "time_sort_hours": 30,
-    "updated_at": "2026-06-28 21:19:09",
+    "updated_at": "2026-06-29 22:19:48",
     "verification_note": "Guia revisado editorialmente.",
     "verification_status": "verified",
     "walkthrough": null
@@ -93,6 +93,7 @@
       "Fazer Hardcore S+ em New Game.",
       "Conferir que Separate Ways/Caminhos Distintos, VR Mode, tickets pagos e DLC extra não entraram na platina base."
     ],
+    "editorial_summary": [],
     "faq": [
       {
         "answer": "Normalmente várias. O caminho mais seguro separa campanha de coleta, NG+ de restrições, Professional/rank e runs S+ em New Game.",
@@ -145,6 +146,38 @@
       "recommendation": "Vale para quem aceita planejar saves, colecionáveis, pedidos do Mercador, runs S+, Professional e desafios de restrição sem depender de DLC paga.",
       "summary": "Platina média/difícil, offline e de múltiplas runs: 40 troféus base, 30-40h, dificuldade 7/10 e objetivos sensíveis por falta de chapter select/free-roam."
     },
+    "quick_plan": [
+      {
+        "detail": "Concluir a história aprendendo combate, rotas, chefes e sistemas enquanto já adianta coletáveis importantes.",
+        "number": 1,
+        "title": "Primeira campanha com coletáveis e aprendizado"
+      },
+      {
+        "detail": "Reduzir pendências antes de entrar nas runs de dificuldade, rank e restrição.",
+        "number": 2,
+        "title": "Cleanup de coletáveis, requests e troféus situacionais"
+      },
+      {
+        "detail": "Usar equipamentos e upgrades acumulados para cumprir objetivos de tempo, dificuldade ou rank que aceitem New Game+.",
+        "number": 3,
+        "title": "Run rápida em NG+ para recursos e rank"
+      },
+      {
+        "detail": "Cumprir troféus de restrição sem atrapalhar as runs de rank mais exigentes.",
+        "number": 4,
+        "title": "Runs de restrição: Minimalist, Frugalist e Silent Stranger"
+      },
+      {
+        "detail": "Cumprir os requisitos mais exigentes de rank e dificuldade com planejamento de rota, saves e tempo.",
+        "number": 5,
+        "title": "Run de S+ / dificuldade alta em save novo"
+      },
+      {
+        "detail": "Conferir todos os troféus restantes da lista base antes de encerrar a platina.",
+        "number": 6,
+        "title": "Revisão final da platina base"
+      }
+    ],
     "seo": {
       "description": "Roadmap completo da platina de Resident Evil 4 Remake, com troféus perdíveis, runs S+, colecionáveis, armas, checklist e dicas para evitar replay desnecessário.",
       "keywords": "Resident Evil 4 Remake troféus, Resident Evil 4 Remake platina, Resident Evil 4 Remake guia, Resident Evil 4 Remake roadmap, Resident Evil 4 Remake perdíveis, Resident Evil 4 Remake S+, Resident Evil 4 Remake checklist",

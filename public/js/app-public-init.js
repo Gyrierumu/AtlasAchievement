@@ -51,7 +51,7 @@ window.AppPublicInit = (() => {
     });
     bindGlobalSearch({ UI, state, debouncedSearchGames, openBestSearchResult, syncSuggestionHighlight });
     bindGuideInteractions({ UI, state, toggleTrophy, focusGuideAction, handleGuideQuickDockClick });
-    bindLibraryView({ UI, state, deleteFromLibrary, loadGuideBySlug, loadFromLibrary, isCurrentGameSaved, removeCurrentGameFromLibrary, saveCurrentGameToLibrary: () => saveCurrentGameToLibrary(renderCurrentGuide) });
+    bindLibraryView({ UI, state, deleteFromLibrary, loadGuideBySlug, loadFromLibrary, isCurrentGameSaved, removeCurrentGameFromLibrary, saveCurrentGameToLibrary: () => saveCurrentGameToLibrary(renderCurrentGuide), loadCatalogPage, navigate });
     bindCatalogView({ UI, state, loadCatalogPage, navigate, loadGuideBySlug, rerenderCatalogView, toggleCatalogCompare, clearCatalogCompare, setCatalogIntent });
     bindPaginationControls({ state, loadCatalogPage, navigate, loadAdminGames });
   }

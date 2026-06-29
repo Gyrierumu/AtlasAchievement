@@ -39,7 +39,7 @@
     "time_min_hours": 20,
     "time_reason": "A faixa de 20-40 horas considera uma campanha normal, cleanup de itens/lore/familiaridade e uma run de desafio sem shell.",
     "time_sort_hours": 20,
-    "updated_at": "2026-06-28 21:19:06",
+    "updated_at": "2026-06-29 22:19:44",
     "verification_note": "Guia revisado para a lista base de 26 troféus; manter sem verified até confirmação manual de nomes PT-BR oficiais e detalhes de itens de Bars Tended.",
     "verification_status": "review",
     "walkthrough": null
@@ -122,6 +122,7 @@
       "Completar a campanha em Obsidian Dark Form",
       "Confirmar que The Virtuous Cycle não está no checklist obrigatório da platina base"
     ],
+    "editorial_summary": [],
     "faq": [
       {
         "answer": "Não. Os 26 troféus da lista base podem ser obtidos offline.",
@@ -162,6 +163,38 @@
       "recommendation": "Faça uma campanha normal de aprendizado e coleta, depois uma run dedicada combinando Forever Alone com Life is Suffering.",
       "summary": "Platina curta para o gênero, mas exigente: não pede online, coop ou DLC, porém exige atenção a cinco perdíveis e uma run sem shell."
     },
+    "quick_plan": [
+      {
+        "detail": "Aprender harden, parry, stamina, resolve e chefes enquanto coleta shells, armas, lore e itens.",
+        "number": 1,
+        "title": "Primeira campanha normal: aprendizado e coleta"
+      },
+      {
+        "detail": "Proteger os perdíveis que exigem uma oportunidade específica ou podem bloquear conteúdo naquela jogada.",
+        "number": 2,
+        "title": "Controle Face Off, Seat of Infinity e itens perdíveis"
+      },
+      {
+        "detail": "Concluir coleta repetitiva, acumulativos e ações específicas antes da run sem shell.",
+        "number": 3,
+        "title": "Finalize itens, familiaridade, parries e gastos"
+      },
+      {
+        "detail": "Finalizar a campanha e seus troféus de história sem abandonar pendências importantes.",
+        "number": 4,
+        "title": "Derrote os chefes e conclua a campanha"
+      },
+      {
+        "detail": "Concluir a campanha sem se vincular a uma shell e em Obsidian Dark Form.",
+        "number": 5,
+        "title": "Run sem shell em Obsidian Dark Form"
+      },
+      {
+        "detail": "Revisar qualquer pendência recuperável e confirmar o escopo correto da platina.",
+        "number": 6,
+        "title": "Cleanup final da lista base"
+      }
+    ],
     "seo": {
       "description": "Roadmap completo da platina de Mortal Shell, com troféus perdíveis, run sem shell, Obsidian Dark Form, colecionáveis, checklist e dicas para evitar replay desnecessário.",
       "keywords": "Mortal Shell troféus, Mortal Shell platina, Mortal Shell guia, Mortal Shell roadmap, Mortal Shell perdíveis, Mortal Shell Forever Alone, Mortal Shell Life is Suffering, Mortal Shell Obsidian Dark Form, Mortal Shell checklist",

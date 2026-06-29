@@ -47,6 +47,30 @@
     return `${text.slice(0, Math.max(0, maxLength - 1)).trim()}…`;
   }
 
+  const GUIDE_EDITORIAL_SUMMARIES = {
+    'elden-ring': [
+      'Elden Ring e uma platina longa de mundo aberto, baseada em chefes com trofeu, finais, colecoes lendarias e planejamento antes da reta final. A maior parte do checklist pode ser resolvida com exploracao e cleanup, mas alguns pontos geram retrabalho real se voce avancar sem revisar o roadmap.',
+      'Os principais alertas sao os tres finais mutuamente exclusivos por save, Bolt of Gransax antes de Leyndell virar Ashen Capital e Lichdragon Fortissax pela quest da Fia. Com backup antes da escolha final, uma jogada bem planejada pode reduzir bastante a repeticao; sem backup, trate NG+ ou saves separados como parte da rota.',
+      'Shadow of the Erdtree fica fora da platina base. Use o roadmap para organizar chefes, questlines, lendarios e finais, e deixe a checklist para confirmar colecoes, bosses opcionais e cleanup antes de iniciar NG+.'
+    ],
+    'star-wars-jedi-survivor': [
+      "Star Wars Jedi: Survivor e uma platina acessivel de acao-aventura, focada em campanha, exploracao metroidvania, cleanup por planeta e objetivos situacionais de combate. A lista base nao exige online, coop, New Game+ ou dificuldade especifica, entao o maior risco pratico e esquecer You've Got A Friend durante as janelas com companheiros.",
+      'Resolva os assistes de Bode cedo e complete os de Merrin quando ela estiver disponivel; o restante pode ser organizado no free roam depois da historia. Use Map Upgrades, fast travel e o checklist para separar Priorite Shards, Jedi Chambers, Force Tears, bounties, scans, peixes, plantas, Cantina, Holotactics e lojas.',
+      'A rota ideal e jogar a campanha em Story Mode ou na dificuldade que preferir, sem tentar limpar areas bloqueadas cedo demais. Depois da historia, volte aos planetas com todas as habilidades e finalize colecionaveis, combates situacionais, customizacoes e categorias de Cantina.'
+    ]
+  };
+
+  function buildGuideEditorialSummary(game = {}) {
+    const explicit = Array.isArray(game?.editorial_summary)
+      ? game.editorial_summary.map(paragraph => String(paragraph || '').trim()).filter(Boolean)
+      : [];
+    const normalizedSlug = String(game?.slug || '').trim().toLowerCase();
+    if (explicit.length >= 3) return explicit;
+    if (GUIDE_EDITORIAL_SUMMARIES[normalizedSlug]) return GUIDE_EDITORIAL_SUMMARIES[normalizedSlug];
+    if (explicit.length) return explicit;
+    return GUIDE_EDITORIAL_SUMMARIES[normalizedSlug] || [];
+  }
+
   function normalizeGuideSignalText(value = '') {
     return String(value || '').toLowerCase().normalize('NFD').replace(/[\u0300-\u036f]/g, '');
   }
@@ -739,6 +763,47 @@
       (customTagsById[trophyId] || []).forEach(add);
       return nextTags;
     }
+    const normalizedSlug = String(game?.slug || '').trim().toLowerCase();
+
+    if (normalizedSlug === 'hades') {
+      return [
+        { question: 'Hades tem trofeus perdiveis?', answer: 'Nao. Nenhum trofeu da lista base fica bloqueado definitivamente; objetivos pendentes podem ser retomados em novas runs no mesmo save.' },
+        { question: 'God Mode bloqueia trofeus?', answer: 'Nao. God Mode pode ser ativado para reduzir a dificuldade sem invalidar trofeus.' },
+        { question: 'Qual e o maior grind da platina?', answer: 'Afinidade, Fated List, Keepsakes rank 3, Companions, recursos raros, pesca, boons e dialogos sujeitos a RNG concentram o maior tempo.' },
+        { question: 'Preciso completar Heat muito alto?', answer: 'O teto relevante para a platina e Heat 16 por causa dos premios de Skelly. Nao ha motivo de platina para forcar Heat acima disso.' },
+        { question: 'Hades exige online, coop ou DLC?', answer: 'Nao. A platina base e totalmente offline, solo e sem DLC obrigatoria.' },
+        { question: 'O que focar nas primeiras runs?', answer: 'Aprenda armas e chefes, invista Darkness na Mirror of Night, converse com todos e compre a Fated List cedo.' },
+        { question: 'Preciso maximizar todos os aspectos de arma?', answer: 'Nao. Blood Bound exige maximizar um aspecto; Infernal Arms exige desbloquear todos os aspectos.' },
+        { question: 'Hades II entra neste guia?', answer: 'Nao. Hades II e outro jogo, com lista e guia separados.' }
+      ];
+    }
+
+    if (normalizedSlug === 'elden-ring') {
+      return [
+        { question: 'Elden Ring tem trofeus perdiveis?', answer: 'Sim. Os tres finais sao exclusivos por save, Bolt of Gransax pode ficar indisponivel depois de Leyndell virar Ashen Capital, e Lichdragon Fortissax depende da quest da Fia.' },
+        { question: 'Da para pegar os tres finais em uma jogada?', answer: 'Sim, se voce fizer backup do save depois de derrotar Elden Beast e antes de escolher qualquer final. Sem backup, planeje NG+ ou saves separados.' },
+        { question: 'Shadow of the Erdtree entra na platina?', answer: 'Nao. A DLC fica fora da lista base de 42 trofeus acompanhada por este guia.' },
+        { question: 'Precisa jogar online ou em coop?', answer: 'Nao. Mensagens, invocacoes e coop podem ajudar, mas a platina base nao exige online, PS+ ou outro jogador.' },
+        { question: 'Qual item merece mais alerta?', answer: 'Bolt of Gransax. Pegue-o em Leyndell antes de derrotar Maliketh e transformar a capital.' },
+        { question: 'O que conferir antes do fim?', answer: 'Confirme finais preparados, Fia/Fortissax, Bolt of Gransax, armamentos lendarios, magias/encantamentos lendarios, talismas lendarios, cinzas lendarias e chefes opcionais com trofeu.' },
+        { question: 'Existe trofeu de dificuldade?', answer: 'Nao. A dificuldade vem dos chefes e da exploracao, nao de selecionar um modo dificil obrigatorio.' },
+        { question: 'Posso deixar chefes opcionais para depois?', answer: 'Muitos podem ficar para cleanup, mas revise o roadmap antes de avancar demais porque alguns acessos e questlines mudam com a historia.' }
+      ];
+    }
+
+    if (normalizedSlug === 'star-wars-jedi-survivor') {
+      return [
+        { question: 'Star Wars Jedi: Survivor tem trofeu perdivel?', answer: 'Sim. You\'ve Got A Friend e o unico perdivel real, porque exige usar assistes de Bode e Merrin em janelas especificas da campanha.' },
+        { question: 'Precisa jogar online ou coop?', answer: 'Nao. A lista base e offline e solo, sem servidores, multiplayer, coop ou PS+ obrigatorio.' },
+        { question: 'A dificuldade afeta trofeus?', answer: 'Nao. Tudo pode ser feito em Story Mode/Easiest Difficulty.' },
+        { question: 'Existe free roam depois da historia?', answer: 'Sim. Depois da campanha, voce pode voltar aos planetas com habilidades completas para fazer quase todo o cleanup.' },
+        { question: 'Precisa de New Game+?', answer: 'Nao. New Game+ so ajuda se voce perdeu You\'ve Got A Friend.' },
+        { question: 'O jogo tem save manual?', answer: 'Nao. Ha apenas um autosave, entao mantenha o jogo atualizado antes de concluir categorias grandes.' },
+        { question: 'O que costuma atrasar a platina?', answer: 'Priorite Shards, Jedi Chambers, Force Tears, bounties, Tactical Guide, peixes, plantas, recruits da Cantina, Holotactics e misc de combate.' },
+        { question: 'Quais trofeus podem ser tecnicamente chatos?', answer: 'Perk of the Job, They\'re Probably Fine e Splurgle tiveram relatos de instabilidade; trate como risco tecnico, nao como perdiveis extras.' }
+      ];
+    }
+
     if (String(game?.slug || '').trim().toLowerCase() === 'marvels-spider-man-miles-morales') {
       const trophyId = String(trophy?.id || '').trim();
       const msmmTag = (id, label, tone = 'warning') => ({ id, label, tone });
@@ -4606,6 +4671,68 @@
     });
   }
 
+  function normalizeQuickPlanItem(item = {}, index = 0) {
+    if (typeof item === 'string') {
+      const text = compactGuideText(item, '', 190);
+      return text ? { number: index + 1, title: text, detail: '' } : null;
+    }
+    if (!item || typeof item !== 'object') return null;
+    const title = firstGuideText(item.title, item.label, item.step, item.name);
+    const detail = firstGuideText(item.detail, item.description, item.text, item.objective);
+    if (!title && !detail) return null;
+    return {
+      number: index + 1,
+      title: compactGuideText(title || detail, '', 90),
+      detail: compactGuideText(detail && detail !== title ? detail : '', '', 170)
+    };
+  }
+
+  function buildGuideQuickPlan(game = {}, viewModel = {}) {
+    const explicitItems = Array.isArray(game?.quick_plan)
+      ? game.quick_plan
+      : Array.isArray(game?.quickPlan)
+        ? game.quickPlan
+        : Array.isArray(game?.quickDecision?.quickPlan)
+          ? game.quickDecision.quickPlan
+          : [];
+    const normalizedExplicit = explicitItems
+      .map(normalizeQuickPlanItem)
+      .filter(Boolean)
+      .slice(0, 6)
+      .map((item, index) => ({ ...item, number: index + 1 }));
+    if (normalizedExplicit.length >= 3) return normalizedExplicit;
+
+    const roadmapStages = Array.isArray(viewModel?.roadmapStages) && viewModel.roadmapStages.length
+      ? viewModel.roadmapStages
+      : (Array.isArray(viewModel?.roadmap) ? viewModel.roadmap : (Array.isArray(game?.roadmap) ? game.roadmap : []))
+        .map((step, index, steps) => normalizeRoadmapStep(step, index, steps.length));
+    const derived = roadmapStages
+      .map((stage, index) => normalizeQuickPlanItem({
+        title: stage?.title,
+        detail: firstGuideText(stage?.objective, stage?.description, Array.isArray(stage?.actions) ? stage.actions[0] : '')
+      }, index))
+      .filter(Boolean);
+    const fallback = [
+      normalizeQuickPlanItem({
+        title: 'Leia os alertas iniciais',
+        detail: firstGuideText(game?.before_you_start, game?.missable_summary, 'Confirme perdiveis, online, coop, DLC e dificuldade antes de iniciar.')
+      }, 0),
+      normalizeQuickPlanItem({
+        title: 'Siga o roadmap em ordem',
+        detail: 'Use as etapas para evitar retrabalho antes de abrir a checklist completa.'
+      }, 1),
+      normalizeQuickPlanItem({
+        title: 'Finalize pela checklist',
+        detail: firstGuideText(game?.cleanup_advice, 'Marque trofeus, filtros e pendencias de cleanup ate fechar a lista.')
+      }, 2)
+    ].filter(Boolean);
+    const merged = [...derived, ...fallback]
+      .filter((item, index, items) => items.findIndex(other => other.title === item.title) === index)
+      .slice(0, 6)
+      .map((item, index) => ({ ...item, number: index + 1 }));
+    return merged.length >= 3 ? merged : fallback.map((item, index) => ({ ...item, number: index + 1 }));
+  }
+
   function buildContextualFaq(game = {}, viewModel = {}) {
     const name = String(game?.name || 'este jogo').trim() || 'este jogo';
     if (Array.isArray(game?.faq) && game.faq.length) {
@@ -6133,7 +6260,7 @@
     let missableCount = countRealMissableTrophies(trackableTrophies);
     let attentionCount = trackableTrophies.filter(trophy => trophy && (isRealMissableTrophy(trophy) || trophy.is_spoiler)).length;
     let spoilerCount = trackableTrophies.filter(trophy => trophy?.is_spoiler).length;
-    let riskCounts = ['a-way-out', 'armored-core-vi-fires-of-rubicon', 'assassin-s-creed-mirage', 'assassin-s-creed-origins', 'assassin-s-creed-odyssey', 'assassin-s-creed-shadows', 'assassin-s-creed-valhalla', 'avatar-frontiers-of-pandora', 'beyond-two-souls', 'clair-obscur-expedition-33', 'cyberpunk-2077', 'dark-souls-ii-scholar-of-the-first-sin', 'demons-souls', 'detroit-become-human', 'final-fantasy-vii-remake', 'final-fantasy-vii-rebirth', 'final-fantasy-xvi', 'it-takes-two', 'lies-of-p', 'life-is-strange-double-exposure', 'life-is-strange-remastered', 'life-is-strange-true-colors', 'little-nightmares-ii', 'marvels-spider-man', 'marvels-spider-man-miles-morales', 'metaphor-refantazio', 'monster-hunter-world', 'persona-3-reload', 'persona-5-royal', 'reanimal', 'red-dead-redemption-2', 'returnal', 'road-96', 'sekiro-shadows-die-twice', 'silent-hill-2-remake', 'split-fiction', 'star-wars-jedi-fallen-order', 'stray', 'the-witcher-3-wild-hunt'].includes(String(game?.slug || '').trim().toLowerCase())
+    let riskCounts = ['a-way-out', 'armored-core-vi-fires-of-rubicon', 'assassin-s-creed-mirage', 'assassin-s-creed-origins', 'assassin-s-creed-odyssey', 'assassin-s-creed-shadows', 'assassin-s-creed-valhalla', 'avatar-frontiers-of-pandora', 'beyond-two-souls', 'clair-obscur-expedition-33', 'cyberpunk-2077', 'dark-souls-ii-scholar-of-the-first-sin', 'demons-souls', 'detroit-become-human', 'final-fantasy-vii-remake', 'final-fantasy-vii-rebirth', 'final-fantasy-xvi', 'it-takes-two', 'lies-of-p', 'life-is-strange-double-exposure', 'life-is-strange-remastered', 'life-is-strange-true-colors', 'little-nightmares-ii', 'marvels-spider-man', 'marvels-spider-man-miles-morales', 'metaphor-refantazio', 'monster-hunter-world', 'persona-3-reload', 'persona-5-royal', 'reanimal', 'red-dead-redemption-2', 'returnal', 'road-96', 'sekiro-shadows-die-twice', 'silent-hill-2-remake', 'split-fiction', 'star-wars-jedi-fallen-order', 'star-wars-jedi-survivor', 'stray', 'the-witcher-3-wild-hunt'].includes(String(game?.slug || '').trim().toLowerCase())
       ? getGuideRiskCounts(trackableTrophies, game)
       : getRiskCounts(trackableTrophies);
     let guidanceCounts = buildGuidanceCounts(trackableTrophies, riskCounts);
@@ -6313,6 +6440,8 @@
   return {
     firstGuideText,
     compactGuideText,
+    buildGuideEditorialSummary,
+    buildGuideQuickPlan,
     normalizeGuideSignalText,
     isCompletionTrophy,
     isRealMissableTrophy,

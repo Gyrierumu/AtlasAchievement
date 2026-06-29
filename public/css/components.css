@@ -1912,6 +1912,115 @@ select:focus {
   text-align: left;
 }
 
+.library-summary__stats {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  align-items: center;
+}
+
+.library-summary__stats span,
+.library-summary__search {
+  min-height: 34px;
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  padding: 6px 9px;
+  border: 1px solid rgba(148,163,184,.12);
+  border-radius: 999px;
+  background: rgba(255,255,255,.035);
+  color: rgba(226,232,240,.68);
+  font-size: .78rem;
+  font-weight: 780;
+}
+
+.library-summary__stats strong {
+  color: rgba(248,251,255,.94);
+  font-size: .98rem;
+  line-height: 1;
+}
+
+.library-summary__next {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 6px;
+  margin-top: 8px;
+  color: rgba(226,232,240,.7);
+  font-size: .86rem;
+  line-height: 1.35;
+}
+
+.library-summary__next i {
+  color: rgba(250,204,21,.9);
+}
+
+.library-summary__next strong {
+  color: rgba(248,251,255,.92);
+}
+
+.library-summary__next small {
+  color: rgba(226,232,240,.48);
+}
+
+.library-summary__search {
+  margin-top: 8px;
+  border-style: dashed;
+}
+
+.library-shelf__empty--welcome {
+  min-height: 320px;
+  display: grid;
+  grid-template-columns: minmax(0, 1.08fr) minmax(220px, .72fr);
+  align-items: center;
+  gap: 18px;
+  padding: 34px 24px;
+  border-color: rgba(125,211,252,.16);
+  border-style: solid;
+  border-radius: 18px;
+  background:
+    linear-gradient(180deg, rgba(14,165,233,.09), rgba(15,23,42,.42)),
+    rgba(255,255,255,.025);
+  text-align: left;
+}
+
+.library-empty-illustration {
+  width: 54px;
+  height: 54px;
+  position: relative;
+  display: inline-grid;
+  place-items: center;
+  border-radius: 16px;
+  border: 1px solid rgba(125,211,252,.18);
+  background:
+    radial-gradient(circle at 30% 25%, rgba(250,204,21,.16), transparent 36%),
+    linear-gradient(145deg, rgba(14,165,233,.16), rgba(20,184,166,.08));
+  color: rgba(224,242,254,.92);
+  box-shadow: inset 0 1px 0 rgba(255,255,255,.08);
+}
+
+.library-empty-illustration i {
+  position: relative;
+  z-index: 2;
+  font-size: 1.2rem;
+}
+
+.library-empty-illustration span {
+  position: absolute;
+  right: 8px;
+  bottom: 8px;
+  width: 18px;
+  height: 6px;
+  border-radius: 999px;
+  background: rgba(20,184,166,.76);
+}
+
+.library-empty-visual {
+  width: 100%;
+  display: grid;
+  justify-items: end;
+}
+
 .library-game {
   border-radius: 7px;
 }

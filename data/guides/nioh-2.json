@@ -39,7 +39,7 @@
     "time_min_hours": 100,
     "time_reason": "A faixa conservadora de 100-150 horas considera curva de aprendizado, campanha, todas as missões, coletáveis, proficiências, Soul Cores, Mystic Arts e cleanup.",
     "time_sort_hours": 150,
-    "updated_at": "2026-06-28 21:19:10",
+    "updated_at": "2026-06-29 22:19:49",
     "verification_note": "Lista base revisada com 56 troféus (1 Platina, 2 Ouro, 5 Prata, 48 Bronze), sem perdíveis reais, sem online/coop obrigatório e com DLCs separadas da platina. Mantido em revisão porque o selo manual verified não deve ser promovido pelo seed.",
     "verification_status": "verified",
     "walkthrough": ""
@@ -91,6 +91,7 @@
       "Finalizar cleanup por seleção/replay de missões sem marcar nada como perdível se puder repetir.",
       "Confirmar que The Tengu's Disciple, Darkness in the Capital e The First Samurai ficaram fora da platina base."
     ],
+    "editorial_summary": [],
     "faq": [
       {
         "answer": "Não. A platina base não tem perdíveis definitivos. A maioria dos objetivos pode ser resolvida retornando a missões, limpando regiões e avançando sistemas acumulativos.",
@@ -124,6 +125,38 @@
       "recommendation": "Avance a campanha aprendendo Ki Pulse, Burst Counter, Yokai abilities e gerenciamento de equipamento antes de focar na limpeza completa.",
       "summary": "Platina longa e técnica: 56 troféus base, cerca de 100-150h, dificuldade 6/10, sem perdíveis reais, sem online obrigatório, sem coop obrigatório e sem DLC necessária."
     },
+    "quick_plan": [
+      {
+        "detail": "Progredir pela história enquanto aprende Ki Pulse, Burst Counter, Yokai abilities, posturas e gerenciamento de equipamento.",
+        "number": 1,
+        "title": "Aprenda o combate e avance a campanha"
+      },
+      {
+        "detail": "Abrir todas as regiões e reduzir pendências de missões necessárias para a platina base.",
+        "number": 2,
+        "title": "Complete missões principais e secundárias da lista base"
+      },
+      {
+        "detail": "Finalizar coletáveis e atividades de exploração sem depender de memória no fim do jogo.",
+        "number": 3,
+        "title": "Limpe Kodama, Hot Springs e pendências por região"
+      },
+      {
+        "detail": "Avançar troféus ligados a armas, habilidades, proficiência e sistemas de progressão.",
+        "number": 4,
+        "title": "Trabalhe proficiência, armas e habilidades"
+      },
+      {
+        "detail": "Concluir troféus de combate, Yokai abilities, Soul Cores, Burst Counter, Yokai Shift e ações específicas que não vieram naturalmente.",
+        "number": 5,
+        "title": "Finalize Yokai, Soul Cores e troféus situacionais"
+      },
+      {
+        "detail": "Conferir todos os troféus restantes da lista base sem misturar DLCs ou coop opcional.",
+        "number": 6,
+        "title": "Cleanup final da platina base"
+      }
+    ],
     "seo": {
       "canonical": "https://atlasachievement.com.br/jogo/nioh-2",
       "description": "Guia de platina de Nioh 2 em português, com tempo estimado, dificuldade, missões, Kodama, Hot Springs, proficiência, Soul Cores, roadmap e checklist de troféus.",

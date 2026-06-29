@@ -39,7 +39,7 @@
     "time_min_hours": 40,
     "time_reason": "A estimativa de 40-50 horas considera campanha, side quests importantes, aliados opcionais, Hunting Grounds, Cauldrons, Tallnecks, camps, zones, collectibles, machines e cleanup.",
     "time_sort_hours": 40,
-    "updated_at": "2026-06-28 21:19:07",
+    "updated_at": "2026-06-29 22:19:45",
     "verification_note": "Guia revisado para a lista base PS4 com 56 troféus; The Frozen Wilds, New Game+, Ultra Hard e Remastered/PS5 ficam fora da platina base.",
     "verification_status": "verified",
     "walkthrough": null
@@ -221,6 +221,11 @@
       "Fazer cleanup pós-história em free roam.",
       "Conferir flags finais: sem online, sem coop, sem DLC obrigatória e sem perdíveis rígidos."
     ],
+    "editorial_summary": [
+      "Horizon Zero Dawn é uma platina acessível de mundo aberto, focada em completar a campanha, limpar atividades do mapa, concluir side quests, reunir aliados opcionais, explorar Cauldrons, Tallnecks, Bandit Camps, Corrupted Zones, Hunting Grounds e coletar os principais collectibles da lista base. A platina é single-player, offline, sem coop, sem DLC obrigatória e sem troféus perdíveis rígidos.",
+      "A rota mais segura é avançar pela história enquanto ativa Tallnecks, libera fast travel, completa side quests relevantes e faz atividades por região. Depois da campanha, o free roam permite cleanup de collectibles, machines, Hunting Grounds, Cauldrons e troféus acumulativos.",
+      "O principal cuidado é não confundir a platina base com The Frozen Wilds, New Game+ ou Ultra Hard. Complete Edition pode incluir conteúdo adicional, mas a platina continua ligada aos 56 troféus da lista base de PS4."
+    ],
     "faq": [
       {
         "answer": "Não. A platina base é single-player e pode ser feita offline.",
@@ -269,6 +274,38 @@
       "mainRisk": "Organize side quests, aliados opcionais, Hunting Grounds, Cauldrons, Tallnecks, collectibles e machines para o cleanup não ficar cansativo.",
       "summary": "Vale platinar Horizon Zero Dawn se você gosta de mundo aberto, exploração, combate contra máquinas e checklist de atividades. A platina base é acessível, offline, sem coop, sem DLC obrigatória, sem New Game+ e sem Ultra Hard. O principal cuidado é organizar side quests, aliados opcionais, Hunting Grounds, Cauldrons, Tallnecks, collectibles e machines para o cleanup não ficar cansativo."
     },
+    "quick_plan": [
+      {
+        "detail": "Avançar pela história enquanto libera o mapa e reduz o cleanup da platina.",
+        "number": 1,
+        "title": "Campanha com exploração por região"
+      },
+      {
+        "detail": "Concluir as missões necessárias para reunir aliados e fortalecer o final da campanha.",
+        "number": 2,
+        "title": "Aliados opcionais e side quests importantes"
+      },
+      {
+        "detail": "Limpar as atividades estruturais do mapa que alimentam a platina.",
+        "number": 3,
+        "title": "Atividades principais do mundo aberto"
+      },
+      {
+        "detail": "Finalizar troféus ligados a máquinas, overrides, catálogo e ações de combate.",
+        "number": 4,
+        "title": "Machines, combate e troféus acumulativos"
+      },
+      {
+        "detail": "Coletar os itens necessários da lista base sem misturar The Frozen Wilds.",
+        "number": 5,
+        "title": "Collectibles da lista base"
+      },
+      {
+        "detail": "Usar o free roam pós-história para fechar troféus restantes da lista base.",
+        "number": 6,
+        "title": "Cleanup final e conferência da platina"
+      }
+    ],
     "seo": {
       "description": "Guia de platina de Horizon Zero Dawn com roadmap em português, troféus da lista base, machines, Hunting Grounds, Cauldrons, Tallnecks, Bandit Camps, Corrupted Zones, collectibles, aliados opcionais e cleanup para conquistar a platina no PS4.",
       "keywords": [

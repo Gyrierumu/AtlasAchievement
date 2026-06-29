@@ -39,7 +39,7 @@
     "time_min_hours": 30,
     "time_reason": "A faixa de 30-40 horas considera Uncharted 4, The Lost Legacy, coletaveis, chapter select, Crushing, speedrun e cleanup.",
     "time_sort_hours": 30,
-    "updated_at": "2026-06-28 21:19:06",
+    "updated_at": "2026-06-29 22:19:44",
     "verification_note": "Lista da Legacy of Thieves Collection cadastrada com base em fontes publicas; aguarda revisao editorial manual final.",
     "verification_status": "review",
     "walkthrough": null
@@ -76,9 +76,67 @@
     "aliases": [],
     "attentionPoints": [],
     "checklist": [],
-    "faq": [],
+    "editorial_summary": [],
+    "faq": [
+      {
+        "answer": "O guia não aponta troféus perdíveis obrigatórios nos dados atuais, mas ainda vale revisar os alertas antes de começar.",
+        "question": "Uncharted: Legacy of Thieves Collection tem troféus perdíveis?"
+      },
+      {
+        "answer": "Não. A platina não exige troféus online obrigatórios segundo os dados atuais do guia.",
+        "question": "Uncharted: Legacy of Thieves Collection precisa de online para platinar?"
+      },
+      {
+        "answer": "O tempo estimado para platinar Uncharted: Legacy of Thieves Collection é 30-40 horas. Use o roadmap para distribuir campanha, cleanup e checklist.",
+        "question": "Quanto tempo leva para platinar Uncharted: Legacy of Thieves Collection?"
+      },
+      {
+        "answer": "A dificuldade cadastrada para a platina é 5/10. Leia os alertas para entender onde o desafio pode aumentar.",
+        "question": "Qual a dificuldade da platina de Uncharted: Legacy of Thieves Collection?"
+      },
+      {
+        "answer": "Não. O guia não aponta coop obrigatório para a platina.",
+        "question": "Uncharted: Legacy of Thieves Collection tem coop obrigatório?"
+      },
+      {
+        "answer": "O escopo de DLC está descrito no guia. Confira o detalhe antes de decidir quais listas extras seguir.",
+        "question": "A DLC é necessária para a platina de Uncharted: Legacy of Thieves Collection?"
+      }
+    ],
     "note": "Campos exportados para auditoria. O SQLite atual nao possui colunas nativas para todos esses extras; a importacao preserva o que o banco suporta.",
     "quickDecision": null,
+    "quick_plan": [
+      {
+        "detail": "Jogue Uncharted 4: A Thief's End naturalmente, coletando tesouros, journal entries, journal notes e conversas opcionais quando possivel.",
+        "number": 1,
+        "title": "Complete coletáveis antes do endgame"
+      },
+      {
+        "detail": "Limpe Uncharted 4 por chapter select/encounter select, incluindo tesouros, journal entries, optional conversations, armas e trofeus situacionais de capitulos especificos.",
+        "number": 2,
+        "title": "Limpe coletáveis por seleção de capítulos"
+      },
+      {
+        "detail": "Complete Uncharted 4 em Crushing e prepare a speedrun de ate 6 horas conforme a estrategia escolhida, lembrando que cheats liberados depois da campanha ajudam e nao remo…",
+        "number": 3,
+        "title": "Prossiga pela rota planejada"
+      },
+      {
+        "detail": "Jogue Uncharted: The Lost Legacy como parte obrigatoria da platina compartilhada, coletando tesouros, fotos, lockboxes, Hoysala tokens e conversas.",
+        "number": 4,
+        "title": "Fechamento e revisão final"
+      },
+      {
+        "detail": "Entenda que a colecao tem uma platina compartilhada e exige trofeus dos dois jogos.",
+        "number": 5,
+        "title": "Leia os alertas iniciais"
+      },
+      {
+        "detail": "Use as etapas para evitar retrabalho antes de abrir a checklist completa.",
+        "number": 6,
+        "title": "Siga o roadmap em ordem"
+      }
+    ],
     "seo": {},
     "tags": []
   },

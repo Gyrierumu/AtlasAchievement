@@ -39,7 +39,7 @@
     "time_min_hours": 60,
     "time_reason": "A estimativa de 60-80 horas considera campanha, mundo aberto, side quests, challenges, Merlin Trials, colecionáveis, Room of Requirement, cleanup e quatro casas até a Câmara do Mapa.",
     "time_sort_hours": 60,
-    "updated_at": "2026-06-28 21:19:07",
+    "updated_at": "2026-06-29 22:19:45",
     "verification_note": "Guia verificado: lista base PS4/PS5 de 46 troféus, roadmap estruturado, checklist, FAQ, flags offline/sem coop/sem DLC, sem perdíveis rígidos, troféus EN + PT-BR e descrições em português.",
     "verification_status": "verified",
     "walkthrough": null
@@ -173,6 +173,10 @@
       "Fazer cleanup final por região usando o mapa.",
       "Conferir que Collector's Edition é checklist/grind, não perdível rígido."
     ],
+    "editorial_summary": [
+      "Hogwarts Legacy é uma platina longa, mas acessível, focada em completar a campanha, explorar Hogwarts e o mundo aberto, finalizar side quests, cumprir challenges, resolver Merlin Trials e fechar uma lista grande de colecionáveis. A platina base é single-player, não exige online, coop nem DLC obrigatória.",
+      "A rota mais segura é jogar a campanha com exploração constante, desbloquear feitiços e talentos, ativar Floo Flames, limpar camps, completar Merlin Trials e acompanhar colecionáveis desde cedo. Depois da história, o free roam permite cleanup de Field Guide Pages, Demiguise Statues, Collection Chests, Ancient Magic Hotspots, Landing Platforms, Infamous Foes, Balloons, beasts, conjurations, traits e demais challenges. O principal cuidado é não subestimar Collector's Edition, que transforma o pós-game em um checklist longo se o jogador deixar tudo para o final."
+    ],
     "faq": [
       {
         "answer": "Não. A platina base é single-player e não exige online.",
@@ -222,6 +226,38 @@
       "firstStep": "Comece pela campanha, ativando Floo Flames, liberando feitiços/talentos e fazendo side quests sem transformar a primeira run em checklist exaustivo.",
       "recommendation": "Vale platinar Hogwarts Legacy se você gosta de mundo aberto, exploração, colecionáveis e checklist longo. A platina não exige online, coop nem DLC, mas cobra paciência para Collector's Edition, Merlin Trials, challenges, side quests, atividades por região e quatro runs parciais até a Câmara do Mapa. É uma platina acessível e pouco difícil, porém longa e pouco indicada para quem não gosta de cleanup extenso."
     },
+    "quick_plan": [
+      {
+        "detail": "Avançar pela história liberando feitiços, talentos, Floo Flames e atividades essenciais do mundo aberto.",
+        "number": 1,
+        "title": "Campanha com exploração constante"
+      },
+      {
+        "detail": "Completar side quests, assignments, feitiços e desafios ligados à progressão do personagem.",
+        "number": 2,
+        "title": "Side quests, assignments e desafios de Hogwarts"
+      },
+      {
+        "detail": "Limpar as atividades principais do mapa antes do checklist final de colecionáveis.",
+        "number": 3,
+        "title": "Mundo aberto e atividades de mapa"
+      },
+      {
+        "detail": "Fechar a grande lista de coleções exigida pela platina.",
+        "number": 4,
+        "title": "Collector's Edition e checklist de colecionáveis"
+      },
+      {
+        "detail": "Criar personagens das outras casas e chegar à Câmara do Mapa para os troféus específicos.",
+        "number": 5,
+        "title": "Quatro casas até a Câmara do Mapa"
+      },
+      {
+        "detail": "Conferir troféus restantes, challenges, colecionáveis e requisitos antes de fechar a lista base.",
+        "number": 6,
+        "title": "Cleanup final e conferência da platina"
+      }
+    ],
     "seo": {
       "description": "Guia de platina de Hogwarts Legacy com roadmap em português, troféus da lista base, Collector's Edition, Merlin Trials, Demiguise Statues, Floo Flames, quatro casas, side quests, challenges e dicas para conquistar a platina no PS4 e PS5.",
       "keywords": "Hogwarts Legacy, guia de platina Hogwarts Legacy, troféus Hogwarts Legacy, roadmap Hogwarts Legacy, Collector's Edition, Merlin's Beard, Demiguise Dread, Floo Flames, quatro casas Hogwarts Legacy, Câmara do Mapa",

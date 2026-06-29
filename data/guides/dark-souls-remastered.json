@@ -39,7 +39,7 @@
     "time_min_hours": 60,
     "time_reason": "A faixa de 60-80 horas considera run principal, NG+, NG++, armas raras, magias, milagres, piromancias, pactos e cleanup.",
     "time_sort_hours": 60,
-    "updated_at": "2026-06-28 21:19:07",
+    "updated_at": "2026-06-29 22:19:45",
     "verification_note": "Lista PlayStation de Dark Souls Remastered revisada com roadmap estruturado, 41 troféus EN/PT-BR, descrições PT-BR, flags offline/sem coop/sem DLC, FAQ, pontos de atenção, tags e checklist completo; validada para publicação.",
     "verification_status": "verified",
     "walkthrough": null
@@ -169,6 +169,10 @@
       "Avançar NG++ até o ponto necessário.",
       "Fazer cleanup final e liberar The Dark Soul."
     ],
+    "editorial_summary": [
+      "Dark Souls Remastered é uma platina clássica de RPG de ação, focada em concluir a campanha, obter os dois finais, descobrir pactos, derrotar chefes opcionais, coletar todos os feitiços, milagres e piromancias, fazer todos os caminhos principais de reforço de arma e completar Knight’s Honor com todas as armas raras. A lista PSN tem 41 troféus, pode ser feita offline, não exige coop, não exige DLC separada e não possui troféu de dificuldade, mas exige planejamento de NPCs, pactos, almas de chefes e múltiplas runs até NG+ ou NG++.",
+      "A ordem mais segura é fazer uma primeira campanha completa controlando NPCs, pactos, magias e almas de chefes, escolher um final, depois usar NG+ para o segundo final e avançar o suficiente em NG++ para fechar as armas raras restantes. O maior cuidado é não consumir almas de chefes necessárias para armas, não perder pactos sensíveis como Darkwraith e Blade of the Darkmoon, e acompanhar no checklist todos os feitiços, milagres, piromancias, upgrades e armas raras."
+    ],
     "faq": [
       {
         "answer": "Não. A platina pode ser feita offline. Online, coop ou PvP pode facilitar alguns itens de pacto ou chefes, mas não é obrigatório.",
@@ -215,6 +219,38 @@
       "summary": "Platina clássica e trabalhosa: offline, sem coop obrigatório, sem DLC separada, com almas de chefes, pactos, NPCs, upgrades, Knight's Honor e avanço até NG+/NG++.",
       "verdict": "Boa platina para fãs de Souls; exige organização, NG+/NG++ e paciência com farm."
     },
+    "quick_plan": [
+      {
+        "detail": "Avançar pela história aprendendo rotas, chefes, pactos e sistemas de upgrade sem desperdiçar recursos importantes.",
+        "number": 1,
+        "title": "Explore Lordran e prepare a primeira run"
+      },
+      {
+        "detail": "Garantir que magias, milagres, piromancias e pactos sensíveis não sejam bloqueados por escolhas ou NPCs perdidos.",
+        "number": 2,
+        "title": "Controle pactos, NPCs e magias"
+      },
+      {
+        "detail": "Derrotar chefes obrigatórios e opcionais importantes e concluir uma das duas terminações necessárias.",
+        "number": 3,
+        "title": "Finalize chefes opcionais e escolha o primeiro final"
+      },
+      {
+        "detail": "Trabalhar caminhos de reforço, magias, milagres, piromancias e armas raras antes de avançar demais em NG+.",
+        "number": 4,
+        "title": "Faça upgrades de armas e coleções principais"
+      },
+      {
+        "detail": "Avançar na segunda run para obter o final oposto e novas almas de chefes necessárias para armas raras.",
+        "number": 5,
+        "title": "Use NG+ para segundo final e almas de chefes restantes"
+      },
+      {
+        "detail": "Obter os últimos materiais, almas de chefes e armas raras exigidos pela platina.",
+        "number": 6,
+        "title": "Avance até NG++ para fechar Knight's Honor"
+      }
+    ],
     "seo": {
       "description": "Roadmap completo da platina de Dark Souls Remastered, com finais, pactos, Knight's Honor, armas raras, feitiços, milagres, piromancias, upgrades, NG+/NG++ e checklist para evitar retrabalho.",
       "keywords": "Dark Souls Remastered troféus, Dark Souls Remastered platina, Dark Souls Remastered guia, Dark Souls Remastered roadmap, Dark Souls Remastered Knight's Honor, Dark Souls Remastered armas raras, Dark Souls Remastered pactos, Dark Souls Remastered piromancias, Dark Souls Remastered milagres, Dark Souls Remastered feitiços, Dark Souls Remastered NG++",

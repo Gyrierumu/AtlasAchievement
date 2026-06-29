@@ -318,6 +318,8 @@ window.UIDecisionModels = (() => {
     getTrophyRiskTokenString: sharedEditorial.getTrophyRiskTokenString || (() => ''),
     getRiskCounts: sharedEditorial.getRiskCounts || (() => ({ alertCount: 0 })),
     buildPlatinumSummary: sharedGuide.buildPlatinumSummary,
+    buildGuideEditorialSummary: sharedGuide.buildGuideEditorialSummary,
+    buildGuideQuickPlan: sharedGuide.buildGuideQuickPlan,
     buildGuideQuickDecisionModel: sharedGuide.buildGuideQuickDecisionModel,
     buildGuideShortcutModel: sharedGuide.buildGuideShortcutModel,
     buildGuideStartContextModel: sharedGuide.buildGuideStartContextModel,

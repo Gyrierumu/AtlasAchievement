@@ -39,7 +39,7 @@
     "time_min_hours": 25,
     "time_reason": "A faixa de 25-35 horas considera campanhas de Leon/Claire, 2ª jornada, Hardcore, rank S, coletáveis e cleanup de desafios pontuais.",
     "time_sort_hours": 25,
-    "updated_at": "2026-06-28 21:19:06",
+    "updated_at": "2026-06-29 22:19:44",
     "verification_note": "Guia normalizado a partir do dado seed com checklist e roadmap; aguardando revisão editorial manual final.",
     "verification_status": "review",
     "walkthrough": null
@@ -76,9 +76,80 @@
     "aliases": [],
     "attentionPoints": [],
     "checklist": [],
-    "faq": [],
+    "editorial_summary": [
+      "A platina de Resident Evil 2 Remake gira em torno de múltiplas campanhas com Leon e Claire, incluindo rotas complementares, objetivos de história, coletáveis e condições de execução. A lista base não exige online nem coop, mas pede organização para não misturar campanhas, personagens, arquivos, Mr. Raccoons, armas, upgrades, cofres, bolsas, finais e objetivos condicionais.",
+      "O maior risco está nos perdíveis por run. Arquivos, Mr. Raccoons, itens de inventário, cofres, upgrades, armas, bolsas e eventos específicos podem exigir uma nova campanha se forem ignorados. Além disso, troféus de ranking, Hardcore, limite de passos, sem cura ou sem abrir o baú devem ser feitos em runs planejadas, porque quebrar a condição pode invalidar a tentativa.",
+      "A melhor rota é primeiro concluir campanhas normais para entender mapas, inimigos, puzzles e chefes. Depois, separe runs dedicadas para Leon, Claire, 2nd Run, Hardcore, rankings, coletáveis e condições especiais.",
+      "Conteúdo extra e modos fora da lista base ficam separados da platina. Use o roadmap para organizar a ordem das campanhas e a checklist para controlar arquivos, Mr. Raccoons, upgrades, armas, bolsas, cofres, rankings e cleanup."
+    ],
+    "faq": [
+      {
+        "answer": "Sim. Há perdíveis por run. Arquivos, Mr. Raccoons, cofres, upgrades, bolsas, eventos específicos e condições como rank, sem cura, sem baú e poucos passos podem exigir outra campanha se forem ignorados ou quebrados.",
+        "question": "Resident Evil 2 Remake tem troféus perdíveis?"
+      },
+      {
+        "answer": "Não. A lista base é single-player, offline e não exige coop, servidores, multiplayer, ranking online ou PS+.",
+        "question": "Resident Evil 2 Remake precisa de online ou coop?"
+      },
+      {
+        "answer": "Planeje múltiplas campanhas. A rota mais limpa separa aprendizado, Leon, Claire, 2nd Run, Hardcore, rank S, coletáveis e desafios de restrição.",
+        "question": "Quantas runs são necessárias?"
+      },
+      {
+        "answer": "Sim. A platina exige campanhas dos dois personagens e troféus específicos ligados a cada rota.",
+        "question": "Precisa jogar com Leon e Claire?"
+      },
+      {
+        "answer": "Sim. A 2ª jornada entra na rota para cobrir campanha complementar e final verdadeiro quando aplicável.",
+        "question": "Precisa fazer 2nd Run?"
+      },
+      {
+        "answer": "Sim. A platina exige campanhas planejadas para Hardcore e rank S. O rank depende principalmente de tempo, então deixe essas tentativas para depois de conhecer mapas, puzzles, chefes e rotas.",
+        "question": "Existem troféus de Hardcore, rank S e speedrun?"
+      },
+      {
+        "answer": "Sim. Frugalist, Minimalist e A Small Carbon Footprint exigem condições específicas. Faça essas runs separadas ou combine apenas quando já tiver uma rota segura.",
+        "question": "Existem troféus de sem cura, sem baú ou limite de passos?"
+      },
+      {
+        "answer": "Não. A rota considera a lista base da platina. DLCs, modos extras ou conteúdos fora da lista base devem ficar separados da platina.",
+        "question": "DLCs ou modos extras são necessários para a platina?"
+      }
+    ],
     "note": "Campos exportados para auditoria. O SQLite atual nao possui colunas nativas para todos esses extras; a importacao preserva o que o banco suporta.",
     "quickDecision": null,
+    "quick_plan": [
+      {
+        "detail": "Conhecer mapas, puzzles, inventário, saves, cofres, chefes e rotas sem tentar otimizar tudo cedo.",
+        "number": 1,
+        "title": "Faça uma primeira campanha segura aprendendo o R.P.D."
+      },
+      {
+        "detail": "Cobrir campanhas principais, personagens e 2nd Run/final verdadeiro quando aplicável.",
+        "number": 2,
+        "title": "Complete Leon, Claire e a rota complementar"
+      },
+      {
+        "detail": "Resolver pendências de arquivos, Mr. Raccoons, armas, upgrades, bolsas, cofres e itens importantes.",
+        "number": 3,
+        "title": "Limpe coletáveis, arquivos, Mr. Raccoons e upgrades"
+      },
+      {
+        "detail": "Resolver troféus ligados a dificuldade, ranking e tempo.",
+        "number": 4,
+        "title": "Trabalhe Hardcore, rankings e runs rápidas"
+      },
+      {
+        "detail": "Cumprir restrições que podem invalidar a tentativa se forem quebradas.",
+        "number": 5,
+        "title": "Faça runs condicionais sem cura, sem baú e limite de passos"
+      },
+      {
+        "detail": "Conferir todos os troféus restantes sem misturar DLCs ou modos extras fora da lista base.",
+        "number": 6,
+        "title": "Finalize a checklist da platina base"
+      }
+    ],
     "seo": {},
     "tags": []
   },

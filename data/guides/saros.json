@@ -39,7 +39,7 @@
     "time_min_hours": 20,
     "time_reason": "A faixa de 20-30 horas considera campanha, epílogo, bosses, 7 Nightmare Gates, 33 expedições com modificadores, objetivos cumulativos e cleanup de armas/desafios.",
     "time_sort_hours": 30,
-    "updated_at": "2026-06-28 21:19:12",
+    "updated_at": "2026-06-29 22:19:51",
     "verification_note": "Guia revisado editorialmente para a platina base de Saros, com 45 troféus, distribuição 1/2/16/26, sem perdíveis definitivos, sem online obrigatório, sem coop obrigatório e DLC fora da platina base.",
     "verification_status": "verified",
     "walkthrough": ""
@@ -88,6 +88,7 @@
       "Reservar runs dedicadas para Untouchable, Vincible, Fatal Triptych, War Within e Fall From Grace.",
       "Revisar o cleanup final sem marcar online, coop, DLC ou conteúdo futuro como obrigatório."
     ],
+    "editorial_summary": [],
     "faq": [
       {
         "answer": "Não há perdíveis definitivos na lista base. Alguns objetivos podem exigir uma run específica, boa execução ou planejamento, mas devem ser tratados como risco de run, dificuldade ou cleanup quando puderem ser tentados novamente.",
@@ -146,6 +147,38 @@
       "runs": "campanha/runs principais + cleanup",
       "time": "20-30h"
     },
+    "quick_plan": [
+      {
+        "detail": "Usar as primeiras tentativas para entender combate, movimentação, ritmo dos biomas, upgrades e padrões dos chefes.",
+        "number": 1,
+        "title": "Aprenda as runs e fortaleça a base"
+      },
+      {
+        "detail": "Progredir pelas áreas principais enquanto libera sistemas, recursos e opções que facilitam as runs futuras.",
+        "number": 2,
+        "title": "Avance a campanha e desbloqueie sistemas"
+      },
+      {
+        "detail": "Concluir os principais marcos de progressão e reduzir pendências ligadas a bosses e áreas.",
+        "number": 3,
+        "title": "Derrote chefes e complete objetivos de progressão"
+      },
+      {
+        "detail": "Fechar troféus ligados a coleta, recursos, melhorias permanentes e objetivos de médio/longo prazo.",
+        "number": 4,
+        "title": "Trabalhe coletáveis, upgrades e objetivos longos"
+      },
+      {
+        "detail": "Resolver troféus de ações específicas, desafios de combate, condições especiais e pendências que não vieram naturalmente.",
+        "number": 5,
+        "title": "Complete desafios e troféus situacionais"
+      },
+      {
+        "detail": "Conferir todos os troféus da lista base sem misturar rede, dupla, DLC ou conteúdo futuro.",
+        "number": 6,
+        "title": "Cleanup final da platina"
+      }
+    ],
     "seo": {
       "canonical": "https://atlasachievement.com.br/jogo/saros",
       "description": "Guia de platina de Saros em português, com tempo estimado, dificuldade, troféus, roadmap, checklist, coletáveis, bosses e dicas para a platina.",

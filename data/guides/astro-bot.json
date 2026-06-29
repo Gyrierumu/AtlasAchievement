@@ -39,7 +39,7 @@
     "time_min_hours": 15,
     "time_reason": "A faixa de aproximadamente 15 horas considera história, coletáveis, Lost Galaxy e cleanup.",
     "time_sort_hours": 15,
-    "updated_at": "2026-06-28 21:19:08",
+    "updated_at": "2026-06-29 22:19:47",
     "verification_note": "Guia revisado editorialmente para a lista base.",
     "verification_status": "verified",
     "walkthrough": ""
@@ -90,6 +90,7 @@
       "Resolver interações do Crash Site, como SingStars, Thaw, God of Thunder!, Let’s Twist Again e KO!.",
       "Confirmar que updates gratuitos, rankings online e speedruns extras não foram tratados como requisito da platina base."
     ],
+    "editorial_summary": [],
     "faq": [
       {
         "answer": "Não. A platina base permite revisitar fases e limpar bots, peças, Lost Galaxy, Gatcha Lab e troféus contextuais depois da história.",
@@ -118,6 +119,38 @@
       "recommendation": "Avance a história primeiro, faça cleanup por seleção de fases, complete bots/peças/Lost Galaxy e deixe Gatcha Lab, Crash Site e o desafio da Estátua Dourada para a reta final.",
       "summary": "Platina curta e acessível: 44 troféus base, cerca de 15h, sem perdíveis, sem online obrigatório, sem coop e sem DLC obrigatória."
     },
+    "quick_plan": [
+      {
+        "detail": "Avançar pelos mundos principais enquanto aprende as mecânicas de cada fase e coleta o que encontrar naturalmente.",
+        "number": 1,
+        "title": "Jogue a campanha explorando com calma"
+      },
+      {
+        "detail": "Limpar bots, puzzle pieces e objetivos de exploração que ficaram para trás nas fases já concluídas.",
+        "number": 2,
+        "title": "Revise fases principais em busca de bots e puzzle pieces"
+      },
+      {
+        "detail": "Liberar fases escondidas e conteúdos opcionais relacionados à exploração dos mundos.",
+        "number": 3,
+        "title": "Encontre fases secretas e caminhos alternativos"
+      },
+      {
+        "detail": "Resolver fases de maior precisão, desafios curtos e conteúdos que exigem mais domínio de plataforma.",
+        "number": 4,
+        "title": "Complete desafios e fases especiais"
+      },
+      {
+        "detail": "Usar o hub e os desbloqueios acumulados para concluir interações, construções e objetivos relacionados aos bots resgatados.",
+        "number": 5,
+        "title": "Organize o Crash Site e conteúdos desbloqueados"
+      },
+      {
+        "detail": "Conferir todos os coletáveis, desafios e troféus situacionais restantes antes de encerrar a platina.",
+        "number": 6,
+        "title": "Cleanup final da platina"
+      }
+    ],
     "seo": {
       "description": "Guia de platina de ASTRO BOT no PS5 em português, com 44 troféus base, 3/10 de dificuldade, cerca de 15h, sem perdíveis, sem online obrigatório e sem DLC obrigatória.",
       "ogDescription": "Roadmap de ASTRO BOT para PS5 com bots, peças de quebra-cabeça, Lost Galaxy, Gatcha Lab, Estátua Dourada e The Golden Bot.",

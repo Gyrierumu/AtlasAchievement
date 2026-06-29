@@ -138,6 +138,29 @@ window.UICatalog = (() => {
     return labels[config.id] || config.chipLabel || config.name || config.id || 'Filtro';
   }
 
+  function getCatalogFilterHelp(id = '') {
+    const help = {
+      all: 'Mostra todos os jogos do catálogo.',
+      'difficulty-low': 'Jogos com dificuldade baixa para começar com menos atrito.',
+      'difficulty-mid': 'Jogos com desafio moderado, sem virar um projeto extremo.',
+      'difficulty-high': 'Jogos que exigem mais execução, paciência ou domínio.',
+      'time-short': 'Platinas mais curtas, boas para projetos rápidos.',
+      'time-medium': 'Platinas de duração intermediária.',
+      'time-long': 'Platinas longas, com mais volume, exploração ou grind.',
+      'online-none': 'Sem troféus online obrigatórios.',
+      'online-required': 'Possui algum requisito online ou dependente de servidor.',
+      'coop-required': 'Exige ou recomenda cooperação/segundo jogador em algum ponto.',
+      'missable-none': 'Sem troféus perdíveis relevantes cadastrados.',
+      'missable-present': 'Perdíveis: troféus que podem ser perdidos se certas ações não forem feitas.',
+      'editorial-verified': 'Guias revisados editorialmente e marcados como verificados.',
+      'editorial-review': 'Guias ainda em revisão editorial.',
+      'grind-present': 'Guias com grind relevante, farm ou repetição acima do normal.',
+      'dlc-base': 'Guias focados na lista base, sem exigir DLC para a platina.',
+      'chapter-select': 'Jogos com seleção de capítulos ou retorno útil para cleanup.'
+    };
+    return help[id] || '';
+  }
+
   function getExperienceIntentConfigs(items = [], facetCounts = {}) {
     const base = buildCatalogIntentConfigs(items);
     const byId = new Map(base.map(item => [item.id, item]));
@@ -218,11 +241,11 @@ window.UICatalog = (() => {
     const seoBodyTarget = qs('#catalogSeoIntroBody');
 
     const isCatalogRoot = (meta.id || facet) === 'all';
-    if (titleTarget) titleTarget.textContent = isCatalogRoot ? 'Encontre sua próxima platina' : (meta.name || 'Catálogo de jogos');
-    if (heroTitleTarget) heroTitleTarget.textContent = meta.heroTitle || 'Navegue sem depender da busca';
+    if (titleTarget) titleTarget.textContent = isCatalogRoot ? 'Escolha sua próxima platina' : (meta.name || 'Catálogo de jogos');
+    if (heroTitleTarget) heroTitleTarget.textContent = meta.heroTitle || 'Filtre por tempo, dificuldade e risco';
     if (heroDescriptionTarget) {
       heroDescriptionTarget.textContent = isCatalogRoot
-        ? 'Filtre por tempo, dificuldade, online, perdíveis e status editorial para escolher o guia certo.'
+        ? 'Compare jogos por tempo, dificuldade, troféus perdíveis, online obrigatório e status editorial antes de escolher sua próxima platina.'
         : `${meta.heroDescription || meta.description}${typeof total === 'number' ? ` ${total} jogo(s) visível(is) nesta faixa agora.` : ''}`.trim();
     }
     if (collectionTitleTarget) collectionTitleTarget.textContent = meta.collectionTitle || meta.name || 'Coleção aberta';
@@ -370,16 +393,17 @@ window.UICatalog = (() => {
 
     if (segments) {
       const primaryGroups = [
-        { label: 'Dificuldade', facets: ['difficulty-low', 'difficulty-mid', 'difficulty-high'] },
-        { label: 'Tempo', facets: ['time-short', 'time-medium', 'time-long'] },
-        { label: 'Riscos', facets: ['online-none', 'missable-none', 'coop-required', 'missable-present'] },
-        { label: 'Status', facets: ['editorial-verified', 'editorial-review'] }
+        { label: 'Tempo', help: 'Escolha pelo tamanho do compromisso antes de abrir o guia.', facets: ['time-short', 'time-medium', 'time-long'] },
+        { label: 'Dificuldade', help: 'Filtra pela exigência estimada da platina.', facets: ['difficulty-low', 'difficulty-mid', 'difficulty-high'] },
+        { label: 'Perdíveis', help: 'Perdíveis são troféus que podem exigir atenção antes de avançar.', facets: ['missable-none', 'missable-present'] },
+        { label: 'Online/co-op', help: 'Mostra se a platina depende de servidor, online ou cooperação.', facets: ['online-none', 'online-required', 'coop-required'] }
       ];
       const secondaryFacetIds = [
-        'online-required',
         'grind-present',
         'dlc-base',
-        'chapter-select'
+        'chapter-select',
+        'editorial-verified',
+        'editorial-review'
       ];
       const buildChipConfigs = facetIds => facetIds
         .map(id => catalogFacetMeta[id])
@@ -393,9 +417,11 @@ window.UICatalog = (() => {
         const isActive = config.id === activeFacet.id;
         const isEmpty = count === 0;
         const countLabel = count ? formatCatalogCount(count) : 'em expansão';
+        const chipLabel = labelOverride || config.chipLabel || config.name;
+        const helpText = getCatalogFilterHelp(config.id) || config.chipDescription || config.description || countLabel;
         return `
-          <button type="button" class="atlas-collection-chip ${isActive ? 'is-active' : ''} ${isEmpty ? 'is-empty' : ''}" data-catalog-facet="${escapeAttribute(config.id)}" aria-pressed="${isActive ? 'true' : 'false'}" title="${escapeAttribute(config.chipDescription || config.description)}">
-            <span>${escapeHtml(labelOverride || config.chipLabel || config.name)}</span>
+          <button type="button" class="atlas-collection-chip ${isActive ? 'is-active' : ''} ${isEmpty ? 'is-empty' : ''}" data-catalog-facet="${escapeAttribute(config.id)}" aria-pressed="${isActive ? 'true' : 'false'}" title="${escapeAttribute(helpText)}" aria-label="${escapeAttribute(`${chipLabel}: ${helpText}`)}">
+            <span>${escapeHtml(chipLabel)}</span>
             <small>${escapeHtml(countLabel)}</small>
           </button>`;
       };
@@ -417,24 +443,33 @@ window.UICatalog = (() => {
         config: catalogFacetMeta.all,
         count: Number(facetCounts.all ?? allGames.length ?? pagination.total ?? items.length)
       });
-      const primaryHtml = primaryGroups.map(group => {
+      const primaryHtml = primaryGroups.map((group, index) => {
         const configs = buildChipConfigs(group.facets);
         if (!configs.length) return '';
+        const isGroupActive = configs.some(entry => entry.config.id === activeFacet.id);
+        const isDefaultOpen = activeFacet.id === 'all' && index === 0;
         return `
-          <div class="atlas-catalog-filter-group">
-            <span class="atlas-catalog-filter-group__label">${escapeHtml(group.label)}</span>
+          <details class="atlas-catalog-filter-group" ${isGroupActive || isDefaultOpen ? 'open' : ''}>
+            <summary class="atlas-catalog-filter-group__summary">
+              <span class="atlas-catalog-filter-group__label">${escapeHtml(group.label)}</span>
+              <small class="atlas-catalog-filter-group__help">${escapeHtml(group.help || '')}</small>
+              <i class="fas fa-chevron-down" aria-hidden="true"></i>
+            </summary>
             <div class="atlas-catalog-filter-group__options">
               ${configs.map(entry => renderChip(entry, labelOverrides[entry.config.id])).join('')}
             </div>
-          </div>`;
+          </details>`;
       }).join('');
       const secondaryConfigs = buildChipConfigs(secondaryFacetIds);
       const secondaryActive = secondaryFacetIds.includes(activeFacet.id);
       const secondaryHtml = secondaryConfigs.length ? `
         <details class="atlas-catalog-more-filters" ${secondaryActive ? 'open' : ''}>
-          <summary>Mais filtros</summary>
-          <div class="atlas-catalog-filter-group__options">
-            ${secondaryConfigs.map(entry => renderChip(entry, labelOverrides[entry.config.id])).join('')}
+          <summary><span>Mais filtros</span><small>Status, grind, DLC e estrutura</small><i class="fas fa-chevron-down" aria-hidden="true"></i></summary>
+          <div class="atlas-catalog-more-filters__content">
+            <p>Use estes filtros quando quiser refinar por status editorial, grind, DLC ou seleção de capítulos.</p>
+            <div class="atlas-catalog-filter-group__options">
+              ${secondaryConfigs.map(entry => renderChip(entry, labelOverrides[entry.config.id])).join('')}
+            </div>
           </div>
         </details>` : '';
       segments.innerHTML = `

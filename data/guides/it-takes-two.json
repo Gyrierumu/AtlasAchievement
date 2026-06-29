@@ -39,7 +39,7 @@
     "time_min_hours": 11,
     "time_reason": "A faixa de 11-15 horas considera campanha coop, 25 minigames e cleanup por Chapter Select.",
     "time_sort_hours": 11,
-    "updated_at": "2026-06-28 21:19:06",
+    "updated_at": "2026-06-29 22:19:44",
     "verification_note": "Precisa revisão editorial final: coop obrigatório, Friend’s Pass/trial e desbloqueio de troféus para os dois jogadores devem ser validados manualmente.",
     "verification_status": "review",
     "walkthrough": null
@@ -165,6 +165,10 @@
       "Conferir se página individual e catálogo exibem o mesmo status editorial.",
       "Conferir se flags do topo batem com filtros do catálogo."
     ],
+    "editorial_summary": [
+      "It Takes Two é uma platina cooperativa curta e acessível, focada em concluir a campanha com uma segunda pessoa, encontrar todos os 25 minijogos e resolver ações específicas espalhadas pelos capítulos. O jogo não possui modo solo, então a cooperação é obrigatória do início ao fim, seja em tela dividida local ou online.",
+      "A rota mais segura é jogar a história normalmente aproveitando os capítulos, interagindo com tudo que parecer opcional e jogando cada minijogo encontrado ao menos uma vez. Depois, use a seleção de capítulos para limpar troféus e minijogos pendentes. Não há perdíveis reais, online obrigatório ou DLC necessária para a platina base; o principal cuidado é manter um checklist dos minijogos e lembrar que alguns troféus exigem ações específicas de Cody, May ou dos dois jogadores."
+    ],
     "faq": [
       {
         "answer": "Não. A seleção de capítulos permite voltar para minijogos e ações específicas que ficaram para trás.",
@@ -217,6 +221,38 @@
       "time": "Curto a médio, cerca de 11 a 15 horas.",
       "worthIt": "Sim, especialmente para quem tem uma segunda pessoa para jogar a campanha inteira."
     },
+    "quick_plan": [
+      {
+        "detail": "Concluir a história com uma segunda pessoa enquanto interage com atividades opcionais e minijogos pelo caminho.",
+        "number": 1,
+        "title": "Jogue a campanha em cooperação"
+      },
+      {
+        "detail": "Usar a seleção de capítulos para desbloquear ações opcionais que ficaram para trás.",
+        "number": 2,
+        "title": "Limpe troféus específicos por capítulo"
+      },
+      {
+        "detail": "Completar o checklist dos 25 minijogos para Minigame Megalomania.",
+        "number": 3,
+        "title": "Encontre todos os minijogos"
+      },
+      {
+        "detail": "Garantir que todos os troféus foram desbloqueados e que o status do guia está coerente.",
+        "number": 4,
+        "title": "Finalize a platina e confira as contas dos jogadores"
+      },
+      {
+        "detail": "It Takes Two não pode ser platinado solo. Combine com outra pessoa e escolha coop local ou online; Friend’s Pass é uma opção online, mas não deve ser tratado como garant…",
+        "number": 5,
+        "title": "Leia os alertas iniciais"
+      },
+      {
+        "detail": "Use as etapas para evitar retrabalho antes de abrir a checklist completa.",
+        "number": 6,
+        "title": "Siga o roadmap em ordem"
+      }
+    ],
     "seo": {
       "description": "Guia de troféus de It Takes Two com roadmap da platina, tempo estimado, dificuldade, coop obrigatório, minijogos, seleção de capítulos, Friend’s Pass e dicas para os 21 troféus.",
       "keywords": "It Takes Two troféus, It Takes Two platina, guia It Takes Two, It Takes Two PS4 troféus, It Takes Two PS5 troféus, Power Couple, Minigame Megalomania, Megalomania de minijogos, Friend’s Pass It Takes Two, It Takes Two coop",

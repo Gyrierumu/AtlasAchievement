@@ -47,30 +47,43 @@
         <a href="#adminCatalogPanel">Jogos</a>
         <a href="#adminFeedbackPanel">Feedbacks</a>
         <a href="#adminBetaMetricsPanel">Métricas</a>
-        <a href="#adminPasswordPanel">Configurações</a>
+        <a href="#adminSettingsPanel">Configurações</a>
       </nav>
 
-      <div id="adminOverviewPanel" class="atlas-admin-overview grid xl:grid-cols-[1fr_.9fr] gap-4">
-        <section class="atlas-panel atlas-admin-hero p-5 md:p-6">
-          <div class="atlas-eyebrow">Painel administrativo</div>
-          <h1 class="text-[30px] md:text-[40px] leading-none font-extrabold tracking-tight">Console editorial</h1>
-          <p class="mt-3 text-white/62 max-w-2xl">Cadastre, revise e publique guias com os alertas importantes sempre à vista.</p>
-          <div id="adminSummaryCards" class="atlas-region atlas-responsive-grid grid md:grid-cols-2 gap-3 mt-5"></div>
-        </section>
-        <section id="adminEditorialQueuePanel" class="atlas-panel atlas-admin-quick-panel p-5 md:p-6">
-          <div class="atlas-eyebrow">Ações rápidas</div>
-          <h2 class="text-[24px] font-bold tracking-tight">Fila editorial</h2>
-          <p class="text-sm text-white/55 mt-2">Pendências calculadas com os jogos, feedbacks e métricas já carregados no painel.</p>
-          <div id="adminEditorialQueue" class="admin-editorial-queue mt-4"></div>
-          <div class="admin-quick-actions-row mt-4">
-            <button id="newGameBtn" class="atlas-quick-action"><i class="fas fa-plus"></i><span>Novo jogo</span></button>
-            <button id="togglePasswordPanelBtn" type="button" class="atlas-quick-action"><i class="fas fa-key"></i><span>Trocar senha</span></button>
-            <a href="/catalogo" class="atlas-quick-action"><i class="fas fa-house"></i><span>Ver catálogo</span></a>
-            <button id="adminRefreshBtn" type="button" class="atlas-quick-action"><i class="fas fa-rotate-right"></i><span>Atualizar lista</span></button>
+      <section id="adminOverviewPanel" class="atlas-panel atlas-admin-hero p-5 md:p-6">
+        <div class="atlas-eyebrow">Painel administrativo</div>
+        <h1 class="text-[30px] md:text-[40px] leading-none font-extrabold tracking-tight">Console editorial</h1>
+        <p class="mt-3 text-white/62 max-w-2xl">Cadastre, revise e publique guias com os alertas importantes sempre à vista.</p>
+        <div id="adminSummaryCards" class="atlas-region atlas-responsive-grid grid md:grid-cols-2 xl:grid-cols-5 gap-3 mt-5"></div>
+      </section>
+
+      <section id="adminEditorialQueuePanel" class="atlas-panel atlas-admin-queue-panel p-5 md:p-6">
+        <div class="atlas-section-head">
+          <div>
+            <div class="atlas-eyebrow">Fila editorial</div>
+            <h2 class="text-[28px] md:text-[36px] leading-none font-extrabold tracking-tight">O que abrir primeiro</h2>
+            <p class="text-sm text-white/55 mt-2">Pendências calculadas com jogos, feedbacks e sinais editoriais já carregados no painel.</p>
           </div>
-          <div id="adminStatus" class="mt-5 text-sm text-white/55"></div>
-        </section>
-      </div>
+          <div id="adminStatus" class="text-sm text-white/55"></div>
+        </div>
+        <div id="adminEditorialQueue" class="admin-editorial-queue mt-4"></div>
+      </section>
+
+      <section class="atlas-panel atlas-admin-quick-panel p-5 md:p-6">
+        <div class="atlas-section-head">
+          <div>
+            <div class="atlas-eyebrow">Ações rápidas</div>
+            <h2 class="text-[24px] font-bold tracking-tight">Atalhos do editor</h2>
+          </div>
+        </div>
+        <div class="admin-quick-actions-row mt-4">
+          <button id="newGameBtn" class="atlas-quick-action"><i class="fas fa-plus"></i><span>Novo jogo</span></button>
+          <a href="/catalogo" class="atlas-quick-action"><i class="fas fa-house"></i><span>Ver catálogo público</span></a>
+          <button id="adminRefreshBtn" type="button" class="atlas-quick-action"><i class="fas fa-rotate-right"></i><span>Atualizar lista</span></button>
+          <button id="togglePasswordPanelBtn" type="button" class="atlas-quick-action"><i class="fas fa-key"></i><span>Trocar senha</span></button>
+          <button id="adminLogoutQuickBtn" type="button" class="atlas-quick-action"><i class="fas fa-right-from-bracket"></i><span>Sair</span></button>
+        </div>
+      </section>
 
       <section id="adminCatalogPanel" class="space-y-4">
         <div class="atlas-section-head">
@@ -81,10 +94,25 @@
           </div>
         </div>
         <div class="atlas-panel p-5 md:p-6 space-y-4">
-          <div class="grid md:grid-cols-2 gap-3">
+          <div class="grid md:grid-cols-3 gap-3">
             <label>
               <span class="sr-only">Buscar no admin</span>
               <input id="adminSearch" type="search" placeholder="Buscar jogo cadastrado" class="atlas-input min-h-[46px] h-[46px] py-3">
+            </label>
+            <label>
+              <span class="sr-only">Filtrar no admin</span>
+              <select id="adminFilter" class="atlas-input min-h-[46px] h-[46px] py-3 pr-10">
+                <option value="all">Todos</option>
+                <option value="review">Em revisão</option>
+                <option value="verified">Verificados</option>
+                <option value="draft">Rascunho</option>
+                <option value="low-score">Score baixo</option>
+                <option value="low-coverage">Cobertura baixa</option>
+                <option value="no-cover">Sem capa</option>
+                <option value="recent">Atualizados recentemente</option>
+                <option value="feedback">Com feedback</option>
+                <option value="suspicious">Com risco/filtro suspeito</option>
+              </select>
             </label>
             <label>
               <span class="sr-only">Ordenar no admin</span>
@@ -132,6 +160,23 @@
           <div id="adminBetaSearchMetrics" class="atlas-panel atlas-panel--flat p-4"></div>
           <div id="adminBetaSeoMetrics" class="atlas-panel atlas-panel--flat p-4"></div>
           <div id="adminBetaChecklistMetrics" class="atlas-panel atlas-panel--flat p-4 xl:col-span-2"></div>
+        </div>
+      </section>
+
+      <section id="adminSettingsPanel" class="atlas-panel p-5 md:p-6 space-y-4">
+        <div class="atlas-section-head">
+          <div>
+            <div class="atlas-eyebrow">Configurações</div>
+            <h2 class="text-[28px] md:text-[36px] leading-none font-extrabold tracking-tight">Publicação de guias</h2>
+            <p class="text-sm text-white/55 mt-2">Fluxo operacional para publicar dados versionados sem executar comandos pelo painel.</p>
+          </div>
+        </div>
+        <div class="admin-publishing-card">
+          <i class="fas fa-code-branch" aria-hidden="true"></i>
+          <div>
+            <strong>Exportação e deploy</strong>
+            <p>Depois de editar guias localmente, rode <code>npm run prepare:guides</code>, revise o diff e faça commit/push para publicar os dados versionados.</p>
+          </div>
         </div>
       </section>
 

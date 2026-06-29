@@ -39,7 +39,7 @@
     "time_min_hours": 40,
     "time_reason": "A faixa de 40-60 horas considera história, favores, coletáveis, chefes opcionais, upgrades, Muspelheim, Cratera/Vanaheim e cleanup pós-história.",
     "time_sort_hours": 40,
-    "updated_at": "2026-06-28 21:19:07",
+    "updated_at": "2026-06-29 22:19:45",
     "verification_note": "Guia revisado editorialmente.",
     "verification_status": "verified",
     "walkthrough": null
@@ -76,9 +76,75 @@
     "aliases": [],
     "attentionPoints": [],
     "checklist": [],
-    "faq": [],
+    "editorial_summary": [],
+    "faq": [
+      {
+        "answer": "Não. A platina base não tem perdíveis definitivos. Depois da história, é possível voltar aos reinos para limpar coletáveis, favores, Berserkers, Muspelheim, Crater/Vanaheim e atividades pendentes.",
+        "question": "God of War Ragnarök tem troféus perdíveis?"
+      },
+      {
+        "answer": "Não. A platina é totalmente single-player e não exige servidores, PS+ ou troféus online.",
+        "question": "God of War Ragnarök precisa de online para platinar?"
+      },
+      {
+        "answer": "Não. A platina base é solo e não exige coop.",
+        "question": "God of War Ragnarök tem coop obrigatório?"
+      },
+      {
+        "answer": "Não. A platina não exige dificuldade específica. Você pode jogar em uma dificuldade confortável e focar em exploração, coletáveis, upgrades e chefes opcionais.",
+        "question": "Precisa jogar na dificuldade mais alta?"
+      },
+      {
+        "answer": "O tempo depende do quanto você explora durante a campanha e de quanto cleanup fica para o final. A maior parte do tempo vem de favores, coletáveis, Berserkers, Gná, Muspelheim, Crater/Vanaheim, upgrades e atividades opcionais.",
+        "question": "Quanto tempo leva para platinar God of War Ragnarök?"
+      },
+      {
+        "answer": "Os maiores pontos de atenção são Berserkers, Gná, desafios de Muspelheim, Crater/Vanaheim, coletáveis dos reinos, corvos de Odin, baús Nornir, relíquias, punhos de espada, favores e upgrades.",
+        "question": "O que mais dá trabalho na platina?"
+      },
+      {
+        "answer": "Não. Valhalla é conteúdo separado e fica fora da platina base de God of War Ragnarök.",
+        "question": "Valhalla é necessário para a platina?"
+      },
+      {
+        "answer": "Não. A rota principal considera campanha, pós-jogo e cleanup da lista base. New Game+ fica fora dos requisitos da platina base.",
+        "question": "New Game+ é obrigatório para a platina?"
+      }
+    ],
     "note": "Campos exportados para auditoria. O SQLite atual nao possui colunas nativas para todos esses extras; a importacao preserva o que o banco suporta.",
     "quickDecision": null,
+    "quick_plan": [
+      {
+        "detail": "Concluir a história principal enquanto libera reinos, habilidades, equipamentos e atividades para o pós-jogo.",
+        "number": 1,
+        "title": "Avance a história em uma dificuldade confortável"
+      },
+      {
+        "detail": "Liberar caminhos, viagens, atalhos e atividades opcionais que serão usadas na platina.",
+        "number": 2,
+        "title": "Explore reinos e abra atividades secundárias"
+      },
+      {
+        "detail": "Resolver artefatos, lore, flores, corvos de Odin, baús Nornir, favores e atividades regionais em ordem controlada.",
+        "number": 3,
+        "title": "Complete favores e coletáveis por reino"
+      },
+      {
+        "detail": "Separar as áreas mais extensas e repetitivas para controlar desafios, exploração e grind.",
+        "number": 4,
+        "title": "Trabalhe Muspelheim, Crater e objetivos longos"
+      },
+      {
+        "detail": "Enfrentar os maiores desafios de combate com equipamentos e atributos já fortalecidos.",
+        "number": 5,
+        "title": "Derrote Berserkers, Gná e finalize upgrades"
+      },
+      {
+        "detail": "Conferir todos os requisitos restantes sem misturar Valhalla ou extras fora da lista base.",
+        "number": 6,
+        "title": "Faça o cleanup final da platina base"
+      }
+    ],
     "seo": {},
     "tags": []
   },

@@ -39,7 +39,7 @@
     "time_min_hours": 25,
     "time_reason": "A faixa de 25-35 horas considera múltiplas campanhas curtas, finais com Jill/Chris, armas infinitas, modos especiais e cleanup.",
     "time_sort_hours": 25,
-    "updated_at": "2026-06-28 21:19:07",
+    "updated_at": "2026-06-29 22:19:45",
     "verification_note": "Guia revisado editorialmente.",
     "verification_status": "verified",
     "walkthrough": null
@@ -76,9 +76,79 @@
     "aliases": [],
     "attentionPoints": [],
     "checklist": [],
-    "faq": [],
+    "editorial_summary": [
+      "Este guia de platina de Resident Evil foi pensado para quem quer completar a lista base do HD Remaster sem se perder entre múltiplas campanhas, personagens, finais e condições especiais. A rota prioriza primeiro entender a mansão, depois separar as runs de Jill e Chris, finais bons e ruins, resgates, modos de dificuldade e objetivos de execução.",
+      "O maior cuidado está nos perdíveis por run: escolhas de personagem, salvamento de Barry, Rebecca, Jill ou Chris, finais específicos, mapa completo, restrições de arma, tempo de conclusão e campanha sem salvar. Nada é perdido definitivamente, mas misturar objetivos incompatíveis pode obrigar você a repetir uma campanha inteira.",
+      "Depois de conhecer rotas, puzzles, chefes e gerenciamento de inventário, deixe para runs dedicadas os troféus mais sensíveis: Hard, Real Survival, Invisible Enemy, speedrun abaixo de 3 horas, campanha sem salvar e faca-only. DLCs e extras ficam fora da platina base. Use primeiro o roadmap para organizar as campanhas e depois a checklist para acompanhar finais, modos, resgates, condições de run e cleanup."
+    ],
+    "faq": [
+      {
+        "answer": "Sim, há perdíveis por run ligados a personagem, final, resgate, mapa completo, tempo, save e restrição de arma. Não há perda definitiva: se algo escapar, refaça em outra campanha planejada.",
+        "question": "Resident Evil tem troféus perdíveis?"
+      },
+      {
+        "answer": "Não. A platina é totalmente offline e não exige servidores, multiplayer, ranking online ou PS+.",
+        "question": "Resident Evil precisa de online para platinar?"
+      },
+      {
+        "answer": "Não. A lista é single-player e não tem coop obrigatório.",
+        "question": "Resident Evil tem coop obrigatório?"
+      },
+      {
+        "answer": "Não. A rota considera a lista base de Resident Evil HD Remaster. Não há online, coop ou conteúdo extra obrigatório para a platina.",
+        "question": "DLC é necessária para a platina?"
+      },
+      {
+        "answer": "Planeje múltiplas campanhas. O caminho mais limpo separa Jill, Chris, finais bons e ruins, Hard, Real Survival, Invisible Enemy, speedrun, sem salvar e faca-only.",
+        "question": "Quantas runs são necessárias?"
+      },
+      {
+        "answer": "Sim. A platina exige runs condicionais, incluindo terminar rápido, terminar sem salvar e terminar usando apenas a faca. Deixe esses objetivos para quando já conhecer rotas, puzzles, chefes e inventário.",
+        "question": "Tem troféu de speedrun, sem salvar e faca-only?"
+      },
+      {
+        "answer": "Sim. Hard, Real Survival e Invisible Enemy fazem parte da rota de platina e devem ficar para depois que você conhecer bem a mansão.",
+        "question": "Real Survival e Invisible Enemy entram na platina?"
+      },
+      {
+        "answer": "Faça uma primeira run segura aprendendo a mansão, usando saves e entendendo puzzles, inventário, rotas e resgates antes de otimizar.",
+        "question": "Qual é o melhor primeiro passo?"
+      }
+    ],
     "note": "Campos exportados para auditoria. O SQLite atual nao possui colunas nativas para todos esses extras; a importacao preserva o que o banco suporta.",
     "quickDecision": null,
+    "quick_plan": [
+      {
+        "detail": "Conhecer rotas, puzzles, inventário, baús, salvamentos, inimigos e chefes sem tentar otimizar tudo cedo.",
+        "number": 1,
+        "title": "Faça uma primeira run segura aprendendo a mansão"
+      },
+      {
+        "detail": "Cobrir troféus específicos de personagem, finais e personagens salvos ou não salvos.",
+        "number": 2,
+        "title": "Complete as rotas de Jill e Chris"
+      },
+      {
+        "detail": "Resolver modos e dificuldades exigidos pela lista depois de conhecer bem o jogo.",
+        "number": 3,
+        "title": "Trabalhe Hard, Real Survival e Invisible Enemy"
+      },
+      {
+        "detail": "Cumprir troféus que exigem rota limpa, tempo baixo ou restrição de equipamento.",
+        "number": 4,
+        "title": "Faça runs condicionais: sem salvar, faca-only e speedrun"
+      },
+      {
+        "detail": "Resolver pendências de exploração, armas, roupas, mapas completos e troféus situacionais.",
+        "number": 5,
+        "title": "Limpe armas, roupas, mapas e objetivos específicos"
+      },
+      {
+        "detail": "Conferir todos os troféus restantes sem misturar outros jogos ou conteúdo fora da lista base.",
+        "number": 6,
+        "title": "Finalize a checklist da platina base"
+      }
+    ],
     "seo": {},
     "tags": []
   },

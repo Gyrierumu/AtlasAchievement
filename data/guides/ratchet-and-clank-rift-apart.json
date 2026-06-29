@@ -39,7 +39,7 @@
     "time_min_hours": 10,
     "time_reason": "A faixa de 10-15 horas considera campanha, coletáveis, Battleplex, armas, Challenge Mode curto para armas e cleanup.",
     "time_sort_hours": 10,
-    "updated_at": "2026-06-28 21:19:06",
+    "updated_at": "2026-06-29 22:19:44",
     "verification_note": "Precisa revisão editorial final: Extinction Event confirmado como principal ponto de atenção; revisar checklist completo antes de selo verificado.",
     "verification_status": "review",
     "walkthrough": null
@@ -112,6 +112,10 @@
       }
     ],
     "checklist": [],
+    "editorial_summary": [
+      "Ratchet & Clank: Rift Apart é uma platina curta, simples e totalmente offline. A lista base possui 47 troféus, não exige online, cooperação ou dificuldade específica, e pode ser concluída em cerca de 10 horas. A campanha pode ser jogada em qualquer dificuldade, e depois do final o jogador pode usar o free roam para retornar aos planetas e concluir coletáveis, armas, desafios e troféus misc.",
+      "O único perdível real é Extinction Event, ligado a matar 5 Grunthors em Sargasso. O ideal é resolver esse troféu durante a campanha ou farmar o primeiro Grunthor repetidamente enquanto ainda há acesso. O restante pode ser feito no cleanup pós-história. A platina não exige todos os coletáveis do jogo nem terminar o Challenge Mode; o New Game+ só é necessário para comprar as 2 últimas armas e desbloquear Fully Stacked."
+    ],
     "faq": [
       {
         "answer": "Não. A lista é totalmente offline.",
@@ -166,6 +170,38 @@
     "quickDecision": {
       "summary": "Platina curta de 10-15h e 2/10, totalmente offline, com 1 perdível real: Extinction Event. Faça a campanha, limpe planetas no free roam e use Challenge Mode apenas para comprar 2 armas."
     },
+    "quick_plan": [
+      {
+        "detail": "Avançar pela história em qualquer dificuldade, liberar viagem entre planetas e resolver Extinction Event em Sargasso.",
+        "number": 1,
+        "title": "Campanha em qualquer dificuldade e atenção aos Grunthors"
+      },
+      {
+        "detail": "Usar Resume após o final para voltar antes do chefe final, retornar aos planetas e coletar apenas o que conta para troféus.",
+        "number": 2,
+        "title": "Free roam pós-história e coletáveis necessários"
+      },
+      {
+        "detail": "Completar Battleplex, Gold Cup, jukebox, TV, hot springs, parade balloons, trick jump, Hoverboots e troféus de armas.",
+        "number": 3,
+        "title": "Battleplex, misc e armas"
+      },
+      {
+        "detail": "Iniciar Challenge Mode em novo save, avançar até a primeira Ms. Zurkon e comprar as 2 armas restantes.",
+        "number": 4,
+        "title": "Challenge Mode apenas para as 2 últimas armas"
+      },
+      {
+        "detail": "A lista não tem online, coop, DLC ou troféu de dificuldade. O único risco real é Extinction Event; o restante pode ser limpo no free roam pós-história.",
+        "number": 5,
+        "title": "Leia os alertas iniciais"
+      },
+      {
+        "detail": "Use as etapas para evitar retrabalho antes de abrir a checklist completa.",
+        "number": 6,
+        "title": "Siga o roadmap em ordem"
+      }
+    ],
     "seo": {},
     "tags": []
   },

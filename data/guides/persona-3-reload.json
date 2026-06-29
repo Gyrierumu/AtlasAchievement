@@ -39,7 +39,7 @@
     "time_min_hours": 60,
     "time_reason": "A faixa de 60-70 horas considera campanha completa, Social Links, Tartarus, Requests, Reaper, Messiah e cleanup final.",
     "time_sort_hours": 60,
-    "updated_at": "2026-06-28 21:19:07",
+    "updated_at": "2026-06-29 22:19:45",
     "verification_note": "Guia verificado: lista base com 49 troféus, 60–70h, dificuldade 3/10, oito riscos principais de calendário, uma run planejada, sem online, coop, dificuldade obrigatória ou DLC.",
     "verification_status": "verified",
     "walkthrough": null
@@ -137,6 +137,10 @@
       }
     ],
     "checklist": [],
+    "editorial_summary": [
+      "Persona 3 Reload é uma platina longa, totalmente offline e baseada em calendário. A lista base possui 49 troféus, não exige online, cooperação ou dificuldade específica, e pode ser concluída em uma jogada seguindo um calendário 100%. O maior cuidado é administrar Social Links, Social Stats, Tartarus, Elizabeth Requests, romance, Monad Doors e a decisão de 31/12 antes do ponto final em 31/01.",
+      "O principal alerta técnico é The Strength of Our Hearts, pois é necessário usar a Theurgy de Shinjiro antes de 04/10. Também é importante usar saves manuais em slots separados, poupar Ryoji em 31/12 para seguir ao final bom e finalizar Reaper, Messiah, Social Links e cleanup antes do encerramento. Episode Aigis é DLC separado e não entra na platina base."
+    ],
     "faq": [
       {
         "answer": "Não. A lista base é totalmente offline.",
@@ -191,6 +195,38 @@
     "quickDecision": {
       "summary": "Persona 3 Reload é uma platina longa, offline e de calendário: 49 troféus, 60-70h, 3/10, uma jogada com calendário 100%, oito riscos principais e Episode Aigis fora da lista base."
     },
+    "quick_plan": [
+      {
+        "detail": "Seguir um calendário eficiente desde o início e construir a base social para concluir a platina em uma jogada.",
+        "number": 1,
+        "title": "Calendário 100% desde abril"
+      },
+      {
+        "detail": "Subir Tartarus regularmente e combinar exploração, resgates, requests, Personas e combate.",
+        "number": 2,
+        "title": "Tartarus em blocos e Elizabeth Requests"
+      },
+      {
+        "detail": "Maximizar Courage, Charm e Academics, desbloquear cada Social Link e concluir um romance.",
+        "number": 3,
+        "title": "Social Links, Social Stats e romance"
+      },
+      {
+        "detail": "Usar a Theurgy de cada companheiro e concluir eventos relevantes do dormitório.",
+        "number": 4,
+        "title": "Theurgy, dormitório e Shinjiro"
+      },
+      {
+        "detail": "Fazer a escolha correta em 31/12 e manter acesso ao caminho de Nyx.",
+        "number": 5,
+        "title": "Decisão de 31/12 e caminho do final bom"
+      },
+      {
+        "detail": "Finalizar vínculos, Tartarus, fusões, bosses opcionais e acumulativos antes do encerramento.",
+        "number": 6,
+        "title": "Janeiro: Aigis, Reaper, Messiah e cleanup"
+      }
+    ],
     "seo": {},
     "tags": []
   },

@@ -39,7 +39,7 @@
     "time_min_hours": 70,
     "time_reason": "A faixa de 70-90 horas considera campanha, side content, Hunts, Trials, crafting, ability mastery e Final Fantasy Mode.",
     "time_sort_hours": 70,
-    "updated_at": "2026-06-28 21:19:06",
+    "updated_at": "2026-06-29 22:19:44",
     "verification_note": "Lista base de Final Fantasy XVI adicionada com checklist e roadmap completos, sem Echoes of the Fallen ou The Rising Tide; aguarda revisao editorial manual final.",
     "verification_status": "review",
     "walkthrough": null
@@ -152,6 +152,10 @@
       "Comprar o item de 36.000 gil para Eureka.",
       "Concluir New Game+ em Final Fantasy Mode."
     ],
+    "editorial_summary": [
+      "A platina de Final Fantasy XVI é longa, mas direta: complete a campanha, feche quests importantes, hunts, checklist do Hideaway e finalize uma segunda run em Final Fantasy Mode.",
+      "O único risco permanente da lista base é Half Past Twilight, porque vender materiais únicos de Gotterdammerung pode bloquear o crafting. Echoes of the Fallen adiciona 6 troféus e The Rising Tide adiciona 13, mas nenhum deles é necessário para The Chronicler/O Cronista."
+    ],
     "faq": [
       {
         "answer": "Sim. O principal é Half Past Twilight, caso você venda materiais necessários para a Gotterdammerung. Não venda materiais de crafting importantes.",
@@ -213,6 +217,38 @@
       "time": "70-90h.",
       "verdict": "Platina longa, offline e segura se você proteger materiais de Gotterdammerung."
     },
+    "quick_plan": [
+      {
+        "detail": "Concluir a história sem pressão e desbloquear sistemas, hunts, cronólitos e o endgame.",
+        "number": 1,
+        "title": "Run 1 em Story ou Action Focused"
+      },
+      {
+        "detail": "Evitar perder materiais necessários para fabricar Gotterdammerung.",
+        "number": 2,
+        "title": "Proteger Half Past Twilight"
+      },
+      {
+        "detail": "Fechar upgrades permanentes e recompensas que alimentam troféus de checklist.",
+        "number": 3,
+        "title": "Completar quests importantes"
+      },
+      {
+        "detail": "Derrotar todas as marcas notórias e garantir materiais de crafting.",
+        "number": 4,
+        "title": "Hunt Board e Notorious Marks"
+      },
+      {
+        "detail": "Completar provas e troféus específicos de habilidades antes do NG+ final.",
+        "number": 5,
+        "title": "Cronólitos e domínio dos Eikons"
+      },
+      {
+        "detail": "Fabricar equipamentos-chave e completar pendências antes de iniciar Final Fantasy Mode.",
+        "number": 6,
+        "title": "Crafting, Wall of Memories e limpeza da run 1"
+      }
+    ],
     "seo": {
       "description": "Guia de platina de Final Fantasy XVI com 50 troféus base, 1 perdível, roadmap em 8 etapas, Final Fantasy Mode, hunts, Gotterdammerung e DLC separado.",
       "keywords": [

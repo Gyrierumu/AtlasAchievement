@@ -39,7 +39,7 @@
     "time_min_hours": 60,
     "time_reason": "A faixa de 60-80 horas considera campanha, chapter select, Hard Mode, coletaveis, minigames, combat simulator e cleanup.",
     "time_sort_hours": 60,
-    "updated_at": "2026-06-28 21:19:06",
+    "updated_at": "2026-06-29 22:19:44",
     "verification_note": "Lista base de Final Fantasy VII Remake adicionada com checklist e roadmap completos, sem INTERmission/Yuffie; aguarda revisao editorial manual final.",
     "verification_status": "review",
     "walkthrough": null
@@ -210,6 +210,11 @@
       "Conferir se página individual e catálogo exibem o mesmo status editorial.",
       "Conferir se flags do topo batem com filtros do catálogo."
     ],
+    "editorial_summary": [
+      "Final Fantasy VII Remake é uma platina longa e focada em conclusão: terminar a história, liberar Chapter Select, completar todas as side quests, coletar discos de música, desbloquear os 9 vestidos, concluir Battle Intel Reports, aprender Enemy Skills, vencer desafios de minigames e fechar todos os capítulos no Hard Mode.",
+      "A platina base não exige online, cooperação ou INTERmission. A rota mais segura é fazer uma primeira run normal coletando o máximo possível, completar side quests e minigames, usar Chapter Select para rotas alternativas do Capítulo 9 e vestidos, preparar builds e manuscritos para o Hard Mode, derrotar Pride and Joy Prototype e então concluir todos os capítulos no Hard para Hardened Veteran.",
+      "INTERmission/Yuffie tem 9 troféus extras em Intergrade e deve ficar separada como DLC/100%. Ela não é necessária para Master of Fate."
+    ],
     "faq": [
       {
         "answer": "Não há perdíveis permanentes na platina base, porque Chapter Select libera após terminar a história. Alguns troféus exigem replay de capítulos e escolhas específicas.",
@@ -271,6 +276,38 @@
       "time": "Longo, cerca de 60 a 80 horas.",
       "verdict": "Sim. É uma platina longa e bem completa, ideal para quem gosta de RPG com checklist, replay de capítulos e desafio no Hard."
     },
+    "quick_plan": [
+      {
+        "detail": "Concluir a campanha uma vez para liberar Chapter Select e preparar o cleanup.",
+        "number": 1,
+        "title": "Faça a primeira run coletando tudo que encontrar"
+      },
+      {
+        "detail": "Resolver Best in the Business, The Johnny Experience e Dressed to the Nines.",
+        "number": 2,
+        "title": "Use Chapter Select para side quests, Johnny e vestidos"
+      },
+      {
+        "detail": "Concluir Disc Jockey, Master of Mimicry e Intelligence Agent.",
+        "number": 3,
+        "title": "Finalize colecionáveis e relatórios de combate"
+      },
+      {
+        "detail": "Deixar o grupo pronto para capítulos no Hard, sem depender de itens.",
+        "number": 4,
+        "title": "Prepare builds, matérias e manuscritos para o Hard Mode"
+      },
+      {
+        "detail": "Desbloquear Ultimate Weapon e limpar desafios de combate avançados.",
+        "number": 5,
+        "title": "Vença os desafios de simulação e Pride and Joy"
+      },
+      {
+        "detail": "Concluir a segunda passagem pelos capítulos para fechar o troféu de dificuldade.",
+        "number": 6,
+        "title": "Complete todos os capítulos no Hard Mode"
+      }
+    ],
     "seo": {
       "description": "Guia de troféus de Final Fantasy VII Remake com roadmap da platina, Hard Mode, 9 vestidos, 26 side quests, Enemy Skills, Battle Intel, Pride and Joy, INTERmission separada e dicas para os 54 troféus base.",
       "keywords": [

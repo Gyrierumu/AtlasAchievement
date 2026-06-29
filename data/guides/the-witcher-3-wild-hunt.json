@@ -39,7 +39,7 @@
     "time_min_hours": 100,
     "time_reason": "A faixa de 100-150 horas considera campanha, Death March, Gwent, contratos, exploracao, side quests, cartas e cleanup.",
     "time_sort_hours": 100,
-    "updated_at": "2026-06-28 21:19:06",
+    "updated_at": "2026-06-29 22:19:44",
     "verification_note": "Lista base de The Witcher 3: Wild Hunt adicionada com checklist e roadmap completos; aguarda revisao editorial manual final.",
     "verification_status": "review",
     "walkthrough": null
@@ -189,6 +189,10 @@
       "Conferir se página individual e catálogo exibem o mesmo status editorial.",
       "Conferir se flags do topo batem com filtros do catálogo."
     ],
+    "editorial_summary": [
+      "The Witcher 3: Wild Hunt é uma platina longa e exigente, focada em terminar a história na dificuldade Marcha da Morte, controlar vários troféus perdíveis, coletar todas as cartas de Gwent da versão base, concluir contratos, corridas, lutas, questlines importantes e limpar troféus diversos de combate e exploração.",
+      "A rota mais segura é começar a campanha diretamente em Marcha da Morte, nunca reduzir a dificuldade até o final da história e manter saves manuais antes de pontos críticos como Isle of Mists, High Stakes, Reason of State, questlines de Keira/Triss/Skellige e contratos específicos. A platina não exige online, cooperação ou DLC, mas exige planejamento: Gwent, Full Crew, Assassin of Kings e os troféus de competição/contratos são os maiores riscos editoriais."
+    ],
     "faq": [
       {
         "answer": "Sim. A platina base tem vários perdíveis importantes, especialmente Card Collector, Gwent Master, Full Crew, Assassin of Kings, Even Odds, Brawl Master, Fast and Furious, Fist of the South Star e Woodland Spirit.",
@@ -241,6 +245,38 @@
       "time": "Muito longo, cerca de 100 a 150 horas.",
       "worthIt": "Sim, mas é uma platina longa e exigente, indicada para quem quer jogar com checklist desde o início."
     },
+    "quick_plan": [
+      {
+        "detail": "Garantir os troféus de dificuldade em uma única campanha sem precisar rejogar a história.",
+        "number": 1,
+        "title": "Comece em Marcha da Morte e não reduza a dificuldade"
+      },
+      {
+        "detail": "Resolver questlines e decisões que bloqueiam troféus importantes antes do ponto de corte da campanha.",
+        "number": 2,
+        "title": "Controle os perdíveis antes de Isle of Mists"
+      },
+      {
+        "detail": "Evitar perder cartas únicas e preparar o deck para Card Collector e Gwent Master.",
+        "number": 3,
+        "title": "Colete cartas de Gwent desde o início"
+      },
+      {
+        "detail": "Concluir a história principal e liberar os troféus ligados a personagens, aliados e decisões.",
+        "number": 4,
+        "title": "Finalize história, aliados e decisões políticas"
+      },
+      {
+        "detail": "Resolver os troféus ligados a contratos de bruxo, lutas, corridas e desafios específicos.",
+        "number": 5,
+        "title": "Conclua contratos, lutas e corridas"
+      },
+      {
+        "detail": "Limpar troféus específicos de combate, sinais, bombas, besta, mutagênicos e ações pontuais.",
+        "number": 6,
+        "title": "Faça os troféus diversos de combate"
+      }
+    ],
     "seo": {
       "description": "Guia de troféus de The Witcher 3: Wild Hunt com roadmap da platina, Marcha da Morte, troféus perdíveis, Gwent, Full Crew, Assassin of Kings, contratos, cartas e dicas para os 53 troféus da lista base.",
       "keywords": "The Witcher 3 troféus, The Witcher 3 platina, guia The Witcher 3, The Witcher 3 Wild Hunt troféus, The Witcher 3 Death March, Marcha da Morte, Walked the Path, Seguiu o Caminho, Card Collector, Colecionador de cartas, Full Crew, Rapaziada, Assassin of Kings, Regicida, Gwent Master, Mestre do gwent",

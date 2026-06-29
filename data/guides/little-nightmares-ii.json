@@ -39,7 +39,7 @@
     "time_min_hours": 6,
     "time_reason": "A faixa de 6-10 horas considera uma campanha completa, limpeza de Glitching Remains, chapéus e troféus opcionais por seleção de capítulos.",
     "time_sort_hours": 6,
-    "updated_at": "2026-06-28 21:19:06",
+    "updated_at": "2026-06-29 22:19:44",
     "verification_note": "Lista base adicionada por fontes públicas; aguarda validação editorial manual.",
     "verification_status": "review",
     "walkthrough": null
@@ -154,6 +154,11 @@
       "Conferir roadmap estruturado e ausência de objetos brutos ou labels internas no front.",
       "Conferir FAQ, decisão rápida, SEO, pontos de atenção, filtros e status entre página e catálogo."
     ],
+    "editorial_summary": [
+      "Little Nightmares II é uma platina curta, simples e totalmente offline, focada em terminar os cinco capítulos, coletar Glitching Remains, pegar os chapéus necessários e resolver troféus misc por capítulo. A lista tem 35 troféus e não exige online, cooperação, DLC, dificuldade alta, speedrun ou run sem morrer.",
+      "A rota mais segura é jogar acompanhando os 18 Glitching Remains — distribuídos em 4, 6, 4 e 4 nos quatro primeiros capítulos — e os chapéus da lista base. No More Remains e o secret ending dependem dos Glitching Remains; Half Hat, Far Ahead e How Do I Look? cobrem os chapéus. Chapter Select recupera qualquer item ou misc esquecido.",
+      "Nome’s Attic, Nome Hat e o chapéu Mokujin de pré-venda não são requisitos da platina base. Os nomes PT-BR usam tradução editorial consistente quando não há localização oficial confirmada no dado do projeto."
+    ],
     "faq": [
       {
         "answer": "Não há perdíveis permanentes. Chapter Select permite recuperar chapéus, Glitching Remains e troféus misc esquecidos.",
@@ -215,6 +220,38 @@
       "time": "Curto, cerca de 6 a 10 horas.",
       "verdict": "Sim. É uma platina curta, fácil e ótima para quem gosta de terror atmosférico e coletáveis simples."
     },
+    "quick_plan": [
+      {
+        "detail": "Concluir os cinco capítulos coletando o máximo possível para reduzir cleanup.",
+        "number": 1,
+        "title": "Jogue a história com checklist de coletáveis"
+      },
+      {
+        "detail": "Resolver os coletáveis e misc do primeiro capítulo.",
+        "number": 2,
+        "title": "Limpe o Capítulo 1: Wilderness"
+      },
+      {
+        "detail": "Pegar os 6 Glitching Remains e concluir os misc da School.",
+        "number": 3,
+        "title": "Limpe o Capítulo 2: School"
+      },
+      {
+        "detail": "Resolver coletáveis, chapéus e o maior bloco de troféus misc.",
+        "number": 4,
+        "title": "Limpe o Capítulo 3: Hospital"
+      },
+      {
+        "detail": "Fechar os últimos Glitching Remains e misc antes do final.",
+        "number": 5,
+        "title": "Limpe o Capítulo 4: Pale City"
+      },
+      {
+        "detail": "Completar a história e fechar os troféus ligados ao final.",
+        "number": 6,
+        "title": "Finalize o Capítulo 5 e use o último chapéu"
+      }
+    ],
     "seo": {
       "description": "Guia de troféus de Little Nightmares II com roadmap da platina, 18 Glitching Remains, chapéus, Chapter Select, No More Remains, Far Ahead, troféus misc por capítulo e dicas para os 35 troféus.",
       "keywords": [

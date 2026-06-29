@@ -39,7 +39,7 @@
     "time_min_hours": 40,
     "time_reason": "A faixa de 40-60 horas considera quatro campanhas, chapter select, serpent emblems, Professional, cleanup e grind de skills/títulos.",
     "time_sort_hours": 40,
-    "updated_at": "2026-06-28 21:19:06",
+    "updated_at": "2026-06-29 22:19:44",
     "verification_note": "Guia normalizado a partir do dado seed com checklist e roadmap; aguardando revisão editorial manual final.",
     "verification_status": "review",
     "walkthrough": null
@@ -164,6 +164,12 @@
       "Completar 150 medalhas e títulos restantes antes da platina.",
       "Manter Agent Hunt, Mercenaries e DLC fora do planejamento da platina base."
     ],
+    "editorial_summary": [
+      "Resident Evil 6 é uma platina longa de campanha e cleanup, não uma platina de online. A lista base tem 51 troféus e pode ser feita solo/offline com IA, embora co-op humano ajude em combate e resgates.",
+      "O caminho mais seguro é completar Leon, Chris, Jake e Ada em dificuldade baixa ou Normal, coletando Serpent Emblems e acumulando skill points. Depois, use chapter select para troféus situacionais e entre no Professional já com skills úteis.",
+      "O maior tempo da platina fica no grind: Mad Skillz, 150 medalhas, títulos, kills por arma, 500 zombies, 500 J'avo e inimigos vindos de chrysalid. O guia separa esses objetivos para não misturar história simples com farm final.",
+      "DLCs e modos extras do relançamento, como Agent Hunt e modos multiplayer, não fazem parte da platina base coberta aqui. No Hope também não é requisito da platina base nesta lista."
+    ],
     "faq": [
       {
         "answer": "Não. A platina base pode ser feita offline e não exige PS+, multiplayer, Agent Hunt ou modos extras.",
@@ -217,6 +223,38 @@
       "risk": "O principal risco é deixar Serpent Emblems, medalhas, armas e skill points sem controle e transformar o cleanup em repetição cega.",
       "summary": "Vale platinar Resident Evil 6 se você gosta de ação, campanhas longas, chapter select e grind moderado. A platina base não exige online, co-op nem DLC, mas cobra fechar Leon, Chris, Jake e Ada, concluir o Professional, coletar todos os Serpent Emblems, farmar skill points para Mad Skillz e limpar vários troféus situacionais."
     },
+    "quick_plan": [
+      {
+        "detail": "Conclua as quatro histórias em uma dificuldade confortável e prepare recursos para as etapas mais exigentes.",
+        "number": 1,
+        "title": "Feche o prólogo e as quatro campanhas"
+      },
+      {
+        "detail": "Avance em Heirlooms junto com a história para reduzir o retrabalho no chapter select.",
+        "number": 2,
+        "title": "Controle os Serpent Emblems"
+      },
+      {
+        "detail": "Faça a passagem obrigatória em Professional com skills úteis e conhecimento prévio dos capítulos.",
+        "number": 3,
+        "title": "Prepare e conclua o Professional"
+      },
+      {
+        "detail": "Use chapter select para resolver condições específicas sem repetir campanhas completas.",
+        "number": 4,
+        "title": "Limpe os troféus situacionais"
+      },
+      {
+        "detail": "Conclua Weapons Master e as contagens acumulativas usando capítulos com alta densidade de inimigos.",
+        "number": 5,
+        "title": "Feche armas e contagens de inimigos"
+      },
+      {
+        "detail": "Converta todo o progresso acumulado no cleanup final de skills, títulos e Covered in Brass.",
+        "number": 6,
+        "title": "Finalize Mad Skillz, títulos e medalhas"
+      }
+    ],
     "seo": {
       "description": "Guia completo da platina base de Resident Evil 6 com roadmap, checklist, Professional, Serpent Emblems, Mad Skillz, grind, co-op opcional e diferenças entre base game e DLC.",
       "keywords": [

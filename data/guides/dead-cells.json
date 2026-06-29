@@ -39,7 +39,7 @@
     "time_min_hours": 60,
     "time_reason": "A faixa de 60-100 horas considera aprendizado de roguelite, runas, upgrades permanentes, blueprints, múltiplas vitórias, Boss Stem Cells, chefes sem dano e grande variação por habilidade.",
     "time_sort_hours": 60,
-    "updated_at": "2026-06-28 21:19:07",
+    "updated_at": "2026-06-29 22:19:45",
     "verification_note": "Guia revisado editorialmente.",
     "verification_status": "verified",
     "walkthrough": null
@@ -76,9 +76,80 @@
     "aliases": [],
     "attentionPoints": [],
     "checklist": [],
-    "faq": [],
+    "editorial_summary": [
+      "A platina de Dead Cells é baseada em repetição de runs, domínio de combate e progressão gradual de habilidade. A lista base não tem perdíveis definitivos, online ou coop obrigatório, mas exige consistência em biomas, chefes, Boss Stem Cells, objetivos de execução, blueprints e desafios específicos.",
+      "A melhor rota é primeiro liberar runas, upgrades permanentes, frascos, armas úteis e caminhos principais. Depois, trabalhe chefes, rotas alternativas, Challenge Rift, Daily Challenge, objetivos de equipamento inicial e troféus ligados a biomas. Como quase tudo pode ser tentado novamente em runs futuras, o risco principal não é perder troféus para sempre, e sim desperdiçar tempo tentando objetivos difíceis cedo demais.",
+      "Os maiores filtros da platina são as Boss Stem Cells, chefes sem dano, Cursed Sword, terminar com equipamento inicial, completar uma run sem depender de Ygdar Orus Li Ox e manter consistência em rotas avançadas. Deixe esses objetivos para depois de dominar padrões de inimigos, chefes, esquiva, parry, mutações e builds seguras.",
+      "DLCs e expansões ficam fora da platina base. Use o roadmap para organizar a progressão por fases: fundamentos, rotas, chefes, Boss Stem Cells, cleanup e checklist final. Depois acompanhe cada troféu pela checklist para separar objetivos de dificuldade, grind, coletáveis, execução e cleanup."
+    ],
+    "faq": [
+      {
+        "answer": "Não. A lista base não tem perdíveis definitivos. Como o jogo é estruturado em runs, biomas, chefes, runas e desafios podem ser tentados novamente.",
+        "question": "Dead Cells tem troféus perdíveis?"
+      },
+      {
+        "answer": "Não. A platina da lista base não exige online, servidores, multiplayer, coop ou PS+.",
+        "question": "Dead Cells precisa de online para platinar?"
+      },
+      {
+        "answer": "Não. A rota da platina base é solo e não exige segundo jogador.",
+        "question": "Dead Cells tem coop obrigatório?"
+      },
+      {
+        "answer": "Sim. A lista base exige terminar o jogo com Boss Stem Cells ativas, incluindo 4 BSC, então a curva de dificuldade faz parte da platina.",
+        "question": "Dead Cells exige dificuldade alta?"
+      },
+      {
+        "answer": "Sim. A progressão depende de várias runs para liberar runas, upgrades, blueprints, rotas, vitórias com Boss Stem Cells e tentativas de chefes sem dano.",
+        "question": "Dead Cells depende de múltiplas runs?"
+      },
+      {
+        "answer": "Os maiores filtros são Boss Stem Cells, chefes sem dano, Cursed Sword, equipamento inicial, Challenge Rift, Daily Challenge, 100 elites e consistência em combate.",
+        "question": "O que mais dá trabalho na platina?"
+      },
+      {
+        "answer": "Não. DLCs e expansões ficam fora da platina base; este guia cobre os 54 troféus do jogo base.",
+        "question": "DLCs são necessárias para a platina base?"
+      },
+      {
+        "answer": "Faça runs exploratórias para aprender inimigos, liberar runas, melhorar frascos e entregar blueprints úteis ao Collector antes de forçar objetivos difíceis.",
+        "question": "Qual é o melhor primeiro passo?"
+      }
+    ],
     "note": "Campos exportados para auditoria. O SQLite atual nao possui colunas nativas para todos esses extras; a importacao preserva o que o banco suporta.",
     "quickDecision": null,
+    "quick_plan": [
+      {
+        "detail": "Entender combate, biomas, frascos, mutações, armas, armadilhas e rotas sem forçar troféus difíceis cedo.",
+        "number": 1,
+        "title": "Aprenda o ciclo de runs e desbloqueie upgrades permanentes"
+      },
+      {
+        "detail": "Liberar caminhos, runas, biomas e chefes necessários para ampliar as opções de run.",
+        "number": 2,
+        "title": "Abra rotas, biomas e chefes principais"
+      },
+      {
+        "detail": "Começar a mirar troféus ligados a chefes, vitórias específicas e desafios de combate.",
+        "number": 3,
+        "title": "Trabalhe troféus de chefes e objetivos de execução"
+      },
+      {
+        "detail": "Progredir nas dificuldades superiores exigidas pela lista base.",
+        "number": 4,
+        "title": "Avance pelas Boss Stem Cells e dificuldade crescente"
+      },
+      {
+        "detail": "Resolver troféus ligados a desbloqueios, blueprints, rotas, kills específicas e condições de run.",
+        "number": 5,
+        "title": "Limpe blueprints, desafios e objetivos específicos"
+      },
+      {
+        "detail": "Conferir todos os troféus restantes sem misturar DLCs ou expansões.",
+        "number": 6,
+        "title": "Finalize a checklist da platina base"
+      }
+    ],
     "seo": {},
     "tags": []
   },

@@ -105,7 +105,7 @@ window.UIHome = (() => {
   function renderHomeCatalogProof(target, gamesCount = 0, totalTrophies = 0, totalRoadmaps = 0, fallbackText = '') {
     if (!target) return;
     if (!Number(gamesCount || 0) && !Number(totalTrophies || 0) && !Number(totalRoadmaps || 0)) {
-      target.textContent = fallbackText || 'Guias de platina com roadmap, checklist e progresso para acompanhar sua próxima run.';
+      target.textContent = fallbackText || 'Salve guias na biblioteca para continuar de onde parou, acompanhar checklists e receber recomendações.';
       return;
     }
     const stats = [
@@ -168,7 +168,8 @@ window.UIHome = (() => {
       verifiedCount ? `${verifiedCount} guias verificados para escolher com mais confiança.` : '',
       noOnlineCount ? `${noOnlineCount} platinas sem online obrigatório no catálogo.` : '',
       shortCount ? `${shortCount} opções curtas para encaixar na próxima sessão.` : '',
-      'Roadmap, checklist e alertas de risco ficam juntos no mesmo fluxo.'
+      'Roadmap, checklist, biblioteca e recomendações ficam juntos no mesmo fluxo.',
+      'O progresso salvo fica local neste navegador e pode evoluir para sincronização sem dados sensíveis.'
     ].filter(Boolean);
     const uniqueMessages = [...new Set(messages)];
     message.textContent = uniqueMessages[0] || message.textContent;
@@ -290,7 +291,7 @@ window.UIHome = (() => {
           <span><i class="fas fa-clock" aria-hidden="true"></i><strong>${escapeHtml(model.time || 'Tempo não informado')}</strong><small>Tempo estimado</small></span>
           <span><i class="fas fa-gauge-high" aria-hidden="true"></i><strong>${escapeHtml(String(model.difficulty || '-'))}/10</strong><small>Dificuldade</small></span>
           <span data-risk="${escapeAttribute(riskTone)}"><i class="fas ${hasRiskSignal ? 'fa-triangle-exclamation' : 'fa-shield-halved'}" aria-hidden="true"></i><strong>${escapeHtml(riskLabel)}</strong><small>Riscos</small></span>
-          <span><i class="fas fa-list-check" aria-hidden="true"></i><strong>Checklist</strong><small>Progresso salvo</small></span>
+          <span><i class="fas fa-list-check" aria-hidden="true"></i><strong>Checklist</strong><small>Continue depois</small></span>
         </div>
         <a href="/jogo/${slug}" class="atlas-home-hero-preview__link" data-home-game="${escapeAttribute(model.name)}" data-open-guide-card="${slug}">
           Ver guia em destaque
@@ -410,7 +411,7 @@ window.UIHome = (() => {
     const hasRisk = sharedCatalog.hasGuideRisk || (game => Number(game.missable_count || 0) > 0 || hasMissableRiskText(game.missable || game.missable_summary || ''));
     const formatHomeCatalogProof = sharedCatalog.formatHomeCatalogProof || ((gamesCount = 0, totalTrophies = 0, totalRoadmaps = 0) => {
       if (!Number(gamesCount || 0) && !Number(totalTrophies || 0) && !Number(totalRoadmaps || 0)) {
-        return 'Guias de platina com roadmap, checklist e progresso para acompanhar sua próxima run.';
+        return 'Salve guias na biblioteca para continuar de onde parou, acompanhar checklists e receber recomendações.';
       }
       return `${gamesCount} jogos mapeados · ${totalTrophies} troféus · ${totalRoadmaps} etapas de roadmap`;
     });

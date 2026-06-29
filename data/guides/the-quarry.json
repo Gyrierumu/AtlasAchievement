@@ -39,7 +39,7 @@
     "time_min_hours": 25,
     "time_reason": "A faixa de 25-35 horas considera campanha principal, rotas alternativas, Chapter Select, coletáveis e Movie Mode.",
     "time_sort_hours": 25,
-    "updated_at": "2026-06-28 21:19:06",
+    "updated_at": "2026-06-29 22:19:44",
     "verification_note": "Lista base adicionada por fontes públicas; aguarda validação editorial final.",
     "verification_status": "review",
     "walkthrough": null
@@ -84,9 +84,67 @@
     "aliases": [],
     "attentionPoints": [],
     "checklist": [],
-    "faq": [],
+    "editorial_summary": [],
+    "faq": [
+      {
+        "answer": "Sim. O guia possui alertas para troféus perdíveis. É recomendado seguir o roadmap desde o início.",
+        "question": "The Quarry tem troféus perdíveis?"
+      },
+      {
+        "answer": "Não. A platina não exige troféus online obrigatórios segundo os dados atuais do guia.",
+        "question": "The Quarry precisa de online para platinar?"
+      },
+      {
+        "answer": "O tempo estimado para platinar The Quarry é 25-35h. Use o roadmap para distribuir campanha, cleanup e checklist.",
+        "question": "Quanto tempo leva para platinar The Quarry?"
+      },
+      {
+        "answer": "A dificuldade cadastrada para a platina é 3/10. Leia os alertas para entender onde o desafio pode aumentar.",
+        "question": "Qual a dificuldade da platina de The Quarry?"
+      },
+      {
+        "answer": "Não. O guia não aponta coop obrigatório para a platina.",
+        "question": "The Quarry tem coop obrigatório?"
+      },
+      {
+        "answer": "Não. A DLC não é necessária para a platina base.",
+        "question": "A DLC é necessária para a platina de The Quarry?"
+      }
+    ],
     "note": "Campos exportados para auditoria. O SQLite atual nao possui colunas nativas para todos esses extras; a importacao preserva o que o banco suporta.",
     "quickDecision": null,
+    "quick_plan": [
+      {
+        "detail": "Faça a primeira campanha focada em todos vivos: preserve Laura, Max, Abigail, Emma, Jacob, Nick, Dylan, Ryan e Kaitlyn, e colete Clues, Evidence e Tarot Cards com checkl…",
+        "number": 1,
+        "title": "Revise coletáveis no checklist"
+      },
+      {
+        "detail": "Garanta decisões críticas para sobrevivência, cooperação de Travis/Laura, The White Wolf e finais positivos. Essa rota também prepara Rough Night, Above the Law e vários…",
+        "number": 2,
+        "title": "Coordene a etapa com a dupla"
+      },
+      {
+        "detail": "Após terminar, use Chapter Select para rotas alternativas, lembrando que você deve continuar do capítulo escolhido até o fim e que decisões anteriores podem exigir repla…",
+        "number": 3,
+        "title": "Limpe coletáveis por seleção de capítulos"
+      },
+      {
+        "detail": "Faça a rota de todos mortos para Hackett’s Quarry Massacre e use variações para The Final Girl, Last Man Standing, Lovers’ Quarrel e outras mortes específicas.",
+        "number": 4,
+        "title": "Prossiga pela rota planejada"
+      },
+      {
+        "detail": "Faça a rota de todos infectados para Blood Pact, planejando mordidas, amputações evitadas e sobrevivência suficiente para que todas as infecções aconteçam.",
+        "number": 5,
+        "title": "Faça a rota de todos infectados para Blood Pact, planejando m..."
+      },
+      {
+        "detail": "Limpe coletáveis: 40 Clues, 10 Evidence e 22 Tarot Cards. Alguns caminhos se anulam, então talvez seja preciso recolher uma categoria inteira a partir do capítulo necess…",
+        "number": 6,
+        "title": "Limpe coletáveis"
+      }
+    ],
     "seo": {},
     "tags": []
   },

@@ -150,6 +150,14 @@ window.AppGuideView = (() => {
         return;
       }
 
+      const topButton = event.target.closest('[data-scroll-top]');
+      if (topButton) {
+        event.preventDefault();
+        const reducedMotion = typeof window.matchMedia === 'function' && window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+        window.scrollTo({ top: 0, behavior: reducedMotion ? 'auto' : 'smooth' });
+        return;
+      }
+
       const actionButton = event.target.closest('[data-guide-action]');
       if (actionButton) {
         event.preventDefault();

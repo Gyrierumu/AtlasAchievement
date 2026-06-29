@@ -39,7 +39,7 @@
     "time_min_hours": 25,
     "time_reason": "A faixa de 25-35 horas considera campanha, atividades de mundo aberto, coletáveis, upgrades e cleanup.",
     "time_sort_hours": 25,
-    "updated_at": "2026-06-28 21:19:07",
+    "updated_at": "2026-06-29 22:19:45",
     "verification_note": "Guia revisado editorialmente para a platina base de Marvel’s Spider-Man 2, com 42 troféus, roadmap estruturado, descrições PT-BR, sem perdíveis, sem online obrigatório, sem coop obrigatório, sem DLC obrigatória e sem New Game+ obrigatório.",
     "verification_status": "verified",
     "walkthrough": null
@@ -76,6 +76,10 @@
     "aliases": [],
     "attentionPoints": [],
     "checklist": [],
+    "editorial_summary": [
+      "Marvel’s Spider-Man 2 é uma platina curta e acessível, focada em concluir a campanha, limpar 100% dos distritos e finalizar atividades secundárias, colecionáveis, upgrades e troféus situacionais no free roam. Não há troféus perdíveis, online, coop, DLC obrigatória, New Game+ obrigatório ou troféus de dificuldade na lista base.",
+      "A ordem mais segura é jogar a história primeiro enquanto libera habilidades, gadgets, Web Wings e atividades do mapa, depois limpar distritos e side stories, comprar trajes/upgrades e deixar troféus de combate, travessia e locais específicos para o cleanup. O principal cuidado é acompanhar os contadores do mapa durante o troféu Superior, especialmente Spider-Bots e atividades de distrito, para evitar retrabalho caso algum progresso não atualize corretamente."
+    ],
     "faq": [
       {
         "answer": "Não. A platina base não tem troféus perdíveis. Você pode continuar em free roam depois da história para concluir distritos, atividades, colecionáveis e troféus situacionais.",
@@ -112,6 +116,38 @@
       "mainRisk": "Nao ha perdivel, online ou coop obrigatorio; o cuidado e nao transformar a limpeza de distritos em checklist solto.",
       "verdict": "Platina direta e offline, com campanha primeiro e cleanup de atividades, trajes, habilidades e colecionaveis depois."
     },
+    "quick_plan": [
+      {
+        "detail": "Avançar pela história principal enquanto libera atividades, habilidades, gadgets, Web Wings e recursos básicos dos dois Spider-Men.",
+        "number": 1,
+        "title": "Conclua a campanha e libere todo o mapa"
+      },
+      {
+        "detail": "Completar todas as atividades necessárias para Superior e liberar recursos suficientes para trajes, gadgets e Suit Tech.",
+        "number": 2,
+        "title": "Faça 100% dos distritos"
+      },
+      {
+        "detail": "Concluir as cadeias de atividades que liberam missões finais e troféus específicos.",
+        "number": 3,
+        "title": "Finalize side stories e missões especiais"
+      },
+      {
+        "detail": "Usar os recursos obtidos no 100% dos distritos para fechar upgrades e compras necessárias.",
+        "number": 4,
+        "title": "Compre trajes, gadgets e Suit Tech"
+      },
+      {
+        "detail": "Finalizar troféus que dependem de habilidades, técnicas de combate, Web Wings ou locais específicos.",
+        "number": 5,
+        "title": "Resolva troféus de combate e travessia"
+      },
+      {
+        "detail": "Revisar pendências da lista base e garantir que nenhum requisito externo foi tratado como obrigatório.",
+        "number": 6,
+        "title": "Faça o cleanup final da platina"
+      }
+    ],
     "seo": {
       "description": "Guia da platina de Marvels Spider-Man 2 com roadmap offline, checklist de distritos, atividades, trajes, habilidades e limpeza sem perdivel.",
       "keywords": [

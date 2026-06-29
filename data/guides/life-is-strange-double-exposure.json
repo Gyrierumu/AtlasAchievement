@@ -39,7 +39,7 @@
     "time_min_hours": 15,
     "time_reason": "A faixa de 15-20 horas considera campanha, fotos por capítulo, Chapter Select e uma segunda rota para escolhas incompatíveis.",
     "time_sort_hours": 15,
-    "updated_at": "2026-06-28 21:19:06",
+    "updated_at": "2026-06-29 22:19:44",
     "verification_note": "Precisa revisão editorial final: confirmar rotas Bay/Bae, romances, Chapter Select e separação de Exclusive Cat Content antes de selo verificado.",
     "verification_status": "review",
     "walkthrough": null
@@ -184,6 +184,11 @@
       "Usar Explore Scene para cleanup seguro.",
       "Confirmar que Exclusive Cat Content não entrou como requisito da platina base."
     ],
+    "editorial_summary": [
+      "Life is Strange: Double Exposure é uma platina narrativa, offline e de baixa dificuldade, mas mais trabalhosa que os jogos clássicos da série por exigir duas runs para Bay or Bae e vários coletáveis/miscellaneous ligados a cenas específicas.",
+      "A lista base não exige online, coop nem DLC. O projeto mantém o checklist da platina com 33 troféus; os 2 troféus do Exclusive Cat Content ficam documentados no escopo, mas fora da lista base.",
+      "O cleanup deve ser feito por Chapter Select usando Explore Scene sempre que possível. Restart Scene pode sobrescrever progresso posterior, então não é a rota segura para limpeza de pendências."
+    ],
     "faq": [
       {
         "answer": "Não. A platina base é totalmente offline e single-player.",
@@ -241,6 +246,38 @@
       "risk": "O maior retrabalho vem de Bay or Bae, Frame Fatale, romances Amanda/Vinh e uso errado de Restart Scene no cleanup.",
       "summary": "Vale platinar Life is Strange: Double Exposure se você quer uma platina narrativa, offline e de baixa dificuldade, mas com bastante checklist. O jogo exige Bay or Bae, Polaroids, Snapshots, decorações, pistas, livros, projetos, romance e troféus de cena. O cleanup é administrável por Chapter Select/Explore Scene, e o Exclusive Cat Content fica fora da platina base."
     },
+    "quick_plan": [
+      {
+        "detail": "Concluir os Capítulos 1 a 5 acompanhando fotos/Polaroids, Snapshots e troféus de cena.",
+        "number": 1,
+        "title": "Faça a primeira run com checklist de cenas"
+      },
+      {
+        "detail": "Garantir Split Decision, Bullet, Proof, Face to Façade, Fade to White, Tempest Fugit e Commencement.",
+        "number": 2,
+        "title": "Conclua a história dos 5 capítulos"
+      },
+      {
+        "detail": "Recuperar troféus esquecidos sem apagar a run principal.",
+        "number": 3,
+        "title": "Use Explore Scene para cleanup seguro"
+      },
+      {
+        "detail": "Completar fotos/Polaroids da lista base e todos os Snapshots possíveis.",
+        "number": 4,
+        "title": "Feche Archival Footage e Frame Fatale"
+      },
+      {
+        "detail": "Cobrir romance, escolhas de cena e troféus de rota sem confundir com online/coop.",
+        "number": 5,
+        "title": "Resolva escolhas e romances"
+      },
+      {
+        "detail": "Completar o jogo com o outro destino original de Life is Strange.",
+        "number": 6,
+        "title": "Faça a segunda run para Bay or Bae"
+      }
+    ],
     "seo": {
       "description": "Guia de platina de Life is Strange: Double Exposure com roadmap, troféus, Bay or Bae, Polaroids, Snapshots, Chapter Select, DLC fora da platina, flags e checklist da lista base.",
       "keywords": "Life is Strange Double Exposure guia de platina, troféus Life is Strange Double Exposure, roadmap Life is Strange Double Exposure, Life is Strange Double Exposure Bay or Bae, Life is Strange Double Exposure Polaroids, Life is Strange Double Exposure Snapshots, Life is Strange Double Exposure Frame Fatale, Life is Strange Double Exposure Chapter Select, Life is Strange Double Exposure Explore Scene, Life is Strange Double Exposure Exclusive Cat Content, Life is Strange Double Exposure DLC fora da platina, Life is Strange Double Exposure sem online, Life is Strange Double Exposure sem coop, Life is Strange Double Exposure platina fácil",

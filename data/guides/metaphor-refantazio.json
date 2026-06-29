@@ -39,7 +39,7 @@
     "time_min_hours": 120,
     "time_reason": "A faixa de 120-150 horas considera campanha, calendario otimizado, quests, Followers, Archetypes, coletaveis, New Game+ e superboss.",
     "time_sort_hours": 120,
-    "updated_at": "2026-06-28 21:19:06",
+    "updated_at": "2026-06-29 22:19:44",
     "verification_note": "Lista base de Metaphor: ReFantazio adicionada com checklist e roadmap completos; aguarda revisao editorial manual final.",
     "verification_status": "review",
     "walkthrough": null
@@ -173,6 +173,11 @@
       "Conferir roadmap estruturado sem objetos brutos ou labels internas no front.",
       "Conferir FAQ, decisão rápida, SEO, pontos de atenção, filtros e status entre página e catálogo."
     ],
+    "editorial_summary": [
+      "Metaphor: ReFantazio é uma platina longa, totalmente offline e baseada em calendário. A lista tem 44 troféus, não exige online, cooperação ou DLC, possui dez perdíveis importantes e requer New Game+ para Closing the Book.",
+      "A rota segura usa um calendário 100% na primeira run para Followers, quests, debates, livros, receitas, Archetypes, Masks, Vessels, Gold Beetles e drawings. Na segunda, jogue em Easy ou superior, nunca em Storyteller, e derrote o Redscale Dragon do Book of Apocalypse.",
+      "Star Shatterer exige Destroyer Charadrius sem enfraquecimento. Não há free roam ou level select pós-história, mas existem 16 slots de save manual para proteger datas e decisões críticas."
+    ],
     "faq": [
       {
         "answer": "Não. A lista base é totalmente offline.",
@@ -238,6 +243,38 @@
       "time": "Longa, entre 120 e 150 horas.",
       "verdict": "É uma platina longa e acessível mecanicamente, indicada para quem aceita seguir calendário e checklists."
     },
+    "quick_plan": [
+      {
+        "detail": "Jogar a campanha com uma rota segura e concluir o máximo possível da lista na primeira jogada.",
+        "number": 1,
+        "title": "Primeira run com calendário 100%"
+      },
+      {
+        "detail": "Conferir os requisitos sensíveis ao calendário antes de consumir as últimas datas.",
+        "number": 2,
+        "title": "Checklists de calendário antes da reta final"
+      },
+      {
+        "detail": "Preparar a party e derrotar Destroyer Charadrius em sua força total.",
+        "number": 3,
+        "title": "Reta final e Star Shatterer"
+      },
+      {
+        "detail": "Avançar no New Game+ e derrotar o Redscale Dragon, maior gargalo da platina.",
+        "number": 4,
+        "title": "New Game+ para Closing the Book"
+      },
+      {
+        "detail": "Resolver apenas troféus acumulativos ou misc que ficaram pendentes.",
+        "number": 5,
+        "title": "Cleanup de acumulativos, se necessário"
+      },
+      {
+        "detail": "Use um calendário completo desde o início, distribua saves entre os 16 slots e lembre que não há free roam nem level select pós-história. Storyteller pode facilitar a pr…",
+        "number": 6,
+        "title": "Leia os alertas iniciais"
+      }
+    ],
     "seo": {
       "description": "Guia de troféus de Metaphor: ReFantazio com roadmap da platina, 44 troféus, 10 perdíveis, New Game+, Closing the Book, Redscale Dragon, Star Shatterer, Followers e Archetypes.",
       "keywords": [

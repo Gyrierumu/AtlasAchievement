@@ -39,7 +39,7 @@
     "time_min_hours": 6,
     "time_reason": "A faixa de 6-8 horas considera uma campanha com coletáveis, cleanup por Chapter Select e uma run dedicada de speedrun abaixo de 2 horas.",
     "time_sort_hours": 6,
-    "updated_at": "2026-06-28 21:19:06",
+    "updated_at": "2026-06-29 22:19:44",
     "verification_note": "Lista base adicionada por fontes públicas; aguarda validação editorial final.",
     "verification_status": "review",
     "walkthrough": null
@@ -164,6 +164,10 @@
       "Conferir se pagina individual e catalogo exibem o mesmo status editorial.",
       "Conferir se flags do topo batem com filtros do catalogo."
     ],
+    "editorial_summary": [
+      "Stray é uma platina curta e acessivel, focada em concluir a história, pegar os coletáveis dos 12 capítulos e resolver ações específicas de gato, como miar, pular, dormir, arranhar objetos, interagir com robôs e completar desafios pontuais.",
+      "A rota mais segura é fazer uma primeira jogada tranquila coletando memórias, bótons, partituras e scratches por capítulo, depois usar a seleção de capítulos para limpar qualquer troféu pendente e deixar I am Speed para uma segunda run dedicada. A platina não exige online, cooperação ou DLC. O principal cuidado é o speedrun de menos de 2 horas; os demais troféus podem ser refeitos com Chapter Select."
+    ],
     "faq": [
       {
         "answer": "Sim, mas apenas no sentido de run. I am Speed exige terminar o jogo em menos de 2 horas; se falhar, será necessário fazer outra tentativa. Os demais troféus podem ser recuperados pela seleção de capítulos.",
@@ -216,6 +220,38 @@
       "time": "Curto, cerca de 6 a 8 horas.",
       "worthIt": "Sim. É uma platina curta, charmosa e acessivel, mas exige paciencia em alguns desafios."
     },
+    "quick_plan": [
+      {
+        "detail": "Concluir os 12 capítulos enquanto pega memórias, bótons, partituras, scratches e troféus simples por capítulo.",
+        "number": 1,
+        "title": "Jogue a história coletando tudo com calma"
+      },
+      {
+        "detail": "Voltar aos capítulos específicos para completar troféus perdidos sem reiniciar a campanha inteira.",
+        "number": 2,
+        "title": "Use a seleção de capítulos para limpar pendências"
+      },
+      {
+        "detail": "Completar Stray rapidamente para desbloquear I am Speed.",
+        "number": 3,
+        "title": "Faça a run de menos de 2 horas"
+      },
+      {
+        "detail": "Não tente otimizar tudo na primeira jogada. Aprenda os 12 capítulos, depois faça I am Speed em uma run dedicada abaixo de 2 horas.",
+        "number": 4,
+        "title": "Leia os alertas iniciais"
+      },
+      {
+        "detail": "Use as etapas para evitar retrabalho antes de abrir a checklist completa.",
+        "number": 5,
+        "title": "Siga o roadmap em ordem"
+      },
+      {
+        "detail": "Use Chapter Select para recuperar coletáveis e troféus específicos, lembrando de avançar até checkpoint/autosave quando necessário para gravar o progresso.",
+        "number": 6,
+        "title": "Finalize pela checklist"
+      }
+    ],
     "seo": {
       "description": "Guia de troféus de Stray com roadmap da platina, tempo estimado, dificuldade, speedrun I am Speed, coletáveis, memórias, bótons, partituras e dicas para os 25 troféus.",
       "keywords": "Stray troféus, Stray platina, guia Stray, Stray PS5 troféus, Stray PS4 troféus, All Done Stray, I am Speed, Can’t Cat-ch Me, Pacifist, Sneakitty, Badges, I Remember, Meowlody",

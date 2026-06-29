@@ -39,7 +39,7 @@
     "time_min_hours": 70,
     "time_reason": "A faixa de 70-100 horas considera campanha, mundo aberto, vocations, quests, Sphinx, Unmoored World, finais e possivel NG+.",
     "time_sort_hours": 70,
-    "updated_at": "2026-06-28 21:19:06",
+    "updated_at": "2026-06-29 22:19:44",
     "verification_note": "Lista base de Dragon's Dogma 2 adicionada com checklist e roadmap completos; aguarda revisao editorial manual final.",
     "verification_status": "review",
     "walkthrough": null
@@ -174,6 +174,11 @@
       "Conferir se página individual e catálogo exibem o mesmo status editorial.",
       "Conferir se flags do topo batem com filtros do catálogo."
     ],
+    "editorial_summary": [
+      "Dragon’s Dogma 2 é uma platina longa e muito dependente de planejamento. A lista tem 55 troféus, todos offline, sem cooperação, sem DLC obrigatória e sem troféu por dificuldade alta, mas Casual Mode pode deixar alguns troféus indisponíveis. O desafio principal não é um modo difícil, e sim o sistema de salvamento, o ponto de não retorno, o Unmoored World e vários troféus sensíveis a rota, tempo, escolhas, NPCs e oportunidades únicas.",
+      "A rota mais segura é avançar a história até A New Godsway, fazer backup/inn-save antes de entregar os 15 Wyrmslife Crystals, limpar vocações, Sphinx, Maister's Teachings, Medusa, caves, Dragonforged, afinidade, badges, quests sensíveis e demais troféus antes de seguir para o final. Depois, faça os finais Peace/Dragon’s Dogma 2/Closure, resolva Unmoored World, The Hero, The Guardian e I, Talos. New Game+ pode recuperar erros, mas aumenta bastante o retrabalho.",
+      "Os nomes PT-BR abaixo dos troféus seguem tradução editorial consistente quando não há localização oficial confirmada no dado do projeto; o nome oficial em inglês permanece sempre como principal."
+    ],
     "faq": [
       {
         "answer": "Sim. Muitos troféus têm risco de run por escolhas, ponto de não retorno, NPCs, Unmoored World e sistema de salvamento. Use backup antes de objetivos sensíveis.",
@@ -235,6 +240,38 @@
       "time": "Longo, cerca de 70 a 100 horas.",
       "verdict": "Sim, mas é uma platina que exige guia e planejamento por causa do save, missables e Unmoored World."
     },
+    "quick_plan": [
+      {
+        "detail": "Chegar ao ponto ideal para backup e cleanup antes do caminho final.",
+        "number": 1,
+        "title": "Avance a história até A New Godsway sem entrar no fim"
+      },
+      {
+        "detail": "Desbloquear vocações, alcançar rank máximo e obter todas as Maister's Teachings.",
+        "number": 2,
+        "title": "Limpe vocações, maisters e progresso de personagem"
+      },
+      {
+        "detail": "Concluir os troféus mais fáceis de perder por erro, tempo ou oportunidade única.",
+        "number": 3,
+        "title": "Resolva Sphinx, Medusa e troféus únicos"
+      },
+      {
+        "detail": "Fechar troféus de mapa, caves, badges, afinidade, camping, casa e tarefas gerais.",
+        "number": 4,
+        "title": "Complete exploração, caves e tarefas de mundo"
+      },
+      {
+        "detail": "Garantir recursos para Dragon's Dogma e preparações finais.",
+        "number": 5,
+        "title": "Prepare Wyrmslife Crystals, Dragonforged e Dragon's Dogma"
+      },
+      {
+        "detail": "Registrar o final regular e depois acessar o Unmoored World.",
+        "number": 6,
+        "title": "Faça os finais Peace e Dragon's Dogma 2 corretamente"
+      }
+    ],
     "seo": {
       "description": "Guia de troféus de Dragon’s Dogma 2 com roadmap da platina, tempo estimado, perdíveis, Casual Mode, A New Godsway, Sphinx, Gigantus, Unmoored World, The Hero, The Guardian, Maister's Teachings e dicas para os 55 troféus.",
       "keywords": [

@@ -39,7 +39,7 @@
     "time_min_hours": 20,
     "time_reason": "A faixa de 20-30 horas considera primeira campanha, farm de pontos, dificuldades até Inferno, rank S e runs de restrição.",
     "time_sort_hours": 20,
-    "updated_at": "2026-06-28 21:19:06",
+    "updated_at": "2026-06-29 22:19:44",
     "verification_note": "Guia normalizado a partir do dado seed com checklist e roadmap; aguardando revisão editorial manual final.",
     "verification_status": "review",
     "walkthrough": null
@@ -72,9 +72,81 @@
     "aliases": [],
     "attentionPoints": [],
     "checklist": [],
-    "faq": [],
+    "editorial_summary": [
+      "Faça uma primeira campanha segura aprendendo rotas, Nemesis, puzzles, chefes, recursos e coletáveis antes de tentar rank, Inferno ou restrições de run.",
+      "A platina de Resident Evil 3 Remake é mais curta que outros jogos da série, mas exige organização por causa de múltiplas runs, dificuldades superiores, coletáveis, records e objetivos condicionais. A lista base não exige online nem coop, mas pede domínio da campanha, boa gestão de recursos e rotas planejadas para reduzir repetição desnecessária.",
+      "O maior risco está nos perdíveis por run: arquivos, Charlie Dolls, cofres, travas, armas, upgrades, itens importantes e objetivos condicionais podem exigir uma nova campanha se forem ignorados. Além disso, tentativas de rank, pouca cura, sem baú ou dificuldade alta devem ser separadas quando necessário, porque quebrar uma condição pode invalidar a run.",
+      "A melhor rota é primeiro concluir uma campanha confortável coletando o máximo possível e entendendo perseguições, chefes e mapas. Depois, use o cleanup para completar coletáveis e records, desbloquear recursos da loja e só então partir para dificuldades mais altas, rank S, Nightmare, Inferno e restrições.",
+      "Resident Evil Resistance, DLCs e extras fora da lista base ficam separados da platina. Use o roadmap para organizar as runs e a checklist para controlar coletáveis, dificuldades, records, condições especiais e cleanup."
+    ],
+    "faq": [
+      {
+        "answer": "Sim. Há perdíveis por run, principalmente coletáveis, arquivos, Charlie Dolls, cofres, travas, upgrades, itens importantes e condições especiais. Nada é perdido definitivamente, mas pode ser necessário repetir campanha.",
+        "question": "Resident Evil 3 Remake tem troféus perdíveis?"
+      },
+      {
+        "answer": "Não. A platina base de Resident Evil 3 Remake é single-player e não exige online, coop, servidores, multiplayer ou PS+.",
+        "question": "Resident Evil 3 Remake precisa de online ou coop para platinar?"
+      },
+      {
+        "answer": "Não. Resistance tem lista separada e fica fora da rota da platina base de Resident Evil 3 Remake.",
+        "question": "Resident Evil Resistance entra na platina?"
+      },
+      {
+        "answer": "Planeje múltiplas runs. A rota mais segura separa aprendizado, coletáveis/records, dificuldades altas, rank e objetivos com restrição.",
+        "question": "Quantas runs são necessárias?"
+      },
+      {
+        "answer": "Sim. Hardcore, Nightmare e Inferno entram na rota da platina. Deixe essas runs para depois de conhecer rotas, inimigos, chefes e recursos.",
+        "question": "Precisa terminar em dificuldades altas?"
+      },
+      {
+        "answer": "Sim. Runs de rank e Sprinter exigem tempo baixo, rota limpa e pouca exploração, então não combine com coleta completa.",
+        "question": "Existem troféus de rank ou speedrun?"
+      },
+      {
+        "answer": "Sim. Os troféus ligados a usar pouca cura e não abrir o baú exigem condições específicas. Faça esses objetivos em runs dedicadas ou combine apenas quando já tiver uma rota segura.",
+        "question": "Existem troféus de pouca cura ou sem baú?"
+      },
+      {
+        "answer": "Dificuldades altas, Inferno, rank, gerenciamento de recursos, Nemesis, coletáveis perdíveis por run e objetivos condicionais são os principais filtros.",
+        "question": "O que mais dá trabalho na platina?"
+      }
+    ],
     "note": "Campos exportados para auditoria. O SQLite atual nao possui colunas nativas para todos esses extras; a importacao preserva o que o banco suporta.",
     "quickDecision": null,
+    "quick_plan": [
+      {
+        "detail": "Aprender mapas, puzzles, inventário, perseguições, Nemesis, chefes e recursos sem forçar rank ou restrições.",
+        "number": 1,
+        "title": "Faça uma primeira campanha segura"
+      },
+      {
+        "detail": "Resolver pendências de exploração antes das runs difíceis.",
+        "number": 2,
+        "title": "Limpe coletáveis, arquivos, Charlie Dolls e upgrades"
+      },
+      {
+        "detail": "Acumular recursos, records e desbloqueios que facilitem dificuldades altas.",
+        "number": 3,
+        "title": "Complete records e desbloqueios úteis"
+      },
+      {
+        "detail": "Vencer Hardcore, Nightmare, Inferno e dificuldades equivalentes exigidas pela lista.",
+        "number": 4,
+        "title": "Trabalhe dificuldades altas"
+      },
+      {
+        "detail": "Cumprir rank alto, speedrun, pouca cura, sem baú e outras condições exigidas.",
+        "number": 5,
+        "title": "Faça runs de rank, tempo e restrições"
+      },
+      {
+        "detail": "Conferir todos os troféus restantes sem misturar Resistance, DLCs ou extras.",
+        "number": 6,
+        "title": "Finalize a checklist da platina base"
+      }
+    ],
     "seo": {},
     "tags": []
   },

@@ -39,7 +39,7 @@
     "time_min_hours": 20,
     "time_reason": "A faixa de 20-30 horas considera múltiplas campanhas, finais, coletáveis, Madhouse, speedrun e cleanup de troféus situacionais.",
     "time_sort_hours": 20,
-    "updated_at": "2026-06-28 21:19:07",
+    "updated_at": "2026-06-29 22:19:45",
     "verification_note": "Guia normalizado a partir do dado seed com checklist e roadmap; aguardando revisão editorial manual final.",
     "verification_status": "verified",
     "walkthrough": null
@@ -160,6 +160,11 @@
       "Resolver troféus situacionais de combate, furtividade, VHS, criação de itens, bloqueio e chefes.",
       "Conferir flags finais: online obrigatório, coop obrigatório e DLC exigida devem continuar falsos."
     ],
+    "editorial_summary": [
+      "Resident Evil 7: Biohazard é uma platina de survival horror focada em múltiplas jogadas curtas, domínio da rota da casa Baker, colecionáveis e desafios de campanha. A platina base não exige online, coop nem DLC, mas cobra planejamento para os dois finais, todos os arquivos, Antique Coins, Mr. Everywhere, speedrun/rota rápida em menos de 4 horas, baú de itens limitado, poucas curas e Madhouse.",
+      "A rota mais segura é fazer uma primeira campanha com exploração e colecionáveis, usar salvamentos manuais para finais e troféus situacionais, depois separar uma jogada rápida para Just Get Me Outta Here, Resource Manager e Walk it Off quando fizer sentido.",
+      "Por fim, encare Madhouse já com conhecimento da rota, atenção às 33 Antique Coins dessa dificuldade e uso inteligente dos desbloqueios. Madhouse muda recursos e posicionamento de itens, então não trate essa etapa como simples repetição da campanha normal."
+    ],
     "faq": [
       {
         "answer": "Não. A platina base é single-player e pode ser feita offline.",
@@ -209,6 +214,38 @@
       "summary": "Platina compacta, offline e baseada em execução.",
       "verdict": "Vale platinar Resident Evil 7: Biohazard se você gosta de survival horror em primeira pessoa, campanha compacta e desafios de rota. A platina não exige online, coop nem DLC, mas cobra atenção a arquivos, Mr. Everywhere, Antique Coins, dois finais, Madhouse, speedrun/rota rápida, baú de itens limitado e uso mínimo de cura. É uma platina excelente e bem planejável, porém pouco indicada para quem não quer repetir a campanha ou jogar com restrições."
     },
+    "quick_plan": [
+      {
+        "detail": "Completar a campanha entendendo a rota, coletando itens importantes e preparando saves para finais e troféus situacionais.",
+        "number": 1,
+        "title": "Primeira campanha com exploração e colecionáveis"
+      },
+      {
+        "detail": "Garantir os dois finais e limpar troféus de história ou ações específicas que ficaram pendentes.",
+        "number": 2,
+        "title": "Finais e cleanup de história"
+      },
+      {
+        "detail": "Completar os troféus de tempo, item box limitado e poucas curas com uma rota enxuta.",
+        "number": 3,
+        "title": "Run rápida e restrições de campanha"
+      },
+      {
+        "detail": "Completar Madhouse e coletar as Antique Coins específicas dessa dificuldade.",
+        "number": 4,
+        "title": "Madhouse com rota dedicada"
+      },
+      {
+        "detail": "Conferir todos os colecionáveis e troféus específicos antes da platina.",
+        "number": 5,
+        "title": "Colecionáveis finais e troféus específicos"
+      },
+      {
+        "detail": "Resident Evil 7: Biohazard é uma platina compacta, mas não improvisada. Separe a lista base dos DLCs, acompanhe colecionáveis desde a primeira campanha e planeje saves a…",
+        "number": 6,
+        "title": "Leia os alertas iniciais"
+      }
+    ],
     "seo": {
       "description": "Guia de platina de Resident Evil 7: Biohazard com roadmap em português, finais, colecionáveis, Madhouse, Antique Coins, Mr. Everywhere, speedrun/rota rápida, Resource Manager, Walk it Off e dicas para conquistar todos os troféus no PS4 e PS5.",
       "keywords": "Resident Evil 7, Resident Evil 7 Biohazard, RE7, guia de platina Resident Evil 7, troféus Resident Evil 7, roadmap Resident Evil 7, Madhouse, Mad Pelicans, Mr Everywhere, Antique Coins, Resource Manager, Walk it Off",

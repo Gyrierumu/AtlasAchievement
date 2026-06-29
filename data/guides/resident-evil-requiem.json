@@ -39,7 +39,7 @@
     "time_min_hours": 20,
     "time_reason": "Faixa conservadora de 20-25h: PowerPyx estima cerca de 20h e Dayngls' Guides estima 20-25h, cobrindo primeira campanha com coletáveis, cleanup por saves manuais, speedrun/condições especiais e Insanity.",
     "time_sort_hours": 20,
-    "updated_at": "2026-06-28 21:19:07",
+    "updated_at": "2026-06-29 22:19:45",
     "verification_note": "Lista base PS5 organizada; sem PS4 no escopo validado; revisar pelo painel admin antes de aplicar selo verificado.",
     "verification_status": "verified",
     "walkthrough": null
@@ -76,9 +76,67 @@
     "aliases": [],
     "attentionPoints": [],
     "checklist": [],
-    "faq": [],
+    "editorial_summary": [],
+    "faq": [
+      {
+        "answer": "Sim. O guia destaca 4 perdíveis reais ou fortemente prováveis e separa esses riscos de spoilers, coletáveis, dificuldade e objetivos situacionais.",
+        "question": "Resident Evil Requiem tem troféus perdíveis?"
+      },
+      {
+        "answer": "Não. A platina da lista base não exige troféus online obrigatórios.",
+        "question": "Resident Evil Requiem precisa de online para platinar?"
+      },
+      {
+        "answer": "O tempo estimado para platinar Resident Evil Requiem é 20-25h. Use o roadmap para distribuir campanha, cleanup e checklist.",
+        "question": "Quanto tempo leva para platinar Resident Evil Requiem?"
+      },
+      {
+        "answer": "A dificuldade cadastrada para a platina é 4/10. Leia os alertas para entender onde o desafio pode aumentar.",
+        "question": "Qual a dificuldade da platina de Resident Evil Requiem?"
+      },
+      {
+        "answer": "Não. A rota da platina base é solo e não aponta coop obrigatório.",
+        "question": "Resident Evil Requiem tem coop obrigatório?"
+      },
+      {
+        "answer": "Não. DLCs, Deluxe Kit e modos futuros ficam fora da platina base.",
+        "question": "A DLC é necessária para a platina de Resident Evil Requiem?"
+      }
+    ],
     "note": "Campos exportados para auditoria. O SQLite atual nao possui colunas nativas para todos esses extras; a importacao preserva o que o banco suporta.",
     "quickDecision": null,
+    "quick_plan": [
+      {
+        "detail": "Conhecer a estrutura, planejar rotas, observar spoilers e evitar perda de troféus situacionais.",
+        "number": 1,
+        "title": "Faça a primeira campanha com saves manuais"
+      },
+      {
+        "detail": "Controlar arquivos, Mr. Raccoons, cofres, containers da BSAA, créditos, microsamples, crafting e itens de bônus.",
+        "number": 2,
+        "title": "Organize coletáveis e objetivos acumuláveis"
+      },
+      {
+        "detail": "Fechar ações específicas de combate, puzzle, recursos e inimigos sem transformar tudo em perdível.",
+        "number": 3,
+        "title": "Resolva troféus situacionais por saves"
+      },
+      {
+        "detail": "Planejar Speed Demon, Never Touch the Stuff, Minimalist e dificuldades sem misturar objetivos incompatíveis.",
+        "number": 4,
+        "title": "Separe runs condicionais"
+      },
+      {
+        "detail": "Concluir dificuldades, CP, modelos, concept arts e recursos do menu de bônus sem misturar DLC.",
+        "number": 5,
+        "title": "Feche dificuldade, bônus e extras da lista base"
+      },
+      {
+        "detail": "Revisar pendências finais antes de considerar a platina encaminhada.",
+        "number": 6,
+        "title": "Cleanup final da lista base"
+      }
+    ],
     "seo": {},
     "tags": []
   },

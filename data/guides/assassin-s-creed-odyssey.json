@@ -39,7 +39,7 @@
     "time_min_hours": 60,
     "time_reason": "A faixa de 60-70 horas considera campanha, Culto do Kosmos, questlines, bosses míticos, underwater locations, Arena, contratos, mercenary tiers, upgrades da Adrestia e cleanup.",
     "time_sort_hours": 60,
-    "updated_at": "2026-06-28 21:19:06",
+    "updated_at": "2026-06-29 22:19:44",
     "verification_note": "Guia público seed-managed com checklist base e roadmap; aguardando revisão editorial manual final.",
     "verification_status": "review",
     "walkthrough": null
@@ -174,6 +174,11 @@
       "Conferir se página individual e catálogo exibem o mesmo status editorial.",
       "Conferir se flags do topo batem com filtros do catálogo."
     ],
+    "editorial_summary": [
+      "Assassin’s Creed Odyssey é uma platina longa, mas bastante acessível, focada em completar a campanha, avançar nas principais questlines secundárias, derrotar cultistas, explorar a Grécia, vencer chefes míticos e resolver atividades de progressão como Arena, mercenários, contratos e upgrades da Adrasteia.",
+      "A rota mais segura é jogar a história normalmente enquanto aceita contratos dos quadros de mensagens, faz atividades secundárias para XP e já progride em cultistas, locais submersos e exploração.",
+      "O principal cuidado é Aphrodite’s Embrace, único troféu tecnicamente perdível da lista base: sempre escolha ao menos uma opção de romance marcada com coração quando aparecer. Fora isso, a platina pode ser limpa no pós-jogo, não exige online, não exige cooperação, não depende de dificuldade e não precisa de DLC."
+    ],
     "faq": [
       {
         "answer": "Sim. Aphrodite’s Embrace é o único troféu tecnicamente perdível da lista base, pois exige aceitar ao menos uma oportunidade de romance. Escolha uma opção de diálogo com coração quando aparecer para resolver esse risco.",
@@ -215,6 +220,38 @@
       "risk": "Baixo, desde que Aphrodite’s Embrace seja resolvido cedo. A platina não exige online, cooperação nem DLC.",
       "summary": "Sim, vale platinar se você gosta de RPG de mundo aberto e não se importa com uma platina longa."
     },
+    "quick_plan": [
+      {
+        "detail": "Concluir a história principal enquanto já acumula XP, contratos, recursos e progresso natural para a platina.",
+        "number": 1,
+        "title": "Avance pela Odisseia sem se preocupar com dificuldade"
+      },
+      {
+        "detail": "Completar as linhas de missão específicas que liberam troféus importantes da platina.",
+        "number": 2,
+        "title": "Resolva as questlines ligadas a troféus"
+      },
+      {
+        "detail": "Revelar as sub-regiões necessárias e concluir os objetivos dos locais submersos exigidos por troféus.",
+        "number": 3,
+        "title": "Explore a Grécia com foco em mapa e locais submersos"
+      },
+      {
+        "detail": "Completar os requisitos de combate, chefes, cultistas, Arena e mercenários.",
+        "number": 4,
+        "title": "Elimine cultistas, chefes míticos e desafios de combate"
+      },
+      {
+        "detail": "Melhorar a Adrasteia, recrutar tenentes lendários e resolver troféus navais.",
+        "number": 5,
+        "title": "Finalize a Adrasteia e os troféus de navegação"
+      },
+      {
+        "detail": "Resolver os troféus diversos, contratos pendentes, atividades específicas e qualquer requisito que tenha ficado para trás.",
+        "number": 6,
+        "title": "Faça o cleanup da platina base"
+      }
+    ],
     "seo": {
       "description": "Guia de troféus de Assassin’s Creed Odyssey com roadmap da platina, tempo estimado, dificuldade, troféu perdível, exploração, cultistas, chefes míticos, Adrasteia e dicas para os 51 troféus da lista base.",
       "keywords": "Assassin’s Creed Odyssey troféus, Assassin’s Creed Odyssey platina, guia Assassin’s Creed Odyssey, AC Odyssey troféus, AC Odyssey platina, Epic Cycle, Aphrodite’s Embrace, Nos Braços de Afrodite, Hermes’s Homie, Child of Poseidon, The Cult Unmasked",

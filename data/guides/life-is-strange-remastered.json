@@ -39,7 +39,7 @@
     "time_min_hours": 8,
     "time_reason": "A estimativa de 8-12h considera a campanha dos 5 episódios, leitura em ritmo normal e cleanup rápido das fotos opcionais por Collectible Mode/Chapter Select.",
     "time_sort_hours": 8,
-    "updated_at": "2026-06-28 21:19:07",
+    "updated_at": "2026-06-29 22:19:45",
     "verification_note": "Guia revisado para a lista PS4 individual de Life Is Strange Remastered: 61 troféus, 5 episódios, 50 fotos opcionais, flags offline/sem coop/sem DLC, sem perdíveis permanentes e roadmap estruturado. Mantido em revisão porque a suíte global npm test falhou em dado fora deste guia.",
     "verification_status": "verified",
     "walkthrough": null
@@ -218,6 +218,10 @@
       "Conferir os 61 troféus da lista individual.",
       "Confirmar a platina What if? após todos os outros troféus."
     ],
+    "editorial_summary": [
+      "Life Is Strange Remastered é uma platina curta, narrativa e totalmente single-player, focada em concluir os 5 episódios e registrar todas as fotos opcionais. Não há troféus online, coop ou DLC obrigatórios, e os troféus de história vêm naturalmente durante a campanha. O único cuidado real é acompanhar as oportunidades de foto de cada episódio para reduzir replay.",
+      "A rota mais segura é jogar a história normalmente, tirar as 10 fotos opcionais de cada episódio quando possível e usar o Collectible Mode/Chapter Select para qualquer foto que tenha ficado para trás. Como as fotos podem ser recuperadas depois, a lista não deve ser tratada como perdível permanente; o cleanup final fica concentrado nos coletáveis fotográficos."
+    ],
     "faq": [
       {
         "answer": "Não há perdíveis permanentes para a platina. As fotos opcionais podem ser esquecidas durante uma cena, mas podem ser recuperadas depois por Collectible Mode/Chapter Select.",
@@ -268,6 +272,38 @@
       "risk": "O único cuidado é checklist de fotos; não há perdível permanente porque o cleanup pode ser feito por Collectible Mode/Chapter Select.",
       "summary": "Vale platinar Life Is Strange Remastered se você quer uma platina curta, narrativa, offline e de baixa dificuldade. O único trabalho real é acompanhar as 50 fotos opcionais, mas qualquer foto esquecida pode ser recuperada depois por Collectible Mode/Chapter Select. Evite apenas se você não quer seguir checklist de coletáveis ou se prefere platinas com desafio mecânico."
     },
+    "quick_plan": [
+      {
+        "detail": "Concluir os 5 episódios acompanhando a narrativa e liberando os troféus de progressão.",
+        "number": 1,
+        "title": "Complete a história sem pressa"
+      },
+      {
+        "detail": "Registrar as 10 fotos opcionais de cada episódio.",
+        "number": 2,
+        "title": "Fotografe os coletáveis de cada episódio"
+      },
+      {
+        "detail": "Recuperar fotos opcionais esquecidas sem reiniciar a história inteira.",
+        "number": 3,
+        "title": "Use Collectible Mode para corrigir o que faltou"
+      },
+      {
+        "detail": "Confirmar os 61 troféus da lista base de Life Is Strange Remastered.",
+        "number": 4,
+        "title": "Faça a conferência final da platina"
+      },
+      {
+        "detail": "Este guia cobre apenas Life Is Strange Remastered, não Before the Storm Remastered, a coleção completa com duas platinas, True Colors, Double Exposure ou outros jogos da…",
+        "number": 5,
+        "title": "Leia os alertas iniciais"
+      },
+      {
+        "detail": "Use as etapas para evitar retrabalho antes de abrir a checklist completa.",
+        "number": 6,
+        "title": "Siga o roadmap em ordem"
+      }
+    ],
     "seo": {
       "description": "Guia de platina de Life Is Strange Remastered com roadmap, lista de troféus, fotos opcionais por episódio, uso do Collectible Mode, flags de online/DLC/perdíveis e checklist para os 61 troféus.",
       "keywords": "Life Is Strange Remastered guia de platina, troféus Life Is Strange Remastered, roadmap Life Is Strange Remastered, Life Is Strange Remastered fotos opcionais, Life Is Strange Remastered Collectible Mode, Life Is Strange Remastered Chapter Select, Life Is Strange Remastered 61 troféus, Life Is Strange Remastered sem online, Life Is Strange Remastered sem perdíveis permanentes, Life Is Strange Remastered platina fácil",

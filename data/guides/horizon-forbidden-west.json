@@ -39,7 +39,7 @@
     "time_min_hours": 35,
     "time_reason": "A estimativa de 35-50 horas considera campanha, free roam, scans, Tallnecks, Cauldrons, Hunting Grounds, Melee Pits, Rebel Camps, Arena, side quests, collectibles e upgrades.",
     "time_sort_hours": 35,
-    "updated_at": "2026-06-28 21:19:07",
+    "updated_at": "2026-06-29 22:19:45",
     "verification_note": "Guia revisado para a lista base PS4/PS5 com 59 troféus; Burning Shores, New Game+, Ultra Hard e Complete Edition/PC ficam fora da platina base.",
     "verification_status": "verified",
     "walkthrough": null
@@ -237,6 +237,11 @@
       "Resolver upgrades, pouches, coils, dye flowers, glide, mounts, overrides e combat trophies.",
       "Fazer cleanup pós-história em free roam e conferir flags online/coop/DLC/perdíveis."
     ],
+    "editorial_summary": [
+      "Horizon Forbidden West é uma platina acessível de mundo aberto, focada em completar a campanha, limpar atividades principais do mapa, escanear machines, concluir Cauldrons, Tallnecks, Hunting Grounds, Melee Pits, Rebel Camps, Arena e algumas side quests específicas. A platina base é single-player, offline, sem coop, sem DLC obrigatória, sem New Game+ e sem Ultra Hard.",
+      "A rota mais segura e avançar pela campanha com exploração moderada, priorizar skills da árvore Warrior para os Melee Pits, escanear todas as machines e ter atenção máxima a Specter e Specter Prime na missão final Singularity. Depois da história, o free roam permite cleanup de collectibles, side quests, Gauntlet Runs, Salvage Contracts, Rebel Outposts, Arena, Hunting Grounds e troféus acumulativos.",
+      "O principal cuidado é não confundir a platina base com Burning Shores ou New Game+. Horizon Forbidden West não exige 100% absoluto do mapa para a platina; o guia foca apenas nos 59 troféus da lista base."
+    ],
     "faq": [
       {
         "answer": "Não. A platina base é single-player e pode ser feita offline.",
@@ -285,6 +290,38 @@
       "mainRisk": "O principal cuidado é escanear Specter e Specter Prime na missão final Singularity e organizar Cauldrons, Hunting Grounds, Melee Pits, Rebel Camps, Arena, side quests específicas e cleanup sem transformar o guia em 100% com DLC.",
       "summary": "Vale platinar Horizon Forbidden West se você gosta de mundo aberto, combate contra machines, exploração e checklist moderado. A platina base é acessível, offline, sem coop, sem DLC obrigatória, sem New Game+ e sem Ultra Hard. O principal cuidado é escanear Specter e Specter Prime em Singularity e organizar Melee Pits, Hunting Grounds, Rebel Camps, Cauldrons, Arena, collectibles e side quests sem transformar o guia em 100% com DLC."
     },
+    "quick_plan": [
+      {
+        "detail": "Avançar pela história enquanto escaneia machines, libera sistemas principais e prepara os troféus acumulativos.",
+        "number": 1,
+        "title": "Campanha com scan de machines desde o início"
+      },
+      {
+        "detail": "Evitar a principal pendência sensível da platina base: o scan de machines ligadas a reta final.",
+        "number": 2,
+        "title": "Singularity e All Machine Types Scanned"
+      },
+      {
+        "detail": "Limpar as atividades estruturais exigidas pela lista base.",
+        "number": 3,
+        "title": "Atividades principais do mapa"
+      },
+      {
+        "detail": "Completar atividades e side quests ligadas diretamente aos troféus da platina base.",
+        "number": 4,
+        "title": "Arena, Gauntlet Runs e side quests específicas"
+      },
+      {
+        "detail": "Coletar apenas o necessário para os troféus da lista base, sem confundir com 100% completo.",
+        "number": 5,
+        "title": "Collectibles e exploração controlada"
+      },
+      {
+        "detail": "Fechar troféus acumulativos, combate, machines e pendências depois da história.",
+        "number": 6,
+        "title": "Cleanup final em free roam"
+      }
+    ],
     "seo": {
       "description": "Guia de platina de Horizon Forbidden West com roadmap em português, troféus da lista base, machines, Specter, Cauldrons, Tallnecks, Hunting Grounds, Melee Pits, Rebel Camps, Arena, collectibles, side quests e cleanup para conquistar a platina no PS4 e PS5.",
       "keywords": [

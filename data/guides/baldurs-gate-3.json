@@ -39,7 +39,7 @@
     "time_min_hours": 120,
     "time_reason": "A faixa de 120-150 horas considera campanha longa, multiplas rotas, trofeus de escolhas, finais, companions e cleanup.",
     "time_sort_hours": 120,
-    "updated_at": "2026-06-28 21:19:06",
+    "updated_at": "2026-06-29 22:19:44",
     "verification_note": "Lista principal da platina de Baldur's Gate 3 adicionada com checklist e roadmap completos; Honour Mode/Foehammer ficou fora por ser grupo extra.",
     "verification_status": "review",
     "walkthrough": null
@@ -214,6 +214,10 @@
       "Revisar FAQ, decisão rápida, SEO e pontos de atenção antes de publicar.",
       "Comparar status editorial da página individual com o catálogo."
     ],
+    "editorial_summary": [
+      "Baldur’s Gate 3 é uma das platinas mais longas e delicadas do catálogo, porque quase tudo depende de escolhas, companheiros, romances, rotas de história e decisões que podem bloquear troféus dezenas de horas antes do final. A platina principal exige planejamento desde o Ato I, saves manuais frequentes, atenção aos tieflings, Sazza, Karlach, Impulso Sombrio/Dark Urge, Bhaal, chefes específicos, leitura, multiclasse, finais e dificuldade Estrategista/Tactician.",
+      "A rota mais segura é separar objetivos incompatíveis por jogada: uma campanha principal focada em salvar NPCs e resolver companheiros, uma rota Impulso Sombrio/Dark Urge com Bhaal para troféus específicos e uma campanha em Estrategista/Tactician. O jogo não exige online, cooperação ou DLC para a platina principal, e Ponta de lança/Foehammer fica separado como extra de Modo Honra/Honour Mode para 100%."
+    ],
     "faq": [
       {
         "answer": "Sim. A platina tem muitos perdíveis ligados a escolhas, companheiros, romances, tieflings, Sazza, Impulso Sombrio/Dark Urge, Bhaal e chefes com condições específicas.",
@@ -274,6 +278,38 @@
       "time": "Muito longo, cerca de 120 a 150 horas ou mais.",
       "worthIt": "Sim, mas é uma platina longa e de alto risco, indicada para quem aceita jogar com checklist e saves manuais desde o começo."
     },
+    "quick_plan": [
+      {
+        "detail": "Evitar escolhas incompatíveis e decidir quais troféus serão feitos em cada jogada.",
+        "number": 1,
+        "title": "Defina a rota antes de criar o personagem"
+      },
+      {
+        "detail": "Controlar Ninguém Fica Para Trás, Sazza, Scratch, filhote de urso-coruja, Zhalk, Forja de Adamantina e companheiros.",
+        "number": 2,
+        "title": "Proteja os tieflings e resolva riscos do Ato I"
+      },
+      {
+        "detail": "Salvar prisioneiros, proteger Isobel, manter tieflings vivos e preparar Karlach e companheiros.",
+        "number": 3,
+        "title": "Chegue ao Ato II mantendo todos vivos"
+      },
+      {
+        "detail": "Resolver Karlach, Wyll, Gale, Shadowheart, Lae'zel, Astarion, Imperador, Bhaal e decisões finais.",
+        "number": 4,
+        "title": "Organize romances, companheiros e escolhas do Ato III"
+      },
+      {
+        "detail": "Fazer os troféus de combate que exigem condições precisas antes de perder a oportunidade.",
+        "number": 5,
+        "title": "Resolva chefes com condições especiais"
+      },
+      {
+        "detail": "Desbloquear finais bons, ruins, devorador de mentes/Mind Flayer e Bhaal sem repetir campanhas inteiras desnecessariamente.",
+        "number": 6,
+        "title": "Complete finais incompatíveis com saves separados"
+      }
+    ],
     "seo": {
       "description": "Guia de troféus de Baldur’s Gate 3 com roadmap da platina, tempo estimado, dificuldade, troféus perdíveis, Estrategista/Tactician, Modo Honra, tieflings, Sazza, Karlach, Impulso Sombrio, finais e dicas para evitar retrabalho.",
       "keywords": "Baldur’s Gate 3 troféus, Baldur’s Gate 3 platina, guia Baldur’s Gate 3, BG3 troféus, BG3 platina, Pride of Baldur's Gate, Orgulho de Baldur's Gate, Leave No One Behind, Ninguém Fica Para Trás, Critical Hit, Acerto Crítico, Foehammer, Ponta de lança, Modo Honra BG3, Tactician BG3, Sazza BG3, Karlach Hot Date, Dark Urge BG3",

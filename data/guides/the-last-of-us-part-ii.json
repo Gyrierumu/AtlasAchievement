@@ -39,7 +39,7 @@
     "time_min_hours": 25,
     "time_reason": "A faixa de 25-35 horas considera campanha, coletáveis, upgrades, Chapter Select, NG+ parcial e cleanup.",
     "time_sort_hours": 25,
-    "updated_at": "2026-06-28 21:19:07",
+    "updated_at": "2026-06-29 22:19:45",
     "verification_note": "Guia revisado editorialmente.",
     "verification_status": "verified",
     "walkthrough": null
@@ -76,9 +76,87 @@
     "aliases": [],
     "attentionPoints": [],
     "checklist": [],
-    "faq": [],
+    "editorial_summary": [],
+    "faq": [
+      {
+        "answer": "Não há perdíveis definitivos na platina base. Coletáveis, cartas, moedas, cofres, bancadas, manuais, upgrades e troféus situacionais podem passar batido, mas podem ser limpos com Chapter Select e NG+ parcial.",
+        "question": "The Last of Us Part II tem troféus perdíveis?"
+      },
+      {
+        "answer": "Não. A platina base de The Last of Us Part II não exige Grounded nem dificuldade alta; você pode jogar em qualquer dificuldade confortável.",
+        "question": "Precisa jogar no Grounded ou dificuldade alta para platinar?"
+      },
+      {
+        "answer": "Não. A lista base da platina é offline e não exige servidores, multiplayer, Factions ou PS+.",
+        "question": "The Last of Us Part II tem troféus online?"
+      },
+      {
+        "answer": "Não. O guia trata a platina base como uma rota solo, sem coop obrigatório e sem troféus de multiplayer.",
+        "question": "Precisa de coop ou multiplayer?"
+      },
+      {
+        "answer": "Não. Grounded e Permadeath são troféus extras/update e ficam separados da platina base do Part II original.",
+        "question": "Grounded e Permadeath contam para a platina?"
+      },
+      {
+        "answer": "A estimativa editorial ficou em 25-35h, considerando campanha completa, coletáveis, Chapter Select, NG+ parcial para upgrades e cleanup final.",
+        "question": "Quanto tempo leva para platinar?"
+      },
+      {
+        "answer": "A dificuldade ficou em 3/10. O desafio principal é organização de checklist, coletáveis e recursos para upgrades, não execução em dificuldade alta.",
+        "question": "Qual a dificuldade da platina?"
+      },
+      {
+        "answer": "Sim. Chapter Select ajuda a revisar artefatos, cartas, moedas, entradas de diário, cofres, bancadas, manuais e troféus situacionais.",
+        "question": "Dá para usar Chapter Select para limpar coletáveis?"
+      },
+      {
+        "answer": "Sim, normalmente como NG+ parcial. Uma campanha única costuma não dar suplementos e peças suficientes para todos os upgrades de personagem e armas.",
+        "question": "Precisa de New Game+?"
+      },
+      {
+        "answer": "O maior cuidado está em coletáveis, cartas, moedas, bancadas, cofres, manuais, suplementos, peças, upgrades de armas/personagens e cleanup.",
+        "question": "O que mais dá trabalho na platina?"
+      },
+      {
+        "answer": "Não como escopo completo. Este guia cobre The Last of Us Part II original e sua platina base; Remastered e o modo No Return devem ter tratamento separado.",
+        "question": "Este guia vale para The Last of Us Part II Remastered?"
+      }
+    ],
     "note": "Campos exportados para auditoria. O SQLite atual nao possui colunas nativas para todos esses extras; a importacao preserva o que o banco suporta.",
     "quickDecision": null,
+    "quick_plan": [
+      {
+        "detail": "Finalizar a história principal enquanto coleta o máximo possível de itens, artefatos, cartas, moedas, entradas de diário, manuais, cofres e bancadas.",
+        "number": 1,
+        "title": "Complete a campanha explorando com calma"
+      },
+      {
+        "detail": "Usar seleção de capítulos para buscar itens perdidos sem reiniciar a campanha inteira.",
+        "number": 2,
+        "title": "Organize coletáveis por capítulo"
+      },
+      {
+        "detail": "Finalizar melhorias de armas e habilidades que normalmente exigem recursos além de uma campanha única.",
+        "number": 3,
+        "title": "Complete upgrades de armas e personagens"
+      },
+      {
+        "detail": "Fechar troféus ligados a ações específicas, treinamento, minigames ou momentos únicos.",
+        "number": 4,
+        "title": "Resolva troféus situacionais"
+      },
+      {
+        "detail": "Garantir que Grounded, Permadeath, Remastered ou No Return não sejam misturados com a platina base do Part II original.",
+        "number": 5,
+        "title": "Separe extras da platina base"
+      },
+      {
+        "detail": "Conferir campanha, coletáveis, upgrades, cofres, bancadas, manuais e situacionais antes da platina.",
+        "number": 6,
+        "title": "Revisão final da platina"
+      }
+    ],
     "seo": {},
     "tags": []
   },

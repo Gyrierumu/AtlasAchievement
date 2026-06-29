@@ -39,7 +39,7 @@
     "time_min_hours": 40,
     "time_reason": "40-70 horas dependendo de habilidade, build, online, controle de tendência, uso de backup e quantidade de runs para Boss Souls.",
     "time_sort_hours": 55,
-    "updated_at": "2026-06-28 21:19:11",
+    "updated_at": "2026-06-29 22:19:50",
     "verification_note": "Guia revisado para publicação: Demon's Souls Remake PS5 com 37 troféus, distribuição 1/5/9/22, online obrigatório, sem DLC, sem troféu de dificuldade e 16 perdíveis de run.",
     "verification_status": "verified",
     "walkthrough": ""
@@ -210,6 +210,10 @@
       "Conferir FAQ, decisão rápida, SEO e pontos de atenção.",
       "Conferir se página individual e catálogo exibem o mesmo status editorial."
     ],
+    "editorial_summary": [
+      "Demon's Souls Remake é uma platina Souls curta em número de troféus, mas muito delicada por World Tendency, Character Tendency, anéis, feitiços, milagres, Boss Souls e dois troféus online.",
+      "A rota segura é jogar em Soul Form, morrer no Nexus depois de chefes, fazer Pure White antes de Pure Black, guardar Boss Souls e planejar NG+/NG++ conforme o uso de backup."
+    ],
     "faq": [
       {
         "answer": "Sim. Muitos são perdíveis de run por World Tendency, Character Tendency, NPCs, Boss Souls, anéis e chefes derrotados de forma errada.",
@@ -271,6 +275,38 @@
       "time": "Médio a longo, cerca de 40 a 70 horas.",
       "verdict": "Sim, mas é uma platina de planejamento. Boa para quem aceita seguir checklist de tendência, anéis e Boss Souls."
     },
+    "quick_plan": [
+      {
+        "detail": "Evitar bagunçar World Tendency e preparar eventos de Pure White antes de Pure Black.",
+        "number": 1,
+        "title": "Comece a primeira run controlando World Tendency"
+      },
+      {
+        "detail": "Coletar eventos, NPCs e itens que dependem de tendência branca antes de mudar os mundos para preto.",
+        "number": 2,
+        "title": "Faça eventos de Pure White antes de Pure Black"
+      },
+      {
+        "detail": "Fazer eventos de Pure Black World Tendency e controlar Character Tendency para Friend's Ring, Foe's Ring e outros requisitos.",
+        "number": 3,
+        "title": "Empurre mundos para Pure Black e ajuste Character Tendency"
+      },
+      {
+        "detail": "Concluir Return to Form e Unwelcome Guest sem deixar o guia parecer offline.",
+        "number": 4,
+        "title": "Resolva os troféus online cedo"
+      },
+      {
+        "detail": "Planejar todas as compras de feitiços e milagres que usam Boss Souls repetidas.",
+        "number": 5,
+        "title": "Compre feitiços e milagres sem gastar Boss Souls errado"
+      },
+      {
+        "detail": "Resolver troféus que exigem derrotar chefes de uma forma específica.",
+        "number": 6,
+        "title": "Faça os chefes com condições específicas"
+      }
+    ],
     "seo": {
       "description": "Guia de troféus de Demon’s Souls Remake no PS5 com roadmap da platina, World Tendency, Character Tendency, anéis, feitiços, milagres, Boss Souls, troféus online e dicas para os 37 troféus.",
       "keywords": [

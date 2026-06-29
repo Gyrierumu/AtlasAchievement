@@ -39,7 +39,7 @@
     "time_min_hours": 60,
     "time_reason": "A faixa de 60-100 horas considera exploração, coletáveis, 112%, chefes opcionais, Trials, Godhome e grande variação por habilidade.",
     "time_sort_hours": 60,
-    "updated_at": "2026-06-28 21:19:07",
+    "updated_at": "2026-06-29 22:19:45",
     "verification_note": "Guia revisado editorialmente.",
     "verification_status": "verified",
     "walkthrough": null
@@ -76,9 +76,80 @@
     "aliases": [],
     "attentionPoints": [],
     "checklist": [],
-    "faq": [],
+    "editorial_summary": [
+      "Explore Hallownest com calma antes de mirar Void Heart, 112% e Godhome. A primeira run deve servir para aprender mapas, chefes, amuletos, habilidades, melhorias do Ferrão e rotas sem transformar cada sala em tentativa perfeita.",
+      "A platina de Hollow Knight usa a lista PlayStation de Voidheart Edition, com 35 troféus, totalmente single-player, sem online obrigatório e sem coop obrigatório. O conteúdo integrado, incluindo Grimm Troupe e Godmaster, faz parte da rota quando aparece na checklist.",
+      "Tem perdível por rota/save: o final básico The Hollow Knight deve ser concluído antes de obter Void Heart no mesmo save. Steel Soul, Speedrun, Steel Heart e conquistas extras de PC/Xbox ficam fora da platina PlayStation usada por este guia.",
+      "Os maiores filtros são 112%, Godhome, Pantheon of Hallownest, Trial of the Fool, Nightmare’s End, chefes avançados, Essência, Diário do Caçador e coletáveis extensos. Use o roadmap para separar exploração, finais, limpeza final e prática, e use a checklist para controlar cada pendência."
+    ],
+    "faq": [
+      {
+        "answer": "Sim, há objetivos que podem exigir rota ou save específico, especialmente o final básico antes de Void Heart, escolhas de progresso e eventos avançados. Nada deve ser tratado como perda definitiva sem validação, mas alguns erros podem obrigar uma nova run.",
+        "question": "Hollow Knight tem troféus perdíveis?"
+      },
+      {
+        "answer": "Não. A platina da lista PlayStation é single-player e não exige online, coop, servidores, multiplayer ou PS+.",
+        "question": "Hollow Knight precisa de online ou coop para platinar?"
+      },
+      {
+        "answer": "Planeje mais de uma run. A rota mais segura separa aprendizado, cleanup, finais, Godhome e a conferência final da checklist.",
+        "question": "Quantas runs são necessárias?"
+      },
+      {
+        "answer": "Não na lista base desta entrada. Steel Soul fica fora do escopo da platina PlayStation usada pelo guia.",
+        "question": "Steel Soul entra na platina base?"
+      },
+      {
+        "answer": "Não na platina base desta entrada. Esses desafios ficam fora do escopo da lista PlayStation e não devem ser misturados com o cleanup da Voidheart Edition.",
+        "question": "Existem troféus de speedrun ou 100% em tempo?"
+      },
+      {
+        "answer": "Sim. Se estiverem na lista do jogo usada pelo guia, eles entram e são um dos maiores filtros de dificuldade, especialmente Pantheon of Hallownest.",
+        "question": "Godhome e os Panteões entram na platina?"
+      },
+      {
+        "answer": "Final básico antes de Void Heart, 112%, Godhome, Pantheon of Hallownest, Trial of the Fool, bosses difíceis e coletáveis extensos são os principais filtros.",
+        "question": "O que mais dá trabalho na platina?"
+      },
+      {
+        "answer": "Os conteúdos integrados da Voidheart Edition, como Grimm Troupe e Godmaster, já fazem parte da lista usada pelo guia. Extras de PC/Xbox ficam separados.",
+        "question": "DLCs ou extras fazem parte da lista?"
+      }
+    ],
     "note": "Campos exportados para auditoria. O SQLite atual nao possui colunas nativas para todos esses extras; a importacao preserva o que o banco suporta.",
     "quickDecision": null,
+    "quick_plan": [
+      {
+        "detail": "Conhecer movimentação, mapas, chefes, amuletos, habilidades e rotas antes de tentar objetivos avançados.",
+        "number": 1,
+        "title": "Explore Hallownest e aprenda a base do jogo"
+      },
+      {
+        "detail": "Liberar mobilidade, recursos e acesso às áreas necessárias para coletáveis, chefes e finais.",
+        "number": 2,
+        "title": "Abra rotas, habilidades e upgrades importantes"
+      },
+      {
+        "detail": "Resolver coletáveis e progresso antes dos desafios mais pesados.",
+        "number": 3,
+        "title": "Limpe coletáveis, amuletos, larvas e progresso de 112%"
+      },
+      {
+        "detail": "Concluir chefes, finais e desafios de combate da run principal.",
+        "number": 4,
+        "title": "Resolva chefes, finais e desafios avançados"
+      },
+      {
+        "detail": "Manter Steel Soul, Speedrun, Steel Heart e outras conquistas extras fora da rota principal da Voidheart Edition.",
+        "number": 5,
+        "title": "Separe extras e riscos fora da platina PlayStation"
+      },
+      {
+        "detail": "Resolver os maiores desafios restantes e conferir a lista completa.",
+        "number": 6,
+        "title": "Finalize Godhome e a checklist da platina"
+      }
+    ],
     "seo": {},
     "tags": []
   },

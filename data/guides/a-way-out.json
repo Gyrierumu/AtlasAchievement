@@ -39,7 +39,7 @@
     "time_min_hours": 5,
     "time_reason": "A faixa de 5-7 horas considera uma campanha completa em coop e uma limpeza curta por seleção de capítulos.",
     "time_sort_hours": 5,
-    "updated_at": "2026-06-28 21:19:06",
+    "updated_at": "2026-06-29 22:19:44",
     "verification_note": "Precisa revisão editorial final: coop obrigatório, convite/trial e desbloqueio de troféus para os dois jogadores devem ser validados manualmente.",
     "verification_status": "review",
     "walkthrough": null
@@ -142,6 +142,11 @@
       "Conferir FAQ, decisão rápida, SEO e pontos de atenção.",
       "Conferir status consistente entre página individual e catálogo."
     ],
+    "editorial_summary": [
+      "A Way Out é uma platina curta e acessível, focada em eventos opcionais espalhados pela campanha cooperativa de Leo e Vincent. A rota mais segura é jogar a história com uma segunda pessoa, aproveitar a experiência sem pressa e depois usar a seleção de capítulos para limpar qualquer troféu de evento que tenha ficado para trás.",
+      "Não há troféus perdíveis reais, DLC obrigatória ou coletáveis tradicionais. O cuidado principal é lembrar que o jogo exige cooperação do começo ao fim: a platina pode ser feita em coop local ou online, mas não existe modo solo.",
+      "Alguns troféus dependem de ações específicas de Leo, Vincent ou dos dois jogadores ao mesmo tempo. O cleanup deve priorizar capítulos com interações únicas, como fazenda, parque de trailers, hospital, hangar e pátio da prisão."
+    ],
     "faq": [
       {
         "answer": "Não. Apesar de vários troféus dependerem de eventos opcionais em capítulos específicos, a seleção de capítulos permite voltar e refazer esses momentos sem reiniciar a campanha.",
@@ -175,6 +180,38 @@
       "risk": "O jogo exige cooperação e alguns troféus dependem de ações específicas de Leo, Vincent ou dos dois jogadores ao mesmo tempo.",
       "summary": "Sim, vale platinar A Way Out, especialmente para quem tem uma segunda pessoa para jogar do início ao fim."
     },
+    "quick_plan": [
+      {
+        "detail": "Concluir a história com Leo e Vincent enquanto aproveita os eventos opcionais que encontrar naturalmente.",
+        "number": 1,
+        "title": "Jogue a campanha em cooperação"
+      },
+      {
+        "detail": "Voltar aos capítulos específicos para desbloquear qualquer troféu opcional que tenha sido ignorado.",
+        "number": 2,
+        "title": "Limpe os eventos pela seleção de capítulos"
+      },
+      {
+        "detail": "Garantir que todos os eventos específicos foram concluídos e que a platina apareceu corretamente.",
+        "number": 3,
+        "title": "Finalize a platina"
+      },
+      {
+        "detail": "A Way Out não possui modo solo. A platina exige uma segunda pessoa do começo ao fim, mas pode ser feita em coop local; por isso online não é obrigatório.",
+        "number": 4,
+        "title": "Leia os alertas iniciais"
+      },
+      {
+        "detail": "Use as etapas para evitar retrabalho antes de abrir a checklist completa.",
+        "number": 5,
+        "title": "Siga o roadmap em ordem"
+      },
+      {
+        "detail": "Use a seleção de capítulos para voltar diretamente aos eventos opcionais pendentes, como piano/banjo, baseball, fliperama, helicóptero, moto, balanço, cata-vento e paral…",
+        "number": 6,
+        "title": "Finalize pela checklist"
+      }
+    ],
     "seo": {
       "description": "Guia de troféus de A Way Out com roadmap da platina, tempo estimado, dificuldade, coop obrigatório, seleção de capítulos e dicas para todos os troféus.",
       "keywords": "A Way Out troféus, A Way Out platina, guia A Way Out, A Way Out coop, A Way Out troféus PS4, All The Ways Out, Home Run A Way Out",

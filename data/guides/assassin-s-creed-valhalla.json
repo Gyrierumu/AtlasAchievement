@@ -39,7 +39,7 @@
     "time_min_hours": 100,
     "time_reason": "A faixa de 100-150 horas considera campanha, arcos de território, Wealth, Mysteries, Artifacts, Ordem dos Anciões, fishing, settlement, raids e cleanup.",
     "time_sort_hours": 100,
-    "updated_at": "2026-06-28 21:19:06",
+    "updated_at": "2026-06-29 22:19:44",
     "verification_note": "Guia público seed-managed com checklist base e roadmap; aguardando revisão editorial manual final.",
     "verification_status": "review",
     "walkthrough": null
@@ -183,6 +183,10 @@
       "Conferir se página individual e catálogo exibem o mesmo status editorial.",
       "Conferir se flags do topo batem com filtros do catálogo."
     ],
+    "editorial_summary": [
+      "Assassin’s Creed Valhalla é uma platina muito longa, mas acessível, focada em concluir a campanha, formar alianças na Inglaterra, eliminar a Order of the Ancients, evoluir Ravensthorpe e completar todos os territórios da lista base com Wealth, Mysteries e Artifacts.",
+      "A rota mais segura é avançar pela história limpando cada região antes de seguir para a próxima, mantendo saves manuais no início de cada arco para evitar problemas com World Events ou Mysteries bugados. Não há troféus perdíveis reais, online obrigatório, cooperação ou DLC necessária para a platina base. O maior cuidado é Completionist All the Way!, que exige 100% dos territórios e transforma a platina em uma jornada de 120 horas ou mais."
+    ],
     "faq": [
       {
         "answer": "Não. A platina base não tem perdíveis reais. O cuidado principal é manter saves manuais por região por causa de possíveis bugs em Mysteries ou World Events.",
@@ -235,6 +239,38 @@
       "time": "Muito longo, cerca de 120h+.",
       "worthIt": "Sim, se você gosta de mundo aberto e aceita uma platina muito longa de exploração completa."
     },
+    "quick_plan": [
+      {
+        "detail": "Chegar à Inglaterra, liberar Ravensthorpe, raids, alianças, Order of the Ancients e as principais linhas da lista base.",
+        "number": 1,
+        "title": "Avance pela campanha e abra os sistemas principais"
+      },
+      {
+        "detail": "Criar uma rotina segura para limpar regiões sem carregar bugs ou marcadores incompletos por dezenas de horas.",
+        "number": 2,
+        "title": "Limpe territórios com saves manuais por região"
+      },
+      {
+        "detail": "Concluir o maior gargalo da platina: todos os territórios da lista base com Wealth, Mysteries e Artifacts.",
+        "number": 3,
+        "title": "Complete Wealth, Mysteries e Artifacts"
+      },
+      {
+        "detail": "Fechar atividades específicas que podem ficar espalhadas pelo mapa se não forem rastreadas.",
+        "number": 4,
+        "title": "Resolva atividades especiais e minigames"
+      },
+      {
+        "detail": "Resolver Order of the Ancients, Ravensthorpe, Thor, Mjolnir, Excalibur e objetivos de progressão longa.",
+        "number": 5,
+        "title": "Finalize settlement, lendários e requisitos de endgame"
+      },
+      {
+        "detail": "Confirmar todos os 51 troféus da lista base sem incluir DLCs, desafios extras ou conteúdo separado.",
+        "number": 6,
+        "title": "Faça o cleanup final da lista base"
+      }
+    ],
     "seo": {
       "description": "Guia de troféus de Assassin’s Creed Valhalla com roadmap da platina, tempo estimado, dificuldade, Completionist All the Way, Order of the Ancients, Orlog, pesca, Mjolnir, Excalibur e dicas para os 51 troféus da lista base.",
       "keywords": "Assassin’s Creed Valhalla troféus, Assassin’s Creed Valhalla platina, guia Assassin’s Creed Valhalla, AC Valhalla troféus, AC Valhalla platina, Viking Legend, Completionist All the Way, Order of the Ancients, Good Catch, Orlog Champion, Mjolnir, Excalibur, Worthy, Godly Reward",

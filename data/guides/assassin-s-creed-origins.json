@@ -39,7 +39,7 @@
     "time_min_hours": 50,
     "time_reason": "A faixa de 50-60 horas considera campanha, side quests, exploração, todos os locais necessários, tumbas, atividades opcionais e cleanup pós-história.",
     "time_sort_hours": 50,
-    "updated_at": "2026-06-28 21:19:06",
+    "updated_at": "2026-06-29 22:19:44",
     "verification_note": "Guia público seed-managed com checklist base e roadmap; aguardando revisão editorial manual final.",
     "verification_status": "review",
     "walkthrough": null
@@ -169,6 +169,11 @@
       "Conferir se página individual e catálogo exibem o mesmo status editorial.",
       "Conferir se flags do topo batem com filtros do catálogo."
     ],
+    "editorial_summary": [
+      "Assassin’s Creed Origins é uma platina longa, mas acessível, focada em concluir a campanha, explorar o Egito, completar todos os locais do mapa e resolver atividades específicas como arena, hipódromo, elefantes de guerra, tumbas, locais submersos, stone circles, hermit locations e troféus diversos de combate.",
+      "A rota mais segura é jogar a história normalmente enquanto sincroniza mirantes, limpa atividades próximas, compra habilidades ligadas a troféus e guarda trinkets desde o início para Reduce, Reuse, Recycle.",
+      "Não há troféus perdíveis reais, online obrigatório, cooperação ou DLC necessária para a platina base. O maior cuidado é evitar vender trinkets antes de juntar 100, porque isso pode transformar o cleanup em farm desnecessário."
+    ],
     "faq": [
       {
         "answer": "Não. A platina base não tem troféus perdíveis reais. O principal cuidado é guardar 100 trinkets para Reduce, Reuse, Recycle, mas isso é uma prevenção contra farm, não um perdível.",
@@ -218,6 +223,38 @@
       "risk": "Baixo. Não há perdíveis reais, online, coop ou DLC obrigatória; o maior cuidado é guardar 100 trinkets e limpar todos os locais do mapa.",
       "summary": "Sim, vale platinar se você gosta de mundo aberto e não se importa com uma platina longa de exploração."
     },
+    "quick_plan": [
+      {
+        "detail": "Concluir a história principal enquanto já compra habilidades úteis, libera regiões e reduz o trabalho do cleanup.",
+        "number": 1,
+        "title": "Avance pela campanha e prepare a base da platina"
+      },
+      {
+        "detail": "Finalizar os troféus ligados à progressão principal e às missões secundárias específicas.",
+        "number": 2,
+        "title": "Resolva os troféus de história e atividades principais"
+      },
+      {
+        "detail": "Completar todos os locais exigidos por Old Habits e resolver os troféus de exploração relacionados.",
+        "number": 3,
+        "title": "Limpe o mapa com foco em Old Habits"
+      },
+      {
+        "detail": "Resolver os troféus de combate estruturado, chefes especiais e atividades competitivas offline.",
+        "number": 4,
+        "title": "Complete arena, hipódromo e chefes fortes"
+      },
+      {
+        "detail": "Resolver troféus de ações pontuais, combate, stealth, montarias, foto, águia, craft e interações específicas.",
+        "number": 5,
+        "title": "Faça os troféus diversos e de habilidade"
+      },
+      {
+        "detail": "Concluir os requisitos restantes sem misturar DLCs com a platina base.",
+        "number": 6,
+        "title": "Finalize trinkets, equipamentos e conferência da lista base"
+      }
+    ],
     "seo": {
       "description": "Guia de troféus de Assassin’s Creed Origins com roadmap da platina, tempo estimado, dificuldade, flags, Old Habits, Reduce Reuse Recycle, exploração, arena, hipódromo e dicas para os 51 troféus da lista base.",
       "keywords": "Assassin’s Creed Origins troféus, Assassin’s Creed Origins platina, guia Assassin’s Creed Origins, AC Origins troféus, AC Origins platina, Earn Them All, Old Habits, Reduce Reuse Recycle, The Harder They Fall, Stargazer, Master Diver",

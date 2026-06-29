@@ -39,7 +39,7 @@
     "time_min_hours": 80,
     "time_reason": "A estimativa de 80-100 horas considera uma jornada completa, NG+, NG++, coleta de anéis, finais, gestos, magias, milagres, piromancias e farm de juramentos.",
     "time_sort_hours": 80,
-    "updated_at": "2026-06-28 21:19:07",
+    "updated_at": "2026-06-29 22:19:45",
     "verification_note": "Guia verificado para lista base PS4 com 43 trofeus, roadmap estruturado, flags offline/sem coop/sem DLC, EN/PT-BR e conteudo editorial forte.",
     "verification_status": "verified",
     "walkthrough": null
@@ -94,6 +94,10 @@
       "Conferir se cada troféu marcado como perdível depende de final, decisão irreversível, NPC, juramento ou questline.",
       "Conferir SEO, FAQ, decisão rápida, tags e pontos de atenção antes da revisão final."
     ],
+    "editorial_summary": [
+      "Dark Souls III é uma platina longa e exigente, focada em completar a campanha, planejar três finais, avançar até NG++ para os anéis e resolver uma grande quantidade de colecionáveis ligados a magias, milagres, piromancias, gestos, infusões e juramentos. O online é opcional e pode reduzir bastante o farm dos itens de juramento, mas a platina continua possível offline com mais grind.",
+      "A rota mais segura é fazer uma primeira jornada completa acompanhando NPCs, juramentos e gestos, preparar The Usurpation of Fire sem curar o Dark Sigil, coletar tudo que for possível antes do final e usar NG+/NG++ para finais restantes, anéis e limpeza. O principal cuidado é não quebrar questlines, não perder juramentos temporários e não consumir almas de chefes necessárias para magias, milagres ou piromancias."
+    ],
     "faq": [
       {
         "answer": "Não. A platina pode ser feita offline. O online é opcional e pode acelerar itens de juramento, mas não deve ser tratado como obrigatório.",
@@ -138,6 +142,38 @@
       "mainRisk": "O maior risco é quebrar questlines, perder Mound-makers ou Blade of the Darkmoon, gastar boss souls importantes e subestimar o farm de juramentos.",
       "verdict": "Vale platinar Dark Souls III se você gosta de soulslike exigente, rotas de NPC complexas e checklist de coleção. A platina não exige online nem DLC, mas cobra planejamento para finais, juramentos, gestos, anéis até NG++ e um farm pesado de recompensas."
     },
+    "quick_plan": [
+      {
+        "detail": "Completar a maior parte da campanha protegendo questlines, juramentos, gestos e itens importantes.",
+        "number": 1,
+        "title": "Primeira jornada com NPCs e juramentos sob controle"
+      },
+      {
+        "detail": "Executar a questline de Yoel, Yuria e Anri para garantir o final mais sensível da platina.",
+        "number": 2,
+        "title": "Rota de The Usurpation of Fire"
+      },
+      {
+        "detail": "Completar os troféus ligados a magias, milagres, piromancias, anéis, gestos, infusões, Estus, fogueira e reforço de arma.",
+        "number": 3,
+        "title": "Coletáveis de build e troféus de mestre"
+      },
+      {
+        "detail": "Obter as recompensas de juramento necessárias para magias, milagres, piromancias e anéis.",
+        "number": 4,
+        "title": "Farm de juramentos"
+      },
+      {
+        "detail": "Usar os ciclos seguintes para coletar anéis de NG+/NG++, finais restantes e pendências de NPC.",
+        "number": 5,
+        "title": "NG+ e NG++ para anéis e finais restantes"
+      },
+      {
+        "detail": "Fechar os 43 troféus da lista base sem misturar DLC, online opcional ou coop opcional com requisitos da platina.",
+        "number": 6,
+        "title": "Cleanup final e conferência da platina"
+      }
+    ],
     "seo": {
       "description": "Guia de platina de Dark Souls III com roadmap em português, finais, juramentos, anéis, gestos, magias, milagres, piromancias, NG++ e dicas para conquistar todos os troféus no PS4.",
       "keywords": [

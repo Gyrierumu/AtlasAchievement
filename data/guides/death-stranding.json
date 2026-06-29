@@ -39,7 +39,7 @@
     "time_min_hours": 70,
     "time_reason": "A estimativa de 70-130 horas varia conforme eficiência de ziplines, rotas, 5 estrelas, entregas premium, Memory Chips e cleanup online/social. Tempo ocioso de bots/espera não entra como base.",
     "time_sort_hours": 70,
-    "updated_at": "2026-06-28 21:19:07",
+    "updated_at": "2026-06-29 22:19:45",
     "verification_note": "Guia revisado para a lista base PS4: 63 troféus, roadmap estruturado, resumo, flags, online assíncrono, sem perdíveis, checklist, FAQ, SEO e troféus EN/PT-BR. Mantido em revisão porque a suite global npm test falhou em dado de outro guia.",
     "verification_status": "verified",
     "walkthrough": null
@@ -104,6 +104,10 @@
       "Acalmar BB chorando até ele parar.",
       "Concluir cleanup final sem marcar nenhum troféu como perdível."
     ],
+    "editorial_summary": [
+      "Death Stranding é uma platina longa, mas pouco difícil, focada em concluir a história, conectar instalações à UCA, maximizar todas as conexões, fazer Premium Deliveries com avaliação Legend of Legends, restaurar Memory Chips, fabricar equipamentos/estruturas e resolver troféus sociais online. Não há troféus perdíveis, coop obrigatório ou DLC obrigatória, mas há troféus online/assíncronos e Growth of a Legend exige entregas premium na dificuldade Hard.",
+      "A ordem mais segura é avançar a história enquanto libera regiões, equipamentos, veículos e ziplines, depois usar o pós-game para montar uma rede eficiente de ziplines, elevar todas as instalações a 5 estrelas e cumprir as entregas premium por categoria. Deixe Memory Chips, fabricação completa, estruturas e troféus sociais para o cleanup, sempre acompanhando o checklist para não repetir entregas ou esquecer instalações opcionais."
+    ],
     "faq": [
       {
         "answer": "Não. A platina base não tem troféus perdíveis. Tudo pode ser concluído no pós-game/free roam.",
@@ -144,6 +148,38 @@
       "recommendation": "Boa para quem gosta de checklist, logística, ziplines, instalações e grind de mundo aberto; ruim para quem quer platina rápida ou totalmente offline.",
       "summary": "Platina longa, mas fácil: exige online assíncrono/social, não exige coop direto, não tem perdíveis e cobra Hard apenas nas entregas Legend of Legends de Growth of a Legend."
     },
+    "quick_plan": [
+      {
+        "detail": "Concluir a campanha enquanto libera regiões, instalações, veículos, equipamentos e ziplines para facilitar o grind posterior.",
+        "number": 1,
+        "title": "Avance a história e libere as ferramentas principais"
+      },
+      {
+        "detail": "Conectar todas as instalações à UCA e criar uma estrutura de deslocamento eficiente para entregas, likes e 5 estrelas.",
+        "number": 2,
+        "title": "Conecte instalações e monte a rede de ziplines"
+      },
+      {
+        "detail": "Elevar todas as instalações ao nível máximo e cumprir as entregas premium necessárias em todas as categorias.",
+        "number": 3,
+        "title": "Maximize instalações e faça Legend of Legends"
+      },
+      {
+        "detail": "Coletar e restaurar todos os Memory Chips necessários para Fount of Knowledge e para completar planos de fabricação.",
+        "number": 4,
+        "title": "Restaure Memory Chips e planos de fabricação"
+      },
+      {
+        "detail": "Fabricar equipamentos, construir/atualizar estruturas e resolver troféus sociais/online restantes.",
+        "number": 5,
+        "title": "Complete fabricação, estruturas e troféus sociais"
+      },
+      {
+        "detail": "Revisar pendências da lista base e confirmar que flags, checklist e troféus estão coerentes.",
+        "number": 6,
+        "title": "Faça o cleanup final da platina"
+      }
+    ],
     "seo": {
       "description": "Roadmap completo da platina de Death Stranding, com troféus online, Growth of a Legend, Legend of Legends, instalações 5 estrelas, Memory Chips, ziplines, checklist e dicas para reduzir o grind.",
       "keywords": "Death Stranding troféus, Death Stranding platina, Death Stranding guia, Death Stranding roadmap, Death Stranding online, Death Stranding Growth of a Legend, Death Stranding Legend of Legends, Death Stranding Memory Chips, Death Stranding Best Beloved, Death Stranding checklist",

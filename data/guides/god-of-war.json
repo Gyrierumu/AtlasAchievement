@@ -39,7 +39,7 @@
     "time_min_hours": 30,
     "time_reason": "A faixa de 30-40 horas considera história, exploração, coletáveis, favores, upgrades, valquírias e limpeza em exploração livre.",
     "time_sort_hours": 30,
-    "updated_at": "2026-06-28 21:19:07",
+    "updated_at": "2026-06-29 22:19:45",
     "verification_note": "Guia revisado editorialmente para a platina base de God of War (2018), com 37 troféus, sem perdíveis definitivos, sem online obrigatório, sem coop obrigatório, sem dificuldade obrigatória e DLC fora da platina base.",
     "verification_status": "verified",
     "walkthrough": null
@@ -78,9 +78,71 @@
     "aliases": [],
     "attentionPoints": [],
     "checklist": [],
-    "faq": [],
+    "editorial_summary": [],
+    "faq": [
+      {
+        "answer": "Não. A platina base não tem perdíveis definitivos. Depois da história, é possível voltar aos reinos para limpar coletáveis, favores, Valkyries e atividades pendentes.",
+        "question": "God of War (2018) tem troféus perdíveis?"
+      },
+      {
+        "answer": "Não. A platina é totalmente single-player e não exige servidores, PS+ ou troféus online.",
+        "question": "God of War (2018) precisa de online para platinar?"
+      },
+      {
+        "answer": "Não. A platina base é solo e não exige coop.",
+        "question": "God of War (2018) tem coop obrigatório?"
+      },
+      {
+        "answer": "Não. A platina não exige dificuldade específica. Você pode jogar em uma dificuldade confortável e focar em exploração, coletáveis, upgrades e chefes opcionais.",
+        "question": "Precisa jogar na dificuldade mais alta?"
+      },
+      {
+        "answer": "O tempo estimado é 30-40 horas, variando conforme exploração durante a campanha e quanto cleanup ficar para o final.",
+        "question": "Quanto tempo leva para platinar God of War (2018)?"
+      },
+      {
+        "answer": "Os maiores pontos de atenção são Valkyries, Niflheim, Muspelheim, coletáveis de reinos, mapas do tesouro, corvos de Odin, baús, favores e upgrades.",
+        "question": "O que mais dá trabalho na platina?"
+      },
+      {
+        "answer": "Não. DLCs ou extras ficam fora da platina base. Este guia não mistura God of War Ragnarök, Valhalla ou conteúdo de outro jogo.",
+        "question": "A DLC é necessária para a platina?"
+      }
+    ],
     "note": "Campos exportados para auditoria. O SQLite atual nao possui colunas nativas para todos esses extras; a importacao preserva o que o banco suporta.",
     "quickDecision": null,
+    "quick_plan": [
+      {
+        "detail": "Concluir a história principal enquanto libera recursos, habilidades, atalhos e acesso gradual aos reinos.",
+        "number": 1,
+        "title": "Avance a história em uma dificuldade confortável"
+      },
+      {
+        "detail": "Liberar áreas, viagens, atalhos e atividades opcionais que serão usadas no cleanup.",
+        "number": 2,
+        "title": "Explore reinos e abra atividades secundárias"
+      },
+      {
+        "detail": "Resolver artefatos, corvos de Odin, mapas do tesouro, favores e coletáveis usando uma ordem por região.",
+        "number": 3,
+        "title": "Complete favores, coletáveis e mapas por região"
+      },
+      {
+        "detail": "Separar os dois reinos mais exigentes para controlar grind, desafios de combate e repetição.",
+        "number": 4,
+        "title": "Trabalhe Muspelheim e Niflheim em etapas próprias"
+      },
+      {
+        "detail": "Enfrentar os maiores desafios de combate com equipamentos, runas e atributos já fortalecidos.",
+        "number": 5,
+        "title": "Derrote Valkyries e finalize upgrades importantes"
+      },
+      {
+        "detail": "Conferir todos os requisitos restantes antes de liberar a platina.",
+        "number": 6,
+        "title": "Faça o cleanup final da platina base"
+      }
+    ],
     "seo": {},
     "tags": []
   },

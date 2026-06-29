@@ -39,7 +39,7 @@
     "time_min_hours": 25,
     "time_reason": "A faixa de 25-35 horas considera campanha, NG+, upgrades, Village of Shadows, speedrun, restrições, coletáveis e Mercenaries base.",
     "time_sort_hours": 25,
-    "updated_at": "2026-06-28 21:19:07",
+    "updated_at": "2026-06-29 22:19:45",
     "verification_note": "Guia normalizado a partir do dado seed com checklist e roadmap; aguardando revisão editorial manual final.",
     "verification_status": "verified",
     "walkthrough": null
@@ -152,6 +152,11 @@
       "Comprar e visualizar figuras e concept art na loja de extras.",
       "Conferir flags finais: onlineRequired false, coopRequired false, dlcRequired false e hasMissables true."
     ],
+    "editorial_summary": [
+      "Resident Evil Village é uma platina de dificuldade alta moderada, estimada em 25-40 horas, focada em completar a campanha, dominar uma rota rápida, limpar colecionáveis e encarar The Mercenaries para Legendary Cowboy. A platina base não exige online, coop nem Winters' Expansion, mas cobra planejamento para não repetir mais runs do que o necessário.",
+      "A rota mais segura é fazer uma primeira campanha completa coletando arquivos, Goats of Warding, receitas, tesouros, armas, upgrades e troféus situacionais; depois usar New Game+ e saves separados para Village of Shadows, rota rápida, limite de cura, limite de gastos e run de faca/combate corpo a corpo.",
+      "O principal gargalo é The Mercenaries, que exige Rank S nos estágios base para Legendary Cowboy e pode ser mais difícil do que a campanha para muitos jogadores. Shadows of Rose, The Mercenaries Additional Orders, Third Person Mode e Resident Evil Re:Verse ficam fora dos requisitos da platina base."
+    ],
     "faq": [
       {
         "answer": "Não. A platina base pode ser feita offline. The Mercenaries faz parte da platina, mas não exige online nem coop obrigatório.",
@@ -200,6 +205,38 @@
       "mainRisk": "Legendary Cowboy é o maior gargalo da platina; Village of Shadows, colecionáveis por região e runs restritivas exigem planejamento separado.",
       "verdict": "Vale platinar Resident Evil Village se você gosta de survival horror de ação com checklist variado, múltiplas runs e desafios de execução. A platina não exige online, coop nem Winters' Expansion, mas cobra domínio da campanha, colecionáveis por região, Village of Shadows, runs de baixo gasto, pouca cura, faca e Rank S em The Mercenaries. É uma platina excelente, porém pouco indicada para quem não quer repetir campanha ou treinar Legendary Cowboy."
     },
+    "quick_plan": [
+      {
+        "detail": "Completar a campanha entendendo a rota, coletando itens importantes e evitando repetições desnecessárias.",
+        "number": 1,
+        "title": "Primeira campanha com exploração completa"
+      },
+      {
+        "detail": "Finalizar arquivos, cabras, receitas, crafting, tesouros e troféus de ações específicas antes das runs de desafio.",
+        "number": 2,
+        "title": "Cleanup de colecionáveis e troféus situacionais"
+      },
+      {
+        "detail": "Completar as runs de tempo, economia, cura limitada e combate restrito com planejamento.",
+        "number": 3,
+        "title": "Runs de campanha com restrições"
+      },
+      {
+        "detail": "Completar a campanha na dificuldade Village of Shadows usando preparação de New Game+.",
+        "number": 4,
+        "title": "Village of Shadows com preparação"
+      },
+      {
+        "detail": "Obter Rank S nos estágios base de The Mercenaries para resolver o maior gargalo da platina.",
+        "number": 5,
+        "title": "The Mercenaries e Legendary Cowboy"
+      },
+      {
+        "detail": "Usar Challenge Points, loja de extras e checklist para fechar os últimos troféus da lista base.",
+        "number": 6,
+        "title": "Compra de extras e conferência final"
+      }
+    ],
     "seo": {
       "description": "Guia de platina de Resident Evil Village com roadmap em português, colecionáveis, Village of Shadows, speedrun, runs restritivas, The Mercenaries, Legendary Cowboy e dicas para conquistar todos os troféus no PS4 e PS5.",
       "keywords": [

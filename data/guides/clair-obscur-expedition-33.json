@@ -39,7 +39,7 @@
     "time_min_hours": 50,
     "time_reason": "A faixa de 50-70h considera história, exploração, colecionáveis, relacionamentos, Endless Tower, chefes opcionais, habilidades de Monoco, upgrades e grind até o nível 99.",
     "time_sort_hours": 50,
-    "updated_at": "2026-06-28 21:19:07",
+    "updated_at": "2026-06-29 22:19:45",
     "verification_note": "Guia publicado com cobertura forte, aguardando revisão editorial final para selo Verificado.",
     "verification_status": "verified",
     "walkthrough": null
@@ -112,6 +112,10 @@
       "Ver uma cena opcional no acampamento.",
       "Fazer o cleanup final dos 56 troféus da lista base."
     ],
+    "editorial_summary": [
+      "Clair Obscur: Expedition 33 é uma platina de RPG relativamente acessível, focada em concluir a história, controlar poucos perdíveis, revisitar áreas no pós-game, derrotar chefes opcionais, completar relacionamentos, coletar diários, canções e Gestrais perdidos, vencer jogos Gestrais, concluir missões de Nevrons e finalizar troféus de combate/personagem. A lista base tem 56 troféus, é totalmente offline, não exige coop, não exige DLC e pode ser feita em uma jogada, mas há troféus sensíveis a interações/itens específicos durante a campanha.",
+      "A ordem mais segura é avançar a história com atenção aos perdíveis do prólogo, atos intermediários e relacionamentos, depois usar o Act 3/pós-game para limpar áreas opcionais, chefes, colecionáveis, relacionamentos, nível 99 e desafios de combate. Não é necessário New Game+ para a platina, mas ele pode servir como rota de correção se algum perdível ou coletável for ignorado na primeira campanha."
+    ],
     "faq": [
       {
         "answer": "Sim. Os perdíveis principais são Follow The Trail, Maelle, Connoisseur, Professional e A Peculiar Encounter. Eles dependem de itens, interações ou condições específicas durante a campanha. Use o checklist antes de avançar prólogo, atos intermediários e relacionamentos.",
@@ -157,6 +161,38 @@
       "fit": "Boa para quem gosta de RPG por turnos, chefes opcionais, exploração e colecionáveis.",
       "recommendation": "Platina de RPG longa, mas acessível, para jogar com checklist ao lado desde o prólogo."
     },
+    "quick_plan": [
+      {
+        "detail": "Começar a campanha aprendendo o combate e garantindo os itens/interações que podem bloquear troféus depois.",
+        "number": 1,
+        "title": "Avance o prólogo sem perder itens únicos"
+      },
+      {
+        "detail": "Avançar pelos atos 1 e 2 enquanto controla interações de acampamento, registros, canções e evolução do grupo.",
+        "number": 2,
+        "title": "Complete os atos iniciais acompanhando interações"
+      },
+      {
+        "detail": "Usar as habilidades de Esquie para acessar áreas opcionais, chefes e colecionáveis antes do cleanup pesado.",
+        "number": 3,
+        "title": "Abra o Act 3 e libere a exploração completa"
+      },
+      {
+        "detail": "Resolver os troféus de bosses opcionais, jogos Gestrais, Torre Eterna e missões de Nevrons.",
+        "number": 4,
+        "title": "Derrote chefes opcionais e conclua desafios"
+      },
+      {
+        "detail": "Completar diários, canções, Gestrais perdidos, relacionamentos, nível 99, armas e habilidades específicas.",
+        "number": 5,
+        "title": "Finalize colecionáveis, relacionamentos e progressão"
+      },
+      {
+        "detail": "Revisar pendências da lista base e confirmar que flags e troféus estão corretos.",
+        "number": 6,
+        "title": "Faça o cleanup final da platina"
+      }
+    ],
     "seo": {
       "description": "Roadmap completo da platina de Clair Obscur: Expedition 33, com troféus perdíveis, colecionáveis, relacionamentos, chefes opcionais, Gestrais, canções, diários, checklist e dicas para evitar retrabalho.",
       "keywords": "Clair Obscur Expedition 33 troféus, Clair Obscur Expedition 33 platina, Clair Obscur Expedition 33 guia, Clair Obscur Expedition 33 roadmap, Clair Obscur Expedition 33 perdíveis, Clair Obscur Expedition 33 Follow The Trail, Clair Obscur Expedition 33 Connoisseur, Clair Obscur Expedition 33 Gestrais Perdidos, Clair Obscur Expedition 33 Simon, Clair Obscur Expedition 33 checklist",

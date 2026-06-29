@@ -39,7 +39,7 @@
     "time_min_hours": 3,
     "time_reason": "A faixa conservadora de 3-5 horas considera campanha, puzzle pieces, artefatos, Gatcha e troféus situacionais da lista base.",
     "time_sort_hours": 5,
-    "updated_at": "2026-06-28 21:19:16",
+    "updated_at": "2026-06-29 22:19:57",
     "verification_note": "Guia revisado para a lista base de 43 troféus da platina, separado dos troféus adicionais/Special Bots; manter sem verified até revisão manual final de localização PT-BR oficial.",
     "verification_status": "verified",
     "walkthrough": ""
@@ -90,6 +90,7 @@
       "Separar Network Speed Run, add-ons e Special Bots da checklist da platina base.",
       "Confirmar que troféus extras/adicionais e Special Bots não foram misturados à platina base."
     ],
+    "editorial_summary": [],
     "faq": [
       {
         "answer": "Não. A lista base da platina não tem perdíveis reais; a seleção de fases permite voltar para coletáveis, interações e desafios curtos.",
@@ -138,6 +139,38 @@
       "recommendation": "Avance pelos quatro mundos principais, colete puzzle pieces e artefatos no caminho, depois use seleção de fases e PlayStation Labo para fechar a limpeza.",
       "summary": "Platina curta e acessível: 43 troféus base, cerca de 3-5h, dificuldade 2/10, sem perdíveis reais, sem online, sem coop e sem DLC obrigatória."
     },
+    "quick_plan": [
+      {
+        "detail": "Completar as áreas principais enquanto aprende as mecânicas de cada mundo e coleta o que encontrar naturalmente.",
+        "number": 1,
+        "title": "Explore os mundos principais"
+      },
+      {
+        "detail": "Revisitar fases com pendências e fechar os principais coletáveis da lista base.",
+        "number": 2,
+        "title": "Limpe puzzle pieces e artefatos por fase"
+      },
+      {
+        "detail": "Resolver troféus de ações específicas, interações e pequenos desafios que não vieram naturalmente.",
+        "number": 3,
+        "title": "Complete desafios e troféus situacionais"
+      },
+      {
+        "detail": "Conferir desbloqueios, artefatos, puzzle pieces e interações do hub.",
+        "number": 4,
+        "title": "Organize o PlayStation Labo"
+      },
+      {
+        "detail": "Evitar que add-ons, speedruns extras ou Special Bots sejam tratados como requisito da platina base.",
+        "number": 5,
+        "title": "Speedruns e Network Speed Run, se aplicável"
+      },
+      {
+        "detail": "Conferir todos os troféus da lista base antes de encerrar a platina.",
+        "number": 6,
+        "title": "Cleanup final da platina base"
+      }
+    ],
     "seo": {
       "description": "Guia de platina de Astro’s Playroom em português, com tempo estimado, dificuldade, coletáveis, puzzle pieces, artefatos, roadmap e checklist de troféus.",
       "ogDescription": "Roadmap de Astro’s Playroom para PS5 com lista base de 43 troféus, sem perdíveis, sem online obrigatório, sem coop e sem DLC obrigatória.",

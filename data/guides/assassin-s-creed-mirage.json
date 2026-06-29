@@ -39,7 +39,7 @@
     "time_min_hours": 20,
     "time_reason": "A faixa de 20-30 horas considera campanha, contratos, coletáveis, exploração de territórios, upgrades, ferramentas e cleanup.",
     "time_sort_hours": 20,
-    "updated_at": "2026-06-28 21:19:07",
+    "updated_at": "2026-06-29 22:19:45",
     "verification_note": "Guia público seed-managed com checklist base e roadmap; aguardando revisão editorial manual final.",
     "verification_status": "verified",
     "walkthrough": null
@@ -151,6 +151,10 @@
       }
     ],
     "checklist": [],
+    "editorial_summary": [
+      "Assassin's Creed Mirage é uma platina curta e acessível para a série, totalmente single-player e sem troféus online, coop ou DLC obrigatórios. A lista base tem 51 troféus e gira em torno de concluir a história, resolver investigações, contratos, coletáveis, enigmas, equipamentos, upgrades, ferramentas e atividades de Bagdá. A dificuldade não bloqueia troféus, então a platina pode ser feita em dificuldade baixa.",
+      "A rota mais segura é jogar a campanha normalmente enquanto desbloqueia ferramentas e habilidades, fazer contratos e atividades conforme aparecem, resolver coletáveis por distrito e deixar a limpeza final para o pós-jogo. O principal cuidado é garantir You Snooze, You Lose cedo, porque é o único troféu com risco real de oportunidade; o restante da platina é majoritariamente checklist e cleanup."
+    ],
     "faq": [
       {
         "answer": "Não. A lista base tem 51 troféus offline e 0 online. Multiplayer ou recursos online não são necessários para a platina.",
@@ -208,6 +212,38 @@
       "risk": "O cuidado real é fazer You Snooze, You Lose cedo com blowdart/dardo sonífero e saque em guarda adormecido.",
       "summary": "Vale platinar Assassin's Creed Mirage se você quer uma platina curta, offline e acessível dentro da série, com foco em história, contratos, coletáveis, enigmas, ferramentas e cleanup por distrito."
     },
+    "quick_plan": [
+      {
+        "detail": "Concluir a história principal, liberar distritos, ferramentas, investigações e recursos centrais.",
+        "number": 1,
+        "title": "Avance pela história desbloqueando Bagdá"
+      },
+      {
+        "detail": "Garantir o único troféu com risco real antes de limpar demais o mundo.",
+        "number": 2,
+        "title": "Resolva You Snooze, You Lose cedo"
+      },
+      {
+        "detail": "Fechar contratos, investigações, Tales of Baghdad e atividades secundárias necessárias.",
+        "number": 3,
+        "title": "Limpe contratos, casos e atividades"
+      },
+      {
+        "detail": "Concluir livros perdidos, locais históricos, enigmas, artefatos de Dervis, baús de equipamento e demais coleções.",
+        "number": 4,
+        "title": "Faça os coletáveis por distrito"
+      },
+      {
+        "detail": "Fechar upgrades, ferramentas, habilidades e troféus de combate/stealth restantes.",
+        "number": 5,
+        "title": "Finalize upgrades, ferramentas e combate"
+      },
+      {
+        "detail": "Confirmar os 51 troféus da lista base sem misturar Valley of Memory.",
+        "number": 6,
+        "title": "Confira a platina base sem DLC"
+      }
+    ],
     "seo": {
       "description": "Guia de platina de Assassin's Creed Mirage com roadmap, 51 troféus, You Snooze You Lose, coletáveis, enigmas, contratos, ferramentas, flags e DLC fora da platina base.",
       "keywords": "Assassin's Creed Mirage guia de platina, Assassin's Creed Mirage troféus, AC Mirage guia de platina, AC Mirage roadmap, Assassin's Creed Mirage You Snooze You Lose, Assassin's Creed Mirage coletáveis, Assassin's Creed Mirage enigmas, Assassin's Creed Mirage contratos, Assassin's Creed Mirage ferramentas, Assassin's Creed Mirage sem online, Assassin's Creed Mirage sem coop, Assassin's Creed Mirage Valley of Memory fora da platina base, Assassin's Creed Mirage 51 troféus, Assassin's Creed Mirage platina fácil",

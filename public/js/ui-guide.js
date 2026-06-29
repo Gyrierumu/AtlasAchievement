@@ -23,7 +23,9 @@ window.UIGuide = (() => {
     buildGuideStartContextModel,
     buildGuideSummaryCards,
     buildGuideRiskAlerts,
-    buildGuideBeforeStartItems
+    buildGuideBeforeStartItems,
+    buildGuideEditorialSummary,
+    buildGuideQuickPlan
   } = window.UIDecisionModels;
   const sharedEditorial = window.AtlasEditorialModel || {};
   const featureFlags = window.AtlasFeatureFlags || {};
@@ -935,6 +937,7 @@ window.UIGuide = (() => {
         <div id="guideRoadmapBody" data-guide-section-content>
           ${renderGuideRoadmapTimeline(roadmapStages)}
           ${renderGuideWalkthrough(viewModel)}
+          ${roadmapStages.length >= 4 ? '<div class="atlas-guide-return-row"><button type="button" class="atlas-btn atlas-btn-secondary atlas-btn-compact" data-scroll-top="true"><i class="fas fa-arrow-up" aria-hidden="true"></i>Voltar ao topo</button></div>' : ''}
         </div>
       </section>`;
   }
@@ -1147,8 +1150,16 @@ window.UIGuide = (() => {
     const explicitEditorialParagraphs = Array.isArray(game?.editorial_summary)
       ? game.editorial_summary.map(paragraph => String(paragraph || '').trim()).filter(Boolean)
       : [];
+    const sharedEditorialParagraphs = typeof buildGuideEditorialSummary === 'function'
+      ? buildGuideEditorialSummary(game)
+      : [];
+    const quickPlanItems = typeof buildGuideQuickPlan === 'function'
+      ? buildGuideQuickPlan(game, viewModel)
+      : [];
     const editorialParagraphs = explicitEditorialParagraphs.length
       ? explicitEditorialParagraphs
+      : sharedEditorialParagraphs.length
+      ? sharedEditorialParagraphs
       : normalizedSlug === 'resident-evil-requiem'
       ? REQUIEM_EDITORIAL_SUMMARY
       : normalizedSlug === 'hades'
@@ -1187,7 +1198,7 @@ window.UIGuide = (() => {
     return `
       <section id="guideSummaryActions" class="atlas-panel atlas-panel--section atlas-guide-summary-actions p-5 md:p-6">
         <div>
-          <div class="atlas-eyebrow">Plano rápido</div>
+          ${quickPlanItems.length ? `<div class="atlas-guide-quick-plan" aria-label="Plano rápido da platina"><div class="atlas-eyebrow">Plano rápido</div><ol>${quickPlanItems.map(item => `<li><span>${escapeHtml(String(item.number || ''))}</span><div><strong>${escapeHtml(item.title || '')}</strong>${item.detail ? `<p>${escapeHtml(item.detail)}</p>` : ''}</div></li>`).join('')}</ol></div>` : '<div class="atlas-eyebrow">Plano rápido</div>'}
           <p class="text-white/62 mt-2 max-w-3xl">${escapeHtml(nextAction.detail || 'Leia o resumo, abra o roadmap quando precisar da ordem completa e use a checklist para acompanhar progresso.')}</p>
           <h2 class="text-xl md:text-2xl font-extrabold tracking-tight mt-5">Resumo da platina</h2>
           ${editorialParagraphs.length ? `<div class="atlas-guide-summary-editorial mt-3 space-y-3">${editorialParagraphs.map(paragraph => `<p class="text-white/72 max-w-4xl">${escapeHtml(paragraph)}</p>`).join('')}</div>` : ''}

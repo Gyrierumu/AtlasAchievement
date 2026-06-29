@@ -39,7 +39,7 @@
     "time_min_hours": 60,
     "time_reason": "A faixa de 60-90 horas considera primeira run, NG+, NG++, magias, milagres, piromancias, hexes, NPCs, covenants e cleanup.",
     "time_sort_hours": 60,
-    "updated_at": "2026-06-28 21:19:06",
+    "updated_at": "2026-06-29 22:19:44",
     "verification_note": "Lista PS4/SOTFS revisada; spells de DLC integradas e guia ainda em revisão.",
     "verification_status": "review",
     "walkthrough": null
@@ -176,6 +176,12 @@
       "Conferir que pactos de descoberta não estão marcados como online, coop ou perdíveis.",
       "Fazer cleanup final por tags: NPC, Pacto, Grind, Coletável, NG++ e Cleanup."
     ],
+    "editorial_summary": [
+      "Dark Souls II: Scholar of the First Sin é uma platina longa, offline e baseada em checklist. A lista PS4 tem 38 troféus: 1 platina, 2 ouro, 23 prata e 12 bronze.",
+      "O guia não marca online, coop, DLC separada ou dificuldade como requisito. Online e summons ajudam, mas a rota de platina é offline possível e depende de planejamento.",
+      "O maior gargalo é combinar NPC questlines, Lucatiel, Benhart, gestos, equipamentos herdados, pactos, troféus de mestre e compras de Chancellor Wellager em NG++.",
+      "Scholar of the First Sin não tem lista separada de DLC, mas as áreas das Crowns estão integradas nessa versão e contam para os troféus de mestre de magias, milagres, piromancias e sortilégios."
+    ],
     "faq": [
       {
         "answer": "Não. A platina pode ser feita offline. Online pode facilitar recompensas de pactos, mas não é obrigatório.",
@@ -237,6 +243,38 @@
       "time": "Longa: 80 a 120 horas.",
       "verdict": "Vale platinar se você gosta de Souls e aceita uma rota longa de checklist."
     },
+    "quick_plan": [
+      {
+        "detail": "Começar Scholar of the First Sin sem perder NPCs, gestos, vendedores, falas e rotas de equipamentos herdados.",
+        "number": 1,
+        "title": "Prepare a run principal com checklist aberto"
+      },
+      {
+        "detail": "Abrir Drangleic de forma segura enquanto coleta recursos e conversa com NPCs em cada nova região.",
+        "number": 2,
+        "title": "Avance pela história e acenda as fogueiras primordiais"
+      },
+      {
+        "detail": "Garantir que Lucatiel e Benhart sobrevivam às lutas necessárias antes dos pontos finais de suas linhas.",
+        "number": 3,
+        "title": "Feche Lucatiel e Benhart com summons planejados"
+      },
+      {
+        "detail": "Descobrir todos os pactos e separar o que exige devoção máxima, medalhas, Pilgrims of the Dark ou farm.",
+        "number": 4,
+        "title": "Organize pactos e grinds opcionais"
+      },
+      {
+        "detail": "Fechar os quatro troféus de mestre considerando vendedores, almas de chefe, pactos, NG++ e áreas das Crowns em Scholar.",
+        "number": 5,
+        "title": "Complete magias, milagres, piromancias e sortilégios"
+      },
+      {
+        "detail": "Fechar Curious Map, Change of Clothes, Gathering of Exiles e equipamentos herdados antes de trocar de ciclo.",
+        "number": 6,
+        "title": "Resolva Majula, mapa e equipamentos herdados"
+      }
+    ],
     "seo": {
       "description": "Guia de platina de Dark Souls II: Scholar of the First Sin com 38 troféus, roadmap, 14 perdíveis de run, magias das Crowns, pactos, Lucatiel, Benhart e NG++.",
       "keywords": "Dark Souls II Scholar of the First Sin troféus, Dark Souls 2 SOTFS platina, guia Dark Souls II Scholar, Lucatiel, Benhart, Chancellor Wellager NG++, Master of Sorcery, Master of Miracles, Master of Pyromancy, Master of Hexes",

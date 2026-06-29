@@ -39,7 +39,7 @@
     "time_min_hours": 100,
     "time_reason": "A faixa de 100–130h cobre a campanha, o terceiro semestre, Mementos, Social Stats e o cleanup da lista base.",
     "time_sort_hours": 100,
-    "updated_at": "2026-06-28 21:19:07",
+    "updated_at": "2026-06-29 22:19:45",
     "verification_note": "Guia verificado: 53 troféus, 100–130h, 2/10, seis riscos principais, cinco coletáveis, uma run planejada e nenhum requisito online, coop, de dificuldade, DLC ou NG+.",
     "verification_status": "verified",
     "walkthrough": null
@@ -152,6 +152,10 @@
       }
     ],
     "checklist": [],
+    "editorial_summary": [
+      "Persona 5 Royal é uma platina longa, mas acessível, totalmente offline e possível em uma única jogada. A lista base possui 53 troféus, não exige online, cooperação, New Game+, 100% do Compendium, todos os Confidants nem boss secreto. O foco da rota é liberar o terceiro semestre e concluir os troféus opcionais antes do final verdadeiro.",
+      "O ponto mais importante é subir Maruki ao Rank 9 antes de 17/11. Akechi Rank 8 antes de 17/11 e Kasumi Rank 5 antes de 22/12 são fortemente recomendados para a rota Royal completa. Também é essencial não entregar os Phantom Thieves em 11/20 e recusar as ofertas em 12/24, 09/01 e 02/02. Thieves Den, DLCs e requisitos do Persona 5 original não contam para a platina de Persona 5 Royal."
+    ],
     "faq": [
       {
         "answer": "Não. Os 53 troféus da lista base podem ser obtidos offline.",
@@ -226,6 +230,38 @@
     "quickDecision": {
       "summary": "Persona 5 Royal é uma platina longa, acessível e offline: 53 troféus, 100-130h, 2/10, uma jogada com rota correta, terceiro semestre via Maruki e sem NG+, Thieves Den ou DLC."
     },
+    "quick_plan": [
+      {
+        "detail": "Estabelecer uma rotina eficiente sem transformar cada atividade em obrigação.",
+        "number": 1,
+        "title": "Abril a junho: construa a base"
+      },
+      {
+        "detail": "Garantir o terceiro semestre e preservar a experiência completa do conteúdo Royal.",
+        "number": 2,
+        "title": "Prioridades de Royal e prazos"
+      },
+      {
+        "detail": "Avançar a história enquanto dilui o cleanup ao longo do calendário.",
+        "number": 3,
+        "title": "Palaces, Mementos e atividades opcionais"
+      },
+      {
+        "detail": "Evitar os finais ruins e manter a rota do true ending.",
+        "number": 4,
+        "title": "Decisões de novembro e dezembro"
+      },
+      {
+        "detail": "Concluir o conteúdo Royal e manter o true ending.",
+        "number": 5,
+        "title": "Terceiro semestre e Palace final"
+      },
+      {
+        "detail": "Resolver tudo o que ainda depende do calendário antes de assistir ao final.",
+        "number": 6,
+        "title": "Cleanup antes do true ending"
+      }
+    ],
     "seo": {},
     "tags": []
   },

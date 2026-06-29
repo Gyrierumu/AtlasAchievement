@@ -2630,6 +2630,63 @@ body.atlas-guide-dock-active footer {
   gap: 10px;
 }
 
+.atlas-guide-quick-plan {
+  margin-bottom: 14px;
+}
+
+.atlas-guide-quick-plan ol {
+  display: grid;
+  gap: 8px;
+  margin-top: 10px;
+}
+
+.atlas-guide-quick-plan li {
+  display: grid;
+  grid-template-columns: 28px minmax(0, 1fr);
+  gap: 10px;
+  align-items: start;
+  padding: 10px 12px;
+  border: 1px solid rgba(94, 234, 212, .14);
+  border-radius: 12px;
+  background: rgba(20, 184, 166, .055);
+}
+
+.atlas-guide-quick-plan li > span {
+  display: inline-grid;
+  place-items: center;
+  width: 28px;
+  height: 28px;
+  border-radius: 999px;
+  background: rgba(94, 234, 212, .16);
+  color: rgba(204, 251, 241, .95);
+  font-size: .76rem;
+  font-weight: 900;
+}
+
+.atlas-guide-quick-plan strong {
+  display: block;
+  color: #fff;
+  font-size: .94rem;
+  line-height: 1.28;
+}
+
+.atlas-guide-quick-plan p {
+  margin-top: 3px;
+  color: rgba(226, 232, 240, .68);
+  font-size: .86rem;
+  line-height: 1.42;
+}
+
+.atlas-guide-return-row {
+  display: flex;
+  justify-content: flex-end;
+  margin-top: 18px;
+}
+
+.atlas-guide-return-row--checklist {
+  padding-top: 4px;
+}
+
 #view-guide .atlas-quick-decision__actions:has(> article[hidden]:last-child) {
   grid-template-columns: minmax(0, 1fr);
 }

@@ -39,7 +39,7 @@
     "time_min_hours": 15,
     "time_reason": "A faixa de 15 a 25 horas considera duas jogadas planejadas, checklist de gremlins, rolos de filme, partes dos animatrônicos, corridas da Gilda e cleanup de ações específicas.",
     "time_sort_hours": 20,
-    "updated_at": "2026-06-28 21:19:16",
+    "updated_at": "2026-06-29 22:19:56",
     "verification_note": "Guia revisado para publicação: lista PlayStation base com 39 troféus, distribuição 1/4/10/24, duas rotas incompatíveis de tinta e solvente, sem online, sem coop e sem DLC obrigatória.",
     "verification_status": "verified",
     "walkthrough": ""
@@ -137,6 +137,7 @@
       "Conferir FAQ, decisão rápida, SEO e pontos de atenção.",
       "Conferir se página individual e catálogo exibem o mesmo status editorial."
     ],
+    "editorial_summary": [],
     "faq": [
       {
         "answer": "Sim. Vários troféus dependem de escolhas de rota, avanço de história ou objetivos que podem ficar inacessíveis. Use checklist por região e faça pelo menos duas jogadas planejadas.",
@@ -194,6 +195,38 @@
       "time": "Curto a médio, cerca de 15 a 25 horas.",
       "verdict": "Sim, vale platinar, especialmente para quem gosta de plataforma 3D e consegue seguir checklist de rotas."
     },
+    "quick_plan": [
+      {
+        "detail": "Concluir a campanha usando tinta nos chefes e consertando os animatrônicos para encaminhar An Epic Journey.",
+        "number": 1,
+        "title": "Faça a primeira jogada pela rota de tinta"
+      },
+      {
+        "detail": "Evitar que gremlins, rolos de filme, peças de animatrônicos e objetivos de região fiquem inacessíveis.",
+        "number": 2,
+        "title": "Limpe colecionáveis e objetivos antes do ponto de não retorno"
+      },
+      {
+        "detail": "Concluir a primeira run com chefes pintados, animatrônicos consertados e rota positiva registrada.",
+        "number": 3,
+        "title": "Finalize a campanha e confirme An Epic Journey"
+      },
+      {
+        "detail": "Concluir a rota oposta usando solvente nos chefes e deixando animatrônicos desmontados para Out of my way.",
+        "number": 4,
+        "title": "Faça a segunda jogada pela rota de solvente"
+      },
+      {
+        "detail": "Resolver troféus simples de combate, sketches, E-Tickets, destruição, fotografia e ações específicas.",
+        "number": 5,
+        "title": "Faça o cleanup dos troféus diversos"
+      },
+      {
+        "detail": "Garantir que os 39 troféus da lista PlayStation foram concluídos sem misturar dados de outras plataformas.",
+        "number": 6,
+        "title": "Conferência final da platina base"
+      }
+    ],
     "seo": {
       "description": "Guia de troféus de Disney Epic Mickey: Rebrushed com roadmap da platina, tempo estimado, dificuldade, troféus perdíveis, rotas de tinta e solvente, gremlins, rolos de filme e dicas para os 39 troféus.",
       "keywords": [

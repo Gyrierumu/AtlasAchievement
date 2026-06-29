@@ -351,19 +351,19 @@ window.AppAdmin = (() => {
 
     score = Math.max(0, Math.min(100, score));
 
-    let badge = 'Rascunho fraco';
+    let badge = 'Incompleto';
     let tone = 'draft';
     let summary = 'O guia ainda precisa de profundidade editorial antes de publicar.';
-    if (score >= 85) {
-      badge = 'Quase pronto para publicar';
+    if (score >= 90) {
+      badge = 'Pronto para publicar';
       tone = 'strong';
-      summary = 'Bom nível de completude. Faça só uma revisão final de consistência antes de publicar.';
+      summary = 'O guia tem boa completude. Faça só a revisão final de consistência antes de publicar.';
     } else if (score >= 70) {
-      badge = 'Base boa, falta lapidar';
+      badge = 'Quase pronto';
       tone = 'solid';
       summary = 'A estrutura já está boa, mas ainda há pontos para fortalecer confiança e contexto.';
     } else if (score >= 50) {
-      badge = 'Publicável com cautela';
+      badge = 'Precisa de revisão';
       tone = 'fragile';
       summary = 'O guia já tem base, mas ainda passa sensação de conteúdo parcial em alguns pontos.';
     }
@@ -432,11 +432,147 @@ window.AppAdmin = (() => {
     return false;
   }
 
+  function getAdminEditorialScore(game = {}) {
+    const trophyCount = Number(game.trophy_count || game.trophyCount || 0);
+    const roadmapCount = Number(game.roadmap_count || game.roadmapCount || 0);
+    const hasCover = Boolean(game.cover_image || game.image);
+    const hasCore = Boolean(game.name) && Number(game.difficulty || 0) > 0 && hasReadableTime(game.time);
+    const editorialFields = [
+      game.runs_summary || game.guide_runs,
+      game.missable_summary || game.missable,
+      game.online_summary || game.guide_online,
+      game.grind_summary || game.guide_grind,
+      game.dlc_scope || game.guide_dlc,
+      game.difficulty_reason,
+      game.time_reason,
+      game.first_run_advice,
+      game.cleanup_advice,
+      game.before_you_start
+    ];
+    const filledEditorialFields = editorialFields.filter(value => getWordsCount(value) >= 3).length;
+
+    let score = 0;
+    if (hasCore) score += 18;
+    if (hasCover) score += 8;
+    score += Math.min(24, filledEditorialFields * 3);
+    if (roadmapCount >= 5) score += 16;
+    else if (roadmapCount >= 3) score += 10;
+    else if (roadmapCount > 0) score += 5;
+    if (trophyCount >= 30) score += 18;
+    else if (trophyCount >= 12) score += 12;
+    else if (trophyCount > 0) score += 6;
+    if (game.coverage_level === 'complete') score += 8;
+    else if (game.coverage_level === 'strong') score += 5;
+    else if (game.coverage_level === 'partial') score += 1;
+    if (isVerifiedGame(game)) score += 8;
+    if (isReviewGame(game)) score = Math.min(score, 82);
+    return Math.max(0, Math.min(100, score));
+  }
+
+  function getAdminScoreLabel(score = 0) {
+    if (score >= 90) return 'Pronto para publicar';
+    if (score >= 70) return 'Quase pronto';
+    if (score >= 50) return 'Precisa de revisão';
+    return 'Incompleto';
+  }
+
+  function getFeedbackGameNames(state = {}) {
+    const names = new Set();
+    const feedbackItems = Array.isArray(state.adminFeedbackResponse?.items) ? state.adminFeedbackResponse.items : [];
+    feedbackItems.forEach(item => {
+      const name = String(item.related_game || item.relatedGame || '').trim().toLowerCase();
+      if (name) names.add(name);
+    });
+    const topFeedback = state.adminBetaMetrics?.guides?.topFeedbackGames;
+    if (Array.isArray(topFeedback)) {
+      topFeedback.forEach(item => {
+        const name = String(item.game || item.name || '').trim().toLowerCase();
+        if (name) names.add(name);
+      });
+    }
+    return names;
+  }
+
+  function hasFeedbackForGame(game = {}, feedbackNames = new Set()) {
+    const name = String(game.name || '').trim().toLowerCase();
+    return Boolean(name && feedbackNames.has(name));
+  }
+
+  function matchesAdminFilter(game = {}, filter = 'all', state = {}) {
+    const feedbackNames = state.__adminFeedbackNames || getFeedbackGameNames(state);
+    switch (filter) {
+      case 'review':
+        return isReviewGame(game);
+      case 'verified':
+        return isVerifiedGame(game);
+      case 'draft':
+        return game.editorial_status === 'draft' || game.editorial_review_status === 'draft';
+      case 'low-score':
+        return getAdminEditorialScore(game) < 70;
+      case 'low-coverage':
+        return game.coverage_level === 'partial' || Number(game.roadmap_count || 0) < 3 || Number(game.trophy_count || 0) < 12;
+      case 'no-cover':
+        return !(game.cover_image || game.image);
+      case 'recent':
+        return wasChangedRecently(game, 14);
+      case 'feedback':
+        return hasFeedbackForGame(game, feedbackNames);
+      case 'suspicious':
+        return hasSuspiciousFilterSignal(game);
+      default:
+        return true;
+    }
+  }
+
+  function sortAdminGames(items = [], sort = 'updated-desc') {
+    const getDateTime = (game, field) => {
+      const date = parseAdminDate(game[field] || game[field.replace(/_([a-z])/g, (_, char) => char.toUpperCase())]);
+      return date ? date.getTime() : 0;
+    };
+    const sorted = [...items];
+    sorted.sort((a, b) => {
+      if (sort === 'created-desc') return getDateTime(b, 'created_at') - getDateTime(a, 'created_at') || String(a.name || '').localeCompare(String(b.name || ''), 'pt-BR');
+      if (sort === 'difficulty-desc') return Number(b.difficulty || 0) - Number(a.difficulty || 0) || String(a.name || '').localeCompare(String(b.name || ''), 'pt-BR');
+      if (sort === 'name-asc') return String(a.name || '').localeCompare(String(b.name || ''), 'pt-BR');
+      return getDateTime(b, 'updated_at') - getDateTime(a, 'updated_at') || String(a.name || '').localeCompare(String(b.name || ''), 'pt-BR');
+    });
+    return sorted;
+  }
+
+  function buildAdminGamesResponse(state = {}) {
+    const allGames = Array.isArray(state.availableGames) ? state.availableGames : [];
+    const search = normalizeEditorialText(state.adminSearch || '');
+    const filter = state.adminFilter || 'all';
+    const feedbackNames = getFeedbackGameNames(state);
+    const filterState = { ...state, __adminFeedbackNames: feedbackNames };
+    const filtered = allGames.filter(game => {
+      const haystack = normalizeEditorialText(`${game.name || ''} ${game.slug || ''}`);
+      return (!search || haystack.includes(search)) && matchesAdminFilter(game, filter, filterState);
+    });
+    const sorted = sortAdminGames(filtered, state.adminSort || 'updated-desc');
+    const limit = 10;
+    const total = sorted.length;
+    const totalPages = Math.max(Math.ceil(total / limit), 1);
+    const page = Math.min(Math.max(Number(state.adminPage || 1), 1), totalPages);
+    const offset = (page - 1) * limit;
+    const pageItems = sorted.slice(offset, offset + limit).map(game => {
+      const score = getAdminEditorialScore(game);
+      return { ...game, _adminEditorialScore: score, _adminScoreLabel: getAdminScoreLabel(score) };
+    });
+    return {
+      items: pageItems,
+      pagination: { page, totalPages, total, limit },
+      filter,
+      search: state.adminSearch || ''
+    };
+  }
+
   function buildEnhancedAdminSummary(summary = {}, games = []) {
     const items = Array.isArray(games) ? games : [];
     return {
       ...summary,
       totalGames: summary.totalGames || items.length,
+      publishedGuides: summary.publishedGuides || items.filter(game => game.editorial_status === 'published').length,
       verifiedGuides: items.filter(isVerifiedGame).length,
       guidesInReview: items.filter(isReviewGame).length
     };
@@ -444,13 +580,17 @@ window.AppAdmin = (() => {
 
   function buildAdminEditorialQueue(state = {}) {
     const games = Array.isArray(state.availableGames) ? state.availableGames : [];
+    const feedbackNames = getFeedbackGameNames(state);
     const lowScoreGames = games
-      .map(game => ({ game, score: createEditorialQualityModel(game).score }))
+      .map(game => ({ game, score: getAdminEditorialScore(game) }))
       .filter(item => item.score < 70);
     const withoutCover = games.filter(game => !(game.cover_image || game.image));
+    const lowCoverage = games.filter(game => game.coverage_level === 'partial' || Number(game.roadmap_count || 0) < 3 || Number(game.trophy_count || 0) < 12);
     const suspicious = games.filter(hasSuspiciousFilterSignal);
     const changedRecently = games.filter(game => wasChangedRecently(game, 14));
     const verifiedRecently = changedRecently.filter(isVerifiedGame);
+    const feedbackGames = games.filter(game => hasFeedbackForGame(game, feedbackNames));
+    const recentlyAddedOrReviewed = games.filter(game => wasChangedRecently({ ...game, updated_at: game.last_reviewed_at || game.created_at || game.updated_at }, 14));
     const feedbackTotal = Number(state.adminFeedbackResponse?.pagination?.total || state.adminBetaMetrics?.overview?.newFeedbacks || 0);
     const reviewGames = games.filter(isReviewGame);
 
@@ -460,60 +600,84 @@ window.AppAdmin = (() => {
         count: reviewGames.length,
         description: 'Guias com status editorial ou verificação pendente.',
         examples: reviewGames.map(game => game.name),
+        filter: 'review',
         target: '#adminCatalogPanel',
-        action: 'Ver guias'
+        action: 'Ver guias',
+        empty: 'Nenhum guia está marcado como revisão agora.'
       },
       {
-        title: 'Score editorial baixo',
+        title: 'Guias com score editorial baixo',
         count: lowScoreGames.length,
-        description: 'Guias que parecem incompletos pela mesma régua do editor.',
+        description: 'Guias abaixo de 70 pela régua de completude editorial.',
         examples: lowScoreGames.map(item => `${item.game.name} (${item.score})`),
+        filter: 'low-score',
         target: '#adminCatalogPanel',
-        action: 'Revisar'
+        action: 'Ver guias',
+        empty: 'Nenhum guia carregado ficou abaixo de 70.'
       },
       {
-        title: 'Guias sem capa',
+        title: 'Guias sem capa ou imagem social',
         count: withoutCover.length,
         description: 'Cards com acabamento visual ou compartilhamento enfraquecido.',
         examples: withoutCover.map(game => game.name),
+        filter: 'no-cover',
         target: '#adminCatalogPanel',
-        action: 'Ver guias'
+        action: 'Ver guias',
+        empty: 'Todos os guias carregados têm imagem principal.'
       },
       {
-        title: 'Filtros suspeitos',
+        title: 'Guias com cobertura editorial baixa',
+        count: lowCoverage.length,
+        description: 'Cobertura inicial, poucos troféus ou roadmap curto.',
+        examples: lowCoverage.map(game => game.name),
+        filter: 'low-coverage',
+        target: '#adminCatalogPanel',
+        action: 'Ver guias',
+        empty: 'Nenhum guia carregado parece curto por cobertura.'
+      },
+      {
+        title: 'Guias com filtros suspeitos',
         count: suspicious.length,
         description: 'Sinais contraditórios ou metadados que merecem conferência.',
         examples: suspicious.map(game => game.name),
+        filter: 'suspicious',
         target: '#adminCatalogPanel',
-        action: 'Conferir'
+        action: 'Ver guias',
+        empty: 'Nenhum sinal suspeito foi detectado com os dados disponíveis.'
       },
       {
-        title: 'Alterados recentemente',
-        count: changedRecently.length,
-        description: 'Guias modificados nos últimos 14 dias.',
-        examples: changedRecently.map(game => game.name),
-        target: '#adminCatalogPanel',
-        action: 'Ver recentes'
-      },
-      {
-        title: 'Feedbacks pendentes',
-        count: feedbackTotal,
+        title: 'Guias com feedback pendente',
+        count: Math.max(feedbackTotal, feedbackGames.length),
         description: 'Mensagens recebidas aguardando triagem editorial.',
-        examples: [],
+        examples: feedbackGames.map(game => game.name),
+        filter: feedbackGames.length ? 'feedback' : '',
         target: '#adminFeedbackPanel',
-        action: 'Ver feedbacks'
+        action: 'Ver feedbacks',
+        empty: 'Nenhum feedback pendente foi carregado.'
       },
       {
-        title: 'Verificados alterados',
+        title: 'Guias verificados alterados recentemente',
         count: verifiedRecently.length,
         description: 'Guias verificados que foram mexidos recentemente.',
         examples: verifiedRecently.map(game => game.name),
+        filter: 'verified',
         target: '#adminCatalogPanel',
-        action: 'Auditar'
+        action: 'Ver guias',
+        empty: 'Nenhum guia verificado foi alterado nos últimos 14 dias.'
+      },
+      {
+        title: 'Guias adicionados/revisados recentemente',
+        count: recentlyAddedOrReviewed.length,
+        description: 'Entradas novas ou revisadas nos últimos 14 dias.',
+        examples: recentlyAddedOrReviewed.map(game => game.name),
+        filter: 'recent',
+        target: '#adminCatalogPanel',
+        action: 'Ver guias',
+        empty: 'Nenhum guia novo ou revisado apareceu nos últimos 14 dias.'
       }
     ];
 
-    return cards.filter(card => card.count > 0);
+    return cards;
   }
 
   function refreshEditorialQuality(UI, state, collectGameFormPayload) {
@@ -532,14 +696,23 @@ window.AppAdmin = (() => {
       removeEntriesByIdentity, persistLibrary
     } = deps;
 
+    function refreshAdminWorkboard() {
+      UI.renderAdminSummary(buildEnhancedAdminSummary(state.adminSummary, state.availableGames));
+      UI.renderAdminEditorialQueue?.(buildAdminEditorialQueue(state));
+    }
+
     async function loadAdminGames() {
       if (!state.session.authenticated) return;
-      state.adminGamesResponse = await ApiService.getGames({
-        q: state.adminSearch,
-        sort: state.adminSort,
-        page: state.adminPage,
-        limit: 10
-      });
+      if (!state.availableGames.length) {
+        state.adminGamesResponse = await ApiService.getGames({
+          q: state.adminSearch,
+          sort: state.adminSort,
+          page: state.adminPage,
+          limit: 10
+        });
+      } else {
+        state.adminGamesResponse = buildAdminGamesResponse(state);
+      }
       state.adminPage = state.adminGamesResponse.pagination?.page || 1;
       UI.renderAdminGames(state.adminGamesResponse);
     }
@@ -547,7 +720,7 @@ window.AppAdmin = (() => {
     async function loadAdminSummary() {
       if (!state.session.authenticated) return;
       state.adminSummary = await ApiService.getAdminSummary();
-      UI.renderAdminSummary(state.adminSummary);
+      refreshAdminWorkboard();
     }
 
     async function loadAdminFeedback() {
@@ -558,12 +731,14 @@ window.AppAdmin = (() => {
       });
       state.adminFeedbackPage = state.adminFeedbackResponse.pagination?.page || 1;
       UI.renderAdminFeedback?.(state.adminFeedbackResponse);
+      refreshAdminWorkboard();
     }
 
     async function loadAdminBetaMetrics() {
       if (!state.session.authenticated) return;
       state.adminBetaMetrics = await ApiService.getAdminBetaMetrics();
       UI.renderAdminBetaMetrics?.(state.adminBetaMetrics);
+      refreshAdminWorkboard();
     }
 
     function openFormPreview() {
@@ -587,8 +762,10 @@ window.AppAdmin = (() => {
         UI.openAdminModal();
         return;
       }
-      await Promise.all([loadGames(), loadAdminSummary(), loadAdminGames(), loadAdminFeedback(), loadAdminBetaMetrics()]);
+      await loadGames();
+      await Promise.all([loadAdminSummary(), loadAdminGames(), loadAdminFeedback(), loadAdminBetaMetrics()]);
       UI.showView('admin');
+      refreshAdminWorkboard();
       refreshEditorialQuality(UI, state, collectGameFormPayload);
       UI.updateAdminFieldMetrics?.();
     }
@@ -633,8 +810,9 @@ window.AppAdmin = (() => {
         if (quality.score < 55 && !window.confirm(`Este guia está com score editorial ${quality.score}/100 e ainda parece raso. Deseja salvar mesmo assim?`)) return;
         const gameId = UI.qs('#gameId').value.trim();
         const response = gameId ? await ApiService.updateGame(gameId, payload) : await ApiService.createGame(payload);
-        await Promise.all([loadGames({ force: true }), loadAdminSummary(), loadAdminGames()]);
-        UI.renderAdminSummary(state.adminSummary);
+        await loadGames({ force: true });
+        await Promise.all([loadAdminSummary(), loadAdminGames()]);
+        refreshAdminWorkboard();
         UI.resetGameForm();
         UI.toggleGameForm(false);
         UI.togglePreviewPanel(false);
@@ -674,13 +852,20 @@ window.AppAdmin = (() => {
       persistLibrary();
     }
 
-    async function handleDeleteGame(id, name) {
-      if (!window.confirm(`Excluir o jogo "${name}"? Essa ação não pode ser desfeita.`)) return;
+    async function handleDeleteGame(id, name, slug = '') {
+      const expected = String(slug || name || '').trim();
+      const confirmation = window.prompt(`Para excluir definitivamente, digite o slug do jogo:\n\nNome: ${name || 'sem nome'}\nSlug: ${slug || 'sem slug'}`);
+      if (!confirmation || confirmation.trim() !== expected) {
+        UI.showToast('Exclusão cancelada. O slug informado não confere.', 'error');
+        return;
+      }
+      if (!window.confirm(`Confirmar exclusão de "${name}" (${slug || 'sem slug'})? Essa ação não pode ser desfeita.`)) return;
       try {
         const response = await ApiService.deleteGame(id);
         removeLibraryEntriesByGameIdentity({ id, name });
-        await Promise.all([loadGames({ force: true }), loadAdminSummary(), loadAdminGames()]);
-        UI.renderAdminSummary(state.adminSummary);
+        await loadGames({ force: true });
+        await Promise.all([loadAdminSummary(), loadAdminGames()]);
+        refreshAdminWorkboard();
         UI.showToast(response.message, 'success');
       } catch (error) {
         UI.showToast(error.message, 'error');
@@ -690,8 +875,9 @@ window.AppAdmin = (() => {
     async function handleDuplicateGame(id) {
       try {
         const response = await ApiService.duplicateGame(id);
-        await Promise.all([loadGames({ force: true }), loadAdminSummary(), loadAdminGames()]);
-        UI.renderAdminSummary(state.adminSummary);
+        await loadGames({ force: true });
+        await Promise.all([loadAdminSummary(), loadAdminGames()]);
+        refreshAdminWorkboard();
         UI.showToast(response.message, 'success');
         UI.setAdminFormFeedback(`Cópia criada: ${response.game?.name || 'novo jogo'}.`, 'success');
       } catch (error) {
@@ -769,6 +955,7 @@ window.AppAdmin = (() => {
       UI.qs('#adminAccessBtn')?.addEventListener('click', () => page === 'public' ? openBoundAdminModal() : openAdminPanel());
       UI.qs('#adminAccessBtnFooter')?.addEventListener('click', openBoundAdminModal);
       UI.qs('#adminLogoutBtn')?.addEventListener('click', handleAdminLogout);
+      UI.qs('#adminLogoutQuickBtn')?.addEventListener('click', handleAdminLogout);
       bindAdminModalEvents();
 
       UI.qs('#newGameBtn')?.addEventListener('click', () => {
@@ -787,7 +974,9 @@ window.AppAdmin = (() => {
       UI.qs('#closePasswordPanelBtn')?.addEventListener('click', () => UI.togglePasswordPanel(false));
       UI.qs('#passwordForm')?.addEventListener('submit', handlePasswordChange);
       UI.qs('#adminRefreshBtn')?.addEventListener('click', async () => {
-        await Promise.all([loadGames({ force: true }), loadAdminSummary(), loadAdminGames(), loadAdminFeedback(), loadAdminBetaMetrics()]);
+        await loadGames({ force: true });
+        await Promise.all([loadAdminSummary(), loadAdminGames(), loadAdminFeedback(), loadAdminBetaMetrics()]);
+        refreshAdminWorkboard();
         UI.showToast('Catálogo administrativo atualizado.', 'success');
       });
       UI.qs('#adminBetaMetricsRefreshBtn')?.addEventListener('click', async () => {
@@ -857,6 +1046,12 @@ window.AppAdmin = (() => {
         await loadAdminGames();
       });
 
+      UI.qs('#adminFilter')?.addEventListener('change', async event => {
+        state.adminFilter = event.target.value || 'all';
+        state.adminPage = 1;
+        await loadAdminGames();
+      });
+
       UI.qs('#adminSort')?.addEventListener('change', async event => {
         state.adminSort = event.target.value || 'updated-desc';
         state.adminPage = 1;
@@ -871,7 +1066,21 @@ window.AppAdmin = (() => {
         const duplicateButton = event.target.closest('[data-admin-duplicate]');
         if (duplicateButton) return handleDuplicateGame(duplicateButton.dataset.adminDuplicate);
         const deleteButton = event.target.closest('[data-admin-delete]');
-        if (deleteButton) handleDeleteGame(deleteButton.dataset.adminDelete, deleteButton.dataset.adminName);
+        if (deleteButton) handleDeleteGame(deleteButton.dataset.adminDelete, deleteButton.dataset.adminName, deleteButton.dataset.adminSlug);
+      });
+
+      UI.qs('#adminEditorialQueue')?.addEventListener('click', async event => {
+        const queueButton = event.target.closest('[data-admin-queue-target]');
+        if (!queueButton) return;
+        const targetSelector = queueButton.dataset.adminQueueTarget || '#adminCatalogPanel';
+        const filter = queueButton.dataset.adminQueueFilter || '';
+        if (filter && UI.qs('#adminFilter')) {
+          state.adminFilter = filter;
+          UI.qs('#adminFilter').value = filter;
+          state.adminPage = 1;
+          await loadAdminGames();
+        }
+        UI.qs(targetSelector)?.scrollIntoView({ behavior: 'smooth', block: 'start' });
       });
     }
 

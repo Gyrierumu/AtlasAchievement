@@ -39,7 +39,7 @@
     "time_min_hours": 50,
     "time_reason": "50-70h considerando campanha, free roam, 31 bounties, Yōtei Six Camps, coletáveis obrigatórios, equipamentos, armas, upgrades e misc.",
     "time_sort_hours": 50,
-    "updated_at": "2026-06-28 21:19:07",
+    "updated_at": "2026-06-29 22:19:45",
     "verification_note": "Guia validado para a lista base PS5: 54 troféus, distribuição 1/2/7/44, 50-70h, 3/10, 0 perdíveis, online 0, coop 0, 0 troféus por configuração de jogo, sem New Game+, Yōtei Legends separado e 30/61 Altars explicados.",
     "verification_status": "verified",
     "walkthrough": ""
@@ -152,6 +152,10 @@
       "Ignorar Ainu Items, Pillars of the Fallen e Altars excedentes se o objetivo for apenas a platina.",
       "Confirmar que Yōtei Legends não entrou na lista base."
     ],
+    "editorial_summary": [
+      "Ghost of Yōtei é uma platina longa, tranquila e totalmente offline. A lista base possui 54 troféus, não exige online, cooperação, New Game+ ou dificuldade específica, e pode ser concluída em uma única jogada. A campanha pode ser feita em qualquer dificuldade, inclusive Casual, e o jogador ainda pode usar recursos de acessibilidade sem bloquear troféus. Não há troféus perdíveis: depois da história, é possível continuar no free roam para concluir bounties, side tales relevantes, mythic tales, sensei tales, coletáveis, equipamentos e troféus misc.",
+      "A platina exige cerca de 85% de conclusão, mas não exige absolutamente tudo do mapa. O foco é completar todos os 31 bounties, os Yōtei Six Camps, armas, armaduras, Shamisen Songs, Fox Dens, Wolf Dens, Nine Tails Puzzle Boxes, Mountain Reliquary puzzles, Bamboo Strikes, Shrine Climbs, Hot Springs, 30 Altars of Reflection e outras atividades ligadas a troféus. Ainu Items, Pillars of the Fallen e todos os 61 Altars não são necessários. O DLC Yōtei Legends é separado, tem troféus online/co-op próprios e não entra na platina Legendary Onryō."
+    ],
     "faq": [
       {
         "answer": "Não. Não há troféus perdíveis; tudo necessário para a platina base pode ser concluído no free roam após a história.",
@@ -221,6 +225,38 @@
       "risk": "O risco real é organização: acompanhe os 31 bounties e categorias de coletáveis para não se perder no cleanup.",
       "summary": "Platina PS5 de 50-70h, 3/10, totalmente offline, sem perdíveis, sem coop, sem New Game+ e sem exigência por configuração de jogo."
     },
+    "quick_plan": [
+      {
+        "detail": "Concluir a campanha no ritmo que preferir, abrir regiões e liberar ferramentas suficientes para explorar Ezo com conforto.",
+        "number": 1,
+        "title": "História em qualquer dificuldade e abertura das regiões"
+      },
+      {
+        "detail": "Fechar linhas que liberam armas, técnicas, aliados, equipamentos e troféus específicos.",
+        "number": 2,
+        "title": "Side Tales, Sensei Tales e Mythic Tales relevantes"
+      },
+      {
+        "detail": "Completar os 31 bounties e todos os Yōtei Six Camps exigidos pela lista base.",
+        "number": 3,
+        "title": "Bounties e Yōtei Six Camps"
+      },
+      {
+        "detail": "Completar as atividades que contam para troféus sem transformar a platina em 100% absoluto.",
+        "number": 4,
+        "title": "Coletáveis e atividades de exploração"
+      },
+      {
+        "detail": "Fechar requisitos de armas, armaduras, ferramentas e cosméticos ligados a troféus.",
+        "number": 5,
+        "title": "Equipamentos, armas, vanity gear e upgrades"
+      },
+      {
+        "detail": "Resolver ações específicas, minigames e a revisão dos 54 troféus antes da platina.",
+        "number": 6,
+        "title": "Misc de combate, minigames e conferência final"
+      }
+    ],
     "seo": {
       "description": "Guia de platina de Ghost of Yōtei no PS5 com 54 troféus, 50-70h, 3/10, sem perdíveis, offline, sem coop, sem New Game+, checklist EN/PT-BR e roadmap.",
       "keywords": "Ghost of Yōtei troféus, Ghost of Yotei platina, Ghost of Yōtei guia PS5, Legendary Onryō, Ghost of Yotei roadmap, Yōtei Six Camps, Master Bounty Hunter",

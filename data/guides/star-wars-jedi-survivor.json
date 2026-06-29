@@ -39,7 +39,7 @@
     "time_min_hours": 40,
     "time_reason": "A faixa de 40-50 horas considera campanha, exploração, scans, Jedi Chambers, Force Tears, perks, upgrades, bounties, fish, garden e cleanup por planeta.",
     "time_sort_hours": 40,
-    "updated_at": "2026-06-28 21:19:07",
+    "updated_at": "2026-06-29 22:19:45",
     "verification_note": "Guia público seed-managed com checklist base e roadmap; aguardando revisão editorial manual final.",
     "verification_status": "verified",
     "walkthrough": null
@@ -147,6 +147,11 @@
       "Vencer Holotactics e equipar Perks em todos os slots.",
       "Finalizar combat/misc/customização sem marcar como Dificuldade."
     ],
+    "editorial_summary": [
+      "Star Wars Jedi: Survivor e uma platina acessivel de acao-aventura, focada em campanha, exploracao metroidvania, cleanup por planeta e objetivos situacionais de combate. A lista base nao exige online, coop, New Game+ ou dificuldade especifica, entao o maior risco pratico e esquecer You've Got A Friend durante as janelas com companheiros.",
+      "Resolva os assistes de Bode cedo e complete os de Merrin quando ela estiver disponivel; o restante pode ser organizado no free roam depois da historia. Use Map Upgrades, fast travel e o checklist para separar Priorite Shards, Jedi Chambers, Force Tears, bounties, scans, peixes, plantas, Cantina, Holotactics e lojas.",
+      "A rota ideal e jogar a campanha em Story Mode ou na dificuldade que preferir, sem tentar limpar areas bloqueadas cedo demais. Depois da historia, volte aos planetas com todas as habilidades e finalize colecionaveis, combates situacionais, customizacoes e categorias de Cantina."
+    ],
     "faq": [
       {
         "answer": "Não. A lista base é totalmente offline.",
@@ -204,6 +209,38 @@
       "risk": "O risco principal é perder Bode; Perk of the Job e They’re Probably Fine são riscos técnicos, não perdíveis.",
       "summary": "Platina de 40-50h, 3/10, offline, sem coop e com 1 perdível real: You’ve Got A Friend."
     },
+    "quick_plan": [
+      {
+        "detail": "Jogar a campanha em qualquer configuração, usar assist de Bode 10 vezes no Capítulo 1 e/ou Capítulo 4, usar assist de Merrin 10 vezes quando ela estiver disponível, esca…",
+        "number": 1,
+        "title": "História em Story Mode e assistes de Bode"
+      },
+      {
+        "detail": "Usar o free roam após a história, desbloquear Map Upgrades e explorar Koboh, Jedha, Shattered Moon, Coruscant, Nova Garon e demais áreas necessárias.",
+        "number": 2,
+        "title": "Pós-história, map upgrades e cleanup de planetas"
+      },
+      {
+        "detail": "Completar os 17 Bounty Enemies, derrotar todos os Legendary Adversaries e escanear todos os inimigos para Intergalactic Geographic.",
+        "number": 3,
+        "title": "Bounties, Legendary Adversaries e Tactical Guide"
+      },
+      {
+        "detail": "Recrutar todos os 11 Cantina Recruits, vencer todas as partidas de Holotactics, comprar tudo da Doma para Splurgle e equipar Perks em todos os slots.",
+        "number": 4,
+        "title": "Cantina, Holotactics e lojas"
+      },
+      {
+        "detail": "Finalizar Han Slowlo, So Uncivilized, Catch!, This Is Canon, Slam Dunk, Riposte, Mirror Match, Pinpoint, Skywalker, They’re Probably Fine, Kitted Out, Hey, Luke At Us e…",
+        "number": 5,
+        "title": "Combate, misc e customização"
+      },
+      {
+        "detail": "Star Wars Jedi: Survivor é uma platina offline, acessível e focada em história, exploração, cleanup de planetas, colecionáveis específicos, bounties, Force Tears, Jedi C…",
+        "number": 6,
+        "title": "Leia os alertas iniciais"
+      }
+    ],
     "seo": {
       "description": "Guia de platina de Star Wars Jedi: Survivor com 54 troféus, 40-50h, 3/10, 1 perdível, offline, sem coop, Story Mode, checklist EN/PT-BR e roadmap.",
       "keywords": "Star Wars Jedi Survivor troféus, Star Wars Jedi Survivor platina, You’ve Got A Friend, Priorite Shards, Force Tears, Jedi Chambers, Caij Match",

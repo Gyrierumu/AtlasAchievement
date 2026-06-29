@@ -21,6 +21,7 @@ window.AppContextFactory = (() => {
       catalogIntent: 'all',
       adminSearch: '',
       adminSort: 'updated-desc',
+      adminFilter: 'all',
       adminPage: 1,
       adminFeedbackPage: 1,
       adminGamesResponse: { items: [], pagination: { page: 1, totalPages: 1, total: 0 } },

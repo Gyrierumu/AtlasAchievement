@@ -101,6 +101,55 @@ window.UILibrary = (() => {
     });
   }
 
+  function pluralize(count = 0, singular = '', plural = '') {
+    return Number(count) === 1 ? singular : (plural || `${singular}s`);
+  }
+
+  function getCollectionStats(items = []) {
+    const saved = Array.isArray(items) ? items.length : 0;
+    const inProgress = (items || []).filter(game => game.progress > 0 && game.progress < 100).length;
+    const completed = (items || []).filter(game => game.progress >= 100 || game.status === 'completed').length;
+    const notStarted = Math.max(saved - inProgress - completed, 0);
+    return { saved, inProgress, completed, notStarted };
+  }
+
+  function findNextPendingTrophy(items = []) {
+    return [...(items || [])]
+      .filter(game => game.progress > 0 && game.progress < 100 && game.nextTrophyModel)
+      .sort((a, b) => b.momentumScore - a.momentumScore || a.remaining - b.remaining || b.progress - a.progress)[0] || null;
+  }
+
+  function renderLibrarySummary(target, allItems = [], searchedItems = []) {
+    if (!target) return;
+    const stats = getCollectionStats(allItems);
+    if (!stats.saved) {
+      target.innerHTML = 'Salve guias para montar sua coleção e retomar checklists quando voltar.';
+      return;
+    }
+
+    const topNext = findNextPendingTrophy(allItems);
+    const hasSearchFilter = searchedItems.length !== allItems.length;
+    const searchCopy = hasSearchFilter
+      ? `<span class="library-summary__search">${escapeHtml(String(searchedItems.length))} ${escapeHtml(pluralize(searchedItems.length, 'resultado', 'resultados'))} na busca atual</span>`
+      : '';
+
+    target.innerHTML = `
+      <span class="library-summary__stats" aria-label="Resumo da coleção">
+        <span><strong>${escapeHtml(String(stats.saved))}</strong>${escapeHtml(pluralize(stats.saved, 'jogo salvo', 'jogos salvos'))}</span>
+        <span><strong>${escapeHtml(String(stats.inProgress))}</strong>em andamento</span>
+        <span><strong>${escapeHtml(String(stats.completed))}</strong>${escapeHtml(pluralize(stats.completed, 'concluído', 'concluídos'))}</span>
+      </span>
+      ${topNext ? `
+        <span class="library-summary__next">
+          <i class="fas fa-trophy" aria-hidden="true"></i>
+          Próximo troféu: <strong>${escapeHtml(topNext.nextTrophyModel.name)}</strong>
+          <small>${escapeHtml(topNext.name || 'Jogo em andamento')}</small>
+        </span>
+      ` : ''}
+      ${searchCopy}
+    `;
+  }
+
   function renderStatusTabs(items = [], activeFilter = 'all') {
     const tabs = qs('#libraryStatusTabs');
     if (!tabs) return;
@@ -226,15 +275,16 @@ window.UILibrary = (() => {
         <div>
           <span class="atlas-section-kicker">Seu ritmo atual</span>
           <h3>Resumo da coleção</h3>
-          <p>${escapeHtml(profile.openProjects > 0 ? `${profile.style} ${profile.pace}` : 'Nenhum jogo em andamento ainda. Escolha um salvo para começar.')}</p>
+          <p>${escapeHtml(profile.openProjects > 0 ? `Você tem ${profile.openProjects} ${pluralize(profile.openProjects, 'jogo em andamento', 'jogos em andamento')}. ${profile.style} ${profile.pace}` : 'Nenhum jogo em andamento ainda. Escolha um salvo para começar.')}</p>
         </div>
         <div class="library-profile-card__metrics">
           ${usefulMetrics.map(metric => `<span><strong>${escapeHtml(String(metric.value))}</strong>${escapeHtml(metric.label)}</span>`).join('')}
         </div>
         ${topNext && profile.openProjects > 0 ? `
           <div class="library-profile-card__next">
-            <span>Próximo troféu</span>
+            <span>Próximo troféu pendente</span>
             <strong>${escapeHtml(topNext.nextTrophyModel.name)}</strong>
+            <p>${escapeHtml(topNext.name || 'Jogo em andamento')}</p>
             <button type="button" class="atlas-btn atlas-btn-secondary atlas-btn-compact" data-open-game="${escapeAttribute(topNext.name || '')}" data-open-slug="${escapeAttribute(topNext.slug || '')}">Continuar</button>
           </div>` : ''}
       </article>` : '';
@@ -449,16 +499,17 @@ window.UILibrary = (() => {
 
     if (!hasSavedItems && !trimmedSearch) {
       return {
-        title: 'Sua próxima platina começa aqui.',
-        detail: 'Salve um guia para acompanhar progresso, checklist e próxima etapa sem precisar procurar tudo de novo.',
-        helper: 'Entre para sincronizar sua biblioteca entre dispositivos.',
+        title: 'Sua próxima platina começa aqui',
+        detail: 'Explore o catálogo, salve um guia e volte depois com checklist, progresso e próximo troféu pendente organizados no mesmo lugar.',
+        helper: 'Hoje o progresso fica salvo localmente neste navegador. No futuro, a sincronização poderá acontecer sem depender de dados sensíveis.',
         benefits: [
-          'Continue de onde parou.',
-          'Acompanhe checklist e roadmap.',
-          'Organize suas platinas em andamento.'
+          'Continue exatamente de onde parou.',
+          'Acompanhe checklist, roadmap e pendências.',
+          'Receba recomendações baseadas na coleção.'
         ],
         example: true,
-        action: '<a class="atlas-btn atlas-btn-primary" href="/catalogo" data-library-catalog-link><i class="fas fa-compass" aria-hidden="true"></i> Explorar guias para salvar</a>',
+        illustration: 'welcome',
+        action: '<a class="atlas-btn atlas-btn-primary" href="/catalogo" data-library-catalog-link><i class="fas fa-compass" aria-hidden="true"></i> Explorar guias</a>',
         premium: true
       };
     }
@@ -469,9 +520,10 @@ window.UILibrary = (() => {
         detail: hasSavedItems
           ? 'Revise o termo buscado ou limpe a busca para ver todos os jogos salvos.'
           : 'Você ainda não salvou jogos para pesquisar. Comece pelo catálogo.',
+        illustration: 'search',
         action: hasSavedItems
           ? '<button type="button" class="atlas-btn atlas-btn-secondary atlas-btn-compact" data-library-clear-search><i class="fas fa-xmark" aria-hidden="true"></i> Limpar busca</button>'
-          : '<a class="atlas-btn atlas-btn-primary atlas-btn-compact" href="/catalogo"><i class="fas fa-compass" aria-hidden="true"></i> Explorar catálogo</a>'
+          : '<a class="atlas-btn atlas-btn-primary atlas-btn-compact" href="/catalogo" data-library-catalog-link><i class="fas fa-compass" aria-hidden="true"></i> Explorar catálogo</a>'
       };
     }
 
@@ -479,7 +531,8 @@ window.UILibrary = (() => {
       return {
         title: 'Nenhum jogo em andamento',
         detail: 'Abra um jogo salvo, marque alguns troféus no checklist e ele passa a aparecer aqui automaticamente.',
-        action: '<button type="button" class="atlas-btn atlas-btn-secondary atlas-btn-compact" data-library-status="all"><i class="fas fa-layer-group" aria-hidden="true"></i> Ver todos os salvos</button>'
+        illustration: 'progress',
+        action: '<button type="button" class="atlas-btn atlas-btn-secondary atlas-btn-compact" data-library-status="all"><i class="fas fa-layer-group" aria-hidden="true"></i> Ver todos os salvos</button><a class="atlas-btn atlas-btn-primary atlas-btn-compact" href="/catalogo" data-library-catalog-link><i class="fas fa-compass" aria-hidden="true"></i> Explorar guias</a>'
       };
     }
 
@@ -487,6 +540,7 @@ window.UILibrary = (() => {
       return {
         title: 'Nenhuma platina concluída ainda',
         detail: 'Quando um checklist chegar a 100%, o jogo entra nesta aba para consulta rápida.',
+        illustration: 'completed',
         action: '<button type="button" class="atlas-btn atlas-btn-secondary atlas-btn-compact" data-library-status="all"><i class="fas fa-layer-group" aria-hidden="true"></i> Ver todos os salvos</button>'
       };
     }
@@ -495,14 +549,16 @@ window.UILibrary = (() => {
       return {
         title: 'Nenhum jogo salvo para depois',
         detail: 'Os jogos sem progresso aparecem aqui. Use a aba Todos para retomar o que já está em andamento.',
-        action: '<button type="button" class="atlas-btn atlas-btn-secondary atlas-btn-compact" data-library-status="all"><i class="fas fa-layer-group" aria-hidden="true"></i> Ver todos os salvos</button>'
+        illustration: 'saved',
+        action: '<button type="button" class="atlas-btn atlas-btn-secondary atlas-btn-compact" data-library-status="all"><i class="fas fa-layer-group" aria-hidden="true"></i> Ver todos os salvos</button><a class="atlas-btn atlas-btn-primary atlas-btn-compact" href="/catalogo" data-library-catalog-link><i class="fas fa-compass" aria-hidden="true"></i> Explorar guias</a>'
       };
     }
 
     return {
       title: activeFilter?.label ? `Nada em ${activeFilter.label.toLowerCase()}` : 'Nada nesta aba',
       detail: 'Troque o filtro para ver outros jogos salvos ou explore o catálogo para adicionar mais opções.',
-      action: '<a class="atlas-btn atlas-btn-primary atlas-btn-compact" href="/catalogo"><i class="fas fa-compass" aria-hidden="true"></i> Explorar catálogo</a>'
+      illustration: 'catalog',
+      action: '<a class="atlas-btn atlas-btn-primary atlas-btn-compact" href="/catalogo" data-library-catalog-link><i class="fas fa-compass" aria-hidden="true"></i> Explorar catálogo</a>'
     };
   }
 
@@ -531,23 +587,16 @@ window.UILibrary = (() => {
     }
 
     if (syncStatus) {
-      syncStatus.textContent = options.storageLabel || 'Salvo neste navegador';
+      const storageLabel = String(options.storageLabel || 'Salvo neste navegador');
+      syncStatus.textContent = /conta/i.test(storageLabel)
+        ? 'Biblioteca salva na conta. O progresso local pode ser importado sem expor dados sensíveis.'
+        : 'Progresso salvo localmente neste navegador. A sincronização poderá evoluir no futuro sem depender de dados sensíveis.';
     }
 
     const activeFilter = STATUS_FILTERS.find(filter => filter.id === statusFilter) || STATUS_FILTERS[0];
     const sorted = sortLibraryItems(searchedItems.filter(activeFilter.matcher), sort);
 
-    if (summary) {
-      if (!libraryItems.length) {
-        summary.textContent = '';
-      } else if (!searchedItems.length) {
-        summary.textContent = 'Nenhum jogo salvo corresponde à busca.';
-      } else {
-        const inProgress = searchedItems.filter(game => game.progress > 0 && game.progress < 100).length;
-        const completedGames = searchedItems.filter(game => game.progress >= 100).length;
-        summary.textContent = `${searchedItems.length} jogo(s) salvo(s) • ${inProgress} em andamento • ${completedGames} concluído(s).`;
-      }
-    }
+    renderLibrarySummary(summary, libraryItems, searchedItems);
 
     const librarySorted = sortLibraryItems(libraryItems, sort);
     renderFocusCards(librarySorted);
@@ -574,6 +623,10 @@ window.UILibrary = (() => {
       target.innerHTML = `
         <div class="library-shelf__empty${emptyState.premium ? ' library-shelf__empty--welcome' : ''}">
           <div class="library-empty__copy">
+            <div class="library-empty-illustration library-empty-illustration--${escapeAttribute(emptyState.illustration || 'catalog')}" aria-hidden="true">
+              <i class="fas ${escapeAttribute(emptyState.illustration === 'completed' ? 'fa-trophy' : emptyState.illustration === 'search' ? 'fa-magnifying-glass' : emptyState.illustration === 'progress' ? 'fa-list-check' : 'fa-compass')}"></i>
+              <span></span>
+            </div>
             <strong>${escapeHtml(emptyState.title || emptyTitle)}</strong>
             <span>${escapeHtml(emptyState.detail || emptyDetail)}</span>
             ${Array.isArray(emptyState.benefits) && emptyState.benefits.length ? `
@@ -585,14 +638,16 @@ window.UILibrary = (() => {
             ${emptyState.action || ''}
           </div>
           ${emptyState.example ? `
-            <article class="library-empty-example" aria-label="Exemplo visual de guia salvo">
-              <span>Exemplo de guia salvo</span>
-              <strong>Hades</strong>
-              <div class="library-empty-example__progress" aria-hidden="true"><span style="width:0%"></span></div>
-              <p>0% concluído</p>
-              <small>Próxima etapa: começar pelo roadmap</small>
-              <button type="button" class="atlas-btn atlas-btn-secondary atlas-btn-compact" disabled>Continuar</button>
-            </article>
+            <div class="library-empty-visual">
+              <article class="library-empty-example" aria-label="Exemplo visual de guia salvo">
+                <span>Exemplo de guia salvo</span>
+                <strong>Hades</strong>
+                <div class="library-empty-example__progress" aria-hidden="true"><span style="width:0%"></span></div>
+                <p>0% concluído</p>
+                <small>Próxima etapa: começar pelo roadmap</small>
+                <button type="button" class="atlas-btn atlas-btn-secondary atlas-btn-compact" disabled>Continuar</button>
+              </article>
+            </div>
           ` : ''}
         </div>
       `;

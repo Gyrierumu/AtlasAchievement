@@ -3,6 +3,7 @@ const path = require('path');
 
 const env = require('../src/config/env');
 const sampleGames = require('../src/data/sampleGames');
+const guideViewModel = require('../src/shared/guideViewModel');
 const { getProtectedVerifiedGuide } = require('../src/data/protectedVerifiedGuides');
 const { CANONICAL_GAME_SLUG_ALIASES, getCanonicalGameSlug } = require('../src/utils/slug');
 const {
@@ -76,7 +77,17 @@ function getSeedExtrasBySlug() {
       aliases: game.aliases || game.slug_aliases || [],
       attentionPoints: game.attentionPoints || [],
       checklist: game.checklist || [],
-      faq: game.faq || [],
+      editorial_summary: typeof guideViewModel.buildGuideEditorialSummary === 'function'
+        ? guideViewModel.buildGuideEditorialSummary(game)
+        : (game.editorial_summary || []),
+      faq: Array.isArray(game.faq) && game.faq.length
+        ? game.faq
+        : (typeof guideViewModel.buildContextualFaq === 'function'
+          ? guideViewModel.buildContextualFaq(game, { trophies: game.trophies || [], roadmap: game.roadmap || [] })
+          : []),
+      quick_plan: typeof guideViewModel.buildGuideQuickPlan === 'function'
+        ? guideViewModel.buildGuideQuickPlan(game, { roadmap: game.roadmap || [] })
+        : [],
       quickDecision: game.quickDecision || null,
       seo: game.seo || {},
       tags: game.tags || [],

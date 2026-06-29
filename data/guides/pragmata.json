@@ -39,7 +39,7 @@
     "time_min_hours": 30,
     "time_reason": "A faixa de 30-35 horas cobre campanha, coleta, pós-jogo, Training Sims, Unknown Signal, cleanup e uma jogada separada em Lunatic.",
     "time_sort_hours": 30,
-    "updated_at": "2026-06-28 21:19:07",
+    "updated_at": "2026-06-29 22:19:45",
     "verification_note": "Guia revisado editorialmente.",
     "verification_status": "verified",
     "walkthrough": ""
@@ -76,9 +76,67 @@
     "aliases": [],
     "attentionPoints": [],
     "checklist": [],
-    "faq": [],
+    "editorial_summary": [],
+    "faq": [
+      {
+        "answer": "Sim. O guia trata 1 troféu como perdível ou sensível a janela de oportunidade: You're Not Getting Away That Easy. Leia os pontos de atenção antes da primeira campanha para evitar repetir progresso.",
+        "question": "PRAGMATA tem troféus perdíveis?"
+      },
+      {
+        "answer": "Não. A platina base não exige online, servidores ou assinatura obrigatória.",
+        "question": "PRAGMATA precisa de online para platinar?"
+      },
+      {
+        "answer": "Não. A platina base é single-player e não exige coop.",
+        "question": "PRAGMATA tem coop obrigatório?"
+      },
+      {
+        "answer": "O tempo estimado é 30-35 horas, considerando campanha, exploração, coletáveis, Unknown Signal, Training Sims, cleanup e uma jogada em Lunatic.",
+        "question": "Quanto tempo leva para platinar PRAGMATA?"
+      },
+      {
+        "answer": "A dificuldade cadastrada é 6/10. O peso vem de Lunatic, objetivos situacionais, combate, hacking, exploração e atenção aos perdíveis.",
+        "question": "Qual a dificuldade da platina de PRAGMATA?"
+      },
+      {
+        "answer": "O guia recomenda 2 jogadas: uma primeira campanha para aprender sistemas e limpar bastante conteúdo, e uma campanha em Lunatic para o troféu de dificuldade.",
+        "question": "Quantas jogadas são necessárias para platinar PRAGMATA?"
+      }
+    ],
     "note": "Campos exportados para auditoria. O SQLite atual nao possui colunas nativas para todos esses extras; a importacao preserva o que o banco suporta.",
     "quickDecision": null,
+    "quick_plan": [
+      {
+        "detail": "Dominar o ritmo entre movimentação, tiros, hackeamento de Diana, Abrigo e treino inicial.",
+        "number": 1,
+        "title": "Aprenda combate e hacking"
+      },
+      {
+        "detail": "Concluir a história uma vez em dificuldade livre, mantendo atenção ao troféu perdível validado.",
+        "number": 2,
+        "title": "Feche a campanha base"
+      },
+      {
+        "detail": "Reduzir pendências de LMTs, Mini Cabins, escotilhas, Red Zones, impressões e progresso de setor.",
+        "number": 3,
+        "title": "Mapeie coletáveis e metas paralelas"
+      },
+      {
+        "detail": "Fechar 100% por setor, desafios especiais, chefes fortalecidos e Black Box.",
+        "number": 4,
+        "title": "Limpe o pós-jogo em Unknown Signal"
+      },
+      {
+        "detail": "Concluir a segunda jogada em Nova Partida na dificuldade Lunática.",
+        "number": 5,
+        "title": "Faça a run em Lunatic"
+      },
+      {
+        "detail": "Revisar o checklist e confirmar qualquer troféu restante antes de encerrar a platina.",
+        "number": 6,
+        "title": "Feche pendências finais"
+      }
+    ],
     "seo": {},
     "tags": []
   },

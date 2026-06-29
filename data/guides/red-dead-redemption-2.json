@@ -39,7 +39,7 @@
     "time_min_hours": 240,
     "time_reason": "A faixa de 240-300 horas considera campanha, 100%, colecionáveis, animais, medalhas de ouro, desafios e progresso online até rank 50.",
     "time_sort_hours": 240,
-    "updated_at": "2026-06-28 21:19:06",
+    "updated_at": "2026-06-29 22:19:44",
     "verification_note": "Guia normalizado a partir do dado seed com checklist e roadmap; aguardando revisão editorial manual final.",
     "verification_status": "review",
     "walkthrough": null
@@ -108,6 +108,10 @@
       "Criar itens, munição especial, vender ao Butcher e coletar ervas no online.",
       "Revisar checklist final e confirmar que DLC, edições especiais e Gold Bars não foram tratados como obrigatórios."
     ],
+    "editorial_summary": [
+      "Red Dead Redemption 2 é uma platina longa e exigente, focada em completar a história, controlar troféus perdíveis de acampamento/honra, fazer 100% de conclusão, obter 70 medalhas de ouro, concluir colecionáveis extensos, estudar e esfolar animais e ainda avançar bastante em Red Dead Online. A lista base exige online, multiplayer/Posse e muito grind, mas não exige DLC, edição especial ou compra de Gold Bars.",
+      "A ordem mais segura é jogar a campanha com atenção aos perdíveis de capítulos, completar atividades opcionais de honra, pedidos de companheiros, doações e atividades de acampamento enquanto ainda estão disponíveis, depois fazer 100%, Gold Rush, colecionáveis e animais no modo história. Deixe Red Dead Online para uma etapa própria, focando rank 50, eventos, posses, MVP e progresso de awards. O principal cuidado é não avançar capítulos sem revisar os perdíveis do acampamento e não subestimar o tempo necessário para Zoologist, Skin Deep, Gold Rush e Notorious."
+    ],
     "faq": [
       {
         "answer": "Sim. Os principais perdíveis são Lending a Hand, Friends With Benefits, Give to the Poor e Errand Boy. Todos dependem de conteúdo de campanha/acampamento que pode ficar indisponível se você avançar demais.",
@@ -144,6 +148,38 @@
       "recommendation": "Só entre se você aceitar uma checklist pesada offline e online. Controle os perdíveis durante a campanha, separe Gold Rush e animais em blocos próprios e deixe Red Dead Online como etapa dedicada.",
       "summary": "Platina longa, com 52 troféus, online obrigatório, quatro perdíveis reais de campanha/acampamento, 100%, 70 medalhas de ouro, animais e rank 50 em Red Dead Online."
     },
+    "quick_plan": [
+      {
+        "detail": "Avançar pela história sem perder missões opcionais de honra, pedidos de companheiros, doações e atividades de acampamento.",
+        "number": 1,
+        "title": "Jogue a campanha controlando os perdíveis"
+      },
+      {
+        "detail": "Finalizar capítulos, epílogo e troféus automáticos enquanto organiza a limpeza de mundo aberto.",
+        "number": 2,
+        "title": "Conclua a história e prepare o pós-game"
+      },
+      {
+        "detail": "Completar os requisitos de Best in the West, colecionáveis, strangers, desafios e atividades do mundo.",
+        "number": 3,
+        "title": "Faça 100% de conclusão do modo história"
+      },
+      {
+        "detail": "Obter 70 medalhas de ouro em missões da história sem misturar esse grind com a campanha casual.",
+        "number": 4,
+        "title": "Trabalhe Gold Rush e troféus de missões"
+      },
+      {
+        "detail": "Finalizar Zoologist, Skin Deep, crafting, caça, pesca, urso, cavalo e demais troféus longos do modo história.",
+        "number": 5,
+        "title": "Complete animais, crafting e desafios de mundo"
+      },
+      {
+        "detail": "Concluir todos os troféus de Red Dead Online, incluindo rank, eventos, posses, awards, MVP e progresso de mundo online.",
+        "number": 6,
+        "title": "Avance em Red Dead Online"
+      }
+    ],
     "seo": {
       "description": "Roadmap completo da platina de Red Dead Redemption 2, com troféus perdíveis, Red Dead Online, 100%, Gold Rush, animais, checklist e dicas para evitar retrabalho.",
       "keywords": "Red Dead Redemption 2 troféus, Red Dead Redemption 2 platina, Red Dead Redemption 2 guia, Red Dead Redemption 2 roadmap, Red Dead Redemption 2 perdíveis, Red Dead Redemption 2 online, Red Dead Redemption 2 Gold Rush, Red Dead Redemption 2 Zoologist, Red Dead Redemption 2 Skin Deep, Red Dead Redemption 2 checklist",

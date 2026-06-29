@@ -39,7 +39,7 @@
     "time_min_hours": 20,
     "time_reason": "A faixa de 20-30h considera campanha, exploração, veículos, base, história, Cuddlefish e cleanup antes do lançamento final.",
     "time_sort_hours": 30,
-    "updated_at": "2026-06-28 21:19:12",
+    "updated_at": "2026-06-29 22:19:52",
     "verification_note": "Guia inicial de Subnautica adicionado com lista PlayStation base; distribuição e risco de Cuddlefish requerem revisão editorial final.",
     "verification_status": "verified",
     "walkthrough": ""
@@ -76,13 +76,90 @@
     "aliases": [],
     "attentionPoints": [],
     "checklist": [],
-    "faq": [],
+    "editorial_summary": [
+      "A platina de Subnautica é focada em sobrevivência, exploração e progressão natural pela história. A lista base não exige online, coop, DLC ou dificuldade específica; o desafio principal é se orientar no mapa, preparar expedições profundas, construir veículos e manter recursos suficientes para não transformar a reta final em retrabalho.",
+      "A rota mais segura é estabilizar oxigênio, água, comida e base cedo, avançar para Seamoth, Prawn Suit e Cyclops, investigar a Aurora e as instalações alienígenas e deixar o cleanup para antes do lançamento do foguete Neptune. Man's Best Friend fica como risco conservador por causa dos ovos finitos de Cuddlefish, então faça esse troféu antes do final e mantenha saves manuais."
+    ],
+    "faq": [
+      {
+        "answer": "O guia marca um risco conservador em Man’s Best Friend, porque ovos de Cuddlefish são finitos. Faça esse troféu antes do final, mantenha saves manuais e não descarte os ovos.",
+        "question": "Subnautica tem troféus perdíveis?"
+      },
+      {
+        "answer": "Não. A platina de Subnautica é single-player e não exige online, servidores, multiplayer ou assinatura.",
+        "question": "Subnautica precisa de online para platinar?"
+      },
+      {
+        "answer": "Não. Não há coop obrigatório para a platina; a rota do guia é totalmente solo.",
+        "question": "Subnautica tem coop obrigatório?"
+      },
+      {
+        "answer": "A estimativa editorial ficou em 20-30h, considerando sobrevivência, exploração, veículos, história, base e cleanup antes do final.",
+        "question": "Quanto tempo leva para platinar Subnautica?"
+      },
+      {
+        "answer": "A dificuldade ficou em 3/10. O maior desafio é orientação, preparação para áreas profundas e gestão de recursos, não execução difícil.",
+        "question": "Qual a dificuldade da platina?"
+      },
+      {
+        "answer": "Não. O guia cobre a lista base do Subnautica original e não inclui Below Zero, Subnautica 2, versões mobile ou conteúdo futuro.",
+        "question": "Precisa de DLC para a platina?"
+      },
+      {
+        "answer": "Não há Chapter Select tradicional. O cleanup depende de exploração em mundo aberto, planejamento e saves manuais antes de grandes marcos.",
+        "question": "Subnautica tem Chapter Select?"
+      },
+      {
+        "answer": "O caminho mais seguro é revisar tudo antes do lançamento final e manter um save manual. Se precisar limpar algo, volte ao save anterior quando o jogo permitir.",
+        "question": "Dá para continuar explorando antes/depois do final?"
+      },
+      {
+        "answer": "Seamoth, Prawn Suit e Cyclops são importantes para troféus próprios, exploração profunda, segurança e avanço da história.",
+        "question": "Quais veículos são importantes para a platina?"
+      },
+      {
+        "answer": "Exploração profunda, construção dos veículos, Aurora, instalações alienígenas, recursos para expedições longas, Cuddlefish e preparação antes do final.",
+        "question": "O que mais dá trabalho na platina?"
+      }
+    ],
     "note": "Campos exportados para auditoria. O SQLite atual nao possui colunas nativas para todos esses extras; a importacao preserva o que o banco suporta.",
     "quickDecision": {
       "firstAction": "Estabilize recursos básicos, construa uma base funcional e avance a exploração marcando biomas, destroços e rotas profundas com beacons.",
       "recommendation": "Vale platinar Subnautica se você gosta de exploração subaquática, sobrevivência leve e progressão por descoberta. A platina não exige online, coop nem DLC, mas pede planejamento para expedições profundas, veículos, recursos, Aurora, instalações alienígenas e Man's Best Friend antes do lançamento final.",
       "summary": "Platina acessível e single-player: sobrevivência, veículos, exploração profunda, história e cleanup antes do final."
     },
+    "quick_plan": [
+      {
+        "detail": "Aprender os sistemas básicos, coletar recursos essenciais e criar uma rotina segura de oxigênio, comida, água e crafting.",
+        "number": 1,
+        "title": "Sobreviva aos primeiros dias e estabilize recursos"
+      },
+      {
+        "detail": "Criar uma estrutura de suporte para exploração, armazenamento, fabricação e progressão.",
+        "number": 2,
+        "title": "Construa base e equipamentos essenciais"
+      },
+      {
+        "detail": "Construir veículos e equipamentos que permitam explorar áreas mais profundas e avançar a história.",
+        "number": 3,
+        "title": "Desbloqueie veículos e aumente a profundidade"
+      },
+      {
+        "detail": "Seguir os sinais principais, investigar instalações alienígenas e desbloquear marcos narrativos da platina.",
+        "number": 4,
+        "title": "Avance a história e investigue instalações alienígenas"
+      },
+      {
+        "detail": "Finalizar troféus ligados a construção, veículos, exploração, criaturas e objetivos que não vieram naturalmente.",
+        "number": 5,
+        "title": "Faça cleanup de criaturas, bases, veículos e objetivos opcionais"
+      },
+      {
+        "detail": "Revisar a lista de troféus antes de concluir a história e finalizar a platina com segurança.",
+        "number": 6,
+        "title": "Prepare o final e conclua a platina"
+      }
+    ],
     "seo": {},
     "tags": []
   },

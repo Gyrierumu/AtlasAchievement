@@ -39,7 +39,7 @@
     "time_min_hours": 250,
     "time_reason": "A faixa de 250-400+ horas considera campanha, High Rank, HR100, coroas pequenas e grandes, pesquisa, vida endêmica rara, arenas, monstros temperados, Elder Dragons e troféus online.",
     "time_sort_hours": 250,
-    "updated_at": "2026-06-28 21:19:06",
+    "updated_at": "2026-06-29 22:19:44",
     "verification_note": "Precisa revisão editorial final: escopo base/Iceborne e online/multiplayer registrados; revisar coroas, eventos e grind antes de selo verificado.",
     "verification_status": "review",
     "walkthrough": null
@@ -175,6 +175,11 @@
       "Conferir roadmap estruturado sem objetos brutos ou labels internas no front.",
       "Conferir FAQ, decisão rápida, SEO, pontos de atenção, filtros e status entre página e catálogo."
     ],
+    "editorial_summary": [
+      "Monster Hunter: World é uma platina extremamente longa, dependente de endgame e grind, mas sem troféus perdíveis e sem requisito de dificuldade. A lista base tem 50 troféus e não exige Iceborne, porém exige online e multiplayer por SOS, quests multiplayer e Guild Cards.",
+      "O grande gargalo é a caça às gold crowns: Miniature Crown Master e Giant Crown Master podem consumir centenas de horas por RNG. Silver crown não conta para Giant Crown Master. A rota mais segura combina crown hunting com HR100, 500 large monsters, captures, Elder Dragons, tempered monsters, investigations e research.",
+      "Iceborne tem progressão e lista separadas e não é necessário para Conqueror of the New World. Event quests podem ajudar em algumas crowns quando disponíveis, mas não tornam DLC obrigatória. Os nomes PT-BR usam tradução editorial consistente quando não há localização oficial confirmada no dado do projeto."
+    ],
     "faq": [
       {
         "answer": "Não. Nenhum troféu da lista base é perdível; tudo pode ser feito no endgame e cleanup.",
@@ -236,6 +241,38 @@
       "time": "Muito longa, entre 250 e 400 horas, podendo passar de 300h.",
       "verdict": "É uma platina extremamente longa, indicada para quem aceita multiplayer online, endgame e RNG pesado."
     },
+    "quick_plan": [
+      {
+        "detail": "Avançar pela campanha enquanto aprende captura, montaria, pesca, churrasco, Palico Gadgets, investigações e missões opcionais.",
+        "number": 1,
+        "title": "Campanha, captura e fundamentos"
+      },
+      {
+        "detail": "Liberar High Rank e preparar o personagem para HR100, monstros temperados, Elder Dragons e o farm pesado.",
+        "number": 2,
+        "title": "High Rank, pesquisas e preparação de endgame"
+      },
+      {
+        "detail": "Concluir cedo os cinco troféus que tornam a platina dependente de multiplayer online.",
+        "number": 3,
+        "title": "Online obrigatório e Guild Cards"
+      },
+      {
+        "detail": "Resolver os grandes acumulativos junto com investigações e preparação para crown hunting.",
+        "number": 4,
+        "title": "Endgame e caçadas acumulativas"
+      },
+      {
+        "detail": "Capturar a vida endêmica rara e finalizar a exploração da lista base.",
+        "number": 5,
+        "title": "Vida endêmica rara e acampamentos"
+      },
+      {
+        "detail": "Obter as gold miniature crowns e gold giant crowns dos monstros elegíveis do jogo base.",
+        "number": 6,
+        "title": "Gold crowns miniatura e gigantes"
+      }
+    ],
     "seo": {
       "description": "Guia de troféus de Monster Hunter: World com roadmap da platina, 50 troféus, online obrigatório, multiplayer, gold crowns, HR100, endemic life e Iceborne separado.",
       "keywords": [

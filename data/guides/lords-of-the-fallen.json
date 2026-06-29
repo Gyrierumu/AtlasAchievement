@@ -39,7 +39,7 @@
     "time_min_hours": 100,
     "time_reason": "A estimativa de 100-150 horas considera três runs, New Game+, coleções extensas, drops, co-op, PvP e cleanup; troca de itens, habilidade e patches podem alterar bastante o tempo.",
     "time_sort_hours": 100,
-    "updated_at": "2026-06-28 21:19:07",
+    "updated_at": "2026-06-29 22:19:45",
     "verification_note": "Guia da lista base de PS5 de Lords of the Fallen 2023 revisado com 63 troféus, roadmap estruturado, localização PT-BR e escopo online validados.",
     "verification_status": "verified",
     "walkthrough": null
@@ -211,6 +211,11 @@
       "Completar bosses, None Shall be Spared e as questlines de NPCs relevantes.",
       "Conferir os troféus perdíveis marcados antes de encerrar cada run."
     ],
+    "editorial_summary": [
+      "Lords of the Fallen é uma platina longa e exigente: dificuldade 7/10, estimativa de 100-150 horas e 63 troféus na lista base de PS5. O peso vem mais do checklist, das questlines, dos finais e do online do que da dificuldade pura. Shared Triumph exige co-op, No Mercy exige PvP, e vingança e offerings também dependem de sistemas multiplayer. Nenhuma DLC é necessária para a platina base.",
+      "A rota mais segura usa pelo menos três runs no mesmo personagem para os finais Adyr, Radiant e Umbral. Esse planejamento também protege itens soul-bound e o progresso de weapons, armour, spells, rings, pendants, gestures, bosses e collectibles. Na primeira run, não purifique beacons se estiver seguindo Adyr; use New Game+ para Radiant e Umbral.",
+      "O jogo usa autosave e não tem save manual tradicional. Faça backup em cloud quando possível, confira NPCs antes de derrotar bosses ou avançar áreas críticas e mantenha um checklist ativo para Umbral Eyes, Umbral Stigmas, ammo, throwables, tincts, upgrades e drops. Muitos itens podem ser recebidos por troca ou drop de outros jogadores, mas isso não substitui uma rota editorial clara."
+    ],
     "faq": [
       {
         "answer": "Sim. A campanha pode ser jogada solo, mas a platina base tem troféus online ligados a co-op, PvP, vingança e offerings. Portanto o requisito online deve ficar marcado como obrigatório.",
@@ -265,6 +270,38 @@
       "summary": "Vale platinar Lords of the Fallen se você gosta de soulslike longo, checklist pesado, múltiplas runs, finais sensíveis e coleções extensas. A platina tem online, co-op e PvP obrigatórios, além de muitos perdíveis ligados a beacons, questlines, bosses e itens. É uma platina indicada para quem aceita planejamento rigoroso, backup em cloud e grind; não é recomendada para quem busca uma experiência solo simples ou uma platina rápida.",
       "verdict": "É uma platina forte para quem aceita planejamento rigoroso, backup em cloud e grind; não combina com uma experiência solo simples ou rápida."
     },
+    "quick_plan": [
+      {
+        "detail": "Tratar Lords of the Fallen como uma platina de 3 finais no mesmo personagem, com online obrigatório, muitos perdíveis e checklist de itens.",
+        "number": 1,
+        "title": "Preparação da platina e rota de checklist"
+      },
+      {
+        "detail": "Fazer a primeira campanha maximizando collectibles, questlines compatíveis e preparação para as runs seguintes.",
+        "number": 2,
+        "title": "Primeira run com final de Adyr e coleta ampla"
+      },
+      {
+        "detail": "Resolver os troféus que dependem de multiplayer, co-op, PvP, vingança e offerings.",
+        "number": 3,
+        "title": "Troféus online, co-op e PvP"
+      },
+      {
+        "detail": "Usar New Game+ para fazer o final Radiant e recuperar questlines ou itens incompatíveis com a rota anterior.",
+        "number": 4,
+        "title": "Segunda run com final Radiant"
+      },
+      {
+        "detail": "Completar o final Umbral e fechar itens soul-bound, bosses e questlines restantes.",
+        "number": 5,
+        "title": "Terceira run com final Umbral"
+      },
+      {
+        "detail": "Fechar todas as categorias restantes antes de concluir a platina.",
+        "number": 6,
+        "title": "Cleanup de coleções, bosses e troféus acumulativos"
+      }
+    ],
     "seo": {
       "canonical": "https://atlasachievement.com.br/jogo/lords-of-the-fallen",
       "description": "Guia de platina de Lords of the Fallen 2023 com roadmap em português, troféus online, co-op, PvP, finais Adyr, Radiant e Umbral, New Game+, questlines, bosses, collectibles e dicas para conquistar todos os troféus no PS5.",

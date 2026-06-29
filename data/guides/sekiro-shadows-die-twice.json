@@ -39,7 +39,7 @@
     "time_min_hours": 50,
     "time_reason": "A faixa de 50-70 horas considera aprendizado, múltiplos finais, bosses opcionais, upgrades, Prayer Beads, Lapis Lazuli, NG+ e farm de skills.",
     "time_sort_hours": 50,
-    "updated_at": "2026-06-28 21:19:07",
+    "updated_at": "2026-06-29 22:19:45",
     "verification_note": "Lista base PS4 com 34 troféus revisada: resumo da platina, roadmap estruturado, dicas críticas, FAQ, flags offline/sem coop/sem DLC e contagem de 16 riscos/perdíveis conferidos.",
     "verification_status": "verified",
     "walkthrough": null
@@ -189,6 +189,10 @@
       "Conferir Fountainhead Palace antes de NG+.",
       "Conferir o botão YouTube nos cards."
     ],
+    "editorial_summary": [
+      "Sekiro: Shadows Die Twice é uma platina exigente de ação e precisão, focada em dominar deflect, postura, chefes, mini-bosses, finais, Prayer Beads, Gourd Seeds, Prosthetic Tools, Lapis Lazuli e todas as habilidades. A lista base é single-player, não exige online, coop nem DLC, mas cobra planejamento por causa da escolha com Owl, dos finais, de chefes opcionais e de itens que podem ficar indisponíveis conforme a história avança.",
+      "A rota mais segura é fazer uma primeira run completa pela rota de Kuro, preparar Purification e Dragon’s Homecoming/Return antes da decisão final, usar backup save se quiser reduzir runs, deixar Shura para NG+ e finalizar o grind de skills, Lapis Lazuli e upgrades no cleanup final. O principal cuidado é não escolher Shura cedo demais nem iniciar NG+ antes de revisar Fountainhead Palace, Demon of Hatred, Great Colored Carp, Prayer Beads, Gourd Seeds, Lapis Lazuli e chefes pendentes."
+    ],
     "faq": [
       {
         "answer": "Não. A platina base é single-player e não exige online.",
@@ -247,6 +251,38 @@
       "risk": "O principal risco editorial é escolher Shura cedo demais, perder Fountainhead Palace, Great Colored Carp, bosses opcionais e parte dos finais.",
       "summary": "Vale platinar Sekiro: Shadows Die Twice se você gosta de combate técnico, bosses exigentes, deflect preciso e planejamento de finais. A platina base não exige online, co-op nem DLC, mas cobra domínio do combate, todos os finais, bosses opcionais, Prayer Beads, Gourd Seeds, Lapis Lazuli, upgrades de Prosthetic Tools e um grind pesado de skills. É uma excelente platina para fãs de desafio, mas não é recomendada para quem busca uma platina rápida ou tolerante a erro de rota."
     },
+    "quick_plan": [
+      {
+        "detail": "Avançar pela história coletando upgrades e evitando perder mini-bosses, Prosthetic Tools e áreas importantes.",
+        "number": 1,
+        "title": "Primeira run com checklist antes dos pontos críticos"
+      },
+      {
+        "detail": "Seguir a rota de Kuro e preparar os finais que exigem passos extras antes da reta final.",
+        "number": 2,
+        "title": "Escolha com Owl e preparação dos finais longos"
+      },
+      {
+        "detail": "Coletar itens finais e derrotar bosses opcionais antes de iniciar NG+.",
+        "number": 3,
+        "title": "Fountainhead Palace, Lapis Lazuli e bosses opcionais"
+      },
+      {
+        "detail": "Obter finais da rota de Kuro com menor retrabalho possível.",
+        "number": 4,
+        "title": "Finais com backup save"
+      },
+      {
+        "detail": "Usar NG+ para fechar Shura, bosses exclusivos e upgrades que não cabem em uma única run.",
+        "number": 5,
+        "title": "NG+ para Shura, bosses restantes e Lapis Lazuli"
+      },
+      {
+        "detail": "Fechar Height of Technique, upgrades e qualquer troféu restante da lista base.",
+        "number": 6,
+        "title": "Grind de skills e cleanup final"
+      }
+    ],
     "seo": {
       "description": "Guia de platina de Sekiro: Shadows Die Twice em português, com roadmap da lista base, finais, Shura, Purification, Dragon's Homecoming, Immortal Severance, Prayer Beads, Gourd Seeds, Prosthetic Tools, Lapis Lazuli, bosses, NG+, backup save e dicas para conquistar a platina no PS4.",
       "keywords": "Sekiro, Sekiro Shadows Die Twice, guia de platina Sekiro, troféus Sekiro, roadmap Sekiro, finais Sekiro, Prayer Beads, Gourd Seeds, Lapis Lazuli, Prosthetic Tools, Shura, Purification, Dragon's Homecoming, Return, Immortal Severance, Man Without Equal, Height of Technique, Demon of Hatred, sem online obrigatório, sem DLC obrigatório",

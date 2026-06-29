@@ -39,7 +39,7 @@
     "time_min_hours": 65,
     "time_reason": "A estimativa de 65-85 horas considera várias clears, progresso de história por diálogos/RNG, farm de materiais e limpeza de profecias, vínculos, Arcana, keepsakes, familiars e Chaos Trials.",
     "time_sort_hours": 85,
-    "updated_at": "2026-06-28 21:19:08",
+    "updated_at": "2026-06-29 22:19:46",
     "verification_note": "Guia revisado editorialmente para a lista base.",
     "verification_status": "verified",
     "walkthrough": ""
@@ -90,6 +90,7 @@
       "Completar Death to Chronos.",
       "Continuar até Golden Age."
     ],
+    "editorial_summary": [],
     "faq": [
       {
         "answer": "Não. A lista base não tem perdíveis obrigatórios confirmados. O risco principal está em spoilers, objetivos situacionais e organização de runs, não em travar a platina.",
@@ -122,6 +123,38 @@
       "recommendation": "Comece pela Encruzilhada e pelos desbloqueios estruturais, avance Submundo e Superfície em paralelo quando possível e deixe Chaos Trials, vínculos, keepsakes, familiars, Kudos e epílogo para a limpeza planejada.",
       "summary": "Platina longa e offline: 50 troféus no PS5, sem perdíveis reais, sem online/coop/DLC obrigatórios, com foco em duas rotas, história, epílogo e cleanup de sistemas persistentes."
     },
+    "quick_plan": [
+      {
+        "detail": "Usar as primeiras tentativas para aprender combate, boons, recursos e sistemas centrais sem tentar fazer 100% cedo demais.",
+        "number": 1,
+        "title": "Aprenda as runs e estabilize a Crossroads"
+      },
+      {
+        "detail": "Fortalecer Melinoë com melhorias permanentes e desbloquear sistemas que reduzem retrabalho nas próximas runs.",
+        "number": 2,
+        "title": "Evolua Arcana, Incantations e recursos essenciais"
+      },
+      {
+        "detail": "Progredir pelo Underworld e pela Surface, derrotar Guardians e avançar eventos narrativos importantes.",
+        "number": 3,
+        "title": "Avance rotas, Guardians e história principal"
+      },
+      {
+        "detail": "Avançar troféus ligados a armas, aspectos, lembranças, presentes, personagens e sistemas de longo prazo.",
+        "number": 4,
+        "title": "Trabalhe armas, aspectos, Keepsakes e relacionamentos"
+      },
+      {
+        "detail": "Reduzir pendências de maior duração antes do cleanup final da platina.",
+        "number": 5,
+        "title": "Complete desafios, rotas avançadas e objetivos longos"
+      },
+      {
+        "detail": "Conferir todos os troféus restantes, fechar coleções, desafios, relacionamentos e qualquer requisito específico.",
+        "number": 6,
+        "title": "Cleanup final da platina"
+      }
+    ],
     "seo": {
       "description": "Guia de platina de Hades II no PS5 em português, com 50 troféus, dificuldade 7/10, 65-85h, roadmap, checklist, God Mode, Chronos, epílogo e sem perdíveis.",
       "ogDescription": "Roadmap de Hades II para PS5 com lista base de 50 troféus, sem online, sem coop, sem DLC obrigatória, sem perdíveis reais e guia verificado.",

@@ -39,7 +39,7 @@
     "time_min_hours": 50,
     "time_reason": "A faixa de 50-75 horas considera campanha, 12 Onryo/Shinbakufu, side quests necessárias, Knowledge Rank, skills, contratos, coletáveis exigidos e cleanup.",
     "time_sort_hours": 50,
-    "updated_at": "2026-06-28 21:19:06",
+    "updated_at": "2026-06-29 22:19:44",
     "verification_note": "Checklist base em revisão com divergência publica entre fontes sobre distribuição de tipos; contagem total foi mantida e o guia não deve ser tratado como verificado.",
     "verification_status": "review",
     "walkthrough": null
@@ -190,6 +190,10 @@
       "Conferir se página individual e catálogo exibem o mesmo status editorial.",
       "Conferir se flags do topo batem com filtros do catálogo."
     ],
+    "editorial_summary": [
+      "Assassin’s Creed Shadows é uma platina longa, mas acessível, focada em concluir a campanha, derrotar os alvos principais, avançar nas linhas de Naoe e Yasuke, recrutar e treinar aliados, evoluir árvores de habilidades, melhorar ferramentas, completar atividades específicas e resolver alguns coletáveis selecionados.",
+      "A rota mais segura é começar com Guided Exploration Mode desligado até desbloquear Scouting Mission, fazer saves manuais com frequência e manter o jogo conectado ao Animus Hub/servidores Ubisoft, já que os troféus dependem de sincronização online para aparecer. Não há troféus perdíveis reais, cooperação obrigatória ou DLC necessária para a platina base, mas a conexão é um ponto crítico: se o launcher ou os servidores falharem, troféus podem atrasar ou não registrar corretamente."
+    ],
     "faq": [
       {
         "answer": "Não. A platina base não tem perdíveis reais. O cuidado principal é fazer Scouting Mission com Guided Exploration Mode desligado, mas essa opção pode ser alterada nas configurações.",
@@ -242,6 +246,38 @@
       "time": "Longo, cerca de 50 a 75 horas.",
       "worthIt": "Sim, se você gosta de Assassin’s Creed moderno e aceita uma platina longa com foco em história, exploração seletiva e cleanup."
     },
+    "quick_plan": [
+      {
+        "detail": "Garantir Scouting Mission cedo e evitar o único bloqueio de configuração relevante para troféus.",
+        "number": 1,
+        "title": "Comece com Guided Exploration desligado"
+      },
+      {
+        "detail": "Avançar pela campanha enquanto libera Naoe, Yasuke, hideout, objective board, contratos e sistemas usados no restante da platina.",
+        "number": 2,
+        "title": "Avance pela campanha e libere os sistemas principais"
+      },
+      {
+        "detail": "Resolver os principais alvos e as linhas obrigatórias ligadas a conclusão da história.",
+        "number": 3,
+        "title": "Derrote os Shinbakufu e conclua as linhas centrais"
+      },
+      {
+        "detail": "Resolver aliados, questlines e objetivos específicos antes de separar a evolucao e o cleanup.",
+        "number": 4,
+        "title": "Resolva aliados, questlines e objetivos específicos"
+      },
+      {
+        "detail": "Fazer apenas os coletáveis e atividades necessários para troféus, sem transformar a platina em 100% total do mapa.",
+        "number": 5,
+        "title": "Complete os coletáveis necessários"
+      },
+      {
+        "detail": "Finalizar requisitos ligados a habilidades, ferramentas, equipamentos, hideout, contratos e interações específicas.",
+        "number": 6,
+        "title": "Evolua habilidades, ferramentas, hideout e contratos"
+      }
+    ],
     "seo": {
       "description": "Guia de troféus de Assassin’s Creed Shadows com roadmap da platina, tempo estimado, dificuldade, conexão obrigatória, Scouting Mission, Guided Exploration Mode, Naoe, Yasuke e dicas para os 55 troféus da lista base.",
       "keywords": "Assassin’s Creed Shadows troféus, Assassin’s Creed Shadows platina, guia Assassin’s Creed Shadows, AC Shadows troféus, AC Shadows platina, Scouting Mission, Guided Exploration Mode, Naoe, Yasuke, Shinbakufu, Claws of Awaji DLC, Assassin’s Creed Shadows online trophies",

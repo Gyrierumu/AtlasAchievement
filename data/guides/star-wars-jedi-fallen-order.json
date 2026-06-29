@@ -39,7 +39,7 @@
     "time_min_hours": 30,
     "time_reason": "A faixa de 30-40 horas considera campanha, exploração, coletáveis, upgrades, scans e cleanup por planeta.",
     "time_sort_hours": 30,
-    "updated_at": "2026-06-28 21:19:06",
+    "updated_at": "2026-06-29 22:19:44",
     "verification_note": "Guia público seed-managed com checklist base e roadmap; aguardando revisão editorial manual final.",
     "verification_status": "review",
     "walkthrough": null
@@ -144,6 +144,10 @@
       "Escanear inimigos novos e derrotar os 3 tipos de Bounty Hunters.",
       "Tratar bugs históricos como risco técnico, não como perdível."
     ],
+    "editorial_summary": [
+      "Star Wars Jedi: Fallen Order é uma platina totalmente offline, sem troféus perdíveis e sem exigência de dificuldade. A lista base possui 40 troféus e pode ser concluída em uma única jogada, com free roam após a história para retornar aos planetas pela Mantis e finalizar coletáveis, exploração, inimigos, habilidades e troféus de combate. A campanha pode ser jogada em qualquer dificuldade, inclusive Story Mode, porque a dificuldade não afeta troféus.",
+      "O maior trabalho da platina é o cleanup de exploração e coletáveis. Para concluir tudo, o jogador precisa abrir baús e Secrets, completar os holomapas do BD-1, encontrar sementes do terrário, Encrypted Logs, Force Echoes suficientes, escanear inimigos e derrotar os tipos de Bounty Hunters. O guia destaca que não há fast travel interno tradicional, então é melhor deixar o cleanup pesado para depois de liberar as habilidades principais. Também há alerta técnico sobre relatos históricos de bugs em Collector, Data Collector e Scum and Villainy."
+    ],
     "faq": [
       {
         "answer": "Não. A lista base é totalmente offline.",
@@ -205,6 +209,38 @@
       "time": "30-40h",
       "verdict": "Platina offline acessível, mas com bastante backtracking e cleanup de coletáveis."
     },
+    "quick_plan": [
+      {
+        "detail": "Jogar a história em qualquer dificuldade, escanear inimigos novos com BD-1, plantar sementes do terrário assim que encontrá-las e trabalhar troféus de combate naturalmen…",
+        "number": 1,
+        "title": "Campanha em qualquer dificuldade e sementes cedo"
+      },
+      {
+        "detail": "Após a história, retornar aos planetas pela Mantis para limpar coletáveis, exploração e áreas pendentes.",
+        "number": 2,
+        "title": "Free roam e exploração por planeta"
+      },
+      {
+        "detail": "Finalizar Data Collector, Scum and Villainy e Legendary Beasts.",
+        "number": 3,
+        "title": "Inimigos, Bounty Hunters e criaturas lendárias"
+      },
+      {
+        "detail": "Comprar todas as habilidades Jedi e finalizar troféus de parry, evade, Force Push, Slow, Pull, blaster deflect, hack de droid e lightsaber throw.",
+        "number": 4,
+        "title": "XP, habilidades e troféus de combate"
+      },
+      {
+        "detail": "Customizar sabre, Cal, BD-1 e Mantis, conferir os 40 troféus base e validar que nenhum requisito externo entrou no guia.",
+        "number": 5,
+        "title": "Customização e conferência final"
+      },
+      {
+        "detail": "Não há perdíveis, online, coop, DLC ou dificuldade obrigatória. O cuidado real é organizar coletáveis e backtracking, pois o jogo original não tem fast travel interno tr…",
+        "number": 6,
+        "title": "Leia os alertas iniciais"
+      }
+    ],
     "seo": {},
     "tags": []
   },

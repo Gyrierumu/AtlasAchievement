@@ -39,7 +39,7 @@
     "time_min_hours": 20,
     "time_reason": "A faixa de 20-30 horas considera campanha, coletáveis, upgrades, Left Behind integrado e cleanup por capítulos.",
     "time_sort_hours": 20,
-    "updated_at": "2026-06-28 21:19:07",
+    "updated_at": "2026-06-29 22:19:45",
     "verification_note": "Guia revisado editorialmente.",
     "verification_status": "verified",
     "walkthrough": null
@@ -76,9 +76,67 @@
     "aliases": [],
     "attentionPoints": [],
     "checklist": [],
-    "faq": [],
+    "editorial_summary": [],
+    "faq": [
+      {
+        "answer": "Não. A lista permite cleanup por Chapter Select. Ainda assim, é recomendável acompanhar coletáveis, conversas opcionais e piadas desde a primeira campanha para reduzir retrabalho.",
+        "question": "The Last of Us Part I tem troféus perdíveis?"
+      },
+      {
+        "answer": "Não. A platina do Part I não exige multiplayer, Factions, servidores ou troféus online.",
+        "question": "The Last of Us Part I precisa de online para platinar?"
+      },
+      {
+        "answer": "O tempo depende do quanto você acompanha coletáveis durante a campanha. Usar checklist desde o início reduz bastante o cleanup por Chapter Select.",
+        "question": "Quanto tempo leva para platinar The Last of Us Part I?"
+      },
+      {
+        "answer": "A dificuldade é baixa a moderada. O desafio principal está em organização de coletáveis, conversas opcionais, piadas, cofres, portas com shiv e cleanup, não em online ou dificuldade extrema.",
+        "question": "Qual a dificuldade da platina de The Last of Us Part I?"
+      },
+      {
+        "answer": "Não. A platina é single-player e não exige coop.",
+        "question": "The Last of Us Part I tem coop obrigatório?"
+      },
+      {
+        "answer": "Sim. No The Last of Us Part I, Left Behind faz parte do escopo da lista de troféus acompanhada pelo guia. Conclua esse conteúdo e seus objetivos relacionados para fechar a platina.",
+        "question": "Left Behind é necessário para a platina?"
+      }
+    ],
     "note": "Campos exportados para auditoria. O SQLite atual nao possui colunas nativas para todos esses extras; a importacao preserva o que o banco suporta.",
     "quickDecision": null,
+    "quick_plan": [
+      {
+        "detail": "Finalizar a história principal enquanto já pega coletáveis, conversas opcionais, portas com shiv, safes e itens de progressão quando estiverem no caminho.",
+        "number": 1,
+        "title": "Complete a campanha coletando o máximo possível"
+      },
+      {
+        "detail": "Finalizar a campanha extra Left Behind e resolver os troféus próprios desse conteúdo incluído no Part I.",
+        "number": 2,
+        "title": "Conclua Left Behind"
+      },
+      {
+        "detail": "Usar a seleção de capítulos para buscar tudo que ficou faltando sem reiniciar a campanha inteira.",
+        "number": 3,
+        "title": "Faça cleanup de coletáveis por capítulo"
+      },
+      {
+        "detail": "Finalizar interações específicas que dependem de momentos concretos da campanha.",
+        "number": 4,
+        "title": "Complete conversas opcionais e piadas da Ellie"
+      },
+      {
+        "detail": "Fechar troféus ligados a crafting, upgrades, ações específicas, combate e momentos únicos.",
+        "number": 5,
+        "title": "Resolva troféus situacionais e de sistemas"
+      },
+      {
+        "detail": "Conferir campanha, Left Behind, coletáveis, conversas, piadas, safes, portas e situacionais antes da platina.",
+        "number": 6,
+        "title": "Revisão final da platina"
+      }
+    ],
     "seo": {},
     "tags": []
   },

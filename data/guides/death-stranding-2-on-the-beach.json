@@ -39,7 +39,7 @@
     "time_min_hours": 70,
     "time_reason": "A estimativa de 70-100h segue fonte externa atual e considera campanha, conexões, S-ranks, infraestrutura, likes, online social e limpeza opcional.",
     "time_sort_hours": 70,
-    "updated_at": "2026-06-28 21:19:07",
+    "updated_at": "2026-06-29 22:19:45",
     "verification_note": "Guia revisado para lista base PS5 com 55 troféus, EN/PT-BR, roadmap estruturado, resumo, tags, checklist, FAQ e SEO. Mantido em revisão até a validação completa do render e da suite global.",
     "verification_status": "verified",
     "walkthrough": null
@@ -118,6 +118,10 @@
       "Alcançar 80 km percorridos ao concluir um pedido.",
       "Fazer limpeza final sem marcar nenhum troféu como perdível."
     ],
+    "editorial_summary": [
+      "Death Stranding 2: On the Beach é uma platina longa e organizada em torno de concluir os 16 episódios, conectar todas as instalações, maximizar níveis de conexão, completar pedidos padrão com rank S, restaurar infraestrutura, construir estruturas, trabalhar likes, animais, eventos opcionais e troféus sociais/online. A lista base tem 55 troféus no PS5, não deve ser misturada com o primeiro Death Stranding nem com Director's Cut, e não exige DLC, edição especial ou upgrade pago.",
+      "A ordem mais segura é avançar a história liberando regiões, Q-pid, APAS, estruturas, estradas, minas, monotrilho e recursos de transporte; depois usar o pós-game para fechar instalações, pedidos padrão, likes, estruturas e objetivos opcionais. Deixe troféus de online social, animais, infraestrutura, lutas opcionais, pizzaiolo e limpeza de ações específicas para a reta final, sempre usando checklist para evitar repetir entregas ou esquecer instalações e eventos secundários."
+    ],
     "faq": [
       {
         "answer": "Não. A platina base não tem troféus perdíveis confirmados. A limpeza pode ser planejada para o pós-game/free roam.",
@@ -158,6 +162,38 @@
       "recommendation": "Boa para quem gosta de logística, mundo aberto, tarefas de conexão, infraestrutura e limpeza metódica; ruim para quem quer platina rápida ou totalmente offline.",
       "summary": "Platina longa, mas organizada: 55 troféus, checklist pesado, online assíncrono/social, sem coop direto, sem DLC obrigatória e sem perdíveis confirmados."
     },
+    "quick_plan": [
+      {
+        "detail": "Concluir os episódios principais enquanto libera Q-pid, APAS, estruturas, veículos, infraestrutura e instalações essenciais.",
+        "number": 1,
+        "title": "Avance os episódios e libere as regiões principais"
+      },
+      {
+        "detail": "Usar o Q-pid para conectar todas as instalações e preparar o grind de conexão máxima.",
+        "number": 2,
+        "title": "Conecte todas as instalações e fortaleça a rede"
+      },
+      {
+        "detail": "Completar entregas, recuperações e pedidos de eliminação/destruição com rank S conforme os requisitos da lista.",
+        "number": 3,
+        "title": "Faça pedidos padrão com rank S"
+      },
+      {
+        "detail": "Fechar troféus de estruturas, estradas, minas, monotrilho e recursos de apoio ao mapa.",
+        "number": 4,
+        "title": "Restaure infraestrutura e construa estruturas"
+      },
+      {
+        "detail": "Concluir troféus ligados a aid requests, sinais online, curtidas, SCS, trocas, quarto privado, animais e eventos opcionais.",
+        "number": 5,
+        "title": "Resolva troféus sociais, likes e ações opcionais"
+      },
+      {
+        "detail": "Revisar pendências da lista base, confirmar flags e finalizar qualquer troféu restante.",
+        "number": 6,
+        "title": "Faça a limpeza final da platina"
+      }
+    ],
     "seo": {
       "description": "Roadmap completo da platina de Death Stranding 2: On the Beach, com troféus, pedidos padrão, conexões, likes, estruturas, infraestrutura, eventos opcionais, checklist e dicas para reduzir retrabalho.",
       "keywords": "Death Stranding 2 troféus, Death Stranding 2 platina, Death Stranding 2 guia, Death Stranding 2 roadmap, Death Stranding 2 On the Beach troféus, Death Stranding 2 checklist, Death Stranding 2 Seasoned Porter, Death Stranding 2 Connecting Hearts and Minds, Death Stranding 2 Master Builder, Death Stranding 2 likes",

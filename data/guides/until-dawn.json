@@ -39,7 +39,7 @@
     "time_min_hours": 15,
     "time_reason": "A estimativa de 15-20 horas considera uma campanha completa, coleta ampla, chapter select e rotas alternativas para todos vivos, todos mortos e escolhas incompatíveis.",
     "time_sort_hours": 15,
-    "updated_at": "2026-06-28 21:19:07",
+    "updated_at": "2026-06-29 22:19:45",
     "verification_note": "Guia PS4 original de 2015 revisado com 19 troféus, roadmap estruturado, escopo single-player e separação explícita da versão PS5/PC de 2024.",
     "verification_status": "verified",
     "walkthrough": null
@@ -198,6 +198,11 @@
       "Conferir os 12 troféus marcados como perdíveis antes de encerrar o cleanup.",
       "Validar que os cards mantêm inglês principal, PT-BR abaixo e botão de YouTube."
     ],
+    "editorial_summary": [
+      "Until Dawn é uma platina curta, mas muito dependente de escolhas, colecionáveis e resultados narrativos. A lista base do PS4 original tem 19 troféus, é single-player, não exige online, co-op nem DLC, e gira em torno de salvar todos, matar todos, encontrar Totens e pistas/cluelines, além de executar decisões específicas em capítulos-chave.",
+      "A rota mais segura é fazer uma primeira run completa salvando todos os personagens e coletando o máximo possível de Totens e pistas. Depois, use chapter select com cuidado para buscar finais alternativos, mortes específicas e troféus incompatíveis, lembrando que mudanças feitas em um capítulo normalmente precisam ser carregadas até capítulos seguintes para surtirem efeito.",
+      "Não misture este guia com a versão PS5/PC de 2024, Rush of Blood ou The Inpatient. O foco aqui é a lista PS4 original: todos vivos, todos mortos, The Twins, 1952, Mystery Man, Night of the Totem Hunter e escolhas críticas envolvendo Chris, Ashley, Emily, Mike, Jessica e Sam."
+    ],
     "faq": [
       {
         "answer": "Não. A platina é single-player e não exige online, multiplayer ou PS Plus.",
@@ -248,6 +253,38 @@
       "summary": "Vale platinar Until Dawn se você gosta de horror narrativo, escolhas com consequências e uma platina curta baseada em rotas alternativas. A platina não exige online, co-op nem DLC, mas cobra atenção a Totens, pistas, todos vivos, todos mortos e troféus de decisões específicas. É acessível, porém exige cuidado com chapter select para não repetir capítulos além do necessário.",
       "verdict": "Ótima platina curta para quem gosta de narrativa ramificada; ruim para quem quer jogar sem checklist ou sem repetir cenas."
     },
+    "quick_plan": [
+      {
+        "detail": "Completar a história mantendo todos os personagens vivos e coletando o máximo possível de Totens e pistas.",
+        "number": 1,
+        "title": "Primeira run salvando todos"
+      },
+      {
+        "detail": "Completar os colecionáveis e linhas de pistas necessários para os troféus de investigação.",
+        "number": 2,
+        "title": "Colecionáveis, Totens e cluelines"
+      },
+      {
+        "detail": "Usar chapter select ou nova run parcial para resolver troféus que entram em conflito com todos vivos.",
+        "number": 3,
+        "title": "Escolhas incompatíveis e mortes específicas"
+      },
+      {
+        "detail": "Obter os troféus ligados a mortes de personagens e finais negativos.",
+        "number": 4,
+        "title": "Run ou sequência de todos mortos"
+      },
+      {
+        "detail": "Validar troféus restantes, versão correta do jogo e consistência do guia.",
+        "number": 5,
+        "title": "Cleanup final e conferência da lista"
+      },
+      {
+        "detail": "Este guia é da versão PS4 original de 2015, com 19 troféus. Não use a lista PS5/PC de 2024, não misture Rush of Blood ou The Inpatient, e trate chapter select como uma f…",
+        "number": 6,
+        "title": "Leia os alertas iniciais"
+      }
+    ],
     "seo": {
       "canonical": "https://atlasachievement.com.br/jogo/until-dawn",
       "description": "Guia de platina de Until Dawn com roadmap em português, troféus da lista base, todos vivos, todos mortos, Totens, pistas, cluelines, chapter select e dicas para conquistar a platina no PS4.",

@@ -39,7 +39,7 @@
     "time_min_hours": 10,
     "time_reason": "A faixa de 10-20 horas considera campanha, limpeza dos distritos, colecionáveis, atividades, troféus situacionais e uma segunda campanha objetiva em New Game+.",
     "time_sort_hours": 10,
-    "updated_at": "2026-06-28 21:19:07",
+    "updated_at": "2026-06-29 22:19:45",
     "verification_note": "Guia revisado editorialmente para a lista base de Marvel’s Spider-Man: Miles Morales, com 50 troféus, New Game+ obrigatório, nomes PT-BR conferidos e rota sem DLC ou listas de outros jogos.",
     "verification_status": "verified",
     "walkthrough": null
@@ -76,6 +76,11 @@
     "aliases": [],
     "attentionPoints": [],
     "checklist": [],
+    "editorial_summary": [
+      "A platina de Marvel’s Spider-Man: Miles Morales é curta e acessível, mas não é de uma campanha só. A lista base exige New Game+ para Plus Plus e para fechar habilidades restantes.",
+      "Não há online, coop, DLC obrigatória, troféu de dificuldade ou perdíveis reais. O cuidado prático é organizar colecionáveis, crimes, objetivos bônus, recursos e ações específicas para evitar retrabalho.",
+      "Use a primeira campanha para abrir Manhattan, aprender Venom Powers e camuflagem, limpar atividades próximas e preparar recursos. Depois faça cleanup e conclua o New Game+ obrigatório."
+    ],
     "faq": [
       {
         "answer": "Não. A platina da lista base é offline e não exige servidores, multiplayer, ranking online ou PS+.",
@@ -128,6 +133,38 @@
     ],
     "note": "Campos exportados para auditoria. O SQLite atual nao possui colunas nativas para todos esses extras; a importacao preserva o que o banco suporta.",
     "quickDecision": null,
+    "quick_plan": [
+      {
+        "detail": "Concluir a campanha inicial enquanto aprende os poderes de Miles, libera atividades no mapa e coleta o que estiver no caminho.",
+        "number": 1,
+        "title": "Avance a história e desbloqueie Manhattan"
+      },
+      {
+        "detail": "Completar o mapa de Manhattan com colecionáveis, crimes, desafios, bases e atividades necessárias para a platina.",
+        "number": 2,
+        "title": "Limpe distritos, colecionáveis e atividades"
+      },
+      {
+        "detail": "Buscar troféus ligados a técnicas, combos, stealth, habilidades e momentos específicos que podem não vir naturalmente.",
+        "number": 3,
+        "title": "Resolva troféus de combate e ações específicas"
+      },
+      {
+        "detail": "Usar tokens e recursos para completar upgrades, trajes, mods e habilidades disponíveis antes da segunda campanha.",
+        "number": 4,
+        "title": "Feche habilidades, trajes e upgrades"
+      },
+      {
+        "detail": "Finalizar a campanha em New Game+ para liberar os troféus e habilidades restantes exigidos pela platina.",
+        "number": 5,
+        "title": "Complete o New Game+ obrigatório"
+      },
+      {
+        "detail": "Revisar qualquer pendência restante da lista base e garantir que o guia não marque perdíveis incorretamente.",
+        "number": 6,
+        "title": "Faça o cleanup final da platina"
+      }
+    ],
     "seo": {
       "description": "Roadmap completo da platina de Marvel’s Spider-Man: Miles Morales, com New Game+, colecionáveis, atividades do mapa, troféus de combate, checklist e dicas para concluir tudo sem perder tempo.",
       "keywords": "Marvel’s Spider-Man Miles Morales troféus, Marvel’s Spider-Man Miles Morales platina, Miles Morales guia de troféus, Miles Morales roadmap, Miles Morales New Game+, Miles Morales checklist, Miles Morales colecionáveis",

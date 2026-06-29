@@ -99,15 +99,15 @@
           <div class="atlas-home-hero__main">
             <div class="atlas-hero-kicker mb-4" translate="no"><span class="atlas-hero-kicker__medal"><img src="/assets/brand/atlasachievement-logo.png" alt="AtlasAchievement" class="atlas-hero-kicker__logo" width="28" height="28" decoding="async"></span><span class="notranslate" translate="no">AtlasAchievement</span></div>
             <__HOME_HERO_HEADING_TAG__ id="homeHeroHeading" class="text-[38px] md:text-[52px] xl:text-[64px] leading-[0.97] font-black tracking-tight max-w-[840px]">
-              Guias de platina em português com roadmap, checklist, filtros de risco e progresso salvo.
+              Sua biblioteca de platinas, guias e checklists em um só lugar.
             </__HOME_HERO_HEADING_TAG__>
             <p class="mt-3 text-white/68 text-[17px] md:text-[18px] max-w-[680px] leading-relaxed">
-              Escolha sua próxima platina com estimativas de tempo, dificuldade, troféus perdíveis, requisitos online e etapas organizadas para jogar sem se perder.
+              Salve guias para continuar de onde parou, acompanhar troféus pendentes e receber recomendações para decidir qual platina abrir depois.
             </p>
 
             <div class="atlas-home-pulse" data-home-pulse aria-live="polite">
               <span class="atlas-home-pulse__icon" aria-hidden="true"><i class="fas fa-star"></i></span>
-              <span data-home-pulse-message>Guias revisados, filtros de risco e progresso salvo em um só lugar.</span>
+              <span data-home-pulse-message>Sua biblioteca guarda checklists, próximos passos e recomendações sem expor dados sensíveis.</span>
             </div>
 
             <div class="mt-5 flex flex-wrap gap-3 max-w-[780px] atlas-home-cta-row">
@@ -143,7 +143,7 @@
         <div class="atlas-home-section__head atlas-home-section__head--compact">
           <div>
             <span class="atlas-section-kicker">Boa escolha para começar</span>
-            <h2 id="homeSpotlightTitle" class="text-[24px] md:text-[28px] font-extrabold tracking-tight mt-2">Um guia em destaque agora</h2>
+            <h2 id="homeSpotlightTitle" class="text-[24px] md:text-[28px] font-extrabold tracking-tight mt-2">Guia de platina recomendado agora</h2>
           </div>
         </div>
         <div id="homeEditorialSpotlight" class="atlas-home-spotlight__slot"></div>
@@ -152,7 +152,7 @@
       <section class="atlas-home-section atlas-home-section--moment" aria-labelledby="homeMomentTitle">
         <div class="atlas-home-section__head">
           <div>
-            <h2 id="homeMomentTitle" class="text-[28px] md:text-[34px] font-extrabold tracking-tight">Escolha pelo seu momento</h2>
+            <h2 id="homeMomentTitle" class="text-[28px] md:text-[34px] font-extrabold tracking-tight">Escolha guias por tempo, risco e dificuldade</h2>
             <p class="text-white/58 mt-3 max-w-3xl">Entre pelo tipo de compromisso que combina com sua sessão de agora.</p>
           </div>
           <a href="/catalogo" data-view-link="catalog" class="atlas-btn atlas-btn-secondary atlas-home-section-cta"><i class="fas fa-compass"></i> Explorar todos</a>
@@ -164,7 +164,7 @@
         <div class="atlas-home-section__head atlas-home-section__head--compact">
           <div>
             <span class="atlas-section-kicker">Planeje com mais clareza</span>
-            <h2 id="homeBenefitsTitle" class="text-[28px] md:text-[34px] font-extrabold tracking-tight mt-2">Por que usar o Atlas</h2>
+            <h2 id="homeBenefitsTitle" class="text-[28px] md:text-[34px] font-extrabold tracking-tight mt-2">Como o AtlasAchievement organiza sua platina</h2>
           </div>
         </div>
         <div class="atlas-home-benefits__grid">
@@ -179,7 +179,7 @@
             <i class="fas fa-list-check" aria-hidden="true"></i>
             <div>
               <h3>Checklist contínuo</h3>
-              <p>Marque troféus e volte exatamente onde parou, sem retrabalho.</p>
+              <p>Marque troféus e volte exatamente onde parou, com o próximo pendente sempre à mão.</p>
             </div>
           </article>
           <article class="atlas-home-benefit">
@@ -193,7 +193,7 @@
             <i class="fas fa-bookmark" aria-hidden="true"></i>
             <div>
               <h3>Biblioteca pessoal</h3>
-              <p>Salve jogos e acompanhe o progresso de cada platina.</p>
+              <p>Salve jogos, acompanhe o status da coleção e descubra recomendações pelo seu ritmo.</p>
             </div>
           </article>
         </div>
@@ -245,14 +245,14 @@
       <div class="atlas-panel atlas-panel--plain atlas-catalog-shell p-3 md:p-4 space-y-2">
         <div class="atlas-catalog-controls">
           <label class="block atlas-catalog-search-field">
-            <span class="sr-only">Buscar no catálogo</span>
-            <input id="catalogSearch" type="search" placeholder="Buscar por jogo, série ou estilo de platina" class="atlas-input min-h-[46px] h-[46px] py-3">
+            <span class="atlas-catalog-control-label">Buscar jogos</span>
+            <input id="catalogSearch" type="search" placeholder="Buscar jogos..." class="atlas-input min-h-[46px] h-[46px] py-3">
             <button type="button" class="atlas-catalog-search-clear" data-catalog-clear-search hidden aria-hidden="true" aria-label="Limpar busca"><i class="fas fa-xmark" aria-hidden="true"></i></button>
           </label>
           <label class="block">
-            <span class="sr-only">Ordenar catálogo</span>
+            <span class="atlas-catalog-control-label">Ordenar</span>
             <select id="catalogSort" class="atlas-input min-h-[46px] h-[46px] py-3 pr-10">
-              <option value="recommended-desc">Recomendação para começar</option>
+              <option value="recommended-desc">Melhor para começar</option>
               <option value="updated-desc">Atualizados recentemente</option>
               <option value="created-desc">Mais novos no catálogo</option>
               <option value="time-asc">Tempo: menor primeiro</option>
@@ -293,7 +293,7 @@
             <section class="atlas-catalog-editorial">
               <div>
                 <span class="atlas-section-kicker">Leitura da faixa</span>
-                <h4 id="catalogCollectionTitle" class="atlas-catalog-editorial__title text-2xl font-extrabold tracking-tight mt-2">__CATALOG_COLLECTION_TITLE__</h4>
+                <h2 id="catalogCollectionTitle" class="atlas-catalog-editorial__title text-2xl font-extrabold tracking-tight mt-2">__CATALOG_COLLECTION_TITLE__</h2>
                 <p id="catalogCollectionDescription" class="text-white/60 mt-3 max-w-3xl">__CATALOG_COLLECTION_DESCRIPTION__</p>
               </div>
               <div class="atlas-catalog-editorial__notes">
@@ -311,7 +311,7 @@
             <section class="atlas-catalog-editorial atlas-catalog-editorial--seo">
               <div>
                 <span class="atlas-section-kicker">Contexto editorial da coleção</span>
-                <h4 id="catalogSeoIntroTitle" class="atlas-catalog-editorial__title text-2xl font-extrabold tracking-tight mt-2">__CATALOG_SEO_INTRO_TITLE__</h4>
+                <h2 id="catalogSeoIntroTitle" class="atlas-catalog-editorial__title text-2xl font-extrabold tracking-tight mt-2">__CATALOG_SEO_INTRO_TITLE__</h2>
                 <p id="catalogSeoIntroBody" class="text-white/65 mt-3 max-w-4xl">__CATALOG_SEO_INTRO_BODY__</p>
               </div>
             </section>
@@ -339,14 +339,14 @@
         </div>
         <div class="atlas-library-head-copy">
           <p id="librarySummary" class="text-[15px] text-white/55 max-w-xl"></p>
-          <p id="librarySyncStatus" class="atlas-sync-status">Salvo neste navegador</p>
+          <p id="librarySyncStatus" class="atlas-sync-status">Progresso salvo localmente neste navegador.</p>
         </div>
       </div>
 
       <div class="library-toolbar atlas-panel atlas-panel--support">
         <div class="library-toolbar__content">
           <div>
-            <p class="text-white/58 mt-2 max-w-2xl">Veja qual guia vale abrir hoje, o que está perto de 100% e qual é o próximo passo em cada jogo salvo.</p>
+            <p class="text-white/58 mt-2 max-w-2xl">Continue de onde parou, filtre checklists em andamento e veja recomendações para manter sua próxima platina andando.</p>
           </div>
           <div class="library-toolbar__controls">
             <label class="library-toolbar__search">
@@ -469,6 +469,9 @@
             <div id="guideEmptyState" class="hidden atlas-inline-empty" aria-hidden="true"></div>
           </section>
           <div id="trophyList" class="atlas-checklist-list atlas-render-list is-compact space-y-4 pr-2" data-checklist-density="compact" aria-live="polite">__SSR_TROPHY_LIST__</div>
+          <div class="atlas-guide-return-row atlas-guide-return-row--checklist">
+            <button type="button" class="atlas-btn atlas-btn-secondary atlas-btn-compact" data-scroll-top="true"><i class="fas fa-arrow-up" aria-hidden="true"></i>Voltar ao topo</button>
+          </div>
         </section>
         <section id="guideTab-details" class="atlas-guide-tab-panel hidden" data-guide-tab-panel="details" hidden>
           <div id="guideEditorialNotes">__SSR_GUIDE_EDITORIAL_NOTES__</div>
@@ -665,6 +668,10 @@
       <button type="button" class="atlas-quick-dock__btn atlas-quick-dock__btn--top" data-scroll-top="true" aria-label="Voltar ao topo"><i class="fas fa-arrow-up" aria-hidden="true"></i><span>Topo</span></button>
     </div>
   </nav>
+  <button id="backToTopBtn" type="button" class="atlas-back-to-top" data-scroll-top-global aria-label="Voltar ao topo">
+    <i class="fas fa-arrow-up" aria-hidden="true"></i>
+    <span>Topo</span>
+  </button>
   <div id="toast" class="toast" role="status" aria-live="polite" aria-atomic="true"></div>
   __INITIAL_STATE_SCRIPT__
   <!-- Front-end core: API and local persistence. Keep these before UI/app modules. -->

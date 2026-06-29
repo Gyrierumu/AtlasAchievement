@@ -93,7 +93,7 @@
   }
 
   .atlas-catalog-filter-groups {
-    grid-template-columns: repeat(2, minmax(0, 1fr));
+    grid-template-columns: minmax(0, 1fr);
   }
 
   .atlas-collection-chip {
@@ -1280,8 +1280,24 @@
     justify-items: center;
   }
 
+  .library-summary__stats,
+  .library-summary__next {
+    justify-content: center;
+  }
+
+  .library-summary__stats span,
+  .library-summary__search {
+    flex: 1 1 calc(50% - 8px);
+    justify-content: center;
+    min-width: 124px;
+  }
+
   .library-empty__benefits li {
     justify-content: center;
+  }
+
+  .library-empty-visual {
+    justify-items: center;
   }
 
   .library-empty-example {
@@ -1816,5 +1832,66 @@
 
   .atlas-home-cta-row {
     gap: 8px;
+  }
+}
+
+@media (max-width: 768px) {
+  .atlas-btn,
+  .atlas-pill,
+  .filter-btn,
+  .atlas-collection-chip,
+  .library-game__action,
+  .library-game__details-toggle {
+    touch-action: manipulation;
+  }
+
+  #view-home .atlas-btn,
+  #view-catalog .atlas-btn,
+  #view-library .atlas-btn,
+  .library-game__action {
+    min-height: 44px;
+  }
+
+  .atlas-back-to-top {
+    right: 12px;
+    bottom: calc(12px + env(safe-area-inset-bottom));
+    min-width: 46px;
+    min-height: 46px;
+    padding-inline: 12px;
+  }
+
+  body.atlas-guide-dock-active .atlas-back-to-top {
+    bottom: calc(118px + env(safe-area-inset-bottom));
+  }
+
+  body.atlas-guide-dock-active.atlas-guide-dock-collapsed .atlas-back-to-top {
+    bottom: calc(72px + env(safe-area-inset-bottom));
+  }
+}
+
+@media (max-width: 420px) {
+  .library-shelf__grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 10px;
+  }
+
+  .library-game__poster {
+    min-height: 168px;
+  }
+
+  .library-game__title {
+    font-size: .92rem;
+    line-height: 1.16;
+  }
+
+  .library-game__details-toggle {
+    width: 44px;
+    height: 44px;
+    min-height: 44px;
+  }
+
+  .library-game__action {
+    min-height: 44px;
+    padding-block: 8px;
   }
 }

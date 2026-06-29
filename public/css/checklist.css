@@ -1413,3 +1413,72 @@
     width: 100%;
   }
 }
+
+@media (max-width: 768px) {
+  #guideChecklistPanel .atlas-density-option,
+  #guideChecklistPanel .atlas-checklist-clear,
+  #guideChecklistPanel .atlas-filter-more summary,
+  #guideChecklistPanel .atlas-filter-group .atlas-pill {
+    min-height: 44px;
+  }
+
+  #guideChecklistPanel .atlas-filter-primary .atlas-filter-group:first-child > div,
+  #guideChecklistPanel .atlas-filter-primary .atlas-filter-group:nth-child(2) > div,
+  #guideChecklistPanel .atlas-filter-secondary .atlas-filter-group > div,
+  #guideChecklistPanel .atlas-filter-mobile .atlas-filter-group > div,
+  #guideChecklistPanel .atlas-filter-more__content .atlas-filter-group > div {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  #guideChecklistPanel .atlas-filter-group .atlas-pill {
+    width: 100%;
+    padding-inline: 10px;
+    font-size: .78rem;
+    line-height: 1.18;
+    white-space: normal;
+  }
+
+  #guideChecklistPanel .atlas-filter-more summary::after {
+    width: 28px;
+    height: 28px;
+  }
+
+  .atlas-checklist-list[data-checklist-density="compact"] .atlas-trophy-card {
+    padding: 11px;
+  }
+
+  .atlas-checklist-list[data-checklist-density="compact"] .atlas-trophy-toggle,
+  .atlas-checklist-list[data-checklist-density="compact"] .atlas-trophy-details-toggle,
+  .atlas-checklist-list .atlas-trophy-toggle,
+  .atlas-checklist-list .atlas-trophy-details-toggle {
+    width: 100%;
+    min-height: 48px;
+    height: auto;
+    padding: 10px 12px;
+    font-size: .84rem;
+    line-height: 1.15;
+  }
+
+  .atlas-checklist-list .atlas-trophy-youtube-link.atlas-btn {
+    min-height: 44px;
+    height: auto;
+  }
+}
+
+@media (max-width: 420px) {
+  #guideChecklistPanel .atlas-checklist-head h2 {
+    font-size: 1.12rem;
+    line-height: 1.18;
+  }
+
+  #guideChecklistPanel .atlas-filter-group .atlas-pill[data-count]::after {
+    margin-left: 4px;
+  }
+
+  .atlas-checklist-list .atlas-trophy-card h4,
+  .atlas-checklist-list[data-checklist-density="compact"] .atlas-trophy-card h4 {
+    font-size: 1rem;
+    line-height: 1.22;
+  }
+}

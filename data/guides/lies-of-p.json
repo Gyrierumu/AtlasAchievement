@@ -39,7 +39,7 @@
     "time_min_hours": 50,
     "time_reason": "A faixa de 50-70 horas considera campanha, 2 runs com backup ou 3 sem backup, Records de NG+, gestos, coleções, armas e cleanup.",
     "time_sort_hours": 50,
-    "updated_at": "2026-06-28 21:19:06",
+    "updated_at": "2026-06-29 22:19:44",
     "verification_note": "Lista base revisada sem Overture; finais, Records e NG+ reorganizados, ainda em revisão editorial até a validação final do render/PDF.",
     "verification_status": "review",
     "walkthrough": null
@@ -167,6 +167,12 @@
       }
     ],
     "checklist": [],
+    "editorial_summary": [
+      "Lies of P tem 43 troféus offline, três finais e uma rota de platina que fica bem mais limpa com backup de save. Overture fica fora da lista base e não entra no planejamento da platina aqui.",
+      "O maior risco está nos finais, Records, Golden Records, gestos, Cryptic Vessels, armas especiais e nas histórias de Venigni, Antonia, Geppetto, Eugenie, Alidoro e Sophia. Se a campanha for feita no automático, o retrabalho aparece no fim.",
+      "Com backup, dá para resolver os três finais em duas runs e usar NG+ para comprar Golden Records e fechar os colecionáveis restantes. Sem backup, planeje três finais separados e um cleanup mais longo.",
+      "A dificuldade depende bastante do modo escolhido: o padrão original continua exigente por chefes e parry/defesa perfeita; com as dificuldades mais fáceis adicionadas por update, a platina fica mais acessível. Em ambos os casos, a lista é mais sobre planejamento, escolhas e checklist do que sobre online ou coop."
+    ],
     "faq": [
       {
         "answer": "A lista base tem 43 troféus. Overture possui lista separada e não entra na platina base.",
@@ -219,6 +225,38 @@
     ],
     "note": "Campos exportados para auditoria. O SQLite atual nao possui colunas nativas para todos esses extras; a importacao preserva o que o banco suporta.",
     "quickDecision": null,
+    "quick_plan": [
+      {
+        "detail": "Avançar pela história acompanhando escolhas, NPCs, Records, gestos, Cryptic Vessels, Trinity Sanctums e Ergo de chefe.",
+        "number": 1,
+        "title": "Faça a primeira run com checklist ativo"
+      },
+      {
+        "detail": "Organizar humanidade, Sophia, Geppetto e o ponto de backup para reduzir runs.",
+        "number": 2,
+        "title": "Prepare os finais antes de Under the Abyss"
+      },
+      {
+        "detail": "Conferir troféus que podem ser perdidos ao entrar em NG+ cedo demais.",
+        "number": 3,
+        "title": "Resolva pendências antes de iniciar NG+"
+      },
+      {
+        "detail": "Fechar Golden Records, escolhas exclusivas e coleções que dependem de segunda passada.",
+        "number": 4,
+        "title": "Use NG+ para Records e escolhas alternativas"
+      },
+      {
+        "detail": "Concluir upgrades, armas especiais/normais, Legion Arms, Quartz e P-Organ.",
+        "number": 5,
+        "title": "Finalize armas, upgrades e P-Organ"
+      },
+      {
+        "detail": "Confirmar todos os 43 troféus da lista base sem misturar DLC ou update.",
+        "number": 6,
+        "title": "Faça a conferência final da platina"
+      }
+    ],
     "seo": {
       "description": "Guia de platina de Lies of P em português com 43 troféus, perdíveis marcados, finais, Records, gestos, Cryptic Vessels, armas especiais, roadmap e checklist.",
       "keywords": "Lies of P guia de platina, troféus Lies of P, roadmap Lies of P, Lies of P finais, Lies of P Real Boy, Lies of P Rise of P, Lies of P Free from the Puppet String, Lies of P Golden Melody, Lies of P Records, Lies of P Golden Records, Lies of P boss Ergo, Lies of P Nameless Puppet, Lies of P sem online, Lies of P sem coop, Lies of P Overture fora da platina base, Lies of P dificuldade fácil troféus",

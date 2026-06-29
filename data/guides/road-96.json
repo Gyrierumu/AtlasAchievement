@@ -39,7 +39,7 @@
     "time_min_hours": 6,
     "time_reason": "A faixa de 6-8 horas considera a campanha completa, 6 chegadas à Road 96, 18 fitas e cleanup leve por New Game+/nova campanha se faltar algo.",
     "time_sort_hours": 6,
-    "updated_at": "2026-06-28 21:19:06",
+    "updated_at": "2026-06-29 22:19:44",
     "verification_note": "Precisa revisão editorial final: validar oportunidades procedurais, New Game+, fitas e eventos de Zoe antes de selo verificado.",
     "verification_status": "review",
     "walkthrough": null
@@ -111,6 +111,10 @@
       }
     ],
     "checklist": [],
+    "editorial_summary": [
+      "Road 96 é uma platina curta, simples e totalmente offline, mas com atenção a troféus de capítulo e ações específicas. A lista base possui 12 troféus, não exige online, cooperação ou dificuldade específica, e normalmente pode ser concluída em uma campanha completa com os 6 adolescentes tentando chegar à fronteira de Petria. Como os encontros têm ordem semi-randômica, o guia deve orientar o jogador a aproveitar cada oportunidade de telefone, fitas/cassetes, eventos com Zoe e a chegada à Road 96.",
+      "Os principais cuidados são Stone After Stone, por exigir colocar pedras no cairn em 3 chegadas diferentes à Road 96 antes da reta final; Cat Person e A Light in the Darkness, ligados ao capítulo Smells Like Teen Spirit; Homesick e Campaign Funder, feitos em cabines telefônicas; e Collect ’em All, que exige 18 fitas/cassetes, com progresso que pode carregar para New Game+. Road 96: Mile 0 é um jogo separado e não entra na platina base."
+    ],
     "faq": [
       {
         "answer": "Não. A lista é totalmente offline.",
@@ -157,6 +161,38 @@
     "quickDecision": {
       "summary": "Platina curta de 6-8h e 1/10, offline e sem coop, mas com perdíveis de oportunidade. Priorize Stone After Stone, Smells Like Teen Spirit, cabines telefônicas e fitas/cassetes."
     },
+    "quick_plan": [
+      {
+        "detail": "Jogar a campanha completa com os 6 adolescentes/fugitivos, mantendo recursos e aproveitando oportunidades de telefone, fitas, Zoe e chegadas à Road 96.",
+        "number": 1,
+        "title": "Campanha com 6 adolescentes e oportunidades"
+      },
+      {
+        "detail": "Resolver os troféus ligados ao primeiro encontro com Zoe e às ações específicas do capítulo Smells Like Teen Spirit.",
+        "number": 2,
+        "title": "Zoe e Smells Like Teen Spirit"
+      },
+      {
+        "detail": "Usar cabines telefônicas para ligar para casa e doar para uma campanha.",
+        "number": 3,
+        "title": "Cabines telefônicas e doações"
+      },
+      {
+        "detail": "Colocar 3 pedras no cairn em 3 chegadas diferentes à Road 96 antes da reta final.",
+        "number": 4,
+        "title": "Road 96 e o cairn de pedras"
+      },
+      {
+        "detail": "Coletar 18 fitas/cassetes, comprando ou pegando qualquer fita disponível durante encontros e viagens.",
+        "number": 5,
+        "title": "Fitas/cassetes e New Game+ opcional"
+      },
+      {
+        "detail": "Chegar à fronteira com os fugitivos necessários, fazer a escolha final e conferir pendências.",
+        "number": 6,
+        "title": "Final, escolhas e conferência"
+      }
+    ],
     "seo": {},
     "tags": []
   },

@@ -39,7 +39,7 @@
     "time_min_hours": 40,
     "time_reason": "A faixa de 40-60 horas considera história, exploração das regiões, coletáveis, Myths, side content, sistemas de combate e cleanup por Battle Scroll.",
     "time_sort_hours": 60,
-    "updated_at": "2026-06-28 21:19:10",
+    "updated_at": "2026-06-29 22:19:50",
     "verification_note": "Guia revisado editorialmente.",
     "verification_status": "verified",
     "walkthrough": ""
@@ -88,6 +88,7 @@
       "Fazer Teamwork com NPCs/Acolytes ou coop opcional, sem transformar isso em requisito obrigatório.",
       "Fazer cleanup final por free roam/Battle Scroll e conferir que DLCs futuras ficaram fora da platina base."
     ],
+    "editorial_summary": [],
     "faq": [
       {
         "answer": "Não. A platina base não tem perdíveis definitivos. A maioria dos objetivos pode ser resolvida retornando a missões, limpando regiões e avançando sistemas acumulativos.",
@@ -146,6 +147,38 @@
       "runs": "1 campanha + cleanup/replay",
       "time": "40-60h"
     },
+    "quick_plan": [
+      {
+        "detail": "Entender Samurai Style, Ninja Style, troca de estilos, primeiras missões e ritmo de progressão antes de tentar limpar tudo.",
+        "number": 1,
+        "title": "Aprenda o combate e avance a campanha"
+      },
+      {
+        "detail": "Desbloquear regiões, sistemas de progressão, Guardian Spirits e ferramentas de replay antes do cleanup.",
+        "number": 2,
+        "title": "Abra regiões, Guardian Spirits e Battle Scroll"
+      },
+      {
+        "detail": "Resolver atividades regionais, missões secundárias, Myths e coletáveis sem retrabalho.",
+        "number": 3,
+        "title": "Limpe Myths, missões e coletáveis por região"
+      },
+      {
+        "detail": "Fechar troféus ligados a level, armas, Ninjutsu, Soul Cores, ferreiro e sistemas de evolução.",
+        "number": 4,
+        "title": "Resolva progressão, proficiência e sistemas de ferraria"
+      },
+      {
+        "detail": "Resolver chefes opcionais, desafios específicos e troféus que exigem ações concretas.",
+        "number": 5,
+        "title": "Feche bosses opcionais e troféus situacionais"
+      },
+      {
+        "detail": "Revisar os 51 troféus da lista base e fechar qualquer pendência sem misturar DLC ou conteúdo futuro.",
+        "number": 6,
+        "title": "Faça o cleanup final da lista base"
+      }
+    ],
     "seo": {
       "canonical": "https://atlasachievement.com.br/jogo/nioh-3",
       "description": "Guia de platina de Nioh 3 em português, com tempo estimado, dificuldade, troféus, Samurai, Ninja, missões, coletáveis, Battle Scroll, roadmap e checklist.",

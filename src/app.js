@@ -42,8 +42,8 @@ const APP_VERSION = [
   packageJson.version || '0.0.0',
   process.env.APP_VERSION || process.env.RENDER_GIT_COMMIT || process.env.COMMIT_SHA || process.env.SOURCE_VERSION || process.env.BUILD_ID || process.env.RENDER_SERVICE_ID || ''
 ].filter(Boolean).join('-');
-const HOME_SEO_TITLE = 'AtlasAchievement — Guias de troféus e platina em português';
-const HOME_SEO_DESCRIPTION = 'Guias de platina em português com roadmap, checklist, filtros de risco, progresso salvo, tempo estimado, dificuldade, perdíveis e requisitos online.';
+const HOME_SEO_TITLE = 'AtlasAchievement – Guias de platina e roadmap em português';
+const HOME_SEO_DESCRIPTION = 'Guias de platina em português com roadmap, checklist, filtros por risco e progresso salvo para escolher sua próxima platina.';
 const INSTITUTIONAL_KICKER_STYLE = 'letter-spacing:0;';
 const REQUIEM_EDITORIAL_SUMMARY = [
   'Resident Evil Requiem combina campanha, coletáveis, objetivos situacionais e runs condicionais. A platina gira em torno de acompanhar saves manuais, controlar arquivos e colecionáveis, separar troféus de personagem e planejar restrições como speedrun, cura e uso do Blood Collector.',
@@ -560,14 +560,10 @@ function firstSeoText(...values) {
 
 function buildGameSeoTitle(game = {}) {
   const name = String(game?.name || 'Jogo').trim() || 'Jogo';
-  const trophies = Array.isArray(game?.trophies) ? game.trophies : [];
-  const hasPlatinum = trophies.some(trophy => /^(platina|platinum)$/i.test(String(trophy?.type || '').trim()))
-    || /platina|platinum/i.test(firstSeoText(game?.platinumType, game?.platinum_type));
-  const guideKind = hasPlatinum ? 'guia de platina, troféus e roadmap' : 'guia de troféus e roadmap';
-  return `${name}: ${guideKind} | AtlasAchievement`;
+  return `${name} – Guia de platina e troféus`;
 }
 
-function truncateSeoDescription(value = '', maxLength = 180) {
+function truncateSeoDescription(value = '', maxLength = 155) {
   const text = String(value || '').replace(/\s+/g, ' ').trim();
   if (text.length <= maxLength) return text;
   const slice = text.slice(0, maxLength + 1);
@@ -606,21 +602,20 @@ function hasMissablesForSeo(game = {}) {
 
 function buildGameSeoDescription(game = {}) {
   const name = String(game?.name || 'este jogo').trim() || 'este jogo';
-  const guideKind = hasPlatinumTrophyForSeo(game) ? 'Guia de platina' : 'Guia de troféus';
   const parts = [];
   const time = String(game?.time || '').trim();
   const difficulty = Number(game?.difficulty || 0);
 
+  parts.push('troféus');
   parts.push('roadmap');
   parts.push('checklist');
-  if (time) parts.push(`tempo estimado de ${time}`);
+  if (time) parts.push(`tempo ${time}`);
   if (difficulty > 0) parts.push(`dificuldade ${difficulty}/10`);
-  if (hasMissablesForSeo(game)) parts.push('troféus perdíveis');
+  if (hasMissablesForSeo(game)) parts.push('perdíveis');
   if (hasMandatoryOnlineForSeo(game)) parts.push('online obrigatório');
   else if (hasNoMandatoryOnlineForSeo(game)) parts.push('sem online obrigatório');
-  parts.push('progresso salvo');
 
-  return truncateSeoDescription(`${guideKind} de ${name} com ${parts.join(', ')}.`);
+  return truncateSeoDescription(`Guia de platina de ${name}: ${parts.join(', ')}.`);
 }
 
 function buildGameGuideH1(game = {}) {
@@ -1921,12 +1916,13 @@ function renderGuideRoadmapPanelHtml(viewModel = {}) {
           <p class="text-white/58 mt-2 max-w-4xl">Comece por estas etapas antes de mergulhar na lista completa. A ordem ajuda a reduzir retrabalho, evitar perdas e deixar o cleanup para o momento certo.</p>
         </div>
         <button type="button" class="atlas-section-toggle" data-guide-section-toggle="guideRoadmapBody" data-expanded-label="Ocultar roadmap" data-collapsed-label="Mostrar roadmap" aria-expanded="true" aria-controls="guideRoadmapBody"><span data-toggle-label>Ocultar roadmap</span><i class="fas fa-chevron-up" aria-hidden="true"></i></button>
-      </div>
-      <div id="guideRoadmapBody" data-guide-section-content>
-        ${renderGuideRoadmapTimelineHtml(roadmapStages)}
-        ${renderGuideWalkthroughHtml(viewModel)}
-      </div>
-    </section>`;
+        </div>
+        <div id="guideRoadmapBody" data-guide-section-content>
+          ${renderGuideRoadmapTimelineHtml(roadmapStages)}
+          ${renderGuideWalkthroughHtml(viewModel)}
+          ${roadmapStages.length >= 4 ? '<div class="atlas-guide-return-row"><button type="button" class="atlas-btn atlas-btn-secondary atlas-btn-compact" data-scroll-top="true"><i class="fas fa-arrow-up" aria-hidden="true"></i>Voltar ao topo</button></div>' : ''}
+        </div>
+      </section>`;
 }
 
 function renderGuideRiskAlertsPanelHtml(game = {}, viewModel = {}) {
@@ -2147,8 +2143,16 @@ function renderGuideSummaryPanelHtml(game = {}, viewModel = {}) {
   const explicitEditorialParagraphs = Array.isArray(game?.editorial_summary)
     ? game.editorial_summary.map(paragraph => String(paragraph || '').trim()).filter(Boolean)
     : [];
+  const sharedEditorialParagraphs = typeof sharedGuideViewModel.buildGuideEditorialSummary === 'function'
+    ? sharedGuideViewModel.buildGuideEditorialSummary(game)
+    : [];
+  const quickPlanItems = typeof sharedGuideViewModel.buildGuideQuickPlan === 'function'
+    ? sharedGuideViewModel.buildGuideQuickPlan(game, viewModel)
+    : [];
   const editorialParagraphs = explicitEditorialParagraphs.length
     ? explicitEditorialParagraphs
+    : sharedEditorialParagraphs.length
+    ? sharedEditorialParagraphs
     : normalizedSlug === 'resident-evil-requiem'
     ? REQUIEM_EDITORIAL_SUMMARY
     : normalizedSlug === 'hades'
@@ -2187,7 +2191,7 @@ function renderGuideSummaryPanelHtml(game = {}, viewModel = {}) {
   return `
     <section id="guideSummaryActions" class="atlas-panel atlas-panel--section atlas-guide-summary-actions p-5 md:p-6">
       <div>
-        <div class="atlas-eyebrow">Plano rápido</div>
+        ${quickPlanItems.length ? `<div class="atlas-guide-quick-plan" aria-label="Plano rápido da platina"><div class="atlas-eyebrow">Plano rápido</div><ol>${quickPlanItems.map(item => `<li><span>${escapeHtml(String(item.number || ''))}</span><div><strong>${escapeHtml(item.title || '')}</strong>${item.detail ? `<p>${escapeHtml(item.detail)}</p>` : ''}</div></li>`).join('')}</ol></div>` : '<div class="atlas-eyebrow">Plano rápido</div>'}
         <h2 class="text-xl md:text-2xl font-extrabold tracking-tight mt-2">Resumo da platina</h2>
         <p class="text-white/62 mt-2 max-w-3xl">${escapeHtml(nextAction.detail || 'Leia o resumo, abra o roadmap quando precisar da ordem completa e use a checklist para acompanhar progresso.')}</p>
         ${editorialParagraphs.length ? `<div class="atlas-guide-summary-editorial mt-4 space-y-3">${editorialParagraphs.map(paragraph => `<p class="text-white/72 max-w-4xl">${escapeHtml(paragraph)}</p>`).join('')}</div>` : ''}
@@ -2252,11 +2256,11 @@ function applyTemplateDefaults(template) {
     .replace(/__SSR_GUIDE_EDITORIAL_NOTES__/g, '')
     .replace(/__GUIDE_RELATED_OVERVIEW__/g, '')
     .replace(/__GUIDE_FEEDBACK_CTA__/g, '')
-    .replace(/__CATALOG_TITLE__/g, 'Todos os jogos')
+    .replace(/__CATALOG_TITLE__/g, 'Escolha sua próxima platina')
     .replace(/__CATALOG_SUMMARY__/g, '')
-    .replace(/__CATALOG_HERO_TITLE__/g, 'Navegue sem depender da busca')
-    .replace(/__CATALOG_HERO_DESCRIPTION__/g, 'Veja todos os jogos em uma lista filtrável com dificuldade, tempo estimado, troféus e acesso direto à página de guia.')
-    .replace(/__CATALOG_COLLECTION_TITLE__/g, 'Coleção aberta')
+    .replace(/__CATALOG_HERO_TITLE__/g, 'Filtre por tempo, dificuldade e risco')
+    .replace(/__CATALOG_HERO_DESCRIPTION__/g, 'Compare jogos por duração, desafio, troféus perdíveis, online obrigatório e status editorial antes de abrir o guia.')
+    .replace(/__CATALOG_COLLECTION_TITLE__/g, 'Catálogo completo de guias de platina')
     .replace(/__CATALOG_COLLECTION_DESCRIPTION__/g, 'Escolha uma faixa para entender melhor em que tipo de projeto você está entrando e clicar com mais segurança.')
     .replace(/__CATALOG_COLLECTION_REASON__/g, 'Use esta visão para comparar esforço, tempo e densidade do guia antes de escolher um jogo.')
     .replace(/__CATALOG_COLLECTION_CHECKLIST__/g, 'Abra a página do jogo para confirmar perdíveis, roadmap e se a lista combina com o seu momento.')
@@ -3291,7 +3295,7 @@ async function buildCatalogPageHtml(req, facetSlug = null) {
   const totalPages = Number(catalogResponse?.pagination?.totalPages || 1);
   const catalogSummary = `${formatCatalogCount(total)} nesta coleção · página ${page} de ${totalPages}`;
   const catalogHeroDescription = isCatalogRoot
-    ? 'Filtre por tempo, dificuldade, online, perdíveis e status editorial para escolher o guia certo.'
+    ? 'Compare jogos por tempo, dificuldade, troféus perdíveis, online obrigatório e status editorial antes de escolher sua próxima platina.'
     : `${facetConfig?.heroDescription || 'Veja todos os jogos em uma lista filtrável com dificuldade, tempo estimado, troféus e acesso direto à página de guia.'} ${isEmptyCollection ? 'Ainda não há jogos publicados nesta faixa.' : `${formatCatalogCount(total)} nesta faixa agora.`}`;
   const catalogRelatedLinks = renderCatalogRelatedLinks(facetConfig, facetCounts);
   const catalogStarterPicks = (facetConfig?.serviceFacet || 'all') === 'all' ? renderCatalogStarterPicksHtml(starterPickItems) : '';
@@ -3318,9 +3322,9 @@ async function buildCatalogPageHtml(req, facetSlug = null) {
     .replace(/__CATALOG_STARTER_PICKS__/g, catalogStarterPicks)
     .replace(/__CATALOG_SSR_LIST__/g, catalogSsrList)
     .replace(/__CATALOG_SSR_PAGINATION__/g, renderCatalogPaginationHtml(catalogResponse.pagination))
-    .replace(/__CATALOG_TITLE__/g, escapeHtml(isCatalogRoot ? 'Encontre sua próxima platina' : (facetConfig?.name || 'Catálogo de jogos')))
+    .replace(/__CATALOG_TITLE__/g, escapeHtml(isCatalogRoot ? 'Escolha sua próxima platina' : (facetConfig?.name || 'Catálogo de jogos')))
     .replace(/__CATALOG_BREADCRUMBS__/g, buildBreadcrumbsHtml([{ label: 'Início', href: '/' }, { label: 'Catálogo', href: '/catalogo' }, { label: facetConfig?.name || 'Catálogo de jogos' }]))
-    .replace(/__CATALOG_HERO_TITLE__/g, escapeHtml(facetConfig?.heroTitle || 'Navegue sem depender da busca'))
+    .replace(/__CATALOG_HERO_TITLE__/g, escapeHtml(facetConfig?.heroTitle || 'Filtre por tempo, dificuldade e risco'))
     .replace(/__CATALOG_COLLECTION_TITLE__/g, escapeHtml(facetConfig?.collectionTitle || 'Coleção aberta'))
     .replace(/__CATALOG_COLLECTION_DESCRIPTION__/g, escapeHtml(facetConfig?.collectionDescription || 'Escolha uma faixa para entender melhor em que tipo de projeto você está entrando e clicar com mais segurança.'))
     .replace(/__CATALOG_COLLECTION_REASON__/g, escapeHtml(facetConfig?.reason || 'Use esta visão para comparar esforço, tempo e densidade do guia antes de escolher um jogo.'))

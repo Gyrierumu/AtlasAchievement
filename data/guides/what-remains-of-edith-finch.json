@@ -39,7 +39,7 @@
     "time_min_hours": 2,
     "time_reason": "A faixa de 2-4 horas considera a história completa e cleanup rápido de troféus específicos por replay de histórias/cenas.",
     "time_sort_hours": 2,
-    "updated_at": "2026-06-28 21:19:06",
+    "updated_at": "2026-06-29 22:19:44",
     "verification_note": "Precisa revisão editorial final: versão PS5 com platina registrada; manter aviso explícito de que PS4 não tem platina.",
     "verification_status": "review",
     "walkthrough": null
@@ -76,9 +76,67 @@
     "aliases": [],
     "attentionPoints": [],
     "checklist": [],
-    "faq": [],
+    "editorial_summary": [],
+    "faq": [
+      {
+        "answer": "Sim. O guia possui alertas para troféus perdíveis. É recomendado seguir o roadmap desde o início.",
+        "question": "What Remains of Edith Finch tem troféus perdíveis?"
+      },
+      {
+        "answer": "Não. A platina não exige troféus online obrigatórios segundo os dados atuais do guia.",
+        "question": "What Remains of Edith Finch precisa de online para platinar?"
+      },
+      {
+        "answer": "O tempo estimado para platinar What Remains of Edith Finch é 2-4h. Use o roadmap para distribuir campanha, cleanup e checklist.",
+        "question": "Quanto tempo leva para platinar What Remains of Edith Finch?"
+      },
+      {
+        "answer": "A dificuldade cadastrada para a platina é 1/10. Leia os alertas para entender onde o desafio pode aumentar.",
+        "question": "Qual a dificuldade da platina de What Remains of Edith Finch?"
+      },
+      {
+        "answer": "Não. O guia não aponta coop obrigatório para a platina.",
+        "question": "What Remains of Edith Finch tem coop obrigatório?"
+      },
+      {
+        "answer": "O escopo de DLC está descrito no guia. Confira o detalhe antes de decidir quais listas extras seguir.",
+        "question": "A DLC é necessária para a platina de What Remains of Edith Finch?"
+      }
+    ],
     "note": "Campos exportados para auditoria. O SQLite atual nao possui colunas nativas para todos esses extras; a importacao preserva o que o banco suporta.",
     "quickDecision": null,
+    "quick_plan": [
+      {
+        "detail": "Inicie a história na versão PS5 e, antes de entrar na casa, faça All Roads pegando os dois caminhos até a casa; em seguida, acompanhe A Closer Look. A versão PS4 não pos…",
+        "number": 1,
+        "title": "Avance pela campanha"
+      },
+      {
+        "detail": "Durante a exploração da casa Finch, olhe todos os peepholes e telescópios necessários para A Closer Look, mantendo atenção aos quartos e histórias da família Finch.",
+        "number": 2,
+        "title": "Prossiga pela rota planejada"
+      },
+      {
+        "detail": "Termine a história principal, assista aos créditos quando necessário para Thanks, Johann! e libere o replay de histórias/cenas para cleanup curto.",
+        "number": 3,
+        "title": "Revise pendências finais"
+      },
+      {
+        "detail": "Confirme que o cadastro está usando a lista PS5. A versão PS4 de What Remains of Edith Finch não tem platina; não misture contagem, checklist ou metadados entre PS4 e PS…",
+        "number": 4,
+        "title": "Leia os alertas iniciais"
+      },
+      {
+        "detail": "Use as etapas para evitar retrabalho antes de abrir a checklist completa.",
+        "number": 5,
+        "title": "Siga o roadmap em ordem"
+      },
+      {
+        "detail": "Se perder algum troféu de história específica, use replay de cenas/histórias quando disponível após terminar a campanha para limpar rapidamente.",
+        "number": 6,
+        "title": "Finalize pela checklist"
+      }
+    ],
     "seo": {},
     "tags": []
   },

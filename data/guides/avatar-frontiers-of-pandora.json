@@ -39,7 +39,7 @@
     "time_min_hours": 35,
     "time_reason": "A faixa de 35-60 horas considera campanha, exploração, RDA sites, coletáveis, side questlines, clan favor e cleanup.",
     "time_sort_hours": 35,
-    "updated_at": "2026-06-28 21:19:06",
+    "updated_at": "2026-06-29 22:19:44",
     "verification_note": "Lista base revisada contra fontes públicas; pendente de revisão editorial manual no projeto.",
     "verification_status": "review",
     "walkthrough": null
@@ -217,6 +217,10 @@
       "Conferir se página individual e catálogo exibem o mesmo status editorial.",
       "Conferir se flags do topo batem com filtros do catálogo."
     ],
+    "editorial_summary": [
+      "Avatar: Frontiers of Pandora é uma platina de mundo aberto relativamente tranquila, focada em concluir a campanha, liberar habilidades, derrotar bases e instalações da RDA, alcançar 100% de qualidade do ar, completar atividades dos clãs, coletar tipos específicos de colecionáveis e fechar objetivos de exploração.",
+      "A platina base não tem troféus online, coop obrigatório, dificuldade obrigatória, DLC obrigatória ou perdíveis reais. The Sky Breaker, Secrets of the Spires e From the Ashes ficam separados como DLC/extra."
+    ],
     "faq": [
       {
         "answer": "Não. A platina base não tem perdíveis reais. O Resistance HQ fica indisponível depois da história, mas logs e anotações necessários continuam obtíveis em quantidade suficiente.",
@@ -278,6 +282,38 @@
       "time": "Médio, cerca de 40 a 60 horas.",
       "verdict": "Sim. É uma platina de mundo aberto acessível, com bastante exploração e checklist."
     },
+    "quick_plan": [
+      {
+        "detail": "Concluir a campanha, liberar regiões, voo e ferramentas necessárias para o cleanup.",
+        "number": 1,
+        "title": "Avance a campanha e desbloqueie a exploração completa"
+      },
+      {
+        "detail": "Encaminhar Wildlife Expert, Great Gatherer e One with the Clans sem retrabalho.",
+        "number": 2,
+        "title": "Escaneie plantas, animais e prepare contribuições dos clãs"
+      },
+      {
+        "detail": "Alcançar 100% de qualidade do ar e concluir os troféus ligados à RDA.",
+        "number": 3,
+        "title": "Limpe bases, postos e instalações da RDA"
+      },
+      {
+        "detail": "Coletar os tipos de colecionáveis necessários para a platina sem inflar itens que não contam.",
+        "number": 4,
+        "title": "Faça os colecionáveis obrigatórios do mapa"
+      },
+      {
+        "detail": "Fechar os troféus que exigem quantidades específicas, mas não todos os itens do jogo.",
+        "number": 5,
+        "title": "Complete objetivos parciais e atividades regionais"
+      },
+      {
+        "detail": "Completar objetivos de habilidade, crafting e combate que costumam ficar para o final.",
+        "number": 6,
+        "title": "Finalize habilidades, crafting e troféus de combate"
+      }
+    ],
     "seo": {
       "description": "Guia de troféus de Avatar: Frontiers of Pandora com roadmap da platina, tempo estimado, dificuldade, colecionáveis, qualidade do ar, comunidades dos clãs, RDA, DLCs separadas e dicas para os 32 troféus base.",
       "keywords": [

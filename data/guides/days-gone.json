@@ -39,7 +39,7 @@
     "time_min_hours": 60,
     "time_reason": "A estimativa de 60-80 horas considera campanha, storylines, hordas, acampamentos, NERO checkpoints, infestations, colecionáveis, trust, skills, moto e cleanup pós-história.",
     "time_sort_hours": 60,
-    "updated_at": "2026-06-28 21:19:07",
+    "updated_at": "2026-06-29 22:19:45",
     "verification_note": "Guia verificado para lista base PS4 com 46 trofeus, roadmap estruturado, checklist, FAQ, flags offline/sem coop/sem DLC, sem perdiveis rigidos, trofeus EN + PT-BR e descricoes em portugues.",
     "verification_status": "verified",
     "walkthrough": null
@@ -163,6 +163,10 @@
       "Fazer cleanup pós-história em free roam.",
       "Conferir que a platina segue offline, sem coop obrigatório, sem DLC obrigatória e sem perdíveis rígidos."
     ],
+    "editorial_summary": [
+      "Days Gone é uma platina longa, mas acessível, focada em completar a campanha, avançar storylines, limpar acampamentos, hordas, NERO checkpoints, infestations e colecionáveis. A platina base é single-player, não exige online, coop, DLC, Survival Mode, Challenge Mode nem New Game+.",
+      "A rota mais segura é jogar a história enquanto saqueia cadáveres humanos para You've Got Red on You, completa acampamentos e libera upgrades de Deacon e da moto. Depois da campanha, o free roam permite cleanup das hordas, storylines, colecionáveis, NERO injectors, drift com nitro e troféus restantes. O principal cuidado é não deixar todo o loot de inimigos humanos para o final, porque esse grind pode ficar bem mais lento no pós-game."
+    ],
     "faq": [
       {
         "answer": "Não. A platina base é single-player e pode ser feita offline.",
@@ -212,6 +216,38 @@
       "firstStep": "Comece pela campanha, saqueando cadáveres humanos desde cedo e limpando atividades regionais conforme elas aparecem.",
       "recommendation": "Vale platinar Days Gone se você gosta de mundo aberto, exploração, sobrevivência leve, moto e combate contra hordas. É uma platina longa, mas tranquila, sem online, sem coop, sem DLC obrigatória e sem perdíveis rígidos. O principal cuidado é adiantar You've Got Red on You durante a campanha para não transformar o pós-game em um grind desnecessário."
     },
+    "quick_plan": [
+      {
+        "detail": "Completar a história enquanto avança storylines, coleta recursos e reduz o grind de loot humano.",
+        "number": 1,
+        "title": "Campanha com saque constante e progresso natural"
+      },
+      {
+        "detail": "Concluir as principais atividades paralelas necessárias para a platina base.",
+        "number": 2,
+        "title": "Storylines, acampamentos e atividades do mapa"
+      },
+      {
+        "detail": "Preparar Deacon para enfrentar hordas e limpar troféus ligados a combate e progressão.",
+        "number": 3,
+        "title": "Hordas e combate avançado"
+      },
+      {
+        "detail": "Completar colecionáveis, skills, upgrades e troféus de progresso acumulado.",
+        "number": 4,
+        "title": "Colecionáveis e progresso de Deacon"
+      },
+      {
+        "detail": "Usar o free roam depois da campanha para fechar hordas, storylines, colecionáveis e troféus restantes.",
+        "number": 5,
+        "title": "Cleanup pós-história"
+      },
+      {
+        "detail": "Confirme que o guia cobre a lista base PS4 de 46 troféus. Survival Mode, Challenge Mode, New Game+, Days Gone Remastered/PS5, Broken Road DLC, Horde Assault, Permadeath…",
+        "number": 6,
+        "title": "Leia os alertas iniciais"
+      }
+    ],
     "seo": {
       "description": "Guia de platina de Days Gone com roadmap em português, troféus da lista base, hordas, NERO checkpoints, acampamentos, colecionáveis, You've Got Red on You, cleanup pós-história e dicas para conquistar a platina no PS4.",
       "keywords": "Days Gone, guia de platina Days Gone, troféus Days Gone, roadmap Days Gone, Days Gone PS4, One Percenter, You've Got Red on You, hordas Days Gone, NERO checkpoints, Burnout Apocalypse",

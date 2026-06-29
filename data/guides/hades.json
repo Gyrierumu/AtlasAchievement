@@ -39,7 +39,7 @@
     "time_min_hours": 70,
     "time_reason": "70 a 100 horas considera aprendizado inicial, primeira clear, 10 clears da história, epílogo, relações com personagens, Fated List, recursos raros, Keepsakes no rank máximo, Heat e cleanup situacional.",
     "time_sort_hours": 70,
-    "updated_at": "2026-06-28 21:19:07",
+    "updated_at": "2026-06-29 22:19:45",
     "verification_note": "Guia revisado com lista completa de troféus e dicas editoriais; manter como não verificado até checagem manual final.",
     "verification_status": "verified",
     "walkthrough": null
@@ -163,6 +163,12 @@
       }
     ],
     "checklist": [],
+    "editorial_summary": [
+      "Hades é uma platina baseada em progresso acumulado entre runs, longa para os padrões de roguelite. A lista base de PlayStation tem 50 troféus e pode ser concluída inteiramente em single-player, sem online, coop ou DLC obrigatória.",
+      "Não há troféus perdíveis reais. O progresso continua no mesmo save, então diálogos, profecias, afinidade, pesca, boons, armas e condições do Pact podem ser retomados em novas tentativas. O planejamento serve para reduzir grind, não para evitar um bloqueio permanente.",
+      "A rota mais eficiente começa pela Mirror of Night, armas, primeira fuga e história principal. Depois, distribua o pós-game entre Heat 8/16, Extreme Measures, Erebus, Fated List, Keepsakes rank 3, Companions, questlines, Codex, pesca e recursos raros.",
+      "A dificuldade percebida varia bastante. Sem God Mode, Heat e objetivos sem dano cobram consistência; com God Mode, a execução fica mais acessível sem bloquear troféus. A faixa editorial de 70 a 100 horas considera dezenas de runs, diálogos sujeitos a RNG e cleanup amplo."
+    ],
     "faq": [
       {
         "answer": "Não. A platina base é totalmente offline e não exige servidores, multiplayer, PS+ ou qualquer recurso online.",
@@ -215,6 +221,38 @@
       "recommendation": "É uma platina excelente para quem gosta de progressão constante e pouco indicada para quem não tolera grind, repetição ou objetivos sujeitos a diálogos e RNG.",
       "summary": "Vale platinar Hades se você gosta de roguelite, runs repetidas, builds variadas e progressão de longo prazo. A platina não exige online, coop nem DLC e não tem perdíveis reais, mas cobra muitas runs, afinidade, Fated List, Keepsakes, Companions, Pact of Punishment, pesca e recursos raros."
     },
+    "quick_plan": [
+      {
+        "detail": "Criar uma base segura para a primeira fuga sem tentar limpar a checklist cedo demais.",
+        "number": 1,
+        "title": "Aprenda as runs, armas e Mirror of Night"
+      },
+      {
+        "detail": "Transformar runs consistentes em progresso de história até The Family Secret.",
+        "number": 2,
+        "title": "Faça a primeira fuga e conclua a história principal"
+      },
+      {
+        "detail": "Resolver os troféus de Pact of Punishment sem transformar cada run em uma tentativa excessivamente difícil.",
+        "number": 3,
+        "title": "Suba Heat, Pact, Extreme Measures e Erebus"
+      },
+      {
+        "detail": "Avançar vínculos sem desperdiçar Nectar, Ambrosia, Diamonds ou diálogos entre runs.",
+        "number": 4,
+        "title": "Feche afinidades, Keepsakes, Companions e questlines"
+      },
+      {
+        "detail": "Usar cada run para fechar categorias específicas em vez de depender de tentativas aleatórias.",
+        "number": 5,
+        "title": "Complete Fated List, boons, armas, aspectos e Codex"
+      },
+      {
+        "detail": "Fechar pendências de RNG, recursos e ações específicas sem confundir risco de run com perdível.",
+        "number": 6,
+        "title": "Faça pesca, economia e cleanup final"
+      }
+    ],
     "seo": {
       "description": "Guia de platina de Hades em português, com tempo estimado, dificuldade, roadmap, checklist, Fated List, Keepsakes, Companions, Pact of Punishment, Heat e dicas para a platina.",
       "ogDescription": "Roadmap de Hades para a lista base de PlayStation: 50 troféus, sem perdíveis reais, sem online, sem coop, sem DLC obrigatória e com God Mode permitido.",

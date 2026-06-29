@@ -39,7 +39,7 @@
     "time_min_hours": 35,
     "time_reason": "35-45 horas: 8-12h na primeira campanha, 5-8h para emblemas/tesouros/armas, 4-6h para ranks S e troféus situacionais, 6-10h de farm/upgrades/figuras e 5-8h para Professional preparado.",
     "time_sort_hours": 35,
-    "updated_at": "2026-06-28 21:19:07",
+    "updated_at": "2026-06-29 22:19:45",
     "verification_note": "Guia revisado com foco na lista base, ausência de perdíveis definitivos, Seleção de Capítulos, coletáveis, armas, upgrades, ranks S e Professional.",
     "verification_status": "verified",
     "walkthrough": null
@@ -234,6 +234,14 @@
       "Checklist tesouro 49/50 - Soul Gem: 4-1, drop do Popokarimu se você matar o boss antes de fugir. Pré-requisito: ficar e matar; alerta: janela de capítulo, fugir não registra.",
       "Checklist tesouro 50/50 - Heart of Africa: 5-3, chão entre as escadas durante a luta contra Jill, se Wesker recuou por dano suficiente na luta anterior. Pré-requisito: causar dano alto em Wesker; alerta: se não aparecer, repita 5-3 preparado."
     ],
+    "editorial_summary": [
+      "Visão geral da platina: este guia cobre a platina/lista base de Resident Evil 5 e não cobre 100% com DLCs/listas extras. A lista base tem 51 troféus, não exige online, não exige DLC e pode ser concluída solo com a IA ou em coop opcional. O núcleo é terminar todos os capítulos, destravar e vencer Professional, coletar 30 emblemas BSAA, registrar todos os 50 tesouros, obter e evoluir todas as armas, comprar figuras e limpar troféus situacionais.",
+      "Perdíveis e pontos de não retorno: não há perdíveis definitivos. A Seleção de Capítulos mantém inventário/progresso e permite voltar para qualquer capítulo. O que existe são janelas internas de capítulo, como Soul Gem em 4-1, Heart of Africa em 5-3, o emblema explosivo de 6-1 e o Diamond Marquise de 6-3. Se passar por uma dessas janelas, repita o capítulo específico; a platina não fica bloqueada.",
+      "Roadmap recomendado: faça a primeira campanha em Normal ou Veteran, colete o que vier sem perfeccionismo, destrave Professional via Veteran, limpe emblemas/tesouros/armas/ranks S por Seleção de Capítulos, farme dinheiro, evolua armas-chave, compre figuras e só então finalize Professional. Essa ordem evita repetir Professional por falta de dano, repetir capítulos sem checklist e gastar dinheiro cedo em armas ruins.",
+      "Checklist por capítulo: emblemas BSAA por capítulo: 1-1: 0, 1-2: 3, 2-1: 5, 2-2: 3, 2-3: 0, 3-1: 4, 3-2: 2, 3-3: 1, 4-1: 3, 4-2: 1, 5-1: 1, 5-2: 1, 5-3: 3, 6-1: 3, 6-2: 0, 6-3: 0. Use rifle com zoom para os distantes e leve explosivo para o emblema dentro do container em 6-1.",
+      "Checklist de tesouros: registre os 50 tipos ao menos uma vez; você pode vendê-los depois. Dê atenção a Gold Ring/Topaz Marquise em 1-1, Ivory Relief/Antique Clock em 1-2, Ruby Marquise em 2-1, diamantes e Venom Fang em 2-2, Ceremonial Mask/Idol Silver/Blue Enigma em 3-1, Emerald Marquise em 3-3, Soul Gem em 4-1, Idol Gold/Beetle Gold/Diamond Trilliant em 4-2, Lion Heart em 5-1, Power Stone em 5-2, Royal Necklace/Heart of Africa/gemas Brilliant/Oval/Marquise em 5-3 e Diamond Marquise em 6-3.",
+      "Farm e upgrades: venda tesouros sem medo depois que o tipo entrar no registro. Priorize uma Magnum, um rifle e uma shotgun para Professional; depois evolua M92F, Ithaca, S&W M29, VZ61 e S75 para liberar M93R, Hydra, S&W M500, Gatling Gun e Longbow. Para dinheiro, repita 4-1 pegando gemas/tesouros, 5-1 pelo corredor de Lickers e 5-2 por Power Stones dos Reapers."
+    ],
     "faq": [
       {
         "answer": "Não há perdíveis definitivos na lista base. A Seleção de Capítulos permite repetir qualquer capítulo para limpar emblemas, tesouros, ranks S, dificuldades, armas e troféus situacionais.",
@@ -284,6 +292,38 @@
       "summary": "Platina de ação/coletáveis com 0 perdíveis definitivos, coop opcional, Professional obrigatório, grind moderado/alto e cleanup forte por Seleção de Capítulos.",
       "verdict": "Boa platina para quem aceita repetir capítulos, farmar dinheiro e preparar inventário para Professional."
     },
+    "quick_plan": [
+      {
+        "detail": "Termine a história uma vez, aprenda arenas/chefes e comece os checklists sem tentar perfeição.",
+        "number": 1,
+        "title": "Primeira campanha: Normal ou Veteran"
+      },
+      {
+        "detail": "Complete todos os capítulos no Veteran se ainda não tiver Professional liberado, depois evolua armas-chave antes da run final.",
+        "number": 2,
+        "title": "Desbloqueie Professional e prepare o arsenal"
+      },
+      {
+        "detail": "Use Seleção de Capítulos em Amateur/Normal para fechar Badge of Honor e They Belong in a Museum.",
+        "number": 3,
+        "title": "Limpeza de emblemas BSAA e tesouros"
+      },
+      {
+        "detail": "Garanta rank S em todos os capítulos em qualquer dificuldade e compre tudo que libera figuras/costumes.",
+        "number": 4,
+        "title": "Ranks S e Bonus Features"
+      },
+      {
+        "detail": "Comprar todas as armas, liberar armas especiais e evoluir todas as armas com upgrade.",
+        "number": 5,
+        "title": "Farm de dinheiro e upgrades"
+      },
+      {
+        "detail": "Limpe objetivos técnicos em capítulos fáceis antes de fechar a platina.",
+        "number": 6,
+        "title": "Troféus situacionais"
+      }
+    ],
     "seo": {
       "description": "Guia completo da platina de Resident Evil 5 em português, com roadmap, Professional, emblemas BSAA, tesouros, armas, upgrades, rank S, farm de dinheiro e troféus situacionais.",
       "keywords": "Resident Evil 5 troféus, Resident Evil 5 platina, Resident Evil 5 guia, RE5 trophy guide, Resident Evil 5 BSAA emblems, Resident Evil 5 treasures, Resident Evil 5 Professional, Resident Evil 5 Stockpile, Resident Evil 5 Take It to the Max",

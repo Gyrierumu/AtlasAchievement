@@ -15,10 +15,7 @@ window.UIFormatters = (() => {
 
   function buildGameSeoTitle(game = {}) {
     const name = String(game?.name || 'Jogo').trim() || 'Jogo';
-    if (String(game?.slug || '').trim().toLowerCase() === 'elden-ring') {
-      return 'Guia de Troféus Elden Ring | AtlasAchievement';
-    }
-    return `${name}: guia de platina, troféus e roadmap | AtlasAchievement`;
+    return `${name} – Guia de platina e troféus`;
   }
 
   function normalizeSeoSignalText(value = '') {
@@ -31,36 +28,6 @@ window.UIFormatters = (() => {
 
   function buildGameSeoDescription(game = {}) {
     const name = String(game?.name || 'este jogo').trim() || 'este jogo';
-    if (String(game?.slug || '').trim().toLowerCase() === 'elden-ring') {
-      return 'Roadmap completo para platinar Elden Ring com checklist, troféus perdíveis, finais, lendários, tempo estimado e dicas para conquistar a platina.';
-    }
-    if (String(game?.slug || '').trim().toLowerCase() === 'hades') {
-      return 'Guia de platina de Hades em português, com tempo estimado, dificuldade, roadmap, checklist, Fated List, Keepsakes, Companions, Pact of Punishment, Heat e dicas para a platina.';
-    }
-    if (String(game?.slug || '').trim().toLowerCase() === 'pragmata') {
-      return 'Guia de platina de PRAGMATA em português, com tempo estimado, dificuldade, troféus perdíveis, Lunatic, coletáveis, roadmap e checklist.';
-    }
-    if (String(game?.slug || '').trim().toLowerCase() === 'nioh-2') {
-      return 'Guia de platina de Nioh 2 em português, com tempo estimado, dificuldade, missões, Kodama, Hot Springs, proficiência, Soul Cores, roadmap e checklist de troféus.';
-    }
-    if (String(game?.slug || '').trim().toLowerCase() === 'nioh-3') {
-      return 'Guia de platina de Nioh 3 em português, com tempo estimado, dificuldade, troféus, Samurai, Ninja, missões, coletáveis, Battle Scroll, roadmap e checklist.';
-    }
-    if (String(game?.slug || '').trim().toLowerCase() === 'saros') {
-      return 'Guia de platina de Saros em português, com tempo estimado, dificuldade, troféus, roadmap, checklist, coletáveis, bosses e dicas para a platina.';
-    }
-    if (String(game?.slug || '').trim().toLowerCase() === 'resident-evil-requiem') {
-      return 'Guia de platina de Resident Evil Requiem em português, com tempo estimado, dificuldade, troféus, coletáveis, roadmap, checklist e dicas para a platina.';
-    }
-    if (String(game?.slug || '').trim().toLowerCase() === 'the-last-of-us-part-i') {
-      return 'Guia de platina de The Last of Us Part I em português, com tempo estimado, dificuldade, troféus, coletáveis, Left Behind, Chapter Select, roadmap e checklist.';
-    }
-    if (String(game?.slug || '').trim().toLowerCase() === 'the-last-of-us-part-ii') {
-      return 'Guia de platina de The Last of Us Part II em português, com tempo estimado, dificuldade, troféus, coletáveis, upgrades, Chapter Select, NG+ parcial, roadmap e checklist.';
-    }
-    if (String(game?.slug || '').trim().toLowerCase() === 'subnautica') {
-      return 'Guia de platina de Subnautica em português, com tempo estimado, dificuldade, troféus, exploração, veículos, base, história, roadmap e checklist.';
-    }
     const parts = [];
     const time = String(game?.time || '').trim();
     const difficulty = Number(game?.difficulty || 0);
@@ -75,18 +42,27 @@ window.UIFormatters = (() => {
     const missableCount = Number(game?.missable_count || 0);
     const hasMissables = missableCount > 0 || (!/nao ha|sem perdiveis|nada .*perdivel|0 perdiveis/.test(missableText) && /perdivel|perdiveis|ponto sem retorno|bloque/.test(missableText));
 
-    if (time) parts.push(`tempo estimado de ${time}`);
+    parts.push('troféus');
+    parts.push('roadmap');
+    parts.push('checklist');
+    if (time) parts.push(`tempo ${time}`);
     if (difficulty > 0) parts.push(`dificuldade ${difficulty}/10`);
-    if (hasMissables) parts.push('alertas de troféus perdíveis');
+    if (hasMissables) parts.push('perdíveis');
     if (hasCoop) parts.push('coop obrigatório');
     else if (hasOnline) parts.push('requisitos online');
     else if (noOnline) parts.push('sem online obrigatório');
     if (/lista base|jogo base|base game|sem dlc|dlc nao necessaria|nao e necessaria|fora do escopo|nao inclui/.test(dlcText) && !hasUncertainEditorialText(dlcText)) {
       parts.push('DLC fora da platina base');
     }
-    parts.push('roadmap e checklist');
+    return truncateSeoDescription(`Guia de platina de ${name}: ${parts.join(', ')}.`);
+  }
 
-    return `Guia de platina de ${name} em português, com ${parts.join(', ')}.`;
+  function truncateSeoDescription(value = '', maxLength = 155) {
+    const text = String(value || '').replace(/\s+/g, ' ').trim();
+    if (text.length <= maxLength) return text;
+    const slice = text.slice(0, maxLength + 1);
+    const lastBreak = Math.max(slice.lastIndexOf(', '), slice.lastIndexOf(' e '), slice.lastIndexOf(' '));
+    return `${slice.slice(0, lastBreak > 90 ? lastBreak : maxLength).trim().replace(/[,.]$/, '')}.`;
   }
 
   function buildGameGuideH1(game = {}) {

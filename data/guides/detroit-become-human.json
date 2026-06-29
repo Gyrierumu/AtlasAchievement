@@ -39,7 +39,7 @@
     "time_min_hours": 20,
     "time_reason": "A estimativa de cerca de 20h considera uma campanha guiada, rotas específicas para SURVIVORS e I’LL BE BACK, limpeza de revistas e replays por Chapter Select.",
     "time_sort_hours": 20,
-    "updated_at": "2026-06-28 21:19:07",
+    "updated_at": "2026-06-29 22:19:45",
     "verification_note": "Guia verificado editorialmente para a lista base PS4 de 49 troféus, com 46 troféus sensíveis a escolhas, rotas, capítulos ou replays parciais.",
     "verification_status": "verified",
     "walkthrough": null
@@ -107,6 +107,10 @@
       "Gastar pontos de bônus para THESE ARE OUR STORIES.",
       "Fazer o cleanup final dos 49 troféus da lista base."
     ],
+    "editorial_summary": [
+      "Detroit: Become Human é uma platina curta e fácil em execução, mas muito dependente de escolhas. A lista base tem 49 troféus offline, não exige online, coop ou DLC, e pode ser feita com uma primeira campanha cuidadosa, uma rota para todos sobreviverem, uma rota para as mortes de Connor e replays parciais por seleção de capítulo. O maior cuidado é entender que o Chapter Select só salva mudanças se você continuar jogando os capítulos seguintes a partir da alteração; refazer um capítulo isolado e pular para o final não atualiza consequências futuras.",
+      "A ordem mais segura é fazer uma primeira campanha acompanhando troféus de capítulo, mantendo personagens importantes vivos e coletando revistas quando possível, depois fazer a rota de SURVIVORS, a rota de I’LL BE BACK com Connor morrendo em todas as oportunidades, e por fim limpar revistas e troféus de escolhas opostas. Use o flowchart e o checklist para controlar rotas, personagens vivos, revistas condicionais e capítulos que precisam ser continuados com salvamento ativado."
+    ],
     "faq": [
       {
         "answer": "Sim. Muitos troféus dependem de escolhas e capítulos específicos. O Chapter Select permite corrigir rotas, mas mudanças só valem para capítulos futuros se você continuar jogando a partir do ponto alterado com salvamento ativado.",
@@ -156,6 +160,38 @@
       "fit": "Boa para quem gosta de narrativa ramificada, replay por capítulos e checklist de rotas.",
       "recommendation": "Platina curta e fácil em execução, mas dependente de planejamento de escolhas."
     },
+    "quick_plan": [
+      {
+        "detail": "Concluir a história pela primeira vez enquanto pega troféus de capítulo, mantém personagens importantes vivos e começa a coletar revistas.",
+        "number": 1,
+        "title": "Faça a primeira campanha guiada"
+      },
+      {
+        "detail": "Garantir que todos os personagens exigidos permaneçam vivos até o final para o troféu SURVIVORS.",
+        "number": 2,
+        "title": "Prepare a rota de todos sobrevivendo"
+      },
+      {
+        "detail": "Completar a rota em que Connor morre em todas as oportunidades necessárias antes do final.",
+        "number": 3,
+        "title": "Faça a rota das mortes de Connor"
+      },
+      {
+        "detail": "Buscar troféus alternativos de capítulos que exigem escolhas opostas ou finais diferentes.",
+        "number": 4,
+        "title": "Limpe escolhas opostas por Chapter Select"
+      },
+      {
+        "detail": "Encontrar revistas restantes, gastar pontos de bônus e fechar pendências de extras.",
+        "number": 5,
+        "title": "Finalize revistas e extras"
+      },
+      {
+        "detail": "Revisar a lista completa e confirmar que todas as rotas, escolhas e flags do guia estão corretas.",
+        "number": 6,
+        "title": "Faça o cleanup final da platina"
+      }
+    ],
     "seo": {
       "description": "Roadmap completo da platina de Detroit: Become Human, com escolhas, troféus perdíveis, SURVIVORS, I’LL BE BACK, revistas, Chapter Select, checklist e dicas para evitar replays desnecessários.",
       "keywords": "Detroit Become Human troféus, Detroit Become Human platina, Detroit Become Human guia, Detroit Become Human roadmap, Detroit Become Human perdíveis, Detroit Become Human Survivors, Detroit Become Human I’ll Be Back, Detroit Become Human revistas, Detroit Become Human chapter select, Detroit Become Human checklist",

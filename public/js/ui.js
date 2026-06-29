@@ -282,10 +282,10 @@ window.UI = (() => {
     const statusBadge = game ? getEditorialBadge(game) : null;
     const title = game
       ? buildGameSeoTitle(game)
-      : 'AtlasAchievement — Guias de troféus e platina em português';
+      : 'AtlasAchievement – Guias de platina e roadmap em português';
     const description = game
       ? buildGameSeoDescription(game)
-      : 'Guias de platina em português com roadmap, checklist, filtros de risco, progresso salvo, tempo estimado, dificuldade, perdíveis e requisitos online.';
+      : 'Guias de platina em português com roadmap, checklist, filtros por risco e progresso salvo para escolher sua próxima platina.';
     const canonical = game?.slug ? `${publicOrigin}/jogo/${game.slug}` : `${publicOrigin}/`;
     const image = !game?.image
       ? `${publicOrigin}/assets/brand/atlasachievement-og.png`

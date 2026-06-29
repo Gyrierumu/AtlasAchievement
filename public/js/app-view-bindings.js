@@ -1,5 +1,5 @@
 window.AppViewBindings = (() => {
-  function bindLibraryView({ UI, state, deleteFromLibrary, loadGuideBySlug, loadFromLibrary, isCurrentGameSaved, removeCurrentGameFromLibrary, saveCurrentGameToLibrary }) {
+  function bindLibraryView({ UI, state, deleteFromLibrary, loadGuideBySlug, loadFromLibrary, isCurrentGameSaved, removeCurrentGameFromLibrary, saveCurrentGameToLibrary, loadCatalogPage, navigate }) {
     let activeRemoveConfirmResolve = null;
 
     function renderLibraryView() {
@@ -113,7 +113,24 @@ window.AppViewBindings = (() => {
       });
     }
 
-    UI.qs('#view-library')?.addEventListener('click', event => {
+    UI.qs('#view-library')?.addEventListener('click', async event => {
+      const catalogLink = event.target.closest('[data-library-catalog-link]');
+      if (catalogLink) {
+        event.preventDefault();
+        closeLibraryMenus();
+        state.catalogFacet = 'all';
+        state.catalogPage = 1;
+        if (typeof loadCatalogPage === 'function') {
+          await loadCatalogPage({ page: 1, facet: 'all' });
+        }
+        if (typeof navigate === 'function') {
+          navigate('catalog', { resetScroll: true });
+          return;
+        }
+        window.location.href = catalogLink.getAttribute('href') || '/catalogo';
+        return;
+      }
+
       const clearSearchButton = event.target.closest('[data-library-clear-search]');
       if (clearSearchButton) {
         event.preventDefault();

@@ -31,13 +31,314 @@ body[data-page="admin"].atlas-admin-shell-locked #view-admin {
 }
 
 .atlas-admin-hero,
+.atlas-admin-queue-panel,
 .atlas-admin-quick-panel {
   border-radius: 16px;
 }
 
 .atlas-admin-hero::before,
+.atlas-admin-queue-panel::before,
 .atlas-admin-quick-panel::before {
   opacity: .28;
+}
+
+.admin-internal-nav {
+  position: sticky;
+  top: 88px;
+  z-index: 30;
+  display: flex;
+  gap: 8px;
+  overflow-x: auto;
+  padding: 10px;
+  border: 1px solid rgba(255,255,255,.08);
+  border-radius: 12px;
+  background: rgba(5, 9, 20, .86);
+  backdrop-filter: blur(16px);
+}
+
+.admin-internal-nav a {
+  flex: 0 0 auto;
+  min-height: 38px;
+  padding: 9px 12px;
+  border-radius: 8px;
+  color: rgba(226,232,240,.74);
+  font-size: .86rem;
+  font-weight: 800;
+}
+
+.admin-internal-nav a:hover,
+.admin-internal-nav a:focus-visible {
+  color: #fff;
+  background: rgba(56,189,248,.12);
+  outline: 2px solid rgba(56,189,248,.34);
+  outline-offset: 2px;
+}
+
+.admin-editorial-queue {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: 12px;
+}
+
+.admin-queue-card {
+  display: grid;
+  grid-template-columns: auto minmax(0, 1fr);
+  gap: 12px;
+  align-items: start;
+  min-width: 0;
+  padding: 14px;
+  border: 1px solid rgba(56,189,248,.18);
+  border-radius: 10px;
+  background: rgba(15,23,42,.58);
+}
+
+.admin-queue-card--empty {
+  border-color: rgba(255,255,255,.08);
+  background: rgba(255,255,255,.026);
+}
+
+.admin-queue-card__count {
+  min-width: 42px;
+  padding: 7px 9px;
+  border-radius: 8px;
+  background: rgba(56,189,248,.14);
+  color: rgb(186,230,253);
+  text-align: center;
+  font-weight: 950;
+}
+
+.admin-queue-card--empty .admin-queue-card__count {
+  background: rgba(255,255,255,.06);
+  color: rgba(226,232,240,.62);
+}
+
+.admin-queue-card__body {
+  min-width: 0;
+}
+
+.admin-queue-card__body strong,
+.admin-queue-card__body p,
+.admin-queue-card__body small {
+  overflow-wrap: anywhere;
+}
+
+.admin-queue-card__body strong {
+  display: block;
+  color: #fff;
+  font-size: .96rem;
+  line-height: 1.25;
+}
+
+.admin-queue-card__body p {
+  margin: 5px 0 0;
+  color: rgba(226,232,240,.62);
+  font-size: .84rem;
+  line-height: 1.42;
+}
+
+.admin-queue-card__body small {
+  display: block;
+  margin-top: 7px;
+  color: rgba(226,232,240,.42);
+  font-size: .76rem;
+}
+
+.admin-queue-card .atlas-btn {
+  grid-column: 1 / -1;
+  width: 100%;
+  justify-content: center;
+}
+
+.admin-quick-actions-row {
+  display: grid;
+  grid-template-columns: repeat(5, minmax(0, 1fr));
+  gap: 12px;
+}
+
+.admin-publishing-card {
+  display: grid;
+  grid-template-columns: auto minmax(0, 1fr);
+  gap: 14px;
+  align-items: start;
+  padding: 16px;
+  border: 1px solid rgba(56,189,248,.18);
+  border-radius: 10px;
+  background: rgba(15,23,42,.58);
+}
+
+.admin-publishing-card i {
+  width: 38px;
+  height: 38px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 8px;
+  background: rgba(56,189,248,.14);
+  color: rgb(186,230,253);
+}
+
+.admin-publishing-card strong {
+  color: #fff;
+  font-weight: 900;
+}
+
+.admin-publishing-card p {
+  margin-top: 5px;
+  color: rgba(226,232,240,.62);
+  line-height: 1.5;
+}
+
+.admin-publishing-card code {
+  padding: 2px 6px;
+  border-radius: 6px;
+  background: rgba(255,255,255,.08);
+  color: rgb(186,230,253);
+}
+
+.admin-game-card {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) auto;
+  gap: 14px;
+  align-items: center;
+  min-width: 0;
+  padding: 14px;
+  border: 1px solid rgba(255,255,255,.08);
+  border-radius: 12px;
+  background: rgba(15,23,42,.62);
+}
+
+.admin-game-card__main {
+  display: grid;
+  grid-template-columns: 76px minmax(0, 1fr);
+  gap: 14px;
+  align-items: center;
+  min-width: 0;
+}
+
+.admin-game-card__cover {
+  width: 76px;
+  aspect-ratio: 2 / 3;
+  overflow: hidden;
+  border-radius: 8px;
+  background: rgba(255,255,255,.05);
+}
+
+.admin-game-card__content,
+.admin-game-card__title-row {
+  min-width: 0;
+}
+
+.admin-game-card__title-row {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  flex-wrap: wrap;
+}
+
+.admin-game-card__title-row h3 {
+  min-width: 180px;
+  max-width: 100%;
+  color: #fff;
+  font-weight: 900;
+  overflow-wrap: anywhere;
+}
+
+.admin-card-score {
+  padding: 5px 8px;
+  border-radius: 999px;
+  background: rgba(56,189,248,.10);
+  color: rgb(186,230,253);
+  font-size: .76rem;
+  font-weight: 850;
+}
+
+.admin-game-card__meta,
+.admin-card-alerts {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 7px;
+  margin-top: 8px;
+}
+
+.admin-game-card__meta span {
+  color: rgba(226,232,240,.52);
+  font-size: .8rem;
+}
+
+.admin-card-alerts span {
+  padding: 4px 7px;
+  border-radius: 999px;
+  background: rgba(251,191,36,.12);
+  color: rgb(253,230,138);
+  font-size: .74rem;
+  font-weight: 800;
+}
+
+.admin-card-alerts--ok span {
+  background: rgba(34,197,94,.10);
+  color: rgb(187,247,208);
+}
+
+.admin-game-card__actions {
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  gap: 8px;
+}
+
+.admin-card-more {
+  position: relative;
+}
+
+.admin-card-more summary {
+  min-height: 38px;
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 8px 10px;
+  border: 1px solid rgba(255,255,255,.12);
+  border-radius: 8px;
+  color: rgba(248,250,252,.92);
+  cursor: pointer;
+  list-style: none;
+}
+
+.admin-card-more summary::-webkit-details-marker {
+  display: none;
+}
+
+.admin-card-more > div {
+  position: absolute;
+  right: 0;
+  top: calc(100% + 8px);
+  z-index: 20;
+  min-width: 180px;
+  padding: 8px;
+  border: 1px solid rgba(255,255,255,.10);
+  border-radius: 10px;
+  background: rgba(7,12,25,.98);
+  box-shadow: 0 18px 38px rgba(0,0,0,.34);
+}
+
+.admin-card-more button {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding: 9px 10px;
+  border-radius: 8px;
+  color: rgba(226,232,240,.82);
+  text-align: left;
+}
+
+.admin-card-more button:hover,
+.admin-card-more button:focus-visible {
+  background: rgba(255,255,255,.07);
+  outline: 0;
+}
+
+.admin-card-more .admin-danger-action {
+  color: rgb(254,202,202);
 }
 
 #adminGamesList > .glass-morphism {
@@ -118,6 +419,22 @@ body[data-page="admin"].atlas-admin-shell-locked #view-admin {
   width: 24px;
   text-align: center;
   font-size: 18px;
+}
+
+#adminGamesList .admin-card-more [data-admin-duplicate],
+#adminGamesList .admin-card-more [data-admin-delete] {
+  min-height: 38px;
+  border: 0;
+  background: transparent;
+  font-weight: 800;
+}
+
+#adminGamesList .admin-card-more [data-admin-duplicate] {
+  color: rgba(226,232,240,.82);
+}
+
+#adminGamesList .admin-card-more [data-admin-delete] {
+  color: rgb(254,202,202);
 }
 
 .atlas-admin-editor-panel {
@@ -503,6 +820,24 @@ body[data-page="admin"].atlas-admin-shell-locked #view-admin {
     align-items: flex-start;
   }
 
+  .admin-editorial-queue {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  .admin-quick-actions-row {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  .admin-game-card {
+    grid-template-columns: minmax(0, 1fr);
+    align-items: start;
+  }
+
+  .admin-game-card__actions {
+    justify-content: flex-start;
+    flex-wrap: wrap;
+  }
+
   #adminGamesList > .glass-morphism {
     grid-template-columns: minmax(0, 1fr);
   }
@@ -514,6 +849,57 @@ body[data-page="admin"].atlas-admin-shell-locked #view-admin {
 }
 
 @media (max-width: 640px) {
+  .admin-internal-nav {
+    top: 72px;
+    margin-inline: -4px;
+    border-radius: 10px;
+  }
+
+  .admin-editorial-queue,
+  .admin-quick-actions-row {
+    grid-template-columns: minmax(0, 1fr);
+  }
+
+  .admin-queue-card {
+    grid-template-columns: 40px minmax(0, 1fr);
+  }
+
+  .admin-game-card__main {
+    grid-template-columns: 64px minmax(0, 1fr);
+    align-items: start;
+  }
+
+  .admin-game-card__cover {
+    width: 64px;
+  }
+
+  .admin-game-card__title-row h3 {
+    min-width: 0;
+    width: 100%;
+  }
+
+  .admin-game-card__actions {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    width: 100%;
+  }
+
+  .admin-game-card__actions .atlas-btn,
+  .admin-card-more,
+  .admin-card-more summary {
+    width: 100%;
+  }
+
+  .admin-card-more > div {
+    left: 0;
+    right: auto;
+    width: min(260px, calc(100vw - 40px));
+  }
+
+  .admin-publishing-card {
+    grid-template-columns: minmax(0, 1fr);
+  }
+
   #adminGamesList > .glass-morphism {
     padding: 14px;
   }

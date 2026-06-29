@@ -39,7 +39,7 @@
     "time_min_hours": 50,
     "time_reason": "A faixa de 50-70 horas considera tres ciclos, todos os finais, Combat Logs, partes, Arena, OS Tuning e S Rank em todas as missoes.",
     "time_sort_hours": 50,
-    "updated_at": "2026-06-28 21:19:07",
+    "updated_at": "2026-06-29 22:19:45",
     "verification_note": "Lista PlayStation base de Armored Core VI: Fires of Rubicon adicionada com checklist e roadmap completos; aguarda revisao editorial manual final.",
     "verification_status": "verified",
     "walkthrough": null
@@ -159,6 +159,10 @@
       }
     ],
     "checklist": [],
+    "editorial_summary": [
+      "Armored Core VI: Fires of Rubicon é uma platina offline, exigente e muito dependente de execução, repetição de missões e planejamento de rotas. A lista não exige online, coop nem DLC, mas pede 3 playthroughs mínimos para liberar todas as missões, finais e conteúdo de NG/NG+/NG++. O maior muro da platina é The Perfect Mercenary, que exige S Rank em todas as missões via Mission Replay.",
+      "A ordem mais segura é jogar a primeira run normalmente, escolher decisões opostas no NG+, priorizar missões novas no NG++ para liberar Alea Iacta Est, completar Arena/Analysis antes de avançar demais, coletar combat logs e partes por Mission Replay, e só então focar no grind de S Rank. O principal cuidado é não repetir escolhas antigas quando houver Decision Missions, porque isso pode atrasar Stargazer, Combat Log Collector, coletores de partes e o acesso a todas as missões."
+    ],
     "faq": [
       {
         "answer": "Não. A lista de platina tem 30 troféus offline e 0 online. PvP/multiplayer não é necessário para a platina.",
@@ -216,6 +220,38 @@
       "risk": "Evite apenas se você não quer repetir missões várias vezes ou depender de execução precisa para S Rank.",
       "summary": "Vale platinar Armored Core VI: Fires of Rubicon se você quer uma platina offline, difícil e focada em domínio de builds, Mission Replay, S Rank, coleções de partes e três rotas completas."
     },
+    "quick_plan": [
+      {
+        "detail": "Finalizar a campanha inicial, liberar sistemas principais e aprender como adaptar o AC para cada missão.",
+        "number": 1,
+        "title": "Complete a primeira campanha aprendendo builds"
+      },
+      {
+        "detail": "Escolher missões diferentes da primeira run para liberar novas rotas, missões e final alternativo.",
+        "number": 2,
+        "title": "Use NG+ para decisões opostas"
+      },
+      {
+        "detail": "Liberar o conteúdo exclusivo de NG++ e concluir o terceiro final.",
+        "number": 3,
+        "title": "Faça NG++ mirando Alea Iacta Est"
+      },
+      {
+        "detail": "Completar todas as missões, combat logs, data logs úteis, peças e coleções de equipamento.",
+        "number": 4,
+        "title": "Feche missões, logs e coleções"
+      },
+      {
+        "detail": "Concluir The Perfect Mercenary usando Mission Replay e builds específicas por missão.",
+        "number": 5,
+        "title": "Faça S Rank em todas as missões"
+      },
+      {
+        "detail": "Confirmar os 30 troféus sem misturar online, PvP ou requisitos inexistentes.",
+        "number": 6,
+        "title": "Faça a conferência final da platina"
+      }
+    ],
     "seo": {
       "description": "Guia de platina de Armored Core VI: Fires of Rubicon com roadmap, 30 troféus, três runs, finais, Mission Replay, S Rank, combat logs, peças, flags e dicas para The Perfect Mercenary.",
       "keywords": "Armored Core VI guia de platina, Armored Core 6 guia de platina, Armored Core VI Fires of Rubicon troféus, Armored Core VI roadmap, Armored Core VI S Rank, Armored Core VI The Perfect Mercenary, Armored Core VI Stargazer, Armored Core VI finais, Armored Core VI Alea Iacta Est, Armored Core VI Mission Replay, Armored Core VI combat logs, Armored Core VI peças, Armored Core VI sem online, Armored Core VI sem coop, Armored Core VI 30 troféus",

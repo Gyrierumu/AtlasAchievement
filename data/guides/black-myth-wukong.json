@@ -39,7 +39,7 @@
     "time_min_hours": 40,
     "time_reason": "40-60h considerando campanha, exploração completa, áreas secretas, Journal, equipamentos, Spirits, Transformations, Curios, seeds, formulas, drops RNG, cleanup e New Game+.",
     "time_sort_hours": 50,
-    "updated_at": "2026-06-28 21:19:15",
+    "updated_at": "2026-06-29 22:19:55",
     "verification_note": "Guia verificado para a lista PS5: 36 troféus, distribuição 1/4/9/22, 40-60h, 5/10, 7 perdíveis, online 0, coop 0, nenhum requisito por configuração de jogo, base game sem DLC e New Game+ explicado.",
     "verification_status": "verified",
     "walkthrough": ""
@@ -151,6 +151,10 @@
       "Usar NG+ para equipamentos, armas e materiais restantes.",
       "Conferir Final Fulfillment e os 36 troféus PS5."
     ],
+    "editorial_summary": [
+      "Black Myth: Wukong é uma platina longa, totalmente offline e focada em exploração completa, bosses opcionais, quests de NPCs, equipamentos, Transformações, Espíritos, Curios, bebidas, fórmulas, sementes e Journal. A versão PlayStation possui 36 troféus, não exige online, cooperação ou requisito por configuração de jogo, pois o jogo não tem seleção ajustável. A dificuldade estimada fica em torno de 5/10, mas o tempo pode variar bastante por habilidade, RNG de drops e organização do cleanup.",
+      "A rota mais segura é explorar cada capítulo com calma, conversar com NPCs antes de avançar, derrotar bosses opcionais, coletar Espíritos/Transformações e evitar iniciar New Game+ antes de terminar tudo que for possível no ciclo atual. Após o chefe final, escolha Continue Journey para voltar ao ponto anterior ao final e fazer cleanup. Só entre em Enter a New Cycle depois de confirmar os perdíveis e coletáveis, pois o NG+ sobrescreve o ciclo atual. A platina exige New Game+ para alguns itens/equipamentos, mas o guia deve evitar retrabalho desnecessário."
+    ],
     "faq": [
       {
         "answer": "Não. A lista PS5 é totalmente offline.",
@@ -208,6 +212,38 @@
       "risk": "O erro crítico é iniciar Enter a New Cycle cedo demais ou perder janelas de NPCs/bosses antes do cleanup.",
       "summary": "Platina PS5 de 40-60h, 5/10, totalmente offline, com 7 perdíveis e New Game+ necessário. A rota segura é limpar o primeiro ciclo via Continue Journey antes de Enter a New Cycle."
     },
+    "quick_plan": [
+      {
+        "detail": "Jogar os 6 capítulos explorando bem, conversando com Horse NPC e Old Man NPC antes de avançar, derrotando bosses opcionais e registrando inimigos no Journal.",
+        "number": 1,
+        "title": "Primeira campanha com checklist de perdíveis por capítulo"
+      },
+      {
+        "detail": "Eliminar os riscos que mais costumam forçar repetição de capítulo ou NG+.",
+        "number": 2,
+        "title": "Checklist de perdíveis críticos"
+      },
+      {
+        "detail": "Depois do chefe final, voltar ao ciclo atual e limpar pendências antes de iniciar NG+.",
+        "number": 3,
+        "title": "Pós-final antes do NG+: escolha Continue Journey"
+      },
+      {
+        "detail": "Fechar as categorias de maior volume antes de depender do NG+.",
+        "number": 4,
+        "title": "100% completion e categorias grandes"
+      },
+      {
+        "detail": "Iniciar NG+ somente depois do cleanup do primeiro ciclo e buscar itens/equipamentos que exigem nova passagem.",
+        "number": 5,
+        "title": "New Game+ para equipamentos e armas restantes"
+      },
+      {
+        "detail": "Confirmar que a lista PS5 foi fechada sem misturar achievements de Steam/Xbox.",
+        "number": 6,
+        "title": "Conferência final dos 36 troféus PS5"
+      }
+    ],
     "seo": {
       "description": "Guia de platina de Black Myth: Wukong no PS5 com 36 troféus, 40-60h, 5/10, 7 perdíveis, New Game+ necessário, Continue Journey, checklist EN/PT-BR e roadmap seguro.",
       "keywords": "Black Myth Wukong troféus PS5, Black Myth Wukong platina, Black Myth Wukong guia, Black Myth Wukong roadmap, Black Myth Wukong perdíveis, Final Fulfillment, Continue Journey, Enter a New Cycle",

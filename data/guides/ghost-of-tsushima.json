@@ -39,7 +39,7 @@
     "time_min_hours": 40,
     "time_reason": "A faixa de 40-50 horas considera campanha, side content, coletáveis, libertação de áreas e cleanup.",
     "time_sort_hours": 40,
-    "updated_at": "2026-06-28 21:19:07",
+    "updated_at": "2026-06-29 22:19:46",
     "verification_note": "Guia revisado editorialmente para a lista base.",
     "verification_status": "verified",
     "walkthrough": null
@@ -76,9 +76,67 @@
     "aliases": [],
     "attentionPoints": [],
     "checklist": [],
-    "faq": [],
+    "editorial_summary": [],
+    "faq": [
+      {
+        "answer": "Não. A lista base não tem troféus perdíveis obrigatórios. A platina pode ser finalizada com cleanup em free roam após a campanha.",
+        "question": "Ghost of Tsushima tem troféus perdíveis?"
+      },
+      {
+        "answer": "Não. A platina base é totalmente offline e não exige Legends, servidores, PS+ ou troféus online.",
+        "question": "Ghost of Tsushima precisa de online para platinar?"
+      },
+      {
+        "answer": "O tempo estimado do guia é 40-50h, considerando campanha, Tales of Tsushima, Mythic Tales, liberação de regiões, coletáveis e cleanup no free roam.",
+        "question": "Quanto tempo leva para platinar Ghost of Tsushima?"
+      },
+      {
+        "answer": "A dificuldade cadastrada é 4/10. O desafio vem mais do volume de exploração, atividades e limpeza de mapa do que de execução extrema.",
+        "question": "Qual a dificuldade da platina de Ghost of Tsushima?"
+      },
+      {
+        "answer": "Não. A platina base é single-player e não exige coop.",
+        "question": "Ghost of Tsushima tem coop obrigatório?"
+      },
+      {
+        "answer": "Não. Iki Island, Legends e New Game+ ficam fora da platina base.",
+        "question": "A DLC é necessária para a platina de Ghost of Tsushima?"
+      }
+    ],
     "note": "Campos exportados para auditoria. O SQLite atual nao possui colunas nativas para todos esses extras; a importacao preserva o que o banco suporta.",
     "quickDecision": null,
+    "quick_plan": [
+      {
+        "detail": "Progredir pela história enquanto desbloqueia ferramentas, posturas, técnicas e acesso gradual às regiões.",
+        "number": 1,
+        "title": "Avance a história e libere recursos básicos"
+      },
+      {
+        "detail": "Reduzir a névoa do mapa e abrir atividades importantes em Izuhara, Toyotama e Kamiagata.",
+        "number": 2,
+        "title": "Liberte regiões e revele o mapa"
+      },
+      {
+        "detail": "Concluir histórias secundárias importantes para recursos, técnicas, armaduras e troféus.",
+        "number": 3,
+        "title": "Complete Tales e Mythic Tales"
+      },
+      {
+        "detail": "Finalizar atividades exigidas pela platina base sem misturar conteúdo de DLC.",
+        "number": 4,
+        "title": "Limpe coletáveis e atividades de mundo aberto"
+      },
+      {
+        "detail": "Aproveitar o free roam/exploração livre após a campanha para fechar o que ficou pendente.",
+        "number": 5,
+        "title": "Use o free roam para cleanup final"
+      },
+      {
+        "detail": "Confirmar todos os requisitos da platina base antes de encerrar o guia.",
+        "number": 6,
+        "title": "Revise a lista base e feche Living Legend"
+      }
+    ],
     "seo": {},
     "tags": []
   },
