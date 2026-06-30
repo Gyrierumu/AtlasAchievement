@@ -27,4 +27,10 @@
   --trophy-gold: #facc15;
   --trophy-silver: #cbd5e1;
   --trophy-bronze: #c08457;
+  --surface-soft: rgba(255, 255, 255, 0.04);
+  --surface-strong: rgba(255, 255, 255, 0.08);
+  --surface-raised: rgba(15, 23, 42, 0.72);
+  --shadow-soft: 0 18px 42px rgba(2, 6, 23, 0.24);
+  --shadow-strong: 0 30px 70px rgba(2, 6, 23, 0.34);
+  --ring-accent: rgba(125, 211, 252, 0.35);
 }

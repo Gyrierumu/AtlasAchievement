@@ -1685,11 +1685,19 @@ window.UIGuide = (() => {
 
 
 
+  function isGuideTrackableTrophy(trophy = {}) {
+    const type = String(trophy?.type || '').trim().toLowerCase();
+    return !Boolean(trophy?.is_placeholder || trophy?.isPlaceholder || trophy?.placeholder || type === 'informativo');
+  }
+
   function updateProgress(game, completedIds = []) {
     const trophies = Array.isArray(game?.trophies) ? game.trophies : [];
-    const doneSet = new Set(Array.isArray(completedIds) ? completedIds : []);
-    const total = trophies.length;
-    const completed = trophies.filter(t => doneSet.has(t.id)).length;
+    const trackableTrophies = trophies.filter(isGuideTrackableTrophy);
+    const doneSet = new Set((Array.isArray(completedIds) ? completedIds : [])
+      .map(id => String(id || '').trim())
+      .filter(Boolean));
+    const total = trackableTrophies.length;
+    const completed = trackableTrophies.filter(t => doneSet.has(String(t?.id || '').trim())).length;
     const progress = total ? Math.round((completed / total) * 100) : 0;
 
     const progressBar =
