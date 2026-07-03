@@ -1,0 +1,632 @@
+{
+  "game": {
+    "avoid_if": "Evite se você procura uma platina 100% offline; a lista base exige conexão online para troféus de TacSim.",
+    "before_you_start": "007 First Light é uma platina curta, fácil e focada em campanha, coletáveis, combate criativo e TacSim. A lista base possui 38 troféus, não exige cooperação nem troféus de dificuldade, e pode ser feita em uma jogada na dificuldade Novice. A campanha tem 17 capítulos lineares e, após avançar, o jogador pode usar Chapter Select para repetir capítulos, buscar coletáveis e limpar troféus de combate.\n\nO maior cuidado é que a platina não é totalmente offline: há troféus diretos de TacSim, o modo online de Tactical Simulations. Escalations são liberadas após o Chapter 6: A Night Out, enquanto Operations ficam disponíveis após concluir a história. Além disso, a platina exige 92 coletáveis no total, divididos em 36 Playing Cards, 23 Intel/MI6 Files, 14 Mementos, 10 Postcards e 9 Legacy Items. Não há perdíveis, não há New Game+ e não há troféus de dificuldade, mas há relatos de desbloqueio atrasado em troféus de coletáveis e TacSim, então é recomendável manter backup antes do último coletável de cada categoria.",
+    "best_for": "Ideal para quem quer uma platina curta, linear, fácil, com checklist de coletáveis e um pequeno bloco online de TacSim.",
+    "cleanup_advice": "Depois da história, use Chapter Select para coletáveis e combate situacional. Antes do último coletável de cada categoria, considere backup por causa de relatos raros de desbloqueio atrasado.",
+    "cover_image": "/assets/games/007-first-light/cover.png",
+    "coverage_level": "complete",
+    "created_at": "2026-07-03 14:36:24",
+    "difficulty": 2,
+    "difficulty_reason": "A dificuldade editorial é 2/10: a campanha pode ser feita em Novice, não há troféus de dificuldade, não há perdíveis e o cleanup usa Chapter Select. O cuidado real está em 92 coletáveis e nos troféus online rápidos de TacSim.",
+    "dlc_scope": "DLC não necessário. Deluxe Edition, cosméticos, outfits, weapon skins, Year One e futuros updates de TacSim ficam fora da platina base, salvo mudança oficial da lista PS5.",
+    "editorial_notes": "Fontes consultadas: PlayStation Store, página oficial da IO Interactive, PSNProfiles, PlayStationTrophies e PowerPyx. Guia restrito a 007 First Light PS5, sem mistura com outros jogos 007, filmes, Year One ou Deluxe.",
+    "editorial_review_status": "verified",
+    "editorial_status": "published",
+    "first_run_advice": "Jogue em Novice se quiser a rota mais simples, acompanhe os 92 coletáveis manualmente por capítulo e faça oportunidades naturais de combate sem se preocupar com perdíveis.",
+    "grind_summary": "Grind baixo. O maior checklist é de 92 coletáveis; TacSim exige Clearance Level 3 e tier 3 de Escalation, mas é curto.",
+    "guide_avoid": null,
+    "guide_best_moment": null,
+    "guide_dlc": null,
+    "guide_grind": null,
+    "guide_ideal": null,
+    "guide_online": null,
+    "guide_runs": null,
+    "image": "/assets/games/007-first-light/hero.png",
+    "is_verified": 1,
+    "last_reviewed_at": "2026-07-01",
+    "missable": "Sem perdíveis. Chapter Select permite repetir capítulos para coletáveis e troféus de combate; TacSim também pode ser feito depois de liberado.",
+    "missable_summary": "Perdíveis: 0. Coletáveis, combate situacional e TacSim não devem ser marcados como perdíveis porque há Chapter Select e acesso posterior aos modos necessários.",
+    "name": "007 First Light",
+    "online_summary": "007 First Light não tem coop/multiplayer obrigatório, mas a platina exige troféus de TacSim, que dependem de conexão online. Portanto, o guia deve ficar como Online obrigatório, mas Coop 0. Online direto: 4 troféus de TacSim. Online total contando a platina por dependência: 5.",
+    "quality_warnings": "[]",
+    "reviewed_by": "AtlasAchievement Editorial",
+    "runs_summary": "1 jogada em qualquer dificuldade, recomendada em Novice, com cleanup por Chapter Select e TacSim online depois da liberação.",
+    "slug": "007-first-light",
+    "time": "20h",
+    "time_bucket": "medium",
+    "time_max_hours": 20,
+    "time_min_hours": 20,
+    "time_reason": "A estimativa de 20h cobre uma campanha de 17 capítulos lineares, coleta dos 92 itens, cleanup de combate por Chapter Select e cerca de 30 minutos para TacSim online.",
+    "time_sort_hours": 20,
+    "updated_at": "2026-07-03 14:38:32",
+    "verification_note": "Guia validado para a lista base PS5 de 007 First Light: 38 troféus, 1/3/14/20, 20h, dificuldade 2/10, perdíveis 0, online direto 4, online total 5 com platina por dependência, coop 0, dificuldade 0, Chapter Select, sem New Game+ e sem DLC necessário.",
+    "verification_status": "verified",
+    "walkthrough": ""
+  },
+  "redirects": [
+    "007-first-light-ps5",
+    "james-bond-007-first-light",
+    "project-007"
+  ],
+  "roadmaps": [
+    {
+      "content": "{\"title\":\"Campanha, coletáveis e combate em Novice\",\"focus\":\"Campanha / coletáveis / combate\",\"objective\":\"Jogar a campanha em qualquer dificuldade, preferencialmente Novice, acompanhar os 92 coletáveis e fazer troféus de combate quando surgirem oportunidades naturais.\",\"actions\":[\"Avance pelos 17 capítulos lineares sem se preocupar com troféus de dificuldade.\",\"Use guia/checklist de coletáveis para controlar 36 Playing Cards, 23 Intel/MI6 Files, 14 Mementos, 10 Postcards e 9 Legacy Items.\",\"Teste Q-Watch, laser, gadgets, stealth, combate e tackle enquanto progride.\",\"Faça troféus de combate que aparecerem naturalmente, mas deixe o restante para Chapter Select.\"],\"warning\":\"Não há perdíveis por causa do Chapter Select, mas não existe tracker por capítulo para coletáveis; acompanhe manualmente para evitar retrabalho.\",\"result\":\"História concluída, Chapter Select disponível e a maior parte dos coletáveis e misc encaminhada.\"}",
+      "step_order": 1
+    },
+    {
+      "content": "{\"title\":\"Cleanup por Chapter Select\",\"focus\":\"Chapter Select / coletáveis / misc\",\"objective\":\"Voltar aos capítulos para coletáveis faltantes e completar troféus de combate situacional.\",\"actions\":[\"Complete Postcards, Intel/MI6 Files, Mementos, Playing Cards e Legacy Items.\",\"Faça Soft landing, Positively shocking, Short fuse, Damp squib, Firestarter, Disarming personality e Always have an exit plan.\",\"Considere backup antes do último coletável de cada categoria.\",\"Se um coletável ou troféu não desbloquear, tente coletar novamente via backup/offline conforme a política editorial do projeto.\"],\"warning\":\"Não chame isso de free roam aberto: a limpeza é por Chapter Select.\",\"result\":\"Coletáveis, combate e misc concluídos.\"}",
+      "step_order": 2
+    },
+    {
+      "content": "{\"title\":\"TacSim online\",\"focus\":\"TacSim / online\",\"objective\":\"Completar os quatro troféus diretos de TacSim que exigem conexão online.\",\"actions\":[\"Após Chapter 6: A Night Out, complete pelo menos uma Escalation.\",\"Após terminar a história, complete uma Operation.\",\"Alcance Clearance Level 3.\",\"Conclua o tier 3 de uma Escalation.\"],\"warning\":\"TacSim é online, mas não é coop. Operations só ficam disponíveis após a história; Keep moving forward pode atrasar e liberar ao continuar até Clearance Level 4.\",\"result\":\"Troféus online/TacSim concluídos.\"}",
+      "step_order": 3
+    },
+    {
+      "content": "{\"title\":\"Conferência final\",\"focus\":\"Checklist final\",\"objective\":\"Conferir 38 troféus e validar as flags editoriais da platina base.\",\"actions\":[\"Confirme 38 troféus únicos com título original EN e tradução PT-BR.\",\"Valide Online direto 4, Online total 5 com platina por dependência, Coop 0, Perdíveis 0 e Dificuldade 0.\",\"Confirme que não há DLC, New Game+, PS4 autopop, Year One ou Deluxe no requisito da platina base.\",\"Revise se TacSim está tratado como online técnico, não como coop/multiplayer obrigatório.\"],\"warning\":\"\",\"result\":\"Platina The name's Bond. James Bond desbloqueada.\"}",
+      "step_order": 4
+    }
+  ],
+  "schemaVersion": 1,
+  "seedExtras": {
+    "aliases": [
+      "james-bond-007-first-light",
+      "project-007",
+      "007 first light ps5"
+    ],
+    "attentionPoints": [
+      {
+        "tags": [
+          "TacSim",
+          "Online"
+        ],
+        "text": "A platina exige troféus de TacSim. Não há coop, mas há troféus online.",
+        "title": "TacSim é online",
+        "type": "Online"
+      },
+      {
+        "tags": [
+          "Coletáveis"
+        ],
+        "text": "A collector's habit exige 36 Playing Cards, 23 MI6 Files, 14 Mementos, 10 Postcards e 9 Legacy Items.",
+        "title": "92 coletáveis",
+        "type": "Coletável"
+      },
+      {
+        "tags": [
+          "Chapter Select"
+        ],
+        "text": "Não há perdíveis: após a história, use Chapter Select para coletáveis e troféus de combate.",
+        "title": "Chapter Select",
+        "type": "Cleanup"
+      },
+      {
+        "tags": [
+          "Novice"
+        ],
+        "text": "Tudo pode ser feito na menor dificuldade Novice; nenhum troféu deve ter tag Dificuldade.",
+        "title": "Sem dificuldade",
+        "type": "Dificuldade"
+      },
+      {
+        "tags": [
+          "Risco técnico"
+        ],
+        "text": "Alguns troféus de coletáveis e Keep moving forward podem desbloquear com atraso; faça backup antes do último coletável.",
+        "title": "Risco técnico",
+        "type": "Atenção"
+      },
+      {
+        "tags": [
+          "Sem New Game+"
+        ],
+        "text": "Não há New Game+ e ele não é necessário para a platina base.",
+        "title": "Sem New Game+",
+        "type": "Rota"
+      }
+    ],
+    "checklist": [
+      "Concluir os 17 capítulos da campanha em qualquer dificuldade, preferencialmente Novice.",
+      "Coletar 36 Playing Cards.",
+      "Desbloquear 23 Intel/MI6 Files.",
+      "Coletar 14 Mementos.",
+      "Coletar 10 Postcards.",
+      "Descobrir 9 Legacy Items.",
+      "Finalizar os 92 coletáveis para A collector's habit.",
+      "Limpar troféus de combate situacional por Chapter Select.",
+      "Completar uma Escalation no TacSim após Chapter 6: A Night Out.",
+      "Completar uma Operation no TacSim após concluir a história.",
+      "Chegar ao Clearance Level 3 no TacSim.",
+      "Concluir tier 3 de uma Escalation no TacSim.",
+      "Conferir que não há DLC, New Game+, dificuldade ou coop no escopo da platina base."
+    ],
+    "editorial_summary": [
+      "007 First Light é uma platina curta, fácil e focada em campanha, coletáveis, combate criativo e TacSim. A lista base possui 38 troféus, não exige cooperação nem troféus de dificuldade, e pode ser feita em uma jogada na dificuldade Novice. A campanha tem 17 capítulos lineares e, após avançar, o jogador pode usar Chapter Select para repetir capítulos, buscar coletáveis e limpar troféus de combate.\n\nO maior cuidado é que a platina não é totalmente offline: há troféus diretos de TacSim, o modo online de Tactical Simulations. Escalations são liberadas após o Chapter 6: A Night Out, enquanto Operations ficam disponíveis após concluir a história. Além disso, a platina exige 92 coletáveis no total, divididos em 36 Playing Cards, 23 Intel/MI6 Files, 14 Mementos, 10 Postcards e 9 Legacy Items. Não há perdíveis, não há New Game+ e não há troféus de dificuldade, mas há relatos de desbloqueio atrasado em troféus de coletáveis e TacSim, então é recomendável manter backup antes do último coletável de cada categoria.",
+      "007 First Light não tem coop/multiplayer obrigatório, mas a platina exige troféus de TacSim, que dependem de conexão online. Portanto, o guia deve ficar como Online obrigatório, mas Coop 0."
+    ],
+    "faq": [
+      {
+        "answer": "Sim. Os troféus de TacSim exigem conexão online. O online direto fica em What if...?, A change of pace, Keep moving forward e The readiness is all.",
+        "question": "007 First Light tem troféus online?"
+      },
+      {
+        "answer": "Não. TacSim é online, mas não é coop obrigatório nem multiplayer competitivo/cooperativo obrigatório.",
+        "question": "007 First Light tem coop ou multiplayer obrigatório?"
+      },
+      {
+        "answer": "Não há confirmação editorial suficiente para afirmar PS Plus como obrigatório. O guia informa apenas que TacSim exige conexão online.",
+        "question": "Precisa de PS Plus?"
+      },
+      {
+        "answer": "Não. Tudo pode ser feito na menor dificuldade Novice e nenhum troféu individual deve ter tag Dificuldade.",
+        "question": "A dificuldade afeta troféus?"
+      },
+      {
+        "answer": "Uma jogada é suficiente, com cleanup por Chapter Select.",
+        "question": "Quantas jogadas são necessárias?"
+      },
+      {
+        "answer": "Não. Chapter Select permite recuperar coletáveis e troféus de combate.",
+        "question": "Existem troféus perdíveis?"
+      },
+      {
+        "answer": "Sim. Após a história, é possível repetir capítulos para coletáveis e troféus situacionais.",
+        "question": "Existe Chapter Select?"
+      },
+      {
+        "answer": "Não. New Game+ não é necessário para a platina base.",
+        "question": "Existe New Game+?"
+      },
+      {
+        "answer": "São 92 coletáveis: 36 Playing Cards, 23 MI6 Files/Intel, 14 Mementos, 10 Postcards e 9 Legacy Items.",
+        "question": "Quantos coletáveis existem?"
+      },
+      {
+        "answer": "Não. Há tracker por tipo no Touchpad, mas ele pode ficar indisponível em algumas seções. Acompanhe manualmente por capítulo.",
+        "question": "O jogo tem tracker de coletáveis por capítulo?"
+      },
+      {
+        "answer": "Há relatos de desbloqueio atrasado em troféus de coletáveis e em Keep moving forward. Backup antes do último coletável pode evitar retrabalho.",
+        "question": "Quais troféus podem dar problema?"
+      },
+      {
+        "answer": "Não. A platina base não exige Deluxe Edition, cosméticos ou conteúdo futuro do roadmap Year One.",
+        "question": "Conteúdo Year One ou Deluxe é necessário?"
+      }
+    ],
+    "note": "Campos exportados para auditoria. O SQLite atual nao possui colunas nativas para todos esses extras; a importacao preserva o que o banco suporta.",
+    "quickDecision": {
+      "coopRequired": "Não",
+      "difficulty": "2/10",
+      "dlcRequired": "Não",
+      "firstAction": "Jogue a campanha em Novice acompanhando os 92 coletáveis e deixe TacSim/cleanup para depois.",
+      "mainAttention": "A platina não é totalmente offline: TacSim exige conexão online, mas não exige coop nem multiplayer competitivo.",
+      "missables": "Não",
+      "onlineRequired": "Sim, TacSim online",
+      "runs": "1 jogada + Chapter Select",
+      "time": "20h"
+    },
+    "quick_plan": [
+      {
+        "detail": "Jogue os 17 capítulos, acompanhe os 92 coletáveis e aproveite oportunidades naturais de combate sem se preocupar com perdíveis.",
+        "number": 1,
+        "title": "Campanha, coletáveis e combate em Novice"
+      },
+      {
+        "detail": "Volte aos capítulos para coletáveis faltantes e troféus situacionais como Soft landing, Damp squib e Disarming personality.",
+        "number": 2,
+        "title": "Cleanup por Chapter Select"
+      },
+      {
+        "detail": "Faça Escalations, Operations, Clearance Level 3 e tier 3 de Escalation usando conexão online.",
+        "number": 3,
+        "title": "TacSim online"
+      },
+      {
+        "detail": "Revise 38 troféus, online direto 4, coop 0, dificuldade 0, perdíveis 0, DLC não necessário e sem New Game+.",
+        "number": 4,
+        "title": "Conferência final"
+      }
+    ],
+    "seo": {
+      "description": "Guia de platina de 007 First Light para PS5, com 38 troféus, TacSim online, 92 coletáveis, Chapter Select, roadmap, FAQ e checklist EN + PT-BR.",
+      "image": "/assets/games/007-first-light/hero.png",
+      "keywords": "007 First Light troféus, 007 First Light platina, 007 First Light guia, 007 First Light TacSim, 007 First Light coletáveis",
+      "title": "007 First Light: guia de troféus e platina | AtlasAchievement"
+    },
+    "tags": [
+      "PS5",
+      "Online obrigatório",
+      "TacSim",
+      "Sem coop",
+      "Sem perdíveis",
+      "Sem dificuldade",
+      "Chapter Select",
+      "Coletáveis",
+      "Sem New Game+"
+    ]
+  },
+  "slug": "007-first-light",
+  "trophies": [
+    {
+      "description": "Desbloqueie todos os troféus de 007 First Light.",
+      "is_missable": 0,
+      "is_spoiler": 0,
+      "name": "The name's Bond. James Bond",
+      "name_pt": "O nome é Bond. James Bond",
+      "tip": "Desbloqueie todos os troféus de 007 First Light. A platina depende dos coletáveis, combate, história e TacSim online.",
+      "trophy_code": "007-first-light-the-names-bond-james-bond",
+      "type": "Platina"
+    },
+    {
+      "description": "Sobreviva à queda do helicóptero.",
+      "is_missable": 0,
+      "is_spoiler": 1,
+      "name": "Icebreaker",
+      "name_pt": "Quebra-gelo",
+      "tip": "Sobreviva à queda do helicóptero e conclua o Chapter 1: Against the Odds. Troféu automático de história.",
+      "trophy_code": "007-first-light-icebreaker",
+      "type": "Bronze"
+    },
+    {
+      "description": "Complete o treinamento como recruta em Malta.",
+      "is_missable": 0,
+      "is_spoiler": 1,
+      "name": "From Malta with love",
+      "name_pt": "De Malta com Amor",
+      "tip": "Complete o treinamento como recruta em Malta. Troféu automático de história ao fim do Chapter 5: A New Home.",
+      "trophy_code": "007-first-light-from-malta-with-love",
+      "type": "Bronze"
+    },
+    {
+      "description": "Complete sua primeira missão no nightclub.",
+      "is_missable": 0,
+      "is_spoiler": 1,
+      "name": "Shaken not stirred",
+      "name_pt": "Batido, não Mexido",
+      "tip": "Complete a primeira missão no nightclub. Troféu automático de história no Chapter 6: A Night Out.",
+      "trophy_code": "007-first-light-shaken-not-stirred",
+      "type": "Bronze"
+    },
+    {
+      "description": "Sobreviva à explosão no hotel da Eslováquia.",
+      "is_missable": 0,
+      "is_spoiler": 1,
+      "name": "I expect you to die",
+      "name_pt": "Espero que Você Morra",
+      "tip": "Troféu automático de história durante a sequência do hotel na Eslováquia.",
+      "trophy_code": "007-first-light-i-expect-you-to-die",
+      "type": "Bronze"
+    },
+    {
+      "description": "Salte de um avião na Eslováquia.",
+      "is_missable": 0,
+      "is_spoiler": 1,
+      "name": "Skyfall",
+      "name_pt": "Queda do Céu",
+      "tip": "Troféu automático de história ao concluir a sequência aérea na Eslováquia.",
+      "trophy_code": "007-first-light-skyfall",
+      "type": "Prata"
+    },
+    {
+      "description": "Vença o leilão.",
+      "is_missable": 0,
+      "is_spoiler": 1,
+      "name": "Win, lose or die",
+      "name_pt": "Vencer, Perder ou Morrer",
+      "tip": "Troféu automático de história ligado ao leilão; avance a campanha normalmente.",
+      "trophy_code": "007-first-light-win-lose-or-die",
+      "type": "Bronze"
+    },
+    {
+      "description": "Encontre o corpo de 009.",
+      "is_missable": 0,
+      "is_spoiler": 1,
+      "name": "Nobody lives forever",
+      "name_pt": "Ninguém Vive para Sempre",
+      "tip": "Troféu automático de história durante a investigação do corpo de 009.",
+      "trophy_code": "007-first-light-nobody-lives-forever",
+      "type": "Bronze"
+    },
+    {
+      "description": "Escape vivo da emboscada.",
+      "is_missable": 0,
+      "is_spoiler": 1,
+      "name": "Trigger Mortis",
+      "name_pt": "Trigger Mortis",
+      "tip": "Troféu automático de história por sobreviver à emboscada.",
+      "trophy_code": "007-first-light-trigger-mortis",
+      "type": "Prata"
+    },
+    {
+      "description": "Sobreviva a uma tentativa de assassinato.",
+      "is_missable": 0,
+      "is_spoiler": 1,
+      "name": "A hard man to kill",
+      "name_pt": "Um Homem Difícil de Matar",
+      "tip": "Troféu automático de história ligado à tentativa de assassinato.",
+      "trophy_code": "007-first-light-a-hard-man-to-kill",
+      "type": "Bronze"
+    },
+    {
+      "description": "Derrote o assassino.",
+      "is_missable": 0,
+      "is_spoiler": 1,
+      "name": "You only live twice",
+      "name_pt": "Você Só Vive Duas Vezes",
+      "tip": "Troféu automático de história por derrotar o assassino.",
+      "trophy_code": "007-first-light-you-only-live-twice",
+      "type": "Prata"
+    },
+    {
+      "description": "Escape no caminhão de lixo.",
+      "is_missable": 0,
+      "is_spoiler": 1,
+      "name": "Agent under fire",
+      "name_pt": "Agente sob Fogo",
+      "tip": "Troféu automático de história ao concluir a fuga no caminhão de lixo.",
+      "trophy_code": "007-first-light-agent-under-fire",
+      "type": "Bronze"
+    },
+    {
+      "description": "Infiltre-se na cobertura de Nicholas Webb.",
+      "is_missable": 0,
+      "is_spoiler": 1,
+      "name": "All time high",
+      "name_pt": "No Ponto Mais Alto",
+      "tip": "Troféu automático de história ao entrar na cobertura de Nicholas Webb.",
+      "trophy_code": "007-first-light-all-time-high",
+      "type": "Bronze"
+    },
+    {
+      "description": "Escape de helicóptero.",
+      "is_missable": 0,
+      "is_spoiler": 1,
+      "name": "No time to die",
+      "name_pt": "Sem Tempo para Morrer",
+      "tip": "Troféu automático de história por escapar de helicóptero.",
+      "trophy_code": "007-first-light-no-time-to-die",
+      "type": "Prata"
+    },
+    {
+      "description": "Salve Theresa Lorca.",
+      "is_missable": 0,
+      "is_spoiler": 1,
+      "name": "Double or die",
+      "name_pt": "Dobrar ou Morrer",
+      "tip": "Troféu automático de história por salvar Theresa Lorca.",
+      "trophy_code": "007-first-light-double-or-die",
+      "type": "Bronze"
+    },
+    {
+      "description": "Derrote Damien Webb.",
+      "is_missable": 0,
+      "is_spoiler": 1,
+      "name": "You know my name",
+      "name_pt": "Você Sabe Meu Nome",
+      "tip": "Troféu automático de história por derrotar Damien Webb.",
+      "trophy_code": "007-first-light-you-know-my-name",
+      "type": "Prata"
+    },
+    {
+      "description": "Deixe a MI6 como agente renegado.",
+      "is_missable": 0,
+      "is_spoiler": 1,
+      "name": "Solo",
+      "name_pt": "Solo",
+      "tip": "Troféu automático de história ao deixar a MI6 como agente renegado.",
+      "trophy_code": "007-first-light-solo",
+      "type": "Bronze"
+    },
+    {
+      "description": "Capture Isola.",
+      "is_missable": 0,
+      "is_spoiler": 1,
+      "name": "The writing is on the wall",
+      "name_pt": "A Escrita Está na Parede",
+      "tip": "Troféu automático de história por capturar Isola.",
+      "trophy_code": "007-first-light-the-writing-is-on-the-wall",
+      "type": "Prata"
+    },
+    {
+      "description": "Defenda a MI6.",
+      "is_missable": 0,
+      "is_spoiler": 1,
+      "name": "For king and country",
+      "name_pt": "Pelo Rei e pela Pátria",
+      "tip": "Troféu automático de história por defender a MI6 no final da campanha.",
+      "trophy_code": "007-first-light-for-king-and-country",
+      "type": "Ouro"
+    },
+    {
+      "description": "Colete todos os Postcards.",
+      "is_missable": 0,
+      "is_spoiler": 0,
+      "name": "The world is not enough",
+      "name_pt": "O Mundo Não é o Bastante",
+      "tip": "Colete todos os 10 Postcards. Use Chapter Select para buscar faltantes e considere backup antes do último item da categoria.",
+      "trophy_code": "007-first-light-the-world-is-not-enough",
+      "type": "Prata"
+    },
+    {
+      "description": "Desbloqueie todos os Intel/MI6 Files.",
+      "is_missable": 0,
+      "is_spoiler": 0,
+      "name": "For your eyes only",
+      "name_pt": "Somente para Seus Olhos",
+      "tip": "Desbloqueie todos os 23 Intel/MI6 Files. O tracker é por tipo, não por capítulo.",
+      "trophy_code": "007-first-light-for-your-eyes-only",
+      "type": "Prata"
+    },
+    {
+      "description": "Colete todos os Mementos.",
+      "is_missable": 0,
+      "is_spoiler": 0,
+      "name": "Recovered assets",
+      "name_pt": "Bens Recuperados",
+      "tip": "Colete todos os 14 Mementos. Se algum troféu atrasar, continue jogando ou recarregue backup antes do último coletável.",
+      "trophy_code": "007-first-light-recovered-assets",
+      "type": "Prata"
+    },
+    {
+      "description": "Colete todas as Playing Cards.",
+      "is_missable": 0,
+      "is_spoiler": 0,
+      "name": "Casino Royale",
+      "name_pt": "Cassino Royale",
+      "tip": "Colete todas as 36 Playing Cards. Acompanhe manualmente por capítulo para evitar retrabalho.",
+      "trophy_code": "007-first-light-casino-royale",
+      "type": "Prata"
+    },
+    {
+      "description": "Encontre todos os coletáveis.",
+      "is_missable": 0,
+      "is_spoiler": 0,
+      "name": "A collector's habit",
+      "name_pt": "Hábito de Colecionador",
+      "tip": "Encontre todos os 92 coletáveis: 36 Playing Cards, 23 Intel/MI6 Files, 14 Mementos, 10 Postcards e 9 Legacy Items.",
+      "trophy_code": "007-first-light-a-collectors-habit",
+      "type": "Ouro"
+    },
+    {
+      "description": "Derrube um inimigo por uma beirada com tackle.",
+      "is_missable": 0,
+      "is_spoiler": 0,
+      "name": "Soft landing",
+      "name_pt": "Pouso Suave",
+      "tip": "Empurre/derrube um inimigo por uma beirada usando tackle. Pode ser feito via Chapter Select.",
+      "trophy_code": "007-first-light-soft-landing",
+      "type": "Bronze"
+    },
+    {
+      "description": "Desarme um inimigo atirando a arma da mão dele.",
+      "is_missable": 0,
+      "is_spoiler": 0,
+      "name": "Sleight of hand",
+      "name_pt": "Prestidigitação",
+      "tip": "Atire na mão ou arma de um inimigo armado para desarmá-lo; pode vir naturalmente no treinamento ou em cleanup.",
+      "trophy_code": "007-first-light-sleight-of-hand",
+      "type": "Bronze"
+    },
+    {
+      "description": "Faça um inimigo com taser atingir outro inimigo.",
+      "is_missable": 0,
+      "is_spoiler": 0,
+      "name": "Positively shocking",
+      "name_pt": "Positivamente Chocante",
+      "tip": "Faça um inimigo com taser atingir outro inimigo. Precisa de uma seção com inimigos usando taser.",
+      "trophy_code": "007-first-light-positively-shocking",
+      "type": "Bronze"
+    },
+    {
+      "description": "Atire em um inimigo enquanto ele arremessa uma granada.",
+      "is_missable": 0,
+      "is_spoiler": 0,
+      "name": "Short fuse",
+      "name_pt": "Pavio Curto",
+      "tip": "Atire em um inimigo enquanto ele está arremessando uma granada. Use Chapter Select se a oportunidade passar.",
+      "trophy_code": "007-first-light-short-fuse",
+      "type": "Bronze"
+    },
+    {
+      "description": "Nocauteie um inimigo atirando nas pernas dele.",
+      "is_missable": 0,
+      "is_spoiler": 0,
+      "name": "He'll live",
+      "name_pt": "Ele Vai Sobreviver",
+      "tip": "Atire nas pernas de um inimigo até derrubá-lo sem matá-lo. Faça em campanha, Chapter Select ou TacSim.",
+      "trophy_code": "007-first-light-hell-live",
+      "type": "Bronze"
+    },
+    {
+      "description": "Empurre um inimigo contra um extintor de incêndio.",
+      "is_missable": 0,
+      "is_spoiler": 0,
+      "name": "Firestarter",
+      "name_pt": "Incendiário",
+      "tip": "Use tackle/empurrão para jogar um inimigo contra um extintor de incêndio em uma área com o objeto disponível.",
+      "trophy_code": "007-first-light-firestarter",
+      "type": "Bronze"
+    },
+    {
+      "description": "Hackeie uma granada antes que ela exploda.",
+      "is_missable": 0,
+      "is_spoiler": 0,
+      "name": "Damp squib",
+      "name_pt": "Tiro pela Culatra",
+      "tip": "Hackeie uma granada antes que ela exploda usando o Q-Watch.",
+      "trophy_code": "007-first-light-damp-squib",
+      "type": "Bronze"
+    },
+    {
+      "description": "Desarme um inimigo com o laser.",
+      "is_missable": 0,
+      "is_spoiler": 0,
+      "name": "Disarming personality",
+      "name_pt": "Personalidade Desarmante",
+      "tip": "Desarme um inimigo usando o laser do Q-Watch.",
+      "trophy_code": "007-first-light-disarming-personality",
+      "type": "Bronze"
+    },
+    {
+      "description": "Use um gadget para escapar de uma confrontação.",
+      "is_missable": 0,
+      "is_spoiler": 0,
+      "name": "Always have an exit plan",
+      "name_pt": "Tenha Sempre um Plano de Fuga",
+      "tip": "Use um gadget para escapar de uma confrontação. Pode ser limpo por Chapter Select.",
+      "trophy_code": "007-first-light-always-have-an-exit-plan",
+      "type": "Bronze"
+    },
+    {
+      "description": "Complete uma Operation no TacSim.",
+      "is_missable": 0,
+      "is_spoiler": 0,
+      "name": "What if...?",
+      "name_pt": "E se...?",
+      "tip": "Complete uma Operation no TacSim. Troféu online; Operations ficam disponíveis após concluir a história.",
+      "trophy_code": "007-first-light-what-if",
+      "type": "Prata"
+    },
+    {
+      "description": "Complete uma Escalation no TacSim.",
+      "is_missable": 0,
+      "is_spoiler": 0,
+      "name": "A change of pace",
+      "name_pt": "Uma Mudança de Ritmo",
+      "tip": "Complete uma Escalation no TacSim. Troféu online; Escalations liberam após o Chapter 6: A Night Out.",
+      "trophy_code": "007-first-light-a-change-of-pace",
+      "type": "Prata"
+    },
+    {
+      "description": "Alcance Clearance Level 3.",
+      "is_missable": 0,
+      "is_spoiler": 0,
+      "name": "Keep moving forward",
+      "name_pt": "Continue Avançando",
+      "tip": "Alcance Clearance Level 3 no TacSim. Há relatos de desbloqueio com atraso; se não liberar, continue até Level 4 ou reinicie/continue jogando.",
+      "trophy_code": "007-first-light-keep-moving-forward",
+      "type": "Prata"
+    },
+    {
+      "description": "Conclua o tier 3 de uma Escalation no TacSim.",
+      "is_missable": 0,
+      "is_spoiler": 0,
+      "name": "The readiness is all",
+      "name_pt": "A Prontidão é Tudo",
+      "tip": "Conclua o tier 3 de uma Escalation no TacSim. Troféu online.",
+      "trophy_code": "007-first-light-the-readiness-is-all",
+      "type": "Ouro"
+    },
+    {
+      "description": "Descubra todos os Legacy Items.",
+      "is_missable": 0,
+      "is_spoiler": 1,
+      "name": "A legacy of spycraft",
+      "name_pt": "Um Legado de Espionagem",
+      "tip": "Descubra todos os 9 Legacy Items. Use Chapter Select para faltantes e backup antes do último item se quiser reduzir risco técnico.",
+      "trophy_code": "007-first-light-a-legacy-of-spycraft",
+      "type": "Prata"
+    }
+  ]
+}

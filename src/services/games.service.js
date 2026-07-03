@@ -54,6 +54,7 @@ const CATALOG_IMAGE_BY_SLUG = {
   '007-first-light': '/assets/games/007-first-light/cover.png',
   'assassins-creed-iv-black-flag': '/assets/games/assassins-creed-iv-black-flag/cover.png',
   'blasphemous': '/assets/games/blasphemous/cover.jpg',
+  'dead-space-remake': '/assets/games/dead-space-remake/cover.png',
   'grand-theft-auto-v': '/assets/games/grand-theft-auto-v/cover.png',
   'inside': '/assets/games/inside/cover.jpg',
   'mixtape': '/assets/games/mixtape/cover.jpg',

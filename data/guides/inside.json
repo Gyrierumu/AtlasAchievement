@@ -1,0 +1,373 @@
+{
+  "game": {
+    "avoid_if": "Evite apenas se você procura um jogo com troféu de platina; INSIDE não possui platina.",
+    "before_you_start": "INSIDE não possui troféu de platina; este guia cobre o 100% dos 14 troféus. A lista é curta, totalmente offline e gira em torno de encontrar e desativar 13 orbs/esferas secretas espalhados pelos checkpoints. Depois de desativar os 13 orbs, o troféu final The Last One fica disponível em uma área secreta específica. Não há troféus de história, dificuldade, online ou cooperação. Também não há perdíveis definitivos, porque os orbs podem ser buscados por seleção de checkpoints. A rota mais segura é terminar o jogo normalmente, depois usar seleção de checkpoints para limpar os 13 orbs na ordem e, por fim, acessar The Last One.",
+    "best_for": "Ideal para quem quer um 100% curto, offline, sem dificuldade, sem coop e baseado em segredos bem pontuais.",
+    "cleanup_advice": "Use seleção de checkpoints para limpar os 13 orbs na ordem dos troféus e marque manualmente cada um antes de acessar The Last One.",
+    "cover_image": "/assets/games/inside/cover.jpg",
+    "coverage_level": "complete",
+    "created_at": "2026-07-03 14:36:25",
+    "difficulty": 1,
+    "difficulty_reason": "Dificuldade editorial 1/10 para o 100%: não há seleção de dificuldade, não há troféus de dificuldade, não há combate complexo e o cleanup dos orbs pode ser feito por seleção de checkpoints.",
+    "dlc_scope": "DLC não necessário. O guia cobre apenas a lista base de 14 troféus de INSIDE.",
+    "editorial_notes": "Fontes consultadas: PlayStation Store oficial, site oficial da Playdead, PlayStationTrophies e GameFAQs. Guia restrito a INSIDE da Playdead, sem mistura com outros jogos.",
+    "editorial_review_status": "verified",
+    "editorial_status": "published",
+    "first_run_advice": "Jogue normalmente até o final para conhecer os checkpoints e a progressão linear. Pegue orbs se encontrar naturalmente, mas deixe a limpeza organizada para depois.",
+    "grind_summary": "Sem grind. O 100% depende apenas de localizar 13 orbs secretos e acessar The Last One.",
+    "guide_avoid": null,
+    "guide_best_moment": null,
+    "guide_dlc": null,
+    "guide_grind": null,
+    "guide_ideal": null,
+    "guide_online": null,
+    "guide_runs": null,
+    "image": "/assets/games/inside/hero.png",
+    "is_verified": 1,
+    "last_reviewed_at": "2026-07-01",
+    "missable": "Sem perdíveis definitivos. Todos os orbs podem ser buscados por seleção de checkpoints, e The Last One só exige que os 13 orbs anteriores estejam desativados.",
+    "missable_summary": "Perdíveis: 0. O jogo é linear, mas a seleção de checkpoints permite voltar para qualquer orb esquecido sem reiniciar do zero.",
+    "name": "INSIDE",
+    "online_summary": "Sem online obrigatório. INSIDE é uma experiência single-player offline e não possui troféus online ou de servidor.",
+    "quality_warnings": "[]",
+    "reviewed_by": "AtlasAchievement Editorial",
+    "runs_summary": "1 jogada é suficiente, com cleanup por seleção de checkpoints para os orbs/esferas secretas.",
+    "slug": "inside",
+    "time": "2-4h",
+    "time_bucket": "short",
+    "time_max_hours": 4,
+    "time_min_hours": 2,
+    "time_reason": "A estimativa de 2-4h cobre uma jogada normal curta, uso de seleção de checkpoints para os 13 orbs/esferas secretas e acesso final a The Last One.",
+    "time_sort_hours": 2,
+    "updated_at": "2026-07-03 14:38:32",
+    "verification_note": "Guia verificado para INSIDE PS4: 14 troféus, sem platina, distribuição 0/1/0/13, 2-4h, dificuldade 1/10, perdíveis 0, online 0, coop 0, dificuldade 0, história 0, 13 orbs/esferas secretas e The Last One por seleção de checkpoints.",
+    "verification_status": "verified",
+    "walkthrough": ""
+  },
+  "redirects": [
+    "inside-ps4",
+    "playdead-inside-ps4"
+  ],
+  "roadmaps": [
+    {
+      "content": "{\"title\":\"Jogada normal e descoberta do jogo\",\"focus\":\"Progressão / checkpoints\",\"objective\":\"Jogar INSIDE normalmente até o final, entender os checkpoints e a progressão linear, pegando orbs secretos apenas se encontrar naturalmente.\",\"actions\":[\"Avance pelo jogo sem tentar transformar a primeira passagem em checklist perfeito.\",\"Observe onde os checkpoints começam para facilitar o cleanup depois.\",\"Pegue qualquer orb encontrado naturalmente, mas não reinicie se passar por algum.\",\"Lembre que terminar a rota normal ajuda no contexto, mas não é o que libera troféus por si só.\"],\"warning\":\"Não há troféus de história, não há perdíveis definitivos e o 100% depende dos orbs secretos, não de terminar a história.\",\"result\":\"Jogo concluído e checkpoints prontos para cleanup.\"}",
+      "step_order": 1
+    },
+    {
+      "content": "{\"title\":\"Cleanup dos 13 orbs secretos\",\"focus\":\"Coletáveis / seleção de checkpoints\",\"objective\":\"Usar seleção de checkpoints para encontrar e desativar os 13 orbs/esferas secretas na ordem dos troféus.\",\"actions\":[\"Siga a ordem: Murky Waters, Field Research, Wee Wee Wee, Left Behind e Obscure Foundations.\",\"Continue com Friends in Low Places, A Tableau, Pack Mentality, Respite e Unfathomable.\",\"Finalize os orbs com Clockwork, Room for Reflection e Office Space.\",\"Marque manualmente cada orb desativado para não repetir checkpoint sem necessidade.\"],\"warning\":\"Alguns orbs ficam em caminhos ocultos e exigem voltar contra a rota normal, mas nenhum deve ser marcado como perdível.\",\"result\":\"Murky Waters até Office Space concluídos.\"}",
+      "step_order": 2
+    },
+    {
+      "content": "{\"title\":\"The Last One e 100%\",\"focus\":\"Final secreto / checklist final\",\"objective\":\"Com os 13 orbs desativados, acessar a área secreta final e desativar o último dispositivo.\",\"actions\":[\"Confirme que os 13 troféus de orbs já foram registrados.\",\"Acesse a área secreta final disponível após os orbs.\",\"Desative o último dispositivo para liberar The Last One.\",\"Se o desbloqueio demorar, aguarde alguns segundos e confira a lista antes de sair.\"],\"warning\":\"The Last One é o troféu final do 100%, mas INSIDE não possui troféu de platina.\",\"result\":\"100% dos 14 troféus de INSIDE concluído.\"}",
+      "step_order": 3
+    }
+  ],
+  "schemaVersion": 1,
+  "seedExtras": {
+    "aliases": [
+      "inside-ps4",
+      "playdead-inside-ps4"
+    ],
+    "attentionPoints": [
+      {
+        "tags": [
+          "Sem platina",
+          "100%"
+        ],
+        "text": "INSIDE não possui troféu de platina; o objetivo é fazer 100% dos 14 troféus.",
+        "title": "Não tem platina",
+        "type": "Escopo"
+      },
+      {
+        "tags": [
+          "Orbs",
+          "Coletáveis"
+        ],
+        "text": "Os 13 primeiros troféus vêm de esferas secretas; The Last One libera depois delas.",
+        "title": "Todos os troféus são orbs secretos",
+        "type": "Coletável"
+      },
+      {
+        "tags": [
+          "Seleção de checkpoints"
+        ],
+        "text": "Use seleção de checkpoints para voltar e pegar qualquer orb esquecido.",
+        "title": "Sem perdíveis",
+        "type": "Cleanup"
+      },
+      {
+        "tags": [
+          "Offline",
+          "Sem coop",
+          "Sem dificuldade"
+        ],
+        "text": "A lista é totalmente single-player e não tem troféus de dificuldade.",
+        "title": "Sem online, coop ou dificuldade",
+        "type": "Filtro"
+      },
+      {
+        "tags": [
+          "The Last One"
+        ],
+        "text": "O último troféu só fica disponível depois que todos os 13 orbs forem desativados.",
+        "title": "The Last One exige os 13 orbs",
+        "type": "Checklist"
+      }
+    ],
+    "checklist": [
+      "Jogar INSIDE normalmente até o final para conhecer a progressão e liberar checkpoints.",
+      "Confirmar que o objetivo é 100% dos 14 troféus, sem troféu de platina.",
+      "Usar seleção de checkpoints para localizar e desativar Murky Waters.",
+      "Usar seleção de checkpoints para localizar e desativar Field Research.",
+      "Usar seleção de checkpoints para localizar e desativar Wee Wee Wee.",
+      "Usar seleção de checkpoints para localizar e desativar Left Behind.",
+      "Usar seleção de checkpoints para localizar e desativar Obscure Foundations.",
+      "Usar seleção de checkpoints para localizar e desativar Friends in Low Places.",
+      "Usar seleção de checkpoints para localizar e desativar A Tableau.",
+      "Usar seleção de checkpoints para localizar e desativar Pack Mentality.",
+      "Usar seleção de checkpoints para localizar e desativar Respite.",
+      "Usar seleção de checkpoints para localizar e desativar Unfathomable.",
+      "Usar seleção de checkpoints para localizar e desativar Clockwork.",
+      "Usar seleção de checkpoints para localizar e desativar Room for Reflection.",
+      "Usar seleção de checkpoints para localizar e desativar Office Space.",
+      "Com os 13 orbs desativados, acessar a área secreta final e desbloquear The Last One.",
+      "Conferir 14 troféus, 0 platina, 1 ouro, 0 prata, 13 bronze, online 0, coop 0, dificuldade 0, história 0 e perdíveis 0."
+    ],
+    "editorial_summary": [
+      "INSIDE não possui troféu de platina; este guia cobre o 100% dos 14 troféus. A lista é curta, totalmente offline e gira em torno de encontrar e desativar 13 orbs/esferas secretas espalhados pelos checkpoints. Depois de desativar os 13 orbs, o troféu final The Last One fica disponível em uma área secreta específica. Não há troféus de história, dificuldade, online ou cooperação. Também não há perdíveis definitivos, porque os orbs podem ser buscados por seleção de checkpoints. A rota mais segura é terminar o jogo normalmente, depois usar seleção de checkpoints para limpar os 13 orbs na ordem e, por fim, acessar The Last One.",
+      "O guia deve ser lido como rota de 100% dos troféus. INSIDE não tem troféu de platina; o objetivo final é The Last One, liberado após os 13 orbs/esferas secretas."
+    ],
+    "faq": [
+      {
+        "answer": "Não. INSIDE tem 14 troféus e não possui platina. Este guia cobre o 100% dos troféus.",
+        "question": "INSIDE tem troféu de platina?"
+      },
+      {
+        "answer": "São 14 troféus: 13 bronze e 1 ouro.",
+        "question": "Quantos troféus INSIDE tem?"
+      },
+      {
+        "answer": "Não. A lista é totalmente offline.",
+        "question": "INSIDE tem troféus online?"
+      },
+      {
+        "answer": "Não. É uma experiência single-player.",
+        "question": "Tem coop?"
+      },
+      {
+        "answer": "Não. O jogo não tem seleção de dificuldade e nenhum troféu deve receber tag Dificuldade.",
+        "question": "Tem troféus de dificuldade?"
+      },
+      {
+        "answer": "Não há perdíveis definitivos. Os orbs podem ser buscados por seleção de checkpoints.",
+        "question": "Tem troféus perdíveis?"
+      },
+      {
+        "answer": "Terminar ajuda a liberar e entender os checkpoints, mas os troféus vêm dos orbs secretos, não da história.",
+        "question": "Preciso terminar o jogo?"
+      },
+      {
+        "answer": "É o troféu final, acessível depois de desativar os 13 orbs secretos.",
+        "question": "O que é The Last One?"
+      },
+      {
+        "answer": "Uma jogada é suficiente, com cleanup por checkpoints.",
+        "question": "Quantas jogadas são necessárias?"
+      },
+      {
+        "answer": "Não. Este guia é de INSIDE, da Playdead. Evil Inside é outro jogo.",
+        "question": "INSIDE é o mesmo que Evil Inside?"
+      }
+    ],
+    "note": "Campos exportados para auditoria. O SQLite atual nao possui colunas nativas para todos esses extras; a importacao preserva o que o banco suporta.",
+    "quickDecision": {
+      "coopRequired": "Não",
+      "difficulty": "1/10",
+      "dlcRequired": "Não",
+      "firstAction": "Jogue normalmente até o final e depois use seleção de checkpoints para limpar os 13 orbs/esferas secretas.",
+      "mainAttention": "INSIDE não tem troféu de platina; o objetivo final é The Last One após desativar os 13 orbs.",
+      "missables": "Não",
+      "onlineRequired": "Não",
+      "runs": "1 jogada + seleção de checkpoints",
+      "time": "2-4h"
+    },
+    "quick_plan": [
+      {
+        "detail": "Termine INSIDE uma vez para entender os checkpoints, sem se preocupar com perda definitiva.",
+        "number": 1,
+        "title": "Jogada normal"
+      },
+      {
+        "detail": "Use seleção de checkpoints e siga a ordem dos troféus para desativar cada orb/esfera secreta.",
+        "number": 2,
+        "title": "13 orbs secretos"
+      },
+      {
+        "detail": "Depois dos 13 orbs, acesse a área secreta final e conclua o 100% dos troféus.",
+        "number": 3,
+        "title": "The Last One"
+      }
+    ],
+    "seo": {
+      "description": "Guia 100% de troféus de INSIDE no PS4, sem platina, com 14 troféus, 2-4h, dificuldade 1/10, 13 orbs secretos, The Last One e cleanup por checkpoints.",
+      "image": "/assets/games/inside/hero.png",
+      "keywords": "INSIDE troféus, INSIDE 100%, INSIDE The Last One, INSIDE orbs secretos, INSIDE guia PS4",
+      "title": "INSIDE: guia 100% de troféus | AtlasAchievement"
+    },
+    "tags": [
+      "PS4",
+      "Sem platina",
+      "100% dos troféus",
+      "Offline",
+      "Sem coop",
+      "Sem perdíveis",
+      "Sem dificuldade",
+      "Seleção de checkpoints",
+      "Coletáveis",
+      "Sem New Game+"
+    ]
+  },
+  "slug": "inside",
+  "trophies": [
+    {
+      "description": "Encontre e desative o primeiro orb secreto na área de água/caverna.",
+      "is_missable": 0,
+      "is_spoiler": 0,
+      "name": "Murky Waters",
+      "name_pt": "Águas Turvas",
+      "tip": "Use o checkpoint correspondente se voltar depois.",
+      "trophy_code": "inside-murky-waters",
+      "type": "Bronze"
+    },
+    {
+      "description": "Encontre o orb secreto escondido no campo/milho.",
+      "is_missable": 0,
+      "is_spoiler": 0,
+      "name": "Field Research",
+      "name_pt": "Pesquisa de Campo",
+      "tip": "Procure uma entrada oculta no chão e desative a esfera secreta.",
+      "trophy_code": "inside-field-research",
+      "type": "Bronze"
+    },
+    {
+      "description": "Encontre o orb secreto ligado à área dos porcos/carroça.",
+      "is_missable": 0,
+      "is_spoiler": 0,
+      "name": "Wee Wee Wee",
+      "name_pt": "Uí, Uí, Uí",
+      "tip": "Volte pelo checkpoint da fazenda se passar direto pela rota normal.",
+      "trophy_code": "inside-wee-wee-wee",
+      "type": "Bronze"
+    },
+    {
+      "description": "Encontre o orb secreto abaixo da área do cofre/safe.",
+      "is_missable": 0,
+      "is_spoiler": 0,
+      "name": "Left Behind",
+      "name_pt": "Deixado para Trás",
+      "tip": "Use o checkpoint próximo ao cofre e explore a queda/área inferior.",
+      "trophy_code": "inside-left-behind",
+      "type": "Bronze"
+    },
+    {
+      "description": "Encontre o orb secreto nas fundações/esgoto abaixo da cidade.",
+      "is_missable": 0,
+      "is_spoiler": 0,
+      "name": "Obscure Foundations",
+      "name_pt": "Fundações Obscuras",
+      "tip": "Procure passagem escondida antes de seguir a progressão principal.",
+      "trophy_code": "inside-obscure-foundations",
+      "type": "Bronze"
+    },
+    {
+      "description": "Encontre o orb secreto na seção subaquática/submarino.",
+      "is_missable": 0,
+      "is_spoiler": 0,
+      "name": "Friends in Low Places",
+      "name_pt": "Amigos em Lugares Baixos",
+      "tip": "Use o controle mental quando necessário para alcançar e desativar o orb.",
+      "trophy_code": "inside-friends-in-low-places",
+      "type": "Bronze"
+    },
+    {
+      "description": "Encontre o orb secreto na área da praia/estrutura visual.",
+      "is_missable": 0,
+      "is_spoiler": 0,
+      "name": "A Tableau",
+      "name_pt": "Um Quadro Vivo",
+      "tip": "Use seleção de checkpoints para voltar ao trecho de praia se não encontrar de primeira.",
+      "trophy_code": "inside-a-tableau",
+      "type": "Bronze"
+    },
+    {
+      "description": "Encontre o orb secreto usando o grupo de corpos controlados.",
+      "is_missable": 0,
+      "is_spoiler": 0,
+      "name": "Pack Mentality",
+      "name_pt": "Mentalidade de Matilha",
+      "tip": "Reúna o grupo e use-o para alcançar a área escondida.",
+      "trophy_code": "inside-pack-mentality",
+      "type": "Bronze"
+    },
+    {
+      "description": "Encontre o orb secreto na seção de mergulho/respiração.",
+      "is_missable": 0,
+      "is_spoiler": 0,
+      "name": "Respite",
+      "name_pt": "Respiro",
+      "tip": "Explore a rota subaquática com calma e volte pelo checkpoint se necessário.",
+      "trophy_code": "inside-respite",
+      "type": "Bronze"
+    },
+    {
+      "description": "Encontre o orb secreto em uma área subaquática profunda.",
+      "is_missable": 0,
+      "is_spoiler": 0,
+      "name": "Unfathomable",
+      "name_pt": "Insondável",
+      "tip": "Cheque caminhos laterais embaixo d’água antes de avançar.",
+      "trophy_code": "inside-unfathomable",
+      "type": "Bronze"
+    },
+    {
+      "description": "Encontre o orb secreto na área de sombras/mecanismos.",
+      "is_missable": 0,
+      "is_spoiler": 0,
+      "name": "Clockwork",
+      "name_pt": "Mecanismo de Relógio",
+      "tip": "Observe o ritmo dos mecanismos e procure a entrada escondida.",
+      "trophy_code": "inside-clockwork",
+      "type": "Bronze"
+    },
+    {
+      "description": "Encontre o orb secreto na sala suspensa/reflexiva.",
+      "is_missable": 0,
+      "is_spoiler": 0,
+      "name": "Room for Reflection",
+      "name_pt": "Espaço para Reflexão",
+      "tip": "Use o checkpoint da sala e explore a parte superior/oculta antes de sair.",
+      "trophy_code": "inside-room-for-reflection",
+      "type": "Bronze"
+    },
+    {
+      "description": "Encontre o orb secreto na área de escritório/elevador.",
+      "is_missable": 0,
+      "is_spoiler": 0,
+      "name": "Office Space",
+      "name_pt": "Espaço de Escritório",
+      "tip": "Procure a rota secreta ligada ao elevador e desative o último dos 13 orbs.",
+      "trophy_code": "inside-office-space",
+      "type": "Bronze"
+    },
+    {
+      "description": "Depois de desativar os 13 orbs secretos, acesse a área secreta final e desative o último dispositivo.",
+      "is_missable": 0,
+      "is_spoiler": 0,
+      "name": "The Last One",
+      "name_pt": "O Último",
+      "tip": "Este é o troféu final do 100%, mas não é uma platina. Espere os 13 orbs registrarem antes de acessar a área final.",
+      "trophy_code": "inside-the-last-one",
+      "type": "Ouro"
+    }
+  ]
+}

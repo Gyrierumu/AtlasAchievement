@@ -1,0 +1,535 @@
+{
+  "game": {
+    "avoid_if": "Evite apenas se você quer uma platina longa, difícil ou baseada em múltiplas runs.",
+    "before_you_start": "Mixtape é uma platina curta, narrativa e totalmente offline. A lista PS5 possui 27 troféus, não exige online, cooperação ou dificuldade específica, e pode ser concluída em uma única jogada de cerca de 3–4 horas. O jogo é dividido em 30 capítulos, alternando entre memórias, diálogos, minigames e interações opcionais.\n\nNão há perdíveis definitivos, porque o Chapter Select permite repetir capítulos e limpar troféus esquecidos. O principal cuidado é o troféu Front To Back, que exige interagir com tudo nos quartos e esgotar conversas únicas com Cassandra e Slater. Ao usar Chapter Select, os indicadores visuais de interação podem resetar, mas o progresso já coletado continua salvo; isso pode confundir o rastreio. A rota ideal é seguir um walkthrough 100% desde o início, pegar todos os misc/minigames na primeira passagem e usar Chapter Select apenas para cleanup pontual.",
+    "best_for": "Ideal para quem quer uma platina curta, narrativa, offline e com cleanup por capítulos.",
+    "cleanup_advice": "Use Chapter Select somente para corrigir minigames ou interações esquecidas. Se Front To Back ficar confuso, refaça quartos e conversas de forma contínua.",
+    "cover_image": "/assets/games/mixtape/cover.jpg",
+    "coverage_level": "complete",
+    "created_at": "2026-07-03 14:36:25",
+    "difficulty": 3,
+    "difficulty_reason": "Dificuldade editorial 3/10: não há seleção de dificuldade nem troféus de dificuldade; o desafio vem apenas de minigames curtos e troféus de atenção leve.",
+    "dlc_scope": "DLC não necessário. A platina PS5 depende apenas da lista base de troféus.",
+    "editorial_notes": "Fontes consultadas: site oficial de Mixtape, página oficial da Annapurna Interactive, PlayStation Store, GameFAQs e PowerPyx. Guia restrito a Mixtape, sem mistura com The Artful Escape, álbuns, mixtapes reais ou outros jogos.",
+    "editorial_review_status": "verified",
+    "editorial_status": "published",
+    "first_run_advice": "Siga um walkthrough 100% desde o início, interaja com tudo nos quartos e resolva os minigames de capítulo na primeira passagem quando possível.",
+    "grind_summary": "Sem grind. Tapehead Graveyard exige destruir 200 fitas VHS dentro da própria sequência, mas não vira farm longo.",
+    "guide_avoid": null,
+    "guide_best_moment": null,
+    "guide_dlc": null,
+    "guide_grind": null,
+    "guide_ideal": null,
+    "guide_online": null,
+    "guide_runs": null,
+    "image": "/assets/games/mixtape/hero.jpg",
+    "is_verified": 1,
+    "last_reviewed_at": "2026-07-01",
+    "missable": "Sem perdíveis definitivos. O Chapter Select permite repetir capítulos e limpar troféus esquecidos depois da história.",
+    "missable_summary": "Perdíveis: 0. Minigames podem exigir reinício de capítulo se a tentativa falhar, mas não travam a platina.",
+    "name": "Mixtape",
+    "online_summary": "Sem online obrigatório. Mixtape é single-player e não possui troféus online, coop ou de servidor.",
+    "quality_warnings": "[]",
+    "reviewed_by": "AtlasAchievement Editorial",
+    "runs_summary": "1 jogada é suficiente, com cleanup por Chapter Select após capítulos concluídos.",
+    "slug": "mixtape",
+    "time": "3-4h",
+    "time_bucket": "short",
+    "time_max_hours": 4,
+    "time_min_hours": 3,
+    "time_reason": "A estimativa de 3-4h cobre uma jogada 100% pelos 30 capítulos e cleanup pontual pelo Chapter Select.",
+    "time_sort_hours": 3,
+    "updated_at": "2026-07-03 14:38:32",
+    "verification_note": "Guia verificado para Mixtape PS5: 27 troféus, distribuição 1/6/12/8, 3-4h, dificuldade 3/10, 1 jogada, perdíveis 0, online 0, coop 0, dificuldade 0, DLC não necessário e cleanup por Chapter Select.",
+    "verification_status": "verified",
+    "walkthrough": ""
+  },
+  "redirects": [
+    "mixtape-beethoven-and-dinosaur",
+    "mixtape-ps5"
+  ],
+  "roadmaps": [
+    {
+      "content": "{\"title\":\"Jogada 100% seguindo capítulos\",\"focus\":\"História / interações / minigames\",\"objective\":\"Concluir a campanha de Mixtape uma vez, cobrindo os troféus de história, minigames de capítulo e interações necessárias para Front To Back e Fight For Your Right.\",\"actions\":[\"Siga a ordem dos capítulos e trate cada minigame como uma tentativa limpa.\",\"Nos quartos, interaja com todos os objetos disponíveis antes de avançar.\",\"Esgote conversas únicas com Cassandra e Slater para o progresso de Front To Back.\",\"No Capítulo 29, revise todos os itens de festa, incluindo bebidas e comidas obtidas com convidados.\",\"Conclua o Capítulo 30 para liberar Last Song e encerrar a primeira passagem.\"],\"warning\":\"Não há perdíveis definitivos, mas fazer a jogada 100% reduz retrabalho e evita confusão com os indicadores visuais de Front To Back.\",\"result\":\"História concluída, quatro troféus de história liberados e a maior parte dos misc/minigames resolvida.\"}",
+      "step_order": 1
+    },
+    {
+      "content": "{\"title\":\"Cleanup por Chapter Select\",\"focus\":\"Correções pontuais\",\"objective\":\"Usar Chapter Select para repetir apenas capítulos com minigames falhados, interações esquecidas ou checklist incompleto.\",\"actions\":[\"Reabra capítulos específicos para corrigir minigames como Cone Island, Baby., And It’s Outta There!, From The Hip e Banned In Massachusetts.\",\"Se Front To Back não liberar, refaça quartos e diálogos em sequência, sem depender só dos indicadores visuais.\",\"Se Fight For Your Right ficar pendente, repita o Capítulo 29 e colete/interaja com todos os itens da festa.\",\"Confirme a distribuição final: 1 platina, 6 ouro, 12 prata e 8 bronze.\"],\"warning\":\"O Chapter Select pode resetar indicadores visuais de interação, mas o progresso já coletado continua salvo.\",\"result\":\"Cleanup concluído e The Sound Of The Future liberado.\"}",
+      "step_order": 2
+    }
+  ],
+  "schemaVersion": 1,
+  "seedExtras": {
+    "aliases": [
+      "mixtape-ps5",
+      "mixtape-beethoven-and-dinosaur"
+    ],
+    "attentionPoints": [
+      {
+        "tags": [
+          "Sem perdíveis",
+          "Chapter Select"
+        ],
+        "text": "Tudo pode ser limpo por Chapter Select, então não marque troféus como perdíveis definitivos.",
+        "title": "Sem perdíveis",
+        "type": "Cleanup"
+      },
+      {
+        "tags": [
+          "Front To Back",
+          "Interação"
+        ],
+        "text": "Interaja com tudo nos quartos e esgote diálogos únicos com Cassandra e Slater; o Chapter Select pode resetar indicadores visuais.",
+        "title": "Front To Back",
+        "type": "Checklist"
+      },
+      {
+        "tags": [
+          "Minigame",
+          "Atenção"
+        ],
+        "text": "Cone Island, Baby., And It’s Outta There!, From The Hip e Banned In Massachusetts podem exigir repetir capítulos.",
+        "title": "Minigames exigentes",
+        "type": "Execução"
+      },
+      {
+        "tags": [
+          "Offline",
+          "Sem coop",
+          "Sem dificuldade"
+        ],
+        "text": "A lista é totalmente single-player, sem troféus online, coop ou dificuldade.",
+        "title": "Sem online, coop ou dificuldade",
+        "type": "Filtro"
+      },
+      {
+        "tags": [
+          "Autosave",
+          "Sem save manual"
+        ],
+        "text": "O progresso é salvo automaticamente; use Chapter Select para refazer seções.",
+        "title": "Sem save manual",
+        "type": "Sistema"
+      },
+      {
+        "tags": [
+          "3-4h",
+          "1 jogada"
+        ],
+        "text": "Mixtape pode ser platinado em cerca de 3-4 horas seguindo uma rota 100%.",
+        "title": "Platina curta",
+        "type": "Tempo"
+      }
+    ],
+    "checklist": [
+      "Confirmar que a lista PS5 tem 27 troféus: 1 platina, 6 ouro, 12 prata e 8 bronze.",
+      "Iniciar a jogada 100% e resolver Thrashed no Capítulo 1.",
+      "No Capítulo 3, manter French Connection por 60 segundos.",
+      "No Capítulo 5, concluir Smooth Shopper sem bater.",
+      "No Capítulo 8, fazer Grunge Metal Alchemist com Blue Crush, Bubblegum, Lime e Orange.",
+      "No Capítulo 11, derrubar todos os 10 cones de Cone Island, Baby.",
+      "No Capítulo 12, acertar Skim Gordon através do balanço de pneu.",
+      "No Capítulo 14, fazer apenas home runs como Cassandra para And It’s Outta There!.",
+      "No Capítulo 15, acertar 50 rolos para Triple Ply.",
+      "No Capítulo 16, acertar 3 balões de porco para It’s The Pigs, Darling.",
+      "No Capítulo 17, concluir Instructions Not Required em menos de 15 segundos.",
+      "No Capítulo 18, tirar 20 fotos para Don’t. Move.",
+      "No Capítulo 19, explodir todos os objetos para Appetite For Destruction.",
+      "No Capítulo 21, pintar a porta em menos de 30 segundos.",
+      "No Capítulo 22, posicionar o sofá em menos de 30 segundos.",
+      "No Capítulo 23, concluir Leaves That Are Green em menos de 45 segundos.",
+      "No Capítulo 24, acertar latas e garrafas em menos de 30 segundos para From The Hip.",
+      "No Capítulo 26, completar Doppelbanger e Tapehead Graveyard.",
+      "No Capítulo 27, não errar pulo ou deslize em Well, Take A Look At You.",
+      "No Capítulo 28, não perder fogos de artifício em Banned In Massachusetts.",
+      "No Capítulo 29, interagir com todos os itens da festa para Fight For Your Right.",
+      "Durante a jogada, interagir com tudo nos quartos e esgotar conversas únicas para Front To Back.",
+      "Após os créditos, usar Chapter Select apenas para cleanup pontual.",
+      "Conferir 27/27 troféus, online 0, coop 0, dificuldade 0, perdíveis 0 e DLC não necessário."
+    ],
+    "editorial_summary": [
+      "Mixtape é uma platina curta, narrativa e totalmente offline. A lista PS5 possui 27 troféus, não exige online, cooperação ou dificuldade específica, e pode ser concluída em uma única jogada de cerca de 3–4 horas. O jogo é dividido em 30 capítulos, alternando entre memórias, diálogos, minigames e interações opcionais.\n\nNão há perdíveis definitivos, porque o Chapter Select permite repetir capítulos e limpar troféus esquecidos. O principal cuidado é o troféu Front To Back, que exige interagir com tudo nos quartos e esgotar conversas únicas com Cassandra e Slater. Ao usar Chapter Select, os indicadores visuais de interação podem resetar, mas o progresso já coletado continua salvo; isso pode confundir o rastreio. A rota ideal é seguir um walkthrough 100% desde o início, pegar todos os misc/minigames na primeira passagem e usar Chapter Select apenas para cleanup pontual.",
+      "Os únicos pontos de atenção real são Front To Back, pela leitura visual confusa após Chapter Select, e alguns minigames de execução curta como Cone Island, Baby., And It’s Outta There! e Banned In Massachusetts."
+    ],
+    "faq": [
+      {
+        "answer": "Não. A lista PS5 é totalmente offline e tem online 0.",
+        "question": "Mixtape tem troféus online?"
+      },
+      {
+        "answer": "Não. Não há troféus de cooperação e o guia considera coop 0.",
+        "question": "Mixtape tem coop?"
+      },
+      {
+        "answer": "Não. Mixtape não tem seleção de dificuldade e não possui troféus de dificuldade.",
+        "question": "A dificuldade afeta troféus?"
+      },
+      {
+        "answer": "Uma jogada é suficiente, com cleanup por Chapter Select se algum capítulo precisar ser repetido.",
+        "question": "Quantas jogadas são necessárias?"
+      },
+      {
+        "answer": "Não há perdíveis definitivos. Minigames podem exigir reinício de capítulo, mas o Chapter Select permite cleanup.",
+        "question": "Mixtape tem troféus perdíveis?"
+      },
+      {
+        "answer": "Sim. Os capítulos ficam disponíveis conforme são concluídos e podem ser usados para cleanup após a história.",
+        "question": "Existe Chapter Select?"
+      },
+      {
+        "answer": "Não. O progresso é salvo automaticamente.",
+        "question": "O jogo tem save manual?"
+      },
+      {
+        "answer": "Front To Back, porque exige interagir com tudo nos quartos e esgotar conversas únicas com Cassandra e Slater.",
+        "question": "Qual troféu exige mais atenção?"
+      },
+      {
+        "answer": "Ele pode resetar indicadores visuais de interação/conversa, mas o progresso salvo continua contando. Mesmo assim, pode confundir o rastreio.",
+        "question": "O Chapter Select atrapalha Front To Back?"
+      },
+      {
+        "answer": "Cone Island, Baby. costuma ser citado como o mais chato por exigir derrubar todos os 10 cones, mas And It’s Outta There!, From The Hip e Banned In Massachusetts também podem exigir repetição.",
+        "question": "Qual é o troféu mais difícil?"
+      },
+      {
+        "answer": "Não há versão PS4, então não há autopop PS4/PS5.",
+        "question": "Existe versão PS4/autopop?"
+      },
+      {
+        "answer": "Não. Mixtape é outro jogo da Beethoven & Dinosaur, com lista própria de troféus.",
+        "question": "Mixtape é The Artful Escape?"
+      }
+    ],
+    "note": "Campos exportados para auditoria. O SQLite atual nao possui colunas nativas para todos esses extras; a importacao preserva o que o banco suporta.",
+    "quickDecision": {
+      "coopRequired": "Não",
+      "difficulty": "3/10",
+      "dlcRequired": "Não",
+      "firstAction": "Comece seguindo um walkthrough 100% para cobrir interações de quartos, conversas e minigames na primeira passagem.",
+      "mainAttention": "Front To Back pode confundir porque indicadores visuais resetam no Chapter Select, mas o progresso salvo continua contando.",
+      "missables": "Não",
+      "onlineRequired": "Não",
+      "runs": "1 jogada + Chapter Select",
+      "time": "3-4h"
+    },
+    "quick_plan": [
+      {
+        "detail": "Concluir a campanha de Mixtape uma vez, cobrindo os troféus de história, minigames de capítulo e interações necessárias para Front To Back e Fight For Your Right.",
+        "number": 1,
+        "title": "Jogada 100% seguindo capítulos"
+      },
+      {
+        "detail": "Usar Chapter Select para repetir apenas capítulos com minigames falhados, interações esquecidas ou checklist incompleto.",
+        "number": 2,
+        "title": "Cleanup por Chapter Select"
+      },
+      {
+        "detail": "Mixtape é uma platina curta, narrativa e totalmente offline. A lista PS5 possui 27 troféus, não exige online, cooperação ou dificuldade específica, e pode ser concluída…",
+        "number": 3,
+        "title": "Leia os alertas iniciais"
+      },
+      {
+        "detail": "Use as etapas para evitar retrabalho antes de abrir a checklist completa.",
+        "number": 4,
+        "title": "Siga o roadmap em ordem"
+      },
+      {
+        "detail": "Use Chapter Select somente para corrigir minigames ou interações esquecidas. Se Front To Back ficar confuso, refaça quartos e conversas de forma contínua.",
+        "number": 5,
+        "title": "Finalize pela checklist"
+      }
+    ],
+    "seo": {
+      "description": "Guia de troféus e platina de Mixtape no PS5, com 27 troféus, 3-4h, dificuldade 3/10, sem perdíveis, sem online, sem coop e cleanup por Chapter Select.",
+      "image": "/assets/games/mixtape/hero.jpg",
+      "keywords": "Mixtape troféus, Mixtape platina, Mixtape PS5, Mixtape trophy guide, Mixtape Front To Back",
+      "title": "Mixtape: guia de troféus e platina PS5 | AtlasAchievement"
+    },
+    "tags": [
+      "PS5",
+      "Platina",
+      "Offline",
+      "Sem coop",
+      "Sem perdíveis",
+      "Sem dificuldade",
+      "Chapter Select",
+      "1 jogada",
+      "Sem New Game+",
+      "DLC não necessário"
+    ]
+  },
+  "slug": "mixtape",
+  "trophies": [
+    {
+      "description": "Desbloqueie todos os troféus de Mixtape no PS5.",
+      "is_missable": 0,
+      "is_spoiler": 0,
+      "name": "The Sound Of The Future",
+      "name_pt": "O Som do Futuro",
+      "tip": "Complete a história, resolva os troféus de interação/checklist e use Chapter Select para qualquer cleanup restante.",
+      "trophy_code": "mixtape-the-sound-of-the-future",
+      "type": "Platina"
+    },
+    {
+      "description": "Complete o trecho de história em Rockford ligado ao quarto da Stacey.",
+      "is_missable": 0,
+      "is_spoiler": 1,
+      "name": "Goodbye, Stacey's Room",
+      "name_pt": "Adeus, Quarto da Stacey",
+      "tip": "Troféu de história; avance a campanha normalmente até o fim do capítulo correspondente.",
+      "trophy_code": "mixtape-goodbye-staceys-room",
+      "type": "Bronze"
+    },
+    {
+      "description": "Complete o trecho de história do quarto da Cassandra.",
+      "is_missable": 0,
+      "is_spoiler": 1,
+      "name": "Matching The Drapes",
+      "name_pt": "Combinando com as Cortinas",
+      "tip": "Troféu de história; não exige ação extra além de concluir o capítulo.",
+      "trophy_code": "mixtape-matching-the-drapes",
+      "type": "Bronze"
+    },
+    {
+      "description": "Complete o trecho de história do quarto do Slater.",
+      "is_missable": 0,
+      "is_spoiler": 1,
+      "name": "Eight Minute Odyssey",
+      "name_pt": "Odisseia de Oito Minutos",
+      "tip": "Troféu de história; siga a progressão principal até o encerramento do capítulo.",
+      "trophy_code": "mixtape-eight-minute-odyssey",
+      "type": "Bronze"
+    },
+    {
+      "description": "Complete o jogo no Capítulo 30 e chegue aos créditos.",
+      "is_missable": 0,
+      "is_spoiler": 1,
+      "name": "Last Song",
+      "name_pt": "Última Música",
+      "tip": "Troféu de história final. Depois dos créditos, use Chapter Select para limpeza pontual.",
+      "trophy_code": "mixtape-last-song",
+      "type": "Bronze"
+    },
+    {
+      "description": "No Capítulo 1, faça um ollie por cima do carro durante a sequência de skate.",
+      "is_missable": 0,
+      "is_spoiler": 0,
+      "name": "Thrashed",
+      "name_pt": "Detonado",
+      "tip": "Se errar o salto, repita o capítulo pelo Chapter Select.",
+      "trophy_code": "mixtape-thrashed",
+      "type": "Bronze"
+    },
+    {
+      "description": "Interaja com tudo nos quartos e esgote as conversas únicas com Cassandra e Slater.",
+      "is_missable": 0,
+      "is_spoiler": 0,
+      "name": "Front To Back",
+      "name_pt": "De Ponta a Ponta",
+      "tip": "O progresso permanece salvo, mas os indicadores visuais podem resetar via Chapter Select. Se ficar em dúvida, repita as seções de quartos e diálogos de forma contínua.",
+      "trophy_code": "mixtape-front-to-back",
+      "type": "Ouro"
+    },
+    {
+      "description": "No Capítulo 3, mantenha o beijo por 60 segundos.",
+      "is_missable": 0,
+      "is_spoiler": 0,
+      "name": "French Connection",
+      "name_pt": "Conexão Francesa",
+      "tip": "Segure a interação até completar o tempo antes de seguir a cena.",
+      "trophy_code": "mixtape-french-connection",
+      "type": "Bronze"
+    },
+    {
+      "description": "No Capítulo 5, complete a sequência do carrinho de compras sem bater.",
+      "is_missable": 0,
+      "is_spoiler": 0,
+      "name": "Smooth Shopper",
+      "name_pt": "Comprador Suave",
+      "tip": "Controle a velocidade e reinicie o capítulo se colidir.",
+      "trophy_code": "mixtape-smooth-shopper",
+      "type": "Ouro"
+    },
+    {
+      "description": "No Capítulo 8, faça a receita do Slater com Blue Crush, Bubblegum, Lime e Orange.",
+      "is_missable": 0,
+      "is_spoiler": 0,
+      "name": "Grunge Metal Alchemist",
+      "name_pt": "Alquimista do Grunge Metal",
+      "tip": "Escolha exatamente esses sabores/ingredientes para registrar o troféu.",
+      "trophy_code": "mixtape-grunge-metal-alchemist",
+      "type": "Ouro"
+    },
+    {
+      "description": "No Capítulo 11, derrube todos os 10 cones.",
+      "is_missable": 0,
+      "is_spoiler": 0,
+      "name": "Cone Island, Baby.",
+      "name_pt": "Ilha dos Cones, Baby.",
+      "tip": "É um dos troféus de atenção. Se qualquer cone ficar para trás, reinicie o capítulo.",
+      "trophy_code": "mixtape-cone-island-baby",
+      "type": "Prata"
+    },
+    {
+      "description": "No Capítulo 12, arremesse a pedra através do balanço de pneu.",
+      "is_missable": 0,
+      "is_spoiler": 0,
+      "name": "Skim Gordon",
+      "name_pt": "Skim Gordon",
+      "tip": "Ajuste a mira para atravessar o pneu em vez de apenas acertar perto dele.",
+      "trophy_code": "mixtape-skim-gordon",
+      "type": "Bronze"
+    },
+    {
+      "description": "No Capítulo 17, conclua a montagem em menos de 15 segundos.",
+      "is_missable": 0,
+      "is_spoiler": 0,
+      "name": "Instructions Not Required",
+      "name_pt": "Instruções Não Necessárias",
+      "tip": "Memorize a ordem das peças e reinicie o capítulo se passar do tempo.",
+      "trophy_code": "mixtape-instructions-not-required",
+      "type": "Ouro"
+    },
+    {
+      "description": "No Capítulo 14, jogando como Cassandra, acerte apenas home runs.",
+      "is_missable": 0,
+      "is_spoiler": 0,
+      "name": "And It’s Outta There!",
+      "name_pt": "E Lá Vai Ela!",
+      "tip": "Não aceite rebatidas fracas; se errar a condição, reinicie o capítulo.",
+      "trophy_code": "mixtape-and-its-outta-there",
+      "type": "Ouro"
+    },
+    {
+      "description": "No Capítulo 15, acerte 50 rolos de papel higiênico.",
+      "is_missable": 0,
+      "is_spoiler": 0,
+      "name": "Triple Ply",
+      "name_pt": "Folha Tripla",
+      "tip": "Mantenha ritmo constante e priorize alvos fáceis para não perder tempo.",
+      "trophy_code": "mixtape-triple-ply",
+      "type": "Ouro"
+    },
+    {
+      "description": "No Capítulo 16, acerte 3 balões de porco.",
+      "is_missable": 0,
+      "is_spoiler": 0,
+      "name": "It’s The Pigs, Darling",
+      "name_pt": "São os Porcos, Querida",
+      "tip": "Foque nos balões assim que aparecem antes de continuar a sequência.",
+      "trophy_code": "mixtape-its-the-pigs-darling",
+      "type": "Bronze"
+    },
+    {
+      "description": "No Capítulo 18, tire 20 fotos.",
+      "is_missable": 0,
+      "is_spoiler": 0,
+      "name": "Don’t. Move.",
+      "name_pt": "Não. Se Mexa.",
+      "tip": "Registre as fotos exigidas antes de avançar para o encerramento do trecho.",
+      "trophy_code": "mixtape-dont-move",
+      "type": "Prata"
+    },
+    {
+      "description": "No Capítulo 19, exploda todos os objetos.",
+      "is_missable": 0,
+      "is_spoiler": 0,
+      "name": "Appetite For Destruction",
+      "name_pt": "Apetite pela Destruição",
+      "tip": "Varra a área antes de sair para garantir que nada interativo ficou inteiro.",
+      "trophy_code": "mixtape-appetite-for-destruction",
+      "type": "Prata"
+    },
+    {
+      "description": "No Capítulo 21, pinte a porta em menos de 30 segundos.",
+      "is_missable": 0,
+      "is_spoiler": 0,
+      "name": "Paint it, Black, If You Want.",
+      "name_pt": "Pinte de Preto, Se Quiser.",
+      "tip": "Comece imediatamente e cubra a área principal sem pausas.",
+      "trophy_code": "mixtape-paint-it-black-if-you-want",
+      "type": "Prata"
+    },
+    {
+      "description": "No Capítulo 22, posicione o sofá em menos de 30 segundos.",
+      "is_missable": 0,
+      "is_spoiler": 0,
+      "name": "Sofa King Fast",
+      "name_pt": "Sofá Rápido Pra Caramba",
+      "tip": "Antecipe a rota e corrija o ângulo com movimentos curtos.",
+      "trophy_code": "mixtape-sofa-king-fast",
+      "type": "Prata"
+    },
+    {
+      "description": "No Capítulo 23, conclua a seção das folhas em menos de 45 segundos.",
+      "is_missable": 0,
+      "is_spoiler": 0,
+      "name": "Leaves That Are Green",
+      "name_pt": "Folhas Verdes",
+      "tip": "Mantenha uma linha limpa de movimento e reinicie se travar no cenário.",
+      "trophy_code": "mixtape-leaves-that-are-green",
+      "type": "Prata"
+    },
+    {
+      "description": "No Capítulo 24, acerte todas as latas e garrafas em menos de 30 segundos.",
+      "is_missable": 0,
+      "is_spoiler": 0,
+      "name": "From The Hip",
+      "name_pt": "Da Cintura",
+      "tip": "Apesar da descrição citar latas, acerte também as garrafas para garantir o registro.",
+      "trophy_code": "mixtape-from-the-hip",
+      "type": "Prata"
+    },
+    {
+      "description": "No Capítulo 26, acerte 5 recortes.",
+      "is_missable": 0,
+      "is_spoiler": 0,
+      "name": "Doppelbanger",
+      "name_pt": "Duplo Impacto",
+      "tip": "Aponte para os recortes assim que eles entrarem em tela.",
+      "trophy_code": "mixtape-doppelbanger",
+      "type": "Prata"
+    },
+    {
+      "description": "No Capítulo 26, destrua 200 fitas VHS.",
+      "is_missable": 0,
+      "is_spoiler": 0,
+      "name": "Tapehead Graveyard",
+      "name_pt": "Cemitério dos Tapeheads",
+      "tip": "É cumulativo dentro da sequência; continue quebrando fitas até o troféu registrar.",
+      "trophy_code": "mixtape-tapehead-graveyard",
+      "type": "Prata"
+    },
+    {
+      "description": "No Capítulo 27, conclua a sequência sem errar nenhum pulo ou deslize.",
+      "is_missable": 0,
+      "is_spoiler": 0,
+      "name": "Well, Take A Look At You",
+      "name_pt": "Ora, Veja Só Você",
+      "tip": "Se falhar um comando, reinicie pelo Chapter Select para uma tentativa limpa.",
+      "trophy_code": "mixtape-well-take-a-look-at-you",
+      "type": "Prata"
+    },
+    {
+      "description": "No Capítulo 28, complete a sequência sem perder fogos de artifício.",
+      "is_missable": 0,
+      "is_spoiler": 0,
+      "name": "Banned In Massachusetts",
+      "name_pt": "Banido em Massachusetts",
+      "tip": "Use também os botões frontais quando necessário e reinicie se algum fogo for perdido.",
+      "trophy_code": "mixtape-banned-in-massachusetts",
+      "type": "Prata"
+    },
+    {
+      "description": "No Capítulo 29, interaja com todos os itens da festa, incluindo bebidas e comidas obtidas com convidados.",
+      "is_missable": 0,
+      "is_spoiler": 0,
+      "name": "Fight For Your Right",
+      "name_pt": "Lute pelo Seu Direito",
+      "tip": "Converse e colete itens antes de encerrar a festa; use Chapter Select se esquecer algo.",
+      "trophy_code": "mixtape-fight-for-your-right",
+      "type": "Prata"
+    }
+  ]
+}

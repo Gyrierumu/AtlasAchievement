@@ -1,0 +1,744 @@
+{
+  "game": {
+    "avoid_if": "Evite se você quer platina sem múltiplas runs, sem missables ou com Chapter Select pós-história.",
+    "before_you_start": "Dead Space Remake é uma platina offline de survival horror, focada em campanha, coletáveis, New Game+, Impossible Mode, upgrades, kills com armas e alguns troféus de capítulo. A lista PS5 possui 48 troféus, não exige online nem cooperação, mas exige troféus de dificuldade: Set A Benchmark, por terminar no Medium ou superior, e Untouchable, por terminar no Impossible Mode.\n\nA platina exige pelo menos 2 jogadas, mas 3 são recomendadas: uma primeira run para coletáveis, side missions, upgrades e troféus misc; uma run em New Game+ para os Marker Fragments e o final alternativo Reunion; e uma run separada no Impossible Mode. O jogo não possui Chapter Select. É possível voltar pela USG Ishimura até o ponto de não retorno no fim do Chapter 11, então mantenha um save manual antes desse ponto. Os principais missables são Front Toward Enemy, ligado à Shooting Gallery, e Reunion, ligado ao final alternativo do New Game+. Este guia cobre Dead Space Remake, lançado em 2023. O Dead Space original de 2008 possui lista e estrutura diferentes e não deve ser misturado.",
+    "best_for": "Ideal para quem quer uma platina offline de survival horror com rota clara, NG+, coletáveis e um desafio real em Impossible Mode.",
+    "cleanup_advice": "Não há Chapter Select. Antes do fim do Chapter 11, limpe coletáveis, schematics, side missions, upgrades e misc; depois disso, pendências podem exigir NG+ ou nova run.",
+    "cover_image": "/assets/games/dead-space-remake/cover.png",
+    "coverage_level": "complete",
+    "created_at": null,
+    "difficulty": 6,
+    "difficulty_reason": "6/10 sem backup de save: a platina é acessível com planejamento, mas Untouchable exige Impossible Mode e pode invalidar a tentativa em caso de morte/rebaixamento. Backup PS+ reduz o risco editorial para cerca de 4.5/10-5/10.",
+    "dlc_scope": "Base game sem DLCs. Este guia cobre somente Dead Space Remake, lançado em 2023, e não mistura a lista do Dead Space original de 2008.",
+    "editorial_notes": "Fontes consultadas: PlayStation Store/PlayStation oficial para identidade, plataforma, lançamento, publisher, offline e 1 jogador; PSNProfiles, PlayStationTrophies e PowerPyx para lista PS5, distribuição 1/2/10/35, roadmap, missables, Impossible Mode, New Game+ e ponto de não retorno. Guia restrito ao remake de 2023.",
+    "editorial_review_status": "verified",
+    "editorial_status": "published",
+    "first_run_advice": "Jogue a primeira run com checklist do remake para logs, schematics, armas, side missions, Front Toward Enemy, Z-Baller e save manual antes do fim do Chapter 11.",
+    "grind_summary": "Grind moderado: upgrades completos, Power Nodes, kills com armas, dismemberments, logs, schematics e Maxed Out. NG+ reduz retrabalho.",
+    "guide_avoid": "Evite se você quer platina sem múltiplas runs, sem missables ou com Chapter Select pós-história.",
+    "guide_best_moment": "Finalize a primeira run com save manual no fim do Chapter 11, depois use New Game+ para Marker Fragments/Reunion e feche Untouchable em Impossible Mode.",
+    "guide_dlc": "Base game sem DLCs. Este guia cobre somente Dead Space Remake, lançado em 2023, e não mistura a lista do Dead Space original de 2008.",
+    "guide_grind": "Grind moderado: upgrades completos, Power Nodes, kills com armas, dismemberments, logs, schematics e Maxed Out. NG+ reduz retrabalho.",
+    "guide_ideal": "Ideal para quem quer uma platina offline de survival horror com rota clara, NG+, coletáveis e um desafio real em Impossible Mode.",
+    "guide_online": "Online: 0. Dead Space Remake é single-player e a lista PS5 não exige servidores, multiplayer, coop ou PS Plus para a platina.",
+    "guide_runs": "Mínimo de 2 jogadas, com 3 recomendadas: primeira run para campanha/coletáveis/misc, New Game+ para Marker Fragments/Reunion e Impossible Mode em run própria.",
+    "image": "/assets/games/dead-space-remake/hero.png",
+    "is_verified": 1,
+    "last_reviewed_at": "2026-07-01",
+    "missable": "Tem perdíveis. Front Toward Enemy e Reunion são os principais missables; mantenha save manual antes do ponto de não retorno no fim do Chapter 11.",
+    "missable_summary": "2 perdíveis principais: Front Toward Enemy, por ignorar a Shooting Gallery no Chapter 9, e Reunion, por finalizar New Game+ sem coletar os Marker Fragments e preparar o final alternativo.",
+    "name": "Dead Space Remake",
+    "online_summary": "Online: 0. Dead Space Remake é single-player e a lista PS5 não exige servidores, multiplayer, coop ou PS Plus para a platina.",
+    "quality_warnings": "[object Object]",
+    "reviewed_by": "AtlasAchievement Editorial",
+    "runs_summary": "Mínimo de 2 jogadas, com 3 recomendadas: primeira run para campanha/coletáveis/misc, New Game+ para Marker Fragments/Reunion e Impossible Mode em run própria.",
+    "slug": "dead-space-remake",
+    "time": "25-35h",
+    "time_bucket": "medium",
+    "time_max_hours": 35,
+    "time_min_hours": 25,
+    "time_reason": "25-35h com uma run inicial de campanha/coletáveis, New Game+ para Marker Fragments/final alternativo e uma run Impossible Mode separada.",
+    "time_sort_hours": 25,
+    "updated_at": "2026-07-03 14:38:32",
+    "verification_note": "Guia verificado para Dead Space Remake PS5: 48 troféus, 1/2/10/35, 25-35h, dificuldade editorial 6/10 sem backup, online 0, coop 0, 2 troféus de dificuldade, 2 missables principais, New Game+ obrigatório, Impossible Mode obrigatório, sem Chapter Select e sem DLC necessário.",
+    "verification_status": "verified",
+    "walkthrough": null
+  },
+  "redirects": [
+    "dead-space-2023",
+    "dead-space-ps5",
+    "dead-space-remake-ps5"
+  ],
+  "roadmaps": [
+    {
+      "content": "{\"number\":1,\"title\":\"Primeira run: campanha, coletáveis e side missions\",\"focus\":\"Campanha / coletáveis\",\"objective\":\"Completar a história em qualquer modo, coletar logs, schematics, armas, weapon upgrades e concluir side missions.\",\"actions\":[\"Use checklist cronológico do remake de 2023.\",\"Faça kills com armas e misc conforme aparecem.\",\"Faça Front Toward Enemy no Chapter 9 e Z-Baller no Chapter 10.\",\"Crie um save manual antes do ponto de não retorno no fim do Chapter 11.\"],\"warning\":\"Não há Chapter Select. Front Toward Enemy pode ser perdido e rotas do Dead Space original de 2008 não servem como base principal.\",\"result\":\"História concluída, base de coletáveis/side missions/misc encaminhada.\",\"isStructured\":true}",
+      "step_order": 1
+    },
+    {
+      "content": "{\"number\":2,\"title\":\"New Game+ e final alternativo\",\"focus\":\"NG+ / Marker Fragments\",\"objective\":\"Completar New Game+, coletar Marker Fragments e ver o final alternativo para Reunion.\",\"actions\":[\"Colete os 12 Marker Fragments em New Game+.\",\"Prepare o final alternativo antes de terminar a run.\",\"Continue upgrades para Maxed Out e Built To Order.\"],\"warning\":\"Marker Fragments só aparecem em New Game+. Reunion é perdível dentro da run se você terminar sem preparar o final alternativo.\",\"result\":\"Trusted Contractor, Marked, Reunion e grande parte dos upgrades concluídos.\",\"isStructured\":true}",
+      "step_order": 2
+    },
+    {
+      "content": "{\"number\":3,\"title\":\"Run One Gun, se ainda faltar\",\"focus\":\"Restrição / Plasma Cutter\",\"objective\":\"Completar a campanha usando apenas o Plasma Cutter.\",\"actions\":[\"Não dispare outras armas.\",\"Use Kinesis e Stasis conforme permitido pela estratégia do projeto.\",\"Guarde armas extras se quiser reduzir munição indesejada.\"],\"warning\":\"Não confunda ter armas no inventário com usá-las; o risco é disparar arma errada e invalidar a run.\",\"result\":\"One Gun concluído.\",\"isStructured\":true}",
+      "step_order": 3
+    },
+    {
+      "content": "{\"number\":4,\"title\":\"Impossible Mode\",\"focus\":\"Dificuldade / run completa\",\"objective\":\"Completar o jogo em Impossible Mode para Untouchable.\",\"actions\":[\"Salve com frequência.\",\"Planeje recursos, upgrades e encontros de risco.\",\"Considere backup de save conforme a política do projeto.\"],\"warning\":\"Impossible Mode é o principal gargalo da platina e pode invalidar a tentativa em caso de morte/rebaixamento.\",\"result\":\"Untouchable concluído.\",\"isStructured\":true}",
+      "step_order": 4
+    },
+    {
+      "content": "{\"number\":5,\"title\":\"Conferência final\",\"focus\":\"Checklist final\",\"objective\":\"Conferir 48 troféus, filtros, coletáveis, upgrades, NG+, final alternativo e dificuldade.\",\"actions\":[\"Confirme Online 0 e Coop 0.\",\"Confirme Dificuldade apenas em Set A Benchmark e Untouchable.\",\"Revise Front Toward Enemy, Reunion, Marker Fragments e ponto de não retorno.\"],\"warning\":\"Se algo foi deixado depois do ponto de não retorno, pode ser necessário NG+ ou nova run.\",\"result\":\"Platina Concordance Officer desbloqueada.\",\"isStructured\":true}",
+      "step_order": 5
+    }
+  ],
+  "schemaVersion": 1,
+  "seedExtras": {
+    "aliases": [
+      "dead-space-2023",
+      "dead-space-remake-ps5",
+      "dead-space-ps5"
+    ],
+    "attentionPoints": [
+      {
+        "tags": [
+          "Dificuldade",
+          "Impossible Mode",
+          "Risco de run"
+        ],
+        "text": "Untouchable exige terminar no Impossible Mode; backup de save pode reduzir o risco, mas o troféu continua sendo de Dificuldade.",
+        "title": "Impossible Mode",
+        "type": "Dificuldade"
+      },
+      {
+        "tags": [
+          "NG+",
+          "Final alternativo"
+        ],
+        "text": "New Game+ é necessário para Trusted Contractor, Marker Fragments e o final alternativo Reunion.",
+        "title": "New Game+ obrigatório",
+        "type": "NG+"
+      },
+      {
+        "tags": [
+          "Save manual",
+          "Chapter 11"
+        ],
+        "text": "Não há seleção de capítulos. Faça um save manual antes do ponto de não retorno no fim do Chapter 11.",
+        "title": "Sem Chapter Select",
+        "type": "Ponto de não retorno"
+      },
+      {
+        "tags": [
+          "Perdível"
+        ],
+        "text": "Front Toward Enemy e Reunion são os principais missables.",
+        "title": "Perdíveis reais",
+        "type": "Perdíveis"
+      },
+      {
+        "tags": [
+          "Coletável",
+          "Remake 2023"
+        ],
+        "text": "Dead Space Remake altera coletáveis, side missions, melhorias, recursos de segurança e inclui Marker Fragments/New Game+ para o final alternativo. Por isso, não use guia do Dead Space original de 2008 como base principal.",
+        "title": "Coletáveis do remake",
+        "type": "Coletáveis"
+      },
+      {
+        "tags": [
+          "Plasma Cutter",
+          "Risco de run"
+        ],
+        "text": "Planeje uma run usando apenas o Plasma Cutter ou combine com uma rota segura.",
+        "title": "One Gun",
+        "type": "Run"
+      }
+    ],
+    "checklist": [
+      "Confirmar 48 troféus únicos: 1 platina, 2 ouro, 10 prata e 35 bronze.",
+      "Manter Online 0 e Coop 0.",
+      "Marcar Dificuldade somente em Set A Benchmark e Untouchable.",
+      "Marcar Perdível nos principais missables: Front Toward Enemy e Reunion.",
+      "Usar checklist de coletáveis do remake de 2023, não do Dead Space original de 2008.",
+      "Fazer Front Toward Enemy no Chapter 9.",
+      "Criar save manual antes do ponto de não retorno no fim do Chapter 11.",
+      "Completar New Game+ para Trusted Contractor, Marker Fragments e Reunion.",
+      "Separar ou planejar One Gun com Plasma Cutter.",
+      "Completar Impossible Mode para Untouchable."
+    ],
+    "editorial_summary": [
+      "Dead Space Remake é uma platina offline de survival horror, focada em campanha, coletáveis, New Game+, Impossible Mode, upgrades, kills com armas e alguns troféus de capítulo. A lista PS5 possui 48 troféus, não exige online nem cooperação, mas exige troféus de dificuldade: Set A Benchmark, por terminar no Medium ou superior, e Untouchable, por terminar no Impossible Mode.\n\nA platina exige pelo menos 2 jogadas, mas 3 são recomendadas: uma primeira run para coletáveis, side missions, upgrades e troféus misc; uma run em New Game+ para os Marker Fragments e o final alternativo Reunion; e uma run separada no Impossible Mode. O jogo não possui Chapter Select. É possível voltar pela USG Ishimura até o ponto de não retorno no fim do Chapter 11, então mantenha um save manual antes desse ponto. Os principais missables são Front Toward Enemy, ligado à Shooting Gallery, e Reunion, ligado ao final alternativo do New Game+. Este guia cobre Dead Space Remake, lançado em 2023. O Dead Space original de 2008 possui lista e estrutura diferentes e não deve ser misturado."
+    ],
+    "faq": [
+      {
+        "answer": "Não. A lista é totalmente offline.",
+        "question": "Dead Space Remake tem troféus online?"
+      },
+      {
+        "answer": "Não. É uma experiência single-player.",
+        "question": "Tem coop?"
+      },
+      {
+        "answer": "Sim. Set A Benchmark exige Medium ou superior, e Untouchable exige Impossible Mode.",
+        "question": "A dificuldade afeta troféus?"
+      },
+      {
+        "answer": "Duas são o mínimo, mas três são recomendadas: uma run normal/coletáveis, uma New Game+ para o final alternativo e uma Impossible Mode.",
+        "question": "Quantas jogadas são necessárias?"
+      },
+      {
+        "answer": "Não. Há exploração até o ponto de não retorno no fim do Chapter 11, mas não há Chapter Select depois.",
+        "question": "Existe Chapter Select?"
+      },
+      {
+        "answer": "Sim. Front Toward Enemy e Reunion são os principais. Também mantenha save antes do ponto de não retorno para evitar retrabalho.",
+        "question": "Tem troféus perdíveis?"
+      },
+      {
+        "answer": "Sim. New Game+ é necessário para Trusted Contractor, Marker Fragments e Reunion.",
+        "question": "New Game+ é necessário?"
+      },
+      {
+        "answer": "A rota mais segura do Atlas trata Impossible Mode como run própria separada; New Game+ comum é usado para Marker Fragments e Reunion.",
+        "question": "Impossible Mode pode ser feito em New Game+?"
+      },
+      {
+        "answer": "Sim. É preciso terminar o jogo usando apenas o Plasma Cutter.",
+        "question": "One Gun é obrigatório?"
+      },
+      {
+        "answer": "Não. O remake alterou locais, adicionou side missions e inclui Marker Fragments em New Game+.",
+        "question": "Os coletáveis são iguais ao Dead Space original?"
+      },
+      {
+        "answer": "Não. A platina base não exige DLC.",
+        "question": "Preciso de DLC?"
+      },
+      {
+        "answer": "Impossible Mode, seguido por New Game+ com Marker Fragments/final alternativo e Maxed Out.",
+        "question": "Qual é o maior gargalo?"
+      }
+    ],
+    "note": "Campos exportados para auditoria. O SQLite atual nao possui colunas nativas para todos esses extras; a importacao preserva o que o banco suporta.",
+    "quickDecision": {
+      "coopRequired": "Não",
+      "difficulty": "6/10",
+      "dlcRequired": "Não",
+      "firstAction": "Comece com uma run normal usando checklist do remake e salve manualmente antes do fim do Chapter 11.",
+      "mainAttention": "Untouchable em Impossible Mode e Reunion em New Game+ são os maiores pontos de risco.",
+      "missables": "Sim, 2 principais",
+      "onlineRequired": "Não",
+      "runs": "2 mínimas / 3 recomendadas",
+      "time": "25-35h"
+    },
+    "quick_plan": [
+      {
+        "detail": "Complete a história, faça logs, schematics, armas, upgrades, side missions, Front Toward Enemy, Z-Baller e save antes do fim do Chapter 11.",
+        "number": 1,
+        "title": "Primeira run: campanha, coletáveis e side missions"
+      },
+      {
+        "detail": "Colete Marker Fragments, conclua Trusted Contractor, prepare Reunion e continue Maxed Out/Built To Order.",
+        "number": 2,
+        "title": "New Game+ e final alternativo"
+      },
+      {
+        "detail": "Termine usando apenas o Plasma Cutter e evite disparar outras armas.",
+        "number": 3,
+        "title": "Run One Gun, se ainda faltar"
+      },
+      {
+        "detail": "Complete Untouchable com saves cuidadosos e backup conforme a política do projeto.",
+        "number": 4,
+        "title": "Impossible Mode"
+      },
+      {
+        "detail": "Revise os 48 troféus, filtros, NG+, missables, coletáveis e dificuldade antes da platina.",
+        "number": 5,
+        "title": "Conferência final"
+      }
+    ],
+    "seo": {
+      "description": "Guia PT-BR da platina de Dead Space Remake no PS5: 48 troféus, 25-35h, 6/10, online 0, coop 0, NG+, Impossible Mode e 2 missables.",
+      "image": "/assets/games/dead-space-remake/hero.png",
+      "keywords": "Dead Space Remake troféus, Dead Space 2023 platina, Dead Space PS5, Untouchable, Reunion, Marker Fragments, One Gun",
+      "title": "Dead Space Remake: guia de troféus e platina PS5 | AtlasAchievement"
+    },
+    "tags": [
+      "PS5",
+      "Platina",
+      "Offline",
+      "Solo",
+      "Tem perdíveis",
+      "New Game+",
+      "Impossible Mode",
+      "Dificuldade 2",
+      "Sem Chapter Select",
+      "Ponto de não retorno",
+      "Base sem DLC"
+    ]
+  },
+  "slug": "dead-space-remake",
+  "trophies": [
+    {
+      "description": "Desbloqueie todos os troféus de Dead Space Remake.",
+      "is_missable": 0,
+      "is_spoiler": 0,
+      "name": "Concordance Officer",
+      "name_pt": "Oficial da Concordância",
+      "tip": "Complete os 47 troféus restantes da lista base PS5. Não há online, coop ou DLC obrigatório.",
+      "trophy_code": "dead-space-remake-concordance-officer",
+      "type": "Platina"
+    },
+    {
+      "description": "Complete o Chapter 1 em qualquer modo.",
+      "is_missable": 0,
+      "is_spoiler": 1,
+      "name": "Welcome Aboard",
+      "name_pt": "Bem-vindo a Bordo",
+      "tip": "Troféu automático de história.",
+      "trophy_code": "dead-space-remake-welcome-aboard",
+      "type": "Bronze"
+    },
+    {
+      "description": "Complete o Chapter 2 em qualquer modo.",
+      "is_missable": 0,
+      "is_spoiler": 1,
+      "name": "Lab Rat",
+      "name_pt": "Rato de Laboratório",
+      "tip": "Troféu automático de história.",
+      "trophy_code": "dead-space-remake-lab-rat",
+      "type": "Bronze"
+    },
+    {
+      "description": "Complete o Chapter 3 em qualquer modo.",
+      "is_missable": 0,
+      "is_spoiler": 1,
+      "name": "All Systems Go",
+      "name_pt": "Todos os Sistemas Prontos",
+      "tip": "Troféu automático de história.",
+      "trophy_code": "dead-space-remake-all-systems-go",
+      "type": "Bronze"
+    },
+    {
+      "description": "Complete o Chapter 4 em qualquer modo.",
+      "is_missable": 0,
+      "is_spoiler": 1,
+      "name": "Cannon Fodder",
+      "name_pt": "Bucha de Canhão",
+      "tip": "Troféu automático de história.",
+      "trophy_code": "dead-space-remake-cannon-fodder",
+      "type": "Bronze"
+    },
+    {
+      "description": "Complete o Chapter 5 em qualquer modo.",
+      "is_missable": 0,
+      "is_spoiler": 1,
+      "name": "True Believer",
+      "name_pt": "Verdadeiro Crente",
+      "tip": "Troféu automático de história.",
+      "trophy_code": "dead-space-remake-true-believer",
+      "type": "Bronze"
+    },
+    {
+      "description": "Complete o Chapter 6 em qualquer modo.",
+      "is_missable": 0,
+      "is_spoiler": 1,
+      "name": "Greenhouse Effect",
+      "name_pt": "Efeito Estufa",
+      "tip": "Troféu automático de história.",
+      "trophy_code": "dead-space-remake-greenhouse-effect",
+      "type": "Bronze"
+    },
+    {
+      "description": "Complete o Chapter 7 em qualquer modo.",
+      "is_missable": 0,
+      "is_spoiler": 1,
+      "name": "S.O.S.",
+      "name_pt": "S.O.S.",
+      "tip": "Troféu automático de história.",
+      "trophy_code": "dead-space-remake-sos",
+      "type": "Bronze"
+    },
+    {
+      "description": "Complete o Chapter 8 em qualquer modo.",
+      "is_missable": 0,
+      "is_spoiler": 1,
+      "name": "Strange Transmissions",
+      "name_pt": "Transmissões Estranhas",
+      "tip": "Troféu automático de história.",
+      "trophy_code": "dead-space-remake-strange-transmissions",
+      "type": "Bronze"
+    },
+    {
+      "description": "Complete o Chapter 9 em qualquer modo.",
+      "is_missable": 0,
+      "is_spoiler": 1,
+      "name": "Wreckage",
+      "name_pt": "Destroços",
+      "tip": "Troféu automático de história. Resolva Front Toward Enemy durante este capítulo.",
+      "trophy_code": "dead-space-remake-wreckage",
+      "type": "Bronze"
+    },
+    {
+      "description": "Complete o Chapter 10 em qualquer modo.",
+      "is_missable": 0,
+      "is_spoiler": 1,
+      "name": "Keeper of the Faith",
+      "name_pt": "Guardião da Fé",
+      "tip": "Troféu automático de história.",
+      "trophy_code": "dead-space-remake-keeper-of-the-faith",
+      "type": "Bronze"
+    },
+    {
+      "description": "Complete o Chapter 11 em qualquer modo.",
+      "is_missable": 0,
+      "is_spoiler": 1,
+      "name": "Betrayed",
+      "name_pt": "Traído",
+      "tip": "Crie um save manual antes do ponto de não retorno no fim do Chapter 11.",
+      "trophy_code": "dead-space-remake-betrayed",
+      "type": "Bronze"
+    },
+    {
+      "description": "Complete o Chapter 12 em qualquer modo.",
+      "is_missable": 0,
+      "is_spoiler": 1,
+      "name": "Exodus",
+      "name_pt": "Êxodo",
+      "tip": "Troféu automático de história da reta final.",
+      "trophy_code": "dead-space-remake-exodus",
+      "type": "Prata"
+    },
+    {
+      "description": "Descubra a origem do Hunter.",
+      "is_missable": 0,
+      "is_spoiler": 0,
+      "name": "Final Regeneration",
+      "name_pt": "Regeneração Final",
+      "tip": "Complete a side mission Premeditated Malpractice, iniciada no Chapter 6 e concluída a partir do Chapter 7.",
+      "trophy_code": "dead-space-remake-final-regeneration",
+      "type": "Prata"
+    },
+    {
+      "description": "Siga a investigação de Nicole.",
+      "is_missable": 0,
+      "is_spoiler": 0,
+      "name": "Whole Again",
+      "name_pt": "Inteiro Novamente",
+      "tip": "Complete a side mission Scientific Methods do remake, iniciada no Chapter 2 e concluída a partir do Chapter 10.",
+      "trophy_code": "dead-space-remake-whole-again",
+      "type": "Prata"
+    },
+    {
+      "description": "Complete o jogo em Medium ou superior.",
+      "is_missable": 0,
+      "is_spoiler": 0,
+      "name": "Set A Benchmark",
+      "name_pt": "Estabeleça um Padrão",
+      "tip": "É um dos 2 troféus com tag Dificuldade.",
+      "trophy_code": "dead-space-remake-set-a-benchmark",
+      "type": "Prata"
+    },
+    {
+      "description": "Complete o jogo em Impossible Mode.",
+      "is_missable": 0,
+      "is_spoiler": 0,
+      "name": "Untouchable",
+      "name_pt": "Intocável",
+      "tip": "Impossible Mode é baseado em Hard, com risco de morte que pode invalidar a tentativa se você não usar backup/estratégia de save. Salve frequentemente e considere backup de save conforme a política do projeto.",
+      "trophy_code": "dead-space-remake-untouchable",
+      "type": "Ouro"
+    },
+    {
+      "description": "Complete New Game+ em qualquer modo.",
+      "is_missable": 0,
+      "is_spoiler": 0,
+      "name": "Trusted Contractor",
+      "name_pt": "Contratado de Confiança",
+      "tip": "New Game+ é obrigatório para este troféu e para preparar Marker Fragments/Reunion.",
+      "trophy_code": "dead-space-remake-trusted-contractor",
+      "type": "Prata"
+    },
+    {
+      "description": "Obtenha todas as armas do jogo.",
+      "is_missable": 0,
+      "is_spoiler": 0,
+      "name": "Full Arsenal",
+      "name_pt": "Arsenal Completo",
+      "tip": "Inclui Plasma Cutter, Stasis Module, Kinesis Module, Pulse Rifle, Ripper, Flamethrower, Contact Beam, Line Gun e Force Gun.",
+      "trophy_code": "dead-space-remake-full-arsenal",
+      "type": "Bronze"
+    },
+    {
+      "description": "Instale todos os upgrades de armas.",
+      "is_missable": 0,
+      "is_spoiler": 0,
+      "name": "Built To Order",
+      "name_pt": "Feito Sob Encomenda",
+      "tip": "Exige coletar upgrades, usar Power Nodes e normalmente fica melhor em New Game+.",
+      "trophy_code": "dead-space-remake-built-to-order",
+      "type": "Prata"
+    },
+    {
+      "description": "Mate 30 inimigos com a Pulse Rifle.",
+      "is_missable": 0,
+      "is_spoiler": 0,
+      "name": "Autofire",
+      "name_pt": "Fogo Automático",
+      "tip": "Use uma run em que outras armas estejam liberadas, não a tentativa de One Gun.",
+      "trophy_code": "dead-space-remake-autofire",
+      "type": "Bronze"
+    },
+    {
+      "description": "Mate 30 inimigos com o Flamethrower.",
+      "is_missable": 0,
+      "is_spoiler": 0,
+      "name": "Live with the Hot Ones",
+      "name_pt": "Viva com os Quentes",
+      "tip": "Acumulativo de combate offline.",
+      "trophy_code": "dead-space-remake-live-with-the-hot-ones",
+      "type": "Bronze"
+    },
+    {
+      "description": "Mate 30 inimigos com o Ripper.",
+      "is_missable": 0,
+      "is_spoiler": 0,
+      "name": "A Cut Above",
+      "name_pt": "Um Corte Acima",
+      "tip": "Acumulativo de combate offline.",
+      "trophy_code": "dead-space-remake-a-cut-above",
+      "type": "Bronze"
+    },
+    {
+      "description": "Mate 30 inimigos com a Force Gun.",
+      "is_missable": 0,
+      "is_spoiler": 0,
+      "name": "Pusher",
+      "name_pt": "Empurrador",
+      "tip": "Acumulativo de combate offline.",
+      "trophy_code": "dead-space-remake-pusher",
+      "type": "Bronze"
+    },
+    {
+      "description": "Mate 30 inimigos com a Line Gun.",
+      "is_missable": 0,
+      "is_spoiler": 0,
+      "name": "Eviscerator",
+      "name_pt": "Eviscerador",
+      "tip": "Acumulativo de combate offline.",
+      "trophy_code": "dead-space-remake-eviscerator",
+      "type": "Bronze"
+    },
+    {
+      "description": "Mate 30 inimigos com a Contact Beam.",
+      "is_missable": 0,
+      "is_spoiler": 0,
+      "name": "Full Contact",
+      "name_pt": "Contato Total",
+      "tip": "Acumulativo de combate offline.",
+      "trophy_code": "dead-space-remake-full-contact",
+      "type": "Bronze"
+    },
+    {
+      "description": "Complete o jogo usando apenas o Plasma Cutter.",
+      "is_missable": 0,
+      "is_spoiler": 0,
+      "name": "One Gun",
+      "name_pt": "Uma Arma",
+      "tip": "Pode ser feito em run separada ou combinado com outra rota planejada. Não dispare outras armas; Kinesis, Stasis e ataques corpo a corpo podem ser usados conforme a estratégia do projeto.",
+      "trophy_code": "dead-space-remake-one-gun",
+      "type": "Prata"
+    },
+    {
+      "description": "Coloque 25 itens no Storage.",
+      "is_missable": 0,
+      "is_spoiler": 0,
+      "name": "Pack Rat",
+      "name_pt": "Acumulador",
+      "tip": "Use lojas ao longo da campanha para guardar itens até liberar o troféu.",
+      "trophy_code": "dead-space-remake-pack-rat",
+      "type": "Bronze"
+    },
+    {
+      "description": "Colete 75 Logs.",
+      "is_missable": 0,
+      "is_spoiler": 0,
+      "name": "Story Teller",
+      "name_pt": "Contador de Histórias",
+      "tip": "Há logs automáticos e manuais. Use checklist do remake, não rotas do jogo original.",
+      "trophy_code": "dead-space-remake-story-teller",
+      "type": "Bronze"
+    },
+    {
+      "description": "Colete 150 Logs.",
+      "is_missable": 0,
+      "is_spoiler": 0,
+      "name": "Legend Teller",
+      "name_pt": "Contador de Lendas",
+      "tip": "O remake tem logs e localizações próprias; alguns são condicionais, mas a meta do troféu é o total exigido.",
+      "trophy_code": "dead-space-remake-legend-teller",
+      "type": "Bronze"
+    },
+    {
+      "description": "Colete todos os Schematics.",
+      "is_missable": 0,
+      "is_spoiler": 0,
+      "name": "Merchant",
+      "name_pt": "Comerciante",
+      "tip": "Revise antes do ponto de não retorno no fim do Chapter 11; NG+ pode ajudar se algo ficar para trás.",
+      "trophy_code": "dead-space-remake-merchant",
+      "type": "Bronze"
+    },
+    {
+      "description": "Desmembre 50 membros.",
+      "is_missable": 0,
+      "is_spoiler": 0,
+      "name": "Marksman",
+      "name_pt": "Atirador",
+      "tip": "Vem naturalmente ao mirar nos membros dos Necromorphs.",
+      "trophy_code": "dead-space-remake-marksman",
+      "type": "Bronze"
+    },
+    {
+      "description": "Desmembre 500 membros.",
+      "is_missable": 0,
+      "is_spoiler": 0,
+      "name": "Surgeon",
+      "name_pt": "Cirurgião",
+      "tip": "Acumulativo de combate; avance mirando em membros e usando armas variadas fora da run One Gun.",
+      "trophy_code": "dead-space-remake-surgeon",
+      "type": "Bronze"
+    },
+    {
+      "description": "Arranque um membro pendurado usando Kinesis.",
+      "is_missable": 0,
+      "is_spoiler": 0,
+      "name": "Wishbone",
+      "name_pt": "Osso da Sorte",
+      "tip": "Enfraqueça um membro sem separá-lo totalmente e use Kinesis para arrancá-lo.",
+      "trophy_code": "dead-space-remake-wishbone",
+      "type": "Bronze"
+    },
+    {
+      "description": "Prenda um inimigo.",
+      "is_missable": 0,
+      "is_spoiler": 0,
+      "name": "Raise The Stakes",
+      "name_pt": "Aumente as Apostas",
+      "tip": "Use Kinesis para lançar uma barra ou objeto perfurante e fixar um inimigo na parede.",
+      "trophy_code": "dead-space-remake-raise-the-stakes",
+      "type": "Bronze"
+    },
+    {
+      "description": "Use Stasis em 50 inimigos.",
+      "is_missable": 0,
+      "is_spoiler": 0,
+      "name": "Freeze",
+      "name_pt": "Congelar",
+      "tip": "Acumulativo de combate; pode ser adiantado perto de estações de recarga de Stasis.",
+      "trophy_code": "dead-space-remake-freeze",
+      "type": "Bronze"
+    },
+    {
+      "description": "Mate 10 inimigos com stomp.",
+      "is_missable": 0,
+      "is_spoiler": 0,
+      "name": "Backbreaker",
+      "name_pt": "Quebra-Costas",
+      "tip": "Funciona melhor contra inimigos pequenos ou partes que morrem com pisão.",
+      "trophy_code": "dead-space-remake-backbreaker",
+      "type": "Bronze"
+    },
+    {
+      "description": "Melhore completamente todas as armas e equipamentos.",
+      "is_missable": 0,
+      "is_spoiler": 0,
+      "name": "Maxed Out",
+      "name_pt": "No Máximo",
+      "tip": "Normalmente exige New Game+ por causa da quantidade de Power Nodes e créditos necessários.",
+      "trophy_code": "dead-space-remake-maxed-out",
+      "type": "Ouro"
+    },
+    {
+      "description": "Sobreviva à Shooting Gallery.",
+      "is_missable": 1,
+      "is_spoiler": 0,
+      "name": "Front Toward Enemy",
+      "name_pt": "Frente Voltada ao Inimigo",
+      "tip": "Perdível no Chapter 9 se você avançar sem concluir a atividade na USM Valor.",
+      "trophy_code": "dead-space-remake-front-toward-enemy",
+      "type": "Bronze"
+    },
+    {
+      "description": "Complete o nível 6 do Zero-G Basketball.",
+      "is_missable": 0,
+      "is_spoiler": 0,
+      "name": "Z-Baller",
+      "name_pt": "Z-Baller",
+      "tip": "Minigame disponível no Crew Deck a partir do Chapter 10.",
+      "trophy_code": "dead-space-remake-z-baller",
+      "type": "Prata"
+    },
+    {
+      "description": "Encontre o Peng Treasure.",
+      "is_missable": 0,
+      "is_spoiler": 0,
+      "name": "There’s Always Peng!",
+      "name_pt": "Sempre Tem Peng!",
+      "tip": "No remake, Peng fica no Cargo Bay no Chapter 11. Pegue antes de avançar além do ponto de não retorno.",
+      "trophy_code": "dead-space-remake-theres-always-peng",
+      "type": "Bronze"
+    },
+    {
+      "description": "Crie o Master Security Override.",
+      "is_missable": 0,
+      "is_spoiler": 0,
+      "name": "Full Clearance",
+      "name_pt": "Acesso Total",
+      "tip": "Complete a side mission You Are Not Authorized; isso também ajuda com upgrades e salas de segurança.",
+      "trophy_code": "dead-space-remake-full-clearance",
+      "type": "Prata"
+    },
+    {
+      "description": "Mate um Brute.",
+      "is_missable": 0,
+      "is_spoiler": 1,
+      "name": "Brute Force",
+      "name_pt": "Força Bruta",
+      "tip": "Troféu automático de história ligado ao primeiro Brute.",
+      "trophy_code": "dead-space-remake-brute-force",
+      "type": "Bronze"
+    },
+    {
+      "description": "Mate o Leviathan.",
+      "is_missable": 0,
+      "is_spoiler": 1,
+      "name": "Exterminator",
+      "name_pt": "Exterminador",
+      "tip": "Troféu automático de história.",
+      "trophy_code": "dead-space-remake-exterminator",
+      "type": "Bronze"
+    },
+    {
+      "description": "Mate o Leviathan Remnant.",
+      "is_missable": 0,
+      "is_spoiler": 1,
+      "name": "Get Off My Ship!",
+      "name_pt": "Saia da Minha Nave!",
+      "tip": "Troféu automático de história.",
+      "trophy_code": "dead-space-remake-get-off-my-ship",
+      "type": "Bronze"
+    },
+    {
+      "description": "Mate o Hive Mind.",
+      "is_missable": 0,
+      "is_spoiler": 1,
+      "name": "Mindless Prey",
+      "name_pt": "Presa Irracional",
+      "tip": "Troféu automático de história no fim da campanha.",
+      "trophy_code": "dead-space-remake-mindless-prey",
+      "type": "Bronze"
+    },
+    {
+      "description": "Pegue um Marker Fragment pela primeira vez.",
+      "is_missable": 0,
+      "is_spoiler": 0,
+      "name": "Marked",
+      "name_pt": "Marcado",
+      "tip": "Marker Fragments só aparecem em New Game+. Eles são necessários para o final alternativo.",
+      "trophy_code": "dead-space-remake-marked",
+      "type": "Bronze"
+    },
+    {
+      "description": "Veja o final alternativo em qualquer modo.",
+      "is_missable": 1,
+      "is_spoiler": 0,
+      "name": "Reunion",
+      "name_pt": "Reunião",
+      "tip": "Perdível dentro da run New Game+ se você terminar sem coletar os 12 Marker Fragments e preparar o final alternativo.",
+      "trophy_code": "dead-space-remake-reunion",
+      "type": "Prata"
+    }
+  ]
+}

@@ -1,0 +1,742 @@
+{
+  "game": {
+    "avoid_if": "Evite se você quer uma platina simples com Chapter Select e sem risco de rota.",
+    "before_you_start": "Blasphemous é uma platina offline de metroidvania/ação, com foco em chefes, 100% de exploração, coletáveis, side quests, finais e runs específicas. A lista PS4 possui 46 troféus, não exige online nem cooperação e não tem troféus ligados a dificuldade selecionável. A dificuldade real da platina vem dos vários missables de rota, da exigência de 100% do jogo, do troféu Requiem Aeternam - derrotar os chefes base sem consumir Bile Flasks - e do Bronze Medal, que exige atravessar a Bronze Door no Bridge of Calvary em menos de 3 horas.\n\nO guia precisa ser seguido com atenção, porque Blasphemous não tem Chapter Select. Algumas questlines têm pontos de corte, especialmente Tirso/Kissers of Wounds, Redento/Cleofas, Viridiana, cadáveres, orações e certos itens ligados ao 100%. A rota ideal é fazer uma primeira jogada controlada para história, 100%, coletáveis, finais e quests, deixando uma run separada ou bem planejada para Requiem Aeternam e Bronze Medal. Conteúdos de updates como Stir of Dawn, Strife and Ruin e Wounds of Eventide não devem ser misturados como requisitos obrigatórios da platina base. Este guia cobre somente a lista base do jogo original.",
+    "best_for": "Ideal para quem quer metroidvania sombrio, 100% rigoroso, boss routes e planejamento de missables.",
+    "cleanup_advice": "Não conte com Chapter Select. Use backups quando possível e deixe runs próprias para Bronze Medal e Requiem Aeternam se a rota principal ficar pesada.",
+    "cover_image": "/assets/games/blasphemous/cover.jpg",
+    "coverage_level": "complete",
+    "created_at": "2026-07-03 14:36:25",
+    "difficulty": 7,
+    "difficulty_reason": "Dificuldade editorial 7/10: rota guiada reduz bastante o risco, mas Requiem Aeternam, Bronze Medal, vários missables de questline e ausência de Chapter Select elevam a platina.",
+    "dlc_scope": "Base game sem DLCs. O guia cobre a lista base PS4; updates como Stir of Dawn, Strife and Ruin e Wounds of Eventide não entram como requisitos obrigatórios da platina base.",
+    "editorial_notes": "Fontes consultadas: PlayStation Store, PSNProfiles, TrueTrophies, PlayStationTrophies e guias de rota. Guia restrito ao Blasphemous original e a lista base de troféus.",
+    "editorial_review_status": "verified",
+    "editorial_status": "published",
+    "first_run_advice": "Faça a primeira run com checklist de Tirso, Viridiana, Redento, Cleofas, Altasgracias, Lvdovico e coletáveis originais.",
+    "grind_summary": "Grind baixo/moderado: 666 kills, Tears para compras/upgrades e checklist amplo de coletáveis.",
+    "guide_avoid": null,
+    "guide_best_moment": null,
+    "guide_dlc": null,
+    "guide_grind": null,
+    "guide_ideal": null,
+    "guide_online": null,
+    "guide_runs": null,
+    "image": "/assets/games/blasphemous/hero.jpg",
+    "is_verified": 1,
+    "last_reviewed_at": "2026-07-01",
+    "missable": "Tem perdíveis. Blasphemous não tem Chapter Select e várias questlines podem exigir nova run se falharem.",
+    "missable_summary": "Perdíveis: 15 por questlines, Ending B, rota de 100%, Requiem Aeternam e Bronze Medal. Use checklist desde o início.",
+    "name": "Blasphemous",
+    "online_summary": "Sem online obrigatório. A lista PS4 é totalmente single-player, com online 0 e coop 0.",
+    "quality_warnings": "[]",
+    "reviewed_by": "AtlasAchievement Editorial",
+    "runs_summary": "2+ jogadas recomendadas: uma run guiada para 100%/quests/finais e runs separadas ou planejadas para Requiem Aeternam e Bronze Medal.",
+    "slug": "blasphemous",
+    "time": "20-30h",
+    "time_bucket": "medium",
+    "time_max_hours": 30,
+    "time_min_hours": 20,
+    "time_reason": "A estimativa cobre uma run guiada para 100%/missables/finais e runs separadas ou planejadas para Requiem Aeternam e Bronze Medal.",
+    "time_sort_hours": 20,
+    "updated_at": "2026-07-03 14:38:32",
+    "verification_note": "Guia verificado para Blasphemous original PS4: 46 troféus únicos, 1/3/10/32, 20-30h, dificuldade 7/10, online 0, coop 0, dificuldade individual 0, 15 perdíveis justificados e DLC não necessário.",
+    "verification_status": "verified",
+    "walkthrough": ""
+  },
+  "redirects": [
+    "blasphemous-original",
+    "blasphemous-ps4"
+  ],
+  "roadmaps": [
+    {
+      "content": "{\"title\":\"Primeira run guiada: história, missables e base do 100%\",\"focus\":\"História / missables / checklist\",\"objective\":\"Avançar com atenção a Tirso, Viridiana, Redento, Cleofas e coletáveis.\",\"actions\":[\"Entregue ervas a Tirso antes dos chefes correspondentes.\",\"Inicie corretamente Redento, Cleofas, Altasgracias e Lvdovico.\",\"Colete itens, relics, prayers, rosary beads, sword hearts, bones, cherubs e upgrades conforme ficam acessíveis.\"],\"warning\":\"Não há Chapter Select e muitos troféus de questline têm pontos de corte.\",\"result\":\"História avançada, principais missables protegidos e 100% encaminhado.\"}",
+      "step_order": 1
+    },
+    {
+      "content": "{\"title\":\"100% de exploração e coletáveis\",\"focus\":\"Coletáveis / 100%\",\"objective\":\"Fechar mapa, 44 coletáveis originais, 30 rosary beads, 13 prayers, 9 sword hearts, relics, cherubs, corpse talks, upgrades e lojas.\",\"actions\":[\"Use checklist manual.\",\"Confirme o que é original/base e o que é update.\",\"Complete True Shrine, High Wills, Flea Market, Ossuary, Mysteria Lucis, Bull and Moon e Witness.\"],\"warning\":\"Witness of The Miracle pode falhar se questline ou categoria de 100% ficar incompleta.\",\"result\":\"Bloco de 100% concluído.\"}",
+      "step_order": 2
+    },
+    {
+      "content": "{\"title\":\"Finais e quests conflitantes\",\"focus\":\"Finais / rota\",\"objective\":\"Obter Ending A e Ending B, resolvendo Redento/Cleofas conforme rota planejada.\",\"actions\":[\"Use backup quando possível.\",\"Planeje Crossing Souls e Rebirth.\",\"Não exija Ending C como base.\"],\"warning\":\"Algumas decisões podem impedir troféus na mesma run.\",\"result\":\"Finais e quests principais concluídos.\"}",
+      "step_order": 3
+    },
+    {
+      "content": "{\"title\":\"Requiem Aeternam\",\"focus\":\"Run / sem cura\",\"objective\":\"Derrotar chefes base sem consumir Bile Flasks.\",\"actions\":[\"Controle desde o primeiro boss.\",\"Não use flask dentro de salas de boss.\",\"Recarregue se usar flask por acidente.\"],\"warning\":\"Rotas de update podem pular Esdras ou alterar chefes.\",\"result\":\"Requiem Aeternam concluído.\"}",
+      "step_order": 4
+    },
+    {
+      "content": "{\"title\":\"Bronze Medal e limpeza final\",\"focus\":\"Speedrun / combate\",\"objective\":\"Chegar a Bronze Door em menos de 3 horas e finalizar arenas, Bestiary e 666 kills.\",\"actions\":[\"Faça Bronze Medal em run separada.\",\"Finalize Detestatio Sacrorum e Bestiary.\",\"Farm leve apenas se necessário.\"],\"warning\":\"Bronze Medal não é troféu de dificuldade; é speedrun/rota.\",\"result\":\"Platina The Penitent One desbloqueada.\"}",
+      "step_order": 5
+    }
+  ],
+  "schemaVersion": 1,
+  "seedExtras": {
+    "aliases": [
+      "blasphemous-ps4",
+      "blasphemous-original"
+    ],
+    "attentionPoints": [
+      {
+        "tags": [
+          "Tirso"
+        ],
+        "text": "Entregue as ervas a Tirso antes dos chefes correspondentes para salvar todos os Kissers of Wounds.",
+        "title": "Mediterranean Diet",
+        "type": "Questline"
+      },
+      {
+        "tags": [
+          "Redento",
+          "Cleofas"
+        ],
+        "text": "As rotas de Redento e Cleofas exigem decisões específicas e podem conflitar.",
+        "title": "Crossing Souls / Rebirth / Cleofas / Redento",
+        "type": "Questline"
+      },
+      {
+        "tags": [
+          "Viridiana"
+        ],
+        "text": "Aceite ajuda de Viridiana nas três lutas específicas se estiver buscando esse troféu.",
+        "title": "Dying Breath / Viridiana",
+        "type": "Questline"
+      },
+      {
+        "tags": [
+          "Cadaveres"
+        ],
+        "text": "Depende do Shroud of Dreamt Sins e de falar com todos os cadáveres exigidos pela lista base.",
+        "title": "Last Words",
+        "type": "Checklist"
+      },
+      {
+        "tags": [
+          "Perpetua"
+        ],
+        "text": "Perpetua/Perpetva é uma chance por save; use backup se estiver inseguro.",
+        "title": "The Sister / Perpetua",
+        "type": "Perdível"
+      },
+      {
+        "tags": [
+          "Sem cura"
+        ],
+        "text": "Derrote os chefes base sem consumir Bile Flasks; se usar flask em boss, recarregue ou saia conforme a estratégia.",
+        "title": "Requiem Aeternam",
+        "type": "Run"
+      },
+      {
+        "tags": [
+          "Speedrun"
+        ],
+        "text": "Atravesse a Bronze Door no Bridge of Calvary em menos de 3 horas; é speedrun/rota, não Dificuldade.",
+        "title": "Bronze Medal",
+        "type": "Speedrun"
+      },
+      {
+        "tags": [
+          "Ending"
+        ],
+        "text": "Obtenha Ending B antes de completar os requisitos que bloqueiam esse final; Ending A não deve ser tratado como perdível.",
+        "title": "Ending A/B",
+        "type": "Final"
+      },
+      {
+        "tags": [
+          "Sem Chapter Select"
+        ],
+        "text": "Nem tudo é recuperável depois; questlines e rotas podem bloquear troféus no mesmo save.",
+        "title": "Sem Chapter Select",
+        "type": "Rota"
+      }
+    ],
+    "checklist": [
+      "Confirmar 46 troféus únicos e remover a duplicidade de A Long Path Ahead.",
+      "Iniciar run guiada com controle de Tirso/Kissers of Wounds.",
+      "Controlar Viridiana, Redento, Cleofas, Altasgracias e Lvdovico.",
+      "Fechar 100% base: mapa, ossuary, cherubs, beads, prayers, sword hearts, relics, upgrades e lojas.",
+      "Obter Ending A e Ending B sem exigir Ending C de update.",
+      "Fazer Requiem Aeternam sem consumir Bile Flasks nos chefes base.",
+      "Fazer Bronze Medal em run separada se necessário.",
+      "Conferir online 0, coop 0, dificuldade 0 e DLC não necessário."
+    ],
+    "editorial_summary": [
+      "Blasphemous é uma platina offline de metroidvania/ação, com foco em chefes, 100% de exploração, coletáveis, side quests, finais e runs específicas. A lista PS4 possui 46 troféus, não exige online nem cooperação e não tem troféus ligados a dificuldade selecionável. A dificuldade real da platina vem dos vários missables de rota, da exigência de 100% do jogo, do troféu Requiem Aeternam - derrotar os chefes base sem consumir Bile Flasks - e do Bronze Medal, que exige atravessar a Bronze Door no Bridge of Calvary em menos de 3 horas.\n\nO guia precisa ser seguido com atenção, porque Blasphemous não tem Chapter Select. Algumas questlines têm pontos de corte, especialmente Tirso/Kissers of Wounds, Redento/Cleofas, Viridiana, cadáveres, orações e certos itens ligados ao 100%. A rota ideal é fazer uma primeira jogada controlada para história, 100%, coletáveis, finais e quests, deixando uma run separada ou bem planejada para Requiem Aeternam e Bronze Medal. Conteúdos de updates como Stir of Dawn, Strife and Ruin e Wounds of Eventide não devem ser misturados como requisitos obrigatórios da platina base. Este guia cobre somente a lista base do jogo original."
+    ],
+    "faq": [
+      {
+        "answer": "Não. A lista é totalmente offline.",
+        "question": "Blasphemous tem troféus online?"
+      },
+      {
+        "answer": "Não. É uma experiência single-player.",
+        "question": "Tem coop?"
+      },
+      {
+        "answer": "Não. O jogo não tem seleção de dificuldade e o filtro Dificuldade fica 0.",
+        "question": "A dificuldade afeta troféus?"
+      },
+      {
+        "answer": "Sim. Várias questlines e rotas podem ser perdidas, especialmente Tirso, Redento, Cleofas, Viridiana e requisitos de 100%.",
+        "question": "Blasphemous tem troféus perdíveis?"
+      },
+      {
+        "answer": "Não. O jogo permite continuar explorando o save, mas não existe seleção de capítulos para recuperar decisões perdidas.",
+        "question": "Existe Chapter Select?"
+      },
+      {
+        "answer": "Duas ou mais são recomendadas: uma run guiada para 100%/quests/finais e runs separadas para Requiem Aeternam e Bronze Medal se necessário.",
+        "question": "Quantas jogadas são necessárias?"
+      },
+      {
+        "answer": "Não. É uma restrição de run: derrote os chefes base sem consumir Bile Flasks em salas de boss.",
+        "question": "Requiem Aeternam é dificuldade?"
+      },
+      {
+        "answer": "Não. É speedrun/rota: chegar a Bronze Door no Bridge of Calvary em menos de 3 horas.",
+        "question": "Bronze Medal é dificuldade?"
+      },
+      {
+        "answer": "Não tudo. Não há Chapter Select e questlines podem bloquear troféus, então use checklist e backups.",
+        "question": "Posso recuperar tudo depois?"
+      },
+      {
+        "answer": "Não como requisito base da platina. NG+ pode existir por update e ajudar em estratégias, mas não é obrigatório.",
+        "question": "Preciso de New Game+?"
+      },
+      {
+        "answer": "Não. O guia cobre a lista base PS4; Stir of Dawn, Strife and Ruin e Wounds of Eventide não entram como requisito obrigatório da platina base.",
+        "question": "Os DLCs/updates são necessários?"
+      },
+      {
+        "answer": "Porque o guia conta missables, rotas e riscos de 100%; não são alertas de online, coop ou dificuldade.",
+        "question": "Por que há 15 alertas críticos?"
+      },
+      {
+        "answer": "Mediterranean Diet, Crossing Souls, Rebirth, Dying Breath, Last Words, Witness of The Miracle, Requiem Aeternam e Bronze Medal.",
+        "question": "O que mais pode dar problema?"
+      }
+    ],
+    "note": "Campos exportados para auditoria. O SQLite atual nao possui colunas nativas para todos esses extras; a importacao preserva o que o banco suporta.",
+    "quickDecision": {
+      "coopRequired": "Não",
+      "difficulty": "7/10",
+      "dlcRequired": "Não",
+      "firstAction": "Comece com checklist de missables, especialmente Tirso, Viridiana, Cleofas, Redento e Requiem Aeternam.",
+      "mainAttention": "Não há Chapter Select; falhar questlines ou desafios de run pode exigir nova run.",
+      "missables": "Sim",
+      "onlineRequired": "Não",
+      "runs": "2+ recomendadas",
+      "time": "20-30h"
+    },
+    "quick_plan": [
+      {
+        "detail": "História, missables e base do 100% com checklist de questlines.",
+        "number": 1,
+        "title": "Primeira run guiada"
+      },
+      {
+        "detail": "Mapa, ossuary, cherubs, beads, prayers, relics, sword hearts, upgrades e lojas.",
+        "number": 2,
+        "title": "100% e coletáveis"
+      },
+      {
+        "detail": "Ending A/B e rotas conflitantes de Redento/Cleofas.",
+        "number": 3,
+        "title": "Finais e quests"
+      },
+      {
+        "detail": "Chefes base sem consumir Bile Flasks.",
+        "number": 4,
+        "title": "Requiem Aeternam"
+      },
+      {
+        "detail": "Run até Bronze Door em menos de 3 horas e limpeza final.",
+        "number": 5,
+        "title": "Bronze Medal"
+      }
+    ],
+    "seo": {
+      "description": "Guia de platina de Blasphemous original no PS4, com 46 troféus, 20-30h, dificuldade 7/10, missables, Requiem Aeternam, Bronze Medal e 100%.",
+      "image": "/assets/games/blasphemous/hero.jpg",
+      "keywords": "Blasphemous troféus, Blasphemous platina, Blasphemous Requiem Aeternam, Blasphemous Bronze Medal",
+      "title": "Blasphemous: guia de troféus e platina PS4 | AtlasAchievement"
+    },
+    "tags": [
+      "PS4",
+      "Platina",
+      "Offline",
+      "Sem coop",
+      "Tem perdíveis",
+      "Sem dificuldade",
+      "Sem Chapter Select",
+      "Coletáveis",
+      "100%",
+      "DLC não necessário"
+    ]
+  },
+  "slug": "blasphemous",
+  "trophies": [
+    {
+      "description": "Desbloqueie todos os troféus de Blasphemous.",
+      "is_missable": 0,
+      "is_spoiler": 0,
+      "name": "The Penitent One",
+      "name_pt": "O Penitente",
+      "tip": "Complete história, 100%, finais, coletáveis, missables de questline, Bronze Medal e Requiem Aeternam.",
+      "trophy_code": "blasphemous-the-penitent-one",
+      "type": "Platina"
+    },
+    {
+      "description": "Derrote o Warden of the Silent Sorrow. Troféu de história.",
+      "is_missable": 0,
+      "is_spoiler": 1,
+      "name": "A Long Path Ahead",
+      "name_pt": "Um Longo Caminho Pela Frente",
+      "tip": "Aproveite para iniciar a run sem Bile Flasks em boss se estiver tentando Requiem Aeternam.",
+      "trophy_code": "blasphemous-a-long-path-ahead",
+      "type": "Bronze"
+    },
+    {
+      "description": "Derrote Ten Piedad. Troféu de boss/progresso.",
+      "is_missable": 0,
+      "is_spoiler": 1,
+      "name": "No Mercy",
+      "name_pt": "Sem Misericórdia",
+      "tip": "Não use Bile Flask na sala se estiver controlando Requiem Aeternam.",
+      "trophy_code": "blasphemous-no-mercy",
+      "type": "Bronze"
+    },
+    {
+      "description": "Derrote Our Lady of the Charred Visage. Troféu de boss/progresso.",
+      "is_missable": 0,
+      "is_spoiler": 1,
+      "name": "Face Off",
+      "name_pt": "Cara a Cara",
+      "tip": "Viridiana pode ajudar sem invalidar Requiem Aeternam; evite usar flask.",
+      "trophy_code": "blasphemous-face-off",
+      "type": "Bronze"
+    },
+    {
+      "description": "Derrote Três Angústias. Troféu de boss/progresso.",
+      "is_missable": 0,
+      "is_spoiler": 1,
+      "name": "Danse Macabre",
+      "name_pt": "Dança Macabra",
+      "tip": "Mantenha controle da rota de Tirso antes de seguir para novos chefes.",
+      "trophy_code": "blasphemous-danse-macabre",
+      "type": "Bronze"
+    },
+    {
+      "description": "Derrote Esdras, of the Anointed Legion.",
+      "is_missable": 0,
+      "is_spoiler": 1,
+      "name": "The Brother",
+      "name_pt": "O Irmão",
+      "tip": "Cuidado com rotas de updates que podem pular esse encontro; para Requiem Aeternam, garanta que os chefes base necessários sejam derrotados.",
+      "trophy_code": "blasphemous-the-brother",
+      "type": "Bronze"
+    },
+    {
+      "description": "Derrote Melquiades, The Exhumed Archbishop.",
+      "is_missable": 0,
+      "is_spoiler": 1,
+      "name": "The Bejeweled Saint",
+      "name_pt": "O Santo Adornado",
+      "tip": "Troféu de boss/progresso.",
+      "trophy_code": "blasphemous-the-bejeweled-saint",
+      "type": "Bronze"
+    },
+    {
+      "description": "Derrote Exposito, Scion of Abjuration.",
+      "is_missable": 0,
+      "is_spoiler": 1,
+      "name": "Blind Innocence",
+      "name_pt": "Inocência Cega",
+      "tip": "Troféu de boss/progresso.",
+      "trophy_code": "blasphemous-blind-innocence",
+      "type": "Bronze"
+    },
+    {
+      "description": "Derrote Quirce, Returned by the Flames.",
+      "is_missable": 0,
+      "is_spoiler": 1,
+      "name": "Ashes to Ashes",
+      "name_pt": "Cinzas às Cinzas",
+      "tip": "Troféu de boss/progresso.",
+      "trophy_code": "blasphemous-ashes-to-ashes",
+      "type": "Bronze"
+    },
+    {
+      "description": "Derrote Perpetva.",
+      "is_missable": 1,
+      "is_spoiler": 0,
+      "name": "The Sister",
+      "name_pt": "A Irmã",
+      "tip": "Ela pode ser perdida na run se a rota falhar; use backup se estiver inseguro.",
+      "trophy_code": "blasphemous-the-sister",
+      "type": "Prata"
+    },
+    {
+      "description": "Derrote His Holiness Escribar.",
+      "is_missable": 0,
+      "is_spoiler": 1,
+      "name": "Summa Blasphemia",
+      "name_pt": "Summa Blasphemia",
+      "tip": "Chefe final da rota base.",
+      "trophy_code": "blasphemous-summa-blasphemia",
+      "type": "Bronze"
+    },
+    {
+      "description": "Derrote Crisanta of the Wrapped Agony.",
+      "is_missable": 0,
+      "is_spoiler": 1,
+      "name": "Duel of Faith",
+      "name_pt": "Duelo de Fé",
+      "tip": "Troféu de boss/progresso.",
+      "trophy_code": "blasphemous-duel-of-faith",
+      "type": "Bronze"
+    },
+    {
+      "description": "Derrote todos os tipos de inimigos originais exigidos.",
+      "is_missable": 0,
+      "is_spoiler": 0,
+      "name": "Bestiary",
+      "name_pt": "Bestiário",
+      "tip": "Acompanhe inimigos raros e únicos manualmente.",
+      "trophy_code": "blasphemous-bestiary",
+      "type": "Bronze"
+    },
+    {
+      "description": "Execute 5 inimigos diferentes.",
+      "is_missable": 0,
+      "is_spoiler": 0,
+      "name": "Inquisition",
+      "name_pt": "Inquisição",
+      "tip": "Use execuções durante a progressão normal.",
+      "trophy_code": "blasphemous-inquisition",
+      "type": "Bronze"
+    },
+    {
+      "description": "Use Righteous Riposte 5 vezes.",
+      "is_missable": 0,
+      "is_spoiler": 0,
+      "name": "Power Unleashed",
+      "name_pt": "Poder Liberado",
+      "tip": "Pratique o parry e contra-ataque em inimigos simples.",
+      "trophy_code": "blasphemous-power-unleashed",
+      "type": "Bronze"
+    },
+    {
+      "description": "Mate 666 inimigos.",
+      "is_missable": 0,
+      "is_spoiler": 0,
+      "name": "The Number of the Beasts",
+      "name_pt": "O Número das Bestas",
+      "tip": "Vem naturalmente durante 100% e runs extras.",
+      "trophy_code": "blasphemous-the-number-of-the-beasts",
+      "type": "Bronze"
+    },
+    {
+      "description": "Alcance o valor máximo de Fervour.",
+      "is_missable": 0,
+      "is_spoiler": 0,
+      "name": "Baptism of Faith",
+      "name_pt": "Batismo de Fé",
+      "tip": "Colete os upgrades de Fervour exigidos pela lista base.",
+      "trophy_code": "blasphemous-baptism-of-faith",
+      "type": "Bronze"
+    },
+    {
+      "description": "Alcance o valor máximo de vida.",
+      "is_missable": 0,
+      "is_spoiler": 0,
+      "name": "Six Stinging Pains",
+      "name_pt": "Seis Dores Lancinantes",
+      "tip": "Siga checklist de upgrades de vida.",
+      "trophy_code": "blasphemous-six-stinging-pains",
+      "type": "Bronze"
+    },
+    {
+      "description": "Alcance a capacidade máxima de Bile Flasks.",
+      "is_missable": 0,
+      "is_spoiler": 0,
+      "name": "The Fountain of Life",
+      "name_pt": "A Fonte da Vida",
+      "tip": "Não confunda ter flasks com poder usá-los em Requiem Aeternam.",
+      "trophy_code": "blasphemous-the-fountain-of-life",
+      "type": "Bronze"
+    },
+    {
+      "description": "Alcance o número máximo de slots de Rosary Beads.",
+      "is_missable": 0,
+      "is_spoiler": 0,
+      "name": "Engracia",
+      "name_pt": "Engracia",
+      "tip": "Inclua no checklist de upgrades.",
+      "trophy_code": "blasphemous-engracia",
+      "type": "Bronze"
+    },
+    {
+      "description": "Alcance o nível máximo da espada Mea Culpa.",
+      "is_missable": 0,
+      "is_spoiler": 0,
+      "name": "Mea Culpa",
+      "name_pt": "Mea Culpa",
+      "tip": "Visite todos os altares da Mea Culpa.",
+      "trophy_code": "blasphemous-mea-culpa",
+      "type": "Bronze"
+    },
+    {
+      "description": "Compre todas as habilidades nos Mea Culpa Shrines.",
+      "is_missable": 0,
+      "is_spoiler": 0,
+      "name": "Blood and Tears",
+      "name_pt": "Sangue e Lágrimas",
+      "tip": "Exige Tears suficientes e todos os shrines.",
+      "trophy_code": "blasphemous-blood-and-tears",
+      "type": "Bronze"
+    },
+    {
+      "description": "Obtenha os 9 sword hearts originais.",
+      "is_missable": 0,
+      "is_spoiler": 0,
+      "name": "Heartbreaker",
+      "name_pt": "Parte-Corações",
+      "tip": "Use checklist para não misturar itens de update.",
+      "trophy_code": "blasphemous-heartbreaker",
+      "type": "Bronze"
+    },
+    {
+      "description": "Obtenha todas as relíquias.",
+      "is_missable": 0,
+      "is_spoiler": 0,
+      "name": "Skin and Bones",
+      "name_pt": "Pele e Ossos",
+      "tip": "Algumas dependem de questlines; controle os pontos de corte.",
+      "trophy_code": "blasphemous-skin-and-bones",
+      "type": "Prata"
+    },
+    {
+      "description": "Obtenha os 30 rosary beads originais.",
+      "is_missable": 0,
+      "is_spoiler": 0,
+      "name": "Mysteria Lucis",
+      "name_pt": "Mysteria Lucis",
+      "tip": "Um bead pode depender de rota ligada ao Shroud of Dreamt Sins.",
+      "trophy_code": "blasphemous-mysteria-lucis",
+      "type": "Prata"
+    },
+    {
+      "description": "Obtenha as 13 prayers originais.",
+      "is_missable": 1,
+      "is_spoiler": 0,
+      "name": "Unwavering Devotion",
+      "name_pt": "Devoção Inabalável",
+      "tip": "Atenção a questlines que concedem orações, especialmente Cleofas.",
+      "trophy_code": "blasphemous-unwavering-devotion",
+      "type": "Bronze"
+    },
+    {
+      "description": "Compre todos os itens das lojas da Candelaria.",
+      "is_missable": 0,
+      "is_spoiler": 0,
+      "name": "Flea Market",
+      "name_pt": "Mercado de Pulgas",
+      "tip": "Planeje Tears para comprar tudo.",
+      "trophy_code": "blasphemous-flea-market",
+      "type": "Bronze"
+    },
+    {
+      "description": "Obtenha os 44 coletáveis originais.",
+      "is_missable": 0,
+      "is_spoiler": 0,
+      "name": "Warden of the Ossuary",
+      "name_pt": "Guardião do Ossuário",
+      "tip": "Controle os bones/ossuário por checklist.",
+      "trophy_code": "blasphemous-warden-of-the-ossuary",
+      "type": "Prata"
+    },
+    {
+      "description": "Liberte todos os Children of Moonlight/cherubs.",
+      "is_missable": 0,
+      "is_spoiler": 0,
+      "name": "The Bull and The Moon",
+      "name_pt": "O Touro e a Lua",
+      "tip": "Use mapa/checklist por região.",
+      "trophy_code": "blasphemous-the-bull-and-the-moon",
+      "type": "Bronze"
+    },
+    {
+      "description": "Fale com todos os cadáveres usando o Shroud of Dreamt Sins.",
+      "is_missable": 1,
+      "is_spoiler": 0,
+      "name": "Last Words",
+      "name_pt": "Últimas Palavras",
+      "tip": "Trate como checklist de rota; alguns cadáveres podem ser esquecidos.",
+      "trophy_code": "blasphemous-last-words",
+      "type": "Bronze"
+    },
+    {
+      "description": "Descubra todas as áreas/zonas do mapa exigidas pela lista base.",
+      "is_missable": 1,
+      "is_spoiler": 0,
+      "name": "Cvstodia's Pilgrim",
+      "name_pt": "Peregrino de Cvstodia",
+      "tip": "Risco de 100% se alguma área ficar para trás.",
+      "trophy_code": "blasphemous-cvstodias-pilgrim",
+      "type": "Prata"
+    },
+    {
+      "description": "Salve todos os Kissers of Wounds entregando as ervas a Tirso antes dos pontos de corte.",
+      "is_missable": 1,
+      "is_spoiler": 0,
+      "name": "Mediterranean Diet",
+      "name_pt": "Dieta Mediterrânea",
+      "tip": "É um dos principais missables; entregue ervas antes dos chefes correspondentes.",
+      "trophy_code": "blasphemous-mediterranean-diet",
+      "type": "Prata"
+    },
+    {
+      "description": "Entregue todos os restos/ofertas a Lvdovico.",
+      "is_missable": 0,
+      "is_spoiler": 0,
+      "name": "True Shrine",
+      "name_pt": "Verdadeiro Santuário",
+      "tip": "Inclua as ofertas no checklist de quests.",
+      "trophy_code": "blasphemous-true-shrine",
+      "type": "Bronze"
+    },
+    {
+      "description": "Conclua a visita/side content ligado a Altasgracias.",
+      "is_missable": 1,
+      "is_spoiler": 0,
+      "name": "The Desire of the Corrupted",
+      "name_pt": "O Desejo da Corrompida",
+      "tip": "Controle a rota e os itens da quest.",
+      "trophy_code": "blasphemous-the-desire-of-the-corrupted",
+      "type": "Bronze"
+    },
+    {
+      "description": "Leve todas as oferendas ao Blessed Lord of Salty Shores.",
+      "is_missable": 1,
+      "is_spoiler": 0,
+      "name": "In the Name of the High Wills",
+      "name_pt": "Em Nome das Altas Vontades",
+      "tip": "Pode depender de itens de questline; não deixe para revisar sem checklist.",
+      "trophy_code": "blasphemous-in-the-name-of-the-high-wills",
+      "type": "Bronze"
+    },
+    {
+      "description": "Choque o Egg of Altasgracias e conclua a sequência da quest.",
+      "is_missable": 0,
+      "is_spoiler": 0,
+      "name": "Warm and Soft",
+      "name_pt": "Quente e Macio",
+      "tip": "Rota de questline; acompanhe passos em ordem.",
+      "trophy_code": "blasphemous-warm-and-soft",
+      "type": "Bronze"
+    },
+    {
+      "description": "Ajude Cleofas em seu caminho de redenção.",
+      "is_missable": 1,
+      "is_spoiler": 0,
+      "name": "Rebirth",
+      "name_pt": "Renascimento",
+      "tip": "Questline com risco de rota.",
+      "trophy_code": "blasphemous-rebirth",
+      "type": "Bronze"
+    },
+    {
+      "description": "Ajude Redento a alcançar seu destino final.",
+      "is_missable": 1,
+      "is_spoiler": 0,
+      "name": "Ultreia Et Suseia",
+      "name_pt": "Ultreia Et Suseia",
+      "tip": "Controle a rota de Redento para não bloquear interações.",
+      "trophy_code": "blasphemous-ultreia-et-suseia",
+      "type": "Bronze"
+    },
+    {
+      "description": "Provoque o encontro entre Redento e Cleofas.",
+      "is_missable": 1,
+      "is_spoiler": 0,
+      "name": "Crossing Souls",
+      "name_pt": "Cruzando Almas",
+      "tip": "Altamente dependente de rota e pode conflitar com outras decisões.",
+      "trophy_code": "blasphemous-crossing-souls",
+      "type": "Prata"
+    },
+    {
+      "description": "Testemunhe os últimos momentos de Viridiana.",
+      "is_missable": 1,
+      "is_spoiler": 0,
+      "name": "Dying Breath",
+      "name_pt": "Último Suspiro",
+      "tip": "Controle quando aceitar ajuda de Viridiana nas três lutas específicas.",
+      "trophy_code": "blasphemous-dying-breath",
+      "type": "Bronze"
+    },
+    {
+      "description": "Desbloqueie o Ending A.",
+      "is_missable": 0,
+      "is_spoiler": 1,
+      "name": "The Path of the Believer",
+      "name_pt": "O Caminho do Crente",
+      "tip": "Use save/rota para obter os finais exigidos sem misturar Ending C de update.",
+      "trophy_code": "blasphemous-the-path-of-the-believer",
+      "type": "Ouro"
+    },
+    {
+      "description": "Desbloqueie o Ending B.",
+      "is_missable": 1,
+      "is_spoiler": 1,
+      "name": "The Path of the Unworthy",
+      "name_pt": "O Caminho do Indigno",
+      "tip": "Planeje os finais A/B na mesma run quando possível.",
+      "trophy_code": "blasphemous-the-path-of-the-unworthy",
+      "type": "Prata"
+    },
+    {
+      "description": "Passe pela Bronze Door no Bridge of Calvary em menos de 3 horas.",
+      "is_missable": 1,
+      "is_spoiler": 0,
+      "name": "Bronze Medal",
+      "name_pt": "Medalha de Bronze",
+      "tip": "Recomendado em run separada de speedrun.",
+      "trophy_code": "blasphemous-bronze-medal",
+      "type": "Prata"
+    },
+    {
+      "description": "Complete todos os desafios de arena.",
+      "is_missable": 0,
+      "is_spoiler": 0,
+      "name": "Detestatio Sacrorum",
+      "name_pt": "Detestatio Sacrorum",
+      "tip": "Troféu de desafio/run, não de dificuldade selecionável.",
+      "trophy_code": "blasphemous-detestatio-sacrorum",
+      "type": "Prata"
+    },
+    {
+      "description": "Derrote os chefes base sem consumir Bile Flasks.",
+      "is_missable": 1,
+      "is_spoiler": 0,
+      "name": "Requiem Aeternam",
+      "name_pt": "Requiem Aeternam",
+      "tip": "Controle desde o primeiro boss. Se usar flask em uma sala de boss, recarregue/saia conforme estratégia.",
+      "trophy_code": "blasphemous-requiem-aeternam",
+      "type": "Ouro"
+    },
+    {
+      "description": "Alcance 100% do jogo na lista base.",
+      "is_missable": 1,
+      "is_spoiler": 0,
+      "name": "Witness of The Miracle",
+      "name_pt": "Testemunha do Milagre",
+      "tip": "Exige atenção a coletáveis, mapa, quests, finais e categorias originais.",
+      "trophy_code": "blasphemous-witness-of-the-miracle",
+      "type": "Ouro"
+    }
+  ]
+}

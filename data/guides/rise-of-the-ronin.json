@@ -1,0 +1,784 @@
+{
+  "game": {
+    "avoid_if": "Evite se você quer uma platina curta ou totalmente sem checklist de mundo aberto.",
+    "before_you_start": "Rise of the Ronin é uma platina offline, acessível e focada em história, mundo aberto, Bond Missions, aliados, coletáveis principais e um pequeno bloco de cleanup por Mission Select. A lista PS5 possui 51 troféus, não exige online nem cooperação, não tem perdíveis e pode ser concluída em cerca de 40-60 horas. A maior vantagem da rota é o Testament of the Soul, liberado no Chapter 2, que permite repetir missões, alterar decisões e recuperar caminhos/aliados depois da história.\n\nA dificuldade geral é baixa, mas existe um troféu ligado a dificuldade: Midnight Crossing exige completar uma missão com Midnight Difficulty ativada, modo liberado após finalizar a história. O restante pode ser feito em Dawn/Easy. A platina não exige 100% absoluto do mapa, mas exige uma boa parte do conteúdo: todas as Main Missions, todas as Bond Missions, todos os gatos, todos os pontos de fotografia, 50 fugitivos, aliados, Bond Level, 15 Technology Developments, rank Master em alguns treinos, 50 Chance Encounters, nível 55 e alguns troféus de combate/misc. Não há versão PS4, então não existe autopop PS4/PS5.",
+    "best_for": "Ideal para quem quer mundo aberto samurai acessível, com muito checklist e sem perdíveis.",
+    "cleanup_advice": "Após a história, use free roam e Testament of the Soul para Midnight Crossing, Blue Demon, aliados, Bond Missions, coletáveis e treinos.",
+    "cover_image": "/assets/games/rise-of-the-ronin/cover.png",
+    "coverage_level": "complete",
+    "created_at": "2026-07-03 14:36:26",
+    "difficulty": 3,
+    "difficulty_reason": "Dificuldade editorial 3/10: tudo pode ser feito em Dawn/Easy, exceto Midnight Crossing, que exige uma missão em Midnight após a história.",
+    "dlc_scope": "Base game sem DLCs. O guia cobre a lista base PS5.",
+    "editorial_notes": "Fontes consultadas: PlayStation oficial, Team NINJA, PowerPyx, PSNProfiles e PlayStationTrophies. Guia restrito a Rise of the Ronin PS5 e a sua lista base de troféus.",
+    "editorial_review_status": "verified",
+    "editorial_status": "published",
+    "first_run_advice": "Jogue em Dawn/Easy se quiser reduzir desafio, desbloqueie Testament of the Soul no Chapter 2 e faça side content pelo caminho.",
+    "grind_summary": "Grind moderado: 58 Bond Missions, 50 Chance Encounters, 50 fugitivos, 100 assassinations, 150.000 sen, level 55 e Technology Development.",
+    "guide_avoid": null,
+    "guide_best_moment": null,
+    "guide_dlc": null,
+    "guide_grind": null,
+    "guide_ideal": null,
+    "guide_online": null,
+    "guide_runs": null,
+    "image": "/assets/games/rise-of-the-ronin/hero.jpg",
+    "is_verified": 1,
+    "last_reviewed_at": "2026-07-01",
+    "missable": "Sem perdíveis. O Testament of the Soul permite replay de missões, alterar escolhas e recuperar aliados/rotas.",
+    "missable_summary": "Perdíveis: 0. Decisões, aliados, Bond Missions, coletáveis e side content podem ser recuperados por Mission Replay/free roam.",
+    "name": "Rise of the Ronin",
+    "online_summary": "Sem online obrigatório. O coop existe de forma opcional em missões, mas a platina é 100% solo/offline.",
+    "quality_warnings": "[]",
+    "reviewed_by": "AtlasAchievement Editorial",
+    "runs_summary": "1 jogada em qualquer dificuldade, com cleanup por free roam e Testament of the Soul.",
+    "slug": "rise-of-the-ronin",
+    "time": "40-60h",
+    "time_bucket": "medium",
+    "time_max_hours": 60,
+    "time_min_hours": 40,
+    "time_reason": "A estimativa cobre campanha, Bond Missions, aliados, gatos, fotos, 50 fugitivos, Technology Development, treinos, level 55 e cleanup por Testament of the Soul.",
+    "time_sort_hours": 40,
+    "updated_at": "2026-07-03 14:38:32",
+    "verification_note": "Guia verificado para Rise of the Ronin PS5: 51 troféus, 1/2/9/39, 40-60h, dificuldade 3/10, online 0, coop 0, perdíveis 0, dificuldade individual 1 apenas em Midnight Crossing, Mission Select/Testament of the Soul e DLC não necessário.",
+    "verification_status": "verified",
+    "walkthrough": ""
+  },
+  "redirects": [
+    "rise-of-the-ronin-ps5",
+    "rise-of-the-ronin-team-ninja"
+  ],
+  "roadmaps": [
+    {
+      "content": "{\"title\":\"História em Dawn/Easy e desbloqueio do Testament of the Soul\",\"focus\":\"História / Mission Select\",\"objective\":\"Completar a história e liberar replay de missões.\",\"actions\":[\"Jogue em Dawn/Easy se quiser reduzir desafio.\",\"Faça side content pelo caminho sem se preocupar com escolhas.\",\"Desbloqueie Testament of the Soul no Chapter 2.\"],\"warning\":\"Nada é perdível; decisões podem ser alteradas depois.\",\"result\":\"História concluída, free roam liberado e replay pronto.\"}",
+      "step_order": 1
+    },
+    {
+      "content": "{\"title\":\"Midnight Crossing e Blue Demon\",\"focus\":\"Dificuldade / replay\",\"objective\":\"Resolver o único troféu de dificuldade e Tears of a Blue Demon.\",\"actions\":[\"Ative Midnight Difficulty após a história.\",\"Complete uma Ronin Mission simples em Midnight.\",\"Repita Infiltrating the Black Ship em Dawn/Easy e derrote Blue Demon.\"],\"warning\":\"Midnight Crossing é o único troféu de Dificuldade; Blue Demon não é perdível.\",\"result\":\"Bloco de dificuldade/replay resolvido.\"}",
+      "step_order": 2
+    },
+    {
+      "content": "{\"title\":\"Bond Missions, aliados e relações\",\"focus\":\"Bonds / aliados\",\"objective\":\"Completar todas as 58 Bond Missions e todos os aliados.\",\"actions\":[\"Leve todos os aliados em missões.\",\"Obtenha romance, Bond Level 4 e salve Shinsaku, Soji e Ryoma.\",\"Use Testament para caminhos e aliados ligados a escolhas.\"],\"warning\":\"Se uma missão não aparecer, aumente Bond, esgote diálogos e dê presentes.\",\"result\":\"Friendly Neighborhood Ronin, Social Climber e troféus de aliados concluídos.\"}",
+      "step_order": 3
+    },
+    {
+      "content": "{\"title\":\"Mundo aberto, coletáveis e completion rewards\",\"focus\":\"Coletáveis / mapa\",\"objective\":\"Completar gatos, fotos, 50 fugitivos, Area Bond, rewards e Technology Developments.\",\"actions\":[\"Use Area Bond para revelar pendências.\",\"Faça 15 Technology Developments.\",\"Lembre que somente 50 fugitivos são necessários.\"],\"warning\":\"A platina não exige 100% absoluto de todos os pontos do mapa.\",\"result\":\"Principais coletáveis/checklists concluídos.\"}",
+      "step_order": 4
+    },
+    {
+      "content": "{\"title\":\"Treinos, combate e misc\",\"focus\":\"Treinos / misc\",\"objective\":\"Obter ranks Master, 100 assassinations, 50 encontros, 150.000 sen, nível 55, 9 armas e Dive.\",\"actions\":[\"Faça dojo, horseback, gliding e firearms.\",\"Complete no-kill mission e Solitary Ronin.\",\"Finalize Dive of the Ronin e misc restantes.\"],\"warning\":\"Não marque treinos como Dificuldade.\",\"result\":\"Platina Rise of the Ronin desbloqueada.\"}",
+      "step_order": 5
+    }
+  ],
+  "schemaVersion": 1,
+  "seedExtras": {
+    "aliases": [
+      "rise-of-the-ronin-ps5",
+      "rise-of-the-ronin-team-ninja"
+    ],
+    "attentionPoints": [
+      {
+        "tags": [
+          "Sem perdíveis",
+          "Replay"
+        ],
+        "text": "Libera no Chapter 2 e permite replay de missões, alterar decisões e recuperar aliados/rotas; por isso Perdíveis fica 0.",
+        "title": "Testament of the Soul",
+        "type": "Rota"
+      },
+      {
+        "tags": [
+          "Midnight"
+        ],
+        "text": "É o único troféu de Dificuldade; deixe para depois da história, quando Midnight Difficulty estiver liberada.",
+        "title": "Midnight Crossing",
+        "type": "Dificuldade"
+      },
+      {
+        "tags": [
+          "Blue Demon"
+        ],
+        "text": "Recomendável via replay depois da história em Dawn/Easy.",
+        "title": "Tears of a Blue Demon",
+        "type": "Replay"
+      },
+      {
+        "tags": [
+          "Aliados"
+        ],
+        "text": "Use Testament of the Soul para recuperar rotas, facções e aliados quando necessário.",
+        "title": "Bond Missions e aliados",
+        "type": "Bond"
+      },
+      {
+        "tags": [
+          "Replay"
+        ],
+        "text": "Twilight Fencer, Farewell, Black Cat e The Greater Opportunity não são perdíveis, mas podem exigir replay/linha de Bond Mission.",
+        "title": "Linhas de aliados",
+        "type": "Bond"
+      },
+      {
+        "tags": [
+          "Checklist"
+        ],
+        "text": "Organize gatos, fotos, fugitivos, Completion Rewards e Technology Developments por região.",
+        "title": "Coletáveis/checklists",
+        "type": "Coletável"
+      },
+      {
+        "tags": [
+          "Offline"
+        ],
+        "text": "O jogo tem coop online opcional, mas nenhum troféu exige online ou coop.",
+        "title": "Coop opcional",
+        "type": "Online"
+      }
+    ],
+    "checklist": [
+      "Confirmar 51 troféus: 1 platina, 2 ouro, 9 prata, 39 bronze.",
+      "Completar a história em qualquer dificuldade, preferencialmente Dawn/Easy.",
+      "Desbloquear e usar Testament of the Soul.",
+      "Fazer Midnight Crossing após a história.",
+      "Repetir Infiltrating the Black Ship e derrotar Blue Demon.",
+      "Completar 58 Bond Missions e todos os aliados.",
+      "Coletar todos os gatos e photograph spots.",
+      "Derrotar 50 fugitivos e fazer 50 Chance Encounters.",
+      "Conduzir 15 Technology Developments.",
+      "Conseguir Master nos treinos exigidos.",
+      "Alcançar nível 55 e concluir misc/combate.",
+      "Conferir online 0, coop 0, perdíveis 0 e dificuldade apenas em Midnight Crossing."
+    ],
+    "editorial_summary": [
+      "Rise of the Ronin é uma platina offline, acessível e focada em história, mundo aberto, Bond Missions, aliados, coletáveis principais e um pequeno bloco de cleanup por Mission Select. A lista PS5 possui 51 troféus, não exige online nem cooperação, não tem perdíveis e pode ser concluída em cerca de 40-60 horas. A maior vantagem da rota é o Testament of the Soul, liberado no Chapter 2, que permite repetir missões, alterar decisões e recuperar caminhos/aliados depois da história.\n\nA dificuldade geral é baixa, mas existe um troféu ligado a dificuldade: Midnight Crossing exige completar uma missão com Midnight Difficulty ativada, modo liberado após finalizar a história. O restante pode ser feito em Dawn/Easy. A platina não exige 100% absoluto do mapa, mas exige uma boa parte do conteúdo: todas as Main Missions, todas as Bond Missions, todos os gatos, todos os pontos de fotografia, 50 fugitivos, aliados, Bond Level, 15 Technology Developments, rank Master em alguns treinos, 50 Chance Encounters, nível 55 e alguns troféus de combate/misc. Não há versão PS4, então não existe autopop PS4/PS5."
+    ],
+    "faq": [
+      {
+        "answer": "Não. A lista de troféus é totalmente offline.",
+        "question": "Rise of the Ronin tem troféus online?"
+      },
+      {
+        "answer": "Não. Coop é opcional; todos os troféus podem ser feitos solo.",
+        "question": "Precisa de coop?"
+      },
+      {
+        "answer": "Não. O Testament of the Soul permite repetir missões, alterar escolhas e recuperar aliados/rotas.",
+        "question": "Tem troféus perdíveis?"
+      },
+      {
+        "answer": "Sim, mas apenas em Midnight Crossing. Você precisa completar uma missão com Midnight Difficulty após terminar a história.",
+        "question": "A dificuldade afeta troféus?"
+      },
+      {
+        "answer": "1, somente Midnight Crossing.",
+        "question": "Qual deve ser a contagem do filtro Dificuldade?"
+      },
+      {
+        "answer": "0. Traveling Through Time e decisões são recuperáveis pelo Testament of the Soul.",
+        "question": "Qual deve ser a contagem do filtro Perdível?"
+      },
+      {
+        "answer": "Sim. Todo o restante pode ser feito em Dawn/Easy.",
+        "question": "Posso jogar no Easy/Dawn?"
+      },
+      {
+        "answer": "Sim. O Testament of the Soul libera replay de missões e decisões.",
+        "question": "Existe Chapter Select/Mission Select?"
+      },
+      {
+        "answer": "Sim. Você pode voltar as regiões, fazer side content e coletáveis.",
+        "question": "Existe free roam depois da história?"
+      },
+      {
+        "answer": "Não há New Game+ real obrigatório. Após a história, Midnight Difficulty e Mission Select ficam disponíveis.",
+        "question": "Precisa de New Game+?"
+      },
+      {
+        "answer": "Não. A platina exige muitos conteúdos específicos, mas não 100% absoluto de todos os pontos.",
+        "question": "Precisa completar 100% do mapa?"
+      },
+      {
+        "answer": "50 fugitivos.",
+        "question": "Quantos fugitivos são necessários?"
+      },
+      {
+        "answer": "Todos os gatos e todos os photograph spots.",
+        "question": "Quantos gatos e fotos são necessários?"
+      },
+      {
+        "answer": "Não. O jogo é PS5, sem versão PS4 e sem autopop PS4/PS5.",
+        "question": "Existe versão PS4/autopop?"
+      }
+    ],
+    "note": "Campos exportados para auditoria. O SQLite atual nao possui colunas nativas para todos esses extras; a importacao preserva o que o banco suporta.",
+    "quickDecision": {
+      "coopRequired": "Não",
+      "difficulty": "3/10",
+      "dlcRequired": "Não",
+      "firstAction": "Jogue em Dawn/Easy, avance a história e desbloqueie o Testament of the Soul no Chapter 2.",
+      "mainAttention": "Midnight Crossing é o único troféu de Dificuldade; nada é perdível.",
+      "missables": "Não",
+      "onlineRequired": "Não",
+      "runs": "1 jogada + Mission Select",
+      "time": "40-60h"
+    },
+    "quick_plan": [
+      {
+        "detail": "Avance em Dawn/Easy e desbloqueie Testament of the Soul.",
+        "number": 1,
+        "title": "História e Testament"
+      },
+      {
+        "detail": "Faça uma missão em Midnight e derrote Blue Demon por replay.",
+        "number": 2,
+        "title": "Midnight e Blue Demon"
+      },
+      {
+        "detail": "Complete Bond Missions, aliados, romance e rotas recuperáveis.",
+        "number": 3,
+        "title": "Bonds e aliados"
+      },
+      {
+        "detail": "Gatos, fotos, fugitivos, Area Bond e Technology Development.",
+        "number": 4,
+        "title": "Mundo aberto"
+      },
+      {
+        "detail": "Ranks Master, assassinations, encontros, dinheiro, nível 55 e Dive.",
+        "number": 5,
+        "title": "Treinos e misc"
+      }
+    ],
+    "seo": {
+      "description": "Guia de platina de Rise of the Ronin no PS5, com 51 troféus, 40-60h, dificuldade 3/10, sem perdíveis, online 0 e Midnight Crossing.",
+      "image": "/assets/games/rise-of-the-ronin/hero.jpg",
+      "keywords": "Rise of the Ronin troféus, Rise of the Ronin platina, Midnight Crossing, Testament of the Soul",
+      "title": "Rise of the Ronin: guia de troféus e platina PS5 | AtlasAchievement"
+    },
+    "tags": [
+      "PS5",
+      "Platina",
+      "Offline",
+      "Sem coop",
+      "Sem perdíveis",
+      "Dificuldade 1",
+      "Mission Select",
+      "Testament of the Soul",
+      "Free roam",
+      "DLC não necessário"
+    ]
+  },
+  "slug": "rise-of-the-ronin",
+  "trophies": [
+    {
+      "description": "Desbloqueie todos os troféus de Rise of the Ronin.",
+      "is_missable": 0,
+      "is_spoiler": 0,
+      "name": "Rise of the Ronin",
+      "name_pt": "Ascensão do Ronin",
+      "tip": "A platina é offline e não exige DLC.",
+      "trophy_code": "rise-of-the-ronin-rise-of-the-ronin",
+      "type": "Platina"
+    },
+    {
+      "description": "Complete todas as Bond Missions.",
+      "is_missable": 0,
+      "is_spoiler": 0,
+      "name": "Friendly Neighborhood Ronin",
+      "name_pt": "Ronin da Vizinhança",
+      "tip": "Há 58 Bond Missions; use o Testament of the Soul para voltar a regiões/períodos anteriores.",
+      "trophy_code": "rise-of-the-ronin-friendly-neighborhood-ronin",
+      "type": "Ouro"
+    },
+    {
+      "description": "Complete uma missão opcional/ronin mission com Midnight Difficulty ativada.",
+      "is_missable": 0,
+      "is_spoiler": 0,
+      "name": "Midnight Crossing",
+      "name_pt": "Travessia da Meia-Noite",
+      "tip": "Midnight libera após terminar a história. É o único troféu com tag Dificuldade.",
+      "trophy_code": "rise-of-the-ronin-midnight-crossing",
+      "type": "Ouro"
+    },
+    {
+      "description": "Troféu automático de história ao selar o destino do Blade Twin.",
+      "is_missable": 0,
+      "is_spoiler": 1,
+      "name": "A Veiled Edge's Future",
+      "name_pt": "O Futuro da Lâmina Velada",
+      "tip": "Não é perdível.",
+      "trophy_code": "rise-of-the-ronin-a-veiled-edges-future",
+      "type": "Prata"
+    },
+    {
+      "description": "Troféu automático de história ao concluir o Chapter 3.",
+      "is_missable": 0,
+      "is_spoiler": 1,
+      "name": "The Dawn of a New Japan",
+      "name_pt": "O Amanhecer de um Novo Japão",
+      "tip": "Não é perdível.",
+      "trophy_code": "rise-of-the-ronin-the-dawn-of-a-new-japan",
+      "type": "Prata"
+    },
+    {
+      "description": "Inicie seu primeiro romance.",
+      "is_missable": 0,
+      "is_spoiler": 0,
+      "name": "Veiled Vow",
+      "name_pt": "Voto Velado",
+      "tip": "Aumente Bond e Favor de um aliado e escolha a opção romântica.",
+      "trophy_code": "rise-of-the-ronin-veiled-vow",
+      "type": "Prata"
+    },
+    {
+      "description": "Realize 100 assassinations.",
+      "is_missable": 0,
+      "is_spoiler": 0,
+      "name": "Shadow Stalker",
+      "name_pt": "Perseguidor das Sombras",
+      "tip": "Pode ser farmado usando inimigos que reaparecem via Veiled Edge Banner.",
+      "trophy_code": "rise-of-the-ronin-shadow-stalker",
+      "type": "Prata"
+    },
+    {
+      "description": "Derrote 50 fugitivos.",
+      "is_missable": 0,
+      "is_spoiler": 0,
+      "name": "Keeper of the Peace",
+      "name_pt": "Guardião da Paz",
+      "tip": "Há mais fugitivos que o necessário; não precisa limpar todos.",
+      "trophy_code": "rise-of-the-ronin-keeper-of-the-peace",
+      "type": "Prata"
+    },
+    {
+      "description": "Leve todos os aliados disponíveis em missões.",
+      "is_missable": 0,
+      "is_spoiler": 0,
+      "name": "Social Climber",
+      "name_pt": "Alpinista Social",
+      "tip": "Alguns aliados dependem de escolhas, mas podem ser recuperados pelo Testament of the Soul.",
+      "trophy_code": "rise-of-the-ronin-social-climber",
+      "type": "Prata"
+    },
+    {
+      "description": "Complete todos os photograph spots.",
+      "is_missable": 0,
+      "is_spoiler": 0,
+      "name": "Sightseer",
+      "name_pt": "Turista",
+      "tip": "Use mapa e Area Bond para revelar faltantes.",
+      "trophy_code": "rise-of-the-ronin-sightseer",
+      "type": "Prata"
+    },
+    {
+      "description": "Colete todos os gatos.",
+      "is_missable": 0,
+      "is_spoiler": 0,
+      "name": "Cats Over All",
+      "name_pt": "Gatos Acima de Tudo",
+      "tip": "Aumente Area Bond para revelar marcadores.",
+      "trophy_code": "rise-of-the-ronin-cats-over-all",
+      "type": "Prata"
+    },
+    {
+      "description": "Derrote o Blue Demon a bordo do Black Ship.",
+      "is_missable": 0,
+      "is_spoiler": 0,
+      "name": "Tears of a Blue Demon",
+      "name_pt": "Lágrimas de um Demônio Azul",
+      "tip": "Melhor fazer depois da história via replay de Infiltrating the Black Ship em Dawn/Easy. Não é perdível.",
+      "trophy_code": "rise-of-the-ronin-tears-of-a-blue-demon",
+      "type": "Prata"
+    },
+    {
+      "description": "Complete o prólogo.",
+      "is_missable": 0,
+      "is_spoiler": 1,
+      "name": "Flying the Nest",
+      "name_pt": "Saindo do Ninho",
+      "tip": "Troféu automático de história.",
+      "trophy_code": "rise-of-the-ronin-flying-the-nest",
+      "type": "Bronze"
+    },
+    {
+      "description": "Descubra que seu Blade Twin ainda está vivo.",
+      "is_missable": 0,
+      "is_spoiler": 1,
+      "name": "Curtain Falls, Curtain Rises",
+      "name_pt": "Cai o Pano, Sobe o Pano",
+      "tip": "Troféu automático de história.",
+      "trophy_code": "rise-of-the-ronin-curtain-falls-curtain-rises",
+      "type": "Bronze"
+    },
+    {
+      "description": "Chegue até Shoin Yoshida.",
+      "is_missable": 0,
+      "is_spoiler": 1,
+      "name": "Infiltrate the Prison Complex",
+      "name_pt": "Infiltre-se no Complexo Prisional",
+      "tip": "Troféu automático de história.",
+      "trophy_code": "rise-of-the-ronin-infiltrate-the-prison-complex",
+      "type": "Bronze"
+    },
+    {
+      "description": "Tire uma fotografia a pedido de Taka Murayama.",
+      "is_missable": 0,
+      "is_spoiler": 0,
+      "name": "A Happy Memory",
+      "name_pt": "Uma Memória Feliz",
+      "tip": "Bond Mission específica de Taka.",
+      "trophy_code": "rise-of-the-ronin-a-happy-memory",
+      "type": "Bronze"
+    },
+    {
+      "description": "Conclua o Chapter 1.",
+      "is_missable": 0,
+      "is_spoiler": 1,
+      "name": "Black Ships, Long Shadows",
+      "name_pt": "Navios Negros, Sombras Longas",
+      "tip": "Troféu automático de história.",
+      "trophy_code": "rise-of-the-ronin-black-ships-long-shadows",
+      "type": "Bronze"
+    },
+    {
+      "description": "Fale com Kaishu Katsu no Sumida River.",
+      "is_missable": 0,
+      "is_spoiler": 1,
+      "name": "Meeting Kaishu Katsu",
+      "name_pt": "Encontro com Kaishu Katsu",
+      "tip": "Troféu automático de história.",
+      "trophy_code": "rise-of-the-ronin-meeting-kaishu-katsu",
+      "type": "Bronze"
+    },
+    {
+      "description": "Descubra a identidade do samurai misterioso no duelo.",
+      "is_missable": 0,
+      "is_spoiler": 1,
+      "name": "A Show for the Shogun",
+      "name_pt": "Um Espetáculo para o Xogum",
+      "tip": "Troféu automático de história.",
+      "trophy_code": "rise-of-the-ronin-a-show-for-the-shogun",
+      "type": "Bronze"
+    },
+    {
+      "description": "Intermedie uma trégua entre Roshigumi e Choshu.",
+      "is_missable": 0,
+      "is_spoiler": 1,
+      "name": "Strange Bedfellows",
+      "name_pt": "Companheiros Improváveis",
+      "tip": "Troféu automático de história.",
+      "trophy_code": "rise-of-the-ronin-strange-bedfellows",
+      "type": "Bronze"
+    },
+    {
+      "description": "Conclua o Chapter 2.",
+      "is_missable": 0,
+      "is_spoiler": 1,
+      "name": "Cities of Darkness",
+      "name_pt": "Cidades das Trevas",
+      "tip": "Troféu automático de história.",
+      "trophy_code": "rise-of-the-ronin-cities-of-darkness",
+      "type": "Bronze"
+    },
+    {
+      "description": "Persuada Takamori Saigo.",
+      "is_missable": 0,
+      "is_spoiler": 1,
+      "name": "The Satsuma-Choshu Alliance",
+      "name_pt": "A Aliança Satsuma-Choshu",
+      "tip": "Troféu automático de história.",
+      "trophy_code": "rise-of-the-ronin-the-satsuma-choshu-alliance",
+      "type": "Bronze"
+    },
+    {
+      "description": "Encerre a Battle of Toba-Fushimi.",
+      "is_missable": 0,
+      "is_spoiler": 1,
+      "name": "The Battle of Toba-Fushimi",
+      "name_pt": "A Batalha de Toba-Fushimi",
+      "tip": "Troféu automático de história.",
+      "trophy_code": "rise-of-the-ronin-the-battle-of-toba-fushimi",
+      "type": "Bronze"
+    },
+    {
+      "description": "Estabeleça seu primeiro Bond.",
+      "is_missable": 0,
+      "is_spoiler": 1,
+      "name": "Threads of Fate",
+      "name_pt": "Fios do Destino",
+      "tip": "O primeiro Bond é parte da progressão obrigatória.",
+      "trophy_code": "rise-of-the-ronin-threads-of-fate",
+      "type": "Bronze"
+    },
+    {
+      "description": "De seu primeiro presente.",
+      "is_missable": 0,
+      "is_spoiler": 0,
+      "name": "One Good Turn Deserves Another",
+      "name_pt": "Gentileza Gera Gentileza",
+      "tip": "Use presentes no Longhouse ou com aliados no mundo aberto.",
+      "trophy_code": "rise-of-the-ronin-one-good-turn-deserves-another",
+      "type": "Bronze"
+    },
+    {
+      "description": "Alcance Lv.4 Personal Bond pela primeira vez.",
+      "is_missable": 0,
+      "is_spoiler": 0,
+      "name": "Fateful Encounter",
+      "name_pt": "Encontro Fatídico",
+      "tip": "Repita missões e use presentes se necessário.",
+      "trophy_code": "rise-of-the-ronin-fateful-encounter",
+      "type": "Bronze"
+    },
+    {
+      "description": "Alcance Lv.3 Area Bond pela primeira vez.",
+      "is_missable": 0,
+      "is_spoiler": 0,
+      "name": "Home Sweet Home",
+      "name_pt": "Lar, Doce Lar",
+      "tip": "Area Bond sobe com atividades/coletáveis da região.",
+      "trophy_code": "rise-of-the-ronin-home-sweet-home",
+      "type": "Bronze"
+    },
+    {
+      "description": "Receba sua primeira Completion Reward.",
+      "is_missable": 0,
+      "is_spoiler": 0,
+      "name": "Collector",
+      "name_pt": "Colecionador",
+      "tip": "Complete todos os itens exigidos de uma área.",
+      "trophy_code": "rise-of-the-ronin-collector",
+      "type": "Bronze"
+    },
+    {
+      "description": "Melhore uma armadura, uma arma e uma sub-arma.",
+      "is_missable": 0,
+      "is_spoiler": 0,
+      "name": "Good to Go",
+      "name_pt": "Pronto para Partir",
+      "tip": "Use o blacksmith quando tiver materiais.",
+      "trophy_code": "rise-of-the-ronin-good-to-go",
+      "type": "Bronze"
+    },
+    {
+      "description": "Realize seu primeiro Bond Transfer.",
+      "is_missable": 0,
+      "is_spoiler": 0,
+      "name": "Transfer of Power",
+      "name_pt": "Transferência de Poder",
+      "tip": "Use Longhouse/Blacksmith para transferir atributo.",
+      "trophy_code": "rise-of-the-ronin-transfer-of-power",
+      "type": "Bronze"
+    },
+    {
+      "description": "Equipe quatro ou mais peças com o mesmo set bonus.",
+      "is_missable": 0,
+      "is_spoiler": 0,
+      "name": "Resonance",
+      "name_pt": "Ressonância",
+      "tip": "Use equipamentos do mesmo conjunto.",
+      "trophy_code": "rise-of-the-ronin-resonance",
+      "type": "Bronze"
+    },
+    {
+      "description": "Remodele seu Longhouse pela primeira vez.",
+      "is_missable": 0,
+      "is_spoiler": 0,
+      "name": "Fresh Start",
+      "name_pt": "Recomeço",
+      "tip": "Disponível após progresso de história.",
+      "trophy_code": "rise-of-the-ronin-fresh-start",
+      "type": "Bronze"
+    },
+    {
+      "description": "Use o Testament of the Soul para repetir uma missão pela primeira vez.",
+      "is_missable": 0,
+      "is_spoiler": 0,
+      "name": "Traveling Through Time",
+      "name_pt": "Viajando pelo Tempo",
+      "tip": "O Testament libera no Chapter 2 e permite replay/alteração de decisões, impedindo perda definitiva de rotas.",
+      "trophy_code": "rise-of-the-ronin-traveling-through-time",
+      "type": "Bronze"
+    },
+    {
+      "description": "Receba rank Master no dojo.",
+      "is_missable": 0,
+      "is_spoiler": 0,
+      "name": "Striver's License",
+      "name_pt": "Licença de Esforçado",
+      "tip": "Não marcar como Dificuldade; é treino/skill challenge.",
+      "trophy_code": "rise-of-the-ronin-strivers-license",
+      "type": "Bronze"
+    },
+    {
+      "description": "Receba rank Master em horseback archery.",
+      "is_missable": 0,
+      "is_spoiler": 0,
+      "name": "Horseback Hero",
+      "name_pt": "Herói a Cavalo",
+      "tip": "Treino/minigame.",
+      "trophy_code": "rise-of-the-ronin-horseback-hero",
+      "type": "Bronze"
+    },
+    {
+      "description": "Receba rank Master em gliding training.",
+      "is_missable": 0,
+      "is_spoiler": 0,
+      "name": "Winged Warrior",
+      "name_pt": "Guerreiro Alado",
+      "tip": "Treino/minigame.",
+      "trophy_code": "rise-of-the-ronin-winged-warrior",
+      "type": "Bronze"
+    },
+    {
+      "description": "Receba rank Master em firearms training.",
+      "is_missable": 0,
+      "is_spoiler": 0,
+      "name": "Firearm Genius",
+      "name_pt": "Gênio das Armas de Fogo",
+      "tip": "Treino/minigame.",
+      "trophy_code": "rise-of-the-ronin-firearm-genius",
+      "type": "Bronze"
+    },
+    {
+      "description": "Derrote 5 cheaters no minigame Odds and Evens.",
+      "is_missable": 0,
+      "is_spoiler": 0,
+      "name": "Cheater Beater",
+      "name_pt": "Caçador de Trapaceiros",
+      "tip": "Atividade opcional offline.",
+      "trophy_code": "rise-of-the-ronin-cheater-beater",
+      "type": "Bronze"
+    },
+    {
+      "description": "Domine três combat styles.",
+      "is_missable": 0,
+      "is_spoiler": 1,
+      "name": "Style Guru",
+      "name_pt": "Guru de Estilo",
+      "tip": "Troféu de progressão ligado a recompensas de história.",
+      "trophy_code": "rise-of-the-ronin-style-guru",
+      "type": "Bronze"
+    },
+    {
+      "description": "Domine uma das quatro árvores de atributos.",
+      "is_missable": 0,
+      "is_spoiler": 0,
+      "name": "A Jack of One Trade is a Master of All",
+      "name_pt": "Especialista em Uma Arte, Mestre de Todas",
+      "tip": "Skill points vem principalmente de progressão e coletáveis.",
+      "trophy_code": "rise-of-the-ronin-a-jack-of-one-trade-is-a-master-of-all",
+      "type": "Bronze"
+    },
+    {
+      "description": "Realize Technology Development 15 vezes.",
+      "is_missable": 0,
+      "is_spoiler": 0,
+      "name": "Contraption Creator",
+      "name_pt": "Criador de Engenhocas",
+      "tip": "Use Foreign Books obtidos principalmente por Treasure Chests.",
+      "trophy_code": "rise-of-the-ronin-contraption-creator",
+      "type": "Bronze"
+    },
+    {
+      "description": "Complete 50 Chance Encounters.",
+      "is_missable": 0,
+      "is_spoiler": 0,
+      "name": "Fancy Meeting You Here",
+      "name_pt": "Que Coincidência te Encontrar Aqui",
+      "tip": "Faça eventos aleatórios sempre que aparecerem.",
+      "trophy_code": "rise-of-the-ronin-fancy-meeting-you-here",
+      "type": "Bronze"
+    },
+    {
+      "description": "Guarde 150.000 sen.",
+      "is_missable": 0,
+      "is_spoiler": 0,
+      "name": "Moneybags",
+      "name_pt": "Bolsos Cheios",
+      "tip": "Evite gastar até liberar o troféu.",
+      "trophy_code": "rise-of-the-ronin-moneybags",
+      "type": "Bronze"
+    },
+    {
+      "description": "Alcance o nível 55.",
+      "is_missable": 0,
+      "is_spoiler": 0,
+      "name": "Well-Rounded Ronin",
+      "name_pt": "Ronin Versátil",
+      "tip": "Vem durante história, Bond Missions e cleanup.",
+      "trophy_code": "rise-of-the-ronin-well-rounded-ronin",
+      "type": "Bronze"
+    },
+    {
+      "description": "Derrote inimigos usando todos os 9 tipos de armas principais.",
+      "is_missable": 0,
+      "is_spoiler": 0,
+      "name": "Martial Arts Maniac",
+      "name_pt": "Maníaco das Artes Marciais",
+      "tip": "Use Odachi, Saber, Polearm, Bayonet, Greatsword, Oxtail Blade, Katana, Spear e Paired Swords.",
+      "trophy_code": "rise-of-the-ronin-martial-arts-maniac",
+      "type": "Bronze"
+    },
+    {
+      "description": "Complete uma missão sem aliados.",
+      "is_missable": 0,
+      "is_spoiler": 0,
+      "name": "Solitary Ronin",
+      "name_pt": "Ronin Solitário",
+      "tip": "Remova aliados antes de iniciar uma missão compatível.",
+      "trophy_code": "rise-of-the-ronin-solitary-ronin",
+      "type": "Bronze"
+    },
+    {
+      "description": "Complete os objetivos de uma No-Kill Mission.",
+      "is_missable": 0,
+      "is_spoiler": 0,
+      "name": "Life Saver",
+      "name_pt": "Salva-Vidas",
+      "tip": "Pode ser feito em Bond Mission e repetido pelo Testament of the Soul.",
+      "trophy_code": "rise-of-the-ronin-life-saver",
+      "type": "Bronze"
+    },
+    {
+      "description": "Salve Shinsaku Takasugi completando sua linha de Bond Missions.",
+      "is_missable": 0,
+      "is_spoiler": 0,
+      "name": "The Greater Opportunity",
+      "name_pt": "A Maior Oportunidade",
+      "tip": "Não é perdível; use Testament of the Soul se necessário.",
+      "trophy_code": "rise-of-the-ronin-the-greater-opportunity",
+      "type": "Bronze"
+    },
+    {
+      "description": "Salve Soji Okita completando sua linha de Bond Missions.",
+      "is_missable": 0,
+      "is_spoiler": 0,
+      "name": "Farewell, Black Cat",
+      "name_pt": "Adeus, Gato Preto",
+      "tip": "Pode exigir replay de escolhas Pro-Shogunate pelo Testament of the Soul.",
+      "trophy_code": "rise-of-the-ronin-farewell-black-cat",
+      "type": "Bronze"
+    },
+    {
+      "description": "Salve Ryoma Sakamoto completando sua linha de Bond Missions.",
+      "is_missable": 0,
+      "is_spoiler": 0,
+      "name": "Twilight Fencer",
+      "name_pt": "Espadachim do Crepúsculo",
+      "tip": "Repita a missão necessária pelo Testament of the Soul se ele morrer.",
+      "trophy_code": "rise-of-the-ronin-twilight-fencer",
+      "type": "Bronze"
+    },
+    {
+      "description": "Plane do deck elevado do Kiyomizudera Temple em Kyoto.",
+      "is_missable": 0,
+      "is_spoiler": 0,
+      "name": "Dive of the Ronin",
+      "name_pt": "Mergulho do Ronin",
+      "tip": "Use o glider do ponto alto do templo.",
+      "trophy_code": "rise-of-the-ronin-dive-of-the-ronin",
+      "type": "Bronze"
+    }
+  ]
+}

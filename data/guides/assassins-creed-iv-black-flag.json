@@ -1,0 +1,789 @@
+{
+  "game": {
+    "avoid_if": "Evite se você quer uma platina 100% offline; a lista base original exige multiplayer e funções sociais online.",
+    "before_you_start": "Este guia cobre o Assassin's Creed IV: Black Flag original. O remake Assassin's Creed Black Flag Resynced terá guia separado quando for adicionado ao Atlas. A platina base tem 51 troféus no original de 2013 para PS3/PS4: 1 platina, 1 ouro, 13 pratas e 36 bronzes. A rota estimada é de 40-50h, dificuldade 4/10, sem perdíveis, sem troféus de dificuldade, sem coop obrigatório e sem DLC necessário, mas com online/multiplayer obrigatório para a lista base.",
+    "best_for": "Ideal para quem quer uma platina de mundo aberto naval com checklist robusto, história direta e planejamento de online/multiplayer.",
+    "cleanup_advice": "Após a história, use replay de memórias para By The Book e free roam para localizações, naufrágios, Mayan Stelae, tavernas, tesouros, Abstergo Challenges e upgrades do Jackdaw.",
+    "cover_image": "/assets/games/assassins-creed-iv-black-flag/cover.png",
+    "coverage_level": "complete",
+    "created_at": "2026-07-03 14:36:25",
+    "difficulty": 4,
+    "difficulty_reason": "Dificuldade editorial 4/10: a campanha e o mundo aberto são acessíveis, não há troféus de dificuldade e não há perdíveis, mas 100% de objetivos opcionais, Legendary Ships, upgrades do Jackdaw e multiplayer online elevam o esforço.",
+    "dlc_scope": "DLC não necessário para a platina base. Blackbeard's Wrath e Freedom Cry ficam separados; a lista completa com DLCs soma 61 troféus, mas o guia base usa somente os 51 troféus originais.",
+    "editorial_notes": "Fontes consultadas: PlayStation Store oficial, PSNProfiles, TrueTrophies, PlayStationTrophies e TrueAchievements. Guia restrito ao Black Flag original PS3/PS4; sem lista de Resynced, Freedom Cry standalone, Rogue, III ou DLCs na platina base.",
+    "editorial_review_status": "verified",
+    "editorial_status": "published",
+    "first_run_advice": "Jogue a história livremente, sincronizando mirantes, capturando fortes, melhorando o Jackdaw e completando objetivos opcionais quando forem simples. Deixe Legendary Ships, 100% fino e multiplayer para blocos dedicados.",
+    "grind_summary": "Grind moderado: nível 55 no multiplayer, todos os upgrades do Jackdaw, saque de navios, Abstergo Challenges, mapas/tesouros e descoberta de todas as localizações.",
+    "guide_avoid": null,
+    "guide_best_moment": null,
+    "guide_dlc": null,
+    "guide_grind": null,
+    "guide_ideal": null,
+    "guide_online": null,
+    "guide_runs": null,
+    "image": "/assets/games/assassins-creed-iv-black-flag/hero.jpg",
+    "is_verified": 1,
+    "last_reviewed_at": "2026-07-01",
+    "missable": "Sem perdíveis. O jogo permite replay de memórias para objetivos opcionais e limpeza em free roam após a história; os riscos reais são servidor/social online e controle manual de checklist.",
+    "missable_summary": "Perdíveis: 0. Nenhum troféu individual deve receber tag Perdível porque há replay de memórias, free roam pós-história e atividades recuperáveis.",
+    "name": "Assassin's Creed IV: Black Flag",
+    "online_summary": "Online obrigatório: a platina depende de multiplayer e componente social. Online direto: Sharing Is Caring, Committed To The Cause, Personal Bag Of Tricks, Master Of The Caribbean, Lab Technician e All Rounder. Online total: 7 contando a platina por dependência.",
+    "quality_warnings": "[]",
+    "reviewed_by": "AtlasAchievement Editorial",
+    "runs_summary": "1 jogada mínima. Termine a campanha, use replay de memórias para 100% opcional e faça cleanup em free roam antes/depois do bloco online.",
+    "slug": "assassins-creed-iv-black-flag",
+    "time": "40-50h",
+    "time_bucket": "medium",
+    "time_max_hours": 50,
+    "time_min_hours": 40,
+    "time_reason": "A estimativa de 40-50h cobre campanha, 100% dos objetivos opcionais, exploração do Caribe, upgrades do Jackdaw, Legendary Ships, naufrágios, Abstergo Challenges e grind multiplayer até nível 55.",
+    "time_sort_hours": 40,
+    "updated_at": "2026-07-03 14:38:32",
+    "verification_note": "Guia verificado para Assassin's Creed IV: Black Flag original de 2013: 51 troféus base, distribuição 1/1/13/36, 40-50h, dificuldade 4/10, perdíveis 0, online direto 6, online total 7 com platina por dependência, coop 0, dificuldade 0, DLC não necessário, replay de memórias e free roam pós-história.",
+    "verification_status": "verified",
+    "walkthrough": ""
+  },
+  "redirects": [
+    "ac4-black-flag",
+    "assassins-creed-4-black-flag",
+    "assassins-creed-iv-black-flag-original"
+  ],
+  "roadmaps": [
+    {
+      "content": "{\"title\":\"Validar online e separar o escopo\",\"focus\":\"Online / escopo / risco técnico\",\"objective\":\"Confirmar que você está jogando o Black Flag original e que os serviços online necessários estão acessíveis.\",\"actions\":[\"Confirme o slug/guia do original de 2013, PS3/PS4, com 51 troféus base.\",\"Não use dados do remake, Freedom Cry standalone, Rogue, III ou DLCs na platina base.\",\"Teste acesso ao multiplayer e às funções sociais antes de fazer o checklist longo.\",\"Se possível, tente encaminhar Sharing Is Caring cedo por causa de risco técnico de servidor.\"],\"warning\":\"A platina do original exige online/multiplayer; não trate este guia como offline total.\",\"result\":\"Escopo correto, online validado e risco principal identificado.\"}",
+      "step_order": 1
+    },
+    {
+      "content": "{\"title\":\"Campanha, fortes e Jackdaw\",\"focus\":\"História / mundo aberto / upgrades\",\"objective\":\"Concluir a campanha, abrir o mapa e evoluir o Jackdaw para o conteúdo naval avançado.\",\"actions\":[\"Complete as sequências principais até It's All Good.\",\"Capture fortes para revelar regiões e facilitar viagens.\",\"Saqueie navios para recursos, dinheiro e tripulação.\",\"Faça atividades naturais como tavernas, resgates, caça, contratos navais e upgrades do esconderijo.\"],\"warning\":\"Não há perdíveis; objetivos opcionais podem ficar para replay de memórias.\",\"result\":\"História concluída, free roam liberado e Jackdaw encaminhado.\"}",
+      "step_order": 2
+    },
+    {
+      "content": "{\"title\":\"100% sync e checklist offline\",\"focus\":\"Replay de memórias / coletáveis / checklist\",\"objective\":\"Completar By The Book e limpar as principais pendências de exploração.\",\"actions\":[\"Use replay de memórias para fazer 100% dos objetivos opcionais.\",\"Resolva as 16 Mayan Stelae e abra a porta de Tulum.\",\"Explore todos os naufrágios, visite todas as localizações e encontre os tesouros enterrados.\",\"Complete 25 Abstergo Challenges e hackeie 15 computadores na Abstergo Entertainment.\"],\"warning\":\"Acompanhe manualmente áreas e categorias para evitar voltar sem saber o que falta.\",\"result\":\"Sincronização, coletáveis e checklist offline avançados.\"}",
+      "step_order": 3
+    },
+    {
+      "content": "{\"title\":\"Naval avançado e Legendary Ships\",\"focus\":\"Jackdaw / combate naval\",\"objective\":\"Finalizar Destroyer e derrotar os quatro Legendary Ships.\",\"actions\":[\"Busque blueprints e recursos para melhorar completamente o Jackdaw.\",\"Finalize contratos navais e saque de navios restantes.\",\"Enfrente os quatro Legendary Ships com casco, canhões, morteiros e munições evoluídos.\",\"Complete troféus navais/misc como Thug Life, Cannon Fodder, Roped In e All Aboard!\"],\"warning\":\"Devil Of The Caribbean é o pico de execução offline; deixe para o Jackdaw bem preparado.\",\"result\":\"Bloco naval concluído e cleanup offline praticamente fechado.\"}",
+      "step_order": 4
+    },
+    {
+      "content": "{\"title\":\"Multiplayer e conferência da platina\",\"focus\":\"Multiplayer / online / revisão final\",\"objective\":\"Completar os troféus online diretos e validar a distribuição base.\",\"actions\":[\"Alcance nível 55 para Committed To The Cause.\",\"Complete uma sessão com habilidades customizadas para Personal Bag Of Tricks.\",\"Complete Discovery Mode em Wolfpack para Master Of The Caribbean.\",\"Complete uma sessão pública Game Lab para Lab Technician.\",\"Jogue todos os modos e use cada habilidade/ranged weapon uma vez para All Rounder.\",\"Revise 51 troféus base, 1/1/13/36, online direto 6, coop 0, dificuldade 0, perdíveis 0 e DLC não necessário.\"],\"warning\":\"Online e população de servidores são o maior risco real da platina original.\",\"result\":\"Prizes, Plunder, and Adventure! desbloqueado.\"}",
+      "step_order": 5
+    }
+  ],
+  "schemaVersion": 1,
+  "seedExtras": {
+    "aliases": [
+      "assassins-creed-4-black-flag",
+      "ac4-black-flag",
+      "assassins-creed-iv-black-flag-original"
+    ],
+    "attentionPoints": [
+      {
+        "tags": [
+          "Original 2013",
+          "PS3/PS4"
+        ],
+        "text": "Este guia cobre o Black Flag original de 2013. O remake Assassin’s Creed Black Flag Resynced terá guia separado.",
+        "title": "Original, não Resynced",
+        "type": "Escopo"
+      },
+      {
+        "tags": [
+          "Online",
+          "Multiplayer"
+        ],
+        "text": "A platina original exige troféus multiplayer/online, incluindo Wolfpack, Game Lab, habilidades e nível 55.",
+        "title": "Online obrigatório",
+        "type": "Online"
+      },
+      {
+        "tags": [
+          "Sem perdíveis",
+          "Replay de memórias",
+          "Free roam"
+        ],
+        "text": "Não há perdíveis reais; memórias podem ser repetidas e o mundo fica disponível para cleanup.",
+        "title": "Sem perdíveis",
+        "type": "Cleanup"
+      },
+      {
+        "tags": [
+          "DLC não necessário",
+          "Base game"
+        ],
+        "text": "Blackbeard’s Wrath e Freedom Cry não entram nos 51 troféus base.",
+        "title": "DLC separado",
+        "type": "Escopo"
+      },
+      {
+        "tags": [
+          "Replay de memórias",
+          "100% sync"
+        ],
+        "text": "100% dos constraints das memórias principais pode ser feito por replay de memórias.",
+        "title": "By The Book",
+        "type": "Sincronização"
+      },
+      {
+        "tags": [
+          "Servidor",
+          "Social"
+        ],
+        "text": "Sharing Is Caring depende de descobertas sociais online e pode ser o ponto mais sensível por serviços/servidores.",
+        "title": "Sharing Is Caring / risco social",
+        "type": "Risco técnico"
+      }
+    ],
+    "checklist": [
+      "Validar acesso online/multiplayer e componente social antes de investir no checklist longo.",
+      "Concluir a campanha principal até It's All Good.",
+      "Usar replay de memórias para By The Book e 100% dos objetivos opcionais.",
+      "Capturar todos os fortes e liberar o mapa para exploração.",
+      "Completar contratos navais, tavernas, Templar Hunts e atividades por localização.",
+      "Resolver as 16 Mayan Stelae e abrir a porta secreta em Tulum.",
+      "Explorar todos os naufrágios subaquáticos.",
+      "Visitar todas as localizações e encontrar todos os tesouros enterrados.",
+      "Melhorar totalmente o Jackdaw e derrotar os quatro Legendary Ships.",
+      "Completar 25 Abstergo Challenges e hackear 15 computadores.",
+      "Fazer Sharing Is Caring enquanto os serviços sociais estiverem disponíveis.",
+      "Fechar multiplayer: nível 55, Wolfpack Discovery, Game Lab, sessão com habilidades customizadas e All Rounder.",
+      "Conferir 51 troféus base, 1/1/13/36, online direto 6, coop 0, dificuldade 0, perdíveis 0 e DLC não necessário."
+    ],
+    "editorial_summary": [
+      "Este guia cobre o Assassin's Creed IV: Black Flag original. O remake Assassin's Creed Black Flag Resynced terá guia separado quando for adicionado ao Atlas. A platina base tem 51 troféus no original de 2013 para PS3/PS4: 1 platina, 1 ouro, 13 pratas e 36 bronzes. A rota estimada é de 40-50h, dificuldade 4/10, sem perdíveis, sem troféus de dificuldade, sem coop obrigatório e sem DLC necessário, mas com online/multiplayer obrigatório para a lista base.",
+      "Online obrigatório: a platina depende de multiplayer e componente social. Online direto: Sharing Is Caring, Committed To The Cause, Personal Bag Of Tricks, Master Of The Caribbean, Lab Technician e All Rounder. Online total: 7 contando a platina por dependência.",
+      "Mission Select/replay de memórias existe, free roam pós-história existe, New Game+ não é necessário e a dificuldade não afeta troféus."
+    ],
+    "faq": [
+      {
+        "answer": "Este guia cobre o Assassin's Creed IV: Black Flag original. O remake Assassin's Creed Black Flag Resynced terá guia separado quando for adicionado ao Atlas. O guia atual usa a lista base original de 2013 com multiplayer online.",
+        "question": "Este guia é do Black Flag original ou do Resynced?"
+      },
+      {
+        "answer": "São 51 troféus base: 1 platina, 1 ouro, 13 pratas e 36 bronzes.",
+        "question": "Quantos troféus existem na platina base?"
+      },
+      {
+        "answer": "Não. 61 é o total com DLCs. A platina base usa 51 troféus; Blackbeard's Wrath e Freedom Cry ficam separados.",
+        "question": "Os 61 troféus entram na platina?"
+      },
+      {
+        "answer": "Sim. O original exige online/multiplayer por Sharing Is Caring, Committed To The Cause, Personal Bag Of Tricks, Master Of The Caribbean, Lab Technician e All Rounder.",
+        "question": "A platina exige online?"
+      },
+      {
+        "answer": "Não. Há multiplayer obrigatório, mas nenhum requisito de coop obrigatório deve ser marcado.",
+        "question": "Precisa de coop?"
+      },
+      {
+        "answer": "Não. Não há troféus de dificuldade e o filtro Dificuldade individual deve ficar zerado.",
+        "question": "A dificuldade afeta troféus?"
+      },
+      {
+        "answer": "Não. As memórias podem ser repetidas e o mundo continua disponível para cleanup.",
+        "question": "Tem troféus perdíveis?"
+      },
+      {
+        "answer": "Uma jogada da campanha, com replay de memórias e cleanup, é suficiente.",
+        "question": "Quantas jogadas são necessárias?"
+      },
+      {
+        "answer": "Não. Você pode repetir memórias para completar constraints perdidos.",
+        "question": "By The Book é perdível?"
+      },
+      {
+        "answer": "Valide o funcionamento atual dos serviços sociais/online. Se houver instabilidade, trate como risco técnico/online, não como perdível.",
+        "question": "Sharing Is Caring ainda funciona?"
+      },
+      {
+        "answer": "O multiplayer até o nível 55, 100% de sincronização das memórias, upgrades do Jackdaw, atividades navais e exploração do mapa.",
+        "question": "O que é mais demorado na platina?"
+      },
+      {
+        "answer": "Não. Freedom Cry é conteúdo separado e não entra nos 51 troféus base.",
+        "question": "Freedom Cry entra neste guia?"
+      },
+      {
+        "answer": "Não. Blackbeard’s Wrath é DLC separado e não entra na platina base.",
+        "question": "Blackbeard’s Wrath entra neste guia?"
+      },
+      {
+        "answer": "Não. Assassin’s Creed Black Flag Resynced tem lista e requisitos próprios e terá guia separado.",
+        "question": "O remake Resynced usa esta mesma lista?"
+      }
+    ],
+    "note": "Campos exportados para auditoria. O SQLite atual nao possui colunas nativas para todos esses extras; a importacao preserva o que o banco suporta.",
+    "quickDecision": {
+      "coopRequired": "Não",
+      "difficulty": "4/10",
+      "dlcRequired": "Não",
+      "firstAction": "Comece validando acesso online, depois avance a campanha melhorando o Jackdaw e acompanhando objetivos opcionais.",
+      "mainAttention": "A platina do original não é offline: nível 55 multiplayer, Game Lab, Wolfpack, habilidades/modos e descoberta social entram na lista base.",
+      "missables": "Não",
+      "onlineRequired": "Sim, multiplayer/social",
+      "runs": "1 jogada + replay/free roam",
+      "time": "40-50h"
+    },
+    "quick_plan": [
+      {
+        "detail": "Teste multiplayer/social cedo, especialmente Sharing Is Caring e acesso a playlists públicas.",
+        "number": 1,
+        "title": "Validação online"
+      },
+      {
+        "detail": "Avance a história, capture fortes, saqueie navios e melhore o Jackdaw sem se preocupar com perdíveis.",
+        "number": 2,
+        "title": "Campanha e upgrades"
+      },
+      {
+        "detail": "Use replay de memórias para By The Book e limpe localizações, naufrágios, tesouros, tavernas e Stelae.",
+        "number": 3,
+        "title": "100% sync e mundo aberto"
+      },
+      {
+        "detail": "Finalize upgrades do Jackdaw e derrote os quatro Legendary Ships.",
+        "number": 4,
+        "title": "Naval avançado"
+      },
+      {
+        "detail": "Feche nível 55, Wolfpack, Game Lab, habilidades/modos e a conferência da platina.",
+        "number": 5,
+        "title": "Multiplayer final"
+      }
+    ],
+    "seo": {
+      "description": "Guia de platina de Assassin's Creed IV: Black Flag original de 2013, com 51 troféus base, 40-50h, dificuldade 4/10, online obrigatório, sem perdíveis e DLCs separados.",
+      "image": "/assets/games/assassins-creed-iv-black-flag/hero.jpg",
+      "keywords": "Assassin's Creed IV Black Flag troféus, AC4 Black Flag platina, Assassin's Creed IV Black Flag guia, Black Flag multiplayer troféus",
+      "title": "Assassin's Creed IV: Black Flag: guia de troféus e platina | AtlasAchievement"
+    },
+    "tags": [
+      "PS3",
+      "PS4",
+      "Original 2013",
+      "Online obrigatório",
+      "Multiplayer obrigatório",
+      "Sem coop",
+      "Sem perdíveis",
+      "Sem dificuldade",
+      "Replay de memórias",
+      "Free roam",
+      "Sem New Game+",
+      "DLC não necessário"
+    ]
+  },
+  "slug": "assassins-creed-iv-black-flag",
+  "trophies": [
+    {
+      "description": "Desbloqueie todos os troféus base de Assassin's Creed IV: Black Flag.",
+      "is_missable": 0,
+      "is_spoiler": 0,
+      "name": "Prizes, Plunder, and Adventure!",
+      "name_pt": "Prêmios, Saques e Aventura!",
+      "tip": "A platina depende de história, sincronização, checklist de mundo aberto, atividades navais e troféus online/multiplayer. DLCs não entram na lista base.",
+      "trophy_code": "assassins-creed-iv-black-flag-prizes-plunder-and-adventure",
+      "type": "Platina"
+    },
+    {
+      "description": "Complete a Memory Sequence 1.",
+      "is_missable": 0,
+      "is_spoiler": 1,
+      "name": "Heroes Aren't Born",
+      "name_pt": "Heróis Não Nascem Prontos",
+      "tip": "Troféu automático de história; avance a campanha normalmente.",
+      "trophy_code": "assassins-creed-iv-black-flag-heroes-arent-born",
+      "type": "Bronze"
+    },
+    {
+      "description": "Complete a Memory Sequence 2.",
+      "is_missable": 0,
+      "is_spoiler": 1,
+      "name": "Good While It Lasted",
+      "name_pt": "Foi Bom Enquanto Durou",
+      "tip": "Troféu automático de história.",
+      "trophy_code": "assassins-creed-iv-black-flag-good-while-it-lasted",
+      "type": "Bronze"
+    },
+    {
+      "description": "Complete a Memory Sequence 3.",
+      "is_missable": 0,
+      "is_spoiler": 1,
+      "name": "A Pirate's Life For Me",
+      "name_pt": "Vida de Pirata para Mim",
+      "tip": "Troféu automático de história.",
+      "trophy_code": "assassins-creed-iv-black-flag-a-pirates-life-for-me",
+      "type": "Bronze"
+    },
+    {
+      "description": "Complete a Memory Sequence 4.",
+      "is_missable": 0,
+      "is_spoiler": 1,
+      "name": "No Apologies",
+      "name_pt": "Sem Desculpas",
+      "tip": "Troféu automático de história.",
+      "trophy_code": "assassins-creed-iv-black-flag-no-apologies",
+      "type": "Bronze"
+    },
+    {
+      "description": "Complete a Memory Sequence 5.",
+      "is_missable": 0,
+      "is_spoiler": 1,
+      "name": "Death Of A Salesman",
+      "name_pt": "Morte de um Vendedor",
+      "tip": "Troféu automático de história.",
+      "trophy_code": "assassins-creed-iv-black-flag-death-of-a-salesman",
+      "type": "Prata"
+    },
+    {
+      "description": "Complete a Memory Sequence 6.",
+      "is_missable": 0,
+      "is_spoiler": 1,
+      "name": "Mixing Up The Medicines",
+      "name_pt": "Misturando os Remédios",
+      "tip": "Troféu automático de história.",
+      "trophy_code": "assassins-creed-iv-black-flag-mixing-up-the-medicines",
+      "type": "Bronze"
+    },
+    {
+      "description": "Complete a Memory Sequence 7.",
+      "is_missable": 0,
+      "is_spoiler": 1,
+      "name": "The Hammer Falls",
+      "name_pt": "O Martelo Cai",
+      "tip": "Troféu automático de história.",
+      "trophy_code": "assassins-creed-iv-black-flag-the-hammer-falls",
+      "type": "Prata"
+    },
+    {
+      "description": "Complete a Memory Sequence 8.",
+      "is_missable": 0,
+      "is_spoiler": 1,
+      "name": "Adrift",
+      "name_pt": "À Deriva",
+      "tip": "Troféu automático de história.",
+      "trophy_code": "assassins-creed-iv-black-flag-adrift",
+      "type": "Prata"
+    },
+    {
+      "description": "Complete a Memory Sequence 9.",
+      "is_missable": 0,
+      "is_spoiler": 1,
+      "name": "A New Hope",
+      "name_pt": "Uma Nova Esperança",
+      "tip": "Troféu automático de história.",
+      "trophy_code": "assassins-creed-iv-black-flag-a-new-hope",
+      "type": "Bronze"
+    },
+    {
+      "description": "Complete a Memory Sequence 10.",
+      "is_missable": 0,
+      "is_spoiler": 1,
+      "name": "My Elusive Fortune",
+      "name_pt": "Minha Fortuna Elusiva",
+      "tip": "Troféu automático de história.",
+      "trophy_code": "assassins-creed-iv-black-flag-my-elusive-fortune",
+      "type": "Prata"
+    },
+    {
+      "description": "Complete a Memory Sequence 11.",
+      "is_missable": 0,
+      "is_spoiler": 1,
+      "name": "Been Down So Long...",
+      "name_pt": "Tão Longe no Fundo...",
+      "tip": "Troféu automático de história.",
+      "trophy_code": "assassins-creed-iv-black-flag-been-down-so-long",
+      "type": "Prata"
+    },
+    {
+      "description": "Complete a Memory Sequence 12.",
+      "is_missable": 0,
+      "is_spoiler": 1,
+      "name": "Just Like Starting Over",
+      "name_pt": "Como Começar de Novo",
+      "tip": "Troféu automático de história.",
+      "trophy_code": "assassins-creed-iv-black-flag-just-like-starting-over",
+      "type": "Bronze"
+    },
+    {
+      "description": "Complete a Memory Sequence 13.",
+      "is_missable": 0,
+      "is_spoiler": 1,
+      "name": "Saw That One Coming...",
+      "name_pt": "Eu Já Esperava por Essa...",
+      "tip": "Troféu automático de história.",
+      "trophy_code": "assassins-creed-iv-black-flag-saw-that-one-coming",
+      "type": "Prata"
+    },
+    {
+      "description": "Complete a missão contemporânea Routine Hacking.",
+      "is_missable": 0,
+      "is_spoiler": 1,
+      "name": "Routine Hacking",
+      "name_pt": "Hackeamento de Rotina",
+      "tip": "Troféu de progresso da história fora do Animus.",
+      "trophy_code": "assassins-creed-iv-black-flag-routine-hacking",
+      "type": "Bronze"
+    },
+    {
+      "description": "Complete a missão contemporânea Getting Weird Around Here.",
+      "is_missable": 0,
+      "is_spoiler": 1,
+      "name": "Getting Weird Around Here",
+      "name_pt": "Está Ficando Estranho por Aqui",
+      "tip": "Troféu de progresso da história fora do Animus.",
+      "trophy_code": "assassins-creed-iv-black-flag-getting-weird-around-here",
+      "type": "Bronze"
+    },
+    {
+      "description": "Complete a missão contemporânea Bunker Buddies.",
+      "is_missable": 0,
+      "is_spoiler": 1,
+      "name": "Bunker Buddies",
+      "name_pt": "Companheiros de Bunker",
+      "tip": "Troféu de progresso da história fora do Animus.",
+      "trophy_code": "assassins-creed-iv-black-flag-bunker-buddies",
+      "type": "Bronze"
+    },
+    {
+      "description": "Complete todas as sequências principais da história.",
+      "is_missable": 0,
+      "is_spoiler": 1,
+      "name": "It's All Good",
+      "name_pt": "Está Tudo Bem",
+      "tip": "Conclua a campanha. Depois disso, use replay de memórias e free roam para limpeza.",
+      "trophy_code": "assassins-creed-iv-black-flag-its-all-good",
+      "type": "Ouro"
+    },
+    {
+      "description": "Complete 100% de todos os objetivos opcionais das memórias principais.",
+      "is_missable": 0,
+      "is_spoiler": 0,
+      "name": "By The Book",
+      "name_pt": "Seguindo as Regras",
+      "tip": "Use replay de memórias para refazer objetivos opcionais sem iniciar outra jogada.",
+      "trophy_code": "assassins-creed-iv-black-flag-by-the-book",
+      "type": "Prata"
+    },
+    {
+      "description": "Acorde em um palheiro.",
+      "is_missable": 0,
+      "is_spoiler": 0,
+      "name": "Hungover",
+      "name_pt": "De Ressaca",
+      "tip": "Beba em uma taverna até desmaiar e acorde em um palheiro.",
+      "trophy_code": "assassins-creed-iv-black-flag-hungover",
+      "type": "Bronze"
+    },
+    {
+      "description": "Mate um guarda que esteja tocando o sino de alarme.",
+      "is_missable": 0,
+      "is_spoiler": 0,
+      "name": "Silence, Fool!",
+      "name_pt": "Silêncio, Tolo!",
+      "tip": "Procure um sino em áreas restritas e elimine o guarda durante o alerta.",
+      "trophy_code": "assassins-creed-iv-black-flag-silence-fool",
+      "type": "Bronze"
+    },
+    {
+      "description": "Complete todas as atividades em uma única localização.",
+      "is_missable": 0,
+      "is_spoiler": 0,
+      "name": "Owned",
+      "name_pt": "Dominado",
+      "tip": "Escolha uma ilha/área pequena e finalize todos os ícones dela no mapa.",
+      "trophy_code": "assassins-creed-iv-black-flag-owned",
+      "type": "Prata"
+    },
+    {
+      "description": "Abra a porta secreta em Tulum.",
+      "is_missable": 0,
+      "is_spoiler": 0,
+      "name": "Vault Raider",
+      "name_pt": "Invasor do Cofre",
+      "tip": "Resolva as 16 Mayan Stelae e use as pedras para abrir a porta em Tulum.",
+      "trophy_code": "assassins-creed-iv-black-flag-vault-raider",
+      "type": "Bronze"
+    },
+    {
+      "description": "Arpoe uma baleia assassina.",
+      "is_missable": 0,
+      "is_spoiler": 0,
+      "name": "Killer Killer",
+      "name_pt": "Matador de Baleia Assassina",
+      "tip": "Melhore o equipamento de caça e enfrente uma orca em área de caça naval.",
+      "trophy_code": "assassins-creed-iv-black-flag-killer-killer",
+      "type": "Bronze"
+    },
+    {
+      "description": "Complete uma sequência de Templar Hunt.",
+      "is_missable": 0,
+      "is_spoiler": 0,
+      "name": "Help A Brother Out",
+      "name_pt": "Ajude um Irmão",
+      "tip": "Conclua uma linha de caçada templária; as demais ajudam no checklist e recompensas.",
+      "trophy_code": "assassins-creed-iv-black-flag-help-a-brother-out",
+      "type": "Bronze"
+    },
+    {
+      "description": "Complete todos os contratos navais.",
+      "is_missable": 0,
+      "is_spoiler": 0,
+      "name": "Sea Legs",
+      "name_pt": "Pernas de Marinheiro",
+      "tip": "Faça os Naval Contracts espalhados pelo mapa, liberando fortes para facilitar o acesso.",
+      "trophy_code": "assassins-creed-iv-black-flag-sea-legs",
+      "type": "Bronze"
+    },
+    {
+      "description": "Capture todos os fortes.",
+      "is_missable": 0,
+      "is_spoiler": 0,
+      "name": "King Of The Castle",
+      "name_pt": "Rei do Castelo",
+      "tip": "Melhore o Jackdaw e conquiste todos os fortes para revelar regiões e atividades.",
+      "trophy_code": "assassins-creed-iv-black-flag-king-of-the-castle",
+      "type": "Bronze"
+    },
+    {
+      "description": "Complete 25 Abstergo Challenges.",
+      "is_missable": 0,
+      "is_spoiler": 0,
+      "name": "Employee Of The Month",
+      "name_pt": "Funcionário do Mês",
+      "tip": "Os desafios de Abstergo vêm de história, mundo aberto, combate, navegação e multiplayer; acompanhe o menu de progresso.",
+      "trophy_code": "assassins-creed-iv-black-flag-employee-of-the-month",
+      "type": "Bronze"
+    },
+    {
+      "description": "Ganhe 50.000 reales.",
+      "is_missable": 0,
+      "is_spoiler": 0,
+      "name": "Business And Pleasure",
+      "name_pt": "Negócios e Prazer",
+      "tip": "Vem naturalmente ao saquear navios, vender carga e limpar atividades.",
+      "trophy_code": "assassins-creed-iv-black-flag-business-and-pleasure",
+      "type": "Bronze"
+    },
+    {
+      "description": "Nade um total de 1 milha náutica.",
+      "is_missable": 0,
+      "is_spoiler": 0,
+      "name": "Mer-man",
+      "name_pt": "Homem-Sereia",
+      "tip": "Nade durante exploração, naufrágios e deslocamentos curtos até o acumulado liberar.",
+      "trophy_code": "assassins-creed-iv-black-flag-mer-man",
+      "type": "Bronze"
+    },
+    {
+      "description": "Crie a roupa Hunter.",
+      "is_missable": 0,
+      "is_spoiler": 0,
+      "name": "Redingote Up!",
+      "name_pt": "De Redingote!",
+      "tip": "Cace os recursos necessários e crie o Hunter Outfit no menu de crafting.",
+      "trophy_code": "assassins-creed-iv-black-flag-redingote-up",
+      "type": "Bronze"
+    },
+    {
+      "description": "Saqueie 30 navios.",
+      "is_missable": 0,
+      "is_spoiler": 0,
+      "name": "Thug Life",
+      "name_pt": "Vida Bandida",
+      "tip": "Aborde e saqueie navios durante o grind de recursos e upgrades do Jackdaw.",
+      "trophy_code": "assassins-creed-iv-black-flag-thug-life",
+      "type": "Bronze"
+    },
+    {
+      "description": "Derrote os quatro Legendary Ships.",
+      "is_missable": 0,
+      "is_spoiler": 0,
+      "name": "Devil Of The Caribbean",
+      "name_pt": "Diabo do Caribe",
+      "tip": "Faça com o Jackdaw totalmente ou quase totalmente melhorado; são os combates navais mais exigentes da lista.",
+      "trophy_code": "assassins-creed-iv-black-flag-devil-of-the-caribbean",
+      "type": "Prata"
+    },
+    {
+      "description": "Melhore o Jackdaw completamente.",
+      "is_missable": 0,
+      "is_spoiler": 0,
+      "name": "Destroyer",
+      "name_pt": "Destruidor",
+      "tip": "Exige recursos, dinheiro e blueprints de upgrades de elite; combine com saque de navios, naufrágios e exploração.",
+      "trophy_code": "assassins-creed-iv-black-flag-destroyer",
+      "type": "Prata"
+    },
+    {
+      "description": "Explore todos os naufrágios subaquáticos.",
+      "is_missable": 0,
+      "is_spoiler": 0,
+      "name": "Seven Deadly Seas",
+      "name_pt": "Sete Mares Mortais",
+      "tip": "Libere o sino de mergulho e complete todos os shipwrecks, cuidando de tubarões, oxigênio e baús.",
+      "trophy_code": "assassins-creed-iv-black-flag-seven-deadly-seas",
+      "type": "Prata"
+    },
+    {
+      "description": "Desbloqueie todas as tavernas.",
+      "is_missable": 0,
+      "is_spoiler": 0,
+      "name": "Barfly",
+      "name_pt": "Rato de Taverna",
+      "tip": "Vença a briga em cada taverna marcada no mapa para desbloqueá-la.",
+      "trophy_code": "assassins-creed-iv-black-flag-barfly",
+      "type": "Bronze"
+    },
+    {
+      "description": "Recrute 500 tripulantes.",
+      "is_missable": 0,
+      "is_spoiler": 0,
+      "name": "Cannon Fodder",
+      "name_pt": "Bucha de Canhão",
+      "tip": "Resgate náufragos, vença abordagens e liberte piratas para acumular tripulação ao longo da rota.",
+      "trophy_code": "assassins-creed-iv-black-flag-cannon-fodder",
+      "type": "Bronze"
+    },
+    {
+      "description": "Melhore totalmente o esconderijo.",
+      "is_missable": 0,
+      "is_spoiler": 0,
+      "name": "FTFY",
+      "name_pt": "Corrigi para Você",
+      "tip": "Invista dinheiro nos upgrades de Great Inagua até completar o hideout.",
+      "trophy_code": "assassins-creed-iv-black-flag-ftfy",
+      "type": "Bronze"
+    },
+    {
+      "description": "Visite todas as localizações.",
+      "is_missable": 0,
+      "is_spoiler": 0,
+      "name": "Cartographer",
+      "name_pt": "Cartógrafo",
+      "tip": "Revele e visite todas as áreas do mapa, incluindo ilhas, cidades, fortes e locais secundários.",
+      "trophy_code": "assassins-creed-iv-black-flag-cartographer",
+      "type": "Prata"
+    },
+    {
+      "description": "Hackeie 15 computadores na Abstergo Entertainment.",
+      "is_missable": 0,
+      "is_spoiler": 0,
+      "name": "Ghost In The Machine",
+      "name_pt": "Fantasma na Máquina",
+      "tip": "Durante as seções contemporâneas, explore os andares disponíveis e hackeie computadores opcionais.",
+      "trophy_code": "assassins-creed-iv-black-flag-ghost-in-the-machine",
+      "type": "Bronze"
+    },
+    {
+      "description": "Faça 5 assassinatos aéreos a partir de uma corda.",
+      "is_missable": 0,
+      "is_spoiler": 0,
+      "name": "Roped In",
+      "name_pt": "Na Corda",
+      "tip": "Use cordas do Jackdaw ou de navios durante abordagens e finalize inimigos por cima.",
+      "trophy_code": "assassins-creed-iv-black-flag-roped-in",
+      "type": "Bronze"
+    },
+    {
+      "description": "Compartilhe cada tipo de descoberta social uma vez.",
+      "is_missable": 0,
+      "is_spoiler": 0,
+      "name": "Sharing Is Caring",
+      "name_pt": "Compartilhar é se Importar",
+      "tip": "Troféu social/online; depende de serviços de descoberta conectados. Trate como risco técnico de servidor.",
+      "trophy_code": "assassins-creed-iv-black-flag-sharing-is-caring",
+      "type": "Bronze"
+    },
+    {
+      "description": "Aborde um navio sem perder tripulantes.",
+      "is_missable": 0,
+      "is_spoiler": 0,
+      "name": "All Aboard!",
+      "name_pt": "Todos a Bordo!",
+      "tip": "Ataque um alvo fraco, reduza riscos antes da abordagem e elimine rapidamente os objetivos do convés.",
+      "trophy_code": "assassins-creed-iv-black-flag-all-aboard",
+      "type": "Bronze"
+    },
+    {
+      "description": "Resgate reféns piratas distraindo inimigos com dançarinas.",
+      "is_missable": 0,
+      "is_spoiler": 0,
+      "name": "Siren Song",
+      "name_pt": "Canto da Sereia",
+      "tip": "Use dançarinas para distrair guardas antes de libertar piratas em eventos de resgate.",
+      "trophy_code": "assassins-creed-iv-black-flag-siren-song",
+      "type": "Bronze"
+    },
+    {
+      "description": "Mate 4 inimigos em sequência usando pistolas múltiplas.",
+      "is_missable": 0,
+      "is_spoiler": 0,
+      "name": "Wild West Indies",
+      "name_pt": "Índias Ocidentais Selvagens",
+      "tip": "Equipe pistolas suficientes e execute uma sequência rápida em grupo de inimigos.",
+      "trophy_code": "assassins-creed-iv-black-flag-wild-west-indies",
+      "type": "Bronze"
+    },
+    {
+      "description": "Encontre todos os tesouros enterrados.",
+      "is_missable": 0,
+      "is_spoiler": 0,
+      "name": "Excavator",
+      "name_pt": "Escavador",
+      "tip": "Colete mapas do tesouro e cave nos pontos indicados; alguns mapas vêm da frota/atividades específicas.",
+      "trophy_code": "assassins-creed-iv-black-flag-excavator",
+      "type": "Bronze"
+    },
+    {
+      "description": "Alcance o nível 55 no multiplayer.",
+      "is_missable": 0,
+      "is_spoiler": 0,
+      "name": "Committed To The Cause",
+      "name_pt": "Comprometido com a Causa",
+      "tip": "Troféu multiplayer online e maior grind online da platina base. Planeje antes por causa de servidores e população.",
+      "trophy_code": "assassins-creed-iv-black-flag-committed-to-the-cause",
+      "type": "Bronze"
+    },
+    {
+      "description": "Complete uma sessão multiplayer com habilidades customizadas.",
+      "is_missable": 0,
+      "is_spoiler": 0,
+      "name": "Personal Bag Of Tricks",
+      "name_pt": "Bolsa Pessoal de Truques",
+      "tip": "Personalize seu conjunto de habilidades e finalize uma sessão multiplayer online.",
+      "trophy_code": "assassins-creed-iv-black-flag-personal-bag-of-tricks",
+      "type": "Bronze"
+    },
+    {
+      "description": "Complete Discovery Mode em Wolfpack no multiplayer.",
+      "is_missable": 0,
+      "is_spoiler": 0,
+      "name": "Master Of The Caribbean",
+      "name_pt": "Mestre do Caribe",
+      "tip": "Entre no Wolfpack online e conclua o Discovery Mode.",
+      "trophy_code": "assassins-creed-iv-black-flag-master-of-the-caribbean",
+      "type": "Bronze"
+    },
+    {
+      "description": "Jogue e complete uma sessão na playlist pública Game Lab.",
+      "is_missable": 0,
+      "is_spoiler": 0,
+      "name": "Lab Technician",
+      "name_pt": "Técnico de Laboratório",
+      "tip": "Troféu multiplayer online; exige acesso à playlist pública Game Lab.",
+      "trophy_code": "assassins-creed-iv-black-flag-lab-technician",
+      "type": "Bronze"
+    },
+    {
+      "description": "Jogue todos os modos e use cada habilidade e arma de longo alcance uma vez no multiplayer.",
+      "is_missable": 0,
+      "is_spoiler": 0,
+      "name": "All Rounder",
+      "name_pt": "Faz-Tudo",
+      "tip": "Controle manualmente os modos, habilidades e ranged weapons usados; é online e pode exigir sessões dedicadas.",
+      "trophy_code": "assassins-creed-iv-black-flag-all-rounder",
+      "type": "Prata"
+    }
+  ]
+}

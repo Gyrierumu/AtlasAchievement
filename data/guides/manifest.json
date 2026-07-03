@@ -2,6 +2,14 @@
   "dataKind": "atlasachievement-guide-export",
   "games": [
     {
+      "file": "007-first-light.json",
+      "name": "007 First Light",
+      "roadmaps": 4,
+      "slug": "007-first-light",
+      "status": "verified",
+      "trophies": 38
+    },
+    {
       "file": "a-way-out.json",
       "name": "A Way Out",
       "roadmaps": 6,
@@ -58,6 +66,14 @@
       "trophies": 51
     },
     {
+      "file": "assassins-creed-iv-black-flag.json",
+      "name": "Assassin's Creed IV: Black Flag",
+      "roadmaps": 5,
+      "slug": "assassins-creed-iv-black-flag",
+      "status": "verified",
+      "trophies": 51
+    },
+    {
       "file": "astro-bot.json",
       "name": "Astro Bot",
       "roadmaps": 6,
@@ -104,6 +120,14 @@
       "slug": "black-myth-wukong",
       "status": "verified",
       "trophies": 36
+    },
+    {
+      "file": "blasphemous.json",
+      "name": "Blasphemous",
+      "roadmaps": 5,
+      "slug": "blasphemous",
+      "status": "verified",
+      "trophies": 46
     },
     {
       "file": "bloodborne.json",
@@ -176,6 +200,14 @@
       "slug": "dead-cells",
       "status": "verified",
       "trophies": 54
+    },
+    {
+      "file": "dead-space-remake.json",
+      "name": "Dead Space Remake",
+      "roadmaps": 5,
+      "slug": "dead-space-remake",
+      "status": "verified",
+      "trophies": 48
     },
     {
       "file": "death-stranding.json",
@@ -298,6 +330,14 @@
       "trophies": 54
     },
     {
+      "file": "grand-theft-auto-v.json",
+      "name": "Grand Theft Auto V",
+      "roadmaps": 5,
+      "slug": "grand-theft-auto-v",
+      "status": "verified",
+      "trophies": 51
+    },
+    {
       "file": "hades.json",
       "name": "Hades",
       "roadmaps": 6,
@@ -360,6 +400,14 @@
       "slug": "horizon-zero-dawn",
       "status": "verified",
       "trophies": 56
+    },
+    {
+      "file": "inside.json",
+      "name": "INSIDE",
+      "roadmaps": 3,
+      "slug": "inside",
+      "status": "verified",
+      "trophies": 14
     },
     {
       "file": "it-takes-two.json",
@@ -456,6 +504,14 @@
       "slug": "metaphor-refantazio",
       "status": "review",
       "trophies": 44
+    },
+    {
+      "file": "mixtape.json",
+      "name": "Mixtape",
+      "roadmaps": 2,
+      "slug": "mixtape",
+      "status": "verified",
+      "trophies": 27
     },
     {
       "file": "monster-hunter-world.json",
@@ -626,6 +682,14 @@
       "trophies": 31
     },
     {
+      "file": "rise-of-the-ronin.json",
+      "name": "Rise of the Ronin",
+      "roadmaps": 5,
+      "slug": "rise-of-the-ronin",
+      "status": "verified",
+      "trophies": 51
+    },
+    {
       "file": "road-96.json",
       "name": "Road 96",
       "roadmaps": 7,
@@ -780,9 +844,9 @@
   ],
   "schemaVersion": 1,
   "totals": {
-    "games": 97,
-    "redirects": 19,
-    "roadmaps": 596,
-    "trophies": 4233
+    "games": 105,
+    "redirects": 39,
+    "roadmaps": 630,
+    "trophies": 4559
   }
 }

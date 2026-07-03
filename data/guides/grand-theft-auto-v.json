@@ -1,0 +1,820 @@
+{
+  "game": {
+    "avoid_if": "Evite se você quer uma platina offline ou curta; GTA Online e obrigatório.",
+    "before_you_start": "Grand Theft Auto V é uma platina longa, híbrida entre campanha single-player, 100% de conclusão, medalhas de ouro, coletáveis, desafios de mundo aberto e GTA Online. A lista base PS4/PS5 possui 51 troféus, não exige DLCs, mas exige online/multiplayer por causa dos troféus de GTA Online, incluindo Rank 100, Numero Uno, Decorated, Survival, Crew, Rally, lojas, apartamento e atividades online.\n\nNo single-player, o jogador deve completar a história escolhendo o final correto para preservar todos os protagonistas, buscar 70 medalhas de ouro em missões e Strangers and Freaks, atingir 100% de conclusão, explorar Los Santos/Blaine County, completar coletáveis como Spaceship Parts, Letter Scraps, Nuclear Waste, Stunt Jumps, Under the Bridge e Knife Flights, além de hobbies, propriedades e atividades específicas. A escolha final da campanha pode tornar alguns troféus indisponíveis no pós-game, então o caminho seguro é escolher Option C / Deathwish. Este guia cobre a platina base de Grand Theft Auto V no PS4/PS5. DLCs como Heists, Rockstar Editor e Doomsday Heist possuem troféus separados e não entram na platina base.",
+    "best_for": "Ideal para quem quer uma platina longa de mundo aberto com 100% robusto e um bloco online planejado.",
+    "cleanup_advice": "Use replay de missões para medalhas de ouro e free roam pós-história com os três protagonistas preservados para 100%, coletáveis e misc.",
+    "cover_image": "/assets/games/grand-theft-auto-v/cover.png",
+    "coverage_level": "complete",
+    "created_at": "2026-07-03 14:36:26",
+    "difficulty": 7,
+    "difficulty_reason": "Dificuldade editorial 7/10: a campanha é acessível, mas Rank 100, Numero Uno, Decorated, online obrigatório e disponibilidade/boosting elevam a platina.",
+    "dlc_scope": "Base game sem DLCs. Heists, Rockstar Editor e Doomsday Heist possuem troféus separados e não entram nos 51 troféus base.",
+    "editorial_notes": "Fontes consultadas: PlayStation oficial, Rockstar, PSNProfiles, TrueTrophies, PlayStationTrophies e guias de coletáveis. Guia restrito a Grand Theft Auto V base PS4/PS5, com DLCs separados da platina.",
+    "editorial_review_status": "verified",
+    "editorial_status": "published",
+    "first_run_advice": "Jogue a história até o final escolhendo Option C / Deathwish, fazendo propriedades e atividades de personagem quando possível.",
+    "grind_summary": "Grind alto: Rank 100, Decorated, Numero Uno, 70 medalhas de ouro, 100%, dinheiro e diversos checklists online/offline.",
+    "guide_avoid": null,
+    "guide_best_moment": null,
+    "guide_dlc": null,
+    "guide_grind": null,
+    "guide_ideal": null,
+    "guide_online": null,
+    "guide_runs": null,
+    "image": "/assets/games/grand-theft-auto-v/hero.jpg",
+    "is_verified": 1,
+    "last_reviewed_at": "2026-07-01",
+    "missable": "Tem perdíveis por escolha final/personagem. O caminho seguro e Option C / Deathwish.",
+    "missable_summary": "Perdíveis: 6 riscos reais por final/personagem: TP Industries Arms Race, Red Mist, Kifflom!, Three Man Army, Altruist Acolyte e Wanted: Alive or Alive.",
+    "name": "Grand Theft Auto V",
+    "online_summary": "Online obrigatório. Online direto: 17 troféus de GTA Online; online total com a platina por dependencia: 18.",
+    "quality_warnings": "[]",
+    "reviewed_by": "AtlasAchievement Editorial",
+    "runs_summary": "1 jogada da campanha com final correto, replay de missões para ouros e bloco obrigatório de GTA Online.",
+    "slug": "grand-theft-auto-v",
+    "time": "150-200h",
+    "time_bucket": "long",
+    "time_max_hours": 200,
+    "time_min_hours": 150,
+    "time_reason": "A estimativa cobre 50-60h de single-player e 100h+ de GTA Online para Rank 100, awards e atividades específicas.",
+    "time_sort_hours": 150,
+    "updated_at": "2026-07-03 14:38:32",
+    "verification_note": "Guia verificado para Grand Theft Auto V PS4/PS5 Enhanced: 51 troféus base, 1/3/5/42, 150-200h, dificuldade 7/10, online direto 17, multiplayer obrigatório, coop 0, dificuldade 0, perdíveis 6 e DLC não necessário.",
+    "verification_status": "verified",
+    "walkthrough": ""
+  },
+  "redirects": [
+    "grand-theft-auto-5",
+    "gta-v",
+    "gtav"
+  ],
+  "roadmaps": [
+    {
+      "content": "{\"title\":\"Campanha com final seguro\",\"focus\":\"História / final\",\"objective\":\"Completar a história escolhendo Option C / Deathwish.\",\"actions\":[\"Complete a campanha.\",\"Faça missões de propriedade/personagem quando possível.\",\"Inicie Kifflom, Rampages, bail bonds e atividades dos protagonistas.\"],\"warning\":\"A escolha final pode tornar troféus indisponíveis no pós-game; guarde save manual antes da missão final.\",\"result\":\"História concluída, personagens preservados e free roam seguro para cleanup.\"}",
+      "step_order": 1
+    },
+    {
+      "content": "{\"title\":\"100% single-player e coletáveis\",\"focus\":\"100% / coletáveis\",\"objective\":\"Fazer Career Criminal e os coletáveis principais.\",\"actions\":[\"Colete Spaceship Parts, Letter Scraps e Nuclear Waste.\",\"Complete Stunt Jumps, Under the Bridge, Knife Flights, hobbies/pastimes, Rampages e mapa.\",\"Use checklist manual e quick save.\"],\"warning\":\"Close Shave e Show Off podem exigir várias tentativas.\",\"result\":\"100% single-player encaminhado ou concluído.\"}",
+      "step_order": 2
+    },
+    {
+      "content": "{\"title\":\"70 medalhas de ouro e misc single-player\",\"focus\":\"Replay / misc\",\"objective\":\"Fazer Solid Gold, Baby! e misc offline.\",\"actions\":[\"Repita missões e Strangers and Freaks por replay.\",\"Complete dinheiro, bolsa, Three Man Army, tubarão, Los Santos Customs, armas e primeira pessoa.\"],\"warning\":\"Planeje dinheiro antes/depois das assassination missions.\",\"result\":\"Bloco offline concluído.\"}",
+      "step_order": 3
+    },
+    {
+      "content": "{\"title\":\"GTA Online: base, Rank e atividades\",\"focus\":\"Online / rank\",\"objective\":\"Completar tutorial, ranks e atividades básicas.\",\"actions\":[\"Chegue aos ranks 25, 50 e 100.\",\"Compre apartamento/garagem/veículo segurado.\",\"Faça Stick Up Kid, Clean Sweep, Survival e atividades de Enjoy Your Stay.\"],\"warning\":\"Online é obrigatório; valide servidores e população.\",\"result\":\"Progresso online principal encaminhado.\"}",
+      "step_order": 4
+    },
+    {
+      "content": "{\"title\":\"GTA Online: boosting/troféus específicos\",\"focus\":\"Boosting / multiplayer\",\"objective\":\"Fechar Numero Uno, The Midnight Club, Backseat Driver, Crew Cut, Full Refund e Decorated.\",\"actions\":[\"Organize parceiros para modos competitivos e Rally.\",\"Escolha Platinum Awards mais rápidos.\",\"Revise todos os troféus online diretos.\"],\"warning\":\"Alguns troféus exigem outros jogadores.\",\"result\":\"Troféus online concluídos e platina Los Santos Legend desbloqueada.\"}",
+      "step_order": 5
+    }
+  ],
+  "schemaVersion": 1,
+  "seedExtras": {
+    "aliases": [
+      "gta-v",
+      "gtav",
+      "grand-theft-auto-5"
+    ],
+    "attentionPoints": [
+      {
+        "tags": [
+          "Option C"
+        ],
+        "text": "Escolha Option C / Deathwish para preservar os três protagonistas e evitar bloqueios no pós-game.",
+        "title": "Option C / Deathwish",
+        "type": "Perdível"
+      },
+      {
+        "tags": [
+          "Trevor"
+        ],
+        "text": "Depende de Trevor e do McKenzie Field Hangar; faça antes do final ou mantenha Trevor com Option C.",
+        "title": "TP Industries Arms Race",
+        "type": "Perdível"
+      },
+      {
+        "tags": [
+          "Trevor"
+        ],
+        "text": "Complete os Rampages com Trevor antes de qualquer final que possa removê-lo do pós-game.",
+        "title": "Red Mist",
+        "type": "Perdível"
+      },
+      {
+        "tags": [
+          "Michael",
+          "Questline"
+        ],
+        "text": "Questline longa de Michael; avance com checklist e preserve os protagonistas escolhendo Option C / Deathwish.",
+        "title": "Kifflom!",
+        "type": "Perdível"
+      },
+      {
+        "tags": [
+          "Michael",
+          "Franklin",
+          "Trevor"
+        ],
+        "text": "Exige Michael, Franklin e Trevor disponíveis ao mesmo tempo; faça antes do final ou depois de escolher Option C.",
+        "title": "Three Man Army",
+        "type": "Perdível"
+      },
+      {
+        "tags": [
+          "Trevor"
+        ],
+        "text": "Entregue uma vítima ao culto Altruist com Trevor antes de qualquer final que possa removê-lo.",
+        "title": "Altruist Acolyte",
+        "type": "Perdível"
+      },
+      {
+        "tags": [
+          "Trevor",
+          "Maude"
+        ],
+        "text": "Entregue um alvo vivo para Maude com Trevor; não mate o alvo e não deixe para uma rota sem Trevor.",
+        "title": "Wanted: Alive or Alive",
+        "type": "Perdível"
+      },
+      {
+        "tags": [
+          "Online",
+          "GTA Online"
+        ],
+        "text": "Valide PS Plus, servidores e população; planeje Rank 100, Numero Uno, Decorated, Backseat Driver, Crew Cut, lojas e apartamento.",
+        "title": "GTA Online obrigatório",
+        "type": "Online"
+      },
+      {
+        "tags": [
+          "DLC não necessário"
+        ],
+        "text": "Heists, Rockstar Editor e Doomsday Heist têm troféus separados e não entram nos 51 troféus base.",
+        "title": "DLCs separados",
+        "type": "Escopo"
+      },
+      {
+        "tags": [
+          "Sem dificuldade"
+        ],
+        "text": "Não há troféus ligados a dificuldade selecionável; a dificuldade 7/10 é apenas avaliação editorial.",
+        "title": "Dificuldade 0",
+        "type": "Dificuldade"
+      }
+    ],
+    "checklist": [
+      "Confirmar 51 troféus base, não 78 com DLC.",
+      "Concluir campanha escolhendo Option C / Deathwish.",
+      "Fazer 100% single-player para Career Criminal.",
+      "Ganhar 70 medalhas de ouro para Solid Gold, Baby!.",
+      "Completar Spaceship Parts, Letter Scraps, Nuclear Waste, Stunt Jumps, Under the Bridge e Knife Flights.",
+      "Fechar misc single-player e A New Perspective.",
+      "Completar tutorial e grinds de Rank 25/50/100 no GTA Online.",
+      "Fazer Numero Uno, Decorated, Survival, Rally, Crew, lojas, apartamento e demais atividades online.",
+      "Conferir online direto 17, multiplayer 17, coop 0, dificuldade 0 e DLC não necessário."
+    ],
+    "editorial_summary": [
+      "Grand Theft Auto V é uma platina longa, híbrida entre campanha single-player, 100% de conclusão, medalhas de ouro, coletáveis, desafios de mundo aberto e GTA Online. A lista base PS4/PS5 possui 51 troféus, não exige DLCs, mas exige online/multiplayer por causa dos troféus de GTA Online, incluindo Rank 100, Numero Uno, Decorated, Survival, Crew, Rally, lojas, apartamento e atividades online.\n\nNo single-player, o jogador deve completar a história escolhendo o final correto para preservar todos os protagonistas, buscar 70 medalhas de ouro em missões e Strangers and Freaks, atingir 100% de conclusão, explorar Los Santos/Blaine County, completar coletáveis como Spaceship Parts, Letter Scraps, Nuclear Waste, Stunt Jumps, Under the Bridge e Knife Flights, além de hobbies, propriedades e atividades específicas. A escolha final da campanha pode tornar alguns troféus indisponíveis no pós-game, então o caminho seguro é escolher Option C / Deathwish. Este guia cobre a platina base de Grand Theft Auto V no PS4/PS5. DLCs como Heists, Rockstar Editor e Doomsday Heist possuem troféus separados e não entram na platina base."
+    ],
+    "faq": [
+      {
+        "answer": "Sim. A platina exige 17 troféus online diretos de GTA Online, incluindo Rank 100, Numero Uno, Decorated e atividades online.",
+        "question": "GTA V tem troféus online?"
+      },
+      {
+        "answer": "Coop de campanha não. Multiplayer/atividades com outros jogadores sim, por causa de troféus como Backseat Driver, Crew Cut, Full Refund, Numero Uno e Decorated.",
+        "question": "Precisa de coop ou outros jogadores?"
+      },
+      {
+        "answer": "Sim. A escolha final pode bloquear atividades de personagens. Use Option C / Deathwish e acompanhe TP Industries Arms Race, Red Mist, Kifflom!, Three Man Army, Altruist Acolyte e Wanted: Alive or Alive.",
+        "question": "Tem troféus perdíveis?"
+      },
+      {
+        "answer": "Não. Não há troféus ligados a dificuldade selecionável; o filtro Dificuldade deve ficar 0.",
+        "question": "A dificuldade afeta troféus?"
+      },
+      {
+        "answer": "São 17 diretos. Se a platina herdar tags no projeto, o total visual pode aparecer como 18 por causa de Los Santos Legend.",
+        "question": "Quantos troféus online diretos existem?"
+      },
+      {
+        "answer": "Sim. Backseat Driver exige Rally Mode no GTA Online, e Crew Cut exige concluir um Job como membro de uma Crew.",
+        "question": "Backseat Driver e Crew Cut são online?"
+      },
+      {
+        "answer": "Escolha Option C / Deathwish para preservar Michael, Franklin e Trevor no pós-game.",
+        "question": "Qual final escolher?"
+      },
+      {
+        "answer": "Uma jogada da campanha é suficiente se escolher o final correto, mais o bloco de GTA Online.",
+        "question": "Quantas jogadas são necessárias?"
+      },
+      {
+        "answer": "Sim. Você pode repetir missões para buscar medalhas de ouro.",
+        "question": "Existe replay de missões?"
+      },
+      {
+        "answer": "Sim. Career Criminal exige 100% de conclusão.",
+        "question": "Precisa de 100% no single-player?"
+      },
+      {
+        "answer": "Sim. Solid Gold, Baby! exige 70 medalhas em missões e Strangers and Freaks.",
+        "question": "Precisa de 70 medalhas de ouro?"
+      },
+      {
+        "answer": "Não. O base game tem 51 troféus; Heists, Rockstar Editor e Doomsday Heist elevam o total para 78, mas ficam fora da platina base.",
+        "question": "Os DLCs são necessários?"
+      },
+      {
+        "answer": "Porque 78 é o total com DLCs. A platina base usa 51 troféus.",
+        "question": "Por que aparecem 78 troféus em algumas listas?"
+      },
+      {
+        "answer": "Não como escopo principal. Este guia usa a lista enhanced PS4/PS5 com 51 troféus base, incluindo A New Perspective.",
+        "question": "O guia é do PS3?"
+      },
+      {
+        "answer": "Não. Este guia é da platina base de Grand Theft Auto V, embora ela exija troféus de GTA Online.",
+        "question": "GTA Online standalone entra neste guia?"
+      },
+      {
+        "answer": "GTA Online, especialmente Rank 100, Decorated, Numero Uno e atividades que exigem outros jogadores.",
+        "question": "Qual é o maior gargalo?"
+      }
+    ],
+    "note": "Campos exportados para auditoria. O SQLite atual nao possui colunas nativas para todos esses extras; a importacao preserva o que o banco suporta.",
+    "quickDecision": {
+      "coopRequired": "Não; há multiplayer/atividades com outros jogadores",
+      "difficulty": "7/10",
+      "dlcRequired": "Não",
+      "firstAction": "Comece validando GTA Online e jogue a campanha planejando Option C / Deathwish.",
+      "mainAttention": "Rank 100, Numero Uno, Decorated e final seguro são os gargalos.",
+      "missables": "Sim",
+      "onlineRequired": "Sim",
+      "runs": "1 campanha + GTA Online",
+      "time": "150-200h"
+    },
+    "quick_plan": [
+      {
+        "detail": "Complete a história e escolha Option C / Deathwish.",
+        "number": 1,
+        "title": "Campanha com final seguro"
+      },
+      {
+        "detail": "Career Criminal, coletáveis, hobbies e exploração.",
+        "number": 2,
+        "title": "100% e coletáveis"
+      },
+      {
+        "detail": "Replay de missões e troféus single-player restantes.",
+        "number": 3,
+        "title": "70 ouros e misc"
+      },
+      {
+        "detail": "Tutorial, ranks, apartamento, lojas, survival e atividades.",
+        "number": 4,
+        "title": "GTA Online base"
+      },
+      {
+        "detail": "Numero Uno, The Midnight Club, Backseat Driver, Crew Cut, Full Refund e Decorated.",
+        "number": 5,
+        "title": "Boosting online"
+      }
+    ],
+    "seo": {
+      "description": "Guia de platina de Grand Theft Auto V no PS4/PS5 Enhanced, com 51 troféus base, 150-200h, online obrigatório, perdíveis por final e DLCs separados.",
+      "image": "/assets/games/grand-theft-auto-v/hero.jpg",
+      "keywords": "GTA V troféus, Grand Theft Auto V platina, GTA V PS5 trophy guide, GTA Online Numero Uno Decorated",
+      "title": "Grand Theft Auto V: guia de troféus e platina PS4/PS5 | AtlasAchievement"
+    },
+    "tags": [
+      "PS4",
+      "PS5",
+      "Online obrigatório",
+      "Multiplayer obrigatório",
+      "Sem coop",
+      "Tem perdíveis",
+      "Sem dificuldade",
+      "Replay de missões",
+      "Free roam",
+      "GTA Online",
+      "DLC não necessário"
+    ]
+  },
+  "slug": "grand-theft-auto-v",
+  "trophies": [
+    {
+      "description": "Desbloqueie todos os troféus base de Grand Theft Auto V.",
+      "is_missable": 0,
+      "is_spoiler": 0,
+      "name": "Los Santos Legend",
+      "name_pt": "Lenda de Los Santos",
+      "tip": "A platina exige campanha, 100% single-player e GTA Online.",
+      "trophy_code": "grand-theft-auto-v-los-santos-legend",
+      "type": "Platina"
+    },
+    {
+      "description": "Complete a introdução e chegue a Los Santos.",
+      "is_missable": 0,
+      "is_spoiler": 1,
+      "name": "Welcome to Los Santos",
+      "name_pt": "Bem-vindo a Los Santos",
+      "tip": "Troféu automático de história.",
+      "trophy_code": "grand-theft-auto-v-welcome-to-los-santos",
+      "type": "Bronze"
+    },
+    {
+      "description": "Complete The Jewel Store Job.",
+      "is_missable": 0,
+      "is_spoiler": 1,
+      "name": "Diamond Hard",
+      "name_pt": "Diamante Duro",
+      "tip": "Troféu automático de história.",
+      "trophy_code": "grand-theft-auto-v-diamond-hard",
+      "type": "Bronze"
+    },
+    {
+      "description": "Complete The Merryweather Heist.",
+      "is_missable": 0,
+      "is_spoiler": 1,
+      "name": "Subversive",
+      "name_pt": "Subversivo",
+      "tip": "Troféu automático de história.",
+      "trophy_code": "grand-theft-auto-v-subversive",
+      "type": "Bronze"
+    },
+    {
+      "description": "Complete Blitz Play.",
+      "is_missable": 0,
+      "is_spoiler": 1,
+      "name": "Blitzed",
+      "name_pt": "Blitz",
+      "tip": "Troféu automático de história.",
+      "trophy_code": "grand-theft-auto-v-blitzed",
+      "type": "Bronze"
+    },
+    {
+      "description": "Complete The Paleto Score.",
+      "is_missable": 0,
+      "is_spoiler": 1,
+      "name": "Small Town, Big Job",
+      "name_pt": "Cidade Pequena, Grande Trabalho",
+      "tip": "Troféu automático de história.",
+      "trophy_code": "grand-theft-auto-v-small-town-big-job",
+      "type": "Bronze"
+    },
+    {
+      "description": "Complete The Bureau Raid.",
+      "is_missable": 0,
+      "is_spoiler": 1,
+      "name": "The Government Gimps",
+      "name_pt": "Os Capachos do Governo",
+      "tip": "Troféu automático de história.",
+      "trophy_code": "grand-theft-auto-v-the-government-gimps",
+      "type": "Bronze"
+    },
+    {
+      "description": "Complete The Big Score.",
+      "is_missable": 0,
+      "is_spoiler": 1,
+      "name": "The Big One!",
+      "name_pt": "O Grande Golpe!",
+      "tip": "Troféu automático de história.",
+      "trophy_code": "grand-theft-auto-v-the-big-one",
+      "type": "Prata"
+    },
+    {
+      "description": "Ganhe 70 medalhas de ouro em missões principais e Strangers and Freaks.",
+      "is_missable": 0,
+      "is_spoiler": 0,
+      "name": "Solid Gold, Baby!",
+      "name_pt": "Ouro Maciço, Baby!",
+      "tip": "Use replay de missões para repetir objetivos.",
+      "trophy_code": "grand-theft-auto-v-solid-gold-baby",
+      "type": "Ouro"
+    },
+    {
+      "description": "Atinja 100% de conclusão no single-player.",
+      "is_missable": 0,
+      "is_spoiler": 0,
+      "name": "Career Criminal",
+      "name_pt": "Criminoso Profissional",
+      "tip": "Inclui história, Strangers and Freaks, hobbies, eventos aleatórios, misc e várias atividades específicas.",
+      "trophy_code": "grand-theft-auto-v-career-criminal",
+      "type": "Ouro"
+    },
+    {
+      "description": "Explore todo o mapa de Los Santos e Blaine County.",
+      "is_missable": 0,
+      "is_spoiler": 0,
+      "name": "San Andreas Sightseer",
+      "name_pt": "Turista de San Andreas",
+      "tip": "Voe/dirija por áreas não reveladas até completar a exploração.",
+      "trophy_code": "grand-theft-auto-v-san-andreas-sightseer",
+      "type": "Prata"
+    },
+    {
+      "description": "Compre a Downtown Cab Co. com Franklin e complete uma corrida privada.",
+      "is_missable": 0,
+      "is_spoiler": 0,
+      "name": "All's Fare in Love and War",
+      "name_pt": "Tudo Vale no Amor e na Guerra",
+      "tip": "Faça com Franklin durante o cleanup de propriedades/offline.",
+      "trophy_code": "grand-theft-auto-v-alls-fare-in-love-and-war",
+      "type": "Bronze"
+    },
+    {
+      "description": "Compre o McKenzie Field Hangar com Trevor e vença o arms race.",
+      "is_missable": 1,
+      "is_spoiler": 0,
+      "name": "TP Industries Arms Race",
+      "name_pt": "Corrida Armamentista da TP Industries",
+      "tip": "Pode ser perdido se a escolha final impedir o uso de Trevor; escolha Option C / Deathwish.",
+      "trophy_code": "grand-theft-auto-v-tp-industries-arms-race",
+      "type": "Bronze"
+    },
+    {
+      "description": "Ganhe medalha de ouro em todos os hobbies e pastimes aplicáveis.",
+      "is_missable": 0,
+      "is_spoiler": 0,
+      "name": "Multi-Disciplined",
+      "name_pt": "Multidisciplinado",
+      "tip": "Use checklist para tiro, corrida, voo, triatlo e demais categorias.",
+      "trophy_code": "grand-theft-auto-v-multi-disciplined",
+      "type": "Bronze"
+    },
+    {
+      "description": "Colete as 50 Spaceship Parts.",
+      "is_missable": 0,
+      "is_spoiler": 0,
+      "name": "From Beyond the Stars",
+      "name_pt": "Das Estrelas",
+      "tip": "Use mapa/checklist de coletáveis.",
+      "trophy_code": "grand-theft-auto-v-from-beyond-the-stars",
+      "type": "Bronze"
+    },
+    {
+      "description": "Colete os 50 Letter Scraps e resolva o mistério.",
+      "is_missable": 0,
+      "is_spoiler": 0,
+      "name": "A Mystery, Solved",
+      "name_pt": "Um Mistério Resolvido",
+      "tip": "Use checklist para não confundir letras já coletadas.",
+      "trophy_code": "grand-theft-auto-v-a-mystery-solved",
+      "type": "Bronze"
+    },
+    {
+      "description": "Troféu automático de história envolvendo Michael e Trevor.",
+      "is_missable": 0,
+      "is_spoiler": 1,
+      "name": "A Friendship Resurrected",
+      "name_pt": "Uma Amizade Ressuscitada",
+      "tip": "Não é perdível; apenas avance a campanha.",
+      "trophy_code": "grand-theft-auto-v-a-friendship-resurrected",
+      "type": "Bronze"
+    },
+    {
+      "description": "Colete os 30 Nuclear Waste.",
+      "is_missable": 0,
+      "is_spoiler": 0,
+      "name": "Waste Management",
+      "name_pt": "Gerenciamento de Resíduos",
+      "tip": "Exige propriedade/submarino; deixe para cleanup.",
+      "trophy_code": "grand-theft-auto-v-waste-management",
+      "type": "Bronze"
+    },
+    {
+      "description": "Complete todos os Rampages com Trevor.",
+      "is_missable": 1,
+      "is_spoiler": 0,
+      "name": "Red Mist",
+      "name_pt": "Névoa Vermelha",
+      "tip": "Pode ser afetado pela escolha final se Trevor ficar indisponível.",
+      "trophy_code": "grand-theft-auto-v-red-mist",
+      "type": "Bronze"
+    },
+    {
+      "description": "Complete todos os 50 Stunt Jumps.",
+      "is_missable": 0,
+      "is_spoiler": 0,
+      "name": "Show Off",
+      "name_pt": "Exibido",
+      "tip": "Use quick save e marque cada salto.",
+      "trophy_code": "grand-theft-auto-v-show-off",
+      "type": "Bronze"
+    },
+    {
+      "description": "Complete a questline Epsilon.",
+      "is_missable": 1,
+      "is_spoiler": 0,
+      "name": "Kifflom!",
+      "name_pt": "Kifflom!",
+      "tip": "É um checklist longo de Michael; faça antes do final ou escolha Option C / Deathwish.",
+      "trophy_code": "grand-theft-auto-v-kifflom",
+      "type": "Bronze"
+    },
+    {
+      "description": "Sobreviva 3 minutos com Michael, Franklin e Trevor juntos com 3 estrelas de procurado.",
+      "is_missable": 1,
+      "is_spoiler": 0,
+      "name": "Three Man Army",
+      "name_pt": "Exército de Três Homens",
+      "tip": "Exige os três protagonistas disponíveis; faça antes do final ou após Option C.",
+      "trophy_code": "grand-theft-auto-v-three-man-army",
+      "type": "Bronze"
+    },
+    {
+      "description": "Seja morto por um tubarão.",
+      "is_missable": 0,
+      "is_spoiler": 0,
+      "name": "Out of Your Depth",
+      "name_pt": "Fora da Sua Profundidade",
+      "tip": "Nade em alto-mar até atrair o tubarão.",
+      "trophy_code": "grand-theft-auto-v-out-of-your-depth",
+      "type": "Bronze"
+    },
+    {
+      "description": "Entregue uma vítima ao culto Altruist com Trevor.",
+      "is_missable": 1,
+      "is_spoiler": 0,
+      "name": "Altruist Acolyte",
+      "name_pt": "Acólito Altruista",
+      "tip": "Faça antes do final ou escolha Option C.",
+      "trophy_code": "grand-theft-auto-v-altruist-acolyte",
+      "type": "Bronze"
+    },
+    {
+      "description": "Gaste um total de 200 milhões entre os três personagens.",
+      "is_missable": 0,
+      "is_spoiler": 0,
+      "name": "A Lot of Cheddar",
+      "name_pt": "Uma Bolada",
+      "tip": "Use estratégias de bolsa/assassination missions para acumular dinheiro.",
+      "trophy_code": "grand-theft-auto-v-a-lot-of-cheddar",
+      "type": "Bronze"
+    },
+    {
+      "description": "Obtenha lucro no mercado de ações.",
+      "is_missable": 0,
+      "is_spoiler": 0,
+      "name": "Trading Pure Alpha",
+      "name_pt": "Negociando Alfa Puro",
+      "tip": "Compre e venda uma ação com lucro.",
+      "trophy_code": "grand-theft-auto-v-trading-pure-alpha",
+      "type": "Bronze"
+    },
+    {
+      "description": "Modifique completamente uma arma.",
+      "is_missable": 0,
+      "is_spoiler": 0,
+      "name": "Pimp My Sidearm",
+      "name_pt": "Tunar Minha Arma",
+      "tip": "Compre todos os upgrades disponíveis para uma arma elegível.",
+      "trophy_code": "grand-theft-auto-v-pimp-my-sidearm",
+      "type": "Bronze"
+    },
+    {
+      "description": "Complete Caida Libre.",
+      "is_missable": 0,
+      "is_spoiler": 1,
+      "name": "A Fair Day's Pay",
+      "name_pt": "Um Pagamento Justo",
+      "tip": "Troféu automático de história.",
+      "trophy_code": "grand-theft-auto-v-a-fair-days-pay",
+      "type": "Bronze"
+    },
+    {
+      "description": "Entregue um alvo de bail bond vivo.",
+      "is_missable": 1,
+      "is_spoiler": 0,
+      "name": "Wanted: Alive or Alive",
+      "name_pt": "Procurado: Vivo ou Vivo",
+      "tip": "Faça com Trevor antes do final ou escolha Option C.",
+      "trophy_code": "grand-theft-auto-v-wanted-alive-or-alive",
+      "type": "Bronze"
+    },
+    {
+      "description": "Modifique completamente um veículo.",
+      "is_missable": 0,
+      "is_spoiler": 0,
+      "name": "Los Santos Customs",
+      "name_pt": "Los Santos Customs",
+      "tip": "Use Los Santos Customs e instale categorias exigidas.",
+      "trophy_code": "grand-theft-auto-v-los-santos-customs",
+      "type": "Bronze"
+    },
+    {
+      "description": "Complete todos os Under the Bridge e Knife Flights.",
+      "is_missable": 0,
+      "is_spoiler": 0,
+      "name": "Close Shave",
+      "name_pt": "Por um Triz",
+      "tip": "Exige 50 pontes e 15 voos de faca; use helicóptero/avião e checklist.",
+      "trophy_code": "grand-theft-auto-v-close-shave",
+      "type": "Bronze"
+    },
+    {
+      "description": "Complete a introdução do GTA Online.",
+      "is_missable": 0,
+      "is_spoiler": 0,
+      "name": "Off the Plane",
+      "name_pt": "Fora do Avião",
+      "tip": "Online obrigatório.",
+      "trophy_code": "grand-theft-auto-v-off-the-plane",
+      "type": "Bronze"
+    },
+    {
+      "description": "Alcance Rank 25 no GTA Online.",
+      "is_missable": 0,
+      "is_spoiler": 0,
+      "name": "Three-Bit Gangster",
+      "name_pt": "Gangster de Três Tostões",
+      "tip": "Vem no caminho para Rank 100.",
+      "trophy_code": "grand-theft-auto-v-three-bit-gangster",
+      "type": "Bronze"
+    },
+    {
+      "description": "Alcance Rank 50 no GTA Online.",
+      "is_missable": 0,
+      "is_spoiler": 0,
+      "name": "Making Moves",
+      "name_pt": "Fazendo Movimentos",
+      "tip": "Vem no caminho para Rank 100.",
+      "trophy_code": "grand-theft-auto-v-making-moves",
+      "type": "Bronze"
+    },
+    {
+      "description": "Alcance Rank 100 no GTA Online.",
+      "is_missable": 0,
+      "is_spoiler": 0,
+      "name": "Above the Law",
+      "name_pt": "Acima da Lei",
+      "tip": "É um dos principais grinds da platina.",
+      "trophy_code": "grand-theft-auto-v-above-the-law",
+      "type": "Ouro"
+    },
+    {
+      "description": "Obtenha primeiro lugar em todos os tipos competitivos exigidos no GTA Online.",
+      "is_missable": 0,
+      "is_spoiler": 0,
+      "name": "Numero Uno",
+      "name_pt": "Numero Uno",
+      "tip": "Pode exigir parceiros/boosting e planejamento.",
+      "trophy_code": "grand-theft-auto-v-numero-uno",
+      "type": "Prata"
+    },
+    {
+      "description": "Vença 5 corridas com veículo customizado no GTA Online.",
+      "is_missable": 0,
+      "is_spoiler": 0,
+      "name": "The Midnight Club",
+      "name_pt": "O Clube da Meia-Noite",
+      "tip": "Organize corridas com parceiro se necessário.",
+      "trophy_code": "grand-theft-auto-v-the-midnight-club",
+      "type": "Bronze"
+    },
+    {
+      "description": "Complete todas as ondas de Survival no GTA Online.",
+      "is_missable": 0,
+      "is_spoiler": 0,
+      "name": "Unnatural Selection",
+      "name_pt": "Seleção Antinatural",
+      "tip": "Atividade online que pode exigir parceiros ou boa preparação.",
+      "trophy_code": "grand-theft-auto-v-unnatural-selection",
+      "type": "Bronze"
+    },
+    {
+      "description": "Descubra a verdade sobre Brad.",
+      "is_missable": 0,
+      "is_spoiler": 1,
+      "name": "The Moment of Truth",
+      "name_pt": "O Momento da Verdade",
+      "tip": "Troféu de história/spoiler da campanha.",
+      "trophy_code": "grand-theft-auto-v-the-moment-of-truth",
+      "type": "Bronze"
+    },
+    {
+      "description": "Como co-piloto em Rally Mode, direcione o motorista até o primeiro lugar.",
+      "is_missable": 0,
+      "is_spoiler": 0,
+      "name": "Backseat Driver",
+      "name_pt": "Motorista do Banco de Trás",
+      "tip": "Exige outro jogador dirigindo.",
+      "trophy_code": "grand-theft-auto-v-backseat-driver",
+      "type": "Bronze"
+    },
+    {
+      "description": "Sobreviva com bounty no GTA Online.",
+      "is_missable": 0,
+      "is_spoiler": 0,
+      "name": "Run Like The Wind",
+      "name_pt": "Corra Como o Vento",
+      "tip": "Online obrigatório; pode depender de sessão ativa.",
+      "trophy_code": "grand-theft-auto-v-run-like-the-wind",
+      "type": "Bronze"
+    },
+    {
+      "description": "Conclua um Gang Attack sem morrer e mate pelo menos 10 inimigos.",
+      "is_missable": 0,
+      "is_spoiler": 0,
+      "name": "Clean Sweep",
+      "name_pt": "Limpeza Total",
+      "tip": "Online obrigatório; leve armamento adequado.",
+      "trophy_code": "grand-theft-auto-v-clean-sweep",
+      "type": "Bronze"
+    },
+    {
+      "description": "Ganhe 30 Platinum Awards no GTA Online.",
+      "is_missable": 0,
+      "is_spoiler": 0,
+      "name": "Decorated",
+      "name_pt": "Condecorado",
+      "tip": "Escolha awards mais fáceis e acompanhe o progresso manualmente.",
+      "trophy_code": "grand-theft-auto-v-decorated",
+      "type": "Prata"
+    },
+    {
+      "description": "Assalte todas as lojas no GTA Online.",
+      "is_missable": 0,
+      "is_spoiler": 0,
+      "name": "Stick Up Kid",
+      "name_pt": "Garoto dos Assaltos",
+      "tip": "Use mapa/checklist das lojas.",
+      "trophy_code": "grand-theft-auto-v-stick-up-kid",
+      "type": "Bronze"
+    },
+    {
+      "description": "Participe das atividades exigidas em Los Santos no GTA Online.",
+      "is_missable": 0,
+      "is_spoiler": 0,
+      "name": "Enjoy Your Stay",
+      "name_pt": "Aproveite a Estadia",
+      "tip": "Algumas atividades ficam mais viáveis com parceiros.",
+      "trophy_code": "grand-theft-auto-v-enjoy-your-stay",
+      "type": "Bronze"
+    },
+    {
+      "description": "Complete um Job como membro de uma Crew.",
+      "is_missable": 0,
+      "is_spoiler": 0,
+      "name": "Crew Cut",
+      "name_pt": "Corte de Tripulação",
+      "tip": "Exige entrar em Crew e concluir um Job.",
+      "trophy_code": "grand-theft-auto-v-crew-cut",
+      "type": "Bronze"
+    },
+    {
+      "description": "Mate o ladrão que te assaltou no GTA Online.",
+      "is_missable": 0,
+      "is_spoiler": 0,
+      "name": "Full Refund",
+      "name_pt": "Reembolso Total",
+      "tip": "Exige interação online com mugger/outro jogador.",
+      "trophy_code": "grand-theft-auto-v-full-refund",
+      "type": "Bronze"
+    },
+    {
+      "description": "Chame um gang backup pela primeira vez no GTA Online.",
+      "is_missable": 0,
+      "is_spoiler": 0,
+      "name": "Dialling Digits",
+      "name_pt": "Discando Dígitos",
+      "tip": "Online obrigatório.",
+      "trophy_code": "grand-theft-auto-v-dialling-digits",
+      "type": "Bronze"
+    },
+    {
+      "description": "Compre apartamento, garagem e veículo segurado no GTA Online.",
+      "is_missable": 0,
+      "is_spoiler": 0,
+      "name": "American Dream",
+      "name_pt": "Sonho Americano",
+      "tip": "Guarde dinheiro durante o grind online.",
+      "trophy_code": "grand-theft-auto-v-american-dream",
+      "type": "Bronze"
+    },
+    {
+      "description": "Complete a missão final da história.",
+      "is_missable": 0,
+      "is_spoiler": 1,
+      "name": "To Live or Die in Los Santos",
+      "name_pt": "Viver ou Morrer em Los Santos",
+      "tip": "Escolha Option C / Deathwish para preservar os três protagonistas.",
+      "trophy_code": "grand-theft-auto-v-to-live-or-die-in-los-santos",
+      "type": "Prata"
+    },
+    {
+      "description": "Jogue GTA V em primeira pessoa por 15 horas.",
+      "is_missable": 0,
+      "is_spoiler": 0,
+      "name": "A New Perspective",
+      "name_pt": "Uma Nova Perspectiva",
+      "tip": "Troféu da versão enhanced PS4/PS5.",
+      "trophy_code": "grand-theft-auto-v-a-new-perspective",
+      "type": "Bronze"
+    }
+  ]
+}
