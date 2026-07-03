@@ -63,6 +63,39 @@
   const FINAL_FANTASY_VII_REBIRTH_TAG_FIXES_BY_ID = {
     'ff7-rebirth-professional-handler': { remove: ['difficulty'] }
   };
+  const DEAD_SPACE_REMAKE_TAGS_BY_ID = {
+    'dead-space-remake-welcome-aboard': ['story'],
+    'dead-space-remake-lab-rat': ['story'],
+    'dead-space-remake-all-systems-go': ['story'],
+    'dead-space-remake-cannon-fodder': ['story'],
+    'dead-space-remake-true-believer': ['story'],
+    'dead-space-remake-greenhouse-effect': ['story'],
+    'dead-space-remake-sos': ['story'],
+    'dead-space-remake-strange-transmissions': ['story'],
+    'dead-space-remake-wreckage': ['story'],
+    'dead-space-remake-keeper-of-the-faith': ['story'],
+    'dead-space-remake-betrayed': ['story'],
+    'dead-space-remake-exodus': ['story'],
+    'dead-space-remake-brute-force': ['story'],
+    'dead-space-remake-exterminator': ['story'],
+    'dead-space-remake-get-off-my-ship': ['story'],
+    'dead-space-remake-mindless-prey': ['story'],
+    'dead-space-remake-set-a-benchmark': ['difficulty'],
+    'dead-space-remake-untouchable': ['difficulty', 'run'],
+    'dead-space-remake-full-arsenal': ['collectible'],
+    'dead-space-remake-built-to-order': ['collectible', 'cleanup'],
+    'dead-space-remake-story-teller': ['collectible', 'cleanup'],
+    'dead-space-remake-legend-teller': ['collectible', 'cleanup'],
+    'dead-space-remake-merchant': ['collectible', 'cleanup', 'run'],
+    'dead-space-remake-full-clearance': ['collectible', 'cleanup'],
+    'dead-space-remake-theres-always-peng': ['collectible', 'run'],
+    'dead-space-remake-marked': ['collectible'],
+    'dead-space-remake-reunion': ['missable', 'collectible', 'run'],
+    'dead-space-remake-front-toward-enemy': ['missable', 'run'],
+    'dead-space-remake-one-gun': ['run'],
+    'dead-space-remake-maxed-out': ['grind', 'cleanup', 'run'],
+    'dead-space-remake-surgeon': ['grind']
+  };
   const EDITORIAL_TRUST_STATUSES = {
     verified: {
       label: 'Verificado',
@@ -215,6 +248,15 @@
     tags.push({ id, ...TROPHY_RISK_DEFINITIONS[id] });
   }
 
+  function applyDeadSpaceRemakeTagOverrides(tags = [], trophyId = '') {
+    if (!String(trophyId || '').startsWith('dead-space-remake-')) return tags;
+    const fix = DEAD_SPACE_REMAKE_TAGS_BY_ID[trophyId] || [];
+    const managedIds = new Set(['missable', 'collectible', 'story', 'difficulty', 'cleanup', 'grind', 'run']);
+    const nextTags = tags.filter(tag => !managedIds.has(tag?.id));
+    fix.forEach(id => pushRiskTag(nextTags, id));
+    return nextTags;
+  }
+
   function getTrophyRiskTags(trophy = {}) {
     const text = normalizeRiskText(`${trophy?.name || ''} ${trophy?.description || ''} ${trophy?.tip || ''}`);
     const tags = [];
@@ -251,7 +293,7 @@
       (fix.add || []).forEach(id => pushRiskTag(filtered, id));
       return filtered;
     }
-    return tags;
+    return applyDeadSpaceRemakeTagOverrides(tags, trophyId);
   }
 
   function getTrophyRiskTokenString(trophy = {}) {

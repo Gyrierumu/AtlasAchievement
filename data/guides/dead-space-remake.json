@@ -29,7 +29,7 @@
     "missable_summary": "2 perdíveis principais: Front Toward Enemy, por ignorar a Shooting Gallery no Chapter 9, e Reunion, por finalizar New Game+ sem coletar os Marker Fragments e preparar o final alternativo.",
     "name": "Dead Space Remake",
     "online_summary": "Online: 0. Dead Space Remake é single-player e a lista PS5 não exige servidores, multiplayer, coop ou PS Plus para a platina.",
-    "quality_warnings": "[object Object]",
+    "quality_warnings": "[]",
     "reviewed_by": "AtlasAchievement Editorial",
     "runs_summary": "Mínimo de 2 jogadas, com 3 recomendadas: primeira run para campanha/coletáveis/misc, New Game+ para Marker Fragments/Reunion e Impossible Mode em run própria.",
     "slug": "dead-space-remake",
@@ -39,7 +39,7 @@
     "time_min_hours": 25,
     "time_reason": "25-35h com uma run inicial de campanha/coletáveis, New Game+ para Marker Fragments/final alternativo e uma run Impossible Mode separada.",
     "time_sort_hours": 25,
-    "updated_at": "2026-07-03 14:38:32",
+    "updated_at": "2026-07-03 17:05:40",
     "verification_note": "Guia verificado para Dead Space Remake PS5: 48 troféus, 1/2/10/35, 25-35h, dificuldade editorial 6/10 sem backup, online 0, coop 0, 2 troféus de dificuldade, 2 missables principais, New Game+ obrigatório, Impossible Mode obrigatório, sem Chapter Select e sem DLC necessário.",
     "verification_status": "verified",
     "walkthrough": null
@@ -51,23 +51,23 @@
   ],
   "roadmaps": [
     {
-      "content": "{\"number\":1,\"title\":\"Primeira run: campanha, coletáveis e side missions\",\"focus\":\"Campanha / coletáveis\",\"objective\":\"Completar a história em qualquer modo, coletar logs, schematics, armas, weapon upgrades e concluir side missions.\",\"actions\":[\"Use checklist cronológico do remake de 2023.\",\"Faça kills com armas e misc conforme aparecem.\",\"Faça Front Toward Enemy no Chapter 9 e Z-Baller no Chapter 10.\",\"Crie um save manual antes do ponto de não retorno no fim do Chapter 11.\"],\"warning\":\"Não há Chapter Select. Front Toward Enemy pode ser perdido e rotas do Dead Space original de 2008 não servem como base principal.\",\"result\":\"História concluída, base de coletáveis/side missions/misc encaminhada.\",\"isStructured\":true}",
+      "content": "{\"title\":\"Primeira run: campanha, coletáveis e side missions\",\"focus\":\"Campanha / coletáveis\",\"objective\":\"Completar a história em qualquer modo, coletar logs, schematics, armas, weapon upgrades e concluir side missions.\",\"actions\":[\"Use checklist cronológico do remake de 2023.\",\"Faça kills com armas e misc conforme aparecem.\",\"Faça Front Toward Enemy no Chapter 9 e Z-Baller no Chapter 10.\",\"Crie um save manual antes do ponto de não retorno no fim do Chapter 11.\"],\"warning\":\"Não há Chapter Select. Front Toward Enemy pode ser perdido e rotas do Dead Space original de 2008 não servem como base principal.\",\"result\":\"História concluída, base de coletáveis/side missions/misc encaminhada.\"}",
       "step_order": 1
     },
     {
-      "content": "{\"number\":2,\"title\":\"New Game+ e final alternativo\",\"focus\":\"NG+ / Marker Fragments\",\"objective\":\"Completar New Game+, coletar Marker Fragments e ver o final alternativo para Reunion.\",\"actions\":[\"Colete os 12 Marker Fragments em New Game+.\",\"Prepare o final alternativo antes de terminar a run.\",\"Continue upgrades para Maxed Out e Built To Order.\"],\"warning\":\"Marker Fragments só aparecem em New Game+. Reunion é perdível dentro da run se você terminar sem preparar o final alternativo.\",\"result\":\"Trusted Contractor, Marked, Reunion e grande parte dos upgrades concluídos.\",\"isStructured\":true}",
+      "content": "{\"title\":\"New Game+ e final alternativo\",\"focus\":\"NG+ / Marker Fragments\",\"objective\":\"Completar New Game+, coletar Marker Fragments e ver o final alternativo para Reunion.\",\"actions\":[\"Colete os 12 Marker Fragments em New Game+.\",\"Prepare o final alternativo antes de terminar a run.\",\"Continue upgrades para Maxed Out e Built To Order.\"],\"warning\":\"Marker Fragments só aparecem em New Game+. Reunion é perdível dentro da run se você terminar sem preparar o final alternativo.\",\"result\":\"Trusted Contractor, Marked, Reunion e grande parte dos upgrades concluídos.\"}",
       "step_order": 2
     },
     {
-      "content": "{\"number\":3,\"title\":\"Run One Gun, se ainda faltar\",\"focus\":\"Restrição / Plasma Cutter\",\"objective\":\"Completar a campanha usando apenas o Plasma Cutter.\",\"actions\":[\"Não dispare outras armas.\",\"Use Kinesis e Stasis conforme permitido pela estratégia do projeto.\",\"Guarde armas extras se quiser reduzir munição indesejada.\"],\"warning\":\"Não confunda ter armas no inventário com usá-las; o risco é disparar arma errada e invalidar a run.\",\"result\":\"One Gun concluído.\",\"isStructured\":true}",
+      "content": "{\"title\":\"Run One Gun, se ainda faltar\",\"focus\":\"Restrição / Plasma Cutter\",\"objective\":\"Completar a campanha usando apenas o Plasma Cutter.\",\"actions\":[\"Não dispare outras armas.\",\"Use Kinesis e Stasis conforme permitido pela estratégia do projeto.\",\"Guarde armas extras se quiser reduzir munição indesejada.\"],\"warning\":\"Não confunda ter armas no inventário com usá-las; o risco é disparar arma errada e invalidar a run.\",\"result\":\"One Gun concluído.\"}",
       "step_order": 3
     },
     {
-      "content": "{\"number\":4,\"title\":\"Impossible Mode\",\"focus\":\"Dificuldade / run completa\",\"objective\":\"Completar o jogo em Impossible Mode para Untouchable.\",\"actions\":[\"Salve com frequência.\",\"Planeje recursos, upgrades e encontros de risco.\",\"Considere backup de save conforme a política do projeto.\"],\"warning\":\"Impossible Mode é o principal gargalo da platina e pode invalidar a tentativa em caso de morte/rebaixamento.\",\"result\":\"Untouchable concluído.\",\"isStructured\":true}",
+      "content": "{\"title\":\"Impossible Mode\",\"focus\":\"Dificuldade / run completa\",\"objective\":\"Completar o jogo em Impossible Mode para Untouchable.\",\"actions\":[\"Salve com frequência.\",\"Planeje recursos, upgrades e encontros de risco.\",\"Considere backup de save conforme a política do projeto.\"],\"warning\":\"Impossible Mode é o principal gargalo da platina e pode invalidar a tentativa em caso de morte/rebaixamento.\",\"result\":\"Untouchable concluído.\"}",
       "step_order": 4
     },
     {
-      "content": "{\"number\":5,\"title\":\"Conferência final\",\"focus\":\"Checklist final\",\"objective\":\"Conferir 48 troféus, filtros, coletáveis, upgrades, NG+, final alternativo e dificuldade.\",\"actions\":[\"Confirme Online 0 e Coop 0.\",\"Confirme Dificuldade apenas em Set A Benchmark e Untouchable.\",\"Revise Front Toward Enemy, Reunion, Marker Fragments e ponto de não retorno.\"],\"warning\":\"Se algo foi deixado depois do ponto de não retorno, pode ser necessário NG+ ou nova run.\",\"result\":\"Platina Concordance Officer desbloqueada.\",\"isStructured\":true}",
+      "content": "{\"title\":\"Conferência final\",\"focus\":\"Checklist final\",\"objective\":\"Conferir 48 troféus, filtros, coletáveis, upgrades, NG+, final alternativo e dificuldade.\",\"actions\":[\"Confirme Online 0 e Coop 0.\",\"Confirme Dificuldade apenas em Set A Benchmark e Untouchable.\",\"Revise Front Toward Enemy, Reunion, Marker Fragments e ponto de não retorno.\"],\"warning\":\"Se algo foi deixado depois do ponto de não retorno, pode ser necessário NG+ ou nova run.\",\"result\":\"Platina Concordance Officer desbloqueada.\"}",
       "step_order": 5
     }
   ],
@@ -81,57 +81,87 @@
     "attentionPoints": [
       {
         "tags": [
-          "Dificuldade",
-          "Impossible Mode",
-          "Risco de run"
+          "QA",
+          "Export"
         ],
-        "text": "Untouchable exige terminar no Impossible Mode; backup de save pode reduzir o risco, mas o troféu continua sendo de Dificuldade.",
-        "title": "Impossible Mode",
-        "type": "Dificuldade"
+        "text": "Placeholders técnicos não podem aparecer no guia, checklist, FAQ, pontos de atenção ou exportação final.",
+        "title": "Sanidade editorial",
+        "type": "Qualidade"
       },
       {
         "tags": [
-          "NG+",
-          "Final alternativo"
+          "Chapter 9",
+          "Shooting Gallery",
+          "Perdível"
         ],
-        "text": "New Game+ é necessário para Trusted Contractor, Marker Fragments e o final alternativo Reunion.",
-        "title": "New Game+ obrigatório",
+        "text": "Faça a Shooting Gallery no Chapter 9, durante a passagem pela USM Valor. É um missable direto se você avançar sem concluir a atividade.",
+        "title": "Front Toward Enemy",
+        "type": "Perdível"
+      },
+      {
+        "tags": [
+          "Marker Fragments",
+          "Final alternativo",
+          "Perdível"
+        ],
+        "text": "Reunion exige New Game+, os 12 Marker Fragments e posicioná-los na Executive Chambers antes de finalizar a campanha.",
+        "title": "Reunion e Marker Fragments",
         "type": "NG+"
       },
       {
         "tags": [
-          "Save manual",
-          "Chapter 11"
+          "NG+",
+          "Coletável"
         ],
-        "text": "Não há seleção de capítulos. Faça um save manual antes do ponto de não retorno no fim do Chapter 11.",
-        "title": "Sem Chapter Select",
+        "text": "Marker Fragments não aparecem na primeira run. Eles surgem apenas em New Game+ e são necessários para o final alternativo.",
+        "title": "Marker Fragments só no NG+",
+        "type": "Coletáveis"
+      },
+      {
+        "tags": [
+          "Chapter 11",
+          "Save manual"
+        ],
+        "text": "Não há Chapter Select. Antes do fim do Chapter 11, crie um save manual e limpe logs, schematics, upgrades, side missions, Peng e misc possíveis.",
+        "title": "Ponto de não retorno",
         "type": "Ponto de não retorno"
       },
       {
         "tags": [
-          "Perdível"
+          "Dificuldade",
+          "Impossible Mode",
+          "Risco de run"
         ],
-        "text": "Front Toward Enemy e Reunion são os principais missables.",
-        "title": "Perdíveis reais",
-        "type": "Perdíveis"
-      },
-      {
-        "tags": [
-          "Coletável",
-          "Remake 2023"
-        ],
-        "text": "Dead Space Remake altera coletáveis, side missions, melhorias, recursos de segurança e inclui Marker Fragments/New Game+ para o final alternativo. Por isso, não use guia do Dead Space original de 2008 como base principal.",
-        "title": "Coletáveis do remake",
-        "type": "Coletáveis"
+        "text": "Untouchable exige terminar no Impossible Mode e é o principal gargalo da platina. Use saves com disciplina e considere backup conforme a política do projeto.",
+        "title": "Impossible Mode",
+        "type": "Dificuldade"
       },
       {
         "tags": [
           "Plasma Cutter",
           "Risco de run"
         ],
-        "text": "Planeje uma run usando apenas o Plasma Cutter ou combine com uma rota segura.",
+        "text": "Planeje uma run usando apenas o Plasma Cutter. Evite disparar qualquer outra arma durante a tentativa.",
         "title": "One Gun",
         "type": "Run"
+      },
+      {
+        "tags": [
+          "Grind",
+          "NG+",
+          "Risco de run"
+        ],
+        "text": "Exige planejamento de Power Nodes, créditos, upgrades de armas/equipamento e normalmente New Game+.",
+        "title": "Maxed Out",
+        "type": "Grind"
+      },
+      {
+        "tags": [
+          "Remake 2023"
+        ],
+        "text": "Não use rotas do Dead Space original de 2008 como base principal: coletáveis, side missions, upgrades e Marker Fragments mudaram no remake.",
+        "title": "Remake de 2023",
+        "type": "Escopo"
       }
     ],
     "checklist": [
@@ -155,6 +185,10 @@
         "question": "Dead Space Remake tem troféus online?"
       },
       {
+        "answer": "A lista PS5 possui 48 troféus: 1 platina, 2 ouro, 10 prata e 35 bronze.",
+        "question": "Quantos troféus há em Dead Space Remake?"
+      },
+      {
         "answer": "Não. É uma experiência single-player.",
         "question": "Tem coop?"
       },
@@ -175,8 +209,16 @@
         "question": "Tem troféus perdíveis?"
       },
       {
+        "answer": "São 2 missables diretos: Front Toward Enemy e Reunion.",
+        "question": "Quantos perdíveis diretos existem?"
+      },
+      {
         "answer": "Sim. New Game+ é necessário para Trusted Contractor, Marker Fragments e Reunion.",
         "question": "New Game+ é necessário?"
+      },
+      {
+        "answer": "Não. Marker Fragments só aparecem em New Game+.",
+        "question": "Marker Fragments aparecem na primeira run?"
       },
       {
         "answer": "A rota mais segura do Atlas trata Impossible Mode como run própria separada; New Game+ comum é usado para Marker Fragments e Reunion.",
@@ -185,6 +227,10 @@
       {
         "answer": "Sim. É preciso terminar o jogo usando apenas o Plasma Cutter.",
         "question": "One Gun é obrigatório?"
+      },
+      {
+        "answer": "Não. Este guia cobre o remake de 2023; o Dead Space original de 2008 possui lista, estrutura, coletáveis e rotas diferentes.",
+        "question": "Dead Space Remake é o mesmo guia do original de 2008?"
       },
       {
         "answer": "Não. O remake alterou locais, adicionou side missions e inclui Marker Fragments em New Game+.",

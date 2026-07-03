@@ -130,6 +130,14 @@ function pickValues(source, columns) {
   return columns.map(column => source[column] ?? null);
 }
 
+function serializeQualityWarnings(value) {
+  if (value == null) return null;
+  if (Array.isArray(value)) return JSON.stringify(value);
+  if (typeof value === 'object') return JSON.stringify(value);
+  const text = String(value || '').trim();
+  return text === '[object Object]' ? '[]' : text;
+}
+
 function normalizeStatusValue(value) {
   return String(value || '').trim().toLowerCase();
 }
@@ -344,6 +352,9 @@ function assertNoGuideRecordConflicts(records) {
 async function upsertGame(database, record, gameColumns) {
   const guide = record.guide;
   const game = { ...(guide.game || {}), slug: guide.slug };
+  if (gameColumns.includes('quality_warnings')) {
+    game.quality_warnings = serializeQualityWarnings(game.quality_warnings);
+  }
   const existing = record.target;
   const values = pickValues(game, gameColumns);
 

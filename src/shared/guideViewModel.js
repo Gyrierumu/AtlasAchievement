@@ -188,6 +188,60 @@
     re3r_need_these_later: { remove: ['collectible'], add: [{ id: 'difficulty', label: 'Dificuldade', tone: 'warning' }, { id: 'run', label: 'Risco de run', tone: 'warning' }] },
     re3r_sprinter: { remove: ['grind'], add: [{ id: 'difficulty', label: 'Dificuldade', tone: 'warning' }, { id: 'run', label: 'Risco de run', tone: 'warning' }] }
   };
+  const DEAD_SPACE_REMAKE_GUIDE_TAG_LABELS = {
+    missable: { id: 'missable', label: 'Perd\u00edvel', tone: 'risk' },
+    collectible: { id: 'collectible', label: 'Colet\u00e1vel', tone: 'partial' },
+    story: { id: 'story', label: 'Hist\u00f3ria', tone: 'partial' },
+    difficulty: { id: 'difficulty', label: 'Dificuldade', tone: 'warning' },
+    cleanup: { id: 'cleanup', label: 'Cleanup', tone: 'neutral' },
+    grind: { id: 'grind', label: 'Grind', tone: 'warning' },
+    run: { id: 'run', label: 'Risco de run', tone: 'warning' },
+    quest: { id: 'quest', label: 'Quest', tone: 'partial' },
+    challenge: { id: 'challenge', label: 'Desafio', tone: 'warning' },
+    misc: { id: 'misc', label: 'Misc', tone: 'neutral' },
+    attention: { id: 'attention', label: 'Aten\u00e7\u00e3o', tone: 'warning' }
+  };
+  const DEAD_SPACE_REMAKE_GUIDE_TAGS_BY_ID = {
+    'dead-space-remake-welcome-aboard': ['story'],
+    'dead-space-remake-lab-rat': ['story'],
+    'dead-space-remake-all-systems-go': ['story'],
+    'dead-space-remake-cannon-fodder': ['story'],
+    'dead-space-remake-true-believer': ['story'],
+    'dead-space-remake-greenhouse-effect': ['story'],
+    'dead-space-remake-sos': ['story'],
+    'dead-space-remake-strange-transmissions': ['story'],
+    'dead-space-remake-wreckage': ['story'],
+    'dead-space-remake-keeper-of-the-faith': ['story'],
+    'dead-space-remake-betrayed': ['story'],
+    'dead-space-remake-exodus': ['story'],
+    'dead-space-remake-brute-force': ['story'],
+    'dead-space-remake-exterminator': ['story'],
+    'dead-space-remake-get-off-my-ship': ['story'],
+    'dead-space-remake-mindless-prey': ['story'],
+    'dead-space-remake-final-regeneration': ['quest'],
+    'dead-space-remake-whole-again': ['quest'],
+    'dead-space-remake-set-a-benchmark': ['difficulty'],
+    'dead-space-remake-untouchable': ['difficulty', 'run', 'attention'],
+    'dead-space-remake-full-arsenal': ['collectible'],
+    'dead-space-remake-built-to-order': ['collectible', 'cleanup'],
+    'dead-space-remake-story-teller': ['collectible', 'cleanup'],
+    'dead-space-remake-legend-teller': ['collectible', 'cleanup'],
+    'dead-space-remake-merchant': ['collectible', 'cleanup', 'run'],
+    'dead-space-remake-pack-rat': ['misc'],
+    'dead-space-remake-surgeon': ['grind'],
+    'dead-space-remake-wishbone': ['misc'],
+    'dead-space-remake-raise-the-stakes': ['misc'],
+    'dead-space-remake-freeze': ['misc'],
+    'dead-space-remake-backbreaker': ['misc'],
+    'dead-space-remake-maxed-out': ['grind', 'cleanup', 'run', 'attention'],
+    'dead-space-remake-front-toward-enemy': ['missable', 'run', 'attention'],
+    'dead-space-remake-z-baller': ['challenge'],
+    'dead-space-remake-theres-always-peng': ['collectible', 'run', 'attention'],
+    'dead-space-remake-full-clearance': ['collectible', 'cleanup', 'quest', 'attention'],
+    'dead-space-remake-marked': ['collectible', 'attention'],
+    'dead-space-remake-reunion': ['missable', 'collectible', 'run', 'attention'],
+    'dead-space-remake-one-gun': ['run', 'attention']
+  };
 
   function applyResidentEvilTagOverrides(tags = [], trophy = {}, game = {}) {
     const slug = String(game?.slug || '').trim().toLowerCase();
@@ -215,6 +269,13 @@
       if (!nextTags.some(item => item?.id === tag.id)) nextTags.push(tag);
     });
     return nextTags;
+  }
+
+  function getDeadSpaceRemakeGuideTags(trophy = {}, game = {}) {
+    if (String(game?.slug || '').trim().toLowerCase() !== 'dead-space-remake') return null;
+    const trophyId = String(trophy?.id || trophy?.trophy_code || '').trim();
+    const tagIds = DEAD_SPACE_REMAKE_GUIDE_TAGS_BY_ID[trophyId] || [];
+    return tagIds.map(id => DEAD_SPACE_REMAKE_GUIDE_TAG_LABELS[id]).filter(Boolean);
   }
 
   function getGuideRoadmapStepText(step = {}) {
@@ -483,6 +544,8 @@
   }
 
   function getGuideTrophyTags(trophy = {}, game = {}) {
+    const deadSpaceTags = getDeadSpaceRemakeGuideTags(trophy, game);
+    if (deadSpaceTags) return sortGuideTrophyTags(deadSpaceTags);
     const explicitTags = getExplicitGuideTrophyTags(trophy, game);
     if (explicitTags.length) return sortGuideTrophyTags(ensureRealMissableTag(explicitTags, trophy));
     if (isCompletionTrophy(trophy)) return [];
