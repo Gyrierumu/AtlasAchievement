@@ -157,6 +157,16 @@
       },
       {
         "tags": [
+          "Schematics",
+          "Chapter 11",
+          "Cleanup"
+        ],
+        "text": "Colete todos os Schematics antes do ponto de não retorno no fim do Chapter 11. Se deixar para depois, a pendência pode exigir NG+ ou nova rota de limpeza.",
+        "title": "Merchant",
+        "type": "Coletáveis"
+      },
+      {
+        "tags": [
           "Remake 2023"
         ],
         "text": "Não use rotas do Dead Space original de 2008 como base principal: coletáveis, side missions, upgrades e Marker Fragments mudaram no remake.",

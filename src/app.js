@@ -810,7 +810,7 @@ function getTrophyDisplayDescription(trophy = {}, game = {}) {
   if (description && looksLikePortugueseTrophyDescription(description)) return description;
   const tip = cleanTrophyDescriptionCandidate(trophy.tip || trophy.guideTip || '');
   if (tip && looksLikePortugueseTrophyDescription(tip)) return tip;
-  return 'Objetivo registrado no checklist da platina; acompanhe este troféu pelo roadmap e pelos pontos de atenção do guia.';
+  return 'Consulte este troféu junto do roadmap e dos pontos de atenção antes de avançar.';
 }
 
 function renderTrophyCardHtml(trophy, completedIds = new Set(), index = 0, game = {}) {
@@ -1179,7 +1179,7 @@ function buildGuideFaqStructuredData(canonicalUrl, viewModel) {
 function renderGuideEditorialNotesHtml(game = {}, viewModel = {}) {
   const normalizedSlug = String(game?.slug || '').trim().toLowerCase();
   const routeTrophyLimit = ['little-nightmares-ii', 'metaphor-refantazio', 'monster-hunter-world', 'reanimal'].includes(normalizedSlug) ? 12 : (normalizedSlug === 'red-dead-redemption-2' ? 11 : (normalizedSlug === 'marvels-spider-man-2' ? 8 : 5));
-  const explicitAttentionPoints = ['baldurs-gate-3', 'dark-souls-ii-scholar-of-the-first-sin', 'days-gone', 'demons-souls', 'final-fantasy-xvi', 'heavy-rain', 'hogwarts-legacy', 'horizon-forbidden-west', 'horizon-zero-dawn', 'lies-of-p', 'lords-of-the-fallen', 'sekiro-shadows-die-twice', 'star-wars-jedi-survivor', 'until-dawn'].includes(normalizedSlug) && Array.isArray(game?.attentionPoints)
+  const explicitAttentionPoints = ['baldurs-gate-3', 'dark-souls-ii-scholar-of-the-first-sin', 'days-gone', 'dead-space-remake', 'demons-souls', 'final-fantasy-xvi', 'heavy-rain', 'hogwarts-legacy', 'horizon-forbidden-west', 'horizon-zero-dawn', 'lies-of-p', 'lords-of-the-fallen', 'sekiro-shadows-die-twice', 'star-wars-jedi-survivor', 'until-dawn'].includes(normalizedSlug) && Array.isArray(game?.attentionPoints)
     ? game.attentionPoints.map(item => {
       const tags = Array.isArray(item?.tags)
         ? item.tags.map(tag => {
@@ -1198,7 +1198,7 @@ function renderGuideEditorialNotesHtml(game = {}, viewModel = {}) {
   const routeTrophies = explicitAttentionPoints.length
     ? explicitAttentionPoints
     : (Array.isArray(viewModel.routeChangingTrophies) ? viewModel.routeChangingTrophies.slice(0, routeTrophyLimit) : []);
-  const faqLimit = normalizedSlug === 'marvels-spider-man-miles-morales' ? 12 : (['baldurs-gate-3', 'dark-souls-ii-scholar-of-the-first-sin', 'demons-souls', 'final-fantasy-xvi', 'heavy-rain', 'lies-of-p', 'little-nightmares-ii', 'lords-of-the-fallen', 'metaphor-refantazio', 'monster-hunter-world', 'nioh-3', 'reanimal', 'saros', 'sekiro-shadows-die-twice', 'star-wars-jedi-survivor', 'the-last-of-us-part-ii'].includes(normalizedSlug) ? 12 : (['days-gone', 'hogwarts-legacy', 'horizon-forbidden-west', 'horizon-zero-dawn', 'the-last-of-us-part-i', 'subnautica', 'until-dawn'].includes(normalizedSlug) ? 10 : (normalizedSlug === 'dark-souls-remastered' ? 9 : (['god-of-war-ragnarok', 'resident-evil-2-remake', 'resident-evil-3-remake', 'hollow-knight', 'marvels-spider-man'].includes(normalizedSlug) ? 8 : (normalizedSlug === 'red-dead-redemption-2' ? 7 : 6)))));
+  const faqLimit = normalizedSlug === 'dead-space-remake' ? 16 : (normalizedSlug === 'marvels-spider-man-miles-morales' ? 12 : (['baldurs-gate-3', 'dark-souls-ii-scholar-of-the-first-sin', 'demons-souls', 'final-fantasy-xvi', 'heavy-rain', 'lies-of-p', 'little-nightmares-ii', 'lords-of-the-fallen', 'metaphor-refantazio', 'monster-hunter-world', 'nioh-3', 'reanimal', 'saros', 'sekiro-shadows-die-twice', 'star-wars-jedi-survivor', 'the-last-of-us-part-ii'].includes(normalizedSlug) ? 12 : (['days-gone', 'hogwarts-legacy', 'horizon-forbidden-west', 'horizon-zero-dawn', 'the-last-of-us-part-i', 'subnautica', 'until-dawn'].includes(normalizedSlug) ? 10 : (normalizedSlug === 'dark-souls-remastered' ? 9 : (['god-of-war-ragnarok', 'resident-evil-2-remake', 'resident-evil-3-remake', 'hollow-knight', 'marvels-spider-man'].includes(normalizedSlug) ? 8 : (normalizedSlug === 'red-dead-redemption-2' ? 7 : 6))))));
   const faqItems = Array.isArray(viewModel.contextualFaq) ? viewModel.contextualFaq.slice(0, faqLimit) : [];
   const playerFit = viewModel.playerFit || buildGuidePlayerFit(game, viewModel);
   const methodItems = Array.isArray(viewModel.editorial?.methodItems) ? viewModel.editorial.methodItems : [];
@@ -2098,7 +2098,7 @@ function renderGuideRiskAlertsPanelHtmlV2(game = {}, viewModel = {}) {
         <div>
           <div class="atlas-eyebrow">Leia antes de começar</div>
           <h2 class="text-xl md:text-2xl font-extrabold tracking-tight mt-2">Alertas que mudam a rota da platina</h2>
-          <p class="text-white/58 mt-2 max-w-4xl">No máximo cinco pontos de atenção antes do roadmap. Leia isso para evitar erro de ordem, DLC fora do escopo, coop esquecido ou cleanup mal planejado.</p>
+          <p class="text-white/58 mt-2 max-w-4xl">Leia estes pontos antes do roadmap para evitar erro de ordem, DLC fora do escopo, coop esquecido ou cleanup mal planejado.</p>
         </div>
         <span class="atlas-tag atlas-tag--soft">${escapeHtml(String(items.length))} alerta(s)</span>
       </div>

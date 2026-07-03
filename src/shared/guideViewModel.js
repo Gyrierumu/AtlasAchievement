@@ -237,7 +237,7 @@
     'dead-space-remake-front-toward-enemy': ['missable', 'run', 'attention'],
     'dead-space-remake-z-baller': ['challenge'],
     'dead-space-remake-theres-always-peng': ['collectible', 'run', 'attention'],
-    'dead-space-remake-full-clearance': ['collectible', 'cleanup', 'quest', 'attention'],
+    'dead-space-remake-full-clearance': ['quest', 'cleanup', 'attention'],
     'dead-space-remake-marked': ['collectible', 'attention'],
     'dead-space-remake-reunion': ['missable', 'collectible', 'run', 'attention'],
     'dead-space-remake-one-gun': ['run', 'attention']
@@ -2340,7 +2340,7 @@
   function buildRouteChangingTrophies(trophies = [], game = {}) {
     const trophyById = new Map((Array.isArray(trophies) ? trophies : []).map(trophy => [trophy?.id, trophy]).filter(([id]) => id));
     const attentionSlug = String(game?.slug || '').trim().toLowerCase();
-    if (['a-way-out', 'armored-core-vi-fires-of-rubicon', 'assassin-s-creed-mirage', 'assassin-s-creed-origins', 'assassin-s-creed-odyssey', 'assassin-s-creed-shadows', 'assassin-s-creed-valhalla', 'avatar-frontiers-of-pandora', 'beyond-two-souls', 'black-myth-wukong', 'blasphemous', 'cyberpunk-2077', 'demons-souls', 'final-fantasy-vii-remake', 'final-fantasy-vii-rebirth', 'final-fantasy-xvi', 'grand-theft-auto-v', 'hades', 'life-is-strange-double-exposure', 'life-is-strange-remastered', 'life-is-strange-true-colors', 'little-nightmares-ii', 'metaphor-refantazio', 'monster-hunter-world', 'persona-3-reload', 'persona-5-royal', 'prince-of-persia-the-lost-crown', 'ratchet-and-clank-rift-apart', 'reanimal', 'resident-evil-6', 'returnal', 'rise-of-the-ronin', 'road-96', 'sekiro-shadows-die-twice', 'split-fiction', 'star-wars-jedi-fallen-order', 'star-wars-jedi-survivor'].includes(attentionSlug) && Array.isArray(game?.attentionPoints)) {
+    if (['a-way-out', 'armored-core-vi-fires-of-rubicon', 'assassin-s-creed-mirage', 'assassin-s-creed-origins', 'assassin-s-creed-odyssey', 'assassin-s-creed-shadows', 'assassin-s-creed-valhalla', 'avatar-frontiers-of-pandora', 'beyond-two-souls', 'black-myth-wukong', 'blasphemous', 'cyberpunk-2077', 'dead-space-remake', 'demons-souls', 'final-fantasy-vii-remake', 'final-fantasy-vii-rebirth', 'final-fantasy-xvi', 'grand-theft-auto-v', 'hades', 'life-is-strange-double-exposure', 'life-is-strange-remastered', 'life-is-strange-true-colors', 'little-nightmares-ii', 'metaphor-refantazio', 'monster-hunter-world', 'persona-3-reload', 'persona-5-royal', 'prince-of-persia-the-lost-crown', 'ratchet-and-clank-rift-apart', 'reanimal', 'resident-evil-6', 'returnal', 'rise-of-the-ronin', 'road-96', 'sekiro-shadows-die-twice', 'split-fiction', 'star-wars-jedi-fallen-order', 'star-wars-jedi-survivor'].includes(attentionSlug) && Array.isArray(game?.attentionPoints)) {
       return game.attentionPoints.map((item, index) => {
         const tags = (Array.isArray(item?.tags) ? item.tags : []).map(tag => {
           const label = typeof tag === 'string' ? tag : firstGuideText(tag?.label, tag?.id);

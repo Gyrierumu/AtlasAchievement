@@ -87,7 +87,7 @@
     'dead-space-remake-story-teller': ['collectible', 'cleanup'],
     'dead-space-remake-legend-teller': ['collectible', 'cleanup'],
     'dead-space-remake-merchant': ['collectible', 'cleanup', 'run'],
-    'dead-space-remake-full-clearance': ['collectible', 'cleanup'],
+    'dead-space-remake-full-clearance': ['cleanup'],
     'dead-space-remake-theres-always-peng': ['collectible', 'run'],
     'dead-space-remake-marked': ['collectible'],
     'dead-space-remake-reunion': ['missable', 'collectible', 'run'],
